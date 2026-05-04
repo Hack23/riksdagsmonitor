@@ -5,7 +5,7 @@ date: 2026-04-28
 subfolder: realtime-pulse
 slug: 2026-04-28-realtime-pulse
 source_folder: analysis/daily/2026-04-28/realtime-pulse
-generated_at: 2026-05-04T09:52:32.463Z
+generated_at: 2026-05-04T12:16:14.152Z
 language: en
 layout: article
 ---
@@ -71,10 +71,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -243,82 +243,134 @@ xychart-beta
     line [12, 11, 11, 11, 9, 9, 8, 8, 8]
 ```
 
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/media-framing-analysis.md -->
+## Per-document intelligence
 
-### Per-Party Framing
+### HD01FöU20
+<!-- source: documents/HD01FöU20-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/documents/HD01FöU20-analysis.md -->
 
-#### M (Moderaterna) — "Responsible Governance" Frame
+**dok_id**: HD01FöU20
+**Title**: Kritisk infrastruktur — CER-direktivet (lagen om skydd av kritiska entiteter)
+**Committee**: Försvarsutskottet (FöU)
+**Betänkande**: 2025/26:FöU20
+**Planned vote**: 2026-06-15
 
-**Expected narrative**: "We are delivering on our promises — citizenship tightening, CER security, defence investment, and a balanced budget. This is what Swedes voted for in 2022."
-**Vulnerability**: Internal coalition friction on SfU28 scope undercuts the "unity" message. Budget deficit numbers (if revised upward) undermine the "responsible" framing.
+### Document Significance
 
-#### SD (Sverigedemokraterna) — "Not Enough, But a Start" Frame
+### Content Summary
 
-**Expected narrative**: "We pushed for this citizenship law and we will ensure it has real teeth, not loopholes for EU bureaucrats. Sweden first."
-**Vulnerability**: If SfU28 passes with EU-citizen carveout, SD must explain why they accepted a weakened version. This activates their anti-EU-establishment narrative, which may be strategically useful for them but destabilising for the coalition.
+This betänkande implements EU Directive 2022/2557 on the resilience of critical entities (CER Directive). Key elements:
+- **Kritiska entiteter**: Operators in 11 sectors (energy, transport, banking, financial market infrastructure, health, drinking water, waste water, digital infrastructure, public administration, space) must register with MSB and demonstrate resilience plans.
+- **Incident reporting**: Mandatory reporting within 24 hours of significant disruptions.
+- **Cross-border cooperation**: Swedish MSB to coordinate with European Critical Infrastructure Liaison (EU-CIRCABC network).
+- **Enforcement**: MSB given inspection and sanction authority.
 
-#### S (Socialdemokraterna) — "Humane and Competent" Frame
+### Voting Prognosis
 
-**Expected narrative**: "We oppose SfU28 not because we are soft on borders, but because we want effective, humane, and legally robust immigration policy. On defence, we agree with the government — but on the economy, they are gambling with Sweden's future."
-**Vulnerability**: S must thread the needle between opposing SfU28 (to hold V+MP) and not appearing open-borders (to hold working-class voters). ip452 provides S an opportunity to frame themselves as constitutional defenders.
+Broad cross-party support expected. S, C will vote Ja alongside the government parties. Only V and MP may vote Nej on scope/privacy grounds.
+**Ja**: ~307; **Nej**: ~42. Safe passage.
 
-#### V (Vänsterpartiet) — "Solidarity" Frame
+### Implementation Notes
 
-**Expected narrative**: "SfU28 is discrimination dressed as policy. The constitutional amendment is a coup against democratic majorities."
-**Vulnerability**: V's absolutist positions on both issues may isolate them in a future S-led coalition negotiation.
+Full text not yet published (metadata only). MSB must build incident reporting IT systems, which based on 2021 Statskontoret evaluation represents the main implementation risk. See implementation-feasibility.md.
 
-#### MP (Miljöpartiet) — "Green and Human" Frame
+### Cross-References
 
-**Expected narrative**: "On climate, the government does nothing. On citizenship, they scapegoat immigrants. We represent a different Sweden."
-**Vulnerability**: Below 4% in several polls — existential electoral risk overshadows their framing power.
+- classification-results.md: A2 priority classification
+- cross-reference-map.md: committeeReports sibling folder reference
+- implementation-feasibility.md: MSB capacity analysis
+- comparative-international.md: CER comparator row (NL/FR)
+- swot-analysis.md: Strength #2 (EU legitimacy cover), Opportunity #2 (CER first-mover)
 
-### Press Framing Analysis
+### HD01SfU28
+<!-- source: documents/HD01SfU28-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/documents/HD01SfU28-analysis.md -->
 
-#### Quality Press (DN, SvD, GP)
+**dok_id**: HD01SfU28
+**Title**: Skärpta krav för att beviljas svenskt medborgarskap
+**Committee**: Socialförsäkringsutskottet (SfU)
+**Betänkande**: 2025/26:SfU28
 
-**Expected framing of SfU28**: Analytical — EU compatibility questions, comparisons with Denmark, expert legal opinion.
-**Expected framing of ip452**: "Constitutional controversy" — opportunity for long-form pieces on the Grundlagen and democratic norms.
-**Expected framing of Budget**: Fact-checking the government's macroeconomic assumptions; likely to interview ESV or Riksgälden economists.
+### Document Significance
 
-#### Tabloid Press (Aftonbladet, Expressen)
+This is the highest-priority document in today's analysis. The citizenship tightening bill represents the Tidö coalition's flagship social policy measure for the 2026 election.
 
-**Expected framing of SfU28**: Emotional — personal stories of affected individuals, both Swedish-born applying for foreign spouses and naturalisation applicants affected.
-**Expected framing of ip452**: Likely to frame as "political drama" rather than constitutional substance.
+### Key Provisions
 
-#### Alternative/SD-Adjacent Media (Samnytt, etc.)
+Based on committee betänkande metadata and legislative history from riksdag-regering MCP:
 
-**Expected framing**: "Government capitulates to globalists on citizenship." If SfU28 passes without full language tests, these outlets will declare SD a loser.
+1. **Residency requirement extension**: From 5 years to 8 years for most applicants (proposed); SD seeks 10 years.
+2. **Language test requirements**: Swedish at B1 level (CEFR) for most applicants; coalition disagreement on whether EU citizens are exempt.
+3. **Income threshold**: Self-sufficiency requirement — applicants must demonstrate sustainable income for preceding 2 years.
+4. **Criminal record**: Extended exclusion period for criminal convictions.
+5. **Active citizenship**: Demonstration of social integration (modelled on Danish requirements).
 
-### Strategic Framing Recommendation (Intelligence Purpose)
+### Voting Prognosis
 
-For democratic accountability monitoring, the most important framing battle is:
-- **Government**: "Competent delivery" vs. "Coalition dysfunction"
-- **Constitutional**: "Protecting democracy" (government) vs. "Protecting minorities from majoritarian erosion" (opposition)
+**Ja**: M (68) + SD (73) + KD (19) + L (16) = **176**
+**Nej**: S (107) + V (24) + C (24) + MP (18) = **173**
+**Margin**: 3 votes. If 2 government MPs are absent or rebel, the bill fails.
 
-The media-monitoring metric to track: Whether ip452 is framed as "SD proxy constitutional manoeuvre" or "legitimate democratic concern." Framing will determine whether it remains a niche story or becomes a campaign-defining narrative.
+### Coalition Risk
 
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27"}}}%%
-flowchart TD
-    A["SfU28 Citizenship Law"]
-    B["ip452 Constitutional"]
-    C["Spring Budget"]
+The SD-L/KD fault line on EU-citizen exemptions is the primary risk. L has stated publicly that EU citizen carveout is "non-negotiable" under Directive 2004/38/EC. SD has stated publicly that "all applicants" must take language tests. These positions are legally and politically incompatible as stated.
 
-    A --> DN["Quality press:\nEU compatibility focus"]
-    A --> TAB["Tabloid:\nPersonal stories"]
-    A --> ALT["Alt media:\nSD capitulation?"]
+**Likely resolution**: Government introduces a technical regulation (förordning) post-passage that implements the EU-citizen exemption administratively, while the law on its face covers all — allowing both coalition partners to claim partial victory.
 
-    B --> DN2["Quality press:\nConstitutional crisis frame"]
-    B --> TAB2["Tabloid:\nPolitical drama"]
+### Full-Text Enrichment Status
 
-    C --> DN3["Quality press:\nMacro fact-check"]
-    C --> TAB3["Tabloid:\nHousehold impact"]
+Full text confirmed available via riksdag-regering MCP (HD01SfU28, full_text_available=true). Key passages: Section 3 (language requirements), Section 7 (transitional provisions for pending applications).
 
-    style A fill:#ff006e,color:#fff
-    style B fill:#ffbe0b,color:#000
-    style C fill:#00d9ff,color:#000
-```
+### Cross-References
+
+- stakeholder-perspectives.md: Lens 1 (Government), Lens 2 (Opposition), Lens 3 (Civil Society)
+- coalition-mathematics.md: Seat count table SfU28
+- swot-analysis.md: Strength #1, Weakness #1, Threat #2
+- scenario-analysis.md: Condition for Scenario A vs B pivot
+- comparative-international.md: Row 1 (Danish precedent)
+- historical-parallels.md: Parallel 2 (Danish convergence)
+
+### HD10452
+<!-- source: documents/HD10452-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/documents/HD10452-analysis.md -->
+
+**dok_id**: HD10452
+**Title**: Interpellation om grundlagsändringar och riksdagsmajoriteter (ip 452 2025/26)
+**Interpellant**: Elsa Widding (ind.)
+**Addressee**: Justitieminister Gunnar Strömmer (M)
+**Filed**: 2026-04-23
+**Överlämnad**: 2026-04-28
+**Response deadline**: 2026-05-19
+
+### Document Significance
+
+### Interpellation Content Summary
+
+Elsa Widding challenges Justice Minister Strömmer on prop. 2024/25:165, which introduces a requirement for a 2/3 Riksdag majority for constitutional changes. Her argument:
+- Currently, a simple majority can amend the constitution (via the vilande mechanism — must pass twice with an election in between).
+- The proposed 2/3 requirement means that 34% of MPs (approximately 119 of 349) can permanently block constitutional changes.
+- Widding frames this as letting a minority override democratic majorities — specifically citing scenarios where a pro-sovereignty majority might want to leave the EU or reject a WHO pandemic treaty, and a pro-EU minority could block them with 34%.
+
+### Constitutional Context
+
+**Prop. 2024/25:165 status**: Already passed as a vilande grundlagsbeslut (first reading). Must be confirmed by the parliament elected September 2026 to enter into force. If the new parliament declines to confirm, the constitutional change fails — a historic first.
+
+**Widding's political position**: Independent MP, formerly Tidö-adjacent but now acting as a useful voice for SD's Eurosceptic wing and for those who want to keep the "constitutional sovereignty" door open.
+
+**Government position** (anticipated): The 2/3 requirement is a protection for constitutional stability, consistent with practice in Germany, Finland, and most EU member states. A simple majority should not be able to fundamentally alter constitutional rights without broader consensus.
+
+### Intelligence Assessment
+
+The interpellation is strategically timed — filed 23 April, response due 19 May, amplified during the final pre-election parliamentary session. Widding and her potential SD-adjacent allies are testing whether the constitutional amendment can become an election issue.
+
+**Key question**: Will Strömmer's response successfully reframe the 2/3 requirement as "democratic protection" rather than "minority veto"? If yes, the issue deflates. If no, it becomes an election flashpoint.
+
+### Cross-References
+
+- threat-analysis.md: T1 (Electoral Disruption, constitutional counter-narrative)
+- risk-assessment.md: R2 (Constitutional Amendment Post-Election Failure — CRITICAL)
+- scenario-analysis.md: Decision tree node "ip452 neutralised?"
+- devils-advocate.md: H2 (constitutional amendment has already failed politically)
+- forward-indicators.md: FI-02 (Strömmer response 2026-05-19), FI-11 (post-election confirmation)
+- election-2026-analysis.md: Constitutional amendment mathematics table
+- coalition-mathematics.md: Post-election confirmation table
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/stakeholder-perspectives.md -->
@@ -387,6 +439,136 @@ flowchart LR
     style CS fill:#ffbe0b,color:#000
     style EU fill:#00d9ff,color:#000
 ```
+
+## Coalition Mathematics
+<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/coalition-mathematics.md -->
+
+### Seat Count Table — Key Votes Today
+
+#### HD01SfU28 — Citizenship Requirements
+
+| Party | Seats | Ja | Nej | Avstår |
+|---|---|---|---|---|
+| M | 68 | 68 | 0 | 0 |
+| SD | 73 | 73 | 0 | 0 |
+| KD | 19 | 19 | 0 | 0 |
+| L | 16 | 16 | 0 | 0 |
+| S | 107 | 0 | 107 | 0 |
+| V | 24 | 0 | 24 | 0 |
+| C | 24 | 0 | 24 | 0 |
+| MP | 18 | 0 | 18 | 0 |
+| **Total** | **349** | **176** | **173** | **0** |
+
+**Outcome**: PASSES — government majority 176 vs 173. Margin: 3 votes.
+
+#### HD01FöU20 — CER Critical Infrastructure
+
+| Party | Seats | Ja | Nej | Avstår |
+|---|---|---|---|---|
+| M | 68 | 68 | 0 | 0 |
+| SD | 73 | 73 | 0 | 0 |
+| KD | 19 | 19 | 0 | 0 |
+| L | 16 | 16 | 0 | 0 |
+| S | 107 | 107 | 0 | 0 |
+| V | 24 | 0 | 24 | 0 |
+| C | 24 | 24 | 0 | 0 |
+| MP | 18 | 0 | 18 | 0 |
+| **Total** | **349** | **307** | **42** | **0** |
+
+**Outcome**: PASSES with broad cross-party support — 307 Ja vs 42 Nej.
+
+#### HD01FöU14 — Military Cooperation
+
+| Party | Seats | Ja | Nej | Avstår |
+|---|---|---|---|---|
+| M | 68 | 68 | 0 | 0 |
+| SD | 73 | 73 | 0 | 0 |
+| KD | 19 | 19 | 0 | 0 |
+| L | 16 | 16 | 0 | 0 |
+| S | 107 | 107 | 0 | 0 |
+| V | 24 | 0 | 0 | 24 |
+| C | 24 | 24 | 0 | 0 |
+| MP | 18 | 0 | 18 | 0 |
+| **Total** | **349** | **307** | **18** | **24** |
+
+**Outcome**: PASSES — 307 Ja; V abstains (historical pacifist position on military cooperation binding agreements).
+
+### Constitutional Amendment — Post-Election Mathematics
+
+For the vilande grundlagsbeslut to be confirmed by the post-election parliament, it needs a simple majority (≥175 of 349 seats) in the NEXT parliament. Based on April 2026 projections:
+
+- **If Tidö wins (≥175 seats)**: Amendment confirmed → 2/3 requirement enters into force.
+- **If opposition wins (≥175 seats)**: They decline to confirm → Amendment fails. This is the historically unprecedented outcome flagged in risk-assessment R2.
+
+| Coalition | Projected seats | Confirms amendment? |
+|---|---|---|
+| Tidö (M+SD+KD+L) | 168 (marginal) | YES — if they reach 175 |
+| Opposition (S+V+MP+C) | 178 (projected) | NO — they decline |
+
+**Margin**: The difference between the two scenarios is approximately 10 seats — well within current polling uncertainty of ±3pp (≈±10 seats in parliament).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27"}}}%%
+xychart-beta
+    title "Seat Count — SfU28 Vote (349 seats, majority=175)"
+    x-axis [Ja, Nej]
+    y-axis "Seats" 0 --> 200
+    bar [176, 173]
+```
+
+## Voter Segmentation
+<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/voter-segmentation.md -->
+
+### Demographic Segmentation
+
+#### Segment 1: Urban Professional (Stockholm/Göteborg/Malmö, 25–45)
+**Size**: ~18% of electorate
+**Reaction to SfU28**: Negative — high international exposure, employers of EU-mobile labour force. Corporate sector critical of citizenship tightening if it affects EU professionals.
+**Reaction to FöU20/FöU14**: Broadly supportive — security and infrastructure investment aligned with business interests.
+**Likely vote**: M/L with C as second choice. Drift toward S possible if economic uncertainty rises.
+
+#### Segment 2: Rural/Small-Town (Sweden outside metro, 45–70)
+**Size**: ~24% of electorate
+**Reaction to SfU28**: Strongly supportive — correlates with elevated SD support in this segment.
+**Reaction to constitutional amendment**: Support for the 2/3 requirement strongest here — associated with "protecting Swedish sovereignty."
+**Likely vote**: SD primary; M/KD secondary.
+
+#### Segment 3: Public Sector Workers (Healthcare, Education)
+**Size**: ~22% of electorate
+**Reaction to SoU27 (Social Data Register)**: Ambivalent — healthcare workers see utility in data integration; privacy advocates within the sector concerned about surveillance.
+**Reaction to Spring Budget**: Critical if welfare spending increases are insufficient. S-aligned.
+**Likely vote**: S+V dominant segment.
+
+#### Segment 4: Young Voters (18–29)
+**Size**: ~12% of electorate
+**Reaction to SfU28**: Broadly negative — high multicultural exposure; university campuses trend anti-restriction.
+**Reaction to election 2026**: High MP and V penetration. If MP crosses 4% threshold, strongly driven by young urban voters.
+**Likely vote**: MP/V/S.
+
+### Regional Segmentation
+
+| Region | Dominant concern | Electoral lean |
+|---|---|---|
+| Stockholms län | Economy, housing | M/S battleground |
+| Skåne | Immigration, crime | SD-dominant; M competitive |
+| Norrland | Welfare, jobs, defence | S-dominant; M challenging |
+| Västra Götaland | Industry, defence (Saab/Göteborg) | S/M split; C competitive |
+
+### Issue Salience Map
+
+| Issue | Highly salient for | Salience % (est.) |
+|---|---|---|
+| Immigration/Citizenship (SfU28) | SD + rural voters | ~38% |
+| Economy / Spring Budget | S + urban workers | ~52% |
+| Defence / Security | M + KD + C | ~41% |
+| Democracy / Constitutional | Civil society + young | ~19% |
+| Healthcare / Welfare | S + V + older voters | ~48% |
+
+### Impact on Today's Documents
+
+- **SfU28**: Mobilises both SD base (supportive) and left-urban opposition (negatively); this is the highest emotional-resonance document in today's legislative package.
+- **FöU14**: Defence cooperation broadly popular across demographics post-NATO accession — minimal electoral risk.
+- **HD10452**: Constitutional amendment concern resonates primarily with engaged civic participants (~19% issue salience) but media amplification can broaden it.
 
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/forward-indicators.md -->
@@ -500,6 +682,60 @@ flowchart TD
     style SA fill:#00d9ff,color:#000
     style SB fill:#ffbe0b,color:#000
     style SC fill:#ff006e,color:#fff
+```
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/election-2026-analysis.md -->
+
+### Seat Projections (Mandate Prognosis)
+
+Based on polling aggregates from late April 2026 (Novus, Demoskop, Ipsos, Sifo averages):
+
+| Party | Current Seats | Projected Seats (Apr-2026 avg) | ±3pp shift |
+|---|---|---|---|
+| Moderaterna (M) | 68 | 66 | ±5 |
+| Sverigedemokraterna (SD) | 73 | 69 | ±5 |
+| Kristdemokraterna (KD) | 19 | 18 | ±2 |
+| Liberalerna (L) | 16 | 15 | ±2 |
+| **Tidö coalition** | **176** | **168** | ±10 |
+| Socialdemokraterna (S) | 107 | 111 | ±6 |
+| Vänsterpartiet (V) | 24 | 25 | ±3 |
+| Miljöpartiet (MP) | 18 | 21 | ±3 |
+| Centerpartiet (C) | 24 | 21 | ±3 |
+| **Opposition** | **173** | **178** | ±10 |
+
+**Total seats**: 349. Majority: 175.
+
+### Coalition Viability Matrix
+
+| Coalition | Seats | Viable? | Condition |
+|---|---|---|---|
+| Tidö (M+SD+KD+L) | 168 (proj.) | MARGINAL | Needs ≥175; requires all four to hold + gain |
+| S+V+MP+C | 178 (proj.) | YES | "Röd-grön" coalition comfortable majority |
+| S+C+(others) | ~132 | NO | Below majority |
+| S+SD | Politically impossible | NO | |
+
+### Impact on Today's Legislation
+
+**SfU28 (Citizenship)**: If opposition wins, no rollback expected immediately — but next government may not extend restrictions further. The citizenship tightening, once law, persists beyond electoral cycle.
+
+**Constitutional Amendment (Grundlagsändringen)**: This is the critical electoral variable. The vilande beslut REQUIRES confirmation by post-election parliament. An opposition majority (178 seats) votes NO → amendment fails. This is the single highest-stakes electoral consequence of the September 2026 election in constitutional terms.
+
+**FöU14/FöU20 (Military/CER)**: Bipartisan consensus means these survive any electoral outcome.
+
+### Key Swing Factors
+
+1. **Stockholm suburbs (pendlarkommuner)**: Economic anxiety driving C/M switchers toward S — historically decisive for majority formation
+2. **SD plateau or decline**: SD at 19–20% (down from 21% in 2022) suggests potential Tidö weakness
+3. **MP recovery**: If MP re-enters parliament above 4%, their 18+ seats reinforce opposition majority
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27"}}}%%
+xychart-beta
+    title "April 2026 Seat Projections (349 seats)"
+    x-axis [M, SD, S, KD, L, V, C, MP]
+    y-axis "Seats" 0 --> 120
+    bar [66, 69, 111, 18, 15, 25, 21, 21]
 ```
 
 ## Risk Assessment
@@ -649,318 +885,50 @@ flowchart TD
     style E fill:#1a1e3d,color:#e0e0e0
 ```
 
-## Per-document intelligence
+## Historical Parallels
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/historical-parallels.md -->
 
-### HD01FöU20
-<!-- source: documents/HD01FöU20-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/documents/HD01FöU20-analysis.md -->
+### Named Historical Precedents (within ≤40 years)
 
-**dok_id**: HD01FöU20
-**Title**: Kritisk infrastruktur — CER-direktivet (lagen om skydd av kritiska entiteter)
-**Committee**: Försvarsutskottet (FöU)
-**Betänkande**: 2025/26:FöU20
-**Planned vote**: 2026-06-15
+#### Parallel 1: The 1994 EU Membership Referendum Vilande Grundlagsbeslut
 
-### Document Significance
+**Year**: 1994 (32 years ago — within 40-year window)
+**Event**: Sweden's accession to the EU required a constitutional amendment to allow transfer of sovereignty. This proceeded via a vilande grundlagsbeslut confirmed by the parliament elected after the 1994 referendum.
+**Parallel to today**: Prop. 2024/25:165 also uses the vilande mechanism. In 1994, the question was EXPANDING EU integration; today's constitutional amendment potentially enables future RESISTANCE to EU integration (EU exit, WHO treaties). The mechanism is the same; the political direction is opposite.
+**Lesson**: Vilande grundlagsbeslut confirmation has always succeeded in modern Sweden. Failure would be unprecedented in the post-1974 constitutional order.
 
-### Content Summary
+#### Parallel 2: The 1989 Danish Citizenship Tightening
 
-This betänkande implements EU Directive 2022/2557 on the resilience of critical entities (CER Directive). Key elements:
-- **Kritiska entiteter**: Operators in 11 sectors (energy, transport, banking, financial market infrastructure, health, drinking water, waste water, digital infrastructure, public administration, space) must register with MSB and demonstrate resilience plans.
-- **Incident reporting**: Mandatory reporting within 24 hours of significant disruptions.
-- **Cross-border cooperation**: Swedish MSB to coordinate with European Critical Infrastructure Liaison (EU-CIRCABC network).
-- **Enforcement**: MSB given inspection and sanction authority.
+**Year**: 1998–2002 (≤40 years)
+**Event**: Denmark progressively tightened citizenship requirements under successive governments (Indfødsretsloven amendments). The 24-year rule, language tests, and attachment requirements were introduced step-by-step — initially controversial, later normalised.
+**Parallel to today**: SfU28 follows the same incremental tightening path. Sweden is approximately where Denmark was in 2002 — introducing requirements that Denmark has since tightened further.
+**Lesson**: The Danish case shows that initial "extreme" framing of citizenship restrictions gives way to policy normalisation within one or two election cycles. Sweden's SfU28 is therefore a middle-ground measure by Nordic standards.
 
-### Voting Prognosis
+#### Parallel 3: The 2006 Alliansen Formation — Coalition Coherence Under Tension
 
-Broad cross-party support expected. S, C will vote Ja alongside the government parties. Only V and MP may vote Nej on scope/privacy grounds.
-**Ja**: ~307; **Nej**: ~42. Safe passage.
+**Year**: 2006–2010 (within 40 years)
+**Event**: The original Alliansen (M+FP+KD+C) governed Sweden 2006–2014 with four parties that frequently disagreed on details but maintained coalition discipline on major votes. The 2006 coalition's fiscal prudence + welfare reform agenda passed with similar 3–5 vote margins on several contentious bills.
+**Parallel to today**: The Tidö coalition (M+SD+KD+L) faces analogous internal tension — SD is a structurally more difficult partner than SD (being more ideologically distant from M than C was in 2006). Yet the 2006 precedent suggests coalitions with tight margins can deliver substantial legislative agendas if party discipline holds.
+**Lesson**: Coalition discipline, not seat margins, is the critical variable. M's leadership management of SD should be assessed against the FP/C management model from 2006–2010.
 
-### Implementation Notes
-
-Full text not yet published (metadata only). MSB must build incident reporting IT systems, which based on 2021 Statskontoret evaluation represents the main implementation risk. See implementation-feasibility.md.
-
-### Cross-References
-
-- classification-results.md: A2 priority classification
-- cross-reference-map.md: committeeReports sibling folder reference
-- implementation-feasibility.md: MSB capacity analysis
-- comparative-international.md: CER comparator row (NL/FR)
-- swot-analysis.md: Strength #2 (EU legitimacy cover), Opportunity #2 (CER first-mover)
-
-### HD01SfU28
-<!-- source: documents/HD01SfU28-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/documents/HD01SfU28-analysis.md -->
-
-**dok_id**: HD01SfU28
-**Title**: Skärpta krav för att beviljas svenskt medborgarskap
-**Committee**: Socialförsäkringsutskottet (SfU)
-**Betänkande**: 2025/26:SfU28
-
-### Document Significance
-
-This is the highest-priority document in today's analysis. The citizenship tightening bill represents the Tidö coalition's flagship social policy measure for the 2026 election.
-
-### Key Provisions
-
-Based on committee betänkande metadata and legislative history from riksdag-regering MCP:
-
-1. **Residency requirement extension**: From 5 years to 8 years for most applicants (proposed); SD seeks 10 years.
-2. **Language test requirements**: Swedish at B1 level (CEFR) for most applicants; coalition disagreement on whether EU citizens are exempt.
-3. **Income threshold**: Self-sufficiency requirement — applicants must demonstrate sustainable income for preceding 2 years.
-4. **Criminal record**: Extended exclusion period for criminal convictions.
-5. **Active citizenship**: Demonstration of social integration (modelled on Danish requirements).
-
-### Voting Prognosis
-
-**Ja**: M (68) + SD (73) + KD (19) + L (16) = **176**
-**Nej**: S (107) + V (24) + C (24) + MP (18) = **173**
-**Margin**: 3 votes. If 2 government MPs are absent or rebel, the bill fails.
-
-### Coalition Risk
-
-The SD-L/KD fault line on EU-citizen exemptions is the primary risk. L has stated publicly that EU citizen carveout is "non-negotiable" under Directive 2004/38/EC. SD has stated publicly that "all applicants" must take language tests. These positions are legally and politically incompatible as stated.
-
-**Likely resolution**: Government introduces a technical regulation (förordning) post-passage that implements the EU-citizen exemption administratively, while the law on its face covers all — allowing both coalition partners to claim partial victory.
-
-### Full-Text Enrichment Status
-
-Full text confirmed available via riksdag-regering MCP (HD01SfU28, full_text_available=true). Key passages: Section 3 (language requirements), Section 7 (transitional provisions for pending applications).
-
-### Cross-References
-
-- stakeholder-perspectives.md: Lens 1 (Government), Lens 2 (Opposition), Lens 3 (Civil Society)
-- coalition-mathematics.md: Seat count table SfU28
-- swot-analysis.md: Strength #1, Weakness #1, Threat #2
-- scenario-analysis.md: Condition for Scenario A vs B pivot
-- comparative-international.md: Row 1 (Danish precedent)
-- historical-parallels.md: Parallel 2 (Danish convergence)
-
-### HD10452
-<!-- source: documents/HD10452-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/documents/HD10452-analysis.md -->
-
-**dok_id**: HD10452
-**Title**: Interpellation om grundlagsändringar och riksdagsmajoriteter (ip 452 2025/26)
-**Interpellant**: Elsa Widding (ind.)
-**Addressee**: Justitieminister Gunnar Strömmer (M)
-**Filed**: 2026-04-23
-**Överlämnad**: 2026-04-28
-**Response deadline**: 2026-05-19
-
-### Document Significance
-
-### Interpellation Content Summary
-
-Elsa Widding challenges Justice Minister Strömmer on prop. 2024/25:165, which introduces a requirement for a 2/3 Riksdag majority for constitutional changes. Her argument:
-- Currently, a simple majority can amend the constitution (via the vilande mechanism — must pass twice with an election in between).
-- The proposed 2/3 requirement means that 34% of MPs (approximately 119 of 349) can permanently block constitutional changes.
-- Widding frames this as letting a minority override democratic majorities — specifically citing scenarios where a pro-sovereignty majority might want to leave the EU or reject a WHO pandemic treaty, and a pro-EU minority could block them with 34%.
-
-### Constitutional Context
-
-**Prop. 2024/25:165 status**: Already passed as a vilande grundlagsbeslut (first reading). Must be confirmed by the parliament elected September 2026 to enter into force. If the new parliament declines to confirm, the constitutional change fails — a historic first.
-
-**Widding's political position**: Independent MP, formerly Tidö-adjacent but now acting as a useful voice for SD's Eurosceptic wing and for those who want to keep the "constitutional sovereignty" door open.
-
-**Government position** (anticipated): The 2/3 requirement is a protection for constitutional stability, consistent with practice in Germany, Finland, and most EU member states. A simple majority should not be able to fundamentally alter constitutional rights without broader consensus.
-
-### Intelligence Assessment
-
-The interpellation is strategically timed — filed 23 April, response due 19 May, amplified during the final pre-election parliamentary session. Widding and her potential SD-adjacent allies are testing whether the constitutional amendment can become an election issue.
-
-**Key question**: Will Strömmer's response successfully reframe the 2/3 requirement as "democratic protection" rather than "minority veto"? If yes, the issue deflates. If no, it becomes an election flashpoint.
-
-### Cross-References
-
-- threat-analysis.md: T1 (Electoral Disruption, constitutional counter-narrative)
-- risk-assessment.md: R2 (Constitutional Amendment Post-Election Failure — CRITICAL)
-- scenario-analysis.md: Decision tree node "ip452 neutralised?"
-- devils-advocate.md: H2 (constitutional amendment has already failed politically)
-- forward-indicators.md: FI-02 (Strömmer response 2026-05-19), FI-11 (post-election confirmation)
-- election-2026-analysis.md: Constitutional amendment mathematics table
-- coalition-mathematics.md: Post-election confirmation table
-
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/election-2026-analysis.md -->
-
-### Seat Projections (Mandate Prognosis)
-
-Based on polling aggregates from late April 2026 (Novus, Demoskop, Ipsos, Sifo averages):
-
-| Party | Current Seats | Projected Seats (Apr-2026 avg) | ±3pp shift |
-|---|---|---|---|
-| Moderaterna (M) | 68 | 66 | ±5 |
-| Sverigedemokraterna (SD) | 73 | 69 | ±5 |
-| Kristdemokraterna (KD) | 19 | 18 | ±2 |
-| Liberalerna (L) | 16 | 15 | ±2 |
-| **Tidö coalition** | **176** | **168** | ±10 |
-| Socialdemokraterna (S) | 107 | 111 | ±6 |
-| Vänsterpartiet (V) | 24 | 25 | ±3 |
-| Miljöpartiet (MP) | 18 | 21 | ±3 |
-| Centerpartiet (C) | 24 | 21 | ±3 |
-| **Opposition** | **173** | **178** | ±10 |
-
-**Total seats**: 349. Majority: 175.
-
-### Coalition Viability Matrix
-
-| Coalition | Seats | Viable? | Condition |
-|---|---|---|---|
-| Tidö (M+SD+KD+L) | 168 (proj.) | MARGINAL | Needs ≥175; requires all four to hold + gain |
-| S+V+MP+C | 178 (proj.) | YES | "Röd-grön" coalition comfortable majority |
-| S+C+(others) | ~132 | NO | Below majority |
-| S+SD | Politically impossible | NO | |
-
-### Impact on Today's Legislation
-
-**SfU28 (Citizenship)**: If opposition wins, no rollback expected immediately — but next government may not extend restrictions further. The citizenship tightening, once law, persists beyond electoral cycle.
-
-**Constitutional Amendment (Grundlagsändringen)**: This is the critical electoral variable. The vilande beslut REQUIRES confirmation by post-election parliament. An opposition majority (178 seats) votes NO → amendment fails. This is the single highest-stakes electoral consequence of the September 2026 election in constitutional terms.
-
-**FöU14/FöU20 (Military/CER)**: Bipartisan consensus means these survive any electoral outcome.
-
-### Key Swing Factors
-
-1. **Stockholm suburbs (pendlarkommuner)**: Economic anxiety driving C/M switchers toward S — historically decisive for majority formation
-2. **SD plateau or decline**: SD at 19–20% (down from 21% in 2022) suggests potential Tidö weakness
-3. **MP recovery**: If MP re-enters parliament above 4%, their 18+ seats reinforce opposition majority
+### Precedent Mapping Summary
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27"}}}%%
-xychart-beta
-    title "April 2026 Seat Projections (349 seats)"
-    x-axis [M, SD, S, KD, L, V, C, MP]
-    y-axis "Seats" 0 --> 120
-    bar [66, 69, 111, 18, 15, 25, 21, 21]
+flowchart LR
+    P1["1994 EU Vilande\nMechanism used\nfor EU expansion"]
+    P2["1998-2002 Denmark\nCitizenship tightening\nnormalised"]
+    P3["2006 Alliansen\nCoalition discipline\nat 3-5 vote margins"]
+
+    P1 -->|"Same mechanism\nOpposite direction"| TODAY["2026 Riksdag\nProp. 2024/25:165\n+ SfU28 + FöU14"]
+    P2 -->|"Nordic convergence\npattern"| TODAY
+    P3 -->|"Coalition management\ntemplate"| TODAY
+
+    style TODAY fill:#00d9ff,color:#000
+    style P1 fill:#1a1e3d,color:#e0e0e0
+    style P2 fill:#1a1e3d,color:#e0e0e0
+    style P3 fill:#1a1e3d,color:#e0e0e0
 ```
-
-## Coalition Mathematics
-<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/coalition-mathematics.md -->
-
-### Seat Count Table — Key Votes Today
-
-#### HD01SfU28 — Citizenship Requirements
-
-| Party | Seats | Ja | Nej | Avstår |
-|---|---|---|---|---|
-| M | 68 | 68 | 0 | 0 |
-| SD | 73 | 73 | 0 | 0 |
-| KD | 19 | 19 | 0 | 0 |
-| L | 16 | 16 | 0 | 0 |
-| S | 107 | 0 | 107 | 0 |
-| V | 24 | 0 | 24 | 0 |
-| C | 24 | 0 | 24 | 0 |
-| MP | 18 | 0 | 18 | 0 |
-| **Total** | **349** | **176** | **173** | **0** |
-
-**Outcome**: PASSES — government majority 176 vs 173. Margin: 3 votes.
-
-#### HD01FöU20 — CER Critical Infrastructure
-
-| Party | Seats | Ja | Nej | Avstår |
-|---|---|---|---|---|
-| M | 68 | 68 | 0 | 0 |
-| SD | 73 | 73 | 0 | 0 |
-| KD | 19 | 19 | 0 | 0 |
-| L | 16 | 16 | 0 | 0 |
-| S | 107 | 107 | 0 | 0 |
-| V | 24 | 0 | 24 | 0 |
-| C | 24 | 24 | 0 | 0 |
-| MP | 18 | 0 | 18 | 0 |
-| **Total** | **349** | **307** | **42** | **0** |
-
-**Outcome**: PASSES with broad cross-party support — 307 Ja vs 42 Nej.
-
-#### HD01FöU14 — Military Cooperation
-
-| Party | Seats | Ja | Nej | Avstår |
-|---|---|---|---|---|
-| M | 68 | 68 | 0 | 0 |
-| SD | 73 | 73 | 0 | 0 |
-| KD | 19 | 19 | 0 | 0 |
-| L | 16 | 16 | 0 | 0 |
-| S | 107 | 107 | 0 | 0 |
-| V | 24 | 0 | 0 | 24 |
-| C | 24 | 24 | 0 | 0 |
-| MP | 18 | 0 | 18 | 0 |
-| **Total** | **349** | **307** | **18** | **24** |
-
-**Outcome**: PASSES — 307 Ja; V abstains (historical pacifist position on military cooperation binding agreements).
-
-### Constitutional Amendment — Post-Election Mathematics
-
-For the vilande grundlagsbeslut to be confirmed by the post-election parliament, it needs a simple majority (≥175 of 349 seats) in the NEXT parliament. Based on April 2026 projections:
-
-- **If Tidö wins (≥175 seats)**: Amendment confirmed → 2/3 requirement enters into force.
-- **If opposition wins (≥175 seats)**: They decline to confirm → Amendment fails. This is the historically unprecedented outcome flagged in risk-assessment R2.
-
-| Coalition | Projected seats | Confirms amendment? |
-|---|---|---|
-| Tidö (M+SD+KD+L) | 168 (marginal) | YES — if they reach 175 |
-| Opposition (S+V+MP+C) | 178 (projected) | NO — they decline |
-
-**Margin**: The difference between the two scenarios is approximately 10 seats — well within current polling uncertainty of ±3pp (≈±10 seats in parliament).
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27"}}}%%
-xychart-beta
-    title "Seat Count — SfU28 Vote (349 seats, majority=175)"
-    x-axis [Ja, Nej]
-    y-axis "Seats" 0 --> 200
-    bar [176, 173]
-```
-
-## Voter Segmentation
-<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/voter-segmentation.md -->
-
-### Demographic Segmentation
-
-#### Segment 1: Urban Professional (Stockholm/Göteborg/Malmö, 25–45)
-**Size**: ~18% of electorate
-**Reaction to SfU28**: Negative — high international exposure, employers of EU-mobile labour force. Corporate sector critical of citizenship tightening if it affects EU professionals.
-**Reaction to FöU20/FöU14**: Broadly supportive — security and infrastructure investment aligned with business interests.
-**Likely vote**: M/L with C as second choice. Drift toward S possible if economic uncertainty rises.
-
-#### Segment 2: Rural/Small-Town (Sweden outside metro, 45–70)
-**Size**: ~24% of electorate
-**Reaction to SfU28**: Strongly supportive — correlates with elevated SD support in this segment.
-**Reaction to constitutional amendment**: Support for the 2/3 requirement strongest here — associated with "protecting Swedish sovereignty."
-**Likely vote**: SD primary; M/KD secondary.
-
-#### Segment 3: Public Sector Workers (Healthcare, Education)
-**Size**: ~22% of electorate
-**Reaction to SoU27 (Social Data Register)**: Ambivalent — healthcare workers see utility in data integration; privacy advocates within the sector concerned about surveillance.
-**Reaction to Spring Budget**: Critical if welfare spending increases are insufficient. S-aligned.
-**Likely vote**: S+V dominant segment.
-
-#### Segment 4: Young Voters (18–29)
-**Size**: ~12% of electorate
-**Reaction to SfU28**: Broadly negative — high multicultural exposure; university campuses trend anti-restriction.
-**Reaction to election 2026**: High MP and V penetration. If MP crosses 4% threshold, strongly driven by young urban voters.
-**Likely vote**: MP/V/S.
-
-### Regional Segmentation
-
-| Region | Dominant concern | Electoral lean |
-|---|---|---|
-| Stockholms län | Economy, housing | M/S battleground |
-| Skåne | Immigration, crime | SD-dominant; M competitive |
-| Norrland | Welfare, jobs, defence | S-dominant; M challenging |
-| Västra Götaland | Industry, defence (Saab/Göteborg) | S/M split; C competitive |
-
-### Issue Salience Map
-
-| Issue | Highly salient for | Salience % (est.) |
-|---|---|---|
-| Immigration/Citizenship (SfU28) | SD + rural voters | ~38% |
-| Economy / Spring Budget | S + urban workers | ~52% |
-| Defence / Security | M + KD + C | ~41% |
-| Democracy / Constitutional | Civil society + young | ~19% |
-| Healthcare / Welfare | S + V + older voters | ~48% |
-
-### Impact on Today's Documents
-
-- **SfU28**: Mobilises both SD base (supportive) and left-urban opposition (negatively); this is the highest emotional-resonance document in today's legislative package.
-- **FöU14**: Defence cooperation broadly popular across demographics post-NATO accession — minimal electoral risk.
-- **HD10452**: Constitutional amendment concern resonates primarily with engaged civic participants (~19% issue salience) but media amplification can broaden it.
 
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/comparative-international.md -->
@@ -1021,51 +989,6 @@ flowchart LR
     style EU fill:#ffbe0b,color:#000
 ```
 
-## Historical Parallels
-<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/historical-parallels.md -->
-
-### Named Historical Precedents (within ≤40 years)
-
-#### Parallel 1: The 1994 EU Membership Referendum Vilande Grundlagsbeslut
-
-**Year**: 1994 (32 years ago — within 40-year window)
-**Event**: Sweden's accession to the EU required a constitutional amendment to allow transfer of sovereignty. This proceeded via a vilande grundlagsbeslut confirmed by the parliament elected after the 1994 referendum.
-**Parallel to today**: Prop. 2024/25:165 also uses the vilande mechanism. In 1994, the question was EXPANDING EU integration; today's constitutional amendment potentially enables future RESISTANCE to EU integration (EU exit, WHO treaties). The mechanism is the same; the political direction is opposite.
-**Lesson**: Vilande grundlagsbeslut confirmation has always succeeded in modern Sweden. Failure would be unprecedented in the post-1974 constitutional order.
-
-#### Parallel 2: The 1989 Danish Citizenship Tightening
-
-**Year**: 1998–2002 (≤40 years)
-**Event**: Denmark progressively tightened citizenship requirements under successive governments (Indfødsretsloven amendments). The 24-year rule, language tests, and attachment requirements were introduced step-by-step — initially controversial, later normalised.
-**Parallel to today**: SfU28 follows the same incremental tightening path. Sweden is approximately where Denmark was in 2002 — introducing requirements that Denmark has since tightened further.
-**Lesson**: The Danish case shows that initial "extreme" framing of citizenship restrictions gives way to policy normalisation within one or two election cycles. Sweden's SfU28 is therefore a middle-ground measure by Nordic standards.
-
-#### Parallel 3: The 2006 Alliansen Formation — Coalition Coherence Under Tension
-
-**Year**: 2006–2010 (within 40 years)
-**Event**: The original Alliansen (M+FP+KD+C) governed Sweden 2006–2014 with four parties that frequently disagreed on details but maintained coalition discipline on major votes. The 2006 coalition's fiscal prudence + welfare reform agenda passed with similar 3–5 vote margins on several contentious bills.
-**Parallel to today**: The Tidö coalition (M+SD+KD+L) faces analogous internal tension — SD is a structurally more difficult partner than SD (being more ideologically distant from M than C was in 2006). Yet the 2006 precedent suggests coalitions with tight margins can deliver substantial legislative agendas if party discipline holds.
-**Lesson**: Coalition discipline, not seat margins, is the critical variable. M's leadership management of SD should be assessed against the FP/C management model from 2006–2010.
-
-### Precedent Mapping Summary
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27"}}}%%
-flowchart LR
-    P1["1994 EU Vilande\nMechanism used\nfor EU expansion"]
-    P2["1998-2002 Denmark\nCitizenship tightening\nnormalised"]
-    P3["2006 Alliansen\nCoalition discipline\nat 3-5 vote margins"]
-
-    P1 -->|"Same mechanism\nOpposite direction"| TODAY["2026 Riksdag\nProp. 2024/25:165\n+ SfU28 + FöU14"]
-    P2 -->|"Nordic convergence\npattern"| TODAY
-    P3 -->|"Coalition management\ntemplate"| TODAY
-
-    style TODAY fill:#00d9ff,color:#000
-    style P1 fill:#1a1e3d,color:#e0e0e0
-    style P2 fill:#1a1e3d,color:#e0e0e0
-    style P3 fill:#1a1e3d,color:#e0e0e0
-```
-
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/implementation-feasibility.md -->
 
@@ -1120,6 +1043,83 @@ flowchart LR
     style FOU20 fill:#ffbe0b,color:#000
     style FOU14 fill:#00d9ff,color:#000
     style UBU17 fill:#00d9ff,color:#000
+```
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/media-framing-analysis.md -->
+
+### Per-Party Framing
+
+#### M (Moderaterna) — "Responsible Governance" Frame
+
+**Expected narrative**: "We are delivering on our promises — citizenship tightening, CER security, defence investment, and a balanced budget. This is what Swedes voted for in 2022."
+**Vulnerability**: Internal coalition friction on SfU28 scope undercuts the "unity" message. Budget deficit numbers (if revised upward) undermine the "responsible" framing.
+
+#### SD (Sverigedemokraterna) — "Not Enough, But a Start" Frame
+
+**Expected narrative**: "We pushed for this citizenship law and we will ensure it has real teeth, not loopholes for EU bureaucrats. Sweden first."
+**Vulnerability**: If SfU28 passes with EU-citizen carveout, SD must explain why they accepted a weakened version. This activates their anti-EU-establishment narrative, which may be strategically useful for them but destabilising for the coalition.
+
+#### S (Socialdemokraterna) — "Humane and Competent" Frame
+
+**Expected narrative**: "We oppose SfU28 not because we are soft on borders, but because we want effective, humane, and legally robust immigration policy. On defence, we agree with the government — but on the economy, they are gambling with Sweden's future."
+**Vulnerability**: S must thread the needle between opposing SfU28 (to hold V+MP) and not appearing open-borders (to hold working-class voters). ip452 provides S an opportunity to frame themselves as constitutional defenders.
+
+#### V (Vänsterpartiet) — "Solidarity" Frame
+
+**Expected narrative**: "SfU28 is discrimination dressed as policy. The constitutional amendment is a coup against democratic majorities."
+**Vulnerability**: V's absolutist positions on both issues may isolate them in a future S-led coalition negotiation.
+
+#### MP (Miljöpartiet) — "Green and Human" Frame
+
+**Expected narrative**: "On climate, the government does nothing. On citizenship, they scapegoat immigrants. We represent a different Sweden."
+**Vulnerability**: Below 4% in several polls — existential electoral risk overshadows their framing power.
+
+### Press Framing Analysis
+
+#### Quality Press (DN, SvD, GP)
+
+**Expected framing of SfU28**: Analytical — EU compatibility questions, comparisons with Denmark, expert legal opinion.
+**Expected framing of ip452**: "Constitutional controversy" — opportunity for long-form pieces on the Grundlagen and democratic norms.
+**Expected framing of Budget**: Fact-checking the government's macroeconomic assumptions; likely to interview ESV or Riksgälden economists.
+
+#### Tabloid Press (Aftonbladet, Expressen)
+
+**Expected framing of SfU28**: Emotional — personal stories of affected individuals, both Swedish-born applying for foreign spouses and naturalisation applicants affected.
+**Expected framing of ip452**: Likely to frame as "political drama" rather than constitutional substance.
+
+#### Alternative/SD-Adjacent Media (Samnytt, etc.)
+
+**Expected framing**: "Government capitulates to globalists on citizenship." If SfU28 passes without full language tests, these outlets will declare SD a loser.
+
+### Strategic Framing Recommendation (Intelligence Purpose)
+
+For democratic accountability monitoring, the most important framing battle is:
+- **Government**: "Competent delivery" vs. "Coalition dysfunction"
+- **Constitutional**: "Protecting democracy" (government) vs. "Protecting minorities from majoritarian erosion" (opposition)
+
+The media-monitoring metric to track: Whether ip452 is framed as "SD proxy constitutional manoeuvre" or "legitimate democratic concern." Framing will determine whether it remains a niche story or becomes a campaign-defining narrative.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "edgeLabelBackground": "#0a0e27"}}}%%
+flowchart TD
+    A["SfU28 Citizenship Law"]
+    B["ip452 Constitutional"]
+    C["Spring Budget"]
+
+    A --> DN["Quality press:\nEU compatibility focus"]
+    A --> TAB["Tabloid:\nPersonal stories"]
+    A --> ALT["Alt media:\nSD capitulation?"]
+
+    B --> DN2["Quality press:\nConstitutional crisis frame"]
+    B --> TAB2["Tabloid:\nPolitical drama"]
+
+    C --> DN3["Quality press:\nMacro fact-check"]
+    C --> TAB3["Tabloid:\nHousehold impact"]
+
+    style A fill:#ff006e,color:#fff
+    style B fill:#ffbe0b,color:#000
+    style C fill:#00d9ff,color:#000
 ```
 
 ## Devil's Advocate
@@ -1396,22 +1396,22 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/threat-analysis.md)
 - [`documents/HD01FöU20-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/documents/HD01FöU20-analysis.md)
 - [`documents/HD01SfU28-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/documents/HD01SfU28-analysis.md)
 - [`documents/HD10452-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/documents/HD10452-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/cross-reference-map.md)

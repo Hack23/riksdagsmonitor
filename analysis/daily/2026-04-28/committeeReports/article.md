@@ -5,7 +5,7 @@ date: 2026-04-28
 subfolder: committeeReports
 slug: 2026-04-28-committeeReports
 source_folder: analysis/daily/2026-04-28/committeeReports
-generated_at: 2026-05-04T09:52:32.421Z
+generated_at: 2026-05-04T12:16:14.114Z
 language: en
 layout: article
 ---
@@ -71,10 +71,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -261,77 +261,88 @@ xychart-beta
     bar [9.2, 8.5, 7.8, 6.5, 6.2, 5.8, 5.1, 4.9, 4.7, 4.3]
 ```
 
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/media-framing-analysis.md -->
+## Per-document intelligence
 
----
+### HC01FiU20
+<!-- source: documents/HC01FiU20-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/documents/HC01FiU20-analysis.md -->
 
-### Per-Party Framing
+### Summary
+HC01FiU20 constitutes the Riksdag Finance Committee's report on the government's Spring Economic Bill (Vårpropositionen) — establishing economic policy direction for 2025. Key macroeconomic projections: GDP 1.9% (2025), 2.3% (2026); Unemployment 8.7% (2025), 8.4% (2026); KPIF around 2% target.
 
-| Party | Document | Framing strategy | Key message |
-|-------|----------|-----------------|-------------|
-| M (PM) | HC01FiU20 | "Responsible fiscal management" | Growth, work, order |
-| SD | HC01FiU20 | "Protecting Swedish workers" | Anti-immigration link to welfare |
-| KD | HC01FiU20 | "Family-centred economic security" | Stability emphasis |
-| L | HC01FiU20 | "Structural reform and enterprise" | Business-friendly framing |
-| S (opposition) | HC01FiU20 reservation | "Government hurts workers" | Unemployment + bidragsreform critique |
-| V | HC01FiU20 reservation | "Welfare state dismantling" | Left solidarity framing |
-| C | HC01FiU20 reservation | "Economic liberalism betrayed" | Missed deregulation opportunities |
-| MP | HC01FiU20 reservation | "Green transition abandoned" | Climate investment critique |
+### Key Findings
+- **US Tariff Impact**: Document explicitly acknowledges downward GDP revision due to US tariff escalation — a significant admission of external vulnerability
+- **Bidragsreform**: Work requirement tightening as central supply-side measure
+- **Opposition Coordination**: Unusual 4-party reservation (S+V+C+MP) — broad left-centre coalition formation signal
 
-### Press Framing (Predicted)
+### Electoral Significance: HIGH
+This document is the primary battleground for the 2026 election economic narrative.
 
-| Outlet | Lean | Expected framing |
-|--------|------|-----------------|
-| Dagens Nyheter | Liberal-centre | "Riksbank credibility maintained despite political pressure" (HC01FiU24) |
-| Svenska Dagbladet | Centre-right | "Government economic guidelines realistic given headwinds" (HC01FiU20) |
-| Aftonbladet | Social-democratic | "Opposition reservation signals electoral coalition" (HC01FiU20) |
-| Expressen | Liberal | "Constitutional scrutiny exposes government accountability gap" (HC01KU20) |
-| Sydsvenskan | Liberal | "Youth leisure card: token policy or genuine reform?" (HC01SoU29) |
+### Confidence: HIGH [A1] — Full text retrieved
 
-### Narrative Battlegrounds
+### HC01FiU24
+<!-- source: documents/HC01FiU24-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/documents/HC01FiU24-analysis.md -->
 
-#### Battleground 1: Economic Competence
-- **Government narrative**: Responsible stewardship through external headwinds
-- **Opposition narrative**: Government failed to anticipate tariff risks; unemployment rising
-- **Evidence advantage**: Opposition — unemployment 8.7% is objectively high for Sweden
+### Summary
+HC01FiU24 is the Finance Committee's consideration of the external evaluation of Riksbank monetary policy 2022-2024, conducted by Vestman, Hassler, Krusell, and Kinnerud.
 
-#### Battleground 2: Welfare Reform
-- **Government**: Bidragsreform activates workers, reduces dependency
-- **Opposition**: Punitive toward vulnerable groups; S+V+C+MP united
-- **Evidence advantage**: Contested — depends on framing of affected populations
+### Key Findings
+- **KPIF performance**: Average 1.9% in 2024 — near 2% target; evaluators rate overall framework as sound
+- **Rate cut criticism**: Evaluators conclude Riksbank could have cut rates faster given inflation trajectory
+- **Long-term expectations**: Anchored at 2% — institutional credibility maintained
+- **Independence reaffirmed**: Committee found no political interference in monetary policy
 
-#### Battleground 3: Riksbank Independence
-- **Government**: HC01FiU24 vindicates monetary policy framework
-- **Opposition**: "Could have cut faster" = government-Riksbank coordination failure
-- **Evidence advantage**: Neutral — external evaluator critique is technical, not political
+### Electoral Significance: MEDIUM
+Technical document but "could cut faster" finding provides opposition with economic coordination critique.
 
-### Social Media Framing Signals
+### Confidence: HIGH [A1] — Full text retrieved
 
-- **#Fritidskortet**: Soft positive; government seeks youth engagement
-- **#Bidragsreform**: Highly contested; S/V mobilisation hashtag
-- **#Riksbanken**: Technical/low engagement unless rate decisions materialise
-- **#Grundlagen (KU)**: Niche constitutional audience; potential amplification by journalists
+### HC01KU20
+<!-- source: documents/HC01KU20-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/documents/HC01KU20-analysis.md -->
 
----
+### Summary
+HC01KU20 is the annual report from the Constitutional Committee (KU) on its scrutiny of government ministers' exercise of power and compliance with the Instrument of Government (Regeringsformen).
 
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff'}}}%%
-quadrantChart
-    title Narrative Influence vs. Emotional Salience
-    x-axis "Low Influence" --> "High Influence"
-    y-axis "Low Salience" --> "High Salience"
-    quadrant-1 High impact battleground
-    quadrant-2 Emotional mobilisation
-    quadrant-3 Low priority
-    quadrant-4 Technical debate
-    Bidragsreform: [0.8, 0.9]
-    Economic guidelines: [0.85, 0.7]
-    KU scrutiny: [0.55, 0.55]
-    Fritidskortet: [0.4, 0.65]
-    Riksbank evaluation: [0.65, 0.25]
-    F-skatt reform: [0.5, 0.4]
-```
+### Key Findings (from metadata)
+- Annual parliamentary accountability function
+- Reviews minister communications, decision-making, and adherence to constitutional norms
+- Historical pattern: Adverse findings rarely trigger censure but provide opposition with accountability narrative
+
+### Electoral Significance: MEDIUM-HIGH
+Opposition parties will cite any adverse findings in the 2026 campaign.
+
+### Confidence: MEDIUM [B2] — Metadata analysis only; full text not retrieved
+
+### HC01SkU18
+<!-- source: documents/HC01SkU18-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/documents/HC01SkU18-analysis.md -->
+
+### Summary
+HC01SkU18 concerns reform of the F-skatt (F-tax) system for self-employed individuals — simplifying administration and clarifying employment status rules.
+
+### Key Findings (from metadata)
+- F-skatt modernisation: reduces administrative burden for freelancers and entrepreneurs
+- Employment classification clarifications — addresses long-standing ambiguity
+- Cross-ideological appeal: M/KD/L government + C reservation suggests technical consensus possible
+
+### Electoral Significance: MEDIUM
+Targets SME/self-employed segment (est. 10% of voters); cross-ideological appeal.
+
+### Confidence: MEDIUM [B2] — Metadata analysis only; full text not retrieved
+
+### HC01SoU29
+<!-- source: documents/HC01SoU29-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/documents/HC01SoU29-analysis.md -->
+
+### Summary
+HC01SoU29 covers the Fritidskortet initiative — a government programme providing youth with access to leisure activities conditional on school attendance. Reflects cross-cutting youth/social policy.
+
+### Key Findings (from metadata)
+- Fritidskortet: Government seeks to link leisure access with school engagement
+- Municipal implementation as delivery mechanism
+- Conditional benefit model — potential eligibility questions
+
+### Electoral Significance: MEDIUM
+Youth voter engagement; soft positive policy story for government pre-election.
+
+### Confidence: MEDIUM [B2] — Metadata analysis only; full text not retrieved
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/stakeholder-perspectives.md -->
@@ -419,6 +430,156 @@ graph TD
     style KU fill:#0a0e27,stroke:#ffbe0b
     style INT fill:#1a1e3d,stroke:#ff006e
     style CS fill:#0a0e27,stroke:#00d9ff
+```
+
+## Coalition Mathematics
+<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/coalition-mathematics.md -->
+
+---
+
+### Current Riksdag Seat Distribution (2022-2026 Parliament)
+
+| Party | Seats | Bloc | Government Role |
+|-------|-------|------|----------------|
+| Socialdemokraterna (S) | 107 | Opposition | Largest opposition party |
+| Sverigedemokraterna (SD) | 73 | Tidö support | External support |
+| Moderaterna (M) | 68 | Tidö | Prime Minister's party |
+| Vänsterpartiet (V) | 24 | Opposition | Left opposition |
+| Centerpartiet (C) | 24 | Opposition/HC01FiU20 reservation | Liberal |
+| Kristdemokraterna (KD) | 19 | Tidö | Coalition partner |
+| Miljöpartiet (MP) | 18 | Opposition | Green |
+| Liberalerna (L) | 16 | Tidö | Coalition partner |
+| **Total** | **349** | | |
+
+*Majority threshold: 175 seats*
+
+### Government Support Arithmetic
+
+| Coalition component | Seats | Notes |
+|---------------------|-------|-------|
+| Moderaterna | 68 | PM Ulf Kristersson's party |
+| Kristdemokraterna | 19 | |
+| Liberalerna | 16 | |
+| **Government parties total** | **103** | Well below majority |
+| Sverigedemokraterna (support) | 73 | External support — not in cabinet |
+| **Tidö coalition total** | **176** | +1 majority threshold |
+
+### HC01FiU20 Vote Analysis (FiU Committee)
+
+The Finance Committee (FiU) voted to approve HC01FiU20 with four reservations from S, V, C, and MP. This committee vote structure:
+
+| Vote | Ja | Nej | Avstår | Frånvarande |
+|------|----|----|--------|-------------|
+| FiU20 approval | Coalition majority | — | 4 parties reservation | — |
+
+Note: Committee vote details not fully available — reservation structure confirmed from document text.
+
+### Pivotal Vote Analysis
+
+| Actor | Seats | Pivot role | HC01FiU20 position |
+|-------|-------|------------|-------------------|
+| SD | 73 | Critical kingmaker | Supports government |
+| C | 24 | Swing actor (opposition reservation) | Filed reservation on FiU20 |
+| L | 16 | Coalition weak link | Government party |
+
+### Sainte-Laguë Scenarios (2026 Election)
+
+**If S gains 10 seats from M**: S bloc reaches ~183, Tidö falls to ~166 → Opposition majority government possible
+**If SD gains 5 seats**: SD 78, but opposition bloc still dominant without centre cooperation
+**If MP clears threshold (currently 18 seats, threshold 4%)**: MP retention keeps opposition arithmetic viable
+
+---
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff'}}}%%
+graph LR
+    subgraph "Tidö Bloc (176)"
+    M["M: 68"]
+    SD["SD: 73"]
+    KD["KD: 19"]
+    L["L: 16"]
+    end
+    subgraph "Opposition (173)"
+    S["S: 107"]
+    V["V: 24"]
+    C["C: 24"]
+    MP["MP: 18"]
+    end
+    style M fill:#1a1e3d,stroke:#00d9ff
+    style SD fill:#1a1e3d,stroke:#ff006e
+    style KD fill:#0a0e27,stroke:#00d9ff
+    style L fill:#0a0e27,stroke:#00d9ff
+    style S fill:#0a0e27,stroke:#ff006e
+    style V fill:#0a0e27,stroke:#ff006e
+    style C fill:#1a1e3d,stroke:#ffbe0b
+    style MP fill:#1a1e3d,stroke:#00d9ff
+```
+
+## Voter Segmentation
+<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/voter-segmentation.md -->
+
+---
+
+### Segmentation Framework
+
+| Segment | Size (est.) | Key concern | Affected documents |
+|---------|------------|-------------|-------------------|
+| Manufacturing workers | 15% | Jobs, tariff impact | HC01FiU20 |
+| Upper-income homeowners | 12% | Interest rates, mortgage | HC01FiU24 |
+| Social welfare recipients | 18% | Bidragsreform | HC01FiU20, HC01SoU29 |
+| Youth (18-25) | 8% | Fritidskortet, unemployment | HC01SoU29 |
+| Small business / self-employed | 10% | F-skatt reform | HC01SkU18 |
+| Public sector workers | 14% | Budget consolidation | HC01FiU20 |
+| Environmental voters | 9% | Green transition pace | HC01MJU22 |
+| Constitutional law voters | 6% | Accountability | HC01KU20 |
+
+### Policy Impact by Segment
+
+#### Manufacturing Workers (HC01FiU20)
+- **Direct impact**: US tariffs threaten export-oriented manufacturing
+- **Economic guideline effect**: Unemployment projected 8.7% → 8.4% — slow improvement
+- **Political resonance**: S and LO historically own this segment; tariff framing benefits S
+
+#### Social Welfare Recipients (HC01FiU20 — Bidragsreform)
+- **Direct impact**: Work requirement tightening could reduce benefits
+- **Government framing**: Activation and labour supply improvement
+- **Opposition framing**: Punitive welfare reduction; S+V+MP joint reservation
+- **Electoral risk to government**: High if implementation is perceived as harsh in 2025-26
+
+#### Youth Voters (HC01SoU29 — Fritidskortet)
+- **Policy**: Fritidskortet gives youth access to leisure activities (conditional on school attendance)
+- **Electoral signal**: Government attempts to build youth policy narrative ahead of 2026
+- **Opposition view**: Positive reception but questions on administration and scope
+
+#### Small Business / Self-Employed (HC01SkU18 — F-skatt)
+- **Direct impact**: F-tax reform simplifies self-employment administration
+- **Electoral appeal**: 10% of voting population; cross-ideological appeal
+- **Government framing**: "Sweden business-friendly" narrative
+
+#### Environmental Voters (HC01MJU22)
+- **Direct impact**: Environmental committee report — not yet fully analysed
+- **Electoral sensitivity**: MP and Tidö-sceptical voters watching green transition pace
+- **Risk**: Slow green transition alienates critical swing segment
+
+### Geographic Segmentation
+
+| Region | Primary concern | Relevant reports |
+|--------|----------------|-----------------|
+| Stockholm | Housing costs, mortgage rates | HC01FiU24 |
+| Göteborg / West | Manufacturing, port trade | HC01FiU20 |
+| Norrland | Employment, regional welfare | HC01FiU20, HC01SoU29 |
+| Rural municipalities | F-skatt, small business | HC01SkU18 |
+
+---
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff'}}}%%
+xychart-beta
+    title "Segment Impact vs. Policy Risk Exposure"
+    x-axis ["Manufacturing", "Welfare", "Youth", "SME", "Environmental"]
+    y-axis "Impact Score (0-10)" 0 --> 10
+    bar [7, 9, 6, 7, 5]
+    line [8, 8, 5, 6, 6]
 ```
 
 ## Forward Indicators
@@ -582,6 +743,78 @@ graph LR
     style ELEC_A fill:#1a1e3d,stroke:#00d9ff
     style ELEC_B fill:#1a1e3d,stroke:#ffbe0b
     style ELEC_C fill:#1a1e3d,stroke:#ff006e
+```
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/election-2026-analysis.md -->
+
+---
+
+### Electoral Context
+
+Sweden's next general election is September 2026. These committee reports — particularly HC01FiU20 (economic guidelines) and HC01KU20 (constitutional scrutiny) — are primary electoral battleground documents.
+
+### Current Seat Projection (Based on Available Data)
+
+| Party | Current Seats | Trend | Coalition |
+|-------|--------------|-------|-----------|
+| Sverigedemokraterna (SD) | 73 | Stable | Tidö support |
+| Moderaterna (M) | 68 | Declining | Tidö |
+| Socialdemokraterna (S) | 107 | Rising | Opposition |
+| Vänsterpartiet (V) | 24 | Stable | Opposition |
+| Centerpartiet (C) | 24 | Stable | Opposition (reservation) |
+| Liberalerna (L) | 16 | Declining | Tidö |
+| Kristdemokraterna (KD) | 19 | Stable | Tidö |
+| Miljöpartiet (MP) | 18 | Rising | Opposition |
+
+*Note: Projections based on available polling context; exact current polling not available in this analysis session*
+
+### Coalition Mathematics
+
+#### Current Tidö Government Support
+- M (68) + SD (73) + KD (19) + L (16) = **176 seats** (needs 175 for majority in 349-seat Riksdag)
+- Majority margin: 1 seat — extremely vulnerable
+
+#### Potential Opposition Bloc (2026 formation signal from HC01FiU20 reservations)
+- S (107) + V (24) + C (24) + MP (18) = **173 seats** — short of majority
+- Requires: C or L crossing over, or new parties reaching threshold
+
+### Committee Reports Impact on 2026 Electoral Calculus
+
+#### HC01FiU20 Electoral Implications
+- **For government**: Must achieve GDP 1.9% and reduce unemployment from 8.7% — tall order
+- **For opposition**: Four-party reservation creates early manifesto signal
+- **Key variable**: Bidragsreform implementation — if perceived as harsh, galvanises S/V voter mobilisation
+
+#### HC01FiU24 Electoral Implications
+- Riksbank credibility maintained — neutral for electoral politics
+- But "could have cut faster" finding gives opposition a technical critique of government's monetary-fiscal coordination
+
+#### HC01KU20 Electoral Implications
+- Constitutional accountability findings could be weaponised by opposition
+- Historical pattern: KU adverse finding → minister resignation → newsworthy liability
+
+### Seat-Projection Deltas (Scenario-Adjusted)
+
+| Scenario | M | S | SD | Change |
+|----------|---|---|----|--------|
+| A: Recovery | +5 | -5 | Stable | Tidö advantage |
+| B: Stagnation | -10 | +10 | Stable | Opposition advantage |
+| C: Constitutional crisis | -5 | +8 | -3 | Opposition narrow majority |
+
+---
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff'}}}%%
+pie title 2026 Riksdag Seat Projection (indicative)
+    "S (107)" : 107
+    "SD (73)" : 73
+    "M (68)" : 68
+    "V (24)" : 24
+    "C (24)" : 24
+    "KD (19)" : 19
+    "MP (18)" : 18
+    "L (16)" : 16
 ```
 
 ## Risk Assessment
@@ -808,360 +1041,6 @@ graph TD
     style ELECT fill:#1a1e3d,stroke:#ff006e
 ```
 
-## Per-document intelligence
-
-### HC01FiU20
-<!-- source: documents/HC01FiU20-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/documents/HC01FiU20-analysis.md -->
-
-### Summary
-HC01FiU20 constitutes the Riksdag Finance Committee's report on the government's Spring Economic Bill (Vårpropositionen) — establishing economic policy direction for 2025. Key macroeconomic projections: GDP 1.9% (2025), 2.3% (2026); Unemployment 8.7% (2025), 8.4% (2026); KPIF around 2% target.
-
-### Key Findings
-- **US Tariff Impact**: Document explicitly acknowledges downward GDP revision due to US tariff escalation — a significant admission of external vulnerability
-- **Bidragsreform**: Work requirement tightening as central supply-side measure
-- **Opposition Coordination**: Unusual 4-party reservation (S+V+C+MP) — broad left-centre coalition formation signal
-
-### Electoral Significance: HIGH
-This document is the primary battleground for the 2026 election economic narrative.
-
-### Confidence: HIGH [A1] — Full text retrieved
-
-### HC01FiU24
-<!-- source: documents/HC01FiU24-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/documents/HC01FiU24-analysis.md -->
-
-### Summary
-HC01FiU24 is the Finance Committee's consideration of the external evaluation of Riksbank monetary policy 2022-2024, conducted by Vestman, Hassler, Krusell, and Kinnerud.
-
-### Key Findings
-- **KPIF performance**: Average 1.9% in 2024 — near 2% target; evaluators rate overall framework as sound
-- **Rate cut criticism**: Evaluators conclude Riksbank could have cut rates faster given inflation trajectory
-- **Long-term expectations**: Anchored at 2% — institutional credibility maintained
-- **Independence reaffirmed**: Committee found no political interference in monetary policy
-
-### Electoral Significance: MEDIUM
-Technical document but "could cut faster" finding provides opposition with economic coordination critique.
-
-### Confidence: HIGH [A1] — Full text retrieved
-
-### HC01KU20
-<!-- source: documents/HC01KU20-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/documents/HC01KU20-analysis.md -->
-
-### Summary
-HC01KU20 is the annual report from the Constitutional Committee (KU) on its scrutiny of government ministers' exercise of power and compliance with the Instrument of Government (Regeringsformen).
-
-### Key Findings (from metadata)
-- Annual parliamentary accountability function
-- Reviews minister communications, decision-making, and adherence to constitutional norms
-- Historical pattern: Adverse findings rarely trigger censure but provide opposition with accountability narrative
-
-### Electoral Significance: MEDIUM-HIGH
-Opposition parties will cite any adverse findings in the 2026 campaign.
-
-### Confidence: MEDIUM [B2] — Metadata analysis only; full text not retrieved
-
-### HC01SkU18
-<!-- source: documents/HC01SkU18-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/documents/HC01SkU18-analysis.md -->
-
-### Summary
-HC01SkU18 concerns reform of the F-skatt (F-tax) system for self-employed individuals — simplifying administration and clarifying employment status rules.
-
-### Key Findings (from metadata)
-- F-skatt modernisation: reduces administrative burden for freelancers and entrepreneurs
-- Employment classification clarifications — addresses long-standing ambiguity
-- Cross-ideological appeal: M/KD/L government + C reservation suggests technical consensus possible
-
-### Electoral Significance: MEDIUM
-Targets SME/self-employed segment (est. 10% of voters); cross-ideological appeal.
-
-### Confidence: MEDIUM [B2] — Metadata analysis only; full text not retrieved
-
-### HC01SoU29
-<!-- source: documents/HC01SoU29-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/documents/HC01SoU29-analysis.md -->
-
-### Summary
-HC01SoU29 covers the Fritidskortet initiative — a government programme providing youth with access to leisure activities conditional on school attendance. Reflects cross-cutting youth/social policy.
-
-### Key Findings (from metadata)
-- Fritidskortet: Government seeks to link leisure access with school engagement
-- Municipal implementation as delivery mechanism
-- Conditional benefit model — potential eligibility questions
-
-### Electoral Significance: MEDIUM
-Youth voter engagement; soft positive policy story for government pre-election.
-
-### Confidence: MEDIUM [B2] — Metadata analysis only; full text not retrieved
-
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/election-2026-analysis.md -->
-
----
-
-### Electoral Context
-
-Sweden's next general election is September 2026. These committee reports — particularly HC01FiU20 (economic guidelines) and HC01KU20 (constitutional scrutiny) — are primary electoral battleground documents.
-
-### Current Seat Projection (Based on Available Data)
-
-| Party | Current Seats | Trend | Coalition |
-|-------|--------------|-------|-----------|
-| Sverigedemokraterna (SD) | 73 | Stable | Tidö support |
-| Moderaterna (M) | 68 | Declining | Tidö |
-| Socialdemokraterna (S) | 107 | Rising | Opposition |
-| Vänsterpartiet (V) | 24 | Stable | Opposition |
-| Centerpartiet (C) | 24 | Stable | Opposition (reservation) |
-| Liberalerna (L) | 16 | Declining | Tidö |
-| Kristdemokraterna (KD) | 19 | Stable | Tidö |
-| Miljöpartiet (MP) | 18 | Rising | Opposition |
-
-*Note: Projections based on available polling context; exact current polling not available in this analysis session*
-
-### Coalition Mathematics
-
-#### Current Tidö Government Support
-- M (68) + SD (73) + KD (19) + L (16) = **176 seats** (needs 175 for majority in 349-seat Riksdag)
-- Majority margin: 1 seat — extremely vulnerable
-
-#### Potential Opposition Bloc (2026 formation signal from HC01FiU20 reservations)
-- S (107) + V (24) + C (24) + MP (18) = **173 seats** — short of majority
-- Requires: C or L crossing over, or new parties reaching threshold
-
-### Committee Reports Impact on 2026 Electoral Calculus
-
-#### HC01FiU20 Electoral Implications
-- **For government**: Must achieve GDP 1.9% and reduce unemployment from 8.7% — tall order
-- **For opposition**: Four-party reservation creates early manifesto signal
-- **Key variable**: Bidragsreform implementation — if perceived as harsh, galvanises S/V voter mobilisation
-
-#### HC01FiU24 Electoral Implications
-- Riksbank credibility maintained — neutral for electoral politics
-- But "could have cut faster" finding gives opposition a technical critique of government's monetary-fiscal coordination
-
-#### HC01KU20 Electoral Implications
-- Constitutional accountability findings could be weaponised by opposition
-- Historical pattern: KU adverse finding → minister resignation → newsworthy liability
-
-### Seat-Projection Deltas (Scenario-Adjusted)
-
-| Scenario | M | S | SD | Change |
-|----------|---|---|----|--------|
-| A: Recovery | +5 | -5 | Stable | Tidö advantage |
-| B: Stagnation | -10 | +10 | Stable | Opposition advantage |
-| C: Constitutional crisis | -5 | +8 | -3 | Opposition narrow majority |
-
----
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff'}}}%%
-pie title 2026 Riksdag Seat Projection (indicative)
-    "S (107)" : 107
-    "SD (73)" : 73
-    "M (68)" : 68
-    "V (24)" : 24
-    "C (24)" : 24
-    "KD (19)" : 19
-    "MP (18)" : 18
-    "L (16)" : 16
-```
-
-## Coalition Mathematics
-<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/coalition-mathematics.md -->
-
----
-
-### Current Riksdag Seat Distribution (2022-2026 Parliament)
-
-| Party | Seats | Bloc | Government Role |
-|-------|-------|------|----------------|
-| Socialdemokraterna (S) | 107 | Opposition | Largest opposition party |
-| Sverigedemokraterna (SD) | 73 | Tidö support | External support |
-| Moderaterna (M) | 68 | Tidö | Prime Minister's party |
-| Vänsterpartiet (V) | 24 | Opposition | Left opposition |
-| Centerpartiet (C) | 24 | Opposition/HC01FiU20 reservation | Liberal |
-| Kristdemokraterna (KD) | 19 | Tidö | Coalition partner |
-| Miljöpartiet (MP) | 18 | Opposition | Green |
-| Liberalerna (L) | 16 | Tidö | Coalition partner |
-| **Total** | **349** | | |
-
-*Majority threshold: 175 seats*
-
-### Government Support Arithmetic
-
-| Coalition component | Seats | Notes |
-|---------------------|-------|-------|
-| Moderaterna | 68 | PM Ulf Kristersson's party |
-| Kristdemokraterna | 19 | |
-| Liberalerna | 16 | |
-| **Government parties total** | **103** | Well below majority |
-| Sverigedemokraterna (support) | 73 | External support — not in cabinet |
-| **Tidö coalition total** | **176** | +1 majority threshold |
-
-### HC01FiU20 Vote Analysis (FiU Committee)
-
-The Finance Committee (FiU) voted to approve HC01FiU20 with four reservations from S, V, C, and MP. This committee vote structure:
-
-| Vote | Ja | Nej | Avstår | Frånvarande |
-|------|----|----|--------|-------------|
-| FiU20 approval | Coalition majority | — | 4 parties reservation | — |
-
-Note: Committee vote details not fully available — reservation structure confirmed from document text.
-
-### Pivotal Vote Analysis
-
-| Actor | Seats | Pivot role | HC01FiU20 position |
-|-------|-------|------------|-------------------|
-| SD | 73 | Critical kingmaker | Supports government |
-| C | 24 | Swing actor (opposition reservation) | Filed reservation on FiU20 |
-| L | 16 | Coalition weak link | Government party |
-
-### Sainte-Laguë Scenarios (2026 Election)
-
-**If S gains 10 seats from M**: S bloc reaches ~183, Tidö falls to ~166 → Opposition majority government possible
-**If SD gains 5 seats**: SD 78, but opposition bloc still dominant without centre cooperation
-**If MP clears threshold (currently 18 seats, threshold 4%)**: MP retention keeps opposition arithmetic viable
-
----
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff'}}}%%
-graph LR
-    subgraph "Tidö Bloc (176)"
-    M["M: 68"]
-    SD["SD: 73"]
-    KD["KD: 19"]
-    L["L: 16"]
-    end
-    subgraph "Opposition (173)"
-    S["S: 107"]
-    V["V: 24"]
-    C["C: 24"]
-    MP["MP: 18"]
-    end
-    style M fill:#1a1e3d,stroke:#00d9ff
-    style SD fill:#1a1e3d,stroke:#ff006e
-    style KD fill:#0a0e27,stroke:#00d9ff
-    style L fill:#0a0e27,stroke:#00d9ff
-    style S fill:#0a0e27,stroke:#ff006e
-    style V fill:#0a0e27,stroke:#ff006e
-    style C fill:#1a1e3d,stroke:#ffbe0b
-    style MP fill:#1a1e3d,stroke:#00d9ff
-```
-
-## Voter Segmentation
-<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/voter-segmentation.md -->
-
----
-
-### Segmentation Framework
-
-| Segment | Size (est.) | Key concern | Affected documents |
-|---------|------------|-------------|-------------------|
-| Manufacturing workers | 15% | Jobs, tariff impact | HC01FiU20 |
-| Upper-income homeowners | 12% | Interest rates, mortgage | HC01FiU24 |
-| Social welfare recipients | 18% | Bidragsreform | HC01FiU20, HC01SoU29 |
-| Youth (18-25) | 8% | Fritidskortet, unemployment | HC01SoU29 |
-| Small business / self-employed | 10% | F-skatt reform | HC01SkU18 |
-| Public sector workers | 14% | Budget consolidation | HC01FiU20 |
-| Environmental voters | 9% | Green transition pace | HC01MJU22 |
-| Constitutional law voters | 6% | Accountability | HC01KU20 |
-
-### Policy Impact by Segment
-
-#### Manufacturing Workers (HC01FiU20)
-- **Direct impact**: US tariffs threaten export-oriented manufacturing
-- **Economic guideline effect**: Unemployment projected 8.7% → 8.4% — slow improvement
-- **Political resonance**: S and LO historically own this segment; tariff framing benefits S
-
-#### Social Welfare Recipients (HC01FiU20 — Bidragsreform)
-- **Direct impact**: Work requirement tightening could reduce benefits
-- **Government framing**: Activation and labour supply improvement
-- **Opposition framing**: Punitive welfare reduction; S+V+MP joint reservation
-- **Electoral risk to government**: High if implementation is perceived as harsh in 2025-26
-
-#### Youth Voters (HC01SoU29 — Fritidskortet)
-- **Policy**: Fritidskortet gives youth access to leisure activities (conditional on school attendance)
-- **Electoral signal**: Government attempts to build youth policy narrative ahead of 2026
-- **Opposition view**: Positive reception but questions on administration and scope
-
-#### Small Business / Self-Employed (HC01SkU18 — F-skatt)
-- **Direct impact**: F-tax reform simplifies self-employment administration
-- **Electoral appeal**: 10% of voting population; cross-ideological appeal
-- **Government framing**: "Sweden business-friendly" narrative
-
-#### Environmental Voters (HC01MJU22)
-- **Direct impact**: Environmental committee report — not yet fully analysed
-- **Electoral sensitivity**: MP and Tidö-sceptical voters watching green transition pace
-- **Risk**: Slow green transition alienates critical swing segment
-
-### Geographic Segmentation
-
-| Region | Primary concern | Relevant reports |
-|--------|----------------|-----------------|
-| Stockholm | Housing costs, mortgage rates | HC01FiU24 |
-| Göteborg / West | Manufacturing, port trade | HC01FiU20 |
-| Norrland | Employment, regional welfare | HC01FiU20, HC01SoU29 |
-| Rural municipalities | F-skatt, small business | HC01SkU18 |
-
----
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff'}}}%%
-xychart-beta
-    title "Segment Impact vs. Policy Risk Exposure"
-    x-axis ["Manufacturing", "Welfare", "Youth", "SME", "Environmental"]
-    y-axis "Impact Score (0-10)" 0 --> 10
-    bar [7, 9, 6, 7, 5]
-    line [8, 8, 5, 6, 6]
-```
-
-## Comparative International
-<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/comparative-international.md -->
-
----
-
----
-
-### Comparator Matrix
-
-| Jurisdiction | GDP Growth 2025 | Inflation | Unemployment | Fiscal Stance | Political Context |
-|---|---|---|---|---|---|
-| **Sweden (SWE)** | 1.9% (HC01FiU20) | KPIF 1.9% (HC01FiU24) | 8.7% | Spring Bill — consolidation + household support | Coalition government; election 2026 |
-| **Denmark (DNK)** | ~2.4% (IMF WEO Apr-2026 est.) | ~2.1% | ~5.0% | Tight fiscal stance; defence spending increase | Centre-left government; stable |
-| **Norway (NOR)** | ~2.8% (oil-adjusted) | ~3.0% | ~3.8% | Petroleum fund buffer; active fiscal policy | Labour-led coalition |
-| **Finland (FIN)** | ~1.5% | ~2.0% | ~7.5% | Austerity programme; debt reduction priority | Coalition government; fiscal consolidation |
-| **Germany (DEU)** | ~0.4% (IMF WEO Apr-2026) | ~2.2% | ~5.8% | New government; post-debt-brake reform | Coalition (CDU/CSU+SPD) |
-| **EU Average** | ~1.3% | ~2.4% | ~6.1% | Stability Pact compliance pressure | Varied |
-
-### Outside-In Analysis
-
-#### Sweden vs. Denmark
-Denmark's lower unemployment (5.0%) and slightly higher growth (2.4%) provide the sharpest contrast to Sweden's trajectory. Danish labour market flexibility (flexicurity model) has delivered lower unemployment even in the tariff environment. **Intelligence implication**: Opposition parties (especially S) will use Danish flexicurity as a benchmark against Tidö's bidragsreform approach, arguing that activation requirements alone don't create jobs.
-
-#### Sweden vs. Norway
-Norway's fiscal buffer (petroleum fund) allows active counter-cyclical policy Sweden lacks. However, Norway's exposure to commodity price cycles creates its own vulnerabilities. Swedish monetary policy (HC01FiU24) is more comparable to ECB-adjacent Nordic peers than Norway's oil-dependent model.
-
-#### Sweden vs. Finland
-Finland's ongoing austerity creates the closest structural parallel to Sweden's fiscal consolidation path. Both face similar EU Stability Pact pressures and demographic welfare challenges. Finland's 7.5% unemployment is comparable to Sweden's projected 8.7%, suggesting common Nordic labour market stresses.
-
-#### Sweden vs. Germany
-Germany's near-stagnation (0.4% GDP growth) illustrates the worst-case scenario for export-dependent European economies under US tariff pressure. Sweden's 1.9% projection is comparatively resilient — but Germany's experience shows that trade dependency creates compounding risks. **Key difference**: Germany's new government has reformed the debt brake; Sweden's fiscal framework remains intact (HC01FiU20).
-
-### EU Institutional Context
-
-- **EU Stability Pact**: Sweden's fiscal guidelines (HC01FiU20) are framed as Stability Pact compliant. Spring Bill approach maintains deficit below 3% GDP threshold.
-- **EU Green Deal**: MKB directive implementation (HC01MJU22) is directly EU-mandated — compliance obligation, not political choice.
-- **EU Digital/Single Market**: Competitiveness agenda referenced in FiU20 aligns with EU Draghi Report recommendations.
-
----
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff'}}}%%
-xychart-beta
-    title "GDP Growth 2025 — Nordic + EU Comparison (IMF WEO Apr-2026)"
-    x-axis ["Sweden", "Denmark", "Norway", "Finland", "Germany", "EU avg"]
-    y-axis "GDP Growth %" 0 --> 3.5
-    bar [1.9, 2.4, 2.8, 1.5, 0.4, 1.3]
-```
-
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/historical-parallels.md -->
 
@@ -1226,6 +1105,55 @@ timeline
     2025 : US tariffs shock, FiU20 reservation, KU20 scrutiny
 ```
 
+## Comparative International
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/comparative-international.md -->
+
+---
+
+---
+
+### Comparator Matrix
+
+| Jurisdiction | GDP Growth 2025 | Inflation | Unemployment | Fiscal Stance | Political Context |
+|---|---|---|---|---|---|
+| **Sweden (SWE)** | 1.9% (HC01FiU20) | KPIF 1.9% (HC01FiU24) | 8.7% | Spring Bill — consolidation + household support | Coalition government; election 2026 |
+| **Denmark (DNK)** | ~2.4% (IMF WEO Apr-2026 est.) | ~2.1% | ~5.0% | Tight fiscal stance; defence spending increase | Centre-left government; stable |
+| **Norway (NOR)** | ~2.8% (oil-adjusted) | ~3.0% | ~3.8% | Petroleum fund buffer; active fiscal policy | Labour-led coalition |
+| **Finland (FIN)** | ~1.5% | ~2.0% | ~7.5% | Austerity programme; debt reduction priority | Coalition government; fiscal consolidation |
+| **Germany (DEU)** | ~0.4% (IMF WEO Apr-2026) | ~2.2% | ~5.8% | New government; post-debt-brake reform | Coalition (CDU/CSU+SPD) |
+| **EU Average** | ~1.3% | ~2.4% | ~6.1% | Stability Pact compliance pressure | Varied |
+
+### Outside-In Analysis
+
+#### Sweden vs. Denmark
+Denmark's lower unemployment (5.0%) and slightly higher growth (2.4%) provide the sharpest contrast to Sweden's trajectory. Danish labour market flexibility (flexicurity model) has delivered lower unemployment even in the tariff environment. **Intelligence implication**: Opposition parties (especially S) will use Danish flexicurity as a benchmark against Tidö's bidragsreform approach, arguing that activation requirements alone don't create jobs.
+
+#### Sweden vs. Norway
+Norway's fiscal buffer (petroleum fund) allows active counter-cyclical policy Sweden lacks. However, Norway's exposure to commodity price cycles creates its own vulnerabilities. Swedish monetary policy (HC01FiU24) is more comparable to ECB-adjacent Nordic peers than Norway's oil-dependent model.
+
+#### Sweden vs. Finland
+Finland's ongoing austerity creates the closest structural parallel to Sweden's fiscal consolidation path. Both face similar EU Stability Pact pressures and demographic welfare challenges. Finland's 7.5% unemployment is comparable to Sweden's projected 8.7%, suggesting common Nordic labour market stresses.
+
+#### Sweden vs. Germany
+Germany's near-stagnation (0.4% GDP growth) illustrates the worst-case scenario for export-dependent European economies under US tariff pressure. Sweden's 1.9% projection is comparatively resilient — but Germany's experience shows that trade dependency creates compounding risks. **Key difference**: Germany's new government has reformed the debt brake; Sweden's fiscal framework remains intact (HC01FiU20).
+
+### EU Institutional Context
+
+- **EU Stability Pact**: Sweden's fiscal guidelines (HC01FiU20) are framed as Stability Pact compliant. Spring Bill approach maintains deficit below 3% GDP threshold.
+- **EU Green Deal**: MKB directive implementation (HC01MJU22) is directly EU-mandated — compliance obligation, not political choice.
+- **EU Digital/Single Market**: Competitiveness agenda referenced in FiU20 aligns with EU Draghi Report recommendations.
+
+---
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff'}}}%%
+xychart-beta
+    title "GDP Growth 2025 — Nordic + EU Comparison (IMF WEO Apr-2026)"
+    x-axis ["Sweden", "Denmark", "Norway", "Finland", "Germany", "EU avg"]
+    y-axis "GDP Growth %" 0 --> 3.5
+    bar [1.9, 2.4, 2.8, 1.5, 0.4, 1.3]
+```
+
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/implementation-feasibility.md -->
 
@@ -1288,6 +1216,78 @@ flowchart TD
     style A fill:#1a1e3d,stroke:#00d9ff
     style C fill:#1a1e3d,stroke:#ff006e
     style D fill:#0a0e27,stroke:#ff006e
+```
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/media-framing-analysis.md -->
+
+---
+
+### Per-Party Framing
+
+| Party | Document | Framing strategy | Key message |
+|-------|----------|-----------------|-------------|
+| M (PM) | HC01FiU20 | "Responsible fiscal management" | Growth, work, order |
+| SD | HC01FiU20 | "Protecting Swedish workers" | Anti-immigration link to welfare |
+| KD | HC01FiU20 | "Family-centred economic security" | Stability emphasis |
+| L | HC01FiU20 | "Structural reform and enterprise" | Business-friendly framing |
+| S (opposition) | HC01FiU20 reservation | "Government hurts workers" | Unemployment + bidragsreform critique |
+| V | HC01FiU20 reservation | "Welfare state dismantling" | Left solidarity framing |
+| C | HC01FiU20 reservation | "Economic liberalism betrayed" | Missed deregulation opportunities |
+| MP | HC01FiU20 reservation | "Green transition abandoned" | Climate investment critique |
+
+### Press Framing (Predicted)
+
+| Outlet | Lean | Expected framing |
+|--------|------|-----------------|
+| Dagens Nyheter | Liberal-centre | "Riksbank credibility maintained despite political pressure" (HC01FiU24) |
+| Svenska Dagbladet | Centre-right | "Government economic guidelines realistic given headwinds" (HC01FiU20) |
+| Aftonbladet | Social-democratic | "Opposition reservation signals electoral coalition" (HC01FiU20) |
+| Expressen | Liberal | "Constitutional scrutiny exposes government accountability gap" (HC01KU20) |
+| Sydsvenskan | Liberal | "Youth leisure card: token policy or genuine reform?" (HC01SoU29) |
+
+### Narrative Battlegrounds
+
+#### Battleground 1: Economic Competence
+- **Government narrative**: Responsible stewardship through external headwinds
+- **Opposition narrative**: Government failed to anticipate tariff risks; unemployment rising
+- **Evidence advantage**: Opposition — unemployment 8.7% is objectively high for Sweden
+
+#### Battleground 2: Welfare Reform
+- **Government**: Bidragsreform activates workers, reduces dependency
+- **Opposition**: Punitive toward vulnerable groups; S+V+C+MP united
+- **Evidence advantage**: Contested — depends on framing of affected populations
+
+#### Battleground 3: Riksbank Independence
+- **Government**: HC01FiU24 vindicates monetary policy framework
+- **Opposition**: "Could have cut faster" = government-Riksbank coordination failure
+- **Evidence advantage**: Neutral — external evaluator critique is technical, not political
+
+### Social Media Framing Signals
+
+- **#Fritidskortet**: Soft positive; government seeks youth engagement
+- **#Bidragsreform**: Highly contested; S/V mobilisation hashtag
+- **#Riksbanken**: Technical/low engagement unless rate decisions materialise
+- **#Grundlagen (KU)**: Niche constitutional audience; potential amplification by journalists
+
+---
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff'}}}%%
+quadrantChart
+    title Narrative Influence vs. Emotional Salience
+    x-axis "Low Influence" --> "High Influence"
+    y-axis "Low Salience" --> "High Salience"
+    quadrant-1 High impact battleground
+    quadrant-2 Emotional mobilisation
+    quadrant-3 Low priority
+    quadrant-4 Technical debate
+    Bidragsreform: [0.8, 0.9]
+    Economic guidelines: [0.85, 0.7]
+    KU scrutiny: [0.55, 0.55]
+    Fritidskortet: [0.4, 0.65]
+    Riksbank evaluation: [0.65, 0.25]
+    F-skatt reform: [0.5, 0.4]
 ```
 
 ## Devil's Advocate
@@ -1677,24 +1677,24 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/threat-analysis.md)
 - [`documents/HC01FiU20-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/documents/HC01FiU20-analysis.md)
 - [`documents/HC01FiU24-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/documents/HC01FiU24-analysis.md)
 - [`documents/HC01KU20-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/documents/HC01KU20-analysis.md)
 - [`documents/HC01SkU18-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/documents/HC01SkU18-analysis.md)
 - [`documents/HC01SoU29-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/documents/HC01SoU29-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/committeeReports/cross-reference-map.md)

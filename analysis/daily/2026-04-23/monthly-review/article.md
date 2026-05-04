@@ -5,7 +5,7 @@ date: 2026-04-23
 subfolder: monthly-review
 slug: 2026-04-23-monthly-review
 source_folder: analysis/daily/2026-04-23/monthly-review
-generated_at: 2026-05-04T09:52:32.203Z
+generated_at: 2026-05-04T12:16:13.911Z
 language: en
 layout: article
 ---
@@ -96,10 +96,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -400,68 +400,190 @@ xychart-beta
     bar [9.5, 9.2, 8.5, 8.3, 8.0, 7.5, 7.2, 7.0, 6.8, 6.7]
 ```
 
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/media-framing-analysis.md -->
+## Per-document intelligence
 
----
+### HD01FiU48
+<!-- source: documents/HD01FiU48-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/documents/HD01FiU48-analysis.md -->
 
-### Governing Bloc Framing
+### Document Summary
 
-#### M (Moderaterna) — Fiscal Competence Frame
-**Core narrative**: "We manage Sweden's economy responsibly — HD03100 spring bill + HD01FiU48 household relief proves fiscal leadership."
-**Key messages**:
-1. "Household energy costs relieved — 82 öre/litre from May 1" (HD01FiU48)
-2. "Sweden's NATO commitment secured — 1,200 troops to Finland" (UFöU3)
-3. "Crime down — criminal deportation law enacted" (HD03235)
+HD01FiU48 is the Finance Committee's report authorising a temporary reduction in fuel excise tax of approximately 82 öre per litre effective May 1 through September 30, 2026. The measure provides direct household relief on transport energy costs.
 
-**Framing risk**: S's interpellation series (HD10442) targets Finance Minister Svantesson directly — court ruling potentially contradicting Svantesson's statements. M must counter with factual rebuttal.
+### Political Significance
 
-#### SD (Sverigedemokraterna) — Order and Identity Frame
-**Core narrative**: "SD delivers on immigration and enforcement — HD03235 is SD's biggest win in 2025/26."
-**Contradictory signal**: HD10429 interpellation against M's Strömmer on demonstrations — SD must reconcile "order" frame with civil-liberties dispute.
+This is the most politically significant enactment of April 2026. Passed with M+SD+S+KD majority — the opposition S party's tactical affirmative vote validates cross-spectrum appeal and creates an unusual cross-coalition consensus on a flagship economic measure.
 
-#### KD — Social-Christian Values Frame
-**Core narrative**: "Family, healthcare, Christian values — SoU17 R15 signals we will not accept healthcare cuts."
-**Framing vulnerability**: KD's SoU17 R15 reservation publicly distances KD from SD on healthcare — useful for KD differentiation but signals coalition fragility to voters.
+### Admiralty Assessment
 
----
+| Element | Value |
+|---------|-------|
+| Source reliability | A — Completely reliable (official Riksdag record) |
+| Information quality | 1 — Confirmed by multiple sources |
+| Confidence | **A1** |
 
-### Opposition Framing
+### Key Stakeholders
 
-#### S — Responsible Opposition Frame
-**Core narrative**: "We vote yes when it helps Swedes (FiU48), no when it hurts (SfU18/SoU16/SoU17). We are the responsible alternative."
-**Strategic advantage**: Cross-party FiU48 vote appears "statesmanlike." Simultaneous interpellation offensive (HD10442) maintains critical distance.
-**Key messages**:
-1. "Government undermines healthcare — 77 reservations are the evidence"
-2. "Finance Minister Svantesson misled the Riksdag" (HD10442 claim)
-3. "We supported fuel relief because Swedes needed it — not the government"
+- **Proponents**: M (fiscal relief), SD (voter cost-of-living), KD (family budgets), S (tactical)
+- **Opponents**: V and MP (environmental: petrol demand increase); L (abstained)
+- **Beneficiaries**: Swedish households — particularly rural and suburban car-dependent
 
-#### V — Progressive Flank Frame
-**Core narrative**: "S is too centrist — V is the party of real welfare state defence."
-**Risk**: If S moves to centre, V may lose voters who prefer a clear left alternative.
+### Policy Domain
 
-#### MP — Climate First Frame
-**Core narrative**: "HD024082 fuel counter-motion shows only MP puts climate first."
-**Risk**: FiU48 + S's yes vote signals climate concerns secondary to household costs — MP narrative is weakened.
+Fiscal / Energy / Household economics
 
-#### C — Market Liberal Pragmatist Frame
-**Core narrative**: "We support energy reform (HD03240 abstained on FiU48) and housing (HC023443) — we are the sensible centre."
-**Strategic opportunity**: C abstained on FiU48 — preserves both coalition and opposition options. C is the true pivot party.
+### Sources
 
----
+- https://data.riksdagen.se/dokument/HD01FiU48.html
+- HD01FiU48 Riksdagen committee report
 
-### Narrative Control Assessment
+### HD01SfU18
+<!-- source: documents/HD01SfU18-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/documents/HD01SfU18-analysis.md -->
 
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d'}}}%%
-xychart-beta
-    title "Media Narrative Strength by Party (April 2026)"
-    x-axis ["M", "SD", "KD", "L", "S", "V", "MP", "C"]
-    y-axis "Narrative strength (0-10)" 0 --> 10
-    bar [7, 7, 5, 5, 8, 6, 4, 6]
-```
+### Document Summary
 
-**Top finding**: S has the strongest current narrative (8/10) — responsible opposition + accountability offensive. M and SD tied at 7/10. MP weakest at 4/10 following FiU48 cross-party energy passage.
+HD01SfU18 is the Social Insurance Committee's report on social insurance reform. It contains 39 opposition reservations — the largest single-document reservation count in the 2025/26 riksmöte.
+
+### Political Significance
+
+39 reservations represent the primary documented evidence for the opposition's welfare-state attack narrative. Combined with SoU16 (20) and SoU17 (18), total 77 reservations.
+
+### Admiralty Assessment
+
+| Element | Value |
+|---------|-------|
+| Source reliability | A — Completely reliable |
+| Information quality | 1 — Confirmed |
+| Confidence | **A1** |
+
+### Sources
+
+- https://data.riksdagen.se/dokument/HD01SfU18.html
+
+### HD03100
+<!-- source: documents/HD03100-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/documents/HD03100-analysis.md -->
+
+### Document Summary
+
+HD03100 is the government's spring economic proposition — Vårproposition 2026. It contains the fiscal framework for 2026/27, including tax and expenditure adjustments.
+
+### Political Significance
+
+The spring economic bill is the government's central pre-election economic message. It establishes the fiscal space narrative for the September 2026 election.
+
+### Admiralty Assessment
+
+| Element | Value |
+|---------|-------|
+| Source reliability | A — Completely reliable |
+| Information quality | 1 — Confirmed |
+| Confidence | **A1** |
+
+### Sources
+
+- https://data.riksdagen.se/dokument/HD03100.html
+
+### HD03235
+<!-- source: documents/HD03235-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/documents/HD03235-analysis.md -->
+
+### Document Summary
+
+HD03235 extends criminal deportation rules — individuals convicted of serious crimes can face deportation even if granted Swedish residency/citizenship. This is a Tidöavtalet flagship delivery.
+
+### Political Significance
+
+SD's central immigration enforcement demand. High ECHR proportionality challenge risk (L×I: 15/25). Passed with M+SD majority.
+
+### Key Risk
+
+ECHR challenge timing is critical. An adverse ECHR ruling before September 13, 2026 would significantly harm SD and M's law-and-order narrative.
+
+### Admiralty Assessment
+
+| Element | Value |
+|---------|-------|
+| Source reliability | A — Completely reliable |
+| Information quality | 1 — Confirmed |
+| Confidence | **A1** |
+
+### Sources
+
+- https://data.riksdagen.se/dokument/HD03235.html
+
+### HD10429
+<!-- source: documents/HD10429-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/documents/HD10429-analysis.md -->
+
+**dok_id**: HD10429 | **Type**: Interpellation
+**From**: SD | **To**: Justice Minister Gunnar Strömmer (M)
+
+### Document Summary
+
+HD10429 is SD's interpellation challenging Justice Minister Strömmer on the Prop. 133 demonstration rights restriction. SD objects that the restrictions are too broad and may limit legitimate demonstrations.
+
+### Political Significance
+
+This is an unprecedented intra-coalition challenge — a support party formally interpellating a minister from the governing bloc. Signals SD's growing assertiveness and its potential to leverage formal parliamentary mechanisms.
+
+### Admiralty Assessment
+
+| Element | Value |
+|---------|-------|
+| Source reliability | A — Completely reliable |
+| Information quality | 1 — Confirmed |
+| Confidence | **A1** |
+
+### Sources
+
+- https://data.riksdagen.se/dokument/HD10429.html
+
+### HD10442
+<!-- source: documents/HD10442-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/documents/HD10442-analysis.md -->
+
+**dok_id**: HD10442 | **Type**: Interpellation
+**From**: S | **To**: Finance Minister Elisabeth Svantesson (M)
+
+### Document Summary
+
+HD10442 is one of S's 5 interpellations filed against Finance Minister Elisabeth Svantesson in a 48-hour period in April 2026. This interpellation concerns ätstörningsvård (eating disorder care) funding, citing a court ruling that potentially contradicts Svantesson's public statements.
+
+### Political Significance
+
+The five-interpellation series represents a coordinated accountability offensive. The eating disorder care angle — which resonates with healthcare narrative — adds emotional weight to a financial accountability argument.
+
+### Admiralty Assessment
+
+| Element | Value |
+|---------|-------|
+| Source reliability | A — Completely reliable |
+| Information quality | 1 — Confirmed |
+| Confidence | **A1** |
+
+### Sources
+
+- https://data.riksdagen.se/dokument/HD10442.html
+
+### UFöU3
+<!-- source: documents/UFöU3-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/documents/UFöU3-analysis.md -->
+
+### Document Summary
+
+UFöU3 authorises the deployment of 1,200 Swedish troops to NATO's Enhanced Forward Presence (eFP) battalion in Finland. This is Sweden's largest single military commitment since NATO accession in March 2024.
+
+### Political Significance
+
+UFöU3 represents Sweden's most significant NATO post-accession commitment. The broad parliamentary consensus (cross-party support anticipated) signals Sweden's credibility as a NATO ally.
+
+### Admiralty Assessment
+
+| Element | Value |
+|---------|-------|
+| Source reliability | A — Completely reliable |
+| Information quality | 1 — Confirmed |
+| Confidence | **A1** |
+
+### Sources
+
+- https://data.riksdagen.se/dokument/UFöU3.html
+- Riksdag committee report on defence deployment
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/stakeholder-perspectives.md -->
@@ -546,6 +668,138 @@ graph TD
 | MP | **LOSS** — outflanked on energy; climate narrative diluted by S's FiU48 vote | HD024082 vs FiU48 [A1] |
 | Swedish households | **WIN** — 82 öre/l petrol relief May–September 2026 | HD01FiU48 [A1] |
 | Ukraine accountability | **WIN** — HD03231 + HD03232 establish Sweden as serious rule-of-law actor | riksdagen.se [A2] |
+
+## Coalition Mathematics
+<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/coalition-mathematics.md -->
+
+---
+
+### Seat Distribution — Current Riksdag (2022 election result)
+
+| Party | Seats | Bloc | Notes |
+|-------|-------|------|-------|
+| S | 107 | Opposition | Largest party |
+| SD | 73 | Governing support | 2nd largest |
+| M | 68 | Governing | PM party |
+| V | 24 | Opposition | |
+| C | 24 | Opposition | Pivot party |
+| MP | 18 | Opposition | Below historical avg |
+| L | 16 | Governing | |
+| KD | 19 | Governing | Fragility risk |
+| **Total** | **349** | | |
+
+**Governing bloc (M+KD+L + SD support)**: 176 seats = majority by 1
+
+---
+
+### HD01FiU48 Vote Analysis — April 22, 2026
+
+| Party | Ja | Nej | Avstår | Absent | Notes |
+|-------|-----|-----|--------|--------|-------|
+| M | 68 | 0 | 0 | 0 | Governing — full support |
+| SD | 73 | 0 | 0 | 0 | Governing support — full support |
+| S | 107 | 0 | 0 | 0 | Opposition — tactical yes vote |
+| KD | 19 | 0 | 0 | 0 | Governing junior — full support |
+| L | 0 | 0 | 16 | 0 | Governing junior — abstained |
+| V | 0 | 24 | 0 | 0 | Opposition — no |
+| MP | 0 | 18 | 0 | 0 | Opposition — no |
+| C | 0 | 0 | 24 | 0 | Opposition — abstained |
+| **Total** | **267** | **42** | **40** | **0** | Result: PASSED |
+
+---
+
+### Pivotal Vote Table — Key Upcoming Votes
+
+| Vote | Date | Threshold | Required support | Governing bloc sufficient? |
+|------|------|-----------|-----------------|---------------------------|
+| UFöU3 NATO deployment | June 4, 2026 | 175 | M+SD+KD+L | Yes — 176 seats |
+| Autumn budget 2026/27 | September/October 2026 | 175 | M+SD+KD+L | Yes — IF KD stays |
+| HD01KU32 constitutional re-approval | Post-election | 175 | M+SD+KD+L or new majority | Depends on election |
+
+---
+
+### Coalition Fragility Map
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0'}}}%%
+graph TD
+    GOV["Governing majority: 176 seats<br/>Threshold: 175"]
+    M["M: 68 seats ✅"]
+    SD["SD: 73 seats ⚠️ (HD10429)"]
+    KD["KD: 19 seats ⚠️ (SoU17 R15)"]
+    L["L: 16 seats ✅"]
+    THRESHOLD["MAJORITY = 175"]
+    
+    GOV --> M
+    GOV --> SD
+    GOV --> KD
+    GOV --> L
+    GOV -->|"Margin: +1"| THRESHOLD
+    
+    RISK1["RISK: SD defection<br/>HD10429 demonstrations<br/>→ 103 seats only"]
+    RISK2["RISK: KD falls below 4%<br/>SoU17 R15 healthcare<br/>→ 157 seats only"]
+    RISK3["RISK: Both defect<br/>→ 84 seats — collapse"]
+    
+    SD -.->|"If defects"| RISK1
+    KD -.->|"If threshold miss"| RISK2
+    RISK1 -.-> RISK3
+    RISK2 -.-> RISK3
+    
+    style GOV fill:#00d9ff,stroke:#00d9ff,color:#000000
+    style M fill:#0057A8,stroke:#0057A8,color:#FFFFFF
+    style SD fill:#DDCC00,stroke:#DDCC00,color:#000000
+    style KD fill:#6D4C8E,stroke:#6D4C8E,color:#FFFFFF
+    style L fill:#006AB3,stroke:#006AB3,color:#FFFFFF
+    style THRESHOLD fill:#00d9ff,stroke:#00d9ff,color:#000000
+    style RISK1 fill:#F57C00,stroke:#F57C00,color:#FFFFFF
+    style RISK2 fill:#F57C00,stroke:#F57C00,color:#FFFFFF
+    style RISK3 fill:#ff006e,stroke:#ff006e,color:#FFFFFF
+```
+
+## Voter Segmentation
+<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/voter-segmentation.md -->
+
+---
+
+### Demographic Impact Analysis
+
+| Segment | Policy impact | Key document | Net effect | Electoral implication |
+|---------|--------------|--------------|-----------|----------------------|
+| Working families (car-dependent, suburban/rural) | +82 öre/l fuel relief | HD01FiU48 | **Positive** | Governing bloc +2–3% |
+| Healthcare workers / NHS patients | Welfare reform uncertainty | SfU18 + SoU17 | **Negative** | Opposition +1–2% |
+| Young adults (18–29) | Housing, demonstration rights | HC023443 + HD10429 | **Mixed** | Volatile — possible SD or C gain |
+| Pensioners | Social insurance reform | SfU18 SoU16 | **Uncertain** | High sensitivity to SfU18 changes |
+| Rural voters | Fuel relief + agricultural energy | HD01FiU48 + HD03240 | **Positive** | SD + M + C benefit |
+| Urban professionals | Civil liberties, climate | HD10429 + HD024082 | **Negative toward governing** | MP + S + L benefit |
+| Immigrants (naturalised citizens) | Criminal deportation extension | HD03235 | **Very negative** | S + V benefit |
+| Defence/security voters | NATO commitment | UFöU3 | **Positive** | Governing bloc + C benefit |
+
+---
+
+### Regional Analysis
+
+| Region | Key concerns | Governing bloc advantage | Opposition advantage |
+|--------|-------------|--------------------------|---------------------|
+| Norrland | Energy costs, rural transport | HD01FiU48 + HD03240 electricity | Healthcare access — SoU17 |
+| Stockholm | Housing, civil liberties, climate | N/A | MP + S + C |
+| Skåne | Immigration enforcement | HD03235 | N/A |
+| Västra Götaland | Manufacturing, energy costs | HD01FiU48 + energy package | Healthcare (regional council governance) |
+| Gotland / military regions | Defence, NATO | UFöU3 | N/A |
+
+---
+
+### Mobilisation Index
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d'}}}%%
+xychart-beta
+    title "Voter Mobilisation Potential by Issue (1=low, 10=high)"
+    x-axis ["Fuel Relief", "Healthcare", "Immigration", "NATO/Defence", "Housing", "Climate", "Civil Liberties"]
+    y-axis "Mobilisation potential" 0 --> 10
+    bar [8, 9, 7, 6, 7, 5, 6]
+```
+
+**Top insight**: Healthcare is the highest-mobilisation issue (9/10) and favours the opposition — this is the government's primary vulnerability heading into September 2026.
 
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/forward-indicators.md -->
@@ -739,6 +993,73 @@ gantt
     section S-4 Coalition Collapse
     Risk window — autumn budget :2026-06-01, 2026-08-31
 ```
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/election-2026-analysis.md -->
+
+---
+
+### Current Seat Projection (April 2026)
+
+| Party | Current seats (2022) | April 2026 projection | Change | Coalition |
+|-------|---------------------|----------------------|--------|---------|
+| M | 68 | 66–70 | ±2 | Governing |
+| SD | 73 | 74–80 | +4 | Governing support |
+| KD | 19 | 17–20 | ±2 | Governing |
+| L | 16 | 15–18 | ±2 | Governing |
+| **Total right bloc** | **176** | **172–188** | ±10 | Majority if ≥175 |
+| S | 107 | 100–108 | -3 | Opposition lead |
+| V | 24 | 22–25 | ±2 | Opposition |
+| MP | 18 | 15–19 | ±2 | Opposition |
+| C | 24 | 22–26 | ±2 | Opposition |
+| **Total left-centre bloc** | **173** | **159–178** | ±10 | Minority unless C |
+
+**Total Riksdag seats**: 349. **Majority threshold**: 175.
+
+---
+
+### Key Electoral Dynamics
+
+#### 1. SD Polarisation Effect
+
+SD at 73 seats is the second-largest party. If SD gains from HD03235 criminal deportation narrative, it could reach 78–80 seats — the most in Swedish electoral history. Counter-risk: ECHR adverse ruling diminishes SD's legal credibility on deportation.
+
+#### 2. KD Fragility
+
+KD's 19 seats in 2022 represents a historical minimum. SoU17 R15 healthcare fracture signals KD voters may migrate to M or S. If KD falls below 4% threshold: **governing bloc loses 19 seats** — potentially catastrophic.
+
+**KD threshold risk**: WEP: **Unlikely** but non-negligible (10%) if healthcare narrative dominates.
+
+#### 3. S's Strategic Position
+
+S at 107 seats needs C (24 seats) to form majority. C's position is ambiguous — market liberal, could support either bloc. S's FiU48 tactical vote signals S is willing to cooperate with right on energy — may attract C.
+
+**WEP**: **Roughly even** whether C supports S-led or M-led government.
+
+---
+
+### Coalition Viability Matrix
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0'}}}%%
+xychart-beta
+    title "Election 2026 — Projected Seats by Party"
+    x-axis ["S", "SD", "M", "V", "C", "KD", "MP", "L"]
+    y-axis "Projected seats" 0 --> 120
+    bar [104, 77, 68, 23, 24, 18, 17, 16]
+```
+
+---
+
+### Forward Electoral Indicators (April → September)
+
+| Indicator | Target | Current status | Risk if missed |
+|-----------|--------|----------------|----------------|
+| HD01FiU48 household relief effective | May 1 2026 | ENACTED — on track | N/A |
+| UFöU3 NATO deployment vote | June 4 2026 | Pending Chamber vote | Medium |
+| Autumn budget preview | August 2026 | Not yet announced | High — KD fracture |
+| KD polling floor | ≥5% | At risk per SoU17 fracture | Critical |
+| S-C coalition signal | Before August | Not yet signalled | Medium |
 
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/risk-assessment.md -->
@@ -1001,389 +1322,64 @@ graph TD
 
 **Government countermeasure**: Fast-track SoU committee recommendations; announce healthcare investment in autumn budget preview.
 
-## Per-document intelligence
-
-### HD01FiU48
-<!-- source: documents/HD01FiU48-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/documents/HD01FiU48-analysis.md -->
-
-### Document Summary
-
-HD01FiU48 is the Finance Committee's report authorising a temporary reduction in fuel excise tax of approximately 82 öre per litre effective May 1 through September 30, 2026. The measure provides direct household relief on transport energy costs.
-
-### Political Significance
-
-This is the most politically significant enactment of April 2026. Passed with M+SD+S+KD majority — the opposition S party's tactical affirmative vote validates cross-spectrum appeal and creates an unusual cross-coalition consensus on a flagship economic measure.
-
-### Admiralty Assessment
-
-| Element | Value |
-|---------|-------|
-| Source reliability | A — Completely reliable (official Riksdag record) |
-| Information quality | 1 — Confirmed by multiple sources |
-| Confidence | **A1** |
-
-### Key Stakeholders
-
-- **Proponents**: M (fiscal relief), SD (voter cost-of-living), KD (family budgets), S (tactical)
-- **Opponents**: V and MP (environmental: petrol demand increase); L (abstained)
-- **Beneficiaries**: Swedish households — particularly rural and suburban car-dependent
-
-### Policy Domain
-
-Fiscal / Energy / Household economics
-
-### Sources
-
-- https://data.riksdagen.se/dokument/HD01FiU48.html
-- HD01FiU48 Riksdagen committee report
-
-### HD01SfU18
-<!-- source: documents/HD01SfU18-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/documents/HD01SfU18-analysis.md -->
-
-### Document Summary
-
-HD01SfU18 is the Social Insurance Committee's report on social insurance reform. It contains 39 opposition reservations — the largest single-document reservation count in the 2025/26 riksmöte.
-
-### Political Significance
-
-39 reservations represent the primary documented evidence for the opposition's welfare-state attack narrative. Combined with SoU16 (20) and SoU17 (18), total 77 reservations.
-
-### Admiralty Assessment
-
-| Element | Value |
-|---------|-------|
-| Source reliability | A — Completely reliable |
-| Information quality | 1 — Confirmed |
-| Confidence | **A1** |
-
-### Sources
-
-- https://data.riksdagen.se/dokument/HD01SfU18.html
-
-### HD03100
-<!-- source: documents/HD03100-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/documents/HD03100-analysis.md -->
-
-### Document Summary
-
-HD03100 is the government's spring economic proposition — Vårproposition 2026. It contains the fiscal framework for 2026/27, including tax and expenditure adjustments.
-
-### Political Significance
-
-The spring economic bill is the government's central pre-election economic message. It establishes the fiscal space narrative for the September 2026 election.
-
-### Admiralty Assessment
-
-| Element | Value |
-|---------|-------|
-| Source reliability | A — Completely reliable |
-| Information quality | 1 — Confirmed |
-| Confidence | **A1** |
-
-### Sources
-
-- https://data.riksdagen.se/dokument/HD03100.html
-
-### HD03235
-<!-- source: documents/HD03235-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/documents/HD03235-analysis.md -->
-
-### Document Summary
-
-HD03235 extends criminal deportation rules — individuals convicted of serious crimes can face deportation even if granted Swedish residency/citizenship. This is a Tidöavtalet flagship delivery.
-
-### Political Significance
-
-SD's central immigration enforcement demand. High ECHR proportionality challenge risk (L×I: 15/25). Passed with M+SD majority.
-
-### Key Risk
-
-ECHR challenge timing is critical. An adverse ECHR ruling before September 13, 2026 would significantly harm SD and M's law-and-order narrative.
-
-### Admiralty Assessment
-
-| Element | Value |
-|---------|-------|
-| Source reliability | A — Completely reliable |
-| Information quality | 1 — Confirmed |
-| Confidence | **A1** |
-
-### Sources
-
-- https://data.riksdagen.se/dokument/HD03235.html
-
-### HD10429
-<!-- source: documents/HD10429-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/documents/HD10429-analysis.md -->
-
-**dok_id**: HD10429 | **Type**: Interpellation
-**From**: SD | **To**: Justice Minister Gunnar Strömmer (M)
-
-### Document Summary
-
-HD10429 is SD's interpellation challenging Justice Minister Strömmer on the Prop. 133 demonstration rights restriction. SD objects that the restrictions are too broad and may limit legitimate demonstrations.
-
-### Political Significance
-
-This is an unprecedented intra-coalition challenge — a support party formally interpellating a minister from the governing bloc. Signals SD's growing assertiveness and its potential to leverage formal parliamentary mechanisms.
-
-### Admiralty Assessment
-
-| Element | Value |
-|---------|-------|
-| Source reliability | A — Completely reliable |
-| Information quality | 1 — Confirmed |
-| Confidence | **A1** |
-
-### Sources
-
-- https://data.riksdagen.se/dokument/HD10429.html
-
-### HD10442
-<!-- source: documents/HD10442-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/documents/HD10442-analysis.md -->
-
-**dok_id**: HD10442 | **Type**: Interpellation
-**From**: S | **To**: Finance Minister Elisabeth Svantesson (M)
-
-### Document Summary
-
-HD10442 is one of S's 5 interpellations filed against Finance Minister Elisabeth Svantesson in a 48-hour period in April 2026. This interpellation concerns ätstörningsvård (eating disorder care) funding, citing a court ruling that potentially contradicts Svantesson's public statements.
-
-### Political Significance
-
-The five-interpellation series represents a coordinated accountability offensive. The eating disorder care angle — which resonates with healthcare narrative — adds emotional weight to a financial accountability argument.
-
-### Admiralty Assessment
-
-| Element | Value |
-|---------|-------|
-| Source reliability | A — Completely reliable |
-| Information quality | 1 — Confirmed |
-| Confidence | **A1** |
-
-### Sources
-
-- https://data.riksdagen.se/dokument/HD10442.html
-
-### UFöU3
-<!-- source: documents/UFöU3-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/documents/UFöU3-analysis.md -->
-
-### Document Summary
-
-UFöU3 authorises the deployment of 1,200 Swedish troops to NATO's Enhanced Forward Presence (eFP) battalion in Finland. This is Sweden's largest single military commitment since NATO accession in March 2024.
-
-### Political Significance
-
-UFöU3 represents Sweden's most significant NATO post-accession commitment. The broad parliamentary consensus (cross-party support anticipated) signals Sweden's credibility as a NATO ally.
-
-### Admiralty Assessment
-
-| Element | Value |
-|---------|-------|
-| Source reliability | A — Completely reliable |
-| Information quality | 1 — Confirmed |
-| Confidence | **A1** |
-
-### Sources
-
-- https://data.riksdagen.se/dokument/UFöU3.html
-- Riksdag committee report on defence deployment
-
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/election-2026-analysis.md -->
+## Historical Parallels
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/historical-parallels.md -->
 
 ---
 
-### Current Seat Projection (April 2026)
+### Parallel 1: Bildt Government Fiscal Consolidation (1991–94) — Direct Analogy
 
-| Party | Current seats (2022) | April 2026 projection | Change | Coalition |
-|-------|---------------------|----------------------|--------|---------|
-| M | 68 | 66–70 | ±2 | Governing |
-| SD | 73 | 74–80 | +4 | Governing support |
-| KD | 19 | 17–20 | ±2 | Governing |
-| L | 16 | 15–18 | ±2 | Governing |
-| **Total right bloc** | **176** | **172–188** | ±10 | Majority if ≥175 |
-| S | 107 | 100–108 | -3 | Opposition lead |
-| V | 24 | 22–25 | ±2 | Opposition |
-| MP | 18 | 15–19 | ±2 | Opposition |
-| C | 24 | 22–26 | ±2 | Opposition |
-| **Total left-centre bloc** | **173** | **159–178** | ±10 | Minority unless C |
+#### Summary
+Carl Bildt's (M) bourgeois four-party coalition (M+KD+FP+C) governed 1991–94. The coalition managed a severe banking crisis while delivering fiscal consolidation. The coalition fractured on several issues but survived to 1994 — only losing to S after three years.
 
-**Total Riksdag seats**: 349. **Majority threshold**: 175.
+#### Parallels to 2026
 
----
+| Dimension | Bildt 1991–94 | Kristersson 2022–26 |
+|-----------|--------------|---------------------|
+| Coalition structure | M-led + 3 junior parties | M-led + KD + L + SD support |
+| Fiscal challenge | Banking crisis consolidation | Post-COVID + energy shock recovery |
+| Social safety net conflict | FP vs. M on welfare cuts | KD vs. SD on healthcare (SoU17 R15) |
+| Pre-election positioning | 1994 election loss despite economic recovery | 2026 election — outcome pending |
+| Key differentiator | Currency crisis 1992 — interest rates to 500% | NATO accession — security narrative |
 
-### Key Electoral Dynamics
-
-#### 1. SD Polarisation Effect
-
-SD at 73 seats is the second-largest party. If SD gains from HD03235 criminal deportation narrative, it could reach 78–80 seats — the most in Swedish electoral history. Counter-risk: ECHR adverse ruling diminishes SD's legal credibility on deportation.
-
-#### 2. KD Fragility
-
-KD's 19 seats in 2022 represents a historical minimum. SoU17 R15 healthcare fracture signals KD voters may migrate to M or S. If KD falls below 4% threshold: **governing bloc loses 19 seats** — potentially catastrophic.
-
-**KD threshold risk**: WEP: **Unlikely** but non-negligible (10%) if healthcare narrative dominates.
-
-#### 3. S's Strategic Position
-
-S at 107 seats needs C (24 seats) to form majority. C's position is ambiguous — market liberal, could support either bloc. S's FiU48 tactical vote signals S is willing to cooperate with right on energy — may attract C.
-
-**WEP**: **Roughly even** whether C supports S-led or M-led government.
+**Lesson**: Even a competent fiscal manager can lose the election to a welfare-state narrative. Bildt's government lost in 1994 despite turning the budget around. Kristersson faces the same risk.
 
 ---
 
-### Coalition Viability Matrix
+### Parallel 2: Reinfeldt Alliance (2006–2014) — Success Model
 
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0'}}}%%
-xychart-beta
-    title "Election 2026 — Projected Seats by Party"
-    x-axis ["S", "SD", "M", "V", "C", "KD", "MP", "L"]
-    y-axis "Projected seats" 0 --> 120
-    bar [104, 77, 68, 23, 24, 18, 17, 16]
-```
+#### Summary
+Fredrik Reinfeldt's "Alliance" (M+KD+FP+C) governed for two terms (2006–10, 2010–14). Key achievement: "arbetslinjen" — lowering unemployment by reducing social insurance generosity. Reinfeldt's 2010 re-election (first in M history) came after clear economic messaging.
 
----
+#### Parallels to 2026
 
-### Forward Electoral Indicators (April → September)
+| Dimension | Reinfeldt 2006–14 | Kristersson 2022–26 |
+|-----------|-----------------|---------------------|
+| Fiscal messaging | "Arbetslinjen" — work pays | Fiscal consolidation + energy relief |
+| Social insurance reform | SfU committee reforms (2007–08) | SfU18 — 39 opposition reservations |
+| Healthcare | Regional care improvement narrative | SoU17 R15 — KD healthcare fracture |
+| Immigration policy | Pre-2015 liberal | Tidöavtalet restrictive |
+| Electoral margin | 2010: +1 seat majority | 2022: +1 seat majority |
 
-| Indicator | Target | Current status | Risk if missed |
-|-----------|--------|----------------|----------------|
-| HD01FiU48 household relief effective | May 1 2026 | ENACTED — on track | N/A |
-| UFöU3 NATO deployment vote | June 4 2026 | Pending Chamber vote | Medium |
-| Autumn budget preview | August 2026 | Not yet announced | High — KD fracture |
-| KD polling floor | ≥5% | At risk per SoU17 fracture | Critical |
-| S-C coalition signal | Before August | Not yet signalled | Medium |
-
-## Coalition Mathematics
-<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/coalition-mathematics.md -->
+**Lesson**: Reinfeldt won re-election with "arbetslinjen" despite similar welfare-state opposition criticism. Key was economic credibility. Kristersson's path mirrors this — but without S's vote at HD01FiU48, the cross-party validation is harder.
 
 ---
 
-### Seat Distribution — Current Riksdag (2022 election result)
+### Parallel 3: 2021 Löfven Government Crisis — Support-Party Leverage
 
-| Party | Seats | Bloc | Notes |
-|-------|-------|------|-------|
-| S | 107 | Opposition | Largest party |
-| SD | 73 | Governing support | 2nd largest |
-| M | 68 | Governing | PM party |
-| V | 24 | Opposition | |
-| C | 24 | Opposition | Pivot party |
-| MP | 18 | Opposition | Below historical avg |
-| L | 16 | Governing | |
-| KD | 19 | Governing | Fragility risk |
-| **Total** | **349** | | |
+#### Summary
+PM Stefan Löfven lost a vote of no confidence in June 2021 when SD + right-wing parties voted against the government. Löfven initially chose dissolution election, then resigned — Magdalena Andersson became PM. Lesson: support-party leverage can destabilise a minority government.
 
-**Governing bloc (M+KD+L + SD support)**: 176 seats = majority by 1
+#### Parallels to 2026
 
----
+| Dimension | Löfven 2021 | Kristersson 2026 |
+|-----------|------------|-----------------|
+| Vote of no confidence | SD + right bloc voted against | Could recur if SD defects |
+| Support party leverage | SD threatened to withdraw | SD's HD10429 interpellation signals leverage |
+| Constitutional trigger | No-confidence → dissolution or resign | No-confidence available if SD+S aligned |
+| Key difference | Löfven had left-bloc minority; Kristersson has explicit SD support | SD motivated to keep coalition alive |
 
-### HD01FiU48 Vote Analysis — April 22, 2026
-
-| Party | Ja | Nej | Avstår | Absent | Notes |
-|-------|-----|-----|--------|--------|-------|
-| M | 68 | 0 | 0 | 0 | Governing — full support |
-| SD | 73 | 0 | 0 | 0 | Governing support — full support |
-| S | 107 | 0 | 0 | 0 | Opposition — tactical yes vote |
-| KD | 19 | 0 | 0 | 0 | Governing junior — full support |
-| L | 0 | 0 | 16 | 0 | Governing junior — abstained |
-| V | 0 | 24 | 0 | 0 | Opposition — no |
-| MP | 0 | 18 | 0 | 0 | Opposition — no |
-| C | 0 | 0 | 24 | 0 | Opposition — abstained |
-| **Total** | **267** | **42** | **40** | **0** | Result: PASSED |
-
----
-
-### Pivotal Vote Table — Key Upcoming Votes
-
-| Vote | Date | Threshold | Required support | Governing bloc sufficient? |
-|------|------|-----------|-----------------|---------------------------|
-| UFöU3 NATO deployment | June 4, 2026 | 175 | M+SD+KD+L | Yes — 176 seats |
-| Autumn budget 2026/27 | September/October 2026 | 175 | M+SD+KD+L | Yes — IF KD stays |
-| HD01KU32 constitutional re-approval | Post-election | 175 | M+SD+KD+L or new majority | Depends on election |
-
----
-
-### Coalition Fragility Map
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'primaryTextColor': '#e0e0e0'}}}%%
-graph TD
-    GOV["Governing majority: 176 seats<br/>Threshold: 175"]
-    M["M: 68 seats ✅"]
-    SD["SD: 73 seats ⚠️ (HD10429)"]
-    KD["KD: 19 seats ⚠️ (SoU17 R15)"]
-    L["L: 16 seats ✅"]
-    THRESHOLD["MAJORITY = 175"]
-    
-    GOV --> M
-    GOV --> SD
-    GOV --> KD
-    GOV --> L
-    GOV -->|"Margin: +1"| THRESHOLD
-    
-    RISK1["RISK: SD defection<br/>HD10429 demonstrations<br/>→ 103 seats only"]
-    RISK2["RISK: KD falls below 4%<br/>SoU17 R15 healthcare<br/>→ 157 seats only"]
-    RISK3["RISK: Both defect<br/>→ 84 seats — collapse"]
-    
-    SD -.->|"If defects"| RISK1
-    KD -.->|"If threshold miss"| RISK2
-    RISK1 -.-> RISK3
-    RISK2 -.-> RISK3
-    
-    style GOV fill:#00d9ff,stroke:#00d9ff,color:#000000
-    style M fill:#0057A8,stroke:#0057A8,color:#FFFFFF
-    style SD fill:#DDCC00,stroke:#DDCC00,color:#000000
-    style KD fill:#6D4C8E,stroke:#6D4C8E,color:#FFFFFF
-    style L fill:#006AB3,stroke:#006AB3,color:#FFFFFF
-    style THRESHOLD fill:#00d9ff,stroke:#00d9ff,color:#000000
-    style RISK1 fill:#F57C00,stroke:#F57C00,color:#FFFFFF
-    style RISK2 fill:#F57C00,stroke:#F57C00,color:#FFFFFF
-    style RISK3 fill:#ff006e,stroke:#ff006e,color:#FFFFFF
-```
-
-## Voter Segmentation
-<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/voter-segmentation.md -->
-
----
-
-### Demographic Impact Analysis
-
-| Segment | Policy impact | Key document | Net effect | Electoral implication |
-|---------|--------------|--------------|-----------|----------------------|
-| Working families (car-dependent, suburban/rural) | +82 öre/l fuel relief | HD01FiU48 | **Positive** | Governing bloc +2–3% |
-| Healthcare workers / NHS patients | Welfare reform uncertainty | SfU18 + SoU17 | **Negative** | Opposition +1–2% |
-| Young adults (18–29) | Housing, demonstration rights | HC023443 + HD10429 | **Mixed** | Volatile — possible SD or C gain |
-| Pensioners | Social insurance reform | SfU18 SoU16 | **Uncertain** | High sensitivity to SfU18 changes |
-| Rural voters | Fuel relief + agricultural energy | HD01FiU48 + HD03240 | **Positive** | SD + M + C benefit |
-| Urban professionals | Civil liberties, climate | HD10429 + HD024082 | **Negative toward governing** | MP + S + L benefit |
-| Immigrants (naturalised citizens) | Criminal deportation extension | HD03235 | **Very negative** | S + V benefit |
-| Defence/security voters | NATO commitment | UFöU3 | **Positive** | Governing bloc + C benefit |
-
----
-
-### Regional Analysis
-
-| Region | Key concerns | Governing bloc advantage | Opposition advantage |
-|--------|-------------|--------------------------|---------------------|
-| Norrland | Energy costs, rural transport | HD01FiU48 + HD03240 electricity | Healthcare access — SoU17 |
-| Stockholm | Housing, civil liberties, climate | N/A | MP + S + C |
-| Skåne | Immigration enforcement | HD03235 | N/A |
-| Västra Götaland | Manufacturing, energy costs | HD01FiU48 + energy package | Healthcare (regional council governance) |
-| Gotland / military regions | Defence, NATO | UFöU3 | N/A |
-
----
-
-### Mobilisation Index
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d'}}}%%
-xychart-beta
-    title "Voter Mobilisation Potential by Issue (1=low, 10=high)"
-    x-axis ["Fuel Relief", "Healthcare", "Immigration", "NATO/Defence", "Housing", "Climate", "Civil Liberties"]
-    y-axis "Mobilisation potential" 0 --> 10
-    bar [8, 9, 7, 6, 7, 5, 6]
-```
-
-**Top insight**: Healthcare is the highest-mobilisation issue (9/10) and favours the opposition — this is the government's primary vulnerability heading into September 2026.
+**Lesson**: SD demonstrated in 2021 that it would use formal parliamentary mechanisms. HD10429 interpellation is a lower-severity version of the same leverage play.
 
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/comparative-international.md -->
@@ -1469,65 +1465,6 @@ quadrantChart
 
 **Conclusion**: Sweden's coalition stability is on par with Finland's comparable right-wing government. The key vulnerability relative to Denmark is healthcare investment — the dimension where S can differentiate.
 
-## Historical Parallels
-<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/historical-parallels.md -->
-
----
-
-### Parallel 1: Bildt Government Fiscal Consolidation (1991–94) — Direct Analogy
-
-#### Summary
-Carl Bildt's (M) bourgeois four-party coalition (M+KD+FP+C) governed 1991–94. The coalition managed a severe banking crisis while delivering fiscal consolidation. The coalition fractured on several issues but survived to 1994 — only losing to S after three years.
-
-#### Parallels to 2026
-
-| Dimension | Bildt 1991–94 | Kristersson 2022–26 |
-|-----------|--------------|---------------------|
-| Coalition structure | M-led + 3 junior parties | M-led + KD + L + SD support |
-| Fiscal challenge | Banking crisis consolidation | Post-COVID + energy shock recovery |
-| Social safety net conflict | FP vs. M on welfare cuts | KD vs. SD on healthcare (SoU17 R15) |
-| Pre-election positioning | 1994 election loss despite economic recovery | 2026 election — outcome pending |
-| Key differentiator | Currency crisis 1992 — interest rates to 500% | NATO accession — security narrative |
-
-**Lesson**: Even a competent fiscal manager can lose the election to a welfare-state narrative. Bildt's government lost in 1994 despite turning the budget around. Kristersson faces the same risk.
-
----
-
-### Parallel 2: Reinfeldt Alliance (2006–2014) — Success Model
-
-#### Summary
-Fredrik Reinfeldt's "Alliance" (M+KD+FP+C) governed for two terms (2006–10, 2010–14). Key achievement: "arbetslinjen" — lowering unemployment by reducing social insurance generosity. Reinfeldt's 2010 re-election (first in M history) came after clear economic messaging.
-
-#### Parallels to 2026
-
-| Dimension | Reinfeldt 2006–14 | Kristersson 2022–26 |
-|-----------|-----------------|---------------------|
-| Fiscal messaging | "Arbetslinjen" — work pays | Fiscal consolidation + energy relief |
-| Social insurance reform | SfU committee reforms (2007–08) | SfU18 — 39 opposition reservations |
-| Healthcare | Regional care improvement narrative | SoU17 R15 — KD healthcare fracture |
-| Immigration policy | Pre-2015 liberal | Tidöavtalet restrictive |
-| Electoral margin | 2010: +1 seat majority | 2022: +1 seat majority |
-
-**Lesson**: Reinfeldt won re-election with "arbetslinjen" despite similar welfare-state opposition criticism. Key was economic credibility. Kristersson's path mirrors this — but without S's vote at HD01FiU48, the cross-party validation is harder.
-
----
-
-### Parallel 3: 2021 Löfven Government Crisis — Support-Party Leverage
-
-#### Summary
-PM Stefan Löfven lost a vote of no confidence in June 2021 when SD + right-wing parties voted against the government. Löfven initially chose dissolution election, then resigned — Magdalena Andersson became PM. Lesson: support-party leverage can destabilise a minority government.
-
-#### Parallels to 2026
-
-| Dimension | Löfven 2021 | Kristersson 2026 |
-|-----------|------------|-----------------|
-| Vote of no confidence | SD + right bloc voted against | Could recur if SD defects |
-| Support party leverage | SD threatened to withdraw | SD's HD10429 interpellation signals leverage |
-| Constitutional trigger | No-confidence → dissolution or resign | No-confidence available if SD+S aligned |
-| Key difference | Löfven had left-bloc minority; Kristersson has explicit SD support | SD motivated to keep coalition alive |
-
-**Lesson**: SD demonstrated in 2021 that it would use formal parliamentary mechanisms. HD10429 interpellation is a lower-severity version of the same leverage play.
-
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/implementation-feasibility.md -->
 
@@ -1585,6 +1522,69 @@ quadrantChart
 **Owner**: Försäkringskassan
 **Risk**: HIGH — 39 reservations suggest political pressure to revise
 **Monitoring indicator**: Government announcement of implementation date before/after election
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/media-framing-analysis.md -->
+
+---
+
+### Governing Bloc Framing
+
+#### M (Moderaterna) — Fiscal Competence Frame
+**Core narrative**: "We manage Sweden's economy responsibly — HD03100 spring bill + HD01FiU48 household relief proves fiscal leadership."
+**Key messages**:
+1. "Household energy costs relieved — 82 öre/litre from May 1" (HD01FiU48)
+2. "Sweden's NATO commitment secured — 1,200 troops to Finland" (UFöU3)
+3. "Crime down — criminal deportation law enacted" (HD03235)
+
+**Framing risk**: S's interpellation series (HD10442) targets Finance Minister Svantesson directly — court ruling potentially contradicting Svantesson's statements. M must counter with factual rebuttal.
+
+#### SD (Sverigedemokraterna) — Order and Identity Frame
+**Core narrative**: "SD delivers on immigration and enforcement — HD03235 is SD's biggest win in 2025/26."
+**Contradictory signal**: HD10429 interpellation against M's Strömmer on demonstrations — SD must reconcile "order" frame with civil-liberties dispute.
+
+#### KD — Social-Christian Values Frame
+**Core narrative**: "Family, healthcare, Christian values — SoU17 R15 signals we will not accept healthcare cuts."
+**Framing vulnerability**: KD's SoU17 R15 reservation publicly distances KD from SD on healthcare — useful for KD differentiation but signals coalition fragility to voters.
+
+---
+
+### Opposition Framing
+
+#### S — Responsible Opposition Frame
+**Core narrative**: "We vote yes when it helps Swedes (FiU48), no when it hurts (SfU18/SoU16/SoU17). We are the responsible alternative."
+**Strategic advantage**: Cross-party FiU48 vote appears "statesmanlike." Simultaneous interpellation offensive (HD10442) maintains critical distance.
+**Key messages**:
+1. "Government undermines healthcare — 77 reservations are the evidence"
+2. "Finance Minister Svantesson misled the Riksdag" (HD10442 claim)
+3. "We supported fuel relief because Swedes needed it — not the government"
+
+#### V — Progressive Flank Frame
+**Core narrative**: "S is too centrist — V is the party of real welfare state defence."
+**Risk**: If S moves to centre, V may lose voters who prefer a clear left alternative.
+
+#### MP — Climate First Frame
+**Core narrative**: "HD024082 fuel counter-motion shows only MP puts climate first."
+**Risk**: FiU48 + S's yes vote signals climate concerns secondary to household costs — MP narrative is weakened.
+
+#### C — Market Liberal Pragmatist Frame
+**Core narrative**: "We support energy reform (HD03240 abstained on FiU48) and housing (HC023443) — we are the sensible centre."
+**Strategic opportunity**: C abstained on FiU48 — preserves both coalition and opposition options. C is the true pivot party.
+
+---
+
+### Narrative Control Assessment
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d'}}}%%
+xychart-beta
+    title "Media Narrative Strength by Party (April 2026)"
+    x-axis ["M", "SD", "KD", "L", "S", "V", "MP", "C"]
+    y-axis "Narrative strength (0-10)" 0 --> 10
+    bar [7, 7, 5, 5, 8, 6, 4, 6]
+```
+
+**Top finding**: S has the strongest current narrative (8/10) — responsible opposition + accountability offensive. M and SD tied at 7/10. MP weakest at 4/10 following FiU48 cross-party energy passage.
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/devils-advocate.md -->
@@ -1992,13 +1992,6 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/threat-analysis.md)
 - [`documents/HD01FiU48-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/documents/HD01FiU48-analysis.md)
 - [`documents/HD01SfU18-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/documents/HD01SfU18-analysis.md)
 - [`documents/HD03100-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/documents/HD03100-analysis.md)
@@ -2006,12 +1999,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`documents/HD10429-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/documents/HD10429-analysis.md)
 - [`documents/HD10442-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/documents/HD10442-analysis.md)
 - [`documents/UFöU3-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/documents/UFöU3-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/monthly-review/cross-reference-map.md)

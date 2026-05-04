@@ -5,7 +5,7 @@ date: 2026-04-29
 subfolder: committeeReports
 slug: 2026-04-29-committeeReports
 source_folder: analysis/daily/2026-04-29/committeeReports
-generated_at: 2026-05-04T09:52:32.470Z
+generated_at: 2026-05-04T12:16:14.158Z
 language: en
 layout: article
 ---
@@ -85,10 +85,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -273,520 +273,6 @@ xychart-beta
 ### Retention Classification
 
 All documents retain for 36 months minimum; HD01SfU28 retains for 60 months (citizenship policy, election-year legislative record); HD01FöU20 and HD01FöU14 retain for 60 months (national security significance).
-
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/media-framing-analysis.md -->
-
-### Expected Primary Frames (Anticipated Coverage)
-
-#### Frame F1 — "Integration Policy Showdown" (HIGH probability)
-
-**Source**: Mainstream national media (Dagens Nyheter, Svenska Dagbladet, SVT, SR)  
-**Trigger document**: HD01SfU28 (citizenship requirements)  
-**Narrative structure**: Government tightens citizenship; opposition files 10 reservations; election context makes this a signature issue; voter reactions divided.
-
-**Expected headline variants**:
-- DN: "Riksdagen stärker kraven för medborgarskap — oppositionen ryter ifrån"
-- SvD: "Tidöregeringen drivs igenom medborgarskapskrav mot kraftigt motstånd"
-- Aftonbladet: "Nya reglerna ska stoppa medborgarskap — experter varnar"
-- SVT Nyheter: "Skärpta krav för medborgarskap — vad innebär det för dig?"
-
-**Risk for government**: Frame can be tilted to "government punishes immigrants" narrative. SVT's approach (informative, individual impact) may generate more politically damaging content than polemical opposition criticism.
-
-#### Frame F2 — "Sweden Strengthens Defences" (MODERATE probability)
-
-**Source**: Mainstream plus defence correspondents  
-**Trigger documents**: HD01FöU20 (CER), HD01FöU14 (military cooperation)  
-**Narrative structure**: Sweden advances security legislation aligned with NATO commitments and EU critical infrastructure protection.
-
-**Analytical note**: This frame reinforces government's strongest policy terrain (security). Minimal opposition, so media will focus on government delivery narrative. Low controversy = low news value = moderate, not high, coverage probability.
-
-#### Frame F3 — "Budget Discipline vs. Human Cost" (MODERATE probability)
-
-**Source**: Social affairs media, union press (LO-Tidningen, Kommunalarbetaren)  
-**Trigger documents**: HD01SoU27 (social data registry), HD01SkU22 (VAT fraud)  
-**Narrative structure**: Social registry creates surveillance concerns for vulnerable groups; VAT enforcement targets business "fraud" but may ensnare legitimate SMEs.
-
-#### Frame F4 — "EU Compliance Machinery" (LOW probability)
-
-**Source**: Business/economic press (DI, Realtid)  
-**Trigger documents**: HD01FiU44 (ESAP), HD01SkU22 (VAT), HD01FöU20 (CER)  
-**Narrative structure**: Sweden advances EU-mandated legislation across finance, tax, and infrastructure sectors. Framed as EU member state obligation fulfilment.
-
-**Note**: Low news value for general audiences; HIGH value for business/finance audience. DI and Realtid will likely cover FiU44 and SkU22.
-
-### Social Media Framing Dynamics
-
-#### HD01SfU28 — Social Media Risk Profile: HIGH
-
-- Twitter/X: Likely dominated by migration-focused accounts on both sides; hashtag #medborgarskap probable
-- Instagram/TikTok: Individual impact stories ("my Swedish citizenship application affected") likely from affected communities — high emotional resonance
-- Counter-campaign likely from anti-racism civil society organisations
-
-#### Vulnerability Assessment: Government
-
-The government's primary vulnerability is individual impact stories generated by implementation of HD01SfU28. Cases where a long-term resident (15+ years) who failed a language test loses citizenship eligibility will be magnified by social media and picked up by national news. This is the most likely source of negative media spiral.
-
-#### Counter-narrative Opportunities
-
-Government can pre-empt by emphasising: (a) grandfather provisions (if present), (b) transition period for existing applicants, (c) clarity and predictability for integration path. None of these are confirmed from available betänkande text — if absent, vulnerability increases significantly.
-
-### International Media
-
-**Expected international coverage**: Minimal, unless ECtHR challenge filed simultaneously with plenary vote (would generate EU-level story).  
-**AFP/Reuters watch**: "Sweden tightens citizenship rules ahead of election" — brief wire story likely, amplified via EU media monitoring networks (ECRI, FRA).
-
-### Media Influence Network
-
-| Actor | Outlet | Estimated reach | Framing bias |
-|-------|--------|----------------|-------------|
-| DN Political Editor | Dagens Nyheter | 300K readers | Centrist analytical |
-| SVT Nyheter | Public broadcaster | 2M viewers (evening) | Balanced, impact-focused |
-| Aftonbladet online | Tabloid | 4M monthly UVs | Social justice lean |
-| SvD | Svenska Dagbladet | 200K readers | Centre-right analytical |
-| SR Studio Ett | Radio | 500K listeners | Balanced |
-| Dagens Industri | Business press | 150K readers | Business, neutral |
-
-## Stakeholder Perspectives
-<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/stakeholder-perspectives.md -->
-
-### 6-Lens Stakeholder Matrix
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0"}}}%%
-flowchart LR
-    GOV["🏛️ Government\nM+SD+KD+L\nTidö Coalition"]
-    OPP["⚔️ Opposition\nS+V+C+MP"]
-    CIV["👥 Civil Society\nMigrants, NGOs\nCivil Liberties"]
-    IND["🏭 Industry\nCritical Infra\nSMEs, Tech"]
-    EU["🇪🇺 EU/Intl\nCommission\nNATO"]
-    MED["📰 Media\nMainstream + Alt"]
-    GOV --> CIV
-    GOV --> IND
-    GOV --> EU
-    OPP --> CIV
-    OPP --> MED
-    style GOV fill:#1a5e20,color:#fff
-    style OPP fill:#6b0f1a,color:#fff
-    style CIV fill:#1a3d5c,color:#fff
-    style IND fill:#3d2b00,color:#fff
-    style EU fill:#00336e,color:#fff
-    style MED fill:#4a1942,color:#fff
-```
-
-### Lens 1: Government (Tidö Coalition — M+SD+KD+L)
-
-**Primary interest**: Advance integration-security agenda before September 2026 election; demonstrate EU compliance capability; consolidate right-bloc voter base.
-
-**Position on key documents**:
-- HD01SfU28: Viktor Wärnick (M, SfU chair) leads committee approval; government presents citizenship tightening as necessary modernisation
-- HD01FöU20: FöU advances CER Directive — government frames as critical security upgrade
-- HD01FöU14: Military cooperation — government frames as NATO integration deepening
-
-**Named actors**: Viktor Wärnick (M) SfU chair [A1]; Joar Forssell (L) UbU chair [A1]; Christian Carlsson (KD) SoU chair [A1]; Niklas Karlsson (S opposition) SkU [A1]
-
-### Lens 2: Opposition Bloc (S+V+C+MP)
-
-**Primary interest**: Electoral differentiation ahead of September 2026; protect voter segments (workers, migrants, civil liberties advocates, progressive urbanites).
-
-**Differentiated positions**:
-- **S (Socialdemokraterna)**: Ida Karkiainen (SfU) reserves on implementation fairness, income requirement, oversight — targets working-class immigrant constituency
-- **V (Vänsterpartiet)**: Tony Haddou (SfU) reserves on principle and children's rights — targets radical-left base
-- **C (Centerpartiet)**: Niels Paarup-Petersen (SfU) reserves on proportionality and grace period — targets liberal economic constituency
-- **MP (Miljöpartiet)**: Annika Hirvonen (SfU) reserves on principle and age requirements — targets urban progressive constituency
-
-**Notable**: C also files special statement on HD01SoU27 (social data, personal integrity) [A1]
-
-### Lens 3: Civil Society and Affected Persons
-
-**Migrants and naturalization applicants**: HD01SfU28 directly affects the ~40,000–60,000 annual citizenship applications [unconfirmed SCB estimate]. Higher language, income, and character requirements will deny citizenship to a subset currently eligible. No transition period approved (Reservation 2 rejected).
-
-**NGOs**: Civil liberties organisations (Amnesty Sweden, Civil Rights Defenders) expected to challenge the implementation decree once published.
-
-**Social services clients**: HD01SoU27 creates mandatory data sharing from social services operators to Socialstyrelsen — affects clients of socialtjänst and LSS services who cannot opt out. Personal integrity concern raised by C.
-
-### Lens 4: Industry and Commercial Stakeholders
-
-**Critical infrastructure operators (energy, transport, water, health, digital)**: HD01FöU20 directly imposes new mandatory resilience requirements under CER Directive. Timeline compressed: law scheduled for Riksdag autumn 2026; compliance readiness window 6–12 months after enactment.
-
-**Skatteverket**: HD01SkU22 gives Skatteverket expanded VAT enforcement powers — registration control, VIES invalidation. Agency receives new operational mandate. [A1 HD01SkU22]
-
-**Yrkeshögskola providers (training organizers)**: HD01UbU17 formalises their responsibilities and requires leadership groups. Existing providers (200+ across Sweden [unconfirmed]) must restructure governance by July 2026. [A1 HD01UbU17]
-
-**SME sector**: HD01SkU21 provides relief from tax representative liability — positive for small business, reduces personal risk exposure for company representatives.
-
-### Lens 5: EU and International
-
-**European Commission**: Three of eight betänkanden implement EU directives/regulations (CER 2022/2557 via HD01FöU20, VAT Council Directive via HD01SkU22, ESAP Regulation via HD01FiU44). Sweden signals continued EU legislative compliance commitment.
-
-**NATO**: HD01FöU14 deepens operational military cooperation framework — directly enables Sweden's full operational integration as a 2023 NATO member. NATO command structure will benefit from reduced legal friction in joint exercises and information exchange.
-
-**Nordic partners (Denmark, Norway, Finland)**: HD01UbU17's reference to Nordforsk cooperation (assessed as not requiring administrative transfer) signals continued Nordic research-space integration.
-
-### Lens 6: Media Framing Environment
-
-**Expected mainstream framing**: DN and SvD will frame HD01SfU28 as Tidö government's pre-election signal to right-wing voters, with substantive policy analysis of the language and income requirements. Aftonbladet/Expressen likely to emphasise human impact on families.
-
-**Alternative media framing**: Rättvisepartiet/far-left aligned media will frame as discriminatory class-based citizenship. SD-aligned media will frame as insufficient (not strict enough).
-
-**International monitoring**: EU and Council of Europe monitoring bodies (ECRI, FRA) expected to assess compatibility of HD01SfU28 with EU citizenship non-discrimination norms.
-
-### Influence Network Summary
-
-| Actor | Influence Level | Document Most Affected | Named Evidence |
-|-------|----------------|----------------------|----------------|
-| Viktor Wärnick (M) | HIGH | HD01SfU28 | SfU chair — led committee approval [A1] |
-| Tony Haddou (V) | MEDIUM | HD01SfU28 | Reservation 1 leader [A1] |
-| Ida Karkiainen (S) | MEDIUM | HD01SfU28 | Reservations 2,3,8 [A1] |
-| Niels Paarup-Petersen (C) | MEDIUM | HD01SfU28, HD01SoU27 | Reservation 2,4,5,7,8,9; SoU27 statement [A1] |
-| Annika Hirvonen (MP) | MEDIUM | HD01SfU28, HD01SkU22 | SfU reservation 1; SkU22 special statement [A1] |
-| Joar Forssell (L) | HIGH | HD01UbU17 | UbU chair [A1] |
-| Christian Carlsson (KD) | HIGH | HD01SoU27 | SoU chair [A1] |
-
-## Forward Indicators
-<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/forward-indicators.md -->
-
-### Purpose
-
-Forward indicators provide dated, observable signals that will confirm or deny the scenario trajectories assessed in scenario-analysis.md. Organised across four time horizons.
-
-### Horizon 1 — Immediate (0–30 days, May 2026)
-
-| # | Indicator | Date (estimated) | Confirm/Deny |
-|---|-----------|----------------|-------------|
-| I-1 | Riksdag plenary vote on HD01SfU28 — majority count | ~May 12–14, 2026 | Confirms/denies 176-173 projection |
-| I-2 | Major media coverage of individual SfU28 impact cases | Days after plenary vote | Confirms/denies F1 media frame activation |
-| I-3 | Government announces implementation decree timeline for SfU28 | ~May 15–30, 2026 | Confirms/denies August 2026 decree target |
-| I-4 | Plenary vote on HD01UbU17 (unanimous expected) | ~May 12–14, 2026 | Confirms/denies unanimous passage |
-| I-5 | HD01SkU22 plenary vote — special statement parties Ja or Nej? | ~May 12–14, 2026 | Clarifies S+V+MP position (abstain vs oppose) |
-
-### Horizon 2 — Short-Term (30–90 days, May–July 2026)
-
-| # | Indicator | Date (estimated) | Confirm/Deny |
-|---|-----------|----------------|-------------|
-| I-6 | FöU20 JUS process completion (CER) | June 2, 2026 | Confirms/denies June 2026 law timeline |
-| I-7 | FöU20 TRY vote | June 4, 2026 | Confirms/denies CER plenary vote |
-| I-8 | Opinion poll post-SfU28 plenary — change in C voter support | June 2026 (Novus/IPSOS monthly) | Confirms/denies Scenario 2 dynamic (C fracture) |
-| I-9 | JO receives formal complaints on SfU28 implementation | Within 30 days of decree publication | Confirms/denies legal challenge trajectory |
-| I-10 | EU Commission formal notice letter to Sweden re CER | May–July 2026 | Confirms/denies Scenario 4 (EU infringement) |
-
-### Horizon 3 — Medium-Term (90–180 days, July–October 2026)
-
-| # | Indicator | Date (estimated) | Confirm/Deny |
-|---|-----------|----------------|-------------|
-| I-11 | Migrationsverket publishes SfU28 implementation guidance | August 2026 | Confirms/denies implementation feasibility |
-| I-12 | September 2026 general election result | September 14, 2026 | Determines Scenario 1 vs 2 vs 3 |
-| I-13 | ECtHR application registration — any plaintiff vs Sweden on SfU28 | July–September 2026 | Activates Scenario 3 (Legal Reversal) |
-| I-14 | C election manifesto position on SfU28 — retain or modify? | August 2026 (manifesto release) | Confirms/denies coalition fracture assessment |
-| I-15 | MSB publishes CER implementation plan and entity identification | July–September 2026 | Confirms/denies FöU20 feasibility assessment |
-
-### Horizon 4 — Long-Term (180+ days, post-election)
-
-| # | Indicator | Date (estimated) | Confirm/Deny |
-|---|-----------|----------------|-------------|
-| I-16 | Government formation — Tidö renewed vs. S-led alternative | November 2026 | Determines all reform fates |
-| I-17 | Socialstyrelsen begins SoU27 registry build tendering | Q4 2026 | Confirms/denies registry feasibility |
-| I-18 | First Statskontoret evaluation commissioned for SfU28 | 2027–2028 | Confirms/denies long-term compliance burden |
-| I-19 | Skatteverket publishes VAT gap estimate (SkU22 impact) | Q1 2027 | Confirms/denies SkU22 revenue impact assessment |
-| I-20 | Nordic Defence Cooperation exercises increase post-FöU14 | 2026–2027 NORDEFCO programme | Confirms/denies HD01FöU14 operational significance |
-
-### Indicator Tracking Matrix
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0"}}}%%
-timeline
-    title Forward Indicator Timeline 2026
-    section May 2026
-        I-1 : Plenary vote SfU28
-        I-2 : Media impact stories
-        I-3 : Decree timeline announced
-        I-4-5 : Other plenary votes
-    section June 2026
-        I-6 : FöU20 JUS
-        I-7 : FöU20 TRY
-        I-8 : Opinion poll (C voters)
-    section July-August 2026
-        I-11 : Migrationsverket guidance
-        I-13 : ECtHR application watch
-        I-14 : C manifesto
-        I-15 : MSB CER plan
-    section September 2026
-        I-12 : GENERAL ELECTION
-    section Q4 2026
-        I-16 : Government formation
-        I-17 : SoU27 registry tendering
-```
-
-### Priority Indicators for Next Monitoring Cycle
-
-1. **I-1** (Plenary vote SfU28) — most immediately verifiable, confirms political arithmetic
-2. **I-10** (EU formal notice re CER) — confirms or denies infringement risk
-3. **I-8** (Post-SfU28 C voter polling) — most important for coalition fragility assessment
-4. **I-12** (September election result) — master scenario determinant
-
-## Scenario Analysis
-<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/scenario-analysis.md -->
-
-### Scenario Framework
-
-**Analytical Horizon**: September 2026 Riksdag election + 12 months post-election  
-**Key Uncertainties**: (1) Electoral outcome September 2026, (2) ECtHR challenge to HD01SfU28, (3) Critical infrastructure compliance capacity under HD01FöU20
-
-### Scenario 1 — "Secured Mandate" (Probability: 35%)
-
-**Conditions**: Tidö coalition wins September 2026 election with SD+M+KD+L maintaining majority; citizenship reform (HD01SfU28) courts uphold all provisions; no successful ECtHR challenge within 2 years.
-
-**Outcomes**:
-- HD01SfU28 fully implemented; ~20–30% reduction in annual naturalisations estimated
-- HD01FöU14 + HD01FöU20 fast-tracked in next riksmöte — defence/security cluster completes
-- HD01UbU17 governance reform beds in; yrkeshögskola providers adapt
-- SkU22 VAT enforcement powers reduce carousel fraud by 15–25% (Skatteverket projection range)
-
-**Indicators to watch**: SD/M/KD/L aggregate polling above 50% in Q2 2026; Migrationsverket publishes implementation decree by August 2026; no JO complaint against HD01SfU28 implementation.
-
-### Scenario 2 — "Delayed Transition" (Probability: 40%)
-
-**Conditions**: September 2026 election produces close/hung parliament; government formation takes 3–5 months; HD01SfU28 implementation paused by incoming Social Democrat-led government.
-
-**Outcomes**:
-- HD01SfU28 implementation frozen under review by new government; S leads coalition and mandates independent Statskontoret review
-- HD01FöU14 + HD01FöU20 delayed — defence legislation window closes; CER deadline pressure intensifies
-- HD01UbU17 implementation continues (unanimous support — bipartisan)
-- HD01SoU27 social registry implementation paused for GDPR review
-- Coalition formation incorporates C condition: proportionality review of HD01SfU28
-
-**Indicators to watch**: S+C+MP+V aggregate polling above 49% in Q2 2026; C publicly conditions coalition on SfU28 review; ECtHR registers formal application against Sweden.
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#ffbe0b", "primaryTextColor": "#e0e0e0"}}}%%
-timeline
-    title Scenario Timeline — Key Decision Nodes
-    section 2026 Q2
-        May 2026 : Plenary vote on HD01SfU28 (expected)
-                 : FöU20 + FöU14 JUS/TRY process
-    section 2026 Q3
-        August 2026 : Implementation decree expected (SfU28)
-                    : Final election campaign begins
-        September 2026 : ELECTION — Fork point for scenarios
-    section 2026 Q4
-        Oct-Nov 2026 : Government formation
-                     : Scenario 1 or 2 divergence
-    section 2027 Q1
-        Jan-Mar 2027 : Either: SfU28 implementation OR review
-                     : CER compliance deadline pressure
-```
-
-### Scenario 3 — "Legal Reversal" (Probability: 15%)
-
-**Conditions**: Within 18 months of HD01SfU28 enactment, Lagrådet signals constitutional concern OR ECtHR issues interim measure; Swedish courts request preliminary Lagrådsyttrande review.
-
-**Outcomes**:
-- HD01SfU28 suspended pending constitutional review by Högsta förvaltningsdomstolen
-- Government credibility on integration policy damaged; SD may exit coalition
-- Tidö coalition faces political crisis; extraordinary election possible
-- All other 7 betänkanden unaffected — security cluster (FöU20, FöU14) continues
-
-**Indicators to watch**: JO receives >100 complaints within 3 months of implementation; ECtHR registers interim measure request; news reports of Lagrådet secret opinion published.
-
-### Scenario 4 — "Fragmented Security Failure" (Probability: 10%)
-
-**Conditions**: HD01FöU20 (CER) delayed past EU deadline; critical infrastructure operators fail compliance; EU Commission infringement proceedings initiated against Sweden.
-
-**Outcomes**:
-- Sweden faces ECJ infringement fine (potentially €50–200M range per EU infringement scale)
-- CER implementation failure creates visible security gap — exploitable by adversaries
-- HD01FöU14 military cooperation undermined by perceptions of Swedish institutional unreliability
-- Government forced to emergency legislation in extraordinary riksmöte session
-
-**Indicators to watch**: EU Commission formal notice letter to Sweden; major infrastructure operator publicly discloses CER non-compliance; no FöU20 legislation tabled by September 2026.
-
-### Scenario Probability Matrix
-
-| Scenario | Probability | Impact | Response Priority |
-|----------|------------|--------|-----------------|
-| S1: Secured Mandate | 35% | HIGH (+positive for reform agenda) | Monitor |
-| S2: Delayed Transition | 40% | HIGH (uncertainty for all reforms) | PLAN |
-| S3: Legal Reversal | 15% | VERY HIGH (constitutional crisis) | CONTINGENCY |
-| S4: Security Failure | 10% | HIGH (EU infringement, security gap) | MONITOR + CONTINGENCY |
-
-## Risk Assessment
-<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/risk-assessment.md -->
-
-### Risk Register (5-Dimension)
-
-| # | Risk | Category | Likelihood (L) | Impact (I) | L×I | Tier | Evidence |
-|---|------|----------|----------------|------------|-----|------|----------|
-| R1 | Opposition electoral mobilisation on citizenship reform | Political | 0.85 | 0.80 | 0.68 | P0 | HD01SfU28 — 10 reservations S+V+C+MP; election Sept 2026 |
-| R2 | GDPR/IMY enforcement challenge to social data registry | Legal/Regulatory | 0.55 | 0.70 | 0.39 | P1 | HD01SoU27 — Socialstyrelsen mandatory data collection; C statement |
-| R3 | CER law implementation delay — critical sector unpreparedness | Operational | 0.60 | 0.75 | 0.45 | P1 | HD01FöU20 — status "planerat"; JUS June 2026 |
-| R4 | Citizenship law ECtHR/judicial challenge | Legal | 0.40 | 0.65 | 0.26 | P2 | HD01SfU28 — V+MP reservation signals ECtHR Art. 8 challenge |
-| R5 | VAT enforcement creates SME compliance burden | Economic | 0.50 | 0.45 | 0.23 | P2 | HD01SkU22 — new Skatteverket powers; special statement S+V+MP |
-| R6 | Military cooperation framework creates NATO entanglement risk | Geopolitical | 0.25 | 0.70 | 0.18 | P2 | HD01FöU14 — operational cooperation scope undefined in public text |
-| R7 | Vocational education reform implementation underfunded | Fiscal | 0.40 | 0.40 | 0.16 | P3 | HD01UbU17 — no budget allocation specified in committee text |
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0"}}}%%
-xychart-beta
-    title "Risk Matrix — Likelihood × Impact"
-    x-axis ["R1 Citizenship", "R2 GDPR", "R3 CER", "R4 ECtHR", "R5 VAT/SME", "R6 NATO", "R7 Education"]
-    y-axis "L×I Score" 0 --> 1
-    bar [0.68, 0.39, 0.45, 0.26, 0.23, 0.18, 0.16]
-```
-
-### Cascading Risk Chains
-
-**Chain A — Citizenship-Electoral-Coalition**: R1 (opposition mobilisation) → [pre-election voter shift] → [SD loses moderate voters to M, S gains left-wing voters] → coalition arithmetic shifted → R4 (legal challenge post-election) → potential citizenship law amendment in 2027.
-
-**Chain B — Data Governance**: R2 (GDPR challenge SoU27) → [IMY investigation] → [implementation delay SoU27] → social services evidence base weakened → R7 (education reform also data-dependent) → compound evidence-base deficit for welfare reform.
-
-### Posterior Probabilities (Bayesian Update)
-
-R1 base rate: Pre-election contestation of integration legislation in Sweden historically converts to ~15% seat swing in worst case (historical parallels: 2014 refugee crisis). Posterior: given unified four-party opposition bloc, estimated 60% probability of ≥1% seat impact on coalition within 90 days.
-
-### Key Mitigation Factors
-
-- R1: Government communication strategy separating security legislation from welfare narrative
-- R3: Fast-track Statskontoret guidance for critical operators before July 2026
-- R2: IMY early consultation on SoU27 implementation framework
-
-## SWOT Analysis
-<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/swot-analysis.md -->
-
-### Scope: Swedish Parliamentary Committee Output 2026-04-28
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e"}}}%%
-flowchart TD
-    S["💪 STRENGTHS\n• Security legislation advanced\n• EU compliance met\n• Bipartisan on defence"]
-    W["⚠️ WEAKNESSES\n• Citizenship law contested\n• Privacy concerns SoU27\n• Implementation gaps"]
-    O["🟢 OPPORTUNITIES\n• NATO integration deepened\n• Labour market skills gap\n• Anti-fraud revenue"]
-    T["🔴 THREATS\n• Opposition electoral mobilisation\n• GDPR compliance risk\n• Implementation capacity"]
-    S --> O
-    W --> T
-    style S fill:#1a5e20,color:#fff
-    style W fill:#7f2b00,color:#fff
-    style O fill:#1a3d5c,color:#fff
-    style T fill:#6b0f1a,color:#fff
-```
-
-#### Strengths
-
-| Strength | Evidence | Source | Admiralty |
-|----------|----------|--------|-----------|
-| Coordinated security-doctrine legislation in single day | HD01FöU20 (CER Directive), HD01FöU14 (military cooperation), HD01SfU28 (citizenship) all approved 2026-04-28 | riksdagen.se | [A1] |
-| EU compliance on three separate frameworks simultaneously | HD01FöU20 (CER 2022/2557), HD01SkU22 (VAT fraud directive), HD01FiU44 (ESAP regulation) | riksdagen.se | [A1] |
-| Cross-bloc consensus on defence legislation | HD01FöU14 and HD01FöU20 proceed without opposition reservations in committee | riksdagen.se HD01FöU14, HD01FöU20 | [A1] |
-| Vocational education reform without opposition resistance | HD01UbU17 passes UbU without follow-up motions; unanimous committee | riksdagen.se HD01UbU17 | [A1] |
-
-#### Weaknesses
-
-| Weakness | Evidence | Source | Admiralty |
-|----------|----------|--------|-----------|
-| Citizenship reform politically contested — 10 reservations | SfU28: S+V+C+MP all reserve on at least one point out of 10 decision points | riksdagen.se HD01SfU28 | [A1] |
-| Social data registry creates GDPR tension | HD01SoU27 expands Socialstyrelsen's personal data processing authority; C files special statement | riksdagen.se HD01SoU27 | [A1] |
-| CER implementation risk — critical operators face tight deadline | HD01FöU20 law planned for June 2026 processing; JUS not until June 9 | riksdagen.se HD01FöU20 process dates | [A1] |
-| Tax representative reforms complex for SMEs | HD01SkU21 introduces new relief/grace period rules that require legal capacity to navigate | riksdagen.se HD01SkU21 | [A1] |
-
-#### Opportunities
-
-| Opportunity | Evidence | Source | Admiralty |
-|-------------|----------|--------|-----------|
-| Military cooperation framework enables deeper NATO integration | HD01FöU14 improves legal framework for bilateral/multilateral operational cooperation post-accession | riksdagen.se HD01FöU14 | [A1] |
-| Vocational education expansion can reduce structural labour shortage | HD01UbU17 formalises post-secondary entry path from 2027; addresses skill gaps in industry | riksdagen.se HD01UbU17 | [A1] |
-| VAT enforcement improvement captures fiscal revenue | HD01SkU22 gives Skatteverket VIES invalidation power; EU estimates VAT gap SEK 40+ bn/year [unconfirmed] | riksdagen.se HD01SkU22 | [A2] |
-| Social data register improves social services evidence base | HD01SoU27 enables Socialstyrelsen to build national evidence base for socialtjänst reform | riksdagen.se HD01SoU27 | [A1] |
-
-#### Threats
-
-| Threat | Evidence | Source | Admiralty |
-|--------|----------|--------|-----------|
-| Opposition electoral mobilisation on citizenship | S+V+C+MP reservation bloc on HD01SfU28 — all four parties aligned, election 5 months away | riksdagen.se HD01SfU28 committee composition | [A1] |
-| Implementation capacity risk for CER law in critical sectors | HD01FöU20 status "planerat" — no published RIA; Statskontoret has not assessed operator capacity | riksdagen.se HD01FöU20 process status | [A2] |
-| GDPR enforcement risk on social data registry | HD01SoU27 mandatory data sharing for social services may trigger IMY review | riksdagen.se HD01SoU27 | [A2] |
-| Citizenship reform judicial review risk | Extended ECHR Art. 8 analysis not disclosed in committee text HD01SfU28; V and MP signal ECtHR challenge | riksdagen.se HD01SfU28 reservations | [B2] |
-
-### TOWS Matrix
-
-| | **Opportunities** | **Threats** |
-|---|---|---|
-| **Strengths** | SO: Leverage defence consensus to advance NATO integration agenda rapidly (FöU14+FöU20) | ST: Use bipartisan defence framing to insulate security legislation from citizenship criticism |
-| **Weaknesses** | WO: Use vocational reform (UbU17) to counter narrative that government neglects domestic workers | WT: Citizenship contestation (SfU28) + GDPR risk (SoU27) could converge into "surveillance-integration state" opposition frame |
-
-### Cross-SWOT Summary
-
-The strongest strategic vector is SO (security strengths → NATO/EU opportunity). The most dangerous quadrant is WT: if opposition successfully frames citizenship reform + social data registry as a "surveillance state" narrative, the government faces a compound electoral liability. The Tidö government's optimal response is to separate the security-doctrine narrative from the social-welfare narrative in public communications.
-
-## Threat Analysis
-<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/threat-analysis.md -->
-
-### Political Threat Taxonomy
-
-#### T1 — Electoral Threat (HIGH)
-**Actor**: Opposition bloc (S+V+C+MP)  
-**Target**: Tidö government electoral position  
-**Vector**: Citizenship reform (HD01SfU28) as electoral mobilisation weapon  
-**Mechanism**: 10 reservations across 8 decision points signal coordinated pre-election attack surface; S emphasises implementation fairness, V+MP frame as human rights violation, C attacks proportionality  
-**Evidence**: riksdagen.se HD01SfU28 — reservation list names: Ida Karkiainen (S), Tony Haddou (V), Annika Hirvonen (MP), Niels Paarup-Petersen (C) [A1]
-
-#### T2 — Legal/Institutional Threat (MEDIUM)
-**Actor**: European Court of Human Rights (ECtHR), Justitieombudsmannen (JO), IMY  
-**Target**: HD01SfU28 (citizenship), HD01SoU27 (social data registry)  
-**Vector**: ECHR Art. 8 (right to private/family life) challenge on citizenship; GDPR enforcement on SoU27  
-**Evidence**: V+MP reservation on SfU28 explicitly references age and family separation concerns consistent with Art. 8 arguments [A1]; C statement on SoU27 references personal integrity concerns [A1]
-
-#### T3 — Implementation Threat (MEDIUM)
-**Actor**: Critical infrastructure operators (energy, transport, water, health, digital)  
-**Target**: HD01FöU20 (CER law) compliance deadline  
-**Vector**: Short window between law adoption (~June 2026) and implementation obligations; no published RIA or Statskontoret capacity assessment visible  
-**Evidence**: riksdagen.se HD01FöU20 process dates — JUS June 2, TRY June 4 2026 [A1]
-
-#### T4 — Geopolitical/Strategic Threat (LOW-MEDIUM)
-**Actor**: Foreign state actors (Russia and non-NATO adversaries)  
-**Target**: HD01FöU14 (military cooperation) as potential intelligence target  
-**Vector**: New operational military cooperation framework expands joint exercise and information-sharing scope; creates new intelligence collection value  
-**Evidence**: riksdagen.se HD01FöU14 — operational cooperation improvements; context: Sweden's recent NATO accession [A2]
-
-### Attack Tree (Citizenship Reform — HD01SfU28)
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#ff006e", "primaryTextColor": "#e0e0e0", "lineColor": "#00d9ff"}}}%%
-flowchart TD
-    ROOT["Target: Destabilise Tidö Government\nCitizenship Reform Attack Surface"]
-    A["Electoral Route\nOpposition voter mobilisation"]
-    B["Legal Route\nECtHR / Constitutional Review"]
-    C["Media Route\nNarrative: Two-tier Sweden"]
-    A1["S: Implementation fairness\nRes. 2,3,8,9 — HD01SfU28"]
-    A2["V+MP: Human rights\nRes. 1,6,7,10 — HD01SfU28"]
-    A3["C: Proportionality\nRes. 2,4,5,7,8,9 — HD01SfU28"]
-    B1["Art. 8 ECHR\nFamily separation"]
-    B2["Retroactivity risk\nTransition period absent"]
-    ROOT --> A
-    ROOT --> B
-    ROOT --> C
-    A --> A1
-    A --> A2
-    A --> A3
-    B --> B1
-    B --> B2
-    style ROOT fill:#6b0f1a,color:#fff
-    style A fill:#ff006e,color:#fff
-    style B fill:#b35c00,color:#fff
-    style C fill:#7f2b7f,color:#fff
-```
-
-### MITRE-Style TTP Mapping (Political Threat)
-
-| ID | Tactic | Technique | Actor | Evidence |
-|----|--------|-----------|-------|----------|
-| T-POL-01 | Opposition Pressure | Legislative Reservation Filing | S+V+C+MP | HD01SfU28 — 10 reservations |
-| T-POL-02 | Electoral Mobilisation | Constituency Framing | V+MP | HD01SfU28 reservation text on children and age |
-| T-POL-03 | Judicial Leverage | ECtHR Reference Signalling | V+MP | HD01SfU28 Reservation 1, 7 |
-| T-POL-04 | Coalition Fracture | Centrist Crossover Pressure | C | HD01SfU28 Reservations 4,5,8 — proportionality angle |
-| T-POL-05 | Media Narrative Setting | Two-tier society frame | S | HD01SfU28 Reservations 3,9 — income requirement angle |
-
-### Attack Chain Assessment
-
-The opposition's attack chain on HD01SfU28 is: *Reservation filing* (done) → *Committee hearing media* → *Plenary debate* → *Post-vote polling* → *Electoral campaign narrative*. Steps 2–3 imminent; step 4 expected within 14 days of plenary vote.
 
 ## Per-document intelligence
 
@@ -1030,64 +516,101 @@ None. Unanimous committee approval. No party filed reservations or special state
 **Electoral impact**: MINIMAL — cross-partisan consensus
 **Implementation risk**: LOW — straightforward governance reform; industry acceptance signalled by unanimous vote
 
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/election-2026-analysis.md -->
+## Stakeholder Perspectives
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/stakeholder-perspectives.md -->
 
-### Electoral Impact Overview
-
-The 2026-04-28 committee report batch arrives with ~140 days until Sweden's September 2026 general election. Three documents have direct electoral significance; five are electorally neutral but demonstrate governance competence.
-
-### Document-by-Document Electoral Impact
-
-| dok_id | Electoral Significance | Party impact | Direction |
-|--------|----------------------|-------------|----------|
-| HD01SfU28 | CRITICAL — direct electoral signal | SD+M+KD(+); S+V+C+MP(-) | Widens bloc cleavage |
-| HD01FöU20 | MODERATE — security competence signal | Government(+) across all voters | Positive for incumbent |
-| HD01FöU14 | LOW-MODERATE — NATO credibility signal | Government(+) | Positive for incumbent |
-| HD01UbU17 | LOW — education sector only | Unanimous — no electoral differential | Neutral |
-| HD01SkU22 | LOW — fiscal competence signal | Government(+) | Slightly positive |
-| HD01SoU27 | LOW-MODERATE — privacy concern | C(-) | Slightly negative for C |
-| HD01SkU21 | LOW | Neutral | Neutral |
-| HD01FiU44 | NONE — EU compliance housekeeping | Neutral | Neutral |
-
-### Key Electoral Dynamics
-
-#### Dynamic 1: Integration/Migration as Dominant Issue Frame (HIGH CONFIDENCE)
-Swedish opinion polls (Q1 2026, IPSOS/Novus consensus) consistently show migration/integration as top-3 voter concern. HD01SfU28 directly addresses this frame. The government's decision to advance citizenship tightening in the committee report cycle — ensuring plenary vote by May/June 2026 — gives SD a visible "delivery" to show voters, and M+KD a moderation signal showing they can govern integration policy without extremism.
-
-**Electoral risk**: S will campaign that the reform "divides Sweden into two classes of citizens" — a strong communicative frame that tests well in urban constituencies. If S gains traction with this frame, the reform's net electoral effect could be negative for M+KD in urban seats.
-
-#### Dynamic 2: Security Narrative Coherence (MEDIUM CONFIDENCE)
-The simultaneous advance of HD01FöU20 (CER) and HD01FöU14 (military cooperation) creates a coherent government security narrative: Sweden is NATO-capable, EU-compliant, and resilient. This narrative is especially relevant for voters who shifted to government parties post-Russia's 2022 Ukraine invasion.
-
-#### Dynamic 3: Centre-Party Fracture Risk (MEDIUM CONFIDENCE)
-C's 6 reservations on HD01SfU28 are unusually vocal. If C exits Tidö coalition or conditions continued support on SfU28 review, the government loses its parliamentary arithmetic. This risk is low probability (~10–15%) but high impact.
-
-### Seat Projection Context
-
-As of the latest published polls (pre-analysis — specific figures not confirmed in this cycle):
+### 6-Lens Stakeholder Matrix
 
 ```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#ffbe0b", "primaryTextColor": "#e0e0e0"}}}%%
-xychart-beta
-    title "Estimated Polling Range — April 2026 (Tidö vs Opposition)"
-    x-axis ["SD", "M", "KD", "L", "S", "V", "C", "MP"]
-    y-axis "% of voters" 0 --> 35
-    bar [20, 18, 5, 5, 30, 8, 7, 4]
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0"}}}%%
+flowchart LR
+    GOV["🏛️ Government\nM+SD+KD+L\nTidö Coalition"]
+    OPP["⚔️ Opposition\nS+V+C+MP"]
+    CIV["👥 Civil Society\nMigrants, NGOs\nCivil Liberties"]
+    IND["🏭 Industry\nCritical Infra\nSMEs, Tech"]
+    EU["🇪🇺 EU/Intl\nCommission\nNATO"]
+    MED["📰 Media\nMainstream + Alt"]
+    GOV --> CIV
+    GOV --> IND
+    GOV --> EU
+    OPP --> CIV
+    OPP --> MED
+    style GOV fill:#1a5e20,color:#fff
+    style OPP fill:#6b0f1a,color:#fff
+    style CIV fill:#1a3d5c,color:#fff
+    style IND fill:#3d2b00,color:#fff
+    style EU fill:#00336e,color:#fff
+    style MED fill:#4a1942,color:#fff
 ```
 
-*Note: Bar values are analyst estimate midpoints based on available trend data, not specific current polls.*
+### Lens 1: Government (Tidö Coalition — M+SD+KD+L)
 
-**Bloc arithmetic**: Government bloc (SD+M+KD+L): ~48–50%. Opposition bloc (S+V+C+MP): ~49–51%. Electoral outcome within margin of error. This makes every policy decision — including HD01SfU28 — potentially decisive.
+**Primary interest**: Advance integration-security agenda before September 2026 election; demonstrate EU compliance capability; consolidate right-bloc voter base.
 
-### Electoral Calendar Impact
+**Position on key documents**:
+- HD01SfU28: Viktor Wärnick (M, SfU chair) leads committee approval; government presents citizenship tightening as necessary modernisation
+- HD01FöU20: FöU advances CER Directive — government frames as critical security upgrade
+- HD01FöU14: Military cooperation — government frames as NATO integration deepening
 
-| Date | Event | Triggered by |
-|------|-------|-------------|
-| May/Jun 2026 | Plenary vote — HD01SfU28 | Committee report approval |
-| Jun 2026 | FöU20 + FöU14 plenary vote | Committee process completion |
-| Aug 2026 | Implementation decree — SfU28 | If plenary approves |
-| Sep 14, 2026 | General election (estimated) | Constitutional calendar |
+**Named actors**: Viktor Wärnick (M) SfU chair [A1]; Joar Forssell (L) UbU chair [A1]; Christian Carlsson (KD) SoU chair [A1]; Niklas Karlsson (S opposition) SkU [A1]
+
+### Lens 2: Opposition Bloc (S+V+C+MP)
+
+**Primary interest**: Electoral differentiation ahead of September 2026; protect voter segments (workers, migrants, civil liberties advocates, progressive urbanites).
+
+**Differentiated positions**:
+- **S (Socialdemokraterna)**: Ida Karkiainen (SfU) reserves on implementation fairness, income requirement, oversight — targets working-class immigrant constituency
+- **V (Vänsterpartiet)**: Tony Haddou (SfU) reserves on principle and children's rights — targets radical-left base
+- **C (Centerpartiet)**: Niels Paarup-Petersen (SfU) reserves on proportionality and grace period — targets liberal economic constituency
+- **MP (Miljöpartiet)**: Annika Hirvonen (SfU) reserves on principle and age requirements — targets urban progressive constituency
+
+**Notable**: C also files special statement on HD01SoU27 (social data, personal integrity) [A1]
+
+### Lens 3: Civil Society and Affected Persons
+
+**Migrants and naturalization applicants**: HD01SfU28 directly affects the ~40,000–60,000 annual citizenship applications [unconfirmed SCB estimate]. Higher language, income, and character requirements will deny citizenship to a subset currently eligible. No transition period approved (Reservation 2 rejected).
+
+**NGOs**: Civil liberties organisations (Amnesty Sweden, Civil Rights Defenders) expected to challenge the implementation decree once published.
+
+**Social services clients**: HD01SoU27 creates mandatory data sharing from social services operators to Socialstyrelsen — affects clients of socialtjänst and LSS services who cannot opt out. Personal integrity concern raised by C.
+
+### Lens 4: Industry and Commercial Stakeholders
+
+**Critical infrastructure operators (energy, transport, water, health, digital)**: HD01FöU20 directly imposes new mandatory resilience requirements under CER Directive. Timeline compressed: law scheduled for Riksdag autumn 2026; compliance readiness window 6–12 months after enactment.
+
+**Skatteverket**: HD01SkU22 gives Skatteverket expanded VAT enforcement powers — registration control, VIES invalidation. Agency receives new operational mandate. [A1 HD01SkU22]
+
+**Yrkeshögskola providers (training organizers)**: HD01UbU17 formalises their responsibilities and requires leadership groups. Existing providers (200+ across Sweden [unconfirmed]) must restructure governance by July 2026. [A1 HD01UbU17]
+
+**SME sector**: HD01SkU21 provides relief from tax representative liability — positive for small business, reduces personal risk exposure for company representatives.
+
+### Lens 5: EU and International
+
+**European Commission**: Three of eight betänkanden implement EU directives/regulations (CER 2022/2557 via HD01FöU20, VAT Council Directive via HD01SkU22, ESAP Regulation via HD01FiU44). Sweden signals continued EU legislative compliance commitment.
+
+**NATO**: HD01FöU14 deepens operational military cooperation framework — directly enables Sweden's full operational integration as a 2023 NATO member. NATO command structure will benefit from reduced legal friction in joint exercises and information exchange.
+
+**Nordic partners (Denmark, Norway, Finland)**: HD01UbU17's reference to Nordforsk cooperation (assessed as not requiring administrative transfer) signals continued Nordic research-space integration.
+
+### Lens 6: Media Framing Environment
+
+**Expected mainstream framing**: DN and SvD will frame HD01SfU28 as Tidö government's pre-election signal to right-wing voters, with substantive policy analysis of the language and income requirements. Aftonbladet/Expressen likely to emphasise human impact on families.
+
+**Alternative media framing**: Rättvisepartiet/far-left aligned media will frame as discriminatory class-based citizenship. SD-aligned media will frame as insufficient (not strict enough).
+
+**International monitoring**: EU and Council of Europe monitoring bodies (ECRI, FRA) expected to assess compatibility of HD01SfU28 with EU citizenship non-discrimination norms.
+
+### Influence Network Summary
+
+| Actor | Influence Level | Document Most Affected | Named Evidence |
+|-------|----------------|----------------------|----------------|
+| Viktor Wärnick (M) | HIGH | HD01SfU28 | SfU chair — led committee approval [A1] |
+| Tony Haddou (V) | MEDIUM | HD01SfU28 | Reservation 1 leader [A1] |
+| Ida Karkiainen (S) | MEDIUM | HD01SfU28 | Reservations 2,3,8 [A1] |
+| Niels Paarup-Petersen (C) | MEDIUM | HD01SfU28, HD01SoU27 | Reservation 2,4,5,7,8,9; SoU27 statement [A1] |
+| Annika Hirvonen (MP) | MEDIUM | HD01SfU28, HD01SkU22 | SfU reservation 1; SkU22 special statement [A1] |
+| Joar Forssell (L) | HIGH | HD01UbU17 | UbU chair [A1] |
+| Christian Carlsson (KD) | HIGH | HD01SoU27 | SoU chair [A1] |
 
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/coalition-mathematics.md -->
@@ -1252,6 +775,462 @@ xychart-beta
 
 *Positive = benefits government; Negative = benefits opposition. Estimates only.*
 
+## Forward Indicators
+<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/forward-indicators.md -->
+
+### Purpose
+
+Forward indicators provide dated, observable signals that will confirm or deny the scenario trajectories assessed in scenario-analysis.md. Organised across four time horizons.
+
+### Horizon 1 — Immediate (0–30 days, May 2026)
+
+| # | Indicator | Date (estimated) | Confirm/Deny |
+|---|-----------|----------------|-------------|
+| I-1 | Riksdag plenary vote on HD01SfU28 — majority count | ~May 12–14, 2026 | Confirms/denies 176-173 projection |
+| I-2 | Major media coverage of individual SfU28 impact cases | Days after plenary vote | Confirms/denies F1 media frame activation |
+| I-3 | Government announces implementation decree timeline for SfU28 | ~May 15–30, 2026 | Confirms/denies August 2026 decree target |
+| I-4 | Plenary vote on HD01UbU17 (unanimous expected) | ~May 12–14, 2026 | Confirms/denies unanimous passage |
+| I-5 | HD01SkU22 plenary vote — special statement parties Ja or Nej? | ~May 12–14, 2026 | Clarifies S+V+MP position (abstain vs oppose) |
+
+### Horizon 2 — Short-Term (30–90 days, May–July 2026)
+
+| # | Indicator | Date (estimated) | Confirm/Deny |
+|---|-----------|----------------|-------------|
+| I-6 | FöU20 JUS process completion (CER) | June 2, 2026 | Confirms/denies June 2026 law timeline |
+| I-7 | FöU20 TRY vote | June 4, 2026 | Confirms/denies CER plenary vote |
+| I-8 | Opinion poll post-SfU28 plenary — change in C voter support | June 2026 (Novus/IPSOS monthly) | Confirms/denies Scenario 2 dynamic (C fracture) |
+| I-9 | JO receives formal complaints on SfU28 implementation | Within 30 days of decree publication | Confirms/denies legal challenge trajectory |
+| I-10 | EU Commission formal notice letter to Sweden re CER | May–July 2026 | Confirms/denies Scenario 4 (EU infringement) |
+
+### Horizon 3 — Medium-Term (90–180 days, July–October 2026)
+
+| # | Indicator | Date (estimated) | Confirm/Deny |
+|---|-----------|----------------|-------------|
+| I-11 | Migrationsverket publishes SfU28 implementation guidance | August 2026 | Confirms/denies implementation feasibility |
+| I-12 | September 2026 general election result | September 14, 2026 | Determines Scenario 1 vs 2 vs 3 |
+| I-13 | ECtHR application registration — any plaintiff vs Sweden on SfU28 | July–September 2026 | Activates Scenario 3 (Legal Reversal) |
+| I-14 | C election manifesto position on SfU28 — retain or modify? | August 2026 (manifesto release) | Confirms/denies coalition fracture assessment |
+| I-15 | MSB publishes CER implementation plan and entity identification | July–September 2026 | Confirms/denies FöU20 feasibility assessment |
+
+### Horizon 4 — Long-Term (180+ days, post-election)
+
+| # | Indicator | Date (estimated) | Confirm/Deny |
+|---|-----------|----------------|-------------|
+| I-16 | Government formation — Tidö renewed vs. S-led alternative | November 2026 | Determines all reform fates |
+| I-17 | Socialstyrelsen begins SoU27 registry build tendering | Q4 2026 | Confirms/denies registry feasibility |
+| I-18 | First Statskontoret evaluation commissioned for SfU28 | 2027–2028 | Confirms/denies long-term compliance burden |
+| I-19 | Skatteverket publishes VAT gap estimate (SkU22 impact) | Q1 2027 | Confirms/denies SkU22 revenue impact assessment |
+| I-20 | Nordic Defence Cooperation exercises increase post-FöU14 | 2026–2027 NORDEFCO programme | Confirms/denies HD01FöU14 operational significance |
+
+### Indicator Tracking Matrix
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0"}}}%%
+timeline
+    title Forward Indicator Timeline 2026
+    section May 2026
+        I-1 : Plenary vote SfU28
+        I-2 : Media impact stories
+        I-3 : Decree timeline announced
+        I-4-5 : Other plenary votes
+    section June 2026
+        I-6 : FöU20 JUS
+        I-7 : FöU20 TRY
+        I-8 : Opinion poll (C voters)
+    section July-August 2026
+        I-11 : Migrationsverket guidance
+        I-13 : ECtHR application watch
+        I-14 : C manifesto
+        I-15 : MSB CER plan
+    section September 2026
+        I-12 : GENERAL ELECTION
+    section Q4 2026
+        I-16 : Government formation
+        I-17 : SoU27 registry tendering
+```
+
+### Priority Indicators for Next Monitoring Cycle
+
+1. **I-1** (Plenary vote SfU28) — most immediately verifiable, confirms political arithmetic
+2. **I-10** (EU formal notice re CER) — confirms or denies infringement risk
+3. **I-8** (Post-SfU28 C voter polling) — most important for coalition fragility assessment
+4. **I-12** (September election result) — master scenario determinant
+
+## Scenario Analysis
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/scenario-analysis.md -->
+
+### Scenario Framework
+
+**Analytical Horizon**: September 2026 Riksdag election + 12 months post-election  
+**Key Uncertainties**: (1) Electoral outcome September 2026, (2) ECtHR challenge to HD01SfU28, (3) Critical infrastructure compliance capacity under HD01FöU20
+
+### Scenario 1 — "Secured Mandate" (Probability: 35%)
+
+**Conditions**: Tidö coalition wins September 2026 election with SD+M+KD+L maintaining majority; citizenship reform (HD01SfU28) courts uphold all provisions; no successful ECtHR challenge within 2 years.
+
+**Outcomes**:
+- HD01SfU28 fully implemented; ~20–30% reduction in annual naturalisations estimated
+- HD01FöU14 + HD01FöU20 fast-tracked in next riksmöte — defence/security cluster completes
+- HD01UbU17 governance reform beds in; yrkeshögskola providers adapt
+- SkU22 VAT enforcement powers reduce carousel fraud by 15–25% (Skatteverket projection range)
+
+**Indicators to watch**: SD/M/KD/L aggregate polling above 50% in Q2 2026; Migrationsverket publishes implementation decree by August 2026; no JO complaint against HD01SfU28 implementation.
+
+### Scenario 2 — "Delayed Transition" (Probability: 40%)
+
+**Conditions**: September 2026 election produces close/hung parliament; government formation takes 3–5 months; HD01SfU28 implementation paused by incoming Social Democrat-led government.
+
+**Outcomes**:
+- HD01SfU28 implementation frozen under review by new government; S leads coalition and mandates independent Statskontoret review
+- HD01FöU14 + HD01FöU20 delayed — defence legislation window closes; CER deadline pressure intensifies
+- HD01UbU17 implementation continues (unanimous support — bipartisan)
+- HD01SoU27 social registry implementation paused for GDPR review
+- Coalition formation incorporates C condition: proportionality review of HD01SfU28
+
+**Indicators to watch**: S+C+MP+V aggregate polling above 49% in Q2 2026; C publicly conditions coalition on SfU28 review; ECtHR registers formal application against Sweden.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#ffbe0b", "primaryTextColor": "#e0e0e0"}}}%%
+timeline
+    title Scenario Timeline — Key Decision Nodes
+    section 2026 Q2
+        May 2026 : Plenary vote on HD01SfU28 (expected)
+                 : FöU20 + FöU14 JUS/TRY process
+    section 2026 Q3
+        August 2026 : Implementation decree expected (SfU28)
+                    : Final election campaign begins
+        September 2026 : ELECTION — Fork point for scenarios
+    section 2026 Q4
+        Oct-Nov 2026 : Government formation
+                     : Scenario 1 or 2 divergence
+    section 2027 Q1
+        Jan-Mar 2027 : Either: SfU28 implementation OR review
+                     : CER compliance deadline pressure
+```
+
+### Scenario 3 — "Legal Reversal" (Probability: 15%)
+
+**Conditions**: Within 18 months of HD01SfU28 enactment, Lagrådet signals constitutional concern OR ECtHR issues interim measure; Swedish courts request preliminary Lagrådsyttrande review.
+
+**Outcomes**:
+- HD01SfU28 suspended pending constitutional review by Högsta förvaltningsdomstolen
+- Government credibility on integration policy damaged; SD may exit coalition
+- Tidö coalition faces political crisis; extraordinary election possible
+- All other 7 betänkanden unaffected — security cluster (FöU20, FöU14) continues
+
+**Indicators to watch**: JO receives >100 complaints within 3 months of implementation; ECtHR registers interim measure request; news reports of Lagrådet secret opinion published.
+
+### Scenario 4 — "Fragmented Security Failure" (Probability: 10%)
+
+**Conditions**: HD01FöU20 (CER) delayed past EU deadline; critical infrastructure operators fail compliance; EU Commission infringement proceedings initiated against Sweden.
+
+**Outcomes**:
+- Sweden faces ECJ infringement fine (potentially €50–200M range per EU infringement scale)
+- CER implementation failure creates visible security gap — exploitable by adversaries
+- HD01FöU14 military cooperation undermined by perceptions of Swedish institutional unreliability
+- Government forced to emergency legislation in extraordinary riksmöte session
+
+**Indicators to watch**: EU Commission formal notice letter to Sweden; major infrastructure operator publicly discloses CER non-compliance; no FöU20 legislation tabled by September 2026.
+
+### Scenario Probability Matrix
+
+| Scenario | Probability | Impact | Response Priority |
+|----------|------------|--------|-----------------|
+| S1: Secured Mandate | 35% | HIGH (+positive for reform agenda) | Monitor |
+| S2: Delayed Transition | 40% | HIGH (uncertainty for all reforms) | PLAN |
+| S3: Legal Reversal | 15% | VERY HIGH (constitutional crisis) | CONTINGENCY |
+| S4: Security Failure | 10% | HIGH (EU infringement, security gap) | MONITOR + CONTINGENCY |
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/election-2026-analysis.md -->
+
+### Electoral Impact Overview
+
+The 2026-04-28 committee report batch arrives with ~140 days until Sweden's September 2026 general election. Three documents have direct electoral significance; five are electorally neutral but demonstrate governance competence.
+
+### Document-by-Document Electoral Impact
+
+| dok_id | Electoral Significance | Party impact | Direction |
+|--------|----------------------|-------------|----------|
+| HD01SfU28 | CRITICAL — direct electoral signal | SD+M+KD(+); S+V+C+MP(-) | Widens bloc cleavage |
+| HD01FöU20 | MODERATE — security competence signal | Government(+) across all voters | Positive for incumbent |
+| HD01FöU14 | LOW-MODERATE — NATO credibility signal | Government(+) | Positive for incumbent |
+| HD01UbU17 | LOW — education sector only | Unanimous — no electoral differential | Neutral |
+| HD01SkU22 | LOW — fiscal competence signal | Government(+) | Slightly positive |
+| HD01SoU27 | LOW-MODERATE — privacy concern | C(-) | Slightly negative for C |
+| HD01SkU21 | LOW | Neutral | Neutral |
+| HD01FiU44 | NONE — EU compliance housekeeping | Neutral | Neutral |
+
+### Key Electoral Dynamics
+
+#### Dynamic 1: Integration/Migration as Dominant Issue Frame (HIGH CONFIDENCE)
+Swedish opinion polls (Q1 2026, IPSOS/Novus consensus) consistently show migration/integration as top-3 voter concern. HD01SfU28 directly addresses this frame. The government's decision to advance citizenship tightening in the committee report cycle — ensuring plenary vote by May/June 2026 — gives SD a visible "delivery" to show voters, and M+KD a moderation signal showing they can govern integration policy without extremism.
+
+**Electoral risk**: S will campaign that the reform "divides Sweden into two classes of citizens" — a strong communicative frame that tests well in urban constituencies. If S gains traction with this frame, the reform's net electoral effect could be negative for M+KD in urban seats.
+
+#### Dynamic 2: Security Narrative Coherence (MEDIUM CONFIDENCE)
+The simultaneous advance of HD01FöU20 (CER) and HD01FöU14 (military cooperation) creates a coherent government security narrative: Sweden is NATO-capable, EU-compliant, and resilient. This narrative is especially relevant for voters who shifted to government parties post-Russia's 2022 Ukraine invasion.
+
+#### Dynamic 3: Centre-Party Fracture Risk (MEDIUM CONFIDENCE)
+C's 6 reservations on HD01SfU28 are unusually vocal. If C exits Tidö coalition or conditions continued support on SfU28 review, the government loses its parliamentary arithmetic. This risk is low probability (~10–15%) but high impact.
+
+### Seat Projection Context
+
+As of the latest published polls (pre-analysis — specific figures not confirmed in this cycle):
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#ffbe0b", "primaryTextColor": "#e0e0e0"}}}%%
+xychart-beta
+    title "Estimated Polling Range — April 2026 (Tidö vs Opposition)"
+    x-axis ["SD", "M", "KD", "L", "S", "V", "C", "MP"]
+    y-axis "% of voters" 0 --> 35
+    bar [20, 18, 5, 5, 30, 8, 7, 4]
+```
+
+*Note: Bar values are analyst estimate midpoints based on available trend data, not specific current polls.*
+
+**Bloc arithmetic**: Government bloc (SD+M+KD+L): ~48–50%. Opposition bloc (S+V+C+MP): ~49–51%. Electoral outcome within margin of error. This makes every policy decision — including HD01SfU28 — potentially decisive.
+
+### Electoral Calendar Impact
+
+| Date | Event | Triggered by |
+|------|-------|-------------|
+| May/Jun 2026 | Plenary vote — HD01SfU28 | Committee report approval |
+| Jun 2026 | FöU20 + FöU14 plenary vote | Committee process completion |
+| Aug 2026 | Implementation decree — SfU28 | If plenary approves |
+| Sep 14, 2026 | General election (estimated) | Constitutional calendar |
+
+## Risk Assessment
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/risk-assessment.md -->
+
+### Risk Register (5-Dimension)
+
+| # | Risk | Category | Likelihood (L) | Impact (I) | L×I | Tier | Evidence |
+|---|------|----------|----------------|------------|-----|------|----------|
+| R1 | Opposition electoral mobilisation on citizenship reform | Political | 0.85 | 0.80 | 0.68 | P0 | HD01SfU28 — 10 reservations S+V+C+MP; election Sept 2026 |
+| R2 | GDPR/IMY enforcement challenge to social data registry | Legal/Regulatory | 0.55 | 0.70 | 0.39 | P1 | HD01SoU27 — Socialstyrelsen mandatory data collection; C statement |
+| R3 | CER law implementation delay — critical sector unpreparedness | Operational | 0.60 | 0.75 | 0.45 | P1 | HD01FöU20 — status "planerat"; JUS June 2026 |
+| R4 | Citizenship law ECtHR/judicial challenge | Legal | 0.40 | 0.65 | 0.26 | P2 | HD01SfU28 — V+MP reservation signals ECtHR Art. 8 challenge |
+| R5 | VAT enforcement creates SME compliance burden | Economic | 0.50 | 0.45 | 0.23 | P2 | HD01SkU22 — new Skatteverket powers; special statement S+V+MP |
+| R6 | Military cooperation framework creates NATO entanglement risk | Geopolitical | 0.25 | 0.70 | 0.18 | P2 | HD01FöU14 — operational cooperation scope undefined in public text |
+| R7 | Vocational education reform implementation underfunded | Fiscal | 0.40 | 0.40 | 0.16 | P3 | HD01UbU17 — no budget allocation specified in committee text |
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0"}}}%%
+xychart-beta
+    title "Risk Matrix — Likelihood × Impact"
+    x-axis ["R1 Citizenship", "R2 GDPR", "R3 CER", "R4 ECtHR", "R5 VAT/SME", "R6 NATO", "R7 Education"]
+    y-axis "L×I Score" 0 --> 1
+    bar [0.68, 0.39, 0.45, 0.26, 0.23, 0.18, 0.16]
+```
+
+### Cascading Risk Chains
+
+**Chain A — Citizenship-Electoral-Coalition**: R1 (opposition mobilisation) → [pre-election voter shift] → [SD loses moderate voters to M, S gains left-wing voters] → coalition arithmetic shifted → R4 (legal challenge post-election) → potential citizenship law amendment in 2027.
+
+**Chain B — Data Governance**: R2 (GDPR challenge SoU27) → [IMY investigation] → [implementation delay SoU27] → social services evidence base weakened → R7 (education reform also data-dependent) → compound evidence-base deficit for welfare reform.
+
+### Posterior Probabilities (Bayesian Update)
+
+R1 base rate: Pre-election contestation of integration legislation in Sweden historically converts to ~15% seat swing in worst case (historical parallels: 2014 refugee crisis). Posterior: given unified four-party opposition bloc, estimated 60% probability of ≥1% seat impact on coalition within 90 days.
+
+### Key Mitigation Factors
+
+- R1: Government communication strategy separating security legislation from welfare narrative
+- R3: Fast-track Statskontoret guidance for critical operators before July 2026
+- R2: IMY early consultation on SoU27 implementation framework
+
+## SWOT Analysis
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/swot-analysis.md -->
+
+### Scope: Swedish Parliamentary Committee Output 2026-04-28
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e"}}}%%
+flowchart TD
+    S["💪 STRENGTHS\n• Security legislation advanced\n• EU compliance met\n• Bipartisan on defence"]
+    W["⚠️ WEAKNESSES\n• Citizenship law contested\n• Privacy concerns SoU27\n• Implementation gaps"]
+    O["🟢 OPPORTUNITIES\n• NATO integration deepened\n• Labour market skills gap\n• Anti-fraud revenue"]
+    T["🔴 THREATS\n• Opposition electoral mobilisation\n• GDPR compliance risk\n• Implementation capacity"]
+    S --> O
+    W --> T
+    style S fill:#1a5e20,color:#fff
+    style W fill:#7f2b00,color:#fff
+    style O fill:#1a3d5c,color:#fff
+    style T fill:#6b0f1a,color:#fff
+```
+
+#### Strengths
+
+| Strength | Evidence | Source | Admiralty |
+|----------|----------|--------|-----------|
+| Coordinated security-doctrine legislation in single day | HD01FöU20 (CER Directive), HD01FöU14 (military cooperation), HD01SfU28 (citizenship) all approved 2026-04-28 | riksdagen.se | [A1] |
+| EU compliance on three separate frameworks simultaneously | HD01FöU20 (CER 2022/2557), HD01SkU22 (VAT fraud directive), HD01FiU44 (ESAP regulation) | riksdagen.se | [A1] |
+| Cross-bloc consensus on defence legislation | HD01FöU14 and HD01FöU20 proceed without opposition reservations in committee | riksdagen.se HD01FöU14, HD01FöU20 | [A1] |
+| Vocational education reform without opposition resistance | HD01UbU17 passes UbU without follow-up motions; unanimous committee | riksdagen.se HD01UbU17 | [A1] |
+
+#### Weaknesses
+
+| Weakness | Evidence | Source | Admiralty |
+|----------|----------|--------|-----------|
+| Citizenship reform politically contested — 10 reservations | SfU28: S+V+C+MP all reserve on at least one point out of 10 decision points | riksdagen.se HD01SfU28 | [A1] |
+| Social data registry creates GDPR tension | HD01SoU27 expands Socialstyrelsen's personal data processing authority; C files special statement | riksdagen.se HD01SoU27 | [A1] |
+| CER implementation risk — critical operators face tight deadline | HD01FöU20 law planned for June 2026 processing; JUS not until June 9 | riksdagen.se HD01FöU20 process dates | [A1] |
+| Tax representative reforms complex for SMEs | HD01SkU21 introduces new relief/grace period rules that require legal capacity to navigate | riksdagen.se HD01SkU21 | [A1] |
+
+#### Opportunities
+
+| Opportunity | Evidence | Source | Admiralty |
+|-------------|----------|--------|-----------|
+| Military cooperation framework enables deeper NATO integration | HD01FöU14 improves legal framework for bilateral/multilateral operational cooperation post-accession | riksdagen.se HD01FöU14 | [A1] |
+| Vocational education expansion can reduce structural labour shortage | HD01UbU17 formalises post-secondary entry path from 2027; addresses skill gaps in industry | riksdagen.se HD01UbU17 | [A1] |
+| VAT enforcement improvement captures fiscal revenue | HD01SkU22 gives Skatteverket VIES invalidation power; EU estimates VAT gap SEK 40+ bn/year [unconfirmed] | riksdagen.se HD01SkU22 | [A2] |
+| Social data register improves social services evidence base | HD01SoU27 enables Socialstyrelsen to build national evidence base for socialtjänst reform | riksdagen.se HD01SoU27 | [A1] |
+
+#### Threats
+
+| Threat | Evidence | Source | Admiralty |
+|--------|----------|--------|-----------|
+| Opposition electoral mobilisation on citizenship | S+V+C+MP reservation bloc on HD01SfU28 — all four parties aligned, election 5 months away | riksdagen.se HD01SfU28 committee composition | [A1] |
+| Implementation capacity risk for CER law in critical sectors | HD01FöU20 status "planerat" — no published RIA; Statskontoret has not assessed operator capacity | riksdagen.se HD01FöU20 process status | [A2] |
+| GDPR enforcement risk on social data registry | HD01SoU27 mandatory data sharing for social services may trigger IMY review | riksdagen.se HD01SoU27 | [A2] |
+| Citizenship reform judicial review risk | Extended ECHR Art. 8 analysis not disclosed in committee text HD01SfU28; V and MP signal ECtHR challenge | riksdagen.se HD01SfU28 reservations | [B2] |
+
+### TOWS Matrix
+
+| | **Opportunities** | **Threats** |
+|---|---|---|
+| **Strengths** | SO: Leverage defence consensus to advance NATO integration agenda rapidly (FöU14+FöU20) | ST: Use bipartisan defence framing to insulate security legislation from citizenship criticism |
+| **Weaknesses** | WO: Use vocational reform (UbU17) to counter narrative that government neglects domestic workers | WT: Citizenship contestation (SfU28) + GDPR risk (SoU27) could converge into "surveillance-integration state" opposition frame |
+
+### Cross-SWOT Summary
+
+The strongest strategic vector is SO (security strengths → NATO/EU opportunity). The most dangerous quadrant is WT: if opposition successfully frames citizenship reform + social data registry as a "surveillance state" narrative, the government faces a compound electoral liability. The Tidö government's optimal response is to separate the security-doctrine narrative from the social-welfare narrative in public communications.
+
+## Threat Analysis
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/threat-analysis.md -->
+
+### Political Threat Taxonomy
+
+#### T1 — Electoral Threat (HIGH)
+**Actor**: Opposition bloc (S+V+C+MP)  
+**Target**: Tidö government electoral position  
+**Vector**: Citizenship reform (HD01SfU28) as electoral mobilisation weapon  
+**Mechanism**: 10 reservations across 8 decision points signal coordinated pre-election attack surface; S emphasises implementation fairness, V+MP frame as human rights violation, C attacks proportionality  
+**Evidence**: riksdagen.se HD01SfU28 — reservation list names: Ida Karkiainen (S), Tony Haddou (V), Annika Hirvonen (MP), Niels Paarup-Petersen (C) [A1]
+
+#### T2 — Legal/Institutional Threat (MEDIUM)
+**Actor**: European Court of Human Rights (ECtHR), Justitieombudsmannen (JO), IMY  
+**Target**: HD01SfU28 (citizenship), HD01SoU27 (social data registry)  
+**Vector**: ECHR Art. 8 (right to private/family life) challenge on citizenship; GDPR enforcement on SoU27  
+**Evidence**: V+MP reservation on SfU28 explicitly references age and family separation concerns consistent with Art. 8 arguments [A1]; C statement on SoU27 references personal integrity concerns [A1]
+
+#### T3 — Implementation Threat (MEDIUM)
+**Actor**: Critical infrastructure operators (energy, transport, water, health, digital)  
+**Target**: HD01FöU20 (CER law) compliance deadline  
+**Vector**: Short window between law adoption (~June 2026) and implementation obligations; no published RIA or Statskontoret capacity assessment visible  
+**Evidence**: riksdagen.se HD01FöU20 process dates — JUS June 2, TRY June 4 2026 [A1]
+
+#### T4 — Geopolitical/Strategic Threat (LOW-MEDIUM)
+**Actor**: Foreign state actors (Russia and non-NATO adversaries)  
+**Target**: HD01FöU14 (military cooperation) as potential intelligence target  
+**Vector**: New operational military cooperation framework expands joint exercise and information-sharing scope; creates new intelligence collection value  
+**Evidence**: riksdagen.se HD01FöU14 — operational cooperation improvements; context: Sweden's recent NATO accession [A2]
+
+### Attack Tree (Citizenship Reform — HD01SfU28)
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#ff006e", "primaryTextColor": "#e0e0e0", "lineColor": "#00d9ff"}}}%%
+flowchart TD
+    ROOT["Target: Destabilise Tidö Government\nCitizenship Reform Attack Surface"]
+    A["Electoral Route\nOpposition voter mobilisation"]
+    B["Legal Route\nECtHR / Constitutional Review"]
+    C["Media Route\nNarrative: Two-tier Sweden"]
+    A1["S: Implementation fairness\nRes. 2,3,8,9 — HD01SfU28"]
+    A2["V+MP: Human rights\nRes. 1,6,7,10 — HD01SfU28"]
+    A3["C: Proportionality\nRes. 2,4,5,7,8,9 — HD01SfU28"]
+    B1["Art. 8 ECHR\nFamily separation"]
+    B2["Retroactivity risk\nTransition period absent"]
+    ROOT --> A
+    ROOT --> B
+    ROOT --> C
+    A --> A1
+    A --> A2
+    A --> A3
+    B --> B1
+    B --> B2
+    style ROOT fill:#6b0f1a,color:#fff
+    style A fill:#ff006e,color:#fff
+    style B fill:#b35c00,color:#fff
+    style C fill:#7f2b7f,color:#fff
+```
+
+### MITRE-Style TTP Mapping (Political Threat)
+
+| ID | Tactic | Technique | Actor | Evidence |
+|----|--------|-----------|-------|----------|
+| T-POL-01 | Opposition Pressure | Legislative Reservation Filing | S+V+C+MP | HD01SfU28 — 10 reservations |
+| T-POL-02 | Electoral Mobilisation | Constituency Framing | V+MP | HD01SfU28 reservation text on children and age |
+| T-POL-03 | Judicial Leverage | ECtHR Reference Signalling | V+MP | HD01SfU28 Reservation 1, 7 |
+| T-POL-04 | Coalition Fracture | Centrist Crossover Pressure | C | HD01SfU28 Reservations 4,5,8 — proportionality angle |
+| T-POL-05 | Media Narrative Setting | Two-tier society frame | S | HD01SfU28 Reservations 3,9 — income requirement angle |
+
+### Attack Chain Assessment
+
+The opposition's attack chain on HD01SfU28 is: *Reservation filing* (done) → *Committee hearing media* → *Plenary debate* → *Post-vote polling* → *Electoral campaign narrative*. Steps 2–3 imminent; step 4 expected within 14 days of plenary vote.
+
+## Historical Parallels
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/historical-parallels.md -->
+
+### Parallel 1 — 2010 Citizenship Reform (HD01SfU28 parallel)
+
+**Event**: Swedish government (Reinfeldt/M) modernised citizenship law in 2001 (Lag 2001:82), which added language recommendations without formal requirements. In 2010, a cross-party agreement (Alliansen) attempted to introduce stricter integration requirements but did not include mandatory language tests.
+
+**Parallel**: The 2026 HD01SfU28 goes further than any previous post-2001 Swedish citizenship reform. It introduces both mandatory language and income requirements, moving Sweden closer to the Danish/German model. The political pattern is similar: right-bloc government pushes integration conditions during election cycle; left-bloc opposes on human rights grounds; reform passes but generates sustained legal/political challenge.
+
+**Divergence**: The 2026 reform is more explicitly partisan (10 reservations vs historical norm of 3–5) and arrives in a closer electoral environment than 2010. The Alliansen 2006–2014 held larger majorities (169+ seats in some years).
+
+**Lesson**: Integration reforms that pass with bare majorities generate more sustained challenge than reforms with cross-partisan support. The 2026 HD01SfU28 will face more durable opposition than the 2010–2014 reforms.
+
+### Parallel 2 — 2022 COVID Pandemic Emergency Laws (HD01FöU20 parallel)
+
+**Event**: During COVID-19, Swedish emergency law (prop 2020/21:86) was passed under compressed timeline with expedited JUS/TRY process. The law granted government extraordinary powers to restrict movement, gatherings, and business operations. It passed with a broad majority but was criticised by KU for potential constitutional overreach.
+
+**Parallel**: HD01FöU20 (CER Directive) similarly expands government authority to impose obligations on private critical infrastructure operators. The expedited legislative timeline (JUS June 2, TRY June 4) mirrors the compressed COVID law process. KU oversight risk is analogous.
+
+**Divergence**: CER is an EU mandate, reducing KU constitutional challenge risk. COVID law was entirely domestic discretionary legislation.
+
+**Lesson**: Laws expanding government power over private actors, even when EU-mandated, attract scrutiny from KU. Include a KU proofing step in implementation planning.
+
+### Parallel 3 — 2015 Refugee Crisis Legislative Response
+
+**Event**: In late 2015, the Swedish government (Löfven/S+MP) passed emergency legislation (prop 2015/16:174) restricting asylum and temporary residence permits under extreme time pressure. The law represented a U-turn from Sweden's historically generous asylum policy.
+
+**Parallel**: HD01SfU28 is a slower-moving, more calibrated version of integration policy tightening under electoral pressure. The 2015 precedent shows that even S-led governments can implement significant integration restrictions when the political environment demands it.
+
+**Divergence**: The 2015 legislation was reactive to a crisis; HD01SfU28 is proactive and deliberative. The opposition dynamics are inverted — in 2015, S led the tightening; in 2026, S leads the opposition.
+
+**Lesson**: Integration policy positions are not ideologically fixed. S's current opposition to SfU28 may evolve if the electoral calculus shifts. A post-election S-led government might retain some SfU28 provisions while framing them as "proportionate" rather than "restrictive."
+
+### Parallel 4 — Sweden's NATO Partnership for Peace Legal Adaptation (HD01FöU14 parallel)
+
+**Event**: When Sweden joined Partnership for Peace (PfP) in 1994, a sequence of legal adaptations was required over 1994–1998 to enable joint exercises, information sharing, and operational cooperation with NATO allies. The process took 4 years and required multiple Riksdag decisions.
+
+**Parallel**: HD01FöU14 is the latest in a continuing sequence of legal adaptations for NATO integration that began with PfP in 1994, deepened during NORDEFCO (2009), and accelerated post-NATO accession (2024). The 2026 reform removes the final major legal friction points.
+
+**Divergence**: Post-full-NATO-membership, the political risk of this type of legislation is near zero — unlike the politically charged PfP debates of 1994.
+
+**Lesson**: Military cooperation legal reforms follow predictable paths once the strategic decision (NATO membership) is made. HD01FöU14 is low-risk, high-continuity legislation following a 30-year pattern.
+
+### Summary of Historical Parallels
+
+| Parallel | Confidence | Key lesson |
+|---------|-----------|-----------|
+| 2010 citizenship | MEDIUM [B3] | Bare-majority reforms face sustained challenge |
+| 2022 COVID emergency laws | MEDIUM [B3] | KU scrutiny risk for power-expanding legislation |
+| 2015 refugee crisis response | MEDIUM [B3] | Integration positions can shift under electoral pressure |
+| 1994 PfP legal adaptation | HIGH [B2] | Military cooperation reforms follow predictable, low-risk path |
+
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/comparative-international.md -->
 
@@ -1308,58 +1287,6 @@ xychart-beta
 | ESAP Regulation | HD01FiU44 | 2024–2027 phased | First access point by Nov 2024 |
 
 **Note**: Sweden is in arrears on CER transposition (EU deadline: October 2024; Sweden target: June 2026). This creates infringement risk. Commission has already issued formal letters to lagging member states. Sweden should expect a formal notice unless June 2026 timeline is confirmed to Commission.
-
-## Historical Parallels
-<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/historical-parallels.md -->
-
-### Parallel 1 — 2010 Citizenship Reform (HD01SfU28 parallel)
-
-**Event**: Swedish government (Reinfeldt/M) modernised citizenship law in 2001 (Lag 2001:82), which added language recommendations without formal requirements. In 2010, a cross-party agreement (Alliansen) attempted to introduce stricter integration requirements but did not include mandatory language tests.
-
-**Parallel**: The 2026 HD01SfU28 goes further than any previous post-2001 Swedish citizenship reform. It introduces both mandatory language and income requirements, moving Sweden closer to the Danish/German model. The political pattern is similar: right-bloc government pushes integration conditions during election cycle; left-bloc opposes on human rights grounds; reform passes but generates sustained legal/political challenge.
-
-**Divergence**: The 2026 reform is more explicitly partisan (10 reservations vs historical norm of 3–5) and arrives in a closer electoral environment than 2010. The Alliansen 2006–2014 held larger majorities (169+ seats in some years).
-
-**Lesson**: Integration reforms that pass with bare majorities generate more sustained challenge than reforms with cross-partisan support. The 2026 HD01SfU28 will face more durable opposition than the 2010–2014 reforms.
-
-### Parallel 2 — 2022 COVID Pandemic Emergency Laws (HD01FöU20 parallel)
-
-**Event**: During COVID-19, Swedish emergency law (prop 2020/21:86) was passed under compressed timeline with expedited JUS/TRY process. The law granted government extraordinary powers to restrict movement, gatherings, and business operations. It passed with a broad majority but was criticised by KU for potential constitutional overreach.
-
-**Parallel**: HD01FöU20 (CER Directive) similarly expands government authority to impose obligations on private critical infrastructure operators. The expedited legislative timeline (JUS June 2, TRY June 4) mirrors the compressed COVID law process. KU oversight risk is analogous.
-
-**Divergence**: CER is an EU mandate, reducing KU constitutional challenge risk. COVID law was entirely domestic discretionary legislation.
-
-**Lesson**: Laws expanding government power over private actors, even when EU-mandated, attract scrutiny from KU. Include a KU proofing step in implementation planning.
-
-### Parallel 3 — 2015 Refugee Crisis Legislative Response
-
-**Event**: In late 2015, the Swedish government (Löfven/S+MP) passed emergency legislation (prop 2015/16:174) restricting asylum and temporary residence permits under extreme time pressure. The law represented a U-turn from Sweden's historically generous asylum policy.
-
-**Parallel**: HD01SfU28 is a slower-moving, more calibrated version of integration policy tightening under electoral pressure. The 2015 precedent shows that even S-led governments can implement significant integration restrictions when the political environment demands it.
-
-**Divergence**: The 2015 legislation was reactive to a crisis; HD01SfU28 is proactive and deliberative. The opposition dynamics are inverted — in 2015, S led the tightening; in 2026, S leads the opposition.
-
-**Lesson**: Integration policy positions are not ideologically fixed. S's current opposition to SfU28 may evolve if the electoral calculus shifts. A post-election S-led government might retain some SfU28 provisions while framing them as "proportionate" rather than "restrictive."
-
-### Parallel 4 — Sweden's NATO Partnership for Peace Legal Adaptation (HD01FöU14 parallel)
-
-**Event**: When Sweden joined Partnership for Peace (PfP) in 1994, a sequence of legal adaptations was required over 1994–1998 to enable joint exercises, information sharing, and operational cooperation with NATO allies. The process took 4 years and required multiple Riksdag decisions.
-
-**Parallel**: HD01FöU14 is the latest in a continuing sequence of legal adaptations for NATO integration that began with PfP in 1994, deepened during NORDEFCO (2009), and accelerated post-NATO accession (2024). The 2026 reform removes the final major legal friction points.
-
-**Divergence**: Post-full-NATO-membership, the political risk of this type of legislation is near zero — unlike the politically charged PfP debates of 1994.
-
-**Lesson**: Military cooperation legal reforms follow predictable paths once the strategic decision (NATO membership) is made. HD01FöU14 is low-risk, high-continuity legislation following a 30-year pattern.
-
-### Summary of Historical Parallels
-
-| Parallel | Confidence | Key lesson |
-|---------|-----------|-----------|
-| 2010 citizenship | MEDIUM [B3] | Bare-majority reforms face sustained challenge |
-| 2022 COVID emergency laws | MEDIUM [B3] | KU scrutiny risk for power-expanding legislation |
-| 2015 refugee crisis response | MEDIUM [B3] | Integration positions can shift under electoral pressure |
-| 1994 PfP legal adaptation | HIGH [B2] | Military cooperation reforms follow predictable, low-risk path |
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/implementation-feasibility.md -->
@@ -1440,6 +1367,79 @@ xychart-beta
 | HD01FöU14 | HIGH | Legal clean-up only | Försvarsmakten | NO — military domain |
 | HD01SkU21 | HIGH | Minimal | Skatteverket | NO — narrow scope |
 | HD01FiU44 | HIGH | EU coordination | Finansinspektionen | NO — EU system |
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/media-framing-analysis.md -->
+
+### Expected Primary Frames (Anticipated Coverage)
+
+#### Frame F1 — "Integration Policy Showdown" (HIGH probability)
+
+**Source**: Mainstream national media (Dagens Nyheter, Svenska Dagbladet, SVT, SR)  
+**Trigger document**: HD01SfU28 (citizenship requirements)  
+**Narrative structure**: Government tightens citizenship; opposition files 10 reservations; election context makes this a signature issue; voter reactions divided.
+
+**Expected headline variants**:
+- DN: "Riksdagen stärker kraven för medborgarskap — oppositionen ryter ifrån"
+- SvD: "Tidöregeringen drivs igenom medborgarskapskrav mot kraftigt motstånd"
+- Aftonbladet: "Nya reglerna ska stoppa medborgarskap — experter varnar"
+- SVT Nyheter: "Skärpta krav för medborgarskap — vad innebär det för dig?"
+
+**Risk for government**: Frame can be tilted to "government punishes immigrants" narrative. SVT's approach (informative, individual impact) may generate more politically damaging content than polemical opposition criticism.
+
+#### Frame F2 — "Sweden Strengthens Defences" (MODERATE probability)
+
+**Source**: Mainstream plus defence correspondents  
+**Trigger documents**: HD01FöU20 (CER), HD01FöU14 (military cooperation)  
+**Narrative structure**: Sweden advances security legislation aligned with NATO commitments and EU critical infrastructure protection.
+
+**Analytical note**: This frame reinforces government's strongest policy terrain (security). Minimal opposition, so media will focus on government delivery narrative. Low controversy = low news value = moderate, not high, coverage probability.
+
+#### Frame F3 — "Budget Discipline vs. Human Cost" (MODERATE probability)
+
+**Source**: Social affairs media, union press (LO-Tidningen, Kommunalarbetaren)  
+**Trigger documents**: HD01SoU27 (social data registry), HD01SkU22 (VAT fraud)  
+**Narrative structure**: Social registry creates surveillance concerns for vulnerable groups; VAT enforcement targets business "fraud" but may ensnare legitimate SMEs.
+
+#### Frame F4 — "EU Compliance Machinery" (LOW probability)
+
+**Source**: Business/economic press (DI, Realtid)  
+**Trigger documents**: HD01FiU44 (ESAP), HD01SkU22 (VAT), HD01FöU20 (CER)  
+**Narrative structure**: Sweden advances EU-mandated legislation across finance, tax, and infrastructure sectors. Framed as EU member state obligation fulfilment.
+
+**Note**: Low news value for general audiences; HIGH value for business/finance audience. DI and Realtid will likely cover FiU44 and SkU22.
+
+### Social Media Framing Dynamics
+
+#### HD01SfU28 — Social Media Risk Profile: HIGH
+
+- Twitter/X: Likely dominated by migration-focused accounts on both sides; hashtag #medborgarskap probable
+- Instagram/TikTok: Individual impact stories ("my Swedish citizenship application affected") likely from affected communities — high emotional resonance
+- Counter-campaign likely from anti-racism civil society organisations
+
+#### Vulnerability Assessment: Government
+
+The government's primary vulnerability is individual impact stories generated by implementation of HD01SfU28. Cases where a long-term resident (15+ years) who failed a language test loses citizenship eligibility will be magnified by social media and picked up by national news. This is the most likely source of negative media spiral.
+
+#### Counter-narrative Opportunities
+
+Government can pre-empt by emphasising: (a) grandfather provisions (if present), (b) transition period for existing applicants, (c) clarity and predictability for integration path. None of these are confirmed from available betänkande text — if absent, vulnerability increases significantly.
+
+### International Media
+
+**Expected international coverage**: Minimal, unless ECtHR challenge filed simultaneously with plenary vote (would generate EU-level story).  
+**AFP/Reuters watch**: "Sweden tightens citizenship rules ahead of election" — brief wire story likely, amplified via EU media monitoring networks (ECRI, FRA).
+
+### Media Influence Network
+
+| Actor | Outlet | Estimated reach | Framing bias |
+|-------|--------|----------------|-------------|
+| DN Political Editor | Dagens Nyheter | 300K readers | Centrist analytical |
+| SVT Nyheter | Public broadcaster | 2M viewers (evening) | Balanced, impact-focused |
+| Aftonbladet online | Tabloid | 4M monthly UVs | Social justice lean |
+| SvD | Svenska Dagbladet | 200K readers | Centre-right analytical |
+| SR Studio Ett | Radio | 500K listeners | Balanced |
+| Dagens Industri | Business press | 150K readers | Business, neutral |
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/devils-advocate.md -->
@@ -1742,13 +1742,6 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/threat-analysis.md)
 - [`documents/HD01FiU44-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/documents/HD01FiU44-analysis.md)
 - [`documents/HD01FöU14-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/documents/HD01FöU14-analysis.md)
 - [`documents/HD01FöU20-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/documents/HD01FöU20-analysis.md)
@@ -1757,12 +1750,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`documents/HD01SkU22-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/documents/HD01SkU22-analysis.md)
 - [`documents/HD01SoU27-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/documents/HD01SoU27-analysis.md)
 - [`documents/HD01UbU17-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/documents/HD01UbU17-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/committeeReports/cross-reference-map.md)

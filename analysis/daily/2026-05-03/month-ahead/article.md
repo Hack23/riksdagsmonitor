@@ -5,7 +5,7 @@ date: 2026-05-03
 subfolder: month-ahead
 slug: 2026-05-03-month-ahead
 source_folder: analysis/daily/2026-05-03/month-ahead
-generated_at: 2026-05-04T09:52:32.652Z
+generated_at: 2026-05-04T12:16:14.325Z
 language: en
 layout: article
 ---
@@ -59,10 +59,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -248,660 +248,6 @@ xychart-beta
 ### Election Multiplier Note
 
 As of 2026-05-03 (133 days before September 13 election), the 1.5× multiplier from `04-analysis-pipeline.md §Election-proximity significance multiplier` is active. Applied to: all migration propositions, HD03258 (transparency), S social-welfare motions cluster. Not applied to HD03254 (bipartisan defense — no meaningful opposition), HD03251 (healthcare — not a contested electoral flashpoint in the same sense).
-
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/media-framing-analysis.md -->
-
-**Method**: Entman 4-Function framing model (Define problem, Diagnose cause, Make moral judgment, Suggest remedy)  
-**Minimum**: ≥3 distinct frame packages
-
-### Frame 1: "Security and Order" (Government/SD/M framing)
-
-#### Entman 4-Function Analysis
-
-| Function | Content |
-|----------|---------|
-| **Define problem** | Sweden faces uncontrolled migration threatening public safety, welfare sustainability, and social cohesion |
-| **Diagnose cause** | Previous (Social Democratic) governments created permanent protection pathways that attracted irregular migration; weak enforcement enabled non-compliance with return orders |
-| **Moral judgment** | It is morally necessary to protect Swedish citizens and ensure fairness for those who follow the rules; welfare chauvinism reframed as "sustainability" |
-| **Suggest remedy** | HD03262–HD03265: Abolish permanent permits, strengthen return enforcement, tighten character requirements, expand detention/supervision |
-
-#### Key Frame Advocates
-- Ulf Kristersson (M, PM): "This is about upholding the rule of law and protecting the Swedish model"
-- Jimmy Åkesson (SD): "Sweden finally delivering on what SD voters were promised"
-- Johan Forssell (M, Migration Minister): Technical-legal framing; "EU asylum pact compliance"
-- Lotta Edholm (KD): "Sustainable migration with strong integration requirements"
-
-#### Likely Media Venues
-- Expressen (tabloid, SD-sympathetic editorials)
-- Aftonbladet (populist, will cover both frames)
-- SVT Nyheter (balanced — must cover all frames)
-- Nyhetsmorgon (government minister interviews)
-
-#### Frame Strength: HIGH (in possession of legislative agenda; controls news cycle)
-
----
-
-### Frame 2: "Rights and Rule of Law at Risk" (S/V/MP/civil society framing)
-
-#### Entman 4-Function Analysis
-
-| Function | Content |
-|----------|---------|
-| **Define problem** | The government is dismantling Sweden's human rights framework and EU legal obligations to appeal to SD base voters; the 4% Riksdag threshold is held hostage by SD electoral imperatives |
-| **Diagnose cause** | SD electoral logic captured M's migration policy; L's coalition dependency prevents it from exercising its traditional rule-of-law function |
-| **Moral judgment** | It is morally wrong to abolish permanent protection for people who have built lives in Sweden (ECHR Art. 8 family life); detention expansion violates human dignity |
-| **Suggest remedy** | Vote down HD03262; support judicial review; international pressure via Council of Europe; HD03258 transparency reform reversed |
-
-#### Key Frame Advocates
-- Magdalena Andersson (S): "This is the most significant regression in Swedish human rights in decades"
-- Nooshi Dadgostar (V): "We will fight every article in Riksdag committee"
-- Amnesty International Sweden: Press releases, social media, Riksdag hearing testimony
-- UNHCR Sweden: Formal statements on HD03262 protection gaps
-
-#### Likely Media Venues
-- Dagens Nyheter (liberal centrist — will give weight to rule-of-law arguments)
-- Svenska Dagbladet (conservative but constitutionalist — may amplify Lagrådet critique)
-- SR P1 Ekot (public radio — must balance frames but judicial/legal expertise prominent)
-- Juridisk Tidskrift (legal academic discourse)
-
-#### Frame Strength: MEDIUM (strong in elite/civil society discourse; less resonant with general public)
-
----
-
-### Frame 3: "Electoral Theater and Coalition Dysfunction" (Media meta-frame)
-
-#### Entman 4-Function Analysis
-
-| Function | Content |
-|----------|---------|
-| **Define problem** | The government is more focused on election positioning than governing effectively; four simultaneous migration propositions submitted right before election is electoral signaling, not policy |
-| **Diagnose cause** | Coalition arithmetic gives SD structural leverage; L's ideological paralysis creates incoherence; the government's agenda is driven by partner management, not national interest |
-| **Moral judgment** | Democratic institutions are being instrumentalized for electoral theater; voters deserve honest governance framing |
-| **Suggest remedy** | Media calls for independent expert assessment; Riksdag committee scrutiny; Lagrådet transparency |
-
-#### Key Frame Advocates
-- Political scientists (Statsvetare): SVT/SR expert commentary
-- DN editorial board: Occasional meta-critique of migration policy timing
-- Foreign correspondents: Deutsche Welle, BBC, Politico Europe all framing Sweden as "following Denmark"
-
-#### Likely Media Venues
-- SVT Agenda (expert panel discussions)
-- Dagens Arena (center-left analysis)
-- Politico Europe (international audience)
-- Expressen/DN analysis sections
-
-#### Frame Strength: MEDIUM-LOW (resonates with politically sophisticated readers; minimal general public impact)
-
----
-
-### Frame 4: "Swedish NATO Credibility" (Defense frame — HD03254)
-
-#### Entman 4-Function Analysis
-
-| Function | Content |
-|----------|---------|
-| **Define problem** | Sweden needs to translate NATO membership into operational military cooperation frameworks that match allied standards |
-| **Diagnose cause** | Historical neutrality created legal gaps in bilateral military cooperation frameworks; NATO accession (2024) requires legislative normalization |
-| **Moral judgment** | Sweden has an obligation to its allies; free-riding on NATO deterrence is strategically and morally unacceptable |
-| **Suggest remedy** | HD03254: Legislative framework for operational military cooperation; interoperability protocols |
-
-#### Frame Strength: HIGH but LOW CONTROVERSY (bipartisan support; minimal counter-frame)
-
----
-
-### Overall Media Landscape Assessment
-
-```mermaid
-quadrantChart
-    title Frame Strength vs Political Controversy
-    x-axis "Minimal controversy" --> "High controversy"
-    y-axis "Weak framing" --> "Strong framing"
-    quadrant-1 Dominant (fight here)
-    quadrant-2 Contested (manage)
-    quadrant-3 Monitor
-    quadrant-4 Narrative anchor
-    "F1 Security/Order": [0.75, 0.80]
-    "F2 Rights/Rule of Law": [0.72, 0.62]
-    "F3 Electoral Theater": [0.55, 0.45]
-    "F4 NATO Credibility": [0.20, 0.70]
-```
-
-### Key Media Battle Spaces
-
-1. **SVT/SR public broadcasting**: Must balance F1 and F2; will amplify Lagrådet critique if adverse yttrande (F2 strength boost)
-2. **Expressen/Aftonbladet tabloids**: F1 will dominate; F2 will appear in human interest cases (individuals affected by HD03262)
-3. **DN/SvD quality press**: Lagrådet analysis (F2) + meta-critique (F3) expected
-4. **Social media**: SD base amplifies F1; S/V/MP base amplifies F2; youth amplifies F3
-5. **International press**: F3 and F4 framing (Sweden following Denmark; Sweden NATO ally)
-
-### Framing Implications for Article Generation
-
-The Riksdagsmonitor month-ahead article should:
-1. Present F1 and F2 as competing legitimate frames (balance)
-2. Note F3 as an analytical observation (electoral timing)
-3. Use F4 as a governing-credibility anchor for the coalition
-4. Avoid adopting any single frame as authoritative — analytical neutrality is the editorial standard
-
-## Stakeholder Perspectives
-<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/stakeholder-perspectives.md -->
-
-**Coverage**: All major actors affected by legislative batch (dok_id: HD03262–HD03265, HD03254, HD03251, HD03258)
-
-### 6-Lens Matrix
-
-#### Lens 1: Government Coalition (M-SD-KD-L)
-
-| Actor | Position | Interests | Red Lines | Key Risk |
-|-------|----------|-----------|-----------|----------|
-| **M (Moderaterna)** | Drives migration + defense agenda | Electoral delivery of SD/M base promises; NATO credibility | HD03262 must pass intact | L defects → minority government |
-| **SD (Sverigedemokraterna)** | Strongest migration supporter | SD base mobilization; HD03262 as proof of governing effect | Any ECHR-forced dilution | Ukraine aid tension (HD11772) |
-| **KD (Kristdemokraterna)** | HD03251 champion; cautious on migration | Healthcare flagship; Christian social ethics (proportionality) | HD03265 detention risks crossing KD's human dignity floor | KD voters uncomfortable with detention expansion |
-| **L (Liberalerna)** | Swing vote on ECHR-sensitive legislation | Rule of law; individual rights; open Europe | ECHR Art. 8 breach is unacceptable | Party fracture if Johan Pehrson overrides internal voices |
-
-#### Lens 2: Opposition Parties
-
-| Actor | Position | Strategy | Expected Action |
-|-------|----------|----------|-----------------|
-| **S (Socialdemokraterna)** | Oppose migration package; lead social agenda | Judicial review framing; HD11775–HD11778 social welfare | Committee minority reservations; media counter-messaging |
-| **V (Vänsterpartiet)** | Strongly oppose HD03262–HD03265 | Amplify ECHR violations; coordinate with civil society | Riksdag interpellation barrage |
-| **C (Centerpartiet)** | Oppose migration; potential HD03251 constructive | Rule of law / rural economic concerns | Abstain or support HD03251 |
-| **MP (Miljöpartiet)** | Oppose all four migration props; environmental via HD11768 | Build coalition with S/V on rights framing | Full opposition |
-
-#### Lens 3: Affected Civil Society / Interest Groups
-
-| Actor | Position | Key Action |
-|-------|----------|-----------|
-| **UNHCR Sweden** | Critical of HD03262–HD03265 | Public statement; diplomatic representations |
-| **Amnesty International Sweden** | Oppose HD03265 (detention) | Campaign + media | 
-| **Swedish Red Cross** | Concerned about return procedures (HD03263) | Call for Statskontoret review |
-| **Företagarna / Industrifakta** | Support M/SD on regulatory clarity | Silent on migration; supportive of defense (HD03254) |
-| **SKR (Regions/Municipalities)** | Mixed on HD03251 — supports integration aim, concerns on funding | Written consultation response to Riksdag |
-| **Lagrådet** | Constitutional oversight | Yttrande on HD03262–HD03265 (ECHR Chapter 2 RF review) |
-
-#### Lens 4: Institutional / Government Agencies
-
-| Agency | Affected by | Stance | Risk |
-|--------|-------------|--------|------|
-| **Migrationsverket** | HD03262, HD03263, HD03264, HD03265 | Implementer — cautious about capacity | Return enforcement backlog |
-| **Kriminalvård** | HD03265 (detention) | Need additional capacity + legal framework | Overcrowding risk |
-| **Polismyndigheten** | HD03263 (enforcement) | Operational demands | Competing priority with crime enforcement |
-| **Socialstyrelsen** | HD03251 (healthcare integration) | Technical support; monitoring role | Guidance development burden |
-| **Riksrevisionen** | Cross-cutting | Potential future audit mandate | Agency accountability review |
-
-#### Lens 5: International / Supranational Actors
-
-| Actor | Affected by | Position |
-|-------|-------------|---------|
-| **EU Commission (DG HOME)** | HD03262 (asylum pact transposition) | Monitor compliance; potential infringement |
-| **Council of Europe** | HD03262, HD03265 | ECHR treaty body; advisory opinions available |
-| **NATO HQ** | HD03254 (military cooperation) | Supportive; operational integration goal |
-| **Nordic Council** | HD03254 | NORDEFCO context; positive |
-| **Ukraine (Government)** | HD11772 (aid tension) | Concerned about SD ambivalence on aid levels |
-
-#### Lens 6: Public / Electoral Segments
-
-| Segment | Size (approx.) | Position | Electoral Impact |
-|---------|----------------|---------|-----------------|
-| **SD core base** | 18–20% | Strongly support HD03262–HD03265 | SD vote share consolidation |
-| **M centrists** | 12–16% | Supportive but uncomfortable with HD03265 detention | Potential leakage to C/L |
-| **L rule-of-law voters** | 3–5% | Anxious about ECHR exposure | Decisive swing if L loses floor |
-| **S working-class** | 25–30% | Oppose migration restrictions; want social protection (HD11775–HD11778) | S base activation |
-| **Young urban voters** | ~8–10% | Oppose HD03258 transparency; pro-civil-society | Key swing constituency |
-| **KD family-value voters** | 4–6% | Support HD03251; cautious on HD03265 | Retention if KD delivers healthcare |
-
-```mermaid
-mindmap
-  root((Stakeholder Landscape<br/>June 2026))
-    Coalition
-      M [Migration driver]
-      SD [Migration maximalist]
-      KD [Healthcare champion]
-      L [ECHR firewall]
-    Opposition
-      S [Social welfare]
-      V [Rights framing]
-      C [Rule of law]
-      MP [Environment/rights]
-    Civil Society
-      UNHCR
-      Amnesty
-      SKR Regions
-    Agencies
-      Migrationsverket
-      Kriminalvård
-      Socialstyrelsen
-    International
-      EU Commission
-      NATO
-      Council of Europe
-```
-
-## Forward Indicators
-<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/forward-indicators.md -->
-
-**Method**: ≥10 dated indicators across ≥4 time horizons  
-**Coverage**: Monitoring framework for legislative batch 2026-05-03
-
-### Indicator Registry
-
-#### Horizon T+0 to T+30 days (May 2026)
-
-| # | Indicator | Watch For | Trigger Signal | Confidence |
-|---|-----------|----------|---------------|------------|
-| FI-01 | L parliamentary group position on HD03262 | Johan Pehrson public statement, party group resolution | Any L statement distancing from "detention expansion" = Scenario 3 elevated | HIGH |
-| FI-02 | Lagrådet docket update | Lagrådet receives HD03262 referral | Adverse yttrande draft leaked = major event | MEDIUM |
-| FI-03 | Migrationsverket capacity planning document | Internal planning memo or press briefing | "Cannot implement by 2027" = implementation failure signal | MEDIUM |
-| FI-04 | EU Commission DG HOME informal communication | Brussels procedural contacts | Commission "monitoring closely" statement = HD03262 EU risk elevated | LOW-MEDIUM |
-
-#### Horizon T+30 to T+60 days (June 2026)
-
-| # | Indicator | Watch For | Trigger Signal | Confidence |
-|---|-----------|----------|---------------|------------|
-| FI-05 | Lagrådet yttrande (formal) on HD03262–HD03265 | Published on lagrådet.se | "Allvarliga invändningar" = Scenario 2 confirmed | HIGH |
-| FI-06 | SfU (Socialförsäkringsutskottet) committee hearings on migration | Riksdag committee schedule | Expert testimonies from UNHCR/Amnesty = F2 frame amplified | HIGH |
-| FI-07 | Riksdag polling (Sifo/Novus June survey) | Party polling June 2026 | L below 5% = coalition credibility threat; S above 30% = S recovery | HIGH |
-| FI-08 | KU (Konstitutionsutskottet) referral of HD03258 | Committee assignment | KU signals procedural concerns = HD03258 amended | MEDIUM |
-
-#### Horizon T+60 to T+90 days (July–August 2026)
-
-| # | Indicator | Watch For | Trigger Signal | Confidence |
-|---|-----------|----------|---------------|------------|
-| FI-09 | SCB AKU Q2 2026 employment data | Published July 2026 | Unemployment above 8.8% = S economic narrative activated | HIGH |
-| FI-10 | Riksdag autumn session scheduling (talmanskonferens) | September agenda | HD03262 on second reading agenda = vote imminent | HIGH |
-| FI-11 | IMF Art. IV Consultation Sweden 2026 | IMF press release | GDP growth downgrade below 1.5% = economic risk R7 activated | MEDIUM |
-| FI-12 | Riksdag summer recess committee reports filed | Committee betänkanden on migration | SfU betänkande with major amendments = Scenario 2 | HIGH |
-| FI-13 | NATO Baltic/Nordic exercise schedule | FMV/Försvarsmakten | Joint exercises announced = HD03254 operational activation | MEDIUM |
-
-#### Horizon T+90 to T+133 days (August–September 13, 2026 ELECTION)
-
-| # | Indicator | Watch For | Trigger Signal | Confidence |
-|---|-----------|----------|---------------|------------|
-| FI-14 | August 2026 Riksdag vote on HD03262 | Riksdag kammarvoteringen | L vote pattern = definitive Scenario 1/2/3 confirmation | CERTAIN |
-| FI-15 | Final pre-election polling (Sifo early September) | Party share August/September | Any party at 4% threshold ± 0.5% = high volatility | HIGH |
-| FI-16 | S/opposition pre-election mobilization event | Party congress, rally, major policy announcement | S announces major social reform pledge = S offensive activated | MEDIUM |
-
-### Indicator Dashboard
-
-```mermaid
-gantt
-    title Forward Indicator Timeline
-    dateFormat YYYY-MM-DD
-    section May 2026 (T+30)
-    FI-01 L position        :milestone, 2026-05-15, 0d
-    FI-02 Lagrådet docket   :2026-05-03, 30d
-    FI-03 Migrationsverket  :2026-05-10, 20d
-    FI-04 EU Commission     :2026-05-03, 60d
-    section June 2026 (T+30-60)
-    FI-05 Lagrádet yttrande :milestone, 2026-06-15, 0d
-    FI-06 SfU hearings      :2026-06-01, 30d
-    FI-07 Riksdag polling   :milestone, 2026-06-20, 0d
-    FI-08 KU referral       :2026-06-01, 20d
-    section July-Aug 2026 (T+60-90)
-    FI-09 SCB AKU Q2        :milestone, 2026-07-15, 0d
-    FI-10 Riksdag scheduling:milestone, 2026-08-01, 0d
-    FI-11 IMF Art IV        :milestone, 2026-07-20, 0d
-    FI-12 Committee reports :2026-08-01, 30d
-    section September 2026 (T+90-133)
-    FI-14 RIKSDAG VOTE      :crit, milestone, 2026-09-01, 0d
-    FI-15 Final polling     :milestone, 2026-09-05, 0d
-    ELECTION DAY            :crit, milestone, 2026-09-13, 0d
-```
-
-### Priority Intelligence Requirements (PIR) — Forward Indicators Cross-Reference
-
-| PIR (from intelligence-assessment) | Key Forward Indicators |
-|------------------------------------|----------------------|
-| PIR-1 (L position) | FI-01, FI-07 |
-| PIR-2 (Lagrådet) | FI-02, FI-05 |
-| PIR-3 (SCB Q2) | FI-09, FI-11 |
-| PIR-4 (EU Commission) | FI-04 |
-| PIR-5 (SD Ukraine) | No specific indicator — monitor Riksdag speeches |
-| PIR-6 (Migrationsverket) | FI-03, FI-12 |
-
-### Monitoring Instructions for Next Riksdagsmonitor Report
-
-1. **By May 20**: Check L parliamentary group statements on HD03262; update FI-01
-2. **By June 15**: Lagrådet yttrande expected; this is the SINGLE MOST IMPORTANT data point for Scenario branching
-3. **By July 15**: SCB AKU Q2 employment data; update economic risk assessment
-4. **By August 1**: Riksdag committee betänkanden on migration; confirm Scenario 1/2/3 branch
-5. **By September 5**: Final pre-election polling; update election-2026-analysis seat projections
-
-## Scenario Analysis
-<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/scenario-analysis.md -->
-
-**Method**: Scenario planning with probability-weighted outcomes  
-**Horizon**: September 13, 2026 election  
-**Total probability must sum to 100%**
-
-### Scenario Tree
-
-#### Scenario 1: Coalition Delivers Full Migration Package (BASELINE) — 48%
-
-**Trigger**: L votes in favor of HD03262–HD03265; Lagrådet issues yttrande without fatal objections; EU Commission silent.
-
-**Narrative**: The Tidö coalition passes all four migration propositions intact by late summer 2026. SD base activation peaks; M election message centers on "law and security." L explains its yes-vote as "ECHR-compliant tightening." Healthcare reform (HD03251) passes in committee with minor amendments. Defense cooperation (HD03254) ratified bipartisan.
-
-**Consequences**:
-- SD: +2–4% polling, M: stable or slight gain, L: stress-tested but holding
-- S: shifts to social-economic counter-attack (HD11775–HD11778 as platform)
-- Election outcome: Tidö coalition re-elected with similar or slightly expanded majority
-
-**Indicators**:
-- L parliamentary group chair endorses HD03262 in June 2026
-- Lagrådet yttrande flagged as "minor reservations" only
-- No EU Commission formal letter by August 2026
-
-#### Scenario 2: Migration Package Partially Modified — ECHR Compromise (MODERATE) — 30%
-
-**Trigger**: Lagrådet issues adverse yttrande on HD03265 detention (deprivation of liberty) and HD03262 (permanent permit abolition scope); L demands amendments; coalition negotiates limited modifications.
-
-**Narrative**: The coalition amends HD03265 to add time limits on supervision and reduce detention scope. HD03262 is modified to preserve a humanitarian protection pathway. SD publicly complains but does not withdraw coalition support. L claims victory for rule-of-law principle. S frames this as "government in retreat."
-
-**Consequences**:
-- Modest SD disappointment; small SD base abstentions possible
-- L holds its voter base; no defection
-- Migration package still passes — less radical than original
-- S finds partial vindication; some polling shift
-
-**Indicators**:
-- Lagrådet delivers multi-page critique of HD03265 detention provisions
-- L parliamentary statement demands amendments before second reading
-- Coalition communiqué announcing "adjusted" package
-- Justitiedepartementet submits revised text to Riksdag
-
-#### Scenario 3: Coalition Crisis — L Defects on HD03262 (LOW) — 12%
-
-**Trigger**: L's internal party meeting votes against HD03262 citing ECHR Art. 8 family reunification violations; Johan Pehrson unable to deliver party support; L announces abstention or no-vote.
-
-**Narrative**: Government cannot secure majority for HD03262 (175/349). Ulf Kristersson tables proposal — or more likely removes HD03262 from spring reading. SD furious; demands coalition recommitment. KD mediates. Government survives with significant credibility damage. No early election but migration package shelved to post-election period.
-
-**Consequences**:
-- SD: -3–5% polling (base perceives betrayal)
-- L: +2–3% (rule-of-law voters return)
-- M: weakened; internal pressure on Kristersson leadership
-- S: "chaos government" narrative gains traction
-- Election outcome: uncertain — may swing either way
-
-**Indicators**:
-- L party congress resolution on ECHR compliance before June
-- Johan Pehrson interview distancing from "detention expansion"
-- Anonymous L Riksdag member quotes in Expressen/DN
-- Justitiedepartementet quiet removal of HD03262 from committee agenda
-
-#### Scenario 4: Government Collapse / Early Election (TAIL RISK) — 5%
-
-**Trigger**: Multiple simultaneous defections (L on migration + SD on Ukraine aid) + economic deterioration triggers opposition confidence vote.
-
-**Narrative**: The opposition (S+V+C+MP = 173 seats) plus L (16) = 189. If a confidence motion is triggered and L abstains, the government falls. Speaker Jan Björklund (L, notionally independent) would not block constitutionally. Talmannen appoints government-formation process.
-
-**Consequences**:
-- Likely snap election before September 13 or election as scheduled but with interim caretaker
-- S+C potential majority (107+24+18+24 = 173 — still minority but possible with specific arrangements)
-- Major policy uncertainty
-
-**Indicators**:
-- Formal interpellation of misstroendevotum filed
-- L public statement "we cannot support this government"
-- C announces willingness to govern with S
-
-#### Scenario 5: Status Quo Drift (LOW ALTERNATIVE) — 5%
-
-**Trigger**: Summer parliamentary recess delays all major votes; HD03262–HD03265 moved to autumn reading post-election; election dominated by economic and social issues rather than migration.
-
-**Narrative**: Riksdag timetable slips; Talmannen grants extended committee stage. Migration debate becomes abstract because no final votes have occurred. Election focuses on wages, housing, climate. Tidö coalition wins by narrow margin with unfinished migration agenda.
-
-**Consequences**:
-- SD disappointed but has no alternative coalition partner
-- Post-election government still pursues migration package
-- S's social narrative gains limited traction in absence of migration flashpoint
-
-### Probability Summary
-
-```mermaid
-pie title Scenario Probability Distribution
-    "S1: Full package delivery (48%)" : 48
-    "S2: ECHR compromise (30%)" : 30
-    "S3: L defects — crisis (12%)" : 12
-    "S4: Government collapse (5%)" : 5
-    "S5: Status quo drift (5%)" : 5
-```
-
-### Key Decision Nodes
-
-1. **Lagrådet yttrande** (expected June 2026): Determines S1 vs S2 branching
-2. **L internal party vote on ECHR position** (expected May–June 2026): Determines S1/S2 vs S3 branching
-3. **EU Commission informal reaction** (ongoing): Determines whether S3 gains EU-level pressure
-4. **Q2 2026 unemployment data** (July 2026): Determines whether economic deterioration activates S4 trigger
-
-### Weighted Expected Value
-
-| Outcome | P | Electoral impact |
-|---------|---|-----------------|
-| Coalition re-elected with migration package | S1+S2 = 78% | Likely |
-| Coalition loses election | S3+S4 = 17% | Possible |
-| Inconclusive / snap election | S4 = 5% | Tail risk |
-
-## Risk Assessment
-<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/risk-assessment.md -->
-
-**Scale**: Likelihood (1–5) × Impact (1–5) → Risk Score  
-**Horizon**: June 2026 near-term + 6-month electoral window
-
-### Risk Register
-
-| # | Risk Description | L | I | Score | Tier | Cascading Chains |
-|---|-----------------|---|---|-------|------|-----------------|
-| R1 | Lagrådet delivers adverse yttrande on HD03262 forcing coalition to withdraw/amend | 3 | 5 | 15 | CRITICAL | → Coalition credibility damage → L voter exodus → election loss |
-| R2 | L (Liberalerna) defects on HD03262 migration vote | 2 | 5 | 10 | HIGH | → Majority lost → Government falls or confidence motion → early election |
-| R3 | EU Commission triggers infringement on HD03262 implementation | 2 | 4 | 8 | HIGH | → International humiliation → M/L Europhile voter loss → coalition fracture |
-| R4 | Migrationsverket implementation failure on HD03263 return enforcement | 3 | 3 | 9 | HIGH | → SD base disappointment → SD tightens migration demands → coalition renegotiation |
-| R5 | Opposition exploits HD03258 transparency framing → civil society mobilization | 3 | 3 | 9 | HIGH | → International press coverage → S/MP voter-base activation → polling shift |
-| R6 | SD/M divergence on Ukraine aid (HD11772 signal) escalates | 2 | 4 | 8 | HIGH | → Foreign policy incoherence → NATO allies concerned → M electoral cost |
-| R7 | Sweden GDP growth stalls pre-election (< 1.5% 2026) | 2 | 4 | 8 | HIGH | → S economic narrative gains traction → opposition polling surge |
-| R8 | KD healthcare reform (HD03251) blocked in Riksdag committee | 2 | 3 | 6 | MODERATE | → KD disappointed → KD voters consider not turning out |
-| R9 | Nordic/NATO military cooperation (HD03254) delayed | 1 | 3 | 3 | LOW | → Defense credibility slightly dented |
-| R10 | MP animal-welfare motion (HD11768) attracts disproportionate media attention | 2 | 1 | 2 | LOW | → Media distraction; minimal policy impact |
-
-### 5-Dimension Analysis
-
-#### 1. Political Risks
-- **Coalition cohesion**: L's ECHR-sensitivity is the highest political risk (R1, R2). The four-migration propositions test L's governing-coalition calculus against core liberal values.
-- **Electoral timing**: 133 days to election with major contested legislation increases governance risk.
-
-#### 2. Legal / Constitutional Risks
-- **ECHR Art. 8**: HD03262 abolition of permanent permits + HD03265 enhanced detention require proportionality tests under ECHR. Sweden's own Lagrådet (HD03262–HD03265 all require yttrande) has standing to flag constitutional issues.
-- **EU law**: EU asylum pact transposition (HD03262) must comply with Directive minimum standards.
-
-#### 3. Social Risks
-- **Societal cohesion**: Cumulative migration tightening increases exclusion risk for long-term residents. Civil society (UNHCR, Amnesty Sweden) will mobilize visibility campaigns.
-- **Care reform delivery**: HD03251's integration of addiction/psychiatric care requires Regions to implement — uneven regional capacity is a social-equity risk.
-
-#### 4. Economic Risks
-- **Macro deterioration**: Sweden's economy is recovering but fragile. A weaker-than-expected employment figure (SCB AKU Q2 2026) could shift electoral momentum before September. **[IMF WEO Apr-2026, NGDP_RPCH, SWE]**
-- **Defense expenditure**: HD03254 military cooperation will carry fiscal costs beyond NATO's 2% GDP commitment; spending trajectory is budgetarily constrained.
-
-#### 5. Institutional Risks
-- **Agency capacity** (R4): Migrationsverket, Kriminalvård, Polisen all required for HD03263 deportation enforcement. Previous Riksrevisionen findings noted capacity gaps in return operations.
-- **Regional implementation** (HD03251): 21 Regions have heterogeneous readiness for integrated addiction/psychiatric care.
-
-### Risk Cascade Chains
-
-```mermaid
-flowchart TD
-    R1["R1: Adverse Lagrådet yttrande on HD03262"] --> RC1["Coalition forced to revise legislation"]
-    R2["R2: L defects on migration vote"] --> RC2["Majority lost"]
-    RC1 --> RC3["Electoral message weakened"]
-    RC2 --> RC4["Government confidence motion"]
-    RC4 --> RC5["Coalition dissolution risk"]
-    R3["R3: EU infringement"] --> RC6["International credibility loss"]
-    R4["R4: Migrationsverket failure"] --> RC7["SD base disappointment"]
-    RC7 --> RC8["SD demands tougher migration terms"]
-    RC8 --> RC9["L redlines breached → W2 activated"]
-    RC3 & RC5 & RC9 --> CRITICAL["CRITICAL: Coalition collapse before election"]
-```
-
-### Mitigation Recommendations
-
-1. **Pre-emptive Lagrådet engagement** on HD03262: Justitiedepartementet should pre-screen ECHR Art. 8 proportionality with Ministry legal counsels before Riksdag referral.
-2. **Statskontoret agency-readiness study** for HD03263 return enforcement: Commission within 30 days.
-3. **L parliamentary dialogue**: Establish explicit L/M/KD agreement on HD03262 ECHR floor before second reading.
-4. **EU coordination**: Brief Commission informally on HD03262 transposition approach to reduce surprise factor.
-
-## SWOT Analysis
-<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/swot-analysis.md -->
-
-### Strengths
-
-#### S1 — Coalition legislative momentum
-The Tidö coalition (M-SD-KD-L) controls 176/349 seats and is delivering on migration reform promises (HD03262–HD03265, data.riksdagen.se). The simultaneous four-proposition migration package demonstrates policy coordination and pre-election delivery capacity. **[A1]**
-
-#### S2 — Defense credibility (HD03254)
-HD03254 (military cooperation framework, Försvarsdepartementet, 2026-04-30) positions the government as NATO-aligned and defense-competent — a strong electoral asset post-Ukraine invasion. Minister Pål Jonson (M) leads this agenda. **[A1] dok_id: HD03254**
-
-#### S3 — KD healthcare anchor (HD03251)
-Integrated addiction/psychiatric care reform (HD03251, Socialdepartementet) demonstrates KD-led social-conservative governance credibility. Jakob Forssmed's reform addresses a genuine care gap acknowledged cross-party. **[A1] dok_id: HD03251**
-
-#### S4 — Fiscal soundness
-Sweden's gross government debt remains among Europe's lowest (~33–35% GDP, WEO Apr-2026 vintage). Fiscal space for electoral promises is real without deficit-alarm concerns. **[IMF WEO Apr-2026, GGXWDG_NGDP, SWE]**
-
-### Weaknesses
-
-#### W1 — ECHR exposure on HD03262
-Abolishing permanent residence permits (HD03262) risks EU infringement or Swedish constitutional court challenge under ECHR Art. 8 (family life) and RF Ch. 2. A Lagrådet adverse yttrande could force amendments. **[A1] dok_id: HD03262**
-
-#### W2 — Liberal loyalty under strain
-L (Liberalerna, ~16 seats) has historically defended rule-of-law values. HD03262–HD03265 migration tightening creates internal L tensions between core-voter libertarianism and coalition discipline. L defection on any single measure risks a 175/349 minority. **[B2] coalition arithmetic**
-
-#### W3 — Migrationsverket capacity gap
-Stärkt återvändandeverksamhet (HD03263) requires Migrationsverket to operationalize enhanced deportation — an agency already under resource strain. Implementation gap between legislative ambition and agency capacity is structural. **[A1] dok_id: HD03263**
-
-#### W4 — Transparency measure optics (HD03258)
-HD03258 (political transparency) covers civil society funding — opposition frames this as silencing dissent. Optics risk with centrist and younger voters who value civil society independence. **[A1] dok_id: HD03258**
-
-### Opportunities
-
-#### O1 — Election narrative consolidation
-The four-migration propositions give the coalition a coherent "security and order" electoral message with 133 days to landing. SD base mobilization can deliver a decisive electoral boost if the package passes intact. **[B1] election context**
-
-#### O2 — S counter-proposals reveal weakness
-S's 11 social-welfare motions (HD11769–HD11778) lack novel policy ideas and are primarily re-surfaced platform elements. The gap between S legislative output and government propositions reinforces coalition governing-competence framing. **[A1] motions cluster**
-
-#### O3 — Nordic security window
-HD03254 (military cooperation) can be embedded in Nordic/Baltic security cooperation narrative (NORDEFCO, Joint Expeditionary Force) to project alliance reliability. **[A1] dok_id: HD03254**
-
-#### O4 — Healthcare reform cross-party resonance
-HD03251 addiction/psychiatric care reform has cross-party resonance in principle; S opposition will be procedural (amendments on regionalization), not substantive. Creates a deliverable for KD-constituency voters. **[A1] dok_id: HD03251**
-
-### Threats
-
-#### T1 — EU legal backlash on asylum pact transposition
-HD03262 transposes the EU migration and asylum pact. If Sweden's implementation is found incompatible with EU Directive requirements, infringement proceedings could undermine the government's EU-solidarity credentials — particularly damaging for M/L Europhile voters. **[A1] dok_id: HD03262 summary + ECHR Art.8**
-
-#### T2 — Opposition S-counter-narrative on social poverty
-S's motions on poverty among single parents (HD11775), workplace injury reporting (HD11776), housing credits (HD11774), and mammography accessibility (HD11778) collectively build a "government neglects the vulnerable" counter-narrative. Effectiveness depends on media amplification. **[A1] dok_id: HD11775, HD11776, HD11778**
-
-#### T3 — SD/government tension on Ukraine aid
-SD motion HD11772 (Ukraina och bistånd) signals SD's continued ambivalence toward Ukraine financial aid. Tension with M/KD/L coalition partners who support continued support. This is an intra-coalition fault line the opposition can exploit. **[A1] dok_id: HD11772**
-
-#### T4 — Economic softening pre-election
-Sweden's GDP growth recovery is modest (~2.1–2.3% 2026). If unemployment rises before September 13, S's social welfare narrative gains traction against the migration-and-defense-focused coalition message. **[IMF WEO Apr-2026, NGDP_RPCH, SWE; SCB AKU]**
-
-### TOWS Matrix
-
-| | Opportunities (O1–O4) | Threats (T1–T4) |
-|---|---|---|
-| **Strengths (S1–S4)** | SO: Use S1+O1 to consolidate migration narrative; S2+O3 for NATO credibility | ST: Use S4 (fiscal) to counter T4 economic risk; S3+O4 to neutralize T2 |
-| **Weaknesses (W1–W4)** | WO: Address W1 via pre-emptive Lagrådet engagement; W3 via Statskontoret agency-capacity plan | WT: W2×T3 = highest systemic risk (L defects + SD on Ukraine) — coalition crisis scenario |
-
-```mermaid
-quadrantChart
-    title SWOT Risk-Opportunity Matrix
-    x-axis "Weakness" --> "Strength"
-    y-axis "Threat" --> "Opportunity"
-    quadrant-1 Leverage (S+O)
-    quadrant-2 Invest/Mitigate (W+O)
-    quadrant-3 Defend (W+T)
-    quadrant-4 Monitor (S+T)
-    "Migration narrative (S1+O1)": [0.75, 0.80]
-    "Defense credibility (S2+O3)": [0.82, 0.72]
-    "ECHR risk (W1+T1)": [0.20, 0.25]
-    "L loyalty (W2+T3)": [0.15, 0.20]
-    "Agency capacity (W3)": [0.25, 0.45]
-    "S counter-narrative (T2)": [0.55, 0.30]
-    "Healthcare (S3+O4)": [0.70, 0.65]
-    "Fiscal strength (S4)": [0.80, 0.55]
-```
-
-## Threat Analysis
-<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/threat-analysis.md -->
-
-### Political Threat Taxonomy
-
-#### Category A: Legislative Threats (Government Proposals at Risk)
-
-| Threat | dok_id | Mechanism | Likelihood | Impact |
-|--------|--------|-----------|------------|--------|
-| A1 ECHR-invalidation route | HD03262 | ECHR Art.8 Lagrådet yttrande → forced amendment → narrative collapse | MEDIUM | CRITICAL |
-| A2 L defection | HD03262–HD03265 | L votes against → 175/349 majority lost → government minority crisis | LOW | CRITICAL |
-| A3 EU infringement | HD03262 | Commission finds transposition incompatible with EU Asylum Directive | LOW-MEDIUM | HIGH |
-| A4 Migrationsverket capacity | HD03263 | Agency unable to deliver → SD demands escalation → coalition tension | HIGH | HIGH |
-
-#### Category B: Opposition Offensive Threats
-
-| Threat | dok_id | Mechanism | Likelihood | Impact |
-|--------|--------|-----------|------------|--------|
-| B1 S social vulnerability narrative | HD11775, HD11776, HD11778 | Media amplification of "government neglects poor" → polling shift | MEDIUM | MEDIUM |
-| B2 Transparency counter-narrative | HD03258 | Civil society framing HD03258 as "silencing dissent" → European media | MEDIUM-HIGH | MEDIUM |
-| B3 Ukraine aid SD fault-line | HD11772 | Opposition highlights SD ambivalence on Ukraine → NATO allies concern | MEDIUM | HIGH |
-| B4 S healthcare blocking | HD03251 | S/V use committee stage to fundamentally amend KD reform | MEDIUM | MEDIUM |
-
-#### Category C: External / Systemic Threats
-
-| Threat | Source | Mechanism | Likelihood | Impact |
-|--------|--------|-----------|------------|--------|
-| C1 Economic deterioration | SCB AKU / Riksbank | GDP growth < 1.5% + unemployment rise → S economic messaging gains | MEDIUM | HIGH |
-| C2 Regional care implementation failure | HD03251 | Regions cite capacity/funding gaps → reform delayed post-election | MEDIUM | MEDIUM |
-| C3 International human rights pressure | HD03262–65 | UNHCR/Council of Europe commentary → mobilizes diaspora and civil society | HIGH | MEDIUM |
-
-### Attack Tree Analysis
-
-```
-TARGET: Overthrow Tidö Coalition before September 2026 election
-├── Branch A: Destroy legislative majority
-│   ├── A1: L defects on migration vote [2/5]
-│   ├── A2: KD rebels on transparency (HD03258) [1/5]
-│   └── A3: SD rebels on Ukraine aid (HD11772) [2/5]
-├── Branch B: Delegitimize through legal failure
-│   ├── B1: Lagrådet adverse yttrande on HD03262 [3/5]
-│   ├── B2: Court of Justice EU finds HD03262 incompatible [2/5]
-│   └── B3: Riksrevisionen critical audit of Migrationsverket [3/5]
-├── Branch C: Electoral erosion
-│   ├── C1: S social narrative erodes M/KD centrist voters [3/5]
-│   ├── C2: Transparency framing alienates educated urban voters [3/5]
-│   └── C3: Economic deterioration activates S electoral base [2/5]
-└── Branch D: Coalition internal fracture
-    ├── D1: L–SD conflict on migration floor escalates [2/5]
-    ├── D2: M–SD Ukraine divergence becomes public rupture [2/5]
-    └── D3: KD–M disagreement on healthcare regionalization [1/5]
-```
-
-### MITRE TTP Analogue (Political Tactics)
-
-| TTP Code (Political Analogue) | Tactic | Technique | Observable Indicators |
-|-------------------------------|--------|-----------|----------------------|
-| P-T1591 | Reconnaissance | Opposition research on HD03262 ECHR gaps | Legal expert opinion pieces in Dagens Juridik, DN |
-| P-T1560 | Credential manipulation | Framing HD03258 as anti-civil-society | ECFR/Freedom House press releases |
-| P-T1489 | Service disruption | Blocking HD03251 in Social committee | Committee minority reservations filed |
-| P-T1070 | Indicator removal | SD's HD11772 signals hidden Ukraine policy shift | Åkesson statements on Swedish Radio |
-| P-T1598 | Legislative delay | Procedural delay of HD03262 Riksdag reading | Talmanskonferens scheduling decisions |
-
-### Key Intelligence Questions (KIQs)
-
-1. **KIQ-1**: Will Lagrådet deliver an adverse yttrande on HD03262? Timeline: before Riksdag second reading (est. June 2026). Watch: Lagrådet docket, Ministry legal submissions.
-2. **KIQ-2**: How will L (Liberalerna) votes on HD03262 break? Watch: Johan Pehrson statements, L internal party communications, L voting record on ECHR motions.
-3. **KIQ-3**: Will EU Commission engage informally with Sweden on asylum pact transposition before ratification? Watch: Brussels procedural communications.
-4. **KIQ-4**: How will polling shift for S after social-welfare motions media cycle? Watch: Sifo/Novus polling June 2026.
 
 ## Per-document intelligence
 
@@ -1156,112 +502,99 @@ HD03265 expands Sweden's administrative detention (förvar) and supervision (upp
 
 HD03265 is the enforcement mechanism for the entire migration package. Without effective detention capacity, the return enforcement (HD03263) cannot be operationalized. This is SD's strongest electoral demand and L's greatest ECHR concern within the package.
 
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/election-2026-analysis.md -->
+## Stakeholder Perspectives
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/stakeholder-perspectives.md -->
 
-**Method**: Seat projections, coalition viability, electoral dynamics
+**Coverage**: All major actors affected by legislative batch (dok_id: HD03262–HD03265, HD03254, HD03251, HD03258)
 
-### Current Parliamentary Seat Distribution (2022 Election)
+### 6-Lens Matrix
 
-| Party | Seats | Share | Coalition |
-|-------|-------|-------|-----------|
-| M (Moderaterna) | 68 | 19.5% | Tidö coalition |
-| SD (Sverigedemokraterna) | 73 | 20.5% | Tidö coalition |
-| KD (Kristdemokraterna) | 19 | 5.3% | Tidö coalition |
-| L (Liberalerna) | 16 | 4.7% | Tidö coalition |
-| **Tidö total** | **176** | **50.4%** | — |
-| S (Socialdemokraterna) | 107 | 30.7% | Opposition |
-| V (Vänsterpartiet) | 24 | 6.7% | Opposition |
-| C (Centerpartiet) | 24 | 6.7% | Opposition |
-| MP (Miljöpartiet) | 18 | 5.1% | Opposition |
-| **Opposition total** | **173** | **49.6%** | — |
+#### Lens 1: Government Coalition (M-SD-KD-L)
 
-### Polling Trajectory (May 2026 estimate)
+| Actor | Position | Interests | Red Lines | Key Risk |
+|-------|----------|-----------|-----------|----------|
+| **M (Moderaterna)** | Drives migration + defense agenda | Electoral delivery of SD/M base promises; NATO credibility | HD03262 must pass intact | L defects → minority government |
+| **SD (Sverigedemokraterna)** | Strongest migration supporter | SD base mobilization; HD03262 as proof of governing effect | Any ECHR-forced dilution | Ukraine aid tension (HD11772) |
+| **KD (Kristdemokraterna)** | HD03251 champion; cautious on migration | Healthcare flagship; Christian social ethics (proportionality) | HD03265 detention risks crossing KD's human dignity floor | KD voters uncomfortable with detention expansion |
+| **L (Liberalerna)** | Swing vote on ECHR-sensitive legislation | Rule of law; individual rights; open Europe | ECHR Art. 8 breach is unacceptable | Party fracture if Johan Pehrson overrides internal voices |
 
-*Note: Polling data estimated from institutional knowledge; exact Sifo/Novus figures for May 2026 not available via data feeds. The following reflects structural trends.*
+#### Lens 2: Opposition Parties
 
-| Party | 2022 actual | Est. May 2026 | Trend |
-|-------|------------|--------------|-------|
-| M | 19.5% | 19–21% | Stable |
-| SD | 20.5% | 21–24% | Rising (migration package benefit) |
-| KD | 5.3% | 5–6% | Stable |
-| L | 4.7% | 4–5% | Slight risk (ECHR anxiety) |
-| **Tidö est.** | **50.4%** | **50–56%** | **Leading** |
-| S | 30.7% | 27–31% | Slight decline |
-| V | 6.7% | 7–8% | Slight rise |
-| C | 6.7% | 6–7% | Stable |
-| MP | 5.1% | 4–5% | At threshold risk |
-| **Opposition est.** | **49.6%** | **44–51%** | **Behind** |
+| Actor | Position | Strategy | Expected Action |
+|-------|----------|----------|-----------------|
+| **S (Socialdemokraterna)** | Oppose migration package; lead social agenda | Judicial review framing; HD11775–HD11778 social welfare | Committee minority reservations; media counter-messaging |
+| **V (Vänsterpartiet)** | Strongly oppose HD03262–HD03265 | Amplify ECHR violations; coordinate with civil society | Riksdag interpellation barrage |
+| **C (Centerpartiet)** | Oppose migration; potential HD03251 constructive | Rule of law / rural economic concerns | Abstain or support HD03251 |
+| **MP (Miljöpartiet)** | Oppose all four migration props; environmental via HD11768 | Build coalition with S/V on rights framing | Full opposition |
 
-**Key threshold**: 4% threshold for entry to Riksdag. MP at risk of falling below; if MP drops < 4%, opposition loses 18 seats from baseline.
+#### Lens 3: Affected Civil Society / Interest Groups
 
-### Coalition Viability Analysis
+| Actor | Position | Key Action |
+|-------|----------|-----------|
+| **UNHCR Sweden** | Critical of HD03262–HD03265 | Public statement; diplomatic representations |
+| **Amnesty International Sweden** | Oppose HD03265 (detention) | Campaign + media | 
+| **Swedish Red Cross** | Concerned about return procedures (HD03263) | Call for Statskontoret review |
+| **Företagarna / Industrifakta** | Support M/SD on regulatory clarity | Silent on migration; supportive of defense (HD03254) |
+| **SKR (Regions/Municipalities)** | Mixed on HD03251 — supports integration aim, concerns on funding | Written consultation response to Riksdag |
+| **Lagrådet** | Constitutional oversight | Yttrande on HD03262–HD03265 (ECHR Chapter 2 RF review) |
 
-#### Scenario: Tidö coalition re-election (probability 48–78%, per scenario analysis)
+#### Lens 4: Institutional / Government Agencies
 
-**Seat projection (central estimate)**:  
-- M: 70, SD: 78, KD: 20, L: 15 → Total: 183/349 (52.4%) — expanded majority  
-- Risks: L loses 1–2 seats if ECHR voters defect; SD gains at SD/M margin
+| Agency | Affected by | Stance | Risk |
+|--------|-------------|--------|------|
+| **Migrationsverket** | HD03262, HD03263, HD03264, HD03265 | Implementer — cautious about capacity | Return enforcement backlog |
+| **Kriminalvård** | HD03265 (detention) | Need additional capacity + legal framework | Overcrowding risk |
+| **Polismyndigheten** | HD03263 (enforcement) | Operational demands | Competing priority with crime enforcement |
+| **Socialstyrelsen** | HD03251 (healthcare integration) | Technical support; monitoring role | Guidance development burden |
+| **Riksrevisionen** | Cross-cutting | Potential future audit mandate | Agency accountability review |
 
-**Coalition dynamics**:  
-- SD as largest coalition partner (seats) would strengthen SD negotiating position
-- Migration package delivery as electoral mandate gives SD claim to stronger portfolio control
-- L's reduced seat count weakens L's veto power over migration policy
+#### Lens 5: International / Supranational Actors
 
-#### Scenario: S-led government (probability 12–17%)
+| Actor | Affected by | Position |
+|-------|-------------|---------|
+| **EU Commission (DG HOME)** | HD03262 (asylum pact transposition) | Monitor compliance; potential infringement |
+| **Council of Europe** | HD03262, HD03265 | ECHR treaty body; advisory opinions available |
+| **NATO HQ** | HD03254 (military cooperation) | Supportive; operational integration goal |
+| **Nordic Council** | HD03254 | NORDEFCO context; positive |
+| **Ukraine (Government)** | HD11772 (aid tension) | Concerned about SD ambivalence on aid levels |
 
-**Required combination**:  
-- S + V + C + MP = 107+24+24+18 = 173 → minority government  
-- S + V + C + L = 107+24+24+16 = 171 → requires L to switch sides  
-- No mathematical route to majority without either C or L support
+#### Lens 6: Public / Electoral Segments
 
-**Viability assessment**: LOW — S needs both C and MP above threshold, AND a strong social-economic mobilization wave. Current polling does not support this.
-
-#### Coalition Mathematics for Key Votes
-
-```
-Migration package (HD03262):
-- Coalition in favor: 176 (minimum threshold: 175)
-- 1 L defection: 175 → exactly at threshold
-- 2 L defections: 174 → minority fails
-- 1 L + 1 KD defection: 174 → fails
-- 1 SD rebel (unlikely): 175 → at threshold
-
-Healthcare reform (HD03251):
-- Coalition + C support likely: ~200/349 → comfortable
-- Opposition full block: 173 → defeated (but C won't block HD03251)
-
-Defense cooperation (HD03254):
-- Bipartisan: 300+/349 → certain passage
-```
-
-### Electoral Dynamics Forecast
-
-#### Key Mobilization Factors
-
-1. **SD base mobilization** (HIGH impact): Migration package passage will drive SD voter turnout to historical highs. SD base activation in 2022 delivered 20.5%; 2026 could reach 22–24% with legislative credibility.
-
-2. **L electoral liability** (MEDIUM impact): L risks losing 1–2% of its 4.7% share if ECHR-sensitive voters feel betrayed. At risk of dropping below 4% threshold if alienation becomes severe.
-
-3. **MP threshold risk** (MEDIUM impact): MP at 5.1% in 2022; current trajectory suggests ~4.5%. A strong environmental issue or civil society mobilization (HD03258) could rescue them.
-
-4. **Youth voter turnout** (MEDIUM impact): Young urban voters (primarily S/MP/C/V) were activated in 2022 on climate. In 2026, migration and civil society dominate — could depress left-youth turnout.
-
-5. **Regional variance** (LOW-MEDIUM impact): Northern Sweden (forestry, mining) trends M/SD; Greater Stockholm trends S/L/C; Southern Sweden trends SD.
-
-### Seat Projection Diagram
+| Segment | Size (approx.) | Position | Electoral Impact |
+|---------|----------------|---------|-----------------|
+| **SD core base** | 18–20% | Strongly support HD03262–HD03265 | SD vote share consolidation |
+| **M centrists** | 12–16% | Supportive but uncomfortable with HD03265 detention | Potential leakage to C/L |
+| **L rule-of-law voters** | 3–5% | Anxious about ECHR exposure | Decisive swing if L loses floor |
+| **S working-class** | 25–30% | Oppose migration restrictions; want social protection (HD11775–HD11778) | S base activation |
+| **Young urban voters** | ~8–10% | Oppose HD03258 transparency; pro-civil-society | Key swing constituency |
+| **KD family-value voters** | 4–6% | Support HD03251; cautious on HD03265 | Retention if KD delivers healthcare |
 
 ```mermaid
-xychart-beta
-    title "Estimated Seat Range September 2026"
-    x-axis ["M", "SD", "KD", "L", "S", "V", "C", "MP"]
-    y-axis "Seats" 0 --> 120
-    bar [70, 78, 20, 15, 100, 26, 25, 15]
+mindmap
+  root((Stakeholder Landscape<br/>June 2026))
+    Coalition
+      M [Migration driver]
+      SD [Migration maximalist]
+      KD [Healthcare champion]
+      L [ECHR firewall]
+    Opposition
+      S [Social welfare]
+      V [Rights framing]
+      C [Rule of law]
+      MP [Environment/rights]
+    Civil Society
+      UNHCR
+      Amnesty
+      SKR Regions
+    Agencies
+      Migrationsverket
+      Kriminalvård
+      Socialstyrelsen
+    International
+      EU Commission
+      NATO
+      Council of Europe
 ```
-
-### Key Electoral Judgment
-
-> **Assessment [MODERATE confidence, 55–65%]**: The Tidö coalition is positioned to win the September 2026 election with a similar or slightly expanded majority, provided the migration package delivers legislative credibility without a full ECHR collapse. The central election risk is not the opposition winning but rather coalition underperformance through L seat losses. S's strategic positioning is reactive, not offensive.
 
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/coalition-mathematics.md -->
@@ -1483,86 +816,538 @@ xychart-beta
 | C | D5 + I5 | Rural services not in current batch | Risk of disengagement |
 | MP | D2 + I4 | HD11768 + anti-HD03258 | Threshold risk at 4% |
 
-## Comparative International
-<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/comparative-international.md -->
+## Forward Indicators
+<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/forward-indicators.md -->
 
-**Method**: ≥2 comparator jurisdictions (Nordic + EU) for key legislative items  
-**Primary comparators**: Denmark (migration), Finland (healthcare), Netherlands (coalition fragility), Germany (transparency)
+**Method**: ≥10 dated indicators across ≥4 time horizons  
+**Coverage**: Monitoring framework for legislative batch 2026-05-03
 
-### Comparator 1: Denmark — Migration Policy (HD03262–HD03265)
+### Indicator Registry
 
-#### Danish Policy Context
-Denmark under the Social Democrats (Mette Frederiksen, 2019–2025) and current Moderate-coalition government has pursued among Europe's most restrictive migration policies since 2015. Key measures:
-- **Paradigm shift (2019)**: Focus on temporary protection with mandatory return when conditions allow — directly analogous to Sweden's HD03262 (abolition of permanent permits)
-- **Return centers**: Denmark established dedicated return facilities for rejected asylum seekers — precursor model to HD03263
-- **Zero asylum seeker target**: Political target (not always achieved operationally) that mirrors HD03262's ambition
+#### Horizon T+0 to T+30 days (May 2026)
 
-#### Lessons for Sweden
-| Danish experience | Swedish analogue | Implication |
-|------------------|-----------------|-------------|
-| Paradigm shift withstood ECHR Art. 8 challenges (margin of appreciation) | HD03262 abolition of permanent permits | ECHR challenge probable but not fatal if narrow scope |
-| Return centers experienced operational capacity failures | HD03263 return enforcement | Migrationsverket will face same capacity constraints |
-| EU condemnation of "zero asylum" target | HD03262 EU pact compatibility | Commission pressure likely but legally constrained |
-| Social Democrats moved right → S voters did not leave | Sweden S opposition | Sweden S may shift rhetoric post-election if they lose |
+| # | Indicator | Watch For | Trigger Signal | Confidence |
+|---|-----------|----------|---------------|------------|
+| FI-01 | L parliamentary group position on HD03262 | Johan Pehrson public statement, party group resolution | Any L statement distancing from "detention expansion" = Scenario 3 elevated | HIGH |
+| FI-02 | Lagrådet docket update | Lagrådet receives HD03262 referral | Adverse yttrande draft leaked = major event | MEDIUM |
+| FI-03 | Migrationsverket capacity planning document | Internal planning memo or press briefing | "Cannot implement by 2027" = implementation failure signal | MEDIUM |
+| FI-04 | EU Commission DG HOME informal communication | Brussels procedural contacts | Commission "monitoring closely" statement = HD03262 EU risk elevated | LOW-MEDIUM |
 
-**Assessment**: Denmark is the most directly relevant comparator. Swedish migration package follows Danish trajectory 5–7 years later. ECHR withstood in Denmark; operational delivery is the harder challenge.
+#### Horizon T+30 to T+60 days (June 2026)
 
-### Comparator 2: Finland — Healthcare Integration (HD03251)
+| # | Indicator | Watch For | Trigger Signal | Confidence |
+|---|-----------|----------|---------------|------------|
+| FI-05 | Lagrådet yttrande (formal) on HD03262–HD03265 | Published on lagrådet.se | "Allvarliga invändningar" = Scenario 2 confirmed | HIGH |
+| FI-06 | SfU (Socialförsäkringsutskottet) committee hearings on migration | Riksdag committee schedule | Expert testimonies from UNHCR/Amnesty = F2 frame amplified | HIGH |
+| FI-07 | Riksdag polling (Sifo/Novus June survey) | Party polling June 2026 | L below 5% = coalition credibility threat; S above 30% = S recovery | HIGH |
+| FI-08 | KU (Konstitutionsutskottet) referral of HD03258 | Committee assignment | KU signals procedural concerns = HD03258 amended | MEDIUM |
 
-#### Finnish Policy Context
-Finland's SOTE reform (Sosiaali- ja terveydenhuollon uudistus), implemented 2023–2024, created 21 wellbeing services counties (hyvinvointialueet) integrating social, primary healthcare, and specialist care. This is the most ambitious Nordic healthcare integration reform in 20 years.
+#### Horizon T+60 to T+90 days (July–August 2026)
 
-#### Lessons for Sweden
-| Finnish experience | Swedish analogue | Implication |
-|------------------|-----------------|-------------|
-| 10-year reform process (2000–2022) before final passage | HD03251 builds on SOU 2021:93 | Sweden's reform is faster but narrower (addiction+psychiatry only) |
-| Cost overruns in initial years (+15–20% vs. projections) | HD03251 implementation budget | Swedish Regions should expect upfront capacity investment |
-| Integration of addiction/mental health was a stated goal but least-implemented | HD03251 specifically targets addiction+psychiatric | Sweden is attempting what Finland found hardest |
-| IT infrastructure (Apotti) was critical bottleneck | HD03251 requires shared patient records | Sweden's NPÖ national patient overview must be upgraded |
+| # | Indicator | Watch For | Trigger Signal | Confidence |
+|---|-----------|----------|---------------|------------|
+| FI-09 | SCB AKU Q2 2026 employment data | Published July 2026 | Unemployment above 8.8% = S economic narrative activated | HIGH |
+| FI-10 | Riksdag autumn session scheduling (talmanskonferens) | September agenda | HD03262 on second reading agenda = vote imminent | HIGH |
+| FI-11 | IMF Art. IV Consultation Sweden 2026 | IMF press release | GDP growth downgrade below 1.5% = economic risk R7 activated | MEDIUM |
+| FI-12 | Riksdag summer recess committee reports filed | Committee betänkanden on migration | SfU betänkande with major amendments = Scenario 2 | HIGH |
+| FI-13 | NATO Baltic/Nordic exercise schedule | FMV/Försvarsmakten | Joint exercises announced = HD03254 operational activation | MEDIUM |
 
-**Assessment**: Finland's SOTE experience suggests HD03251's goals are achievable but underestimated in delivery cost and timeline. KD's 2-year implementation target may be optimistic.
+#### Horizon T+90 to T+133 days (August–September 13, 2026 ELECTION)
 
-### Comparator 3: Netherlands — Coalition Fragility (L defection risk)
+| # | Indicator | Watch For | Trigger Signal | Confidence |
+|---|-----------|----------|---------------|------------|
+| FI-14 | August 2026 Riksdag vote on HD03262 | Riksdag kammarvoteringen | L vote pattern = definitive Scenario 1/2/3 confirmation | CERTAIN |
+| FI-15 | Final pre-election polling (Sifo early September) | Party share August/September | Any party at 4% threshold ± 0.5% = high volatility | HIGH |
+| FI-16 | S/opposition pre-election mobilization event | Party congress, rally, major policy announcement | S announces major social reform pledge = S offensive activated | MEDIUM |
 
-#### Dutch Policy Context
-The Netherlands experienced coalition fragility in 2023–2024: Mark Rutte's VVD-CDA-D66-ChristenUnie coalition (2021) collapsed in 2023 over asylum policy when D66 and ChristenUnie could not accept VVD/Rutte's migration tightening. Geert Wilders' PVV won the subsequent election; coalition formation took 7 months.
+### Indicator Dashboard
 
-#### Lessons for Sweden
-| Dutch experience | Swedish analogue | Implication |
-|-----------------|-----------------|-------------|
-| D66 (liberal, ECHR-sensitive) triggered collapse over migration | L (Liberalerna) analogous position | L defection precedent exists in Dutch model |
-| VVD moved right on migration to retain PVV cooperation | M moved right to retain SD cooperation | Mirror dynamic in Sweden |
-| Liberal partner collapse enabled further-right outcome | L departure could shift Sweden further toward SD-only position | Paradox: L staying may moderate more than leaving |
-| Coalition formation took 7 months post-collapse | Sweden has fixed election date (Sept 13) | Window for crisis resolution is very short |
+```mermaid
+gantt
+    title Forward Indicator Timeline
+    dateFormat YYYY-MM-DD
+    section May 2026 (T+30)
+    FI-01 L position        :milestone, 2026-05-15, 0d
+    FI-02 Lagrådet docket   :2026-05-03, 30d
+    FI-03 Migrationsverket  :2026-05-10, 20d
+    FI-04 EU Commission     :2026-05-03, 60d
+    section June 2026 (T+30-60)
+    FI-05 Lagrádet yttrande :milestone, 2026-06-15, 0d
+    FI-06 SfU hearings      :2026-06-01, 30d
+    FI-07 Riksdag polling   :milestone, 2026-06-20, 0d
+    FI-08 KU referral       :2026-06-01, 20d
+    section July-Aug 2026 (T+60-90)
+    FI-09 SCB AKU Q2        :milestone, 2026-07-15, 0d
+    FI-10 Riksdag scheduling:milestone, 2026-08-01, 0d
+    FI-11 IMF Art IV        :milestone, 2026-07-20, 0d
+    FI-12 Committee reports :2026-08-01, 30d
+    section September 2026 (T+90-133)
+    FI-14 RIKSDAG VOTE      :crit, milestone, 2026-09-01, 0d
+    FI-15 Final polling     :milestone, 2026-09-05, 0d
+    ELECTION DAY            :crit, milestone, 2026-09-13, 0d
+```
 
-**Assessment**: The Dutch model is a significant warning sign for scenario S3/S4. Liberal ECHR-sensitive coalition partners in migration-restrictionist coalitions have a historically high defection rate (D66 NL, FDP DE on migration).
+### Priority Intelligence Requirements (PIR) — Forward Indicators Cross-Reference
 
-### Comparator 4: Germany — Transparency Legislation (HD03258)
+| PIR (from intelligence-assessment) | Key Forward Indicators |
+|------------------------------------|----------------------|
+| PIR-1 (L position) | FI-01, FI-07 |
+| PIR-2 (Lagrådet) | FI-02, FI-05 |
+| PIR-3 (SCB Q2) | FI-09, FI-11 |
+| PIR-4 (EU Commission) | FI-04 |
+| PIR-5 (SD Ukraine) | No specific indicator — monitor Riksdag speeches |
+| PIR-6 (Migrationsverket) | FI-03, FI-12 |
 
-#### German Policy Context
-Germany's Lobbyregister (2021) and ongoing civil society transparency debates provide context for HD03258. Germany's coalition (CDU/CSU-SPD, 2025) has similarly debated funding transparency for organizations receiving foreign support — directly comparable to HD03258.
+### Monitoring Instructions for Next Riksdagsmonitor Report
 
-#### Lessons for Sweden
-| German experience | Swedish analogue | Implication |
-|-----------------|-----------------|-------------|
-| Lobbyregister faced constitutional challenge on freedom of association | HD03258 civil society funding transparency | Swedish HD03258 likely to face RF Ch. 2 §1 challenge |
-| NGO transparency rules often capture domestic organizations disproportionately | HD03258 covers all organizations | Opposition framing of "silencing dissent" has evidential basis |
-| FDP (liberal) supported transparency but required strict proportionality safeguards | L should demand proportionality in HD03258 | L may negotiate specific civil society carve-outs |
+1. **By May 20**: Check L parliamentary group statements on HD03262; update FI-01
+2. **By June 15**: Lagrådet yttrande expected; this is the SINGLE MOST IMPORTANT data point for Scenario branching
+3. **By July 15**: SCB AKU Q2 employment data; update economic risk assessment
+4. **By August 1**: Riksdag committee betänkanden on migration; confirm Scenario 1/2/3 branch
+5. **By September 5**: Final pre-election polling; update election-2026-analysis seat projections
 
-### Summary Comparison Table
+## Scenario Analysis
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/scenario-analysis.md -->
 
-| Policy Area | Sweden (2026) | Denmark | Finland | Netherlands | Germany |
-|-------------|--------------|---------|---------|-------------|---------|
-| Migration restriction | HD03262–HD03265 | Already implemented (2019–2022) | Less restrictive | Collapsed government | Debated (AfD influence) |
-| Healthcare integration | HD03251 (targeted) | Not Nordic peer | SOTE 2023 (comprehensive) | N/A | Regional model |
-| Coalition liberal fragility | HIGH (L at risk) | LOW (liberals not coalition) | N/A | COLLAPSED 2023 | STRESSED (FDP left 2024) |
-| Transparency legislation | HD03258 (in progress) | Law passed | Proposed | Passed (2021+) | Lobbyregister 2021 |
+**Method**: Scenario planning with probability-weighted outcomes  
+**Horizon**: September 13, 2026 election  
+**Total probability must sum to 100%**
 
-### Key Intelligence Judgment from Comparators
+### Scenario Tree
 
-> **JUDGMENT-COMP-1 [MODERATE CONFIDENCE]**: Sweden's migration tightening trajectory is 5–7 years behind Denmark's. Danish experience indicates ECHR resistance is survivable with proportionality adjustments. The highest delivery risk is not legal but operational (agency capacity), consistent with R4 in the risk register.
+#### Scenario 1: Coalition Delivers Full Migration Package (BASELINE) — 48%
 
-> **JUDGMENT-COMP-2 [HIGH CONFIDENCE]**: The Netherlands D66 precedent shows that ECHR-sensitive liberal coalition partners in migration-restrictionist governments face structural defection pressure. L's current position in Sweden mirrors D66 Netherlands 2021–2022. Monitor L internal party signals closely.
+**Trigger**: L votes in favor of HD03262–HD03265; Lagrådet issues yttrande without fatal objections; EU Commission silent.
+
+**Narrative**: The Tidö coalition passes all four migration propositions intact by late summer 2026. SD base activation peaks; M election message centers on "law and security." L explains its yes-vote as "ECHR-compliant tightening." Healthcare reform (HD03251) passes in committee with minor amendments. Defense cooperation (HD03254) ratified bipartisan.
+
+**Consequences**:
+- SD: +2–4% polling, M: stable or slight gain, L: stress-tested but holding
+- S: shifts to social-economic counter-attack (HD11775–HD11778 as platform)
+- Election outcome: Tidö coalition re-elected with similar or slightly expanded majority
+
+**Indicators**:
+- L parliamentary group chair endorses HD03262 in June 2026
+- Lagrådet yttrande flagged as "minor reservations" only
+- No EU Commission formal letter by August 2026
+
+#### Scenario 2: Migration Package Partially Modified — ECHR Compromise (MODERATE) — 30%
+
+**Trigger**: Lagrådet issues adverse yttrande on HD03265 detention (deprivation of liberty) and HD03262 (permanent permit abolition scope); L demands amendments; coalition negotiates limited modifications.
+
+**Narrative**: The coalition amends HD03265 to add time limits on supervision and reduce detention scope. HD03262 is modified to preserve a humanitarian protection pathway. SD publicly complains but does not withdraw coalition support. L claims victory for rule-of-law principle. S frames this as "government in retreat."
+
+**Consequences**:
+- Modest SD disappointment; small SD base abstentions possible
+- L holds its voter base; no defection
+- Migration package still passes — less radical than original
+- S finds partial vindication; some polling shift
+
+**Indicators**:
+- Lagrådet delivers multi-page critique of HD03265 detention provisions
+- L parliamentary statement demands amendments before second reading
+- Coalition communiqué announcing "adjusted" package
+- Justitiedepartementet submits revised text to Riksdag
+
+#### Scenario 3: Coalition Crisis — L Defects on HD03262 (LOW) — 12%
+
+**Trigger**: L's internal party meeting votes against HD03262 citing ECHR Art. 8 family reunification violations; Johan Pehrson unable to deliver party support; L announces abstention or no-vote.
+
+**Narrative**: Government cannot secure majority for HD03262 (175/349). Ulf Kristersson tables proposal — or more likely removes HD03262 from spring reading. SD furious; demands coalition recommitment. KD mediates. Government survives with significant credibility damage. No early election but migration package shelved to post-election period.
+
+**Consequences**:
+- SD: -3–5% polling (base perceives betrayal)
+- L: +2–3% (rule-of-law voters return)
+- M: weakened; internal pressure on Kristersson leadership
+- S: "chaos government" narrative gains traction
+- Election outcome: uncertain — may swing either way
+
+**Indicators**:
+- L party congress resolution on ECHR compliance before June
+- Johan Pehrson interview distancing from "detention expansion"
+- Anonymous L Riksdag member quotes in Expressen/DN
+- Justitiedepartementet quiet removal of HD03262 from committee agenda
+
+#### Scenario 4: Government Collapse / Early Election (TAIL RISK) — 5%
+
+**Trigger**: Multiple simultaneous defections (L on migration + SD on Ukraine aid) + economic deterioration triggers opposition confidence vote.
+
+**Narrative**: The opposition (S+V+C+MP = 173 seats) plus L (16) = 189. If a confidence motion is triggered and L abstains, the government falls. Speaker Jan Björklund (L, notionally independent) would not block constitutionally. Talmannen appoints government-formation process.
+
+**Consequences**:
+- Likely snap election before September 13 or election as scheduled but with interim caretaker
+- S+C potential majority (107+24+18+24 = 173 — still minority but possible with specific arrangements)
+- Major policy uncertainty
+
+**Indicators**:
+- Formal interpellation of misstroendevotum filed
+- L public statement "we cannot support this government"
+- C announces willingness to govern with S
+
+#### Scenario 5: Status Quo Drift (LOW ALTERNATIVE) — 5%
+
+**Trigger**: Summer parliamentary recess delays all major votes; HD03262–HD03265 moved to autumn reading post-election; election dominated by economic and social issues rather than migration.
+
+**Narrative**: Riksdag timetable slips; Talmannen grants extended committee stage. Migration debate becomes abstract because no final votes have occurred. Election focuses on wages, housing, climate. Tidö coalition wins by narrow margin with unfinished migration agenda.
+
+**Consequences**:
+- SD disappointed but has no alternative coalition partner
+- Post-election government still pursues migration package
+- S's social narrative gains limited traction in absence of migration flashpoint
+
+### Probability Summary
+
+```mermaid
+pie title Scenario Probability Distribution
+    "S1: Full package delivery (48%)" : 48
+    "S2: ECHR compromise (30%)" : 30
+    "S3: L defects — crisis (12%)" : 12
+    "S4: Government collapse (5%)" : 5
+    "S5: Status quo drift (5%)" : 5
+```
+
+### Key Decision Nodes
+
+1. **Lagrådet yttrande** (expected June 2026): Determines S1 vs S2 branching
+2. **L internal party vote on ECHR position** (expected May–June 2026): Determines S1/S2 vs S3 branching
+3. **EU Commission informal reaction** (ongoing): Determines whether S3 gains EU-level pressure
+4. **Q2 2026 unemployment data** (July 2026): Determines whether economic deterioration activates S4 trigger
+
+### Weighted Expected Value
+
+| Outcome | P | Electoral impact |
+|---------|---|-----------------|
+| Coalition re-elected with migration package | S1+S2 = 78% | Likely |
+| Coalition loses election | S3+S4 = 17% | Possible |
+| Inconclusive / snap election | S4 = 5% | Tail risk |
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/election-2026-analysis.md -->
+
+**Method**: Seat projections, coalition viability, electoral dynamics
+
+### Current Parliamentary Seat Distribution (2022 Election)
+
+| Party | Seats | Share | Coalition |
+|-------|-------|-------|-----------|
+| M (Moderaterna) | 68 | 19.5% | Tidö coalition |
+| SD (Sverigedemokraterna) | 73 | 20.5% | Tidö coalition |
+| KD (Kristdemokraterna) | 19 | 5.3% | Tidö coalition |
+| L (Liberalerna) | 16 | 4.7% | Tidö coalition |
+| **Tidö total** | **176** | **50.4%** | — |
+| S (Socialdemokraterna) | 107 | 30.7% | Opposition |
+| V (Vänsterpartiet) | 24 | 6.7% | Opposition |
+| C (Centerpartiet) | 24 | 6.7% | Opposition |
+| MP (Miljöpartiet) | 18 | 5.1% | Opposition |
+| **Opposition total** | **173** | **49.6%** | — |
+
+### Polling Trajectory (May 2026 estimate)
+
+*Note: Polling data estimated from institutional knowledge; exact Sifo/Novus figures for May 2026 not available via data feeds. The following reflects structural trends.*
+
+| Party | 2022 actual | Est. May 2026 | Trend |
+|-------|------------|--------------|-------|
+| M | 19.5% | 19–21% | Stable |
+| SD | 20.5% | 21–24% | Rising (migration package benefit) |
+| KD | 5.3% | 5–6% | Stable |
+| L | 4.7% | 4–5% | Slight risk (ECHR anxiety) |
+| **Tidö est.** | **50.4%** | **50–56%** | **Leading** |
+| S | 30.7% | 27–31% | Slight decline |
+| V | 6.7% | 7–8% | Slight rise |
+| C | 6.7% | 6–7% | Stable |
+| MP | 5.1% | 4–5% | At threshold risk |
+| **Opposition est.** | **49.6%** | **44–51%** | **Behind** |
+
+**Key threshold**: 4% threshold for entry to Riksdag. MP at risk of falling below; if MP drops < 4%, opposition loses 18 seats from baseline.
+
+### Coalition Viability Analysis
+
+#### Scenario: Tidö coalition re-election (probability 48–78%, per scenario analysis)
+
+**Seat projection (central estimate)**:  
+- M: 70, SD: 78, KD: 20, L: 15 → Total: 183/349 (52.4%) — expanded majority  
+- Risks: L loses 1–2 seats if ECHR voters defect; SD gains at SD/M margin
+
+**Coalition dynamics**:  
+- SD as largest coalition partner (seats) would strengthen SD negotiating position
+- Migration package delivery as electoral mandate gives SD claim to stronger portfolio control
+- L's reduced seat count weakens L's veto power over migration policy
+
+#### Scenario: S-led government (probability 12–17%)
+
+**Required combination**:  
+- S + V + C + MP = 107+24+24+18 = 173 → minority government  
+- S + V + C + L = 107+24+24+16 = 171 → requires L to switch sides  
+- No mathematical route to majority without either C or L support
+
+**Viability assessment**: LOW — S needs both C and MP above threshold, AND a strong social-economic mobilization wave. Current polling does not support this.
+
+#### Coalition Mathematics for Key Votes
+
+```
+Migration package (HD03262):
+- Coalition in favor: 176 (minimum threshold: 175)
+- 1 L defection: 175 → exactly at threshold
+- 2 L defections: 174 → minority fails
+- 1 L + 1 KD defection: 174 → fails
+- 1 SD rebel (unlikely): 175 → at threshold
+
+Healthcare reform (HD03251):
+- Coalition + C support likely: ~200/349 → comfortable
+- Opposition full block: 173 → defeated (but C won't block HD03251)
+
+Defense cooperation (HD03254):
+- Bipartisan: 300+/349 → certain passage
+```
+
+### Electoral Dynamics Forecast
+
+#### Key Mobilization Factors
+
+1. **SD base mobilization** (HIGH impact): Migration package passage will drive SD voter turnout to historical highs. SD base activation in 2022 delivered 20.5%; 2026 could reach 22–24% with legislative credibility.
+
+2. **L electoral liability** (MEDIUM impact): L risks losing 1–2% of its 4.7% share if ECHR-sensitive voters feel betrayed. At risk of dropping below 4% threshold if alienation becomes severe.
+
+3. **MP threshold risk** (MEDIUM impact): MP at 5.1% in 2022; current trajectory suggests ~4.5%. A strong environmental issue or civil society mobilization (HD03258) could rescue them.
+
+4. **Youth voter turnout** (MEDIUM impact): Young urban voters (primarily S/MP/C/V) were activated in 2022 on climate. In 2026, migration and civil society dominate — could depress left-youth turnout.
+
+5. **Regional variance** (LOW-MEDIUM impact): Northern Sweden (forestry, mining) trends M/SD; Greater Stockholm trends S/L/C; Southern Sweden trends SD.
+
+### Seat Projection Diagram
+
+```mermaid
+xychart-beta
+    title "Estimated Seat Range September 2026"
+    x-axis ["M", "SD", "KD", "L", "S", "V", "C", "MP"]
+    y-axis "Seats" 0 --> 120
+    bar [70, 78, 20, 15, 100, 26, 25, 15]
+```
+
+### Key Electoral Judgment
+
+> **Assessment [MODERATE confidence, 55–65%]**: The Tidö coalition is positioned to win the September 2026 election with a similar or slightly expanded majority, provided the migration package delivers legislative credibility without a full ECHR collapse. The central election risk is not the opposition winning but rather coalition underperformance through L seat losses. S's strategic positioning is reactive, not offensive.
+
+## Risk Assessment
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/risk-assessment.md -->
+
+**Scale**: Likelihood (1–5) × Impact (1–5) → Risk Score  
+**Horizon**: June 2026 near-term + 6-month electoral window
+
+### Risk Register
+
+| # | Risk Description | L | I | Score | Tier | Cascading Chains |
+|---|-----------------|---|---|-------|------|-----------------|
+| R1 | Lagrådet delivers adverse yttrande on HD03262 forcing coalition to withdraw/amend | 3 | 5 | 15 | CRITICAL | → Coalition credibility damage → L voter exodus → election loss |
+| R2 | L (Liberalerna) defects on HD03262 migration vote | 2 | 5 | 10 | HIGH | → Majority lost → Government falls or confidence motion → early election |
+| R3 | EU Commission triggers infringement on HD03262 implementation | 2 | 4 | 8 | HIGH | → International humiliation → M/L Europhile voter loss → coalition fracture |
+| R4 | Migrationsverket implementation failure on HD03263 return enforcement | 3 | 3 | 9 | HIGH | → SD base disappointment → SD tightens migration demands → coalition renegotiation |
+| R5 | Opposition exploits HD03258 transparency framing → civil society mobilization | 3 | 3 | 9 | HIGH | → International press coverage → S/MP voter-base activation → polling shift |
+| R6 | SD/M divergence on Ukraine aid (HD11772 signal) escalates | 2 | 4 | 8 | HIGH | → Foreign policy incoherence → NATO allies concerned → M electoral cost |
+| R7 | Sweden GDP growth stalls pre-election (< 1.5% 2026) | 2 | 4 | 8 | HIGH | → S economic narrative gains traction → opposition polling surge |
+| R8 | KD healthcare reform (HD03251) blocked in Riksdag committee | 2 | 3 | 6 | MODERATE | → KD disappointed → KD voters consider not turning out |
+| R9 | Nordic/NATO military cooperation (HD03254) delayed | 1 | 3 | 3 | LOW | → Defense credibility slightly dented |
+| R10 | MP animal-welfare motion (HD11768) attracts disproportionate media attention | 2 | 1 | 2 | LOW | → Media distraction; minimal policy impact |
+
+### 5-Dimension Analysis
+
+#### 1. Political Risks
+- **Coalition cohesion**: L's ECHR-sensitivity is the highest political risk (R1, R2). The four-migration propositions test L's governing-coalition calculus against core liberal values.
+- **Electoral timing**: 133 days to election with major contested legislation increases governance risk.
+
+#### 2. Legal / Constitutional Risks
+- **ECHR Art. 8**: HD03262 abolition of permanent permits + HD03265 enhanced detention require proportionality tests under ECHR. Sweden's own Lagrådet (HD03262–HD03265 all require yttrande) has standing to flag constitutional issues.
+- **EU law**: EU asylum pact transposition (HD03262) must comply with Directive minimum standards.
+
+#### 3. Social Risks
+- **Societal cohesion**: Cumulative migration tightening increases exclusion risk for long-term residents. Civil society (UNHCR, Amnesty Sweden) will mobilize visibility campaigns.
+- **Care reform delivery**: HD03251's integration of addiction/psychiatric care requires Regions to implement — uneven regional capacity is a social-equity risk.
+
+#### 4. Economic Risks
+- **Macro deterioration**: Sweden's economy is recovering but fragile. A weaker-than-expected employment figure (SCB AKU Q2 2026) could shift electoral momentum before September. **[IMF WEO Apr-2026, NGDP_RPCH, SWE]**
+- **Defense expenditure**: HD03254 military cooperation will carry fiscal costs beyond NATO's 2% GDP commitment; spending trajectory is budgetarily constrained.
+
+#### 5. Institutional Risks
+- **Agency capacity** (R4): Migrationsverket, Kriminalvård, Polisen all required for HD03263 deportation enforcement. Previous Riksrevisionen findings noted capacity gaps in return operations.
+- **Regional implementation** (HD03251): 21 Regions have heterogeneous readiness for integrated addiction/psychiatric care.
+
+### Risk Cascade Chains
+
+```mermaid
+flowchart TD
+    R1["R1: Adverse Lagrådet yttrande on HD03262"] --> RC1["Coalition forced to revise legislation"]
+    R2["R2: L defects on migration vote"] --> RC2["Majority lost"]
+    RC1 --> RC3["Electoral message weakened"]
+    RC2 --> RC4["Government confidence motion"]
+    RC4 --> RC5["Coalition dissolution risk"]
+    R3["R3: EU infringement"] --> RC6["International credibility loss"]
+    R4["R4: Migrationsverket failure"] --> RC7["SD base disappointment"]
+    RC7 --> RC8["SD demands tougher migration terms"]
+    RC8 --> RC9["L redlines breached → W2 activated"]
+    RC3 & RC5 & RC9 --> CRITICAL["CRITICAL: Coalition collapse before election"]
+```
+
+### Mitigation Recommendations
+
+1. **Pre-emptive Lagrådet engagement** on HD03262: Justitiedepartementet should pre-screen ECHR Art. 8 proportionality with Ministry legal counsels before Riksdag referral.
+2. **Statskontoret agency-readiness study** for HD03263 return enforcement: Commission within 30 days.
+3. **L parliamentary dialogue**: Establish explicit L/M/KD agreement on HD03262 ECHR floor before second reading.
+4. **EU coordination**: Brief Commission informally on HD03262 transposition approach to reduce surprise factor.
+
+## SWOT Analysis
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/swot-analysis.md -->
+
+### Strengths
+
+#### S1 — Coalition legislative momentum
+The Tidö coalition (M-SD-KD-L) controls 176/349 seats and is delivering on migration reform promises (HD03262–HD03265, data.riksdagen.se). The simultaneous four-proposition migration package demonstrates policy coordination and pre-election delivery capacity. **[A1]**
+
+#### S2 — Defense credibility (HD03254)
+HD03254 (military cooperation framework, Försvarsdepartementet, 2026-04-30) positions the government as NATO-aligned and defense-competent — a strong electoral asset post-Ukraine invasion. Minister Pål Jonson (M) leads this agenda. **[A1] dok_id: HD03254**
+
+#### S3 — KD healthcare anchor (HD03251)
+Integrated addiction/psychiatric care reform (HD03251, Socialdepartementet) demonstrates KD-led social-conservative governance credibility. Jakob Forssmed's reform addresses a genuine care gap acknowledged cross-party. **[A1] dok_id: HD03251**
+
+#### S4 — Fiscal soundness
+Sweden's gross government debt remains among Europe's lowest (~33–35% GDP, WEO Apr-2026 vintage). Fiscal space for electoral promises is real without deficit-alarm concerns. **[IMF WEO Apr-2026, GGXWDG_NGDP, SWE]**
+
+### Weaknesses
+
+#### W1 — ECHR exposure on HD03262
+Abolishing permanent residence permits (HD03262) risks EU infringement or Swedish constitutional court challenge under ECHR Art. 8 (family life) and RF Ch. 2. A Lagrådet adverse yttrande could force amendments. **[A1] dok_id: HD03262**
+
+#### W2 — Liberal loyalty under strain
+L (Liberalerna, ~16 seats) has historically defended rule-of-law values. HD03262–HD03265 migration tightening creates internal L tensions between core-voter libertarianism and coalition discipline. L defection on any single measure risks a 175/349 minority. **[B2] coalition arithmetic**
+
+#### W3 — Migrationsverket capacity gap
+Stärkt återvändandeverksamhet (HD03263) requires Migrationsverket to operationalize enhanced deportation — an agency already under resource strain. Implementation gap between legislative ambition and agency capacity is structural. **[A1] dok_id: HD03263**
+
+#### W4 — Transparency measure optics (HD03258)
+HD03258 (political transparency) covers civil society funding — opposition frames this as silencing dissent. Optics risk with centrist and younger voters who value civil society independence. **[A1] dok_id: HD03258**
+
+### Opportunities
+
+#### O1 — Election narrative consolidation
+The four-migration propositions give the coalition a coherent "security and order" electoral message with 133 days to landing. SD base mobilization can deliver a decisive electoral boost if the package passes intact. **[B1] election context**
+
+#### O2 — S counter-proposals reveal weakness
+S's 11 social-welfare motions (HD11769–HD11778) lack novel policy ideas and are primarily re-surfaced platform elements. The gap between S legislative output and government propositions reinforces coalition governing-competence framing. **[A1] motions cluster**
+
+#### O3 — Nordic security window
+HD03254 (military cooperation) can be embedded in Nordic/Baltic security cooperation narrative (NORDEFCO, Joint Expeditionary Force) to project alliance reliability. **[A1] dok_id: HD03254**
+
+#### O4 — Healthcare reform cross-party resonance
+HD03251 addiction/psychiatric care reform has cross-party resonance in principle; S opposition will be procedural (amendments on regionalization), not substantive. Creates a deliverable for KD-constituency voters. **[A1] dok_id: HD03251**
+
+### Threats
+
+#### T1 — EU legal backlash on asylum pact transposition
+HD03262 transposes the EU migration and asylum pact. If Sweden's implementation is found incompatible with EU Directive requirements, infringement proceedings could undermine the government's EU-solidarity credentials — particularly damaging for M/L Europhile voters. **[A1] dok_id: HD03262 summary + ECHR Art.8**
+
+#### T2 — Opposition S-counter-narrative on social poverty
+S's motions on poverty among single parents (HD11775), workplace injury reporting (HD11776), housing credits (HD11774), and mammography accessibility (HD11778) collectively build a "government neglects the vulnerable" counter-narrative. Effectiveness depends on media amplification. **[A1] dok_id: HD11775, HD11776, HD11778**
+
+#### T3 — SD/government tension on Ukraine aid
+SD motion HD11772 (Ukraina och bistånd) signals SD's continued ambivalence toward Ukraine financial aid. Tension with M/KD/L coalition partners who support continued support. This is an intra-coalition fault line the opposition can exploit. **[A1] dok_id: HD11772**
+
+#### T4 — Economic softening pre-election
+Sweden's GDP growth recovery is modest (~2.1–2.3% 2026). If unemployment rises before September 13, S's social welfare narrative gains traction against the migration-and-defense-focused coalition message. **[IMF WEO Apr-2026, NGDP_RPCH, SWE; SCB AKU]**
+
+### TOWS Matrix
+
+| | Opportunities (O1–O4) | Threats (T1–T4) |
+|---|---|---|
+| **Strengths (S1–S4)** | SO: Use S1+O1 to consolidate migration narrative; S2+O3 for NATO credibility | ST: Use S4 (fiscal) to counter T4 economic risk; S3+O4 to neutralize T2 |
+| **Weaknesses (W1–W4)** | WO: Address W1 via pre-emptive Lagrådet engagement; W3 via Statskontoret agency-capacity plan | WT: W2×T3 = highest systemic risk (L defects + SD on Ukraine) — coalition crisis scenario |
+
+```mermaid
+quadrantChart
+    title SWOT Risk-Opportunity Matrix
+    x-axis "Weakness" --> "Strength"
+    y-axis "Threat" --> "Opportunity"
+    quadrant-1 Leverage (S+O)
+    quadrant-2 Invest/Mitigate (W+O)
+    quadrant-3 Defend (W+T)
+    quadrant-4 Monitor (S+T)
+    "Migration narrative (S1+O1)": [0.75, 0.80]
+    "Defense credibility (S2+O3)": [0.82, 0.72]
+    "ECHR risk (W1+T1)": [0.20, 0.25]
+    "L loyalty (W2+T3)": [0.15, 0.20]
+    "Agency capacity (W3)": [0.25, 0.45]
+    "S counter-narrative (T2)": [0.55, 0.30]
+    "Healthcare (S3+O4)": [0.70, 0.65]
+    "Fiscal strength (S4)": [0.80, 0.55]
+```
+
+## Threat Analysis
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/threat-analysis.md -->
+
+### Political Threat Taxonomy
+
+#### Category A: Legislative Threats (Government Proposals at Risk)
+
+| Threat | dok_id | Mechanism | Likelihood | Impact |
+|--------|--------|-----------|------------|--------|
+| A1 ECHR-invalidation route | HD03262 | ECHR Art.8 Lagrådet yttrande → forced amendment → narrative collapse | MEDIUM | CRITICAL |
+| A2 L defection | HD03262–HD03265 | L votes against → 175/349 majority lost → government minority crisis | LOW | CRITICAL |
+| A3 EU infringement | HD03262 | Commission finds transposition incompatible with EU Asylum Directive | LOW-MEDIUM | HIGH |
+| A4 Migrationsverket capacity | HD03263 | Agency unable to deliver → SD demands escalation → coalition tension | HIGH | HIGH |
+
+#### Category B: Opposition Offensive Threats
+
+| Threat | dok_id | Mechanism | Likelihood | Impact |
+|--------|--------|-----------|------------|--------|
+| B1 S social vulnerability narrative | HD11775, HD11776, HD11778 | Media amplification of "government neglects poor" → polling shift | MEDIUM | MEDIUM |
+| B2 Transparency counter-narrative | HD03258 | Civil society framing HD03258 as "silencing dissent" → European media | MEDIUM-HIGH | MEDIUM |
+| B3 Ukraine aid SD fault-line | HD11772 | Opposition highlights SD ambivalence on Ukraine → NATO allies concern | MEDIUM | HIGH |
+| B4 S healthcare blocking | HD03251 | S/V use committee stage to fundamentally amend KD reform | MEDIUM | MEDIUM |
+
+#### Category C: External / Systemic Threats
+
+| Threat | Source | Mechanism | Likelihood | Impact |
+|--------|--------|-----------|------------|--------|
+| C1 Economic deterioration | SCB AKU / Riksbank | GDP growth < 1.5% + unemployment rise → S economic messaging gains | MEDIUM | HIGH |
+| C2 Regional care implementation failure | HD03251 | Regions cite capacity/funding gaps → reform delayed post-election | MEDIUM | MEDIUM |
+| C3 International human rights pressure | HD03262–65 | UNHCR/Council of Europe commentary → mobilizes diaspora and civil society | HIGH | MEDIUM |
+
+### Attack Tree Analysis
+
+```
+TARGET: Overthrow Tidö Coalition before September 2026 election
+├── Branch A: Destroy legislative majority
+│   ├── A1: L defects on migration vote [2/5]
+│   ├── A2: KD rebels on transparency (HD03258) [1/5]
+│   └── A3: SD rebels on Ukraine aid (HD11772) [2/5]
+├── Branch B: Delegitimize through legal failure
+│   ├── B1: Lagrådet adverse yttrande on HD03262 [3/5]
+│   ├── B2: Court of Justice EU finds HD03262 incompatible [2/5]
+│   └── B3: Riksrevisionen critical audit of Migrationsverket [3/5]
+├── Branch C: Electoral erosion
+│   ├── C1: S social narrative erodes M/KD centrist voters [3/5]
+│   ├── C2: Transparency framing alienates educated urban voters [3/5]
+│   └── C3: Economic deterioration activates S electoral base [2/5]
+└── Branch D: Coalition internal fracture
+    ├── D1: L–SD conflict on migration floor escalates [2/5]
+    ├── D2: M–SD Ukraine divergence becomes public rupture [2/5]
+    └── D3: KD–M disagreement on healthcare regionalization [1/5]
+```
+
+### MITRE TTP Analogue (Political Tactics)
+
+| TTP Code (Political Analogue) | Tactic | Technique | Observable Indicators |
+|-------------------------------|--------|-----------|----------------------|
+| P-T1591 | Reconnaissance | Opposition research on HD03262 ECHR gaps | Legal expert opinion pieces in Dagens Juridik, DN |
+| P-T1560 | Credential manipulation | Framing HD03258 as anti-civil-society | ECFR/Freedom House press releases |
+| P-T1489 | Service disruption | Blocking HD03251 in Social committee | Committee minority reservations filed |
+| P-T1070 | Indicator removal | SD's HD11772 signals hidden Ukraine policy shift | Åkesson statements on Swedish Radio |
+| P-T1598 | Legislative delay | Procedural delay of HD03262 Riksdag reading | Talmanskonferens scheduling decisions |
+
+### Key Intelligence Questions (KIQs)
+
+1. **KIQ-1**: Will Lagrådet deliver an adverse yttrande on HD03262? Timeline: before Riksdag second reading (est. June 2026). Watch: Lagrådet docket, Ministry legal submissions.
+2. **KIQ-2**: How will L (Liberalerna) votes on HD03262 break? Watch: Johan Pehrson statements, L internal party communications, L voting record on ECHR motions.
+3. **KIQ-3**: Will EU Commission engage informally with Sweden on asylum pact transposition before ratification? Watch: Brussels procedural communications.
+4. **KIQ-4**: How will polling shift for S after social-welfare motions media cycle? Watch: Sifo/Novus polling June 2026.
 
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/historical-parallels.md -->
@@ -1670,6 +1455,87 @@ timeline
     2024 : Sweden joins NATO (HD03254 formal framework)
     2026 : Current legislative batch
 ```
+
+## Comparative International
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/comparative-international.md -->
+
+**Method**: ≥2 comparator jurisdictions (Nordic + EU) for key legislative items  
+**Primary comparators**: Denmark (migration), Finland (healthcare), Netherlands (coalition fragility), Germany (transparency)
+
+### Comparator 1: Denmark — Migration Policy (HD03262–HD03265)
+
+#### Danish Policy Context
+Denmark under the Social Democrats (Mette Frederiksen, 2019–2025) and current Moderate-coalition government has pursued among Europe's most restrictive migration policies since 2015. Key measures:
+- **Paradigm shift (2019)**: Focus on temporary protection with mandatory return when conditions allow — directly analogous to Sweden's HD03262 (abolition of permanent permits)
+- **Return centers**: Denmark established dedicated return facilities for rejected asylum seekers — precursor model to HD03263
+- **Zero asylum seeker target**: Political target (not always achieved operationally) that mirrors HD03262's ambition
+
+#### Lessons for Sweden
+| Danish experience | Swedish analogue | Implication |
+|------------------|-----------------|-------------|
+| Paradigm shift withstood ECHR Art. 8 challenges (margin of appreciation) | HD03262 abolition of permanent permits | ECHR challenge probable but not fatal if narrow scope |
+| Return centers experienced operational capacity failures | HD03263 return enforcement | Migrationsverket will face same capacity constraints |
+| EU condemnation of "zero asylum" target | HD03262 EU pact compatibility | Commission pressure likely but legally constrained |
+| Social Democrats moved right → S voters did not leave | Sweden S opposition | Sweden S may shift rhetoric post-election if they lose |
+
+**Assessment**: Denmark is the most directly relevant comparator. Swedish migration package follows Danish trajectory 5–7 years later. ECHR withstood in Denmark; operational delivery is the harder challenge.
+
+### Comparator 2: Finland — Healthcare Integration (HD03251)
+
+#### Finnish Policy Context
+Finland's SOTE reform (Sosiaali- ja terveydenhuollon uudistus), implemented 2023–2024, created 21 wellbeing services counties (hyvinvointialueet) integrating social, primary healthcare, and specialist care. This is the most ambitious Nordic healthcare integration reform in 20 years.
+
+#### Lessons for Sweden
+| Finnish experience | Swedish analogue | Implication |
+|------------------|-----------------|-------------|
+| 10-year reform process (2000–2022) before final passage | HD03251 builds on SOU 2021:93 | Sweden's reform is faster but narrower (addiction+psychiatry only) |
+| Cost overruns in initial years (+15–20% vs. projections) | HD03251 implementation budget | Swedish Regions should expect upfront capacity investment |
+| Integration of addiction/mental health was a stated goal but least-implemented | HD03251 specifically targets addiction+psychiatric | Sweden is attempting what Finland found hardest |
+| IT infrastructure (Apotti) was critical bottleneck | HD03251 requires shared patient records | Sweden's NPÖ national patient overview must be upgraded |
+
+**Assessment**: Finland's SOTE experience suggests HD03251's goals are achievable but underestimated in delivery cost and timeline. KD's 2-year implementation target may be optimistic.
+
+### Comparator 3: Netherlands — Coalition Fragility (L defection risk)
+
+#### Dutch Policy Context
+The Netherlands experienced coalition fragility in 2023–2024: Mark Rutte's VVD-CDA-D66-ChristenUnie coalition (2021) collapsed in 2023 over asylum policy when D66 and ChristenUnie could not accept VVD/Rutte's migration tightening. Geert Wilders' PVV won the subsequent election; coalition formation took 7 months.
+
+#### Lessons for Sweden
+| Dutch experience | Swedish analogue | Implication |
+|-----------------|-----------------|-------------|
+| D66 (liberal, ECHR-sensitive) triggered collapse over migration | L (Liberalerna) analogous position | L defection precedent exists in Dutch model |
+| VVD moved right on migration to retain PVV cooperation | M moved right to retain SD cooperation | Mirror dynamic in Sweden |
+| Liberal partner collapse enabled further-right outcome | L departure could shift Sweden further toward SD-only position | Paradox: L staying may moderate more than leaving |
+| Coalition formation took 7 months post-collapse | Sweden has fixed election date (Sept 13) | Window for crisis resolution is very short |
+
+**Assessment**: The Dutch model is a significant warning sign for scenario S3/S4. Liberal ECHR-sensitive coalition partners in migration-restrictionist coalitions have a historically high defection rate (D66 NL, FDP DE on migration).
+
+### Comparator 4: Germany — Transparency Legislation (HD03258)
+
+#### German Policy Context
+Germany's Lobbyregister (2021) and ongoing civil society transparency debates provide context for HD03258. Germany's coalition (CDU/CSU-SPD, 2025) has similarly debated funding transparency for organizations receiving foreign support — directly comparable to HD03258.
+
+#### Lessons for Sweden
+| German experience | Swedish analogue | Implication |
+|-----------------|-----------------|-------------|
+| Lobbyregister faced constitutional challenge on freedom of association | HD03258 civil society funding transparency | Swedish HD03258 likely to face RF Ch. 2 §1 challenge |
+| NGO transparency rules often capture domestic organizations disproportionately | HD03258 covers all organizations | Opposition framing of "silencing dissent" has evidential basis |
+| FDP (liberal) supported transparency but required strict proportionality safeguards | L should demand proportionality in HD03258 | L may negotiate specific civil society carve-outs |
+
+### Summary Comparison Table
+
+| Policy Area | Sweden (2026) | Denmark | Finland | Netherlands | Germany |
+|-------------|--------------|---------|---------|-------------|---------|
+| Migration restriction | HD03262–HD03265 | Already implemented (2019–2022) | Less restrictive | Collapsed government | Debated (AfD influence) |
+| Healthcare integration | HD03251 (targeted) | Not Nordic peer | SOTE 2023 (comprehensive) | N/A | Regional model |
+| Coalition liberal fragility | HIGH (L at risk) | LOW (liberals not coalition) | N/A | COLLAPSED 2023 | STRESSED (FDP left 2024) |
+| Transparency legislation | HD03258 (in progress) | Law passed | Proposed | Passed (2021+) | Lobbyregister 2021 |
+
+### Key Intelligence Judgment from Comparators
+
+> **JUDGMENT-COMP-1 [MODERATE CONFIDENCE]**: Sweden's migration tightening trajectory is 5–7 years behind Denmark's. Danish experience indicates ECHR resistance is survivable with proportionality adjustments. The highest delivery risk is not legal but operational (agency capacity), consistent with R4 in the risk register.
+
+> **JUDGMENT-COMP-2 [HIGH CONFIDENCE]**: The Netherlands D66 precedent shows that ECHR-sensitive liberal coalition partners in migration-restrictionist governments face structural defection pressure. L's current position in Sweden mirrors D66 Netherlands 2021–2022. Monitor L internal party signals closely.
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/implementation-feasibility.md -->
@@ -1781,6 +1647,140 @@ xychart-beta
 | HD03265 | Regulatory + Budget | 18–24 months | Judicial oversight framework mandatory |
 | HD03251 | Workforce (specialists) | 5–7 years | Training pipeline; international recruitment |
 | HD03254 | Budget (minor) | 6–12 months | NATO cost-sharing negotiations |
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/media-framing-analysis.md -->
+
+**Method**: Entman 4-Function framing model (Define problem, Diagnose cause, Make moral judgment, Suggest remedy)  
+**Minimum**: ≥3 distinct frame packages
+
+### Frame 1: "Security and Order" (Government/SD/M framing)
+
+#### Entman 4-Function Analysis
+
+| Function | Content |
+|----------|---------|
+| **Define problem** | Sweden faces uncontrolled migration threatening public safety, welfare sustainability, and social cohesion |
+| **Diagnose cause** | Previous (Social Democratic) governments created permanent protection pathways that attracted irregular migration; weak enforcement enabled non-compliance with return orders |
+| **Moral judgment** | It is morally necessary to protect Swedish citizens and ensure fairness for those who follow the rules; welfare chauvinism reframed as "sustainability" |
+| **Suggest remedy** | HD03262–HD03265: Abolish permanent permits, strengthen return enforcement, tighten character requirements, expand detention/supervision |
+
+#### Key Frame Advocates
+- Ulf Kristersson (M, PM): "This is about upholding the rule of law and protecting the Swedish model"
+- Jimmy Åkesson (SD): "Sweden finally delivering on what SD voters were promised"
+- Johan Forssell (M, Migration Minister): Technical-legal framing; "EU asylum pact compliance"
+- Lotta Edholm (KD): "Sustainable migration with strong integration requirements"
+
+#### Likely Media Venues
+- Expressen (tabloid, SD-sympathetic editorials)
+- Aftonbladet (populist, will cover both frames)
+- SVT Nyheter (balanced — must cover all frames)
+- Nyhetsmorgon (government minister interviews)
+
+#### Frame Strength: HIGH (in possession of legislative agenda; controls news cycle)
+
+---
+
+### Frame 2: "Rights and Rule of Law at Risk" (S/V/MP/civil society framing)
+
+#### Entman 4-Function Analysis
+
+| Function | Content |
+|----------|---------|
+| **Define problem** | The government is dismantling Sweden's human rights framework and EU legal obligations to appeal to SD base voters; the 4% Riksdag threshold is held hostage by SD electoral imperatives |
+| **Diagnose cause** | SD electoral logic captured M's migration policy; L's coalition dependency prevents it from exercising its traditional rule-of-law function |
+| **Moral judgment** | It is morally wrong to abolish permanent protection for people who have built lives in Sweden (ECHR Art. 8 family life); detention expansion violates human dignity |
+| **Suggest remedy** | Vote down HD03262; support judicial review; international pressure via Council of Europe; HD03258 transparency reform reversed |
+
+#### Key Frame Advocates
+- Magdalena Andersson (S): "This is the most significant regression in Swedish human rights in decades"
+- Nooshi Dadgostar (V): "We will fight every article in Riksdag committee"
+- Amnesty International Sweden: Press releases, social media, Riksdag hearing testimony
+- UNHCR Sweden: Formal statements on HD03262 protection gaps
+
+#### Likely Media Venues
+- Dagens Nyheter (liberal centrist — will give weight to rule-of-law arguments)
+- Svenska Dagbladet (conservative but constitutionalist — may amplify Lagrådet critique)
+- SR P1 Ekot (public radio — must balance frames but judicial/legal expertise prominent)
+- Juridisk Tidskrift (legal academic discourse)
+
+#### Frame Strength: MEDIUM (strong in elite/civil society discourse; less resonant with general public)
+
+---
+
+### Frame 3: "Electoral Theater and Coalition Dysfunction" (Media meta-frame)
+
+#### Entman 4-Function Analysis
+
+| Function | Content |
+|----------|---------|
+| **Define problem** | The government is more focused on election positioning than governing effectively; four simultaneous migration propositions submitted right before election is electoral signaling, not policy |
+| **Diagnose cause** | Coalition arithmetic gives SD structural leverage; L's ideological paralysis creates incoherence; the government's agenda is driven by partner management, not national interest |
+| **Moral judgment** | Democratic institutions are being instrumentalized for electoral theater; voters deserve honest governance framing |
+| **Suggest remedy** | Media calls for independent expert assessment; Riksdag committee scrutiny; Lagrådet transparency |
+
+#### Key Frame Advocates
+- Political scientists (Statsvetare): SVT/SR expert commentary
+- DN editorial board: Occasional meta-critique of migration policy timing
+- Foreign correspondents: Deutsche Welle, BBC, Politico Europe all framing Sweden as "following Denmark"
+
+#### Likely Media Venues
+- SVT Agenda (expert panel discussions)
+- Dagens Arena (center-left analysis)
+- Politico Europe (international audience)
+- Expressen/DN analysis sections
+
+#### Frame Strength: MEDIUM-LOW (resonates with politically sophisticated readers; minimal general public impact)
+
+---
+
+### Frame 4: "Swedish NATO Credibility" (Defense frame — HD03254)
+
+#### Entman 4-Function Analysis
+
+| Function | Content |
+|----------|---------|
+| **Define problem** | Sweden needs to translate NATO membership into operational military cooperation frameworks that match allied standards |
+| **Diagnose cause** | Historical neutrality created legal gaps in bilateral military cooperation frameworks; NATO accession (2024) requires legislative normalization |
+| **Moral judgment** | Sweden has an obligation to its allies; free-riding on NATO deterrence is strategically and morally unacceptable |
+| **Suggest remedy** | HD03254: Legislative framework for operational military cooperation; interoperability protocols |
+
+#### Frame Strength: HIGH but LOW CONTROVERSY (bipartisan support; minimal counter-frame)
+
+---
+
+### Overall Media Landscape Assessment
+
+```mermaid
+quadrantChart
+    title Frame Strength vs Political Controversy
+    x-axis "Minimal controversy" --> "High controversy"
+    y-axis "Weak framing" --> "Strong framing"
+    quadrant-1 Dominant (fight here)
+    quadrant-2 Contested (manage)
+    quadrant-3 Monitor
+    quadrant-4 Narrative anchor
+    "F1 Security/Order": [0.75, 0.80]
+    "F2 Rights/Rule of Law": [0.72, 0.62]
+    "F3 Electoral Theater": [0.55, 0.45]
+    "F4 NATO Credibility": [0.20, 0.70]
+```
+
+### Key Media Battle Spaces
+
+1. **SVT/SR public broadcasting**: Must balance F1 and F2; will amplify Lagrådet critique if adverse yttrande (F2 strength boost)
+2. **Expressen/Aftonbladet tabloids**: F1 will dominate; F2 will appear in human interest cases (individuals affected by HD03262)
+3. **DN/SvD quality press**: Lagrådet analysis (F2) + meta-critique (F3) expected
+4. **Social media**: SD base amplifies F1; S/V/MP base amplifies F2; youth amplifies F3
+5. **International press**: F3 and F4 framing (Sweden following Denmark; Sweden NATO ally)
+
+### Framing Implications for Article Generation
+
+The Riksdagsmonitor month-ahead article should:
+1. Present F1 and F2 as competing legitimate frames (balance)
+2. Note F3 as an analytical observation (electoral timing)
+3. Use F4 as a governing-credibility anchor for the coalition
+4. Avoid adopting any single frame as authoritative — analytical neutrality is the editorial standard
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/devils-advocate.md -->
@@ -2272,13 +2272,6 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/threat-analysis.md)
 - [`documents/hd03251-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/documents/hd03251-analysis.md)
 - [`documents/hd03254-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/documents/hd03254-analysis.md)
 - [`documents/hd03258-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/documents/hd03258-analysis.md)
@@ -2286,12 +2279,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`documents/hd03263-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/documents/hd03263-analysis.md)
 - [`documents/hd03264-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/documents/hd03264-analysis.md)
 - [`documents/hd03265-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/documents/hd03265-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/cross-reference-map.md)

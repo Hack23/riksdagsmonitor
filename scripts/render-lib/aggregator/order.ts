@@ -23,37 +23,86 @@ import path from 'path';
  * PESTLE / black-swan studies) are appended after the core sections in the
  * order they appear on disk.
  *
- * `documents/` is expanded separately — each per-document analysis becomes
- * its own subsection under the "Per-document intelligence" section.
+ * The order follows a journalist-optimal narrative arc for political-
+ * intelligence reporting:
+ *
+ *   Phase A — Lead & headline judgments (BLUF)
+ *   Phase B — Primary evidence (`documents/*` expanded after
+ *             `significance-scoring.md`; see aggregate.ts step 3)
+ *   Phase C — Actors & political arithmetic (stakeholders, coalition
+ *             math, voter segmentation)
+ *   Phase D — Forward trajectory (indicators, scenarios, election,
+ *             cycle, parliamentary season)
+ *   Phase E — Risk, threat & strategic posture (risk, SWOT, threat,
+ *             STRIDE, wildcards, PESTLE)
+ *   Phase F — Context & narrative environment (history, comparative,
+ *             feasibility, media framing)
+ *   Phase G — Critique (devil's advocate)
+ *   Phase H — Audit appendix (classification, cross-refs, methodology,
+ *             manifest)
+ *
+ * Rationale: readers form their own view of the substance first
+ * (Phases A→D), then weigh risk and context (Phases E→F), and finally
+ * see narrative-environment / influence-operations and devil's-advocate
+ * critique (late F + G) before the appendix. Anchoring per-document
+ * evidence right after the so-what ranking ("show your work") is the
+ * standard intelligence-product structure (cf. ICD 203, NIC NIE).
  */
 export const AGGREGATION_ORDER: readonly string[] = [
+  // ─── Phase A — Lead & headline judgments (BLUF) ────────────────────
+  // Front-load the journalist's "fast answer" cluster: who/what/when/why,
+  // confidence-bearing Key Judgments, and the so-what ranking.
   'executive-brief.md',
   'synthesis-summary.md',
   'intelligence-assessment.md',
   'significance-scoring.md',
-  'media-framing-analysis.md',
+  // ─── Phase B — Primary evidence (documents/* expanded here) ────────
+  // The aggregator injects per-document analyses immediately after
+  // significance-scoring so readers meet the actual primary sources
+  // (motions, propositions, committee reports, with their `dok_id`)
+  // BEFORE any interpretive lenses. This is the "show your work"
+  // pattern intelligence consumers expect.
+  // ─── Phase C — Actors & political arithmetic ───────────────────────
+  // Stakeholder lens, parliamentary arithmetic (who can pass it), and
+  // voter exposure (whose interests are at stake) — clustered so the
+  // "WHO" question is answered as one block.
   'stakeholder-perspectives.md',
+  'coalition-mathematics.md',
+  'voter-segmentation.md',
+  // ─── Phase D — Forward trajectory ──────────────────────────────────
+  // Dated watch items, probability-weighted scenarios, electoral
+  // implications, and (for long-horizon workflows) cycle trajectory
+  // and parliamentary calendar.
   'forward-indicators.md',
   'scenario-analysis.md',
-  'risk-assessment.md',
-  'swot-analysis.md',
-  'threat-analysis.md',
-  // documents/* expanded inline here
   'election-2026-analysis.md',
   'election-cycle-analysis.md', // generalised alias for election-2026-analysis.md (filename-variant; canonical name as cycles roll over). De-duplicated at render time via FILENAME_ALIASES below — if both files exist in a folder, only the one encountered first in this order is emitted.
   'election-2026-implications.md', // legacy filename variant — same alias group; listed here so it participates in AGGREGATION_ORDER de-dupe rather than being appended as a supplementary file.
   'cycle-trajectory.md', // 24th artifact — election-cycle workflow ONLY
   'parliamentary-season.md', // long-horizon workflows (quarter / year / cycle)
-  'coalition-mathematics.md',
-  'voter-segmentation.md',
-  'comparative-international.md',
-  'historical-parallels.md',
-  'implementation-feasibility.md',
-  'pestle-analysis.md', // year-ahead + cycle blocking; supplementary elsewhere
-  'wildcards-blackswans.md', // year-ahead + cycle blocking
+  // ─── Phase E — Risk, threat & strategic posture ────────────────────
+  // All "what could go wrong" lenses clustered together so readers
+  // process them as a coherent risk register rather than as a random
+  // sprinkle between substance and context.
+  'risk-assessment.md',
+  'swot-analysis.md',
   'quantitative-swot.md', // year-ahead + cycle blocking
+  'threat-analysis.md',
   'political-stride-assessment.md', // cycle blocking
+  'wildcards-blackswans.md', // year-ahead + cycle blocking
+  'pestle-analysis.md', // year-ahead + cycle blocking; supplementary elsewhere
+  // ─── Phase F — Context & narrative environment ─────────────────────
+  // Historical parallels, peer-country comparison, implementation
+  // feasibility, then media-framing/influence-operations LAST in this
+  // cluster so readers form their own view of the substance first
+  // before being shown how the story is being framed.
+  'historical-parallels.md',
+  'comparative-international.md',
+  'implementation-feasibility.md',
+  'media-framing-analysis.md',
+  // ─── Phase G — Critique & alt hypotheses ───────────────────────────
   'devils-advocate.md',
+  // ─── Phase H — Audit appendix ──────────────────────────────────────
   'classification-results.md',
   'cross-reference-map.md',
   'horizon-pir-rollforward.md', // long-horizon supplementary

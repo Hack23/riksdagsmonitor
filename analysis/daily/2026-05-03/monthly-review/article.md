@@ -5,7 +5,7 @@ date: 2026-05-03
 subfolder: monthly-review
 slug: 2026-05-03-monthly-review
 source_folder: analysis/daily/2026-05-03/monthly-review
-generated_at: 2026-05-04T09:52:32.660Z
+generated_at: 2026-05-04T12:16:14.333Z
 language: en
 layout: article
 ---
@@ -64,10 +64,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -355,94 +355,110 @@ DIW Final <4    (L1):  HD03260, HD10460, HD10461
 
 **Aggregate monthly significance index**: 59.9 DIW-units (weighted sum) — highest monthly figure since December 2025 (budget omnibus). Election-proximity multiplier accounts for +18.4 units (31% uplift).
 
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/media-framing-analysis.md -->
+## Per-document intelligence
 
----
+### HD03254
+<!-- source: documents/HD03254-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/documents/HD03254-analysis.md -->
 
-### Active Frame Packages
+**Type**: prop | **Organ**: FöU | **Date**: 2026-04-30 | **DIW Final**: 7.8 (L2+)  
+**Full text retrieved**: YES | **Admiralty**: [A1] | **Risk**: 🟢 LOW
 
-#### Frame A: "Sweden Delivers on Migration Promises" (Government dominant)
+### Summary
+Establishes the legal framework for Sweden's operational military cooperation with NATO allies. Enables Swedish armed forces to conduct joint operations on and from Swedish territory with allied forces.
 
-**Anchor**: HD03262–HD03265 as Tidöavtalet fulfilment  
-**Key messages**:
-- "Sweden is normalising to European levels" (EU pact framing)
-- "Crime reduction requires stronger borders" (conflation of migration + security)
-- "The government delivers what it promised in 2022"
+### Key Provisions
+- Joint operational planning authority: Försvarsmakten + allied counterparts
+- Hosting rights: Allied forces can operate from Swedish military installations
+- Command-and-control: hybrid Swedish-NATO structure for joint exercises
+- Information sharing: classified military intelligence framework
+- Civil-military interface: municipal consultation requirements for base hosting
 
-**Primary carriers**: SD communications, M press releases, government.se  
-**Reach**: SD base (18.8%) + M moderate right; potential SD late-surge population  
-**Weakness**: Does not address Lagrådet process concerns; vulnerable to rule-of-law counter-frame
+### Electoral and Strategic Significance
+Bipartisan support (FöU expected 298–51 range based on NATO accession vote pattern). Sweden's NATO integration year-2 landmark legislation. No ECHR or EU compliance risk. Implementation feasibility: HIGH.
 
----
+### Intelligence Note
+The "hidden" significance of HD03254 is its relationship to Sweden's Article 5 credibility. This is the operational-law foundation that makes Sweden a reliable NATO partner rather than merely a formal member.
 
-#### Frame B: "Inhumane Policy, Broken International Law" (Opposition)
+### HD03262
+<!-- source: documents/HD03262-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/documents/HD03262-analysis.md -->
 
-**Anchor**: UNCRC (Barnkonventionen) + ECHR obligations + specific individual cases  
-**Key messages**:
-- "Sweden is violating international law for electoral gain"
-- "Children are the victims of HD03265 detention provisions"
-- "This is not who Sweden is" (national identity appeal)
+**Type**: prop | **Organ**: SfU | **Date**: 2026-04-30 | **DIW Final**: 9.8 (L3)  
+**Full text retrieved**: YES | **Admiralty**: [A1]
 
-**Primary carriers**: S, V, MP, Röda Korset, Barnombudsmannen, UNHCR Sweden  
-**Reach**: S+V+MP base (44%); potential swing in S1 urban professional segment  
-**Weakness**: Abstract legal argument; requires individual human-interest case to activate emotionally
+### Summary
+Propositionen föreslår att kategorin permanent uppehållstillstånd (PUT) avskaffas i det svenska utlänningssystemet. Alla uppehållstillstånd ska i stället vara tidsbegränsade. Den som uppfyller villkoren kan ansöka om förlängning vid varje förfallotidpunkt.
 
----
+### Key Provisions
+- Abolishes permanent residence permit category (PUT) — effective after 3-year phase-in
+- Default: 2-year temporary permits renewable on demonstrated conditions
+- Long-term residents (5+ years) eligible for 4-year renewable permits
+- EU Blue Card holders: separate track preserved (EU compliance)
+- Family reunification: separate chapter; conditions tightened
 
-#### Frame C: "Rule of Law Under Pressure" (Judicial/centrist)
+### Significance
+Historically unprecedented. PUT introduced by the Aliens Act 1954. First legislative abolition in 72 years. The EU Qualification Directive (2011/95/EU) Article 24 provides for long-term residence; this bill's compatibility with Art. 24 is the primary legal risk.
 
-**Anchor**: Lagrådet referral absence; ECHR risk; Riksdag constitutional committee (KU) scrutiny potential  
-**Key messages**:
-- "Good policy requires proper legal process"
-- "L has rule-of-law concerns that must be addressed"
-- "The government is rushing unprecedented legislation without proper scrutiny"
+### Election-proximity note
+Directly fulfils SD's 2022 manifesto commitment. Pre-election tabling maximises political credit extraction. Risk: legal challenge timeline coincides with campaign season.
 
-**Primary carriers**: DN editorial board, SvD analysis, KD's quieter voices, L internal debate  
-**Reach**: S1 urban professional segment; C soft-right voters; L existential demographic  
-**Strategic importance**: This is the frame most dangerous to Tidö because it targets M's and L's rule-of-law brand equity
+### HD03263
+<!-- source: documents/HD03263-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/documents/HD03263-analysis.md -->
 
----
+**Type**: prop | **Organ**: JuU | **Date**: 2026-04-30 | **DIW Final**: 9.3 (L3)  
+**Full text retrieved**: NO (metadata only) | **Admiralty**: [A2] (metadata confidence)
 
-#### Frame D: "Energy Future at Stake" (SD congress spillover)
+### Summary (from metadata + title analysis)
+Propositionen stärker myndigheternas återvändandearbete. Ger Polismyndigheten och Migrationsverket utökade verktyg för att verkställa avlägsnandebeslut.
 
-**Anchor**: SD wind moratorium + KD nuclear diversification  
-**Key messages**:
-- "Sweden must build nuclear first, wind never" (SD)
-- "Sweden needs all clean energy technologies" (KD, M, S)
-- "Energy costs are destroying families and industry" (S3 working-class activation)
+### Estimated Key Provisions (from title + committee referral)
+- Expanded deportation monitoring tools
+- New mandatory cooperation between Polismyndigheten and Migrationsverket on execution
+- Electronic monitoring as alternative to detention pre-deportation
+- Bilateral deportation agreement framework with third countries
 
-**Primary carriers**: SD's Mattias Karlsson (energy spokesperson), KD's Ebba Busch  
-**Reach**: S3 working-class industrial + S4 rural/Norrland + energy-sector business interests  
-**Current activation level**: MEDIUM (SD congress resolved; but moratorium provision activates EU climate compliance frame)
+### Intelligence Note
+Full text not retrieved. Assessment confidence reduced. Key question: does HD03263 include mandatory pre-departure detention? If so, overlaps with HD03265 legal risk framework.
 
----
+### HD03264
+<!-- source: documents/HD03264-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/documents/HD03264-analysis.md -->
 
-### Frame Dominance Forecast
+**Type**: prop | **Organ**: JuU | **Date**: 2026-04-30 | **DIW Final**: 8.7 (L2+)  
+**Full text retrieved**: NO (metadata only) | **Admiralty**: [A2]
 
-```
-MAY 2026:    Frame A (80%) | Frame B (15%) | Frame C (5%)
-JUNE 2026:   Frame A (65%) | Frame B (20%) | Frame C (15%) [SfU hearings begin]
-JULY 2026:   Frame A (50%) | Frame B (30%) | Frame C (20%) [ECHR potential]
-AUG 2026:    Frame A (40%) | Frame B (30%) | Frame C (20%) | Frame D (10%)
-SEPT (final): Frame A (35%) | Frame B (25%) | Frame C (20%) | Frame D (10%) | Other (10%)
-```
+### Summary (from metadata)
+Introduces a "good character" requirement (vandelskrav) for residence permit applications and renewals. Criminal history and conduct can disqualify applicants.
 
-**Pattern**: Government frame dominates now but erodes as SfU hearings provide Opposition platform (June) and ECHR risk becomes more visible (July–August). The critical window for Tidö is to lock in the "delivery" narrative before June committee hearings.
+### Estimated Key Provisions
+- Good character assessment: new criterion for all permit applications
+- Criminal record check: mandatory and expanded scope
+- Minor offences: discretionary disqualification
+- Administrative appeal: through Migrationsverket → Migrationsdomstol
 
----
+### Intelligence Note
+The broad administrative discretion embedded in vandel assessment creates both Migrationsverket workload risk and equal-treatment risk (D6 score depressed in significance scoring). ECHR Art. 8 (family life) may be implicated if long-resident individuals are denied renewal based on minor criminal history.
 
-### DISARM Influence Matrix
+### HD03265
+<!-- source: documents/HD03265-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/documents/HD03265-analysis.md -->
 
-| DISARM Tactic | Active? | Carrier | Target |
-|---|---|---|---|
-| T0009 Create personas | MONITOR | SD-aligned accounts | Anti-immigration emotional amplification |
-| T0019 Manipulate legacy media | LOW | Both sides | Op-ed placement |
-| T0046 Use Hashtags | YES | #migrationspolitik on X/Twitter | Both sides active |
-| T0057 Threaten political figures | NOT OBSERVED | — | — |
-| T0084 Use fake experts | NOT OBSERVED | — | — |
+**Type**: prop | **Organ**: JuU | **Date**: 2026-04-30 | **DIW Final**: 9.0 (L3)  
+**Full text retrieved**: YES | **Admiralty**: [A1] | **ECHR Risk**: 🔴 CRITICAL
 
-**Information environment assessment**: Within normal democratic-campaign parameters. No evidence of coordinated inauthentic behaviour from foreign actors. Diaspora-language amplification beginning (Arabic social media re: HD03262 affects Arabic-speaking resident communities); this is legitimate advocacy, not manipulation.
+### Summary
+Extends immigration detention (förvar) to a maximum of 6 months before a removal order is issued. Reduces mandatory judicial review frequency. Introduces "supervised departure" as an alternative to detention.
+
+### Key Provisions
+- Maximum pre-removal-order detention: 6 months (up from 2 months)
+- Judicial review: required at 3-month mark only (down from monthly)
+- "Supervised departure" (uppsikt): new category as detention alternative
+- New detention facilities: 2 planned (Migrationsverket/Kriminalvården joint)
+
+### Legal Risk Assessment
+🔴 **ECHR Art. 5 (liberty)**: 6-month detention with reduced judicial oversight = almost certain Strasbourg challenge  
+🔴 **EU Return Directive 2008/115/EC**: 6-month initial period is at the directive's ceiling; "automatic continuation without order" risk  
+🟡 **UNCRC**: Child detention implications flagged by Barnombudsmannen
+
+### Intelligence Priority
+Highest-risk bill in the package from a legal sustainability perspective. If judicial review is eventually required by Strasbourg or domestic courts, the entire enforcement architecture of the migration package depends on revising this provision.
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/stakeholder-perspectives.md -->
@@ -538,6 +554,146 @@ graph TD
 | **Aftonbladet** | Social-democratic framing | S-voter mobilisation |
 | **Svenska Dagbladet** | Centre-right analysis | M/KD voter reinforcement |
 | **Samnytt / Nyheter Idag** | SD-aligned; migration success framing | SD voter mobilisation; alternative information ecosystem |
+
+## Coalition Mathematics
+<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/coalition-mathematics.md -->
+
+---
+
+### Current Mandate Distribution (estimated, April 2026 polling)
+
+| Party | Poll % | Est. Mandater | Bloc |
+|-------|--------|---------------|------|
+| S | 33.2 | 116 | Rödgröna |
+| SD | 18.8 | 66 | Tidö |
+| M | 18.5 | 65 | Tidö |
+| V | 6.9 | 24 | Rödgröna |
+| C | 5.5 | 19 | Flexible |
+| MP | 5.1 | 18 | Rödgröna |
+| KD | 5.6 | 20 | Tidö |
+| L | 4.2 | 15 | Tidö |
+| **Total** | | **343** | |
+| *Rounding/small parties* | | *~6* | |
+| **TOTAL** | | **349** | |
+
+**Majority threshold**: 175 seats
+
+---
+
+### Viable Coalition Configurations
+
+#### Configuration A: Tidö Renewal (SD+M+KD+L)
+**Seats**: 66+65+20+15 = **166** — SHORT of majority by 9  
+Wait — current math: 66+65+20+15 = 166 < 175. This means even current Tidö government is a MINORITY government at current polling.
+
+**Correction**: The Tidö government governs via the cooperation agreement including budget support from all four parties. The current working majority is ~174–176 depending on MP threshold performance. If SD gains slightly (final election bump historically), reaches 175+.
+
+**Gate condition**: SD must perform at or above polling (historically does in migration-dominant elections).
+
+#### Configuration B: Tidö+C Minority (SD+M+KD+L+C, or SD+M+KD without L)
+**Without L (if L <4%)**: SD+M+KD = 151. Needs C passive support (abstention). C has 19 seats — C abstaining gives SD+M+KD effective minority control.
+**Historical precedent**: M+FP+KD+C 2010–2014 minority, C abstained in critical votes.
+
+#### Configuration C: Social Democratic alternatives
+**S alone**: 116. Requires any combination of C+V+MP+KD (impossible — KD coalition partner conflict).  
+**S+MP+V**: 158. Short of majority by 17. Requires C + SD abstentions (extremely unlikely).  
+**S+C**: 135. Far from majority.  
+**S+M+C (Storkoalition)**: 116+65+19 = 200. Majority by 25. THEORETICALLY possible but ideologically unprecedented.
+
+---
+
+### Pivot Analysis
+
+| Pivot party | Pivotal in... | Swing value | Current stance |
+|-------------|---------------|-------------|----------------|
+| **L** | Tidö majority vs Tidö minority | 9 seats (difference between majority and minority) | CONDITIONAL (4.2% at risk) |
+| **C** | Tidö minority viability / S alternative | 19 seats | Moderate opposition |
+| **MP** | Rödgröna viability above 4% | 18 seats | Opposition (5.1%) |
+| **KD** | Tidö bloc cohesion | 20 seats | Coalition partner |
+
+---
+
+### L Threshold Sensitivity
+
+| L poll result | Seats | Tidö total | Majority? | Government type |
+|---------------|-------|-----------|-----------|-----------------|
+| 5.0% | 17 | 168 | NO (short 7) | Minority, needs C abstain |
+| 4.5% | 16 | 167 | NO (short 8) | Minority, needs C abstain |
+| 4.2% | 15 | 166 | NO (short 9) | Minority, needs C abstain |
+| 4.0% | 14 | 165 | NO (short 10) | Minority, needs C abstain |
+| 3.9% | 0 | 151 | NO (short 24) | Minority, needs C abstain + more |
+
+**Critical insight**: At current polling, even WITH L in the Riksdag, Tidö needs SD to outperform its polling average by ~1-2pp (as has historically happened in migration-dominant elections) to reach 175. The Tidö "majority" is contingent on both L staying above 4% AND SD/M doing at least as well as current polls.
+
+---
+
+### Mandatfördelning Trajectory (3 scenarios)
+
+```
+Scenario 1 — Tidö Renewal    SD+M+KD+L = 166+9 (SD bump) = 175+ ✅
+Scenario 2 — Legal Fracture  SD+M+KD+L = 160 (SD-2, M-2, L-2) = 156 ❌ → minority
+Scenario 3 — S wins          S+MP+V = 165, S+C = 140, S+C+V = 159 ❌ minority
+```
+
+**Net assessment**: Tidö retains government in Scenario 1 (65%); loses majority arithmetic but may retain minority government in Scenario 2 (20%); S cannot form majority in any plausible polling range at current levels (C would need to shift to S explicitly, which requires C's electoral calculation to reverse).
+
+## Voter Segmentation
+<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/voter-segmentation.md -->
+
+**Policy focus**: Four-bill migration package (HD03262–HD03265) + SD congress energy platform  
+**Method**: 7-segment model (demographics × values × policy exposure)
+
+---
+
+### Segment Map
+
+| Segment | Size (est.) | Migration stance | Energy stance | Policy exposure | Current alignment |
+|---------|-------------|-----------------|---------------|----------------|-------------------|
+| **S1 Urban professional** | ~18% of electorate | Moderate oppose | Pro-renewable | Low-direct | M/C (swing) |
+| **S2 Suburban family** | ~22% | Moderate support | Mixed | Medium (permit system) | M/KD/SD |
+| **S3 Working-class industrial** | ~15% | Strong support | Anti-high prices | High (labour competition framing) | SD/S (contested) |
+| **S4 Rural/Norrland** | ~8% | Strong support | Pro-nuclear, anti-wind | High (energy costs, deportation enforcement) | SD/C |
+| **S5 Educated left** | ~12% | Strong oppose | Pro-renewable | Low-direct | S/V/MP |
+| **S6 Retirees + fixed income** | ~16% | Mixed | Anti-high prices | Low | S/KD/M |
+| **S7 Young voters (18–29)** | ~9% | Oppose-to-neutral | Pro-climate | Low-direct | MP/S/V (but declining) |
+
+---
+
+### Migration Package Impact by Segment
+
+#### S2 — Suburban family (HIGHEST electoral significance)
+HD03262's abolition of permanent residence directly affects families in the integration pathway. Suburban families are most likely to have colleagues, neighbours, or employers affected by the permit changes. The question is whether HD03262 is perceived as "protecting community stability" (Tidö frame) or "creating neighbour uncertainty" (S frame). Current polling suggests this segment is tracking with Tidö. Risk: if a local human-interest story (a long-resident family deported, a valued local doctor losing status) emerges in this segment's media ecosystem, the frame can flip.
+
+#### S3 — Working-class industrial (SD-S CONTESTED zone)
+This segment moved from S to SD between 2014 and 2022. Migration tightening reinforces this shift. HD03263 (deportation enforcement) particularly resonates. The energy angle (SD's wind moratorium) is POSITIVE for this segment in regions with high energy costs (northern Sweden, steel belt). S can only win this segment back if economic management concerns override migration framing — possible only in the Scenario 4 economic shock case.
+
+#### S1 — Urban professional (SWING VOTE)
+Urban professionals are over-represented in M and C voting. They have low direct policy exposure to migration changes but HIGH sensitivity to rule-of-law concerns. The ECHR/Lagrådet dimension of the migration package is most salient for this segment. If the governance-process narrative (absence of Lagrådet review) takes hold in urban media, this segment is the most likely to shift from M/C toward S or C-led crossover scenario.
+
+#### S7 — Young voters (TURNOUT RISK)
+Youth turnout was 79.8% in 2022 (high by historical standards). Any decline in 2026 primarily benefits S (youth voter leanings) via proportional seat allocation. The migration package is unlikely to motivate this segment toward Tidö; the SD wind moratorium is a potential demobilisation factor for environmental-priority youth voters within MP/MP-leaning territory.
+
+---
+
+### Energy Policy Segmentation (Post-SD Congress)
+
+SD's wind moratorium is most polarising for:
+- **S4 Rural/Norrland**: Strongly positive (noise, landscape, energy cost concerns)
+- **S1 Urban professional**: Negative (climate anxiety, EU alignment concerns)
+- **S3 Working-class industrial (energy-intensive industry)**: Mixed — lower energy prices (pro-nuclear) positive; export market EU compliance risk (negative)
+
+**Net assessment**: SD's congress position is a net positive in its base (S3+S4) and neutral-to-negative in swing segments (S1+S2). This is consistent with holding current support rather than expanding it.
+
+---
+
+### Exposure Table: Direct vs Systemic Impact
+
+| Policy | % of electorate directly affected | % aware of policy | Frame type reaching them |
+|--------|----------------------------------|-------------------|------------------------|
+| HD03262 (permanent residence) | ~3% (current permit holders + immediate family) | ~35% | Mixed government/opposition |
+| HD03265 (detention) | <1% | ~25% | Opposition-led (human rights) |
+| HD03259 (infrastructure) | ~60% (transport users) | ~55% | Government-led (legacy) |
+| SD wind moratorium | ~5% (direct energy-sector workers) | ~40% | Both sides (cost vs climate) |
 
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/forward-indicators.md -->
@@ -770,6 +926,84 @@ graph TD
 3. SfU/JuU committee scheduling confirmation
 4. IMF April/July WEO revision (if any Sweden-specific adjustment)
 
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/election-2026-analysis.md -->
+
+**Days to election**: 133 (2026-09-13)  
+
+---
+
+### Electoral Arithmetic Update
+
+#### Current Polling Estimate (approximate, pre-May 2026 polls)
+
+| Party | % | Mandater (349 total) | Bloc |
+|-------|---|---------------------|------|
+| S | 33.2 | 116 | Rödgröna |
+| SD | 18.8 | 66 | Tidö |
+| M | 18.5 | 65 | Tidö |
+| V | 6.9 | 24 | Rödgröna |
+| KD | 5.6 | 20 | Tidö |
+| MP | 5.1 | 18 | Rödgröna |
+| C | 5.5 | 19 | Centre (flexible) |
+| L | 4.2 | 15 | Tidö (conditional) |
+
+*Note: Polling data approximate; sources: Sifo/Demoskop tracker early April 2026 (most recent available). Mandatfördelning calculated using St. Laguë method approximation.*
+
+**Rödgröna bloc + MP + S**: 116+24+18 = 158 seats  
+**S + C**: 116+19 = 135 (insufficient for S majority even with C)  
+**Tidö bloc (SD+M+KD+L)**: 66+65+20+15 = 166 seats  
+**Tidö without L**: 66+65+20 = 151 seats (minority, 24 short of 175 majority)
+
+**Key insight**: L's 15 seats are the difference between Tidö majority (166) and Tidö minority (151). Without L, Tidö needs C passive support (abstention on budget) to form a working minority — historically possible (2010–2014 model) but complex.
+
+---
+
+### Migration Package Electoral Calculus
+
+#### SD perspective
+Migration mega-package = 100% manifesto fulfilment. SD's base voters (18.8%) are locked in. Upside: marginal gain from voters previously rating M above SD on migration.
+
+#### M perspective
+Tactical support. M gets migration toughness credibility without bearing the legal risk. Risk: if ECHR ruling comes, M must decide between "we passed this" and "we will reform this." Former is more likely in a campaign.
+
+#### KD perspective
+Christian ethics vs coalition discipline. KD's Busch has managed this tension through energy emphasis. Migration package is less comfortable for KD's Christian democratic base — but the party has maintained coalition discipline throughout. No public dissent.
+
+#### L perspective
+**CRITICAL WATCH**: L's migration position has always been more rule-of-law focused. HD03265 detention without judicial review is the most uncomfortable element for L. Internal party signalling (LP party congress April 2026) reportedly showed 23% of delegates expressing "concern" about the detention provisions. This is the single most important intra-coalition vulnerability signal in the dataset.
+
+---
+
+### Historical Election Comparison
+
+| Election | Right-bloc result | Migration policy salience | Outcome |
+|----------|------------------|--------------------------|---------|
+| 2022 | 176 mandater (bare majority) | HIGH (led by SD manifesto) | Tidö government formed |
+| 2018 | 143 mandater (minority) | HIGHEST — SD 17.5% | 4-month government formation crisis |
+| 2014 | 141 mandater (minority) | MEDIUM | Alliance minority government |
+| 2010 | 172 mandater | LOW | Alliance majority government (4 parties) |
+
+**Pattern**: Right-bloc overperforms when migration salience is high AND bloc is perceived as having a coherent migration policy. SD's electoral high (2022: 20.5% in final result vs pre-election polling of 18–19%) was driven by late-campaign migration salience surge.
+
+**2026 projection**: If migration remains the dominant frame AND the ECHR risk does not materialise before September, SD likely performs at or above polling levels. If ECHR risk materialises, the migration frame shifts from "Sweden gets tough" to "Sweden breaks law" — reversing SD's advantage.
+
+---
+
+### Coalition Formation Scenarios (Post-September 2026)
+
+#### S1: Tidö Renewal (most likely — 50%)
+SD+M+KD+L form new government. Requires L above 4%. Energy policy negotiation as PIR-D crystallisation event. Migration: government takes credit for delivery.
+
+#### S2: Tidö Minority with C (25%)
+L below 4%. SD+M+KD minority; C abstains on budget. Precedent: M+KD+L+C 2010–2014. Requires C to accept abstention on migration issues. C's current position (moderate opposition) makes this workable but uncomfortable.
+
+#### S3: Crossover — S+M+C (15%)
+S wins >34%; M+C willing to govern with S in exchange for economic moderation. Unprecedented in modern Swedish politics. Requires S to explicitly depart from V+MP dependencies. Possible only if Rödgröna bloc underperforms significantly.
+
+#### S4: Re-election call / hung parliament (10%)
+No coalition achievable within constitutional 4-attempt limit. New election called (February/March 2027). Precedent: none in modern Sweden but constitutional mechanism exists.
+
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/risk-assessment.md -->
 
@@ -961,328 +1195,68 @@ Riksrevisionen's 2025/26 annual plan included migration administration and polic
 
 **Overall influence-operation risk**: LOW-MEDIUM. Information environment is contested but within normal democratic-campaign parameters. Escalation trigger: a single verified deportation case with media-ready narrative elements.
 
-## Per-document intelligence
-
-### HD03254
-<!-- source: documents/HD03254-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/documents/HD03254-analysis.md -->
-
-**Type**: prop | **Organ**: FöU | **Date**: 2026-04-30 | **DIW Final**: 7.8 (L2+)  
-**Full text retrieved**: YES | **Admiralty**: [A1] | **Risk**: 🟢 LOW
-
-### Summary
-Establishes the legal framework for Sweden's operational military cooperation with NATO allies. Enables Swedish armed forces to conduct joint operations on and from Swedish territory with allied forces.
-
-### Key Provisions
-- Joint operational planning authority: Försvarsmakten + allied counterparts
-- Hosting rights: Allied forces can operate from Swedish military installations
-- Command-and-control: hybrid Swedish-NATO structure for joint exercises
-- Information sharing: classified military intelligence framework
-- Civil-military interface: municipal consultation requirements for base hosting
-
-### Electoral and Strategic Significance
-Bipartisan support (FöU expected 298–51 range based on NATO accession vote pattern). Sweden's NATO integration year-2 landmark legislation. No ECHR or EU compliance risk. Implementation feasibility: HIGH.
-
-### Intelligence Note
-The "hidden" significance of HD03254 is its relationship to Sweden's Article 5 credibility. This is the operational-law foundation that makes Sweden a reliable NATO partner rather than merely a formal member.
-
-### HD03262
-<!-- source: documents/HD03262-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/documents/HD03262-analysis.md -->
-
-**Type**: prop | **Organ**: SfU | **Date**: 2026-04-30 | **DIW Final**: 9.8 (L3)  
-**Full text retrieved**: YES | **Admiralty**: [A1]
-
-### Summary
-Propositionen föreslår att kategorin permanent uppehållstillstånd (PUT) avskaffas i det svenska utlänningssystemet. Alla uppehållstillstånd ska i stället vara tidsbegränsade. Den som uppfyller villkoren kan ansöka om förlängning vid varje förfallotidpunkt.
-
-### Key Provisions
-- Abolishes permanent residence permit category (PUT) — effective after 3-year phase-in
-- Default: 2-year temporary permits renewable on demonstrated conditions
-- Long-term residents (5+ years) eligible for 4-year renewable permits
-- EU Blue Card holders: separate track preserved (EU compliance)
-- Family reunification: separate chapter; conditions tightened
-
-### Significance
-Historically unprecedented. PUT introduced by the Aliens Act 1954. First legislative abolition in 72 years. The EU Qualification Directive (2011/95/EU) Article 24 provides for long-term residence; this bill's compatibility with Art. 24 is the primary legal risk.
-
-### Election-proximity note
-Directly fulfils SD's 2022 manifesto commitment. Pre-election tabling maximises political credit extraction. Risk: legal challenge timeline coincides with campaign season.
-
-### HD03263
-<!-- source: documents/HD03263-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/documents/HD03263-analysis.md -->
-
-**Type**: prop | **Organ**: JuU | **Date**: 2026-04-30 | **DIW Final**: 9.3 (L3)  
-**Full text retrieved**: NO (metadata only) | **Admiralty**: [A2] (metadata confidence)
-
-### Summary (from metadata + title analysis)
-Propositionen stärker myndigheternas återvändandearbete. Ger Polismyndigheten och Migrationsverket utökade verktyg för att verkställa avlägsnandebeslut.
-
-### Estimated Key Provisions (from title + committee referral)
-- Expanded deportation monitoring tools
-- New mandatory cooperation between Polismyndigheten and Migrationsverket on execution
-- Electronic monitoring as alternative to detention pre-deportation
-- Bilateral deportation agreement framework with third countries
-
-### Intelligence Note
-Full text not retrieved. Assessment confidence reduced. Key question: does HD03263 include mandatory pre-departure detention? If so, overlaps with HD03265 legal risk framework.
-
-### HD03264
-<!-- source: documents/HD03264-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/documents/HD03264-analysis.md -->
-
-**Type**: prop | **Organ**: JuU | **Date**: 2026-04-30 | **DIW Final**: 8.7 (L2+)  
-**Full text retrieved**: NO (metadata only) | **Admiralty**: [A2]
-
-### Summary (from metadata)
-Introduces a "good character" requirement (vandelskrav) for residence permit applications and renewals. Criminal history and conduct can disqualify applicants.
-
-### Estimated Key Provisions
-- Good character assessment: new criterion for all permit applications
-- Criminal record check: mandatory and expanded scope
-- Minor offences: discretionary disqualification
-- Administrative appeal: through Migrationsverket → Migrationsdomstol
-
-### Intelligence Note
-The broad administrative discretion embedded in vandel assessment creates both Migrationsverket workload risk and equal-treatment risk (D6 score depressed in significance scoring). ECHR Art. 8 (family life) may be implicated if long-resident individuals are denied renewal based on minor criminal history.
-
-### HD03265
-<!-- source: documents/HD03265-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/documents/HD03265-analysis.md -->
-
-**Type**: prop | **Organ**: JuU | **Date**: 2026-04-30 | **DIW Final**: 9.0 (L3)  
-**Full text retrieved**: YES | **Admiralty**: [A1] | **ECHR Risk**: 🔴 CRITICAL
-
-### Summary
-Extends immigration detention (förvar) to a maximum of 6 months before a removal order is issued. Reduces mandatory judicial review frequency. Introduces "supervised departure" as an alternative to detention.
-
-### Key Provisions
-- Maximum pre-removal-order detention: 6 months (up from 2 months)
-- Judicial review: required at 3-month mark only (down from monthly)
-- "Supervised departure" (uppsikt): new category as detention alternative
-- New detention facilities: 2 planned (Migrationsverket/Kriminalvården joint)
-
-### Legal Risk Assessment
-🔴 **ECHR Art. 5 (liberty)**: 6-month detention with reduced judicial oversight = almost certain Strasbourg challenge  
-🔴 **EU Return Directive 2008/115/EC**: 6-month initial period is at the directive's ceiling; "automatic continuation without order" risk  
-🟡 **UNCRC**: Child detention implications flagged by Barnombudsmannen
-
-### Intelligence Priority
-Highest-risk bill in the package from a legal sustainability perspective. If judicial review is eventually required by Strasbourg or domestic courts, the entire enforcement architecture of the migration package depends on revising this provision.
-
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/election-2026-analysis.md -->
-
-**Days to election**: 133 (2026-09-13)  
+## Historical Parallels
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/historical-parallels.md -->
 
 ---
 
-### Electoral Arithmetic Update
+### Parallel 1: The 2016 Swedish Temporary Restriction Law (Prop. 2015/16:174)
 
-#### Current Polling Estimate (approximate, pre-May 2026 polls)
+**What happened**: Following the 2015 migration surge (163,000 arrivals), the S-MP government under Stefan Löfven pushed through a temporary restriction law with broad cross-party support (S, M, KD, C, L, SD all voted for it in some form). The law introduced: temporary (rather than permanent) residence permits as the default; reduced family reunification rights; stricter self-sufficiency requirements.
 
-| Party | % | Mandater (349 total) | Bloc |
-|-------|---|---------------------|------|
-| S | 33.2 | 116 | Rödgröna |
-| SD | 18.8 | 66 | Tidö |
-| M | 18.5 | 65 | Tidö |
-| V | 6.9 | 24 | Rödgröna |
-| KD | 5.6 | 20 | Tidö |
-| MP | 5.1 | 18 | Rödgröna |
-| C | 5.5 | 19 | Centre (flexible) |
-| L | 4.2 | 15 | Tidö (conditional) |
+**Parallels to May 2026**:
+- Simultaneous multi-bill migration package (2015/16: 3 bills; 2026: 4 bills)
+- EU framing used for legal cover (2015/16: "bringing Sweden to EU average"; 2026: "EU Migration Pact alignment")
+- Time-limited justification — **KEY DIFFERENCE**: 2015/16 was explicitly temporary (3-year sunset clause); 2026 is permanent by design
 
-*Note: Polling data approximate; sources: Sifo/Demoskop tracker early April 2026 (most recent available). Mandatfördelning calculated using St. Laguë method approximation.*
+**Lesson transferred**: The 2015/16 package survived ECHR scrutiny largely because of the sunset clause and maintained judicial review. HD03265's absence of these safeguards is the key difference. If the government were to add a sunset clause to HD03265, it would significantly reduce R1 risk.
 
-**Rödgröna bloc + MP + S**: 116+24+18 = 158 seats  
-**S + C**: 116+19 = 135 (insufficient for S majority even with C)  
-**Tidö bloc (SD+M+KD+L)**: 66+65+20+15 = 166 seats  
-**Tidö without L**: 66+65+20 = 151 seats (minority, 24 short of 175 majority)
-
-**Key insight**: L's 15 seats are the difference between Tidö majority (166) and Tidö minority (151). Without L, Tidö needs C passive support (abstention on budget) to form a working minority — historically possible (2010–2014 model) but complex.
+**Electoral outcome**: Broad support did not prevent S's long-term loss of working-class voters to SD on migration; the policy tightening was credited to SD, not S.
 
 ---
 
-### Migration Package Electoral Calculus
+### Parallel 2: Danish "Paradigm Shift" 2019–2022
 
-#### SD perspective
-Migration mega-package = 100% manifesto fulfilment. SD's base voters (18.8%) are locked in. Upside: marginal gain from voters previously rating M above SD on migration.
+**What happened**: Under Social Democrat PM Mette Frederiksen, Denmark adopted an explicit zero-refugee target and "paradigm shift" approach — emphasising return and temporary protection over permanent residence. Legal mechanism: amended § 19a Udlændingeloven (permanent residence restrictions); deportation to "safe third countries" (Rwanda plan, ultimately abandoned).
 
-#### M perspective
-Tactical support. M gets migration toughness credibility without bearing the legal risk. Risk: if ECHR ruling comes, M must decide between "we passed this" and "we will reform this." Former is more likely in a campaign.
+**Parallels to May 2026 Sweden**:
+- Permanent residence pathway restricted/abolished (both cases)
+- Bipartisan framing — Denmark: Social Democrats + right parties; Sweden: Tidöalliansen
+- International criticism from UNHCR in both cases
 
-#### KD perspective
-Christian ethics vs coalition discipline. KD's Busch has managed this tension through energy emphasis. Migration package is less comfortable for KD's Christian democratic base — but the party has maintained coalition discipline throughout. No public dissent.
+**Key difference**: Denmark's package maintained judicial review throughout; each detention extension required court order. Sweden's HD03265 removes this safeguard — making Sweden's 2026 approach **more legally exposed** than Denmark's "paradigm shift."
 
-#### L perspective
-**CRITICAL WATCH**: L's migration position has always been more rule-of-law focused. HD03265 detention without judicial review is the most uncomfortable element for L. Internal party signalling (LP party congress April 2026) reportedly showed 23% of delegates expressing "concern" about the detention provisions. This is the single most important intra-coalition vulnerability signal in the dataset.
-
----
-
-### Historical Election Comparison
-
-| Election | Right-bloc result | Migration policy salience | Outcome |
-|----------|------------------|--------------------------|---------|
-| 2022 | 176 mandater (bare majority) | HIGH (led by SD manifesto) | Tidö government formed |
-| 2018 | 143 mandater (minority) | HIGHEST — SD 17.5% | 4-month government formation crisis |
-| 2014 | 141 mandater (minority) | MEDIUM | Alliance minority government |
-| 2010 | 172 mandater | LOW | Alliance majority government (4 parties) |
-
-**Pattern**: Right-bloc overperforms when migration salience is high AND bloc is perceived as having a coherent migration policy. SD's electoral high (2022: 20.5% in final result vs pre-election polling of 18–19%) was driven by late-campaign migration salience surge.
-
-**2026 projection**: If migration remains the dominant frame AND the ECHR risk does not materialise before September, SD likely performs at or above polling levels. If ECHR risk materialises, the migration frame shifts from "Sweden gets tough" to "Sweden breaks law" — reversing SD's advantage.
+**Electoral outcome**: Frederiksen's Social Democrats won re-election in 2022 on the back of the paradigm shift, demonstrating that migration restriction by a centre-left party can consolidate both base and moderate voters. Implication for Sweden: the migration issue may be even more powerful for Tidö (who has the credibility advantage over S on this issue).
 
 ---
 
-### Coalition Formation Scenarios (Post-September 2026)
+### Parallel 3: The 2022 Swedish Election — SD Electoral Surge
 
-#### S1: Tidö Renewal (most likely — 50%)
-SD+M+KD+L form new government. Requires L above 4%. Energy policy negotiation as PIR-D crystallisation event. Migration: government takes credit for delivery.
+**What happened**: SD polled at 19–20% throughout 2022; final result was 20.5% (Demoskop showed 18.8% day before election). The 1.7pp surge in the final 48 hours was attributed to late-deciders choosing SD after the final televised debate (migration debate dominated).
 
-#### S2: Tidö Minority with C (25%)
-L below 4%. SD+M+KD minority; C abstains on budget. Precedent: M+KD+L+C 2010–2014. Requires C to accept abstention on migration issues. C's current position (moderate opposition) makes this workable but uncomfortable.
+**Relevance to 2026**: If the migration package is the dominant frame entering August–September 2026, a similar SD late surge is plausible. Current polling: SD 18.8%. A 2026 repeat of the 2022 surge would bring SD to ~20.5–21.0% = ~72–73 mandater = Tidö majority secured independently of L.
 
-#### S3: Crossover — S+M+C (15%)
-S wins >34%; M+C willing to govern with S in exchange for economic moderation. Unprecedented in modern Swedish politics. Requires S to explicitly depart from V+MP dependencies. Possible only if Rödgröna bloc underperforms significantly.
-
-#### S4: Re-election call / hung parliament (10%)
-No coalition achievable within constitutional 4-attempt limit. New election called (February/March 2027). Precedent: none in modern Sweden but constitutional mechanism exists.
-
-## Coalition Mathematics
-<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/coalition-mathematics.md -->
+**Lesson**: SD's final polling tends to underestimate actual result by ~1–2pp in migration-dominant election environments. This is the "hidden factor" that makes the Tidö majority achievable even at current tracking levels.
 
 ---
 
-### Current Mandate Distribution (estimated, April 2026 polling)
+### Parallel 4: The 1991–1994 Alliance Government and Schlingman's "Modernisation"
 
-| Party | Poll % | Est. Mandater | Bloc |
-|-------|--------|---------------|------|
-| S | 33.2 | 116 | Rödgröna |
-| SD | 18.8 | 66 | Tidö |
-| M | 18.5 | 65 | Tidö |
-| V | 6.9 | 24 | Rödgröna |
-| C | 5.5 | 19 | Flexible |
-| MP | 5.1 | 18 | Rödgröna |
-| KD | 5.6 | 20 | Tidö |
-| L | 4.2 | 15 | Tidö |
-| **Total** | | **343** | |
-| *Rounding/small parties* | | *~6* | |
-| **TOTAL** | | **349** | |
+**What happened**: Carl Bildt's 1991–1994 four-party government (M+FP+KD+C) implemented sweeping market reforms including privatisation, education reform (friskolor). The government ended with an economic crisis (krona depreciation, unemployment spike from 2% to 9.5%). The 1994 election was a S landslide.
 
-**Majority threshold**: 175 seats
+**Relevance to 2026**: If the Scenario 4 economic shock materialises (tariff-driven recession), the Tidö government faces a historical parallel: broad reform agenda → economic crisis → electoral defeat. However, the 2026 economic context is fundamentally different (Sweden is not in a currency peg; floating krona provides adjustment mechanism).
+
+**Key difference from 2026**: The 1991–1994 economic crisis was domestic-origin (deregulation + fixed exchange rate). A 2026 shock would be US-tariff-external origin — the government can more credibly blame external factors.
 
 ---
 
-### Viable Coalition Configurations
+### Parallel 5: Infrastructure Legacy Politics — Persson's 2000s Investment
 
-#### Configuration A: Tidö Renewal (SD+M+KD+L)
-**Seats**: 66+65+20+15 = **166** — SHORT of majority by 9  
-Wait — current math: 66+65+20+15 = 166 < 175. This means even current Tidö government is a MINORITY government at current polling.
+**What happened**: Göran Persson's S government (1996–2006) invested heavily in rail and energy infrastructure during the economic boom years. The Banverket expansion became a lasting legacy claim.
 
-**Correction**: The Tidö government governs via the cooperation agreement including budget support from all four parties. The current working majority is ~174–176 depending on MP threshold performance. If SD gains slightly (final election bump historically), reaches 175+.
+**Relevance to 2026**: The 970 billion SEK infrastructure plan (HD03259) is explicitly designed as a comparable legacy claim for M+SD+KD+L. Scale exceeds Persson's programme. Difference: Persson's investments were during budget surplus years; the 2026 plan is funded partly through borrowing at a time of US tariff uncertainty.
 
-**Gate condition**: SD must perform at or above polling (historically does in migration-dominant elections).
-
-#### Configuration B: Tidö+C Minority (SD+M+KD+L+C, or SD+M+KD without L)
-**Without L (if L <4%)**: SD+M+KD = 151. Needs C passive support (abstention). C has 19 seats — C abstaining gives SD+M+KD effective minority control.
-**Historical precedent**: M+FP+KD+C 2010–2014 minority, C abstained in critical votes.
-
-#### Configuration C: Social Democratic alternatives
-**S alone**: 116. Requires any combination of C+V+MP+KD (impossible — KD coalition partner conflict).  
-**S+MP+V**: 158. Short of majority by 17. Requires C + SD abstentions (extremely unlikely).  
-**S+C**: 135. Far from majority.  
-**S+M+C (Storkoalition)**: 116+65+19 = 200. Majority by 25. THEORETICALLY possible but ideologically unprecedented.
-
----
-
-### Pivot Analysis
-
-| Pivot party | Pivotal in... | Swing value | Current stance |
-|-------------|---------------|-------------|----------------|
-| **L** | Tidö majority vs Tidö minority | 9 seats (difference between majority and minority) | CONDITIONAL (4.2% at risk) |
-| **C** | Tidö minority viability / S alternative | 19 seats | Moderate opposition |
-| **MP** | Rödgröna viability above 4% | 18 seats | Opposition (5.1%) |
-| **KD** | Tidö bloc cohesion | 20 seats | Coalition partner |
-
----
-
-### L Threshold Sensitivity
-
-| L poll result | Seats | Tidö total | Majority? | Government type |
-|---------------|-------|-----------|-----------|-----------------|
-| 5.0% | 17 | 168 | NO (short 7) | Minority, needs C abstain |
-| 4.5% | 16 | 167 | NO (short 8) | Minority, needs C abstain |
-| 4.2% | 15 | 166 | NO (short 9) | Minority, needs C abstain |
-| 4.0% | 14 | 165 | NO (short 10) | Minority, needs C abstain |
-| 3.9% | 0 | 151 | NO (short 24) | Minority, needs C abstain + more |
-
-**Critical insight**: At current polling, even WITH L in the Riksdag, Tidö needs SD to outperform its polling average by ~1-2pp (as has historically happened in migration-dominant elections) to reach 175. The Tidö "majority" is contingent on both L staying above 4% AND SD/M doing at least as well as current polls.
-
----
-
-### Mandatfördelning Trajectory (3 scenarios)
-
-```
-Scenario 1 — Tidö Renewal    SD+M+KD+L = 166+9 (SD bump) = 175+ ✅
-Scenario 2 — Legal Fracture  SD+M+KD+L = 160 (SD-2, M-2, L-2) = 156 ❌ → minority
-Scenario 3 — S wins          S+MP+V = 165, S+C = 140, S+C+V = 159 ❌ minority
-```
-
-**Net assessment**: Tidö retains government in Scenario 1 (65%); loses majority arithmetic but may retain minority government in Scenario 2 (20%); S cannot form majority in any plausible polling range at current levels (C would need to shift to S explicitly, which requires C's electoral calculation to reverse).
-
-## Voter Segmentation
-<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/voter-segmentation.md -->
-
-**Policy focus**: Four-bill migration package (HD03262–HD03265) + SD congress energy platform  
-**Method**: 7-segment model (demographics × values × policy exposure)
-
----
-
-### Segment Map
-
-| Segment | Size (est.) | Migration stance | Energy stance | Policy exposure | Current alignment |
-|---------|-------------|-----------------|---------------|----------------|-------------------|
-| **S1 Urban professional** | ~18% of electorate | Moderate oppose | Pro-renewable | Low-direct | M/C (swing) |
-| **S2 Suburban family** | ~22% | Moderate support | Mixed | Medium (permit system) | M/KD/SD |
-| **S3 Working-class industrial** | ~15% | Strong support | Anti-high prices | High (labour competition framing) | SD/S (contested) |
-| **S4 Rural/Norrland** | ~8% | Strong support | Pro-nuclear, anti-wind | High (energy costs, deportation enforcement) | SD/C |
-| **S5 Educated left** | ~12% | Strong oppose | Pro-renewable | Low-direct | S/V/MP |
-| **S6 Retirees + fixed income** | ~16% | Mixed | Anti-high prices | Low | S/KD/M |
-| **S7 Young voters (18–29)** | ~9% | Oppose-to-neutral | Pro-climate | Low-direct | MP/S/V (but declining) |
-
----
-
-### Migration Package Impact by Segment
-
-#### S2 — Suburban family (HIGHEST electoral significance)
-HD03262's abolition of permanent residence directly affects families in the integration pathway. Suburban families are most likely to have colleagues, neighbours, or employers affected by the permit changes. The question is whether HD03262 is perceived as "protecting community stability" (Tidö frame) or "creating neighbour uncertainty" (S frame). Current polling suggests this segment is tracking with Tidö. Risk: if a local human-interest story (a long-resident family deported, a valued local doctor losing status) emerges in this segment's media ecosystem, the frame can flip.
-
-#### S3 — Working-class industrial (SD-S CONTESTED zone)
-This segment moved from S to SD between 2014 and 2022. Migration tightening reinforces this shift. HD03263 (deportation enforcement) particularly resonates. The energy angle (SD's wind moratorium) is POSITIVE for this segment in regions with high energy costs (northern Sweden, steel belt). S can only win this segment back if economic management concerns override migration framing — possible only in the Scenario 4 economic shock case.
-
-#### S1 — Urban professional (SWING VOTE)
-Urban professionals are over-represented in M and C voting. They have low direct policy exposure to migration changes but HIGH sensitivity to rule-of-law concerns. The ECHR/Lagrådet dimension of the migration package is most salient for this segment. If the governance-process narrative (absence of Lagrådet review) takes hold in urban media, this segment is the most likely to shift from M/C toward S or C-led crossover scenario.
-
-#### S7 — Young voters (TURNOUT RISK)
-Youth turnout was 79.8% in 2022 (high by historical standards). Any decline in 2026 primarily benefits S (youth voter leanings) via proportional seat allocation. The migration package is unlikely to motivate this segment toward Tidö; the SD wind moratorium is a potential demobilisation factor for environmental-priority youth voters within MP/MP-leaning territory.
-
----
-
-### Energy Policy Segmentation (Post-SD Congress)
-
-SD's wind moratorium is most polarising for:
-- **S4 Rural/Norrland**: Strongly positive (noise, landscape, energy cost concerns)
-- **S1 Urban professional**: Negative (climate anxiety, EU alignment concerns)
-- **S3 Working-class industrial (energy-intensive industry)**: Mixed — lower energy prices (pro-nuclear) positive; export market EU compliance risk (negative)
-
-**Net assessment**: SD's congress position is a net positive in its base (S3+S4) and neutral-to-negative in swing segments (S1+S2). This is consistent with holding current support rather than expanding it.
-
----
-
-### Exposure Table: Direct vs Systemic Impact
-
-| Policy | % of electorate directly affected | % aware of policy | Frame type reaching them |
-|--------|----------------------------------|-------------------|------------------------|
-| HD03262 (permanent residence) | ~3% (current permit holders + immediate family) | ~35% | Mixed government/opposition |
-| HD03265 (detention) | <1% | ~25% | Opposition-led (human rights) |
-| HD03259 (infrastructure) | ~60% (transport users) | ~55% | Government-led (legacy) |
-| SD wind moratorium | ~5% (direct energy-sector workers) | ~40% | Both sides (cost vs climate) |
+**Electoral outcome for Persson**: Infrastructure investment did NOT prevent electoral defeat in 2006 (lost to Reinfeldt's Alliance). Lesson: infrastructure investment is a necessary but not sufficient electoral condition.
 
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/comparative-international.md -->
@@ -1351,69 +1325,6 @@ The closest domestic precedent. Key comparisons:
 ¹ *[IMF WEO Apr-2026 vintage; API unavailable 2026-05-03; figures from prior run cache. Pre-tariff shock values — may be revised downward in July 2026 WEO update.]*
 
 **Key insight**: Sweden's relatively stronger GDP position (+2.1%) vs Germany (+0.9%) means the Tidö government can make an economic management argument. However, Sweden's higher unemployment (8.1% vs Nordic neighbours) is the vulnerability.
-
-## Historical Parallels
-<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/historical-parallels.md -->
-
----
-
-### Parallel 1: The 2016 Swedish Temporary Restriction Law (Prop. 2015/16:174)
-
-**What happened**: Following the 2015 migration surge (163,000 arrivals), the S-MP government under Stefan Löfven pushed through a temporary restriction law with broad cross-party support (S, M, KD, C, L, SD all voted for it in some form). The law introduced: temporary (rather than permanent) residence permits as the default; reduced family reunification rights; stricter self-sufficiency requirements.
-
-**Parallels to May 2026**:
-- Simultaneous multi-bill migration package (2015/16: 3 bills; 2026: 4 bills)
-- EU framing used for legal cover (2015/16: "bringing Sweden to EU average"; 2026: "EU Migration Pact alignment")
-- Time-limited justification — **KEY DIFFERENCE**: 2015/16 was explicitly temporary (3-year sunset clause); 2026 is permanent by design
-
-**Lesson transferred**: The 2015/16 package survived ECHR scrutiny largely because of the sunset clause and maintained judicial review. HD03265's absence of these safeguards is the key difference. If the government were to add a sunset clause to HD03265, it would significantly reduce R1 risk.
-
-**Electoral outcome**: Broad support did not prevent S's long-term loss of working-class voters to SD on migration; the policy tightening was credited to SD, not S.
-
----
-
-### Parallel 2: Danish "Paradigm Shift" 2019–2022
-
-**What happened**: Under Social Democrat PM Mette Frederiksen, Denmark adopted an explicit zero-refugee target and "paradigm shift" approach — emphasising return and temporary protection over permanent residence. Legal mechanism: amended § 19a Udlændingeloven (permanent residence restrictions); deportation to "safe third countries" (Rwanda plan, ultimately abandoned).
-
-**Parallels to May 2026 Sweden**:
-- Permanent residence pathway restricted/abolished (both cases)
-- Bipartisan framing — Denmark: Social Democrats + right parties; Sweden: Tidöalliansen
-- International criticism from UNHCR in both cases
-
-**Key difference**: Denmark's package maintained judicial review throughout; each detention extension required court order. Sweden's HD03265 removes this safeguard — making Sweden's 2026 approach **more legally exposed** than Denmark's "paradigm shift."
-
-**Electoral outcome**: Frederiksen's Social Democrats won re-election in 2022 on the back of the paradigm shift, demonstrating that migration restriction by a centre-left party can consolidate both base and moderate voters. Implication for Sweden: the migration issue may be even more powerful for Tidö (who has the credibility advantage over S on this issue).
-
----
-
-### Parallel 3: The 2022 Swedish Election — SD Electoral Surge
-
-**What happened**: SD polled at 19–20% throughout 2022; final result was 20.5% (Demoskop showed 18.8% day before election). The 1.7pp surge in the final 48 hours was attributed to late-deciders choosing SD after the final televised debate (migration debate dominated).
-
-**Relevance to 2026**: If the migration package is the dominant frame entering August–September 2026, a similar SD late surge is plausible. Current polling: SD 18.8%. A 2026 repeat of the 2022 surge would bring SD to ~20.5–21.0% = ~72–73 mandater = Tidö majority secured independently of L.
-
-**Lesson**: SD's final polling tends to underestimate actual result by ~1–2pp in migration-dominant election environments. This is the "hidden factor" that makes the Tidö majority achievable even at current tracking levels.
-
----
-
-### Parallel 4: The 1991–1994 Alliance Government and Schlingman's "Modernisation"
-
-**What happened**: Carl Bildt's 1991–1994 four-party government (M+FP+KD+C) implemented sweeping market reforms including privatisation, education reform (friskolor). The government ended with an economic crisis (krona depreciation, unemployment spike from 2% to 9.5%). The 1994 election was a S landslide.
-
-**Relevance to 2026**: If the Scenario 4 economic shock materialises (tariff-driven recession), the Tidö government faces a historical parallel: broad reform agenda → economic crisis → electoral defeat. However, the 2026 economic context is fundamentally different (Sweden is not in a currency peg; floating krona provides adjustment mechanism).
-
-**Key difference from 2026**: The 1991–1994 economic crisis was domestic-origin (deregulation + fixed exchange rate). A 2026 shock would be US-tariff-external origin — the government can more credibly blame external factors.
-
----
-
-### Parallel 5: Infrastructure Legacy Politics — Persson's 2000s Investment
-
-**What happened**: Göran Persson's S government (1996–2006) invested heavily in rail and energy infrastructure during the economic boom years. The Banverket expansion became a lasting legacy claim.
-
-**Relevance to 2026**: The 970 billion SEK infrastructure plan (HD03259) is explicitly designed as a comparable legacy claim for M+SD+KD+L. Scale exceeds Persson's programme. Difference: Persson's investments were during budget surplus years; the 2026 plan is funded partly through borrowing at a time of US tariff uncertainty.
-
-**Electoral outcome for Persson**: Infrastructure investment did NOT prevent electoral defeat in 2006 (lost to Reinfeldt's Alliance). Lesson: infrastructure investment is a necessary but not sufficient electoral condition.
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/implementation-feasibility.md -->
@@ -1486,6 +1397,95 @@ The closest domestic precedent. Key comparisons:
 | HD03265 | HIGH (ECHR Art.5) | HIGH (detention capacity) | HIGH | 🔴 HIGH RISK |
 | HD03254 | LOW | LOW | LOW | 🟢 LOW RISK |
 | HD03259 | LOW | MEDIUM | MEDIUM | 🟡 MEDIUM |
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/media-framing-analysis.md -->
+
+---
+
+### Active Frame Packages
+
+#### Frame A: "Sweden Delivers on Migration Promises" (Government dominant)
+
+**Anchor**: HD03262–HD03265 as Tidöavtalet fulfilment  
+**Key messages**:
+- "Sweden is normalising to European levels" (EU pact framing)
+- "Crime reduction requires stronger borders" (conflation of migration + security)
+- "The government delivers what it promised in 2022"
+
+**Primary carriers**: SD communications, M press releases, government.se  
+**Reach**: SD base (18.8%) + M moderate right; potential SD late-surge population  
+**Weakness**: Does not address Lagrådet process concerns; vulnerable to rule-of-law counter-frame
+
+---
+
+#### Frame B: "Inhumane Policy, Broken International Law" (Opposition)
+
+**Anchor**: UNCRC (Barnkonventionen) + ECHR obligations + specific individual cases  
+**Key messages**:
+- "Sweden is violating international law for electoral gain"
+- "Children are the victims of HD03265 detention provisions"
+- "This is not who Sweden is" (national identity appeal)
+
+**Primary carriers**: S, V, MP, Röda Korset, Barnombudsmannen, UNHCR Sweden  
+**Reach**: S+V+MP base (44%); potential swing in S1 urban professional segment  
+**Weakness**: Abstract legal argument; requires individual human-interest case to activate emotionally
+
+---
+
+#### Frame C: "Rule of Law Under Pressure" (Judicial/centrist)
+
+**Anchor**: Lagrådet referral absence; ECHR risk; Riksdag constitutional committee (KU) scrutiny potential  
+**Key messages**:
+- "Good policy requires proper legal process"
+- "L has rule-of-law concerns that must be addressed"
+- "The government is rushing unprecedented legislation without proper scrutiny"
+
+**Primary carriers**: DN editorial board, SvD analysis, KD's quieter voices, L internal debate  
+**Reach**: S1 urban professional segment; C soft-right voters; L existential demographic  
+**Strategic importance**: This is the frame most dangerous to Tidö because it targets M's and L's rule-of-law brand equity
+
+---
+
+#### Frame D: "Energy Future at Stake" (SD congress spillover)
+
+**Anchor**: SD wind moratorium + KD nuclear diversification  
+**Key messages**:
+- "Sweden must build nuclear first, wind never" (SD)
+- "Sweden needs all clean energy technologies" (KD, M, S)
+- "Energy costs are destroying families and industry" (S3 working-class activation)
+
+**Primary carriers**: SD's Mattias Karlsson (energy spokesperson), KD's Ebba Busch  
+**Reach**: S3 working-class industrial + S4 rural/Norrland + energy-sector business interests  
+**Current activation level**: MEDIUM (SD congress resolved; but moratorium provision activates EU climate compliance frame)
+
+---
+
+### Frame Dominance Forecast
+
+```
+MAY 2026:    Frame A (80%) | Frame B (15%) | Frame C (5%)
+JUNE 2026:   Frame A (65%) | Frame B (20%) | Frame C (15%) [SfU hearings begin]
+JULY 2026:   Frame A (50%) | Frame B (30%) | Frame C (20%) [ECHR potential]
+AUG 2026:    Frame A (40%) | Frame B (30%) | Frame C (20%) | Frame D (10%)
+SEPT (final): Frame A (35%) | Frame B (25%) | Frame C (20%) | Frame D (10%) | Other (10%)
+```
+
+**Pattern**: Government frame dominates now but erodes as SfU hearings provide Opposition platform (June) and ECHR risk becomes more visible (July–August). The critical window for Tidö is to lock in the "delivery" narrative before June committee hearings.
+
+---
+
+### DISARM Influence Matrix
+
+| DISARM Tactic | Active? | Carrier | Target |
+|---|---|---|---|
+| T0009 Create personas | MONITOR | SD-aligned accounts | Anti-immigration emotional amplification |
+| T0019 Manipulate legacy media | LOW | Both sides | Op-ed placement |
+| T0046 Use Hashtags | YES | #migrationspolitik on X/Twitter | Both sides active |
+| T0057 Threaten political figures | NOT OBSERVED | — | — |
+| T0084 Use fake experts | NOT OBSERVED | — | — |
+
+**Information environment assessment**: Within normal democratic-campaign parameters. No evidence of coordinated inauthentic behaviour from foreign actors. Diaspora-language amplification beginning (Arabic social media re: HD03262 affects Arabic-speaking resident communities); this is legitimate advocacy, not manipulation.
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/devils-advocate.md -->
@@ -2055,24 +2055,24 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/threat-analysis.md)
 - [`documents/HD03254-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/documents/HD03254-analysis.md)
 - [`documents/HD03262-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/documents/HD03262-analysis.md)
 - [`documents/HD03263-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/documents/HD03263-analysis.md)
 - [`documents/HD03264-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/documents/HD03264-analysis.md)
 - [`documents/HD03265-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/documents/HD03265-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/cross-reference-map.md)

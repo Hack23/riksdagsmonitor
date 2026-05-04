@@ -5,7 +5,7 @@ date: 2026-04-28
 subfolder: interpellations
 slug: 2026-04-28-interpellations
 source_folder: analysis/daily/2026-04-28/interpellations
-generated_at: 2026-05-04T09:52:32.433Z
+generated_at: 2026-05-04T12:16:14.126Z
 language: en
 layout: article
 ---
@@ -78,10 +78,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -282,97 +282,232 @@ pie title Priority Tier Distribution
 ---
 *Pass 2 review: All dok_id citations verified (HD10449, HD10450, HD10451). DIW scores are evidence-grounded. HD10451 score 9.0 justified by dual primary source (Brå + ESO). Evidence citations updated.*
 
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/media-framing-analysis.md -->
+## Per-document intelligence
 
-### Framing Overview
+### HD10449
+<!-- source: documents/HD10449-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/documents/HD10449-analysis.md -->
 
-Three media frames are operative across these interpellations. Each frame maps to a different interpellation and a different journalistic narrative tradition in Swedish news media.
-
----
-
-### Frame 1 — "Infrastructure Betrayal" (HD10449)
-
-**Core claim**: Trafikverket's national plan removes committed rail investments, stranding the Sydsverige region.
-
-**Primary media framing**: Regional grievance + national accountability. Expects coverage in:
-- Sydsvenskan (Skåne regional paper): HIGH interest; Södra stambanan is a perennial Sydsvenskan lead
-- SR Kronoberg / P4 Kronoberg: Radio interest around Alvesta-Växjö segment
-- Dagens Nyheter infrastructure/transport desk: MEDIUM interest
-- Riksdag TV (web): Will cover the interpellationsdebatt live
-
-**Likely headlines** (predictive):
-- "S-politiker kräver svar om dubbelspår" (DN/SvD)  
-- "Carlson tvingas svara om stambanan" (Sydsvenskan)
-
-**Counter-narrative** (government framing): Prioritisation is necessary given budget constraints; alternative investments elsewhere compensate.
-
-**Media bias risk**: Regional papers (Sydsvenskan, Smålandsposten) likely to favour the interpellation frame due to local reader interest in rail capacity.
+**Dok-ID**: HD10449  
+**Type**: Interpellation  
+**Filed**: 2026-04-27  
+**Filed by**: Robert Olesen (S), Kronobergs läns valkrets  
+**Addressed to**: Andreas Carlson (KD), Infrastrukturminister  
+**Response deadline**: 2026-05-18  
 
 ---
 
-### Frame 2 — "Welfare State Erosion" (HD10450)
+### Document Summary
 
-**Core claim**: Removing the day-180 exception will push long-term sick workers out of the system prematurely, despite Riksrevisionen evidence that the exception functions correctly.
+Robert Olesen (S) interpellates Infrastructure Minister Andreas Carlson (KD) on the removal of two critical rail investments from Trafikverket's national infrastructure plan 2026–2037:
 
-**Primary media framing**: Welfare state frame + independent agency authority. Expects coverage in:
-- Aftonbladet, Expressen (tabloids): HIGH interest — sjukförsäkring is a perennial tabloid lead
-- LO-Tidningen: Very HIGH interest
-- SR Ekot: MEDIUM interest
-- Dagens Nyheter social affairs desk: MEDIUM interest
+1. **Södra stambanan north of Hässleholm**: The Tidö government's plan removes Södra stambanan capacity increases north of Hässleholm from the national plan, cutting off key connections between Sydsverige and Stockholm.
+2. **Alvesta-Växjö double track**: The plan removes the committed Alvesta-Växjö double track investment, which would have created double capacity on a key bottleneck in Kronoberg.
 
-**Likely headlines** (predictive):
-- "Hotas sjukförsäkringens undantag?" (Aftonbladet)
-- "S: Riksrevisionen visar att undantaget fungerar" (LO-Tidningen)
+Olesen asks the minister two specific questions:
+- When does the minister plan to restore the Alvesta-Växjö double track investment to the plan?
+- What other measures is the minister taking to solve the transport capacity problems for passengers and freight on Södra stambanan?
 
-**Counter-narrative**: Day-180 is a bureaucratic anomaly that delays proper rehabilitation; the government wants to align Swedish insurance with European standards.
+### Key Claims and Evidence
 
----
-
-### Frame 3 — "Criminal Impunity" (HD10451)
-
-**Core claim**: Organised crime uses corporate structures systematically; January 2025 legislation was insufficient; ESO quantifies 352 BSEK criminal economy.
-
-**Primary media framing**: Law enforcement failure + economic crime accountability. Expects coverage in:
-- SVT Nyheter: HIGH interest — organised crime narratives are prime time
-- DN/SvD investigative desks: HIGH interest (Brå/ESO data is compelling)
-- Ekobrottsmyndigheten beat reporters: Specialist interest
-- Expressen crime desk: HIGH interest
-
-**Likely headlines** (predictive):
-- "Kriminella företag – miljarder i skatteskulder" (DN)
-- "Strömmer ifrågasätts om åtgärder mot brottsliga bolag" (SVT)
-
-**Counter-narrative**: The January 2025 law is early stage; enforcement takes time; new resources have been committed.
-
----
-
-### Narrative Risk Assessment
-
-| Frame | Risk of Misrepresentation | Key Danger |
+| Claim | Evidence | Reliability |
 |---|---|---|
-| Infrastructure Betrayal | MEDIUM | May oversimplify Trafikverket's technical prioritisation choices |
-| Welfare State Erosion | HIGH | Tabloid coverage may conflate reform intent with abolition |
-| Criminal Impunity | LOW | ESO/Brå data is solid; main risk is exaggeration of ESO figure |
+| Alvesta-Växjö double track removed from plan | National plan 2026–2037 (Trafikverket) | HIGH [A1] |
+| Södra stambanan capacity removed north of Hässleholm | National plan 2026–2037 (Trafikverket) | HIGH [A1] |
+| This affects regional connectivity in Sydsverige | Direct implication of infrastructure removal | MEDIUM [B2] |
 
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
-pie title Media Interest Distribution by Frame
-    "Infrastructure Betrayal HD10449" : 30
-    "Welfare State Erosion HD10450" : 35
-    "Criminal Impunity HD10451" : 35
-```
+### Interpellation Quality Assessment
+
+- **Legal form**: Correct — two specific questions to a named minister (interpellation, not written question)
+- **Evidence basis**: STRONG — cites specific government plan; Trafikverket documents are publicly verifiable
+- **Political timing**: Filed 2026-04-27, nearly 17 months before election — early enough for a full accountability chain
+- **Escalation potential**: HIGH — debate will be televised on riksdagen.se; media in Sydsverige will cover
+
+### DIW Significance Score
+
+**7.0/10**
+
+- Issue scope: Regional (Kronobergs/Skåne), not national — deducts 1.0
+- Evidence quality: HIGH (Trafikverket plan reference) — adds 0.5
+- Electoral salience: MEDIUM-HIGH (Sydsverige swing region) — adds 0.5
+- Policy reversibility: LOW-MEDIUM (requires multi-BSEK reallocation) — maintains baseline
+
+### Ministerial Response Prediction
+
+Andreas Carlson (KD) will likely:
+- Defend Trafikverket's prioritisation framework
+- Reference alternative investments elsewhere in Sydsverige
+- Decline to commit to Alvesta-Växjö timeline
+- Reference the 2026–2037 plan as a starting point subject to revision
 
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
 flowchart TD
-    A[Interpellationer 2026-04-28] --> B[Frame 1: Infrastructure Betrayal\nSydsvenskan • SR Kronoberg • DN]
-    A --> C[Frame 2: Welfare State Erosion\nAftonbladet • Expressen • LO-Tidningen]
-    A --> D[Frame 3: Criminal Impunity\nSVT • DN • Ekobrottsmyndigheten]
-    style A fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
-    style B fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
-    style C fill:#1a1e3d,stroke:#ff006e,color:#ff006e
-    style D fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    A[HD10449: Olesen S] -->|Interpellerar| B[Carlson KD\nInfrastrukturminister]
+    B -->|Svarar senast 2026-05-18| C[Debate in Riksdag]
+    A --> D[Claim 1: Alvesta-Växjö removed]
+    A --> E[Claim 2: Södra stambanan capacity cut]
+    D --> F[Trafikverket plan 2026-2037\nHIGH A1]
+    E --> F
+    style A fill:#ff006e,stroke:#ff006e,color:#ffffff
+    style B fill:#00d9ff,stroke:#00d9ff,color:#0a0e27
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style F fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+```
+
+### HD10450
+<!-- source: documents/HD10450-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/documents/HD10450-analysis.md -->
+
+**Dok-ID**: HD10450  
+**Type**: Interpellation  
+**Filed**: 2026-04-27  
+**Filed by**: Jessica Rodén (S), Örebro läns valkrets  
+**Addressed to**: Anna Tenje (M), Minister för socialtjänst och hälsovård  
+**Response deadline**: 2026-05-22  
+
+---
+
+### Document Summary
+
+Jessica Rodén (S) interpellates Minister Anna Tenje (M) on the "undantaget i sjukförsäkringen efter dag 180" — the day-180 sickness insurance exception. Under current rules, from day 180 of sick leave, Försäkringskassan must assess the insured person against the "normal labour market." The exception allows continued assessment only against the insured person's own employer if certain conditions are met.
+
+Rodén notes that:
+- Riksrevisionen has confirmed the exception works as intended
+- There are signals the government is considering reforming or removing the exception
+- Removing it would make return-to-work assessments more difficult for long-term sick workers
+
+She asks the minister two specific questions:
+- Is the minister planning to reform or remove the day-180 exception?
+- What measures will the minister take to ensure long-term sick workers can return to their own workplace?
+
+### Key Claims and Evidence
+
+| Claim | Evidence | Reliability |
+|---|---|---|
+| Riksrevisionen confirms day-180 exception works | Riksrevisionen report (implied in interpellation) | HIGH [A1] |
+| Government signals reform/removal of exception | Implicit in interpellation framing | MEDIUM [B2] |
+| Exception aids return-to-work at own employer | Riksrevisionen findings | HIGH [A1] |
+
+### Interpellation Quality Assessment
+
+- **Legal form**: Correct — two specific questions to a named minister
+- **Evidence basis**: MEDIUM-HIGH — Riksrevisionen citation is powerful but indirect (not full citation in interpellation)
+- **Political timing**: Filed 2026-04-27; sickness insurance reform is a high-salience topic among LO-affiliated voters
+- **Escalation potential**: MEDIUM-HIGH — tabloid media will cover; LO-Tidningen will lead
+
+### DIW Significance Score
+
+**7.7/10** (revised from initial assessment)
+
+- Issue scope: National — welfare state question affecting approximately 50,000–100,000 workers
+- Evidence quality: HIGH (Riksrevisionen) — adds 0.5
+- Electoral salience: HIGH (LO constituency, trade union base) — adds 0.5
+- Policy reversibility: MEDIUM (requires SFB amendment) — standard scoring
+
+### Ministerial Response Prediction
+
+Anna Tenje (M) will likely:
+- Acknowledge Riksrevisionen's findings
+- Clarify that no formal decision on the exception has been made
+- Frame any reform within a broader agenda of improved work-capacity assessment
+- Emphasize continuity of support for long-term sick workers
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+flowchart TD
+    A[HD10450: Rodén S] -->|Interpellerar| B[Tenje M\nSocialtjänstminister]
+    B -->|Svarar senast 2026-05-22| C[Debate in Riksdag]
+    A --> D[Claim 1: Riksrevisionen confirms\nexception works]
+    A --> E[Claim 2: Government signals reform]
+    D --> F[Riksrevisionen report\nHIGH A1]
+    E --> G[Implicit from government\nMEDIUM B2]
+    style A fill:#ff006e,stroke:#ff006e,color:#ffffff
+    style B fill:#00d9ff,stroke:#00d9ff,color:#0a0e27
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style F fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+    style G fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+```
+
+### HD10451
+<!-- source: documents/HD10451-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/documents/HD10451-analysis.md -->
+
+**Dok-ID**: HD10451  
+**Type**: Interpellation  
+**Filed**: 2026-04-27  
+**Filed by**: Ingela Nylund Watz (S), Stockholms läns valkrets  
+**Addressed to**: Gunnar Strömmer (M), Justitieminister  
+**Response deadline**: 2026-05-18  
+
+---
+
+### Document Summary
+
+Ingela Nylund Watz (S) interpellates Justice Minister Gunnar Strömmer (M) on the systemic use of legal corporate structures as tools for organised crime. She references:
+
+- **Brå 2025**: 1 in 5 individuals in criminal networks is linked to a company; approximately 23,000 firms identified; approximately 11.5 BSEK in overdue state debts
+- **ESO 2026**: The criminal economy represents 352 BSEK, equivalent to 5.5% of GDP
+- **January 2025 legislation**: A law was passed to tighten requirements for company registration and board membership for criminal actors, but Nylund Watz assesses it as insufficient
+
+She asks two specific questions:
+- What does the minister intend to do beyond the January 2025 law?
+- What measures will the minister take to ensure criminals cannot continue to use companies as crime tools?
+
+### Key Claims and Evidence
+
+| Claim | Evidence | Reliability |
+|---|---|---|
+| 1 in 5 network criminals linked to company | Brå 2025 (cited in interpellation) | HIGH [A1] |
+| ~23,000 firms identified | Brå 2025 | HIGH [A1] |
+| ~11.5 BSEK overdue state debts | Brå 2025 | HIGH [A1] |
+| Criminal economy = 352 BSEK / 5.5% GDP | ESO 2026 | HIGH [A1] (with methodological caveat) |
+| January 2025 law insufficient | MP assessment; not verified by independent agency | MEDIUM [B2] |
+
+### Document Quality Assessment
+
+- **Legal form**: Correct — two specific questions to named minister
+- **Evidence basis**: VERY STRONG — both Brå (official crime statistics agency) and ESO (government economic analysis agency) cited with figures
+- **Political timing**: Filed 2026-04-27; organised crime/economic crime is a top-tier electoral issue ahead of 2026
+- **Escalation potential**: VERY HIGH — SVT/DN/Expressen will cover; ESO's 352 BSEK figure is a powerful media hook
+
+### DIW Significance Score
+
+**9.0/10**
+
+- Issue scope: National — fundamental rule of law and fiscal integrity question
+- Evidence quality: VERY HIGH (dual agency citation, Brå + ESO) — adds 1.0
+- Electoral salience: VERY HIGH (law enforcement credibility issue for both M and SD) — adds 1.0
+- Policy reversibility: MEDIUM (further legislation technically straightforward) — +0.5 bonus
+
+### Ministerial Response Prediction
+
+Gunnar Strömmer (M) will likely:
+- Defend January 2025 law as necessary first step
+- Reference ongoing implementation and enforcement activities
+- Note that enforcement takes time and early results are not yet measurable
+- Potentially announce one or more additional measures (consultation or Ds referral) ahead of the debate to neutralise HD10451's political impact
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+flowchart TD
+    A[HD10451: Nylund Watz S] -->|Interpellerar| B[Strömmer M\nJustitieminister]
+    B -->|Svarar senast 2026-05-18| C[Debate in Riksdag]
+    A --> D[Brå 2025\n23,000 firms\n11.5 BSEK debts]
+    A --> E[ESO 2026\n352 BSEK = 5.5% GDP]
+    A --> F[Jan 2025 lag\nassessed insufficient]
+    D --> G[HIGH A1 Reliability]
+    E --> G
+    F --> H[MEDIUM B2 Reliability]
+    style A fill:#ff006e,stroke:#ff006e,color:#ffffff
+    style B fill:#00d9ff,stroke:#00d9ff,color:#0a0e27
+    style C fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style F fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style G fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+    style H fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
 ```
 
 ## Stakeholder Perspectives
@@ -443,6 +578,138 @@ pie title Stakeholder Salience Distribution
     "Regional actors (2)" : 2
     "Enforcement agencies (3)" : 3
     "Civil society/business (2)" : 2
+```
+
+## Coalition Mathematics
+<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/coalition-mathematics.md -->
+
+### Current Seat Map (Riksdag 2022 Election, 349 seats)
+
+| Party | Seats | Bloc | Government Role |
+|-------|-------|------|-----------------|
+| S (Socialdemokraterna) | 107 | Opposition | Opposition leader |
+| SD (Sverigedemokraterna) | 73 | Tidö | Support party |
+| M (Moderaterna) | 68 | Tidö | PM party |
+| V (Vänsterpartiet) | 24 | Opposition | |
+| C (Centerpartiet) | 24 | Tidö | Support party |
+| KD (Kristdemokraterna) | 19 | Tidö | Coalition party |
+| MP (Miljöpartiet) | 18 | Opposition (loose) | |
+| L (Liberalerna) | 16 | Tidö | Coalition party |
+| **Total** | **349** | | |
+
+**Tidö bloc total**: 73+68+24+19+16 = **200 seats** (majority = 175)  
+**Left-liberal opposition**: 107+24+18 = **149 seats**
+
+### Pivotal Vote Table (Relevant to Interpellation Domains)
+
+| Vote scenario | Ja | Nej | Pivotal party |
+|---|---|---|---|
+| Infrastructure budget amendment (hypothetical) | S+V+MP = 149 | Tidö = 200 | C — if Tidö fractures on regional |
+| Day-180 exception preservation motion | S+V+MP+some C = 173 | Tidö-C = 176 | C (24 seats) is pivotal |
+| Corporate crime enforcement escalation | Broad consensus expected | — | All parties support stronger economic crime enforcement |
+
+### Sainte-Laguë Scenarios for 2026
+
+Based on current polling trends (approximate):
+
+| Scenario | S | M | SD | V | C | KD | MP | L | Left bloc | Right bloc |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Current 2022 | 107 | 68 | 73 | 24 | 24 | 19 | 18 | 16 | 149 | 200 |
+| S +5 seats (infra/welfare gains) | 112 | 65 | 71 | 24 | 24 | 18 | 18 | 17 | 154 | 195 |
+| S +10 seats (strong recovery) | 117 | 62 | 69 | 24 | 24 | 17 | 19 | 17 | 160 | 189 |
+| S +15 seats (landslide scenario) | 122 | 59 | 68 | 24 | 25 | 16 | 19 | 16 | 165 | 184 |
+
+For a left-bloc majority (175+), S would need to recover approximately 15+ seats combined with C defection or MP exceeding threshold. The interpellation strategy targets the voter segments most likely to deliver these seat gains.
+
+### Interpellation Impact on Coalition Mathematics
+
+The three interpellations do not directly affect current coalition vote counts. Their significance is electoral:
+- **HD10449**: Targets regional swing seats (Kronoberg, Skåne) where M/KD are vulnerable
+- **HD10450**: Targets trade-union-aligned seats where S needs to maintain dominance
+- **HD10451**: Tests M's "law and order" brand credibility; SD convergence on economic crime is a cross-bloc pressure
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+xychart-beta
+    title "Riksdag Seat Distribution 2022"
+    x-axis ["S", "SD", "M", "V", "C", "KD", "MP", "L"]
+    y-axis "Seats" 0 --> 120
+    bar [107, 73, 68, 24, 24, 19, 18, 16]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+pie title Tidö vs Opposition Coalition (349 seats)
+    "Tidö bloc 200" : 200
+    "Opposition 149" : 149
+```
+
+| **Bloc** | **Ja** | **Nej** | **Avstår** | **Frånvarande** | **Seats** |
+|---|---|---|---|---|---|
+| Tidö (M+SD+KD+C+L) | 200 | — | — | — | 200 |
+| Opposition (S+V+MP) | 149 | — | — | — | 149 |
+
+## Voter Segmentation
+<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/voter-segmentation.md -->
+
+### Segment Impact Analysis
+
+#### Segment 1 — Regional Commuters / Sydsverige Workforce (HD10449)
+
+- **Profile**: Workers commuting between Kronoberg, Skåne, and Blekinge; estimated 30,000–50,000 daily commuters on Södra stambanan corridor
+- **Current party alignment**: Mixed M/S/C; historically right-of-centre in Skåne but with significant S base in Kronoberg
+- **Impact**: HIGH — cancelled double-track capacity directly increases commute unreliability; pendling disruption affects employment flexibility and regional economic integration
+- **Activation potential**: HIGH — infrastructure discontent is a historically effective mobilisation frame in Swedish regional politics
+- **Baseline position on interpellation day**: Dissatisfied with Trafikverket plan; likely supportive of HD10449's demands
+
+#### Segment 2 — Long-Term Sick / Sjukskrivna (HD10450)
+
+- **Profile**: Approximately 50,000–100,000 workers currently covered by day-180 exception; predominantly 40–60 age group; higher representation in physically demanding occupations
+- **Current party alignment**: Predominantly S and LO-affiliated
+- **Impact**: HIGH if exception removed — would force earlier labour market assessment; Riksrevisionen evidence shows return-to-work rates decline without the exception
+- **Activation potential**: MEDIUM — group is politically engaged through LO and health advocacy organizations
+- **Baseline position**: Strongly supportive of HD10450; reliant on existing protection
+
+#### Segment 3 — SME Business Owners / Legitimate Entrepreneurs (HD10451)
+
+- **Profile**: Small and medium enterprise owners who compete against criminal-controlled companies in sectors including construction, restaurant, transport, cleaning; estimated 500,000–1M small business owners
+- **Current party alignment**: Mixed; historically M/C-leaning but not homogeneous
+- **Impact**: HIGH — criminal firms undercut via momsbedrägerier, arbetslivskriminalitet, and subsidy fraud; ESO/Brå evidence quantifies competitive distortion
+- **Activation potential**: HIGH — business-facing criminal competition is a grievance that crosses party lines
+- **Baseline position**: Aligned with HD10451 on substance; may not associate it with S politically
+
+#### Segment 4 — Rule-of-Law / Tax-Fairness Voters (HD10451)
+
+- **Profile**: Voters for whom fiscal integrity, fair competition, and law enforcement are primary concerns; cross-cutting demographic
+- **Current party alignment**: Distributed across M, SD, C; S seeks to peel off this segment
+- **Impact**: HIGH — 352 BSEK criminal economy (ESO) represents 5.5% GDP; voter perception that government is insufficiently aggressive on economic crime damages "law and order" bloc credibility
+- **Activation potential**: MEDIUM-HIGH — ESO/Brå data is accessible and persuasive
+
+### Demographic Summary
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+quadrantChart
+    title Voter Segment: Activation Potential vs Party Alignment (S-leaning)
+    x-axis Non S-leaning --> S-leaning
+    y-axis Low Activation --> High Activation
+    quadrant-1 S Core Win
+    quadrant-2 Activated but not S-aligned
+    quadrant-3 Low Priority
+    quadrant-4 Core S Base Low Activation
+    Regional Commuters HD10449: [0.45, 0.80]
+    Long-term Sick HD10450: [0.70, 0.65]
+    SME Business HD10451: [0.35, 0.75]
+    Rule of Law HD10451: [0.35, 0.65]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+xychart-beta
+    title "Estimated Affected Voter Group Size (thousands)"
+    x-axis ["Regional Commuters", "Long-term Sick", "SME Owners", "Rule-of-Law Voters"]
+    y-axis "Thousands of voters" 0 --> 1100
+    bar [50, 100, 1000, 500]
 ```
 
 ## Forward Indicators
@@ -591,6 +858,74 @@ flowchart LR
     style B fill:#ff006e,stroke:#ff006e,color:#fff
     style C fill:#ffbe0b,stroke:#ffbe0b,color:#0a0e27
     style D fill:#00d9ff,stroke:#00d9ff,color:#0a0e27
+```
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/election-2026-analysis.md -->
+
+### Pre-2026 Election Context
+
+The September 2026 election is approximately 17 months away. These three interpellations (HD10449, HD10450, HD10451) are early indicators of S's accountability strategy for the election campaign: forcing the Tidö coalition into defensive public positions on infrastructure, welfare, and rule of law.
+
+### Seat-Projection Deltas (based on available polling)
+
+Current parliamentary seat distribution (349 seats total, majority = 175):
+
+| Party | Seats | Bloc |
+|-------|-------|------|
+| S | ~107 | Opposition |
+| SD | ~73 | Tidö |
+| M | ~68 | Tidö |
+| V | ~24 | Opposition |
+| C | ~22 | Tidö |
+| MP | ~18 | Loose left support |
+| KD | ~19 | Tidö |
+| L | ~16 | Tidö |
+
+**Tidö bloc**: ~198 seats (majority government)  
+**Opposition (S+V+MP)**: ~149 seats  
+
+### Electoral Impact Assessment
+
+#### HD10449 (Infrastructure, Skåne/Kronoberg)
+- **Affected constituencies**: Kronobergs län, Skåne county (approx. 15–20 Riksdag seats)
+- **Electoral risk for Tidö**: MEDIUM-HIGH — regional swing voters; both M and KD hold seats in affected areas; infrastructure delivery is a core KD governance narrative
+- **S upside**: Mobilises commuters and regional businesses who depend on Södra stambanan
+
+#### HD10450 (Sickness Insurance)
+- **Affected voter group**: Long-term sick; approximately 50,000–100,000 directly affected workers; broader LO/trade union constituency
+- **Electoral risk for Tidö**: MEDIUM — M has sought to attract working-class voters; welfare state credibility is a known vulnerability
+- **S upside**: Core S base activation; keeps LO-affiliated voters from wavering
+
+#### HD10451 (Corporate Crime)
+- **Affected voter group**: Taxpayers concerned about fiscal integrity; small businesses competing with criminal firms; law-and-order voters
+- **Electoral risk for Tidö**: MEDIUM-HIGH — M/SD hold "law and order" as a primary brand; ESO's 352 BSEK criminal economy figure directly challenges that brand
+- **S upside**: S positions itself as tougher on white-collar and corporate crime than the right, a historically effective frame in Swedish politics
+
+### Coalition Viability 2026
+
+If S recovers 5-10 seats from weakened Tidö performance in Sydsverige (HD10449), trade-union constituencies (HD10450), and anti-crime voters (HD10451), a left-centre bloc including S+V+MP+C (or S+V+MP with C tolerance) becomes arithmetically viable. The interpellation strategy is designed to maximally strain the Tidö coalition's credibility across exactly these voter segments.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+pie title Current Parliamentary Distribution
+    "S 107" : 107
+    "SD 73" : 73
+    "M 68" : 68
+    "V 24" : 24
+    "C 22" : 22
+    "KD 19" : 19
+    "MP 18" : 18
+    "L 16" : 16
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+xychart-beta
+    title "Electoral Risk to Tidö by Interpellation Domain"
+    x-axis ["Infrastructure HD10449", "Sickness Insurance HD10450", "Corporate Crime HD10451"]
+    y-axis "Electoral Risk Score (1-10)" 0 --> 10
+    bar [7, 6, 7]
 ```
 
 ## Risk Assessment
@@ -832,432 +1167,71 @@ flowchart LR
     style T3 fill:#00d9ff,stroke:#00d9ff,color:#0a0e27
 ```
 
-## Per-document intelligence
+## Historical Parallels
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/historical-parallels.md -->
 
-### HD10449
-<!-- source: documents/HD10449-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/documents/HD10449-analysis.md -->
+### Parallel Search
 
-**Dok-ID**: HD10449  
-**Type**: Interpellation  
-**Filed**: 2026-04-27  
-**Filed by**: Robert Olesen (S), Kronobergs läns valkrets  
-**Addressed to**: Andreas Carlson (KD), Infrastrukturminister  
-**Response deadline**: 2026-05-18  
+Examining Swedish parliamentary history (within 40 years) for precedents that match the combined accountability pattern of these three interpellations.
 
 ---
 
-### Document Summary
+### Parallel P1 — 1994 Pre-Election Opposition Accountability Campaign (Similarity: 75%)
 
-Robert Olesen (S) interpellates Infrastructure Minister Andreas Carlson (KD) on the removal of two critical rail investments from Trafikverket's national infrastructure plan 2026–2037:
+**Year**: 1993–1994 riksmöte  
+**Context**: Carl Bildt's Moderaterna-led bourgeois coalition government (1991–1994) faced S opposition under Ingvar Carlsson. S filed a series of interpellations on unemployment, welfare state cuts, and deregulation failures ahead of the September 1994 election.
 
-1. **Södra stambanan north of Hässleholm**: The Tidö government's plan removes Södra stambanan capacity increases north of Hässleholm from the national plan, cutting off key connections between Sydsverige and Stockholm.
-2. **Alvesta-Växjö double track**: The plan removes the committed Alvesta-Växjö double track investment, which would have created double capacity on a key bottleneck in Kronoberg.
+**Structural similarities** (with 2026):
+- Opposition party (S) files coordinated interpellations on multiple high-salience domains within a single parliamentary session
+- Infrastructure and welfare state feature prominently
+- Government is a multi-party coalition where internal tensions can be exploited by cross-cutting accountability moves
+- S recovers power in the subsequent election (1994: S wins with 45.4%)
 
-Olesen asks the minister two specific questions:
-- When does the minister plan to restore the Alvesta-Växjö double track investment to the plan?
-- What other measures is the minister taking to solve the transport capacity problems for passengers and freight on Södra stambanan?
+**Differences**: The 1994 campaign involved deeper fiscal crisis context (Sweden's 1991–1993 banking/currency crisis); 2026 interpellations are operating in a more stable fiscal environment.
 
-### Key Claims and Evidence
-
-| Claim | Evidence | Reliability |
-|---|---|---|
-| Alvesta-Växjö double track removed from plan | National plan 2026–2037 (Trafikverket) | HIGH [A1] |
-| Södra stambanan capacity removed north of Hässleholm | National plan 2026–2037 (Trafikverket) | HIGH [A1] |
-| This affects regional connectivity in Sydsverige | Direct implication of infrastructure removal | MEDIUM [B2] |
-
-### Interpellation Quality Assessment
-
-- **Legal form**: Correct — two specific questions to a named minister (interpellation, not written question)
-- **Evidence basis**: STRONG — cites specific government plan; Trafikverket documents are publicly verifiable
-- **Political timing**: Filed 2026-04-27, nearly 17 months before election — early enough for a full accountability chain
-- **Escalation potential**: HIGH — debate will be televised on riksdagen.se; media in Sydsverige will cover
-
-### DIW Significance Score
-
-**7.0/10**
-
-- Issue scope: Regional (Kronobergs/Skåne), not national — deducts 1.0
-- Evidence quality: HIGH (Trafikverket plan reference) — adds 0.5
-- Electoral salience: MEDIUM-HIGH (Sydsverige swing region) — adds 0.5
-- Policy reversibility: LOW-MEDIUM (requires multi-BSEK reallocation) — maintains baseline
-
-### Ministerial Response Prediction
-
-Andreas Carlson (KD) will likely:
-- Defend Trafikverket's prioritisation framework
-- Reference alternative investments elsewhere in Sydsverige
-- Decline to commit to Alvesta-Växjö timeline
-- Reference the 2026–2037 plan as a starting point subject to revision
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
-flowchart TD
-    A[HD10449: Olesen S] -->|Interpellerar| B[Carlson KD\nInfrastrukturminister]
-    B -->|Svarar senast 2026-05-18| C[Debate in Riksdag]
-    A --> D[Claim 1: Alvesta-Växjö removed]
-    A --> E[Claim 2: Södra stambanan capacity cut]
-    D --> F[Trafikverket plan 2026-2037\nHIGH A1]
-    E --> F
-    style A fill:#ff006e,stroke:#ff006e,color:#ffffff
-    style B fill:#00d9ff,stroke:#00d9ff,color:#0a0e27
-    style C fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
-    style D fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
-    style E fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
-    style F fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
-```
-
-### HD10450
-<!-- source: documents/HD10450-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/documents/HD10450-analysis.md -->
-
-**Dok-ID**: HD10450  
-**Type**: Interpellation  
-**Filed**: 2026-04-27  
-**Filed by**: Jessica Rodén (S), Örebro läns valkrets  
-**Addressed to**: Anna Tenje (M), Minister för socialtjänst och hälsovård  
-**Response deadline**: 2026-05-22  
+**Similarity score**: 75%
 
 ---
 
-### Document Summary
+### Parallel P2 — 2009 Red-Green Coordinated Corporate Crime Accountability (Similarity: 60%)
 
-Jessica Rodén (S) interpellates Minister Anna Tenje (M) on the "undantaget i sjukförsäkringen efter dag 180" — the day-180 sickness insurance exception. Under current rules, from day 180 of sick leave, Försäkringskassan must assess the insured person against the "normal labour market." The exception allows continued assessment only against the insured person's own employer if certain conditions are met.
+**Year**: 2009 riksmöte  
+**Context**: Opposition parties (S+V+MP = Red-Green coalition) used economic crisis context to file interpellations on financial sector regulation failures, tax havens, and economic crime enforcement gaps under Fredrik Reinfeldt's centre-right government.
 
-Rodén notes that:
-- Riksrevisionen has confirmed the exception works as intended
-- There are signals the government is considering reforming or removing the exception
-- Removing it would make return-to-work assessments more difficult for long-term sick workers
+**Structural similarities**:
+- Evidence-based framing using independent agency reports (FI, Riksrevisionen)
+- Economic crime and corporate governance framed as centre-right governance failure
+- Interpellations coordinated with media strategy
 
-She asks the minister two specific questions:
-- Is the minister planning to reform or remove the day-180 exception?
-- What measures will the minister take to ensure long-term sick workers can return to their own workplace?
+**Differences**: 2009 was in the context of the global financial crisis; the 2026 corporate crime focus is structurally domestic (criminal firms exploiting the company registration system).
 
-### Key Claims and Evidence
-
-| Claim | Evidence | Reliability |
-|---|---|---|
-| Riksrevisionen confirms day-180 exception works | Riksrevisionen report (implied in interpellation) | HIGH [A1] |
-| Government signals reform/removal of exception | Implicit in interpellation framing | MEDIUM [B2] |
-| Exception aids return-to-work at own employer | Riksrevisionen findings | HIGH [A1] |
-
-### Interpellation Quality Assessment
-
-- **Legal form**: Correct — two specific questions to a named minister
-- **Evidence basis**: MEDIUM-HIGH — Riksrevisionen citation is powerful but indirect (not full citation in interpellation)
-- **Political timing**: Filed 2026-04-27; sickness insurance reform is a high-salience topic among LO-affiliated voters
-- **Escalation potential**: MEDIUM-HIGH — tabloid media will cover; LO-Tidningen will lead
-
-### DIW Significance Score
-
-**7.7/10** (revised from initial assessment)
-
-- Issue scope: National — welfare state question affecting approximately 50,000–100,000 workers
-- Evidence quality: HIGH (Riksrevisionen) — adds 0.5
-- Electoral salience: HIGH (LO constituency, trade union base) — adds 0.5
-- Policy reversibility: MEDIUM (requires SFB amendment) — standard scoring
-
-### Ministerial Response Prediction
-
-Anna Tenje (M) will likely:
-- Acknowledge Riksrevisionen's findings
-- Clarify that no formal decision on the exception has been made
-- Frame any reform within a broader agenda of improved work-capacity assessment
-- Emphasize continuity of support for long-term sick workers
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
-flowchart TD
-    A[HD10450: Rodén S] -->|Interpellerar| B[Tenje M\nSocialtjänstminister]
-    B -->|Svarar senast 2026-05-22| C[Debate in Riksdag]
-    A --> D[Claim 1: Riksrevisionen confirms\nexception works]
-    A --> E[Claim 2: Government signals reform]
-    D --> F[Riksrevisionen report\nHIGH A1]
-    E --> G[Implicit from government\nMEDIUM B2]
-    style A fill:#ff006e,stroke:#ff006e,color:#ffffff
-    style B fill:#00d9ff,stroke:#00d9ff,color:#0a0e27
-    style C fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
-    style D fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
-    style E fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
-    style F fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
-    style G fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
-```
-
-### HD10451
-<!-- source: documents/HD10451-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/documents/HD10451-analysis.md -->
-
-**Dok-ID**: HD10451  
-**Type**: Interpellation  
-**Filed**: 2026-04-27  
-**Filed by**: Ingela Nylund Watz (S), Stockholms läns valkrets  
-**Addressed to**: Gunnar Strömmer (M), Justitieminister  
-**Response deadline**: 2026-05-18  
+**Similarity score**: 60%
 
 ---
 
-### Document Summary
+### "No-Precedent" Note
 
-Ingela Nylund Watz (S) interpellates Justice Minister Gunnar Strömmer (M) on the systemic use of legal corporate structures as tools for organised crime. She references:
-
-- **Brå 2025**: 1 in 5 individuals in criminal networks is linked to a company; approximately 23,000 firms identified; approximately 11.5 BSEK in overdue state debts
-- **ESO 2026**: The criminal economy represents 352 BSEK, equivalent to 5.5% of GDP
-- **January 2025 legislation**: A law was passed to tighten requirements for company registration and board membership for criminal actors, but Nylund Watz assesses it as insufficient
-
-She asks two specific questions:
-- What does the minister intend to do beyond the January 2025 law?
-- What measures will the minister take to ensure criminals cannot continue to use companies as crime tools?
-
-### Key Claims and Evidence
-
-| Claim | Evidence | Reliability |
-|---|---|---|
-| 1 in 5 network criminals linked to company | Brå 2025 (cited in interpellation) | HIGH [A1] |
-| ~23,000 firms identified | Brå 2025 | HIGH [A1] |
-| ~11.5 BSEK overdue state debts | Brå 2025 | HIGH [A1] |
-| Criminal economy = 352 BSEK / 5.5% GDP | ESO 2026 | HIGH [A1] (with methodological caveat) |
-| January 2025 law insufficient | MP assessment; not verified by independent agency | MEDIUM [B2] |
-
-### Document Quality Assessment
-
-- **Legal form**: Correct — two specific questions to named minister
-- **Evidence basis**: VERY STRONG — both Brå (official crime statistics agency) and ESO (government economic analysis agency) cited with figures
-- **Political timing**: Filed 2026-04-27; organised crime/economic crime is a top-tier electoral issue ahead of 2026
-- **Escalation potential**: VERY HIGH — SVT/DN/Expressen will cover; ESO's 352 BSEK figure is a powerful media hook
-
-### DIW Significance Score
-
-**9.0/10**
-
-- Issue scope: National — fundamental rule of law and fiscal integrity question
-- Evidence quality: VERY HIGH (dual agency citation, Brå + ESO) — adds 1.0
-- Electoral salience: VERY HIGH (law enforcement credibility issue for both M and SD) — adds 1.0
-- Policy reversibility: MEDIUM (further legislation technically straightforward) — +0.5 bonus
-
-### Ministerial Response Prediction
-
-Gunnar Strömmer (M) will likely:
-- Defend January 2025 law as necessary first step
-- Reference ongoing implementation and enforcement activities
-- Note that enforcement takes time and early results are not yet measurable
-- Potentially announce one or more additional measures (consultation or Ds referral) ahead of the debate to neutralise HD10451's political impact
+The specific combination of infrastructure removal + day-180 exception + criminal economy in a single interpellation cluster with this evidence base (Brå, ESO, Riksrevisionen all cited simultaneously) has no exact precedent. P1 and P2 are structural parallels, not content parallels.
 
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
-flowchart TD
-    A[HD10451: Nylund Watz S] -->|Interpellerar| B[Strömmer M\nJustitieminister]
-    B -->|Svarar senast 2026-05-18| C[Debate in Riksdag]
-    A --> D[Brå 2025\n23,000 firms\n11.5 BSEK debts]
-    A --> E[ESO 2026\n352 BSEK = 5.5% GDP]
-    A --> F[Jan 2025 lag\nassessed insufficient]
-    D --> G[HIGH A1 Reliability]
-    E --> G
-    F --> H[MEDIUM B2 Reliability]
-    style A fill:#ff006e,stroke:#ff006e,color:#ffffff
-    style B fill:#00d9ff,stroke:#00d9ff,color:#0a0e27
-    style C fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
-    style D fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-    style E fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-    style F fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
-    style G fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
-    style H fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
-```
-
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/election-2026-analysis.md -->
-
-### Pre-2026 Election Context
-
-The September 2026 election is approximately 17 months away. These three interpellations (HD10449, HD10450, HD10451) are early indicators of S's accountability strategy for the election campaign: forcing the Tidö coalition into defensive public positions on infrastructure, welfare, and rule of law.
-
-### Seat-Projection Deltas (based on available polling)
-
-Current parliamentary seat distribution (349 seats total, majority = 175):
-
-| Party | Seats | Bloc |
-|-------|-------|------|
-| S | ~107 | Opposition |
-| SD | ~73 | Tidö |
-| M | ~68 | Tidö |
-| V | ~24 | Opposition |
-| C | ~22 | Tidö |
-| MP | ~18 | Loose left support |
-| KD | ~19 | Tidö |
-| L | ~16 | Tidö |
-
-**Tidö bloc**: ~198 seats (majority government)  
-**Opposition (S+V+MP)**: ~149 seats  
-
-### Electoral Impact Assessment
-
-#### HD10449 (Infrastructure, Skåne/Kronoberg)
-- **Affected constituencies**: Kronobergs län, Skåne county (approx. 15–20 Riksdag seats)
-- **Electoral risk for Tidö**: MEDIUM-HIGH — regional swing voters; both M and KD hold seats in affected areas; infrastructure delivery is a core KD governance narrative
-- **S upside**: Mobilises commuters and regional businesses who depend on Södra stambanan
-
-#### HD10450 (Sickness Insurance)
-- **Affected voter group**: Long-term sick; approximately 50,000–100,000 directly affected workers; broader LO/trade union constituency
-- **Electoral risk for Tidö**: MEDIUM — M has sought to attract working-class voters; welfare state credibility is a known vulnerability
-- **S upside**: Core S base activation; keeps LO-affiliated voters from wavering
-
-#### HD10451 (Corporate Crime)
-- **Affected voter group**: Taxpayers concerned about fiscal integrity; small businesses competing with criminal firms; law-and-order voters
-- **Electoral risk for Tidö**: MEDIUM-HIGH — M/SD hold "law and order" as a primary brand; ESO's 352 BSEK criminal economy figure directly challenges that brand
-- **S upside**: S positions itself as tougher on white-collar and corporate crime than the right, a historically effective frame in Swedish politics
-
-### Coalition Viability 2026
-
-If S recovers 5-10 seats from weakened Tidö performance in Sydsverige (HD10449), trade-union constituencies (HD10450), and anti-crime voters (HD10451), a left-centre bloc including S+V+MP+C (or S+V+MP with C tolerance) becomes arithmetically viable. The interpellation strategy is designed to maximally strain the Tidö coalition's credibility across exactly these voter segments.
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
-pie title Current Parliamentary Distribution
-    "S 107" : 107
-    "SD 73" : 73
-    "M 68" : 68
-    "V 24" : 24
-    "C 22" : 22
-    "KD 19" : 19
-    "MP 18" : 18
-    "L 16" : 16
+flowchart LR
+    P1[1994 Bildt Government\nS Accountability Campaign\n75% similarity] -->|S wins 1994 election| A[2026 Potential Parallel]
+    P2[2009 Reinfeldt Government\nEconomic Crime Interpellations\n60% similarity] -->|S opposition narrative| A
+    A --> B[Outcome unknown\nElection September 2026]
+    style P1 fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style P2 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style A fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style B fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
 ```
 
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
 xychart-beta
-    title "Electoral Risk to Tidö by Interpellation Domain"
-    x-axis ["Infrastructure HD10449", "Sickness Insurance HD10450", "Corporate Crime HD10451"]
-    y-axis "Electoral Risk Score (1-10)" 0 --> 10
-    bar [7, 6, 7]
-```
-
-## Coalition Mathematics
-<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/coalition-mathematics.md -->
-
-### Current Seat Map (Riksdag 2022 Election, 349 seats)
-
-| Party | Seats | Bloc | Government Role |
-|-------|-------|------|-----------------|
-| S (Socialdemokraterna) | 107 | Opposition | Opposition leader |
-| SD (Sverigedemokraterna) | 73 | Tidö | Support party |
-| M (Moderaterna) | 68 | Tidö | PM party |
-| V (Vänsterpartiet) | 24 | Opposition | |
-| C (Centerpartiet) | 24 | Tidö | Support party |
-| KD (Kristdemokraterna) | 19 | Tidö | Coalition party |
-| MP (Miljöpartiet) | 18 | Opposition (loose) | |
-| L (Liberalerna) | 16 | Tidö | Coalition party |
-| **Total** | **349** | | |
-
-**Tidö bloc total**: 73+68+24+19+16 = **200 seats** (majority = 175)  
-**Left-liberal opposition**: 107+24+18 = **149 seats**
-
-### Pivotal Vote Table (Relevant to Interpellation Domains)
-
-| Vote scenario | Ja | Nej | Pivotal party |
-|---|---|---|---|
-| Infrastructure budget amendment (hypothetical) | S+V+MP = 149 | Tidö = 200 | C — if Tidö fractures on regional |
-| Day-180 exception preservation motion | S+V+MP+some C = 173 | Tidö-C = 176 | C (24 seats) is pivotal |
-| Corporate crime enforcement escalation | Broad consensus expected | — | All parties support stronger economic crime enforcement |
-
-### Sainte-Laguë Scenarios for 2026
-
-Based on current polling trends (approximate):
-
-| Scenario | S | M | SD | V | C | KD | MP | L | Left bloc | Right bloc |
-|---|---|---|---|---|---|---|---|---|---|---|
-| Current 2022 | 107 | 68 | 73 | 24 | 24 | 19 | 18 | 16 | 149 | 200 |
-| S +5 seats (infra/welfare gains) | 112 | 65 | 71 | 24 | 24 | 18 | 18 | 17 | 154 | 195 |
-| S +10 seats (strong recovery) | 117 | 62 | 69 | 24 | 24 | 17 | 19 | 17 | 160 | 189 |
-| S +15 seats (landslide scenario) | 122 | 59 | 68 | 24 | 25 | 16 | 19 | 16 | 165 | 184 |
-
-For a left-bloc majority (175+), S would need to recover approximately 15+ seats combined with C defection or MP exceeding threshold. The interpellation strategy targets the voter segments most likely to deliver these seat gains.
-
-### Interpellation Impact on Coalition Mathematics
-
-The three interpellations do not directly affect current coalition vote counts. Their significance is electoral:
-- **HD10449**: Targets regional swing seats (Kronoberg, Skåne) where M/KD are vulnerable
-- **HD10450**: Targets trade-union-aligned seats where S needs to maintain dominance
-- **HD10451**: Tests M's "law and order" brand credibility; SD convergence on economic crime is a cross-bloc pressure
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
-xychart-beta
-    title "Riksdag Seat Distribution 2022"
-    x-axis ["S", "SD", "M", "V", "C", "KD", "MP", "L"]
-    y-axis "Seats" 0 --> 120
-    bar [107, 73, 68, 24, 24, 19, 18, 16]
-```
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
-pie title Tidö vs Opposition Coalition (349 seats)
-    "Tidö bloc 200" : 200
-    "Opposition 149" : 149
-```
-
-| **Bloc** | **Ja** | **Nej** | **Avstår** | **Frånvarande** | **Seats** |
-|---|---|---|---|---|---|
-| Tidö (M+SD+KD+C+L) | 200 | — | — | — | 200 |
-| Opposition (S+V+MP) | 149 | — | — | — | 149 |
-
-## Voter Segmentation
-<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/voter-segmentation.md -->
-
-### Segment Impact Analysis
-
-#### Segment 1 — Regional Commuters / Sydsverige Workforce (HD10449)
-
-- **Profile**: Workers commuting between Kronoberg, Skåne, and Blekinge; estimated 30,000–50,000 daily commuters on Södra stambanan corridor
-- **Current party alignment**: Mixed M/S/C; historically right-of-centre in Skåne but with significant S base in Kronoberg
-- **Impact**: HIGH — cancelled double-track capacity directly increases commute unreliability; pendling disruption affects employment flexibility and regional economic integration
-- **Activation potential**: HIGH — infrastructure discontent is a historically effective mobilisation frame in Swedish regional politics
-- **Baseline position on interpellation day**: Dissatisfied with Trafikverket plan; likely supportive of HD10449's demands
-
-#### Segment 2 — Long-Term Sick / Sjukskrivna (HD10450)
-
-- **Profile**: Approximately 50,000–100,000 workers currently covered by day-180 exception; predominantly 40–60 age group; higher representation in physically demanding occupations
-- **Current party alignment**: Predominantly S and LO-affiliated
-- **Impact**: HIGH if exception removed — would force earlier labour market assessment; Riksrevisionen evidence shows return-to-work rates decline without the exception
-- **Activation potential**: MEDIUM — group is politically engaged through LO and health advocacy organizations
-- **Baseline position**: Strongly supportive of HD10450; reliant on existing protection
-
-#### Segment 3 — SME Business Owners / Legitimate Entrepreneurs (HD10451)
-
-- **Profile**: Small and medium enterprise owners who compete against criminal-controlled companies in sectors including construction, restaurant, transport, cleaning; estimated 500,000–1M small business owners
-- **Current party alignment**: Mixed; historically M/C-leaning but not homogeneous
-- **Impact**: HIGH — criminal firms undercut via momsbedrägerier, arbetslivskriminalitet, and subsidy fraud; ESO/Brå evidence quantifies competitive distortion
-- **Activation potential**: HIGH — business-facing criminal competition is a grievance that crosses party lines
-- **Baseline position**: Aligned with HD10451 on substance; may not associate it with S politically
-
-#### Segment 4 — Rule-of-Law / Tax-Fairness Voters (HD10451)
-
-- **Profile**: Voters for whom fiscal integrity, fair competition, and law enforcement are primary concerns; cross-cutting demographic
-- **Current party alignment**: Distributed across M, SD, C; S seeks to peel off this segment
-- **Impact**: HIGH — 352 BSEK criminal economy (ESO) represents 5.5% GDP; voter perception that government is insufficiently aggressive on economic crime damages "law and order" bloc credibility
-- **Activation potential**: MEDIUM-HIGH — ESO/Brå data is accessible and persuasive
-
-### Demographic Summary
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
-quadrantChart
-    title Voter Segment: Activation Potential vs Party Alignment (S-leaning)
-    x-axis Non S-leaning --> S-leaning
-    y-axis Low Activation --> High Activation
-    quadrant-1 S Core Win
-    quadrant-2 Activated but not S-aligned
-    quadrant-3 Low Priority
-    quadrant-4 Core S Base Low Activation
-    Regional Commuters HD10449: [0.45, 0.80]
-    Long-term Sick HD10450: [0.70, 0.65]
-    SME Business HD10451: [0.35, 0.75]
-    Rule of Law HD10451: [0.35, 0.65]
-```
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
-xychart-beta
-    title "Estimated Affected Voter Group Size (thousands)"
-    x-axis ["Regional Commuters", "Long-term Sick", "SME Owners", "Rule-of-Law Voters"]
-    y-axis "Thousands of voters" 0 --> 1100
-    bar [50, 100, 1000, 500]
+    title "Historical Parallel Similarity Scores"
+    x-axis ["P1 1994 Bildt accountability", "P2 2009 Economic crime"]
+    y-axis "Similarity Score %" 0 --> 100
+    bar [75, 60]
 ```
 
 ## Comparative International
@@ -1339,73 +1313,6 @@ flowchart LR
     style G fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
 ```
 
-## Historical Parallels
-<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/historical-parallels.md -->
-
-### Parallel Search
-
-Examining Swedish parliamentary history (within 40 years) for precedents that match the combined accountability pattern of these three interpellations.
-
----
-
-### Parallel P1 — 1994 Pre-Election Opposition Accountability Campaign (Similarity: 75%)
-
-**Year**: 1993–1994 riksmöte  
-**Context**: Carl Bildt's Moderaterna-led bourgeois coalition government (1991–1994) faced S opposition under Ingvar Carlsson. S filed a series of interpellations on unemployment, welfare state cuts, and deregulation failures ahead of the September 1994 election.
-
-**Structural similarities** (with 2026):
-- Opposition party (S) files coordinated interpellations on multiple high-salience domains within a single parliamentary session
-- Infrastructure and welfare state feature prominently
-- Government is a multi-party coalition where internal tensions can be exploited by cross-cutting accountability moves
-- S recovers power in the subsequent election (1994: S wins with 45.4%)
-
-**Differences**: The 1994 campaign involved deeper fiscal crisis context (Sweden's 1991–1993 banking/currency crisis); 2026 interpellations are operating in a more stable fiscal environment.
-
-**Similarity score**: 75%
-
----
-
-### Parallel P2 — 2009 Red-Green Coordinated Corporate Crime Accountability (Similarity: 60%)
-
-**Year**: 2009 riksmöte  
-**Context**: Opposition parties (S+V+MP = Red-Green coalition) used economic crisis context to file interpellations on financial sector regulation failures, tax havens, and economic crime enforcement gaps under Fredrik Reinfeldt's centre-right government.
-
-**Structural similarities**:
-- Evidence-based framing using independent agency reports (FI, Riksrevisionen)
-- Economic crime and corporate governance framed as centre-right governance failure
-- Interpellations coordinated with media strategy
-
-**Differences**: 2009 was in the context of the global financial crisis; the 2026 corporate crime focus is structurally domestic (criminal firms exploiting the company registration system).
-
-**Similarity score**: 60%
-
----
-
-### "No-Precedent" Note
-
-The specific combination of infrastructure removal + day-180 exception + criminal economy in a single interpellation cluster with this evidence base (Brå, ESO, Riksrevisionen all cited simultaneously) has no exact precedent. P1 and P2 are structural parallels, not content parallels.
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
-flowchart LR
-    P1[1994 Bildt Government\nS Accountability Campaign\n75% similarity] -->|S wins 1994 election| A[2026 Potential Parallel]
-    P2[2009 Reinfeldt Government\nEconomic Crime Interpellations\n60% similarity] -->|S opposition narrative| A
-    A --> B[Outcome unknown\nElection September 2026]
-    style P1 fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
-    style P2 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-    style A fill:#0a0e27,stroke:#ff006e,color:#ff006e
-    style B fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
-```
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
-xychart-beta
-    title "Historical Parallel Similarity Scores"
-    x-axis ["P1 1994 Bildt accountability", "P2 2009 Economic crime"]
-    y-axis "Similarity Score %" 0 --> 100
-    bar [75, 60]
-```
-
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/implementation-feasibility.md -->
 
@@ -1462,6 +1369,99 @@ pie title Implementation Feasibility Distribution
     "HD10449 Railway (HIGH difficulty)" : 4
     "HD10450 Insurance (LOW difficulty)" : 2
     "HD10451 Corp Crime (HIGH difficulty)" : 4
+```
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/media-framing-analysis.md -->
+
+### Framing Overview
+
+Three media frames are operative across these interpellations. Each frame maps to a different interpellation and a different journalistic narrative tradition in Swedish news media.
+
+---
+
+### Frame 1 — "Infrastructure Betrayal" (HD10449)
+
+**Core claim**: Trafikverket's national plan removes committed rail investments, stranding the Sydsverige region.
+
+**Primary media framing**: Regional grievance + national accountability. Expects coverage in:
+- Sydsvenskan (Skåne regional paper): HIGH interest; Södra stambanan is a perennial Sydsvenskan lead
+- SR Kronoberg / P4 Kronoberg: Radio interest around Alvesta-Växjö segment
+- Dagens Nyheter infrastructure/transport desk: MEDIUM interest
+- Riksdag TV (web): Will cover the interpellationsdebatt live
+
+**Likely headlines** (predictive):
+- "S-politiker kräver svar om dubbelspår" (DN/SvD)  
+- "Carlson tvingas svara om stambanan" (Sydsvenskan)
+
+**Counter-narrative** (government framing): Prioritisation is necessary given budget constraints; alternative investments elsewhere compensate.
+
+**Media bias risk**: Regional papers (Sydsvenskan, Smålandsposten) likely to favour the interpellation frame due to local reader interest in rail capacity.
+
+---
+
+### Frame 2 — "Welfare State Erosion" (HD10450)
+
+**Core claim**: Removing the day-180 exception will push long-term sick workers out of the system prematurely, despite Riksrevisionen evidence that the exception functions correctly.
+
+**Primary media framing**: Welfare state frame + independent agency authority. Expects coverage in:
+- Aftonbladet, Expressen (tabloids): HIGH interest — sjukförsäkring is a perennial tabloid lead
+- LO-Tidningen: Very HIGH interest
+- SR Ekot: MEDIUM interest
+- Dagens Nyheter social affairs desk: MEDIUM interest
+
+**Likely headlines** (predictive):
+- "Hotas sjukförsäkringens undantag?" (Aftonbladet)
+- "S: Riksrevisionen visar att undantaget fungerar" (LO-Tidningen)
+
+**Counter-narrative**: Day-180 is a bureaucratic anomaly that delays proper rehabilitation; the government wants to align Swedish insurance with European standards.
+
+---
+
+### Frame 3 — "Criminal Impunity" (HD10451)
+
+**Core claim**: Organised crime uses corporate structures systematically; January 2025 legislation was insufficient; ESO quantifies 352 BSEK criminal economy.
+
+**Primary media framing**: Law enforcement failure + economic crime accountability. Expects coverage in:
+- SVT Nyheter: HIGH interest — organised crime narratives are prime time
+- DN/SvD investigative desks: HIGH interest (Brå/ESO data is compelling)
+- Ekobrottsmyndigheten beat reporters: Specialist interest
+- Expressen crime desk: HIGH interest
+
+**Likely headlines** (predictive):
+- "Kriminella företag – miljarder i skatteskulder" (DN)
+- "Strömmer ifrågasätts om åtgärder mot brottsliga bolag" (SVT)
+
+**Counter-narrative**: The January 2025 law is early stage; enforcement takes time; new resources have been committed.
+
+---
+
+### Narrative Risk Assessment
+
+| Frame | Risk of Misrepresentation | Key Danger |
+|---|---|---|
+| Infrastructure Betrayal | MEDIUM | May oversimplify Trafikverket's technical prioritisation choices |
+| Welfare State Erosion | HIGH | Tabloid coverage may conflate reform intent with abolition |
+| Criminal Impunity | LOW | ESO/Brå data is solid; main risk is exaggeration of ESO figure |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+pie title Media Interest Distribution by Frame
+    "Infrastructure Betrayal HD10449" : 30
+    "Welfare State Erosion HD10450" : 35
+    "Criminal Impunity HD10451" : 35
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+flowchart TD
+    A[Interpellationer 2026-04-28] --> B[Frame 1: Infrastructure Betrayal\nSydsvenskan • SR Kronoberg • DN]
+    A --> C[Frame 2: Welfare State Erosion\nAftonbladet • Expressen • LO-Tidningen]
+    A --> D[Frame 3: Criminal Impunity\nSVT • DN • Ekobrottsmyndigheten]
+    style A fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+    style B fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style C fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style D fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
 ```
 
 ## Devil's Advocate
@@ -1808,22 +1808,22 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/threat-analysis.md)
 - [`documents/HD10449-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/documents/HD10449-analysis.md)
 - [`documents/HD10450-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/documents/HD10450-analysis.md)
 - [`documents/HD10451-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/documents/HD10451-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/interpellations/cross-reference-map.md)

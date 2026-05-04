@@ -7,8 +7,10 @@
  * Reads every `documents/*.md` analysis under an analysis subfolder and
  * emits them as a single `## Per-document intelligence` section with one
  * `### {dok_id}` subsection per file. Used by the aggregator orchestrator
- * to inject per-document evidence between the core analytical lenses and
- * the appendix artifacts.
+ * to inject per-document evidence immediately after `significance-
+ * scoring.md` so primary-source artefacts (motions, propositions,
+ * committee reports with their `dok_id`) precede every interpretive
+ * lens — the "show your work" pattern intelligence consumers expect.
  *
  * Pure with respect to the filesystem — given the same set of files on
  * disk, returns the same string.

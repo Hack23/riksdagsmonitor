@@ -5,7 +5,7 @@ date: 2026-04-19
 subfolder: realtime-1219
 slug: 2026-04-19-realtime-1219
 source_folder: analysis/daily/2026-04-19/realtime-1219
-generated_at: 2026-05-04T09:52:32.083Z
+generated_at: 2026-05-04T12:16:13.798Z
 language: en
 layout: article
 ---
@@ -326,6 +326,295 @@ This sensitivity confirms the article should treat BOTH stories as co-leads.
 | **Royal-visit framing** | Included in lede paragraph | S2 strength amplifies HD03231/232 package |
 | **Rhetorical tension framing** | Explicitly named | Mandatory per R5; tension is analytical heart |
 | **Confidence declaration** | HIGH on lead; MEDIUM post-election | Per `executive-brief.md` analyst-confidence meter |
+
+## Per-document intelligence
+
+### HD01KU32
+<!-- source: documents/HD01KU32-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD01KU32-analysis.md -->
+
+**dok_id**: HD01KU32  
+**Depth Tier**: L2+ (P0 Constitutional)  
+
+**Committee**: Konstitutionsutskottet (KU)  
+
+**Version**: 2.0 (Pass 2 enriched)
+
+### Document Identity
+
+| Field | Value |
+|-------|-------|
+| **Title** | Tillgänglighetskrav för vissa medier |
+| **Type** | Betänkande (committee report) |
+| **Riksmöte** | 2025/26 |
+| **Beteckning** | 2025/26:KU32 |
+| **Constitutional texts** | Tryckfrihetsförordningen (TF) + Yttrandefrihetsgrundlagen (YGL) |
+| **First reading** | Scheduled 2026-04-22 chamber debate (same day as KU33) |
+| **Effect date** | 1 January 2027 (if confirmed) |
+| **EU driver** | European Accessibility Act (Directive 2019/882) + EECC |
+
+### Significance
+
+KU32 amends both TF and YGL to allow broader accessibility requirements to be imposed by ordinary law on constitutionally protected media products. Currently, TF and YGL shield products like e-books, streaming services, and digital publications from certain requirements — including accessibility mandates — because imposing such requirements would require constitutional authority. KU32 creates that constitutional authority, enabling Sweden to fully comply with the EU's Accessibility Act.
+
+This is a less controversial constitutional amendment than KU33 — it expands the ability to impose accessibility standards on media rather than restricting public access rights. However, the simultaneous passage of KU32 and KU33 in the same riksmöte establishes a pattern of constitutional amendment as routine legislative tool that warrants monitoring.
+
+### Key Policy Changes
+
+- **E-books and digital content**: Accessibility requirements (screen reader compatibility, alt text, captioning) can now be mandated by ordinary law for TF/YGL-protected digital content
+- **E-commerce services**: Accessibility standards for digital shopping platforms with media components
+- **Vidaresändning** (must-carry broadcasting): Accessibility services (subtitling, audio description) must be carried beyond just public service broadcasters
+- **Advertising and product information**: Packaging information requirements can be expanded under ordinary law
+
+### SWOT Summary (KU32-specific)
+
+| SWOT | Entry | Confidence |
+|------|-------|-----------|
+| S | EU compliance — avoids infringement proceedings | HIGH |
+| S | Enables meaningful accessibility for disabled persons | HIGH |
+| W | Constitutional modification for EU compliance sets precedent | MEDIUM |
+| O | Digital inclusion for 1.2m Swedes with disabilities | HIGH |
+| T | Media industry compliance costs | LOW |
+| T | Two grundlag amendments in one riksmöte — normalizes process | MEDIUM |
+
+### Named Actors
+
+| Actor | Role | Stance |
+|-------|------|-------|
+| Ann-Sofie Alm | KU chair (M) | PROPOSE adoption |
+| EU Commission | External driver | Accessibility Act compliance |
+| Funktionstillgänglighet | Disability organizations | SUPPORT |
+| Media sector (TV4, SVT) | Compliance obligation | NEUTRAL/CONCERNED about costs |
+
+### Forward Indicators
+
+| Indicator | Date | Significance |
+|-----------|------|-------------|
+| Chamber vote KU32 | 2026-04-22 | Simultaneous with KU33 |
+| Second reading | Post-election 2027 | Same timeline as KU33 |
+| Implementation regulation | 2026 H2 | Ordinary law requirements under new constitutional authority |
+
+### HD01KU33
+<!-- source: documents/HD01KU33-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD01KU33-analysis.md -->
+
+**dok_id**: HD01KU33  
+**Depth Tier**: L3 (P0 Constitutional)  
+
+**Committee**: Konstitutionsutskottet (KU)  
+
+**Version**: 2.0 (Pass 2 enriched — full L3 content)
+
+### Document Identity
+
+| Field | Value |
+|-------|-------|
+| **Title** | Insyn i handlingar som inhämtas genom beslag och kopiering vid husrannsakan |
+| **Type** | Betänkande (committee report) |
+| **Riksmöte** | 2025/26 |
+| **Beteckning** | 2025/26:KU33 |
+| **Committee** | Konstitutionsutskottet |
+| **Underlying prop** | Government proposition (KU recommends adoption) |
+| **First reading** | Scheduled 2026-04-22 chamber debate |
+| **Second reading** | Required after September 2026 election |
+| **Effect date** | 1 January 2027 (if confirmed) |
+| **Constitutional text** | Tryckfrihetsförordningen (TF) — fundamental law |
+| **URL** | https://data.riksdagen.se/dokument/HD01KU33.html |
+
+### Two-Paragraph Significance
+
+KU33 proposes a targeted but constitutionally significant amendment to Sweden's Tryckfrihetsförordningen: digital materials seized or copied during police raids — husrannsakan — would no longer automatically qualify as "allmänna handlingar" (public documents). The current rule means that once material enters a government authority's possession, it presumptively becomes public. KU33 creates an exception for law enforcement seizure contexts, preventing journalists and citizens from requesting access to seized materials during active investigations.
+
+The democratic significance exceeds the narrow legal description. Offentlighetsprincipen — Sweden's 250-year-old public access framework — has been eroded incrementally over recent decades, with each exception justified as proportionate and limited. KU33's carve-out follows the same logic. But constitutional changes of this kind require two riksdag votes separated by an election, precisely because the founders understood that no single legislative majority should be able to permanently narrow fundamental freedoms. The real question is whether the post-September 2026 riksdag will confirm what the current one initiates.
+
+### 6-Lens Analysis
+
+#### Lens 1: Historical Context
+Offentlighetsprincipen dates to the Freedom of the Press Act of 1766 — the world's first. Sweden pioneered public access to government records as a constitutional right. Each amendment to TF carries symbolic weight far exceeding its technical scope. KU33 is the 27th or 28th amendment to TF since it was incorporated into the constitutional framework; however, most prior amendments expanded rights (EU compliance, digital formats). This amendment restricts.
+
+#### Lens 2: Legal-Constitutional Impact
+The amendment removes seized digital materials from the definition of "allmän handling" during: (a) law enforcement investigations, (b) upon transfer of information-bearing devices to authorities, and (c) when an authority takes over custody of seized copying-derived data. The carve-out ends when material is "tillförd en utredning" (incorporated into a formal investigation file) — at that point, normal public access rules resume. Critics note that defining when material is "incorporated" into an investigation file is discretionary, creating enforcement ambiguity.
+
+#### Lens 3: Political-Strategic Impact
+For the Kristersson government, KU33 advances the law enforcement agenda consistent with HD03246 (juvenile justice), HD03233 (telecoms fraud), and HD01SfU22 (immigration enforcement). The government is constructing a comprehensive crime-fighting narrative ahead of September 2026 elections. Restricting seizure transparency is framed as protecting ongoing investigations, not restricting press.
+
+For the opposition, KU33 creates a civil liberties argument without risking the nuclear option of blocking Ukraine propositions. S can oppose KU33 while supporting Ukraine — this is a useful positioning move for Magdalena Andersson ahead of the election.
+
+#### Lens 4: Media & Press Freedom Impact
+The Swedish Union of Journalists (SJF) and major media organizations will oppose KU33. Investigative journalism in Sweden regularly uses offentlighetsprincipen to access police seizure inventories — for example, in reporting on organized crime asset seizures, corruption investigations, and environmental violations. The exemption removes this tool for the critical period when seized information is most newsworthy.
+
+**Named actors at risk**: TT (Tidningarnas Telegrambyrå), DN investigations unit, SVT Granskar, SR Ekot investigative journalists all use seizure-related public record requests.
+
+#### Lens 5: Election Implications
+KU33's fate hinges on the September 2026 election. Current polling (Tidö coalition ≈ 48%) suggests the coalition could lose its working majority. If S+V+MP+MP elect a new government, they could reject the second reading — but only if they have the will to do so. S has historically been cautious about being seen as opposing law enforcement. V and MP would push for rejection.
+
+**Electoral risk matrix**:
+| Scenario | Probability | KU33 outcome |
+|----------|------------|--------------|
+| Tidö coalition wins majority | 35% | Confirmed — TF amended Jan 2027 |
+| S leads minority government | 40% | S negotiates — likely confirms with modifications |
+| S+V+MP majority | 25% | Likely rejected — second reading fails |
+
+#### Lens 6: International Benchmarking
+How do comparable democracies handle law enforcement seizure transparency?
+
+| Jurisdiction | Approach | Comparison |
+|-------------|---------|-----------|
+| Germany | Investigative secrets protected under §406e StPO; no constitutional right to access | More restrictive than Swedish baseline; KU33 moves Sweden toward German model |
+| Denmark | Forvaltningsloven § 24 allows exemption for investigations | Similar trajectory; DK has had this exemption for decades |
+| Finland | JulkL 24 § excludes investigation materials — permanent exemption | Finland has always been more restrictive; Sweden moving in Finnish direction |
+| UK | FOIA 2000 s.30 exempts investigations | Long-established exemption; UK model justifies Swedish direction |
+| Canada | Privacy Act exempts police investigations | Similar to proposed Swedish position |
+| Council of Europe | ECHR Art 10 requires proportionality test | KU33 must pass proportionality — Sweden's legal advisors will need to defend |
+
+### SWOT Table (KU33-specific)
+
+| SWOT | Entry | Evidence | Confidence |
+|------|-------|---------|-----------|
+| S | Protects active investigations from interference | Law enforcement need to complete investigations without evidence being signalled via public access | MEDIUM |
+| W | Narrows 250-year constitutional freedom | TF has stood since 1766; this removes a category of access rights | HIGH |
+| W | Creates discretionary "incorporation" determination | When material is "incorporated into investigation" is undefined and discretionary | HIGH |
+| O | Models successful approach used by Germany, UK, Finland | International precedent supports proportionate exemption | MEDIUM |
+| T | ECHR Article 10 challenge | Journalists union likely to pursue European Court route | MEDIUM |
+| T | Election-dependent: uncertain second reading | If S+V+MP win September 2026, second reading may fail | MEDIUM |
+
+### Named Actor Table
+
+| Actor | Institution | Stance | Influence |
+|-------|------------|-------|----------|
+| Ulf Kristersson | PM (M) | Proposer | CRITICAL |
+| Gunnar Strömmer | Justice Minister (M) | Strong advocate | HIGH |
+| Andreas Norlén | Speaker/former KU | Overseer | MEDIUM |
+| Erik Nymansson | Chefsjustitieombudsman | Implementing authority | HIGH |
+| SJF (Journalist Union) | Civil society | STRONGLY OPPOSE | HIGH |
+| TT | News agency | OPPOSE | MEDIUM |
+| Magdalena Andersson | S party leader | LIKELY OPPOSE (election calculation) | HIGH |
+| Jonas Sjöstedt-era V | Vänsterpartiet | STRONGLY OPPOSE | MEDIUM |
+| Ann-Sofie Alm | KU chair (M) | PROPOSE adoption | HIGH |
+
+### Indicator Library
+
+| Indicator | Status | Trigger | Owner | Deadline |
+|-----------|--------|--------|-------|---------|
+| Chamber vote KU33 | Scheduled 2026-04-22 | Vote outcome → adoption as vilande | KU/kammarkansliet | 2026-04-22 |
+| Lagrådet opinion | Published | Proportionality determination | Lagrådet | Pre-vote |
+| SJF public statement | Expected | Press freedom lobbying begins | SJF | Post-debate |
+| Election result | September 2026 | Determines second reading outcome | Voters | 2026-09 |
+| Second reading vote | January 2027 | Final constitutional decision | New riksdag | 2027-01 |
+| TF amendment gazette | Jan 2027 if confirmed | SFS publication | Riksdag | 2027-01-01 |
+
+### Red-Team Critique
+
+*Steelman for KU33*: The argument that ongoing criminal investigations require protection from evidence-alerting via FOIA-style requests is well-established in virtually every comparable democracy. A criminal suspect whose assets are being seized should not be able to use offentlighetsprincipen to learn what the police have taken before the investigation is complete. The amendment is carefully scoped — material reverts to public access once incorporated into the investigation file.
+
+*Counter to steelman*: The existing law already has exceptions for ongoing investigations (sekretesslagen § 18 chap). KU33 adds a constitutional (not statutory) exemption, which is harder to reverse and broader in principle. The additional layer of constitutional protection is not needed to achieve the stated law enforcement goal — a statutory amendment would suffice and would be easier to calibrate and reverse.
+
+**Verdict**: The law enforcement rationale is legitimate, but the constitutional (rather than statutory) implementation is disproportionate and sets a dangerous precedent for grundlag modification as a routine policy tool.
+
+### HD03231\-HD03232\-ukraine
+<!-- source: documents/HD03231-HD03232-ukraine-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD03231-HD03232-ukraine-analysis.md -->
+
+**dok_ids**: HD03231, HD03232  
+**Depth Tier**: L2+ (P1 Critical — International Treaty)  
+
+**Ministry**: Utrikesdepartementet  
+
+**Version**: 2.0 (Pass 2 enriched)
+
+### Document Identity
+
+| Field | HD03231 | HD03232 |
+|-------|---------|---------|
+| **Title** | Sveriges anslutning till den utvidgade partiella överenskommelsen för den särskilda tribunalen för aggressionsbrottet mot Ukraina | Sveriges tillträde till konventionen om inrättande av en internationell skadeståndskommission för Ukraina |
+| **Type** | Proposition (prop 2025/26:231) | Proposition (prop 2025/26:232) |
+| **Committee referral** | UU (Utrikesutskottet) | UU (Utrikesutskottet) |
+| **Signatory PM** | Ulf Kristersson | Ulf Kristersson |
+| **Signatory FM** | Maria Malmer Stenergard | Maria Malmer Stenergard |
+| **Riksdag URL** | https://data.riksdagen.se/dokument/HD03231 | https://data.riksdagen.se/dokument/HD03232 |
+| **Diplomatic context** | King Carl Gustaf + FM visited Ukraine 2026-04-17 | Same diplomatic mission |
+
+### Combined Significance Paragraph
+
+Sweden is simultaneously acceding to two international legal instruments creating unprecedented accountability mechanisms for the Russia-Ukraine war. HD03231 joins Sweden to the "Expanded Partial Agreement" establishing the Special Tribunal for the Crime of Aggression against Ukraine — designed to prosecute the political and military leaders responsible for Russia's February 2022 full-scale invasion, whom the International Criminal Court cannot reach because Russia is not an ICC member for this purpose. HD03232 accedes to the Convention establishing an International Compensation Commission for Ukraine, designed to ensure victims of Russian aggression receive reparations from Russian frozen assets held in European jurisdictions.
+
+Combined, these two propositions represent Sweden's most significant contribution to the international rule-of-law response to the Ukraine war since Sweden's NATO accession in 2024. The timing — submitted to Riksdag on April 16 and published the same day as the King of Sweden and FM Malmer Stenergard's visit to Kyiv — was deliberate diplomatic signalling.
+
+### 6-Lens Analysis
+
+#### Lens 1: International Law Significance
+
+**Special Tribunal for Aggression (HD03231)**:  
+The crime of aggression — the "supreme international crime" in the words of the Nuremberg Tribunal — has historically been the hardest to prosecute. The ICC Kampala Amendment (2010) gave the ICC jurisdiction over aggression, but Russia is not a member, and the ICC cannot exercise jurisdiction over nationals of non-member states for this crime. The Special Tribunal closes this gap with a hybrid international-national mechanism. Sweden's accession joins approximately 40 states (as of April 2026) supporting the tribunal.
+
+**Compensation Commission (HD03232)**:  
+The Convention on the International Register of Damage and the Compensation Commission represents the financial accountability dimension. Approximately €260bn in Russian sovereign assets are held frozen in European financial institutions (primarily Euroclear in Belgium). The Commission's mandate is to create a legal pathway for using these assets to compensate Ukrainian victims. Swedish accession strengthens the international legal basis for this asset mobilization.
+
+#### Lens 2: Diplomatic Context
+
+The timing of the propositions (April 16) and the King's Kyiv visit (April 17) is explicitly coordinated. H.M. King Carl Gustaf's presence in Kyiv alongside FM Malmer Stenergard sends the strongest possible diplomatic signal: Sweden's head of state endorses the accountability framework being submitted to the Riksdag.
+
+This is the second time a sitting Swedish monarch has made a major foreign policy statement through a diplomatic visit — previous precedent was Carl Gustaf's Washington visit during Sweden's NATO accession process. The royal dimension elevates both propositions to a level of national commitment that transcends partisan politics.
+
+#### Lens 3: Political-Strategic Impact
+
+**For the Kristersson government**: This is a legacy achievement. PM Kristersson has consistently positioned Sweden as a strong Ukraine ally; these propositions deliver concrete legal instruments beyond military aid. They also give the government a strong foreign policy argument heading into the September 2026 election.
+
+**For SD**: Sweden Democrats have generally supported Ukraine aid but remain watchful about cost. The Compensation Commission (HD03232) has uncertain Swedish financial obligations. SD's cooperation in UU committee will be crucial. Jimmy Åkesson has publicly supported Ukraine's sovereignty but consistently sought to limit open-ended financial exposure.
+
+**For the opposition**: S, V, C, L all strongly support Ukraine accountability. V's historic opposition to NATO has been paused in the context of Ukraine solidarity. MP supports both propositions. This creates a rare all-party moment.
+
+#### Lens 4: Coalition and Stakeholder Dynamics
+
+**UU committee composition**: UU will handle both propositions. The committee is chaired by a government-aligned member. Cross-party support is expected to be broad. Watch for SD reservations specifically on HD03232 cost dimensions.
+
+**NGO support**: Amnesty International, Human Rights Watch, FIDH, and the Coalition for the International Criminal Court all support both instruments. Their domestic Swedish advocacy will reinforce the broad coalition.
+
+#### Lens 5: Economic & Fiscal Considerations
+
+**HD03232 financial implications**: The Compensation Commission needs operating budget and Swedish contribution. EU member states' contributions are typically GDP-proportional. Sweden's GDP is approximately SEK 7.5 trillion; if Swedish contribution is 2-3% of Commission operating costs, annual exposure could be SEK 50-200m for administration — manageable. The larger question is potential Swedish liability if Russian assets in Swedish jurisdiction are mobilized for compensation payments.
+
+**Frozen assets in Sweden**: Riksbanken and Swedish commercial banks hold some Russian sovereign assets, though the major Euroclear positions are Belgian. Sweden would need to adapt domestic legislation (separate from these propositions) to enable asset mobilization.
+
+**GDP context**: Sweden's 0.82% growth in 2024 (recovering from -0.20% in 2023) and falling inflation (2.84% in 2024 vs 8.55% in 2023) provide a stable but not abundant fiscal backdrop. Finance Minister Svantesson has room for Ukraine commitments but not unlimited room.
+
+#### Lens 6: International Benchmarking
+
+| Country | Tribunal | Compensation Commission | Notes |
+|---------|---------|------------------------|-------|
+| Germany | Member | Member | EU leader in both instruments |
+| France | Member | Member | Strong support, Macron initiative |
+| UK | Member | Member | Post-Brexit still engaged |
+| Norway | Member | Member | Nordic solidarity |
+| Finland | Member | Member | NATO partner, strong Ukraine support |
+| Denmark | Member | Member | Nordic pattern |
+| Netherlands | Member | Member | Host of ICC; natural jurisdiction |
+| Sweden | Acceding | Acceding | HD03231/HD03232 completing accession |
+| USA | Observer | Non-member | Biden admin supported; Trump posture unclear |
+
+### SWOT Table
+
+| SWOT | Entry | Evidence | Confidence |
+|------|-------|---------|-----------|
+| S | Cross-party political consensus | All 8 parties support Ukraine; V/MP despite historic NATO skepticism | HIGH |
+| S | Royal diplomatic reinforcement | King Carl Gustaf's Kyiv visit elevates commitment | HIGH |
+| W | SD cost resistance | SD base skeptical of open-ended financial obligations | MEDIUM |
+| W | Financial exposure uncertain | HD03232 contribution calculation not yet specified | MEDIUM |
+| O | EU rule-of-law leadership | Sweden positions as norm-entrepreneur alongside Germany, France | HIGH |
+| O | Russian asset mobilization legal foundation | HD03232 creates legal basis for compensation payments | HIGH |
+| T | Russian information operations | Sweden becomes target for hybrid interference | HIGH |
+| T | Geopolitical reversal risk | If US-Russia settlement bypasses tribunal framework | LOW |
+
+### Named Actor Table
+
+| Actor | Role | Stance | Impact |
+|-------|------|-------|--------|
+| Maria Malmer Stenergard | FM (M), proposition signer | CHAMPION | CRITICAL |
+| Ulf Kristersson | PM (M), proposition signer | STRONG SUPPORT | CRITICAL |
+| King Carl Gustaf | Swedish head of state | Diplomatic signal via Kyiv visit | HIGH |
+| Jimmy Åkesson | SD party leader | Cautious support, watching costs | HIGH |
+| Magdalena Andersson | S party leader | STRONG SUPPORT | HIGH |
+| Nooshi Dadgostar | V party leader | SUPPORT | MEDIUM |
+| Per Bolund | MP party leader | STRONG SUPPORT | MEDIUM |
+| Andreas Norlén | Riksdag Speaker | Process facilitator | MEDIUM |
+| UU Committee Chair | Committee processing | SUPPORTIVE | HIGH |
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/stakeholder-perspectives.md -->
@@ -1180,295 +1469,6 @@ graph TD
 | SÄPO threat-level bulletins | Continuous | Any public adjustment mentioning tribunal | SÄPO | Continuous |
 | SOM poll Tidö bloc | Monthly | Bloc < 44% or > 50% triggers Bayesian update | SOM Institute | Monthly |
 
-## Per-document intelligence
-
-### HD01KU32
-<!-- source: documents/HD01KU32-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD01KU32-analysis.md -->
-
-**dok_id**: HD01KU32  
-**Depth Tier**: L2+ (P0 Constitutional)  
-
-**Committee**: Konstitutionsutskottet (KU)  
-
-**Version**: 2.0 (Pass 2 enriched)
-
-### Document Identity
-
-| Field | Value |
-|-------|-------|
-| **Title** | Tillgänglighetskrav för vissa medier |
-| **Type** | Betänkande (committee report) |
-| **Riksmöte** | 2025/26 |
-| **Beteckning** | 2025/26:KU32 |
-| **Constitutional texts** | Tryckfrihetsförordningen (TF) + Yttrandefrihetsgrundlagen (YGL) |
-| **First reading** | Scheduled 2026-04-22 chamber debate (same day as KU33) |
-| **Effect date** | 1 January 2027 (if confirmed) |
-| **EU driver** | European Accessibility Act (Directive 2019/882) + EECC |
-
-### Significance
-
-KU32 amends both TF and YGL to allow broader accessibility requirements to be imposed by ordinary law on constitutionally protected media products. Currently, TF and YGL shield products like e-books, streaming services, and digital publications from certain requirements — including accessibility mandates — because imposing such requirements would require constitutional authority. KU32 creates that constitutional authority, enabling Sweden to fully comply with the EU's Accessibility Act.
-
-This is a less controversial constitutional amendment than KU33 — it expands the ability to impose accessibility standards on media rather than restricting public access rights. However, the simultaneous passage of KU32 and KU33 in the same riksmöte establishes a pattern of constitutional amendment as routine legislative tool that warrants monitoring.
-
-### Key Policy Changes
-
-- **E-books and digital content**: Accessibility requirements (screen reader compatibility, alt text, captioning) can now be mandated by ordinary law for TF/YGL-protected digital content
-- **E-commerce services**: Accessibility standards for digital shopping platforms with media components
-- **Vidaresändning** (must-carry broadcasting): Accessibility services (subtitling, audio description) must be carried beyond just public service broadcasters
-- **Advertising and product information**: Packaging information requirements can be expanded under ordinary law
-
-### SWOT Summary (KU32-specific)
-
-| SWOT | Entry | Confidence |
-|------|-------|-----------|
-| S | EU compliance — avoids infringement proceedings | HIGH |
-| S | Enables meaningful accessibility for disabled persons | HIGH |
-| W | Constitutional modification for EU compliance sets precedent | MEDIUM |
-| O | Digital inclusion for 1.2m Swedes with disabilities | HIGH |
-| T | Media industry compliance costs | LOW |
-| T | Two grundlag amendments in one riksmöte — normalizes process | MEDIUM |
-
-### Named Actors
-
-| Actor | Role | Stance |
-|-------|------|-------|
-| Ann-Sofie Alm | KU chair (M) | PROPOSE adoption |
-| EU Commission | External driver | Accessibility Act compliance |
-| Funktionstillgänglighet | Disability organizations | SUPPORT |
-| Media sector (TV4, SVT) | Compliance obligation | NEUTRAL/CONCERNED about costs |
-
-### Forward Indicators
-
-| Indicator | Date | Significance |
-|-----------|------|-------------|
-| Chamber vote KU32 | 2026-04-22 | Simultaneous with KU33 |
-| Second reading | Post-election 2027 | Same timeline as KU33 |
-| Implementation regulation | 2026 H2 | Ordinary law requirements under new constitutional authority |
-
-### HD01KU33
-<!-- source: documents/HD01KU33-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD01KU33-analysis.md -->
-
-**dok_id**: HD01KU33  
-**Depth Tier**: L3 (P0 Constitutional)  
-
-**Committee**: Konstitutionsutskottet (KU)  
-
-**Version**: 2.0 (Pass 2 enriched — full L3 content)
-
-### Document Identity
-
-| Field | Value |
-|-------|-------|
-| **Title** | Insyn i handlingar som inhämtas genom beslag och kopiering vid husrannsakan |
-| **Type** | Betänkande (committee report) |
-| **Riksmöte** | 2025/26 |
-| **Beteckning** | 2025/26:KU33 |
-| **Committee** | Konstitutionsutskottet |
-| **Underlying prop** | Government proposition (KU recommends adoption) |
-| **First reading** | Scheduled 2026-04-22 chamber debate |
-| **Second reading** | Required after September 2026 election |
-| **Effect date** | 1 January 2027 (if confirmed) |
-| **Constitutional text** | Tryckfrihetsförordningen (TF) — fundamental law |
-| **URL** | https://data.riksdagen.se/dokument/HD01KU33.html |
-
-### Two-Paragraph Significance
-
-KU33 proposes a targeted but constitutionally significant amendment to Sweden's Tryckfrihetsförordningen: digital materials seized or copied during police raids — husrannsakan — would no longer automatically qualify as "allmänna handlingar" (public documents). The current rule means that once material enters a government authority's possession, it presumptively becomes public. KU33 creates an exception for law enforcement seizure contexts, preventing journalists and citizens from requesting access to seized materials during active investigations.
-
-The democratic significance exceeds the narrow legal description. Offentlighetsprincipen — Sweden's 250-year-old public access framework — has been eroded incrementally over recent decades, with each exception justified as proportionate and limited. KU33's carve-out follows the same logic. But constitutional changes of this kind require two riksdag votes separated by an election, precisely because the founders understood that no single legislative majority should be able to permanently narrow fundamental freedoms. The real question is whether the post-September 2026 riksdag will confirm what the current one initiates.
-
-### 6-Lens Analysis
-
-#### Lens 1: Historical Context
-Offentlighetsprincipen dates to the Freedom of the Press Act of 1766 — the world's first. Sweden pioneered public access to government records as a constitutional right. Each amendment to TF carries symbolic weight far exceeding its technical scope. KU33 is the 27th or 28th amendment to TF since it was incorporated into the constitutional framework; however, most prior amendments expanded rights (EU compliance, digital formats). This amendment restricts.
-
-#### Lens 2: Legal-Constitutional Impact
-The amendment removes seized digital materials from the definition of "allmän handling" during: (a) law enforcement investigations, (b) upon transfer of information-bearing devices to authorities, and (c) when an authority takes over custody of seized copying-derived data. The carve-out ends when material is "tillförd en utredning" (incorporated into a formal investigation file) — at that point, normal public access rules resume. Critics note that defining when material is "incorporated" into an investigation file is discretionary, creating enforcement ambiguity.
-
-#### Lens 3: Political-Strategic Impact
-For the Kristersson government, KU33 advances the law enforcement agenda consistent with HD03246 (juvenile justice), HD03233 (telecoms fraud), and HD01SfU22 (immigration enforcement). The government is constructing a comprehensive crime-fighting narrative ahead of September 2026 elections. Restricting seizure transparency is framed as protecting ongoing investigations, not restricting press.
-
-For the opposition, KU33 creates a civil liberties argument without risking the nuclear option of blocking Ukraine propositions. S can oppose KU33 while supporting Ukraine — this is a useful positioning move for Magdalena Andersson ahead of the election.
-
-#### Lens 4: Media & Press Freedom Impact
-The Swedish Union of Journalists (SJF) and major media organizations will oppose KU33. Investigative journalism in Sweden regularly uses offentlighetsprincipen to access police seizure inventories — for example, in reporting on organized crime asset seizures, corruption investigations, and environmental violations. The exemption removes this tool for the critical period when seized information is most newsworthy.
-
-**Named actors at risk**: TT (Tidningarnas Telegrambyrå), DN investigations unit, SVT Granskar, SR Ekot investigative journalists all use seizure-related public record requests.
-
-#### Lens 5: Election Implications
-KU33's fate hinges on the September 2026 election. Current polling (Tidö coalition ≈ 48%) suggests the coalition could lose its working majority. If S+V+MP+MP elect a new government, they could reject the second reading — but only if they have the will to do so. S has historically been cautious about being seen as opposing law enforcement. V and MP would push for rejection.
-
-**Electoral risk matrix**:
-| Scenario | Probability | KU33 outcome |
-|----------|------------|--------------|
-| Tidö coalition wins majority | 35% | Confirmed — TF amended Jan 2027 |
-| S leads minority government | 40% | S negotiates — likely confirms with modifications |
-| S+V+MP majority | 25% | Likely rejected — second reading fails |
-
-#### Lens 6: International Benchmarking
-How do comparable democracies handle law enforcement seizure transparency?
-
-| Jurisdiction | Approach | Comparison |
-|-------------|---------|-----------|
-| Germany | Investigative secrets protected under §406e StPO; no constitutional right to access | More restrictive than Swedish baseline; KU33 moves Sweden toward German model |
-| Denmark | Forvaltningsloven § 24 allows exemption for investigations | Similar trajectory; DK has had this exemption for decades |
-| Finland | JulkL 24 § excludes investigation materials — permanent exemption | Finland has always been more restrictive; Sweden moving in Finnish direction |
-| UK | FOIA 2000 s.30 exempts investigations | Long-established exemption; UK model justifies Swedish direction |
-| Canada | Privacy Act exempts police investigations | Similar to proposed Swedish position |
-| Council of Europe | ECHR Art 10 requires proportionality test | KU33 must pass proportionality — Sweden's legal advisors will need to defend |
-
-### SWOT Table (KU33-specific)
-
-| SWOT | Entry | Evidence | Confidence |
-|------|-------|---------|-----------|
-| S | Protects active investigations from interference | Law enforcement need to complete investigations without evidence being signalled via public access | MEDIUM |
-| W | Narrows 250-year constitutional freedom | TF has stood since 1766; this removes a category of access rights | HIGH |
-| W | Creates discretionary "incorporation" determination | When material is "incorporated into investigation" is undefined and discretionary | HIGH |
-| O | Models successful approach used by Germany, UK, Finland | International precedent supports proportionate exemption | MEDIUM |
-| T | ECHR Article 10 challenge | Journalists union likely to pursue European Court route | MEDIUM |
-| T | Election-dependent: uncertain second reading | If S+V+MP win September 2026, second reading may fail | MEDIUM |
-
-### Named Actor Table
-
-| Actor | Institution | Stance | Influence |
-|-------|------------|-------|----------|
-| Ulf Kristersson | PM (M) | Proposer | CRITICAL |
-| Gunnar Strömmer | Justice Minister (M) | Strong advocate | HIGH |
-| Andreas Norlén | Speaker/former KU | Overseer | MEDIUM |
-| Erik Nymansson | Chefsjustitieombudsman | Implementing authority | HIGH |
-| SJF (Journalist Union) | Civil society | STRONGLY OPPOSE | HIGH |
-| TT | News agency | OPPOSE | MEDIUM |
-| Magdalena Andersson | S party leader | LIKELY OPPOSE (election calculation) | HIGH |
-| Jonas Sjöstedt-era V | Vänsterpartiet | STRONGLY OPPOSE | MEDIUM |
-| Ann-Sofie Alm | KU chair (M) | PROPOSE adoption | HIGH |
-
-### Indicator Library
-
-| Indicator | Status | Trigger | Owner | Deadline |
-|-----------|--------|--------|-------|---------|
-| Chamber vote KU33 | Scheduled 2026-04-22 | Vote outcome → adoption as vilande | KU/kammarkansliet | 2026-04-22 |
-| Lagrådet opinion | Published | Proportionality determination | Lagrådet | Pre-vote |
-| SJF public statement | Expected | Press freedom lobbying begins | SJF | Post-debate |
-| Election result | September 2026 | Determines second reading outcome | Voters | 2026-09 |
-| Second reading vote | January 2027 | Final constitutional decision | New riksdag | 2027-01 |
-| TF amendment gazette | Jan 2027 if confirmed | SFS publication | Riksdag | 2027-01-01 |
-
-### Red-Team Critique
-
-*Steelman for KU33*: The argument that ongoing criminal investigations require protection from evidence-alerting via FOIA-style requests is well-established in virtually every comparable democracy. A criminal suspect whose assets are being seized should not be able to use offentlighetsprincipen to learn what the police have taken before the investigation is complete. The amendment is carefully scoped — material reverts to public access once incorporated into the investigation file.
-
-*Counter to steelman*: The existing law already has exceptions for ongoing investigations (sekretesslagen § 18 chap). KU33 adds a constitutional (not statutory) exemption, which is harder to reverse and broader in principle. The additional layer of constitutional protection is not needed to achieve the stated law enforcement goal — a statutory amendment would suffice and would be easier to calibrate and reverse.
-
-**Verdict**: The law enforcement rationale is legitimate, but the constitutional (rather than statutory) implementation is disproportionate and sets a dangerous precedent for grundlag modification as a routine policy tool.
-
-### HD03231\-HD03232\-ukraine
-<!-- source: documents/HD03231-HD03232-ukraine-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD03231-HD03232-ukraine-analysis.md -->
-
-**dok_ids**: HD03231, HD03232  
-**Depth Tier**: L2+ (P1 Critical — International Treaty)  
-
-**Ministry**: Utrikesdepartementet  
-
-**Version**: 2.0 (Pass 2 enriched)
-
-### Document Identity
-
-| Field | HD03231 | HD03232 |
-|-------|---------|---------|
-| **Title** | Sveriges anslutning till den utvidgade partiella överenskommelsen för den särskilda tribunalen för aggressionsbrottet mot Ukraina | Sveriges tillträde till konventionen om inrättande av en internationell skadeståndskommission för Ukraina |
-| **Type** | Proposition (prop 2025/26:231) | Proposition (prop 2025/26:232) |
-| **Committee referral** | UU (Utrikesutskottet) | UU (Utrikesutskottet) |
-| **Signatory PM** | Ulf Kristersson | Ulf Kristersson |
-| **Signatory FM** | Maria Malmer Stenergard | Maria Malmer Stenergard |
-| **Riksdag URL** | https://data.riksdagen.se/dokument/HD03231 | https://data.riksdagen.se/dokument/HD03232 |
-| **Diplomatic context** | King Carl Gustaf + FM visited Ukraine 2026-04-17 | Same diplomatic mission |
-
-### Combined Significance Paragraph
-
-Sweden is simultaneously acceding to two international legal instruments creating unprecedented accountability mechanisms for the Russia-Ukraine war. HD03231 joins Sweden to the "Expanded Partial Agreement" establishing the Special Tribunal for the Crime of Aggression against Ukraine — designed to prosecute the political and military leaders responsible for Russia's February 2022 full-scale invasion, whom the International Criminal Court cannot reach because Russia is not an ICC member for this purpose. HD03232 accedes to the Convention establishing an International Compensation Commission for Ukraine, designed to ensure victims of Russian aggression receive reparations from Russian frozen assets held in European jurisdictions.
-
-Combined, these two propositions represent Sweden's most significant contribution to the international rule-of-law response to the Ukraine war since Sweden's NATO accession in 2024. The timing — submitted to Riksdag on April 16 and published the same day as the King of Sweden and FM Malmer Stenergard's visit to Kyiv — was deliberate diplomatic signalling.
-
-### 6-Lens Analysis
-
-#### Lens 1: International Law Significance
-
-**Special Tribunal for Aggression (HD03231)**:  
-The crime of aggression — the "supreme international crime" in the words of the Nuremberg Tribunal — has historically been the hardest to prosecute. The ICC Kampala Amendment (2010) gave the ICC jurisdiction over aggression, but Russia is not a member, and the ICC cannot exercise jurisdiction over nationals of non-member states for this crime. The Special Tribunal closes this gap with a hybrid international-national mechanism. Sweden's accession joins approximately 40 states (as of April 2026) supporting the tribunal.
-
-**Compensation Commission (HD03232)**:  
-The Convention on the International Register of Damage and the Compensation Commission represents the financial accountability dimension. Approximately €260bn in Russian sovereign assets are held frozen in European financial institutions (primarily Euroclear in Belgium). The Commission's mandate is to create a legal pathway for using these assets to compensate Ukrainian victims. Swedish accession strengthens the international legal basis for this asset mobilization.
-
-#### Lens 2: Diplomatic Context
-
-The timing of the propositions (April 16) and the King's Kyiv visit (April 17) is explicitly coordinated. H.M. King Carl Gustaf's presence in Kyiv alongside FM Malmer Stenergard sends the strongest possible diplomatic signal: Sweden's head of state endorses the accountability framework being submitted to the Riksdag.
-
-This is the second time a sitting Swedish monarch has made a major foreign policy statement through a diplomatic visit — previous precedent was Carl Gustaf's Washington visit during Sweden's NATO accession process. The royal dimension elevates both propositions to a level of national commitment that transcends partisan politics.
-
-#### Lens 3: Political-Strategic Impact
-
-**For the Kristersson government**: This is a legacy achievement. PM Kristersson has consistently positioned Sweden as a strong Ukraine ally; these propositions deliver concrete legal instruments beyond military aid. They also give the government a strong foreign policy argument heading into the September 2026 election.
-
-**For SD**: Sweden Democrats have generally supported Ukraine aid but remain watchful about cost. The Compensation Commission (HD03232) has uncertain Swedish financial obligations. SD's cooperation in UU committee will be crucial. Jimmy Åkesson has publicly supported Ukraine's sovereignty but consistently sought to limit open-ended financial exposure.
-
-**For the opposition**: S, V, C, L all strongly support Ukraine accountability. V's historic opposition to NATO has been paused in the context of Ukraine solidarity. MP supports both propositions. This creates a rare all-party moment.
-
-#### Lens 4: Coalition and Stakeholder Dynamics
-
-**UU committee composition**: UU will handle both propositions. The committee is chaired by a government-aligned member. Cross-party support is expected to be broad. Watch for SD reservations specifically on HD03232 cost dimensions.
-
-**NGO support**: Amnesty International, Human Rights Watch, FIDH, and the Coalition for the International Criminal Court all support both instruments. Their domestic Swedish advocacy will reinforce the broad coalition.
-
-#### Lens 5: Economic & Fiscal Considerations
-
-**HD03232 financial implications**: The Compensation Commission needs operating budget and Swedish contribution. EU member states' contributions are typically GDP-proportional. Sweden's GDP is approximately SEK 7.5 trillion; if Swedish contribution is 2-3% of Commission operating costs, annual exposure could be SEK 50-200m for administration — manageable. The larger question is potential Swedish liability if Russian assets in Swedish jurisdiction are mobilized for compensation payments.
-
-**Frozen assets in Sweden**: Riksbanken and Swedish commercial banks hold some Russian sovereign assets, though the major Euroclear positions are Belgian. Sweden would need to adapt domestic legislation (separate from these propositions) to enable asset mobilization.
-
-**GDP context**: Sweden's 0.82% growth in 2024 (recovering from -0.20% in 2023) and falling inflation (2.84% in 2024 vs 8.55% in 2023) provide a stable but not abundant fiscal backdrop. Finance Minister Svantesson has room for Ukraine commitments but not unlimited room.
-
-#### Lens 6: International Benchmarking
-
-| Country | Tribunal | Compensation Commission | Notes |
-|---------|---------|------------------------|-------|
-| Germany | Member | Member | EU leader in both instruments |
-| France | Member | Member | Strong support, Macron initiative |
-| UK | Member | Member | Post-Brexit still engaged |
-| Norway | Member | Member | Nordic solidarity |
-| Finland | Member | Member | NATO partner, strong Ukraine support |
-| Denmark | Member | Member | Nordic pattern |
-| Netherlands | Member | Member | Host of ICC; natural jurisdiction |
-| Sweden | Acceding | Acceding | HD03231/HD03232 completing accession |
-| USA | Observer | Non-member | Biden admin supported; Trump posture unclear |
-
-### SWOT Table
-
-| SWOT | Entry | Evidence | Confidence |
-|------|-------|---------|-----------|
-| S | Cross-party political consensus | All 8 parties support Ukraine; V/MP despite historic NATO skepticism | HIGH |
-| S | Royal diplomatic reinforcement | King Carl Gustaf's Kyiv visit elevates commitment | HIGH |
-| W | SD cost resistance | SD base skeptical of open-ended financial obligations | MEDIUM |
-| W | Financial exposure uncertain | HD03232 contribution calculation not yet specified | MEDIUM |
-| O | EU rule-of-law leadership | Sweden positions as norm-entrepreneur alongside Germany, France | HIGH |
-| O | Russian asset mobilization legal foundation | HD03232 creates legal basis for compensation payments | HIGH |
-| T | Russian information operations | Sweden becomes target for hybrid interference | HIGH |
-| T | Geopolitical reversal risk | If US-Russia settlement bypasses tribunal framework | LOW |
-
-### Named Actor Table
-
-| Actor | Role | Stance | Impact |
-|-------|------|-------|--------|
-| Maria Malmer Stenergard | FM (M), proposition signer | CHAMPION | CRITICAL |
-| Ulf Kristersson | PM (M), proposition signer | STRONG SUPPORT | CRITICAL |
-| King Carl Gustaf | Swedish head of state | Diplomatic signal via Kyiv visit | HIGH |
-| Jimmy Åkesson | SD party leader | Cautious support, watching costs | HIGH |
-| Magdalena Andersson | S party leader | STRONG SUPPORT | HIGH |
-| Nooshi Dadgostar | V party leader | SUPPORT | MEDIUM |
-| Per Bolund | MP party leader | STRONG SUPPORT | MEDIUM |
-| Andreas Norlén | Riksdag Speaker | Process facilitator | MEDIUM |
-| UU Committee Chair | Committee processing | SUPPORTIVE | HIGH |
-
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/comparative-international.md -->
 
@@ -2078,14 +2078,14 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/executive-brief.md)
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/synthesis-summary.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/significance-scoring.md)
+- [`documents/HD01KU32-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD01KU32-analysis.md)
+- [`documents/HD01KU33-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD01KU33-analysis.md)
+- [`documents/HD03231-HD03232-ukraine-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD03231-HD03232-ukraine-analysis.md)
 - [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/stakeholder-perspectives.md)
 - [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/scenario-analysis.md)
 - [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/risk-assessment.md)
 - [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/swot-analysis.md)
 - [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/threat-analysis.md)
-- [`documents/HD01KU32-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD01KU32-analysis.md)
-- [`documents/HD01KU33-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD01KU33-analysis.md)
-- [`documents/HD03231-HD03232-ukraine-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/documents/HD03231-HD03232-ukraine-analysis.md)
 - [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/comparative-international.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/cross-reference-map.md)

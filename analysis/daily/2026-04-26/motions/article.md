@@ -5,7 +5,7 @@ date: 2026-04-26
 subfolder: motions
 slug: 2026-04-26-motions
 source_folder: analysis/daily/2026-04-26/motions
-generated_at: 2026-05-04T09:52:32.330Z
+generated_at: 2026-05-04T12:16:14.029Z
 language: en
 layout: article
 ---
@@ -69,10 +69,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -269,354 +269,6 @@ graph LR
     style D fill:#FF9800,color:#FFFFFF
     style E fill:#FF9800,color:#FFFFFF
     style F fill:#4CAF50,color:#FFFFFF
-```
-
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/media-framing-analysis.md -->
-
-### Primary Frame: Accountability vs. Deflection
-
-The opposition (S) documents cluster around **accountability framing**: establishing that the Tidö government is failing on welfare, rights, and social protection. Expected media frames:
-
-| Story | Expected S Frame | Expected Government Frame | Expected SD Frame |
-|-------|-----------------|--------------------------|------------------|
-| HD11747 (disabled workers) | "Government tolerates exploitation" | "Arbetsförmedlingen investigating" | "Too many bureaucrats" |
-| HD11749 (prison children education) | "Government broke children's rights" | "Reform ongoing, law compliant" | "Criminals shouldn't get more rights" |
-| HD11748 (detained Swede) | "Government abandons citizens abroad" | "Diplomatic channels active" | (foreign policy — stay quiet) |
-| HD10448 (wind energy) | "Government propagates misinformation" | "Energy policy sound" | "Wind energy is unreliable" |
-
-### Key Framing Tensions
-
-**HD11749** creates a rights vs. public safety frame clash:
-- S/MP/V: "Constitutional rights apply even to incarcerated youth"
-- SD/KD: "Prison is prison; education is secondary to order"
-- L (difficult): L is historically pro-rights but part of governing coalition
-
-**HD10448** creates a truth-in-politics meta-frame:
-- SD challenges the government minister to address "disinformation" framing
-- KD (Ebba Busch as minister) is in an awkward position defending the energy narrative
-- This is **intra-coalition tension** unusually visible
-
-### Media Amplification Risk
-
-| Document | Amplification Probability | Key Outlet |
-|----------|--------------------------|------------|
-| HD11747 | MEDIUM-HIGH | Arbetet, Metro, SVT Nyheter |
-| HD11749 | HIGH | SVT, Expressen |
-| HD10448 | MEDIUM | Ny Teknik, SvD |
-| HD11748 | LOW | TT, UD |
-
-```mermaid
-graph TD
-    A["Mediaberättelse\n2026-04-24"] --> B["HD11749: Barnrättigheter\n—Hög amplifikation"]
-    A --> C["HD11747: Arbetsrätt\n—Medel amplifikation"]
-    A --> D["HD10448: Energi\n—Låg-medel amplifikation"]
-    
-    style A fill:#1565C0,color:#FFFFFF
-    style B fill:#E53935,color:#FFFFFF
-    style C fill:#FF9800,color:#FFFFFF
-    style D fill:#1E88E5,color:#FFFFFF
-```
-
-## Stakeholder Perspectives
-<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/stakeholder-perspectives.md -->
-
-### 6-Lens Stakeholder Impact Matrix
-
-| Stakeholder | Economic | Social | Political | Legal | Cultural | International |
-|-------------|----------|--------|-----------|-------|---------|---------------|
-| Disabled workers (lönebidrag) | Direct wage/safety impact | Dignity + workplace rights | Vote signal for S | Right to safe workplace | — | — |
-| Children in Kriminalvård | — | Educational rights + wellbeing | Political accountability test | UNCRC/ECHR/Skollagen | — | EU Charter |
-| Christophe Sahabo | — | Detention — psychological harm | S scrutiny of MFA | Consular protection (Vienna Convention) | — | Burundi-Sweden relations |
-| IF Metall | — | Union accountability vindicated | Labour movement credibility | Employer oversight | Worker solidarity | — |
-| Arbetsförmedlingen | Budget/reputational risk | Agency credibility | Accountability from Riksdagen | Labour market law | — | — |
-| Kriminalvården | Implementation cost | Institutional expansion | Political oversight | Legislation required | — | — |
-| Liberalerna (L) | — | Social welfare narrative | Coalition pressure from S | Legal framework gap | — | — |
-| KD / Ebba Busch | Energy investment certainty | — | SD-KD narrative tension | EU energy compliance | — | EU energy policy |
-| M / Malmer Stenergard | — | — | Human rights credibility | Consular duty | — | Bilateral Burundi |
-| S (opposition) | — | Social rights capital | 2026 election positioning | Parliamentary accountability | Values-based messaging | MR credibility |
-| SD (Fransson) | — | — | Energy narrative positioning | — | Wind energy critique | Anti-Windeurope |
-
-### Key Stakeholder Narratives
-
-#### S (Socialdemokraterna)
-- **Narrative**: "The government's implementation of reforms fails to protect the most vulnerable — disabled workers, incarcerated children, detained citizens."
-- **Strategic goal**: Position S as defender of vulnerable groups ahead of 2026 election.
-- **Credibility anchors**: IF Metall (HD11747), Institutet för mänskliga rättigheter (HD11749), Freedom House (HD11748).
-
-#### Liberalerna (L)
-- **Narrative challenge**: L markets itself as the "conscience of the coalition" on social rights. Two questions targeting L ministers undermine this narrative.
-- **Risk**: If Britz/Mohamsson deflect to agencies, L appears complicit in implementation failures.
-
-#### SD (Sverigedemokraterna)
-- **Narrative**: "Legitimate criticism of wind energy is being silenced by labelling it Russian disinformation."
-- **Goal**: Protect SD's energy skepticism while forcing KD into uncomfortable position on EU energy agenda.
-
-```mermaid
-graph LR
-    A["Stakeholders 2026-04-24"] --> B["S: 2026 election\npositioning"]
-    A --> C["L: Socialt samvete\nunder press"]
-    A --> D["SD: Energipolitisk\nnarrrativkamp"]
-    A --> E["Civilsamhälle:\nIF Metall, IMR"]
-    A --> F["Utsatta grupper:\nFunktionsnedsatta\nBarn, Sahabo"]
-    
-    style A fill:#1565C0,color:#FFFFFF
-    style B fill:#E53935,color:#FFFFFF
-    style C fill:#1565C0,color:#FFFFFF
-    style D fill:#1E88E5,color:#FFFFFF
-    style E fill:#4CAF50,color:#FFFFFF
-    style F fill:#F44336,color:#FFFFFF
-```
-
-## Forward Indicators
-<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/forward-indicators.md -->
-
-### Indicator Framework (4 Horizons)
-
-#### Horizon 1: 0–30 Days (Tactical)
-
-| # | Indicator | Trigger | Signal | Probability |
-|---|-----------|---------|--------|-------------|
-| 1 | Minister response HD11749 | Simona Mohamsson written answer | Answer acknowledges/denies constitutional issue | HIGH (90%) |
-| 2 | Minister response HD11747 | Johan Britz written answer | Regulatory action announced vs. deflected | HIGH (85%) |
-| 3 | SVT/Expressen story on HD11749 | Journalist pickup | Media amplification of children's rights frame | MEDIUM-HIGH (65%) |
-| 4 | Sahabo family statement | Media interview | Elevates HD11748 to news prominence | MEDIUM (45%) |
-
-#### Horizon 2: 1–3 Months (Operational)
-
-| # | Indicator | Trigger | Signal | Probability |
-|---|-----------|---------|--------|-------------|
-| 5 | KU referral on HD11749 | S tables KU notification | Constitutional committee scrutiny | MEDIUM (50%) |
-| 6 | Arbetsförmedlingen internal audit | Media pressure post HD11747 | Systemic review of wage subsidy placements | MEDIUM (40%) |
-| 7 | L party congress response | Internal party debate | L distances from coalition on rights issues | LOW-MEDIUM (30%) |
-| 8 | SD energy resolution document | SD party congress | Formal SD energy policy update | MEDIUM (45%) |
-
-#### Horizon 3: 3–9 Months (Strategic)
-
-| # | Indicator | Trigger | Signal | Probability |
-|---|-----------|---------|--------|-------------|
-| 9 | Budget amendment on disability employment | S opposition budget motion | S elevates this to budget priority | MEDIUM (55%) |
-| 10 | L polling at 4% threshold | July–August 2026 polls | L electoral viability risk | MEDIUM (40%) |
-
-#### Horizon 4: 9–18 Months (Electoral)
-
-| # | Indicator | Trigger | Signal | Probability |
-|---|-----------|---------|--------|-------------|
-| 11 | Val 2026 results | September 2026 election | Coalition renewal or change | ROUGHLY EVEN (50%) |
-| 12 | Post-election coalition negotiations | Party leaders | Which issues become coalition programme | CONTINGENT |
-
-### Indicator Collection Plan
-
-**Priority**: Monitor minister response records at riksdagen.se for HD11747, HD11748, HD11749 answers.
-**Alert threshold**: Constitutional acknowledgment in HD11749 response = SIGNIFICANT signal.
-
-## Scenario Analysis
-<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/scenario-analysis.md -->
-
-### Three Scenarios
-
-#### Scenario A: Government Accountability Delivered (30% probability)
-*"Substantive ministerial responses + policy adjustments"*
-
-Ministers Britz, Mohamsson, and Malmer Stenergard provide detailed, substantive written answers that (a) acknowledge the specific failures identified, (b) announce concrete corrective measures — new Arbetsförmedlingen oversight protocol, immediate legislation for juvenile education, active Burundi consular engagement — and (c) Busch gives a nuanced response on energy policy that neither endorses Windeurope wholesale nor dismisses legitimate criticism.
-
-**Outcome**: S scores a parliamentary accountability win but loses escalation material. L reputation partially recovered. SD narrows energy debate. Moderate positive for democratic function.
-
-#### Scenario B: Agency Deflection and Partial Response (50% probability)
-*"Ministers deflect to independent agencies; substantive change absent"*
-
-Britz points to Arbetsförmedlingen's own procedures; Mohamsson says legislation is coming but gives no date; Malmer Stenergard provides brief consular update; Busch gives diplomatic non-answer. Opposition gains credibility from inadequate responses. S files interpellations on HD11747 and HD11749.
-
-**Outcome**: S builds 2026 election narrative. L's social conscience claim further damaged. Issue persists into summer.
-
-#### Scenario C: Constitutional Crisis (20% probability)
-*"Implementation proceeds before legal framework — rights violations materialise"*
-
-A child is placed in a Kriminalvårds unit before the educational legal framework exists. This triggers a JO-anmälan, potential administrative court challenge, and media investigation. HD11749 becomes a landmark case for constitutional rights in juvenile justice.
-
-**Outcome**: Significant political damage to government. KU consideration. EU/ECHR scrutiny.
-
-### Probability Assessment
-
-| Scenario | Probability | Key Assumption |
-|----------|------------|----------------|
-| A: Substantive accountability | 30% | Government is responsive and has prepared answers |
-| B: Deflection + escalation | 50% | Default government communication pattern |
-| C: Constitutional violation | 20% | Implementation proceeds before Riksdag acts |
-
-```mermaid
-graph TD
-    A["2026-04-24\nOpposition frågor"] --> B["Scenario A (30%)\nSubstantiella svar\n+ åtgärder"]
-    A --> C["Scenario B (50%)\nMyndighetsdeflektering\n+ S eskalering"]
-    A --> D["Scenario C (20%)\nKonstitutionell kris\nbarnrätt"]
-    B --> E["Demokratisk\nfunktion ✅"]
-    C --> F["S vinner\nvalargument 2026"]
-    D --> G["KU-granskning\n+ EU-kritik"]
-    
-    style A fill:#1565C0,color:#FFFFFF
-    style B fill:#4CAF50,color:#FFFFFF
-    style C fill:#FF9800,color:#FFFFFF
-    style D fill:#F44336,color:#FFFFFF
-    style E fill:#4CAF50,color:#FFFFFF
-    style F fill:#FF9800,color:#FFFFFF
-    style G fill:#B71C1C,color:#FFFFFF
-```
-
-## Risk Assessment
-<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/risk-assessment.md -->
-
-### Risk Register
-
-| # | Risk | L (1–5) | I (1–5) | Score | Category | Mitigation |
-|---|------|---------|---------|-------|----------|------------|
-| R1 | Children placed in Kriminalvårdens new units before legal educational framework enacted | 4 | 5 | 20 | Constitutional / Legal | Immediate legislation; delay placement until framework ready |
-| R2 | Continued Arbetsförmedlingen placements at unsafe workplaces for disabled workers | 3 | 4 | 12 | Labour / Welfare | Mandatory fackliga consultation in placement decisions |
-| R3 | SD-KD coalition friction on energy narrative | 3 | 3 | 9 | Coalition stability | Busch gives diplomatic non-committal answer |
-| R4 | Swedish citizen Sahabo detained long-term without resolution | 3 | 4 | 12 | Consular / Human rights | Active MFA diplomatic engagement with Burundi |
-| R5 | Opposition questions not answered substantively (agency deflection) | 4 | 3 | 12 | Democratic accountability | Parliamentary escalation to interpellations |
-| R6 | Police reform accountability gaps persist post-JuU31 | 2 | 4 | 8 | Public safety | Government's strengthened Polismyndigheten steering |
-| R7 | New firearms law implementation challenges | 2 | 2 | 4 | Legislative | Standard regulatory implementation |
-
-### Top-3 Risk Deep Dives
-
-#### R1: Children in Prison Without Educational Legal Framework (Score: 20)
-**Cascading chain**: Placement → absence of legal framework → educational rights denied → ECHR/CRC violation → constitutional challenge → implementation halt → political crisis
-**Tripwire**: First child placed before Skollagen updated for new institutional form
-**Escalation path**: Institutet för mänskliga rättigheter → JO-anmälan → constitutional committee (KU)
-
-#### R4: Sahabo in Burundi (Score: 12)
-**Cascading chain**: Prolonged detention → lack of consular access → international pressure insufficient → political costs for Swedish MFA → S escalation
-**Tripwire**: No progress on Busch/MFA response by 2026-05-06
-
-#### R5: Democratic Accountability via Agency Deflection (Score: 12)
-**Pattern risk**: Government systematically deflects parliament's questions to independent agencies — Arbetsförmedlingen, Kriminalvården — undermining direct accountability
-**Mitigation**: Opposition can demand interpellations targeting agency oversight, not just outcomes
-
-```mermaid
-graph TD
-    A["Risk Matrix<br/>2026-04-24"] --> B["R1: Score 20\nBarn i kriminalvård\n— KRITISK"]
-    A --> C["R2/R4/R5: Score 12\nLönestöd / Sahabo\n/ Myndighetsdeflektering"]
-    A --> D["R3: Score 9\nSD-KD energifriction"]
-    A --> E["R6-R7: Score 4-8\nLäg risk"]
-    
-    style A fill:#1565C0,color:#FFFFFF
-    style B fill:#F44336,color:#FFFFFF
-    style C fill:#FF9800,color:#FFFFFF
-    style D fill:#FFC107,color:#000000
-    style E fill:#4CAF50,color:#FFFFFF
-```
-
-## SWOT Analysis
-<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/swot-analysis.md -->
-
-### Primary Stakeholder SWOT: Socialdemokraterna (S)
-
-| Quadrant | Finding | Admiralty | Evidence |
-|----------|---------|-----------|----------|
-| **Strength** | Multi-front parliamentary strategy: simultaneous questions on labour, education, foreign affairs — maximises media bandwidth | [B2] | HD11747, HD11748, HD11749 |
-| **Strength** | Questions backed by credible external sources (IF Metall, Arbetsmiljöverket, Institutet för mänskliga rättigheter) | [A2] | All three documents |
-| **Strength** | Targets Liberalerna specifically — exploiting L's rhetorical claim as social conscience | [B2] | HD11747→Britz/L, HD11749→Mohamsson/L |
-| **Strength** | Frames disability rights + children's rights as universal values — builds broad coalition | [B2] | HD11747, HD11749 |
-| **Weakness** | Questions (not interpellations) carry lower parliamentary weight — answers can be brief | [B2] | Parliamentary procedure |
-| **Weakness** | S supported elements of juvenile justice reform in 2022 — potential inconsistency | [C3] | Parliamentary record |
-| **Weakness** | Three questions in one day may be perceived as overloading rather than focused strategy | [B3] | Communications risk |
-| **Opportunity** | If government answers are inadequate → escalation to interpellations | [B2] | Parliamentary procedure |
-| **Opportunity** | 2026 election positions: disability rights + child rights + MR credibility are vote-winning themes | [B2] | Electoral context |
-| **Opportunity** | IF Metall and civil society allies amplify messaging | [B2] | Institutional ecosystem |
-| **Threat** | Answers deflect to Arbetsförmedlingen (independent authority) or Kriminalvården (ongoing process) | [B2] | Government reply patterns |
-| **Threat** | Media cycle may not amplify individual questions vs. larger news events | [C3] | Information environment |
-
-### Secondary SWOT: Sverigedemokraterna (SD — HD10448)
-
-| Quadrant | Finding | Admiralty | Evidence |
-|----------|---------|-----------|----------|
-| **Strength** | Cleverly weaponises industry report to reframe wind skepticism debate | [B2] | HD10448 text |
-| **Weakness** | Lacks constructive alternative energy policy proposal | [B3] | HD10448 — question only, no alternative |
-| **Opportunity** | Media loves the "is wind criticism = Russian disinformation" angle | [B3] | Information environment inference |
-| **Threat** | KD/Busch may give diplomatic answer that doesn't satisfy SD base | [B2] | Coalition dynamics |
-
-### TOWS Matrix
-
-| | Opportunities | Threats |
-|---|---|---|
-| **Strengths** | Use strong evidence base + multi-front to set pre-election accountability benchmark (SO) | Proactive escalation before government deflects to agencies (ST) |
-| **Weaknesses** | Choose single strongest case for interpellation focus (WO) | Coordinate with media partners on strongest HD11749 case (WT) |
-
-```mermaid
-quadrantChart
-    title SWOT Positioning — S Opposition Strategy 2026-04-24
-    x-axis Low Political Leverage --> High Political Leverage
-    y-axis Low Evidence Strength --> High Evidence Strength
-    quadrant-1 Prime cases — prioritise
-    quadrant-2 Build evidence — escalate
-    quadrant-3 De-prioritise
-    quadrant-4 Media play — credibility risk
-    HD11749 Barnrätt: [0.85, 0.90]
-    HD11747 Lönestöd: [0.80, 0.85]
-    HD11748 Sahabo: [0.65, 0.70]
-    HD10448 Vindkraft: [0.70, 0.60]
-```
-
-## Threat Analysis
-<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/threat-analysis.md -->
-
-### Political Threat Taxonomy
-
-| Threat | Actor | Target | Mechanism | Severity |
-|--------|-------|--------|-----------|---------|
-| Constitutional rights violation for incarcerated children | Implementation gap | Fundamental rights | Legislation absent before placement | Critical |
-| Workplace harm to disabled workers via lönebidrag | Arbetsförmedlingen / employer | Disabled workers | Agency oversight failure | High |
-| Consular protection failure — Sahabo | Burundian authorities / MFA | Swedish citizen | Authoritarian detention | High |
-| Energy narrative delegitimisation | Windeurope / SVT | Public debate | Framing opposition = disinformation | Medium |
-| Coalition fragmentation SD-KD on energy | SD | Government narrative | Parliamentary accountability pressure | Medium |
-
-### Attack Tree — HD11749 (Highest Priority)
-
-```
-Fundamental right violation (children's education in prison)
-├── Government proceeds with placements before legislation
-│   ├── No delay mechanism triggered
-│   └── Kriminalvården lacks educational mandate
-├── Legal challenge
-│   ├── JO-anmälan (Ombudsman)
-│   ├── Administrative court challenge
-│   └── EU/ECHR complaint
-└── Political accountability
-    ├── S escalates to interpellation
-    ├── KU scrutiny
-    └── Media investigation
-```
-
-### Kill Chain — HD11747 (Workplace Safety)
-
-```
-Initial: IF Metall warns Arbetsförmedlingen → (ignored) → Placement continues
-Development: Arbejdsmiljöverket inspection confirms hazards → Media report (Arbetet)
-Trigger: Johanna Haraldsson files parliamentary question HD11747
-Response: Minister Britz must respond (2026-05-06)
-Impact: Either accountability delivered OR escalation to interpellation
-```
-
-```mermaid
-graph TD
-    A["Threats 2026-04-24"] --> B["KRITISK: Barnrätt\nin kriminalvård"]
-    A --> C["HÖG: Lönestöd\n+ farliga arbetsplatser"]
-    A --> D["HÖG: Konsulärt\nskydd Burundi"]
-    A --> E["MEDEL: Energinarrativ\ndesinformation"]
-    B --> F["Tripwire: Placering\ninnan lag finns"]
-    C --> G["Tripwire: Ytterligare\nskadefall"]
-    D --> H["Tripwire: MFA svar\n2026-05-06"]
-    E --> I["Tripwire: Busch\nnormlägger narrativ"]
-    
-    style A fill:#1565C0,color:#FFFFFF
-    style B fill:#F44336,color:#FFFFFF
-    style C fill:#FF9800,color:#FFFFFF
-    style D fill:#FF9800,color:#FFFFFF
-    style E fill:#FFC107,color:#000000
-    style F fill:#B71C1C,color:#FFFFFF
-    style G fill:#F44336,color:#FFFFFF
-    style H fill:#FF9800,color:#FFFFFF
-    style I fill:#FFC107,color:#000000
 ```
 
 ## Per-document intelligence
@@ -1151,66 +803,54 @@ graph TD
     style F fill:#FFC107,color:#000000
 ```
 
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/election-2026-analysis.md -->
+## Stakeholder Perspectives
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/stakeholder-perspectives.md -->
 
-### Current Seat Map (Riksdagen 2022)
+### 6-Lens Stakeholder Impact Matrix
 
-| Party | Seats | Role | Bloc |
-|-------|-------|------|------|
-| S (Socialdemokraterna) | 107 | Main opposition | Opposition |
-| M (Moderaterna) | 68 | Government | Governing bloc |
-| SD (Sverigedemokraterna) | 73 | Support party | Tidöavtal |
-| C (Centerpartiet) | 24 | Opposition | Opposition |
-| V (Vänsterpartiet) | 24 | Opposition | Opposition |
-| KD (Kristdemokraterna) | 19 | Government | Governing bloc |
-| L (Liberalerna) | 16 | Government | Governing bloc |
-| MP (Miljöpartiet) | 18 | Opposition | Opposition |
-| **Total** | **349** | | |
+| Stakeholder | Economic | Social | Political | Legal | Cultural | International |
+|-------------|----------|--------|-----------|-------|---------|---------------|
+| Disabled workers (lönebidrag) | Direct wage/safety impact | Dignity + workplace rights | Vote signal for S | Right to safe workplace | — | — |
+| Children in Kriminalvård | — | Educational rights + wellbeing | Political accountability test | UNCRC/ECHR/Skollagen | — | EU Charter |
+| Christophe Sahabo | — | Detention — psychological harm | S scrutiny of MFA | Consular protection (Vienna Convention) | — | Burundi-Sweden relations |
+| IF Metall | — | Union accountability vindicated | Labour movement credibility | Employer oversight | Worker solidarity | — |
+| Arbetsförmedlingen | Budget/reputational risk | Agency credibility | Accountability from Riksdagen | Labour market law | — | — |
+| Kriminalvården | Implementation cost | Institutional expansion | Political oversight | Legislation required | — | — |
+| Liberalerna (L) | — | Social welfare narrative | Coalition pressure from S | Legal framework gap | — | — |
+| KD / Ebba Busch | Energy investment certainty | — | SD-KD narrative tension | EU energy compliance | — | EU energy policy |
+| M / Malmer Stenergard | — | — | Human rights credibility | Consular duty | — | Bilateral Burundi |
+| S (opposition) | — | Social rights capital | 2026 election positioning | Parliamentary accountability | Values-based messaging | MR credibility |
+| SD (Fransson) | — | — | Energy narrative positioning | — | Wind energy critique | Anti-Windeurope |
 
-**Government majority**: M(68)+KD(19)+L(16)+SD(73) = 176 vs opposition 107+24+24+18 = 173 (+ 3 independents/other)
+### Key Stakeholder Narratives
 
-### Impact of 2026-04-24 Opposition Activity on 2026 Projections
+#### S (Socialdemokraterna)
+- **Narrative**: "The government's implementation of reforms fails to protect the most vulnerable — disabled workers, incarcerated children, detained citizens."
+- **Strategic goal**: Position S as defender of vulnerable groups ahead of 2026 election.
+- **Credibility anchors**: IF Metall (HD11747), Institutet för mänskliga rättigheter (HD11749), Freedom House (HD11748).
 
-#### HD11749 Impact (Constitutional rights for children)
-- **Voter segment**: Parents, teachers, civil society, human rights advocates
-- **Electoral implication**: If S successfully establishes that government implemented unconstitutional juvenile prison education → moderate negative for L/M
-- **Seat delta**: ±1–2 seats for L depending on response quality
+#### Liberalerna (L)
+- **Narrative challenge**: L markets itself as the "conscience of the coalition" on social rights. Two questions targeting L ministers undermine this narrative.
+- **Risk**: If Britz/Mohamsson deflect to agencies, L appears complicit in implementation failures.
 
-#### HD11747 Impact (Disabled worker safety)
-- **Voter segment**: Disability rights voters, union members, S core constituency
-- **Electoral implication**: Reinforces S narrative that government has weakened labour protections; IF Metall credibility amplifies
-- **Seat delta**: Consolidates S base, minimal swing impact
-
-#### HD10448 Impact (Wind energy disinformation)
-- **Voter segment**: Energy skeptic voters (rural, SD base)
-- **Electoral implication**: SD demonstrates independence within coalition; maintains energy sovereignty narrative
-- **Seat delta**: SD retains rural energy skeptic votes (~2–3 seats worth of consolidation)
-
-### Coalition Viability Assessment
-
-**Tidöavtal coalition (post-2026 scenarios)**:
-- SD-KD energy tension (HD10448) signals potential post-election renegotiation of energy policy
-- L's social rights credibility erosion (HD11747, HD11749) could affect L vote share → risks slipping below 4% threshold (currently polling ~5-6%)
-
-**Opposition bloc (S+C+V+MP)**:
-- Needs 175 seats minimum for majority government
-- Current polling suggests roughly even race; S parliamentary activism building narrative for 2026 campaign
+#### SD (Sverigedemokraterna)
+- **Narrative**: "Legitimate criticism of wind energy is being silenced by labelling it Russian disinformation."
+- **Goal**: Protect SD's energy skepticism while forcing KD into uncomfortable position on EU energy agenda.
 
 ```mermaid
-graph TD
-    A["Val 2026\nParlamentarisk dynamik"] --> B["Tidökoalitionen\nM+KD+L+SD = 176 mandat"]
-    A --> C["Opposition\nS+C+V+MP = 173 mandat"]
-    B --> D["Spänning: L-trovärdighet\nHD11747/HD11749"]
-    B --> E["Spänning: SD-KD\nenerginarrativ HD10448"]
-    C --> F["S bygger\nansvarsutkrävande-narrativ"]
+graph LR
+    A["Stakeholders 2026-04-24"] --> B["S: 2026 election\npositioning"]
+    A --> C["L: Socialt samvete\nunder press"]
+    A --> D["SD: Energipolitisk\nnarrrativkamp"]
+    A --> E["Civilsamhälle:\nIF Metall, IMR"]
+    A --> F["Utsatta grupper:\nFunktionsnedsatta\nBarn, Sahabo"]
     
     style A fill:#1565C0,color:#FFFFFF
-    style B fill:#1E88E5,color:#FFFFFF
-    style C fill:#E53935,color:#FFFFFF
-    style D fill:#F44336,color:#FFFFFF
-    style E fill:#FF9800,color:#FFFFFF
-    style F fill:#4CAF50,color:#FFFFFF
+    style B fill:#E53935,color:#FFFFFF
+    style C fill:#1565C0,color:#FFFFFF
+    style D fill:#1E88E5,color:#FFFFFF
+    style E fill:#4CAF50,color:#FFFFFF
+    style F fill:#F44336,color:#FFFFFF
 ```
 
 ## Coalition Mathematics
@@ -1303,6 +943,362 @@ graph LR
     style E fill:#4CAF50,color:#FFFFFF
 ```
 
+## Forward Indicators
+<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/forward-indicators.md -->
+
+### Indicator Framework (4 Horizons)
+
+#### Horizon 1: 0–30 Days (Tactical)
+
+| # | Indicator | Trigger | Signal | Probability |
+|---|-----------|---------|--------|-------------|
+| 1 | Minister response HD11749 | Simona Mohamsson written answer | Answer acknowledges/denies constitutional issue | HIGH (90%) |
+| 2 | Minister response HD11747 | Johan Britz written answer | Regulatory action announced vs. deflected | HIGH (85%) |
+| 3 | SVT/Expressen story on HD11749 | Journalist pickup | Media amplification of children's rights frame | MEDIUM-HIGH (65%) |
+| 4 | Sahabo family statement | Media interview | Elevates HD11748 to news prominence | MEDIUM (45%) |
+
+#### Horizon 2: 1–3 Months (Operational)
+
+| # | Indicator | Trigger | Signal | Probability |
+|---|-----------|---------|--------|-------------|
+| 5 | KU referral on HD11749 | S tables KU notification | Constitutional committee scrutiny | MEDIUM (50%) |
+| 6 | Arbetsförmedlingen internal audit | Media pressure post HD11747 | Systemic review of wage subsidy placements | MEDIUM (40%) |
+| 7 | L party congress response | Internal party debate | L distances from coalition on rights issues | LOW-MEDIUM (30%) |
+| 8 | SD energy resolution document | SD party congress | Formal SD energy policy update | MEDIUM (45%) |
+
+#### Horizon 3: 3–9 Months (Strategic)
+
+| # | Indicator | Trigger | Signal | Probability |
+|---|-----------|---------|--------|-------------|
+| 9 | Budget amendment on disability employment | S opposition budget motion | S elevates this to budget priority | MEDIUM (55%) |
+| 10 | L polling at 4% threshold | July–August 2026 polls | L electoral viability risk | MEDIUM (40%) |
+
+#### Horizon 4: 9–18 Months (Electoral)
+
+| # | Indicator | Trigger | Signal | Probability |
+|---|-----------|---------|--------|-------------|
+| 11 | Val 2026 results | September 2026 election | Coalition renewal or change | ROUGHLY EVEN (50%) |
+| 12 | Post-election coalition negotiations | Party leaders | Which issues become coalition programme | CONTINGENT |
+
+### Indicator Collection Plan
+
+**Priority**: Monitor minister response records at riksdagen.se for HD11747, HD11748, HD11749 answers.
+**Alert threshold**: Constitutional acknowledgment in HD11749 response = SIGNIFICANT signal.
+
+## Scenario Analysis
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/scenario-analysis.md -->
+
+### Three Scenarios
+
+#### Scenario A: Government Accountability Delivered (30% probability)
+*"Substantive ministerial responses + policy adjustments"*
+
+Ministers Britz, Mohamsson, and Malmer Stenergard provide detailed, substantive written answers that (a) acknowledge the specific failures identified, (b) announce concrete corrective measures — new Arbetsförmedlingen oversight protocol, immediate legislation for juvenile education, active Burundi consular engagement — and (c) Busch gives a nuanced response on energy policy that neither endorses Windeurope wholesale nor dismisses legitimate criticism.
+
+**Outcome**: S scores a parliamentary accountability win but loses escalation material. L reputation partially recovered. SD narrows energy debate. Moderate positive for democratic function.
+
+#### Scenario B: Agency Deflection and Partial Response (50% probability)
+*"Ministers deflect to independent agencies; substantive change absent"*
+
+Britz points to Arbetsförmedlingen's own procedures; Mohamsson says legislation is coming but gives no date; Malmer Stenergard provides brief consular update; Busch gives diplomatic non-answer. Opposition gains credibility from inadequate responses. S files interpellations on HD11747 and HD11749.
+
+**Outcome**: S builds 2026 election narrative. L's social conscience claim further damaged. Issue persists into summer.
+
+#### Scenario C: Constitutional Crisis (20% probability)
+*"Implementation proceeds before legal framework — rights violations materialise"*
+
+A child is placed in a Kriminalvårds unit before the educational legal framework exists. This triggers a JO-anmälan, potential administrative court challenge, and media investigation. HD11749 becomes a landmark case for constitutional rights in juvenile justice.
+
+**Outcome**: Significant political damage to government. KU consideration. EU/ECHR scrutiny.
+
+### Probability Assessment
+
+| Scenario | Probability | Key Assumption |
+|----------|------------|----------------|
+| A: Substantive accountability | 30% | Government is responsive and has prepared answers |
+| B: Deflection + escalation | 50% | Default government communication pattern |
+| C: Constitutional violation | 20% | Implementation proceeds before Riksdag acts |
+
+```mermaid
+graph TD
+    A["2026-04-24\nOpposition frågor"] --> B["Scenario A (30%)\nSubstantiella svar\n+ åtgärder"]
+    A --> C["Scenario B (50%)\nMyndighetsdeflektering\n+ S eskalering"]
+    A --> D["Scenario C (20%)\nKonstitutionell kris\nbarnrätt"]
+    B --> E["Demokratisk\nfunktion ✅"]
+    C --> F["S vinner\nvalargument 2026"]
+    D --> G["KU-granskning\n+ EU-kritik"]
+    
+    style A fill:#1565C0,color:#FFFFFF
+    style B fill:#4CAF50,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style D fill:#F44336,color:#FFFFFF
+    style E fill:#4CAF50,color:#FFFFFF
+    style F fill:#FF9800,color:#FFFFFF
+    style G fill:#B71C1C,color:#FFFFFF
+```
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/election-2026-analysis.md -->
+
+### Current Seat Map (Riksdagen 2022)
+
+| Party | Seats | Role | Bloc |
+|-------|-------|------|------|
+| S (Socialdemokraterna) | 107 | Main opposition | Opposition |
+| M (Moderaterna) | 68 | Government | Governing bloc |
+| SD (Sverigedemokraterna) | 73 | Support party | Tidöavtal |
+| C (Centerpartiet) | 24 | Opposition | Opposition |
+| V (Vänsterpartiet) | 24 | Opposition | Opposition |
+| KD (Kristdemokraterna) | 19 | Government | Governing bloc |
+| L (Liberalerna) | 16 | Government | Governing bloc |
+| MP (Miljöpartiet) | 18 | Opposition | Opposition |
+| **Total** | **349** | | |
+
+**Government majority**: M(68)+KD(19)+L(16)+SD(73) = 176 vs opposition 107+24+24+18 = 173 (+ 3 independents/other)
+
+### Impact of 2026-04-24 Opposition Activity on 2026 Projections
+
+#### HD11749 Impact (Constitutional rights for children)
+- **Voter segment**: Parents, teachers, civil society, human rights advocates
+- **Electoral implication**: If S successfully establishes that government implemented unconstitutional juvenile prison education → moderate negative for L/M
+- **Seat delta**: ±1–2 seats for L depending on response quality
+
+#### HD11747 Impact (Disabled worker safety)
+- **Voter segment**: Disability rights voters, union members, S core constituency
+- **Electoral implication**: Reinforces S narrative that government has weakened labour protections; IF Metall credibility amplifies
+- **Seat delta**: Consolidates S base, minimal swing impact
+
+#### HD10448 Impact (Wind energy disinformation)
+- **Voter segment**: Energy skeptic voters (rural, SD base)
+- **Electoral implication**: SD demonstrates independence within coalition; maintains energy sovereignty narrative
+- **Seat delta**: SD retains rural energy skeptic votes (~2–3 seats worth of consolidation)
+
+### Coalition Viability Assessment
+
+**Tidöavtal coalition (post-2026 scenarios)**:
+- SD-KD energy tension (HD10448) signals potential post-election renegotiation of energy policy
+- L's social rights credibility erosion (HD11747, HD11749) could affect L vote share → risks slipping below 4% threshold (currently polling ~5-6%)
+
+**Opposition bloc (S+C+V+MP)**:
+- Needs 175 seats minimum for majority government
+- Current polling suggests roughly even race; S parliamentary activism building narrative for 2026 campaign
+
+```mermaid
+graph TD
+    A["Val 2026\nParlamentarisk dynamik"] --> B["Tidökoalitionen\nM+KD+L+SD = 176 mandat"]
+    A --> C["Opposition\nS+C+V+MP = 173 mandat"]
+    B --> D["Spänning: L-trovärdighet\nHD11747/HD11749"]
+    B --> E["Spänning: SD-KD\nenerginarrativ HD10448"]
+    C --> F["S bygger\nansvarsutkrävande-narrativ"]
+    
+    style A fill:#1565C0,color:#FFFFFF
+    style B fill:#1E88E5,color:#FFFFFF
+    style C fill:#E53935,color:#FFFFFF
+    style D fill:#F44336,color:#FFFFFF
+    style E fill:#FF9800,color:#FFFFFF
+    style F fill:#4CAF50,color:#FFFFFF
+```
+
+## Risk Assessment
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/risk-assessment.md -->
+
+### Risk Register
+
+| # | Risk | L (1–5) | I (1–5) | Score | Category | Mitigation |
+|---|------|---------|---------|-------|----------|------------|
+| R1 | Children placed in Kriminalvårdens new units before legal educational framework enacted | 4 | 5 | 20 | Constitutional / Legal | Immediate legislation; delay placement until framework ready |
+| R2 | Continued Arbetsförmedlingen placements at unsafe workplaces for disabled workers | 3 | 4 | 12 | Labour / Welfare | Mandatory fackliga consultation in placement decisions |
+| R3 | SD-KD coalition friction on energy narrative | 3 | 3 | 9 | Coalition stability | Busch gives diplomatic non-committal answer |
+| R4 | Swedish citizen Sahabo detained long-term without resolution | 3 | 4 | 12 | Consular / Human rights | Active MFA diplomatic engagement with Burundi |
+| R5 | Opposition questions not answered substantively (agency deflection) | 4 | 3 | 12 | Democratic accountability | Parliamentary escalation to interpellations |
+| R6 | Police reform accountability gaps persist post-JuU31 | 2 | 4 | 8 | Public safety | Government's strengthened Polismyndigheten steering |
+| R7 | New firearms law implementation challenges | 2 | 2 | 4 | Legislative | Standard regulatory implementation |
+
+### Top-3 Risk Deep Dives
+
+#### R1: Children in Prison Without Educational Legal Framework (Score: 20)
+**Cascading chain**: Placement → absence of legal framework → educational rights denied → ECHR/CRC violation → constitutional challenge → implementation halt → political crisis
+**Tripwire**: First child placed before Skollagen updated for new institutional form
+**Escalation path**: Institutet för mänskliga rättigheter → JO-anmälan → constitutional committee (KU)
+
+#### R4: Sahabo in Burundi (Score: 12)
+**Cascading chain**: Prolonged detention → lack of consular access → international pressure insufficient → political costs for Swedish MFA → S escalation
+**Tripwire**: No progress on Busch/MFA response by 2026-05-06
+
+#### R5: Democratic Accountability via Agency Deflection (Score: 12)
+**Pattern risk**: Government systematically deflects parliament's questions to independent agencies — Arbetsförmedlingen, Kriminalvården — undermining direct accountability
+**Mitigation**: Opposition can demand interpellations targeting agency oversight, not just outcomes
+
+```mermaid
+graph TD
+    A["Risk Matrix<br/>2026-04-24"] --> B["R1: Score 20\nBarn i kriminalvård\n— KRITISK"]
+    A --> C["R2/R4/R5: Score 12\nLönestöd / Sahabo\n/ Myndighetsdeflektering"]
+    A --> D["R3: Score 9\nSD-KD energifriction"]
+    A --> E["R6-R7: Score 4-8\nLäg risk"]
+    
+    style A fill:#1565C0,color:#FFFFFF
+    style B fill:#F44336,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style D fill:#FFC107,color:#000000
+    style E fill:#4CAF50,color:#FFFFFF
+```
+
+## SWOT Analysis
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/swot-analysis.md -->
+
+### Primary Stakeholder SWOT: Socialdemokraterna (S)
+
+| Quadrant | Finding | Admiralty | Evidence |
+|----------|---------|-----------|----------|
+| **Strength** | Multi-front parliamentary strategy: simultaneous questions on labour, education, foreign affairs — maximises media bandwidth | [B2] | HD11747, HD11748, HD11749 |
+| **Strength** | Questions backed by credible external sources (IF Metall, Arbetsmiljöverket, Institutet för mänskliga rättigheter) | [A2] | All three documents |
+| **Strength** | Targets Liberalerna specifically — exploiting L's rhetorical claim as social conscience | [B2] | HD11747→Britz/L, HD11749→Mohamsson/L |
+| **Strength** | Frames disability rights + children's rights as universal values — builds broad coalition | [B2] | HD11747, HD11749 |
+| **Weakness** | Questions (not interpellations) carry lower parliamentary weight — answers can be brief | [B2] | Parliamentary procedure |
+| **Weakness** | S supported elements of juvenile justice reform in 2022 — potential inconsistency | [C3] | Parliamentary record |
+| **Weakness** | Three questions in one day may be perceived as overloading rather than focused strategy | [B3] | Communications risk |
+| **Opportunity** | If government answers are inadequate → escalation to interpellations | [B2] | Parliamentary procedure |
+| **Opportunity** | 2026 election positions: disability rights + child rights + MR credibility are vote-winning themes | [B2] | Electoral context |
+| **Opportunity** | IF Metall and civil society allies amplify messaging | [B2] | Institutional ecosystem |
+| **Threat** | Answers deflect to Arbetsförmedlingen (independent authority) or Kriminalvården (ongoing process) | [B2] | Government reply patterns |
+| **Threat** | Media cycle may not amplify individual questions vs. larger news events | [C3] | Information environment |
+
+### Secondary SWOT: Sverigedemokraterna (SD — HD10448)
+
+| Quadrant | Finding | Admiralty | Evidence |
+|----------|---------|-----------|----------|
+| **Strength** | Cleverly weaponises industry report to reframe wind skepticism debate | [B2] | HD10448 text |
+| **Weakness** | Lacks constructive alternative energy policy proposal | [B3] | HD10448 — question only, no alternative |
+| **Opportunity** | Media loves the "is wind criticism = Russian disinformation" angle | [B3] | Information environment inference |
+| **Threat** | KD/Busch may give diplomatic answer that doesn't satisfy SD base | [B2] | Coalition dynamics |
+
+### TOWS Matrix
+
+| | Opportunities | Threats |
+|---|---|---|
+| **Strengths** | Use strong evidence base + multi-front to set pre-election accountability benchmark (SO) | Proactive escalation before government deflects to agencies (ST) |
+| **Weaknesses** | Choose single strongest case for interpellation focus (WO) | Coordinate with media partners on strongest HD11749 case (WT) |
+
+```mermaid
+quadrantChart
+    title SWOT Positioning — S Opposition Strategy 2026-04-24
+    x-axis Low Political Leverage --> High Political Leverage
+    y-axis Low Evidence Strength --> High Evidence Strength
+    quadrant-1 Prime cases — prioritise
+    quadrant-2 Build evidence — escalate
+    quadrant-3 De-prioritise
+    quadrant-4 Media play — credibility risk
+    HD11749 Barnrätt: [0.85, 0.90]
+    HD11747 Lönestöd: [0.80, 0.85]
+    HD11748 Sahabo: [0.65, 0.70]
+    HD10448 Vindkraft: [0.70, 0.60]
+```
+
+## Threat Analysis
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/threat-analysis.md -->
+
+### Political Threat Taxonomy
+
+| Threat | Actor | Target | Mechanism | Severity |
+|--------|-------|--------|-----------|---------|
+| Constitutional rights violation for incarcerated children | Implementation gap | Fundamental rights | Legislation absent before placement | Critical |
+| Workplace harm to disabled workers via lönebidrag | Arbetsförmedlingen / employer | Disabled workers | Agency oversight failure | High |
+| Consular protection failure — Sahabo | Burundian authorities / MFA | Swedish citizen | Authoritarian detention | High |
+| Energy narrative delegitimisation | Windeurope / SVT | Public debate | Framing opposition = disinformation | Medium |
+| Coalition fragmentation SD-KD on energy | SD | Government narrative | Parliamentary accountability pressure | Medium |
+
+### Attack Tree — HD11749 (Highest Priority)
+
+```
+Fundamental right violation (children's education in prison)
+├── Government proceeds with placements before legislation
+│   ├── No delay mechanism triggered
+│   └── Kriminalvården lacks educational mandate
+├── Legal challenge
+│   ├── JO-anmälan (Ombudsman)
+│   ├── Administrative court challenge
+│   └── EU/ECHR complaint
+└── Political accountability
+    ├── S escalates to interpellation
+    ├── KU scrutiny
+    └── Media investigation
+```
+
+### Kill Chain — HD11747 (Workplace Safety)
+
+```
+Initial: IF Metall warns Arbetsförmedlingen → (ignored) → Placement continues
+Development: Arbejdsmiljöverket inspection confirms hazards → Media report (Arbetet)
+Trigger: Johanna Haraldsson files parliamentary question HD11747
+Response: Minister Britz must respond (2026-05-06)
+Impact: Either accountability delivered OR escalation to interpellation
+```
+
+```mermaid
+graph TD
+    A["Threats 2026-04-24"] --> B["KRITISK: Barnrätt\nin kriminalvård"]
+    A --> C["HÖG: Lönestöd\n+ farliga arbetsplatser"]
+    A --> D["HÖG: Konsulärt\nskydd Burundi"]
+    A --> E["MEDEL: Energinarrativ\ndesinformation"]
+    B --> F["Tripwire: Placering\ninnan lag finns"]
+    C --> G["Tripwire: Ytterligare\nskadefall"]
+    D --> H["Tripwire: MFA svar\n2026-05-06"]
+    E --> I["Tripwire: Busch\nnormlägger narrativ"]
+    
+    style A fill:#1565C0,color:#FFFFFF
+    style B fill:#F44336,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style D fill:#FF9800,color:#FFFFFF
+    style E fill:#FFC107,color:#000000
+    style F fill:#B71C1C,color:#FFFFFF
+    style G fill:#F44336,color:#FFFFFF
+    style H fill:#FF9800,color:#FFFFFF
+    style I fill:#FFC107,color:#000000
+```
+
+## Historical Parallels
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/historical-parallels.md -->
+
+### Parallel 1: Disability Worker Rights + Agency Accountability
+
+**Case**: The 2015–2017 Arbetsförmedlingen LSS support employment scandals
+**Similarity score**: 0.72
+**Period**: ~11 years ago
+**Pattern**: Multiple cases emerged of Arbetsförmedlingen-supported placements in workplaces violating disability rights standards. Opposition (then in government, S) introduced stricter oversight.
+**Lesson**: Single well-documented case (HD11747) can snowball into systemic review if media amplifies.
+**Outcome**: Regulatory clarification; Arbetsförmedlingen monitoring strengthened.
+
+### Parallel 2: Constitutional Rights and Criminal Justice Reform Sequencing
+
+**Case**: The 2012 remand for young offenders legislation gap
+**Similarity score**: 0.65
+**Period**: ~14 years ago
+**Pattern**: Sweden implemented youth remand policy before fully updating the school regulations that governed education in remand facilities, leading to JO criticism.
+**Lesson**: Implementation-before-legislation is a recurring Swedish governance failure pattern.
+**Current relevance**: HD11749 repeats this exact pattern.
+
+### Parallel 3: Energy Policy and Parliamentary Narrative Challenges
+
+**Case**: The 2017–2019 Riksdag debates over wind energy subsidies (Alliansen opposition period)
+**Similarity score**: 0.58
+**Period**: ~7–9 years ago
+**Pattern**: SD and M used parliamentary questions and interpellations to challenge renewable energy policy, framing wind subsidies as economically irrational. Government (S-MP) defended wind energy.
+**Lesson**: Energy narrative battles play out over multiple parliamentary sessions; no single interpellation resolves them.
+
+```mermaid
+graph LR
+    A["HD11747 2026"] -- "parallell (0.72)" --> B["AF LSS-skandaler\n2015-2017"]
+    C["HD11749 2026"] -- "parallell (0.65)" --> D["Ungdomsremiss\nskollag 2012"]
+    E["HD10448 2026"] -- "parallell (0.58)" --> F["Vindkraft-debatt\n2017-2019"]
+    
+    style A fill:#FF9800,color:#FFFFFF
+    style B fill:#1565C0,color:#FFFFFF
+    style C fill:#F44336,color:#FFFFFF
+    style D fill:#1565C0,color:#FFFFFF
+    style E fill:#1E88E5,color:#FFFFFF
+    style F fill:#1565C0,color:#FFFFFF
+```
+
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/comparative-international.md -->
 
@@ -1372,49 +1368,6 @@ graph LR
     style E fill:#FF9800,color:#FFFFFF
 ```
 
-## Historical Parallels
-<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/historical-parallels.md -->
-
-### Parallel 1: Disability Worker Rights + Agency Accountability
-
-**Case**: The 2015–2017 Arbetsförmedlingen LSS support employment scandals
-**Similarity score**: 0.72
-**Period**: ~11 years ago
-**Pattern**: Multiple cases emerged of Arbetsförmedlingen-supported placements in workplaces violating disability rights standards. Opposition (then in government, S) introduced stricter oversight.
-**Lesson**: Single well-documented case (HD11747) can snowball into systemic review if media amplifies.
-**Outcome**: Regulatory clarification; Arbetsförmedlingen monitoring strengthened.
-
-### Parallel 2: Constitutional Rights and Criminal Justice Reform Sequencing
-
-**Case**: The 2012 remand for young offenders legislation gap
-**Similarity score**: 0.65
-**Period**: ~14 years ago
-**Pattern**: Sweden implemented youth remand policy before fully updating the school regulations that governed education in remand facilities, leading to JO criticism.
-**Lesson**: Implementation-before-legislation is a recurring Swedish governance failure pattern.
-**Current relevance**: HD11749 repeats this exact pattern.
-
-### Parallel 3: Energy Policy and Parliamentary Narrative Challenges
-
-**Case**: The 2017–2019 Riksdag debates over wind energy subsidies (Alliansen opposition period)
-**Similarity score**: 0.58
-**Period**: ~7–9 years ago
-**Pattern**: SD and M used parliamentary questions and interpellations to challenge renewable energy policy, framing wind subsidies as economically irrational. Government (S-MP) defended wind energy.
-**Lesson**: Energy narrative battles play out over multiple parliamentary sessions; no single interpellation resolves them.
-
-```mermaid
-graph LR
-    A["HD11747 2026"] -- "parallell (0.72)" --> B["AF LSS-skandaler\n2015-2017"]
-    C["HD11749 2026"] -- "parallell (0.65)" --> D["Ungdomsremiss\nskollag 2012"]
-    E["HD10448 2026"] -- "parallell (0.58)" --> F["Vindkraft-debatt\n2017-2019"]
-    
-    style A fill:#FF9800,color:#FFFFFF
-    style B fill:#1565C0,color:#FFFFFF
-    style C fill:#F44336,color:#FFFFFF
-    style D fill:#1565C0,color:#FFFFFF
-    style E fill:#1E88E5,color:#FFFFFF
-    style F fill:#1565C0,color:#FFFFFF
-```
-
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/implementation-feasibility.md -->
 
@@ -1455,6 +1408,53 @@ graph LR
 - **Risk**: Medium — political cost of SD public pressure
 
 ### Overall Feasibility Score: 3/4 demands technically achievable within 12 months
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/media-framing-analysis.md -->
+
+### Primary Frame: Accountability vs. Deflection
+
+The opposition (S) documents cluster around **accountability framing**: establishing that the Tidö government is failing on welfare, rights, and social protection. Expected media frames:
+
+| Story | Expected S Frame | Expected Government Frame | Expected SD Frame |
+|-------|-----------------|--------------------------|------------------|
+| HD11747 (disabled workers) | "Government tolerates exploitation" | "Arbetsförmedlingen investigating" | "Too many bureaucrats" |
+| HD11749 (prison children education) | "Government broke children's rights" | "Reform ongoing, law compliant" | "Criminals shouldn't get more rights" |
+| HD11748 (detained Swede) | "Government abandons citizens abroad" | "Diplomatic channels active" | (foreign policy — stay quiet) |
+| HD10448 (wind energy) | "Government propagates misinformation" | "Energy policy sound" | "Wind energy is unreliable" |
+
+### Key Framing Tensions
+
+**HD11749** creates a rights vs. public safety frame clash:
+- S/MP/V: "Constitutional rights apply even to incarcerated youth"
+- SD/KD: "Prison is prison; education is secondary to order"
+- L (difficult): L is historically pro-rights but part of governing coalition
+
+**HD10448** creates a truth-in-politics meta-frame:
+- SD challenges the government minister to address "disinformation" framing
+- KD (Ebba Busch as minister) is in an awkward position defending the energy narrative
+- This is **intra-coalition tension** unusually visible
+
+### Media Amplification Risk
+
+| Document | Amplification Probability | Key Outlet |
+|----------|--------------------------|------------|
+| HD11747 | MEDIUM-HIGH | Arbetet, Metro, SVT Nyheter |
+| HD11749 | HIGH | SVT, Expressen |
+| HD10448 | MEDIUM | Ny Teknik, SvD |
+| HD11748 | LOW | TT, UD |
+
+```mermaid
+graph TD
+    A["Mediaberättelse\n2026-04-24"] --> B["HD11749: Barnrättigheter\n—Hög amplifikation"]
+    A --> C["HD11747: Arbetsrätt\n—Medel amplifikation"]
+    A --> D["HD10448: Energi\n—Låg-medel amplifikation"]
+    
+    style A fill:#1565C0,color:#FFFFFF
+    style B fill:#E53935,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style D fill:#1E88E5,color:#FFFFFF
+```
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/devils-advocate.md -->
@@ -1747,13 +1747,6 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/threat-analysis.md)
 - [`documents/HD01CU24-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/documents/HD01CU24-analysis.md)
 - [`documents/HD01JuU10-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/documents/HD01JuU10-analysis.md)
 - [`documents/HD01JuU31-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/documents/HD01JuU31-analysis.md)
@@ -1762,12 +1755,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`documents/HD11747-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/documents/HD11747-analysis.md)
 - [`documents/HD11748-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/documents/HD11748-analysis.md)
 - [`documents/HD11749-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/documents/HD11749-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/motions/cross-reference-map.md)

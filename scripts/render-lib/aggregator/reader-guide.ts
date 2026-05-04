@@ -44,6 +44,12 @@ export interface ReaderGuideEntry {
  * Intelligence Guide, in display order. Each entry corresponds to one
  * artifact in {@link ../order.js#AGGREGATION_ORDER}; entries whose
  * artifact is missing from a given subfolder are filtered out.
+ *
+ * Order mirrors the journalist-optimal narrative arc: BLUF → Key
+ * Judgments → so-what ranking → forward indicators → scenarios → risk
+ * register → narrative-environment / influence-operations LAST so
+ * readers form their own view of substance before being shown how the
+ * story is being framed.
  */
 export const READER_GUIDE_ENTRIES: readonly ReaderGuideEntry[] = [
   {
@@ -62,12 +68,6 @@ export const READER_GUIDE_ENTRIES: readonly ReaderGuideEntry[] = [
     readerValue: 'why this story outranks or trails other same-day parliamentary signals',
   },
   {
-    file: 'media-framing-analysis.md',
-    label: 'Media framing & influence operations',
-    readerValue:
-      'frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder',
-  },
-  {
     file: 'forward-indicators.md',
     label: 'Forward indicators',
     readerValue: 'dated watch items that let readers verify or falsify the assessment later',
@@ -81,6 +81,12 @@ export const READER_GUIDE_ENTRIES: readonly ReaderGuideEntry[] = [
     file: 'risk-assessment.md',
     label: 'Risk assessment',
     readerValue: 'policy, electoral, institutional, communications, and implementation risk register',
+  },
+  {
+    file: 'media-framing-analysis.md',
+    label: 'Media framing & influence operations',
+    readerValue:
+      'frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder',
   },
 ];
 

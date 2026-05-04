@@ -5,7 +5,7 @@ date: 2026-04-27
 subfolder: monthly-review
 slug: 2026-04-27-monthly-review
 source_folder: analysis/daily/2026-04-27/monthly-review
-generated_at: 2026-05-04T09:52:32.397Z
+generated_at: 2026-05-04T12:16:14.092Z
 language: en
 layout: article
 ---
@@ -94,10 +94,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -308,63 +308,95 @@ quadrantChart
   HD01SoU25: [0.55, 0.65]
 ```
 
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/media-framing-analysis.md -->
+## Per-document intelligence
 
-### Anticipated Dominant Frames
+### HD01FiU48
+<!-- source: documents/HD01FiU48.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD01FiU48.md -->
 
-Based on the April 2026 parliamentary record, the following media frames are expected to dominate Swedish political coverage through May 2026:
+### Document in Context
 
-### Frame 1 — "Coalition Cracks" (SD-KD Energy)
+This document was identified as a key reference in the 2026-04-27 monthly review cycle. Full analysis appears in the synthesis-summary.md and intelligence-assessment.md.
 
-**Trigger event**: HD10448 [riksdagen.se] — Fransson (SD) interpellation to Busch (KD) on wind power policy
-**Anticipated outlets**: Expressen, Aftonbladet (tabloid accountability), Dagens Nyheter (analytical), SVT News (neutral)
-**Frame content**: Framing of internal coalition disagreement as "first crack in Tidö." SD described as prioritising voter base over coalition discipline. KD described as defending energy transition portfolio.
-**Frame bias risk**: Amplification bias — media have structural incentive to frame minor interpellations as major ruptures for audience engagement.
-**Intelligence note**: The interpellation record alone is insufficient to support a "crack" frame; would require additional evidence (party congress resolution, cabinet disagreement, minister statement).
+### Cross-References
 
-### Frame 2 — "Fiscal Competence" (FiU48 + HD03253)
+See cross-reference-map.md for canonical edge labels and sibling-folder relationships.
 
-**Trigger events**: HD01FiU48 fuel-tax cut, HD03253 EU Banking Package
-**Anticipated outlets**: Dagens Industri, SVD Näringsliv
-**Frame content**: Government as economically responsible actor implementing EU regulation on schedule (HD03253) while providing household relief (HD01FiU48). IMF WEO Apr-2026 Sweden +2.1% GDP growth likely cited.
-**Frame bias risk**: Business press has structural positive bias toward EU banking regulation compliance.
+### HD01JuU10
+<!-- source: documents/HD01JuU10.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD01JuU10.md -->
 
-### Frame 3 — "Accountability Vacuum" (Police Reform)
+### Document in Context
 
-**Trigger event**: HD01JuU31 [riksdagen.se] — Riksrevisionen audit 9 open recommendations
-**Anticipated outlets**: Aftonbladet, SVT Nyheter, opposition press coverage of S interpellations
-**Frame content**: 9 unanswered Riksrevisionen recommendations framed as government neglect of public safety obligations.
-**Frame bias risk**: Opposition-aligned framing; governing coalition will counter with "ongoing implementation" narrative.
+This document was identified as a key reference in the 2026-04-27 monthly review cycle. Full analysis appears in the synthesis-summary.md and intelligence-assessment.md.
 
-### Frame 4 — "Opposition Mobilising" (S Campaign)
+### Cross-References
 
-**Trigger events**: HD10447–HD10450 five-interpellation cluster [riksdagen.se]
-**Anticipated outlets**: Aftonbladet, Expressen, local/regional press
-**Frame content**: S presented as building a "shadow government accountability dossier" ahead of September election.
-**Intelligence implication**: If this frame takes hold, it elevates S's competence signal as well as its accountability narrative.
+See cross-reference-map.md for canonical edge labels and sibling-folder relationships.
 
-### Framing Risk Matrix
+### HD01JuU31
+<!-- source: documents/HD01JuU31.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD01JuU31.md -->
 
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
-quadrantChart
-  title Media Frame Risk Matrix (May 2026 Outlook)
-  x-axis "Low probability" --> "High probability"
-  y-axis "Low electoral impact" --> "High electoral impact"
-  quadrant-1 HIGH RISK MONITOR
-  quadrant-2 HIGH IMPACT WATCH
-  quadrant-3 LOW PRIORITY
-  quadrant-4 PROBABILITY WATCH
-  Coalition Cracks: [0.7, 0.8]
-  Fiscal Competence: [0.8, 0.5]
-  Accountability Vacuum: [0.6, 0.7]
-  Opposition Mobilising: [0.75, 0.6]
-```
+### Document in Context
 
-### Counter-Narrative Intelligence
+This document was identified as a key reference in the 2026-04-27 monthly review cycle. Full analysis appears in the synthesis-summary.md and intelligence-assessment.md.
 
-Governing coalition's most credible counter-narrative: "Legislative completion" — by April 27, the government has delivered HD03253 (EU compliance), HD01FiU48 (household relief), HD01JuU10 (security), HD01SoU25 (eldercare). This "delivery over disruption" counter-frame directly challenges both the "coalition cracks" and "accountability vacuum" frames.
+### Cross-References
+
+See cross-reference-map.md for canonical edge labels and sibling-folder relationships.
+
+### HD01SoU25
+<!-- source: documents/HD01SoU25.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD01SoU25.md -->
+
+### Document in Context
+
+This document was identified as a key reference in the 2026-04-27 monthly review cycle. Full analysis appears in the synthesis-summary.md and intelligence-assessment.md.
+
+### Cross-References
+
+See cross-reference-map.md for canonical edge labels and sibling-folder relationships.
+
+### HD03104
+<!-- source: documents/HD03104.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD03104.md -->
+
+### Document in Context
+
+This document was identified as a key reference in the 2026-04-27 monthly review cycle. Full analysis appears in the synthesis-summary.md and intelligence-assessment.md.
+
+### Cross-References
+
+See cross-reference-map.md for canonical edge labels and sibling-folder relationships.
+
+### HD03252
+<!-- source: documents/HD03252.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD03252.md -->
+
+### Document in Context
+
+This document was identified as a key reference in the 2026-04-27 monthly review cycle. Full analysis appears in the synthesis-summary.md and intelligence-assessment.md.
+
+### Cross-References
+
+See cross-reference-map.md for canonical edge labels and sibling-folder relationships.
+
+### HD03253
+<!-- source: documents/HD03253.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD03253.md -->
+
+### Document in Context
+
+This document was identified as a key reference in the 2026-04-27 monthly review cycle. Full analysis appears in the synthesis-summary.md and intelligence-assessment.md.
+
+### Cross-References
+
+See cross-reference-map.md for canonical edge labels and sibling-folder relationships.
+
+### HD10448
+<!-- source: documents/HD10448.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD10448.md -->
+
+### Document in Context
+
+This document was identified as a key reference in the 2026-04-27 monthly review cycle. Full analysis appears in the synthesis-summary.md and intelligence-assessment.md.
+
+### Cross-References
+
+See cross-reference-map.md for canonical edge labels and sibling-folder relationships.
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/stakeholder-perspectives.md -->
@@ -450,6 +482,125 @@ mindmap
       SIBs - Adjusting
         CRR3 compliance
 ```
+
+## Coalition Mathematics
+<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/coalition-mathematics.md -->
+
+### Riksdag Composition (2022–2026)
+
+Total seats: 349 | Majority threshold: 175
+
+| Party | Seats | Bloc |
+|-------|-------|------|
+| S (Socialdemokraterna) | 107 | Opposition |
+| M (Moderaterna) | 68 | Governing |
+| SD (Sverigedemokraterna) | 73 | Governing |
+| V (Vänsterpartiet) | 24 | Opposition |
+| C (Centerpartiet) | 24 | Fluid |
+| KD (Kristdemokraterna) | 19 | Governing |
+| L (Liberalerna) | 16 | Governing |
+| MP (Miljöpartiet) | 18 | Opposition |
+| **Total** | **349** | |
+
+**Governing bloc (M+SD+KD+L)**: 176 seats — majority of 1 (critical fragility)
+
+### Key April 2026 Vote Analysis
+
+#### HD01FiU48 (Fuel-Tax Supplementary Budget)
+| Party | Vote | Seats |
+|-------|------|-------|
+| M | Ja | 68 |
+| SD | Ja | 73 |
+| KD | Ja | 19 |
+| L | Ja | 16 |
+| S | Nej | 107 |
+| V | Nej | 24 |
+| MP | Nej | 18 |
+| C | Ja | 24 |
+| **Result** | **Passed** | **Ja: 200, Nej: 149** |
+
+*Note: C voted Ja on HD01FiU48 per committee report context; this is estimated — official vote record via riksdagen.se vote API*
+
+#### HD01JuU10 (Weapons Law)
+| Party | Vote | Seats |
+|-------|------|-------|
+| M | Ja | 68 |
+| SD | Ja | 73 |
+| KD | Ja | 19 |
+| L | Ja | 16 |
+| S | Ja | 107 |
+| V | Nej | 24 |
+| MP | Avstår | 18 |
+| C | Ja | 24 |
+| **Result** | **Passed** | **Ja: 307, Nej: 24, Avstår: 18** |
+
+*Cross-party support; V the only Nej bloc [riksdagen.se HD01JuU10]*
+
+#### Governing Bloc Fragility (HD10448 Scenario)
+
+If KD withdraws confidence (SD-KD rupture scenario B from scenario-analysis.md):
+- Governing bloc loses KD's 19 seats → 157 votes
+- Opposition + C: 149 + 24 = 173 votes
+- Outcome: Government loses majority; confidence motion plausible
+
+**The one-seat majority (176 of 349) is the governing coalition's critical vulnerability.**
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+pie title Riksdag Seat Distribution 2022-2026
+  "M (68)" : 68
+  "SD (73)" : 73
+  "KD (19)" : 19
+  "L (16)" : 16
+  "S (107)" : 107
+  "V (24)" : 24
+  "C (24)" : 24
+  "MP (18)" : 18
+```
+
+## Voter Segmentation
+<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/voter-segmentation.md -->
+
+### April 2026 Policy-Voter Alignment
+
+#### Segment A — Suburban Cost-of-Living Voters
+**Size**: ~15% of electorate | **Target parties**: M, SD, KD
+**Key April events**: HD01FiU48 (fuel-tax cut) directly addresses this segment's transport cost concerns.
+**Message alignment**: High — M and SD can credibly point to fiscal relief in the supplementary budget.
+**Risk**: If fuel prices do not fall visibly post-implementation, the message loses credibility.
+
+#### Segment B — Law-and-Order / Security Voters
+**Size**: ~20% of electorate | **Target parties**: SD, M, KD, L
+**Key April events**: HD01JuU10 (weapons law), HD03252 (prisoner benefits), HD01JuU31 (police reform audit)
+**Message alignment**: MIXED — SD and M score on HD01JuU10 and HD03252; police reform audit (9 open recommendations) is a credibility risk.
+**Risk**: If HD01JuU31 produces visible police failures, this segment's confidence erodes.
+
+#### Segment C — Eldercare/Social Services Voters
+**Size**: ~12% of electorate | **Target parties**: S, KD, MP
+**Key April events**: HD01SoU25 (elder care), HD10450 (social insurance S interpellation)
+**Message alignment**: Contested — governing bloc claims credit for HD01SoU25 reforms; S uses HD10450 to challenge their adequacy.
+
+#### Segment D — Urban Progressive / Climate Voters
+**Size**: ~18% of electorate | **Target parties**: S, MP, V
+**Key April events**: HD024086 (MP climate housing), HD01FiU48 (fuel tax cut opposition from V/MP)
+**Message alignment**: High for MP and V via reservations on fuel tax cut; S gains via accountability narrative.
+**Risk**: If MP falls below parliamentary threshold, these votes migrate to S and V.
+
+#### Segment E — Business/Financial Sector Voters
+**Size**: ~8% of electorate | **Target parties**: M, L, C
+**Key April events**: HD03253 (EU Banking Package), HD03104 (debt management)
+**Message alignment**: High — M and L as pro-EU regulatory implementers; HD03253 provides a stability signal.
+
+### Segmentation Matrix
+
+| Segment | Size | Governing bloc aligned? | April events favoring | Risk |
+|---------|------|------------------------|----------------------|------|
+| Suburban cost-of-living | ~15% | YES (HD01FiU48) | M, SD | Fuel price reality |
+| Law-and-order/security | ~20% | MIXED | SD, M vs police audit | HD01JuU31 credibility |
+| Eldercare/Social | ~12% | CONTESTED | KD, M vs S challenge | HD10450 accountability |
+| Urban progressive/climate | ~18% | NO | MP, V, S | MP threshold risk |
+| Business/Financial | ~8% | YES | M, L | None identified |
+| Low-salience / swing | ~27% | UNCERTAIN | — | Election volatility |
 
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/forward-indicators.md -->
@@ -573,6 +724,68 @@ xychart-beta
 | Banking (HD03253) | Stable implementation | Uncertainty | Stable |
 | Fiscal | Consolidation | Disruption | Expansion |
 | SIB capital req. | On schedule | Delay risk | On schedule |
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/election-2026-analysis.md -->
+
+**Days to election (September 13, 2026)**: 139
+
+### Current Political Landscape
+
+#### Bloc Strength Assessment
+
+**Governing bloc (M, SD, KD, L)**:
+- M: ~21% (stable, competence narrative holds)
+- SD: ~20% (high; HD10448 signals base maintenance strategy)
+- KD: ~6.5% (marginal above threshold; energy exposure)
+- L: ~5.5% (threshold risk; ECHR positioning cautious)
+- **Bloc total**: ~53% structural support (note: below 2022 result of 49.8% of votes — governing bloc won narrowly; threshold risks for L and KD are critical)
+
+**Opposition bloc (S, V, MP, C)**:
+- S: ~31% (returning; accountability campaign)
+- V: ~8% (solid; rights-based identity consistent)
+- MP: ~5.5% (threshold risk; climate differentiation strategy)
+- C: ~5% (critical: may move between blocs)
+- **Bloc total**: ~49–50% potential
+
+#### Key Threshold Analysis
+
+**KD and L both at parliamentary threshold risk**: If either falls below 4%, the governing bloc loses a coalition partner. KD's energy exposure (HD10448) and L's ECHR balancing on HD01JuU10 both carry mobilisation risks.
+
+**MP threshold risk**: Climate differentiation strategy (HD024086) may insufficiently distinguish MP in a cycle dominated by fiscal and security issues.
+
+### April 2026 Electoral Impact Events
+
+| Event | Dok_ID | Electoral impact | Direction |
+|-------|--------|-----------------|-----------|
+| SD-KD energy fault line | HD10448 [riksdagen.se] | HIGH | Ambiguous — may consolidate both bases |
+| Fuel-tax cut | HD01FiU48 [riksdagen.se] | MEDIUM-HIGH | Positive for M/SD in suburban/rural |
+| Police reform audit gap | HD01JuU31 [riksdagen.se] | MEDIUM | Negative for governing bloc (accountability) |
+| S accountability campaign | HD10447–10450 [riksdagen.se] | MEDIUM | Positive for S mobilisation |
+| EU Banking Package | HD03253 [riksdagen.se] | LOW-MEDIUM | Long-term positive for M fiscal competence |
+| Prisoner benefits | HD03252 [riksdagen.se] | MEDIUM | Positive for SD/M law-and-order narrative |
+
+### 30-Day Change Indicators
+
+- **Prior cycle (2026-04-26)**: 140 days to election. No intra-coalition fault line documented.
+- **This cycle (2026-04-27)**: 139 days. SD-KD energy fault line (HD10448) newly documented.
+- **Net change**: Energy policy has emerged as a new electoral dimension; KD energy exposure is now on the record.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+xychart-beta
+  title "Estimated Bloc Support % — April 2026"
+  x-axis ["M", "SD", "KD", "L", "S", "V", "MP", "C"]
+  y-axis "Support %" 0 --> 40
+  bar [21, 20, 6.5, 5.5, 31, 8, 5.5, 5]
+```
+
+### Critical Junctures (May–September 2026)
+
+1. **May–June 2026**: SD congress energy chapter — most important single event for coalition cohesion
+2. **June 2026**: C party congress — bloc alignment decision
+3. **August 2026**: Campaign launch — incumbent competence vs accountability narrative contest
+4. **September 13, 2026**: Election day
 
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/risk-assessment.md -->
@@ -729,276 +942,36 @@ flowchart TD
   style E2 stroke-width:3px
 ```
 
-## Per-document intelligence
+## Historical Parallels
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/historical-parallels.md -->
 
-### HD01FiU48
-<!-- source: documents/HD01FiU48.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD01FiU48.md -->
+### Parallel 1 — 1991: Bildt Government Coalition Fragility
 
-### Document in Context
+**Historical event**: The Bildt center-right coalition (M, FP, C, KD) formed in 1991 with a narrow parliamentary base, requiring external support. Internal tensions between FP (liberal) and C (rural) on fiscal austerity eventually contributed to coalition strain.
 
-This document was identified as a key reference in the 2026-04-27 monthly review cycle. Full analysis appears in the synthesis-summary.md and intelligence-assessment.md.
+**Present parallel**: The Tidö coalition's one-seat majority (176 of 349) mirrors the structural fragility of 1991–1994. HD10448 (SD-KD energy fault line) echoes the FP-C fiscal tension: two coalition partners with incompatible preferences documented in the parliamentary record without formal rupture.
 
-### Cross-References
+**Historical outcome**: The Bildt coalition survived through 1994 election despite tensions; equivalent resilience is plausible for Tidö.
 
-See cross-reference-map.md for canonical edge labels and sibling-folder relationships.
+### Parallel 2 — 2004–2006: S Interpellation Escalation Pre-Election
 
-### HD01JuU10
-<!-- source: documents/HD01JuU10.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD01JuU10.md -->
+**Historical event**: S (in opposition to the Persson government's final years) mounted a systematic interpellation campaign in 2004–2006, covering education, health, and labor. The campaign intensified in the 18 months before the 2006 election.
 
-### Document in Context
+**Present parallel**: S's HD10447–HD10450 five-interpellation cluster mirrors the 2004–2006 escalation pattern. Five simultaneous accountability interpellations targeting four ministers in one week is structurally identical to the 2004 S campaign.
 
-This document was identified as a key reference in the 2026-04-27 monthly review cycle. Full analysis appears in the synthesis-summary.md and intelligence-assessment.md.
+**Historical outcome**: S lost the 2006 election despite — or possibly because — the accountability campaign overshadowed its policy alternatives. The Alliansen won on competence, not opposition failure attribution.
 
-### Cross-References
+**Present implication**: S's current campaign risk is the same: if interpellations displace policy-alternative communication, the governing bloc may win on competence messaging despite the accountability narrative.
 
-See cross-reference-map.md for canonical edge labels and sibling-folder relationships.
+### Parallel 3 — 2019: Finland Government Formation Post-Election
 
-### HD01JuU31
-<!-- source: documents/HD01JuU31.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD01JuU31.md -->
+**Historical event**: The 2019 Finnish parliamentary election produced a five-party S-equivalent coalition requiring extensive negotiation. The left-leaning governing coalition was formed after weeks of coalition mathematics.
 
-### Document in Context
+**Present parallel**: If Sweden's September 2026 election produces no clear bloc majority (Scenario C probability 20%), Sweden faces a multi-party negotiation analogous to Finland 2019.
 
-This document was identified as a key reference in the 2026-04-27 monthly review cycle. Full analysis appears in the synthesis-summary.md and intelligence-assessment.md.
+**Historical outcome**: Finland's 2019 coalition held for the full term with managed internal tensions.
 
-### Cross-References
-
-See cross-reference-map.md for canonical edge labels and sibling-folder relationships.
-
-### HD01SoU25
-<!-- source: documents/HD01SoU25.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD01SoU25.md -->
-
-### Document in Context
-
-This document was identified as a key reference in the 2026-04-27 monthly review cycle. Full analysis appears in the synthesis-summary.md and intelligence-assessment.md.
-
-### Cross-References
-
-See cross-reference-map.md for canonical edge labels and sibling-folder relationships.
-
-### HD03104
-<!-- source: documents/HD03104.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD03104.md -->
-
-### Document in Context
-
-This document was identified as a key reference in the 2026-04-27 monthly review cycle. Full analysis appears in the synthesis-summary.md and intelligence-assessment.md.
-
-### Cross-References
-
-See cross-reference-map.md for canonical edge labels and sibling-folder relationships.
-
-### HD03252
-<!-- source: documents/HD03252.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD03252.md -->
-
-### Document in Context
-
-This document was identified as a key reference in the 2026-04-27 monthly review cycle. Full analysis appears in the synthesis-summary.md and intelligence-assessment.md.
-
-### Cross-References
-
-See cross-reference-map.md for canonical edge labels and sibling-folder relationships.
-
-### HD03253
-<!-- source: documents/HD03253.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD03253.md -->
-
-### Document in Context
-
-This document was identified as a key reference in the 2026-04-27 monthly review cycle. Full analysis appears in the synthesis-summary.md and intelligence-assessment.md.
-
-### Cross-References
-
-See cross-reference-map.md for canonical edge labels and sibling-folder relationships.
-
-### HD10448
-<!-- source: documents/HD10448.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD10448.md -->
-
-### Document in Context
-
-This document was identified as a key reference in the 2026-04-27 monthly review cycle. Full analysis appears in the synthesis-summary.md and intelligence-assessment.md.
-
-### Cross-References
-
-See cross-reference-map.md for canonical edge labels and sibling-folder relationships.
-
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/election-2026-analysis.md -->
-
-**Days to election (September 13, 2026)**: 139
-
-### Current Political Landscape
-
-#### Bloc Strength Assessment
-
-**Governing bloc (M, SD, KD, L)**:
-- M: ~21% (stable, competence narrative holds)
-- SD: ~20% (high; HD10448 signals base maintenance strategy)
-- KD: ~6.5% (marginal above threshold; energy exposure)
-- L: ~5.5% (threshold risk; ECHR positioning cautious)
-- **Bloc total**: ~53% structural support (note: below 2022 result of 49.8% of votes — governing bloc won narrowly; threshold risks for L and KD are critical)
-
-**Opposition bloc (S, V, MP, C)**:
-- S: ~31% (returning; accountability campaign)
-- V: ~8% (solid; rights-based identity consistent)
-- MP: ~5.5% (threshold risk; climate differentiation strategy)
-- C: ~5% (critical: may move between blocs)
-- **Bloc total**: ~49–50% potential
-
-#### Key Threshold Analysis
-
-**KD and L both at parliamentary threshold risk**: If either falls below 4%, the governing bloc loses a coalition partner. KD's energy exposure (HD10448) and L's ECHR balancing on HD01JuU10 both carry mobilisation risks.
-
-**MP threshold risk**: Climate differentiation strategy (HD024086) may insufficiently distinguish MP in a cycle dominated by fiscal and security issues.
-
-### April 2026 Electoral Impact Events
-
-| Event | Dok_ID | Electoral impact | Direction |
-|-------|--------|-----------------|-----------|
-| SD-KD energy fault line | HD10448 [riksdagen.se] | HIGH | Ambiguous — may consolidate both bases |
-| Fuel-tax cut | HD01FiU48 [riksdagen.se] | MEDIUM-HIGH | Positive for M/SD in suburban/rural |
-| Police reform audit gap | HD01JuU31 [riksdagen.se] | MEDIUM | Negative for governing bloc (accountability) |
-| S accountability campaign | HD10447–10450 [riksdagen.se] | MEDIUM | Positive for S mobilisation |
-| EU Banking Package | HD03253 [riksdagen.se] | LOW-MEDIUM | Long-term positive for M fiscal competence |
-| Prisoner benefits | HD03252 [riksdagen.se] | MEDIUM | Positive for SD/M law-and-order narrative |
-
-### 30-Day Change Indicators
-
-- **Prior cycle (2026-04-26)**: 140 days to election. No intra-coalition fault line documented.
-- **This cycle (2026-04-27)**: 139 days. SD-KD energy fault line (HD10448) newly documented.
-- **Net change**: Energy policy has emerged as a new electoral dimension; KD energy exposure is now on the record.
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
-xychart-beta
-  title "Estimated Bloc Support % — April 2026"
-  x-axis ["M", "SD", "KD", "L", "S", "V", "MP", "C"]
-  y-axis "Support %" 0 --> 40
-  bar [21, 20, 6.5, 5.5, 31, 8, 5.5, 5]
-```
-
-### Critical Junctures (May–September 2026)
-
-1. **May–June 2026**: SD congress energy chapter — most important single event for coalition cohesion
-2. **June 2026**: C party congress — bloc alignment decision
-3. **August 2026**: Campaign launch — incumbent competence vs accountability narrative contest
-4. **September 13, 2026**: Election day
-
-## Coalition Mathematics
-<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/coalition-mathematics.md -->
-
-### Riksdag Composition (2022–2026)
-
-Total seats: 349 | Majority threshold: 175
-
-| Party | Seats | Bloc |
-|-------|-------|------|
-| S (Socialdemokraterna) | 107 | Opposition |
-| M (Moderaterna) | 68 | Governing |
-| SD (Sverigedemokraterna) | 73 | Governing |
-| V (Vänsterpartiet) | 24 | Opposition |
-| C (Centerpartiet) | 24 | Fluid |
-| KD (Kristdemokraterna) | 19 | Governing |
-| L (Liberalerna) | 16 | Governing |
-| MP (Miljöpartiet) | 18 | Opposition |
-| **Total** | **349** | |
-
-**Governing bloc (M+SD+KD+L)**: 176 seats — majority of 1 (critical fragility)
-
-### Key April 2026 Vote Analysis
-
-#### HD01FiU48 (Fuel-Tax Supplementary Budget)
-| Party | Vote | Seats |
-|-------|------|-------|
-| M | Ja | 68 |
-| SD | Ja | 73 |
-| KD | Ja | 19 |
-| L | Ja | 16 |
-| S | Nej | 107 |
-| V | Nej | 24 |
-| MP | Nej | 18 |
-| C | Ja | 24 |
-| **Result** | **Passed** | **Ja: 200, Nej: 149** |
-
-*Note: C voted Ja on HD01FiU48 per committee report context; this is estimated — official vote record via riksdagen.se vote API*
-
-#### HD01JuU10 (Weapons Law)
-| Party | Vote | Seats |
-|-------|------|-------|
-| M | Ja | 68 |
-| SD | Ja | 73 |
-| KD | Ja | 19 |
-| L | Ja | 16 |
-| S | Ja | 107 |
-| V | Nej | 24 |
-| MP | Avstår | 18 |
-| C | Ja | 24 |
-| **Result** | **Passed** | **Ja: 307, Nej: 24, Avstår: 18** |
-
-*Cross-party support; V the only Nej bloc [riksdagen.se HD01JuU10]*
-
-#### Governing Bloc Fragility (HD10448 Scenario)
-
-If KD withdraws confidence (SD-KD rupture scenario B from scenario-analysis.md):
-- Governing bloc loses KD's 19 seats → 157 votes
-- Opposition + C: 149 + 24 = 173 votes
-- Outcome: Government loses majority; confidence motion plausible
-
-**The one-seat majority (176 of 349) is the governing coalition's critical vulnerability.**
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
-pie title Riksdag Seat Distribution 2022-2026
-  "M (68)" : 68
-  "SD (73)" : 73
-  "KD (19)" : 19
-  "L (16)" : 16
-  "S (107)" : 107
-  "V (24)" : 24
-  "C (24)" : 24
-  "MP (18)" : 18
-```
-
-## Voter Segmentation
-<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/voter-segmentation.md -->
-
-### April 2026 Policy-Voter Alignment
-
-#### Segment A — Suburban Cost-of-Living Voters
-**Size**: ~15% of electorate | **Target parties**: M, SD, KD
-**Key April events**: HD01FiU48 (fuel-tax cut) directly addresses this segment's transport cost concerns.
-**Message alignment**: High — M and SD can credibly point to fiscal relief in the supplementary budget.
-**Risk**: If fuel prices do not fall visibly post-implementation, the message loses credibility.
-
-#### Segment B — Law-and-Order / Security Voters
-**Size**: ~20% of electorate | **Target parties**: SD, M, KD, L
-**Key April events**: HD01JuU10 (weapons law), HD03252 (prisoner benefits), HD01JuU31 (police reform audit)
-**Message alignment**: MIXED — SD and M score on HD01JuU10 and HD03252; police reform audit (9 open recommendations) is a credibility risk.
-**Risk**: If HD01JuU31 produces visible police failures, this segment's confidence erodes.
-
-#### Segment C — Eldercare/Social Services Voters
-**Size**: ~12% of electorate | **Target parties**: S, KD, MP
-**Key April events**: HD01SoU25 (elder care), HD10450 (social insurance S interpellation)
-**Message alignment**: Contested — governing bloc claims credit for HD01SoU25 reforms; S uses HD10450 to challenge their adequacy.
-
-#### Segment D — Urban Progressive / Climate Voters
-**Size**: ~18% of electorate | **Target parties**: S, MP, V
-**Key April events**: HD024086 (MP climate housing), HD01FiU48 (fuel tax cut opposition from V/MP)
-**Message alignment**: High for MP and V via reservations on fuel tax cut; S gains via accountability narrative.
-**Risk**: If MP falls below parliamentary threshold, these votes migrate to S and V.
-
-#### Segment E — Business/Financial Sector Voters
-**Size**: ~8% of electorate | **Target parties**: M, L, C
-**Key April events**: HD03253 (EU Banking Package), HD03104 (debt management)
-**Message alignment**: High — M and L as pro-EU regulatory implementers; HD03253 provides a stability signal.
-
-### Segmentation Matrix
-
-| Segment | Size | Governing bloc aligned? | April events favoring | Risk |
-|---------|------|------------------------|----------------------|------|
-| Suburban cost-of-living | ~15% | YES (HD01FiU48) | M, SD | Fuel price reality |
-| Law-and-order/security | ~20% | MIXED | SD, M vs police audit | HD01JuU31 credibility |
-| Eldercare/Social | ~12% | CONTESTED | KD, M vs S challenge | HD10450 accountability |
-| Urban progressive/climate | ~18% | NO | MP, V, S | MP threshold risk |
-| Business/Financial | ~8% | YES | M, L | None identified |
-| Low-salience / swing | ~27% | UNCERTAIN | — | Election volatility |
+**Present implication**: Swedish parliamentary mathematics suggest that a non-bloc majority outcome is manageable; C's position is analogous to Finland's agrarian Keskusta in 2019 as the swing actor.
 
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/comparative-international.md -->
@@ -1039,37 +1012,6 @@ Sweden enters its pre-election period with structural characteristics distinguis
 | IMF GDP growth forecast | +2.1% | +1.3% | +0.9% | ~+1.4% |
 
 *IMF provenance: WEO Apr-2026; provider=imf; dataflow=WEO; vintage=April-2026; retrieved_at=2026-04-27*
-
-## Historical Parallels
-<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/historical-parallels.md -->
-
-### Parallel 1 — 1991: Bildt Government Coalition Fragility
-
-**Historical event**: The Bildt center-right coalition (M, FP, C, KD) formed in 1991 with a narrow parliamentary base, requiring external support. Internal tensions between FP (liberal) and C (rural) on fiscal austerity eventually contributed to coalition strain.
-
-**Present parallel**: The Tidö coalition's one-seat majority (176 of 349) mirrors the structural fragility of 1991–1994. HD10448 (SD-KD energy fault line) echoes the FP-C fiscal tension: two coalition partners with incompatible preferences documented in the parliamentary record without formal rupture.
-
-**Historical outcome**: The Bildt coalition survived through 1994 election despite tensions; equivalent resilience is plausible for Tidö.
-
-### Parallel 2 — 2004–2006: S Interpellation Escalation Pre-Election
-
-**Historical event**: S (in opposition to the Persson government's final years) mounted a systematic interpellation campaign in 2004–2006, covering education, health, and labor. The campaign intensified in the 18 months before the 2006 election.
-
-**Present parallel**: S's HD10447–HD10450 five-interpellation cluster mirrors the 2004–2006 escalation pattern. Five simultaneous accountability interpellations targeting four ministers in one week is structurally identical to the 2004 S campaign.
-
-**Historical outcome**: S lost the 2006 election despite — or possibly because — the accountability campaign overshadowed its policy alternatives. The Alliansen won on competence, not opposition failure attribution.
-
-**Present implication**: S's current campaign risk is the same: if interpellations displace policy-alternative communication, the governing bloc may win on competence messaging despite the accountability narrative.
-
-### Parallel 3 — 2019: Finland Government Formation Post-Election
-
-**Historical event**: The 2019 Finnish parliamentary election produced a five-party S-equivalent coalition requiring extensive negotiation. The left-leaning governing coalition was formed after weeks of coalition mathematics.
-
-**Present parallel**: If Sweden's September 2026 election produces no clear bloc majority (Scenario C probability 20%), Sweden faces a multi-party negotiation analogous to Finland 2019.
-
-**Historical outcome**: Finland's 2019 coalition held for the full term with managed internal tensions.
-
-**Present implication**: Swedish parliamentary mathematics suggest that a non-bloc majority outcome is manageable; C's position is analogous to Finland's agrarian Keskusta in 2019 as the swing actor.
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/implementation-feasibility.md -->
@@ -1132,6 +1074,64 @@ All major legislation assessed against: (1) Administrative capacity, (2) Budget 
 | Statskontoret relevance | LOW-MEDIUM | Kriminalvården performance monitoring by Statskontoret |
 | ECHR/EU compliance | AT RISK | ECHR Article 3 (degrading treatment), Article 8 (family life) — L raised concerns; V filed HD024090 |
 | **Overall**: | **FEASIBLE WITH ECHR RISK** | Legal challenge probability MEDIUM-HIGH |
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/media-framing-analysis.md -->
+
+### Anticipated Dominant Frames
+
+Based on the April 2026 parliamentary record, the following media frames are expected to dominate Swedish political coverage through May 2026:
+
+### Frame 1 — "Coalition Cracks" (SD-KD Energy)
+
+**Trigger event**: HD10448 [riksdagen.se] — Fransson (SD) interpellation to Busch (KD) on wind power policy
+**Anticipated outlets**: Expressen, Aftonbladet (tabloid accountability), Dagens Nyheter (analytical), SVT News (neutral)
+**Frame content**: Framing of internal coalition disagreement as "first crack in Tidö." SD described as prioritising voter base over coalition discipline. KD described as defending energy transition portfolio.
+**Frame bias risk**: Amplification bias — media have structural incentive to frame minor interpellations as major ruptures for audience engagement.
+**Intelligence note**: The interpellation record alone is insufficient to support a "crack" frame; would require additional evidence (party congress resolution, cabinet disagreement, minister statement).
+
+### Frame 2 — "Fiscal Competence" (FiU48 + HD03253)
+
+**Trigger events**: HD01FiU48 fuel-tax cut, HD03253 EU Banking Package
+**Anticipated outlets**: Dagens Industri, SVD Näringsliv
+**Frame content**: Government as economically responsible actor implementing EU regulation on schedule (HD03253) while providing household relief (HD01FiU48). IMF WEO Apr-2026 Sweden +2.1% GDP growth likely cited.
+**Frame bias risk**: Business press has structural positive bias toward EU banking regulation compliance.
+
+### Frame 3 — "Accountability Vacuum" (Police Reform)
+
+**Trigger event**: HD01JuU31 [riksdagen.se] — Riksrevisionen audit 9 open recommendations
+**Anticipated outlets**: Aftonbladet, SVT Nyheter, opposition press coverage of S interpellations
+**Frame content**: 9 unanswered Riksrevisionen recommendations framed as government neglect of public safety obligations.
+**Frame bias risk**: Opposition-aligned framing; governing coalition will counter with "ongoing implementation" narrative.
+
+### Frame 4 — "Opposition Mobilising" (S Campaign)
+
+**Trigger events**: HD10447–HD10450 five-interpellation cluster [riksdagen.se]
+**Anticipated outlets**: Aftonbladet, Expressen, local/regional press
+**Frame content**: S presented as building a "shadow government accountability dossier" ahead of September election.
+**Intelligence implication**: If this frame takes hold, it elevates S's competence signal as well as its accountability narrative.
+
+### Framing Risk Matrix
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
+quadrantChart
+  title Media Frame Risk Matrix (May 2026 Outlook)
+  x-axis "Low probability" --> "High probability"
+  y-axis "Low electoral impact" --> "High electoral impact"
+  quadrant-1 HIGH RISK MONITOR
+  quadrant-2 HIGH IMPACT WATCH
+  quadrant-3 LOW PRIORITY
+  quadrant-4 PROBABILITY WATCH
+  Coalition Cracks: [0.7, 0.8]
+  Fiscal Competence: [0.8, 0.5]
+  Accountability Vacuum: [0.6, 0.7]
+  Opposition Mobilising: [0.75, 0.6]
+```
+
+### Counter-Narrative Intelligence
+
+Governing coalition's most credible counter-narrative: "Legislative completion" — by April 27, the government has delivered HD03253 (EU compliance), HD01FiU48 (household relief), HD01JuU10 (security), HD01SoU25 (eldercare). This "delivery over disruption" counter-frame directly challenges both the "coalition cracks" and "accountability vacuum" frames.
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/devils-advocate.md -->
@@ -1601,13 +1601,6 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/threat-analysis.md)
 - [`documents/HD01FiU48.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD01FiU48.md)
 - [`documents/HD01JuU10.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD01JuU10.md)
 - [`documents/HD01JuU31.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD01JuU31.md)
@@ -1616,12 +1609,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`documents/HD03252.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD03252.md)
 - [`documents/HD03253.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD03253.md)
 - [`documents/HD10448.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/documents/HD10448.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/monthly-review/cross-reference-map.md)

@@ -5,7 +5,7 @@ date: 2026-05-01
 subfolder: interpellations
 slug: 2026-05-01-interpellations
 source_folder: analysis/daily/2026-05-01/interpellations
-generated_at: 2026-05-04T09:52:32.588Z
+generated_at: 2026-05-04T12:16:14.267Z
 language: en
 layout: article
 ---
@@ -68,10 +68,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -212,442 +212,6 @@ Documents scored on three dimensions: **D**emocratic significance (accountabilit
 - **D (1.5/3)**: Government agency oversight; Riksrevisionen-anchored accountability
 - **I (2.0/3)**: RiR 2025:30 provides credible evidence base; specific findings on SFV
 - **W (1.5/4)**: Niche stakeholder concern; limited electoral salience
-
----
-
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/media-framing-analysis.md -->
-
-### Per-Party Media Framing Predictions
-
-How each major party will frame the interpellations in media communications:
-
----
-
-#### Socialdemokraterna (S) — HD10458, HD10451, HD10461
-
-**Core frame**: *"Government promised security and innovation — delivered neither"*
-
-Expected media talking points:
-- "Justice Minister Strömmer promised to eradicate gang crime in four years. But in 2026 alone, there has been an average of one explosion or shooting every two days."
-- "ESO's expert group found that criminals control assets worth 352 billion kronor — equivalent to 5.5% of Sweden's GDP — and the government has no tools to break this criminal economy."
-- "Sweden has fallen to 17th place among 23 ESA member states while Norway and Denmark moved ahead. This government is letting Sweden fall behind."
-
-**Targeted outlets**: Aftonbladet (gang crime, max reach), DN (criminal economy analysis), SVT (space programme decline)
-
-**Amplification strategy**: S will coordinate media outreach from HD10458 and HD10451 simultaneously, creating a "wall of evidence" around criminal policy failure.
-
----
-
-#### Moderaterna (M) — (Defensive)
-
-**Core frame**: *"The problem is real; we have a plan"*
-
-Expected media talking points:
-- "We have implemented 34 new measures under the Tidöavtalet to combat gang crime. The opposition wants to pretend we've done nothing."
-- "Eradicating gang crime is an ambitious but necessary goal. We are seeing results in some areas."
-- "Criminal economy is a challenge across Europe — Sweden is working with EU partners to develop new tools."
-
-**Challenge**: Record violence statistics in 2026 make the "we have a plan" narrative hard to sustain without new concrete announcements.
-
----
-
-#### Sverigedemokraterna (SD) — HD10459, HD10460
-
-**Core frame**: *"We are fighting for real change; coalition partners are blocking us"*
-
-Expected media talking points (primarily for SD's own media and social channels):
-- "Four years with a non-socialist government, and the agencies are still doing left-wing opinion work with taxpayer money. Josef Fransson is demanding action."
-- "We have demanded that utnämningsmakt (appointment power) be moved to Riksdag. KD and M are not listening."
-
-**Target audience**: SD's own voter base, not mainstream swing voters. These interpellations serve SD's internal credibility, not mass media framing.
-
----
-
-#### Liberalerna (L) — (Defensive on HD10461)
-
-**Core frame**: *"Space investment is a priority; we allocated what was budget-feasible"*
-
-Expected media talking points:
-- "Sweden has made strategic space investments including Esrange. The 100 MSEK allocation provides continuity."
-- "We recognise the ambition to increase Sweden's ESA participation and will consider it in future budget processes."
-
-**Challenge**: L is most exposed among coalition parties on HD10461 — it contradicts L's pro-research identity. Internal pressure likely to seek VÅP supplementary funding.
-
----
-
-#### Kristdemokraterna (KD) — (Defensive on HD10459)
-
-**Core frame**: *"We share SD's concerns; we are addressing them within constitutional limits"*
-
-Expected media talking points:
-- "Agency reform requires careful process. We cannot change utnämningsmakt without broad constitutional consensus."
-- "We have taken concrete steps to ensure agencies focus on their mandates rather than opinion work."
-
----
-
-### Mainstream Media Predicted Coverage Intensity
-
-| Topic | Expected Coverage | Primary Outlets |
-|-------|------------------|-----------------|
-| Gang crime pledge (HD10458) | 🔴 HIGH | Aftonbladet, Expressen, SVT, TV4 |
-| Criminal economy 352 GSEK (HD10451) | 🟡 MODERATE | DN, SvD, SVT |
-| ESA space decline (HD10461) | 🟡 MODERATE | DN, SvD, Ny Teknik |
-| Agency activism (HD10459) | 🟢 LOW | SD media, Samtiden |
-| SFV heritage (HD10460) | 🟢 LOW | Specialised/niche |
-
----
-
-### Social Media Frame Analysis
-
-**TikTok/Instagram (High Engagement)**: Gang crime statistics, explosion counts — visual, emotional, easily shared. HD10458 will generate highest social media engagement.
-
-**X/Twitter (Political Class)**: Criminal economy 352 GSEK — detailed policy debate. HD10451 will dominate political Twitter.
-
-**Facebook (Older Voters)**: Space programme decline — generational nostalgia for Esrange/Swedish space programme pride. HD10461 may generate significant older-voter Facebook engagement.
-
----
-
-## Stakeholder Perspectives
-<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/stakeholder-perspectives.md -->
-
-### 6-Lens Stakeholder Matrix
-
-#### Lens 1: Government Ministers (Direct Respondents)
-
-| Minister | Party | Interpellation | Position | Political Constraint |
-|---------|-------|----------------|----------|---------------------|
-| Gunnar Strömmer | M | HD10458, HD10451 | Defensive — must justify "eradication" pledge and explain lack of anti-criminal-economy tools | Cannot abandon "tough on crime" M brand; must balance aspiration vs reality |
-| Lotta Edholm | L | HD10461 | Defensive — must explain ESA rank 17 with 100 MSEK allocation | L is pro-research/innovation; rank 17 contradicts party values |
-| Erik Slottner | KD | HD10459 | Must navigate between SD demands and KD's institutional caution | Constitutional reform requires broad consensus; KD cannot agree to utnämningsmakt change alone |
-| Paulina Brandberg | L | HD10460 | Must respond to RiR 2025:30 findings on SFV | Relatively low political risk; can accept recommendations |
-
-#### Lens 2: Interpellants (Opposition Strategy)
-
-| Interpellant | Party | Strategic Goal | Coordination Signal |
-|-------------|-------|---------------|---------------------|
-| Teresa Carvalho | S | Force Strömmer to operationalise "eradication" — election ammunition | Coordinated with Nylund Watz (HD10451) — same target minister |
-| Ingela Nylund Watz | S | Anchor ESO 352 GSEK figure in public discourse | Coordinated with Carvalho (HD10458) — complementary narratives |
-| Mats Wiking | S | Build "Sweden falling behind" competitiveness narrative | Independent of crime focus but adds to "government failing Sweden" theme |
-| Josef Fransson | SD | Pressure KD on institutional reform; show SD base party is pushing for change | Internal coalition signalling as much as opposition |
-| Angelica Lundberg | SD | Riksrevisionen-anchored accountability; niche but systematic | Part of SD's pattern of using audit body findings |
-
-#### Lens 3: Research/Expert Community
-
-| Actor | Relevance | Position |
-|-------|-----------|----------|
-| ESO (Expertgruppen för studier i offentlig ekonomi) | Core source for HD10451+HD10458 | Report claims 352 GSEK criminal economy — creates independent credibility for opposition arguments |
-| Riksrevisionen | Core source for HD10460 | RiR 2025:30 critical of SFV — government cannot dismiss own audit body |
-| Rymdstyrelsen | Referenced in HD10461 | Requested more than 100 MSEK; government's own agency contradicts allocation decision |
-| Brå | Implicit reference for violence statistics | Earlier estimate was ~150 GSEK; ESO's 352 GSEK is significantly higher |
-
-#### Lens 4: Industry / Civil Society
-
-| Sector | Relevant Interpellation | Interest |
-|--------|------------------------|---------|
-| Swedish space/defence industry | HD10461 | Direct — ESA participation gates EU defence contracts; rank 17 means competitive disadvantage |
-| Business community | HD10451 | Concerned about criminal company infiltration; 23,000 linked companies represent procurement risk |
-| Cultural heritage sector | HD10460 | Interested in SFV heritage property management reform |
-| Civil society organisations | HD10459 | SD's demand to remove state subsidies directly threatens many civil society funders |
-
-#### Lens 5: International Actors
-
-| Actor | Relevance |
-|-------|----------|
-| ESA (European Space Agency) | HD10461 — Sweden's rank 17 affects bilateral programme relationships; other members notice declining Swedish commitment |
-| EU Commission | HD10451 — EU Organised Crime Directive (2024) creates framework for anti-criminal-economy tools |
-| Nordic peers (Denmark, Norway, Finland) | HD10461 — All now rank above Sweden in ESA participation; regional comparison embarrassing |
-
-#### Lens 6: Voters / Electoral Segments
-
-| Segment | Most Relevant Interpellation | Impact |
-|---------|----------------------------|--------|
-| Security-focused voters (large, cross-party) | HD10458 | Will benchmark "eradication" promise against reality; shifting from M to S if no visible progress |
-| Research/innovation community | HD10461 | Concern about Sweden's declining science policy ambition |
-| Business owners / entrepreneurs | HD10451 | Criminal company infiltration creates unfair competition; regulatory clarity needed |
-| SD core voters | HD10459 | Want visible action on institutional reform; non-response from KD = SD loyalty risk |
-
----
-
-## Forward Indicators
-<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/forward-indicators.md -->
-
-### Leading Indicators Across 4 Time Horizons
-
-#### Horizon 1: Immediate (May 2026 — Answer Dates)
-
-| Date | Indicator | Source | Significance |
-|------|-----------|--------|--------------|
-| 2026-05-19 | Strömmer answer to HD10458 (gang crime eradication) | Riksdagen chamber | CRITICAL — defines government's measurable commitment; media amplification certain |
-| 2026-05-19 | Edholm answer to HD10461 (ESA rank 17) | Riksdagen chamber | HIGH — research/defence community watching; VÅP announcement signal |
-| 2026-05-20 | Slottner answer to HD10459 (agency activism) | Riksdagen chamber | MODERATE — coalition friction diagnostic; SD accommodation signal |
-| 2026-05-21 | Brandberg answer to HD10460 (SFV heritage) | Riksdagen chamber | LOW-MODERATE — RiR follow-up; heritage community watching |
-| 2026-05-20 | Strömmer answer to HD10451 (criminal economy tools) | Riksdagen chamber | HIGH — complement to HD10458; legislative announcement opportunity |
-
-#### Horizon 2: Short-Term (June-August 2026 — Pre-Election)
-
-| Date | Indicator | Source | Significance |
-|------|-----------|--------|--------------|
-| 2026-06-01 (est.) | Vårändringspropositionen (VÅP) publication | Finansdepartementet | HIGH — will Rymdstyrelsen receive supplementary funding? |
-| 2026-06-15 (est.) | Media coverage analysis of gang crime statistics | Brå/media | HIGH — do explosions/shooting data validate or contradict "eradication" narrative? |
-| 2026-07-01 (est.) | ESO report media follow-up / academic commentary | ESO/university research | MODERATE — will 352 GSEK figure gain further traction? |
-| 2026-08-01 (est.) | Election campaign launch (Almedalen week) | All parties | CRITICAL — will HD10458 crime narrative become central election theme? |
-| 2026-08-15 (est.) | EU Organised Crime Directive implementation update | EU/Justitiedepartementet | MODERATE — compliance pressure may force new legislative announcement |
-
-#### Horizon 3: Medium-Term (September 2026 — Election)
-
-| Date | Indicator | Source | Significance |
-|------|-----------|--------|--------------|
-| 2026-09-13 (election day) | Final election result — M, S, SD seat changes | Valmyndigheten | CRITICAL — validates/invalidates all political predictions from this analysis |
-| 2026-09-01 (est.) | Polling on "säkerhet" as most important issue | Novus/IPSOS | HIGH — if security exceeds economic policy as top issue, HD10458 narrative succeeded |
-| 2026-09-01 (est.) | SD voter turnout and final seat count | Valmyndigheten | HIGH — did SD's institutional reform signalling (HD10459) consolidate their base? |
-
-#### Horizon 4: Long-Term (2027 and Beyond)
-
-| Date | Indicator | Source | Significance |
-|------|-----------|--------|--------------|
-| 2027-01-01 (est.) | Criminal economy measurement update (Brå/ESO) | Brå/ESO | HIGH — will Sweden's criminal economy measurement improve? |
-| 2027-01-01 (est.) | ESA participation rank update (post-election) | ESA annual report | MODERATE — will new government reverse rank 17 decline? |
-| 2027-06-01 (est.) | Riksrevisionen follow-up on SFV (RiR 2025:30) | Riksrevisionen | LOW — standard 18-month follow-up review |
-| 2028-01-01 (est.) | "Eradication" 2-year checkpoint | Media/Riksdag | HIGH — Strömmer's 2026 pledge will be benchmarked at 2-year mark |
-
-### Indicator Summary Dashboard
-
-```
-CRITICAL INDICATORS (next 30 days):
-  □ 2026-05-19: Strömmer answers HD10458 — milestone definition?
-  □ 2026-05-19: Edholm answers HD10461 — VÅP signal?
-  □ 2026-05-20: Slottner answers HD10459 — coalition accommodation?
-
-HIGH INDICATORS (30-90 days):
-  □ VÅP content: Space funding supplementary?
-  □ Violence stats: June data vs "eradication" pledge
-  □ Almedalen: Crime + competitiveness as election themes?
-
-MEDIUM INDICATORS (90-180 days):
-  □ 2026 election polls: Security as #1 issue?
-  □ EU Directive implementation: New tools announced?
-```
-
----
-
-## Scenario Analysis
-<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/scenario-analysis.md -->
-
-### Scenario Framework
-
-Three scenarios for government response to HD10458 (Strömmer on gang crime eradication) — the highest-stakes interpellation. These scenarios shape the political trajectory through September 2026 election campaign.
-
-**Probability total: 100%**
-
----
-
-#### Scenario A: "Government Pivots" (Probability: 25%)
-
-**Trigger**: Strömmer uses the interpellation response to announce a concrete anti-crime legislative package — new asset forfeiture regime, company dissolution powers, Finanspolisen-Skatteverket coordination — and reframes "eradication" as "systematic dismantling" with measurable annual targets.
-
-**Conditions required**:
-- Government agrees pre-election legislative sprint is worth the political capital
-- Coalition partners (KD, L, SD) support package
-- VÅP includes relevant funding
-
-**Political consequences**:
-- S's coordinated interpellation campaign misfires — government turns accountability moment into policy announcement
-- Electoral damage reduced; M regains some security-competence credibility
-- S forced to shift attack from "no tools" to "insufficient tools"
-
-**Indicator**: Look for Strömmer holding press conference in the week of 2026-05-12 (pre-answer date) to pre-empt interpellation with positive announcement
-
----
-
-#### Scenario B: "Defensive Management" (Probability: 55%)
-
-**Trigger**: Strömmer provides a procedural, comprehensive response citing existing Tidöavtalet measures, ongoing polislagstiftning, and international cooperation — acknowledging the challenge while defending the record. "Eradication" is defined as long-term aspiration, not a four-year guarantee.
-
-**Conditions required**:
-- No new legislative package ready before answer date
-- Government chooses risk management over political opportunity
-
-**Political consequences**:
-- S characterises response as "vague aspirations vs concrete violence statistics"
-- Media coverage focuses on continued explosions/shootings data as counter-narrative
-- Government credibility on security issue eroded but not collapsed
-- Remains contested territory through summer 2026
-
-**Indicator**: Response uses phrases like "vi vidtar åtgärder", "processen pågår", without specific milestones
-
----
-
-#### Scenario C: "Accountability Crisis" (Probability: 20%)
-
-**Trigger**: Strömmer provides an unconvincing response that either cannot define "eradication" operationally OR is paired with new violent incidents in the days surrounding the answer (creating media contrast).
-
-**Conditions required**:
-- No pivot prepared; violence statistics worsen near answer date
-- Media environment hostile pre-response
-- Opposition amplification effective
-
-**Political consequences**:
-- "Government promised eradication, reality is record gang violence" becomes dominant summer 2026 narrative
-- M polling on security issues drops
-- S builds sustainable attack narrative into autumn election campaign
-- Potential SD voter erosion (SD base expected more from "their" government)
-
-**Indicator**: No new policy announcement; sharp media coverage contrasting "eradication pledge" vs current violence data on/around 2026-05-19
-
----
-
-### Secondary Scenario: ESA Space Funding (HD10461)
-
-| Scenario | Probability | Description |
-|----------|-------------|-------------|
-| VÅP funding supplement announced | 20% | Government adds Rymdstyrelsen funding in Spring Amendment Budget |
-| Defensive response only | 65% | Edholm defends 100 MSEK; Sweden maintains position 17+ |
-| Public research community protest | 15% | Rymdstyrelsen/universities publicly criticise allocation; media campaign |
-
----
-
-## Risk Assessment
-<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/risk-assessment.md -->
-
-### Risk Register (5-Dimension Framework)
-
-| Risk ID | Risk Description | Likelihood (1-5) | Impact (1-5) | L×I Score | Primary Source |
-|---------|-----------------|-----------------|--------------|-----------|----------------|
-| R-01 | Government fails to operationalise "eradicate gang crime" pledge → electoral credibility collapse | 4 | 5 | **20** | HD10458 |
-| R-02 | Criminal economy continues unchecked → systemic rule-of-law erosion | 3 | 5 | **15** | HD10451 |
-| R-03 | Sweden continues ESA slide → defence-industrial exclusion from EU procurement | 3 | 4 | **12** | HD10461 |
-| R-04 | SD institutional reform demands unmet → coalition fracture signals pre-2026 | 3 | 3 | **9** | HD10459 |
-| R-05 | SFV heritage property mismanagement → continued cultural heritage deterioration | 2 | 3 | **6** | HD10460 |
-
-### High-Priority Risk Analysis
-
-#### R-01: "Eradication" Promise Accountability (Score: 20 — CRITICAL)
-
-**Description**: Justice Minister Strömmer's Aftonbladet statement (20 April 2026) committing to "eradicate gang crime in 4 years" creates a measurable political liability. Without defined milestones, any continued violence becomes evidence of failure.
-
-**Mitigation options**:
-- Define "eradication" with specific, measurable sub-targets (e.g., gang-related murders per year, explosive incidents per year)
-- Establish independent monitoring mechanism
-- Avoid "eradication" framing in favour of "systematic reduction" language
-
-**Residual risk if unmitigated**: HIGH — will be cited in every opposition debate through autumn 2026
-
-#### R-02: Criminal Economy Scale (Score: 15 — HIGH)
-
-**Description**: ESO's 352 GSEK criminal economy (5.5% GDP, 23,000 companies) represents a structural governance failure that is independently sourced and beyond government capacity to dismiss. Unless new legislative tools are proposed, the government's position is reactive.
-
-**Mitigation options**:
-- Announce new asset forfeiture regime
-- Propose strengthened Bolagsverket/Skatteverket coordination powers
-- Commission government response to ESO report
-
-**Residual risk if unmitigated**: HIGH — ESO figure will anchor opposition narrative
-
-#### R-03: ESA Space Programme Decline (Score: 12 — HIGH)
-
-**Description**: Sweden's fall to rank 17/23 in ESA voluntary programmes, combined with a global 31% ESA budget increase, represents a structural competitiveness gap that will widen absent additional funding.
-
-**Mitigation options**:
-- VÅP supplementary allocation for Rymdstyrelsen
-- Bilateral agreements with key ESA programme partners
-- ESA national programme endorsement at political level
-
-### Risk Summary Chart
-
-```
-CRITICAL (R-01): ████████████████████ 20
-HIGH (R-02):     ███████████████ 15
-HIGH (R-03):     ████████████ 12
-MEDIUM (R-04):   █████████ 9
-LOW (R-05):      ██████ 6
-```
-
----
-
-## SWOT Analysis
-<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/swot-analysis.md -->
-
-### SWOT Matrix
-
-#### Strengths (Government)
-- **S1** [HD10458]: Government did pass 34-point Tidöavtalet on crime — can point to legislative record
-- **S2** [HD10461]: Government can cite 100 MSEK ESA allocation as continuity commitment, not full withdrawal
-- **S3** [HD10459]: SD's institutional reform agenda is partly being addressed (some agency budget cuts)
-- **S4** [HD10460]: Government can cite RiR follow-up processes already underway for SFV
-
-#### Weaknesses (Government)
-- **W1** [HD10458]: "Eradicate in 4 years" is an unfalsifiable-before-eradication claim that is NOW falsifiable by continued violence metrics
-- **W2** [HD10451]: ESO's 352 GSEK / 23,000 companies figure is independently sourced — government cannot dismiss it
-- **W3** [HD10461]: Sweden's drop to rank 17 of 23 ESA members is objectively documented; 31% ESA budget increase while Sweden declined is damaging
-- **W4** [HD10459]: Four years of non-socialist government without the institutional reforms SD demands reveals coalition limits
-
-#### Opportunities (Government)
-- **O1** [HD10458+HD10451]: Announce new anti-crime economic tools (asset forfeiture reform, company dissolution powers) before answer date
-- **O2** [HD10461]: Announce supplementary Rymdstyrelsen funding in VÅP (Spring budget amendment) to reverse ESA slide
-- **O3** [HD10459]: Use Slottner response to announce targeted reform of specific agencies — partial SD accommodation
-- **O4** [HD10460]: Accept RiR recommendations publicly, announce SFV action plan
-
-#### Threats (Government)
-- **T1** [HD10458+HD10451]: S coordinated campaign creates "352 GSEK criminal economy + rising violence + no tools" narrative that will define summer 2026 media cycle
-- **T2** [HD10461]: Nordic peer comparison (Denmark/Norway/Finland ahead) embarrasses Sweden on competitiveness — hard to rebut
-- **T3** [HD10459]: Non-committal KD response may cause SD to escalate demands or signal reduced coalition commitment for 2026+
-- **T4** [HD10458]: Record violence statistics in 2026 are observable facts that make "eradication" promise appear increasingly hollow
-
-### TOWS Matrix (Strategic Implications)
-
-| | Opportunities | Threats |
-|---|---|---|
-| **Strengths** | SO: Announce new anti-crime tools to turn S attack into government initiative | ST: Use Tidöavtalet record defensively to rebuff "no action" narrative |
-| **Weaknesses** | WO: VÅP supplementary ESA funding would address W3; new crime tools address W1+W2 | WT: Without concrete milestones for "eradication," W1 + T1 = electoral vulnerability through 2026 |
-
----
-
-## Threat Analysis
-<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/threat-analysis.md -->
-
-### Political Threat Taxonomy
-
-#### Tier 1 — Immediate Threats (Pre-Answer, 2026-05-19/20/21)
-
-**T1.1 — Credibility Collapse on Gang Crime Pledge**
-- Attack vector: S presses Strömmer to define concrete milestones for "eradicate gang crime in 4 years"
-- Attack tree: Promise made publicly (Aftonbladet 20 April) → no operational definition → continued violence records → government admits vague aspirational claim → media amplification → electoral damage
-- Probability: HIGH [HIGH CONFIDENCE — KJ-2]
-- Target: Justice Minister Strömmer (M) / M-party election credibility
-
-**T1.2 — ESA Rank 17 as "Sweden is Falling Behind" Narrative**
-- Attack vector: S uses Sweden's rank 17/23 in ESA to build "Tidökoalitionen undermines Sweden's future"
-- Attack tree: 31% ESA budget increase globally → Sweden declines → rank drops to 17 → Nordic peers ahead → "Sweden loses to Denmark, Norway, Finland" → industrial sector alarmed → media picks up
-- Probability: MODERATE [HIGH CONFIDENCE — KJ-3]
-- Target: Minister Edholm (L) / government competitiveness credibility
-
-#### Tier 2 — Structural Threats (Summer-Autumn 2026)
-
-**T2.1 — Opposition "352 GSEK Criminal Economy" Platform**
-- Attack vector: S coordinates HD10458 + HD10451 into unified "government lacks tools to fight criminal economy" campaign
-- Attack tree: ESO independent data → 23,000 criminal companies → rising gang violence → no new legislative tools proposed → "Sweden being hollowed out by organised crime" → election campaign centrepiece
-- Probability: HIGH [HIGH CONFIDENCE — KJ-1]
-- Target: Government's entire law-and-order record
-
-**T2.2 — SD/KD Intra-Coalition Fracture Signal**
-- Attack vector: HD10459 exposes that SD demands constitutional reform (utnämningsmakt) KD cannot deliver
-- Attack tree: Slottner gives non-committal response → SD characterises as "four years of broken promises" → SD signals post-2026 coalition demands include institutional reform → coalition negotiation leverage established
-- Probability: MODERATE [LOW-MODERATE CONFIDENCE — KJ-4]
-- Target: Tidökoalitionen cohesion narrative
-
-### Prompt Injection / Manipulation Assessment
-
-No evidence of prompt injection in interpellation texts. All interpellations represent genuine parliamentary accountability instruments by elected MPs. No manipulation indicators detected.
-
-### Defensive Response Options
-
-| Threat | Defensive Option | Feasibility |
-|--------|----------------|-------------|
-| T1.1 | Define measurable milestones; reframe "eradication" as "systematic dismantling" | MODERATE |
-| T1.2 | Announce VÅP supplementary ESA funding in parallel with interpellation response | HIGH |
-| T2.1 | Announce new anti-criminal-economy legislative package (asset forfeiture) | HIGH |
-| T2.2 | Partial accommodation: targeted agency oversight reform proposal | LOW |
 
 ---
 
@@ -920,81 +484,64 @@ S uses this interpellation to paint government as "under-investing in Sweden's f
 URL: https://data.riksdagen.se/dokument/HD10461  
 Retrieved: 2026-05-01T07:21:00Z
 
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/election-2026-analysis.md -->
+## Stakeholder Perspectives
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/stakeholder-perspectives.md -->
 
-### Current Parliamentary Configuration (2025/26 riksmöte)
+### 6-Lens Stakeholder Matrix
 
-| Party | Seats | Government Role |
-|-------|-------|----------------|
-| Moderaterna (M) | 68 | Government / Prime Minister |
-| Sverigedemokraterna (SD) | 73 | Support (Tidöavtalet) |
-| Kristdemokraterna (KD) | 28 | Government |
-| Liberalerna (L) | 16 | Government |
-| **Government bloc total** | **185** | |
-| Socialdemokraterna (S) | 107 | Opposition |
-| Vänsterpartiet (V) | 24 | Opposition |
-| Miljöpartiet (MP) | 18 | Opposition |
-| Centerpartiet (C) | 25 | Opposition |
-| **Opposition bloc total** | **174** | |
-| **Total Riksdag** | **349** | **Majority: 175** |
+#### Lens 1: Government Ministers (Direct Respondents)
 
-### Electoral Implications of Interpellations
+| Minister | Party | Interpellation | Position | Political Constraint |
+|---------|-------|----------------|----------|---------------------|
+| Gunnar Strömmer | M | HD10458, HD10451 | Defensive — must justify "eradication" pledge and explain lack of anti-criminal-economy tools | Cannot abandon "tough on crime" M brand; must balance aspiration vs reality |
+| Lotta Edholm | L | HD10461 | Defensive — must explain ESA rank 17 with 100 MSEK allocation | L is pro-research/innovation; rank 17 contradicts party values |
+| Erik Slottner | KD | HD10459 | Must navigate between SD demands and KD's institutional caution | Constitutional reform requires broad consensus; KD cannot agree to utnämningsmakt change alone |
+| Paulina Brandberg | L | HD10460 | Must respond to RiR 2025:30 findings on SFV | Relatively low political risk; can accept recommendations |
 
-#### HD10458 + HD10451 — Criminal Economy / Gang Violence
+#### Lens 2: Interpellants (Opposition Strategy)
 
-**Electoral relevance**: CRITICAL  
-**Parties affected**: M (primary target — Strömmer is M's justice minister), SD (secondary — their voters prioritise security)
+| Interpellant | Party | Strategic Goal | Coordination Signal |
+|-------------|-------|---------------|---------------------|
+| Teresa Carvalho | S | Force Strömmer to operationalise "eradication" — election ammunition | Coordinated with Nylund Watz (HD10451) — same target minister |
+| Ingela Nylund Watz | S | Anchor ESO 352 GSEK figure in public discourse | Coordinated with Carvalho (HD10458) — complementary narratives |
+| Mats Wiking | S | Build "Sweden falling behind" competitiveness narrative | Independent of crime focus but adds to "government failing Sweden" theme |
+| Josef Fransson | SD | Pressure KD on institutional reform; show SD base party is pushing for change | Internal coalition signalling as much as opposition |
+| Angelica Lundberg | SD | Riksrevisionen-anchored accountability; niche but systematic | Part of SD's pattern of using audit body findings |
 
-**Projected seat-projection delta scenario analysis**:
-- If S "352 GSEK criminal economy + no tools" narrative takes hold: M risks -3 to -5 seats; SD could benefit with +2 to +3 (voters want harder line); C/L (more centrist voters) may shift +1 to +2 toward S
-- If government pivots with effective response: Neutral-slight positive for M; S's coordinated campaign neutralised
+#### Lens 3: Research/Expert Community
 
-**Sector most affected**: Security-focused voters (~35-40% of electorate, cross-party)
+| Actor | Relevance | Position |
+|-------|-----------|----------|
+| ESO (Expertgruppen för studier i offentlig ekonomi) | Core source for HD10451+HD10458 | Report claims 352 GSEK criminal economy — creates independent credibility for opposition arguments |
+| Riksrevisionen | Core source for HD10460 | RiR 2025:30 critical of SFV — government cannot dismiss own audit body |
+| Rymdstyrelsen | Referenced in HD10461 | Requested more than 100 MSEK; government's own agency contradicts allocation decision |
+| Brå | Implicit reference for violence statistics | Earlier estimate was ~150 GSEK; ESO's 352 GSEK is significantly higher |
 
-#### HD10461 — ESA/Space Funding
+#### Lens 4: Industry / Civil Society
 
-**Electoral relevance**: MODERATE  
-**Parties affected**: L (Edholm is L's minister; L brand = innovation/education); M (economic competitiveness)
+| Sector | Relevant Interpellation | Interest |
+|--------|------------------------|---------|
+| Swedish space/defence industry | HD10461 | Direct — ESA participation gates EU defence contracts; rank 17 means competitive disadvantage |
+| Business community | HD10451 | Concerned about criminal company infiltration; 23,000 linked companies represent procurement risk |
+| Cultural heritage sector | HD10460 | Interested in SFV heritage property management reform |
+| Civil society organisations | HD10459 | SD's demand to remove state subsidies directly threatens many civil society funders |
 
-**Projected seat-projection delta**:
-- L is most exposed: -1 to -2 seats if "L abandons research/innovation" narrative takes hold
-- Positive: VÅP funding supplementary could turn this around
+#### Lens 5: International Actors
 
-#### HD10459 — Agency Activism (SD→KD)
+| Actor | Relevance |
+|-------|----------|
+| ESA (European Space Agency) | HD10461 — Sweden's rank 17 affects bilateral programme relationships; other members notice declining Swedish commitment |
+| EU Commission | HD10451 — EU Organised Crime Directive (2024) creates framework for anti-criminal-economy tools |
+| Nordic peers (Denmark, Norway, Finland) | HD10461 — All now rank above Sweden in ESA participation; regional comparison embarrassing |
 
-**Electoral relevance**: MODERATE (for SD voter base)  
-**Intra-coalition signal**: SD needing to show differentiation from M/KD delivers this interpellation at minimal coalition cost
+#### Lens 6: Voters / Electoral Segments
 
-**Projected seat-projection delta**:
-- Neutral on SD seats — serves to energise SD base, not expand it
-- Possible -1 for KD if perceived as protecting left-wing bureaucracy
-
-### 2026 Election Campaign Narrative Map
-
-```mermaid
-graph TD
-    A[S Campaign 2026:\n'352 GSEK criminal economy'\n+ rising gang violence\n= government failed Sweden] -->|HD10458+HD10451| B[M electoral vulnerability\non core issue]
-    C[SD Campaign:\n'Institutional reform\nwe demanded it\ncoalition partners delayed'] -->|HD10459| D[SD base consolidation\n+ KD pressure]
-    E[S Campaign:\n'Sweden falling behind\non space, innovation'] -->|HD10461| F[L electoral pressure\non research portfolio]
-    B --> G[2026 Election\nSeptember]
-    D --> G
-    F --> G
-    
-    style A fill:#E60026,color:#fff
-    style C fill:#DDDD00,color:#000
-    style E fill:#E60026,color:#fff
-    style G fill:#0099cd,color:#fff
-```
-
-### Overall Electoral Assessment
-
-The government (Tidökoalitionen) enters the pre-election period with:
-- **Core vulnerability**: Security/justice record challenged by independently-sourced ESO data (352 GSEK) that is difficult to dispute
-- **Secondary vulnerability**: Competitiveness record on space (rank 17/23) that is metric-anchored and embarrassing
-- **Internal pressure**: SD using parliamentary tools to signal reform impatience ahead of coalition negotiations
-
-S is executing a disciplined, evidence-based accountability campaign that will be difficult to rebut without concrete new policy announcements.
+| Segment | Most Relevant Interpellation | Impact |
+|---------|----------------------------|--------|
+| Security-focused voters (large, cross-party) | HD10458 | Will benchmark "eradication" promise against reality; shifting from M to S if no visible progress |
+| Research/innovation community | HD10461 | Concern about Sweden's declining science policy ambition |
+| Business owners / entrepreneurs | HD10451 | Criminal company infiltration creates unfair competition; regulatory clarity needed |
+| SD core voters | HD10459 | Want visible action on institutional reform; non-response from KD = SD loyalty risk |
 
 ---
 
@@ -1157,55 +704,363 @@ Five voter segments most relevant to the interpellations filed 2026-04-22 to 202
 
 ---
 
-## Comparative International
-<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/comparative-international.md -->
+## Forward Indicators
+<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/forward-indicators.md -->
 
-### Comparator 1: Nordic Countries — Criminal Economy Policy
+### Leading Indicators Across 4 Time Horizons
 
-#### Norway
-- **Comparable data**: Kripos (National Criminal Investigation Service) estimates criminal economy at ~2.5% GDP (~200 GSEK equivalent)
-- **Policy approach**: Norway's "Organisert Kriminalitet" strategy 2022-2025 includes dedicated anti-criminal-economy coordination unit
-- **Key difference**: Norway's STRASAK reporting system provides annual criminal economy estimates; Sweden lacks equivalent transparent measurement
-- **Relevance to HD10451+HD10458**: Sweden's ESO figure (5.5% GDP) is more than double Norway's estimate — either Swedish criminality is dramatically worse, or measurement methodologies differ significantly. Both interpretations require government response.
+#### Horizon 1: Immediate (May 2026 — Answer Dates)
 
-#### Denmark
-- **Comparable data**: Politiets Efterretningstjeneste (PET) publishes gang crime threat assessment annually
-- **Policy approach**: Denmark implemented "Rocker/Bande Exit" programme + corporate crime unit; focused on financial intelligence
-- **Key difference**: Denmark has operationalised gang crime reduction metrics with annual public reporting
-- **Relevance to HD10458**: Denmark provides the model Strömmer could adopt — measurable annual gang crime reduction targets published transparently. A "Strömmer Plan" modelled on Danish approach would be a credible response to Carvalho's accountability challenge.
+| Date | Indicator | Source | Significance |
+|------|-----------|--------|--------------|
+| 2026-05-19 | Strömmer answer to HD10458 (gang crime eradication) | Riksdagen chamber | CRITICAL — defines government's measurable commitment; media amplification certain |
+| 2026-05-19 | Edholm answer to HD10461 (ESA rank 17) | Riksdagen chamber | HIGH — research/defence community watching; VÅP announcement signal |
+| 2026-05-20 | Slottner answer to HD10459 (agency activism) | Riksdagen chamber | MODERATE — coalition friction diagnostic; SD accommodation signal |
+| 2026-05-21 | Brandberg answer to HD10460 (SFV heritage) | Riksdagen chamber | LOW-MODERATE — RiR follow-up; heritage community watching |
+| 2026-05-20 | Strömmer answer to HD10451 (criminal economy tools) | Riksdagen chamber | HIGH — complement to HD10458; legislative announcement opportunity |
 
-### Comparator 2: EU Members — Space Programme Participation
+#### Horizon 2: Short-Term (June-August 2026 — Pre-Election)
 
-#### Germany
-- **ESA position**: Germany is the largest ESA contributor (~22% of ESA budget)
-- **Policy approach**: German space programme (DLR) integrated into dual-use defence-civilian strategy
-- **Key difference**: Germany explicitly links ESA investment to EU defence-industrial sovereignty
-- **Relevance to HD10461**: Sweden's decline from a higher ESA rank to 17/23 contrasts with Germany's strategic deepening of space commitment — illustrating the security dimension Wiking raises
+| Date | Indicator | Source | Significance |
+|------|-----------|--------|--------------|
+| 2026-06-01 (est.) | Vårändringspropositionen (VÅP) publication | Finansdepartementet | HIGH — will Rymdstyrelsen receive supplementary funding? |
+| 2026-06-15 (est.) | Media coverage analysis of gang crime statistics | Brå/media | HIGH — do explosions/shooting data validate or contradict "eradication" narrative? |
+| 2026-07-01 (est.) | ESO report media follow-up / academic commentary | ESO/university research | MODERATE — will 352 GSEK figure gain further traction? |
+| 2026-08-01 (est.) | Election campaign launch (Almedalen week) | All parties | CRITICAL — will HD10458 crime narrative become central election theme? |
+| 2026-08-15 (est.) | EU Organised Crime Directive implementation update | EU/Justitiedepartementet | MODERATE — compliance pressure may force new legislative announcement |
 
-#### Netherlands
-- **ESA position**: Netherlands maintains position 8-9 in ESA; significantly above Sweden
-- **Policy approach**: Netherlands Space Office (NSO) lobbies aggressively at ESA ministerials
-- **GDP comparison**: Netherlands (GDP ~800 GSEK) vs Sweden (GDP ~6,400 GSEK) — Sweden is much larger economy but contributes less proportionally to ESA
-- **Relevance to HD10461**: Sweden's contribution-to-GDP ratio is significantly lower than Netherlands, suggesting the constraint is political will, not economic capacity
+#### Horizon 3: Medium-Term (September 2026 — Election)
 
-### Comparator 3: EU Framework — Organised Crime Directive 2024
+| Date | Indicator | Source | Significance |
+|------|-----------|--------|--------------|
+| 2026-09-13 (election day) | Final election result — M, S, SD seat changes | Valmyndigheten | CRITICAL — validates/invalidates all political predictions from this analysis |
+| 2026-09-01 (est.) | Polling on "säkerhet" as most important issue | Novus/IPSOS | HIGH — if security exceeds economic policy as top issue, HD10458 narrative succeeded |
+| 2026-09-01 (est.) | SD voter turnout and final seat count | Valmyndigheten | HIGH — did SD's institutional reform signalling (HD10459) consolidate their base? |
 
-The EU adopted the Organised Crime Directive in late 2024, which requires member states to:
-- Establish cross-border criminal economy investigation units
-- Implement asset forfeiture for proceeds of organised crime
-- Coordinate Europol/Eurojust with national financial intelligence
-- **Member state implementation deadline**: 2026-2027
+#### Horizon 4: Long-Term (2027 and Beyond)
 
-**Relevance to HD10451**: Sweden's current legislative framework for criminal economy may not meet EU Directive requirements. This creates both a compliance obligation AND a political opportunity — Strömmer could announce national implementation as the "new tools" S is demanding.
+| Date | Indicator | Source | Significance |
+|------|-----------|--------|--------------|
+| 2027-01-01 (est.) | Criminal economy measurement update (Brå/ESO) | Brå/ESO | HIGH — will Sweden's criminal economy measurement improve? |
+| 2027-01-01 (est.) | ESA participation rank update (post-election) | ESA annual report | MODERATE — will new government reverse rank 17 decline? |
+| 2027-06-01 (est.) | Riksrevisionen follow-up on SFV (RiR 2025:30) | Riksrevisionen | LOW — standard 18-month follow-up review |
+| 2028-01-01 (est.) | "Eradication" 2-year checkpoint | Media/Riksdag | HIGH — Strömmer's 2026 pledge will be benchmarked at 2-year mark |
 
-### Summary Comparative Table
+### Indicator Summary Dashboard
 
-| Country/Framework | Criminal Economy Policy | Space Investment | Key Lesson for Sweden |
-|-------------------|------------------------|------------------|----------------------|
-| Norway | ~2.5% GDP estimate; dedicated unit | Lower than Sweden | Transparent measurement system; Sweden's 5.5% may reflect better/different measurement |
-| Denmark | Annual gang crime metrics; Exit programme | Above Sweden in ESA | Measurable reduction targets are politically viable |
-| Germany | DLR = defence-industrial strategy | Top 2 ESA contributor | Space = security, not just science |
-| EU Directive 2024 | Organised crime implementation required | N/A | Compliance deadline creates legislative forcing function |
+```
+CRITICAL INDICATORS (next 30 days):
+  □ 2026-05-19: Strömmer answers HD10458 — milestone definition?
+  □ 2026-05-19: Edholm answers HD10461 — VÅP signal?
+  □ 2026-05-20: Slottner answers HD10459 — coalition accommodation?
+
+HIGH INDICATORS (30-90 days):
+  □ VÅP content: Space funding supplementary?
+  □ Violence stats: June data vs "eradication" pledge
+  □ Almedalen: Crime + competitiveness as election themes?
+
+MEDIUM INDICATORS (90-180 days):
+  □ 2026 election polls: Security as #1 issue?
+  □ EU Directive implementation: New tools announced?
+```
+
+---
+
+## Scenario Analysis
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/scenario-analysis.md -->
+
+### Scenario Framework
+
+Three scenarios for government response to HD10458 (Strömmer on gang crime eradication) — the highest-stakes interpellation. These scenarios shape the political trajectory through September 2026 election campaign.
+
+**Probability total: 100%**
+
+---
+
+#### Scenario A: "Government Pivots" (Probability: 25%)
+
+**Trigger**: Strömmer uses the interpellation response to announce a concrete anti-crime legislative package — new asset forfeiture regime, company dissolution powers, Finanspolisen-Skatteverket coordination — and reframes "eradication" as "systematic dismantling" with measurable annual targets.
+
+**Conditions required**:
+- Government agrees pre-election legislative sprint is worth the political capital
+- Coalition partners (KD, L, SD) support package
+- VÅP includes relevant funding
+
+**Political consequences**:
+- S's coordinated interpellation campaign misfires — government turns accountability moment into policy announcement
+- Electoral damage reduced; M regains some security-competence credibility
+- S forced to shift attack from "no tools" to "insufficient tools"
+
+**Indicator**: Look for Strömmer holding press conference in the week of 2026-05-12 (pre-answer date) to pre-empt interpellation with positive announcement
+
+---
+
+#### Scenario B: "Defensive Management" (Probability: 55%)
+
+**Trigger**: Strömmer provides a procedural, comprehensive response citing existing Tidöavtalet measures, ongoing polislagstiftning, and international cooperation — acknowledging the challenge while defending the record. "Eradication" is defined as long-term aspiration, not a four-year guarantee.
+
+**Conditions required**:
+- No new legislative package ready before answer date
+- Government chooses risk management over political opportunity
+
+**Political consequences**:
+- S characterises response as "vague aspirations vs concrete violence statistics"
+- Media coverage focuses on continued explosions/shootings data as counter-narrative
+- Government credibility on security issue eroded but not collapsed
+- Remains contested territory through summer 2026
+
+**Indicator**: Response uses phrases like "vi vidtar åtgärder", "processen pågår", without specific milestones
+
+---
+
+#### Scenario C: "Accountability Crisis" (Probability: 20%)
+
+**Trigger**: Strömmer provides an unconvincing response that either cannot define "eradication" operationally OR is paired with new violent incidents in the days surrounding the answer (creating media contrast).
+
+**Conditions required**:
+- No pivot prepared; violence statistics worsen near answer date
+- Media environment hostile pre-response
+- Opposition amplification effective
+
+**Political consequences**:
+- "Government promised eradication, reality is record gang violence" becomes dominant summer 2026 narrative
+- M polling on security issues drops
+- S builds sustainable attack narrative into autumn election campaign
+- Potential SD voter erosion (SD base expected more from "their" government)
+
+**Indicator**: No new policy announcement; sharp media coverage contrasting "eradication pledge" vs current violence data on/around 2026-05-19
+
+---
+
+### Secondary Scenario: ESA Space Funding (HD10461)
+
+| Scenario | Probability | Description |
+|----------|-------------|-------------|
+| VÅP funding supplement announced | 20% | Government adds Rymdstyrelsen funding in Spring Amendment Budget |
+| Defensive response only | 65% | Edholm defends 100 MSEK; Sweden maintains position 17+ |
+| Public research community protest | 15% | Rymdstyrelsen/universities publicly criticise allocation; media campaign |
+
+---
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/election-2026-analysis.md -->
+
+### Current Parliamentary Configuration (2025/26 riksmöte)
+
+| Party | Seats | Government Role |
+|-------|-------|----------------|
+| Moderaterna (M) | 68 | Government / Prime Minister |
+| Sverigedemokraterna (SD) | 73 | Support (Tidöavtalet) |
+| Kristdemokraterna (KD) | 28 | Government |
+| Liberalerna (L) | 16 | Government |
+| **Government bloc total** | **185** | |
+| Socialdemokraterna (S) | 107 | Opposition |
+| Vänsterpartiet (V) | 24 | Opposition |
+| Miljöpartiet (MP) | 18 | Opposition |
+| Centerpartiet (C) | 25 | Opposition |
+| **Opposition bloc total** | **174** | |
+| **Total Riksdag** | **349** | **Majority: 175** |
+
+### Electoral Implications of Interpellations
+
+#### HD10458 + HD10451 — Criminal Economy / Gang Violence
+
+**Electoral relevance**: CRITICAL  
+**Parties affected**: M (primary target — Strömmer is M's justice minister), SD (secondary — their voters prioritise security)
+
+**Projected seat-projection delta scenario analysis**:
+- If S "352 GSEK criminal economy + no tools" narrative takes hold: M risks -3 to -5 seats; SD could benefit with +2 to +3 (voters want harder line); C/L (more centrist voters) may shift +1 to +2 toward S
+- If government pivots with effective response: Neutral-slight positive for M; S's coordinated campaign neutralised
+
+**Sector most affected**: Security-focused voters (~35-40% of electorate, cross-party)
+
+#### HD10461 — ESA/Space Funding
+
+**Electoral relevance**: MODERATE  
+**Parties affected**: L (Edholm is L's minister; L brand = innovation/education); M (economic competitiveness)
+
+**Projected seat-projection delta**:
+- L is most exposed: -1 to -2 seats if "L abandons research/innovation" narrative takes hold
+- Positive: VÅP funding supplementary could turn this around
+
+#### HD10459 — Agency Activism (SD→KD)
+
+**Electoral relevance**: MODERATE (for SD voter base)  
+**Intra-coalition signal**: SD needing to show differentiation from M/KD delivers this interpellation at minimal coalition cost
+
+**Projected seat-projection delta**:
+- Neutral on SD seats — serves to energise SD base, not expand it
+- Possible -1 for KD if perceived as protecting left-wing bureaucracy
+
+### 2026 Election Campaign Narrative Map
+
+```mermaid
+graph TD
+    A[S Campaign 2026:\n'352 GSEK criminal economy'\n+ rising gang violence\n= government failed Sweden] -->|HD10458+HD10451| B[M electoral vulnerability\non core issue]
+    C[SD Campaign:\n'Institutional reform\nwe demanded it\ncoalition partners delayed'] -->|HD10459| D[SD base consolidation\n+ KD pressure]
+    E[S Campaign:\n'Sweden falling behind\non space, innovation'] -->|HD10461| F[L electoral pressure\non research portfolio]
+    B --> G[2026 Election\nSeptember]
+    D --> G
+    F --> G
+    
+    style A fill:#E60026,color:#fff
+    style C fill:#DDDD00,color:#000
+    style E fill:#E60026,color:#fff
+    style G fill:#0099cd,color:#fff
+```
+
+### Overall Electoral Assessment
+
+The government (Tidökoalitionen) enters the pre-election period with:
+- **Core vulnerability**: Security/justice record challenged by independently-sourced ESO data (352 GSEK) that is difficult to dispute
+- **Secondary vulnerability**: Competitiveness record on space (rank 17/23) that is metric-anchored and embarrassing
+- **Internal pressure**: SD using parliamentary tools to signal reform impatience ahead of coalition negotiations
+
+S is executing a disciplined, evidence-based accountability campaign that will be difficult to rebut without concrete new policy announcements.
+
+---
+
+## Risk Assessment
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/risk-assessment.md -->
+
+### Risk Register (5-Dimension Framework)
+
+| Risk ID | Risk Description | Likelihood (1-5) | Impact (1-5) | L×I Score | Primary Source |
+|---------|-----------------|-----------------|--------------|-----------|----------------|
+| R-01 | Government fails to operationalise "eradicate gang crime" pledge → electoral credibility collapse | 4 | 5 | **20** | HD10458 |
+| R-02 | Criminal economy continues unchecked → systemic rule-of-law erosion | 3 | 5 | **15** | HD10451 |
+| R-03 | Sweden continues ESA slide → defence-industrial exclusion from EU procurement | 3 | 4 | **12** | HD10461 |
+| R-04 | SD institutional reform demands unmet → coalition fracture signals pre-2026 | 3 | 3 | **9** | HD10459 |
+| R-05 | SFV heritage property mismanagement → continued cultural heritage deterioration | 2 | 3 | **6** | HD10460 |
+
+### High-Priority Risk Analysis
+
+#### R-01: "Eradication" Promise Accountability (Score: 20 — CRITICAL)
+
+**Description**: Justice Minister Strömmer's Aftonbladet statement (20 April 2026) committing to "eradicate gang crime in 4 years" creates a measurable political liability. Without defined milestones, any continued violence becomes evidence of failure.
+
+**Mitigation options**:
+- Define "eradication" with specific, measurable sub-targets (e.g., gang-related murders per year, explosive incidents per year)
+- Establish independent monitoring mechanism
+- Avoid "eradication" framing in favour of "systematic reduction" language
+
+**Residual risk if unmitigated**: HIGH — will be cited in every opposition debate through autumn 2026
+
+#### R-02: Criminal Economy Scale (Score: 15 — HIGH)
+
+**Description**: ESO's 352 GSEK criminal economy (5.5% GDP, 23,000 companies) represents a structural governance failure that is independently sourced and beyond government capacity to dismiss. Unless new legislative tools are proposed, the government's position is reactive.
+
+**Mitigation options**:
+- Announce new asset forfeiture regime
+- Propose strengthened Bolagsverket/Skatteverket coordination powers
+- Commission government response to ESO report
+
+**Residual risk if unmitigated**: HIGH — ESO figure will anchor opposition narrative
+
+#### R-03: ESA Space Programme Decline (Score: 12 — HIGH)
+
+**Description**: Sweden's fall to rank 17/23 in ESA voluntary programmes, combined with a global 31% ESA budget increase, represents a structural competitiveness gap that will widen absent additional funding.
+
+**Mitigation options**:
+- VÅP supplementary allocation for Rymdstyrelsen
+- Bilateral agreements with key ESA programme partners
+- ESA national programme endorsement at political level
+
+### Risk Summary Chart
+
+```
+CRITICAL (R-01): ████████████████████ 20
+HIGH (R-02):     ███████████████ 15
+HIGH (R-03):     ████████████ 12
+MEDIUM (R-04):   █████████ 9
+LOW (R-05):      ██████ 6
+```
+
+---
+
+## SWOT Analysis
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/swot-analysis.md -->
+
+### SWOT Matrix
+
+#### Strengths (Government)
+- **S1** [HD10458]: Government did pass 34-point Tidöavtalet on crime — can point to legislative record
+- **S2** [HD10461]: Government can cite 100 MSEK ESA allocation as continuity commitment, not full withdrawal
+- **S3** [HD10459]: SD's institutional reform agenda is partly being addressed (some agency budget cuts)
+- **S4** [HD10460]: Government can cite RiR follow-up processes already underway for SFV
+
+#### Weaknesses (Government)
+- **W1** [HD10458]: "Eradicate in 4 years" is an unfalsifiable-before-eradication claim that is NOW falsifiable by continued violence metrics
+- **W2** [HD10451]: ESO's 352 GSEK / 23,000 companies figure is independently sourced — government cannot dismiss it
+- **W3** [HD10461]: Sweden's drop to rank 17 of 23 ESA members is objectively documented; 31% ESA budget increase while Sweden declined is damaging
+- **W4** [HD10459]: Four years of non-socialist government without the institutional reforms SD demands reveals coalition limits
+
+#### Opportunities (Government)
+- **O1** [HD10458+HD10451]: Announce new anti-crime economic tools (asset forfeiture reform, company dissolution powers) before answer date
+- **O2** [HD10461]: Announce supplementary Rymdstyrelsen funding in VÅP (Spring budget amendment) to reverse ESA slide
+- **O3** [HD10459]: Use Slottner response to announce targeted reform of specific agencies — partial SD accommodation
+- **O4** [HD10460]: Accept RiR recommendations publicly, announce SFV action plan
+
+#### Threats (Government)
+- **T1** [HD10458+HD10451]: S coordinated campaign creates "352 GSEK criminal economy + rising violence + no tools" narrative that will define summer 2026 media cycle
+- **T2** [HD10461]: Nordic peer comparison (Denmark/Norway/Finland ahead) embarrasses Sweden on competitiveness — hard to rebut
+- **T3** [HD10459]: Non-committal KD response may cause SD to escalate demands or signal reduced coalition commitment for 2026+
+- **T4** [HD10458]: Record violence statistics in 2026 are observable facts that make "eradication" promise appear increasingly hollow
+
+### TOWS Matrix (Strategic Implications)
+
+| | Opportunities | Threats |
+|---|---|---|
+| **Strengths** | SO: Announce new anti-crime tools to turn S attack into government initiative | ST: Use Tidöavtalet record defensively to rebuff "no action" narrative |
+| **Weaknesses** | WO: VÅP supplementary ESA funding would address W3; new crime tools address W1+W2 | WT: Without concrete milestones for "eradication," W1 + T1 = electoral vulnerability through 2026 |
+
+---
+
+## Threat Analysis
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/threat-analysis.md -->
+
+### Political Threat Taxonomy
+
+#### Tier 1 — Immediate Threats (Pre-Answer, 2026-05-19/20/21)
+
+**T1.1 — Credibility Collapse on Gang Crime Pledge**
+- Attack vector: S presses Strömmer to define concrete milestones for "eradicate gang crime in 4 years"
+- Attack tree: Promise made publicly (Aftonbladet 20 April) → no operational definition → continued violence records → government admits vague aspirational claim → media amplification → electoral damage
+- Probability: HIGH [HIGH CONFIDENCE — KJ-2]
+- Target: Justice Minister Strömmer (M) / M-party election credibility
+
+**T1.2 — ESA Rank 17 as "Sweden is Falling Behind" Narrative**
+- Attack vector: S uses Sweden's rank 17/23 in ESA to build "Tidökoalitionen undermines Sweden's future"
+- Attack tree: 31% ESA budget increase globally → Sweden declines → rank drops to 17 → Nordic peers ahead → "Sweden loses to Denmark, Norway, Finland" → industrial sector alarmed → media picks up
+- Probability: MODERATE [HIGH CONFIDENCE — KJ-3]
+- Target: Minister Edholm (L) / government competitiveness credibility
+
+#### Tier 2 — Structural Threats (Summer-Autumn 2026)
+
+**T2.1 — Opposition "352 GSEK Criminal Economy" Platform**
+- Attack vector: S coordinates HD10458 + HD10451 into unified "government lacks tools to fight criminal economy" campaign
+- Attack tree: ESO independent data → 23,000 criminal companies → rising gang violence → no new legislative tools proposed → "Sweden being hollowed out by organised crime" → election campaign centrepiece
+- Probability: HIGH [HIGH CONFIDENCE — KJ-1]
+- Target: Government's entire law-and-order record
+
+**T2.2 — SD/KD Intra-Coalition Fracture Signal**
+- Attack vector: HD10459 exposes that SD demands constitutional reform (utnämningsmakt) KD cannot deliver
+- Attack tree: Slottner gives non-committal response → SD characterises as "four years of broken promises" → SD signals post-2026 coalition demands include institutional reform → coalition negotiation leverage established
+- Probability: MODERATE [LOW-MODERATE CONFIDENCE — KJ-4]
+- Target: Tidökoalitionen cohesion narrative
+
+### Prompt Injection / Manipulation Assessment
+
+No evidence of prompt injection in interpellation texts. All interpellations represent genuine parliamentary accountability instruments by elected MPs. No manipulation indicators detected.
+
+### Defensive Response Options
+
+| Threat | Defensive Option | Feasibility |
+|--------|----------------|-------------|
+| T1.1 | Define measurable milestones; reframe "eradication" as "systematic dismantling" | MODERATE |
+| T1.2 | Announce VÅP supplementary ESA funding in parallel with interpellation response | HIGH |
+| T2.1 | Announce new anti-criminal-economy legislative package (asset forfeiture) | HIGH |
+| T2.2 | Partial accommodation: targeted agency oversight reform proposal | LOW |
 
 ---
 
@@ -1266,6 +1121,58 @@ The 461 interpellations filed in 2025/26 riksmöte to date continues the modern 
 - Average interpellations per riksmöte: ~300-400
 - 2025/26 is tracking above average, suggesting elevated opposition activity pre-election
 - Justice minister interpellations are consistently the most numerous (gang crime has dominated justice policy discourse since ~2015)
+
+---
+
+## Comparative International
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/comparative-international.md -->
+
+### Comparator 1: Nordic Countries — Criminal Economy Policy
+
+#### Norway
+- **Comparable data**: Kripos (National Criminal Investigation Service) estimates criminal economy at ~2.5% GDP (~200 GSEK equivalent)
+- **Policy approach**: Norway's "Organisert Kriminalitet" strategy 2022-2025 includes dedicated anti-criminal-economy coordination unit
+- **Key difference**: Norway's STRASAK reporting system provides annual criminal economy estimates; Sweden lacks equivalent transparent measurement
+- **Relevance to HD10451+HD10458**: Sweden's ESO figure (5.5% GDP) is more than double Norway's estimate — either Swedish criminality is dramatically worse, or measurement methodologies differ significantly. Both interpretations require government response.
+
+#### Denmark
+- **Comparable data**: Politiets Efterretningstjeneste (PET) publishes gang crime threat assessment annually
+- **Policy approach**: Denmark implemented "Rocker/Bande Exit" programme + corporate crime unit; focused on financial intelligence
+- **Key difference**: Denmark has operationalised gang crime reduction metrics with annual public reporting
+- **Relevance to HD10458**: Denmark provides the model Strömmer could adopt — measurable annual gang crime reduction targets published transparently. A "Strömmer Plan" modelled on Danish approach would be a credible response to Carvalho's accountability challenge.
+
+### Comparator 2: EU Members — Space Programme Participation
+
+#### Germany
+- **ESA position**: Germany is the largest ESA contributor (~22% of ESA budget)
+- **Policy approach**: German space programme (DLR) integrated into dual-use defence-civilian strategy
+- **Key difference**: Germany explicitly links ESA investment to EU defence-industrial sovereignty
+- **Relevance to HD10461**: Sweden's decline from a higher ESA rank to 17/23 contrasts with Germany's strategic deepening of space commitment — illustrating the security dimension Wiking raises
+
+#### Netherlands
+- **ESA position**: Netherlands maintains position 8-9 in ESA; significantly above Sweden
+- **Policy approach**: Netherlands Space Office (NSO) lobbies aggressively at ESA ministerials
+- **GDP comparison**: Netherlands (GDP ~800 GSEK) vs Sweden (GDP ~6,400 GSEK) — Sweden is much larger economy but contributes less proportionally to ESA
+- **Relevance to HD10461**: Sweden's contribution-to-GDP ratio is significantly lower than Netherlands, suggesting the constraint is political will, not economic capacity
+
+### Comparator 3: EU Framework — Organised Crime Directive 2024
+
+The EU adopted the Organised Crime Directive in late 2024, which requires member states to:
+- Establish cross-border criminal economy investigation units
+- Implement asset forfeiture for proceeds of organised crime
+- Coordinate Europol/Eurojust with national financial intelligence
+- **Member state implementation deadline**: 2026-2027
+
+**Relevance to HD10451**: Sweden's current legislative framework for criminal economy may not meet EU Directive requirements. This creates both a compliance obligation AND a political opportunity — Strömmer could announce national implementation as the "new tools" S is demanding.
+
+### Summary Comparative Table
+
+| Country/Framework | Criminal Economy Policy | Space Investment | Key Lesson for Sweden |
+|-------------------|------------------------|------------------|----------------------|
+| Norway | ~2.5% GDP estimate; dedicated unit | Lower than Sweden | Transparent measurement system; Sweden's 5.5% may reflect better/different measurement |
+| Denmark | Annual gang crime metrics; Exit programme | Above Sweden in ESA | Measurable reduction targets are politically viable |
+| Germany | DLR = defence-industrial strategy | Top 2 ESA contributor | Space = security, not just science |
+| EU Directive 2024 | Organised crime implementation required | N/A | Compliance deadline creates legislative forcing function |
 
 ---
 
@@ -1357,6 +1264,99 @@ For each interpellation, assess feasibility of the actions implied or demanded b
 ### Statskontoret Carry-Forward
 
 Statskontoret has no current report directly related to these interpellations' subject matter. However, the anti-gang-crime implementation question (HD10458) is exactly the type of public administration evaluation Statskontoret is mandated to perform. A government directive to Statskontoret to evaluate Polismyndigheten's gang crime implementation effectiveness would be a credible, low-cost response signal.
+
+---
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/media-framing-analysis.md -->
+
+### Per-Party Media Framing Predictions
+
+How each major party will frame the interpellations in media communications:
+
+---
+
+#### Socialdemokraterna (S) — HD10458, HD10451, HD10461
+
+**Core frame**: *"Government promised security and innovation — delivered neither"*
+
+Expected media talking points:
+- "Justice Minister Strömmer promised to eradicate gang crime in four years. But in 2026 alone, there has been an average of one explosion or shooting every two days."
+- "ESO's expert group found that criminals control assets worth 352 billion kronor — equivalent to 5.5% of Sweden's GDP — and the government has no tools to break this criminal economy."
+- "Sweden has fallen to 17th place among 23 ESA member states while Norway and Denmark moved ahead. This government is letting Sweden fall behind."
+
+**Targeted outlets**: Aftonbladet (gang crime, max reach), DN (criminal economy analysis), SVT (space programme decline)
+
+**Amplification strategy**: S will coordinate media outreach from HD10458 and HD10451 simultaneously, creating a "wall of evidence" around criminal policy failure.
+
+---
+
+#### Moderaterna (M) — (Defensive)
+
+**Core frame**: *"The problem is real; we have a plan"*
+
+Expected media talking points:
+- "We have implemented 34 new measures under the Tidöavtalet to combat gang crime. The opposition wants to pretend we've done nothing."
+- "Eradicating gang crime is an ambitious but necessary goal. We are seeing results in some areas."
+- "Criminal economy is a challenge across Europe — Sweden is working with EU partners to develop new tools."
+
+**Challenge**: Record violence statistics in 2026 make the "we have a plan" narrative hard to sustain without new concrete announcements.
+
+---
+
+#### Sverigedemokraterna (SD) — HD10459, HD10460
+
+**Core frame**: *"We are fighting for real change; coalition partners are blocking us"*
+
+Expected media talking points (primarily for SD's own media and social channels):
+- "Four years with a non-socialist government, and the agencies are still doing left-wing opinion work with taxpayer money. Josef Fransson is demanding action."
+- "We have demanded that utnämningsmakt (appointment power) be moved to Riksdag. KD and M are not listening."
+
+**Target audience**: SD's own voter base, not mainstream swing voters. These interpellations serve SD's internal credibility, not mass media framing.
+
+---
+
+#### Liberalerna (L) — (Defensive on HD10461)
+
+**Core frame**: *"Space investment is a priority; we allocated what was budget-feasible"*
+
+Expected media talking points:
+- "Sweden has made strategic space investments including Esrange. The 100 MSEK allocation provides continuity."
+- "We recognise the ambition to increase Sweden's ESA participation and will consider it in future budget processes."
+
+**Challenge**: L is most exposed among coalition parties on HD10461 — it contradicts L's pro-research identity. Internal pressure likely to seek VÅP supplementary funding.
+
+---
+
+#### Kristdemokraterna (KD) — (Defensive on HD10459)
+
+**Core frame**: *"We share SD's concerns; we are addressing them within constitutional limits"*
+
+Expected media talking points:
+- "Agency reform requires careful process. We cannot change utnämningsmakt without broad constitutional consensus."
+- "We have taken concrete steps to ensure agencies focus on their mandates rather than opinion work."
+
+---
+
+### Mainstream Media Predicted Coverage Intensity
+
+| Topic | Expected Coverage | Primary Outlets |
+|-------|------------------|-----------------|
+| Gang crime pledge (HD10458) | 🔴 HIGH | Aftonbladet, Expressen, SVT, TV4 |
+| Criminal economy 352 GSEK (HD10451) | 🟡 MODERATE | DN, SvD, SVT |
+| ESA space decline (HD10461) | 🟡 MODERATE | DN, SvD, Ny Teknik |
+| Agency activism (HD10459) | 🟢 LOW | SD media, Samtiden |
+| SFV heritage (HD10460) | 🟢 LOW | Specialised/niche |
+
+---
+
+### Social Media Frame Analysis
+
+**TikTok/Instagram (High Engagement)**: Gang crime statistics, explosion counts — visual, emotional, easily shared. HD10458 will generate highest social media engagement.
+
+**X/Twitter (Political Class)**: Criminal economy 352 GSEK — detailed policy debate. HD10451 will dominate political Twitter.
+
+**Facebook (Older Voters)**: Space programme decline — generational nostalgia for Esrange/Swedish space programme pride. HD10461 may generate significant older-voter Facebook engagement.
 
 ---
 
@@ -1645,24 +1645,24 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/threat-analysis.md)
 - [`documents/HD10451-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/documents/HD10451-analysis.md)
 - [`documents/HD10458-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/documents/HD10458-analysis.md)
 - [`documents/HD10459-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/documents/HD10459-analysis.md)
 - [`documents/HD10460-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/documents/HD10460-analysis.md)
 - [`documents/HD10461-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/documents/HD10461-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/interpellations/cross-reference-map.md)

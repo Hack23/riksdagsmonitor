@@ -5,7 +5,7 @@ date: 2026-04-22
 subfolder: realtime-2338
 slug: 2026-04-22-realtime-2338
 source_folder: analysis/daily/2026-04-22/realtime-2338
-generated_at: 2026-05-04T09:52:32.178Z
+generated_at: 2026-05-04T12:16:13.888Z
 language: en
 layout: article
 ---
@@ -95,10 +95,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -348,76 +348,217 @@ gantt
 | HD01FiU48 | 2026-05-01 | Fuel tax cut takes effect — petrol prices at pump |
 | HD03240 | 2026-06-01 | El-system law enters parliamentary committee |
 
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/media-framing-analysis.md -->
+## Per-document intelligence
+
+### HD01FiU48
+<!-- source: documents/HD01FiU48-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD01FiU48-analysis.md -->
+
+**dok_id**: HD01FiU48 | **Type**: Betänkande (Committee Report) | **Adopted**: 2026-04-21
 
 ---
 
-### Expected Framing by Political Actor
-
-#### Government/Coalition Framing
-**Primary frame**: "Delivery-focused government protecting Swedish households" — HD01FiU48 fuel cut as headline, energy legislation as long-term security
-**Supporting narrative**: "S is engaging in pre-election theatre while we govern"
-**Vulnerability**: HD10444 employer contributions to social dumping — if Svantesson cannot provide factual rebuttal, "government enables wage exploitation" frame becomes credible
-**Tone**: "Responsible fiscal management, record delivery"
-**Expected media vehicles**: Moderate sympathetic outlets (Expressen, SvD), governmental press conferences
-
-#### S (Socialdemokraterna) Framing
-**Primary frame**: "Coalition ministers fail to protect Swedish workers and vulnerable citizens"
-**Sub-frames**:
-- HD10444: "Svantesson enables tax-funded social dumping" (employer contribution angle)
-- HD10445: "Slottner allows municipal social dumping of Sweden's most vulnerable"
-- HD10446: "Carlson's ministry falsely declares citizens dead" (HD10446 — death record scandal)
-- HD10442: "Svantesson ignores eating disorder court case costing women their lives"
-**Tone**: Accountability, moral outrage (carefully calibrated to avoid "too strident")
-**Expected media vehicles**: Aftonbladet, LO-Tidningen, S-aligned regional press
-
-#### SD (Sverigedemokraterna) Framing
-**Primary frame**: Unlikely to prominently cover S interpellations (different accountability axis). Will focus on fuel tax cut SUCCESS (populist energy nationalism) and youth crime reform (HD03246).
-**Expected media vehicles**: Avpixlat-adjacent outlets, social media
-
-#### MP (Miljöpartiet) Framing
-**Primary frame**: "Fuel tax cut is climate regression; coalition abandons Sweden's climate commitments"
-**Sub-frame**: Energy legislation (HD03239 vindkraft) as insufficient half-measure
-**Expected media vehicles**: Miljömagasinet, urban progressive press
-
-#### V (Vänsterpartiet) Framing
-**Primary frame**: "Government cuts fuel tax instead of investing in public transport — wrong priorities for working class"
-**Sub-frame**: Social dumping (aligns with HD10443/HD10444) — V's traditional labour market accountability frame
-**Expected media vehicles**: Flamman, Proletären, social media
+### Document Summary
+**Title**: Finansutskottets betänkande 2025/26:FiU48 — Extra ändringsbudget (Vår 2026)
+**Committee**: Finansutskottet (FiU)
+**Status**: ENACTED — voted and approved by Riksdag 2026-04-21
+**Effective date**: 2026-05-01 (fuel tax relief component)
+**Fiscal impact**: 4.1 billion SEK (estimated full-year cost of fuel tax reduction)
 
 ---
 
-### Expected Mainstream Media Framing (Swedish Press Outlets)
+### Core Content
 
-| Outlet | Expected Frame | Based on past coverage patterns |
-|--------|---------------|--------------------------------|
-| Aftonbladet | Accountability-first: Svantesson interpellations lead | S-sympathetic tabloid; likely HD10444/10442 double spread [B2] |
-| Expressen | Balanced accountability with coalition defence | Centre-liberal; will examine both interpellations and coalition's fuel tax delivery [B2] |
-| Dagens Nyheter (DN) | Analysis: "Is this a turning point?" | Quality broadsheet; likely scenario analysis rather than pure accountability [B2] |
-| SVT Nyheter | Public interest neutral: all 4 interpellations reported | Public broadcaster; procedural coverage of all parties [B2] |
-| SvD | Business-framing: HD01FiU48 economic analysis | Conservative-leaning; will examine fiscal impact of fuel cut [B2] |
+**Primary measure**: 82 öre/litre reduction in fuel excise duty (drivmedelsskatt) effective 1 May 2026. Tax rate kept at EU minimum floor. Duration: May–September 2026 (temporary, aligned with summer driving season).
+
+**Secondary measures** (based on committee report framing):
+- Employer contribution (arbetsgivaravgift) adjustment for certain sectors [B2 — inferred from HD10444 interpellation reference]
+- Military/defence budget supplementary allocation [B2]
+- Ukraine support allocation [B2]
 
 ---
 
-### Framing Risk Matrix
+### Political Significance
 
-```mermaid
-quadrantChart
-    title Media Framing Risk vs. Coalition Electoral Impact
-    x-axis Low Risk --> High Risk
-    y-axis Low Impact --> High Impact
-    quadrant-1 Manage proactively
-    quadrant-2 Crisis response needed
-    quadrant-3 Monitor passively
-    quadrant-4 Communications strategy needed
-    HD10444 employer contributions: [0.7, 0.8]
-    HD10442 eating disorder: [0.65, 0.75]
-    HD10446 false death records: [0.8, 0.8]
-    HD01FiU48 fuel cut (positive): [0.2, 0.6]
-    Energy legislation: [0.2, 0.4]
-    HD03246 youth crime reform: [0.3, 0.5]
-```
+**Significance tier**: 🔴 CRITICAL | **DIW weight**: Highest
+
+This is the most directly consequential enacted legislation in today's cycle. Effects are immediate (May 1, 2026) and tangible (consumers, businesses, opposition critique). The vote on 2026-04-21 confirmed coalition cohesion — M+SD+KD+L all supported; S+V+MP voted against (confirmed by opposition motions HD024098/HD024092/HD024082 in motions analysis).
+
+**Opposition critique** (from motion filings HD024082/092/098):
+- MP: "Climate regression — temporary cut will permanently habituate consumers to lower fuel prices"
+- V: "Money wasted on fuel should go to public transport"
+- S: "Distributional injustice — benefits the wealthy who drive most"
+
+**Government framing**: "Protecting household purchasing power during energy cost crisis; staying at EU minimum to maintain credibility of Sweden's energy market position"
+
+**International context**: Germany Tankrabatt 2022 (35 cents/litre, 3 months) as most direct precedent — see comparative-international.md.
+
+---
+
+### Admiralty Rating
+- Source: [A1] Riksdag API direct retrieval — betänkande confirmed adopted
+- Fiscal figure (4.1 GSEK): [A2] — cited in committeeReports/synthesis-summary.md sibling analysis; assumed confirmed
+- Vote outcome (opposition voted against): [A2] — inferred from sibling motions analysis + interpellation context
+
+---
+
+### Forward Watch
+- Pump price data: 2026-05-01+ (FI-3 forward indicator)
+- Opposition communication: S campaign messaging expected immediately post-May 1
+- FiU48 as election debate touchstone: Will feature in September 2026 campaign debates as "did the cut work?" test case
+- KU review petition: If employer contribution mechanism in FiU48 is linked to HD10444 allegations, KU review is theoretically possible [B3 — speculative]
+
+### HD10443
+<!-- source: documents/HD10443-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10443-analysis.md -->
+
+---
+
+### Document Summary
+**Title**: Interpellation to Reconciliation/Housing/Social Dumping Minister regarding inter-municipal transfer of welfare-dependent residents
+**Filed by**: S MP
+**Target minister**: Erik Slottner (KD), Minister for Civil Affairs and Housing
+**Expected debate**: 2026-04-28 to 2026-05-05
+
+---
+
+### Political Significance
+
+**Significance tier**: 🟠 HIGH | **DIW weight**: High
+
+Inter-municipal social welfare dumping (kommuner "recommending" welfare recipients to move to cheaper municipalities) is a well-documented governance gap in Sweden's decentralised welfare model. HD10443 raises a systemic failure that no existing national law directly prohibits — municipalities operate under kommunalt självstyre (local self-governance) principle that creates an enforcement gap.
+
+**Why KD/Slottner is targeted**: Slottner is responsible for housing and civil affairs. The interpellation likely focuses on his failure to introduce legislation preventing municipalities from managing welfare costs by informal relocation pressure. KD traditionally emphasises family values and welfare state coherence — being targetted on welfare dumping creates a party-brand dissonance.
+
+**International parallel**: Dutch court ruling 2023, Danish social housing policy — both show this is a real policy problem across Nordic/European welfare states (comparative-international.md).
+
+---
+
+### Admiralty Rating
+- Source: [A1] Riksdag API direct retrieval of interpellation filing
+- Content: [B2] Policy substance inferred from title + governance context
+- Impact assessment: [B2] Pattern recognition from sibling analysis (interpellations/synthesis-summary.md)
+
+---
+
+### Forward Watch
+- Slottner's debate answer: 2026-04-28 to 2026-05-05
+- Potential follow-up: JO complaint from affected municipalities or welfare recipients
+- Legislative response: HD10443 raises a genuine governance gap — may appear as government proposal in autumn session
+
+### HD10444
+<!-- source: documents/HD10444-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10444-analysis.md -->
+
+---
+
+### Document Summary
+**Title**: Interpellation to Finance Minister Elisabeth Svantesson (M) regarding employer contributions paid to employers engaged in social dumping
+**Filed by**: S MP (interpellation author — name to be confirmed in debate)
+**Target minister**: Elisabeth Svantesson (Moderaterna), Minister for Finance
+**Expected debate**: 2026-04-28 to 2026-05-05
+
+---
+
+### Political Significance
+
+**Significance tier**: 🔴 CRITICAL | **DIW weight**: High
+
+The interpellation directly challenges the coherence of the government's fiscal management. The core allegation is that Swedish state employer contributions (arbetsgivaravgifter) have been paid to employers who engage in social dumping — i.e., exploiting foreign workers at below-market wages while receiving state-funded payroll subsidies.
+
+This framing is politically devastating for Svantesson because:
+1. The Finance Ministry oversees tax/subsidy coherence
+2. Employer contributions are a core Social Democratic policy instrument
+3. The allegation links fiscal management failure to labour exploitation — S's strongest welfare state credibility claim
+
+**Link to HD10443**: HD10443 (Slottner interpellation on inter-municipal social dumping) and HD10444 (Svantesson on employer contributions) are thematically related — both use "social dumping" as the accountability frame on the same day [A1].
+
+---
+
+### Admiralty Rating
+- Source: [A1] Riksdag API direct retrieval of interpellation filing
+- Content: [B2] Substantive claims in interpellation text not yet verified (text not retrieved in this run)
+- Impact assessment: [B2] Based on political framing inference from title + context
+
+---
+
+### Forward Watch
+- Debate answer: 2026-04-28 to 2026-05-05 (riksdagen.se anföranden)
+- KU petition risk: LOW unless Svantesson's answer reveals factual errors in prior statements
+- Follow-on media: Aftonbladet investigation into social dumping employers likely
+
+### HD10445
+<!-- source: documents/HD10445-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10445-analysis.md -->
+
+---
+
+### Document Summary
+**Title**: Interpellation to Minister for Housing regarding social segregation and housing allocation
+**Filed by**: S MP
+**Target minister**: Erik Slottner (KD), Minister for Civil Affairs and Housing
+**Expected debate**: 2026-04-28 to 2026-05-05
+
+---
+
+### Political Significance
+
+**Significance tier**: 🟠 HIGH | **DIW weight**: Medium-High
+
+Housing segregation is a perennial Swedish political issue. Slottner is targeted twice on the same day (HD10443 + HD10445) — a deliberate double-targeting strategy by S to depict him as failing Sweden's vulnerable housing population on multiple dimensions.
+
+The housing segregation framing links to committee reports HD01CU27/28 (civil law, housing allocations) already in progress through Riksdag. S's strategic logic: Slottner's proposals are insufficient to address structural segregation.
+
+**Electoral relevance**: Housing affordability and segregation are top-3 voter concerns in Sweden 2026, particularly for the urban progressive segment (voter-segmentation.md Segment 2). The double interpellation (HD10443 + HD10445) maximises media presence on the housing-welfare nexus.
+
+---
+
+### Admiralty Rating
+- Source: [A1] Riksdag API direct retrieval
+- Content: [B2] Substance inferred from title + betänkande cross-reference HD01CU27/28
+- Impact assessment: [B2] Electoral relevance inferred from voter concern surveys
+
+---
+
+### Forward Watch
+- Slottner's debate answer (HD10445): 2026-04-28 to 2026-05-05
+- Cross-reference: HD01CU27/28 committee reports — if Slottner's answer points to these as his action, S can rebut with insufficiency claims
+- Media: DN/SVT housing desk likely to use this as hook for housing segregation investigation
+
+### HD10446
+<!-- source: documents/HD10446-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10446-analysis.md -->
+
+---
+
+### Document Summary
+**Title**: Interpellation to Minister regarding Skatteverket/Socialstyrelsen false death record declarations affecting living citizens
+**Filed by**: S MP
+**Target minister**: Parisa Liljestrand (M) or Gabriel Wikström-equivalent — Minister for Social Affairs or Digital Governance (minister identity to be confirmed from interpellation text)
+**Note**: In the interpellation cluster context, HD10446 is the fourth interpellation in 24 hours; based on title pattern, it addresses cases where citizens were incorrectly declared deceased in official records, affecting their access to healthcare, social insurance, and banking [B2]
+**Expected debate**: 2026-04-28 to 2026-05-05
+
+---
+
+### Political Significance
+
+**Significance tier**: 🔴 CRITICAL | **DIW weight**: High
+
+False death declarations in Swedish welfare state registers (folkbokföring, Skatteverket, Socialstyrelsen) are a digital governance failure with direct harm to individuals. Citizens falsely registered as deceased lose access to healthcare appointments, social insurance payments (Försäkringskassan), and banking services.
+
+**Why this is HIGH significance**: This issue directly undermines the Swedish welfare state's core identity — the precision and reliability of the folkbokföring register. A government that cannot correctly track who is alive has a fundamental administrative credibility problem.
+
+**Political vulnerability**: Unlike the employer contributions issue (which requires knowledge of tax law to assess), false death declarations are immediately comprehensible to every voter. Media can humanise the story with specific victim accounts. This is potentially the most media-viral issue in the interpellation cluster.
+
+---
+
+### Admiralty Rating
+- Source: [A1] Riksdag API direct retrieval (filing confirmed)
+- Content: [B3] Substantial substance inferred from title pattern only — full text not retrieved
+- Impact assessment: [B2] Electoral significance based on comparable welfare-state failure stories in 2022–2025 media
+
+---
+
+### Forward Watch
+- Minister debate answer: 2026-04-28 to 2026-05-05
+- JO risk: HIGH — false death declarations are exactly the type of systemic failure JO investigates
+- Media: Personal story angle (citizen falsely declared dead) is highly media-friendly → watch Aftonbladet/Expressen
+- Socialstyrelsen/Skatteverket response: Agency heads may be called to parliamentary committee hearing
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/stakeholder-perspectives.md -->
@@ -514,6 +655,138 @@ flowchart TD
     style HD01FiU48 fill:#e65100,color:#FFFFFF
     style HD03246 fill:#1565c0,color:#FFFFFF
 ```
+
+## Coalition Mathematics
+<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/coalition-mathematics.md -->
+
+---
+
+### Current Riksdag Seat Distribution (2022–2026 mandate)
+
+| Party | Seats | Bloc |
+|-------|-------|------|
+| SD | 73 | Tidö support |
+| S | 107 | Opposition |
+| M | 68 | Tidö government |
+| V | 24 | Opposition |
+| C | 24 | Pivot |
+| KD | 19 | Tidö government |
+| MP | 18 | Opposition |
+| L | 16 | Tidö government |
+| **Total** | **349** | |
+
+**Tidö governing majority**: M+KD+L = 103 seats; with SD support = 176 seats (majority = 175)
+**Opposition potential**: S+V+MP = 149; needs C (24) for 173 — short of majority without SD or breakdown of Tidö
+
+---
+
+### Post-Election Scenario Mathematics (September 2026)
+
+#### Coalition A: Tidö Continuation (M+KD+L+SD support)
+- Requires M+KD+L ≥ 100 + SD ≥ 70 → ≥ 175/349
+- Current probability: MODERATE (scenario 2 → 55%)
+- Risk: L drops below 4% threshold → Tidö loses 16 seats → falls to ~159/349 → minority without SD active support
+
+#### Coalition B: S-led alternative (S+V+MP+C)
+- Requires S ≥ 95 + V ≥ 20 + MP ≥ 15 + C ≥ 24 → ≥ 154/349 (majority = 175 — falls short)
+- S+V+MP+C needs more: requires either S >102 or C > 28 to reach 175
+- Current probability: LOW-MODERATE; only viable under Scenario 1 (accountability breakthrough)
+
+#### Coalition C: Grand Centre Bloc (M+C+L+S abstain)
+- Requires M+C+L ≥ 115 (passive S abstention or confidence-and-supply)
+- Historically rejected by Swedish political culture; not plausible without crisis
+- Current probability: VERY LOW
+
+---
+
+### Today's Electoral Mathematics Shifts
+
+| Event | Direction | Seat impact estimate |
+|-------|-----------|---------------------|
+| S accountability offensive (HD10444/443/445/446) | S +1–3% if KJ-1 materialises | +3–9 seats for S bloc [B2] |
+| HD01FiU48 fuel cut enacted | Coalition claim +0.5–1% with rural segment | +1–3 seats for Tidö [B2] |
+| C deportation nuance (HD024095) | C towards independent pivot | C seat-share unchanged; coalition arithmetic risk |
+| Energy legislation sprint | Coalition credibility signal | No immediate seat impact |
+
+---
+
+### Sainte-Laguë Threshold Sensitivity
+
+**Critical 4% threshold parties**: L (currently ~4.5%) and MP (currently ~3.8–4.2%)
+
+- If L falls below 4%: Tidö coalition loses 16 seats → drops to ~159 with SD → below majority
+- If MP falls below 4%: S bloc loses 18 seats → S+V+C = ~147 → cannot form government without SD defection
+- Both thresholds are within current polling error bands
+
+```mermaid
+xychart-beta
+    title "Coalition seat scenarios 2026"
+    x-axis ["Tidö (current)", "Tidö (if L drops)", "S bloc (Scenario 1)", "S bloc (MP drops)"]
+    y-axis "Seats" 140 --> 200
+    bar [176, 159, 165, 147]
+    line [175, 175, 175, 175]
+```
+
+*Note: 175 = majority threshold. Tidö current projects above threshold; S bloc Scenario 1 projects below.*
+
+## Voter Segmentation
+<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/voter-segmentation.md -->
+
+---
+
+### Segment Matrix
+
+#### Segment 1: Rural/Commuter Voters (Fuel-Sensitive)
+**Size**: ~800,000 households outside major metropolitan areas with daily car dependency (SCB transport survey estimate)
+**Impact of HD01FiU48**: DIRECT POSITIVE — 82 öre/litre visible at pump from May 1, 2026. Monthly saving for average commuter (~1,500 km/month, 7L/100km): approximately 87 SEK/month. Tangible but modest. [A2 SCB proxy]
+**Electoral leaning**: Historically split between M/SD/C; this measure targets all three parties' core rural base
+**Risk**: C and M compete for this segment's credit; SD may claim insufficient relief
+
+#### Segment 2: Urban Progressive Voters (Climate-Sensitive)
+**Size**: Stockholm/Gothenburg/Malmö metro — approximately 2.8 million voters
+**Impact of HD01FiU48**: NEGATIVE FRAMING — MP and V interpellations against fuel cut tap into this segment's climate anxiety. HD024098 (MP fuel tax motion) and HD024092 (V motion) directly represent this segment's opposition [A1]
+**Impact of Energy legislation (HD03240/239)**: MIXED — electricity system reform + wind power incentives play positively with this segment; coal → renewables framing resonates
+**Electoral leaning**: S/MP/V core; some L and C voters
+
+#### Segment 3: Public Sector Workers (Accountability-Sensitive)
+**Size**: ~700,000 municipal and regional government employees
+**Impact of HD10443** (inter-municipal social welfare transfers): DIRECTLY RELEVANT — social workers and welfare administrators most aware of this policy failure [A1]
+**Impact of HD10444** (employer contributions to social dumping): Secondary relevance — fiscal solidarity frame resonates
+**Electoral leaning**: S core voters; moderate turnout amplification if accountability narrative strengthens
+
+#### Segment 4: Youth and First-Time Voters (Agency/Justice-Sensitive)
+**Size**: ~300,000 voters aged 18–25 eligible for first time in 2026
+**Impact of HD03246** (unga lagöverträdare — youth criminal sentencing): DIRECTLY RELEVANT — reform of juvenile justice affects this cohort's peers; reactions split between accountability hawks (SD base) and rehabilitation advocates (S/V/MP base) [A1]
+**Impact of eating disorder court case (HD10442)**: Tangentially relevant — eating disorders disproportionately affect youth; governmental accountability on healthcare resonates
+
+#### Segment 5: Business Owners and Self-Employed (Economic-Sensitive)
+**Size**: ~500,000 sole traders and SME owners registered in Bolagsverket (proxy)
+**Impact of HD10444** (employer contribution — S interpellation): COMPLEX — if employers are named as social dumping participants, this creates a defensive reaction in the broader business community even though the interpellation targets bad actors specifically. Risk of S being framed as anti-business [B2]
+**Electoral leaning**: M/C core; some L voters
+
+---
+
+### Cross-Segment Electoral Arithmetic
+
+```mermaid
+flowchart TD
+    S1["Segment 1: Rural/Commuter<br/>~800k HH<br/>HD01FiU48 POSITIVE"] -->|"Credit competition"| COAL["Coalition M+SD+C"]
+    S2["Segment 2: Urban Progressive<br/>~2.8M voters<br/>Fuel cut NEGATIVE / Energy MIXED"] -->|"Mobilisation"| OPP["Opposition S+MP+V"]
+    S3["Segment 3: Public Sector<br/>~700k workers<br/>HD10443/HD10444 RELEVANT"] -->|"Accountability frame"| OPP
+    S4["Segment 4: Youth/First-time<br/>~300k voters<br/>HD03246 SPLIT"] -->|"Direction unclear"| PIVOT["Pivot / Turnout dependent"]
+    S5["Segment 5: Business owners<br/>~500k<br/>HD10444 DEFENSIVE RISK"] -->|"Risk: S anti-business frame"| COAL
+
+    style S1 fill:#2e7d32,color:#FFFFFF
+    style S2 fill:#1565c0,color:#FFFFFF
+    style S3 fill:#1565c0,color:#FFFFFF
+    style S4 fill:#f57f17,color:#000000
+    style S5 fill:#b71c1c,color:#FFFFFF
+    style COAL fill:#006aa7,color:#FFFFFF
+    style OPP fill:#e53935,color:#FFFFFF
+    style PIVOT fill:#6a1b9a,color:#FFFFFF
+```
+
+**Net electoral vector**: NEUTRAL to SLIGHTLY NEGATIVE for coalition among swing segments. S offensive mobilises public sector base (Segment 3) but risks Segment 5 backlash. HD01FiU48 benefits Segment 1 but C/SD/M split credit. Election outcome remains contingent on C pivot (see coalition-mathematics.md).
 
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/forward-indicators.md -->
@@ -717,6 +990,86 @@ pie title Scenario Probabilities — Realtime 2026-04-22
 | Fuel prices at pump post-May 1 | No visible drop | Moderate drop | Significant drop, consumer praise | 2026-05-02 |
 | C party statement on HD024095 | Aligns with S | Silent | Praises government approach | 2026-04-25 |
 | Media framing (SVT/DN/Aftonbladet) | "Crisis" framing | "Politics as usual" | "S overreach" framing | Daily from 2026-04-28 |
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/election-2026-analysis.md -->
+
+---
+
+### Electoral Context (September 2026)
+
+**Election date**: 13 September 2026 (second Sunday of September, confirmed by electoral calendar)
+**Time remaining**: ~145 days
+
+---
+
+### Today's Events — Electoral Significance
+
+#### S Accountability Offensive (HIGH significance)
+HD10444, HD10445, HD10446, HD10443 + pre-existing HD10442 represent a coordinated S campaign to frame Finance Minister Svantesson and coalition ministers as managing public funds irresponsibly. Electoral logic: S needs to recover fiscal competence image lost during 2014–2022 government tenure. The interpellation strategy targets the coalition's own fiscal credibility narrative [A1].
+
+#### HD01FiU48 Enacted (MODERATE significance)
+The coalition can point to a tangible consumer-benefit delivery (fuel cost relief from 1 May 2026) in the election campaign. Historically, Swedish voters reward demonstrable delivery in their daily costs. Risk: the cut is small enough (82 öre/L) to be lost in price volatility [A1].
+
+#### Energy Legislation Sprint (MODERATE significance)
+8+ propositions submitted April 13–16 creates a legislative legacy narrative for the coalition: electricity system reform (HD03240), wind power (HD03239), environmental permitting (HD03238) = energy security agenda heading into election [A1].
+
+---
+
+### Current Seat Projections (as of April 2026 polling)
+
+*Note: Based on polling aggregates — exact figures subject to polling error ±2–3 seats per party*
+
+| Party | Approx. seats (349 total) | Bloc |
+|-------|--------------------------|------|
+| SD (Sverigedemokraterna) | ~65–72 | Tidö support |
+| S (Socialdemokraterna) | ~95–102 | Opposition |
+| M (Moderaterna) | ~60–67 | Tidö government |
+| MP (Miljöpartiet) | ~15–20 | Opposition |
+| V (Vänsterpartiet) | ~20–25 | Opposition |
+| KD (Kristdemokraterna) | ~17–22 | Tidö government |
+| C (Centerpartiet) | ~20–28 | Pivot/swing |
+| L (Liberalerna) | ~12–16 | Tidö government |
+
+**Tidö bloc projected**: ~154–177 seats  
+**Opposition bloc projected**: ~130–147 seats  
+**C pivot**: ~20–28 seats
+
+*4% threshold risk*: L near threshold; MP borderline
+
+---
+
+### Scenario Impact on Seats (from scenario-analysis.md)
+
+| Scenario | Expected seat change | Winner |
+|---------|---------------------|--------|
+| Scenario 1 (Accountability Breakthrough) | S +5–8, M -3–5 | Opposition likely government |
+| Scenario 2 (Narrative Containment) | No material change; C determines outcome | Coin toss |
+| Scenario 3 (Opposition Fragmentation) | C aligns with Tidö post-election; Tidö continuation | Tidö re-election |
+
+---
+
+### Electoral Risk Indicators for This Cycle
+
+1. **Svantesson interpellation answer quality** [WATCH 2026-04-28]: Poor answer → S picks up 2–4 points in next poll
+2. **L threshold risk**: Any L internal crisis + low polling → 4% threshold loss → Tidö loses 12–16 seats overnight
+3. **C position**: Decisive for any coalition arithmetic — today's HD024095 deportation amendment (C nuance) is an early indicator
+
+```mermaid
+quadrantChart
+    title Election 2026 Seat Risk Matrix
+    x-axis Low Volatility --> High Volatility
+    y-axis Low Stakes --> High Stakes
+    quadrant-1 Monitor closely
+    quadrant-2 Act immediately
+    quadrant-3 Track passively
+    quadrant-4 Situational awareness
+    L threshold risk: [0.8, 0.9]
+    C pivot position: [0.7, 0.8]
+    Svantesson answer: [0.6, 0.7]
+    Fuel tax consumer impact: [0.3, 0.5]
+    Energy legislation: [0.2, 0.4]
+```
 
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/risk-assessment.md -->
@@ -1055,493 +1408,6 @@ flowchart TD
 | T004 | Temporal compression | Legislative session timing | File before summer recess to force answers before campaign starts |
 | T005 | Cross-domain synchronisation | Housing+fiscal+welfare | Attack multiple policy domains simultaneously to prevent single-issue containment |
 
-## Per-document intelligence
-
-### HD01FiU48
-<!-- source: documents/HD01FiU48-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD01FiU48-analysis.md -->
-
-**dok_id**: HD01FiU48 | **Type**: Betänkande (Committee Report) | **Adopted**: 2026-04-21
-
----
-
-### Document Summary
-**Title**: Finansutskottets betänkande 2025/26:FiU48 — Extra ändringsbudget (Vår 2026)
-**Committee**: Finansutskottet (FiU)
-**Status**: ENACTED — voted and approved by Riksdag 2026-04-21
-**Effective date**: 2026-05-01 (fuel tax relief component)
-**Fiscal impact**: 4.1 billion SEK (estimated full-year cost of fuel tax reduction)
-
----
-
-### Core Content
-
-**Primary measure**: 82 öre/litre reduction in fuel excise duty (drivmedelsskatt) effective 1 May 2026. Tax rate kept at EU minimum floor. Duration: May–September 2026 (temporary, aligned with summer driving season).
-
-**Secondary measures** (based on committee report framing):
-- Employer contribution (arbetsgivaravgift) adjustment for certain sectors [B2 — inferred from HD10444 interpellation reference]
-- Military/defence budget supplementary allocation [B2]
-- Ukraine support allocation [B2]
-
----
-
-### Political Significance
-
-**Significance tier**: 🔴 CRITICAL | **DIW weight**: Highest
-
-This is the most directly consequential enacted legislation in today's cycle. Effects are immediate (May 1, 2026) and tangible (consumers, businesses, opposition critique). The vote on 2026-04-21 confirmed coalition cohesion — M+SD+KD+L all supported; S+V+MP voted against (confirmed by opposition motions HD024098/HD024092/HD024082 in motions analysis).
-
-**Opposition critique** (from motion filings HD024082/092/098):
-- MP: "Climate regression — temporary cut will permanently habituate consumers to lower fuel prices"
-- V: "Money wasted on fuel should go to public transport"
-- S: "Distributional injustice — benefits the wealthy who drive most"
-
-**Government framing**: "Protecting household purchasing power during energy cost crisis; staying at EU minimum to maintain credibility of Sweden's energy market position"
-
-**International context**: Germany Tankrabatt 2022 (35 cents/litre, 3 months) as most direct precedent — see comparative-international.md.
-
----
-
-### Admiralty Rating
-- Source: [A1] Riksdag API direct retrieval — betänkande confirmed adopted
-- Fiscal figure (4.1 GSEK): [A2] — cited in committeeReports/synthesis-summary.md sibling analysis; assumed confirmed
-- Vote outcome (opposition voted against): [A2] — inferred from sibling motions analysis + interpellation context
-
----
-
-### Forward Watch
-- Pump price data: 2026-05-01+ (FI-3 forward indicator)
-- Opposition communication: S campaign messaging expected immediately post-May 1
-- FiU48 as election debate touchstone: Will feature in September 2026 campaign debates as "did the cut work?" test case
-- KU review petition: If employer contribution mechanism in FiU48 is linked to HD10444 allegations, KU review is theoretically possible [B3 — speculative]
-
-### HD10443
-<!-- source: documents/HD10443-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10443-analysis.md -->
-
----
-
-### Document Summary
-**Title**: Interpellation to Reconciliation/Housing/Social Dumping Minister regarding inter-municipal transfer of welfare-dependent residents
-**Filed by**: S MP
-**Target minister**: Erik Slottner (KD), Minister for Civil Affairs and Housing
-**Expected debate**: 2026-04-28 to 2026-05-05
-
----
-
-### Political Significance
-
-**Significance tier**: 🟠 HIGH | **DIW weight**: High
-
-Inter-municipal social welfare dumping (kommuner "recommending" welfare recipients to move to cheaper municipalities) is a well-documented governance gap in Sweden's decentralised welfare model. HD10443 raises a systemic failure that no existing national law directly prohibits — municipalities operate under kommunalt självstyre (local self-governance) principle that creates an enforcement gap.
-
-**Why KD/Slottner is targeted**: Slottner is responsible for housing and civil affairs. The interpellation likely focuses on his failure to introduce legislation preventing municipalities from managing welfare costs by informal relocation pressure. KD traditionally emphasises family values and welfare state coherence — being targetted on welfare dumping creates a party-brand dissonance.
-
-**International parallel**: Dutch court ruling 2023, Danish social housing policy — both show this is a real policy problem across Nordic/European welfare states (comparative-international.md).
-
----
-
-### Admiralty Rating
-- Source: [A1] Riksdag API direct retrieval of interpellation filing
-- Content: [B2] Policy substance inferred from title + governance context
-- Impact assessment: [B2] Pattern recognition from sibling analysis (interpellations/synthesis-summary.md)
-
----
-
-### Forward Watch
-- Slottner's debate answer: 2026-04-28 to 2026-05-05
-- Potential follow-up: JO complaint from affected municipalities or welfare recipients
-- Legislative response: HD10443 raises a genuine governance gap — may appear as government proposal in autumn session
-
-### HD10444
-<!-- source: documents/HD10444-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10444-analysis.md -->
-
----
-
-### Document Summary
-**Title**: Interpellation to Finance Minister Elisabeth Svantesson (M) regarding employer contributions paid to employers engaged in social dumping
-**Filed by**: S MP (interpellation author — name to be confirmed in debate)
-**Target minister**: Elisabeth Svantesson (Moderaterna), Minister for Finance
-**Expected debate**: 2026-04-28 to 2026-05-05
-
----
-
-### Political Significance
-
-**Significance tier**: 🔴 CRITICAL | **DIW weight**: High
-
-The interpellation directly challenges the coherence of the government's fiscal management. The core allegation is that Swedish state employer contributions (arbetsgivaravgifter) have been paid to employers who engage in social dumping — i.e., exploiting foreign workers at below-market wages while receiving state-funded payroll subsidies.
-
-This framing is politically devastating for Svantesson because:
-1. The Finance Ministry oversees tax/subsidy coherence
-2. Employer contributions are a core Social Democratic policy instrument
-3. The allegation links fiscal management failure to labour exploitation — S's strongest welfare state credibility claim
-
-**Link to HD10443**: HD10443 (Slottner interpellation on inter-municipal social dumping) and HD10444 (Svantesson on employer contributions) are thematically related — both use "social dumping" as the accountability frame on the same day [A1].
-
----
-
-### Admiralty Rating
-- Source: [A1] Riksdag API direct retrieval of interpellation filing
-- Content: [B2] Substantive claims in interpellation text not yet verified (text not retrieved in this run)
-- Impact assessment: [B2] Based on political framing inference from title + context
-
----
-
-### Forward Watch
-- Debate answer: 2026-04-28 to 2026-05-05 (riksdagen.se anföranden)
-- KU petition risk: LOW unless Svantesson's answer reveals factual errors in prior statements
-- Follow-on media: Aftonbladet investigation into social dumping employers likely
-
-### HD10445
-<!-- source: documents/HD10445-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10445-analysis.md -->
-
----
-
-### Document Summary
-**Title**: Interpellation to Minister for Housing regarding social segregation and housing allocation
-**Filed by**: S MP
-**Target minister**: Erik Slottner (KD), Minister for Civil Affairs and Housing
-**Expected debate**: 2026-04-28 to 2026-05-05
-
----
-
-### Political Significance
-
-**Significance tier**: 🟠 HIGH | **DIW weight**: Medium-High
-
-Housing segregation is a perennial Swedish political issue. Slottner is targeted twice on the same day (HD10443 + HD10445) — a deliberate double-targeting strategy by S to depict him as failing Sweden's vulnerable housing population on multiple dimensions.
-
-The housing segregation framing links to committee reports HD01CU27/28 (civil law, housing allocations) already in progress through Riksdag. S's strategic logic: Slottner's proposals are insufficient to address structural segregation.
-
-**Electoral relevance**: Housing affordability and segregation are top-3 voter concerns in Sweden 2026, particularly for the urban progressive segment (voter-segmentation.md Segment 2). The double interpellation (HD10443 + HD10445) maximises media presence on the housing-welfare nexus.
-
----
-
-### Admiralty Rating
-- Source: [A1] Riksdag API direct retrieval
-- Content: [B2] Substance inferred from title + betänkande cross-reference HD01CU27/28
-- Impact assessment: [B2] Electoral relevance inferred from voter concern surveys
-
----
-
-### Forward Watch
-- Slottner's debate answer (HD10445): 2026-04-28 to 2026-05-05
-- Cross-reference: HD01CU27/28 committee reports — if Slottner's answer points to these as his action, S can rebut with insufficiency claims
-- Media: DN/SVT housing desk likely to use this as hook for housing segregation investigation
-
-### HD10446
-<!-- source: documents/HD10446-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10446-analysis.md -->
-
----
-
-### Document Summary
-**Title**: Interpellation to Minister regarding Skatteverket/Socialstyrelsen false death record declarations affecting living citizens
-**Filed by**: S MP
-**Target minister**: Parisa Liljestrand (M) or Gabriel Wikström-equivalent — Minister for Social Affairs or Digital Governance (minister identity to be confirmed from interpellation text)
-**Note**: In the interpellation cluster context, HD10446 is the fourth interpellation in 24 hours; based on title pattern, it addresses cases where citizens were incorrectly declared deceased in official records, affecting their access to healthcare, social insurance, and banking [B2]
-**Expected debate**: 2026-04-28 to 2026-05-05
-
----
-
-### Political Significance
-
-**Significance tier**: 🔴 CRITICAL | **DIW weight**: High
-
-False death declarations in Swedish welfare state registers (folkbokföring, Skatteverket, Socialstyrelsen) are a digital governance failure with direct harm to individuals. Citizens falsely registered as deceased lose access to healthcare appointments, social insurance payments (Försäkringskassan), and banking services.
-
-**Why this is HIGH significance**: This issue directly undermines the Swedish welfare state's core identity — the precision and reliability of the folkbokföring register. A government that cannot correctly track who is alive has a fundamental administrative credibility problem.
-
-**Political vulnerability**: Unlike the employer contributions issue (which requires knowledge of tax law to assess), false death declarations are immediately comprehensible to every voter. Media can humanise the story with specific victim accounts. This is potentially the most media-viral issue in the interpellation cluster.
-
----
-
-### Admiralty Rating
-- Source: [A1] Riksdag API direct retrieval (filing confirmed)
-- Content: [B3] Substantial substance inferred from title pattern only — full text not retrieved
-- Impact assessment: [B2] Electoral significance based on comparable welfare-state failure stories in 2022–2025 media
-
----
-
-### Forward Watch
-- Minister debate answer: 2026-04-28 to 2026-05-05
-- JO risk: HIGH — false death declarations are exactly the type of systemic failure JO investigates
-- Media: Personal story angle (citizen falsely declared dead) is highly media-friendly → watch Aftonbladet/Expressen
-- Socialstyrelsen/Skatteverket response: Agency heads may be called to parliamentary committee hearing
-
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/election-2026-analysis.md -->
-
----
-
-### Electoral Context (September 2026)
-
-**Election date**: 13 September 2026 (second Sunday of September, confirmed by electoral calendar)
-**Time remaining**: ~145 days
-
----
-
-### Today's Events — Electoral Significance
-
-#### S Accountability Offensive (HIGH significance)
-HD10444, HD10445, HD10446, HD10443 + pre-existing HD10442 represent a coordinated S campaign to frame Finance Minister Svantesson and coalition ministers as managing public funds irresponsibly. Electoral logic: S needs to recover fiscal competence image lost during 2014–2022 government tenure. The interpellation strategy targets the coalition's own fiscal credibility narrative [A1].
-
-#### HD01FiU48 Enacted (MODERATE significance)
-The coalition can point to a tangible consumer-benefit delivery (fuel cost relief from 1 May 2026) in the election campaign. Historically, Swedish voters reward demonstrable delivery in their daily costs. Risk: the cut is small enough (82 öre/L) to be lost in price volatility [A1].
-
-#### Energy Legislation Sprint (MODERATE significance)
-8+ propositions submitted April 13–16 creates a legislative legacy narrative for the coalition: electricity system reform (HD03240), wind power (HD03239), environmental permitting (HD03238) = energy security agenda heading into election [A1].
-
----
-
-### Current Seat Projections (as of April 2026 polling)
-
-*Note: Based on polling aggregates — exact figures subject to polling error ±2–3 seats per party*
-
-| Party | Approx. seats (349 total) | Bloc |
-|-------|--------------------------|------|
-| SD (Sverigedemokraterna) | ~65–72 | Tidö support |
-| S (Socialdemokraterna) | ~95–102 | Opposition |
-| M (Moderaterna) | ~60–67 | Tidö government |
-| MP (Miljöpartiet) | ~15–20 | Opposition |
-| V (Vänsterpartiet) | ~20–25 | Opposition |
-| KD (Kristdemokraterna) | ~17–22 | Tidö government |
-| C (Centerpartiet) | ~20–28 | Pivot/swing |
-| L (Liberalerna) | ~12–16 | Tidö government |
-
-**Tidö bloc projected**: ~154–177 seats  
-**Opposition bloc projected**: ~130–147 seats  
-**C pivot**: ~20–28 seats
-
-*4% threshold risk*: L near threshold; MP borderline
-
----
-
-### Scenario Impact on Seats (from scenario-analysis.md)
-
-| Scenario | Expected seat change | Winner |
-|---------|---------------------|--------|
-| Scenario 1 (Accountability Breakthrough) | S +5–8, M -3–5 | Opposition likely government |
-| Scenario 2 (Narrative Containment) | No material change; C determines outcome | Coin toss |
-| Scenario 3 (Opposition Fragmentation) | C aligns with Tidö post-election; Tidö continuation | Tidö re-election |
-
----
-
-### Electoral Risk Indicators for This Cycle
-
-1. **Svantesson interpellation answer quality** [WATCH 2026-04-28]: Poor answer → S picks up 2–4 points in next poll
-2. **L threshold risk**: Any L internal crisis + low polling → 4% threshold loss → Tidö loses 12–16 seats overnight
-3. **C position**: Decisive for any coalition arithmetic — today's HD024095 deportation amendment (C nuance) is an early indicator
-
-```mermaid
-quadrantChart
-    title Election 2026 Seat Risk Matrix
-    x-axis Low Volatility --> High Volatility
-    y-axis Low Stakes --> High Stakes
-    quadrant-1 Monitor closely
-    quadrant-2 Act immediately
-    quadrant-3 Track passively
-    quadrant-4 Situational awareness
-    L threshold risk: [0.8, 0.9]
-    C pivot position: [0.7, 0.8]
-    Svantesson answer: [0.6, 0.7]
-    Fuel tax consumer impact: [0.3, 0.5]
-    Energy legislation: [0.2, 0.4]
-```
-
-## Coalition Mathematics
-<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/coalition-mathematics.md -->
-
----
-
-### Current Riksdag Seat Distribution (2022–2026 mandate)
-
-| Party | Seats | Bloc |
-|-------|-------|------|
-| SD | 73 | Tidö support |
-| S | 107 | Opposition |
-| M | 68 | Tidö government |
-| V | 24 | Opposition |
-| C | 24 | Pivot |
-| KD | 19 | Tidö government |
-| MP | 18 | Opposition |
-| L | 16 | Tidö government |
-| **Total** | **349** | |
-
-**Tidö governing majority**: M+KD+L = 103 seats; with SD support = 176 seats (majority = 175)
-**Opposition potential**: S+V+MP = 149; needs C (24) for 173 — short of majority without SD or breakdown of Tidö
-
----
-
-### Post-Election Scenario Mathematics (September 2026)
-
-#### Coalition A: Tidö Continuation (M+KD+L+SD support)
-- Requires M+KD+L ≥ 100 + SD ≥ 70 → ≥ 175/349
-- Current probability: MODERATE (scenario 2 → 55%)
-- Risk: L drops below 4% threshold → Tidö loses 16 seats → falls to ~159/349 → minority without SD active support
-
-#### Coalition B: S-led alternative (S+V+MP+C)
-- Requires S ≥ 95 + V ≥ 20 + MP ≥ 15 + C ≥ 24 → ≥ 154/349 (majority = 175 — falls short)
-- S+V+MP+C needs more: requires either S >102 or C > 28 to reach 175
-- Current probability: LOW-MODERATE; only viable under Scenario 1 (accountability breakthrough)
-
-#### Coalition C: Grand Centre Bloc (M+C+L+S abstain)
-- Requires M+C+L ≥ 115 (passive S abstention or confidence-and-supply)
-- Historically rejected by Swedish political culture; not plausible without crisis
-- Current probability: VERY LOW
-
----
-
-### Today's Electoral Mathematics Shifts
-
-| Event | Direction | Seat impact estimate |
-|-------|-----------|---------------------|
-| S accountability offensive (HD10444/443/445/446) | S +1–3% if KJ-1 materialises | +3–9 seats for S bloc [B2] |
-| HD01FiU48 fuel cut enacted | Coalition claim +0.5–1% with rural segment | +1–3 seats for Tidö [B2] |
-| C deportation nuance (HD024095) | C towards independent pivot | C seat-share unchanged; coalition arithmetic risk |
-| Energy legislation sprint | Coalition credibility signal | No immediate seat impact |
-
----
-
-### Sainte-Laguë Threshold Sensitivity
-
-**Critical 4% threshold parties**: L (currently ~4.5%) and MP (currently ~3.8–4.2%)
-
-- If L falls below 4%: Tidö coalition loses 16 seats → drops to ~159 with SD → below majority
-- If MP falls below 4%: S bloc loses 18 seats → S+V+C = ~147 → cannot form government without SD defection
-- Both thresholds are within current polling error bands
-
-```mermaid
-xychart-beta
-    title "Coalition seat scenarios 2026"
-    x-axis ["Tidö (current)", "Tidö (if L drops)", "S bloc (Scenario 1)", "S bloc (MP drops)"]
-    y-axis "Seats" 140 --> 200
-    bar [176, 159, 165, 147]
-    line [175, 175, 175, 175]
-```
-
-*Note: 175 = majority threshold. Tidö current projects above threshold; S bloc Scenario 1 projects below.*
-
-## Voter Segmentation
-<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/voter-segmentation.md -->
-
----
-
-### Segment Matrix
-
-#### Segment 1: Rural/Commuter Voters (Fuel-Sensitive)
-**Size**: ~800,000 households outside major metropolitan areas with daily car dependency (SCB transport survey estimate)
-**Impact of HD01FiU48**: DIRECT POSITIVE — 82 öre/litre visible at pump from May 1, 2026. Monthly saving for average commuter (~1,500 km/month, 7L/100km): approximately 87 SEK/month. Tangible but modest. [A2 SCB proxy]
-**Electoral leaning**: Historically split between M/SD/C; this measure targets all three parties' core rural base
-**Risk**: C and M compete for this segment's credit; SD may claim insufficient relief
-
-#### Segment 2: Urban Progressive Voters (Climate-Sensitive)
-**Size**: Stockholm/Gothenburg/Malmö metro — approximately 2.8 million voters
-**Impact of HD01FiU48**: NEGATIVE FRAMING — MP and V interpellations against fuel cut tap into this segment's climate anxiety. HD024098 (MP fuel tax motion) and HD024092 (V motion) directly represent this segment's opposition [A1]
-**Impact of Energy legislation (HD03240/239)**: MIXED — electricity system reform + wind power incentives play positively with this segment; coal → renewables framing resonates
-**Electoral leaning**: S/MP/V core; some L and C voters
-
-#### Segment 3: Public Sector Workers (Accountability-Sensitive)
-**Size**: ~700,000 municipal and regional government employees
-**Impact of HD10443** (inter-municipal social welfare transfers): DIRECTLY RELEVANT — social workers and welfare administrators most aware of this policy failure [A1]
-**Impact of HD10444** (employer contributions to social dumping): Secondary relevance — fiscal solidarity frame resonates
-**Electoral leaning**: S core voters; moderate turnout amplification if accountability narrative strengthens
-
-#### Segment 4: Youth and First-Time Voters (Agency/Justice-Sensitive)
-**Size**: ~300,000 voters aged 18–25 eligible for first time in 2026
-**Impact of HD03246** (unga lagöverträdare — youth criminal sentencing): DIRECTLY RELEVANT — reform of juvenile justice affects this cohort's peers; reactions split between accountability hawks (SD base) and rehabilitation advocates (S/V/MP base) [A1]
-**Impact of eating disorder court case (HD10442)**: Tangentially relevant — eating disorders disproportionately affect youth; governmental accountability on healthcare resonates
-
-#### Segment 5: Business Owners and Self-Employed (Economic-Sensitive)
-**Size**: ~500,000 sole traders and SME owners registered in Bolagsverket (proxy)
-**Impact of HD10444** (employer contribution — S interpellation): COMPLEX — if employers are named as social dumping participants, this creates a defensive reaction in the broader business community even though the interpellation targets bad actors specifically. Risk of S being framed as anti-business [B2]
-**Electoral leaning**: M/C core; some L voters
-
----
-
-### Cross-Segment Electoral Arithmetic
-
-```mermaid
-flowchart TD
-    S1["Segment 1: Rural/Commuter<br/>~800k HH<br/>HD01FiU48 POSITIVE"] -->|"Credit competition"| COAL["Coalition M+SD+C"]
-    S2["Segment 2: Urban Progressive<br/>~2.8M voters<br/>Fuel cut NEGATIVE / Energy MIXED"] -->|"Mobilisation"| OPP["Opposition S+MP+V"]
-    S3["Segment 3: Public Sector<br/>~700k workers<br/>HD10443/HD10444 RELEVANT"] -->|"Accountability frame"| OPP
-    S4["Segment 4: Youth/First-time<br/>~300k voters<br/>HD03246 SPLIT"] -->|"Direction unclear"| PIVOT["Pivot / Turnout dependent"]
-    S5["Segment 5: Business owners<br/>~500k<br/>HD10444 DEFENSIVE RISK"] -->|"Risk: S anti-business frame"| COAL
-
-    style S1 fill:#2e7d32,color:#FFFFFF
-    style S2 fill:#1565c0,color:#FFFFFF
-    style S3 fill:#1565c0,color:#FFFFFF
-    style S4 fill:#f57f17,color:#000000
-    style S5 fill:#b71c1c,color:#FFFFFF
-    style COAL fill:#006aa7,color:#FFFFFF
-    style OPP fill:#e53935,color:#FFFFFF
-    style PIVOT fill:#6a1b9a,color:#FFFFFF
-```
-
-**Net electoral vector**: NEUTRAL to SLIGHTLY NEGATIVE for coalition among swing segments. S offensive mobilises public sector base (Segment 3) but risks Segment 5 backlash. HD01FiU48 benefits Segment 1 but C/SD/M split credit. Election outcome remains contingent on C pivot (see coalition-mathematics.md).
-
-## Comparative International
-<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/comparative-international.md -->
-
----
-
----
-
-### Comparative Framework
-
-#### Issue 1: Fuel Tax Cuts as Electoral Relief Measure
-
-| Jurisdiction | Recent Action | Comparator Evidence | Source |
-|----------|------|----------|--------|
-| Sweden | 82 öre/litre cut (HD01FiU48, 2026-04-21); temporary May–Sep 2026; EU minimum floor | Government used temporary relief framing, justified by Middle East conflict + high energy prices | riksdagen.se/dokument/HD01FiU48 |
-| Germany | 2022 Tankrabatt — 35 cents/litre cut for 3 months (June–August 2022) | Bundesregierung (Scholz) passed similar temporary fuel relief during Ukraine war energy shock; 3 billion EUR cost | bundesregierung.de (Tankrabatt 2022) |
-| Denmark | No direct fuel tax cut in 2022–2026 period; instead targeted heating subsidies | Denmark preferred household energy subsidies over transport fuel cuts; different income-group distribution | ft.dk (heating subsidies 2022) |
-
-**Outside-In analysis**: Sweden's approach most closely parallels Germany's 2022 Tankrabatt in structure (temporary, EU-minimum anchored, justified by external shock). Germany's Tankrabatt was heavily criticised by climate groups as distributional regressive and emissions-inefficient — same critique applies to HD01FiU48. However, the German precedent also shows temporary fuel cuts are generally accepted as legitimate emergency relief and do not produce permanent electoral realignment. Sweden's MP and V opposition (HD024098, HD024092) mirrors German Green/SPD-left criticism in 2022.
-
-#### Issue 2: Parliamentary Accountability Interpellations — Ministerial Targeting Patterns
-
-| Jurisdiction | Pattern | Comparator Evidence | Source |
-|-----------|-------|---------|--------|
-| Sweden | 4 interpellations in 24 hours targeting one minister | Uncommon intensity; confirms coordinated campaign [B2] | riksdagen.se HD10444–446 |
-| United Kingdom | PMQs as equivalent weekly ministerial accountability | UK Opposition regularly "loads" PMQs with coordinated questions on one minister; 6 questions per session standard | UK Parliament Hansard |
-| Germany | Fragestunde — 60-question session monthly | Opposition groups coordinate thematic question clusters; equivalent pattern but slower pace | Bundestag Geschäftsordnung §105 |
-
-**Outside-In analysis**: Sweden's interpellation mechanism is more formally structured than UK PMQs but less frequent. The pattern of 4 interpellations in 24 hours targeting one minister (Svantesson) is the Swedish equivalent of a "PMQ blitz" — an intensification that signals pre-election political season has begun. This is normal behaviour for advanced democratic parliaments in election years; the analytical significance is the target selection (Svantesson, highest-profile fiscal figure) not the tactic itself.
-
-#### Issue 3: Municipal Social Dumping — International Comparative
-
-| Jurisdiction | Policy | Comparator Evidence | Source |
-|-----------|-------|---------|--------|
-| Sweden | HD10443 — documented inter-municipal social welfare transfers without consent | No national law prohibiting informal municipal "recommendations" to residents to relocate | riksdagen.se HD10443 |
-| Denmark | Copenhagen municipality has used relocation incentive schemes for social housing | Controversial; subject to Parliamentary review 2019–2022; partial reform adopted | ft.dk social housing debates |
-| Netherlands | Municipal residency requirements restrictions — ruled partly unconstitutional | Court ruling 2023 limited municipal power to block welfare recipients; social dumping concept present | rechtspraak.nl |
-
-**Outside-In analysis**: Sweden is not alone in facing inter-municipal social welfare dumping dynamics. The Dutch and Danish precedents suggest that legislative solutions (residency protection laws) are technically feasible but politically contested when municipal autonomy interests collide with central welfare state principles. The HD10443 interpellation raises a genuine governance gap that any post-2026 government will need to address.
-
----
-
-### Synthesis
-
-```mermaid
-flowchart LR
-    SE["🇸🇪 Sweden<br/>HD01FiU48 fuel cut<br/>HD10444 accountability<br/>HD10443 social dumping"] --> NORM["Nordic/EU norm check"]
-    DE["🇩🇪 Germany<br/>Tankrabatt 2022<br/>precedent"] --> NORM
-    DK["🇩🇰 Denmark<br/>Heating subsidies<br/>Social housing"] --> NORM
-    UK["🇬🇧 United Kingdom<br/>PMQ blitz pattern<br/>Ministerial accountability"] --> NORM
-
-    NORM --> OUT1["Fuel cut: normal emergency relief<br/>precedent exists — temporary OK"]
-    NORM --> OUT2["S accountability campaign:<br/>normal pre-election behaviour"]
-    NORM --> OUT3["Social dumping: legislative gap<br/>comparative solutions available"]
-
-    style SE fill:#006aa7,color:#FFFFFF
-    style DE fill:#000000,color:#FFFFFF
-    style DK fill:#c60c30,color:#FFFFFF
-    style UK fill:#012169,color:#FFFFFF
-    style OUT1 fill:#2e7d32,color:#FFFFFF
-    style OUT2 fill:#f57f17,color:#000000
-    style OUT3 fill:#e65100,color:#FFFFFF
-```
-
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/historical-parallels.md -->
 
@@ -1613,6 +1479,69 @@ timeline
         Election 13 September 2026 : Outcome TBD
 ```
 
+## Comparative International
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/comparative-international.md -->
+
+---
+
+---
+
+### Comparative Framework
+
+#### Issue 1: Fuel Tax Cuts as Electoral Relief Measure
+
+| Jurisdiction | Recent Action | Comparator Evidence | Source |
+|----------|------|----------|--------|
+| Sweden | 82 öre/litre cut (HD01FiU48, 2026-04-21); temporary May–Sep 2026; EU minimum floor | Government used temporary relief framing, justified by Middle East conflict + high energy prices | riksdagen.se/dokument/HD01FiU48 |
+| Germany | 2022 Tankrabatt — 35 cents/litre cut for 3 months (June–August 2022) | Bundesregierung (Scholz) passed similar temporary fuel relief during Ukraine war energy shock; 3 billion EUR cost | bundesregierung.de (Tankrabatt 2022) |
+| Denmark | No direct fuel tax cut in 2022–2026 period; instead targeted heating subsidies | Denmark preferred household energy subsidies over transport fuel cuts; different income-group distribution | ft.dk (heating subsidies 2022) |
+
+**Outside-In analysis**: Sweden's approach most closely parallels Germany's 2022 Tankrabatt in structure (temporary, EU-minimum anchored, justified by external shock). Germany's Tankrabatt was heavily criticised by climate groups as distributional regressive and emissions-inefficient — same critique applies to HD01FiU48. However, the German precedent also shows temporary fuel cuts are generally accepted as legitimate emergency relief and do not produce permanent electoral realignment. Sweden's MP and V opposition (HD024098, HD024092) mirrors German Green/SPD-left criticism in 2022.
+
+#### Issue 2: Parliamentary Accountability Interpellations — Ministerial Targeting Patterns
+
+| Jurisdiction | Pattern | Comparator Evidence | Source |
+|-----------|-------|---------|--------|
+| Sweden | 4 interpellations in 24 hours targeting one minister | Uncommon intensity; confirms coordinated campaign [B2] | riksdagen.se HD10444–446 |
+| United Kingdom | PMQs as equivalent weekly ministerial accountability | UK Opposition regularly "loads" PMQs with coordinated questions on one minister; 6 questions per session standard | UK Parliament Hansard |
+| Germany | Fragestunde — 60-question session monthly | Opposition groups coordinate thematic question clusters; equivalent pattern but slower pace | Bundestag Geschäftsordnung §105 |
+
+**Outside-In analysis**: Sweden's interpellation mechanism is more formally structured than UK PMQs but less frequent. The pattern of 4 interpellations in 24 hours targeting one minister (Svantesson) is the Swedish equivalent of a "PMQ blitz" — an intensification that signals pre-election political season has begun. This is normal behaviour for advanced democratic parliaments in election years; the analytical significance is the target selection (Svantesson, highest-profile fiscal figure) not the tactic itself.
+
+#### Issue 3: Municipal Social Dumping — International Comparative
+
+| Jurisdiction | Policy | Comparator Evidence | Source |
+|-----------|-------|---------|--------|
+| Sweden | HD10443 — documented inter-municipal social welfare transfers without consent | No national law prohibiting informal municipal "recommendations" to residents to relocate | riksdagen.se HD10443 |
+| Denmark | Copenhagen municipality has used relocation incentive schemes for social housing | Controversial; subject to Parliamentary review 2019–2022; partial reform adopted | ft.dk social housing debates |
+| Netherlands | Municipal residency requirements restrictions — ruled partly unconstitutional | Court ruling 2023 limited municipal power to block welfare recipients; social dumping concept present | rechtspraak.nl |
+
+**Outside-In analysis**: Sweden is not alone in facing inter-municipal social welfare dumping dynamics. The Dutch and Danish precedents suggest that legislative solutions (residency protection laws) are technically feasible but politically contested when municipal autonomy interests collide with central welfare state principles. The HD10443 interpellation raises a genuine governance gap that any post-2026 government will need to address.
+
+---
+
+### Synthesis
+
+```mermaid
+flowchart LR
+    SE["🇸🇪 Sweden<br/>HD01FiU48 fuel cut<br/>HD10444 accountability<br/>HD10443 social dumping"] --> NORM["Nordic/EU norm check"]
+    DE["🇩🇪 Germany<br/>Tankrabatt 2022<br/>precedent"] --> NORM
+    DK["🇩🇰 Denmark<br/>Heating subsidies<br/>Social housing"] --> NORM
+    UK["🇬🇧 United Kingdom<br/>PMQ blitz pattern<br/>Ministerial accountability"] --> NORM
+
+    NORM --> OUT1["Fuel cut: normal emergency relief<br/>precedent exists — temporary OK"]
+    NORM --> OUT2["S accountability campaign:<br/>normal pre-election behaviour"]
+    NORM --> OUT3["Social dumping: legislative gap<br/>comparative solutions available"]
+
+    style SE fill:#006aa7,color:#FFFFFF
+    style DE fill:#000000,color:#FFFFFF
+    style DK fill:#c60c30,color:#FFFFFF
+    style UK fill:#012169,color:#FFFFFF
+    style OUT1 fill:#2e7d32,color:#FFFFFF
+    style OUT2 fill:#f57f17,color:#000000
+    style OUT3 fill:#e65100,color:#FFFFFF
+```
+
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/implementation-feasibility.md -->
 
@@ -1680,6 +1609,77 @@ gantt
         HD03231/232 Ukraine (committee)  :active, 2026-04-22, 2026-05-30
     section Post-election
         HD01KU33/32 constitutional       :crit, 2026-09-15, 2027-03-01
+```
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/media-framing-analysis.md -->
+
+---
+
+### Expected Framing by Political Actor
+
+#### Government/Coalition Framing
+**Primary frame**: "Delivery-focused government protecting Swedish households" — HD01FiU48 fuel cut as headline, energy legislation as long-term security
+**Supporting narrative**: "S is engaging in pre-election theatre while we govern"
+**Vulnerability**: HD10444 employer contributions to social dumping — if Svantesson cannot provide factual rebuttal, "government enables wage exploitation" frame becomes credible
+**Tone**: "Responsible fiscal management, record delivery"
+**Expected media vehicles**: Moderate sympathetic outlets (Expressen, SvD), governmental press conferences
+
+#### S (Socialdemokraterna) Framing
+**Primary frame**: "Coalition ministers fail to protect Swedish workers and vulnerable citizens"
+**Sub-frames**:
+- HD10444: "Svantesson enables tax-funded social dumping" (employer contribution angle)
+- HD10445: "Slottner allows municipal social dumping of Sweden's most vulnerable"
+- HD10446: "Carlson's ministry falsely declares citizens dead" (HD10446 — death record scandal)
+- HD10442: "Svantesson ignores eating disorder court case costing women their lives"
+**Tone**: Accountability, moral outrage (carefully calibrated to avoid "too strident")
+**Expected media vehicles**: Aftonbladet, LO-Tidningen, S-aligned regional press
+
+#### SD (Sverigedemokraterna) Framing
+**Primary frame**: Unlikely to prominently cover S interpellations (different accountability axis). Will focus on fuel tax cut SUCCESS (populist energy nationalism) and youth crime reform (HD03246).
+**Expected media vehicles**: Avpixlat-adjacent outlets, social media
+
+#### MP (Miljöpartiet) Framing
+**Primary frame**: "Fuel tax cut is climate regression; coalition abandons Sweden's climate commitments"
+**Sub-frame**: Energy legislation (HD03239 vindkraft) as insufficient half-measure
+**Expected media vehicles**: Miljömagasinet, urban progressive press
+
+#### V (Vänsterpartiet) Framing
+**Primary frame**: "Government cuts fuel tax instead of investing in public transport — wrong priorities for working class"
+**Sub-frame**: Social dumping (aligns with HD10443/HD10444) — V's traditional labour market accountability frame
+**Expected media vehicles**: Flamman, Proletären, social media
+
+---
+
+### Expected Mainstream Media Framing (Swedish Press Outlets)
+
+| Outlet | Expected Frame | Based on past coverage patterns |
+|--------|---------------|--------------------------------|
+| Aftonbladet | Accountability-first: Svantesson interpellations lead | S-sympathetic tabloid; likely HD10444/10442 double spread [B2] |
+| Expressen | Balanced accountability with coalition defence | Centre-liberal; will examine both interpellations and coalition's fuel tax delivery [B2] |
+| Dagens Nyheter (DN) | Analysis: "Is this a turning point?" | Quality broadsheet; likely scenario analysis rather than pure accountability [B2] |
+| SVT Nyheter | Public interest neutral: all 4 interpellations reported | Public broadcaster; procedural coverage of all parties [B2] |
+| SvD | Business-framing: HD01FiU48 economic analysis | Conservative-leaning; will examine fiscal impact of fuel cut [B2] |
+
+---
+
+### Framing Risk Matrix
+
+```mermaid
+quadrantChart
+    title Media Framing Risk vs. Coalition Electoral Impact
+    x-axis Low Risk --> High Risk
+    y-axis Low Impact --> High Impact
+    quadrant-1 Manage proactively
+    quadrant-2 Crisis response needed
+    quadrant-3 Monitor passively
+    quadrant-4 Communications strategy needed
+    HD10444 employer contributions: [0.7, 0.8]
+    HD10442 eating disorder: [0.65, 0.75]
+    HD10446 false death records: [0.8, 0.8]
+    HD01FiU48 fuel cut (positive): [0.2, 0.6]
+    Energy legislation: [0.2, 0.4]
+    HD03246 youth crime reform: [0.3, 0.5]
 ```
 
 ## Devil's Advocate
@@ -2148,24 +2148,24 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/threat-analysis.md)
 - [`documents/HD01FiU48-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD01FiU48-analysis.md)
 - [`documents/HD10443-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10443-analysis.md)
 - [`documents/HD10444-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10444-analysis.md)
 - [`documents/HD10445-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10445-analysis.md)
 - [`documents/HD10446-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/documents/HD10446-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/cross-reference-map.md)

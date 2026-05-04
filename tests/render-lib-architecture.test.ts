@@ -155,12 +155,24 @@ describe('aggregator.ts (leaf, isolated from markdown/chrome)', () => {
     expect(__test__.ADMIN_FIELD_RE).toBeInstanceOf(RegExp);
   });
 
-  it('AGGREGATION_ORDER places intelligence-assessment.md at position 3 (Round-1 ordering)', () => {
+  it('AGGREGATION_ORDER reflects the journalist-optimal narrative arc', () => {
+    // Phase A — Lead & headline judgments
     expect(AGGREGATION_ORDER[0]).toBe('executive-brief.md');
     expect(AGGREGATION_ORDER[1]).toBe('synthesis-summary.md');
     expect(AGGREGATION_ORDER[2]).toBe('intelligence-assessment.md');
-    expect(AGGREGATION_ORDER[4]).toBe('media-framing-analysis.md');
-    expect(AGGREGATION_ORDER[6]).toBe('forward-indicators.md');
+    expect(AGGREGATION_ORDER[3]).toBe('significance-scoring.md');
+    // Phase C — Actors & political arithmetic open with stakeholders
+    // (per-document evidence is injected between Phase A and Phase C
+    // by aggregate.ts, not via AGGREGATION_ORDER).
+    expect(AGGREGATION_ORDER[4]).toBe('stakeholder-perspectives.md');
+    // Phase D — Forward trajectory begins with dated watch items
+    expect(AGGREGATION_ORDER[7]).toBe('forward-indicators.md');
+    // Phase F — narrative-environment cluster ends with media framing
+    // immediately before the devil's-advocate critique.
+    const idxMedia = AGGREGATION_ORDER.indexOf('media-framing-analysis.md');
+    const idxDevils = AGGREGATION_ORDER.indexOf('devils-advocate.md');
+    expect(idxMedia).toBeGreaterThan(0);
+    expect(idxMedia).toBe(idxDevils - 1);
     expect(AGGREGATION_ORDER[AGGREGATION_ORDER.length - 1]).toBe(
       'data-download-manifest.md',
     );

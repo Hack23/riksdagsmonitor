@@ -5,7 +5,7 @@ date: 2026-04-28
 subfolder: month-ahead
 slug: 2026-04-28-month-ahead
 source_folder: analysis/daily/2026-04-28/month-ahead
-generated_at: 2026-05-04T09:52:32.442Z
+generated_at: 2026-05-04T12:16:14.134Z
 language: en
 layout: article
 ---
@@ -67,10 +67,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -299,476 +299,6 @@ quadrantChart
     style HD10450 fill:#00d9ff
     style HD024099 fill:#7c3aed
 ```
-
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/media-framing-analysis.md -->
-
-### Framing Framework
-
-Three dominant media frames identified for May 2026 political coverage, derived from current legislative agenda and historical news-cycle patterns.
-
-### Frame 1: "Security Government Delivers" (Pro-government)
-**Primary outlets**: Svenska Dagbladet, Expressen (hard news), SVT parliament reporter  
-**Headline pattern**: "Riksdag passes toughest weapons law in 30 years"; "M government delivers promised crime reforms"  
-**Evidence basis**: HD01JuU10, HD01CU25, HD03246, HD03237 legislative pipeline  
-**Narrative structure**: Inverted pyramid — lead with passage; body with victim/police quotes; tail with opposition criticism  
-**Vulnerability**: Only works if bills pass without SD amendment fractures; any coalition crisis inverts to "coalition in chaos"
-
-### Frame 2: "Infrastructure and Welfare Left Behind" (Opposition/S)
-**Primary outlets**: Aftonbladet, S-aligned regional newspapers  
-**Headline pattern**: "Government refuses Södra stambanan funding — thousands of commuters left behind"; "Sick pay reform under threat — hundreds of thousands at risk"  
-**Evidence basis**: HD10449, HD10450, HD10451 interpellations  
-**Narrative structure**: Personal case study → systemic failure → government accountability → S alternative  
-**Vulnerability**: Requires ministerial misstep or specific promise to anchor; generic interpellation criticism historically underperforms
-
-### Frame 3: "Election Clock Ticking — Sweden at Crossroads" (Horse-race/election frame)
-**Primary outlets**: Politico Sverige, DN, Aftonbladet nyheter  
-**Headline pattern**: "With four months to election, both blocs eye C party"; "Inside SD's endgame: support without ministry"  
-**Evidence basis**: Coalition arithmetic (176/349), C party positioning (PIR-7), SD election strategy (inferred)  
-**Narrative structure**: Poll aggregate → bloc arithmetic → key swing actor (C) → scenarios  
-**Vulnerability**: Horse-race coverage elevates C party leverage regardless of evidence; self-fulfilling if C leadership responds to coverage
-
-### Sentiment and Volume Forecast
-
-```mermaid
-xychart-beta
-    title "Estimated Media Volume by Theme (May 2026)"
-    x-axis ["Week 1", "Week 2", "Week 3", "Week 4"]
-    y-axis "Articles (est)" 0 --> 200
-    line [80, 130, 100, 70]
-    bar [60, 90, 120, 80]
-```
-
-### Frame Competition Matrix
-
-```mermaid
-graph TD
-    JusticeDelivery[Frame 1: Security Delivery] -->|if passes| GovAdvantage[+2pp coalition polls]
-    JusticeDelivery -->|if SD fractures| GovDamage[-4pp coalition polls]
-    InfraWelfare[Frame 2: Infra/Welfare Left Behind] -->|if minister misstep| SAdvantage[+1.5pp S]
-    InfraWelfare -->|if no misstep| SFlat[No poll movement]
-    ElectionClock[Frame 3: Election Clock] -->|C signal emerges| CImpact[+/-5pp across blocs]
-    ElectionClock -->|no C signal| HorseRace[Marginal impact]
-    style GovAdvantage fill:#059669,stroke:#059669,color:#fff
-    style GovDamage fill:#ff006e,stroke:#ff006e,color:#fff
-    style SAdvantage fill:#00d9ff,stroke:#00d9ff,color:#000
-```
-
-### Key Media Events to Monitor (May 2026)
-
-| Event | Trigger | Frame | Impact |
-|-------|---------|-------|--------|
-| JuU floor vote on HD01JuU10 | Week of May 12 | Frame 1 | Government narrative confirms or breaks |
-| Andreas Carlson answers HD10449 | May 5-12 | Frame 2 | Infra frame activates or deactivates |
-| Anna Tenje answers HD10450 | May 5-12 | Frame 2 | Welfare frame activates or deactivates |
-| C party leader interview | Any | Frame 3 | Highest impact potential of all events |
-| SD party congress communications | Any | Frame 1+3 | SD positioning for credit/blame |
-
-### Social Media Landscape
-
-Based on prior session patterns (riksdagen.se + Swedish political media tracking):
-- **Twitter/X**: JuU vote generates ~2k tweets/hour at voting moment; criminal justice bills trend at ~8k aggregate
-- **Facebook/Meta**: Sick-pay and Södra stambanan generate higher engagement in rural regions than Twitter — S targeting correctly to platform
-- **Swedish political podcasts** (Ekot, Riksdag podcast): Likely to feature special episodes on JuU passage and interpellation responses
-
-## Stakeholder Perspectives
-<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/stakeholder-perspectives.md -->
-
-### Six-Lens Stakeholder Matrix
-
-| Stakeholder | Role | Primary Interest | Position on Key Bills | Influence | Evidence |
-|-------------|------|-----------------|----------------------|-----------|---------|
-| Ulf Kristersson (M) | Prime Minister | Government survival; election narrative | Pro-justice cluster; defensive on HD10449/HD10450 | HIGHEST | riksdagen.se |
-| Jimmie Åkesson (SD) | SD leader/support party | Law & order delivery; immigration restriction | Strongly pro-HD01JuU10; may push for harder amendments | HIGH | riksdagen.se |
-| Magdalena Andersson (S) | Opposition leader | Pre-election positioning; welfare defence | Coordinates interpellation campaign; pro-HD10449/10450 | HIGH | riksdagen.se |
-| Andreas Carlson (KD) | Infrastructure minister | Transport plan defence | Exposed on HD10449 (Södra stambanan); must respond | MEDIUM-HIGH | HD10449 |
-| Anna Tenje (M) | Social insurance minister | Tidö agreement delivery | Must defend day-180 sick-pay policy against HD10450 | MEDIUM-HIGH | HD10450 |
-| Annie Lööf / C leadership | Centre Party | Post-election positioning | Ambiguous; PIR-7 key indicator | MEDIUM | PIR-7 |
-| Robert Olesen (S) | Interpellant HD10449 | Infrastructure accountability | Filed HD10449 Södra stambanan IP | MEDIUM | HD10449 |
-| Jessica Rodén (S) | Interpellant HD10450 | Welfare state protection | Filed HD10450 sick-pay IP | MEDIUM | HD10450 |
-| JuU Committee | Parliamentary gate | Justice legislation quality | Processing HD01JuU10, HD024099, HD10451 | HIGH | riksdagen.se |
-
-### Influence Network
-
-```mermaid
-graph TD
-    Kristersson --> SD[SD Åkesson - critical support]
-    Kristersson --> KD[KD Carlson - coalition partner]
-    Kristersson --> M[M party - backbone]
-    Andersson --> S_MPs[S interpellants - Robert Olesen, Jessica Rodén]
-    S_MPs --> Media[Swedish media amplification]
-    SD --> JuU[JuU committee - HD01JuU10 amendments]
-    JuU --> Outcome[HD01JuU10 final vote]
-    C_Party[C Lööf/C leadership] --> PIR7[PIR-7: Coalition signal]
-    style Kristersson fill:#00d9ff,stroke:#00d9ff,color:#000
-    style Andersson fill:#e63946,stroke:#e63946,color:#fff
-    style SD fill:#ffbe0b,stroke:#ffbe0b,color:#000
-    style JuU fill:#7c3aed,stroke:#7c3aed,color:#fff
-```
-
-### Named Actor Analysis
-
-#### Magdalena Andersson (S) — OPPOSITION COMMANDER
-Strategy: Exploit government delivery gaps through interpellation coordinated attack. HD10449 targets regional infrastructure voters; HD10450 targets welfare-dependent voters; HD10451 targets anti-corporate-crime voters. Simultaneously coordinates S faction in JuU, TU, SfU to maximise minister exposure. Assessed confidence [A2].
-
-#### Jimmie Åkesson (SD) — COALITION KINGMAKER  
-May 2026 role: SD delivers the majority for the justice cluster. Risk: SD uses committee stage to extract policy concessions (tougher sentencing) that push coalition toward contested votes. SD's interest in pre-election period is to show it forced a harder line than M alone would deliver. Assessed confidence [B2].
-
-#### Andreas Carlson (KD) — EXPOSED MINISTER
-HD10449 interpellation forces KD minister to defend the absence of Södra stambanan from national transport plan. KD has historically supported infrastructure investment; the absence puts KD in an uncomfortable M-alignment position on a policy where KD voters diverge. Assessed confidence [A2].
-
-### Partisan Dynamics Summary
-
-| Party | May 2026 Position | PIR Relevance |
-|-------|------------------|---------------|
-| M | Government lead; defending Tidö delivery | PIR-1, PIR-2 |
-| SD | Support party; may push justice amendments | PIR-1, PIR-2 |
-| KD | Coalition partner; exposed on infrastructure | PIR-1, PIR-4 |
-| S | Opposition; coordinated IP campaign | PIR-4, PIR-6 |
-| C | Ambiguous; watching polls | PIR-3, PIR-7 |
-| L | Coalition support; broadly aligned | PIR-1 |
-| MP | Opposition; Ukraine alignment | PIR-5 |
-| V | Opposition; anti-weapons law | PIR-2 |
-
-## Forward Indicators
-<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/forward-indicators.md -->
-
-### Forward Indicator Framework
-
-Fourteen dated, observable indicators that will reveal which scenario (Justice Spring / Defensive Spring / JuU Fracture / C Bombshell) is unfolding during May-June 2026.
-
-### Indicators
-
-| # | Date | Indicator | Source | Reveals |
-|---|------|-----------|--------|---------|
-| FI-01 | 2026-05-05 | JuU committee meeting minutes published | riksdagen.se/JuU | Whether HD01JuU10 passes committee intact or with SD amendments |
-| FI-02 | 2026-05-05 to 05-12 | Andreas Carlson answers HD10449 IP | Riksdag chamber record | Infra frame activated or deactivated; any TU commitment |
-| FI-03 | 2026-05-05 to 05-12 | Anna Tenje answers HD10450 IP | Riksdag chamber record | Welfare frame activated or deactivated; sick-pay review scope |
-| FI-04 | 2026-05-06 to 05-08 | Justice minister answers HD10451 IP | Riksdag chamber record | Corporate crime tools; government vs S positioning |
-| FI-05 | 2026-05-12 (est.) | HD01JuU10 floor vote result | riksdagen.se/Voteringar | Confirms/disconfirms JuU Fracture scenario |
-| FI-06 | 2026-05-14 | Demoskop/Novus polling — coalition vs bloc | Polling aggregators | Interpellation campaign polling impact |
-| FI-07 | 2026-05-19 | UU committee session on HD11752/11753 | riksdagen.se/UU | Russia policy hardening consensus |
-| FI-08 | 2026-05-20 (est.) | HD01CU40 lantmäteri floor vote | riksdagen.se/Voteringar | Digital government bill passage |
-| FI-09 | 2026-05-22 | HD03231/HD03232 Ukraine ratification vote | riksdagen.se/Voteringar | All-party consensus holds |
-| FI-10 | 2026-05-25 | C party leader media appearance | DN/SVT/Ekot | PIR-7 trigger: coalition signal |
-| FI-11 | 2026-05-26 | HD01CU25 prison expansion floor vote | riksdagen.se/Voteringar | Prison capacity political decision |
-| FI-12 | 2026-05-27 | HD03246 youth offenders floor vote | riksdagen.se/Voteringar | Justice cluster completion |
-| FI-13 | 2026-06-01 | HD01JuU10 weapons law enters force | Polismyndigheten operational | Government delivery confirmed |
-| FI-14 | 2026-06-05 | S party summer launch speech | S party official communications | S narrative consolidation; bloc strategy |
-
-### Indicator Cascade Map
-
-```mermaid
-gantt
-    title Forward Indicator Timeline (May-June 2026)
-    dateFormat YYYY-MM-DD
-    section Committee
-    FI-01 JuU committee minutes :milestone, 2026-05-05, 0d
-    FI-07 UU Russia session :milestone, 2026-05-19, 0d
-    section Interpellations
-    FI-02 Carlson IP response :2026-05-05, 7d
-    FI-03 Tenje IP response :2026-05-05, 7d
-    FI-04 Justice IP response :2026-05-06, 3d
-    section Floor Votes
-    FI-05 JuU10 vote :milestone, 2026-05-12, 0d
-    FI-08 CU40 vote :milestone, 2026-05-20, 0d
-    FI-09 Ukraine vote :milestone, 2026-05-22, 0d
-    FI-11 CU25 vote :milestone, 2026-05-26, 0d
-    FI-12 Youth offenders vote :milestone, 2026-05-27, 0d
-    section Polling
-    FI-06 Week 2 poll :milestone, 2026-05-14, 0d
-    section Wild Cards
-    FI-10 C party signal :2026-05-25, 7d
-    section Force-Entry
-    FI-13 JuU10 force :milestone, 2026-06-01, 0d
-    FI-14 S summer speech :milestone, 2026-06-05, 0d
-```
-
-### Red-Line Indicators (Scenario Triggers)
-
-- **JuU Fracture activated** if: FI-01 shows SD amendment tabled + FI-05 shows <175 Ja votes on HD01JuU10
-- **C Bombshell activated** if: FI-10 shows C leader explicitly positive about S-led government
-- **Justice Spring confirmed** if: FI-05 + FI-11 + FI-12 all pass 175+ without amendment concessions
-- **Defensive Spring confirmed** if: FI-02 OR FI-03 produces ministerial commitment or contradiction, AND FI-06 shows S +1-3pp
-
-## Scenario Analysis
-<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/scenario-analysis.md -->
-
-### Scenario Framework
-
-Scenarios are mutually exclusive for the primary outcome dimension (Riksdag May 2026 legislative session success), with combined probabilities summing to 100%.
-
-### Scenario 1: Full Government Delivery — 45%
-**Label**: "Justice Spring"  
-
-All five criminal justice bills pass in final form with SD support. The government achieves its pre-election narrative objective: weapons law (force 1 Jun), prison expansion (force 1 Jul), youth offenders, police training all become law. HD024099 is rejected or narrowed. HD01CU40 passes. S interpellation campaign generates media noise but no legislative damage.
-
-**Leading indicators**: JuU committee minutes show no SD amendment pressure in week of 2026-05-05; HD01JuU10 passes floor vote by 175+ (government + SD); Riksdag spring calendar uninterrupted.
-
-**Political outcome**: Government enters election campaign in June-July 2026 with its strongest legislative record; approval among law-and-order voters consolidated.
-
-### Scenario 2: Partial Delivery with Interpellation Damage — 35%
-**Label**: "Defensive Spring"  
-
-Criminal justice cluster passes mostly intact, but the S interpellation campaign generates ministerial contradictions or policy retreats on HD10449 (infrastructure) or HD10450 (sick-pay). Coalition discipline holds on legislation but narrative damage is done. Polling dips 2-3pp for government coalition in May-June.
-
-**Leading indicators**: Andreas Carlson makes infra-spending commitment outside transport plan (tactical retreat); Anna Tenje makes ambiguous statement on sick-pay day-180 review; SD minor amendment accepted to avoid floor vote risk.
-
-**Political outcome**: Government delivers but looks reactive; S frames May as "government forced to retreat on welfare and infrastructure." Centre Party watches polling closely (PIR-7 activates).
-
-### Scenario 3: SD Amendment Crisis — 12%
-**Label**: "JuU Fracture"  
-
-SD tables a substantive amendment in JuU committee on HD01JuU10 (mandatory minimum sentences or stricter gun confiscation thresholds). M/KD refuse to accept. SD signals abstention. Government scrambles for cross-party votes (S? MP?). Legislative outcome uncertain. Coalition integrity publicly questioned.
-
-**Leading indicators**: JuU committee minutes show contested amendment vote ≥ 2 SD members; floor whipping operation visible in week of 2026-05-12; media reports of "coalition crisis."
-
-**Political outcome**: Election campaign starting point weakened; SD reframes as "forced the government to toughen up" or "government abandoned law-and-order"; M narrative damaged.
-
-### Scenario 4: Centre Party Surprise Signal — 8%
-**Label**: "C Bombshell"  
-
-Annie Lööf or C successor makes a pre-summer public statement indicating C would consider joining an S-led government post-election. Ripple effect destabilises coalition confidence, triggers early election discussions, and disrupts May legislative calendar.
-
-**Leading indicators**: C party polling crosses 8% threshold (from current ~7.5%); Lööf/successor gives interview indicating "open" coalition stance; S leadership responds positively.
-
-**Political outcome**: Extraordinary session signals; legislative calendar compression; all PIR-1 through PIR-7 potentially triggered simultaneously.
-
-### Scenario Probability Summary
-
-| Scenario | Label | Probability |
-|----------|-------|-------------|
-| 1 | Justice Spring | 45% |
-| 2 | Defensive Spring | 35% |
-| 3 | JuU Fracture | 12% |
-| 4 | C Bombshell | 8% |
-| **Total** | | **100%** |
-
-```mermaid
-pie title Scenario Probabilities — May 2026 Month Ahead
-    "S1 Justice Spring (45%)" : 45
-    "S2 Defensive Spring (35%)" : 35
-    "S3 JuU Fracture (12%)" : 12
-    "S4 C Bombshell (8%)" : 8
-```
-
-```mermaid
-graph LR
-    Start[May 2026 Legislative Window] --> S1{Scenario}
-    S1 -->|45%| Sc1[Justice Spring: Full delivery]
-    S1 -->|35%| Sc2[Defensive Spring: Partial + IP damage]
-    S1 -->|12%| Sc3[JuU Fracture: SD amendment crisis]
-    S1 -->|8%| Sc4[C Bombshell: Coalition destabilised]
-    style Sc1 fill:#059669,stroke:#059669,color:#fff
-    style Sc2 fill:#d97706,stroke:#d97706,color:#000
-    style Sc3 fill:#ff006e,stroke:#ff006e,color:#fff
-    style Sc4 fill:#7c3aed,stroke:#7c3aed,color:#fff
-```
-
-## Risk Assessment
-<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/risk-assessment.md -->
-
-### Five-Dimension Risk Register
-
-| # | Risk | Dimension | L×I | Probability | Impact | Cascading |
-|---|------|-----------|-----|-------------|--------|-----------|
-| R1 | SD amendment derails HD01JuU10 | Legislative | HIGH | 0.15 | 0.90 | Coalition crisis, election narrative |
-| R2 | S interpellation cascade generates media storm | Political | MEDIUM-HIGH | 0.45 | 0.65 | Government credibility erosion |
-| R3 | Centre Party coalition signal before summer | Strategic | MEDIUM | 0.25 | 0.75 | Coalition formation uncertainty |
-| R4 | Sick-pay debate (HD10450) generates backbench pressure | Social | MEDIUM | 0.30 | 0.55 | Welfare state narrative loss |
-| R5 | Lantmäteri IT reform (HD01CU40) delayed by agency resistance | Administrative | LOW | 0.20 | 0.40 | Public-sector modernisation stall |
-| R6 | Russia/Ukraine escalation shifts parliamentary agenda | Geopolitical | LOW-MEDIUM | 0.20 | 0.60 | Legislative calendar disruption |
-| R7 | Corporate crime tools (HD10451) opposition coalition forms | Reputational | MEDIUM | 0.35 | 0.50 | Government: business-protection perception |
-
-### Risk Heat Map
-
-```mermaid
-quadrantChart
-    title Risk Heat Map — Probability vs Impact
-    x-axis "Low Probability" --> "High Probability"
-    y-axis "Low Impact" --> "High Impact"
-    quadrant-1 Critical
-    quadrant-2 Strategic
-    quadrant-3 Monitor
-    quadrant-4 Manage
-    R1-SDAmendment: [0.15, 0.90]
-    R2-MediaStorm: [0.45, 0.65]
-    R3-CentreSignal: [0.25, 0.75]
-    R4-SickPayPressure: [0.30, 0.55]
-    R5-LantmäteriDelay: [0.20, 0.40]
-    R6-UkraineEscalation: [0.20, 0.60]
-    R7-CorpCrimeCoalition: [0.35, 0.50]
-    style R1-SDAmendment fill:#ff006e
-    style R2-MediaStorm fill:#ffbe0b
-    style R3-CentreSignal fill:#ff006e
-    style R4-SickPayPressure fill:#ffbe0b
-```
-
-### Cascading Risk Chains
-
-**Chain 1 (Critical)**: SD amendment on HD01JuU10 → failed vote → government confidence motion → early election trigger → all May 2026 legislative agenda suspended
-Evidence: riksdagen.se voting records; JuU committee proceedings; PIR-1.
-
-**Chain 2 (Strategic)**: S interpellation flood + media amplification → government minister contradictions → polling decline → Centre Party coalition re-evaluation → PIR-3 resolution + PIR-7 activation
-Evidence: HD10449, HD10450, HD10451; prior Riksdag interpellation cycles (historiska paralleller).
-
-**Chain 3 (Monitored)**: Ukraine ratification delay + Russia policy escalation → EU partner pressure → Swedish security posture narrative disruption → foreign policy credibility questions
-Evidence: HD11752, HD11753, HD03231/232.
-
-### Posterior Probability Estimates
-
-Based on Riksdag historical base rates (2022–2025) and current coalition status:
-- P(SD defection on HD01JuU10) = **0.08** (LOW — historical defection rate: 2.3% per session)
-- P(Government polling dip ≥3pp May-June 2026) = **0.40** (MEDIUM — S interpellation campaigns historically move 1-4pp)
-- P(Centre Party coalition signal pre-summer) = **0.20** (LOW — C historically waits until August)
-- P(Ukraine ratification delayed past June) = **0.12** (LOW — broad consensus visible)
-
-### Admiralty Code Summary
-
-- R1: [B2] — confirmed source, probably true
-- R2: [B2] — confirmed source, probably true
-- R3: [C3] — fairly reliable source, possibly true
-- R4: [B3] — confirmed source, possibly true
-
-## SWOT Analysis
-<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/swot-analysis.md -->
-
-### Government SWOT
-
-#### Strengths
-
-- **Criminal justice cluster delivery**: Five interlocking bills (HD01JuU10, HD01CU25, HD03246, HD03237, HD01JuU31) at final stage demonstrate legislative competence and sustained coalition discipline. Evidence: HD01JuU10 committee report riksdagen.se; confirmed JuU pipeline.
-- **SD voting bloc reliability**: SD has maintained voting discipline throughout 2025/26 term. On justice bills, alignment has been near-total. Evidence: vote records data.riksdagen.se, search_voteringar.
-- **Digital government momentum**: HD01CU40 (CU committee report) on lantmäteri IT standardisation signals government delivering public-sector modernisation agenda alongside security narrative. Evidence: HD01CU40 via riksdagen.se/HD01CU40.
-- **Ukraine foreign policy consensus**: Broad parliamentary support for ratification of HD03231/232 instruments; no substantive opposition documented. Evidence: HD03231/232 via riksdagen.se.
-
-#### Weaknesses
-
-- **Infrastructure investment gap**: Södra stambanan double-track (HD10449) absence from transport plan is a documented failure to deliver on regional connectivity. Interpellation by Robert Olesen (S) forces ministerial exposure. Evidence: HD10449, riksdagen.se.
-- **Sick-pay reform communication deficit**: The day-180 exception (HD10450) was originally S-party legislation; government's Tidö agreement approach creates narrative complexity that S exploits effectively. Evidence: HD10450, riksdagen.se.
-- **Criminal accountability gap**: HD024099 motion argues that prop. 2025/26:217 does not go far enough on extending criminal liability for public officials — exposing a credibility gap if the government is seen as protecting officials. Evidence: HD024099, riksdagen.se.
-- **Tight coalition mathematics**: +1 seat majority means any amendment-level defection risks legislative loss. The Justice Committee deliberations are the most acute exposure window.
-
-#### Opportunities
-
-- **Pre-election narrative clarity**: Criminal justice cluster provides a clean, simple story for the September 2026 election: government delivers on law-and-order promises. Weapons law (force 1 June) and prison construction (force 1 July) are tangible deliverables.
-- **Cross-party corporate crime coalition**: HD10451 (corporate crime tools) and HD024099 (official liability) have M and L interest; a cross-party criminal-accountability narrative could broaden the government's justice credentials.
-- **Digital government credibility**: HD01CU40 (lantmäteri) combined with broader digitisation agenda positions government as moderniser — counter to S narrative of government neglecting public services. Evidence: HD01CU40; statskontoret.se reports on agency capacity.
-- **Ukraine/Russia hardening leadership**: If HD11752/11753 Russia motions move toward government adoption, Sweden cements post-NATO foreign policy identity. Evidence: HD11752, HD11753.
-
-#### Threats
-
-- **SD amendment pressure**: If SD uses HD01JuU10 committee stage to push punitive amendments the government cannot accept, a vote failure would be catastrophic pre-election. Evidence: prior voting records.
-- **S interpellation cascade**: Six simultaneous interpellations (HD10449, HD10450, HD10451 + 3 more) across four ministers dilutes ministerial attention and creates multi-front exposure. Media amplification risk is HIGH.
-- **Centre Party exit signalling**: C (Annie Lööf era positioning) has been ambiguous about post-election coalition. Any pre-summer statement could destabilise coalition confidence. Evidence: PIR-7 forward indicator.
-- **Water rights litigation risk (HD11756)**: Old water rights/modern environmental conditions motion (MJU) signals pending administrative law complexity that could affect energy and industrial actors. Evidence: HD11756.
-
-### TOWS Matrix
-
-| | Strengths | Weaknesses |
-|---|---|---|
-| **Opportunities** | Use justice delivery momentum to build pre-election narrative (S1+O1); Leverage corporate crime cross-party interest for broader coalition (S2+O2) | Address infrastructure gap via emergency TU announcement before summer recess (W1+O3); Use HD01CU40 to demonstrate digital government competence (W3+O3) |
-| **Threats** | Monitor SD committee deliberation minutes for amendment pressure on HD01JuU10 (S1+T1); Coordinate ministerial responses to S interpellation cascade (S3+T2) | Prepare Centre Party outreach before summer recess to prevent coalition signalling gap (W4+T3); Address criminal accountability gap to prevent HD024099 from becoming election liability (W3+T1) |
-
-### Cross-SWOT Synthesis
-
-The May 2026 month presents a classic political **peak-and-vulnerability** pattern. The government's legislative record is at its most deliverable — but the opposition's interpellation campaign targets the four most politically sensitive delivery gaps. The criminal justice narrative is the government's armour; HD10449 (infrastructure) and HD10450 (sick-pay) are the opposition's arrows at its joints.
-
-```mermaid
-quadrantChart
-    title SWOT Priority Matrix — Government Position
-    x-axis "Internal Factor" --> "External Factor"
-    y-axis "Risk/Weakness" --> "Strength/Opportunity"
-    quadrant-1 Leverageable
-    quadrant-2 Watch
-    quadrant-3 Address
-    quadrant-4 Mitigate
-    JusticeCluster: [0.2, 0.9]
-    SD-Alignment: [0.25, 0.85]
-    InfrastructureGap: [0.3, 0.15]
-    SickPayGap: [0.25, 0.20]
-    SDAmendmentRisk: [0.8, 0.25]
-    SInterpellations: [0.85, 0.30]
-    CPartySignal: [0.9, 0.35]
-    style JusticeCluster fill:#059669
-    style SD-Alignment fill:#059669
-    style InfrastructureGap fill:#dc2626
-    style SickPayGap fill:#dc2626
-    style SDAmendmentRisk fill:#d97706
-    style SInterpellations fill:#d97706
-```
-
-## Threat Analysis
-<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/threat-analysis.md -->
-
-### Political Threat Taxonomy
-
-#### T1: Coalition Fracture Threat (P0 — CRITICAL)
-**Source**: SD amendment pressure on HD01JuU10 (weapons law)  
-**Type**: Legislative-structural threat  
-
-The JuU committee deliberation window (estimated 2026-05-05 to 2026-05-15) is the highest-risk period for coalition fracture. SD has previously used committee stages to embed punitive amendments (firearms caliber restrictions, mandatory minimum sentences) that M/KD members resist. A public disagreement at committee level would be immediately exploited by S and MP.
-
-**Kill chain**:
-1. SD tabling punitive amendment in JuU committee
-2. M/KD rejecting amendment on procedural grounds
-3. SD signalling abstention on final bill vote
-4. Government scrambling for S/MP votes (cross-party deal)
-5. Media narrative: "coalition crisis at legislative peak"
-
-#### T2: Opposition Interpellation Coordinated Campaign (P1 — HIGH)
-**Source**: S-party six-interpellation cluster (HD10449, HD10450, HD10451 + 3 more)  
-**Type**: Political-communications threat  
-
-The S-party coordination is deliberately designed to overload ministerial communications bandwidth. Each interpellation targets a ministerial weakness: Andreas Carlson (KD) on infrastructure, Anna Tenje (M) on sick-pay, the Justice Ministry on corporate crime. The simultaneity is the threat mechanism — not any single interpellation.
-
-**MITRE-style TTP**:
-- T1: Reconnaissance — identifying minister-specific vulnerabilities
-- T2: Resource Development — coordinating six MPs across four policy domains
-- T3: Initial Access — filing interpellations in same session week
-- T4: Execution — forcing parallel ministerial appearances
-- T5: Impact — contradictory ministerial statements amplified by media
-
-#### T3: Centre Party Positioning Ambiguity (P2 — MEDIUM)
-**Source**: PIR-7 indicator; C party statements  
-**Type**: Coalition-strategic threat  
-
-C has avoided explicit post-election coalition statements, creating uncertainty for both Tidö partners and potential S-led alternative. A pre-summer statement by C leadership would either validate or destabilise the current coalition's voter expectations.
-
-#### T4: Russia Escalation Threshold Risk (P3 — LOW-MEDIUM)
-**Source**: HD11752, HD11753 (UU motions)  
-**Type**: Geopolitical-parliamentary threat  
-
-Russian escalatory measures in the Baltic region could force emergency parliamentary measures disrupting the May legislative calendar. Current risk assessed LOW-MEDIUM based on NATO briefings and parliamentary defense committee signals.
-
-### Attack Tree
-
-```mermaid
-graph TD
-    ROOT[Coalition Legislative Failure May 2026] --> A[SD Amendment Fracture]
-    ROOT --> B[S Interpellation Campaign Success]
-    ROOT --> C[Centre Party Defection]
-    A --> A1[JuU committee amendment forced vote]
-    A --> A2[SD signals abstention on HD01JuU10]
-    B --> B1[Media storm May Week 3]
-    B --> B2[Ministerial contradiction at HD10449/HD10450]
-    C --> C1[C leadership pre-summer statement]
-    C --> C2[Polls show C voter consolidation with S bloc]
-    style ROOT fill:#ff006e,stroke:#ff006e,color:#fff
-    style A fill:#dc2626,stroke:#dc2626,color:#fff
-    style B fill:#d97706,stroke:#d97706,color:#000
-    style C fill:#7c3aed,stroke:#7c3aed,color:#fff
-```
-
-### Institutional Threat Assessment
-
-| Institution | Threat Level | Primary Vulnerability | Evidence |
-|-------------|-------------|----------------------|---------|
-| JuU Committee | HIGH | SD amendment fracture on HD01JuU10 | riksdagen.se committee calendar |
-| KD/TU Ministry | MEDIUM | HD10449 Södra stambanan exposure | HD10449 |
-| M/SfU Ministry | MEDIUM | HD10450 sick-pay day-180 | HD10450 |
-| UU/Foreign Policy | LOW | Russia escalation triggers | HD11752/11753 |
-| CU/Digital Gov | LOW | HD01CU40 agency resistance | HD01CU40 |
 
 ## Per-document intelligence
 
@@ -1089,69 +619,64 @@ Filed as part of the broader May 2026 legislative agenda. Cross-reference with s
 
 Contributes to the Russia policy hardening and Ukraine solidarity narrative. Individual document significance is low; ensemble significance is MEDIUM when combined with HD11752/HD11753 (Russia sanctions cluster) and HD11754/HD11755 (defence readiness cluster).
 
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/election-2026-analysis.md -->
+## Stakeholder Perspectives
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/stakeholder-perspectives.md -->
 
-### Election Timeline
+### Six-Lens Stakeholder Matrix
 
-| Milestone | Date | Key Trigger |
-|-----------|------|------------|
-| Riksdag spring session ends | June 2026 | Last plenary vote |
-| Summer recess | July-Aug 2026 | Party campaigns begin |
-| Election day | September 13, 2026 | Statutory general election |
-| Riksdag reconvenes | October 2026 | Government formation begins |
+| Stakeholder | Role | Primary Interest | Position on Key Bills | Influence | Evidence |
+|-------------|------|-----------------|----------------------|-----------|---------|
+| Ulf Kristersson (M) | Prime Minister | Government survival; election narrative | Pro-justice cluster; defensive on HD10449/HD10450 | HIGHEST | riksdagen.se |
+| Jimmie Åkesson (SD) | SD leader/support party | Law & order delivery; immigration restriction | Strongly pro-HD01JuU10; may push for harder amendments | HIGH | riksdagen.se |
+| Magdalena Andersson (S) | Opposition leader | Pre-election positioning; welfare defence | Coordinates interpellation campaign; pro-HD10449/10450 | HIGH | riksdagen.se |
+| Andreas Carlson (KD) | Infrastructure minister | Transport plan defence | Exposed on HD10449 (Södra stambanan); must respond | MEDIUM-HIGH | HD10449 |
+| Anna Tenje (M) | Social insurance minister | Tidö agreement delivery | Must defend day-180 sick-pay policy against HD10450 | MEDIUM-HIGH | HD10450 |
+| Annie Lööf / C leadership | Centre Party | Post-election positioning | Ambiguous; PIR-7 key indicator | MEDIUM | PIR-7 |
+| Robert Olesen (S) | Interpellant HD10449 | Infrastructure accountability | Filed HD10449 Södra stambanan IP | MEDIUM | HD10449 |
+| Jessica Rodén (S) | Interpellant HD10450 | Welfare state protection | Filed HD10450 sick-pay IP | MEDIUM | HD10450 |
+| JuU Committee | Parliamentary gate | Justice legislation quality | Processing HD01JuU10, HD024099, HD10451 | HIGH | riksdagen.se |
 
-### May 2026 Legislative Outcomes as Electoral Signals
-
-The May 2026 session is the final productive legislative window before the summer campaign. What passes (and what doesn't) will define party narratives heading into September 2026.
-
-#### Government coalition (M, KD, L + SD support)
-**Delivering**: Five criminal justice bills, HD01CU40 digital administration, Ukraine ratifications  
-**Vulnerable on**: Södra stambanan infrastructure gap (HD10449), sick-pay day-180 (HD10450), corporate crime tools (HD10451)
-
-#### Socialdemokraterna
-**Strategy**: Six-interpellation coordinated campaign; position as government-in-waiting on welfare and infrastructure  
-**Polling baseline**: ~33% (Novus Apr 2026); needs 35%+ for coalition mandate
-
-#### Sverigedemokraterna
-**Position**: Formal support without portfolio. Justice delivery reinforces base; any coalition friction risks "we forced them" vs "they betrayed us" narrative  
-**Target**: Maintain 20-21%; consolidate law-and-order suburban vote
-
-### Seat Projection (May 2026 polling average)
-
-Based on aggregated Demoskop + Novus + Sifo polling, April 2026:
-
-| Party | Estimated Seats (349 total) | Change vs 2022 |
-|-------|---------------------------|----------------|
-| M (Moderaterna) | 68 | -0 |
-| L (Liberalerna) | 16 | +2 |
-| KD (Kristdemokraterna) | 19 | -0 |
-| C (Centerpartiet) | 26 | -0 |
-| S (Socialdemokraterna) | 116 | +7 |
-| MP (Miljöpartiet) | 14 | -1 |
-| V (Vänsterpartiet) | 24 | +3 |
-| SD (Sverigedemokraterna) | 66 | 0 |
-| **Total** | **349** | |
-
-**Government coalition (M+KD+L)**: 103 seats — governing minority  
-**With SD passive support**: 169 seats — bare majority threshold at 175  
-**Red-Green bloc (S+MP+V)**: 154 seats  
-**With C support**: 180 seats — majority if C joins red-green  
+### Influence Network
 
 ```mermaid
-xychart-beta
-    title "May 2026 Polling Average — Estimated Seat Shares"
-    x-axis ["M", "L", "KD", "C", "S", "MP", "V", "SD"]
-    y-axis "Seats" 0 --> 130
-    bar [68, 16, 19, 26, 116, 14, 24, 66]
+graph TD
+    Kristersson --> SD[SD Åkesson - critical support]
+    Kristersson --> KD[KD Carlson - coalition partner]
+    Kristersson --> M[M party - backbone]
+    Andersson --> S_MPs[S interpellants - Robert Olesen, Jessica Rodén]
+    S_MPs --> Media[Swedish media amplification]
+    SD --> JuU[JuU committee - HD01JuU10 amendments]
+    JuU --> Outcome[HD01JuU10 final vote]
+    C_Party[C Lööf/C leadership] --> PIR7[PIR-7: Coalition signal]
+    style Kristersson fill:#00d9ff,stroke:#00d9ff,color:#000
+    style Andersson fill:#e63946,stroke:#e63946,color:#fff
+    style SD fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style JuU fill:#7c3aed,stroke:#7c3aed,color:#fff
 ```
 
-### May 2026 Electoral Risk Assessment
+### Named Actor Analysis
 
-**Government risk**: SD coalition dependence continues; if justice bills are delayed or amended by SD, M narrative ("security government") is weakened.  
-**S risk**: If interpellation campaign fails to move polls, S enters summer with unclear mandate.  
-**C risk**: Centre Party's positioning becomes decisive; a summer signal toward S could trigger coalition reconfiguration.  
-**Election outcome most likely**: Hung parliament requiring cross-bloc negotiation; either a red-green government with C support, or a government of national unity if neither bloc achieves 175+.
+#### Magdalena Andersson (S) — OPPOSITION COMMANDER
+Strategy: Exploit government delivery gaps through interpellation coordinated attack. HD10449 targets regional infrastructure voters; HD10450 targets welfare-dependent voters; HD10451 targets anti-corporate-crime voters. Simultaneously coordinates S faction in JuU, TU, SfU to maximise minister exposure. Assessed confidence [A2].
+
+#### Jimmie Åkesson (SD) — COALITION KINGMAKER  
+May 2026 role: SD delivers the majority for the justice cluster. Risk: SD uses committee stage to extract policy concessions (tougher sentencing) that push coalition toward contested votes. SD's interest in pre-election period is to show it forced a harder line than M alone would deliver. Assessed confidence [B2].
+
+#### Andreas Carlson (KD) — EXPOSED MINISTER
+HD10449 interpellation forces KD minister to defend the absence of Södra stambanan from national transport plan. KD has historically supported infrastructure investment; the absence puts KD in an uncomfortable M-alignment position on a policy where KD voters diverge. Assessed confidence [A2].
+
+### Partisan Dynamics Summary
+
+| Party | May 2026 Position | PIR Relevance |
+|-------|------------------|---------------|
+| M | Government lead; defending Tidö delivery | PIR-1, PIR-2 |
+| SD | Support party; may push justice amendments | PIR-1, PIR-2 |
+| KD | Coalition partner; exposed on infrastructure | PIR-1, PIR-4 |
+| S | Opposition; coordinated IP campaign | PIR-4, PIR-6 |
+| C | Ambiguous; watching polls | PIR-3, PIR-7 |
+| L | Coalition support; broadly aligned | PIR-1 |
+| MP | Opposition; Ukraine alignment | PIR-5 |
+| V | Opposition; anti-weapons law | PIR-2 |
 
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/coalition-mathematics.md -->
@@ -1309,65 +834,409 @@ graph TD
 | KD | Seg 5 | Signal social conservative welfare protection |
 | C | Seg 2 | Infrastructure narrative; watch PIR-7 coalition signal timing |
 
-## Comparative International
-<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/comparative-international.md -->
+## Forward Indicators
+<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/forward-indicators.md -->
 
-### Comparative Framework
+### Forward Indicator Framework
 
-This analysis compares Sweden's May 2026 political trajectory against two primary comparator jurisdictions (Denmark, Germany) and one secondary reference (Finland).
+Fourteen dated, observable indicators that will reveal which scenario (Justice Spring / Defensive Spring / JuU Fracture / C Bombshell) is unfolding during May-June 2026.
 
-### Comparator 1: Denmark
+### Indicators
 
-**Governance structure**: Minority Social Democratic government (Frederiksen); supported by V, M, K, DD, LA — right-leaning support parties.  
-**Relevance**: Nordic peer with similar welfare state architecture; recently passed stricter weapons legislation (2025 Våbenpakke) and youth crime reform.
+| # | Date | Indicator | Source | Reveals |
+|---|------|-----------|--------|---------|
+| FI-01 | 2026-05-05 | JuU committee meeting minutes published | riksdagen.se/JuU | Whether HD01JuU10 passes committee intact or with SD amendments |
+| FI-02 | 2026-05-05 to 05-12 | Andreas Carlson answers HD10449 IP | Riksdag chamber record | Infra frame activated or deactivated; any TU commitment |
+| FI-03 | 2026-05-05 to 05-12 | Anna Tenje answers HD10450 IP | Riksdag chamber record | Welfare frame activated or deactivated; sick-pay review scope |
+| FI-04 | 2026-05-06 to 05-08 | Justice minister answers HD10451 IP | Riksdag chamber record | Corporate crime tools; government vs S positioning |
+| FI-05 | 2026-05-12 (est.) | HD01JuU10 floor vote result | riksdagen.se/Voteringar | Confirms/disconfirms JuU Fracture scenario |
+| FI-06 | 2026-05-14 | Demoskop/Novus polling — coalition vs bloc | Polling aggregators | Interpellation campaign polling impact |
+| FI-07 | 2026-05-19 | UU committee session on HD11752/11753 | riksdagen.se/UU | Russia policy hardening consensus |
+| FI-08 | 2026-05-20 (est.) | HD01CU40 lantmäteri floor vote | riksdagen.se/Voteringar | Digital government bill passage |
+| FI-09 | 2026-05-22 | HD03231/HD03232 Ukraine ratification vote | riksdagen.se/Voteringar | All-party consensus holds |
+| FI-10 | 2026-05-25 | C party leader media appearance | DN/SVT/Ekot | PIR-7 trigger: coalition signal |
+| FI-11 | 2026-05-26 | HD01CU25 prison expansion floor vote | riksdagen.se/Voteringar | Prison capacity political decision |
+| FI-12 | 2026-05-27 | HD03246 youth offenders floor vote | riksdagen.se/Voteringar | Justice cluster completion |
+| FI-13 | 2026-06-01 | HD01JuU10 weapons law enters force | Polismyndigheten operational | Government delivery confirmed |
+| FI-14 | 2026-06-05 | S party summer launch speech | S party official communications | S narrative consolidation; bloc strategy |
 
-| Policy Domain | Sweden (May 2026) | Denmark (Reference) |
-|--------------|-------------------|---------------------|
-| Weapons legislation | HD01JuU10: mandatory minimum for illegal possession | DK 2025: mandatory minimum 1 year for repeat offenders |
-| Youth crime | HD03246: secure placements for 15-17 yr olds | DK 2023: secure placement expanded to 12+ |
-| Infrastructure | Södra stambanan (HD10449) — unresolved | Femern Bælt corridor: fully funded, on schedule |
-| Social insurance | Sick-pay day-180 (HD10450) — under review | DK: no day-180 reform; employer co-payment maintained |
+### Indicator Cascade Map
 
-**Convergence finding**: Sweden is following Denmark's 2023-25 trajectory on criminal justice, typically with 1-2 year lag. Danish public satisfaction with justice reforms at 67% (Epinion, Q4 2025) — relevant benchmark for Swedish implementation effectiveness.
+```mermaid
+gantt
+    title Forward Indicator Timeline (May-June 2026)
+    dateFormat YYYY-MM-DD
+    section Committee
+    FI-01 JuU committee minutes :milestone, 2026-05-05, 0d
+    FI-07 UU Russia session :milestone, 2026-05-19, 0d
+    section Interpellations
+    FI-02 Carlson IP response :2026-05-05, 7d
+    FI-03 Tenje IP response :2026-05-05, 7d
+    FI-04 Justice IP response :2026-05-06, 3d
+    section Floor Votes
+    FI-05 JuU10 vote :milestone, 2026-05-12, 0d
+    FI-08 CU40 vote :milestone, 2026-05-20, 0d
+    FI-09 Ukraine vote :milestone, 2026-05-22, 0d
+    FI-11 CU25 vote :milestone, 2026-05-26, 0d
+    FI-12 Youth offenders vote :milestone, 2026-05-27, 0d
+    section Polling
+    FI-06 Week 2 poll :milestone, 2026-05-14, 0d
+    section Wild Cards
+    FI-10 C party signal :2026-05-25, 7d
+    section Force-Entry
+    FI-13 JuU10 force :milestone, 2026-06-01, 0d
+    FI-14 S summer speech :milestone, 2026-06-05, 0d
+```
 
-### Comparator 2: Germany
+### Red-Line Indicators (Scenario Triggers)
 
-**Governance structure**: SPD-led coalition (Scholz until 2025; new CDU/CSU-SPD Merz coalition since early 2026).  
-**Relevance**: Large EU democracy undergoing similar "law and order" legislative wave; facing infrastructure challenges (Deutschlandticket, Deutsche Bahn); comparable sick-pay policy debates.
+- **JuU Fracture activated** if: FI-01 shows SD amendment tabled + FI-05 shows <175 Ja votes on HD01JuU10
+- **C Bombshell activated** if: FI-10 shows C leader explicitly positive about S-led government
+- **Justice Spring confirmed** if: FI-05 + FI-11 + FI-12 all pass 175+ without amendment concessions
+- **Defensive Spring confirmed** if: FI-02 OR FI-03 produces ministerial commitment or contradiction, AND FI-06 shows S +1-3pp
 
-| Policy Domain | Sweden (May 2026) | Germany (Reference) |
-|--------------|-------------------|---------------------|
-| Criminal justice | Multi-bill cluster (5 bills) | Merz coalition: tougher deportation, weapons control |
-| Infrastructure | Södra stambanan excluded from plan | German rail: €18bn investment gap identified |
-| Sick-pay | Day-180 under interpellation pressure | Germany: Lohnfortzahlung 100% day-1; no reform pressure |
-| Coalition stability | M-KD-L + SD (minority) | CDU/CSU + SPD (majority) — more stable |
+## Scenario Analysis
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/scenario-analysis.md -->
 
-**Divergence finding**: Germany has a stable majority coalition providing greater legislative certainty; Sweden's minority coalition model creates higher interpellation campaign vulnerability. Germany's sick-pay system is more generous than Sweden's, suggesting Sweden's retrenchment trajectory is outlier in Nordic-German context.
+### Scenario Framework
 
-### Secondary Reference: Finland
+Scenarios are mutually exclusive for the primary outcome dimension (Riksdag May 2026 legislative session success), with combined probabilities summing to 100%.
 
-**Relevance**: NATO partner; Finland 2023-25 implemented stricter crime legislation under Orpo government with Perussuomalaiset support — direct structural analogy to Sweden's M/KD/L+SD model.
+### Scenario 1: Full Government Delivery — 45%
+**Label**: "Justice Spring"  
 
-**Key parallel**: PS (Finns Party) tolerated multiple Orpo criminal justice bills while maintaining coalition discipline, then expressed public dissatisfaction pre-election without defecting. SD voting pattern may follow identical arc through Sweden's autumn 2026 election.
+All five criminal justice bills pass in final form with SD support. The government achieves its pre-election narrative objective: weapons law (force 1 Jun), prison expansion (force 1 Jul), youth offenders, police training all become law. HD024099 is rejected or narrowed. HD01CU40 passes. S interpellation campaign generates media noise but no legislative damage.
 
-### Synthesis
+**Leading indicators**: JuU committee minutes show no SD amendment pressure in week of 2026-05-05; HD01JuU10 passes floor vote by 175+ (government + SD); Riksdag spring calendar uninterrupted.
+
+**Political outcome**: Government enters election campaign in June-July 2026 with its strongest legislative record; approval among law-and-order voters consolidated.
+
+### Scenario 2: Partial Delivery with Interpellation Damage — 35%
+**Label**: "Defensive Spring"  
+
+Criminal justice cluster passes mostly intact, but the S interpellation campaign generates ministerial contradictions or policy retreats on HD10449 (infrastructure) or HD10450 (sick-pay). Coalition discipline holds on legislation but narrative damage is done. Polling dips 2-3pp for government coalition in May-June.
+
+**Leading indicators**: Andreas Carlson makes infra-spending commitment outside transport plan (tactical retreat); Anna Tenje makes ambiguous statement on sick-pay day-180 review; SD minor amendment accepted to avoid floor vote risk.
+
+**Political outcome**: Government delivers but looks reactive; S frames May as "government forced to retreat on welfare and infrastructure." Centre Party watches polling closely (PIR-7 activates).
+
+### Scenario 3: SD Amendment Crisis — 12%
+**Label**: "JuU Fracture"  
+
+SD tables a substantive amendment in JuU committee on HD01JuU10 (mandatory minimum sentences or stricter gun confiscation thresholds). M/KD refuse to accept. SD signals abstention. Government scrambles for cross-party votes (S? MP?). Legislative outcome uncertain. Coalition integrity publicly questioned.
+
+**Leading indicators**: JuU committee minutes show contested amendment vote ≥ 2 SD members; floor whipping operation visible in week of 2026-05-12; media reports of "coalition crisis."
+
+**Political outcome**: Election campaign starting point weakened; SD reframes as "forced the government to toughen up" or "government abandoned law-and-order"; M narrative damaged.
+
+### Scenario 4: Centre Party Surprise Signal — 8%
+**Label**: "C Bombshell"  
+
+Annie Lööf or C successor makes a pre-summer public statement indicating C would consider joining an S-led government post-election. Ripple effect destabilises coalition confidence, triggers early election discussions, and disrupts May legislative calendar.
+
+**Leading indicators**: C party polling crosses 8% threshold (from current ~7.5%); Lööf/successor gives interview indicating "open" coalition stance; S leadership responds positively.
+
+**Political outcome**: Extraordinary session signals; legislative calendar compression; all PIR-1 through PIR-7 potentially triggered simultaneously.
+
+### Scenario Probability Summary
+
+| Scenario | Label | Probability |
+|----------|-------|-------------|
+| 1 | Justice Spring | 45% |
+| 2 | Defensive Spring | 35% |
+| 3 | JuU Fracture | 12% |
+| 4 | C Bombshell | 8% |
+| **Total** | | **100%** |
+
+```mermaid
+pie title Scenario Probabilities — May 2026 Month Ahead
+    "S1 Justice Spring (45%)" : 45
+    "S2 Defensive Spring (35%)" : 35
+    "S3 JuU Fracture (12%)" : 12
+    "S4 C Bombshell (8%)" : 8
+```
+
+```mermaid
+graph LR
+    Start[May 2026 Legislative Window] --> S1{Scenario}
+    S1 -->|45%| Sc1[Justice Spring: Full delivery]
+    S1 -->|35%| Sc2[Defensive Spring: Partial + IP damage]
+    S1 -->|12%| Sc3[JuU Fracture: SD amendment crisis]
+    S1 -->|8%| Sc4[C Bombshell: Coalition destabilised]
+    style Sc1 fill:#059669,stroke:#059669,color:#fff
+    style Sc2 fill:#d97706,stroke:#d97706,color:#000
+    style Sc3 fill:#ff006e,stroke:#ff006e,color:#fff
+    style Sc4 fill:#7c3aed,stroke:#7c3aed,color:#fff
+```
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/election-2026-analysis.md -->
+
+### Election Timeline
+
+| Milestone | Date | Key Trigger |
+|-----------|------|------------|
+| Riksdag spring session ends | June 2026 | Last plenary vote |
+| Summer recess | July-Aug 2026 | Party campaigns begin |
+| Election day | September 13, 2026 | Statutory general election |
+| Riksdag reconvenes | October 2026 | Government formation begins |
+
+### May 2026 Legislative Outcomes as Electoral Signals
+
+The May 2026 session is the final productive legislative window before the summer campaign. What passes (and what doesn't) will define party narratives heading into September 2026.
+
+#### Government coalition (M, KD, L + SD support)
+**Delivering**: Five criminal justice bills, HD01CU40 digital administration, Ukraine ratifications  
+**Vulnerable on**: Södra stambanan infrastructure gap (HD10449), sick-pay day-180 (HD10450), corporate crime tools (HD10451)
+
+#### Socialdemokraterna
+**Strategy**: Six-interpellation coordinated campaign; position as government-in-waiting on welfare and infrastructure  
+**Polling baseline**: ~33% (Novus Apr 2026); needs 35%+ for coalition mandate
+
+#### Sverigedemokraterna
+**Position**: Formal support without portfolio. Justice delivery reinforces base; any coalition friction risks "we forced them" vs "they betrayed us" narrative  
+**Target**: Maintain 20-21%; consolidate law-and-order suburban vote
+
+### Seat Projection (May 2026 polling average)
+
+Based on aggregated Demoskop + Novus + Sifo polling, April 2026:
+
+| Party | Estimated Seats (349 total) | Change vs 2022 |
+|-------|---------------------------|----------------|
+| M (Moderaterna) | 68 | -0 |
+| L (Liberalerna) | 16 | +2 |
+| KD (Kristdemokraterna) | 19 | -0 |
+| C (Centerpartiet) | 26 | -0 |
+| S (Socialdemokraterna) | 116 | +7 |
+| MP (Miljöpartiet) | 14 | -1 |
+| V (Vänsterpartiet) | 24 | +3 |
+| SD (Sverigedemokraterna) | 66 | 0 |
+| **Total** | **349** | |
+
+**Government coalition (M+KD+L)**: 103 seats — governing minority  
+**With SD passive support**: 169 seats — bare majority threshold at 175  
+**Red-Green bloc (S+MP+V)**: 154 seats  
+**With C support**: 180 seats — majority if C joins red-green  
+
+```mermaid
+xychart-beta
+    title "May 2026 Polling Average — Estimated Seat Shares"
+    x-axis ["M", "L", "KD", "C", "S", "MP", "V", "SD"]
+    y-axis "Seats" 0 --> 130
+    bar [68, 16, 19, 26, 116, 14, 24, 66]
+```
+
+### May 2026 Electoral Risk Assessment
+
+**Government risk**: SD coalition dependence continues; if justice bills are delayed or amended by SD, M narrative ("security government") is weakened.  
+**S risk**: If interpellation campaign fails to move polls, S enters summer with unclear mandate.  
+**C risk**: Centre Party's positioning becomes decisive; a summer signal toward S could trigger coalition reconfiguration.  
+**Election outcome most likely**: Hung parliament requiring cross-bloc negotiation; either a red-green government with C support, or a government of national unity if neither bloc achieves 175+.
+
+## Risk Assessment
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/risk-assessment.md -->
+
+### Five-Dimension Risk Register
+
+| # | Risk | Dimension | L×I | Probability | Impact | Cascading |
+|---|------|-----------|-----|-------------|--------|-----------|
+| R1 | SD amendment derails HD01JuU10 | Legislative | HIGH | 0.15 | 0.90 | Coalition crisis, election narrative |
+| R2 | S interpellation cascade generates media storm | Political | MEDIUM-HIGH | 0.45 | 0.65 | Government credibility erosion |
+| R3 | Centre Party coalition signal before summer | Strategic | MEDIUM | 0.25 | 0.75 | Coalition formation uncertainty |
+| R4 | Sick-pay debate (HD10450) generates backbench pressure | Social | MEDIUM | 0.30 | 0.55 | Welfare state narrative loss |
+| R5 | Lantmäteri IT reform (HD01CU40) delayed by agency resistance | Administrative | LOW | 0.20 | 0.40 | Public-sector modernisation stall |
+| R6 | Russia/Ukraine escalation shifts parliamentary agenda | Geopolitical | LOW-MEDIUM | 0.20 | 0.60 | Legislative calendar disruption |
+| R7 | Corporate crime tools (HD10451) opposition coalition forms | Reputational | MEDIUM | 0.35 | 0.50 | Government: business-protection perception |
+
+### Risk Heat Map
 
 ```mermaid
 quadrantChart
-    title Nordic-German Peer Comparison (May 2026)
-    x-axis Low legislative certainty --> High legislative certainty
-    y-axis Low ambition agenda --> High ambition agenda
-    quadrant-1 High ambition, high certainty
-    quadrant-2 High ambition, low certainty
-    quadrant-3 Low ambition, low certainty
-    quadrant-4 Low ambition, high certainty
-    Sweden 2026: [0.42, 0.78]
-    Denmark 2026: [0.65, 0.55]
-    Germany 2026: [0.78, 0.65]
-    Finland 2024: [0.52, 0.72]
+    title Risk Heat Map — Probability vs Impact
+    x-axis "Low Probability" --> "High Probability"
+    y-axis "Low Impact" --> "High Impact"
+    quadrant-1 Critical
+    quadrant-2 Strategic
+    quadrant-3 Monitor
+    quadrant-4 Manage
+    R1-SDAmendment: [0.15, 0.90]
+    R2-MediaStorm: [0.45, 0.65]
+    R3-CentreSignal: [0.25, 0.75]
+    R4-SickPayPressure: [0.30, 0.55]
+    R5-LantmäteriDelay: [0.20, 0.40]
+    R6-UkraineEscalation: [0.20, 0.60]
+    R7-CorpCrimeCoalition: [0.35, 0.50]
+    style R1-SDAmendment fill:#ff006e
+    style R2-MediaStorm fill:#ffbe0b
+    style R3-CentreSignal fill:#ff006e
+    style R4-SickPayPressure fill:#ffbe0b
 ```
 
-Sweden's position: high legislative ambition but moderate certainty due to minority coalition dynamics. Denmark achieved similar ambition with moderate certainty using a different majority mechanism. Recommendation: monitor Denmark's public satisfaction data as a 12-month leading indicator for Sweden.
+### Cascading Risk Chains
+
+**Chain 1 (Critical)**: SD amendment on HD01JuU10 → failed vote → government confidence motion → early election trigger → all May 2026 legislative agenda suspended
+Evidence: riksdagen.se voting records; JuU committee proceedings; PIR-1.
+
+**Chain 2 (Strategic)**: S interpellation flood + media amplification → government minister contradictions → polling decline → Centre Party coalition re-evaluation → PIR-3 resolution + PIR-7 activation
+Evidence: HD10449, HD10450, HD10451; prior Riksdag interpellation cycles (historiska paralleller).
+
+**Chain 3 (Monitored)**: Ukraine ratification delay + Russia policy escalation → EU partner pressure → Swedish security posture narrative disruption → foreign policy credibility questions
+Evidence: HD11752, HD11753, HD03231/232.
+
+### Posterior Probability Estimates
+
+Based on Riksdag historical base rates (2022–2025) and current coalition status:
+- P(SD defection on HD01JuU10) = **0.08** (LOW — historical defection rate: 2.3% per session)
+- P(Government polling dip ≥3pp May-June 2026) = **0.40** (MEDIUM — S interpellation campaigns historically move 1-4pp)
+- P(Centre Party coalition signal pre-summer) = **0.20** (LOW — C historically waits until August)
+- P(Ukraine ratification delayed past June) = **0.12** (LOW — broad consensus visible)
+
+### Admiralty Code Summary
+
+- R1: [B2] — confirmed source, probably true
+- R2: [B2] — confirmed source, probably true
+- R3: [C3] — fairly reliable source, possibly true
+- R4: [B3] — confirmed source, possibly true
+
+## SWOT Analysis
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/swot-analysis.md -->
+
+### Government SWOT
+
+#### Strengths
+
+- **Criminal justice cluster delivery**: Five interlocking bills (HD01JuU10, HD01CU25, HD03246, HD03237, HD01JuU31) at final stage demonstrate legislative competence and sustained coalition discipline. Evidence: HD01JuU10 committee report riksdagen.se; confirmed JuU pipeline.
+- **SD voting bloc reliability**: SD has maintained voting discipline throughout 2025/26 term. On justice bills, alignment has been near-total. Evidence: vote records data.riksdagen.se, search_voteringar.
+- **Digital government momentum**: HD01CU40 (CU committee report) on lantmäteri IT standardisation signals government delivering public-sector modernisation agenda alongside security narrative. Evidence: HD01CU40 via riksdagen.se/HD01CU40.
+- **Ukraine foreign policy consensus**: Broad parliamentary support for ratification of HD03231/232 instruments; no substantive opposition documented. Evidence: HD03231/232 via riksdagen.se.
+
+#### Weaknesses
+
+- **Infrastructure investment gap**: Södra stambanan double-track (HD10449) absence from transport plan is a documented failure to deliver on regional connectivity. Interpellation by Robert Olesen (S) forces ministerial exposure. Evidence: HD10449, riksdagen.se.
+- **Sick-pay reform communication deficit**: The day-180 exception (HD10450) was originally S-party legislation; government's Tidö agreement approach creates narrative complexity that S exploits effectively. Evidence: HD10450, riksdagen.se.
+- **Criminal accountability gap**: HD024099 motion argues that prop. 2025/26:217 does not go far enough on extending criminal liability for public officials — exposing a credibility gap if the government is seen as protecting officials. Evidence: HD024099, riksdagen.se.
+- **Tight coalition mathematics**: +1 seat majority means any amendment-level defection risks legislative loss. The Justice Committee deliberations are the most acute exposure window.
+
+#### Opportunities
+
+- **Pre-election narrative clarity**: Criminal justice cluster provides a clean, simple story for the September 2026 election: government delivers on law-and-order promises. Weapons law (force 1 June) and prison construction (force 1 July) are tangible deliverables.
+- **Cross-party corporate crime coalition**: HD10451 (corporate crime tools) and HD024099 (official liability) have M and L interest; a cross-party criminal-accountability narrative could broaden the government's justice credentials.
+- **Digital government credibility**: HD01CU40 (lantmäteri) combined with broader digitisation agenda positions government as moderniser — counter to S narrative of government neglecting public services. Evidence: HD01CU40; statskontoret.se reports on agency capacity.
+- **Ukraine/Russia hardening leadership**: If HD11752/11753 Russia motions move toward government adoption, Sweden cements post-NATO foreign policy identity. Evidence: HD11752, HD11753.
+
+#### Threats
+
+- **SD amendment pressure**: If SD uses HD01JuU10 committee stage to push punitive amendments the government cannot accept, a vote failure would be catastrophic pre-election. Evidence: prior voting records.
+- **S interpellation cascade**: Six simultaneous interpellations (HD10449, HD10450, HD10451 + 3 more) across four ministers dilutes ministerial attention and creates multi-front exposure. Media amplification risk is HIGH.
+- **Centre Party exit signalling**: C (Annie Lööf era positioning) has been ambiguous about post-election coalition. Any pre-summer statement could destabilise coalition confidence. Evidence: PIR-7 forward indicator.
+- **Water rights litigation risk (HD11756)**: Old water rights/modern environmental conditions motion (MJU) signals pending administrative law complexity that could affect energy and industrial actors. Evidence: HD11756.
+
+### TOWS Matrix
+
+| | Strengths | Weaknesses |
+|---|---|---|
+| **Opportunities** | Use justice delivery momentum to build pre-election narrative (S1+O1); Leverage corporate crime cross-party interest for broader coalition (S2+O2) | Address infrastructure gap via emergency TU announcement before summer recess (W1+O3); Use HD01CU40 to demonstrate digital government competence (W3+O3) |
+| **Threats** | Monitor SD committee deliberation minutes for amendment pressure on HD01JuU10 (S1+T1); Coordinate ministerial responses to S interpellation cascade (S3+T2) | Prepare Centre Party outreach before summer recess to prevent coalition signalling gap (W4+T3); Address criminal accountability gap to prevent HD024099 from becoming election liability (W3+T1) |
+
+### Cross-SWOT Synthesis
+
+The May 2026 month presents a classic political **peak-and-vulnerability** pattern. The government's legislative record is at its most deliverable — but the opposition's interpellation campaign targets the four most politically sensitive delivery gaps. The criminal justice narrative is the government's armour; HD10449 (infrastructure) and HD10450 (sick-pay) are the opposition's arrows at its joints.
+
+```mermaid
+quadrantChart
+    title SWOT Priority Matrix — Government Position
+    x-axis "Internal Factor" --> "External Factor"
+    y-axis "Risk/Weakness" --> "Strength/Opportunity"
+    quadrant-1 Leverageable
+    quadrant-2 Watch
+    quadrant-3 Address
+    quadrant-4 Mitigate
+    JusticeCluster: [0.2, 0.9]
+    SD-Alignment: [0.25, 0.85]
+    InfrastructureGap: [0.3, 0.15]
+    SickPayGap: [0.25, 0.20]
+    SDAmendmentRisk: [0.8, 0.25]
+    SInterpellations: [0.85, 0.30]
+    CPartySignal: [0.9, 0.35]
+    style JusticeCluster fill:#059669
+    style SD-Alignment fill:#059669
+    style InfrastructureGap fill:#dc2626
+    style SickPayGap fill:#dc2626
+    style SDAmendmentRisk fill:#d97706
+    style SInterpellations fill:#d97706
+```
+
+## Threat Analysis
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/threat-analysis.md -->
+
+### Political Threat Taxonomy
+
+#### T1: Coalition Fracture Threat (P0 — CRITICAL)
+**Source**: SD amendment pressure on HD01JuU10 (weapons law)  
+**Type**: Legislative-structural threat  
+
+The JuU committee deliberation window (estimated 2026-05-05 to 2026-05-15) is the highest-risk period for coalition fracture. SD has previously used committee stages to embed punitive amendments (firearms caliber restrictions, mandatory minimum sentences) that M/KD members resist. A public disagreement at committee level would be immediately exploited by S and MP.
+
+**Kill chain**:
+1. SD tabling punitive amendment in JuU committee
+2. M/KD rejecting amendment on procedural grounds
+3. SD signalling abstention on final bill vote
+4. Government scrambling for S/MP votes (cross-party deal)
+5. Media narrative: "coalition crisis at legislative peak"
+
+#### T2: Opposition Interpellation Coordinated Campaign (P1 — HIGH)
+**Source**: S-party six-interpellation cluster (HD10449, HD10450, HD10451 + 3 more)  
+**Type**: Political-communications threat  
+
+The S-party coordination is deliberately designed to overload ministerial communications bandwidth. Each interpellation targets a ministerial weakness: Andreas Carlson (KD) on infrastructure, Anna Tenje (M) on sick-pay, the Justice Ministry on corporate crime. The simultaneity is the threat mechanism — not any single interpellation.
+
+**MITRE-style TTP**:
+- T1: Reconnaissance — identifying minister-specific vulnerabilities
+- T2: Resource Development — coordinating six MPs across four policy domains
+- T3: Initial Access — filing interpellations in same session week
+- T4: Execution — forcing parallel ministerial appearances
+- T5: Impact — contradictory ministerial statements amplified by media
+
+#### T3: Centre Party Positioning Ambiguity (P2 — MEDIUM)
+**Source**: PIR-7 indicator; C party statements  
+**Type**: Coalition-strategic threat  
+
+C has avoided explicit post-election coalition statements, creating uncertainty for both Tidö partners and potential S-led alternative. A pre-summer statement by C leadership would either validate or destabilise the current coalition's voter expectations.
+
+#### T4: Russia Escalation Threshold Risk (P3 — LOW-MEDIUM)
+**Source**: HD11752, HD11753 (UU motions)  
+**Type**: Geopolitical-parliamentary threat  
+
+Russian escalatory measures in the Baltic region could force emergency parliamentary measures disrupting the May legislative calendar. Current risk assessed LOW-MEDIUM based on NATO briefings and parliamentary defense committee signals.
+
+### Attack Tree
+
+```mermaid
+graph TD
+    ROOT[Coalition Legislative Failure May 2026] --> A[SD Amendment Fracture]
+    ROOT --> B[S Interpellation Campaign Success]
+    ROOT --> C[Centre Party Defection]
+    A --> A1[JuU committee amendment forced vote]
+    A --> A2[SD signals abstention on HD01JuU10]
+    B --> B1[Media storm May Week 3]
+    B --> B2[Ministerial contradiction at HD10449/HD10450]
+    C --> C1[C leadership pre-summer statement]
+    C --> C2[Polls show C voter consolidation with S bloc]
+    style ROOT fill:#ff006e,stroke:#ff006e,color:#fff
+    style A fill:#dc2626,stroke:#dc2626,color:#fff
+    style B fill:#d97706,stroke:#d97706,color:#000
+    style C fill:#7c3aed,stroke:#7c3aed,color:#fff
+```
+
+### Institutional Threat Assessment
+
+| Institution | Threat Level | Primary Vulnerability | Evidence |
+|-------------|-------------|----------------------|---------|
+| JuU Committee | HIGH | SD amendment fracture on HD01JuU10 | riksdagen.se committee calendar |
+| KD/TU Ministry | MEDIUM | HD10449 Södra stambanan exposure | HD10449 |
+| M/SfU Ministry | MEDIUM | HD10450 sick-pay day-180 | HD10450 |
+| UU/Foreign Policy | LOW | Russia escalation triggers | HD11752/11753 |
+| CU/Digital Gov | LOW | HD01CU40 agency resistance | HD01CU40 |
 
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/historical-parallels.md -->
@@ -1430,6 +1299,66 @@ timeline
     2019 : C pivotal role → 134-day crisis → decisive actor
     2026 : Kristersson gov criminal justice delivery + S interpellation campaign
 ```
+
+## Comparative International
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/comparative-international.md -->
+
+### Comparative Framework
+
+This analysis compares Sweden's May 2026 political trajectory against two primary comparator jurisdictions (Denmark, Germany) and one secondary reference (Finland).
+
+### Comparator 1: Denmark
+
+**Governance structure**: Minority Social Democratic government (Frederiksen); supported by V, M, K, DD, LA — right-leaning support parties.  
+**Relevance**: Nordic peer with similar welfare state architecture; recently passed stricter weapons legislation (2025 Våbenpakke) and youth crime reform.
+
+| Policy Domain | Sweden (May 2026) | Denmark (Reference) |
+|--------------|-------------------|---------------------|
+| Weapons legislation | HD01JuU10: mandatory minimum for illegal possession | DK 2025: mandatory minimum 1 year for repeat offenders |
+| Youth crime | HD03246: secure placements for 15-17 yr olds | DK 2023: secure placement expanded to 12+ |
+| Infrastructure | Södra stambanan (HD10449) — unresolved | Femern Bælt corridor: fully funded, on schedule |
+| Social insurance | Sick-pay day-180 (HD10450) — under review | DK: no day-180 reform; employer co-payment maintained |
+
+**Convergence finding**: Sweden is following Denmark's 2023-25 trajectory on criminal justice, typically with 1-2 year lag. Danish public satisfaction with justice reforms at 67% (Epinion, Q4 2025) — relevant benchmark for Swedish implementation effectiveness.
+
+### Comparator 2: Germany
+
+**Governance structure**: SPD-led coalition (Scholz until 2025; new CDU/CSU-SPD Merz coalition since early 2026).  
+**Relevance**: Large EU democracy undergoing similar "law and order" legislative wave; facing infrastructure challenges (Deutschlandticket, Deutsche Bahn); comparable sick-pay policy debates.
+
+| Policy Domain | Sweden (May 2026) | Germany (Reference) |
+|--------------|-------------------|---------------------|
+| Criminal justice | Multi-bill cluster (5 bills) | Merz coalition: tougher deportation, weapons control |
+| Infrastructure | Södra stambanan excluded from plan | German rail: €18bn investment gap identified |
+| Sick-pay | Day-180 under interpellation pressure | Germany: Lohnfortzahlung 100% day-1; no reform pressure |
+| Coalition stability | M-KD-L + SD (minority) | CDU/CSU + SPD (majority) — more stable |
+
+**Divergence finding**: Germany has a stable majority coalition providing greater legislative certainty; Sweden's minority coalition model creates higher interpellation campaign vulnerability. Germany's sick-pay system is more generous than Sweden's, suggesting Sweden's retrenchment trajectory is outlier in Nordic-German context.
+
+### Secondary Reference: Finland
+
+**Relevance**: NATO partner; Finland 2023-25 implemented stricter crime legislation under Orpo government with Perussuomalaiset support — direct structural analogy to Sweden's M/KD/L+SD model.
+
+**Key parallel**: PS (Finns Party) tolerated multiple Orpo criminal justice bills while maintaining coalition discipline, then expressed public dissatisfaction pre-election without defecting. SD voting pattern may follow identical arc through Sweden's autumn 2026 election.
+
+### Synthesis
+
+```mermaid
+quadrantChart
+    title Nordic-German Peer Comparison (May 2026)
+    x-axis Low legislative certainty --> High legislative certainty
+    y-axis Low ambition agenda --> High ambition agenda
+    quadrant-1 High ambition, high certainty
+    quadrant-2 High ambition, low certainty
+    quadrant-3 Low ambition, low certainty
+    quadrant-4 Low ambition, high certainty
+    Sweden 2026: [0.42, 0.78]
+    Denmark 2026: [0.65, 0.55]
+    Germany 2026: [0.78, 0.65]
+    Finland 2024: [0.52, 0.72]
+```
+
+Sweden's position: high legislative ambition but moderate certainty due to minority coalition dynamics. Denmark achieved similar ambition with moderate certainty using a different majority mechanism. Recommendation: monitor Denmark's public satisfaction data as a 12-month leading indicator for Sweden.
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/implementation-feasibility.md -->
@@ -1505,6 +1434,77 @@ xychart-beta
 ```
 
 **Key finding**: Prison construction (HD01CU25) has HIGH political sustainability but LOW implementation feasibility due to Kriminalvården capacity crisis. The gap between political ambition and operational capacity for the prison expansion is the primary implementation risk for May 2026 legislation.
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/media-framing-analysis.md -->
+
+### Framing Framework
+
+Three dominant media frames identified for May 2026 political coverage, derived from current legislative agenda and historical news-cycle patterns.
+
+### Frame 1: "Security Government Delivers" (Pro-government)
+**Primary outlets**: Svenska Dagbladet, Expressen (hard news), SVT parliament reporter  
+**Headline pattern**: "Riksdag passes toughest weapons law in 30 years"; "M government delivers promised crime reforms"  
+**Evidence basis**: HD01JuU10, HD01CU25, HD03246, HD03237 legislative pipeline  
+**Narrative structure**: Inverted pyramid — lead with passage; body with victim/police quotes; tail with opposition criticism  
+**Vulnerability**: Only works if bills pass without SD amendment fractures; any coalition crisis inverts to "coalition in chaos"
+
+### Frame 2: "Infrastructure and Welfare Left Behind" (Opposition/S)
+**Primary outlets**: Aftonbladet, S-aligned regional newspapers  
+**Headline pattern**: "Government refuses Södra stambanan funding — thousands of commuters left behind"; "Sick pay reform under threat — hundreds of thousands at risk"  
+**Evidence basis**: HD10449, HD10450, HD10451 interpellations  
+**Narrative structure**: Personal case study → systemic failure → government accountability → S alternative  
+**Vulnerability**: Requires ministerial misstep or specific promise to anchor; generic interpellation criticism historically underperforms
+
+### Frame 3: "Election Clock Ticking — Sweden at Crossroads" (Horse-race/election frame)
+**Primary outlets**: Politico Sverige, DN, Aftonbladet nyheter  
+**Headline pattern**: "With four months to election, both blocs eye C party"; "Inside SD's endgame: support without ministry"  
+**Evidence basis**: Coalition arithmetic (176/349), C party positioning (PIR-7), SD election strategy (inferred)  
+**Narrative structure**: Poll aggregate → bloc arithmetic → key swing actor (C) → scenarios  
+**Vulnerability**: Horse-race coverage elevates C party leverage regardless of evidence; self-fulfilling if C leadership responds to coverage
+
+### Sentiment and Volume Forecast
+
+```mermaid
+xychart-beta
+    title "Estimated Media Volume by Theme (May 2026)"
+    x-axis ["Week 1", "Week 2", "Week 3", "Week 4"]
+    y-axis "Articles (est)" 0 --> 200
+    line [80, 130, 100, 70]
+    bar [60, 90, 120, 80]
+```
+
+### Frame Competition Matrix
+
+```mermaid
+graph TD
+    JusticeDelivery[Frame 1: Security Delivery] -->|if passes| GovAdvantage[+2pp coalition polls]
+    JusticeDelivery -->|if SD fractures| GovDamage[-4pp coalition polls]
+    InfraWelfare[Frame 2: Infra/Welfare Left Behind] -->|if minister misstep| SAdvantage[+1.5pp S]
+    InfraWelfare -->|if no misstep| SFlat[No poll movement]
+    ElectionClock[Frame 3: Election Clock] -->|C signal emerges| CImpact[+/-5pp across blocs]
+    ElectionClock -->|no C signal| HorseRace[Marginal impact]
+    style GovAdvantage fill:#059669,stroke:#059669,color:#fff
+    style GovDamage fill:#ff006e,stroke:#ff006e,color:#fff
+    style SAdvantage fill:#00d9ff,stroke:#00d9ff,color:#000
+```
+
+### Key Media Events to Monitor (May 2026)
+
+| Event | Trigger | Frame | Impact |
+|-------|---------|-------|--------|
+| JuU floor vote on HD01JuU10 | Week of May 12 | Frame 1 | Government narrative confirms or breaks |
+| Andreas Carlson answers HD10449 | May 5-12 | Frame 2 | Infra frame activates or deactivates |
+| Anna Tenje answers HD10450 | May 5-12 | Frame 2 | Welfare frame activates or deactivates |
+| C party leader interview | Any | Frame 3 | Highest impact potential of all events |
+| SD party congress communications | Any | Frame 1+3 | SD positioning for credit/blame |
+
+### Social Media Landscape
+
+Based on prior session patterns (riksdagen.se + Swedish political media tracking):
+- **Twitter/X**: JuU vote generates ~2k tweets/hour at voting moment; criminal justice bills trend at ~8k aggregate
+- **Facebook/Meta**: Sick-pay and Södra stambanan generate higher engagement in rural regions than Twitter — S targeting correctly to platform
+- **Swedish political podcasts** (Ekot, Riksdag podcast): Likely to feature special episodes on JuU passage and interpellation responses
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/devils-advocate.md -->
@@ -1797,13 +1797,6 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/threat-analysis.md)
 - [`documents/HD01CU40-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/documents/HD01CU40-analysis.md)
 - [`documents/HD024099-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/documents/HD024099-analysis.md)
 - [`documents/HD10449-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/documents/HD10449-analysis.md)
@@ -1816,12 +1809,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`documents/HD11754-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/documents/HD11754-analysis.md)
 - [`documents/HD11755-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/documents/HD11755-analysis.md)
 - [`documents/HD11756-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/documents/HD11756-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/month-ahead/cross-reference-map.md)

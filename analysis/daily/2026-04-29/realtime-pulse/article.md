@@ -5,7 +5,7 @@ date: 2026-04-29
 subfolder: realtime-pulse
 slug: 2026-04-29-realtime-pulse
 source_folder: analysis/daily/2026-04-29/realtime-pulse
-generated_at: 2026-05-04T09:52:32.524Z
+generated_at: 2026-05-04T12:16:14.207Z
 language: en
 layout: article
 ---
@@ -86,10 +86,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -269,477 +269,6 @@ xychart-beta
     x-axis ["JuU10", "China HD12744", "HVB HD10454", "Water", "Nuclear HD01NU19", "EU Ekofin", "Taiwan", "Housing"]
     y-axis 0 --> 10
     bar [9.2, 8.4, 7.9, 7.5, 7.1, 6.8, 6.3, 6.0]
-```
-
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/media-framing-analysis.md -->
-
-### Frame 1: "Sweden Completes NATO Security Package" (Expected dominant framing — JuU10)
-
-**Likely outlets**: DN, SvD, Expressen (neutral-positive)
-
-**Narrative**: Sweden finalises civilian weapons legislation — NATO credibility confirmed. Prime Minister Kristersson likely to issue statement linking JuU10 to security agenda.
-
-**Counter-narrative available to opposition**: "Coalition took 24 months to implement routine EU Directive while neighbours were faster." This counter will likely be carried by Aftonbladet.
-
-**Assessment**: This frame works for the coalition. Media cycle completes by tomorrow unless V/MP mount visible protest.
-
-### Frame 2: "Gangsters in the Care System — Who Knew?" (High media impact — HD10454)
-
-**Likely outlets**: Aftonbladet, SVT Nyheter, Expressen investigative desk
-
-**Narrative**: Police 2024 report documented criminal gang control of HVB homes. Parliament is only now asking ministers why nothing was done. Emotionally powerful because it involves children.
-
-**Visual potential**: High — HVB homes are physical locations; faces of politicians answering (or evading) questions.
-
-**Government counter-message**: Ongoing inquiry; toughened legislation in pipeline; minister available for questions.
-
-**Risk**: If ANY journalist can document a specific case — a named child harmed in a specific named gang-controlled HVB home — this becomes a multi-week media storm.
-
-**Media cycle assessment**: MEDIUM-HIGH impact. Could dominate May 2026 news cycle if investigative journalism picks up.
-
-### Frame 3: "Parliament Finally Notices the China Threat" (Strategic media frame)
-
-**Likely outlets**: SvD foreign desk, GP (Göteborg), specialist security media (Säkerhetspolitik.se)
-
-**Narrative**: Three parliamentary instruments in one day on China — HD12744 (industry), HD12746 (Taiwan), HD10456 (organs). Media will note the clustering.
-
-**Counter-narrative**: "Government has classified briefings from SÄPO; parliamentary questions are theatre." This deflation narrative comes from government communications.
-
-**International pickup**: Possible — Taiwan visit cancellation story (HD12746) has international angles.
-
-**Media cycle**: LOW immediate impact in mainstream media; HIGH in specialist/security media. Could be picked up by international outlets (Reuters, Bloomberg) if combined with a broader China-Sweden story.
-
-### Frame 4: "Water Crisis Coming — Is Sweden Ready?" (Slow-burn media frame)
-
-**Likely outlets**: GP (Göteborg), Sydsvenskan (Skåne focus), SR P4 regional
-
-**Narrative**: Summer drought risk in southern Sweden — civil defence angle is new. Two interpellations on same day suggests parliamentary alarm.
-
-**Timing sensitivity**: This frame gains power in May-June as SMHI issues seasonal forecasts.
-
-**Media cycle**: LOW today; HIGH potential in summer 2026 if drought materialises.
-
-### Predicted News Value Rankings (Today, tomorrow, 1 week)
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "background": "#0a0e27", "primaryTextColor": "#e0e0e0"}}}%%
-xychart-beta
-    title Predicted Media Impact by Time Horizon
-    x-axis ["Today", "Tomorrow", "1 Week", "1 Month"]
-    y-axis "Impact (1-10)" 0 --> 10
-    line [9, 6, 4, 3]
-    line [3, 7, 8, 7]
-    line [2, 3, 5, 4]
-    line [1, 2, 4, 7]
-```
-*Line 1 (decreasing): JuU10 immediate | Line 2 (rising): HVB story | Line 3 (slow): China | Line 4 (very slow): Water*
-
-### SEO/Digital Framing
-
-**Predicted high-traffic search terms (Swedish)**:
-- "vapenlagens ny lag 2026" (JuU10)
-- "HVB-hem kriminella" (HD10454)
-- "China Sverige industri säkerhet" (HD12744)
-- "vattenbrist södra Sverige 2026" (HD12743)
-
-**Key hashtags to monitor**: #JuU10, #HVBhem, #Riksdagen, #Kärnkraft, #Säkerhetspolitik
-
-## Stakeholder Perspectives
-<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/stakeholder-perspectives.md -->
-
-### Primary Stakeholders
-
-#### Government Parties (M, SD, KD, L)
-
-**Position on JuU10 (New Weapons Law)**:
-Coalition as a block supports adoption. JuU10 was a campaign pledge for M and SD in 2022. SD's Rashid Farivar also raises China/security issues (HD12744, HD12746) — consistent with SD's assertive security-first framing. Adoption today is expected. [HDC120260429ap]
-
-**Position on China Threat**:
-Government has been reactive rather than proactive. Multiple ministers (Busch, Slottner) receive written questions on China but no cross-government strategy has been announced. Risk: opposition can claim government is behind the curve. [HD12744, HD12742, HD12746]
-
-**Position on HVB Homes**:
-Minister Waltersson Grönvall (M) will face interpellation from Vepsä (S) on HD10454. Government will likely cite ongoing Utredning (inquiry) as response. However, this is a politically vulnerable position given the Police 2024 report's directness.
-
-#### Social Democrats (S)
-
-**Key actor**: Mattias Vepsä raises HD10454 (HVB criminal gangs) — designed to put maximum political pressure on coalition welfare ministers. S strategy: own the "child welfare failure" narrative before September 2026 election.
-
-**On nuclear**: Evolving position — some S MPs now support nuclear new-build if existing plants extended. HD01NU19 creates quiet opportunity for S to moderate historically hard anti-nuclear stance. [HD01NU19]
-
-#### Sweden Democrats (SD)
-
-**Key actor**: Rashid Farivar leads on China security questions (HD12744, HD12746) and national cloud policy (HD12742). SD positioning as tough on China and digital sovereignty. Consistent with SD's security-nationalism framing.
-
-#### Vänsterpartiet (V) and Miljöpartiet (MP)
-
-**V**: MP Ciczie Weidby raises Pay Transparency Directive (HD12739) — EU social rights agenda. V will oppose or abstain on JuU10 (historical anti-weapons-expansion position).
-
-**MP**: Nasser Miri raises organ trafficking (HD10456) — signals MP's continuation of human rights advocacy on China despite being out of government. Also raises mobile cultural heritage (HD10455) — consistent with MP's cultural diversity agenda.
-
-#### Non-Parliamentary Stakeholders
-
-| Actor | Interest | Position |
-|-------|---------|----------|
-| Vattenfall / Uniper | HD01NU19 nuclear permitting | Strongly support faster permitting — enables plant lifetime extensions |
-| Jägarnas Riksförbund | JuU10 weapons law | Mixed — supports parts, concerns over licensing burden |
-| IVO (Inspektionen för vård och omsorg) | HD10454 | Resources insufficient; will request more inspection authority |
-| SÄPO | HD12744, HD12746 | Would welcome mandatory FDI pre-screening; current IFÅ law insufficient |
-| MSB (Civil Contingencies) | HD12745 water | Needs formal mandate and budget for national water security coordination |
-| Länsstyrelsen Skåne | HD12743 | Direct operational responsibility; chronically underfunded for water management |
-| Swedish municipalities (kommuner) | HD01CU37 housing | Cautious — housing guarantees increase municipal balance-sheet risk |
-
-### Stakeholder Interaction Map
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "background": "#0a0e27", "primaryTextColor": "#e0e0e0"}}}%%
-graph LR
-    GOV[Coalition Govt M/SD/KD/L] -->|interpelled by| S[Social Democrats]
-    GOV -->|challenged by| MP[Miljöpartiet]
-    GOV -->|aligned on security| SD2[SD China agenda]
-    S -->|HD10454| IVO[IVO Inspektionen]
-    SD2 -->|HD12744| SAPO[SÄPO Security]
-    MP -->|HD10456| INT[Interpol/Health Ministry]
-    GOV -->|HD01NU19| NUC[Nuclear operators]
-    GOV -->|HD12745| MSB[MSB Civil Defence]
-    style GOV fill:#0a0e27,stroke:#00d9ff
-    style S fill:#e8001e,color:#fff
-    style SD2 fill:#DDDD00,color:#000
-    style MP fill:#00a550,color:#fff
-```
-
-## Forward Indicators
-<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/forward-indicators.md -->
-
-### Horizon 1: Next 24 Hours (2026-04-29 to 2026-04-30)
-
-| # | Indicator | Threshold | Source | dok_id |
-|---|-----------|---------|--------|--------|
-| FI-01 | JuU10 vote result in chamber | ✅ CONFIRMED ADOPTED 16:13 — C voted NEJ (all ~20 present) | riksdag-regering MCP voteringar | coalition-mathematics |
-| FI-02 | Waltersson Grönvall response to HD10454 interpellation | Substantive or formulaic | Riksdagen anföranden | HD10454 |
-| FI-03 | Government press release on JuU10 | Within 24h of vote = high priority | Regeringen.se | HD01JuU10 |
-| FI-04 | Media coverage volume on HVB homes | >3 major outlets = elevated risk | Google News / TT |  HD10454 |
-
-### Horizon 2: Next 7 Days (2026-04-30 to 2026-05-06)
-
-| # | Indicator | Threshold | Source | dok_id |
-|---|-----------|---------|--------|--------|
-| FI-05 | NU19 nuclear permitting vote scheduled | Scheduled in riksdag.se agenda | Riksdagen kalender | HD01NU19 |
-| FI-06 | Written question responses from ministers on HD12744, HD12746 | Substantive = China policy shift | Riksdagen dokument | HD12744, HD12746 |
-| FI-07 | SMHI May seasonal forecast (drought) | Drought risk >50% = elevated water alert | smhi.se | HD12743, HD12745 |
-| FI-08 | EU-nämnden Ekofin outcome (5 May) | Sweden position paper published | Riksdagen EU-nämnden | HDA3EUN37 |
-
-### Horizon 3: Next 30 Days (2026-05-01 to 2026-05-31)
-
-| # | Indicator | Threshold | Source | dok_id |
-|---|-----------|---------|--------|--------|
-| FI-09 | Government announces China strategy or FDI review | Announced=YES = policy shift | Regeringen.se | HD12744 |
-| FI-10 | IVO or Police confirm action on HVB criminal homes | Action announced = political pressure effective | IVO.se / Police | HD10454 |
-| FI-11 | NU19 nuclear permitting law in force | Law published in SFS | SFS (Rättsinformation) | HD01NU19 |
-| FI-12 | MSB water security working group activated | Press release from MSB | MSB.se | HD12745 |
-| FI-13 | C party (Centerpartiet) position on nuclear clarified | Support=YES = cross-party energy consensus | Party press release | HD01NU19 |
-
-### Horizon 4: Next 90 Days (2026-06-01 to 2026-08-31)
-
-| # | Indicator | Threshold | Source | dok_id |
-|---|-----------|---------|--------|--------|
-| FI-14 | Municipal water rationing in Skåne | >1 municipality = water crisis confirmed | Länsstyrelse Skåne | HD12743 |
-| FI-15 | HVB media investigation published | Major SVT/DN investigation = electoral impact | SVT/DN | HD10454 |
-| FI-16 | Swedish opinion polling — party support | SD or S >5pp change = election volatility | SIFO/Novus | coalition-mathematics |
-| FI-17 | China FDI screening enforcement action | First SÄPO/government block under IFÅ | Regeringen.se | HD12744 |
-| FI-18 | JuU10 implementation regulations published | Published in SFS = implementation track | SFS | HD01JuU10 |
-| FI-19 | MP (Miljöpartiet) polling above/below 4% | Below 4% three consecutive polls = threshold risk | SIFO/Novus | voter-segmentation |
-| FI-20 | S-C government coalition announcement | Announced = election scenario B activating | Major media | coalition-mathematics |
-
-### Forward Indicator Dashboard
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "background": "#0a0e27", "primaryTextColor": "#e0e0e0"}}}%%
-gantt
-    title Forward Indicator Watch Timeline — April-August 2026
-    dateFormat  YYYY-MM-DD
-    section Horizon 1 (24h)
-    JuU10 vote FI-01        :milestone, 2026-04-29, 0d
-    HD10454 response FI-02  :milestone, 2026-04-30, 0d
-    section Horizon 2 (7 days)
-    NU19 scheduling FI-05   :2026-04-30, 5d
-    EU Ekofin FI-08         :milestone, 2026-05-05, 0d
-    China response FI-06    :2026-04-30, 7d
-    section Horizon 3 (30 days)
-    China strategy FI-09    :2026-05-01, 30d
-    MSB water FI-12         :2026-05-01, 30d
-    NU19 law FI-11          :2026-05-07, 25d
-    section Horizon 4 (90 days)
-    Water rationing FI-14   :2026-06-01, 90d
-    HVB investigation FI-15 :2026-06-01, 90d
-    Polling FI-16           :2026-06-01, 90d
-```
-
-### NEW Forward Indicators from Afternoon Votes
-
-| ID | Indicator | Trigger condition | Source | Related artifact |
-|----|-----------|------------------|--------|-----------------|
-| FI-21 | C party response to JuU10 NEJ record | Press conference or public statement by C leadership | Major Swedish media | coalition-mathematics |
-| FI-22 | SD/M campaign use of C weapons law NEJ vote | Social media ad or campaign material citing C's NEJ | social media / party comms | coalition-mathematics |
-| FI-23 | S left-wing (Strandhäll faction) reaction to SfU28 JA | Open dissent in S riksdag group or party press release | Swedish media | synthesis-summary |
-| FI-24 | SfU28 citizenship law implementation timeline | Government SFS publication for new citizenship rules | SFS register | HD01SfU28 |
-
-## Scenario Analysis
-<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/scenario-analysis.md -->
-
-**Methodologies**: PMESII-PT, Cone of Plausibility | **Horizon**: 0–90 days
-
-### Scenario 1: Weapons Law Passes, China Framework Launched (Base Case — P=60%)
-
-**Trigger**: JuU10 adopted in chamber vote today. Within 2 weeks, the Government announces a cross-ministry China strategy (SÄPO + UD + NE + DIGG).
-
-**Sequence**:
-1. JuU10 passes with M/SD/KD/L majority (possible KD hesitation on licensing, resolved by symbolic amendment) [HD01JuU10]
-2. China strategy announcement: references HD12744, HD12746 as parliamentary mandate
-3. NU19 nuclear permitting reform passes in the next sitting week [HD01NU19]
-4. Water security plan issued under MSB framework [HD12745]
-
-**Political effect**: Coalition demonstrates governance competence on security; narrows S attack surface ahead of election.
-
-**Indicators to watch**: Government press releases on China; Ekofin May 5 outcome [HDA3EUN37]; NU19 vote scheduling
-
-### Scenario 2: Weapons Law Delayed, HVB Scandal Breaks (Downside — P=25%)
-
-**Trigger**: JuU10 vote postponed due to last-minute procedural challenge from V/MP. Simultaneously, a serious incident at a HVB home (gang-related) breaks into media.
-
-**Sequence**:
-1. Weapons law delay creates news vacuum — opposition fills with "coalition incompetent" narrative
-2. HVB scandal triggers Riksdag emergency debate; Minister Waltersson Grönvall faces no-confidence motion threat
-3. China questions (HD12744) amplified by media after SÄPO leak or NGO report
-4. Coalition forced into reactive governance mode 5 months before election [HD10454, HD12744]
-
-**Political effect**: S + V + MP opposition coalition strengthened; Government approval ratings drop 3-5pp
-
-**Indicators to watch**: V/MP procedural motions; media on HVB homes; SÄPO press releases
-
-### Scenario 3: Climate Cascade (Tail Risk — P=15%)
-
-**Trigger**: SMHI issues drought warning for Skåne by mid-May. Municipal water rationing begins in 2 municipalities.
-
-**Sequence**:
-1. Water crisis becomes front-page news [HD12743, HD12745]
-2. MSB lacks formal mandate to coordinate; municipalities conflict
-3. Government emergency meeting; civil defence framing of water crisis officially adopted
-4. Budgetary reallocation from other priorities to water infrastructure
-
-**Political effect**: Climate/environment parties gain. Government forced to accelerate water infrastructure investment. Potential electoral benefit to MP and C.
-
-**Indicators to watch**: SMHI drought index; Länsstyrelse Skåne advisories; MSB water working group activation
-
-### Scenario Probability Matrix
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "background": "#0a0e27", "primaryTextColor": "#e0e0e0"}}}%%
-pie title Scenario Probability Distribution (29 Apr 2026)
-    "S1: Competent Governance (Base)" : 60
-    "S2: HVB Scandal + Legislative Delay" : 25
-    "S3: Water Cascade (Tail Risk)" : 15
-```
-
-### Early Warning Indicators
-
-| Indicator | Scenario | Watch By |
-|-----------|---------|---------|
-| JuU10 vote result (today) | S1 vs S2 | 2026-04-29 17:00 |
-| Waltersson Grönvall's answer to HD10454 | S1 vs S2 | 2026-04-30 |
-| Government China statement | S1 | 2026-05-15 |
-| SMHI May drought forecast | S3 | 2026-05-07 |
-| MSB water planning press release | S1/S3 | 2026-05-31 |
-| NU19 vote scheduled | S1 | 2026-05-07 |
-| Ekofin outcome (5 May) | S1 | 2026-05-05 |
-
-## Risk Assessment
-<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/risk-assessment.md -->
-
-### Risk Register
-
-| ID | Risk | Likelihood | Impact | Risk Score | Timeframe | Owner | dok_id |
-|----|------|-----------|--------|-----------|-----------|-------|--------|
-| R1 | Criminal gang control of HVB homes unchecked through election | H | H | 16/25 | 0-6mo | Socialdept | HD10454 |
-| R2 | China acquires control of critical energy/industry assets | M-H | H | 15/25 | 6-18mo | UD/NSC | HD12744 |
-| R3 | Southern Sweden water supply crisis summer 2026 | M | H | 12/25 | 0-3mo | Länsstyrelserna | HD12743, HD12745 |
-| R4 | JuU10 implementation friction (V/MP opposition) | M | M | 9/25 | 1-3mo | Ju dept | HD01JuU10 |
-| R5 | Nuclear permitting reform stalls in legislative calendar | L-M | M | 8/25 | 3-12mo | NE dept | HD01NU19 |
-| R6 | Organ trafficking from China — law enforcement gap | L | H | 10/25 | 12-24mo | SoS/Interpol | HD10456 |
-| R7 | Cloud policy vacuum enables foreign-controlled data infrastructure | M | M | 9/25 | 6-12mo | DIGG/UD | HD12742 |
-| R8 | Taiwan visit cancellation signals long-term diplomatic cost | L | M | 6/25 | 12-36mo | UD | HD12746 |
-| R9 | Pay Transparency Directive missed deadline | L-M | L | 5/25 | 3-6mo | AD dept | HD12739 |
-
-### Top 3 Risk Deep-Dives
-
-#### R1 — Criminal HVB Homes
-
-**Scenario**: Gang-controlled HVB homes continue operating through lack of real-time cross-agency data sharing. Police cannot de-register homes quickly enough. A serious incident involving a child in a gang-controlled home is reported before September 2026 election.
-
-**Causal chain**: IVO (inspection authority) overloaded → delayed audits → gap exploited by Foxtrot/Wolves gangs [HD10454, Police 2024 report ref] → political crisis for coalition.
-
-**Mitigation**: Immediate statutory power for IVO to cross-reference Police IIS database; fast-track inspection authority.
-
-#### R2 — China Critical Infrastructure Penetration
-
-**Scenario**: A Chinese state-connected entity completes acquisition of a mid-size Swedish energy or industrial firm before SÄPO/FDI screening completed. Parliamentary questions and the China CAST cluster signal this risk is live.
-
-**Causal chain**: Weak FDI screening law (IFÅ 2023) → Chinese entities use EU-domiciled front companies → acquisition approved by Bolagsverket before national security review triggered.
-
-**Mitigation**: Mandate pre-filing SÄPO consultation for acquisitions over SEK 500M in designated sectors.
-
-#### R3 — Southern Sweden Water Crisis
-
-**Scenario**: Summer drought 2026 (Skåne / Blekinge) depletes reservoirs; municipalities implement rationing by August. Civil defence framing (HD12745) insufficient to coordinate response across 20+ municipalities.
-
-**Mitigation**: Activate MSB (Civil Contingencies Agency) emergency water planning framework; pre-position desalination capacity.
-
-### Risk Heatmap
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#ff006e", "background": "#0a0e27", "primaryTextColor": "#e0e0e0"}}}%%
-quadrantChart
-    title Risk Heatmap: Likelihood vs Impact (29 Apr 2026)
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
-    quadrant-1 Critical (Monitor + Act)
-    quadrant-2 Strategic (Plan + Mitigate)
-    quadrant-3 Watch (Track)
-    quadrant-4 Background (Accept)
-    HVB Criminal Gangs R1: [0.80, 0.80]
-    China Industry R2: [0.65, 0.85]
-    Water Crisis R3: [0.55, 0.75]
-    Organ Trafficking R6: [0.25, 0.75]
-    Cloud Policy R7: [0.50, 0.50]
-    JuU10 Friction R4: [0.45, 0.45]
-    Nuclear Stall R5: [0.35, 0.45]
-    Taiwan R8: [0.20, 0.40]
-```
-
-## SWOT Analysis
-<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/swot-analysis.md -->
-
-### Strengths
-
-- **Legislative momentum on security**: JuU10 (new weapons law) advances today after sustained cross-party alignment. Sweden's post-NATO security regulatory update is on track. [HDC120260429ap, HD01JuU10]
-- **Nuclear energy reform**: HD01NU19 (NU19) signals parliamentary readiness to streamline nuclear permitting — a structural enabler for Sweden's declared new-build programme. [HD01NU19, Energimyndigheten policy alignment 2026]
-- **EU alignment**: Government proactively engaging EU-nämnden (HDA3EUN37) on Ecofin position; Sweden is positioned as constructive EU partner on financial regulation. [HDA3EUN37, HD0N50B0F8]
-- **Parliamentary oversight functioning**: Multiple interpellations and written questions show opposition is actively exercising scrutiny on China, welfare, and environment — the system is working. [HD10454, HD12744, HD12743]
-
-### Weaknesses
-
-- **HVB-hem oversight failure**: Police confirmed in 2024 that criminal gangs operate HVB (residential care) homes; no effective legislative response delivered before this interpellation. Government has been slow to close regulatory gap. [HD10454 — Mattias Vepsä (S)]
-- **National cloud policy stalled**: HD12742 (Farivar/SD → Minister Slottner) reveals that the government's national cloud policy work is delayed. Digital sovereignty risk in an era of AI and foreign data-centre expansion. [HD12742]
-- **China risk assessment lagging**: Three separate instruments (HD12744, HD12746, HD10456) signal no comprehensive, publicly articulated China threat framework from the government. Ministers respond reactively rather than proactively. [HD12744, HD12746]
-- **Water infrastructure under-investment**: Southern Sweden's water scarcity is reaching civil-defence threshold with no clear national response plan. [HD12743, HD12745]
-
-### Opportunities
-
-- **Weapons law modernisation**: Adoption of JuU10 today opens path to EU-aligned civilian firearms framework — international credibility gain post-NATO accession. [HDC120260429ap]
-- **China policy coalescence**: Cross-party parliamentary pressure (SD + S both raising issues) creates political space for a government-led comprehensive China strategy. [HD12744, HD12746]
-- **Water security framing**: Civil defence framing of water scarcity (HD12745) opens budgetary window for infrastructure investment under the defence budget umbrella. [HD12745]
-- **Nuclear regulatory modernisation**: HD01NU19 enables faster permitting for SMRs and extensions — critical for Sweden's 2035 zero-carbon electricity target. [HD01NU19]
-- **Pay transparency implementation**: HD12739 (Weidby/V → Minister Larsson) creates pressure for timely EU Pay Transparency Directive implementation, potentially improving gender pay gap metrics before election. [HD12739]
-
-### Threats
-
-- **Criminal infiltration of welfare system**: HVB homes controlled by gangs represent a systemic risk to vulnerable children. Without urgent reform, political fallout intensifies through 2026 election cycle. [HD10454]
-- **China economic penetration**: Without a national framework, China's acquisition of Swedish basic industry and critical infrastructure positions continues unchecked. [HD12744, SÄPO Annual Report 2025 context]
-- **Climate security cascade**: Water shortages in Skåne risk cascading into agricultural, food security, and municipal supply failures — especially severe in a drought summer. [HD12743, HD12745]
-- **Weapons law opposition**: V and MP reservations on JuU10 may complicate implementation and generate sustained opposition pressure on licensing. Watch for protest movements among hunting/sport-shooting communities. [HD01JuU10]
-- **Pay directive backlash**: Industry lobby resistance to EU Pay Transparency Directive could create coalition tension if SD moderates on gender-equality requirements. [HD12739]
-
-### TOWS Matrix
-
-| | Strengths | Weaknesses |
-|---|-----------|-----------|
-| **Opportunities** | SO: Use JuU10 momentum to build NATO-aligned security framework (HD01JuU10 + HD12744 China); Use nuclear regulatory window (HD01NU19) for SMR fast-track | WO: China risk assessment gap + cloud policy delay = window for comprehensive digital sovereignty legislation |
-| **Threats** | ST: Use functioning parliamentary oversight (multiple IPs) to demonstrate accountability on HVB crisis | WT: HVB failure + water scarcity + China penetration = triple institutional-failure narrative that opposition can weaponise before September 2026 election |
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "background": "#0a0e27"}}}%%
-quadrantChart
-    title SWOT Positioning — 29 April 2026 Swedish Politics
-    x-axis Internal Weakness --> Internal Strength
-    y-axis External Threat --> External Opportunity
-    quadrant-1 Leverage (SO)
-    quadrant-2 Develop (WO)
-    quadrant-3 Defend (ST)
-    quadrant-4 Mitigate (WT)
-    JuU10 Weapons Law: [0.85, 0.80]
-    Nuclear HD01NU19: [0.80, 0.75]
-    HVB Criminal Gangs: [0.20, 0.20]
-    China Risk: [0.25, 0.35]
-    Water Security: [0.30, 0.55]
-    EU Alignment: [0.78, 0.70]
-```
-
-## Threat Analysis
-<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/threat-analysis.md -->
-
-### State-Level Threat Actors
-
-#### China (Priority 1)
-
-**Threat vector cluster** (HD12744, HD12746, HD10456):
-
-| DIME Dimension | Activity | Evidence | Confidence |
-|----------------|----------|----------|-----------|
-| Diplomatic | Pressure on Sweden over Taiwan visit cancellation | HD12746 (Annicka Engblom/M) | HIGH [B1] |
-| Information | Strategic influence through industry acquisition | HD12744 (Rashid Farivar/SD) | HIGH [B1] |
-| Military | N/A (not current) | — | — |
-| Economic | Acquisition of Swedish basic industry, energy assets | HD12744 written question | HIGH [B1] |
-| Legal/Medical | Organ trafficking from executed Chinese prisoners | HD10456 (Nasser Miri/MP) | MEDIUM [B2] |
-
-**Assessment**: China's influence operations in Sweden are multi-vector. The three instruments raised today in Riksdagen represent a coordinated (if informal) parliamentary signal across three different parties (SD, M, MP). This suggests broader concern exists than any single party would acknowledge.
-
-#### Non-State: Organised Crime (Priority 2)
-
-**Threat vector** (HD10454):
-
-| Dimension | Activity | Evidence | Confidence |
-|-----------|---------|---------|----------|
-| Criminal infiltration | Gangs operating residential care for vulnerable youth | HD10454 interpellation, Police 2024 report | HIGH [B1] |
-| Economic | Revenue extraction from welfare system | Parliamentary IPK data | HIGH [B1] |
-| Recruitment | Radicalising vulnerable youth in care | SÄPO framing (2025 Annual Report) | MEDIUM [B2] |
-
-**Assessment**: This is not a future risk — it is current and documented. The Police report from 2024 confirmed gang infiltration of HVB homes. The political response has been inadequate.
-
-#### Climate/Environmental (Priority 3)
-
-**Threat vector** (HD12743, HD12745):
-
-| Dimension | Activity | Evidence | Confidence |
-|-----------|---------|---------|----------|
-| Resource scarcity | Water shortage in southern Sweden | HD12743, HD12745 interpellations | HIGH [B1] |
-| Cascade risk | Municipal supply chains affected | Länsstyrelse Skåne, SMHI 2025 forecast | MEDIUM [B2] |
-| Civil defence gap | No unified national response plan | HD12745 civil defence framing | HIGH [B1] |
-
-### STRIDE Threat Mapping
-
-| Threat Category | Vector | Impact | Mitigation |
-|-----------------|--------|--------|-----------|
-| Spoofing | Chinese front companies in FDI context | HIGH | Mandatory SÄPO pre-filing for designated sectors |
-| Tampering | Gang manipulation of HVB placement decisions | HIGH | IVO–Police database integration |
-| Repudiation | Government denial of China risk | MEDIUM | Parliamentary record creates accountability |
-| Information Disclosure | Cloud policy vacuum | MEDIUM | National cloud framework (HD12742) |
-| Denial of Service | Water supply disruption | HIGH | MSB emergency framework activation |
-| Elevation of Privilege | Criminal HVB home operators gaining welfare certification | HIGH | Real-time IVO–Police cross-check |
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#ff006e", "background": "#0a0e27", "primaryTextColor": "#e0e0e0", "lineColor": "#00d9ff"}}}%%
-graph TD
-    T1[China State Actor] -->|Economic| A1[Industry Acquisition HD12744]
-    T1 -->|Diplomatic| A2[Taiwan Pressure HD12746]
-    T1 -->|Legal/Medical| A3[Organ Trafficking HD10456]
-    T2[Organised Crime] -->|Infiltration| B1[HVB Homes HD10454]
-    T3[Climate Threat] -->|Resource| C1[Water Scarcity HD12743/45]
-    A1 -->|Risk| R1[Critical Infrastructure Exposure]
-    B1 -->|Risk| R2[Child Welfare Failure]
-    C1 -->|Risk| R3[Civil Defence Gap]
-    style T1 fill:#ff006e,color:#fff
-    style T2 fill:#ff006e,color:#fff
-    style T3 fill:#ffbe0b,color:#000
 ```
 
 ## Per-document intelligence
@@ -1021,92 +550,68 @@ Today's Riksdag chamber voting agenda. Includes JuU10 (new weapons law) as the p
 **Significance**: HIGH [B1] — JuU10 adoption is today's primary event
 **Forward indicator**: FI-01 (vote result)
 
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/election-2026-analysis.md -->
+## Stakeholder Perspectives
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/stakeholder-perspectives.md -->
 
-**Context**: Swedish general election scheduled September 2026 (exact date TBC; likely mid-September per constitutional calendar)
+### Primary Stakeholders
 
-### Political Landscape
+#### Government Parties (M, SD, KD, L)
 
-#### Riksdag seat distribution (current)
+**Position on JuU10 (New Weapons Law)**:
+Coalition as a block supports adoption. JuU10 was a campaign pledge for M and SD in 2022. SD's Rashid Farivar also raises China/security issues (HD12744, HD12746) — consistent with SD's assertive security-first framing. Adoption today is expected. [HDC120260429ap]
 
-| Party | Seats | Group |
-|-------|-------|-------|
-| Moderaterna (M) | 68 | Coalition |
-| Sverigedemokraterna (SD) | 73 | Coalition support |
-| Kristdemokraterna (KD) | 19 | Coalition |
-| Liberalerna (L) | 16 | Coalition |
-| **Coalition total** | **176** | |
-| Socialdemokraterna (S) | 107 | Opposition |
-| Vänsterpartiet (V) | 24 | Opposition |
-| Miljöpartiet (MP) | 18 | Opposition |
-| Centerpartiet (C) | 24 | Opposition |
-| **Opposition total** | **173** | |
+**Position on China Threat**:
+Government has been reactive rather than proactive. Multiple ministers (Busch, Slottner) receive written questions on China but no cross-government strategy has been announced. Risk: opposition can claim government is behind the curve. [HD12744, HD12742, HD12746]
 
-*Threshold: 175 seats for majority. Coalition governs with SD support.*
+**Position on HVB Homes**:
+Minister Waltersson Grönvall (M) will face interpellation from Vepsä (S) on HD10454. Government will likely cite ongoing Utredning (inquiry) as response. However, this is a politically vulnerable position given the Police 2024 report's directness.
 
-### Today's Events Through Election Lens
+#### Social Democrats (S)
 
-#### JuU10 (Weapons Law)
+**Key actor**: Mattias Vepsä raises HD10454 (HVB criminal gangs) — designed to put maximum political pressure on coalition welfare ministers. S strategy: own the "child welfare failure" narrative before September 2026 election.
 
-**Electoral framing**: Coalition demonstrates EU-aligned security governance. Risk: SD rural voter base (hunters) may feel constrained by stricter licensing.
+**On nuclear**: Evolving position — some S MPs now support nuclear new-build if existing plants extended. HD01NU19 creates quiet opportunity for S to moderate historically hard anti-nuclear stance. [HD01NU19]
 
-**S attack vector**: "Coalition took 4 years to implement an EU directive that Germany implemented in 2022."
+#### Sweden Democrats (SD)
 
-#### HD10454 (HVB Criminal Homes)
+**Key actor**: Rashid Farivar leads on China security questions (HD12744, HD12746) and national cloud policy (HD12742). SD positioning as tough on China and digital sovereignty. Consistent with SD's security-nationalism framing.
 
-**Electoral weapon for S**: This is the most electorally potent issue from today's session. S strategy is to own "child welfare failure" narrative. If a HVB-related criminal incident occurs in summer 2026, this will be front-page news and Minister Waltersson Grönvall's interpellation response will be replayed.
+#### Vänsterpartiet (V) and Miljöpartiet (MP)
 
-**Vulnerability assessment**: HIGH political risk for coalition. Welfare failures with named victims are devastating for incumbents.
+**V**: MP Ciczie Weidby raises Pay Transparency Directive (HD12739) — EU social rights agenda. V will oppose or abstain on JuU10 (historical anti-weapons-expansion position).
 
-#### China Issues (HD12744, HD12746, HD10456)
+**MP**: Nasser Miri raises organ trafficking (HD10456) — signals MP's continuation of human rights advocacy on China despite being out of government. Also raises mobile cultural heritage (HD10455) — consistent with MP's cultural diversity agenda.
 
-**Electoral framing for SD**: SD can claim to have raised China security issues consistently. If China-related incident occurs (acquisition, diplomatic clash), SD will cite these written questions.
+#### Non-Parliamentary Stakeholders
 
-**For M/KD**: Moderate security policy — less hawkish than SD framing.
+| Actor | Interest | Position |
+|-------|---------|----------|
+| Vattenfall / Uniper | HD01NU19 nuclear permitting | Strongly support faster permitting — enables plant lifetime extensions |
+| Jägarnas Riksförbund | JuU10 weapons law | Mixed — supports parts, concerns over licensing burden |
+| IVO (Inspektionen för vård och omsorg) | HD10454 | Resources insufficient; will request more inspection authority |
+| SÄPO | HD12744, HD12746 | Would welcome mandatory FDI pre-screening; current IFÅ law insufficient |
+| MSB (Civil Contingencies) | HD12745 water | Needs formal mandate and budget for national water security coordination |
+| Länsstyrelsen Skåne | HD12743 | Direct operational responsibility; chronically underfunded for water management |
+| Swedish municipalities (kommuner) | HD01CU37 housing | Cautious — housing guarantees increase municipal balance-sheet risk |
 
-**For S**: Opposition will argue Government lacks coherent China strategy.
-
-### Predictive Polling Context
-
-*Note: No fresh polling data in this cycle. Based on structural factors:*
-
-- Coalition parties (M+SD+KD+L) governing with thin margin
-- SD consistently polling at 20-22% (largest single party)
-- S at 28-31% but C/MP threshold risk
-- Nuclear issue could benefit moderate S and C if they moderate positions
-
-### Election Scenario Mapping
+### Stakeholder Interaction Map
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "background": "#0a0e27", "primaryTextColor": "#e0e0e0"}}}%%
-graph TD
-    Today[Today 2026-04-29] --> A1{JuU10 passes?}
-    A1 -->|Yes| B1[Coalition competence narrative]
-    A1 -->|No| B2[Coalition dysfunction narrative]
-    B1 --> C1{HVB incident before Sep?}
-    C1 -->|Yes| D1[S welfare attack succeeds]
-    C1 -->|No| D2[Coalition retains security advantage]
-    B2 --> D1
-    D1 --> E1[S-led govt Sept 2026 possible]
-    D2 --> E2[Ulf Kristersson reelected]
-    style Today fill:#0a0e27,stroke:#00d9ff
-    style E1 fill:#e8001e,color:#fff
-    style E2 fill:#52AADE,color:#fff
+graph LR
+    GOV[Coalition Govt M/SD/KD/L] -->|interpelled by| S[Social Democrats]
+    GOV -->|challenged by| MP[Miljöpartiet]
+    GOV -->|aligned on security| SD2[SD China agenda]
+    S -->|HD10454| IVO[IVO Inspektionen]
+    SD2 -->|HD12744| SAPO[SÄPO Security]
+    MP -->|HD10456| INT[Interpol/Health Ministry]
+    GOV -->|HD01NU19| NUC[Nuclear operators]
+    GOV -->|HD12745| MSB[MSB Civil Defence]
+    style GOV fill:#0a0e27,stroke:#00d9ff
+    style S fill:#e8001e,color:#fff
+    style SD2 fill:#DDDD00,color:#000
+    style MP fill:#00a550,color:#fff
 ```
-
-### Key Pre-Election Risks for Each Party
-
-| Party | Key Risk | Mitigant |
-|-------|----------|----------|
-| M | HVB scandal; coalition fatigue | Policy delivery on nuclear + weapons |
-| SD | Rural voter backlash on JuU10 | China security hawkishness |
-| KD | Overshadowed by M | Weapons law co-sponsorship |
-| L | Threshold risk (4%) | Individual rights narrative on KU36 |
-| S | Lack of clear economic alternative | HVB accountability narrative |
-| V | Threshold risk | Pay Transparency Directive |
-| MP | Threshold risk (4.2% current polls) | Climate + water crisis frame |
-| C | Threshold risk; rural-urban split | Water security, nuclear pragmatism |
 
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/coalition-mathematics.md -->
@@ -1320,72 +825,426 @@ A specific micro-segment warrants special attention: parents of children in or a
 **Current lean**: Soft coalition support.
 **Trigger for switch**: Single documented child harmed in gang-controlled HVB home.
 
-## Comparative International
-<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/comparative-international.md -->
+## Forward Indicators
+<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/forward-indicators.md -->
 
-### Comparator 1: New Weapons Law — EU Alignment
+### Horizon 1: Next 24 Hours (2026-04-29 to 2026-04-30)
 
-**Swedish context**: HD01JuU10 adopts new civilian weapons legislation
+| # | Indicator | Threshold | Source | dok_id |
+|---|-----------|---------|--------|--------|
+| FI-01 | JuU10 vote result in chamber | ✅ CONFIRMED ADOPTED 16:13 — C voted NEJ (all ~20 present) | riksdag-regering MCP voteringar | coalition-mathematics |
+| FI-02 | Waltersson Grönvall response to HD10454 interpellation | Substantive or formulaic | Riksdagen anföranden | HD10454 |
+| FI-03 | Government press release on JuU10 | Within 24h of vote = high priority | Regeringen.se | HD01JuU10 |
+| FI-04 | Media coverage volume on HVB homes | >3 major outlets = elevated risk | Google News / TT |  HD10454 |
 
-**EU Directive framework**: Directive 2021/555/EU (revised Firearms Directive) — establishes minimum standards for civilian firearms across EU.
+### Horizon 2: Next 7 Days (2026-04-30 to 2026-05-06)
 
-**Country comparison**:
+| # | Indicator | Threshold | Source | dok_id |
+|---|-----------|---------|--------|--------|
+| FI-05 | NU19 nuclear permitting vote scheduled | Scheduled in riksdag.se agenda | Riksdagen kalender | HD01NU19 |
+| FI-06 | Written question responses from ministers on HD12744, HD12746 | Substantive = China policy shift | Riksdagen dokument | HD12744, HD12746 |
+| FI-07 | SMHI May seasonal forecast (drought) | Drought risk >50% = elevated water alert | smhi.se | HD12743, HD12745 |
+| FI-08 | EU-nämnden Ekofin outcome (5 May) | Sweden position paper published | Riksdagen EU-nämnden | HDA3EUN37 |
 
-| Country | Directive transposition | Notable feature |
-|---------|------------------------|-----------------|
-| Germany | Complete (2022) | Strict semi-automatic ban; NRW registry enforcement |
-| France | Complete (2022) | National register mandatory; dealer traceability |
-| Sweden (post-JuU10) | Today — completing transposition | Enhanced licensing, deactivation standards |
-| Finland | Ahead of Sweden | Comprehensive reform pre-NATO accession |
-| Denmark | Aligned | Nordic harmonisation |
+### Horizon 3: Next 30 Days (2026-05-01 to 2026-05-31)
 
-**Assessment**: Sweden is completing EU alignment that most Western EU members completed 2020-2022. JuU10 is not innovative — it is catching-up. The significance is domestic legitimacy and NATO security cooperation, not EU leadership.
+| # | Indicator | Threshold | Source | dok_id |
+|---|-----------|---------|--------|--------|
+| FI-09 | Government announces China strategy or FDI review | Announced=YES = policy shift | Regeringen.se | HD12744 |
+| FI-10 | IVO or Police confirm action on HVB criminal homes | Action announced = political pressure effective | IVO.se / Police | HD10454 |
+| FI-11 | NU19 nuclear permitting law in force | Law published in SFS | SFS (Rättsinformation) | HD01NU19 |
+| FI-12 | MSB water security working group activated | Press release from MSB | MSB.se | HD12745 |
+| FI-13 | C party (Centerpartiet) position on nuclear clarified | Support=YES = cross-party energy consensus | Party press release | HD01NU19 |
 
-### Comparator 2: China FDI Screening — Nordic/European Comparison
+### Horizon 4: Next 90 Days (2026-06-01 to 2026-08-31)
 
-**Swedish context**: HD12744 (HD12746) — no comprehensive China FDI strategy
+| # | Indicator | Threshold | Source | dok_id |
+|---|-----------|---------|--------|--------|
+| FI-14 | Municipal water rationing in Skåne | >1 municipality = water crisis confirmed | Länsstyrelse Skåne | HD12743 |
+| FI-15 | HVB media investigation published | Major SVT/DN investigation = electoral impact | SVT/DN | HD10454 |
+| FI-16 | Swedish opinion polling — party support | SD or S >5pp change = election volatility | SIFO/Novus | coalition-mathematics |
+| FI-17 | China FDI screening enforcement action | First SÄPO/government block under IFÅ | Regeringen.se | HD12744 |
+| FI-18 | JuU10 implementation regulations published | Published in SFS = implementation track | SFS | HD01JuU10 |
+| FI-19 | MP (Miljöpartiet) polling above/below 4% | Below 4% three consecutive polls = threshold risk | SIFO/Novus | voter-segmentation |
+| FI-20 | S-C government coalition announcement | Announced = election scenario B activating | Major media | coalition-mathematics |
 
-**International landscape**:
-
-| Country | FDI Screening Regime | China-specific provisions |
-|---------|---------------------|--------------------------|
-| Germany | AWG (Außenwirtschaftsgesetz) amendment 2022 | Mandatory notification for energy/telecom/critical infra; BMWi pre-screening |
-| France | FIRME mechanism | Presidential power to block on national security |
-| Netherlands | VIFO Act 2023 | Covers vital infrastructure and sensitive technology |
-| Finland | Act on Monitoring Foreign Corporate Acquisitions 2021 | Broad sensitive sector coverage |
-| **Sweden** | IFÅ (Lag om granskning av utländska direktinvesteringar) 2023 | Narrower scope; no mandatory SÄPO pre-filing |
-| UK | National Security and Investment Act 2021 | Mandatory notification for 17 sectors |
-
-**Assessment**: Sweden's IFÅ 2023 is weaker than its Nordic peers and Western European comparators. The parliamentary questions (HD12744) are pointing to a real regulatory gap. Finland and Netherlands offer templates Sweden could follow.
-
-**Recommendation**: Mandate SÄPO consultation as precondition for FDI approvals in energy, telecom, water, and critical manufacturing.
-
-### Comparator 3: Water Security Planning
-
-**Swedish context**: HD12743, HD12745 — civil defence framing of water scarcity in southern Sweden
-
-| Country | Water Security Framework | Civil Defence Integration |
-|---------|-------------------------|--------------------------|
-| Netherlands | National Water Plan + delta programme; climate-adaptive | Fully integrated into national resilience |
-| Denmark | Water Sector Act; municipal + national coordination | MSB-equivalent (Beredskabsstyrelsen) engaged |
-| Germany | National Water Strategy 2023 | Integrated Bundesländer + Bund |
-| **Sweden** | Vattenförvaltningsförordning (EU WFD transposition); no national drought framework | MSB lacks formal mandate for water coordination |
-| Finland | Water supply action plan + NSS 2024 | Emergency water included in hybrid threats plan |
-
-**Assessment**: Sweden lacks the national-level water security coordination that comparable Nordic and EU states have. Finland's approach (water as hybrid threat) maps directly onto the framing in HD12745.
-
-### Comparative Intelligence Chart
+### Forward Indicator Dashboard
 
 ```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "background": "#0a0e27", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b"}}}%%
-xychart-beta
-    title Sweden vs Peers: Policy Readiness Score (1-10)
-    x-axis ["FDI/China Screening", "Water Security Planning", "Weapons Law EU Alignment", "Nuclear Permitting Speed"]
-    y-axis 0 --> 10
-    bar [4, 4, 7, 5]
-    line [7, 7, 8, 7]
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "background": "#0a0e27", "primaryTextColor": "#e0e0e0"}}}%%
+gantt
+    title Forward Indicator Watch Timeline — April-August 2026
+    dateFormat  YYYY-MM-DD
+    section Horizon 1 (24h)
+    JuU10 vote FI-01        :milestone, 2026-04-29, 0d
+    HD10454 response FI-02  :milestone, 2026-04-30, 0d
+    section Horizon 2 (7 days)
+    NU19 scheduling FI-05   :2026-04-30, 5d
+    EU Ekofin FI-08         :milestone, 2026-05-05, 0d
+    China response FI-06    :2026-04-30, 7d
+    section Horizon 3 (30 days)
+    China strategy FI-09    :2026-05-01, 30d
+    MSB water FI-12         :2026-05-01, 30d
+    NU19 law FI-11          :2026-05-07, 25d
+    section Horizon 4 (90 days)
+    Water rationing FI-14   :2026-06-01, 90d
+    HVB investigation FI-15 :2026-06-01, 90d
+    Polling FI-16           :2026-06-01, 90d
 ```
-*Blue bar = Sweden 2026; Line = Nordic peer average*
+
+### NEW Forward Indicators from Afternoon Votes
+
+| ID | Indicator | Trigger condition | Source | Related artifact |
+|----|-----------|------------------|--------|-----------------|
+| FI-21 | C party response to JuU10 NEJ record | Press conference or public statement by C leadership | Major Swedish media | coalition-mathematics |
+| FI-22 | SD/M campaign use of C weapons law NEJ vote | Social media ad or campaign material citing C's NEJ | social media / party comms | coalition-mathematics |
+| FI-23 | S left-wing (Strandhäll faction) reaction to SfU28 JA | Open dissent in S riksdag group or party press release | Swedish media | synthesis-summary |
+| FI-24 | SfU28 citizenship law implementation timeline | Government SFS publication for new citizenship rules | SFS register | HD01SfU28 |
+
+## Scenario Analysis
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/scenario-analysis.md -->
+
+**Methodologies**: PMESII-PT, Cone of Plausibility | **Horizon**: 0–90 days
+
+### Scenario 1: Weapons Law Passes, China Framework Launched (Base Case — P=60%)
+
+**Trigger**: JuU10 adopted in chamber vote today. Within 2 weeks, the Government announces a cross-ministry China strategy (SÄPO + UD + NE + DIGG).
+
+**Sequence**:
+1. JuU10 passes with M/SD/KD/L majority (possible KD hesitation on licensing, resolved by symbolic amendment) [HD01JuU10]
+2. China strategy announcement: references HD12744, HD12746 as parliamentary mandate
+3. NU19 nuclear permitting reform passes in the next sitting week [HD01NU19]
+4. Water security plan issued under MSB framework [HD12745]
+
+**Political effect**: Coalition demonstrates governance competence on security; narrows S attack surface ahead of election.
+
+**Indicators to watch**: Government press releases on China; Ekofin May 5 outcome [HDA3EUN37]; NU19 vote scheduling
+
+### Scenario 2: Weapons Law Delayed, HVB Scandal Breaks (Downside — P=25%)
+
+**Trigger**: JuU10 vote postponed due to last-minute procedural challenge from V/MP. Simultaneously, a serious incident at a HVB home (gang-related) breaks into media.
+
+**Sequence**:
+1. Weapons law delay creates news vacuum — opposition fills with "coalition incompetent" narrative
+2. HVB scandal triggers Riksdag emergency debate; Minister Waltersson Grönvall faces no-confidence motion threat
+3. China questions (HD12744) amplified by media after SÄPO leak or NGO report
+4. Coalition forced into reactive governance mode 5 months before election [HD10454, HD12744]
+
+**Political effect**: S + V + MP opposition coalition strengthened; Government approval ratings drop 3-5pp
+
+**Indicators to watch**: V/MP procedural motions; media on HVB homes; SÄPO press releases
+
+### Scenario 3: Climate Cascade (Tail Risk — P=15%)
+
+**Trigger**: SMHI issues drought warning for Skåne by mid-May. Municipal water rationing begins in 2 municipalities.
+
+**Sequence**:
+1. Water crisis becomes front-page news [HD12743, HD12745]
+2. MSB lacks formal mandate to coordinate; municipalities conflict
+3. Government emergency meeting; civil defence framing of water crisis officially adopted
+4. Budgetary reallocation from other priorities to water infrastructure
+
+**Political effect**: Climate/environment parties gain. Government forced to accelerate water infrastructure investment. Potential electoral benefit to MP and C.
+
+**Indicators to watch**: SMHI drought index; Länsstyrelse Skåne advisories; MSB water working group activation
+
+### Scenario Probability Matrix
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "background": "#0a0e27", "primaryTextColor": "#e0e0e0"}}}%%
+pie title Scenario Probability Distribution (29 Apr 2026)
+    "S1: Competent Governance (Base)" : 60
+    "S2: HVB Scandal + Legislative Delay" : 25
+    "S3: Water Cascade (Tail Risk)" : 15
+```
+
+### Early Warning Indicators
+
+| Indicator | Scenario | Watch By |
+|-----------|---------|---------|
+| JuU10 vote result (today) | S1 vs S2 | 2026-04-29 17:00 |
+| Waltersson Grönvall's answer to HD10454 | S1 vs S2 | 2026-04-30 |
+| Government China statement | S1 | 2026-05-15 |
+| SMHI May drought forecast | S3 | 2026-05-07 |
+| MSB water planning press release | S1/S3 | 2026-05-31 |
+| NU19 vote scheduled | S1 | 2026-05-07 |
+| Ekofin outcome (5 May) | S1 | 2026-05-05 |
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/election-2026-analysis.md -->
+
+**Context**: Swedish general election scheduled September 2026 (exact date TBC; likely mid-September per constitutional calendar)
+
+### Political Landscape
+
+#### Riksdag seat distribution (current)
+
+| Party | Seats | Group |
+|-------|-------|-------|
+| Moderaterna (M) | 68 | Coalition |
+| Sverigedemokraterna (SD) | 73 | Coalition support |
+| Kristdemokraterna (KD) | 19 | Coalition |
+| Liberalerna (L) | 16 | Coalition |
+| **Coalition total** | **176** | |
+| Socialdemokraterna (S) | 107 | Opposition |
+| Vänsterpartiet (V) | 24 | Opposition |
+| Miljöpartiet (MP) | 18 | Opposition |
+| Centerpartiet (C) | 24 | Opposition |
+| **Opposition total** | **173** | |
+
+*Threshold: 175 seats for majority. Coalition governs with SD support.*
+
+### Today's Events Through Election Lens
+
+#### JuU10 (Weapons Law)
+
+**Electoral framing**: Coalition demonstrates EU-aligned security governance. Risk: SD rural voter base (hunters) may feel constrained by stricter licensing.
+
+**S attack vector**: "Coalition took 4 years to implement an EU directive that Germany implemented in 2022."
+
+#### HD10454 (HVB Criminal Homes)
+
+**Electoral weapon for S**: This is the most electorally potent issue from today's session. S strategy is to own "child welfare failure" narrative. If a HVB-related criminal incident occurs in summer 2026, this will be front-page news and Minister Waltersson Grönvall's interpellation response will be replayed.
+
+**Vulnerability assessment**: HIGH political risk for coalition. Welfare failures with named victims are devastating for incumbents.
+
+#### China Issues (HD12744, HD12746, HD10456)
+
+**Electoral framing for SD**: SD can claim to have raised China security issues consistently. If China-related incident occurs (acquisition, diplomatic clash), SD will cite these written questions.
+
+**For M/KD**: Moderate security policy — less hawkish than SD framing.
+
+**For S**: Opposition will argue Government lacks coherent China strategy.
+
+### Predictive Polling Context
+
+*Note: No fresh polling data in this cycle. Based on structural factors:*
+
+- Coalition parties (M+SD+KD+L) governing with thin margin
+- SD consistently polling at 20-22% (largest single party)
+- S at 28-31% but C/MP threshold risk
+- Nuclear issue could benefit moderate S and C if they moderate positions
+
+### Election Scenario Mapping
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "background": "#0a0e27", "primaryTextColor": "#e0e0e0"}}}%%
+graph TD
+    Today[Today 2026-04-29] --> A1{JuU10 passes?}
+    A1 -->|Yes| B1[Coalition competence narrative]
+    A1 -->|No| B2[Coalition dysfunction narrative]
+    B1 --> C1{HVB incident before Sep?}
+    C1 -->|Yes| D1[S welfare attack succeeds]
+    C1 -->|No| D2[Coalition retains security advantage]
+    B2 --> D1
+    D1 --> E1[S-led govt Sept 2026 possible]
+    D2 --> E2[Ulf Kristersson reelected]
+    style Today fill:#0a0e27,stroke:#00d9ff
+    style E1 fill:#e8001e,color:#fff
+    style E2 fill:#52AADE,color:#fff
+```
+
+### Key Pre-Election Risks for Each Party
+
+| Party | Key Risk | Mitigant |
+|-------|----------|----------|
+| M | HVB scandal; coalition fatigue | Policy delivery on nuclear + weapons |
+| SD | Rural voter backlash on JuU10 | China security hawkishness |
+| KD | Overshadowed by M | Weapons law co-sponsorship |
+| L | Threshold risk (4%) | Individual rights narrative on KU36 |
+| S | Lack of clear economic alternative | HVB accountability narrative |
+| V | Threshold risk | Pay Transparency Directive |
+| MP | Threshold risk (4.2% current polls) | Climate + water crisis frame |
+| C | Threshold risk; rural-urban split | Water security, nuclear pragmatism |
+
+## Risk Assessment
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/risk-assessment.md -->
+
+### Risk Register
+
+| ID | Risk | Likelihood | Impact | Risk Score | Timeframe | Owner | dok_id |
+|----|------|-----------|--------|-----------|-----------|-------|--------|
+| R1 | Criminal gang control of HVB homes unchecked through election | H | H | 16/25 | 0-6mo | Socialdept | HD10454 |
+| R2 | China acquires control of critical energy/industry assets | M-H | H | 15/25 | 6-18mo | UD/NSC | HD12744 |
+| R3 | Southern Sweden water supply crisis summer 2026 | M | H | 12/25 | 0-3mo | Länsstyrelserna | HD12743, HD12745 |
+| R4 | JuU10 implementation friction (V/MP opposition) | M | M | 9/25 | 1-3mo | Ju dept | HD01JuU10 |
+| R5 | Nuclear permitting reform stalls in legislative calendar | L-M | M | 8/25 | 3-12mo | NE dept | HD01NU19 |
+| R6 | Organ trafficking from China — law enforcement gap | L | H | 10/25 | 12-24mo | SoS/Interpol | HD10456 |
+| R7 | Cloud policy vacuum enables foreign-controlled data infrastructure | M | M | 9/25 | 6-12mo | DIGG/UD | HD12742 |
+| R8 | Taiwan visit cancellation signals long-term diplomatic cost | L | M | 6/25 | 12-36mo | UD | HD12746 |
+| R9 | Pay Transparency Directive missed deadline | L-M | L | 5/25 | 3-6mo | AD dept | HD12739 |
+
+### Top 3 Risk Deep-Dives
+
+#### R1 — Criminal HVB Homes
+
+**Scenario**: Gang-controlled HVB homes continue operating through lack of real-time cross-agency data sharing. Police cannot de-register homes quickly enough. A serious incident involving a child in a gang-controlled home is reported before September 2026 election.
+
+**Causal chain**: IVO (inspection authority) overloaded → delayed audits → gap exploited by Foxtrot/Wolves gangs [HD10454, Police 2024 report ref] → political crisis for coalition.
+
+**Mitigation**: Immediate statutory power for IVO to cross-reference Police IIS database; fast-track inspection authority.
+
+#### R2 — China Critical Infrastructure Penetration
+
+**Scenario**: A Chinese state-connected entity completes acquisition of a mid-size Swedish energy or industrial firm before SÄPO/FDI screening completed. Parliamentary questions and the China CAST cluster signal this risk is live.
+
+**Causal chain**: Weak FDI screening law (IFÅ 2023) → Chinese entities use EU-domiciled front companies → acquisition approved by Bolagsverket before national security review triggered.
+
+**Mitigation**: Mandate pre-filing SÄPO consultation for acquisitions over SEK 500M in designated sectors.
+
+#### R3 — Southern Sweden Water Crisis
+
+**Scenario**: Summer drought 2026 (Skåne / Blekinge) depletes reservoirs; municipalities implement rationing by August. Civil defence framing (HD12745) insufficient to coordinate response across 20+ municipalities.
+
+**Mitigation**: Activate MSB (Civil Contingencies Agency) emergency water planning framework; pre-position desalination capacity.
+
+### Risk Heatmap
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#ff006e", "background": "#0a0e27", "primaryTextColor": "#e0e0e0"}}}%%
+quadrantChart
+    title Risk Heatmap: Likelihood vs Impact (29 Apr 2026)
+    x-axis Low Likelihood --> High Likelihood
+    y-axis Low Impact --> High Impact
+    quadrant-1 Critical (Monitor + Act)
+    quadrant-2 Strategic (Plan + Mitigate)
+    quadrant-3 Watch (Track)
+    quadrant-4 Background (Accept)
+    HVB Criminal Gangs R1: [0.80, 0.80]
+    China Industry R2: [0.65, 0.85]
+    Water Crisis R3: [0.55, 0.75]
+    Organ Trafficking R6: [0.25, 0.75]
+    Cloud Policy R7: [0.50, 0.50]
+    JuU10 Friction R4: [0.45, 0.45]
+    Nuclear Stall R5: [0.35, 0.45]
+    Taiwan R8: [0.20, 0.40]
+```
+
+## SWOT Analysis
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/swot-analysis.md -->
+
+### Strengths
+
+- **Legislative momentum on security**: JuU10 (new weapons law) advances today after sustained cross-party alignment. Sweden's post-NATO security regulatory update is on track. [HDC120260429ap, HD01JuU10]
+- **Nuclear energy reform**: HD01NU19 (NU19) signals parliamentary readiness to streamline nuclear permitting — a structural enabler for Sweden's declared new-build programme. [HD01NU19, Energimyndigheten policy alignment 2026]
+- **EU alignment**: Government proactively engaging EU-nämnden (HDA3EUN37) on Ecofin position; Sweden is positioned as constructive EU partner on financial regulation. [HDA3EUN37, HD0N50B0F8]
+- **Parliamentary oversight functioning**: Multiple interpellations and written questions show opposition is actively exercising scrutiny on China, welfare, and environment — the system is working. [HD10454, HD12744, HD12743]
+
+### Weaknesses
+
+- **HVB-hem oversight failure**: Police confirmed in 2024 that criminal gangs operate HVB (residential care) homes; no effective legislative response delivered before this interpellation. Government has been slow to close regulatory gap. [HD10454 — Mattias Vepsä (S)]
+- **National cloud policy stalled**: HD12742 (Farivar/SD → Minister Slottner) reveals that the government's national cloud policy work is delayed. Digital sovereignty risk in an era of AI and foreign data-centre expansion. [HD12742]
+- **China risk assessment lagging**: Three separate instruments (HD12744, HD12746, HD10456) signal no comprehensive, publicly articulated China threat framework from the government. Ministers respond reactively rather than proactively. [HD12744, HD12746]
+- **Water infrastructure under-investment**: Southern Sweden's water scarcity is reaching civil-defence threshold with no clear national response plan. [HD12743, HD12745]
+
+### Opportunities
+
+- **Weapons law modernisation**: Adoption of JuU10 today opens path to EU-aligned civilian firearms framework — international credibility gain post-NATO accession. [HDC120260429ap]
+- **China policy coalescence**: Cross-party parliamentary pressure (SD + S both raising issues) creates political space for a government-led comprehensive China strategy. [HD12744, HD12746]
+- **Water security framing**: Civil defence framing of water scarcity (HD12745) opens budgetary window for infrastructure investment under the defence budget umbrella. [HD12745]
+- **Nuclear regulatory modernisation**: HD01NU19 enables faster permitting for SMRs and extensions — critical for Sweden's 2035 zero-carbon electricity target. [HD01NU19]
+- **Pay transparency implementation**: HD12739 (Weidby/V → Minister Larsson) creates pressure for timely EU Pay Transparency Directive implementation, potentially improving gender pay gap metrics before election. [HD12739]
+
+### Threats
+
+- **Criminal infiltration of welfare system**: HVB homes controlled by gangs represent a systemic risk to vulnerable children. Without urgent reform, political fallout intensifies through 2026 election cycle. [HD10454]
+- **China economic penetration**: Without a national framework, China's acquisition of Swedish basic industry and critical infrastructure positions continues unchecked. [HD12744, SÄPO Annual Report 2025 context]
+- **Climate security cascade**: Water shortages in Skåne risk cascading into agricultural, food security, and municipal supply failures — especially severe in a drought summer. [HD12743, HD12745]
+- **Weapons law opposition**: V and MP reservations on JuU10 may complicate implementation and generate sustained opposition pressure on licensing. Watch for protest movements among hunting/sport-shooting communities. [HD01JuU10]
+- **Pay directive backlash**: Industry lobby resistance to EU Pay Transparency Directive could create coalition tension if SD moderates on gender-equality requirements. [HD12739]
+
+### TOWS Matrix
+
+| | Strengths | Weaknesses |
+|---|-----------|-----------|
+| **Opportunities** | SO: Use JuU10 momentum to build NATO-aligned security framework (HD01JuU10 + HD12744 China); Use nuclear regulatory window (HD01NU19) for SMR fast-track | WO: China risk assessment gap + cloud policy delay = window for comprehensive digital sovereignty legislation |
+| **Threats** | ST: Use functioning parliamentary oversight (multiple IPs) to demonstrate accountability on HVB crisis | WT: HVB failure + water scarcity + China penetration = triple institutional-failure narrative that opposition can weaponise before September 2026 election |
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b", "background": "#0a0e27"}}}%%
+quadrantChart
+    title SWOT Positioning — 29 April 2026 Swedish Politics
+    x-axis Internal Weakness --> Internal Strength
+    y-axis External Threat --> External Opportunity
+    quadrant-1 Leverage (SO)
+    quadrant-2 Develop (WO)
+    quadrant-3 Defend (ST)
+    quadrant-4 Mitigate (WT)
+    JuU10 Weapons Law: [0.85, 0.80]
+    Nuclear HD01NU19: [0.80, 0.75]
+    HVB Criminal Gangs: [0.20, 0.20]
+    China Risk: [0.25, 0.35]
+    Water Security: [0.30, 0.55]
+    EU Alignment: [0.78, 0.70]
+```
+
+## Threat Analysis
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/threat-analysis.md -->
+
+### State-Level Threat Actors
+
+#### China (Priority 1)
+
+**Threat vector cluster** (HD12744, HD12746, HD10456):
+
+| DIME Dimension | Activity | Evidence | Confidence |
+|----------------|----------|----------|-----------|
+| Diplomatic | Pressure on Sweden over Taiwan visit cancellation | HD12746 (Annicka Engblom/M) | HIGH [B1] |
+| Information | Strategic influence through industry acquisition | HD12744 (Rashid Farivar/SD) | HIGH [B1] |
+| Military | N/A (not current) | — | — |
+| Economic | Acquisition of Swedish basic industry, energy assets | HD12744 written question | HIGH [B1] |
+| Legal/Medical | Organ trafficking from executed Chinese prisoners | HD10456 (Nasser Miri/MP) | MEDIUM [B2] |
+
+**Assessment**: China's influence operations in Sweden are multi-vector. The three instruments raised today in Riksdagen represent a coordinated (if informal) parliamentary signal across three different parties (SD, M, MP). This suggests broader concern exists than any single party would acknowledge.
+
+#### Non-State: Organised Crime (Priority 2)
+
+**Threat vector** (HD10454):
+
+| Dimension | Activity | Evidence | Confidence |
+|-----------|---------|---------|----------|
+| Criminal infiltration | Gangs operating residential care for vulnerable youth | HD10454 interpellation, Police 2024 report | HIGH [B1] |
+| Economic | Revenue extraction from welfare system | Parliamentary IPK data | HIGH [B1] |
+| Recruitment | Radicalising vulnerable youth in care | SÄPO framing (2025 Annual Report) | MEDIUM [B2] |
+
+**Assessment**: This is not a future risk — it is current and documented. The Police report from 2024 confirmed gang infiltration of HVB homes. The political response has been inadequate.
+
+#### Climate/Environmental (Priority 3)
+
+**Threat vector** (HD12743, HD12745):
+
+| Dimension | Activity | Evidence | Confidence |
+|-----------|---------|---------|----------|
+| Resource scarcity | Water shortage in southern Sweden | HD12743, HD12745 interpellations | HIGH [B1] |
+| Cascade risk | Municipal supply chains affected | Länsstyrelse Skåne, SMHI 2025 forecast | MEDIUM [B2] |
+| Civil defence gap | No unified national response plan | HD12745 civil defence framing | HIGH [B1] |
+
+### STRIDE Threat Mapping
+
+| Threat Category | Vector | Impact | Mitigation |
+|-----------------|--------|--------|-----------|
+| Spoofing | Chinese front companies in FDI context | HIGH | Mandatory SÄPO pre-filing for designated sectors |
+| Tampering | Gang manipulation of HVB placement decisions | HIGH | IVO–Police database integration |
+| Repudiation | Government denial of China risk | MEDIUM | Parliamentary record creates accountability |
+| Information Disclosure | Cloud policy vacuum | MEDIUM | National cloud framework (HD12742) |
+| Denial of Service | Water supply disruption | HIGH | MSB emergency framework activation |
+| Elevation of Privilege | Criminal HVB home operators gaining welfare certification | HIGH | Real-time IVO–Police cross-check |
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#ff006e", "background": "#0a0e27", "primaryTextColor": "#e0e0e0", "lineColor": "#00d9ff"}}}%%
+graph TD
+    T1[China State Actor] -->|Economic| A1[Industry Acquisition HD12744]
+    T1 -->|Diplomatic| A2[Taiwan Pressure HD12746]
+    T1 -->|Legal/Medical| A3[Organ Trafficking HD10456]
+    T2[Organised Crime] -->|Infiltration| B1[HVB Homes HD10454]
+    T3[Climate Threat] -->|Resource| C1[Water Scarcity HD12743/45]
+    A1 -->|Risk| R1[Critical Infrastructure Exposure]
+    B1 -->|Risk| R2[Child Welfare Failure]
+    C1 -->|Risk| R3[Civil Defence Gap]
+    style T1 fill:#ff006e,color:#fff
+    style T2 fill:#ff006e,color:#fff
+    style T3 fill:#ffbe0b,color:#000
+```
 
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/historical-parallels.md -->
@@ -1458,6 +1317,73 @@ timeline
     2026-04-29 : JuU10 vote; HVB interpellation; China cluster
               : Pattern activation day
 ```
+
+## Comparative International
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/comparative-international.md -->
+
+### Comparator 1: New Weapons Law — EU Alignment
+
+**Swedish context**: HD01JuU10 adopts new civilian weapons legislation
+
+**EU Directive framework**: Directive 2021/555/EU (revised Firearms Directive) — establishes minimum standards for civilian firearms across EU.
+
+**Country comparison**:
+
+| Country | Directive transposition | Notable feature |
+|---------|------------------------|-----------------|
+| Germany | Complete (2022) | Strict semi-automatic ban; NRW registry enforcement |
+| France | Complete (2022) | National register mandatory; dealer traceability |
+| Sweden (post-JuU10) | Today — completing transposition | Enhanced licensing, deactivation standards |
+| Finland | Ahead of Sweden | Comprehensive reform pre-NATO accession |
+| Denmark | Aligned | Nordic harmonisation |
+
+**Assessment**: Sweden is completing EU alignment that most Western EU members completed 2020-2022. JuU10 is not innovative — it is catching-up. The significance is domestic legitimacy and NATO security cooperation, not EU leadership.
+
+### Comparator 2: China FDI Screening — Nordic/European Comparison
+
+**Swedish context**: HD12744 (HD12746) — no comprehensive China FDI strategy
+
+**International landscape**:
+
+| Country | FDI Screening Regime | China-specific provisions |
+|---------|---------------------|--------------------------|
+| Germany | AWG (Außenwirtschaftsgesetz) amendment 2022 | Mandatory notification for energy/telecom/critical infra; BMWi pre-screening |
+| France | FIRME mechanism | Presidential power to block on national security |
+| Netherlands | VIFO Act 2023 | Covers vital infrastructure and sensitive technology |
+| Finland | Act on Monitoring Foreign Corporate Acquisitions 2021 | Broad sensitive sector coverage |
+| **Sweden** | IFÅ (Lag om granskning av utländska direktinvesteringar) 2023 | Narrower scope; no mandatory SÄPO pre-filing |
+| UK | National Security and Investment Act 2021 | Mandatory notification for 17 sectors |
+
+**Assessment**: Sweden's IFÅ 2023 is weaker than its Nordic peers and Western European comparators. The parliamentary questions (HD12744) are pointing to a real regulatory gap. Finland and Netherlands offer templates Sweden could follow.
+
+**Recommendation**: Mandate SÄPO consultation as precondition for FDI approvals in energy, telecom, water, and critical manufacturing.
+
+### Comparator 3: Water Security Planning
+
+**Swedish context**: HD12743, HD12745 — civil defence framing of water scarcity in southern Sweden
+
+| Country | Water Security Framework | Civil Defence Integration |
+|---------|-------------------------|--------------------------|
+| Netherlands | National Water Plan + delta programme; climate-adaptive | Fully integrated into national resilience |
+| Denmark | Water Sector Act; municipal + national coordination | MSB-equivalent (Beredskabsstyrelsen) engaged |
+| Germany | National Water Strategy 2023 | Integrated Bundesländer + Bund |
+| **Sweden** | Vattenförvaltningsförordning (EU WFD transposition); no national drought framework | MSB lacks formal mandate for water coordination |
+| Finland | Water supply action plan + NSS 2024 | Emergency water included in hybrid threats plan |
+
+**Assessment**: Sweden lacks the national-level water security coordination that comparable Nordic and EU states have. Finland's approach (water as hybrid threat) maps directly onto the framing in HD12745.
+
+### Comparative Intelligence Chart
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "background": "#0a0e27", "primaryTextColor": "#e0e0e0", "lineColor": "#ffbe0b"}}}%%
+xychart-beta
+    title Sweden vs Peers: Policy Readiness Score (1-10)
+    x-axis ["FDI/China Screening", "Water Security Planning", "Weapons Law EU Alignment", "Nuclear Permitting Speed"]
+    y-axis 0 --> 10
+    bar [4, 4, 7, 5]
+    line [7, 7, 8, 7]
+```
+*Blue bar = Sweden 2026; Line = Nordic peer average*
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/implementation-feasibility.md -->
@@ -1538,6 +1464,80 @@ xychart-beta
 ```
 
 *Higher = more feasible*
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/media-framing-analysis.md -->
+
+### Frame 1: "Sweden Completes NATO Security Package" (Expected dominant framing — JuU10)
+
+**Likely outlets**: DN, SvD, Expressen (neutral-positive)
+
+**Narrative**: Sweden finalises civilian weapons legislation — NATO credibility confirmed. Prime Minister Kristersson likely to issue statement linking JuU10 to security agenda.
+
+**Counter-narrative available to opposition**: "Coalition took 24 months to implement routine EU Directive while neighbours were faster." This counter will likely be carried by Aftonbladet.
+
+**Assessment**: This frame works for the coalition. Media cycle completes by tomorrow unless V/MP mount visible protest.
+
+### Frame 2: "Gangsters in the Care System — Who Knew?" (High media impact — HD10454)
+
+**Likely outlets**: Aftonbladet, SVT Nyheter, Expressen investigative desk
+
+**Narrative**: Police 2024 report documented criminal gang control of HVB homes. Parliament is only now asking ministers why nothing was done. Emotionally powerful because it involves children.
+
+**Visual potential**: High — HVB homes are physical locations; faces of politicians answering (or evading) questions.
+
+**Government counter-message**: Ongoing inquiry; toughened legislation in pipeline; minister available for questions.
+
+**Risk**: If ANY journalist can document a specific case — a named child harmed in a specific named gang-controlled HVB home — this becomes a multi-week media storm.
+
+**Media cycle assessment**: MEDIUM-HIGH impact. Could dominate May 2026 news cycle if investigative journalism picks up.
+
+### Frame 3: "Parliament Finally Notices the China Threat" (Strategic media frame)
+
+**Likely outlets**: SvD foreign desk, GP (Göteborg), specialist security media (Säkerhetspolitik.se)
+
+**Narrative**: Three parliamentary instruments in one day on China — HD12744 (industry), HD12746 (Taiwan), HD10456 (organs). Media will note the clustering.
+
+**Counter-narrative**: "Government has classified briefings from SÄPO; parliamentary questions are theatre." This deflation narrative comes from government communications.
+
+**International pickup**: Possible — Taiwan visit cancellation story (HD12746) has international angles.
+
+**Media cycle**: LOW immediate impact in mainstream media; HIGH in specialist/security media. Could be picked up by international outlets (Reuters, Bloomberg) if combined with a broader China-Sweden story.
+
+### Frame 4: "Water Crisis Coming — Is Sweden Ready?" (Slow-burn media frame)
+
+**Likely outlets**: GP (Göteborg), Sydsvenskan (Skåne focus), SR P4 regional
+
+**Narrative**: Summer drought risk in southern Sweden — civil defence angle is new. Two interpellations on same day suggests parliamentary alarm.
+
+**Timing sensitivity**: This frame gains power in May-June as SMHI issues seasonal forecasts.
+
+**Media cycle**: LOW today; HIGH potential in summer 2026 if drought materialises.
+
+### Predicted News Value Rankings (Today, tomorrow, 1 week)
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "background": "#0a0e27", "primaryTextColor": "#e0e0e0"}}}%%
+xychart-beta
+    title Predicted Media Impact by Time Horizon
+    x-axis ["Today", "Tomorrow", "1 Week", "1 Month"]
+    y-axis "Impact (1-10)" 0 --> 10
+    line [9, 6, 4, 3]
+    line [3, 7, 8, 7]
+    line [2, 3, 5, 4]
+    line [1, 2, 4, 7]
+```
+*Line 1 (decreasing): JuU10 immediate | Line 2 (rising): HVB story | Line 3 (slow): China | Line 4 (very slow): Water*
+
+### SEO/Digital Framing
+
+**Predicted high-traffic search terms (Swedish)**:
+- "vapenlagens ny lag 2026" (JuU10)
+- "HVB-hem kriminella" (HD10454)
+- "China Sverige industri säkerhet" (HD12744)
+- "vattenbrist södra Sverige 2026" (HD12743)
+
+**Key hashtags to monitor**: #JuU10, #HVBhem, #Riksdagen, #Kärnkraft, #Säkerhetspolitik
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/devils-advocate.md -->
@@ -1856,13 +1856,6 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/threat-analysis.md)
 - [`documents/hd01cu37-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/documents/hd01cu37-analysis.md)
 - [`documents/hd01ku36-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/documents/hd01ku36-analysis.md)
 - [`documents/hd01nu19-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/documents/hd01nu19-analysis.md)
@@ -1880,12 +1873,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`documents/hd12746-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/documents/hd12746-analysis.md)
 - [`documents/hda3eun37-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/documents/hda3eun37-analysis.md)
 - [`documents/hdcommons-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/documents/hdcommons-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/realtime-pulse/cross-reference-map.md)

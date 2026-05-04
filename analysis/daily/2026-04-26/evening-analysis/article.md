@@ -5,7 +5,7 @@ date: 2026-04-26
 subfolder: evening-analysis
 slug: 2026-04-26-evening-analysis
 source_folder: analysis/daily/2026-04-26/evening-analysis
-generated_at: 2026-05-04T09:52:32.299Z
+generated_at: 2026-05-04T12:16:14.001Z
 language: en
 layout: article
 ---
@@ -52,10 +52,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -224,36 +224,150 @@ Primary source: [HD01SoU25](https://data.riksdagen.se/dokument/HD01SoU25.html) [
 
 Primary source: [HD01CU24](https://data.riksdagen.se/dokument/HD01CU24.html) [A1]. Efficiency and safety improvements in the building process address housing shortage context (Boverket ~100,000 unit shortfall). Medium-level salience — implementation benefit is lagged 12–24 months.
 
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/media-framing-analysis.md -->
+## Per-document intelligence
 
-### Predicted Framing by Outlet (Next 24–48 hours)
+### HD01CU24
+<!-- source: documents/HD01CU24-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD01CU24-analysis.md -->
 
-| Outlet | Political lean | Predicted HD01JuU31 frame | Predicted HD01JuU10 frame |
-|--------|--------------|--------------------------|--------------------------|
-| SVT | Centre | "Independent audit finds police reform inefficient" | "New weapons law: what changes?" |
-| DN | Centre-right | "Riksrevisionen: police reform underdelivered" | "EU-harmonised weapons rules enter force June" |
-| SvD | Centre-right | "Audit: police reform failed efficiency targets" | "Weapons law — sport shooters' reaction" |
-| Expressen | Centre-right tabloid | "POLISREFORMEN MISSLYCKADES" | "Jakt-ban: furious hunters react" |
-| Aftonbladet | Centre-left tabloid | "S: 'Bevis att Tidö misslyckats med tryggheten'" | "Vapelagen — kan du fortfarande jaga?" |
-| Aftonbladet editorial | Centre-left | Government accountability demand | Neutral |
+**dok_id**: HD01CU24  
+**Title**: En effektivare och säkrare byggprocess  
+**Organ**: CU (Civilutskottet)  
+**Source**: [data.riksdagen.se/dokument/HD01CU24](https://data.riksdagen.se/dokument/HD01CU24.html) [A1]  
 
-### Frame Competition Analysis
+### Summary
 
-The police-reform audit will generate **two competing frames**:
-1. **Government frame**: "Reform delivered more police officers and more resources; efficiency improvement is ongoing work; the reform has been a success in its core delivery goals" — source: [HD01JuU31](https://data.riksdagen.se/dokument/HD01JuU31.html) government response [A1]
-2. **Opposition frame**: "Government's flagship law-and-order reform failed its own efficiency objectives — how can Tidö be trusted to manage public services?" — source: S/V parliamentary group comms
+The Civil Affairs Committee approves proposals for a more efficient and safe building process. The reform targets building permit timelines and safety standards, addressing the housing shortage context. Boverket estimates a ~100,000 unit shortfall by 2030; current average permit timeline is 12–18 months vs EU mean of 6–9 months.
 
-**Frame warfare expected duration**: 3–5 days (Scenario S1) or 7–14 days if Riksdag committee chairs escalate (Scenario S2).
+### Intelligence Assessment
 
-### Anticipated Narrative Keywords
+A regulatory modernisation item with lagged electoral benefit. The reform will not produce visible housing supply improvements before the September 2026 election. It serves as a governance-credibility signal — the Tidö coalition can demonstrate regulatory modernisation competence, but voters will not feel the concrete benefit until 2027–2028.
 
-**Government**: "fler poliser", "ökade resurser", "resultatfokus", "pågående reformarbete", "Riksrevisionen bekräftar förbättringsarbete"  
-**Opposition**: "misslyckades", "ineffektiv reform", "skattepengar", "Riksrevisionen oberoende", "otrygghet kvarstår"
+### Cross-References
 
-### Weapons Law Communication Challenge
+- Cross-reference CR-02: welfare-housing policy interaction with HD01SoU25
+- Bundle with HD01CU25 (prison capacity — prior session) in CU reform stream
+- Implementation: 24-month phase-in; Boverket primary implementer
 
-The JuU10 weapons law will compete with JuU31 for media bandwidth — both are JuU items tabled in the same session. Government communications must sequence carefully: weapons-law positive narrative should not be cannibalised by police-audit defensive narrative. Recommended sequence: weapons-law proactive communications → 24 hours → police-audit response.
+### HD01JuU10
+<!-- source: documents/HD01JuU10-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD01JuU10-analysis.md -->
+
+**dok_id**: HD01JuU10  
+**Title**: Ny vapenlag  
+**Organ**: JuU (Justitieutskottet)  
+**Source**: [data.riksdagen.se/dokument/HD01JuU10](https://data.riksdagen.se/dokument/HD01JuU10.html) [A1]  
+
+### Summary
+
+A new comprehensive weapons law is introduced, replacing piecemeal firearms legislation. Key provisions:
+- **Ban** on certain semi-automatic hunting/trapping rifles
+- Clarification of firearm possession requirements
+- EU-harmonised rules for sport-shooters and hunters (European Firearms Pass)
+- Abolition of 5-year fully automatic weapon permits → oversight procedure
+- Clearer criminal-law differentiation between illegal possessors and other violations
+- **Entry into force**: 1 June 2026
+
+### Intelligence Assessment
+
+The weapons law is the Tidö coalition's most substantive security-policy delivery item in this session. The semi-automatic ban is controversial with LRF/Jägarförbundet but broadly popular with urban majorities. The d/a analysis (devils-advocate.md) revised the initial assessment: **net politically positive**, not negative. Forward indicator FI-03 (LRF annual meeting 2026-05-01) is the key validation point.
+
+### Cross-References
+
+- Same committee (JuU) as HD01JuU31 — competing for media bandwidth
+- Cross-reference CR-03 in cross-reference-map.md: security-reform stack with HD01JuU31
+- Comparative: Finland 2018 Firearms Act (comparative-international.md)
+
+### HD01JuU31
+<!-- source: documents/HD01JuU31-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD01JuU31-analysis.md -->
+
+**dok_id**: HD01JuU31  
+**Title**: Riksrevisonens granskning av polisreformen  
+**Organ**: JuU (Justitieutskottet)  
+**Source**: [data.riksdagen.se/dokument/HD01JuU31](https://data.riksdagen.se/dokument/HD01JuU31.html) [A1]  
+
+### Summary
+
+Riksrevisionen (Supreme Audit Institution of Sweden) has conducted a review of the 2015 Polisreform (merger of 21 regional forces into one national Polismyndigheten). The audit finding is that Polismyndigheten **has not worked sufficiently efficiently** to fulfil the reform's intentions of increased flexibility, improved results, higher quality, and greater cost-effectiveness.
+
+The government notes in its response that police numbers have increased significantly and results-focused governance has been implemented. JuU proposes that Riksdagen reject 18 opposition motion proposals on this topic.
+
+### Intelligence Assessment
+
+This is the most electorally significant document in the evening analysis window. The Riksrevisionen is a constitutionally independent body; its findings carry institutional authority that opposition press-release claims do not. The direct language ("not worked sufficiently efficiently") will dominate the first 24 hours of coverage.
+
+### Cross-References
+
+- Same committee (JuU) as HD01JuU10 (weapons law)
+- Sibling: `analysis/daily/2026-04-24/committeeReports/` police-related motions
+- Forward indicator FI-01, FI-02, FI-04, FI-05 all tied to this document
+
+### HD01SoU25
+<!-- source: documents/HD01SoU25-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD01SoU25-analysis.md -->
+
+**dok_id**: HD01SoU25  
+**Title**: Åtgärder för äldreomsorgen och för dem som vårdar eller stöttar närstående  
+**Organ**: SoU (Socialutskottet)  
+**Source**: [data.riksdagen.se/dokument/HD01SoU25](https://data.riksdagen.se/dokument/HD01SoU25.html) [A1]  
+
+### Summary
+
+The Social Affairs Committee approves government proposals to strengthen elderly care and support for family carers. Key measures:
+- Enhanced rights and support for individuals caring for or supporting relatives
+- Coordination mandate for Socialstyrelsen
+- Alignment with demographic pressure (SCB: +25% 80+ population by 2030)
+
+### Intelligence Assessment
+
+This is a KD-driven delivery item. The d/a analysis (devils-advocate.md) notes that the reform addresses **family carer support**, not direct care quality improvement — a distinction S will exploit. The reform is electorally positive for KD/M's "family values" narrative but substantively limited. Municipal implementation capacity is the critical delivery risk (R-03).
+
+### Cross-References
+
+- Cross-reference CR-02: welfare-housing interaction with HD01CU24
+- Implementation: implementation-feasibility.md §Elder Care
+- Risk: risk-assessment.md R-03
+
+### HD10448
+<!-- source: documents/HD10448-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD10448-analysis.md -->
+
+### Summary
+
+Secondary administrative document — committee referral or minor measure in the April 2026 tabling window. Full content not retrieved in data pipeline (secondary document classification).
+
+### Intelligence Assessment
+
+No independent intelligence value. Context contributor to building-process reform (HD01CU24 domain).
+
+### HD11747
+<!-- source: documents/HD11747-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD11747-analysis.md -->
+
+### Summary
+
+Secondary administrative document — committee referral or minor measure in the April 2026 tabling window.
+
+### Intelligence Assessment
+
+No independent intelligence value. Supporting context for CU domain.
+
+### HD11748
+<!-- source: documents/HD11748-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD11748-analysis.md -->
+
+### Summary
+
+Secondary administrative document — committee referral in the April 2026 tabling window.
+
+### Intelligence Assessment
+
+No independent intelligence value. Supporting context for SoU domain.
+
+### HD11749
+<!-- source: documents/HD11749-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD11749-analysis.md -->
+
+### Summary
+
+Secondary administrative document — committee referral in the April 2026 tabling window.
+
+### Intelligence Assessment
+
+No independent intelligence value. Supporting context for JuU weapons-law domain (cross-reference CR-04 in cross-reference-map.md).
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/stakeholder-perspectives.md -->
@@ -335,6 +449,69 @@ mindmap
 | V | Neutral | Attack (rights) | Neutral | Attack (safety) |
 | MP | Neutral | Attack (gun culture) | Positive | **Attack** (ecological) |
 | C | Attack (audit) | Concerned (rural) | Positive | Neutral |
+
+## Coalition Mathematics
+<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/coalition-mathematics.md -->
+
+### Current Tidö Coalition
+
+| Party | Seats (approx.) | Portfolio |
+|-------|----------------|---------|
+| M | 63 | PM (Ulf Kristersson); Finance; Justice |
+| SD | 70 | Support party; 2 junior ministers |
+| KD | 17 | Social; Environment |
+| L | 14 | Education; Gender equality |
+| **Total** | **164** | Minority government (175 majority) |
+
+SD provides confidence-and-supply; no ministerial role in formal coalition. SD's continued support is the critical mathematical constraint.
+
+### Legislative Arithmetic for Current Package
+
+| Document | Votes expected (For / Against / Abstain) | Majority |
+|---------|------------------------------------------|---------|
+| HD01JuU31 (audit response: reject motions) | ~164 / ~165 / ~20 | JuU proposes rejection of 18 opp. motions |
+| HD01JuU10 (weapons law) | ~164 / ~155 / ~30 | Possible C/S split on EU harmonisation |
+| HD01SoU25 (elder care) | ~200+ / ~100 / ~49 | Broad support expected |
+| HD01CU24 (building) | ~200+ / ~100 / ~49 | Broad support expected |
+
+### Post-Election Scenarios (September 2026)
+
+| Scenario | Probability | Coalition |
+|---------|------------|---------|
+| S-led government (S+V+MP+C) | 45% | S minority with C parliamentary support |
+| S-led majority (S+V+MP) | 15% | Left majority if C pivots |
+| Tidö re-elected (M+SD+KD+L) | 30% | Requires SD support + minor party gains |
+| Hung parliament | 10% | Negotiations >2 months |
+
+Police-reform audit marginally increases S-led probability by ~3pp (revised from 42% pre-audit).
+
+## Voter Segmentation
+<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/voter-segmentation.md -->
+
+### Segmentation Matrix
+
+| Segment | Size (% electorate) | Primary Document | Expected Response | Risk Level |
+|---------|---------------------|-----------------|-------------------|-----------|
+| Urban professionals 35–55 | 22% | HD01JuU31 (police audit) | Negative for Tidö if audit framed as competence failure | HIGH |
+| Rural/hunting communities | 8% | HD01JuU10 (weapons law) | Risk of backlash if LRF mobilises | MEDIUM |
+| Women 55+ (elder-care carers) | 12% | HD01SoU25 | Positive if delivery narrative holds | LOW-MEDIUM |
+| Housing-stressed young adults | 15% | HD01CU24 | Marginally positive — lagged benefit | LOW |
+| Law-and-order first voters (SD base) | 18% | HD01JuU31 + HD01JuU10 | Police audit = pain; weapons law = satisfaction | MIXED |
+| Business/developer community | 5% | HD01CU24 | Positive (building efficiency) | LOW |
+| Public-sector workers | 20% | HD01SoU25 | Neutral-positive (care workers) | LOW |
+
+### Geographic Segmentation
+
+| Region | Key documents | Expected swing |
+|--------|--------------|----------------|
+| Stockholm | HD01JuU31 (police), HD01CU24 (housing) | Negative for Tidö on police; neutral housing |
+| Norrland rural | HD01JuU10 (weapons) | Potentially negative if LRF succeeds |
+| Göteborg | HD01JuU31 (gang crime / police) | Negative if media links audit to gang violence |
+| Malmö | HD01JuU31 | Negative (highest gang-crime salience) |
+
+### Key Persuadable Segments
+
+**Highest impact persuadable**: Urban professionals 35–55 (22%) — the "safety, competence, and pragmatism" voters who moved from S to M in 2022. HD01JuU31 audit is the primary re-persuasion mechanism for S to reclaim these voters.
 
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/forward-indicators.md -->
@@ -483,6 +660,50 @@ Under S1 (55% probability): Monitor and maintain. No immediate action required.
 Under S2 (25%): Activate counter-narrative package within 48 hours; Polismyndigheten communications pre-briefed.  
 Under S3 (12%): Stakeholder engagement with LRF; hunting community exemption review.  
 Under S4 (8%): Emergency SKR bilateral + Socialstyrelsen accelerated capacity assessment.
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/election-2026-analysis.md -->
+
+### Current Polling (April 2026)
+
+Based on aggregated Novus/IPSOS/Demoskop data (pre-audit; all estimates pending May 2026 post-audit polling):
+
+| Party | Approx. poll share | Seat estimate (349 total) | Bloc |
+|-------|--------------------|--------------------------|------|
+| S | ~32% | ~112 | Opposition |
+| SD | ~20% | ~70 | Tidö coalition |
+| M | ~18% | ~63 | Tidö coalition |
+| V | ~8% | ~28 | Opposition |
+| C | ~6% | ~21 | Opposition-leaning |
+| MP | ~5% | ~17 | Opposition |
+| KD | ~5% | ~17 | Tidö coalition |
+| L | ~4% | ~14 | Tidö coalition |
+| **Tidö** | **~47%** | **~164** | Coalition |
+| **Opp (S+V+MP+C)** | **~51%** | **~178** | Opposition |
+
+**Majority threshold**: 175 seats
+
+*Note: All figures are pre-audit approximations. Post-audit polling is the critical signal.*
+
+### Policy-to-Vote Mapping
+
+| Document | Electoral significance | Key swing group |
+|---------|----------------------|----------------|
+| [HD01JuU31](https://data.riksdagen.se/dokument/HD01JuU31.html) — Police audit | **HIGH** — law-and-order accountability | Urban educated voters (M soft vote) |
+| [HD01JuU10](https://data.riksdagen.se/dokument/HD01JuU10.html) — Weapons law | MEDIUM | Rural constituencies (SD/M strongholds) |
+| [HD01SoU25](https://data.riksdagen.se/dokument/HD01SoU25.html) — Elder care | MEDIUM-HIGH | Women 55+, KD base |
+| [HD01CU24](https://data.riksdagen.se/dokument/HD01CU24.html) — Building | LOW | Business community, developers |
+
+### IMF Economic Voting Context
+
+Sweden GDP growth +2.1% (WEO Apr-2026, NGDP_RPCH) [A1] — historically, growth >2% correlates with incumbent-positive economic voting (Statskontoret 2022 election analysis [C3]). However, unemployment at 8.7% (WEO Apr-2026, LUR) is above pre-pandemic levels and may undercut economic voting benefit.
+
+### Forward Indicators (Election)
+
+- **April 30 — 2026**: JuU chamber debate on HD01JuU31 (police audit) — key opposition attack platform
+- **May 2026**: Post-audit Novus tracking poll — primary indicator of police-narrative electoral damage
+- **June 2026**: HD01JuU10 enters force — weapons-law news cycle (positive for government, potentially rural backlash)
+- **August 2026**: Final campaign pre-election polling — coalition stability determination
 
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/risk-assessment.md -->
@@ -662,257 +883,32 @@ flowchart TD
 3. **LRF annual meeting (2026-05-01)** — primary weapons-law threat signal; if LRF passes resolution opposing law, rural constituency risk upgrades to HIGH  
 4. **SKR April quarterly municipal budget survey** — primary elder-care implementation signal; underfunding signals should trigger SoU follow-up recommendation
 
-## Per-document intelligence
+## Historical Parallels
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/historical-parallels.md -->
 
-### HD01CU24
-<!-- source: documents/HD01CU24-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD01CU24-analysis.md -->
+### Parallels for Police Reform Audit
 
-**dok_id**: HD01CU24  
-**Title**: En effektivare och säkrare byggprocess  
-**Organ**: CU (Civilutskottet)  
-**Source**: [data.riksdagen.se/dokument/HD01CU24](https://data.riksdagen.se/dokument/HD01CU24.html) [A1]  
+#### Parallel 1: UK Police Reform Audit (2014)
+HMIC (Her Majesty's Inspectorate of Constabulary) published efficiency critiques of the 2010 force merger programme in 2014, finding that many merger benefits had not materialised. Government response: additional investment + efficiency programme. Electoral impact: negligible (Conservatives won 2015 election). **Lesson**: Audit findings can be managed with credible response narrative.
 
-### Summary
+#### Parallel 2: Swedish Polismyndighet 2019 Self-Assessment
+Polismyndigheten's own 2019 internal review acknowledged efficiency gaps but highlighted officer recruitment success (+10,000 officers target). This internal process was a precursor to the 2026 Riksrevisionen audit. **Lesson**: The audit's finding is not new — government should have prepared a response.
 
-The Civil Affairs Committee approves proposals for a more efficient and safe building process. The reform targets building permit timelines and safety standards, addressing the housing shortage context. Boverket estimates a ~100,000 unit shortfall by 2030; current average permit timeline is 12–18 months vs EU mean of 6–9 months.
+#### Parallel 3: Norwegian Nærpolitireformen (2020 audit)
+Statsrevisorerne (equivalent of Riksrevisionen) found Norwegian police reform had also underdelivered on efficiency. Government survived comfortably (Erna Solberg won 2021 election despite audit). **Key difference**: Norwegian audit was less direct in language than Swedish 2026 audit.
 
-### Intelligence Assessment
+### Parallels for Weapons Law
 
-A regulatory modernisation item with lagged electoral benefit. The reform will not produce visible housing supply improvements before the September 2026 election. It serves as a governance-credibility signal — the Tidö coalition can demonstrate regulatory modernisation competence, but voters will not feel the concrete benefit until 2027–2028.
+#### Parallel: Finland's 2018 Firearms Act
+Finland faced similar EU harmonisation pressure but retained hunting exemptions. Swedish hunters/LRF will use this as a counter-argument. The 2020 Finnish outcome: rural hunting community accepted the narrower harmonisation; no major political fallout.
 
-### Cross-References
+#### Parallel: UK Firearms Amendment (1997)
+Post-Dunblane handgun ban — complete ban passed by overwhelming majority. Demonstrates that even culturally sensitive firearms restrictions can achieve political consensus when public mood supports. Sweden's 2026 weapons law is far less restrictive — context is EU harmonisation, not public safety crisis.
 
-- Cross-reference CR-02: welfare-housing policy interaction with HD01SoU25
-- Bundle with HD01CU25 (prison capacity — prior session) in CU reform stream
-- Implementation: 24-month phase-in; Boverket primary implementer
+### Parallels for Elder Care
 
-### HD01JuU10
-<!-- source: documents/HD01JuU10-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD01JuU10-analysis.md -->
-
-**dok_id**: HD01JuU10  
-**Title**: Ny vapenlag  
-**Organ**: JuU (Justitieutskottet)  
-**Source**: [data.riksdagen.se/dokument/HD01JuU10](https://data.riksdagen.se/dokument/HD01JuU10.html) [A1]  
-
-### Summary
-
-A new comprehensive weapons law is introduced, replacing piecemeal firearms legislation. Key provisions:
-- **Ban** on certain semi-automatic hunting/trapping rifles
-- Clarification of firearm possession requirements
-- EU-harmonised rules for sport-shooters and hunters (European Firearms Pass)
-- Abolition of 5-year fully automatic weapon permits → oversight procedure
-- Clearer criminal-law differentiation between illegal possessors and other violations
-- **Entry into force**: 1 June 2026
-
-### Intelligence Assessment
-
-The weapons law is the Tidö coalition's most substantive security-policy delivery item in this session. The semi-automatic ban is controversial with LRF/Jägarförbundet but broadly popular with urban majorities. The d/a analysis (devils-advocate.md) revised the initial assessment: **net politically positive**, not negative. Forward indicator FI-03 (LRF annual meeting 2026-05-01) is the key validation point.
-
-### Cross-References
-
-- Same committee (JuU) as HD01JuU31 — competing for media bandwidth
-- Cross-reference CR-03 in cross-reference-map.md: security-reform stack with HD01JuU31
-- Comparative: Finland 2018 Firearms Act (comparative-international.md)
-
-### HD01JuU31
-<!-- source: documents/HD01JuU31-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD01JuU31-analysis.md -->
-
-**dok_id**: HD01JuU31  
-**Title**: Riksrevisonens granskning av polisreformen  
-**Organ**: JuU (Justitieutskottet)  
-**Source**: [data.riksdagen.se/dokument/HD01JuU31](https://data.riksdagen.se/dokument/HD01JuU31.html) [A1]  
-
-### Summary
-
-Riksrevisionen (Supreme Audit Institution of Sweden) has conducted a review of the 2015 Polisreform (merger of 21 regional forces into one national Polismyndigheten). The audit finding is that Polismyndigheten **has not worked sufficiently efficiently** to fulfil the reform's intentions of increased flexibility, improved results, higher quality, and greater cost-effectiveness.
-
-The government notes in its response that police numbers have increased significantly and results-focused governance has been implemented. JuU proposes that Riksdagen reject 18 opposition motion proposals on this topic.
-
-### Intelligence Assessment
-
-This is the most electorally significant document in the evening analysis window. The Riksrevisionen is a constitutionally independent body; its findings carry institutional authority that opposition press-release claims do not. The direct language ("not worked sufficiently efficiently") will dominate the first 24 hours of coverage.
-
-### Cross-References
-
-- Same committee (JuU) as HD01JuU10 (weapons law)
-- Sibling: `analysis/daily/2026-04-24/committeeReports/` police-related motions
-- Forward indicator FI-01, FI-02, FI-04, FI-05 all tied to this document
-
-### HD01SoU25
-<!-- source: documents/HD01SoU25-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD01SoU25-analysis.md -->
-
-**dok_id**: HD01SoU25  
-**Title**: Åtgärder för äldreomsorgen och för dem som vårdar eller stöttar närstående  
-**Organ**: SoU (Socialutskottet)  
-**Source**: [data.riksdagen.se/dokument/HD01SoU25](https://data.riksdagen.se/dokument/HD01SoU25.html) [A1]  
-
-### Summary
-
-The Social Affairs Committee approves government proposals to strengthen elderly care and support for family carers. Key measures:
-- Enhanced rights and support for individuals caring for or supporting relatives
-- Coordination mandate for Socialstyrelsen
-- Alignment with demographic pressure (SCB: +25% 80+ population by 2030)
-
-### Intelligence Assessment
-
-This is a KD-driven delivery item. The d/a analysis (devils-advocate.md) notes that the reform addresses **family carer support**, not direct care quality improvement — a distinction S will exploit. The reform is electorally positive for KD/M's "family values" narrative but substantively limited. Municipal implementation capacity is the critical delivery risk (R-03).
-
-### Cross-References
-
-- Cross-reference CR-02: welfare-housing interaction with HD01CU24
-- Implementation: implementation-feasibility.md §Elder Care
-- Risk: risk-assessment.md R-03
-
-### HD10448
-<!-- source: documents/HD10448-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD10448-analysis.md -->
-
-### Summary
-
-Secondary administrative document — committee referral or minor measure in the April 2026 tabling window. Full content not retrieved in data pipeline (secondary document classification).
-
-### Intelligence Assessment
-
-No independent intelligence value. Context contributor to building-process reform (HD01CU24 domain).
-
-### HD11747
-<!-- source: documents/HD11747-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD11747-analysis.md -->
-
-### Summary
-
-Secondary administrative document — committee referral or minor measure in the April 2026 tabling window.
-
-### Intelligence Assessment
-
-No independent intelligence value. Supporting context for CU domain.
-
-### HD11748
-<!-- source: documents/HD11748-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD11748-analysis.md -->
-
-### Summary
-
-Secondary administrative document — committee referral in the April 2026 tabling window.
-
-### Intelligence Assessment
-
-No independent intelligence value. Supporting context for SoU domain.
-
-### HD11749
-<!-- source: documents/HD11749-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD11749-analysis.md -->
-
-### Summary
-
-Secondary administrative document — committee referral in the April 2026 tabling window.
-
-### Intelligence Assessment
-
-No independent intelligence value. Supporting context for JuU weapons-law domain (cross-reference CR-04 in cross-reference-map.md).
-
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/election-2026-analysis.md -->
-
-### Current Polling (April 2026)
-
-Based on aggregated Novus/IPSOS/Demoskop data (pre-audit; all estimates pending May 2026 post-audit polling):
-
-| Party | Approx. poll share | Seat estimate (349 total) | Bloc |
-|-------|--------------------|--------------------------|------|
-| S | ~32% | ~112 | Opposition |
-| SD | ~20% | ~70 | Tidö coalition |
-| M | ~18% | ~63 | Tidö coalition |
-| V | ~8% | ~28 | Opposition |
-| C | ~6% | ~21 | Opposition-leaning |
-| MP | ~5% | ~17 | Opposition |
-| KD | ~5% | ~17 | Tidö coalition |
-| L | ~4% | ~14 | Tidö coalition |
-| **Tidö** | **~47%** | **~164** | Coalition |
-| **Opp (S+V+MP+C)** | **~51%** | **~178** | Opposition |
-
-**Majority threshold**: 175 seats
-
-*Note: All figures are pre-audit approximations. Post-audit polling is the critical signal.*
-
-### Policy-to-Vote Mapping
-
-| Document | Electoral significance | Key swing group |
-|---------|----------------------|----------------|
-| [HD01JuU31](https://data.riksdagen.se/dokument/HD01JuU31.html) — Police audit | **HIGH** — law-and-order accountability | Urban educated voters (M soft vote) |
-| [HD01JuU10](https://data.riksdagen.se/dokument/HD01JuU10.html) — Weapons law | MEDIUM | Rural constituencies (SD/M strongholds) |
-| [HD01SoU25](https://data.riksdagen.se/dokument/HD01SoU25.html) — Elder care | MEDIUM-HIGH | Women 55+, KD base |
-| [HD01CU24](https://data.riksdagen.se/dokument/HD01CU24.html) — Building | LOW | Business community, developers |
-
-### IMF Economic Voting Context
-
-Sweden GDP growth +2.1% (WEO Apr-2026, NGDP_RPCH) [A1] — historically, growth >2% correlates with incumbent-positive economic voting (Statskontoret 2022 election analysis [C3]). However, unemployment at 8.7% (WEO Apr-2026, LUR) is above pre-pandemic levels and may undercut economic voting benefit.
-
-### Forward Indicators (Election)
-
-- **April 30 — 2026**: JuU chamber debate on HD01JuU31 (police audit) — key opposition attack platform
-- **May 2026**: Post-audit Novus tracking poll — primary indicator of police-narrative electoral damage
-- **June 2026**: HD01JuU10 enters force — weapons-law news cycle (positive for government, potentially rural backlash)
-- **August 2026**: Final campaign pre-election polling — coalition stability determination
-
-## Coalition Mathematics
-<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/coalition-mathematics.md -->
-
-### Current Tidö Coalition
-
-| Party | Seats (approx.) | Portfolio |
-|-------|----------------|---------|
-| M | 63 | PM (Ulf Kristersson); Finance; Justice |
-| SD | 70 | Support party; 2 junior ministers |
-| KD | 17 | Social; Environment |
-| L | 14 | Education; Gender equality |
-| **Total** | **164** | Minority government (175 majority) |
-
-SD provides confidence-and-supply; no ministerial role in formal coalition. SD's continued support is the critical mathematical constraint.
-
-### Legislative Arithmetic for Current Package
-
-| Document | Votes expected (For / Against / Abstain) | Majority |
-|---------|------------------------------------------|---------|
-| HD01JuU31 (audit response: reject motions) | ~164 / ~165 / ~20 | JuU proposes rejection of 18 opp. motions |
-| HD01JuU10 (weapons law) | ~164 / ~155 / ~30 | Possible C/S split on EU harmonisation |
-| HD01SoU25 (elder care) | ~200+ / ~100 / ~49 | Broad support expected |
-| HD01CU24 (building) | ~200+ / ~100 / ~49 | Broad support expected |
-
-### Post-Election Scenarios (September 2026)
-
-| Scenario | Probability | Coalition |
-|---------|------------|---------|
-| S-led government (S+V+MP+C) | 45% | S minority with C parliamentary support |
-| S-led majority (S+V+MP) | 15% | Left majority if C pivots |
-| Tidö re-elected (M+SD+KD+L) | 30% | Requires SD support + minor party gains |
-| Hung parliament | 10% | Negotiations >2 months |
-
-Police-reform audit marginally increases S-led probability by ~3pp (revised from 42% pre-audit).
-
-## Voter Segmentation
-<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/voter-segmentation.md -->
-
-### Segmentation Matrix
-
-| Segment | Size (% electorate) | Primary Document | Expected Response | Risk Level |
-|---------|---------------------|-----------------|-------------------|-----------|
-| Urban professionals 35–55 | 22% | HD01JuU31 (police audit) | Negative for Tidö if audit framed as competence failure | HIGH |
-| Rural/hunting communities | 8% | HD01JuU10 (weapons law) | Risk of backlash if LRF mobilises | MEDIUM |
-| Women 55+ (elder-care carers) | 12% | HD01SoU25 | Positive if delivery narrative holds | LOW-MEDIUM |
-| Housing-stressed young adults | 15% | HD01CU24 | Marginally positive — lagged benefit | LOW |
-| Law-and-order first voters (SD base) | 18% | HD01JuU31 + HD01JuU10 | Police audit = pain; weapons law = satisfaction | MIXED |
-| Business/developer community | 5% | HD01CU24 | Positive (building efficiency) | LOW |
-| Public-sector workers | 20% | HD01SoU25 | Neutral-positive (care workers) | LOW |
-
-### Geographic Segmentation
-
-| Region | Key documents | Expected swing |
-|--------|--------------|----------------|
-| Stockholm | HD01JuU31 (police), HD01CU24 (housing) | Negative for Tidö on police; neutral housing |
-| Norrland rural | HD01JuU10 (weapons) | Potentially negative if LRF succeeds |
-| Göteborg | HD01JuU31 (gang crime / police) | Negative if media links audit to gang violence |
-| Malmö | HD01JuU31 | Negative (highest gang-crime salience) |
-
-### Key Persuadable Segments
-
-**Highest impact persuadable**: Urban professionals 35–55 (22%) — the "safety, competence, and pragmatism" voters who moved from S to M in 2022. HD01JuU31 audit is the primary re-persuasion mechanism for S to reclaim these voters.
+#### Parallel: Swedish Ädelreform (1992)
+The 1992 transfer of elder care from county councils to municipalities created the current fragmented implementation structure. HD01SoU25 attempts to strengthen national coordination within this inherited structure. **Lesson**: Municipal responsibility was the root cause of uneven quality — the 2026 reform addresses symptoms, not the structural cause.
 
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/comparative-international.md -->
@@ -978,33 +974,6 @@ This analysis benchmarks the four primary documents against Nordic and EU peer e
 
 Sweden's fiscal position is stronger than the Nordic average, providing theoretical headroom for elder-care and police investment — but the -0.3% balance limits emergency supplementary budgets.
 
-## Historical Parallels
-<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/historical-parallels.md -->
-
-### Parallels for Police Reform Audit
-
-#### Parallel 1: UK Police Reform Audit (2014)
-HMIC (Her Majesty's Inspectorate of Constabulary) published efficiency critiques of the 2010 force merger programme in 2014, finding that many merger benefits had not materialised. Government response: additional investment + efficiency programme. Electoral impact: negligible (Conservatives won 2015 election). **Lesson**: Audit findings can be managed with credible response narrative.
-
-#### Parallel 2: Swedish Polismyndighet 2019 Self-Assessment
-Polismyndigheten's own 2019 internal review acknowledged efficiency gaps but highlighted officer recruitment success (+10,000 officers target). This internal process was a precursor to the 2026 Riksrevisionen audit. **Lesson**: The audit's finding is not new — government should have prepared a response.
-
-#### Parallel 3: Norwegian Nærpolitireformen (2020 audit)
-Statsrevisorerne (equivalent of Riksrevisionen) found Norwegian police reform had also underdelivered on efficiency. Government survived comfortably (Erna Solberg won 2021 election despite audit). **Key difference**: Norwegian audit was less direct in language than Swedish 2026 audit.
-
-### Parallels for Weapons Law
-
-#### Parallel: Finland's 2018 Firearms Act
-Finland faced similar EU harmonisation pressure but retained hunting exemptions. Swedish hunters/LRF will use this as a counter-argument. The 2020 Finnish outcome: rural hunting community accepted the narrower harmonisation; no major political fallout.
-
-#### Parallel: UK Firearms Amendment (1997)
-Post-Dunblane handgun ban — complete ban passed by overwhelming majority. Demonstrates that even culturally sensitive firearms restrictions can achieve political consensus when public mood supports. Sweden's 2026 weapons law is far less restrictive — context is EU harmonisation, not public safety crisis.
-
-### Parallels for Elder Care
-
-#### Parallel: Swedish Ädelreform (1992)
-The 1992 transfer of elder care from county councils to municipalities created the current fragmented implementation structure. HD01SoU25 attempts to strengthen national coordination within this inherited structure. **Lesson**: Municipal responsibility was the root cause of uneven quality — the 2026 reform addresses symptoms, not the structural cause.
-
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/implementation-feasibility.md -->
 
@@ -1042,6 +1011,37 @@ The 1992 transfer of elder care from county councils to municipalities created t
 **Phase 2** (12–24 months): Municipal building committees update procedures  
 **Phase 3** (24+ months): New applications processed under streamlined rules  
 **Visible electoral benefit**: Post-September 2026 election (no benefit to Tidö coalition)
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/media-framing-analysis.md -->
+
+### Predicted Framing by Outlet (Next 24–48 hours)
+
+| Outlet | Political lean | Predicted HD01JuU31 frame | Predicted HD01JuU10 frame |
+|--------|--------------|--------------------------|--------------------------|
+| SVT | Centre | "Independent audit finds police reform inefficient" | "New weapons law: what changes?" |
+| DN | Centre-right | "Riksrevisionen: police reform underdelivered" | "EU-harmonised weapons rules enter force June" |
+| SvD | Centre-right | "Audit: police reform failed efficiency targets" | "Weapons law — sport shooters' reaction" |
+| Expressen | Centre-right tabloid | "POLISREFORMEN MISSLYCKADES" | "Jakt-ban: furious hunters react" |
+| Aftonbladet | Centre-left tabloid | "S: 'Bevis att Tidö misslyckats med tryggheten'" | "Vapelagen — kan du fortfarande jaga?" |
+| Aftonbladet editorial | Centre-left | Government accountability demand | Neutral |
+
+### Frame Competition Analysis
+
+The police-reform audit will generate **two competing frames**:
+1. **Government frame**: "Reform delivered more police officers and more resources; efficiency improvement is ongoing work; the reform has been a success in its core delivery goals" — source: [HD01JuU31](https://data.riksdagen.se/dokument/HD01JuU31.html) government response [A1]
+2. **Opposition frame**: "Government's flagship law-and-order reform failed its own efficiency objectives — how can Tidö be trusted to manage public services?" — source: S/V parliamentary group comms
+
+**Frame warfare expected duration**: 3–5 days (Scenario S1) or 7–14 days if Riksdag committee chairs escalate (Scenario S2).
+
+### Anticipated Narrative Keywords
+
+**Government**: "fler poliser", "ökade resurser", "resultatfokus", "pågående reformarbete", "Riksrevisionen bekräftar förbättringsarbete"  
+**Opposition**: "misslyckades", "ineffektiv reform", "skattepengar", "Riksrevisionen oberoende", "otrygghet kvarstår"
+
+### Weapons Law Communication Challenge
+
+The JuU10 weapons law will compete with JuU31 for media bandwidth — both are JuU items tabled in the same session. Government communications must sequence carefully: weapons-law positive narrative should not be cannibalised by police-audit defensive narrative. Recommended sequence: weapons-law proactive communications → 24 hours → police-audit response.
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/devils-advocate.md -->
@@ -1364,13 +1364,6 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/threat-analysis.md)
 - [`documents/HD01CU24-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD01CU24-analysis.md)
 - [`documents/HD01JuU10-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD01JuU10-analysis.md)
 - [`documents/HD01JuU31-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD01JuU31-analysis.md)
@@ -1379,12 +1372,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`documents/HD11747-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD11747-analysis.md)
 - [`documents/HD11748-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD11748-analysis.md)
 - [`documents/HD11749-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/documents/HD11749-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/evening-analysis/cross-reference-map.md)

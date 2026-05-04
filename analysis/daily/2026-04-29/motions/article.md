@@ -5,7 +5,7 @@ date: 2026-04-29
 subfolder: motions
 slug: 2026-04-29-motions
 source_folder: analysis/daily/2026-04-29/motions
-generated_at: 2026-05-04T09:52:32.510Z
+generated_at: 2026-05-04T12:16:14.193Z
 language: en
 layout: article
 ---
@@ -76,10 +76,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -260,412 +260,6 @@ xychart-beta
     y-axis "DIW Score" 0 --> 10
     bar [8.5, 8.5, 7.8, 7.7, 7.7, 7.3, 7.0, 7.1, 7.0, 7.0]
 ```
-
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/media-framing-analysis.md -->
-
-### Predicted Press Frames
-
-#### Frame 1: "NATO-splittringen i oppositionen" (NATO Split in Opposition)
-
-**Expected outlets**: Aftonbladet, Expressen, SVT Nyheter
-**Trigger**: HD024120 (V rejects NATO Forward Presence Finland)
-**Frame construction**: V isolated on NATO; S, C, MP distance themselves; SD and M label V as security risk for any future government
-**Likely headline**: "Vänsterpartiet röstar nej till Nato-insats i Finland — enda partiet som motsätter sig"
-**Electoral amplification potential**: HIGH — this story has longevity beyond the news cycle because it creates a 2026 campaign attack point
-
-#### Frame 2: "Oppositionen presenterar ekonomiska alternativ" (Opposition Economic Alternatives)
-
-**Expected outlets**: Dagens Nyheter, SvD, Ekonomiekot (SR)
-**Trigger**: HD024100 (S), HD024108 (V), HD024110 (C), HD024118 (MP) — Spring Budget alternatives
-**Frame construction**: Opposition fragmented on economics; four different parties, four different approaches, no common front
-**Likely headline**: "Fyra partier, fyra budgetar — oppositionen saknar gemensamt alternativ"
-**Electoral amplification potential**: MEDIUM — important but expected political routine
-
-#### Frame 3: "Strängare straff ifrågasätts" (Tougher Sentencing Questioned)
-
-**Expected outlets**: SVT, SR Ekot, Dagens Nyheter
-**Trigger**: C (HD024111), MP (HD024114), V (HD024119, HD024121)
-**Frame construction**: Opposition parties raise concern about constitutional rights and implementation capacity in gang-crime legislation
-**Likely headline**: "Centerpartiet vill ha konsekvensanalys innan omröstning om gänglag"
-**Electoral amplification potential**: MEDIUM — C's procedurally measured position may be picked up as "responsible centre" narrative
-
-#### Frame 4: "Vapenleveranser — partier vill både mer och mindre" (Weapons Deliveries — Parties Want Both More and Less)
-
-**Expected outlets**: Aftonbladet, TT, SVT
-**Trigger**: HD024102/HD024115 (V/MP restrictive) vs. HD024106 (SD expansive)
-**Frame construction**: Swedish political spectrum spans full range on arms exports — from embargo to expansion
-**Likely headline**: "V vill stoppa vapenexport, SD vill utöka den — oppositionen oenig"
-**Electoral amplification potential**: LOW-MEDIUM — nuanced story, less amenable to simplification
-
-### Party Press Strategies
-
-| Party | Likely Press Angle | Risk |
-|-------|-------------------|------|
-| S | "Vi tar ansvar för ekonomin" — economic credibility | Low |
-| V | "Vi är konsekventa" — NATO opposition as principled stance | High — easily framed as irresponsible |
-| C | "Rättsstatsprincipen och skatteansvar" — procedural rigour | Low — positive framing available |
-| MP | "Fred och natur" — arms embargo + environment | Low among base; irrelevant to swing voters |
-| SD | "Stärk Sverige" — pro-export nationalist frame | Low for SD base |
-
-### International Media Interest
-
-**NATO angle** (HD024120): NATO-affiliated media (Atlantic Council, Defense News, Politico Europe) may pick up V's motion as a data point in stories about European defence commitment fragmentation. Swedish government should be prepared with a clear dismissal statement.
-
-**Arms exports** (HD024102, HD024115): Reuters and Financial Times track Swedish arms export policy given SAAB/BAE systems' international profile. V and MP motions may generate brief international coverage.
-
-## Stakeholder Perspectives
-<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/stakeholder-perspectives.md -->
-
-### 6-Lens Stakeholder Matrix
-
-#### 1. Government (Tidö Coalition: M+KD+SD)
-
-**Position**: Proposals are in parliamentary majority's favour; expects all government propositions to pass.
-**Interest level**: MEDIUM-HIGH on economic motions (legitimacy); HIGH on NATO FP (prop. 2025/26:220 is a strategic commitment).
-**Named actors**: Finance Minister Elisabeth Svantesson (M), Prime Minister Ulf Kristersson (M), Justice Minister Gunnar Strömmer (M).
-**Assessment**: Government will use opposition fragmentation as evidence of its own stability. SD's pro-export HD024106 deviates from government position — minor internal tension. [B2]
-
-#### 2. Socialdemokraterna (S)
-
-**Position**: HD024100 (Spring Budget) + HD024101 (Spring Econ Prop). "Sverige behöver bli starkt igen" — demand-side economic alternative. Absent from JuU motions.
-**Named actors**: Magdalena Andersson (party leader, HD024100 and HD024101 author).
-**Assessment**: S is positioning for 2026 election with strong economic framing but deliberately avoiding criminal justice positioning — possibly to avoid endorsing either M's approach or V/MP's opposition. Strategic ambiguity. [A2]
-
-#### 3. Vänsterpartiet (V)
-
-**Position**: Most prolific filer (10 motions). Broad left opposition across economics, criminal justice, defence, export, environment.
-**Named actors**: Nooshi Dadgostar (economics HD024108, HD024119), Lorena Delgado Varas (NATO HD024120, justice HD024121), Håkan Svenneling (export HD024102), Samuel Gonzalez Westling (HD024107), Birger Lahti (HD024104), Andrea Andersson Tay (HD024105), Malcolm Momodou Jallow (HD024122), Malin Östh (HD024103), Daniel Riazat (HD024123).
-**Assessment**: V's NATO position (HD024120) is the most distinctive act of this batch. V will face pressure from S and MP to clarify position. [A1]
-
-#### 4. Centerpartiet (C)
-
-**Position**: 5 motions. Economic alternative (HD024109, HD024110) emphasises fiscal responsibility. JuU motions (HD024111, HD024112) seek procedural caution. Species protection (HD024113) aligns with rural constituency.
-**Named actors**: Martin Ådahl (HD024109, HD024110), Ulrika Liljeberg (HD024111, HD024112), Helena Lindahl (HD024113).
-**Assessment**: C occupies distinctive niche — not the most adversarial opposition but most methodologically rigorous. RR citation (HD024109) shows policy depth. [A1]
-
-#### 5. Miljöpartiet (MP)
-
-**Position**: 5 motions. Arms embargo (HD024115), reject double penalties (HD024114), reject civil servant liability (HD024116), EU state aid analysis for artskydd (HD024117), green economic alternative (HD024118).
-**Named actors**: Jacob Risberg (HD024115), Ulrika Westerlund (HD024114), Mats Berglund (HD024116), Rebecka Le Moine (HD024117), Daniel Helldén (HD024118).
-**Assessment**: MP's arms embargo position (HD024115) is the most activist foreign-policy stance. Green economic framing in HD024118 consistent with party identity. [A1]
-
-#### 6. Sverigedemokraterna (SD)
-
-**Position**: 1 motion (HD024106). Pro-expanded arms export — seeks more permissive regime.
-**Named actor**: Rasmus Giertz (HD024106).
-**Assessment**: SD's single motion is anomalous in the opposition motion batch — SD is part of the governing coalition but files this motion to signal policy divergence from the government on arms export permissiveness. Suggests SD is testing room for deviation. [B2]
-
-### Influence Network
-
-```mermaid
-graph LR
-    GOV["Govt (M+KD+SD)"]:::gov
-    S["S Opposition"]:::s
-    V["V Opposition"]:::v
-    C["C Opposition"]:::c
-    MP["MP Opposition"]:::mp
-    SD["SD (Govt bloc)"]:::sd
-
-    S -- "Economic framing competition" --> GOV
-    V -- "Left economic alternative" --> GOV
-    V -- "NATO rejection UNIQUE" --> GOV
-    C -- "Fiscal caution + RR" --> GOV
-    MP -- "Arms embargo" --> GOV
-    SD -- "More export" --> GOV
-    S -. "No JuU coordination" .-> V
-    V -. "NATO: isolated" .-> S
-    V -. "NATO: isolated" .-> C
-    V -. "NATO: isolated" .-> MP
-
-    classDef gov fill:#1a2a3a,stroke:#00d9ff,color:#e0e0e0
-    classDef s fill:#3a1a1a,stroke:#ff006e,color:#e0e0e0
-    classDef v fill:#3a1a2a,stroke:#ff006e,color:#e0e0e0
-    classDef c fill:#1a3a2a,stroke:#00d9ff,color:#e0e0e0
-    classDef mp fill:#1a3a1a,stroke:#00d9ff,color:#e0e0e0
-    classDef sd fill:#2a2a1a,stroke:#ffbe0b,color:#e0e0e0
-```
-
-## Forward Indicators
-<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/forward-indicators.md -->
-
-### Indicators by Time Horizon
-
-#### Horizon 1: Immediate (0-30 days)
-
-1. **[JuU Calendar]** Does JuU schedule a hearing date for prop. 2025/26:217 before June 30? → If YES (before June): S1 confirmed. If NO (delayed): S2 partially confirmed.
-   - *Collection*: riksdag.se/JuU calendar
-   - *Expected by*: 2026-05-28
-
-2. **[Government NATO Statement]** Does government Foreign Affairs Ministry issue a statement reaffirming prop. 2025/26:220 in response to HD024120? → Expected within 14 days of V's motion filing.
-   - *Collection*: Utrikesdepartementet pressroom
-   - *Expected by*: 2026-05-12
-
-3. **[S Economic Press Conference]** Does Magdalena Andersson hold a press conference presenting the Spring Budget alternative (HD024100/101 content)? → HIGH probability.
-   - *Collection*: S pressroom, SVT Nyheter
-   - *Expected by*: 2026-05-05
-
-4. **[V Clarification on NATO]** Does V party leadership issue a press statement explaining HD024120? → Will determine if this is principled or tactical.
-   - *Collection*: V pressroom
-   - *Expected by*: 2026-05-10
-
-#### Horizon 2: Short-term (30-90 days)
-
-5. **[FiU Spring Budget Vote]** VÅP 2026 passes FiU (expected YES). Does FiU committee report cite any opposition alternative in positive terms? → If yes: signals potential bipartisan compromise element.
-   - *Collection*: FiU betänkande (riksdag.se)
-   - *Expected by*: 2026-06-15
-
-6. **[JuU Prop. 217 Vote]** Does prop. 2025/26:217 pass JuU before summer recess? → S1 requires YES before 15 June 2026.
-   - *Collection*: JuU calendar, plenary schedule
-   - *Expected by*: 2026-06-20
-
-7. **[SD Arms Export Statement]** Does SD issue a follow-up statement on HD024106 demanding government response? → Would confirm S3 scenario partially.
-   - *Collection*: SD pressroom, riksdag.se interpellationer
-   - *Expected by*: 2026-06-30
-
-8. **[UU Arms Export Debate]** Does UU schedule a hearing following V/MP/SD arms export motions?
-   - *Collection*: UU calendar
-   - *Expected by*: 2026-06-30
-
-#### Horizon 3: Medium-term (90-180 days)
-
-9. **[RR Government Response]** Does government issue formal svar to RR skr. 2025/26:241 (cited in HD024109)? → If substantive response: confirms C's fiscal critique had impact.
-   - *Collection*: Finansdepartementet, riksdag.se
-   - *Expected by*: 2026-09-01
-
-10. **[2026 Election Polling]** Do opinion polls show V losing support following HD024120 NATO motion? → Would indicate voter discipline on security issues.
-    - *Collection*: SVT/SR/DN valkompass, Novus, Sifo
-    - *Expected by*: 2026-06-30
-
-#### Horizon 4: Long-term (180+ days)
-
-11. **[2026 Election Outcome]** Does opposition form government? → All scenario analysis resolves on election day, 14 September 2026.
-    - *Collection*: Valmyndigheten official results
-    - *Expected by*: 2026-09-14
-
-12. **[Artskydd Implementation]** Does Sweden revise artskydd compensation scheme following HD024113/HD024117 pressure? → Long-term MJU policy indicator.
-    - *Collection*: Prop. watch, Naturvårdsverket
-    - *Expected by*: 2027-01-01
-
-### Warning Indicators (Anomalies to Watch)
-
-- **WARN-1**: If any M or KD member signals support for C HD024111 → increases JuU delay probability from 20% to 40%+
-- **WARN-2**: If international media (Politico Europe, Atlantic Council) picks up HD024120 → triggers government communications crisis response
-- **WARN-3**: If SD issues a whip instruction against HD024106 → signals SD has decided coalition discipline outweighs voter signalling on arms
-
-### Indicator Matrix
-
-| # | Indicator | Source | Timeline | Impact |
-|---|-----------|--------|----------|--------|
-| I-01 | JuU hearing date | riksdag.se | 30d | S1 vs S2 |
-| I-02 | NATO gov statement | UD | 14d | PR management |
-| I-03 | S economic presser | S pressroom | 7d | Electoral positioning |
-| I-04 | V NATO clarification | V pressroom | 14d | KJ-2 refinement |
-| I-05 | FiU Spring Budget vote | riksdag.se | 75d | S1 confirmation |
-| I-06 | JuU prop. 217 vote | riksdag.se | 52d | S1/S2 final |
-| I-07 | SD arms statement | SD pressroom | 60d | S3 assessment |
-| I-08 | UU arms debate | riksdag.se | 60d | Policy impact |
-| I-09 | RR government response | FinDep | 125d | C fiscal impact |
-| I-10 | V polling impact | Novus/Sifo | 60d | KJ-2 validation |
-| I-11 | 2026 election result | Valmyndigheten | 138d | All scenarios |
-| I-12 | Artskydd reform | NV/Prop | 245d+ | MJU policy |
-
-## Scenario Analysis
-<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/scenario-analysis.md -->
-
-### Scenario Matrix (probabilities sum to 100%)
-
-#### S1 — Status Quo: Majority Rejects All Motions (P=72%)
-
-**Description**: Government majority (M+KD+SD) votes down all 24 motions. Spring Budget passes as proposed. prop. 217-220 pass intact. Opposition gains no legislative wins.
-
-**Trigger conditions**: No defections from governing coalition; SD maintains coalition discipline (HD024106 does not force UU debate).
-
-**Consequences**:
-- Opposition mounts procedural challenge but fails
-- S frames 2026 election around economic alternatives rejected by government
-- V's NATO rejection exploited in foreign media briefly; no lasting effect
-- Criminal justice bills enter implementation phase as planned
-
-#### S2 — Partial C/MP Procedural Victory in JuU (P=18%)
-
-**Description**: Centerpartiet's HD024111 requesting consequence analysis before vote on prop. 217 attracts support from M backbenchers concerned about Kriminalvården capacity. JuU Chair grants extended hearing delay of 4-6 weeks.
-
-**Trigger conditions**: JuU chair is persuaded by evidence in HD024111; at least 1 M or KD member signals support for extended analysis.
-
-**Consequences**:
-- Criminal justice bills delayed past summer recess
-- C claims procedural victory as evidence-based opposition
-- Government faces embarrassment over preparedness
-- Vote pushed to autumn session 2026 — close to election
-
-#### S3 — SD Arms Export Motion Advances, Creates Coalition Friction (P=7%)
-
-**Description**: SD's HD024106 (more arms export approvals) passes UU deliberation and forces a government response, creating visible tension between SD and M/KD on export policy.
-
-**Trigger conditions**: SD forces UU debate; V and MP press opposition to Swedish export restrictions; government UU members are divided.
-
-**Consequences**:
-- Coalition signalling that SD seeks more permissive arms policy
-- Government forced to clarify arms export criteria publicly
-- Minor reputational risk from visible coalition fracture
-
-#### S4 — NATO Motion Causes International Diplomatic Incident (P=3%)
-
-**Description**: V's HD024120 NATO rejection attracts NATO-level attention; Finland's Foreign Ministry or NATO Secretary-General comments on Swedish parliamentary debate.
-
-**Trigger conditions**: International media picks up HD024120; other governments express concern about Swedish commitment.
-
-**Consequences**:
-- Government forced to reaffirm NATO commitment publicly
-- V faces pressure to withdraw motion
-- Potential "Natodebatt" dominating news cycle
-
----
-
-*Probabilities: S1=72%, S2=18%, S3=7%, S4=3% = 100%*
-
-### Key Assumption Audit
-
-| Assumption | Validity | Alternative |
-|------------|----------|------------|
-| SD maintains coalition discipline | MEDIUM | SD has shown willingness to diverge on issues with voter appeal |
-| C HD024111 will not attract M defectors | MEDIUM-HIGH | M backbenchers uncomfortable with Kriminalvården capacity arguments |
-| V's NATO motion is purely symbolic | HIGH | No credible cross-party support exists |
-| Arms export debate stays procedural | HIGH | Media focus on Ukraine supply chains could elevate attention |
-
-## Risk Assessment
-<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/risk-assessment.md -->
-
-### Risk Register
-
-| # | Risk | Category | Likelihood (1-5) | Impact (1-5) | Score | Mitigation |
-|---|------|----------|---------|--------|-------|------------|
-| R1 | V's NATO rejection fuels right-wing narrative of opposition unreliability | Political/Reputational | 4 | 4 | **16** | Other opposition parties clearly distance from HD024120 |
-| R2 | Opposition economic alternatives mutually exclusive → government frames as fiscal irresponsibility | Political | 4 | 4 | **16** | S must dominate economic narrative as lead opposition |
-| R3 | Gang-crime bill passes without consequence analysis → implementation failures in Kriminalvården | Institutional | 3 | 4 | **12** | C's HD024111 provides evidential basis for future review |
-| R4 | Arms export debate hijacked by SD's pro-export position → UU debate confusion | Legislative | 3 | 3 | **9** | V and MP maintain distinct positions clearly |
-| R5 | Environmental review agency undermines existing MJU protections | Regulatory | 3 | 3 | **9** | V's HD024105 on record; legal challenges possible |
-| R6 | Artskydd compensation mechanism triggers EU state-aid investigation | Legal/EU | 2 | 4 | **8** | MP HD024117 explicitly flags this risk |
-| R7 | NATO FP rejection enables Russian disinformation about Swedish commitment | Security | 2 | 5 | **10** | Isolated to V; FöU passes prop. 2025/26:220 |
-| R8 | Fiscal framework drift if government ignores RR critique | Fiscal | 2 | 4 | **8** | C HD024109 on record; RR published criticism |
-
-### Cascading Risk Chains
-
-**Chain A**: V NATO rejection (HD024120) → media amplification → opposition bloc portrayed as disunited → S electoral damage (probability: MEDIUM [B3])
-
-**Chain B**: Criminal justice bills pass without consequence analysis → Kriminalvården overload → violence in prisons → public backlash → JuU reform reversal (probability: LOW [B4])
-
-**Chain C**: Economic motions fail in FiU → government Spring Budget passes intact → opposition cannot claim fiscal credibility → 2026 election disadvantage for fragmented opposition (probability: HIGH [A2])
-
-### Posterior Probability Updates
-
-| Event | Prior | New evidence | Posterior |
-|-------|-------|--------------|-----------|
-| Government economic programme passes intact | 0.85 | 24 motions across 4 parties without coordination | 0.88 |
-| V NATO motion passes | 0.02 | Only V files; no cross-party support | 0.02 |
-| C JuU demands lead to delay of gang-crime bill | 0.20 | C request for consequence analysis in HD024111 | 0.22 |
-
-## SWOT Analysis
-<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/swot-analysis.md -->
-
-### SWOT Matrix
-
-#### Strengths (Opposition capabilities demonstrated)
-
-| Strength | Evidence | Admiralty |
-|----------|----------|-----------|
-| High-volume coordinated filing | 24 motions in one day across all 4 opposition parties (HD024100-HD024123) | A1 |
-| Cross-party economic critique | S, V, C, MP all filed Spring Economic Prop motions (FiU) | A1 |
-| Policy diversity coverage | Motions span FiU, JuU, UU, FöU, MJU, TU, NU — 7 committees | A1 |
-| Strong S economic narrative | HD024101 "Sverige behöver bli starkt igen" — clear electoral message by Magdalena Andersson | A1 |
-| V differentiation on defence | HD024120 carves distinct peacekeeping-vs-NATO line useful for V base mobilisation | A1 |
-
-#### Weaknesses (Opposition vulnerabilities)
-
-| Weakness | Evidence | Admiralty |
-|----------|----------|-----------|
-| Economic alternatives contradictory | S (demand stimulus) vs C (fiscal consolidation) vs V (redistribution) — no unified platform | A1 |
-| Absent S criminal justice motions | S filed no JuU motions in this batch — ambiguity on gang crime and civil servant liability | A1 |
-| V NATO isolation | HD024120 rejects NATO Forward Presence — no other party supports; weakens V as coalition partner | A1 |
-| MP rejects govt economic proposal but offers green transformation only | HD024118 narrow climate lens limits MP crossover appeal | A1 |
-| C FiU motion (HD024110) proposes own budget guidelines — procedurally uncertain outcome | C alternative riktlinjer unlikely to prevail in FiU | B2 |
-
-#### Opportunities (Opening for opposition)
-
-| Opportunity | Evidence | Admiralty |
-|-------------|----------|-----------|
-| Riksrevisionen fiscal framework critique | HD024109 (C) leverages independent RR criticism (skr. 2025/26:241) for credibility | A1 |
-| Criminal justice implementation risk | HD024111 (C) requests consequence analysis — if JuU passes without it, implementation risk materialises | B2 |
-| Public opinion on gang crime | V's and MP's rejection of double penalties (HD024114, HD024119, HD024121) may resonate if media frames as government overreach | B3 |
-| Export control EU context | Arms-embargo calls (HD024115, MP) gain traction if EU shifts arms-export policy post-Ukraine | C3 |
-| Artskydd public interest | C's HD024113 taps landowner constituency; MP's HD024117 taps EU-law consciousness | B2 |
-
-#### Threats (Risks to opposition strategy)
-
-| Threat | Evidence | Admiralty |
-|--------|----------|-----------|
-| Government FiU majority | M-KD-SD coalition controls FiU; all economic motions will fail | A1 |
-| JuU majority secure | M-KD-SD majority in JuU; criminal justice bills pass despite opposition | A1 |
-| V isolation on NATO weakens opposition bloc | Other parties cannot align with V on HD024120 | A1 |
-| SD UU position inverts export debate | SD's pro-export HD024106 creates narrative that opposition is internally incoherent | A2 |
-| Post-election ambiguity | 2026 election looms; motions serve dual purpose as election manifesto signals — diluting legislative focus | B2 |
-
-### TOWS Matrix
-
-| | Strengths | Weaknesses |
-|---|-----------|------------|
-| **Opportunities** | **SO**: Leverage RR critique (HD024109) + high volume to portray government as fiscally reckless | **WO**: Address S JuU absence to prevent MP/V from defining opposition criminal justice narrative alone |
-| **Threats** | **ST**: Use economic alternative breadth to force government onto defensive in FiU committee stage | **WT**: V's NATO isolation (HD024120) + economic contradiction risks enabling government to delegitimise opposition bloc as incoherent |
-
-## Threat Analysis
-<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/threat-analysis.md -->
-
-### Political Threat Taxonomy
-
-#### Threat Level 1 — Systemic (Low probability, high impact)
-
-**T1-NATO**: Vänsterpartiet's HD024120 constitutes a formal legislative challenge to Sweden's NATO Forward Presence contribution. If the motion gained support from other parties (it will not), it would mark a reversal of Sweden's 2024 NATO accession commitments. Even as an isolated motion, it provides:
-- Evidence vector for Russian messaging ("Swedish parliament divided on NATO")
-- Domestic tension metric for V coalition viability
-- *TTP-style mapping*: Actor V → means: formal parliamentary motion → objective: block NATO commitment → target: prop. 2025/26:220 → effect: reputational damage to Sweden's NATO reliability
-
-#### Threat Level 2 — Legislative (Moderate probability, moderate impact)
-
-**T2-JUSTICE**: Combined opposition on criminal justice (V, C, MP filing 8 motions against JuU cluster) could trigger extended committee scrutiny, causing implementation delays for prop. 2025/26:217 and 2025/26:218. C's request for consequence analysis (HD024111) is the most credible blocking mechanism. Risk: if JuU Chair grants extended hearing, timeline slips past summer recess.
-
-**T3-ECONOMIC**: Four-party opposition to the Spring Economic Proposition creates parliamentary theatre that may obscure the government's actual fiscal programme in media coverage. Threat to public understanding of budget policy.
-
-#### Threat Level 3 — Operational (High probability, low impact)
-
-**T3-EXPORT**: Arms export debate fragmented across V (restrictive), MP (embargo), SD (expansive) creates no coherent legislative threat but generates ongoing UU procedural burden.
-
-### Attack Tree (T1-NATO)
-
-```mermaid
-graph TD
-    Goal["Undermine Swedish NATO commitment"]:::threat
-    Goal --> A1["V files parliamentary motion\nHD024120 — DONE"]:::done
-    Goal --> A2["Media amplification"]:::active
-    Goal --> A3["Russian state media exploitation"]:::active
-    A2 --> B1["Other opposition parties\ndistance themselves"]:::mitigated
-    A2 --> B2["International allies\nnote Swedish debate"]:::risk
-    A3 --> C1["No direct effect;\nisolated single-party position"]:::mitigated
-    classDef threat fill:#3a0a0a,stroke:#ff006e,color:#e0e0e0
-    classDef done fill:#1a3a1a,stroke:#00d9ff,color:#e0e0e0
-    classDef active fill:#2a2a1a,stroke:#ffbe0b,color:#e0e0e0
-    classDef mitigated fill:#1a1a2a,stroke:#00d9ff,color:#e0e0e0
-    classDef risk fill:#2a1a1a,stroke:#ff006e,color:#e0e0e0
-```
-
-### MITRE-style TTP Mapping (Political Threat)
-
-| ID | Tactic | Technique | Procedure | Actor | Target |
-|----|--------|-----------|-----------|-------|--------|
-| T001 | Narrative Disruption | Legislative motion as signal | V files HD024120 to signal anti-NATO stance to voter base | V | Government NATO policy |
-| T002 | Legislative Attrition | High-volume motion filing | 24 motions in 1 day across 7 committees | Opposition | Government Spring legislation |
-| T003 | Expert Authority Leverage | Riksrevisionen citation | C uses RR skr. 2025/26:241 to challenge fiscal framework | C | Government fiscal credibility |
-| T004 | Consequence Risk Framing | Demand for analysis before vote | C requests consequence analysis for HD024111 | C | JuU timetable |
 
 ## Per-document intelligence
 
@@ -885,61 +479,77 @@ Straffpolitik alternativ
 ### Intelligence Assessment
 V motion on sentencing policy alternatives. General framing against sentence escalation in criminal justice. Part of JuU cluster opposition. OUTCOME: Rejected.
 
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/election-2026-analysis.md -->
+## Stakeholder Perspectives
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/stakeholder-perspectives.md -->
 
-### Electoral Context
+### 6-Lens Stakeholder Matrix
 
-Sweden's next general election is scheduled for **14 September 2026**. The motions filed on 2026-04-28 are among the last systematic opposition legislative acts before the formal campaign period begins (typically 6-8 weeks before election day).
+#### 1. Government (Tidö Coalition: M+KD+SD)
 
-### Party Electoral Positioning via Motions
+**Position**: Proposals are in parliamentary majority's favour; expects all government propositions to pass.
+**Interest level**: MEDIUM-HIGH on economic motions (legitimacy); HIGH on NATO FP (prop. 2025/26:220 is a strategic commitment).
+**Named actors**: Finance Minister Elisabeth Svantesson (M), Prime Minister Ulf Kristersson (M), Justice Minister Gunnar Strömmer (M).
+**Assessment**: Government will use opposition fragmentation as evidence of its own stability. SD's pro-export HD024106 deviates from government position — minor internal tension. [B2]
 
-| Party | Key Motion(s) | Electoral Signal | Target Voter |
-|-------|-------------|-----------------|--------------|
-| S | HD024100, HD024101 | "Vi har bättre ekonomisk politik" | Core S voters, wavering M-moderate voters |
-| V | HD024120 (NATO) | "Vi kompromissar inte om fred" | Hard left, youth, pacifist voters (~6%) |
-| V | HD024107-108 et al. | "Vi kämpar för rättvisa" | Working class, welfare-state voters |
-| C | HD024109 (RR cite) | "Fiscal rigor, not just growth" | Rural, small business, fiscal-conservative voters |
-| C | HD024111 (JuU) | "Evidence before punishment" | Liberal centre, procedural-rights voters |
-| MP | HD024115 (arms embargo) | "Vi prioriterar fred framför export" | Green, peace-movement voters (~5%) |
-| MP | HD024117 (artskydd) | "Vi skyddar naturen, även mot EU" | Green voters, rural nature advocates |
-| SD | HD024106 (more exports) | "Vi stärker Sverige" | Defence-nationalist, SD core voters |
+#### 2. Socialdemokraterna (S)
 
-### Seat Projection Context
+**Position**: HD024100 (Spring Budget) + HD024101 (Spring Econ Prop). "Sverige behöver bli starkt igen" — demand-side economic alternative. Absent from JuU motions.
+**Named actors**: Magdalena Andersson (party leader, HD024100 and HD024101 author).
+**Assessment**: S is positioning for 2026 election with strong economic framing but deliberately avoiding criminal justice positioning — possibly to avoid endorsing either M's approach or V/MP's opposition. Strategic ambiguity. [A2]
 
-**Current Riksdag composition (approximate, 349 seats)**:
+#### 3. Vänsterpartiet (V)
 
-| Party | Seats (approx.) | Bloc |
-|-------|-----------------|------|
-| S | 107 | Opposition |
-| SD | 73 | Government support |
-| M | 68 | Government |
-| V | 24 | Opposition |
-| C | 24 | Opposition |
-| KD | 19 | Government |
-| MP | 18 | Opposition |
-| L | 16 | Government support |
+**Position**: Most prolific filer (10 motions). Broad left opposition across economics, criminal justice, defence, export, environment.
+**Named actors**: Nooshi Dadgostar (economics HD024108, HD024119), Lorena Delgado Varas (NATO HD024120, justice HD024121), Håkan Svenneling (export HD024102), Samuel Gonzalez Westling (HD024107), Birger Lahti (HD024104), Andrea Andersson Tay (HD024105), Malcolm Momodou Jallow (HD024122), Malin Östh (HD024103), Daniel Riazat (HD024123).
+**Assessment**: V's NATO position (HD024120) is the most distinctive act of this batch. V will face pressure from S and MP to clarify position. [A1]
 
-**Government total**: 176+ seats  
-**Opposition total**: 173+ seats
+#### 4. Centerpartiet (C)
 
-**2026 Electoral Challenge for Opposition**:
+**Position**: 5 motions. Economic alternative (HD024109, HD024110) emphasises fiscal responsibility. JuU motions (HD024111, HD024112) seek procedural caution. Species protection (HD024113) aligns with rural constituency.
+**Named actors**: Martin Ådahl (HD024109, HD024110), Ulrika Liljeberg (HD024111, HD024112), Helena Lindahl (HD024113).
+**Assessment**: C occupies distinctive niche — not the most adversarial opposition but most methodologically rigorous. RR citation (HD024109) shows policy depth. [A1]
 
-For the opposition to form a government after September 2026, one of the following must occur:
-1. S+V+MP+C reach 175 seats (Red-Green-Centre majority) — requires significant SD collapse
-2. S+C+MP + external support — requires C to return to left-leaning cooperation
-3. Grand coalition (unlikely in Swedish context)
+#### 5. Miljöpartiet (MP)
 
-The motions filed on 2026-04-28 suggest:
-- **S** is running a standalone economic credibility campaign — not coordinating with V or MP
-- **V** is burning bridges with potential coalition partners (HD024120)
-- **C** is maintaining cross-bloc ambiguity — could cooperate with either bloc in 2026
+**Position**: 5 motions. Arms embargo (HD024115), reject double penalties (HD024114), reject civil servant liability (HD024116), EU state aid analysis for artskydd (HD024117), green economic alternative (HD024118).
+**Named actors**: Jacob Risberg (HD024115), Ulrika Westerlund (HD024114), Mats Berglund (HD024116), Rebecka Le Moine (HD024117), Daniel Helldén (HD024118).
+**Assessment**: MP's arms embargo position (HD024115) is the most activist foreign-policy stance. Green economic framing in HD024118 consistent with party identity. [A1]
 
-### Electoral Risk Assessment
+#### 6. Sverigedemokraterna (SD)
 
-**Highest risk**: V's HD024120 creates a "security vs. pacifism" attack vector for SD and M in the 2026 campaign. Expect SD and M campaign materials referencing V's NATO rejection.
+**Position**: 1 motion (HD024106). Pro-expanded arms export — seeks more permissive regime.
+**Named actor**: Rasmus Giertz (HD024106).
+**Assessment**: SD's single motion is anomalous in the opposition motion batch — SD is part of the governing coalition but files this motion to signal policy divergence from the government on arms export permissiveness. Suggests SD is testing room for deviation. [B2]
 
-**Opportunity**: C's evidence-based opposition style (HD024109, HD024111) positions it as a credible governing alternative regardless of which bloc forms government — a deliberate ambiguity strategy that maximises C's post-election negotiating leverage.
+### Influence Network
+
+```mermaid
+graph LR
+    GOV["Govt (M+KD+SD)"]:::gov
+    S["S Opposition"]:::s
+    V["V Opposition"]:::v
+    C["C Opposition"]:::c
+    MP["MP Opposition"]:::mp
+    SD["SD (Govt bloc)"]:::sd
+
+    S -- "Economic framing competition" --> GOV
+    V -- "Left economic alternative" --> GOV
+    V -- "NATO rejection UNIQUE" --> GOV
+    C -- "Fiscal caution + RR" --> GOV
+    MP -- "Arms embargo" --> GOV
+    SD -- "More export" --> GOV
+    S -. "No JuU coordination" .-> V
+    V -. "NATO: isolated" .-> S
+    V -. "NATO: isolated" .-> C
+    V -. "NATO: isolated" .-> MP
+
+    classDef gov fill:#1a2a3a,stroke:#00d9ff,color:#e0e0e0
+    classDef s fill:#3a1a1a,stroke:#ff006e,color:#e0e0e0
+    classDef v fill:#3a1a2a,stroke:#ff006e,color:#e0e0e0
+    classDef c fill:#1a3a2a,stroke:#00d9ff,color:#e0e0e0
+    classDef mp fill:#1a3a1a,stroke:#00d9ff,color:#e0e0e0
+    classDef sd fill:#2a2a1a,stroke:#ffbe0b,color:#e0e0e0
+```
 
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/coalition-mathematics.md -->
@@ -1066,6 +676,378 @@ M+KD+SD+L maintains majority if SD holds at ~70+ seats. Most likely scenario giv
 
 The 2026-04-28 motion batch is **well-differentiated by party for voter segmentation purposes**. Each opposition party is sending clear, distinct signals to its base. The risk is that no two parties are targeting the same swing voter — suggesting the opposition is fighting to retain base votes rather than expand coalition.
 
+## Forward Indicators
+<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/forward-indicators.md -->
+
+### Indicators by Time Horizon
+
+#### Horizon 1: Immediate (0-30 days)
+
+1. **[JuU Calendar]** Does JuU schedule a hearing date for prop. 2025/26:217 before June 30? → If YES (before June): S1 confirmed. If NO (delayed): S2 partially confirmed.
+   - *Collection*: riksdag.se/JuU calendar
+   - *Expected by*: 2026-05-28
+
+2. **[Government NATO Statement]** Does government Foreign Affairs Ministry issue a statement reaffirming prop. 2025/26:220 in response to HD024120? → Expected within 14 days of V's motion filing.
+   - *Collection*: Utrikesdepartementet pressroom
+   - *Expected by*: 2026-05-12
+
+3. **[S Economic Press Conference]** Does Magdalena Andersson hold a press conference presenting the Spring Budget alternative (HD024100/101 content)? → HIGH probability.
+   - *Collection*: S pressroom, SVT Nyheter
+   - *Expected by*: 2026-05-05
+
+4. **[V Clarification on NATO]** Does V party leadership issue a press statement explaining HD024120? → Will determine if this is principled or tactical.
+   - *Collection*: V pressroom
+   - *Expected by*: 2026-05-10
+
+#### Horizon 2: Short-term (30-90 days)
+
+5. **[FiU Spring Budget Vote]** VÅP 2026 passes FiU (expected YES). Does FiU committee report cite any opposition alternative in positive terms? → If yes: signals potential bipartisan compromise element.
+   - *Collection*: FiU betänkande (riksdag.se)
+   - *Expected by*: 2026-06-15
+
+6. **[JuU Prop. 217 Vote]** Does prop. 2025/26:217 pass JuU before summer recess? → S1 requires YES before 15 June 2026.
+   - *Collection*: JuU calendar, plenary schedule
+   - *Expected by*: 2026-06-20
+
+7. **[SD Arms Export Statement]** Does SD issue a follow-up statement on HD024106 demanding government response? → Would confirm S3 scenario partially.
+   - *Collection*: SD pressroom, riksdag.se interpellationer
+   - *Expected by*: 2026-06-30
+
+8. **[UU Arms Export Debate]** Does UU schedule a hearing following V/MP/SD arms export motions?
+   - *Collection*: UU calendar
+   - *Expected by*: 2026-06-30
+
+#### Horizon 3: Medium-term (90-180 days)
+
+9. **[RR Government Response]** Does government issue formal svar to RR skr. 2025/26:241 (cited in HD024109)? → If substantive response: confirms C's fiscal critique had impact.
+   - *Collection*: Finansdepartementet, riksdag.se
+   - *Expected by*: 2026-09-01
+
+10. **[2026 Election Polling]** Do opinion polls show V losing support following HD024120 NATO motion? → Would indicate voter discipline on security issues.
+    - *Collection*: SVT/SR/DN valkompass, Novus, Sifo
+    - *Expected by*: 2026-06-30
+
+#### Horizon 4: Long-term (180+ days)
+
+11. **[2026 Election Outcome]** Does opposition form government? → All scenario analysis resolves on election day, 14 September 2026.
+    - *Collection*: Valmyndigheten official results
+    - *Expected by*: 2026-09-14
+
+12. **[Artskydd Implementation]** Does Sweden revise artskydd compensation scheme following HD024113/HD024117 pressure? → Long-term MJU policy indicator.
+    - *Collection*: Prop. watch, Naturvårdsverket
+    - *Expected by*: 2027-01-01
+
+### Warning Indicators (Anomalies to Watch)
+
+- **WARN-1**: If any M or KD member signals support for C HD024111 → increases JuU delay probability from 20% to 40%+
+- **WARN-2**: If international media (Politico Europe, Atlantic Council) picks up HD024120 → triggers government communications crisis response
+- **WARN-3**: If SD issues a whip instruction against HD024106 → signals SD has decided coalition discipline outweighs voter signalling on arms
+
+### Indicator Matrix
+
+| # | Indicator | Source | Timeline | Impact |
+|---|-----------|--------|----------|--------|
+| I-01 | JuU hearing date | riksdag.se | 30d | S1 vs S2 |
+| I-02 | NATO gov statement | UD | 14d | PR management |
+| I-03 | S economic presser | S pressroom | 7d | Electoral positioning |
+| I-04 | V NATO clarification | V pressroom | 14d | KJ-2 refinement |
+| I-05 | FiU Spring Budget vote | riksdag.se | 75d | S1 confirmation |
+| I-06 | JuU prop. 217 vote | riksdag.se | 52d | S1/S2 final |
+| I-07 | SD arms statement | SD pressroom | 60d | S3 assessment |
+| I-08 | UU arms debate | riksdag.se | 60d | Policy impact |
+| I-09 | RR government response | FinDep | 125d | C fiscal impact |
+| I-10 | V polling impact | Novus/Sifo | 60d | KJ-2 validation |
+| I-11 | 2026 election result | Valmyndigheten | 138d | All scenarios |
+| I-12 | Artskydd reform | NV/Prop | 245d+ | MJU policy |
+
+## Scenario Analysis
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/scenario-analysis.md -->
+
+### Scenario Matrix (probabilities sum to 100%)
+
+#### S1 — Status Quo: Majority Rejects All Motions (P=72%)
+
+**Description**: Government majority (M+KD+SD) votes down all 24 motions. Spring Budget passes as proposed. prop. 217-220 pass intact. Opposition gains no legislative wins.
+
+**Trigger conditions**: No defections from governing coalition; SD maintains coalition discipline (HD024106 does not force UU debate).
+
+**Consequences**:
+- Opposition mounts procedural challenge but fails
+- S frames 2026 election around economic alternatives rejected by government
+- V's NATO rejection exploited in foreign media briefly; no lasting effect
+- Criminal justice bills enter implementation phase as planned
+
+#### S2 — Partial C/MP Procedural Victory in JuU (P=18%)
+
+**Description**: Centerpartiet's HD024111 requesting consequence analysis before vote on prop. 217 attracts support from M backbenchers concerned about Kriminalvården capacity. JuU Chair grants extended hearing delay of 4-6 weeks.
+
+**Trigger conditions**: JuU chair is persuaded by evidence in HD024111; at least 1 M or KD member signals support for extended analysis.
+
+**Consequences**:
+- Criminal justice bills delayed past summer recess
+- C claims procedural victory as evidence-based opposition
+- Government faces embarrassment over preparedness
+- Vote pushed to autumn session 2026 — close to election
+
+#### S3 — SD Arms Export Motion Advances, Creates Coalition Friction (P=7%)
+
+**Description**: SD's HD024106 (more arms export approvals) passes UU deliberation and forces a government response, creating visible tension between SD and M/KD on export policy.
+
+**Trigger conditions**: SD forces UU debate; V and MP press opposition to Swedish export restrictions; government UU members are divided.
+
+**Consequences**:
+- Coalition signalling that SD seeks more permissive arms policy
+- Government forced to clarify arms export criteria publicly
+- Minor reputational risk from visible coalition fracture
+
+#### S4 — NATO Motion Causes International Diplomatic Incident (P=3%)
+
+**Description**: V's HD024120 NATO rejection attracts NATO-level attention; Finland's Foreign Ministry or NATO Secretary-General comments on Swedish parliamentary debate.
+
+**Trigger conditions**: International media picks up HD024120; other governments express concern about Swedish commitment.
+
+**Consequences**:
+- Government forced to reaffirm NATO commitment publicly
+- V faces pressure to withdraw motion
+- Potential "Natodebatt" dominating news cycle
+
+---
+
+*Probabilities: S1=72%, S2=18%, S3=7%, S4=3% = 100%*
+
+### Key Assumption Audit
+
+| Assumption | Validity | Alternative |
+|------------|----------|------------|
+| SD maintains coalition discipline | MEDIUM | SD has shown willingness to diverge on issues with voter appeal |
+| C HD024111 will not attract M defectors | MEDIUM-HIGH | M backbenchers uncomfortable with Kriminalvården capacity arguments |
+| V's NATO motion is purely symbolic | HIGH | No credible cross-party support exists |
+| Arms export debate stays procedural | HIGH | Media focus on Ukraine supply chains could elevate attention |
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/election-2026-analysis.md -->
+
+### Electoral Context
+
+Sweden's next general election is scheduled for **14 September 2026**. The motions filed on 2026-04-28 are among the last systematic opposition legislative acts before the formal campaign period begins (typically 6-8 weeks before election day).
+
+### Party Electoral Positioning via Motions
+
+| Party | Key Motion(s) | Electoral Signal | Target Voter |
+|-------|-------------|-----------------|--------------|
+| S | HD024100, HD024101 | "Vi har bättre ekonomisk politik" | Core S voters, wavering M-moderate voters |
+| V | HD024120 (NATO) | "Vi kompromissar inte om fred" | Hard left, youth, pacifist voters (~6%) |
+| V | HD024107-108 et al. | "Vi kämpar för rättvisa" | Working class, welfare-state voters |
+| C | HD024109 (RR cite) | "Fiscal rigor, not just growth" | Rural, small business, fiscal-conservative voters |
+| C | HD024111 (JuU) | "Evidence before punishment" | Liberal centre, procedural-rights voters |
+| MP | HD024115 (arms embargo) | "Vi prioriterar fred framför export" | Green, peace-movement voters (~5%) |
+| MP | HD024117 (artskydd) | "Vi skyddar naturen, även mot EU" | Green voters, rural nature advocates |
+| SD | HD024106 (more exports) | "Vi stärker Sverige" | Defence-nationalist, SD core voters |
+
+### Seat Projection Context
+
+**Current Riksdag composition (approximate, 349 seats)**:
+
+| Party | Seats (approx.) | Bloc |
+|-------|-----------------|------|
+| S | 107 | Opposition |
+| SD | 73 | Government support |
+| M | 68 | Government |
+| V | 24 | Opposition |
+| C | 24 | Opposition |
+| KD | 19 | Government |
+| MP | 18 | Opposition |
+| L | 16 | Government support |
+
+**Government total**: 176+ seats  
+**Opposition total**: 173+ seats
+
+**2026 Electoral Challenge for Opposition**:
+
+For the opposition to form a government after September 2026, one of the following must occur:
+1. S+V+MP+C reach 175 seats (Red-Green-Centre majority) — requires significant SD collapse
+2. S+C+MP + external support — requires C to return to left-leaning cooperation
+3. Grand coalition (unlikely in Swedish context)
+
+The motions filed on 2026-04-28 suggest:
+- **S** is running a standalone economic credibility campaign — not coordinating with V or MP
+- **V** is burning bridges with potential coalition partners (HD024120)
+- **C** is maintaining cross-bloc ambiguity — could cooperate with either bloc in 2026
+
+### Electoral Risk Assessment
+
+**Highest risk**: V's HD024120 creates a "security vs. pacifism" attack vector for SD and M in the 2026 campaign. Expect SD and M campaign materials referencing V's NATO rejection.
+
+**Opportunity**: C's evidence-based opposition style (HD024109, HD024111) positions it as a credible governing alternative regardless of which bloc forms government — a deliberate ambiguity strategy that maximises C's post-election negotiating leverage.
+
+## Risk Assessment
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/risk-assessment.md -->
+
+### Risk Register
+
+| # | Risk | Category | Likelihood (1-5) | Impact (1-5) | Score | Mitigation |
+|---|------|----------|---------|--------|-------|------------|
+| R1 | V's NATO rejection fuels right-wing narrative of opposition unreliability | Political/Reputational | 4 | 4 | **16** | Other opposition parties clearly distance from HD024120 |
+| R2 | Opposition economic alternatives mutually exclusive → government frames as fiscal irresponsibility | Political | 4 | 4 | **16** | S must dominate economic narrative as lead opposition |
+| R3 | Gang-crime bill passes without consequence analysis → implementation failures in Kriminalvården | Institutional | 3 | 4 | **12** | C's HD024111 provides evidential basis for future review |
+| R4 | Arms export debate hijacked by SD's pro-export position → UU debate confusion | Legislative | 3 | 3 | **9** | V and MP maintain distinct positions clearly |
+| R5 | Environmental review agency undermines existing MJU protections | Regulatory | 3 | 3 | **9** | V's HD024105 on record; legal challenges possible |
+| R6 | Artskydd compensation mechanism triggers EU state-aid investigation | Legal/EU | 2 | 4 | **8** | MP HD024117 explicitly flags this risk |
+| R7 | NATO FP rejection enables Russian disinformation about Swedish commitment | Security | 2 | 5 | **10** | Isolated to V; FöU passes prop. 2025/26:220 |
+| R8 | Fiscal framework drift if government ignores RR critique | Fiscal | 2 | 4 | **8** | C HD024109 on record; RR published criticism |
+
+### Cascading Risk Chains
+
+**Chain A**: V NATO rejection (HD024120) → media amplification → opposition bloc portrayed as disunited → S electoral damage (probability: MEDIUM [B3])
+
+**Chain B**: Criminal justice bills pass without consequence analysis → Kriminalvården overload → violence in prisons → public backlash → JuU reform reversal (probability: LOW [B4])
+
+**Chain C**: Economic motions fail in FiU → government Spring Budget passes intact → opposition cannot claim fiscal credibility → 2026 election disadvantage for fragmented opposition (probability: HIGH [A2])
+
+### Posterior Probability Updates
+
+| Event | Prior | New evidence | Posterior |
+|-------|-------|--------------|-----------|
+| Government economic programme passes intact | 0.85 | 24 motions across 4 parties without coordination | 0.88 |
+| V NATO motion passes | 0.02 | Only V files; no cross-party support | 0.02 |
+| C JuU demands lead to delay of gang-crime bill | 0.20 | C request for consequence analysis in HD024111 | 0.22 |
+
+## SWOT Analysis
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/swot-analysis.md -->
+
+### SWOT Matrix
+
+#### Strengths (Opposition capabilities demonstrated)
+
+| Strength | Evidence | Admiralty |
+|----------|----------|-----------|
+| High-volume coordinated filing | 24 motions in one day across all 4 opposition parties (HD024100-HD024123) | A1 |
+| Cross-party economic critique | S, V, C, MP all filed Spring Economic Prop motions (FiU) | A1 |
+| Policy diversity coverage | Motions span FiU, JuU, UU, FöU, MJU, TU, NU — 7 committees | A1 |
+| Strong S economic narrative | HD024101 "Sverige behöver bli starkt igen" — clear electoral message by Magdalena Andersson | A1 |
+| V differentiation on defence | HD024120 carves distinct peacekeeping-vs-NATO line useful for V base mobilisation | A1 |
+
+#### Weaknesses (Opposition vulnerabilities)
+
+| Weakness | Evidence | Admiralty |
+|----------|----------|-----------|
+| Economic alternatives contradictory | S (demand stimulus) vs C (fiscal consolidation) vs V (redistribution) — no unified platform | A1 |
+| Absent S criminal justice motions | S filed no JuU motions in this batch — ambiguity on gang crime and civil servant liability | A1 |
+| V NATO isolation | HD024120 rejects NATO Forward Presence — no other party supports; weakens V as coalition partner | A1 |
+| MP rejects govt economic proposal but offers green transformation only | HD024118 narrow climate lens limits MP crossover appeal | A1 |
+| C FiU motion (HD024110) proposes own budget guidelines — procedurally uncertain outcome | C alternative riktlinjer unlikely to prevail in FiU | B2 |
+
+#### Opportunities (Opening for opposition)
+
+| Opportunity | Evidence | Admiralty |
+|-------------|----------|-----------|
+| Riksrevisionen fiscal framework critique | HD024109 (C) leverages independent RR criticism (skr. 2025/26:241) for credibility | A1 |
+| Criminal justice implementation risk | HD024111 (C) requests consequence analysis — if JuU passes without it, implementation risk materialises | B2 |
+| Public opinion on gang crime | V's and MP's rejection of double penalties (HD024114, HD024119, HD024121) may resonate if media frames as government overreach | B3 |
+| Export control EU context | Arms-embargo calls (HD024115, MP) gain traction if EU shifts arms-export policy post-Ukraine | C3 |
+| Artskydd public interest | C's HD024113 taps landowner constituency; MP's HD024117 taps EU-law consciousness | B2 |
+
+#### Threats (Risks to opposition strategy)
+
+| Threat | Evidence | Admiralty |
+|--------|----------|-----------|
+| Government FiU majority | M-KD-SD coalition controls FiU; all economic motions will fail | A1 |
+| JuU majority secure | M-KD-SD majority in JuU; criminal justice bills pass despite opposition | A1 |
+| V isolation on NATO weakens opposition bloc | Other parties cannot align with V on HD024120 | A1 |
+| SD UU position inverts export debate | SD's pro-export HD024106 creates narrative that opposition is internally incoherent | A2 |
+| Post-election ambiguity | 2026 election looms; motions serve dual purpose as election manifesto signals — diluting legislative focus | B2 |
+
+### TOWS Matrix
+
+| | Strengths | Weaknesses |
+|---|-----------|------------|
+| **Opportunities** | **SO**: Leverage RR critique (HD024109) + high volume to portray government as fiscally reckless | **WO**: Address S JuU absence to prevent MP/V from defining opposition criminal justice narrative alone |
+| **Threats** | **ST**: Use economic alternative breadth to force government onto defensive in FiU committee stage | **WT**: V's NATO isolation (HD024120) + economic contradiction risks enabling government to delegitimise opposition bloc as incoherent |
+
+## Threat Analysis
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/threat-analysis.md -->
+
+### Political Threat Taxonomy
+
+#### Threat Level 1 — Systemic (Low probability, high impact)
+
+**T1-NATO**: Vänsterpartiet's HD024120 constitutes a formal legislative challenge to Sweden's NATO Forward Presence contribution. If the motion gained support from other parties (it will not), it would mark a reversal of Sweden's 2024 NATO accession commitments. Even as an isolated motion, it provides:
+- Evidence vector for Russian messaging ("Swedish parliament divided on NATO")
+- Domestic tension metric for V coalition viability
+- *TTP-style mapping*: Actor V → means: formal parliamentary motion → objective: block NATO commitment → target: prop. 2025/26:220 → effect: reputational damage to Sweden's NATO reliability
+
+#### Threat Level 2 — Legislative (Moderate probability, moderate impact)
+
+**T2-JUSTICE**: Combined opposition on criminal justice (V, C, MP filing 8 motions against JuU cluster) could trigger extended committee scrutiny, causing implementation delays for prop. 2025/26:217 and 2025/26:218. C's request for consequence analysis (HD024111) is the most credible blocking mechanism. Risk: if JuU Chair grants extended hearing, timeline slips past summer recess.
+
+**T3-ECONOMIC**: Four-party opposition to the Spring Economic Proposition creates parliamentary theatre that may obscure the government's actual fiscal programme in media coverage. Threat to public understanding of budget policy.
+
+#### Threat Level 3 — Operational (High probability, low impact)
+
+**T3-EXPORT**: Arms export debate fragmented across V (restrictive), MP (embargo), SD (expansive) creates no coherent legislative threat but generates ongoing UU procedural burden.
+
+### Attack Tree (T1-NATO)
+
+```mermaid
+graph TD
+    Goal["Undermine Swedish NATO commitment"]:::threat
+    Goal --> A1["V files parliamentary motion\nHD024120 — DONE"]:::done
+    Goal --> A2["Media amplification"]:::active
+    Goal --> A3["Russian state media exploitation"]:::active
+    A2 --> B1["Other opposition parties\ndistance themselves"]:::mitigated
+    A2 --> B2["International allies\nnote Swedish debate"]:::risk
+    A3 --> C1["No direct effect;\nisolated single-party position"]:::mitigated
+    classDef threat fill:#3a0a0a,stroke:#ff006e,color:#e0e0e0
+    classDef done fill:#1a3a1a,stroke:#00d9ff,color:#e0e0e0
+    classDef active fill:#2a2a1a,stroke:#ffbe0b,color:#e0e0e0
+    classDef mitigated fill:#1a1a2a,stroke:#00d9ff,color:#e0e0e0
+    classDef risk fill:#2a1a1a,stroke:#ff006e,color:#e0e0e0
+```
+
+### MITRE-style TTP Mapping (Political Threat)
+
+| ID | Tactic | Technique | Procedure | Actor | Target |
+|----|--------|-----------|-----------|-------|--------|
+| T001 | Narrative Disruption | Legislative motion as signal | V files HD024120 to signal anti-NATO stance to voter base | V | Government NATO policy |
+| T002 | Legislative Attrition | High-volume motion filing | 24 motions in 1 day across 7 committees | Opposition | Government Spring legislation |
+| T003 | Expert Authority Leverage | Riksrevisionen citation | C uses RR skr. 2025/26:241 to challenge fiscal framework | C | Government fiscal credibility |
+| T004 | Consequence Risk Framing | Demand for analysis before vote | C requests consequence analysis for HD024111 | C | JuU timetable |
+
+## Historical Parallels
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/historical-parallels.md -->
+
+### Primary Historical Parallel (≤40 years)
+
+#### Parallel 1: 2001 Spring Budget Opposition — S vs. Bourgeois Alliance (1 Year Horizon)
+
+**Context**: Opposition Moderaterna (Carl Bildt era) filed comprehensive Spring Budget alternatives just as the dot-com crash was beginning to affect Sweden's fiscal projections. The opposition alternatives proposed different spending priorities but were rejected by the S-led minority government with Left Party and Green support.
+
+**What happened**: All opposition Spring Budget motions were rejected by the parliamentary majority. The S government's Spring Budget passed, and Sweden navigated the 2001-2003 recession with relatively modest fiscal adjustments.
+
+**Parallel to 2026**: The 2026 Spring Budget opposition is structurally identical — multiple opposition parties filing alternative budgets that have no mathematical chance of passing. As in 2001, the motions serve to establish contrast positions for the subsequent election (2002 then, 2026 now).
+
+**Key difference**: In 2001, the opposition was unified around Alliansen formation (2006 precursor). In 2026, the opposition is fragmented — no unified programme exists.
+
+#### Parallel 2: V's NATO Opposition — 1994-1995 Partnership for Peace Debate
+
+**Context**: When Sweden joined NATO's Partnership for Peace (PfP) in 1994, Vänsterpartiet (then VP) filed interpellationer and motions opposing PfP participation, arguing it undermined Sweden's traditional neutrality.
+
+**What happened**: Sweden joined PfP; V's opposition was noted but had no effect on the decision. V maintained anti-NATO positions consistently through 1994-2024.
+
+**Parallel to 2026**: HD024120 is structurally identical to V's 1994 PfP opposition — a formal parliamentary objection to a defence cooperation commitment that has already been made at the executive level. As in 1994, the motion will be rejected.
+
+**Key difference**: Sweden is now a full NATO member (2024), which raises the stakes of V's opposition from symbolic to potentially treaty-relevant. The 1994 PfP was advisory; 2026 NATO Forward Presence is under Article 3 solidarity obligations.
+
+#### Parallel 3: C's Fiscal Rule Critique — RR Reports 2010-2012
+
+**Context**: During the Reinfeldt government, Riksrevisionen issued several reports critiquing the implementation of Sweden's fiscal framework. The then-opposition (S) used these reports in motions to argue the government was mismanaging fiscal rules.
+
+**What happened**: RR reports were formally received; the government issued written responses; some adjustments were made to fiscal reporting procedures. Opposition motions failed to pass but successfully elevated the issue in public debate.
+
+**Parallel to 2026**: C's HD024109 citing RR skr. 2025/26:241 follows exactly this playbook — use RR authority to legitimise a fiscal critique that might not otherwise be credible coming from an opposition party alone.
+
+**Prediction from parallel**: Government will issue a formal svar (response) to RR; FiU will hear from RR experts; government may make minor reporting adjustments while rejecting C's substantive motion.
+
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/comparative-international.md -->
 
@@ -1108,41 +1090,6 @@ Sweden's opposition economic alternatives (VAP motions) are bounded by EU Stabil
 #### NATO Framework (Article 5 + Forward Presence)
 
 Sweden's NATO membership (since March 2024) creates a treaty obligation that no single Riksdag motion can override. V's HD024120 motion to reject the NATO Forward Presence contribution would, if adopted, place Sweden in technical violation of a NATO Council decision. The constitutional mechanism for such a violation is unclear — but FöU legal analysis will confirm that the NATO Treaty's Article 5 obligations are binding.
-
-## Historical Parallels
-<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/historical-parallels.md -->
-
-### Primary Historical Parallel (≤40 years)
-
-#### Parallel 1: 2001 Spring Budget Opposition — S vs. Bourgeois Alliance (1 Year Horizon)
-
-**Context**: Opposition Moderaterna (Carl Bildt era) filed comprehensive Spring Budget alternatives just as the dot-com crash was beginning to affect Sweden's fiscal projections. The opposition alternatives proposed different spending priorities but were rejected by the S-led minority government with Left Party and Green support.
-
-**What happened**: All opposition Spring Budget motions were rejected by the parliamentary majority. The S government's Spring Budget passed, and Sweden navigated the 2001-2003 recession with relatively modest fiscal adjustments.
-
-**Parallel to 2026**: The 2026 Spring Budget opposition is structurally identical — multiple opposition parties filing alternative budgets that have no mathematical chance of passing. As in 2001, the motions serve to establish contrast positions for the subsequent election (2002 then, 2026 now).
-
-**Key difference**: In 2001, the opposition was unified around Alliansen formation (2006 precursor). In 2026, the opposition is fragmented — no unified programme exists.
-
-#### Parallel 2: V's NATO Opposition — 1994-1995 Partnership for Peace Debate
-
-**Context**: When Sweden joined NATO's Partnership for Peace (PfP) in 1994, Vänsterpartiet (then VP) filed interpellationer and motions opposing PfP participation, arguing it undermined Sweden's traditional neutrality.
-
-**What happened**: Sweden joined PfP; V's opposition was noted but had no effect on the decision. V maintained anti-NATO positions consistently through 1994-2024.
-
-**Parallel to 2026**: HD024120 is structurally identical to V's 1994 PfP opposition — a formal parliamentary objection to a defence cooperation commitment that has already been made at the executive level. As in 1994, the motion will be rejected.
-
-**Key difference**: Sweden is now a full NATO member (2024), which raises the stakes of V's opposition from symbolic to potentially treaty-relevant. The 1994 PfP was advisory; 2026 NATO Forward Presence is under Article 3 solidarity obligations.
-
-#### Parallel 3: C's Fiscal Rule Critique — RR Reports 2010-2012
-
-**Context**: During the Reinfeldt government, Riksrevisionen issued several reports critiquing the implementation of Sweden's fiscal framework. The then-opposition (S) used these reports in motions to argue the government was mismanaging fiscal rules.
-
-**What happened**: RR reports were formally received; the government issued written responses; some adjustments were made to fiscal reporting procedures. Opposition motions failed to pass but successfully elevated the issue in public debate.
-
-**Parallel to 2026**: C's HD024109 citing RR skr. 2025/26:241 follows exactly this playbook — use RR authority to legitimise a fiscal critique that might not otherwise be credible coming from an opposition party alone.
-
-**Prediction from parallel**: Government will issue a formal svar (response) to RR; FiU will hear from RR experts; government may make minor reporting adjustments while rejecting C's substantive motion.
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/implementation-feasibility.md -->
@@ -1216,6 +1163,59 @@ For HD024105 (new environmental review agency), Statskontoret's standard agency 
 | Strategic investments (high cost, high feasibility) | HD024100-101 (if majority) | Require full budget cycle |
 | Long-term projects (high cost, complex) | HD024105, HD024119 | 3+ year horizon |
 | Blocked (treaty/constitutional constraints) | HD024120, HD024114, HD024115 | Not implementable without treaty revision |
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/media-framing-analysis.md -->
+
+### Predicted Press Frames
+
+#### Frame 1: "NATO-splittringen i oppositionen" (NATO Split in Opposition)
+
+**Expected outlets**: Aftonbladet, Expressen, SVT Nyheter
+**Trigger**: HD024120 (V rejects NATO Forward Presence Finland)
+**Frame construction**: V isolated on NATO; S, C, MP distance themselves; SD and M label V as security risk for any future government
+**Likely headline**: "Vänsterpartiet röstar nej till Nato-insats i Finland — enda partiet som motsätter sig"
+**Electoral amplification potential**: HIGH — this story has longevity beyond the news cycle because it creates a 2026 campaign attack point
+
+#### Frame 2: "Oppositionen presenterar ekonomiska alternativ" (Opposition Economic Alternatives)
+
+**Expected outlets**: Dagens Nyheter, SvD, Ekonomiekot (SR)
+**Trigger**: HD024100 (S), HD024108 (V), HD024110 (C), HD024118 (MP) — Spring Budget alternatives
+**Frame construction**: Opposition fragmented on economics; four different parties, four different approaches, no common front
+**Likely headline**: "Fyra partier, fyra budgetar — oppositionen saknar gemensamt alternativ"
+**Electoral amplification potential**: MEDIUM — important but expected political routine
+
+#### Frame 3: "Strängare straff ifrågasätts" (Tougher Sentencing Questioned)
+
+**Expected outlets**: SVT, SR Ekot, Dagens Nyheter
+**Trigger**: C (HD024111), MP (HD024114), V (HD024119, HD024121)
+**Frame construction**: Opposition parties raise concern about constitutional rights and implementation capacity in gang-crime legislation
+**Likely headline**: "Centerpartiet vill ha konsekvensanalys innan omröstning om gänglag"
+**Electoral amplification potential**: MEDIUM — C's procedurally measured position may be picked up as "responsible centre" narrative
+
+#### Frame 4: "Vapenleveranser — partier vill både mer och mindre" (Weapons Deliveries — Parties Want Both More and Less)
+
+**Expected outlets**: Aftonbladet, TT, SVT
+**Trigger**: HD024102/HD024115 (V/MP restrictive) vs. HD024106 (SD expansive)
+**Frame construction**: Swedish political spectrum spans full range on arms exports — from embargo to expansion
+**Likely headline**: "V vill stoppa vapenexport, SD vill utöka den — oppositionen oenig"
+**Electoral amplification potential**: LOW-MEDIUM — nuanced story, less amenable to simplification
+
+### Party Press Strategies
+
+| Party | Likely Press Angle | Risk |
+|-------|-------------------|------|
+| S | "Vi tar ansvar för ekonomin" — economic credibility | Low |
+| V | "Vi är konsekventa" — NATO opposition as principled stance | High — easily framed as irresponsible |
+| C | "Rättsstatsprincipen och skatteansvar" — procedural rigour | Low — positive framing available |
+| MP | "Fred och natur" — arms embargo + environment | Low among base; irrelevant to swing voters |
+| SD | "Stärk Sverige" — pro-export nationalist frame | Low for SD base |
+
+### International Media Interest
+
+**NATO angle** (HD024120): NATO-affiliated media (Atlantic Council, Defense News, Politico Europe) may pick up V's motion as a data point in stories about European defence commitment fragmentation. Swedish government should be prepared with a clear dismissal statement.
+
+**Arms exports** (HD024102, HD024115): Reuters and Financial Times track Swedish arms export policy given SAAB/BAE systems' international profile. V and MP motions may generate brief international coverage.
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/devils-advocate.md -->
@@ -1536,13 +1536,6 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/threat-analysis.md)
 - [`documents/HD024100-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/documents/HD024100-analysis.md)
 - [`documents/HD024101-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/documents/HD024101-analysis.md)
 - [`documents/HD024102-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/documents/HD024102-analysis.md)
@@ -1567,12 +1560,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`documents/HD024121-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/documents/HD024121-analysis.md)
 - [`documents/HD024122-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/documents/HD024122-analysis.md)
 - [`documents/HD024123-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/documents/HD024123-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/motions/cross-reference-map.md)

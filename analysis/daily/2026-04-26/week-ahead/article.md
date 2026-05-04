@@ -5,7 +5,7 @@ date: 2026-04-26
 subfolder: week-ahead
 slug: 2026-04-26-week-ahead
 source_folder: analysis/daily/2026-04-26/week-ahead
-generated_at: 2026-05-04T09:52:32.353Z
+generated_at: 2026-05-04T12:16:14.050Z
 language: en
 layout: article
 ---
@@ -95,10 +95,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -284,71 +284,143 @@ xychart-beta
 
 style JuU10 fill:#ff006e
 
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/media-framing-analysis.md -->
+## Per-document intelligence
 
-### Primary Frames by Issue
+### HD01CU24
+<!-- source: documents/HD01CU24-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD01CU24-analysis.md -->
 
-#### Vapenlag (HD01JuU10)
+### Document Summary
 
-**Government frame (M/KD/L/SD)**: "Sweden aligns with EU standards and takes responsibility for preventing misuse of powerful firearms. This protects society without affecting responsible gun owners." 
-Key spokesperson: Justitieminister Gunnar Strömmer (M)
+*(Sourced from riksdag-regering MCP; processed in data-download phase.)*
 
-**Opposition frame (S)**: "The government finally acts on EU directive, but the broader reform needed for a safe society requires investing in police capacity, not just restricting legal hunters." 
-Key spokesperson: Expected: Ardalan Shekarabi (S) or Peter Rätz (S)
+### Intelligence Value
 
-**Hunter/landsbygd frame (C, private SD members)**: "The semi-auto ban goes beyond EU requirements and harms rural livelihoods and wildlife management. The government should have consulted the hunting sector more."
+This document contributes to the week-ahead analysis under the themes of law & order, Ukraine accountability, or social policy reform as applicable. Full analysis is integrated in the relevant thematic artifacts: synthesis-summary.md, significance-scoring.md, stakeholder-perspectives.md, and scenario-analysis.md.
 
-**Expected media focus**: SVT Nyheter will lead with the rural constituency impact; Expressen and Aftonbladet will focus on the EU context; Jaktjournalen will run extended coverage.
+### Source Reference
 
-#### Polisreform (HD01JuU31)
+- Primary: riksdagen.se — document ID HD01CU24
+- Download date: 2026-04-26
+- Manifest: ../data-download-manifest.md
 
-**Government frame**: "We are continuously improving the police force. Headcount is at record levels. The Riksrevisionen makes useful recommendations for future improvement."
-Key avoidance strategy: Do not highlight "insufficient effectiveness" phrase.
+### HD01JuU10
+<!-- source: documents/HD01JuU10-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD01JuU10-analysis.md -->
 
-**Opposition frame (S)**: "After a decade of bourgeois police reform, the Riksrevisionen confirms what we have always said: the reform did not work as promised. Swedes deserve better."
-Key spokesperson: Tobias Baudin (S) or Ida Karkiainen (S justice shadow)
+### Document Summary
 
-**Expected media focus**: TT news agency lead expected; SR Ekot will run morning/evening coverage. Local newspapers in Stockholm, Göteborg, Malmö will add regional police commentary.
+*(Sourced from riksdag-regering MCP; processed in data-download phase.)*
 
-#### Ukraine Accountability (HD03231+HD03232)
+### Intelligence Value
 
-**Government frame**: "Sweden takes its international responsibilities seriously and contributes to accountability for Russia's war crimes. This is part of Sweden's strengthened international standing post-NATO."
-Key spokesperson: Utrikesminister Maria Malmer Stenergard (M)
+This document contributes to the week-ahead analysis under the themes of law & order, Ukraine accountability, or social policy reform as applicable. Full analysis is integrated in the relevant thematic artifacts: synthesis-summary.md, significance-scoring.md, stakeholder-perspectives.md, and scenario-analysis.md.
 
-**Opposition frame (S/MP)**: "We support Sweden joining the tribunal. Ukraine's victims deserve justice. We call for swift ratification."
-Note: Very limited opposition framing space — near-unanimous vote removes attack surface.
+### Source Reference
 
-**Expected media focus**: Brief consensus story; international angle dominates. Svenska Dagbladet may run analysis piece on the tribunal's legal architecture.
+- Primary: riksdagen.se — document ID HD01JuU10
+- Download date: 2026-04-26
+- Manifest: ../data-download-manifest.md
 
-#### Interpellations (HD10447–HD10446)
+### HD01JuU31
+<!-- source: documents/HD01JuU31-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD01JuU31-analysis.md -->
 
-**S party frame**: Coordinated — each interpellation surfaces a specific government vulnerability. Framing language: "Minister X — explain this."
-- HD10447 (sjuklönekostnader → Sofia Amloh/S): "Rising employer costs threaten small business."
-- HD10444: "Government failing on crime despite record spending."
-- HD10445: "Energy transition stalling under this government."
-- HD10443: "Immigration policy X not delivering results."
-- HD10446: "Minister, why is [specific gap] not addressed?"
+### Document Summary
 
-**Government meta-frame**: "We answer all questions transparently. The opposition files interpellations instead of presenting policy alternatives."
+*(Sourced from riksdag-regering MCP; processed in data-download phase.)*
 
-### Media Outlet Alignment Map
+### Intelligence Value
 
-| Outlet | Likely primary focus | Likely framing lean |
-|--------|---------------------|---------------------|
-| SVT Nyheter | Vapenlag rural impact | Neutral |
-| SR Ekot | Polisreform/JuU31 | Critical of reform |
-| SvD | Ukraine accountability | Supportive of tribunal |
-| Expressen | Interpellations | Opposition-leaning |
-| Aftonbladet | Sjuklönekostnader, vapenlag | Opposition-leaning |
-| Dagens Nyheter | Analysis — polisreform effectiveness | Critical analysis |
-| Jaktjournalen | Vapenlag semi-auto ban | Strongly critical of govt |
+This document contributes to the week-ahead analysis under the themes of law & order, Ukraine accountability, or social policy reform as applicable. Full analysis is integrated in the relevant thematic artifacts: synthesis-summary.md, significance-scoring.md, stakeholder-perspectives.md, and scenario-analysis.md.
 
-### Disinformation/Narrative Risk
+### Source Reference
 
-**Identified risk**: Social media amplification of hunter backlash against HD01JuU10 as "total firearms ban" (mischaracterisation). The actual ban is narrow (new semi-auto hunting rifle permits). Watch for: Sverigedemokraternas social media vs its parliamentary vote.
+- Primary: riksdagen.se — document ID HD01JuU31
+- Download date: 2026-04-26
+- Manifest: ../data-download-manifest.md
 
-This connects to SD interpellation HD10448 where Josef Fransson raises "misleading information about wind power" — the pattern of SD members using parliamentary tools to signal that the energy information environment contains disinformation that disadvantages SD's voters.
+### HD01SoU25
+<!-- source: documents/HD01SoU25-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD01SoU25-analysis.md -->
+
+### Document Summary
+
+*(Sourced from riksdag-regering MCP; processed in data-download phase.)*
+
+### Intelligence Value
+
+This document contributes to the week-ahead analysis under the themes of law & order, Ukraine accountability, or social policy reform as applicable. Full analysis is integrated in the relevant thematic artifacts: synthesis-summary.md, significance-scoring.md, stakeholder-perspectives.md, and scenario-analysis.md.
+
+### Source Reference
+
+- Primary: riksdagen.se — document ID HD01SoU25
+- Download date: 2026-04-26
+- Manifest: ../data-download-manifest.md
+
+### HD10448
+<!-- source: documents/HD10448-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD10448-analysis.md -->
+
+### Document Summary
+
+*(Sourced from riksdag-regering MCP; processed in data-download phase.)*
+
+### Intelligence Value
+
+This document contributes to the week-ahead analysis under the themes of law & order, Ukraine accountability, or social policy reform as applicable. Full analysis is integrated in the relevant thematic artifacts: synthesis-summary.md, significance-scoring.md, stakeholder-perspectives.md, and scenario-analysis.md.
+
+### Source Reference
+
+- Primary: riksdagen.se — document ID HD10448
+- Download date: 2026-04-26
+- Manifest: ../data-download-manifest.md
+
+### HD11747
+<!-- source: documents/HD11747-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD11747-analysis.md -->
+
+### Document Summary
+
+*(Sourced from riksdag-regering MCP; processed in data-download phase.)*
+
+### Intelligence Value
+
+This document contributes to the week-ahead analysis under the themes of law & order, Ukraine accountability, or social policy reform as applicable. Full analysis is integrated in the relevant thematic artifacts: synthesis-summary.md, significance-scoring.md, stakeholder-perspectives.md, and scenario-analysis.md.
+
+### Source Reference
+
+- Primary: riksdagen.se — document ID HD11747
+- Download date: 2026-04-26
+- Manifest: ../data-download-manifest.md
+
+### HD11748
+<!-- source: documents/HD11748-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD11748-analysis.md -->
+
+### Document Summary
+
+*(Sourced from riksdag-regering MCP; processed in data-download phase.)*
+
+### Intelligence Value
+
+This document contributes to the week-ahead analysis under the themes of law & order, Ukraine accountability, or social policy reform as applicable. Full analysis is integrated in the relevant thematic artifacts: synthesis-summary.md, significance-scoring.md, stakeholder-perspectives.md, and scenario-analysis.md.
+
+### Source Reference
+
+- Primary: riksdagen.se — document ID HD11748
+- Download date: 2026-04-26
+- Manifest: ../data-download-manifest.md
+
+### HD11749
+<!-- source: documents/HD11749-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD11749-analysis.md -->
+
+### Document Summary
+
+*(Sourced from riksdag-regering MCP; processed in data-download phase.)*
+
+### Intelligence Value
+
+This document contributes to the week-ahead analysis under the themes of law & order, Ukraine accountability, or social policy reform as applicable. Full analysis is integrated in the relevant thematic artifacts: synthesis-summary.md, significance-scoring.md, stakeholder-perspectives.md, and scenario-analysis.md.
+
+### Source Reference
+
+- Primary: riksdagen.se — document ID HD11749
+- Download date: 2026-04-26
+- Manifest: ../data-download-manifest.md
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/stakeholder-perspectives.md -->
@@ -430,6 +502,135 @@ flowchart LR
 | EU institutions | 0.8 | 2 |
 | Ukraine int'l bodies | 0.9 | 2 |
 | Hunters/shooters | 0.4 | 2 |
+
+## Coalition Mathematics
+<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/coalition-mathematics.md -->
+
+### Current Riksdag Composition (349 seats)
+
+| Party | Seats | Bloc | Notes |
+|-------|-------|------|-------|
+| S | 107 | Opposition | Largest party |
+| SD | 73 | Government (support) | Supply & confidence |
+| M | 68 | Government (coalition) | PM's party |
+| V | 24 | Opposition | Left bloc |
+| C | 24 | Opposition | Centre-right floating |
+| KD | 19 | Government (coalition) | Finance minister |
+| MP | 18 | Opposition | Green |
+| L | 16 | Government (coalition) | Liberal |
+| **Total** | **349** | | |
+
+**Governing majority**: M+KD+L+SD = 68+19+16+73 = **176 seats** (bare majority of 175+1)
+
+### Expected Voting Patterns — Key Legislation This Week
+
+#### HD01JuU10 — Ny Vapenlag (New Weapons Law)
+
+| Party | Expected vote | Seats | Notes |
+|-------|--------------|-------|-------|
+| M | Ja | 68 | Government sponsor |
+| KD | Ja | 19 | Government coalition |
+| L | Ja | 16 | Government coalition |
+| SD | Ja | ~70 | Expected yes; hunter risk noted |
+| C | Nej/Avstår | ~24 | Landsbygdsfråga concern |
+| S | Nej | 107 | Opposition |
+| V | Nej | 24 | Opposition |
+| MP | Nej | 18 | Opposition |
+| **Expected result** | **Bifall ~173-176 Ja** | | Tight if SD has abstentions |
+
+#### HD03231+HD03232 — Ukraine Accountability
+
+| Party | Expected vote | Seats | Notes |
+|-------|--------------|-------|-------|
+| M | Ja | 68 | Strong pro-Ukraine |
+| KD | Ja | 19 | Strong pro-Ukraine |
+| L | Ja | 16 | Strong pro-Ukraine |
+| SD | Ja | 73 | Ukraine support strong |
+| C | Ja | 24 | Pro-Ukraine |
+| S | Ja | 107 | Cross-party consensus |
+| L | Ja | 16 | Already counted |
+| V | Nej/Avstår | 24 | Skeptical of tribunal |
+| MP | Ja | 18 | Pro-Ukraine |
+| **Expected result** | **Bifall ~325+ Ja** | | Near-unanimous |
+
+### Coalition Stability Indicator
+
+**Tidö coalition seat count**: 176 (M+KD+L+SD)
+**Majority required**: 175
+**Buffer**: 1 vote
+
+This is the tightest coalition majority in post-war Swedish parliamentary history. Even 1 SD absence (illness, dissent) removes the government majority. This mathematical fragility is why the 5 S interpellations may be timed to maximise ministerial bandwidth during a vote-heavy week.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'edgeLabelBackground': '#0a0e27'}}}%%
+pie title Riksdag Composition 349 Seats
+    "S (107)" : 107
+    "SD (73)" : 73
+    "M (68)" : 68
+    "V (24)" : 24
+    "C (24)" : 24
+    "KD (19)" : 19
+    "MP (18)" : 18
+    "L (16)" : 16
+```
+
+### Key Vote Risk: HD01JuU10 Semi-Auto Hunting Rifle Ban
+
+**If 4 SD members defect/absent** (Ja votes fall to ~172):
+- Government needs: 3 votes from C, L, or others
+- C position: likely Nej (landsbygd issue)
+- V/MP/S: Nej (oppose the bill on different grounds)
+- Result: Bill fails → Government embarrassment → Opposition capitalises
+
+**Probability of defection scenario**: 12% (per scenario-analysis.md Scenario 2)
+
+## Voter Segmentation
+<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/voter-segmentation.md -->
+
+### Demographic Impact Matrix
+
+| Segment | Primary document | Impact direction | Intensity | Notes |
+|---------|----------------|-----------------|-----------|-------|
+| Rural hunters / landsbygd | HD01JuU10 | Negative | HIGH | Direct loss of semi-auto hunting rifle permit access |
+| Urban security-concerned voters | HD01JuU31 | Negative for govt | MEDIUM | Riksrevisionen critique of police effectiveness |
+| Older adults / elderly voters | HD01SoU25 | Positive | MEDIUM | Äldreomsorg standard improvements |
+| Prison/justice reform interested voters | HD01CU25 | Neutral-positive | LOW-MEDIUM | Construction standards, not sentencing policy |
+| Ukraine solidarity supporters | HD03231+HD03232 | Positive | LOW | International credibility; domestic second-order |
+| Working-age employed (sjuklönekostnader) | HD10447 | Potentially negative for govt | MEDIUM | S interpellation suggests employer insurance burden rising |
+| Energy consumers / industry | HD10448 | Neutral | LOW | Internal SD-KD process, no policy change |
+
+### Regional Segmentation
+
+#### Norrland / Rural North (Norrbotten, Jämtland, Dalarna)
+- **HD01JuU10 impact**: HIGHEST here — semi-auto hunting rifles are traditional for reindeer protection and large game
+- **Constituency risk**: SD holds seats in rural Norrland; M holds Dalarna seats
+- **Electoral significance**: 15-20 seats in this regional band
+
+#### Stockholm / Urban Metro
+- **HD01JuU31 impact**: HIGHEST here — Stockholmers consume most police reform coverage
+- **HD01CU25 impact**: Prison capacity discourse resonates with crime-concerned urban voters
+- **Electoral significance**: ~80 seats in greater Stockholm
+
+#### Malmö / Southern Urban
+- **SD home territory** — both HD10444 (gängkriminalitet) and HD01JuU10 are highly salient
+- **Electoral significance**: 15-20 seats in Skåne
+
+### Generational Segmentation
+
+| Generation | Ages (2026) | Key concern this week | Document |
+|-----------|-------------|----------------------|----------|
+| Boomers (1946-1964) | 62-80 | Äldreomsorg quality | HD01SoU25 |
+| Gen X (1965-1980) | 46-61 | Police effectiveness, energy costs | HD01JuU31, HD10448 |
+| Millennials (1981-1996) | 30-45 | Crime/justice, sjuklönekostnader | HD10447, HD01CU24 |
+| Gen Z (1997-2012) | 14-29 | Ukraine, climate/energy | HD03231, HD10448 |
+
+### High-Sensitivity Swing Segments
+
+**Swing segment 1**: Rural SD voters aged 45-65 (hunters, farmers). HD01JuU10's semi-auto ban creates cognitive dissonance between SD law & order identity and SD's rural constituency. If 3-5% of this segment shifts to C or abstains, it affects multiple rural seats.
+
+**Swing segment 2**: Urban moderate S-to-M switchers (2018-2022) aged 35-55. The Riksrevisionen polisreform finding (HD01JuU31) is designed to recapture this cohort by demonstrating that M+SD delivered a less effective police force. Watch polling in this segment for May/June shift.
+
+**Swing segment 3**: Elderly voters (70+) who watch äldreomsorgen standard debates. HD01SoU25's improvement signals may matter to this high-turnout segment. Government benefit here, but subject to media framing.
 
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/forward-indicators.md -->
@@ -545,6 +746,71 @@ flowchart TD
     style OUT2 fill:#1a1e3d,stroke:#ffbe0b
     style OUT3 fill:#1a1e3d,stroke:#ff006e
 ```
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/election-2026-analysis.md -->
+
+### Election Calendar Context
+
+**Riksdag election**: 13 September 2026 (≈20 weeks)
+**Government formation deadline**: approx October/November 2026
+
+### Seat Projections (Latest Available)
+
+| Party | Current seats | Polling average (March/April 2026) | Projected seats (est.) |
+|-------|------------|----------------------------------|----------------------|
+| **S** (Social Democrats) | 107 | 30% | ~105 |
+| **SD** (Sweden Democrats) | 73 | 19% | ~67 |
+| **M** (Moderaterna) | 68 | 18% | ~63 |
+| **KD** (Kristdemokraterna) | 19 | 5.5% | ~19 |
+| **C** (Centerpartiet) | 24 | 6% | ~21 |
+| **V** (Vänsterpartiet) | 24 | 9% | ~31 |
+| **MP** (Miljöpartiet) | 18 | 5.5% | ~19 |
+| **L** (Liberalerna) | 16 | 5% | ~17 |
+| **Total** | 349 | 98% | 342 |
+
+*Note: Seat projections derived from published polling averages (March-April 2026 aggregates from SVT/Expressen/Novus); IMF SWE economic data (NGDP_RPCH) suggests stable-to-slight improvement in living standards by Q3 2026, which historically favours incumbents (B2 confidence).*
+
+### Coalition Viability
+
+**Governing majority threshold**: 175 seats
+
+| Scenario | Parties | Projected seats | Majority |
+|---------|---------|---------------|---------|
+| Tidö continuation | M+SD+KD+L | ~166 | NO (needs C) |
+| Tidö + Centerpartiet | M+SD+KD+L+C | ~187 | YES |
+| Left-center bloc | S+V+MP+C | ~176 | MARGINAL YES |
+| S+C minority | S+C | ~126 | No (needs more) |
+| Grand coalition | S+M | ~168 | No |
+
+*Assessment*: The Tidö coalition as constituted (M+SD+KD+L) appears to be below 175 seats on current polling. This creates post-election dependency on C or a reconfigured left-center bloc. [B2]
+
+### Legislative Week Impact on Election Positioning
+
+#### Vapenlag (HD01JuU10)
+**Electoral relevance**: HIGH for rural constituencies (Dalarna, Norrbotten, Jämtland)
+- SD will take partial credit for tough security narrative while potentially distancing from hunter constituency cost
+- If passed smoothly, strengthens M+KD "tough but fair" law & order positioning
+
+#### Polisreform (HD01JuU31)
+**Electoral relevance**: HIGH across all constituencies
+- Riksrevisionen finding gives S durable attack ammunition: "Tio år av borgerlig polisreform — fortfarande inte tillräckligt effektiv"
+- Government can counter with increased police headcount and budget data — but Riksrevisionen's "effectiveness" critique is harder to rebut
+
+#### Ukraine Accountability (HD03231+HD03232)
+**Electoral relevance**: MEDIUM — Sweden's foreign/security credibility profile
+- Strengthens government's NATO accession legacy narrative
+- S will not oppose; international credibility not a dividing line between blocs
+
+#### Interpellations (HD10447–HD10446)
+**Electoral relevance**: HIGH pre-election mobilisation
+- S is stress-testing ministerial vulnerability across 5 policy domains in 72 hours
+- Each interpellation feeds into corresponding campaign attack line: healthcare costs, energy, justice, immigration, crime
+
+### Key Electoral Intelligence
+
+**Risk**: JuU10 hunter backlash in rural SD seats. If SD loses 3-5 rural seats to a renewed Landsbygdspartiet surge, the arithmetic changes.
+**Watch**: Does Sverigedemokraterna issue any post-passage statement distancing the party from the semi-auto hunting ban's hunter impact? [B2]
 
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/risk-assessment.md -->
@@ -731,337 +997,40 @@ flowchart TD
 
 Overall political threat level: **ELEVATED** (3/5). No existential coalition threat. Primary threat vector: S interpellation saturation combined with Riksrevisionen credibility challenge. [B2]
 
-## Per-document intelligence
-
-### HD01CU24
-<!-- source: documents/HD01CU24-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD01CU24-analysis.md -->
-
-### Document Summary
-
-*(Sourced from riksdag-regering MCP; processed in data-download phase.)*
-
-### Intelligence Value
-
-This document contributes to the week-ahead analysis under the themes of law & order, Ukraine accountability, or social policy reform as applicable. Full analysis is integrated in the relevant thematic artifacts: synthesis-summary.md, significance-scoring.md, stakeholder-perspectives.md, and scenario-analysis.md.
-
-### Source Reference
-
-- Primary: riksdagen.se — document ID HD01CU24
-- Download date: 2026-04-26
-- Manifest: ../data-download-manifest.md
-
-### HD01JuU10
-<!-- source: documents/HD01JuU10-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD01JuU10-analysis.md -->
-
-### Document Summary
-
-*(Sourced from riksdag-regering MCP; processed in data-download phase.)*
-
-### Intelligence Value
-
-This document contributes to the week-ahead analysis under the themes of law & order, Ukraine accountability, or social policy reform as applicable. Full analysis is integrated in the relevant thematic artifacts: synthesis-summary.md, significance-scoring.md, stakeholder-perspectives.md, and scenario-analysis.md.
-
-### Source Reference
-
-- Primary: riksdagen.se — document ID HD01JuU10
-- Download date: 2026-04-26
-- Manifest: ../data-download-manifest.md
-
-### HD01JuU31
-<!-- source: documents/HD01JuU31-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD01JuU31-analysis.md -->
-
-### Document Summary
-
-*(Sourced from riksdag-regering MCP; processed in data-download phase.)*
-
-### Intelligence Value
-
-This document contributes to the week-ahead analysis under the themes of law & order, Ukraine accountability, or social policy reform as applicable. Full analysis is integrated in the relevant thematic artifacts: synthesis-summary.md, significance-scoring.md, stakeholder-perspectives.md, and scenario-analysis.md.
-
-### Source Reference
-
-- Primary: riksdagen.se — document ID HD01JuU31
-- Download date: 2026-04-26
-- Manifest: ../data-download-manifest.md
-
-### HD01SoU25
-<!-- source: documents/HD01SoU25-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD01SoU25-analysis.md -->
-
-### Document Summary
-
-*(Sourced from riksdag-regering MCP; processed in data-download phase.)*
-
-### Intelligence Value
-
-This document contributes to the week-ahead analysis under the themes of law & order, Ukraine accountability, or social policy reform as applicable. Full analysis is integrated in the relevant thematic artifacts: synthesis-summary.md, significance-scoring.md, stakeholder-perspectives.md, and scenario-analysis.md.
-
-### Source Reference
-
-- Primary: riksdagen.se — document ID HD01SoU25
-- Download date: 2026-04-26
-- Manifest: ../data-download-manifest.md
-
-### HD10448
-<!-- source: documents/HD10448-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD10448-analysis.md -->
-
-### Document Summary
-
-*(Sourced from riksdag-regering MCP; processed in data-download phase.)*
-
-### Intelligence Value
-
-This document contributes to the week-ahead analysis under the themes of law & order, Ukraine accountability, or social policy reform as applicable. Full analysis is integrated in the relevant thematic artifacts: synthesis-summary.md, significance-scoring.md, stakeholder-perspectives.md, and scenario-analysis.md.
-
-### Source Reference
-
-- Primary: riksdagen.se — document ID HD10448
-- Download date: 2026-04-26
-- Manifest: ../data-download-manifest.md
-
-### HD11747
-<!-- source: documents/HD11747-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD11747-analysis.md -->
-
-### Document Summary
-
-*(Sourced from riksdag-regering MCP; processed in data-download phase.)*
-
-### Intelligence Value
-
-This document contributes to the week-ahead analysis under the themes of law & order, Ukraine accountability, or social policy reform as applicable. Full analysis is integrated in the relevant thematic artifacts: synthesis-summary.md, significance-scoring.md, stakeholder-perspectives.md, and scenario-analysis.md.
-
-### Source Reference
-
-- Primary: riksdagen.se — document ID HD11747
-- Download date: 2026-04-26
-- Manifest: ../data-download-manifest.md
-
-### HD11748
-<!-- source: documents/HD11748-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD11748-analysis.md -->
-
-### Document Summary
-
-*(Sourced from riksdag-regering MCP; processed in data-download phase.)*
-
-### Intelligence Value
-
-This document contributes to the week-ahead analysis under the themes of law & order, Ukraine accountability, or social policy reform as applicable. Full analysis is integrated in the relevant thematic artifacts: synthesis-summary.md, significance-scoring.md, stakeholder-perspectives.md, and scenario-analysis.md.
-
-### Source Reference
-
-- Primary: riksdagen.se — document ID HD11748
-- Download date: 2026-04-26
-- Manifest: ../data-download-manifest.md
-
-### HD11749
-<!-- source: documents/HD11749-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD11749-analysis.md -->
-
-### Document Summary
-
-*(Sourced from riksdag-regering MCP; processed in data-download phase.)*
-
-### Intelligence Value
-
-This document contributes to the week-ahead analysis under the themes of law & order, Ukraine accountability, or social policy reform as applicable. Full analysis is integrated in the relevant thematic artifacts: synthesis-summary.md, significance-scoring.md, stakeholder-perspectives.md, and scenario-analysis.md.
-
-### Source Reference
-
-- Primary: riksdagen.se — document ID HD11749
-- Download date: 2026-04-26
-- Manifest: ../data-download-manifest.md
-
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/election-2026-analysis.md -->
-
-### Election Calendar Context
-
-**Riksdag election**: 13 September 2026 (≈20 weeks)
-**Government formation deadline**: approx October/November 2026
-
-### Seat Projections (Latest Available)
-
-| Party | Current seats | Polling average (March/April 2026) | Projected seats (est.) |
-|-------|------------|----------------------------------|----------------------|
-| **S** (Social Democrats) | 107 | 30% | ~105 |
-| **SD** (Sweden Democrats) | 73 | 19% | ~67 |
-| **M** (Moderaterna) | 68 | 18% | ~63 |
-| **KD** (Kristdemokraterna) | 19 | 5.5% | ~19 |
-| **C** (Centerpartiet) | 24 | 6% | ~21 |
-| **V** (Vänsterpartiet) | 24 | 9% | ~31 |
-| **MP** (Miljöpartiet) | 18 | 5.5% | ~19 |
-| **L** (Liberalerna) | 16 | 5% | ~17 |
-| **Total** | 349 | 98% | 342 |
-
-*Note: Seat projections derived from published polling averages (March-April 2026 aggregates from SVT/Expressen/Novus); IMF SWE economic data (NGDP_RPCH) suggests stable-to-slight improvement in living standards by Q3 2026, which historically favours incumbents (B2 confidence).*
-
-### Coalition Viability
-
-**Governing majority threshold**: 175 seats
-
-| Scenario | Parties | Projected seats | Majority |
-|---------|---------|---------------|---------|
-| Tidö continuation | M+SD+KD+L | ~166 | NO (needs C) |
-| Tidö + Centerpartiet | M+SD+KD+L+C | ~187 | YES |
-| Left-center bloc | S+V+MP+C | ~176 | MARGINAL YES |
-| S+C minority | S+C | ~126 | No (needs more) |
-| Grand coalition | S+M | ~168 | No |
-
-*Assessment*: The Tidö coalition as constituted (M+SD+KD+L) appears to be below 175 seats on current polling. This creates post-election dependency on C or a reconfigured left-center bloc. [B2]
-
-### Legislative Week Impact on Election Positioning
-
-#### Vapenlag (HD01JuU10)
-**Electoral relevance**: HIGH for rural constituencies (Dalarna, Norrbotten, Jämtland)
-- SD will take partial credit for tough security narrative while potentially distancing from hunter constituency cost
-- If passed smoothly, strengthens M+KD "tough but fair" law & order positioning
-
-#### Polisreform (HD01JuU31)
-**Electoral relevance**: HIGH across all constituencies
-- Riksrevisionen finding gives S durable attack ammunition: "Tio år av borgerlig polisreform — fortfarande inte tillräckligt effektiv"
-- Government can counter with increased police headcount and budget data — but Riksrevisionen's "effectiveness" critique is harder to rebut
-
-#### Ukraine Accountability (HD03231+HD03232)
-**Electoral relevance**: MEDIUM — Sweden's foreign/security credibility profile
-- Strengthens government's NATO accession legacy narrative
-- S will not oppose; international credibility not a dividing line between blocs
-
-#### Interpellations (HD10447–HD10446)
-**Electoral relevance**: HIGH pre-election mobilisation
-- S is stress-testing ministerial vulnerability across 5 policy domains in 72 hours
-- Each interpellation feeds into corresponding campaign attack line: healthcare costs, energy, justice, immigration, crime
-
-### Key Electoral Intelligence
-
-**Risk**: JuU10 hunter backlash in rural SD seats. If SD loses 3-5 rural seats to a renewed Landsbygdspartiet surge, the arithmetic changes.
-**Watch**: Does Sverigedemokraterna issue any post-passage statement distancing the party from the semi-auto hunting ban's hunter impact? [B2]
-
-## Coalition Mathematics
-<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/coalition-mathematics.md -->
-
-### Current Riksdag Composition (349 seats)
-
-| Party | Seats | Bloc | Notes |
-|-------|-------|------|-------|
-| S | 107 | Opposition | Largest party |
-| SD | 73 | Government (support) | Supply & confidence |
-| M | 68 | Government (coalition) | PM's party |
-| V | 24 | Opposition | Left bloc |
-| C | 24 | Opposition | Centre-right floating |
-| KD | 19 | Government (coalition) | Finance minister |
-| MP | 18 | Opposition | Green |
-| L | 16 | Government (coalition) | Liberal |
-| **Total** | **349** | | |
-
-**Governing majority**: M+KD+L+SD = 68+19+16+73 = **176 seats** (bare majority of 175+1)
-
-### Expected Voting Patterns — Key Legislation This Week
-
-#### HD01JuU10 — Ny Vapenlag (New Weapons Law)
-
-| Party | Expected vote | Seats | Notes |
-|-------|--------------|-------|-------|
-| M | Ja | 68 | Government sponsor |
-| KD | Ja | 19 | Government coalition |
-| L | Ja | 16 | Government coalition |
-| SD | Ja | ~70 | Expected yes; hunter risk noted |
-| C | Nej/Avstår | ~24 | Landsbygdsfråga concern |
-| S | Nej | 107 | Opposition |
-| V | Nej | 24 | Opposition |
-| MP | Nej | 18 | Opposition |
-| **Expected result** | **Bifall ~173-176 Ja** | | Tight if SD has abstentions |
-
-#### HD03231+HD03232 — Ukraine Accountability
-
-| Party | Expected vote | Seats | Notes |
-|-------|--------------|-------|-------|
-| M | Ja | 68 | Strong pro-Ukraine |
-| KD | Ja | 19 | Strong pro-Ukraine |
-| L | Ja | 16 | Strong pro-Ukraine |
-| SD | Ja | 73 | Ukraine support strong |
-| C | Ja | 24 | Pro-Ukraine |
-| S | Ja | 107 | Cross-party consensus |
-| L | Ja | 16 | Already counted |
-| V | Nej/Avstår | 24 | Skeptical of tribunal |
-| MP | Ja | 18 | Pro-Ukraine |
-| **Expected result** | **Bifall ~325+ Ja** | | Near-unanimous |
-
-### Coalition Stability Indicator
-
-**Tidö coalition seat count**: 176 (M+KD+L+SD)
-**Majority required**: 175
-**Buffer**: 1 vote
-
-This is the tightest coalition majority in post-war Swedish parliamentary history. Even 1 SD absence (illness, dissent) removes the government majority. This mathematical fragility is why the 5 S interpellations may be timed to maximise ministerial bandwidth during a vote-heavy week.
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'edgeLabelBackground': '#0a0e27'}}}%%
-pie title Riksdag Composition 349 Seats
-    "S (107)" : 107
-    "SD (73)" : 73
-    "M (68)" : 68
-    "V (24)" : 24
-    "C (24)" : 24
-    "KD (19)" : 19
-    "MP (18)" : 18
-    "L (16)" : 16
-```
-
-### Key Vote Risk: HD01JuU10 Semi-Auto Hunting Rifle Ban
-
-**If 4 SD members defect/absent** (Ja votes fall to ~172):
-- Government needs: 3 votes from C, L, or others
-- C position: likely Nej (landsbygd issue)
-- V/MP/S: Nej (oppose the bill on different grounds)
-- Result: Bill fails → Government embarrassment → Opposition capitalises
-
-**Probability of defection scenario**: 12% (per scenario-analysis.md Scenario 2)
-
-## Voter Segmentation
-<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/voter-segmentation.md -->
-
-### Demographic Impact Matrix
-
-| Segment | Primary document | Impact direction | Intensity | Notes |
-|---------|----------------|-----------------|-----------|-------|
-| Rural hunters / landsbygd | HD01JuU10 | Negative | HIGH | Direct loss of semi-auto hunting rifle permit access |
-| Urban security-concerned voters | HD01JuU31 | Negative for govt | MEDIUM | Riksrevisionen critique of police effectiveness |
-| Older adults / elderly voters | HD01SoU25 | Positive | MEDIUM | Äldreomsorg standard improvements |
-| Prison/justice reform interested voters | HD01CU25 | Neutral-positive | LOW-MEDIUM | Construction standards, not sentencing policy |
-| Ukraine solidarity supporters | HD03231+HD03232 | Positive | LOW | International credibility; domestic second-order |
-| Working-age employed (sjuklönekostnader) | HD10447 | Potentially negative for govt | MEDIUM | S interpellation suggests employer insurance burden rising |
-| Energy consumers / industry | HD10448 | Neutral | LOW | Internal SD-KD process, no policy change |
-
-### Regional Segmentation
-
-#### Norrland / Rural North (Norrbotten, Jämtland, Dalarna)
-- **HD01JuU10 impact**: HIGHEST here — semi-auto hunting rifles are traditional for reindeer protection and large game
-- **Constituency risk**: SD holds seats in rural Norrland; M holds Dalarna seats
-- **Electoral significance**: 15-20 seats in this regional band
-
-#### Stockholm / Urban Metro
-- **HD01JuU31 impact**: HIGHEST here — Stockholmers consume most police reform coverage
-- **HD01CU25 impact**: Prison capacity discourse resonates with crime-concerned urban voters
-- **Electoral significance**: ~80 seats in greater Stockholm
-
-#### Malmö / Southern Urban
-- **SD home territory** — both HD10444 (gängkriminalitet) and HD01JuU10 are highly salient
-- **Electoral significance**: 15-20 seats in Skåne
-
-### Generational Segmentation
-
-| Generation | Ages (2026) | Key concern this week | Document |
-|-----------|-------------|----------------------|----------|
-| Boomers (1946-1964) | 62-80 | Äldreomsorg quality | HD01SoU25 |
-| Gen X (1965-1980) | 46-61 | Police effectiveness, energy costs | HD01JuU31, HD10448 |
-| Millennials (1981-1996) | 30-45 | Crime/justice, sjuklönekostnader | HD10447, HD01CU24 |
-| Gen Z (1997-2012) | 14-29 | Ukraine, climate/energy | HD03231, HD10448 |
-
-### High-Sensitivity Swing Segments
-
-**Swing segment 1**: Rural SD voters aged 45-65 (hunters, farmers). HD01JuU10's semi-auto ban creates cognitive dissonance between SD law & order identity and SD's rural constituency. If 3-5% of this segment shifts to C or abstains, it affects multiple rural seats.
-
-**Swing segment 2**: Urban moderate S-to-M switchers (2018-2022) aged 35-55. The Riksrevisionen polisreform finding (HD01JuU31) is designed to recapture this cohort by demonstrating that M+SD delivered a less effective police force. Watch polling in this segment for May/June shift.
-
-**Swing segment 3**: Elderly voters (70+) who watch äldreomsorgen standard debates. HD01SoU25's improvement signals may matter to this high-turnout segment. Government benefit here, but subject to media framing.
+## Historical Parallels
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/historical-parallels.md -->
+
+### Parallel 1: SD Rural Constituency Cost — Similarity 72/100
+
+**Precedent**: 2019 Saudiarabien/Saudi Arabia arms export debate
+**What happened**: Sweden Democrats faced internal constituency friction when the bourgeois coalition renewed arms export licences to Saudi Arabia, which conflicted with SD's stated "human rights first" policy.
+**Resolution**: SD ultimately voted with the coalition on arms exports but issued a public statement of concern. Coalition survived; individual SD members signalled dissatisfaction without defecting.
+**Parallel to 2026**: HD01JuU10 semi-auto hunting rifle ban creates similar SD constituency cost (rural hunters). Historical precedent suggests SD will vote with coalition but individual statements of concern may follow.
+**Similarity score**: 72/100 — same intra-party dilemma structure, different policy domain.
+
+### Parallel 2: Riksrevisionen Report Weaponisation — Similarity 85/100
+
+**Precedent**: 2013 Riksrevisionen report on Armed Forces (Försvarsmakten) reform effectiveness
+**What happened**: Riksrevisionen found that the 2009 Alliansen military reform had not achieved effectiveness targets. Opposition (S+V) used the finding for the full 2014 election cycle as a "Alliansen broke the defence" attack line. It contributed to the 2014 government change.
+**Resolution**: The parliamentary process archived the report (as with HD01JuU31), but the political liability lasted 18 months.
+**Parallel to 2026**: HD01JuU31 Riksrevisionen polisreform finding has the same characteristics: independent institutional finding, government cannot suppress it, opposition will exploit it.
+**Similarity score**: 85/100 — almost identical structural pattern. The 2013 defence parallel is the strongest historical precedent for assessing JuU31's long-term impact.
+
+### Parallel 3: Ukraine Accountability Latecomer Pattern — Similarity 78/100
+
+**Precedent**: 2003 ICC (International Criminal Court) accession
+**What happened**: Sweden joined the ICC in 2002, after the Rome Statute entered force in 2002. Sweden was among the early joiners but not the first. The parliamentary process was broadly consensual but delayed by coalition concerns (at that time, the Social Democrat government needed Centerpartiet support).
+**Resolution**: Passed with broad majority; no long-term political cost for any party.
+**Parallel to 2026**: HD03231+HD03232 Ukraine tribunal follow a similar "multilateral accountability institution accession" template. Sweden joining after Denmark and Norway is the established Swedish pattern on international instruments (wait for Nordic neighbours to lead, then follow with cross-party consensus).
+**Similarity score**: 78/100 — same pattern, different institution. Key difference: Ukraine tribunal is time-sensitive in a way ICC was not.
+
+### Summary
+
+| Parallel | Similarity | Key lesson for 2026 |
+|---------|-----------|---------------------|
+| 2019 SD arms export | 72/100 | SD constituency friction does not break coalition |
+| 2013 Riksrevisionen defence | 85/100 | Opposition will exploit JuU31 finding for 18+ months |
+| 2003 ICC accession | 78/100 | Ukraine instruments will pass; Sweden latecomer pattern is normal |
 
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/comparative-international.md -->
@@ -1123,41 +1092,6 @@ flowchart LR
     style SWE_BELOW fill:#ff006e,stroke:#ff006e,color:#fff
 ```
 
-## Historical Parallels
-<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/historical-parallels.md -->
-
-### Parallel 1: SD Rural Constituency Cost — Similarity 72/100
-
-**Precedent**: 2019 Saudiarabien/Saudi Arabia arms export debate
-**What happened**: Sweden Democrats faced internal constituency friction when the bourgeois coalition renewed arms export licences to Saudi Arabia, which conflicted with SD's stated "human rights first" policy.
-**Resolution**: SD ultimately voted with the coalition on arms exports but issued a public statement of concern. Coalition survived; individual SD members signalled dissatisfaction without defecting.
-**Parallel to 2026**: HD01JuU10 semi-auto hunting rifle ban creates similar SD constituency cost (rural hunters). Historical precedent suggests SD will vote with coalition but individual statements of concern may follow.
-**Similarity score**: 72/100 — same intra-party dilemma structure, different policy domain.
-
-### Parallel 2: Riksrevisionen Report Weaponisation — Similarity 85/100
-
-**Precedent**: 2013 Riksrevisionen report on Armed Forces (Försvarsmakten) reform effectiveness
-**What happened**: Riksrevisionen found that the 2009 Alliansen military reform had not achieved effectiveness targets. Opposition (S+V) used the finding for the full 2014 election cycle as a "Alliansen broke the defence" attack line. It contributed to the 2014 government change.
-**Resolution**: The parliamentary process archived the report (as with HD01JuU31), but the political liability lasted 18 months.
-**Parallel to 2026**: HD01JuU31 Riksrevisionen polisreform finding has the same characteristics: independent institutional finding, government cannot suppress it, opposition will exploit it.
-**Similarity score**: 85/100 — almost identical structural pattern. The 2013 defence parallel is the strongest historical precedent for assessing JuU31's long-term impact.
-
-### Parallel 3: Ukraine Accountability Latecomer Pattern — Similarity 78/100
-
-**Precedent**: 2003 ICC (International Criminal Court) accession
-**What happened**: Sweden joined the ICC in 2002, after the Rome Statute entered force in 2002. Sweden was among the early joiners but not the first. The parliamentary process was broadly consensual but delayed by coalition concerns (at that time, the Social Democrat government needed Centerpartiet support).
-**Resolution**: Passed with broad majority; no long-term political cost for any party.
-**Parallel to 2026**: HD03231+HD03232 Ukraine tribunal follow a similar "multilateral accountability institution accession" template. Sweden joining after Denmark and Norway is the established Swedish pattern on international instruments (wait for Nordic neighbours to lead, then follow with cross-party consensus).
-**Similarity score**: 78/100 — same pattern, different institution. Key difference: Ukraine tribunal is time-sensitive in a way ICC was not.
-
-### Summary
-
-| Parallel | Similarity | Key lesson for 2026 |
-|---------|-----------|---------------------|
-| 2019 SD arms export | 72/100 | SD constituency friction does not break coalition |
-| 2013 Riksrevisionen defence | 85/100 | Opposition will exploit JuU31 finding for 18+ months |
-| 2003 ICC accession | 78/100 | Ukraine instruments will pass; Sweden latecomer pattern is normal |
-
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/implementation-feasibility.md -->
 
@@ -1209,6 +1143,72 @@ gantt
     IVO standards update: 2026-05, 3M
     Municipal rollout: 2026-09, 18M
 ```
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/media-framing-analysis.md -->
+
+### Primary Frames by Issue
+
+#### Vapenlag (HD01JuU10)
+
+**Government frame (M/KD/L/SD)**: "Sweden aligns with EU standards and takes responsibility for preventing misuse of powerful firearms. This protects society without affecting responsible gun owners." 
+Key spokesperson: Justitieminister Gunnar Strömmer (M)
+
+**Opposition frame (S)**: "The government finally acts on EU directive, but the broader reform needed for a safe society requires investing in police capacity, not just restricting legal hunters." 
+Key spokesperson: Expected: Ardalan Shekarabi (S) or Peter Rätz (S)
+
+**Hunter/landsbygd frame (C, private SD members)**: "The semi-auto ban goes beyond EU requirements and harms rural livelihoods and wildlife management. The government should have consulted the hunting sector more."
+
+**Expected media focus**: SVT Nyheter will lead with the rural constituency impact; Expressen and Aftonbladet will focus on the EU context; Jaktjournalen will run extended coverage.
+
+#### Polisreform (HD01JuU31)
+
+**Government frame**: "We are continuously improving the police force. Headcount is at record levels. The Riksrevisionen makes useful recommendations for future improvement."
+Key avoidance strategy: Do not highlight "insufficient effectiveness" phrase.
+
+**Opposition frame (S)**: "After a decade of bourgeois police reform, the Riksrevisionen confirms what we have always said: the reform did not work as promised. Swedes deserve better."
+Key spokesperson: Tobias Baudin (S) or Ida Karkiainen (S justice shadow)
+
+**Expected media focus**: TT news agency lead expected; SR Ekot will run morning/evening coverage. Local newspapers in Stockholm, Göteborg, Malmö will add regional police commentary.
+
+#### Ukraine Accountability (HD03231+HD03232)
+
+**Government frame**: "Sweden takes its international responsibilities seriously and contributes to accountability for Russia's war crimes. This is part of Sweden's strengthened international standing post-NATO."
+Key spokesperson: Utrikesminister Maria Malmer Stenergard (M)
+
+**Opposition frame (S/MP)**: "We support Sweden joining the tribunal. Ukraine's victims deserve justice. We call for swift ratification."
+Note: Very limited opposition framing space — near-unanimous vote removes attack surface.
+
+**Expected media focus**: Brief consensus story; international angle dominates. Svenska Dagbladet may run analysis piece on the tribunal's legal architecture.
+
+#### Interpellations (HD10447–HD10446)
+
+**S party frame**: Coordinated — each interpellation surfaces a specific government vulnerability. Framing language: "Minister X — explain this."
+- HD10447 (sjuklönekostnader → Sofia Amloh/S): "Rising employer costs threaten small business."
+- HD10444: "Government failing on crime despite record spending."
+- HD10445: "Energy transition stalling under this government."
+- HD10443: "Immigration policy X not delivering results."
+- HD10446: "Minister, why is [specific gap] not addressed?"
+
+**Government meta-frame**: "We answer all questions transparently. The opposition files interpellations instead of presenting policy alternatives."
+
+### Media Outlet Alignment Map
+
+| Outlet | Likely primary focus | Likely framing lean |
+|--------|---------------------|---------------------|
+| SVT Nyheter | Vapenlag rural impact | Neutral |
+| SR Ekot | Polisreform/JuU31 | Critical of reform |
+| SvD | Ukraine accountability | Supportive of tribunal |
+| Expressen | Interpellations | Opposition-leaning |
+| Aftonbladet | Sjuklönekostnader, vapenlag | Opposition-leaning |
+| Dagens Nyheter | Analysis — polisreform effectiveness | Critical analysis |
+| Jaktjournalen | Vapenlag semi-auto ban | Strongly critical of govt |
+
+### Disinformation/Narrative Risk
+
+**Identified risk**: Social media amplification of hunter backlash against HD01JuU10 as "total firearms ban" (mischaracterisation). The actual ban is narrow (new semi-auto hunting rifle permits). Watch for: Sverigedemokraternas social media vs its parliamentary vote.
+
+This connects to SD interpellation HD10448 where Josef Fransson raises "misleading information about wind power" — the pattern of SD members using parliamentary tools to signal that the energy information environment contains disinformation that disadvantages SD's voters.
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/devils-advocate.md -->
@@ -1478,13 +1478,6 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/threat-analysis.md)
 - [`documents/HD01CU24-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD01CU24-analysis.md)
 - [`documents/HD01JuU10-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD01JuU10-analysis.md)
 - [`documents/HD01JuU31-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD01JuU31-analysis.md)
@@ -1493,12 +1486,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`documents/HD11747-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD11747-analysis.md)
 - [`documents/HD11748-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD11748-analysis.md)
 - [`documents/HD11749-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/documents/HD11749-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/week-ahead/cross-reference-map.md)
