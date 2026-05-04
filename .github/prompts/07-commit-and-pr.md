@@ -53,7 +53,7 @@ Translations for the remaining twelve languages are produced by the dedicated **
      echo "📊 After unstaging documents/: $STAGED_COUNT files"
      if [ "$STAGED_COUNT" -gt 90 ]; then
        echo "❌ STILL OVER BUDGET ($STAGED_COUNT > 90). Unstaging all JSON files..."
-       git diff --cached --name-only | grep '\.json$' | xargs -r git reset HEAD --
+       git diff --cached --name-only | grep '\.json$' | xargs -r git reset HEAD -- || true
        STAGED_COUNT=$(git diff --cached --name-only | wc -l | tr -d '[:space:]')
        echo "📊 After unstaging JSON: $STAGED_COUNT files"
      fi

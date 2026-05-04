@@ -8,8 +8,11 @@
 import { describe, it, expect } from 'vitest';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const ROOT = path.resolve(import.meta.dirname, '..');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const ROOT = path.resolve(__dirname, '..');
 const PROMPTS_DIR = path.join(ROOT, '.github', 'prompts');
 const WORKFLOWS_DIR = path.join(ROOT, '.github', 'workflows');
 const ANALYSIS_DIR = path.join(ROOT, 'analysis', 'daily');
@@ -35,24 +38,27 @@ describe('PR file-budget enforcement', () => {
       'utf8',
     );
 
-    // Extract --limit values from all download commands
-    const limitMatches = [...downloadPrompt.matchAll(/--limit\s+(\d+)/g)];
+    // Extract document-type command (contains --doc-type) and its --limit
+    const docTypeCommandMatch = downloadPrompt.match(
+      /--doc-type[^`]*--limit\s+(\d+)|--limit\s+(\d+)[^`]*--doc-type/,
+    );
+    expect(docTypeCommandMatch).not.toBeNull();
+    const docTypeLimit = parseInt(
+      (docTypeCommandMatch![1] ?? docTypeCommandMatch![2])!,
+      10,
+    );
+    expect(docTypeLimit, 'document-type --limit must be ≤ 20').toBeLessThanOrEqual(20);
 
-    // All document-type limits should be ≤ 20
-    for (const match of limitMatches) {
+    // Verify total: fixed files + per-document files stays under budget
+    const estimatedTotal = FIXED_FILE_COUNT + docTypeLimit;
+    expect(estimatedTotal).toBeLessThan(SAFE_THRESHOLD);
+
+    // Extract aggregation command (no --doc-type) and its --limit
+    // The aggregation command appears after the document-type one in the prompt
+    const allLimits = [...downloadPrompt.matchAll(/--limit\s+(\d+)/g)];
+    for (const match of allLimits) {
       const limit = parseInt(match[1]!, 10);
-      // Document-type workflows use the first pattern (--limit N --doc-type)
-      // Allow aggregation workflows up to 30
-      expect(limit).toBeLessThanOrEqual(30);
-    }
-
-    // The first limit (for document-type) should be ≤ 20
-    if (limitMatches.length > 0) {
-      const firstLimit = parseInt(limitMatches[0]![1]!, 10);
-      expect(firstLimit).toBeLessThanOrEqual(20);
-      // Verify total: fixed files + per-document files stays under budget
-      const estimatedTotal = FIXED_FILE_COUNT + firstLimit;
-      expect(estimatedTotal).toBeLessThan(SAFE_THRESHOLD);
+      expect(limit, `--limit ${limit} exceeds max aggregation limit of 30`).toBeLessThanOrEqual(30);
     }
   });
 
