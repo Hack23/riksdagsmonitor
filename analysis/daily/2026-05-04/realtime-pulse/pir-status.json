@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0",
+  "cycle": "realtime-pulse",
+  "date": "2026-05-04",
+  "subfolder": "realtime-pulse",
+  "generated_at": "2026-05-04T10:55:00Z",
+  "pirs": [
+    {
+      "id": "PIR-RT-001",
+      "title": "Lagrådet yttranden on migration propositions HD03262 and HD03265",
+      "status": "open",
+      "priority": "CRITICAL",
+      "created": "2026-05-01",
+      "last_updated": "2026-05-04",
+      "description": "Government filed migration reform propositions HD03262 (stricter return rules) and HD03265 (expanded deportation grounds) without Lagrådet pre-consultation. Legal scholars have flagged constitutional concerns. Lagrådet yttrande expected but not yet published.",
+      "evidence_needed": "Published Lagrådet yttrande on HD03262 and/or HD03265",
+      "monitoring_query": "search_dokument(doktyp='lgu', relaterat_id='HD03262 OR HD03265')",
+      "answer_if_found": "Lagrådet concerns = heightened opposition attack; clean yttrande = government vindicated",
+      "forward_indicator": "FI-LGR-01: Expected window June 1 - September 1 if contested",
+      "carry_forward_from": "2026-05-01"
+    },
+    {
+      "id": "PIR-RT-002",
+      "title": "Committee handling of HD03258 political financing transparency",
+      "status": "answered",
+      "priority": "MEDIUM",
+      "created": "2026-05-01",
+      "last_updated": "2026-05-04",
+      "description": "PIR asked which committee handles the transparency/political financing proposition HD03258. Answer: KU (Konstitutionsutskottet) via HD01KU39 registered today.",
+      "evidence": "HD01KU39 'Ökad insyn i politiska processer' registered 2026-05-04; KU committee; vote scheduled 2026-06-16",
+      "resolution": "KU39 confirms KU is lead committee. JuU/SfU are not primary handlers. Vote June 16.",
+      "carry_forward_from": "2026-05-01"
+    },
+    {
+      "id": "PIR-RT-003",
+      "title": "Post-migration-package polling trends (Demoskop/Novus)",
+      "status": "open",
+      "priority": "HIGH",
+      "created": "2026-05-01",
+      "last_updated": "2026-05-04",
+      "description": "Following the migration capstone proposition package (HD03262-HD03265), need first major poll to detect if S's interpellation offensive is moving voters or if the Tidö 'we delivered' narrative is dominating.",
+      "evidence_needed": "Novus or Demoskop poll published after 2026-05-04",
+      "monitoring_frequency": "biweekly",
+      "carry_forward_from": "2026-05-01"
+    },
+    {
+      "id": "PIR-RT-004",
+      "title": "IMF IFS May 2026 SWE unemployment and inflation update",
+      "status": "open",
+      "priority": "MEDIUM",
+      "created": "2026-05-01",
+      "last_updated": "2026-05-04",
+      "description": "IMF IFS typically publishes monthly macro data for Sweden (LUR unemployment, PCPI inflation) in mid-month. May 2026 update not yet available. Current data: IMF WEO April 2026 vintage.",
+      "evidence_needed": "IMF IFS May 2026 M.SE.LUR (unemployment) and M.SE.PCPI_IX (CPI) data",
+      "monitoring_query": "tsx scripts/imf-fetch.ts sdmx --path '/data/IMF.STA,IFS,3.0.0/M.SE.LUR+PCPI_IX?startPeriod=2026-01'",
+      "carry_forward_from": "2026-05-01"
+    },
+    {
+      "id": "PIR-RT-005",
+      "title": "Carlson response on Ostlänken by 2026-05-25",
+      "status": "open",
+      "priority": "HIGH",
+      "created": "2026-05-04",
+      "last_updated": "2026-05-04",
+      "description": "New PIR generated today. Infrastructure minister Andreas Carlson must answer Eva Lindh's interpellation HD10463 (Ostlänken routing change) by 2026-05-25. His response will determine if this becomes a sustained regional narrative or is defused.",
+      "evidence_needed": "Carlson interpellation answer (anförande in kammaren)",
+      "monitoring_query": "search_anforanden(debattnamn='Effekter för Östergötland') after 2026-05-05",
+      "forward_indicator": "FI-HD10463: Sista svarsdatum 2026-05-25",
+      "created_today": true
+    },
+    {
+      "id": "PIR-RT-006",
+      "title": "Energy company response to NU19 nuclear permitting reform",
+      "status": "open",
+      "priority": "HIGH",
+      "created": "2026-05-04",
+      "last_updated": "2026-05-04",
+      "description": "New PIR generated today. NU19 nuclear permitting reform law (effective 2026-06-17) will be a major campaign asset ONLY if energy companies (Vattenfall, Uniper, other) announce intent to apply for new reactor permits. Need to monitor company statements.",
+      "evidence_needed": "Company announcement of nuclear reactor permit application intent",
+      "monitoring_query": "Search Swedish energy company press releases; government press conferences on nuclear",
+      "forward_indicator": "FI-NU19: Law in force 2026-06-17; company application window opens thereafter",
+      "created_today": true
+    }
+  ]
+}
