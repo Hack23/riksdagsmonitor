@@ -5,7 +5,7 @@ date: 2026-05-04
 subfolder: evening-analysis
 slug: 2026-05-04-evening-analysis
 source_folder: analysis/daily/2026-05-04/evening-analysis
-generated_at: 2026-05-04T19:10:44.797Z
+generated_at: 2026-05-04T23:02:55.611Z
 language: en
 layout: article
 ---
@@ -389,6 +389,35 @@ KU39 is the KU betänkande (committee report) that processes the government's po
 **Opposition frame**: Will accept the outcome but claim insufficient scope ("should have been even lower threshold")  
 **Electorate impact**: LOW direct mobilization; HIGH symbolic value as governance competence signal
 
+### HD01NU19
+<!-- source: documents/HD01NU19-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/documents/HD01NU19-analysis.md -->
+
+**dok_id**: HD01NU19  
+**Title**: En mer ändamålsenlig prövning av kärntekniska anläggningar  
+**Type**: Betänkande  
+**Organ**: NU (Näringsutskottet)  
+
+**Entry into force**: June 17, 2026  
+
+### Summary
+Applicants for nuclear facility construction may apply directly to the government for approval, bypassing the Environmental Code (miljöbalken) review process. The NU committee endorsed direct government application with M, SD, KD, L, C votes; V and MP opposed; S abstained.
+
+### Significance: DIW 9.2 (with ×1.5 election multiplier)
+
+### Key Provisions
+- Direct government application pathway for nuclear facility construction
+- SSM (Strålsäkerhetsmyndigheten) in consulting role, not approval role
+- June 17, 2026 entry into force
+
+### Critical Issues
+- **EU EIA Directive compliance**: No EU peer has bypassed EIA for nuclear; legal challenge near-certain
+- **Aarhus Convention**: Public participation rights at risk
+- **S abstained**: Unusual — reflects S's complicated relationship with nuclear energy
+
+### Electoral Significance
+- Operationalizes the nuclear restoration that forms a core part of Tidö legacy framing
+- Creates pre-election legislative fact that a future government cannot easily reverse without new application process blocking
+
 ### HD024142
 <!-- source: documents/HD024142-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/documents/HD024142-analysis.md -->
 
@@ -448,6 +477,31 @@ V's motion HD024142 formally demands the rejection of the government's proposal 
 **Most likely outcome**: Government either (a) accepts amendment to 14 years as a coalition concession to retain L, or (b) passes 13 years with L support over S/V opposition. Outcome (a) is more likely given L's structural incentive to demonstrate independence without fracturing the coalition.
 
 **V's strategic goal**: Force the government to either lose the vote (best case for V) or accept a visible concession (second-best for V) — either generates "government under pressure" narrative.
+
+### HD10458
+<!-- source: documents/HD10458-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/documents/HD10458-analysis.md -->
+
+**dok_id**: HD10458  
+**Title**: Uttalande om att utrota gängkriminaliteten  
+**Type**: Interpellation  
+**From**: S party (Ib Isaksson)  
+**To**: Minister Gunnar Strömmer  
+
+### Summary
+Interpellation to Justice Minister Gunnar Strömmer challenging the government's September 2022 pledge to "eradicate gang criminality within one parliamentary term" against documented 2025 explosion statistics.
+
+### Significance: DIW 8.8 (with ×1.5 election multiplier)
+
+### Critical Issues
+- September 2022 pledge is on record — cannot be denied
+- 2025 explosions at record levels
+- Government's best strategy: reframe metrics from "eradication" to "structural progress"
+
+### Electoral Impact
+Highest media visibility item of today's output. TV-friendly confrontation format. Scheduled for debate within T+14 days.
+
+### Evidence Basis
+Government counter-metrics: organized crime convictions, network dismantlement operations, HD01FöU13 explosives licensing tightened.
 
 ### HD10463
 <!-- source: documents/HD10463-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/documents/HD10463-analysis.md -->
@@ -2472,7 +2526,9 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/significance-scoring.md)
 - [`documents/HD01KU39-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/documents/HD01KU39-analysis.md)
+- [`documents/HD01NU19-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/documents/HD01NU19-analysis.md)
 - [`documents/HD024142-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/documents/HD024142-analysis.md)
+- [`documents/HD10458-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/documents/HD10458-analysis.md)
 - [`documents/HD10463-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/documents/HD10463-analysis.md)
 - [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/evening-analysis/coalition-mathematics.md)
