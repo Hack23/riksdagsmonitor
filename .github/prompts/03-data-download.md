@@ -119,15 +119,17 @@ For **document-type** workflows (propositions, motions, committee-reports, inter
 ```
 source scripts/mcp-setup.sh
 npx tsx scripts/download-parliamentary-data.ts \
-  --date "$ARTICLE_DATE" --limit 50 --doc-type "$DOC_TYPE" \
+  --date "$ARTICLE_DATE" --limit 20 --doc-type "$DOC_TYPE" \
   2>&1 | tee /tmp/pipeline-output.log
 ```
+
+> ⚠️ **File-budget constraint**: The safe-outputs `create_pull_request` hard-caps at **100 files** (E003). With 23 core artifacts + README + article.md + per-document analyses + HTML files + JSON, a `--limit 20` keeps the total comfortably under 80. **Never exceed `--limit 20`** for document-type workflows. Aggregation workflows may use `--limit 30` because they produce fewer per-document files.
 
 For **aggregation** workflows (evening-analysis, week-ahead, month-ahead, weekly-review, monthly-review, realtime-monitor):
 
 ```
 source scripts/mcp-setup.sh
-npx tsx scripts/download-parliamentary-data.ts --date "$ARTICLE_DATE" --limit 50 \
+npx tsx scripts/download-parliamentary-data.ts --date "$ARTICLE_DATE" --limit 30 \
   2>&1 | tee /tmp/pipeline-output.log
 ```
 
