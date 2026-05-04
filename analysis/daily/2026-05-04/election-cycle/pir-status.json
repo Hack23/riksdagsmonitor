@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "cycle": "election-cycle",
+  "date": "2026-05-04",
+  "subfolder": "election-cycle",
+  "generated_at": "2026-05-04T15:05:00Z",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "title": "SD Electoral Ceiling",
+      "description": "Can SD exceed 22% in the September 2026 election, and what impact does this have on right-bloc arithmetic?",
+      "status": "ACTIVE",
+      "priority": "P1",
+      "horizon": "T+132d",
+      "indicators": ["SD weekly poll average", "L vs SD trend in right-bloc", "SD campaign strategy announcement"],
+      "current_assessment": "SD at ~19.5% estimated; ceiling uncertain; trend slowly upward",
+      "next_update": "2026-05-11"
+    },
+    {
+      "id": "PIR-2",
+      "title": "S-MP-V Cooperation Framework",
+      "description": "Will S, MP, and V agree on a joint governing platform, and on what terms does C engage?",
+      "status": "ACTIVE",
+      "priority": "P1",
+      "horizon": "T+120d",
+      "indicators": ["Party platform announcements June-Aug 2026", "S-C negotiations", "V red lines statement"],
+      "current_assessment": "No formal cooperation agreement announced; expected June 2026",
+      "next_update": "2026-06-01"
+    },
+    {
+      "id": "PIR-3",
+      "title": "Migration Reform Backlash Metrics",
+      "description": "Are legal challenges or administrative failures emerging in response to HD03262-265 migration reform cluster?",
+      "status": "MONITORING",
+      "priority": "P2",
+      "horizon": "T+365d",
+      "indicators": ["UNHCR statement", "Swedish courts accepting challenge cases", "Migrationsverket backlog reports"],
+      "current_assessment": "HD03262 submitted 30 April; in committee; no legal challenges yet",
+      "next_update": "2026-06-01"
+    },
+    {
+      "id": "PIR-4",
+      "title": "Defence Budget Sustainability",
+      "description": "Can Sweden maintain 2%+ GDP defence spending and deliver on bilateral cooperation commitments?",
+      "status": "MONITORING",
+      "priority": "P2",
+      "horizon": "T+730d",
+      "indicators": ["FMV procurement reports", "Budget bill autumn 2026", "NATO burden-sharing pressure"],
+      "current_assessment": "2% achieved; bilateral framework (HD03254) passed; implementation ongoing",
+      "next_update": "2026-09-01"
+    },
+    {
+      "id": "PIR-5",
+      "title": "Economic Headwinds",
+      "description": "Do housing costs, inflation persistence, or trade war impacts create electoral headwinds for the incumbent?",
+      "status": "ELEVATED",
+      "priority": "P2",
+      "horizon": "T+132d",
+      "indicators": ["SCB monthly CPI", "Riksbank rate decision", "Housing starts data", "Consumer confidence index"],
+      "current_assessment": "GDP +1.7% 2025E, +2.1% 2026P (IMF WEO Oct 2025 vintage); normalising but housing pain persists",
+      "next_update": "2026-05-15"
+    }
+  ],
+  "artifact_count": 24,
+  "artifacts_complete": true,
+  "pass1_complete": true,
+  "pass2_complete": true,
+  "analysis_gate_status": "PENDING_VALIDATION",
+  "election_proximity_days": 132,
+  "election_date": "2026-09-13",
+  "cycle_anchor": "both",
+  "current_cycle": "2022-09-11/2026-09-13",
+  "next_cycle": "2026-09-13/2030-09-08"
+}
