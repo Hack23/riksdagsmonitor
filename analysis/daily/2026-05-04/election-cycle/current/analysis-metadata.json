@@ -1,0 +1,49 @@
+# Analysis Metadata
+
+```json
+{
+  "article_type": "election-cycle",
+  "cycle_anchor": "current",
+  "cycle_period": "2022-09-11 to 2026-09-13",
+  "article_date": "2026-05-04",
+  "generated_at": "2026-05-04T12:15:00Z",
+  "analysis_depth": "comprehensive",
+  "depth_multiplier": 2.5,
+  "tier": "C",
+  "horizon_days": 1460,
+  "lookback_days": 1330,
+  "election_date": "2026-09-13",
+  "days_to_election": 132,
+  "cycle_rollover_active": false,
+  "cycle_rollover_delta_days": 132,
+  "improvement_mode": false,
+  "languages": ["en", "sv"],
+  "documents_cited": 18,
+  "word_count_estimate": 45000,
+  "charts_required": 5,
+  "artifacts_generated": 28,
+  "family_a_complete": true,
+  "family_b_complete": true,
+  "family_c_complete": true,
+  "family_d_complete": true,
+  "family_e_documents": ["HD03262", "HD03254"],
+  "election_cycle_extras_complete": true,
+  "blocking_extras": [
+    "cycle-trajectory.md",
+    "pestle-analysis.md",
+    "wildcards-blackswans.md",
+    "quantitative-swot.md",
+    "political-stride-assessment.md"
+  ],
+  "cross_horizon_citations": {
+    "year_ahead_count": 2,
+    "monthly_review_count": 12,
+    "fulfilled": true
+  },
+  "imf_vintage": "WEO Apr-2026",
+  "imf_provider": "imf",
+  "confidence_level": "HIGH",
+  "admiralty_rating": "B2",
+  "predecessor_gap": "No quarter-ahead predecessors; covered by year-ahead aggregation"
+}
+```
