@@ -35,11 +35,7 @@ describe('PR file-budget enforcement', () => {
       'utf8',
     );
 
-    // Extract --limit values from document-type workflow commands
-    const docTypeLimitMatch = downloadPrompt.match(
-      /--doc-type.*?--limit\s+(\d+)|--limit\s+(\d+).*?--doc-type/,
-    );
-    // Also check the simpler pattern
+    // Extract --limit values from all download commands
     const limitMatches = [...downloadPrompt.matchAll(/--limit\s+(\d+)/g)];
 
     // All document-type limits should be ≤ 20
