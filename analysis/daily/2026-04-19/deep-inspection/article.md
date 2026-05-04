@@ -5,7 +5,7 @@ date: 2026-04-19
 subfolder: deep-inspection
 slug: 2026-04-19-deep-inspection
 source_folder: analysis/daily/2026-04-19/deep-inspection
-generated_at: 2026-05-03T20:15:34.785Z
+generated_at: 2026-05-04T09:52:32.056Z
 language: en
 layout: article
 ---
