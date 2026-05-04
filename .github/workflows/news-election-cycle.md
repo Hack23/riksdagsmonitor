@@ -159,6 +159,10 @@ safe-outputs:
     max: 1
     if-no-changes: warn
     fallback-as-issue: true
+    protected-files:
+      policy: fallback-to-issue
+      exclude:
+        - README.md
   add-comment: {}
   dispatch-workflow:
     workflows: [news-translate]
