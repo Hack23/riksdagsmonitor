@@ -14491,7 +14491,7 @@ body.rm-article-body {
   --rm-panel-border: rgba(0, 217, 255, 0.26);
   --rm-panel-border-strong: rgba(0, 217, 255, 0.44);
   --rm-readable-text: rgba(240, 252, 255, 0.93);
-  --rm-muted-readable: rgba(238, 246, 248, 0.84);
+  --rm-muted-readable: rgba(246, 252, 253, 0.93);
   --rm-soft-shadow: 0 22px 70px rgba(0, 0, 0, 0.34);
   --rm-neon-cyan-glow: 0 0 34px rgba(0, 217, 255, 0.16);
   --rm-neon-accent-glow: 0 0 44px rgba(var(--rm-article-accent-rgb, 0, 217, 255), 0.18);
@@ -14512,7 +14512,9 @@ html[data-theme="light"] body.rm-article-body {
   --rm-panel-border: rgba(0, 102, 51, 0.18);
   --rm-panel-border-strong: rgba(0, 102, 51, 0.32);
   --rm-readable-text: #17201b;
-  --rm-muted-readable: #41534a;
+  --rm-muted-readable: #33443b;
+  --rm-meta-muted-light: #3a4a42;
+  --rm-sitemap-heading-light: #7a0036;
   --rm-soft-shadow: 0 18px 54px rgba(0, 60, 38, 0.12);
   --rm-neon-cyan-glow: 0 16px 40px rgba(0, 102, 51, 0.10);
   --rm-neon-accent-glow: 0 18px 42px rgba(var(--rm-article-accent-rgb, 0, 102, 51), 0.12);
@@ -14679,8 +14681,8 @@ body.rm-article-body .rm-article-body li {
 }
 
 body.rm-article-body .rm-article-body h2 {
-  margin-top: clamp(2.4rem, 5vw, 4rem);
-  margin-bottom: clamp(1rem, 2vw, 1.4rem);
+  margin-block-start: clamp(2.4rem, 5vw, 4rem);
+  margin-block-end: clamp(1rem, 2vw, 1.4rem);
   padding-block: clamp(0.85rem, 1.8vw, 1.15rem);
   padding-inline-start: var(--rm-h2-marker-offset);
   border-bottom-width: 2px;
@@ -14723,7 +14725,7 @@ html[data-theme="light"] body.rm-article-body .rm-article-body h3 {
 html[data-theme="light"] body.rm-article-body .rm-article-body h2 + p em,
 html[data-theme="light"] body.rm-article-body .rm-article-body h2 + p > em,
 html[data-theme="light"] body.rm-article-body .rm-article-meta {
-  color: #51645b;
+  color: var(--rm-meta-muted-light);
 }
 
 /* Sitemap pages: convert raw lists into scannable navigation cards. */
@@ -14843,7 +14845,7 @@ body.rm-article-body .sitemap-section h2 {
 }
 
 html[data-theme="light"] body.rm-article-body .sitemap-section h2 {
-  color: #8a003d;
+  color: var(--rm-sitemap-heading-light);
 }
 
 body.rm-article-body .sitemap-list {
