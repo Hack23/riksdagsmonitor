@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "cycle": "2025/26",
+  "date": "2026-05-04",
+  "subfolder": "committee-reports",
+  "generated_at": "2026-05-04T05:08:00Z",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "description": "Monitor SSM regulations on kärnteknisk plan implementation timeline — expected Q3 2026",
+      "related_dok_ids": ["HD01NU19"],
+      "status": "ACTIVE",
+      "forward_indicator": "FI-01",
+      "expected_by": "2026-10-01",
+      "observable_at": "ssm.se/remiss"
+    },
+    {
+      "id": "PIR-2",
+      "description": "Track Migrationsverket implementation plan for SfU28 income and residency verification",
+      "related_dok_ids": ["HD01SfU28"],
+      "status": "ACTIVE",
+      "forward_indicator": "FI-04",
+      "expected_by": "2026-07-01",
+      "observable_at": "migrationsverket.se"
+    },
+    {
+      "id": "PIR-3",
+      "description": "Monitor September 2026 election polling weekly — track centre-left vs centre-right margins",
+      "related_dok_ids": ["HD01NU19", "HD01SfU28"],
+      "status": "ACTIVE",
+      "forward_indicator": "FI-08",
+      "expected_by": "2026-09-01",
+      "observable_at": "Novus/SIFO/SVT Valkompass"
+    },
+    {
+      "id": "PIR-4",
+      "description": "Watch for legal applications challenging NU19 constitutionality from V/MP/environmental NGOs",
+      "related_dok_ids": ["HD01NU19"],
+      "status": "ACTIVE",
+      "forward_indicator": "FI-03",
+      "expected_by": "2026-12-17",
+      "observable_at": "Förvaltningsrätten/HFD case registers"
+    },
+    {
+      "id": "PIR-5",
+      "description": "Track FöU14 and FöU20 betänkande publication for full text analysis",
+      "related_dok_ids": ["HD01FöU14", "HD01FöU20"],
+      "status": "ACTIVE",
+      "forward_indicator": "FI-12",
+      "expected_by": "2026-06-01",
+      "observable_at": "riksdagen.se/betankanden"
+    }
+  ]
+}
