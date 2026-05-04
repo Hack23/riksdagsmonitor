@@ -14491,7 +14491,7 @@ body.rm-article-body {
   --rm-panel-border: rgba(0, 217, 255, 0.26);
   --rm-panel-border-strong: rgba(0, 217, 255, 0.44);
   --rm-readable-text: rgba(240, 252, 255, 0.93);
-  --rm-muted-readable: rgba(224, 232, 235, 0.74);
+  --rm-muted-readable: rgba(238, 246, 248, 0.84);
   --rm-soft-shadow: 0 22px 70px rgba(0, 0, 0, 0.34);
   --rm-neon-cyan-glow: 0 0 34px rgba(0, 217, 255, 0.16);
   --rm-neon-accent-glow: 0 0 44px rgba(var(--rm-article-accent-rgb, 0, 217, 255), 0.18);
@@ -14548,6 +14548,7 @@ body.rm-article-body .rm-header-cta,
 body.rm-article-body .rm-lang-switcher > summary,
 body.rm-article-body .rm-theme-toggle {
   min-height: 44px;
+  min-width: 44px;
 }
 
 body.rm-article-body .rm-lang-bar {
@@ -14558,6 +14559,7 @@ body.rm-article-body .rm-lang-bar {
 }
 
 body.rm-article-body .language-switcher .lang-link {
+  min-width: 44px;
   white-space: nowrap;
 }
 
@@ -14653,10 +14655,12 @@ body.rm-article-body .rm-article-trust-badges li {
 }
 
 body.rm-article-body .rm-article-body {
+  --rm-h2-marker-offset: 3.45rem;
   max-width: none;
   color: var(--rm-readable-text);
 }
 
+/* Keep narrative text readable while preserving full width for rich artifacts. */
 body.rm-article-body .rm-article-body > :where(p, ul, ol, blockquote, h2, h3, h4, h5, h6) {
   max-width: var(--rm-container-reading);
   margin-inline: auto;
@@ -14677,17 +14681,13 @@ body.rm-article-body .rm-article-body li {
 body.rm-article-body .rm-article-body h2 {
   margin-top: clamp(2.4rem, 5vw, 4rem);
   margin-bottom: clamp(1rem, 2vw, 1.4rem);
-  padding: clamp(0.85rem, 1.8vw, 1.15rem) 0 clamp(0.85rem, 1.8vw, 1.15rem) 3.45rem;
+  padding-block: clamp(0.85rem, 1.8vw, 1.15rem);
+  padding-inline-start: var(--rm-h2-marker-offset);
   border-bottom-width: 2px;
   background:
     linear-gradient(90deg, rgba(var(--rm-article-accent-rgb, 0, 217, 255), 0.10), transparent 76%);
   border-radius: 14px 14px 0 0;
   text-wrap: balance;
-}
-
-[dir="rtl"] body.rm-article-body .rm-article-body h2 {
-  padding-inline-start: 0;
-  padding-inline-end: 3.45rem;
 }
 
 body.rm-article-body .rm-article-body h2::before {
@@ -15052,12 +15052,7 @@ html[data-theme="light"] body.rm-article-body .pi-artifact-file {
   }
 
   body.rm-article-body .rm-article-body h2 {
-    padding-inline-start: 2.8rem;
-  }
-
-  [dir="rtl"] body.rm-article-body .rm-article-body h2 {
-    padding-inline-start: 0;
-    padding-inline-end: 2.8rem;
+    --rm-h2-marker-offset: 2.8rem;
   }
 
   body.rm-article-body .sitemap-list,
