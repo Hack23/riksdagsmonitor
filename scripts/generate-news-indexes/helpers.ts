@@ -300,6 +300,18 @@ export function classifyArticleType(content: string, fileName: string, relativeP
       if (entry.family === 'single-type') return 'analysis';
       if (entry.family === 'tier-c-aggregation') return 'retrospective';
     }
+    // For compound slugs (e.g. "election-cycle-current"), try progressively
+    // shorter prefixes against the registry until a match is found.
+    const parts = slug.split('-');
+    for (let i = parts.length - 1; i >= 1; i--) {
+      const prefix = parts.slice(0, i).join('-');
+      const prefixEntry = getBySubfolder(prefix);
+      if (prefixEntry) {
+        if (prefixEntry.family === 'long-horizon-forecast') return 'prospective';
+        if (prefixEntry.family === 'single-type') return 'analysis';
+        if (prefixEntry.family === 'tier-c-aggregation') return 'retrospective';
+      }
+    }
   }
 
   // For subdirectory articles (e.g. "2026-05-04-election-cycle/current-en.html"),
