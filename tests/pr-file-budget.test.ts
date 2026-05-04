@@ -105,13 +105,36 @@ describe('PR file-budget enforcement', () => {
 
       for (const sub of subfolders) {
         const subPath = path.join(datePath, sub);
-        const allFiles = getAllFiles(subPath);
-        // Each subfolder + its HTML renders should stay under 90
-        // (analysis files + 2 HTML + article.md)
-        expect(
-          allFiles.length,
-          `${date}/${sub} has ${allFiles.length} files (budget: ${SAFE_THRESHOLD})`,
-        ).toBeLessThan(SAFE_THRESHOLD);
+
+        // Detect analysis sub-subfolders (e.g., election-cycle/{current,next}).
+        // Exclude pass1/ (gate-evidence snapshot) and documents/ (per-doc analyses) —
+        // these are already excluded from counting in getAllFiles.
+        const analysisSubdirs = fs.readdirSync(subPath).filter((f) => {
+          const full = path.join(subPath, f);
+          return fs.statSync(full).isDirectory() && f !== 'pass1' && f !== 'documents';
+        });
+
+        if (analysisSubdirs.length > 0) {
+          // Workflows that produce per-anchor sub-subfolders (e.g., election-cycle
+          // with current/ and next/) check each sub-subfolder independently —
+          // each represents a distinct analysis unit against the PR file budget.
+          for (const subSub of analysisSubdirs) {
+            const subSubPath = path.join(subPath, subSub);
+            const allFiles = getAllFiles(subSubPath);
+            expect(
+              allFiles.length,
+              `${date}/${sub}/${subSub} has ${allFiles.length} files (budget: ${SAFE_THRESHOLD})`,
+            ).toBeLessThan(SAFE_THRESHOLD);
+          }
+        } else {
+          const allFiles = getAllFiles(subPath);
+          // Each subfolder + its HTML renders should stay under 90
+          // (analysis files + 2 HTML + article.md)
+          expect(
+            allFiles.length,
+            `${date}/${sub} has ${allFiles.length} files (budget: ${SAFE_THRESHOLD})`,
+          ).toBeLessThan(SAFE_THRESHOLD);
+        }
       }
     }
   });
