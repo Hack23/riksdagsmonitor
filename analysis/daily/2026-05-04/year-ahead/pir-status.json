@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "cycle": "year-ahead",
+  "date": "2026-05-04",
+  "subfolder": "year-ahead",
+  "generated_at": "2026-05-04T00:30:00Z",
+  "pirs": [
+    {
+      "id": "PIR-2026-YA-01",
+      "question": "Will Liberalerna clear 4% in the final election count on 2026-09-13?",
+      "collection": "Polling aggregates; party membership data; Sifo/Kantar weekly tracking",
+      "deadline": "2026-09-13",
+      "priority": "Critical",
+      "status": "Open",
+      "carried_from": null
+    },
+    {
+      "id": "PIR-2026-YA-02",
+      "question": "Will HC03155 Lagrådet referral result in materially altered emergency powers?",
+      "collection": "Lagrådet.se published opinion",
+      "deadline": "2026-07-01",
+      "priority": "High",
+      "status": "Open",
+      "carried_from": null
+    },
+    {
+      "id": "PIR-2026-YA-03",
+      "question": "Will S form a majority government without V as formal coalition partner?",
+      "collection": "Post-election Riksdag speaker consultations; party statements",
+      "deadline": "2026-09-20",
+      "priority": "High",
+      "status": "Open",
+      "carried_from": null
+    },
+    {
+      "id": "PIR-2026-YA-04",
+      "question": "Will Sweden's GDP growth meet or exceed 2.1% in 2026?",
+      "collection": "SCB national accounts Q3-2026; IMF WEO October 2026 update",
+      "deadline": "2026-11-01",
+      "priority": "Medium",
+      "status": "Open",
+      "carried_from": null
+    },
+    {
+      "id": "PIR-2026-YA-05",
+      "question": "Will a Russian hybrid operation target Swedish election infrastructure?",
+      "collection": "Säpo/MUST threat assessment; MSB psychological defence monitoring; EU ENISA alerts",
+      "deadline": "2026-09-13",
+      "priority": "High",
+      "status": "Open",
+      "carried_from": null
+    },
+    {
+      "id": "PIR-2026-YA-06",
+      "question": "Will HC03203 uranium mining face HFD injunction before election?",
+      "collection": "Court filings; Naturvårdsverket position; HFD case register",
+      "deadline": "2026-08-01",
+      "priority": "Medium",
+      "status": "Open",
+      "carried_from": null
+    },
+    {
+      "id": "PIR-2026-YA-07",
+      "question": "Will Centerpartiet party congress resolve to support an S-led government?",
+      "collection": "C party congress resolution (expected June 2026); leader statements; party membership surveys",
+      "deadline": "2026-09-15",
+      "priority": "Critical",
+      "status": "Open",
+      "carried_from": null
+    },
+    {
+      "id": "PIR-Q1-2026-01",
+      "question": "Will Liberalerna poll above 4% by election day?",
+      "collection": "Sifo/Kantar/Demoskop tracking",
+      "deadline": "2026-09-13",
+      "priority": "Critical",
+      "status": "Open",
+      "carried_from": "2026-04-01/monthly-review"
+    },
+    {
+      "id": "PIR-Q1-2026-02",
+      "question": "Will HC03203 uranium mining survive legal challenge?",
+      "collection": "HFD ruling",
+      "deadline": "2026-08-01",
+      "priority": "Medium",
+      "status": "Open",
+      "carried_from": "2026-04-01/monthly-review"
+    },
+    {
+      "id": "PIR-Q1-2026-03",
+      "question": "Will S maintain >33% support through campaign?",
+      "collection": "Polling aggregator",
+      "deadline": "2026-09-13",
+      "priority": "High",
+      "status": "Open",
+      "carried_from": "2026-03-01/monthly-review"
+    },
+    {
+      "id": "PIR-Q1-2026-04",
+      "question": "Will 2.4% GDP defence target be reconfirmed in 2026 budget?",
+      "collection": "Government budget proposition",
+      "deadline": "2026-04-30",
+      "priority": "High",
+      "status": "Resolved",
+      "resolution": "YES — 2026 defence budget confirmed at 2.1% GDP trajectory to 2.4% by 2028",
+      "carried_from": "2026-02-01/monthly-review"
+    }
+  ]
+}
