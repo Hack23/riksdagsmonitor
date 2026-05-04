@@ -40,7 +40,32 @@ Translations for the remaining twelve languages are produced by the dedicated **
 
    Never stage `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/documents/` wholesale — it often contains 100+ files. Stage only `documents/*.md` **if** your `documents/` stays under the safe-outputs 100-file cap; otherwise stage only summary files. Never stage `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/pass1/` — it is a local gate-evidence snapshot (see `04-analysis-pipeline.md`), not a deliverable.
 
-2. **100-file guard.** Before calling safeoutputs, count staged files. If the count > 99, unstage everything under `documents/` except `synthesis-summary.md` and re-check.
+2. **100-file guard (MANDATORY — hard enforcement).** Before calling safeoutputs, **you MUST run** the following bash snippet. If it fails (exit 1), you MUST unstage `documents/` files and/or reduce scope until the count is ≤ 90. The safe-outputs handler hard-rejects PRs with > 100 files (E003), so this guard uses a threshold of **90** to leave headroom for metadata files the handler may add.
+
+   ```bash
+   set -euo pipefail
+   STAGED_COUNT=$(git diff --cached --name-only | wc -l | tr -d '[:space:]')
+   echo "📊 Staged file count: $STAGED_COUNT (limit: 90)"
+   if [ "$STAGED_COUNT" -gt 90 ]; then
+     echo "⚠️ OVER FILE BUDGET ($STAGED_COUNT > 90). Unstaging documents/ ..."
+     git reset HEAD -- "analysis/daily/$ARTICLE_DATE/$SUBFOLDER/documents/" 2>/dev/null || true
+     STAGED_COUNT=$(git diff --cached --name-only | wc -l | tr -d '[:space:]')
+     echo "📊 After unstaging documents/: $STAGED_COUNT files"
+     if [ "$STAGED_COUNT" -gt 90 ]; then
+       echo "❌ STILL OVER BUDGET ($STAGED_COUNT > 90). Unstaging all JSON files..."
+       git diff --cached --name-only | grep '\.json$' | xargs -r git reset HEAD --
+       STAGED_COUNT=$(git diff --cached --name-only | wc -l | tr -d '[:space:]')
+       echo "📊 After unstaging JSON: $STAGED_COUNT files"
+     fi
+     if [ "$STAGED_COUNT" -gt 90 ]; then
+       echo "❌ FATAL: Cannot reduce staged files below 90 (currently $STAGED_COUNT). Aborting."
+       exit 1
+     fi
+   fi
+   echo "✅ File budget OK: $STAGED_COUNT ≤ 90"
+   ```
+
+   **This is non-negotiable.** If you skip this step, the `create_pull_request` safe output WILL fail with E003 and the entire run is wasted.
 
 3. **Commit** once with a descriptive message, e.g. `news(${article_type}): $ARTICLE_DATE — analysis + article`.
 
