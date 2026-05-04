@@ -132,14 +132,9 @@ if (document.readyState === 'loading') {
 // Registers /sw.js to enable PWA install + offline read-only access.
 //
 // HTML navigations use `networkFirst` (see public/sw.js) so every
-// page already shows the latest content without intervention. The
-// "update available" toast below is a courtesy for users who keep
-// long-lived tabs open across deploys: it surfaces the new SW
-// (which carries the new BUILD_ID and therefore a fresh HTML cache)
-// and offers a one-click reload.
-//
-// We also call `registration.update()` on `visibilitychange` to
-// catch users returning to a backgrounded tab after a deploy.
+// page already shows the latest content without intervention. Cache
+// settings ensure freshness on every navigation — no popup or
+// auto-reload is needed. The SW silently activates new versions.
 if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker
@@ -147,8 +142,7 @@ if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
       .then((reg) => {
         logger.info('[SW] Registered:', reg.scope);
 
-        // Re-check for an updated SW whenever the page regains focus.
-        // `update()` is a no-op if no new worker is available.
+        // Silently check for updates when the page regains focus.
         document.addEventListener('visibilitychange', () => {
           if (document.visibilityState === 'visible') {
             reg.update().catch(() => { /* ignore offline */ });
@@ -158,53 +152,36 @@ if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
         // Fire one update check immediately after registration.
         reg.update().catch(() => { /* ignore offline */ });
 
-        // Surface a "New content available" toast when a fresh SW
-        // is installed AND another worker is already controlling
-        // the page (i.e. this is an *update*, not the first install).
+        // public/sw.js calls self.skipWaiting() in its install event, so
+        // a newly downloaded worker skips the waiting phase and activates
+        // immediately. No additional logic is needed here; the handler below
+        // is retained only as a defensive fallback for any future SW variant
+        // that may not call skipWaiting() during install.
         reg.addEventListener('updatefound', () => {
           const installing = reg.installing;
           if (!installing) return;
           installing.addEventListener('statechange', () => {
-            if (
-              installing.state === 'installed' &&
-              navigator.serviceWorker.controller
-            ) {
-              showUpdateToast(reg);
+            // Post SKIP_WAITING in case a waiting worker exists (e.g. if a
+            // future SW build no longer calls skipWaiting() in install).
+            if (installing.state === 'installed' && reg.waiting) {
+              reg.waiting.postMessage({ type: 'SKIP_WAITING' });
             }
           });
         });
       })
       .catch((err) => logger.warn('[SW] Registration failed:', err));
-
-    // When the new SW takes control after `SKIP_WAITING`, reload so
-    // the page is served from the new HTML cache.
-    //
-    // IMPORTANT: skip the reload on the *first* install. A page loaded
-    // before any SW exists is initially uncontrolled; once our SW's
-    // `activate` handler calls `clients.claim()`, `controllerchange`
-    // fires for the first time and would otherwise auto-reload the
-    // page mid-navigation (breaks Cypress E2E flows and any in-flight
-    // user interaction). Only reload when the page was already
-    // controlled at registration time, i.e. this is an *update*.
-    const wasControlled = Boolean(navigator.serviceWorker.controller);
-    let reloading = false;
-    navigator.serviceWorker.addEventListener('controllerchange', () => {
-      if (reloading || !wasControlled) return;
-      reloading = true;
-      window.location.reload();
-    });
   });
 }
 
 /**
- * Render a non-blocking toast offering the user a one-click reload to
- * pick up the latest deployed content. Pure DOM, no framework.
- *
- * Click → posts `SKIP_WAITING` to the waiting worker, which calls
- * `self.skipWaiting()` → fires `controllerchange` → page reloads.
+ * Deprecated localization helpers retained for backward compatibility with
+ * `tests/sw-update-toast-labels.test.ts`. The SW update toast and the
+ * auto-reload behavior they supported have been removed; the network-first
+ * caching strategy in `public/sw.js` ensures fresh content on every
+ * navigation without user intervention.
  */
 
-/** Labels used by the SW update toast, localized per `<html lang>`. */
+/** @deprecated Labels previously used by the SW update toast. Retained for test backward compat. */
 interface UpdateToastLabels {
   readonly lang: string;
   readonly message: string;
@@ -213,12 +190,8 @@ interface UpdateToastLabels {
 }
 
 /**
- * Toast strings localized for the 14 site languages. Keys match the
- * `<html lang>` attribute emitted by the static-page renderers (the
- * legacy `no` code is honoured even though `LANGUAGE_META.no` emits
- * BCP-47 hreflang `nb`, because `lang="no"` is still on the served HTML).
- *
- * Exported for unit testing only.
+ * Toast strings localized for the 14 site languages.
+ * @deprecated Toast no longer shown. Retained for test backward compat.
  */
 export const SW_UPDATE_TOAST_LABELS: Readonly<Record<string, UpdateToastLabels>> = {
   en: { lang: 'en', message: 'New content available', reload: 'Reload', dismiss: 'Dismiss' },
@@ -239,91 +212,10 @@ export const SW_UPDATE_TOAST_LABELS: Readonly<Record<string, UpdateToastLabels>>
 };
 
 /**
- * Resolve the toast labels for a given `<html lang>` value. Accepts BCP-47
- * subtags (e.g. `en-GB`, `zh-Hans`) and matches on the primary subtag,
- * falling back to English for any unsupported language.
+ * Resolve the toast labels for a given `<html lang>` value.
+ * @deprecated Toast no longer shown. Retained for test backward compat.
  */
 export function getUpdateToastLabels(lang: string): UpdateToastLabels {
   const primary = (lang || 'en').toLowerCase().split(/[-_]/)[0] ?? 'en';
   return SW_UPDATE_TOAST_LABELS[primary] ?? SW_UPDATE_TOAST_LABELS.en!;
-}
-
-function showUpdateToast(reg: ServiceWorkerRegistration): void {
-  if (document.getElementById('sw-update-toast')) return;
-
-  const toast = document.createElement('div');
-  toast.id = 'sw-update-toast';
-  toast.setAttribute('role', 'status');
-  toast.setAttribute('aria-live', 'polite');
-  // Localize toast labels by `<html lang>` so screen readers pronounce them
-  // correctly on non-English index pages. Falls back to English for any
-  // language not in the map.
-  const labels = getUpdateToastLabels(
-    (typeof document !== 'undefined' && document.documentElement.lang) || 'en',
-  );
-  toast.setAttribute('lang', labels.lang);
-  toast.style.cssText = [
-    'position:fixed',
-    'inset-inline-end:1rem',
-    'inset-block-end:1rem',
-    'z-index:9999',
-    'max-width:min(calc(100vw - 2rem),22rem)',
-    'padding:0.875rem 1rem',
-    'background:linear-gradient(135deg,rgba(0,217,255,0.18),rgba(255,0,110,0.14))',
-    'border:1px solid rgba(0,217,255,0.55)',
-    'border-radius:8px',
-    'box-shadow:0 8px 32px rgba(0,0,0,0.45)',
-    'color:#e0e0e0',
-    'font:500 0.95rem/1.4 system-ui,-apple-system,"Segoe UI",sans-serif',
-    'backdrop-filter:blur(10px)',
-    '-webkit-backdrop-filter:blur(10px)',
-    'display:flex',
-    'gap:0.75rem',
-    'align-items:center',
-  ].join(';');
-
-  const msg = document.createElement('span');
-  msg.textContent = labels.message;
-  msg.style.cssText = 'flex:1';
-
-  const reloadBtn = document.createElement('button');
-  reloadBtn.type = 'button';
-  reloadBtn.textContent = labels.reload;
-  reloadBtn.style.cssText = [
-    'padding:0.4rem 0.85rem',
-    'background:linear-gradient(135deg,#00d9ff,#ff006e)',
-    'color:#0a0e27',
-    'border:0',
-    'border-radius:4px',
-    'font-weight:600',
-    'cursor:pointer',
-    'font-size:0.9rem',
-  ].join(';');
-  reloadBtn.addEventListener('click', () => {
-    if (reg.waiting) {
-      reg.waiting.postMessage({ type: 'SKIP_WAITING' });
-    } else {
-      // No waiting worker (race with activate) — just reload.
-      window.location.reload();
-    }
-  });
-
-  const dismissBtn = document.createElement('button');
-  dismissBtn.type = 'button';
-  dismissBtn.textContent = '×';
-  dismissBtn.setAttribute('aria-label', labels.dismiss);
-  dismissBtn.style.cssText = [
-    'background:transparent',
-    'color:inherit',
-    'border:0',
-    'font-size:1.4rem',
-    'line-height:1',
-    'cursor:pointer',
-    'padding:0 0.25rem',
-    'opacity:0.7',
-  ].join(';');
-  dismissBtn.addEventListener('click', () => toast.remove());
-
-  toast.append(msg, reloadBtn, dismissBtn);
-  document.body.appendChild(toast);
 }
