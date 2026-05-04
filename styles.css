@@ -14514,6 +14514,10 @@ html[data-theme="light"] body.rm-article-body {
   --rm-readable-text: #17201b;
   --rm-muted-readable: #33443b;
   --rm-meta-muted-light: #3a4a42;
+  --rm-hero-heading-light: #005f35;
+  --rm-link-light: #005a66;
+  --rm-warning-badge-text-light: #5f3900;
+  --rm-danger-badge-text-light: #7a0036;
   --rm-sitemap-heading-light: #7a0036;
   --rm-soft-shadow: 0 18px 54px rgba(0, 60, 38, 0.12);
   --rm-neon-cyan-glow: 0 16px 40px rgba(0, 102, 51, 0.10);
@@ -14775,6 +14779,12 @@ body.rm-article-body .pi-page-hero h1 {
   text-wrap: balance;
 }
 
+html[data-theme="light"] body.rm-article-body .sitemap-page-hero h1,
+html[data-theme="light"] body.rm-article-body .pi-page-hero h1 {
+  color: var(--rm-hero-heading-light);
+  text-shadow: none;
+}
+
 body.rm-article-body .sitemap-page-hero p,
 body.rm-article-body .pi-page-hero p.pi-intro,
 body.rm-article-body .pi-page-hero p.pi-subtitle {
@@ -14886,6 +14896,12 @@ body.rm-article-body .sitemap-description {
   color: var(--rm-muted-readable);
 }
 
+html[data-theme="light"] body.rm-article-body .sitemap-article-date {
+  color: var(--rm-warning-badge-text-light);
+  background: rgba(179, 90, 0, 0.12);
+  border-color: rgba(179, 90, 0, 0.34);
+}
+
 /* Political intelligence: elevate artifact catalogues and daily streams. */
 body.rm-article-body .pi-container {
   max-width: var(--rm-container-wide);
@@ -14918,6 +14934,16 @@ body.rm-article-body .pi-stat {
 body.rm-article-body .pi-stat strong {
   margin: 0;
   font-size: clamp(1.45rem, 1rem + 1.4vw, 2.35rem);
+}
+
+html[data-theme="light"] body.rm-article-body .pi-stat {
+  color: var(--rm-readable-text);
+  background: rgba(0, 102, 51, 0.08);
+  border-color: rgba(0, 102, 51, 0.28);
+}
+
+html[data-theme="light"] body.rm-article-body .pi-stat strong {
+  color: var(--rm-hero-heading-light);
 }
 
 body.rm-article-body .pi-section {
@@ -15001,6 +15027,32 @@ html[data-theme="light"] body.rm-article-body .pi-artifact-file {
   color: #41534a;
 }
 
+html[data-theme="light"] body.rm-article-body .pi-card-title a,
+html[data-theme="light"] body.rm-article-body .pi-card-link a,
+html[data-theme="light"] body.rm-article-body .pi-day-github,
+html[data-theme="light"] body.rm-article-body .pi-stream-link,
+html[data-theme="light"] body.rm-article-body .pi-artifact a {
+  color: var(--rm-link-light);
+}
+
+html[data-theme="light"] body.rm-article-body .pi-card-file,
+html[data-theme="light"] body.rm-article-body .pi-artifact-file {
+  color: var(--rm-warning-badge-text-light);
+  background: rgba(179, 90, 0, 0.10);
+  border-color: rgba(179, 90, 0, 0.30);
+}
+
+html[data-theme="light"] body.rm-article-body .pi-day-total {
+  color: var(--rm-danger-badge-text-light);
+  background: rgba(122, 0, 54, 0.10);
+  border-color: rgba(122, 0, 54, 0.30);
+}
+
+html[data-theme="light"] body.rm-article-body .pi-stream-count {
+  color: var(--rm-link-light);
+  background: rgba(0, 90, 102, 0.10);
+}
+
 @media (min-width: 1600px) {
   body.rm-article-body .rm-article-header h1 {
     font-size: clamp(3rem, 4.2vw, 4.85rem);
@@ -15020,7 +15072,10 @@ html[data-theme="light"] body.rm-article-body .pi-artifact-file {
   }
 
   body.rm-article-body .rm-site-nav a {
+    display: flex;
+    align-items: center;
     justify-content: center;
+    text-align: center;
   }
 
   body.rm-article-body .rm-header-cta-label,
@@ -15075,7 +15130,8 @@ html[data-theme="light"] body.rm-article-body .pi-artifact-file {
   body.rm-article-body .sitemap-list li:hover,
   body.rm-article-body .pi-card:hover,
   body.rm-article-body .pi-day:hover,
-  body.rm-article-body .toc-list a:hover {
+  body.rm-article-body .toc-list a:hover,
+  body.rm-article-body .toc-list a:focus-visible {
     transform: none;
   }
 }
