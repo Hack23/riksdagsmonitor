@@ -162,6 +162,8 @@ export function parseArticleMetadata(filePath: string): NewsArticleMetadata | nu
       extractMetaContent(content, 'description'),
       extractDescriptionFromJSONLD(content),
     );
+    // Compute relative path from NEWS_DIR for subdirectory-aware classification
+    const relativePath: string = path.relative(NEWS_DIR, filePath).split(path.sep).join('/');
     const topics = extractTopics(content, fileName);
     const metadata: NewsArticleMetadata = {
       slug: fileName,
@@ -172,9 +174,9 @@ export function parseArticleMetadata(filePath: string): NewsArticleMetadata | nu
         extractMetaContent(content, 'article:published_time') ||
         extractMetaContent(content, 'date') ||
         extractDateFromJSONLD(content) ||
-        extractFromFilename(fileName),
+        extractFromFilename(relativePath),
       ),
-      type: classifyArticleType(content, fileName),
+      type: classifyArticleType(content, fileName, relativePath),
       topics,
       tags: decodeHtmlEntities(extractTags(content, fileName, topics).join('|||')).split('|||').filter(Boolean),
     };
@@ -284,8 +286,10 @@ export function extractFromFilename(fileName: string): string {
  * Classify article type based on content and filename.
  * Uses the article-types registry first, then falls back to keyword detection
  * for legacy articles. Supports detection keywords in all 14 languages.
+ * When `relativePath` is provided, also checks the parent directory name
+ * against the registry (for subdirectory-based articles like election-cycle/).
  */
-export function classifyArticleType(content: string, fileName: string): ArticleTypeValue {
+export function classifyArticleType(content: string, fileName: string, relativePath?: string): ArticleTypeValue {
   // Try registry-driven classification first: extract subfolder slug from filename
   const slugMatch = fileName.match(new RegExp(`^\\d{4}-\\d{2}-\\d{2}-(.+?)-(${LANG_CODES})\\.html$`));
   if (slugMatch) {
@@ -295,6 +299,22 @@ export function classifyArticleType(content: string, fileName: string): ArticleT
       if (entry.family === 'long-horizon-forecast') return 'prospective';
       if (entry.family === 'single-type') return 'analysis';
       if (entry.family === 'tier-c-aggregation') return 'retrospective';
+    }
+  }
+
+  // For subdirectory articles (e.g. "2026-05-04-election-cycle/current-en.html"),
+  // extract the article-type subfolder from the parent directory name.
+  if (relativePath && relativePath.includes('/')) {
+    const parentDir = relativePath.split('/')[0]!;
+    const dirSlugMatch = parentDir.match(/^\d{4}-\d{2}-\d{2}-(.+)$/);
+    if (dirSlugMatch) {
+      const dirSlug = dirSlugMatch[1]!;
+      const entry = getBySubfolder(dirSlug);
+      if (entry) {
+        if (entry.family === 'long-horizon-forecast') return 'prospective';
+        if (entry.family === 'single-type') return 'analysis';
+        if (entry.family === 'tier-c-aggregation') return 'retrospective';
+      }
     }
   }
 

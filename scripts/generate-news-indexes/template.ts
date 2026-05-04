@@ -421,11 +421,12 @@ ${needsLanguageNotice ? generateLanguageNotice(langKey) : ''}
 
     function safeHref(slug) {
       var s = String(slug);
-      // Only allow simple relative HTML filenames to avoid URL parsing/normalization issues.
-      if (!s || /[\\\\\\x00-\\x1F\\x7F]/.test(s)) {
+      // Allow relative HTML paths including subdirectory articles (e.g. "2026-05-04-election-cycle/current-en.html").
+      // Block control chars, backslashes, and protocol-relative URLs.
+      if (!s || /[\\\\\\x00-\\x1F\\x7F]/.test(s) || s.indexOf('//') === 0) {
         return '#';
       }
-      if (!/^[A-Za-z0-9._-]+\\.html$/.test(s)) {
+      if (!/^[A-Za-z0-9._/-]+\\.html$/.test(s)) {
         return '#';
       }
       return esc(s);
