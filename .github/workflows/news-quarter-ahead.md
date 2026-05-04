@@ -70,6 +70,7 @@ network:
     - api.imf.org
     - data.imf.org
     - www.imf.org
+    - sdmxcentral.imf.org
     - data.riksdagen.se
     - www.riksdagen.se
     - riksdagen.se
@@ -127,6 +128,7 @@ safe-outputs:
     - api.imf.org
     - data.imf.org
     - www.imf.org
+    - sdmxcentral.imf.org
     - data.riksdagen.se
     - www.riksdagen.se
     - riksdagen.se
