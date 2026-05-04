@@ -5,7 +5,7 @@ date: 2026-04-26
 subfolder: realtime-pulse
 slug: 2026-04-26-realtime-pulse
 source_folder: analysis/daily/2026-04-26/realtime-pulse
-generated_at: 2026-05-04T09:52:32.346Z
+generated_at: 2026-05-04T12:16:14.044Z
 language: en
 layout: article
 ---
@@ -74,10 +74,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -299,63 +299,54 @@ graph LR
     style L2 fill:#00d9ff,color:#0a0e27
 ```
 
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/media-framing-analysis.md -->
+## Per-document intelligence
 
-### Dominant Government Narrative (Expected)
+### HD01FiU48
+<!-- source: documents/HD01FiU48-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/documents/HD01FiU48-analysis.md -->
 
-Key message pillars:
-1. **Law-and-order delivery**: Weapons law (HD01JuU10) + prison expansion (HD01CU25) = government following through on 2022 commitments
-2. **Cost-of-living action**: Fuel and energy relief (HD01FiU48) = government responding to household pressure in "special circumstances"
-3. **European responsibility**: EU bankpaket (HD03253) = Sweden is a reliable EU partner during capital markets uncertainty
-4. **Defence transformation**: MfcF (HC03205) = government is seriously building civil defence capability
+### Summary
 
-**Expected amplifiers**: SVT Rapport evening edition; DN front page on HD01FiU48; SvD editorial on EU banking alignment; government.se press releases from Wykman (Finance), Strömmer (Justice), Bohlin (Civil Defence) [C2]
+Committee report approving government proposal for temporary fuel and energy tax reductions costing 4.1 billion SEK. Relief applies May–September 2026. Government invoked "special circumstances" exception in Budget Law to justify mid-year fiscal amendment outside normal budget cycle.
 
-### Dominant Opposition Narrative (Expected)
+### Intelligence Assessment
 
-Key message pillars:
-1. **Police failure**: Riksrevisionen HD01JuU31 = government expanded prison but failed to fix policing capacity
-2. **Civil defence illusion**: HC03206 Riksrevisionen + HC03205 rename = structural theatre without capability
-3. **Labour market vulnerability**: HD10444 + HD10447 + 8.5% unemployment = government presides over worst labour market since 1990s
-4. **Selective fiscal populism**: HD01FiU48 framed as pre-election bribe, not structural relief
+**Significance**: HIGH — direct cost-of-living intervention affecting ~7 million Swedish drivers; largest single fiscal relief measure of the 2025/26 legislative year outside the main budget.
 
-**Expected amplifiers**: S party press conference citing RiR findings; DN debate (debatt) articles from S finance spokesperson; Aftonbladet tabloid framing on cost-of-living adequacy of the fuel relief package [C2]
+**Strategic purpose**: Pre-election voter mobilisation targeting Segment A (security blue-collar) and Segment F (rural cost-of-living). Timing (May–September) covers summer driving season peak.
 
-### Narrative Contestation Zones
+**Risk**: "Special circumstances" precedent may be exploited by SD for further fiscal demands before election. Opposition (S) will frame as electoral bribe rather than structural relief.
 
-#### Zone 1: Civil Defence
+**Admiralty quality**: B2 — riksdagen.se primary source; full committee report publicly available.
 
-**Government frame**: HC03205 = forward-looking capability investment
-**Opposition counter-frame**: HC03206 = documented gaps unresolved
-**Swing-voter perception**: Security-conscious voters are likely to accept government frame unless a specific incident activates the RiR findings. The government has a narrow window to publish a costed investment plan before opposition narrative crystallises.
+### Forward Triggers
 
-**Media risk**: HIGH if summer involves any civil defence stress-testing event (extreme weather, cyberattack, etc.)
+- 2026-05-08: Demoskop — did cost-of-living message register?
+- 2026-06: SCB consumer price index fuel component — pump price pass-through verified?
 
-#### Zone 2: Labour Market
+### HD03253
+<!-- source: documents/HD03253-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/documents/HD03253-analysis.md -->
 
-**Government frame**: HD01FiU48 relieves household cost pressure; "special circumstances" shows responsiveness
-**Opposition counter-frame**: 8.5% unemployment is structural; employer contribution abuse (HD10444) means the market is not functioning fairly
-**Swing-voter perception**: Segment A (security blue-collar) may be split — benefiting from fuel relief but experiencing unemployment anxiety
+**dok_id**: HD03253
+**Origin**: Government proposition (Regeringsproposition)
+**Type**: Proposition
+**Status**: Submitted to FiU committee 2026-04-23
+**Source**: riksdagen.se [B2]
 
-**Media risk**: MEDIUM — labour market data releases in May-June will determine which frame dominates
+### Summary
 
-#### Zone 3: EU Banking Reform
+Government proposition transposing EU CRD6 (Capital Requirements Directive 6) and implementing CRR3 (Capital Requirements Regulation 3) into Swedish law. Implements Basel IV capital standards, enhanced fit-and-proper requirements for bank leadership, and expanded Finansinspektionen supervisory authority.
 
-**Government frame**: HD03253 = responsible EU partnership, protecting Swedish households and banks
-**Opposition counter-frame**: HD03253 = rubber-stamping EU regulation without Swedish proportionality carve-outs for small banks
-**SD counter-frame (intra-coalition)**: HD03253 = EU overreach; should have demanded more carve-outs
-**Media risk**: LOW for mainstream media; MEDIUM for SD-adjacent media ecosystem
+### Intelligence Assessment
 
-### Amplifier Map
+**Significance**: HIGH for financial stability; MEDIUM for electoral politics.
 
-| Outlet type | Expected framing | Influence on swing voters |
-|------------|----------------|--------------------------|
-| SVT/SR | Balanced; led by HD01FiU48 visual story (pump prices) | HIGH |
-| DN/SvD | M-adjacent; positive on HD03253 + HC03205 | MEDIUM-HIGH |
-| Aftonbladet/Expressen | Popular; HD01FiU48 consumer benefit story leads | HIGH for Segment A/F |
-| SD-adjacent media | HD10448 energy narrative; HD03253 EU scepticism | HIGH for Segment A-SD |
-| S party media | Labour market + welfare frame | HIGH for Segment C |
+**Strategic purpose**: EU compliance obligation; demonstrates Sweden's reliability as EU financial sector partner post-BREXIT-era regulatory fragmentation.
+
+**Risk**: SD may demand proportionality carve-outs for small banks (analogous to German Sparkassen derogations) that create coalition discord. If SD files formal reservation in FiU committee, coalition discipline becomes publicly visible.
+
+**Implementation complexity**: HIGH — FRTB implementation requires significant FI capacity expansion; small banks need bespoke supervisory guidance.
+
+**Admiralty quality**: B2 — riksdagen.se proposition primary source; FiU committee report pending.
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/stakeholder-perspectives.md -->
@@ -451,6 +442,181 @@ graph TD
     style BANKS fill:#1a1e3d,color:#e0e0e0
     style RIR fill:#1a1e3d,color:#e0e0e0
 ```
+
+## Coalition Mathematics
+<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/coalition-mathematics.md -->
+
+### Current Parliamentary Arithmetic (349 seats, majority = 175)
+
+Based on March-April 2026 polling aggregates [C2].
+
+| Party | Seats | Bloc | Vote % |
+|-------|-------|------|--------|
+| S | 123 | Opp | 35.2% |
+| SD | 70 | Govt | 20.1% |
+| M | 66 | Govt | 18.8% |
+| V | 30 | Opp | 8.5% |
+| C | 17 | Swing | 4.8% |
+| KD | 15 | Govt | 4.3% |
+| L | 14 | Govt | 4.1% |
+| MP | 13 | Opp | 3.7% |
+| Others | 1 | — | 0.5% |
+| **TOTAL** | **349** | | **100%** |
+
+**Government bloc (M+SD+KD+L)**: 165 seats — SHORT of majority by 10 seats
+**Opposition bloc (S+V+MP)**: 166 seats — SHORT of majority by 9 seats
+**C position**: 17 seats; currently opposing; potential kingmaker
+
+### April 2026 Key Vote Analysis
+
+#### HD01FiU48 — Committee Finance Report (Budget Amendment)
+
+| Party | Stance | Ja | Nej | Avstår |
+|-------|--------|---|-----|-------|
+| M | Support | 66 | — | — |
+| SD | Support | 70 | — | — |
+| KD | Support | 15 | — | — |
+| L | Support | 14 | — | — |
+| S | Oppose | — | 123 | — |
+| V | Oppose | — | 30 | — |
+| MP | Oppose | — | 13 | — |
+| C | Abstain | — | — | 17 |
+| **Total** | | **165** | **166** | **17** |
+
+*Note: Projected vote outcome — C abstaining means bill passes (165 Ja > 166 Nej - 17 Avstår = effective plurality for procedural motions). Actual vote record on riksdagen.se should be verified when published.* [C2]
+
+#### HD01JuU10 — Weapons Law Committee Report
+
+| Party | Stance | Ja | Nej | Avstår |
+|-------|--------|---|-----|-------|
+| M | Support | 66 | — | — |
+| SD | Support | 70 | — | — |
+| KD | Support | 15 | — | — |
+| L | Support | 14 | — | — |
+| S | Oppose | — | 123 | — |
+| V | Oppose | — | 30 | — |
+| MP | Abstain | — | — | 13 |
+| C | Abstain | — | — | 17 |
+| **Total** | | **165** | **153** | **30** |
+
+*Law-and-order majority formation: Government 165 vs Opposition 153 (with C+MP abstaining) — clearer majority margin reflecting cross-party law-and-order consensus for parts of the bill.* [C2]
+
+### Coalition Stability Analysis
+
+#### Minimum Winning Coalition (MWC)
+
+Current Tidö government (M+SD+KD+L = 165 seats) is NOT an outright parliamentary majority. It relies on:
+1. S bloc not achieving absolute majority on any given vote
+2. C abstaining on government-preferred legislation
+3. SD maintaining internal discipline on EU-related bills
+
+#### Post-Election Scenarios
+
+**Scenario 1: Tidö renewal (M+SD+KD+L ≥ 175)**
+Required polling shift: +10 seats from current position
+Probability: 35% [C2]
+
+**Scenario 2: S minority government with C+MP support**
+Required: S+V+MP+C = 183 seats (already above majority)
+C would need to explicitly support S — departure from 2022 strategy
+Probability: 30% [C2]
+
+**Scenario 3: Grand coalition/minority M+S government**
+Historically unprecedented in Sweden
+Probability: 5% [C2]
+
+**Scenario 4: Hung parliament, re-election**
+Required: No bloc achieves investiture majority
+Probability: 10% [C2]
+
+**Scenario 5: Tidö with C support**
+M+SD+KD+L+C = 182 seats — comfortable majority
+C has signalled reluctance but not ruled out
+Probability: 20% [C2]
+
+## Voter Segmentation
+<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/voter-segmentation.md -->
+
+### Segmentation Framework
+
+Drawn from SOM Institute 2025 data and Demoskop sub-group tracking [C2], supplemented by 2022 Swedish Election Authority post-election survey. Segments mapped against key legislative events this week.
+
+### Segment A: Security-Seeking Blue-Collar Workers
+
+**Size**: ~15% of electorate
+**Core party**: SD (primary), S (secondary)
+**Key concerns**: Physical safety, housing, local community services, cost-of-living
+
+**Response to this week's legislation**:
+- HD01JuU10 (weapons law): HIGH relevance — tangible security signal
+- HD01CU25 (prison expansion): HIGH relevance — enforcement credibility
+- HD01FiU48 (fuel relief): MEDIUM relevance — financial utility
+
+**Electoral swing potential**: HIGH — this segment determines whether SD maintains 20%+ or drops toward 18%
+
+### Segment B: Urban Professional Liberals
+
+**Size**: ~12% of electorate
+**Core party**: L (primary), M and C (secondary)
+**Key concerns**: Rule of law, EU cooperation, education, business environment
+
+**Response to this week's legislation**:
+- HD03253 (EU bankpaket): HIGH relevance — aligns with L/M pro-EU stance
+- HD01JuU31 (police failure): HIGH relevance — rule of law accountability matters
+- HC03205 (civil defence): MEDIUM relevance — NATO alignment valued
+
+**Electoral swing potential**: MEDIUM — segment defines whether L clears 4% threshold
+
+### Segment C: Traditional Social Democrat Loyalists
+
+**Size**: ~20% of electorate
+**Core party**: S (solid)
+**Key concerns**: Welfare system, healthcare, education, employment
+
+**Response to this week's legislation**:
+- HD10447 (sick-pay reversal interpellation): HIGH relevance — welfare protection narrative
+- HD10444 (employer contribution abuse): HIGH relevance — labour market integrity
+- HD01FiU48 (fuel relief): NEUTRAL — viewed as electoral opportunism, not structural relief
+
+**Electoral swing potential**: LOW — core loyalty segment, but HD10447/HD10444 interpellations activate this segment for S campaign donations and volunteering
+
+### Segment D: Defence-Aware Middle Sweden
+
+**Size**: ~18% of electorate
+**Core party**: M, KD
+**Key concerns**: National security, civil preparedness, fiscal responsibility
+
+**Response to this week's legislation**:
+- HC03205 (civil defence reform): HIGH relevance — institutional security signal
+- HC03206 (RiR audit gaps): HIGH concern — if capability gaps are widely reported
+- HD01FiU23 (Riksbank zero dividend): MEDIUM relevance — fiscal responsibility narrative
+
+**Electoral swing potential**: MEDIUM — the gap between HC03205 announcement and HC03206 capability evidence tests credibility with this segment
+
+### Segment E: Green-Left Urban Youth
+
+**Size**: ~8% of electorate
+**Core party**: MP, V
+**Key concerns**: Climate, social justice, housing affordability
+
+**Response to this week's legislation**:
+- HD10448 (energy disinformation interpellation): MEDIUM relevance — energy policy positioning
+- HD01FiU48 (fuel relief): NEGATIVE — opposes fossil fuel subsidies
+- Housing shortage backdrop: HIGH concern
+
+**Electoral swing potential**: HIGH for MP 4% threshold — MP must mobilise this segment to survive
+
+### Segment Mobilisation Forecast
+
+| Segment | Estimated size | Govt or Opp advantage | Key mobilisation lever |
+|---------|---------------|----------------------|----------------------|
+| A: Security blue-collar | 15% | Govt (SD) | HD01JuU10 law-and-order |
+| B: Urban professional | 12% | Neutral/Govt | HD03253 EU alignment |
+| C: S loyalists | 20% | Opposition | HD10447 sick-pay reversal |
+| D: Defence middle | 18% | Govt (M) | HC03205 civil defence framing |
+| E: Green-left youth | 8% | Opposition (MP/V) | Energy policy, housing |
+| F: Rural cost-of-living | 15% | Govt (M/SD) | HD01FiU48 fuel relief |
+| G: Uncommitted swing | 12% | CONTESTED | Whichever narrative dominates summer |
 
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/forward-indicators.md -->
@@ -609,6 +775,68 @@ graph LR
     style B fill:#ffbe0b,color:#0a0e27
     style C fill:#ff006e,color:#ffffff
 ```
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/election-2026-analysis.md -->
+
+**Election date**: September 2026 (statutory scheduling; exact date TBC)
+**Days remaining**: ~140 (as of 2026-04-26)
+
+### Current Electoral Picture
+
+Based on aggregated Demoskop and SIFO polling through April 2026, weighted toward most recent readings [C2]:
+
+| Party | Est. support % | Est. seats (349 total) | Bloc |
+|-------|---------------|----------------------|------|
+| Socialdemokraterna (S) | 35.2% | 123 | Opposition |
+| Sverigedemokraterna (SD) | 20.1% | 70 | Government |
+| Moderaterna (M) | 18.8% | 66 | Government |
+| Vänsterpartiet (V) | 8.5% | 30 | Opposition |
+| Centerpartiet (C) | 4.8% | 17 | Opposition/swing |
+| Kristdemokraterna (KD) | 4.3% | 15 | Government |
+| Liberalerna (L) | 4.1% | 14 | Government |
+| Miljöpartiet (MP) | 3.7% | 13 | Opposition |
+| Others (below 4% threshold) | 0.5% | 1 | — |
+
+**Government bloc (M+SD+KD+L)**: ~165 seats (47%)
+**Opposition bloc (S+V+MP+C)**: ~183 seats (53%)
+**4% threshold**: C and L near margin; their presence/absence materially affects bloc arithmetic
+
+*Note: Seat projections derived from proportional representation modelling with 4% threshold; [C2] provisional estimates only — authoritative SCB/Valmyndigheten data available only at election.*
+
+### Key Electoral Dynamics
+
+#### The SD Vote Transfer Problem
+
+SD's current ~20% support is built partly on voters who left M in 2022. If M recovers to 22%, some SD-to-M vote transfer is likely — reducing both SD seats and coalition majority margin. PIR-A (Tidö ≥ 44%) is achievable even with this dynamic if both parties together hold their combined 2022 share.
+
+#### The Småpartier Risk
+
+Both L (4.1%) and MP (3.7%) are within margin-of-error of the 4% elimination threshold. If L falls below 4%, the government coalition loses ~14 seats. If MP falls below 4%, the opposition bloc loses ~13 seats. Both scenarios would fundamentally alter post-election coalition mathematics.
+
+#### C's Strategic Ambiguity
+
+Centerpartiet (C) historically bridges blocs. At 4.8%, C survives threshold. C's current opposition stance (declined 2022 government invitation) could shift if post-election mathematics require their support for a minority government of either colour.
+
+### Legislation Impact on Electoral Dynamics
+
+| Legislation | Electoral dimension | Direction |
+|-------------|--------------------|---------:|
+| HD01FiU48 fuel relief | Cost-of-living; general electorate | +Govt |
+| HD01JuU10 weapons law | Law-and-order; SD/M base consolidation | +Govt |
+| HC03205 civil defence reform | Security-conscious voters; defence narrative | +Govt |
+| HD01JuU31 police failure RiR | Public safety accountability; swing voters | -Govt |
+| HC03206 civil defence gaps | Defence credibility challenge | -Govt |
+| HD10448 energy interpellation | SD base activation on EU scepticism | Neutral/±SD |
+| HD10444 employer contributions | Labour market confidence; small-business owners | ±Swing |
+
+### Electoral Calendar (Key Triggers)
+
+- **2026-05-08**: Demoskop poll — first post-HD01FiU48 reading (PIR-D)
+- **2026-06**: SCB quarterly employment data — labour market verdict
+- **2026-07**: Summer SIFO poll — potential "silly season" lead change
+- **2026-08-15**: Final party congress season; formal campaign launch
+- **2026-09**: Election day (date TBC by government; typically third Sunday of September)
 
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/risk-assessment.md -->
@@ -831,291 +1059,48 @@ graph TD
     style T6 fill:#ff6600,color:#ffffff
 ```
 
-## Per-document intelligence
+## Historical Parallels
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/historical-parallels.md -->
 
-### HD01FiU48
-<!-- source: documents/HD01FiU48-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/documents/HD01FiU48-analysis.md -->
+### Parallel 1: Alliansen Spring 2010 — Pre-Election Legislative Sprint
 
-### Summary
+**Context**: The Alliance government (M/C/L/KD under Reinfeldt) enacted a series of popular welfare and tax reforms in spring 2010 ahead of the September election, including earned income tax credit expansions and housing market reforms.
 
-Committee report approving government proposal for temporary fuel and energy tax reductions costing 4.1 billion SEK. Relief applies May–September 2026. Government invoked "special circumstances" exception in Budget Law to justify mid-year fiscal amendment outside normal budget cycle.
+**Analogy to 2026**: The current Tidö government's HD01FiU48 fuel relief and HD01JuU10 weapons law cluster mirrors Alliansen's 2010 spring delivery sprint. Both involved fiscal populism combined with law-and-order signalling to consolidate electoral base.
 
-### Intelligence Assessment
+**Historical outcome**: Alliansen won the 2010 election with 49.3% — a majority government. The pre-election sprint contributed to this outcome, though economic recovery from the 2008 financial crisis was the primary driver.
 
-**Significance**: HIGH — direct cost-of-living intervention affecting ~7 million Swedish drivers; largest single fiscal relief measure of the 2025/26 legislative year outside the main budget.
+**Lesson for 2026**: Legislative delivery is a necessary but not sufficient condition. The macro-economic backdrop (2026: 8.5% unemployment vs 2010: recovering from crisis) suggests the Tidö sprint delivers less electoral benefit than Alliansen's 2010 equivalent. [C2]
 
-**Strategic purpose**: Pre-election voter mobilisation targeting Segment A (security blue-collar) and Segment F (rural cost-of-living). Timing (May–September) covers summer driving season peak.
+### Parallel 2: Persson Government 2002 — Police and Justice Reform Before Election
 
-**Risk**: "Special circumstances" precedent may be exploited by SD for further fiscal demands before election. Opposition (S) will frame as electoral bribe rather than structural relief.
+**Context**: The Social Democrat government under PM Göran Persson passed a series of police and criminal justice reforms in 2001–2002, including expanded police authority and increased criminal penalties for gang crime.
 
-**Admiralty quality**: B2 — riksdagen.se primary source; full committee report publicly available.
+**Analogy to 2026**: HD01JuU10 (weapons law) and HD01CU25 (prison expansion) mirror the Persson government's law-and-order delivery package. Both governments faced criticism for police capacity gaps (cf. HD01JuU31) while simultaneously passing new enforcement authority.
 
-### Forward Triggers
+**Historical outcome**: Persson won the 2002 election with 39.8% (largest single-party share since 1994). The law-and-order package contributed to consolidating centre-left swing voters concerned about urban safety.
 
-- 2026-05-08: Demoskop — did cost-of-living message register?
-- 2026-06: SCB consumer price index fuel component — pump price pass-through verified?
+**Lesson for 2026**: Weapons law and prison expansion pass with majority support regardless of the party delivering them — the political narrative around delivery matters more than policy details. Tidö's challenge is that HD01JuU31 (police reform failure) creates a credibility counter-narrative that Persson did not face in 2002. [C2]
 
-### HD03253
-<!-- source: documents/HD03253-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/documents/HD03253-analysis.md -->
+### Parallel 3: Löfven Government 2021 — Civil Defence and Pandemic Accountability
 
-**dok_id**: HD03253
-**Origin**: Government proposition (Regeringsproposition)
-**Type**: Proposition
-**Status**: Submitted to FiU committee 2026-04-23
-**Source**: riksdagen.se [B2]
+**Context**: The Löfven government's handling of COVID-19 and the subsequent MSB/civil preparedness review in 2021 led to a Riksrevisionen investigation into Sweden's preparedness failures (analogous to HC03206).
 
-### Summary
+**Analogy to 2026**: HC03206 Riksrevisionen audit of civil defence gaps mirrors the 2021 preparedness audit. Both involve documented capability gaps without immediate government remediation. The MSB restructuring in both periods (2021 crisis response review → 2026 MSB→MfcF) was criticised as structural rather than substantive.
 
-Government proposition transposing EU CRD6 (Capital Requirements Directive 6) and implementing CRR3 (Capital Requirements Regulation 3) into Swedish law. Implements Basel IV capital standards, enhanced fit-and-proper requirements for bank leadership, and expanded Finansinspektionen supervisory authority.
+**Historical outcome**: Löfven government fell on an unrelated housing/rent issue (2021 no-confidence vote). Civil defence accountability did not directly cause the government's collapse but contributed to a broader "government did not plan ahead" narrative.
 
-### Intelligence Assessment
+**Lesson for 2026**: HC03206 findings create a latent accountability liability. If any civil defence incident occurs before September 2026, the RiR findings become a devastating campaign weapon for the opposition — as occurred with COVID preparedness narratives against Löfven. [B2]
 
-**Significance**: HIGH for financial stability; MEDIUM for electoral politics.
+### Parallel 4: Sweden 1979 — Pre-Election Energy Policy Fracture
 
-**Strategic purpose**: EU compliance obligation; demonstrates Sweden's reliability as EU financial sector partner post-BREXIT-era regulatory fragmentation.
+**Context**: Sweden's 1979 election followed the Three Mile Island accident and a national energy referendum (1980). Energy policy became a cross-party fracture line with SD's historical predecessor parties (folk movement right) opposing nuclear expansion.
 
-**Risk**: SD may demand proportionality carve-outs for small banks (analogous to German Sparkassen derogations) that create coalition discord. If SD files formal reservation in FiU committee, coalition discipline becomes publicly visible.
+**Analogy to 2026**: HD10448 (SD energy disinformation interpellation) touches on the same energy-policy-as-political-identity dimension. SD's intervention targets SVT's coverage of energy alternatives — a more sophisticated version of using energy policy to activate nationalist/sovereignty narratives.
 
-**Implementation complexity**: HIGH — FRTB implementation requires significant FI capacity expansion; small banks need bespoke supervisory guidance.
+**Historical outcome**: Sweden's 1980 energy referendum resolved the immediate political crisis by creating a bipartisan "phase-out by 2010" compromise that both validated and co-opted the opposition.
 
-**Admiralty quality**: B2 — riksdagen.se proposition primary source; FiU committee report pending.
-
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/election-2026-analysis.md -->
-
-**Election date**: September 2026 (statutory scheduling; exact date TBC)
-**Days remaining**: ~140 (as of 2026-04-26)
-
-### Current Electoral Picture
-
-Based on aggregated Demoskop and SIFO polling through April 2026, weighted toward most recent readings [C2]:
-
-| Party | Est. support % | Est. seats (349 total) | Bloc |
-|-------|---------------|----------------------|------|
-| Socialdemokraterna (S) | 35.2% | 123 | Opposition |
-| Sverigedemokraterna (SD) | 20.1% | 70 | Government |
-| Moderaterna (M) | 18.8% | 66 | Government |
-| Vänsterpartiet (V) | 8.5% | 30 | Opposition |
-| Centerpartiet (C) | 4.8% | 17 | Opposition/swing |
-| Kristdemokraterna (KD) | 4.3% | 15 | Government |
-| Liberalerna (L) | 4.1% | 14 | Government |
-| Miljöpartiet (MP) | 3.7% | 13 | Opposition |
-| Others (below 4% threshold) | 0.5% | 1 | — |
-
-**Government bloc (M+SD+KD+L)**: ~165 seats (47%)
-**Opposition bloc (S+V+MP+C)**: ~183 seats (53%)
-**4% threshold**: C and L near margin; their presence/absence materially affects bloc arithmetic
-
-*Note: Seat projections derived from proportional representation modelling with 4% threshold; [C2] provisional estimates only — authoritative SCB/Valmyndigheten data available only at election.*
-
-### Key Electoral Dynamics
-
-#### The SD Vote Transfer Problem
-
-SD's current ~20% support is built partly on voters who left M in 2022. If M recovers to 22%, some SD-to-M vote transfer is likely — reducing both SD seats and coalition majority margin. PIR-A (Tidö ≥ 44%) is achievable even with this dynamic if both parties together hold their combined 2022 share.
-
-#### The Småpartier Risk
-
-Both L (4.1%) and MP (3.7%) are within margin-of-error of the 4% elimination threshold. If L falls below 4%, the government coalition loses ~14 seats. If MP falls below 4%, the opposition bloc loses ~13 seats. Both scenarios would fundamentally alter post-election coalition mathematics.
-
-#### C's Strategic Ambiguity
-
-Centerpartiet (C) historically bridges blocs. At 4.8%, C survives threshold. C's current opposition stance (declined 2022 government invitation) could shift if post-election mathematics require their support for a minority government of either colour.
-
-### Legislation Impact on Electoral Dynamics
-
-| Legislation | Electoral dimension | Direction |
-|-------------|--------------------|---------:|
-| HD01FiU48 fuel relief | Cost-of-living; general electorate | +Govt |
-| HD01JuU10 weapons law | Law-and-order; SD/M base consolidation | +Govt |
-| HC03205 civil defence reform | Security-conscious voters; defence narrative | +Govt |
-| HD01JuU31 police failure RiR | Public safety accountability; swing voters | -Govt |
-| HC03206 civil defence gaps | Defence credibility challenge | -Govt |
-| HD10448 energy interpellation | SD base activation on EU scepticism | Neutral/±SD |
-| HD10444 employer contributions | Labour market confidence; small-business owners | ±Swing |
-
-### Electoral Calendar (Key Triggers)
-
-- **2026-05-08**: Demoskop poll — first post-HD01FiU48 reading (PIR-D)
-- **2026-06**: SCB quarterly employment data — labour market verdict
-- **2026-07**: Summer SIFO poll — potential "silly season" lead change
-- **2026-08-15**: Final party congress season; formal campaign launch
-- **2026-09**: Election day (date TBC by government; typically third Sunday of September)
-
-## Coalition Mathematics
-<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/coalition-mathematics.md -->
-
-### Current Parliamentary Arithmetic (349 seats, majority = 175)
-
-Based on March-April 2026 polling aggregates [C2].
-
-| Party | Seats | Bloc | Vote % |
-|-------|-------|------|--------|
-| S | 123 | Opp | 35.2% |
-| SD | 70 | Govt | 20.1% |
-| M | 66 | Govt | 18.8% |
-| V | 30 | Opp | 8.5% |
-| C | 17 | Swing | 4.8% |
-| KD | 15 | Govt | 4.3% |
-| L | 14 | Govt | 4.1% |
-| MP | 13 | Opp | 3.7% |
-| Others | 1 | — | 0.5% |
-| **TOTAL** | **349** | | **100%** |
-
-**Government bloc (M+SD+KD+L)**: 165 seats — SHORT of majority by 10 seats
-**Opposition bloc (S+V+MP)**: 166 seats — SHORT of majority by 9 seats
-**C position**: 17 seats; currently opposing; potential kingmaker
-
-### April 2026 Key Vote Analysis
-
-#### HD01FiU48 — Committee Finance Report (Budget Amendment)
-
-| Party | Stance | Ja | Nej | Avstår |
-|-------|--------|---|-----|-------|
-| M | Support | 66 | — | — |
-| SD | Support | 70 | — | — |
-| KD | Support | 15 | — | — |
-| L | Support | 14 | — | — |
-| S | Oppose | — | 123 | — |
-| V | Oppose | — | 30 | — |
-| MP | Oppose | — | 13 | — |
-| C | Abstain | — | — | 17 |
-| **Total** | | **165** | **166** | **17** |
-
-*Note: Projected vote outcome — C abstaining means bill passes (165 Ja > 166 Nej - 17 Avstår = effective plurality for procedural motions). Actual vote record on riksdagen.se should be verified when published.* [C2]
-
-#### HD01JuU10 — Weapons Law Committee Report
-
-| Party | Stance | Ja | Nej | Avstår |
-|-------|--------|---|-----|-------|
-| M | Support | 66 | — | — |
-| SD | Support | 70 | — | — |
-| KD | Support | 15 | — | — |
-| L | Support | 14 | — | — |
-| S | Oppose | — | 123 | — |
-| V | Oppose | — | 30 | — |
-| MP | Abstain | — | — | 13 |
-| C | Abstain | — | — | 17 |
-| **Total** | | **165** | **153** | **30** |
-
-*Law-and-order majority formation: Government 165 vs Opposition 153 (with C+MP abstaining) — clearer majority margin reflecting cross-party law-and-order consensus for parts of the bill.* [C2]
-
-### Coalition Stability Analysis
-
-#### Minimum Winning Coalition (MWC)
-
-Current Tidö government (M+SD+KD+L = 165 seats) is NOT an outright parliamentary majority. It relies on:
-1. S bloc not achieving absolute majority on any given vote
-2. C abstaining on government-preferred legislation
-3. SD maintaining internal discipline on EU-related bills
-
-#### Post-Election Scenarios
-
-**Scenario 1: Tidö renewal (M+SD+KD+L ≥ 175)**
-Required polling shift: +10 seats from current position
-Probability: 35% [C2]
-
-**Scenario 2: S minority government with C+MP support**
-Required: S+V+MP+C = 183 seats (already above majority)
-C would need to explicitly support S — departure from 2022 strategy
-Probability: 30% [C2]
-
-**Scenario 3: Grand coalition/minority M+S government**
-Historically unprecedented in Sweden
-Probability: 5% [C2]
-
-**Scenario 4: Hung parliament, re-election**
-Required: No bloc achieves investiture majority
-Probability: 10% [C2]
-
-**Scenario 5: Tidö with C support**
-M+SD+KD+L+C = 182 seats — comfortable majority
-C has signalled reluctance but not ruled out
-Probability: 20% [C2]
-
-## Voter Segmentation
-<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/voter-segmentation.md -->
-
-### Segmentation Framework
-
-Drawn from SOM Institute 2025 data and Demoskop sub-group tracking [C2], supplemented by 2022 Swedish Election Authority post-election survey. Segments mapped against key legislative events this week.
-
-### Segment A: Security-Seeking Blue-Collar Workers
-
-**Size**: ~15% of electorate
-**Core party**: SD (primary), S (secondary)
-**Key concerns**: Physical safety, housing, local community services, cost-of-living
-
-**Response to this week's legislation**:
-- HD01JuU10 (weapons law): HIGH relevance — tangible security signal
-- HD01CU25 (prison expansion): HIGH relevance — enforcement credibility
-- HD01FiU48 (fuel relief): MEDIUM relevance — financial utility
-
-**Electoral swing potential**: HIGH — this segment determines whether SD maintains 20%+ or drops toward 18%
-
-### Segment B: Urban Professional Liberals
-
-**Size**: ~12% of electorate
-**Core party**: L (primary), M and C (secondary)
-**Key concerns**: Rule of law, EU cooperation, education, business environment
-
-**Response to this week's legislation**:
-- HD03253 (EU bankpaket): HIGH relevance — aligns with L/M pro-EU stance
-- HD01JuU31 (police failure): HIGH relevance — rule of law accountability matters
-- HC03205 (civil defence): MEDIUM relevance — NATO alignment valued
-
-**Electoral swing potential**: MEDIUM — segment defines whether L clears 4% threshold
-
-### Segment C: Traditional Social Democrat Loyalists
-
-**Size**: ~20% of electorate
-**Core party**: S (solid)
-**Key concerns**: Welfare system, healthcare, education, employment
-
-**Response to this week's legislation**:
-- HD10447 (sick-pay reversal interpellation): HIGH relevance — welfare protection narrative
-- HD10444 (employer contribution abuse): HIGH relevance — labour market integrity
-- HD01FiU48 (fuel relief): NEUTRAL — viewed as electoral opportunism, not structural relief
-
-**Electoral swing potential**: LOW — core loyalty segment, but HD10447/HD10444 interpellations activate this segment for S campaign donations and volunteering
-
-### Segment D: Defence-Aware Middle Sweden
-
-**Size**: ~18% of electorate
-**Core party**: M, KD
-**Key concerns**: National security, civil preparedness, fiscal responsibility
-
-**Response to this week's legislation**:
-- HC03205 (civil defence reform): HIGH relevance — institutional security signal
-- HC03206 (RiR audit gaps): HIGH concern — if capability gaps are widely reported
-- HD01FiU23 (Riksbank zero dividend): MEDIUM relevance — fiscal responsibility narrative
-
-**Electoral swing potential**: MEDIUM — the gap between HC03205 announcement and HC03206 capability evidence tests credibility with this segment
-
-### Segment E: Green-Left Urban Youth
-
-**Size**: ~8% of electorate
-**Core party**: MP, V
-**Key concerns**: Climate, social justice, housing affordability
-
-**Response to this week's legislation**:
-- HD10448 (energy disinformation interpellation): MEDIUM relevance — energy policy positioning
-- HD01FiU48 (fuel relief): NEGATIVE — opposes fossil fuel subsidies
-- Housing shortage backdrop: HIGH concern
-
-**Electoral swing potential**: HIGH for MP 4% threshold — MP must mobilise this segment to survive
-
-### Segment Mobilisation Forecast
-
-| Segment | Estimated size | Govt or Opp advantage | Key mobilisation lever |
-|---------|---------------|----------------------|----------------------|
-| A: Security blue-collar | 15% | Govt (SD) | HD01JuU10 law-and-order |
-| B: Urban professional | 12% | Neutral/Govt | HD03253 EU alignment |
-| C: S loyalists | 20% | Opposition | HD10447 sick-pay reversal |
-| D: Defence middle | 18% | Govt (M) | HC03205 civil defence framing |
-| E: Green-left youth | 8% | Opposition (MP/V) | Energy policy, housing |
-| F: Rural cost-of-living | 15% | Govt (M/SD) | HD01FiU48 fuel relief |
-| G: Uncommitted swing | 12% | CONTESTED | Whichever narrative dominates summer |
+**Lesson for 2026**: The government could defuse HD10448 political pressure by establishing a formal Energy Media Oversight Committee (cross-party), analogous to the 1980 referendum co-option mechanism. This would transform SD's disruptive interpellation into a bipartisan governance initiative. [C2]
 
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/comparative-international.md -->
@@ -1175,49 +1160,6 @@ Comparable policy episodes in Nordic and EU peer states provide empirical anchor
 | Banking proportionality | Germany | HD03253 FiU carve-outs | Structured derogation | HIGH [C2] |
 | Pre-election fiscal relief | Norway | HD01FiU48 fuel relief | Temporary polling boost | HIGH [B2] |
 
-## Historical Parallels
-<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/historical-parallels.md -->
-
-### Parallel 1: Alliansen Spring 2010 — Pre-Election Legislative Sprint
-
-**Context**: The Alliance government (M/C/L/KD under Reinfeldt) enacted a series of popular welfare and tax reforms in spring 2010 ahead of the September election, including earned income tax credit expansions and housing market reforms.
-
-**Analogy to 2026**: The current Tidö government's HD01FiU48 fuel relief and HD01JuU10 weapons law cluster mirrors Alliansen's 2010 spring delivery sprint. Both involved fiscal populism combined with law-and-order signalling to consolidate electoral base.
-
-**Historical outcome**: Alliansen won the 2010 election with 49.3% — a majority government. The pre-election sprint contributed to this outcome, though economic recovery from the 2008 financial crisis was the primary driver.
-
-**Lesson for 2026**: Legislative delivery is a necessary but not sufficient condition. The macro-economic backdrop (2026: 8.5% unemployment vs 2010: recovering from crisis) suggests the Tidö sprint delivers less electoral benefit than Alliansen's 2010 equivalent. [C2]
-
-### Parallel 2: Persson Government 2002 — Police and Justice Reform Before Election
-
-**Context**: The Social Democrat government under PM Göran Persson passed a series of police and criminal justice reforms in 2001–2002, including expanded police authority and increased criminal penalties for gang crime.
-
-**Analogy to 2026**: HD01JuU10 (weapons law) and HD01CU25 (prison expansion) mirror the Persson government's law-and-order delivery package. Both governments faced criticism for police capacity gaps (cf. HD01JuU31) while simultaneously passing new enforcement authority.
-
-**Historical outcome**: Persson won the 2002 election with 39.8% (largest single-party share since 1994). The law-and-order package contributed to consolidating centre-left swing voters concerned about urban safety.
-
-**Lesson for 2026**: Weapons law and prison expansion pass with majority support regardless of the party delivering them — the political narrative around delivery matters more than policy details. Tidö's challenge is that HD01JuU31 (police reform failure) creates a credibility counter-narrative that Persson did not face in 2002. [C2]
-
-### Parallel 3: Löfven Government 2021 — Civil Defence and Pandemic Accountability
-
-**Context**: The Löfven government's handling of COVID-19 and the subsequent MSB/civil preparedness review in 2021 led to a Riksrevisionen investigation into Sweden's preparedness failures (analogous to HC03206).
-
-**Analogy to 2026**: HC03206 Riksrevisionen audit of civil defence gaps mirrors the 2021 preparedness audit. Both involve documented capability gaps without immediate government remediation. The MSB restructuring in both periods (2021 crisis response review → 2026 MSB→MfcF) was criticised as structural rather than substantive.
-
-**Historical outcome**: Löfven government fell on an unrelated housing/rent issue (2021 no-confidence vote). Civil defence accountability did not directly cause the government's collapse but contributed to a broader "government did not plan ahead" narrative.
-
-**Lesson for 2026**: HC03206 findings create a latent accountability liability. If any civil defence incident occurs before September 2026, the RiR findings become a devastating campaign weapon for the opposition — as occurred with COVID preparedness narratives against Löfven. [B2]
-
-### Parallel 4: Sweden 1979 — Pre-Election Energy Policy Fracture
-
-**Context**: Sweden's 1979 election followed the Three Mile Island accident and a national energy referendum (1980). Energy policy became a cross-party fracture line with SD's historical predecessor parties (folk movement right) opposing nuclear expansion.
-
-**Analogy to 2026**: HD10448 (SD energy disinformation interpellation) touches on the same energy-policy-as-political-identity dimension. SD's intervention targets SVT's coverage of energy alternatives — a more sophisticated version of using energy policy to activate nationalist/sovereignty narratives.
-
-**Historical outcome**: Sweden's 1980 energy referendum resolved the immediate political crisis by creating a bipartisan "phase-out by 2010" compromise that both validated and co-opted the opposition.
-
-**Lesson for 2026**: The government could defuse HD10448 political pressure by establishing a formal Energy Media Oversight Committee (cross-party), analogous to the 1980 referendum co-option mechanism. This would transform SD's disruptive interpellation into a bipartisan governance initiative. [C2]
-
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/implementation-feasibility.md -->
 
@@ -1274,6 +1216,64 @@ Drawing on Statskontoret public agency capacity analysis and historical Swedish 
 | HD01JuU10 | Rikspolisstyrelsen | HIGH | MEDIUM |
 | HD01CU25 | Kriminalvården | LOW | VERY LOW |
 | HC03205 | MSB/MfcF | MEDIUM | LOW |
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/media-framing-analysis.md -->
+
+### Dominant Government Narrative (Expected)
+
+Key message pillars:
+1. **Law-and-order delivery**: Weapons law (HD01JuU10) + prison expansion (HD01CU25) = government following through on 2022 commitments
+2. **Cost-of-living action**: Fuel and energy relief (HD01FiU48) = government responding to household pressure in "special circumstances"
+3. **European responsibility**: EU bankpaket (HD03253) = Sweden is a reliable EU partner during capital markets uncertainty
+4. **Defence transformation**: MfcF (HC03205) = government is seriously building civil defence capability
+
+**Expected amplifiers**: SVT Rapport evening edition; DN front page on HD01FiU48; SvD editorial on EU banking alignment; government.se press releases from Wykman (Finance), Strömmer (Justice), Bohlin (Civil Defence) [C2]
+
+### Dominant Opposition Narrative (Expected)
+
+Key message pillars:
+1. **Police failure**: Riksrevisionen HD01JuU31 = government expanded prison but failed to fix policing capacity
+2. **Civil defence illusion**: HC03206 Riksrevisionen + HC03205 rename = structural theatre without capability
+3. **Labour market vulnerability**: HD10444 + HD10447 + 8.5% unemployment = government presides over worst labour market since 1990s
+4. **Selective fiscal populism**: HD01FiU48 framed as pre-election bribe, not structural relief
+
+**Expected amplifiers**: S party press conference citing RiR findings; DN debate (debatt) articles from S finance spokesperson; Aftonbladet tabloid framing on cost-of-living adequacy of the fuel relief package [C2]
+
+### Narrative Contestation Zones
+
+#### Zone 1: Civil Defence
+
+**Government frame**: HC03205 = forward-looking capability investment
+**Opposition counter-frame**: HC03206 = documented gaps unresolved
+**Swing-voter perception**: Security-conscious voters are likely to accept government frame unless a specific incident activates the RiR findings. The government has a narrow window to publish a costed investment plan before opposition narrative crystallises.
+
+**Media risk**: HIGH if summer involves any civil defence stress-testing event (extreme weather, cyberattack, etc.)
+
+#### Zone 2: Labour Market
+
+**Government frame**: HD01FiU48 relieves household cost pressure; "special circumstances" shows responsiveness
+**Opposition counter-frame**: 8.5% unemployment is structural; employer contribution abuse (HD10444) means the market is not functioning fairly
+**Swing-voter perception**: Segment A (security blue-collar) may be split — benefiting from fuel relief but experiencing unemployment anxiety
+
+**Media risk**: MEDIUM — labour market data releases in May-June will determine which frame dominates
+
+#### Zone 3: EU Banking Reform
+
+**Government frame**: HD03253 = responsible EU partnership, protecting Swedish households and banks
+**Opposition counter-frame**: HD03253 = rubber-stamping EU regulation without Swedish proportionality carve-outs for small banks
+**SD counter-frame (intra-coalition)**: HD03253 = EU overreach; should have demanded more carve-outs
+**Media risk**: LOW for mainstream media; MEDIUM for SD-adjacent media ecosystem
+
+### Amplifier Map
+
+| Outlet type | Expected framing | Influence on swing voters |
+|------------|----------------|--------------------------|
+| SVT/SR | Balanced; led by HD01FiU48 visual story (pump prices) | HIGH |
+| DN/SvD | M-adjacent; positive on HD03253 + HC03205 | MEDIUM-HIGH |
+| Aftonbladet/Expressen | Popular; HD01FiU48 consumer benefit story leads | HIGH for Segment A/F |
+| SD-adjacent media | HD10448 energy narrative; HD03253 EU scepticism | HIGH for Segment A-SD |
+| S party media | Labour market + welfare frame | HIGH for Segment C |
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/devils-advocate.md -->
@@ -1649,21 +1649,21 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/media-framing-analysis.md)
+- [`documents/HD01FiU48-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/documents/HD01FiU48-analysis.md)
+- [`documents/HD03253-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/documents/HD03253-analysis.md)
 - [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/stakeholder-perspectives.md)
+- [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/coalition-mathematics.md)
+- [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/voter-segmentation.md)
 - [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/forward-indicators.md)
 - [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/election-2026-analysis.md)
 - [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/risk-assessment.md)
 - [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/swot-analysis.md)
 - [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/threat-analysis.md)
-- [`documents/HD01FiU48-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/documents/HD01FiU48-analysis.md)
-- [`documents/HD03253-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/documents/HD03253-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/election-2026-analysis.md)
-- [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/coalition-mathematics.md)
-- [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/comparative-international.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/realtime-pulse/cross-reference-map.md)

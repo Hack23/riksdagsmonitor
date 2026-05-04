@@ -5,7 +5,7 @@ date: 2026-04-26
 subfolder: propositions
 slug: 2026-04-26-propositions
 source_folder: analysis/daily/2026-04-26/propositions
-generated_at: 2026-05-04T09:52:32.338Z
+generated_at: 2026-05-04T12:16:14.036Z
 language: en
 layout: article
 ---
@@ -74,10 +74,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -243,591 +243,6 @@ xychart-beta
 - **P1 (Strategic/Important)**: HD03104 — Riksgälden manages Sweden's SEK ~1,300 bn national debt. The evaluation period (2021–2025) includes pandemic emergency borrowing peaks. Source: Riksgälden årsredovisning 2025, Riksdagen API HD03104 summary. [A1]
 - **P1**: HD03252 — Estimated 3,000–4,500 prisoners in controlled accommodation settings eligible for social benefits restriction. Source: BRÅ annual statistics 2025 (estimated); Prop. 2025/26:252 scope. [C3 — single source estimate]
 - **P2 (Routine/Tracked)**: HD03256 — EU Regulation (EU) 2020/1054 on tachograph requirements; transposition reinforcement. [A2]
-
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/media-framing-analysis.md -->
-
----
-
-### Framework: Media Framing Categories
-
-Following Entman (1993): frames perform four functions — problem definition, causal attribution, moral evaluation, remedy suggestion.
-
----
-
-### HD03253 — EU Bankpaket (CRD6/CRR3)
-
-#### Expected Dominant Frames (OSINT projection — [C3])
-
-| Media outlet type | Expected frame | Headline register |
-|-------------------|----------------|-------------------|
-| DN / SvD (quality press) | EU compliance / competitiveness | "Sverige inför EU:s bankregelverk" |
-| Dagens industri / Affärsvärlden | Burden on Swedish banks, competitive disadvantage | "Banker möter ökad kapitalkrav" |
-| Aftonbladet / Expressen (tabloid) | Taxpayer protection / bank stability | "Stärker skyddet mot bankkris" |
-| SR Ekot / SVT (public broadcaster) | Balance: EU obligation + criticism of late transposition | "EU-regler om banker på riksdagens bord" |
-| V/MP-affiliated media | Small bank burden, power to financiers | "Storbanksfördelar i nytt EU-paket" |
-
-#### Key Narrative Tensions
-- **Framing A (Govt)**: Responsible EU compliance; protecting Swedish financial system  
-- **Framing B (Opposition left)**: Bureaucratic overreach; burdens small banks; serves financial elite  
-- **Framing C (Industry)**: Late transposition caused uncertainty; welcome clarity
-
----
-
-### HD03252 — Socialförsäkringsförmåner under fängelsestraff
-
-#### Expected Dominant Frames
-
-| Media outlet type | Expected frame | Headline register |
-|-------------------|----------------|-------------------|
-| DN / SvD | Law reform debate, ECHR tensions | "Fångar förlorar ersättningar" |
-| Aftonbladet / Expressen | Crime does not pay / welfare fairness | "Dömda förlorar sjukpenning" |
-| SR Ekot / SVT | Balanced: law change + human rights critique | "Riksdagen röstar om förmåner i fängelse" |
-| SD-aligned media (Samhällsnytt) | Welfare reform, taxpayer money | "SD pressar igenom välfärdsreform" |
-| V/S-aligned media (Flamman, LO-Tidningen) | ECHR risk, punishing the sick | "Sjuka straffas dubbelt" |
-
-#### Key Narrative Tensions
-- **Framing A (SD/M)**: Principle — those serving prison sentences should not receive taxpayer transfers  
-- **Framing B (S/V/MP)**: Human rights — prisoners are sick people too; double punishment  
-- **Framing C (Legal experts)**: ECHR Article 3 and proportionality question pending
-
-**Anticipated media impact**: HD03252 will generate the most media coverage of this package. Estimated 15–25 news articles, 3–5 editorial opinions within 2 weeks of Riksdag vote. [C3]
-
----
-
-### HD03256 — Färdskrivare manipulation
-
-#### Expected Dominant Frames
-
-| Media outlet type | Expected frame |
-|-------------------|----------------|
-| Industry press (Transportnytt, ATL) | Welcome level playing field; enforcement details |
-| Fackförbundsmedia (Transport union) | Worker protection angle; fair competition |
-| General media | Low coverage; technical regulation |
-
-**Media impact**: Minimal. Expected 2–5 trade press articles. [C3]
-
----
-
-### HD03104 — Skuldförvaltning (Evaluation Skrivelse)
-
-#### Expected Dominant Frames
-
-| Media outlet type | Expected frame |
-|-------------------|----------------|
-| Ekonomijournalistik (DI, SvD Näringsliv) | Green bonds performance; debt strategy assessment |
-| General media | Low coverage; technical evaluation |
-
-**Media impact**: Minimal. Expected 1–3 specialist articles. [C3]
-
----
-
-### Strategic Communication Observations
-
-#### Government Communication Risk
-The Tidö government's primary communication risk on this package is **frame contamination**: media conflating HD03252's welfare-restriction narrative with HD03253's financial regulation narrative, creating an "austerity package" meta-narrative that is more politically damaging than any individual bill.
-
-**Recommended government counter-frame**: Present bills individually with distinct press events. Keep Wykman (FiU/Finance) and Strömmer (Justice/SfU) briefings separate.
-
-#### Opposition Communication Opportunity  
-S+V have opportunity to construct a unified "social rights rollback" frame combining HD03252 with previous reforms. This meta-frame is more electorally potent than opposing each bill separately.
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e"}}}%%
-graph TD
-    GOVT["Government\nFraming"] --> COMP["EU Compliance\nResponsible Finance"]
-    GOVT --> SAFE["Public Safety\nWelfare Reform"]
-    OPP["Opposition\nFraming"] --> RIGHTS["Social Rights\nHuman Rights"]
-    OPP --> BURDEN["Bank Burden\nSmall Business"]
-    MEDIA["Media\nMeta-Frame Risk"] --> AUSTERITY["Austerity Package\n(conflation risk)"]
-
-    style AUSTERITY fill:#ff006e,color:#fff
-    style COMP fill:#00d9ff,color:#000
-    style RIGHTS fill:#ffbe0b,color:#000
-```
-
-## Stakeholder Perspectives
-<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/stakeholder-perspectives.md -->
-
----
-
-### 6-Lens Stakeholder Matrix
-
-| Stakeholder | Lens | Position on HD03253 | Position on HD03252 | Position on HD03256 | Position on HD03104 | Influence | Power |
-|-------------|------|---------------------|---------------------|---------------------|---------------------|-----------|-------|
-| **Niklas Wykman (M, Finansminister)** | Government proponent | Strongly supportive — EU compliance, Basel IV | Neutral (not his portfolio) | Supportive (EU obligation) | Author/proponent | Critical | High |
-| **Gunnar Strömmer (M, Justitieminister)** | Government proponent | Neutral | Strongly supportive — law-and-order consolidation | Neutral | Neutral | High | High |
-| **Andreas Carlson (SD, Landsbygdsminister)** | Government proponent | Neutral | Broadly supportive | Strongly supportive | Neutral | Medium | Medium |
-| **FiU (Finansutskottet)** | Committee scrutiny | Scrutiny + amendment power | — | — | Scrutiny | Very High | High |
-| **SfU (Socialförsäkringsutskottet)** | Committee scrutiny | — | Scrutiny + opposition challenge | — | — | High | High |
-| **Socialdemokraterna (S, 107 seats)** | Opposition | Accept EU obligation, demand proportionality carve-out for small banks | Oppose proportionality; attack family impact | Accept | Accept with caveats on climate bonds | High | High |
-| **Sverigedemokraterna (SD, 73 seats)** | Coalition support | Support — financial stability | Strong support — welfare restriction, crime | Support | Support | Critical | High |
-| **Vänsterpartiet (V, 24 seats)** | Opposition | Oppose — market-friendly banking regulation | Strongly oppose — social rights | Opposed (minor) | Critical of borrowing strategy | Medium | Medium |
-| **Miljöpartiet (MP, 24 seats)** | Opposition | Neutral | Oppose (human rights framing) | Neutral | Support (green bonds) | Low-Medium | Medium |
-| **Finansinspektionen (FI)** | Regulator | Actively supportive — expanded supervisory powers | Neutral | Neutral | Neutral | High | High |
-| **Riksgälden** | Stakeholder | Neutral | Neutral | Neutral | Author of underlying evaluation; supportive | High | Medium |
-| **Swedish Banking Association** | Industry | Mixed — large banks accept, small banks lobby for carve-out | Neutral | Neutral | Neutral | High | High |
-| **Sparbankerna / Niche banks** | Industry | Strongly opposed to CRR3 output floor | Neutral | Neutral | Neutral | Medium | Low-Medium |
-| **Prisoner rights organisations** | Civil society | Neutral | Strongly opposed | Neutral | Neutral | Low | Low |
-
-### Named Actor Analysis
-
-#### Niklas Wykman (M, Finansminister)
-- **Role**: Author of both HD03253 and HD03104. Dual-committee exposure (FiU).
-- **Position**: EU-integrationist, fiscal conservative. Committed to Basel IV on ECB/EBA timeline.
-- **Risk**: Small-bank lobby pressure from within M party ranks (municipal savings banks have M voter base).
-- **Admiralty**: [B2] — Public statements at Finance Ministry press conference, April 2026 [riksdag-regering MCP]
-
-#### Gunnar Strömmer (M, Justitieminister)
-- **Role**: HD03252 author. Consistent L&O reform agenda since taking office 2022.
-- **Position**: Welfare conditionality for prisoners consistent with his stated policy direction.
-- **Risk**: Lagrådet pushback on *säkerhetsförvaring* provisions (indefinite detention social benefit restriction).
-- **Admiralty**: [B2]
-
-### Influence Network Diagram
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e"}}}%%
-graph LR
-    GOV["Kristersson Government"] --> FIU["FiU Committee\n(HD03253, HD03104)"]
-    GOV --> SFU["SfU Committee\n(HD03252)"]
-    GOV --> TU["TU Committee\n(HD03256)"]
-    BANKS["Swedish Banking\nAssociation"] --> FIU
-    S_PARTY["S (107 seats)\nOpposition"] --> FIU
-    SD_PARTY["SD (73 seats)\nCoalition"] --> GOV
-    FI["Finansinspektionen"] --> FIU
-    RIKSGALDEN["Riksgälden"] --> FIU
-    V_PARTY["V (24 seats)"] --> SFU
-    PRISONER_ORG["Prisoner Rights\nOrgs"] --> SFU
-
-    style GOV fill:#00d9ff,color:#000
-    style S_PARTY fill:#ff006e,color:#fff
-    style SD_PARTY fill:#ffbe0b,color:#000
-    style FIU fill:#1a1e3d,color:#e0e0e0
-    style SFU fill:#1a1e3d,color:#e0e0e0
-    style TU fill:#1a1e3d,color:#e0e0e0
-```
-
-## Forward Indicators
-<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/forward-indicators.md -->
-
----
-
-### Purpose
-
-Forward indicators are observable, dateable signals that will confirm or refute the key judgments and scenarios in the executive-brief and scenario-analysis files. Monitoring these indicators provides early warning of scenario divergence.
-
----
-
-### FI-001 — FiU Hearing Date for HD03253
-
-| Attribute | Value |
-|-----------|-------|
-| **Indicator** | Finansutskottets (FiU) scheduled hearing for Prop. 2025/26:163 (HD03253) |
-| **Observation window** | 2026-05-01 to 2026-06-30 |
-| **Monitor at** | riksdagen.se/sv/utskottens-arbete — FiU hearing calendar |
-| **Bearing on** | S1 vs. S2: if hearing scheduled Q2 → smooth passage (S1); if delayed to Q3 → S2 |
-| **Signal threshold** | Hearing within 6 weeks of prop submission = S1 signal |
-| **Date** | 2026-04-26 (published); hearing TBD |
-
-### FI-002 — Lagrådet Opinion on HD03252
-
-| Attribute | Value |
-|-----------|-------|
-| **Indicator** | Publication of Lagrådet's remissyttrande on HD03252's säkerhetsförvaring provisions |
-| **Observation window** | 2026-05-01 to 2026-06-15 |
-| **Monitor at** | lagradet.se — Yttranden by date |
-| **Bearing on** | ECHR risk: if Lagrådet raises Article 3 objection → L may abstain → coalition vote risk |
-| **Signal threshold** | Lagrådet kritik (anmärkning) = escalation signal |
-| **Date** | 2026-04-26 (legislation submitted); Lagrådet review pending |
-
-### FI-003 — Finansinspektionen Capital Buffer Statement
-
-| Attribute | Value |
-|-----------|-------|
-| **Indicator** | FI's next quarterly capital buffer decision (counter-cyclical + systemic risk buffers) |
-| **Observation window** | 2026-06-30 (Q2 FI announcement) |
-| **Monitor at** | fi.se — Finansiell stabilitet press releases |
-| **Bearing on** | HD03253 calibration: if FI signals buffer reduction → HD03253 less urgent; if unchanged/increased → CRD6 urgency confirmed |
-| **Signal threshold** | Any change to counter-cyclical buffer rate |
-| **Date** | 2026-04-26 (current rate 1.0%); next announcement expected 2026-06-27 |
-
-### FI-004 — Kriminalvårdens Remissvar on HD03252 Cost Estimate
-
-| Attribute | Value |
-|-----------|-------|
-| **Indicator** | Kriminalvårdens formal remissvar quantifying administrative cost of notification system |
-| **Observation window** | Already submitted in remissomgång; look for media citation or FiU summary |
-| **Monitor at** | riksdagen.se — SfU preparatory documents; regeringen.se — remissammanställning |
-| **Bearing on** | Implementation feasibility: if cost > 50 MSEK → budgetary rider may be added |
-| **Signal threshold** | Cited cost above 50 MSEK |
-| **Date** | 2026-04-26 (estimate from HD03252 text) |
-
-### FI-005 — Polling Trends (April-June 2026): SD Support
-
-| Attribute | Value |
-|-----------|-------|
-| **Indicator** | SD polling average (Demoskop + Novus) following HD03252 Riksdag vote |
-| **Observation window** | 2026-05-15 to 2026-07-31 |
-| **Monitor at** | val.digital, val.se aggregated polling |
-| **Bearing on** | Electoral scenario: HD03252 was forecast to give SD +1 to +3 seats; polling evidence will confirm/refute |
-| **Signal threshold** | SD polling rising >0.5 percentage points within 4 weeks post-vote |
-| **Date** | Baseline as of 2026-04-26: SD 19.2% (Novus avg) |
-
-### FI-006 — EU Infringement Procedure Status (CRD6)
-
-| Attribute | Value |
-|-----------|-------|
-| **Indicator** | European Commission formal notice or reasoned opinion against Sweden for CRD6 non-transposition |
-| **Observation window** | 2026-04-01 to 2026-12-31 |
-| **Monitor at** | ec.europa.eu/atwork/applying-eu-law — infringement decisions |
-| **Bearing on** | HD03253 urgency: formal notice accelerates parliamentary timeline |
-| **Signal threshold** | Any formal notice from DG FISMA to Sweden |
-| **Date** | As of 2026-04-26: no formal notice confirmed (OSINT); infringement letter expected [C3] |
-
-### FI-007 — C-party Position Statement on HD03253
-
-| Attribute | Value |
-|-----------|-------|
-| **Indicator** | Centerpartiet's public statement on EU bankpaket small-bank provisions |
-| **Observation window** | 2026-05-01 to 2026-06-15 |
-| **Monitor at** | centerpartiet.se press; riksdagen.se motioner from C on banking topics |
-| **Bearing on** | Pivotal vote risk: C opposition → 179 vs. 170 defeat scenario |
-| **Signal threshold** | C motion against HD03253 OR official statement expressing opposition |
-| **Date** | 2026-04-26 (no C statement yet observed) |
-
-### FI-008 — Riksgälden Green Bond Issuance (Post-HD03104)
-
-| Attribute | Value |
-|-----------|-------|
-| **Indicator** | Riksgälden announcement of next green bond tap or new issuance following HD03104 evaluation |
-| **Observation window** | 2026-06-01 to 2026-12-31 |
-| **Monitor at** | riksgalden.se — Gröna obligationer |
-| **Bearing on** | Green finance scenario: continued programme = FI-008 confirms; discontinuation = reversal |
-| **Signal threshold** | Any Riksgälden green bond issuance announcement |
-| **Date** | Baseline: SEK 135 billion green bonds outstanding as of 2025 Q4 [A3 — Riksgälden annual report] |
-
-### FI-009 — Transport Agency Inspection Statistics (Post-HD03256)
-
-| Attribute | Value |
-|-----------|-------|
-| **Indicator** | Transportstyrelsen quarterly vägkontroll statistics for manipulation detection |
-| **Observation window** | 2026-09-01 to 2027-03-31 (first full quarter after implementation) |
-| **Monitor at** | transportstyrelsen.se — Vägkontroll statistics |
-| **Bearing on** | HD03256 effectiveness: rising detection rate = success; flat = enforcement unchanged |
-| **Signal threshold** | >20% increase in manipulation detections vs. Q1 2026 baseline |
-| **Date** | Baseline: Q1 2026 statistics pending |
-
-### FI-010 — ECHR Application Filed Against Sweden on HD03252
-
-| Attribute | Value |
-|-----------|-------|
-| **Indicator** | Application to European Court of Human Rights challenging HD03252 |
-| **Observation window** | 2026-11-01 to 2028-12-31 (6-month rule for ECHR after domestic exhaustion) |
-| **Monitor at** | hudoc.echr.coe.int — Sweden new cases |
-| **Bearing on** | Legal risk materialisation: ECHR application = escalation; admissibility decision = further escalation |
-| **Signal threshold** | Admissibility decision by ECHR on Swedish prisoner benefits case |
-| **Date** | 2026-04-26 (no application yet; domestic proceedings not yet exhausted) |
-
----
-
-### Indicator Dashboard Summary
-
-| ID | Subject | Timeframe | Urgency | KJ bearing |
-|----|---------|-----------|---------|------------|
-| FI-001 | FiU hearing HD03253 | May–Jun 2026 | HIGH | S1 vs S2 |
-| FI-002 | Lagrådet on HD03252 | May–Jun 2026 | HIGH | Coalition risk |
-| FI-003 | FI capital buffer | Jun 2026 | MEDIUM | HD03253 urgency |
-| FI-004 | Kriminalvård cost | Apr–May 2026 | MEDIUM | Implementation |
-| FI-005 | SD polling | May–Jul 2026 | HIGH | Electoral scenario |
-| FI-006 | EU infringement | Apr–Dec 2026 | MEDIUM | HD03253 urgency |
-| FI-007 | C-party position | May–Jun 2026 | HIGH | HD03253 passage |
-| FI-008 | Green bond issuance | Jun–Dec 2026 | LOW | Green finance |
-| FI-009 | Vägkontroll stats | Sep 2026 | LOW | HD03256 effectiveness |
-| FI-010 | ECHR application | 2027+ | LOW | HD03252 legal risk |
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e"}}}%%
-timeline
-    title Forward Indicators — Monitoring Timeline
-    section May 2026
-        FI-001 : FiU hearing HD03253
-        FI-002 : Lagrådet opinion HD03252
-        FI-004 : Kriminalvård cost estimate
-    section June 2026
-        FI-003 : FI capital buffer Q2
-        FI-006 : EU infringement check
-        FI-007 : C-party position
-    section July 2026
-        FI-005 : SD polling post-vote
-    section H2 2026
-        FI-008 : Green bond issuance
-        FI-009 : Vägkontroll Q3 stats
-    section 2027+
-        FI-010 : ECHR application check
-```
-
-## Scenario Analysis
-<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/scenario-analysis.md -->
-
----
-
-### Scenario Framework
-
-Three distinct scenarios for the legislative outcomes of the April 2026 proposition batch, with primary focus on HD03253 (EU bank package) as the highest-impact item.
-
----
-
-### Scenario 1: Smooth EU Compliance Passage (Probability: 40%)
-
-**Description**: FiU fast-tracks HD03253; Riksdag approves HD03252 and HD03256 by June 2026. Sweden achieves partial CRD6 compliance before EU Commission escalates infringement.
-
-**Conditions required**:
-- FiU reaches cross-party consensus on CRR3 output floor transition provisions
-- Small-bank lobby limited to minor proportionality amendments within CRD6 Art. 65 flexibility
-- Lagrådet approves HD03252 without substantive proportionality critique
-- No external shocks (financial crisis, EU infringement notice escalation)
-
-**Evidence base**: S traditionally supports EU banking regulation; government majority with SD/KD/L [A1]; CRD6 deadline already passed creating urgency [B2].
-
-**Leading indicator**: FiU chair (M) announces accelerated hearing schedule by 5 May 2026.
-
-**Electoral impact**: Neutral — EU compliance is expected; no electoral upside except with financial sector donors.
-
----
-
-### Scenario 2: Prolonged FiU Contestation (Probability: 45%) ← **Base case**
-
-**Description**: FiU holds extended hearings on HD03253 through May–June 2026. Small-bank proportionality amendments proposed. HD03252 receives Lagrådet minor critique, government makes narrow scope adjustment. All four pass by September 2026 but not before election campaign starts.
-
-**Conditions required**:
-- S uses FiU to extract small-bank protection amendments (within their stated policy interest)
-- Lagrådet issues advisory opinion on HD03252 — not blocking, but requires government response
-- HD03104 approved without controversy but FiU notes green bond ambition gap
-- Election campaign (August 2026 onwards) uses HD03252 as a campaign flashpoint
-
-**Evidence base**: S minority FiU reports standard practice [A1]; Lagrådet reviews all major social legislation [A1]; Prior pattern on HC03202 (electronic monitoring) — contentious but passed [B2].
-
-**Leading indicator**: S FiU spokesperson announces minority committee position by 12 May 2026.
-
-**Electoral impact**: HD03252 becomes S/V attack vector on SD welfare politics; M defends as proportionate crime deterrent.
-
----
-
-### Scenario 3: Coalition Fracture on Banking Regulation (Probability: 15%)
-
-**Description**: Small-bank lobby successfully fractures M/KD internal consensus; significant proportionality carve-out proposed that delays full CRR3 implementation; EU Commission issues formal infringement notice to Sweden.
-
-**Conditions required**:
-- Sparbankerna lobbying reaches M party council level (municipal savings banks in M strongholds)
-- KD joins small-bank protection coalition (KD historically protective of municipal economy)
-- EU Commission accelerates infringement procedure (political decision, not automatic)
-- CRD6 fit-and-proper provisions modified in Swedish legislation → EBA compliance concern
-
-**Evidence base**: KD historically protective of municipal economy [C3]; Sparbankerna 2023 report on CRD6 impact [C2]; EU Commission accelerated procedures post-2025 banking stress [C3].
-
-**Leading indicator**: KD spokesperson issues public statement supporting small-bank carve-out by 15 May 2026.
-
-**Electoral impact**: HIGH — government split on EU banking regulation is election-cycle narrative; S frames as government failing both EU credibility and Swedish banking sector simultaneously.
-
----
-
-### Probability Summary
-
-| Scenario | Probability | Key trigger |
-|----------|-------------|-------------|
-| S1: Smooth passage | 40% | FiU accelerated schedule |
-| S2: Prolonged contestation (base) | 45% | S minority report + Lagrådet review |
-| S3: Coalition fracture | 15% | KD small-bank protection coalition |
-| **Total** | **100%** | — |
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e"}}}%%
-pie title Scenario Probability Distribution
-    "S1 Smooth Passage" : 40
-    "S2 Prolonged Contestation (Base)" : 45
-    "S3 Coalition Fracture" : 15
-```
-
-## Risk Assessment
-<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/risk-assessment.md -->
-
----
-
-### 5-Dimension Risk Register
-
-| Risk ID | Risk | Dimension | Likelihood (1-5) | Impact (1-5) | L×I Score | Mitigation |
-|---------|------|-----------|-----------------|--------------|-----------|------------|
-| R1 | CRR3 output floor triggers Swedish bank mortgage lending contraction in election year | Financial stability | 3 | 5 | **15** | FI supervisory guidance; CRR3 transition periods to 2030 |
-| R2 | Sweden faces EU infringement proceedings for late CRD6 transposition | Legal/Diplomatic | 4 | 3 | **12** | Fast-track Riksdag processing of HD03253 |
-| R3 | HD03252 constitutional proportionality challenge delays welfare restriction entry into force | Legal | 3 | 3 | **9** | Lagrådet review (pre-submission); proportionality analysis in prop. |
-| R4 | Opposition weaponises welfare restriction (HD03252) as election-year poverty narrative | Political | 4 | 3 | **12** | Government messaging on crime/benefit asymmetry |
-| R5 | Riksgälden evaluation (HD03104) reveals underperformance vs. mandate targets | Reputational/Fiscal | 2 | 4 | **8** | Skrivelse structure limits formal accountability |
-| R6 | Tachograph enforcement creates trucking industry compliance cost burden | Economic/Industry | 2 | 2 | **4** | EU transition guidance; digital tachograph subsidy |
-
-### Cascading Risk Chains
-
-**Chain 1 (Banking Systemic)**:
-CRR3 capital floor (HD03253) → Mortgage credit tightening → Housing price correction → Household balance-sheet stress → Consumption decline → Electoral backlash against M-led government
-
-**Chain 2 (Legal/Political)**:
-HD03252 Lagrådet concerns → Constitutional Court referral → Implementation delay → SD electoral frustration → Coalition tension → Early election risk
-
-**Chain 3 (EU Compliance)**:
-Sweden CRD6 lateness (HD03253 late submission) → EU Commission infringement notice → ECJ fine → Swedish EU credibility damage → EUR/SEK pressure
-
-### Posterior Probabilities
-
-| Risk | Prior probability | Update condition | Posterior |
-|------|------------------|------------------|-----------|
-| R1 (mortgage contraction) | 35% | FI capital guidance issued | 20% |
-| R2 (EU infringement) | 60% | Riksdag fast-tracks HD03253 | 30% |
-| R3 (legal challenge HD03252) | 40% | Lagrådet critique material | 55% |
-| R4 (political opposition HD03252) | 85% | Opposition confirms SfU hearing objections | 85% |
-| R5 (Riksgälden underperformance) | 15% | FiU finds mandate deviations | 35% |
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e"}}}%%
-graph TD
-    R2["R2 EU Infringement\nL=4 I=3 Score=12\n[MEDIUM-HIGH]"] --> R1["R1 Mortgage Contraction\nL=3 I=5 Score=15\n[HIGH]"]
-    R3["R3 Constitutional Challenge\nL=3 I=3 Score=9\n[MEDIUM]"] --> R4["R4 Political Opposition\nL=4 I=3 Score=12\n[MEDIUM-HIGH]"]
-    R1 --> CHAIN["Cascading Chain 1\nHousing → Consumption → Electoral"]
-    R4 --> COAL["Coalition Tension\nSD/M friction"]
-
-    style R1 fill:#ff006e,color:#fff
-    style R2 fill:#ffbe0b,color:#000
-    style R3 fill:#ffbe0b,color:#000
-    style R4 fill:#ffbe0b,color:#000
-    style CHAIN fill:#1a1e3d,color:#e0e0e0
-    style COAL fill:#1a1e3d,color:#e0e0e0
-```
-
-## SWOT Analysis
-<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/swot-analysis.md -->
-
----
-
-### Strengths
-
-| # | Strength | Evidence |
-|---|----------|----------|
-| S1 | HD03253 (EU:s bankpaket) fulfils Sweden's obligation under CRD6 (Dir. 2024/1619) — demonstrates EU-compliance credibility after earlier delays | HD03253 summary: "I EU:s kapitaltäckningsdirektiv ställs krav…" [Riksdagen API HD03253, A2]; EU Commission infringement deadline Q1 2026 [EU Commission transposition tracker, B2] |
-| S2 | HD03252 reinforces law-and-order coalition narrative important to SD voter base ahead of September 2026 election | Prop. 2025/26:252 title; pattern consistent with HC03202 electronic monitoring (2024/25) [A2]; SD electoral data, Demoskop Feb 2026 [C3] |
-| S3 | HD03104 demonstrates transparent fiscal stewardship — Riksgälden 2021–25 evaluation shows disciplined pandemic borrowing management | HD03104 summary: "regeringen utvärderar statens upplåning och skuldförvaltning 2021–2025" [Riksdagen API HD03104, A1] |
-| S4 | HD03256 aligns with EU's digital tachograph enforcement (EU Reg. 2020/1054 ITS Article 103) — reduces unfair competition in road haulage | Prop. 2025/26:256 title + committee TU [A2] |
-
-### Weaknesses
-
-| # | Weakness | Evidence |
-|---|----------|----------|
-| W1 | Sweden's CRD6 transposition is **late** — EU deadline passed Q4 2025. Infringement proceedings risk reputational damage | EU Commission CRD6 transposition monitoring; HD03253 submission April 2026 vs. December 2025 deadline [B2, unconfirmed exact penalty status] |
-| W2 | HD03252 scope limited to *kontrollerat boende* (controlled accommodation) — excludes ordinary prison stays — creating uneven welfare-restriction application visible to critics | Prop. 2025/26:252 scope as stated in title and SfU committee routing [B2] |
-| W3 | HD03104 skrivelse cannot be amended by Riksdagen — limits democratic accountability for identified debt management shortcomings | Constitutional rule on *skrivelse* vs. *proposition* [A1] |
-| W4 | Four separate ministers presenting four proposals on the same day — coordination appearance, but no single strategic narrative | Submission date 2026-04-23 for all four [A1] |
-
-### Opportunities
-
-| # | Opportunity | Evidence |
-|---|-------------|----------|
-| O1 | HD03253 CRD6 implementation opens door to Swedish banks accessing EU single banking market advantages (passporting enhancements) — competitive benefit for SEB/Handelsbanken | CRD6 Recital 8 on single rulebook benefits [B2]; Swedish bank EU revenue share (SEB annual report 2025, ~35% EU ex-SE) [C3] |
-| O2 | Green bond provisions in HD03104 evaluation create platform for Sweden to position as EU green sovereign bond leader post-2026 | HD03104 evaluation explicitly references Riksgälden green bond program [A1] |
-| O3 | HD03252 welfare restriction could reduce government transfer costs, freeing fiscal space for pre-election spending | Ministry of Finance budget projections 2026 [B3, estimate]; principle consistent with budget consolidation narrative |
-| O4 | HD03256 tachograph enforcement creates level playing field for Swedish hauliers competing with Eastern European operators | TU committee routing + EU enforcement context [A2] |
-
-### Threats
-
-| # | Threat | Evidence |
-|---|--------|----------|
-| T1 | **Basel IV output floor (CRR3)** forces Swedish major banks to hold additional capital — Handelsbanken, Swedbank, SEB may reduce mortgage lending capacity affecting housing market in election year | ECB QIS November 2023 estimates: Nordic banks significantly above output floor thresholds [B2]; Swedish Housing Agency Q1 2026 data [C3] |
-| T2 | **Constitutional proportionality challenge** on HD03252: restricting social insurance for *säkerhetsförvaring* (indefinite detention) could face Article 2 ECHR/proportionality review | Legal doctrine on ECHR Art. 14 non-discrimination in Swedish jurisprudence [B3]; analogous Norwegian case [C3] |
-| T3 | **Political backlash on HD03253 small-bank burden**: Nischade bankers (niche banks, credit unions, smaller lenders) face disproportionate CRR3 compliance burden — lobby risk against M/SD coalition | Swedish Banking Association statement on CRD6 (March 2026) [C2]; proportionality provisions in CRD6 Art. 65 [B2] |
-| T4 | **Election 2026 timing**: All four proposals submitted 5 months before election; opposition parties will accelerate committee hearings to force government to defend individual measures | Riksdag election calendar September 2026 [A1] |
-
-### TOWS Matrix
-
-| | Strengths | Weaknesses |
-|---|-----------|------------|
-| **Opportunities** | S1+O1: Leverage CRD6 compliance for EU banking market advantage | W1+O1: Late transposition undermines market confidence narrative |
-| **Threats** | S2+T2: SD coalition can frame HD03252 as popular welfare reform | W2+T2: Narrow scope creates proportionality litigation risk |
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e"}}}%%
-graph LR
-    S["Strengths\nS1 CRD6 compliance\nS2 L&O narrative\nS3 Fiscal transparency"] --> T2["Threat\nT2 ECHR challenge\non HD03252"]
-    W["Weaknesses\nW1 Late CRD6\nW2 Narrow scope"] --> T1["Threat\nT1 Bank capital\nhousing impact"]
-    O["Opportunities\nO1 EU banking market\nO2 Green bonds"] --> S
-
-    style S fill:#00d9ff,color:#000
-    style W fill:#ff006e,color:#fff
-    style O fill:#ffbe0b,color:#000
-    style T1 fill:#1a1e3d,color:#e0e0e0
-    style T2 fill:#1a1e3d,color:#e0e0e0
-```
-
-## Threat Analysis
-<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/threat-analysis.md -->
-
----
-
-### Political Threat Taxonomy
-
-#### Threat 1: Opposition Legislative Obstruction (HD03253 EU Bankpaket)
-
-**Actors**: S (Socialdemokraterna, 107 seats), V (Vänsterpartiet, 24 seats), MP (Miljöpartiet, 24 seats)  
-**Method**: FiU committee amendments → prolonged hearing cycle → delay CRD6 transposition further  
-**Impact**: Swedish banks remain in legal uncertainty; European Banking Authority (EBA) guidance incomplete; Finansinspektionen enforcement hampered  
-
-#### Threat 2: Constitutional Proportionality Attack (HD03252)
-
-**Actors**: Academic lawyers, JO (Justitieombudsmannen), potential Lagrådet  
-**Method**: Lagrådet critique on proportionality → referred to constitutional committee (KU) → legal delay  
-**Impact**: SD loses key election-year policy win; government faces contradiction between law-and-order messaging and legal setback  
-
-#### Threat 3: Small-Bank Lobby Mobilisation (HD03253)
-
-**Actors**: Sparbankerna, niche lenders, Swedish Banking Association small-bank division  
-**Method**: Direct FiU lobbying for proportionality carve-out in Swedish implementing legislation → government pressure to add gold-plating exemptions  
-**Impact**: Delays CRD6 full implementation; creates legal uncertainty for Finansinspektionen enforcement  
-
-### Attack Tree: EU Bank Package Obstruction
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e"}}}%%
-graph TD
-    GOAL["Goal: Delay/Weaken HD03253 CRD6"] --> A1["Opposition Amendment\n(FiU committee)"]
-    GOAL --> A2["Small-bank lobby\nproportionality carve-out"]
-    GOAL --> A3["Constitutional challenge\nfit-and-proper provisions"]
-    A1 --> B1["S/V coalition\nFiU minority report"]
-    A1 --> B2["MP abstention\nforces gov compromise"]
-    A2 --> B3["Banking Association\ndirect lobbying M/KD"]
-    A3 --> B4["Lagrådet critique\ntriggers KU referral"]
-
-    style GOAL fill:#ff006e,color:#fff
-    style A1 fill:#ffbe0b,color:#000
-    style A2 fill:#ffbe0b,color:#000
-    style A3 fill:#ffbe0b,color:#000
-    style B1 fill:#1a1e3d,color:#e0e0e0
-    style B2 fill:#1a1e3d,color:#e0e0e0
-    style B3 fill:#1a1e3d,color:#e0e0e0
-    style B4 fill:#1a1e3d,color:#e0e0e0
-```
-
-### MITRE-Style TTP Mapping (Legislative Process Threat)
-
-| TTP | Technique | Actor | Target | Evidence |
-|-----|-----------|-------|--------|----------|
-| T001 | Committee minority report | S, V, MP | HD03253 passage | Standard FiU procedure; S minority reports on all major banking legislation [A1] |
-| T002 | Stakeholder testimony weaponisation | Banking Association | FiU hearing | Standard industry practice; sparbankernas lobbying on prior CRD5 [B3] |
-| T003 | Referral delay tactic | Constitutional actors | HD03252 implementation | Lagrådet standard review; KU referral on social rights provisions [B3] |
-| T004 | Media framing — mortgage fear | S/MP media | Public opinion | Consistent with S housing policy narrative 2025–26 [C3] |
-
-### Kill Chain: Welfare Restriction Opposition (HD03252)
-
-1. **Reconnaissance**: S/SfU identifies scope of *kontrollerat boende* definition gaps
-2. **Weaponisation**: Identifies prisoners with children → media framing as family impact
-3. **Delivery**: Committee hearing testimony from prisoner rights organisations
-4. **Exploitation**: Forces government to narrow scope or add proportionality clause
-5. **Action on Objective**: Government concession → SD dissatisfied → coalition friction
 
 ## Per-document intelligence
 
@@ -1208,64 +623,66 @@ Remote tachograph data access: GDPR Article 6(1)(c) — legal obligation basis. 
 - `forward-indicators.md` → FI-009 (Vägkontroll statistics post-implementation)
 - `historical-parallels.md` → Parallel: Kabotage enforcement 2013/14
 
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/election-2026-analysis.md -->
+## Stakeholder Perspectives
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/stakeholder-perspectives.md -->
 
 ---
 
-### Current Seat Projection (April 2026)
+### 6-Lens Stakeholder Matrix
 
-Based on aggregated polling data (Demoskop, Novus, IPSOS — April 2026 averages) and seat modelling for September 2026 Riksdag election:
+| Stakeholder | Lens | Position on HD03253 | Position on HD03252 | Position on HD03256 | Position on HD03104 | Influence | Power |
+|-------------|------|---------------------|---------------------|---------------------|---------------------|-----------|-------|
+| **Niklas Wykman (M, Finansminister)** | Government proponent | Strongly supportive — EU compliance, Basel IV | Neutral (not his portfolio) | Supportive (EU obligation) | Author/proponent | Critical | High |
+| **Gunnar Strömmer (M, Justitieminister)** | Government proponent | Neutral | Strongly supportive — law-and-order consolidation | Neutral | Neutral | High | High |
+| **Andreas Carlson (SD, Landsbygdsminister)** | Government proponent | Neutral | Broadly supportive | Strongly supportive | Neutral | Medium | Medium |
+| **FiU (Finansutskottet)** | Committee scrutiny | Scrutiny + amendment power | — | — | Scrutiny | Very High | High |
+| **SfU (Socialförsäkringsutskottet)** | Committee scrutiny | — | Scrutiny + opposition challenge | — | — | High | High |
+| **Socialdemokraterna (S, 107 seats)** | Opposition | Accept EU obligation, demand proportionality carve-out for small banks | Oppose proportionality; attack family impact | Accept | Accept with caveats on climate bonds | High | High |
+| **Sverigedemokraterna (SD, 73 seats)** | Coalition support | Support — financial stability | Strong support — welfare restriction, crime | Support | Support | Critical | High |
+| **Vänsterpartiet (V, 24 seats)** | Opposition | Oppose — market-friendly banking regulation | Strongly oppose — social rights | Opposed (minor) | Critical of borrowing strategy | Medium | Medium |
+| **Miljöpartiet (MP, 24 seats)** | Opposition | Neutral | Oppose (human rights framing) | Neutral | Support (green bonds) | Low-Medium | Medium |
+| **Finansinspektionen (FI)** | Regulator | Actively supportive — expanded supervisory powers | Neutral | Neutral | Neutral | High | High |
+| **Riksgälden** | Stakeholder | Neutral | Neutral | Neutral | Author of underlying evaluation; supportive | High | Medium |
+| **Swedish Banking Association** | Industry | Mixed — large banks accept, small banks lobby for carve-out | Neutral | Neutral | Neutral | High | High |
+| **Sparbankerna / Niche banks** | Industry | Strongly opposed to CRR3 output floor | Neutral | Neutral | Neutral | Medium | Low-Medium |
+| **Prisoner rights organisations** | Civil society | Neutral | Strongly opposed | Neutral | Neutral | Low | Low |
 
-| Party | Polling % (avg) | Projected Seats | April 2026 trend |
-|-------|----------------|-----------------|-----------------|
-| S (Socialdemokraterna) | 32.5% | 117 | Stable |
-| SD (Sverigedemokraterna) | 19.2% | 69 | Slight decline |
-| M (Moderaterna) | 17.8% | 64 | Stable |
-| V (Vänsterpartiet) | 9.8% | 35 | Rising |
-| KD (Kristdemokraterna) | 5.2% | 19 | Stable |
-| C (Centerpartiet) | 5.8% | 21 | Rising |
-| L (Liberalerna) | 4.5% | 16 | Marginal |
-| MP (Miljöpartiet) | 5.2% | 24 | Rising (in Riksdag) |
+### Named Actor Analysis
 
-*Note: Polling averages are estimates. Source: aggregated public polling services; Admiralty [C3] — single-source estimates, treat as indicative.*
+#### Niklas Wykman (M, Finansminister)
+- **Role**: Author of both HD03253 and HD03104. Dual-committee exposure (FiU).
+- **Position**: EU-integrationist, fiscal conservative. Committed to Basel IV on ECB/EBA timeline.
+- **Risk**: Small-bank lobby pressure from within M party ranks (municipal savings banks have M voter base).
+- **Admiralty**: [B2] — Public statements at Finance Ministry press conference, April 2026 [riksdag-regering MCP]
 
-**Current government (M+SD+KD+L)**: 64+69+19+16 = **168 seats** (below majority 175)  
-**S+V+MP+C bloc**: 117+35+24+21 = **197 seats** (above majority)
+#### Gunnar Strömmer (M, Justitieminister)
+- **Role**: HD03252 author. Consistent L&O reform agenda since taking office 2022.
+- **Position**: Welfare conditionality for prisoners consistent with his stated policy direction.
+- **Risk**: Lagrådet pushback on *säkerhetsförvaring* provisions (indefinite detention social benefit restriction).
+- **Admiralty**: [B2]
 
-### Impact of April 2026 Propositions on Election 2026
-
-#### HD03253 (EU Bankpaket) — Marginal electoral impact
-
-- **M/SD framing**: EU compliance, financial stability, responsible governance.
-- **S/V framing**: Proportionality failures, small-bank burden, CRD6 lateness.
-- **Electoral verdict**: Financial regulation rarely moves voters; complex banking law is easily framed by either side. Low direct electoral impact. Net benefit to government if passed swiftly.
-
-#### HD03252 (Socialförsäkringsförmåner) — Medium-high electoral impact
-
-- **SD framing**: "Those who commit serious crimes should not receive taxpayer welfare" — core SD voter appeal.
-- **S/V/MP framing**: "Punishing the sick and disabled in prison is disproportionate; attacks most vulnerable."
-- **Electoral verdict**: This is a live election-year wedge issue. HD03252 will feature in SD and M campaign material. S will use it to solidify left-bloc cohesion. [C3]
-
-### Seat-Projection Deltas from April 2026 Legislation
-
-| Scenario | SD seat projection change | M change | S change |
-|----------|--------------------------|---------|---------|
-| S2 (base — prolonged contestation) | 0 to -2 | 0 | +1 to +2 |
-| S1 (smooth passage) | +1 to +3 (welfare win) | +1 | -1 |
-| S3 (coalition fracture) | -3 to -5 | -3 | +3 to +5 |
-
-### Coalition Viability Post-September 2026
-
-Current trajectory (S2 base scenario): **S+V+C+MP majority** most likely outcome based on April 2026 polling. Government renewal requires SD+M+KD+L to collectively gain ~7 seats vs. current projection.
+### Influence Network Diagram
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e"}}}%%
-xychart-beta
-    title "2026 Seat Projections by Party"
-    x-axis ["S", "SD", "M", "V", "C", "MP", "KD", "L"]
-    y-axis "Seats" 0 --> 130
-    bar [117, 69, 64, 35, 21, 24, 19, 16]
+graph LR
+    GOV["Kristersson Government"] --> FIU["FiU Committee\n(HD03253, HD03104)"]
+    GOV --> SFU["SfU Committee\n(HD03252)"]
+    GOV --> TU["TU Committee\n(HD03256)"]
+    BANKS["Swedish Banking\nAssociation"] --> FIU
+    S_PARTY["S (107 seats)\nOpposition"] --> FIU
+    SD_PARTY["SD (73 seats)\nCoalition"] --> GOV
+    FI["Finansinspektionen"] --> FIU
+    RIKSGALDEN["Riksgälden"] --> FIU
+    V_PARTY["V (24 seats)"] --> SFU
+    PRISONER_ORG["Prisoner Rights\nOrgs"] --> SFU
+
+    style GOV fill:#00d9ff,color:#000
+    style S_PARTY fill:#ff006e,color:#fff
+    style SD_PARTY fill:#ffbe0b,color:#000
+    style FIU fill:#1a1e3d,color:#e0e0e0
+    style SFU fill:#1a1e3d,color:#e0e0e0
+    style TU fill:#1a1e3d,color:#e0e0e0
 ```
 
 ## Coalition Mathematics
@@ -1420,64 +837,486 @@ graph LR
     style HD03104 fill:#1a1e3d,color:#e0e0e0
 ```
 
-## Comparative International
-<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/comparative-international.md -->
+## Forward Indicators
+<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/forward-indicators.md -->
 
 ---
 
-### Comparator Set
+### Purpose
+
+Forward indicators are observable, dateable signals that will confirm or refute the key judgments and scenarios in the executive-brief and scenario-analysis files. Monitoring these indicators provides early warning of scenario divergence.
 
 ---
 
-### Outside-In Analysis: EU Bank Package (HD03253)
+### FI-001 — FiU Hearing Date for HD03253
 
-| Jurisdiction | CRD6 Transposition Status | Small-bank Carve-out | Supervisory Model | Source |
-|---|---|---|---|---|
-| **Sweden (SE)** | LATE — April 2026, deadline Q4 2025 | Proportionality debate ongoing | Finansinspektionen (FI) integrated | Riksdagen API HD03253 [A1] |
-| **Denmark (DK)** | Broadly on schedule, Finanstilsynet guidance Q1 2026 | Limited carve-out for local banks | Finanstilsynet | Danish FSA 2026 press releases [B3] |
-| **Finland (FI)** | On schedule, Finansinspektionen FI Q4 2025 | Minor proportionality adaptations | Integrated FIN-FSA | FIN-FSA annual report 2025 [B3] |
-| **Germany (DE)** | Partial — BaFin guidance issued, full transposition Q2 2026 | Yes — Sparkassen/VR-Banken carve-out significant | BaFin + Bundesbank | Bundesbank CRD6 implementation note [B2] |
-| **Netherlands (NL)** | On schedule — DNB circular December 2025 | Minor SME lending adjustments | DNB | DNB 2025 supervisory plan [B3] |
+| Attribute | Value |
+|-----------|-------|
+| **Indicator** | Finansutskottets (FiU) scheduled hearing for Prop. 2025/26:163 (HD03253) |
+| **Observation window** | 2026-05-01 to 2026-06-30 |
+| **Monitor at** | riksdagen.se/sv/utskottens-arbete — FiU hearing calendar |
+| **Bearing on** | S1 vs. S2: if hearing scheduled Q2 → smooth passage (S1); if delayed to Q3 → S2 |
+| **Signal threshold** | Hearing within 6 weeks of prop submission = S1 signal |
+| **Date** | 2026-04-26 (published); hearing TBD |
 
-**Outside-In finding**: Sweden's delay is unusual relative to Nordic peers (Finland on schedule). Germany's Sparkassen carve-out precedent is likely the template being cited by Swedish small-bank lobby.
+### FI-002 — Lagrådet Opinion on HD03252
+
+| Attribute | Value |
+|-----------|-------|
+| **Indicator** | Publication of Lagrådet's remissyttrande on HD03252's säkerhetsförvaring provisions |
+| **Observation window** | 2026-05-01 to 2026-06-15 |
+| **Monitor at** | lagradet.se — Yttranden by date |
+| **Bearing on** | ECHR risk: if Lagrådet raises Article 3 objection → L may abstain → coalition vote risk |
+| **Signal threshold** | Lagrådet kritik (anmärkning) = escalation signal |
+| **Date** | 2026-04-26 (legislation submitted); Lagrådet review pending |
+
+### FI-003 — Finansinspektionen Capital Buffer Statement
+
+| Attribute | Value |
+|-----------|-------|
+| **Indicator** | FI's next quarterly capital buffer decision (counter-cyclical + systemic risk buffers) |
+| **Observation window** | 2026-06-30 (Q2 FI announcement) |
+| **Monitor at** | fi.se — Finansiell stabilitet press releases |
+| **Bearing on** | HD03253 calibration: if FI signals buffer reduction → HD03253 less urgent; if unchanged/increased → CRD6 urgency confirmed |
+| **Signal threshold** | Any change to counter-cyclical buffer rate |
+| **Date** | 2026-04-26 (current rate 1.0%); next announcement expected 2026-06-27 |
+
+### FI-004 — Kriminalvårdens Remissvar on HD03252 Cost Estimate
+
+| Attribute | Value |
+|-----------|-------|
+| **Indicator** | Kriminalvårdens formal remissvar quantifying administrative cost of notification system |
+| **Observation window** | Already submitted in remissomgång; look for media citation or FiU summary |
+| **Monitor at** | riksdagen.se — SfU preparatory documents; regeringen.se — remissammanställning |
+| **Bearing on** | Implementation feasibility: if cost > 50 MSEK → budgetary rider may be added |
+| **Signal threshold** | Cited cost above 50 MSEK |
+| **Date** | 2026-04-26 (estimate from HD03252 text) |
+
+### FI-005 — Polling Trends (April-June 2026): SD Support
+
+| Attribute | Value |
+|-----------|-------|
+| **Indicator** | SD polling average (Demoskop + Novus) following HD03252 Riksdag vote |
+| **Observation window** | 2026-05-15 to 2026-07-31 |
+| **Monitor at** | val.digital, val.se aggregated polling |
+| **Bearing on** | Electoral scenario: HD03252 was forecast to give SD +1 to +3 seats; polling evidence will confirm/refute |
+| **Signal threshold** | SD polling rising >0.5 percentage points within 4 weeks post-vote |
+| **Date** | Baseline as of 2026-04-26: SD 19.2% (Novus avg) |
+
+### FI-006 — EU Infringement Procedure Status (CRD6)
+
+| Attribute | Value |
+|-----------|-------|
+| **Indicator** | European Commission formal notice or reasoned opinion against Sweden for CRD6 non-transposition |
+| **Observation window** | 2026-04-01 to 2026-12-31 |
+| **Monitor at** | ec.europa.eu/atwork/applying-eu-law — infringement decisions |
+| **Bearing on** | HD03253 urgency: formal notice accelerates parliamentary timeline |
+| **Signal threshold** | Any formal notice from DG FISMA to Sweden |
+| **Date** | As of 2026-04-26: no formal notice confirmed (OSINT); infringement letter expected [C3] |
+
+### FI-007 — C-party Position Statement on HD03253
+
+| Attribute | Value |
+|-----------|-------|
+| **Indicator** | Centerpartiet's public statement on EU bankpaket small-bank provisions |
+| **Observation window** | 2026-05-01 to 2026-06-15 |
+| **Monitor at** | centerpartiet.se press; riksdagen.se motioner from C on banking topics |
+| **Bearing on** | Pivotal vote risk: C opposition → 179 vs. 170 defeat scenario |
+| **Signal threshold** | C motion against HD03253 OR official statement expressing opposition |
+| **Date** | 2026-04-26 (no C statement yet observed) |
+
+### FI-008 — Riksgälden Green Bond Issuance (Post-HD03104)
+
+| Attribute | Value |
+|-----------|-------|
+| **Indicator** | Riksgälden announcement of next green bond tap or new issuance following HD03104 evaluation |
+| **Observation window** | 2026-06-01 to 2026-12-31 |
+| **Monitor at** | riksgalden.se — Gröna obligationer |
+| **Bearing on** | Green finance scenario: continued programme = FI-008 confirms; discontinuation = reversal |
+| **Signal threshold** | Any Riksgälden green bond issuance announcement |
+| **Date** | Baseline: SEK 135 billion green bonds outstanding as of 2025 Q4 [A3 — Riksgälden annual report] |
+
+### FI-009 — Transport Agency Inspection Statistics (Post-HD03256)
+
+| Attribute | Value |
+|-----------|-------|
+| **Indicator** | Transportstyrelsen quarterly vägkontroll statistics for manipulation detection |
+| **Observation window** | 2026-09-01 to 2027-03-31 (first full quarter after implementation) |
+| **Monitor at** | transportstyrelsen.se — Vägkontroll statistics |
+| **Bearing on** | HD03256 effectiveness: rising detection rate = success; flat = enforcement unchanged |
+| **Signal threshold** | >20% increase in manipulation detections vs. Q1 2026 baseline |
+| **Date** | Baseline: Q1 2026 statistics pending |
+
+### FI-010 — ECHR Application Filed Against Sweden on HD03252
+
+| Attribute | Value |
+|-----------|-------|
+| **Indicator** | Application to European Court of Human Rights challenging HD03252 |
+| **Observation window** | 2026-11-01 to 2028-12-31 (6-month rule for ECHR after domestic exhaustion) |
+| **Monitor at** | hudoc.echr.coe.int — Sweden new cases |
+| **Bearing on** | Legal risk materialisation: ECHR application = escalation; admissibility decision = further escalation |
+| **Signal threshold** | Admissibility decision by ECHR on Swedish prisoner benefits case |
+| **Date** | 2026-04-26 (no application yet; domestic proceedings not yet exhausted) |
 
 ---
 
-### Welfare Restriction Comparators (HD03252)
+### Indicator Dashboard Summary
 
-| Jurisdiction | Welfare benefit restriction for prisoners | Scope | Source |
-|---|---|---|---|
-| **Sweden (SE)** | Proposed: restrict sjukpenning/aktivitetsersättning for kontrollerat boende/säkerhetsförvaring | Narrow (controlled accommodation + security detention) | Prop. 2025/26:252 [A1] |
-| **Norway (NO)** | Existing: social benefits suspended for prisoners in ordinary custody; partial restoration in open custody | Broader scope | Norwegian Social Insurance Act §22-2 [B2] |
-| **Denmark (DK)** | Social benefits suspended for imprisonment; partial restoration in community supervision | Moderate scope | Danish Unemployment Insurance Act [B2] |
-| **Germany (DE)** | Sozialgesetzbuch §16: benefits suspended during imprisonment; no analogous security detention specific provision | Broad suspension | SGB VI [A2] |
-| **Finland (FI)** | Kela benefits suspended for full-time imprisonment; partial community supervision | Moderate scope | Finnish Social Insurance Institution Kela [B2] |
-
-**Outside-In finding**: Swedish proposal (HD03252) is *narrower* than comparator Nordic countries — focusing only on controlled accommodation and security detention, not ordinary imprisonment. This suggests the proposal is politically framed for electoral effect while avoiding the broader welfare suspension that Norway and Denmark have already implemented.
-
----
-
-### Mermaid Comparison: CRD6 Transposition Timeline
+| ID | Subject | Timeframe | Urgency | KJ bearing |
+|----|---------|-----------|---------|------------|
+| FI-001 | FiU hearing HD03253 | May–Jun 2026 | HIGH | S1 vs S2 |
+| FI-002 | Lagrådet on HD03252 | May–Jun 2026 | HIGH | Coalition risk |
+| FI-003 | FI capital buffer | Jun 2026 | MEDIUM | HD03253 urgency |
+| FI-004 | Kriminalvård cost | Apr–May 2026 | MEDIUM | Implementation |
+| FI-005 | SD polling | May–Jul 2026 | HIGH | Electoral scenario |
+| FI-006 | EU infringement | Apr–Dec 2026 | MEDIUM | HD03253 urgency |
+| FI-007 | C-party position | May–Jun 2026 | HIGH | HD03253 passage |
+| FI-008 | Green bond issuance | Jun–Dec 2026 | LOW | Green finance |
+| FI-009 | Vägkontroll stats | Sep 2026 | LOW | HD03256 effectiveness |
+| FI-010 | ECHR application | 2027+ | LOW | HD03252 legal risk |
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e"}}}%%
-gantt
-    title CRD6 Transposition Timeline — Nordic + DE + NL
-    dateFormat YYYY-MM
-    section EU Deadline
-    EU CRD6 Deadline        : milestone, 2025-12, 0d
-    section Finland
-    FIN-FSA guidance        : done, 2025-10, 2025-12
-    section Denmark
-    Finanstilsynet guidance : done, 2025-11, 2026-03
-    section Netherlands
-    DNB circular            : done, 2025-12, 2026-01
-    section Germany
-    BaFin partial           : active, 2026-01, 2026-06
-    section Sweden (LATE)
-    Prop HD03253 submitted  : active, 2026-04, 2026-06
-    Riksdag vote expected   : 2026-06, 2026-09
+timeline
+    title Forward Indicators — Monitoring Timeline
+    section May 2026
+        FI-001 : FiU hearing HD03253
+        FI-002 : Lagrådet opinion HD03252
+        FI-004 : Kriminalvård cost estimate
+    section June 2026
+        FI-003 : FI capital buffer Q2
+        FI-006 : EU infringement check
+        FI-007 : C-party position
+    section July 2026
+        FI-005 : SD polling post-vote
+    section H2 2026
+        FI-008 : Green bond issuance
+        FI-009 : Vägkontroll Q3 stats
+    section 2027+
+        FI-010 : ECHR application check
 ```
+
+## Scenario Analysis
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/scenario-analysis.md -->
+
+---
+
+### Scenario Framework
+
+Three distinct scenarios for the legislative outcomes of the April 2026 proposition batch, with primary focus on HD03253 (EU bank package) as the highest-impact item.
+
+---
+
+### Scenario 1: Smooth EU Compliance Passage (Probability: 40%)
+
+**Description**: FiU fast-tracks HD03253; Riksdag approves HD03252 and HD03256 by June 2026. Sweden achieves partial CRD6 compliance before EU Commission escalates infringement.
+
+**Conditions required**:
+- FiU reaches cross-party consensus on CRR3 output floor transition provisions
+- Small-bank lobby limited to minor proportionality amendments within CRD6 Art. 65 flexibility
+- Lagrådet approves HD03252 without substantive proportionality critique
+- No external shocks (financial crisis, EU infringement notice escalation)
+
+**Evidence base**: S traditionally supports EU banking regulation; government majority with SD/KD/L [A1]; CRD6 deadline already passed creating urgency [B2].
+
+**Leading indicator**: FiU chair (M) announces accelerated hearing schedule by 5 May 2026.
+
+**Electoral impact**: Neutral — EU compliance is expected; no electoral upside except with financial sector donors.
+
+---
+
+### Scenario 2: Prolonged FiU Contestation (Probability: 45%) ← **Base case**
+
+**Description**: FiU holds extended hearings on HD03253 through May–June 2026. Small-bank proportionality amendments proposed. HD03252 receives Lagrådet minor critique, government makes narrow scope adjustment. All four pass by September 2026 but not before election campaign starts.
+
+**Conditions required**:
+- S uses FiU to extract small-bank protection amendments (within their stated policy interest)
+- Lagrådet issues advisory opinion on HD03252 — not blocking, but requires government response
+- HD03104 approved without controversy but FiU notes green bond ambition gap
+- Election campaign (August 2026 onwards) uses HD03252 as a campaign flashpoint
+
+**Evidence base**: S minority FiU reports standard practice [A1]; Lagrådet reviews all major social legislation [A1]; Prior pattern on HC03202 (electronic monitoring) — contentious but passed [B2].
+
+**Leading indicator**: S FiU spokesperson announces minority committee position by 12 May 2026.
+
+**Electoral impact**: HD03252 becomes S/V attack vector on SD welfare politics; M defends as proportionate crime deterrent.
+
+---
+
+### Scenario 3: Coalition Fracture on Banking Regulation (Probability: 15%)
+
+**Description**: Small-bank lobby successfully fractures M/KD internal consensus; significant proportionality carve-out proposed that delays full CRR3 implementation; EU Commission issues formal infringement notice to Sweden.
+
+**Conditions required**:
+- Sparbankerna lobbying reaches M party council level (municipal savings banks in M strongholds)
+- KD joins small-bank protection coalition (KD historically protective of municipal economy)
+- EU Commission accelerates infringement procedure (political decision, not automatic)
+- CRD6 fit-and-proper provisions modified in Swedish legislation → EBA compliance concern
+
+**Evidence base**: KD historically protective of municipal economy [C3]; Sparbankerna 2023 report on CRD6 impact [C2]; EU Commission accelerated procedures post-2025 banking stress [C3].
+
+**Leading indicator**: KD spokesperson issues public statement supporting small-bank carve-out by 15 May 2026.
+
+**Electoral impact**: HIGH — government split on EU banking regulation is election-cycle narrative; S frames as government failing both EU credibility and Swedish banking sector simultaneously.
+
+---
+
+### Probability Summary
+
+| Scenario | Probability | Key trigger |
+|----------|-------------|-------------|
+| S1: Smooth passage | 40% | FiU accelerated schedule |
+| S2: Prolonged contestation (base) | 45% | S minority report + Lagrådet review |
+| S3: Coalition fracture | 15% | KD small-bank protection coalition |
+| **Total** | **100%** | — |
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e"}}}%%
+pie title Scenario Probability Distribution
+    "S1 Smooth Passage" : 40
+    "S2 Prolonged Contestation (Base)" : 45
+    "S3 Coalition Fracture" : 15
+```
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/election-2026-analysis.md -->
+
+---
+
+### Current Seat Projection (April 2026)
+
+Based on aggregated polling data (Demoskop, Novus, IPSOS — April 2026 averages) and seat modelling for September 2026 Riksdag election:
+
+| Party | Polling % (avg) | Projected Seats | April 2026 trend |
+|-------|----------------|-----------------|-----------------|
+| S (Socialdemokraterna) | 32.5% | 117 | Stable |
+| SD (Sverigedemokraterna) | 19.2% | 69 | Slight decline |
+| M (Moderaterna) | 17.8% | 64 | Stable |
+| V (Vänsterpartiet) | 9.8% | 35 | Rising |
+| KD (Kristdemokraterna) | 5.2% | 19 | Stable |
+| C (Centerpartiet) | 5.8% | 21 | Rising |
+| L (Liberalerna) | 4.5% | 16 | Marginal |
+| MP (Miljöpartiet) | 5.2% | 24 | Rising (in Riksdag) |
+
+*Note: Polling averages are estimates. Source: aggregated public polling services; Admiralty [C3] — single-source estimates, treat as indicative.*
+
+**Current government (M+SD+KD+L)**: 64+69+19+16 = **168 seats** (below majority 175)  
+**S+V+MP+C bloc**: 117+35+24+21 = **197 seats** (above majority)
+
+### Impact of April 2026 Propositions on Election 2026
+
+#### HD03253 (EU Bankpaket) — Marginal electoral impact
+
+- **M/SD framing**: EU compliance, financial stability, responsible governance.
+- **S/V framing**: Proportionality failures, small-bank burden, CRD6 lateness.
+- **Electoral verdict**: Financial regulation rarely moves voters; complex banking law is easily framed by either side. Low direct electoral impact. Net benefit to government if passed swiftly.
+
+#### HD03252 (Socialförsäkringsförmåner) — Medium-high electoral impact
+
+- **SD framing**: "Those who commit serious crimes should not receive taxpayer welfare" — core SD voter appeal.
+- **S/V/MP framing**: "Punishing the sick and disabled in prison is disproportionate; attacks most vulnerable."
+- **Electoral verdict**: This is a live election-year wedge issue. HD03252 will feature in SD and M campaign material. S will use it to solidify left-bloc cohesion. [C3]
+
+### Seat-Projection Deltas from April 2026 Legislation
+
+| Scenario | SD seat projection change | M change | S change |
+|----------|--------------------------|---------|---------|
+| S2 (base — prolonged contestation) | 0 to -2 | 0 | +1 to +2 |
+| S1 (smooth passage) | +1 to +3 (welfare win) | +1 | -1 |
+| S3 (coalition fracture) | -3 to -5 | -3 | +3 to +5 |
+
+### Coalition Viability Post-September 2026
+
+Current trajectory (S2 base scenario): **S+V+C+MP majority** most likely outcome based on April 2026 polling. Government renewal requires SD+M+KD+L to collectively gain ~7 seats vs. current projection.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e"}}}%%
+xychart-beta
+    title "2026 Seat Projections by Party"
+    x-axis ["S", "SD", "M", "V", "C", "MP", "KD", "L"]
+    y-axis "Seats" 0 --> 130
+    bar [117, 69, 64, 35, 21, 24, 19, 16]
+```
+
+## Risk Assessment
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/risk-assessment.md -->
+
+---
+
+### 5-Dimension Risk Register
+
+| Risk ID | Risk | Dimension | Likelihood (1-5) | Impact (1-5) | L×I Score | Mitigation |
+|---------|------|-----------|-----------------|--------------|-----------|------------|
+| R1 | CRR3 output floor triggers Swedish bank mortgage lending contraction in election year | Financial stability | 3 | 5 | **15** | FI supervisory guidance; CRR3 transition periods to 2030 |
+| R2 | Sweden faces EU infringement proceedings for late CRD6 transposition | Legal/Diplomatic | 4 | 3 | **12** | Fast-track Riksdag processing of HD03253 |
+| R3 | HD03252 constitutional proportionality challenge delays welfare restriction entry into force | Legal | 3 | 3 | **9** | Lagrådet review (pre-submission); proportionality analysis in prop. |
+| R4 | Opposition weaponises welfare restriction (HD03252) as election-year poverty narrative | Political | 4 | 3 | **12** | Government messaging on crime/benefit asymmetry |
+| R5 | Riksgälden evaluation (HD03104) reveals underperformance vs. mandate targets | Reputational/Fiscal | 2 | 4 | **8** | Skrivelse structure limits formal accountability |
+| R6 | Tachograph enforcement creates trucking industry compliance cost burden | Economic/Industry | 2 | 2 | **4** | EU transition guidance; digital tachograph subsidy |
+
+### Cascading Risk Chains
+
+**Chain 1 (Banking Systemic)**:
+CRR3 capital floor (HD03253) → Mortgage credit tightening → Housing price correction → Household balance-sheet stress → Consumption decline → Electoral backlash against M-led government
+
+**Chain 2 (Legal/Political)**:
+HD03252 Lagrådet concerns → Constitutional Court referral → Implementation delay → SD electoral frustration → Coalition tension → Early election risk
+
+**Chain 3 (EU Compliance)**:
+Sweden CRD6 lateness (HD03253 late submission) → EU Commission infringement notice → ECJ fine → Swedish EU credibility damage → EUR/SEK pressure
+
+### Posterior Probabilities
+
+| Risk | Prior probability | Update condition | Posterior |
+|------|------------------|------------------|-----------|
+| R1 (mortgage contraction) | 35% | FI capital guidance issued | 20% |
+| R2 (EU infringement) | 60% | Riksdag fast-tracks HD03253 | 30% |
+| R3 (legal challenge HD03252) | 40% | Lagrådet critique material | 55% |
+| R4 (political opposition HD03252) | 85% | Opposition confirms SfU hearing objections | 85% |
+| R5 (Riksgälden underperformance) | 15% | FiU finds mandate deviations | 35% |
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e"}}}%%
+graph TD
+    R2["R2 EU Infringement\nL=4 I=3 Score=12\n[MEDIUM-HIGH]"] --> R1["R1 Mortgage Contraction\nL=3 I=5 Score=15\n[HIGH]"]
+    R3["R3 Constitutional Challenge\nL=3 I=3 Score=9\n[MEDIUM]"] --> R4["R4 Political Opposition\nL=4 I=3 Score=12\n[MEDIUM-HIGH]"]
+    R1 --> CHAIN["Cascading Chain 1\nHousing → Consumption → Electoral"]
+    R4 --> COAL["Coalition Tension\nSD/M friction"]
+
+    style R1 fill:#ff006e,color:#fff
+    style R2 fill:#ffbe0b,color:#000
+    style R3 fill:#ffbe0b,color:#000
+    style R4 fill:#ffbe0b,color:#000
+    style CHAIN fill:#1a1e3d,color:#e0e0e0
+    style COAL fill:#1a1e3d,color:#e0e0e0
+```
+
+## SWOT Analysis
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/swot-analysis.md -->
+
+---
+
+### Strengths
+
+| # | Strength | Evidence |
+|---|----------|----------|
+| S1 | HD03253 (EU:s bankpaket) fulfils Sweden's obligation under CRD6 (Dir. 2024/1619) — demonstrates EU-compliance credibility after earlier delays | HD03253 summary: "I EU:s kapitaltäckningsdirektiv ställs krav…" [Riksdagen API HD03253, A2]; EU Commission infringement deadline Q1 2026 [EU Commission transposition tracker, B2] |
+| S2 | HD03252 reinforces law-and-order coalition narrative important to SD voter base ahead of September 2026 election | Prop. 2025/26:252 title; pattern consistent with HC03202 electronic monitoring (2024/25) [A2]; SD electoral data, Demoskop Feb 2026 [C3] |
+| S3 | HD03104 demonstrates transparent fiscal stewardship — Riksgälden 2021–25 evaluation shows disciplined pandemic borrowing management | HD03104 summary: "regeringen utvärderar statens upplåning och skuldförvaltning 2021–2025" [Riksdagen API HD03104, A1] |
+| S4 | HD03256 aligns with EU's digital tachograph enforcement (EU Reg. 2020/1054 ITS Article 103) — reduces unfair competition in road haulage | Prop. 2025/26:256 title + committee TU [A2] |
+
+### Weaknesses
+
+| # | Weakness | Evidence |
+|---|----------|----------|
+| W1 | Sweden's CRD6 transposition is **late** — EU deadline passed Q4 2025. Infringement proceedings risk reputational damage | EU Commission CRD6 transposition monitoring; HD03253 submission April 2026 vs. December 2025 deadline [B2, unconfirmed exact penalty status] |
+| W2 | HD03252 scope limited to *kontrollerat boende* (controlled accommodation) — excludes ordinary prison stays — creating uneven welfare-restriction application visible to critics | Prop. 2025/26:252 scope as stated in title and SfU committee routing [B2] |
+| W3 | HD03104 skrivelse cannot be amended by Riksdagen — limits democratic accountability for identified debt management shortcomings | Constitutional rule on *skrivelse* vs. *proposition* [A1] |
+| W4 | Four separate ministers presenting four proposals on the same day — coordination appearance, but no single strategic narrative | Submission date 2026-04-23 for all four [A1] |
+
+### Opportunities
+
+| # | Opportunity | Evidence |
+|---|-------------|----------|
+| O1 | HD03253 CRD6 implementation opens door to Swedish banks accessing EU single banking market advantages (passporting enhancements) — competitive benefit for SEB/Handelsbanken | CRD6 Recital 8 on single rulebook benefits [B2]; Swedish bank EU revenue share (SEB annual report 2025, ~35% EU ex-SE) [C3] |
+| O2 | Green bond provisions in HD03104 evaluation create platform for Sweden to position as EU green sovereign bond leader post-2026 | HD03104 evaluation explicitly references Riksgälden green bond program [A1] |
+| O3 | HD03252 welfare restriction could reduce government transfer costs, freeing fiscal space for pre-election spending | Ministry of Finance budget projections 2026 [B3, estimate]; principle consistent with budget consolidation narrative |
+| O4 | HD03256 tachograph enforcement creates level playing field for Swedish hauliers competing with Eastern European operators | TU committee routing + EU enforcement context [A2] |
+
+### Threats
+
+| # | Threat | Evidence |
+|---|--------|----------|
+| T1 | **Basel IV output floor (CRR3)** forces Swedish major banks to hold additional capital — Handelsbanken, Swedbank, SEB may reduce mortgage lending capacity affecting housing market in election year | ECB QIS November 2023 estimates: Nordic banks significantly above output floor thresholds [B2]; Swedish Housing Agency Q1 2026 data [C3] |
+| T2 | **Constitutional proportionality challenge** on HD03252: restricting social insurance for *säkerhetsförvaring* (indefinite detention) could face Article 2 ECHR/proportionality review | Legal doctrine on ECHR Art. 14 non-discrimination in Swedish jurisprudence [B3]; analogous Norwegian case [C3] |
+| T3 | **Political backlash on HD03253 small-bank burden**: Nischade bankers (niche banks, credit unions, smaller lenders) face disproportionate CRR3 compliance burden — lobby risk against M/SD coalition | Swedish Banking Association statement on CRD6 (March 2026) [C2]; proportionality provisions in CRD6 Art. 65 [B2] |
+| T4 | **Election 2026 timing**: All four proposals submitted 5 months before election; opposition parties will accelerate committee hearings to force government to defend individual measures | Riksdag election calendar September 2026 [A1] |
+
+### TOWS Matrix
+
+| | Strengths | Weaknesses |
+|---|-----------|------------|
+| **Opportunities** | S1+O1: Leverage CRD6 compliance for EU banking market advantage | W1+O1: Late transposition undermines market confidence narrative |
+| **Threats** | S2+T2: SD coalition can frame HD03252 as popular welfare reform | W2+T2: Narrow scope creates proportionality litigation risk |
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e"}}}%%
+graph LR
+    S["Strengths\nS1 CRD6 compliance\nS2 L&O narrative\nS3 Fiscal transparency"] --> T2["Threat\nT2 ECHR challenge\non HD03252"]
+    W["Weaknesses\nW1 Late CRD6\nW2 Narrow scope"] --> T1["Threat\nT1 Bank capital\nhousing impact"]
+    O["Opportunities\nO1 EU banking market\nO2 Green bonds"] --> S
+
+    style S fill:#00d9ff,color:#000
+    style W fill:#ff006e,color:#fff
+    style O fill:#ffbe0b,color:#000
+    style T1 fill:#1a1e3d,color:#e0e0e0
+    style T2 fill:#1a1e3d,color:#e0e0e0
+```
+
+## Threat Analysis
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/threat-analysis.md -->
+
+---
+
+### Political Threat Taxonomy
+
+#### Threat 1: Opposition Legislative Obstruction (HD03253 EU Bankpaket)
+
+**Actors**: S (Socialdemokraterna, 107 seats), V (Vänsterpartiet, 24 seats), MP (Miljöpartiet, 24 seats)  
+**Method**: FiU committee amendments → prolonged hearing cycle → delay CRD6 transposition further  
+**Impact**: Swedish banks remain in legal uncertainty; European Banking Authority (EBA) guidance incomplete; Finansinspektionen enforcement hampered  
+
+#### Threat 2: Constitutional Proportionality Attack (HD03252)
+
+**Actors**: Academic lawyers, JO (Justitieombudsmannen), potential Lagrådet  
+**Method**: Lagrådet critique on proportionality → referred to constitutional committee (KU) → legal delay  
+**Impact**: SD loses key election-year policy win; government faces contradiction between law-and-order messaging and legal setback  
+
+#### Threat 3: Small-Bank Lobby Mobilisation (HD03253)
+
+**Actors**: Sparbankerna, niche lenders, Swedish Banking Association small-bank division  
+**Method**: Direct FiU lobbying for proportionality carve-out in Swedish implementing legislation → government pressure to add gold-plating exemptions  
+**Impact**: Delays CRD6 full implementation; creates legal uncertainty for Finansinspektionen enforcement  
+
+### Attack Tree: EU Bank Package Obstruction
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e"}}}%%
+graph TD
+    GOAL["Goal: Delay/Weaken HD03253 CRD6"] --> A1["Opposition Amendment\n(FiU committee)"]
+    GOAL --> A2["Small-bank lobby\nproportionality carve-out"]
+    GOAL --> A3["Constitutional challenge\nfit-and-proper provisions"]
+    A1 --> B1["S/V coalition\nFiU minority report"]
+    A1 --> B2["MP abstention\nforces gov compromise"]
+    A2 --> B3["Banking Association\ndirect lobbying M/KD"]
+    A3 --> B4["Lagrådet critique\ntriggers KU referral"]
+
+    style GOAL fill:#ff006e,color:#fff
+    style A1 fill:#ffbe0b,color:#000
+    style A2 fill:#ffbe0b,color:#000
+    style A3 fill:#ffbe0b,color:#000
+    style B1 fill:#1a1e3d,color:#e0e0e0
+    style B2 fill:#1a1e3d,color:#e0e0e0
+    style B3 fill:#1a1e3d,color:#e0e0e0
+    style B4 fill:#1a1e3d,color:#e0e0e0
+```
+
+### MITRE-Style TTP Mapping (Legislative Process Threat)
+
+| TTP | Technique | Actor | Target | Evidence |
+|-----|-----------|-------|--------|----------|
+| T001 | Committee minority report | S, V, MP | HD03253 passage | Standard FiU procedure; S minority reports on all major banking legislation [A1] |
+| T002 | Stakeholder testimony weaponisation | Banking Association | FiU hearing | Standard industry practice; sparbankernas lobbying on prior CRD5 [B3] |
+| T003 | Referral delay tactic | Constitutional actors | HD03252 implementation | Lagrådet standard review; KU referral on social rights provisions [B3] |
+| T004 | Media framing — mortgage fear | S/MP media | Public opinion | Consistent with S housing policy narrative 2025–26 [C3] |
+
+### Kill Chain: Welfare Restriction Opposition (HD03252)
+
+1. **Reconnaissance**: S/SfU identifies scope of *kontrollerat boende* definition gaps
+2. **Weaponisation**: Identifies prisoners with children → media framing as family impact
+3. **Delivery**: Committee hearing testimony from prisoner rights organisations
+4. **Exploitation**: Forces government to narrow scope or add proportionality clause
+5. **Action on Objective**: Government concession → SD dissatisfied → coalition friction
 
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/historical-parallels.md -->
@@ -1557,6 +1396,65 @@ Historical precedents for each April 2026 proposition, drawn from Swedish legisl
 ### Cross-Cutting Pattern: Late EU Transpositions
 
 All three binding propositions (HD03253, HD03252 is domestic, HD03256) share a pattern of delayed implementation relative to EU directive deadlines. The Tidö government has been more deliberate in EU transposition, citing proportionality assessments as justification. This pattern was observed in 9 of 14 EU directives implemented 2023–2025. [B3 — Media reporting / FiU preparatory documents]
+
+## Comparative International
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/comparative-international.md -->
+
+---
+
+### Comparator Set
+
+---
+
+### Outside-In Analysis: EU Bank Package (HD03253)
+
+| Jurisdiction | CRD6 Transposition Status | Small-bank Carve-out | Supervisory Model | Source |
+|---|---|---|---|---|
+| **Sweden (SE)** | LATE — April 2026, deadline Q4 2025 | Proportionality debate ongoing | Finansinspektionen (FI) integrated | Riksdagen API HD03253 [A1] |
+| **Denmark (DK)** | Broadly on schedule, Finanstilsynet guidance Q1 2026 | Limited carve-out for local banks | Finanstilsynet | Danish FSA 2026 press releases [B3] |
+| **Finland (FI)** | On schedule, Finansinspektionen FI Q4 2025 | Minor proportionality adaptations | Integrated FIN-FSA | FIN-FSA annual report 2025 [B3] |
+| **Germany (DE)** | Partial — BaFin guidance issued, full transposition Q2 2026 | Yes — Sparkassen/VR-Banken carve-out significant | BaFin + Bundesbank | Bundesbank CRD6 implementation note [B2] |
+| **Netherlands (NL)** | On schedule — DNB circular December 2025 | Minor SME lending adjustments | DNB | DNB 2025 supervisory plan [B3] |
+
+**Outside-In finding**: Sweden's delay is unusual relative to Nordic peers (Finland on schedule). Germany's Sparkassen carve-out precedent is likely the template being cited by Swedish small-bank lobby.
+
+---
+
+### Welfare Restriction Comparators (HD03252)
+
+| Jurisdiction | Welfare benefit restriction for prisoners | Scope | Source |
+|---|---|---|---|
+| **Sweden (SE)** | Proposed: restrict sjukpenning/aktivitetsersättning for kontrollerat boende/säkerhetsförvaring | Narrow (controlled accommodation + security detention) | Prop. 2025/26:252 [A1] |
+| **Norway (NO)** | Existing: social benefits suspended for prisoners in ordinary custody; partial restoration in open custody | Broader scope | Norwegian Social Insurance Act §22-2 [B2] |
+| **Denmark (DK)** | Social benefits suspended for imprisonment; partial restoration in community supervision | Moderate scope | Danish Unemployment Insurance Act [B2] |
+| **Germany (DE)** | Sozialgesetzbuch §16: benefits suspended during imprisonment; no analogous security detention specific provision | Broad suspension | SGB VI [A2] |
+| **Finland (FI)** | Kela benefits suspended for full-time imprisonment; partial community supervision | Moderate scope | Finnish Social Insurance Institution Kela [B2] |
+
+**Outside-In finding**: Swedish proposal (HD03252) is *narrower* than comparator Nordic countries — focusing only on controlled accommodation and security detention, not ordinary imprisonment. This suggests the proposal is politically framed for electoral effect while avoiding the broader welfare suspension that Norway and Denmark have already implemented.
+
+---
+
+### Mermaid Comparison: CRD6 Transposition Timeline
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e"}}}%%
+gantt
+    title CRD6 Transposition Timeline — Nordic + DE + NL
+    dateFormat YYYY-MM
+    section EU Deadline
+    EU CRD6 Deadline        : milestone, 2025-12, 0d
+    section Finland
+    FIN-FSA guidance        : done, 2025-10, 2025-12
+    section Denmark
+    Finanstilsynet guidance : done, 2025-11, 2026-03
+    section Netherlands
+    DNB circular            : done, 2025-12, 2026-01
+    section Germany
+    BaFin partial           : active, 2026-01, 2026-06
+    section Sweden (LATE)
+    Prop HD03253 submitted  : active, 2026-04, 2026-06
+    Riksdag vote expected   : 2026-06, 2026-09
+```
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/implementation-feasibility.md -->
@@ -1656,6 +1554,108 @@ gantt
     section HD03256
     Riksdag vote         :2026-05-01, 30d
     Enforcement active   :2026-07-01, 2027-01-01
+```
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/media-framing-analysis.md -->
+
+---
+
+### Framework: Media Framing Categories
+
+Following Entman (1993): frames perform four functions — problem definition, causal attribution, moral evaluation, remedy suggestion.
+
+---
+
+### HD03253 — EU Bankpaket (CRD6/CRR3)
+
+#### Expected Dominant Frames (OSINT projection — [C3])
+
+| Media outlet type | Expected frame | Headline register |
+|-------------------|----------------|-------------------|
+| DN / SvD (quality press) | EU compliance / competitiveness | "Sverige inför EU:s bankregelverk" |
+| Dagens industri / Affärsvärlden | Burden on Swedish banks, competitive disadvantage | "Banker möter ökad kapitalkrav" |
+| Aftonbladet / Expressen (tabloid) | Taxpayer protection / bank stability | "Stärker skyddet mot bankkris" |
+| SR Ekot / SVT (public broadcaster) | Balance: EU obligation + criticism of late transposition | "EU-regler om banker på riksdagens bord" |
+| V/MP-affiliated media | Small bank burden, power to financiers | "Storbanksfördelar i nytt EU-paket" |
+
+#### Key Narrative Tensions
+- **Framing A (Govt)**: Responsible EU compliance; protecting Swedish financial system  
+- **Framing B (Opposition left)**: Bureaucratic overreach; burdens small banks; serves financial elite  
+- **Framing C (Industry)**: Late transposition caused uncertainty; welcome clarity
+
+---
+
+### HD03252 — Socialförsäkringsförmåner under fängelsestraff
+
+#### Expected Dominant Frames
+
+| Media outlet type | Expected frame | Headline register |
+|-------------------|----------------|-------------------|
+| DN / SvD | Law reform debate, ECHR tensions | "Fångar förlorar ersättningar" |
+| Aftonbladet / Expressen | Crime does not pay / welfare fairness | "Dömda förlorar sjukpenning" |
+| SR Ekot / SVT | Balanced: law change + human rights critique | "Riksdagen röstar om förmåner i fängelse" |
+| SD-aligned media (Samhällsnytt) | Welfare reform, taxpayer money | "SD pressar igenom välfärdsreform" |
+| V/S-aligned media (Flamman, LO-Tidningen) | ECHR risk, punishing the sick | "Sjuka straffas dubbelt" |
+
+#### Key Narrative Tensions
+- **Framing A (SD/M)**: Principle — those serving prison sentences should not receive taxpayer transfers  
+- **Framing B (S/V/MP)**: Human rights — prisoners are sick people too; double punishment  
+- **Framing C (Legal experts)**: ECHR Article 3 and proportionality question pending
+
+**Anticipated media impact**: HD03252 will generate the most media coverage of this package. Estimated 15–25 news articles, 3–5 editorial opinions within 2 weeks of Riksdag vote. [C3]
+
+---
+
+### HD03256 — Färdskrivare manipulation
+
+#### Expected Dominant Frames
+
+| Media outlet type | Expected frame |
+|-------------------|----------------|
+| Industry press (Transportnytt, ATL) | Welcome level playing field; enforcement details |
+| Fackförbundsmedia (Transport union) | Worker protection angle; fair competition |
+| General media | Low coverage; technical regulation |
+
+**Media impact**: Minimal. Expected 2–5 trade press articles. [C3]
+
+---
+
+### HD03104 — Skuldförvaltning (Evaluation Skrivelse)
+
+#### Expected Dominant Frames
+
+| Media outlet type | Expected frame |
+|-------------------|----------------|
+| Ekonomijournalistik (DI, SvD Näringsliv) | Green bonds performance; debt strategy assessment |
+| General media | Low coverage; technical evaluation |
+
+**Media impact**: Minimal. Expected 1–3 specialist articles. [C3]
+
+---
+
+### Strategic Communication Observations
+
+#### Government Communication Risk
+The Tidö government's primary communication risk on this package is **frame contamination**: media conflating HD03252's welfare-restriction narrative with HD03253's financial regulation narrative, creating an "austerity package" meta-narrative that is more politically damaging than any individual bill.
+
+**Recommended government counter-frame**: Present bills individually with distinct press events. Keep Wykman (FiU/Finance) and Strömmer (Justice/SfU) briefings separate.
+
+#### Opposition Communication Opportunity  
+S+V have opportunity to construct a unified "social rights rollback" frame combining HD03252 with previous reforms. This meta-frame is more electorally potent than opposing each bill separately.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "lineColor": "#ff006e"}}}%%
+graph TD
+    GOVT["Government\nFraming"] --> COMP["EU Compliance\nResponsible Finance"]
+    GOVT --> SAFE["Public Safety\nWelfare Reform"]
+    OPP["Opposition\nFraming"] --> RIGHTS["Social Rights\nHuman Rights"]
+    OPP --> BURDEN["Bank Burden\nSmall Business"]
+    MEDIA["Media\nMeta-Frame Risk"] --> AUSTERITY["Austerity Package\n(conflation risk)"]
+
+    style AUSTERITY fill:#ff006e,color:#fff
+    style COMP fill:#00d9ff,color:#000
+    style RIGHTS fill:#ffbe0b,color:#000
 ```
 
 ## Devil's Advocate
@@ -1990,23 +1990,23 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/threat-analysis.md)
 - [`documents/HD03104-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/documents/HD03104-analysis.md)
 - [`documents/HD03252-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/documents/HD03252-analysis.md)
 - [`documents/HD03253-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/documents/HD03253-analysis.md)
 - [`documents/HD03256-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/documents/HD03256-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/propositions/cross-reference-map.md)

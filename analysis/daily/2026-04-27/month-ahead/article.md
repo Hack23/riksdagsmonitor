@@ -5,7 +5,7 @@ date: 2026-04-27
 subfolder: month-ahead
 slug: 2026-04-27-month-ahead
 source_folder: analysis/daily/2026-04-27/month-ahead
-generated_at: 2026-05-04T09:52:32.390Z
+generated_at: 2026-05-04T12:16:14.085Z
 language: en
 layout: article
 ---
@@ -68,10 +68,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -231,412 +231,6 @@ xychart-beta
     bar [0.45, 0.38, 0.35, 0.33, 0.30, 0.27]
     style xychart-beta fill:#0a0e27,color:#e0e0e0
 ```
-
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/media-framing-analysis.md -->
-
-### Dominant Frames Identified
-
-#### Frame 1: "Law and Order Delivery" (Government/M/SD narrative)
-**Sources**: Tidö coalition press releases, M parliamentary group communications
-**Frame**: Sweden's justice reforms are historic — toughest criminal legislation in decades. Government is delivering on 2022 election promises. Specific hooks: weapons law (HD01JuU10), prison expansion (HD01CU25), police training grants (HD01JuU31).
-**Target audience**: Justice-priority voters (S1), suburban M/KD/SD voters
-**Weakness**: Relies on future implementation success; implementation failures before September would puncture the frame.
-
-#### Frame 2: "Welfare State Under Attack" (S narrative)
-**Sources**: S parliamentary group, LO trade union communications, Aftonbladet editorial line
-**Frame**: Tidö coalition is quietly dismantling the Swedish welfare state — sick pay cuts (HD10450), infrastructure neglect (Södra stambanan, HD10449). Six simultaneous interpellations aimed at exposing breadth of damage.
-**Target audience**: Welfare-state defenders (S2), regional workers (S4)
-**Weakness**: Lacks a single dominant story — too many simultaneous targets may fragment the narrative.
-
-#### Frame 3: "Sweden Steps Up" (Security establishment)
-**Sources**: Government foreign affairs communications, NATO/Nordic press
-**Frame**: Ukraine tribunal and reparations commission ratification (HD03231/HD03232) prove Sweden is a serious NATO partner and international rule-of-law champion.
-**Target audience**: Security-internationalists (S3), educated urban voters
-**Impact**: Low electoral differentiation — bipartisan support reduces electoral advantage for any single party.
-
-#### Frame 4: "Urban Elites vs Rural Sweden" (SD narrative)
-**Sources**: SD communications, Aftonbladet/Expressen comment pieces from SD-aligned voices
-**Frame**: Wind energy "disinformation" interpellation (HD10448) and rural community interests framed as under attack from urban environmental consensus.
-**Target audience**: Cultural nationalist voters (S5), rural SD base
-**Effectiveness**: Moderate — resonant in specific regions but unlikely to broaden SD's urban appeal.
-
-### Framing Competition Map
-
-```mermaid
-quadrantChart
-    title Framing Reach vs Intensity (May 2026)
-    x-axis Low Electoral Reach --> High Electoral Reach
-    y-axis Low Issue Intensity --> High Issue Intensity
-    quadrant-1 High Reach + High Intensity
-    quadrant-2 Low Reach + High Intensity
-    quadrant-3 Low Reach + Low Intensity
-    quadrant-4 High Reach + Low Intensity
-    "Justice Delivery (M/SD)": [0.78, 0.82]
-    "Welfare Attack (S)": [0.65, 0.75]
-    "Sweden Steps Up (Tidö)": [0.45, 0.55]
-    "Rural vs Urban (SD)": [0.35, 0.65]
-    style quadrantChart fill:#0a0e27
-```
-
-### Media Outlet Alignment (Structural)
-
-| Outlet | Structural Lean | Expected Frame |
-|--------|----------------|----------------|
-| SVT | Neutral/PSB | Balanced, policy substance |
-| SR | Neutral/PSB | Balanced, accountability focus |
-| Expressen | Center-right | Frame 1 (Law and Order) |
-| Aftonbladet | Center-left | Frame 2 (Welfare Attack) |
-| DN | Liberal-moderate | Frame 3 (Sweden Steps Up) |
-| SvD | Conservative | Frame 1 (Law and Order) |
-| Göteborgs-Posten | Liberal-regional | Frame 4 (regional infrastructure) |
-
-### Assessment
-
-The dominant media framing contest is Frame 1 (M/SD) vs Frame 2 (S). Frame 3 will have momentary elevation around the Ukraine vote. Frame 4 is a niche but sticky frame for SD's base. The sick-pay interpellation (HD10450) has the highest potential to elevate Frame 2 if LO activates its communications infrastructure. The challenge for S is competing with the justice cluster's emotional salience — crime and punishment typically generates higher public engagement than social insurance policy details.
-
-## Stakeholder Perspectives
-<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/stakeholder-perspectives.md -->
-
-### Stakeholder Map
-
-#### Government Coalition (M-KD-L with SD support)
-- **Moderaterna (M)**: Pushing justice cluster (HD01JuU10, HD03237, HD03246), defending Riksbank discharge (HD01FiU23). Finance Minister Svantesson faces interrogation on sick-pay reform.
-- **Kristdemokraterna (KD)**: Infrastructure Minister Carlson under pressure on Södra stambanan (HD10449). Energy Minister Busch faces SD's wind energy challenge (HD10448).
-- **Liberalerna (L)**: Labour Minister Britz targeted on corporate doctor training (HD10440). Low-profile in May legislative cluster.
-- **SD** (support party): Benefits from justice cluster visibility. Friction point: wind energy policy (HD10448 by Josef Fransson).
-
-#### Opposition
-- **Socialdemokraterna (S)**: Executing coordinated interpellation strategy (HD10449, HD10450, HD10451, HD10447). Key MPs: Robert Olesen (infrastructure), Jessica Rodén (social insurance), Ingela Nylund Watz (corporate crime) [riksdagen.se].
-- **Miljöpartiet (MP)**: Likely aligned with S on infrastructure investment and sick-pay protection. Also supportive on Ukraine legislation.
-- **Vänsterpartiet (V)**: Expected to back S interpellations on sick-pay and corporate crime; more aggressive on Russian sanctions.
-
-#### Civil Society & Interest Groups
-- **Jägarförbundet / Sportskytteförbund**: Directly affected by HD01JuU10 (new weapons law). The semi-automatic hunting rifle ban will generate lobbying.
-- **Facken (Trade Unions)**: Sick-pay reform (HD10450) is a union-priority issue. LO and TCO expected to mobilise.
-- **Kriminalvården**: Receiving emergency construction authority (HD01CU25) — capacity crisis finally being addressed.
-- **Research universities / SUHF**: Researcher migration reform (HD01SfU23) directly beneficial for recruitment.
-
-#### International Stakeholders
-- **Ukraine / EU**: Watching HD03231/232 Ukraine tribunal ratification — Sweden's signal of multilateral accountability commitment.
-- **NATO partners**: Swedish foreign policy consensus on Russia (HD11752, HD11753) monitored.
-
-### Stakeholder Interaction Map
-
-```mermaid
-flowchart LR
-    Gov["Government\nM-KD-L"] <-->|Legislative programme| Riksdag["Riksdag\nChamber"]
-    SD["SD\nSupport"] -->|May withdraw on energy| Gov
-    S["S Opposition"] -->|Interpellation pressure| Riksdag
-    Unions["LO/TCO\nTrade Unions"] -->|Sick-pay lobby| S
-    JägarFörb["Hunters/Shooters"] -->|Weapons law concern| JuU["JuU Committee"]
-    KrimVård["Kriminalvården"] -.->|Capacity needs| CU["CU Committee"]
-    style Gov fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-    style S fill:#ff006e,stroke:#ff006e,color:#fff
-    style SD fill:#ffbe0b,stroke:#ffbe0b,color:#000
-```
-
-## Forward Indicators
-<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/forward-indicators.md -->
-
-### Indicators Summary
-
-Twenty dated forward indicators across four time horizons: immediate (May 2026), near-term (June–July 2026), medium-term (August–September 2026), long-term (2026–2027).
-
----
-
-### Horizon 1: Immediate (May 2026)
-
-| # | Indicator | Date/Window | Threshold | Significance |
-|---|-----------|-------------|-----------|--------------|
-| FI-01 | Riksdag final vote on HD01JuU10 Weapons Law | 2026-05-08 to 2026-05-15 | Passes ≥175 votes | Confirms Tidö majority integrity |
-| FI-02 | Riksdag vote on HD01CU25 Prison Construction | 2026-05-08 to 2026-05-15 | Passes with M+SD+KD+L majority | Coalition cohesion indicator |
-| FI-03 | Minister response to HD10450 sick-pay interpellation | 2026-05-07 to 2026-05-09 | Substantive vs formulaic answer | Indicates willingness to negotiate |
-| FI-04 | Minister response to HD10449 Södra stambanan | 2026-05-06 to 2026-05-08 | Infrastructure funding committed vs deferred | Regional coalition signals |
-| FI-05 | SCB unemployment data April 2026 | 2026-05-15 | Below 8.5% = positive for Tidö | Economic context for campaign |
-
----
-
-### Horizon 2: Near-Term (June–July 2026)
-
-| # | Indicator | Date/Window | Threshold | Significance |
-|---|-----------|-------------|-----------|--------------|
-| FI-06 | June TNS/Sifo parliamentary polling | 2026-06-05 to 2026-06-15 | Tidö ≥175 or below 175 | Coalition majority viability |
-| FI-07 | Kriminalvården prison capacity utilisation report | 2026-06-01 | Occupancy rate trend | Implementation signal for HD01CU25 |
-| FI-08 | LO collective bargaining round closing | 2026-06-30 | Wage settlement vs CPI | Economic stability for election context |
-| FI-09 | Polismyndigheten annual report | 2026-06-15 | Crime statistics vs HD01JuU10 narrative | Justice delivery credibility |
-| FI-10 | Ukraine RCRPA first operational report | 2026-07-01 | Ratification effectiveness signals | HD03231 impact assessment |
-
----
-
-### Horizon 3: Medium-Term (August–September 2026)
-
-| # | Indicator | Date/Window | Threshold | Significance |
-|---|-----------|-------------|-----------|--------------|
-| FI-11 | August Novus/Demoskop polling | 2026-08-15 to 2026-08-20 | S-bloc ≥175 or Tidö ≥175 | Election outcome predictor |
-| FI-12 | SVT/DN major leader debate | 2026-08-24 to 2026-09-05 | Löfven vs Kristersson direct exchange | Decisive for undecided |
-| FI-13 | C party pre-election coalition signal | 2026-08-20 to 2026-09-06 | Explicit coalition preference statement | Kingmaker calculation |
-| FI-14 | September 2026 Riksdag election | 2026-09-13 | Bloc majority outcome | Definitive |
-| FI-15 | Södra stambanan government decision | 2026-09-01 to 2026-10-01 | Funding included vs excluded in govt budget | Infrastructure commitment |
-
----
-
-### Horizon 4: Long-Term (2026–2027)
-
-| # | Indicator | Date/Window | Threshold | Significance |
-|---|-----------|-------------|-----------|--------------|
-| FI-16 | Government formation outcome | 2026-10-01 to 2026-11-30 | Coalition configuration | New government direction |
-| FI-17 | IMF World Economic Outlook Oct 2026 | 2026-10-15 | Sweden NGDP_RPCH revised up/down vs 2.1% | Post-election economic context |
-| FI-18 | First 100 days justice implementation report | 2026-12-01 to 2027-01-15 | Prison construction groundbreaking | HD01CU25 delivery |
-| FI-19 | Weapons law implementation challenge | 2026-11-01 to 2027-06-30 | Legal challenges from hunting associations | HD01JuU10 legal durability |
-| FI-20 | Ukraine ICCPR tribunal first proceedings | 2027-01-01 to 2027-12-31 | First indictments, Sweden role | HD03232 long-term commitment |
-
----
-
-### Indicator Monitoring Map
-
-```mermaid
-timeline
-    title Forward Indicators Timeline May–September 2026
-    section May (Immediate)
-        2026-05-06 : FI-04 Södra stambanan response
-        2026-05-07 : FI-03 Sick-pay response
-        2026-05-10 : FI-01 Weapons law vote
-        2026-05-12 : FI-02 Prison construction vote
-        2026-05-15 : FI-05 SCB unemployment
-    section June–July (Near-Term)
-        2026-06-05 : FI-06 Sifo polling
-        2026-06-15 : FI-07 Kriminalvården report, FI-09 Polismyndigheten
-        2026-06-30 : FI-08 LO wage settlement
-        2026-07-01 : FI-10 Ukraine RCRPA report
-    section August–September (Election)
-        2026-08-15 : FI-11 Pre-election polls
-        2026-08-20 : FI-13 C coalition signal
-        2026-08-24 : FI-12 Leader debate
-        2026-09-13 : FI-14 Election day
-    style 2026-09-13 stroke:#ff006e,fill:#ff006e
-```
-
-### Assessment
-
-The most actionable forward indicators for intelligence consumers are FI-01 through FI-05 (immediate May window). The weapons law vote (FI-01) and sick-pay minister response (FI-03) will signal both Tidö majority strength and the government's openness to negotiating the Tidö agreement's welfare state positions. FI-11 (August polling) and FI-13 (C coalition signal) are the critical long-range indicators for September election outcome.
-
-## Scenario Analysis
-<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/scenario-analysis.md -->
-
-### Scenario 1: Government Justice Narrative Succeeds (Base Case)
-**Probability: LIKELY (55–70%)**  
-
-The full justice legislative cluster (HD01JuU10, HD01CU25, HD03237, HD03246) passes Riksdag votes in May-June 2026 on schedule. New weapons law enters force 1 June. Prison construction legislation enters force 1 July. Government enters pre-election phase with a dominant security narrative. S interpellations receive standard ministerial replies that satisfy media cycle but do not fundamentally shift public opinion. SD maintains support.
-
-**Key Indicators**: JuU committee vote date confirmed; no SD amendments filed on hunting exceptions; Riksdag schedule uninterrupted.
-
-### Scenario 2: Infrastructure Confrontation Escalates
-**Probability: POSSIBLE (25–40%)**  
-
-S's interpellation on Södra stambanan (HD10449) forces a media confrontation where Andreas Carlson (KD) must publicly defend the absence of a key rail investment from the national plan. Regional parties and rural newspapers amplify the story. M and KD show visible tension on infrastructure spending levels. This becomes a template for S's broader campaign narrative: "government neglects Swedish infrastructure." The scenario weakens government's rural/regional voter base.
-
-**Key Indicators**: Major Swedish newspapers editorial coverage of Södra stambanan; Carlson reply widely quoted; opinion polling movement in southern Sweden constituencies.
-
-### Scenario 3: Energy Culture War Disrupts SD Alignment
-**Probability: POSSIBLE (15–30%)**  
-
-SD's wind energy disinformation interpellation (HD10448) is the opening move in a more sustained campaign to make energy policy a dividing line. SD positions itself as sceptical of renewable energy expansion, forcing KD's Ebba Busch to either defend wind energy (risking SD friction) or distance herself from pro-wind policy (risking EU energy transition commitments). Coalition tension becomes visible before the election, opening space for V/MP to attack both parties.
-
-**Key Indicators**: SD table of further energy sector interpellations; Busch response tone; parliamentary energy committee vote splits.
-
-### Scenario 4: Ukraine Ratification Slip (Low Probability)
-**Probability: UNLIKELY (5–15%)**  
-
-Procedural delays or late-breaking amendments to HD03231/232 (Ukraine tribunal and reparations commission instruments) push ratification past June 2026. This would represent an embarrassment in Sweden's multilateral commitments but is unlikely given all-party consensus. Trigger: unexpected legal opinion on constitutional compatibility.
-
-**Key Indicators**: Lagrådsremiss complications; unexpected opposition from any party caucus.
-
-### Scenario Comparison
-
-```mermaid
-graph LR
-    Current["Current State\nApril 2026\nGovernment stable"] --> S1["Scenario 1\nJustice Cluster Succeeds\n55-70%"]
-    Current --> S2["Scenario 2\nInfrastructure Confrontation\n25-40%"]
-    Current --> S3["Scenario 3\nEnergy Culture War\n15-30%"]
-    Current --> S4["Scenario 4\nUkraine Slip\n5-15%"]
-    style S1 fill:#00d9ff,stroke:#00d9ff,color:#000
-    style S2 fill:#ffbe0b,stroke:#ffbe0b,color:#000
-    style S3 fill:#ff006e,stroke:#ff006e,color:#fff
-    style S4 fill:#7b2d8b,stroke:#7b2d8b,color:#fff
-```
-
-## Risk Assessment
-<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/risk-assessment.md -->
-
-### Risk Register
-
-| Risk ID | Risk | Likelihood | Impact | Velocity | Score | Owner |
-|---------|------|-----------|--------|----------|-------|-------|
-| R-01 | SD amendments derail weapons law timeline (HD01JuU10) | MEDIUM | HIGH | HIGH | 8/10 | JuU |
-| R-02 | Infrastructure plan rejection crisis — Södra stambanan absent forces KD-M confrontation (HD10449) | LOW-MEDIUM | HIGH | MEDIUM | 6/10 | Infrastruktur |
-| R-03 | S interpellation barrage damages government approval ahead of election | MEDIUM | MEDIUM | MEDIUM | 6/10 | Government |
-| R-04 | Ukraine tribunal ratification delayed by procedural disagreements (HD03231/232) | LOW | HIGH | LOW | 5/10 | UU |
-| R-05 | Sick-pay reform reversal pressure escalates (HD10450) | MEDIUM | MEDIUM | LOW-MEDIUM | 5/10 | SoU |
-| R-06 | Corporate crime gap (HD10451) becomes media narrative blocking justice ministry agenda | LOW-MEDIUM | MEDIUM | MEDIUM | 5/10 | JuU |
-| R-07 | Prison construction emergency legislation challenged on rule-of-law grounds (HD01CU25) | LOW | HIGH | LOW | 4/10 | CU |
-| R-08 | Wind energy culture war (HD10448) fragments M-KD energy consensus | LOW-MEDIUM | MEDIUM | HIGH | 5/10 | Energi |
-
-### Top Three Risks Narrative
-
-#### R-01: SD Weapons Law Timeline Risk (MEDIUM-HIGH)
-Source: HD01JuU10 (riksdagen.se), JuU committee report 2026-04-24. The new weapons law enters force 1 June 2026 — any parliamentary procedural delay or SD-sponsored amendment to expand the hunting rifle exception could push the implementation date. Probability: MEDIUM given SD's prior pushback on hunting restrictions. Mitigation: Government should secure firm SD commitment before committee stage closes.
-
-#### R-02: Infrastructure Plan Confrontation (LOW-MEDIUM)
-Source: HD10449 (riksdagen.se), interpellation by Robert Olesen (S) to Andreas Carlson (KD). Absence of Södra stambanan from the national infrastructure plan is a documented fact that forces the minister to defend a negative — unusual political position. Risk: KD's infrastructure programme becomes a coalition liability if M disagrees on public investment levels. Velocity: MEDIUM (minister's reply pending).
-
-#### R-03: S Interpellation Barrage (MEDIUM)
-S-party has filed coordinated interpellations (HD10449, HD10450, HD10451, HD10447, HD10443–HD10446) targeting four ministers (Carlson, Tenje, Strömmer, Svantesson, Britz). This systematic targeting of multiple departments simultaneously depletes ministerial bandwidth and maximises media opportunity. Risk of government appearing on the defensive across multiple policy areas simultaneously. Score elevated by proximity to election.
-
-### Risk Heat Map
-
-```mermaid
-quadrantChart
-    title Risk Heat Map: Likelihood vs Impact
-    x-axis "Low Likelihood" --> "High Likelihood"
-    y-axis "Low Impact" --> "High Impact"
-    quadrant-1 Critical: Monitor & Mitigate
-    quadrant-2 Significant: Active Management
-    quadrant-3 Low Priority
-    quadrant-4 Watch: High Probability
-    "R-01 SD Weapons Law": [0.55, 0.80]
-    "R-02 Stambanan Crisis": [0.35, 0.85]
-    "R-03 S Barrage": [0.60, 0.55]
-    "R-05 Sick Pay Reversal": [0.50, 0.50]
-    "R-08 Wind Culture War": [0.40, 0.55]
-    "R-04 Ukraine Delay": [0.25, 0.80]
-    "R-07 Prison Legality": [0.20, 0.75]
-    style quadrantChart fill:#0a0e27,color:#e0e0e0
-```
-
-### Institutional Risk Assessment
-
-- **Kriminalvården**: Prison capacity shortfall (HD01CU25) confirmed — emergency legislation signals systemic failure of capacity planning. Statskontoret relevance: no directly relevant source found for this date. General reference: www.statskontoret.se (capacity audits of government agencies).
-- **Polismyndigheten**: Police reform 2015 evaluation (HD01JuU31) — Riksrevisionen found insufficient reform effectiveness. Paid police training proposition (HD03237) is the government's response. Combined risk: reform credibility gap.
-
-### Economic Risk Overlay
-
-IMF WEO Apr-2026 vintage context (caveat: retrieved from prior run, not this run):
-- Sweden GDP growth ~2.1% — positive but slowing in EU context
-- Export exposure to EU demand remains a latent risk in justice/infrastructure spending debates
-- Labour market impacts of sick-pay reform (HD10450) are contested in economic modelling
-
-## SWOT Analysis
-<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/swot-analysis.md -->
-
-### SWOT Matrix
-
-#### Strengths
-
-- **Coherent justice programme**: Government has assembled a full justice-sector legislative cluster (HD01JuU10, HD01CU25, HD03237, HD03246) entering votes simultaneously — demonstrates policy coherence [A2] [riksdagen.se]
-- **Parliamentary security consensus**: All-party agreement on Ukraine accountability (HD03231/232) and Russia restrictions (HD11752, HD11753) insulates foreign policy from partisan conflict [B2] [riksdagen.se]
-- **Riksbank stability**: FiU23 (HD01FiU23) confirms Riksbank director and fullmäktige receive clean discharge for 2025, 5 297 MSEK profit retained — monetary credibility maintained [A1] [riksdagen.se]
-
-#### Weaknesses
-
-- **Infrastructure investment gap**: HD10449 exposes absence of Södra stambanan double-track Alvesta–Växjö from national plan — signals KD-M tension on public investment levels [B2] [riksdagen.se]
-- **Sick-pay reform vulnerable**: The day-180 exception (HD10450) is a policy legacy contested across party lines; government's work-line narrative creates political vulnerability on welfare protection [B2] [riksdagen.se]
-- **Prison capacity crisis**: HD01CU25 requires emergency building legislation — signals Kriminalvården capacity shortfall, which Riksrevisionen has previously flagged as a systemic constraint [B2] [riksdagen.se]
-
-#### Opportunities
-
-- **Security electoral narrative**: The justice cluster (weapons law, police training, youth offenders) positions government favourably on crime/security ahead of election — polling consistently shows SD-M coalition strongest on crime [B3]
-- **Ukraine multilateral leadership**: Ratification of international reparations commission and aggression tribunal (HD03231/232) positions Sweden as engaged multilateral actor in post-NATO foreign policy [B2] [riksdagen.se]
-- **Researcher migration reform**: HD01SfU23 (entering force 11 June) may strengthen Sweden's competitive position in attracting international research talent — innovation economy upside [B2] [riksdagen.se]
-
-#### Threats
-
-- **S narrative effectiveness**: S-party's synchronized interpellations (HD10449, HD10450, HD10451, HD10447) across infrastructure, social insurance, and corporate crime signal a coherent electoral contrast strategy — could crystallise public opinion against the government on welfare and investment [C2]
-- **SD energy culture war**: Josef Fransson (SD) interpellation HD10448 on wind energy disinformation signals SD's intent to weaponise energy transition against Ebba Busch (KD) — potential coalition strain [B3]
-- **Corporate crime accountability gap**: HD10451 (Ingela Nylund Watz, S → Gunnar Strömmer, M) highlights gap in action against shell companies used for crime despite December 2025 Brå report — government reactive posture exposed [B2] [riksdagen.se]
-- **Swedish manufacturing competitiveness**: Without IMF fetch confirmation, relying on prior WEO Apr-2026 context: Swedish export exposure to EU demand slowdown remains a latent risk (NGDP_RPCH ~2.1% projection — vintage caveat applies) [C3]
-
-### TOWS Matrix
-
-| | Strengths | Weaknesses |
-|---|---|---|
-| **Opportunities** | SO: Leverage justice narrative into electoral dominance on crime — coordinate weapons law, police training, and prison expansion as single "safe Sweden" message | WO: Use researcher migration reform to reframe infrastructure debate — shift from physical to human capital investment narrative |
-| **Threats** | ST: Counter S interpellations with detailed ministerial responses on Södra stambanan timeline and Riksbank stability figures from FiU23 | WT: Address corporate crime gap proactively — commission justice ministry update on shell company legislation before HD10451 debate |
-
-### Cross-SWOT Intersections
-
-- HD01JuU10 (Strength) × HD10448 (Threat): The weapons law reinforces government security credibility, but SD's wind energy attacks risk fragmenting coalition energy messaging — requires separate government response strategy.
-- HD10450 (Weakness) × S narrative (Threat): Sick-pay day-180 debate is the most electorally sensitive intersection — government should prepare evidence-based response quantifying work-line reform outcomes.
-
-```mermaid
-quadrantChart
-    title SWOT Quadrant — May 2026 Key Documents
-    x-axis "Low Impact" --> "High Impact"
-    y-axis "Government Disadvantage" --> "Government Advantage"
-    quadrant-1 Leverage
-    quadrant-2 Defend
-    quadrant-3 Monitor
-    quadrant-4 Address
-    "JuU10 Weapons Law (HD01JuU10)": [0.85, 0.90]
-    "Ukraine Tribunal (HD03231)": [0.75, 0.80]
-    "Prison Build (HD01CU25)": [0.65, 0.70]
-    "Södra Stambanan (HD10449)": [0.70, 0.30]
-    "Sjukförsäkring (HD10450)": [0.65, 0.25]
-    "Corporate Crime (HD10451)": [0.55, 0.30]
-    style quadrantChart fill:#0a0e27,color:#e0e0e0
-```
-
-## Threat Analysis
-<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/threat-analysis.md -->
-
-### Threat Actors
-
-#### TA-01: Socialdemokraterna (S) — Opposition Campaign
-- **Actor**: S party leadership, parliamentary group (61 seats, opposition)
-- **Capability**: HIGH — systematic interpellation campaign, four ministers targeted simultaneously, parliamentary procedural expertise
-- **Intent**: CONFIRMED — HD10449, HD10450, HD10451, HD10447, HD10443-HD10446 filed in coordinated burst
-- **Opportunity**: HIGH — May 2026 is last major legislative window before election; government most exposed
-- **Assessment**: S is executing a well-coordinated pre-election opposition strategy. The simultaneous targeting of Carlson (KD), Tenje (M), Strömmer (M), Svantesson (M), and Britz (L) depletes coalition response capacity [riksdagen.se/HD10449, HD10450, HD10451] [A2]
-
-#### TA-02: Sverigedemokraterna (SD) — Coalition Friction
-- **Actor**: SD parliamentary group (73 seats, government support party)
-- **Capability**: MEDIUM — can delay or modify legislation through committee; wind energy narrative has media traction
-- **Intent**: PROBABLE — HD10448 (Josef Fransson, SD) frames wind energy debate as disinformation battle [riksdagen.se/HD10448] [B2]
-- **Opportunity**: MEDIUM — energy debate intensifies ahead of election; SD can position as truth-teller vs establishment
-- **Assessment**: SD poses a fractional threat to KD's energy ministry agenda. Ebba Busch (KD) must calibrate response to HD10448 without alienating SD or reinforcing SD's anti-wind narrative.
-
-#### TA-03: External — Russia (Geopolitical Threat Context)
-- **Actor**: Russian Federation
-- **Capability**: HIGH (regional military capability, disinformation capacity)
-- **Intent**: PROBABLE — overflight permit violations context (HD11752), military pressure on Nordic region
-- **Opportunity**: MEDIUM — NATO membership changes deterrence calculus
-- **Assessment**: The parliamentary motions HD11752 (overflight revocation), HD11753 (Russia visa restrictions), and HD03231/232 (Ukraine tribunal) respond to confirmed Russian aggressive behaviour. Parliamentary threat is reactive to external geopolitical reality [riksdagen.se/HD11752, HD11753] [B2]
-
-### Threat Matrix
-
-```mermaid
-graph LR
-    S_Party["S-Party Opposition\nTA-01 [A2]"] -->|Interpellations| Gov["Kristersson\nGovernment"]
-    SD_Friction["SD Coalition\nTA-02 [B2]"] -->|Energy Culture War| KD_Energy["KD Energy\nMinistry"]
-    Russia["Russia External\nTA-03 [B2]"] -->|Pressure| Foreign_Policy["Swedish Foreign\nPolicy Consensus"]
-    style S_Party fill:#ff006e,stroke:#ff006e,color:#fff
-    style SD_Friction fill:#ffbe0b,stroke:#ffbe0b,color:#000
-    style Russia fill:#7b2d8b,stroke:#7b2d8b,color:#fff
-    style Gov fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-```
-
-### STRIDE Political Assessment
-
-- **S**poofing: S party's interpellation on corporate crime (HD10451) leverages Brå's December 2025 report — factual grounding limits government's ability to dismiss
-- **T**ampering: SD's wind energy framing (HD10448) attempts to reframe the regulatory/informational landscape on energy transition
-- **R**epudiation: Government's non-inclusion of Södra stambanan in infrastructure plan creates documented accountability gap (HD10449)
-- **I**nformation: Russia disinformation capacity is the external STRIDE-I threat; Swedish parliament responds with HD11753 visa restrictions
-- **D**enial: Prison capacity crisis (HD01CU25) reflects systemic denial of Kriminalvårdens earlier capacity warnings
-- **E**scalation: Ukraine tribunal ratification (HD03231/232) manages escalation risk by embedding Sweden in multilateral accountability frameworks
-
-### Statskontoret Agency Capacity Threat Note
-
-Multiple of the May 2026 bills place significant new demands on implementing agencies: Kriminalvården (HD01CU25 prison construction), Polismyndigheten (HD03237, HD01JuU31), Migrationsverket (HD01SfU23). Agency capacity constraints could delay implementation timelines. **Statskontoret relevance: none found** for these specific documents on this date; general governance capacity risk noted.
 
 ## Per-document intelligence
 
@@ -1014,76 +608,46 @@ Supporting document in the May 2026 parliamentary session. See significance-scor
 
 - riksdagen.se: HD11756
 
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/election-2026-analysis.md -->
+## Stakeholder Perspectives
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/stakeholder-perspectives.md -->
 
-### Summary
+### Stakeholder Map
 
-Sweden's September 2026 election is ~5 months away. The May 2026 parliamentary session represents the final major legislative delivery window for the Tidö coalition. Parties are pivoting from governance to election positioning, creating significant legislative urgency.
+#### Government Coalition (M-KD-L with SD support)
+- **Moderaterna (M)**: Pushing justice cluster (HD01JuU10, HD03237, HD03246), defending Riksbank discharge (HD01FiU23). Finance Minister Svantesson faces interrogation on sick-pay reform.
+- **Kristdemokraterna (KD)**: Infrastructure Minister Carlson under pressure on Södra stambanan (HD10449). Energy Minister Busch faces SD's wind energy challenge (HD10448).
+- **Liberalerna (L)**: Labour Minister Britz targeted on corporate doctor training (HD10440). Low-profile in May legislative cluster.
+- **SD** (support party): Benefits from justice cluster visibility. Friction point: wind energy policy (HD10448 by Josef Fransson).
 
-### Seat Count Baseline (March 2026 polling average)
+#### Opposition
+- **Socialdemokraterna (S)**: Executing coordinated interpellation strategy (HD10449, HD10450, HD10451, HD10447). Key MPs: Robert Olesen (infrastructure), Jessica Rodén (social insurance), Ingela Nylund Watz (corporate crime) [riksdagen.se].
+- **Miljöpartiet (MP)**: Likely aligned with S on infrastructure investment and sick-pay protection. Also supportive on Ukraine legislation.
+- **Vänsterpartiet (V)**: Expected to back S interpellations on sick-pay and corporate crime; more aggressive on Russian sanctions.
 
-| Party | Seats (2022 actual) | May 2026 poll average | Delta |
-|-------|--------------------|-----------------------|-------|
-| S (Social Democrats) | 107 | ~98–102 | -5 to -9 |
-| SD (Sweden Democrats) | 73 | ~78–83 | +5 to +10 |
-| M (Moderates) | 68 | ~65–70 | -3 to +2 |
-| C (Centre) | 24 | ~20–24 | -4 to 0 |
-| V (Left) | 24 | ~26–30 | +2 to +6 |
-| KD (Christian Democrats) | 19 | ~17–20 | -2 to +1 |
-| MP (Green) | 18 | ~14–18 | -4 to 0 |
-| L (Liberals) | 16 | ~14–17 | -2 to +1 |
+#### Civil Society & Interest Groups
+- **Jägarförbundet / Sportskytteförbund**: Directly affected by HD01JuU10 (new weapons law). The semi-automatic hunting rifle ban will generate lobbying.
+- **Facken (Trade Unions)**: Sick-pay reform (HD10450) is a union-priority issue. LO and TCO expected to mobilise.
+- **Kriminalvården**: Receiving emergency construction authority (HD01CU25) — capacity crisis finally being addressed.
+- **Research universities / SUHF**: Researcher migration reform (HD01SfU23) directly beneficial for recruitment.
 
-**Coalition bloc projections** (349 seats total, majority = 175):
-- Tidö bloc (M+SD+KD+L) 176–190 seats (marginal majority at risk)
-- S-bloc (S+V+MP) 138–150 seats (opposition, insufficient)
-- C: potential kingmaker if Tidö loses majority
+#### International Stakeholders
+- **Ukraine / EU**: Watching HD03231/232 Ukraine tribunal ratification — Sweden's signal of multilateral accountability commitment.
+- **NATO partners**: Swedish foreign policy consensus on Russia (HD11752, HD11753) monitored.
 
-### Legislative Impact on Election
-
-**Justice cluster** (HD01JuU10, HD01CU25, HD01JuU31): M/KD claiming "toughest justice legislation in decades" — major campaign asset. Risk: implementation failures before September damage the narrative. Sources: riksdagen.se HD01JuU10, HD01CU25, HD01JuU31.
-
-**Infrastructure** (HD10449 Södra stambanan): S using this as proof that Tidö coalition has deprioritized southern Sweden's economic interests. Regional resonance in Skåne, Blekinge, Kronoberg — seats where M is vulnerable.
-
-**Ukraine ratifications** (HD03231/HD03232): Likely bipartisan consensus votes. No significant electoral differentiation except SD may signal reservations to its nationalist voter base.
-
-### Election Risk Calendar — May–September 2026
+### Stakeholder Interaction Map
 
 ```mermaid
-gantt
-    title Election 2026 — Critical Window
-    dateFormat YYYY-MM-DD
-    axisFormat %d/%m
-
-    section Legislative
-    May session close       :milestone, 2026-05-31, 0d
-    Autumn session start    :milestone, 2026-08-24, 0d
-
-    section Campaign
-    Summer campaign period  :active, 2026-06-01, 2026-09-06
-    Debate series           :2026-08-24, 2026-09-06
-
-    section Polling
-    Pre-campaign polls      :2026-05-01, 2026-06-01
-    Post-legislative polls  :2026-06-01, 2026-07-01
-    Final polls             :2026-08-24, 2026-09-11
-
-    section Election
-    Election day            :milestone, 2026-09-13, 0d
-
-    style 2026-09-13 stroke:#ff006e,fill:#ff006e
+flowchart LR
+    Gov["Government\nM-KD-L"] <-->|Legislative programme| Riksdag["Riksdag\nChamber"]
+    SD["SD\nSupport"] -->|May withdraw on energy| Gov
+    S["S Opposition"] -->|Interpellation pressure| Riksdag
+    Unions["LO/TCO\nTrade Unions"] -->|Sick-pay lobby| S
+    JägarFörb["Hunters/Shooters"] -->|Weapons law concern| JuU["JuU Committee"]
+    KrimVård["Kriminalvården"] -.->|Capacity needs| CU["CU Committee"]
+    style Gov fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style S fill:#ff006e,stroke:#ff006e,color:#fff
+    style SD fill:#ffbe0b,stroke:#ffbe0b,color:#000
 ```
-
-### Key Electoral Uncertainties
-
-1. **SD seat ceiling**: SD currently at ~20% polling. A crime wave narrative + Tidö delivery = SD 23%? Or has SD maximised its voter potential?
-2. **C kingmaker**: If Tidö falls below 175, C must choose between entering a Tidö coalition or enabling a S-led minority. C's stance on this will dominate the autumn campaign.
-3. **Youth turnout**: Historically low in non-national-issues elections. 2026 may feature high youth engagement due to Russia/security concerns.
-4. **Economic conditions**: With IMF projecting ~2.1% NGDP growth for Sweden (WEO Apr-2026 vintage⚠️), incumbent credibility on economic management is uncertain.
-
-### Assessment
-
-The May 2026 session is the last "delivery" session before campaigning begins in earnest. Tidö's legislative productivity (justice, Ukraine, infrastructure spending) will be harvested as a campaign narrative. S's interpellation strategy aims to expose implementation gaps before public attention shifts fully to the election campaign. The race remains genuinely competitive; the Södra stambanan infrastructure deficit and sick-pay disputes are S's strongest arguments in Götaland.
 
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/coalition-mathematics.md -->
@@ -1201,45 +765,378 @@ The sick-pay day-180 issue (S2) and Södra stambanan (S4) are the most volatile 
 
 S's May 2026 interpellation strategy is optimally targeted: HD10450 (sick pay) activates S2, HD10449 (infrastructure) activates S4 — both are swing segments where S is competitive. The Tidö coalition's legislative delivery is strongest with S1 and S3 (already leaning coalition), with limited crossover appeal.
 
-## Comparative International
-<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/comparative-international.md -->
+## Forward Indicators
+<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/forward-indicators.md -->
 
-### Comparator Matrix
+### Indicators Summary
 
-| Issue | Sweden | Norway | Denmark | Finland | Germany | EU Benchmark |
-|-------|--------|--------|---------|---------|---------|-------------|
-| Criminal justice expansion | Weapons law + prison construction peak | Stable, no major reform | Justice reform post-2025 | Post-reform stabilisation | Coalition justice reform ongoing | Varied |
-| Infrastructure investment | Södra stambanan gap — contested | High rail investment | Copenhagen metro expansion | Regional investment strong | Deutschlandticket + rail expansion | EU TEN-T targets |
-| Social insurance reform | Sick-pay day-180 debate | Generous welfare stable | Active labour market reform | Strong activation policy | Bürgergeld debate | OECD activation model |
-| Russia policy | Ukraine tribunals + visa restrictions | NATO aligned | NATO aligned | Heightened Russia concern | Strong Russia sanctions | EU unified |
-| Energy transition | Wind disinformation debate (SD) | Offshore wind expansion | Wind energy dominant | Nuclear + wind mix | Energiewende ongoing | EU Green Deal |
+Twenty dated forward indicators across four time horizons: immediate (May 2026), near-term (June–July 2026), medium-term (August–September 2026), long-term (2026–2027).
 
-### Nordic Comparison: Criminal Justice
+---
 
-Sweden is in an unusually concentrated legislative phase for criminal justice. Norway and Denmark have had more stable criminal justice environments. Finland's post-reform period offers a cautionary parallel: rapid implementation of prison expansion strains correctional services. The HD01CU25 emergency prison construction legislation parallels challenges seen in England/Wales prison capacity crises — suggesting Sweden should study British implementation lessons.
+### Horizon 1: Immediate (May 2026)
 
-### Ukraine Context: Nordic Solidarity
+| # | Indicator | Date/Window | Threshold | Significance |
+|---|-----------|-------------|-----------|--------------|
+| FI-01 | Riksdag final vote on HD01JuU10 Weapons Law | 2026-05-08 to 2026-05-15 | Passes ≥175 votes | Confirms Tidö majority integrity |
+| FI-02 | Riksdag vote on HD01CU25 Prison Construction | 2026-05-08 to 2026-05-15 | Passes with M+SD+KD+L majority | Coalition cohesion indicator |
+| FI-03 | Minister response to HD10450 sick-pay interpellation | 2026-05-07 to 2026-05-09 | Substantive vs formulaic answer | Indicates willingness to negotiate |
+| FI-04 | Minister response to HD10449 Södra stambanan | 2026-05-06 to 2026-05-08 | Infrastructure funding committed vs deferred | Regional coalition signals |
+| FI-05 | SCB unemployment data April 2026 | 2026-05-15 | Below 8.5% = positive for Tidö | Economic context for campaign |
 
-Sweden joins Norway, Denmark, Finland and Germany in the international reparations commission (HD03231) and aggression tribunal (HD03232). Finland and Estonia have been the most vocal Baltic/Nordic advocates for strong accountability mechanisms. Sweden's ratification solidifies the Nordic-Baltic front on Ukraine accountability — significant as Sweden is a newer NATO member still establishing its strategic identity. Source: riksdagen.se propositions HD03231, HD03232.
+---
 
-### Energy Policy: Nordic Contrast
+### Horizon 2: Near-Term (June–July 2026)
 
-Sweden's wind energy cultural conflict (HD10448, SD framing) contrasts sharply with Denmark where wind energy is broadly accepted across parties. Norway's oil wealth creates a different energy politics. Finland has moved forward with nuclear (Olkiluoto 3). Sweden's SD-driven skepticism of wind energy is regionally exceptional and creates friction with EU Green Deal commitments.
+| # | Indicator | Date/Window | Threshold | Significance |
+|---|-----------|-------------|-----------|--------------|
+| FI-06 | June TNS/Sifo parliamentary polling | 2026-06-05 to 2026-06-15 | Tidö ≥175 or below 175 | Coalition majority viability |
+| FI-07 | Kriminalvården prison capacity utilisation report | 2026-06-01 | Occupancy rate trend | Implementation signal for HD01CU25 |
+| FI-08 | LO collective bargaining round closing | 2026-06-30 | Wage settlement vs CPI | Economic stability for election context |
+| FI-09 | Polismyndigheten annual report | 2026-06-15 | Crime statistics vs HD01JuU10 narrative | Justice delivery credibility |
+| FI-10 | Ukraine RCRPA first operational report | 2026-07-01 | Ratification effectiveness signals | HD03231 impact assessment |
+
+---
+
+### Horizon 3: Medium-Term (August–September 2026)
+
+| # | Indicator | Date/Window | Threshold | Significance |
+|---|-----------|-------------|-----------|--------------|
+| FI-11 | August Novus/Demoskop polling | 2026-08-15 to 2026-08-20 | S-bloc ≥175 or Tidö ≥175 | Election outcome predictor |
+| FI-12 | SVT/DN major leader debate | 2026-08-24 to 2026-09-05 | Löfven vs Kristersson direct exchange | Decisive for undecided |
+| FI-13 | C party pre-election coalition signal | 2026-08-20 to 2026-09-06 | Explicit coalition preference statement | Kingmaker calculation |
+| FI-14 | September 2026 Riksdag election | 2026-09-13 | Bloc majority outcome | Definitive |
+| FI-15 | Södra stambanan government decision | 2026-09-01 to 2026-10-01 | Funding included vs excluded in govt budget | Infrastructure commitment |
+
+---
+
+### Horizon 4: Long-Term (2026–2027)
+
+| # | Indicator | Date/Window | Threshold | Significance |
+|---|-----------|-------------|-----------|--------------|
+| FI-16 | Government formation outcome | 2026-10-01 to 2026-11-30 | Coalition configuration | New government direction |
+| FI-17 | IMF World Economic Outlook Oct 2026 | 2026-10-15 | Sweden NGDP_RPCH revised up/down vs 2.1% | Post-election economic context |
+| FI-18 | First 100 days justice implementation report | 2026-12-01 to 2027-01-15 | Prison construction groundbreaking | HD01CU25 delivery |
+| FI-19 | Weapons law implementation challenge | 2026-11-01 to 2027-06-30 | Legal challenges from hunting associations | HD01JuU10 legal durability |
+| FI-20 | Ukraine ICCPR tribunal first proceedings | 2027-01-01 to 2027-12-31 | First indictments, Sweden role | HD03232 long-term commitment |
+
+---
+
+### Indicator Monitoring Map
 
 ```mermaid
-radar
-    title Nordic Policy Profile — Sweden May 2026
-    "Justice Reform" : [9, 6, 5, 5, 6]
-    "Infrastructure" : [5, 7, 7, 6, 8]
-    "Social Insurance" : [6, 8, 7, 7, 7]
-    "Ukraine Commitment" : [8, 8, 8, 9, 8]
-    "Energy Transition" : [5, 7, 9, 8, 6]
-    style radar fill:#0a0e27,color:#e0e0e0
+timeline
+    title Forward Indicators Timeline May–September 2026
+    section May (Immediate)
+        2026-05-06 : FI-04 Södra stambanan response
+        2026-05-07 : FI-03 Sick-pay response
+        2026-05-10 : FI-01 Weapons law vote
+        2026-05-12 : FI-02 Prison construction vote
+        2026-05-15 : FI-05 SCB unemployment
+    section June–July (Near-Term)
+        2026-06-05 : FI-06 Sifo polling
+        2026-06-15 : FI-07 Kriminalvården report, FI-09 Polismyndigheten
+        2026-06-30 : FI-08 LO wage settlement
+        2026-07-01 : FI-10 Ukraine RCRPA report
+    section August–September (Election)
+        2026-08-15 : FI-11 Pre-election polls
+        2026-08-20 : FI-13 C coalition signal
+        2026-08-24 : FI-12 Leader debate
+        2026-09-13 : FI-14 Election day
+    style 2026-09-13 stroke:#ff006e,fill:#ff006e
 ```
 
 ### Assessment
 
-Sweden's May 2026 parliamentary agenda is unusually security-heavy compared to Nordic peers. The criminal justice cluster is exceptional in scope and speed. Ukraine solidarity instruments align Sweden with the Nordic-Baltic consensus. The energy culture war is a Swedish-specific phenomenon driven by SD's political positioning — a risk to Sweden's EU energy relationship that has no direct Nordic parallel.
+The most actionable forward indicators for intelligence consumers are FI-01 through FI-05 (immediate May window). The weapons law vote (FI-01) and sick-pay minister response (FI-03) will signal both Tidö majority strength and the government's openness to negotiating the Tidö agreement's welfare state positions. FI-11 (August polling) and FI-13 (C coalition signal) are the critical long-range indicators for September election outcome.
+
+## Scenario Analysis
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/scenario-analysis.md -->
+
+### Scenario 1: Government Justice Narrative Succeeds (Base Case)
+**Probability: LIKELY (55–70%)**  
+
+The full justice legislative cluster (HD01JuU10, HD01CU25, HD03237, HD03246) passes Riksdag votes in May-June 2026 on schedule. New weapons law enters force 1 June. Prison construction legislation enters force 1 July. Government enters pre-election phase with a dominant security narrative. S interpellations receive standard ministerial replies that satisfy media cycle but do not fundamentally shift public opinion. SD maintains support.
+
+**Key Indicators**: JuU committee vote date confirmed; no SD amendments filed on hunting exceptions; Riksdag schedule uninterrupted.
+
+### Scenario 2: Infrastructure Confrontation Escalates
+**Probability: POSSIBLE (25–40%)**  
+
+S's interpellation on Södra stambanan (HD10449) forces a media confrontation where Andreas Carlson (KD) must publicly defend the absence of a key rail investment from the national plan. Regional parties and rural newspapers amplify the story. M and KD show visible tension on infrastructure spending levels. This becomes a template for S's broader campaign narrative: "government neglects Swedish infrastructure." The scenario weakens government's rural/regional voter base.
+
+**Key Indicators**: Major Swedish newspapers editorial coverage of Södra stambanan; Carlson reply widely quoted; opinion polling movement in southern Sweden constituencies.
+
+### Scenario 3: Energy Culture War Disrupts SD Alignment
+**Probability: POSSIBLE (15–30%)**  
+
+SD's wind energy disinformation interpellation (HD10448) is the opening move in a more sustained campaign to make energy policy a dividing line. SD positions itself as sceptical of renewable energy expansion, forcing KD's Ebba Busch to either defend wind energy (risking SD friction) or distance herself from pro-wind policy (risking EU energy transition commitments). Coalition tension becomes visible before the election, opening space for V/MP to attack both parties.
+
+**Key Indicators**: SD table of further energy sector interpellations; Busch response tone; parliamentary energy committee vote splits.
+
+### Scenario 4: Ukraine Ratification Slip (Low Probability)
+**Probability: UNLIKELY (5–15%)**  
+
+Procedural delays or late-breaking amendments to HD03231/232 (Ukraine tribunal and reparations commission instruments) push ratification past June 2026. This would represent an embarrassment in Sweden's multilateral commitments but is unlikely given all-party consensus. Trigger: unexpected legal opinion on constitutional compatibility.
+
+**Key Indicators**: Lagrådsremiss complications; unexpected opposition from any party caucus.
+
+### Scenario Comparison
+
+```mermaid
+graph LR
+    Current["Current State\nApril 2026\nGovernment stable"] --> S1["Scenario 1\nJustice Cluster Succeeds\n55-70%"]
+    Current --> S2["Scenario 2\nInfrastructure Confrontation\n25-40%"]
+    Current --> S3["Scenario 3\nEnergy Culture War\n15-30%"]
+    Current --> S4["Scenario 4\nUkraine Slip\n5-15%"]
+    style S1 fill:#00d9ff,stroke:#00d9ff,color:#000
+    style S2 fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style S3 fill:#ff006e,stroke:#ff006e,color:#fff
+    style S4 fill:#7b2d8b,stroke:#7b2d8b,color:#fff
+```
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/election-2026-analysis.md -->
+
+### Summary
+
+Sweden's September 2026 election is ~5 months away. The May 2026 parliamentary session represents the final major legislative delivery window for the Tidö coalition. Parties are pivoting from governance to election positioning, creating significant legislative urgency.
+
+### Seat Count Baseline (March 2026 polling average)
+
+| Party | Seats (2022 actual) | May 2026 poll average | Delta |
+|-------|--------------------|-----------------------|-------|
+| S (Social Democrats) | 107 | ~98–102 | -5 to -9 |
+| SD (Sweden Democrats) | 73 | ~78–83 | +5 to +10 |
+| M (Moderates) | 68 | ~65–70 | -3 to +2 |
+| C (Centre) | 24 | ~20–24 | -4 to 0 |
+| V (Left) | 24 | ~26–30 | +2 to +6 |
+| KD (Christian Democrats) | 19 | ~17–20 | -2 to +1 |
+| MP (Green) | 18 | ~14–18 | -4 to 0 |
+| L (Liberals) | 16 | ~14–17 | -2 to +1 |
+
+**Coalition bloc projections** (349 seats total, majority = 175):
+- Tidö bloc (M+SD+KD+L) 176–190 seats (marginal majority at risk)
+- S-bloc (S+V+MP) 138–150 seats (opposition, insufficient)
+- C: potential kingmaker if Tidö loses majority
+
+### Legislative Impact on Election
+
+**Justice cluster** (HD01JuU10, HD01CU25, HD01JuU31): M/KD claiming "toughest justice legislation in decades" — major campaign asset. Risk: implementation failures before September damage the narrative. Sources: riksdagen.se HD01JuU10, HD01CU25, HD01JuU31.
+
+**Infrastructure** (HD10449 Södra stambanan): S using this as proof that Tidö coalition has deprioritized southern Sweden's economic interests. Regional resonance in Skåne, Blekinge, Kronoberg — seats where M is vulnerable.
+
+**Ukraine ratifications** (HD03231/HD03232): Likely bipartisan consensus votes. No significant electoral differentiation except SD may signal reservations to its nationalist voter base.
+
+### Election Risk Calendar — May–September 2026
+
+```mermaid
+gantt
+    title Election 2026 — Critical Window
+    dateFormat YYYY-MM-DD
+    axisFormat %d/%m
+
+    section Legislative
+    May session close       :milestone, 2026-05-31, 0d
+    Autumn session start    :milestone, 2026-08-24, 0d
+
+    section Campaign
+    Summer campaign period  :active, 2026-06-01, 2026-09-06
+    Debate series           :2026-08-24, 2026-09-06
+
+    section Polling
+    Pre-campaign polls      :2026-05-01, 2026-06-01
+    Post-legislative polls  :2026-06-01, 2026-07-01
+    Final polls             :2026-08-24, 2026-09-11
+
+    section Election
+    Election day            :milestone, 2026-09-13, 0d
+
+    style 2026-09-13 stroke:#ff006e,fill:#ff006e
+```
+
+### Key Electoral Uncertainties
+
+1. **SD seat ceiling**: SD currently at ~20% polling. A crime wave narrative + Tidö delivery = SD 23%? Or has SD maximised its voter potential?
+2. **C kingmaker**: If Tidö falls below 175, C must choose between entering a Tidö coalition or enabling a S-led minority. C's stance on this will dominate the autumn campaign.
+3. **Youth turnout**: Historically low in non-national-issues elections. 2026 may feature high youth engagement due to Russia/security concerns.
+4. **Economic conditions**: With IMF projecting ~2.1% NGDP growth for Sweden (WEO Apr-2026 vintage⚠️), incumbent credibility on economic management is uncertain.
+
+### Assessment
+
+The May 2026 session is the last "delivery" session before campaigning begins in earnest. Tidö's legislative productivity (justice, Ukraine, infrastructure spending) will be harvested as a campaign narrative. S's interpellation strategy aims to expose implementation gaps before public attention shifts fully to the election campaign. The race remains genuinely competitive; the Södra stambanan infrastructure deficit and sick-pay disputes are S's strongest arguments in Götaland.
+
+## Risk Assessment
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/risk-assessment.md -->
+
+### Risk Register
+
+| Risk ID | Risk | Likelihood | Impact | Velocity | Score | Owner |
+|---------|------|-----------|--------|----------|-------|-------|
+| R-01 | SD amendments derail weapons law timeline (HD01JuU10) | MEDIUM | HIGH | HIGH | 8/10 | JuU |
+| R-02 | Infrastructure plan rejection crisis — Södra stambanan absent forces KD-M confrontation (HD10449) | LOW-MEDIUM | HIGH | MEDIUM | 6/10 | Infrastruktur |
+| R-03 | S interpellation barrage damages government approval ahead of election | MEDIUM | MEDIUM | MEDIUM | 6/10 | Government |
+| R-04 | Ukraine tribunal ratification delayed by procedural disagreements (HD03231/232) | LOW | HIGH | LOW | 5/10 | UU |
+| R-05 | Sick-pay reform reversal pressure escalates (HD10450) | MEDIUM | MEDIUM | LOW-MEDIUM | 5/10 | SoU |
+| R-06 | Corporate crime gap (HD10451) becomes media narrative blocking justice ministry agenda | LOW-MEDIUM | MEDIUM | MEDIUM | 5/10 | JuU |
+| R-07 | Prison construction emergency legislation challenged on rule-of-law grounds (HD01CU25) | LOW | HIGH | LOW | 4/10 | CU |
+| R-08 | Wind energy culture war (HD10448) fragments M-KD energy consensus | LOW-MEDIUM | MEDIUM | HIGH | 5/10 | Energi |
+
+### Top Three Risks Narrative
+
+#### R-01: SD Weapons Law Timeline Risk (MEDIUM-HIGH)
+Source: HD01JuU10 (riksdagen.se), JuU committee report 2026-04-24. The new weapons law enters force 1 June 2026 — any parliamentary procedural delay or SD-sponsored amendment to expand the hunting rifle exception could push the implementation date. Probability: MEDIUM given SD's prior pushback on hunting restrictions. Mitigation: Government should secure firm SD commitment before committee stage closes.
+
+#### R-02: Infrastructure Plan Confrontation (LOW-MEDIUM)
+Source: HD10449 (riksdagen.se), interpellation by Robert Olesen (S) to Andreas Carlson (KD). Absence of Södra stambanan from the national infrastructure plan is a documented fact that forces the minister to defend a negative — unusual political position. Risk: KD's infrastructure programme becomes a coalition liability if M disagrees on public investment levels. Velocity: MEDIUM (minister's reply pending).
+
+#### R-03: S Interpellation Barrage (MEDIUM)
+S-party has filed coordinated interpellations (HD10449, HD10450, HD10451, HD10447, HD10443–HD10446) targeting four ministers (Carlson, Tenje, Strömmer, Svantesson, Britz). This systematic targeting of multiple departments simultaneously depletes ministerial bandwidth and maximises media opportunity. Risk of government appearing on the defensive across multiple policy areas simultaneously. Score elevated by proximity to election.
+
+### Risk Heat Map
+
+```mermaid
+quadrantChart
+    title Risk Heat Map: Likelihood vs Impact
+    x-axis "Low Likelihood" --> "High Likelihood"
+    y-axis "Low Impact" --> "High Impact"
+    quadrant-1 Critical: Monitor & Mitigate
+    quadrant-2 Significant: Active Management
+    quadrant-3 Low Priority
+    quadrant-4 Watch: High Probability
+    "R-01 SD Weapons Law": [0.55, 0.80]
+    "R-02 Stambanan Crisis": [0.35, 0.85]
+    "R-03 S Barrage": [0.60, 0.55]
+    "R-05 Sick Pay Reversal": [0.50, 0.50]
+    "R-08 Wind Culture War": [0.40, 0.55]
+    "R-04 Ukraine Delay": [0.25, 0.80]
+    "R-07 Prison Legality": [0.20, 0.75]
+    style quadrantChart fill:#0a0e27,color:#e0e0e0
+```
+
+### Institutional Risk Assessment
+
+- **Kriminalvården**: Prison capacity shortfall (HD01CU25) confirmed — emergency legislation signals systemic failure of capacity planning. Statskontoret relevance: no directly relevant source found for this date. General reference: www.statskontoret.se (capacity audits of government agencies).
+- **Polismyndigheten**: Police reform 2015 evaluation (HD01JuU31) — Riksrevisionen found insufficient reform effectiveness. Paid police training proposition (HD03237) is the government's response. Combined risk: reform credibility gap.
+
+### Economic Risk Overlay
+
+IMF WEO Apr-2026 vintage context (caveat: retrieved from prior run, not this run):
+- Sweden GDP growth ~2.1% — positive but slowing in EU context
+- Export exposure to EU demand remains a latent risk in justice/infrastructure spending debates
+- Labour market impacts of sick-pay reform (HD10450) are contested in economic modelling
+
+## SWOT Analysis
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/swot-analysis.md -->
+
+### SWOT Matrix
+
+#### Strengths
+
+- **Coherent justice programme**: Government has assembled a full justice-sector legislative cluster (HD01JuU10, HD01CU25, HD03237, HD03246) entering votes simultaneously — demonstrates policy coherence [A2] [riksdagen.se]
+- **Parliamentary security consensus**: All-party agreement on Ukraine accountability (HD03231/232) and Russia restrictions (HD11752, HD11753) insulates foreign policy from partisan conflict [B2] [riksdagen.se]
+- **Riksbank stability**: FiU23 (HD01FiU23) confirms Riksbank director and fullmäktige receive clean discharge for 2025, 5 297 MSEK profit retained — monetary credibility maintained [A1] [riksdagen.se]
+
+#### Weaknesses
+
+- **Infrastructure investment gap**: HD10449 exposes absence of Södra stambanan double-track Alvesta–Växjö from national plan — signals KD-M tension on public investment levels [B2] [riksdagen.se]
+- **Sick-pay reform vulnerable**: The day-180 exception (HD10450) is a policy legacy contested across party lines; government's work-line narrative creates political vulnerability on welfare protection [B2] [riksdagen.se]
+- **Prison capacity crisis**: HD01CU25 requires emergency building legislation — signals Kriminalvården capacity shortfall, which Riksrevisionen has previously flagged as a systemic constraint [B2] [riksdagen.se]
+
+#### Opportunities
+
+- **Security electoral narrative**: The justice cluster (weapons law, police training, youth offenders) positions government favourably on crime/security ahead of election — polling consistently shows SD-M coalition strongest on crime [B3]
+- **Ukraine multilateral leadership**: Ratification of international reparations commission and aggression tribunal (HD03231/232) positions Sweden as engaged multilateral actor in post-NATO foreign policy [B2] [riksdagen.se]
+- **Researcher migration reform**: HD01SfU23 (entering force 11 June) may strengthen Sweden's competitive position in attracting international research talent — innovation economy upside [B2] [riksdagen.se]
+
+#### Threats
+
+- **S narrative effectiveness**: S-party's synchronized interpellations (HD10449, HD10450, HD10451, HD10447) across infrastructure, social insurance, and corporate crime signal a coherent electoral contrast strategy — could crystallise public opinion against the government on welfare and investment [C2]
+- **SD energy culture war**: Josef Fransson (SD) interpellation HD10448 on wind energy disinformation signals SD's intent to weaponise energy transition against Ebba Busch (KD) — potential coalition strain [B3]
+- **Corporate crime accountability gap**: HD10451 (Ingela Nylund Watz, S → Gunnar Strömmer, M) highlights gap in action against shell companies used for crime despite December 2025 Brå report — government reactive posture exposed [B2] [riksdagen.se]
+- **Swedish manufacturing competitiveness**: Without IMF fetch confirmation, relying on prior WEO Apr-2026 context: Swedish export exposure to EU demand slowdown remains a latent risk (NGDP_RPCH ~2.1% projection — vintage caveat applies) [C3]
+
+### TOWS Matrix
+
+| | Strengths | Weaknesses |
+|---|---|---|
+| **Opportunities** | SO: Leverage justice narrative into electoral dominance on crime — coordinate weapons law, police training, and prison expansion as single "safe Sweden" message | WO: Use researcher migration reform to reframe infrastructure debate — shift from physical to human capital investment narrative |
+| **Threats** | ST: Counter S interpellations with detailed ministerial responses on Södra stambanan timeline and Riksbank stability figures from FiU23 | WT: Address corporate crime gap proactively — commission justice ministry update on shell company legislation before HD10451 debate |
+
+### Cross-SWOT Intersections
+
+- HD01JuU10 (Strength) × HD10448 (Threat): The weapons law reinforces government security credibility, but SD's wind energy attacks risk fragmenting coalition energy messaging — requires separate government response strategy.
+- HD10450 (Weakness) × S narrative (Threat): Sick-pay day-180 debate is the most electorally sensitive intersection — government should prepare evidence-based response quantifying work-line reform outcomes.
+
+```mermaid
+quadrantChart
+    title SWOT Quadrant — May 2026 Key Documents
+    x-axis "Low Impact" --> "High Impact"
+    y-axis "Government Disadvantage" --> "Government Advantage"
+    quadrant-1 Leverage
+    quadrant-2 Defend
+    quadrant-3 Monitor
+    quadrant-4 Address
+    "JuU10 Weapons Law (HD01JuU10)": [0.85, 0.90]
+    "Ukraine Tribunal (HD03231)": [0.75, 0.80]
+    "Prison Build (HD01CU25)": [0.65, 0.70]
+    "Södra Stambanan (HD10449)": [0.70, 0.30]
+    "Sjukförsäkring (HD10450)": [0.65, 0.25]
+    "Corporate Crime (HD10451)": [0.55, 0.30]
+    style quadrantChart fill:#0a0e27,color:#e0e0e0
+```
+
+## Threat Analysis
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/threat-analysis.md -->
+
+### Threat Actors
+
+#### TA-01: Socialdemokraterna (S) — Opposition Campaign
+- **Actor**: S party leadership, parliamentary group (61 seats, opposition)
+- **Capability**: HIGH — systematic interpellation campaign, four ministers targeted simultaneously, parliamentary procedural expertise
+- **Intent**: CONFIRMED — HD10449, HD10450, HD10451, HD10447, HD10443-HD10446 filed in coordinated burst
+- **Opportunity**: HIGH — May 2026 is last major legislative window before election; government most exposed
+- **Assessment**: S is executing a well-coordinated pre-election opposition strategy. The simultaneous targeting of Carlson (KD), Tenje (M), Strömmer (M), Svantesson (M), and Britz (L) depletes coalition response capacity [riksdagen.se/HD10449, HD10450, HD10451] [A2]
+
+#### TA-02: Sverigedemokraterna (SD) — Coalition Friction
+- **Actor**: SD parliamentary group (73 seats, government support party)
+- **Capability**: MEDIUM — can delay or modify legislation through committee; wind energy narrative has media traction
+- **Intent**: PROBABLE — HD10448 (Josef Fransson, SD) frames wind energy debate as disinformation battle [riksdagen.se/HD10448] [B2]
+- **Opportunity**: MEDIUM — energy debate intensifies ahead of election; SD can position as truth-teller vs establishment
+- **Assessment**: SD poses a fractional threat to KD's energy ministry agenda. Ebba Busch (KD) must calibrate response to HD10448 without alienating SD or reinforcing SD's anti-wind narrative.
+
+#### TA-03: External — Russia (Geopolitical Threat Context)
+- **Actor**: Russian Federation
+- **Capability**: HIGH (regional military capability, disinformation capacity)
+- **Intent**: PROBABLE — overflight permit violations context (HD11752), military pressure on Nordic region
+- **Opportunity**: MEDIUM — NATO membership changes deterrence calculus
+- **Assessment**: The parliamentary motions HD11752 (overflight revocation), HD11753 (Russia visa restrictions), and HD03231/232 (Ukraine tribunal) respond to confirmed Russian aggressive behaviour. Parliamentary threat is reactive to external geopolitical reality [riksdagen.se/HD11752, HD11753] [B2]
+
+### Threat Matrix
+
+```mermaid
+graph LR
+    S_Party["S-Party Opposition\nTA-01 [A2]"] -->|Interpellations| Gov["Kristersson\nGovernment"]
+    SD_Friction["SD Coalition\nTA-02 [B2]"] -->|Energy Culture War| KD_Energy["KD Energy\nMinistry"]
+    Russia["Russia External\nTA-03 [B2]"] -->|Pressure| Foreign_Policy["Swedish Foreign\nPolicy Consensus"]
+    style S_Party fill:#ff006e,stroke:#ff006e,color:#fff
+    style SD_Friction fill:#ffbe0b,stroke:#ffbe0b,color:#000
+    style Russia fill:#7b2d8b,stroke:#7b2d8b,color:#fff
+    style Gov fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+```
+
+### STRIDE Political Assessment
+
+- **S**poofing: S party's interpellation on corporate crime (HD10451) leverages Brå's December 2025 report — factual grounding limits government's ability to dismiss
+- **T**ampering: SD's wind energy framing (HD10448) attempts to reframe the regulatory/informational landscape on energy transition
+- **R**epudiation: Government's non-inclusion of Södra stambanan in infrastructure plan creates documented accountability gap (HD10449)
+- **I**nformation: Russia disinformation capacity is the external STRIDE-I threat; Swedish parliament responds with HD11753 visa restrictions
+- **D**enial: Prison capacity crisis (HD01CU25) reflects systemic denial of Kriminalvårdens earlier capacity warnings
+- **E**scalation: Ukraine tribunal ratification (HD03231/232) manages escalation risk by embedding Sweden in multilateral accountability frameworks
+
+### Statskontoret Agency Capacity Threat Note
+
+Multiple of the May 2026 bills place significant new demands on implementing agencies: Kriminalvården (HD01CU25 prison construction), Polismyndigheten (HD03237, HD01JuU31), Migrationsverket (HD01SfU23). Agency capacity constraints could delay implementation timelines. **Statskontoret relevance: none found** for these specific documents on this date; general governance capacity risk noted.
 
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/historical-parallels.md -->
@@ -1292,6 +1189,46 @@ timeline
 ### Assessment
 
 The strongest historical parallel is **2006**: an incumbent using pre-election legislative productivity to claim a delivery mandate, with an opposition struggling to produce a compelling counter-narrative before the election. Sweden's 2026 trajectory will diverge from 2006 if (a) economic conditions worsen for incumbents or (b) S's sick-pay/infrastructure messaging breaks through to swing voters more effectively than the 2006 S party managed.
+
+## Comparative International
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/comparative-international.md -->
+
+### Comparator Matrix
+
+| Issue | Sweden | Norway | Denmark | Finland | Germany | EU Benchmark |
+|-------|--------|--------|---------|---------|---------|-------------|
+| Criminal justice expansion | Weapons law + prison construction peak | Stable, no major reform | Justice reform post-2025 | Post-reform stabilisation | Coalition justice reform ongoing | Varied |
+| Infrastructure investment | Södra stambanan gap — contested | High rail investment | Copenhagen metro expansion | Regional investment strong | Deutschlandticket + rail expansion | EU TEN-T targets |
+| Social insurance reform | Sick-pay day-180 debate | Generous welfare stable | Active labour market reform | Strong activation policy | Bürgergeld debate | OECD activation model |
+| Russia policy | Ukraine tribunals + visa restrictions | NATO aligned | NATO aligned | Heightened Russia concern | Strong Russia sanctions | EU unified |
+| Energy transition | Wind disinformation debate (SD) | Offshore wind expansion | Wind energy dominant | Nuclear + wind mix | Energiewende ongoing | EU Green Deal |
+
+### Nordic Comparison: Criminal Justice
+
+Sweden is in an unusually concentrated legislative phase for criminal justice. Norway and Denmark have had more stable criminal justice environments. Finland's post-reform period offers a cautionary parallel: rapid implementation of prison expansion strains correctional services. The HD01CU25 emergency prison construction legislation parallels challenges seen in England/Wales prison capacity crises — suggesting Sweden should study British implementation lessons.
+
+### Ukraine Context: Nordic Solidarity
+
+Sweden joins Norway, Denmark, Finland and Germany in the international reparations commission (HD03231) and aggression tribunal (HD03232). Finland and Estonia have been the most vocal Baltic/Nordic advocates for strong accountability mechanisms. Sweden's ratification solidifies the Nordic-Baltic front on Ukraine accountability — significant as Sweden is a newer NATO member still establishing its strategic identity. Source: riksdagen.se propositions HD03231, HD03232.
+
+### Energy Policy: Nordic Contrast
+
+Sweden's wind energy cultural conflict (HD10448, SD framing) contrasts sharply with Denmark where wind energy is broadly accepted across parties. Norway's oil wealth creates a different energy politics. Finland has moved forward with nuclear (Olkiluoto 3). Sweden's SD-driven skepticism of wind energy is regionally exceptional and creates friction with EU Green Deal commitments.
+
+```mermaid
+radar
+    title Nordic Policy Profile — Sweden May 2026
+    "Justice Reform" : [9, 6, 5, 5, 6]
+    "Infrastructure" : [5, 7, 7, 6, 8]
+    "Social Insurance" : [6, 8, 7, 7, 7]
+    "Ukraine Commitment" : [8, 8, 8, 9, 8]
+    "Energy Transition" : [5, 7, 9, 8, 6]
+    style radar fill:#0a0e27,color:#e0e0e0
+```
+
+### Assessment
+
+Sweden's May 2026 parliamentary agenda is unusually security-heavy compared to Nordic peers. The criminal justice cluster is exceptional in scope and speed. Ukraine solidarity instruments align Sweden with the Nordic-Baltic consensus. The energy culture war is a Swedish-specific phenomenon driven by SD's political positioning — a risk to Sweden's EU energy relationship that has no direct Nordic parallel.
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/implementation-feasibility.md -->
@@ -1364,6 +1301,69 @@ graph TD
 ### Assessment
 
 The government's legislative ambition is high but implementation realities will create delivery gaps. The prison construction programme faces a structural staffing constraint that legislation cannot resolve. The weapons law creates legal uncertainty for the hunting community that may require secondary guidance. The Ukraine treaties are the only instruments with near-certain immediate implementation fidelity. Overall: the Tidö coalition is passing legislation that it will need 24-36 months to fully implement — creating electoral exposure if the September 2026 campaign focuses on delivery gaps.
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/media-framing-analysis.md -->
+
+### Dominant Frames Identified
+
+#### Frame 1: "Law and Order Delivery" (Government/M/SD narrative)
+**Sources**: Tidö coalition press releases, M parliamentary group communications
+**Frame**: Sweden's justice reforms are historic — toughest criminal legislation in decades. Government is delivering on 2022 election promises. Specific hooks: weapons law (HD01JuU10), prison expansion (HD01CU25), police training grants (HD01JuU31).
+**Target audience**: Justice-priority voters (S1), suburban M/KD/SD voters
+**Weakness**: Relies on future implementation success; implementation failures before September would puncture the frame.
+
+#### Frame 2: "Welfare State Under Attack" (S narrative)
+**Sources**: S parliamentary group, LO trade union communications, Aftonbladet editorial line
+**Frame**: Tidö coalition is quietly dismantling the Swedish welfare state — sick pay cuts (HD10450), infrastructure neglect (Södra stambanan, HD10449). Six simultaneous interpellations aimed at exposing breadth of damage.
+**Target audience**: Welfare-state defenders (S2), regional workers (S4)
+**Weakness**: Lacks a single dominant story — too many simultaneous targets may fragment the narrative.
+
+#### Frame 3: "Sweden Steps Up" (Security establishment)
+**Sources**: Government foreign affairs communications, NATO/Nordic press
+**Frame**: Ukraine tribunal and reparations commission ratification (HD03231/HD03232) prove Sweden is a serious NATO partner and international rule-of-law champion.
+**Target audience**: Security-internationalists (S3), educated urban voters
+**Impact**: Low electoral differentiation — bipartisan support reduces electoral advantage for any single party.
+
+#### Frame 4: "Urban Elites vs Rural Sweden" (SD narrative)
+**Sources**: SD communications, Aftonbladet/Expressen comment pieces from SD-aligned voices
+**Frame**: Wind energy "disinformation" interpellation (HD10448) and rural community interests framed as under attack from urban environmental consensus.
+**Target audience**: Cultural nationalist voters (S5), rural SD base
+**Effectiveness**: Moderate — resonant in specific regions but unlikely to broaden SD's urban appeal.
+
+### Framing Competition Map
+
+```mermaid
+quadrantChart
+    title Framing Reach vs Intensity (May 2026)
+    x-axis Low Electoral Reach --> High Electoral Reach
+    y-axis Low Issue Intensity --> High Issue Intensity
+    quadrant-1 High Reach + High Intensity
+    quadrant-2 Low Reach + High Intensity
+    quadrant-3 Low Reach + Low Intensity
+    quadrant-4 High Reach + Low Intensity
+    "Justice Delivery (M/SD)": [0.78, 0.82]
+    "Welfare Attack (S)": [0.65, 0.75]
+    "Sweden Steps Up (Tidö)": [0.45, 0.55]
+    "Rural vs Urban (SD)": [0.35, 0.65]
+    style quadrantChart fill:#0a0e27
+```
+
+### Media Outlet Alignment (Structural)
+
+| Outlet | Structural Lean | Expected Frame |
+|--------|----------------|----------------|
+| SVT | Neutral/PSB | Balanced, policy substance |
+| SR | Neutral/PSB | Balanced, accountability focus |
+| Expressen | Center-right | Frame 1 (Law and Order) |
+| Aftonbladet | Center-left | Frame 2 (Welfare Attack) |
+| DN | Liberal-moderate | Frame 3 (Sweden Steps Up) |
+| SvD | Conservative | Frame 1 (Law and Order) |
+| Göteborgs-Posten | Liberal-regional | Frame 4 (regional infrastructure) |
+
+### Assessment
+
+The dominant media framing contest is Frame 1 (M/SD) vs Frame 2 (S). Frame 3 will have momentary elevation around the Ukraine vote. Frame 4 is a niche but sticky frame for SD's base. The sick-pay interpellation (HD10450) has the highest potential to elevate Frame 2 if LO activates its communications infrastructure. The challenge for S is competing with the justice cluster's emotional salience — crime and punishment typically generates higher public engagement than social insurance policy details.
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/devils-advocate.md -->
@@ -1651,13 +1651,6 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/threat-analysis.md)
 - [`documents/HD01CU25.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/documents/HD01CU25.md)
 - [`documents/HD01JuU10.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/documents/HD01JuU10.md)
 - [`documents/HD01JuU31.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/documents/HD01JuU31.md)
@@ -1674,12 +1667,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`documents/HD11754.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/documents/HD11754.md)
 - [`documents/HD11755.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/documents/HD11755.md)
 - [`documents/HD11756.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/documents/HD11756.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/month-ahead/cross-reference-map.md)

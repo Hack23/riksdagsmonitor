@@ -5,7 +5,7 @@ date: 2026-04-23
 subfolder: month-ahead
 slug: 2026-04-23-month-ahead
 source_folder: analysis/daily/2026-04-23/month-ahead
-generated_at: 2026-05-04T09:52:32.193Z
+generated_at: 2026-05-04T12:16:13.901Z
 language: en
 layout: article
 ---
@@ -92,10 +92,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -341,42 +341,224 @@ xychart-beta
 - HD03236 retained in ranking with note on already-passed status
 - DIW weights explicitly defined and applied consistently [Methodology per synthesis-methodology.md]
 
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/media-framing-analysis.md -->
+## Per-document intelligence
+
+### HD03100
+<!-- source: documents/HD03100-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD03100-analysis.md -->
 
 ---
 
-### Party Framing Map
+### Document Summary
 
-| Party | Core narrative frame | Key evidence |
-|-------|---------------------|-------------|
-| M (government) | "Delivery — we promised, we delivered" | HD01FiU48 enacted; three packages in progress |
-| SD | "Not enough — immigration enforcement must be total" | May file reservations if HD03235 deemed insufficient |
-| KD | "Pro-family, pro-safety" | Women's strategy (HD03245); crime package |
-| L | "Energy transition + security" | HD03240, HD03239, HD03220 |
-| S (opposition) | "Government manages crises without structural solutions" | 6+ interpellations on housing, shelters, police |
-| V | "Climate and workers first" | 3 opposing motions: fuel, deportation, arms |
-| MP | "Climate emergency requires reversal of fuel tax" | HD024098; EU Climate Law framing |
-| C | "Moderate reform — not extreme immigration" | HD024095 systematic crime threshold |
+**Title**: Proposition 2025/26:100 — Vårpropositionen 2026 (Spring Fiscal Policy Bill)
+**Filed by**: Regeringen (Finance Minister Elisabeth Svantesson, M)
+**Status**: In committee (FiU)
+
+**BLUF**: The government's spring economic framework projects GDP recovery (0.82% growth 2025, expanding in 2026), sets ceiling for the supplementary budget, and establishes fiscal priorities for the remainder of the Riksmöte 2025/26 session.
 
 ---
 
-### Press Framing (Expected)
+### Key Provisions
 
-| Media type | Expected angle | Basis |
-|------------|---------------|-------|
-| Svenska Dagbladet (conservative) | Delivery narrative; coalition stability | Editorial alignment with M/coalition |
-| Dagens Nyheter (liberal) | Mixed — energy transition positive; deportation concerns | Liberal editorial line |
-| Aftonbladet (tabloid/social-dem) | Opposition amplification — shelters, housing | Social Democratic-adjacent |
-| SVT/SR (public) | Balanced — covers all parties; committee hearing focus | PSB mandate |
+1. GDP growth revised upward from 2025/26 budget assumptions — World Bank data confirms +0.82% 2024
+2. Fiscal space identified for spring relief measures (HD03236 fuel tax, retroactive energy support)
+3. Expenditure ceiling maintained; structural balance within EU fiscal framework
+4. Revenue forecasts updated for 2026 given employment recovery
 
 ---
 
-### Media Risk Indicators
+### Political Context
 
-1. **Women's shelter story** (HD10438) — high viral potential; human interest angle; negative for government
-2. **Fuel tax cut = climate betrayal** framing — sustained NGO campaign likely through summer
-3. **NATO forward presence** (HD03220) — may generate peace movement/anti-militarism coverage in alternative media
+| Dimension | Assessment | Admiralty |
+|-----------|-----------|-----------|
+| Partisan alignment | Fully coalition-sponsored | [A1] |
+| Opposition response | S filed interpellations HD10444, HD10443, HD10433 targeting Finance Minister | [A1] |
+| SD position | Broadly supportive; monitors fiscal relief for constituents | [B2] |
+| C position | Not opposing fiscal framework | [A2] |
+
+---
+
+### DIW Score
+
+| Dimension | Score | Rationale |
+|-----------|-------|-----------|
+| Decision impact | 9/10 | Sets fiscal framework for entire spring session |
+| Intelligence value | 8/10 | Informs all downstream budget analysis |
+| Warning value | 7/10 | Revenue miss would trigger fiscal adjustment |
+| **Composite** | **8.0** | Top-tier significance |
+
+---
+
+### Risk Flags
+
+- R-01: Revenue miss → fiscal adjustment (see risk-assessment.md)
+- R-06: EU fiscal rules scrutiny
+
+### HD03217
+<!-- source: documents/HD03217-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD03217-analysis.md -->
+
+**Title**: Extended criminal liability for civil servants
+**Filed by**: Regeringen | **Committee**: KU
+
+**BLUF**: Expands criminal liability for public officials for abuse of office. Strengthens public sector accountability. DIW Score: 4.8/10 | **Admiralty**: [A2]
+
+### HD03218
+<!-- source: documents/HD03218-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD03218-analysis.md -->
+
+**Title**: Proposition 2025/26:218 — Dubbla straff vid gängkriminalitet
+**Filed by**: Regeringen (Justice Minister Strömmer)
+
+**BLUF**: Doubles minimum sentences for serious offences committed in gang context. Core SD+M electoral priority. In committee JuU. Passage expected May–June 2026.
+
+**Opposition**: S, V, MP oppose — argue evidence base for deterrence effect weak. V/MP cite proportionality. No formal C opposition to this bill specifically.
+
+**Implementation risk**: Courts must identify "gang context" — legal definition clarity required.
+
+### HD03220
+<!-- source: documents/HD03220-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD03220-analysis.md -->
+
+**Title**: Proposition 2025/26:220 — Militär framskjuten närvaro i Finland
+**Filed by**: Regeringen (Defence)
+
+**BLUF**: Authorises Swedish military personnel to be stationed in Finland as part of NATO Article 5 eastern flank posture. FöU committee review ongoing.
+
+**NATO context**: Consistent with Allied eastern flank commitments; smaller than Germany's Lithuania brigade but symbolically important for first-time NATO member Sweden.
+**Risk**: Russian diplomatic reaction (XT-01 in threat-analysis.md) possible.
+
+### HD03235
+<!-- source: documents/HD03235-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD03235-analysis.md -->
+
+**Title**: Proposition 2025/26:235 — Utvisning vid brottsliga gärningar
+**Filed by**: Regeringen
+
+**BLUF**: Extends deportation to non-citizens convicted of serious offences; lowers threshold. Highest legal risk bill in the package — ECHR proportionality challenge probable. Opposing motions from C (HD024095 — requires systematic/repeated crime), V (HD024090), MP (HD024097).
+
+**C position**: HD024095 demands systematic/repeated crime threshold — coalition may accept as face-saving amendment.
+
+**Legal risk**: R-02 in risk-assessment.md — ECHR Article 8 challenge probable.
+
+### HD03236
+<!-- source: documents/HD03236-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD03236-analysis.md -->
+
+**Title**: Extra ändringsbudget — fuel tax reduction
+**Filed by**: Regeringen
+
+**BLUF**: ENACTED. Reduces petrol tax by 82 öre/litre and diesel by 319 SEK/m³ for May–September 2026. Cost: 4.1 bn SEK. Retroactive energy support added. No further legislative action required.
+
+**Opposition motions** (post-enactment, no legal effect):
+- HD024082 (S), HD024092 (V), HD024098 (MP) — climate framing
+
+### HD03238
+<!-- source: documents/HD03238-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD03238-analysis.md -->
+
+**Title**: New environmental permitting authority
+**Filed by**: Regeringen | **Committee**: MJU
+
+**BLUF**: Creates new agency to streamline environmental permitting (currently Naturvårdsverket). Addresses permit backlogs blocking renewable energy projects. DIW Score: 5.6/10 | **Admiralty**: [A2]
+**Implementation risk**: New agency start-up — HIGH institutional risk (see implementation-feasibility.md)
+
+### HD03239
+<!-- source: documents/HD03239-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD03239-analysis.md -->
+
+**Title**: Wind power municipal revenue-sharing law
+**Filed by**: Regeringen | **Committee**: NU
+
+**BLUF**: Introduces mandatory revenue sharing between wind power developers and host municipalities. Addresses "not in my backyard" opposition. DIW Score: 5.8/10 | **Admiralty**: [A2]
+
+### HD03240
+<!-- source: documents/HD03240-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD03240-analysis.md -->
+
+**Title**: Proposition 2025/26:240 — Ny ellag (New Electricity Act)
+**Filed by**: Regeringen
+
+**BLUF**: Comprehensive restructuring of Sweden's electricity market legal framework. Aims to support 2030 renewable energy targets and enable grid expansion. In committee NU.
+
+**Key provisions**: New market rules; grid operator responsibilities; permitting framework integration with HD03238.
+
+**Legislative risk**: MEDIUM — NU committee; majority present; no formal C/V/MP joint opposition.
+
+### HD03246
+<!-- source: documents/HD03246-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD03246-analysis.md -->
+
+**Title**: Proposition 2025/26:246 — Ungdomsbrottslighet (Youth criminal sentencing)
+**Filed by**: Regeringen
+
+**BLUF**: Tightens youth criminal sentencing; reduces rehabilitation-focused disposals for serious offences. Part of Law & Order package. Expected passage with government majority.
+
+**Opposition**: S+V+MP oppose on rehabilitation grounds. C silent.
+
+### HD0399
+<!-- source: documents/HD0399-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD0399-analysis.md -->
+
+**Title**: Proposition 2025/26:99 — Vårändringsbudget 2026
+**Filed by**: Regeringen
+
+**BLUF**: Supplementary spring budget implementing HD03100 spring framework; includes fuel tax relief and retroactive energy support measures. Pending FiU committee vote — passage expected May 2026.
+
+**Key provisions**:
+- Fuel tax cut framework (enacted separately via HD01FiU48)
+- Retroactive household energy support Jan–Feb 2026
+- Net fiscal cost ~6 bn SEK total spring package
+
+**Political risk**: LOW — government majority holds; SD+M+KD+L = 176 seats. Opposition cannot defeat.
+
+### cluster\-remaining
+<!-- source: documents/cluster-remaining-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/cluster-remaining-analysis.md -->
+
+---
+
+### HD03228 — Modernised Arms Export Rules
+**Committee**: UU | **DIW**: 5.0 | **Admiralty**: [A1]
+Opposition motions: HD024091 (V — stricter controls), HD024096 (MP — human rights conditionality)
+**BLUF**: Updates Swedish arms export framework; modernises KIMAB oversight.
+
+---
+
+### HD03232 — International Tribunal for Ukraine
+**Committee**: UU | **DIW**: 5.2 | **Admiralty**: [A1]
+**BLUF**: Sweden accedes to international tribunal mechanism for Ukraine war crimes accountability.
+
+---
+
+### HD03231 — Ukraine Compensation Commission
+**Committee**: UU | **DIW**: 4.5 | **Admiralty**: [A2]
+**BLUF**: Sweden joins compensation mechanism for Ukrainian civilian losses.
+
+---
+
+### HD03245 — Women's Rights Strategy
+**Committee**: AU | **DIW**: 4.2 | **Admiralty**: [A2]
+**Tension**: HD10438 interpellation notes women's shelters closing simultaneously — implementation gap.
+
+---
+
+### HD03242 — Forestry Environmental Rules
+**Committee**: MJU | **DIW**: 3.8 | **Admiralty**: [A2]
+**BLUF**: Revises forest environmental requirements; industry/NGO tension.
+
+---
+
+### HD03237 — Paid Police Training
+**Committee**: JuU | **DIW**: 3.5 | **Admiralty**: [A2]
+**BLUF**: Officers receive pay during training; addresses recruitment/retention gap.
+
+---
+
+### HD03244 — Government Interoperability
+**Committee**: TU | **DIW**: 3.2 | **Admiralty**: [B2]
+**BLUF**: Mandates interoperability between government IT systems.
+
+---
+
+### HD03233 — Medical Technology Accessibility
+**Committee**: SoU | **DIW**: 3.5 | **Admiralty**: [A2]
+**BLUF**: Improves patient access to medical technologies; disability rights impact.
+
+---
+
+### HD03243 — Tax Adjustment Measure
+**Committee**: SkU | **DIW**: 3.0 | **Admiralty**: [A2]
+**BLUF**: Technical tax adjustment; low political salience.
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/stakeholder-perspectives.md -->
@@ -504,6 +686,82 @@ graph TD
     style MEDIA fill:#4A148C,color:#FFFFFF
     style RIKSREV fill:#37474F,color:#FFFFFF
 ```
+
+## Coalition Mathematics
+<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/coalition-mathematics.md -->
+
+---
+
+### Current Riksdag Seat Distribution
+
+| Party | Seats | Bloc |
+|-------|-------|------|
+| S | 107 | Opposition |
+| SD | 73 | Gov support |
+| M | 68 | Government |
+| V | 24 | Opposition |
+| C | 24 | Opposition |
+| KD | 19 | Government |
+| MP | 18 | Opposition |
+| L | 16 | Government |
+| **Total** | **349** | |
+
+**Majority threshold**: 175 seats
+**Government bloc** (M+KD+L+SD): 176 — bare majority (+1)
+
+---
+
+### Pivotal Vote Table (Selected Bills)
+
+| Bill | Ja needed | Gov (M+KD+L+SD) | S | V | C | MP | Outcome |
+|------|-----------|------------------|---|---|---|----|---------|
+| HD03218 (gang sentences) | 175 | 176 ✅ | Nej | Nej | Nej | Nej | PASS |
+| HD03235 (deportation) | 175 | 176 ✅ (if SD+C) | Nej | Nej | Nej | Nej | PASS if C neutral |
+| HD0399 (supplementary budget) | 175 | 176 ✅ | Nej | Nej | Nej | Nej | PASS |
+| HD03240 (electricity law) | 175 | 176 ✅ | TBD | Nej | TBD | Nej | LIKELY PASS |
+
+**Note**: If C votes Nej on HD03235: Government = M+KD+L+SD = 176; C opposition adds to S+V+MP = 173+24 = 197 Nej. Government still has 176 vs 173 opposition bloc — **passes if SD holds**.
+
+---
+
+### Sainte-Laguë Projection (September 2026 — Illustrative)
+
+Assuming 5% threshold applies. Illustrative scenarios only (no polling data — [D4]):
+
+| Scenario | S | SD | M | C | V | KD | MP | L |
+|----------|---|----|----|---|---|----|----|---|
+| Status quo (2022) | 107 | 73 | 68 | 24 | 24 | 19 | 18 | 16 |
+| Gov+3 scenario | 105 | 74 | 71 | 22 | 24 | 20 | 17 | 16 |
+| Opp+5 scenario | 112 | 70 | 65 | 27 | 25 | 18 | 17 | 15 |
+
+**Key threshold risk**: L at 16 seats (4.6% 2022 share) — if polls below 4% threshold, government loses L's 16 seats, dropping bloc to 160 (minority).
+
+## Voter Segmentation
+<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/voter-segmentation.md -->
+
+---
+
+### Segment Matrix
+
+| Segment | Description | Key policy concern | Package impact | Likely shift |
+|---------|-------------|-------------------|---------------|-------------|
+| Rural commuters | Households >50 km from city, car-dependent | Fuel costs, housing | ✅ HD03236 fuel tax cut | Stable/slight M+SD gain |
+| Urban professionals | Income >median, Stockholm/Gothenburg | Housing, climate | ⚠️ Energy transition ambiguity | Possible M→C/S shift |
+| Working class | Industrial/service workers, lower income | Job security, crime | ✅ Law & order package | SD consolidation |
+| Younger urban | 18–35, urban, climate-concerned | Climate, housing | ❌ Fuel tax cut seen as rollback | MP+V→S flow possible |
+| Senior citizens | 65+, pension-dependent | Healthcare, care | ✅ Medical technology access (HD03233) | Stable, slight KD benefit |
+| Small business owners | SME, employer contributions | Tax burden | ✅ Interpellation HD10444/HD10443 signals attention | Uncertain; S monitoring |
+| Women (30–55) | Working mothers, suburban | Shelter access, pay equity | ⚠️ Shelters closing despite strategy (HD10438) | Risk of S+C appeal |
+| Rural/periphery | Northern Sweden, forestry/mining | Energy costs, regional development | ✅ Energy package broadly positive | M+C stable |
+
+---
+
+### Electoral Volatility Map
+
+High-volatility segments (most likely to switch):
+1. **Young urban** — 15% shift potential toward left-green bloc if climate framing dominates
+2. **Urban professionals** — 10% shift potential if housing supply continues to stagnate
+3. **Women (30–55)** — 8% shift potential if women's shelter closures become major media issue
 
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/forward-indicators.md -->
@@ -653,6 +911,89 @@ pie title Scenario Probability Distribution (% of futures)
 ```
 
 **Confidence assessment**: [C2] — Assessed from public parliamentary record; coalition defection risks inferred from motion/interpellation patterns. External shock probability based on geopolitical baseline, not confirmed intelligence.
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/election-2026-analysis.md -->
+
+---
+
+### Election Context
+
+**Election date**: 2026-09-13 (Sunday)
+**Days remaining**: ~143 days from 2026-04-23
+**Key session milestone**: Riksmöte 2025/26 ends ~June 2026
+
+---
+
+### Current Parliamentary Composition (Approximate — 2022 Election Result)
+
+| Party | Bloc | Seats (2022) | Status |
+|-------|------|-------------|--------|
+| Socialdemokraterna (S) | Opposition | 107 | Main opposition |
+| Sverigedemokraterna (SD) | Government support | 73 | Confidence-and-supply |
+| Moderaterna (M) | Government | 68 | PM Kristersson |
+| Vänsterpartiet (V) | Opposition | 24 | Left opposition |
+| Centerpartiet (C) | Opposition | 24 | Centrist opposition |
+| Kristdemokraterna (KD) | Government | 19 | Coalition partner |
+| Miljöpartiet (MP) | Opposition | 18 | Green opposition |
+| Liberalerna (L) | Government | 16 | Coalition partner |
+| **Total** | | **349** | |
+
+**Coalition** (M+KD+L): 68+19+16 = **103 seats**
+**SD support** (confidence-and-supply): **73 seats**
+**Government bloc total**: **176 seats** (bare majority = 175)
+
+**Opposition** (S+V+C+MP): 107+24+24+18 = **173 seats**
+
+*Note: Approximate 2022 election results used; actual current composition may vary by 1–3 seats due to departures/by-elections. See Methodology Improvement 3.*
+
+---
+
+### Spring 2026 Package Electoral Implications
+
+| Package | Electoral target group | Expected impact |
+|---------|----------------------|-----------------|
+| Fuel tax cut (HD03236) | Rural/suburban commuters | Short-term relief narrative — returns credit to M/SD |
+| Law & Order (HD03218, HD03246, HD03235) | Crime-concerned suburban voters | Core SD+M voter consolidation |
+| Energy Transition (HD03240) | Energy-sector workers; liberal voters | Positions government as "investment-ready" |
+| Women's rights strategy (HD03245) | Suburban women voters | Attempts to counter S framing on gender equality |
+
+---
+
+### Coalition Viability Scenarios (September 2026)
+
+#### Scenario A: Tidökoalitionen continues (requires ~175+ seats)
+- Current estimated seats: 176 (bare majority)
+- If M gains 3–5 seats from delivering on fiscal promises: +3 seats
+- If SD holds: stays at 73
+- If L holds (currently fragile at 16 seats — 4% threshold): critical
+- **Risk**: L polling near 4% threshold — loss of L would drop bloc to 160 seats
+
+#### Scenario B: S-led bloc majority
+- Current: 173 seats
+- If MP survives 4% threshold: stays at 18 seats
+- If V holds at 24: bloc stays at 173
+- If C swings back toward centre-left: potentially +10–15 seats
+- **Key swing factor**: C — if C moves toward S collaboration, S-led bloc reaches 175+
+
+#### Scenario C: Cross-bloc grand coalition
+- Only if A and B both fail to reach 175
+- Historical precedent: Sweden has managed minority configurations but not grand coalitions in modern era
+- Probability: Remote [D4]
+
+---
+
+### Electoral Risk Assessment
+
+```mermaid
+xychart-beta
+    title "Party Electoral Risk (0=Safe, 10=High risk of seat loss)"
+    x-axis ["S", "SD", "M", "V", "C", "KD", "MP", "L"]
+    y-axis "Electoral Risk" 0 --> 10
+    bar [3, 4, 4, 5, 6, 5, 7, 8]
+```
+
+**Highest risk parties**: L (threshold risk), MP (threshold risk), C (swing potential)
 
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/risk-assessment.md -->
@@ -933,383 +1274,47 @@ graph TD
 | PT-003 | Frame as government contradiction | W4 (shelters) vs HD03245 (strategy) |
 | PT-004 | Coalition wedge exploitation | C ambiguity on deportation rules |
 
-## Per-document intelligence
-
-### HD03100
-<!-- source: documents/HD03100-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD03100-analysis.md -->
+## Historical Parallels
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/historical-parallels.md -->
 
 ---
 
-### Document Summary
+### Parallel 1: 2010 Alliansen Pre-Election Spring Session
 
-**Title**: Proposition 2025/26:100 — Vårpropositionen 2026 (Spring Fiscal Policy Bill)
-**Filed by**: Regeringen (Finance Minister Elisabeth Svantesson, M)
-**Status**: In committee (FiU)
+**Government**: Alliansen (M+C+L+KD) under PM Fredrik Reinfeldt
+**Structural similarity**: Right-centre minority coalition; major fiscal package; SD entering parliament for first time in September 2010
 
-**BLUF**: The government's spring economic framework projects GDP recovery (0.82% growth 2025, expanding in 2026), sets ceiling for the supplementary budget, and establishes fiscal priorities for the remainder of the Riksmöte 2025/26 session.
+**Key parallels with 2026**:
+- Alliansen also delivered pre-election fiscal consolidation in spring 2010 (earned income tax credits, "jobbskatteavdrag" rounds 4+5)
+- Delivered legislative agenda in spring session to claim "delivery" mandate
+- Opposition (S+V+MP) filed extensive opposing motions — analogous to current interpellation wave
+- SD crossed 4% threshold September 2010 → became the pivot in following parliament
 
----
-
-### Key Provisions
-
-1. GDP growth revised upward from 2025/26 budget assumptions — World Bank data confirms +0.82% 2024
-2. Fiscal space identified for spring relief measures (HD03236 fuel tax, retroactive energy support)
-3. Expenditure ceiling maintained; structural balance within EU fiscal framework
-4. Revenue forecasts updated for 2026 given employment recovery
+**Similarity score**: 7/10 — same pre-election spring delivery model; different substantive policy content (tax cuts vs fuel relief); SD now in support role rather than new entrant
 
 ---
 
-### Political Context
+### Parallel 2: Löfven Budget Crisis 2021
 
-| Dimension | Assessment | Admiralty |
-|-----------|-----------|-----------|
-| Partisan alignment | Fully coalition-sponsored | [A1] |
-| Opposition response | S filed interpellations HD10444, HD10443, HD10433 targeting Finance Minister | [A1] |
-| SD position | Broadly supportive; monitors fiscal relief for constituents | [B2] |
-| C position | Not opposing fiscal framework | [A2] |
+**Government**: S-MP minority under PM Stefan Löfven
+**Event**: No-confidence vote (misstroendevotum) carried in Riksdag when V withdrew support over HD clause reform
 
----
+**Key parallels with 2026**:
+- Minority government operating with confidence-and-supply arrangements
+- Single-party defection (V in 2021; potentially C in 2026 on HD03235) can threaten passage
+- Government survived by PM resigning and new investiture under same PM
 
-### DIW Score
+**Divergence**: 2026 Tidökoalitionen has 176-seat majority — harder to lose than 2021 Löfven minority. C defection alone cannot defeat the government (176 > 173); would require both C AND a government party to defect.
 
-| Dimension | Score | Rationale |
-|-----------|-------|-----------|
-| Decision impact | 9/10 | Sets fiscal framework for entire spring session |
-| Intelligence value | 8/10 | Informs all downstream budget analysis |
-| Warning value | 7/10 | Revenue miss would trigger fiscal adjustment |
-| **Composite** | **8.0** | Top-tier significance |
+**Similarity score**: 5/10 — parallel on confidence-supply risk; lower probability in 2026 given larger coalition base
 
 ---
 
-### Risk Flags
-
-- R-01: Revenue miss → fiscal adjustment (see risk-assessment.md)
-- R-06: EU fiscal rules scrutiny
-
-### HD03217
-<!-- source: documents/HD03217-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD03217-analysis.md -->
-
-**Title**: Extended criminal liability for civil servants
-**Filed by**: Regeringen | **Committee**: KU
-
-**BLUF**: Expands criminal liability for public officials for abuse of office. Strengthens public sector accountability. DIW Score: 4.8/10 | **Admiralty**: [A2]
-
-### HD03218
-<!-- source: documents/HD03218-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD03218-analysis.md -->
-
-**Title**: Proposition 2025/26:218 — Dubbla straff vid gängkriminalitet
-**Filed by**: Regeringen (Justice Minister Strömmer)
-
-**BLUF**: Doubles minimum sentences for serious offences committed in gang context. Core SD+M electoral priority. In committee JuU. Passage expected May–June 2026.
-
-**Opposition**: S, V, MP oppose — argue evidence base for deterrence effect weak. V/MP cite proportionality. No formal C opposition to this bill specifically.
-
-**Implementation risk**: Courts must identify "gang context" — legal definition clarity required.
-
-### HD03220
-<!-- source: documents/HD03220-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD03220-analysis.md -->
-
-**Title**: Proposition 2025/26:220 — Militär framskjuten närvaro i Finland
-**Filed by**: Regeringen (Defence)
-
-**BLUF**: Authorises Swedish military personnel to be stationed in Finland as part of NATO Article 5 eastern flank posture. FöU committee review ongoing.
-
-**NATO context**: Consistent with Allied eastern flank commitments; smaller than Germany's Lithuania brigade but symbolically important for first-time NATO member Sweden.
-**Risk**: Russian diplomatic reaction (XT-01 in threat-analysis.md) possible.
-
-### HD03235
-<!-- source: documents/HD03235-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD03235-analysis.md -->
-
-**Title**: Proposition 2025/26:235 — Utvisning vid brottsliga gärningar
-**Filed by**: Regeringen
-
-**BLUF**: Extends deportation to non-citizens convicted of serious offences; lowers threshold. Highest legal risk bill in the package — ECHR proportionality challenge probable. Opposing motions from C (HD024095 — requires systematic/repeated crime), V (HD024090), MP (HD024097).
-
-**C position**: HD024095 demands systematic/repeated crime threshold — coalition may accept as face-saving amendment.
-
-**Legal risk**: R-02 in risk-assessment.md — ECHR Article 8 challenge probable.
-
-### HD03236
-<!-- source: documents/HD03236-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD03236-analysis.md -->
-
-**Title**: Extra ändringsbudget — fuel tax reduction
-**Filed by**: Regeringen
-
-**BLUF**: ENACTED. Reduces petrol tax by 82 öre/litre and diesel by 319 SEK/m³ for May–September 2026. Cost: 4.1 bn SEK. Retroactive energy support added. No further legislative action required.
-
-**Opposition motions** (post-enactment, no legal effect):
-- HD024082 (S), HD024092 (V), HD024098 (MP) — climate framing
-
-### HD03238
-<!-- source: documents/HD03238-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD03238-analysis.md -->
-
-**Title**: New environmental permitting authority
-**Filed by**: Regeringen | **Committee**: MJU
-
-**BLUF**: Creates new agency to streamline environmental permitting (currently Naturvårdsverket). Addresses permit backlogs blocking renewable energy projects. DIW Score: 5.6/10 | **Admiralty**: [A2]
-**Implementation risk**: New agency start-up — HIGH institutional risk (see implementation-feasibility.md)
-
-### HD03239
-<!-- source: documents/HD03239-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD03239-analysis.md -->
-
-**Title**: Wind power municipal revenue-sharing law
-**Filed by**: Regeringen | **Committee**: NU
-
-**BLUF**: Introduces mandatory revenue sharing between wind power developers and host municipalities. Addresses "not in my backyard" opposition. DIW Score: 5.8/10 | **Admiralty**: [A2]
-
-### HD03240
-<!-- source: documents/HD03240-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD03240-analysis.md -->
-
-**Title**: Proposition 2025/26:240 — Ny ellag (New Electricity Act)
-**Filed by**: Regeringen
-
-**BLUF**: Comprehensive restructuring of Sweden's electricity market legal framework. Aims to support 2030 renewable energy targets and enable grid expansion. In committee NU.
-
-**Key provisions**: New market rules; grid operator responsibilities; permitting framework integration with HD03238.
-
-**Legislative risk**: MEDIUM — NU committee; majority present; no formal C/V/MP joint opposition.
-
-### HD03246
-<!-- source: documents/HD03246-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD03246-analysis.md -->
-
-**Title**: Proposition 2025/26:246 — Ungdomsbrottslighet (Youth criminal sentencing)
-**Filed by**: Regeringen
-
-**BLUF**: Tightens youth criminal sentencing; reduces rehabilitation-focused disposals for serious offences. Part of Law & Order package. Expected passage with government majority.
-
-**Opposition**: S+V+MP oppose on rehabilitation grounds. C silent.
-
-### HD0399
-<!-- source: documents/HD0399-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD0399-analysis.md -->
-
-**Title**: Proposition 2025/26:99 — Vårändringsbudget 2026
-**Filed by**: Regeringen
-
-**BLUF**: Supplementary spring budget implementing HD03100 spring framework; includes fuel tax relief and retroactive energy support measures. Pending FiU committee vote — passage expected May 2026.
-
-**Key provisions**:
-- Fuel tax cut framework (enacted separately via HD01FiU48)
-- Retroactive household energy support Jan–Feb 2026
-- Net fiscal cost ~6 bn SEK total spring package
-
-**Political risk**: LOW — government majority holds; SD+M+KD+L = 176 seats. Opposition cannot defeat.
-
-### cluster\-remaining
-<!-- source: documents/cluster-remaining-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/cluster-remaining-analysis.md -->
-
----
-
-### HD03228 — Modernised Arms Export Rules
-**Committee**: UU | **DIW**: 5.0 | **Admiralty**: [A1]
-Opposition motions: HD024091 (V — stricter controls), HD024096 (MP — human rights conditionality)
-**BLUF**: Updates Swedish arms export framework; modernises KIMAB oversight.
-
----
-
-### HD03232 — International Tribunal for Ukraine
-**Committee**: UU | **DIW**: 5.2 | **Admiralty**: [A1]
-**BLUF**: Sweden accedes to international tribunal mechanism for Ukraine war crimes accountability.
-
----
-
-### HD03231 — Ukraine Compensation Commission
-**Committee**: UU | **DIW**: 4.5 | **Admiralty**: [A2]
-**BLUF**: Sweden joins compensation mechanism for Ukrainian civilian losses.
-
----
-
-### HD03245 — Women's Rights Strategy
-**Committee**: AU | **DIW**: 4.2 | **Admiralty**: [A2]
-**Tension**: HD10438 interpellation notes women's shelters closing simultaneously — implementation gap.
-
----
-
-### HD03242 — Forestry Environmental Rules
-**Committee**: MJU | **DIW**: 3.8 | **Admiralty**: [A2]
-**BLUF**: Revises forest environmental requirements; industry/NGO tension.
-
----
-
-### HD03237 — Paid Police Training
-**Committee**: JuU | **DIW**: 3.5 | **Admiralty**: [A2]
-**BLUF**: Officers receive pay during training; addresses recruitment/retention gap.
-
----
-
-### HD03244 — Government Interoperability
-**Committee**: TU | **DIW**: 3.2 | **Admiralty**: [B2]
-**BLUF**: Mandates interoperability between government IT systems.
-
----
-
-### HD03233 — Medical Technology Accessibility
-**Committee**: SoU | **DIW**: 3.5 | **Admiralty**: [A2]
-**BLUF**: Improves patient access to medical technologies; disability rights impact.
-
----
-
-### HD03243 — Tax Adjustment Measure
-**Committee**: SkU | **DIW**: 3.0 | **Admiralty**: [A2]
-**BLUF**: Technical tax adjustment; low political salience.
-
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/election-2026-analysis.md -->
-
----
-
-### Election Context
-
-**Election date**: 2026-09-13 (Sunday)
-**Days remaining**: ~143 days from 2026-04-23
-**Key session milestone**: Riksmöte 2025/26 ends ~June 2026
-
----
-
-### Current Parliamentary Composition (Approximate — 2022 Election Result)
-
-| Party | Bloc | Seats (2022) | Status |
-|-------|------|-------------|--------|
-| Socialdemokraterna (S) | Opposition | 107 | Main opposition |
-| Sverigedemokraterna (SD) | Government support | 73 | Confidence-and-supply |
-| Moderaterna (M) | Government | 68 | PM Kristersson |
-| Vänsterpartiet (V) | Opposition | 24 | Left opposition |
-| Centerpartiet (C) | Opposition | 24 | Centrist opposition |
-| Kristdemokraterna (KD) | Government | 19 | Coalition partner |
-| Miljöpartiet (MP) | Opposition | 18 | Green opposition |
-| Liberalerna (L) | Government | 16 | Coalition partner |
-| **Total** | | **349** | |
-
-**Coalition** (M+KD+L): 68+19+16 = **103 seats**
-**SD support** (confidence-and-supply): **73 seats**
-**Government bloc total**: **176 seats** (bare majority = 175)
-
-**Opposition** (S+V+C+MP): 107+24+24+18 = **173 seats**
-
-*Note: Approximate 2022 election results used; actual current composition may vary by 1–3 seats due to departures/by-elections. See Methodology Improvement 3.*
-
----
-
-### Spring 2026 Package Electoral Implications
-
-| Package | Electoral target group | Expected impact |
-|---------|----------------------|-----------------|
-| Fuel tax cut (HD03236) | Rural/suburban commuters | Short-term relief narrative — returns credit to M/SD |
-| Law & Order (HD03218, HD03246, HD03235) | Crime-concerned suburban voters | Core SD+M voter consolidation |
-| Energy Transition (HD03240) | Energy-sector workers; liberal voters | Positions government as "investment-ready" |
-| Women's rights strategy (HD03245) | Suburban women voters | Attempts to counter S framing on gender equality |
-
----
-
-### Coalition Viability Scenarios (September 2026)
-
-#### Scenario A: Tidökoalitionen continues (requires ~175+ seats)
-- Current estimated seats: 176 (bare majority)
-- If M gains 3–5 seats from delivering on fiscal promises: +3 seats
-- If SD holds: stays at 73
-- If L holds (currently fragile at 16 seats — 4% threshold): critical
-- **Risk**: L polling near 4% threshold — loss of L would drop bloc to 160 seats
-
-#### Scenario B: S-led bloc majority
-- Current: 173 seats
-- If MP survives 4% threshold: stays at 18 seats
-- If V holds at 24: bloc stays at 173
-- If C swings back toward centre-left: potentially +10–15 seats
-- **Key swing factor**: C — if C moves toward S collaboration, S-led bloc reaches 175+
-
-#### Scenario C: Cross-bloc grand coalition
-- Only if A and B both fail to reach 175
-- Historical precedent: Sweden has managed minority configurations but not grand coalitions in modern era
-- Probability: Remote [D4]
-
----
-
-### Electoral Risk Assessment
-
-```mermaid
-xychart-beta
-    title "Party Electoral Risk (0=Safe, 10=High risk of seat loss)"
-    x-axis ["S", "SD", "M", "V", "C", "KD", "MP", "L"]
-    y-axis "Electoral Risk" 0 --> 10
-    bar [3, 4, 4, 5, 6, 5, 7, 8]
-```
-
-**Highest risk parties**: L (threshold risk), MP (threshold risk), C (swing potential)
-
-## Coalition Mathematics
-<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/coalition-mathematics.md -->
-
----
-
-### Current Riksdag Seat Distribution
-
-| Party | Seats | Bloc |
-|-------|-------|------|
-| S | 107 | Opposition |
-| SD | 73 | Gov support |
-| M | 68 | Government |
-| V | 24 | Opposition |
-| C | 24 | Opposition |
-| KD | 19 | Government |
-| MP | 18 | Opposition |
-| L | 16 | Government |
-| **Total** | **349** | |
-
-**Majority threshold**: 175 seats
-**Government bloc** (M+KD+L+SD): 176 — bare majority (+1)
-
----
-
-### Pivotal Vote Table (Selected Bills)
-
-| Bill | Ja needed | Gov (M+KD+L+SD) | S | V | C | MP | Outcome |
-|------|-----------|------------------|---|---|---|----|---------|
-| HD03218 (gang sentences) | 175 | 176 ✅ | Nej | Nej | Nej | Nej | PASS |
-| HD03235 (deportation) | 175 | 176 ✅ (if SD+C) | Nej | Nej | Nej | Nej | PASS if C neutral |
-| HD0399 (supplementary budget) | 175 | 176 ✅ | Nej | Nej | Nej | Nej | PASS |
-| HD03240 (electricity law) | 175 | 176 ✅ | TBD | Nej | TBD | Nej | LIKELY PASS |
-
-**Note**: If C votes Nej on HD03235: Government = M+KD+L+SD = 176; C opposition adds to S+V+MP = 173+24 = 197 Nej. Government still has 176 vs 173 opposition bloc — **passes if SD holds**.
-
----
-
-### Sainte-Laguë Projection (September 2026 — Illustrative)
-
-Assuming 5% threshold applies. Illustrative scenarios only (no polling data — [D4]):
-
-| Scenario | S | SD | M | C | V | KD | MP | L |
-|----------|---|----|----|---|---|----|----|---|
-| Status quo (2022) | 107 | 73 | 68 | 24 | 24 | 19 | 18 | 16 |
-| Gov+3 scenario | 105 | 74 | 71 | 22 | 24 | 20 | 17 | 16 |
-| Opp+5 scenario | 112 | 70 | 65 | 27 | 25 | 18 | 17 | 15 |
-
-**Key threshold risk**: L at 16 seats (4.6% 2022 share) — if polls below 4% threshold, government loses L's 16 seats, dropping bloc to 160 (minority).
-
-## Voter Segmentation
-<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/voter-segmentation.md -->
-
----
-
-### Segment Matrix
-
-| Segment | Description | Key policy concern | Package impact | Likely shift |
-|---------|-------------|-------------------|---------------|-------------|
-| Rural commuters | Households >50 km from city, car-dependent | Fuel costs, housing | ✅ HD03236 fuel tax cut | Stable/slight M+SD gain |
-| Urban professionals | Income >median, Stockholm/Gothenburg | Housing, climate | ⚠️ Energy transition ambiguity | Possible M→C/S shift |
-| Working class | Industrial/service workers, lower income | Job security, crime | ✅ Law & order package | SD consolidation |
-| Younger urban | 18–35, urban, climate-concerned | Climate, housing | ❌ Fuel tax cut seen as rollback | MP+V→S flow possible |
-| Senior citizens | 65+, pension-dependent | Healthcare, care | ✅ Medical technology access (HD03233) | Stable, slight KD benefit |
-| Small business owners | SME, employer contributions | Tax burden | ✅ Interpellation HD10444/HD10443 signals attention | Uncertain; S monitoring |
-| Women (30–55) | Working mothers, suburban | Shelter access, pay equity | ⚠️ Shelters closing despite strategy (HD10438) | Risk of S+C appeal |
-| Rural/periphery | Northern Sweden, forestry/mining | Energy costs, regional development | ✅ Energy package broadly positive | M+C stable |
-
----
-
-### Electoral Volatility Map
-
-High-volatility segments (most likely to switch):
-1. **Young urban** — 15% shift potential toward left-green bloc if climate framing dominates
-2. **Urban professionals** — 10% shift potential if housing supply continues to stagnate
-3. **Women (30–55)** — 8% shift potential if women's shelter closures become major media issue
+### Lessons Applied
+
+1. Pre-election "delivery" narratives can secure re-election (Alliansen 2010 precedent suggests yes — won September 2010)
+2. Single party defection in minority parliament was survivable in 2021; 2026 coalition has more buffer
+3. Fuel tax cuts as pre-election "gift" have Norwegian precedent of temporary relief → future reversal = political cost
 
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/comparative-international.md -->
@@ -1386,48 +1391,6 @@ Sweden's fuel tax cut (82 öre/litre petrol) runs against EU Fit for 55 trajecto
 
 Sweden's contribution is consistent with Allied commitments but smaller in scale than Germany's Lithuania brigade. Domestic debate about deployment size and legal basis (permanent vs rotational) tracked via HD03220 committee review.
 
-## Historical Parallels
-<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/historical-parallels.md -->
-
----
-
-### Parallel 1: 2010 Alliansen Pre-Election Spring Session
-
-**Government**: Alliansen (M+C+L+KD) under PM Fredrik Reinfeldt
-**Structural similarity**: Right-centre minority coalition; major fiscal package; SD entering parliament for first time in September 2010
-
-**Key parallels with 2026**:
-- Alliansen also delivered pre-election fiscal consolidation in spring 2010 (earned income tax credits, "jobbskatteavdrag" rounds 4+5)
-- Delivered legislative agenda in spring session to claim "delivery" mandate
-- Opposition (S+V+MP) filed extensive opposing motions — analogous to current interpellation wave
-- SD crossed 4% threshold September 2010 → became the pivot in following parliament
-
-**Similarity score**: 7/10 — same pre-election spring delivery model; different substantive policy content (tax cuts vs fuel relief); SD now in support role rather than new entrant
-
----
-
-### Parallel 2: Löfven Budget Crisis 2021
-
-**Government**: S-MP minority under PM Stefan Löfven
-**Event**: No-confidence vote (misstroendevotum) carried in Riksdag when V withdrew support over HD clause reform
-
-**Key parallels with 2026**:
-- Minority government operating with confidence-and-supply arrangements
-- Single-party defection (V in 2021; potentially C in 2026 on HD03235) can threaten passage
-- Government survived by PM resigning and new investiture under same PM
-
-**Divergence**: 2026 Tidökoalitionen has 176-seat majority — harder to lose than 2021 Löfven minority. C defection alone cannot defeat the government (176 > 173); would require both C AND a government party to defect.
-
-**Similarity score**: 5/10 — parallel on confidence-supply risk; lower probability in 2026 given larger coalition base
-
----
-
-### Lessons Applied
-
-1. Pre-election "delivery" narratives can secure re-election (Alliansen 2010 precedent suggests yes — won September 2010)
-2. Single party defection in minority parliament was survivable in 2021; 2026 coalition has more buffer
-3. Fuel tax cuts as pre-election "gift" have Norwegian precedent of temporary relief → future reversal = political cost
-
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/implementation-feasibility.md -->
 
@@ -1482,6 +1445,43 @@ Sweden's contribution is consistent with Allied commitments but smaller in scale
 | New environmental permitting agency delayed | Energy Transition | MEDIUM |
 | Försäkringskassan retroactive payment backlog | Fiscal | MEDIUM |
 | L threshold failure removes coalition partner | Cross-package | MEDIUM |
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/media-framing-analysis.md -->
+
+---
+
+### Party Framing Map
+
+| Party | Core narrative frame | Key evidence |
+|-------|---------------------|-------------|
+| M (government) | "Delivery — we promised, we delivered" | HD01FiU48 enacted; three packages in progress |
+| SD | "Not enough — immigration enforcement must be total" | May file reservations if HD03235 deemed insufficient |
+| KD | "Pro-family, pro-safety" | Women's strategy (HD03245); crime package |
+| L | "Energy transition + security" | HD03240, HD03239, HD03220 |
+| S (opposition) | "Government manages crises without structural solutions" | 6+ interpellations on housing, shelters, police |
+| V | "Climate and workers first" | 3 opposing motions: fuel, deportation, arms |
+| MP | "Climate emergency requires reversal of fuel tax" | HD024098; EU Climate Law framing |
+| C | "Moderate reform — not extreme immigration" | HD024095 systematic crime threshold |
+
+---
+
+### Press Framing (Expected)
+
+| Media type | Expected angle | Basis |
+|------------|---------------|-------|
+| Svenska Dagbladet (conservative) | Delivery narrative; coalition stability | Editorial alignment with M/coalition |
+| Dagens Nyheter (liberal) | Mixed — energy transition positive; deportation concerns | Liberal editorial line |
+| Aftonbladet (tabloid/social-dem) | Opposition amplification — shelters, housing | Social Democratic-adjacent |
+| SVT/SR (public) | Balanced — covers all parties; committee hearing focus | PSB mandate |
+
+---
+
+### Media Risk Indicators
+
+1. **Women's shelter story** (HD10438) — high viral potential; human interest angle; negative for government
+2. **Fuel tax cut = climate betrayal** framing — sustained NGO campaign likely through summer
+3. **NATO forward presence** (HD03220) — may generate peace movement/anti-militarism coverage in alternative media
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/devils-advocate.md -->
@@ -1994,13 +1994,6 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/threat-analysis.md)
 - [`documents/HD03100-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD03100-analysis.md)
 - [`documents/HD03217-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD03217-analysis.md)
 - [`documents/HD03218-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD03218-analysis.md)
@@ -2013,12 +2006,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`documents/HD03246-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD03246-analysis.md)
 - [`documents/HD0399-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/HD0399-analysis.md)
 - [`documents/cluster-remaining-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/documents/cluster-remaining-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/cross-reference-map.md)

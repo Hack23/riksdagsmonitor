@@ -5,7 +5,7 @@ date: 2026-04-24
 subfolder: interpellations
 slug: 2026-04-24-interpellations
 source_folder: analysis/daily/2026-04-24/interpellations
-generated_at: 2026-05-04T09:52:32.242Z
+generated_at: 2026-05-04T12:16:13.948Z
 language: en
 layout: article
 ---
@@ -75,10 +75,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -288,77 +288,96 @@ flowchart LR
 
 ---
 
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/media-framing-analysis.md -->
+## Per-document intelligence
 
-### Frame candidates
+### HD10447
+<!-- source: documents/HD10447-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/documents/HD10447-analysis.md -->
 
-#### Frame A — "Regeringen tog bort stödet — och företagen lider" (S-preferred)
+**Document**: HD10447 — *Borttagandet av ersättningen för höga sjuklönekostnader*
+**Type**: Interpellation
+**Submitter**: Patrik Lundqvist (S), Gävleborg
+**Addressee**: Ebba Busch (KD), energi- och näringsminister
+**Filed**: 2026-04-23 · **SISVA**: 2026-05-07
+**Primary source**: <https://data.riksdagen.se/dokument/HD10447> (Admiralty A1)
 
-S narrative frame. Emphasises small-business pain, Swedish growth gap vs EU, KD's "*företagens parti*" contradiction.
+### Document summary
 
-- **Outlets most likely to carry**: Dagens Arbete, ETC, Aftonbladet (ledar), Arbetet.
-- **Amplifiers**: Företagarna partial amplification (if they pick the business-cost angle without partisan tie-in).
+Lundqvist asks Minister Busch:
 
-#### Frame B — "Effektiviserad företagshjälp — inget att ångra" (Tidö-preferred)
+1. What is the regeringens förklaring to the försämringen för småföretagen which the abolition of ersättning för höga sjuklönekostnader caused?
+2. Does the regeringen intend to återinföra stödet eller alternativ stödform riktad specifikt till small business?
 
-Government counter-frame. Emphasises other measures (arbetsgivaravgifter-sänkningar, växa-stöd), administrativ förenkling.
+Framing: Sweden's growth gap vs EU, SME employment importance, abolition cost borne specifically by small firms.
 
-- **Outlets most likely to carry**: Svenska Dagbladet (borgerlig ledar), Expressen ledar, Bulletin.
-- **Amplifiers**: Skattebetalarnas förening, Timbro.
+### Classification (7-dimension)
 
-#### Frame C — "En kostnad man inte räknat på" (neutral/wonkish)
+| Dimension | Value |
+|---|---|
+| Type | Interpellation |
+| Partistrategisk nivå | High (labour-cost wedge) |
+| Tidshorisont | Short (SISVA 13 days) |
+| Koalitionsrisk | Medium (KD-targeted) |
+| Väljargrupp | SME owners, SME employees |
+| Geografisk räckvidd | National, with Gävleborg constituency amplification |
+| Admiralty rating | A1 |
 
-Analytical / data-centric frame. Cites SCB data, Tillväxtverket rapporter, Finanspolitiska rådet.
+### DIW weighting
 
-- **Outlets most likely to carry**: Dagens industri, Dagens Nyheter economy section, Sveriges Radio Ekonomiekot.
-- **Amplifiers**: Academic economists; think tanks.
-
-#### Frame D — "Sverige ut ur Norden" (comparative)
-
-Comparative/Nordic frame — Sweden as Nordic outlier on SME-sick-pay buffer.
-
-- **Outlets most likely to carry**: Nordic-oriented outlets, Europaportalen, Altinget.
-- **Amplifiers**: Nordic labour-market researchers.
-
-### Frame volume forecast (7-day horizon from 2026-05-07)
-
-```mermaid
-xychart-beta
-  title Expected coverage volume per frame (articles, D0–D7)
-  x-axis [D0, D1, D2, D3, D5, D7]
-  y-axis "articles" 0 --> 12
-  line [2, 5, 7, 6, 3, 2]
-  line [1, 3, 5, 5, 4, 3]
-  line [0, 1, 2, 3, 3, 2]
-  line [0, 0, 1, 1, 2, 2]
-```
-
-Legend (line order): A (S-frame) · B (Tidö-frame) · C (wonkish) · D (comparative).
-
-### Narrative contestation matrix
-
-| Frame | Source authority (Admiralty) | Public resonance | Policy-shift leverage |
+| Dimension | Score (1-5) | Weight | Contribution |
 |---|:-:|:-:|:-:|
-| A — S-preferred | B2 | HIGH (SME pain) | MEDIUM |
-| B — Tidö-preferred | B2 | MEDIUM (wonkish offsets) | HIGH (status-quo preservation) |
-| C — wonkish | A2–B1 | LOW-MEDIUM | HIGH (drives review scenarios) |
-| D — comparative | A1 | LOW (abstract) | MEDIUM (intellectual asset for opposition) |
+| Decision relevance | 4 | 0.30 | 1.20 |
+| Impact | 3 | 0.25 | 0.75 |
+| Weight (institutional) | 3 | 0.20 | 0.60 |
+| Timeliness | 4 | 0.15 | 0.60 |
+| Novelty | 2 | 0.10 | 0.20 |
+| **Total** | | | **3.35** |
 
-### Disinformation / manipulation risk
+Cluster-adjusted: +0.5 for campaign membership → **3.85** (above analysis threshold of 3.0).
 
-- **Statistics cherry-picking**: both sides likely to cherry-pick start/end years on sick-leave cost trends. Standard political-communication pattern; no evidence of malicious disinformation.
-- **Deepfake / synthetic media**: none detected in prior Tidö-opposition exchanges on this issue; residual baseline risk.
+### SWOT (one-pager)
 
-### Recommended narrative-monitoring indicators
+- **S**: Concrete policy target, KD-specific addressee, cluster coherence.
+- **W**: Single signatory, no press tie-in, soft evidence on SME growth-gap causation.
+- **O**: Pre-election window; KD brand vulnerability; Nordic comparative framing.
+- **T**: Minister defensive reply (70% likely); fiscal-rule wall; S over-reach if overplayed.
 
-- Word-frequency tracking on Mediearkivet: "sjuklönekostnad" · "småföretag" · "företagens parti" · "sjuklön".
-- Lead-editorial endorsements DN, SvD, Expressen, Aftonbladet D0–D3.
-- Social-media amplification: @socialdemokraterna, @kd, @SvensktNLiv accounts.
+### Risk posture
 
-### Confidence
+Low procedural risk; medium political risk for KD (brand); low risk for S (downside: narrative fails to land).
 
-**MEDIUM** — frame typology is grounded in past cluster-campaigns (B2); specific volume forecast is indicative (C3 model output).
+### Stakeholder map (abbreviated)
+
+- **Patrik Lundqvist (S)**: Gävleborg MP; prior labour-policy IPs. Motivation: constituency SME service + party alignment.
+- **Ebba Busch (KD)**: Must answer personally; brand risk; likely defensive answer.
+- **Företagarna**: Potential amplifier; brand-aligned with S framing on this issue.
+- **Finance Minister Svantesson (M)**: Non-addressee but fiscal backstop; may signal through written press.
+
+### Scenario routing (links to folder-level `scenario-analysis.md`)
+
+- S1 Defensive defend — 50% — Busch answer cites växa-stöd / arbetsgivaravgifter
+- S2 Partial review — 20% — Tillväxtverket review signalled
+- S3 Fiscal-rule wall — 20% — överskottsmål cited
+- S4 Coalition drift — 10% — KD-internal movement
+
+### Key Judgment (document-level)
+
+HD10447 is a credible, well-targeted opposition interpellation functioning as a **narrative-capture instrument**, not a realistic policy-change lever. Expected outcome: narrative gain for S, minor brand cost for KD, no policy change in the 2026–2026 mandate period. **Confidence: MEDIUM-HIGH.**
+
+### Cross-references
+
+- Folder index: `../README.md`
+- Cluster context: `../cross-reference-map.md`
+- Scenario probabilities: `../scenario-analysis.md`
+- Election impact: `../election-2026-analysis.md`
+
+### Source summary
+
+| Source | URL | Admiralty |
+|---|---|---|
+| Riksdagen dokumentstatus HD10447 | <https://data.riksdagen.se/dokument/HD10447> | A1 |
+| Regeringen 2024 budget proposition (abolition) | <https://www.regeringen.se/> | A2 |
+| SCB SME labour-market tables | <https://www.scb.se/> | A1 |
+| Cluster cache | `analysis/data/documents/interpellations/*.json` | A2 |
 
 ---
 
@@ -423,6 +442,174 @@ flowchart LR
 ### Confidence
 
 **MEDIUM** — named stakeholders and their historical positions are well-documented; individual response calibration awaits the 2026-05-07 answer.
+
+---
+
+## Coalition Mathematics
+<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/coalition-mathematics.md -->
+
+### Current seat distribution (post-2022 val, adjusted through 2026-04)
+
+| Party | Seats | Bloc |
+|---|---:|---|
+| S | 107 | Opposition |
+| M | 68 | Tidö |
+| SD | 73 | Tidö |
+| V | 24 | Opposition |
+| C | 24 | Opposition |
+| KD | 19 | Tidö |
+| MP | 18 | Opposition |
+| L | 16 | Tidö |
+| **Total** | **349** | — |
+
+**Majority**: 175 seats. Tidö: 176 (M 68 + SD 73 + KD 19 + L 16). Opposition: 173 (S 107 + V 24 + C 24 + MP 18) — note C is not in the Tidö agreement but votes case-by-case; excluded from Tidö.
+
+### Hypothetical vote on a HD10447-derived motion
+
+Assume S files a motion proposing partial reinstatement of ersättning för höga sjuklönekostnader. Probable vote breakdown:
+
+| Parti | Ja | Nej | Avstår | Frånvarande | Seats |
+|---|---:|---:|---:|---:|---:|
+| S | 107 | 0 | 0 | 0 | 107 |
+| M | 0 | 68 | 0 | 0 | 68 |
+| SD | 0 | 73 | 0 | 0 | 73 |
+| V | 24 | 0 | 0 | 0 | 24 |
+| C | 18 | 0 | 6 | 0 | 24 |
+| KD | 0 | 19 | 0 | 0 | 19 |
+| MP | 18 | 0 | 0 | 0 | 18 |
+| L | 0 | 16 | 0 | 0 | 16 |
+| **Summa** | **167** | **176** | **6** | **0** | **349** |
+
+Outcome: **Avslag** (Tidö 176 vs Opposition 167). Motion fails on coalition discipline alone.
+
+### Fissure scenarios
+
+#### Fissure A — KD defection (2 KD MPs abstain)
+
+| Parti | Ja | Nej | Avstår |
+|---|---:|---:|---:|
+| Tidö as whole | 0 | 174 | 2 |
+| Opposition | 167 | 0 | 6 |
+| Outcome | | Avslag 174 vs 167 | still holds |
+
+Even 2 KD abstentions don't flip the vote. KD brand harm outpaces vote-level impact.
+
+#### Fissure B — Full KD breaks (entire KD 19 votes Ja)
+
+| Parti | Ja | Nej | Avstår |
+|---|---:|---:|---:|
+| Tidö residual | 0 | 157 | 0 |
+| KD + Opp | 186 | 0 | 6 |
+| Outcome | **Bifall 186** | | |
+
+Full KD defection flips the vote but is politically implausible — would trigger coalition collapse before the vote.
+
+#### Fissure C — L defection (L sometimes votes with opposition on SME matters)
+
+| Parti | Ja | Nej | Avstår |
+|---|---:|---:|---:|
+| Tidö residual | 0 | 160 | 0 |
+| L + Opp | 183 | 0 | 6 |
+| Outcome | **Bifall 183** | | |
+
+L has more history of selective defection than KD; still politically unlikely on a government-wedge issue.
+
+### Post-2026 projection (if polling holds)
+
+Applying 2026Q1 polling (S 33%, M 17%, SD 21%, V 7%, C 5%, MP 5%, KD 4%, L 3%) to 349 seats:
+
+| Party | Projected seats | Mandat |
+|---|---:|---:|
+| S | 115 | 115 |
+| SD | 74 | 74 |
+| M | 60 | 60 |
+| V | 25 | 25 |
+| MP | 18 | 18 |
+| C | 18 | 18 |
+| KD | 14 | 14 — **threshold risk** |
+| L | 0 | 0 — **below 4% threshold** |
+| Remaining | 25 distributed | |
+
+**Post-2026 Tidö** (if L falls below threshold): 148 (M+SD+KD), short of 175 majority. **Red-green bloc**: 176 (S+V+C+MP), majority. HD10447's KD-damage vector matters more for the coalition post-2026 than pre-2026.
+
+### Visual
+
+```mermaid
+graph TB
+  subgraph Current2022to2026[Current Riksdag]
+    T1[Tidö 176]
+    O1[Opposition 173]
+  end
+  subgraph Projected2026[Projected post-valdag 2026]
+    T2[Tidö ~148 if L out]
+    O2[Red-green ~176]
+  end
+  Current2022to2026 -.-> Projected2026
+  style T1 fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+  style O1 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  style T2 fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+  style O2 fill:#1a1e3d,stroke:#00ff88,color:#e0e0e0
+```
+
+### Confidence
+
+**HIGH** on current seats (A1 — Valmyndigheten). **MEDIUM** on 2026 projection (B2 — polling aggregates, seat allocation via Sainte-Laguë).
+
+---
+
+## Voter Segmentation
+<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/voter-segmentation.md -->
+
+### Primary segments
+
+| Segment | Size (eligible) | 2022 vote split | Relevance to HD10447 | Est. movement |
+|---|---:|---|---|---|
+| SME owners (< 10 emp) | ~240k | KD/M 35%, S 20% | HIGH — directly subsidised pre-2024 | S +3–5 pp in-segment |
+| SME employees | ~1.2M | ~Swedish avg | MEDIUM — labour-stability narrative | S +0.5–1 pp |
+| Public-sector workers | ~1.5M | S strongest; less exposed | LOW — not directly affected | ~0 |
+| Freelance / self-employed | ~320k | mixed; libertarian-leaning | LOW-MEDIUM — some overlap with SME cohort | S +1 pp |
+| Rural / small-town voters | ~1.8M | SD strong, S second | MEDIUM — small-town SMEs dominate local economy | mixed; S +0.5 pp |
+| Big-city professionals | ~1.4M | S, M, MP, V; educated | LOW — not core narrative audience | ~0 |
+| Soft M voters (centrist) | ~0.6M | M 2022 | MEDIUM — sensitive to "competence" frame | M → S, C, MP micro-shifts |
+| Soft KD voters | ~0.3M | KD 2022 | HIGH — central to KD brand risk | KD → L, M, abstain |
+
+### Narrative receptivity
+
+```mermaid
+quadrantChart
+  title HD10447 narrative reach (size × receptivity)
+  x-axis Low receptivity --> High receptivity
+  y-axis Small segment --> Large segment
+  quadrant-1 Targeted heavyweights
+  quadrant-2 Broad low-salience
+  quadrant-3 Small low-salience
+  quadrant-4 Targeted lightweights
+  "SME owners": [0.85, 0.15]
+  "SME employees": [0.55, 0.70]
+  "Soft M voters": [0.50, 0.35]
+  "Soft KD voters": [0.80, 0.20]
+  "Rural voters": [0.45, 0.85]
+  "Big-city professionals": [0.15, 0.78]
+  "Public-sector workers": [0.10, 0.88]
+```
+
+### Movement model (weighted)
+
+Expected net S gain from HD10447 = Σ(segment size × movement prob) / electorate ≈ **+0.1–0.3 pp nationally**. Expected KD loss ≈ **−0.1–0.4 pp**. See `election-2026-analysis.md` for stacking effect across the full S IP campaign.
+
+### High-information segments for tracking
+
+1. **Soft KD voters** — KD brand-damage canary; watch Företagarna panels.
+2. **SME owners** — direct narrative target; watch Svenskt Näringsliv surveys.
+3. **Rural Gävleborg** — constituency amplification; watch local press coverage.
+
+### Source rating
+
+Segment sizes from SCB 2025 labour-market tables (A1). 2022 vote splits from Valmyndigheten (A1). Movement projections from cluster base-rate modelling (B2).
+
+### Confidence
+
+**MEDIUM** — segment sizes A1; projected shifts B2 (extrapolated from prior wedge-campaign analogs).
 
 ---
 
@@ -561,6 +748,82 @@ graph TD
 ### Confidence
 
 **MEDIUM** — scenarios reflect the observable distribution of past ministerial answers on reopened budget decisions (base-rate ~60% defensive, ~20% partial review, ~15% fiscal-rule wall, ~5% coalition drift based on 2022–2025 IP archive).
+
+---
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/election-2026-analysis.md -->
+
+**Context**: Swedish general election 2026-09-13 — ~20 weeks from analysis date. HD10447 lands mid-pre-campaign window where narrative positioning hardens before summer recess.
+
+### Pre-campaign timeline
+
+```mermaid
+timeline
+  title Pre-campaign window 2026
+  2026-04-24 : HD10447 filed · cluster pattern visible
+  2026-05-07 : SISVA · Minister Busch answers
+  2026-06-18 : Riksdagens sommaruppehåll · narrative locked for summer
+  2026-08-15 : Pre-election campaign formally opens
+  2026-09-13 : Valdag
+```
+
+### Polling baseline (April 2026, aggregated Novus + SCB + Demoskop)
+
+| Party | 2025H2 avg | 2026Q1 avg | Trend | 2022 result |
+|---|:-:|:-:|:-:|:-:|
+| S | 31% | 33% | ↑ | 30.3% |
+| M | 18% | 17% | ↓ | 19.1% |
+| SD | 20% | 21% | → | 20.5% |
+| V | 7% | 7% | → | 6.8% |
+| C | 5% | 5% | → | 6.7% |
+| MP | 5% | 5% | → | 5.1% |
+| KD | 5% | 4% | ↓ | 5.3% |
+| L | 4% | 3% | ↓ | 4.6% |
+
+**Coalition math**: Tidö (M+SD+KD+L) = 45% (down from ~49% at 2022 election). S+MP+V+C = 50%. KD/L sit at or near 4% threshold — existential risk.
+
+### HD10447 impact vectors
+
+#### Vector 1 — SME-owner cohort (~240k eligible voters; est. 4.1% of electorate)
+
+Most directly targeted by the narrative. 2022 split ~35% KD/M, ~20% S. A 5-percentage-point KD/M→S shift in this cohort = ~12k votes nationally, ~0.2% absolute.
+
+#### Vector 2 — SME employees (~1.2M voters; est. 20% of electorate)
+
+Indirect — narrative of "unstable employer" and "labour-insecurity" plays here. Small but non-zero shift possible; base-rate ~2 pp shifts in similar past wedge campaigns.
+
+#### Vector 3 — Rural Gävleborg / northern industrial belt
+
+Lundqvist's home base. Visible constituency service amplifies S local brand; marginal seat impact in valkrets Gävleborg (≈5 S mandat, 2 M, 1 SD at current aggregate).
+
+#### Vector 4 — KD brand damage (no new voters; existential cost)
+
+If KD drops below 4%, entire Tidö coalition math collapses (no cabinet). This makes the marginal cost of HD10447 to KD disproportionately high relative to the marginal benefit to S.
+
+### Wedge-axis assessment
+
+| Axis | Strength | Why |
+|---|:-:|---|
+| Cost-of-doing-business | HIGH | Salient for SME owners and their employees |
+| Growth-gap (SE vs EU) | MEDIUM | Technical; requires narrative amplification |
+| Welfare / fairness | LOW-MEDIUM | Not the core S frame here — more "competence" angle |
+| Fiscal responsibility | MEDIUM | Counter-frame available to Tidö; risk cuts both ways |
+
+### Election impact — most-likely case (combining scenarios)
+
+**Weighted expected shift**: S +0.1 to +0.3 pp nationally; KD −0.1 to −0.4 pp. Small in isolation. **Cumulative effect matters**: HD10447 is 1 of an expected 12–15 S wedge IPs this cycle; stacked effect could reach 1.5–2.5 pp.
+
+### Recommended indicator set (feeds forward-indicators.md)
+
+- Weekly polling delta Tidö vs red-green bloc
+- KD small-business cohort favourability (Företagarna surveys)
+- Volume of S labour-policy IPs by week (target: 2–3 per week through June)
+- Regeringen press responses mentioning "företagare" / "småföretag"
+
+### Confidence
+
+**MEDIUM** — polling baseline and cohort math are A2; attribution of individual IP to measurable shift is B3 (base-rate extrapolation).
 
 ---
 
@@ -777,399 +1040,6 @@ graph TD
 
 ---
 
-## Per-document intelligence
-
-### HD10447
-<!-- source: documents/HD10447-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/documents/HD10447-analysis.md -->
-
-**Document**: HD10447 — *Borttagandet av ersättningen för höga sjuklönekostnader*
-**Type**: Interpellation
-**Submitter**: Patrik Lundqvist (S), Gävleborg
-**Addressee**: Ebba Busch (KD), energi- och näringsminister
-**Filed**: 2026-04-23 · **SISVA**: 2026-05-07
-**Primary source**: <https://data.riksdagen.se/dokument/HD10447> (Admiralty A1)
-
-### Document summary
-
-Lundqvist asks Minister Busch:
-
-1. What is the regeringens förklaring to the försämringen för småföretagen which the abolition of ersättning för höga sjuklönekostnader caused?
-2. Does the regeringen intend to återinföra stödet eller alternativ stödform riktad specifikt till small business?
-
-Framing: Sweden's growth gap vs EU, SME employment importance, abolition cost borne specifically by small firms.
-
-### Classification (7-dimension)
-
-| Dimension | Value |
-|---|---|
-| Type | Interpellation |
-| Partistrategisk nivå | High (labour-cost wedge) |
-| Tidshorisont | Short (SISVA 13 days) |
-| Koalitionsrisk | Medium (KD-targeted) |
-| Väljargrupp | SME owners, SME employees |
-| Geografisk räckvidd | National, with Gävleborg constituency amplification |
-| Admiralty rating | A1 |
-
-### DIW weighting
-
-| Dimension | Score (1-5) | Weight | Contribution |
-|---|:-:|:-:|:-:|
-| Decision relevance | 4 | 0.30 | 1.20 |
-| Impact | 3 | 0.25 | 0.75 |
-| Weight (institutional) | 3 | 0.20 | 0.60 |
-| Timeliness | 4 | 0.15 | 0.60 |
-| Novelty | 2 | 0.10 | 0.20 |
-| **Total** | | | **3.35** |
-
-Cluster-adjusted: +0.5 for campaign membership → **3.85** (above analysis threshold of 3.0).
-
-### SWOT (one-pager)
-
-- **S**: Concrete policy target, KD-specific addressee, cluster coherence.
-- **W**: Single signatory, no press tie-in, soft evidence on SME growth-gap causation.
-- **O**: Pre-election window; KD brand vulnerability; Nordic comparative framing.
-- **T**: Minister defensive reply (70% likely); fiscal-rule wall; S over-reach if overplayed.
-
-### Risk posture
-
-Low procedural risk; medium political risk for KD (brand); low risk for S (downside: narrative fails to land).
-
-### Stakeholder map (abbreviated)
-
-- **Patrik Lundqvist (S)**: Gävleborg MP; prior labour-policy IPs. Motivation: constituency SME service + party alignment.
-- **Ebba Busch (KD)**: Must answer personally; brand risk; likely defensive answer.
-- **Företagarna**: Potential amplifier; brand-aligned with S framing on this issue.
-- **Finance Minister Svantesson (M)**: Non-addressee but fiscal backstop; may signal through written press.
-
-### Scenario routing (links to folder-level `scenario-analysis.md`)
-
-- S1 Defensive defend — 50% — Busch answer cites växa-stöd / arbetsgivaravgifter
-- S2 Partial review — 20% — Tillväxtverket review signalled
-- S3 Fiscal-rule wall — 20% — överskottsmål cited
-- S4 Coalition drift — 10% — KD-internal movement
-
-### Key Judgment (document-level)
-
-HD10447 is a credible, well-targeted opposition interpellation functioning as a **narrative-capture instrument**, not a realistic policy-change lever. Expected outcome: narrative gain for S, minor brand cost for KD, no policy change in the 2026–2026 mandate period. **Confidence: MEDIUM-HIGH.**
-
-### Cross-references
-
-- Folder index: `../README.md`
-- Cluster context: `../cross-reference-map.md`
-- Scenario probabilities: `../scenario-analysis.md`
-- Election impact: `../election-2026-analysis.md`
-
-### Source summary
-
-| Source | URL | Admiralty |
-|---|---|---|
-| Riksdagen dokumentstatus HD10447 | <https://data.riksdagen.se/dokument/HD10447> | A1 |
-| Regeringen 2024 budget proposition (abolition) | <https://www.regeringen.se/> | A2 |
-| SCB SME labour-market tables | <https://www.scb.se/> | A1 |
-| Cluster cache | `analysis/data/documents/interpellations/*.json` | A2 |
-
----
-
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/election-2026-analysis.md -->
-
-**Context**: Swedish general election 2026-09-13 — ~20 weeks from analysis date. HD10447 lands mid-pre-campaign window where narrative positioning hardens before summer recess.
-
-### Pre-campaign timeline
-
-```mermaid
-timeline
-  title Pre-campaign window 2026
-  2026-04-24 : HD10447 filed · cluster pattern visible
-  2026-05-07 : SISVA · Minister Busch answers
-  2026-06-18 : Riksdagens sommaruppehåll · narrative locked for summer
-  2026-08-15 : Pre-election campaign formally opens
-  2026-09-13 : Valdag
-```
-
-### Polling baseline (April 2026, aggregated Novus + SCB + Demoskop)
-
-| Party | 2025H2 avg | 2026Q1 avg | Trend | 2022 result |
-|---|:-:|:-:|:-:|:-:|
-| S | 31% | 33% | ↑ | 30.3% |
-| M | 18% | 17% | ↓ | 19.1% |
-| SD | 20% | 21% | → | 20.5% |
-| V | 7% | 7% | → | 6.8% |
-| C | 5% | 5% | → | 6.7% |
-| MP | 5% | 5% | → | 5.1% |
-| KD | 5% | 4% | ↓ | 5.3% |
-| L | 4% | 3% | ↓ | 4.6% |
-
-**Coalition math**: Tidö (M+SD+KD+L) = 45% (down from ~49% at 2022 election). S+MP+V+C = 50%. KD/L sit at or near 4% threshold — existential risk.
-
-### HD10447 impact vectors
-
-#### Vector 1 — SME-owner cohort (~240k eligible voters; est. 4.1% of electorate)
-
-Most directly targeted by the narrative. 2022 split ~35% KD/M, ~20% S. A 5-percentage-point KD/M→S shift in this cohort = ~12k votes nationally, ~0.2% absolute.
-
-#### Vector 2 — SME employees (~1.2M voters; est. 20% of electorate)
-
-Indirect — narrative of "unstable employer" and "labour-insecurity" plays here. Small but non-zero shift possible; base-rate ~2 pp shifts in similar past wedge campaigns.
-
-#### Vector 3 — Rural Gävleborg / northern industrial belt
-
-Lundqvist's home base. Visible constituency service amplifies S local brand; marginal seat impact in valkrets Gävleborg (≈5 S mandat, 2 M, 1 SD at current aggregate).
-
-#### Vector 4 — KD brand damage (no new voters; existential cost)
-
-If KD drops below 4%, entire Tidö coalition math collapses (no cabinet). This makes the marginal cost of HD10447 to KD disproportionately high relative to the marginal benefit to S.
-
-### Wedge-axis assessment
-
-| Axis | Strength | Why |
-|---|:-:|---|
-| Cost-of-doing-business | HIGH | Salient for SME owners and their employees |
-| Growth-gap (SE vs EU) | MEDIUM | Technical; requires narrative amplification |
-| Welfare / fairness | LOW-MEDIUM | Not the core S frame here — more "competence" angle |
-| Fiscal responsibility | MEDIUM | Counter-frame available to Tidö; risk cuts both ways |
-
-### Election impact — most-likely case (combining scenarios)
-
-**Weighted expected shift**: S +0.1 to +0.3 pp nationally; KD −0.1 to −0.4 pp. Small in isolation. **Cumulative effect matters**: HD10447 is 1 of an expected 12–15 S wedge IPs this cycle; stacked effect could reach 1.5–2.5 pp.
-
-### Recommended indicator set (feeds forward-indicators.md)
-
-- Weekly polling delta Tidö vs red-green bloc
-- KD small-business cohort favourability (Företagarna surveys)
-- Volume of S labour-policy IPs by week (target: 2–3 per week through June)
-- Regeringen press responses mentioning "företagare" / "småföretag"
-
-### Confidence
-
-**MEDIUM** — polling baseline and cohort math are A2; attribution of individual IP to measurable shift is B3 (base-rate extrapolation).
-
----
-
-## Coalition Mathematics
-<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/coalition-mathematics.md -->
-
-### Current seat distribution (post-2022 val, adjusted through 2026-04)
-
-| Party | Seats | Bloc |
-|---|---:|---|
-| S | 107 | Opposition |
-| M | 68 | Tidö |
-| SD | 73 | Tidö |
-| V | 24 | Opposition |
-| C | 24 | Opposition |
-| KD | 19 | Tidö |
-| MP | 18 | Opposition |
-| L | 16 | Tidö |
-| **Total** | **349** | — |
-
-**Majority**: 175 seats. Tidö: 176 (M 68 + SD 73 + KD 19 + L 16). Opposition: 173 (S 107 + V 24 + C 24 + MP 18) — note C is not in the Tidö agreement but votes case-by-case; excluded from Tidö.
-
-### Hypothetical vote on a HD10447-derived motion
-
-Assume S files a motion proposing partial reinstatement of ersättning för höga sjuklönekostnader. Probable vote breakdown:
-
-| Parti | Ja | Nej | Avstår | Frånvarande | Seats |
-|---|---:|---:|---:|---:|---:|
-| S | 107 | 0 | 0 | 0 | 107 |
-| M | 0 | 68 | 0 | 0 | 68 |
-| SD | 0 | 73 | 0 | 0 | 73 |
-| V | 24 | 0 | 0 | 0 | 24 |
-| C | 18 | 0 | 6 | 0 | 24 |
-| KD | 0 | 19 | 0 | 0 | 19 |
-| MP | 18 | 0 | 0 | 0 | 18 |
-| L | 0 | 16 | 0 | 0 | 16 |
-| **Summa** | **167** | **176** | **6** | **0** | **349** |
-
-Outcome: **Avslag** (Tidö 176 vs Opposition 167). Motion fails on coalition discipline alone.
-
-### Fissure scenarios
-
-#### Fissure A — KD defection (2 KD MPs abstain)
-
-| Parti | Ja | Nej | Avstår |
-|---|---:|---:|---:|
-| Tidö as whole | 0 | 174 | 2 |
-| Opposition | 167 | 0 | 6 |
-| Outcome | | Avslag 174 vs 167 | still holds |
-
-Even 2 KD abstentions don't flip the vote. KD brand harm outpaces vote-level impact.
-
-#### Fissure B — Full KD breaks (entire KD 19 votes Ja)
-
-| Parti | Ja | Nej | Avstår |
-|---|---:|---:|---:|
-| Tidö residual | 0 | 157 | 0 |
-| KD + Opp | 186 | 0 | 6 |
-| Outcome | **Bifall 186** | | |
-
-Full KD defection flips the vote but is politically implausible — would trigger coalition collapse before the vote.
-
-#### Fissure C — L defection (L sometimes votes with opposition on SME matters)
-
-| Parti | Ja | Nej | Avstår |
-|---|---:|---:|---:|
-| Tidö residual | 0 | 160 | 0 |
-| L + Opp | 183 | 0 | 6 |
-| Outcome | **Bifall 183** | | |
-
-L has more history of selective defection than KD; still politically unlikely on a government-wedge issue.
-
-### Post-2026 projection (if polling holds)
-
-Applying 2026Q1 polling (S 33%, M 17%, SD 21%, V 7%, C 5%, MP 5%, KD 4%, L 3%) to 349 seats:
-
-| Party | Projected seats | Mandat |
-|---|---:|---:|
-| S | 115 | 115 |
-| SD | 74 | 74 |
-| M | 60 | 60 |
-| V | 25 | 25 |
-| MP | 18 | 18 |
-| C | 18 | 18 |
-| KD | 14 | 14 — **threshold risk** |
-| L | 0 | 0 — **below 4% threshold** |
-| Remaining | 25 distributed | |
-
-**Post-2026 Tidö** (if L falls below threshold): 148 (M+SD+KD), short of 175 majority. **Red-green bloc**: 176 (S+V+C+MP), majority. HD10447's KD-damage vector matters more for the coalition post-2026 than pre-2026.
-
-### Visual
-
-```mermaid
-graph TB
-  subgraph Current2022to2026[Current Riksdag]
-    T1[Tidö 176]
-    O1[Opposition 173]
-  end
-  subgraph Projected2026[Projected post-valdag 2026]
-    T2[Tidö ~148 if L out]
-    O2[Red-green ~176]
-  end
-  Current2022to2026 -.-> Projected2026
-  style T1 fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
-  style O1 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-  style T2 fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
-  style O2 fill:#1a1e3d,stroke:#00ff88,color:#e0e0e0
-```
-
-### Confidence
-
-**HIGH** on current seats (A1 — Valmyndigheten). **MEDIUM** on 2026 projection (B2 — polling aggregates, seat allocation via Sainte-Laguë).
-
----
-
-## Voter Segmentation
-<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/voter-segmentation.md -->
-
-### Primary segments
-
-| Segment | Size (eligible) | 2022 vote split | Relevance to HD10447 | Est. movement |
-|---|---:|---|---|---|
-| SME owners (< 10 emp) | ~240k | KD/M 35%, S 20% | HIGH — directly subsidised pre-2024 | S +3–5 pp in-segment |
-| SME employees | ~1.2M | ~Swedish avg | MEDIUM — labour-stability narrative | S +0.5–1 pp |
-| Public-sector workers | ~1.5M | S strongest; less exposed | LOW — not directly affected | ~0 |
-| Freelance / self-employed | ~320k | mixed; libertarian-leaning | LOW-MEDIUM — some overlap with SME cohort | S +1 pp |
-| Rural / small-town voters | ~1.8M | SD strong, S second | MEDIUM — small-town SMEs dominate local economy | mixed; S +0.5 pp |
-| Big-city professionals | ~1.4M | S, M, MP, V; educated | LOW — not core narrative audience | ~0 |
-| Soft M voters (centrist) | ~0.6M | M 2022 | MEDIUM — sensitive to "competence" frame | M → S, C, MP micro-shifts |
-| Soft KD voters | ~0.3M | KD 2022 | HIGH — central to KD brand risk | KD → L, M, abstain |
-
-### Narrative receptivity
-
-```mermaid
-quadrantChart
-  title HD10447 narrative reach (size × receptivity)
-  x-axis Low receptivity --> High receptivity
-  y-axis Small segment --> Large segment
-  quadrant-1 Targeted heavyweights
-  quadrant-2 Broad low-salience
-  quadrant-3 Small low-salience
-  quadrant-4 Targeted lightweights
-  "SME owners": [0.85, 0.15]
-  "SME employees": [0.55, 0.70]
-  "Soft M voters": [0.50, 0.35]
-  "Soft KD voters": [0.80, 0.20]
-  "Rural voters": [0.45, 0.85]
-  "Big-city professionals": [0.15, 0.78]
-  "Public-sector workers": [0.10, 0.88]
-```
-
-### Movement model (weighted)
-
-Expected net S gain from HD10447 = Σ(segment size × movement prob) / electorate ≈ **+0.1–0.3 pp nationally**. Expected KD loss ≈ **−0.1–0.4 pp**. See `election-2026-analysis.md` for stacking effect across the full S IP campaign.
-
-### High-information segments for tracking
-
-1. **Soft KD voters** — KD brand-damage canary; watch Företagarna panels.
-2. **SME owners** — direct narrative target; watch Svenskt Näringsliv surveys.
-3. **Rural Gävleborg** — constituency amplification; watch local press coverage.
-
-### Source rating
-
-Segment sizes from SCB 2025 labour-market tables (A1). 2022 vote splits from Valmyndigheten (A1). Movement projections from cluster base-rate modelling (B2).
-
-### Confidence
-
-**MEDIUM** — segment sizes A1; projected shifts B2 (extrapolated from prior wedge-campaign analogs).
-
----
-
-## Comparative International
-<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/comparative-international.md -->
-
-### Comparator table
-
-| Jurisdiction | Equivalent scheme | Current status | Employer cost share | Primary source |
-|---|---|---|---|---|
-| **Sweden (baseline)** | Ersättning för höga sjuklönekostnader (2016–2024) | Abolished 2024 | Employer bears full sick-pay cost weeks 1–2 | <https://www.regeringen.se/> (A2) |
-| **Denmark** | Sygedagpengerefusion (ongoing) | In force — employer reimbursed from day 31 (or from day 1 under § 56 agreement for chronically ill workers) | Employer bears weeks 1–4 | <https://www.borger.dk/> (A1) |
-| **Finland** | Sairauspäiväraha (Kela) | Kela compensates from day 10 onward; SME burden weeks 1–2 | Employer weeks 1–2 only | <https://www.kela.fi/> (A1) |
-| **Norway** | Sykepenger (NAV) | Employer pays first 16 days, state pays from day 17 — much shorter employer burden than SE | Employer 16 days | <https://www.nav.no/> (A1) |
-| **Germany** | Entgeltfortzahlung + Umlageverfahren U1 (EFZG) | Mandatory pooling scheme for small firms (< 30 employees); state covers up to 80% | Employer 6 weeks, but U1 pools the SME burden | <https://www.bmas.de/> (A1) |
-| **EU average** | Varies | ~7/27 member states operate explicit SME reimbursement; another ~8 have shorter employer windows | Mixed | EU-OSHA 2024 report (A1) |
-
-### Key findings
-
-1. **Sweden post-2024 is the Nordic outlier.** All three Nordic comparators maintain an explicit mechanism to shorten or pool SME sick-pay exposure. Denmark, Finland, Norway all cap employer burden in weeks, not month. After 2024, Sweden effectively extends employer-borne cost beyond the Nordic norm.
-2. **Germany's U1 Umlageverfahren** offers a design precedent often cited by Företagarna: mandatory small-firm pooling, 60–80% reimbursement, funded by employer levy. Relevant to HD10447 because it is a "reinstate with a twist" option.
-3. **EU policy trajectory** (European Semester 2025) flags employer sick-pay burden as an SME-productivity factor for several member states — Sweden not yet on that list, but the HD10447 narrative could raise its profile.
-
-### Lessons applicable to HD10447
-
-| Lesson | Implication |
-|---|---|
-| Nordic Scandinavia maintains some form of SME buffer | S can frame Sweden as "Nordic outlier" |
-| German U1 pooling is a revenue-neutral design | KD/M could propose pooling rather than reinstatement |
-| Short employer windows (Norway 16 days) are politically stable across left/right governments | Political risk of abolition is asymmetric — hard to re-establish once removed |
-
-### Visual
-
-```mermaid
-graph TB
-  SE[Sweden<br/>no SME reimbursement<br/>post-2024]
-  DK[Denmark<br/>refusion from day 31]
-  FI[Finland<br/>Kela from day 10]
-  NO[Norway<br/>NAV from day 17]
-  DE[Germany<br/>U1 pooling < 30 emp]
-  EU[EU: ~7/27 with SME scheme]
-  SE -.->|outlier post-2024| DK
-  SE -.->|outlier post-2024| FI
-  SE -.->|outlier post-2024| NO
-  SE -.->|design option| DE
-  style SE fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
-  style DK fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-  style FI fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-  style NO fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-  style DE fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
-  style EU fill:#1a1e3d,stroke:#00ff88,color:#e0e0e0
-```
-
-### Confidence
-
-**HIGH (A1–A2)** — comparator statutes and scheme designs are matter of open public law.
-
----
-
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/historical-parallels.md -->
 
@@ -1240,6 +1110,62 @@ graph LR
 
 ---
 
+## Comparative International
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/comparative-international.md -->
+
+### Comparator table
+
+| Jurisdiction | Equivalent scheme | Current status | Employer cost share | Primary source |
+|---|---|---|---|---|
+| **Sweden (baseline)** | Ersättning för höga sjuklönekostnader (2016–2024) | Abolished 2024 | Employer bears full sick-pay cost weeks 1–2 | <https://www.regeringen.se/> (A2) |
+| **Denmark** | Sygedagpengerefusion (ongoing) | In force — employer reimbursed from day 31 (or from day 1 under § 56 agreement for chronically ill workers) | Employer bears weeks 1–4 | <https://www.borger.dk/> (A1) |
+| **Finland** | Sairauspäiväraha (Kela) | Kela compensates from day 10 onward; SME burden weeks 1–2 | Employer weeks 1–2 only | <https://www.kela.fi/> (A1) |
+| **Norway** | Sykepenger (NAV) | Employer pays first 16 days, state pays from day 17 — much shorter employer burden than SE | Employer 16 days | <https://www.nav.no/> (A1) |
+| **Germany** | Entgeltfortzahlung + Umlageverfahren U1 (EFZG) | Mandatory pooling scheme for small firms (< 30 employees); state covers up to 80% | Employer 6 weeks, but U1 pools the SME burden | <https://www.bmas.de/> (A1) |
+| **EU average** | Varies | ~7/27 member states operate explicit SME reimbursement; another ~8 have shorter employer windows | Mixed | EU-OSHA 2024 report (A1) |
+
+### Key findings
+
+1. **Sweden post-2024 is the Nordic outlier.** All three Nordic comparators maintain an explicit mechanism to shorten or pool SME sick-pay exposure. Denmark, Finland, Norway all cap employer burden in weeks, not month. After 2024, Sweden effectively extends employer-borne cost beyond the Nordic norm.
+2. **Germany's U1 Umlageverfahren** offers a design precedent often cited by Företagarna: mandatory small-firm pooling, 60–80% reimbursement, funded by employer levy. Relevant to HD10447 because it is a "reinstate with a twist" option.
+3. **EU policy trajectory** (European Semester 2025) flags employer sick-pay burden as an SME-productivity factor for several member states — Sweden not yet on that list, but the HD10447 narrative could raise its profile.
+
+### Lessons applicable to HD10447
+
+| Lesson | Implication |
+|---|---|
+| Nordic Scandinavia maintains some form of SME buffer | S can frame Sweden as "Nordic outlier" |
+| German U1 pooling is a revenue-neutral design | KD/M could propose pooling rather than reinstatement |
+| Short employer windows (Norway 16 days) are politically stable across left/right governments | Political risk of abolition is asymmetric — hard to re-establish once removed |
+
+### Visual
+
+```mermaid
+graph TB
+  SE[Sweden<br/>no SME reimbursement<br/>post-2024]
+  DK[Denmark<br/>refusion from day 31]
+  FI[Finland<br/>Kela from day 10]
+  NO[Norway<br/>NAV from day 17]
+  DE[Germany<br/>U1 pooling < 30 emp]
+  EU[EU: ~7/27 with SME scheme]
+  SE -.->|outlier post-2024| DK
+  SE -.->|outlier post-2024| FI
+  SE -.->|outlier post-2024| NO
+  SE -.->|design option| DE
+  style SE fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+  style DK fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  style FI fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  style NO fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+  style DE fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+  style EU fill:#1a1e3d,stroke:#00ff88,color:#e0e0e0
+```
+
+### Confidence
+
+**HIGH (A1–A2)** — comparator statutes and scheme designs are matter of open public law.
+
+---
+
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/implementation-feasibility.md -->
 
@@ -1302,6 +1228,80 @@ flowchart LR
 ### Confidence
 
 **MEDIUM-HIGH** — administrative and legal feasibility A1–A2; political feasibility B2 (based on polling and manifesto signalling).
+
+---
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/media-framing-analysis.md -->
+
+### Frame candidates
+
+#### Frame A — "Regeringen tog bort stödet — och företagen lider" (S-preferred)
+
+S narrative frame. Emphasises small-business pain, Swedish growth gap vs EU, KD's "*företagens parti*" contradiction.
+
+- **Outlets most likely to carry**: Dagens Arbete, ETC, Aftonbladet (ledar), Arbetet.
+- **Amplifiers**: Företagarna partial amplification (if they pick the business-cost angle without partisan tie-in).
+
+#### Frame B — "Effektiviserad företagshjälp — inget att ångra" (Tidö-preferred)
+
+Government counter-frame. Emphasises other measures (arbetsgivaravgifter-sänkningar, växa-stöd), administrativ förenkling.
+
+- **Outlets most likely to carry**: Svenska Dagbladet (borgerlig ledar), Expressen ledar, Bulletin.
+- **Amplifiers**: Skattebetalarnas förening, Timbro.
+
+#### Frame C — "En kostnad man inte räknat på" (neutral/wonkish)
+
+Analytical / data-centric frame. Cites SCB data, Tillväxtverket rapporter, Finanspolitiska rådet.
+
+- **Outlets most likely to carry**: Dagens industri, Dagens Nyheter economy section, Sveriges Radio Ekonomiekot.
+- **Amplifiers**: Academic economists; think tanks.
+
+#### Frame D — "Sverige ut ur Norden" (comparative)
+
+Comparative/Nordic frame — Sweden as Nordic outlier on SME-sick-pay buffer.
+
+- **Outlets most likely to carry**: Nordic-oriented outlets, Europaportalen, Altinget.
+- **Amplifiers**: Nordic labour-market researchers.
+
+### Frame volume forecast (7-day horizon from 2026-05-07)
+
+```mermaid
+xychart-beta
+  title Expected coverage volume per frame (articles, D0–D7)
+  x-axis [D0, D1, D2, D3, D5, D7]
+  y-axis "articles" 0 --> 12
+  line [2, 5, 7, 6, 3, 2]
+  line [1, 3, 5, 5, 4, 3]
+  line [0, 1, 2, 3, 3, 2]
+  line [0, 0, 1, 1, 2, 2]
+```
+
+Legend (line order): A (S-frame) · B (Tidö-frame) · C (wonkish) · D (comparative).
+
+### Narrative contestation matrix
+
+| Frame | Source authority (Admiralty) | Public resonance | Policy-shift leverage |
+|---|:-:|:-:|:-:|
+| A — S-preferred | B2 | HIGH (SME pain) | MEDIUM |
+| B — Tidö-preferred | B2 | MEDIUM (wonkish offsets) | HIGH (status-quo preservation) |
+| C — wonkish | A2–B1 | LOW-MEDIUM | HIGH (drives review scenarios) |
+| D — comparative | A1 | LOW (abstract) | MEDIUM (intellectual asset for opposition) |
+
+### Disinformation / manipulation risk
+
+- **Statistics cherry-picking**: both sides likely to cherry-pick start/end years on sick-leave cost trends. Standard political-communication pattern; no evidence of malicious disinformation.
+- **Deepfake / synthetic media**: none detected in prior Tidö-opposition exchanges on this issue; residual baseline risk.
+
+### Recommended narrative-monitoring indicators
+
+- Word-frequency tracking on Mediearkivet: "sjuklönekostnad" · "småföretag" · "företagens parti" · "sjuklön".
+- Lead-editorial endorsements DN, SvD, Expressen, Aftonbladet D0–D3.
+- Social-media amplification: @socialdemokraterna, @kd, @SvensktNLiv accounts.
+
+### Confidence
+
+**MEDIUM** — frame typology is grounded in past cluster-campaigns (B2); specific volume forecast is indicative (C3 model output).
 
 ---
 
@@ -1628,20 +1628,20 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/media-framing-analysis.md)
+- [`documents/HD10447-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/documents/HD10447-analysis.md)
 - [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/stakeholder-perspectives.md)
+- [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/coalition-mathematics.md)
+- [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/voter-segmentation.md)
 - [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/forward-indicators.md)
 - [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/election-2026-analysis.md)
 - [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/risk-assessment.md)
 - [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/swot-analysis.md)
 - [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/threat-analysis.md)
-- [`documents/HD10447-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/documents/HD10447-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/election-2026-analysis.md)
-- [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/coalition-mathematics.md)
-- [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/comparative-international.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/interpellations/cross-reference-map.md)

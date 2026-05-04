@@ -5,7 +5,7 @@ date: 2026-04-29
 subfolder: month-ahead
 slug: 2026-04-29-month-ahead
 source_folder: analysis/daily/2026-04-29/month-ahead
-generated_at: 2026-05-04T09:52:32.493Z
+generated_at: 2026-05-04T12:16:14.178Z
 language: en
 layout: article
 ---
@@ -73,10 +73,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -291,82 +291,138 @@ graph LR
     style C fill:#00d9ff,color:#000
 ```
 
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/media-framing-analysis.md -->
+## Per-document intelligence
 
-### Per-Party Framing Matrix
+### HD10454
+<!-- source: documents/HD10454-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/documents/HD10454-analysis.md -->
 
-#### Government Parties
+**Document ID**: HD10454  
+**Type**: Interpellation  
+**Filed**: 2026-04-29  
+**Interpellant**: Mattias Vepsä (S)  
+**Addressee**: Camilla Waltersson Grönvall (M), Minister for Schools  
+**Response deadline**: 2026-05-20  
 
-| Party | Primary Frame | Secondary Frame | Vulnerability |
-|-------|--------------|-----------------|--------------|
-| M | "Responsible government delivers fiscal stability and crime reduction" | HC01FiU20 passage as economic stewardship | HVB homes delivery failure if unchallenged |
-| SD | "Sweden's security — crime, borders, order" | Energy sovereignty | Cultural heritage SD interpellation (HD10455) as base mobilization |
-| KD | "Family and social responsibility" | HVB homes — trying to defend AND attack simultaneously | HD10454 makes KD's social responsibility frame vulnerable |
-| L | "Liberal reform, housing markets, individual rights" | Balancing coalition loyalty vs housing red lines | Below-threshold polling existential risk |
+### Document Summary
 
-#### Opposition Parties
+Mattias Vepsä (S) interpellates Schools Minister Waltersson Grönvall on the failure to deliver a police list (register of persons unsuitable for working with children) for use by municipalities in vetting HVB (hem för vård eller boende) staff placements.
 
-| Party | Primary Frame | Secondary Frame | Opportunity |
-|-------|--------------|-----------------|-------------|
-| S | "Government broken its promises to the most vulnerable" | Economic competence via HC01FiU20 attacks | HD10454 HVB homes; HD11767 homeless missing |
-| V | "Class analysis — welfare cuts, privatization failure" | Sick-pay reform rollback (HD10450) | Health and welfare delivery failures |
-| MP | "Green competence — environmental and welfare" | HVB homes (children, social responsibility) | Growing on welfare narrative |
-| C | "Competent responsible center politics" | Strategic ambiguity on coalition | Maximum leverage point before election |
+The interpellation cites SR (Swedish Radio) reporting that confirmed a two-year delay. The minister made a public commitment in summer 2024 to act on this issue. As of April 2026, no regulation or legislation has been issued.
 
-### Press Quadrant Analysis
+### Key Passages
 
-| Outlet | Leaning | Expected HVB Frame | Expected HC01FiU20 Frame |
-|--------|---------|-------------------|--------------------------|
-| SVT/SR (public) | Neutral-critical | Investigative — SR already active (HD10454) | Balanced process coverage |
-| Aftonbladet/Expressen (tabloid) | Left-leaning / populist | STRONG HVB amplification | Fiscal cuts narrative |
-| DN/SvD (broadsheet) | Center-liberal | Moderate — HVB as governance failure | Fiscal stability, L veto dynamic |
-| Dagens Industri | Business/center-right | LOW HVB interest | HC01FiU20 economic credibility |
-| Sydsvenskan/regional | Regional variation | Variable | Infrastructure deficit (Södra stambanan) |
+- **The broken promise**: Minister committed in summer 2024 to implement police list requirement for HVB staff — confirmed by Vepsä's citation of ministerial statements
+- **SR radio evidence**: Vepsä cites SR reporting as documentary basis, indicating active journalistic investigation
+- **Municipality exposure**: Municipalities cannot effectively vet HVB placement staff without the list
+- **Child protection gap**: Children in HVB homes remain in contact with potentially unsuitable personnel
 
-### Narrative Battleground Analysis
+### Analytical Assessment
 
-#### Battleground 1: HVB Homes (ACTIVE)
+**Electoral salience**: VERY HIGH — child protection + broken promise + documented two-year delay  
+**Coalition impact**: HIGH — Waltersson Grönvall (M) is directly implicated; connects to KD (Social Affairs Minister)  
+**PIR mapping**: PIR-8 (NEW) — HVB homes legislation  
+**Legislative pathway**: Fastest path = Cabinet regulation (förordning) within 60 days; Full legislation = 12+ months  
+**Response options** for May 20:
+1. Defensive denial (HIGH risk — extends media cycle)
+2. Investigation announcement (MEDIUM risk — delays without resolution)
+3. Regulatory commitment (LOW risk — converts attack to competence demonstration)
 
-**S frame**: "Two years of broken promises to children in dangerous homes. The government knew and did nothing." (Evidence: HD10454 dated ministerial promise)
+### Cross-Document Connections
 
-**Government counter-frame**: "We are working on comprehensive reform. The police list is one element of a complex system." (Defensive — confirms the narrative without rebuttal)
+- **HD11767**: Homeless missing (S written question) — same actor (vulnerable persons), same minister (KD Social Affairs)
+- **HC01FiU20**: Spring Fiscal Bill — funding envelope for any HVB legislation
+- **Prior cycle PIR-8**: This document created PIR-8 in the analysis chain
 
-**Media amplification risk**: SR is already active (confirmed by HD10454 citation). If SVT Uppdrag granskning files an investigation request (analogous to Carema 2011), the story becomes Tier-1 national coverage.
+### Intelligence Value
 
-**Government winning frame** (if used): "We are delivering legislation in May — here is the specific reform with a timeline." This converts the vulnerability into a competence demonstration.
+This is the highest-intelligence-value document of the 2026-04-29 batch. Full text availability means all factual claims, policy gaps, and ministerial obligations are verifiable. The document creates a dated, documentable narrative that: (1) establishes S's accountability campaign theme for May 2026; (2) sets a hard response deadline (May 20); (3) links to active SR journalism; (4) implicates two ministers (M + KD) simultaneously.
 
-#### Battleground 2: Spring Fiscal Bill (UPCOMING)
+### HD10455
+<!-- source: documents/HD10455-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/documents/HD10455-analysis.md -->
 
-**S frame**: "Cuts to welfare while protecting corporate tax breaks."  
-**Government frame**: "Responsible fiscal management in uncertain global conditions."  
-**L frame**: "We secured housing market protections for ordinary Swedes."
+**Document ID**: HD10455  
+**Type**: Interpellation  
+**Filed**: 2026-04-29  
+**Interpellant**: SD (party; specific MP not confirmed — metadata only)  
+**Addressee**: Culture Minister (M)  
 
-**Media amplification**: DN/SvD likely to frame HC01FiU20 as "will L break the coalition?" — the FiU vote becomes a process story about coalition management.
+### Document Summary (From Metadata)
 
-### Social Media Monitoring Indicators
+SD interpellates the Culture Minister on cultural heritage policy. Specific policy ask not confirmed from metadata. Likely relates to SD's standing agenda items: protecting traditional Swedish cultural expressions, museum collections, national monuments, or opposing cultural funding perceived as non-Swedish.
 
-Key indicators to watch in May 2026:
-- `#HVBhemmen` hashtag volume on X/Twitter — surge indicates SR story breaking
-- `#Riksdagen` mentions of HD10454 document number — public engagement with parliamentary process
-- Aftonbladet "top articles by share" — HVB appearing in top 10 confirms media escalation
+### Analytical Assessment
 
-```mermaid
-%%{init: {'theme': 'dark'}}%%
-quadrantChart
-    title Media Framing Power Map — May 2026 [Riksdagsmonitor]
-    x-axis "Opposition-leaning" --> "Government-leaning"
-    y-axis "Low reach" --> "High reach"
-    quadrant-1 Government amplifiers
-    quadrant-2 Dominant coverage
-    quadrant-3 Marginal
-    quadrant-4 Opposition amplifiers
-    "SR/SVT [HVB active]": [0.45, 0.90]
-    "Aftonbladet/Expressen": [0.25, 0.80]
-    "DN/SvD": [0.55, 0.70]
-    "Dagens Industri": [0.75, 0.45]
-    "Regional press": [0.45, 0.40]
-```
+**Electoral salience**: MEDIUM — SD base mobilization, limited swing voter appeal  
+**Coalition impact**: LOW — SD asking M minister aligned with SD's cultural agenda; no friction expected  
+**PIR mapping**: PIR-2 residue (justice/cultural cluster)  
+**Legislative pathway**: No immediate legislation expected; interpellation response sufficient
+
+### Uncertainty Flag
+
+Full text not retrieved. Assessment confidence limited to [C3]. Analysis will be updated when full text becomes available via riksdagen.se. All specific policy claims in this analysis are preliminary.
+
+### HD10456
+<!-- source: documents/HD10456-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/documents/HD10456-analysis.md -->
+
+**Document ID**: HD10456  
+**Type**: Interpellation  
+**Filed**: 2026-04-29  
+**Interpellant**: SD (party; specific MP not confirmed — metadata only)  
+**Addressee**: Justice Minister Gunnar Strömmer (M)  
+
+### Document Summary (From Metadata)
+
+SD interpellates Justice Minister Strömmer on organ trafficking. This is consistent with SD's recurring justice-and-crime agenda, which includes international organized crime and cross-border trafficking. SD and M are aligned on criminal justice toughening, making this a coalition-reinforcing rather than coalition-challenging interpellation.
+
+### Analytical Assessment
+
+**Electoral salience**: LOW-MEDIUM — crime agenda resonates with SD/M base but organ trafficking is a niche topic  
+**Coalition impact**: LOW — SD asking M to act on joint priority; signals coalition alignment  
+**PIR mapping**: PIR-2 (justice cluster delivery)  
+**Legislative pathway**: Limited — organized crime legislation already progressing via other vehicles (weapons law HD01JuU10); organ trafficking specific bill unlikely in current session
+
+### Cross-Document Connections
+
+- **HD01JuU10** (weapons law): Part of same justice-toughening cluster
+- **HD10455** (SD cultural heritage): Both SD filings on 2026-04-29 — party filing strategy
+- **PIR-2**: Adds to evidence base that justice cluster remains active
+
+### Uncertainty Flag
+
+Full text not retrieved. Assessment confidence limited to [C3].
+
+### HD11767
+<!-- source: documents/HD11767-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/documents/HD11767-analysis.md -->
+
+**Document ID**: HD11767  
+**Type**: Written question  
+**Filed**: 2026-04-29  
+**Questioner**: S (party; specific MP not confirmed — metadata only)  
+**Addressee**: Social Affairs Minister Acko Ankarberg Johansson (KD)  
+**Expected response**: Within 10 working days of 2026-04-29 → by approximately 2026-05-13  
+
+### Document Summary (From Metadata)
+
+S written question to KD Social Affairs Minister on homeless missing persons — specifically relating to failures in social services tracking/monitoring of homeless individuals. This is consistent with the S accountability campaign pattern: targeting KD's social services delivery record.
+
+### Analytical Assessment
+
+**Electoral salience**: MEDIUM — vulnerable persons protection; connects to broader welfare delivery theme  
+**Coalition impact**: LOW-MEDIUM — KD Social Affairs Minister (Ankarberg Johansson) under pressure from both HD11767 (homeless) and indirectly HD10454 (HVB homes)  
+**PIR mapping**: PIR-8 extension (HVB/vulnerable persons)  
+**Response timeline**: Written question response within ~10 working days — approximately May 13, 2026
+
+### Coalition Stress Pattern
+
+KD Social Affairs Minister is now implicated in two accountability tracks simultaneously:
+1. HD10454 (HVB homes) — via Waltersson Grönvall but Social Affairs policy overlap
+2. HD11767 (homeless missing) — directly to KD minister
+
+This dual targeting of KD on social affairs delivery is a coordinated S strategy. KD's "family and social responsibility" brand is the specific vulnerability being exploited.
+
+### Uncertainty Flag
+
+Full text not retrieved. Assessment confidence limited to [C3]. Analysis will be updated when full text becomes available.
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/stakeholder-perspectives.md -->
@@ -420,6 +476,126 @@ flowchart TD
     style SD_P fill:#00d9ff,color:#000
     style S_P fill:#e63946,color:#fff
     style L_P fill:#2196f3,color:#fff
+```
+
+## Coalition Mathematics
+<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/coalition-mathematics.md -->
+
+### Current Riksdag Composition (349 seats)
+
+| Party | Seats | Block | Ja | Nej | Avstår |
+|-------|-------|-------|----|-----|--------|
+| S | 119 | Opposition | Variable | Variable | Variable |
+| SD | 74 | Tidö | 74 | — | — |
+| M | 65 | Tidö | 65 | — | — |
+| V | 26 | Opposition | — | 26 | — |
+| MP | 18 | Opposition | — | 18 | — |
+| KD | 17 | Tidö | 17 | — | — |
+| C | 17 | Ambiguous | Variable | Variable | Variable |
+| L | 13 | Tidö | 13 | — | — |
+
+**Simple majority**: 175/349
+
+### Key Vote Scenarios
+
+#### HC01FiU20 Spring Fiscal Bill Vote
+
+| Scenario | Ja | Nej | Avstår | Outcome |
+|----------|-----|-----|--------|---------|
+| A: L supports | 169 (Tidö) + L=13 = 169 | 163 (opp) | 17 (C) | PASSES if C abstains |
+| B: L abstains | 156 | 163 | 30 (C+L) | DEFEATS if S+V+MP vote Nej |
+| C: C+L support | 186 | 163 | — | PASSES comfortably |
+| D: L defects | 156 | 176 | — | DEFEATS — government falls |
+
+**Minimum for passage**: Tidö (without L) = 156; needs C abstention OR L support to reach 175.
+
+**Gate interpretation**: L is the decisive veto player. C abstention alone is insufficient — 156 Tidö + 17 C-abstain = 156 Ja vs 163 Nej = DEFEAT. Tidö MUST retain L.
+
+#### HD01JuU10 Weapons Law Vote
+
+| Scenario | Ja | Nej | Expected |
+|----------|-----|-----|----------|
+| Standard Tidö + C | 186 | 163 | PASSES — cross-party crime support |
+| Tidö only | 169 | 163+17=180 | Could fail if C votes Nej |
+
+**Assessment**: Cross-party support for weapons law is high based on prior cycle analysis. HD01JuU10 should pass with SD+M+KD+L+C at minimum.
+
+### Confidence and Supply Arithmetic
+
+**Tidö formal coalition**: M(65) + SD(74) + KD(17) + L(13) = 169 seats — 6 short of majority  
+**SD support rationale**: First-time governing role; highest historical seat count; strong incentive to maintain  
+**L veto arithmetic**: 13 seats is exactly the deficit between Tidö (169) and majority (175). L has maximum leverage.  
+**C swing potential**: 17 seats. If C moves to "constructive opposition" or formal support → 186 seats, comfortable majority.
+
+### Coalition Formation Probability Matrix
+
+| Coalition | Seats | Majority? | Probability |
+|-----------|-------|-----------|-------------|
+| M+SD+KD+L (Tidö as is) | 169 | No — needs C or others | 35% if C abstains |
+| M+SD+KD+L+C | 186 | Yes | 15% |
+| S+MP+V (minority) | 163 | No — needs C or MPs | 25% |
+| S+MP+V+C | 180 | Yes | 20% |
+| S+MP+V+L (cross-bloc) | 176 | Yes | 5% |
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+xychart-beta
+    title "Coalition Seat Counts vs 175-Seat Majority [Riksdagsmonitor]"
+    x-axis ["Tidö (169)", "Tidö+C (186)", "S+MP+V (163)", "S+MP+V+C (180)", "Majority (175)"]
+    y-axis "Seats" 150 --> 200
+    bar [169, 186, 163, 180, 175]
+```
+
+## Voter Segmentation
+<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/voter-segmentation.md -->
+
+### Demographic Segments
+
+| Segment | Size (approx) | Primary Issue | Current Alignment | Impact of HVB homes |
+|---------|--------------|---------------|-------------------|---------------------|
+| Young voters (18–29) | 12% of electorate | Housing costs, climate | S/MP/V lean | MEDIUM — housing policy; HVB residual |
+| Middle-age parents (30–50) | 28% | School quality, HVB homes, crime | Swing — Tidö competitive | HIGH — HVB homes directly affects this segment |
+| Pre-retirement (50–65) | 25% | Welfare, healthcare, pensions | S traditional base | MEDIUM — sick-pay day-180 reform (HD10450) |
+| Pensioners (65+) | 25% | Healthcare, pensions | Stable SD/KD | LOW for HVB; HIGH for healthcare delivery |
+| Urban professionals | 18% | Economy, housing | L/C/M lean | MEDIUM — fiscal competence |
+
+### Regional Segments
+
+| Region | Dominant Party | Key Local Issues | Swing Potential |
+|--------|---------------|-----------------|----------------|
+| Norrland | S | Jobs, regional services | LOW — safe S |
+| Stockholm metro | M/L | Housing, economy | HIGH — critical swing |
+| Malmö/Skåne | SD | Crime, immigration | MEDIUM |
+| Gothenburg | S/V | Labour, welfare | LOW-MEDIUM |
+| Rural south/center | SD/C | Agriculture, infrastructure | MEDIUM |
+
+### Ideological Segments
+
+| Segment | Est. Size | Identity | HVB Homes Relevance | HC01FiU20 Relevance |
+|---------|----------|----------|---------------------|---------------------|
+| Welfare state defenders | 30% | S/V/MP | HIGH — HVB failures confirm welfare decline narrative | HIGH — fiscal cuts |
+| Security-first voters | 22% | SD | LOW for HVB; HIGH for crime | MEDIUM |
+| Economic liberals | 15% | M/L | LOW for HVB | HIGH — fiscal discipline |
+| Christian-social | 8% | KD | HIGH for HVB (child protection, family policy) | MEDIUM |
+| Green/post-materialist | 8% | MP/V | MEDIUM | MEDIUM |
+| Center/agrarian | 6% | C | MEDIUM for HVB | MEDIUM for housing |
+
+### Key Swing Segment: Middle-age Parents (30–50)
+
+**Significance**: This 28% segment is the decisive swing group. They are exposed to HVB homes issues (school-age children, awareness of placement system), care about crime delivery (weapons law, youth crime), and are sensitive to both housing costs (HC01FiU20) and child protection quality (HD10454).
+
+**2022 performance**: S won this segment narrowly (+2pp vs Tidö parties combined). If S gains +4pp in this segment from HVB homes accountability, it translates to approximately +1.1pp in overall vote share — potentially decisive.
+
+**Government counter-strategy**: A fast-track HVB homes legislation commitment in the May 20 ministerial response directly addresses this segment's primary concern. Failure to do so cedes this segment to S.
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+pie title Voter Segment Distribution
+    "Middle-age Parents [High swing]" : 28
+    "Pre-retirement [S lean]" : 25
+    "Pensioners [Stable]" : 25
+    "Young voters [S/MP/V]" : 12
+    "Urban professionals [M/L]" : 10
 ```
 
 ## Forward Indicators
@@ -539,6 +715,78 @@ xychart-beta
 | SD tables energy resolution for Riksdag | C | riksdagen.se |
 | Ministerial response (May 20) defers HVB legislation | B | riksdagen.se document |
 | C party declares HC01FiU20 support | A or D | C party press releases |
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/election-2026-analysis.md -->
+
+### Current Polling Aggregate (March-April 2026)
+
+| Party | Estimated Vote % | Seats (349 total) | Coalition Block | Change (MoM) |
+|-------|-----------------|-------------------|-----------------|--------------|
+| S | 34.2% | 119 | Opposition | +0.5 |
+| SD | 21.3% | 74 | Tidö | -0.3 |
+| M | 18.8% | 65 | Tidö | +0.2 |
+| V | 7.4% | 26 | Opposition | 0.0 |
+| MP | 5.3% | 18 | Opposition | +0.4 |
+| KD | 4.8% | 17 | Tidö | -0.1 |
+| C | 4.8% | 17 | Ambiguous | -0.2 |
+| L | 4.4% | 13 | Tidö | -0.1 |
+
+**Tidö block total**: 169/349 (4 short of majority)  
+**Tidö + C**: 186 (majority, but C not aligned)  
+**Opposition (S+V+MP)**: 163  
+**Minimum governing majority**: 175 seats
+
+### Coalition Viability Analysis
+
+#### Scenario A: Tidö Renewed (requires C or independent support)
+- **Probability**: 35%
+- **Condition**: Government delivers HC01FiU20, weapons law, maintains HVB homes narrative; polls close to 173+ before September
+- **Key constraint**: L must stay above 4% threshold; SD must not lose more than 2pp
+
+#### Scenario B: S-led Minority Coalition
+- **Probability**: 45%
+- **Condition**: S+MP+V total reaches 163+; C provides confidence and supply
+- **Key constraint**: C party decision; MP stays above 4% threshold
+
+#### Scenario C: Grand Coalition S+M
+- **Probability**: 5%
+- **Condition**: Neither bloc can form majority; constitutional pressure forces unusual coalition
+- **Historical precedent**: No Swedish grand coalition since 1940s
+
+#### Scenario D: Continued Tidö (full majority)
+- **Probability**: 15%
+- **Condition**: C formally joins Tidö; L stays above threshold; SD polling stable
+
+### Critical Threshold Analysis
+
+| Party | Current % | 4% Threshold | Risk Level |
+|-------|-----------|-------------|-----------|
+| L | 4.4% | 4.0% | HIGH — 0.4pp margin |
+| KD | 4.8% | 4.0% | MEDIUM — 0.8pp margin |
+| MP | 5.3% | 4.0% | LOW |
+| C | 4.8% | 4.0% | MEDIUM |
+
+**Critical watch**: L at 4.4% — the highest threshold risk in current polling. If L falls below 4%, Tidö loses 13 seats and the opposition gains an outright governing majority.
+
+### Campaign Trajectory — May-September 2026
+
+| Month | Key Events | Expected Impact |
+|-------|-----------|----------------|
+| May 2026 | HD10454 ministerial response (May 20); HC01FiU20 FiU vote | HVB test; fiscal credibility |
+| June 2026 | Riksdag last sitting day; summer campaign begins | Narrative set |
+| July 2026 | Summer recess | Limited news; polling drift |
+| August 2026 | Campaign intensification; final polling | Critical movement window |
+| September 7-14 2026 | Election day (expected) | Outcome |
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+xychart-beta
+    title "Projected Seat Distribution — Election 2026 [Riksdagsmonitor]"
+    x-axis ["S", "SD", "M", "V", "MP", "KD", "C", "L"]
+    y-axis "Seats (of 349)" 0 --> 130
+    bar [119, 74, 65, 26, 18, 17, 17, 13]
+```
 
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/risk-assessment.md -->
@@ -744,387 +992,6 @@ graph TD
     style G fill:#ff006e,color:#fff
 ```
 
-## Per-document intelligence
-
-### HD10454
-<!-- source: documents/HD10454-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/documents/HD10454-analysis.md -->
-
-**Document ID**: HD10454  
-**Type**: Interpellation  
-**Filed**: 2026-04-29  
-**Interpellant**: Mattias Vepsä (S)  
-**Addressee**: Camilla Waltersson Grönvall (M), Minister for Schools  
-**Response deadline**: 2026-05-20  
-
-### Document Summary
-
-Mattias Vepsä (S) interpellates Schools Minister Waltersson Grönvall on the failure to deliver a police list (register of persons unsuitable for working with children) for use by municipalities in vetting HVB (hem för vård eller boende) staff placements.
-
-The interpellation cites SR (Swedish Radio) reporting that confirmed a two-year delay. The minister made a public commitment in summer 2024 to act on this issue. As of April 2026, no regulation or legislation has been issued.
-
-### Key Passages
-
-- **The broken promise**: Minister committed in summer 2024 to implement police list requirement for HVB staff — confirmed by Vepsä's citation of ministerial statements
-- **SR radio evidence**: Vepsä cites SR reporting as documentary basis, indicating active journalistic investigation
-- **Municipality exposure**: Municipalities cannot effectively vet HVB placement staff without the list
-- **Child protection gap**: Children in HVB homes remain in contact with potentially unsuitable personnel
-
-### Analytical Assessment
-
-**Electoral salience**: VERY HIGH — child protection + broken promise + documented two-year delay  
-**Coalition impact**: HIGH — Waltersson Grönvall (M) is directly implicated; connects to KD (Social Affairs Minister)  
-**PIR mapping**: PIR-8 (NEW) — HVB homes legislation  
-**Legislative pathway**: Fastest path = Cabinet regulation (förordning) within 60 days; Full legislation = 12+ months  
-**Response options** for May 20:
-1. Defensive denial (HIGH risk — extends media cycle)
-2. Investigation announcement (MEDIUM risk — delays without resolution)
-3. Regulatory commitment (LOW risk — converts attack to competence demonstration)
-
-### Cross-Document Connections
-
-- **HD11767**: Homeless missing (S written question) — same actor (vulnerable persons), same minister (KD Social Affairs)
-- **HC01FiU20**: Spring Fiscal Bill — funding envelope for any HVB legislation
-- **Prior cycle PIR-8**: This document created PIR-8 in the analysis chain
-
-### Intelligence Value
-
-This is the highest-intelligence-value document of the 2026-04-29 batch. Full text availability means all factual claims, policy gaps, and ministerial obligations are verifiable. The document creates a dated, documentable narrative that: (1) establishes S's accountability campaign theme for May 2026; (2) sets a hard response deadline (May 20); (3) links to active SR journalism; (4) implicates two ministers (M + KD) simultaneously.
-
-### HD10455
-<!-- source: documents/HD10455-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/documents/HD10455-analysis.md -->
-
-**Document ID**: HD10455  
-**Type**: Interpellation  
-**Filed**: 2026-04-29  
-**Interpellant**: SD (party; specific MP not confirmed — metadata only)  
-**Addressee**: Culture Minister (M)  
-
-### Document Summary (From Metadata)
-
-SD interpellates the Culture Minister on cultural heritage policy. Specific policy ask not confirmed from metadata. Likely relates to SD's standing agenda items: protecting traditional Swedish cultural expressions, museum collections, national monuments, or opposing cultural funding perceived as non-Swedish.
-
-### Analytical Assessment
-
-**Electoral salience**: MEDIUM — SD base mobilization, limited swing voter appeal  
-**Coalition impact**: LOW — SD asking M minister aligned with SD's cultural agenda; no friction expected  
-**PIR mapping**: PIR-2 residue (justice/cultural cluster)  
-**Legislative pathway**: No immediate legislation expected; interpellation response sufficient
-
-### Uncertainty Flag
-
-Full text not retrieved. Assessment confidence limited to [C3]. Analysis will be updated when full text becomes available via riksdagen.se. All specific policy claims in this analysis are preliminary.
-
-### HD10456
-<!-- source: documents/HD10456-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/documents/HD10456-analysis.md -->
-
-**Document ID**: HD10456  
-**Type**: Interpellation  
-**Filed**: 2026-04-29  
-**Interpellant**: SD (party; specific MP not confirmed — metadata only)  
-**Addressee**: Justice Minister Gunnar Strömmer (M)  
-
-### Document Summary (From Metadata)
-
-SD interpellates Justice Minister Strömmer on organ trafficking. This is consistent with SD's recurring justice-and-crime agenda, which includes international organized crime and cross-border trafficking. SD and M are aligned on criminal justice toughening, making this a coalition-reinforcing rather than coalition-challenging interpellation.
-
-### Analytical Assessment
-
-**Electoral salience**: LOW-MEDIUM — crime agenda resonates with SD/M base but organ trafficking is a niche topic  
-**Coalition impact**: LOW — SD asking M to act on joint priority; signals coalition alignment  
-**PIR mapping**: PIR-2 (justice cluster delivery)  
-**Legislative pathway**: Limited — organized crime legislation already progressing via other vehicles (weapons law HD01JuU10); organ trafficking specific bill unlikely in current session
-
-### Cross-Document Connections
-
-- **HD01JuU10** (weapons law): Part of same justice-toughening cluster
-- **HD10455** (SD cultural heritage): Both SD filings on 2026-04-29 — party filing strategy
-- **PIR-2**: Adds to evidence base that justice cluster remains active
-
-### Uncertainty Flag
-
-Full text not retrieved. Assessment confidence limited to [C3].
-
-### HD11767
-<!-- source: documents/HD11767-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/documents/HD11767-analysis.md -->
-
-**Document ID**: HD11767  
-**Type**: Written question  
-**Filed**: 2026-04-29  
-**Questioner**: S (party; specific MP not confirmed — metadata only)  
-**Addressee**: Social Affairs Minister Acko Ankarberg Johansson (KD)  
-**Expected response**: Within 10 working days of 2026-04-29 → by approximately 2026-05-13  
-
-### Document Summary (From Metadata)
-
-S written question to KD Social Affairs Minister on homeless missing persons — specifically relating to failures in social services tracking/monitoring of homeless individuals. This is consistent with the S accountability campaign pattern: targeting KD's social services delivery record.
-
-### Analytical Assessment
-
-**Electoral salience**: MEDIUM — vulnerable persons protection; connects to broader welfare delivery theme  
-**Coalition impact**: LOW-MEDIUM — KD Social Affairs Minister (Ankarberg Johansson) under pressure from both HD11767 (homeless) and indirectly HD10454 (HVB homes)  
-**PIR mapping**: PIR-8 extension (HVB/vulnerable persons)  
-**Response timeline**: Written question response within ~10 working days — approximately May 13, 2026
-
-### Coalition Stress Pattern
-
-KD Social Affairs Minister is now implicated in two accountability tracks simultaneously:
-1. HD10454 (HVB homes) — via Waltersson Grönvall but Social Affairs policy overlap
-2. HD11767 (homeless missing) — directly to KD minister
-
-This dual targeting of KD on social affairs delivery is a coordinated S strategy. KD's "family and social responsibility" brand is the specific vulnerability being exploited.
-
-### Uncertainty Flag
-
-Full text not retrieved. Assessment confidence limited to [C3]. Analysis will be updated when full text becomes available.
-
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/election-2026-analysis.md -->
-
-### Current Polling Aggregate (March-April 2026)
-
-| Party | Estimated Vote % | Seats (349 total) | Coalition Block | Change (MoM) |
-|-------|-----------------|-------------------|-----------------|--------------|
-| S | 34.2% | 119 | Opposition | +0.5 |
-| SD | 21.3% | 74 | Tidö | -0.3 |
-| M | 18.8% | 65 | Tidö | +0.2 |
-| V | 7.4% | 26 | Opposition | 0.0 |
-| MP | 5.3% | 18 | Opposition | +0.4 |
-| KD | 4.8% | 17 | Tidö | -0.1 |
-| C | 4.8% | 17 | Ambiguous | -0.2 |
-| L | 4.4% | 13 | Tidö | -0.1 |
-
-**Tidö block total**: 169/349 (4 short of majority)  
-**Tidö + C**: 186 (majority, but C not aligned)  
-**Opposition (S+V+MP)**: 163  
-**Minimum governing majority**: 175 seats
-
-### Coalition Viability Analysis
-
-#### Scenario A: Tidö Renewed (requires C or independent support)
-- **Probability**: 35%
-- **Condition**: Government delivers HC01FiU20, weapons law, maintains HVB homes narrative; polls close to 173+ before September
-- **Key constraint**: L must stay above 4% threshold; SD must not lose more than 2pp
-
-#### Scenario B: S-led Minority Coalition
-- **Probability**: 45%
-- **Condition**: S+MP+V total reaches 163+; C provides confidence and supply
-- **Key constraint**: C party decision; MP stays above 4% threshold
-
-#### Scenario C: Grand Coalition S+M
-- **Probability**: 5%
-- **Condition**: Neither bloc can form majority; constitutional pressure forces unusual coalition
-- **Historical precedent**: No Swedish grand coalition since 1940s
-
-#### Scenario D: Continued Tidö (full majority)
-- **Probability**: 15%
-- **Condition**: C formally joins Tidö; L stays above threshold; SD polling stable
-
-### Critical Threshold Analysis
-
-| Party | Current % | 4% Threshold | Risk Level |
-|-------|-----------|-------------|-----------|
-| L | 4.4% | 4.0% | HIGH — 0.4pp margin |
-| KD | 4.8% | 4.0% | MEDIUM — 0.8pp margin |
-| MP | 5.3% | 4.0% | LOW |
-| C | 4.8% | 4.0% | MEDIUM |
-
-**Critical watch**: L at 4.4% — the highest threshold risk in current polling. If L falls below 4%, Tidö loses 13 seats and the opposition gains an outright governing majority.
-
-### Campaign Trajectory — May-September 2026
-
-| Month | Key Events | Expected Impact |
-|-------|-----------|----------------|
-| May 2026 | HD10454 ministerial response (May 20); HC01FiU20 FiU vote | HVB test; fiscal credibility |
-| June 2026 | Riksdag last sitting day; summer campaign begins | Narrative set |
-| July 2026 | Summer recess | Limited news; polling drift |
-| August 2026 | Campaign intensification; final polling | Critical movement window |
-| September 7-14 2026 | Election day (expected) | Outcome |
-
-```mermaid
-%%{init: {'theme': 'dark'}}%%
-xychart-beta
-    title "Projected Seat Distribution — Election 2026 [Riksdagsmonitor]"
-    x-axis ["S", "SD", "M", "V", "MP", "KD", "C", "L"]
-    y-axis "Seats (of 349)" 0 --> 130
-    bar [119, 74, 65, 26, 18, 17, 17, 13]
-```
-
-## Coalition Mathematics
-<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/coalition-mathematics.md -->
-
-### Current Riksdag Composition (349 seats)
-
-| Party | Seats | Block | Ja | Nej | Avstår |
-|-------|-------|-------|----|-----|--------|
-| S | 119 | Opposition | Variable | Variable | Variable |
-| SD | 74 | Tidö | 74 | — | — |
-| M | 65 | Tidö | 65 | — | — |
-| V | 26 | Opposition | — | 26 | — |
-| MP | 18 | Opposition | — | 18 | — |
-| KD | 17 | Tidö | 17 | — | — |
-| C | 17 | Ambiguous | Variable | Variable | Variable |
-| L | 13 | Tidö | 13 | — | — |
-
-**Simple majority**: 175/349
-
-### Key Vote Scenarios
-
-#### HC01FiU20 Spring Fiscal Bill Vote
-
-| Scenario | Ja | Nej | Avstår | Outcome |
-|----------|-----|-----|--------|---------|
-| A: L supports | 169 (Tidö) + L=13 = 169 | 163 (opp) | 17 (C) | PASSES if C abstains |
-| B: L abstains | 156 | 163 | 30 (C+L) | DEFEATS if S+V+MP vote Nej |
-| C: C+L support | 186 | 163 | — | PASSES comfortably |
-| D: L defects | 156 | 176 | — | DEFEATS — government falls |
-
-**Minimum for passage**: Tidö (without L) = 156; needs C abstention OR L support to reach 175.
-
-**Gate interpretation**: L is the decisive veto player. C abstention alone is insufficient — 156 Tidö + 17 C-abstain = 156 Ja vs 163 Nej = DEFEAT. Tidö MUST retain L.
-
-#### HD01JuU10 Weapons Law Vote
-
-| Scenario | Ja | Nej | Expected |
-|----------|-----|-----|----------|
-| Standard Tidö + C | 186 | 163 | PASSES — cross-party crime support |
-| Tidö only | 169 | 163+17=180 | Could fail if C votes Nej |
-
-**Assessment**: Cross-party support for weapons law is high based on prior cycle analysis. HD01JuU10 should pass with SD+M+KD+L+C at minimum.
-
-### Confidence and Supply Arithmetic
-
-**Tidö formal coalition**: M(65) + SD(74) + KD(17) + L(13) = 169 seats — 6 short of majority  
-**SD support rationale**: First-time governing role; highest historical seat count; strong incentive to maintain  
-**L veto arithmetic**: 13 seats is exactly the deficit between Tidö (169) and majority (175). L has maximum leverage.  
-**C swing potential**: 17 seats. If C moves to "constructive opposition" or formal support → 186 seats, comfortable majority.
-
-### Coalition Formation Probability Matrix
-
-| Coalition | Seats | Majority? | Probability |
-|-----------|-------|-----------|-------------|
-| M+SD+KD+L (Tidö as is) | 169 | No — needs C or others | 35% if C abstains |
-| M+SD+KD+L+C | 186 | Yes | 15% |
-| S+MP+V (minority) | 163 | No — needs C or MPs | 25% |
-| S+MP+V+C | 180 | Yes | 20% |
-| S+MP+V+L (cross-bloc) | 176 | Yes | 5% |
-
-```mermaid
-%%{init: {'theme': 'dark'}}%%
-xychart-beta
-    title "Coalition Seat Counts vs 175-Seat Majority [Riksdagsmonitor]"
-    x-axis ["Tidö (169)", "Tidö+C (186)", "S+MP+V (163)", "S+MP+V+C (180)", "Majority (175)"]
-    y-axis "Seats" 150 --> 200
-    bar [169, 186, 163, 180, 175]
-```
-
-## Voter Segmentation
-<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/voter-segmentation.md -->
-
-### Demographic Segments
-
-| Segment | Size (approx) | Primary Issue | Current Alignment | Impact of HVB homes |
-|---------|--------------|---------------|-------------------|---------------------|
-| Young voters (18–29) | 12% of electorate | Housing costs, climate | S/MP/V lean | MEDIUM — housing policy; HVB residual |
-| Middle-age parents (30–50) | 28% | School quality, HVB homes, crime | Swing — Tidö competitive | HIGH — HVB homes directly affects this segment |
-| Pre-retirement (50–65) | 25% | Welfare, healthcare, pensions | S traditional base | MEDIUM — sick-pay day-180 reform (HD10450) |
-| Pensioners (65+) | 25% | Healthcare, pensions | Stable SD/KD | LOW for HVB; HIGH for healthcare delivery |
-| Urban professionals | 18% | Economy, housing | L/C/M lean | MEDIUM — fiscal competence |
-
-### Regional Segments
-
-| Region | Dominant Party | Key Local Issues | Swing Potential |
-|--------|---------------|-----------------|----------------|
-| Norrland | S | Jobs, regional services | LOW — safe S |
-| Stockholm metro | M/L | Housing, economy | HIGH — critical swing |
-| Malmö/Skåne | SD | Crime, immigration | MEDIUM |
-| Gothenburg | S/V | Labour, welfare | LOW-MEDIUM |
-| Rural south/center | SD/C | Agriculture, infrastructure | MEDIUM |
-
-### Ideological Segments
-
-| Segment | Est. Size | Identity | HVB Homes Relevance | HC01FiU20 Relevance |
-|---------|----------|----------|---------------------|---------------------|
-| Welfare state defenders | 30% | S/V/MP | HIGH — HVB failures confirm welfare decline narrative | HIGH — fiscal cuts |
-| Security-first voters | 22% | SD | LOW for HVB; HIGH for crime | MEDIUM |
-| Economic liberals | 15% | M/L | LOW for HVB | HIGH — fiscal discipline |
-| Christian-social | 8% | KD | HIGH for HVB (child protection, family policy) | MEDIUM |
-| Green/post-materialist | 8% | MP/V | MEDIUM | MEDIUM |
-| Center/agrarian | 6% | C | MEDIUM for HVB | MEDIUM for housing |
-
-### Key Swing Segment: Middle-age Parents (30–50)
-
-**Significance**: This 28% segment is the decisive swing group. They are exposed to HVB homes issues (school-age children, awareness of placement system), care about crime delivery (weapons law, youth crime), and are sensitive to both housing costs (HC01FiU20) and child protection quality (HD10454).
-
-**2022 performance**: S won this segment narrowly (+2pp vs Tidö parties combined). If S gains +4pp in this segment from HVB homes accountability, it translates to approximately +1.1pp in overall vote share — potentially decisive.
-
-**Government counter-strategy**: A fast-track HVB homes legislation commitment in the May 20 ministerial response directly addresses this segment's primary concern. Failure to do so cedes this segment to S.
-
-```mermaid
-%%{init: {'theme': 'dark'}}%%
-pie title Voter Segment Distribution
-    "Middle-age Parents [High swing]" : 28
-    "Pre-retirement [S lean]" : 25
-    "Pensioners [Stable]" : 25
-    "Young voters [S/MP/V]" : 12
-    "Urban professionals [M/L]" : 10
-```
-
-## Comparative International
-<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/comparative-international.md -->
-
-### Comparator 1: Denmark — Minority Government Management
-
-**Relevance**: Denmark's Social Democrat minority government under Mette Frederiksen managed multiple opposition accountability campaigns in 2023–24 through "confidence and supply" agreements with multiple small parties — structurally analogous to Sweden's Tidö coalition dynamics.
-
-**Key lesson**: Denmark used rapid legislative pledges in response to accountability pressure (notably on eldercare failures in 2022) to convert opposition attacks into governing competence demonstrations. Frederiksen's eldercare law was drafted and committed within 8 weeks of initial exposure.
-
-**Application to Sweden**: If Waltersson Grönvall commits to HVB homes legislation in the May 20 response, Sweden follows the Danish "legislative pledge" pattern — converting R1 risk to an electoral asset. If the response is defensive, Sweden risks the 2019 Swedish eldercare model failure (prolonged media cycle, no legislation delivered before election).
-
-**IMF data [B2]**: Denmark GDP growth 2026f = +1.8% vs Sweden +1.4% (IMF WEO Apr-2026). Stronger economic backdrop gave Frederiksen more fiscal room for rapid response legislation.
-
-### Comparator 2: Finland — Coalition Integrity Under Pressure
-
-**Relevance**: Finland's Orpo government (2023–present) maintained a 5-party coalition including Finns Party (eurosceptic, analogous to SD) and Swedish People's Party (analogous to L in minority veto player role). Coalition survived multiple welfare policy tensions through explicit side payments and policy sequencing.
-
-**Key lesson**: Finland's model shows that veto players (L in Sweden) can be managed through visible "wins" in adjacent policy areas. Orpo gave SPP visible healthcare wins while advancing Finns Party criminal justice priorities — sequential satisfaction rather than simultaneous compromise.
-
-**Application to Sweden**: L's HC01FiU20 housing red line can be managed via explicit visible L "win" in complementary policy area (housing taxation or rental market reform). Without this, L rebellion remains the highest internal coalition risk.
-
-**IMF data [B2]**: Finland GDP growth 2026f = +1.1% (IMF WEO Apr-2026) — fiscal pressure greater than Sweden, making side payments harder. Sweden has more fiscal space for such maneuvers.
-
-### Comparator 3: Germany — Pre-election Accountability Campaign Dynamics
-
-**Relevance**: Germany's 2024–25 period showed how opposition interpellation flooding (Anfragen in Bundestag) can sustain a media accountability cycle against a governing coalition under electoral pressure.
-
-**Application to Sweden**: The S party's 7+ interpellation strategy in April 2026 mirrors the AfD/CDU coordinated Anfragen campaigns of 2024. German experience shows such campaigns typically generate 2–6 weeks of media cycle, then plateau unless a new trigger event emerges. The May 20 HVB ministerial response is the critical next trigger event.
-
-### Nordic Economic Peer Comparison (IMF WEO Apr-2026)
-
-| Country | GDP Growth 2026f | Unemployment 2026f | Fiscal Space | Coalition Type |
-|---------|-----------------|-------------------|--------------|---------------|
-| Sweden | +1.4% | 8.4% | HIGH (low debt ~35% GDP) | Minority Tidö |
-| Denmark | +1.8% | 5.2% | HIGH | Minority SD-led |
-| Norway | +2.1% | 4.0% | VERY HIGH (oil fund) | Conservative-led |
-| Finland | +1.1% | 7.8% | MEDIUM | Orpo 5-party |
-| Germany | +0.6% | 5.3% | MEDIUM-LOW | SPD-led caretaker |
-
-```mermaid
-%%{init: {'theme': 'dark'}}%%
-xychart-beta
-    title "Nordic GDP Growth Forecast 2026 — IMF WEO [Riksdagsmonitor]"
-    x-axis ["Sweden", "Denmark", "Norway", "Finland", "Germany"]
-    y-axis "GDP Growth % 2026f" 0 --> 3
-    bar [1.4, 1.8, 2.1, 1.1, 0.6]
-```
-
-### Key Cross-Country Intelligence Judgments
-
-**KJ-INT-1**: Sweden's fiscal position is comparatively strong vs Nordic peers and provides material capacity for HVB legislative response. The Danish eldercare model offers the highest-probability path for Waltersson Grönvall. **[B2]**
-
-**KJ-INT-2**: Finland's coalition management model (sequential veto player satisfaction) reduces L defection probability if government offers L a visible housing tax win alongside HC01FiU20. **[C3]**
-
-**KJ-INT-3**: German interpellation campaign dynamics suggest the S accountability cycle peaks ~4 weeks after the May 20 ministerial response — i.e., mid-June 2026 — then subsides unless a new documentary trigger emerges. **[C3]**
-
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/historical-parallels.md -->
 
@@ -1188,6 +1055,62 @@ timeline
         May 20 2026 : Ministerial response (critical inflection)
         Sep 2026 : Election
 ```
+
+## Comparative International
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/comparative-international.md -->
+
+### Comparator 1: Denmark — Minority Government Management
+
+**Relevance**: Denmark's Social Democrat minority government under Mette Frederiksen managed multiple opposition accountability campaigns in 2023–24 through "confidence and supply" agreements with multiple small parties — structurally analogous to Sweden's Tidö coalition dynamics.
+
+**Key lesson**: Denmark used rapid legislative pledges in response to accountability pressure (notably on eldercare failures in 2022) to convert opposition attacks into governing competence demonstrations. Frederiksen's eldercare law was drafted and committed within 8 weeks of initial exposure.
+
+**Application to Sweden**: If Waltersson Grönvall commits to HVB homes legislation in the May 20 response, Sweden follows the Danish "legislative pledge" pattern — converting R1 risk to an electoral asset. If the response is defensive, Sweden risks the 2019 Swedish eldercare model failure (prolonged media cycle, no legislation delivered before election).
+
+**IMF data [B2]**: Denmark GDP growth 2026f = +1.8% vs Sweden +1.4% (IMF WEO Apr-2026). Stronger economic backdrop gave Frederiksen more fiscal room for rapid response legislation.
+
+### Comparator 2: Finland — Coalition Integrity Under Pressure
+
+**Relevance**: Finland's Orpo government (2023–present) maintained a 5-party coalition including Finns Party (eurosceptic, analogous to SD) and Swedish People's Party (analogous to L in minority veto player role). Coalition survived multiple welfare policy tensions through explicit side payments and policy sequencing.
+
+**Key lesson**: Finland's model shows that veto players (L in Sweden) can be managed through visible "wins" in adjacent policy areas. Orpo gave SPP visible healthcare wins while advancing Finns Party criminal justice priorities — sequential satisfaction rather than simultaneous compromise.
+
+**Application to Sweden**: L's HC01FiU20 housing red line can be managed via explicit visible L "win" in complementary policy area (housing taxation or rental market reform). Without this, L rebellion remains the highest internal coalition risk.
+
+**IMF data [B2]**: Finland GDP growth 2026f = +1.1% (IMF WEO Apr-2026) — fiscal pressure greater than Sweden, making side payments harder. Sweden has more fiscal space for such maneuvers.
+
+### Comparator 3: Germany — Pre-election Accountability Campaign Dynamics
+
+**Relevance**: Germany's 2024–25 period showed how opposition interpellation flooding (Anfragen in Bundestag) can sustain a media accountability cycle against a governing coalition under electoral pressure.
+
+**Application to Sweden**: The S party's 7+ interpellation strategy in April 2026 mirrors the AfD/CDU coordinated Anfragen campaigns of 2024. German experience shows such campaigns typically generate 2–6 weeks of media cycle, then plateau unless a new trigger event emerges. The May 20 HVB ministerial response is the critical next trigger event.
+
+### Nordic Economic Peer Comparison (IMF WEO Apr-2026)
+
+| Country | GDP Growth 2026f | Unemployment 2026f | Fiscal Space | Coalition Type |
+|---------|-----------------|-------------------|--------------|---------------|
+| Sweden | +1.4% | 8.4% | HIGH (low debt ~35% GDP) | Minority Tidö |
+| Denmark | +1.8% | 5.2% | HIGH | Minority SD-led |
+| Norway | +2.1% | 4.0% | VERY HIGH (oil fund) | Conservative-led |
+| Finland | +1.1% | 7.8% | MEDIUM | Orpo 5-party |
+| Germany | +0.6% | 5.3% | MEDIUM-LOW | SPD-led caretaker |
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+xychart-beta
+    title "Nordic GDP Growth Forecast 2026 — IMF WEO [Riksdagsmonitor]"
+    x-axis ["Sweden", "Denmark", "Norway", "Finland", "Germany"]
+    y-axis "GDP Growth % 2026f" 0 --> 3
+    bar [1.4, 1.8, 2.1, 1.1, 0.6]
+```
+
+### Key Cross-Country Intelligence Judgments
+
+**KJ-INT-1**: Sweden's fiscal position is comparatively strong vs Nordic peers and provides material capacity for HVB legislative response. The Danish eldercare model offers the highest-probability path for Waltersson Grönvall. **[B2]**
+
+**KJ-INT-2**: Finland's coalition management model (sequential veto player satisfaction) reduces L defection probability if government offers L a visible housing tax win alongside HC01FiU20. **[C3]**
+
+**KJ-INT-3**: German interpellation campaign dynamics suggest the S accountability cycle peaks ~4 weeks after the May 20 ministerial response — i.e., mid-June 2026 — then subsides unless a new documentary trigger emerges. **[C3]**
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/implementation-feasibility.md -->
@@ -1253,6 +1176,83 @@ xychart-beta
 3. **Procurement risk**: If government commits to new legislation rather than regulatory fix, procurement of IT system upgrades required — 12–18 month timeline, beyond election.
 
 **Recommendation**: Fastest credible path = Cabinet regulation (förordning) committing to expanded police list access within 60 days + independent evaluation commission (SOU) for longer-term HVB quality reform. This is administratively feasible within election window.
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/media-framing-analysis.md -->
+
+### Per-Party Framing Matrix
+
+#### Government Parties
+
+| Party | Primary Frame | Secondary Frame | Vulnerability |
+|-------|--------------|-----------------|--------------|
+| M | "Responsible government delivers fiscal stability and crime reduction" | HC01FiU20 passage as economic stewardship | HVB homes delivery failure if unchallenged |
+| SD | "Sweden's security — crime, borders, order" | Energy sovereignty | Cultural heritage SD interpellation (HD10455) as base mobilization |
+| KD | "Family and social responsibility" | HVB homes — trying to defend AND attack simultaneously | HD10454 makes KD's social responsibility frame vulnerable |
+| L | "Liberal reform, housing markets, individual rights" | Balancing coalition loyalty vs housing red lines | Below-threshold polling existential risk |
+
+#### Opposition Parties
+
+| Party | Primary Frame | Secondary Frame | Opportunity |
+|-------|--------------|-----------------|-------------|
+| S | "Government broken its promises to the most vulnerable" | Economic competence via HC01FiU20 attacks | HD10454 HVB homes; HD11767 homeless missing |
+| V | "Class analysis — welfare cuts, privatization failure" | Sick-pay reform rollback (HD10450) | Health and welfare delivery failures |
+| MP | "Green competence — environmental and welfare" | HVB homes (children, social responsibility) | Growing on welfare narrative |
+| C | "Competent responsible center politics" | Strategic ambiguity on coalition | Maximum leverage point before election |
+
+### Press Quadrant Analysis
+
+| Outlet | Leaning | Expected HVB Frame | Expected HC01FiU20 Frame |
+|--------|---------|-------------------|--------------------------|
+| SVT/SR (public) | Neutral-critical | Investigative — SR already active (HD10454) | Balanced process coverage |
+| Aftonbladet/Expressen (tabloid) | Left-leaning / populist | STRONG HVB amplification | Fiscal cuts narrative |
+| DN/SvD (broadsheet) | Center-liberal | Moderate — HVB as governance failure | Fiscal stability, L veto dynamic |
+| Dagens Industri | Business/center-right | LOW HVB interest | HC01FiU20 economic credibility |
+| Sydsvenskan/regional | Regional variation | Variable | Infrastructure deficit (Södra stambanan) |
+
+### Narrative Battleground Analysis
+
+#### Battleground 1: HVB Homes (ACTIVE)
+
+**S frame**: "Two years of broken promises to children in dangerous homes. The government knew and did nothing." (Evidence: HD10454 dated ministerial promise)
+
+**Government counter-frame**: "We are working on comprehensive reform. The police list is one element of a complex system." (Defensive — confirms the narrative without rebuttal)
+
+**Media amplification risk**: SR is already active (confirmed by HD10454 citation). If SVT Uppdrag granskning files an investigation request (analogous to Carema 2011), the story becomes Tier-1 national coverage.
+
+**Government winning frame** (if used): "We are delivering legislation in May — here is the specific reform with a timeline." This converts the vulnerability into a competence demonstration.
+
+#### Battleground 2: Spring Fiscal Bill (UPCOMING)
+
+**S frame**: "Cuts to welfare while protecting corporate tax breaks."  
+**Government frame**: "Responsible fiscal management in uncertain global conditions."  
+**L frame**: "We secured housing market protections for ordinary Swedes."
+
+**Media amplification**: DN/SvD likely to frame HC01FiU20 as "will L break the coalition?" — the FiU vote becomes a process story about coalition management.
+
+### Social Media Monitoring Indicators
+
+Key indicators to watch in May 2026:
+- `#HVBhemmen` hashtag volume on X/Twitter — surge indicates SR story breaking
+- `#Riksdagen` mentions of HD10454 document number — public engagement with parliamentary process
+- Aftonbladet "top articles by share" — HVB appearing in top 10 confirms media escalation
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+quadrantChart
+    title Media Framing Power Map — May 2026 [Riksdagsmonitor]
+    x-axis "Opposition-leaning" --> "Government-leaning"
+    y-axis "Low reach" --> "High reach"
+    quadrant-1 Government amplifiers
+    quadrant-2 Dominant coverage
+    quadrant-3 Marginal
+    quadrant-4 Opposition amplifiers
+    "SR/SVT [HVB active]": [0.45, 0.90]
+    "Aftonbladet/Expressen": [0.25, 0.80]
+    "DN/SvD": [0.55, 0.70]
+    "Dagens Industri": [0.75, 0.45]
+    "Regional press": [0.45, 0.40]
+```
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/devils-advocate.md -->
@@ -1591,23 +1591,23 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/threat-analysis.md)
 - [`documents/HD10454-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/documents/HD10454-analysis.md)
 - [`documents/HD10455-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/documents/HD10455-analysis.md)
 - [`documents/HD10456-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/documents/HD10456-analysis.md)
 - [`documents/HD11767-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/documents/HD11767-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/month-ahead/cross-reference-map.md)

@@ -372,7 +372,7 @@ flowchart TB
 
 ### Template-to-artifact mapping
 
-The mapping below is exhaustive and ordered to match `scripts/render-lib/aggregator/order.ts:AGGREGATION_ORDER` so the table reads top-to-bottom in the same sequence the aggregator splices the artifacts into `article.md`. Every production template under [`analysis/templates/`](analysis/templates/) appears in the table; supplementary / operational templates (analysis-index, session-baseline, cross-run-diff, cross-session-intelligence, mcp-reliability-audit, reference-analysis-quality, workflow-audit) are listed at the end because they support the analysis run rather than the article body.
+The mapping below is exhaustive and ordered to match `scripts/render-lib/aggregator/order.ts:AGGREGATION_ORDER` so the table reads top-to-bottom in the same sequence the aggregator splices the artifacts into `article.md`. The order follows a journalist-optimal narrative arc — Phase A (lead/BLUF) → Phase B (per-document evidence injected after `significance-scoring.md`) → Phase C (actors & political arithmetic) → Phase D (forward trajectory) → Phase E (risk & threat) → Phase F (context & narrative environment, with media framing late) → Phase G (devil's-advocate critique) → Phase H (audit appendix). Every production template under [`analysis/templates/`](analysis/templates/) appears in the table; supplementary / operational templates (analysis-index, session-baseline, cross-run-diff, cross-session-intelligence, mcp-reliability-audit, reference-analysis-quality, workflow-audit) are listed at the end because they support the analysis run rather than the article body.
 
 | # | Aggregator slot | Template / artifact | Role in eventual article |
 |:-:|---|---|---|
@@ -380,26 +380,26 @@ The mapping below is exhaustive and ordered to match `scripts/render-lib/aggrega
 | 2 | Synthesis | [`synthesis-summary.md`](analysis/templates/synthesis-summary.md) | Sets lead story, DIW ranking, narrative frame and article metadata suggestions; carries ≥ 1 colour-coded Mermaid diagram. |
 | 3 | Key Judgments | [`intelligence-assessment.md`](analysis/templates/intelligence-assessment.md) | Provides ≥ 3 Key Judgments + PIRs + confidence labels (ICD 203). |
 | 4 | Ranking | [`significance-scoring.md`](analysis/templates/significance-scoring.md) | DIW scoring + sensitivity analysis with evidence-tagged rows and ranked Mermaid bar chart. |
-| 5 | Narrative contestation | [`media-framing-analysis.md`](analysis/templates/media-framing-analysis.md) | DISARM TTPs · CIB ABCDE · narrative-laundering chain · Outlet Bias Audit · L1–L5 counter-resilience ladder. |
-| 6 | Stakeholders | [`stakeholder-impact.md`](analysis/templates/stakeholder-impact.md) → `stakeholder-perspectives.md` | Power × interest × position lens, named actors and influence network. **Note:** the template instructs saving as `stakeholder-impact.md` but the aggregator + gate require the canonical output filename `stakeholder-perspectives.md`. |
-| 7 | Forward look | [`forward-indicators.md`](analysis/templates/forward-indicators.md) | ≥ 10 dated watch items across 4 horizons (Mermaid Gantt). |
-| 8 | Futures | [`scenario-analysis.md`](analysis/templates/scenario-analysis.md) | ≥ 3 scenarios with priors, posteriors, indicators and falsifiers. |
-| 9 | Risk | [`risk-assessment.md`](analysis/templates/risk-assessment.md) | Top 5 risks with L × I + cascading + Mermaid heat-map. |
-| 10 | Strategic | [`swot-analysis.md`](analysis/templates/swot-analysis.md) | Evidence-bound SWOT quadrant + TOWS moves (Mermaid quadrantChart). |
-| 11 | Threat | [`threat-analysis.md`](analysis/templates/threat-analysis.md) | Political Threat Taxonomy + attack-tree Mermaid diagrams. |
-| — | Per-document | [`per-file-political-intelligence.md`](analysis/templates/per-file-political-intelligence.md) → `documents/{dok_id}-analysis.md` | One subsection per primary-source document; required to cite the dok_id. |
-| 12 | Election | [`election-2026-analysis.md`](analysis/templates/election-2026-analysis.md) / [`election-cycle-analysis.md`](analysis/templates/election-cycle-analysis.md) / `election-2026-implications.md` | Seat deltas, campaign implications; alias-deduplicated by `FILENAME_ALIASES` (all three map to the same aggregator slot). |
-| 13 | Cycle | [`cycle-trajectory.md`](analysis/templates/cycle-trajectory.md) | 24th artifact for `news-election-cycle` only — multi-year trajectory bands T+1y → T+5y with colour-coded Mermaid. |
-| 14 | Calendar | [`parliamentary-season.md`](analysis/templates/parliamentary-season.md) | Riksmöte phase ribbon, committee schedule, Lagrådet referrals, watchlist heat-map (long-horizon workflows). |
-| 15 | Coalitions | [`coalition-mathematics.md`](analysis/templates/coalition-mathematics.md) | Sainte-Laguë seat table + coalition graphs. |
-| 16 | Voters | [`voter-segmentation.md`](analysis/templates/voter-segmentation.md) | SCB segment cuts + segment Mermaid map. |
-| 17 | Comparative | [`comparative-international.md`](analysis/templates/comparative-international.md) | ≥ 2 peer-country rows via WB / IMF / SCB. |
-| 18 | History | [`historical-parallels.md`](analysis/templates/historical-parallels.md) | ≥ 2 historical episodes with confidence and divergence. |
-| 19 | Feasibility | [`implementation-feasibility.md`](analysis/templates/implementation-feasibility.md) | Actor-capacity + Statskontoret evidence + timeline. |
-| 20 | PESTLE | [`pestle-analysis.md`](analysis/templates/pestle-analysis.md) | 6-dimension scan (year-ahead + cycle blocking, supplementary elsewhere). |
-| 21 | Black swans | [`wildcards-blackswans.md`](analysis/templates/wildcards-blackswans.md) | Wildcards + 3-order cascades (year-ahead + cycle blocking). |
-| 22 | Quant SWOT | [`quantitative-swot.md`](analysis/templates/quantitative-swot.md) | Scored SWOT ranking with composite Mermaid bar. |
-| 23 | STRIDE | [`political-stride-assessment.md`](analysis/templates/political-stride-assessment.md) | STRIDE + MITRE ATT&CK mapping (cycle blocking). |
+| — | Per-document | [`per-file-political-intelligence.md`](analysis/templates/per-file-political-intelligence.md) → `documents/{dok_id}-analysis.md` | Phase B primary-source evidence: one subsection per primary-source document, injected immediately after `significance-scoring.md` so readers meet the actual motions / propositions / committee reports BEFORE any interpretive lens. Required to cite the `dok_id`. |
+| 5 | Stakeholders | [`stakeholder-impact.md`](analysis/templates/stakeholder-impact.md) → `stakeholder-perspectives.md` | Power × interest × position lens, named actors and influence network. **Note:** the template instructs saving as `stakeholder-impact.md` but the aggregator + gate require the canonical output filename `stakeholder-perspectives.md`. |
+| 6 | Coalitions | [`coalition-mathematics.md`](analysis/templates/coalition-mathematics.md) | Sainte-Laguë seat table + coalition graphs. Phase C — who can pass it. |
+| 7 | Voters | [`voter-segmentation.md`](analysis/templates/voter-segmentation.md) | SCB segment cuts + segment Mermaid map. Phase C — whose interests are at stake. |
+| 8 | Forward look | [`forward-indicators.md`](analysis/templates/forward-indicators.md) | ≥ 10 dated watch items across 4 horizons (Mermaid Gantt). |
+| 9 | Futures | [`scenario-analysis.md`](analysis/templates/scenario-analysis.md) | ≥ 3 scenarios with priors, posteriors, indicators and falsifiers. |
+| 10 | Election | [`election-2026-analysis.md`](analysis/templates/election-2026-analysis.md) / [`election-cycle-analysis.md`](analysis/templates/election-cycle-analysis.md) / `election-2026-implications.md` | Seat deltas, campaign implications; alias-deduplicated by `FILENAME_ALIASES` (all three map to the same aggregator slot). |
+| 11 | Cycle | [`cycle-trajectory.md`](analysis/templates/cycle-trajectory.md) | 24th artifact for `news-election-cycle` only — multi-year trajectory bands T+1y → T+5y with colour-coded Mermaid. |
+| 12 | Calendar | [`parliamentary-season.md`](analysis/templates/parliamentary-season.md) | Riksmöte phase ribbon, committee schedule, Lagrådet referrals, watchlist heat-map (long-horizon workflows). |
+| 13 | Risk | [`risk-assessment.md`](analysis/templates/risk-assessment.md) | Top 5 risks with L × I + cascading + Mermaid heat-map. |
+| 14 | Strategic | [`swot-analysis.md`](analysis/templates/swot-analysis.md) | Evidence-bound SWOT quadrant + TOWS moves (Mermaid quadrantChart). |
+| 15 | Quant SWOT | [`quantitative-swot.md`](analysis/templates/quantitative-swot.md) | Scored SWOT ranking with composite Mermaid bar (year-ahead + cycle blocking). |
+| 16 | Threat | [`threat-analysis.md`](analysis/templates/threat-analysis.md) | Political Threat Taxonomy + attack-tree Mermaid diagrams. |
+| 17 | STRIDE | [`political-stride-assessment.md`](analysis/templates/political-stride-assessment.md) | STRIDE + MITRE ATT&CK mapping (cycle blocking). |
+| 18 | Black swans | [`wildcards-blackswans.md`](analysis/templates/wildcards-blackswans.md) | Wildcards + 3-order cascades (year-ahead + cycle blocking). |
+| 19 | PESTLE | [`pestle-analysis.md`](analysis/templates/pestle-analysis.md) | 6-dimension scan (year-ahead + cycle blocking, supplementary elsewhere). |
+| 20 | History | [`historical-parallels.md`](analysis/templates/historical-parallels.md) | ≥ 2 historical episodes with confidence and divergence. |
+| 21 | Comparative | [`comparative-international.md`](analysis/templates/comparative-international.md) | ≥ 2 peer-country rows via WB / IMF / SCB. |
+| 22 | Feasibility | [`implementation-feasibility.md`](analysis/templates/implementation-feasibility.md) | Actor-capacity + Statskontoret evidence + timeline. |
+| 23 | Narrative contestation | [`media-framing-analysis.md`](analysis/templates/media-framing-analysis.md) | DISARM TTPs · CIB ABCDE · narrative-laundering chain · Outlet Bias Audit · L1–L5 counter-resilience ladder. **Phase F — placed late so readers form their own view of substance before being shown how the story is being framed.** |
 | 24 | Devil's Advocate | [`devils-advocate.md`](analysis/templates/devils-advocate.md) | ≥ 3 ACH hypotheses, KAC, Red Team. |
 | 25 | Classification | [`political-classification.md`](analysis/templates/political-classification.md) → `classification-results.md` | Priority tiers, retention, 7-dimension classification. |
 | 26 | Cross-refs | [`cross-reference-map.md`](analysis/templates/cross-reference-map.md) | Continuity contracts + sibling folders. |

@@ -5,7 +5,7 @@ date: 2026-04-28
 subfolder: motions
 slug: 2026-04-28-motions
 source_folder: analysis/daily/2026-04-28/motions
-generated_at: 2026-05-04T09:52:32.448Z
+generated_at: 2026-05-04T12:16:14.140Z
 language: en
 layout: article
 ---
@@ -66,10 +66,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -244,80 +244,66 @@ xychart-beta
     line [7.5]
 ```
 
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/media-framing-analysis.md -->
+## Per-document intelligence
 
-### Framing Overview
+### HD024099
+<!-- source: documents/HD024099-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/documents/HD024099-analysis.md -->
 
-Motion HD024099 offers sharply different framing opportunities for different political actors. The underlying policy question (criminal accountability vs. civil servant protection) maps onto pre-existing partisan frames.
+**Document ID**: HD024099  
 
-### Per-Party Framing
+**Typ**: Följdmotion  
+**Beteckning**: 2025/26:4099  
+**Organ**: JuU  
+**Filed**: 2026-04-27  
+**Filed by**: Teresa Carvalho m.fl. (Socialdemokraterna)
 
-#### S (Socialdemokraterna) — "Proportionate Accountability"
-**Core frame**: The government's proposition is blunt, disproportionate, and will create chilling effects for civil servants doing their jobs in good faith. We filed HD024099 to protect workers and demand genuine anti-corruption reform.
+### L2+ Intelligence Assessment
 
-**Key messages**:
-- "1.2 miljoner offentliganställda riskerar åtal"
-- "Strömmer väljer symbolpolitik framför verklig korruptionsbekämpning"
-- "Vi kräver en samlad reform av kapitel 10 BrB"
+#### Document Summary
+Motion 2025/26:4099 (HD024099) is a "följdmotion" — an opposition motion filed "med anledning av" (in response to) government proposition 2025/26:217, which proposes creating a new criminal offense called "missbruk av offentlig ställning" (misuse of public office). The motion was filed by S (Social Democrats) JuU member Teresa Carvalho and co-signed by S party members.
 
-**Target audience**: Municipal workers (LO/TCO), accountability-minded urban voters
+#### Three Demands
+The motion has three separate yrkanden (demands):
 
-**Electoral payoff**: HIGH for Segment A (civil servants); medium for Segment B
+**§1 (Yrkande 1)**: The Riksdag should REJECT (avslå) the government's proposed new criminal offense "missbruk av offentlig ställning" entirely.
 
-#### M/Strömmer — "Accountability Works"
-**Core frame**: The current tjänstefel law has a critical gap — officials who exploit their position outside myndighetsutövning escape criminal liability. This proposition closes that gap.
+**§2 (Yrkande 2)**: If the Riksdag does NOT accept §1, the government should be required to return with an amendment adding a "social-interest valve" — a provision that protects public officials who violate procedural rules in order to serve an important social interest (e.g., a social worker acting quickly to protect a child at risk of harm).
 
-**Key messages**:
-- "Offentliga tjänstemän ska hålla sig inom lagen"
-- "Missbruk av offentlig ställning — nu straffbart"
-- "S vill skydda sina väljare, inte allmänheten"
+**§3 (Yrkande 3)**: Regardless of §1/§2 outcomes, the government should be directed to return with a comprehensive reform of Chapter 10 BrB (corruption and official-crime chapter of the Swedish Criminal Code), rather than piecemeal criminalization.
 
-**Target audience**: Law-and-order voters, urban taxpayers concerned about municipal corruption
+#### Legal Analysis of §1: Scope Concern
+The government's new offense criminalises public officials ("den som är verksam inom offentlig verksamhet") for acting "i strid med lag eller annan författning" (in violation of law or other regulation). S argues:
+- The scope is excessively broad — covers all civil servants, not just those exercising public authority
+- The threshold "i strid med lag" includes minor regulatory violations, not just corrupt intent
+- This will chill good-faith civil servant decision-making in areas like social welfare, education, healthcare
 
-#### SD — "Law and Order, With Common Sense"
-**Core frame**: SD supports the proposition but will monitor implementation to ensure that good-faith civil servants are not prosecuted for minor errors.
+#### Legal Analysis of §2: Social Interest Valve  
+The social-interest valve demand is technically sound and has international precedent (comparative-international.md). S is not asking for impunity — they are asking for a proportionality clause that recognises when civil servant rule-violation served a legitimate public purpose.
 
-**Key message** (expected): "Vi följer att åklagarmyndigheten tillämpar detta proportionellt"
+#### Legal Analysis of §3: Chapter 10 BrB Reform
+Chapter 10 BrB contains Sweden's existing anti-corruption offenses (tjänstefel, mutbrott). S's demand for comprehensive reform is consistent with Finland's approach (RL Chapter 40, 1990) and would produce better anti-corruption outcomes than prop. 2025/26:217 alone.
 
-**Internal tension**: Municipal-worker SD voters (Segment C) creates quiet pressure for SD to support Scenario 2 (valve) without public acknowledgement.
+#### Signatories (Key)
+- **Teresa Carvalho** (S) — JuU member, lead signatory
+- Additional S party members co-signed (full list in source document)
 
-#### C/L — "Proportionate Criminal Law"
-**Core frame** (potential Scenario 2 trigger): C and L have historically emphasised proportionality in criminal law. If they adopt this frame, they can justify supporting the social-interest valve (HD024099 §2) as consistent with their traditional rule-of-law profile.
+#### Parliamentary Trajectory
+1. JuU will process prop. 2025/26:217 and HD024099 simultaneously
+2. JuU betänkande expected spring/summer 2026
+3. Chamber vote expected before summer recess 2026 or September 2026 return
+4. Based on seat arithmetic: prop. passes (200/349), HD024099 §1 fails (149/349)
+5. HD024099 §2 fails unless C/L support (possible, 28% scenario)
 
-**Expected message**: "Vi stödjer propositionen men välkomnar en proportionalitetsventil"
+#### Intelligence Value: L2+
+This document represents a high-value parliamentary intelligence product:
+- **Primary source**: riksdagen.se, official document
+- **Verified**: Direct MCP retrieval via get_dokument_innehall (HD024099)
+- **Context**: Directly linked to prop. HD03217; part of ongoing criminal justice reform package
+- **Electoral relevance**: HIGH — 1.2M affected workers, 5 months before September 2026 election
 
-#### V/MP — "Anti-Corruption Must Be Comprehensive"
-**Core frame**: V and MP will reinforce S's §3 demand — comprehensive Chapter 10 BrB reform is necessary to genuinely combat corruption rather than criminalise individual mistakes.
-
-### Media Framing Matrix
-
-| Media outlet | Expected primary frame | Likely headline angle |
-|-------------|----------------------|----------------------|
-| Dagens Nyheter | Proportionality concern | "Kritik: Strömmer-lag kan kriminalisera vardagsfelbeslut" |
-| Svenska Dagbladet | Accountability frame | "Ny lag stärker tjänstemannaansvaret" |
-| Aftonbladet | Worker protection | "Miljoner anställda kan straffas — S larmar" |
-| Expressen | Law-and-order | "Strömmer tar i med hårdhandskarna mot tjänstemissbruk" |
-| SVT Nyheter | Balanced | "Debatt om gränsen för tjänstemannaansvar" |
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'background': '#0a0e27'}}}%%
-quadrantChart
-    title Media Frames: Accountability vs Protection × Government vs Opposition
-    x-axis "Opposition aligned" --> "Government aligned"
-    y-axis "Worker protection focus" --> "Accountability focus"
-    quadrant-1 Government-Accountability
-    quadrant-2 Opposition-Accountability
-    quadrant-3 Opposition-Protection
-    quadrant-4 Government-Protection
-    "Aftonbladet": [0.2, 0.2]
-    "Expressen": [0.75, 0.8]
-    "SvD": [0.8, 0.7]
-    "DN": [0.45, 0.65]
-    "SVT": [0.5, 0.5]
-    style "Aftonbladet" fill:#ff006e
-    style "Expressen" fill:#00d9ff
-```
+#### Primary Source Links
+- Document: https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/med-anledning-av-prop.-202526217-ett-utokat_hd024099/
+- Proposition: https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/ett-utokat-straffratsligt_hd03217/
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/stakeholder-perspectives.md -->
@@ -364,6 +350,129 @@ flowchart LR
 - **MP**: Filed separate motion (HD024098) on fuel tax — not co-signatory on HD024099 [riksdagen.se]
 - **V**: Filed separate motion (HD024092) on fuel tax — not co-signatory on HD024099 [riksdagen.se]
 - **C**: Filed separate motion (HD024094) on healthcare — not co-signatory on HD024099 [riksdagen.se]
+
+## Coalition Mathematics
+<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/coalition-mathematics.md -->
+
+### Committee Vote Arithmetic (JuU)
+
+Riksdag Justitieutskottet (JuU) has 17 members proportionally distributed. Approximate composition for 2025/26 riksmöte:
+
+| Party | JuU Seats | Bloc | Expected Vote |
+|-------|----------|------|--------------|
+| Socialdemokraterna (S) | 5 | Opposition | Nej (prop.), Ja (HD024099) |
+| Sverigedemokraterna (SD) | 3 | Government | Ja (prop.), Nej (HD024099) |
+| Moderaterna (M) | 3 | Government | Ja (prop.), Nej (HD024099) |
+| Centerpartiet (C) | 2 | Government | Ja (prop.), likely Nej (HD024099) |
+| Vänsterpartiet (V) | 1 | Opposition | Nej (prop.) |
+| Liberalerna (L) | 1 | Government | Ja (prop.), Nej (HD024099) |
+| Kristdemokraterna (KD) | 1 | Government | Ja (prop.), Nej (HD024099) |
+| Miljöpartiet (MP) | 1 | Opposition | Nej (prop.) |
+| **Total** | **17** | | |
+
+**Government bloc votes for prop.**: 3+3+2+1+1 = **10 votes**  
+**Opposition votes against prop.**: 5+1+1 = **7 votes**  
+**Majority threshold**: 9 of 17  
+**Government majority**: 10/17 — **passes with margin of 3**
+
+### Chamber Vote Arithmetic
+
+| Party | Seats | Prop. vote | Motion HD024099 |
+|-------|-------|-----------|-----------------|
+| S | 107 | Nej | Ja |
+| SD | 73 | Ja | Nej |
+| M | 68 | Ja | Nej |
+| V | 24 | Nej | Ja (likely) |
+| C | 24 | Ja | Nej |
+| MP | 18 | Nej | Ja (likely) |
+| KD | 19 | Ja | Nej |
+| L | 16 | Ja | Nej |
+
+**Ja (prop.) total**: 73+68+24+19+16 = **200**  
+**Nej (prop.) total**: 107+24+18 = **149**  
+**Majority**: 175 of 349  
+**Prop. passes**: ✅ 200/349
+
+**HD024099 §1 (reject prop.) — Ja**: 107+24+18 = **149** (fails, 149 < 175)  
+**HD024099 §2 (valve amendment) — Ja**: 149 + potential C/L crossovers = 149 to 189 max  
+If C(24) + L(16) support valve: 149+40 = **189 > 175** — **PASSES** ✅
+
+**This arithmetic explains why the social-interest valve (Scenario 2, 28%) is credible**: if C and L break from M on the valve, S's §2 demand succeeds even without SD.
+
+### Coalition Break Threshold
+
+For HD024099 §2 to pass the chamber:
+- S (107) + V (24) + MP (18) = 149 baseline
+- Need ≥26 additional votes from government bloc
+- C (24) + L (16) = 40 potential crossover votes — sufficient if both fully defect
+- SD (73) crossover possible but unlikely
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'background': '#0a0e27'}}}%%
+xychart-beta
+    title "Voting Arithmetic — HD024099 §2 Valve Amendment"
+    x-axis ["Opposition baseline", "+ C crossover", "+ L crossover", "Majority threshold"]
+    y-axis "Votes" 140 --> 200
+    bar [149, 173, 189, 175]
+```
+
+## Voter Segmentation
+<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/voter-segmentation.md -->
+
+### Segmentation Framework
+
+Motion HD024099 primarily affects public-sector workers (civil servants, kommunalanställda) and has secondary effects on voters who prioritise accountability and rule of law.
+
+### Primary Segments Affected
+
+#### Segment A: Municipal and State Civil Servants (~1.2M workers)
+- **Demographic**: 55% female, median age 45, geographically distributed
+- **Union affiliation**: TCO/LO members (Kommunal, ST, Vision)
+- **Political lean**: Historically 40-45% S, 15% SD, 12% C (IPSOS Sweden 2024 occupational polling, C3)
+- **Exposure to HD024099**: HIGH — these workers are the direct subjects of "missbruk av offentlig ställning"
+- **Mobilisation potential**: +3 to +6 percentage points S vote share if chilling-effect messaging resonates
+- **Risk**: Passive mobilisation (concern, not enthusiasm); low-salience issue in general campaign
+
+#### Segment B: Urban Accountability Voters (M/L/C lean)
+- **Demographic**: Higher education, city-dwellers, 35-55 age bracket
+- **Political lean**: M, L, C
+- **Exposure to HD024099**: INDIRECT — these voters support anti-corruption reforms in principle
+- **Tension**: These voters support criminal accountability for officials but also trust in civil service
+- **Mobilisation potential**: Splits; some may defect to S if chilling-effect narrative is compelling
+- **Net effect**: Likely minimal; S unlikely to peel these voters
+
+#### Segment C: Law-and-Order SD Voters
+- **Demographic**: Broadly distributed; SD voter base skews male, lower-income
+- **Political lean**: SD (strong criminal sanctions)
+- **Exposure to HD024099**: INDIRECT — SD voters support stronger criminal penalties
+- **Tension**: Some SD voters are municipal workers (kommunal, vård och omsorg) exposed to new criminal risk
+- **Key variable**: Whether SD frames prop. 2025/26:217 as worker protection or criminal accountability
+- **Mobilisation potential**: Low defection; SD message management will contain this
+
+#### Segment D: Left-Opposition Bloc (V/MP)
+- **Demographic**: Urban progressive voters
+- **Political lean**: V, MP
+- **Exposure to HD024099**: Motion filed by S alone; V/MP not co-signatories
+- **Implication**: V/MP may file their own motions or support S in JuU if they have JuU seats
+- **Mobilisation potential**: Low independent effect; reinforces general bloc cohesion
+
+### Electoral Segmentation Summary
+
+| Segment | Size (est.) | S Benefit | Risk to Government |
+|---------|------------|-----------|-------------------|
+| A: Civil servants | 1.2M | HIGH | MEDIUM (if chilling effect materialises) |
+| B: Urban accountability voters | 800K | LOW-MEDIUM | LOW |
+| C: SD law-and-order voters | 600K | NONE | LOW (SD message management) |
+| D: Left-bloc | 400K | LOW (already S/V/MP) | NONE |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'background': '#0a0e27'}}}%%
+pie title Voter Segment Relevance to HD024099
+    "Civil servants (direct)" : 40
+    "Urban accountability" : 27
+    "Law-and-order SD" : 20
+    "Left-bloc" : 13
+```
 
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/forward-indicators.md -->
@@ -566,6 +675,63 @@ pie title Scenario Probabilities — HD024099 Processing
     "Scenario 3: Ch.10 BrB commitment" : 12
 ```
 
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/election-2026-analysis.md -->
+
+### Election 2026 Framing
+
+Sweden holds a general election on 13 September 2026 (Riksdagsval 2026). The criminal liability reform in prop. 2025/26:217 and the S opposition motion HD024099 are directly relevant to three electoral dynamics:
+
+1. **Public-sector worker mobilisation**: ~1.2 million civil servants are directly affected; many are LO/TCO members who trend toward S
+2. **Law-and-order positioning**: The governing coalition needs to demonstrate effective crime legislation before the election
+3. **Accountability narrative**: S seeks to frame the coalition as prioritising criminal punishment over systemic reform
+
+### Current Seat Distribution (2022 Election Result, 2025/26 Riksdag)
+
+| Party | Seats | Bloc |
+|-------|-------|------|
+| Sverigedemokraterna (SD) | 73 | Government support |
+| Moderaterna (M) | 68 | Government (PM) |
+| Socialdemokraterna (S) | 107 | Opposition |
+| Vänsterpartiet (V) | 24 | Opposition |
+| Centerpartiet (C) | 24 | Government |
+| Sverigedemokraterna — note: seats above | — | — |
+| Kristdemokraterna (KD) | 19 | Government |
+| Liberalerna (L) | 16 | Government |
+| Miljöpartiet (MP) | 18 | Opposition |
+| **Total** | **349** | — |
+
+**Government bloc**: M(68) + SD(73) + KD(19) + C(24) + L(16) = **200 seats** (majority: 175)
+**Opposition bloc**: S(107) + V(24) + MP(18) = **149 seats**
+
+### Electoral Impact of HD024099
+
+#### Impact on S Electoral Strategy
+S filing HD024099 achieves three strategic electoral goals:
+1. **Voter protection narrative**: "We protected 1.2 million public-sector workers" — direct communication to LO/TCO members
+2. **Competence demonstration**: Teresa Carvalho demonstrates JuU-level legal expertise — S is the responsible party
+3. **Differentiation from V/MP**: S's §2/§3 demands are constructive (not pure rejection) — moderate positioning
+
+#### Projected Electoral Relevance
+
+| Scenario | S Messaging | Expected Voter Response | Net Seat Effect |
+|---------|------------|------------------------|----------------|
+| Prop. passes unchanged | "We warned you — civil servants now criminalised" | +2 to +5 S seats from public-sector mobilisation | High |
+| Prop. amended with valve | "S forced the government to add protections" | +1 to +3 S seats; partial credit | Medium |
+| Chapter 10 commitment | "S won the substantive reform argument" | Neutral to +2; elite perception | Low-Medium |
+
+#### Coalition Electoral Calculus
+SD needs its municipal-worker voter base to turn out in September 2026. If chilling-effect reports emerge between August and September 2026, SD faces an electoral challenge. This creates a structural incentive for SD to quietly support the social-interest valve (Scenario 2) even if no public dissent is announced before the JuU vote.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'background': '#0a0e27'}}}%%
+xychart-beta
+    title "Seat Distribution — Riksdag 2025/26"
+    x-axis ["S", "SD", "M", "V", "C", "MP", "KD", "L"]
+    y-axis "Seats" 0 --> 120
+    bar [107, 73, 68, 24, 24, 18, 19, 16]
+```
+
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/risk-assessment.md -->
 
@@ -740,245 +906,53 @@ flowchart TD
 | Legislative Velocity | Deadline compression | 1 Aug 2026 date limits amendment window | HD03217 §1 |
 | Opposition Isolation | Single-party motion | HD024099 filed by S alone; no V/MP/C cosignatories | riksdagen.se/HD024099 |
 
-## Per-document intelligence
+## Historical Parallels
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/historical-parallels.md -->
 
-### HD024099
-<!-- source: documents/HD024099-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/documents/HD024099-analysis.md -->
+### Primary Historical Parallel
 
-**Document ID**: HD024099  
+#### Parallel 1: S Opposition to Tjänstefelspropositionen (1989)
+**Similarity Score**: 8.5/10  
 
-**Typ**: Följdmotion  
-**Beteckning**: 2025/26:4099  
-**Organ**: JuU  
-**Filed**: 2026-04-27  
-**Filed by**: Teresa Carvalho m.fl. (Socialdemokraterna)
+**Proposition**: Government prop. on strengthening tjänstefel provisions  
+**Opposition motion**: S filed motion challenging proportionality and scope of criminal liability for public officials
 
-### L2+ Intelligence Assessment
+**Structure of parallel**:
+- SAP (then in government until 1991, but this was a legislative cross-period) vs. borgerliga partier
+- Same core tension: criminal accountability for civil servants vs. administrative accountability
+- S historically prefers administrative (disciplinary) over criminal sanctions for official misconduct
+- The 1989 reform was ultimately enacted; S later accepted it as a legitimate governance tool
 
-#### Document Summary
-Motion 2025/26:4099 (HD024099) is a "följdmotion" — an opposition motion filed "med anledning av" (in response to) government proposition 2025/26:217, which proposes creating a new criminal offense called "missbruk av offentlig ställning" (misuse of public office). The motion was filed by S (Social Democrats) JuU member Teresa Carvalho and co-signed by S party members.
+**Key difference from 2026 situation**: In 1989, S was in government briefly and subsequently could modify implementation via directives. In 2026, S is in opposition with no such instrument.
 
-#### Three Demands
-The motion has three separate yrkanden (demands):
+**Lesson**: Criminal accountability reforms in this area have historically proceeded despite S opposition; S's constructive amendment demands have sometimes influenced the final text (social-interest considerations in 1989 instructions to Åklagarmyndigheten).
 
-**§1 (Yrkande 1)**: The Riksdag should REJECT (avslå) the government's proposed new criminal offense "missbruk av offentlig ställning" entirely.
+### Parallel 2: KD Opposition to Socialförsäkringsbalken (2010)
+**Similarity Score**: 5/10  
+**Context**: Minor coalition party (KD) filed parallel motions seeking scope modification to social insurance legislation  
+**Lesson**: Minor parties within or adjacent to coalition can secure "valve" amendments without defeating the main proposition. This is precisely the mechanism in Scenario 2 for C/L.
 
-**§2 (Yrkande 2)**: If the Riksdag does NOT accept §1, the government should be required to return with an amendment adding a "social-interest valve" — a provision that protects public officials who violate procedural rules in order to serve an important social interest (e.g., a social worker acting quickly to protect a child at risk of harm).
+### Parallel 3: Finnish Parliament — Abuse of Functions (RL 40:7) Debate (1988-1990)
+**Similarity Score**: 7.5/10  
+**Context**: SDP (Finnish Social Democrats, ideological equivalent of S) opposed the piecemeal criminalisation approach; demanded comprehensive Chapter 40 reform  
+**Outcome**: Finnish parliament accepted comprehensive reform approach over 3-year period — exactly the Chapter 10 BrB outcome S is seeking in §3  
+**Lesson**: S's §3 demand has a direct international precedent for success — but on a multi-year timeline (3 years in Finland).
 
-**§3 (Yrkande 3)**: Regardless of §1/§2 outcomes, the government should be directed to return with a comprehensive reform of Chapter 10 BrB (corruption and official-crime chapter of the Swedish Criminal Code), rather than piecemeal criminalization.
-
-#### Legal Analysis of §1: Scope Concern
-The government's new offense criminalises public officials ("den som är verksam inom offentlig verksamhet") for acting "i strid med lag eller annan författning" (in violation of law or other regulation). S argues:
-- The scope is excessively broad — covers all civil servants, not just those exercising public authority
-- The threshold "i strid med lag" includes minor regulatory violations, not just corrupt intent
-- This will chill good-faith civil servant decision-making in areas like social welfare, education, healthcare
-
-#### Legal Analysis of §2: Social Interest Valve  
-The social-interest valve demand is technically sound and has international precedent (comparative-international.md). S is not asking for impunity — they are asking for a proportionality clause that recognises when civil servant rule-violation served a legitimate public purpose.
-
-#### Legal Analysis of §3: Chapter 10 BrB Reform
-Chapter 10 BrB contains Sweden's existing anti-corruption offenses (tjänstefel, mutbrott). S's demand for comprehensive reform is consistent with Finland's approach (RL Chapter 40, 1990) and would produce better anti-corruption outcomes than prop. 2025/26:217 alone.
-
-#### Signatories (Key)
-- **Teresa Carvalho** (S) — JuU member, lead signatory
-- Additional S party members co-signed (full list in source document)
-
-#### Parliamentary Trajectory
-1. JuU will process prop. 2025/26:217 and HD024099 simultaneously
-2. JuU betänkande expected spring/summer 2026
-3. Chamber vote expected before summer recess 2026 or September 2026 return
-4. Based on seat arithmetic: prop. passes (200/349), HD024099 §1 fails (149/349)
-5. HD024099 §2 fails unless C/L support (possible, 28% scenario)
-
-#### Intelligence Value: L2+
-This document represents a high-value parliamentary intelligence product:
-- **Primary source**: riksdagen.se, official document
-- **Verified**: Direct MCP retrieval via get_dokument_innehall (HD024099)
-- **Context**: Directly linked to prop. HD03217; part of ongoing criminal justice reform package
-- **Electoral relevance**: HIGH — 1.2M affected workers, 5 months before September 2026 election
-
-#### Primary Source Links
-- Document: https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/med-anledning-av-prop.-202526217-ett-utokat_hd024099/
-- Proposition: https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/ett-utokat-straffratsligt_hd03217/
-
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/election-2026-analysis.md -->
-
-### Election 2026 Framing
-
-Sweden holds a general election on 13 September 2026 (Riksdagsval 2026). The criminal liability reform in prop. 2025/26:217 and the S opposition motion HD024099 are directly relevant to three electoral dynamics:
-
-1. **Public-sector worker mobilisation**: ~1.2 million civil servants are directly affected; many are LO/TCO members who trend toward S
-2. **Law-and-order positioning**: The governing coalition needs to demonstrate effective crime legislation before the election
-3. **Accountability narrative**: S seeks to frame the coalition as prioritising criminal punishment over systemic reform
-
-### Current Seat Distribution (2022 Election Result, 2025/26 Riksdag)
-
-| Party | Seats | Bloc |
-|-------|-------|------|
-| Sverigedemokraterna (SD) | 73 | Government support |
-| Moderaterna (M) | 68 | Government (PM) |
-| Socialdemokraterna (S) | 107 | Opposition |
-| Vänsterpartiet (V) | 24 | Opposition |
-| Centerpartiet (C) | 24 | Government |
-| Sverigedemokraterna — note: seats above | — | — |
-| Kristdemokraterna (KD) | 19 | Government |
-| Liberalerna (L) | 16 | Government |
-| Miljöpartiet (MP) | 18 | Opposition |
-| **Total** | **349** | — |
-
-**Government bloc**: M(68) + SD(73) + KD(19) + C(24) + L(16) = **200 seats** (majority: 175)
-**Opposition bloc**: S(107) + V(24) + MP(18) = **149 seats**
-
-### Electoral Impact of HD024099
-
-#### Impact on S Electoral Strategy
-S filing HD024099 achieves three strategic electoral goals:
-1. **Voter protection narrative**: "We protected 1.2 million public-sector workers" — direct communication to LO/TCO members
-2. **Competence demonstration**: Teresa Carvalho demonstrates JuU-level legal expertise — S is the responsible party
-3. **Differentiation from V/MP**: S's §2/§3 demands are constructive (not pure rejection) — moderate positioning
-
-#### Projected Electoral Relevance
-
-| Scenario | S Messaging | Expected Voter Response | Net Seat Effect |
-|---------|------------|------------------------|----------------|
-| Prop. passes unchanged | "We warned you — civil servants now criminalised" | +2 to +5 S seats from public-sector mobilisation | High |
-| Prop. amended with valve | "S forced the government to add protections" | +1 to +3 S seats; partial credit | Medium |
-| Chapter 10 commitment | "S won the substantive reform argument" | Neutral to +2; elite perception | Low-Medium |
-
-#### Coalition Electoral Calculus
-SD needs its municipal-worker voter base to turn out in September 2026. If chilling-effect reports emerge between August and September 2026, SD faces an electoral challenge. This creates a structural incentive for SD to quietly support the social-interest valve (Scenario 2) even if no public dissent is announced before the JuU vote.
+| Parallel | Year | Country | Similarity | Key Lesson |
+|---------|------|---------|------------|-----------|
+| Tjänstefelspropositionen (1989) | 1989 | Sweden | 8.5/10 | S opposition to criminal liability = historical pattern; reform proceeds but S sometimes wins scope modifications |
+| KD Socialförsäkringsbalken (2010) | 2010 | Sweden | 5/10 | Coalition party valve amendments are precedented and effective |
+| Finland RL 40:7 debate (1988-90) | 1988-90 | Finland | 7.5/10 | Comprehensive reform (S's §3) succeeds — but on 3-year timeline |
 
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'background': '#0a0e27'}}}%%
-xychart-beta
-    title "Seat Distribution — Riksdag 2025/26"
-    x-axis ["S", "SD", "M", "V", "C", "MP", "KD", "L"]
-    y-axis "Seats" 0 --> 120
-    bar [107, 73, 68, 24, 24, 18, 19, 16]
-```
-
-## Coalition Mathematics
-<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/coalition-mathematics.md -->
-
-### Committee Vote Arithmetic (JuU)
-
-Riksdag Justitieutskottet (JuU) has 17 members proportionally distributed. Approximate composition for 2025/26 riksmöte:
-
-| Party | JuU Seats | Bloc | Expected Vote |
-|-------|----------|------|--------------|
-| Socialdemokraterna (S) | 5 | Opposition | Nej (prop.), Ja (HD024099) |
-| Sverigedemokraterna (SD) | 3 | Government | Ja (prop.), Nej (HD024099) |
-| Moderaterna (M) | 3 | Government | Ja (prop.), Nej (HD024099) |
-| Centerpartiet (C) | 2 | Government | Ja (prop.), likely Nej (HD024099) |
-| Vänsterpartiet (V) | 1 | Opposition | Nej (prop.) |
-| Liberalerna (L) | 1 | Government | Ja (prop.), Nej (HD024099) |
-| Kristdemokraterna (KD) | 1 | Government | Ja (prop.), Nej (HD024099) |
-| Miljöpartiet (MP) | 1 | Opposition | Nej (prop.) |
-| **Total** | **17** | | |
-
-**Government bloc votes for prop.**: 3+3+2+1+1 = **10 votes**  
-**Opposition votes against prop.**: 5+1+1 = **7 votes**  
-**Majority threshold**: 9 of 17  
-**Government majority**: 10/17 — **passes with margin of 3**
-
-### Chamber Vote Arithmetic
-
-| Party | Seats | Prop. vote | Motion HD024099 |
-|-------|-------|-----------|-----------------|
-| S | 107 | Nej | Ja |
-| SD | 73 | Ja | Nej |
-| M | 68 | Ja | Nej |
-| V | 24 | Nej | Ja (likely) |
-| C | 24 | Ja | Nej |
-| MP | 18 | Nej | Ja (likely) |
-| KD | 19 | Ja | Nej |
-| L | 16 | Ja | Nej |
-
-**Ja (prop.) total**: 73+68+24+19+16 = **200**  
-**Nej (prop.) total**: 107+24+18 = **149**  
-**Majority**: 175 of 349  
-**Prop. passes**: ✅ 200/349
-
-**HD024099 §1 (reject prop.) — Ja**: 107+24+18 = **149** (fails, 149 < 175)  
-**HD024099 §2 (valve amendment) — Ja**: 149 + potential C/L crossovers = 149 to 189 max  
-If C(24) + L(16) support valve: 149+40 = **189 > 175** — **PASSES** ✅
-
-**This arithmetic explains why the social-interest valve (Scenario 2, 28%) is credible**: if C and L break from M on the valve, S's §2 demand succeeds even without SD.
-
-### Coalition Break Threshold
-
-For HD024099 §2 to pass the chamber:
-- S (107) + V (24) + MP (18) = 149 baseline
-- Need ≥26 additional votes from government bloc
-- C (24) + L (16) = 40 potential crossover votes — sufficient if both fully defect
-- SD (73) crossover possible but unlikely
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'background': '#0a0e27'}}}%%
-xychart-beta
-    title "Voting Arithmetic — HD024099 §2 Valve Amendment"
-    x-axis ["Opposition baseline", "+ C crossover", "+ L crossover", "Majority threshold"]
-    y-axis "Votes" 140 --> 200
-    bar [149, 173, 189, 175]
-```
-
-## Voter Segmentation
-<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/voter-segmentation.md -->
-
-### Segmentation Framework
-
-Motion HD024099 primarily affects public-sector workers (civil servants, kommunalanställda) and has secondary effects on voters who prioritise accountability and rule of law.
-
-### Primary Segments Affected
-
-#### Segment A: Municipal and State Civil Servants (~1.2M workers)
-- **Demographic**: 55% female, median age 45, geographically distributed
-- **Union affiliation**: TCO/LO members (Kommunal, ST, Vision)
-- **Political lean**: Historically 40-45% S, 15% SD, 12% C (IPSOS Sweden 2024 occupational polling, C3)
-- **Exposure to HD024099**: HIGH — these workers are the direct subjects of "missbruk av offentlig ställning"
-- **Mobilisation potential**: +3 to +6 percentage points S vote share if chilling-effect messaging resonates
-- **Risk**: Passive mobilisation (concern, not enthusiasm); low-salience issue in general campaign
-
-#### Segment B: Urban Accountability Voters (M/L/C lean)
-- **Demographic**: Higher education, city-dwellers, 35-55 age bracket
-- **Political lean**: M, L, C
-- **Exposure to HD024099**: INDIRECT — these voters support anti-corruption reforms in principle
-- **Tension**: These voters support criminal accountability for officials but also trust in civil service
-- **Mobilisation potential**: Splits; some may defect to S if chilling-effect narrative is compelling
-- **Net effect**: Likely minimal; S unlikely to peel these voters
-
-#### Segment C: Law-and-Order SD Voters
-- **Demographic**: Broadly distributed; SD voter base skews male, lower-income
-- **Political lean**: SD (strong criminal sanctions)
-- **Exposure to HD024099**: INDIRECT — SD voters support stronger criminal penalties
-- **Tension**: Some SD voters are municipal workers (kommunal, vård och omsorg) exposed to new criminal risk
-- **Key variable**: Whether SD frames prop. 2025/26:217 as worker protection or criminal accountability
-- **Mobilisation potential**: Low defection; SD message management will contain this
-
-#### Segment D: Left-Opposition Bloc (V/MP)
-- **Demographic**: Urban progressive voters
-- **Political lean**: V, MP
-- **Exposure to HD024099**: Motion filed by S alone; V/MP not co-signatories
-- **Implication**: V/MP may file their own motions or support S in JuU if they have JuU seats
-- **Mobilisation potential**: Low independent effect; reinforces general bloc cohesion
-
-### Electoral Segmentation Summary
-
-| Segment | Size (est.) | S Benefit | Risk to Government |
-|---------|------------|-----------|-------------------|
-| A: Civil servants | 1.2M | HIGH | MEDIUM (if chilling effect materialises) |
-| B: Urban accountability voters | 800K | LOW-MEDIUM | LOW |
-| C: SD law-and-order voters | 600K | NONE | LOW (SD message management) |
-| D: Left-bloc | 400K | LOW (already S/V/MP) | NONE |
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'background': '#0a0e27'}}}%%
-pie title Voter Segment Relevance to HD024099
-    "Civil servants (direct)" : 40
-    "Urban accountability" : 27
-    "Law-and-order SD" : 20
-    "Left-bloc" : 13
+timeline
+    title Historical Parallels — Criminal Accountability Reform
+    1988 : Finnish RL 40:7 debate begins (SDP comprehensive demand)
+    1989 : Swedish Tjänstefelsprop — S opposition files scope-modification motion
+    1990 : Finland enacts comprehensive Chapter 40 reform
+    2010 : KD valve-amendment precedent (Socialförsäkringsbalken)
+    2026 : S files HD024099 — same structural pattern as 1989 but in opposition
 ```
 
 ## Comparative International
@@ -1049,55 +1023,6 @@ quadrantChart
     style "Finland 40:7" fill:#00d9ff
 ```
 
-## Historical Parallels
-<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/historical-parallels.md -->
-
-### Primary Historical Parallel
-
-#### Parallel 1: S Opposition to Tjänstefelspropositionen (1989)
-**Similarity Score**: 8.5/10  
-
-**Proposition**: Government prop. on strengthening tjänstefel provisions  
-**Opposition motion**: S filed motion challenging proportionality and scope of criminal liability for public officials
-
-**Structure of parallel**:
-- SAP (then in government until 1991, but this was a legislative cross-period) vs. borgerliga partier
-- Same core tension: criminal accountability for civil servants vs. administrative accountability
-- S historically prefers administrative (disciplinary) over criminal sanctions for official misconduct
-- The 1989 reform was ultimately enacted; S later accepted it as a legitimate governance tool
-
-**Key difference from 2026 situation**: In 1989, S was in government briefly and subsequently could modify implementation via directives. In 2026, S is in opposition with no such instrument.
-
-**Lesson**: Criminal accountability reforms in this area have historically proceeded despite S opposition; S's constructive amendment demands have sometimes influenced the final text (social-interest considerations in 1989 instructions to Åklagarmyndigheten).
-
-### Parallel 2: KD Opposition to Socialförsäkringsbalken (2010)
-**Similarity Score**: 5/10  
-**Context**: Minor coalition party (KD) filed parallel motions seeking scope modification to social insurance legislation  
-**Lesson**: Minor parties within or adjacent to coalition can secure "valve" amendments without defeating the main proposition. This is precisely the mechanism in Scenario 2 for C/L.
-
-### Parallel 3: Finnish Parliament — Abuse of Functions (RL 40:7) Debate (1988-1990)
-**Similarity Score**: 7.5/10  
-**Context**: SDP (Finnish Social Democrats, ideological equivalent of S) opposed the piecemeal criminalisation approach; demanded comprehensive Chapter 40 reform  
-**Outcome**: Finnish parliament accepted comprehensive reform approach over 3-year period — exactly the Chapter 10 BrB outcome S is seeking in §3  
-**Lesson**: S's §3 demand has a direct international precedent for success — but on a multi-year timeline (3 years in Finland).
-
-| Parallel | Year | Country | Similarity | Key Lesson |
-|---------|------|---------|------------|-----------|
-| Tjänstefelspropositionen (1989) | 1989 | Sweden | 8.5/10 | S opposition to criminal liability = historical pattern; reform proceeds but S sometimes wins scope modifications |
-| KD Socialförsäkringsbalken (2010) | 2010 | Sweden | 5/10 | Coalition party valve amendments are precedented and effective |
-| Finland RL 40:7 debate (1988-90) | 1988-90 | Finland | 7.5/10 | Comprehensive reform (S's §3) succeeds — but on 3-year timeline |
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'background': '#0a0e27'}}}%%
-timeline
-    title Historical Parallels — Criminal Accountability Reform
-    1988 : Finnish RL 40:7 debate begins (SDP comprehensive demand)
-    1989 : Swedish Tjänstefelsprop — S opposition files scope-modification motion
-    1990 : Finland enacts comprehensive Chapter 40 reform
-    2010 : KD valve-amendment precedent (Socialförsäkringsbalken)
-    2026 : S files HD024099 — same structural pattern as 1989 but in opposition
-```
-
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/implementation-feasibility.md -->
 
@@ -1151,6 +1076,81 @@ xychart-beta
     x-axis ["Legal clarity", "Prosecutorial cap.", "Court cap.", "Employer awareness", "Chilling mgmt.", "S alt. (Ch10)"]
     y-axis "Score" 0 --> 5
     bar [3, 3, 4, 2, 2, 3.5]
+```
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/media-framing-analysis.md -->
+
+### Framing Overview
+
+Motion HD024099 offers sharply different framing opportunities for different political actors. The underlying policy question (criminal accountability vs. civil servant protection) maps onto pre-existing partisan frames.
+
+### Per-Party Framing
+
+#### S (Socialdemokraterna) — "Proportionate Accountability"
+**Core frame**: The government's proposition is blunt, disproportionate, and will create chilling effects for civil servants doing their jobs in good faith. We filed HD024099 to protect workers and demand genuine anti-corruption reform.
+
+**Key messages**:
+- "1.2 miljoner offentliganställda riskerar åtal"
+- "Strömmer väljer symbolpolitik framför verklig korruptionsbekämpning"
+- "Vi kräver en samlad reform av kapitel 10 BrB"
+
+**Target audience**: Municipal workers (LO/TCO), accountability-minded urban voters
+
+**Electoral payoff**: HIGH for Segment A (civil servants); medium for Segment B
+
+#### M/Strömmer — "Accountability Works"
+**Core frame**: The current tjänstefel law has a critical gap — officials who exploit their position outside myndighetsutövning escape criminal liability. This proposition closes that gap.
+
+**Key messages**:
+- "Offentliga tjänstemän ska hålla sig inom lagen"
+- "Missbruk av offentlig ställning — nu straffbart"
+- "S vill skydda sina väljare, inte allmänheten"
+
+**Target audience**: Law-and-order voters, urban taxpayers concerned about municipal corruption
+
+#### SD — "Law and Order, With Common Sense"
+**Core frame**: SD supports the proposition but will monitor implementation to ensure that good-faith civil servants are not prosecuted for minor errors.
+
+**Key message** (expected): "Vi följer att åklagarmyndigheten tillämpar detta proportionellt"
+
+**Internal tension**: Municipal-worker SD voters (Segment C) creates quiet pressure for SD to support Scenario 2 (valve) without public acknowledgement.
+
+#### C/L — "Proportionate Criminal Law"
+**Core frame** (potential Scenario 2 trigger): C and L have historically emphasised proportionality in criminal law. If they adopt this frame, they can justify supporting the social-interest valve (HD024099 §2) as consistent with their traditional rule-of-law profile.
+
+**Expected message**: "Vi stödjer propositionen men välkomnar en proportionalitetsventil"
+
+#### V/MP — "Anti-Corruption Must Be Comprehensive"
+**Core frame**: V and MP will reinforce S's §3 demand — comprehensive Chapter 10 BrB reform is necessary to genuinely combat corruption rather than criminalise individual mistakes.
+
+### Media Framing Matrix
+
+| Media outlet | Expected primary frame | Likely headline angle |
+|-------------|----------------------|----------------------|
+| Dagens Nyheter | Proportionality concern | "Kritik: Strömmer-lag kan kriminalisera vardagsfelbeslut" |
+| Svenska Dagbladet | Accountability frame | "Ny lag stärker tjänstemannaansvaret" |
+| Aftonbladet | Worker protection | "Miljoner anställda kan straffas — S larmar" |
+| Expressen | Law-and-order | "Strömmer tar i med hårdhandskarna mot tjänstemissbruk" |
+| SVT Nyheter | Balanced | "Debatt om gränsen för tjänstemannaansvar" |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'background': '#0a0e27'}}}%%
+quadrantChart
+    title Media Frames: Accountability vs Protection × Government vs Opposition
+    x-axis "Opposition aligned" --> "Government aligned"
+    y-axis "Worker protection focus" --> "Accountability focus"
+    quadrant-1 Government-Accountability
+    quadrant-2 Opposition-Accountability
+    quadrant-3 Opposition-Protection
+    quadrant-4 Government-Protection
+    "Aftonbladet": [0.2, 0.2]
+    "Expressen": [0.75, 0.8]
+    "SvD": [0.8, 0.7]
+    "DN": [0.45, 0.65]
+    "SVT": [0.5, 0.5]
+    style "Aftonbladet" fill:#ff006e
+    style "Expressen" fill:#00d9ff
 ```
 
 ## Devil's Advocate
@@ -1432,20 +1432,20 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/media-framing-analysis.md)
+- [`documents/HD024099-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/documents/HD024099-analysis.md)
 - [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/stakeholder-perspectives.md)
+- [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/coalition-mathematics.md)
+- [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/voter-segmentation.md)
 - [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/forward-indicators.md)
 - [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/election-2026-analysis.md)
 - [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/risk-assessment.md)
 - [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/swot-analysis.md)
 - [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/threat-analysis.md)
-- [`documents/HD024099-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/documents/HD024099-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/election-2026-analysis.md)
-- [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/coalition-mathematics.md)
-- [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/comparative-international.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/motions/cross-reference-map.md)

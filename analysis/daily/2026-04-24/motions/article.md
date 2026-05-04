@@ -5,7 +5,7 @@ date: 2026-04-24
 subfolder: motions
 slug: 2026-04-24-motions
 source_folder: analysis/daily/2026-04-24/motions
-generated_at: 2026-05-04T09:52:32.255Z
+generated_at: 2026-05-04T12:16:13.960Z
 language: en
 layout: article
 ---
@@ -81,10 +81,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -327,681 +327,6 @@ quadrantChart
 ---
 
 *Evidence: every row cites a verifiable `dok_id` resolvable via `get_dokument`. Source: riksdag-regering MCP.*
-
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/media-framing-analysis.md -->
-
-Analyses anticipated media framing across Swedish outlets for the 9-bill + 20-motion cluster.
-
-### Expected framing by outlet
-
-| Outlet | Orientation | Likely frame | Evidence-framed motion |
-|--------|-------------|--------------|-------------------------|
-| DN — Dagens Nyheter | Centre-liberal | "Tidö pressar igenom — opposition splittrad" | All bills; emphasis on coordination failure |
-| SvD — Svenska Dagbladet | Centre-right | "Oppositionen ger sig på reformagendan" | Focus on prop 216, prop 235 |
-| Aftonbladet | Social-democratic | "S tar fighten om drivmedel" | [HD024082](https://data.riksdagen.se/dokument/HD024082.html), [HD024078](https://data.riksdagen.se/dokument/HD024078.html) |
-| Expressen | Liberal-populist | "Asylpolitiken delar kammaren" | [HD024090](https://data.riksdagen.se/dokument/HD024090.html), prop 235 |
-| SR Ekot / SVT Rapport | Public-service neutral | Balanced per-bill coverage | All clusters |
-| ETC | Vänster | "V kräver rättvisa — utvisning hård kritik" | V motions cluster |
-| Riks / Samhällsnytt | SD-aligned | "Tidö håller linjen mot alla motstånd" | Zero SD motions as strength |
-| Fokus | Nyhetsmagasin | Analys av Tidö-dynamiken | Cross-cluster |
-| DI — Dagens Industri | Näringsliv-orienterat | "Vapenexportsystemet under tryck — MP motion" | [HD024096](https://data.riksdagen.se/dokument/HD024096.html) |
-
-### Frame cluster map
-
-```mermaid
-%%{init: {'theme':'dark'}}%%
-flowchart TB
-    Gov([Government success frame]) --> GovM[DN SvD Fokus]
-    Gov --> GovP[Riks Samhällsnytt]
-    Opp([Opposition insight frame]) --> OppM[Aftonbladet ETC]
-    Opp --> OppSR[SR SVT]
-    Tactics([Tactical coordination failure frame]) --> TactM[DN Expressen]
-    Content([Policy content debate frame]) --> ContentM[SR SVT Fokus]
-    Wedge([Wedge issue amplification frame]) --> WedgeF[Expressen Riks]
-    Wedge --> WedgeS[Social media]
-
-    style Gov fill:#00d9ff,stroke:#000,color:#000
-    style Opp fill:#e30613,stroke:#fff,color:#fff
-    style Tactics fill:#ffbe0b,stroke:#000,color:#000
-    style Content fill:#8338ec,stroke:#fff,color:#fff
-    style Wedge fill:#ff006e,stroke:#fff,color:#fff
-```
-
-### Framing vectors by motion cluster
-
-#### Drivmedel (prop 236)
-- **Mobiliserande frame** (S/V/MP): "Tidö väljer biltrafik över klimat" / "Skattesänkning på bekostnad av rurala vårdbehov"
-- **Motrörelse frame** (Tidö): "Sänkta drivmedelspriser hjälper vanliga familjer"
-- **Neutral frame** (SR): "Budget-effekten av drivmedelsänkningen — 2.5 mdkr"
-
-#### Utvisning (prop 235)
-- **Mobiliserande frame** (V/MP): "Rättssäkerheten urholkas" / "Europas hårdaste utvisningslag"
-- **Motrörelse frame** (Tidö/SD): "Tidö levererar svensk asylreform"
-- **Neutral frame**: "Vad ändras konkret? Juridisk analys"
-
-#### Krigsmateriel (prop 228)
-- **MP-frame**: "Etisk kontroll av svenska vapen" ([HD024096](https://data.riksdagen.se/dokument/HD024096.html))
-- **Motrörelse**: "Försvarsindustrin viktig för svensk säkerhet"
-- **Neutral**: "Nuvarande kontrollsystem — hur fungerar det?"
-
-#### Medicinsk kompetens (prop 216)
-- **4-partsfronten**: "Sällsynt enighet mot regeringens reform"
-- **Motrörelse**: "Snabb behandling av vårdpersonalbristen"
-- **Kommunsektor-frame**: "SKR bekymrad över finansiering"
-
-### Social-media framing predictions
-
-| Platform | Expected framing dynamic | Amplification risk |
-|----------|--------------------------|--------------------|
-| X (Twitter) | Polarisering; dok_id-citations of motions; hashtag #Tidöfalls vs #Tidöholder | Medium |
-| Facebook | Longer-form opinion in voter groups; rural vs urban split on drivmedel | High |
-| Instagram | Civil-society mobilisering on utvisning, climate | Medium |
-| TikTok | Generationsfrågor on housing, drivmedel, migration | Medium |
-| LinkedIn | Näringsliv perspective on vapenexport, cybersäk | Low |
-| Telegram | Konspirationsnarrativ risk on migration bills | Medium-High |
-
-### Frame-war indicators
-
-1. **Who defines "obstruction"**: Tidö frames 20 motions as opposition obstruction; opposition frames as democratic oversight.
-2. **Who owns "drivmedel"**: S fiscal-anchor frame vs Tidö "familjeekonomi" frame — contested.
-3. **Who owns "rättssäkerhet"**: V/MP civil-rights frame vs Tidö "rättssäker utvisning" frame — contested.
-4. **SD frame absent**: SD does not frame this wave; absence itself is a frame Tidö exploits as "disciplinerat stöd".
-
-### Editorial recommendations (for riksdagsmonitor journalism)
-
-1. Identify each motion by dok_id in every article — avoid generic "opposition motion".
-2. Explain extra ändringsbudget procedure on prop 236 in plain language.
-3. Show 4-party wave on prop 216 as the wave's singular coordination signal.
-4. Do not over-claim "opposition coordination" — evidence supports parallel filing more than unified strategy.
-5. Give MP vapenexport framework its own dedicated explanation — underreported axis.
-
-### Counterspin and balance checklist
-
-- ✓ Name every primary author by party
-- ✓ Link every dok_id to [data.riksdagen.se](https://data.riksdagen.se/)
-- ✓ Quote both mobiliserande and motrörelse frames
-- ✓ Clarify what Tidö's procedural path is (standard / extra / amendment)
-- ✓ Cite SCB for any economic-impact claim
-- ✓ Distinguish analyst judgment from factual reporting
-
----
-
-*Media framing predictions based on historical outlet patterns 2014–2025. No individual journalist targeting — outlet-level orientation only.*
-
-## Stakeholder Perspectives
-<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/stakeholder-perspectives.md -->
-
-Six-lens stakeholder analysis. Lenses: **Government coalition**, **Opposition bloc**, **Business/industry**, **Civil society**, **Voters/regional**, **Foreign/EU**.
-
-### Stakeholder matrix
-
-| Stakeholder | Interest | Power | Position | Named actor(s) | Evidence |
-|-------------|----------|------:|----------|----------------|----------|
-| **Regering (M-KD-L)** | Pass 9 bills intact | High | Defend Tidö package | Ulf Kristersson (M) PM; finansminister Elisabeth Svantesson (M) | Tidö-avtal; [regeringen.se](https://www.regeringen.se/) |
-| **SD (Tidö support)** | Lock in Tidö; prepare 2026 | High | Silent support; no counter-motions | Jimmie Åkesson (SD) | `get_motioner` result (0 SD) |
-| **S** | Election-cycle positioning; fiscal anchor | High | Constructive counter on fiscal; silent on vapenexport | Mikael Damberg (S) finansp; Ardalan Shekarabi (S) migration; Fredrik Lundh Sammeli (S) SoU; Joakim Järrebring (S) CU | [HD024082](https://data.riksdagen.se/dokument/HD024082.html), [HD024079](https://data.riksdagen.se/dokument/HD024079.html), [HD024081](https://data.riksdagen.se/dokument/HD024081.html), [HD024078](https://data.riksdagen.se/dokument/HD024078.html) |
-| **V** | Distributional justice; civil rights | Medium | Full avslag on welfare/utvisning bills | Nooshi Dadgostar (V) ordf; Tony Haddou (V) migration; Håkan Svenneling (V) UU; Karin Rågsjö (V) SoU; Andreas Lennkvist Manriquez (V) CU | [HD024092](https://data.riksdagen.se/dokument/HD024092.html), [HD024090](https://data.riksdagen.se/dokument/HD024090.html), [HD024091](https://data.riksdagen.se/dokument/HD024091.html), [HD024083](https://data.riksdagen.se/dokument/HD024083.html), [HD024084](https://data.riksdagen.se/dokument/HD024084.html) |
-| **MP** | Climate; foreign-policy ethics | Medium | Avslag fiscal; full vapenexport ban; rule-of-law | Janine Alm Ericson (MP); Jacob Risberg (MP); Annika Hirvonen (MP); Ulrika Westerlund (MP); Leila Ali Elmi (MP) | [HD024098](https://data.riksdagen.se/dokument/HD024098.html), [HD024096](https://data.riksdagen.se/dokument/HD024096.html), [HD024097](https://data.riksdagen.se/dokument/HD024097.html), [HD024087](https://data.riksdagen.se/dokument/HD024087.html), [HD024086](https://data.riksdagen.se/dokument/HD024086.html), [HD024085](https://data.riksdagen.se/dokument/HD024085.html) |
-| **C** | Centrist reform; procedural tightening | Medium | Reform-not-reject on 5 bills | Christofer Bergenblock (C) SoU; Alireza Akhondi (C) CU; Niels Paarup-Petersen (C) SfU/FöU; Mikael Larsson (C) FöU | [HD024094](https://data.riksdagen.se/dokument/HD024094.html), [HD024088](https://data.riksdagen.se/dokument/HD024088.html), [HD024089](https://data.riksdagen.se/dokument/HD024089.html), [HD024093](https://data.riksdagen.se/dokument/HD024093.html), [HD024095](https://data.riksdagen.se/dokument/HD024095.html) |
-| **Defence industry** | Export clarity | Medium | Oppose MP ban ([HD024096](https://data.riksdagen.se/dokument/HD024096.html)) | SOFF (Säkerhets- och försvarsföretagen), Saab | [soff.se](https://soff.se/) |
-| **Klimatnätverk / civil society** | Back fuel-tax protection | Low-Medium | Support MP/V motions | Klimatriksdagen, Naturskyddsföreningen | [naturskyddsforeningen.se](https://www.naturskyddsforeningen.se/) |
-| **Kommunsektor (SKR)** | Fiscal certainty on kommun-vård | High | Neutral-to-worried on prop 216 | SKR (Sveriges Kommuner och Regioner) | [skr.se](https://skr.se/) |
-| **Rural voters** | Fuel-price relief | Medium | Favour prop 236 regardless of opposition | — | SCB KPI rural ([scb.se](https://www.scb.se/)) |
-| **Migration-sector civil society** | Counter utvisning regime | Low-Medium | Ally with V/MP on [HD024090](https://data.riksdagen.se/dokument/HD024090.html), [HD024097](https://data.riksdagen.se/dokument/HD024097.html) | Röda Korset, Amnesty Sverige | [amnesty.se](https://www.amnesty.se/), [rodakorset.se](https://www.rodakorset.se/) |
-| **EU (Commission, Member States)** | Compatibility of utvisning with ECHR/EU law | Medium | Silent-monitoring | DG Home; Nordic partners | [ec.europa.eu](https://ec.europa.eu/) |
-| **Media ecosystem** | Stories for election cycle | Medium | Amplify drivmedel, utvisning, krigsmateriel | DN, SvD, SR, SVT | — |
-
-### Interest/Power grid
-
-```mermaid
-%%{init: {'theme':'dark'}}%%
-quadrantChart
-    title Stakeholder Interest × Power
-    x-axis Low Interest --> High Interest
-    y-axis Low Power --> High Power
-    quadrant-1 Key players
-    quadrant-2 Keep satisfied
-    quadrant-3 Monitor
-    quadrant-4 Keep informed
-    "Regering Tidö": [0.95, 0.95]
-    "SD (support)": [0.75, 0.90]
-    "S": [0.90, 0.80]
-    "V": [0.85, 0.55]
-    "MP": [0.90, 0.55]
-    "C": [0.80, 0.55]
-    "SKR kommuner": [0.70, 0.70]
-    "Defence industry": [0.75, 0.60]
-    "Klimatrörelse": [0.75, 0.30]
-    "Rural voters": [0.80, 0.50]
-    "Migration CS": [0.70, 0.35]
-    "EU": [0.50, 0.70]
-    "Media": [0.65, 0.65]
-```
-
-### Influence network
-
-```mermaid
-%%{init: {'theme':'dark'}}%%
-flowchart LR
-    Tidö([Regering M-KD-L]) -->|coalition| SD
-    Tidö -->|bills 214-236| Riksdag[Riksdag voting]
-    SD -.->|silent support| Riksdag
-    S([S]) -->|3 motions| FiU
-    S -->|1 motion each| SoU
-    S -->|1 motion each| AU
-    S -->|1 motion each| CU
-    V([V]) -->|5 motions| Riksdag
-    MP([MP]) -->|6 motions| Riksdag
-    C([C]) -->|5 motions| Riksdag
-    Riksdag --> Vote((Final<br/>votes))
-    Vote -->|betänkande| Media
-    Media -->|framing| Voters[Väljarna]
-    Klimat[Klimat & migr CS] -->|ally| V
-    Klimat -->|ally| MP
-    Industry[Defence industry] -->|counter-lobby| Tidö
-    EU -->|ECHR pressure| Riksdag
-
-    style Tidö fill:#00d9ff,stroke:#000,color:#000
-    style S fill:#ff006e,stroke:#fff,color:#fff
-    style V fill:#ffbe0b,stroke:#000,color:#000
-    style MP fill:#ffbe0b,stroke:#000,color:#000
-    style C fill:#ffbe0b,stroke:#000,color:#000
-```
-
-### Winners and losers
-
-| # | Winner / Loser | Actor | Reason | Evidence |
-|--:|----------------|-------|--------|----------|
-| 1 | Winner | Ulf Kristersson (M) | Bills likely pass with minor amendment; incumbent advantage stays | Tidö seat math 176/349 |
-| 2 | Winner | Mikael Damberg (S) | Owns fiscal-anchor narrative for 2026 | [HD024082](https://data.riksdagen.se/dokument/HD024082.html) |
-| 3 | Winner | Jimmie Åkesson (SD) | Coalition discipline amplifies Tidö durability without political cost | Zero SD motions |
-| 4 | Loser | Nooshi Dadgostar (V) | Soft-on-crime frame risk on utvisning | [HD024090](https://data.riksdagen.se/dokument/HD024090.html) |
-| 5 | Mixed | MP leadership | Clean ownership of two axes; fragmentation cost vs S | [HD024096](https://data.riksdagen.se/dokument/HD024096.html) |
-| 6 | Mixed | C (Muharrem Demirok et al.) | Centre-reform differentiation + zero coalition path if Tidö holds | [HD024089](https://data.riksdagen.se/dokument/HD024089.html), [HD024095](https://data.riksdagen.se/dokument/HD024095.html) |
-| 7 | Loser | Migration civil-society | Prop 235 likely passes; limited opposition unity | [HD024090](https://data.riksdagen.se/dokument/HD024090.html) |
-| 8 | Winner | Defence industry (SOFF) | MP motion unlikely to pass; export framework preserved | [HD024096](https://data.riksdagen.se/dokument/HD024096.html) |
-
----
-
-*Every named actor is a public officeholder or public-interest organisation. GDPR basis: Art. 9(2)(e) — data made manifestly public by data subjects.*
-
-## Forward Indicators
-<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/forward-indicators.md -->
-
-Watch-list of ≥10 dated indicators that will validate, refute, or update judgments from this analysis.
-
-### Near-term indicators (next 4 weeks, 2026-04-24 → 2026-05-22)
-
-| # | Indicator | Threshold | Trigger date | Source | Updates KJ |
-|--:|-----------|-----------|--------------|--------|------------|
-| 1 | First utskott hearing on prop 236 scheduled | First FiU calendar entry | +7d (~2026-05-01) | [riksdagen.se/sv/utskotten/finansutskottet](https://www.riksdagen.se/sv/utskotten/finansutskottet/) | KJ-3 |
-| 2 | SD public comment on any Tidö bill | First press release from SD press office | +14d (~2026-05-08) | [sverigedemokraterna.se](https://sverigedemokraterna.se/) | KJ-1, H3 |
-| 3 | SKR formal comment on prop 216 | First published brief on healthcare workforce | +14d (~2026-05-08) | [skr.se](https://skr.se/) | KJ-4 |
-| 4 | First kammardebatt on prop 236 | Scheduled kammardebatt | +21d (~2026-05-15) | [riksdagen.se calendar](https://www.riksdagen.se/) | KJ-3 |
-| 5 | SOFF response to MP vapenexport framework | First public statement | +21d (~2026-05-15) | [soff.se](https://soff.se/) | KJ-5 |
-
-### Mid-term indicators (4–12 weeks, 2026-05-22 → 2026-07-17)
-
-| # | Indicator | Threshold | Trigger date | Source | Updates KJ |
-|--:|-----------|-----------|--------------|--------|------------|
-| 6 | FiU betänkande on prop 236 published | Betänkande publication | +5 weeks (~2026-05-29) | [riksdagen.se/FiU](https://www.riksdagen.se/sv/utskotten/finansutskottet/) | KJ-1, KJ-3 |
-| 7 | SfU betänkande on prop 235 | Publication | +6 weeks (~2026-06-05) | [riksdagen.se/SfU](https://www.riksdagen.se/sv/utskotten/socialforsakringsutskottet/) | KJ-1 |
-| 8 | SoU betänkande on prop 216 | Publication (looking for amendment language) | +6 weeks (~2026-06-05) | [riksdagen.se/SoU](https://www.riksdagen.se/sv/utskotten/socialutskottet/) | KJ-4 |
-| 9 | Kammarvote on prop 236 | Final ja/nej/avstår count | +8 weeks (~2026-06-15) | [riksdagen.se voteringar](https://www.riksdagen.se/sv/dokument-lagar/arende/) | KJ-1, KJ-3 |
-| 10 | Kammarvote on prop 235 | Final count | +8 weeks (~2026-06-15) | [riksdagen.se voteringar](https://www.riksdagen.se/) | KJ-1 |
-| 11 | Kammarvote on prop 216 | Final count + any amendment | +8 weeks (~2026-06-15) | [riksdagen.se voteringar](https://www.riksdagen.se/) | KJ-4 |
-| 12 | Any Tidö MP abstain on ändringsbudget vote | Single abstention | +8 weeks (~2026-06-15) | Kammarvote record | KJ-1, S3 |
-
-### Long-term indicators (12+ weeks, toward 2026-09-13)
-
-| # | Indicator | Threshold | Trigger date | Source | Updates KJ |
-|--:|-----------|-----------|--------------|--------|------------|
-| 13 | Novus/Demoskop issue-salience update on drivmedel | Drivmedel in top 3 voter issues | ~2026-07-31 | Polling publications | KJ-3 |
-| 14 | S party congress economic platform | Fiscal-anchor framing of drivmedel motion | 2026-08-15 (est.) | [socialdemokraterna.se](https://www.socialdemokraterna.se/) | KJ-3 |
-| 15 | Almedalen vecka party speeches | Motion content incorporation | 2026-07-06..2026-07-12 | Almedalens programme | KJ-3, KJ-5 |
-| 16 | MP vapenexport framework — policy paper | Formal MP manifesto language | 2026-08-15 (est.) | [mp.se](https://www.mp.se/) | KJ-5 |
-| 17 | Election 2026-09-13 result | Final seat distribution | 2026-09-13 | [val.se](https://www.val.se/) | All KJs |
-| 18 | Post-election coalition formation | Regering formed / fails | 2026-09..2026-10 | [regeringen.se](https://www.regeringen.se/) | Scenario set |
-
-### Trigger-response mapping
-
-| If indicator fires | Expected action (next analysis pipeline) |
-|---------------------|------------------------------------------|
-| #2 SD breaks silence | Elevate H3 to Moderate; re-score scenarios |
-| #3 SKR formal concern | Upgrade KJ-4 to Moderate-High |
-| #9 prop 236 passes intact | Confirm KJ-1; reduce S2 probability |
-| #9 prop 236 fails | Upgrade S3 scenario to dominant; major re-analysis |
-| #11 prop 216 amendment passes | Confirm KJ-4; validate 4-party coordination hypothesis |
-| #12 Tidö abstention | Immediate triage; S3 scenario update |
-| #17 L below 4% | Trigger post-election coalition re-analysis |
-
-### PIR coverage
-
-| PIR | Covered by indicators |
-|-----|------------------------|
-| PIR-1 Election 2026 salience | #13, #14, #15, #17 |
-| PIR-2 SD coalition discipline | #2, #12, #9/10/11 |
-| PIR-3 Healthcare implementation | #3, #8, #11 |
-| PIR-4 Opposition bloc dynamics | #6, #7, #8, #15 |
-| PIR-5 Foreign policy positioning | #5, #16 |
-| PIR-6 Procedural integrity | #9, #12 |
-| PIR-7 Polling shift | #13 |
-
-### Update cadence
-
-- Next full re-run: 2026-05-15 (after 3 weeks of indicator data).
-- Interim spot-check: +7d (first utskott calendar entry).
-- Emergency re-run trigger: any #12 or #9-12 surprise.
-
----
-
-*All 18 indicators have concrete dates or conditions + public verifiable sources. Forward-looking ≠ predictive.*
-
----
-
-## Scenario Analysis
-<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/scenario-analysis.md -->
-
-Three futures for the 9 Tidö bills (prop 214, 215, 216, 222, 223, 228, 229, 235, 236) given the motion wave. Probabilities sum to 100%.
-
-### Scenario overview
-
-| Scenario | Probability | Confidence | Horizon |
-|----------|------------:|:----------:|---------|
-| S1 — Tidö holds, bills pass intact | 55% | Moderate (Admiralty B2) | 60–90 days |
-| S2 — Partial amendment, 2 bills fall | 30% | Moderate (B3) | 60–90 days |
-| S3 — Coalition stress, extra-budget vote fails | 15% | Low (C3) | 60–180 days |
-
-### S1 — Tidö holds (55%)
-
-**Description**: All 9 bills adopted with minor utskott amendments. Tidö 176/349 seats prove durable despite fragmented opposition.
-
-**Indicators (watch list)**:
-- SD continues silent support through May utskott hearings.
-- No amendment motions from within Tidö parties (M/KD/L).
-- Kammarvote margins ≥ 170 Ja on each bill.
-
-**Consequences**:
-- Drivmedel tax reduction enacted at statsbudget cost ~2.5 bn SEK (prop 236).
-- Utvisning regime hardens ([HD024090](https://data.riksdagen.se/dokument/HD024090.html) avslag fails).
-- Election 2026 runs on completed Tidö record.
-
-**Evidence**: Tidö discipline across 2025–2026 ([regeringen.se](https://www.regeringen.se/)); zero SD counter-motions on this wave (dok_id manifest).
-
-### S2 — Partial amendment (30%)
-
-**Description**: 2 of 9 bills substantially amended or withdrawn. Likely candidates: prop 216 (medicinsk kompetens — 4-party wave incl. C) and prop 236 (drivmedel — fiscal amplification).
-
-**Indicators**:
-- C or L signal concern on healthcare workforce pipeline before utskott vote.
-- SKR (Sveriges Kommuner och Regioner) public statement on prop 216 funding.
-- Ekonomiska utskottets analysis flags ändringsbudget fiscal concern.
-
-**Consequences**:
-- Regering forced to table replacement proposal on amended bills.
-- S wins on fiscal-anchor narrative; claims partial victory on prop 236.
-- Tidö survives but at narrative cost entering 2026 campaign.
-
-**Evidence**: C filed 5 motions including reform-not-reject on [HD024094](https://data.riksdagen.se/dokument/HD024094.html); 4-party convergence on prop 216.
-
-### S3 — Coalition stress / extra-budget fails (15%)
-
-**Description**: Extra ändringsbudget route used for prop 236 fails; at least one Tidö party abstains. Triggers ordningsfråga and possible förtroendeomröstning.
-
-**Indicators**:
-- L internal dissent on Tidö scope expansion.
-- KD public pressure over welfare trade-offs.
-- Any Tidö MP absent/abstain on the extra-budget vote.
-
-**Consequences**:
-- Regering crisis narrative 8 months pre-election.
-- S positioned as alternative anchor.
-- MP/V gain mobilisation headroom.
-
-**Evidence**: Historical pattern — minority+support coalitions rarely complete without 1 stress event per mandatperiod. Tidö has been unusually stable 2022–2026.
-
-### Decision tree
-
-```mermaid
-%%{init: {'theme':'dark'}}%%
-flowchart TB
-    Now([2026-04-24<br/>20 motions filed]) --> UtskHear[Utskott hearings<br/>May 2026]
-    UtskHear -->|Tidö aligned| S1Path[S1 — intact]
-    UtskHear -->|Cracks on prop 216/236| Amend[Amendment drafted]
-    Amend -->|Minor| S1Path
-    Amend -->|Major| S2Path[S2 — partial]
-    UtskHear -->|Tidö abstention on extra-budget| Crisis[Ordningsfråga]
-    Crisis -->|Resolved| S2Path
-    Crisis -->|Unresolved| S3Path[S3 — coalition stress]
-    S1Path --> Vote[Kammarvote<br/>June 2026]
-    S2Path --> Vote
-    S3Path --> Förtroend[Förtroendeomröstning]
-    Vote --> Law[Adopted or withdrawn]
-    Förtroend --> Nyval[Nyval risk]
-
-    style S1Path fill:#00d9ff,stroke:#000,color:#000
-    style S2Path fill:#ffbe0b,stroke:#000,color:#000
-    style S3Path fill:#ff006e,stroke:#fff,color:#fff
-```
-
-### Scenario probability distribution
-
-```mermaid
-%%{init: {'theme':'dark'}}%%
-pie title Scenario probabilities (sum = 100%)
-    "S1 Tidö holds" : 55
-    "S2 Partial amendment" : 30
-    "S3 Coalition stress" : 15
-```
-
-### Early-warning indicators (F3EAD Disseminate → Find)
-
-| Indicator | Threshold | Source | Timing |
-|-----------|-----------|--------|--------|
-| SD internal critique of any prop 214–236 | First public statement | [sverigedemokraterna.se](https://sverigedemokraterna.se/) | +2 weeks |
-| L abstention warning on prop 235 | Public interview | Swedish press | +3 weeks |
-| Tidö PM Kristersson defends prop 236 publicly | First defence statement | [regeringen.se](https://www.regeringen.se/) | +4 weeks |
-| SKR issues formal concern on prop 216 | Formal letter | [skr.se](https://skr.se/) | +4 weeks |
-| Finansutskottet report tone | Kritisk vs stödjande | [riksdagen.se FiU](https://www.riksdagen.se/sv/utskotten/finansutskottet/) | +6 weeks |
-| First bill withdrawal | Any | Riksdagen publication | +8 weeks |
-
----
-
-*Probabilities are analyst judgements with documented evidence; horizon 60–180 days to kammarvote + förordnand. Bayesian update recommended after each utskott hearing.*
-
----
-
-## Risk Assessment
-<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/risk-assessment.md -->
-
-Five-dimension risk register. **L** = Likelihood (1–5), **I** = Impact (1–5), **R** = L × I.
-
-### Risk register
-
-| ID | Dimension | Risk description | L | I | **R** | Evidence | Mitigation |
-|----|-----------|------------------|--:|--:|------:|----------|-----------|
-| R-1 | Political | Tidö passes prop 236 (drivmedel) substantially unchanged; opposition narrative loss locked in before summer | 4 | 4 | **16** | [HD024082](https://data.riksdagen.se/dokument/HD024082.html), Tidö seat math 176/349 ([riksdagen.se](https://www.riksdagen.se/)) | Opposition pre-commits to budget-reversal commitment in 2026 manifesto |
-| R-2 | Political | V full-avslag on utvisning ([HD024090](https://data.riksdagen.se/dokument/HD024090.html)) gets framed as "soft on crime" during election | 4 | 3 | **12** | [HD024090](https://data.riksdagen.se/dokument/HD024090.html) |  V pivots to proportionality/EU-law frame; coordinates with MP/C rule-of-law emphasis |
-| R-3 | Institutional | Committee backlog: 9 propositions + 20 motions in 6 utskott = congestion; betänkanden slip into autumn | 3 | 3 | **9** | [HD024093](https://data.riksdagen.se/dokument/HD024093.html) (FöU), [HD024081](https://data.riksdagen.se/dokument/HD024081.html) (SoU) | Utskott-chair prioritisation; FiU gets lead track |
-| R-4 | Fiscal | Drivmedel tax cut blows budget anchor; S's constructive-reform framing ([HD024082](https://data.riksdagen.se/dokument/HD024082.html)) vindicated | 3 | 4 | **12** | SCB statsfinansiellstatistik ([scb.se](https://www.scb.se/)), KPI fuel indices | Konjunkturinstitutet scenario modelling cited in June debate |
-| R-5 | Corruption/Integrity | None detected in current motion wave — low background risk | 1 | 2 | **2** | — | Standard Riksdagsreg hygiene |
-| R-6 | Foreign/Strategic | MP krigsmateriel motion ([HD024096](https://data.riksdagen.se/dokument/HD024096.html)) gets instrumentalised in disinformation re: Swedish Nato commitment | 2 | 4 | **8** | [HD024096](https://data.riksdagen.se/dokument/HD024096.html), [HD024091](https://data.riksdagen.se/dokument/HD024091.html) | Clear MP messaging distinguishing ethical export policy from Nato alignment |
-| R-7 | Electoral | SD silence + Tidö discipline raises Tidö incumbent advantage above model baseline | 3 | 4 | **12** | Zero SD motions filed (`get_motioner` result 2026-04-24) | S-V-MP-C coordinate manifest content before Almedalen 2026 |
-| R-8 | Distributional | Fuel tax cut is regressive for ecology but progressive for commuters; opposition argues both and risks contradiction | 3 | 3 | **9** | [HD024098](https://data.riksdagen.se/dokument/HD024098.html) (MP), [HD024092](https://data.riksdagen.se/dokument/HD024092.html) (V) | Separate climate argument (MP) from distributional argument (V); avoid blending |
-| R-9 | Legal | Utvisning regime (prop 235) produces ECHR-compatibility challenge; rapid LR case | 2 | 4 | **8** | [HD024090](https://data.riksdagen.se/dokument/HD024090.html) Motivering, prop 235 | Reserve analysis for betänkande hearing; cite MR-expert testimony |
-| R-10 | Institutional | Extra ändringsbudget procedure compresses debate time → reduces opposition visibility | 3 | 3 | **9** | FiU calendar, prop 236 special-budget route | Demand extended debate; file ordningsfråga |
-
-### Cascading-risk chains
-
-#### Chain A — Drivmedel narrative lock-in
-```
-R-1 (prop 236 passes) → R-4 (fiscal-anchor frame) → R-7 (Tidö incumbent advantage) → 2026 result
-```
-If R-1 materialises without effective opposition counter-framing, R-4 and R-7 compound. **Posterior probability chain passes**: 0.70 × 0.55 × 0.60 ≈ **0.23**.
-
-#### Chain B — Utvisning rule-of-law frame
-```
-R-2 (V framed soft on crime) → R-9 (ECHR challenge surfaces late) → 2027 judicial correction
-```
-**Posterior**: 0.55 × 0.25 × 0.40 ≈ **0.055**. Low but election-relevant if V response is slow.
-
-#### Chain C — Foreign policy drift
-```
-R-6 (MP krigsmateriel instrumentalised) → S-MP alignment breach → post-election coalition failure
-```
-**Posterior**: 0.30 × 0.40 × 0.35 ≈ **0.042**. Non-negligible for 2026 government formation.
-
-### Heat map
-
-```mermaid
-%%{init: {'theme':'dark'}}%%
-quadrantChart
-    title Risk heat map — Likelihood × Impact
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
-    quadrant-1 Critical
-    quadrant-2 High (monitor)
-    quadrant-3 Low
-    quadrant-4 Elevated (prevent)
-    "R-1 drivmedel lock-in": [0.80, 0.80]
-    "R-2 V soft-on-crime frame": [0.80, 0.60]
-    "R-3 committee backlog": [0.60, 0.60]
-    "R-4 fiscal anchor": [0.60, 0.80]
-    "R-5 corruption": [0.20, 0.40]
-    "R-6 disinfo Nato": [0.40, 0.80]
-    "R-7 Tidö incumbent adv": [0.60, 0.80]
-    "R-8 distributional self-contradict": [0.60, 0.60]
-    "R-9 ECHR": [0.40, 0.80]
-    "R-10 extra-budget compression": [0.60, 0.60]
-    style R-1 fill:#ff006e
-```
-
-### Posterior-probability update (Bayesian)
-
-Prior `P(Tidö bills pass substantially unchanged) = 0.65` (structural coalition math).
-Likelihood observations:
-- Zero SD counter-motions → raise posterior
-- Opposition motions are parallel not integrated → raise posterior
-- Extra-budget procedural route → raise posterior
-Posterior `P(pass | observations) ≈ 0.72`. Distribution: 72% pass substantially unchanged, 18% pass with marginal amendment, 6% significant amendment, 4% withdrawal or replacement.
-
-### Top 3 actionable risks
-
-1. **R-1** (R=16): Drivmedel narrative lock-in — highest combined score.
-2. **R-2** (R=12): V soft-on-crime frame — reputational risk for V coalition value.
-3. **R-7** (R=12): Tidö incumbent advantage amplified — structural electoral implication.
-
----
-
-*Evidence standard: all scores substantiated by at least one `dok_id` or primary-source URL. Cross-reference → `threat-analysis.md` for adversary-perspective complement.*
-
-## SWOT Analysis
-<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/swot-analysis.md -->
-
-### Executive SWOT grid
-
-```mermaid
-%%{init: {'theme':'dark'}}%%
-quadrantChart
-    title Opposition SWOT — Internal vs External
-    x-axis Internal --> External
-    y-axis Negative --> Positive
-    quadrant-1 Opportunities
-    quadrant-2 Strengths
-    quadrant-3 Weaknesses
-    quadrant-4 Threats
-    "S fiscal anchor drivmedel": [0.25, 0.85]
-    "Tri-party drivmedel coordination": [0.20, 0.78]
-    "MP solo krigsmateriel": [0.30, 0.35]
-    "Elect cleavage Tidö permanence": [0.80, 0.85]
-    "SD Tidö lock-in": [0.80, 0.25]
-    "Coalition math 349 seats": [0.85, 0.20]
-```
-
-### Strengths
-
-#### S-1 · Coordinated trilateral framing on fiscal axis
-Three left-bloc parties simultaneously filed motions against prop 2025/26:236 within 48 hours — S ([HD024082](https://data.riksdagen.se/dokument/HD024082.html)), V ([HD024092](https://data.riksdagen.se/dokument/HD024092.html)), MP ([HD024098](https://data.riksdagen.se/dokument/HD024098.html)). Evidence: temporal clustering (2026-04-15 to 2026-04-17), all filed in same utskott (FiU). Demonstrates operational coordination capacity for 2026 campaign.
-
-#### S-2 · S positions as fiscal anchor
-S under Mikael Damberg ([HD024082](https://data.riksdagen.se/dokument/HD024082.html)) proposes constructive alternative rather than pure avslag — institutional competence signalling for 2026 government-formation credibility. Evidence: motion text calls for regeringen to "återkomma till riksdagen" with revised framework rather than rejecting outright.
-
-#### S-3 · MP owns climate and vapenexport axes cleanly
-MP is the only party filing on prop 228 ([HD024096](https://data.riksdagen.se/dokument/HD024096.html)) with a full export-ban proposition — gives MP unique ownership of two election-relevant frames (climate via drivmedel, ethics via vapenexport). Evidence: no parallel S or V motion proposing full ban.
-
-#### S-4 · C differentiated centre-reform profile
-C filed on 5 distinct propositions ([HD024088](https://data.riksdagen.se/dokument/HD024088.html), [HD024089](https://data.riksdagen.se/dokument/HD024089.html), [HD024093](https://data.riksdagen.se/dokument/HD024093.html), [HD024094](https://data.riksdagen.se/dokument/HD024094.html), [HD024095](https://data.riksdagen.se/dokument/HD024095.html)) with consistently procedural/reform language — maintains C as a non-Tidö bourgeois alternative.
-
-### Weaknesses
-
-#### W-1 · Absence of coordinated judicial-policy counter-frame
-Opposition filed 3 motions on prop 235 (utvisning) but with fundamentally divergent lines: V wants full avslag ([HD024090](https://data.riksdagen.se/dokument/HD024090.html)), MP wants partial avslag ([HD024097](https://data.riksdagen.se/dokument/HD024097.html)), C wants systematik-krav ([HD024095](https://data.riksdagen.se/dokument/HD024095.html)). This is three parallel messages, not one — weakens narrative cohesion.
-
-#### W-2 · S silence on vapenexport
-S filed zero motions against prop 228 (krigsmateriel). Leaves MP (and partly V) to carry the line alone. A red-green coalition scenario requires S-MP alignment on foreign policy; this divergence will be used by Tidö parties in 2026 campaign framing.
-
-#### W-3 · No cross-bloc bridge on welfare
-Three motions on prop 216 (medicinsk kompetens) from S/V/C — but no sign of coordinated amendment package. Opposition is parallel, not integrated. Evidence: three distinct utskott filings with different legal pathways.
-
-#### W-4 · Limited full-text signalling
-All 20 motions retrieved as metadata-only summaries at retrieval time; deeper textual coordination (wording overlap, shared legal analysis) cannot be verified at this resolution. Pass-2 remediation: prioritise `get_dokument_innehall` for P0/P1 documents in next run.
-
-### Opportunities
-
-#### O-1 · Election-cycle narrative peg
-Drivmedel is Sweden's most-polled cost-of-living issue in 2026 (SCB KPI-F fuel indices persistently salient). The S motion ([HD024082](https://data.riksdagen.se/dokument/HD024082.html)) can anchor a broader oppositions-own-the-economy narrative through summer.
-
-#### O-2 · Rule-of-law debate on prop 235
-Three opposition motions ([HD024090](https://data.riksdagen.se/dokument/HD024090.html), [HD024095](https://data.riksdagen.se/dokument/HD024095.html), [HD024097](https://data.riksdagen.se/dokument/HD024097.html)) collectively put proportionality/legal-certainty back on the agenda — creates coverage window for constitutional-committee (KU) scrutiny lines in opposition.
-
-#### O-3 · Coalition demarcation for 2026
-The motion wave crystallises the S-V-MP-C quartet's distinct positions. Election debates can now reference concrete differentiation rather than abstract positioning.
-
-#### O-4 · Committee-work visibility
-With 6 different utskott touched (FiU, UU, SoU, SfU, CU, AU, FöU), opposition gains recurring media moments throughout the betänkande calendar — each utskott report surfaces the opposition line separately.
-
-### Threats
-
-#### T-1 · Tidö arithmetic remains intact
-M (68 seats) + SD (73) + KD (19) + L (16) = 176 seats vs 173-seat opposition. Motion wave does not alter coalition math. Evidence: Riksdag seat distribution 2022 baseline. **Admiralty A1**.
-
-#### T-2 · SD lock-in removes right-flank pressure
-SD filed zero motions against any of the 9 propositions. This means there is no realistic path to Tidö amendment from internal-coalition dissent. Full base available via [search_voteringar](https://data.riksdagen.se/voteringlista/?rm=2025/26).
-
-#### T-3 · Drivmedel tax cut is popular even among opposition voters
-KPI trend since 2022 makes fuel-price relief broadly popular. Opposition avslag position risks class-cleavage backlash (rural/commuter vs urban). The V full-avslag line ([HD024092](https://data.riksdagen.se/dokument/HD024092.html)) carries distributional risk.
-
-#### T-4 · Parallel bill flow crowds out narrative
-The 9 propositions in one 72-hour motion window dilute media attention per bill — drivmedel may dominate, but prop 216 (kommun-vård) risks being under-covered.
-
-### TOWS matrix (strategic pairings)
-
-| Factor | Leverage for | Exploit by |
-|--------|-------------|-----------|
-| S1 × O1 | S fiscal anchor + election narrative | S lead-story positioning on drivmedel; op-ed programme through May |
-| S3 × O2 | MP vapenexport + rule-of-law debate | MP as civil-liberties party bridges foreign-policy and domestic constitutionalism |
-| W1 × T4 | Divergent utvisning lines + narrative crowding | Risk: opposition self-dilutes on justice; requires unified spokesperson |
-| S4 × O3 | C differentiated + coalition demarcation | C targets bourgeois-curious M/L voters who reject SD but approve of Tidö economics |
-| W2 × T2 | S silence on vapenexport + SD lock-in | S's silence ensures Tidö defence-industry consensus holds regardless of MP pressure |
-
-### Cross-SWOT
-
-- **S/W pairing**: S-1 (trilateral coord) is real only on fiscal; W-1 (divergent justice) shows it does not generalise. Coordination is issue-specific, not structural.
-- **S/O**: S-3 (MP clean ownership) × O-3 (coalition demarcation) strengthens a multi-party Left narrative where each party has a distinct role.
-- **W/T**: W-2 × T-3 — S's fiscal-anchor framing ([HD024082](https://data.riksdagen.se/dokument/HD024082.html)) is exposed to T-3's distributional risk if drivmedel framing loses to relief narrative.
-
----
-
-*Evidence standard: every entry cites either a dok_id or primary-source URL. Source: riksdag-regering MCP `get_motioner` 2026-04-24T01:05:50Z.*
-
----
-
-## Threat Analysis
-<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/threat-analysis.md -->
-
-This analysis adopts the Political Threat Taxonomy — adversarial actors, techniques, and targets that could exploit or undermine the democratic process around this motion wave. **This is NOT political opposition research**; it is threat modelling against democratic legitimacy.
-
-### Political Threat Taxonomy
-
-| Threat ID | Actor class | Technique | Target | Plausibility |
-|-----------|-------------|-----------|--------|-------------:|
-| T-1 | Foreign influence (state-linked) | Frame V avslag on utvisning ([HD024090](https://data.riksdagen.se/dokument/HD024090.html)) as state-capture narrative | V voter base / centre swing | Medium |
-| T-2 | Foreign influence | Amplify MP krigsmateriel ([HD024096](https://data.riksdagen.se/dokument/HD024096.html)) to depict Sweden as unreliable Nato ally | Nato discourse in Sweden + allies | Medium |
-| T-3 | Domestic extremist | Weaponise prop 235 debate to mobilise anti-migrant mobilisation | Public order / community safety | Medium |
-| T-4 | Disinformation (platform) | Mischaracterise S drivmedel motion ([HD024082](https://data.riksdagen.se/dokument/HD024082.html)) as endorsing higher fuel tax | Rural/commuter voters | High |
-| T-5 | Legitimate political (within rules) | Tidö parties frame coordinated motion wave as "obstruction" to legitimise procedural shortcuts | Democratic debate norms | Medium |
-| T-6 | Cyber | Attempt to compromise Riksdag.se delivery of motion documents during debate window | Information integrity | Low |
-| T-7 | Institutional | Utskott-chair use of extra-budget procedure ([prop 236](https://data.riksdagen.se/dokument/HD024082.html) FiU route) to compress opposition time | Deliberative quality | High |
-
-### Attack tree — T-4 (disinfo on drivmedel)
-
-```mermaid
-%%{init: {'theme':'dark'}}%%
-flowchart TB
-    Goal([Erode S credibility on fuel prices]) --> A[Mischaracterise HD024082]
-    A --> A1[Clip Damberg quote]
-    A --> A2[Substitute avslag frame]
-    A --> A3[Side-by-side with MP HD024098]
-    A1 --> B[Distribute via platforms]
-    A2 --> B
-    A3 --> B
-    B --> B1[Facebook boost]
-    B --> B2[X reply-reply chains]
-    B --> B3[Telegram channels]
-    B1 --> Impact([S rural vote erosion])
-    B2 --> Impact
-    B3 --> Impact
-
-    style Goal fill:#ff006e,stroke:#fff,color:#fff
-    style Impact fill:#ff006e,stroke:#fff,color:#fff
-    style A fill:#ffbe0b,stroke:#000,color:#000
-    style B fill:#ffbe0b,stroke:#000,color:#000
-```
-
-### Kill chain — T-2 (Nato-alliance framing on krigsmateriel)
-
-```mermaid
-%%{init: {'theme':'dark'}}%%
-flowchart LR
-    R[Reconnaissance<br/>Identify MP motion HD024096] --> W[Weaponisation<br/>Selective translation to EN]
-    W --> D[Delivery<br/>Amplify via RT/Sputnik-adjacent] 
-    D --> E[Exploitation<br/>Reshare in EU Nato discourse]
-    E --> I[Installation<br/>Seed Nato-sceptic narrative]
-    I --> C[Command<br/>Repeat cycle at Almedalen]
-    C --> Ob[Objectives<br/>Signal Swedish unreliability]
-
-    style R fill:#00d9ff,stroke:#000,color:#000
-    style Ob fill:#ff006e,stroke:#fff,color:#fff
-```
-
-### MITRE-style TTP mapping
-
-| Tactic | Technique | Procedure (observed / plausible) | Evidence |
-|--------|-----------|----------------------------------|----------|
-| TA-Info-Manip | Selective quotation | Crop S motion to omit "återkomma till riksdagen" qualifier | [HD024082](https://data.riksdagen.se/dokument/HD024082.html) text structure |
-| TA-Delegitimise | Frame substitution | Label V avslag as "amnesti" | [HD024090](https://data.riksdagen.se/dokument/HD024090.html) |
-| TA-Polarise | Issue wedge | Rural vs urban on drivmedel | [HD024092](https://data.riksdagen.se/dokument/HD024092.html), [HD024098](https://data.riksdagen.se/dokument/HD024098.html) |
-| TA-Amplify | Bot / coordinated inauthentic | Reshare cycles on X/Facebook during utskott hearings | riksdagen.se calendar |
-| TA-Suppress | Procedural compression | Extra ändringsbudget route (prop 236) | [HD024082](https://data.riksdagen.se/dokument/HD024082.html) FiU timeline |
-
-### Adversary goals & cost/impact ranking
-
-```mermaid
-%%{init: {'theme':'dark'}}%%
-quadrantChart
-    title Threat ranking — Plausibility vs Impact
-    x-axis Low Plausibility --> High Plausibility
-    y-axis Low Impact --> High Impact
-    quadrant-1 Critical watch
-    quadrant-2 Monitor
-    quadrant-3 Low priority
-    quadrant-4 High-effort adversary
-    "T-1 V framed capture": [0.55, 0.70]
-    "T-2 Nato unreliable": [0.60, 0.80]
-    "T-3 extremist mobil": [0.55, 0.70]
-    "T-4 drivmedel disinfo": [0.85, 0.70]
-    "T-5 obstruction frame": [0.60, 0.60]
-    "T-6 cyber Riksdag": [0.20, 0.80]
-    "T-7 procedural compression": [0.85, 0.65]
-```
-
-### Defensive recommendations
-
-1. **Against T-4**: S and V independently publish plain-language explainers of their drivmedel motions within 72 hours of first debate; cite [HD024082](https://data.riksdagen.se/dokument/HD024082.html) and [HD024092](https://data.riksdagen.se/dokument/HD024092.html) directly.
-2. **Against T-2**: MP coordinates with Swedish embassy comms on English-language explanation of [HD024096](https://data.riksdagen.se/dokument/HD024096.html), distinguishing ethical-export framework from Nato alignment.
-3. **Against T-7**: Opposition files ordningsfråga at extra-budget procedural votes; document compression in KU annual report.
-4. **Against T-3**: Coordination with MSB (Myndigheten för samhällsskydd och beredskap) on monitoring extremist mobilisation around prop 235 debate windows ([msb.se](https://www.msb.se/)).
-
-### Residual threat posture
-
-- High-plausibility / high-impact quadrant: T-4, T-2, T-7.
-- Watch list next 30 days: platform-level content around drivmedel and utvisning debates.
-- Escalation trigger: detectable coordinated inauthentic behaviour on any opposition motion hashtag.
-
----
-
-*This document models adversarial threats to democratic process around the motion wave — it is not an assessment of any specific party's motives. Source: threat framework + riksdag-regering MCP.*
 
 ## Per-document intelligence
 
@@ -1488,107 +813,102 @@ MP motion mot prop 236 drivmedelsreduktion — klimat-principiell avslag.
 ---
 *Source: `get_motioner`. Part of highest-salience 3-motion cluster.*
 
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/election-2026-analysis.md -->
+## Stakeholder Perspectives
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/stakeholder-perspectives.md -->
 
-The motion wave of 2026-04-24 lands ~4.5 months before the Swedish parliamentary election of 2026-09-13. This analysis maps motion content to 2026 campaign axes.
+Six-lens stakeholder analysis. Lenses: **Government coalition**, **Opposition bloc**, **Business/industry**, **Civil society**, **Voters/regional**, **Foreign/EU**.
 
-### Electoral landscape pre-motion
+### Stakeholder matrix
 
-| Party | 2022 result | Trend (Novus avg Q1 2026) | Trajectory |
-|-------|-----------:|------------:|------------|
-| S | 30.3% | 30–32% | Stable-up |
-| M | 19.1% | 17–19% | Stable-down |
-| SD | 20.5% | 21–23% | Stable-up |
-| V | 6.7% | 8–10% | Up |
-| C | 6.7% | 4–5% | Down (risk under 4% threshold) |
-| KD | 5.3% | 4–6% | Stable |
-| MP | 5.1% | 4–5% | Stable (threshold risk) |
-| L | 4.6% | 3–4% | Down (threshold risk) |
+| Stakeholder | Interest | Power | Position | Named actor(s) | Evidence |
+|-------------|----------|------:|----------|----------------|----------|
+| **Regering (M-KD-L)** | Pass 9 bills intact | High | Defend Tidö package | Ulf Kristersson (M) PM; finansminister Elisabeth Svantesson (M) | Tidö-avtal; [regeringen.se](https://www.regeringen.se/) |
+| **SD (Tidö support)** | Lock in Tidö; prepare 2026 | High | Silent support; no counter-motions | Jimmie Åkesson (SD) | `get_motioner` result (0 SD) |
+| **S** | Election-cycle positioning; fiscal anchor | High | Constructive counter on fiscal; silent on vapenexport | Mikael Damberg (S) finansp; Ardalan Shekarabi (S) migration; Fredrik Lundh Sammeli (S) SoU; Joakim Järrebring (S) CU | [HD024082](https://data.riksdagen.se/dokument/HD024082.html), [HD024079](https://data.riksdagen.se/dokument/HD024079.html), [HD024081](https://data.riksdagen.se/dokument/HD024081.html), [HD024078](https://data.riksdagen.se/dokument/HD024078.html) |
+| **V** | Distributional justice; civil rights | Medium | Full avslag on welfare/utvisning bills | Nooshi Dadgostar (V) ordf; Tony Haddou (V) migration; Håkan Svenneling (V) UU; Karin Rågsjö (V) SoU; Andreas Lennkvist Manriquez (V) CU | [HD024092](https://data.riksdagen.se/dokument/HD024092.html), [HD024090](https://data.riksdagen.se/dokument/HD024090.html), [HD024091](https://data.riksdagen.se/dokument/HD024091.html), [HD024083](https://data.riksdagen.se/dokument/HD024083.html), [HD024084](https://data.riksdagen.se/dokument/HD024084.html) |
+| **MP** | Climate; foreign-policy ethics | Medium | Avslag fiscal; full vapenexport ban; rule-of-law | Janine Alm Ericson (MP); Jacob Risberg (MP); Annika Hirvonen (MP); Ulrika Westerlund (MP); Leila Ali Elmi (MP) | [HD024098](https://data.riksdagen.se/dokument/HD024098.html), [HD024096](https://data.riksdagen.se/dokument/HD024096.html), [HD024097](https://data.riksdagen.se/dokument/HD024097.html), [HD024087](https://data.riksdagen.se/dokument/HD024087.html), [HD024086](https://data.riksdagen.se/dokument/HD024086.html), [HD024085](https://data.riksdagen.se/dokument/HD024085.html) |
+| **C** | Centrist reform; procedural tightening | Medium | Reform-not-reject on 5 bills | Christofer Bergenblock (C) SoU; Alireza Akhondi (C) CU; Niels Paarup-Petersen (C) SfU/FöU; Mikael Larsson (C) FöU | [HD024094](https://data.riksdagen.se/dokument/HD024094.html), [HD024088](https://data.riksdagen.se/dokument/HD024088.html), [HD024089](https://data.riksdagen.se/dokument/HD024089.html), [HD024093](https://data.riksdagen.se/dokument/HD024093.html), [HD024095](https://data.riksdagen.se/dokument/HD024095.html) |
+| **Defence industry** | Export clarity | Medium | Oppose MP ban ([HD024096](https://data.riksdagen.se/dokument/HD024096.html)) | SOFF (Säkerhets- och försvarsföretagen), Saab | [soff.se](https://soff.se/) |
+| **Klimatnätverk / civil society** | Back fuel-tax protection | Low-Medium | Support MP/V motions | Klimatriksdagen, Naturskyddsföreningen | [naturskyddsforeningen.se](https://www.naturskyddsforeningen.se/) |
+| **Kommunsektor (SKR)** | Fiscal certainty on kommun-vård | High | Neutral-to-worried on prop 216 | SKR (Sveriges Kommuner och Regioner) | [skr.se](https://skr.se/) |
+| **Rural voters** | Fuel-price relief | Medium | Favour prop 236 regardless of opposition | — | SCB KPI rural ([scb.se](https://www.scb.se/)) |
+| **Migration-sector civil society** | Counter utvisning regime | Low-Medium | Ally with V/MP on [HD024090](https://data.riksdagen.se/dokument/HD024090.html), [HD024097](https://data.riksdagen.se/dokument/HD024097.html) | Röda Korset, Amnesty Sverige | [amnesty.se](https://www.amnesty.se/), [rodakorset.se](https://www.rodakorset.se/) |
+| **EU (Commission, Member States)** | Compatibility of utvisning with ECHR/EU law | Medium | Silent-monitoring | DG Home; Nordic partners | [ec.europa.eu](https://ec.europa.eu/) |
+| **Media ecosystem** | Stories for election cycle | Medium | Amplify drivmedel, utvisning, krigsmateriel | DN, SvD, SR, SVT | — |
 
-### Campaign axes activated by motion wave
-
-1. **Fiscal / cost-of-living** — drivmedel cluster (prop 236) mobilises rural/commuter vote.
-2. **Migration / rule-of-law** — utvisning cluster (prop 235) mobilises centre-right identity vote + V/MP civil-rights base.
-3. **Welfare / healthcare** — prop 216 mobilises kommunsektor workers + S base.
-4. **Defence / foreign policy** — krigsmateriel (prop 228) activates MP ethical-foreign-policy axis.
-5. **Civil rights / cyber** — prop 214 creates smaller axis but differentiates MP/C.
-6. **Social policy / protection of vulnerable** — ersättning (prop 222) + konsumkredit (prop 223) mobilise welfare-sensitive voters.
-
-### Motion-to-vote translation matrix
-
-| Motion cluster | Voter segment targeted | Expected net effect (party) | Evidence |
-|----------------|-----------------------|------------------------------|----------|
-| Drivmedel | Rural, commuter | +0.5 to +1.0% S (fiscal anchor) | [HD024082](https://data.riksdagen.se/dokument/HD024082.html) |
-| Drivmedel | Young urban climate | +0.3 to +0.5% MP, V | [HD024092](https://data.riksdagen.se/dokument/HD024092.html), [HD024098](https://data.riksdagen.se/dokument/HD024098.html) |
-| Utvisning | Civil-society aligned | +0.3 to +0.5% V, MP | [HD024090](https://data.riksdagen.se/dokument/HD024090.html), [HD024097](https://data.riksdagen.se/dokument/HD024097.html) |
-| Utvisning | Tidö base | Consolidation, ±0 net | Tidö bills |
-| Medicinsk kompetens | Kommun-vårdsektor | +0.5 to +1.0% S | [HD024078](https://data.riksdagen.se/dokument/HD024078.html) |
-| Krigsmateriel | Ethical-foreign-policy voters | +0.2 to +0.4% MP | [HD024096](https://data.riksdagen.se/dokument/HD024096.html) |
-| Cybersäk | Reform-centre voters | +0.1 to +0.2% C | [HD024095](https://data.riksdagen.se/dokument/HD024095.html) |
-
-### Seat-projection sensitivity
-
-| Scenario (Sep 2026) | S | M | SD | V | C | KD | MP | L | Tidö total |
-|---------------------|--:|--:|--:|--:|--:|--:|--:|--:|--:|
-| Base (current polls) | 111 | 64 | 82 | 33 | 15 | 18 | 15 | 11 | 175 |
-| Motion-amplified opposition +1% S,V,MP | 115 | 62 | 80 | 36 | 14 | 17 | 16 | 9 | 168 |
-| Fuel-price salience +2% S, −1% M | 120 | 60 | 81 | 33 | 15 | 18 | 14 | 8 | 167 |
-| Migration salience +1.5% SD, −1% S | 108 | 63 | 87 | 32 | 15 | 18 | 15 | 11 | 179 |
-
-*Seat allocation via Sainte-Laguë method; 349 seats, 4% national threshold.*
-
-### Threshold-risk parties
-
-- **C** (4.5%): motion filings (5 motions incl. reform content) aim to differentiate from S — critical survival lever.
-- **L** (3.8%): zero motions this wave; L relies on Tidö coalition visibility, not parliamentary activism.
-- **MP** (4.2%): 6 motions create signal but threshold vulnerability remains.
-- **KD** (5.1%): safely above threshold, no motion activity in wave.
-
-### Campaign narrative construction
+### Interest/Power grid
 
 ```mermaid
 %%{init: {'theme':'dark'}}%%
-flowchart TB
-    S[S narrative<br/>'Ansvarsfull fiscal politik'] -->|evidence| HD082[HD024082 motion]
-    S -->|evidence| HD078[HD024078 motion]
-    V[V narrative<br/>'Rättvisa för alla'] -->|evidence| HD090[HD024090 motion]
-    V -->|evidence| HD092[HD024092 motion]
-    MP[MP narrative<br/>'Klimat + etik + frihet'] -->|evidence| HD096[HD024096 motion]
-    MP -->|evidence| HD098[HD024098 motion]
-    C[C narrative<br/>'Reform och centrism'] -->|evidence| HD094[HD024094 motion]
-    C -->|evidence| HD089[HD024089 motion]
-    M[M narrative<br/>'Stabilitet under Tidö'] -->|evidence| Tidö[9 props passed]
-    SD[SD narrative<br/>'Makt utan motstånd'] -->|evidence| Zero[Zero motions]
-
-    style S fill:#e30613,stroke:#fff,color:#fff
-    style V fill:#a31621,stroke:#fff,color:#fff
-    style MP fill:#83c67a,stroke:#000,color:#000
-    style C fill:#009933,stroke:#fff,color:#fff
-    style M fill:#1f9ed1,stroke:#fff,color:#fff
-    style SD fill:#ffd700,stroke:#000,color:#000
+quadrantChart
+    title Stakeholder Interest × Power
+    x-axis Low Interest --> High Interest
+    y-axis Low Power --> High Power
+    quadrant-1 Key players
+    quadrant-2 Keep satisfied
+    quadrant-3 Monitor
+    quadrant-4 Keep informed
+    "Regering Tidö": [0.95, 0.95]
+    "SD (support)": [0.75, 0.90]
+    "S": [0.90, 0.80]
+    "V": [0.85, 0.55]
+    "MP": [0.90, 0.55]
+    "C": [0.80, 0.55]
+    "SKR kommuner": [0.70, 0.70]
+    "Defence industry": [0.75, 0.60]
+    "Klimatrörelse": [0.75, 0.30]
+    "Rural voters": [0.80, 0.50]
+    "Migration CS": [0.70, 0.35]
+    "EU": [0.50, 0.70]
+    "Media": [0.65, 0.65]
 ```
 
-### Electoral key dates
+### Influence network
 
-| Date | Event | Motion relevance |
-|------|-------|-----------------|
-| 2026-05 to 2026-06 | Utskott hearings | Motions referenced in debate |
-| 2026-06-15 | Riksdagen summer recess | Kammarvoter on Tidö bills 214–236 |
-| 2026-07 | Almedalen veckan | Motion content becomes campaign material |
-| 2026-08 | Formal campaign start | Motions cited in party manifestos |
-| 2026-09-13 | Election day | Motion-mobilised blocs go to polls |
+```mermaid
+%%{init: {'theme':'dark'}}%%
+flowchart LR
+    Tidö([Regering M-KD-L]) -->|coalition| SD
+    Tidö -->|bills 214-236| Riksdag[Riksdag voting]
+    SD -.->|silent support| Riksdag
+    S([S]) -->|3 motions| FiU
+    S -->|1 motion each| SoU
+    S -->|1 motion each| AU
+    S -->|1 motion each| CU
+    V([V]) -->|5 motions| Riksdag
+    MP([MP]) -->|6 motions| Riksdag
+    C([C]) -->|5 motions| Riksdag
+    Riksdag --> Vote((Final<br/>votes))
+    Vote -->|betänkande| Media
+    Media -->|framing| Voters[Väljarna]
+    Klimat[Klimat & migr CS] -->|ally| V
+    Klimat -->|ally| MP
+    Industry[Defence industry] -->|counter-lobby| Tidö
+    EU -->|ECHR pressure| Riksdag
 
-### Judgments
+    style Tidö fill:#00d9ff,stroke:#000,color:#000
+    style S fill:#ff006e,stroke:#fff,color:#fff
+    style V fill:#ffbe0b,stroke:#000,color:#000
+    style MP fill:#ffbe0b,stroke:#000,color:#000
+    style C fill:#ffbe0b,stroke:#000,color:#000
+```
 
-- Motion wave amplifies S fiscal-anchor narrative more than any other single event Q2 2026.
-- C needs every motion-driven differentiation event to survive 4% threshold; MP in similar position.
-- Tidö cost of passing controversial bills pre-election: measurable (~0.5–1.0% soft-M erosion expected regardless of wave outcome).
-- SD zero-motion strategy preserves base but concedes narrative ground to opposition.
+### Winners and losers
+
+| # | Winner / Loser | Actor | Reason | Evidence |
+|--:|----------------|-------|--------|----------|
+| 1 | Winner | Ulf Kristersson (M) | Bills likely pass with minor amendment; incumbent advantage stays | Tidö seat math 176/349 |
+| 2 | Winner | Mikael Damberg (S) | Owns fiscal-anchor narrative for 2026 | [HD024082](https://data.riksdagen.se/dokument/HD024082.html) |
+| 3 | Winner | Jimmie Åkesson (SD) | Coalition discipline amplifies Tidö durability without political cost | Zero SD motions |
+| 4 | Loser | Nooshi Dadgostar (V) | Soft-on-crime frame risk on utvisning | [HD024090](https://data.riksdagen.se/dokument/HD024090.html) |
+| 5 | Mixed | MP leadership | Clean ownership of two axes; fragmentation cost vs S | [HD024096](https://data.riksdagen.se/dokument/HD024096.html) |
+| 6 | Mixed | C (Muharrem Demirok et al.) | Centre-reform differentiation + zero coalition path if Tidö holds | [HD024089](https://data.riksdagen.se/dokument/HD024089.html), [HD024095](https://data.riksdagen.se/dokument/HD024095.html) |
+| 7 | Loser | Migration civil-society | Prop 235 likely passes; limited opposition unity | [HD024090](https://data.riksdagen.se/dokument/HD024090.html) |
+| 8 | Winner | Defence industry (SOFF) | MP motion unlikely to pass; export framework preserved | [HD024096](https://data.riksdagen.se/dokument/HD024096.html) |
 
 ---
 
-*All percentages are public polling averages. All seat projections are analyst estimates, not predictions.*
+*Every named actor is a public officeholder or public-interest organisation. GDPR basis: Art. 9(2)(e) — data made manifestly public by data subjects.*
 
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/coalition-mathematics.md -->
@@ -1793,66 +1113,584 @@ flowchart LR
 
 *Voter segment sizes are published SCB demographic approximations. Issue salience is reported Novus/Demoskop data. No individual voter targeting — aggregate segments only.*
 
-## Comparative International
-<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/comparative-international.md -->
+## Forward Indicators
+<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/forward-indicators.md -->
 
-Comparator jurisdictions for the Swedish motion wave. Three comparators: **Denmark**, **Germany**, **United Kingdom**. Purpose: triangulate how equivalent opposition behaviour plays out under different parliamentary systems.
+Watch-list of ≥10 dated indicators that will validate, refute, or update judgments from this analysis.
 
-### Comparators
+### Near-term indicators (next 4 weeks, 2026-04-24 → 2026-05-22)
 
-#### 1. Denmark — Folketing motion culture
-**System**: Unicameral, minority governments norm, "parliamentarism".
-**Relevant pattern**: Opposition files "beslutningsforslag" (B) motions prolifically — norm rather than signal. 
-**Analogue to SWE 2026-04-24**: Danish opposition similarly fragmented S/SF/EL on fiscal questions; government routinely negotiates per-bill deals ("forligspolitik") unavailable in Swedish Tidö context.
-**Difference**: Denmark's tradition of broad cross-bloc "forlig" dampens motion-wave impact; Sweden's Tidö agreement locks support pre-vote, reducing motion leverage.
-**Source**: [ft.dk](https://www.ft.dk/), Danish research "Forhandlingspolitik og fragmenterede majoriteter" (Christiansen, Pedersen).
+| # | Indicator | Threshold | Trigger date | Source | Updates KJ |
+|--:|-----------|-----------|--------------|--------|------------|
+| 1 | First utskott hearing on prop 236 scheduled | First FiU calendar entry | +7d (~2026-05-01) | [riksdagen.se/sv/utskotten/finansutskottet](https://www.riksdagen.se/sv/utskotten/finansutskottet/) | KJ-3 |
+| 2 | SD public comment on any Tidö bill | First press release from SD press office | +14d (~2026-05-08) | [sverigedemokraterna.se](https://sverigedemokraterna.se/) | KJ-1, H3 |
+| 3 | SKR formal comment on prop 216 | First published brief on healthcare workforce | +14d (~2026-05-08) | [skr.se](https://skr.se/) | KJ-4 |
+| 4 | First kammardebatt on prop 236 | Scheduled kammardebatt | +21d (~2026-05-15) | [riksdagen.se calendar](https://www.riksdagen.se/) | KJ-3 |
+| 5 | SOFF response to MP vapenexport framework | First public statement | +21d (~2026-05-15) | [soff.se](https://soff.se/) | KJ-5 |
 
-#### 2. Germany — Bundestag opposition motions
-**System**: Federal bicameral, coalition government norm, constitutional review.
-**Relevant pattern**: SPD/Grüne/FDP Ampel (2021-2024) faced CDU/CSU + AfD + Linke opposition; opposition "Anträge" often parallel, rarely co-signed across bloc.
-**Analogue**: German opposition fragmentation on Heizungsgesetz (2023) mirrors Swedish fragmentation on drivmedel 2026 — three opposition parties, three parallel tracks.
-**Difference**: Bundesrat (Länder chamber) adds veto point absent in Swedish system; Swedish Regering faces only Riksdag floor.
-**Source**: [bundestag.de](https://www.bundestag.de/).
+### Mid-term indicators (4–12 weeks, 2026-05-22 → 2026-07-17)
 
-#### 3. United Kingdom — Commons opposition
-**System**: Westminster unitary, single-party majorities common.
-**Relevant pattern**: HoC opposition amendments on government bills; Labour 2019–2024 in opposition filed reasoned amendments on Conservative migration legislation (Illegal Migration Act 2023, Rwanda Act 2024).
-**Analogue**: Labour reasoned amendments on Rwanda scheme structurally similar to V/MP avslag on Swedish [HD024090](https://data.riksdagen.se/dokument/HD024090.html).
-**Difference**: First-past-the-post produces single-axis opposition; PR produces multi-axis (fiscal/defence/migration) as seen 2026-04-24.
-**Source**: [parliament.uk](https://www.parliament.uk/).
+| # | Indicator | Threshold | Trigger date | Source | Updates KJ |
+|--:|-----------|-----------|--------------|--------|------------|
+| 6 | FiU betänkande on prop 236 published | Betänkande publication | +5 weeks (~2026-05-29) | [riksdagen.se/FiU](https://www.riksdagen.se/sv/utskotten/finansutskottet/) | KJ-1, KJ-3 |
+| 7 | SfU betänkande on prop 235 | Publication | +6 weeks (~2026-06-05) | [riksdagen.se/SfU](https://www.riksdagen.se/sv/utskotten/socialforsakringsutskottet/) | KJ-1 |
+| 8 | SoU betänkande on prop 216 | Publication (looking for amendment language) | +6 weeks (~2026-06-05) | [riksdagen.se/SoU](https://www.riksdagen.se/sv/utskotten/socialutskottet/) | KJ-4 |
+| 9 | Kammarvote on prop 236 | Final ja/nej/avstår count | +8 weeks (~2026-06-15) | [riksdagen.se voteringar](https://www.riksdagen.se/sv/dokument-lagar/arende/) | KJ-1, KJ-3 |
+| 10 | Kammarvote on prop 235 | Final count | +8 weeks (~2026-06-15) | [riksdagen.se voteringar](https://www.riksdagen.se/) | KJ-1 |
+| 11 | Kammarvote on prop 216 | Final count + any amendment | +8 weeks (~2026-06-15) | [riksdagen.se voteringar](https://www.riksdagen.se/) | KJ-4 |
+| 12 | Any Tidö MP abstain on ändringsbudget vote | Single abstention | +8 weeks (~2026-06-15) | Kammarvote record | KJ-1, S3 |
 
-### Comparative matrix
+### Long-term indicators (12+ weeks, toward 2026-09-13)
 
-| Dimension | Sweden 2026-04-24 | Denmark | Germany | UK |
-|-----------|-------------------|---------|---------|-----|
-| Parliamentary system | Unicameral, Tidö + support | Unicameral, minority norm | Federal bicameral | Westminster majority |
-| Opposition fragmentation | 4 parties S/V/MP/C | 4-5 parties (S/SF/EL/RV) | 3 parties (CDU/AfD/Linke) | 1 dominant (Labour) |
-| Counter-motion density | 2.2 motions/bill | ~3 motions/bill (B-forslag) | ~2 Anträge/bill | 1 reasoned amendment norm |
-| Coalition discipline | Tidö 176/349 locked | Broad forlig norm | Ampel internal strain | Single-party discipline |
-| Ethical vapenexport precedent | MP HD024096 | 2015 Bahrain debate | Saudi arms freeze 2018 | Rwanda scheme 2023 |
-| Migration opposition framing | Rättssäkerhet (V/MP) | Folkeoplysning (EL) | Verfassungsmäßigkeit (Linke) | Human rights (Labour) |
+| # | Indicator | Threshold | Trigger date | Source | Updates KJ |
+|--:|-----------|-----------|--------------|--------|------------|
+| 13 | Novus/Demoskop issue-salience update on drivmedel | Drivmedel in top 3 voter issues | ~2026-07-31 | Polling publications | KJ-3 |
+| 14 | S party congress economic platform | Fiscal-anchor framing of drivmedel motion | 2026-08-15 (est.) | [socialdemokraterna.se](https://www.socialdemokraterna.se/) | KJ-3 |
+| 15 | Almedalen vecka party speeches | Motion content incorporation | 2026-07-06..2026-07-12 | Almedalens programme | KJ-3, KJ-5 |
+| 16 | MP vapenexport framework — policy paper | Formal MP manifesto language | 2026-08-15 (est.) | [mp.se](https://www.mp.se/) | KJ-5 |
+| 17 | Election 2026-09-13 result | Final seat distribution | 2026-09-13 | [val.se](https://www.val.se/) | All KJs |
+| 18 | Post-election coalition formation | Regering formed / fails | 2026-09..2026-10 | [regeringen.se](https://www.regeringen.se/) | Scenario set |
 
-### Key insight
+### Trigger-response mapping
 
-**PR + formal coalition agreement is unusually rigid**. The comparator jurisdictions show that opposition motion waves in minority/coalition systems typically produce either forlig (Denmark) or per-bill coalition flexibility (Germany Ampel). Tidö's formal written agreement + SD's coalition discipline produces less flexibility than comparable regimes — which means 2026-04-24 motions likely have **less** impact than opposition-motion density would predict.
+| If indicator fires | Expected action (next analysis pipeline) |
+|---------------------|------------------------------------------|
+| #2 SD breaks silence | Elevate H3 to Moderate; re-score scenarios |
+| #3 SKR formal concern | Upgrade KJ-4 to Moderate-High |
+| #9 prop 236 passes intact | Confirm KJ-1; reduce S2 probability |
+| #9 prop 236 fails | Upgrade S3 scenario to dominant; major re-analysis |
+| #11 prop 216 amendment passes | Confirm KJ-4; validate 4-party coordination hypothesis |
+| #12 Tidö abstention | Immediate triage; S3 scenario update |
+| #17 L below 4% | Trigger post-election coalition re-analysis |
 
-### Implications
+### PIR coverage
 
-1. Swedish opposition cannot replicate Danish forligspolitik because Tidö-avtal precludes bilateral bill-by-bill deals.
-2. German Bundesrat-style veto point absent — no fallback forum for opposition.
-3. UK-style single-bill reasoned amendments more impactful per unit effort than Swedish multi-axis motions.
-4. Election-cycle effect (SE 2026) more determinative of motion impact than parliamentary math.
+| PIR | Covered by indicators |
+|-----|------------------------|
+| PIR-1 Election 2026 salience | #13, #14, #15, #17 |
+| PIR-2 SD coalition discipline | #2, #12, #9/10/11 |
+| PIR-3 Healthcare implementation | #3, #8, #11 |
+| PIR-4 Opposition bloc dynamics | #6, #7, #8, #15 |
+| PIR-5 Foreign policy positioning | #5, #16 |
+| PIR-6 Procedural integrity | #9, #12 |
+| PIR-7 Polling shift | #13 |
 
-### Cross-national lessons for Swedish opposition
+### Update cadence
 
-- **S** (take Denmark's book): Build durable fiscal-anchor narrative that survives one election cycle; don't expect per-motion wins.
-- **V** (take Germany's book): Build extra-parliamentary pressure (civil society + media) to amplify motions.
-- **MP** (take UK's book): Pick one signature bill per year; concentrate resources.
-- **C** (take Denmark's book): Position as swing actor for post-2026 hypothetical forlig.
+- Next full re-run: 2026-05-15 (after 3 weeks of indicator data).
+- Interim spot-check: +7d (first utskott calendar entry).
+- Emergency re-run trigger: any #12 or #9-12 surprise.
 
 ---
 
-*Comparator data sourced from public parliamentary archives. No classified or private sources.*
+*All 18 indicators have concrete dates or conditions + public verifiable sources. Forward-looking ≠ predictive.*
+
+---
+
+## Scenario Analysis
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/scenario-analysis.md -->
+
+Three futures for the 9 Tidö bills (prop 214, 215, 216, 222, 223, 228, 229, 235, 236) given the motion wave. Probabilities sum to 100%.
+
+### Scenario overview
+
+| Scenario | Probability | Confidence | Horizon |
+|----------|------------:|:----------:|---------|
+| S1 — Tidö holds, bills pass intact | 55% | Moderate (Admiralty B2) | 60–90 days |
+| S2 — Partial amendment, 2 bills fall | 30% | Moderate (B3) | 60–90 days |
+| S3 — Coalition stress, extra-budget vote fails | 15% | Low (C3) | 60–180 days |
+
+### S1 — Tidö holds (55%)
+
+**Description**: All 9 bills adopted with minor utskott amendments. Tidö 176/349 seats prove durable despite fragmented opposition.
+
+**Indicators (watch list)**:
+- SD continues silent support through May utskott hearings.
+- No amendment motions from within Tidö parties (M/KD/L).
+- Kammarvote margins ≥ 170 Ja on each bill.
+
+**Consequences**:
+- Drivmedel tax reduction enacted at statsbudget cost ~2.5 bn SEK (prop 236).
+- Utvisning regime hardens ([HD024090](https://data.riksdagen.se/dokument/HD024090.html) avslag fails).
+- Election 2026 runs on completed Tidö record.
+
+**Evidence**: Tidö discipline across 2025–2026 ([regeringen.se](https://www.regeringen.se/)); zero SD counter-motions on this wave (dok_id manifest).
+
+### S2 — Partial amendment (30%)
+
+**Description**: 2 of 9 bills substantially amended or withdrawn. Likely candidates: prop 216 (medicinsk kompetens — 4-party wave incl. C) and prop 236 (drivmedel — fiscal amplification).
+
+**Indicators**:
+- C or L signal concern on healthcare workforce pipeline before utskott vote.
+- SKR (Sveriges Kommuner och Regioner) public statement on prop 216 funding.
+- Ekonomiska utskottets analysis flags ändringsbudget fiscal concern.
+
+**Consequences**:
+- Regering forced to table replacement proposal on amended bills.
+- S wins on fiscal-anchor narrative; claims partial victory on prop 236.
+- Tidö survives but at narrative cost entering 2026 campaign.
+
+**Evidence**: C filed 5 motions including reform-not-reject on [HD024094](https://data.riksdagen.se/dokument/HD024094.html); 4-party convergence on prop 216.
+
+### S3 — Coalition stress / extra-budget fails (15%)
+
+**Description**: Extra ändringsbudget route used for prop 236 fails; at least one Tidö party abstains. Triggers ordningsfråga and possible förtroendeomröstning.
+
+**Indicators**:
+- L internal dissent on Tidö scope expansion.
+- KD public pressure over welfare trade-offs.
+- Any Tidö MP absent/abstain on the extra-budget vote.
+
+**Consequences**:
+- Regering crisis narrative 8 months pre-election.
+- S positioned as alternative anchor.
+- MP/V gain mobilisation headroom.
+
+**Evidence**: Historical pattern — minority+support coalitions rarely complete without 1 stress event per mandatperiod. Tidö has been unusually stable 2022–2026.
+
+### Decision tree
+
+```mermaid
+%%{init: {'theme':'dark'}}%%
+flowchart TB
+    Now([2026-04-24<br/>20 motions filed]) --> UtskHear[Utskott hearings<br/>May 2026]
+    UtskHear -->|Tidö aligned| S1Path[S1 — intact]
+    UtskHear -->|Cracks on prop 216/236| Amend[Amendment drafted]
+    Amend -->|Minor| S1Path
+    Amend -->|Major| S2Path[S2 — partial]
+    UtskHear -->|Tidö abstention on extra-budget| Crisis[Ordningsfråga]
+    Crisis -->|Resolved| S2Path
+    Crisis -->|Unresolved| S3Path[S3 — coalition stress]
+    S1Path --> Vote[Kammarvote<br/>June 2026]
+    S2Path --> Vote
+    S3Path --> Förtroend[Förtroendeomröstning]
+    Vote --> Law[Adopted or withdrawn]
+    Förtroend --> Nyval[Nyval risk]
+
+    style S1Path fill:#00d9ff,stroke:#000,color:#000
+    style S2Path fill:#ffbe0b,stroke:#000,color:#000
+    style S3Path fill:#ff006e,stroke:#fff,color:#fff
+```
+
+### Scenario probability distribution
+
+```mermaid
+%%{init: {'theme':'dark'}}%%
+pie title Scenario probabilities (sum = 100%)
+    "S1 Tidö holds" : 55
+    "S2 Partial amendment" : 30
+    "S3 Coalition stress" : 15
+```
+
+### Early-warning indicators (F3EAD Disseminate → Find)
+
+| Indicator | Threshold | Source | Timing |
+|-----------|-----------|--------|--------|
+| SD internal critique of any prop 214–236 | First public statement | [sverigedemokraterna.se](https://sverigedemokraterna.se/) | +2 weeks |
+| L abstention warning on prop 235 | Public interview | Swedish press | +3 weeks |
+| Tidö PM Kristersson defends prop 236 publicly | First defence statement | [regeringen.se](https://www.regeringen.se/) | +4 weeks |
+| SKR issues formal concern on prop 216 | Formal letter | [skr.se](https://skr.se/) | +4 weeks |
+| Finansutskottet report tone | Kritisk vs stödjande | [riksdagen.se FiU](https://www.riksdagen.se/sv/utskotten/finansutskottet/) | +6 weeks |
+| First bill withdrawal | Any | Riksdagen publication | +8 weeks |
+
+---
+
+*Probabilities are analyst judgements with documented evidence; horizon 60–180 days to kammarvote + förordnand. Bayesian update recommended after each utskott hearing.*
+
+---
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/election-2026-analysis.md -->
+
+The motion wave of 2026-04-24 lands ~4.5 months before the Swedish parliamentary election of 2026-09-13. This analysis maps motion content to 2026 campaign axes.
+
+### Electoral landscape pre-motion
+
+| Party | 2022 result | Trend (Novus avg Q1 2026) | Trajectory |
+|-------|-----------:|------------:|------------|
+| S | 30.3% | 30–32% | Stable-up |
+| M | 19.1% | 17–19% | Stable-down |
+| SD | 20.5% | 21–23% | Stable-up |
+| V | 6.7% | 8–10% | Up |
+| C | 6.7% | 4–5% | Down (risk under 4% threshold) |
+| KD | 5.3% | 4–6% | Stable |
+| MP | 5.1% | 4–5% | Stable (threshold risk) |
+| L | 4.6% | 3–4% | Down (threshold risk) |
+
+### Campaign axes activated by motion wave
+
+1. **Fiscal / cost-of-living** — drivmedel cluster (prop 236) mobilises rural/commuter vote.
+2. **Migration / rule-of-law** — utvisning cluster (prop 235) mobilises centre-right identity vote + V/MP civil-rights base.
+3. **Welfare / healthcare** — prop 216 mobilises kommunsektor workers + S base.
+4. **Defence / foreign policy** — krigsmateriel (prop 228) activates MP ethical-foreign-policy axis.
+5. **Civil rights / cyber** — prop 214 creates smaller axis but differentiates MP/C.
+6. **Social policy / protection of vulnerable** — ersättning (prop 222) + konsumkredit (prop 223) mobilise welfare-sensitive voters.
+
+### Motion-to-vote translation matrix
+
+| Motion cluster | Voter segment targeted | Expected net effect (party) | Evidence |
+|----------------|-----------------------|------------------------------|----------|
+| Drivmedel | Rural, commuter | +0.5 to +1.0% S (fiscal anchor) | [HD024082](https://data.riksdagen.se/dokument/HD024082.html) |
+| Drivmedel | Young urban climate | +0.3 to +0.5% MP, V | [HD024092](https://data.riksdagen.se/dokument/HD024092.html), [HD024098](https://data.riksdagen.se/dokument/HD024098.html) |
+| Utvisning | Civil-society aligned | +0.3 to +0.5% V, MP | [HD024090](https://data.riksdagen.se/dokument/HD024090.html), [HD024097](https://data.riksdagen.se/dokument/HD024097.html) |
+| Utvisning | Tidö base | Consolidation, ±0 net | Tidö bills |
+| Medicinsk kompetens | Kommun-vårdsektor | +0.5 to +1.0% S | [HD024078](https://data.riksdagen.se/dokument/HD024078.html) |
+| Krigsmateriel | Ethical-foreign-policy voters | +0.2 to +0.4% MP | [HD024096](https://data.riksdagen.se/dokument/HD024096.html) |
+| Cybersäk | Reform-centre voters | +0.1 to +0.2% C | [HD024095](https://data.riksdagen.se/dokument/HD024095.html) |
+
+### Seat-projection sensitivity
+
+| Scenario (Sep 2026) | S | M | SD | V | C | KD | MP | L | Tidö total |
+|---------------------|--:|--:|--:|--:|--:|--:|--:|--:|--:|
+| Base (current polls) | 111 | 64 | 82 | 33 | 15 | 18 | 15 | 11 | 175 |
+| Motion-amplified opposition +1% S,V,MP | 115 | 62 | 80 | 36 | 14 | 17 | 16 | 9 | 168 |
+| Fuel-price salience +2% S, −1% M | 120 | 60 | 81 | 33 | 15 | 18 | 14 | 8 | 167 |
+| Migration salience +1.5% SD, −1% S | 108 | 63 | 87 | 32 | 15 | 18 | 15 | 11 | 179 |
+
+*Seat allocation via Sainte-Laguë method; 349 seats, 4% national threshold.*
+
+### Threshold-risk parties
+
+- **C** (4.5%): motion filings (5 motions incl. reform content) aim to differentiate from S — critical survival lever.
+- **L** (3.8%): zero motions this wave; L relies on Tidö coalition visibility, not parliamentary activism.
+- **MP** (4.2%): 6 motions create signal but threshold vulnerability remains.
+- **KD** (5.1%): safely above threshold, no motion activity in wave.
+
+### Campaign narrative construction
+
+```mermaid
+%%{init: {'theme':'dark'}}%%
+flowchart TB
+    S[S narrative<br/>'Ansvarsfull fiscal politik'] -->|evidence| HD082[HD024082 motion]
+    S -->|evidence| HD078[HD024078 motion]
+    V[V narrative<br/>'Rättvisa för alla'] -->|evidence| HD090[HD024090 motion]
+    V -->|evidence| HD092[HD024092 motion]
+    MP[MP narrative<br/>'Klimat + etik + frihet'] -->|evidence| HD096[HD024096 motion]
+    MP -->|evidence| HD098[HD024098 motion]
+    C[C narrative<br/>'Reform och centrism'] -->|evidence| HD094[HD024094 motion]
+    C -->|evidence| HD089[HD024089 motion]
+    M[M narrative<br/>'Stabilitet under Tidö'] -->|evidence| Tidö[9 props passed]
+    SD[SD narrative<br/>'Makt utan motstånd'] -->|evidence| Zero[Zero motions]
+
+    style S fill:#e30613,stroke:#fff,color:#fff
+    style V fill:#a31621,stroke:#fff,color:#fff
+    style MP fill:#83c67a,stroke:#000,color:#000
+    style C fill:#009933,stroke:#fff,color:#fff
+    style M fill:#1f9ed1,stroke:#fff,color:#fff
+    style SD fill:#ffd700,stroke:#000,color:#000
+```
+
+### Electoral key dates
+
+| Date | Event | Motion relevance |
+|------|-------|-----------------|
+| 2026-05 to 2026-06 | Utskott hearings | Motions referenced in debate |
+| 2026-06-15 | Riksdagen summer recess | Kammarvoter on Tidö bills 214–236 |
+| 2026-07 | Almedalen veckan | Motion content becomes campaign material |
+| 2026-08 | Formal campaign start | Motions cited in party manifestos |
+| 2026-09-13 | Election day | Motion-mobilised blocs go to polls |
+
+### Judgments
+
+- Motion wave amplifies S fiscal-anchor narrative more than any other single event Q2 2026.
+- C needs every motion-driven differentiation event to survive 4% threshold; MP in similar position.
+- Tidö cost of passing controversial bills pre-election: measurable (~0.5–1.0% soft-M erosion expected regardless of wave outcome).
+- SD zero-motion strategy preserves base but concedes narrative ground to opposition.
+
+---
+
+*All percentages are public polling averages. All seat projections are analyst estimates, not predictions.*
+
+## Risk Assessment
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/risk-assessment.md -->
+
+Five-dimension risk register. **L** = Likelihood (1–5), **I** = Impact (1–5), **R** = L × I.
+
+### Risk register
+
+| ID | Dimension | Risk description | L | I | **R** | Evidence | Mitigation |
+|----|-----------|------------------|--:|--:|------:|----------|-----------|
+| R-1 | Political | Tidö passes prop 236 (drivmedel) substantially unchanged; opposition narrative loss locked in before summer | 4 | 4 | **16** | [HD024082](https://data.riksdagen.se/dokument/HD024082.html), Tidö seat math 176/349 ([riksdagen.se](https://www.riksdagen.se/)) | Opposition pre-commits to budget-reversal commitment in 2026 manifesto |
+| R-2 | Political | V full-avslag on utvisning ([HD024090](https://data.riksdagen.se/dokument/HD024090.html)) gets framed as "soft on crime" during election | 4 | 3 | **12** | [HD024090](https://data.riksdagen.se/dokument/HD024090.html) |  V pivots to proportionality/EU-law frame; coordinates with MP/C rule-of-law emphasis |
+| R-3 | Institutional | Committee backlog: 9 propositions + 20 motions in 6 utskott = congestion; betänkanden slip into autumn | 3 | 3 | **9** | [HD024093](https://data.riksdagen.se/dokument/HD024093.html) (FöU), [HD024081](https://data.riksdagen.se/dokument/HD024081.html) (SoU) | Utskott-chair prioritisation; FiU gets lead track |
+| R-4 | Fiscal | Drivmedel tax cut blows budget anchor; S's constructive-reform framing ([HD024082](https://data.riksdagen.se/dokument/HD024082.html)) vindicated | 3 | 4 | **12** | SCB statsfinansiellstatistik ([scb.se](https://www.scb.se/)), KPI fuel indices | Konjunkturinstitutet scenario modelling cited in June debate |
+| R-5 | Corruption/Integrity | None detected in current motion wave — low background risk | 1 | 2 | **2** | — | Standard Riksdagsreg hygiene |
+| R-6 | Foreign/Strategic | MP krigsmateriel motion ([HD024096](https://data.riksdagen.se/dokument/HD024096.html)) gets instrumentalised in disinformation re: Swedish Nato commitment | 2 | 4 | **8** | [HD024096](https://data.riksdagen.se/dokument/HD024096.html), [HD024091](https://data.riksdagen.se/dokument/HD024091.html) | Clear MP messaging distinguishing ethical export policy from Nato alignment |
+| R-7 | Electoral | SD silence + Tidö discipline raises Tidö incumbent advantage above model baseline | 3 | 4 | **12** | Zero SD motions filed (`get_motioner` result 2026-04-24) | S-V-MP-C coordinate manifest content before Almedalen 2026 |
+| R-8 | Distributional | Fuel tax cut is regressive for ecology but progressive for commuters; opposition argues both and risks contradiction | 3 | 3 | **9** | [HD024098](https://data.riksdagen.se/dokument/HD024098.html) (MP), [HD024092](https://data.riksdagen.se/dokument/HD024092.html) (V) | Separate climate argument (MP) from distributional argument (V); avoid blending |
+| R-9 | Legal | Utvisning regime (prop 235) produces ECHR-compatibility challenge; rapid LR case | 2 | 4 | **8** | [HD024090](https://data.riksdagen.se/dokument/HD024090.html) Motivering, prop 235 | Reserve analysis for betänkande hearing; cite MR-expert testimony |
+| R-10 | Institutional | Extra ändringsbudget procedure compresses debate time → reduces opposition visibility | 3 | 3 | **9** | FiU calendar, prop 236 special-budget route | Demand extended debate; file ordningsfråga |
+
+### Cascading-risk chains
+
+#### Chain A — Drivmedel narrative lock-in
+```
+R-1 (prop 236 passes) → R-4 (fiscal-anchor frame) → R-7 (Tidö incumbent advantage) → 2026 result
+```
+If R-1 materialises without effective opposition counter-framing, R-4 and R-7 compound. **Posterior probability chain passes**: 0.70 × 0.55 × 0.60 ≈ **0.23**.
+
+#### Chain B — Utvisning rule-of-law frame
+```
+R-2 (V framed soft on crime) → R-9 (ECHR challenge surfaces late) → 2027 judicial correction
+```
+**Posterior**: 0.55 × 0.25 × 0.40 ≈ **0.055**. Low but election-relevant if V response is slow.
+
+#### Chain C — Foreign policy drift
+```
+R-6 (MP krigsmateriel instrumentalised) → S-MP alignment breach → post-election coalition failure
+```
+**Posterior**: 0.30 × 0.40 × 0.35 ≈ **0.042**. Non-negligible for 2026 government formation.
+
+### Heat map
+
+```mermaid
+%%{init: {'theme':'dark'}}%%
+quadrantChart
+    title Risk heat map — Likelihood × Impact
+    x-axis Low Likelihood --> High Likelihood
+    y-axis Low Impact --> High Impact
+    quadrant-1 Critical
+    quadrant-2 High (monitor)
+    quadrant-3 Low
+    quadrant-4 Elevated (prevent)
+    "R-1 drivmedel lock-in": [0.80, 0.80]
+    "R-2 V soft-on-crime frame": [0.80, 0.60]
+    "R-3 committee backlog": [0.60, 0.60]
+    "R-4 fiscal anchor": [0.60, 0.80]
+    "R-5 corruption": [0.20, 0.40]
+    "R-6 disinfo Nato": [0.40, 0.80]
+    "R-7 Tidö incumbent adv": [0.60, 0.80]
+    "R-8 distributional self-contradict": [0.60, 0.60]
+    "R-9 ECHR": [0.40, 0.80]
+    "R-10 extra-budget compression": [0.60, 0.60]
+    style R-1 fill:#ff006e
+```
+
+### Posterior-probability update (Bayesian)
+
+Prior `P(Tidö bills pass substantially unchanged) = 0.65` (structural coalition math).
+Likelihood observations:
+- Zero SD counter-motions → raise posterior
+- Opposition motions are parallel not integrated → raise posterior
+- Extra-budget procedural route → raise posterior
+Posterior `P(pass | observations) ≈ 0.72`. Distribution: 72% pass substantially unchanged, 18% pass with marginal amendment, 6% significant amendment, 4% withdrawal or replacement.
+
+### Top 3 actionable risks
+
+1. **R-1** (R=16): Drivmedel narrative lock-in — highest combined score.
+2. **R-2** (R=12): V soft-on-crime frame — reputational risk for V coalition value.
+3. **R-7** (R=12): Tidö incumbent advantage amplified — structural electoral implication.
+
+---
+
+*Evidence standard: all scores substantiated by at least one `dok_id` or primary-source URL. Cross-reference → `threat-analysis.md` for adversary-perspective complement.*
+
+## SWOT Analysis
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/swot-analysis.md -->
+
+### Executive SWOT grid
+
+```mermaid
+%%{init: {'theme':'dark'}}%%
+quadrantChart
+    title Opposition SWOT — Internal vs External
+    x-axis Internal --> External
+    y-axis Negative --> Positive
+    quadrant-1 Opportunities
+    quadrant-2 Strengths
+    quadrant-3 Weaknesses
+    quadrant-4 Threats
+    "S fiscal anchor drivmedel": [0.25, 0.85]
+    "Tri-party drivmedel coordination": [0.20, 0.78]
+    "MP solo krigsmateriel": [0.30, 0.35]
+    "Elect cleavage Tidö permanence": [0.80, 0.85]
+    "SD Tidö lock-in": [0.80, 0.25]
+    "Coalition math 349 seats": [0.85, 0.20]
+```
+
+### Strengths
+
+#### S-1 · Coordinated trilateral framing on fiscal axis
+Three left-bloc parties simultaneously filed motions against prop 2025/26:236 within 48 hours — S ([HD024082](https://data.riksdagen.se/dokument/HD024082.html)), V ([HD024092](https://data.riksdagen.se/dokument/HD024092.html)), MP ([HD024098](https://data.riksdagen.se/dokument/HD024098.html)). Evidence: temporal clustering (2026-04-15 to 2026-04-17), all filed in same utskott (FiU). Demonstrates operational coordination capacity for 2026 campaign.
+
+#### S-2 · S positions as fiscal anchor
+S under Mikael Damberg ([HD024082](https://data.riksdagen.se/dokument/HD024082.html)) proposes constructive alternative rather than pure avslag — institutional competence signalling for 2026 government-formation credibility. Evidence: motion text calls for regeringen to "återkomma till riksdagen" with revised framework rather than rejecting outright.
+
+#### S-3 · MP owns climate and vapenexport axes cleanly
+MP is the only party filing on prop 228 ([HD024096](https://data.riksdagen.se/dokument/HD024096.html)) with a full export-ban proposition — gives MP unique ownership of two election-relevant frames (climate via drivmedel, ethics via vapenexport). Evidence: no parallel S or V motion proposing full ban.
+
+#### S-4 · C differentiated centre-reform profile
+C filed on 5 distinct propositions ([HD024088](https://data.riksdagen.se/dokument/HD024088.html), [HD024089](https://data.riksdagen.se/dokument/HD024089.html), [HD024093](https://data.riksdagen.se/dokument/HD024093.html), [HD024094](https://data.riksdagen.se/dokument/HD024094.html), [HD024095](https://data.riksdagen.se/dokument/HD024095.html)) with consistently procedural/reform language — maintains C as a non-Tidö bourgeois alternative.
+
+### Weaknesses
+
+#### W-1 · Absence of coordinated judicial-policy counter-frame
+Opposition filed 3 motions on prop 235 (utvisning) but with fundamentally divergent lines: V wants full avslag ([HD024090](https://data.riksdagen.se/dokument/HD024090.html)), MP wants partial avslag ([HD024097](https://data.riksdagen.se/dokument/HD024097.html)), C wants systematik-krav ([HD024095](https://data.riksdagen.se/dokument/HD024095.html)). This is three parallel messages, not one — weakens narrative cohesion.
+
+#### W-2 · S silence on vapenexport
+S filed zero motions against prop 228 (krigsmateriel). Leaves MP (and partly V) to carry the line alone. A red-green coalition scenario requires S-MP alignment on foreign policy; this divergence will be used by Tidö parties in 2026 campaign framing.
+
+#### W-3 · No cross-bloc bridge on welfare
+Three motions on prop 216 (medicinsk kompetens) from S/V/C — but no sign of coordinated amendment package. Opposition is parallel, not integrated. Evidence: three distinct utskott filings with different legal pathways.
+
+#### W-4 · Limited full-text signalling
+All 20 motions retrieved as metadata-only summaries at retrieval time; deeper textual coordination (wording overlap, shared legal analysis) cannot be verified at this resolution. Pass-2 remediation: prioritise `get_dokument_innehall` for P0/P1 documents in next run.
+
+### Opportunities
+
+#### O-1 · Election-cycle narrative peg
+Drivmedel is Sweden's most-polled cost-of-living issue in 2026 (SCB KPI-F fuel indices persistently salient). The S motion ([HD024082](https://data.riksdagen.se/dokument/HD024082.html)) can anchor a broader oppositions-own-the-economy narrative through summer.
+
+#### O-2 · Rule-of-law debate on prop 235
+Three opposition motions ([HD024090](https://data.riksdagen.se/dokument/HD024090.html), [HD024095](https://data.riksdagen.se/dokument/HD024095.html), [HD024097](https://data.riksdagen.se/dokument/HD024097.html)) collectively put proportionality/legal-certainty back on the agenda — creates coverage window for constitutional-committee (KU) scrutiny lines in opposition.
+
+#### O-3 · Coalition demarcation for 2026
+The motion wave crystallises the S-V-MP-C quartet's distinct positions. Election debates can now reference concrete differentiation rather than abstract positioning.
+
+#### O-4 · Committee-work visibility
+With 6 different utskott touched (FiU, UU, SoU, SfU, CU, AU, FöU), opposition gains recurring media moments throughout the betänkande calendar — each utskott report surfaces the opposition line separately.
+
+### Threats
+
+#### T-1 · Tidö arithmetic remains intact
+M (68 seats) + SD (73) + KD (19) + L (16) = 176 seats vs 173-seat opposition. Motion wave does not alter coalition math. Evidence: Riksdag seat distribution 2022 baseline. **Admiralty A1**.
+
+#### T-2 · SD lock-in removes right-flank pressure
+SD filed zero motions against any of the 9 propositions. This means there is no realistic path to Tidö amendment from internal-coalition dissent. Full base available via [search_voteringar](https://data.riksdagen.se/voteringlista/?rm=2025/26).
+
+#### T-3 · Drivmedel tax cut is popular even among opposition voters
+KPI trend since 2022 makes fuel-price relief broadly popular. Opposition avslag position risks class-cleavage backlash (rural/commuter vs urban). The V full-avslag line ([HD024092](https://data.riksdagen.se/dokument/HD024092.html)) carries distributional risk.
+
+#### T-4 · Parallel bill flow crowds out narrative
+The 9 propositions in one 72-hour motion window dilute media attention per bill — drivmedel may dominate, but prop 216 (kommun-vård) risks being under-covered.
+
+### TOWS matrix (strategic pairings)
+
+| Factor | Leverage for | Exploit by |
+|--------|-------------|-----------|
+| S1 × O1 | S fiscal anchor + election narrative | S lead-story positioning on drivmedel; op-ed programme through May |
+| S3 × O2 | MP vapenexport + rule-of-law debate | MP as civil-liberties party bridges foreign-policy and domestic constitutionalism |
+| W1 × T4 | Divergent utvisning lines + narrative crowding | Risk: opposition self-dilutes on justice; requires unified spokesperson |
+| S4 × O3 | C differentiated + coalition demarcation | C targets bourgeois-curious M/L voters who reject SD but approve of Tidö economics |
+| W2 × T2 | S silence on vapenexport + SD lock-in | S's silence ensures Tidö defence-industry consensus holds regardless of MP pressure |
+
+### Cross-SWOT
+
+- **S/W pairing**: S-1 (trilateral coord) is real only on fiscal; W-1 (divergent justice) shows it does not generalise. Coordination is issue-specific, not structural.
+- **S/O**: S-3 (MP clean ownership) × O-3 (coalition demarcation) strengthens a multi-party Left narrative where each party has a distinct role.
+- **W/T**: W-2 × T-3 — S's fiscal-anchor framing ([HD024082](https://data.riksdagen.se/dokument/HD024082.html)) is exposed to T-3's distributional risk if drivmedel framing loses to relief narrative.
+
+---
+
+*Evidence standard: every entry cites either a dok_id or primary-source URL. Source: riksdag-regering MCP `get_motioner` 2026-04-24T01:05:50Z.*
+
+---
+
+## Threat Analysis
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/threat-analysis.md -->
+
+This analysis adopts the Political Threat Taxonomy — adversarial actors, techniques, and targets that could exploit or undermine the democratic process around this motion wave. **This is NOT political opposition research**; it is threat modelling against democratic legitimacy.
+
+### Political Threat Taxonomy
+
+| Threat ID | Actor class | Technique | Target | Plausibility |
+|-----------|-------------|-----------|--------|-------------:|
+| T-1 | Foreign influence (state-linked) | Frame V avslag on utvisning ([HD024090](https://data.riksdagen.se/dokument/HD024090.html)) as state-capture narrative | V voter base / centre swing | Medium |
+| T-2 | Foreign influence | Amplify MP krigsmateriel ([HD024096](https://data.riksdagen.se/dokument/HD024096.html)) to depict Sweden as unreliable Nato ally | Nato discourse in Sweden + allies | Medium |
+| T-3 | Domestic extremist | Weaponise prop 235 debate to mobilise anti-migrant mobilisation | Public order / community safety | Medium |
+| T-4 | Disinformation (platform) | Mischaracterise S drivmedel motion ([HD024082](https://data.riksdagen.se/dokument/HD024082.html)) as endorsing higher fuel tax | Rural/commuter voters | High |
+| T-5 | Legitimate political (within rules) | Tidö parties frame coordinated motion wave as "obstruction" to legitimise procedural shortcuts | Democratic debate norms | Medium |
+| T-6 | Cyber | Attempt to compromise Riksdag.se delivery of motion documents during debate window | Information integrity | Low |
+| T-7 | Institutional | Utskott-chair use of extra-budget procedure ([prop 236](https://data.riksdagen.se/dokument/HD024082.html) FiU route) to compress opposition time | Deliberative quality | High |
+
+### Attack tree — T-4 (disinfo on drivmedel)
+
+```mermaid
+%%{init: {'theme':'dark'}}%%
+flowchart TB
+    Goal([Erode S credibility on fuel prices]) --> A[Mischaracterise HD024082]
+    A --> A1[Clip Damberg quote]
+    A --> A2[Substitute avslag frame]
+    A --> A3[Side-by-side with MP HD024098]
+    A1 --> B[Distribute via platforms]
+    A2 --> B
+    A3 --> B
+    B --> B1[Facebook boost]
+    B --> B2[X reply-reply chains]
+    B --> B3[Telegram channels]
+    B1 --> Impact([S rural vote erosion])
+    B2 --> Impact
+    B3 --> Impact
+
+    style Goal fill:#ff006e,stroke:#fff,color:#fff
+    style Impact fill:#ff006e,stroke:#fff,color:#fff
+    style A fill:#ffbe0b,stroke:#000,color:#000
+    style B fill:#ffbe0b,stroke:#000,color:#000
+```
+
+### Kill chain — T-2 (Nato-alliance framing on krigsmateriel)
+
+```mermaid
+%%{init: {'theme':'dark'}}%%
+flowchart LR
+    R[Reconnaissance<br/>Identify MP motion HD024096] --> W[Weaponisation<br/>Selective translation to EN]
+    W --> D[Delivery<br/>Amplify via RT/Sputnik-adjacent] 
+    D --> E[Exploitation<br/>Reshare in EU Nato discourse]
+    E --> I[Installation<br/>Seed Nato-sceptic narrative]
+    I --> C[Command<br/>Repeat cycle at Almedalen]
+    C --> Ob[Objectives<br/>Signal Swedish unreliability]
+
+    style R fill:#00d9ff,stroke:#000,color:#000
+    style Ob fill:#ff006e,stroke:#fff,color:#fff
+```
+
+### MITRE-style TTP mapping
+
+| Tactic | Technique | Procedure (observed / plausible) | Evidence |
+|--------|-----------|----------------------------------|----------|
+| TA-Info-Manip | Selective quotation | Crop S motion to omit "återkomma till riksdagen" qualifier | [HD024082](https://data.riksdagen.se/dokument/HD024082.html) text structure |
+| TA-Delegitimise | Frame substitution | Label V avslag as "amnesti" | [HD024090](https://data.riksdagen.se/dokument/HD024090.html) |
+| TA-Polarise | Issue wedge | Rural vs urban on drivmedel | [HD024092](https://data.riksdagen.se/dokument/HD024092.html), [HD024098](https://data.riksdagen.se/dokument/HD024098.html) |
+| TA-Amplify | Bot / coordinated inauthentic | Reshare cycles on X/Facebook during utskott hearings | riksdagen.se calendar |
+| TA-Suppress | Procedural compression | Extra ändringsbudget route (prop 236) | [HD024082](https://data.riksdagen.se/dokument/HD024082.html) FiU timeline |
+
+### Adversary goals & cost/impact ranking
+
+```mermaid
+%%{init: {'theme':'dark'}}%%
+quadrantChart
+    title Threat ranking — Plausibility vs Impact
+    x-axis Low Plausibility --> High Plausibility
+    y-axis Low Impact --> High Impact
+    quadrant-1 Critical watch
+    quadrant-2 Monitor
+    quadrant-3 Low priority
+    quadrant-4 High-effort adversary
+    "T-1 V framed capture": [0.55, 0.70]
+    "T-2 Nato unreliable": [0.60, 0.80]
+    "T-3 extremist mobil": [0.55, 0.70]
+    "T-4 drivmedel disinfo": [0.85, 0.70]
+    "T-5 obstruction frame": [0.60, 0.60]
+    "T-6 cyber Riksdag": [0.20, 0.80]
+    "T-7 procedural compression": [0.85, 0.65]
+```
+
+### Defensive recommendations
+
+1. **Against T-4**: S and V independently publish plain-language explainers of their drivmedel motions within 72 hours of first debate; cite [HD024082](https://data.riksdagen.se/dokument/HD024082.html) and [HD024092](https://data.riksdagen.se/dokument/HD024092.html) directly.
+2. **Against T-2**: MP coordinates with Swedish embassy comms on English-language explanation of [HD024096](https://data.riksdagen.se/dokument/HD024096.html), distinguishing ethical-export framework from Nato alignment.
+3. **Against T-7**: Opposition files ordningsfråga at extra-budget procedural votes; document compression in KU annual report.
+4. **Against T-3**: Coordination with MSB (Myndigheten för samhällsskydd och beredskap) on monitoring extremist mobilisation around prop 235 debate windows ([msb.se](https://www.msb.se/)).
+
+### Residual threat posture
+
+- High-plausibility / high-impact quadrant: T-4, T-2, T-7.
+- Watch list next 30 days: platform-level content around drivmedel and utvisning debates.
+- Escalation trigger: detectable coordinated inauthentic behaviour on any opposition motion hashtag.
+
+---
+
+*This document models adversarial threats to democratic process around the motion wave — it is not an assessment of any specific party's motives. Source: threat framework + riksdag-regering MCP.*
 
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/historical-parallels.md -->
@@ -1950,6 +1788,67 @@ timeline
 ---
 
 *Historical data from [Riksdagen.se](https://www.riksdagen.se/) archives and [SCB election tables](https://www.scb.se/hitta-statistik/statistik-efter-amne/demokrati/allmanna-val/). No forecasting claim; pattern base-rate only.*
+
+## Comparative International
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/comparative-international.md -->
+
+Comparator jurisdictions for the Swedish motion wave. Three comparators: **Denmark**, **Germany**, **United Kingdom**. Purpose: triangulate how equivalent opposition behaviour plays out under different parliamentary systems.
+
+### Comparators
+
+#### 1. Denmark — Folketing motion culture
+**System**: Unicameral, minority governments norm, "parliamentarism".
+**Relevant pattern**: Opposition files "beslutningsforslag" (B) motions prolifically — norm rather than signal. 
+**Analogue to SWE 2026-04-24**: Danish opposition similarly fragmented S/SF/EL on fiscal questions; government routinely negotiates per-bill deals ("forligspolitik") unavailable in Swedish Tidö context.
+**Difference**: Denmark's tradition of broad cross-bloc "forlig" dampens motion-wave impact; Sweden's Tidö agreement locks support pre-vote, reducing motion leverage.
+**Source**: [ft.dk](https://www.ft.dk/), Danish research "Forhandlingspolitik og fragmenterede majoriteter" (Christiansen, Pedersen).
+
+#### 2. Germany — Bundestag opposition motions
+**System**: Federal bicameral, coalition government norm, constitutional review.
+**Relevant pattern**: SPD/Grüne/FDP Ampel (2021-2024) faced CDU/CSU + AfD + Linke opposition; opposition "Anträge" often parallel, rarely co-signed across bloc.
+**Analogue**: German opposition fragmentation on Heizungsgesetz (2023) mirrors Swedish fragmentation on drivmedel 2026 — three opposition parties, three parallel tracks.
+**Difference**: Bundesrat (Länder chamber) adds veto point absent in Swedish system; Swedish Regering faces only Riksdag floor.
+**Source**: [bundestag.de](https://www.bundestag.de/).
+
+#### 3. United Kingdom — Commons opposition
+**System**: Westminster unitary, single-party majorities common.
+**Relevant pattern**: HoC opposition amendments on government bills; Labour 2019–2024 in opposition filed reasoned amendments on Conservative migration legislation (Illegal Migration Act 2023, Rwanda Act 2024).
+**Analogue**: Labour reasoned amendments on Rwanda scheme structurally similar to V/MP avslag on Swedish [HD024090](https://data.riksdagen.se/dokument/HD024090.html).
+**Difference**: First-past-the-post produces single-axis opposition; PR produces multi-axis (fiscal/defence/migration) as seen 2026-04-24.
+**Source**: [parliament.uk](https://www.parliament.uk/).
+
+### Comparative matrix
+
+| Dimension | Sweden 2026-04-24 | Denmark | Germany | UK |
+|-----------|-------------------|---------|---------|-----|
+| Parliamentary system | Unicameral, Tidö + support | Unicameral, minority norm | Federal bicameral | Westminster majority |
+| Opposition fragmentation | 4 parties S/V/MP/C | 4-5 parties (S/SF/EL/RV) | 3 parties (CDU/AfD/Linke) | 1 dominant (Labour) |
+| Counter-motion density | 2.2 motions/bill | ~3 motions/bill (B-forslag) | ~2 Anträge/bill | 1 reasoned amendment norm |
+| Coalition discipline | Tidö 176/349 locked | Broad forlig norm | Ampel internal strain | Single-party discipline |
+| Ethical vapenexport precedent | MP HD024096 | 2015 Bahrain debate | Saudi arms freeze 2018 | Rwanda scheme 2023 |
+| Migration opposition framing | Rättssäkerhet (V/MP) | Folkeoplysning (EL) | Verfassungsmäßigkeit (Linke) | Human rights (Labour) |
+
+### Key insight
+
+**PR + formal coalition agreement is unusually rigid**. The comparator jurisdictions show that opposition motion waves in minority/coalition systems typically produce either forlig (Denmark) or per-bill coalition flexibility (Germany Ampel). Tidö's formal written agreement + SD's coalition discipline produces less flexibility than comparable regimes — which means 2026-04-24 motions likely have **less** impact than opposition-motion density would predict.
+
+### Implications
+
+1. Swedish opposition cannot replicate Danish forligspolitik because Tidö-avtal precludes bilateral bill-by-bill deals.
+2. German Bundesrat-style veto point absent — no fallback forum for opposition.
+3. UK-style single-bill reasoned amendments more impactful per unit effort than Swedish multi-axis motions.
+4. Election-cycle effect (SE 2026) more determinative of motion impact than parliamentary math.
+
+### Cross-national lessons for Swedish opposition
+
+- **S** (take Denmark's book): Build durable fiscal-anchor narrative that survives one election cycle; don't expect per-motion wins.
+- **V** (take Germany's book): Build extra-parliamentary pressure (civil society + media) to amplify motions.
+- **MP** (take UK's book): Pick one signature bill per year; concentrate resources.
+- **C** (take Denmark's book): Position as swing actor for post-2026 hypothetical forlig.
+
+---
+
+*Comparator data sourced from public parliamentary archives. No classified or private sources.*
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/implementation-feasibility.md -->
@@ -2089,6 +1988,107 @@ gantt
 ---
 
 *Implementation feasibility is independent of political feasibility. Sources: [regeringen.se](https://www.regeringen.se/), [riksdagen.se](https://www.riksdagen.se/), [ec.europa.eu](https://ec.europa.eu/) for EU directive references.*
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/media-framing-analysis.md -->
+
+Analyses anticipated media framing across Swedish outlets for the 9-bill + 20-motion cluster.
+
+### Expected framing by outlet
+
+| Outlet | Orientation | Likely frame | Evidence-framed motion |
+|--------|-------------|--------------|-------------------------|
+| DN — Dagens Nyheter | Centre-liberal | "Tidö pressar igenom — opposition splittrad" | All bills; emphasis on coordination failure |
+| SvD — Svenska Dagbladet | Centre-right | "Oppositionen ger sig på reformagendan" | Focus on prop 216, prop 235 |
+| Aftonbladet | Social-democratic | "S tar fighten om drivmedel" | [HD024082](https://data.riksdagen.se/dokument/HD024082.html), [HD024078](https://data.riksdagen.se/dokument/HD024078.html) |
+| Expressen | Liberal-populist | "Asylpolitiken delar kammaren" | [HD024090](https://data.riksdagen.se/dokument/HD024090.html), prop 235 |
+| SR Ekot / SVT Rapport | Public-service neutral | Balanced per-bill coverage | All clusters |
+| ETC | Vänster | "V kräver rättvisa — utvisning hård kritik" | V motions cluster |
+| Riks / Samhällsnytt | SD-aligned | "Tidö håller linjen mot alla motstånd" | Zero SD motions as strength |
+| Fokus | Nyhetsmagasin | Analys av Tidö-dynamiken | Cross-cluster |
+| DI — Dagens Industri | Näringsliv-orienterat | "Vapenexportsystemet under tryck — MP motion" | [HD024096](https://data.riksdagen.se/dokument/HD024096.html) |
+
+### Frame cluster map
+
+```mermaid
+%%{init: {'theme':'dark'}}%%
+flowchart TB
+    Gov([Government success frame]) --> GovM[DN SvD Fokus]
+    Gov --> GovP[Riks Samhällsnytt]
+    Opp([Opposition insight frame]) --> OppM[Aftonbladet ETC]
+    Opp --> OppSR[SR SVT]
+    Tactics([Tactical coordination failure frame]) --> TactM[DN Expressen]
+    Content([Policy content debate frame]) --> ContentM[SR SVT Fokus]
+    Wedge([Wedge issue amplification frame]) --> WedgeF[Expressen Riks]
+    Wedge --> WedgeS[Social media]
+
+    style Gov fill:#00d9ff,stroke:#000,color:#000
+    style Opp fill:#e30613,stroke:#fff,color:#fff
+    style Tactics fill:#ffbe0b,stroke:#000,color:#000
+    style Content fill:#8338ec,stroke:#fff,color:#fff
+    style Wedge fill:#ff006e,stroke:#fff,color:#fff
+```
+
+### Framing vectors by motion cluster
+
+#### Drivmedel (prop 236)
+- **Mobiliserande frame** (S/V/MP): "Tidö väljer biltrafik över klimat" / "Skattesänkning på bekostnad av rurala vårdbehov"
+- **Motrörelse frame** (Tidö): "Sänkta drivmedelspriser hjälper vanliga familjer"
+- **Neutral frame** (SR): "Budget-effekten av drivmedelsänkningen — 2.5 mdkr"
+
+#### Utvisning (prop 235)
+- **Mobiliserande frame** (V/MP): "Rättssäkerheten urholkas" / "Europas hårdaste utvisningslag"
+- **Motrörelse frame** (Tidö/SD): "Tidö levererar svensk asylreform"
+- **Neutral frame**: "Vad ändras konkret? Juridisk analys"
+
+#### Krigsmateriel (prop 228)
+- **MP-frame**: "Etisk kontroll av svenska vapen" ([HD024096](https://data.riksdagen.se/dokument/HD024096.html))
+- **Motrörelse**: "Försvarsindustrin viktig för svensk säkerhet"
+- **Neutral**: "Nuvarande kontrollsystem — hur fungerar det?"
+
+#### Medicinsk kompetens (prop 216)
+- **4-partsfronten**: "Sällsynt enighet mot regeringens reform"
+- **Motrörelse**: "Snabb behandling av vårdpersonalbristen"
+- **Kommunsektor-frame**: "SKR bekymrad över finansiering"
+
+### Social-media framing predictions
+
+| Platform | Expected framing dynamic | Amplification risk |
+|----------|--------------------------|--------------------|
+| X (Twitter) | Polarisering; dok_id-citations of motions; hashtag #Tidöfalls vs #Tidöholder | Medium |
+| Facebook | Longer-form opinion in voter groups; rural vs urban split on drivmedel | High |
+| Instagram | Civil-society mobilisering on utvisning, climate | Medium |
+| TikTok | Generationsfrågor on housing, drivmedel, migration | Medium |
+| LinkedIn | Näringsliv perspective on vapenexport, cybersäk | Low |
+| Telegram | Konspirationsnarrativ risk on migration bills | Medium-High |
+
+### Frame-war indicators
+
+1. **Who defines "obstruction"**: Tidö frames 20 motions as opposition obstruction; opposition frames as democratic oversight.
+2. **Who owns "drivmedel"**: S fiscal-anchor frame vs Tidö "familjeekonomi" frame — contested.
+3. **Who owns "rättssäkerhet"**: V/MP civil-rights frame vs Tidö "rättssäker utvisning" frame — contested.
+4. **SD frame absent**: SD does not frame this wave; absence itself is a frame Tidö exploits as "disciplinerat stöd".
+
+### Editorial recommendations (for riksdagsmonitor journalism)
+
+1. Identify each motion by dok_id in every article — avoid generic "opposition motion".
+2. Explain extra ändringsbudget procedure on prop 236 in plain language.
+3. Show 4-party wave on prop 216 as the wave's singular coordination signal.
+4. Do not over-claim "opposition coordination" — evidence supports parallel filing more than unified strategy.
+5. Give MP vapenexport framework its own dedicated explanation — underreported axis.
+
+### Counterspin and balance checklist
+
+- ✓ Name every primary author by party
+- ✓ Link every dok_id to [data.riksdagen.se](https://data.riksdagen.se/)
+- ✓ Quote both mobiliserande and motrörelse frames
+- ✓ Clarify what Tidö's procedural path is (standard / extra / amendment)
+- ✓ Cite SCB for any economic-impact claim
+- ✓ Distinguish analyst judgment from factual reporting
+
+---
+
+*Media framing predictions based on historical outlet patterns 2014–2025. No individual journalist targeting — outlet-level orientation only.*
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/devils-advocate.md -->
@@ -2511,13 +2511,6 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/threat-analysis.md)
 - [`documents/HD024078-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024078-analysis.md)
 - [`documents/HD024079-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024079-analysis.md)
 - [`documents/HD024080-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024080-analysis.md)
@@ -2539,12 +2532,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`documents/HD024096-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024096-analysis.md)
 - [`documents/HD024097-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024097-analysis.md)
 - [`documents/HD024098-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/documents/HD024098-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/cross-reference-map.md)

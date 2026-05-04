@@ -5,7 +5,7 @@ date: 2026-04-26
 subfolder: interpellations
 slug: 2026-04-26-interpellations
 source_folder: analysis/daily/2026-04-26/interpellations
-generated_at: 2026-05-04T09:52:32.306Z
+generated_at: 2026-05-04T12:16:14.008Z
 language: en
 layout: article
 ---
@@ -43,10 +43,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -233,437 +233,6 @@ DIW tiers: L1 Surface (legislative procedure), L2 Strategic (policy impact), L3 
 ### Overall Session Significance: **HIGH**
 
 The April 2026 interpellation cluster scores above the 14-point threshold for "strategically significant" across 9 of 15 documents. Three L3-grade items in a single period is unusual and confirms a coordinated opposition offensive rather than routine parliamentary activity.
-
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/media-framing-analysis.md -->
-
----
-
-### Media Framing Overview
-
-Analysing how the April 2026 interpellation cluster is likely to be framed across Swedish media, and what narrative contestation dynamics are at play.
-
----
-
-### Expected Media Frames
-
-#### Frame 1: "Opposition Holds Government Accountable" (Mainstream Liberal/Centrist Media)
-**Outlets**: Dagens Nyheter, Svenska Dagbladet, SVT Nyheter, Aftonbladet  
-**Framing**: Interpellations presented as democracy in action; specific policy gaps (sick pay, housing starts, police deployment) covered as newsworthy policy stories.  
-**Likely emphasis**: HD10444 (employer contribution gaming) and HD10439 (police deployment) are the most media-attractive — specific numbers, concrete claims, human-interest angle.  
-**Manipulation risk**: LOW — mainstream media framing is broadly accurate and source-based.
-
-#### Frame 2: "Government Under Fire as Election Approaches" (Political Reporting)
-**Outlets**: Politico Sweden, Expressen, TT Nyhetsbyrån  
-**Framing**: Interpellation campaign contextualised as pre-election positioning; emphasis on S's strategic calculation.  
-**Likely emphasis**: Volume of S interpellations (12 in 10 days) as the news peg; horse-race framing about electoral impact.  
-**Manipulation risk**: MEDIUM — horse-race framing may distort substantive policy content; poll-based coverage may amplify perceived electoral consequences beyond actual impact.
-
-#### Frame 3: "Mainstream Media Spreads Energy Disinformation" (SD-adjacent Outlets)
-**Outlets**: Samhällsnytt, Nyheter Idag, Riks-TV  
-**Framing**: HD10448 (SD wind-power interpellation) will be framed as SD "exposing" SVT/SR bias; WindEurope report will be amplified as confirming public media's pro-wind agenda.  
-**Likely emphasis**: SR named as culprit; government asked to act on media accountability.  
-**Manipulation risk**: HIGH — framing omits that the WindEurope report's methodology has been independently questioned; selective citation creates false certainty about SR's alleged bias.
-
-#### Frame 4: "Welfare State Under Threat" (Left/Labour Media)
-**Outlets**: LO-Tidningen, Arbetet, Flamman  
-**Framing**: HD10447 (sick-pay reimbursement) framed as attack on welfare state; employer-contribution gaming (HD10444) as class-based exploitation of reform.  
-**Likely emphasis**: Worker testimonies; SME owner quotes about sick-pay cost burden.  
-**Manipulation risk**: MEDIUM — accurate framing but may overstate government intent (technocratic reform presented as ideological attack).
-
----
-
-### Amplifiers and Inhibitors
-
-| Factor | Direction | Notes |
-|--------|-----------|-------|
-| S's interpellation volume (12 in 10 days) | Amplifier | Creates news agenda; harder to ignore |
-| Ministerial response delay | Amplifier for opposition | Absence of counter-narrative |
-| Spring budget season | Amplifier | Policy context gives interpellations relevance |
-| Eurovision/sports distraction | Inhibitor | May suppress political media attention in late May |
-| Economic recovery narrative (IMF +2.1%) | Inhibitor | Could deflect welfare framing |
-| SD-SR conflict | Amplifier for SD narrative | Creates public-media controversy that generates coverage |
-
----
-
-### Narrative Contestation Assessment
-
-The dominant narrative contest is between:
-- **S's "welfare rollback" frame**: Sick pay, housing, police deployment as system failures
-- **Government's "reform and recovery" frame**: Police headcount achieved, youth employment boosted, economic growth returning
-
-As of April 2026, S has the initiative advantage — it controls the interpellation agenda and has forced the government into a reactive posture. The government's counter-narrative is available (BRÅ police success, employer-contribution reform launch) but has not yet been publicly deployed as a coordinated communication strategy.
-
----
-
-### Assessment
-
-Media framing risk is highest in the SD-adjacent information environment, where HD10448 creates a platform for delegitimising public broadcasters. Mainstream media framing is likely to be accurate and substantive, giving S's accountability campaign genuine media amplification without distortion. The critical media moment will be the ministerial response week — likely May 2026.
-
-## Stakeholder Perspectives
-<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/stakeholder-perspectives.md -->
-
----
-
-### Primary Stakeholder Map
-
-#### Government (Tidö Coalition)
-
-**Moderate Party (M)**  
-Key ministers targeted: Finance Minister Elisabeth Svantesson (3 interpellations: HD10444, HD10446, HD10433), Justice Minister Gunnar Strömmer (HD10439, HD10441).  
-**Perspective**: Svantesson faces the highest accountability load — three interpellations including the fiscally significant employer-contribution gaming claim. She has strong institutional resources (Finance Ministry data capability) to counter S's framing but must act quickly. Strömmer's police-headcount success (BRÅ confirmed) gives him a strong counter-narrative but the geographic deployment gap is a genuine policy challenge.
-
-**Kristdemokraterna (KD)**  
-Ministers targeted: Energy/Trade Minister Ebba Busch (2: HD10448, HD10447), Infrastructure/Housing Minister Andreas Carlson (2: HD10445, HD10434), Social Affairs Minister Jakob Forssmed (in prior period), Civil Minister Erik Slottner (HD10443).  
-**Perspective**: KD ministers face the heaviest interpellation exposure relative to their coalition share. Busch's dual challenge (sick-pay reimbursement from employment portfolio AND SD energy challenge) is particularly complex. Carlson's housing deficit is the most politically exposed — numbers are unfavourable and trend is negative.
-
-**Liberalerna (L)**  
-Employment Minister Johan Britz (HD10440).  
-**Perspective**: Single occupation-medicine interpellation — niche but credible policy gap. Britz has previously addressed the Arbetslivsinstitutet legacy; a substantive response is expected.
-
-#### Opposition
-
-**Social Democrats (S)**  
-**Perspective**: Executing a disciplined spring parliamentary campaign. The 12-interpellation cluster is not spontaneous — it reflects party research investment and electoral narrative construction. S is positioning as the party that will restore sick-pay reimbursement, build more housing, and deploy police more effectively. Internal discipline appears high; no interpellations from S contradict party line.
-
-**Sweden Democrats (SD)**  
-**Perspective**: Using interpellations (HD10448, HD10429, HD10430) to advance their information-environment agenda independently of the Tidö coalition's formal position. This is a deliberate strategy — SD maintains coalition loyalty on budget and criminal-justice issues while using parliamentary tools to advance culturally conservative and media-accountability positions. Interpellation use allows SD to create parliamentary records without requiring coalition sign-off.
-
-**Vänsterpartiet (V)**  
-**Perspective**: Filing on Israel/Palestine and international human rights issues (prior period: HD10737, HD10738, HD10732). V is maintaining consistent position on international solidarity issues; minimal overlap with S's domestic-policy campaign, suggesting a differentiated but complementary opposition approach.
-
-**Centerpartiet (C)**  
-**Perspective**: Single interpellation on LGBTQI+ rights in foreign policy (HD10431). C is maintaining its liberal international-profile niche. No domestic economic competition with S; focus on human-rights differentiation.
-
-#### Civil Society and Affected Sectors
-
-**SME business community**: Potentially aligned with S's sick-pay reimbursement restoration call (HD10447) — affected by increased sick-pay costs since 2024 reform. Alignment is tactical, not ideological.
-
-**Swedish Trade Union Confederation (LO)**: Supportive of S's labour-market interpellations; will amplify sick-pay and employer-contribution abuse claims through collective bargaining season.
-
-**Swedish Confederation of Professional Employees (TCO)**: Interested in pay-transparency directive implementation (HD10437); aligned with S framing on gender pay gap.
-
-**Housing developers (Byggföretagen)**: Potentially aligned with S's housing-start concern (HD10434) — declining starts affect industry employment and revenue.
-
-**Swedish Police Authority (Polismyndigheten)**: Institutionally interested in positive framing of headcount achievement; may push back on geographic deployment deficit characterisation if it reflects resource-allocation choices outside ministerial control.
-
-**Sveriges Radio (SR)**: Directly named in HD10448 (SD wind-power interpellation). SR's editorial board will need to address the specific accuracy claims to avoid the parliamentary record standing as unchallenged.
-
----
-
-### Key Stakeholder Tensions
-
-1. **Government vs. S**: Fiscal policy accountability — the employer-contribution reform implementation
-2. **Government vs. SD**: Energy-policy framing and public-media accountability
-3. **KD vs. LO/S**: Sick-pay reimbursement — welfare cost allocation between state, employer, worker
-4. **Housing Ministry vs. Market**: Declining starts vs. claimed reform progress
-5. **Polismyndigheten vs. S**: Headcount achievement vs. deployment quality
-
----
-
-### Assessment
-
-The stakeholder map reveals that S's interpellation strategy targets both electoral audiences (workers, tenants, urban residents) and specific policy communities (SMEs on sick-pay, housing industry on starts) where the government has genuine exposure. The government's strongest alliances are with confirmed institutional successes (BRÅ/police headcount); its weakest is on welfare rollback where stakeholder alignment (LO, SMEs) cuts against it.
-
-## Forward Indicators
-<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/forward-indicators.md -->
-
----
-
-### Purpose
-
-Forward indicators are observable signals that will confirm or refute the assessments in this analysis within the next 30–90 days.
-
----
-
-### Priority Indicators
-
-#### FI-1: Finance Ministry Data Release on Youth Employer Contribution [30-day horizon]
-**Indicator**: Publication of employment statistics disaggregated by age cohort and employer-contribution eligibility after the April 2026 cut  
-**If released with positive net employment data**: Refutes HD10444's gaming claim; government regains narrative control on labour reform (Scenario A)  
-**If delayed beyond 6 weeks**: Confirms S's framing that data doesn't support government claim (Scenario C)  
-**If released showing ambiguous/negative data**: Confirms gaming at some scale; government forced into damage-limitation mode (Scenario B/C)  
-**Source to watch**: Finance Ministry press releases, IFAU preliminary analysis, Statistics Sweden (SCB) quarterly employment data  
-**Confidence in predictive value**: HIGH
-
-#### FI-2: Ministerial Response to HD10444 (Employer Contribution Gaming) [14-day horizon]
-**Indicator**: Finance Minister Svantesson's formal interpellation response  
-**If substantive and data-backed**: Government is taking the claim seriously and has evidence to counter  
-**If deflective ("too early to evaluate")**: Confirms government has no rapid counter and validates S's framing  
-**Source**: Riksdagen interpellation debate record (data.riksdagen.se)  
-**Confidence in predictive value**: HIGH
-
-#### FI-3: Stockholm Housing Starts H1 2026 (SCB Data) [60-day horizon]
-**Indicator**: Statistics Sweden quarterly construction data for Stockholm region  
-**If starts exceed 6,000 for H1**: Government can contest the annual decline narrative  
-**If starts below 5,500 for H1**: Confirms annualised decline worse than projected; S housing narrative validated  
-**Source**: SCB byggstartsstatistik  
-**Confidence in predictive value**: HIGH
-
-#### FI-4: Swedish May/June Polling (Novus, SIFO) [30–60-day horizon]
-**Indicator**: Government vs. opposition polling trends in May-June 2026  
-**If S gains ≥2 pp**: Interpellation campaign is having electoral resonance  
-**If no movement**: Campaign is "inside the building" — parliamentary significance without electoral impact  
-**Source**: Novus monthly omnibus, SIFO Sweden Thoughts  
-**Confidence in predictive value**: MEDIUM (polls are lagging indicators; may not reflect campaign fully until July)
-
-#### FI-5: Energy Minister Busch Response to HD10448 (Wind Disinformation) [14–21-day horizon]
-**Indicator**: Character of ministerial response to SD's interpellation  
-**If neutral and fact-based**: Government maintains coalition without endorsing SD media attack  
-**If sympathetic to SD's framing**: Signal of increased SD influence on energy-narrative management  
-**If dismissive of SD concern**: Risk of SD dissatisfaction; coalition management challenge  
-**Source**: Riksdagen interpellation debate record  
-**Confidence in predictive value**: HIGH for coalition-management signal
-
-#### FI-6: Riksdag Autumn Budget Debate (September 2026) [90-day horizon]
-**Indicator**: Quality and content of opposition welfare accountability attacks using April 2026 interpellation record  
-**If April interpellations cited extensively in budget debate**: Campaign has successfully built parliamentary record  
-**If referenced incidentally**: Campaign had limited record-building value  
-**Source**: Riksdagen kammaranföranden, budget debate records  
-**Confidence in predictive value**: MEDIUM
-
----
-
-### Monitoring Schedule
-
-| Indicator | Due | Priority |
-|-----------|-----|---------|
-| FI-2: Svantesson response to HD10444 | ~10 May 2026 | HIGH |
-| FI-5: Busch response to HD10448 | ~10 May 2026 | HIGH |
-| FI-4: May SIFO/Novus polls | 25–30 May 2026 | MEDIUM |
-| FI-1: Finance Ministry youth employment data | June 2026 | HIGH |
-| FI-3: Stockholm housing starts H1 | July 2026 | HIGH |
-| FI-6: Budget debate citations | September 2026 | MEDIUM |
-
----
-
-### Assessment
-
-The 14–30 day window (ministerial responses) is the highest-value monitoring period. The government's response strategy to HD10444 and HD10448 will define whether April 2026 interpellations consolidate as a durable electoral narrative or dissipate as routine parliamentary procedure.
-
-## Scenario Analysis
-<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/scenario-analysis.md -->
-
----
-
-### Scenario Framework
-
-Three forward scenarios for the government's political trajectory given the April 2026 interpellation offensive.
-
----
-
-### Scenario A: Government Responds Effectively — Narrative Contained [Probability: Unlikely, 25–37%]
-
-**Conditions**:
-- Finance Ministry publishes within 2 weeks granular data demonstrating net youth employment gains from the employer-contribution cut, refuting HD10444's exploitation claim
-- Housing Minister Carlson announces a credible spring 2026 housing package with measurable targets
-- Justice Minister Strömmer announces a geographic deployment initiative for Stockholm visible policing
-- Energy Minister Busch provides a calibrated, evidence-based response to SD's wind-disinformation interpellation that neither endorses SD's framing nor dismisses the concern
-
-**Outcome**: S's interpellation campaign fails to consolidate a dominant electoral narrative by summer 2026. Government enters autumn budget debate from a position of initiative rather than reaction. Coalition cohesion maintained.
-
-**WEP**: Unlikely (25–37%) — requires four simultaneous responsive ministerial actions in a compressed timeline, which is historically unusual for Swedish coalition governments.
-
----
-
-### Scenario B: Partial Government Response — Narrative Partially Contained [Probability: Likely, 55–70%]
-
-**Conditions**:
-- Government responds substantively to 2–3 of the highest-priority interpellations (most likely police headcount follow-up and employer-contribution reform)
-- Housing starts decline is confirmed by SCB mid-year but government announces regulatory measures
-- Sick-pay reimbursement remains unreversed; no political champion emerges for it
-- SD's energy interpellation receives a technically neutral but politically unsatisfying response
-
-**Outcome**: S succeeds in anchoring the welfare cost-shifting narrative in the sick-pay and housing domains. The employer-contribution reform retains credibility. The government's core narrative (law and order, fiscal responsibility) holds but the welfare periphery is conceded. 2026 election is genuinely competitive.
-
-**WEP**: Likely (55–70%) — consistent with Swedish coalition government response patterns.
-
----
-
-### Scenario C: Government on Defensive — Narrative Dominant for Opposition [Probability: Roughly even, 25–35%]
-
-**Conditions**:
-- Finance Ministry delays data release on employer-contribution reform; or data confirms gaming at scale
-- Stockholm housing starts decline accelerates above 900 units by H2 2026
-- SD escalates information-environment campaign following sympathetic ministerial response to HD10448
-- Additional interpellation clusters continue through May and June 2026 without adequate government response
-
-**Outcome**: S successfully frames spring-summer 2026 as a "welfare rollback" period. Coalition faces intensified pressure at autumn budget. SD-KD energy tensions partially visible. 2026 election dominated by welfare vs. fiscal-responsibility binary that favours S in the 50%+ base scenario.
-
-**WEP**: Roughly even (25–35%) — depends critically on Finance Ministry's data-release decision.
-
----
-
-### Key Scenario Indicators to Monitor
-
-| Indicator | Signal | Timing |
-|-----------|--------|--------|
-| Finance Ministry employment data release | Scenario A/B divergence point | May 2026 |
-| Stockholm housing starts H1 2026 (SCB) | Scenario B/C divergence point | June 2026 |
-| Ministerial response to HD10444 | Leading indicator for Scenario A | ~2 weeks |
-| SD escalation of media-accountability campaign | Coalition tension signal | Rolling |
-| S polling on economic management | Narrative-consolidation indicator | Monthly |
-
-## Risk Assessment
-<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/risk-assessment.md -->
-
----
-
-### Risk Register
-
-#### R-1: Employer-Contribution Reform Gaming Becomes Public Scandal [MEDIUM-HIGH]
-- **Description**: If confirmed that significant numbers of employers are structuring work-hours to exploit the 10.9 pp youth employer-contribution cut without creating net new employment, the reform faces a credibility collapse.
-- **Probability**: Medium (B3 — possibly true; awaiting Finance Ministry data)
-- **Impact**: HIGH — flagship labour-market reform discredited ahead of 2026 election
-- **Source**: HD10444, Jonathan Svensson (S)
-- **Mitigating action**: Finance Ministry should publish quarterly data on youth employment changes disaggregated by employer-contribution eligibility cohort
-- **Residual risk**: Medium-high if data not published before budget debate
-
-#### R-2: Housing Supply Decline Becomes Permanent Trend [MEDIUM-HIGH]  
-- **Description**: Stockholm-region housing starts projected at 11,091 for 2026, down ~900 from 2025. If this reflects structural demand-collapse rather than cyclical correction, it signals a 3–5 year housing supply crisis.
-- **Probability**: Medium-high (B2 — probably true; consistent with interest-rate environment and planning bottlenecks)
-- **Impact**: HIGH — housing is top-5 electoral issue in Stockholm metropolitan area
-- **Source**: HD10434, Leif Nysmed (S), citing Stockholms läns kommunprognos
-- **Mitigating action**: Government housing package (regelförenkling, ROT-avdrag extensions) needs announced before summer recess
-- **Residual risk**: Medium — depends on ECB rate trajectory
-
-#### R-3: Police Geographic Deployment Gap Widens [MEDIUM]
-- **Description**: BRÅ confirmed headcount target met but deployment geography — visible policing in high-crime Stockholm areas — remains below the threshold needed for crime-deterrence effect.
-- **Probability**: Medium (B2 — quantitative data pending full BRÅ report)
-- **Impact**: MEDIUM-HIGH — public-safety perception issues in Stockholm ahead of election
-- **Source**: HD10439, Mattias Vepsä (S), citing BRÅ March 2026 evaluation
-- **Mitigating action**: Polismyndigheten to publish geographic deployment metrics; Justice Ministry to announce targeted Stockholm visible-policing initiative
-- **Residual risk**: Low-medium if announcement made before summer
-
-#### R-4: SD-Public Media Confrontation Escalates [LOW-MEDIUM]
-- **Description**: SD's interpellation on wind-power "disinformation" (HD10448) targeting Sveriges Radio could escalate into a broader attack on public broadcaster independence if Energy Minister Busch provides a sympathetic ministerial response.
-- **Probability**: Low-medium (C3 — possibly true but uncertain)
-- **Impact**: MEDIUM — coalition management risk; damage to Sweden's press-freedom reputation internationally
-- **Source**: HD10448, Josef Fransson (SD)
-- **Mitigating action**: Energy Minister Busch should give a neutral, evidence-based response that neither endorses the "disinformation" framing nor dismisses energy-reporting accuracy concerns
-- **Residual risk**: Low if response is calibrated
-
-#### R-5: Social-Dumping Welfare Arbitrage Between Municipalities [LOW-MEDIUM]
-- **Description**: If inter-municipal social-service dumping (HD10443) is not addressed by national regulation, the practice will intensify as municipal budget pressures grow, creating visible welfare-delivery failures in receiving municipalities.
-- **Probability**: Low-medium (C3)
-- **Impact**: MEDIUM — welfare state integrity; potential regional political crises
-- **Source**: HD10443, Peder Björk (S)
-- **Mitigating action**: Civil Minister Slottner to clarify existing regulatory framework; Socialstyrelsen to issue national guidance
-
----
-
-### Aggregate Risk Level: **MEDIUM-HIGH**
-
-The combination of an active fiscal-reform implementation risk (R-1), a quantified housing-supply decline (R-2), and a police deployment gap (R-3) gives this interpellation session above-average strategic risk concentration. No single item is existential for the government, but collectively they represent the opposition's opening electoral narrative.
-
-## SWOT Analysis
-<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/swot-analysis.md -->
-
----
-
-### Context
-
-Assessing the Tidö coalition government's strategic position in responding to the April 2026 interpellation offensive.
-
----
-
-### SWOT Matrix
-
-#### Strengths
-
-**S1 — Police headcount target achieved**: BRÅ (March 2026) confirmed the 10,000-officer goal has been met, giving Justice Minister Strömmer a confirmed policy success to cite against S's deployment critique (HD10439).
-
-**S2 — Youth employment-contribution reform is live**: The 10.9 pp employer-contribution cut for young workers took effect April 2026 — the government can claim proactive labour-market action before any gaming patterns are officially confirmed.
-
-**S3 — Coalition arithmetic remains stable**: SD continues to support the Tidö coalition on confidence votes; interpellation pressure from S is parliamentary opposition theatre rather than a direct government stability threat.
-
-**S4 — Energy minister has cross-party support**: Ebba Busch (KD) has built a credible energy-transition profile combining nuclear restart advocacy with renewable expansion. SD's wind-disinformation framing may alienate moderate voters the coalition needs.
-
-#### Weaknesses
-
-**W1 — KD ministers overexposed**: Four KD ministers (Carlson, Slottner, Forssmed, Busch) face concurrent interpellations, stretching response capacity and risking inconsistent messaging across welfare and housing files.
-
-**W2 — Sick-pay reform lacks a clear political champion**: The 2024 removal of high-sick-pay cost reimbursement (targeted by HD10447) was a technocratic budget-consolidation measure, not a politically popular signal. The government lacks a strong welfare narrative to counter S's "cost-shifting" framing.
-
-**W3 — Housing supply trend is negative**: A 900-unit decline in Stockholm starts for 2026 (HD10434) is a documented, quantified setback that Housing Minister Carlson cannot easily counter with narrative alone.
-
-**W4 — No ministerial responses to five most recent interpellations**: As of 26 April 2026, HD10444, HD10447, HD10448, HD10443, and HD10445 have no published responses. Delayed responses allow S's framing to consolidate in public discourse.
-
-#### Opportunities
-
-**O1 — Budget revision window**: The spring 2026 supplementary budget (vårändringsbudget) offers the government a vehicle to introduce targeted measures responding to sick-pay and housing concerns before S can escalate.
-
-**O2 — SD energy interpellation creates coalition alignment**: If the government responds to HD10448 in a way that partially validates SD's public-media accountability concern, it can strengthen coalition cohesion without formally endorsing the "disinformation" framing.
-
-**O3 — BRÅ police evaluation as counter-narrative**: The confirmed 10,000-officer achievement provides a strong factual anchor for Strömmer to redirect Stockholm police concerns toward the Social Democrats' record of cuts during 2014–2022.
-
-**O4 — EU Pay Transparency Directive response**: HD10437 on the EU Pay Transparency Directive creates an opportunity for proactive government positioning on gender pay equity ahead of implementation deadline (2026).
-
-#### Threats
-
-**T1 — Electoral narrative consolidation**: If S succeeds in anchoring the "welfare cost-shifting" narrative in public discourse through June 2026 (after 15+ interpellations on the theme), it will be difficult to dislodge before the September 2026 election.
-
-**T2 — Employer-contribution reform credibility at risk**: If the Ministry of Finance does not rapidly publish data on net youth employment gains from HD10444's target reform, S can claim the reform "cost money and created no jobs" — a potent pre-election attack.
-
-**T3 — SD information-environment campaign**: SD's interpellation (HD10448) combined with their freedom-of-expression filing (HD10429) suggests a coordinated effort to delegitimise public broadcasters and independent media, which could escalate to a broader coalition management challenge for M and KD.
-
-**T4 — Stockholm housing decline accelerates**: If the 900-unit decline in housing starts is confirmed by mid-year SCB data, S will have primary statistical ammunition against the government's housing agenda for the entire 2026 election campaign.
-
----
-
-### Assessment
-
-The government's position is defensive but not critically weakened. Its strongest counter is the police headcount success; its weakest exposure is the housing-supply decline and sick-pay narrative. The critical window for response is the spring budget revision (May/June 2026) before the interpellation themes consolidate into electoral attack lines.
-
-## Threat Analysis
-<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/threat-analysis.md -->
-
----
-
-### Threat Landscape
-
-#### TH-1: Opposition Narrative Consolidation — Electoral Threat [HIGH]
-**Actor**: Social Democrats (Socialdemokraterna — S)  
-**Mechanism**: Coordinated interpellation bombardment targeting KD ministers and Finance Ministry across welfare, housing, and employment policy simultaneously. S's strategy creates a mutually reinforcing "system failure" narrative: sick-pay removal → increased worker insecurity → employer exploitation of reform → declining housing → inadequate police response → government unable to protect ordinary Swedes.  
-**Timeline**: Active through June 2026; expected to peak at June budget debate  
-**Countermeasures**: Spring supplementary budget responsive measures; proactive ministerial data releases; visible policy announcements before parliamentary recess  
-
-#### TH-2: Information-Environment Destabilisation [MEDIUM]
-**Actor**: Sweden Democrats (Sverigedemokraterna — SD) + affiliated media ecosystem  
-**Mechanism**: SD's wind-power disinformation interpellation (HD10448) is part of a pattern including the mosque-hate-speech filing (HD10430) and the free-speech/proposition challenge (HD10429). Collectively, these interpellations attempt to establish parliamentary precedent for public-media accountability that could be used to justify future regulatory pressure on SVT/SR.  
-**Timeline**: Ongoing; escalation risk if Energy Ministry response is sympathetic  
-**Countermeasures**: Government maintains editorial-independence principle in responses; SVT/SR respond factually to specific accuracy claims  
-
-#### TH-3: Coalition Internal Tension — Energy Policy [LOW-MEDIUM]
-**Actor**: SD energy wing  
-**Mechanism**: SD's wind-disinformation interpellation targets KD's Energy Minister Busch. If Busch endorses the "disinformation" framing, she risks credibility damage with pro-renewable industry stakeholders. If she dismisses the concern, she risks SD dissatisfaction. The interpellation creates a no-clean-answer dynamic.  
-**Timeline**: Short-term (response expected within 2 weeks)  
-**Countermeasures**: Carefully calibrated ministerial response  
-
-#### TH-4: Labour Market Policy Backlash from SMEs [MEDIUM]
-**Actor**: Small and medium enterprise (SME) community, employer organisations  
-**Mechanism**: The removal of high-sick-pay reimbursement (HD10447) combined with alleged youth-employment-contribution gaming (HD10444) creates dual pressure on SME legitimacy: SMEs bear higher sick-pay costs while larger firms game the youth employment subsidy.  
-**Timeline**: Growing through 2026 as sick-pay costs accumulate  
-**Countermeasures**: Potential business community advocacy for restoration of sick-pay reimbursement; Finance Ministry data on employer-contribution reform impact  
-
----
-
-### STRIDE Threat Assessment (Parliamentary Context)
-
-| STRIDE Category | Threat | Source | Severity |
-|-----------------|--------|--------|---------|
-| Spoofing | N/A | N/A | N/A |
-| Tampering | S narrative reframes government policy achievements as failures | S interpellation cluster | MEDIUM |
-| Repudiation | Government claims employment reform working; S claims gaming; no independent verification | HD10444 | MEDIUM-HIGH |
-| Information Disclosure | Parliamentary questions compel ministerial data disclosure before government ready | Multiple | LOW-MEDIUM |
-| Denial of Service | — | N/A | N/A |
-| Elevation of Privilege | SD uses parliamentary process to elevate attacks on public broadcasters | HD10448, HD10429 | MEDIUM |
-
----
-
-### Assessment
-
-The dominant threat is electoral narrative consolidation by S through an unusually coordinated spring interpellation campaign. The secondary threat is SD's information-environment challenge. Neither poses an immediate coalition stability risk, but both represent sustained pressure campaigns that will compound if the government's ministerial response cycle is slow.
 
 ## Per-document intelligence
 
@@ -1026,64 +595,70 @@ Strategic significance is primarily in coalition management and information-envi
 2. Track whether SR publishes a rebuttal to the specific wind-energy coverage claims
 3. Monitor whether this interpellation triggers similar filings in other Nordic parliaments
 
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/election-2026-analysis.md -->
+## Stakeholder Perspectives
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/stakeholder-perspectives.md -->
 
 ---
 
-### Electoral Context
+### Primary Stakeholder Map
 
-Sweden's next general election is due September 2026. The April 2026 interpellation cluster occurs at a critical pre-election phase when opposition parties are constructing their campaign narratives and the government is managing an economic recovery while defending its welfare-policy record.
+#### Government (Tidö Coalition)
+
+**Moderate Party (M)**  
+Key ministers targeted: Finance Minister Elisabeth Svantesson (3 interpellations: HD10444, HD10446, HD10433), Justice Minister Gunnar Strömmer (HD10439, HD10441).  
+**Perspective**: Svantesson faces the highest accountability load — three interpellations including the fiscally significant employer-contribution gaming claim. She has strong institutional resources (Finance Ministry data capability) to counter S's framing but must act quickly. Strömmer's police-headcount success (BRÅ confirmed) gives him a strong counter-narrative but the geographic deployment gap is a genuine policy challenge.
+
+**Kristdemokraterna (KD)**  
+Ministers targeted: Energy/Trade Minister Ebba Busch (2: HD10448, HD10447), Infrastructure/Housing Minister Andreas Carlson (2: HD10445, HD10434), Social Affairs Minister Jakob Forssmed (in prior period), Civil Minister Erik Slottner (HD10443).  
+**Perspective**: KD ministers face the heaviest interpellation exposure relative to their coalition share. Busch's dual challenge (sick-pay reimbursement from employment portfolio AND SD energy challenge) is particularly complex. Carlson's housing deficit is the most politically exposed — numbers are unfavourable and trend is negative.
+
+**Liberalerna (L)**  
+Employment Minister Johan Britz (HD10440).  
+**Perspective**: Single occupation-medicine interpellation — niche but credible policy gap. Britz has previously addressed the Arbetslivsinstitutet legacy; a substantive response is expected.
+
+#### Opposition
+
+**Social Democrats (S)**  
+**Perspective**: Executing a disciplined spring parliamentary campaign. The 12-interpellation cluster is not spontaneous — it reflects party research investment and electoral narrative construction. S is positioning as the party that will restore sick-pay reimbursement, build more housing, and deploy police more effectively. Internal discipline appears high; no interpellations from S contradict party line.
+
+**Sweden Democrats (SD)**  
+**Perspective**: Using interpellations (HD10448, HD10429, HD10430) to advance their information-environment agenda independently of the Tidö coalition's formal position. This is a deliberate strategy — SD maintains coalition loyalty on budget and criminal-justice issues while using parliamentary tools to advance culturally conservative and media-accountability positions. Interpellation use allows SD to create parliamentary records without requiring coalition sign-off.
+
+**Vänsterpartiet (V)**  
+**Perspective**: Filing on Israel/Palestine and international human rights issues (prior period: HD10737, HD10738, HD10732). V is maintaining consistent position on international solidarity issues; minimal overlap with S's domestic-policy campaign, suggesting a differentiated but complementary opposition approach.
+
+**Centerpartiet (C)**  
+**Perspective**: Single interpellation on LGBTQI+ rights in foreign policy (HD10431). C is maintaining its liberal international-profile niche. No domestic economic competition with S; focus on human-rights differentiation.
+
+#### Civil Society and Affected Sectors
+
+**SME business community**: Potentially aligned with S's sick-pay reimbursement restoration call (HD10447) — affected by increased sick-pay costs since 2024 reform. Alignment is tactical, not ideological.
+
+**Swedish Trade Union Confederation (LO)**: Supportive of S's labour-market interpellations; will amplify sick-pay and employer-contribution abuse claims through collective bargaining season.
+
+**Swedish Confederation of Professional Employees (TCO)**: Interested in pay-transparency directive implementation (HD10437); aligned with S framing on gender pay gap.
+
+**Housing developers (Byggföretagen)**: Potentially aligned with S's housing-start concern (HD10434) — declining starts affect industry employment and revenue.
+
+**Swedish Police Authority (Polismyndigheten)**: Institutionally interested in positive framing of headcount achievement; may push back on geographic deployment deficit characterisation if it reflects resource-allocation choices outside ministerial control.
+
+**Sveriges Radio (SR)**: Directly named in HD10448 (SD wind-power interpellation). SR's editorial board will need to address the specific accuracy claims to avoid the parliamentary record standing as unchallenged.
 
 ---
 
-### Electoral Significance of April 2026 Interpellations
+### Key Stakeholder Tensions
 
-#### Issue Salience Mapping
-
-| Policy Issue | S Interpellations | Expected Electoral Salience | Key Constituencies |
-|--------------|-------------------|----------------------------|-------------------|
-| Employment/sick pay | HD10447, HD10444, HD10440 | HIGH | Working-age, LO members, SME owners |
-| Housing supply | HD10445, HD10434 | HIGH (Stockholm) | Urban renters, first-time buyers |
-| Police/safety | HD10439 | HIGH (national) | Urban residents, suburban voters |
-| Tax reform | HD10433 | MEDIUM-HIGH | Middle-income, capital owners |
-| Gender equality | HD10437, HD10438 | MEDIUM | Women voters, public-sector |
-| Healthcare | HD10432, HD10442 | MEDIUM | Elderly, healthcare workers |
-
-#### S Electoral Strategy Assessment
-
-Social Democrats are deploying interpellations as a "record-building" mechanism — creating an official parliamentary record of government accountability gaps that can be cited throughout the September 2026 election campaign. The strategy mirrors S's 2021–2022 approach ahead of the 2022 election, where Magdalena Andersson's government used parliamentary questions and committee hearings to document Moderaterna's historical policy positions.
-
-The concentration on KD ministers is notable: S appears to be running a dual strategy of holding M accountable on fiscal policy while simultaneously peeling off KD voters by documenting KD ministerial failures on traditionally KD-adjacent issues (social welfare, housing, healthcare infrastructure).
-
-#### SD Electoral Positioning
-
-SD's information-environment interpellations (HD10448, HD10429, HD10430) serve a different function: they are base-mobilisation tools rather than swing-voter appeals. SD cannot win over S voters with these issues, but they maintain internal cohesion and signal to their base that SD remains ideologically distinct from M even while supporting the coalition.
-
----
-
-### Seat Projection Context
-
-*Based on current polling averages (April 2026); no direct seat-projection model available in this run.*
-
-The current seat distribution (Riksdagen 349 seats) shows the Tidö coalition (M + KD + L + SD support) at approximately 174–178 seats, holding a narrow majority dependent on SD support. S + MP + V is projected at approximately 155–160 seats, with C (8–9 seats) as the potential balance of power.
-
-The April 2026 interpellation campaign's electoral impact will be measurable in May-June polls. If S gains ≥3 pp from the sustained campaign, the seat math could shift toward a non-Tidö majority.
-
----
-
-### Forward Indicators
-
-- **May 2026 Novus/SIFO polls**: Will signal whether S's welfare narrative is gaining traction
-- **Finance Ministry response to HD10444**: Critical credibility test before the budget debate
-- **SCB Q1 2026 housing data**: Will confirm or refute Stockholm starts decline
-- **Budget revision (vårändringsbudget) announcements**: Government's counter-move opportunity
+1. **Government vs. S**: Fiscal policy accountability — the employer-contribution reform implementation
+2. **Government vs. SD**: Energy-policy framing and public-media accountability
+3. **KD vs. LO/S**: Sick-pay reimbursement — welfare cost allocation between state, employer, worker
+4. **Housing Ministry vs. Market**: Declining starts vs. claimed reform progress
+5. **Polismyndigheten vs. S**: Headcount achievement vs. deployment quality
 
 ---
 
 ### Assessment
 
-The April 2026 interpellation cluster represents S's most concentrated parliamentary effort of the current term. If the government fails to respond substantively on employment-cost reform and housing by June 2026, S will enter the summer with a well-documented accountability narrative that is likely to cost the coalition 2–5 seats in the September election.
+The stakeholder map reveals that S's interpellation strategy targets both electoral audiences (workers, tenants, urban residents) and specific policy communities (SMEs on sick-pay, housing industry on starts) where the government has genuine exposure. The government's strongest alliances are with confirmed institutional successes (BRÅ/police headcount); its weakest is on welfare rollback where stakeholder alignment (LO, SMEs) cuts against it.
 
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/coalition-mathematics.md -->
@@ -1220,51 +795,364 @@ Assessing which voter segments are most activated by the April 2026 interpellati
 
 The interpellation cluster is best calibrated to activate LO workers and urban Stockholm renters — S's two highest-priority persuasion targets. The sick-pay and employer-contribution issues speak directly to material economic interests of workers in insecure employment, while housing speaks to the urban progressive base. A successful campaign could deliver 3–5 net additional seats in September 2026.
 
-## Comparative International
-<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/comparative-international.md -->
+## Forward Indicators
+<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/forward-indicators.md -->
 
 ---
 
-### Comparative Framework
+### Purpose
 
-The April 2026 Swedish interpellation cluster can be benchmarked against parliamentary opposition strategies in comparable Nordic and European democracies.
-
----
-
-### Nordic Comparison
-
-#### Denmark (Folketing)
-The Danish Mette Frederiksen government (S-led minority from 2024) faces similar opposition interpellation pressure from Venstre on housing supply and from DF on information-environment issues. The Danish "aktuelle spørgsmål" mechanism allows more rapid ministerial accountability than Sweden's system, reducing the information-denial advantage the Swedish government has in delaying responses. Swedish S's use of interpellations rather than skriftliga frågor suggests a preference for public debate framing over quick answers.
-
-#### Norway (Stortinget)
-Norway's Støre government (Ap-Sp coalition) faced an intense 2025 interpellation campaign from Høyre and Fremskrittspartiet on police reform after Oslo violent-crime statistics. The parallel with Swedish HD10439 (police deployment in Stockholm) is direct: both cases involve opposition using confirmed headcount achievements to escalate to deployment-quality accountability. Norway's experience suggests this narrative can sustain 12–18 months before policy convergence.
-
-#### Finland (Eduskunta)
-Finland's Orpo government (NCP-led, 2023–) faced coordinated SDP interpellations on welfare cuts in 2023-24 that successfully framed the government's budget consolidation as "dismantling the welfare state." This narrative contributed to SDP's recovery in 2024 municipal elections. The Swedish S strategy is structurally similar; if Finnish precedent applies, S could gain 2–4 percentage points in polling from a sustained interpellation campaign. Confidence: C3 (analogical reasoning; electoral systems differ).
+Forward indicators are observable signals that will confirm or refute the assessments in this analysis within the next 30–90 days.
 
 ---
 
-### European Context: Coalition Governments Under Opposition Interpellation Pressure
+### Priority Indicators
 
-#### Germany (Bundestag)
-SPD's sustained use of Große Anfragen (major inquiries) against the CDU/CSU-led government in 2025 on welfare policy shows that parliamentary inquiry tools can create significant public accountability pressure even when the coalition arithmetic is stable. The German precedent suggests that frequency and coherence of opposition questions matters more than individual interpellation content.
+#### FI-1: Finance Ministry Data Release on Youth Employer Contribution [30-day horizon]
+**Indicator**: Publication of employment statistics disaggregated by age cohort and employer-contribution eligibility after the April 2026 cut  
+**If released with positive net employment data**: Refutes HD10444's gaming claim; government regains narrative control on labour reform (Scenario A)  
+**If delayed beyond 6 weeks**: Confirms S's framing that data doesn't support government claim (Scenario C)  
+**If released showing ambiguous/negative data**: Confirms gaming at some scale; government forced into damage-limitation mode (Scenario B/C)  
+**Source to watch**: Finance Ministry press releases, IFAU preliminary analysis, Statistics Sweden (SCB) quarterly employment data  
+**Confidence in predictive value**: HIGH
 
-#### Netherlands
-The Schoof government (VVD-NSC-PVV-BBB) faced intensive interpellation and parliamentary-question pressure from the PvdA-GL coalition on housing in early 2026. The Dutch case is directly analogous to Swedish HD10434 — a right-wing government caught between housing-supply decline and ideological opposition to state housing investment. Dutch resolution involved a compromise housing package in March 2026.
+#### FI-2: Ministerial Response to HD10444 (Employer Contribution Gaming) [14-day horizon]
+**Indicator**: Finance Minister Svantesson's formal interpellation response  
+**If substantive and data-backed**: Government is taking the claim seriously and has evidence to counter  
+**If deflective ("too early to evaluate")**: Confirms government has no rapid counter and validates S's framing  
+**Source**: Riksdagen interpellation debate record (data.riksdagen.se)  
+**Confidence in predictive value**: HIGH
+
+#### FI-3: Stockholm Housing Starts H1 2026 (SCB Data) [60-day horizon]
+**Indicator**: Statistics Sweden quarterly construction data for Stockholm region  
+**If starts exceed 6,000 for H1**: Government can contest the annual decline narrative  
+**If starts below 5,500 for H1**: Confirms annualised decline worse than projected; S housing narrative validated  
+**Source**: SCB byggstartsstatistik  
+**Confidence in predictive value**: HIGH
+
+#### FI-4: Swedish May/June Polling (Novus, SIFO) [30–60-day horizon]
+**Indicator**: Government vs. opposition polling trends in May-June 2026  
+**If S gains ≥2 pp**: Interpellation campaign is having electoral resonance  
+**If no movement**: Campaign is "inside the building" — parliamentary significance without electoral impact  
+**Source**: Novus monthly omnibus, SIFO Sweden Thoughts  
+**Confidence in predictive value**: MEDIUM (polls are lagging indicators; may not reflect campaign fully until July)
+
+#### FI-5: Energy Minister Busch Response to HD10448 (Wind Disinformation) [14–21-day horizon]
+**Indicator**: Character of ministerial response to SD's interpellation  
+**If neutral and fact-based**: Government maintains coalition without endorsing SD media attack  
+**If sympathetic to SD's framing**: Signal of increased SD influence on energy-narrative management  
+**If dismissive of SD concern**: Risk of SD dissatisfaction; coalition management challenge  
+**Source**: Riksdagen interpellation debate record  
+**Confidence in predictive value**: HIGH for coalition-management signal
+
+#### FI-6: Riksdag Autumn Budget Debate (September 2026) [90-day horizon]
+**Indicator**: Quality and content of opposition welfare accountability attacks using April 2026 interpellation record  
+**If April interpellations cited extensively in budget debate**: Campaign has successfully built parliamentary record  
+**If referenced incidentally**: Campaign had limited record-building value  
+**Source**: Riksdagen kammaranföranden, budget debate records  
+**Confidence in predictive value**: MEDIUM
 
 ---
 
-### IMF / Economic Context
+### Monitoring Schedule
 
-IMF World Economic Outlook (April 2026, WEO Apr-2026) projects Sweden's GDP growth at 2.1% for 2026 (NGDP_RPCH), recovering from the 0.5% in 2024. Unemployment projected at 8.6% (LUR). This economic recovery context is significant: S's unemployment narrative (citing "500,000 unemployed" in 2024/25 interpellations) will become harder to sustain if IMF projections materialise. The government's best electoral window is Q3 2026 if the recovery becomes tangible before the September election.
-
-*Economic provenance: WEO Apr-2026, NGDP_RPCH, LUR. Data via IMF WEO API; cross-reference with SCB quarterly national accounts recommended.*
+| Indicator | Due | Priority |
+|-----------|-----|---------|
+| FI-2: Svantesson response to HD10444 | ~10 May 2026 | HIGH |
+| FI-5: Busch response to HD10448 | ~10 May 2026 | HIGH |
+| FI-4: May SIFO/Novus polls | 25–30 May 2026 | MEDIUM |
+| FI-1: Finance Ministry youth employment data | June 2026 | HIGH |
+| FI-3: Stockholm housing starts H1 | July 2026 | HIGH |
+| FI-6: Budget debate citations | September 2026 | MEDIUM |
 
 ---
 
 ### Assessment
 
-The Swedish April 2026 interpellation cluster is structurally consistent with Nordic opposition parliamentary strategies in periods of centre-right governance facing recovery economies with residual welfare-state concerns. The most relevant precedent is Finland 2023-24 (SDP welfare counter-narrative successfully deployed against Orpo government). The key differentiator is economic timing: if Sweden's recovery is visible to voters before September 2026, the government's position is stronger than the Finnish precedent suggests.
+The 14–30 day window (ministerial responses) is the highest-value monitoring period. The government's response strategy to HD10444 and HD10448 will define whether April 2026 interpellations consolidate as a durable electoral narrative or dissipate as routine parliamentary procedure.
+
+## Scenario Analysis
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/scenario-analysis.md -->
+
+---
+
+### Scenario Framework
+
+Three forward scenarios for the government's political trajectory given the April 2026 interpellation offensive.
+
+---
+
+### Scenario A: Government Responds Effectively — Narrative Contained [Probability: Unlikely, 25–37%]
+
+**Conditions**:
+- Finance Ministry publishes within 2 weeks granular data demonstrating net youth employment gains from the employer-contribution cut, refuting HD10444's exploitation claim
+- Housing Minister Carlson announces a credible spring 2026 housing package with measurable targets
+- Justice Minister Strömmer announces a geographic deployment initiative for Stockholm visible policing
+- Energy Minister Busch provides a calibrated, evidence-based response to SD's wind-disinformation interpellation that neither endorses SD's framing nor dismisses the concern
+
+**Outcome**: S's interpellation campaign fails to consolidate a dominant electoral narrative by summer 2026. Government enters autumn budget debate from a position of initiative rather than reaction. Coalition cohesion maintained.
+
+**WEP**: Unlikely (25–37%) — requires four simultaneous responsive ministerial actions in a compressed timeline, which is historically unusual for Swedish coalition governments.
+
+---
+
+### Scenario B: Partial Government Response — Narrative Partially Contained [Probability: Likely, 55–70%]
+
+**Conditions**:
+- Government responds substantively to 2–3 of the highest-priority interpellations (most likely police headcount follow-up and employer-contribution reform)
+- Housing starts decline is confirmed by SCB mid-year but government announces regulatory measures
+- Sick-pay reimbursement remains unreversed; no political champion emerges for it
+- SD's energy interpellation receives a technically neutral but politically unsatisfying response
+
+**Outcome**: S succeeds in anchoring the welfare cost-shifting narrative in the sick-pay and housing domains. The employer-contribution reform retains credibility. The government's core narrative (law and order, fiscal responsibility) holds but the welfare periphery is conceded. 2026 election is genuinely competitive.
+
+**WEP**: Likely (55–70%) — consistent with Swedish coalition government response patterns.
+
+---
+
+### Scenario C: Government on Defensive — Narrative Dominant for Opposition [Probability: Roughly even, 25–35%]
+
+**Conditions**:
+- Finance Ministry delays data release on employer-contribution reform; or data confirms gaming at scale
+- Stockholm housing starts decline accelerates above 900 units by H2 2026
+- SD escalates information-environment campaign following sympathetic ministerial response to HD10448
+- Additional interpellation clusters continue through May and June 2026 without adequate government response
+
+**Outcome**: S successfully frames spring-summer 2026 as a "welfare rollback" period. Coalition faces intensified pressure at autumn budget. SD-KD energy tensions partially visible. 2026 election dominated by welfare vs. fiscal-responsibility binary that favours S in the 50%+ base scenario.
+
+**WEP**: Roughly even (25–35%) — depends critically on Finance Ministry's data-release decision.
+
+---
+
+### Key Scenario Indicators to Monitor
+
+| Indicator | Signal | Timing |
+|-----------|--------|--------|
+| Finance Ministry employment data release | Scenario A/B divergence point | May 2026 |
+| Stockholm housing starts H1 2026 (SCB) | Scenario B/C divergence point | June 2026 |
+| Ministerial response to HD10444 | Leading indicator for Scenario A | ~2 weeks |
+| SD escalation of media-accountability campaign | Coalition tension signal | Rolling |
+| S polling on economic management | Narrative-consolidation indicator | Monthly |
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/election-2026-analysis.md -->
+
+---
+
+### Electoral Context
+
+Sweden's next general election is due September 2026. The April 2026 interpellation cluster occurs at a critical pre-election phase when opposition parties are constructing their campaign narratives and the government is managing an economic recovery while defending its welfare-policy record.
+
+---
+
+### Electoral Significance of April 2026 Interpellations
+
+#### Issue Salience Mapping
+
+| Policy Issue | S Interpellations | Expected Electoral Salience | Key Constituencies |
+|--------------|-------------------|----------------------------|-------------------|
+| Employment/sick pay | HD10447, HD10444, HD10440 | HIGH | Working-age, LO members, SME owners |
+| Housing supply | HD10445, HD10434 | HIGH (Stockholm) | Urban renters, first-time buyers |
+| Police/safety | HD10439 | HIGH (national) | Urban residents, suburban voters |
+| Tax reform | HD10433 | MEDIUM-HIGH | Middle-income, capital owners |
+| Gender equality | HD10437, HD10438 | MEDIUM | Women voters, public-sector |
+| Healthcare | HD10432, HD10442 | MEDIUM | Elderly, healthcare workers |
+
+#### S Electoral Strategy Assessment
+
+Social Democrats are deploying interpellations as a "record-building" mechanism — creating an official parliamentary record of government accountability gaps that can be cited throughout the September 2026 election campaign. The strategy mirrors S's 2021–2022 approach ahead of the 2022 election, where Magdalena Andersson's government used parliamentary questions and committee hearings to document Moderaterna's historical policy positions.
+
+The concentration on KD ministers is notable: S appears to be running a dual strategy of holding M accountable on fiscal policy while simultaneously peeling off KD voters by documenting KD ministerial failures on traditionally KD-adjacent issues (social welfare, housing, healthcare infrastructure).
+
+#### SD Electoral Positioning
+
+SD's information-environment interpellations (HD10448, HD10429, HD10430) serve a different function: they are base-mobilisation tools rather than swing-voter appeals. SD cannot win over S voters with these issues, but they maintain internal cohesion and signal to their base that SD remains ideologically distinct from M even while supporting the coalition.
+
+---
+
+### Seat Projection Context
+
+*Based on current polling averages (April 2026); no direct seat-projection model available in this run.*
+
+The current seat distribution (Riksdagen 349 seats) shows the Tidö coalition (M + KD + L + SD support) at approximately 174–178 seats, holding a narrow majority dependent on SD support. S + MP + V is projected at approximately 155–160 seats, with C (8–9 seats) as the potential balance of power.
+
+The April 2026 interpellation campaign's electoral impact will be measurable in May-June polls. If S gains ≥3 pp from the sustained campaign, the seat math could shift toward a non-Tidö majority.
+
+---
+
+### Forward Indicators
+
+- **May 2026 Novus/SIFO polls**: Will signal whether S's welfare narrative is gaining traction
+- **Finance Ministry response to HD10444**: Critical credibility test before the budget debate
+- **SCB Q1 2026 housing data**: Will confirm or refute Stockholm starts decline
+- **Budget revision (vårändringsbudget) announcements**: Government's counter-move opportunity
+
+---
+
+### Assessment
+
+The April 2026 interpellation cluster represents S's most concentrated parliamentary effort of the current term. If the government fails to respond substantively on employment-cost reform and housing by June 2026, S will enter the summer with a well-documented accountability narrative that is likely to cost the coalition 2–5 seats in the September election.
+
+## Risk Assessment
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/risk-assessment.md -->
+
+---
+
+### Risk Register
+
+#### R-1: Employer-Contribution Reform Gaming Becomes Public Scandal [MEDIUM-HIGH]
+- **Description**: If confirmed that significant numbers of employers are structuring work-hours to exploit the 10.9 pp youth employer-contribution cut without creating net new employment, the reform faces a credibility collapse.
+- **Probability**: Medium (B3 — possibly true; awaiting Finance Ministry data)
+- **Impact**: HIGH — flagship labour-market reform discredited ahead of 2026 election
+- **Source**: HD10444, Jonathan Svensson (S)
+- **Mitigating action**: Finance Ministry should publish quarterly data on youth employment changes disaggregated by employer-contribution eligibility cohort
+- **Residual risk**: Medium-high if data not published before budget debate
+
+#### R-2: Housing Supply Decline Becomes Permanent Trend [MEDIUM-HIGH]  
+- **Description**: Stockholm-region housing starts projected at 11,091 for 2026, down ~900 from 2025. If this reflects structural demand-collapse rather than cyclical correction, it signals a 3–5 year housing supply crisis.
+- **Probability**: Medium-high (B2 — probably true; consistent with interest-rate environment and planning bottlenecks)
+- **Impact**: HIGH — housing is top-5 electoral issue in Stockholm metropolitan area
+- **Source**: HD10434, Leif Nysmed (S), citing Stockholms läns kommunprognos
+- **Mitigating action**: Government housing package (regelförenkling, ROT-avdrag extensions) needs announced before summer recess
+- **Residual risk**: Medium — depends on ECB rate trajectory
+
+#### R-3: Police Geographic Deployment Gap Widens [MEDIUM]
+- **Description**: BRÅ confirmed headcount target met but deployment geography — visible policing in high-crime Stockholm areas — remains below the threshold needed for crime-deterrence effect.
+- **Probability**: Medium (B2 — quantitative data pending full BRÅ report)
+- **Impact**: MEDIUM-HIGH — public-safety perception issues in Stockholm ahead of election
+- **Source**: HD10439, Mattias Vepsä (S), citing BRÅ March 2026 evaluation
+- **Mitigating action**: Polismyndigheten to publish geographic deployment metrics; Justice Ministry to announce targeted Stockholm visible-policing initiative
+- **Residual risk**: Low-medium if announcement made before summer
+
+#### R-4: SD-Public Media Confrontation Escalates [LOW-MEDIUM]
+- **Description**: SD's interpellation on wind-power "disinformation" (HD10448) targeting Sveriges Radio could escalate into a broader attack on public broadcaster independence if Energy Minister Busch provides a sympathetic ministerial response.
+- **Probability**: Low-medium (C3 — possibly true but uncertain)
+- **Impact**: MEDIUM — coalition management risk; damage to Sweden's press-freedom reputation internationally
+- **Source**: HD10448, Josef Fransson (SD)
+- **Mitigating action**: Energy Minister Busch should give a neutral, evidence-based response that neither endorses the "disinformation" framing nor dismisses energy-reporting accuracy concerns
+- **Residual risk**: Low if response is calibrated
+
+#### R-5: Social-Dumping Welfare Arbitrage Between Municipalities [LOW-MEDIUM]
+- **Description**: If inter-municipal social-service dumping (HD10443) is not addressed by national regulation, the practice will intensify as municipal budget pressures grow, creating visible welfare-delivery failures in receiving municipalities.
+- **Probability**: Low-medium (C3)
+- **Impact**: MEDIUM — welfare state integrity; potential regional political crises
+- **Source**: HD10443, Peder Björk (S)
+- **Mitigating action**: Civil Minister Slottner to clarify existing regulatory framework; Socialstyrelsen to issue national guidance
+
+---
+
+### Aggregate Risk Level: **MEDIUM-HIGH**
+
+The combination of an active fiscal-reform implementation risk (R-1), a quantified housing-supply decline (R-2), and a police deployment gap (R-3) gives this interpellation session above-average strategic risk concentration. No single item is existential for the government, but collectively they represent the opposition's opening electoral narrative.
+
+## SWOT Analysis
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/swot-analysis.md -->
+
+---
+
+### Context
+
+Assessing the Tidö coalition government's strategic position in responding to the April 2026 interpellation offensive.
+
+---
+
+### SWOT Matrix
+
+#### Strengths
+
+**S1 — Police headcount target achieved**: BRÅ (March 2026) confirmed the 10,000-officer goal has been met, giving Justice Minister Strömmer a confirmed policy success to cite against S's deployment critique (HD10439).
+
+**S2 — Youth employment-contribution reform is live**: The 10.9 pp employer-contribution cut for young workers took effect April 2026 — the government can claim proactive labour-market action before any gaming patterns are officially confirmed.
+
+**S3 — Coalition arithmetic remains stable**: SD continues to support the Tidö coalition on confidence votes; interpellation pressure from S is parliamentary opposition theatre rather than a direct government stability threat.
+
+**S4 — Energy minister has cross-party support**: Ebba Busch (KD) has built a credible energy-transition profile combining nuclear restart advocacy with renewable expansion. SD's wind-disinformation framing may alienate moderate voters the coalition needs.
+
+#### Weaknesses
+
+**W1 — KD ministers overexposed**: Four KD ministers (Carlson, Slottner, Forssmed, Busch) face concurrent interpellations, stretching response capacity and risking inconsistent messaging across welfare and housing files.
+
+**W2 — Sick-pay reform lacks a clear political champion**: The 2024 removal of high-sick-pay cost reimbursement (targeted by HD10447) was a technocratic budget-consolidation measure, not a politically popular signal. The government lacks a strong welfare narrative to counter S's "cost-shifting" framing.
+
+**W3 — Housing supply trend is negative**: A 900-unit decline in Stockholm starts for 2026 (HD10434) is a documented, quantified setback that Housing Minister Carlson cannot easily counter with narrative alone.
+
+**W4 — No ministerial responses to five most recent interpellations**: As of 26 April 2026, HD10444, HD10447, HD10448, HD10443, and HD10445 have no published responses. Delayed responses allow S's framing to consolidate in public discourse.
+
+#### Opportunities
+
+**O1 — Budget revision window**: The spring 2026 supplementary budget (vårändringsbudget) offers the government a vehicle to introduce targeted measures responding to sick-pay and housing concerns before S can escalate.
+
+**O2 — SD energy interpellation creates coalition alignment**: If the government responds to HD10448 in a way that partially validates SD's public-media accountability concern, it can strengthen coalition cohesion without formally endorsing the "disinformation" framing.
+
+**O3 — BRÅ police evaluation as counter-narrative**: The confirmed 10,000-officer achievement provides a strong factual anchor for Strömmer to redirect Stockholm police concerns toward the Social Democrats' record of cuts during 2014–2022.
+
+**O4 — EU Pay Transparency Directive response**: HD10437 on the EU Pay Transparency Directive creates an opportunity for proactive government positioning on gender pay equity ahead of implementation deadline (2026).
+
+#### Threats
+
+**T1 — Electoral narrative consolidation**: If S succeeds in anchoring the "welfare cost-shifting" narrative in public discourse through June 2026 (after 15+ interpellations on the theme), it will be difficult to dislodge before the September 2026 election.
+
+**T2 — Employer-contribution reform credibility at risk**: If the Ministry of Finance does not rapidly publish data on net youth employment gains from HD10444's target reform, S can claim the reform "cost money and created no jobs" — a potent pre-election attack.
+
+**T3 — SD information-environment campaign**: SD's interpellation (HD10448) combined with their freedom-of-expression filing (HD10429) suggests a coordinated effort to delegitimise public broadcasters and independent media, which could escalate to a broader coalition management challenge for M and KD.
+
+**T4 — Stockholm housing decline accelerates**: If the 900-unit decline in housing starts is confirmed by mid-year SCB data, S will have primary statistical ammunition against the government's housing agenda for the entire 2026 election campaign.
+
+---
+
+### Assessment
+
+The government's position is defensive but not critically weakened. Its strongest counter is the police headcount success; its weakest exposure is the housing-supply decline and sick-pay narrative. The critical window for response is the spring budget revision (May/June 2026) before the interpellation themes consolidate into electoral attack lines.
+
+## Threat Analysis
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/threat-analysis.md -->
+
+---
+
+### Threat Landscape
+
+#### TH-1: Opposition Narrative Consolidation — Electoral Threat [HIGH]
+**Actor**: Social Democrats (Socialdemokraterna — S)  
+**Mechanism**: Coordinated interpellation bombardment targeting KD ministers and Finance Ministry across welfare, housing, and employment policy simultaneously. S's strategy creates a mutually reinforcing "system failure" narrative: sick-pay removal → increased worker insecurity → employer exploitation of reform → declining housing → inadequate police response → government unable to protect ordinary Swedes.  
+**Timeline**: Active through June 2026; expected to peak at June budget debate  
+**Countermeasures**: Spring supplementary budget responsive measures; proactive ministerial data releases; visible policy announcements before parliamentary recess  
+
+#### TH-2: Information-Environment Destabilisation [MEDIUM]
+**Actor**: Sweden Democrats (Sverigedemokraterna — SD) + affiliated media ecosystem  
+**Mechanism**: SD's wind-power disinformation interpellation (HD10448) is part of a pattern including the mosque-hate-speech filing (HD10430) and the free-speech/proposition challenge (HD10429). Collectively, these interpellations attempt to establish parliamentary precedent for public-media accountability that could be used to justify future regulatory pressure on SVT/SR.  
+**Timeline**: Ongoing; escalation risk if Energy Ministry response is sympathetic  
+**Countermeasures**: Government maintains editorial-independence principle in responses; SVT/SR respond factually to specific accuracy claims  
+
+#### TH-3: Coalition Internal Tension — Energy Policy [LOW-MEDIUM]
+**Actor**: SD energy wing  
+**Mechanism**: SD's wind-disinformation interpellation targets KD's Energy Minister Busch. If Busch endorses the "disinformation" framing, she risks credibility damage with pro-renewable industry stakeholders. If she dismisses the concern, she risks SD dissatisfaction. The interpellation creates a no-clean-answer dynamic.  
+**Timeline**: Short-term (response expected within 2 weeks)  
+**Countermeasures**: Carefully calibrated ministerial response  
+
+#### TH-4: Labour Market Policy Backlash from SMEs [MEDIUM]
+**Actor**: Small and medium enterprise (SME) community, employer organisations  
+**Mechanism**: The removal of high-sick-pay reimbursement (HD10447) combined with alleged youth-employment-contribution gaming (HD10444) creates dual pressure on SME legitimacy: SMEs bear higher sick-pay costs while larger firms game the youth employment subsidy.  
+**Timeline**: Growing through 2026 as sick-pay costs accumulate  
+**Countermeasures**: Potential business community advocacy for restoration of sick-pay reimbursement; Finance Ministry data on employer-contribution reform impact  
+
+---
+
+### STRIDE Threat Assessment (Parliamentary Context)
+
+| STRIDE Category | Threat | Source | Severity |
+|-----------------|--------|--------|---------|
+| Spoofing | N/A | N/A | N/A |
+| Tampering | S narrative reframes government policy achievements as failures | S interpellation cluster | MEDIUM |
+| Repudiation | Government claims employment reform working; S claims gaming; no independent verification | HD10444 | MEDIUM-HIGH |
+| Information Disclosure | Parliamentary questions compel ministerial data disclosure before government ready | Multiple | LOW-MEDIUM |
+| Denial of Service | — | N/A | N/A |
+| Elevation of Privilege | SD uses parliamentary process to elevate attacks on public broadcasters | HD10448, HD10429 | MEDIUM |
+
+---
+
+### Assessment
+
+The dominant threat is electoral narrative consolidation by S through an unusually coordinated spring interpellation campaign. The secondary threat is SD's information-environment challenge. Neither poses an immediate coalition stability risk, but both represent sustained pressure campaigns that will compound if the government's ministerial response cycle is slow.
 
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/historical-parallels.md -->
@@ -1328,6 +1216,52 @@ Drawing parallels from Swedish and Nordic parliamentary history to contextualise
 ### Assessment
 
 The most instructive parallel is the Finnish SDP-Orpo case (2023–24), which suggests S can gain 3–4 pp through sustained welfare accountability framing. The most cautionary parallel is Sweden 2010 (Reinfeldt survived), which suggests economic conditions trump parliamentary campaigns. The decisive variable for 2026 is whether Sweden's IMF-projected 2.1% GDP growth is felt by ordinary voters before September.
+
+## Comparative International
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/comparative-international.md -->
+
+---
+
+### Comparative Framework
+
+The April 2026 Swedish interpellation cluster can be benchmarked against parliamentary opposition strategies in comparable Nordic and European democracies.
+
+---
+
+### Nordic Comparison
+
+#### Denmark (Folketing)
+The Danish Mette Frederiksen government (S-led minority from 2024) faces similar opposition interpellation pressure from Venstre on housing supply and from DF on information-environment issues. The Danish "aktuelle spørgsmål" mechanism allows more rapid ministerial accountability than Sweden's system, reducing the information-denial advantage the Swedish government has in delaying responses. Swedish S's use of interpellations rather than skriftliga frågor suggests a preference for public debate framing over quick answers.
+
+#### Norway (Stortinget)
+Norway's Støre government (Ap-Sp coalition) faced an intense 2025 interpellation campaign from Høyre and Fremskrittspartiet on police reform after Oslo violent-crime statistics. The parallel with Swedish HD10439 (police deployment in Stockholm) is direct: both cases involve opposition using confirmed headcount achievements to escalate to deployment-quality accountability. Norway's experience suggests this narrative can sustain 12–18 months before policy convergence.
+
+#### Finland (Eduskunta)
+Finland's Orpo government (NCP-led, 2023–) faced coordinated SDP interpellations on welfare cuts in 2023-24 that successfully framed the government's budget consolidation as "dismantling the welfare state." This narrative contributed to SDP's recovery in 2024 municipal elections. The Swedish S strategy is structurally similar; if Finnish precedent applies, S could gain 2–4 percentage points in polling from a sustained interpellation campaign. Confidence: C3 (analogical reasoning; electoral systems differ).
+
+---
+
+### European Context: Coalition Governments Under Opposition Interpellation Pressure
+
+#### Germany (Bundestag)
+SPD's sustained use of Große Anfragen (major inquiries) against the CDU/CSU-led government in 2025 on welfare policy shows that parliamentary inquiry tools can create significant public accountability pressure even when the coalition arithmetic is stable. The German precedent suggests that frequency and coherence of opposition questions matters more than individual interpellation content.
+
+#### Netherlands
+The Schoof government (VVD-NSC-PVV-BBB) faced intensive interpellation and parliamentary-question pressure from the PvdA-GL coalition on housing in early 2026. The Dutch case is directly analogous to Swedish HD10434 — a right-wing government caught between housing-supply decline and ideological opposition to state housing investment. Dutch resolution involved a compromise housing package in March 2026.
+
+---
+
+### IMF / Economic Context
+
+IMF World Economic Outlook (April 2026, WEO Apr-2026) projects Sweden's GDP growth at 2.1% for 2026 (NGDP_RPCH), recovering from the 0.5% in 2024. Unemployment projected at 8.6% (LUR). This economic recovery context is significant: S's unemployment narrative (citing "500,000 unemployed" in 2024/25 interpellations) will become harder to sustain if IMF projections materialise. The government's best electoral window is Q3 2026 if the recovery becomes tangible before the September election.
+
+*Economic provenance: WEO Apr-2026, NGDP_RPCH, LUR. Data via IMF WEO API; cross-reference with SCB quarterly national accounts recommended.*
+
+---
+
+### Assessment
+
+The Swedish April 2026 interpellation cluster is structurally consistent with Nordic opposition parliamentary strategies in periods of centre-right governance facing recovery economies with residual welfare-state concerns. The most relevant precedent is Finland 2023-24 (SDP welfare counter-narrative successfully deployed against Orpo government). The key differentiator is economic timing: if Sweden's recovery is visible to voters before September 2026, the government's position is stronger than the Finnish precedent suggests.
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/implementation-feasibility.md -->
@@ -1426,6 +1360,72 @@ Assessing the implementation feasibility of the policy demands implicit or expli
 ### Assessment
 
 The most feasible near-term government response is on police deployment and employer-contribution reform monitoring — both are administratively achievable without legislation. These are also the areas where the government has the strongest political incentive to act. Sick-pay restoration and municipal pre-emption rights face structural barriers that make near-term implementation unlikely regardless of parliamentary pressure.
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/media-framing-analysis.md -->
+
+---
+
+### Media Framing Overview
+
+Analysing how the April 2026 interpellation cluster is likely to be framed across Swedish media, and what narrative contestation dynamics are at play.
+
+---
+
+### Expected Media Frames
+
+#### Frame 1: "Opposition Holds Government Accountable" (Mainstream Liberal/Centrist Media)
+**Outlets**: Dagens Nyheter, Svenska Dagbladet, SVT Nyheter, Aftonbladet  
+**Framing**: Interpellations presented as democracy in action; specific policy gaps (sick pay, housing starts, police deployment) covered as newsworthy policy stories.  
+**Likely emphasis**: HD10444 (employer contribution gaming) and HD10439 (police deployment) are the most media-attractive — specific numbers, concrete claims, human-interest angle.  
+**Manipulation risk**: LOW — mainstream media framing is broadly accurate and source-based.
+
+#### Frame 2: "Government Under Fire as Election Approaches" (Political Reporting)
+**Outlets**: Politico Sweden, Expressen, TT Nyhetsbyrån  
+**Framing**: Interpellation campaign contextualised as pre-election positioning; emphasis on S's strategic calculation.  
+**Likely emphasis**: Volume of S interpellations (12 in 10 days) as the news peg; horse-race framing about electoral impact.  
+**Manipulation risk**: MEDIUM — horse-race framing may distort substantive policy content; poll-based coverage may amplify perceived electoral consequences beyond actual impact.
+
+#### Frame 3: "Mainstream Media Spreads Energy Disinformation" (SD-adjacent Outlets)
+**Outlets**: Samhällsnytt, Nyheter Idag, Riks-TV  
+**Framing**: HD10448 (SD wind-power interpellation) will be framed as SD "exposing" SVT/SR bias; WindEurope report will be amplified as confirming public media's pro-wind agenda.  
+**Likely emphasis**: SR named as culprit; government asked to act on media accountability.  
+**Manipulation risk**: HIGH — framing omits that the WindEurope report's methodology has been independently questioned; selective citation creates false certainty about SR's alleged bias.
+
+#### Frame 4: "Welfare State Under Threat" (Left/Labour Media)
+**Outlets**: LO-Tidningen, Arbetet, Flamman  
+**Framing**: HD10447 (sick-pay reimbursement) framed as attack on welfare state; employer-contribution gaming (HD10444) as class-based exploitation of reform.  
+**Likely emphasis**: Worker testimonies; SME owner quotes about sick-pay cost burden.  
+**Manipulation risk**: MEDIUM — accurate framing but may overstate government intent (technocratic reform presented as ideological attack).
+
+---
+
+### Amplifiers and Inhibitors
+
+| Factor | Direction | Notes |
+|--------|-----------|-------|
+| S's interpellation volume (12 in 10 days) | Amplifier | Creates news agenda; harder to ignore |
+| Ministerial response delay | Amplifier for opposition | Absence of counter-narrative |
+| Spring budget season | Amplifier | Policy context gives interpellations relevance |
+| Eurovision/sports distraction | Inhibitor | May suppress political media attention in late May |
+| Economic recovery narrative (IMF +2.1%) | Inhibitor | Could deflect welfare framing |
+| SD-SR conflict | Amplifier for SD narrative | Creates public-media controversy that generates coverage |
+
+---
+
+### Narrative Contestation Assessment
+
+The dominant narrative contest is between:
+- **S's "welfare rollback" frame**: Sick pay, housing, police deployment as system failures
+- **Government's "reform and recovery" frame**: Police headcount achieved, youth employment boosted, economic growth returning
+
+As of April 2026, S has the initiative advantage — it controls the interpellation agenda and has forced the government into a reactive posture. The government's counter-narrative is available (BRÅ police success, employer-contribution reform launch) but has not yet been publicly deployed as a coordinated communication strategy.
+
+---
+
+### Assessment
+
+Media framing risk is highest in the SD-adjacent information environment, where HD10448 creates a platform for delegitimising public broadcasters. Mainstream media framing is likely to be accurate and substantive, giving S's accountability campaign genuine media amplification without distortion. The critical media moment will be the ministerial response week — likely May 2026.
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/devils-advocate.md -->
@@ -1790,24 +1790,24 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/threat-analysis.md)
 - [`documents/HD10434-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/documents/HD10434-analysis.md)
 - [`documents/HD10439-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/documents/HD10439-analysis.md)
 - [`documents/HD10444-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/documents/HD10444-analysis.md)
 - [`documents/HD10447-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/documents/HD10447-analysis.md)
 - [`documents/HD10448-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/documents/HD10448-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/interpellations/cross-reference-map.md)

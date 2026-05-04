@@ -5,7 +5,7 @@ date: 2026-04-26
 subfolder: weekly-review
 slug: 2026-04-26-weekly-review
 source_folder: analysis/daily/2026-04-26/weekly-review
-generated_at: 2026-05-04T09:52:32.361Z
+generated_at: 2026-05-04T12:16:14.058Z
 language: en
 layout: article
 ---
@@ -101,10 +101,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -316,103 +316,78 @@ xychart-beta
 style HC03205 fill:#ff006e,stroke:#00d9ff
 style HC03206 fill:#ff006e,stroke:#00d9ff
 
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/media-framing-analysis.md -->
+## Per-document intelligence
 
----
+### HC03205
+<!-- source: documents/HC03205-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/documents/HC03205-analysis.md -->
 
-### Key Issue Frames
+**dok_id**: HC03205
+**Type**: Proposition
 
-| Issue | Government frame | Opposition frame | Media neutral frame |
-|-------|-----------------|-----------------|---------------------|
-| MfcF reform | "Historic civil defence reform delivering Swedish resilience" | "Name change without resources — audit exposes gap" | "Sweden upgrades civil defence structure" |
-| HC03206 audit | "Riksrevisionen confirms reform direction" | "Riksrevisionen exposes resourcing failure" | "Audit recommends improvements to new agency" |
-| Unemployment | "Labour line delivering, Sweden maintains strongest employment in history" | "8.5% — highest in Nordic region; youth devastated" | "Unemployment remains elevated despite positive indicators" |
-| HC03203 uranium | "Critical minerals strategy securing energy independence" | "Environmental degradation, Sami rights, EU law breach" | "Sweden lifts 30-year uranium mining ban" |
-| HC01FiU33 APL | "Strategic energy acquisition strengthening Sweden's grid" | "Government energy intervention — market distortion" | "State acquires major electricity producer" |
+**Topic**: Renaming MSB to Myndigheten för civilt försvar (MfcF) with expanded civil-defence mandate
 
----
+### Summary
 
-### Party-Level Framing
+HC03205 proposes and implements the renaming of Myndigheten för samhällsskydd och beredskap (MSB) to Myndigheten för civilt försvar (MfcF), with a sharpened mandate focused specifically on civil defence coordination rather than the broader societal preparedness role of MSB. This is the primary legislative instrument in Sweden's post-NATO-accession civil defence reorganisation.
 
-#### Sverigedemokraterna (SD)
-**Civil defence**: "Sweden under threat; only SD's defence commitment ensures real security, not symbolic renaming"
-**Unemployment**: "Integration failure is the root cause; reduce labour force distortion through immigration reform"
-**Uranium**: "Sweden's energy should be Swedish — critical minerals sovereignty"
-**Gang crime (HC01SoU29)**: "SD's law-and-order agenda delivers results; probation service reform follows our demands"
+### Political Significance
 
-#### Moderaterna (M)
-**Civil defence**: "M-led government delivers historic reform (HC03205) and accountability audit (HC03206)"
-**Unemployment**: "Activation and jobs first; Swedish labour market stronger than oppositionclaims"
-**Energy**: "APL acquisition (HC01FiU33) demonstrates strategic energy governance"
+- Direct NATO Article 3 compliance signal
+- Creates new accountability structure for civil-military coordination
+- Generates immediate opposition scrutiny (HC03206 audit, HC10752 interpellation)
 
-#### Socialdemokraterna (S)
-**Unemployment**: "Three interpellations in one week [HC10744-HC10746] — government's failure is systemic"
-**Civil defence**: "Reform without resources is theatre; S would fund municipal preparedness"
-**Uranium**: "S stands for environmental responsibility and Sami rights; reverse HC03203"
+### Key Provisions
 
-#### Miljöpartiet (MP)
-**Uranium**: "HC03203 is an environmental catastrophe risk; MP will reverse this in government"
-**Civil defence**: "Climate resilience is civil defence; government focuses on wrong threats"
+1. Agency name change with effective date
+2. Mandate narrowed to civil defence (forsvarsinriktat)
+3. MfcF takes over MSB coordination role for municipal preparedness
+4. Reporting structure to Statsrådsberedningen
 
-#### Vänsterpartiet (V)
-**Unemployment disability (HC10745)**: "Labour market discrimination against disabled workers; V demands structural reform"
-**Gang crime**: "Social investment, not repression — HC01SoU29 will not reduce crime rates"
+### Implementation Risk
 
-#### Liberalerna (L)
-**Civil defence**: "L supports reform but demands NATO-standard funding"
-**Education**: "Youth unemployment (HC10744) requires education system investment — L's agenda"
+HIGH — see implementation-feasibility.md. Mandate change without confirmed budget increase creates a credibility gap that the Riksrevisionen (HC03206) has already identified.
 
-#### Kristdemokraterna (KD)
-**Criminal justice**: "HC01SoU29 and HC01CU18 reflect KD's victim-centred justice philosophy"
-**Civil defence**: "Family preparedness (1-week supplies) — KD's practical civil defence contribution"
+### Links
 
----
+- HC03206 (Riksrevisionen audit — direct response to this reform)
+- HC10752 (Lundqvist interpellation on municipal capacity)
+- stakeholder-perspectives.md (Statsrådet Bohlin profile)
 
-### Press Frame Mapping
+### HC10744
+<!-- source: documents/HC10744-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/documents/HC10744-analysis.md -->
 
-| Publication type | Dominant frame | Secondary frame |
-|-----------------|---------------|----------------|
-| Broadsheet (DN, SvD) | Reform + implementation challenge | International comparison |
-| Tabloid (Aftonbladet, Expressen) | Gang crime, unemployment human interest | Government failure |
-| Business press (DI, Ny Teknik) | Energy strategy, APL, uranium minerals | Labour market |
-| Local/regional press | Municipal civil defence preparedness | Regional employment |
-| Public broadcaster (SVT/SR) | Balanced reform + audit challenge | Nordic comparison |
+**dok_id**: HC10744
+**Type**: Interpellation
 
----
+**Target**: Finance Minister or Labour Minister
 
-### Framing Vulnerability Assessment
+### Summary
 
-**Governing coalition framing vulnerabilities**:
-1. "Implementation gap" frame for civil defence is available and substantiated by HC03206 evidence
-2. "Nordic anomaly" frame for unemployment (8.5% vs. Denmark 4.8%) is credible and comparative
-3. "Environmental law violation" frame for HC03203 uranium is available if V+MP escalate EU route
+HC10744 is one of three unemployment interpellations filed in rapid succession (HC10744, HC10745, HC10746), targeting youth unemployment specifically. The interpellation highlights that Swedish youth unemployment is among the highest in the EU Nordic comparator group and challenges the government's "labour line" approach as inadequate for structural youth integration failures.
 
-**Opposition framing vulnerabilities**:
-1. "Security credentials" frame: S+V historically weak on civil defence/NATO — HC03205 gives government high ground
-2. "Alternative budget" challenge: S must present credible alternative to energy/APL strategy
-3. "Coalition coherence" challenge: S+V+MP+C policy differences on energy (nuclear) are real
+### Political Significance
 
----
+- Coordinated three-interpellation attack pattern (youth/disability/general)
+- Youth voters are swing voters in competitive constituencies
+- L (Liberals) is particularly vulnerable on this issue
 
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27'}}}%%
-flowchart TD
-    A[HC03205 MfcF Reform] --> B{Media Frame Split}
-    B --> C[Government: Historic Reform]
-    B --> D[Opposition: Name Change Only]
-    B --> E[Neutral: Agency Restructuring]
-    C --> F[NATO credibility narrative]
-    D --> G[Riksrevisionen audit weaponised]
-    E --> H[Implementation watch mode]
-    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-    style B fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
-    style C fill:#00d9ff,stroke:#1a1e3d,color:#0a0e27
-    style D fill:#ff006e,stroke:#1a1e3d,color:#e0e0e0
-    style E fill:#1a1e3d,stroke:#e0e0e0,color:#e0e0e0
-    style F fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
-    style G fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
-    style H fill:#0a0e27,stroke:#ffbe0b,color:#e0e0e0
+### Key Arguments in Interpellation
+
+1. Youth unemployment ~16–18% vs. adult 8.5%
+2. Education-to-employment transition failures
+3. Housing costs preventing labour mobility
+4. Government activation tools designed for cyclical, not structural unemployment
+
+### Government Vulnerability
+
+The simultaneous filing of HC10744/HC10745/HC10746 creates a "three-vector" attack: each interpellation targets a distinct sub-population (youth, disabled, general) while sharing the structural unemployment meta-narrative. This framing is politically more effective than a single general-unemployment interpellation.
+
+### Links
+
+- HC10745 (disability unemployment — companion interpellation)
+- HC10746 (general unemployment — companion interpellation)
+- voter-segmentation.md (youth segment analysis)
+- coalition-mathematics.md (L threshold risk)
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/stakeholder-perspectives.md -->
@@ -488,6 +463,203 @@ style SD fill:#ffbe0b
 **Serkan Köse (S)**: Filed three unemployment interpellations on a single day (HC10744, HC10745, HC10746) targeting Arbetsmarknadsminister Britz — a coordinated opposition accountability offensive. This pattern is characteristic of S's pre-election positioning: making unemployment personally attributable to a named minister. [A2]
 
 **Romina Pourmokhtari (L)**: Sponsoring the uranium ban removal (HC03203) under "Klimat- och näringslivsdepartementet" — an unusual pairing of a pro-climate title with pro-nuclear mining liberalisation. This reflects L's pragmatic nuclear-energy alignment and will face environmental scrutiny. [A2]
+
+## Coalition Mathematics
+<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/coalition-mathematics.md -->
+
+---
+
+### Current Riksdag Seat Distribution (2022 Election Result)
+
+| Party | Seats | Bloc | Note |
+|-------|-------|------|------|
+| Socialdemokraterna (S) | 107 | Opposition | Largest party |
+| Sverigedemokraterna (SD) | 73 | Governing | Supports Tidö |
+| Moderaterna (M) | 68 | Governing | PM's party |
+| Centerpartiet (C) | 24 | Opposition-adjacent | Informal opposition |
+| Vänsterpartiet (V) | 24 | Opposition | Hard left |
+| Kristdemokraterna (KD) | 19 | Governing | Tidö coalition |
+| Miljöpartiet (MP) | 18 | Opposition | Green |
+| Liberalerna (L) | 16 | Governing | Tidö coalition |
+| **Total** | **349** | | Majority: 175 |
+
+---
+
+### Current Government Arithmetic
+
+**Tidö coalition (M+KD+L)**: 68+19+16 = **103 seats** (minority government)
+**SD supporting**: 73 seats
+**Governing bloc total**: 103+73 = **176 seats** (50.4% — bare majority of 1)
+
+**Opposition bloc (S+V+MP)**: 107+24+18 = **149 seats**
+**C opposition-adjacent**: 24 seats
+**Total: Opposition + C**: 173 seats
+
+---
+
+### Confidence Motion Arithmetic
+
+For a successful confidence vote against the government, the opposition needs **≥ 175 seats** voting against.
+
+| Scenario | Votes against | Result |
+|----------|--------------|--------|
+| S+V+MP alone | 149 | Fails (26 short) |
+| S+V+MP+C | 173 | Fails (2 short) |
+| S+V+MP+C + 2 Tidö defectors | 175 | Passes (barely) |
+| S+V+MP+C+SD | 246 | Passes (SD switches sides) |
+
+**Key finding**: The opposition cannot defeat the government without either SD or defectors from within Tidö. This creates SD's pivotal role — SD defection = change of government.
+
+---
+
+### Coalition Viability Matrix (Post-Election Scenarios)
+
+#### Scenario A: Tidö Re-election (176–180 seats)
+**Coalition options**:
+- M+KD+L+SD (same as current): Viable if seats ≥175
+- M+KD+L+C (exclude SD): Requires C reversal; possible if C leader position changes
+**Key condition**: M+KD+L+SD ≥ 175
+
+#### Scenario B: S-led Government (175–181 seats for opposition)
+**Coalition options**:
+- S+MP+V: Viable if ≥175 (currently 149 — need +26 seats)
+- S+MP+V+C: Most likely path if C reverses; viable if ≥175
+- S+MP+V+L: Viable if L exits Tidö and joins S-bloc (historically not possible but not ruled out)
+**Key condition**: S+V+MP+C ≥ 175
+
+#### Scenario C: Hung Parliament
+**Probability**: ~15% (Scenario 3 from scenario-analysis.md)
+**Resolution**: Riksdag Speaker nominates candidate; if rejected 4 times, automatic dissolution and snap election.
+
+---
+
+### Policy Concession Space
+
+| Coalition variation | Civil defence | Unemployment | Uranium | Criminal justice |
+|--------------------|--------------|--------------|---------|-----------------|
+| M+KD+L+SD (current) | Aggressive | Activation-first | Lift ban | Law-and-order |
+| S+V+MP+C | Defensive realism | Labour market invest. | Restore ban | Rehabilitative |
+| M+KD+L+C (no SD) | Moderate | Liberal market | Conditional | Moderate |
+
+---
+
+### SD Pivotal Actor Analysis
+
+SD's 73 seats give it decisive power:
+- **Support current government**: SD maintains access to PM Ulf Kristersson; SD policy on immigration/gang crime implemented
+- **Withdraw support**: Risk of snap election or S-led government; SD loses policy leverage; risk of losing seats in snap election
+- **Support S-led government**: Historically unprecedented; politically toxic for SD base
+
+**Conclusion**: SD has minimal incentive to trigger a change of government at this stage. The only credible SD defection scenario is Scenario 3 (coalition fracture on budget), probability 15%.
+
+---
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27'}}}%%
+xychart-beta
+    title "Riksdag Seat Distribution 2022"
+    x-axis ["S", "SD", "M", "C", "V", "KD", "MP", "L"]
+    y-axis "Seats" 0 --> 120
+    bar [107, 73, 68, 24, 24, 19, 18, 16]
+```
+
+style S fill:#ff006e,stroke:#00d9ff
+style SD fill:#ffbe0b,stroke:#0a0e27
+style M fill:#00d9ff,stroke:#ff006e
+
+## Voter Segmentation
+<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/voter-segmentation.md -->
+
+---
+
+### Key Voter Segments Affected This Week
+
+| Segment | Size (~) | Key issue | Impact direction | Primary document |
+|---------|---------|-----------|-----------------|-----------------|
+| Security-conscious / NATO supporters | 18% of electorate | MfcF reform (HC03205) | ± (govt gets credit, audit creates doubt) | HC03205, HC03206 |
+| Unemployed and job-seekers | 8.5% workforce | Unemployment policies | − for governing coalition | HC10744, HC10745, HC10746 |
+| Youth (18–29) | 12% of electorate | Youth unemployment, housing | −− for governing coalition | HC10744 |
+| Environmental voters | 10% of electorate | Uranium mining (HC03203) | +++ for MP/V; − for SD rural base | HC03203 |
+| Rural residents / Sami communities | 3% of electorate | Uranium, APL (HC01FiU33) | − for uranium proponents | HC03203, HC01FiU33 |
+| Law-and-order voters | 15% of electorate | Gang crime, probation (HC01SoU29) | + for governing coalition | HC01SoU29, HC01CU18 |
+| Disability rights voters | 4% of electorate | Disability unemployment (HC10745) | − for governing coalition | HC10745 |
+| Energy-security voters | 8% of electorate | APL acquisition (HC01FiU33) | + for governing coalition | HC01FiU33 |
+
+---
+
+### Demographic Analysis
+
+#### Youth Unemployment (HC10744)
+
+The interpellation specifically targeting youth unemployment (Köse, S, to Finance Minister) creates political visibility for a segment where the government is structurally weak:
+- Youth unemployment approximately 2× the adult rate (~16–18% vs ~8.5%)
+- MP and V both have outreach campaigns for this segment
+- SD has historically lower youth support than adult support
+- L (Liberals) depends heavily on educated urban youth — if this segment shifts to MP/S, L risks threshold breach
+
+**Segment risk for coalition**: HIGH — youth voters are swing voters in several competitive constituencies.
+
+#### Workers with Disability (HC10745)
+
+HC10745 (Alam, S) targets employment rate for persons with functional disability:
+- Approximately 30–35% of working-age persons with disabilities are outside employment
+- KD has historically had policy ownership of disability rights
+- SD's welfare nationalist base includes some disability-benefit constituencies
+- Government's activation-first approach is politically vulnerable here
+
+**Segment risk for coalition**: MEDIUM — this segment does not swing elections but affects KD's constituency, where L and KD are in direct competition.
+
+---
+
+### Regional Segmentation
+
+| Region type | Civil defence | Unemployment | Uranium | Net coalition |
+|-------------|--------------|--------------|---------|---------------|
+| Stockholm/Göteborg/Malmö (urban) | Neutral | −1% | −2% (environmental push) | −3% |
+| Northern Sweden (Norrland) | +1% (proximity to Russia) | −1% | −3% (Sami reindeer) | −3% |
+| Southern Sweden (SD stronghold) | +2% | −1% | +1% | +2% |
+| Mid-Sweden rural (C stronghold) | +1% | −1% | −2% (water/land concern) | −2% |
+
+**Regional net**: Urban and northern Sweden are adversely affected by this week's policy mix; southern Sweden and suburbs are relatively neutral to positive.
+
+---
+
+### Ideological Segmentation
+
+#### Authoritarian-populist (SD, 20%)
+**Civil defence**: Strong positive — external threat narrative. **Unemployment**: Mixed — welfare state for natives vs. activation-first. **Uranium**: Mildly positive in energy-security frame but environmental concern in rural base. **Net**: +0.5%
+
+#### Liberal-conservative (M, L, 24%)
+**Civil defence**: Positive — responsible governance narrative. **Unemployment**: Negative — incumbency liability. **Uranium**: Neutral-positive (resource nationalism). **Net**: −0.5–1%
+
+#### Social-democratic (S, V, 37%)
+**Civil defence**: Opportunity to challenge implementation. **Unemployment**: Strong positive attack vector. **Uranium**: S opposed (environmental heritage), V strongly opposed. **Net**: +1.5–2%
+
+#### Green/alternative (MP, C, 12%)
+**Civil defence**: Neutral. **Unemployment**: Positive (social justice frame). **Uranium**: Strong positive for MP; mixed for C (rural land rights). **Net**: +1%
+
+---
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27'}}}%%
+quadrantChart
+    title Voter Segment Mobilisation Map
+    x-axis Low Coalition Risk --> High Coalition Risk
+    y-axis Small Segment --> Large Segment
+    quadrant-1 "Priority targets"
+    quadrant-2 "High-risk large segments"
+    quadrant-3 "Monitor"
+    quadrant-4 "Mobilisable base"
+    Youth unemployed: [0.85, 0.7]
+    Law and order: [0.2, 0.75]
+    Environmental: [0.75, 0.55]
+    Security conscious: [0.35, 0.7]
+    Disability: [0.65, 0.3]
+    Rural Norrland: [0.7, 0.25]
+```
+
+style "Youth unemployed" fill:#ff006e,stroke:#00d9ff
+style "Law and order" fill:#00d9ff,stroke:#ff006e
 
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/forward-indicators.md -->
@@ -685,6 +857,87 @@ pie title Scenario Probability Distribution
 
 style "S3: Coalition Fracture" fill:#ff006e,stroke:#00d9ff
 style "S1: Stability Through Security" fill:#00d9ff,stroke:#ff006e
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/election-2026-analysis.md -->
+
+---
+
+### Current Polling Context (As of Analysis Horizon)
+
+**Baseline**: 2022 election result (349 seats total; government majority requires 175):
+- Tidö coalition (M+SD+KD+L): 176 seats (50.4%)
+- Opposition (S+MP+V): 173 seats (49.6%)
+- Governing majority: 1 seat margin
+
+**Key dynamic**: SD (73 seats, 2022) is the pivotal actor. Any net shift of 2+ seats from Tidö to opposition delivers a change in government.
+
+---
+
+### Document Impact on 2026 Seat Projections
+
+| Policy area | Key docs | Governing coalition impact | Opposition impact |
+|-------------|----------|---------------------------|------------------|
+| Civil defence | HC03205, HC03206 | +1–2% security-conscious voters if implementation visible | −1% if audit gaps weaponised |
+| Uranium mining | HC03203 | +0.5% (energy-security frame) | −2% environmental voters (MP +1%) |
+| Unemployment | HC10744–HC10746 | −2–3% (incumbent penalty) | +2–3% |
+| Criminal justice | HC01CU18, HC01SoU29 | +1% (law-and-order voters) | Neutral |
+| Energy/APL | HC01FiU33 | +0.5% (energy security) | Neutral |
+
+**Net projected seat-delta from this week's documents**: −1 to −3 seats for Tidö coalition relative to 2022 baseline.
+
+---
+
+### Coalition Arithmetic: Scenarios
+
+| Scenario | Tidö seats | Opposition seats | Government |
+|----------|-----------|-----------------|------------|
+| S1: Stability Through Security (40%) | 176–180 | 169–173 | Tidö re-elected |
+| S2: Credibility Erosion (35%) | 168–174 | 175–181 | S-led change of government |
+| S3: Coalition Fracture (15%) | 155–165 | 184–194 | S-led majority |
+| S4: Security-Led Recovery (10%) | 182–190 | 159–167 | Tidö majority |
+
+**Electoral threshold risk**: L (14 seats, 2022) is closest to the 4% threshold. A sub-4% result for L would remove 14 seats from the Tidö bloc. If L falls below threshold (5–7% probability), Tidö bloc loses governing capacity regardless of M/KD/SD performance.
+
+---
+
+### Party-Level Projections
+
+#### Sverigedemokraterna (SD) — 73 seats (20.5%)
+**Direction**: Stable to slight decline. SD benefits from security narrative (HC03205) but risks on uranium (HC03203 — environmental opposition in SD's traditional voter base). HC01SoU29 gang crime benefits SD. Net: 68–76 seats.
+
+#### Socialdemokraterna (S) — 107 seats (30.3%)
+**Direction**: Moderate gain. Unemployment interpellations (HC10744-HC10746) are S's strongest attack vector. HC03203 uranium gives S an environmental differentiation opportunity. Net: 108–118 seats.
+
+#### Moderaterna (M) — 68 seats (19.1%)
+**Direction**: Stable. Civil defence narrative is M's policy leadership claim. If implementation is visible, M consolidates. If audit gaps dominate, M loses trust voters to S. Net: 63–72 seats.
+
+#### Miljöpartiet (MP) — 18 seats (5.1%)
+**Direction**: Modest gain. HC03203 uranium mining re-energises MP base. MP was below threshold 2022 and 2018 — the uranium issue could push them firmly above 5%. Net: 16–24 seats.
+
+#### Vänsterpartiet (V) — 24 seats (6.7%)
+**Direction**: Stable. V's interpellation language on unemployment and social rights is consistent. Net: 22–26 seats.
+
+#### Kristdemokraterna (KD) — 19 seats (5.3%)
+**Direction**: Stable to slight loss. KD's policy portfolio overlaps with M's. Net: 16–20 seats.
+
+#### Liberalerna (L) — 16 seats (4.6%)
+**Direction**: Risk of threshold breach. L's reform positions on both civil defence and energy are less visible this week. Net: 14–20 seats (but 7–10% probability of falling below 4%).
+
+#### Centerpartiet (C) — 24 seats (6.7%)
+**Direction**: Stable to slight gain. C is not in the Tidö coalition but supports it informally. HC03203 uranium is a concern for rural C voters. Net: 21–26 seats.
+
+---
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27'}}}%%
+xychart-beta
+    title "2022 vs. Projected 2026 Seats"
+    x-axis ["S", "SD", "M", "C", "V", "KD", "MP", "L"]
+    y-axis "Seats" 0 --> 130
+    bar [107, 73, 68, 24, 24, 19, 18, 16]
+    line [113, 70, 67, 23, 24, 18, 20, 14]
+```
 
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/risk-assessment.md -->
@@ -943,419 +1196,6 @@ style Opposition fill:#1a1e3d,stroke:#ff006e
 style Government fill:#1a1e3d,stroke:#ffbe0b
 style Coalition fill:#1a1e3d,stroke:#00d9ff
 
-## Per-document intelligence
-
-### HC03205
-<!-- source: documents/HC03205-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/documents/HC03205-analysis.md -->
-
-**dok_id**: HC03205
-**Type**: Proposition
-
-**Topic**: Renaming MSB to Myndigheten för civilt försvar (MfcF) with expanded civil-defence mandate
-
-### Summary
-
-HC03205 proposes and implements the renaming of Myndigheten för samhällsskydd och beredskap (MSB) to Myndigheten för civilt försvar (MfcF), with a sharpened mandate focused specifically on civil defence coordination rather than the broader societal preparedness role of MSB. This is the primary legislative instrument in Sweden's post-NATO-accession civil defence reorganisation.
-
-### Political Significance
-
-- Direct NATO Article 3 compliance signal
-- Creates new accountability structure for civil-military coordination
-- Generates immediate opposition scrutiny (HC03206 audit, HC10752 interpellation)
-
-### Key Provisions
-
-1. Agency name change with effective date
-2. Mandate narrowed to civil defence (forsvarsinriktat)
-3. MfcF takes over MSB coordination role for municipal preparedness
-4. Reporting structure to Statsrådsberedningen
-
-### Implementation Risk
-
-HIGH — see implementation-feasibility.md. Mandate change without confirmed budget increase creates a credibility gap that the Riksrevisionen (HC03206) has already identified.
-
-### Links
-
-- HC03206 (Riksrevisionen audit — direct response to this reform)
-- HC10752 (Lundqvist interpellation on municipal capacity)
-- stakeholder-perspectives.md (Statsrådet Bohlin profile)
-
-### HC10744
-<!-- source: documents/HC10744-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/documents/HC10744-analysis.md -->
-
-**dok_id**: HC10744
-**Type**: Interpellation
-
-**Target**: Finance Minister or Labour Minister
-
-### Summary
-
-HC10744 is one of three unemployment interpellations filed in rapid succession (HC10744, HC10745, HC10746), targeting youth unemployment specifically. The interpellation highlights that Swedish youth unemployment is among the highest in the EU Nordic comparator group and challenges the government's "labour line" approach as inadequate for structural youth integration failures.
-
-### Political Significance
-
-- Coordinated three-interpellation attack pattern (youth/disability/general)
-- Youth voters are swing voters in competitive constituencies
-- L (Liberals) is particularly vulnerable on this issue
-
-### Key Arguments in Interpellation
-
-1. Youth unemployment ~16–18% vs. adult 8.5%
-2. Education-to-employment transition failures
-3. Housing costs preventing labour mobility
-4. Government activation tools designed for cyclical, not structural unemployment
-
-### Government Vulnerability
-
-The simultaneous filing of HC10744/HC10745/HC10746 creates a "three-vector" attack: each interpellation targets a distinct sub-population (youth, disabled, general) while sharing the structural unemployment meta-narrative. This framing is politically more effective than a single general-unemployment interpellation.
-
-### Links
-
-- HC10745 (disability unemployment — companion interpellation)
-- HC10746 (general unemployment — companion interpellation)
-- voter-segmentation.md (youth segment analysis)
-- coalition-mathematics.md (L threshold risk)
-
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/election-2026-analysis.md -->
-
----
-
-### Current Polling Context (As of Analysis Horizon)
-
-**Baseline**: 2022 election result (349 seats total; government majority requires 175):
-- Tidö coalition (M+SD+KD+L): 176 seats (50.4%)
-- Opposition (S+MP+V): 173 seats (49.6%)
-- Governing majority: 1 seat margin
-
-**Key dynamic**: SD (73 seats, 2022) is the pivotal actor. Any net shift of 2+ seats from Tidö to opposition delivers a change in government.
-
----
-
-### Document Impact on 2026 Seat Projections
-
-| Policy area | Key docs | Governing coalition impact | Opposition impact |
-|-------------|----------|---------------------------|------------------|
-| Civil defence | HC03205, HC03206 | +1–2% security-conscious voters if implementation visible | −1% if audit gaps weaponised |
-| Uranium mining | HC03203 | +0.5% (energy-security frame) | −2% environmental voters (MP +1%) |
-| Unemployment | HC10744–HC10746 | −2–3% (incumbent penalty) | +2–3% |
-| Criminal justice | HC01CU18, HC01SoU29 | +1% (law-and-order voters) | Neutral |
-| Energy/APL | HC01FiU33 | +0.5% (energy security) | Neutral |
-
-**Net projected seat-delta from this week's documents**: −1 to −3 seats for Tidö coalition relative to 2022 baseline.
-
----
-
-### Coalition Arithmetic: Scenarios
-
-| Scenario | Tidö seats | Opposition seats | Government |
-|----------|-----------|-----------------|------------|
-| S1: Stability Through Security (40%) | 176–180 | 169–173 | Tidö re-elected |
-| S2: Credibility Erosion (35%) | 168–174 | 175–181 | S-led change of government |
-| S3: Coalition Fracture (15%) | 155–165 | 184–194 | S-led majority |
-| S4: Security-Led Recovery (10%) | 182–190 | 159–167 | Tidö majority |
-
-**Electoral threshold risk**: L (14 seats, 2022) is closest to the 4% threshold. A sub-4% result for L would remove 14 seats from the Tidö bloc. If L falls below threshold (5–7% probability), Tidö bloc loses governing capacity regardless of M/KD/SD performance.
-
----
-
-### Party-Level Projections
-
-#### Sverigedemokraterna (SD) — 73 seats (20.5%)
-**Direction**: Stable to slight decline. SD benefits from security narrative (HC03205) but risks on uranium (HC03203 — environmental opposition in SD's traditional voter base). HC01SoU29 gang crime benefits SD. Net: 68–76 seats.
-
-#### Socialdemokraterna (S) — 107 seats (30.3%)
-**Direction**: Moderate gain. Unemployment interpellations (HC10744-HC10746) are S's strongest attack vector. HC03203 uranium gives S an environmental differentiation opportunity. Net: 108–118 seats.
-
-#### Moderaterna (M) — 68 seats (19.1%)
-**Direction**: Stable. Civil defence narrative is M's policy leadership claim. If implementation is visible, M consolidates. If audit gaps dominate, M loses trust voters to S. Net: 63–72 seats.
-
-#### Miljöpartiet (MP) — 18 seats (5.1%)
-**Direction**: Modest gain. HC03203 uranium mining re-energises MP base. MP was below threshold 2022 and 2018 — the uranium issue could push them firmly above 5%. Net: 16–24 seats.
-
-#### Vänsterpartiet (V) — 24 seats (6.7%)
-**Direction**: Stable. V's interpellation language on unemployment and social rights is consistent. Net: 22–26 seats.
-
-#### Kristdemokraterna (KD) — 19 seats (5.3%)
-**Direction**: Stable to slight loss. KD's policy portfolio overlaps with M's. Net: 16–20 seats.
-
-#### Liberalerna (L) — 16 seats (4.6%)
-**Direction**: Risk of threshold breach. L's reform positions on both civil defence and energy are less visible this week. Net: 14–20 seats (but 7–10% probability of falling below 4%).
-
-#### Centerpartiet (C) — 24 seats (6.7%)
-**Direction**: Stable to slight gain. C is not in the Tidö coalition but supports it informally. HC03203 uranium is a concern for rural C voters. Net: 21–26 seats.
-
----
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27'}}}%%
-xychart-beta
-    title "2022 vs. Projected 2026 Seats"
-    x-axis ["S", "SD", "M", "C", "V", "KD", "MP", "L"]
-    y-axis "Seats" 0 --> 130
-    bar [107, 73, 68, 24, 24, 19, 18, 16]
-    line [113, 70, 67, 23, 24, 18, 20, 14]
-```
-
-## Coalition Mathematics
-<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/coalition-mathematics.md -->
-
----
-
-### Current Riksdag Seat Distribution (2022 Election Result)
-
-| Party | Seats | Bloc | Note |
-|-------|-------|------|------|
-| Socialdemokraterna (S) | 107 | Opposition | Largest party |
-| Sverigedemokraterna (SD) | 73 | Governing | Supports Tidö |
-| Moderaterna (M) | 68 | Governing | PM's party |
-| Centerpartiet (C) | 24 | Opposition-adjacent | Informal opposition |
-| Vänsterpartiet (V) | 24 | Opposition | Hard left |
-| Kristdemokraterna (KD) | 19 | Governing | Tidö coalition |
-| Miljöpartiet (MP) | 18 | Opposition | Green |
-| Liberalerna (L) | 16 | Governing | Tidö coalition |
-| **Total** | **349** | | Majority: 175 |
-
----
-
-### Current Government Arithmetic
-
-**Tidö coalition (M+KD+L)**: 68+19+16 = **103 seats** (minority government)
-**SD supporting**: 73 seats
-**Governing bloc total**: 103+73 = **176 seats** (50.4% — bare majority of 1)
-
-**Opposition bloc (S+V+MP)**: 107+24+18 = **149 seats**
-**C opposition-adjacent**: 24 seats
-**Total: Opposition + C**: 173 seats
-
----
-
-### Confidence Motion Arithmetic
-
-For a successful confidence vote against the government, the opposition needs **≥ 175 seats** voting against.
-
-| Scenario | Votes against | Result |
-|----------|--------------|--------|
-| S+V+MP alone | 149 | Fails (26 short) |
-| S+V+MP+C | 173 | Fails (2 short) |
-| S+V+MP+C + 2 Tidö defectors | 175 | Passes (barely) |
-| S+V+MP+C+SD | 246 | Passes (SD switches sides) |
-
-**Key finding**: The opposition cannot defeat the government without either SD or defectors from within Tidö. This creates SD's pivotal role — SD defection = change of government.
-
----
-
-### Coalition Viability Matrix (Post-Election Scenarios)
-
-#### Scenario A: Tidö Re-election (176–180 seats)
-**Coalition options**:
-- M+KD+L+SD (same as current): Viable if seats ≥175
-- M+KD+L+C (exclude SD): Requires C reversal; possible if C leader position changes
-**Key condition**: M+KD+L+SD ≥ 175
-
-#### Scenario B: S-led Government (175–181 seats for opposition)
-**Coalition options**:
-- S+MP+V: Viable if ≥175 (currently 149 — need +26 seats)
-- S+MP+V+C: Most likely path if C reverses; viable if ≥175
-- S+MP+V+L: Viable if L exits Tidö and joins S-bloc (historically not possible but not ruled out)
-**Key condition**: S+V+MP+C ≥ 175
-
-#### Scenario C: Hung Parliament
-**Probability**: ~15% (Scenario 3 from scenario-analysis.md)
-**Resolution**: Riksdag Speaker nominates candidate; if rejected 4 times, automatic dissolution and snap election.
-
----
-
-### Policy Concession Space
-
-| Coalition variation | Civil defence | Unemployment | Uranium | Criminal justice |
-|--------------------|--------------|--------------|---------|-----------------|
-| M+KD+L+SD (current) | Aggressive | Activation-first | Lift ban | Law-and-order |
-| S+V+MP+C | Defensive realism | Labour market invest. | Restore ban | Rehabilitative |
-| M+KD+L+C (no SD) | Moderate | Liberal market | Conditional | Moderate |
-
----
-
-### SD Pivotal Actor Analysis
-
-SD's 73 seats give it decisive power:
-- **Support current government**: SD maintains access to PM Ulf Kristersson; SD policy on immigration/gang crime implemented
-- **Withdraw support**: Risk of snap election or S-led government; SD loses policy leverage; risk of losing seats in snap election
-- **Support S-led government**: Historically unprecedented; politically toxic for SD base
-
-**Conclusion**: SD has minimal incentive to trigger a change of government at this stage. The only credible SD defection scenario is Scenario 3 (coalition fracture on budget), probability 15%.
-
----
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27'}}}%%
-xychart-beta
-    title "Riksdag Seat Distribution 2022"
-    x-axis ["S", "SD", "M", "C", "V", "KD", "MP", "L"]
-    y-axis "Seats" 0 --> 120
-    bar [107, 73, 68, 24, 24, 19, 18, 16]
-```
-
-style S fill:#ff006e,stroke:#00d9ff
-style SD fill:#ffbe0b,stroke:#0a0e27
-style M fill:#00d9ff,stroke:#ff006e
-
-## Voter Segmentation
-<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/voter-segmentation.md -->
-
----
-
-### Key Voter Segments Affected This Week
-
-| Segment | Size (~) | Key issue | Impact direction | Primary document |
-|---------|---------|-----------|-----------------|-----------------|
-| Security-conscious / NATO supporters | 18% of electorate | MfcF reform (HC03205) | ± (govt gets credit, audit creates doubt) | HC03205, HC03206 |
-| Unemployed and job-seekers | 8.5% workforce | Unemployment policies | − for governing coalition | HC10744, HC10745, HC10746 |
-| Youth (18–29) | 12% of electorate | Youth unemployment, housing | −− for governing coalition | HC10744 |
-| Environmental voters | 10% of electorate | Uranium mining (HC03203) | +++ for MP/V; − for SD rural base | HC03203 |
-| Rural residents / Sami communities | 3% of electorate | Uranium, APL (HC01FiU33) | − for uranium proponents | HC03203, HC01FiU33 |
-| Law-and-order voters | 15% of electorate | Gang crime, probation (HC01SoU29) | + for governing coalition | HC01SoU29, HC01CU18 |
-| Disability rights voters | 4% of electorate | Disability unemployment (HC10745) | − for governing coalition | HC10745 |
-| Energy-security voters | 8% of electorate | APL acquisition (HC01FiU33) | + for governing coalition | HC01FiU33 |
-
----
-
-### Demographic Analysis
-
-#### Youth Unemployment (HC10744)
-
-The interpellation specifically targeting youth unemployment (Köse, S, to Finance Minister) creates political visibility for a segment where the government is structurally weak:
-- Youth unemployment approximately 2× the adult rate (~16–18% vs ~8.5%)
-- MP and V both have outreach campaigns for this segment
-- SD has historically lower youth support than adult support
-- L (Liberals) depends heavily on educated urban youth — if this segment shifts to MP/S, L risks threshold breach
-
-**Segment risk for coalition**: HIGH — youth voters are swing voters in several competitive constituencies.
-
-#### Workers with Disability (HC10745)
-
-HC10745 (Alam, S) targets employment rate for persons with functional disability:
-- Approximately 30–35% of working-age persons with disabilities are outside employment
-- KD has historically had policy ownership of disability rights
-- SD's welfare nationalist base includes some disability-benefit constituencies
-- Government's activation-first approach is politically vulnerable here
-
-**Segment risk for coalition**: MEDIUM — this segment does not swing elections but affects KD's constituency, where L and KD are in direct competition.
-
----
-
-### Regional Segmentation
-
-| Region type | Civil defence | Unemployment | Uranium | Net coalition |
-|-------------|--------------|--------------|---------|---------------|
-| Stockholm/Göteborg/Malmö (urban) | Neutral | −1% | −2% (environmental push) | −3% |
-| Northern Sweden (Norrland) | +1% (proximity to Russia) | −1% | −3% (Sami reindeer) | −3% |
-| Southern Sweden (SD stronghold) | +2% | −1% | +1% | +2% |
-| Mid-Sweden rural (C stronghold) | +1% | −1% | −2% (water/land concern) | −2% |
-
-**Regional net**: Urban and northern Sweden are adversely affected by this week's policy mix; southern Sweden and suburbs are relatively neutral to positive.
-
----
-
-### Ideological Segmentation
-
-#### Authoritarian-populist (SD, 20%)
-**Civil defence**: Strong positive — external threat narrative. **Unemployment**: Mixed — welfare state for natives vs. activation-first. **Uranium**: Mildly positive in energy-security frame but environmental concern in rural base. **Net**: +0.5%
-
-#### Liberal-conservative (M, L, 24%)
-**Civil defence**: Positive — responsible governance narrative. **Unemployment**: Negative — incumbency liability. **Uranium**: Neutral-positive (resource nationalism). **Net**: −0.5–1%
-
-#### Social-democratic (S, V, 37%)
-**Civil defence**: Opportunity to challenge implementation. **Unemployment**: Strong positive attack vector. **Uranium**: S opposed (environmental heritage), V strongly opposed. **Net**: +1.5–2%
-
-#### Green/alternative (MP, C, 12%)
-**Civil defence**: Neutral. **Unemployment**: Positive (social justice frame). **Uranium**: Strong positive for MP; mixed for C (rural land rights). **Net**: +1%
-
----
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27'}}}%%
-quadrantChart
-    title Voter Segment Mobilisation Map
-    x-axis Low Coalition Risk --> High Coalition Risk
-    y-axis Small Segment --> Large Segment
-    quadrant-1 "Priority targets"
-    quadrant-2 "High-risk large segments"
-    quadrant-3 "Monitor"
-    quadrant-4 "Mobilisable base"
-    Youth unemployed: [0.85, 0.7]
-    Law and order: [0.2, 0.75]
-    Environmental: [0.75, 0.55]
-    Security conscious: [0.35, 0.7]
-    Disability: [0.65, 0.3]
-    Rural Norrland: [0.7, 0.25]
-```
-
-style "Youth unemployed" fill:#ff006e,stroke:#00d9ff
-style "Law and order" fill:#00d9ff,stroke:#ff006e
-
-## Comparative International
-<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/comparative-international.md -->
-
----
-
----
-
-### Civil Defence Agency Structures: Comparative Analysis
-
-| Jurisdiction | Civil Defence Agency | Recent Reorganisation | NATO Art 3 Status | Notes |
-|---|---|---|---|---|
-| **Sweden** | Myndigheten för civilt försvar (MfcF) — renamed from MSB | HC03205 Sept 2025 [A2] | Under review (Riksrevisionen HC03206) | First civil-defence-specific mandate |
-| **Finland** | Emergency Supply Agency (NESA) + Defmin | Expanded 2022-2024 post-NATO accession | Meets Article 3 baseline | Finland's Total Defence model predates NATO membership |
-| **Norway** | Direktoratet for samfunnssikkerhet og beredskap (DSB) | Stable structure | Meets Article 3 baseline | DSB has clearer municipal coordination mechanism than MSB/MfcF |
-| **Estonia** | Estonian Defence League (Kaitseliit) + PERH | Continuously modernised since 2014 | Strong compliance | Most resilience-hardened per capita in Nordic-Baltic |
-| **Germany** | Bundesamt für Bevölkerungsschutz und Katastrophenhilfe (BBK) | Modernisation post-2022 | Under EU Civil Protection framework | Germany's BBK underwent similar rename/restructuring in 2020s |
-| **Denmark** | Beredskabsstyrelsen | Stable | Meets Article 3 | Recent increase in civil-defence budget 2025 |
-
-**Outside-In Analysis**: Sweden's MfcF rename (HC03205) follows the pattern of Germany's BBK restructuring and Finland's post-NATO integration model. The Riksrevisionen audit (HC03206) findings on fragmented coordination match known weaknesses in the pre-reform German BBK. The key distinction: Finland's Total Defence model integrates civil and military preparedness at the municipal level — a benchmark Sweden has explicitly not reached (HC10752 Lundqvist interpellation).
-
----
-
-### Unemployment: Nordic Peer Comparison
-
-| Country | Unemployment Rate Q2 2025 | Youth Unemployment | Key Policy Response |
-|---------|--------------------------|-------------------|---------------------|
-| **Sweden** | ~8.5% (~500,000 persons) [A2 — HC10746] | EU-high levels [A2 — HC10744] | "Labour line" rhetoric; rate cuts by Riksbanken |
-| **Norway** | ~3.8% (StatisticsNorway) | ~11% | Strong oil fund stabilisation |
-| **Finland** | ~7.2% (Stats Finland) | ~16% | Active labour market policies |
-| **Denmark** | ~4.8% (StatsDenmark) | ~10% | Flexicurity model maintaining rates |
-| **Germany** | ~5.2% (Bundesagentur) | ~6.5% | Short-work scheme protects employment |
-| **EU average** | ~6.2% | ~14.5% | Varies by member state |
-
-**Outside-In Analysis**: Sweden's unemployment rate is the highest in the Nordic peer group and above the EU average — a structural anomaly given Sweden's historically strong labour market institutions. HC10744-HC10746 interpellations cite this directly. The IMF WEO Apr-2026 (NGDP_RPCH ~1.2% for Sweden) versus Denmark's ~2.1% and Norway's ~2.8% illustrates the relative growth differential that is sustaining the Swedish employment gap.
-
----
-
-### Uranium Mining: Nordic-Baltic Comparison
-
-| Country | Uranium mining policy | Recent change | Political stance |
-|---------|----------------------|---------------|-----------------|
-| **Sweden** | Ban removed (proposed HC03203) | 30-year ban lifted | M+SD support; V+MP+S opposed [A2] |
-| **Finland** | No commercial uranium deposits; Uranium exploration permitted | No change | Nuclear-friendly overall |
-| **Norway** | No prohibition; Thorium deposits more relevant | No change | Environmental concerns around Fen Complex |
-| **Estonia** | No commercial deposits | N/A | Nuclear-supportive |
-| **Germany** | No uranium mining | Phased out | Environmental opposition |
-
-**Outside-In Analysis**: Sweden removing its uranium mining ban stands alone in the Nordic group. Norway and Finland have no equivalent prohibition to lift, but Swedish HC03203 may create pressure on Nordic mineral policy harmonisation. EU Environmental Impact Assessment Directive (2014/52/EU) and Habitats Directive would apply to any future Swedish uranium mining permit — this is the pathway through which V+MP opposition could seek to re-impose effective barriers through European channels.
-
----
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27'}}}%%
-xychart-beta
-    title "Nordic Unemployment Comparison Q2 2025 (%)"
-    x-axis ["Sweden", "Finland", "Germany", "EU avg", "Denmark", "Norway"]
-    y-axis "Unemployment Rate %" 0 --> 10
-    bar [8.5, 7.2, 5.2, 6.2, 4.8, 3.8]
-```
-
-style Sweden fill:#ff006e,stroke:#00d9ff
-
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/historical-parallels.md -->
 
@@ -1421,6 +1261,68 @@ xychart-beta
 ```
 
 style "1990s Unemployment" fill:#ff006e,stroke:#00d9ff
+
+## Comparative International
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/comparative-international.md -->
+
+---
+
+---
+
+### Civil Defence Agency Structures: Comparative Analysis
+
+| Jurisdiction | Civil Defence Agency | Recent Reorganisation | NATO Art 3 Status | Notes |
+|---|---|---|---|---|
+| **Sweden** | Myndigheten för civilt försvar (MfcF) — renamed from MSB | HC03205 Sept 2025 [A2] | Under review (Riksrevisionen HC03206) | First civil-defence-specific mandate |
+| **Finland** | Emergency Supply Agency (NESA) + Defmin | Expanded 2022-2024 post-NATO accession | Meets Article 3 baseline | Finland's Total Defence model predates NATO membership |
+| **Norway** | Direktoratet for samfunnssikkerhet og beredskap (DSB) | Stable structure | Meets Article 3 baseline | DSB has clearer municipal coordination mechanism than MSB/MfcF |
+| **Estonia** | Estonian Defence League (Kaitseliit) + PERH | Continuously modernised since 2014 | Strong compliance | Most resilience-hardened per capita in Nordic-Baltic |
+| **Germany** | Bundesamt für Bevölkerungsschutz und Katastrophenhilfe (BBK) | Modernisation post-2022 | Under EU Civil Protection framework | Germany's BBK underwent similar rename/restructuring in 2020s |
+| **Denmark** | Beredskabsstyrelsen | Stable | Meets Article 3 | Recent increase in civil-defence budget 2025 |
+
+**Outside-In Analysis**: Sweden's MfcF rename (HC03205) follows the pattern of Germany's BBK restructuring and Finland's post-NATO integration model. The Riksrevisionen audit (HC03206) findings on fragmented coordination match known weaknesses in the pre-reform German BBK. The key distinction: Finland's Total Defence model integrates civil and military preparedness at the municipal level — a benchmark Sweden has explicitly not reached (HC10752 Lundqvist interpellation).
+
+---
+
+### Unemployment: Nordic Peer Comparison
+
+| Country | Unemployment Rate Q2 2025 | Youth Unemployment | Key Policy Response |
+|---------|--------------------------|-------------------|---------------------|
+| **Sweden** | ~8.5% (~500,000 persons) [A2 — HC10746] | EU-high levels [A2 — HC10744] | "Labour line" rhetoric; rate cuts by Riksbanken |
+| **Norway** | ~3.8% (StatisticsNorway) | ~11% | Strong oil fund stabilisation |
+| **Finland** | ~7.2% (Stats Finland) | ~16% | Active labour market policies |
+| **Denmark** | ~4.8% (StatsDenmark) | ~10% | Flexicurity model maintaining rates |
+| **Germany** | ~5.2% (Bundesagentur) | ~6.5% | Short-work scheme protects employment |
+| **EU average** | ~6.2% | ~14.5% | Varies by member state |
+
+**Outside-In Analysis**: Sweden's unemployment rate is the highest in the Nordic peer group and above the EU average — a structural anomaly given Sweden's historically strong labour market institutions. HC10744-HC10746 interpellations cite this directly. The IMF WEO Apr-2026 (NGDP_RPCH ~1.2% for Sweden) versus Denmark's ~2.1% and Norway's ~2.8% illustrates the relative growth differential that is sustaining the Swedish employment gap.
+
+---
+
+### Uranium Mining: Nordic-Baltic Comparison
+
+| Country | Uranium mining policy | Recent change | Political stance |
+|---------|----------------------|---------------|-----------------|
+| **Sweden** | Ban removed (proposed HC03203) | 30-year ban lifted | M+SD support; V+MP+S opposed [A2] |
+| **Finland** | No commercial uranium deposits; Uranium exploration permitted | No change | Nuclear-friendly overall |
+| **Norway** | No prohibition; Thorium deposits more relevant | No change | Environmental concerns around Fen Complex |
+| **Estonia** | No commercial deposits | N/A | Nuclear-supportive |
+| **Germany** | No uranium mining | Phased out | Environmental opposition |
+
+**Outside-In Analysis**: Sweden removing its uranium mining ban stands alone in the Nordic group. Norway and Finland have no equivalent prohibition to lift, but Swedish HC03203 may create pressure on Nordic mineral policy harmonisation. EU Environmental Impact Assessment Directive (2014/52/EU) and Habitats Directive would apply to any future Swedish uranium mining permit — this is the pathway through which V+MP opposition could seek to re-impose effective barriers through European channels.
+
+---
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27'}}}%%
+xychart-beta
+    title "Nordic Unemployment Comparison Q2 2025 (%)"
+    x-axis ["Sweden", "Finland", "Germany", "EU avg", "Denmark", "Norway"]
+    y-axis "Unemployment Rate %" 0 --> 10
+    bar [8.5, 7.2, 5.2, 6.2, 4.8, 3.8]
+```
+
+style Sweden fill:#ff006e,stroke:#00d9ff
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/implementation-feasibility.md -->
@@ -1520,6 +1422,104 @@ quadrantChart
 style "Uranium mining" fill:#ff006e,stroke:#00d9ff
 style "Unemployment" fill:#ff006e,stroke:#00d9ff
 style "APL acquisition" fill:#00d9ff,stroke:#ff006e
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/media-framing-analysis.md -->
+
+---
+
+### Key Issue Frames
+
+| Issue | Government frame | Opposition frame | Media neutral frame |
+|-------|-----------------|-----------------|---------------------|
+| MfcF reform | "Historic civil defence reform delivering Swedish resilience" | "Name change without resources — audit exposes gap" | "Sweden upgrades civil defence structure" |
+| HC03206 audit | "Riksrevisionen confirms reform direction" | "Riksrevisionen exposes resourcing failure" | "Audit recommends improvements to new agency" |
+| Unemployment | "Labour line delivering, Sweden maintains strongest employment in history" | "8.5% — highest in Nordic region; youth devastated" | "Unemployment remains elevated despite positive indicators" |
+| HC03203 uranium | "Critical minerals strategy securing energy independence" | "Environmental degradation, Sami rights, EU law breach" | "Sweden lifts 30-year uranium mining ban" |
+| HC01FiU33 APL | "Strategic energy acquisition strengthening Sweden's grid" | "Government energy intervention — market distortion" | "State acquires major electricity producer" |
+
+---
+
+### Party-Level Framing
+
+#### Sverigedemokraterna (SD)
+**Civil defence**: "Sweden under threat; only SD's defence commitment ensures real security, not symbolic renaming"
+**Unemployment**: "Integration failure is the root cause; reduce labour force distortion through immigration reform"
+**Uranium**: "Sweden's energy should be Swedish — critical minerals sovereignty"
+**Gang crime (HC01SoU29)**: "SD's law-and-order agenda delivers results; probation service reform follows our demands"
+
+#### Moderaterna (M)
+**Civil defence**: "M-led government delivers historic reform (HC03205) and accountability audit (HC03206)"
+**Unemployment**: "Activation and jobs first; Swedish labour market stronger than oppositionclaims"
+**Energy**: "APL acquisition (HC01FiU33) demonstrates strategic energy governance"
+
+#### Socialdemokraterna (S)
+**Unemployment**: "Three interpellations in one week [HC10744-HC10746] — government's failure is systemic"
+**Civil defence**: "Reform without resources is theatre; S would fund municipal preparedness"
+**Uranium**: "S stands for environmental responsibility and Sami rights; reverse HC03203"
+
+#### Miljöpartiet (MP)
+**Uranium**: "HC03203 is an environmental catastrophe risk; MP will reverse this in government"
+**Civil defence**: "Climate resilience is civil defence; government focuses on wrong threats"
+
+#### Vänsterpartiet (V)
+**Unemployment disability (HC10745)**: "Labour market discrimination against disabled workers; V demands structural reform"
+**Gang crime**: "Social investment, not repression — HC01SoU29 will not reduce crime rates"
+
+#### Liberalerna (L)
+**Civil defence**: "L supports reform but demands NATO-standard funding"
+**Education**: "Youth unemployment (HC10744) requires education system investment — L's agenda"
+
+#### Kristdemokraterna (KD)
+**Criminal justice**: "HC01SoU29 and HC01CU18 reflect KD's victim-centred justice philosophy"
+**Civil defence**: "Family preparedness (1-week supplies) — KD's practical civil defence contribution"
+
+---
+
+### Press Frame Mapping
+
+| Publication type | Dominant frame | Secondary frame |
+|-----------------|---------------|----------------|
+| Broadsheet (DN, SvD) | Reform + implementation challenge | International comparison |
+| Tabloid (Aftonbladet, Expressen) | Gang crime, unemployment human interest | Government failure |
+| Business press (DI, Ny Teknik) | Energy strategy, APL, uranium minerals | Labour market |
+| Local/regional press | Municipal civil defence preparedness | Regional employment |
+| Public broadcaster (SVT/SR) | Balanced reform + audit challenge | Nordic comparison |
+
+---
+
+### Framing Vulnerability Assessment
+
+**Governing coalition framing vulnerabilities**:
+1. "Implementation gap" frame for civil defence is available and substantiated by HC03206 evidence
+2. "Nordic anomaly" frame for unemployment (8.5% vs. Denmark 4.8%) is credible and comparative
+3. "Environmental law violation" frame for HC03203 uranium is available if V+MP escalate EU route
+
+**Opposition framing vulnerabilities**:
+1. "Security credentials" frame: S+V historically weak on civil defence/NATO — HC03205 gives government high ground
+2. "Alternative budget" challenge: S must present credible alternative to energy/APL strategy
+3. "Coalition coherence" challenge: S+V+MP+C policy differences on energy (nuclear) are real
+
+---
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'lineColor': '#ffbe0b', 'sectionBkgColor': '#1a1e3d', 'altSectionBkgColor': '#0a0e27'}}}%%
+flowchart TD
+    A[HC03205 MfcF Reform] --> B{Media Frame Split}
+    B --> C[Government: Historic Reform]
+    B --> D[Opposition: Name Change Only]
+    B --> E[Neutral: Agency Restructuring]
+    C --> F[NATO credibility narrative]
+    D --> G[Riksrevisionen audit weaponised]
+    E --> H[Implementation watch mode]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#ffbe0b,stroke:#0a0e27,color:#0a0e27
+    style C fill:#00d9ff,stroke:#1a1e3d,color:#0a0e27
+    style D fill:#ff006e,stroke:#1a1e3d,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#e0e0e0,color:#e0e0e0
+    style F fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+    style G fill:#0a0e27,stroke:#ff006e,color:#e0e0e0
+    style H fill:#0a0e27,stroke:#ffbe0b,color:#e0e0e0
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/devils-advocate.md -->
@@ -2181,21 +2181,21 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/media-framing-analysis.md)
+- [`documents/HC03205-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/documents/HC03205-analysis.md)
+- [`documents/HC10744-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/documents/HC10744-analysis.md)
 - [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/stakeholder-perspectives.md)
+- [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/coalition-mathematics.md)
+- [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/voter-segmentation.md)
 - [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/forward-indicators.md)
 - [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/election-2026-analysis.md)
 - [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/risk-assessment.md)
 - [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/swot-analysis.md)
 - [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/threat-analysis.md)
-- [`documents/HC03205-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/documents/HC03205-analysis.md)
-- [`documents/HC10744-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/documents/HC10744-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/election-2026-analysis.md)
-- [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/coalition-mathematics.md)
-- [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/comparative-international.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/weekly-review/cross-reference-map.md)

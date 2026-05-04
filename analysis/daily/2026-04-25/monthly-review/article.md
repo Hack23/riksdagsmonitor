@@ -5,7 +5,7 @@ date: 2026-04-25
 subfolder: monthly-review
 slug: 2026-04-25-monthly-review
 source_folder: analysis/daily/2026-04-25/monthly-review
-generated_at: 2026-05-04T09:52:32.279Z
+generated_at: 2026-05-04T12:16:13.981Z
 language: en
 layout: article
 ---
@@ -88,10 +88,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -309,449 +309,6 @@ flowchart LR
 
 Removing HD01JuU31 (lowest-confidence in committee tier) leaves top-3 unchanged. Adding +0.5 DIW to all April-24 batch items (counterfactual: opposition-led media salience) does not change top-3 rank.
 
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/media-framing-analysis.md -->
-
-### Frame inventory (this window)
-
-| Frame | Owner | Hot dok_ids | Audience |
-|-------|-------|-------------|----------|
-| "Leverans" / delivery | Tidö | HD01JuU10, HD01SoU25, HD01CU24 | Storstad-pendlare, pensionärer |
-| "Praktisk politik" | S | HD01FiU48 (S voted YES) | Förvärvsarbetande |
-| "Trygghet" / public safety | M+SD | HD01JuU10 | Pensionärer, glesbygd |
-| "Polisens kapacitet" | S+V | HD01JuU31 RiR | Förvärvsarbetande, yngre |
-| "Anhörigfrågan" | KD primary | HD01SoU25 | Pensionärer, kvinnor 50+ |
-| "Bostäder" | M+L | HD01CU24 | Storstad-pendlare, yngre |
-| "Desinformation som hot" | MP+S | HD10448 | Yngre, akademiker |
-| "Rättigheter / mänskliga rättigheter" | V+MP | HD11748, HD11749 | Yngre, akademiker |
-| "Arbetsmiljö och stöd" | S | HD11747 | LO-väljare |
-
-### Frame contest matrix
-
-```mermaid
-quadrantChart
-  title Frame contest x salience x ownership
-  x-axis Low Salience --> High Salience
-  y-axis Tidö-aligned --> Opposition-aligned
-  Leverans: [0.7, 0.85]
-  Praktisk politik (S): [0.55, 0.25]
-  Trygghet: [0.75, 0.8]
-  Polisens kapacitet: [0.5, 0.2]
-  Anhörig: [0.65, 0.75]
-  Bostäder: [0.5, 0.7]
-  Desinformation: [0.4, 0.25]
-  Rättigheter: [0.35, 0.15]
-  Arbetsmiljö: [0.45, 0.2]
-```
-
-### Pre-campaign salience forecast (2026-09-13 horizon)
-
-- **Trygghet** likely peaks August (HD01JuU10 ikraftträdande Q3) → high benefit to M+SD.
-- **Anhörig + äldreomsorg** likely peaks early summer (HD01SoU25 implementation) → KD core.
-- **Polisens kapacitet** is the *opposition's* peak frame; depends on RiR-uppföljning and any incidents.
-- **Desinformation** uncertain; H3 (devils-advocate) implies the frame is double-edged for SD. [riksdagen.se HD10448]
-
-### Notable absences
-
-- C is largely *off* the framing map this window — neither owner nor amplifier of major frames.
-- L's media framing is tied to M; insufficient stand-alone identity in window.
-
-### Frame ownership network
-
-```mermaid
-flowchart LR
-  T[Tidö-aligned riksdagen.se]:::g --> F1[Leverans HD01JuU10 HD01CU24]:::g
-  T --> F2[Trygghet HD01JuU10]:::g
-  T --> F3[Anhörig HD01SoU25]:::g
-  O[Opposition-aligned]:::o --> F4[Polisens kapacitet HD01JuU31]:::o
-  O --> F5[Arbetsmiljö HD11747]:::o
-  O --> F6[Desinformation HD10448]:::o
-  classDef g fill:#1a1e3d,stroke:#00d9ff,color:#ffffff
-  classDef o fill:#1a1e3d,stroke:#ff006e,color:#ffffff
-  style T stroke-width:3px
-  style O stroke-width:3px
-```
-
-## Stakeholder Perspectives
-<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/stakeholder-perspectives.md -->
-
-**Lens**: 6-stakeholder map — government parties, opposition parties, agencies, kommuner, media, väljargrupper
-
-### Stakeholder map
-
-| Stakeholder | Position | Key documents (window) | Interest | Influence |
-|-------------|----------|------------------------|----------|-----------|
-| Regering (M-KD-L) | OWNER | HD01JuU10, HD01SoU25, HD01CU24, HD03100 | delivery → polling lift | VERY HIGH |
-| SD (confidence partner) | SUPPORTIVE | All 4 April-24 betänkanden, HD01FiU48 | crime/migration message preserved | VERY HIGH |
-| S (largest opposition) | TACTICAL | HD01FiU48 (S voted YES), HD024082 (S motion) | "symbolisk opposition + praktiskt stöd" | HIGH |
-| V | OPPOSITION-RIGHTS | HD11749 (rights-of-detained), HD11748 | rights-frame, healthcare | MEDIUM |
-| MP | OPPOSITION-INFO | HD10448 (desinformation), HD11748 | info-integrity, climate | MEDIUM |
-| C | PROCEDURAL | (no major motions in window) | rule-of-law, agriculture | LOW |
-| Polismyndigheten | IMPLEMENTING | HD01JuU10, HD01JuU31 (RiR 2026:6) | capacity, leadership | HIGH |
-| Försäkringskassan / kommuner | IMPLEMENTING | HD01SoU25 anhörigstrategi | resource allocation | MEDIUM |
-| Boverket / kommuner | IMPLEMENTING | HD01CU24 byggprocess | permit throughput | MEDIUM |
-| Riksrevisionen | OVERSIGHT | RiR 2026:6 → HD01JuU31 | follow-up audit | MEDIUM |
-| Energimyndigheten / MSB | DEFENDING | HD10448 disinfo response | mandate clarity | MEDIUM |
-| Utrikesförvaltningen | RESPONDING | HD11748 | consular capacity | LOW |
-| Pensionärsorganisationer (PRO/SPF) | ENGAGED | HD01SoU25 | influence anhörigstrategi rollout | MEDIUM |
-| Byggbranschen | INTERESTED | HD01CU24 | permit acceleration | MEDIUM |
-| Vapenägarorganisationer | ENGAGED | HD01JuU10 | tillstånd, registreringsbörda | LOW |
-| Fackförbund (LO/TCO/SACO) | INTERESTED | HD11747 | arbetsmiljöfrågan | MEDIUM |
-
-```mermaid
-flowchart LR
-  G[Regering M-KD-L]:::g --> SD[SD confidence]:::sd
-  G --> A[Polismyndigheten / FK / Boverket]:::a
-  S[S]:::s -.opposition tactic.-> G
-  V[V]:::v -.rights-frame.-> G
-  MP[MP]:::mp -.info-integrity.-> G
-  C[C]:::c -.procedural.-> G
-  R[Riksrevisionen]:::r -.audit.-> A
-  M[Media + väljare]:::m
-  G --> M
-  S --> M
-  V --> M
-  MP --> M
-  classDef g fill:#1a1e3d,stroke:#00d9ff,color:#ffffff
-  classDef sd fill:#1a1e3d,stroke:#ffbe0b,color:#ffffff
-  classDef s fill:#1a1e3d,stroke:#ff006e,color:#ffffff
-  classDef v fill:#0a0e27,stroke:#ff006e,color:#ff006e
-  classDef mp fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
-  classDef c fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
-  classDef a fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
-  classDef r fill:#1a1e3d,stroke:#ff006e,color:#ffffff
-  classDef m fill:#0a0e27,stroke:#e0e0e0,color:#e0e0e0
-  style G stroke-width:3px
-```
-
-### Cross-stakeholder dynamics
-
-- **Government–SD**: closure-batch unanimity confirms confidence relationship through pre-campaign.
-- **S–government**: HD01FiU48 reveals tactical complexity — S supports popular pieces while attacking adjacent themes.
-- **Riksrevisionen → Polismyndigheten**: HD01JuU31 makes the audit politically binding for the autumn.
-- **Kommuner + Försäkringskassan**: HD01SoU25 + HD01CU24 both rely on kommunal kapacitet — overlap creates implementation risk.
-
-## Forward Indicators
-<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/forward-indicators.md -->
-
-### Dated indicator ledger (≥10)
-
-| Date | Indicator | Decision relevance | Source |
-|------|-----------|---------------------|--------|
-| 2026-05-01 | HD01FiU48 fuel-tax-relief implementerat | Visible household effect | HD01FiU48 |
-| 2026-05-08 | First post-window Demoskop | PIR-A; Scenario A vs B | sibling synthesis |
-| 2026-05-15 | HD01CU24 chamber vote | Implementation start | HD01CU24 [riksdagen.se] |
-| 2026-05-20 | HD01JuU10 chamber vote | Crime narrative anchor | HD01JuU10 [riksdagen.se] |
-| 2026-05-22 | HD01SoU25 chamber vote | Anhörigstrategi launch | HD01SoU25 [riksdagen.se] |
-| 2026-05-28 | HD01JuU31 chamber acceptance | RiR follow-up codified | HD01JuU31 [riksdagen.se] |
-| 2026-06-01 | Vårriksdagens slut | Last bloc-vote opportunity | calendar |
-| 2026-06-15 | Pre-campaign window opens | T-1 (KJ-3) | calendar |
-| 2026-06-30 | HD01SoU25 anhörigstrategi nationell direktör utsedd | R-1 mitigation | HD01SoU25 |
-| 2026-06-30 | Polismyndigheten Q1 RiR-uppföljning­statusrapport | R-2 binding | HD01JuU31 |
-| 2026-07-15 | SCB BO0101 påbörjade bostäder Q2 release | HD01CU24 effect | HD01CU24 |
-| 2026-07-20 | Brå brottsstatistik Q2 release | HD01JuU10 narrative | HD01JuU10 |
-| 2026-07-30 | Demoskop juli-mätning | PIR-A confirmation/refutation | (poll) |
-| 2026-08-15 | Pre-campaign manifesto launches expected | KJ-3 SD-discipline test | calendar |
-| 2026-08-31 | Polismyndigheten reorg-meddelande window close | PIR-B | HD01JuU31 |
-| 2026-09-13 | Election day | terminal | calendar |
-
-### Indicator dependencies
-
-```mermaid
-flowchart LR
-  D1[2026-05-08 Demoskop]:::a --> D2[2026-05-15..28 Chamber votes]:::b
-  D2 --> D3[2026-06-01 Vårriksdagens slut]:::b
-  D3 --> D4[2026-06-30 Implementation milestones]:::c
-  D4 --> D5[2026-07-15..20 SCB+Brå data]:::c
-  D5 --> D6[2026-07-30 Demoskop juli]:::a
-  D6 --> D7[2026-08-15 Manifesto launches]:::d
-  D7 --> D8[2026-09-13 Election]:::e
-  classDef a fill:#1a1e3d,stroke:#00d9ff,color:#ffffff
-  classDef b fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
-  classDef c fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
-  classDef d fill:#1a1e3d,stroke:#ff006e,color:#ffffff
-  classDef e fill:#1a1e3d,stroke:#ff006e,color:#ffffff
-  style D8 stroke-width:3px
-```
-
-### Indicator ranks by decision-leverage
-
-| Rank | Indicator | Why it matters most |
-|------|-----------|---------------------|
-| 1 | 2026-05-08 Demoskop | First test of HD01FiU48 conversion |
-| 2 | 2026-08-31 Polismyndigheten reorg | PIR-B closure |
-| 3 | 2026-07-15 SCB BO0101 | Empirical HD01CU24 effect |
-| 4 | 2026-08-15 Manifesto launches | KJ-3 SD-discipline endpoint |
-
-[riksdagen.se HD01FiU48] [riksdagen.se HD01JuU31]
-
-## Scenario Analysis
-<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/scenario-analysis.md -->
-
-### Baseline anchor
-
-Tidö delivers complete legislative portfolio (HD03100, HD03240, UFöU3, April-24 batch) with HD01FiU48 supermajority capping the fiscal pivot. Implementation pivot (HD01JuU31, HD01SoU25, HD01CU24) is now the binding constraint. Opposition has tactical capture but no legislative reversals.
-
-### Scenario A — *Delivery-Lock* (probability 0.45)
-
-> Tidö converts the legislative completeness into measurable polling lift; Demoskop shows M+KD+L bloc reaching 47% by mid-July; SD holds 18%; S stuck at 25–27%.
-
-- **Drivers**: HD01FiU48 fuel-tax visible in household budgets May–July; HD01JuU10 firearms law Q3 implementation media coverage; HD01SoU25 anhörigstrategi PR offensive.
-- **Indicators**: Demoskop 2026-05-08 M+KD+L ≥ 44%; SCB BO0101 påbörjade bostäder Q2 +5% YoY; Brå Q2 brottsstatistik flat or down.
-- **Risks**: R-2 (police capacity gap exposed by RiR follow-up); T-3 (disinfo backlash).
-- **Evidence base**: HD01FiU48, HD01JuU10, HD01SoU25 [riksdagen.se]
-- **Admiralty**: B2
-
-### Scenario B — *Wedge Stalemate* (probability 0.35) — most-likely
-
-> M+KD+L bloc holds 41–43% but does not break above; S resilient at 28–30%; SD 17–19%; September election reverts to coalition-arithmetic uncertainty.
-
-- **Drivers**: S "symbolic opposition + practical support" tactic absorbs HD01FiU48 voting cost; healthcare wedge (R-1) extracts 2–3 ppt from M; SD discipline holds but no SD growth.
-- **Indicators**: Demoskop M+KD+L 41–43%; SOM-lag confirms healthcare top-issue; Polismyndigheten reorg announcement deferred.
-- **Risks**: T-1 coalition cohesion test on autumn budget; T-4 wedge effectiveness escalation.
-- **Evidence base**: HD01SoU25 + HD01SoU17 sibling, HD11749 [riksdagen.se]
-- **Admiralty**: B2
-
-### Scenario C — *Implementation Cascade* (probability 0.15)
-
-> RiR 2026:6 follow-up reveals deeper Polismyndigheten dysfunction; Brå Q2 brottsstatistik shows uptick; HD01JuU10's launch is overshadowed by capacity story; SD frustration with Polismyndigheten ledning becomes overt.
-
-- **Drivers**: HD01JuU31 audit findings publicly reanchored to crime statistics; HD11747 work-environment narrative scales.
-- **Indicators**: SD-MP off-script statements; Polismyndigheten chefs-bytte; Brå Q2 crime +3% YoY.
-- **Risks**: T-1 escalates to active coalition strain; T-2 cascades to other agencies.
-- **Evidence base**: HD01JuU31 RiR 2026:6, sibling 2026-04-24 [riksdagen.se HD01JuU31]
-- **Admiralty**: C3
-
-### Scenario D — *Tail risk: Geopolitical shock* (probability 0.05)
-
-> Russia/NATO incident or Burundi-style consular escalation reframes campaign mid-cycle; HD11748-class cases multiply.
-
-- **Drivers**: External events outside our window.
-- **Evidence**: HD11748 [riksdagen.se HD11748]
-- **Admiralty**: C4
-
-### Scenario summary
-
-```mermaid
-quadrantChart
-  title Scenario probability × impact
-  x-axis Low Probability --> High Probability
-  y-axis Low Impact --> High Impact
-  quadrant-1 Plan-for
-  quadrant-2 Hedge
-  quadrant-3 Discount
-  quadrant-4 Watch
-  A Delivery-Lock: [0.45, 0.7]
-  B Wedge Stalemate: [0.35, 0.5]
-  C Implementation Cascade: [0.15, 0.85]
-  D Tail Geopolitical: [0.05, 0.9]
-```
-
-### Decision implications
-
-| Audience | Plan around | Hedge against |
-|----------|-------------|---------------|
-| Communicators | Scenario B (most-likely) | Scenario C |
-| Investors | Scenario A (delivery-lock) | Scenario C |
-| Policy planners | Scenario A → implementation focus | Scenario C |
-
-## Risk Assessment
-<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/risk-assessment.md -->
-
-### 5-dimension risk register
-
-| ID | Dimension | Risk | Likelihood | Impact | Inherent | Mitigation | Residual | Evidence |
-|----|-----------|------|------------|--------|----------|------------|----------|----------|
-| R-1 | Political | Healthcare wedge fractures coalition on HD01SoU25 financing | MEDIUM | HIGH | HIGH | Treasury-side amendment in autumn budget | MEDIUM | HD01SoU25 + sibling SoU17 [riksdagen.se HD01SoU25] |
-| R-2 | Operational | Polismyndigheten kapacitetsbrist försenar HD01JuU10 implementering | HIGH | MEDIUM | HIGH | Allokering i höstbudget; RiR-genomförandeplan | MEDIUM | HD01JuU31 RiR 2026:6 [riksdagen.se HD01JuU31] |
-| R-3 | Reputational | Wind-disinfo frame slår tillbaka mot regeringsblock | LOW | MEDIUM | MEDIUM | Energiministerns proaktiva svar | LOW | HD10448 [riksdagen.se HD10448] |
-| R-4 | Legal | Konsulärt skydd otillräckligt — Sahabo-fallet | LOW | MEDIUM | MEDIUM | UD-resursförstärkning | LOW | HD11748 [riksdagen.se HD11748] |
-| R-5 | Electoral | M+KD+L bloc misslyckas omsätta leverans till stöd före 2026-09-13 | MEDIUM | VERY HIGH | HIGH | Pre-campaign valbudget Q3 | MEDIUM | HD01FiU48 + sibling 04-23 monthly review |
-| R-6 | Implementation | Construction-permit reform ger inte mätbar effekt på påbörjade bostäder före val | MEDIUM | MEDIUM | MEDIUM | SCB BO0101 monitoring + tertialuppföljning | MEDIUM | HD01CU24 [riksdagen.se HD01CU24] |
-| R-7 | Information | Lönestöd-arbetsmiljö samordningsbrist eskalerar | MEDIUM | MEDIUM | MEDIUM | Tillväxtverket-Arbetsmiljöverket MoU | LOW | HD11747 [riksdagen.se HD11747] |
-| R-8 | Rights | V/MP-frame om barn i kriminalvård når mediegenombrott | MEDIUM | MEDIUM | MEDIUM | Skolverket-IVO-kriminalvård gemensamt direktiv | MEDIUM | HD11749 [riksdagen.se HD11749] |
-
-### Heat map (likelihood × impact, residual)
-
-```mermaid
-quadrantChart
-  title Risk heat map (residual)
-  x-axis Low Likelihood --> High Likelihood
-  y-axis Low Impact --> High Impact
-  quadrant-1 Monitor closely
-  quadrant-2 Active mitigation
-  quadrant-3 Accept
-  quadrant-4 Watch list
-  R-1: [0.45, 0.75]
-  R-2: [0.7, 0.6]
-  R-3: [0.2, 0.5]
-  R-4: [0.2, 0.5]
-  R-5: [0.5, 0.85]
-  R-6: [0.45, 0.5]
-  R-7: [0.4, 0.45]
-  R-8: [0.4, 0.5]
-```
-
-```mermaid
-flowchart TD
-  R[Risk register]:::a --> A[Active mitigation: R-1, R-2, R-5]:::b
-  R --> M[Monitor: R-6, R-7, R-8]:::c
-  R --> W[Watch list: R-3, R-4]:::d
-  classDef a fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
-  classDef b fill:#1a1e3d,stroke:#ff006e,color:#ffffff
-  classDef c fill:#1a1e3d,stroke:#ffbe0b,color:#ffffff
-  classDef d fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
-  style A stroke-width:2px
-```
-
-### Top-3 risks expanded
-
-**R-5 (Electoral conversion)**: Most consequential — even with perfect legislative delivery, polling lift is not automatic. Demoskop/SOM lag 4–6 weeks. **Trigger date**: Demoskop 2026-05-08 ± 5 d.
-
-**R-2 (Police capacity)**: RiR 2026:6 names 9 open recommendations; HD01JuU10's effective enforcement depends on closing them. Capacity lag means HD01JuU10's *deterrent* signalling effect is decoupled from operational outcome.
-
-**R-1 (Healthcare wedge)**: HD01SoU25 anhörigstrategi has no dedicated funding line in HD03100 — opposition will exploit. Needs Q3 2026 amendment.
-
-## SWOT Analysis
-<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/swot-analysis.md -->
-
-### TOWS matrix
-
-| | Opportunities | Threats |
-|---|---|---|
-| **Strengths** | SO: Convert delivered portfolio (HD01FiU48 + April-24 batch) into pre-campaign frame [riksdagen.se HD01FiU48] | ST: Use SD discipline (zero counter-motions) to deflect coalition-cohesion attacks [riksdagen.se HD01JuU10] |
-| **Weaknesses** | WO: Address Polismyndigheten capacity gap with budget signal [riksdagen.se HD01JuU31] | WT: Healthcare opposition (S+V+MP+C+L division-of-labour) on SoU17/SoU25 reservations [riksdagen.se HD01SoU25] |
-
-### Strengths
-
-| Item | Evidence |
-|------|----------|
-| Complete pre-election regulatory ledger across 4 domains | HD03100, HD03240, UFöU3, HD01JuU10 [riksdagen.se] |
-| 4.1 GSEK fuel-tax supermajority demonstrates opposition capture | HD01FiU48 — M+SD+S+KD vote 2026-04-22 [riksdagen.se HD01FiU48] |
-| SD structural discipline — 18-day zero-counter-motion streak | sibling synthesis 2026-04-22..24 [riksdagen.se] |
-| New firearms framework modernises crime regulation | HD01JuU10 — JuU vote pending May [riksdagen.se HD01JuU10] |
-| Construction-permit acceleration unlocks bostadsbyggande | HD01CU24 — civilutskottet betänkande [riksdagen.se HD01CU24] |
-
-### Weaknesses
-
-| Item | Evidence |
-|------|----------|
-| RiR 2026:6 documents kvardröjande lednings- och utredningsproblem i Polismyndigheten | HD01JuU31 [riksdagen.se HD01JuU31] |
-| Anhörigstrategi har ingen tillförd finansieringspost i HD03100 | HD01SoU25 + HD03100 cross-read [riksdagen.se HD01SoU25] |
-| Lönestöd-vs-arbetsmiljö samordning brister institutionellt | HD11747 [riksdagen.se HD11747] |
-| Konsulärt skydd har resursbegränsningar (Sahabo-fallet) | HD11748 [riksdagen.se HD11748] |
-
-### Opportunities
-
-| Item | Evidence |
-|------|----------|
-| Pre-campaign regulatory closure ger M+KD+L förutsägbar leveransberättelse | HD03100 + April-24 batch [riksdagen.se] |
-| Implementation pivot ger Tidö andra runda av "leverans"-tema | HD01JuU31 RiR-uppföljning [riksdagen.se HD01JuU31] |
-| Energy disinformation frame kan stärka SD som "common-sense"-aktör | HD10448 [riksdagen.se HD10448] |
-| Construction-permit reform alignerar med urban väljarskifte | HD01CU24 [riksdagen.se HD01CU24] |
-
-### Threats
-
-| Item | Evidence |
-|------|----------|
-| S+V+MP healthcare-attack på SoU25 anhörigstöd-finansiering | HD01SoU25 [riksdagen.se HD01SoU25] |
-| V+MP rättighets­frame (kriminalvård/konsulärt) når mediepunkter | HD11748 + HD11749 [riksdagen.se HD11749] |
-| Polisreform-RiR ger oppositionen kapacitetskritik | HD01JuU31 + RiR 2026:6 [riksdagen.se HD01JuU31] |
-| Wind-power disinformation-frame är dubbelriktad — kan slå tillbaka mot SD | HD10448 [riksdagen.se HD10448] |
-
-### Visual TOWS overview
-
-```mermaid
-flowchart LR
-  S[Strengths HD01FiU48 HD01JuU10]:::s --> SO[SO match HD01SoU25 anhörig]:::so
-  W[Weaknesses HD01JuU31 HD01SoU25 finansiering]:::w --> WT[WT mitigation HD03100 sibling]:::wt
-  O[Opportunities HD01CU24 leverans-frame]:::o --> SO
-  T[Threats HD10448 desinfo HD11747 arbetsmiljö]:::t --> WT
-  classDef s fill:#1a1e3d,stroke:#00d9ff,color:#ffffff
-  classDef w fill:#0a0e27,stroke:#ff006e,color:#ff006e
-  classDef o fill:#1a1e3d,stroke:#ffbe0b,color:#ffffff
-  classDef t fill:#0a0e27,stroke:#ff006e,color:#ffffff
-  classDef so fill:#1a1e3d,stroke:#00d9ff,color:#ffffff
-  classDef wt fill:#1a1e3d,stroke:#ffbe0b,color:#ffffff
-  style SO stroke-width:2px
-  style WT stroke-width:2px
-```
-
-## Threat Analysis
-<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/threat-analysis.md -->
-
-### Threat register
-
-#### T-1: Coalition cohesion erosion (institutional)
-
-- **Vector**: SoU17 R15 (sibling) flagged SD–KD healthcare divergence; HD01SoU25 anhörigstrategi could re-trigger.
-- **Likelihood**: LOW (≤25%) — SD has held discipline 18 sitting days.
-- **Impact**: HIGH — pre-election cohesion is the campaign asset.
-- **Indicators**: SD MP off-script statements; KD-SD bilateral readout.
-- **Evidence**: HD01SoU25, sibling SoU17 [riksdagen.se HD01SoU25]
-- **Admiralty**: B2
-
-#### T-2: Implementation deficit cascade (implementation)
-
-- **Vector**: HD01JuU31 RiR 2026:6 reveals 9 open Polismyndigheten recommendations; HD01CU24 depends on kommunal kapacitet.
-- **Likelihood**: HIGH — historical base rate from prior reform cycles.
-- **Impact**: MEDIUM — politically displaced, not legislatively reversed.
-- **Indicators**: Brå brottsstatistik Q2; Boverket bostadsbyggande Q3.
-- **Evidence**: HD01JuU31, HD01CU24 [riksdagen.se HD01JuU31]
-- **Admiralty**: A2
-
-#### T-3: Information-environment threat (informational)
-
-- **Vector**: HD10448 explicitly raises wind-power disinformation as a *parliamentary* concern. The frame can be turned against any actor — including the originator.
-- **Likelihood**: MEDIUM — ongoing anti-renewable campaigns documented in Sweden since 2023.
-- **Impact**: MEDIUM — local permit decisions affected, national consensus durable.
-- **Indicators**: Kommunal vetoutfall H1 2026; FOI/MSB rapport om informationspåverkan.
-- **Evidence**: HD10448 [riksdagen.se HD10448]
-- **Admiralty**: B2
-
-#### T-4: Electoral wedge effectiveness (electoral)
-
-- **Vector**: S/V/MP three-track wedges (economic / informational / rights-of-detained) coordinate without formal coalition.
-- **Likelihood**: MEDIUM — wedge architecture is mature.
-- **Impact**: MEDIUM — narrative pressure, not legislative reversal.
-- **Indicators**: Demoskop 28%+ S; SVT debattanalys; opinion surveys.
-- **Evidence**: HD024082 sibling, HD11747, HD11748, HD11749 [riksdagen.se HD11749]
-- **Admiralty**: B2
-
-#### T-5: Foreign-policy reputational threat (institutional / external)
-
-- **Vector**: Sahabo-fallet (HD11748) — Swedish citizen detained abroad raises consular-protection capacity question.
-- **Likelihood**: LOW — single case.
-- **Impact**: LOW — reputational only.
-- **Evidence**: HD11748 [riksdagen.se HD11748]
-- **Admiralty**: B3
-
-### Confidence and ATP-2.33.4 mapping
-
-| Threat | Confidence | NATO ATP-2.33.4 alignment |
-|--------|------------|---------------------------|
-| T-1 | HIGH | political stability surveillance |
-| T-2 | HIGH | governance capacity assessment |
-| T-3 | MEDIUM | information environment monitoring |
-| T-4 | MEDIUM | political opposition dynamics |
-| T-5 | LOW | consular / diaspora |
-
-### Threat surface diagram
-
-```mermaid
-flowchart TD
-  W[Window 2026-03-26 → 2026-04-25]:::a --> T1[T1 capacity gap HD01JuU31 riksdagen.se]:::r
-  W --> T2[T2 finansieringsbrist HD01SoU25 anhörig]:::r
-  W --> T3[T3 desinformation HD10448]:::y
-  W --> T4[T4 narrativbrist HD11747 arbetsmiljö]:::y
-  W --> T5[T5 SD-disciplin H2 H4 HD01JuU10]:::y
-  classDef a fill:#1a1e3d,stroke:#00d9ff,color:#ffffff
-  classDef r fill:#0a0e27,stroke:#ff006e,color:#ff006e
-  classDef y fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
-  style T1 stroke-width:2px
-  style T2 stroke-width:2px
-```
-
 ## Per-document intelligence
 
 ### HD01CU24
@@ -963,69 +520,64 @@ Liten omedelbar effekt men hög sammanlänkning med Yngre 18-29-segmentet.
 - Primary: [riksdagen.se HD11749](https://data.riksdagen.se/dokument/hd11749.json)
 - Companion JSON: `documents/hd11749.json`
 
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/election-2026-analysis.md -->
+## Stakeholder Perspectives
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/stakeholder-perspectives.md -->
 
-**Election date**: 2026-09-13 | **Days remaining**: 141
+**Lens**: 6-stakeholder map — government parties, opposition parties, agencies, kommuner, media, väljargrupper
 
-### Pre-campaign architecture
+### Stakeholder map
 
-- **Government bloc**: M, KD, L, SD-confidence — entered window with 173/349-seat working majority
-- **Opposition**: S 107 / V 24 / MP 18 / C 24 — 173 (mirror)
-- **Tied chamber arithmetic** is the structural feature; wedge politics dominates
-
-### Window-end snapshot
+| Stakeholder | Position | Key documents (window) | Interest | Influence |
+|-------------|----------|------------------------|----------|-----------|
+| Regering (M-KD-L) | OWNER | HD01JuU10, HD01SoU25, HD01CU24, HD03100 | delivery → polling lift | VERY HIGH |
+| SD (confidence partner) | SUPPORTIVE | All 4 April-24 betänkanden, HD01FiU48 | crime/migration message preserved | VERY HIGH |
+| S (largest opposition) | TACTICAL | HD01FiU48 (S voted YES), HD024082 (S motion) | "symbolisk opposition + praktiskt stöd" | HIGH |
+| V | OPPOSITION-RIGHTS | HD11749 (rights-of-detained), HD11748 | rights-frame, healthcare | MEDIUM |
+| MP | OPPOSITION-INFO | HD10448 (desinformation), HD11748 | info-integrity, climate | MEDIUM |
+| C | PROCEDURAL | (no major motions in window) | rule-of-law, agriculture | LOW |
+| Polismyndigheten | IMPLEMENTING | HD01JuU10, HD01JuU31 (RiR 2026:6) | capacity, leadership | HIGH |
+| Försäkringskassan / kommuner | IMPLEMENTING | HD01SoU25 anhörigstrategi | resource allocation | MEDIUM |
+| Boverket / kommuner | IMPLEMENTING | HD01CU24 byggprocess | permit throughput | MEDIUM |
+| Riksrevisionen | OVERSIGHT | RiR 2026:6 → HD01JuU31 | follow-up audit | MEDIUM |
+| Energimyndigheten / MSB | DEFENDING | HD10448 disinfo response | mandate clarity | MEDIUM |
+| Utrikesförvaltningen | RESPONDING | HD11748 | consular capacity | LOW |
+| Pensionärsorganisationer (PRO/SPF) | ENGAGED | HD01SoU25 | influence anhörigstrategi rollout | MEDIUM |
+| Byggbranschen | INTERESTED | HD01CU24 | permit acceleration | MEDIUM |
+| Vapenägarorganisationer | ENGAGED | HD01JuU10 | tillstånd, registreringsbörda | LOW |
+| Fackförbund (LO/TCO/SACO) | INTERESTED | HD11747 | arbetsmiljöfrågan | MEDIUM |
 
 ```mermaid
-flowchart TB
-  E[Election 2026-09-13 — riksdagen.se context]:::a
-  E --> G[Government bloc M+KD+L+SD-confidence ~179 seats]:::g
-  E --> O[Opposition bloc S+V+MP+C ~170 seats]:::o
-  G --> M[M ~78]:::g
-  G --> SD[SD ~64]:::sd
-  G --> KD[KD ~21]:::g
-  G --> L[L ~16]:::g
-  O --> S[S ~105]:::o
-  O --> V[V ~28]:::v
-  O --> MP[MP ~21]:::mp
-  O --> C[C ~16]:::c
-  classDef a fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+flowchart LR
+  G[Regering M-KD-L]:::g --> SD[SD confidence]:::sd
+  G --> A[Polismyndigheten / FK / Boverket]:::a
+  S[S]:::s -.opposition tactic.-> G
+  V[V]:::v -.rights-frame.-> G
+  MP[MP]:::mp -.info-integrity.-> G
+  C[C]:::c -.procedural.-> G
+  R[Riksrevisionen]:::r -.audit.-> A
+  M[Media + väljare]:::m
+  G --> M
+  S --> M
+  V --> M
+  MP --> M
   classDef g fill:#1a1e3d,stroke:#00d9ff,color:#ffffff
   classDef sd fill:#1a1e3d,stroke:#ffbe0b,color:#ffffff
-  classDef o fill:#1a1e3d,stroke:#ff006e,color:#ffffff
+  classDef s fill:#1a1e3d,stroke:#ff006e,color:#ffffff
   classDef v fill:#0a0e27,stroke:#ff006e,color:#ff006e
   classDef mp fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
   classDef c fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
-  style E stroke-width:3px
-  style G stroke-width:2px
-  style O stroke-width:2px
+  classDef a fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+  classDef r fill:#1a1e3d,stroke:#ff006e,color:#ffffff
+  classDef m fill:#0a0e27,stroke:#e0e0e0,color:#e0e0e0
+  style G stroke-width:3px
 ```
 
-### Window dynamics summary
+### Cross-stakeholder dynamics
 
-| Driver | Effect on M+KD+L | Effect on S | Effect on SD |
-|--------|-------------------|-------------|--------------|
-| HD01FiU48 supermajoritet (carried) | + 1.5 ppt | flat (S voted YES) | + 0.3 ppt |
-| HD01JuU10 vapenlag | + 0.4 ppt (M crime narrative) | – 0.2 ppt | + 0.5 ppt (base mobilisation) |
-| HD01JuU31 RiR-uppföljning | – 0.3 ppt (capacity gap exposed) | + 0.5 ppt | flat |
-| HD01SoU25 äldreomsorg | + 0.6 ppt (KD core voter) | + 0.3 ppt (S funding attack) | flat |
-| HD10448 desinfo Ip | – 0.2 ppt | flat | – 0.4 ppt (frame ambiguity) |
-
-**Net window effect**: M+KD+L bloc +2.0 ppt, S +0.6 ppt, SD +0.4 ppt — **inside polling noise**, not yet structural shift.
-
-### Key forward dates
-
-| Date | Event | Decision relevance |
-|------|-------|--------------------|
-| 2026-05-08 | First post-window Demoskop | PIR-A |
-| 2026-06-01 | Vårriksdagens slut | last bloc-vote opportunity |
-| 2026-06-15 | Pre-campaign window opens | T-1, KJ-3 |
-| 2026-08-15 | Manifesto launches expected | KJ-3 |
-| 2026-09-13 | Election | terminal |
-
-### Sources
-
-HD01FiU48 sibling, HD01JuU10, HD01JuU31, HD01SoU25, HD10448 [riksdagen.se]
+- **Government–SD**: closure-batch unanimity confirms confidence relationship through pre-campaign.
+- **S–government**: HD01FiU48 reveals tactical complexity — S supports popular pieces while attacking adjacent themes.
+- **Riksrevisionen → Polismyndigheten**: HD01JuU31 makes the audit politically binding for the autumn.
+- **Kommuner + Försäkringskassan**: HD01SoU25 + HD01CU24 both rely on kommunal kapacitet — overlap creates implementation risk.
 
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/coalition-mathematics.md -->
@@ -1159,43 +711,390 @@ flowchart LR
   style V stroke-width:3px
 ```
 
-## Comparative International
-<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/comparative-international.md -->
+## Forward Indicators
+<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/forward-indicators.md -->
 
-### Comparator table — fiscal pivot to election
+### Dated indicator ledger (≥10)
 
-| Jurisdiction | Election | Pre-election fiscal action | Coalition pattern | Outcome lesson |
-|--------------|----------|----------------------------|---------------------|----------------|
-| Sweden 2026 | 2026-09-13 | HD01FiU48 4.1 GSEK fuel-tax (M+SD+S+KD) | M-SD-KD-L confidence | live observation [riksdagen.se HD01FiU48] |
-| Denmark 2022 | 2022-11-01 | Energy tilbagebetaling pre-election | SocDem majority | delivered → polling lift sustained |
-| Norway 2021 | 2021-09-13 | Strømstønad + drivstoffrabatt pre-poll | Ap-Sp majority | delivered → polling held |
-| Finland 2023 | 2023-04-02 | Energiakompensaatio late spring | Centre-right turnover | popular but not decisive |
-| Germany 2025 | 2025-02-23 | Energy price cap extension | CDU/CSU+SPD coalition | delivered → election win |
-| Netherlands 2023 | 2023-11-22 | Box-3 reform deferral | Caretaker | implementation gap exposed |
+| Date | Indicator | Decision relevance | Source |
+|------|-----------|---------------------|--------|
+| 2026-05-01 | HD01FiU48 fuel-tax-relief implementerat | Visible household effect | HD01FiU48 |
+| 2026-05-08 | First post-window Demoskop | PIR-A; Scenario A vs B | sibling synthesis |
+| 2026-05-15 | HD01CU24 chamber vote | Implementation start | HD01CU24 [riksdagen.se] |
+| 2026-05-20 | HD01JuU10 chamber vote | Crime narrative anchor | HD01JuU10 [riksdagen.se] |
+| 2026-05-22 | HD01SoU25 chamber vote | Anhörigstrategi launch | HD01SoU25 [riksdagen.se] |
+| 2026-05-28 | HD01JuU31 chamber acceptance | RiR follow-up codified | HD01JuU31 [riksdagen.se] |
+| 2026-06-01 | Vårriksdagens slut | Last bloc-vote opportunity | calendar |
+| 2026-06-15 | Pre-campaign window opens | T-1 (KJ-3) | calendar |
+| 2026-06-30 | HD01SoU25 anhörigstrategi nationell direktör utsedd | R-1 mitigation | HD01SoU25 |
+| 2026-06-30 | Polismyndigheten Q1 RiR-uppföljning­statusrapport | R-2 binding | HD01JuU31 |
+| 2026-07-15 | SCB BO0101 påbörjade bostäder Q2 release | HD01CU24 effect | HD01CU24 |
+| 2026-07-20 | Brå brottsstatistik Q2 release | HD01JuU10 narrative | HD01JuU10 |
+| 2026-07-30 | Demoskop juli-mätning | PIR-A confirmation/refutation | (poll) |
+| 2026-08-15 | Pre-campaign manifesto launches expected | KJ-3 SD-discipline test | calendar |
+| 2026-08-31 | Polismyndigheten reorg-meddelande window close | PIR-B | HD01JuU31 |
+| 2026-09-13 | Election day | terminal | calendar |
 
-**Pattern**: Across 5 Nordic + EU peers, fiscal pre-election household relief delivered 4–6 months before vote correlates with polling stability (median +1.8 ppt for incumbent block) but rarely delivers >3 ppt lift. Sweden's HD01FiU48 sits within this band — supports Scenario B (Wedge Stalemate).
+### Indicator dependencies
 
-### Comparator table — police-reform follow-up
+```mermaid
+flowchart LR
+  D1[2026-05-08 Demoskop]:::a --> D2[2026-05-15..28 Chamber votes]:::b
+  D2 --> D3[2026-06-01 Vårriksdagens slut]:::b
+  D3 --> D4[2026-06-30 Implementation milestones]:::c
+  D4 --> D5[2026-07-15..20 SCB+Brå data]:::c
+  D5 --> D6[2026-07-30 Demoskop juli]:::a
+  D6 --> D7[2026-08-15 Manifesto launches]:::d
+  D7 --> D8[2026-09-13 Election]:::e
+  classDef a fill:#1a1e3d,stroke:#00d9ff,color:#ffffff
+  classDef b fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  classDef c fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+  classDef d fill:#1a1e3d,stroke:#ff006e,color:#ffffff
+  classDef e fill:#1a1e3d,stroke:#ff006e,color:#ffffff
+  style D8 stroke-width:3px
+```
 
-| Jurisdiction | Reform | Audit follow-up | Outcome | Sweden parallel |
-|--------------|--------|------------------|---------|-----------------|
-| Sweden 2015→2026 | Polisreformen 2015 | RiR 2026:6 → HD01JuU31 | implementation gap | live [riksdagen.se HD01JuU31] |
-| Denmark 2007 | Politireformen | Rigsrevisionen 2010 + 2014 | 7-yr stabilisation | implementation pivot is multi-year |
-| Norway 2016 | Nærpolitireformen | Riksrevisjonen 2018 + 2021 | partial closure | mid-decade audit cycle typical |
-| Finland 2014 | Police restructure | VTV 2017 | quicker closure | smaller administrative footprint matters |
+### Indicator ranks by decision-leverage
 
-**Pattern**: Police reorganisation audits in the Nordic region typically cycle through two follow-up rounds before recommendations close. RiR 2026:6 + HD01JuU31 represent the *first* follow-up; expect a second around 2029.
+| Rank | Indicator | Why it matters most |
+|------|-----------|---------------------|
+| 1 | 2026-05-08 Demoskop | First test of HD01FiU48 conversion |
+| 2 | 2026-08-31 Polismyndigheten reorg | PIR-B closure |
+| 3 | 2026-07-15 SCB BO0101 | Empirical HD01CU24 effect |
+| 4 | 2026-08-15 Manifesto launches | KJ-3 SD-discipline endpoint |
 
-### Cross-Nordic coalition-discipline benchmark
+[riksdagen.se HD01FiU48] [riksdagen.se HD01JuU31]
 
-| Country | Coalition type | Pre-election counter-motion rate | Sweden 2026 |
-|---------|----------------|----------------------------------|-------------|
-| Sweden | Confidence (M-KD-L + SD external) | 0/18 sitting days | ANOMALOUSLY HIGH discipline |
-| Denmark | SVM majority 2022 | ~7% counter-motion rate pre-2024 EU | typical |
-| Norway | Ap-Sp 2021 | ~5% pre-2025 | typical |
-| Finland | Centre-right Orpo 2023 | ~9% pre-2027 | typical |
+## Scenario Analysis
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/scenario-analysis.md -->
 
-**Implication**: SD's 18-day zero-counter-motion streak is **outside the Nordic norm** and reads as a deliberate pre-election signal of confidence-relationship durability.
+### Baseline anchor
+
+Tidö delivers complete legislative portfolio (HD03100, HD03240, UFöU3, April-24 batch) with HD01FiU48 supermajority capping the fiscal pivot. Implementation pivot (HD01JuU31, HD01SoU25, HD01CU24) is now the binding constraint. Opposition has tactical capture but no legislative reversals.
+
+### Scenario A — *Delivery-Lock* (probability 0.45)
+
+> Tidö converts the legislative completeness into measurable polling lift; Demoskop shows M+KD+L bloc reaching 47% by mid-July; SD holds 18%; S stuck at 25–27%.
+
+- **Drivers**: HD01FiU48 fuel-tax visible in household budgets May–July; HD01JuU10 firearms law Q3 implementation media coverage; HD01SoU25 anhörigstrategi PR offensive.
+- **Indicators**: Demoskop 2026-05-08 M+KD+L ≥ 44%; SCB BO0101 påbörjade bostäder Q2 +5% YoY; Brå Q2 brottsstatistik flat or down.
+- **Risks**: R-2 (police capacity gap exposed by RiR follow-up); T-3 (disinfo backlash).
+- **Evidence base**: HD01FiU48, HD01JuU10, HD01SoU25 [riksdagen.se]
+- **Admiralty**: B2
+
+### Scenario B — *Wedge Stalemate* (probability 0.35) — most-likely
+
+> M+KD+L bloc holds 41–43% but does not break above; S resilient at 28–30%; SD 17–19%; September election reverts to coalition-arithmetic uncertainty.
+
+- **Drivers**: S "symbolic opposition + practical support" tactic absorbs HD01FiU48 voting cost; healthcare wedge (R-1) extracts 2–3 ppt from M; SD discipline holds but no SD growth.
+- **Indicators**: Demoskop M+KD+L 41–43%; SOM-lag confirms healthcare top-issue; Polismyndigheten reorg announcement deferred.
+- **Risks**: T-1 coalition cohesion test on autumn budget; T-4 wedge effectiveness escalation.
+- **Evidence base**: HD01SoU25 + HD01SoU17 sibling, HD11749 [riksdagen.se]
+- **Admiralty**: B2
+
+### Scenario C — *Implementation Cascade* (probability 0.15)
+
+> RiR 2026:6 follow-up reveals deeper Polismyndigheten dysfunction; Brå Q2 brottsstatistik shows uptick; HD01JuU10's launch is overshadowed by capacity story; SD frustration with Polismyndigheten ledning becomes overt.
+
+- **Drivers**: HD01JuU31 audit findings publicly reanchored to crime statistics; HD11747 work-environment narrative scales.
+- **Indicators**: SD-MP off-script statements; Polismyndigheten chefs-bytte; Brå Q2 crime +3% YoY.
+- **Risks**: T-1 escalates to active coalition strain; T-2 cascades to other agencies.
+- **Evidence base**: HD01JuU31 RiR 2026:6, sibling 2026-04-24 [riksdagen.se HD01JuU31]
+- **Admiralty**: C3
+
+### Scenario D — *Tail risk: Geopolitical shock* (probability 0.05)
+
+> Russia/NATO incident or Burundi-style consular escalation reframes campaign mid-cycle; HD11748-class cases multiply.
+
+- **Drivers**: External events outside our window.
+- **Evidence**: HD11748 [riksdagen.se HD11748]
+- **Admiralty**: C4
+
+### Scenario summary
+
+```mermaid
+quadrantChart
+  title Scenario probability × impact
+  x-axis Low Probability --> High Probability
+  y-axis Low Impact --> High Impact
+  quadrant-1 Plan-for
+  quadrant-2 Hedge
+  quadrant-3 Discount
+  quadrant-4 Watch
+  A Delivery-Lock: [0.45, 0.7]
+  B Wedge Stalemate: [0.35, 0.5]
+  C Implementation Cascade: [0.15, 0.85]
+  D Tail Geopolitical: [0.05, 0.9]
+```
+
+### Decision implications
+
+| Audience | Plan around | Hedge against |
+|----------|-------------|---------------|
+| Communicators | Scenario B (most-likely) | Scenario C |
+| Investors | Scenario A (delivery-lock) | Scenario C |
+| Policy planners | Scenario A → implementation focus | Scenario C |
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/election-2026-analysis.md -->
+
+**Election date**: 2026-09-13 | **Days remaining**: 141
+
+### Pre-campaign architecture
+
+- **Government bloc**: M, KD, L, SD-confidence — entered window with 173/349-seat working majority
+- **Opposition**: S 107 / V 24 / MP 18 / C 24 — 173 (mirror)
+- **Tied chamber arithmetic** is the structural feature; wedge politics dominates
+
+### Window-end snapshot
+
+```mermaid
+flowchart TB
+  E[Election 2026-09-13 — riksdagen.se context]:::a
+  E --> G[Government bloc M+KD+L+SD-confidence ~179 seats]:::g
+  E --> O[Opposition bloc S+V+MP+C ~170 seats]:::o
+  G --> M[M ~78]:::g
+  G --> SD[SD ~64]:::sd
+  G --> KD[KD ~21]:::g
+  G --> L[L ~16]:::g
+  O --> S[S ~105]:::o
+  O --> V[V ~28]:::v
+  O --> MP[MP ~21]:::mp
+  O --> C[C ~16]:::c
+  classDef a fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+  classDef g fill:#1a1e3d,stroke:#00d9ff,color:#ffffff
+  classDef sd fill:#1a1e3d,stroke:#ffbe0b,color:#ffffff
+  classDef o fill:#1a1e3d,stroke:#ff006e,color:#ffffff
+  classDef v fill:#0a0e27,stroke:#ff006e,color:#ff006e
+  classDef mp fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+  classDef c fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  style E stroke-width:3px
+  style G stroke-width:2px
+  style O stroke-width:2px
+```
+
+### Window dynamics summary
+
+| Driver | Effect on M+KD+L | Effect on S | Effect on SD |
+|--------|-------------------|-------------|--------------|
+| HD01FiU48 supermajoritet (carried) | + 1.5 ppt | flat (S voted YES) | + 0.3 ppt |
+| HD01JuU10 vapenlag | + 0.4 ppt (M crime narrative) | – 0.2 ppt | + 0.5 ppt (base mobilisation) |
+| HD01JuU31 RiR-uppföljning | – 0.3 ppt (capacity gap exposed) | + 0.5 ppt | flat |
+| HD01SoU25 äldreomsorg | + 0.6 ppt (KD core voter) | + 0.3 ppt (S funding attack) | flat |
+| HD10448 desinfo Ip | – 0.2 ppt | flat | – 0.4 ppt (frame ambiguity) |
+
+**Net window effect**: M+KD+L bloc +2.0 ppt, S +0.6 ppt, SD +0.4 ppt — **inside polling noise**, not yet structural shift.
+
+### Key forward dates
+
+| Date | Event | Decision relevance |
+|------|-------|--------------------|
+| 2026-05-08 | First post-window Demoskop | PIR-A |
+| 2026-06-01 | Vårriksdagens slut | last bloc-vote opportunity |
+| 2026-06-15 | Pre-campaign window opens | T-1, KJ-3 |
+| 2026-08-15 | Manifesto launches expected | KJ-3 |
+| 2026-09-13 | Election | terminal |
+
+### Sources
+
+HD01FiU48 sibling, HD01JuU10, HD01JuU31, HD01SoU25, HD10448 [riksdagen.se]
+
+## Risk Assessment
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/risk-assessment.md -->
+
+### 5-dimension risk register
+
+| ID | Dimension | Risk | Likelihood | Impact | Inherent | Mitigation | Residual | Evidence |
+|----|-----------|------|------------|--------|----------|------------|----------|----------|
+| R-1 | Political | Healthcare wedge fractures coalition on HD01SoU25 financing | MEDIUM | HIGH | HIGH | Treasury-side amendment in autumn budget | MEDIUM | HD01SoU25 + sibling SoU17 [riksdagen.se HD01SoU25] |
+| R-2 | Operational | Polismyndigheten kapacitetsbrist försenar HD01JuU10 implementering | HIGH | MEDIUM | HIGH | Allokering i höstbudget; RiR-genomförandeplan | MEDIUM | HD01JuU31 RiR 2026:6 [riksdagen.se HD01JuU31] |
+| R-3 | Reputational | Wind-disinfo frame slår tillbaka mot regeringsblock | LOW | MEDIUM | MEDIUM | Energiministerns proaktiva svar | LOW | HD10448 [riksdagen.se HD10448] |
+| R-4 | Legal | Konsulärt skydd otillräckligt — Sahabo-fallet | LOW | MEDIUM | MEDIUM | UD-resursförstärkning | LOW | HD11748 [riksdagen.se HD11748] |
+| R-5 | Electoral | M+KD+L bloc misslyckas omsätta leverans till stöd före 2026-09-13 | MEDIUM | VERY HIGH | HIGH | Pre-campaign valbudget Q3 | MEDIUM | HD01FiU48 + sibling 04-23 monthly review |
+| R-6 | Implementation | Construction-permit reform ger inte mätbar effekt på påbörjade bostäder före val | MEDIUM | MEDIUM | MEDIUM | SCB BO0101 monitoring + tertialuppföljning | MEDIUM | HD01CU24 [riksdagen.se HD01CU24] |
+| R-7 | Information | Lönestöd-arbetsmiljö samordningsbrist eskalerar | MEDIUM | MEDIUM | MEDIUM | Tillväxtverket-Arbetsmiljöverket MoU | LOW | HD11747 [riksdagen.se HD11747] |
+| R-8 | Rights | V/MP-frame om barn i kriminalvård når mediegenombrott | MEDIUM | MEDIUM | MEDIUM | Skolverket-IVO-kriminalvård gemensamt direktiv | MEDIUM | HD11749 [riksdagen.se HD11749] |
+
+### Heat map (likelihood × impact, residual)
+
+```mermaid
+quadrantChart
+  title Risk heat map (residual)
+  x-axis Low Likelihood --> High Likelihood
+  y-axis Low Impact --> High Impact
+  quadrant-1 Monitor closely
+  quadrant-2 Active mitigation
+  quadrant-3 Accept
+  quadrant-4 Watch list
+  R-1: [0.45, 0.75]
+  R-2: [0.7, 0.6]
+  R-3: [0.2, 0.5]
+  R-4: [0.2, 0.5]
+  R-5: [0.5, 0.85]
+  R-6: [0.45, 0.5]
+  R-7: [0.4, 0.45]
+  R-8: [0.4, 0.5]
+```
+
+```mermaid
+flowchart TD
+  R[Risk register]:::a --> A[Active mitigation: R-1, R-2, R-5]:::b
+  R --> M[Monitor: R-6, R-7, R-8]:::c
+  R --> W[Watch list: R-3, R-4]:::d
+  classDef a fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+  classDef b fill:#1a1e3d,stroke:#ff006e,color:#ffffff
+  classDef c fill:#1a1e3d,stroke:#ffbe0b,color:#ffffff
+  classDef d fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+  style A stroke-width:2px
+```
+
+### Top-3 risks expanded
+
+**R-5 (Electoral conversion)**: Most consequential — even with perfect legislative delivery, polling lift is not automatic. Demoskop/SOM lag 4–6 weeks. **Trigger date**: Demoskop 2026-05-08 ± 5 d.
+
+**R-2 (Police capacity)**: RiR 2026:6 names 9 open recommendations; HD01JuU10's effective enforcement depends on closing them. Capacity lag means HD01JuU10's *deterrent* signalling effect is decoupled from operational outcome.
+
+**R-1 (Healthcare wedge)**: HD01SoU25 anhörigstrategi has no dedicated funding line in HD03100 — opposition will exploit. Needs Q3 2026 amendment.
+
+## SWOT Analysis
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/swot-analysis.md -->
+
+### TOWS matrix
+
+| | Opportunities | Threats |
+|---|---|---|
+| **Strengths** | SO: Convert delivered portfolio (HD01FiU48 + April-24 batch) into pre-campaign frame [riksdagen.se HD01FiU48] | ST: Use SD discipline (zero counter-motions) to deflect coalition-cohesion attacks [riksdagen.se HD01JuU10] |
+| **Weaknesses** | WO: Address Polismyndigheten capacity gap with budget signal [riksdagen.se HD01JuU31] | WT: Healthcare opposition (S+V+MP+C+L division-of-labour) on SoU17/SoU25 reservations [riksdagen.se HD01SoU25] |
+
+### Strengths
+
+| Item | Evidence |
+|------|----------|
+| Complete pre-election regulatory ledger across 4 domains | HD03100, HD03240, UFöU3, HD01JuU10 [riksdagen.se] |
+| 4.1 GSEK fuel-tax supermajority demonstrates opposition capture | HD01FiU48 — M+SD+S+KD vote 2026-04-22 [riksdagen.se HD01FiU48] |
+| SD structural discipline — 18-day zero-counter-motion streak | sibling synthesis 2026-04-22..24 [riksdagen.se] |
+| New firearms framework modernises crime regulation | HD01JuU10 — JuU vote pending May [riksdagen.se HD01JuU10] |
+| Construction-permit acceleration unlocks bostadsbyggande | HD01CU24 — civilutskottet betänkande [riksdagen.se HD01CU24] |
+
+### Weaknesses
+
+| Item | Evidence |
+|------|----------|
+| RiR 2026:6 documents kvardröjande lednings- och utredningsproblem i Polismyndigheten | HD01JuU31 [riksdagen.se HD01JuU31] |
+| Anhörigstrategi har ingen tillförd finansieringspost i HD03100 | HD01SoU25 + HD03100 cross-read [riksdagen.se HD01SoU25] |
+| Lönestöd-vs-arbetsmiljö samordning brister institutionellt | HD11747 [riksdagen.se HD11747] |
+| Konsulärt skydd har resursbegränsningar (Sahabo-fallet) | HD11748 [riksdagen.se HD11748] |
+
+### Opportunities
+
+| Item | Evidence |
+|------|----------|
+| Pre-campaign regulatory closure ger M+KD+L förutsägbar leveransberättelse | HD03100 + April-24 batch [riksdagen.se] |
+| Implementation pivot ger Tidö andra runda av "leverans"-tema | HD01JuU31 RiR-uppföljning [riksdagen.se HD01JuU31] |
+| Energy disinformation frame kan stärka SD som "common-sense"-aktör | HD10448 [riksdagen.se HD10448] |
+| Construction-permit reform alignerar med urban väljarskifte | HD01CU24 [riksdagen.se HD01CU24] |
+
+### Threats
+
+| Item | Evidence |
+|------|----------|
+| S+V+MP healthcare-attack på SoU25 anhörigstöd-finansiering | HD01SoU25 [riksdagen.se HD01SoU25] |
+| V+MP rättighets­frame (kriminalvård/konsulärt) når mediepunkter | HD11748 + HD11749 [riksdagen.se HD11749] |
+| Polisreform-RiR ger oppositionen kapacitetskritik | HD01JuU31 + RiR 2026:6 [riksdagen.se HD01JuU31] |
+| Wind-power disinformation-frame är dubbelriktad — kan slå tillbaka mot SD | HD10448 [riksdagen.se HD10448] |
+
+### Visual TOWS overview
+
+```mermaid
+flowchart LR
+  S[Strengths HD01FiU48 HD01JuU10]:::s --> SO[SO match HD01SoU25 anhörig]:::so
+  W[Weaknesses HD01JuU31 HD01SoU25 finansiering]:::w --> WT[WT mitigation HD03100 sibling]:::wt
+  O[Opportunities HD01CU24 leverans-frame]:::o --> SO
+  T[Threats HD10448 desinfo HD11747 arbetsmiljö]:::t --> WT
+  classDef s fill:#1a1e3d,stroke:#00d9ff,color:#ffffff
+  classDef w fill:#0a0e27,stroke:#ff006e,color:#ff006e
+  classDef o fill:#1a1e3d,stroke:#ffbe0b,color:#ffffff
+  classDef t fill:#0a0e27,stroke:#ff006e,color:#ffffff
+  classDef so fill:#1a1e3d,stroke:#00d9ff,color:#ffffff
+  classDef wt fill:#1a1e3d,stroke:#ffbe0b,color:#ffffff
+  style SO stroke-width:2px
+  style WT stroke-width:2px
+```
+
+## Threat Analysis
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/threat-analysis.md -->
+
+### Threat register
+
+#### T-1: Coalition cohesion erosion (institutional)
+
+- **Vector**: SoU17 R15 (sibling) flagged SD–KD healthcare divergence; HD01SoU25 anhörigstrategi could re-trigger.
+- **Likelihood**: LOW (≤25%) — SD has held discipline 18 sitting days.
+- **Impact**: HIGH — pre-election cohesion is the campaign asset.
+- **Indicators**: SD MP off-script statements; KD-SD bilateral readout.
+- **Evidence**: HD01SoU25, sibling SoU17 [riksdagen.se HD01SoU25]
+- **Admiralty**: B2
+
+#### T-2: Implementation deficit cascade (implementation)
+
+- **Vector**: HD01JuU31 RiR 2026:6 reveals 9 open Polismyndigheten recommendations; HD01CU24 depends on kommunal kapacitet.
+- **Likelihood**: HIGH — historical base rate from prior reform cycles.
+- **Impact**: MEDIUM — politically displaced, not legislatively reversed.
+- **Indicators**: Brå brottsstatistik Q2; Boverket bostadsbyggande Q3.
+- **Evidence**: HD01JuU31, HD01CU24 [riksdagen.se HD01JuU31]
+- **Admiralty**: A2
+
+#### T-3: Information-environment threat (informational)
+
+- **Vector**: HD10448 explicitly raises wind-power disinformation as a *parliamentary* concern. The frame can be turned against any actor — including the originator.
+- **Likelihood**: MEDIUM — ongoing anti-renewable campaigns documented in Sweden since 2023.
+- **Impact**: MEDIUM — local permit decisions affected, national consensus durable.
+- **Indicators**: Kommunal vetoutfall H1 2026; FOI/MSB rapport om informationspåverkan.
+- **Evidence**: HD10448 [riksdagen.se HD10448]
+- **Admiralty**: B2
+
+#### T-4: Electoral wedge effectiveness (electoral)
+
+- **Vector**: S/V/MP three-track wedges (economic / informational / rights-of-detained) coordinate without formal coalition.
+- **Likelihood**: MEDIUM — wedge architecture is mature.
+- **Impact**: MEDIUM — narrative pressure, not legislative reversal.
+- **Indicators**: Demoskop 28%+ S; SVT debattanalys; opinion surveys.
+- **Evidence**: HD024082 sibling, HD11747, HD11748, HD11749 [riksdagen.se HD11749]
+- **Admiralty**: B2
+
+#### T-5: Foreign-policy reputational threat (institutional / external)
+
+- **Vector**: Sahabo-fallet (HD11748) — Swedish citizen detained abroad raises consular-protection capacity question.
+- **Likelihood**: LOW — single case.
+- **Impact**: LOW — reputational only.
+- **Evidence**: HD11748 [riksdagen.se HD11748]
+- **Admiralty**: B3
+
+### Confidence and ATP-2.33.4 mapping
+
+| Threat | Confidence | NATO ATP-2.33.4 alignment |
+|--------|------------|---------------------------|
+| T-1 | HIGH | political stability surveillance |
+| T-2 | HIGH | governance capacity assessment |
+| T-3 | MEDIUM | information environment monitoring |
+| T-4 | MEDIUM | political opposition dynamics |
+| T-5 | LOW | consular / diaspora |
+
+### Threat surface diagram
+
+```mermaid
+flowchart TD
+  W[Window 2026-03-26 → 2026-04-25]:::a --> T1[T1 capacity gap HD01JuU31 riksdagen.se]:::r
+  W --> T2[T2 finansieringsbrist HD01SoU25 anhörig]:::r
+  W --> T3[T3 desinformation HD10448]:::y
+  W --> T4[T4 narrativbrist HD11747 arbetsmiljö]:::y
+  W --> T5[T5 SD-disciplin H2 H4 HD01JuU10]:::y
+  classDef a fill:#1a1e3d,stroke:#00d9ff,color:#ffffff
+  classDef r fill:#0a0e27,stroke:#ff006e,color:#ff006e
+  classDef y fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+  style T1 stroke-width:2px
+  style T2 stroke-width:2px
+```
 
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/historical-parallels.md -->
@@ -1252,6 +1151,44 @@ flowchart LR
   style H4 stroke-width:3px
 ```
 
+## Comparative International
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/comparative-international.md -->
+
+### Comparator table — fiscal pivot to election
+
+| Jurisdiction | Election | Pre-election fiscal action | Coalition pattern | Outcome lesson |
+|--------------|----------|----------------------------|---------------------|----------------|
+| Sweden 2026 | 2026-09-13 | HD01FiU48 4.1 GSEK fuel-tax (M+SD+S+KD) | M-SD-KD-L confidence | live observation [riksdagen.se HD01FiU48] |
+| Denmark 2022 | 2022-11-01 | Energy tilbagebetaling pre-election | SocDem majority | delivered → polling lift sustained |
+| Norway 2021 | 2021-09-13 | Strømstønad + drivstoffrabatt pre-poll | Ap-Sp majority | delivered → polling held |
+| Finland 2023 | 2023-04-02 | Energiakompensaatio late spring | Centre-right turnover | popular but not decisive |
+| Germany 2025 | 2025-02-23 | Energy price cap extension | CDU/CSU+SPD coalition | delivered → election win |
+| Netherlands 2023 | 2023-11-22 | Box-3 reform deferral | Caretaker | implementation gap exposed |
+
+**Pattern**: Across 5 Nordic + EU peers, fiscal pre-election household relief delivered 4–6 months before vote correlates with polling stability (median +1.8 ppt for incumbent block) but rarely delivers >3 ppt lift. Sweden's HD01FiU48 sits within this band — supports Scenario B (Wedge Stalemate).
+
+### Comparator table — police-reform follow-up
+
+| Jurisdiction | Reform | Audit follow-up | Outcome | Sweden parallel |
+|--------------|--------|------------------|---------|-----------------|
+| Sweden 2015→2026 | Polisreformen 2015 | RiR 2026:6 → HD01JuU31 | implementation gap | live [riksdagen.se HD01JuU31] |
+| Denmark 2007 | Politireformen | Rigsrevisionen 2010 + 2014 | 7-yr stabilisation | implementation pivot is multi-year |
+| Norway 2016 | Nærpolitireformen | Riksrevisjonen 2018 + 2021 | partial closure | mid-decade audit cycle typical |
+| Finland 2014 | Police restructure | VTV 2017 | quicker closure | smaller administrative footprint matters |
+
+**Pattern**: Police reorganisation audits in the Nordic region typically cycle through two follow-up rounds before recommendations close. RiR 2026:6 + HD01JuU31 represent the *first* follow-up; expect a second around 2029.
+
+### Cross-Nordic coalition-discipline benchmark
+
+| Country | Coalition type | Pre-election counter-motion rate | Sweden 2026 |
+|---------|----------------|----------------------------------|-------------|
+| Sweden | Confidence (M-KD-L + SD external) | 0/18 sitting days | ANOMALOUSLY HIGH discipline |
+| Denmark | SVM majority 2022 | ~7% counter-motion rate pre-2024 EU | typical |
+| Norway | Ap-Sp 2021 | ~5% pre-2025 | typical |
+| Finland | Centre-right Orpo 2023 | ~9% pre-2027 | typical |
+
+**Implication**: SD's 18-day zero-counter-motion streak is **outside the Nordic norm** and reads as a deliberate pre-election signal of confidence-relationship durability.
+
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/implementation-feasibility.md -->
 
@@ -1296,6 +1233,69 @@ flowchart TD
 - HD01JuU31 first reorganisation announcement window: 2026-08-31 (before pre-campaign manifestos).
 
 [riksdagen.se HD01JuU31] [riksdagen.se HD01JuU10] [riksdagen.se HD01SoU25] [riksdagen.se HD01CU24]
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/media-framing-analysis.md -->
+
+### Frame inventory (this window)
+
+| Frame | Owner | Hot dok_ids | Audience |
+|-------|-------|-------------|----------|
+| "Leverans" / delivery | Tidö | HD01JuU10, HD01SoU25, HD01CU24 | Storstad-pendlare, pensionärer |
+| "Praktisk politik" | S | HD01FiU48 (S voted YES) | Förvärvsarbetande |
+| "Trygghet" / public safety | M+SD | HD01JuU10 | Pensionärer, glesbygd |
+| "Polisens kapacitet" | S+V | HD01JuU31 RiR | Förvärvsarbetande, yngre |
+| "Anhörigfrågan" | KD primary | HD01SoU25 | Pensionärer, kvinnor 50+ |
+| "Bostäder" | M+L | HD01CU24 | Storstad-pendlare, yngre |
+| "Desinformation som hot" | MP+S | HD10448 | Yngre, akademiker |
+| "Rättigheter / mänskliga rättigheter" | V+MP | HD11748, HD11749 | Yngre, akademiker |
+| "Arbetsmiljö och stöd" | S | HD11747 | LO-väljare |
+
+### Frame contest matrix
+
+```mermaid
+quadrantChart
+  title Frame contest x salience x ownership
+  x-axis Low Salience --> High Salience
+  y-axis Tidö-aligned --> Opposition-aligned
+  Leverans: [0.7, 0.85]
+  Praktisk politik (S): [0.55, 0.25]
+  Trygghet: [0.75, 0.8]
+  Polisens kapacitet: [0.5, 0.2]
+  Anhörig: [0.65, 0.75]
+  Bostäder: [0.5, 0.7]
+  Desinformation: [0.4, 0.25]
+  Rättigheter: [0.35, 0.15]
+  Arbetsmiljö: [0.45, 0.2]
+```
+
+### Pre-campaign salience forecast (2026-09-13 horizon)
+
+- **Trygghet** likely peaks August (HD01JuU10 ikraftträdande Q3) → high benefit to M+SD.
+- **Anhörig + äldreomsorg** likely peaks early summer (HD01SoU25 implementation) → KD core.
+- **Polisens kapacitet** is the *opposition's* peak frame; depends on RiR-uppföljning and any incidents.
+- **Desinformation** uncertain; H3 (devils-advocate) implies the frame is double-edged for SD. [riksdagen.se HD10448]
+
+### Notable absences
+
+- C is largely *off* the framing map this window — neither owner nor amplifier of major frames.
+- L's media framing is tied to M; insufficient stand-alone identity in window.
+
+### Frame ownership network
+
+```mermaid
+flowchart LR
+  T[Tidö-aligned riksdagen.se]:::g --> F1[Leverans HD01JuU10 HD01CU24]:::g
+  T --> F2[Trygghet HD01JuU10]:::g
+  T --> F3[Anhörig HD01SoU25]:::g
+  O[Opposition-aligned]:::o --> F4[Polisens kapacitet HD01JuU31]:::o
+  O --> F5[Arbetsmiljö HD11747]:::o
+  O --> F6[Desinformation HD10448]:::o
+  classDef g fill:#1a1e3d,stroke:#00d9ff,color:#ffffff
+  classDef o fill:#1a1e3d,stroke:#ff006e,color:#ffffff
+  style T stroke-width:3px
+  style O stroke-width:3px
+```
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/devils-advocate.md -->
@@ -1575,13 +1575,6 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/threat-analysis.md)
 - [`documents/HD01CU24-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/documents/HD01CU24-analysis.md)
 - [`documents/HD01JuU10-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/documents/HD01JuU10-analysis.md)
 - [`documents/HD01JuU31-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/documents/HD01JuU31-analysis.md)
@@ -1590,12 +1583,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`documents/HD11747-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/documents/HD11747-analysis.md)
 - [`documents/HD11748-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/documents/HD11748-analysis.md)
 - [`documents/HD11749-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/documents/HD11749-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/cross-reference-map.md)

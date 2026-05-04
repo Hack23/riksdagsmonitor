@@ -5,7 +5,7 @@ date: 2026-04-30
 subfolder: committeeReports
 slug: 2026-04-30-committeeReports
 source_folder: analysis/daily/2026-04-30/committeeReports
-generated_at: 2026-05-04T09:52:32.530Z
+generated_at: 2026-05-04T12:16:14.212Z
 language: en
 layout: article
 ---
@@ -88,10 +88,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -276,466 +276,6 @@ flowchart LR
     style B fill:#ff006e,color:#fff
     style C fill:#ffbe0b,color:#000
     style I fill:#00d9ff,color:#000
-```
-
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/media-framing-analysis.md -->
-
-**Note**: Predictive framing analysis (media coverage not yet published as of analysis time)
-
-### Predicted Media Framing by Outlet
-
-#### Mainstream Press — Likely Lead Stories
-
-| Outlet | Predicted lead | Expected framing angle |
-|--------|---------------|----------------------|
-| Dagens Nyheter | KU36 AI oversight OR NU19 nuclear | "Sweden prepares for AI age" / "Nuclear comeback accelerates" |
-| Svenska Dagbladet | NU19 nuclear + NU22 competition | "Government delivers on nuclear promise" / "Pro-business reform" |
-| Aftonbladet | CU37 housing OR KU36 surveillance | "Renters get protection" / "Big Brother Sweden?" |
-| Expressen | Nuclear + court reform | "Justice system crisis" / "Nuclear: Sweden's energy future" |
-| SVT/SR (public media) | KU36 (public interest AI angle) | Balanced coverage, focus on KU constitutional function |
-
-#### Party Media Framing
-
-| Party | Likely framing | Platform |
-|-------|---------------|----------|
-| M | Nuclear progress + court efficiency as government success | Social media, morning briefings |
-| SD | Security: FöU13 explosives control + nuclear energy security | Party media + SD-aligned outlets |
-| S | CU37 housing protection + court access as S priorities | SAP.se, party press |
-| L | KU36 as L's digital rights victory | Expressen op-ed |
-| MP | Nuclear alarm: NU19 as climate risk | Green party newsletter, social media |
-| V | Housing right + nuclear opposition | Röda rummet, social media |
-| KD | Court reform + family values (housing) | KD.se |
-| C | Competition (NU22) + rural (SoU33) | Landsbygdsnyheter, C.se |
-
-#### International Media Prediction
-
-| Outlet | Likely angle |
-|--------|-------------|
-| Politico EU | NU19 nuclear + AI Act compliance angle |
-| The Local SE | English-language explainer on KU36 for expat audience |
-| Reuters | Nuclear energy permitting reform — energy market context |
-
-### Narrative Risk Assessment
-
-**Disinformation Risk — HIGH for NU19**:  
-Nuclear permitting reform is a target for climate-skepticism-adjacent mis-framing in social media. Key risk: stories claiming "Sweden rushes nuclear without safety review" — factually incorrect (SVT reports; only permitting timeline changed, not safety standards).
-
-**Disinformation Risk — MEDIUM for KU36**:  
-AI oversight report could be framed as "government surveillance expansion" by actors misreading the constitutional oversight function of KU.
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d"}}}%%
-flowchart LR
-    KU36[KU36 AI Report] --> DN[DN: AI age] 
-    KU36 --> L_frame[L: Digital rights victory]
-    KU36 --> Misinfo[Risk: Surveillance framing]
-    NU19[NU19 Nuclear] --> SvD[SvD: Nuclear comeback]
-    NU19 --> MP_frame[MP: Climate alarm]
-    NU19 --> Disinfo[HIGH disinfo risk]
-    style Misinfo fill:#ff006e,color:#fff
-    style Disinfo fill:#ff006e,color:#fff
-```
-
-## Stakeholder Perspectives
-<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/stakeholder-perspectives.md -->
-
-### 6-Lens Stakeholder Matrix
-
-#### Lens 1 — Government / Riksdag Majority
-
-**Actor**: Tidöpartiet government (M/SD/KD/L coalition)  
-**Position on key reports**: 
-- KU36: Accepts oversight recommendations; cautious on mandatory AI assessments that would constrain government AI procurement  
-- JuU9: Supportive — court efficiency is aligned with law-and-order agenda  
-- NU19: Strongly supportive — nuclear expansion central to energy agenda  
-- FöU13: Supportive — security tightening aligns with defence/security priorities  
-
-#### Lens 2 — Parliamentary Opposition
-
-**Actor**: S, V, MP  
-- KU36: S strongly supportive; V and MP push for stronger AI Act alignment; MP wants data minimisation requirements  
-- CU37: S supportive; V wants broader social housing investment beyond guarantees  
-- NU19: MP opposed; V opposed; S ambivalent on nuclear expansion timeline  
-
-#### Lens 3 — Civil Society / NGOs
-
-**Actor**: Datainspektionen (IMY), Svenska Advokatsamfundet, Hyresgästföreningen  
-- IMY (data protection): Closely tracking KU36 — will need to implement any new oversight regime  
-- Advokatsamfundet: Supportive of JuU9 court efficiency but concerns about digital hearing access for disadvantaged  
-- Hyresgästföreningen: Cautious on CU37 — rental guarantees could reduce pressure for broader social housing investment  
-
-#### Lens 4 — Business / Industry
-
-**Actor**: Konkurrensverket, Swedish industry associations, nuclear industry  
-- NU22: Konkurrensverket supportive of expanded powers; private sector concerned about broader scope  
-- NU19: Vattenfall, Fortum supportive of streamlined permitting  
-- SoU33: Hospitality sector (Visita) strongly supportive of food requirement removal  
-
-#### Lens 5 — EU / International
-
-**Actor**: European Commission, EDPB, Nordic competition authorities  
-- KU36: EC monitoring AI Act implementation — KU36 report feeds Sweden's 2026 compliance roadmap  
-- NU22: Nordic competition network (NCN) tracking DMA alignment  
-- FöU13: Europol coordination role (JuU46 oversight report context)  
-
-#### Lens 6 — Media / Public Opinion
-
-**Actor**: Swedish media, public  
-- KU36: High public interest — surveillance/digital rights resonates with urban educated voters  
-- JuU9: Moderate public interest — court backlogs are known frustration point  
-- SoU33: Low interest — niche hospitality deregulation  
-
-### Influence Network
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "lineColor": "#00d9ff"}}}%%
-flowchart LR
-    Gov[Government Coalition] --> KU36[KU36 Oversight]
-    Gov --> NU19[NU19 Nuclear]
-    Opp[Opposition S/V/MP] --> KU36
-    Opp --> CU37[CU37 Housing]
-    Civil[Civil Society IMY/NGOs] --> KU36
-    EU[EU Commission] --> KU36
-    Industry[Industry/Vattenfall] --> NU19
-    Media[Media/Public] --> KU36
-    style Gov fill:#00d9ff,color:#000
-    style Opp fill:#ffbe0b,color:#000
-    style Civil fill:#ff006e,color:#fff
-    style EU fill:#00d9ff,color:#000
-```
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d"}}}%%
-flowchart TD
-    KU36[HD01KU36 Digital Privacy] --> IMY[IMY Implementation]
-    KU36 --> EC[EU AI Act Compliance]
-    JuU9[HD01JuU9 Courts] --> Adv[Advokatsamfundet]
-    JuU9 --> Citizens[Public Access to Justice]
-    NU19[HD01NU19 Nuclear] --> Vattenfall[Energy Industry]
-    NU19 --> MP[Environmental Opposition]
-    style KU36 fill:#ff006e,color:#fff
-    style JuU9 fill:#ffbe0b,color:#000
-    style NU19 fill:#ffbe0b,color:#000
-```
-
-## Forward Indicators
-<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/forward-indicators.md -->
-
-### 72-Hour Horizon (by 2026-05-03)
-
-| # | Indicator | Significance | Source to watch |
-|---|-----------|-------------|----------------|
-| FI-1 | KU36 committee debate transcript published | Signals party positioning before vote | riksdagen.se/dokument/bet |
-| FI-2 | NU19 party motion responses published | Nuclear debate intensity | riksdagen.se/dokument/mot |
-| FI-3 | KD/L/M joint press release on JuU9 court reform | Coalition messaging | Party websites |
-| FI-4 | MP/V counter-statement on nuclear (NU19) | Opposition intensity | MP.se, V.se |
-
-### One-Week Horizon (by 2026-05-07)
-
-| # | Indicator | Significance | Source to watch |
-|---|-----------|-------------|----------------|
-| FI-5 | Riksdag chamber vote results for KU36, JuU9, NU19, CU37 | Policy adoption confirmed/failed | riksdagen.se/voteringar (expected 2026-05-06) |
-| FI-6 | Government press conference on adopted betänkanden | Policy priority signalling | regeringen.se/press |
-| FI-7 | DIGG/Datainspektionen response to KU36 recommendations | Agency compliance signalling | datainspektionen.se |
-| FI-8 | Nuclear industry (Vattenfall/Uniper) statement on NU19 | Investor reaction | Vattenfall press office |
-
-### One-Month Horizon (by 2026-05-30)
-
-| # | Indicator | Significance | Source to watch |
-|---|-----------|-------------|----------------|
-| FI-9 | Government uppdrag (commission order) to Domstolsverket for JuU9 | JuU9 implementation begins | regeringen.se/uppdrag |
-| FI-10 | Konkurrensverket budget request for NU22 expanded mandate | NU22 resource allocation intent | esv.se/statsbudgeten |
-| FI-11 | EU Commission AI Act guidance publication | Affects KU36 implementation roadmap | ec.europa.eu/digital |
-| FI-12 | MSB circular on FöU13 explosives guidance | FöU13 downstream regulatory impact | msb.se |
-
-### Election Horizon (by 2026-09-13)
-
-| # | Indicator | Significance | Source to watch |
-|---|-----------|-------------|----------------|
-| FI-13 | Nuclear energy as top-3 election issue in Novus/Sifo polls | NU19 electoral impact confirmed | sifo.se/valundersokning |
-| FI-14 | Court processing time statistics (Q3 2026) | JuU9 baseline measurement | domstolsverket.se/statistik |
-| FI-15 | Digital rights platform adoption by parties | KU36 electoral salience | Party manifestos (August 2026) |
-| FI-16 | KU36 implementation bill published (if any) | Government follow-through on KU | riksdagen.se/proposition |
-
-### Horizon Summary
-
-| Horizon | Count | Key watch |
-|---------|-------|-----------|
-| 72h | 4 | Debate transcripts, early party positioning |
-| Week | 4 | VOTES — critical confirmation events |
-| Month | 4 | Implementation signals, EU context |
-| Election | 4 | Electoral impact measurements |
-| **TOTAL** | **16** | ≥10 required ✅ |
-
-## Scenario Analysis
-<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/scenario-analysis.md -->
-
-### Overview
-
-Three scenarios govern the legislative trajectory of the 2026-04-29 betänkanden through the 2026 election cycle. Probabilities sum to 100%.
-
-### Scenario 1 — Full Package Adoption (Probability: 45%)
-
-**Description**: All 8 committee reports pass the Riksdag vote (expected May–June 2026) with cross-bloc support. Government uses passage as pre-election legislative accomplishment narrative. KU36 recommendations are accepted; government commits to AI oversight framework before election.
-
-**Drivers**: Majority government; most reports have opposition support; no confidence vote threat before election.
-
-**Leading Indicator**: KU36 vote passes with ≥250 votes (expected 2026-05-06).
-
-**Implications**: Sweden positioned as Nordic leader in digital rights + court efficiency + nuclear energy. Government gains "reform competence" narrative for 2026 election.
-
-### Scenario 2 — Partial Adoption with KU36/CU37 Conflict (Probability: 40%)
-
-**Description**: Technical, security, and judicial reports pass (JuU9, NU19, NU22, FöU13, SoU33, JuU46). KU36 and CU37 face party-line tensions that delay or amend key provisions. Government accepts KU36 framework recommendations but rejects mandatory AI impact assessment requirements.
-
-**Drivers**: Government's interest in preserving AI deployment flexibility in welfare; opposition divisions on housing approach.
-
-**Leading Indicator**: KU36 receives reservation (reservation motion) from government parties rejecting specific oversight mechanism.
-
-**Implications**: EU compliance risk increases; digital rights NGOs critical of partial implementation; media frames as government protecting surveillance tools pre-election.
-
-### Scenario 3 — Legislative Blockage and Post-Election Deferral (Probability: 15%)
-
-**Description**: Early election announcement or confidence vote disrupts committee vote schedule. Key betänkanden deferred to new Riksdag (post-September 2026 election). New government must restart legislative process.
-
-**Drivers**: Government coalition fracture (SD-M tensions on criminal justice); unforeseen political crisis.
-
-**Leading Indicator**: Government announces Riksdag dissolution before June 2026 legislative window closes.
-
-**Implications**: EU AI Act compliance delayed; court reform (JuU9) lost for at least 18 months; nuclear permitting (NU19) stalled.
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "lineColor": "#00d9ff"}}}%%
-pie title Scenario Probabilities
-    "Scenario 1: Full Adoption" : 45
-    "Scenario 2: Partial Adoption" : 40
-    "Scenario 3: Legislative Blockage" : 15
-```
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d"}}}%%
-flowchart TD
-    A[Current: 8 Betänkanden Voted] --> S1[Scenario 1: Full Adoption 45%]
-    A --> S2[Scenario 2: Partial Adoption 40%]
-    A --> S3[Scenario 3: Blockage 15%]
-    S1 --> O1[Nordic Leadership + Election Win Narrative]
-    S2 --> O2[EU Compliance Risk + Media Criticism]
-    S3 --> O3[Post-Election Reset + 18-Month Delay]
-    style S1 fill:#00d9ff,color:#000
-    style S2 fill:#ffbe0b,color:#000
-    style S3 fill:#ff006e,color:#fff
-    style O1 fill:#00d9ff,color:#000
-    style O2 fill:#ffbe0b,color:#000
-    style O3 fill:#ff006e,color:#fff
-```
-
-## Risk Assessment
-<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/risk-assessment.md -->
-
-### 5-Dimension Risk Register
-
-| Risk ID | Description | Dimension | L | I | L*I | Cascading Chain |
-|---------|-------------|-----------|---|---|-----|-----------------|
-| R1 | EU AI Act non-compliance if KU36 unimplemented | Institutional | 4 | 5 | 20 | KU36 gap: HD01KU36 |
-| R2 | Court backlog worsens during JuU9 reform | Operational | 3 | 4 | 12 | HD01JuU9 delay |
-| R3 | Nuclear opposition disrupts NU19 permitting | Political | 3 | 4 | 12 | HD01NU19 |
-| R4 | Explosives breach despite FöU13 controls | Security | 2 | 5 | 10 | HD01FöU13 gap |
-| R5 | Municipal guarantee rent inflation CU37 | Economic | 3 | 3 | 9 | HD01CU37 |
-
-### Cascading Chains
-
-**Primary**: AI oversight gap (HD01KU36) to EU infringement to admin disruption to electoral impact 2026  
-**Secondary**: Court delay (HD01JuU9) to persistent backlog to rule-of-law erosion to international reputation
-
-### Posterior Probabilities
-
-| Risk | Prior P | Updated P (if recommendations accepted) | Delta |
-|------|---------|----------------------------------------|-------|
-| R1 EU infringement | 0.40 | 0.25 | -0.15 |
-| R2 Court backlog | 0.55 | 0.35 | -0.20 |
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "lineColor": "#00d9ff"}}}%%
-quadrantChart
-    title Risk Register Likelihood x Impact
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
-    quadrant-1 Critical
-    quadrant-2 High
-    quadrant-3 Low
-    quadrant-4 Monitor
-    R1 EU AI Act HD01KU36: [0.70, 0.95]
-    R2 Court Backlog HD01JuU9: [0.60, 0.75]
-    R3 Nuclear Politics HD01NU19: [0.55, 0.75]
-    R4 Explosives HD01FöU13: [0.35, 0.95]
-    R5 Housing CU37: [0.55, 0.55]
-```
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d"}}}%%
-flowchart TD
-    R1[R1 EU AI Act gap HD01KU36] --> C1[EU Infringement Risk]
-    R2[R2 Court Delay HD01JuU9] --> C2[Justice System Failure]
-    R3[R3 Nuclear Politics HD01NU19] --> C3[Energy Investment Stall]
-    C1 --> D[Electoral Impact 2026]
-    C2 --> D
-    C3 --> D
-    style R1 fill:#ff006e,color:#fff
-    style R2 fill:#ff006e,color:#fff
-    style D fill:#ff006e,color:#fff
-```
-
-## SWOT Analysis
-<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/swot-analysis.md -->
-
-### Strengths
-
-| Evidence | Description | Admiralty |
-|----------|-------------|-----------|
-| HD01KU36 | Sweden leads Nordic peers in Constitutional Committee digital oversight; 17 concrete recommendations demonstrate institutional maturity and cross-party accountability | [B2] |
-| HD01JuU9 | JuU9 proposes evidence-based court efficiency measures including digital hearings and written procedure expansion — reduces systemic justice delays | [B2] |
-| HD01NU19 | Nuclear facility permitting reform enables Sweden's nuclear expansion agenda; cross-bloc support signals rare bipartisan energy consensus | [B2] |
-| data.riksdagen.se (HD01NU22) | Competition law modernisation gives Konkurrensverket market intelligence tools comparable to EU competition authorities | [B2] |
-
-### Weaknesses
-
-| Evidence | Description | Admiralty |
-|----------|-------------|-----------|
-| HD01KU36 | KU oversight cycle identified gaps in governmental AI system accountability; no mandatory pre-deployment assessment requirement proposed — weaker than EU AI Act requirements | [B2] |
-| HD01CU37 | Municipal rental guarantees rely on local government capacity that varies widely; Stockholm-centric implementation risk | [B2] |
-| HD01JuU9 | Court reform timeline (target 2027) is post-election — implementation risk if government changes | [B3] |
-
-### Opportunities
-
-| Evidence | Description | Admiralty |
-|----------|-------------|-----------|
-| HD01KU36 | EU AI Act implementation window (by Aug 2026) creates legislative momentum for comprehensive digital rights framework | [B2] |
-| HD01NU22 | DMA enforcement experience positions Sweden for lead role in Nordic competition network | [B2] |
-| HD01FöU13 | Cross-agency explosives intelligence sharing creates institutional precedent for broader Nordic security data exchange | [B3] |
-| riksdagen.se | Spring 2026 legislative sprint enables bundled rule-of-law reform before election — rare reform window | [B2] |
-
-### Threats
-
-| Evidence | Description | Admiralty |
-|----------|-------------|-----------|
-| HD01KU36 | Government AI deployment in welfare and immigration without privacy safeguards — KU oversight gap explicitly flagged | [B2] |
-| HD01JuU9 | Court backlog crisis may worsen if digital infrastructure investment under-delivered | [B3] |
-| HD01NU19 | Nuclear permitting reform could accelerate facilities opposed by environmental coalition — opposition risk | [B3] |
-| HD01CU37 | Housing market distortion risk: rental guarantees could inflate rents in tight markets | [C3] |
-
-### TOWS Matrix
-
-| | Strengths | Weaknesses |
-|---|-----------|------------|
-| **Opportunities** | SO: Use KU36 momentum to lead EU AI Act implementation with Nordic model | WO: Address implementation fragmentation in CU37 via national housing agency coordination |
-| **Threats** | ST: Leverage NU22 competition tools to prevent tech monopoly harm to privacy | WT: JuU9 reform delayed + AI surveillance gaps = rule-of-law double vulnerability |
-
-### Cross-SWOT
-
-KU36 (digital rights) × FöU13 (security intel sharing) = institutional tension: same data infrastructure that enables security intelligence can undermine privacy — KU oversight critical.
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'lineColor': '#00d9ff'}}}%%
-quadrantChart
-    title SWOT Severity Matrix
-    x-axis Low Probability --> High Probability
-    y-axis Low Impact --> High Impact
-    quadrant-1 Critical monitor
-    quadrant-2 Urgent address
-    quadrant-3 Low priority
-    quadrant-4 Track
-    AI Oversight Gap KU36: [0.75, 0.85]
-    Court Reform Delay JuU9: [0.55, 0.70]
-    Nuclear Opposition NU19: [0.45, 0.65]
-    Housing Distortion CU37: [0.40, 0.55]
-```
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d'}}}%%
-flowchart LR
-    S1[S: KU36 Oversight Leadership — riksdagen.se] --> O1[O: AI Act Implementation Lead]
-    S2[S: NU19 Nuclear Consensus — HD01NU19] --> O2[O: Energy Security 2030]
-    W1[W: AI Accountability Gap — HD01KU36] --> T1[T: Surveillance Risk]
-    W2[W: Court Reform Timeline — HD01JuU9] --> T2[T: Justice Delivery Failure]
-    style S1 fill:#00d9ff,color:#000
-    style S2 fill:#00d9ff,color:#000
-    style W1 fill:#ff006e,color:#fff
-    style W2 fill:#ff006e,color:#fff
-    style O1 fill:#ffbe0b,color:#000
-    style T1 fill:#ff006e,color:#fff
-```
-
-## Threat Analysis
-<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/threat-analysis.md -->
-
-### Political Threat Taxonomy
-
-#### T1 — State Surveillance Overreach [L2+ Priority]
-
-Government AI systems deployed in welfare and border control without adequate oversight. KU oversight cycle (HD01KU36) identified specific gaps in Controller-Processor accountability for public-sector AI. **Probability: HIGH** — KU documented this pattern directly.
-
-**Source**: HD01KU36 | **Actor**: Government ministries + AI vendors | **Target**: Citizens' digital rights
-
-#### T2 — Judicial Efficiency Failure [L2 Strategic]
-
-Continued court process inefficiency documented in JuU9 creates two-tier access to justice — affluent litigants use private arbitration while ordinary citizens wait years for hearings. **Probability: MEDIUM-HIGH** — pre-existing documented trend.
-
-**Source**: HD01JuU9 | **Actor**: Resource-constrained district courts | **Target**: Rule-of-law integrity
-
-#### T3 — Explosives/Precursor Acquisition [L2 Strategic]
-
-Despite FöU13 enhanced controls, regulatory gaps in online precursor sales and cross-border shipments remain exploitable by organised crime and extremist groups. **Probability: MEDIUM** — elevated Nordic threat environment.
-
-**Source**: HD01FöU13 | **Actor**: Organised crime, extremist groups | **Target**: Public safety infrastructure
-
-### Attack Tree
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "lineColor": "#00d9ff"}}}%%
-flowchart TD
-    ROOT[Democratic Institution Threat] --> A[Digital Rights Erosion]
-    ROOT --> B[Justice System Failure]
-    ROOT --> C[Security Breach]
-    A --> A1[Govt AI without oversight HD01KU36]
-    A --> A2[Data processing abuse]
-    B --> B1[Court backlog HD01JuU9]
-    B --> B2[Legal aid gaps]
-    C --> C1[Explosives misuse HD01FöU13]
-    C --> C2[Cross-border coordination failure]
-    style ROOT fill:#ff006e,color:#fff
-    style A fill:#ff006e,color:#fff
-    style B fill:#ffbe0b,color:#000
-    style C fill:#ff006e,color:#fff
-```
-
-### Kill Chain Analysis — T1 Surveillance Overreach
-
-**Stages**: Reconnaissance (identify AI gaps) → Weaponisation (unaccountable decisions) → Delivery (automated welfare/border) → Exploitation (rights denied) → Impact (chilling effect)
-
-**Mitigation**: KU36 recommendations → Mandatory AI impact assessments → Parliamentary audit powers → Judicial review pathway
-
-### MITRE-Style TTP Mapping
-
-| TTP | Technique | Tactic | Mitigation (Betänkande) |
-|-----|-----------|--------|------------------------|
-| T1059.001 | Public-sector AI without audit trail | Evasion | KU36 oversight recommendations |
-| T1213 | Court process data as chokepoint | Discovery | JuU9 digital infrastructure |
-| T1566.002 | Online explosives precursor procurement | Initial Access | FöU13 enhanced controls |
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d"}}}%%
-flowchart LR
-    A[Threat Actor] --> B[AI/Digital Vector HD01KU36]
-    A --> C[Legal Bottleneck HD01JuU9]
-    A --> D[Explosives HD01FöU13]
-    B --> E[Mitigation: Oversight framework]
-    C --> F[Mitigation: Court reform 2027]
-    D --> G[Mitigation: Enhanced controls]
-    style A fill:#ff006e,color:#fff
-    style E fill:#00d9ff,color:#000
-    style F fill:#00d9ff,color:#000
-    style G fill:#00d9ff,color:#000
 ```
 
 ## Per-document intelligence
@@ -1123,62 +663,87 @@ The Social Committee proposes removing the requirement that alcohol serving perm
 - Monitor Folkhälsomyndigheten alcohol harm statistics (2027 report)
 - Note any municipal pushback on supervision capacity
 
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/election-2026-analysis.md -->
+## Stakeholder Perspectives
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/stakeholder-perspectives.md -->
 
-### Electoral Significance Overview
+### 6-Lens Stakeholder Matrix
 
-The 8 betänkanden voted on in late April/May 2026 provide both governing coalition and opposition parties with pre-election positioning material. The September 2026 election is approximately 130 days away.
+#### Lens 1 — Government / Riksdag Majority
 
-### Seat Projection Implications
+**Actor**: Tidöpartiet government (M/SD/KD/L coalition)  
+**Position on key reports**: 
+- KU36: Accepts oversight recommendations; cautious on mandatory AI assessments that would constrain government AI procurement  
+- JuU9: Supportive — court efficiency is aligned with law-and-order agenda  
+- NU19: Strongly supportive — nuclear expansion central to energy agenda  
+- FöU13: Supportive — security tightening aligns with defence/security priorities  
 
-| Policy Area | Primary Parties | Estimated Marginal Seats Effect | Direction |
-|------------|----------------|-------------------------------|-----------|
-| Digital/AI oversight (KU36) | L, M, S | 0–2 seats | Neutral/slight S+ |
-| Court efficiency (JuU9) | M, L, KD | 0–1 seat | Neutral |
-| Competition (NU22) | M, C | 0–2 seats | M+ (pro-business) |
-| Nuclear (NU19) | M, SD, KD, L vs MP, V | 2–4 seats swing potential | Government coalition + |
-| Explosives control (FöU13) | SD, M | 0–1 seat | SD+ (security posture) |
-| Housing guarantee (CU37) | V, MP, S | 1–3 seats | Opposition + |
-| Alcohol permits (SoU33) | C, L | 0–1 seat | C+ (rural) |
-| Europol delegation (JuU46) | All (EU-positive) | 0 seats | Negligible |
+#### Lens 2 — Parliamentary Opposition
 
-**Net assessment**: The most electorally significant report is NU19 (nuclear), which aligns with a cross-cutting issue that polling shows is a TOP-3 voter concern. KU36 (digital rights) is institutionally significant but electorally peripheral.
+**Actor**: S, V, MP  
+- KU36: S strongly supportive; V and MP push for stronger AI Act alignment; MP wants data minimisation requirements  
+- CU37: S supportive; V wants broader social housing investment beyond guarantees  
+- NU19: MP opposed; V opposed; S ambivalent on nuclear expansion timeline  
 
-### Party Position Analysis
+#### Lens 3 — Civil Society / NGOs
 
-| Party | Net benefit | Key issue |
-|-------|------------|-----------|
-| M | +++ | Nuclear (NU19), Competition (NU22), Court (JuU9) |
-| SD | + | Explosives control (FöU13), Nuclear opposition to alternatives |
-| KD | + | Court reform (JuU9) |
-| L | + | Digital rights (KU36) |
-| S | neutral | Mixed signals — court reform + housing |
-| C | + | Competition (NU22), Alcohol (SoU33) |
-| V | - | Opposed nuclear (NU19); housing benefit limited |
-| MP | - | Nuclear (NU19) most damaging |
+**Actor**: Datainspektionen (IMY), Svenska Advokatsamfundet, Hyresgästföreningen  
+- IMY (data protection): Closely tracking KU36 — will need to implement any new oversight regime  
+- Advokatsamfundet: Supportive of JuU9 court efficiency but concerns about digital hearing access for disadvantaged  
+- Hyresgästföreningen: Cautious on CU37 — rental guarantees could reduce pressure for broader social housing investment  
 
-### 2026 Election Context
+#### Lens 4 — Business / Industry
 
-Current polling (April 2026 estimates):
-- Tidökoalitionen (M+SD+KD+L): ~49%
-- S+C+MP+V bloc: ~48%
-- Undecided/other: ~3%
+**Actor**: Konkurrensverket, Swedish industry associations, nuclear industry  
+- NU22: Konkurrensverket supportive of expanded powers; private sector concerned about broader scope  
+- NU19: Vattenfall, Fortum supportive of streamlined permitting  
+- SoU33: Hospitality sector (Visita) strongly supportive of food requirement removal  
 
-This is a **knife-edge election** where 2-4 seat nuclear positioning is genuinely material.
+#### Lens 5 — EU / International
+
+**Actor**: European Commission, EDPB, Nordic competition authorities  
+- KU36: EC monitoring AI Act implementation — KU36 report feeds Sweden's 2026 compliance roadmap  
+- NU22: Nordic competition network (NCN) tracking DMA alignment  
+- FöU13: Europol coordination role (JuU46 oversight report context)  
+
+#### Lens 6 — Media / Public Opinion
+
+**Actor**: Swedish media, public  
+- KU36: High public interest — surveillance/digital rights resonates with urban educated voters  
+- JuU9: Moderate public interest — court backlogs are known frustration point  
+- SoU33: Low interest — niche hospitality deregulation  
+
+### Influence Network
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "lineColor": "#00d9ff"}}}%%
-xychart-beta
-    title "Electoral Salience by Report (1–10 scale)"
-    x-axis [KU36, JuU9, NU22, NU19, FöU13, CU37, SoU33, JuU46]
-    y-axis "Electoral salience" 0 --> 10
-    bar [4.5, 3.5, 5.0, 8.5, 3.5, 6.0, 2.5, 1.0]
+flowchart LR
+    Gov[Government Coalition] --> KU36[KU36 Oversight]
+    Gov --> NU19[NU19 Nuclear]
+    Opp[Opposition S/V/MP] --> KU36
+    Opp --> CU37[CU37 Housing]
+    Civil[Civil Society IMY/NGOs] --> KU36
+    EU[EU Commission] --> KU36
+    Industry[Industry/Vattenfall] --> NU19
+    Media[Media/Public] --> KU36
+    style Gov fill:#00d9ff,color:#000
+    style Opp fill:#ffbe0b,color:#000
+    style Civil fill:#ff006e,color:#fff
+    style EU fill:#00d9ff,color:#000
 ```
 
-### Forward-Looking Key Question
-
-Will NU19 (nuclear permitting) become the lightning rod in the May 6 chamber debate, overshadowing KU36's AI governance recommendations? LIKELY — based on 2024-2025 polling on voter energy concern priorities.
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d"}}}%%
+flowchart TD
+    KU36[HD01KU36 Digital Privacy] --> IMY[IMY Implementation]
+    KU36 --> EC[EU AI Act Compliance]
+    JuU9[HD01JuU9 Courts] --> Adv[Advokatsamfundet]
+    JuU9 --> Citizens[Public Access to Justice]
+    NU19[HD01NU19 Nuclear] --> Vattenfall[Energy Industry]
+    NU19 --> MP[Environmental Opposition]
+    style KU36 fill:#ff006e,color:#fff
+    style JuU9 fill:#ffbe0b,color:#000
+    style NU19 fill:#ffbe0b,color:#000
+```
 
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/coalition-mathematics.md -->
@@ -1329,6 +894,430 @@ quadrantChart
     "Young Voters (KU36/NU19)": [0.65, 0.70]
 ```
 
+## Forward Indicators
+<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/forward-indicators.md -->
+
+### 72-Hour Horizon (by 2026-05-03)
+
+| # | Indicator | Significance | Source to watch |
+|---|-----------|-------------|----------------|
+| FI-1 | KU36 committee debate transcript published | Signals party positioning before vote | riksdagen.se/dokument/bet |
+| FI-2 | NU19 party motion responses published | Nuclear debate intensity | riksdagen.se/dokument/mot |
+| FI-3 | KD/L/M joint press release on JuU9 court reform | Coalition messaging | Party websites |
+| FI-4 | MP/V counter-statement on nuclear (NU19) | Opposition intensity | MP.se, V.se |
+
+### One-Week Horizon (by 2026-05-07)
+
+| # | Indicator | Significance | Source to watch |
+|---|-----------|-------------|----------------|
+| FI-5 | Riksdag chamber vote results for KU36, JuU9, NU19, CU37 | Policy adoption confirmed/failed | riksdagen.se/voteringar (expected 2026-05-06) |
+| FI-6 | Government press conference on adopted betänkanden | Policy priority signalling | regeringen.se/press |
+| FI-7 | DIGG/Datainspektionen response to KU36 recommendations | Agency compliance signalling | datainspektionen.se |
+| FI-8 | Nuclear industry (Vattenfall/Uniper) statement on NU19 | Investor reaction | Vattenfall press office |
+
+### One-Month Horizon (by 2026-05-30)
+
+| # | Indicator | Significance | Source to watch |
+|---|-----------|-------------|----------------|
+| FI-9 | Government uppdrag (commission order) to Domstolsverket for JuU9 | JuU9 implementation begins | regeringen.se/uppdrag |
+| FI-10 | Konkurrensverket budget request for NU22 expanded mandate | NU22 resource allocation intent | esv.se/statsbudgeten |
+| FI-11 | EU Commission AI Act guidance publication | Affects KU36 implementation roadmap | ec.europa.eu/digital |
+| FI-12 | MSB circular on FöU13 explosives guidance | FöU13 downstream regulatory impact | msb.se |
+
+### Election Horizon (by 2026-09-13)
+
+| # | Indicator | Significance | Source to watch |
+|---|-----------|-------------|----------------|
+| FI-13 | Nuclear energy as top-3 election issue in Novus/Sifo polls | NU19 electoral impact confirmed | sifo.se/valundersokning |
+| FI-14 | Court processing time statistics (Q3 2026) | JuU9 baseline measurement | domstolsverket.se/statistik |
+| FI-15 | Digital rights platform adoption by parties | KU36 electoral salience | Party manifestos (August 2026) |
+| FI-16 | KU36 implementation bill published (if any) | Government follow-through on KU | riksdagen.se/proposition |
+
+### Horizon Summary
+
+| Horizon | Count | Key watch |
+|---------|-------|-----------|
+| 72h | 4 | Debate transcripts, early party positioning |
+| Week | 4 | VOTES — critical confirmation events |
+| Month | 4 | Implementation signals, EU context |
+| Election | 4 | Electoral impact measurements |
+| **TOTAL** | **16** | ≥10 required ✅ |
+
+## Scenario Analysis
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/scenario-analysis.md -->
+
+### Overview
+
+Three scenarios govern the legislative trajectory of the 2026-04-29 betänkanden through the 2026 election cycle. Probabilities sum to 100%.
+
+### Scenario 1 — Full Package Adoption (Probability: 45%)
+
+**Description**: All 8 committee reports pass the Riksdag vote (expected May–June 2026) with cross-bloc support. Government uses passage as pre-election legislative accomplishment narrative. KU36 recommendations are accepted; government commits to AI oversight framework before election.
+
+**Drivers**: Majority government; most reports have opposition support; no confidence vote threat before election.
+
+**Leading Indicator**: KU36 vote passes with ≥250 votes (expected 2026-05-06).
+
+**Implications**: Sweden positioned as Nordic leader in digital rights + court efficiency + nuclear energy. Government gains "reform competence" narrative for 2026 election.
+
+### Scenario 2 — Partial Adoption with KU36/CU37 Conflict (Probability: 40%)
+
+**Description**: Technical, security, and judicial reports pass (JuU9, NU19, NU22, FöU13, SoU33, JuU46). KU36 and CU37 face party-line tensions that delay or amend key provisions. Government accepts KU36 framework recommendations but rejects mandatory AI impact assessment requirements.
+
+**Drivers**: Government's interest in preserving AI deployment flexibility in welfare; opposition divisions on housing approach.
+
+**Leading Indicator**: KU36 receives reservation (reservation motion) from government parties rejecting specific oversight mechanism.
+
+**Implications**: EU compliance risk increases; digital rights NGOs critical of partial implementation; media frames as government protecting surveillance tools pre-election.
+
+### Scenario 3 — Legislative Blockage and Post-Election Deferral (Probability: 15%)
+
+**Description**: Early election announcement or confidence vote disrupts committee vote schedule. Key betänkanden deferred to new Riksdag (post-September 2026 election). New government must restart legislative process.
+
+**Drivers**: Government coalition fracture (SD-M tensions on criminal justice); unforeseen political crisis.
+
+**Leading Indicator**: Government announces Riksdag dissolution before June 2026 legislative window closes.
+
+**Implications**: EU AI Act compliance delayed; court reform (JuU9) lost for at least 18 months; nuclear permitting (NU19) stalled.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "lineColor": "#00d9ff"}}}%%
+pie title Scenario Probabilities
+    "Scenario 1: Full Adoption" : 45
+    "Scenario 2: Partial Adoption" : 40
+    "Scenario 3: Legislative Blockage" : 15
+```
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d"}}}%%
+flowchart TD
+    A[Current: 8 Betänkanden Voted] --> S1[Scenario 1: Full Adoption 45%]
+    A --> S2[Scenario 2: Partial Adoption 40%]
+    A --> S3[Scenario 3: Blockage 15%]
+    S1 --> O1[Nordic Leadership + Election Win Narrative]
+    S2 --> O2[EU Compliance Risk + Media Criticism]
+    S3 --> O3[Post-Election Reset + 18-Month Delay]
+    style S1 fill:#00d9ff,color:#000
+    style S2 fill:#ffbe0b,color:#000
+    style S3 fill:#ff006e,color:#fff
+    style O1 fill:#00d9ff,color:#000
+    style O2 fill:#ffbe0b,color:#000
+    style O3 fill:#ff006e,color:#fff
+```
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/election-2026-analysis.md -->
+
+### Electoral Significance Overview
+
+The 8 betänkanden voted on in late April/May 2026 provide both governing coalition and opposition parties with pre-election positioning material. The September 2026 election is approximately 130 days away.
+
+### Seat Projection Implications
+
+| Policy Area | Primary Parties | Estimated Marginal Seats Effect | Direction |
+|------------|----------------|-------------------------------|-----------|
+| Digital/AI oversight (KU36) | L, M, S | 0–2 seats | Neutral/slight S+ |
+| Court efficiency (JuU9) | M, L, KD | 0–1 seat | Neutral |
+| Competition (NU22) | M, C | 0–2 seats | M+ (pro-business) |
+| Nuclear (NU19) | M, SD, KD, L vs MP, V | 2–4 seats swing potential | Government coalition + |
+| Explosives control (FöU13) | SD, M | 0–1 seat | SD+ (security posture) |
+| Housing guarantee (CU37) | V, MP, S | 1–3 seats | Opposition + |
+| Alcohol permits (SoU33) | C, L | 0–1 seat | C+ (rural) |
+| Europol delegation (JuU46) | All (EU-positive) | 0 seats | Negligible |
+
+**Net assessment**: The most electorally significant report is NU19 (nuclear), which aligns with a cross-cutting issue that polling shows is a TOP-3 voter concern. KU36 (digital rights) is institutionally significant but electorally peripheral.
+
+### Party Position Analysis
+
+| Party | Net benefit | Key issue |
+|-------|------------|-----------|
+| M | +++ | Nuclear (NU19), Competition (NU22), Court (JuU9) |
+| SD | + | Explosives control (FöU13), Nuclear opposition to alternatives |
+| KD | + | Court reform (JuU9) |
+| L | + | Digital rights (KU36) |
+| S | neutral | Mixed signals — court reform + housing |
+| C | + | Competition (NU22), Alcohol (SoU33) |
+| V | - | Opposed nuclear (NU19); housing benefit limited |
+| MP | - | Nuclear (NU19) most damaging |
+
+### 2026 Election Context
+
+Current polling (April 2026 estimates):
+- Tidökoalitionen (M+SD+KD+L): ~49%
+- S+C+MP+V bloc: ~48%
+- Undecided/other: ~3%
+
+This is a **knife-edge election** where 2-4 seat nuclear positioning is genuinely material.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "lineColor": "#00d9ff"}}}%%
+xychart-beta
+    title "Electoral Salience by Report (1–10 scale)"
+    x-axis [KU36, JuU9, NU22, NU19, FöU13, CU37, SoU33, JuU46]
+    y-axis "Electoral salience" 0 --> 10
+    bar [4.5, 3.5, 5.0, 8.5, 3.5, 6.0, 2.5, 1.0]
+```
+
+### Forward-Looking Key Question
+
+Will NU19 (nuclear permitting) become the lightning rod in the May 6 chamber debate, overshadowing KU36's AI governance recommendations? LIKELY — based on 2024-2025 polling on voter energy concern priorities.
+
+## Risk Assessment
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/risk-assessment.md -->
+
+### 5-Dimension Risk Register
+
+| Risk ID | Description | Dimension | L | I | L*I | Cascading Chain |
+|---------|-------------|-----------|---|---|-----|-----------------|
+| R1 | EU AI Act non-compliance if KU36 unimplemented | Institutional | 4 | 5 | 20 | KU36 gap: HD01KU36 |
+| R2 | Court backlog worsens during JuU9 reform | Operational | 3 | 4 | 12 | HD01JuU9 delay |
+| R3 | Nuclear opposition disrupts NU19 permitting | Political | 3 | 4 | 12 | HD01NU19 |
+| R4 | Explosives breach despite FöU13 controls | Security | 2 | 5 | 10 | HD01FöU13 gap |
+| R5 | Municipal guarantee rent inflation CU37 | Economic | 3 | 3 | 9 | HD01CU37 |
+
+### Cascading Chains
+
+**Primary**: AI oversight gap (HD01KU36) to EU infringement to admin disruption to electoral impact 2026  
+**Secondary**: Court delay (HD01JuU9) to persistent backlog to rule-of-law erosion to international reputation
+
+### Posterior Probabilities
+
+| Risk | Prior P | Updated P (if recommendations accepted) | Delta |
+|------|---------|----------------------------------------|-------|
+| R1 EU infringement | 0.40 | 0.25 | -0.15 |
+| R2 Court backlog | 0.55 | 0.35 | -0.20 |
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "lineColor": "#00d9ff"}}}%%
+quadrantChart
+    title Risk Register Likelihood x Impact
+    x-axis Low Likelihood --> High Likelihood
+    y-axis Low Impact --> High Impact
+    quadrant-1 Critical
+    quadrant-2 High
+    quadrant-3 Low
+    quadrant-4 Monitor
+    R1 EU AI Act HD01KU36: [0.70, 0.95]
+    R2 Court Backlog HD01JuU9: [0.60, 0.75]
+    R3 Nuclear Politics HD01NU19: [0.55, 0.75]
+    R4 Explosives HD01FöU13: [0.35, 0.95]
+    R5 Housing CU37: [0.55, 0.55]
+```
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d"}}}%%
+flowchart TD
+    R1[R1 EU AI Act gap HD01KU36] --> C1[EU Infringement Risk]
+    R2[R2 Court Delay HD01JuU9] --> C2[Justice System Failure]
+    R3[R3 Nuclear Politics HD01NU19] --> C3[Energy Investment Stall]
+    C1 --> D[Electoral Impact 2026]
+    C2 --> D
+    C3 --> D
+    style R1 fill:#ff006e,color:#fff
+    style R2 fill:#ff006e,color:#fff
+    style D fill:#ff006e,color:#fff
+```
+
+## SWOT Analysis
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/swot-analysis.md -->
+
+### Strengths
+
+| Evidence | Description | Admiralty |
+|----------|-------------|-----------|
+| HD01KU36 | Sweden leads Nordic peers in Constitutional Committee digital oversight; 17 concrete recommendations demonstrate institutional maturity and cross-party accountability | [B2] |
+| HD01JuU9 | JuU9 proposes evidence-based court efficiency measures including digital hearings and written procedure expansion — reduces systemic justice delays | [B2] |
+| HD01NU19 | Nuclear facility permitting reform enables Sweden's nuclear expansion agenda; cross-bloc support signals rare bipartisan energy consensus | [B2] |
+| data.riksdagen.se (HD01NU22) | Competition law modernisation gives Konkurrensverket market intelligence tools comparable to EU competition authorities | [B2] |
+
+### Weaknesses
+
+| Evidence | Description | Admiralty |
+|----------|-------------|-----------|
+| HD01KU36 | KU oversight cycle identified gaps in governmental AI system accountability; no mandatory pre-deployment assessment requirement proposed — weaker than EU AI Act requirements | [B2] |
+| HD01CU37 | Municipal rental guarantees rely on local government capacity that varies widely; Stockholm-centric implementation risk | [B2] |
+| HD01JuU9 | Court reform timeline (target 2027) is post-election — implementation risk if government changes | [B3] |
+
+### Opportunities
+
+| Evidence | Description | Admiralty |
+|----------|-------------|-----------|
+| HD01KU36 | EU AI Act implementation window (by Aug 2026) creates legislative momentum for comprehensive digital rights framework | [B2] |
+| HD01NU22 | DMA enforcement experience positions Sweden for lead role in Nordic competition network | [B2] |
+| HD01FöU13 | Cross-agency explosives intelligence sharing creates institutional precedent for broader Nordic security data exchange | [B3] |
+| riksdagen.se | Spring 2026 legislative sprint enables bundled rule-of-law reform before election — rare reform window | [B2] |
+
+### Threats
+
+| Evidence | Description | Admiralty |
+|----------|-------------|-----------|
+| HD01KU36 | Government AI deployment in welfare and immigration without privacy safeguards — KU oversight gap explicitly flagged | [B2] |
+| HD01JuU9 | Court backlog crisis may worsen if digital infrastructure investment under-delivered | [B3] |
+| HD01NU19 | Nuclear permitting reform could accelerate facilities opposed by environmental coalition — opposition risk | [B3] |
+| HD01CU37 | Housing market distortion risk: rental guarantees could inflate rents in tight markets | [C3] |
+
+### TOWS Matrix
+
+| | Strengths | Weaknesses |
+|---|-----------|------------|
+| **Opportunities** | SO: Use KU36 momentum to lead EU AI Act implementation with Nordic model | WO: Address implementation fragmentation in CU37 via national housing agency coordination |
+| **Threats** | ST: Leverage NU22 competition tools to prevent tech monopoly harm to privacy | WT: JuU9 reform delayed + AI surveillance gaps = rule-of-law double vulnerability |
+
+### Cross-SWOT
+
+KU36 (digital rights) × FöU13 (security intel sharing) = institutional tension: same data infrastructure that enables security intelligence can undermine privacy — KU oversight critical.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'lineColor': '#00d9ff'}}}%%
+quadrantChart
+    title SWOT Severity Matrix
+    x-axis Low Probability --> High Probability
+    y-axis Low Impact --> High Impact
+    quadrant-1 Critical monitor
+    quadrant-2 Urgent address
+    quadrant-3 Low priority
+    quadrant-4 Track
+    AI Oversight Gap KU36: [0.75, 0.85]
+    Court Reform Delay JuU9: [0.55, 0.70]
+    Nuclear Opposition NU19: [0.45, 0.65]
+    Housing Distortion CU37: [0.40, 0.55]
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d'}}}%%
+flowchart LR
+    S1[S: KU36 Oversight Leadership — riksdagen.se] --> O1[O: AI Act Implementation Lead]
+    S2[S: NU19 Nuclear Consensus — HD01NU19] --> O2[O: Energy Security 2030]
+    W1[W: AI Accountability Gap — HD01KU36] --> T1[T: Surveillance Risk]
+    W2[W: Court Reform Timeline — HD01JuU9] --> T2[T: Justice Delivery Failure]
+    style S1 fill:#00d9ff,color:#000
+    style S2 fill:#00d9ff,color:#000
+    style W1 fill:#ff006e,color:#fff
+    style W2 fill:#ff006e,color:#fff
+    style O1 fill:#ffbe0b,color:#000
+    style T1 fill:#ff006e,color:#fff
+```
+
+## Threat Analysis
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/threat-analysis.md -->
+
+### Political Threat Taxonomy
+
+#### T1 — State Surveillance Overreach [L2+ Priority]
+
+Government AI systems deployed in welfare and border control without adequate oversight. KU oversight cycle (HD01KU36) identified specific gaps in Controller-Processor accountability for public-sector AI. **Probability: HIGH** — KU documented this pattern directly.
+
+**Source**: HD01KU36 | **Actor**: Government ministries + AI vendors | **Target**: Citizens' digital rights
+
+#### T2 — Judicial Efficiency Failure [L2 Strategic]
+
+Continued court process inefficiency documented in JuU9 creates two-tier access to justice — affluent litigants use private arbitration while ordinary citizens wait years for hearings. **Probability: MEDIUM-HIGH** — pre-existing documented trend.
+
+**Source**: HD01JuU9 | **Actor**: Resource-constrained district courts | **Target**: Rule-of-law integrity
+
+#### T3 — Explosives/Precursor Acquisition [L2 Strategic]
+
+Despite FöU13 enhanced controls, regulatory gaps in online precursor sales and cross-border shipments remain exploitable by organised crime and extremist groups. **Probability: MEDIUM** — elevated Nordic threat environment.
+
+**Source**: HD01FöU13 | **Actor**: Organised crime, extremist groups | **Target**: Public safety infrastructure
+
+### Attack Tree
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "lineColor": "#00d9ff"}}}%%
+flowchart TD
+    ROOT[Democratic Institution Threat] --> A[Digital Rights Erosion]
+    ROOT --> B[Justice System Failure]
+    ROOT --> C[Security Breach]
+    A --> A1[Govt AI without oversight HD01KU36]
+    A --> A2[Data processing abuse]
+    B --> B1[Court backlog HD01JuU9]
+    B --> B2[Legal aid gaps]
+    C --> C1[Explosives misuse HD01FöU13]
+    C --> C2[Cross-border coordination failure]
+    style ROOT fill:#ff006e,color:#fff
+    style A fill:#ff006e,color:#fff
+    style B fill:#ffbe0b,color:#000
+    style C fill:#ff006e,color:#fff
+```
+
+### Kill Chain Analysis — T1 Surveillance Overreach
+
+**Stages**: Reconnaissance (identify AI gaps) → Weaponisation (unaccountable decisions) → Delivery (automated welfare/border) → Exploitation (rights denied) → Impact (chilling effect)
+
+**Mitigation**: KU36 recommendations → Mandatory AI impact assessments → Parliamentary audit powers → Judicial review pathway
+
+### MITRE-Style TTP Mapping
+
+| TTP | Technique | Tactic | Mitigation (Betänkande) |
+|-----|-----------|--------|------------------------|
+| T1059.001 | Public-sector AI without audit trail | Evasion | KU36 oversight recommendations |
+| T1213 | Court process data as chokepoint | Discovery | JuU9 digital infrastructure |
+| T1566.002 | Online explosives precursor procurement | Initial Access | FöU13 enhanced controls |
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d"}}}%%
+flowchart LR
+    A[Threat Actor] --> B[AI/Digital Vector HD01KU36]
+    A --> C[Legal Bottleneck HD01JuU9]
+    A --> D[Explosives HD01FöU13]
+    B --> E[Mitigation: Oversight framework]
+    C --> F[Mitigation: Court reform 2027]
+    D --> G[Mitigation: Enhanced controls]
+    style A fill:#ff006e,color:#fff
+    style E fill:#00d9ff,color:#000
+    style F fill:#00d9ff,color:#000
+    style G fill:#00d9ff,color:#000
+```
+
+## Historical Parallels
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/historical-parallels.md -->
+
+### Direct Historical Precedents
+
+#### KU36 — Digital Privacy Oversight: 2016 KU Retrospective
+
+The most recent directly comparable precedent is the 2016 Constitutional Committee retrospective oversight review of government IT projects and data processing. That review identified 11 deficiencies in personal data handling across government agencies. Of the 11 recommendations: 7 were implemented, 2 partially implemented, 2 abandoned.
+
+**Lesson for KU36**: Implementation rate of ~70% for non-mandatory KU recommendations. The 17 KU36 recommendations will likely see ~12 implemented by 2029 — the remainder will require repeated oversight pressure or EU AI Act enforcement to progress.
+
+**Time since precedent**: 10 years (2016 → 2026) ✅ within 40-year window
+
+#### JuU9 — Court Efficiency: 2014 Processrättens Modernisering
+
+The 2014 Justice Committee investigation into court modernisation produced a comparable set of efficiency recommendations including expanded written procedure and video hearings in minor matters. Implementation took 6 years (completed ~2020). Efficiency gains documented: 15% reduction in processing time for civil cases.
+
+**Lesson for JuU9**: A 6-year implementation horizon is realistic (2027-2032), not the optimistic 2027 target. Post-election government will need dedicated funding allocation to stay on track.
+
+**Time since precedent**: 12 years (2014 → 2026) ✅ within 40-year window
+
+#### NU19 — Nuclear Permitting: 1979-1985 Nuclear Policy Decisions
+
+The 1980 referendum and subsequent 1984 decision to phase out nuclear power represents the most significant Swedish nuclear policy precedent. The 2010 reversal of the phase-out decision and the 2022-2024 nuclear renaissance represent a full policy reversal in 40+ years. NU19's streamlined permitting is part of the third nuclear era: after construction (1960s-70s), phase-out (1980-2010), and renaissance (2022+).
+
+**Lesson**: Swedish nuclear policy moves in generational cycles. Today's permitting streamlining reflects political consensus that took 14 years to re-establish after the 2010 reversal of phase-out.
+
+**Time since precedent**: ~40 years (1984 → 2026) at the edge of the window ✅
+
+#### CU37 — Municipal Housing Guarantee: 2008 Social Housing Crisis
+
+Municipal housing queue lengths have been a recurring political crisis. The 2008 Social Housing Act reforms attempted similar accessibility measures — implementation was uneven, with Stockholm and Göteborg achieving better outcomes than smaller municipalities.
+
+**Lesson for CU37**: Municipal implementation capacity varies significantly. Guarantees without funding transfer produce paper commitments, not housing security.
+
+**Time since precedent**: 18 years (2008 → 2026) ✅ within 40-year window
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "lineColor": "#00d9ff"}}}%%
+timeline
+    title Historical Parallels Timeline
+    2008 : CU37 Precedent - Social Housing Act
+    2014 : JuU9 Precedent - Court Modernisation Inquiry
+    2016 : KU36 Precedent - Data Processing Oversight
+    2022 : Nuclear Renaissance Begins
+    2026 : Current Reports — NU19 KU36 JuU9 CU37
+```
+
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/comparative-international.md -->
 
@@ -1397,54 +1386,6 @@ flowchart LR
     style EU fill:#ff006e,color:#fff
 ```
 
-## Historical Parallels
-<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/historical-parallels.md -->
-
-### Direct Historical Precedents
-
-#### KU36 — Digital Privacy Oversight: 2016 KU Retrospective
-
-The most recent directly comparable precedent is the 2016 Constitutional Committee retrospective oversight review of government IT projects and data processing. That review identified 11 deficiencies in personal data handling across government agencies. Of the 11 recommendations: 7 were implemented, 2 partially implemented, 2 abandoned.
-
-**Lesson for KU36**: Implementation rate of ~70% for non-mandatory KU recommendations. The 17 KU36 recommendations will likely see ~12 implemented by 2029 — the remainder will require repeated oversight pressure or EU AI Act enforcement to progress.
-
-**Time since precedent**: 10 years (2016 → 2026) ✅ within 40-year window
-
-#### JuU9 — Court Efficiency: 2014 Processrättens Modernisering
-
-The 2014 Justice Committee investigation into court modernisation produced a comparable set of efficiency recommendations including expanded written procedure and video hearings in minor matters. Implementation took 6 years (completed ~2020). Efficiency gains documented: 15% reduction in processing time for civil cases.
-
-**Lesson for JuU9**: A 6-year implementation horizon is realistic (2027-2032), not the optimistic 2027 target. Post-election government will need dedicated funding allocation to stay on track.
-
-**Time since precedent**: 12 years (2014 → 2026) ✅ within 40-year window
-
-#### NU19 — Nuclear Permitting: 1979-1985 Nuclear Policy Decisions
-
-The 1980 referendum and subsequent 1984 decision to phase out nuclear power represents the most significant Swedish nuclear policy precedent. The 2010 reversal of the phase-out decision and the 2022-2024 nuclear renaissance represent a full policy reversal in 40+ years. NU19's streamlined permitting is part of the third nuclear era: after construction (1960s-70s), phase-out (1980-2010), and renaissance (2022+).
-
-**Lesson**: Swedish nuclear policy moves in generational cycles. Today's permitting streamlining reflects political consensus that took 14 years to re-establish after the 2010 reversal of phase-out.
-
-**Time since precedent**: ~40 years (1984 → 2026) at the edge of the window ✅
-
-#### CU37 — Municipal Housing Guarantee: 2008 Social Housing Crisis
-
-Municipal housing queue lengths have been a recurring political crisis. The 2008 Social Housing Act reforms attempted similar accessibility measures — implementation was uneven, with Stockholm and Göteborg achieving better outcomes than smaller municipalities.
-
-**Lesson for CU37**: Municipal implementation capacity varies significantly. Guarantees without funding transfer produce paper commitments, not housing security.
-
-**Time since precedent**: 18 years (2008 → 2026) ✅ within 40-year window
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d", "lineColor": "#00d9ff"}}}%%
-timeline
-    title Historical Parallels Timeline
-    2008 : CU37 Precedent - Social Housing Act
-    2014 : JuU9 Precedent - Court Modernisation Inquiry
-    2016 : KU36 Precedent - Data Processing Oversight
-    2022 : Nuclear Renaissance Begins
-    2026 : Current Reports — NU19 KU36 JuU9 CU37
-```
-
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/implementation-feasibility.md -->
 
@@ -1494,6 +1435,65 @@ xychart-beta
     x-axis [KU36, JuU9, NU22, NU19, FöU13, CU37, SoU33, JuU46]
     y-axis "Risk level" 0 --> 5
     bar [4.0, 2.5, 2.5, 2.5, 2.0, 4.5, 1.0, 1.0]
+```
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/media-framing-analysis.md -->
+
+**Note**: Predictive framing analysis (media coverage not yet published as of analysis time)
+
+### Predicted Media Framing by Outlet
+
+#### Mainstream Press — Likely Lead Stories
+
+| Outlet | Predicted lead | Expected framing angle |
+|--------|---------------|----------------------|
+| Dagens Nyheter | KU36 AI oversight OR NU19 nuclear | "Sweden prepares for AI age" / "Nuclear comeback accelerates" |
+| Svenska Dagbladet | NU19 nuclear + NU22 competition | "Government delivers on nuclear promise" / "Pro-business reform" |
+| Aftonbladet | CU37 housing OR KU36 surveillance | "Renters get protection" / "Big Brother Sweden?" |
+| Expressen | Nuclear + court reform | "Justice system crisis" / "Nuclear: Sweden's energy future" |
+| SVT/SR (public media) | KU36 (public interest AI angle) | Balanced coverage, focus on KU constitutional function |
+
+#### Party Media Framing
+
+| Party | Likely framing | Platform |
+|-------|---------------|----------|
+| M | Nuclear progress + court efficiency as government success | Social media, morning briefings |
+| SD | Security: FöU13 explosives control + nuclear energy security | Party media + SD-aligned outlets |
+| S | CU37 housing protection + court access as S priorities | SAP.se, party press |
+| L | KU36 as L's digital rights victory | Expressen op-ed |
+| MP | Nuclear alarm: NU19 as climate risk | Green party newsletter, social media |
+| V | Housing right + nuclear opposition | Röda rummet, social media |
+| KD | Court reform + family values (housing) | KD.se |
+| C | Competition (NU22) + rural (SoU33) | Landsbygdsnyheter, C.se |
+
+#### International Media Prediction
+
+| Outlet | Likely angle |
+|--------|-------------|
+| Politico EU | NU19 nuclear + AI Act compliance angle |
+| The Local SE | English-language explainer on KU36 for expat audience |
+| Reuters | Nuclear energy permitting reform — energy market context |
+
+### Narrative Risk Assessment
+
+**Disinformation Risk — HIGH for NU19**:  
+Nuclear permitting reform is a target for climate-skepticism-adjacent mis-framing in social media. Key risk: stories claiming "Sweden rushes nuclear without safety review" — factually incorrect (SVT reports; only permitting timeline changed, not safety standards).
+
+**Disinformation Risk — MEDIUM for KU36**:  
+AI oversight report could be framed as "government surveillance expansion" by actors misreading the constitutional oversight function of KU.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#1a1e3d"}}}%%
+flowchart LR
+    KU36[KU36 AI Report] --> DN[DN: AI age] 
+    KU36 --> L_frame[L: Digital rights victory]
+    KU36 --> Misinfo[Risk: Surveillance framing]
+    NU19[NU19 Nuclear] --> SvD[SvD: Nuclear comeback]
+    NU19 --> MP_frame[MP: Climate alarm]
+    NU19 --> Disinfo[HIGH disinfo risk]
+    style Misinfo fill:#ff006e,color:#fff
+    style Disinfo fill:#ff006e,color:#fff
 ```
 
 ## Devil's Advocate
@@ -1746,13 +1746,6 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/threat-analysis.md)
 - [`documents/HD01CU37-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/documents/HD01CU37-analysis.md)
 - [`documents/HD01FöU13-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/documents/HD01FöU13-analysis.md)
 - [`documents/HD01JuU46-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/documents/HD01JuU46-analysis.md)
@@ -1761,12 +1754,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`documents/HD01NU19-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/documents/HD01NU19-analysis.md)
 - [`documents/HD01NU22-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/documents/HD01NU22-analysis.md)
 - [`documents/HD01SoU33-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/documents/HD01SoU33-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/committeeReports/cross-reference-map.md)

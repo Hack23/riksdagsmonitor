@@ -5,7 +5,7 @@ date: 2026-05-01
 subfolder: committeeReports
 slug: 2026-05-01-committeeReports
 source_folder: analysis/daily/2026-05-01/committeeReports
-generated_at: 2026-05-04T09:52:32.583Z
+generated_at: 2026-05-04T12:16:14.262Z
 language: en
 layout: article
 ---
@@ -76,10 +76,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -264,111 +264,151 @@ xychart-beta
     style FiU20 fill:#ffbe0b
 ```
 
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/media-framing-analysis.md -->
+## Per-document intelligence
 
-### Frame Analysis Framework
+### HC01FiU20
+<!-- source: documents/HC01FiU20-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/documents/HC01FiU20-analysis.md -->
 
-Media framing analysis examines: (1) Party press releases and spokesperson statements; (2) Editorial positioning of major Swedish press; (3) Social media amplification patterns.
+**Document ID**: HC01FiU20 | **Committee**: Finansutskottet (FiU) | **Riksmöte**: 2024/25
+**Title**: Vårproposition — economic framework 2025/26
+**DIW Significance**: L3 (High) | **Priority Tier**: Critical | **Admiralty**: [A2]
 
-*Note: Direct media monitoring was not conducted in this analytical run. Frames inferred from parliamentary debate positions, betänkande reservations, and established party communication patterns. [C3 caveat applies to all press-specific claims.]*
+### Summary
 
----
+HC01FiU20 is the primary vårproposition betänkande establishing Sweden's 2025/26 economic policy framework. Adopted June 2025. Constitutes the fundamental budget agreement between M-KD-L-C coalition and SD budget support partner.
 
-### Party Communication Frames
+### Key Content
 
-#### M (Moderaterna) — Government Leader
-**Primary frame**: "Ansvarsfull krishantering" (Responsible crisis management)
-- On HC01FiU20: "Vi håller i ekonomin under externt tryck" (We're managing the economy under external pressure)
-- On HC01FiU33: "Sverige ska inte vara beroende av utländsk läkemedelstillverkning i krig" (National pharmaceutical resilience)
-- On HC01SfU22: Frame ceded to SD — M presents as "ordning och reda i mottagningssystemet" (Order and rule in the reception system)
-- On HC01SoU29: Minimal — delegated to KD as social policy lead
+- **GDP outlook**: Lågkonjunktur explicitly acknowledged; GDP growth 2024 ≈ 1.0%; 2025 outlook below potential
+- **External shock**: US tariff policy cited as primary negative factor — "osäkerhet och oförutsägbarhet kring handelspolitiken"
+- **Fiscal stance**: Government maintains expenditure ceiling; no major stimulus package; automatic stabilisers relied upon
+- **Riksbank complement**: Monetary policy (rate cuts) presented as primary adjustment instrument
+- **Forward revision**: Government acknowledges GDP and employment projections revised downward since höst 2024
 
-**Dominant metaphor**: Government as responsible captain in storm (external tariff shock)
+### Intelligence Assessment
 
-#### KD (Kristdemokraterna)
-**Primary frame**: "Trygg familjepolitik" (Secure family policy)
-- On HC01SoU29: "Fritidskortet ger familjer verktyg att ge sina barn rika upplevelser" (Fritidskort gives families tools)
-- On HC01SfU22: "Ordning i asylsystemet är förutsättningen för generositet" (Order in asylum system is a precondition for generosity)
+**Significance**: Sets the entire financial and economic context for all other betänkanden. The acknowledgement of lågkonjunktur creates electoral risk for the government if unemployment continues rising.
 
-#### L (Liberalerna)
-**Primary frame**: Ambivalent — tension between migration enforcement and liberal rights values
-- On HC01SfU22: Internal tension; some L MPs likely uncomfortable with glass-partition default
-- L will frame as "Proportionella åtgärder inom rättsstatens ramar" (Proportional measures within rule of law)
-- **Risk**: L faces credibility challenge if ECtHR ruling comes — their rights-liberal brand vs. coalition discipline
+**Coalition implication**: SD supported this framework (within Tidö Agreement parameters). If tariff shock deepens, mid-year revision in höstproposition 2025 may require new SD negotiation.
 
-#### C (Centerpartiet)
-**Primary frame**: Rural/green liberalism; anti-centralism
-- On HC01FiU20: "Handelspolitiken hotar landsbygdsföretagare" (Trade policy threatens rural entrepreneurs)
-- On HC01TU15: Infrastructure and connectivity for rural Sweden
-- On HC01SfU22: Subdued — C has rural SD-adjacent voters who approve migration enforcement
+**Monitoring**: SCB Q1 2025 GDP flash estimate (May 2025); IMF Article IV consultation (November 2025).
 
-#### SD (Sverigedemokraterna)
-**Primary frame**: "Vi levererar" (We deliver)
-- On HC01SfU22: "Nu skärper vi regelverket för asylsökande i förvar" (We're tightening the framework) — direct delivery claim
-- On HC01FiU33: "Sverige ska aldrig stå utan mediciner i krig" (National resilience)
-- On HC01FiU20: "Svaga ekonomin är en konsekvens av migrationskostnader" (Economic weakness due to migration costs) — contested but within SD narrative
+### HC01FiU24
+<!-- source: documents/HC01FiU24-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/documents/HC01FiU24-analysis.md -->
 
-#### S (Socialdemokraterna) — Main Opposition
-**Primary frame**: "Regeringen sviker de utsatta" (Government abandons the vulnerable)
-- On HC01FiU20: "De rätta verktygen: investeringar i jobb, inte åtstramning" (Investment in jobs, not austerity)
-- On HC01SfU22: "Sverige bryter mot mänskliga rättigheter" (Sweden is violating human rights)
-- On HC01SoU29: "Vi välkomnar fritidskortet men det räcker inte" (Welcome but insufficient)
-- **Counter-frame**: S will try to link rising unemployment (HC01FiU20 acknowledgement) to government austerity — may gain traction under Scenario B
+**Document ID**: HC01FiU24 | **Committee**: Finansutskottet (FiU) | **Riksmöte**: 2024/25
+**Title**: Riksbank evaluation — monetary policy framework assessment
+**DIW Significance**: L2 (High) | **Priority Tier**: High | **Admiralty**: [A2]
 
-#### MP (Miljöpartiet)
-**Primary frame**: "Klimat och mänskliga rättigheter hänger ihop" (Climate and human rights are linked)
-- On HC01SfU22: Strongest opposition voice alongside V — "Glasrutor är omänskligt" (Glass partitions are inhuman)
-- On HC01SoU29: Support — fritidskort aligns with outdoor activity promotion
+### Summary
 
-#### V (Vänsterpartiet)
-**Primary frame**: "För vanliga familjer, mot storbusiness" (For ordinary families, against big business)
-- On HC01FiU20: "Krisinvesteringar, inte skattesänkningar till de rika" (Crisis investments, not tax cuts)
-- On HC01SfU22: "Detentionssystemet kränker grundläggande rättigheter" (Detention system violates basic rights)
+HC01FiU24 is the Riksdag's formal evaluation of Riksbank monetary policy. Adopted June 2025. Based on independent review of Riksbank's rate decisions during 2022–2025 including the sharp rate increase cycle and subsequent rate cuts.
 
----
+### Key Content
 
-### Press Editorial Positioning
+- **Key finding**: Riksbank over-relied on FX exchange rate as monetary transmission channel; SEK weakness was used as quasi-instrument
+- **Rate path**: Riksbank cut rates multiple times in 2024; policy rate reduced from ~4% toward neutral (estimated ~2.25%); evaluation endorses direction
+- **Communication**: Evaluation recommends clearer forward guidance on rate path to reduce market uncertainty
+- **Independence**: Riksbank independence affirmed; evaluation not critical of institutional framework established by 2022 Riksbank Act
+- **GDP context**: Monetary policy constrained by simultaneous supply-side (tariff) and demand-side (housing, investment) pressures
 
-| Publication | Lean | Expected Frame |
-|-------------|------|----------------|
-| Dagens Nyheter (DN) | Centre-right liberal | Critical of SfU22 rights dimension; supportive of FiU20 fiscal discipline |
-| Sydsvenskan | Centre-right | Similar to DN; Malmö migration focus |
-| Aftonbladet | Centre-left | Opposition frame dominant; APL as "räddning" for healthcare workers |
-| Expressen | Liberal-right | Supportive of government; sceptical of S alternative |
-| Svenska Dagbladet (SvD) | Centre-right | Nuanced; Riksbank independence (FiU24) receives analytical coverage |
-| Göteborgs-Posten | Centre-right | Volvo/employment angle on FiU20 tariff exposure |
+### Intelligence Assessment
 
----
+**Significance**: Technical but institutionally important. Riksbank independence is a constitutional norm; evaluation recommendations carry significant weight.
 
-### Key Framing Battleground: HC01SfU22
+**Forward implication**: Riksbank rate path toward neutral (~2.0–2.25%) will reduce mortgage costs for Swedish homeowners — electoral positive for government base.
 
-The most contested framing battle is over HC01SfU22. The framing war has two dominant narratives:
-1. **Government/SD frame**: "Ordning och konsekvenser" — detention coercion = consequences for those who don't cooperate with deportation
-2. **Opposition frame**: "Mänskliga rättigheter är inte förhandlingsbara" — glass partitions = inhumane
+**Monitoring**: Riksbank next policy statement (July 2025); IMF Sweden Article IV (November 2025).
 
-```mermaid
-mindmap
-    root((SfU22 Media<br/>Framing Battleground))
-        Government Frame
-            Ordning och reda
-            Nödvändiga åtgärder
-            Effektivt återsändande
-        Opposition Frame
-            Mänskliga rättigheter
-            Glasrutor = omänsklighet
-            ECHR violation risk
-        SD Frame
-            Vi levererar
-            Tidö genomfört
-            Trygghet och ordning
-        Liberal Tension
-            Proportionalitet
-            Rättsstat
-            L internal debate
-```
+### HC01FiU33
+<!-- source: documents/HC01FiU33-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/documents/HC01FiU33-analysis.md -->
 
-**Intelligence assessment**: Under Scenario B, the framing battle over SfU22 will intensify as 2026 approaches. Opposition will tie SfU22 to any adverse ECtHR/court decision. Government/SD will continue "we deliver" narrative. Decisive framing arena: local election districts in Malmö and Stockholm suburbs where migration is most salient.
+**Document ID**: HC01FiU33 | **Committee**: Finansutskottet (FiU) | **Riksmöte**: 2024/25
+**Title**: Extra ändringsbudget — APL capital injection 700 MSEK
+**DIW Significance**: L3 (High) | **Priority Tier**: High | **Admiralty**: [A2]
+
+### Summary
+
+HC01FiU33 adopts an extra ändringsbudget providing 700 MSEK capital injection to APL (Apotek Produktion & Laboratorier), the state-owned pharmaceutical manufacturer. Adopted June 2025 via emergency procedure. Cross-party support.
+
+### Key Content
+
+- **Amount**: 700 MSEK one-time capital injection to APL AB
+- **Rationale**: National security and pharmaceutical resilience — APL produces medications not commercially viable for private manufacturers, critical for military and civil emergency preparedness
+- **Procedure**: Extra ändringsbudget bypasses normal budget timeline — justified by urgency of APL's financial situation
+- **State aid**: Government implicitly claims EU security/national interest exemption; no formal pre-notification confirmed
+- **Cross-party**: S, MP, V supported alongside government coalition — bipartisan on security grounds
+- **Monitoring**: No explicit performance benchmarks in betänkande text (intelligence gap flagged in devils-advocate.md)
+
+### Intelligence Assessment
+
+**Significance**: High. Pharmaceutical self-sufficiency is a genuine post-COVID/post-Russia-Ukraine national security priority. The Nordic context (NATO membership, Swedish Total Defence planning) provides additional strategic rationale.
+
+**Accountability gap**: Absence of performance benchmarks is a governance concern. APL should be required to demonstrate specific resilience metrics (stockpile levels, production capacity expansion) for the 700 MSEK investment to be justified.
+
+**Historical context**: APL's financial difficulties derive from the 2009 pharmacy market reform (Apoteksutredningen) which separated APL from Apoteket AB's profitable retail operations. HC01FiU33 partially corrects this structural imbalance.
+
+**Monitoring**: APL annual report 2025/2026 — presence/absence of performance metrics; EU Commission state-aid register; Nordic Pharmacy Resilience Working Group outcomes.
+
+### HC01SfU22
+<!-- source: documents/HC01SfU22-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/documents/HC01SfU22-analysis.md -->
+
+**Document ID**: HC01SfU22 | **Committee**: Socialförsäkringsutskottet (SfU) | **Riksmöte**: 2024/25
+**Title**: Coercive measures at Migrationsverket detention facilities — extension and expansion
+**DIW Significance**: L2+ (Very High) | **Priority Tier**: Critical | **Admiralty**: [A1]
+
+### Summary
+
+HC01SfU22 is the betänkande adopting the government's proposal to extend and expand coercive powers at Migrationsverket detention (förvar) facilities. Adopted June 2025. Core Tidö Agreement deliverable for SD.
+
+### Key Content
+
+- **Glass partitions as default**: Visitors to detained persons must meet through glass partitions as the default arrangement (reversal of previous "exceptional circumstances" framing)
+- **Room searches**: Expanded authority for Migrationsverket staff to conduct room searches without individualized suspicion
+- **Body searches**: Retention and expansion of body search powers at intake
+- **Duration extension**: Existing detention period extension provisions maintained
+- **Opposition reservations**: S/MP/V filed reservations on human rights grounds; cited ECHR Art.5, Art.8
+
+### Intelligence Assessment
+
+**Significance**: Highest-salience migration enforcement measure of the riksmöte. Central to SD's "Vi levererar" (We deliver) 2026 election narrative.
+
+**Legal durability**: Moderate (L3 — B3). Denmark operates similar measures without major ECtHR adverse ruling but Swedish legal environment more rights-cautious. ECtHR complaint probability: HIGH if civil society organisations mobilise (likely).
+
+**Coalition implication**: HC01SfU22 is the most concrete proof of concept that SD budget support mechanism works for SD's policy priorities. This creates path dependency — future SD demands will reference this precedent.
+
+**Monitoring**: JO detention facility inspections; ECHR admissibility; HFD referral; Lagrådet opinion (if retrospectively requested).
+
+### HC01SoU29
+<!-- source: documents/HC01SoU29-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/documents/HC01SoU29-analysis.md -->
+
+**Document ID**: HC01SoU29 | **Committee**: Socialutskottet (SoU) | **Riksmöte**: 2024/25
+**Title**: Fritidskort — national youth leisure voucher programme
+**DIW Significance**: L2 (Moderate-High) | **Priority Tier**: Moderate | **Admiralty**: [A2]
+
+### Summary
+
+HC01SoU29 adopts the fritidskort programme — a national voucher scheme providing children aged 6–15 from low-income families access to organised leisure and sports activities. Administered by E-hälsomyndigheten. Launch target: September 2025.
+
+### Key Content
+
+- **Target group**: Children aged 6–15 in households with limited economic resources
+- **Benefit**: Voucher (fritidskort) for use at registered sports clubs, arts organisations, outdoor activity providers
+- **Administration**: E-hälsomyndigheten assigned as national administrator; new IT registry required
+- **Funding**: Appropriated within HC01FiU20 spending envelope
+- **Scope**: Nationwide programme; municipal activity providers register with national system
+
+### Intelligence Assessment
+
+**Significance**: Moderate — this is a politically visible but operationally modest programme. It demonstrates the social dimension of the centre-right government (KD brand: "family policy"; coalition cohesion signal to L and C).
+
+**Implementation risk**: The critical operational risk is E-hälsomyndigheten IT system delivery by September 2025. E-hälsomyndigheten has historically had mixed IT delivery record. A delay would convert this electoral positive into a liability.
+
+**Electoral relevance**: Direct appeal to families with children — a 3/5 electoral impact measure. More important as symbolic "social face" of fiscal conservatism than for aggregate vote movement.
+
+**Statskontoret note**: High probability Statskontoret will be commissioned to evaluate fritidskort effectiveness in 2026 — track Statskontoret work programme announcements.
+
+**Monitoring**: E-hälsomyndigheten press releases (August/September 2025); municipal registration numbers; uptake statistics Q4 2025.
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/stakeholder-perspectives.md -->
@@ -479,6 +519,173 @@ mindmap
             ECtHR
             IMF
 ```
+
+## Coalition Mathematics
+<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/coalition-mathematics.md -->
+
+### Current Parliamentary Configuration (2022–2026)
+
+**Total seats**: 349 | **Majority threshold**: 175 seats
+
+| Bloc | Parties | Seats | Role |
+|------|---------|-------|------|
+| Government | M(68) + KD(19) + L(24) + C(24) | 135 | Governing |
+| Budget Support | SD | 73 | Pivotal — provides majority |
+| **Government Majority** | M+KD+L+C+SD | **208** | **Supermajority** |
+| Socialdemokraterna | S | 107 | Main opposition |
+| Environmental | MP | 18 | Minor opposition |
+| Left | V | 24 | Minor opposition |
+
+### Pivotal Vote Analysis
+
+#### For HC01FiU20 (Budget Framework Vote)
+Required majority: 175 seats minimum.
+
+Government bloc (135) + SD (73) = 208. Without SD: 135 — BELOW majority threshold.
+
+**SD is mathematically necessary for every budget vote.** Even if MP abstains (as per AU10 vote pattern where MP sometimes supports government), SD cannot be replaced.
+
+**Sensitivity**: Could government survive if SD splits (some abstain, some vote against)?
+- If 40 SD vote against and 33 abstain: Government gets 135 + 0 + potential MP = 135 + 18 (if MP supports) = 153 — FAILS
+- Government has zero margin without at least SD abstention (net neutral)
+
+#### For HC01SfU22 (Detention Powers — SfU Committee)
+Vote likely reflects the same coalition dynamic. SD votes YES (core demand). S/MP/V vote NO. C/L may have had internal debate on rights grounds but ultimately supported government position.
+
+AU10 vote pattern evidence (2025-05-14): M+C+MP=Ja, SD=Nej, S=Avstår — NOTE: this vote shows SD can vote *against* government on some matters while still maintaining overall budget support. This is consistent with SD's opposition role on specific labour-market issues while supporting migration/security agenda.
+
+#### Critical Threshold Analysis
+
+```mermaid
+xychart-beta
+    title "Coalition Seat Arithmetic (Current Parliament)"
+    x-axis ["M","S","SD","C","V","L","KD","MP"]
+    y-axis "Seats" 0 --> 115
+    bar [68, 107, 73, 24, 24, 24, 19, 18]
+```
+
+### Vote Table by Document (Best Available Data)
+
+| Document | Expected M | Expected KD | Expected L | Expected C | Expected SD | Expected S | Expected MP | Expected V |
+|----------|-----------|------------|-----------|-----------|------------|-----------|------------|-----------|
+| HC01FiU20 | Ja | Ja | Ja | Ja | Ja | Nej | Nej | Nej |
+| HC01FiU33 | Ja | Ja | Ja | Ja | Ja | Ja | Ja | Ja |
+| HC01SfU22 | Ja | Ja | Ja | Ja | Ja | Nej | Nej | Nej |
+| HC01FiU24 | Ja | Ja | Ja | Ja | Ja | Nej | Abstain | Nej |
+| HC01SoU29 | Ja | Ja | Ja | Ja | Ja | Ja | Ja | Ja |
+
+*Note: Vote data estimated from policy positions; full voteringar records unavailable for these specific betänkanden due to API retrieval limitation*
+
+### Minority Government Vulnerability Map
+
+**Scenario**: SD withdraws budget support.
+- Government majority: 135 seats — 40 seats short of threshold
+- Options: (1) New election; (2) Seek S abstention (unlikely); (3) Seek MP support (+18 = 153, still short)
+- **Conclusion**: Government mathematically cannot survive SD defection. This is the primary political risk.
+
+### Pivotal Party Leverage Formula
+
+SD's leverage = (Majority threshold − Government bloc seats) / SD seats
+= (175 − 135) / 73 = 40/73 = **55% of SD seats needed to fill the gap**
+
+This means SD can lose up to 33 MPs to internal dissension before its pivotal role weakens — a very comfortable margin. SD's organizational discipline means this risk is very low. [A2]
+
+## Voter Segmentation
+<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/voter-segmentation.md -->
+
+### Segmentation Framework
+
+Committee report portfolio impacts distributed across voter segments. Analysis identifies which segments are activated, mobilised, or demobilised by the 2024/25 betänkanden.
+
+### Demographic Segments
+
+#### Segment 1: Working-Age Employed (30–60)
+**Size**: ~2.5 million voters | **Party affiliation**: Split M/S/C/L
+
+**Policy impact**:
+- HC01FiU20: Wage growth constrained by lågkonjunktur; employment uncertainty at export-oriented firms
+- HC01FiU24: Lower mortgage rates (Riksbank cuts) provide direct benefit for homeowners in this segment
+- HC01SoU29: Fritidskort benefits children in this segment
+
+**Electoral activation**: MODERATE — economic anxiety activates some toward S; mortgage relief activates some toward government continuation. Net: slight demobilisation of decisive swing voters.
+
+**Admirable coding**: [B3]
+
+#### Segment 2: Retirees (65+)
+**Size**: ~1.8 million voters | **Party affiliation**: M/KD-leaning
+
+**Policy impact**:
+- HC01FiU20: Stable pensions (indexed) under fiscal discipline
+- HC01FiU33: APL supply security directly relevant (care facility medications)
+- HC01SfU22: Approve of stricter migration enforcement
+
+**Electoral activation**: HIGH for government base — APL and SfU22 both resonate strongly. This segment is disproportionately mobilised by migration and security messaging.
+
+#### Segment 3: Young Adults (18–30)
+**Size**: ~1.0 million voters | **Party affiliation**: MP/S/V-leaning
+
+**Policy impact**:
+- HC01FiU20: Rising unemployment disproportionately affects entry-level workers
+- HC01SfU22: Strong negative reaction among rights-conscious young voters
+- HC01SoU29: Fritidskort benefits their younger siblings; may positively influence family perception
+
+**Electoral activation**: HIGH for opposition — SfU22 rights concerns may mobilise MP and V base, particularly urban youth.
+
+#### Segment 4: Rural and Agricultural Communities
+**Size**: ~0.8 million voters | **Party affiliation**: C/SD-leaning
+
+**Policy impact**:
+- HC01TU15: Transport infrastructure — rural connectivity is key C platform
+- HC01FiU20: Trade impact on agricultural exports modest but relevant
+- HC01SfU22: Support for stricter migration enforcement in rural communities (SD strongholds)
+
+**Electoral activation**: MODERATE-HIGH for SD in rural; C may face squeeze from SD.
+
+#### Segment 5: Immigrant Communities and Asylum Seekers (non-voting but policy-affected)
+**Size**: ~0.5 million residents | Indirect electoral impact via advocacy
+
+**Policy impact**:
+- HC01SfU22: Direct and severe negative impact — glass partitions, room searches, coercive powers
+- HC01FiU20: Economic integration affected by lågkonjunktur
+
+**Electoral activation**: N/A (non-voting) but drives human rights advocacy that influences MP and V platforms. Media amplification effect significant.
+
+### Regional Segments
+
+| Region | Key Issue from Portfolio | Party Tendency | Electoral Relevance |
+|--------|-------------------------|----------------|---------------------|
+| Stockholm | Riksbank/mortgage rates (FiU24); employment (FiU20) | M/L/MP | High swing — many floating voters |
+| Gothenburg | Volvo/manufacturing tariff exposure (FiU20) | S/M split | High — large employer concentration |
+| Malmö | Migration policy (SfU22); social welfare (SoU29) | S/SD competition | Very high — pivotal regional battle |
+| Norrland/Rural | Transport (TU15); pharmaceutical supply (FiU33) | SD/C | High for SD consolidation |
+| University cities | Rights concerns (SfU22); climate-economy balance | MP/V/S | High for opposition mobilisation |
+
+### Segmentation Map
+
+```mermaid
+mindmap
+    root((Voter Segments<br/>Policy Impact))
+        Working-Age 30-60
+            Mortgage relief positive
+            Job anxiety negative
+            Swing votes critical
+        Retirees 65+
+            APL security positive
+            Migration control positive
+            Government base activated
+        Young Adults 18-30
+            SfU22 rights concern negative
+            Unemployment negative
+            Opposition base activated
+        Rural/Agricultural
+            SD-aligned SfU22 support
+            Transport TU15 demand
+            C squeeze by SD
+```
+
+### Key Intelligence Finding
+
+The 2024/25 portfolio has a polarising effect on the electorate. Measures that strengthen the government's base (SfU22 → retirees and rural SD voters; APL → all segments via security framing) simultaneously alienate progressive voters (SfU22 → young urban). This reflects a deliberate electoral strategy: shore up the coalition's existing voters rather than chase swing votes. The fritidskort (SoU29) is the only cross-cutting measure designed to appeal to swing parents. [B2]
 
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/forward-indicators.md -->
@@ -664,6 +871,65 @@ flowchart LR
 
 **Note**: Scenarios sum to 100%. Primary scenario is B (Strained Governance). All subsequent analysis in this report applies Scenario B assumptions unless otherwise stated. [A2 confidence]
 
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/election-2026-analysis.md -->
+
+### Electoral Context
+
+**Next election**: September 2026 (riksdagsval). Parliament size: 349 seats. 4% threshold for entry. Proportional representation (modified Sainte-Laguë). Government formation: negative parliamentarism (government stands unless voted down by majority).
+
+### Impact of Committee Report Portfolio on 2026 Election
+
+#### HC01FiU20 — Economic Record Framing
+The government's 2025/26 budget framework will become its primary electoral asset or liability. Under Scenario B (most likely, 45%), GDP growth of 1.0–1.5% and rising unemployment (9.5–10.0%) creates voter anxiety but not crisis.
+
+**Electoral implication**: S (Social Democrats) will campaign on "this government chose fiscal rules over jobs." Government will counter with "responsible management under external shock." Median voter decisive in this debate likely to be economically anxious but trusting of government stability over opposition promise.
+
+#### HC01SfU22 — Migration Enforcement as Electoral Wedge
+SfU22 is the clearest electoral wedge issue. Government/SD frame: "We delivered tough migration enforcement." Opposition frame: "Sweden is breaking human rights norms."
+
+**Electoral implication**: Unlikely to be decisive at aggregate level but may shift 1–2% of votes at the margin. More important for SD mobilisation than aggregate swing.
+
+#### HC01FiU33 (APL) and HC01SoU29 (Fritidskort)
+Both are modest positives for the government — bipartisan and socially visible.
+
+### Seat Projection (Scenario B Baseline)
+
+*Based on available polling trends and committee report electoral impacts. [C3 — uncertainty is high]*
+
+| Party | 2022 Seats | Projected 2026 (Scenario B) | Change | Notes |
+|-------|-----------|---------------------------|--------|-------|
+| M (Moderaterna) | 68 | 65–72 | ±5 | Fiscal credibility vs. unemployment |
+| KD (Kristdemokraterna) | 19 | 16–20 | ±2 | Stability risk — 4% threshold |
+| L (Liberalerna) | 24 | 20–25 | ±3 | SfU22 tension with liberal values |
+| C (Centerpartiet) | 24 | 22–26 | ±2 | Rural/agricultural policy focus |
+| **Government bloc** | **135** | **123–143** | | Requires SD support |
+| SD (Sverigedemokraterna) | 73 | 75–85 | +5–10 | Migration delivery strengthens brand |
+| S (Socialdemokraterna) | 107 | 100–110 | ±5 | Economic anxiety narrative |
+| MP (Miljöpartiet) | 18 | 15–20 | ±3 | Climate salience uncertain |
+| V (Vänsterpartiet) | 24 | 22–26 | ±2 | Opposition to SfU22 galvanises base |
+
+### Coalition Mathematics (Scenario B)
+
+```mermaid
+pie title Projected Seat Distribution (Scenario B midpoint)
+    "M+KD+L+C (Government)" : 133
+    "SD (Budget Support)" : 80
+    "S (Social Democrats)" : 105
+    "MP (Green)" : 17
+    "V (Left)" : 24
+```
+
+**Key finding**: Under Scenario B, M-KD-L-C retains government only with SD support. If SD gains seats (likely given SfU22 delivery), SD's leverage *increases* post-election. The government cannot form alternative majority without S, making SD structurally indispensable.
+
+**Alternative path**: If S enters as "tolerating" minority government in a new configuration (as in pre-2022 era), SD is excluded. Probability: 20% [C3].
+
+### Historical Baseline
+
+Sweden has had three consecutive elections (2014, 2018, 2022) where the right-wing bloc narrowly won or lost on migration/economic framing. 2026 will follow this pattern.
+
+**Precedent**: In 2022, M-KD-L-C won by 3 seats on migration platform. If underlying dynamics hold, similar outcome expected in 2026 — but SD seats likely higher.
+
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/risk-assessment.md -->
 
@@ -847,377 +1113,90 @@ flowchart TD
 | TTP-03 | Fiscal Leverage | SD conditions budget on migration reciprocity | HC01FiU20 coalition |
 | TTP-04 | Procedural Delay | Committee obstruction on fritidskort implementation regulations | HC01SoU29 |
 
-## Per-document intelligence
+## Historical Parallels
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/historical-parallels.md -->
 
-### HC01FiU20
-<!-- source: documents/HC01FiU20-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/documents/HC01FiU20-analysis.md -->
+### Case Selection
 
-**Document ID**: HC01FiU20 | **Committee**: Finansutskottet (FiU) | **Riksmöte**: 2024/25
-**Title**: Vårproposition — economic framework 2025/26
-**DIW Significance**: L3 (High) | **Priority Tier**: Critical | **Admiralty**: [A2]
+Three historical parallels selected based on structural similarity to current portfolio themes:
+1. Swedish fiscal response under external shock (HC01FiU20 parallel)
+2. Pivotal-party leverage dynamics (SD coalition dynamics parallel)
+3. Emergency state intervention in strategic sector (HC01FiU33 parallel)
 
-### Summary
+---
 
-HC01FiU20 is the primary vårproposition betänkande establishing Sweden's 2025/26 economic policy framework. Adopted June 2025. Constitutes the fundamental budget agreement between M-KD-L-C coalition and SD budget support partner.
+### Parallel 1: Sweden 2008–2010 Global Financial Crisis
 
-### Key Content
+**Period**: 2008–2010 (within 40-year window)
+**Relevance to**: HC01FiU20 (fiscal framework under external shock)
 
-- **GDP outlook**: Lågkonjunktur explicitly acknowledged; GDP growth 2024 ≈ 1.0%; 2025 outlook below potential
-- **External shock**: US tariff policy cited as primary negative factor — "osäkerhet och oförutsägbarhet kring handelspolitiken"
-- **Fiscal stance**: Government maintains expenditure ceiling; no major stimulus package; automatic stabilisers relied upon
-- **Riksbank complement**: Monetary policy (rate cuts) presented as primary adjustment instrument
-- **Forward revision**: Government acknowledges GDP and employment projections revised downward since höst 2024
+**What happened**:
+- Sweden experienced a sharp external demand shock from the global financial crisis in 2008–2009
+- The Reinfeldt centre-right government (M+FP+KD+C) maintained fiscal discipline while allowing automatic stabilisers to work
+- Sweden did NOT implement large-scale Keynesian stimulus despite having the fiscal space to do so
+- GDP fell approximately -5% in 2009, then recovered sharply to +6% in 2010
+- Sweden emerged from the crisis with strengthened fiscal credibility and amongst the fastest recoveries in Europe
 
-### Intelligence Assessment
+**Lessons for HC01FiU20**:
+- The 2008–2010 precedent directly supports the government's current approach of maintaining fiscal rules under the US tariff shock
+- The key variable that enabled fast recovery in 2010 was: (a) flexible exchange rate (SEK depreciation → export boost); (b) intact automatic stabilisers (unemployment benefits, sick pay)
+- If US tariff shock is 2025's equivalent of 2008 demand shock, SEK flexibility and Riksbank rate-cutting path provide same adjustment mechanism
 
-**Significance**: Sets the entire financial and economic context for all other betänkanden. The acknowledgement of lågkonjunktur creates electoral risk for the government if unemployment continues rising.
+**Key difference**: 2008 shock was primarily financial-sector-driven; 2025 shock is primarily trade-policy-driven. Trade policy shocks are more persistent (years vs. months for financial crisis response). This makes HC01FiU20's fiscal restraint slightly more fragile than 2008 analogue. [B2]
 
-**Coalition implication**: SD supported this framework (within Tidö Agreement parameters). If tariff shock deepens, mid-year revision in höstproposition 2025 may require new SD negotiation.
+---
 
-**Monitoring**: SCB Q1 2025 GDP flash estimate (May 2025); IMF Article IV consultation (November 2025).
+### Parallel 2: Moderaterna-SD Cooperation 2022 — Tidö Agreement
 
-### HC01FiU24
-<!-- source: documents/HC01FiU24-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/documents/HC01FiU24-analysis.md -->
+**Period**: 2022–present (within 40-year window)
+**Relevance to**: HC01SfU22 (SD leverage and coalition dynamics)
 
-**Document ID**: HC01FiU24 | **Committee**: Finansutskottet (FiU) | **Riksmöte**: 2024/25
-**Title**: Riksbank evaluation — monetary policy framework assessment
-**DIW Significance**: L2 (High) | **Priority Tier**: High | **Admiralty**: [A2]
+**What happened**:
+- October 2022: M-KD-L-C formed government with SD budget support under the "Tidö Agreement"
+- The Tidö Agreement committed the government to specific migration policy deliverables for SD
+- HC01SfU22 represents a major Tidö Agreement deliverable — stricter detention powers
 
-### Summary
+**Lessons**:
+- SD has consistently extracted concrete legislative deliverables in exchange for budget support
+- The glass-partition and room-search measures are part of a systematic programme of Tidö implementation
+- Historical pattern: SD does not defect on individual votes without escalation path — SD prefers to accumulate policy deliverables rather than cause premature elections
 
-HC01FiU24 is the Riksdag's formal evaluation of Riksbank monetary policy. Adopted June 2025. Based on independent review of Riksbank's rate decisions during 2022–2025 including the sharp rate increase cycle and subsequent rate cuts.
+**Comparison with the 2010 Decemberöverenskommelse (2014–2015)**:
+- The 2014 DÖ between S-government and M-KD-L-C (to allow minority S government to pass budget) shows the opposite approach — a passive support agreement without policy deliverables
+- Tidö model is more active (policy-based) than DÖ model (process-based)
+- This makes Tidö more stable in the short term but more demanding to maintain
 
-### Key Content
+---
 
-- **Key finding**: Riksbank over-relied on FX exchange rate as monetary transmission channel; SEK weakness was used as quasi-instrument
-- **Rate path**: Riksbank cut rates multiple times in 2024; policy rate reduced from ~4% toward neutral (estimated ~2.25%); evaluation endorses direction
-- **Communication**: Evaluation recommends clearer forward guidance on rate path to reduce market uncertainty
-- **Independence**: Riksbank independence affirmed; evaluation not critical of institutional framework established by 2022 Riksbank Act
-- **GDP context**: Monetary policy constrained by simultaneous supply-side (tariff) and demand-side (housing, investment) pressures
+### Parallel 3: Apoteksutredningen and Pharmacy Sector Reform 2009
 
-### Intelligence Assessment
+**Period**: 2009–2013 (within 40-year window)
+**Relevance to**: HC01FiU33 (APL state intervention in pharmaceutical sector)
 
-**Significance**: Technical but institutionally important. Riksbank independence is a constitutional norm; evaluation recommendations carry significant weight.
+**What happened**:
+- 2009: The centre-right Reinfeldt government ended Apoteket AB's monopoly on pharmacy retail in Sweden
+- 1,100 new private pharmacies opened (Kronans Apotek, Apotek Hjärtat, etc.)
+- APL (Apotek Produktion & Laboratorier) was separated from the retail Apoteket AB as a state-owned manufacturer
+- APL became the entity responsible for producing pharmaceuticals not commercially viable for private companies
 
-**Forward implication**: Riksbank rate path toward neutral (~2.0–2.25%) will reduce mortgage costs for Swedish homeowners — electoral positive for government base.
+**Lessons for HC01FiU33**:
+- APL's current financial difficulties are a *direct consequence* of the 2009 reform — when separated from the integrated Apoteket AB, APL lost the cross-subsidy from profitable retail operations
+- The 2025 HC01FiU33 capital injection of 700 MSEK is partially correcting an imbalance created by the 2009 reform
+- This context explains why opposition S/V support the APL injection despite generally opposing government — they (and their union base) supported Apoteket AB's integrated model
 
-**Monitoring**: Riksbank next policy statement (July 2025); IMF Sweden Article IV (November 2025).
+**Key insight**: The APL injection is not ideologically neutral; it represents a *partial reversal* of 2009 market liberalisation logic. The government is using security framing to avoid admitting that market liberalisation created pharmaceutical resilience gaps. [B2]
 
-### HC01FiU33
-<!-- source: documents/HC01FiU33-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/documents/HC01FiU33-analysis.md -->
+---
 
-**Document ID**: HC01FiU33 | **Committee**: Finansutskottet (FiU) | **Riksmöte**: 2024/25
-**Title**: Extra ändringsbudget — APL capital injection 700 MSEK
-**DIW Significance**: L3 (High) | **Priority Tier**: High | **Admiralty**: [A2]
+### Historical Summary Table
 
-### Summary
+| Parallel | Period | Relevance | Key Lesson |
+|----------|--------|-----------|------------|
+| 2008–2010 GFC | 2008–2010 | HC01FiU20 fiscal framework | Fiscal restraint + flexible FX = fast recovery |
+| Tidö Agreement | 2022–present | HC01SfU22 SD leverage | Policy-based support creates stronger but more demanding coalition |
+| Apoteksutredningen | 2009–2013 | HC01FiU33 APL intervention | 2025 APL injection partially corrects 2009 reform unintended consequences |
 
-HC01FiU33 adopts an extra ändringsbudget providing 700 MSEK capital injection to APL (Apotek Produktion & Laboratorier), the state-owned pharmaceutical manufacturer. Adopted June 2025 via emergency procedure. Cross-party support.
-
-### Key Content
-
-- **Amount**: 700 MSEK one-time capital injection to APL AB
-- **Rationale**: National security and pharmaceutical resilience — APL produces medications not commercially viable for private manufacturers, critical for military and civil emergency preparedness
-- **Procedure**: Extra ändringsbudget bypasses normal budget timeline — justified by urgency of APL's financial situation
-- **State aid**: Government implicitly claims EU security/national interest exemption; no formal pre-notification confirmed
-- **Cross-party**: S, MP, V supported alongside government coalition — bipartisan on security grounds
-- **Monitoring**: No explicit performance benchmarks in betänkande text (intelligence gap flagged in devils-advocate.md)
-
-### Intelligence Assessment
-
-**Significance**: High. Pharmaceutical self-sufficiency is a genuine post-COVID/post-Russia-Ukraine national security priority. The Nordic context (NATO membership, Swedish Total Defence planning) provides additional strategic rationale.
-
-**Accountability gap**: Absence of performance benchmarks is a governance concern. APL should be required to demonstrate specific resilience metrics (stockpile levels, production capacity expansion) for the 700 MSEK investment to be justified.
-
-**Historical context**: APL's financial difficulties derive from the 2009 pharmacy market reform (Apoteksutredningen) which separated APL from Apoteket AB's profitable retail operations. HC01FiU33 partially corrects this structural imbalance.
-
-**Monitoring**: APL annual report 2025/2026 — presence/absence of performance metrics; EU Commission state-aid register; Nordic Pharmacy Resilience Working Group outcomes.
-
-### HC01SfU22
-<!-- source: documents/HC01SfU22-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/documents/HC01SfU22-analysis.md -->
-
-**Document ID**: HC01SfU22 | **Committee**: Socialförsäkringsutskottet (SfU) | **Riksmöte**: 2024/25
-**Title**: Coercive measures at Migrationsverket detention facilities — extension and expansion
-**DIW Significance**: L2+ (Very High) | **Priority Tier**: Critical | **Admiralty**: [A1]
-
-### Summary
-
-HC01SfU22 is the betänkande adopting the government's proposal to extend and expand coercive powers at Migrationsverket detention (förvar) facilities. Adopted June 2025. Core Tidö Agreement deliverable for SD.
-
-### Key Content
-
-- **Glass partitions as default**: Visitors to detained persons must meet through glass partitions as the default arrangement (reversal of previous "exceptional circumstances" framing)
-- **Room searches**: Expanded authority for Migrationsverket staff to conduct room searches without individualized suspicion
-- **Body searches**: Retention and expansion of body search powers at intake
-- **Duration extension**: Existing detention period extension provisions maintained
-- **Opposition reservations**: S/MP/V filed reservations on human rights grounds; cited ECHR Art.5, Art.8
-
-### Intelligence Assessment
-
-**Significance**: Highest-salience migration enforcement measure of the riksmöte. Central to SD's "Vi levererar" (We deliver) 2026 election narrative.
-
-**Legal durability**: Moderate (L3 — B3). Denmark operates similar measures without major ECtHR adverse ruling but Swedish legal environment more rights-cautious. ECtHR complaint probability: HIGH if civil society organisations mobilise (likely).
-
-**Coalition implication**: HC01SfU22 is the most concrete proof of concept that SD budget support mechanism works for SD's policy priorities. This creates path dependency — future SD demands will reference this precedent.
-
-**Monitoring**: JO detention facility inspections; ECHR admissibility; HFD referral; Lagrådet opinion (if retrospectively requested).
-
-### HC01SoU29
-<!-- source: documents/HC01SoU29-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/documents/HC01SoU29-analysis.md -->
-
-**Document ID**: HC01SoU29 | **Committee**: Socialutskottet (SoU) | **Riksmöte**: 2024/25
-**Title**: Fritidskort — national youth leisure voucher programme
-**DIW Significance**: L2 (Moderate-High) | **Priority Tier**: Moderate | **Admiralty**: [A2]
-
-### Summary
-
-HC01SoU29 adopts the fritidskort programme — a national voucher scheme providing children aged 6–15 from low-income families access to organised leisure and sports activities. Administered by E-hälsomyndigheten. Launch target: September 2025.
-
-### Key Content
-
-- **Target group**: Children aged 6–15 in households with limited economic resources
-- **Benefit**: Voucher (fritidskort) for use at registered sports clubs, arts organisations, outdoor activity providers
-- **Administration**: E-hälsomyndigheten assigned as national administrator; new IT registry required
-- **Funding**: Appropriated within HC01FiU20 spending envelope
-- **Scope**: Nationwide programme; municipal activity providers register with national system
-
-### Intelligence Assessment
-
-**Significance**: Moderate — this is a politically visible but operationally modest programme. It demonstrates the social dimension of the centre-right government (KD brand: "family policy"; coalition cohesion signal to L and C).
-
-**Implementation risk**: The critical operational risk is E-hälsomyndigheten IT system delivery by September 2025. E-hälsomyndigheten has historically had mixed IT delivery record. A delay would convert this electoral positive into a liability.
-
-**Electoral relevance**: Direct appeal to families with children — a 3/5 electoral impact measure. More important as symbolic "social face" of fiscal conservatism than for aggregate vote movement.
-
-**Statskontoret note**: High probability Statskontoret will be commissioned to evaluate fritidskort effectiveness in 2026 — track Statskontoret work programme announcements.
-
-**Monitoring**: E-hälsomyndigheten press releases (August/September 2025); municipal registration numbers; uptake statistics Q4 2025.
-
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/election-2026-analysis.md -->
-
-### Electoral Context
-
-**Next election**: September 2026 (riksdagsval). Parliament size: 349 seats. 4% threshold for entry. Proportional representation (modified Sainte-Laguë). Government formation: negative parliamentarism (government stands unless voted down by majority).
-
-### Impact of Committee Report Portfolio on 2026 Election
-
-#### HC01FiU20 — Economic Record Framing
-The government's 2025/26 budget framework will become its primary electoral asset or liability. Under Scenario B (most likely, 45%), GDP growth of 1.0–1.5% and rising unemployment (9.5–10.0%) creates voter anxiety but not crisis.
-
-**Electoral implication**: S (Social Democrats) will campaign on "this government chose fiscal rules over jobs." Government will counter with "responsible management under external shock." Median voter decisive in this debate likely to be economically anxious but trusting of government stability over opposition promise.
-
-#### HC01SfU22 — Migration Enforcement as Electoral Wedge
-SfU22 is the clearest electoral wedge issue. Government/SD frame: "We delivered tough migration enforcement." Opposition frame: "Sweden is breaking human rights norms."
-
-**Electoral implication**: Unlikely to be decisive at aggregate level but may shift 1–2% of votes at the margin. More important for SD mobilisation than aggregate swing.
-
-#### HC01FiU33 (APL) and HC01SoU29 (Fritidskort)
-Both are modest positives for the government — bipartisan and socially visible.
-
-### Seat Projection (Scenario B Baseline)
-
-*Based on available polling trends and committee report electoral impacts. [C3 — uncertainty is high]*
-
-| Party | 2022 Seats | Projected 2026 (Scenario B) | Change | Notes |
-|-------|-----------|---------------------------|--------|-------|
-| M (Moderaterna) | 68 | 65–72 | ±5 | Fiscal credibility vs. unemployment |
-| KD (Kristdemokraterna) | 19 | 16–20 | ±2 | Stability risk — 4% threshold |
-| L (Liberalerna) | 24 | 20–25 | ±3 | SfU22 tension with liberal values |
-| C (Centerpartiet) | 24 | 22–26 | ±2 | Rural/agricultural policy focus |
-| **Government bloc** | **135** | **123–143** | | Requires SD support |
-| SD (Sverigedemokraterna) | 73 | 75–85 | +5–10 | Migration delivery strengthens brand |
-| S (Socialdemokraterna) | 107 | 100–110 | ±5 | Economic anxiety narrative |
-| MP (Miljöpartiet) | 18 | 15–20 | ±3 | Climate salience uncertain |
-| V (Vänsterpartiet) | 24 | 22–26 | ±2 | Opposition to SfU22 galvanises base |
-
-### Coalition Mathematics (Scenario B)
-
-```mermaid
-pie title Projected Seat Distribution (Scenario B midpoint)
-    "M+KD+L+C (Government)" : 133
-    "SD (Budget Support)" : 80
-    "S (Social Democrats)" : 105
-    "MP (Green)" : 17
-    "V (Left)" : 24
-```
-
-**Key finding**: Under Scenario B, M-KD-L-C retains government only with SD support. If SD gains seats (likely given SfU22 delivery), SD's leverage *increases* post-election. The government cannot form alternative majority without S, making SD structurally indispensable.
-
-**Alternative path**: If S enters as "tolerating" minority government in a new configuration (as in pre-2022 era), SD is excluded. Probability: 20% [C3].
-
-### Historical Baseline
-
-Sweden has had three consecutive elections (2014, 2018, 2022) where the right-wing bloc narrowly won or lost on migration/economic framing. 2026 will follow this pattern.
-
-**Precedent**: In 2022, M-KD-L-C won by 3 seats on migration platform. If underlying dynamics hold, similar outcome expected in 2026 — but SD seats likely higher.
-
-## Coalition Mathematics
-<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/coalition-mathematics.md -->
-
-### Current Parliamentary Configuration (2022–2026)
-
-**Total seats**: 349 | **Majority threshold**: 175 seats
-
-| Bloc | Parties | Seats | Role |
-|------|---------|-------|------|
-| Government | M(68) + KD(19) + L(24) + C(24) | 135 | Governing |
-| Budget Support | SD | 73 | Pivotal — provides majority |
-| **Government Majority** | M+KD+L+C+SD | **208** | **Supermajority** |
-| Socialdemokraterna | S | 107 | Main opposition |
-| Environmental | MP | 18 | Minor opposition |
-| Left | V | 24 | Minor opposition |
-
-### Pivotal Vote Analysis
-
-#### For HC01FiU20 (Budget Framework Vote)
-Required majority: 175 seats minimum.
-
-Government bloc (135) + SD (73) = 208. Without SD: 135 — BELOW majority threshold.
-
-**SD is mathematically necessary for every budget vote.** Even if MP abstains (as per AU10 vote pattern where MP sometimes supports government), SD cannot be replaced.
-
-**Sensitivity**: Could government survive if SD splits (some abstain, some vote against)?
-- If 40 SD vote against and 33 abstain: Government gets 135 + 0 + potential MP = 135 + 18 (if MP supports) = 153 — FAILS
-- Government has zero margin without at least SD abstention (net neutral)
-
-#### For HC01SfU22 (Detention Powers — SfU Committee)
-Vote likely reflects the same coalition dynamic. SD votes YES (core demand). S/MP/V vote NO. C/L may have had internal debate on rights grounds but ultimately supported government position.
-
-AU10 vote pattern evidence (2025-05-14): M+C+MP=Ja, SD=Nej, S=Avstår — NOTE: this vote shows SD can vote *against* government on some matters while still maintaining overall budget support. This is consistent with SD's opposition role on specific labour-market issues while supporting migration/security agenda.
-
-#### Critical Threshold Analysis
-
-```mermaid
-xychart-beta
-    title "Coalition Seat Arithmetic (Current Parliament)"
-    x-axis ["M","S","SD","C","V","L","KD","MP"]
-    y-axis "Seats" 0 --> 115
-    bar [68, 107, 73, 24, 24, 24, 19, 18]
-```
-
-### Vote Table by Document (Best Available Data)
-
-| Document | Expected M | Expected KD | Expected L | Expected C | Expected SD | Expected S | Expected MP | Expected V |
-|----------|-----------|------------|-----------|-----------|------------|-----------|------------|-----------|
-| HC01FiU20 | Ja | Ja | Ja | Ja | Ja | Nej | Nej | Nej |
-| HC01FiU33 | Ja | Ja | Ja | Ja | Ja | Ja | Ja | Ja |
-| HC01SfU22 | Ja | Ja | Ja | Ja | Ja | Nej | Nej | Nej |
-| HC01FiU24 | Ja | Ja | Ja | Ja | Ja | Nej | Abstain | Nej |
-| HC01SoU29 | Ja | Ja | Ja | Ja | Ja | Ja | Ja | Ja |
-
-*Note: Vote data estimated from policy positions; full voteringar records unavailable for these specific betänkanden due to API retrieval limitation*
-
-### Minority Government Vulnerability Map
-
-**Scenario**: SD withdraws budget support.
-- Government majority: 135 seats — 40 seats short of threshold
-- Options: (1) New election; (2) Seek S abstention (unlikely); (3) Seek MP support (+18 = 153, still short)
-- **Conclusion**: Government mathematically cannot survive SD defection. This is the primary political risk.
-
-### Pivotal Party Leverage Formula
-
-SD's leverage = (Majority threshold − Government bloc seats) / SD seats
-= (175 − 135) / 73 = 40/73 = **55% of SD seats needed to fill the gap**
-
-This means SD can lose up to 33 MPs to internal dissension before its pivotal role weakens — a very comfortable margin. SD's organizational discipline means this risk is very low. [A2]
-
-## Voter Segmentation
-<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/voter-segmentation.md -->
-
-### Segmentation Framework
-
-Committee report portfolio impacts distributed across voter segments. Analysis identifies which segments are activated, mobilised, or demobilised by the 2024/25 betänkanden.
-
-### Demographic Segments
-
-#### Segment 1: Working-Age Employed (30–60)
-**Size**: ~2.5 million voters | **Party affiliation**: Split M/S/C/L
-
-**Policy impact**:
-- HC01FiU20: Wage growth constrained by lågkonjunktur; employment uncertainty at export-oriented firms
-- HC01FiU24: Lower mortgage rates (Riksbank cuts) provide direct benefit for homeowners in this segment
-- HC01SoU29: Fritidskort benefits children in this segment
-
-**Electoral activation**: MODERATE — economic anxiety activates some toward S; mortgage relief activates some toward government continuation. Net: slight demobilisation of decisive swing voters.
-
-**Admirable coding**: [B3]
-
-#### Segment 2: Retirees (65+)
-**Size**: ~1.8 million voters | **Party affiliation**: M/KD-leaning
-
-**Policy impact**:
-- HC01FiU20: Stable pensions (indexed) under fiscal discipline
-- HC01FiU33: APL supply security directly relevant (care facility medications)
-- HC01SfU22: Approve of stricter migration enforcement
-
-**Electoral activation**: HIGH for government base — APL and SfU22 both resonate strongly. This segment is disproportionately mobilised by migration and security messaging.
-
-#### Segment 3: Young Adults (18–30)
-**Size**: ~1.0 million voters | **Party affiliation**: MP/S/V-leaning
-
-**Policy impact**:
-- HC01FiU20: Rising unemployment disproportionately affects entry-level workers
-- HC01SfU22: Strong negative reaction among rights-conscious young voters
-- HC01SoU29: Fritidskort benefits their younger siblings; may positively influence family perception
-
-**Electoral activation**: HIGH for opposition — SfU22 rights concerns may mobilise MP and V base, particularly urban youth.
-
-#### Segment 4: Rural and Agricultural Communities
-**Size**: ~0.8 million voters | **Party affiliation**: C/SD-leaning
-
-**Policy impact**:
-- HC01TU15: Transport infrastructure — rural connectivity is key C platform
-- HC01FiU20: Trade impact on agricultural exports modest but relevant
-- HC01SfU22: Support for stricter migration enforcement in rural communities (SD strongholds)
-
-**Electoral activation**: MODERATE-HIGH for SD in rural; C may face squeeze from SD.
-
-#### Segment 5: Immigrant Communities and Asylum Seekers (non-voting but policy-affected)
-**Size**: ~0.5 million residents | Indirect electoral impact via advocacy
-
-**Policy impact**:
-- HC01SfU22: Direct and severe negative impact — glass partitions, room searches, coercive powers
-- HC01FiU20: Economic integration affected by lågkonjunktur
-
-**Electoral activation**: N/A (non-voting) but drives human rights advocacy that influences MP and V platforms. Media amplification effect significant.
-
-### Regional Segments
-
-| Region | Key Issue from Portfolio | Party Tendency | Electoral Relevance |
-|--------|-------------------------|----------------|---------------------|
-| Stockholm | Riksbank/mortgage rates (FiU24); employment (FiU20) | M/L/MP | High swing — many floating voters |
-| Gothenburg | Volvo/manufacturing tariff exposure (FiU20) | S/M split | High — large employer concentration |
-| Malmö | Migration policy (SfU22); social welfare (SoU29) | S/SD competition | Very high — pivotal regional battle |
-| Norrland/Rural | Transport (TU15); pharmaceutical supply (FiU33) | SD/C | High for SD consolidation |
-| University cities | Rights concerns (SfU22); climate-economy balance | MP/V/S | High for opposition mobilisation |
-
-### Segmentation Map
-
-```mermaid
-mindmap
-    root((Voter Segments<br/>Policy Impact))
-        Working-Age 30-60
-            Mortgage relief positive
-            Job anxiety negative
-            Swing votes critical
-        Retirees 65+
-            APL security positive
-            Migration control positive
-            Government base activated
-        Young Adults 18-30
-            SfU22 rights concern negative
-            Unemployment negative
-            Opposition base activated
-        Rural/Agricultural
-            SD-aligned SfU22 support
-            Transport TU15 demand
-            C squeeze by SD
-```
-
-### Key Intelligence Finding
-
-The 2024/25 portfolio has a polarising effect on the electorate. Measures that strengthen the government's base (SfU22 → retirees and rural SD voters; APL → all segments via security framing) simultaneously alienate progressive voters (SfU22 → young urban). This reflects a deliberate electoral strategy: shore up the coalition's existing voters rather than chase swing votes. The fritidskort (SoU29) is the only cross-cutting measure designed to appeal to swing parents. [B2]
+**Intelligence synthesis**: All three historical parallels reinforce the dominant hypothesis (H-MAIN in devils-advocate.md) — the government is operating on precedent and consistent logic. However, each parallel also identifies a structural tension: fiscal recovery requires FX adjustment that Riksbank must deliver (linked to FiU24); SD leverage creates policy hostage dynamics; APL reflects market reform reversal that the government cannot openly acknowledge.
 
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/comparative-international.md -->
@@ -1311,91 +1290,6 @@ xychart-beta
     y-axis "Strictness Score" 1 --> 5
     bar [5, 4, 4, 3]
 ```
-
-## Historical Parallels
-<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/historical-parallels.md -->
-
-### Case Selection
-
-Three historical parallels selected based on structural similarity to current portfolio themes:
-1. Swedish fiscal response under external shock (HC01FiU20 parallel)
-2. Pivotal-party leverage dynamics (SD coalition dynamics parallel)
-3. Emergency state intervention in strategic sector (HC01FiU33 parallel)
-
----
-
-### Parallel 1: Sweden 2008–2010 Global Financial Crisis
-
-**Period**: 2008–2010 (within 40-year window)
-**Relevance to**: HC01FiU20 (fiscal framework under external shock)
-
-**What happened**:
-- Sweden experienced a sharp external demand shock from the global financial crisis in 2008–2009
-- The Reinfeldt centre-right government (M+FP+KD+C) maintained fiscal discipline while allowing automatic stabilisers to work
-- Sweden did NOT implement large-scale Keynesian stimulus despite having the fiscal space to do so
-- GDP fell approximately -5% in 2009, then recovered sharply to +6% in 2010
-- Sweden emerged from the crisis with strengthened fiscal credibility and amongst the fastest recoveries in Europe
-
-**Lessons for HC01FiU20**:
-- The 2008–2010 precedent directly supports the government's current approach of maintaining fiscal rules under the US tariff shock
-- The key variable that enabled fast recovery in 2010 was: (a) flexible exchange rate (SEK depreciation → export boost); (b) intact automatic stabilisers (unemployment benefits, sick pay)
-- If US tariff shock is 2025's equivalent of 2008 demand shock, SEK flexibility and Riksbank rate-cutting path provide same adjustment mechanism
-
-**Key difference**: 2008 shock was primarily financial-sector-driven; 2025 shock is primarily trade-policy-driven. Trade policy shocks are more persistent (years vs. months for financial crisis response). This makes HC01FiU20's fiscal restraint slightly more fragile than 2008 analogue. [B2]
-
----
-
-### Parallel 2: Moderaterna-SD Cooperation 2022 — Tidö Agreement
-
-**Period**: 2022–present (within 40-year window)
-**Relevance to**: HC01SfU22 (SD leverage and coalition dynamics)
-
-**What happened**:
-- October 2022: M-KD-L-C formed government with SD budget support under the "Tidö Agreement"
-- The Tidö Agreement committed the government to specific migration policy deliverables for SD
-- HC01SfU22 represents a major Tidö Agreement deliverable — stricter detention powers
-
-**Lessons**:
-- SD has consistently extracted concrete legislative deliverables in exchange for budget support
-- The glass-partition and room-search measures are part of a systematic programme of Tidö implementation
-- Historical pattern: SD does not defect on individual votes without escalation path — SD prefers to accumulate policy deliverables rather than cause premature elections
-
-**Comparison with the 2010 Decemberöverenskommelse (2014–2015)**:
-- The 2014 DÖ between S-government and M-KD-L-C (to allow minority S government to pass budget) shows the opposite approach — a passive support agreement without policy deliverables
-- Tidö model is more active (policy-based) than DÖ model (process-based)
-- This makes Tidö more stable in the short term but more demanding to maintain
-
----
-
-### Parallel 3: Apoteksutredningen and Pharmacy Sector Reform 2009
-
-**Period**: 2009–2013 (within 40-year window)
-**Relevance to**: HC01FiU33 (APL state intervention in pharmaceutical sector)
-
-**What happened**:
-- 2009: The centre-right Reinfeldt government ended Apoteket AB's monopoly on pharmacy retail in Sweden
-- 1,100 new private pharmacies opened (Kronans Apotek, Apotek Hjärtat, etc.)
-- APL (Apotek Produktion & Laboratorier) was separated from the retail Apoteket AB as a state-owned manufacturer
-- APL became the entity responsible for producing pharmaceuticals not commercially viable for private companies
-
-**Lessons for HC01FiU33**:
-- APL's current financial difficulties are a *direct consequence* of the 2009 reform — when separated from the integrated Apoteket AB, APL lost the cross-subsidy from profitable retail operations
-- The 2025 HC01FiU33 capital injection of 700 MSEK is partially correcting an imbalance created by the 2009 reform
-- This context explains why opposition S/V support the APL injection despite generally opposing government — they (and their union base) supported Apoteket AB's integrated model
-
-**Key insight**: The APL injection is not ideologically neutral; it represents a *partial reversal* of 2009 market liberalisation logic. The government is using security framing to avoid admitting that market liberalisation created pharmaceutical resilience gaps. [B2]
-
----
-
-### Historical Summary Table
-
-| Parallel | Period | Relevance | Key Lesson |
-|----------|--------|-----------|------------|
-| 2008–2010 GFC | 2008–2010 | HC01FiU20 fiscal framework | Fiscal restraint + flexible FX = fast recovery |
-| Tidö Agreement | 2022–present | HC01SfU22 SD leverage | Policy-based support creates stronger but more demanding coalition |
-| Apoteksutredningen | 2009–2013 | HC01FiU33 APL intervention | 2025 APL injection partially corrects 2009 reform unintended consequences |
-
-**Intelligence synthesis**: All three historical parallels reinforce the dominant hypothesis (H-MAIN in devils-advocate.md) — the government is operating on precedent and consistent logic. However, each parallel also identifies a structural tension: fiscal recovery requires FX adjustment that Riksbank must deliver (linked to FiU24); SD leverage creates policy hostage dynamics; APL reflects market reform reversal that the government cannot openly acknowledge.
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/implementation-feasibility.md -->
@@ -1510,6 +1404,112 @@ xychart-beta
 | HC01SfU22 | MOD-HIGH | ECHR/ECtHR legal challenge + facility retrofit | Possible if JO investigation |
 | HC01SoU29 | MOD-HIGH | E-hälsomyndigheten IT delivery | HIGH — new programme eligible for evaluation |
 | HC01FiU24 | VERY HIGH | None significant | None |
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/media-framing-analysis.md -->
+
+### Frame Analysis Framework
+
+Media framing analysis examines: (1) Party press releases and spokesperson statements; (2) Editorial positioning of major Swedish press; (3) Social media amplification patterns.
+
+*Note: Direct media monitoring was not conducted in this analytical run. Frames inferred from parliamentary debate positions, betänkande reservations, and established party communication patterns. [C3 caveat applies to all press-specific claims.]*
+
+---
+
+### Party Communication Frames
+
+#### M (Moderaterna) — Government Leader
+**Primary frame**: "Ansvarsfull krishantering" (Responsible crisis management)
+- On HC01FiU20: "Vi håller i ekonomin under externt tryck" (We're managing the economy under external pressure)
+- On HC01FiU33: "Sverige ska inte vara beroende av utländsk läkemedelstillverkning i krig" (National pharmaceutical resilience)
+- On HC01SfU22: Frame ceded to SD — M presents as "ordning och reda i mottagningssystemet" (Order and rule in the reception system)
+- On HC01SoU29: Minimal — delegated to KD as social policy lead
+
+**Dominant metaphor**: Government as responsible captain in storm (external tariff shock)
+
+#### KD (Kristdemokraterna)
+**Primary frame**: "Trygg familjepolitik" (Secure family policy)
+- On HC01SoU29: "Fritidskortet ger familjer verktyg att ge sina barn rika upplevelser" (Fritidskort gives families tools)
+- On HC01SfU22: "Ordning i asylsystemet är förutsättningen för generositet" (Order in asylum system is a precondition for generosity)
+
+#### L (Liberalerna)
+**Primary frame**: Ambivalent — tension between migration enforcement and liberal rights values
+- On HC01SfU22: Internal tension; some L MPs likely uncomfortable with glass-partition default
+- L will frame as "Proportionella åtgärder inom rättsstatens ramar" (Proportional measures within rule of law)
+- **Risk**: L faces credibility challenge if ECtHR ruling comes — their rights-liberal brand vs. coalition discipline
+
+#### C (Centerpartiet)
+**Primary frame**: Rural/green liberalism; anti-centralism
+- On HC01FiU20: "Handelspolitiken hotar landsbygdsföretagare" (Trade policy threatens rural entrepreneurs)
+- On HC01TU15: Infrastructure and connectivity for rural Sweden
+- On HC01SfU22: Subdued — C has rural SD-adjacent voters who approve migration enforcement
+
+#### SD (Sverigedemokraterna)
+**Primary frame**: "Vi levererar" (We deliver)
+- On HC01SfU22: "Nu skärper vi regelverket för asylsökande i förvar" (We're tightening the framework) — direct delivery claim
+- On HC01FiU33: "Sverige ska aldrig stå utan mediciner i krig" (National resilience)
+- On HC01FiU20: "Svaga ekonomin är en konsekvens av migrationskostnader" (Economic weakness due to migration costs) — contested but within SD narrative
+
+#### S (Socialdemokraterna) — Main Opposition
+**Primary frame**: "Regeringen sviker de utsatta" (Government abandons the vulnerable)
+- On HC01FiU20: "De rätta verktygen: investeringar i jobb, inte åtstramning" (Investment in jobs, not austerity)
+- On HC01SfU22: "Sverige bryter mot mänskliga rättigheter" (Sweden is violating human rights)
+- On HC01SoU29: "Vi välkomnar fritidskortet men det räcker inte" (Welcome but insufficient)
+- **Counter-frame**: S will try to link rising unemployment (HC01FiU20 acknowledgement) to government austerity — may gain traction under Scenario B
+
+#### MP (Miljöpartiet)
+**Primary frame**: "Klimat och mänskliga rättigheter hänger ihop" (Climate and human rights are linked)
+- On HC01SfU22: Strongest opposition voice alongside V — "Glasrutor är omänskligt" (Glass partitions are inhuman)
+- On HC01SoU29: Support — fritidskort aligns with outdoor activity promotion
+
+#### V (Vänsterpartiet)
+**Primary frame**: "För vanliga familjer, mot storbusiness" (For ordinary families, against big business)
+- On HC01FiU20: "Krisinvesteringar, inte skattesänkningar till de rika" (Crisis investments, not tax cuts)
+- On HC01SfU22: "Detentionssystemet kränker grundläggande rättigheter" (Detention system violates basic rights)
+
+---
+
+### Press Editorial Positioning
+
+| Publication | Lean | Expected Frame |
+|-------------|------|----------------|
+| Dagens Nyheter (DN) | Centre-right liberal | Critical of SfU22 rights dimension; supportive of FiU20 fiscal discipline |
+| Sydsvenskan | Centre-right | Similar to DN; Malmö migration focus |
+| Aftonbladet | Centre-left | Opposition frame dominant; APL as "räddning" for healthcare workers |
+| Expressen | Liberal-right | Supportive of government; sceptical of S alternative |
+| Svenska Dagbladet (SvD) | Centre-right | Nuanced; Riksbank independence (FiU24) receives analytical coverage |
+| Göteborgs-Posten | Centre-right | Volvo/employment angle on FiU20 tariff exposure |
+
+---
+
+### Key Framing Battleground: HC01SfU22
+
+The most contested framing battle is over HC01SfU22. The framing war has two dominant narratives:
+1. **Government/SD frame**: "Ordning och konsekvenser" — detention coercion = consequences for those who don't cooperate with deportation
+2. **Opposition frame**: "Mänskliga rättigheter är inte förhandlingsbara" — glass partitions = inhumane
+
+```mermaid
+mindmap
+    root((SfU22 Media<br/>Framing Battleground))
+        Government Frame
+            Ordning och reda
+            Nödvändiga åtgärder
+            Effektivt återsändande
+        Opposition Frame
+            Mänskliga rättigheter
+            Glasrutor = omänsklighet
+            ECHR violation risk
+        SD Frame
+            Vi levererar
+            Tidö genomfört
+            Trygghet och ordning
+        Liberal Tension
+            Proportionalitet
+            Rättsstat
+            L internal debate
+```
+
+**Intelligence assessment**: Under Scenario B, the framing battle over SfU22 will intensify as 2026 approaches. Opposition will tie SfU22 to any adverse ECtHR/court decision. Government/SD will continue "we deliver" narrative. Decisive framing arena: local election districts in Malmö and Stockholm suburbs where migration is most salient.
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/devils-advocate.md -->
@@ -1905,24 +1905,24 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/threat-analysis.md)
 - [`documents/HC01FiU20-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/documents/HC01FiU20-analysis.md)
 - [`documents/HC01FiU24-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/documents/HC01FiU24-analysis.md)
 - [`documents/HC01FiU33-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/documents/HC01FiU33-analysis.md)
 - [`documents/HC01SfU22-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/documents/HC01SfU22-analysis.md)
 - [`documents/HC01SoU29-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/documents/HC01SoU29-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/committeeReports/cross-reference-map.md)

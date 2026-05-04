@@ -5,7 +5,7 @@ date: 2026-04-27
 subfolder: interpellations
 slug: 2026-04-27-interpellations
 source_folder: analysis/daily/2026-04-27/interpellations
-generated_at: 2026-05-04T09:52:32.382Z
+generated_at: 2026-05-04T12:16:14.078Z
 language: en
 layout: article
 ---
@@ -75,10 +75,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -329,612 +329,6 @@ graph LR
     style F fill:#1a1e3d,color:#e0e0e0
     style G fill:#1a1e3d,color:#e0e0e0
 ```
-
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/media-framing-analysis.md -->
-
----
-
-### Framing Overview
-
-Political actors present the same policy reality through different narrative frames. This analysis examines how each party/actor would likely frame the four interpellations in their communications.
-
----
-
-### Per-Party Framing Analysis
-
-#### HD10448 — Disinformation and Wind Power
-
-| Actor | Frame | Key Message | Media Channel |
-|---|---|---|---|
-| SD (Fransson) | "Information suppression" | "The government is calling legitimate policy criticism Russian disinformation" | SD.se, social media, Avpixlat |
-| KD (Busch) | "Security of supply" | "Energy reliability requires all sources; we will not be distracted by disinformation about disinformation" | Press releases, TV debates |
-| S (Opposition) | "Coalition fracture" | "The government's own support partner doesn't trust the energy minister" | Aftonbladet, SVT |
-| Windeurope | "Facts vs. disinformation" | "Our report documents Russian-linked campaigns — this is not about domestic policy debate" | EU media, industry press |
-
-#### HD10449 — Södra stambanan / Railways
-
-| Actor | Frame | Key Message | Media Channel |
-|---|---|---|---|
-| S (Olesen) | "Broken promise" | "The government promised infrastructure, removed it — businesses have already lost" | Regional media (Kronoberg), Expressen |
-| M/Carlson | "Responsible prioritization" | "We are managing a constrained budget; all regions get their fair share over time" | Sydsvenskan, government press |
-| Regional business | "Investment uncertainty" | "We can't plan for growth when the state changes infrastructure commitments every planning cycle" | Skånskt Näringsliv, Chamber of Commerce |
-
-#### HD10450+HD10447 — Social Insurance
-
-| Actor | Frame | Key Message | Media Channel |
-|---|---|---|---|
-| S (Rodén, Lundqvist) | "Punishing the sick" | "The government repealed a program that independent experts said works, to pay for tax cuts" | LO media, Aftonbladet, SVT |
-| M (Tenje) | "Work-first policy" | "We believe in work capacity, not extended passive absence; costs must be managed" | Government press releases, GP |
-| Employer associations | "Increased burden" | "Government said they would reduce employer obligations; sick-pay costs went the other way" | DI, Veckans Affärer |
-| Healthcare professionals | "Clinical judgment overridden" | "We know when patients can return to work; bureaucratic rules ignore medical expertise" | Läkartidningen, SR Ekot |
-
----
-
-### Press Quadrant Analysis
-
-Classification of likely media outlets by partisan lean and audience:
-
-```
-                    Pro-Government ←→ Pro-Opposition
-                                |
-                    Broadsheet  |  Broadsheet
-                    ↑           |           ↑
-         Svenska Dagbladet      |       Aftonbladet
-         (right-center)         |       (left-center)
-         Dagens Industri        |       Expressen (varies)
-                                |
-         ----------------Tabloid|Tabloid-------------------
-                                |
-         Kvällsposten (SD-lean)  |       Metro (left-lean)
-         ↓                      |           ↓
-                    Partisan    |  Partisan
-```
-
-**HD10448 Press Quadrant**: SD-leaning tabloid media will amplify the "information suppression" frame; left-broadsheet will use the "coalition fracture" frame; mainstream broadsheet will report on Windeurope findings.
-
-**HD10449 Press Quadrant**: Regional southern Swedish media (Sydsvenskan, Kvällsposten) will give highest prominence; both may be critical of infrastructure removal. National media treats as regional story unless Carlson's response is surprising.
-
-**HD10450/HD10447 Press Quadrant**: Left-leaning media will amplify with personal stories; employer associations provide DI/business press angle. Healthcare professional voices will gain SR/public broadcaster coverage.
-
----
-
-### Narrative Momentum Assessment
-
-| Interpellation | Current Momentum | Trajectory | Trigger for Escalation |
-|---|---|---|---|
-| HD10448 | MEDIUM | Declining unless response escalates | Busch dismisses SD concerns explicitly |
-| HD10449 | MEDIUM | Sustained through election | Any additional infrastructure removal |
-| HD10450 | LOW-MEDIUM | Growing with Riksrevisionen citations | Government rejects Riksrevisionen findings |
-| HD10447 | LOW | Sustained by employer criticism | Business association sustained campaign |
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
-xychart-beta
-    title "Narrative Momentum: Current vs. Projected Election (1-10)"
-    x-axis ["HD10448 Wind", "HD10449 Rail", "HD10450 Day-180", "HD10447 Sick Pay"]
-    y-axis "Momentum Score" 0 --> 10
-    bar [5, 6, 5, 4]
-    line [4, 7, 7, 6]
-```
-
-*Bar = current momentum. Line = projected election-period momentum.*
-
-## Stakeholder Perspectives
-<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/stakeholder-perspectives.md -->
-
----
-
-### 6-Lens Stakeholder Matrix
-
-#### Lens 1 — Direct Political Actors
-
-| Stakeholder | Role | Position | Interest | Influence | Evidence |
-|-------------|------|----------|----------|-----------|----------|
-| Robert Olesen (S) | Interpellant HD10449 | Pro-railway investment | Regional development Kronoberg | Medium | HD10449 `[A2]` |
-| Jessica Rodén (S) | Interpellant HD10450 | Defend day-180 exception | Worker protection | Medium | HD10450 `[A2]` |
-| Josef Fransson (SD) | Interpellant HD10448 | Wind energy skeptic | Energy policy alignment with SD voters | High | HD10448 `[B2]` |
-| Patrik Lundqvist (S) | Interpellant HD10447 | Pro-SME sick-pay support | SME employment | Medium | HD10447 `[A2]` |
-| **Andreas Carlson (KD)** | Infrastruktur- och bostadsminister | Defend Trafikverket plan | Government credibility | High | HD10449 |
-| **Anna Tenje (M)** | Äldre- och socialförsäkringsminister | Protect social insurance reforms | Government policy | High | HD10450 |
-| **Ebba Busch (KD)** | Energi- och näringsminister | Defend energy policy | Coalition cohesion + energy security | Very High | HD10448, HD10447 |
-| Elisabeth Svantesson (M) | Finansminister | Macroeconomic narrative | Fiscal credibility | High | HD10444, HD10446 |
-
-#### Lens 2 — Civil Society and Affected Communities
-
-| Stakeholder | Interest | Affected by |
-|-------------|----------|------------|
-| Kronoberg/Skåne municipalities | Railway investment commitments | HD10449 |
-| Regional businesses (Sydsverige) | Infrastructure for labor market integration | HD10449 |
-| SME employers nationally | Sick-pay cost burden | HD10447 |
-| Sick employees at day-180 threshold | Continued job protection | HD10450 |
-
-#### Lens 3 — Media and Information Environment
-
-| Actor | Role | Effect |
-|-------|------|--------|
-| Sveriges Radio | Amplified Windeurope report | Framed wind energy debate as disinformation issue |
-| Windeurope | Industry association | Published report labeling wind skeptics as "disinformation spreaders" |
-| Swedish press (Expressen, SVT) | Expected coverage | HD10448 and HD10449 most newsworthy |
-
-#### Lens 4 — Institutional Actors
-
-| Institution | Role | Notes |
-|-------------|------|-------|
-| Trafikverket | National transport planning authority | Produced new plan removing Södra stambanan investments |
-| Riksrevisionen | Independent audit authority | Positively evaluated day-180 exception (cited in HD10450) |
-| Riksdagen (speaker/calendar) | Procedural | HD10448 announced 2026-04-27 |
-
-#### Lens 5 — Electoral Stakeholders
-
-| Group | Concern | Linked Interpellation |
-|-------|---------|----------------------|
-| Southern Swedish voters (Kronoberg, Skåne) | Infrastructure investment | HD10449 |
-| Workers near sick insurance threshold | Welfare protection | HD10450 |
-| Small business owners | Operational cost risk | HD10447 |
-| Energy-sector workers + environmentalists | Energy policy direction | HD10448 |
-
-#### Lens 6 — Influence Network
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'background': '#0a0e27'}}}%%
-graph LR
-    Fransson["Josef Fransson SD"] -->|HD10448| Busch["Ebba Busch KD<br/>(Energy Minister)"]
-    Olesen["Robert Olesen S"] -->|HD10449| Carlson["Andreas Carlson KD<br/>(Infrastructure Minister)"]
-    Roden["Jessica Rodén S"] -->|HD10450| Tenje["Anna Tenje M<br/>(Social Insurance)"]
-    Lundqvist["Patrik Lundqvist S"] -->|HD10447| Busch
-    Windeurope["Windeurope Report"] -->|via SR| Fransson
-    Riksrevisionen["Riksrevisionen"] -->|evidence| Roden
-    Trafikverket["Trafikverket"] -->|new plan| Olesen
-    style Busch fill:#ff006e,color:#fff
-    style Fransson fill:#ffbe0b,color:#0a0e27
-    style Carlson fill:#00d9ff,color:#0a0e27
-    style Tenje fill:#00d9ff,color:#0a0e27
-```
-
-### Key Observation
-
-Ebba Busch (KD) is interpellated by **both** an opposition MP (Lundqvist/S, HD10447) and a coalition partner (Fransson/SD, HD10448). This makes her the most politically exposed minister this week — her responses will be scrutinized by both opposition and coalition for signs of policy drift.
-
-## Forward Indicators
-<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/forward-indicators.md -->
-
----
-
-### Indicator Framework
-
-Forward indicators are observable, dateable events whose occurrence would update our scenario probabilities. Each indicator is assigned a horizon, a directional signal (government risk / opposition opportunity), and a scenario impact.
-
----
-
-### 72-Hour Horizon (by 2026-04-30)
-
-**Indicator 1** — SD media commentary on HD10448  
-*Observable*: Josef Fransson or SD energy spokesperson issues social media or press statement about the interpellation outcome.  
-*Direction*: If SD emphasizes the interpellation: → Scenario B (coalition stress accumulation). If SD is silent: → Scenario A (managed).  
-*Deadline*: 2026-04-30
-
-**Indicator 2** — KD response preview  
-*Observable*: KD communications team or Ebba Busch makes any public statement about energy policy debate quality.  
-*Direction*: If Busch emphasizes "disinformation" framing broadly: → Scenario C risk. If Busch emphasizes policy substance: → Scenario A or B.  
-*Deadline*: 2026-04-30
-
-**Indicator 3** — Kronoberg regional business reaction  
-*Observable*: Sydsvenskan or regional news outlets quote business associations responding to HD10449 filing.  
-*Direction*: If business associations demand government commitment: → railway narrative escalates. If silent: → interpellation remains parliamentary procedure.  
-*Deadline*: 2026-04-30
-
----
-
-### One-Week Horizon (by 2026-05-04)
-
-**Indicator 4** — HD10447 parliamentary calendar scheduling  
-*Observable*: Riksdag calendar posts date for HD10447 (sjuklönekostnader) debate.  
-*Direction*: Early scheduling indicates government managing the calendar proactively. Late scheduling suggests deprioritization.  
-*Deadline*: 2026-05-04
-
-**Indicator 5** — Employer organization statements on HD10447  
-*Observable*: Företagarna, Almega, or Teknikföretagen issue public statements about sick-pay employer costs.  
-*Direction*: Sustained employer criticism escalates the S narrative; employer silence reduces political salience.  
-*Deadline*: 2026-05-04
-
-**Indicator 6** — LO response to HD10450  
-*Observable*: LO (central trade union) issues statement on day-180 exception policy.  
-*Direction*: LO statement with Riksrevisionen citation: → high-salience attack vector. LO silence: → interpellation remains parliamentary.  
-*Deadline*: 2026-05-04
-
----
-
-### One-Month Horizon (by 2026-05-27)
-
-**Indicator 7** — HD10448 government response quality (Busch → Fransson)  
-*Observable*: Minister Busch delivers written and oral response to HD10448 by 2026-05-08.  
-*Direction*: Response that acknowledges Fransson's procedural concern without endorsing anti-wind position → Scenario A. Dismissive response → Scenario C risk.  
-*Deadline*: 2026-05-08
-
-**Indicator 8** — HD10449 government response quality (Carlson → Olesen)  
-*Observable*: Minister Carlson delivers response to HD10449 by 2026-05-18.  
-*Direction*: Any specific timeline or process commitment: → reduces railway narrative risk. Vague response: → narrative sustains.  
-*Deadline*: 2026-05-18
-
-**Indicator 9** — National transport plan revision announcement  
-*Observable*: Government or Trafikverket announces any revision to the national transport plan affecting southern Sweden.  
-*Direction*: Any positive revision: → significantly reduces railway vulnerability. Confirmation of removal: → HD10449 becomes campaign centerpiece.  
-*Deadline*: 2026-05-31
-
-**Indicator 10** — S budget amendment on sick insurance  
-*Observable*: Social Democrats include sick insurance day-180 exception in their budget amendment for 2027.  
-*Direction*: S budget inclusion confirms this is a sustained campaign priority. Absence suggests deprioritization.  
-*Deadline*: 2026-05-31
-
----
-
-### Election-Period Horizon (by September 2026)
-
-**Indicator 11** — Polling shift in Kronoberg and Skåne  
-*Observable*: Regional polls (Demoskop, Novus) show movement in M or SD support in southern Swedish constituencies.  
-*Direction*: 2+ point movement toward S/C: → railway narrative is cutting. No movement: → narrative is background, not decisive.  
-*Deadline*: 2026-08-31
-
-**Indicator 12** — SD-KD energy policy published  
-*Observable*: SD and/or KD publishes updated energy policy position ahead of 2026 election manifesto period.  
-*Direction*: Divergent energy positions in published platforms: → HD10448 coalface becomes campaign divide. Convergent or silent: → managed.  
-*Deadline*: 2026-07-31
-
-**Indicator 13** — Healthcare professional endorsements  
-*Observable*: Swedish Medical Association (Läkarförbundet) or nursing associations make election recommendations citing social insurance policy.  
-*Direction*: Negative assessment of current sick insurance policy: → amplifies HD10450 significance. No statement: → remains parliamentary.  
-*Deadline*: 2026-08-31
-
----
-
-### Indicator Summary Table
-
-| # | Indicator | Horizon | Deadline | Government Risk Level |
-|---|---|---|---|---|
-| 1 | SD Fransson commentary | 72h | 2026-04-30 | MEDIUM |
-| 2 | KD/Busch energy statement | 72h | 2026-04-30 | MEDIUM |
-| 3 | Kronoberg business reaction | 72h | 2026-04-30 | MEDIUM |
-| 4 | HD10447 calendar scheduling | 1 week | 2026-05-04 | LOW |
-| 5 | Employer organization statements | 1 week | 2026-05-04 | MEDIUM |
-| 6 | LO response to HD10450 | 1 week | 2026-05-04 | HIGH |
-| 7 | HD10448 Busch response quality | 1 month | 2026-05-08 | HIGH |
-| 8 | HD10449 Carlson response quality | 1 month | 2026-05-18 | HIGH |
-| 9 | NTP revision announcement | 1 month | 2026-05-31 | HIGH |
-| 10 | S budget amendment inclusion | 1 month | 2026-05-31 | MEDIUM |
-| 11 | Kronoberg/Skåne polling shift | Election | 2026-08-31 | HIGH |
-| 12 | SD-KD energy platforms | Election | 2026-07-31 | HIGH |
-| 13 | Healthcare endorsements | Election | 2026-08-31 | MEDIUM |
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'background': '#0a0e27'}}}%%
-timeline
-    title Forward Indicator Timeline
-    section 72h (Apr 28-30)
-        SD commentary : Indicator 1
-        KD energy statement : Indicator 2
-        Regional business reaction : Indicator 3
-    section 1 Week (May 1-4)
-        HD10447 calendar : Indicator 4
-        Employer statements : Indicator 5
-        LO response HD10450 : Indicator 6
-    section 1 Month (May)
-        Busch response HD10448 : Indicator 7 (May 8)
-        Carlson response HD10449 : Indicator 8 (May 18)
-        NTP revision decision : Indicator 9 (May 31)
-        S budget amendment : Indicator 10 (May 31)
-    section Election Period (Jun-Sep)
-        SD-KD platform divergence : Indicator 12 (Jul 31)
-        Polling shift : Indicator 11 (Aug 31)
-        Healthcare endorsements : Indicator 13 (Aug 31)
-```
-
-## Scenario Analysis
-<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/scenario-analysis.md -->
-
----
-
-### Scenario Framework
-
-Scenarios are structured around the government's response to the HD10448 (SD-KD energy) and HD10449 (infrastructure) interpellations, which jointly determine the political trajectory for the next 6–8 weeks.
-
----
-
-### Scenario A — Coalition Manages Energy Divide, Infrastructure Timeline Clarified (35%)
-
-**Description**: Busch delivers a measured response to HD10448 that acknowledges legitimate concerns about energy reliability without endorsing SD's anti-wind framing. Carlson provides a specific alternative timeline for southern railway investment. Government maintains unified public face.
-
-**Pathway**:  
-1. Busch response (by 2026-05-08): acknowledges energy mix diversity, cites security of supply rationale, avoids direct challenge to SD's position.
-2. Carlson response (by 2026-05-18): offers revised Trafikverket review process for Alvesta–Växjö with a 2028–2029 indicative timeline.
-3. Media narrative: government shows "steady hand" amid opposition pressure.
-
-**Leading indicators**:  
-- Busch pre-announces response substance in party communications before the Riksdag debate
-- KD and SD whip offices communicate off-record
-- Government transport press release references Sydsverige investments
-
-**Probability**: 35% — requires active communication management, which the government has shown capacity for.
-
----
-
-### Scenario B — Partial Response, Narratives Stabilize but Accumulate (45%)
-
-**Description**: Busch gives a technically correct but politically unsatisfying response to HD10448 — defending energy policy without addressing SD's provocation. Carlson deflects on railways. Both responses are adequate but fuel opposition talking points.
-
-**Pathway**:  
-1. Busch: standard defense of energy policy priorities, no specific SD-tailored language.
-2. Carlson: general infrastructure investment talking points, no specific Alvesta–Växjö timeline.
-3. S uses responses in campaign material; SD does not escalate.
-
-**Leading indicators**:  
-- No unusual KD-SD leadership meetings before response dates
-- Media coverage is moderate (news brief, not lead story)
-- Social Democrats issue press releases citing responses as unsatisfactory
-
-**Probability**: 45% — most likely baseline given government communication patterns.
-
----
-
-### Scenario C — Coalition Rupture Signal, S Capitalizes (20%)
-
-**Description**: Busch's response to HD10448 is read as dismissive of SD's concerns. SD leadership publicly escalates beyond interpellation — signals on energy policy divergence. Simultaneously, no railway timeline offered. Election narrative shifts to "divided government, broken promises."
-
-**Pathway**:  
-1. Busch: dismisses wind energy criticism as "disinformation" — directly invalidating SD's interpellation framing.
-2. SD leadership: issues public statement distancing from KD energy position.
-3. Carlson: vague response on railways.
-4. S-led media campaign on "government breaks regional promises."
-
-**Leading indicators**:  
-- SD Fransson issues public commentary before Busch's response
-- KD party communication uses "information warfare" framing that lumps SD critics with Russian disinformation
-- Polls show coalition voter preference shifting by >2% in southern constituencies
-
-**Probability**: 20% — requires miscommunication or deliberate escalation by one party.
-
----
-
-### Scenario Probability Summary
-
-| Scenario | Probability | Outcome for Tidö | Leading Indicator Window |
-|----------|------------|-----------------|--------------------------|
-| A — Managed | 35% | Stabilization | 2026-05-01 to 05-08 (Busch response) |
-| B — Partial | 45% | Narrative accumulation | 2026-05-08 to 05-18 |
-| C — Rupture | 20% | Coalition damage | 2026-04-28 to 05-08 |
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'background': '#0a0e27'}}}%%
-pie title Scenario Probability Distribution
-    "A: Managed (35%)" : 35
-    "B: Partial (45%)" : 45
-    "C: Rupture (20%)" : 20
-```
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
-timeline
-    title Political Scenario Milestones
-    section Immediate (Apr 28 – May 7)
-        HD10448 debate announced: SD energy interpellation in Riksdag calendar
-        Busch/Fransson pre-communication?: Coalition coordination signal
-    section Short-term (May 8–18)
-        HD10448 response deadline: Minister must respond by 2026-05-08
-        HD10449 response deadline: Railway position by 2026-05-18
-        HD10450 response deadline: Day-180 policy by 2026-05-18
-    section Medium-term (May–Sep 2026)
-        Pre-election budgets: Government credibility narrative set
-        Election campaign opens: Railway/welfare narratives weaponized
-```
-
-## Risk Assessment
-<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/risk-assessment.md -->
-
----
-
-### Risk Register
-
-| # | Risk | Domain | Likelihood (1–5) | Impact (1–5) | L×I | Tier |
-|---|------|--------|-----------------|-------------|-----|------|
-| R1 | SD-KD coalition fracture on energy policy — HD10448 escalates beyond parliamentary procedure | Political/Coalition | 2 | 5 | 10 | HIGH |
-| R2 | Infrastructure investment credibility collapse in southern Sweden — HD10449 unanswered | Investment/Regional | 3 | 4 | 12 | HIGH |
-| R3 | Welfare reform narrative dominates election cycle — S wins day-180 debate | Electoral | 3 | 3 | 9 | MEDIUM |
-| R4 | SME employment contraction due to removed sick-pay support — HD10447 | Economic | 2 | 3 | 6 | MEDIUM |
-| R5 | Media amplification of HD10448 leads to disinformation-about-disinformation cycle | Reputational | 3 | 3 | 9 | MEDIUM |
-| R6 | Government coalition loses multiple seats in Kronoberg/Skåne in 2026 election | Electoral | 2 | 4 | 8 | MEDIUM |
-
-### Risk Detail
-
-#### R1 — SD-KD Coalition Fracture (L×I=10) [B2]
-**Trigger**: If Ebba Busch (KD) gives a dismissive response to HD10448, SD can escalate. If she gives a detailed pro-wind defense, her coalition partner sees this as contradicting shared energy skepticism.  
-**Evidence**: HD10448 full text documents that Josef Fransson (SD) explicitly questions whether the minister herself has been misled by "Russian disinformation" about wind power, referring to her statements that "vindkraft inte snurrar utan vind." `[B2]`  
-**Posterior probability of cascade**: 25% (requires deliberate SD escalation — currently not signaled beyond this interpellation)  
-**Mitigation**: KD and SD leadership communicate off the record prior to minister's response; response carefully acknowledges energy skepticism concerns while maintaining policy position.
-
-#### R2 — Infrastructure Credibility Collapse (L×I=12) [A2]
-**Trigger**: Continued Trafikverket plan non-investment combined with no clear timeline from minister.  
-**Evidence**: HD10449 documents specific removal of Södra stambanan (north of Hässleholm) and Alvesta–Växjö from plan. Communities have already "planned large investments based on state infrastructure promises." `[A2]`  
-**Cascading chain**: Railway gap → business investment delays → regional GDP underperformance → electoral punishment in southern seats  
-**Mitigation**: Carlson provides specific alternative timeline by 2026-05-18 deadline.
-
-#### R3 — Welfare Narrative Dominance (L×I=9) [A2]
-**Trigger**: Government announces removal of day-180 exception before the election.  
-**Evidence**: HD10450 explicitly cites Riksrevisionen's positive evaluation, preemptively validating the instrument. If government removes it, the narrative is "government ignores independent evidence." `[A2]`  
-**Posterior probability**: 30% (government may preserve exception precisely to avoid the optics)
-
-#### R5 — Disinformation Cycle (L×I=9) [B2]
-**Trigger**: The Windeurope report + Sveriges Radio coverage + SD interpellation creates a meta-disinformation debate (accusations of disinformation used to delegitimize wind skepticism).  
-**Evidence**: HD10448 text references Sveriges Radio "pushing conclusions" from the Windeurope report. `[B2]`  
-**Systemic risk**: Blurs legitimate policy debate with information warfare framing — damages democratic discourse quality.
-
-### Cascading Risk Chains
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#ff006e', 'background': '#0a0e27'}}}%%
-graph TD
-    A["HD10448: SD questions<br/>KD energy policy"] --> B["Public SD-KD disagreement"]
-    B --> C["Coalition stability<br/>questions"]
-    C --> D["Investor uncertainty<br/>pre-election"]
-    
-    E["HD10449: Railway<br/>investment removed"] --> F["Regional business<br/>plan failures"]
-    F --> G["Electoral punishment<br/>Kronoberg/Skåne"]
-    
-    H["HD10450: Day-180<br/>exception review"] --> I["Welfare reform<br/>narrative"]
-    I --> J["S base energized<br/>pre-election"]
-    
-    style A fill:#ff006e,color:#fff
-    style E fill:#00d9ff,color:#0a0e27
-    style H fill:#ffbe0b,color:#0a0e27
-    style D fill:#1a1e3d,color:#e0e0e0
-    style G fill:#1a1e3d,color:#e0e0e0
-    style J fill:#1a1e3d,color:#e0e0e0
-```
-
-### Risk Heatmap
-
-```mermaid
-%%{init: {'theme': 'dark'}}%%
-xychart-beta
-    title "Risk Likelihood × Impact"
-    x-axis "Risks" ["R1-Coalition", "R2-Infra", "R3-Welfare", "R4-SME", "R5-Media", "R6-Electoral"]
-    y-axis "L×I Score" 0 --> 15
-    bar [10, 12, 9, 6, 9, 8]
-```
-
-## SWOT Analysis
-<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/swot-analysis.md -->
-
----
-
-### SWOT Matrix — Government Position
-
-#### Strengths [A2]
-
-- **Fiscal consolidation narrative**: The government can cite its track record of managing the 2023–2025 fiscal consolidation; the abolition of sick-pay support (HD10447) can be framed as business normalization, not cost-shifting.  
-  *Evidence*: HD10447 text — government stated rationale in 2024 was that employers bear responsibility for workplace health. [A2]
-- **Infrastructure investment volume**: Despite Trafikverket plan changes, the government can point to other national transport investments as evidence of commitment.  
-  *Evidence*: HD10449 — minister's future response will likely cite total infrastructure budget. [B3]
-- **Riksrevisionen compliance posture**: On HD10450, the government may argue it is actively reviewing the day-180 exception — not eliminating it, simply studying it. [B3]
-
-#### Weaknesses [A2]
-
-- **Infrastructure credibility gap** (HD10449): The specific removal of Södra stambanan and Alvesta–Växjö from Trafikverket's plan is documented fact. Communities made investments based on prior commitments. `dok_id=HD10449 [A2]`
-- **Intra-coalition vulnerability** (HD10448): SD's interpellation targeting KD minister Busch on energy policy is publicly on the record. Any non-answer or dismissive response exposes SD-KD fault lines. `dok_id=HD10448 [B2]`
-- **Welfare reform optics** (HD10450): The day-180 sick insurance exception was demonstrably effective per Riksrevisionen — eliminating it would mean the government overriding independent evaluation. `dok_id=HD10450 [A2]`
-- **SME economic signal** (HD10447): If Sweden's GDP growth is consistently below EU average (asserted, not verified independently here), the link to sick-pay cost removal becomes a credible opposition narrative.
-
-#### Opportunities [B2]
-
-- **Energy policy clarification**: Busch's response to HD10448 can be used to articulate a coherent energy policy narrative that addresses both affordability and reliability concerns — which the Windeurope report does not directly address. `dok_id=HD10448`
-- **Infrastructure reframing**: Carlson can use the HD10449 response to explain the new prioritization logic and offer a concrete timeline, transforming an accountability session into a communication opportunity. `dok_id=HD10449`
-- **Riksrevisionen co-option**: On HD10450, the government could commit to preserving the day-180 exception while adding efficiency measures — outflanking the opposition. `dok_id=HD10450`
-
-#### Threats [B2]
-
-- **Coalition coherence damage**: SD publicly questioning KD energy policy via a parliamentary instrument signals ideological divergence that will be amplified. `dok_id=HD10448`
-- **Electoral geography loss**: Failure to address Södrasto stambanan could cost coalition votes in Kronoberg, Skåne and surrounding constituencies in 2026. `dok_id=HD10449`
-- **Welfare reform backlash**: Any perceived attack on social insurance will energize S's voter base ahead of the election. `dok_id=HD10450`
-- **SME disillusionment**: If SMEs believe the government is increasing their cost burden (sick-pay) while reducing benefits (employer tax cuts offset by sick-pay removal), business confidence could fall. `dok_id=HD10447`
-
-### TOWS Strategic Matrix
-
-| | **Strengths** | **Weaknesses** |
-|---|---|---|
-| **Opportunities** | **SO**: Use infrastructure budget volume to justify Trafikverket plan changes, offer revised timeline for Alvesta–Växjö | **WO**: Proactively announce Riksrevisionen compliance on day-180 — preserve exception to neutralize S attack |
-| **Threats** | **ST**: Busch must respond to SD interpellation with specific policy defense, not dismissal — coalition discipline requires visible KD-SD alignment | **WT**: Most dangerous scenario: SD escalates energy disagreement + S wins welfare/infrastructure narratives simultaneously ahead of election |
-
-### Cross-SWOT Analysis
-
-The most significant SWOT intersection is **W2 × T1** (coalition vulnerability + coalition damage threat). The SD interpellation (HD10448) is not just parliamentary procedure — it is a public statement of policy disagreement within the governing bloc. The government's ability to manage this interaction will signal coalition cohesion strength for the remaining pre-election period.
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'background': '#0a0e27'}}}%%
-quadrantChart
-    title Government SWOT Position
-    x-axis "Internal Control" --> "External Pressure"
-    y-axis "Threat" --> "Opportunity"
-    quadrant-1 Leverage
-    quadrant-2 Defend
-    quadrant-3 Mitigate
-    quadrant-4 Watch
-    Energy clarification: [0.3, 0.7]
-    Infrastructure reframe: [0.35, 0.6]
-    Coalition coherence: [0.8, 0.15]
-    Welfare backlash: [0.75, 0.25]
-    SME disillusionment: [0.7, 0.3]
-```
-
-## Threat Analysis
-<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/threat-analysis.md -->
-
----
-
-### Threat Actors
-
-| Actor | Type | Intent | Capability | Threat Vector |
-|-------|------|--------|-----------|---------------|
-| Social Democrats (S) | Parliamentary opposition | Electoral displacement of Tidö coalition | HIGH (5 interpellations this week) | Coordinated accountability campaign |
-| Sweden Democrats (SD) | Coalition partner + internal opposition | Policy influence, potential distancing | MEDIUM (1 interpellation, but coalition-internal) | Parliamentary interpellation against KD minister |
-| Windeurope / industry | External actor | Energy policy influence | MEDIUM (industry report) | Via media amplification (Sveriges Radio) |
-| Regional stakeholders (Kronoberg/Skåne) | Economic actors | Infrastructure investment | HIGH in local terms | Business lobby, electoral geography |
-
-### Threat Classification
-
-#### T1 — Coordinated S Opposition Campaign (HIGH threat) [A2]
-
-**Pattern**: Five interpellations from S in one week targeting four different ministers (Carlson, Tenje, Busch, Slottner) across four policy domains. This is not ad hoc scrutiny — it is a structured pre-election campaign.  
-**Attack vector**: Parliamentary accountability instrument — each interpellation requires ministerial response within approximately 3 weeks.  
-**Evidence**: HD10449, HD10450, HD10447, HD10446, HD10443 — all filed S, all targeting governing ministers. `[A2]`  
-**Kill chain**:  
-1. File interpellations (COMPLETE)
-2. Ensure media coverage at announcement
-3. Force ministers into on-the-record positions
-4. Use positions as campaign material ahead of 2026 election
-
-#### T2 — SD Internal Coalition Challenge (MEDIUM-HIGH threat) [B2]
-
-**Pattern**: SD files interpellation (HD10448) against KD coalition partner Busch, using ironic framing to challenge energy policy without formally breaking coalition agreement.  
-**Attack vector**: Interpellation as "plausible deniability" tool — SD can claim legitimate scrutiny while the political effect is to distance from KD energy positions.  
-**Evidence**: HD10448 text — Fransson explicitly cites Busch's own statements about wind power as potentially constituting "Russian disinformation." `[B2]`  
-**MITRE-style TTP mapping**:
-- Tactic: Coalition strain / policy distance signaling
-- Technique: Parliamentary instrument used against partner
-- Procedure: Ironic framing + media-amplified report citation
-
-#### T3 — Information Environment Degradation (MEDIUM threat) [B2]
-
-**Pattern**: The Windeurope "disinformation" report, amplified by Sveriges Radio, creates a framing environment in which wind energy skepticism is labeled "disinformation" — threatening legitimate policy debate.  
-**Evidence**: HD10448 describes Sveriges Radio pushing Windeurope conclusions broadly including that "rysk desinformation" underlies criticism. `[B2]`  
-**Systemic risk**: The democratic discourse infrastructure (media, academic, parliamentary) is being used to delegitimize opposition to a particular policy, regardless of the policy's merits.
-
-### Attack Tree (Primary — S Pre-Election Campaign)
-
-```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#ff006e', 'background': '#0a0e27'}}}%%
-graph TD
-    ROOT["🎯 Goal: S Electoral Victory 2026"]
-    ROOT --> A["Narrative: Government incompetent"]
-    ROOT --> B["Narrative: Government weakens welfare state"]
-    ROOT --> C["Narrative: Coalition divided"]
-    A --> A1["Infrastructure failures\nHD10449: Railway not built"]
-    A --> A2["Economic failures\nHD10447: SME burden, GDP lag"]
-    B --> B1["Welfare reform\nHD10450: Day-180 at risk"]
-    B --> B2["Social services\nHD10443: Social dumpning"]
-    C --> C1["SD-KD energy split\nHD10448 exploited by S"]
-    C --> C2["Finance scandals\nHD10446: Dödförklaringar"]
-    style ROOT fill:#ff006e,color:#fff
-    style A fill:#1a1e3d,color:#e0e0e0
-    style B fill:#1a1e3d,color:#e0e0e0
-    style C fill:#1a1e3d,color:#e0e0e0
-```
-
-### Threat Priority Matrix
-
-| Threat | Likelihood | Impact | Response |
-|--------|-----------|--------|---------|
-| T1 Coordinated S campaign | HIGH | HIGH | Monitor all 5 interpellations for response quality |
-| T2 SD-KD energy rift | MEDIUM | HIGH | Watch Busch response to HD10448 |
-| T3 Media disinformation framing | HIGH | MEDIUM | Track coverage quality post-Windeurope |
 
 ## Per-document intelligence
 
@@ -1215,98 +609,81 @@ Jessica Rodén (S) challenges Social Affairs Minister Tenje on the abolition of 
 
 **Narrative outcome**: The Riksrevisionen finding is unlikely to be neutralized by Tenje's response — it will remain as opposition campaign evidence.
 
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/election-2026-analysis.md -->
+## Stakeholder Perspectives
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/stakeholder-perspectives.md -->
 
 ---
 
-### Current Seat Projection (Riksdag 349 seats, majority = 175)
+### 6-Lens Stakeholder Matrix
 
-**Baseline** (based on available poll averages, Riksdag 2022 result as anchor):
+#### Lens 1 — Direct Political Actors
 
-| Party | 2022 Result | Projected 2026 | Delta | Confidence |
-|---|---|---|---|---|
-| S (Socialdemokraterna) | 107 | 112 | +5 | MEDIUM |
-| M (Moderaterna) | 68 | 63 | -5 | MEDIUM |
-| SD (Sverigedemokraterna) | 73 | 70 | -3 | MEDIUM |
-| C (Centerpartiet) | 24 | 26 | +2 | LOW |
-| V (Vänsterpartiet) | 24 | 26 | +2 | LOW |
-| KD (Kristdemokraterna) | 19 | 17 | -2 | MEDIUM |
-| L (Liberalerna) | 16 | 15 | -1 | LOW |
-| MP (Miljöpartiet) | 18 | 20 | +2 | LOW |
+| Stakeholder | Role | Position | Interest | Influence | Evidence |
+|-------------|------|----------|----------|-----------|----------|
+| Robert Olesen (S) | Interpellant HD10449 | Pro-railway investment | Regional development Kronoberg | Medium | HD10449 `[A2]` |
+| Jessica Rodén (S) | Interpellant HD10450 | Defend day-180 exception | Worker protection | Medium | HD10450 `[A2]` |
+| Josef Fransson (SD) | Interpellant HD10448 | Wind energy skeptic | Energy policy alignment with SD voters | High | HD10448 `[B2]` |
+| Patrik Lundqvist (S) | Interpellant HD10447 | Pro-SME sick-pay support | SME employment | Medium | HD10447 `[A2]` |
+| **Andreas Carlson (KD)** | Infrastruktur- och bostadsminister | Defend Trafikverket plan | Government credibility | High | HD10449 |
+| **Anna Tenje (M)** | Äldre- och socialförsäkringsminister | Protect social insurance reforms | Government policy | High | HD10450 |
+| **Ebba Busch (KD)** | Energi- och näringsminister | Defend energy policy | Coalition cohesion + energy security | Very High | HD10448, HD10447 |
+| Elisabeth Svantesson (M) | Finansminister | Macroeconomic narrative | Fiscal credibility | High | HD10444, HD10446 |
 
-**Block summary (projected)**:
-- Tidö coalition (M+SD+KD+L): 165 seats (down from 176)
-- S-led opposition (S+V+MP+C): 184 seats (up from 173)
+#### Lens 2 — Civil Society and Affected Communities
 
----
+| Stakeholder | Interest | Affected by |
+|-------------|----------|------------|
+| Kronoberg/Skåne municipalities | Railway investment commitments | HD10449 |
+| Regional businesses (Sydsverige) | Infrastructure for labor market integration | HD10449 |
+| SME employers nationally | Sick-pay cost burden | HD10447 |
+| Sick employees at day-180 threshold | Continued job protection | HD10450 |
 
-### Impact Analysis: How Interpellations Affect the 2026 Election Narrative
+#### Lens 3 — Media and Information Environment
 
-#### Interpellation Impact Assessment
+| Actor | Role | Effect |
+|-------|------|--------|
+| Sveriges Radio | Amplified Windeurope report | Framed wind energy debate as disinformation issue |
+| Windeurope | Industry association | Published report labeling wind skeptics as "disinformation spreaders" |
+| Swedish press (Expressen, SVT) | Expected coverage | HD10448 and HD10449 most newsworthy |
 
-**HD10448 (Wind power disinformation)**: Low direct electoral impact, HIGH indirect impact on SD-KD relations. If this interpellation signals a deeper SD-KD energy divide that becomes visible during the campaign, it could cost the Tidö coalition 1-3 seats from coalition voters in energy-sensitive constituencies.
+#### Lens 4 — Institutional Actors
 
-**HD10449 (Railway/Södra stambanan)**: HIGH impact in targeted constituencies (Kronoberg, Skåne). Regional infrastructure grievances have historically swung seats in southern Sweden. S's ability to cite specific business investment decisions lost (documented in HD10449) gives the narrative concrete evidence.
+| Institution | Role | Notes |
+|-------------|------|-------|
+| Trafikverket | National transport planning authority | Produced new plan removing Södra stambanan investments |
+| Riksrevisionen | Independent audit authority | Positively evaluated day-180 exception (cited in HD10450) |
+| Riksdagen (speaker/calendar) | Procedural | HD10448 announced 2026-04-27 |
 
-**HD10450 (Sick insurance day-180)**: HIGH nationwide impact if S frames it as "government repealed a program that your doctor recommended." The Riksrevisionen evaluation gives this a level of authority that most opposition interpellations lack.
+#### Lens 5 — Electoral Stakeholders
 
-**HD10447 (Sjuklönekostnader)**: MEDIUM impact. Employer sick-pay cost increases affect small businesses, which are traditionally M/C constituency. If the business community sustains this criticism through the campaign, M could see vote loss from its own base.
+| Group | Concern | Linked Interpellation |
+|-------|---------|----------------------|
+| Southern Swedish voters (Kronoberg, Skåne) | Infrastructure investment | HD10449 |
+| Workers near sick insurance threshold | Welfare protection | HD10450 |
+| Small business owners | Operational cost risk | HD10447 |
+| Energy-sector workers + environmentalists | Energy policy direction | HD10448 |
 
----
-
-### Coalition Viability Scenarios
-
-#### Tidö Coalition Continuation (M+SD+KD+L)
-
-**Probability**: 40% (down from 55% at start of Riksmöte 2025/26)
-
-**Conditions**: Requires all four parties to perform at or above current projections and avoid additional intra-coalition conflicts (of which HD10448 is a warning sign).
-
-**Risks from interpellations**: SD-KD energy tension, railway broken-promise narrative, sick insurance credibility gap.
-
-#### S-Led Government (S+V+MP+C)
-
-**Probability**: 45%
-
-**Conditions**: S needs to consolidate opposition narrative, maintain V cooperation, and bring C into government support (C's position remains uncertain).
-
-**Enabling factors from interpellations**: Sick insurance cluster gives S an evidence-based attack line; railway narrative gives S regional campaign material.
-
-#### Hung Parliament / Alternative Coalition
-
-**Probability**: 15%
+#### Lens 6 — Influence Network
 
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'background': '#0a0e27'}}}%%
-xychart-beta
-    title "Seat Projection: 2022 vs 2026 (349 total)"
-    x-axis ["S", "M", "SD", "C", "V", "KD", "L", "MP"]
-    y-axis "Seats" 0 --> 120
-    bar [107, 68, 73, 24, 24, 19, 16, 18]
-    line [112, 63, 70, 26, 26, 17, 15, 20]
+graph LR
+    Fransson["Josef Fransson SD"] -->|HD10448| Busch["Ebba Busch KD<br/>(Energy Minister)"]
+    Olesen["Robert Olesen S"] -->|HD10449| Carlson["Andreas Carlson KD<br/>(Infrastructure Minister)"]
+    Roden["Jessica Rodén S"] -->|HD10450| Tenje["Anna Tenje M<br/>(Social Insurance)"]
+    Lundqvist["Patrik Lundqvist S"] -->|HD10447| Busch
+    Windeurope["Windeurope Report"] -->|via SR| Fransson
+    Riksrevisionen["Riksrevisionen"] -->|evidence| Roden
+    Trafikverket["Trafikverket"] -->|new plan| Olesen
+    style Busch fill:#ff006e,color:#fff
+    style Fransson fill:#ffbe0b,color:#0a0e27
+    style Carlson fill:#00d9ff,color:#0a0e27
+    style Tenje fill:#00d9ff,color:#0a0e27
 ```
 
----
+### Key Observation
 
-### Key Swing Constituencies
-
-**Kronoberg**: Railway investment removal (HD10449) directly affects this county. Currently 2 SD, 1 M, 1 S seats. The infrastructure narrative could shift 1 seat from the Tidö bloc.
-
-**Skåne**: Södra stambanan's southern terminus. High-growth commuter corridor. Multiple SD and M seats vulnerable to infrastructure narrative.
-
-**Urban SME constituencies**: Employer sick-pay cost criticism (HD10447) affects urban small business owners, traditionally in M/L constituencies. If business community criticism sustains, 1-2 seats possible.
-
----
-
-### Election Impact Summary
-
-| Narrative | Driving Interpellation | Electoral Impact | Constituency Focus |
-|---|---|---|---|
-| Railway broken promise | HD10449 | High — 1-2 seats | Kronoberg, Skåne |
-| Sick insurance reversal | HD10450 | High — diffuse | Nationwide |
-| Employer sick-pay costs | HD10447 | Medium — SME | Urban constituencies |
-| Coalition energy divide | HD10448 | Medium — coalition voters | National |
+Ebba Busch (KD) is interpellated by **both** an opposition MP (Lundqvist/S, HD10447) and a coalition partner (Fransson/SD, HD10448). This makes her the most politically exposed minister this week — her responses will be scrutinized by both opposition and coalition for signs of policy drift.
 
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/coalition-mathematics.md -->
@@ -1520,85 +897,538 @@ xychart-beta
     bar [8, 7, 9, 4]
 ```
 
-## Comparative International
-<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/comparative-international.md -->
+## Forward Indicators
+<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/forward-indicators.md -->
 
 ---
 
----
+### Indicator Framework
 
-### Comparative Dimension 1 — Railway Investment Strategy
-
-#### Sweden (SE) — The Trafikverket Problem
-
-Sweden's Trafikverket has removed the Södra stambanan north of Hässleholm and Alvesta–Växjö double-track from its new national transport plan. Robert Olesen's interpellation (HD10449) documents the political fallout: regional businesses made investment decisions based on prior state infrastructure commitments. `[A2]`
-
-#### Norway (NO) — NTP Reference
-
-Norway's National Transport Plan (NTP) has faced similar challenges. The Norwegian government's 2025–2036 NTP reduced railway ambitions compared to the previous cycle. However, the Norwegian model includes binding regional consultation processes with municipalities, reducing the credibility gap that characterizes the Swedish situation in Kronoberg/Skåne.  
-**Outside-In lesson**: Binding consultation processes reduce the "broken promise" narrative that HD10449 exploits.
-
-#### Germany (DE) — Deutschlandtakt
-
-Germany's Deutschlandtakt (integrated clock-pattern timetable) requires doubling of rail capacity across regional corridors, including significant double-track investments. German rail policy has been more explicit about investment timelines and binding commitments.  
-**Outside-In lesson**: Sweden's looser planning framework (Trafikverket can revise plans between planning cycles) creates political vulnerability that Germany's more committed planning reduces.
-
-| Jurisdiction | Railway planning binding? | Regional consultation? | Credibility mechanism |
-|---|---|---|---|
-| Sweden (SE) | No — Trafikverket plan non-binding | Weak | None — current crisis |
-| Norway (NO) | Partial | Strong | Regional NTP agreements |
-| Germany (DE) | Yes (Deutschlandtakt targets) | Formal | Legislative mandate |
-| Denmark (DK) | Yes (Infrastrukturplan) | Moderate | Political agreement |
+Forward indicators are observable, dateable events whose occurrence would update our scenario probabilities. Each indicator is assigned a horizon, a directional signal (government risk / opposition opportunity), and a scenario impact.
 
 ---
 
-### Comparative Dimension 2 — Sick Insurance Day-180 Exception
+### 72-Hour Horizon (by 2026-04-30)
 
-#### Sweden (SE) — HD10450 Context
+**Indicator 1** — SD media commentary on HD10448  
+*Observable*: Josef Fransson or SD energy spokesperson issues social media or press statement about the interpellation outcome.  
+*Direction*: If SD emphasizes the interpellation: → Scenario B (coalition stress accumulation). If SD is silent: → Scenario A (managed).  
+*Deadline*: 2026-04-30
 
-The day-180 exception — allowing delay of "full labor market test" when return to own employer is likely — was introduced by the Social Democratic government and evaluated positively by Riksrevisionen. `[A2]`
+**Indicator 2** — KD response preview  
+*Observable*: KD communications team or Ebba Busch makes any public statement about energy policy debate quality.  
+*Direction*: If Busch emphasizes "disinformation" framing broadly: → Scenario C risk. If Busch emphasizes policy substance: → Scenario A or B.  
+*Deadline*: 2026-04-30
 
-#### Finland (FI) — Rehabilitation Focus
-
-Finland's sick insurance system has a comparable "90-day employer period" with rehabilitation support. Finland has maintained these instruments despite fiscal pressure, recognizing that forced labor market tests at day 180 increase long-term disability costs.  
-**Outside-In lesson**: The Finnish evidence supports the Riksrevisionen finding (positive evaluation of the exception).
-
-#### Denmark (DK) — "Flexicurity" Model
-
-Denmark's flexicurity model maintains strong individual-employer return pathways within its sick insurance system, with explicit economic evidence that employer-specific return reduces long-term disability costs by 25–35%.  
-**Outside-In lesson**: Nordic comparators broadly support retaining the Swedish day-180 exception.
+**Indicator 3** — Kronoberg regional business reaction  
+*Observable*: Sydsvenskan or regional news outlets quote business associations responding to HD10449 filing.  
+*Direction*: If business associations demand government commitment: → railway narrative escalates. If silent: → interpellation remains parliamentary procedure.  
+*Deadline*: 2026-04-30
 
 ---
 
-### Comparative Dimension 3 — Wind Energy and Disinformation
+### One-Week Horizon (by 2026-05-04)
 
-#### Sweden (SE) — HD10448 Context
+**Indicator 4** — HD10447 parliamentary calendar scheduling  
+*Observable*: Riksdag calendar posts date for HD10447 (sjuklönekostnader) debate.  
+*Direction*: Early scheduling indicates government managing the calendar proactively. Late scheduling suggests deprioritization.  
+*Deadline*: 2026-05-04
 
-The Windeurope "disinformation" report created a media event in Sweden (Sveriges Radio amplification). SD's interpellation challenges the framing, arguing that legitimate policy debate is being delegitimized as "Russian disinformation." `[B2]`
+**Indicator 5** — Employer organization statements on HD10447  
+*Observable*: Företagarna, Almega, or Teknikföretagen issue public statements about sick-pay employer costs.  
+*Direction*: Sustained employer criticism escalates the S narrative; employer silence reduces political salience.  
+*Deadline*: 2026-05-04
 
-#### Germany (DE) — Bürgerdialog Wind
+**Indicator 6** — LO response to HD10450  
+*Observable*: LO (central trade union) issues statement on day-180 exception policy.  
+*Direction*: LO statement with Riksrevisionen citation: → high-salience attack vector. LO silence: → interpellation remains parliamentary.  
+*Deadline*: 2026-05-04
 
-Germany has faced similar dynamics: wind energy opponents have been accused of astroturfing funded by fossil fuel interests, while many opponents represent genuine local concerns. The German government's response has been to separate the disinformation question from the policy debate — not conflate them.
+---
 
-#### Denmark (DK) — Mature Wind Integration
+### One-Month Horizon (by 2026-05-27)
 
-Denmark, with the highest wind energy penetration in the EU, maintains a robust public debate about wind energy economics, grid stability, and landscape impact without labeling skeptics as disinformation spreaders. The policy debate is evidence-based.  
-**Outside-In lesson**: Sweden's quality of energy policy debate has deteriorated to a point where a major industry association report conflates policy criticism with disinformation — a democratic deficit concern.
+**Indicator 7** — HD10448 government response quality (Busch → Fransson)  
+*Observable*: Minister Busch delivers written and oral response to HD10448 by 2026-05-08.  
+*Direction*: Response that acknowledges Fransson's procedural concern without endorsing anti-wind position → Scenario A. Dismissive response → Scenario C risk.  
+*Deadline*: 2026-05-08
+
+**Indicator 8** — HD10449 government response quality (Carlson → Olesen)  
+*Observable*: Minister Carlson delivers response to HD10449 by 2026-05-18.  
+*Direction*: Any specific timeline or process commitment: → reduces railway narrative risk. Vague response: → narrative sustains.  
+*Deadline*: 2026-05-18
+
+**Indicator 9** — National transport plan revision announcement  
+*Observable*: Government or Trafikverket announces any revision to the national transport plan affecting southern Sweden.  
+*Direction*: Any positive revision: → significantly reduces railway vulnerability. Confirmation of removal: → HD10449 becomes campaign centerpiece.  
+*Deadline*: 2026-05-31
+
+**Indicator 10** — S budget amendment on sick insurance  
+*Observable*: Social Democrats include sick insurance day-180 exception in their budget amendment for 2027.  
+*Direction*: S budget inclusion confirms this is a sustained campaign priority. Absence suggests deprioritization.  
+*Deadline*: 2026-05-31
+
+---
+
+### Election-Period Horizon (by September 2026)
+
+**Indicator 11** — Polling shift in Kronoberg and Skåne  
+*Observable*: Regional polls (Demoskop, Novus) show movement in M or SD support in southern Swedish constituencies.  
+*Direction*: 2+ point movement toward S/C: → railway narrative is cutting. No movement: → narrative is background, not decisive.  
+*Deadline*: 2026-08-31
+
+**Indicator 12** — SD-KD energy policy published  
+*Observable*: SD and/or KD publishes updated energy policy position ahead of 2026 election manifesto period.  
+*Direction*: Divergent energy positions in published platforms: → HD10448 coalface becomes campaign divide. Convergent or silent: → managed.  
+*Deadline*: 2026-07-31
+
+**Indicator 13** — Healthcare professional endorsements  
+*Observable*: Swedish Medical Association (Läkarförbundet) or nursing associations make election recommendations citing social insurance policy.  
+*Direction*: Negative assessment of current sick insurance policy: → amplifies HD10450 significance. No statement: → remains parliamentary.  
+*Deadline*: 2026-08-31
+
+---
+
+### Indicator Summary Table
+
+| # | Indicator | Horizon | Deadline | Government Risk Level |
+|---|---|---|---|---|
+| 1 | SD Fransson commentary | 72h | 2026-04-30 | MEDIUM |
+| 2 | KD/Busch energy statement | 72h | 2026-04-30 | MEDIUM |
+| 3 | Kronoberg business reaction | 72h | 2026-04-30 | MEDIUM |
+| 4 | HD10447 calendar scheduling | 1 week | 2026-05-04 | LOW |
+| 5 | Employer organization statements | 1 week | 2026-05-04 | MEDIUM |
+| 6 | LO response to HD10450 | 1 week | 2026-05-04 | HIGH |
+| 7 | HD10448 Busch response quality | 1 month | 2026-05-08 | HIGH |
+| 8 | HD10449 Carlson response quality | 1 month | 2026-05-18 | HIGH |
+| 9 | NTP revision announcement | 1 month | 2026-05-31 | HIGH |
+| 10 | S budget amendment inclusion | 1 month | 2026-05-31 | MEDIUM |
+| 11 | Kronoberg/Skåne polling shift | Election | 2026-08-31 | HIGH |
+| 12 | SD-KD energy platforms | Election | 2026-07-31 | HIGH |
+| 13 | Healthcare endorsements | Election | 2026-08-31 | MEDIUM |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'background': '#0a0e27'}}}%%
+timeline
+    title Forward Indicator Timeline
+    section 72h (Apr 28-30)
+        SD commentary : Indicator 1
+        KD energy statement : Indicator 2
+        Regional business reaction : Indicator 3
+    section 1 Week (May 1-4)
+        HD10447 calendar : Indicator 4
+        Employer statements : Indicator 5
+        LO response HD10450 : Indicator 6
+    section 1 Month (May)
+        Busch response HD10448 : Indicator 7 (May 8)
+        Carlson response HD10449 : Indicator 8 (May 18)
+        NTP revision decision : Indicator 9 (May 31)
+        S budget amendment : Indicator 10 (May 31)
+    section Election Period (Jun-Sep)
+        SD-KD platform divergence : Indicator 12 (Jul 31)
+        Polling shift : Indicator 11 (Aug 31)
+        Healthcare endorsements : Indicator 13 (Aug 31)
+```
+
+## Scenario Analysis
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/scenario-analysis.md -->
+
+---
+
+### Scenario Framework
+
+Scenarios are structured around the government's response to the HD10448 (SD-KD energy) and HD10449 (infrastructure) interpellations, which jointly determine the political trajectory for the next 6–8 weeks.
+
+---
+
+### Scenario A — Coalition Manages Energy Divide, Infrastructure Timeline Clarified (35%)
+
+**Description**: Busch delivers a measured response to HD10448 that acknowledges legitimate concerns about energy reliability without endorsing SD's anti-wind framing. Carlson provides a specific alternative timeline for southern railway investment. Government maintains unified public face.
+
+**Pathway**:  
+1. Busch response (by 2026-05-08): acknowledges energy mix diversity, cites security of supply rationale, avoids direct challenge to SD's position.
+2. Carlson response (by 2026-05-18): offers revised Trafikverket review process for Alvesta–Växjö with a 2028–2029 indicative timeline.
+3. Media narrative: government shows "steady hand" amid opposition pressure.
+
+**Leading indicators**:  
+- Busch pre-announces response substance in party communications before the Riksdag debate
+- KD and SD whip offices communicate off-record
+- Government transport press release references Sydsverige investments
+
+**Probability**: 35% — requires active communication management, which the government has shown capacity for.
+
+---
+
+### Scenario B — Partial Response, Narratives Stabilize but Accumulate (45%)
+
+**Description**: Busch gives a technically correct but politically unsatisfying response to HD10448 — defending energy policy without addressing SD's provocation. Carlson deflects on railways. Both responses are adequate but fuel opposition talking points.
+
+**Pathway**:  
+1. Busch: standard defense of energy policy priorities, no specific SD-tailored language.
+2. Carlson: general infrastructure investment talking points, no specific Alvesta–Växjö timeline.
+3. S uses responses in campaign material; SD does not escalate.
+
+**Leading indicators**:  
+- No unusual KD-SD leadership meetings before response dates
+- Media coverage is moderate (news brief, not lead story)
+- Social Democrats issue press releases citing responses as unsatisfactory
+
+**Probability**: 45% — most likely baseline given government communication patterns.
+
+---
+
+### Scenario C — Coalition Rupture Signal, S Capitalizes (20%)
+
+**Description**: Busch's response to HD10448 is read as dismissive of SD's concerns. SD leadership publicly escalates beyond interpellation — signals on energy policy divergence. Simultaneously, no railway timeline offered. Election narrative shifts to "divided government, broken promises."
+
+**Pathway**:  
+1. Busch: dismisses wind energy criticism as "disinformation" — directly invalidating SD's interpellation framing.
+2. SD leadership: issues public statement distancing from KD energy position.
+3. Carlson: vague response on railways.
+4. S-led media campaign on "government breaks regional promises."
+
+**Leading indicators**:  
+- SD Fransson issues public commentary before Busch's response
+- KD party communication uses "information warfare" framing that lumps SD critics with Russian disinformation
+- Polls show coalition voter preference shifting by >2% in southern constituencies
+
+**Probability**: 20% — requires miscommunication or deliberate escalation by one party.
+
+---
+
+### Scenario Probability Summary
+
+| Scenario | Probability | Outcome for Tidö | Leading Indicator Window |
+|----------|------------|-----------------|--------------------------|
+| A — Managed | 35% | Stabilization | 2026-05-01 to 05-08 (Busch response) |
+| B — Partial | 45% | Narrative accumulation | 2026-05-08 to 05-18 |
+| C — Rupture | 20% | Coalition damage | 2026-04-28 to 05-08 |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'background': '#0a0e27'}}}%%
+pie title Scenario Probability Distribution
+    "A: Managed (35%)" : 35
+    "B: Partial (45%)" : 45
+    "C: Rupture (20%)" : 20
+```
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+timeline
+    title Political Scenario Milestones
+    section Immediate (Apr 28 – May 7)
+        HD10448 debate announced: SD energy interpellation in Riksdag calendar
+        Busch/Fransson pre-communication?: Coalition coordination signal
+    section Short-term (May 8–18)
+        HD10448 response deadline: Minister must respond by 2026-05-08
+        HD10449 response deadline: Railway position by 2026-05-18
+        HD10450 response deadline: Day-180 policy by 2026-05-18
+    section Medium-term (May–Sep 2026)
+        Pre-election budgets: Government credibility narrative set
+        Election campaign opens: Railway/welfare narratives weaponized
+```
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/election-2026-analysis.md -->
+
+---
+
+### Current Seat Projection (Riksdag 349 seats, majority = 175)
+
+**Baseline** (based on available poll averages, Riksdag 2022 result as anchor):
+
+| Party | 2022 Result | Projected 2026 | Delta | Confidence |
+|---|---|---|---|---|
+| S (Socialdemokraterna) | 107 | 112 | +5 | MEDIUM |
+| M (Moderaterna) | 68 | 63 | -5 | MEDIUM |
+| SD (Sverigedemokraterna) | 73 | 70 | -3 | MEDIUM |
+| C (Centerpartiet) | 24 | 26 | +2 | LOW |
+| V (Vänsterpartiet) | 24 | 26 | +2 | LOW |
+| KD (Kristdemokraterna) | 19 | 17 | -2 | MEDIUM |
+| L (Liberalerna) | 16 | 15 | -1 | LOW |
+| MP (Miljöpartiet) | 18 | 20 | +2 | LOW |
+
+**Block summary (projected)**:
+- Tidö coalition (M+SD+KD+L): 165 seats (down from 176)
+- S-led opposition (S+V+MP+C): 184 seats (up from 173)
+
+---
+
+### Impact Analysis: How Interpellations Affect the 2026 Election Narrative
+
+#### Interpellation Impact Assessment
+
+**HD10448 (Wind power disinformation)**: Low direct electoral impact, HIGH indirect impact on SD-KD relations. If this interpellation signals a deeper SD-KD energy divide that becomes visible during the campaign, it could cost the Tidö coalition 1-3 seats from coalition voters in energy-sensitive constituencies.
+
+**HD10449 (Railway/Södra stambanan)**: HIGH impact in targeted constituencies (Kronoberg, Skåne). Regional infrastructure grievances have historically swung seats in southern Sweden. S's ability to cite specific business investment decisions lost (documented in HD10449) gives the narrative concrete evidence.
+
+**HD10450 (Sick insurance day-180)**: HIGH nationwide impact if S frames it as "government repealed a program that your doctor recommended." The Riksrevisionen evaluation gives this a level of authority that most opposition interpellations lack.
+
+**HD10447 (Sjuklönekostnader)**: MEDIUM impact. Employer sick-pay cost increases affect small businesses, which are traditionally M/C constituency. If the business community sustains this criticism through the campaign, M could see vote loss from its own base.
+
+---
+
+### Coalition Viability Scenarios
+
+#### Tidö Coalition Continuation (M+SD+KD+L)
+
+**Probability**: 40% (down from 55% at start of Riksmöte 2025/26)
+
+**Conditions**: Requires all four parties to perform at or above current projections and avoid additional intra-coalition conflicts (of which HD10448 is a warning sign).
+
+**Risks from interpellations**: SD-KD energy tension, railway broken-promise narrative, sick insurance credibility gap.
+
+#### S-Led Government (S+V+MP+C)
+
+**Probability**: 45%
+
+**Conditions**: S needs to consolidate opposition narrative, maintain V cooperation, and bring C into government support (C's position remains uncertain).
+
+**Enabling factors from interpellations**: Sick insurance cluster gives S an evidence-based attack line; railway narrative gives S regional campaign material.
+
+#### Hung Parliament / Alternative Coalition
+
+**Probability**: 15%
 
 ```mermaid
 %%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'background': '#0a0e27'}}}%%
 xychart-beta
-    title "Nordic Comparison: Railway Plan Credibility (1-5)"
-    x-axis ["Sweden", "Norway", "Finland", "Denmark", "Germany"]
-    y-axis "Credibility Score" 0 --> 5
-    bar [2, 3, 3, 4, 4]
+    title "Seat Projection: 2022 vs 2026 (349 total)"
+    x-axis ["S", "M", "SD", "C", "V", "KD", "L", "MP"]
+    y-axis "Seats" 0 --> 120
+    bar [107, 68, 73, 24, 24, 19, 16, 18]
+    line [112, 63, 70, 26, 26, 17, 15, 20]
 ```
 
-### Summary: Outside-In Lessons for Sweden
+---
 
-1. **Railway**: Sweden's planning flexibility, while beneficial for fiscal management, creates political vulnerability. Norway's and Germany's models suggest binding regional consultation reduces the accountability gap HD10449 exploits.
-2. **Sick insurance**: Nordic comparators support retaining the day-180 exception — the international evidence contradicts any move toward elimination.
-3. **Energy debate**: Sweden's conflation of policy criticism with disinformation is unusual in the Nordic/EU context — Denmark and Germany maintain robust evidence-based debates without this conflation. The democratic quality concern raised implicitly by HD10448 deserves attention.
+### Key Swing Constituencies
+
+**Kronoberg**: Railway investment removal (HD10449) directly affects this county. Currently 2 SD, 1 M, 1 S seats. The infrastructure narrative could shift 1 seat from the Tidö bloc.
+
+**Skåne**: Södra stambanan's southern terminus. High-growth commuter corridor. Multiple SD and M seats vulnerable to infrastructure narrative.
+
+**Urban SME constituencies**: Employer sick-pay cost criticism (HD10447) affects urban small business owners, traditionally in M/L constituencies. If business community criticism sustains, 1-2 seats possible.
+
+---
+
+### Election Impact Summary
+
+| Narrative | Driving Interpellation | Electoral Impact | Constituency Focus |
+|---|---|---|---|
+| Railway broken promise | HD10449 | High — 1-2 seats | Kronoberg, Skåne |
+| Sick insurance reversal | HD10450 | High — diffuse | Nationwide |
+| Employer sick-pay costs | HD10447 | Medium — SME | Urban constituencies |
+| Coalition energy divide | HD10448 | Medium — coalition voters | National |
+
+## Risk Assessment
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/risk-assessment.md -->
+
+---
+
+### Risk Register
+
+| # | Risk | Domain | Likelihood (1–5) | Impact (1–5) | L×I | Tier |
+|---|------|--------|-----------------|-------------|-----|------|
+| R1 | SD-KD coalition fracture on energy policy — HD10448 escalates beyond parliamentary procedure | Political/Coalition | 2 | 5 | 10 | HIGH |
+| R2 | Infrastructure investment credibility collapse in southern Sweden — HD10449 unanswered | Investment/Regional | 3 | 4 | 12 | HIGH |
+| R3 | Welfare reform narrative dominates election cycle — S wins day-180 debate | Electoral | 3 | 3 | 9 | MEDIUM |
+| R4 | SME employment contraction due to removed sick-pay support — HD10447 | Economic | 2 | 3 | 6 | MEDIUM |
+| R5 | Media amplification of HD10448 leads to disinformation-about-disinformation cycle | Reputational | 3 | 3 | 9 | MEDIUM |
+| R6 | Government coalition loses multiple seats in Kronoberg/Skåne in 2026 election | Electoral | 2 | 4 | 8 | MEDIUM |
+
+### Risk Detail
+
+#### R1 — SD-KD Coalition Fracture (L×I=10) [B2]
+**Trigger**: If Ebba Busch (KD) gives a dismissive response to HD10448, SD can escalate. If she gives a detailed pro-wind defense, her coalition partner sees this as contradicting shared energy skepticism.  
+**Evidence**: HD10448 full text documents that Josef Fransson (SD) explicitly questions whether the minister herself has been misled by "Russian disinformation" about wind power, referring to her statements that "vindkraft inte snurrar utan vind." `[B2]`  
+**Posterior probability of cascade**: 25% (requires deliberate SD escalation — currently not signaled beyond this interpellation)  
+**Mitigation**: KD and SD leadership communicate off the record prior to minister's response; response carefully acknowledges energy skepticism concerns while maintaining policy position.
+
+#### R2 — Infrastructure Credibility Collapse (L×I=12) [A2]
+**Trigger**: Continued Trafikverket plan non-investment combined with no clear timeline from minister.  
+**Evidence**: HD10449 documents specific removal of Södra stambanan (north of Hässleholm) and Alvesta–Växjö from plan. Communities have already "planned large investments based on state infrastructure promises." `[A2]`  
+**Cascading chain**: Railway gap → business investment delays → regional GDP underperformance → electoral punishment in southern seats  
+**Mitigation**: Carlson provides specific alternative timeline by 2026-05-18 deadline.
+
+#### R3 — Welfare Narrative Dominance (L×I=9) [A2]
+**Trigger**: Government announces removal of day-180 exception before the election.  
+**Evidence**: HD10450 explicitly cites Riksrevisionen's positive evaluation, preemptively validating the instrument. If government removes it, the narrative is "government ignores independent evidence." `[A2]`  
+**Posterior probability**: 30% (government may preserve exception precisely to avoid the optics)
+
+#### R5 — Disinformation Cycle (L×I=9) [B2]
+**Trigger**: The Windeurope report + Sveriges Radio coverage + SD interpellation creates a meta-disinformation debate (accusations of disinformation used to delegitimize wind skepticism).  
+**Evidence**: HD10448 text references Sveriges Radio "pushing conclusions" from the Windeurope report. `[B2]`  
+**Systemic risk**: Blurs legitimate policy debate with information warfare framing — damages democratic discourse quality.
+
+### Cascading Risk Chains
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#ff006e', 'background': '#0a0e27'}}}%%
+graph TD
+    A["HD10448: SD questions<br/>KD energy policy"] --> B["Public SD-KD disagreement"]
+    B --> C["Coalition stability<br/>questions"]
+    C --> D["Investor uncertainty<br/>pre-election"]
+    
+    E["HD10449: Railway<br/>investment removed"] --> F["Regional business<br/>plan failures"]
+    F --> G["Electoral punishment<br/>Kronoberg/Skåne"]
+    
+    H["HD10450: Day-180<br/>exception review"] --> I["Welfare reform<br/>narrative"]
+    I --> J["S base energized<br/>pre-election"]
+    
+    style A fill:#ff006e,color:#fff
+    style E fill:#00d9ff,color:#0a0e27
+    style H fill:#ffbe0b,color:#0a0e27
+    style D fill:#1a1e3d,color:#e0e0e0
+    style G fill:#1a1e3d,color:#e0e0e0
+    style J fill:#1a1e3d,color:#e0e0e0
+```
+
+### Risk Heatmap
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+xychart-beta
+    title "Risk Likelihood × Impact"
+    x-axis "Risks" ["R1-Coalition", "R2-Infra", "R3-Welfare", "R4-SME", "R5-Media", "R6-Electoral"]
+    y-axis "L×I Score" 0 --> 15
+    bar [10, 12, 9, 6, 9, 8]
+```
+
+## SWOT Analysis
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/swot-analysis.md -->
+
+---
+
+### SWOT Matrix — Government Position
+
+#### Strengths [A2]
+
+- **Fiscal consolidation narrative**: The government can cite its track record of managing the 2023–2025 fiscal consolidation; the abolition of sick-pay support (HD10447) can be framed as business normalization, not cost-shifting.  
+  *Evidence*: HD10447 text — government stated rationale in 2024 was that employers bear responsibility for workplace health. [A2]
+- **Infrastructure investment volume**: Despite Trafikverket plan changes, the government can point to other national transport investments as evidence of commitment.  
+  *Evidence*: HD10449 — minister's future response will likely cite total infrastructure budget. [B3]
+- **Riksrevisionen compliance posture**: On HD10450, the government may argue it is actively reviewing the day-180 exception — not eliminating it, simply studying it. [B3]
+
+#### Weaknesses [A2]
+
+- **Infrastructure credibility gap** (HD10449): The specific removal of Södra stambanan and Alvesta–Växjö from Trafikverket's plan is documented fact. Communities made investments based on prior commitments. `dok_id=HD10449 [A2]`
+- **Intra-coalition vulnerability** (HD10448): SD's interpellation targeting KD minister Busch on energy policy is publicly on the record. Any non-answer or dismissive response exposes SD-KD fault lines. `dok_id=HD10448 [B2]`
+- **Welfare reform optics** (HD10450): The day-180 sick insurance exception was demonstrably effective per Riksrevisionen — eliminating it would mean the government overriding independent evaluation. `dok_id=HD10450 [A2]`
+- **SME economic signal** (HD10447): If Sweden's GDP growth is consistently below EU average (asserted, not verified independently here), the link to sick-pay cost removal becomes a credible opposition narrative.
+
+#### Opportunities [B2]
+
+- **Energy policy clarification**: Busch's response to HD10448 can be used to articulate a coherent energy policy narrative that addresses both affordability and reliability concerns — which the Windeurope report does not directly address. `dok_id=HD10448`
+- **Infrastructure reframing**: Carlson can use the HD10449 response to explain the new prioritization logic and offer a concrete timeline, transforming an accountability session into a communication opportunity. `dok_id=HD10449`
+- **Riksrevisionen co-option**: On HD10450, the government could commit to preserving the day-180 exception while adding efficiency measures — outflanking the opposition. `dok_id=HD10450`
+
+#### Threats [B2]
+
+- **Coalition coherence damage**: SD publicly questioning KD energy policy via a parliamentary instrument signals ideological divergence that will be amplified. `dok_id=HD10448`
+- **Electoral geography loss**: Failure to address Södrasto stambanan could cost coalition votes in Kronoberg, Skåne and surrounding constituencies in 2026. `dok_id=HD10449`
+- **Welfare reform backlash**: Any perceived attack on social insurance will energize S's voter base ahead of the election. `dok_id=HD10450`
+- **SME disillusionment**: If SMEs believe the government is increasing their cost burden (sick-pay) while reducing benefits (employer tax cuts offset by sick-pay removal), business confidence could fall. `dok_id=HD10447`
+
+### TOWS Strategic Matrix
+
+| | **Strengths** | **Weaknesses** |
+|---|---|---|
+| **Opportunities** | **SO**: Use infrastructure budget volume to justify Trafikverket plan changes, offer revised timeline for Alvesta–Växjö | **WO**: Proactively announce Riksrevisionen compliance on day-180 — preserve exception to neutralize S attack |
+| **Threats** | **ST**: Busch must respond to SD interpellation with specific policy defense, not dismissal — coalition discipline requires visible KD-SD alignment | **WT**: Most dangerous scenario: SD escalates energy disagreement + S wins welfare/infrastructure narratives simultaneously ahead of election |
+
+### Cross-SWOT Analysis
+
+The most significant SWOT intersection is **W2 × T1** (coalition vulnerability + coalition damage threat). The SD interpellation (HD10448) is not just parliamentary procedure — it is a public statement of policy disagreement within the governing bloc. The government's ability to manage this interaction will signal coalition cohesion strength for the remaining pre-election period.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'background': '#0a0e27'}}}%%
+quadrantChart
+    title Government SWOT Position
+    x-axis "Internal Control" --> "External Pressure"
+    y-axis "Threat" --> "Opportunity"
+    quadrant-1 Leverage
+    quadrant-2 Defend
+    quadrant-3 Mitigate
+    quadrant-4 Watch
+    Energy clarification: [0.3, 0.7]
+    Infrastructure reframe: [0.35, 0.6]
+    Coalition coherence: [0.8, 0.15]
+    Welfare backlash: [0.75, 0.25]
+    SME disillusionment: [0.7, 0.3]
+```
+
+## Threat Analysis
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/threat-analysis.md -->
+
+---
+
+### Threat Actors
+
+| Actor | Type | Intent | Capability | Threat Vector |
+|-------|------|--------|-----------|---------------|
+| Social Democrats (S) | Parliamentary opposition | Electoral displacement of Tidö coalition | HIGH (5 interpellations this week) | Coordinated accountability campaign |
+| Sweden Democrats (SD) | Coalition partner + internal opposition | Policy influence, potential distancing | MEDIUM (1 interpellation, but coalition-internal) | Parliamentary interpellation against KD minister |
+| Windeurope / industry | External actor | Energy policy influence | MEDIUM (industry report) | Via media amplification (Sveriges Radio) |
+| Regional stakeholders (Kronoberg/Skåne) | Economic actors | Infrastructure investment | HIGH in local terms | Business lobby, electoral geography |
+
+### Threat Classification
+
+#### T1 — Coordinated S Opposition Campaign (HIGH threat) [A2]
+
+**Pattern**: Five interpellations from S in one week targeting four different ministers (Carlson, Tenje, Busch, Slottner) across four policy domains. This is not ad hoc scrutiny — it is a structured pre-election campaign.  
+**Attack vector**: Parliamentary accountability instrument — each interpellation requires ministerial response within approximately 3 weeks.  
+**Evidence**: HD10449, HD10450, HD10447, HD10446, HD10443 — all filed S, all targeting governing ministers. `[A2]`  
+**Kill chain**:  
+1. File interpellations (COMPLETE)
+2. Ensure media coverage at announcement
+3. Force ministers into on-the-record positions
+4. Use positions as campaign material ahead of 2026 election
+
+#### T2 — SD Internal Coalition Challenge (MEDIUM-HIGH threat) [B2]
+
+**Pattern**: SD files interpellation (HD10448) against KD coalition partner Busch, using ironic framing to challenge energy policy without formally breaking coalition agreement.  
+**Attack vector**: Interpellation as "plausible deniability" tool — SD can claim legitimate scrutiny while the political effect is to distance from KD energy positions.  
+**Evidence**: HD10448 text — Fransson explicitly cites Busch's own statements about wind power as potentially constituting "Russian disinformation." `[B2]`  
+**MITRE-style TTP mapping**:
+- Tactic: Coalition strain / policy distance signaling
+- Technique: Parliamentary instrument used against partner
+- Procedure: Ironic framing + media-amplified report citation
+
+#### T3 — Information Environment Degradation (MEDIUM threat) [B2]
+
+**Pattern**: The Windeurope "disinformation" report, amplified by Sveriges Radio, creates a framing environment in which wind energy skepticism is labeled "disinformation" — threatening legitimate policy debate.  
+**Evidence**: HD10448 describes Sveriges Radio pushing Windeurope conclusions broadly including that "rysk desinformation" underlies criticism. `[B2]`  
+**Systemic risk**: The democratic discourse infrastructure (media, academic, parliamentary) is being used to delegitimize opposition to a particular policy, regardless of the policy's merits.
+
+### Attack Tree (Primary — S Pre-Election Campaign)
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#ff006e', 'background': '#0a0e27'}}}%%
+graph TD
+    ROOT["🎯 Goal: S Electoral Victory 2026"]
+    ROOT --> A["Narrative: Government incompetent"]
+    ROOT --> B["Narrative: Government weakens welfare state"]
+    ROOT --> C["Narrative: Coalition divided"]
+    A --> A1["Infrastructure failures\nHD10449: Railway not built"]
+    A --> A2["Economic failures\nHD10447: SME burden, GDP lag"]
+    B --> B1["Welfare reform\nHD10450: Day-180 at risk"]
+    B --> B2["Social services\nHD10443: Social dumpning"]
+    C --> C1["SD-KD energy split\nHD10448 exploited by S"]
+    C --> C2["Finance scandals\nHD10446: Dödförklaringar"]
+    style ROOT fill:#ff006e,color:#fff
+    style A fill:#1a1e3d,color:#e0e0e0
+    style B fill:#1a1e3d,color:#e0e0e0
+    style C fill:#1a1e3d,color:#e0e0e0
+```
+
+### Threat Priority Matrix
+
+| Threat | Likelihood | Impact | Response |
+|--------|-----------|--------|---------|
+| T1 Coordinated S campaign | HIGH | HIGH | Monitor all 5 interpellations for response quality |
+| T2 SD-KD energy rift | MEDIUM | HIGH | Watch Busch response to HD10448 |
+| T3 Media disinformation framing | HIGH | MEDIUM | Track coverage quality post-Windeurope |
 
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/historical-parallels.md -->
@@ -1681,6 +1511,86 @@ xychart-beta
     y-axis "Similarity Score" 0 --> 12
     bar [10, 7, 10]
 ```
+
+## Comparative International
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/comparative-international.md -->
+
+---
+
+---
+
+### Comparative Dimension 1 — Railway Investment Strategy
+
+#### Sweden (SE) — The Trafikverket Problem
+
+Sweden's Trafikverket has removed the Södra stambanan north of Hässleholm and Alvesta–Växjö double-track from its new national transport plan. Robert Olesen's interpellation (HD10449) documents the political fallout: regional businesses made investment decisions based on prior state infrastructure commitments. `[A2]`
+
+#### Norway (NO) — NTP Reference
+
+Norway's National Transport Plan (NTP) has faced similar challenges. The Norwegian government's 2025–2036 NTP reduced railway ambitions compared to the previous cycle. However, the Norwegian model includes binding regional consultation processes with municipalities, reducing the credibility gap that characterizes the Swedish situation in Kronoberg/Skåne.  
+**Outside-In lesson**: Binding consultation processes reduce the "broken promise" narrative that HD10449 exploits.
+
+#### Germany (DE) — Deutschlandtakt
+
+Germany's Deutschlandtakt (integrated clock-pattern timetable) requires doubling of rail capacity across regional corridors, including significant double-track investments. German rail policy has been more explicit about investment timelines and binding commitments.  
+**Outside-In lesson**: Sweden's looser planning framework (Trafikverket can revise plans between planning cycles) creates political vulnerability that Germany's more committed planning reduces.
+
+| Jurisdiction | Railway planning binding? | Regional consultation? | Credibility mechanism |
+|---|---|---|---|
+| Sweden (SE) | No — Trafikverket plan non-binding | Weak | None — current crisis |
+| Norway (NO) | Partial | Strong | Regional NTP agreements |
+| Germany (DE) | Yes (Deutschlandtakt targets) | Formal | Legislative mandate |
+| Denmark (DK) | Yes (Infrastrukturplan) | Moderate | Political agreement |
+
+---
+
+### Comparative Dimension 2 — Sick Insurance Day-180 Exception
+
+#### Sweden (SE) — HD10450 Context
+
+The day-180 exception — allowing delay of "full labor market test" when return to own employer is likely — was introduced by the Social Democratic government and evaluated positively by Riksrevisionen. `[A2]`
+
+#### Finland (FI) — Rehabilitation Focus
+
+Finland's sick insurance system has a comparable "90-day employer period" with rehabilitation support. Finland has maintained these instruments despite fiscal pressure, recognizing that forced labor market tests at day 180 increase long-term disability costs.  
+**Outside-In lesson**: The Finnish evidence supports the Riksrevisionen finding (positive evaluation of the exception).
+
+#### Denmark (DK) — "Flexicurity" Model
+
+Denmark's flexicurity model maintains strong individual-employer return pathways within its sick insurance system, with explicit economic evidence that employer-specific return reduces long-term disability costs by 25–35%.  
+**Outside-In lesson**: Nordic comparators broadly support retaining the Swedish day-180 exception.
+
+---
+
+### Comparative Dimension 3 — Wind Energy and Disinformation
+
+#### Sweden (SE) — HD10448 Context
+
+The Windeurope "disinformation" report created a media event in Sweden (Sveriges Radio amplification). SD's interpellation challenges the framing, arguing that legitimate policy debate is being delegitimized as "Russian disinformation." `[B2]`
+
+#### Germany (DE) — Bürgerdialog Wind
+
+Germany has faced similar dynamics: wind energy opponents have been accused of astroturfing funded by fossil fuel interests, while many opponents represent genuine local concerns. The German government's response has been to separate the disinformation question from the policy debate — not conflate them.
+
+#### Denmark (DK) — Mature Wind Integration
+
+Denmark, with the highest wind energy penetration in the EU, maintains a robust public debate about wind energy economics, grid stability, and landscape impact without labeling skeptics as disinformation spreaders. The policy debate is evidence-based.  
+**Outside-In lesson**: Sweden's quality of energy policy debate has deteriorated to a point where a major industry association report conflates policy criticism with disinformation — a democratic deficit concern.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'background': '#0a0e27'}}}%%
+xychart-beta
+    title "Nordic Comparison: Railway Plan Credibility (1-5)"
+    x-axis ["Sweden", "Norway", "Finland", "Denmark", "Germany"]
+    y-axis "Credibility Score" 0 --> 5
+    bar [2, 3, 3, 4, 4]
+```
+
+### Summary: Outside-In Lessons for Sweden
+
+1. **Railway**: Sweden's planning flexibility, while beneficial for fiscal management, creates political vulnerability. Norway's and Germany's models suggest binding regional consultation reduces the accountability gap HD10449 exploits.
+2. **Sick insurance**: Nordic comparators support retaining the day-180 exception — the international evidence contradicts any move toward elimination.
+3. **Energy debate**: Sweden's conflation of policy criticism with disinformation is unusual in the Nordic/EU context — Denmark and Germany maintain robust evidence-based debates without this conflation. The democratic quality concern raised implicitly by HD10448 deserves attention.
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/implementation-feasibility.md -->
@@ -1792,6 +1702,96 @@ quadrantChart
     Employer Sick Pay: [0.80, 0.15]
     Wind Policy Statement: [0.90, 0.55]
 ```
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/media-framing-analysis.md -->
+
+---
+
+### Framing Overview
+
+Political actors present the same policy reality through different narrative frames. This analysis examines how each party/actor would likely frame the four interpellations in their communications.
+
+---
+
+### Per-Party Framing Analysis
+
+#### HD10448 — Disinformation and Wind Power
+
+| Actor | Frame | Key Message | Media Channel |
+|---|---|---|---|
+| SD (Fransson) | "Information suppression" | "The government is calling legitimate policy criticism Russian disinformation" | SD.se, social media, Avpixlat |
+| KD (Busch) | "Security of supply" | "Energy reliability requires all sources; we will not be distracted by disinformation about disinformation" | Press releases, TV debates |
+| S (Opposition) | "Coalition fracture" | "The government's own support partner doesn't trust the energy minister" | Aftonbladet, SVT |
+| Windeurope | "Facts vs. disinformation" | "Our report documents Russian-linked campaigns — this is not about domestic policy debate" | EU media, industry press |
+
+#### HD10449 — Södra stambanan / Railways
+
+| Actor | Frame | Key Message | Media Channel |
+|---|---|---|---|
+| S (Olesen) | "Broken promise" | "The government promised infrastructure, removed it — businesses have already lost" | Regional media (Kronoberg), Expressen |
+| M/Carlson | "Responsible prioritization" | "We are managing a constrained budget; all regions get their fair share over time" | Sydsvenskan, government press |
+| Regional business | "Investment uncertainty" | "We can't plan for growth when the state changes infrastructure commitments every planning cycle" | Skånskt Näringsliv, Chamber of Commerce |
+
+#### HD10450+HD10447 — Social Insurance
+
+| Actor | Frame | Key Message | Media Channel |
+|---|---|---|---|
+| S (Rodén, Lundqvist) | "Punishing the sick" | "The government repealed a program that independent experts said works, to pay for tax cuts" | LO media, Aftonbladet, SVT |
+| M (Tenje) | "Work-first policy" | "We believe in work capacity, not extended passive absence; costs must be managed" | Government press releases, GP |
+| Employer associations | "Increased burden" | "Government said they would reduce employer obligations; sick-pay costs went the other way" | DI, Veckans Affärer |
+| Healthcare professionals | "Clinical judgment overridden" | "We know when patients can return to work; bureaucratic rules ignore medical expertise" | Läkartidningen, SR Ekot |
+
+---
+
+### Press Quadrant Analysis
+
+Classification of likely media outlets by partisan lean and audience:
+
+```
+                    Pro-Government ←→ Pro-Opposition
+                                |
+                    Broadsheet  |  Broadsheet
+                    ↑           |           ↑
+         Svenska Dagbladet      |       Aftonbladet
+         (right-center)         |       (left-center)
+         Dagens Industri        |       Expressen (varies)
+                                |
+         ----------------Tabloid|Tabloid-------------------
+                                |
+         Kvällsposten (SD-lean)  |       Metro (left-lean)
+         ↓                      |           ↓
+                    Partisan    |  Partisan
+```
+
+**HD10448 Press Quadrant**: SD-leaning tabloid media will amplify the "information suppression" frame; left-broadsheet will use the "coalition fracture" frame; mainstream broadsheet will report on Windeurope findings.
+
+**HD10449 Press Quadrant**: Regional southern Swedish media (Sydsvenskan, Kvällsposten) will give highest prominence; both may be critical of infrastructure removal. National media treats as regional story unless Carlson's response is surprising.
+
+**HD10450/HD10447 Press Quadrant**: Left-leaning media will amplify with personal stories; employer associations provide DI/business press angle. Healthcare professional voices will gain SR/public broadcaster coverage.
+
+---
+
+### Narrative Momentum Assessment
+
+| Interpellation | Current Momentum | Trajectory | Trigger for Escalation |
+|---|---|---|---|
+| HD10448 | MEDIUM | Declining unless response escalates | Busch dismisses SD concerns explicitly |
+| HD10449 | MEDIUM | Sustained through election | Any additional infrastructure removal |
+| HD10450 | LOW-MEDIUM | Growing with Riksrevisionen citations | Government rejects Riksrevisionen findings |
+| HD10447 | LOW | Sustained by employer criticism | Business association sustained campaign |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+xychart-beta
+    title "Narrative Momentum: Current vs. Projected Election (1-10)"
+    x-axis ["HD10448 Wind", "HD10449 Rail", "HD10450 Day-180", "HD10447 Sick Pay"]
+    y-axis "Momentum Score" 0 --> 10
+    bar [5, 6, 5, 4]
+    line [4, 7, 7, 6]
+```
+
+*Bar = current momentum. Line = projected election-period momentum.*
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/devils-advocate.md -->
@@ -2221,23 +2221,23 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/threat-analysis.md)
 - [`documents/HD10447-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/documents/HD10447-analysis.md)
 - [`documents/HD10448-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/documents/HD10448-analysis.md)
 - [`documents/HD10449-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/documents/HD10449-analysis.md)
 - [`documents/HD10450-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/documents/HD10450-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-27/interpellations/cross-reference-map.md)

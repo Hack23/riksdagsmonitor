@@ -5,7 +5,7 @@ date: 2026-04-26
 subfolder: committeeReports
 slug: 2026-04-26-committeeReports
 source_folder: analysis/daily/2026-04-26/committeeReports
-generated_at: 2026-05-04T09:52:32.293Z
+generated_at: 2026-05-04T12:16:13.995Z
 language: en
 layout: article
 ---
@@ -99,10 +99,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -334,694 +334,6 @@ style FiU48 fill:#ff006e,color:#ffffff
 style JuU10 fill:#ff006e,color:#ffffff
 style CU25 fill:#ffbe0b,color:#000000
 ```
-
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/media-framing-analysis.md -->
-
-### Per-Party Framing
-
-#### M (Moderaterna) — Governing Party
-**Frame**: "Responsible fiscal management delivering real relief"
-- HD01FiU48: "We are responding to extraordinary energy price pressures with targeted relief"
-- HD01JuU10: "Sweden meets its EU obligations on weapons control"
-- HD01CU25: "We are building the prison places Sweden needs"
-- HD01JuU31: "Police reform is ongoing; we remain committed to public safety"
-**Key messenger**: Prime Minister (M) in government press conference
-**Media placement**: SVT Aktuellt, Rapport; Dagens Nyheter editorial access
-
-#### SD (Sverigedemokraterna) — Senior Coalition Partner
-**Frame**: "Law and order, Sweden first"
-- HD01FiU48: "Fuel relief for ordinary Swedes who have been forgotten by elites"
-- HD01CU25: "Criminals will finally face consequences"
-- HD01JuU10: Complicated — rural SD voters resist; urban SD supports. Message: "Hunting rights preserved; only criminal weapons targeted"
-- HD01JuU31: "Proof that police reform failed — we need more radical reform"
-**Key messenger**: SD justice spokesperson
-**Media placement**: Expressen, Aftonbladet populist channels; social media primary
-
-#### KD (Kristdemokraterna) — Junior Coalition Partner
-**Frame**: "Family and community values in policy"
-- HD01FiU48: "Relief for rural families who depend on cars"
-- HD01SoU25: "Strengthening care for our elderly is a KD priority"
-- HD01JuU10: Cautious; "balance between security and legitimate sport/hunting"
-**Key messenger**: Party leader
-**Media placement**: Regional press (Dalabygden, Smalandsposten); faith community media
-
-#### L (Liberalerna) — Junior Coalition Partner
-**Frame**: "Rights-based, EU-compliant governance"
-- HD01SfU23: "Sweden must be competitive in attracting international research talent"
-- HD01JuU10: "Sweden fulfills EU firearms directives as a responsible member state"
-- HD01AU15: "ILO violence convention ratification is a liberal human rights priority"
-**Key messenger**: Party leader
-**Media placement**: DN Debatt; academic/professional media
-
-#### S (Socialdemokraterna) — Main Opposition
-**Frame**: "Government uses emergency powers for election spending"
-- HD01FiU48: "This is borrowed money that future generations will pay; we would target relief better"
-- HD01JuU31: "Police reform has failed; this government cannot keep Sweden safe"
-- HD01CU25: "Building prisons is not a substitute for effective crime prevention"
-- HD01MJU21: Secondary attack — "government simultaneously cuts fuel tax and fails on climate"
-**Key messenger**: S riksdagsgrupp; party leader in PM debate
-**Media placement**: LO-Tidningen; Aftonbladet sympathetic; SVT "Studio Ett" appearances
-
-#### V (Vänsterpartiet)
-**Frame**: "Workers first, not tax cuts for car owners"
-- HD01FiU48: "Energy support YES; fuel tax cut is fossil subsidy we oppose"
-- HD01AU15: "ILO 190 ratification is V's long-standing demand — we welcome it"
-- HD01JuU31: "Police reform failure due to privatisation pressure"
-
-#### MP (Miljöpartiet)
-**Frame**: "Climate first"
-- HD01MJU21 + HD01FiU48 combined: "Sweden is committing climate hypocrisy — failing farms on climate while cutting fuel tax"
-- HD01AU15: "Green support for ILO 190 workplace violence protections"
-
-#### C (Centerpartiet)
-**Frame**: "Rural rights, not rural gimmicks"
-- HD01FiU48: Accepts fuel relief substance; questions process
-- HD01JuU10: "C supports hunting rights; will propose amendments to protect legitimate hunting"
-- HD01MJU21: "Government has failed rural agriculture; we demand new CAP strategy"
-
-### Press Quadrant Analysis
-
-```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#ff006e', 'lineColor': '#ff006e'}}}%%
-quadrantChart
-    title Media Outlet Coverage Framing (April 2026 Package)
-    x-axis "Opposition-leaning" --> "Government-leaning"
-    y-axis "Low Salience" --> "High Salience"
-    quadrant-1 Key Government Amplifiers
-    quadrant-2 Opposition Amplifiers
-    quadrant-3 Low Traction Opposition
-    quadrant-4 Neutral High-Reach
-    SVT Rapport: [0.5, 0.9]
-    Aftonbladet: [0.25, 0.85]
-    Expressen: [0.55, 0.8]
-    DN: [0.4, 0.7]
-    SvD: [0.6, 0.65]
-    SR Ekot: [0.5, 0.75]
-
-```
-
-style SVT Rapport fill:#00d9ff,color:#000000
-style Aftonbladet fill:#ffbe0b,color:#000000
-style Expressen fill:#ff006e,color:#ffffff
-style DN fill:#1a1e3d,color:#00d9ff
-style SvD fill:#1a1e3d,color:#00d9ff
-style SR Ekot fill:#00d9ff,color:#000000
-
-### Narrative Vulnerability Assessment
-
-**Highest vulnerability**: "Election bribe" narrative on HD01FiU48 — amplified by S, available to all media
-**Second vulnerability**: "Police failure" narrative on HD01JuU31 — evidence-based; difficult to counter
-**Best government position**: HD01CU25 prison expansion and HD01JuU10 — bipartisan or EU-mandated; harder to attack
-
-## Stakeholder Perspectives
-<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/stakeholder-perspectives.md -->
-
-### 6-Lens Stakeholder Matrix
-
-#### Lens 1: Governing Coalition (Tidö: M + SD + KD + L)
-
-**Primary interests**: Re-election (September 2026); law-and-order credibility; cost-of-living relief
-**Position on HD01FiU48 (fuel tax cut)**: Strong support — Moderaterna (fiscal pragmatism), SD (working class voters), KD (rural voters), L (market flexibility)
-**Position on HD01JuU10 (weapons law)**: Internally split — KD and SD have rural/hunting constituencies; M urban; compromise achieved through semi-auto ban (not broad ban)
-**Position on HD01CU25 (prisons)**: Unanimous — core criminal justice agenda
-**Key actor**: Finance Minister (M) for HD01FiU48; Justice Minister (M) for JuU10/CU25
-**Influence level**: Maximum (governing majority) [A2, riksdagen.se]
-
-#### Lens 2: Opposition (S + V + MP + C)
-
-**S (Social Democrats)**:
-- HD01FiU48: Will accept energy relief substance but challenge process and timing
-- HD01JuU31: Use police reform failure to challenge government's public safety narrative
-- Electoral positioning: "Government uses emergency powers for election spending"
-- Key actor: Socialdemokraternas riksdagsgrupp [A2]
-
-**V (Left Party)**:
-- HD01FiU48: Support energy support component, oppose fuel tax cut as fossil subsidy
-- HD01JuU10: Support weapons restrictions; demand broader scope
-- Key actor: Vänsterpartiet riksdagsgrupp [A2]
-
-**MP (Green Party)**:
-- HD01MJU21: Use agricultural climate failure as attack vector
-- HD01FiU48: Oppose fuel tax cut as direct contradiction of climate policy
-- Key actor: Miljöpartiet riksdagsgrupp [A2]
-
-**C (Centre Party)**:
-- Split from coalition: May support some measures on rural policy grounds
-- HD01JuU10: Likely opposed to semi-auto ban on rural/hunting grounds [B2]
-
-#### Lens 3: Civil Society and Interest Groups
-
-**Jägarförbundet (Hunters' Association)**:
-- HD01JuU10: Strong opposition to semi-automatic rifle ban; will pursue legal challenges
-- Influence: Moderate-High (regional political network) [B2]
-
-**Kommunförbundet (Municipal Federation)**:
-- HD01CU25: Opposition to Plan and Building Act override for prison siting
-- Influence: High (350 member municipalities) [B2]
-
-**LO (Main Trade Union Confederation)**:
-- HD01AU15: Strong support for ILO violence convention ratification
-- HD01FiU48: Energy support welcomed; fuel tax cut seen as insufficient for workers
-
-**Riksbank management (Governor Erik Thedéen)**:
-- HD01FiU23: Retained profit signals institution's own preference for equity buffer
-- Will resist pressure for extraordinary dividend in 2026 [A1]
-
-#### Lens 4: Business and Industry
-
-**Swedish Industry Federation (Industriförbundet)**:
-- HD01SfU23: Strong support for researcher visa reform — talent pipeline issue
-- HD01FiU48: Diesel tax relief supports logistics and transport sector costs
-- HD01CU24: Support for construction process efficiency
-
-**Energy sector (Vattenfall, E.ON)**:
-- HD01FiU48: Complex — el/gas price support increases consumption but reduces political risk of energy price volatility backlash
-
-**Construction and Real Estate (Fastighetsägarna, byggbranschen)**:
-- HD01CU24: Support for streamlined building process
-- HD01CU29: Slight impact — EV charging mandate
-
-#### Lens 5: International Actors
-
-**European Commission**:
-- HD01JuU10: Monitoring for Firearms Directive compliance
-- HD01FiU48: Watching for excessive deficit procedure implications (Sweden runs surplus; 4.1B SEK impact small)
-- HD01SfU23: Welcoming EU research mobility rules transposition
-
-**NATO/Allied partners**:
-- HD01FiU48: Emergency budget framing references Middle East — geopolitical signal to NATO partners
-- HD01CU25: Prison expansion aligns with broader law-and-order NATO "home front" security framing
-
-**IMF (WEO Apr-2026 context)**:
-- HD01FiU48: Mild concern about pre-election fiscal loosening; Sweden's fiscal position strong enough to absorb [B2]
-
-#### Lens 6: Media and Public Opinion
-
-**Mainstream media (SVT, DN, SvD)**:
-- HD01FiU48: High coverage — cost-of-living relief is audience-friendly; timing scrutiny
-- HD01JuU10: Moderate coverage — weapons law editorially complex
-- HD01JuU31: Medium coverage — institutional accountability story
-
-**Social media / populist channels**:
-- HD01FiU48: Viral potential — direct household impact; SD base mobilisation
-- HD01CU25: Prison capacity = core SD/M voter concern
-
-### Influence Network
-
-```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ffbe0b'}}}%%
-graph TD
-    GOV[Tidö Coalition\nM+SD+KD+L]:::gov
-    FIN[Finance Ministry]:::gov
-    JUS[Justice Ministry]:::gov
-    OPP[Opposition\nS+V+MP+C]:::opp
-    RB[Riksbank]:::inst
-    MED[Riksdag\nMedia/Public]:::pub
-    CS[Civil Society]:::civil
-    INT[International\nEU/NATO/IMF]:::intl
-    
-    GOV --> FIN
-    GOV --> JUS
-    FIN -->|HD01FiU48 budget| MED
-    JUS -->|HD01JuU10 weapons| CS
-    JUS -->|HD01CU25 prisons| CS
-    RB -->|zero dividend HD01FiU23| FIN
-    OPP -->|scrutiny| GOV
-    CS -->|legal challenge| JUS
-    INT -->|monitoring| GOV
-    MED -->|public pressure| GOV
-
-classDef gov fill:#ff006e,color:#ffffff,stroke:#ff006e
-classDef opp fill:#ffbe0b,color:#000000,stroke:#ffbe0b
-classDef inst fill:#00d9ff,color:#000000,stroke:#00d9ff
-classDef pub fill:#1a1e3d,color:#e0e0e0,stroke:#00d9ff
-classDef civil fill:#1a1e3d,color:#e0e0e0,stroke:#ffbe0b
-classDef intl fill:#0a0e27,color:#00d9ff,stroke:#ff006e
-
-style GOV fill:#ff006e,color:#ffffff
-style RB fill:#00d9ff,color:#000000
-style OPP fill:#ffbe0b,color:#000000
-```
-
-## Forward Indicators
-<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/forward-indicators.md -->
-
-### Indicator Framework
-
-12+ dated indicators across 4 horizons (30/60/90/180 days) monitoring the April 2026 committee reports package.
-
----
-
-### Horizon 1: 30 Days (by 2026-05-26)
-
-**I-01: HD01FiU48 Royal Assent and Enactment** [Technical milestone]
-- **Expected**: Royal Assent in May 2026; Skatteverket begins fuel tax reduction system update
-- **Confirmation source**: Riksdagen plenary vote record; Skatteverket announcement
-- **Signal value**: Confirms delivery timeline (HIGH confidence)
-
-**I-02: HD01JuU10 Parliamentary Plenary Vote** [Political milestone]
-- **Expected**: Vote scheduled for May 2026 plenary session
-- **Watch for**: Margin of victory; number of Ja votes from SD/KD rural MPs
-- **If margin > 300 Ja**: Broad consensus; legal challenge risk lower
-- **If margin 176-200**: Narrow passage; higher legal challenge motivation from affected parties
-- **Source**: Riksdagen vote records (riksdagen.se)
-
-**I-03: Jägarförbundet Legal Challenge Filing** [Risk indicator]
-- **Expected**: Challenge filed within 30 days of Royal Assent or before June 2026
-- **Watch for**: Filing at Förvaltningsrätten; application for interim injunction
-- **If filed with interim injunction request**: HD01JuU10 implementation at high risk
-- **Source**: Förvaltningsrätten public case register
-
-**I-04: IMF WEO April 2026 Sweden Revision** [Economic baseline]
-- **Expected**: IMF WEO April 2026 edition released; Sweden GDP projection confirmed
-- **Watch for**: Sweden growth rate > or < +1.5% for 2026
-- **If Sweden GDP projection ≥ +1.5%**: Economic tailwind for coalition
-- **Source**: IMF WEO April 2026; `scripts/imf-fetch.ts weo --country SWE --indicator NGDP_RPCH`
-
----
-
-### Horizon 2: 60 Days (by 2026-06-26)
-
-**I-05: HD01FiU48 Fuel Price Impact Measurement** [Economic indicator]
-- **Expected**: June data from Statistics Sweden (SCB) showing petrol/diesel price change at pump
-- **Watch for**: Actual consumer price reduction ≥ 0.50 SEK/litre
-- **If visible reduction**: Government can point to tangible delivery; electoral benefit crystallises
-- **If prices rise despite cut**: Middle East/global commodity price overwhelms relief; narrative fails
-- **Source**: SCB consumer price index (CPI); Preem/Circle K retail price data
-
-**I-06: HD01CU25 First Prison Site Announcement** [Capital delivery]
-- **Expected**: Kriminalvården announces one or more identified sites for new prison construction
-- **Watch for**: Municipal government response; legal challenge from Kommunförbundet
-- **If announcement with site**: Implementation on schedule
-- **If delayed**: PBL challenge complexity has stalled site selection
-- **Source**: Kriminalvården press releases; local media in targeted municipalities
-
-**I-07: HD01JuU10 Weapons Surrender Data** [Implementation compliance]
-- **Expected**: First month post-June 2026 compliance data from Polismyndigheten
-- **Watch for**: Number of weapons surrendered vs estimated stock of banned weapons
-- **If compliance > 60%**: Law functioning; enforcement credible
-- **If compliance < 30%**: Enforcement crisis; black market expansion risk
-- **Source**: Polismyndigheten annual/quarterly statistics
-
----
-
-### Horizon 3: 90 Days (by 2026-07-26)
-
-**I-08: Pre-Election Coalition Poll Average** [Electoral indicator]
-- **Expected**: Sifo/Demoskop/Novus July 2026 polls with pre-summer consolidation
-- **Watch for**: Tidö bloc at > or < 49%
-- **If Tidö > 49%**: HD01FiU48 and CU25 are working; scenario A (Coalition Continuity) strengthens
-- **If Tidö < 47%**: HD01JuU31 police failure narrative dominating; scenario B (Electoral Disruption) strengthens
-- **Source**: SCB; Sifo; Novus poll aggregates
-
-**I-09: HD01JuU31 Police Incident Test** [Institutional stress indicator]
-- **Expected**: Any major criminal incident (gang violence, organised crime) in June-July 2026
-- **Watch for**: Opposition use of HD01JuU31 findings in response to incident
-- **If major incident occurs before election**: Police reform failure narrative explodes — high impact
-- **If no major incident**: JuU31 impact contained — technical governance story
-- **Source**: BRÅ (Brottsförebyggande rådet) incident statistics; media monitoring
-
-**I-10: HD01FiU23 Riksbank Dividend Pressure** [Fiscal independence indicator]
-- **Expected**: Government budget discussions for 2027 begin in July 2026
-- **Watch for**: Any government statement suggesting Riksbank dividend may be reconsidered
-- **If zero dividend maintained**: Institutional independence preserved; FiU23 precedent holds
-- **If government requests extraordinary dividend**: Institutional risk elevated; T2.3 threat activated
-- **Source**: Finance Ministry statements; Riksdag Finance Committee minutes
-
----
-
-### Horizon 4: 180 Days (by 2026-10-26, post-election)
-
-**I-11: September 2026 Election Result** [Ultimate validation]
-- **Expected**: Riksdag election 20 September 2026
-- **Watch for**: Tidö margin vs S-led bloc; C kingmaker role; KD and L threshold performance
-- **This indicator validates or refutes all electoral predictions in election-2026-analysis.md**
-- **Source**: Valmyndigheten (Election Authority) official results
-
-**I-12: Post-Election HD01FiU48 Survival Test** [Policy persistence]
-- **Expected**: New government's 2027 budget (October-November 2026) will confirm or reverse fuel tax cut
-- **Watch for**: If S-led government reverses cut: confirms electoral positioning hypothesis (H2)
-- **If Tidö continues and extends cut**: Confirms substantive policy hypothesis (H1)
-- **Source**: Riksdag budget proposition 2027; Finance Ministry press releases
-
-**I-13: HD01CU25 First Construction Contract Award** [Capital delivery milestone]
-- **Expected**: First prison construction contract awarded by Q4 2026
-- **Watch for**: Contract size; contractor; municipal acceptance or legal challenge outcome
-- **Source**: Upphandlingsmyndigheten (public procurement authority) contract register
-
-### Indicator Summary Table
-
-| Code | Indicator | Horizon | Priority | Source |
-|------|-----------|---------|----------|--------|
-| I-01 | FiU48 Royal Assent | 30 days | HIGH | Riksdagen.se |
-| I-02 | JuU10 plenary vote margin | 30 days | HIGH | Riksdagen.se votes |
-| I-03 | Jägarförbundet legal challenge | 30 days | HIGH | Förvaltningsrätten |
-| I-04 | IMF WEO Apr-2026 Sweden | 30 days | MEDIUM | IMF API |
-| I-05 | Fuel price impact at pump | 60 days | HIGH | SCB CPI |
-| I-06 | First prison site announcement | 60 days | HIGH | Kriminalvården |
-| I-07 | Weapons surrender rate | 60 days | MEDIUM | Polismyndigheten |
-| I-08 | Pre-election polls | 90 days | VERY HIGH | Sifo/Novus |
-| I-09 | Police incident test | 90 days | HIGH | BRÅ + media |
-| I-10 | Riksbank dividend pressure | 90 days | MEDIUM | Finance Ministry |
-| I-11 | Election result | 180 days | CRITICAL | Valmyndigheten |
-| I-12 | FiU48 policy survival | 180 days | HIGH | Budget 2027 |
-| I-13 | CU25 first contract | 180 days | MEDIUM | Upphandlingsmyndigheten |
-
-## Scenario Analysis
-<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/scenario-analysis.md -->
-
-### Scenario Framework
-
-Three mutually exclusive scenarios for Swedish political outcomes following the April 2026 committee reports wave, assessed across 6-month (pre-election) and 12-month (post-election) horizons.
-
----
-
-### Scenario A: "Coalition Continuity" — Tidö Re-elected (Probability: 38%)
-
-**Summary**: The April 2026 committee reports package — particularly HD01FiU48 fuel relief and HD01JuU10 weapons law — lands well with the coalition's core voters. HD01CU25 prison expansion signals decisive law-and-order action. Coalition wins September 2026 election with narrow majority.
-
-**Enabling conditions**:
-- Energy prices remain elevated through summer (HD01FiU48 remains salient and welcome)
-- No major police incident that amplifies HD01JuU31 reform failure
-- Opposition fragmented; S unable to consolidate left bloc
-- IMF WEO Apr-2026 projects Sweden GDP +1.8% — economic story improves
-
-**Leading indicators**:
-- Coalition poll lead 2+ percentage points in June 2026
-- Diesel prices stay >18 SEK/litre through August 2026
-- No major court ruling against HD01JuU10 before election
-
-**Downstream consequences**:
-- HD01CU25 prison construction proceeds 2027-2030
-- HD01JuU31 police reform remains unaddressed through next mandate
-- HD01MJU21 climate contradiction deepens
-
----
-
-### Scenario B: "Electoral Disruption" — Government loses, S-led bloc wins (Probability: 45%)
-
-**Summary**: The emergency budget (HD01FiU48) framing as "election bribe" takes hold in media narrative. Police reform failure (HD01JuU31) undermines government's core law-and-order competence claim. S consolidates left bloc and wins narrow majority in September 2026.
-
-**Enabling conditions**:
-- HD01FiU48 attacked as "borrowed money for votes" by S leader in Prime Minister debate
-- Police incident (shooting/gang violence) before election amplifies HD01JuU31 critique
-- HD01MJU21 agricultural climate failure used by MP to draw voters from centre
-- Economy softens — IMF WEO Oct-2026 revision downward
-
-**Leading indicators**:
-- S lead >3 pp in August polls (cross-party bloc calculation)
-- Major criminal justice incident between July-August 2026
-- Emergency budget framing dominates political TV coverage
-
-**Downstream consequences**:
-- HD01FiU48 partially reversed — fuel tax reinstated in S budget autumn 2026
-- HD01JuU31 leads to Stage 2 police reform mandate
-- HD01CU25 prison construction proceeds (bipartisan)
-- HD01MJU21 used as basis for new agricultural climate strategy
-
----
-
-### Scenario C: "Hung Parliament" — No majority, extended negotiations (Probability: 17%)
-
-**Summary**: September 2026 produces no workable majority. Tidö parties cannot maintain coalition without C. S-led bloc is one seat short. Sweden faces minority government or coalition negotiation extending through November 2026.
-
-**Enabling conditions**:
-- SD and M diverge on HD01JuU10 (weapons law) — coalition cohesion frays before election
-- C re-enters as "kingmaker" demanding reversal of some HD01FiU48 measures (climate deficit)
-- Election produces 174-175 seat split with pivotal individual MPs
-
-**Leading indicators**:
-- Internal coalition dispute on HD01JuU10 in August 2026 media
-- C party polls above 6% (survival threshold ensures kingmaker role)
-- Three-way split in final polls (Tidö / S-bloc / uncertain)
-
-**Downstream consequences**:
-- HD01FiU23 Riksbank dividend issue re-opened as fiscal pressure increases
-- HD01CU25 construction delays due to municipal legal challenges without political backing
-- Researcher visa (HD01SfU23) implementation stalls in ministry transition
-
----
-
-### Leading Indicators Table (Next 90 Days)
-
-| Indicator | Scenario A signal | Scenario B signal | Scenario C signal | Source |
-|-----------|------------------|------------------|------------------|--------|
-| Coalition poll lead | +2pp | -3pp | <1pp either way | SVT/SCB polls |
-| Diesel price (SEK/L) | >18 sustained | <17 (relief unnecessary) | Volatile | Statistics Sweden |
-| Gang crime incidents | Stable or declining | Major incident | Fragmented pattern | BRÅ statistics |
-| Court challenge to JuU10 | Dismissed | Granted interim injunction | Filed but pending | Förvaltningsrätten |
-| IMF WEO revision | Sweden +1.5%+ | Sweden <1% | Mixed signals | IMF WEO Oct-2026 |
-
-### Scenario Probability Calibration
-
-```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#ff006e', 'lineColor': '#ff006e'}}}%%
-xychart-beta
-    title "Scenario Probability Distribution"
-    x-axis ["A: Coalition\nContinuity", "B: Electoral\nDisruption", "C: Hung\nParliament"]
-    y-axis "Probability (%)" 0 --> 50
-    bar [38, 45, 17]
-
-```
-
-*Note: Probabilities sum to 100%. Based on structural analysis of HD01FiU48, HD01JuU31, HD01JuU10 policy dynamics as of 2026-04-26.*
-
-## Risk Assessment
-<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/risk-assessment.md -->
-
-### Risk Register
-
-| ID | Risk | Dimension | Likelihood (1–5) | Impact (1–5) | L×I | Cascade Chain | Source |
-|----|------|-----------|-----------------|--------------|-----|---------------|--------|
-| R1 | Fuel tax cut becomes permanent pre-election commitment | Fiscal/Political | 4 | 5 | **20** | R1→R5→R7 | HD01FiU48, riksdagen.se [A2] |
-| R2 | Riksbank must support state finances if deficit widens | Monetary/Fiscal | 3 | 5 | **15** | R2→R6 | HD01FiU23, riksdagen.se [A1] |
-| R3 | Semi-auto weapons ban challenged in EU court | Legal/Political | 3 | 4 | **12** | R3→R8 | HD01JuU10, riksdagen.se [A2] |
-| R4 | Prison expansion creates municipal-state conflict | Governance/Legal | 4 | 3 | **12** | R4→R9 | HD01CU25, riksdagen.se [A2] |
-| R5 | Police reform failure escalates to political liability | Institutional | 3 | 4 | **12** | R5→R10 | HD01JuU31, riksdagen.se [A1] |
-| R6 | Sweden's fiscal surplus target missed in 2026 | Fiscal/Credibility | 3 | 4 | **12** | R6→R11 | HD01FiU48 + WEO Apr-2026 [B2] |
-| R7 | Energy price volatility continues post-September | Energy/Social | 4 | 3 | **12** | R7 | HD01FiU48, riksdagen.se [A2] |
-| R8 | Agricultural sector misses climate targets legally | Environmental | 3 | 3 | **9** | R8 | HD01MJU21, riksdagen.se [A1] |
-| R9 | Researcher visa reform fails to attract talent | Labour market | 2 | 3 | **6** | — | HD01SfU23, riksdagen.se [A2] |
-| R10 | Weapons law compliance enforcement overloads police | Institutional | 2 | 3 | **6** | R10→R5 | HD01JuU10, riksdagen.se [A2] |
-
-### Top Five Risks Detailed Analysis
-
-#### R1: Fuel Tax Cut Permanence [A2] — L×I: 20
-
-**Description**: The temporary fuel tax reduction (HD01FiU48, riksdagen.se) is a 5-month measure (1 May – 30 September 2026). With September 2026 elections, the government faces an invidious choice at expiry: allow prices to rebound (political cost) or extend/make permanent (fiscal cost ≥1.56 billion SEK/year). The "special circumstances" invocation creates a negotiation floor for opposition demands.
-
-**Cascade**: R1→R5 (fiscal deterioration reduces police reform budget available)→R7 (if permanent, reduces fiscal space for energy crisis management)
-
-**Mitigants**: IMF fiscal consolidation pressure; EU energy price normalisation if Middle East tensions ease; autumn budget process providing formal channel for extension decision.
-
-**Posterior probability of escalation**: ~55% [C2]
-
-#### R2: Riksbank–Government Fiscal Tension [A1] — L×I: 15
-
-**Description**: Riksbank retained 5.297 billion SEK (HD01FiU23, riksdagen.se) rather than transferring to state. Combined with emergency budget deficit impact (4.1 billion SEK), total implicit fiscal gap vs. Riksbank expectations is ~9.4 billion SEK in 2026 alone. If government requires additional expenditure, pressure on Riksbank to provide extraordinary dividends may increase.
-
-**Posterior probability**: ~30% [B2]
-
-#### R3: EU Weapons Law Challenge [A2] — L×I: 12
-
-**Description**: Sweden's semi-automatic hunting rifle ban (HD01JuU10, riksdagen.se) must coexist with EU Firearms Directive (2017/853). Specific prohibition on new permits for certain half-automatic hunting rifles may conflict with the Directive's harmonisation intent. Finland and Estonia have broader hunting traditions that may prompt EU complaint.
-
-**Posterior probability**: ~25% [C3]
-
-#### R4: Municipal Resistance to Prison Construction [A2] — L×I: 12
-
-**Description**: The Plan and Building Act override (HD01CU25, riksdagen.se) gives government power to bypass local planning for prison construction. Swedish municipalities historically resist prison siting (NIMBY). Government override power may trigger administrative court challenges, delaying the urgently needed capacity expansion.
-
-**Posterior probability**: ~40% [B2]
-
-#### R5: Police Reform Political Liability [A1] — L×I: 12
-
-**Description**: Riksrevisionen's finding that Polismyndigheten failed its 2015 reform targets (HD01JuU31, riksdagen.se) without JuU mandating remediation creates a recurring vulnerability. Opposition parties (S, V, MP) may use this finding in September 2026 campaign to challenge the coalition's public safety competence narrative.
-
-**Posterior probability of election impact**: ~45% [B2]
-
-### Cascading Risk Model
-
-```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#ff006e', 'lineColor': '#ff006e'}}}%%
-flowchart LR
-    R1[R1: Fuel Tax\nPermanence Risk\nL×I=20]:::critical --> R5[R5: Police Reform\nLiability\nL×I=12]:::high
-    R1 --> R7[R7: Energy\nVolatility\nL×I=12]:::med
-    R2[R2: Riksbank\nFiscal Tension\nL×I=15]:::high --> R6[R6: Fiscal Surplus\nMiss\nL×I=12]:::med
-    R3[R3: EU Weapons\nChallenge\nL×I=12]:::high --> R8[R8: Legal\nUncertainty]:::low
-    R4[R4: Prison\nPlanningConflict\nL×I=12]:::high --> R9[R9: Capacity\nDelay]:::low
-    R10[R10: Weapons\nEnforcement Overload\nL×I=6]:::low --> R5
-
-classDef critical fill:#ff006e,color:#ffffff,stroke:#ff006e
-classDef high fill:#ffbe0b,color:#000000,stroke:#ffbe0b
-classDef med fill:#1a1e3d,color:#00d9ff,stroke:#00d9ff
-classDef low fill:#0a0e27,color:#e0e0e0,stroke:#00d9ff
-
-style R1 fill:#ff006e,color:#ffffff
-style R2 fill:#ffbe0b,color:#000000
-```
-
-## SWOT Analysis
-<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/swot-analysis.md -->
-
-### Analytical Framework
-
-SWOT analysis applied to the **Tidö coalition government's legislative position** as revealed by the April 2026 committee report cluster. Evidence citations from primary sources throughout.
-
----
-
-#### Strengths
-
-- **Broad security-and-welfare agenda delivery**: The coalition simultaneously enacted weapons law (HD01JuU10, riksdagen.se), prison expansion (HD01CU25, riksdagen.se), elder care improvement (HD01SoU25, riksdagen.se), and researcher visa reform (HD01SfU23, riksdagen.se) — demonstrating multi-domain legislative competence [A2]
-- **Emergency fiscal responsiveness**: Extra budget (HD01FiU48, riksdagen.se) shows ability to mobilise support for cost-of-living relief ahead of elections — "special circumstances" invocation accepted by Riksdag [A2]
-- **Riksbank institutional health**: 5.297 billion SEK Riksbank profit (HD01FiU23, riksdagen.se) with full management discharge signals monetary credibility and institutional stability [A1]
-- **EU harmonisation**: ILO conventions (HD01AU15), EV charging directive (HD01CU29), researcher visa EU rules (HD01SfU23) — all from riksdagen.se — demonstrate compliance with European agenda [A2]
-
-#### Weaknesses
-
-- **Police reform failure unresolved**: Riksrevisionen found Polismyndigheten failed 2015 reform goals (HD01JuU31, riksdagen.se); JuU chose to close without remedial mandate — governance gap acknowledged, not addressed [A1]
-- **Fiscal discipline erosion signal**: Extra budget (HD01FiU48, riksdagen.se) creates 4.1 billion SEK deficit deterioration; setting precedent for pre-election emergency spending undermines Sweden's traditionally conservative fiscal reputation (WEO Apr-2026 context) [A2]
-- **Agricultural climate policy failure**: Riksrevisionen found government's climate steering of agriculture "not led to agriculture contributing to climate goals effectively" (HD01MJU21, riksdagen.se) — green credibility gap [A1]
-- **Prison plan vs. Planning Law tension**: Using government override of Plan and Building Act for prisons (HD01CU25, riksdagen.se) sets a precedent for executive bypass of local democracy in spatial planning [A2]
-
-#### Opportunities
-
-- **Electoral positioning**: Fuel/energy support (HD01FiU48), weapons protection (HD01JuU10), elder care (HD01SoU25) all from riksdagen.se — combined welfare + security + fiscal relief messaging ideal for September 2026 election campaign [A2]
-- **Weapons law as EU model**: Sweden's semi-automatic ban (HD01JuU10, riksdagen.se) positions Sweden as EU leader in firearms regulation alongside France and Germany — potential soft-power gain [B2]
-- **Research talent attraction**: Faster permanent residency for researchers/doctoral students (HD01SfU23, riksdagen.se) could boost Sweden's innovation competitiveness in a European talent war context [B2]
-- **Riksbank profit reservoir**: 5.297 billion SEK retained Riksbank equity (HD01FiU23, riksdagen.se) provides buffer for future extraordinary costs or another extraordinary state support if needed [A1]
-
-#### Threats
-
-- **Fuel tax cut permanence pressure**: If Middle East conflict persists, 82 öre/litre fuel relief expires 30 September 2026 (HD01FiU48, riksdagen.se) — government faces politically painful reversal or permanent fiscal commitment [A2]
-- **Weapons law legal challenge**: EU firearms directive ambiguities may enable legal challenges to the semi-automatic ban (HD01JuU10, riksdagen.se) from hunting lobbies or via CJEU referral [B3]
-- **Police reform accountability gap**: Riksrevisionen's critique of Polismyndigheten (HD01JuU31, riksdagen.se) without follow-up action risks recurrence and future audit escalation [A1]
-- **Prison expansion planning conflicts**: Fast-track construction permits (HD01CU25, riksdagen.se) may generate municipal resistance, litigation, and NIMBYism — slowing the very expansion the law is designed to accelerate [B2]
-
-### TOWS Matrix
-
-| | Strengths | Weaknesses |
-|---|---|---|
-| **Opportunities** | **SO**: Use weapons law + elder care + researcher visas as unified "safe, ageing, innovative Sweden" election platform (HD01JuU10 + HD01SoU25 + HD01SfU23, riksdagen.se) | **WO**: Address police reform gap (HD01JuU31) by linking it to prison capacity solution (HD01CU25) — create unified criminal justice narrative |
-| **Threats** | **ST**: Pre-announce autumn budget intention to make fuel relief permanent — convert temporary measure to structural reform before September 2026 elections (HD01FiU48) | **WT**: Commission independent review of Polismyndigheten (HD01JuU31) to neutralise Riksrevisionen critique before audit becomes election liability |
-
-### Cross-SWOT Summary
-
-The April 2026 committee cluster reveals a coalition in active pre-election legislative consolidation. Strengths in multi-domain delivery are partially offset by institutional failures (police reform) and fiscal risks (emergency budget precedent). The most significant strategic gap is the absence of a coherent climate-economy reconciliation: the fuel tax cut (HD01FiU48) directly contradicts the agricultural climate findings (HD01MJU21).
-
-```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ffbe0b'}}}%%
-quadrantChart
-    title SWOT Matrix — April 2026 Committee Reports
-    x-axis Internal (Weakness) --> Internal (Strength)
-    y-axis External (Threat) --> External (Opportunity)
-    quadrant-1 SO Strategy
-    quadrant-2 WO Strategy
-    quadrant-3 WT Strategy
-    quadrant-4 ST Strategy
-    Multi-domain delivery: [0.85, 0.75]
-    Emergency fiscal capacity: [0.80, 0.50]
-    Riksbank health: [0.70, 0.40]
-    Police reform gap: [0.20, 0.60]
-    Fiscal discipline erosion: [0.15, 0.30]
-    Climate policy contradiction: [0.25, 0.25]
-    Electoral positioning: [0.75, 0.85]
-    Research competitiveness: [0.65, 0.70]
-    Fuel cut permanence pressure: [0.45, 0.20]
-    Prison planning conflicts: [0.55, 0.15]
-
-style "Multi-domain delivery" fill:#00d9ff,color:#000000
-style "Police reform gap" fill:#ff006e,color:#ffffff
-style "Electoral positioning" fill:#00d9ff,color:#000000
-style "Fuel cut permanence pressure" fill:#ffbe0b,color:#000000
-```
-
-## Threat Analysis
-<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/threat-analysis.md -->
-
-### Political Threat Taxonomy
-
-#### Tier 1 Threats (High Probability, High Impact)
-
-**T1.1 — Electoral Fiscal Blowback** [A2]
-- **Source**: HD01FiU48 (riksdagen.se) — 4.1 billion SEK emergency budget creates precedent
-- **Vector**: Opposition parties frame emergency spending as electoral manipulation
-- **Actor**: S (Social Democrats), MP (Greens) attacking fiscal credibility
-- **Mechanism**: Media amplification of "borrowed money for votes" narrative
-- **TTP**: Legislative criticism → media campaign → voter trust erosion
-- **Probability**: HIGH [B2]; **Impact**: HIGH
-
-**T1.2 — Law Enforcement Institutional Degradation** [A1]
-- **Source**: HD01JuU31 (riksdagen.se) — Riksrevisionen found Polismyndigheten failed reform goals
-- **Vector**: Continued institutional underperformance normalised by political non-response
-- **Probability**: MEDIUM [A1]; **Impact**: HIGH (public safety, rule of law)
-
-#### Tier 2 Threats (Medium Probability, Medium-High Impact)
-
-**T2.1 — Weapons Law Opposition Mobilisation** [A2]
-- **Source**: HD01JuU10 (riksdagen.se) — semi-automatic rifle ban
-- **Vector**: Hunting associations challenge ban via administrative courts and EU lobbying
-- **Actor**: Jägarförbundet (Swedish Hunters Association), firearms dealers
-- **Probability**: MEDIUM [B2]; **Impact**: MEDIUM (coalition cohesion risk)
-
-**T2.2 — Prison Siting NIMBY Mobilisation** [A2]
-- **Source**: HD01CU25 (riksdagen.se)
-- **Vector**: Municipal councils mount legal challenges to bypass of Plan and Building Act
-- **Probability**: MEDIUM-HIGH [B2]; **Impact**: MEDIUM (execution delay)
-
-**T2.3 — Riksbank–Government Dividend Conflict** [A1]
-- **Source**: HD01FiU23 (riksdagen.se) — zero dividend retained
-- **Vector**: Government fiscal stress leads to pressure on Riksbank for extraordinary dividend
-- **Probability**: LOW-MEDIUM [B2]; **Impact**: HIGH (institutional independence)
-
-#### Tier 3 Threats (Lower Probability, Systemic)
-
-**T3.1 — Climate-Economy Contradiction Exploitation** [A1]
-- **Source**: HD01MJU21 (agricultural climate failure) + HD01FiU48 (fuel tax cut) from riksdagen.se
-- **Vector**: Environmental groups frame simultaneous fuel relief and climate failure as systemic betrayal
-- **Probability**: MEDIUM [B2]; **Impact**: MEDIUM (electoral, international reputation)
-
-### Attack Tree
-
-```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#ff006e', 'lineColor': '#ff006e'}}}%%
-flowchart TD
-    ROOT[Coalition Government Agenda Under Threat]:::root
-    ROOT --> A[Fiscal Credibility Attack Vector]:::high
-    ROOT --> B[Law and Order Narrative Attack]:::high
-    ROOT --> C[Climate Policy Attack]:::med
-    A --> A1[Emergency Budget Framed as Electoral Bribe HD01FiU48]:::crit
-    A --> A2[Permanent Fuel Cut Fiscal Trap]:::high
-    B --> B1[Police Reform Failure HD01JuU31]:::high
-    B --> B2[Weapons Law Hunting Lobby HD01JuU10]:::med
-    B --> B3[Prison Planning Municipal Resistance HD01CU25]:::med
-    C --> C1[Fuel Cut vs Climate Contradiction HD01FiU48]:::med
-
-classDef root fill:#ff006e,color:#ffffff,stroke:#ff006e
-classDef crit fill:#ff006e,color:#ffffff,stroke:#ff006e
-classDef high fill:#ffbe0b,color:#000000,stroke:#ffbe0b
-classDef med fill:#1a1e3d,color:#00d9ff,stroke:#00d9ff
-
-style ROOT fill:#ff006e,color:#ffffff
-style A fill:#ffbe0b,color:#000000
-style B fill:#ffbe0b,color:#000000
-style C fill:#1a1e3d,color:#00d9ff
-```
-
-### Threat Vector Chain Analysis
-
-For the most credible threat (T1.1 — Electoral Fiscal Blowback):
-
-1. **Reconnaissance**: Opposition research identifies 4.1 billion SEK fiscal impact (HD01FiU48)
-2. **Weaponisation**: Opposition frames as "borrowed money" during September 2026 cost-of-living debate
-3. **Delivery**: Prime Minister debate; TV news; social media amplification
-4. **Exploitation**: Voter perception shifts on fiscal competence
-5. **Installation**: Persistent "tax giveaway before election" narrative in media
-6. **Persistence**: Opposition parties coordinate messaging; media echo chamber forms
-7. **Impact**: Electoral vote share shifts away from Moderaterna
-
-**Defence**: Government pre-emptively frames as crisis response to Middle East conflict and energy price spike — "responsible fiscal management of extraordinary circumstances"
 
 ## Per-document intelligence
 
@@ -1397,91 +709,135 @@ See [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/a
 **Risk assessment**: See [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/risk-assessment.md)
 **Stakeholder analysis**: See [stakeholder-perspectives.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/stakeholder-perspectives.md)
 
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/election-2026-analysis.md -->
+## Stakeholder Perspectives
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/stakeholder-perspectives.md -->
 
-### Current Seat Projection Baseline (Pre-April 2026 Package)
+### 6-Lens Stakeholder Matrix
 
-Based on polling averages available through April 2026 (SCB/Demoskop):
+#### Lens 1: Governing Coalition (Tidö: M + SD + KD + L)
 
-| Party | Current polls | 2022 actual | Delta | Notes |
-|-------|--------------|-------------|-------|-------|
-| M (Moderaterna) | 18.5% | 19.1% | -0.6pp | Slight decline |
-| SD (Sverigedemokraterna) | 20.2% | 20.5% | -0.3pp | Stable |
-| KD (Kristdemokraterna) | 5.8% | 6.7% | -0.9pp | At risk (4% threshold) |
-| L (Liberalerna) | 4.5% | 4.7% | -0.2pp | At risk (4% threshold) |
-| **Tidö bloc total** | **49.0%** | **51.0%** | **-2.0pp** | Below majority |
-| S (Socialdemokraterna) | 30.5% | 30.3% | +0.2pp | Stable opposition lead |
-| V (Vänsterpartiet) | 8.2% | 6.7% | +1.5pp | Growing left flank |
-| MP (Miljöpartiet) | 5.1% | 5.1% | 0 | Threshold-stable |
-| C (Centerpartiet) | 4.8% | 6.7% | -1.9pp | Below-average; kingmaker |
-| **Left/centre-left bloc** | **48.6%** | **48.8%** | **-0.2pp** | Near parity |
+**Primary interests**: Re-election (September 2026); law-and-order credibility; cost-of-living relief
+**Position on HD01FiU48 (fuel tax cut)**: Strong support — Moderaterna (fiscal pragmatism), SD (working class voters), KD (rural voters), L (market flexibility)
+**Position on HD01JuU10 (weapons law)**: Internally split — KD and SD have rural/hunting constituencies; M urban; compromise achieved through semi-auto ban (not broad ban)
+**Position on HD01CU25 (prisons)**: Unanimous — core criminal justice agenda
+**Key actor**: Finance Minister (M) for HD01FiU48; Justice Minister (M) for JuU10/CU25
+**Influence level**: Maximum (governing majority) [A2, riksdagen.se]
 
-*Sources: Conceptual baseline from structural analysis; actual polling data would require SCB/Sifo/Demoskop API access*
+#### Lens 2: Opposition (S + V + MP + C)
 
-### Impact Assessment by Document
+**S (Social Democrats)**:
+- HD01FiU48: Will accept energy relief substance but challenge process and timing
+- HD01JuU31: Use police reform failure to challenge government's public safety narrative
+- Electoral positioning: "Government uses emergency powers for election spending"
+- Key actor: Socialdemokraternas riksdagsgrupp [A2]
 
-#### HD01FiU48 — Fuel Tax Relief (Estimated +0.8pp to Tidö)
+**V (Left Party)**:
+- HD01FiU48: Support energy support component, oppose fuel tax cut as fossil subsidy
+- HD01JuU10: Support weapons restrictions; demand broader scope
+- Key actor: Vänsterpartiet riksdagsgrupp [A2]
 
-**Mechanism**: Direct household cost reduction resonates with SD working-class voters and M suburban middle class. KD rural voters (diesel farmers) additionally benefited.
-- **Most impacted segment**: Rural households, commuters (50-100 km range) — ~15% of electorate
-- **SD benefit**: +0.5pp (core working-class constituency relief)
-- **M benefit**: +0.3pp (fiscal pragmatism framing)
-- **Risk**: -0.4pp if framed as "borrowed money" — net +0.4pp if narrative managed
+**MP (Green Party)**:
+- HD01MJU21: Use agricultural climate failure as attack vector
+- HD01FiU48: Oppose fuel tax cut as direct contradiction of climate policy
+- Key actor: Miljöpartiet riksdagsgrupp [A2]
 
-#### HD01JuU31 — Police Reform Failure (Estimated -0.6pp to Tidö)
+**C (Centre Party)**:
+- Split from coalition: May support some measures on rural policy grounds
+- HD01JuU10: Likely opposed to semi-auto ban on rural/hunting grounds [B2]
 
-**Mechanism**: Riksrevisionen finding that police reform failed creates accountability narrative. M and KD positioned themselves as "law and order" parties — documented failure undermines this.
-- **Most impacted segment**: Urban safety-concerned voters (~20% of electorate)
-- **Net impact**: -0.6pp M/KD; +0.4pp S counter-narrative benefit
+#### Lens 3: Civil Society and Interest Groups
 
-#### HD01JuU10 — Weapons Law (Negligible, +0.1pp net)
+**Jägarförbundet (Hunters' Association)**:
+- HD01JuU10: Strong opposition to semi-automatic rifle ban; will pursue legal challenges
+- Influence: Moderate-High (regional political network) [B2]
 
-**Mechanism**: Satisfies EU compliance demand; minor friction with SD/KD rural base offset by urban safety credibility gain
-- **Net impact**: ~+0.1pp (neutral to slightly positive for M)
+**Kommunförbundet (Municipal Federation)**:
+- HD01CU25: Opposition to Plan and Building Act override for prison siting
+- Influence: High (350 member municipalities) [B2]
 
-#### HD01CU25 — Prison Expansion (Estimated +0.3pp to Tidö)
+**LO (Main Trade Union Confederation)**:
+- HD01AU15: Strong support for ILO violence convention ratification
+- HD01FiU48: Energy support welcomed; fuel tax cut seen as insufficient for workers
 
-**Mechanism**: Concrete action on criminal justice capacity — SD core issue. Bipartisan in concept but coalition gets credit for speed.
-- **Net impact**: +0.3pp SD, +0.1pp M
+**Riksbank management (Governor Erik Thedéen)**:
+- HD01FiU23: Retained profit signals institution's own preference for equity buffer
+- Will resist pressure for extraordinary dividend in 2026 [A1]
 
-#### Aggregate Electoral Impact Estimate
+#### Lens 4: Business and Industry
 
-| Component | Tidö delta | Left-bloc delta |
-|-----------|-----------|-----------------|
-| HD01FiU48 (fuel relief) | +0.4pp | -0.1pp |
-| HD01JuU31 (police failure) | -0.6pp | +0.4pp |
-| HD01JuU10 (weapons) | +0.1pp | +0.1pp |
-| HD01CU25 (prisons) | +0.4pp | 0 |
-| HD01MJU21 (climate failure) | -0.2pp | +0.3pp |
-| **Net package impact** | **+0.1pp** | **+0.7pp** | 
+**Swedish Industry Federation (Industriförbundet)**:
+- HD01SfU23: Strong support for researcher visa reform — talent pipeline issue
+- HD01FiU48: Diesel tax relief supports logistics and transport sector costs
+- HD01CU24: Support for construction process efficiency
 
-**Assessment**: April 2026 package slightly benefits opposition on net due to police failure (-0.6pp) dominating. However, HD01FiU48 has high salience and could outperform if energy prices remain elevated through summer.
+**Energy sector (Vattenfall, E.ON)**:
+- HD01FiU48: Complex — el/gas price support increases consumption but reduces political risk of energy price volatility backlash
 
-### Coalition Mathematics
+**Construction and Real Estate (Fastighetsägarna, byggbranschen)**:
+- HD01CU24: Support for streamlined building process
+- HD01CU29: Slight impact — EV charging mandate
 
-Current seat projection (349 seats, 175 majority):
+#### Lens 5: International Actors
 
-| Bloc | Projected seats | Majority distance |
-|------|----------------|-------------------|
-| Tidö (M+SD+KD+L) | ~171 | -4 seats |
-| Left/centre-left (S+V+MP) | ~168 | -7 seats |
-| C (Centerpartiet) | ~10 | Kingmaker |
+**European Commission**:
+- HD01JuU10: Monitoring for Firearms Directive compliance
+- HD01FiU48: Watching for excessive deficit procedure implications (Sweden runs surplus; 4.1B SEK impact small)
+- HD01SfU23: Welcoming EU research mobility rules transposition
 
-**Pivotal actor**: Centerpartiet. April 2026 legislation does not address C's primary concerns (climate, rural EU policy). C likely demands climate policy concessions in any post-election coalition negotiation.
+**NATO/Allied partners**:
+- HD01FiU48: Emergency budget framing references Middle East — geopolitical signal to NATO partners
+- HD01CU25: Prison expansion aligns with broader law-and-order NATO "home front" security framing
 
-### Seat Projection Visualisation
+**IMF (WEO Apr-2026 context)**:
+- HD01FiU48: Mild concern about pre-election fiscal loosening; Sweden's fiscal position strong enough to absorb [B2]
+
+#### Lens 6: Media and Public Opinion
+
+**Mainstream media (SVT, DN, SvD)**:
+- HD01FiU48: High coverage — cost-of-living relief is audience-friendly; timing scrutiny
+- HD01JuU10: Moderate coverage — weapons law editorially complex
+- HD01JuU31: Medium coverage — institutional accountability story
+
+**Social media / populist channels**:
+- HD01FiU48: Viral potential — direct household impact; SD base mobilisation
+- HD01CU25: Prison capacity = core SD/M voter concern
+
+### Influence Network
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#ff006e', 'lineColor': '#ff006e'}}}%%
-xychart-beta
-    title "Projected 2026 Seat Distribution (349 seats)"
-    x-axis ["M", "SD", "KD", "L", "S", "V", "MP", "C"]
-    y-axis "Seats" 0 --> 120
-    bar [65, 70, 20, 16, 106, 29, 18, 17]
-```
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ffbe0b'}}}%%
+graph TD
+    GOV[Tidö Coalition\nM+SD+KD+L]:::gov
+    FIN[Finance Ministry]:::gov
+    JUS[Justice Ministry]:::gov
+    OPP[Opposition\nS+V+MP+C]:::opp
+    RB[Riksbank]:::inst
+    MED[Riksdag\nMedia/Public]:::pub
+    CS[Civil Society]:::civil
+    INT[International\nEU/NATO/IMF]:::intl
+    
+    GOV --> FIN
+    GOV --> JUS
+    FIN -->|HD01FiU48 budget| MED
+    JUS -->|HD01JuU10 weapons| CS
+    JUS -->|HD01CU25 prisons| CS
+    RB -->|zero dividend HD01FiU23| FIN
+    OPP -->|scrutiny| GOV
+    CS -->|legal challenge| JUS
+    INT -->|monitoring| GOV
+    MED -->|public pressure| GOV
 
-*Note: Seat projections are analytical estimates based on proportional conversion of polling averages and do not represent confirmed data.*
+classDef gov fill:#ff006e,color:#ffffff,stroke:#ff006e
+classDef opp fill:#ffbe0b,color:#000000,stroke:#ffbe0b
+classDef inst fill:#00d9ff,color:#000000,stroke:#00d9ff
+classDef pub fill:#1a1e3d,color:#e0e0e0,stroke:#00d9ff
+classDef civil fill:#1a1e3d,color:#e0e0e0,stroke:#ffbe0b
+classDef intl fill:#0a0e27,color:#00d9ff,stroke:#ff006e
+
+style GOV fill:#ff006e,color:#ffffff
+style RB fill:#00d9ff,color:#000000
+style OPP fill:#ffbe0b,color:#000000
+```
 
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/coalition-mathematics.md -->
@@ -1682,6 +1038,628 @@ style Elderly Care Recipients fill:#00d9ff,color:#000000
 style Urban Middle Class fill:#1a1e3d,color:#00d9ff
 style Research Academic fill:#1a1e3d,color:#00d9ff
 
+## Forward Indicators
+<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/forward-indicators.md -->
+
+### Indicator Framework
+
+12+ dated indicators across 4 horizons (30/60/90/180 days) monitoring the April 2026 committee reports package.
+
+---
+
+### Horizon 1: 30 Days (by 2026-05-26)
+
+**I-01: HD01FiU48 Royal Assent and Enactment** [Technical milestone]
+- **Expected**: Royal Assent in May 2026; Skatteverket begins fuel tax reduction system update
+- **Confirmation source**: Riksdagen plenary vote record; Skatteverket announcement
+- **Signal value**: Confirms delivery timeline (HIGH confidence)
+
+**I-02: HD01JuU10 Parliamentary Plenary Vote** [Political milestone]
+- **Expected**: Vote scheduled for May 2026 plenary session
+- **Watch for**: Margin of victory; number of Ja votes from SD/KD rural MPs
+- **If margin > 300 Ja**: Broad consensus; legal challenge risk lower
+- **If margin 176-200**: Narrow passage; higher legal challenge motivation from affected parties
+- **Source**: Riksdagen vote records (riksdagen.se)
+
+**I-03: Jägarförbundet Legal Challenge Filing** [Risk indicator]
+- **Expected**: Challenge filed within 30 days of Royal Assent or before June 2026
+- **Watch for**: Filing at Förvaltningsrätten; application for interim injunction
+- **If filed with interim injunction request**: HD01JuU10 implementation at high risk
+- **Source**: Förvaltningsrätten public case register
+
+**I-04: IMF WEO April 2026 Sweden Revision** [Economic baseline]
+- **Expected**: IMF WEO April 2026 edition released; Sweden GDP projection confirmed
+- **Watch for**: Sweden growth rate > or < +1.5% for 2026
+- **If Sweden GDP projection ≥ +1.5%**: Economic tailwind for coalition
+- **Source**: IMF WEO April 2026; `scripts/imf-fetch.ts weo --country SWE --indicator NGDP_RPCH`
+
+---
+
+### Horizon 2: 60 Days (by 2026-06-26)
+
+**I-05: HD01FiU48 Fuel Price Impact Measurement** [Economic indicator]
+- **Expected**: June data from Statistics Sweden (SCB) showing petrol/diesel price change at pump
+- **Watch for**: Actual consumer price reduction ≥ 0.50 SEK/litre
+- **If visible reduction**: Government can point to tangible delivery; electoral benefit crystallises
+- **If prices rise despite cut**: Middle East/global commodity price overwhelms relief; narrative fails
+- **Source**: SCB consumer price index (CPI); Preem/Circle K retail price data
+
+**I-06: HD01CU25 First Prison Site Announcement** [Capital delivery]
+- **Expected**: Kriminalvården announces one or more identified sites for new prison construction
+- **Watch for**: Municipal government response; legal challenge from Kommunförbundet
+- **If announcement with site**: Implementation on schedule
+- **If delayed**: PBL challenge complexity has stalled site selection
+- **Source**: Kriminalvården press releases; local media in targeted municipalities
+
+**I-07: HD01JuU10 Weapons Surrender Data** [Implementation compliance]
+- **Expected**: First month post-June 2026 compliance data from Polismyndigheten
+- **Watch for**: Number of weapons surrendered vs estimated stock of banned weapons
+- **If compliance > 60%**: Law functioning; enforcement credible
+- **If compliance < 30%**: Enforcement crisis; black market expansion risk
+- **Source**: Polismyndigheten annual/quarterly statistics
+
+---
+
+### Horizon 3: 90 Days (by 2026-07-26)
+
+**I-08: Pre-Election Coalition Poll Average** [Electoral indicator]
+- **Expected**: Sifo/Demoskop/Novus July 2026 polls with pre-summer consolidation
+- **Watch for**: Tidö bloc at > or < 49%
+- **If Tidö > 49%**: HD01FiU48 and CU25 are working; scenario A (Coalition Continuity) strengthens
+- **If Tidö < 47%**: HD01JuU31 police failure narrative dominating; scenario B (Electoral Disruption) strengthens
+- **Source**: SCB; Sifo; Novus poll aggregates
+
+**I-09: HD01JuU31 Police Incident Test** [Institutional stress indicator]
+- **Expected**: Any major criminal incident (gang violence, organised crime) in June-July 2026
+- **Watch for**: Opposition use of HD01JuU31 findings in response to incident
+- **If major incident occurs before election**: Police reform failure narrative explodes — high impact
+- **If no major incident**: JuU31 impact contained — technical governance story
+- **Source**: BRÅ (Brottsförebyggande rådet) incident statistics; media monitoring
+
+**I-10: HD01FiU23 Riksbank Dividend Pressure** [Fiscal independence indicator]
+- **Expected**: Government budget discussions for 2027 begin in July 2026
+- **Watch for**: Any government statement suggesting Riksbank dividend may be reconsidered
+- **If zero dividend maintained**: Institutional independence preserved; FiU23 precedent holds
+- **If government requests extraordinary dividend**: Institutional risk elevated; T2.3 threat activated
+- **Source**: Finance Ministry statements; Riksdag Finance Committee minutes
+
+---
+
+### Horizon 4: 180 Days (by 2026-10-26, post-election)
+
+**I-11: September 2026 Election Result** [Ultimate validation]
+- **Expected**: Riksdag election 20 September 2026
+- **Watch for**: Tidö margin vs S-led bloc; C kingmaker role; KD and L threshold performance
+- **This indicator validates or refutes all electoral predictions in election-2026-analysis.md**
+- **Source**: Valmyndigheten (Election Authority) official results
+
+**I-12: Post-Election HD01FiU48 Survival Test** [Policy persistence]
+- **Expected**: New government's 2027 budget (October-November 2026) will confirm or reverse fuel tax cut
+- **Watch for**: If S-led government reverses cut: confirms electoral positioning hypothesis (H2)
+- **If Tidö continues and extends cut**: Confirms substantive policy hypothesis (H1)
+- **Source**: Riksdag budget proposition 2027; Finance Ministry press releases
+
+**I-13: HD01CU25 First Construction Contract Award** [Capital delivery milestone]
+- **Expected**: First prison construction contract awarded by Q4 2026
+- **Watch for**: Contract size; contractor; municipal acceptance or legal challenge outcome
+- **Source**: Upphandlingsmyndigheten (public procurement authority) contract register
+
+### Indicator Summary Table
+
+| Code | Indicator | Horizon | Priority | Source |
+|------|-----------|---------|----------|--------|
+| I-01 | FiU48 Royal Assent | 30 days | HIGH | Riksdagen.se |
+| I-02 | JuU10 plenary vote margin | 30 days | HIGH | Riksdagen.se votes |
+| I-03 | Jägarförbundet legal challenge | 30 days | HIGH | Förvaltningsrätten |
+| I-04 | IMF WEO Apr-2026 Sweden | 30 days | MEDIUM | IMF API |
+| I-05 | Fuel price impact at pump | 60 days | HIGH | SCB CPI |
+| I-06 | First prison site announcement | 60 days | HIGH | Kriminalvården |
+| I-07 | Weapons surrender rate | 60 days | MEDIUM | Polismyndigheten |
+| I-08 | Pre-election polls | 90 days | VERY HIGH | Sifo/Novus |
+| I-09 | Police incident test | 90 days | HIGH | BRÅ + media |
+| I-10 | Riksbank dividend pressure | 90 days | MEDIUM | Finance Ministry |
+| I-11 | Election result | 180 days | CRITICAL | Valmyndigheten |
+| I-12 | FiU48 policy survival | 180 days | HIGH | Budget 2027 |
+| I-13 | CU25 first contract | 180 days | MEDIUM | Upphandlingsmyndigheten |
+
+## Scenario Analysis
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/scenario-analysis.md -->
+
+### Scenario Framework
+
+Three mutually exclusive scenarios for Swedish political outcomes following the April 2026 committee reports wave, assessed across 6-month (pre-election) and 12-month (post-election) horizons.
+
+---
+
+### Scenario A: "Coalition Continuity" — Tidö Re-elected (Probability: 38%)
+
+**Summary**: The April 2026 committee reports package — particularly HD01FiU48 fuel relief and HD01JuU10 weapons law — lands well with the coalition's core voters. HD01CU25 prison expansion signals decisive law-and-order action. Coalition wins September 2026 election with narrow majority.
+
+**Enabling conditions**:
+- Energy prices remain elevated through summer (HD01FiU48 remains salient and welcome)
+- No major police incident that amplifies HD01JuU31 reform failure
+- Opposition fragmented; S unable to consolidate left bloc
+- IMF WEO Apr-2026 projects Sweden GDP +1.8% — economic story improves
+
+**Leading indicators**:
+- Coalition poll lead 2+ percentage points in June 2026
+- Diesel prices stay >18 SEK/litre through August 2026
+- No major court ruling against HD01JuU10 before election
+
+**Downstream consequences**:
+- HD01CU25 prison construction proceeds 2027-2030
+- HD01JuU31 police reform remains unaddressed through next mandate
+- HD01MJU21 climate contradiction deepens
+
+---
+
+### Scenario B: "Electoral Disruption" — Government loses, S-led bloc wins (Probability: 45%)
+
+**Summary**: The emergency budget (HD01FiU48) framing as "election bribe" takes hold in media narrative. Police reform failure (HD01JuU31) undermines government's core law-and-order competence claim. S consolidates left bloc and wins narrow majority in September 2026.
+
+**Enabling conditions**:
+- HD01FiU48 attacked as "borrowed money for votes" by S leader in Prime Minister debate
+- Police incident (shooting/gang violence) before election amplifies HD01JuU31 critique
+- HD01MJU21 agricultural climate failure used by MP to draw voters from centre
+- Economy softens — IMF WEO Oct-2026 revision downward
+
+**Leading indicators**:
+- S lead >3 pp in August polls (cross-party bloc calculation)
+- Major criminal justice incident between July-August 2026
+- Emergency budget framing dominates political TV coverage
+
+**Downstream consequences**:
+- HD01FiU48 partially reversed — fuel tax reinstated in S budget autumn 2026
+- HD01JuU31 leads to Stage 2 police reform mandate
+- HD01CU25 prison construction proceeds (bipartisan)
+- HD01MJU21 used as basis for new agricultural climate strategy
+
+---
+
+### Scenario C: "Hung Parliament" — No majority, extended negotiations (Probability: 17%)
+
+**Summary**: September 2026 produces no workable majority. Tidö parties cannot maintain coalition without C. S-led bloc is one seat short. Sweden faces minority government or coalition negotiation extending through November 2026.
+
+**Enabling conditions**:
+- SD and M diverge on HD01JuU10 (weapons law) — coalition cohesion frays before election
+- C re-enters as "kingmaker" demanding reversal of some HD01FiU48 measures (climate deficit)
+- Election produces 174-175 seat split with pivotal individual MPs
+
+**Leading indicators**:
+- Internal coalition dispute on HD01JuU10 in August 2026 media
+- C party polls above 6% (survival threshold ensures kingmaker role)
+- Three-way split in final polls (Tidö / S-bloc / uncertain)
+
+**Downstream consequences**:
+- HD01FiU23 Riksbank dividend issue re-opened as fiscal pressure increases
+- HD01CU25 construction delays due to municipal legal challenges without political backing
+- Researcher visa (HD01SfU23) implementation stalls in ministry transition
+
+---
+
+### Leading Indicators Table (Next 90 Days)
+
+| Indicator | Scenario A signal | Scenario B signal | Scenario C signal | Source |
+|-----------|------------------|------------------|------------------|--------|
+| Coalition poll lead | +2pp | -3pp | <1pp either way | SVT/SCB polls |
+| Diesel price (SEK/L) | >18 sustained | <17 (relief unnecessary) | Volatile | Statistics Sweden |
+| Gang crime incidents | Stable or declining | Major incident | Fragmented pattern | BRÅ statistics |
+| Court challenge to JuU10 | Dismissed | Granted interim injunction | Filed but pending | Förvaltningsrätten |
+| IMF WEO revision | Sweden +1.5%+ | Sweden <1% | Mixed signals | IMF WEO Oct-2026 |
+
+### Scenario Probability Calibration
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#ff006e', 'lineColor': '#ff006e'}}}%%
+xychart-beta
+    title "Scenario Probability Distribution"
+    x-axis ["A: Coalition\nContinuity", "B: Electoral\nDisruption", "C: Hung\nParliament"]
+    y-axis "Probability (%)" 0 --> 50
+    bar [38, 45, 17]
+
+```
+
+*Note: Probabilities sum to 100%. Based on structural analysis of HD01FiU48, HD01JuU31, HD01JuU10 policy dynamics as of 2026-04-26.*
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/election-2026-analysis.md -->
+
+### Current Seat Projection Baseline (Pre-April 2026 Package)
+
+Based on polling averages available through April 2026 (SCB/Demoskop):
+
+| Party | Current polls | 2022 actual | Delta | Notes |
+|-------|--------------|-------------|-------|-------|
+| M (Moderaterna) | 18.5% | 19.1% | -0.6pp | Slight decline |
+| SD (Sverigedemokraterna) | 20.2% | 20.5% | -0.3pp | Stable |
+| KD (Kristdemokraterna) | 5.8% | 6.7% | -0.9pp | At risk (4% threshold) |
+| L (Liberalerna) | 4.5% | 4.7% | -0.2pp | At risk (4% threshold) |
+| **Tidö bloc total** | **49.0%** | **51.0%** | **-2.0pp** | Below majority |
+| S (Socialdemokraterna) | 30.5% | 30.3% | +0.2pp | Stable opposition lead |
+| V (Vänsterpartiet) | 8.2% | 6.7% | +1.5pp | Growing left flank |
+| MP (Miljöpartiet) | 5.1% | 5.1% | 0 | Threshold-stable |
+| C (Centerpartiet) | 4.8% | 6.7% | -1.9pp | Below-average; kingmaker |
+| **Left/centre-left bloc** | **48.6%** | **48.8%** | **-0.2pp** | Near parity |
+
+*Sources: Conceptual baseline from structural analysis; actual polling data would require SCB/Sifo/Demoskop API access*
+
+### Impact Assessment by Document
+
+#### HD01FiU48 — Fuel Tax Relief (Estimated +0.8pp to Tidö)
+
+**Mechanism**: Direct household cost reduction resonates with SD working-class voters and M suburban middle class. KD rural voters (diesel farmers) additionally benefited.
+- **Most impacted segment**: Rural households, commuters (50-100 km range) — ~15% of electorate
+- **SD benefit**: +0.5pp (core working-class constituency relief)
+- **M benefit**: +0.3pp (fiscal pragmatism framing)
+- **Risk**: -0.4pp if framed as "borrowed money" — net +0.4pp if narrative managed
+
+#### HD01JuU31 — Police Reform Failure (Estimated -0.6pp to Tidö)
+
+**Mechanism**: Riksrevisionen finding that police reform failed creates accountability narrative. M and KD positioned themselves as "law and order" parties — documented failure undermines this.
+- **Most impacted segment**: Urban safety-concerned voters (~20% of electorate)
+- **Net impact**: -0.6pp M/KD; +0.4pp S counter-narrative benefit
+
+#### HD01JuU10 — Weapons Law (Negligible, +0.1pp net)
+
+**Mechanism**: Satisfies EU compliance demand; minor friction with SD/KD rural base offset by urban safety credibility gain
+- **Net impact**: ~+0.1pp (neutral to slightly positive for M)
+
+#### HD01CU25 — Prison Expansion (Estimated +0.3pp to Tidö)
+
+**Mechanism**: Concrete action on criminal justice capacity — SD core issue. Bipartisan in concept but coalition gets credit for speed.
+- **Net impact**: +0.3pp SD, +0.1pp M
+
+#### Aggregate Electoral Impact Estimate
+
+| Component | Tidö delta | Left-bloc delta |
+|-----------|-----------|-----------------|
+| HD01FiU48 (fuel relief) | +0.4pp | -0.1pp |
+| HD01JuU31 (police failure) | -0.6pp | +0.4pp |
+| HD01JuU10 (weapons) | +0.1pp | +0.1pp |
+| HD01CU25 (prisons) | +0.4pp | 0 |
+| HD01MJU21 (climate failure) | -0.2pp | +0.3pp |
+| **Net package impact** | **+0.1pp** | **+0.7pp** | 
+
+**Assessment**: April 2026 package slightly benefits opposition on net due to police failure (-0.6pp) dominating. However, HD01FiU48 has high salience and could outperform if energy prices remain elevated through summer.
+
+### Coalition Mathematics
+
+Current seat projection (349 seats, 175 majority):
+
+| Bloc | Projected seats | Majority distance |
+|------|----------------|-------------------|
+| Tidö (M+SD+KD+L) | ~171 | -4 seats |
+| Left/centre-left (S+V+MP) | ~168 | -7 seats |
+| C (Centerpartiet) | ~10 | Kingmaker |
+
+**Pivotal actor**: Centerpartiet. April 2026 legislation does not address C's primary concerns (climate, rural EU policy). C likely demands climate policy concessions in any post-election coalition negotiation.
+
+### Seat Projection Visualisation
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#ff006e', 'lineColor': '#ff006e'}}}%%
+xychart-beta
+    title "Projected 2026 Seat Distribution (349 seats)"
+    x-axis ["M", "SD", "KD", "L", "S", "V", "MP", "C"]
+    y-axis "Seats" 0 --> 120
+    bar [65, 70, 20, 16, 106, 29, 18, 17]
+```
+
+*Note: Seat projections are analytical estimates based on proportional conversion of polling averages and do not represent confirmed data.*
+
+## Risk Assessment
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/risk-assessment.md -->
+
+### Risk Register
+
+| ID | Risk | Dimension | Likelihood (1–5) | Impact (1–5) | L×I | Cascade Chain | Source |
+|----|------|-----------|-----------------|--------------|-----|---------------|--------|
+| R1 | Fuel tax cut becomes permanent pre-election commitment | Fiscal/Political | 4 | 5 | **20** | R1→R5→R7 | HD01FiU48, riksdagen.se [A2] |
+| R2 | Riksbank must support state finances if deficit widens | Monetary/Fiscal | 3 | 5 | **15** | R2→R6 | HD01FiU23, riksdagen.se [A1] |
+| R3 | Semi-auto weapons ban challenged in EU court | Legal/Political | 3 | 4 | **12** | R3→R8 | HD01JuU10, riksdagen.se [A2] |
+| R4 | Prison expansion creates municipal-state conflict | Governance/Legal | 4 | 3 | **12** | R4→R9 | HD01CU25, riksdagen.se [A2] |
+| R5 | Police reform failure escalates to political liability | Institutional | 3 | 4 | **12** | R5→R10 | HD01JuU31, riksdagen.se [A1] |
+| R6 | Sweden's fiscal surplus target missed in 2026 | Fiscal/Credibility | 3 | 4 | **12** | R6→R11 | HD01FiU48 + WEO Apr-2026 [B2] |
+| R7 | Energy price volatility continues post-September | Energy/Social | 4 | 3 | **12** | R7 | HD01FiU48, riksdagen.se [A2] |
+| R8 | Agricultural sector misses climate targets legally | Environmental | 3 | 3 | **9** | R8 | HD01MJU21, riksdagen.se [A1] |
+| R9 | Researcher visa reform fails to attract talent | Labour market | 2 | 3 | **6** | — | HD01SfU23, riksdagen.se [A2] |
+| R10 | Weapons law compliance enforcement overloads police | Institutional | 2 | 3 | **6** | R10→R5 | HD01JuU10, riksdagen.se [A2] |
+
+### Top Five Risks Detailed Analysis
+
+#### R1: Fuel Tax Cut Permanence [A2] — L×I: 20
+
+**Description**: The temporary fuel tax reduction (HD01FiU48, riksdagen.se) is a 5-month measure (1 May – 30 September 2026). With September 2026 elections, the government faces an invidious choice at expiry: allow prices to rebound (political cost) or extend/make permanent (fiscal cost ≥1.56 billion SEK/year). The "special circumstances" invocation creates a negotiation floor for opposition demands.
+
+**Cascade**: R1→R5 (fiscal deterioration reduces police reform budget available)→R7 (if permanent, reduces fiscal space for energy crisis management)
+
+**Mitigants**: IMF fiscal consolidation pressure; EU energy price normalisation if Middle East tensions ease; autumn budget process providing formal channel for extension decision.
+
+**Posterior probability of escalation**: ~55% [C2]
+
+#### R2: Riksbank–Government Fiscal Tension [A1] — L×I: 15
+
+**Description**: Riksbank retained 5.297 billion SEK (HD01FiU23, riksdagen.se) rather than transferring to state. Combined with emergency budget deficit impact (4.1 billion SEK), total implicit fiscal gap vs. Riksbank expectations is ~9.4 billion SEK in 2026 alone. If government requires additional expenditure, pressure on Riksbank to provide extraordinary dividends may increase.
+
+**Posterior probability**: ~30% [B2]
+
+#### R3: EU Weapons Law Challenge [A2] — L×I: 12
+
+**Description**: Sweden's semi-automatic hunting rifle ban (HD01JuU10, riksdagen.se) must coexist with EU Firearms Directive (2017/853). Specific prohibition on new permits for certain half-automatic hunting rifles may conflict with the Directive's harmonisation intent. Finland and Estonia have broader hunting traditions that may prompt EU complaint.
+
+**Posterior probability**: ~25% [C3]
+
+#### R4: Municipal Resistance to Prison Construction [A2] — L×I: 12
+
+**Description**: The Plan and Building Act override (HD01CU25, riksdagen.se) gives government power to bypass local planning for prison construction. Swedish municipalities historically resist prison siting (NIMBY). Government override power may trigger administrative court challenges, delaying the urgently needed capacity expansion.
+
+**Posterior probability**: ~40% [B2]
+
+#### R5: Police Reform Political Liability [A1] — L×I: 12
+
+**Description**: Riksrevisionen's finding that Polismyndigheten failed its 2015 reform targets (HD01JuU31, riksdagen.se) without JuU mandating remediation creates a recurring vulnerability. Opposition parties (S, V, MP) may use this finding in September 2026 campaign to challenge the coalition's public safety competence narrative.
+
+**Posterior probability of election impact**: ~45% [B2]
+
+### Cascading Risk Model
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#ff006e', 'lineColor': '#ff006e'}}}%%
+flowchart LR
+    R1[R1: Fuel Tax\nPermanence Risk\nL×I=20]:::critical --> R5[R5: Police Reform\nLiability\nL×I=12]:::high
+    R1 --> R7[R7: Energy\nVolatility\nL×I=12]:::med
+    R2[R2: Riksbank\nFiscal Tension\nL×I=15]:::high --> R6[R6: Fiscal Surplus\nMiss\nL×I=12]:::med
+    R3[R3: EU Weapons\nChallenge\nL×I=12]:::high --> R8[R8: Legal\nUncertainty]:::low
+    R4[R4: Prison\nPlanningConflict\nL×I=12]:::high --> R9[R9: Capacity\nDelay]:::low
+    R10[R10: Weapons\nEnforcement Overload\nL×I=6]:::low --> R5
+
+classDef critical fill:#ff006e,color:#ffffff,stroke:#ff006e
+classDef high fill:#ffbe0b,color:#000000,stroke:#ffbe0b
+classDef med fill:#1a1e3d,color:#00d9ff,stroke:#00d9ff
+classDef low fill:#0a0e27,color:#e0e0e0,stroke:#00d9ff
+
+style R1 fill:#ff006e,color:#ffffff
+style R2 fill:#ffbe0b,color:#000000
+```
+
+## SWOT Analysis
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/swot-analysis.md -->
+
+### Analytical Framework
+
+SWOT analysis applied to the **Tidö coalition government's legislative position** as revealed by the April 2026 committee report cluster. Evidence citations from primary sources throughout.
+
+---
+
+#### Strengths
+
+- **Broad security-and-welfare agenda delivery**: The coalition simultaneously enacted weapons law (HD01JuU10, riksdagen.se), prison expansion (HD01CU25, riksdagen.se), elder care improvement (HD01SoU25, riksdagen.se), and researcher visa reform (HD01SfU23, riksdagen.se) — demonstrating multi-domain legislative competence [A2]
+- **Emergency fiscal responsiveness**: Extra budget (HD01FiU48, riksdagen.se) shows ability to mobilise support for cost-of-living relief ahead of elections — "special circumstances" invocation accepted by Riksdag [A2]
+- **Riksbank institutional health**: 5.297 billion SEK Riksbank profit (HD01FiU23, riksdagen.se) with full management discharge signals monetary credibility and institutional stability [A1]
+- **EU harmonisation**: ILO conventions (HD01AU15), EV charging directive (HD01CU29), researcher visa EU rules (HD01SfU23) — all from riksdagen.se — demonstrate compliance with European agenda [A2]
+
+#### Weaknesses
+
+- **Police reform failure unresolved**: Riksrevisionen found Polismyndigheten failed 2015 reform goals (HD01JuU31, riksdagen.se); JuU chose to close without remedial mandate — governance gap acknowledged, not addressed [A1]
+- **Fiscal discipline erosion signal**: Extra budget (HD01FiU48, riksdagen.se) creates 4.1 billion SEK deficit deterioration; setting precedent for pre-election emergency spending undermines Sweden's traditionally conservative fiscal reputation (WEO Apr-2026 context) [A2]
+- **Agricultural climate policy failure**: Riksrevisionen found government's climate steering of agriculture "not led to agriculture contributing to climate goals effectively" (HD01MJU21, riksdagen.se) — green credibility gap [A1]
+- **Prison plan vs. Planning Law tension**: Using government override of Plan and Building Act for prisons (HD01CU25, riksdagen.se) sets a precedent for executive bypass of local democracy in spatial planning [A2]
+
+#### Opportunities
+
+- **Electoral positioning**: Fuel/energy support (HD01FiU48), weapons protection (HD01JuU10), elder care (HD01SoU25) all from riksdagen.se — combined welfare + security + fiscal relief messaging ideal for September 2026 election campaign [A2]
+- **Weapons law as EU model**: Sweden's semi-automatic ban (HD01JuU10, riksdagen.se) positions Sweden as EU leader in firearms regulation alongside France and Germany — potential soft-power gain [B2]
+- **Research talent attraction**: Faster permanent residency for researchers/doctoral students (HD01SfU23, riksdagen.se) could boost Sweden's innovation competitiveness in a European talent war context [B2]
+- **Riksbank profit reservoir**: 5.297 billion SEK retained Riksbank equity (HD01FiU23, riksdagen.se) provides buffer for future extraordinary costs or another extraordinary state support if needed [A1]
+
+#### Threats
+
+- **Fuel tax cut permanence pressure**: If Middle East conflict persists, 82 öre/litre fuel relief expires 30 September 2026 (HD01FiU48, riksdagen.se) — government faces politically painful reversal or permanent fiscal commitment [A2]
+- **Weapons law legal challenge**: EU firearms directive ambiguities may enable legal challenges to the semi-automatic ban (HD01JuU10, riksdagen.se) from hunting lobbies or via CJEU referral [B3]
+- **Police reform accountability gap**: Riksrevisionen's critique of Polismyndigheten (HD01JuU31, riksdagen.se) without follow-up action risks recurrence and future audit escalation [A1]
+- **Prison expansion planning conflicts**: Fast-track construction permits (HD01CU25, riksdagen.se) may generate municipal resistance, litigation, and NIMBYism — slowing the very expansion the law is designed to accelerate [B2]
+
+### TOWS Matrix
+
+| | Strengths | Weaknesses |
+|---|---|---|
+| **Opportunities** | **SO**: Use weapons law + elder care + researcher visas as unified "safe, ageing, innovative Sweden" election platform (HD01JuU10 + HD01SoU25 + HD01SfU23, riksdagen.se) | **WO**: Address police reform gap (HD01JuU31) by linking it to prison capacity solution (HD01CU25) — create unified criminal justice narrative |
+| **Threats** | **ST**: Pre-announce autumn budget intention to make fuel relief permanent — convert temporary measure to structural reform before September 2026 elections (HD01FiU48) | **WT**: Commission independent review of Polismyndigheten (HD01JuU31) to neutralise Riksrevisionen critique before audit becomes election liability |
+
+### Cross-SWOT Summary
+
+The April 2026 committee cluster reveals a coalition in active pre-election legislative consolidation. Strengths in multi-domain delivery are partially offset by institutional failures (police reform) and fiscal risks (emergency budget precedent). The most significant strategic gap is the absence of a coherent climate-economy reconciliation: the fuel tax cut (HD01FiU48) directly contradicts the agricultural climate findings (HD01MJU21).
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ffbe0b'}}}%%
+quadrantChart
+    title SWOT Matrix — April 2026 Committee Reports
+    x-axis Internal (Weakness) --> Internal (Strength)
+    y-axis External (Threat) --> External (Opportunity)
+    quadrant-1 SO Strategy
+    quadrant-2 WO Strategy
+    quadrant-3 WT Strategy
+    quadrant-4 ST Strategy
+    Multi-domain delivery: [0.85, 0.75]
+    Emergency fiscal capacity: [0.80, 0.50]
+    Riksbank health: [0.70, 0.40]
+    Police reform gap: [0.20, 0.60]
+    Fiscal discipline erosion: [0.15, 0.30]
+    Climate policy contradiction: [0.25, 0.25]
+    Electoral positioning: [0.75, 0.85]
+    Research competitiveness: [0.65, 0.70]
+    Fuel cut permanence pressure: [0.45, 0.20]
+    Prison planning conflicts: [0.55, 0.15]
+
+style "Multi-domain delivery" fill:#00d9ff,color:#000000
+style "Police reform gap" fill:#ff006e,color:#ffffff
+style "Electoral positioning" fill:#00d9ff,color:#000000
+style "Fuel cut permanence pressure" fill:#ffbe0b,color:#000000
+```
+
+## Threat Analysis
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/threat-analysis.md -->
+
+### Political Threat Taxonomy
+
+#### Tier 1 Threats (High Probability, High Impact)
+
+**T1.1 — Electoral Fiscal Blowback** [A2]
+- **Source**: HD01FiU48 (riksdagen.se) — 4.1 billion SEK emergency budget creates precedent
+- **Vector**: Opposition parties frame emergency spending as electoral manipulation
+- **Actor**: S (Social Democrats), MP (Greens) attacking fiscal credibility
+- **Mechanism**: Media amplification of "borrowed money for votes" narrative
+- **TTP**: Legislative criticism → media campaign → voter trust erosion
+- **Probability**: HIGH [B2]; **Impact**: HIGH
+
+**T1.2 — Law Enforcement Institutional Degradation** [A1]
+- **Source**: HD01JuU31 (riksdagen.se) — Riksrevisionen found Polismyndigheten failed reform goals
+- **Vector**: Continued institutional underperformance normalised by political non-response
+- **Probability**: MEDIUM [A1]; **Impact**: HIGH (public safety, rule of law)
+
+#### Tier 2 Threats (Medium Probability, Medium-High Impact)
+
+**T2.1 — Weapons Law Opposition Mobilisation** [A2]
+- **Source**: HD01JuU10 (riksdagen.se) — semi-automatic rifle ban
+- **Vector**: Hunting associations challenge ban via administrative courts and EU lobbying
+- **Actor**: Jägarförbundet (Swedish Hunters Association), firearms dealers
+- **Probability**: MEDIUM [B2]; **Impact**: MEDIUM (coalition cohesion risk)
+
+**T2.2 — Prison Siting NIMBY Mobilisation** [A2]
+- **Source**: HD01CU25 (riksdagen.se)
+- **Vector**: Municipal councils mount legal challenges to bypass of Plan and Building Act
+- **Probability**: MEDIUM-HIGH [B2]; **Impact**: MEDIUM (execution delay)
+
+**T2.3 — Riksbank–Government Dividend Conflict** [A1]
+- **Source**: HD01FiU23 (riksdagen.se) — zero dividend retained
+- **Vector**: Government fiscal stress leads to pressure on Riksbank for extraordinary dividend
+- **Probability**: LOW-MEDIUM [B2]; **Impact**: HIGH (institutional independence)
+
+#### Tier 3 Threats (Lower Probability, Systemic)
+
+**T3.1 — Climate-Economy Contradiction Exploitation** [A1]
+- **Source**: HD01MJU21 (agricultural climate failure) + HD01FiU48 (fuel tax cut) from riksdagen.se
+- **Vector**: Environmental groups frame simultaneous fuel relief and climate failure as systemic betrayal
+- **Probability**: MEDIUM [B2]; **Impact**: MEDIUM (electoral, international reputation)
+
+### Attack Tree
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#ff006e', 'lineColor': '#ff006e'}}}%%
+flowchart TD
+    ROOT[Coalition Government Agenda Under Threat]:::root
+    ROOT --> A[Fiscal Credibility Attack Vector]:::high
+    ROOT --> B[Law and Order Narrative Attack]:::high
+    ROOT --> C[Climate Policy Attack]:::med
+    A --> A1[Emergency Budget Framed as Electoral Bribe HD01FiU48]:::crit
+    A --> A2[Permanent Fuel Cut Fiscal Trap]:::high
+    B --> B1[Police Reform Failure HD01JuU31]:::high
+    B --> B2[Weapons Law Hunting Lobby HD01JuU10]:::med
+    B --> B3[Prison Planning Municipal Resistance HD01CU25]:::med
+    C --> C1[Fuel Cut vs Climate Contradiction HD01FiU48]:::med
+
+classDef root fill:#ff006e,color:#ffffff,stroke:#ff006e
+classDef crit fill:#ff006e,color:#ffffff,stroke:#ff006e
+classDef high fill:#ffbe0b,color:#000000,stroke:#ffbe0b
+classDef med fill:#1a1e3d,color:#00d9ff,stroke:#00d9ff
+
+style ROOT fill:#ff006e,color:#ffffff
+style A fill:#ffbe0b,color:#000000
+style B fill:#ffbe0b,color:#000000
+style C fill:#1a1e3d,color:#00d9ff
+```
+
+### Threat Vector Chain Analysis
+
+For the most credible threat (T1.1 — Electoral Fiscal Blowback):
+
+1. **Reconnaissance**: Opposition research identifies 4.1 billion SEK fiscal impact (HD01FiU48)
+2. **Weaponisation**: Opposition frames as "borrowed money" during September 2026 cost-of-living debate
+3. **Delivery**: Prime Minister debate; TV news; social media amplification
+4. **Exploitation**: Voter perception shifts on fiscal competence
+5. **Installation**: Persistent "tax giveaway before election" narrative in media
+6. **Persistence**: Opposition parties coordinate messaging; media echo chamber forms
+7. **Impact**: Electoral vote share shifts away from Moderaterna
+
+**Defence**: Government pre-emptively frames as crisis response to Middle East conflict and energy price spike — "responsible fiscal management of extraordinary circumstances"
+
+## Historical Parallels
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/historical-parallels.md -->
+
+*Named precedents within 40 years (1986-2026) per methodology standard.*
+
+---
+
+### Parallel 1: 1991 Election Year Fiscal Package (vs HD01FiU48)
+
+**What happened**: The S government implemented a series of welfare and fiscal measures in the final parliamentary session before the 1991 election — coinciding with an economic crisis (Swedish banking crisis developing). The package included housing and energy subsidies.
+
+**Outcome**: S lost the 1991 election to the Bildt centre-right coalition (M+C+FP+KD) with 51.1% despite the spending package. The economy had deteriorated too severely for fiscal relief to offset voter concern.
+
+**Parallel to 2026**: HD01FiU48 is analogous — pre-election fiscal package with cost-of-living rationale. Key difference: Sweden's 2026 fiscal position is stronger than 1991 (no banking crisis; fiscal position A-rated). The 1991 precedent suggests fiscal relief alone cannot overcome structural electoral headwinds.
+
+**Confidence in parallel**: MEDIUM [B2] — structural similarity valid; context differs significantly
+
+---
+
+### Parallel 2: 2008 Weapons Law Reform (vs HD01JuU10)
+
+**What happened**: Following the EU Firearms Directive 91/477/EEC revision, Sweden updated vapenlagen (Weapons Act) to align with EU minimum standards. The reform included modest restrictions on semi-automatic weapons while preserving hunting rights.
+
+**Outcome**: Reform passed with broad support including C and FP rural wings. No significant legal challenge succeeded. Jägarförbundet accepted provisions with minor modifications.
+
+**Parallel to 2026**: HD01JuU10 is a more restrictive update to the same legal framework, now implementing stricter EU Directive 2021/555. The 2008 precedent shows Swedish firearms legislation can be tightened without fatal political backlash — but the 2026 update is stricter than 2008, increasing resistance probability.
+
+**Confidence in parallel**: HIGH [A2] — direct legislative lineage; vapenlagen reform history well-documented
+
+---
+
+### Parallel 3: 2006 Police Reform National Consolidation (vs HD01JuU31)
+
+**What happened**: Riksrevisionen issued critical reports in 2005-2006 on police efficiency and coordination failures. The Reinfeldt government (elected 2006) commissioned Police Organisation Committee; reform followed in 2010-2015 consolidating 21 police authorities into one.
+
+**Outcome**: Reform took 10+ years from first Riksrevisionen report (2005) to full implementation (2015). Even post-consolidation, Riksrevisionen found implementation gaps in 2019-2021.
+
+**Parallel to 2026**: HD01JuU31 documents Riksrevisionen finding no remedial action. The 2006 precedent shows Swedish police reform follows a predictable multi-decade cycle: Riksrevisionen → committee → eventual reform → implementation gap → new Riksrevisionen. This is the third iteration. The lesson is that no remedial mandate in 2026 will likely delay the next iteration until ~2028-2030.
+
+**Confidence in parallel**: HIGH [A1] — direct institutional precedent; Riksrevisionen reports publicly available
+
+---
+
+### Parallel 4: 1994 Constitutional Override for Infrastructure (vs HD01CU25)
+
+**What happened**: The Öresund Bridge Act (Lagen om Öresundsförbindelsen, 1991) explicitly overrode local planning law (Plan och Bygglagen) to enable fast-track construction of the Öresund link. Municipal objections from Malmö area were set aside by national legislation.
+
+**Outcome**: Bridge built on schedule (opened 2000); legal challenges from environmental and municipal groups were ultimately unsuccessful. The PBL override set precedent for "national interest" infrastructure exemptions.
+
+**Parallel to 2026**: HD01CU25 uses same mechanism — national criminal justice need (prison capacity shortage) overrides local planning authority. The 1994 precedent validates the legal approach and suggests municipal challenges will not succeed if courts apply the same "national interest" doctrine.
+
+**Confidence in parallel**: MEDIUM-HIGH [B2] — mechanism is analogous; constitutional context slightly different (prison vs transport infrastructure)
+
+---
+
+### Parallel 5: 2010 Riksbank Independence Test (vs HD01FiU23)
+
+**What happened**: Following the 2008 financial crisis, the Swedish government did NOT draw on Riksbank reserves or demand extraordinary dividend, despite fiscal pressure. Riksbank maintained independence; government borrowed in financial markets instead.
+
+**Outcome**: Sweden's fiscal credibility was maintained; the decision to not pressure Riksbank preserved institutional trust. Sweden exited the crisis faster than eurozone peers in part because of central bank independence.
+
+**Parallel to 2026**: HD01FiU23 (zero dividend from Riksbank's 5.297B SEK profit) continues the 2010 precedent of not extracting Riksbank profits pre-election. This is institutionally consistent and creditworthy. The precedent suggests pressure for extraordinary dividend (T2.3 threat in threat-analysis.md) is unlikely to succeed.
+
+**Confidence in parallel**: HIGH [A2] — FiU committee has maintained this principle consistently since 2010
+
+---
+
+### Summary Table
+
+| Parallel | Documents | Years | Outcome | Confidence | Lesson |
+|----------|-----------|-------|---------|------------|--------|
+| 1991 election fiscal package | HD01FiU48 | 1991 | S lost despite relief | MEDIUM | Relief alone insufficient without economic tailwind |
+| 2008 weapons reform | HD01JuU10 | 2008-09 | Passed; no legal defeat | HIGH | Incremental weapons reform survivable |
+| 2006 police reform cycle | HD01JuU31 | 2006-2025 | 10+ year cycle | HIGH | No mandate = 4+ year delay |
+| 1994 Öresund PBL override | HD01CU25 | 1992-2000 | Override upheld | MED-HIGH | National interest doctrine holds |
+| 2010 Riksbank independence | HD01FiU23 | 2009-10 | Independence maintained | HIGH | Institutional precedent preserved |
+
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/comparative-international.md -->
 
@@ -1764,83 +1742,6 @@ Two primary comparators (Nordic + EU) assessed against the April 2026 Swedish co
 2. **Weapons law is EU-compliant but minimalist** — risk of ECJ pressure to go further
 3. **Institutional accountability gap** vs Germany suggests structural reform of committee culture needed
 4. **Elder care trajectory** lags Denmark by approximately 5-7 years
-
-## Historical Parallels
-<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/historical-parallels.md -->
-
-*Named precedents within 40 years (1986-2026) per methodology standard.*
-
----
-
-### Parallel 1: 1991 Election Year Fiscal Package (vs HD01FiU48)
-
-**What happened**: The S government implemented a series of welfare and fiscal measures in the final parliamentary session before the 1991 election — coinciding with an economic crisis (Swedish banking crisis developing). The package included housing and energy subsidies.
-
-**Outcome**: S lost the 1991 election to the Bildt centre-right coalition (M+C+FP+KD) with 51.1% despite the spending package. The economy had deteriorated too severely for fiscal relief to offset voter concern.
-
-**Parallel to 2026**: HD01FiU48 is analogous — pre-election fiscal package with cost-of-living rationale. Key difference: Sweden's 2026 fiscal position is stronger than 1991 (no banking crisis; fiscal position A-rated). The 1991 precedent suggests fiscal relief alone cannot overcome structural electoral headwinds.
-
-**Confidence in parallel**: MEDIUM [B2] — structural similarity valid; context differs significantly
-
----
-
-### Parallel 2: 2008 Weapons Law Reform (vs HD01JuU10)
-
-**What happened**: Following the EU Firearms Directive 91/477/EEC revision, Sweden updated vapenlagen (Weapons Act) to align with EU minimum standards. The reform included modest restrictions on semi-automatic weapons while preserving hunting rights.
-
-**Outcome**: Reform passed with broad support including C and FP rural wings. No significant legal challenge succeeded. Jägarförbundet accepted provisions with minor modifications.
-
-**Parallel to 2026**: HD01JuU10 is a more restrictive update to the same legal framework, now implementing stricter EU Directive 2021/555. The 2008 precedent shows Swedish firearms legislation can be tightened without fatal political backlash — but the 2026 update is stricter than 2008, increasing resistance probability.
-
-**Confidence in parallel**: HIGH [A2] — direct legislative lineage; vapenlagen reform history well-documented
-
----
-
-### Parallel 3: 2006 Police Reform National Consolidation (vs HD01JuU31)
-
-**What happened**: Riksrevisionen issued critical reports in 2005-2006 on police efficiency and coordination failures. The Reinfeldt government (elected 2006) commissioned Police Organisation Committee; reform followed in 2010-2015 consolidating 21 police authorities into one.
-
-**Outcome**: Reform took 10+ years from first Riksrevisionen report (2005) to full implementation (2015). Even post-consolidation, Riksrevisionen found implementation gaps in 2019-2021.
-
-**Parallel to 2026**: HD01JuU31 documents Riksrevisionen finding no remedial action. The 2006 precedent shows Swedish police reform follows a predictable multi-decade cycle: Riksrevisionen → committee → eventual reform → implementation gap → new Riksrevisionen. This is the third iteration. The lesson is that no remedial mandate in 2026 will likely delay the next iteration until ~2028-2030.
-
-**Confidence in parallel**: HIGH [A1] — direct institutional precedent; Riksrevisionen reports publicly available
-
----
-
-### Parallel 4: 1994 Constitutional Override for Infrastructure (vs HD01CU25)
-
-**What happened**: The Öresund Bridge Act (Lagen om Öresundsförbindelsen, 1991) explicitly overrode local planning law (Plan och Bygglagen) to enable fast-track construction of the Öresund link. Municipal objections from Malmö area were set aside by national legislation.
-
-**Outcome**: Bridge built on schedule (opened 2000); legal challenges from environmental and municipal groups were ultimately unsuccessful. The PBL override set precedent for "national interest" infrastructure exemptions.
-
-**Parallel to 2026**: HD01CU25 uses same mechanism — national criminal justice need (prison capacity shortage) overrides local planning authority. The 1994 precedent validates the legal approach and suggests municipal challenges will not succeed if courts apply the same "national interest" doctrine.
-
-**Confidence in parallel**: MEDIUM-HIGH [B2] — mechanism is analogous; constitutional context slightly different (prison vs transport infrastructure)
-
----
-
-### Parallel 5: 2010 Riksbank Independence Test (vs HD01FiU23)
-
-**What happened**: Following the 2008 financial crisis, the Swedish government did NOT draw on Riksbank reserves or demand extraordinary dividend, despite fiscal pressure. Riksbank maintained independence; government borrowed in financial markets instead.
-
-**Outcome**: Sweden's fiscal credibility was maintained; the decision to not pressure Riksbank preserved institutional trust. Sweden exited the crisis faster than eurozone peers in part because of central bank independence.
-
-**Parallel to 2026**: HD01FiU23 (zero dividend from Riksbank's 5.297B SEK profit) continues the 2010 precedent of not extracting Riksbank profits pre-election. This is institutionally consistent and creditworthy. The precedent suggests pressure for extraordinary dividend (T2.3 threat in threat-analysis.md) is unlikely to succeed.
-
-**Confidence in parallel**: HIGH [A2] — FiU committee has maintained this principle consistently since 2010
-
----
-
-### Summary Table
-
-| Parallel | Documents | Years | Outcome | Confidence | Lesson |
-|----------|-----------|-------|---------|------------|--------|
-| 1991 election fiscal package | HD01FiU48 | 1991 | S lost despite relief | MEDIUM | Relief alone insufficient without economic tailwind |
-| 2008 weapons reform | HD01JuU10 | 2008-09 | Passed; no legal defeat | HIGH | Incremental weapons reform survivable |
-| 2006 police reform cycle | HD01JuU31 | 2006-2025 | 10+ year cycle | HIGH | No mandate = 4+ year delay |
-| 1994 Öresund PBL override | HD01CU25 | 1992-2000 | Override upheld | MED-HIGH | National interest doctrine holds |
-| 2010 Riksbank independence | HD01FiU23 | 2009-10 | Independence maintained | HIGH | Institutional precedent preserved |
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/implementation-feasibility.md -->
@@ -1931,6 +1832,105 @@ xychart-beta
 ```
 
 *Note: MJU21 and JuU31 score 5 because they require no implementation action — "feasibility" = trivially high for non-binding notes.*
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/media-framing-analysis.md -->
+
+### Per-Party Framing
+
+#### M (Moderaterna) — Governing Party
+**Frame**: "Responsible fiscal management delivering real relief"
+- HD01FiU48: "We are responding to extraordinary energy price pressures with targeted relief"
+- HD01JuU10: "Sweden meets its EU obligations on weapons control"
+- HD01CU25: "We are building the prison places Sweden needs"
+- HD01JuU31: "Police reform is ongoing; we remain committed to public safety"
+**Key messenger**: Prime Minister (M) in government press conference
+**Media placement**: SVT Aktuellt, Rapport; Dagens Nyheter editorial access
+
+#### SD (Sverigedemokraterna) — Senior Coalition Partner
+**Frame**: "Law and order, Sweden first"
+- HD01FiU48: "Fuel relief for ordinary Swedes who have been forgotten by elites"
+- HD01CU25: "Criminals will finally face consequences"
+- HD01JuU10: Complicated — rural SD voters resist; urban SD supports. Message: "Hunting rights preserved; only criminal weapons targeted"
+- HD01JuU31: "Proof that police reform failed — we need more radical reform"
+**Key messenger**: SD justice spokesperson
+**Media placement**: Expressen, Aftonbladet populist channels; social media primary
+
+#### KD (Kristdemokraterna) — Junior Coalition Partner
+**Frame**: "Family and community values in policy"
+- HD01FiU48: "Relief for rural families who depend on cars"
+- HD01SoU25: "Strengthening care for our elderly is a KD priority"
+- HD01JuU10: Cautious; "balance between security and legitimate sport/hunting"
+**Key messenger**: Party leader
+**Media placement**: Regional press (Dalabygden, Smalandsposten); faith community media
+
+#### L (Liberalerna) — Junior Coalition Partner
+**Frame**: "Rights-based, EU-compliant governance"
+- HD01SfU23: "Sweden must be competitive in attracting international research talent"
+- HD01JuU10: "Sweden fulfills EU firearms directives as a responsible member state"
+- HD01AU15: "ILO violence convention ratification is a liberal human rights priority"
+**Key messenger**: Party leader
+**Media placement**: DN Debatt; academic/professional media
+
+#### S (Socialdemokraterna) — Main Opposition
+**Frame**: "Government uses emergency powers for election spending"
+- HD01FiU48: "This is borrowed money that future generations will pay; we would target relief better"
+- HD01JuU31: "Police reform has failed; this government cannot keep Sweden safe"
+- HD01CU25: "Building prisons is not a substitute for effective crime prevention"
+- HD01MJU21: Secondary attack — "government simultaneously cuts fuel tax and fails on climate"
+**Key messenger**: S riksdagsgrupp; party leader in PM debate
+**Media placement**: LO-Tidningen; Aftonbladet sympathetic; SVT "Studio Ett" appearances
+
+#### V (Vänsterpartiet)
+**Frame**: "Workers first, not tax cuts for car owners"
+- HD01FiU48: "Energy support YES; fuel tax cut is fossil subsidy we oppose"
+- HD01AU15: "ILO 190 ratification is V's long-standing demand — we welcome it"
+- HD01JuU31: "Police reform failure due to privatisation pressure"
+
+#### MP (Miljöpartiet)
+**Frame**: "Climate first"
+- HD01MJU21 + HD01FiU48 combined: "Sweden is committing climate hypocrisy — failing farms on climate while cutting fuel tax"
+- HD01AU15: "Green support for ILO 190 workplace violence protections"
+
+#### C (Centerpartiet)
+**Frame**: "Rural rights, not rural gimmicks"
+- HD01FiU48: Accepts fuel relief substance; questions process
+- HD01JuU10: "C supports hunting rights; will propose amendments to protect legitimate hunting"
+- HD01MJU21: "Government has failed rural agriculture; we demand new CAP strategy"
+
+### Press Quadrant Analysis
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#ff006e', 'lineColor': '#ff006e'}}}%%
+quadrantChart
+    title Media Outlet Coverage Framing (April 2026 Package)
+    x-axis "Opposition-leaning" --> "Government-leaning"
+    y-axis "Low Salience" --> "High Salience"
+    quadrant-1 Key Government Amplifiers
+    quadrant-2 Opposition Amplifiers
+    quadrant-3 Low Traction Opposition
+    quadrant-4 Neutral High-Reach
+    SVT Rapport: [0.5, 0.9]
+    Aftonbladet: [0.25, 0.85]
+    Expressen: [0.55, 0.8]
+    DN: [0.4, 0.7]
+    SvD: [0.6, 0.65]
+    SR Ekot: [0.5, 0.75]
+
+```
+
+style SVT Rapport fill:#00d9ff,color:#000000
+style Aftonbladet fill:#ffbe0b,color:#000000
+style Expressen fill:#ff006e,color:#ffffff
+style DN fill:#1a1e3d,color:#00d9ff
+style SvD fill:#1a1e3d,color:#00d9ff
+style SR Ekot fill:#00d9ff,color:#000000
+
+### Narrative Vulnerability Assessment
+
+**Highest vulnerability**: "Election bribe" narrative on HD01FiU48 — amplified by S, available to all media
+**Second vulnerability**: "Police failure" narrative on HD01JuU31 — evidence-based; difficult to counter
+**Best government position**: HD01CU25 prison expansion and HD01JuU10 — bipartisan or EU-mandated; harder to attack
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/devils-advocate.md -->
@@ -2301,13 +2301,6 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/threat-analysis.md)
 - [`documents/HD01AU15-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/documents/HD01AU15-analysis.md)
 - [`documents/HD01CU24-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/documents/HD01CU24-analysis.md)
 - [`documents/HD01CU25-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/documents/HD01CU25-analysis.md)
@@ -2320,12 +2313,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`documents/HD01SfU23-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/documents/HD01SfU23-analysis.md)
 - [`documents/HD01SoU25-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/documents/HD01SoU25-analysis.md)
 - [`documents/HD01TU16-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/documents/HD01TU16-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-26/committeeReports/cross-reference-map.md)

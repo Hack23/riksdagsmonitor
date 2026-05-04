@@ -5,7 +5,7 @@ date: 2026-04-30
 subfolder: interpellations
 slug: 2026-04-30-interpellations
 source_folder: analysis/daily/2026-04-30/interpellations
-generated_at: 2026-05-04T09:52:32.542Z
+generated_at: 2026-05-04T12:16:14.224Z
 language: en
 layout: article
 ---
@@ -59,10 +59,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -195,48 +195,92 @@ graph LR
     style T2 fill:#E67E22,color:#fff
 ```
 
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/media-framing-analysis.md -->
+## Per-document intelligence
 
-### Per-Party Framing
+### HD10460
+<!-- source: documents/HD10460-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/documents/HD10460-analysis.md -->
 
-#### SD on HD10460
+**dok_id**: HD10460  
 
-**Narrative**: SD presents the cultural heritage interpellation as a patriotic stewardship obligation — defending Sweden's national identity through proper care of its historical built environment. This framing connects to SD's core cultural-nationalist brand. The invocation of Riksrevisionen data strengthens the "responsible governance" overlay that SD has been cultivating since entering the coalition support role.
+**Type**: Interpellation  
+**Filed by**: Pia Trollehjelm (SD)  
+**Addressed to**: Kulturminister Parisa Liljestrand (M)  
+**Filed**: 2026-04-29 | **Forwarded**: 2026-04-30 | **Announced**: 2026-05-05 | **Deadline**: 2026-05-21  
+**Depth tier**: L2 Strategic [B2]  
+**URL**: https://data.riksdagen.se/dokument/HD10460.html  
 
-**Media likelihood**: Likely to receive coverage in regional press where heritage sites are locally significant; specialist heritage/culture media (Kulturnyheterna SVT). May attract limited mainstream political coverage as intra-coalition friction is not acute.
+### Core Intelligence
 
-#### S on HD10461
+SD's Pia Trollehjelm interrogates Culture Minister Parisa Liljestrand (M) on the condition of state grant properties managed by Statens fastighetsverk (SFV). The interpellation invokes Riksrevisionen's published audit RiR 2025:30 (Förvaltning av fastigheter – Statens fastighetsverk och regeringens styrning) to document that these properties — which cannot cover costs through rental income — suffer from deferred maintenance and lack a coherent long-term plan [A1].
 
-**Narrative**: S frames Sweden's ESA retreat as a story of lost competitiveness, weakened national security, and institutional failure. The opposition narrative structure is "Sweden falling behind" — contrasting Sweden's rank (17/23, behind Nordic neighbours) with the overall European space investment surge. This is a classic wedge framing that connects to S's strength in research/university policy.
+**Single question posed**: Does the minister intend to initiate a comprehensive survey of maintenance needs in state grant properties and a long-term plan for addressing them?
 
-**Media likelihood**: High. The space industry is a national prestige topic; the Nordic comparison is highly concrete; defence/security angle (dual-use satellite infrastructure) may attract mainstream media. DN, SvD, and Aftonbladet likely to pick up.
+### Analytical Assessment
 
-### Press-Quadrant Analysis
+**Significance**: L2 Strategic (DIW 7.2)  
 
-| Outlet type | HD10460 framing | HD10461 framing |
-|------------|-----------------|-----------------|
-| Centre-right (DN, SvD) | Government stewardship question; may note RiR critique | Policy incoherence (spending cuts vs. security ambitions) |
-| Centre-left (Aftonbladet, Expressen) | National heritage neglect; government austerity critique | Sweden humiliated in European space rankings |
-| Heritage/culture specialist | Technical debate on SFV appropriations | Indirect |
-| Trade/industry media | Indirect | Direct: space industry contracts, EU procurement |
+The interpellation functions as a formal record of SD's oversight role. SD's cultural-nationalist base is the natural audience — grant properties include castles, manors and rural heritage estates that embody the national narrative SD promotes. The invocation of Riksrevisionen data [A1] gives the question institutional weight beyond purely political posturing.
 
-### Platform and Digital Framing
+**Key risk**: If no maintenance survey and plan are announced, the RiR 2025:30 findings create a documented accountability gap that can be returned to in election campaign context.
 
-- Twitter/X political discourse: likely to amplify HD10461's measurable data (rank 17/23); heritage topic less viral but stable
-- SD digital ecosystem: will frame HD10460 as SD defending Swedish cultural heritage against M's neglect
-- S digital ecosystem: HD10461 will be framed as "Kristersson's government lets Sweden fall behind in the space race"
+**Admissibility note**: This analysis relies solely on public interpellation text [A1] and the RiR 2025:30 audit cited therein [A1]. No additional fieldwork or confidential sources.
 
-### Longitudinal Frame Record Entry
+### Admiralty Rating
 
-**Issue**: ESA/Space funding (HD10461) — Opposition "Sweden retreating from European space leadership" frame opens.  
-**Issue**: Cultural heritage/SFV (HD10460) — Intra-coalition "oversight of heritage stewardship" frame reinforced.  
-**Prior frames**: No prior 2026 entries for these specific topics.
+| Evidence | Source | Admiralty |
+|----------|--------|-----------|
+| Interpellation text | riksdagen.se/HD10460 | [A1] |
+| RiR 2025:30 findings (cited) | riksrevisionen.se | [A1] |
+| SFV structural funding gap | Structural analysis | [B2] |
 
-### Manipulation Risk Assessment
+### HD10461
+<!-- source: documents/HD10461-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/documents/HD10461-analysis.md -->
 
-**Risk level**: LOW for both interpellations  
-No evidence of coordinated inauthentic behaviour or foreign information operations targeting these specific debates. Both are standard parliamentary accountability exercises. Monitor for: exaggerated claims about Sweden's "total space exit" (HD10461 is about voluntary programme shares, not full ESA withdrawal).
+**dok_id**: HD10461  
+
+**Type**: Interpellation  
+**Filed by**: Mats Wiking (S)  
+**Addressed to**: Gymnasie-, högskole- och forskningsminister Lotta Edholm (L)  
+**Filed**: 2026-04-29 | **Forwarded**: 2026-04-30 | **Announced**: 2026-05-05 | **Answer date**: 2026-05-19 | **Deadline**: 2026-05-21  
+**Depth tier**: L2+ Priority [B2]  
+**URL**: https://data.riksdagen.se/dokument/HD10461.html  
+
+### Core Intelligence
+
+Social Democrat Mats Wiking challenges Research Minister Lotta Edholm (L) on Sweden's reduced ESA contribution — a decision that left Sweden one of only three ESA members to cut contributions at the November 2025 ministerial meeting, despite a record +31% overall ESA budget increase [A2]. Sweden's ESA ranking fell to 17th of 23 member states, below all Nordic neighbours [A2]. Rymdstyrelsen formally requested a significantly higher budget for 2026–2028; the government approved only 100 MSEK — insufficient to maintain prior programme share levels [A2].
+
+**Two questions posed**:
+1. How does the minister regard Sweden being one of only three ESA members to reduce contributions, and will any corrective measures be taken?
+2. What will the minister and government do to strengthen Swedish space industry's position in Europe?
+
+### Analytical Assessment
+
+**Significance**: L2+ Priority (DIW 7.8)  
+
+This is the higher-priority interpellation of the day. The strategic dimensions are multiple:
+
+- **Industrial**: Swedish aerospace SMEs (OHB Sweden, AAC Clyde Space, RUAG Sweden) depend on ESA programme sub-contracts; reduced Swedish share directly translates to fewer sub-contracts and reduced EU public procurement eligibility.
+- **Dual-use/Defence**: Satellite infrastructure (Copernicus, Galileo) is NATO-relevant; Sweden's reduced role weakens its interoperability argument within NATO.
+- **Nordic competition**: Finland and Norway both maintain stronger ESA programme shares relative to GNI; HD10461 embeds a peer-benchmark that is both quantifiable and politically embarrassing [A2].
+- **EU strategic autonomy**: ESA is the primary vehicle for European space strategic autonomy; Sweden's retreat contradicts its stated EU integration ambitions.
+
+**Esrange dimension**: Sweden's Kiruna-based Esrange launch facility is a competitive European asset. Reduced ESA participation risks marginalising Esrange as ESA programme launches shift to French Guiana, Italy (Vega-C) and commercial providers aligned with countries with stronger programme shares.
+
+### Two Questions Decomposed
+
+**Q1 (ESA rank)**: Forces minister to publicly acknowledge Sweden is in the bottom tier of ESA contributors and explain the policy rationale. Hard to defend on strategic-autonomy or NATO-coherence grounds.
+
+**Q2 (Industry position)**: Invites the minister to announce a forward-looking strategy. If no strategy is announced, the gap becomes a visible election platform for S.
+
+### Admiralty Rating
+
+| Evidence | Source | Admiralty |
+|----------|--------|-----------|
+| ESA rank 17/23 | HD10461 interpellation text (citing public ESA data) | [A2] |
+| Only 3 ESA members reduced contribution | HD10461 interpellation text (citing public ESA data) | [A2] |
+| 100 MSEK government approval vs. Rymdstyrelsen request | HD10461 interpellation text (citing agency submission) | [A2] |
+| ESA budget +31% at Nov 2025 ministerial | HD10461 interpellation text | [A2] |
+| Industry competitiveness risk | Structural analysis | [B2] |
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/stakeholder-perspectives.md -->
@@ -303,6 +347,106 @@ graph TD
     style LJ fill:#52BDEC,color:#000
     style E fill:#006AB3,color:#fff
 ```
+
+## Coalition Mathematics
+<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/coalition-mathematics.md -->
+
+### Current Seat Map (Riksdag 2022–2026)
+
+| Party | Seats | Bloc | Minister |
+|-------|-------|------|---------|
+| S | 107 | Opposition | — |
+| SD | 73 | Government support | — |
+| M | 68 | Government | PM Ulf Kristersson; Kulturminister Liljestrand |
+| V | 24 | Opposition | — |
+| C | 24 | Opposition | — |
+| L | 24 | Government | Forskningsminister Edholm |
+| KD | 19 | Government | — |
+| MP | 18 | Opposition | — |
+| **Total** | **349** | | |
+
+**Majority threshold**: 175 seats  
+**Coalition total (M+KD+L+SD)**: 184 seats — majority of 9
+
+### Pivotal Vote Analysis
+
+Interpellations do not trigger votes. However, if either debate escalates to a vote of no confidence:
+
+| Scenario | Coalition votes | Opposition votes | Outcome |
+|----------|----------------|-----------------|---------|
+| No-confidence in Liljestrand | 184 (coalition) | 165 (opposition, without SD) | Coalition wins — if SD holds |
+| No-confidence in Edholm | 184 | 165 | Coalition wins — if SD holds |
+| SD defects from coalition | 111 | 238 | Opposition prevails |
+
+**Key pivot**: SD (73 seats) is the decisive factor. HD10460 was filed by SD — this signals that SD is applying pressure via formal channels rather than threatening coalition stability. No indication of coalition fracture.
+
+### Sainte-Laguë Scenario (Election 2026 projection)
+
+Latest available polling (indicative, not sourced to a specific poll in this analysis; confidence LOW [D3]):
+
+| Party | Estimated % | Estimated seats |
+|-------|-------------|----------------|
+| S | ~32% | ~110 |
+| SD | ~20% | ~70 |
+| M | ~18% | ~62 |
+| V | ~8% | ~27 |
+| C | ~5% | ~17 |
+| L | ~4% | ~14 |
+| KD | ~5% | ~17 |
+| MP | ~5% | ~17 |
+
+**Note**: These are illustrative projections at LOW confidence [D3]. The interpellations themselves do not significantly alter polling projections.
+
+```mermaid
+graph LR
+    S["S: 107"] --> Opp["Opposition: 165"]
+    V["V: 24"] --> Opp
+    C["C: 24"] --> Opp
+    MP["MP: 18"] --> Opp
+    M["M: 68"] --> Gov["Government: 184"]
+    KD["KD: 19"] --> Gov
+    L["L: 24"] --> Gov
+    SD["SD: 73"] --> Gov
+    Gov --> Maj["Majority: 175"]
+    style Gov fill:#52BDEC,color:#000
+    style Opp fill:#E8112d,color:#fff
+    style Maj fill:#2ECC71,color:#fff
+```
+
+## Voter Segmentation
+<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/voter-segmentation.md -->
+
+### Demographic / Regional / Ideological Segment Analysis
+
+#### HD10460 — Cultural Heritage (SD → M)
+
+| Segment | Position | Impact |
+|---------|----------|--------|
+| Rural/small-town voters (SD core) | Culturally conservative; value heritage sites | Positive: SD seen as protecting heritage |
+| Heritage professionals and conservationists | Non-partisan; expert community | Supportive of HD10460 demand for survey |
+| Urban cultural class (M, L, S voters) | Heritage investment broadly popular | Non-partisan support for maintenance plan |
+| Budget-conservative voters (M, KD core) | Prioritise fiscal discipline | Tension: heritage spending vs. consolidation |
+| Pensioners (across parties) | High heritage tourism engagement | Supportive |
+
+**Baseline position on procedural day**: The filing of an interpellation does not change immediate voter preferences but signals party positioning. SD is reinforcing its "national cultural identity" brand; M must defend its stewardship record.
+
+#### HD10461 — Swedish Space Industry (S → L)
+
+| Segment | Position | Impact |
+|---------|----------|--------|
+| Researchers and university workers (S, L, MP voters) | Strong interest in R&D investment | Supportive of HD10461; concerned about Sweden's ESA retreat |
+| Aerospace industry workers (across parties, concentration in Kiruna/Stockholm) | Direct economic interest | Strongly engaged; concerned about contract flows |
+| Defence/security-minded voters (M, KD, SD) | Dual-use space = national security | Should favour increased ESA investment; cuts are incoherent with security stance |
+| Young tech-sector voters | Space economy, satellite technology | Engaged; disappointed in Sweden's retreat |
+| Fiscal conservatives (M, KD) | Budget discipline | Tension: space investment vs. fiscal restraint |
+
+**Baseline position**: S uses HD10461 to appeal to its university and research base ahead of the September election. L (governing party) must defend the budget decision that led to rank 17/23.
+
+### Regional Dimension
+
+- **Norrbotten/Kiruna**: Esrange Space Center is located here; HD10461 directly affects regional employment and Kiruna's role as a European launch hub.
+- **Stockholm tech cluster**: ESA programme sub-contracts involve Stockholm-based aerospace SMEs.
+- **Cultural heritage properties**: Distributed nationally; HD10460 has broad geographic appeal.
 
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/forward-indicators.md -->
@@ -417,6 +561,59 @@ pie
     "S3: Escalation" : 15
 ```
 
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/election-2026-analysis.md -->
+
+### Seat Projection Context (Riksval 2026)
+
+The next Swedish general election is scheduled for September 2026. These interpellations are filed approximately 5 months before the election, in the final phase of the current parliamentary term.
+
+#### Current Coalition Configuration (Tidö)
+
+| Party | Seats | Role |
+|-------|-------|------|
+| M (Moderaterna) | 68 | Government (Prime Minister) |
+| KD (Kristdemokraterna) | 19 | Government |
+| L (Liberalerna) | 24 | Government |
+| SD (Sverigedemokraterna) | 73 | Government support party |
+| **Coalition total** | **184** | Majority: 175 |
+
+| Party | Seats | Role |
+|-------|-------|------|
+| S (Socialdemokraterna) | 107 | Opposition leader |
+| MP (Miljöpartiet) | 18 | Opposition |
+| V (Vänsterpartiet) | 24 | Opposition |
+| C (Centerpartiet) | 24 | Opposition |
+
+### Election-Relevant Dynamics from Interpellations
+
+#### HD10460 — SD Internal Coalition Pressure
+
+SD's decision to use the interpellation mechanism against M's culture minister, citing Riksrevisionen, may be read as pre-election positioning: SD wishes to distance itself from any perception of culture/heritage neglect while remaining in the coalition. This is a classic "credit-claiming" move in a proportional system — SD demonstrates independence without threatening the coalition.
+
+**Seat-projection delta**: Negligible direct impact. SD's cultural heritage voters may reward the oversight signal marginally. No expected shift > 1 seat.
+
+#### HD10461 — S Opposition Platform Building
+
+Mats Wiking (S) uses HD10461 to build a research/space policy platform ahead of the election. S's traditional strength in research and higher education policy (historically strong in university constituencies) makes this a natural pre-election opposition vehicle. The measurability of Sweden's ESA rank (17/23 vs. Nordic neighbours) makes it an effective campaign talking point.
+
+**Seat-projection delta**: Marginal positive for S in high-education urban constituencies if ESA issue gains media traction (estimated < 1 seat direct effect, but contributes to narrative).
+
+### Coalition Viability (Current)
+
+```mermaid
+graph LR
+    M["M 68"] --> Gov["Government\n184 seats"]
+    KD["KD 19"] --> Gov
+    L["L 24"] --> Gov
+    SD["SD 73"] --> Gov
+    Gov --> Majority["Majority threshold: 175"]
+    style Gov fill:#52BDEC,color:#000
+    style Majority fill:#2ECC71,color:#fff
+```
+
+**Assessment**: Coalition is arithmetically stable. Neither interpellation poses an existential threat to coalition arithmetic. The pre-election window (5 months) means both interpellations will contribute to the broader campaign narrative but not disrupt the sitting government's policy execution capacity.
+
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/risk-assessment.md -->
 
@@ -528,284 +725,6 @@ Step 5: [Risk if no plan] Escalation via KU hearing or media/civil society press
 | TTP-3 | Quantitative benchmarking (ESA rank, Nordic comparisons) | HD10461: Sweden rank 17/23, behind all Nordic neighbours [A2] |
 | TTP-4 | Intra-coalition friction (SD → M oversight) | HD10460 challenges coalition culture minister [B2] |
 
-## Per-document intelligence
-
-### HD10460
-<!-- source: documents/HD10460-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/documents/HD10460-analysis.md -->
-
-**dok_id**: HD10460  
-
-**Type**: Interpellation  
-**Filed by**: Pia Trollehjelm (SD)  
-**Addressed to**: Kulturminister Parisa Liljestrand (M)  
-**Filed**: 2026-04-29 | **Forwarded**: 2026-04-30 | **Announced**: 2026-05-05 | **Deadline**: 2026-05-21  
-**Depth tier**: L2 Strategic [B2]  
-**URL**: https://data.riksdagen.se/dokument/HD10460.html  
-
-### Core Intelligence
-
-SD's Pia Trollehjelm interrogates Culture Minister Parisa Liljestrand (M) on the condition of state grant properties managed by Statens fastighetsverk (SFV). The interpellation invokes Riksrevisionen's published audit RiR 2025:30 (Förvaltning av fastigheter – Statens fastighetsverk och regeringens styrning) to document that these properties — which cannot cover costs through rental income — suffer from deferred maintenance and lack a coherent long-term plan [A1].
-
-**Single question posed**: Does the minister intend to initiate a comprehensive survey of maintenance needs in state grant properties and a long-term plan for addressing them?
-
-### Analytical Assessment
-
-**Significance**: L2 Strategic (DIW 7.2)  
-
-The interpellation functions as a formal record of SD's oversight role. SD's cultural-nationalist base is the natural audience — grant properties include castles, manors and rural heritage estates that embody the national narrative SD promotes. The invocation of Riksrevisionen data [A1] gives the question institutional weight beyond purely political posturing.
-
-**Key risk**: If no maintenance survey and plan are announced, the RiR 2025:30 findings create a documented accountability gap that can be returned to in election campaign context.
-
-**Admissibility note**: This analysis relies solely on public interpellation text [A1] and the RiR 2025:30 audit cited therein [A1]. No additional fieldwork or confidential sources.
-
-### Admiralty Rating
-
-| Evidence | Source | Admiralty |
-|----------|--------|-----------|
-| Interpellation text | riksdagen.se/HD10460 | [A1] |
-| RiR 2025:30 findings (cited) | riksrevisionen.se | [A1] |
-| SFV structural funding gap | Structural analysis | [B2] |
-
-### HD10461
-<!-- source: documents/HD10461-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/documents/HD10461-analysis.md -->
-
-**dok_id**: HD10461  
-
-**Type**: Interpellation  
-**Filed by**: Mats Wiking (S)  
-**Addressed to**: Gymnasie-, högskole- och forskningsminister Lotta Edholm (L)  
-**Filed**: 2026-04-29 | **Forwarded**: 2026-04-30 | **Announced**: 2026-05-05 | **Answer date**: 2026-05-19 | **Deadline**: 2026-05-21  
-**Depth tier**: L2+ Priority [B2]  
-**URL**: https://data.riksdagen.se/dokument/HD10461.html  
-
-### Core Intelligence
-
-Social Democrat Mats Wiking challenges Research Minister Lotta Edholm (L) on Sweden's reduced ESA contribution — a decision that left Sweden one of only three ESA members to cut contributions at the November 2025 ministerial meeting, despite a record +31% overall ESA budget increase [A2]. Sweden's ESA ranking fell to 17th of 23 member states, below all Nordic neighbours [A2]. Rymdstyrelsen formally requested a significantly higher budget for 2026–2028; the government approved only 100 MSEK — insufficient to maintain prior programme share levels [A2].
-
-**Two questions posed**:
-1. How does the minister regard Sweden being one of only three ESA members to reduce contributions, and will any corrective measures be taken?
-2. What will the minister and government do to strengthen Swedish space industry's position in Europe?
-
-### Analytical Assessment
-
-**Significance**: L2+ Priority (DIW 7.8)  
-
-This is the higher-priority interpellation of the day. The strategic dimensions are multiple:
-
-- **Industrial**: Swedish aerospace SMEs (OHB Sweden, AAC Clyde Space, RUAG Sweden) depend on ESA programme sub-contracts; reduced Swedish share directly translates to fewer sub-contracts and reduced EU public procurement eligibility.
-- **Dual-use/Defence**: Satellite infrastructure (Copernicus, Galileo) is NATO-relevant; Sweden's reduced role weakens its interoperability argument within NATO.
-- **Nordic competition**: Finland and Norway both maintain stronger ESA programme shares relative to GNI; HD10461 embeds a peer-benchmark that is both quantifiable and politically embarrassing [A2].
-- **EU strategic autonomy**: ESA is the primary vehicle for European space strategic autonomy; Sweden's retreat contradicts its stated EU integration ambitions.
-
-**Esrange dimension**: Sweden's Kiruna-based Esrange launch facility is a competitive European asset. Reduced ESA participation risks marginalising Esrange as ESA programme launches shift to French Guiana, Italy (Vega-C) and commercial providers aligned with countries with stronger programme shares.
-
-### Two Questions Decomposed
-
-**Q1 (ESA rank)**: Forces minister to publicly acknowledge Sweden is in the bottom tier of ESA contributors and explain the policy rationale. Hard to defend on strategic-autonomy or NATO-coherence grounds.
-
-**Q2 (Industry position)**: Invites the minister to announce a forward-looking strategy. If no strategy is announced, the gap becomes a visible election platform for S.
-
-### Admiralty Rating
-
-| Evidence | Source | Admiralty |
-|----------|--------|-----------|
-| ESA rank 17/23 | HD10461 interpellation text (citing public ESA data) | [A2] |
-| Only 3 ESA members reduced contribution | HD10461 interpellation text (citing public ESA data) | [A2] |
-| 100 MSEK government approval vs. Rymdstyrelsen request | HD10461 interpellation text (citing agency submission) | [A2] |
-| ESA budget +31% at Nov 2025 ministerial | HD10461 interpellation text | [A2] |
-| Industry competitiveness risk | Structural analysis | [B2] |
-
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/election-2026-analysis.md -->
-
-### Seat Projection Context (Riksval 2026)
-
-The next Swedish general election is scheduled for September 2026. These interpellations are filed approximately 5 months before the election, in the final phase of the current parliamentary term.
-
-#### Current Coalition Configuration (Tidö)
-
-| Party | Seats | Role |
-|-------|-------|------|
-| M (Moderaterna) | 68 | Government (Prime Minister) |
-| KD (Kristdemokraterna) | 19 | Government |
-| L (Liberalerna) | 24 | Government |
-| SD (Sverigedemokraterna) | 73 | Government support party |
-| **Coalition total** | **184** | Majority: 175 |
-
-| Party | Seats | Role |
-|-------|-------|------|
-| S (Socialdemokraterna) | 107 | Opposition leader |
-| MP (Miljöpartiet) | 18 | Opposition |
-| V (Vänsterpartiet) | 24 | Opposition |
-| C (Centerpartiet) | 24 | Opposition |
-
-### Election-Relevant Dynamics from Interpellations
-
-#### HD10460 — SD Internal Coalition Pressure
-
-SD's decision to use the interpellation mechanism against M's culture minister, citing Riksrevisionen, may be read as pre-election positioning: SD wishes to distance itself from any perception of culture/heritage neglect while remaining in the coalition. This is a classic "credit-claiming" move in a proportional system — SD demonstrates independence without threatening the coalition.
-
-**Seat-projection delta**: Negligible direct impact. SD's cultural heritage voters may reward the oversight signal marginally. No expected shift > 1 seat.
-
-#### HD10461 — S Opposition Platform Building
-
-Mats Wiking (S) uses HD10461 to build a research/space policy platform ahead of the election. S's traditional strength in research and higher education policy (historically strong in university constituencies) makes this a natural pre-election opposition vehicle. The measurability of Sweden's ESA rank (17/23 vs. Nordic neighbours) makes it an effective campaign talking point.
-
-**Seat-projection delta**: Marginal positive for S in high-education urban constituencies if ESA issue gains media traction (estimated < 1 seat direct effect, but contributes to narrative).
-
-### Coalition Viability (Current)
-
-```mermaid
-graph LR
-    M["M 68"] --> Gov["Government\n184 seats"]
-    KD["KD 19"] --> Gov
-    L["L 24"] --> Gov
-    SD["SD 73"] --> Gov
-    Gov --> Majority["Majority threshold: 175"]
-    style Gov fill:#52BDEC,color:#000
-    style Majority fill:#2ECC71,color:#fff
-```
-
-**Assessment**: Coalition is arithmetically stable. Neither interpellation poses an existential threat to coalition arithmetic. The pre-election window (5 months) means both interpellations will contribute to the broader campaign narrative but not disrupt the sitting government's policy execution capacity.
-
-## Coalition Mathematics
-<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/coalition-mathematics.md -->
-
-### Current Seat Map (Riksdag 2022–2026)
-
-| Party | Seats | Bloc | Minister |
-|-------|-------|------|---------|
-| S | 107 | Opposition | — |
-| SD | 73 | Government support | — |
-| M | 68 | Government | PM Ulf Kristersson; Kulturminister Liljestrand |
-| V | 24 | Opposition | — |
-| C | 24 | Opposition | — |
-| L | 24 | Government | Forskningsminister Edholm |
-| KD | 19 | Government | — |
-| MP | 18 | Opposition | — |
-| **Total** | **349** | | |
-
-**Majority threshold**: 175 seats  
-**Coalition total (M+KD+L+SD)**: 184 seats — majority of 9
-
-### Pivotal Vote Analysis
-
-Interpellations do not trigger votes. However, if either debate escalates to a vote of no confidence:
-
-| Scenario | Coalition votes | Opposition votes | Outcome |
-|----------|----------------|-----------------|---------|
-| No-confidence in Liljestrand | 184 (coalition) | 165 (opposition, without SD) | Coalition wins — if SD holds |
-| No-confidence in Edholm | 184 | 165 | Coalition wins — if SD holds |
-| SD defects from coalition | 111 | 238 | Opposition prevails |
-
-**Key pivot**: SD (73 seats) is the decisive factor. HD10460 was filed by SD — this signals that SD is applying pressure via formal channels rather than threatening coalition stability. No indication of coalition fracture.
-
-### Sainte-Laguë Scenario (Election 2026 projection)
-
-Latest available polling (indicative, not sourced to a specific poll in this analysis; confidence LOW [D3]):
-
-| Party | Estimated % | Estimated seats |
-|-------|-------------|----------------|
-| S | ~32% | ~110 |
-| SD | ~20% | ~70 |
-| M | ~18% | ~62 |
-| V | ~8% | ~27 |
-| C | ~5% | ~17 |
-| L | ~4% | ~14 |
-| KD | ~5% | ~17 |
-| MP | ~5% | ~17 |
-
-**Note**: These are illustrative projections at LOW confidence [D3]. The interpellations themselves do not significantly alter polling projections.
-
-```mermaid
-graph LR
-    S["S: 107"] --> Opp["Opposition: 165"]
-    V["V: 24"] --> Opp
-    C["C: 24"] --> Opp
-    MP["MP: 18"] --> Opp
-    M["M: 68"] --> Gov["Government: 184"]
-    KD["KD: 19"] --> Gov
-    L["L: 24"] --> Gov
-    SD["SD: 73"] --> Gov
-    Gov --> Maj["Majority: 175"]
-    style Gov fill:#52BDEC,color:#000
-    style Opp fill:#E8112d,color:#fff
-    style Maj fill:#2ECC71,color:#fff
-```
-
-## Voter Segmentation
-<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/voter-segmentation.md -->
-
-### Demographic / Regional / Ideological Segment Analysis
-
-#### HD10460 — Cultural Heritage (SD → M)
-
-| Segment | Position | Impact |
-|---------|----------|--------|
-| Rural/small-town voters (SD core) | Culturally conservative; value heritage sites | Positive: SD seen as protecting heritage |
-| Heritage professionals and conservationists | Non-partisan; expert community | Supportive of HD10460 demand for survey |
-| Urban cultural class (M, L, S voters) | Heritage investment broadly popular | Non-partisan support for maintenance plan |
-| Budget-conservative voters (M, KD core) | Prioritise fiscal discipline | Tension: heritage spending vs. consolidation |
-| Pensioners (across parties) | High heritage tourism engagement | Supportive |
-
-**Baseline position on procedural day**: The filing of an interpellation does not change immediate voter preferences but signals party positioning. SD is reinforcing its "national cultural identity" brand; M must defend its stewardship record.
-
-#### HD10461 — Swedish Space Industry (S → L)
-
-| Segment | Position | Impact |
-|---------|----------|--------|
-| Researchers and university workers (S, L, MP voters) | Strong interest in R&D investment | Supportive of HD10461; concerned about Sweden's ESA retreat |
-| Aerospace industry workers (across parties, concentration in Kiruna/Stockholm) | Direct economic interest | Strongly engaged; concerned about contract flows |
-| Defence/security-minded voters (M, KD, SD) | Dual-use space = national security | Should favour increased ESA investment; cuts are incoherent with security stance |
-| Young tech-sector voters | Space economy, satellite technology | Engaged; disappointed in Sweden's retreat |
-| Fiscal conservatives (M, KD) | Budget discipline | Tension: space investment vs. fiscal restraint |
-
-**Baseline position**: S uses HD10461 to appeal to its university and research base ahead of the September election. L (governing party) must defend the budget decision that led to rank 17/23.
-
-### Regional Dimension
-
-- **Norrbotten/Kiruna**: Esrange Space Center is located here; HD10461 directly affects regional employment and Kiruna's role as a European launch hub.
-- **Stockholm tech cluster**: ESA programme sub-contracts involve Stockholm-based aerospace SMEs.
-- **Cultural heritage properties**: Distributed nationally; HD10460 has broad geographic appeal.
-
-## Comparative International
-<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/comparative-international.md -->
-
-### Comparator Jurisdictions
-
-#### HD10461 — Swedish Space Industry: ESA Comparison
-
-##### Norway (Nordic comparator)
-
-Norway increased its ESA contribution at the November 2025 ministerial meeting and has consistently ranked higher than Sweden relative to GNI in ESA voluntary programmes. Norway's space strategy centres on Arctic surveillance (satellite SAR) and maritime navigation — dual-use national security assets. **Outside-In**: Norway's ESA commitment is driven by its sovereign Arctic security interests; Sweden's equivalent driver (NATO interoperability, Baltic surveillance) should produce the same logic but the budget decision demonstrates a disconnect between stated security ambitions and R&D investment.
-
-##### Poland (EU/NATO comparator)
-
-Poland made one of the largest percentage increases at the November 2025 ESA ministerial meeting (cited in HD10461 [A2]). Poland's space industry is younger than Sweden's but benefits from EU Structural Funds under the Eastern Poland Development Programme for space technology clusters. **Outside-In**: Poland's aggressive ESA investment is explicitly framed as industrial competitiveness and NATO contribution — a model Sweden could invoke but has not adopted.
-
-##### Germany and France (EU anchor states)
-
-Both significantly increased ESA contributions in 2025. Germany and France anchor the Copernicus and Galileo programmes and use ESA participation to maintain domestic aerospace industrial bases. **Outside-In**: Sweden's reduction stands out against the general European upward trend; Swedish industry faces structural disadvantage vs. German/French firms in programme sub-contracts.
-
-#### HD10460 — Cultural Heritage: UK/Germany Comparators
-
-##### UK — Historic England
-
-The UK maintains a centrally coordinated National Heritage at Risk Register, updated annually, with tiered response plans and dedicated Heritage Emergency Funds. The UK's approach matches the maintenance-survey-plus-long-term-plan model requested in HD10460 [B1]. Sweden's RiR 2025:30 audit effectively recommended the same framework.
-
-##### Germany — Federal Building Authority (BBR/BImA)
-
-Germany has a dedicated Federal Environment Agency-aligned heritage property maintenance schedule for federal properties. Investment decisions are systematically linked to sustainability certificates. **Outside-In**: Germany demonstrates that state property heritage management can be professionalised with a long-term maintenance schedule — the very instrument SD is requesting in HD10460.
-
-### Summary Table
-
-| Jurisdiction | ESA trajectory | Heritage management | Lesson for Sweden |
-|---|---|---|---|
-| Norway | ↑ Increased (defence-driven) | N/A | Defence/space nexus justifies ESA investment |
-| Poland | ↑ Large increase | N/A | ESA as industrial and NATO signal |
-| Germany | ↑ Increased | Systematic heritage register | Long-term property maintenance standard |
-| UK | N/A | National Heritage at Risk Register | Best-practice model for HD10460 |
-
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/historical-parallels.md -->
 
@@ -844,6 +763,44 @@ In 2018, Riksrevisionen published RiR 2018:9 on SFV and the management of cultur
 | Nuclear research retreat (1980s–2000s) | Space/ESA | 6/10 | Capability gaps compound; early correction is far cheaper |
 | Finland's ESA strategy | Space/ESA | 8/10 (inverse) | Peer comparison; Finland now outperforms |
 | RiR 2018:9 on SFV | Heritage | 9/10 | Same audit findings 7 years later → interpellation alone insufficient |
+
+## Comparative International
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/comparative-international.md -->
+
+### Comparator Jurisdictions
+
+#### HD10461 — Swedish Space Industry: ESA Comparison
+
+##### Norway (Nordic comparator)
+
+Norway increased its ESA contribution at the November 2025 ministerial meeting and has consistently ranked higher than Sweden relative to GNI in ESA voluntary programmes. Norway's space strategy centres on Arctic surveillance (satellite SAR) and maritime navigation — dual-use national security assets. **Outside-In**: Norway's ESA commitment is driven by its sovereign Arctic security interests; Sweden's equivalent driver (NATO interoperability, Baltic surveillance) should produce the same logic but the budget decision demonstrates a disconnect between stated security ambitions and R&D investment.
+
+##### Poland (EU/NATO comparator)
+
+Poland made one of the largest percentage increases at the November 2025 ESA ministerial meeting (cited in HD10461 [A2]). Poland's space industry is younger than Sweden's but benefits from EU Structural Funds under the Eastern Poland Development Programme for space technology clusters. **Outside-In**: Poland's aggressive ESA investment is explicitly framed as industrial competitiveness and NATO contribution — a model Sweden could invoke but has not adopted.
+
+##### Germany and France (EU anchor states)
+
+Both significantly increased ESA contributions in 2025. Germany and France anchor the Copernicus and Galileo programmes and use ESA participation to maintain domestic aerospace industrial bases. **Outside-In**: Sweden's reduction stands out against the general European upward trend; Swedish industry faces structural disadvantage vs. German/French firms in programme sub-contracts.
+
+#### HD10460 — Cultural Heritage: UK/Germany Comparators
+
+##### UK — Historic England
+
+The UK maintains a centrally coordinated National Heritage at Risk Register, updated annually, with tiered response plans and dedicated Heritage Emergency Funds. The UK's approach matches the maintenance-survey-plus-long-term-plan model requested in HD10460 [B1]. Sweden's RiR 2025:30 audit effectively recommended the same framework.
+
+##### Germany — Federal Building Authority (BBR/BImA)
+
+Germany has a dedicated Federal Environment Agency-aligned heritage property maintenance schedule for federal properties. Investment decisions are systematically linked to sustainability certificates. **Outside-In**: Germany demonstrates that state property heritage management can be professionalised with a long-term maintenance schedule — the very instrument SD is requesting in HD10460.
+
+### Summary Table
+
+| Jurisdiction | ESA trajectory | Heritage management | Lesson for Sweden |
+|---|---|---|---|
+| Norway | ↑ Increased (defence-driven) | N/A | Defence/space nexus justifies ESA investment |
+| Poland | ↑ Large increase | N/A | ESA as industrial and NATO signal |
+| Germany | ↑ Increased | Systematic heritage register | Long-term property maintenance standard |
+| UK | N/A | National Heritage at Risk Register | Best-practice model for HD10460 |
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/implementation-feasibility.md -->
@@ -886,6 +843,49 @@ In 2018, Riksrevisionen published RiR 2018:9 on SFV and the management of cultur
 ### Backlog Audit
 
 No prior interpellations on these exact topics found in the current riksmöte 2025/26. No pending government bills (propositioner) specifically on SFV grant properties or ESA budget correction identified at time of download.
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/media-framing-analysis.md -->
+
+### Per-Party Framing
+
+#### SD on HD10460
+
+**Narrative**: SD presents the cultural heritage interpellation as a patriotic stewardship obligation — defending Sweden's national identity through proper care of its historical built environment. This framing connects to SD's core cultural-nationalist brand. The invocation of Riksrevisionen data strengthens the "responsible governance" overlay that SD has been cultivating since entering the coalition support role.
+
+**Media likelihood**: Likely to receive coverage in regional press where heritage sites are locally significant; specialist heritage/culture media (Kulturnyheterna SVT). May attract limited mainstream political coverage as intra-coalition friction is not acute.
+
+#### S on HD10461
+
+**Narrative**: S frames Sweden's ESA retreat as a story of lost competitiveness, weakened national security, and institutional failure. The opposition narrative structure is "Sweden falling behind" — contrasting Sweden's rank (17/23, behind Nordic neighbours) with the overall European space investment surge. This is a classic wedge framing that connects to S's strength in research/university policy.
+
+**Media likelihood**: High. The space industry is a national prestige topic; the Nordic comparison is highly concrete; defence/security angle (dual-use satellite infrastructure) may attract mainstream media. DN, SvD, and Aftonbladet likely to pick up.
+
+### Press-Quadrant Analysis
+
+| Outlet type | HD10460 framing | HD10461 framing |
+|------------|-----------------|-----------------|
+| Centre-right (DN, SvD) | Government stewardship question; may note RiR critique | Policy incoherence (spending cuts vs. security ambitions) |
+| Centre-left (Aftonbladet, Expressen) | National heritage neglect; government austerity critique | Sweden humiliated in European space rankings |
+| Heritage/culture specialist | Technical debate on SFV appropriations | Indirect |
+| Trade/industry media | Indirect | Direct: space industry contracts, EU procurement |
+
+### Platform and Digital Framing
+
+- Twitter/X political discourse: likely to amplify HD10461's measurable data (rank 17/23); heritage topic less viral but stable
+- SD digital ecosystem: will frame HD10460 as SD defending Swedish cultural heritage against M's neglect
+- S digital ecosystem: HD10461 will be framed as "Kristersson's government lets Sweden fall behind in the space race"
+
+### Longitudinal Frame Record Entry
+
+**Issue**: ESA/Space funding (HD10461) — Opposition "Sweden retreating from European space leadership" frame opens.  
+**Issue**: Cultural heritage/SFV (HD10460) — Intra-coalition "oversight of heritage stewardship" frame reinforced.  
+**Prior frames**: No prior 2026 entries for these specific topics.
+
+### Manipulation Risk Assessment
+
+**Risk level**: LOW for both interpellations  
+No evidence of coordinated inauthentic behaviour or foreign information operations targeting these specific debates. Both are standard parliamentary accountability exercises. Monitor for: exaggerated claims about Sweden's "total space exit" (HD10461 is about voluntary programme shares, not full ESA withdrawal).
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/devils-advocate.md -->
@@ -1125,21 +1125,21 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/media-framing-analysis.md)
+- [`documents/HD10460-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/documents/HD10460-analysis.md)
+- [`documents/HD10461-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/documents/HD10461-analysis.md)
 - [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/stakeholder-perspectives.md)
+- [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/coalition-mathematics.md)
+- [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/voter-segmentation.md)
 - [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/forward-indicators.md)
 - [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/election-2026-analysis.md)
 - [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/risk-assessment.md)
 - [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/swot-analysis.md)
 - [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/threat-analysis.md)
-- [`documents/HD10460-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/documents/HD10460-analysis.md)
-- [`documents/HD10461-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/documents/HD10461-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/election-2026-analysis.md)
-- [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/coalition-mathematics.md)
-- [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/comparative-international.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/interpellations/cross-reference-map.md)

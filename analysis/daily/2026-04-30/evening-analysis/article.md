@@ -5,7 +5,7 @@ date: 2026-04-30
 subfolder: evening-analysis
 slug: 2026-04-30-evening-analysis
 source_folder: analysis/daily/2026-04-30/evening-analysis
-generated_at: 2026-05-04T09:52:32.536Z
+generated_at: 2026-05-04T12:16:14.218Z
 language: en
 layout: article
 ---
@@ -73,10 +73,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
 ## Synthesis Summary
@@ -293,99 +293,6 @@ quadrantChart
 
 **Note on election-proximity multiplier application**: DIW × 1.5 = HD03262 base 7.7 × 1.5 (election ≤6 months) = **10.0** (capped); HD03254 base 6.6 × 1.5 = **9.9**; HD03263 base 6.6 × 1.5 = **9.9**. Multiplier documented per `analysis/methodologies/ai-driven-analysis-guide.md §Election-proximity significance multiplier`.
 
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/media-framing-analysis.md -->
-
----
-
-### Per-Party Framing
-
-#### Government (M, KD, L) — "EU Pact Compliance and Order"
-
-**Key message**: "Vi håller löftet till väljarna" (We keep the promise to voters)
-
-**Spokespeople**: Johan Forssell (migrationsminister), Ulf Kristersson (statsminister)
-
-**Press line**: "HD03262 ends a system where Sweden uniquely offered permanent residence at a time when EU Pact requires temporary protection alignment."
-
----
-
-#### SD — "Mission Accomplished, More Needed"
-
-**Key message**: "Äntligen tar Sverige kontroll" (Finally Sweden takes control)
-
-**Tension point**: HD03258 (political transparency) — SD will seek to minimise this bill's prominence given their own party financing sensitivities.
-
----
-
-#### S (Socialdemokraterna) — "Human Rights and Effectiveness"
-
-**Key message**: "Symbolpolitik snarare än lösningar" (Symbolic politics rather than solutions)
-
-**Counter-narrative**: S will highlight Migrationsverket's lack of supplementary appropriation as evidence that the government is not serious about implementation.
-
-**Vulnerability**: S's own emergency measures in 2015–2016 make absolute rights claims difficult to sustain — M will reference this precedent.
-
----
-
-#### V (Vänsterpartiet) — "Racist Legislation"
-
-**Key message**: "Diskriminering i lagutsträckning" (Discrimination in legal form)
-
----
-
-#### MP (Miljöpartiet) — "Rights and Climate Displacement"
-
-**Key message**: Combining environmental and human rights frames — targeting their base, not swing voters.
-
----
-
-#### C (Centerpartiet) — "Legality First, Then Judgement"
-
-**Key message**: "Lagrådsremissen måste tas på allvar" (The Council of Legislation referral must be taken seriously)
-
-**Strategic value for C**: Lagrådet opinion allows C to say "yes with amendments" or "no because unconstitutional" — maintaining optionality.
-
----
-
-### Press Framing by Publication
-
-| Publication | Primary frame | Tone | Audience | Headline angle |
-|-------------|--------------|------|----------|---------------|
-| Aftonbladet | Rights/humanitarian | Negative | Broad left | "Skärpast migrationslagstiftning sedan 1990-talet" |
-| Expressen | Law and order | Positive | Broad right | "Sverige tar äntligen ansvar" |
-| Dagens Nyheter | Analysis | Neutral-critical | Urban progressive | "Lagliga frågetecken kring permanentuppehållstillstånd" |
-| Svenska Dagbladet | Policy analysis | Positive-neutral | Conservative | "EU-paktsanpassning tar form" |
-| SVT Nyheter | Balanced | Neutral | Broad public | "Fyra propositioner om migration — så skiljer de sig" |
-| SR P1 | Critical | Negative | Informed | "Rättsjurister varnar för EGMR-konflikt" |
-
----
-
-### Mermaid: Framing Polarisation
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
-graph LR
-    subgraph Rights_Frame["Rights/Humanitarian Frame"]
-        V_fr["V: Racist legislation"]
-        MP_fr["MP: Rights + climate"]
-        S_fr["S: Performative + ECHR"]
-    end
-    subgraph Policy_Frame["Policy/Order Frame"]
-        M_fr["M: EU Pact compliance"]
-        SD_fr["SD: Mission accomplished"]
-        KD_fr["KD: Responsibility"]
-    end
-    C_fr["C: Legality first (bridge)"]
-
-    Rights_Frame --- C_fr
-    C_fr --- Policy_Frame
-
-    style Rights_Frame fill:#3a1a1a,color:#e0e0e0
-    style Policy_Frame fill:#1a3a1a,color:#e0e0e0
-    style C_fr fill:#2a2a1a,color:#e0e0e0
-```
-
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/stakeholder-perspectives.md -->
 
@@ -500,6 +407,169 @@ quadrantChart
     Amnesty/FARR: [0.90, 0.30]
     NATO: [0.40, 0.75]
 ```
+
+## Coalition Mathematics
+<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/coalition-mathematics.md -->
+
+---
+
+### Current Riksdag Vote Distribution
+
+**Riksdag total seats**: 349  
+**Majority threshold**: 175 seats  
+**Current government**: M + KD + L (minority), confidence and supply: SD  
+
+#### Vote Record for Migration-Adjacent Legislation (Reference: Most Recent Major Vote)
+
+*The table below uses the most recent available major committee vote pattern as a reference baseline.*
+
+| Party | Ja | Nej | Avstår | Frånvarande | Mandates |
+|-------|-----|------|--------|-------------|---------|
+| M | 68 | 0 | 0 | 0 | 68 |
+| SD | 73 | 0 | 0 | 0 | 73 |
+| KD | 19 | 0 | 0 | 0 | 19 |
+| L | 16 | 0 | 0 | 0 | 16 |
+| **Bloc total** | **176** | **0** | **0** | **0** | **176** |
+| S | 0 | 107 | 0 | 0 | 107 |
+| V | 0 | 24 | 0 | 0 | 24 |
+| MP | 0 | 18 | 0 | 0 | 18 |
+| C | 0 | 0 | 24 | 0 | 24 |
+| **Total** | **176** | **149** | **24** | **0** | **349** |
+
+**Note**: C (Centerpartiet) is in opposition but typically abstains (Avstår) rather than votes against government on confidence issues and many specific-topic votes. C's 24 Avstår votes are decisive — with C abstaining, the government wins 176–149 on any straight party-line vote.
+
+**Majority check**: 176 Ja + 24 Avstår = government position succeeds. The coalition needs 175 to pass legislation; with 176 it has 1 seat of buffer above majority.
+
+**If KD falls below 4% threshold**: 19 seats redistributed → government bloc falls to 157 (M+L+SD) — below majority even with C abstaining. This is the critical threshold risk scenario.
+
+---
+
+### Confidence Vote Mathematics
+
+| Scenario | Right bloc (Ja) | Opposition (Nej) | C (Avstår) | Outcome |
+|----------|----------------|-----------------|-----------|---------|
+| Current (all parties above threshold) | 176 | 149 | 24 | Government wins |
+| KD below threshold (KD exits) | 157 | 149 | 24 | Government wins (157 > 149) |
+| C votes against | 176 | 173 | 0 | Government wins (176 > 173) |
+| KD exits + C votes against | 157 | 173 | 0 | **Government falls** |
+| SD withdraws support | 103 | 149 | 24 | **Government falls** |
+
+**Survival condition**: Government survives as long as SD provides confidence and supply AND KD stays above threshold AND C does not vote actively against.
+
+---
+
+### HD03262–265 Vote Prediction
+
+| Proposition | Expected Ja | Expected Nej | Expected Avstår | Prediction |
+|-------------|------------|-------------|----------------|-----------|
+| HD03262 (permanent permits abolished) | M+SD+KD+L = 176 | S+V+MP = 149 | C = 24 | **PASSES** |
+| HD03263 (enhanced deportation) | M+SD+KD+L = 176 | S+V+MP = 149 | C = 24 | **PASSES** |
+| HD03264 (permit background checks) | M+SD+KD+L = 176 | S+V+MP = 149 | C = 24 | **PASSES** |
+| HD03265 (expanded detention) | M+SD+KD+L = 176 | S+V+MP = 149 | C = 24 | **PASSES** (if Lagrådet non-blocking) |
+| HD03254 (military cooperation) | M+SD+KD+L+C = 200 | V+MP = 42 | S = 107 (likely Ja or Avstår) | **PASSES** |
+| HD03258 (transparency) | M+KD+L+S+C = 190+ | SD = 73 (partial reservation possible) | — | **PASSES** |
+
+---
+
+### Mermaid: Riksdag Power Architecture
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+graph TD
+    subgraph GovBloc["Government Bloc (176 seats)"]
+        M["M — 68"]
+        SD["SD — 73 (confidence+supply)"]
+        KD["KD — 19"]
+        L["L — 16"]
+    end
+    subgraph OppBloc["Opposition Bloc (149 seats)"]
+        S["S — 107"]
+        V["V — 24"]
+        MP["MP — 18"]
+    end
+    C_party["C — 24 (Abstains)"]
+    MAJORITY["175 seat threshold"]
+
+    GovBloc --> |176 votes| MAJORITY
+    OppBloc --> |149 votes| MAJORITY
+    C_party --> |24 abstentions| MAJORITY
+
+    style GovBloc fill:#1a3a1a,color:#e0e0e0
+    style OppBloc fill:#3a1a1a,color:#e0e0e0
+    style C_party fill:#2a2a1a,color:#e0e0e0
+    style MAJORITY fill:#00d9ff,color:#0a0e27
+```
+
+## Voter Segmentation
+<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/voter-segmentation.md -->
+
+---
+
+### Demographic Impact Analysis
+
+#### Impact of HD03262–265 (Migration Package)
+
+| Segment | Size (est.) | Current party allegiance | Impact of HD03262–265 | Vote shift probability |
+|---------|-------------|-------------------------|----------------------|----------------------|
+| Anti-immigration core voters | 18% of electorate | SD 80%, M 15% | Positive — confirms mandate | +2% M/SD turnout |
+| Migration-sceptic soft-right | 12% of electorate | M 45%, KD 30%, SD 25% | Positive — legislative delivery | +1% M mobilisation |
+| Human rights-first liberals | 8% of electorate | L 40%, MP 30%, C 20% | Negative — ECHR concerns | -1% L risk; L may lose votes |
+| Urban progressive | 15% of electorate | S 55%, V 25%, MP 20% | Strongly negative | +1% V/MP mobilisation |
+| Rural conservative | 14% of electorate | M 40%, SD 35%, KD 20% | Positive — reflects values | +1% M/SD in rural areas |
+| Non-Swedish background (citizens) | 10% of electorate | S 60%, V 20%, MP 10% | Strongly negative — direct impact | +2% S mobilisation |
+| Politically disengaged | 23% of electorate | Volatile | Negative if framed as "cruel" | Risk: abstention or protest vote |
+
+**Net electoral effect**: HD03262–265 consolidates right bloc base (+4% turnout premium for M+SD) but risks 2–3% mobilisation for S+V+MP from human rights and minority community segments. Net: approximately neutral-to-positive for right bloc given base consolidation outweighs opposition mobilisation.
+
+---
+
+#### Impact of HD03254 (Defence Cooperation)
+
+| Segment | Size (est.) | Impact | Vote shift |
+|---------|-------------|--------|-----------|
+| NATO/defence supporters | 20% | Strongly positive | +1% M/SD |
+| Peace movement remnant | 5% | Strongly negative | +0.5% MP/V |
+| Pragmatic centrists | 30% | Positive if framed as NATO alignment | Neutral |
+| Young voters (18–29) | 15% | Mixed — some support, some concern | Neutral |
+
+---
+
+#### Impact of HD03251 (Healthcare Integration)
+
+| Segment | Size (est.) | Impact | Vote shift |
+|---------|-------------|--------|-----------|
+| Dual-diagnosis patients/carers | 3% | Positive if implementation succeeds | +0.5% M |
+| Healthcare workers | 8% | Supportive if resources follow legislation | Neutral |
+| General public with healthcare concern | 35% | Potential S counter-narrative: "S would fund it better" | Neutral-to-negative for coalition if implementation slow |
+
+---
+
+### Issue Salience by Party Base
+
+| Issue | M voters | SD voters | S voters | V voters | L voters | KD voters | MP voters | C voters |
+|-------|---------|-----------|---------|---------|---------|----------|----------|---------|
+| Migration | #1 | #1 | #5 | #6 | #3 | #2 | #7 | #4 |
+| Defence/NATO | #2 | #2 | #3 | #4 | #2 | #3 | #5 | #3 |
+| Healthcare | #4 | #4 | #1 | #1 | #4 | #1 | #3 | #2 |
+| Economy | #3 | #3 | #2 | #3 | #1 | #4 | #4 | #1 |
+| Climate | #7 | #8 | #6 | #2 | #5 | #7 | #1 | #6 |
+
+**Key insight**: Today's legislative package (migration + defence + healthcare) speaks directly to the top-2 issue for M, SD, and KD voters, but only the #3–5 issue for S voters. This asymmetry favours coalition base consolidation more than opposition mobilisation.
+
+---
+
+### Mermaid: Issue Salience Radar
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+xychart-beta
+    title "Issue Salience by Party Base (1=highest, 8=lowest)"
+    x-axis ["Migration", "Defence", "Healthcare", "Economy", "Climate"]
+    y-axis "Salience Rank (inverted)" 0 --> 8
+    bar [1, 2, 4, 3, 7]
+    line [3, 4, 1, 2, 6]
+```
+*Note: Lower rank = higher salience. Blue bars = M/SD composite; line = S composite.*
 
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/forward-indicators.md -->
@@ -661,6 +731,102 @@ graph TD
     style ScenA fill:#00d9ff,color:#0a0e27
     style ScenB fill:#ffbe0b,color:#0a0e27
     style ScenC fill:#ff006e,color:#fff
+```
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/election-2026-analysis.md -->
+
+**Election Day**: 2026-09-13 (149 days from today)  
+
+---
+
+### Current Seat Map (as of 2026-04-30)
+
+| Party | 2022 Result | Current Mandates | Polling avg Q1-2026 | Projected seats |
+|-------|------------|-----------------|--------------------|--------------------|
+| Moderaterna (M) | 68 | 68 | 21.8% | 70 |
+| Sverigedemokraterna (SD) | 73 | 73 | 22.1% | 71 |
+| Socialdemokraterna (S) | 107 | 107 | 27.3% | 88 |
+| Vänsterpartiet (V) | 24 | 24 | 6.8% | 22 |
+| Centerpartiet (C) | 24 | 24 | 4.9% | 15 |
+| Liberalerna (L) | 16 | 16 | 5.2% | 16 |
+| Kristdemokraterna (KD) | 19 | 19 | 4.1% | 13 |
+| Miljöpartiet (MP) | 18 | 18 | 6.1% | 20 |
+| Riksdag total | 349 | 349 | — | 315* |
+
+*Projected totals based on Q1 2026 polling averages. C and KD are near the 4% threshold. **Seats are indicative only** — seat projection uses proportional method with standard Swedish Riksdag allocation. Polling source: IPSOS/Novus aggregate [B3].
+
+**4% threshold risk**: KD (4.1%) and C (4.9%) are both within margin of error for dropping below threshold. If KD or C falls below 4%, their seats are redistributed to remaining parties — significantly altering coalition mathematics.
+
+---
+
+### Coalition Viability Assessment
+
+#### Current Government (Tidökoalitionen): M + KD + L, supported by SD
+
+| Block | Parties | 2022 seats | Q1 2026 projection |
+|-------|---------|-----------|-------------------|
+| Government bloc | M + KD + L | 103 | 99 |
+| SD (confidence and supply) | SD | 73 | 71 |
+| **Right bloc total** | M+KD+L+SD | **176** | **170** |
+| S+V | Social left | 131 | 110 |
+| MP | Green | 18 | 20 |
+| C (currently opposition) | Centre | 24 | 15 |
+| **Opposition potential** | S+V+MP+C | **173** | **145** |
+
+**Majority required**: 175 seats (50% + 1 of 349)
+
+**Current right bloc**: 170 projected seats — 5 seats SHORT of majority (with C in opposition)
+
+**Key variable**: If C (Centerpartiet, currently in opposition) swings to abstain on confidence vote rather than vote against, right bloc can govern with 170.
+
+---
+
+### Seat-Projection Deltas from Today's Legislation
+
+| Legislation | Expected electoral effect | Seat delta | Time horizon |
+|-------------|--------------------------|-----------|--------------|
+| HD03262–265 (migration package) | +2 to +4 M/SD, -2 to -4 S | +3 right bloc | Pre-election if passed |
+| HD03254 (military cooperation) | +1 to +2 M/SD | +1 right bloc | Pre-election |
+| HD03251 (healthcare integration) | Neutral to +1 S if opposition claims failure | 0 to -1 right | Post-election |
+| HD03258 (transparency) | Neutral — both blocs benefit nominally | 0 | — |
+
+**Net projection effect of today's bills**: +4 seats for right bloc (from 170 → 174). Still 1 seat short of outright majority; C abstention or crossover required.
+
+---
+
+### Coalition Mathematics (Post-Election Scenarios)
+
+#### Scenario A (Right bloc wins): 45% probability
+- M+KD+L+SD = 174 seats
+- C abstains on confidence vote → government formed
+- OR: C crosses to right bloc (6% chance given Annie Lööf's successor position)
+
+#### Scenario B (Hung parliament): 38% probability
+- Right bloc 170, opposition 145, C 15 = hung parliament
+- C as kingmaker: decides government direction
+- Extended post-election negotiation (6–12 weeks)
+
+#### Scenario C (Left bloc wins): 17% probability
+- S+V+MP = 130; C support = 145 — still below majority
+- S minority government with C support on budget = 145 seats
+- Requires C not to vote against S on confidence — historically precedented (2014–2018)
+
+---
+
+### Mermaid: Current Riksdag Seat Distribution
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+pie title Current Riksdag (349 seats)
+    "SD (73)" : 73
+    "S (107)" : 107
+    "M (68)" : 68
+    "V (24)" : 24
+    "C (24)" : 24
+    "KD (19)" : 19
+    "MP (18)" : 18
+    "L (16)" : 16
 ```
 
 ## Risk Assessment
@@ -916,264 +1082,85 @@ timeline
         THR-09 Election Day 13 Sep 2026 : Coalition fate decided
 ```
 
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/election-2026-analysis.md -->
-
-**Election Day**: 2026-09-13 (149 days from today)  
+## Historical Parallels
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/historical-parallels.md -->
 
 ---
 
-### Current Seat Map (as of 2026-04-30)
+### Named Historical Precedents
 
-| Party | 2022 Result | Current Mandates | Polling avg Q1-2026 | Projected seats |
-|-------|------------|-----------------|--------------------|--------------------|
-| Moderaterna (M) | 68 | 68 | 21.8% | 70 |
-| Sverigedemokraterna (SD) | 73 | 73 | 22.1% | 71 |
-| Socialdemokraterna (S) | 107 | 107 | 27.3% | 88 |
-| Vänsterpartiet (V) | 24 | 24 | 6.8% | 22 |
-| Centerpartiet (C) | 24 | 24 | 4.9% | 15 |
-| Liberalerna (L) | 16 | 16 | 5.2% | 16 |
-| Kristdemokraterna (KD) | 19 | 19 | 4.1% | 13 |
-| Miljöpartiet (MP) | 18 | 18 | 6.1% | 20 |
-| Riksdag total | 349 | 349 | — | 315* |
+#### Precedent 1 — Sweden 2007: Arbetslinjen as Pre-Election Anchor
 
-*Projected totals based on Q1 2026 polling averages. C and KD are near the 4% threshold. **Seats are indicative only** — seat projection uses proportional method with standard Swedish Riksdag allocation. Polling source: IPSOS/Novus aggregate [B3].
+**Period**: 2006–2010 (Reinfeldt I government)  
+**Parallel**: Moderaterna campaigned on welfare reform ("arbetslinjen") as their defining narrative. The 2006 election was won on structural policy transformation delivered through legislation in the first 18 months of government.
 
-**4% threshold risk**: KD (4.1%) and C (4.9%) are both within margin of error for dropping below threshold. If KD or C falls below 4%, their seats are redistributed to remaining parties — significantly altering coalition mathematics.
+**Relevance to 2026**: The Tidökoalitionen is attempting the same "mandate delivered" narrative with migration legislation. Key difference: 2006–2010 had a 4-year implementation window; 2026 has 149 days before election. The shorter window increases both risk (incomplete implementation) and reward (concentrated messaging).
+
+**Outcome of precedent**: Reinfeldt won re-election in 2010 with increased mandate. Lesson: coherent legislative delivery can succeed electorally even with contested policy.
 
 ---
 
-### Coalition Viability Assessment
+#### Precedent 2 — Denmark 2019–2022: Paradigm Shift Migration Policy
 
-#### Current Government (Tidökoalitionen): M + KD + L, supported by SD
+**Period**: 2019–2022 (Frederiksen I government, Social Democratic)  
+**Parallel**: Denmark abolished permanent protection status for Syrian refugees and tightened migration through 2019–2021 legislation. Social Democrats led, not the right.
 
-| Block | Parties | 2022 seats | Q1 2026 projection |
-|-------|---------|-----------|-------------------|
-| Government bloc | M + KD + L | 103 | 99 |
-| SD (confidence and supply) | SD | 73 | 71 |
-| **Right bloc total** | M+KD+L+SD | **176** | **170** |
-| S+V | Social left | 131 | 110 |
-| MP | Green | 18 | 20 |
-| C (currently opposition) | Centre | 24 | 15 |
-| **Opposition potential** | S+V+MP+C | **173** | **145** |
+**Relevance to 2026**: Denmark's migration maximalism came from the left, reducing SD's monopoly on the issue. The Swedish parallel would be S eventually adopting migration restrictions — not yet evident in 2026 but a strategic risk for SD's differentiation.
 
-**Majority required**: 175 seats (50% + 1 of 349)
-
-**Current right bloc**: 170 projected seats — 5 seats SHORT of majority (with C in opposition)
-
-**Key variable**: If C (Centerpartiet, currently in opposition) swings to abstain on confidence vote rather than vote against, right bloc can govern with 170.
+**Outcome of precedent**: Frederiksen won re-election 2022. Migration-restrictive policy was electorally durable.
 
 ---
 
-### Seat-Projection Deltas from Today's Legislation
+#### Precedent 3 — Sweden 1989–1991: Refugee Crisis and Policy Shift
 
-| Legislation | Expected electoral effect | Seat delta | Time horizon |
-|-------------|--------------------------|-----------|--------------|
-| HD03262–265 (migration package) | +2 to +4 M/SD, -2 to -4 S | +3 right bloc | Pre-election if passed |
-| HD03254 (military cooperation) | +1 to +2 M/SD | +1 right bloc | Pre-election |
-| HD03251 (healthcare integration) | Neutral to +1 S if opposition claims failure | 0 to -1 right | Post-election |
-| HD03258 (transparency) | Neutral — both blocs benefit nominally | 0 | — |
+**Period**: 1989–1991 (Carlsson II government)  
+**Parallel**: Sweden received 84,000 asylum seekers in 1991 — a structural shock. The Carlsson government introduced tighter controls despite Social Democratic ideology. Policy was contested but passed.
 
-**Net projection effect of today's bills**: +4 seats for right bloc (from 170 → 174). Still 1 seat short of outright majority; C abstention or crossover required.
+**Relevance to 2026**: HD03262's permanent permit abolition is the most structural shift since 1991. The precedent suggests that major migration framework changes are implementable in Sweden but typically triggered by crisis, not pre-emptive electoral positioning.
+
+**Outcome of precedent**: Policy passed; Carlsson lost 1991 election (to Bildt) — but the loss was about the economy (crisis of 1991), not migration policy specifically.
 
 ---
 
-### Coalition Mathematics (Post-Election Scenarios)
+#### Precedent 4 — Sweden 2015–2016: Emergency Measures and ID Checks
 
-#### Scenario A (Right bloc wins): 45% probability
-- M+KD+L+SD = 174 seats
-- C abstains on confidence vote → government formed
-- OR: C crosses to right bloc (6% chance given Annie Lööf's successor position)
+**Period**: 2015–2016 (Löfven I government)  
+**Parallel**: The Löfven government introduced emergency temporary protection and border ID controls in November 2015 at peak migration crisis. These were legally contested but survived challenge.
 
-#### Scenario B (Hung parliament): 38% probability
-- Right bloc 170, opposition 145, C 15 = hung parliament
-- C as kingmaker: decides government direction
-- Extended post-election negotiation (6–12 weeks)
+**Relevance to 2026**: Demonstrates that Swedish courts (including Migration Court) have accepted emergency migration measures that were near the ECHR boundary. This precedent supports Scenario A — HD03262 may be politically and legally survivable even if individually challenged.
 
-#### Scenario C (Left bloc wins): 17% probability
-- S+V+MP = 130; C support = 145 — still below majority
-- S minority government with C support on budget = 145 seats
-- Requires C not to vote against S on confidence — historically precedented (2014–2018)
+**Outcome of precedent**: Emergency measures became permanent; Swedish migration declined dramatically 2016–2021. Political credit went to Löfven for managing the crisis, despite initial criticism.
 
 ---
 
-### Mermaid: Current Riksdag Seat Distribution
+### Pattern Recognition
+
+| Precedent | Migration Max | Pre-election | Legal Challenge | Electoral Outcome |
+|-----------|-------------|-------------|----------------|-------------------|
+| Reinfeldt 2007 (welfare) | No | Yes | No | Coalition re-elected |
+| Denmark Frederiksen 2019 | Yes | No (4-year horizon) | Individual ECHR | Coalition re-elected |
+| Carlsson 1989 (crisis) | Yes (reactive) | No | Partial | Lost election (economy) |
+| Löfven 2015 (emergency) | Yes (reactive) | No | Partial | Won next election |
+
+**Pattern**: Migration restriction legislation does not inherently damage electoral prospects. Pre-election delivery can be positive if framed as mandate fulfilment. Economic conditions are a stronger electoral determinant than migration policy per se.
+
+### Mermaid: Historical Analogy Timeline
 
 ```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
-pie title Current Riksdag (349 seats)
-    "SD (73)" : 73
-    "S (107)" : 107
-    "M (68)" : 68
-    "V (24)" : 24
-    "C (24)" : 24
-    "KD (19)" : 19
-    "MP (18)" : 18
-    "L (16)" : 16
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#ffbe0b"}}}%%
+timeline
+    title Historical Migration/Policy Parallels
+    section 1989–1991
+        Carlsson II crisis measures : 84,000 arrivals; tighter controls; policy survived; lost election to economy
+    section 2007–2010
+        Reinfeldt arbetslinjen : Structural reform as electoral anchor; re-elected 2010
+    section 2015–2016
+        Löfven emergency measures : Border ID controls; ECHR boundary; survived; won 2018
+    section 2019–2022
+        Frederiksen paradigm shift : Denmark; permanent protection abolished; re-elected 2022
+    section 2026
+        Kristersson migration package : HD03262–265; 149 days to election; precedents favour survival
 ```
-
-## Coalition Mathematics
-<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/coalition-mathematics.md -->
-
----
-
-### Current Riksdag Vote Distribution
-
-**Riksdag total seats**: 349  
-**Majority threshold**: 175 seats  
-**Current government**: M + KD + L (minority), confidence and supply: SD  
-
-#### Vote Record for Migration-Adjacent Legislation (Reference: Most Recent Major Vote)
-
-*The table below uses the most recent available major committee vote pattern as a reference baseline.*
-
-| Party | Ja | Nej | Avstår | Frånvarande | Mandates |
-|-------|-----|------|--------|-------------|---------|
-| M | 68 | 0 | 0 | 0 | 68 |
-| SD | 73 | 0 | 0 | 0 | 73 |
-| KD | 19 | 0 | 0 | 0 | 19 |
-| L | 16 | 0 | 0 | 0 | 16 |
-| **Bloc total** | **176** | **0** | **0** | **0** | **176** |
-| S | 0 | 107 | 0 | 0 | 107 |
-| V | 0 | 24 | 0 | 0 | 24 |
-| MP | 0 | 18 | 0 | 0 | 18 |
-| C | 0 | 0 | 24 | 0 | 24 |
-| **Total** | **176** | **149** | **24** | **0** | **349** |
-
-**Note**: C (Centerpartiet) is in opposition but typically abstains (Avstår) rather than votes against government on confidence issues and many specific-topic votes. C's 24 Avstår votes are decisive — with C abstaining, the government wins 176–149 on any straight party-line vote.
-
-**Majority check**: 176 Ja + 24 Avstår = government position succeeds. The coalition needs 175 to pass legislation; with 176 it has 1 seat of buffer above majority.
-
-**If KD falls below 4% threshold**: 19 seats redistributed → government bloc falls to 157 (M+L+SD) — below majority even with C abstaining. This is the critical threshold risk scenario.
-
----
-
-### Confidence Vote Mathematics
-
-| Scenario | Right bloc (Ja) | Opposition (Nej) | C (Avstår) | Outcome |
-|----------|----------------|-----------------|-----------|---------|
-| Current (all parties above threshold) | 176 | 149 | 24 | Government wins |
-| KD below threshold (KD exits) | 157 | 149 | 24 | Government wins (157 > 149) |
-| C votes against | 176 | 173 | 0 | Government wins (176 > 173) |
-| KD exits + C votes against | 157 | 173 | 0 | **Government falls** |
-| SD withdraws support | 103 | 149 | 24 | **Government falls** |
-
-**Survival condition**: Government survives as long as SD provides confidence and supply AND KD stays above threshold AND C does not vote actively against.
-
----
-
-### HD03262–265 Vote Prediction
-
-| Proposition | Expected Ja | Expected Nej | Expected Avstår | Prediction |
-|-------------|------------|-------------|----------------|-----------|
-| HD03262 (permanent permits abolished) | M+SD+KD+L = 176 | S+V+MP = 149 | C = 24 | **PASSES** |
-| HD03263 (enhanced deportation) | M+SD+KD+L = 176 | S+V+MP = 149 | C = 24 | **PASSES** |
-| HD03264 (permit background checks) | M+SD+KD+L = 176 | S+V+MP = 149 | C = 24 | **PASSES** |
-| HD03265 (expanded detention) | M+SD+KD+L = 176 | S+V+MP = 149 | C = 24 | **PASSES** (if Lagrådet non-blocking) |
-| HD03254 (military cooperation) | M+SD+KD+L+C = 200 | V+MP = 42 | S = 107 (likely Ja or Avstår) | **PASSES** |
-| HD03258 (transparency) | M+KD+L+S+C = 190+ | SD = 73 (partial reservation possible) | — | **PASSES** |
-
----
-
-### Mermaid: Riksdag Power Architecture
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
-graph TD
-    subgraph GovBloc["Government Bloc (176 seats)"]
-        M["M — 68"]
-        SD["SD — 73 (confidence+supply)"]
-        KD["KD — 19"]
-        L["L — 16"]
-    end
-    subgraph OppBloc["Opposition Bloc (149 seats)"]
-        S["S — 107"]
-        V["V — 24"]
-        MP["MP — 18"]
-    end
-    C_party["C — 24 (Abstains)"]
-    MAJORITY["175 seat threshold"]
-
-    GovBloc --> |176 votes| MAJORITY
-    OppBloc --> |149 votes| MAJORITY
-    C_party --> |24 abstentions| MAJORITY
-
-    style GovBloc fill:#1a3a1a,color:#e0e0e0
-    style OppBloc fill:#3a1a1a,color:#e0e0e0
-    style C_party fill:#2a2a1a,color:#e0e0e0
-    style MAJORITY fill:#00d9ff,color:#0a0e27
-```
-
-## Voter Segmentation
-<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/voter-segmentation.md -->
-
----
-
-### Demographic Impact Analysis
-
-#### Impact of HD03262–265 (Migration Package)
-
-| Segment | Size (est.) | Current party allegiance | Impact of HD03262–265 | Vote shift probability |
-|---------|-------------|-------------------------|----------------------|----------------------|
-| Anti-immigration core voters | 18% of electorate | SD 80%, M 15% | Positive — confirms mandate | +2% M/SD turnout |
-| Migration-sceptic soft-right | 12% of electorate | M 45%, KD 30%, SD 25% | Positive — legislative delivery | +1% M mobilisation |
-| Human rights-first liberals | 8% of electorate | L 40%, MP 30%, C 20% | Negative — ECHR concerns | -1% L risk; L may lose votes |
-| Urban progressive | 15% of electorate | S 55%, V 25%, MP 20% | Strongly negative | +1% V/MP mobilisation |
-| Rural conservative | 14% of electorate | M 40%, SD 35%, KD 20% | Positive — reflects values | +1% M/SD in rural areas |
-| Non-Swedish background (citizens) | 10% of electorate | S 60%, V 20%, MP 10% | Strongly negative — direct impact | +2% S mobilisation |
-| Politically disengaged | 23% of electorate | Volatile | Negative if framed as "cruel" | Risk: abstention or protest vote |
-
-**Net electoral effect**: HD03262–265 consolidates right bloc base (+4% turnout premium for M+SD) but risks 2–3% mobilisation for S+V+MP from human rights and minority community segments. Net: approximately neutral-to-positive for right bloc given base consolidation outweighs opposition mobilisation.
-
----
-
-#### Impact of HD03254 (Defence Cooperation)
-
-| Segment | Size (est.) | Impact | Vote shift |
-|---------|-------------|--------|-----------|
-| NATO/defence supporters | 20% | Strongly positive | +1% M/SD |
-| Peace movement remnant | 5% | Strongly negative | +0.5% MP/V |
-| Pragmatic centrists | 30% | Positive if framed as NATO alignment | Neutral |
-| Young voters (18–29) | 15% | Mixed — some support, some concern | Neutral |
-
----
-
-#### Impact of HD03251 (Healthcare Integration)
-
-| Segment | Size (est.) | Impact | Vote shift |
-|---------|-------------|--------|-----------|
-| Dual-diagnosis patients/carers | 3% | Positive if implementation succeeds | +0.5% M |
-| Healthcare workers | 8% | Supportive if resources follow legislation | Neutral |
-| General public with healthcare concern | 35% | Potential S counter-narrative: "S would fund it better" | Neutral-to-negative for coalition if implementation slow |
-
----
-
-### Issue Salience by Party Base
-
-| Issue | M voters | SD voters | S voters | V voters | L voters | KD voters | MP voters | C voters |
-|-------|---------|-----------|---------|---------|---------|----------|----------|---------|
-| Migration | #1 | #1 | #5 | #6 | #3 | #2 | #7 | #4 |
-| Defence/NATO | #2 | #2 | #3 | #4 | #2 | #3 | #5 | #3 |
-| Healthcare | #4 | #4 | #1 | #1 | #4 | #1 | #3 | #2 |
-| Economy | #3 | #3 | #2 | #3 | #1 | #4 | #4 | #1 |
-| Climate | #7 | #8 | #6 | #2 | #5 | #7 | #1 | #6 |
-
-**Key insight**: Today's legislative package (migration + defence + healthcare) speaks directly to the top-2 issue for M, SD, and KD voters, but only the #3–5 issue for S voters. This asymmetry favours coalition base consolidation more than opposition mobilisation.
-
----
-
-### Mermaid: Issue Salience Radar
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
-xychart-beta
-    title "Issue Salience by Party Base (1=highest, 8=lowest)"
-    x-axis ["Migration", "Defence", "Healthcare", "Economy", "Climate"]
-    y-axis "Salience Rank (inverted)" 0 --> 8
-    bar [1, 2, 4, 3, 7]
-    line [3, 4, 1, 2, 6]
-```
-*Note: Lower rank = higher salience. Blue bars = M/SD composite; line = S composite.*
 
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/comparative-international.md -->
@@ -1258,86 +1245,6 @@ graph LR
     style DK fill:#1a1e3d,color:#e0e0e0
     style FI fill:#1a1e3d,color:#e0e0e0
     style DE fill:#1a1e3d,color:#e0e0e0
-```
-
-## Historical Parallels
-<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/historical-parallels.md -->
-
----
-
-### Named Historical Precedents
-
-#### Precedent 1 — Sweden 2007: Arbetslinjen as Pre-Election Anchor
-
-**Period**: 2006–2010 (Reinfeldt I government)  
-**Parallel**: Moderaterna campaigned on welfare reform ("arbetslinjen") as their defining narrative. The 2006 election was won on structural policy transformation delivered through legislation in the first 18 months of government.
-
-**Relevance to 2026**: The Tidökoalitionen is attempting the same "mandate delivered" narrative with migration legislation. Key difference: 2006–2010 had a 4-year implementation window; 2026 has 149 days before election. The shorter window increases both risk (incomplete implementation) and reward (concentrated messaging).
-
-**Outcome of precedent**: Reinfeldt won re-election in 2010 with increased mandate. Lesson: coherent legislative delivery can succeed electorally even with contested policy.
-
----
-
-#### Precedent 2 — Denmark 2019–2022: Paradigm Shift Migration Policy
-
-**Period**: 2019–2022 (Frederiksen I government, Social Democratic)  
-**Parallel**: Denmark abolished permanent protection status for Syrian refugees and tightened migration through 2019–2021 legislation. Social Democrats led, not the right.
-
-**Relevance to 2026**: Denmark's migration maximalism came from the left, reducing SD's monopoly on the issue. The Swedish parallel would be S eventually adopting migration restrictions — not yet evident in 2026 but a strategic risk for SD's differentiation.
-
-**Outcome of precedent**: Frederiksen won re-election 2022. Migration-restrictive policy was electorally durable.
-
----
-
-#### Precedent 3 — Sweden 1989–1991: Refugee Crisis and Policy Shift
-
-**Period**: 1989–1991 (Carlsson II government)  
-**Parallel**: Sweden received 84,000 asylum seekers in 1991 — a structural shock. The Carlsson government introduced tighter controls despite Social Democratic ideology. Policy was contested but passed.
-
-**Relevance to 2026**: HD03262's permanent permit abolition is the most structural shift since 1991. The precedent suggests that major migration framework changes are implementable in Sweden but typically triggered by crisis, not pre-emptive electoral positioning.
-
-**Outcome of precedent**: Policy passed; Carlsson lost 1991 election (to Bildt) — but the loss was about the economy (crisis of 1991), not migration policy specifically.
-
----
-
-#### Precedent 4 — Sweden 2015–2016: Emergency Measures and ID Checks
-
-**Period**: 2015–2016 (Löfven I government)  
-**Parallel**: The Löfven government introduced emergency temporary protection and border ID controls in November 2015 at peak migration crisis. These were legally contested but survived challenge.
-
-**Relevance to 2026**: Demonstrates that Swedish courts (including Migration Court) have accepted emergency migration measures that were near the ECHR boundary. This precedent supports Scenario A — HD03262 may be politically and legally survivable even if individually challenged.
-
-**Outcome of precedent**: Emergency measures became permanent; Swedish migration declined dramatically 2016–2021. Political credit went to Löfven for managing the crisis, despite initial criticism.
-
----
-
-### Pattern Recognition
-
-| Precedent | Migration Max | Pre-election | Legal Challenge | Electoral Outcome |
-|-----------|-------------|-------------|----------------|-------------------|
-| Reinfeldt 2007 (welfare) | No | Yes | No | Coalition re-elected |
-| Denmark Frederiksen 2019 | Yes | No (4-year horizon) | Individual ECHR | Coalition re-elected |
-| Carlsson 1989 (crisis) | Yes (reactive) | No | Partial | Lost election (economy) |
-| Löfven 2015 (emergency) | Yes (reactive) | No | Partial | Won next election |
-
-**Pattern**: Migration restriction legislation does not inherently damage electoral prospects. Pre-election delivery can be positive if framed as mandate fulfilment. Economic conditions are a stronger electoral determinant than migration policy per se.
-
-### Mermaid: Historical Analogy Timeline
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#ffbe0b"}}}%%
-timeline
-    title Historical Migration/Policy Parallels
-    section 1989–1991
-        Carlsson II crisis measures : 84,000 arrivals; tighter controls; policy survived; lost election to economy
-    section 2007–2010
-        Reinfeldt arbetslinjen : Structural reform as electoral anchor; re-elected 2010
-    section 2015–2016
-        Löfven emergency measures : Border ID controls; ECHR boundary; survived; won 2018
-    section 2019–2022
-        Frederiksen paradigm shift : Denmark; permanent protection abolished; re-elected 2022
-    section 2026
-        Kristersson migration package : HD03262–265; 149 days to election; precedents favour survival
 ```
 
 ## Implementation Feasibility
@@ -1453,6 +1360,99 @@ xychart-beta
     x-axis ["HD03262", "HD03263", "HD03264", "HD03265", "HD03254", "HD03251"]
     y-axis "Risk Score (0=low, 10=high)" 0 --> 10
     bar [7, 8, 4, 9, 3, 7]
+```
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/media-framing-analysis.md -->
+
+---
+
+### Per-Party Framing
+
+#### Government (M, KD, L) — "EU Pact Compliance and Order"
+
+**Key message**: "Vi håller löftet till väljarna" (We keep the promise to voters)
+
+**Spokespeople**: Johan Forssell (migrationsminister), Ulf Kristersson (statsminister)
+
+**Press line**: "HD03262 ends a system where Sweden uniquely offered permanent residence at a time when EU Pact requires temporary protection alignment."
+
+---
+
+#### SD — "Mission Accomplished, More Needed"
+
+**Key message**: "Äntligen tar Sverige kontroll" (Finally Sweden takes control)
+
+**Tension point**: HD03258 (political transparency) — SD will seek to minimise this bill's prominence given their own party financing sensitivities.
+
+---
+
+#### S (Socialdemokraterna) — "Human Rights and Effectiveness"
+
+**Key message**: "Symbolpolitik snarare än lösningar" (Symbolic politics rather than solutions)
+
+**Counter-narrative**: S will highlight Migrationsverket's lack of supplementary appropriation as evidence that the government is not serious about implementation.
+
+**Vulnerability**: S's own emergency measures in 2015–2016 make absolute rights claims difficult to sustain — M will reference this precedent.
+
+---
+
+#### V (Vänsterpartiet) — "Racist Legislation"
+
+**Key message**: "Diskriminering i lagutsträckning" (Discrimination in legal form)
+
+---
+
+#### MP (Miljöpartiet) — "Rights and Climate Displacement"
+
+**Key message**: Combining environmental and human rights frames — targeting their base, not swing voters.
+
+---
+
+#### C (Centerpartiet) — "Legality First, Then Judgement"
+
+**Key message**: "Lagrådsremissen måste tas på allvar" (The Council of Legislation referral must be taken seriously)
+
+**Strategic value for C**: Lagrådet opinion allows C to say "yes with amendments" or "no because unconstitutional" — maintaining optionality.
+
+---
+
+### Press Framing by Publication
+
+| Publication | Primary frame | Tone | Audience | Headline angle |
+|-------------|--------------|------|----------|---------------|
+| Aftonbladet | Rights/humanitarian | Negative | Broad left | "Skärpast migrationslagstiftning sedan 1990-talet" |
+| Expressen | Law and order | Positive | Broad right | "Sverige tar äntligen ansvar" |
+| Dagens Nyheter | Analysis | Neutral-critical | Urban progressive | "Lagliga frågetecken kring permanentuppehållstillstånd" |
+| Svenska Dagbladet | Policy analysis | Positive-neutral | Conservative | "EU-paktsanpassning tar form" |
+| SVT Nyheter | Balanced | Neutral | Broad public | "Fyra propositioner om migration — så skiljer de sig" |
+| SR P1 | Critical | Negative | Informed | "Rättsjurister varnar för EGMR-konflikt" |
+
+---
+
+### Mermaid: Framing Polarisation
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+graph LR
+    subgraph Rights_Frame["Rights/Humanitarian Frame"]
+        V_fr["V: Racist legislation"]
+        MP_fr["MP: Rights + climate"]
+        S_fr["S: Performative + ECHR"]
+    end
+    subgraph Policy_Frame["Policy/Order Frame"]
+        M_fr["M: EU Pact compliance"]
+        SD_fr["SD: Mission accomplished"]
+        KD_fr["KD: Responsibility"]
+    end
+    C_fr["C: Legality first (bridge)"]
+
+    Rights_Frame --- C_fr
+    C_fr --- Policy_Frame
+
+    style Rights_Frame fill:#3a1a1a,color:#e0e0e0
+    style Policy_Frame fill:#1a3a1a,color:#e0e0e0
+    style C_fr fill:#2a2a1a,color:#e0e0e0
 ```
 
 ## Devil's Advocate
@@ -1897,19 +1897,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/media-framing-analysis.md)
 - [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/stakeholder-perspectives.md)
+- [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/coalition-mathematics.md)
+- [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/voter-segmentation.md)
 - [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/forward-indicators.md)
 - [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/election-2026-analysis.md)
 - [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/risk-assessment.md)
 - [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/swot-analysis.md)
 - [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/threat-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/election-2026-analysis.md)
-- [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/coalition-mathematics.md)
-- [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/comparative-international.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/evening-analysis/cross-reference-map.md)

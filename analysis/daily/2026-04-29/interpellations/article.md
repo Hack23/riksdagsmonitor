@@ -5,7 +5,7 @@ date: 2026-04-29
 subfolder: interpellations
 slug: 2026-04-29-interpellations
 source_folder: analysis/daily/2026-04-29/interpellations
-generated_at: 2026-05-04T09:52:32.486Z
+generated_at: 2026-05-04T12:16:14.172Z
 language: en
 layout: article
 ---
@@ -71,10 +71,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -243,586 +243,6 @@ xychart-beta
     y-axis "DIW Score" 0 --> 10
     bar [9.2, 8.7, 7.8, 7.1, 6.8, 6.5, 6.2, 5.9, 5.7, 5.5]
     style fill:#00d9ff
-```
-
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/media-framing-analysis.md -->
-
-### Predicted Media Framing by Topic
-
-#### Frame 1: "Criminal Takeover of Child Care" (HD10454)
-**Expected outlets**: SVT Nyheter, SR Ekot, Aftonbladet, Expressen  
-**Framing**: Human interest + investigation. Local follow-up in municipalities. Parental perspectives.  
-**Government counter-frame opportunity**: "We are acting; police delayed, not government."  
-**Opposition frame reinforcement**: "Two-year delay is government failure to act."  
-**Resonance**: HIGH — vulnerable children + organized crime = maximum media traction.
-
-#### Frame 2: "Criminal Economy at 5.5% of GDP" (HD10451, HD10447)
-**Expected outlets**: Dagens Nyheter, SvD, Affärsvärlden, SR  
-**Framing**: Economic/investigative. Abstract until made concrete with company examples.  
-**Key media challenge**: Making 352bn SEK tangible (= 5-6x the defense budget).  
-**Government counter-frame**: "We're the party that fights crime; record enforcement."  
-**Opposition frame**: "You govern but criminals run 23,000 of your businesses."  
-**Resonance**: MEDIUM-HIGH — abstract but large number with concrete Brå evidence.
-
-#### Frame 3: "Women's Shelters Closing Under Right-Wing Government" (HD10438)
-**Expected outlets**: Aftonbladet, Expressen, Feministiskt perspektiv, SR P1  
-**Framing**: Gender politics + welfare state. Close to S's ideological core.  
-**Government counter-frame**: "Municipalities make these decisions independently."  
-**Opposition frame**: "National responsibility for women's safety."  
-**Resonance**: MEDIUM-HIGH — gender-equity topic reliably mobilizes media coverage.
-
-#### Frame 4: "Sweden Silent on Chinese Organ Harvesting" (HD10456)
-**Expected outlets**: SvD, DN, international wires (AP, Reuters if they pick up)  
-**Framing**: Human rights + international ethics. Comparison to Spain, Israel, UK.  
-**Government counter-frame**: "We're working through EU frameworks."  
-**Opposition frame**: "Sweden is an outlier; ban it now."  
-**Resonance**: MEDIUM — niche but internationally resonant; diaspora Chinese-Swedish community interest.
-
-#### Frame 5: "Government Spreads Disinformation on Wind" (HD10448)
-**Expected outlets**: Ny Teknik, Energivärlden, climate media  
-**Framing**: Science vs politics. SD accusing government of misinformation is unusual — government normally accuses SD.  
-**Resonance**: LOW-MEDIUM — niche but ironic; credibility issue for government.
-
-### Media Battlespace Map (Predicted)
-
-| Frame | Amplification Risk | Duration | Electoral Impact |
-|-------|-------------------|---------|-----------------|
-| Criminal child care (HD10454) | VERY HIGH | 2-4 weeks | HIGH |
-| Criminal economy (HD10451) | HIGH | 1-2 weeks | HIGH |
-| Women's shelters (HD10438) | HIGH | 1-2 weeks | MEDIUM |
-| Organ harvesting (HD10456) | MEDIUM | 1 week | LOW-MEDIUM |
-| Wind disinformation (HD10448) | LOW | 3-5 days | LOW |
-
-### Disinformation Risk Assessment
-
-**Primary disinformation risk**: Oversimplification of criminal economy figures. ESO's 352bn SEK estimate may be cited without confidence intervals, creating a false precision.
-
-**Secondary risk**: HD10456 organ harvesting narrative could be amplified with misinformation about Sweden's complicity (Sweden imports organs, not confirmed).
-
-**Mitigation**: Analysis uses "ESO 2026 estimates" language; analysis notes methodological uncertainty in devils-advocate.md.
-
-### Mermaid: Media Framing Landscape
-
-```mermaid
-quadrantChart
-    title Media Frame Resonance vs Duration
-    x-axis Short Duration --> Long Duration
-    y-axis Low Resonance --> High Resonance
-    quadrant-1 High Impact Stories
-    quadrant-2 Slow Burn Stories
-    quadrant-3 Background Noise
-    quadrant-4 Quick Spike Stories
-    HVB Crime: [0.65, 0.90]
-    Criminal Economy: [0.55, 0.80]
-    Womens Shelters: [0.55, 0.72]
-    Organ Harvesting: [0.40, 0.55]
-    Wind Disinformation: [0.25, 0.42]
-    style HVB Crime color:#ff4444
-    style Criminal Economy color:#ff6600
-```
-
-## Stakeholder Perspectives
-<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/stakeholder-perspectives.md -->
-
-### 6-Lens Stakeholder Matrix
-
-#### Lens 1: Government Actors
-
-| Stakeholder | Role | Position | Pressure Level |
-|-------------|------|----------|---------------|
-| Camilla Waltersson Grönvall (M) | Socialtjänstminister | Under pressure on HVB-hem (HD10454); must respond by 2026-05-20 | CRITICAL |
-| Gunnar Strömmer (M) | Justitieminister | Dual pressure: criminal economy (HD10451), constitutional criticism (HD10452), police shortage (HD10439) | HIGH |
-| Ebba Busch (KD) | Energiminister | Challenged by coalition partner SD on gas bridge (HD10453) and desinformation on wind (HD10448) | HIGH |
-| Elisabet Lann (KD) | Sjukvårdsminister | Two concurrent interpellations: organ harvesting (HD10456) + rare diseases (HD10457) | MEDIUM-HIGH |
-| Elisabeth Svantesson (M) | Finansminister | Challenged on employer payroll tax exploitation (HD10444), false death declarations (HD10446), eating disorder controversy (HD10442) | MEDIUM |
-| Andreas Carlson (KD) | Infrastrukturminister | Södra stambanan (HD10449), kommunal förköpsrätt (HD10445) | MEDIUM |
-| Anna Tenje (M) | Socialförsäkringsminister | Sick insurance day-180 exception (HD10450) | MEDIUM |
-| Erik Slottner (KD) | Civilminister | Social dumping (HD10443) | MEDIUM |
-| Nina Larsson (L) | Jämställdhetsminister | Women's shelter closures (HD10438) | MEDIUM |
-| Johan Britz (L) | Arbetsmarknadsminister | Occupational health doctor shortage (HD10440) | LOW-MEDIUM |
-| Parisa Liljestrand (M) | Kulturminister | Mobile cultural heritage (HD10455) | LOW |
-
-#### Lens 2: Opposition Parties
-
-| Actor | Strategy | Key dok_ids | Electoral Vector |
-|-------|----------|-------------|-----------------|
-| S (Socialdemokraterna) | Coordinated welfare-dismantlement narrative + crime governance failures | HD10454, HD10451, HD10438, HD10443, HD10450, HD10446, HD10449, HD10444, HD10439, HD10447, HD10445, HD10442, HD10440, HD10457 | HIGH — election 2026 positioning |
-| SD (Sverigedemokraterna) | Intra-coalition pressure on energy + foreign policy/human rights | HD10453, HD10456, HD10448, HD10455 | MEDIUM — tests Tidö limits |
-| Elsa Widding (independent) | Constitutional and rule-of-law challenges | HD10452, HD10441 | LOW — niche accountability |
-
-#### Lens 3: Civil Society / Affected Groups
-
-| Group | Affected by | Pressure Direction |
-|-------|------------|-------------------|
-| Vulnerable youth in HVB-homes | HD10454 | Critical — direct welfare harm |
-| Women's shelter operators | HD10438 | Financial survival threatened |
-| Rare disease patients | HD10457 | Drug access at risk |
-| Small/medium enterprises (SMEs) | HD10444, HD10447 | Competitive distortion from criminal enterprises |
-| Stockholm municipality | HD10454, HD10443 | Autonomy over sensitive information |
-| Occupational health sector | HD10440 | Capacity/training crisis |
-
-#### Lens 4: Regulatory/Administrative Bodies
-
-| Body | Relevance | Expected Response |
-|------|-----------|------------------|
-| IVO (Inspektionen för vård och omsorg) | HVB-hem oversight, should have flagged criminal operators | Under scrutiny — HD10454 |
-| Polismyndigheten | Intelligence sharing with municipalities | HD10454, HD10439 |
-| Ekobrottsmyndigheten | Economic crime enforcement | HD10451 |
-| Bolagsverket | Company registration oversight | HD10451 |
-| Svenska kraftnät | Grid investment program | HD10453 |
-| Socialstyrelsen | Rare disease drug availability | HD10457 |
-
-#### Lens 5: Coalition Dynamics
-
-The Tidökoalitionen (M+KD+L+SD) faces intra-coalition stress specifically on energy (HD10453: SD vs KD) and a potential legitimacy test if the HVB-hem scandal is seen as government-level rather than police-level failure. SD's interpellations (HD10453, HD10456, HD10455) are simultaneously constructive engagement and pressure maintenance, consistent with SD's role as the governing-from-outside support party.
-
-#### Lens 6: Influence Network
-
-```mermaid
-graph TD
-    S[S Opposition] --> |14 interpellations| GOV[Government 2025/26]
-    SD[SD Support party] --> |4 interpellations| GOV
-    IND[Independent Widding] --> |2 interpellations| GOV
-    GOV --> |Must answer by May 20| DEADLINE[Response Deadline]
-    BRAA[Brå Dec 2025 Report] --> |Evidence base| S
-    ESO[ESO 2026 Report] --> |Criminal economy 352bn| S
-    POLICE[Police Report 2024] --> |HVB-hem list| HD10454
-    style S fill:#e63946,color:#fff
-    style SD fill:#ffbe0b,color:#000
-    style GOV fill:#0a0e27,color:#fff
-    style DEADLINE fill:#ff4444,color:#fff
-    style BRAA fill:#1a1e3d,color:#fff
-    style ESO fill:#1a1e3d,color:#fff
-```
-
-## Forward Indicators
-<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/forward-indicators.md -->
-
-### Intelligence Requirements
-
-This forward indicators file supports PIR-2026-INTERP-001 through PIR-2026-INTERP-005 with dated collection windows.
-
----
-
-### Horizon 1: Immediate (May 2026)
-
-| # | Indicator | Watch By | If Triggered | PIR |
-|---|-----------|----------|-------------|-----|
-| 1 | Government answers HD10454 in full — does it acknowledge 2-year delay? | 2026-05-20 | Yes=Scenario B reinforced; No=political cover attempted | PIR-001 |
-| 2 | Government answers HD10451 — does it commit to criminal company registry? | 2026-05-20 | Yes=policy response functional; No=S election narrative confirmed | PIR-001 |
-| 3 | Police HVB criminal list publicly released | 2026-05-15 | Yes=Scenario B activation; No=continued stonewalling | PIR-001 |
-| 4 | SVT/SR investigative follow-up on HVB story | 2026-05-10 | Yes=media amplification; No=story dies without evidence | PIR-001 |
-| 5 | Lann (KD) responds to HD10456 with Council of Europe convention reference | 2026-05-20 | Yes=policy movement; No=continued inaction | PIR-004 |
-
-### Horizon 2: Short-term (June-July 2026)
-
-| # | Indicator | Watch By | If Triggered | PIR |
-|---|-----------|----------|-------------|-----|
-| 6 | New Brå or ESO report on criminal economy | 2026-07-01 | Confirms/revises 5.5% estimate | PIR-001 |
-| 7 | SD files formal energy motion (not just interpellation) | 2026-06-15 | Escalation to Scenario C territory | PIR-002 |
-| 8 | Polling: S lead exceeds 6 points over Tidö | 2026-07-01 | Social safety net narrative breaking through | PIR-003 |
-| 9 | Women's shelter emergency funding from government | 2026-06-30 | Concession to S pressure; political not substantive fix | PIR-003 |
-| 10 | Industrial energy price index Sweden vs EU | 2026-07-01 | If Swedish prices remain >20% above EU average, SD pressure continues | PIR-002 |
-
-### Horizon 3: Election Campaign (August-September 2026)
-
-| # | Indicator | Watch By | If Triggered | PIR |
-|---|-----------|----------|-------------|-----|
-| 11 | S manifesto features "criminal economy" as top-3 issue | 2026-08-15 | Confirms strategy based on this interpellation cluster | PIR-001 |
-| 12 | Riksdag extra session on crime governance legislation | 2026-09-01 | Rare — government acting defensively before election | PIR-001 |
-| 13 | TV debate: crime governance dominates over immigration | 2026-09-05 | Frame shift from 2022 pattern; S advantage | PIR-001 |
-| 14 | Police Stockholm staffing reaches 90% target | 2026-09-01 | Government can defuse HD10439 narrative | PIR-003 |
-
-### Horizon 4: Post-Election (October-December 2026)
-
-| # | Indicator | Watch By | If Triggered | PIR |
-|---|-----------|----------|-------------|-----|
-| 15 | S wins election with >175 seats (any combination) | 2026-09-14 | Scenario B activated; criminal economy reform agenda follows | PIR-001 |
-| 16 | Tidökoalitionen wins with SD support retained | 2026-09-14 | Scenario A/C confirmed; criminal economy reform delayed | PIR-001 |
-| 17 | Organ harvesting legislation introduced to Riksdag | 2026-12-01 | Implementation of HD10456 recommendation | PIR-004 |
-| 18 | Criminal company registry legislation tabled | 2026-12-01 | Implementation of HD10451 recommendation | PIR-001 |
-
----
-
-### Collection Priority Matrix
-
-| PIR | Priority | Horizon 1 Indicators | Horizon 2 Indicators |
-|-----|---------|---------------------|---------------------|
-| PIR-001 (Crime Governance) | CRITICAL | #1, #2, #3, #4 | #6, #7 |
-| PIR-002 (SD Energy) | HIGH | #5 (indirect) | #7, #10 |
-| PIR-003 (Social Net) | HIGH | #5 | #8, #9 |
-| PIR-004 (Organ Harvesting) | MEDIUM | #5 | — |
-
-### Mermaid: Forward Indicator Timeline
-
-```mermaid
-gantt
-    title Forward Indicators Monitoring Schedule
-    dateFormat YYYY-MM-DD
-    section Horizon 1 Immediate
-    Interpellation answers due     :milestone, 2026-05-20, 0d
-    Police HVB list watch          :active, 2026-04-29, 2026-05-15
-    SVT-SR investigation           :active, 2026-04-29, 2026-05-10
-    section Horizon 2 Short-Term
-    New Brå-ESO reports            :2026-05-20, 2026-07-01
-    SD energy motion watch         :2026-05-20, 2026-06-15
-    Polling trend watch            :2026-05-01, 2026-07-01
-    section Horizon 3 Campaign
-    Party manifestos               :2026-07-01, 2026-08-15
-    TV debates                     :2026-08-15, 2026-09-05
-    section Horizon 4 Post-Election
-    Election Day                   :milestone, 2026-09-14, 0d
-    Reform legislation watch       :2026-09-15, 2026-12-01
-```
-
-## Scenario Analysis
-<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/scenario-analysis.md -->
-
-### Scenario Framework
-
-Three policy-plausible scenarios derived from the interpellation cluster for 2026-09 election horizon.
-
----
-
-### Scenario A: Status Quo Drift ("Managed Decline")
-
-**Probability**: 45% | **Confidence**: MEDIUM [C2]
-
-**Description**: Government responds procedurally to all interpellations with limited policy change. The HVB-hem scandal produces a report. The criminal economy narrative is acknowledged but no structural legislative change passes before the election. Energy policy remains contested. Women's shelters receive modest emergency funding. The election is decided primarily on immigration and economic performance.
-
-**Key Assumptions**:
-- Coalition holds through September 2026
-- No major HVB-hem revelation escalates to parliamentary inquiry
-- Police reform continues but Stockholm shortage not resolved
-
-**Driving Forces**:
-- Tidökoalitionen inertia and parliamentary majority holds
-- SD remains within coalition discipline on energy
-- S unable to consolidate multiple narratives into single election message
-
-**Indicators this scenario is materializing**:
-- Government answers interpellations with standard procedural responses
-- No extraordinary committee referral
-- Poll lead for S remains 3-5 points
-
-**Consequences**:
-- Moderate S election gains (+5-8 seats); insufficient for clear majority
-- Minority government continuation post-election possible
-- Criminal economy reforms delayed to 2027
-
----
-
-### Scenario B: Crime Governance Crisis ("Accountability Cascade")
-
-**Probability**: 30% | **Confidence**: MEDIUM [C2]
-
-**Description**: HVB-hem scandal escalates when the delayed police list is finally released, revealing more criminal operators. Multiple parliamentary inquiries launched. The Brå/ESO criminal economy evidence leads to emergency legislative session. The government's crime-fighting credibility collapses. S is able to present a comprehensive "crime governance failure" narrative that extends beyond individual policies.
-
-**Key Assumptions**:
-- Police list delayed 2+ years is eventually released revealing large-scale infiltration
-- S successfully links HVB (HD10454), corporate crime (HD10451), and police shortage (HD10439) into single accountability frame
-- Media amplifies ESO's 352bn figure into household understanding
-
-**Driving Forces**:
-- Brå/ESO reports provide credible evidence base
-- Interpellation cluster HD10451/HD10454/HD10447 all heard before same/nearby dates
-- SR/SVT investigative journalism potential follow-up
-
-**Indicators this scenario is materializing**:
-- Police releases HVB criminal list before election
-- Major media investigation publishes following interpellation debates
-- Government forces emergency measures on corporate registration
-
-**Consequences**:
-- S election gains +12-18 seats
-- New government formation: S+MP+V likely majority
-- Criminal economy reform legislation in 2027 budget
-
----
-
-### Scenario C: Energy Rupture ("Coalition Fracture")
-
-**Probability**: 25% | **Confidence**: LOW [C3]
-
-**Description**: SD's challenge on energy (HD10453) escalates into a formal policy conflict with KD/M. SD demands a concrete gas bridge decision with timeline. Government cannot reach consensus. SD threatens to withdraw Tidö support on energy vote. Combined with SD's disinformation accusation against government (HD10448), an intra-coalition public rift emerges.
-
-**Key Assumptions**:
-- SD escalates beyond interpellation into formal budget/policy amendment
-- KD/Busch refuses gas bridge concession citing climate obligations and EU ETS
-- M unable to broker compromise between KD and SD on nuclear timeline
-
-**Driving Forces**:
-- 10-year nuclear construction timeline creates credibility gap for gas opposition
-- Industrial energy prices remain elevated through summer 2026
-- SD constituency pressure from industry-dependent regions
-
-**Indicators this scenario is materializing**:
-- SD submits energy motion that diverges from government position
-- Public statements by SD Fransson escalate beyond interpellation
-- Poll shows SD voters prioritizing energy above immigration for first time
-
-**Consequences**:
-- Coalition credibility on energy irreparably damaged
-- Early election call possible if Tidö loses budget vote
-- Energy policy becomes primary 2026 campaign issue
-
----
-
-### Comparative Scenario Table
-
-| Dimension | A: Status Quo | B: Crime Cascade | C: Energy Rupture |
-|-----------|--------------|-----------------|------------------|
-| Coalition stability | High | Medium | Low |
-| S election performance | Modest gains | Strong gains | Uncertain |
-| Criminal economy reform | Delayed to 2027 | Emergency legislation | Delayed |
-| Energy policy | Status quo | Status quo | Structural change |
-| HVB-hem | Procedural response | Parliamentary inquiry | Background |
-| Probability | 45% | 30% | 25% |
-
-### Mermaid: Scenario Decision Tree
-
-```mermaid
-graph TD
-    START[Current State: April 2026] --> Q1{HVB Police List Released?}
-    Q1 --> |Yes| B[Scenario B: Crime Cascade 30%]
-    Q1 --> |No/Delayed| Q2{SD Escalates Energy?}
-    Q2 --> |Yes public rupture| C[Scenario C: Energy Rupture 25%]
-    Q2 --> |No stays within coalition| A[Scenario A: Status Quo 45%]
-    B --> B1[S +12-18 seats\nNew S-led government]
-    C --> C1[Coalition fracture\nEarly election possible]
-    A --> A1[S +5-8 seats\nUnclear majority]
-    style B fill:#e63946,color:#fff
-    style C fill:#ff6600,color:#fff
-    style A fill:#1a1e3d,color:#fff
-```
-
-## Risk Assessment
-<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/risk-assessment.md -->
-
-### Risk Register
-
-| # | Risk | Dimension | Likelihood (1-5) | Impact (1-5) | L×I | Confidence |
-|---|------|-----------|-----------------|--------------|-----|-----------|
-| R1 | HVB-hem scandal escalates to parliamentary inquiry | Political/Social | 4 | 5 | 20 | HIGH [B2] |
-| R2 | Criminal economy narrative dominates election cycle | Political | 4 | 5 | 20 | HIGH [B2] |
-| R3 | SD breaks coalition energy consensus on gas | Coalition | 3 | 4 | 12 | MEDIUM [C2] |
-| R4 | Women's shelter funding crisis worsens | Social | 4 | 4 | 16 | HIGH [B2] |
-| R5 | Organ harvesting legislation stalls without cross-party support | Policy | 3 | 3 | 9 | MEDIUM [C2] |
-| R6 | Rare disease medicine supply disruption affects patients | Healthcare | 3 | 4 | 12 | MEDIUM [C2] |
-| R7 | Social dumping triggers inter-municipal legal disputes | Administrative | 3 | 3 | 9 | MEDIUM [B3] |
-| R8 | Police Stockholm shortage undermines crime reduction narrative | Political | 3 | 4 | 12 | MEDIUM [B2] |
-| R9 | False death declarations (30/yr) escalates into rights scandal | Administrative | 2 | 3 | 6 | LOW [C3] |
-| R10 | Employer payroll tax cut exploited by shell companies | Economic | 3 | 3 | 9 | MEDIUM [B2] |
-
-### Cascading Risk Chains
-
-**Chain A: Crime Governance Collapse**  
-HVB-hem scandal (HD10454) + Criminal economy (HD10451) → Government credibility on crime erodes → S builds election narrative → Potential Tidö minority loses confidence vote [Probability: 15%]  
-Evidence: riksdagen.se HD10454 + HD10451; Brå/ESO reports.
-
-**Chain B: Energy Crisis**  
-Grid investment insufficient (HD10453) + Nuclear 10 years away + SD gas demand unmet → Industrial energy prices remain high → Swedish competitiveness deteriorates → Coalition election disadvantage [Probability: 35%]  
-Evidence: riksdagen.se HD10453, SVK investment data.
-
-**Chain C: Social Policy Narrative**  
-Women's shelters closing (HD10438) + Social dumping (HD10443) + Sick insurance cuts (HD10450) + Doctor shortage (HD10440) + Rare diseases (HD10457) → S "welfare dismantlement" narrative crystallizes → Electoral cost in suburban districts [Probability: 55%]  
-Evidence: Multiple dok_ids above, riksdagen.se.
-
-### Posterior Probabilities
-
-| Risk | Prior P | Evidence Update | Posterior P |
-|------|---------|-----------------|-------------|
-| HVB escalation to inquiry | 30% | HD10454: 2-year delay documented, SR coverage | 65% if no ministerial action by May 20 |
-| Criminal economy narrative dominance | 45% | ESO 352bn, Brå 23,000 companies | 70% sustained through Q3 2026 |
-| S wins 2026 election partly on social narrative | 35% | Coordinated interpellation cluster | 50% if current trajectory maintained |
-
-### Mermaid: Risk Heat Map
-
-```mermaid
-quadrantChart
-    title Risk Matrix (Likelihood vs Impact)
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
-    quadrant-1 Critical Priority
-    quadrant-2 High Impact Unlikely
-    quadrant-3 Background Risks
-    quadrant-4 High Likelihood Low Impact
-    R1 HVB Inquiry: [0.75, 0.95]
-    R2 Criminal Narrative: [0.80, 0.90]
-    R4 Womens Shelters: [0.70, 0.75]
-    R3 SD Energy Break: [0.55, 0.70]
-    R8 Police Narrative: [0.60, 0.70]
-    R6 Rare Disease Supply: [0.60, 0.65]
-    R5 Organ Harvesting Stalls: [0.55, 0.55]
-    R10 Tax Exploit: [0.55, 0.55]
-    R7 Social Dumping Legal: [0.55, 0.50]
-    R9 Death Declarations: [0.35, 0.45]
-    style R1 color:#ff0000
-    style R2 color:#ff0000
-    style R4 color:#ff6600
-```
-
-## SWOT Analysis
-<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/swot-analysis.md -->
-
-### SWOT Matrix: Government (Tidökoalitionen) Position
-
-#### Strengths [A2]
-- **Legislative track record on crime**: Strömmer (M) can point to Jan 2025 legislation against company-as-crime-tool (HD10451 context). New tools implemented as scheduled. Source: riksdagen.se, legislative record 2025.
-- **Energy investment commitments**: Ebba Busch (KD) can demonstrate SVK's investment ramp-up — from 0.7 to 14.6 billion in 20 years (HD10453, Josef Fransson SD citation). Source: riksdagen.se HD10453.
-- **Healthcare minister Lann (KD) on organ harvesting**: Sweden joining international consensus on this issue positions KD as principled human rights actor (HD10456). Source: riksdagen.se HD10456.
-- **Police numbers achieved**: Government can cite Brå's positive finding on 10,000-police target being met (HD10439 context). Source: Brå polismål report cited in HD10439.
-
-#### Weaknesses [A2]
-- **HVB-hem information delay**: ~2-year gap between police identifying criminal HVB-homes and Stockholm municipality receiving the list is a concrete, documentable governance failure (HD10454). Source: riksdagen.se HD10454, SR reporting cited therein.
-- **Criminal economy at 5.5% of GDP**: ESO 2026 report's estimate of 352 billion SEK criminal economy makes the government's crime narrative look disconnected from results (HD10451). Source: riksdagen.se HD10451.
-- **Energy gap before nuclear**: SD correctly identifies that nuclear power is 10 years away, creating a credibility gap in the energy transition narrative (HD10453). Source: riksdagen.se HD10453.
-- **Women's shelter closures**: Documented closures of women's shelters undermine the government's social protection narrative (HD10438). Source: riksdagen.se HD10438.
-
-#### Opportunities [A2]
-- **Cross-party consensus on organ harvesting**: HD10456 offers KD/M opportunity to table legislation with broad parliamentary support (Spain, Belgium, Israel precedents). Source: riksdagen.se HD10456, international precedents cited.
-- **Criminalization of business-tool crime**: Government can accelerate the roadmap post-Brå report, pre-empting S's critique with concrete next steps (HD10451). Source: riksdagen.se HD10451.
-- **Gas bridge transitional measure**: A limited Öresundsverket activation could satisfy SD demands while not derailing nuclear long-term plan, demonstrating coalition flexibility (HD10453). Source: riksdagen.se HD10453.
-
-#### Threats [A2]
-- **S election-year narrative consolidation**: The cluster of interpellations — social dumping (HD10443), women's shelters (HD10438), sick insurance (HD10450), rare diseases (HD10457), occupational doctors (HD10440) — suggests coordinated S strategy to build a "social protection dismantlement" narrative ahead of 2026 elections. Source: riksdagen.se multiple dok_ids above.
-- **HVB-hem scandal escalation**: Failure to announce concrete prohibitions by May 20 deadline could trigger a parliamentary inquiry motion from S+V+MP. Source: riksdagen.se HD10454.
-- **Criminal economy credibility gap**: ESO's 352 billion estimate undermines the government's core crime-fighting narrative at a critical electoral moment. Source: riksdagen.se HD10451, ESO 2026.
-- **Coalition energy fracture**: SD's gas-bridge challenge to Busch (HD10453) tests whether KD can hold energy policy leadership within Tidökoalitionen. Source: riksdagen.se HD10453.
-
-### TOWS Matrix
-
-| | Strengths | Weaknesses |
-|---|---|---|
-| **Opportunities** | **SO**: Use police-target achievement to underpin organ-harvesting legislation — demonstrates law enforcement credibility (HD10439+HD10456). | **WO**: Accelerate company-crime legislation to pre-empt S's ESO-based critique; concrete measures by Q3 2026 (HD10451). |
-| **Threats** | **ST**: Deploy legislative record on crime to counter HVB-hem narrative — emphasize Jan 2025 law while announcing additional HVB-home oversight measures (HD10454). | **WT**: Coalition risk: if SD breaks with government on energy, combined with HVB-hem scandal, creates dual governance-failure narrative in election year (HD10453+HD10454). |
-
-### Mermaid: SWOT Force Field
-
-```mermaid
-graph LR
-    subgraph Strengths
-        S1[Legislative crime record]
-        S2[10000 police goal met]
-        S3[Energy investment ramp]
-    end
-    subgraph Weaknesses
-        W1[HVB-hem 2yr delay]
-        W2[Criminal economy 5.5% GDP]
-        W3[Women shelters closing]
-    end
-    subgraph Opportunities
-        O1[Organ harvesting legislation]
-        O2[Gas bridge consensus]
-    end
-    subgraph Threats
-        T1[S election narrative]
-        T2[Escalation May 20 deadline]
-        T3[Coalition energy fracture]
-    end
-    S1 --> O1
-    W1 --> T2
-    W2 --> T1
-    T3 --> W3
-    style S1 fill:#00aa44,color:#fff
-    style S2 fill:#00aa44,color:#fff
-    style W1 fill:#cc0000,color:#fff
-    style W2 fill:#cc0000,color:#fff
-    style T1 fill:#ff6600,color:#fff
-    style T2 fill:#ff0000,color:#fff
-```
-
-## Threat Analysis
-<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/threat-analysis.md -->
-
-### Political Threat Taxonomy
-
-#### Threat 1: Governance Capture by Organized Crime (CRITICAL)
-
-**Category**: State-Capture / Institutional Integrity  
-**Actors**: Organized crime networks operating HVB-homes and commercial entities  
-**Target**: Swedish welfare system, business environment  
-**Evidence**: HD10454 (HVB-hem infiltration); HD10451 (Brå Dec 2025: 23,000 companies; ESO 2026: 352bn SEK criminal economy = 5.5% GDP)  
-
-**Attack tree**:
-```
-Criminal Economy 352bn SEK [ESO 2026]
-├── HVB-Home infiltration [HD10454]
-│   ├── Child welfare compromised
-│   └── Criminal recruitment of vulnerable youth
-├── Company exploitation [HD10451]
-│   ├── Tax fraud (momsbedrägerier)
-│   ├── Money laundering
-│   └── Public subsidy extraction
-└── Political consequence: Government crime-fighting credibility undermined
-```
-
-#### Threat 2: Energy Infrastructure Gap (HIGH)
-
-**Category**: Economic / Industrial Competitiveness  
-**Actors**: SD (Josef Fransson) pressuring government; grid operators  
-**Target**: Swedish industrial competitiveness  
-**Evidence**: HD10453 (SVK 15x investment growth; 1 trillion SEK needed in 20 years; nuclear 10 years away)  
-
-**Kill chain**: Grid undersupply → industrial bottlenecks → competitiveness loss → loss of foreign investment → economic nationalism vulnerability.
-
-#### Threat 3: Social Cohesion Erosion (HIGH)
-
-**Category**: Social Policy / Electoral  
-**Actors**: S (coordinated interpellation cluster), women's shelter organizations, municipalities  
-**Target**: Social safety net, vulnerable groups  
-**Evidence**: HD10438 (women's shelters closing), HD10443 (social dumping), HD10450 (sick insurance cuts), HD10440 (occupational doctor shortage)  
-
-#### Threat 4: International Human Rights Obligations (MEDIUM)
-
-**Category**: Foreign policy / Health ethics  
-**Actors**: SD (Nima Gholam Ali Pour), Chinese institutions  
-**Target**: Swedish healthcare ethics, international human rights standing  
-**Evidence**: HD10456 (organ harvesting from Chinese prisoners of conscience; Sweden lacks criminalization of receiving coerced organs; comparison: Spain, Belgium, Israel, Taiwan have legislation)  
-
-#### Threat 5: Constitutional/Rule of Law (MEDIUM)
-
-**Category**: Institutional Integrity  
-**Actors**: Independent MPs (Elsa Widding), legal system self-review  
-**Target**: Judicial independence appearance  
-**Evidence**: HD10452 (challenge to lawyer-reviewing-lawyers in civil cases), HD10441 (rättssäkerhet)  
-
-### MITRE-style TTP Mapping (Political Threats)
-
-| TTP ID | Technique | Actor | Target | Evidence |
-|--------|-----------|-------|--------|----------|
-| PT-GOV-01 | Infiltrate social services | Organized crime | HVB-homes | HD10454 |
-| PT-GOV-02 | Shell company exploitation | Criminal networks | Public subsidies | HD10451 |
-| PT-POL-01 | Coordinated interpellation cluster | S opposition | Government narrative | HD10438/443/450 |
-| PT-POL-02 | Coalition stress testing | SD Fransson | Energy consensus | HD10453 |
-| PT-INTL-01 | Forced organ harvesting | PRC institutions | Swedish healthcare ethics | HD10456 |
-
-### Mermaid: Threat Attack Tree
-
-```mermaid
-graph TD
-    A[Swedish State Integrity Threats] --> B[Organized Crime Vector]
-    A --> C[Social Erosion Vector]
-    A --> D[Energy Gap Vector]
-    A --> E[International Ethics Vector]
-    B --> B1[HVB-hem infiltration HD10454]
-    B --> B2[Corporate crime tools HD10451]
-    B1 --> F[Child welfare failure]
-    B2 --> G[5.5% GDP criminal economy]
-    C --> C1[Women shelters HD10438]
-    C --> C2[Social dumping HD10443]
-    C --> C3[Sick insurance HD10450]
-    D --> D1[Grid undersupply HD10453]
-    D1 --> D2[Gas bridge debate]
-    E --> E1[Organ harvesting HD10456]
-    style A fill:#990000,color:#fff
-    style B fill:#ff0000,color:#fff
-    style C fill:#ff6600,color:#fff
-    style D fill:#ffaa00,color:#000
-    style E fill:#ffcc00,color:#000
-    style F fill:#ff0000,color:#fff
-    style G fill:#ff4400,color:#fff
 ```
 
 ## Per-document intelligence
@@ -1287,66 +707,79 @@ See significance-scoring.md for full DIW score for HD10457.
 ### Electoral Relevance
 See voter-segmentation.md and election-2026-analysis.md for electoral context.
 
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/election-2026-analysis.md -->
+## Stakeholder Perspectives
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/stakeholder-perspectives.md -->
 
-### Electoral Context
+### 6-Lens Stakeholder Matrix
 
-Sweden's next election is September 2026. The April 2026 interpellation cluster arrives approximately 5 months before election day, at the peak strategic window for opposition narrative building.
+#### Lens 1: Government Actors
 
-### Seat Impact Modeling
+| Stakeholder | Role | Position | Pressure Level |
+|-------------|------|----------|---------------|
+| Camilla Waltersson Grönvall (M) | Socialtjänstminister | Under pressure on HVB-hem (HD10454); must respond by 2026-05-20 | CRITICAL |
+| Gunnar Strömmer (M) | Justitieminister | Dual pressure: criminal economy (HD10451), constitutional criticism (HD10452), police shortage (HD10439) | HIGH |
+| Ebba Busch (KD) | Energiminister | Challenged by coalition partner SD on gas bridge (HD10453) and desinformation on wind (HD10448) | HIGH |
+| Elisabet Lann (KD) | Sjukvårdsminister | Two concurrent interpellations: organ harvesting (HD10456) + rare diseases (HD10457) | MEDIUM-HIGH |
+| Elisabeth Svantesson (M) | Finansminister | Challenged on employer payroll tax exploitation (HD10444), false death declarations (HD10446), eating disorder controversy (HD10442) | MEDIUM |
+| Andreas Carlson (KD) | Infrastrukturminister | Södra stambanan (HD10449), kommunal förköpsrätt (HD10445) | MEDIUM |
+| Anna Tenje (M) | Socialförsäkringsminister | Sick insurance day-180 exception (HD10450) | MEDIUM |
+| Erik Slottner (KD) | Civilminister | Social dumping (HD10443) | MEDIUM |
+| Nina Larsson (L) | Jämställdhetsminister | Women's shelter closures (HD10438) | MEDIUM |
+| Johan Britz (L) | Arbetsmarknadsminister | Occupational health doctor shortage (HD10440) | LOW-MEDIUM |
+| Parisa Liljestrand (M) | Kulturminister | Mobile cultural heritage (HD10455) | LOW |
 
-Current seat distribution (approximate 2022 result):
-- M: 68 | KD: 19 | L: 16 | SD: 73 (Tidökoalitionen: 176 seats)
-- S: 107 | V: 24 | MP: 18 (164 seats)
-- C: 24 (often kingmaker)
+#### Lens 2: Opposition Parties
 
-**Scenario A (Status Quo)**: S +5-8 → ~112-115 | SD stable 73 | Coalition holds or loses narrow majority  
-**Scenario B (Crime Cascade)**: S +12-18 → ~119-125 | M -8-12 → ~56-60 | New S+V+MP+C majority possible  
-**Scenario C (Energy Rupture)**: Uncertain; SD potentially loses 5-8 seats on energy credibility to M
+| Actor | Strategy | Key dok_ids | Electoral Vector |
+|-------|----------|-------------|-----------------|
+| S (Socialdemokraterna) | Coordinated welfare-dismantlement narrative + crime governance failures | HD10454, HD10451, HD10438, HD10443, HD10450, HD10446, HD10449, HD10444, HD10439, HD10447, HD10445, HD10442, HD10440, HD10457 | HIGH — election 2026 positioning |
+| SD (Sverigedemokraterna) | Intra-coalition pressure on energy + foreign policy/human rights | HD10453, HD10456, HD10448, HD10455 | MEDIUM — tests Tidö limits |
+| Elsa Widding (independent) | Constitutional and rule-of-law challenges | HD10452, HD10441 | LOW — niche accountability |
 
-### Key Electoral Battlegrounds
+#### Lens 3: Civil Society / Affected Groups
 
-| Theme | Districts | S Target | Government Vulnerability |
-|-------|-----------|---------|------------------------|
-| Crime governance (HD10454, HD10451) | Suburbs: Järva, Botkyrka, Gothenburg E | Reclaim 2022 losses | HIGH — independent Brå/ESO reports |
-| Social safety net (HD10438, HD10450) | Rural/small city | Consolidate base | HIGH — visible shelter closures |
-| Healthcare (HD10456, HD10457, HD10442) | Nationwide | Expand base | MEDIUM |
-| Energy costs (HD10453) | Industrial North, Norrland | SD voter persuasion | MEDIUM |
+| Group | Affected by | Pressure Direction |
+|-------|------------|-------------------|
+| Vulnerable youth in HVB-homes | HD10454 | Critical — direct welfare harm |
+| Women's shelter operators | HD10438 | Financial survival threatened |
+| Rare disease patients | HD10457 | Drug access at risk |
+| Small/medium enterprises (SMEs) | HD10444, HD10447 | Competitive distortion from criminal enterprises |
+| Stockholm municipality | HD10454, HD10443 | Autonomy over sensitive information |
+| Occupational health sector | HD10440 | Capacity/training crisis |
 
-### Key Interpellation → Electoral Salience Map
+#### Lens 4: Regulatory/Administrative Bodies
+
+| Body | Relevance | Expected Response |
+|------|-----------|------------------|
+| IVO (Inspektionen för vård och omsorg) | HVB-hem oversight, should have flagged criminal operators | Under scrutiny — HD10454 |
+| Polismyndigheten | Intelligence sharing with municipalities | HD10454, HD10439 |
+| Ekobrottsmyndigheten | Economic crime enforcement | HD10451 |
+| Bolagsverket | Company registration oversight | HD10451 |
+| Svenska kraftnät | Grid investment program | HD10453 |
+| Socialstyrelsen | Rare disease drug availability | HD10457 |
+
+#### Lens 5: Coalition Dynamics
+
+The Tidökoalitionen (M+KD+L+SD) faces intra-coalition stress specifically on energy (HD10453: SD vs KD) and a potential legitimacy test if the HVB-hem scandal is seen as government-level rather than police-level failure. SD's interpellations (HD10453, HD10456, HD10455) are simultaneously constructive engagement and pressure maintenance, consistent with SD's role as the governing-from-outside support party.
+
+#### Lens 6: Influence Network
 
 ```mermaid
-xychart-beta
-    title Electoral Salience Score by Topic (0-10)
-    x-axis ["Crime Gov.", "Social Net", "Healthcare", "Energy", "Infrastructure", "Admin/Proc."]
-    y-axis "Electoral Salience (0=low, 10=high)" 0 --> 10
-    bar [9.2, 8.1, 7.4, 6.5, 5.2, 3.8]
+graph TD
+    S[S Opposition] --> |14 interpellations| GOV[Government 2025/26]
+    SD[SD Support party] --> |4 interpellations| GOV
+    IND[Independent Widding] --> |2 interpellations| GOV
+    GOV --> |Must answer by May 20| DEADLINE[Response Deadline]
+    BRAA[Brå Dec 2025 Report] --> |Evidence base| S
+    ESO[ESO 2026 Report] --> |Criminal economy 352bn| S
+    POLICE[Police Report 2024] --> |HVB-hem list| HD10454
+    style S fill:#e63946,color:#fff
+    style SD fill:#ffbe0b,color:#000
+    style GOV fill:#0a0e27,color:#fff
+    style DEADLINE fill:#ff4444,color:#fff
+    style BRAA fill:#1a1e3d,color:#fff
+    style ESO fill:#1a1e3d,color:#fff
 ```
-
-### Narrative Battlespace Assessment
-
-S has successfully established the following narrative pillars from this interpellation cluster:
-1. **"Government lets criminals run social services"** — HD10454, HD10451, HD10447
-2. **"Government is dismantling the welfare state"** — HD10438, HD10443, HD10450
-3. **"Government is failing on healthcare"** — HD10456, HD10457, HD10442, HD10440
-
-Government counter-narratives available:
-1. **"Crime is being reduced; record convictions"** — partially defensible
-2. **"Social services are being reformed, not dismantled"** — defensible procedurally
-3. **"Healthcare is receiving record investment"** — partially defensible
-
-**Assessment**: S's narrative has stronger external evidence support. ESO/Brå are independent; government counter-narratives rely more on input metrics (investments, convictions) than outcome metrics (crime penetration of social services, shelter availability).
-
-### Timeline to Election
-
-| Milestone | Date | Electoral Significance |
-|-----------|------|----------------------|
-| Government responds to interpellations | ~2026-05-20 | Narrative response quality test |
-| Summer recess | June-August 2026 | Public opinion consolidation |
-| Party manifestos finalized | August 2026 | Policy commitments hardened |
-| Election day | September 2026 | Final outcome |
-| Police HVB list (if released) | Unknown | Potential Scenario B trigger |
 
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/coalition-mathematics.md -->
@@ -1490,6 +923,554 @@ graph TD
     style S fill:#e63946,color:#fff
 ```
 
+## Forward Indicators
+<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/forward-indicators.md -->
+
+### Intelligence Requirements
+
+This forward indicators file supports PIR-2026-INTERP-001 through PIR-2026-INTERP-005 with dated collection windows.
+
+---
+
+### Horizon 1: Immediate (May 2026)
+
+| # | Indicator | Watch By | If Triggered | PIR |
+|---|-----------|----------|-------------|-----|
+| 1 | Government answers HD10454 in full — does it acknowledge 2-year delay? | 2026-05-20 | Yes=Scenario B reinforced; No=political cover attempted | PIR-001 |
+| 2 | Government answers HD10451 — does it commit to criminal company registry? | 2026-05-20 | Yes=policy response functional; No=S election narrative confirmed | PIR-001 |
+| 3 | Police HVB criminal list publicly released | 2026-05-15 | Yes=Scenario B activation; No=continued stonewalling | PIR-001 |
+| 4 | SVT/SR investigative follow-up on HVB story | 2026-05-10 | Yes=media amplification; No=story dies without evidence | PIR-001 |
+| 5 | Lann (KD) responds to HD10456 with Council of Europe convention reference | 2026-05-20 | Yes=policy movement; No=continued inaction | PIR-004 |
+
+### Horizon 2: Short-term (June-July 2026)
+
+| # | Indicator | Watch By | If Triggered | PIR |
+|---|-----------|----------|-------------|-----|
+| 6 | New Brå or ESO report on criminal economy | 2026-07-01 | Confirms/revises 5.5% estimate | PIR-001 |
+| 7 | SD files formal energy motion (not just interpellation) | 2026-06-15 | Escalation to Scenario C territory | PIR-002 |
+| 8 | Polling: S lead exceeds 6 points over Tidö | 2026-07-01 | Social safety net narrative breaking through | PIR-003 |
+| 9 | Women's shelter emergency funding from government | 2026-06-30 | Concession to S pressure; political not substantive fix | PIR-003 |
+| 10 | Industrial energy price index Sweden vs EU | 2026-07-01 | If Swedish prices remain >20% above EU average, SD pressure continues | PIR-002 |
+
+### Horizon 3: Election Campaign (August-September 2026)
+
+| # | Indicator | Watch By | If Triggered | PIR |
+|---|-----------|----------|-------------|-----|
+| 11 | S manifesto features "criminal economy" as top-3 issue | 2026-08-15 | Confirms strategy based on this interpellation cluster | PIR-001 |
+| 12 | Riksdag extra session on crime governance legislation | 2026-09-01 | Rare — government acting defensively before election | PIR-001 |
+| 13 | TV debate: crime governance dominates over immigration | 2026-09-05 | Frame shift from 2022 pattern; S advantage | PIR-001 |
+| 14 | Police Stockholm staffing reaches 90% target | 2026-09-01 | Government can defuse HD10439 narrative | PIR-003 |
+
+### Horizon 4: Post-Election (October-December 2026)
+
+| # | Indicator | Watch By | If Triggered | PIR |
+|---|-----------|----------|-------------|-----|
+| 15 | S wins election with >175 seats (any combination) | 2026-09-14 | Scenario B activated; criminal economy reform agenda follows | PIR-001 |
+| 16 | Tidökoalitionen wins with SD support retained | 2026-09-14 | Scenario A/C confirmed; criminal economy reform delayed | PIR-001 |
+| 17 | Organ harvesting legislation introduced to Riksdag | 2026-12-01 | Implementation of HD10456 recommendation | PIR-004 |
+| 18 | Criminal company registry legislation tabled | 2026-12-01 | Implementation of HD10451 recommendation | PIR-001 |
+
+---
+
+### Collection Priority Matrix
+
+| PIR | Priority | Horizon 1 Indicators | Horizon 2 Indicators |
+|-----|---------|---------------------|---------------------|
+| PIR-001 (Crime Governance) | CRITICAL | #1, #2, #3, #4 | #6, #7 |
+| PIR-002 (SD Energy) | HIGH | #5 (indirect) | #7, #10 |
+| PIR-003 (Social Net) | HIGH | #5 | #8, #9 |
+| PIR-004 (Organ Harvesting) | MEDIUM | #5 | — |
+
+### Mermaid: Forward Indicator Timeline
+
+```mermaid
+gantt
+    title Forward Indicators Monitoring Schedule
+    dateFormat YYYY-MM-DD
+    section Horizon 1 Immediate
+    Interpellation answers due     :milestone, 2026-05-20, 0d
+    Police HVB list watch          :active, 2026-04-29, 2026-05-15
+    SVT-SR investigation           :active, 2026-04-29, 2026-05-10
+    section Horizon 2 Short-Term
+    New Brå-ESO reports            :2026-05-20, 2026-07-01
+    SD energy motion watch         :2026-05-20, 2026-06-15
+    Polling trend watch            :2026-05-01, 2026-07-01
+    section Horizon 3 Campaign
+    Party manifestos               :2026-07-01, 2026-08-15
+    TV debates                     :2026-08-15, 2026-09-05
+    section Horizon 4 Post-Election
+    Election Day                   :milestone, 2026-09-14, 0d
+    Reform legislation watch       :2026-09-15, 2026-12-01
+```
+
+## Scenario Analysis
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/scenario-analysis.md -->
+
+### Scenario Framework
+
+Three policy-plausible scenarios derived from the interpellation cluster for 2026-09 election horizon.
+
+---
+
+### Scenario A: Status Quo Drift ("Managed Decline")
+
+**Probability**: 45% | **Confidence**: MEDIUM [C2]
+
+**Description**: Government responds procedurally to all interpellations with limited policy change. The HVB-hem scandal produces a report. The criminal economy narrative is acknowledged but no structural legislative change passes before the election. Energy policy remains contested. Women's shelters receive modest emergency funding. The election is decided primarily on immigration and economic performance.
+
+**Key Assumptions**:
+- Coalition holds through September 2026
+- No major HVB-hem revelation escalates to parliamentary inquiry
+- Police reform continues but Stockholm shortage not resolved
+
+**Driving Forces**:
+- Tidökoalitionen inertia and parliamentary majority holds
+- SD remains within coalition discipline on energy
+- S unable to consolidate multiple narratives into single election message
+
+**Indicators this scenario is materializing**:
+- Government answers interpellations with standard procedural responses
+- No extraordinary committee referral
+- Poll lead for S remains 3-5 points
+
+**Consequences**:
+- Moderate S election gains (+5-8 seats); insufficient for clear majority
+- Minority government continuation post-election possible
+- Criminal economy reforms delayed to 2027
+
+---
+
+### Scenario B: Crime Governance Crisis ("Accountability Cascade")
+
+**Probability**: 30% | **Confidence**: MEDIUM [C2]
+
+**Description**: HVB-hem scandal escalates when the delayed police list is finally released, revealing more criminal operators. Multiple parliamentary inquiries launched. The Brå/ESO criminal economy evidence leads to emergency legislative session. The government's crime-fighting credibility collapses. S is able to present a comprehensive "crime governance failure" narrative that extends beyond individual policies.
+
+**Key Assumptions**:
+- Police list delayed 2+ years is eventually released revealing large-scale infiltration
+- S successfully links HVB (HD10454), corporate crime (HD10451), and police shortage (HD10439) into single accountability frame
+- Media amplifies ESO's 352bn figure into household understanding
+
+**Driving Forces**:
+- Brå/ESO reports provide credible evidence base
+- Interpellation cluster HD10451/HD10454/HD10447 all heard before same/nearby dates
+- SR/SVT investigative journalism potential follow-up
+
+**Indicators this scenario is materializing**:
+- Police releases HVB criminal list before election
+- Major media investigation publishes following interpellation debates
+- Government forces emergency measures on corporate registration
+
+**Consequences**:
+- S election gains +12-18 seats
+- New government formation: S+MP+V likely majority
+- Criminal economy reform legislation in 2027 budget
+
+---
+
+### Scenario C: Energy Rupture ("Coalition Fracture")
+
+**Probability**: 25% | **Confidence**: LOW [C3]
+
+**Description**: SD's challenge on energy (HD10453) escalates into a formal policy conflict with KD/M. SD demands a concrete gas bridge decision with timeline. Government cannot reach consensus. SD threatens to withdraw Tidö support on energy vote. Combined with SD's disinformation accusation against government (HD10448), an intra-coalition public rift emerges.
+
+**Key Assumptions**:
+- SD escalates beyond interpellation into formal budget/policy amendment
+- KD/Busch refuses gas bridge concession citing climate obligations and EU ETS
+- M unable to broker compromise between KD and SD on nuclear timeline
+
+**Driving Forces**:
+- 10-year nuclear construction timeline creates credibility gap for gas opposition
+- Industrial energy prices remain elevated through summer 2026
+- SD constituency pressure from industry-dependent regions
+
+**Indicators this scenario is materializing**:
+- SD submits energy motion that diverges from government position
+- Public statements by SD Fransson escalate beyond interpellation
+- Poll shows SD voters prioritizing energy above immigration for first time
+
+**Consequences**:
+- Coalition credibility on energy irreparably damaged
+- Early election call possible if Tidö loses budget vote
+- Energy policy becomes primary 2026 campaign issue
+
+---
+
+### Comparative Scenario Table
+
+| Dimension | A: Status Quo | B: Crime Cascade | C: Energy Rupture |
+|-----------|--------------|-----------------|------------------|
+| Coalition stability | High | Medium | Low |
+| S election performance | Modest gains | Strong gains | Uncertain |
+| Criminal economy reform | Delayed to 2027 | Emergency legislation | Delayed |
+| Energy policy | Status quo | Status quo | Structural change |
+| HVB-hem | Procedural response | Parliamentary inquiry | Background |
+| Probability | 45% | 30% | 25% |
+
+### Mermaid: Scenario Decision Tree
+
+```mermaid
+graph TD
+    START[Current State: April 2026] --> Q1{HVB Police List Released?}
+    Q1 --> |Yes| B[Scenario B: Crime Cascade 30%]
+    Q1 --> |No/Delayed| Q2{SD Escalates Energy?}
+    Q2 --> |Yes public rupture| C[Scenario C: Energy Rupture 25%]
+    Q2 --> |No stays within coalition| A[Scenario A: Status Quo 45%]
+    B --> B1[S +12-18 seats\nNew S-led government]
+    C --> C1[Coalition fracture\nEarly election possible]
+    A --> A1[S +5-8 seats\nUnclear majority]
+    style B fill:#e63946,color:#fff
+    style C fill:#ff6600,color:#fff
+    style A fill:#1a1e3d,color:#fff
+```
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/election-2026-analysis.md -->
+
+### Electoral Context
+
+Sweden's next election is September 2026. The April 2026 interpellation cluster arrives approximately 5 months before election day, at the peak strategic window for opposition narrative building.
+
+### Seat Impact Modeling
+
+Current seat distribution (approximate 2022 result):
+- M: 68 | KD: 19 | L: 16 | SD: 73 (Tidökoalitionen: 176 seats)
+- S: 107 | V: 24 | MP: 18 (164 seats)
+- C: 24 (often kingmaker)
+
+**Scenario A (Status Quo)**: S +5-8 → ~112-115 | SD stable 73 | Coalition holds or loses narrow majority  
+**Scenario B (Crime Cascade)**: S +12-18 → ~119-125 | M -8-12 → ~56-60 | New S+V+MP+C majority possible  
+**Scenario C (Energy Rupture)**: Uncertain; SD potentially loses 5-8 seats on energy credibility to M
+
+### Key Electoral Battlegrounds
+
+| Theme | Districts | S Target | Government Vulnerability |
+|-------|-----------|---------|------------------------|
+| Crime governance (HD10454, HD10451) | Suburbs: Järva, Botkyrka, Gothenburg E | Reclaim 2022 losses | HIGH — independent Brå/ESO reports |
+| Social safety net (HD10438, HD10450) | Rural/small city | Consolidate base | HIGH — visible shelter closures |
+| Healthcare (HD10456, HD10457, HD10442) | Nationwide | Expand base | MEDIUM |
+| Energy costs (HD10453) | Industrial North, Norrland | SD voter persuasion | MEDIUM |
+
+### Key Interpellation → Electoral Salience Map
+
+```mermaid
+xychart-beta
+    title Electoral Salience Score by Topic (0-10)
+    x-axis ["Crime Gov.", "Social Net", "Healthcare", "Energy", "Infrastructure", "Admin/Proc."]
+    y-axis "Electoral Salience (0=low, 10=high)" 0 --> 10
+    bar [9.2, 8.1, 7.4, 6.5, 5.2, 3.8]
+```
+
+### Narrative Battlespace Assessment
+
+S has successfully established the following narrative pillars from this interpellation cluster:
+1. **"Government lets criminals run social services"** — HD10454, HD10451, HD10447
+2. **"Government is dismantling the welfare state"** — HD10438, HD10443, HD10450
+3. **"Government is failing on healthcare"** — HD10456, HD10457, HD10442, HD10440
+
+Government counter-narratives available:
+1. **"Crime is being reduced; record convictions"** — partially defensible
+2. **"Social services are being reformed, not dismantled"** — defensible procedurally
+3. **"Healthcare is receiving record investment"** — partially defensible
+
+**Assessment**: S's narrative has stronger external evidence support. ESO/Brå are independent; government counter-narratives rely more on input metrics (investments, convictions) than outcome metrics (crime penetration of social services, shelter availability).
+
+### Timeline to Election
+
+| Milestone | Date | Electoral Significance |
+|-----------|------|----------------------|
+| Government responds to interpellations | ~2026-05-20 | Narrative response quality test |
+| Summer recess | June-August 2026 | Public opinion consolidation |
+| Party manifestos finalized | August 2026 | Policy commitments hardened |
+| Election day | September 2026 | Final outcome |
+| Police HVB list (if released) | Unknown | Potential Scenario B trigger |
+
+## Risk Assessment
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/risk-assessment.md -->
+
+### Risk Register
+
+| # | Risk | Dimension | Likelihood (1-5) | Impact (1-5) | L×I | Confidence |
+|---|------|-----------|-----------------|--------------|-----|-----------|
+| R1 | HVB-hem scandal escalates to parliamentary inquiry | Political/Social | 4 | 5 | 20 | HIGH [B2] |
+| R2 | Criminal economy narrative dominates election cycle | Political | 4 | 5 | 20 | HIGH [B2] |
+| R3 | SD breaks coalition energy consensus on gas | Coalition | 3 | 4 | 12 | MEDIUM [C2] |
+| R4 | Women's shelter funding crisis worsens | Social | 4 | 4 | 16 | HIGH [B2] |
+| R5 | Organ harvesting legislation stalls without cross-party support | Policy | 3 | 3 | 9 | MEDIUM [C2] |
+| R6 | Rare disease medicine supply disruption affects patients | Healthcare | 3 | 4 | 12 | MEDIUM [C2] |
+| R7 | Social dumping triggers inter-municipal legal disputes | Administrative | 3 | 3 | 9 | MEDIUM [B3] |
+| R8 | Police Stockholm shortage undermines crime reduction narrative | Political | 3 | 4 | 12 | MEDIUM [B2] |
+| R9 | False death declarations (30/yr) escalates into rights scandal | Administrative | 2 | 3 | 6 | LOW [C3] |
+| R10 | Employer payroll tax cut exploited by shell companies | Economic | 3 | 3 | 9 | MEDIUM [B2] |
+
+### Cascading Risk Chains
+
+**Chain A: Crime Governance Collapse**  
+HVB-hem scandal (HD10454) + Criminal economy (HD10451) → Government credibility on crime erodes → S builds election narrative → Potential Tidö minority loses confidence vote [Probability: 15%]  
+Evidence: riksdagen.se HD10454 + HD10451; Brå/ESO reports.
+
+**Chain B: Energy Crisis**  
+Grid investment insufficient (HD10453) + Nuclear 10 years away + SD gas demand unmet → Industrial energy prices remain high → Swedish competitiveness deteriorates → Coalition election disadvantage [Probability: 35%]  
+Evidence: riksdagen.se HD10453, SVK investment data.
+
+**Chain C: Social Policy Narrative**  
+Women's shelters closing (HD10438) + Social dumping (HD10443) + Sick insurance cuts (HD10450) + Doctor shortage (HD10440) + Rare diseases (HD10457) → S "welfare dismantlement" narrative crystallizes → Electoral cost in suburban districts [Probability: 55%]  
+Evidence: Multiple dok_ids above, riksdagen.se.
+
+### Posterior Probabilities
+
+| Risk | Prior P | Evidence Update | Posterior P |
+|------|---------|-----------------|-------------|
+| HVB escalation to inquiry | 30% | HD10454: 2-year delay documented, SR coverage | 65% if no ministerial action by May 20 |
+| Criminal economy narrative dominance | 45% | ESO 352bn, Brå 23,000 companies | 70% sustained through Q3 2026 |
+| S wins 2026 election partly on social narrative | 35% | Coordinated interpellation cluster | 50% if current trajectory maintained |
+
+### Mermaid: Risk Heat Map
+
+```mermaid
+quadrantChart
+    title Risk Matrix (Likelihood vs Impact)
+    x-axis Low Likelihood --> High Likelihood
+    y-axis Low Impact --> High Impact
+    quadrant-1 Critical Priority
+    quadrant-2 High Impact Unlikely
+    quadrant-3 Background Risks
+    quadrant-4 High Likelihood Low Impact
+    R1 HVB Inquiry: [0.75, 0.95]
+    R2 Criminal Narrative: [0.80, 0.90]
+    R4 Womens Shelters: [0.70, 0.75]
+    R3 SD Energy Break: [0.55, 0.70]
+    R8 Police Narrative: [0.60, 0.70]
+    R6 Rare Disease Supply: [0.60, 0.65]
+    R5 Organ Harvesting Stalls: [0.55, 0.55]
+    R10 Tax Exploit: [0.55, 0.55]
+    R7 Social Dumping Legal: [0.55, 0.50]
+    R9 Death Declarations: [0.35, 0.45]
+    style R1 color:#ff0000
+    style R2 color:#ff0000
+    style R4 color:#ff6600
+```
+
+## SWOT Analysis
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/swot-analysis.md -->
+
+### SWOT Matrix: Government (Tidökoalitionen) Position
+
+#### Strengths [A2]
+- **Legislative track record on crime**: Strömmer (M) can point to Jan 2025 legislation against company-as-crime-tool (HD10451 context). New tools implemented as scheduled. Source: riksdagen.se, legislative record 2025.
+- **Energy investment commitments**: Ebba Busch (KD) can demonstrate SVK's investment ramp-up — from 0.7 to 14.6 billion in 20 years (HD10453, Josef Fransson SD citation). Source: riksdagen.se HD10453.
+- **Healthcare minister Lann (KD) on organ harvesting**: Sweden joining international consensus on this issue positions KD as principled human rights actor (HD10456). Source: riksdagen.se HD10456.
+- **Police numbers achieved**: Government can cite Brå's positive finding on 10,000-police target being met (HD10439 context). Source: Brå polismål report cited in HD10439.
+
+#### Weaknesses [A2]
+- **HVB-hem information delay**: ~2-year gap between police identifying criminal HVB-homes and Stockholm municipality receiving the list is a concrete, documentable governance failure (HD10454). Source: riksdagen.se HD10454, SR reporting cited therein.
+- **Criminal economy at 5.5% of GDP**: ESO 2026 report's estimate of 352 billion SEK criminal economy makes the government's crime narrative look disconnected from results (HD10451). Source: riksdagen.se HD10451.
+- **Energy gap before nuclear**: SD correctly identifies that nuclear power is 10 years away, creating a credibility gap in the energy transition narrative (HD10453). Source: riksdagen.se HD10453.
+- **Women's shelter closures**: Documented closures of women's shelters undermine the government's social protection narrative (HD10438). Source: riksdagen.se HD10438.
+
+#### Opportunities [A2]
+- **Cross-party consensus on organ harvesting**: HD10456 offers KD/M opportunity to table legislation with broad parliamentary support (Spain, Belgium, Israel precedents). Source: riksdagen.se HD10456, international precedents cited.
+- **Criminalization of business-tool crime**: Government can accelerate the roadmap post-Brå report, pre-empting S's critique with concrete next steps (HD10451). Source: riksdagen.se HD10451.
+- **Gas bridge transitional measure**: A limited Öresundsverket activation could satisfy SD demands while not derailing nuclear long-term plan, demonstrating coalition flexibility (HD10453). Source: riksdagen.se HD10453.
+
+#### Threats [A2]
+- **S election-year narrative consolidation**: The cluster of interpellations — social dumping (HD10443), women's shelters (HD10438), sick insurance (HD10450), rare diseases (HD10457), occupational doctors (HD10440) — suggests coordinated S strategy to build a "social protection dismantlement" narrative ahead of 2026 elections. Source: riksdagen.se multiple dok_ids above.
+- **HVB-hem scandal escalation**: Failure to announce concrete prohibitions by May 20 deadline could trigger a parliamentary inquiry motion from S+V+MP. Source: riksdagen.se HD10454.
+- **Criminal economy credibility gap**: ESO's 352 billion estimate undermines the government's core crime-fighting narrative at a critical electoral moment. Source: riksdagen.se HD10451, ESO 2026.
+- **Coalition energy fracture**: SD's gas-bridge challenge to Busch (HD10453) tests whether KD can hold energy policy leadership within Tidökoalitionen. Source: riksdagen.se HD10453.
+
+### TOWS Matrix
+
+| | Strengths | Weaknesses |
+|---|---|---|
+| **Opportunities** | **SO**: Use police-target achievement to underpin organ-harvesting legislation — demonstrates law enforcement credibility (HD10439+HD10456). | **WO**: Accelerate company-crime legislation to pre-empt S's ESO-based critique; concrete measures by Q3 2026 (HD10451). |
+| **Threats** | **ST**: Deploy legislative record on crime to counter HVB-hem narrative — emphasize Jan 2025 law while announcing additional HVB-home oversight measures (HD10454). | **WT**: Coalition risk: if SD breaks with government on energy, combined with HVB-hem scandal, creates dual governance-failure narrative in election year (HD10453+HD10454). |
+
+### Mermaid: SWOT Force Field
+
+```mermaid
+graph LR
+    subgraph Strengths
+        S1[Legislative crime record]
+        S2[10000 police goal met]
+        S3[Energy investment ramp]
+    end
+    subgraph Weaknesses
+        W1[HVB-hem 2yr delay]
+        W2[Criminal economy 5.5% GDP]
+        W3[Women shelters closing]
+    end
+    subgraph Opportunities
+        O1[Organ harvesting legislation]
+        O2[Gas bridge consensus]
+    end
+    subgraph Threats
+        T1[S election narrative]
+        T2[Escalation May 20 deadline]
+        T3[Coalition energy fracture]
+    end
+    S1 --> O1
+    W1 --> T2
+    W2 --> T1
+    T3 --> W3
+    style S1 fill:#00aa44,color:#fff
+    style S2 fill:#00aa44,color:#fff
+    style W1 fill:#cc0000,color:#fff
+    style W2 fill:#cc0000,color:#fff
+    style T1 fill:#ff6600,color:#fff
+    style T2 fill:#ff0000,color:#fff
+```
+
+## Threat Analysis
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/threat-analysis.md -->
+
+### Political Threat Taxonomy
+
+#### Threat 1: Governance Capture by Organized Crime (CRITICAL)
+
+**Category**: State-Capture / Institutional Integrity  
+**Actors**: Organized crime networks operating HVB-homes and commercial entities  
+**Target**: Swedish welfare system, business environment  
+**Evidence**: HD10454 (HVB-hem infiltration); HD10451 (Brå Dec 2025: 23,000 companies; ESO 2026: 352bn SEK criminal economy = 5.5% GDP)  
+
+**Attack tree**:
+```
+Criminal Economy 352bn SEK [ESO 2026]
+├── HVB-Home infiltration [HD10454]
+│   ├── Child welfare compromised
+│   └── Criminal recruitment of vulnerable youth
+├── Company exploitation [HD10451]
+│   ├── Tax fraud (momsbedrägerier)
+│   ├── Money laundering
+│   └── Public subsidy extraction
+└── Political consequence: Government crime-fighting credibility undermined
+```
+
+#### Threat 2: Energy Infrastructure Gap (HIGH)
+
+**Category**: Economic / Industrial Competitiveness  
+**Actors**: SD (Josef Fransson) pressuring government; grid operators  
+**Target**: Swedish industrial competitiveness  
+**Evidence**: HD10453 (SVK 15x investment growth; 1 trillion SEK needed in 20 years; nuclear 10 years away)  
+
+**Kill chain**: Grid undersupply → industrial bottlenecks → competitiveness loss → loss of foreign investment → economic nationalism vulnerability.
+
+#### Threat 3: Social Cohesion Erosion (HIGH)
+
+**Category**: Social Policy / Electoral  
+**Actors**: S (coordinated interpellation cluster), women's shelter organizations, municipalities  
+**Target**: Social safety net, vulnerable groups  
+**Evidence**: HD10438 (women's shelters closing), HD10443 (social dumping), HD10450 (sick insurance cuts), HD10440 (occupational doctor shortage)  
+
+#### Threat 4: International Human Rights Obligations (MEDIUM)
+
+**Category**: Foreign policy / Health ethics  
+**Actors**: SD (Nima Gholam Ali Pour), Chinese institutions  
+**Target**: Swedish healthcare ethics, international human rights standing  
+**Evidence**: HD10456 (organ harvesting from Chinese prisoners of conscience; Sweden lacks criminalization of receiving coerced organs; comparison: Spain, Belgium, Israel, Taiwan have legislation)  
+
+#### Threat 5: Constitutional/Rule of Law (MEDIUM)
+
+**Category**: Institutional Integrity  
+**Actors**: Independent MPs (Elsa Widding), legal system self-review  
+**Target**: Judicial independence appearance  
+**Evidence**: HD10452 (challenge to lawyer-reviewing-lawyers in civil cases), HD10441 (rättssäkerhet)  
+
+### MITRE-style TTP Mapping (Political Threats)
+
+| TTP ID | Technique | Actor | Target | Evidence |
+|--------|-----------|-------|--------|----------|
+| PT-GOV-01 | Infiltrate social services | Organized crime | HVB-homes | HD10454 |
+| PT-GOV-02 | Shell company exploitation | Criminal networks | Public subsidies | HD10451 |
+| PT-POL-01 | Coordinated interpellation cluster | S opposition | Government narrative | HD10438/443/450 |
+| PT-POL-02 | Coalition stress testing | SD Fransson | Energy consensus | HD10453 |
+| PT-INTL-01 | Forced organ harvesting | PRC institutions | Swedish healthcare ethics | HD10456 |
+
+### Mermaid: Threat Attack Tree
+
+```mermaid
+graph TD
+    A[Swedish State Integrity Threats] --> B[Organized Crime Vector]
+    A --> C[Social Erosion Vector]
+    A --> D[Energy Gap Vector]
+    A --> E[International Ethics Vector]
+    B --> B1[HVB-hem infiltration HD10454]
+    B --> B2[Corporate crime tools HD10451]
+    B1 --> F[Child welfare failure]
+    B2 --> G[5.5% GDP criminal economy]
+    C --> C1[Women shelters HD10438]
+    C --> C2[Social dumping HD10443]
+    C --> C3[Sick insurance HD10450]
+    D --> D1[Grid undersupply HD10453]
+    D1 --> D2[Gas bridge debate]
+    E --> E1[Organ harvesting HD10456]
+    style A fill:#990000,color:#fff
+    style B fill:#ff0000,color:#fff
+    style C fill:#ff6600,color:#fff
+    style D fill:#ffaa00,color:#000
+    style E fill:#ffcc00,color:#000
+    style F fill:#ff0000,color:#fff
+    style G fill:#ff4400,color:#fff
+```
+
+## Historical Parallels
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/historical-parallels.md -->
+
+### Parallel 1: Asylboende Scandal (2016-2018) → HVB-hem (2026)
+
+**Past**: In 2016-2018, multiple Swedish asylum housing contractors were found to have overcharged the state, hired unqualified staff, and in some cases had connections to organized crime. IVO investigations led to sector restructuring.
+
+**Present (HD10454)**: HVB-homes (residential care for vulnerable youth) with documented criminal operators; police list delayed 2 years; same sector: state-funded social care run by profit-seeking operators.
+
+**Parallel**: The structural failure is identical — state outsourced care to profit-driven operators without adequate oversight. The 2018 reform was partial; criminal operators evidently found alternative routes (HVB-homes).
+
+**Electoral parallel**: The asylum housing scandal contributed to SD gains in 2018. The HVB scandal could reinforce or redirect the crime-governance narrative in different directions in 2026.
+
+---
+
+### Parallel 2: Criminal Economy Estimates (Wennström 2020 → ESO 2026)
+
+**Past**: Joakim Wennström's 2020 research estimated criminal networks had significant economic penetration of Swedish municipalities. Initial media skepticism; later validated by incident evidence.
+
+**Present (HD10451)**: ESO 2026 provides more rigorous estimate of 352bn SEK (5.5% GDP); Brå 2025 provides 23,000 companies figure.
+
+**Parallel**: The evolution from contested research estimate (2020) to establishment report consensus (2026) follows the typical policy validation cycle. Wennström was 5-6 years ahead; ESO/Brå now provide parliamentary-actionable evidence.
+
+**Electoral parallel**: The 2022 election featured crime as the #1 issue dominated by SD's framing (immigrant crime). The 2026 frame shift to "criminal infiltration of state institutions" (crime enabled by corporate structures) is a different and potentially more damaging narrative for a centre-right government.
+
+---
+
+### Parallel 3: Nordic Energy Crises — Finland Olkiluoto vs Sweden
+
+**Past**: Finland's Olkiluoto 3 nuclear reactor experienced years of delays and cost overruns (commissioned 2023). Sweden mothballed nuclear plants in 2019-2020.
+
+**Present (HD10453)**: SD/Fransson demands gas bridge given nuclear 10-year timeline. Sweden faces grid investment need of 1 trillion SEK in 20 years.
+
+**Parallel**: Every Nordic country has faced the trilemma: reliability, affordability, decarbonization. Finland resolved it by building new nuclear despite delays. Sweden delayed the decision and now faces the bridge fuel question.
+
+**Electoral parallel**: The 2006 Swedish election was partially influenced by energy prices. High energy prices in industrial areas are a persistent electoral vulnerability for governing parties.
+
+---
+
+### Parallel 4: Danish/Norwegian Women's Shelter Model
+
+**Past**: Denmark established a national funding floor for women's shelters in the 2000s after a period of municipal variation; Norway followed similar path.
+
+**Present (HD10438)**: Swedish women's shelters closing due to municipal funding withdrawal.
+
+**Parallel**: Sweden is repeating the pre-reform Nordic pattern. The policy solution is known (national funding floor); the political will to implement it is missing.
+
+---
+
+### Parallel Table
+
+| Parallel | Period | Current | Key Lesson | Confidence |
+|----------|--------|---------|-----------|-----------|
+| Asylum housing → HVB-homes | 2016-2018 | 2026 | Outsourcing without oversight repeats | MEDIUM [C2] |
+| Criminal economy underestimated | 2020 | 2026 | ESO/Brå now establish consensus | HIGH [B2] |
+| Finland nuclear success | 2023 | 2026 | Nuclear works but takes time; bridge needed | MEDIUM [C2] |
+| Nordic shelter funding | 2000s | 2026 | National floor avoids municipal variation | HIGH [B2] |
+
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/comparative-international.md -->
 
@@ -1578,64 +1559,6 @@ xychart-beta
     bar [5.5, 4.5, 3.0, 2.8, 1.8, 1.5]
     line [5.5, 4.5, 3.0, 2.8, 1.8, 1.5]
 ```
-
-## Historical Parallels
-<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/historical-parallels.md -->
-
-### Parallel 1: Asylboende Scandal (2016-2018) → HVB-hem (2026)
-
-**Past**: In 2016-2018, multiple Swedish asylum housing contractors were found to have overcharged the state, hired unqualified staff, and in some cases had connections to organized crime. IVO investigations led to sector restructuring.
-
-**Present (HD10454)**: HVB-homes (residential care for vulnerable youth) with documented criminal operators; police list delayed 2 years; same sector: state-funded social care run by profit-seeking operators.
-
-**Parallel**: The structural failure is identical — state outsourced care to profit-driven operators without adequate oversight. The 2018 reform was partial; criminal operators evidently found alternative routes (HVB-homes).
-
-**Electoral parallel**: The asylum housing scandal contributed to SD gains in 2018. The HVB scandal could reinforce or redirect the crime-governance narrative in different directions in 2026.
-
----
-
-### Parallel 2: Criminal Economy Estimates (Wennström 2020 → ESO 2026)
-
-**Past**: Joakim Wennström's 2020 research estimated criminal networks had significant economic penetration of Swedish municipalities. Initial media skepticism; later validated by incident evidence.
-
-**Present (HD10451)**: ESO 2026 provides more rigorous estimate of 352bn SEK (5.5% GDP); Brå 2025 provides 23,000 companies figure.
-
-**Parallel**: The evolution from contested research estimate (2020) to establishment report consensus (2026) follows the typical policy validation cycle. Wennström was 5-6 years ahead; ESO/Brå now provide parliamentary-actionable evidence.
-
-**Electoral parallel**: The 2022 election featured crime as the #1 issue dominated by SD's framing (immigrant crime). The 2026 frame shift to "criminal infiltration of state institutions" (crime enabled by corporate structures) is a different and potentially more damaging narrative for a centre-right government.
-
----
-
-### Parallel 3: Nordic Energy Crises — Finland Olkiluoto vs Sweden
-
-**Past**: Finland's Olkiluoto 3 nuclear reactor experienced years of delays and cost overruns (commissioned 2023). Sweden mothballed nuclear plants in 2019-2020.
-
-**Present (HD10453)**: SD/Fransson demands gas bridge given nuclear 10-year timeline. Sweden faces grid investment need of 1 trillion SEK in 20 years.
-
-**Parallel**: Every Nordic country has faced the trilemma: reliability, affordability, decarbonization. Finland resolved it by building new nuclear despite delays. Sweden delayed the decision and now faces the bridge fuel question.
-
-**Electoral parallel**: The 2006 Swedish election was partially influenced by energy prices. High energy prices in industrial areas are a persistent electoral vulnerability for governing parties.
-
----
-
-### Parallel 4: Danish/Norwegian Women's Shelter Model
-
-**Past**: Denmark established a national funding floor for women's shelters in the 2000s after a period of municipal variation; Norway followed similar path.
-
-**Present (HD10438)**: Swedish women's shelters closing due to municipal funding withdrawal.
-
-**Parallel**: Sweden is repeating the pre-reform Nordic pattern. The policy solution is known (national funding floor); the political will to implement it is missing.
-
----
-
-### Parallel Table
-
-| Parallel | Period | Current | Key Lesson | Confidence |
-|----------|--------|---------|-----------|-----------|
-| Asylum housing → HVB-homes | 2016-2018 | 2026 | Outsourcing without oversight repeats | MEDIUM [C2] |
-| Criminal economy underestimated | 2020 | 2026 | ESO/Brå now establish consensus | HIGH [B2] |
-| Finland nuclear success | 2023 | 2026 | Nuclear works but takes time; bridge needed | MEDIUM [C2] |
-| Nordic shelter funding | 2000s | 2026 | National floor avoids municipal variation | HIGH [B2] |
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/implementation-feasibility.md -->
@@ -1733,6 +1656,83 @@ xychart-beta
 | Women's shelter floor | MEDIUM | LOW | 12-24 months | HIGH |
 | Organ harvesting ban | VERY HIGH | MEDIUM | 6-12 months | HIGH |
 | Gas bridge | LOW | VERY LOW | 5-7 years | LOW |
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/media-framing-analysis.md -->
+
+### Predicted Media Framing by Topic
+
+#### Frame 1: "Criminal Takeover of Child Care" (HD10454)
+**Expected outlets**: SVT Nyheter, SR Ekot, Aftonbladet, Expressen  
+**Framing**: Human interest + investigation. Local follow-up in municipalities. Parental perspectives.  
+**Government counter-frame opportunity**: "We are acting; police delayed, not government."  
+**Opposition frame reinforcement**: "Two-year delay is government failure to act."  
+**Resonance**: HIGH — vulnerable children + organized crime = maximum media traction.
+
+#### Frame 2: "Criminal Economy at 5.5% of GDP" (HD10451, HD10447)
+**Expected outlets**: Dagens Nyheter, SvD, Affärsvärlden, SR  
+**Framing**: Economic/investigative. Abstract until made concrete with company examples.  
+**Key media challenge**: Making 352bn SEK tangible (= 5-6x the defense budget).  
+**Government counter-frame**: "We're the party that fights crime; record enforcement."  
+**Opposition frame**: "You govern but criminals run 23,000 of your businesses."  
+**Resonance**: MEDIUM-HIGH — abstract but large number with concrete Brå evidence.
+
+#### Frame 3: "Women's Shelters Closing Under Right-Wing Government" (HD10438)
+**Expected outlets**: Aftonbladet, Expressen, Feministiskt perspektiv, SR P1  
+**Framing**: Gender politics + welfare state. Close to S's ideological core.  
+**Government counter-frame**: "Municipalities make these decisions independently."  
+**Opposition frame**: "National responsibility for women's safety."  
+**Resonance**: MEDIUM-HIGH — gender-equity topic reliably mobilizes media coverage.
+
+#### Frame 4: "Sweden Silent on Chinese Organ Harvesting" (HD10456)
+**Expected outlets**: SvD, DN, international wires (AP, Reuters if they pick up)  
+**Framing**: Human rights + international ethics. Comparison to Spain, Israel, UK.  
+**Government counter-frame**: "We're working through EU frameworks."  
+**Opposition frame**: "Sweden is an outlier; ban it now."  
+**Resonance**: MEDIUM — niche but internationally resonant; diaspora Chinese-Swedish community interest.
+
+#### Frame 5: "Government Spreads Disinformation on Wind" (HD10448)
+**Expected outlets**: Ny Teknik, Energivärlden, climate media  
+**Framing**: Science vs politics. SD accusing government of misinformation is unusual — government normally accuses SD.  
+**Resonance**: LOW-MEDIUM — niche but ironic; credibility issue for government.
+
+### Media Battlespace Map (Predicted)
+
+| Frame | Amplification Risk | Duration | Electoral Impact |
+|-------|-------------------|---------|-----------------|
+| Criminal child care (HD10454) | VERY HIGH | 2-4 weeks | HIGH |
+| Criminal economy (HD10451) | HIGH | 1-2 weeks | HIGH |
+| Women's shelters (HD10438) | HIGH | 1-2 weeks | MEDIUM |
+| Organ harvesting (HD10456) | MEDIUM | 1 week | LOW-MEDIUM |
+| Wind disinformation (HD10448) | LOW | 3-5 days | LOW |
+
+### Disinformation Risk Assessment
+
+**Primary disinformation risk**: Oversimplification of criminal economy figures. ESO's 352bn SEK estimate may be cited without confidence intervals, creating a false precision.
+
+**Secondary risk**: HD10456 organ harvesting narrative could be amplified with misinformation about Sweden's complicity (Sweden imports organs, not confirmed).
+
+**Mitigation**: Analysis uses "ESO 2026 estimates" language; analysis notes methodological uncertainty in devils-advocate.md.
+
+### Mermaid: Media Framing Landscape
+
+```mermaid
+quadrantChart
+    title Media Frame Resonance vs Duration
+    x-axis Short Duration --> Long Duration
+    y-axis Low Resonance --> High Resonance
+    quadrant-1 High Impact Stories
+    quadrant-2 Slow Burn Stories
+    quadrant-3 Background Noise
+    quadrant-4 Quick Spike Stories
+    HVB Crime: [0.65, 0.90]
+    Criminal Economy: [0.55, 0.80]
+    Womens Shelters: [0.55, 0.72]
+    Organ Harvesting: [0.40, 0.55]
+    Wind Disinformation: [0.25, 0.42]
+    style HVB Crime color:#ff4444
+    style Criminal Economy color:#ff6600
+```
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/devils-advocate.md -->
@@ -2110,13 +2110,6 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/threat-analysis.md)
 - [`documents/HD10438.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/documents/HD10438.md)
 - [`documents/HD10439.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/documents/HD10439.md)
 - [`documents/HD10440.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/documents/HD10440.md)
@@ -2137,12 +2130,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`documents/HD10455.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/documents/HD10455.md)
 - [`documents/HD10456.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/documents/HD10456.md)
 - [`documents/HD10457.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/documents/HD10457.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/interpellations/cross-reference-map.md)

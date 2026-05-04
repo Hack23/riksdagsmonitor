@@ -283,26 +283,52 @@ describe('render-lib — stripProcessMetaLines (per-document journalist-card pre
 });
 
 describe('render-lib — AGGREGATION_ORDER', () => {
-  it('puts reader-value lenses before technical and audit appendices', () => {
+  it('puts journalist-optimal narrative arc before technical and audit appendices', () => {
     const idxSynth = AGGREGATION_ORDER.indexOf('synthesis-summary.md');
     const idxKJ = AGGREGATION_ORDER.indexOf('intelligence-assessment.md');
-    const idxMedia = AGGREGATION_ORDER.indexOf('media-framing-analysis.md');
+    const idxScoring = AGGREGATION_ORDER.indexOf('significance-scoring.md');
+    const idxStakeholders = AGGREGATION_ORDER.indexOf('stakeholder-perspectives.md');
+    const idxCoalition = AGGREGATION_ORDER.indexOf('coalition-mathematics.md');
+    const idxVoter = AGGREGATION_ORDER.indexOf('voter-segmentation.md');
     const idxForward = AGGREGATION_ORDER.indexOf('forward-indicators.md');
     const idxScenario = AGGREGATION_ORDER.indexOf('scenario-analysis.md');
+    const idxRisk = AGGREGATION_ORDER.indexOf('risk-assessment.md');
+    const idxThreat = AGGREGATION_ORDER.indexOf('threat-analysis.md');
+    const idxMedia = AGGREGATION_ORDER.indexOf('media-framing-analysis.md');
     const idxDevils = AGGREGATION_ORDER.indexOf('devils-advocate.md');
-    const idxScoring = AGGREGATION_ORDER.indexOf('significance-scoring.md');
     const idxClassification = AGGREGATION_ORDER.indexOf('classification-results.md');
+
+    // Phase A — Lead & headline judgments are contiguous and ordered.
     expect(idxSynth).toBeGreaterThanOrEqual(0);
     expect(idxKJ).toBe(idxSynth + 1);
     expect(idxScoring).toBe(idxKJ + 1);
-    // Reader-relevant lenses must be surfaced before appendices and
-    // challenge-analysis material so the public article does not bury
-    // media framing / forward indicators.
-    expect(idxMedia).toBe(idxScoring + 1);
-    expect(idxForward).toBeGreaterThan(idxMedia);
-    expect(idxScenario).toBeGreaterThan(idxForward);
-    expect(idxKJ).toBeLessThan(idxScoring);
-    expect(idxMedia).toBeLessThan(idxDevils);
+
+    // Phase C — Actors cluster opens immediately after the so-what
+    // ranking and per-document expansion (which is injected by
+    // aggregate.ts after significance-scoring, not via this array).
+    expect(idxStakeholders).toBe(idxScoring + 1);
+    expect(idxCoalition).toBe(idxStakeholders + 1);
+    expect(idxVoter).toBe(idxCoalition + 1);
+
+    // Phase D — Forward trajectory follows the actors cluster.
+    expect(idxForward).toBeGreaterThan(idxVoter);
+    expect(idxScenario).toBe(idxForward + 1);
+
+    // Phase E — Risk register cluster sits after forward trajectory
+    // and groups risk + threat together.
+    expect(idxRisk).toBeGreaterThan(idxScenario);
+    expect(idxThreat).toBeGreaterThan(idxRisk);
+
+    // Phase F — Media framing comes LATE, immediately before the
+    // devil's-advocate critique. This is the central correction:
+    // readers form their own view of substance first, then are shown
+    // how the story is being framed.
+    expect(idxMedia).toBe(idxDevils - 1);
+    expect(idxMedia).toBeGreaterThan(idxThreat);
+    expect(idxMedia).toBeGreaterThan(idxStakeholders);
+    expect(idxMedia).toBeLessThan(idxClassification);
+
+    // Forward-trajectory + risk register precede the audit appendix.
     expect(idxForward).toBeLessThan(idxClassification);
     expect(idxKJ).toBeLessThan(idxDevils);
   });

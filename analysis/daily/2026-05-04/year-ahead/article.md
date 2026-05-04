@@ -5,7 +5,7 @@ date: 2026-05-04
 subfolder: year-ahead
 slug: 2026-05-04-year-ahead
 source_folder: analysis/daily/2026-05-04/year-ahead
-generated_at: 2026-05-04T09:52:32.709Z
+generated_at: 2026-05-04T12:16:14.378Z
 language: en
 layout: article
 ---
@@ -69,10 +69,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -234,569 +234,6 @@ xychart-beta
   y-axis "DIW Score" 0 --> 80
   bar [75, 48, 48, 48, 24, 27, 18]
 ```
-
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/media-framing-analysis.md -->
-
----
-
-### No-Neutral-Media Declaration
-
-This analysis operates under the v2.1 assumption that all media outlets have inherent editorial perspectives that shape framing. There is no objectively neutral coverage. The analysis maps these perspectives to identify framing effects on Swedish political discourse.
-
----
-
-### Primary Narrative Frames (≥3 required)
-
-#### Frame 1 — "Crime Crisis Resolved" (Incumbent-Supportive)
-
-**Primary outlets**: Aftonbladet editorials (centrist-populist), Expressen (liberal tabloid), Svenska Dagbladet (centre-right), government press releases via riksdagen.se
-
-**Framing mechanism**: Presents the 22% reduction in gang-related shootings (2025 vs 2024) as validation of HC03186/HC03208 legislation. Uses specific statistics ("rekordlågt antal gängskjutningar") to construct a before/after narrative. Avoids comparative European context (Sweden's per-capita gang violence remains highest in Nordic region even after reduction).
-
-**Political beneficiary**: SD and M — both claim primary ownership of criminal law delivery.
-
-**Counter-evidence ignored**: Organised crime has migrated to smaller municipalities; prosecution rates have not improved despite more arrests; Sweden remains outlier in Nordic peer comparison.
-
-#### Frame 2 — "Welfare State Under Threat" (Opposition-Supportive)
-
-**Primary outlets**: Dagens Nyheter (liberal-centrist), Arbetet (trade union aligned), Aftonbladet news section (differentiated from editorial), LO affiliated media
-
-**Framing mechanism**: Focuses on healthcare waiting times, municipal budget deficits (municipalities required to balance budgets by 2026), and wage stagnation relative to 2021 prices. Links Tidö austerity to reduced welfare quality. Invokes the 1991–1994 period (historical-parallels.md §2) as cautionary tale.
-
-**Political beneficiary**: S and V.
-
-**Counter-evidence ignored**: Sweden's public debt trajectory is among the best in EU; fiscal consolidation was necessary after 2020–2021 pandemic spending.
-
-#### Frame 3 — "Sweden's Nuclear Gamble" (Conflict Frame)
-
-**Primary outlets**: Ny Teknik (tech/engineering focus), Miljöaktuellt, SVT Nyheter environment desk, international outlets (Guardian, Der Spiegel)
-
-**Framing mechanism**: Presents HC03203 uranium mining as a contested gamble between industrial energy competitiveness and environmental protection. Uses conflict between government energy minister and Naturvårdsverket position. International outlets frame Sweden as an EU outlier on nuclear energy.
-
-**Political beneficiary**: MP and V (anti-nuclear mobilisation); industrial sector and government narrative (pro-nuclear).
-
-**Counter-evidence noted**: Finland's nuclear success (Olkiluoto 3) provides positive comparator that this frame typically omits.
-
-#### Frame 4 — "Democracy Under Pressure" (Critical Frame)
-
-**Primary outlets**: Journalistförbundet (SJF) media, Reporters Without Borders reporting, international liberal outlets, V and MP communications
-
-**Framing mechanism**: Links HC03155 (emergency powers) + HC03197 (media freedom) to systemic democratic backsliding narrative. Invokes Hungary/Poland comparisons — analytically overblown but rhetorically effective. HC03155's Lagrådet referral cited as evidence of constitutional overreach.
-
-**Political beneficiary**: Opposition broadly; V and MP specifically.
-
-**Counter-evidence**: Sweden ranks #6 in RSF Press Freedom Index 2025; HC03197 is an EU compliance obligation, not a government initiative.
-
----
-
-### Outlet Bias Audit
-
-| Outlet | Type | Lean | Primary Frame Used | DISARM Risk |
-|---|---|---|---|---|
-| Aftonbladet | Tabloid/digital | Centre-left editorial, populist news | Frame 1 + Frame 2 (dual) | LOW |
-| Expressen | Tabloid/digital | Centre-right | Frame 1 | LOW |
-| Dagens Nyheter | Quality daily | Liberal-centrist | Frame 2 + Frame 4 | LOW |
-| Svenska Dagbladet | Quality daily | Centre-right | Frame 1 + Frame 3 | LOW |
-| SVT | Public broadcaster | Legally required balance | All frames | LOW |
-| SD-Kuriren | Party media | Far-right | Frame 1 (extremised) | MEDIUM (partisan) |
-| Riks (nätradio) | Digital | Far-right | Frame 1 + anti-establishment | HIGH (DISARM T0003) |
-| RT Sverige (blocked) | State propaganda | Russian state | Frame 4 (weaponised) | VERY HIGH (T0003, T0008) |
-
-### DISARM Framework Analysis
-
-| TTP | Description | Swedish Vector | Mitigation |
-|---|---|---|---|
-| T0003 — Leverage existing narratives | Amplify Frame 4 ("democratic backslide") to undermine NATO support | Russian-origin social media amplifies HC03155 concerns | MSB Psykologisk försvar monitoring; SVT factcheck |
-| T0049 — Flooding | Coordinated inauthentic SD-supportive content on immigration statistics | Bot networks amplifying crime narratives | Meta/X platform obligations under DSA |
-| T0036 — Misrepresent election results | Pre-emptive "stolen election" narratives if SD underperforms | Domestic far-right (Alternativ för Sverige nexus) | Valmyndigheten public communication |
-| T0008 — Conduct false flag | Fabricated "government documents" showing secret immigration deal | Low probability — no confirmed instance to date | Säpo counterintelligence; press verification |
-
-### IMF Economic Data Media Coverage
-
-**Observation**: IMF WEO April 2026 Sweden projections (2.1% GDP growth) were covered by:
-- Finanstidningen (accurate, with context)
-- Aftonbladet (headline "Sverige sämre än grannar" — technically true but framed as failure)
-- M-aligned communicators (reframing as "sustained recovery")
-
-This pattern of selective citation from IMF data is expected to intensify in campaign period.
-
-## Stakeholder Perspectives
-<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/stakeholder-perspectives.md -->
-
----
-
-### Stakeholder Map
-
-| Stakeholder | Role | Primary Interest | Risk Appetite | Influence |
-|---|---|---|---|---|
-| **Tidö coalition** (M+SD+KD+L) | Government | Re-election; policy delivery | Medium | Very High |
-| **Social Democrats (S)** | Largest opposition party | Electoral majority; welfare state | Low-Medium | Very High |
-| **Riksbank** | Monetary authority | Price stability; financial stability | Neutral | High |
-| **MUST/Säpo** | Security services | Hybrid threat resilience | Low (risk-averse) | Medium-High |
-| **EU Commission** | Regulatory authority | EMFA/NIS2 compliance; single market | Neutral | Medium |
-| **NATO HQ** | Alliance authority | Swedish burden-sharing; 2.4% GDP target | Low | Medium |
-| **Centerpartiet (C)** | Swing party | Agricultural interests; rural communities | Medium | High (swing) |
-| **Industri/Näringsliv (SN)** | Business federation | Stable tax environment; energy competitiveness | Low-Medium | Medium |
-| **LO (labour federation)** | Trade unions | Wage share; employment protection | Low | Medium |
-| **Civil society (NGOs)** | Democratic oversight | Press freedom (HC03197); housing rights | Low | Low-Medium |
-
-### 6-Lens Analysis
-
-#### Lens 1 — Governing Coalition (Tidö: M+SD+KD+L)
-
-The coalition faces a coherence tension between Liberalerna's liberal-humanist values (opposing strict immigration enforcement) and SD's nationalist agenda. Key pre-election risks:
-- **L below 4%** would end the coalition; M would need to partner with C or accept minority government
-- **SD voter satisfaction**: SD base expected criminality results; delivered. HC03186 and HC03208 are SD-branded wins
-- **KD position**: Stable on social conservatism; family policy deliverables secure KD's 5–6% base
-- **Strategy [horizon:election]**: Coalition will frontload legislative delivery before June recess; campaign on crime reduction statistics and defence upgrade narrative
-
-#### Lens 2 — Social Democrats (S)
-
-Sweden's S faces its first genuine path to power since 2021 coalition collapse:
-- **Polling**: S consistently 33–36% (highest since 2018); Magdalena Andersson as challenger is a known quantity
-- **Strategic dilemma**: Must win C into a non-M-blocking arrangement or hope for L's threshold failure
-- **Key commitments [horizon:election]**: Reverse two HC03168 (wind-power tax) decisions; HC03192 housing reform acceleration; halt HC03203 uranium mining implementation pending review
-- **Risk**: If S wins but cannot form government, Riksdag dissolution / second election [horizon:election] invoked under RF 3:3
-
-#### Lens 3 — NATO / External Security Community
-
-- **Position**: Satisfied with Swedish commitment trajectory (HC03205, HC03193, 2.4% GDP path)
-- **Key ask**: Continuity of defence policy across election; NATO Supreme Allied Commander explicitly stated preference for continuity in public statements 2025
-- **Concern [horizon:year]**: If S wins power with MP/V support, V's traditional anti-NATO stance creates political optics problem even if formal policy unchanged
-
-#### Lens 4 — Riksbank
-
-- **Current**: Rate normalisation (estimated 2.0–2.5% by mid-2026); inflation returning to 2% target
-- **Election year risk [horizon:election]**: Whichever party wins may pressure expansionary fiscal policy; Riksbank constitution guarantees independence but political noise is a risk
-- **Concern**: If L falls (tax cuts reversed, welfare expansion from S) → fiscal stimulus in 2027 could reignite inflation
-
-#### Lens 5 — Business / Näringsliv
-
-- **Priority [horizon:year]**: Energy competitiveness — HC03203 (uranium) seen favourably by energy-intensive industry; HC03168 (wind-power tax) seen as retrograde
-- **Labour cost**: LO wage demands in 2026 collective bargaining round (Industriavtalet expires Q2-2026) could push unit labour costs above Nordic average [horizon:quarter]
-- **Regulation**: HC03208 (company secrets) tightens industrial espionage protection — welcomed by defence industry (HC03193 nexus)
-
-#### Lens 6 — Civil Society / Democratic Oversight
-
-- **HC03197 (EU EMFA)**: Swedish journalists union (SJF) concerned about government appointment rights for public broadcaster boards; implementation details critical
-- **HC03155**: Justitieombudsmannen (JO) will scrutinise any pre-election invocation of emergency ordinance authority
-- **HC03189 (virginity checks)**: Criminalisation welcomed by women's rights organisations; implementation monitoring required
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
-graph LR
-  A[Tidö Coalition] -->|legislation| B[Riksdag]
-  B -->|election 13 Sep| C{Mandate}
-  C -->|Tidö II| D[M+SD+KD]
-  C -->|S-led bloc| E[S+MP+V+C?]
-  C -->|Hung parliament| F[Caretaker]
-  D --> G[HC03155/HC03205 continuity]
-  E --> H[HC03203 review / housing focus]
-  F --> I[Constitutional crisis risk]
-```
-
-## Forward Indicators
-<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/forward-indicators.md -->
-
-**Gate requirement**: ≥12 dated indicators across month/quarter/year/cycle/election bands
-**Indicator count**: 15 (exceeds minimum)
-
----
-
-### Indicator Register
-
-| # | Indicator | Band | Target Date | Threshold | Source | Horizon |
-|---|---|---|---|---|---|---|
-| FI-01 | Liberalerna polling average | election | 2026-09-07 | 4.0% threshold pass/fail | Sifo/Kantar 3-poll avg | [horizon:election] |
-| FI-02 | SD polling percentage | election | 2026-09-07 | >21% = Tidö advantage; <18% = S advantage | Demoskop aggregator | [horizon:election] |
-| FI-03 | Lagrådet ruling on HC03155 | quarter | 2026-07-01 | "Lagstiftning bör ändras" = medium risk; "inga anmärkningar" = low risk | Lagrådet.se | [horizon:quarter] |
-| FI-04 | Sweden Q1-2026 GDP flash estimate | month | 2026-05-29 | ≥0.4% QoQ growth → economic recovery on track | SCB nationalräkenskaperna | [horizon:month] |
-| FI-05 | Riksbank policy rate decision | quarter | 2026-06-25 | Rate ≤2.0% = continued stimulus; >2.5% = tightening risk | Riksbank penningpolitik | [horizon:quarter] |
-| FI-06 | NATO Summit Sweden commitment | year | 2026-06-15 | Reaffirmation of 2.4% GDP target = HC03193 continuity signal | NATO Brussels Summit | [horizon:year] |
-| FI-07 | HFD HC03203 uranium injunction | quarter | 2026-08-01 | Injunction granted = mining stalled; dismissed = government wins | HFD (Highest Administrative Court) | [horizon:quarter] |
-| FI-08 | Swedish election campaign opening — crime statistics | election | 2026-08-01 | Gang-related shootings YTD < 50 = government campaign narrative viable | Polismyndigheten statistik | [horizon:election] |
-| FI-09 | Centerpartiet congress resolution on government participation | election | 2026-08-15 | Resolution "neither bloc" = Scenario D risk; "support S" = Scenario B | C party congress | [horizon:election] |
-| FI-10 | Industriavtalet collective bargaining outcome | quarter | 2026-04-30 (est.) | Real wage growth >2% = Segment 1 stabilises; <1% = SD voter attrition | Medlingsinstitutet | [horizon:quarter] |
-| FI-11 | Sweden inflation (KPIF) May 2026 | month | 2026-06-12 | <2.5% = on target; >3% = Riksbank tightening risk | SCB KPI/KPIF | [horizon:month] |
-| FI-12 | Säpo/MUST pre-election threat level | election | 2026-09-01 | Elevated threat level = HC03155 invocation risk; stable = normal election | Säpo annual report / pressmeddelande | [horizon:election] |
-| FI-13 | EU Commission EMFA compliance assessment Sweden | year | 2026-10-01 | "Non-compliant" = enforcement risk; "compliant" = HC03197 success | EU Commission rule of law report | [horizon:year] |
-| FI-14 | Riksdag dissolution / second election call | cycle | 2026-12-31 | Triggered = Scenario D confirmed; not triggered = government formed | Riksdag talman | [horizon:cycle] |
-| FI-15 | Sweden public debt ratio (% GDP) | year | 2026-11-01 | <38% GDP = fiscal headroom maintained (IMF WEO Apr-2026 baseline: 37.8%) | SCB + IMF WEO Apr-2026 | [horizon:year] |
-
----
-
-### Indicator Priority Rankings
-
-**Critical path indicators** (election-determining):
-1. FI-01 (Liberalerna threshold) — single most decisive variable
-2. FI-09 (C party congress) — second most decisive
-3. FI-08 (crime statistics) — SD narrative viability
-
-**Leading indicators for economic scenario**:
-4. FI-04 (Q1 GDP flash) — earliest economic signal
-5. FI-05 (Riksbank rate) — monetary policy trajectory
-6. FI-11 (KPIF inflation) — pricing pressure
-
-**Security/constitutional tripwires**:
-7. FI-03 (Lagrådet HC03155) — constitutional legitimacy
-8. FI-07 (HFD uranium) — energy policy blocking risk
-9. FI-12 (Säpo threat level) — election integrity risk
-
-### Indicator Dashboard Template
-
-```
-STATUS AS OF 2026-05-04:
-FI-01 Liberalerna: 3.8% (⚠️ BELOW THRESHOLD — monitor weekly)
-FI-02 SD: 19.5% (→ NEUTRAL — within expected range)
-FI-03 Lagrådet HC03155: PENDING (⚠️ awaited Q2-2026)
-FI-04 Q1 GDP: PENDING (29 May SCB release)
-FI-05 Riksbank: 2.25% (→ EXPECTED next decision June 25)
-FI-06 NATO Summit: PENDING (June 2026)
-FI-07 HFD uranium: PENDING (challenge not yet filed)
-FI-10 Industriavtalet: PENDING (Q2-2026 completion)
-```
-
-### Collection Plan
-
-| Indicator | Collection frequency | Agent | Method |
-|---|---|---|---|
-| FI-01, FI-02 | Weekly | news-journalist | riksdag-regering MCP + polling aggregator |
-| FI-03 | Monthly | intelligence-operative | lagrådet.se parsing |
-| FI-04, FI-11, FI-15 | Monthly (SCB release) | data-pipeline-specialist | SCB MCP |
-| FI-05 | Per Riksbank meeting | data-pipeline-specialist | Riksbank API |
-| FI-07 | Ad hoc (court filing) | intelligence-operative | HFD förvaltningsrätt |
-| FI-09 | Ad hoc (congress) | news-journalist | C party press releases |
-| FI-12 | Quarterly (Säpo) | intelligence-operative | Säpo.se |
-
-## Scenario Analysis
-<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/scenario-analysis.md -->
-
-**Gate requirement**: ≥4 scenarios + 5 wildcards | probabilities sum to 100%
-
----
-
-### Scenario Tree — September 2026 Election Outcomes
-
-All scenarios anchored on election date: **2026-09-13**.
-
----
-
-#### Scenario A — Tidö II: Strengthened Centre-Right (Probability 32%) [horizon:election]
-
-**Narrative**: Liberalerna clears 4% threshold (final result: 4.2%); SD maintains 19–21%; M stable at 20–21%; KD holds 5–6%. Bloc wins 177–182 seats. Ulf Kristersson forms second government, possible without SD formal support (M+KD+L majority with C abstention).
-
-**Key drivers**:
-- L surges in final week campaign (historically outperforms polls by 1–2pp)
-- SD voter satisfaction with criminal law delivery holds
-- Economic narrative: "We fixed the economy" — GDP growth 2.1% [horizon:year] (IMF WEO Apr-2026, NGDP_RPCH T+1 2026)
-
-**Policy implications [horizon:year]**:
-- HC03155 constitutional beredskap powers extended; NATO 2.4% GDP target confirmed
-- HC03203 uranium mining implementation accelerated
-- HC03192 housing reform deepened (market-rent expansion)
-
-**WEP**: likely [horizon:election]
-
----
-
-#### Scenario B — S-led Majority: Left Bloc with Centerpartiet (Probability 28%) [horizon:election]
-
-**Narrative**: S wins 34–36%; C declines M-blocking agreement and enters confidence-and-supply with S+MP+V (133+22+25+24 = 204 seats — comfortable majority). Andersson PM II government.
-
-**Key drivers**:
-- Liberalerna falls below 4% (removes 16 seats from Tidö)
-- C voters prioritise rural welfare policy over bloc loyalty
-- SD underperforms due to governance fatigue (difficult to be insurgent after 4 years in power)
-
-**Policy implications [horizon:year]**:
-- HC03203 uranium mining placed under moratorium pending review
-- HC03168 wind-power tax reversed
-- HC03155 emergency powers subject to parliamentary oversight committee
-- Defence 2.4% GDP target maintained (bipartisan) but procurement timelines reviewed
-
-**WEP**: likely [horizon:election]
-
----
-
-#### Scenario C — S-led Minority: Unstable Left Government (Probability 18%) [horizon:election]
-
-**Narrative**: S wins 33%; C declines participation; S+MP+V governs with 107+18+24 = 149 seats. Budget requires case-by-case Riksdag support. Parallel to 2021–2022 instability.
-
-**Key drivers**:
-- C blocks both blocs (plays lone actor)
-- V+MP conditions on housing and climate policy force S into uncomfortable commitments
-- Governing minority faces repeated budget amendments
-
-**Policy implications [horizon:year]**:
-- Gridlock on structural reforms
-- HC03203 uranium delayed but not reversed
-- Defence budget maintained via cross-Riksdag agreement
-- Political crisis risk within 18 months [horizon:year]
-
-**WEP**: roughly even chance [horizon:election]
-
----
-
-#### Scenario D — Hung Parliament: Electoral Crisis (Probability 12%) [horizon:election]
-
-**Narrative**: Neither bloc reaches 175 seats. L fails 4%, removing 16 seats. SD at 21%, M at 20% = Tidö without L at 68+73+19 = 160. S+V+MP = 107+24+18 = 149. C at 24 holds balance. Talman initiates government formation round; no government formed by December 2026.
-
-**Key drivers**:
-- Three-way split: Tidö bloc (160) + C (24) + S-bloc (149) — none can govern alone, C refuses both
-- Second election called for Q1-2027 under RF 3:3
-
-**Policy implications [horizon:year]**:
-- Caretaker government administers; HC03155 emergency provisions invoked for continuity
-- NATO commitments honoured by caretaker
-- Economic uncertainty: SEK weakens 3–5% on election night
-
-**WEP**: unlikely [horizon:election]
-
----
-
-#### Scenario E — Supermajority: M+C+KD+L Alliance (Probability 10%) [horizon:election]
-
-**Narrative**: SD collapses to 14–15% (governance disappointment); M surges to 24–25%; C returns to bloc (24); L holds 5%. M+KD+L+C = 25+19+5+24 = 73 seats within a ~190-seat majority without SD. Reversion to 2006–2014 Alliansen model.
-
-**Key drivers**:
-- SD internal conflict over governance record
-- Moderate voters desert SD for M
-- C decides bloc loyalty serves rural interests better than bridge position
-
-**Policy implications [horizon:year]**:
-- Cleaner EU relations without SD nationalist friction
-- HC03203 uranium uncertain — C opposed nuclear historically but recent pivot
-- Social reform agenda without extremism
-
-**WEP**: unlikely [horizon:election]
-
----
-
-### Wildcard Scenarios (5 required)
-
-**WC-1 — Assassination / Serious Attack on Political Leader [horizon:election]**
-Probability: <1%. Trigger: T3.1 gang network provides lone-actor inspiration. Impact: Emergency invocation of HC03155; campaign suspended 2 weeks; sympathy vote benefits incumbent.
-
-**WC-2 — Russian Military Action in Baltic (Art 5 trigger) [horizon:year]**
-Probability: 2–3%. Trigger: Kinetic action against Baltic state or Swedish territory. Impact: All-party war cabinet; election postponed under RF 3:3 (second election) provisions; HC03155 invoked; defence spending emergency supplement.
-
-**WC-3 — Major Financial Crisis (Banking System) [horizon:year]**
-Probability: 3%. Trigger: Commercial property sector collapse cascades into major Swedish bank. Impact: Riksbank emergency rate cut to 0.5%; government rescue package; fiscal space consumed; all parties pivot to crisis management.
-
-**WC-4 — HC03203 Uranium: Supreme Administrative Court (HFD) Injunction [horizon:quarter]**
-Probability: 15%. Trigger: Environmental organisations successfully obtain HFD injunction halting first mining permit. Impact: Uranium mining delayed 2–3 years; major policy embarrassment for government; energy investment uncertainty.
-
-**WC-5 — Liberalerna Merger with Centerpartiet [horizon:year]**
-Probability: 5%. Trigger: L falls below 4% in September election; merger/absorption negotiations initiated by January 2027. Impact: New centre-liberal party of ~9–10%; Swedish politics reordered for 2030 election.
-
----
-
-### Scenario Probability Validation
-
-| Scenario | Probability |
-|---|---|
-| A — Tidö II Strengthened | 32% |
-| B — S-led Majority | 28% |
-| C — S-led Minority | 18% |
-| D — Hung Parliament | 12% |
-| E — Supermajority Alliansen | 10% |
-| **Total** | **100%** ✓ |
-
-## Risk Assessment
-<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/risk-assessment.md -->
-
----
-
-### Risk Register
-
-| # | Risk | L | I | L×I | Owner | Horizon |
-|---|---|---|---|---|---|---|
-| R01 | Electoral hung parliament — no clear mandate | 4 | 4 | **16** | Electoral authority | election |
-| R02 | Liberalerna fails 4% threshold | 3 | 5 | **15** | Party leadership | election |
-| R03 | Geopolitical escalation (Baltic/Arctic) requiring emergency defence spending | 2 | 5 | **10** | Government/MoD | year |
-| R04 | HC03155 constitutional powers misused pre-election | 2 | 4 | **8** | Constitutional Court | year |
-| R05 | IMF growth miss SWE <1.5% 2026 | 2 | 4 | **8** | Riksbank/Finance Ministry | year |
-| R06 | SD voter defection to NSD/AfS — fracturing right bloc | 3 | 3 | **9** | SD leadership | quarter |
-| R07 | UC03203 uranium mining judicial challenge delays | 3 | 3 | **9** | Courts/Lagrådet | quarter |
-| R08 | S/MP/V coalition with C fails to form — alternative: technocratic government | 2 | 3 | **6** | Talman | election |
-| R09 | EU sanctions on Swedish media (HC03197 non-compliance) | 1 | 3 | **3** | Government/EMFA authority | year |
-| R10 | Riksbank rate cut over-correction — property bubble re-inflation | 2 | 3 | **6** | Riksbank | year |
-
-### Heat Map Summary
-
-| | L=1 | L=2 | L=3 | L=4 | L=5 |
-|---|---|---|---|---|---|
-| **I=5** | | R03 | R02 | | |
-| **I=4** | | R04, R05 | | R01 | |
-| **I=3** | R09 | R08, R10 | R06, R07 | | |
-| **I=2** | | | | | |
-| **I=1** | | | | | |
-
-*Red zone (score ≥12): R01, R02, R03*
-
-### Mitigation Priorities
-
-**R01 — Electoral hung parliament [horizon:election]**
-- Trigger: No bloc wins ≥175 seats after September 13, 2026
-- Mitigation: Constitutional HC03155 emergency continuity provisions; Riksdag speaker forms caretaker government
-- Indicator: Polling aggregation 30 days pre-election; election night result
-
-**R02 — Liberalerna fails 4% [horizon:election]**
-- Trigger: L falls below 4% threshold in final ballot count
-- Mitigation: Moderate SD voters maintain M dominance; government could function as M+SD+KD minority (172 seats — insufficient without C)
-- Indicator: Monthly Sifo/Kantar polling for L; party member count
-
-**R03 — Geopolitical escalation [horizon:year]**
-- Trigger: Russian military action against a NATO member in Baltic region
-- Mitigation: HC03155 + HC03205 provide emergency power framework; NAF (Nordic Air Force) joint exercises
-- Indicator: SNBR (Swedish National Board for Psychological Defence) threat level; NATO SACEUR assessments
-
-### Evidence Base
-
-- IMF WEO Apr-2026 vintage: SWE GDP growth T+1 2.1%, downside 1.3% (WEO Apr-2026, NGDP_RPCH)
-- Election polling aggregate: Based on Sifo/Kantar/Demoskop Q1-2026 published averages
-- HC03155 Lagrådet referral pending — constitutional review to confirm ECHR Art 5/6 compatibility
-
-## SWOT Analysis
-<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/swot-analysis.md -->
-
----
-
-### Strengths
-
-- **Fiscal headroom**: Public gross debt below 38% GDP (IMF WEO Apr-2026 vintage; SWE GGXWDG_NGDP T+1 2026) — Sweden enters election year with meaningful expenditure flexibility [HC03155 evidence; IMF WEO Apr-2026]
-- **NATO integration**: Formal membership since March 2024; HC03205 civil defence restructuring and HC03193 defence industry strategy operationalise the Article 5 commitment. Cross-party consensus on 2.4% GDP defence target by 2028 [HC03193; HC03205]
-- **Criminal law momentum**: 18+ major penal-law bills in 2024/25 show legislative capacity that has materially reduced political space for opposition disruption [HC03186; HC03208; HC03189]
-- **Energy diversity**: HC03203 (uranium mining) + existing nuclear base (Forsmark, Ringhals 3) provide long-term energy-price resilience and grid stability, reducing external dependency [HC03203]
-- **Constitutional preparedness**: HC03155 stärkt konstitutionell beredskap brings Swedish emergency law closer to NATO and EU standards [HC03155]
-
-### Weaknesses
-
-- **Coalition arithmetic fragility**: Liberalerna at ~3.5–4% threatens the Tidö bloc's majority; loss of one coalition partner creates minority government dependency on case-by-case opposition support [election polling 2026Q1]
-- **Social inequality widening**: Rapid penal expansion has not been matched by preventive social investment; gang violence statistics plateau despite legislation [HC03186 context]
-- **Energy transition incoherence**: HC03168 (wind-power tax increase) combined with HC03203 (uranium mining) sends conflicting signals to green investors and EU Taxonomy institutions [HC03168; HC03203]
-- **Housing affordability crisis**: HC03192 (presumtionshyra reform) insufficient to address the structural 200,000-unit deficit; young voters below 30 dissatisfied [HC03192]
-- **IMF growth below peer average**: SWE 2.1% vs DNK 2.4%, NOR 2.5%, FIN 2.3% T+1 (IMF WEO Apr-2026 published knowledge) — export competitiveness fragile amid SEK appreciation [horizon:year]
-
-### Opportunities
-
-- **Defence industrial investment**: HC03193 försvarsindustristrategi could catalyse 15–20 BSEK in private R&D investment by 2028 if procurement timelines are credible [HC03193]
-- **Nuclear energy revival**: International context (EU Taxonomy nuclear inclusion, SMR pipeline) means first-mover advantage for Sweden if HC03203 enables domestic supply chain [HC03203]
-- **Post-election mandate clarity**: A decisive September 2026 outcome (either Tidö II with clear majority OR S-led bloc with C support) would resolve 3 years of minority-government budget uncertainty [election analysis]
-- **EU digital single market**: HC03197 EU mediefrihetsförordning compliance positions Swedish public media as a European benchmark at a time of cross-bloc disinformation pressure [HC03197]
-- **Riksbank rate normalisation**: Continued Riksbank rate cuts from 2025 (base rate ca 2.0–2.5%) support property market recovery and consumer demand without inflation reignition [IMF WEO Apr-2026]
-
-### Threats
-
-- **Electoral mandate fragmentation**: A hung parliament with no clear winner prolongs political gridlock into 2027, delaying defence procurement, energy investment, and budget reforms [election scenarios]
-- **Geopolitical shock**: Russian escalation in Baltic region (e.g. Suwalki Gap incident) could force emergency defence spending beyond the 2.4% GDP path, requiring emergency budget in autumn 2026 [HC03155; HC03193]
-- **Constitutional overreach risk**: HC03155 emergency powers invoked pre-election could be used to restrict opposition political activity — an institutional integrity risk per OSCE/Venice Commission standards [HC03155]
-- **IMF growth miss**: If Sweden falls below 1.5% GDP growth in 2026 (IMF WEO Apr-2026 downside scenario), incumbent loses economic credibility; S gains 3–5 percentage points [horizon:year]
-- **Media freedom backslide**: HC03197 implementation risk — government influence on public broadcaster appointment mechanisms under the new media freedom framework [HC03197]
-
-### TOWS Matrix
-
-| | Strengths | Weaknesses |
-|---|---|---|
-| **Opportunities** | ST: Use fiscal space + defence mandate to accelerate HC03193 implementation before election; OW: Use post-election mandate to resolve housing deficit with Riksbank support | |
-| **Threats** | ST: HC03155 emergency powers defensively positioned as NATO obligation rather than domestic tool; TW: Coalition fragility + geopolitical shock = existential coalition risk | |
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
-quadrantChart
-  title SWOT Intensity Matrix
-  x-axis Internal --> External
-  y-axis Negative --> Positive
-  Fiscal headroom: [0.2, 0.85]
-  NATO integration: [0.25, 0.80]
-  Criminal law: [0.15, 0.65]
-  Coalition fragility: [0.2, 0.25]
-  Energy incoherence: [0.3, 0.3]
-  Defence industrial: [0.75, 0.80]
-  Nuclear opportunity: [0.8, 0.75]
-  Electoral gridlock: [0.7, 0.25]
-  Geopolitical shock: [0.85, 0.2]
-```
-
-## Threat Analysis
-<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/threat-analysis.md -->
-
----
-
-### Threat Landscape Overview
-
-Sweden faces a compound threat environment during the pre-election period (May–September 2026): (1) an external security threat from Russian hybrid operations targeting the election; (2) an internal constitutional integrity risk from emergency power legislation (HC03155); (3) a social cohesion threat from concentrated gang violence despite legislative response.
-
-### PTT Category Analysis
-
-#### Category 1 — State-Level External Threats
-
-**T1.1 Russian hybrid influence operations [horizon:election]**
-- Actor: GRU/SVR aligned information operations
-- Target: Swedish election integrity — SD voter mobilisation messaging, anti-NATO narratives
-- Method: Social media manipulation, leaked government documents, disinformation via proxies
-- Likelihood: likely [horizon:election] (assessed HIGH by MUST/Säpo 2025)
-- Impact: 2–5 percentage points swing in key constituencies
-- Countermeasure: HC03197 (EU EMFA), Psykologisk försvarsoperationer under MSB HC03205
-
-**T1.2 Critical infrastructure sabotage [horizon:year]**
-- Actor: State-sponsored, potentially Russian GRU Unit 29155
-- Target: Baltic undersea cables, power grid interconnects (Norden Ring)
-- Likelihood: unlikely [horizon:year] (previous incidents 2023–2024 in Baltic Sea suggest capability)
-- Impact: Catastrophic if successful; HD03155 triggers
-
-#### Category 2 — Internal Constitutional Threats
-
-**T2.1 HC03155 emergency power misuse [horizon:year]**
-- Actor: Government of Sweden (Tidö coalition)
-- Mechanism: Emergency ordinance under new constitutional beredskap framework invoked without proportionate threat
-- Risk: Opposition political activity restricted during election campaign window
-- Likelihood: unlikely [horizon:year] — but the mere existence of mechanism raises OSCE concern
-- Countermeasure: Constitutional Court review; international observation mission
-
-**T2.2 Pre-election electoral law amendment [horizon:election]**
-- Actor: SD or M parliamentary majority seeking advantage
-- Mechanism: Threshold manipulation or ballot-access rules
-- Risk: Reduces opposition representation
-- Likelihood: very unlikely [horizon:election]
-
-#### Category 3 — Societal Cohesion Threats
-
-**T3.1 Gang violence escalation [horizon:quarter]**
-- Current state: Gang-related shootings declined 22% in 2025 vs 2024 (Polismyndigheten data); however, organised crime migration from major cities to smaller municipalities accelerating
-- Legislative response: HC03186 (police firearms expanded authority), HC03208 (company secrets / organised crime financing)
-- Residual risk: Lone-actor inspired attacks on political figures (lone-actor terrorism nexus with gang networks)
-- Likelihood: likely [horizon:quarter] to see at least one high-profile municipality crisis
-
-**T3.2 Social cohesion fracture — immigration backlash [horizon:year]**
-- Trigger: If election campaign produces extreme anti-immigration rhetoric from SD beyond current level
-- Mechanism: Targeting of asylum-seeker centres, civil society organisations
-- Countermeasure: HC03189 (virginity check criminalisation signals values commitment)
-
-### Attack Tree — Election Integrity
-
-```
-Election integrity compromised
-├── External influence operations (T1.1)
-│   ├── Voter suppression targeting specific demographics
-│   └── Disinformation about party positions / vote-counting
-├── Internal administrative failure
-│   ├── Electoral register errors (database vulnerability)
-│   └── Postal vote manipulation (low risk in SE context)
-└── Physical disruption
-    ├── Attack on polling station (T3.1 nexus)
-    └── Attack on candidate/campaign event
-```
-
-### DISARM Framework Alignment
-
-| DISARM TTP | Observed Vector | Countermeasure |
-|---|---|---|
-| T0003 — Leverage existing narratives | Anti-immigration sentiment amplification | MSB Psykologisk försvar monitoring |
-| T0008 — Conduct false flag action | Fake police document leak | Säpo counterintelligence |
-| T0057 — Acquire/rent PII | Voter targeting micro-profiling | GDPR enforcement by IMY |
-| T0049 — Flooding | Pro-SD social media saturation | EU DSA platform obligations |
 
 ## Per-document intelligence
 
@@ -1015,85 +452,80 @@ HC03208 has a significant secondary effect on HC03193 (defence industry strategy
 ### Assessment
 Implementation risk: LOW. Builds on existing IP protection framework; Ekobrottsmyndigheten has confirmed operational readiness. Political support: broad (including S). Election-year salience: low (technical legislation with no voter-facing narrative).
 
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/election-2026-analysis.md -->
-
-**Critical date**: 2026-09-13 | **Horizon**: [horizon:election] | **Confidence**: MEDIUM-HIGH [Admiralty B2]
+## Stakeholder Perspectives
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/stakeholder-perspectives.md -->
 
 ---
 
-### Overview
+### Stakeholder Map
 
-The September 13, 2026 Riksdag election is the most consequential electoral event for Swedish politics in two decades. The 349-seat unicameral Riksdag will be renewed after four years of the Tidö coalition government. The election is projected to be the closest since 1973.
-
-### Current Seat Distribution (2022 Result baseline)
-
-| Party | Leader | Seats (2022) | Poll avg Q1-2026 | Proj. seats 2026 |
+| Stakeholder | Role | Primary Interest | Risk Appetite | Influence |
 |---|---|---|---|---|
-| Sverigedemokraterna (SD) | Jimmie Åkesson | 73 | 19.5% | 68–71 |
-| Moderaterna (M) | Ulf Kristersson | 68 | 20.8% | 70–73 |
-| Socialdemokraterna (S) | Magdalena Andersson | 107 | 34.2% | 116–122 |
-| Vänsterpartiet (V) | Nooshi Dadgostar | 24 | 7.1% | 24–26 |
-| Sverigedemokraterna (SD) | see above | — | — | — |
-| Centerpartiet (C) | Muharrem Demirok | 24 | 7.0% | 24–25 |
-| Kristdemokraterna (KD) | Ebba Busch | 19 | 5.4% | 18–19 |
-| Miljöpartiet (MP) | Märta Stenevi / Per Bolund | 18 | 5.2% | 17–19 |
-| Liberalerna (L) | Johan Pehrson | 16 | 3.8% | 0–14* |
+| **Tidö coalition** (M+SD+KD+L) | Government | Re-election; policy delivery | Medium | Very High |
+| **Social Democrats (S)** | Largest opposition party | Electoral majority; welfare state | Low-Medium | Very High |
+| **Riksbank** | Monetary authority | Price stability; financial stability | Neutral | High |
+| **MUST/Säpo** | Security services | Hybrid threat resilience | Low (risk-averse) | Medium-High |
+| **EU Commission** | Regulatory authority | EMFA/NIS2 compliance; single market | Neutral | Medium |
+| **NATO HQ** | Alliance authority | Swedish burden-sharing; 2.4% GDP target | Low | Medium |
+| **Centerpartiet (C)** | Swing party | Agricultural interests; rural communities | Medium | High (swing) |
+| **Industri/Näringsliv (SN)** | Business federation | Stable tax environment; energy competitiveness | Low-Medium | Medium |
+| **LO (labour federation)** | Trade unions | Wage share; employment protection | Low | Medium |
+| **Civil society (NGOs)** | Democratic oversight | Press freedom (HC03197); housing rights | Low | Low-Medium |
 
-*L projection range: 0 if below 4%; 13–14 if above 4%
+### 6-Lens Analysis
 
-### Coalition Viability Matrix
+#### Lens 1 — Governing Coalition (Tidö: M+SD+KD+L)
 
-| Coalition | Seats (projected) | Majority (≥175)? | Probability |
-|---|---|---|---|
-| Tidö II: M+SD+KD+L (L above 4%) | ~176–180 | ✅ YES | 32% |
-| S+V+MP+C | ~181–192 | ✅ YES | 28% |
-| S+V+MP (without C) | ~157–167 | ❌ NO | — |
-| M+SD+KD (without L) | ~159–164 | ❌ NO | — |
-| Hung (no bloc ≥175) | — | ❌ NO | 12% |
-| Alliansen: M+KD+L+C (without SD) | ~125–131 | ❌ NO | 10%* |
+The coalition faces a coherence tension between Liberalerna's liberal-humanist values (opposing strict immigration enforcement) and SD's nationalist agenda. Key pre-election risks:
+- **L below 4%** would end the coalition; M would need to partner with C or accept minority government
+- **SD voter satisfaction**: SD base expected criminality results; delivered. HC03186 and HC03208 are SD-branded wins
+- **KD position**: Stable on social conservatism; family policy deliverables secure KD's 5–6% base
+- **Strategy [horizon:election]**: Coalition will frontload legislative delivery before June recess; campaign on crime reduction statistics and defence upgrade narrative
 
-*Scenario E requires SD collapse to ~15% for M to compensate; full analysis in scenario-analysis.md
+#### Lens 2 — Social Democrats (S)
 
-### Key Electoral Variables
+Sweden's S faces its first genuine path to power since 2021 coalition collapse:
+- **Polling**: S consistently 33–36% (highest since 2018); Magdalena Andersson as challenger is a known quantity
+- **Strategic dilemma**: Must win C into a non-M-blocking arrangement or hope for L's threshold failure
+- **Key commitments [horizon:election]**: Reverse two HC03168 (wind-power tax) decisions; HC03192 housing reform acceleration; halt HC03203 uranium mining implementation pending review
+- **Risk**: If S wins but cannot form government, Riksdag dissolution / second election [horizon:election] invoked under RF 3:3
 
-**Variable 1 — Liberalerna 4% threshold**: If L finishes above 4%, seats transfer from open pool to L, boosting Tidö to workable majority. If L falls: those 13–16 seats redistribute (primarily to M via proportional system), but bloc loses L's votes entirely from bloc count. **Current L poll: 3.8% — within margin of error of 4.0%. This is the decisive single variable.**
+#### Lens 3 — NATO / External Security Community
 
-**Variable 2 — SD voter retention**: SD won 20.5% in 2022 on promise of entering government. After 4 years as coalition kingmaker, SD's governance record is mixed — criminal law delivered, but immigration numbers only marginally lower than S-era peak (permits fell 2023–2024 but rose 2025 due to labour migration). Estimated SD attrition: 1.5–2.5 percentage points.
+- **Position**: Satisfied with Swedish commitment trajectory (HC03205, HC03193, 2.4% GDP path)
+- **Key ask**: Continuity of defence policy across election; NATO Supreme Allied Commander explicitly stated preference for continuity in public statements 2025
+- **Concern [horizon:year]**: If S wins power with MP/V support, V's traditional anti-NATO stance creates political optics problem even if formal policy unchanged
 
-**Variable 3 — Centerpartiet bloc alignment**: C ran on a "neither bloc" platform in 2022 but will face pressure to decide. C's rural base prioritises agricultural subsidies (EU CAP reform), hospital accessibility, and broadband. S has offered C a preferential agreement package; Tidö has offered an agricultural budget supplement. **C's decision drives Scenarios B vs D.**
+#### Lens 4 — Riksbank
 
-### Electoral Calendar (key dates)
+- **Current**: Rate normalisation (estimated 2.0–2.5% by mid-2026); inflation returning to 2% target
+- **Election year risk [horizon:election]**: Whichever party wins may pressure expansionary fiscal policy; Riksbank constitution guarantees independence but political noise is a risk
+- **Concern**: If L falls (tax cuts reversed, welfare expansion from S) → fiscal stimulus in 2027 could reignite inflation
 
-| Date | Event |
-|---|---|
-| 2026-06-15 | Last day for Riksdag to pass legislation before election recess |
-| 2026-08-01 | Campaign period officially opens; SVT/TV4 debates scheduled |
-| 2026-08-25 | Final pre-election polling (last legal publication) |
-| **2026-09-13** | **Election day** |
-| 2026-09-14 | Preliminary results; Talman begins government formation consultations |
-| 2026-09-28 | Deadline for Talman's first government formation proposal |
-| 2026-10-15 | If no government formed: second round consultations |
-| 2026-12-31 | Constitutional deadline: if no government, second election under RF 3:3 |
+#### Lens 5 — Business / Näringsliv
 
-### Seat Projection Model
+- **Priority [horizon:year]**: Energy competitiveness — HC03203 (uranium) seen favourably by energy-intensive industry; HC03168 (wind-power tax) seen as retrograde
+- **Labour cost**: LO wage demands in 2026 collective bargaining round (Industriavtalet expires Q2-2026) could push unit labour costs above Nordic average [horizon:quarter]
+- **Regulation**: HC03208 (company secrets) tightens industrial espionage protection — welcomed by defence industry (HC03193 nexus)
 
+#### Lens 6 — Civil Society / Democratic Oversight
+
+- **HC03197 (EU EMFA)**: Swedish journalists union (SJF) concerned about government appointment rights for public broadcaster boards; implementation details critical
+- **HC03155**: Justitieombudsmannen (JO) will scrutinise any pre-election invocation of emergency ordinance authority
+- **HC03189 (virginity checks)**: Criminalisation welcomed by women's rights organisations; implementation monitoring required
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+graph LR
+  A[Tidö Coalition] -->|legislation| B[Riksdag]
+  B -->|election 13 Sep| C{Mandate}
+  C -->|Tidö II| D[M+SD+KD]
+  C -->|S-led bloc| E[S+MP+V+C?]
+  C -->|Hung parliament| F[Caretaker]
+  D --> G[HC03155/HC03205 continuity]
+  E --> H[HC03203 review / housing focus]
+  F --> I[Constitutional crisis risk]
 ```
-Assumptions (Q1-2026 poll average):
-- S: 34.2% → ~120 seats
-- M: 20.8% → ~73 seats
-- SD: 19.5% → ~68 seats
-- V: 7.1% → ~25 seats
-- C: 7.0% → ~25 seats
-- MP: 5.2% → ~18 seats
-- KD: 5.4% → ~19 seats
-- L: 3.8% → threshold risk
-
-Scenario A (L above 4%): Tidö = 73+68+19+13 = 173 (insufficient) → C needed
-Scenario B (L below 4%): Tidö = 73+68+19 = 160; S-bloc with C = 120+25+18+25 = 188 ✓
-```
-
-*Note: Seat calculations are indicative based on Sainte-Laguë method approximations.*
 
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/coalition-mathematics.md -->
@@ -1282,235 +714,588 @@ The decisive swing voters in 2026 are in Segments 1, 3, and 4:
 
 Total decisive swing pool: ~330,000 voters in a 7.7M electorate = 4.3% of vote share at stake.
 
-## Comparative International
-<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/comparative-international.md -->
+## Forward Indicators
+<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/forward-indicators.md -->
+
+**Gate requirement**: ≥12 dated indicators across month/quarter/year/cycle/election bands
+**Indicator count**: 15 (exceeds minimum)
 
 ---
 
-### Nordic Peer Comparison Matrix
+### Indicator Register
 
-| Indicator | Sweden | Denmark | Norway | Finland | Source |
-|---|---|---|---|---|---|
-| GDP growth 2026 T+1 | 2.1% | 2.4% | 2.5% | 2.3% | IMF WEO Apr-2026 |
-| Public debt (% GDP) | 37.8% | 29.4% | 40.1% (non-oil) | 45.2% | IMF WEO Apr-2026 |
-| Defence spending (% GDP) 2025 | 2.1% | 2.4% | 2.6% | 2.4% | NATO Secretary General Annual Report 2025 |
-| Government stability | Pre-election fragility | Stable coalition | Stable majority | Stable coalition | Author assessment |
-| Nuclear energy policy | Pivoting to nuclear (HC03203) | No nuclear | No nuclear | 27% nuclear share | National policies |
-| Inflation 2026 | ~2.5% | ~2.3% | ~2.8% | ~2.4% | IMF WEO Apr-2026 |
-| Unemployment 2026 | ~8.5% | ~4.9% | ~3.8% | ~7.4% | IMF WEO Apr-2026, LUR |
+| # | Indicator | Band | Target Date | Threshold | Source | Horizon |
+|---|---|---|---|---|---|---|
+| FI-01 | Liberalerna polling average | election | 2026-09-07 | 4.0% threshold pass/fail | Sifo/Kantar 3-poll avg | [horizon:election] |
+| FI-02 | SD polling percentage | election | 2026-09-07 | >21% = Tidö advantage; <18% = S advantage | Demoskop aggregator | [horizon:election] |
+| FI-03 | Lagrådet ruling on HC03155 | quarter | 2026-07-01 | "Lagstiftning bör ändras" = medium risk; "inga anmärkningar" = low risk | Lagrådet.se | [horizon:quarter] |
+| FI-04 | Sweden Q1-2026 GDP flash estimate | month | 2026-05-29 | ≥0.4% QoQ growth → economic recovery on track | SCB nationalräkenskaperna | [horizon:month] |
+| FI-05 | Riksbank policy rate decision | quarter | 2026-06-25 | Rate ≤2.0% = continued stimulus; >2.5% = tightening risk | Riksbank penningpolitik | [horizon:quarter] |
+| FI-06 | NATO Summit Sweden commitment | year | 2026-06-15 | Reaffirmation of 2.4% GDP target = HC03193 continuity signal | NATO Brussels Summit | [horizon:year] |
+| FI-07 | HFD HC03203 uranium injunction | quarter | 2026-08-01 | Injunction granted = mining stalled; dismissed = government wins | HFD (Highest Administrative Court) | [horizon:quarter] |
+| FI-08 | Swedish election campaign opening — crime statistics | election | 2026-08-01 | Gang-related shootings YTD < 50 = government campaign narrative viable | Polismyndigheten statistik | [horizon:election] |
+| FI-09 | Centerpartiet congress resolution on government participation | election | 2026-08-15 | Resolution "neither bloc" = Scenario D risk; "support S" = Scenario B | C party congress | [horizon:election] |
+| FI-10 | Industriavtalet collective bargaining outcome | quarter | 2026-04-30 (est.) | Real wage growth >2% = Segment 1 stabilises; <1% = SD voter attrition | Medlingsinstitutet | [horizon:quarter] |
+| FI-11 | Sweden inflation (KPIF) May 2026 | month | 2026-06-12 | <2.5% = on target; >3% = Riksbank tightening risk | SCB KPI/KPIF | [horizon:month] |
+| FI-12 | Säpo/MUST pre-election threat level | election | 2026-09-01 | Elevated threat level = HC03155 invocation risk; stable = normal election | Säpo annual report / pressmeddelande | [horizon:election] |
+| FI-13 | EU Commission EMFA compliance assessment Sweden | year | 2026-10-01 | "Non-compliant" = enforcement risk; "compliant" = HC03197 success | EU Commission rule of law report | [horizon:year] |
+| FI-14 | Riksdag dissolution / second election call | cycle | 2026-12-31 | Triggered = Scenario D confirmed; not triggered = government formed | Riksdag talman | [horizon:cycle] |
+| FI-15 | Sweden public debt ratio (% GDP) | year | 2026-11-01 | <38% GDP = fiscal headroom maintained (IMF WEO Apr-2026 baseline: 37.8%) | SCB + IMF WEO Apr-2026 | [horizon:year] |
 
-#### Key Observations
+---
 
-1. **Sweden lags Nordic peers on GDP growth [horizon:year]**: The 0.3–0.4pp gap vs Denmark and Norway reflects slower housing market recovery and higher household debt burden. Sweden's fiscal expansion in election year could narrow gap but risks inflation reignition.
+### Indicator Priority Rankings
 
-2. **Denmark leads on defence burden-sharing**: Denmark's 2.4% GDP defence target already achieved; Sweden's path to 2.4% (2028 target per HC03193) aligns with alliance expectations but requires sustained commitment through government transition.
+**Critical path indicators** (election-determining):
+1. FI-01 (Liberalerna threshold) — single most decisive variable
+2. FI-09 (C party congress) — second most decisive
+3. FI-08 (crime statistics) — SD narrative viability
 
-3. **Sweden's nuclear pivot is Nordic outlier**: HC03203 uranium mining puts Sweden ahead of Norway and Denmark (both anti-nuclear) on long-run energy policy. Finland's established nuclear sector (Olkiluoto 3 operational 2023) provides the closest regional comparator.
+**Leading indicators for economic scenario**:
+4. FI-04 (Q1 GDP flash) — earliest economic signal
+5. FI-05 (Riksbank rate) — monetary policy trajectory
+6. FI-11 (KPIF inflation) — pricing pressure
 
-### NATO Burden-Sharing Context
+**Security/constitutional tripwires**:
+7. FI-03 (Lagrådet HC03155) — constitutional legitimacy
+8. FI-07 (HFD uranium) — energy policy blocking risk
+9. FI-12 (Säpo threat level) — election integrity risk
 
-| Country | Spending % GDP | Spending US$bn | NATO target status |
+### Indicator Dashboard Template
+
+```
+STATUS AS OF 2026-05-04:
+FI-01 Liberalerna: 3.8% (⚠️ BELOW THRESHOLD — monitor weekly)
+FI-02 SD: 19.5% (→ NEUTRAL — within expected range)
+FI-03 Lagrådet HC03155: PENDING (⚠️ awaited Q2-2026)
+FI-04 Q1 GDP: PENDING (29 May SCB release)
+FI-05 Riksbank: 2.25% (→ EXPECTED next decision June 25)
+FI-06 NATO Summit: PENDING (June 2026)
+FI-07 HFD uranium: PENDING (challenge not yet filed)
+FI-10 Industriavtalet: PENDING (Q2-2026 completion)
+```
+
+### Collection Plan
+
+| Indicator | Collection frequency | Agent | Method |
 |---|---|---|---|
-| Sweden | 2.1% (2025) | ~13.2 | On-track to 2.4% by 2028 |
-| Norway | 2.6% | ~9.8 | Exceeding target |
-| Denmark | 2.4% | ~9.1 | At target |
-| Finland | 2.4% | ~7.6 | At target |
-| Germany | 2.1% | ~82.0 | At target (2024 milestone) |
+| FI-01, FI-02 | Weekly | news-journalist | riksdag-regering MCP + polling aggregator |
+| FI-03 | Monthly | intelligence-operative | lagrådet.se parsing |
+| FI-04, FI-11, FI-15 | Monthly (SCB release) | data-pipeline-specialist | SCB MCP |
+| FI-05 | Per Riksbank meeting | data-pipeline-specialist | Riksbank API |
+| FI-07 | Ad hoc (court filing) | intelligence-operative | HFD förvaltningsrätt |
+| FI-09 | Ad hoc (congress) | news-journalist | C party press releases |
+| FI-12 | Quarterly (Säpo) | intelligence-operative | Säpo.se |
 
-*Sweden's defence spending commitment (HC03193) represents the largest proportionate increase in NATO Europe 2024–2028.*
+## Scenario Analysis
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/scenario-analysis.md -->
 
-### EU Comparative Context
-
-**EU Media Freedom Act (EMFA)**: Sweden is among 7 EU member states that must adapt their public broadcaster governance frameworks to comply by Q4-2026. Comparator: France revised CSA appointment rules in 2025. Germany's ARD reform provides Sweden a legislative template [HC03197].
-
-**Criminal Justice Reform**: Sweden's penal law expansion parallels Denmark's 2019–2023 gang package (which reduced gang shootings by 40% in Copenhagen metro). Swedish data suggests similar 18–24 month lag effect [HC03186].
-
-### Historical Parallels (Abbreviated)
-
-**Sweden 1973 election hung parliament**: Last time Sweden had a 175–175 deadlock. Resolution via lottery. Demonstrates that Swedish constitutional framework can handle Scenario D (Hung Parliament 2026) though the institutional cost is high [historical-parallels.md §1].
-
-**Denmark 2019 election — centre-left majority via support party**: S (Mette Frederiksen) won with 3-party support without direct coalition — the model for Scenario B (S-led majority 2026) [scenario-analysis.md §B].
-
-## Historical Parallels
-<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/historical-parallels.md -->
-
-**Gate requirement**: Named precedent ≤40 years with similarity score
+**Gate requirement**: ≥4 scenarios + 5 wildcards | probabilities sum to 100%
 
 ---
 
-### Parallel 1 — Sweden 1973: The 175–174 Hung Parliament (Similarity: 82%)
+### Scenario Tree — September 2026 Election Outcomes
 
-**Context**: The 1973 election produced a 175–175 deadlock (Social Democrats 156 + Communists 19 vs. non-socialist opposition 175). A literal lottery was used on 3 occasions to break tie votes. PM Palme governed in a de facto minority for 3 years.
-
-**Relevance to 2026 Scenario D**: If September 13, 2026 produces a hung parliament with no bloc at 175, the Riksdag will face the same constitutional gridlock mechanism. Sweden's constitutional reform post-1973 (RF 1974) introduced the 4-election speaker formation rounds and the 90-day rule. This framework would govern a 2026 hung parliament. Similarity: **82%** (structural/constitutional parallel remains high even across time distance).
+All scenarios anchored on election date: **2026-09-13**.
 
 ---
 
-### Parallel 2 — Sweden 1991: Alliansen Without SD (Similarity: 74%)
+#### Scenario A — Tidö II: Strengthened Centre-Right (Probability 32%) [horizon:election]
 
-**Context**: Carl Bildt (M) led a four-party Alliansen government (M+FP+C+KD) with 170 seats — a minority government that nonetheless governed Sweden through the 1992 economic crisis (Riksbank interest rate at 500% during the currency crisis). Governing on a minority required securing support from New Democracy (a populist right party with 25 seats).
+**Narrative**: Liberalerna clears 4% threshold (final result: 4.2%); SD maintains 19–21%; M stable at 20–21%; KD holds 5–6%. Bloc wins 177–182 seats. Ulf Kristersson forms second government, possible without SD formal support (M+KD+L majority with C abstention).
 
-**Relevance to 2026 Scenario E**: If SD collapses to ~15% and M surges to 24%, the Alliansen model (M+KD+L+C) — without SD — becomes viable. The 1991 parallel shows that Swedish moderate conservatism can govern without an extreme nationalist support party, but requires case-by-case vote management on each budget item. The 1991–1994 government's management of the 1992 banking crisis without formal majority demonstrated institutional resilience. Similarity: **74%** (party configuration analogous; economic crisis context less applicable in 2026's more stable macro environment).
+**Key drivers**:
+- L surges in final week campaign (historically outperforms polls by 1–2pp)
+- SD voter satisfaction with criminal law delivery holds
+- Economic narrative: "We fixed the economy" — GDP growth 2.1% [horizon:year] (IMF WEO Apr-2026, NGDP_RPCH T+1 2026)
 
----
+**Policy implications [horizon:year]**:
+- HC03155 constitutional beredskap powers extended; NATO 2.4% GDP target confirmed
+- HC03203 uranium mining implementation accelerated
+- HC03192 housing reform deepened (market-rent expansion)
 
-### Parallel 3 — Denmark 2019: S Minority + "Pivot" Support (Similarity: 69%)
-
-**Context**: Mette Frederiksen (S) won Denmark's 2019 election with a narrow majority supported by Radikale Venstre, SF, and Alternativet — without formal coalition partnership. The government governed on "confidence and supply" from external parties, avoiding formal coalition constraints. The S government adopted a restrictive immigration policy that moved rightward relative to traditional social-democratic norms, successfully defusing the immigration wedge that had benefited the populist right.
-
-**Relevance to 2026 Scenario B**: If Magdalena Andersson forms an S-led government supported (not joined) by V, MP, and C, the Danish 2019 model provides the operational template. The risk: external support parties (V, MP) will demand policy concessions that force S rightward on energy (against HC03203) or leftward on welfare (against fiscal consolidation). The Danish parallel suggests S can manage this tension for 2–3 years before external partners fracture. Similarity: **69%** (governance model directly applicable; political context partially different — Sweden's SD/M dynamic differs from Denmark's DF/V).
-
----
-
-### Parallel 4 — Sweden 2021 Budget Crisis (Similarity: 88%)
-
-**Context**: The Stefan Löfven S+MP government lost a no-confidence vote and eventually fell when Centerpartiet withdrew support over housing market liberalisation (hyresmodell). This triggered the most serious Swedish constitutional crisis since 1973 — a new PM election process under RF 6:4 requiring Speaker nomination. Löfven resigned and was replaced by Magdalena Andersson in November 2021 (who became PM for 7 days before also losing a confidence vote — a unique constitutional occurrence — before winning it again).
-
-**Relevance to 2026 Scenario C** (S-led minority without C): The 2021 crisis is the most direct recent parallel for a fragile S minority government. The proximate cause — C withdrawing support over housing policy — is directly analogous to the present situation where C's stance on HC03192 (presumtionshyra) remains contested. If Andersson forms a minority government in 2026 without securing a stable C support agreement, the 2021 playbook suggests government collapse within 12–18 months. Similarity: **88%** (highest similarity — same political actors, same structural weakness, same proximate policy flashpoint).
-
-## Implementation Feasibility
-<!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/implementation-feasibility.md -->
+**WEP**: likely [horizon:election]
 
 ---
 
-### Statskontoret Assessment Row
+#### Scenario B — S-led Majority: Left Bloc with Centerpartiet (Probability 28%) [horizon:election]
 
-| Evaluation dimension | Finding |
+**Narrative**: S wins 34–36%; C declines M-blocking agreement and enters confidence-and-supply with S+MP+V (133+22+25+24 = 204 seats — comfortable majority). Andersson PM II government.
+
+**Key drivers**:
+- Liberalerna falls below 4% (removes 16 seats from Tidö)
+- C voters prioritise rural welfare policy over bloc loyalty
+- SD underperforms due to governance fatigue (difficult to be insurgent after 4 years in power)
+
+**Policy implications [horizon:year]**:
+- HC03203 uranium mining placed under moratorium pending review
+- HC03168 wind-power tax reversed
+- HC03155 emergency powers subject to parliamentary oversight committee
+- Defence 2.4% GDP target maintained (bipartisan) but procurement timelines reviewed
+
+**WEP**: likely [horizon:election]
+
+---
+
+#### Scenario C — S-led Minority: Unstable Left Government (Probability 18%) [horizon:election]
+
+**Narrative**: S wins 33%; C declines participation; S+MP+V governs with 107+18+24 = 149 seats. Budget requires case-by-case Riksdag support. Parallel to 2021–2022 instability.
+
+**Key drivers**:
+- C blocks both blocs (plays lone actor)
+- V+MP conditions on housing and climate policy force S into uncomfortable commitments
+- Governing minority faces repeated budget amendments
+
+**Policy implications [horizon:year]**:
+- Gridlock on structural reforms
+- HC03203 uranium delayed but not reversed
+- Defence budget maintained via cross-Riksdag agreement
+- Political crisis risk within 18 months [horizon:year]
+
+**WEP**: roughly even chance [horizon:election]
+
+---
+
+#### Scenario D — Hung Parliament: Electoral Crisis (Probability 12%) [horizon:election]
+
+**Narrative**: Neither bloc reaches 175 seats. L fails 4%, removing 16 seats. SD at 21%, M at 20% = Tidö without L at 68+73+19 = 160. S+V+MP = 107+24+18 = 149. C at 24 holds balance. Talman initiates government formation round; no government formed by December 2026.
+
+**Key drivers**:
+- Three-way split: Tidö bloc (160) + C (24) + S-bloc (149) — none can govern alone, C refuses both
+- Second election called for Q1-2027 under RF 3:3
+
+**Policy implications [horizon:year]**:
+- Caretaker government administers; HC03155 emergency provisions invoked for continuity
+- NATO commitments honoured by caretaker
+- Economic uncertainty: SEK weakens 3–5% on election night
+
+**WEP**: unlikely [horizon:election]
+
+---
+
+#### Scenario E — Supermajority: M+C+KD+L Alliance (Probability 10%) [horizon:election]
+
+**Narrative**: SD collapses to 14–15% (governance disappointment); M surges to 24–25%; C returns to bloc (24); L holds 5%. M+KD+L+C = 25+19+5+24 = 73 seats within a ~190-seat majority without SD. Reversion to 2006–2014 Alliansen model.
+
+**Key drivers**:
+- SD internal conflict over governance record
+- Moderate voters desert SD for M
+- C decides bloc loyalty serves rural interests better than bridge position
+
+**Policy implications [horizon:year]**:
+- Cleaner EU relations without SD nationalist friction
+- HC03203 uranium uncertain — C opposed nuclear historically but recent pivot
+- Social reform agenda without extremism
+
+**WEP**: unlikely [horizon:election]
+
+---
+
+### Wildcard Scenarios (5 required)
+
+**WC-1 — Assassination / Serious Attack on Political Leader [horizon:election]**
+Probability: <1%. Trigger: T3.1 gang network provides lone-actor inspiration. Impact: Emergency invocation of HC03155; campaign suspended 2 weeks; sympathy vote benefits incumbent.
+
+**WC-2 — Russian Military Action in Baltic (Art 5 trigger) [horizon:year]**
+Probability: 2–3%. Trigger: Kinetic action against Baltic state or Swedish territory. Impact: All-party war cabinet; election postponed under RF 3:3 (second election) provisions; HC03155 invoked; defence spending emergency supplement.
+
+**WC-3 — Major Financial Crisis (Banking System) [horizon:year]**
+Probability: 3%. Trigger: Commercial property sector collapse cascades into major Swedish bank. Impact: Riksbank emergency rate cut to 0.5%; government rescue package; fiscal space consumed; all parties pivot to crisis management.
+
+**WC-4 — HC03203 Uranium: Supreme Administrative Court (HFD) Injunction [horizon:quarter]**
+Probability: 15%. Trigger: Environmental organisations successfully obtain HFD injunction halting first mining permit. Impact: Uranium mining delayed 2–3 years; major policy embarrassment for government; energy investment uncertainty.
+
+**WC-5 — Liberalerna Merger with Centerpartiet [horizon:year]**
+Probability: 5%. Trigger: L falls below 4% in September election; merger/absorption negotiations initiated by January 2027. Impact: New centre-liberal party of ~9–10%; Swedish politics reordered for 2030 election.
+
+---
+
+### Scenario Probability Validation
+
+| Scenario | Probability |
 |---|---|
-| **Statskontoret relevance** | No Statskontoret evaluation documents found in 2024/25 riksdag proposition corpus for the 10 primary documents analysed. This absence noted per data-download-manifest.md §full-text-fallback annotation. |
-| **Independent impact assessments** | HC03193 (defence industry strategy) cites Totalförsvarets forskningsinstitut (FOI) as independent advisor; no published FOI impact assessment retrieved. HC03155 cites Justitiedepartementet's own constitutional analysis — not independent. |
-| **Gap note** | The absence of Statskontoret evaluations for the highest-significance documents (HC03155, HC03205, HC03193) is itself analytically significant: major constitutional and defence reforms are being passed without independent administrative review of implementation capacity. |
+| A — Tidö II Strengthened | 32% |
+| B — S-led Majority | 28% |
+| C — S-led Minority | 18% |
+| D — Hung Parliament | 12% |
+| E — Supermajority Alliansen | 10% |
+| **Total** | **100%** ✓ |
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/election-2026-analysis.md -->
+
+**Critical date**: 2026-09-13 | **Horizon**: [horizon:election] | **Confidence**: MEDIUM-HIGH [Admiralty B2]
 
 ---
 
-### Policy Implementation Feasibility Matrix
+### Overview
 
-| Policy / Document | Legal Status | Institutional Capacity | Resource Adequacy | Implementation Risk |
+The September 13, 2026 Riksdag election is the most consequential electoral event for Swedish politics in two decades. The 349-seat unicameral Riksdag will be renewed after four years of the Tidö coalition government. The election is projected to be the closest since 1973.
+
+### Current Seat Distribution (2022 Result baseline)
+
+| Party | Leader | Seats (2022) | Poll avg Q1-2026 | Proj. seats 2026 |
 |---|---|---|---|---|
-| HC03155 — konstitutionell beredskap | Lagrådet referral pending | Justitiedepartementet + Försvarsdepartementet | HIGH (existing state capacity) | MEDIUM — legal uncertainty until Lagrådet clears |
-| HC03205 — civil defence agency | Enacted | New agency being established | MEDIUM (staffing gap noted) | MEDIUM — 2026 entry into force; recruitment timeline |
-| HC03193 — försvarsindustristrategi | Enacted | FMV + defence companies | MEDIUM-HIGH (private sector dependent) | MEDIUM — procurement timeline 2026–2030 |
-| HC03203 — uranium mining | Enacted | Bergsstaten + Naturvårdsverket | LOW (permit process new) | HIGH — legal challenges expected; no domestic precedent |
-| HC03197 — EU media freedom | EU obligation | Kulturdepartementet + PTS | MEDIUM | MEDIUM — appointment rules contested |
-| HC03186 — police firearms | Enacted | Polismyndigheten | MEDIUM (training required) | LOW — operational implementation well-defined |
-| HC03208 — company secrets | Enacted | Åklagarmyndigheten | MEDIUM-HIGH | LOW — builds on existing IP framework |
-| HC03168 — wind-power tax | Enacted | Skatteverket | HIGH | LOW — administrative capacity high |
-| HC03192 — presumtionshyra | Enacted | Hyresnämnden | MEDIUM | MEDIUM — rent negotiation process complex |
-| HC03189 — virginity checks | Enacted | Polismyndigheten + Healthcare | MEDIUM | LOW-MEDIUM — definitional scope requires guidance |
+| Sverigedemokraterna (SD) | Jimmie Åkesson | 73 | 19.5% | 68–71 |
+| Moderaterna (M) | Ulf Kristersson | 68 | 20.8% | 70–73 |
+| Socialdemokraterna (S) | Magdalena Andersson | 107 | 34.2% | 116–122 |
+| Vänsterpartiet (V) | Nooshi Dadgostar | 24 | 7.1% | 24–26 |
+| Sverigedemokraterna (SD) | see above | — | — | — |
+| Centerpartiet (C) | Muharrem Demirok | 24 | 7.0% | 24–25 |
+| Kristdemokraterna (KD) | Ebba Busch | 19 | 5.4% | 18–19 |
+| Miljöpartiet (MP) | Märta Stenevi / Per Bolund | 18 | 5.2% | 17–19 |
+| Liberalerna (L) | Johan Pehrson | 16 | 3.8% | 0–14* |
 
-### Critical Implementation Path
+*L projection range: 0 if below 4%; 13–14 if above 4%
 
-**Highest-risk implementation: HC03203 (Uranium Mining)**
+### Coalition Viability Matrix
 
-1. **Legal challenge phase** (2026 Q2–Q3): Environmental organisations expected to file application for HFD injunction within 90 days of Bergsstaten issuing first exploration permits. Probability of injunction: 35% (WC-4 from scenario-analysis.md).
+| Coalition | Seats (projected) | Majority (≥175)? | Probability |
+|---|---|---|---|
+| Tidö II: M+SD+KD+L (L above 4%) | ~176–180 | ✅ YES | 32% |
+| S+V+MP+C | ~181–192 | ✅ YES | 28% |
+| S+V+MP (without C) | ~157–167 | ❌ NO | — |
+| M+SD+KD (without L) | ~159–164 | ❌ NO | — |
+| Hung (no bloc ≥175) | — | ❌ NO | 12% |
+| Alliansen: M+KD+L+C (without SD) | ~125–131 | ❌ NO | 10%* |
 
-2. **Euratom notification** (2026 Q2): Sweden must notify Euratom under the Euratom Treaty Art 41 before committing investment. Euratom response timeline: 6 months minimum.
+*Scenario E requires SD collapse to ~15% for M to compensate; full analysis in scenario-analysis.md
 
-3. **Planning permission** (2026–2027): Mining operations require municipal planning permission (plan- och bygglagen), environmental impact assessment (miljökonsekvensbeskrivning), and Natura 2000 assessment if near protected areas.
+### Key Electoral Variables
 
-**Earliest feasible uranium mining commencement**: 2029–2030 (even without legal challenge).
+**Variable 1 — Liberalerna 4% threshold**: If L finishes above 4%, seats transfer from open pool to L, boosting Tidö to workable majority. If L falls: those 13–16 seats redistribute (primarily to M via proportional system), but bloc loses L's votes entirely from bloc count. **Current L poll: 3.8% — within margin of error of 4.0%. This is the decisive single variable.**
 
-### Resource Adequacy Assessment
+**Variable 2 — SD voter retention**: SD won 20.5% in 2022 on promise of entering government. After 4 years as coalition kingmaker, SD's governance record is mixed — criminal law delivered, but immigration numbers only marginally lower than S-era peak (permits fell 2023–2024 but rose 2025 due to labour migration). Estimated SD attrition: 1.5–2.5 percentage points.
 
-**Defence (HC03193/HC03205)**: The 2.4% GDP target (2028) implies annual defence budget of approximately 180 BSEK by 2027 (IMF WEO Apr-2026, SWE GDP trajectory). Current budget is ~130 BSEK. Gap: ~50 BSEK requires either new revenue (defence tax proposed) or reallocation from other budgets.
+**Variable 3 — Centerpartiet bloc alignment**: C ran on a "neither bloc" platform in 2022 but will face pressure to decide. C's rural base prioritises agricultural subsidies (EU CAP reform), hospital accessibility, and broadband. S has offered C a preferential agreement package; Tidö has offered an agricultural budget supplement. **C's decision drives Scenarios B vs D.**
 
-**Civil defence (HC03205)**: New agency inherits MSB staff (~950 FTE) but requires additional 300–400 specialist roles for the expanded civil-crisis mandate. Recruitment market for security specialists is constrained Nordic-wide.
+### Electoral Calendar (key dates)
 
-**Police (HC03186)**: Polismyndigheten is currently below its own 2025 staffing target (37,000 officers vs 35,500 actual). HC03186 expanded operational powers create accountability requirements that require additional supervisory capacity.
+| Date | Event |
+|---|---|
+| 2026-06-15 | Last day for Riksdag to pass legislation before election recess |
+| 2026-08-01 | Campaign period officially opens; SVT/TV4 debates scheduled |
+| 2026-08-25 | Final pre-election polling (last legal publication) |
+| **2026-09-13** | **Election day** |
+| 2026-09-14 | Preliminary results; Talman begins government formation consultations |
+| 2026-09-28 | Deadline for Talman's first government formation proposal |
+| 2026-10-15 | If no government formed: second round consultations |
+| 2026-12-31 | Constitutional deadline: if no government, second election under RF 3:3 |
 
-## PESTLE Analysis
-<!-- source: pestle-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/pestle-analysis.md -->
+### Seat Projection Model
+
+```
+Assumptions (Q1-2026 poll average):
+- S: 34.2% → ~120 seats
+- M: 20.8% → ~73 seats
+- SD: 19.5% → ~68 seats
+- V: 7.1% → ~25 seats
+- C: 7.0% → ~25 seats
+- MP: 5.2% → ~18 seats
+- KD: 5.4% → ~19 seats
+- L: 3.8% → threshold risk
+
+Scenario A (L above 4%): Tidö = 73+68+19+13 = 173 (insufficient) → C needed
+Scenario B (L below 4%): Tidö = 73+68+19 = 160; S-bloc with C = 120+25+18+25 = 188 ✓
+```
+
+*Note: Seat calculations are indicative based on Sainte-Laguë method approximations.*
+
+## Risk Assessment
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/risk-assessment.md -->
 
 ---
 
-### Political Dimension
+### Risk Register
 
-| Factor | Assessment | Impact | Horizon |
-|---|---|---|---|
-| Election 2026-09-13 | The defining political event; government change possible | Critical | [horizon:election] |
-| Coalition fragility (L at 3.8%) | Tidö majority margin of 1 seat; any L polling drop triggers realignment | High | [horizon:election] |
-| HC03155 constitutional beredskap | Emergency powers framework pending Lagrådet — legitimacy risk | High | [horizon:year] |
-| SD governance record | First time SD in government; traditional insurgent party faces accountability test | High | [horizon:election] |
-| C (Centerpartiet) swing position | Decisive for both coalition formation scenarios | Critical | [horizon:election] |
-| Cross-party defence consensus | NATO 2.4% GDP target supported across M+S+KD+C | Medium | [horizon:year] |
-| EU Council Presidency | Sweden held EU Presidency 2023; no current EU chairmanship burden | Low | [horizon:year] |
+| # | Risk | L | I | L×I | Owner | Horizon |
+|---|---|---|---|---|---|---|
+| R01 | Electoral hung parliament — no clear mandate | 4 | 4 | **16** | Electoral authority | election |
+| R02 | Liberalerna fails 4% threshold | 3 | 5 | **15** | Party leadership | election |
+| R03 | Geopolitical escalation (Baltic/Arctic) requiring emergency defence spending | 2 | 5 | **10** | Government/MoD | year |
+| R04 | HC03155 constitutional powers misused pre-election | 2 | 4 | **8** | Constitutional Court | year |
+| R05 | IMF growth miss SWE <1.5% 2026 | 2 | 4 | **8** | Riksbank/Finance Ministry | year |
+| R06 | SD voter defection to NSD/AfS — fracturing right bloc | 3 | 3 | **9** | SD leadership | quarter |
+| R07 | UC03203 uranium mining judicial challenge delays | 3 | 3 | **9** | Courts/Lagrådet | quarter |
+| R08 | S/MP/V coalition with C fails to form — alternative: technocratic government | 2 | 3 | **6** | Talman | election |
+| R09 | EU sanctions on Swedish media (HC03197 non-compliance) | 1 | 3 | **3** | Government/EMFA authority | year |
+| R10 | Riksbank rate cut over-correction — property bubble re-inflation | 2 | 3 | **6** | Riksbank | year |
 
-### Economic Dimension
+### Heat Map Summary
 
-| Factor | Assessment | Impact | Horizon |
-|---|---|---|---|
-| GDP growth 2.1% T+1 (2026) | Below Nordic peer average (DK 2.4%, NO 2.5%) | Medium | [horizon:year] |
-| Riksbank rate normalisation | Rate at ~2.25%; cuts expected to continue to 2.0% by year-end | Medium | [horizon:year] |
-| Household debt 170% of income | Elevated debt limits consumer demand recovery post-rate shock | Medium-High | [horizon:year] |
-| Public sector fiscal balance | Gross debt <38% GDP — fiscal headroom for stimulus | Medium | [horizon:year] |
-| Defence budget ramp-up | 50 BSEK gap to 2.4% GDP target (2028) — fiscal pressure | High | [horizon:year] |
-| Energy price trajectory | Lower European gas prices reduce industrial cost pressure | Medium | [horizon:year] |
-| Industriavtalet outcome | Collective bargaining: real wage growth vs inflation balance | High | [horizon:quarter] |
+| | L=1 | L=2 | L=3 | L=4 | L=5 |
+|---|---|---|---|---|---|
+| **I=5** | | R03 | R02 | | |
+| **I=4** | | R04, R05 | | R01 | |
+| **I=3** | R09 | R08, R10 | R06, R07 | | |
+| **I=2** | | | | | |
+| **I=1** | | | | | |
 
-### Social Dimension
+*Red zone (score ≥12): R01, R02, R03*
 
-| Factor | Assessment | Impact | Horizon |
-|---|---|---|---|
-| Gang violence plateau | 22% reduction 2025 vs 2024; remains highest in Nordic region per capita | High | [horizon:year] |
-| Housing affordability | 200,000-unit deficit; young voter concern; HC03192 insufficient | High | [horizon:election] |
-| Healthcare waiting times | #1 voter concern (Ipsos 2026Q1); municipal budget pressure | High | [horizon:election] |
-| Immigration and integration | Net migration declining; integration outcomes variable; SD leverage | Medium-High | [horizon:election] |
-| Demographic ageing | Pension system adequacy; elder care staffing | Medium | [horizon:year] |
-| Educational quality | PISA results showing improvement trajectory; teacher shortage | Medium | [horizon:year] |
+### Mitigation Priorities
 
-### Technological Dimension
+**R01 — Electoral hung parliament [horizon:election]**
+- Trigger: No bloc wins ≥175 seats after September 13, 2026
+- Mitigation: Constitutional HC03155 emergency continuity provisions; Riksdag speaker forms caretaker government
+- Indicator: Polling aggregation 30 days pre-election; election night result
 
-| Factor | Assessment | Impact | Horizon |
-|---|---|---|---|
-| AI and automation | Swedish tech sector growing; AI adoption in manufacturing accelerating | Medium | [horizon:year] |
-| Nuclear SMR pipeline | HC03203 enables uranium supply; SMR technology (Vattenfall interest) | High | [horizon:year] |
-| Cybersecurity | Säpo/FRA cyber threats increasing; NIS2 implementation 2024 | High | [horizon:year] |
-| Digital public services | Swedish e-government infrastructure robust; minor security gaps | Low | [horizon:year] |
-| Defence technology (HC03193) | Gripen/SAAB R&D; AI-enabled C4ISR investment | High | [horizon:year] |
-| 5G infrastructure | Ericsson market position; China supply chain exclusion maintained | Medium | [horizon:year] |
+**R02 — Liberalerna fails 4% [horizon:election]**
+- Trigger: L falls below 4% threshold in final ballot count
+- Mitigation: Moderate SD voters maintain M dominance; government could function as M+SD+KD minority (172 seats — insufficient without C)
+- Indicator: Monthly Sifo/Kantar polling for L; party member count
 
-### Legal Dimension
+**R03 — Geopolitical escalation [horizon:year]**
+- Trigger: Russian military action against a NATO member in Baltic region
+- Mitigation: HC03155 + HC03205 provide emergency power framework; NAF (Nordic Air Force) joint exercises
+- Indicator: SNBR (Swedish National Board for Psychological Defence) threat level; NATO SACEUR assessments
 
-| Factor | Assessment | Impact | Horizon |
-|---|---|---|---|
-| HC03155 Lagrådet review | Constitutional emergency powers review pending | Critical | [horizon:quarter] |
-| HC03203 HFD challenge | Uranium mining legal challenge expected Q2-2026 | High | [horizon:quarter] |
-| EMFA (HC03197) compliance | EU Media Freedom Act implementation deadline Q4-2026 | Medium | [horizon:year] |
-| NIS2 Directive implementation | Cybersecurity framework in force 2024; compliance verification | Medium | [horizon:year] |
-| EU AI Act compliance | Swedish public sector AI governance requirements 2025–2026 | Medium | [horizon:year] |
-| Criminal law expansion | 18+ penal law bills — cumulative constitutional rights pressure (ECHR Art 5/6) | Medium-High | [horizon:year] |
-| Euratom notification | HC03203 triggers Art 41 Euratom Treaty notification | High | [horizon:quarter] |
+### Evidence Base
 
-### Environmental Dimension
+- IMF WEO Apr-2026 vintage: SWE GDP growth T+1 2.1%, downside 1.3% (WEO Apr-2026, NGDP_RPCH)
+- Election polling aggregate: Based on Sifo/Kantar/Demoskop Q1-2026 published averages
+- HC03155 Lagrådet referral pending — constitutional review to confirm ECHR Art 5/6 compatibility
 
-| Factor | Assessment | Impact | Horizon |
-|---|---|---|---|
-| HC03203 uranium mining — Laponia adjacent | Environmental NGO mobilisation; EU Taxonomy concerns | High | [horizon:year] |
-| HC03168 wind-power tax increase | Contradicts green investment signal; chills wind project pipeline | Medium-High | [horizon:year] |
-| Carbon neutrality 2045 target | Sweden committed; energy mix needs nuclear + renewables | High | [horizon:year] |
-| Biodiversity and Natura 2000 | Mining expansion near protected areas requires Natura 2000 assessment | Medium | [horizon:year] |
-| Nordic climate cooperation | Sweden active in Nordic climate council; good international positioning | Low | [horizon:year] |
-| Baltic Sea pollution | Ongoing challenge; Sweden's phosphorus reduction commitments | Low | [horizon:year] |
+## SWOT Analysis
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/swot-analysis.md -->
 
 ---
 
-### PESTLE Summary Assessment
+### Strengths
 
-**Critical dimensions**: Political (election) + Legal (HC03155/HC03203) + Economic (growth below peers)
-**Opportunity dimensions**: Technological (nuclear/defence tech) + Social (partial crime reduction)
-**Watch dimensions**: Environmental (HC03203/HC03168 tension) + Economic (household debt risk)
+- **Fiscal headroom**: Public gross debt below 38% GDP (IMF WEO Apr-2026 vintage; SWE GGXWDG_NGDP T+1 2026) — Sweden enters election year with meaningful expenditure flexibility [HC03155 evidence; IMF WEO Apr-2026]
+- **NATO integration**: Formal membership since March 2024; HC03205 civil defence restructuring and HC03193 defence industry strategy operationalise the Article 5 commitment. Cross-party consensus on 2.4% GDP defence target by 2028 [HC03193; HC03205]
+- **Criminal law momentum**: 18+ major penal-law bills in 2024/25 show legislative capacity that has materially reduced political space for opposition disruption [HC03186; HC03208; HC03189]
+- **Energy diversity**: HC03203 (uranium mining) + existing nuclear base (Forsmark, Ringhals 3) provide long-term energy-price resilience and grid stability, reducing external dependency [HC03203]
+- **Constitutional preparedness**: HC03155 stärkt konstitutionell beredskap brings Swedish emergency law closer to NATO and EU standards [HC03155]
+
+### Weaknesses
+
+- **Coalition arithmetic fragility**: Liberalerna at ~3.5–4% threatens the Tidö bloc's majority; loss of one coalition partner creates minority government dependency on case-by-case opposition support [election polling 2026Q1]
+- **Social inequality widening**: Rapid penal expansion has not been matched by preventive social investment; gang violence statistics plateau despite legislation [HC03186 context]
+- **Energy transition incoherence**: HC03168 (wind-power tax increase) combined with HC03203 (uranium mining) sends conflicting signals to green investors and EU Taxonomy institutions [HC03168; HC03203]
+- **Housing affordability crisis**: HC03192 (presumtionshyra reform) insufficient to address the structural 200,000-unit deficit; young voters below 30 dissatisfied [HC03192]
+- **IMF growth below peer average**: SWE 2.1% vs DNK 2.4%, NOR 2.5%, FIN 2.3% T+1 (IMF WEO Apr-2026 published knowledge) — export competitiveness fragile amid SEK appreciation [horizon:year]
+
+### Opportunities
+
+- **Defence industrial investment**: HC03193 försvarsindustristrategi could catalyse 15–20 BSEK in private R&D investment by 2028 if procurement timelines are credible [HC03193]
+- **Nuclear energy revival**: International context (EU Taxonomy nuclear inclusion, SMR pipeline) means first-mover advantage for Sweden if HC03203 enables domestic supply chain [HC03203]
+- **Post-election mandate clarity**: A decisive September 2026 outcome (either Tidö II with clear majority OR S-led bloc with C support) would resolve 3 years of minority-government budget uncertainty [election analysis]
+- **EU digital single market**: HC03197 EU mediefrihetsförordning compliance positions Swedish public media as a European benchmark at a time of cross-bloc disinformation pressure [HC03197]
+- **Riksbank rate normalisation**: Continued Riksbank rate cuts from 2025 (base rate ca 2.0–2.5%) support property market recovery and consumer demand without inflation reignition [IMF WEO Apr-2026]
+
+### Threats
+
+- **Electoral mandate fragmentation**: A hung parliament with no clear winner prolongs political gridlock into 2027, delaying defence procurement, energy investment, and budget reforms [election scenarios]
+- **Geopolitical shock**: Russian escalation in Baltic region (e.g. Suwalki Gap incident) could force emergency defence spending beyond the 2.4% GDP path, requiring emergency budget in autumn 2026 [HC03155; HC03193]
+- **Constitutional overreach risk**: HC03155 emergency powers invoked pre-election could be used to restrict opposition political activity — an institutional integrity risk per OSCE/Venice Commission standards [HC03155]
+- **IMF growth miss**: If Sweden falls below 1.5% GDP growth in 2026 (IMF WEO Apr-2026 downside scenario), incumbent loses economic credibility; S gains 3–5 percentage points [horizon:year]
+- **Media freedom backslide**: HC03197 implementation risk — government influence on public broadcaster appointment mechanisms under the new media freedom framework [HC03197]
+
+### TOWS Matrix
+
+| | Strengths | Weaknesses |
+|---|---|---|
+| **Opportunities** | ST: Use fiscal space + defence mandate to accelerate HC03193 implementation before election; OW: Use post-election mandate to resolve housing deficit with Riksbank support | |
+| **Threats** | ST: HC03155 emergency powers defensively positioned as NATO obligation rather than domestic tool; TW: Coalition fragility + geopolitical shock = existential coalition risk | |
 
 ```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
-radar
-  title PESTLE Risk Intensity (1=Low, 5=Critical)
-  Political: 5
-  Economic: 3
-  Social: 4
-  Technological: 3
-  Legal: 4
-  Environmental: 3
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+  title SWOT Intensity Matrix
+  x-axis Internal --> External
+  y-axis Negative --> Positive
+  Fiscal headroom: [0.2, 0.85]
+  NATO integration: [0.25, 0.80]
+  Criminal law: [0.15, 0.65]
+  Coalition fragility: [0.2, 0.25]
+  Energy incoherence: [0.3, 0.3]
+  Defence industrial: [0.75, 0.80]
+  Nuclear opportunity: [0.8, 0.75]
+  Electoral gridlock: [0.7, 0.25]
+  Geopolitical shock: [0.85, 0.2]
 ```
+
+## Quantitative SWOT
+<!-- source: quantitative-swot.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/quantitative-swot.md -->
+
+---
+
+### Scoring Methodology
+
+Each SWOT factor is scored on:
+- **Magnitude** (1–10): How significant is this factor in absolute terms?
+- **Probability** (1–10): How certain is this factor to materialise or persist?
+- **Strategic relevance** (1–10): How central is this to the year-ahead political outcome?
+- **Composite score** = (Magnitude + Probability + Strategic relevance) / 3
+
+---
+
+### Strengths — Scored
+
+| Strength | Magnitude | Probability | Strategic Relevance | Composite |
+|---|---|---|---|---|
+| Fiscal headroom (debt <38% GDP) | 8 | 10 | 7 | **8.3** |
+| NATO integration completed | 9 | 10 | 8 | **9.0** |
+| Criminal law delivery momentum | 7 | 9 | 8 | **8.0** |
+| Energy security (nuclear pivot HC03203) | 7 | 7 | 7 | **7.0** |
+| Constitutional beredskap (HC03155) | 8 | 8 | 7 | **7.7** |
+| Cross-party defence consensus | 8 | 9 | 8 | **8.3** |
+| High institutional trust (Sweden ranks #5 globally) | 7 | 9 | 6 | **7.3** |
+
+**Top strength**: NATO integration (9.0) — irreversible, bipartisan, binding.
+
+### Weaknesses — Scored
+
+| Weakness | Magnitude | Probability | Strategic Relevance | Composite |
+|---|---|---|---|---|
+| Coalition fragility (L at 3.8%) | 9 | 8 | 10 | **9.0** |
+| L below 4% risk — majority loss | 8 | 7 | 10 | **8.3** |
+| Housing affordability crisis | 7 | 10 | 7 | **8.0** |
+| Energy policy incoherence (HC03168+HC03203) | 6 | 8 | 6 | **6.7** |
+| Healthcare system under strain | 7 | 9 | 8 | **8.0** |
+| IMF GDP growth below peers | 5 | 8 | 6 | **6.3** |
+| Household debt burden (170% income) | 7 | 9 | 5 | **7.0** |
+
+**Top weakness**: Coalition fragility (9.0) — symmetric severity with NATO strength.
+
+### Opportunities — Scored
+
+| Opportunity | Magnitude | Probability | Strategic Relevance | Composite |
+|---|---|---|---|---|
+| Post-election mandate clarity | 9 | 7 | 10 | **8.7** |
+| Defence industrial investment (HC03193) | 8 | 7 | 7 | **7.3** |
+| Nuclear first-mover advantage | 7 | 5 | 7 | **6.3** |
+| Riksbank rate cuts (consumer recovery) | 7 | 8 | 6 | **7.0** |
+| C bloc alignment (S+C majority) | 8 | 6 | 9 | **7.7** |
+| Gang crime plateau (safety narrative) | 6 | 7 | 7 | **6.7** |
+
+**Top opportunity**: Post-election mandate clarity (8.7) — resolves 3 years of minority government.
+
+### Threats — Scored
+
+| Threat | Magnitude | Probability | Strategic Relevance | Composite |
+|---|---|---|---|---|
+| Electoral hung parliament | 9 | 4 | 10 | **7.7** |
+| Geopolitical escalation (Baltic) | 10 | 2 | 9 | **7.0** |
+| Constitutional misuse (HC03155) | 8 | 2 | 8 | **6.0** |
+| IMF growth miss (<1.5%) | 7 | 3 | 7 | **5.7** |
+| HC03203 judicial block (uranium) | 6 | 5 | 6 | **5.7** |
+| SD voter defection to far-right | 7 | 4 | 7 | **6.0** |
+| Banking sector fragility | 9 | 3 | 8 | **6.7** |
+| Russian hybrid election interference | 8 | 6 | 9 | **7.7** |
+
+**Top threat**: Electoral hung parliament + Russian hybrid interference (tied at 7.7).
+
+### SWOT Quadrant Matrix (Composite Totals)
+
+| Dimension | Sum of composites | Average | Assessment |
+|---|---|---|---|
+| **Strengths** (7 factors) | 55.6 | **7.9** | Strong — Sweden has genuine structural advantages |
+| **Weaknesses** (7 factors) | 53.3 | **7.6** | Significant — coalition fragility is existential |
+| **Opportunities** (6 factors) | 43.7 | **7.3** | Moderate — conditional on election outcome |
+| **Threats** (8 factors) | 52.5 | **6.6** | Moderate-high — probability weighted threats are manageable |
+
+### Strategic Imperatives (from QSWOT)
+
+**SO strategy** (Strengths × Opportunities): Use NATO credibility (S=9.0) + fiscal headroom (S=8.3) to seize defence industrial mandate (O=7.3) before election. Deliver clear investment pipeline under HC03193 as campaign asset.
+
+**WO strategy** (Weaknesses × Opportunities): Address coalition fragility (W=9.0) by securing C's pre-election commitment to support or abstain (O=7.7), converting uncertain C vote into a stable government formation path.
+
+**ST strategy** (Strengths × Threats): Pre-empt Russian hybrid interference (T=7.7) using HC03155 + HC03205 institutional capacity. Announce joint MSB/Säpo election integrity monitoring before campaign opens.
+
+**WT strategy** (Weaknesses × Threats): The worst-case matrix intersection is coalition fragility (W=9.0) × hung parliament (T=7.7) = existential risk score 16.7. The only mitigation is a pre-election agreement with C — the single most important political act before September 13.
+
+### Quantitative Summary
+
+```
+Net strategic position = (Strengths avg - Weaknesses avg) + (Opportunities avg - Threats avg)
+                       = (7.9 - 7.6) + (7.3 - 6.6)
+                       = 0.3 + 0.7
+                       = +1.0 (marginally positive)
+```
+
+**Conclusion**: Sweden enters election year with a marginally positive strategic position (+1.0 on a scale where 0 = neutral). The incumbent has real delivery to campaign on (NATO, crime) but faces a structural arithmetic problem that makes re-election dependent on a single external variable (L's 4% performance). The year-ahead is therefore best characterised as a **high-uncertainty, marginally positive baseline** environment.
+
+## Threat Analysis
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/threat-analysis.md -->
+
+---
+
+### Threat Landscape Overview
+
+Sweden faces a compound threat environment during the pre-election period (May–September 2026): (1) an external security threat from Russian hybrid operations targeting the election; (2) an internal constitutional integrity risk from emergency power legislation (HC03155); (3) a social cohesion threat from concentrated gang violence despite legislative response.
+
+### PTT Category Analysis
+
+#### Category 1 — State-Level External Threats
+
+**T1.1 Russian hybrid influence operations [horizon:election]**
+- Actor: GRU/SVR aligned information operations
+- Target: Swedish election integrity — SD voter mobilisation messaging, anti-NATO narratives
+- Method: Social media manipulation, leaked government documents, disinformation via proxies
+- Likelihood: likely [horizon:election] (assessed HIGH by MUST/Säpo 2025)
+- Impact: 2–5 percentage points swing in key constituencies
+- Countermeasure: HC03197 (EU EMFA), Psykologisk försvarsoperationer under MSB HC03205
+
+**T1.2 Critical infrastructure sabotage [horizon:year]**
+- Actor: State-sponsored, potentially Russian GRU Unit 29155
+- Target: Baltic undersea cables, power grid interconnects (Norden Ring)
+- Likelihood: unlikely [horizon:year] (previous incidents 2023–2024 in Baltic Sea suggest capability)
+- Impact: Catastrophic if successful; HD03155 triggers
+
+#### Category 2 — Internal Constitutional Threats
+
+**T2.1 HC03155 emergency power misuse [horizon:year]**
+- Actor: Government of Sweden (Tidö coalition)
+- Mechanism: Emergency ordinance under new constitutional beredskap framework invoked without proportionate threat
+- Risk: Opposition political activity restricted during election campaign window
+- Likelihood: unlikely [horizon:year] — but the mere existence of mechanism raises OSCE concern
+- Countermeasure: Constitutional Court review; international observation mission
+
+**T2.2 Pre-election electoral law amendment [horizon:election]**
+- Actor: SD or M parliamentary majority seeking advantage
+- Mechanism: Threshold manipulation or ballot-access rules
+- Risk: Reduces opposition representation
+- Likelihood: very unlikely [horizon:election]
+
+#### Category 3 — Societal Cohesion Threats
+
+**T3.1 Gang violence escalation [horizon:quarter]**
+- Current state: Gang-related shootings declined 22% in 2025 vs 2024 (Polismyndigheten data); however, organised crime migration from major cities to smaller municipalities accelerating
+- Legislative response: HC03186 (police firearms expanded authority), HC03208 (company secrets / organised crime financing)
+- Residual risk: Lone-actor inspired attacks on political figures (lone-actor terrorism nexus with gang networks)
+- Likelihood: likely [horizon:quarter] to see at least one high-profile municipality crisis
+
+**T3.2 Social cohesion fracture — immigration backlash [horizon:year]**
+- Trigger: If election campaign produces extreme anti-immigration rhetoric from SD beyond current level
+- Mechanism: Targeting of asylum-seeker centres, civil society organisations
+- Countermeasure: HC03189 (virginity check criminalisation signals values commitment)
+
+### Attack Tree — Election Integrity
+
+```
+Election integrity compromised
+├── External influence operations (T1.1)
+│   ├── Voter suppression targeting specific demographics
+│   └── Disinformation about party positions / vote-counting
+├── Internal administrative failure
+│   ├── Electoral register errors (database vulnerability)
+│   └── Postal vote manipulation (low risk in SE context)
+└── Physical disruption
+    ├── Attack on polling station (T3.1 nexus)
+    └── Attack on candidate/campaign event
+```
+
+### DISARM Framework Alignment
+
+| DISARM TTP | Observed Vector | Countermeasure |
+|---|---|---|
+| T0003 — Leverage existing narratives | Anti-immigration sentiment amplification | MSB Psykologisk försvar monitoring |
+| T0008 — Conduct false flag action | Fake police document leak | Säpo counterintelligence |
+| T0057 — Acquire/rent PII | Voter targeting micro-profiling | GDPR enforcement by IMY |
+| T0049 — Flooding | Pro-SD social media saturation | EU DSA platform obligations |
 
 ## Wildcards & Black Swans
 <!-- source: wildcards-blackswans.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/wildcards-blackswans.md -->
@@ -1616,106 +1401,321 @@ Wildcard scenarios are defined as low-probability (<15%), high-impact events tha
 | WC-4 (Banking crisis) | Riksbank FSR (Financial Stability Report); SBB bond yields | Riksbank.se; Bloomberg | Monthly |
 | WC-5 (Electoral reform) | Riksdag constitutional committee agenda; M/S joint proposals | Riksdagen.se | Quarterly |
 
-## Quantitative SWOT
-<!-- source: quantitative-swot.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/quantitative-swot.md -->
+## PESTLE Analysis
+<!-- source: pestle-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/pestle-analysis.md -->
 
 ---
 
-### Scoring Methodology
+### Political Dimension
 
-Each SWOT factor is scored on:
-- **Magnitude** (1–10): How significant is this factor in absolute terms?
-- **Probability** (1–10): How certain is this factor to materialise or persist?
-- **Strategic relevance** (1–10): How central is this to the year-ahead political outcome?
-- **Composite score** = (Magnitude + Probability + Strategic relevance) / 3
-
----
-
-### Strengths — Scored
-
-| Strength | Magnitude | Probability | Strategic Relevance | Composite |
-|---|---|---|---|---|
-| Fiscal headroom (debt <38% GDP) | 8 | 10 | 7 | **8.3** |
-| NATO integration completed | 9 | 10 | 8 | **9.0** |
-| Criminal law delivery momentum | 7 | 9 | 8 | **8.0** |
-| Energy security (nuclear pivot HC03203) | 7 | 7 | 7 | **7.0** |
-| Constitutional beredskap (HC03155) | 8 | 8 | 7 | **7.7** |
-| Cross-party defence consensus | 8 | 9 | 8 | **8.3** |
-| High institutional trust (Sweden ranks #5 globally) | 7 | 9 | 6 | **7.3** |
-
-**Top strength**: NATO integration (9.0) — irreversible, bipartisan, binding.
-
-### Weaknesses — Scored
-
-| Weakness | Magnitude | Probability | Strategic Relevance | Composite |
-|---|---|---|---|---|
-| Coalition fragility (L at 3.8%) | 9 | 8 | 10 | **9.0** |
-| L below 4% risk — majority loss | 8 | 7 | 10 | **8.3** |
-| Housing affordability crisis | 7 | 10 | 7 | **8.0** |
-| Energy policy incoherence (HC03168+HC03203) | 6 | 8 | 6 | **6.7** |
-| Healthcare system under strain | 7 | 9 | 8 | **8.0** |
-| IMF GDP growth below peers | 5 | 8 | 6 | **6.3** |
-| Household debt burden (170% income) | 7 | 9 | 5 | **7.0** |
-
-**Top weakness**: Coalition fragility (9.0) — symmetric severity with NATO strength.
-
-### Opportunities — Scored
-
-| Opportunity | Magnitude | Probability | Strategic Relevance | Composite |
-|---|---|---|---|---|
-| Post-election mandate clarity | 9 | 7 | 10 | **8.7** |
-| Defence industrial investment (HC03193) | 8 | 7 | 7 | **7.3** |
-| Nuclear first-mover advantage | 7 | 5 | 7 | **6.3** |
-| Riksbank rate cuts (consumer recovery) | 7 | 8 | 6 | **7.0** |
-| C bloc alignment (S+C majority) | 8 | 6 | 9 | **7.7** |
-| Gang crime plateau (safety narrative) | 6 | 7 | 7 | **6.7** |
-
-**Top opportunity**: Post-election mandate clarity (8.7) — resolves 3 years of minority government.
-
-### Threats — Scored
-
-| Threat | Magnitude | Probability | Strategic Relevance | Composite |
-|---|---|---|---|---|
-| Electoral hung parliament | 9 | 4 | 10 | **7.7** |
-| Geopolitical escalation (Baltic) | 10 | 2 | 9 | **7.0** |
-| Constitutional misuse (HC03155) | 8 | 2 | 8 | **6.0** |
-| IMF growth miss (<1.5%) | 7 | 3 | 7 | **5.7** |
-| HC03203 judicial block (uranium) | 6 | 5 | 6 | **5.7** |
-| SD voter defection to far-right | 7 | 4 | 7 | **6.0** |
-| Banking sector fragility | 9 | 3 | 8 | **6.7** |
-| Russian hybrid election interference | 8 | 6 | 9 | **7.7** |
-
-**Top threat**: Electoral hung parliament + Russian hybrid interference (tied at 7.7).
-
-### SWOT Quadrant Matrix (Composite Totals)
-
-| Dimension | Sum of composites | Average | Assessment |
+| Factor | Assessment | Impact | Horizon |
 |---|---|---|---|
-| **Strengths** (7 factors) | 55.6 | **7.9** | Strong — Sweden has genuine structural advantages |
-| **Weaknesses** (7 factors) | 53.3 | **7.6** | Significant — coalition fragility is existential |
-| **Opportunities** (6 factors) | 43.7 | **7.3** | Moderate — conditional on election outcome |
-| **Threats** (8 factors) | 52.5 | **6.6** | Moderate-high — probability weighted threats are manageable |
+| Election 2026-09-13 | The defining political event; government change possible | Critical | [horizon:election] |
+| Coalition fragility (L at 3.8%) | Tidö majority margin of 1 seat; any L polling drop triggers realignment | High | [horizon:election] |
+| HC03155 constitutional beredskap | Emergency powers framework pending Lagrådet — legitimacy risk | High | [horizon:year] |
+| SD governance record | First time SD in government; traditional insurgent party faces accountability test | High | [horizon:election] |
+| C (Centerpartiet) swing position | Decisive for both coalition formation scenarios | Critical | [horizon:election] |
+| Cross-party defence consensus | NATO 2.4% GDP target supported across M+S+KD+C | Medium | [horizon:year] |
+| EU Council Presidency | Sweden held EU Presidency 2023; no current EU chairmanship burden | Low | [horizon:year] |
 
-### Strategic Imperatives (from QSWOT)
+### Economic Dimension
 
-**SO strategy** (Strengths × Opportunities): Use NATO credibility (S=9.0) + fiscal headroom (S=8.3) to seize defence industrial mandate (O=7.3) before election. Deliver clear investment pipeline under HC03193 as campaign asset.
+| Factor | Assessment | Impact | Horizon |
+|---|---|---|---|
+| GDP growth 2.1% T+1 (2026) | Below Nordic peer average (DK 2.4%, NO 2.5%) | Medium | [horizon:year] |
+| Riksbank rate normalisation | Rate at ~2.25%; cuts expected to continue to 2.0% by year-end | Medium | [horizon:year] |
+| Household debt 170% of income | Elevated debt limits consumer demand recovery post-rate shock | Medium-High | [horizon:year] |
+| Public sector fiscal balance | Gross debt <38% GDP — fiscal headroom for stimulus | Medium | [horizon:year] |
+| Defence budget ramp-up | 50 BSEK gap to 2.4% GDP target (2028) — fiscal pressure | High | [horizon:year] |
+| Energy price trajectory | Lower European gas prices reduce industrial cost pressure | Medium | [horizon:year] |
+| Industriavtalet outcome | Collective bargaining: real wage growth vs inflation balance | High | [horizon:quarter] |
 
-**WO strategy** (Weaknesses × Opportunities): Address coalition fragility (W=9.0) by securing C's pre-election commitment to support or abstain (O=7.7), converting uncertain C vote into a stable government formation path.
+### Social Dimension
 
-**ST strategy** (Strengths × Threats): Pre-empt Russian hybrid interference (T=7.7) using HC03155 + HC03205 institutional capacity. Announce joint MSB/Säpo election integrity monitoring before campaign opens.
+| Factor | Assessment | Impact | Horizon |
+|---|---|---|---|
+| Gang violence plateau | 22% reduction 2025 vs 2024; remains highest in Nordic region per capita | High | [horizon:year] |
+| Housing affordability | 200,000-unit deficit; young voter concern; HC03192 insufficient | High | [horizon:election] |
+| Healthcare waiting times | #1 voter concern (Ipsos 2026Q1); municipal budget pressure | High | [horizon:election] |
+| Immigration and integration | Net migration declining; integration outcomes variable; SD leverage | Medium-High | [horizon:election] |
+| Demographic ageing | Pension system adequacy; elder care staffing | Medium | [horizon:year] |
+| Educational quality | PISA results showing improvement trajectory; teacher shortage | Medium | [horizon:year] |
 
-**WT strategy** (Weaknesses × Threats): The worst-case matrix intersection is coalition fragility (W=9.0) × hung parliament (T=7.7) = existential risk score 16.7. The only mitigation is a pre-election agreement with C — the single most important political act before September 13.
+### Technological Dimension
 
-### Quantitative Summary
+| Factor | Assessment | Impact | Horizon |
+|---|---|---|---|
+| AI and automation | Swedish tech sector growing; AI adoption in manufacturing accelerating | Medium | [horizon:year] |
+| Nuclear SMR pipeline | HC03203 enables uranium supply; SMR technology (Vattenfall interest) | High | [horizon:year] |
+| Cybersecurity | Säpo/FRA cyber threats increasing; NIS2 implementation 2024 | High | [horizon:year] |
+| Digital public services | Swedish e-government infrastructure robust; minor security gaps | Low | [horizon:year] |
+| Defence technology (HC03193) | Gripen/SAAB R&D; AI-enabled C4ISR investment | High | [horizon:year] |
+| 5G infrastructure | Ericsson market position; China supply chain exclusion maintained | Medium | [horizon:year] |
 
+### Legal Dimension
+
+| Factor | Assessment | Impact | Horizon |
+|---|---|---|---|
+| HC03155 Lagrådet review | Constitutional emergency powers review pending | Critical | [horizon:quarter] |
+| HC03203 HFD challenge | Uranium mining legal challenge expected Q2-2026 | High | [horizon:quarter] |
+| EMFA (HC03197) compliance | EU Media Freedom Act implementation deadline Q4-2026 | Medium | [horizon:year] |
+| NIS2 Directive implementation | Cybersecurity framework in force 2024; compliance verification | Medium | [horizon:year] |
+| EU AI Act compliance | Swedish public sector AI governance requirements 2025–2026 | Medium | [horizon:year] |
+| Criminal law expansion | 18+ penal law bills — cumulative constitutional rights pressure (ECHR Art 5/6) | Medium-High | [horizon:year] |
+| Euratom notification | HC03203 triggers Art 41 Euratom Treaty notification | High | [horizon:quarter] |
+
+### Environmental Dimension
+
+| Factor | Assessment | Impact | Horizon |
+|---|---|---|---|
+| HC03203 uranium mining — Laponia adjacent | Environmental NGO mobilisation; EU Taxonomy concerns | High | [horizon:year] |
+| HC03168 wind-power tax increase | Contradicts green investment signal; chills wind project pipeline | Medium-High | [horizon:year] |
+| Carbon neutrality 2045 target | Sweden committed; energy mix needs nuclear + renewables | High | [horizon:year] |
+| Biodiversity and Natura 2000 | Mining expansion near protected areas requires Natura 2000 assessment | Medium | [horizon:year] |
+| Nordic climate cooperation | Sweden active in Nordic climate council; good international positioning | Low | [horizon:year] |
+| Baltic Sea pollution | Ongoing challenge; Sweden's phosphorus reduction commitments | Low | [horizon:year] |
+
+---
+
+### PESTLE Summary Assessment
+
+**Critical dimensions**: Political (election) + Legal (HC03155/HC03203) + Economic (growth below peers)
+**Opportunity dimensions**: Technological (nuclear/defence tech) + Social (partial crime reduction)
+**Watch dimensions**: Environmental (HC03203/HC03168 tension) + Economic (household debt risk)
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+radar
+  title PESTLE Risk Intensity (1=Low, 5=Critical)
+  Political: 5
+  Economic: 3
+  Social: 4
+  Technological: 3
+  Legal: 4
+  Environmental: 3
 ```
-Net strategic position = (Strengths avg - Weaknesses avg) + (Opportunities avg - Threats avg)
-                       = (7.9 - 7.6) + (7.3 - 6.6)
-                       = 0.3 + 0.7
-                       = +1.0 (marginally positive)
-```
 
-**Conclusion**: Sweden enters election year with a marginally positive strategic position (+1.0 on a scale where 0 = neutral). The incumbent has real delivery to campaign on (NATO, crime) but faces a structural arithmetic problem that makes re-election dependent on a single external variable (L's 4% performance). The year-ahead is therefore best characterised as a **high-uncertainty, marginally positive baseline** environment.
+## Historical Parallels
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/historical-parallels.md -->
+
+**Gate requirement**: Named precedent ≤40 years with similarity score
+
+---
+
+### Parallel 1 — Sweden 1973: The 175–174 Hung Parliament (Similarity: 82%)
+
+**Context**: The 1973 election produced a 175–175 deadlock (Social Democrats 156 + Communists 19 vs. non-socialist opposition 175). A literal lottery was used on 3 occasions to break tie votes. PM Palme governed in a de facto minority for 3 years.
+
+**Relevance to 2026 Scenario D**: If September 13, 2026 produces a hung parliament with no bloc at 175, the Riksdag will face the same constitutional gridlock mechanism. Sweden's constitutional reform post-1973 (RF 1974) introduced the 4-election speaker formation rounds and the 90-day rule. This framework would govern a 2026 hung parliament. Similarity: **82%** (structural/constitutional parallel remains high even across time distance).
+
+---
+
+### Parallel 2 — Sweden 1991: Alliansen Without SD (Similarity: 74%)
+
+**Context**: Carl Bildt (M) led a four-party Alliansen government (M+FP+C+KD) with 170 seats — a minority government that nonetheless governed Sweden through the 1992 economic crisis (Riksbank interest rate at 500% during the currency crisis). Governing on a minority required securing support from New Democracy (a populist right party with 25 seats).
+
+**Relevance to 2026 Scenario E**: If SD collapses to ~15% and M surges to 24%, the Alliansen model (M+KD+L+C) — without SD — becomes viable. The 1991 parallel shows that Swedish moderate conservatism can govern without an extreme nationalist support party, but requires case-by-case vote management on each budget item. The 1991–1994 government's management of the 1992 banking crisis without formal majority demonstrated institutional resilience. Similarity: **74%** (party configuration analogous; economic crisis context less applicable in 2026's more stable macro environment).
+
+---
+
+### Parallel 3 — Denmark 2019: S Minority + "Pivot" Support (Similarity: 69%)
+
+**Context**: Mette Frederiksen (S) won Denmark's 2019 election with a narrow majority supported by Radikale Venstre, SF, and Alternativet — without formal coalition partnership. The government governed on "confidence and supply" from external parties, avoiding formal coalition constraints. The S government adopted a restrictive immigration policy that moved rightward relative to traditional social-democratic norms, successfully defusing the immigration wedge that had benefited the populist right.
+
+**Relevance to 2026 Scenario B**: If Magdalena Andersson forms an S-led government supported (not joined) by V, MP, and C, the Danish 2019 model provides the operational template. The risk: external support parties (V, MP) will demand policy concessions that force S rightward on energy (against HC03203) or leftward on welfare (against fiscal consolidation). The Danish parallel suggests S can manage this tension for 2–3 years before external partners fracture. Similarity: **69%** (governance model directly applicable; political context partially different — Sweden's SD/M dynamic differs from Denmark's DF/V).
+
+---
+
+### Parallel 4 — Sweden 2021 Budget Crisis (Similarity: 88%)
+
+**Context**: The Stefan Löfven S+MP government lost a no-confidence vote and eventually fell when Centerpartiet withdrew support over housing market liberalisation (hyresmodell). This triggered the most serious Swedish constitutional crisis since 1973 — a new PM election process under RF 6:4 requiring Speaker nomination. Löfven resigned and was replaced by Magdalena Andersson in November 2021 (who became PM for 7 days before also losing a confidence vote — a unique constitutional occurrence — before winning it again).
+
+**Relevance to 2026 Scenario C** (S-led minority without C): The 2021 crisis is the most direct recent parallel for a fragile S minority government. The proximate cause — C withdrawing support over housing policy — is directly analogous to the present situation where C's stance on HC03192 (presumtionshyra) remains contested. If Andersson forms a minority government in 2026 without securing a stable C support agreement, the 2021 playbook suggests government collapse within 12–18 months. Similarity: **88%** (highest similarity — same political actors, same structural weakness, same proximate policy flashpoint).
+
+## Comparative International
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/comparative-international.md -->
+
+---
+
+### Nordic Peer Comparison Matrix
+
+| Indicator | Sweden | Denmark | Norway | Finland | Source |
+|---|---|---|---|---|---|
+| GDP growth 2026 T+1 | 2.1% | 2.4% | 2.5% | 2.3% | IMF WEO Apr-2026 |
+| Public debt (% GDP) | 37.8% | 29.4% | 40.1% (non-oil) | 45.2% | IMF WEO Apr-2026 |
+| Defence spending (% GDP) 2025 | 2.1% | 2.4% | 2.6% | 2.4% | NATO Secretary General Annual Report 2025 |
+| Government stability | Pre-election fragility | Stable coalition | Stable majority | Stable coalition | Author assessment |
+| Nuclear energy policy | Pivoting to nuclear (HC03203) | No nuclear | No nuclear | 27% nuclear share | National policies |
+| Inflation 2026 | ~2.5% | ~2.3% | ~2.8% | ~2.4% | IMF WEO Apr-2026 |
+| Unemployment 2026 | ~8.5% | ~4.9% | ~3.8% | ~7.4% | IMF WEO Apr-2026, LUR |
+
+#### Key Observations
+
+1. **Sweden lags Nordic peers on GDP growth [horizon:year]**: The 0.3–0.4pp gap vs Denmark and Norway reflects slower housing market recovery and higher household debt burden. Sweden's fiscal expansion in election year could narrow gap but risks inflation reignition.
+
+2. **Denmark leads on defence burden-sharing**: Denmark's 2.4% GDP defence target already achieved; Sweden's path to 2.4% (2028 target per HC03193) aligns with alliance expectations but requires sustained commitment through government transition.
+
+3. **Sweden's nuclear pivot is Nordic outlier**: HC03203 uranium mining puts Sweden ahead of Norway and Denmark (both anti-nuclear) on long-run energy policy. Finland's established nuclear sector (Olkiluoto 3 operational 2023) provides the closest regional comparator.
+
+### NATO Burden-Sharing Context
+
+| Country | Spending % GDP | Spending US$bn | NATO target status |
+|---|---|---|---|
+| Sweden | 2.1% (2025) | ~13.2 | On-track to 2.4% by 2028 |
+| Norway | 2.6% | ~9.8 | Exceeding target |
+| Denmark | 2.4% | ~9.1 | At target |
+| Finland | 2.4% | ~7.6 | At target |
+| Germany | 2.1% | ~82.0 | At target (2024 milestone) |
+
+*Sweden's defence spending commitment (HC03193) represents the largest proportionate increase in NATO Europe 2024–2028.*
+
+### EU Comparative Context
+
+**EU Media Freedom Act (EMFA)**: Sweden is among 7 EU member states that must adapt their public broadcaster governance frameworks to comply by Q4-2026. Comparator: France revised CSA appointment rules in 2025. Germany's ARD reform provides Sweden a legislative template [HC03197].
+
+**Criminal Justice Reform**: Sweden's penal law expansion parallels Denmark's 2019–2023 gang package (which reduced gang shootings by 40% in Copenhagen metro). Swedish data suggests similar 18–24 month lag effect [HC03186].
+
+### Historical Parallels (Abbreviated)
+
+**Sweden 1973 election hung parliament**: Last time Sweden had a 175–175 deadlock. Resolution via lottery. Demonstrates that Swedish constitutional framework can handle Scenario D (Hung Parliament 2026) though the institutional cost is high [historical-parallels.md §1].
+
+**Denmark 2019 election — centre-left majority via support party**: S (Mette Frederiksen) won with 3-party support without direct coalition — the model for Scenario B (S-led majority 2026) [scenario-analysis.md §B].
+
+## Implementation Feasibility
+<!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/implementation-feasibility.md -->
+
+---
+
+### Statskontoret Assessment Row
+
+| Evaluation dimension | Finding |
+|---|---|
+| **Statskontoret relevance** | No Statskontoret evaluation documents found in 2024/25 riksdag proposition corpus for the 10 primary documents analysed. This absence noted per data-download-manifest.md §full-text-fallback annotation. |
+| **Independent impact assessments** | HC03193 (defence industry strategy) cites Totalförsvarets forskningsinstitut (FOI) as independent advisor; no published FOI impact assessment retrieved. HC03155 cites Justitiedepartementet's own constitutional analysis — not independent. |
+| **Gap note** | The absence of Statskontoret evaluations for the highest-significance documents (HC03155, HC03205, HC03193) is itself analytically significant: major constitutional and defence reforms are being passed without independent administrative review of implementation capacity. |
+
+---
+
+### Policy Implementation Feasibility Matrix
+
+| Policy / Document | Legal Status | Institutional Capacity | Resource Adequacy | Implementation Risk |
+|---|---|---|---|---|
+| HC03155 — konstitutionell beredskap | Lagrådet referral pending | Justitiedepartementet + Försvarsdepartementet | HIGH (existing state capacity) | MEDIUM — legal uncertainty until Lagrådet clears |
+| HC03205 — civil defence agency | Enacted | New agency being established | MEDIUM (staffing gap noted) | MEDIUM — 2026 entry into force; recruitment timeline |
+| HC03193 — försvarsindustristrategi | Enacted | FMV + defence companies | MEDIUM-HIGH (private sector dependent) | MEDIUM — procurement timeline 2026–2030 |
+| HC03203 — uranium mining | Enacted | Bergsstaten + Naturvårdsverket | LOW (permit process new) | HIGH — legal challenges expected; no domestic precedent |
+| HC03197 — EU media freedom | EU obligation | Kulturdepartementet + PTS | MEDIUM | MEDIUM — appointment rules contested |
+| HC03186 — police firearms | Enacted | Polismyndigheten | MEDIUM (training required) | LOW — operational implementation well-defined |
+| HC03208 — company secrets | Enacted | Åklagarmyndigheten | MEDIUM-HIGH | LOW — builds on existing IP framework |
+| HC03168 — wind-power tax | Enacted | Skatteverket | HIGH | LOW — administrative capacity high |
+| HC03192 — presumtionshyra | Enacted | Hyresnämnden | MEDIUM | MEDIUM — rent negotiation process complex |
+| HC03189 — virginity checks | Enacted | Polismyndigheten + Healthcare | MEDIUM | LOW-MEDIUM — definitional scope requires guidance |
+
+### Critical Implementation Path
+
+**Highest-risk implementation: HC03203 (Uranium Mining)**
+
+1. **Legal challenge phase** (2026 Q2–Q3): Environmental organisations expected to file application for HFD injunction within 90 days of Bergsstaten issuing first exploration permits. Probability of injunction: 35% (WC-4 from scenario-analysis.md).
+
+2. **Euratom notification** (2026 Q2): Sweden must notify Euratom under the Euratom Treaty Art 41 before committing investment. Euratom response timeline: 6 months minimum.
+
+3. **Planning permission** (2026–2027): Mining operations require municipal planning permission (plan- och bygglagen), environmental impact assessment (miljökonsekvensbeskrivning), and Natura 2000 assessment if near protected areas.
+
+**Earliest feasible uranium mining commencement**: 2029–2030 (even without legal challenge).
+
+### Resource Adequacy Assessment
+
+**Defence (HC03193/HC03205)**: The 2.4% GDP target (2028) implies annual defence budget of approximately 180 BSEK by 2027 (IMF WEO Apr-2026, SWE GDP trajectory). Current budget is ~130 BSEK. Gap: ~50 BSEK requires either new revenue (defence tax proposed) or reallocation from other budgets.
+
+**Civil defence (HC03205)**: New agency inherits MSB staff (~950 FTE) but requires additional 300–400 specialist roles for the expanded civil-crisis mandate. Recruitment market for security specialists is constrained Nordic-wide.
+
+**Police (HC03186)**: Polismyndigheten is currently below its own 2025 staffing target (37,000 officers vs 35,500 actual). HC03186 expanded operational powers create accountability requirements that require additional supervisory capacity.
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/media-framing-analysis.md -->
+
+---
+
+### No-Neutral-Media Declaration
+
+This analysis operates under the v2.1 assumption that all media outlets have inherent editorial perspectives that shape framing. There is no objectively neutral coverage. The analysis maps these perspectives to identify framing effects on Swedish political discourse.
+
+---
+
+### Primary Narrative Frames (≥3 required)
+
+#### Frame 1 — "Crime Crisis Resolved" (Incumbent-Supportive)
+
+**Primary outlets**: Aftonbladet editorials (centrist-populist), Expressen (liberal tabloid), Svenska Dagbladet (centre-right), government press releases via riksdagen.se
+
+**Framing mechanism**: Presents the 22% reduction in gang-related shootings (2025 vs 2024) as validation of HC03186/HC03208 legislation. Uses specific statistics ("rekordlågt antal gängskjutningar") to construct a before/after narrative. Avoids comparative European context (Sweden's per-capita gang violence remains highest in Nordic region even after reduction).
+
+**Political beneficiary**: SD and M — both claim primary ownership of criminal law delivery.
+
+**Counter-evidence ignored**: Organised crime has migrated to smaller municipalities; prosecution rates have not improved despite more arrests; Sweden remains outlier in Nordic peer comparison.
+
+#### Frame 2 — "Welfare State Under Threat" (Opposition-Supportive)
+
+**Primary outlets**: Dagens Nyheter (liberal-centrist), Arbetet (trade union aligned), Aftonbladet news section (differentiated from editorial), LO affiliated media
+
+**Framing mechanism**: Focuses on healthcare waiting times, municipal budget deficits (municipalities required to balance budgets by 2026), and wage stagnation relative to 2021 prices. Links Tidö austerity to reduced welfare quality. Invokes the 1991–1994 period (historical-parallels.md §2) as cautionary tale.
+
+**Political beneficiary**: S and V.
+
+**Counter-evidence ignored**: Sweden's public debt trajectory is among the best in EU; fiscal consolidation was necessary after 2020–2021 pandemic spending.
+
+#### Frame 3 — "Sweden's Nuclear Gamble" (Conflict Frame)
+
+**Primary outlets**: Ny Teknik (tech/engineering focus), Miljöaktuellt, SVT Nyheter environment desk, international outlets (Guardian, Der Spiegel)
+
+**Framing mechanism**: Presents HC03203 uranium mining as a contested gamble between industrial energy competitiveness and environmental protection. Uses conflict between government energy minister and Naturvårdsverket position. International outlets frame Sweden as an EU outlier on nuclear energy.
+
+**Political beneficiary**: MP and V (anti-nuclear mobilisation); industrial sector and government narrative (pro-nuclear).
+
+**Counter-evidence noted**: Finland's nuclear success (Olkiluoto 3) provides positive comparator that this frame typically omits.
+
+#### Frame 4 — "Democracy Under Pressure" (Critical Frame)
+
+**Primary outlets**: Journalistförbundet (SJF) media, Reporters Without Borders reporting, international liberal outlets, V and MP communications
+
+**Framing mechanism**: Links HC03155 (emergency powers) + HC03197 (media freedom) to systemic democratic backsliding narrative. Invokes Hungary/Poland comparisons — analytically overblown but rhetorically effective. HC03155's Lagrådet referral cited as evidence of constitutional overreach.
+
+**Political beneficiary**: Opposition broadly; V and MP specifically.
+
+**Counter-evidence**: Sweden ranks #6 in RSF Press Freedom Index 2025; HC03197 is an EU compliance obligation, not a government initiative.
+
+---
+
+### Outlet Bias Audit
+
+| Outlet | Type | Lean | Primary Frame Used | DISARM Risk |
+|---|---|---|---|---|
+| Aftonbladet | Tabloid/digital | Centre-left editorial, populist news | Frame 1 + Frame 2 (dual) | LOW |
+| Expressen | Tabloid/digital | Centre-right | Frame 1 | LOW |
+| Dagens Nyheter | Quality daily | Liberal-centrist | Frame 2 + Frame 4 | LOW |
+| Svenska Dagbladet | Quality daily | Centre-right | Frame 1 + Frame 3 | LOW |
+| SVT | Public broadcaster | Legally required balance | All frames | LOW |
+| SD-Kuriren | Party media | Far-right | Frame 1 (extremised) | MEDIUM (partisan) |
+| Riks (nätradio) | Digital | Far-right | Frame 1 + anti-establishment | HIGH (DISARM T0003) |
+| RT Sverige (blocked) | State propaganda | Russian state | Frame 4 (weaponised) | VERY HIGH (T0003, T0008) |
+
+### DISARM Framework Analysis
+
+| TTP | Description | Swedish Vector | Mitigation |
+|---|---|---|---|
+| T0003 — Leverage existing narratives | Amplify Frame 4 ("democratic backslide") to undermine NATO support | Russian-origin social media amplifies HC03155 concerns | MSB Psykologisk försvar monitoring; SVT factcheck |
+| T0049 — Flooding | Coordinated inauthentic SD-supportive content on immigration statistics | Bot networks amplifying crime narratives | Meta/X platform obligations under DSA |
+| T0036 — Misrepresent election results | Pre-emptive "stolen election" narratives if SD underperforms | Domestic far-right (Alternativ för Sverige nexus) | Valmyndigheten public communication |
+| T0008 — Conduct false flag | Fabricated "government documents" showing secret immigration deal | Low probability — no confirmed instance to date | Säpo counterintelligence; press verification |
+
+### IMF Economic Data Media Coverage
+
+**Observation**: IMF WEO April 2026 Sweden projections (2.1% GDP growth) were covered by:
+- Finanstidningen (accurate, with context)
+- Aftonbladet (headline "Sverige sämre än grannar" — technically true but framed as failure)
+- M-aligned communicators (reframing as "sustained recovery")
+
+This pattern of selective citation from IMF data is expected to intensify in campaign period.
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/devils-advocate.md -->
@@ -2060,13 +2060,6 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/threat-analysis.md)
 - [`documents/HC03155-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/documents/HC03155-analysis.md)
 - [`documents/HC03168-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/documents/HC03168-analysis.md)
 - [`documents/HC03186-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/documents/HC03186-analysis.md)
@@ -2077,15 +2070,22 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`documents/HC03204-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/documents/HC03204-analysis.md)
 - [`documents/HC03205-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/documents/HC03205-analysis.md)
 - [`documents/HC03208-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/documents/HC03208-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/comparative-international.md)
-- [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/historical-parallels.md)
-- [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/implementation-feasibility.md)
-- [`pestle-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/pestle-analysis.md)
-- [`wildcards-blackswans.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/wildcards-blackswans.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/swot-analysis.md)
 - [`quantitative-swot.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/quantitative-swot.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/threat-analysis.md)
+- [`wildcards-blackswans.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/wildcards-blackswans.md)
+- [`pestle-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/pestle-analysis.md)
+- [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/comparative-international.md)
+- [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/year-ahead/cross-reference-map.md)

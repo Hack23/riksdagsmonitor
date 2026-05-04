@@ -166,7 +166,12 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
   sections.push(buildReaderGuide(rootArtifactSet, docsExist));
 
   // 3. Emit the rest of the canonical narrative order, expanding
-  //    documents/ between threat-analysis and election-2026-analysis.
+  //    documents/ between significance-scoring and stakeholder-
+  //    perspectives so primary-source evidence (the actual motions,
+  //    propositions and committee reports with their `dok_id`) lands
+  //    immediately after the so-what ranking and BEFORE any
+  //    interpretive lenses. This is the "show your work" pattern
+  //    intelligence consumers expect (cf. ICD 203, NIC NIE structure).
   //    Article types that produce only a subset of the canonical
   //    artifacts (realtime, week-ahead, monthly-review) are supported
   //    transparently — readSection skips missing files and the Reader
@@ -179,7 +184,7 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
     const aliases = aliasGroupFor(fileName);
     if (aliases && used.some((usedFile) => aliases.has(usedFile))) continue;
     readSection(fileName, true);
-    if (fileName === 'threat-analysis.md') {
+    if (fileName === 'significance-scoring.md') {
       const docExpansion = expandPerDocumentAnalyses(subfolderAbsPath, subfolderRepoRelPath);
       if (docExpansion.section) sections.push(docExpansion.section);
       used.push(...docExpansion.usedRelative);

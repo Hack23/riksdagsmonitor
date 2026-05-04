@@ -5,7 +5,7 @@ date: 2026-04-29
 subfolder: evening-analysis
 slug: 2026-04-29-evening-analysis
 source_folder: analysis/daily/2026-04-29/evening-analysis
-generated_at: 2026-05-04T09:52:32.477Z
+generated_at: 2026-05-04T12:16:14.164Z
 language: en
 layout: article
 ---
@@ -82,10 +82,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
 ## Synthesis Summary
@@ -302,85 +302,6 @@ xychart-beta
     bar [9.4, 9.2, 8.9, 8.7, 8.4, 7.8, 7.5, 7.5, 6.5, 6.3]
 ```
 
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/media-framing-analysis.md -->
-
----
-
-### Expected Media Frames (29–30 April 2026)
-
-#### Frame 1: "Riksdagen skärper vapenlagen — C protesterar ensam" (SVT/DN likely)
-**Source story**: JuU10 adopted 325:20
-**Expected outlets**: SVT, Dagens Nyheter, Aftonbladet (crime desk)
-**Angle**: Wide majority for gun law; C isolated; government delivers on security promise
-**Opposition angle**: V and MP may argue the law doesn't address root causes
-**C angle**: "Vi försvara rättssäkerheten och lantbefolkningens rätt"
-**Intelligence value**: Frame reinforces security consensus narrative; C's position likely framed as fringe dissent
-
-#### Frame 2: "S röstade med regeringen om medborgarskap — intern splittring" (Expressen/SVT Politik likely)
-**Source story**: SfU28 adopted, S majority JA with lone NEJ (Strandhäll)
-**Expected outlets**: Expressen, Aftonbladet, SVT Political desk
-**Angle**: S's rightward shift; Strandhäll vs leadership
-**Party response**: S leadership expected to say "Vi tar brottsofferperspektivet på allvar"
-**Intelligence value**: Exposes S internal tension; amplifies rightward drift narrative
-
-#### Frame 3: "Kriminella driver HVB-hem — riksdagsman kräver svar" (Aftonbladet/Expressen)
-**Source story**: HD10454 interpellation
-**Expected outlets**: Aftonbladet (tabloid crime coverage), regional media (personal stories)
-**Angle**: Scandal frame — vulnerable children in criminally-operated homes
-**Government response**: Expected defensive; point to ongoing IVO and police reviews
-**Intelligence value**: HIGH electoral impact potential; if photos/names emerge, cascade likely
-
-#### Frame 4: "SD och KD bryter om gas — koalitionstension" (Dagens Nyheter/GP)
-**Source story**: HD10453 interpellation; gas bridge vs nuclear
-**Expected outlets**: Dagens Nyheter, Göteborgs-Posten, Norrländska Socialdemokraten (SD constituency)
-**Angle**: Internal coalition tension; energy policy uncertainty
-**Intelligence value**: MEDIUM initially; HIGH if gas supply discussion reaches business press
-
-#### Frame 5: "Kina-frågan når riksdagen — tre motioner på en dag" (FP/Expressen international desk)
-**Source story**: HD12744 + HD12746 motions
-**Expected outlets**: Foreign Policy (Swedish edition), Expressen international desk, SVT World
-**Angle**: Sweden's China policy under scrutiny; organ trafficking allegations
-**Government response**: Likely cautious; UD does not comment on intelligence matters
-**Intelligence value**: LOW domestic traction initially; HIGH if EU-level China policy develops
-
----
-
-### Framing Risk Assessment
-
-| Frame | Amplification Risk | Government Response Adequacy | Electoral Impact |
-|-------|------------------|------------------------------|-----------------|
-| Vapenlag (Frame 1) | LOW | HIGH (government wins narrative) | NEUTRAL |
-| S citizenship split (Frame 2) | MEDIUM | MEDIUM (S internal management) | MEDIUM |
-| HVB criminal homes (Frame 3) | HIGH | LOW (no proactive comms) | HIGH (adverse) |
-| SD–KD energy (Frame 4) | MEDIUM | LOW (KD defensive) | MEDIUM |
-| China risk (Frame 5) | LOW-MEDIUM | LOW | LOW short-term |
-
----
-
-### Narrative Control Recommendations
-
-1. **HVB**: Government should proactively announce JO referral or IVO investigation expansion within 48 hours to regain narrative control before tabloid amplification
-2. **S split**: S leadership should clarify SfU28 rationale to prevent Expressen driving "party in crisis" frame
-3. **Energy**: KD needs to clarify gas bridge timeline to prevent SD from setting the media agenda
-
-```mermaid
-%%{init: {"theme": "base"}}%%
-quadrantChart
-    title Media Frame Risk Matrix
-    x-axis Low Amplification Risk --> High Amplification Risk
-    y-axis Low Electoral Impact --> High Electoral Impact
-    quadrant-1 High risk high impact
-    quadrant-2 Monitor closely
-    quadrant-3 Low priority
-    quadrant-4 Handle proactively
-    HVB Criminal Homes: [0.8, 0.85]
-    S Citizenship Split: [0.55, 0.6]
-    SD-KD Energy: [0.5, 0.55]
-    China Risk: [0.4, 0.3]
-    Weapons Law: [0.25, 0.2]
-```
-
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/stakeholder-perspectives.md -->
 
@@ -458,6 +379,190 @@ flowchart LR
     style C24 fill:#ffbe0b,color:#0a0e27
     style S107 fill:#ff006e,color:#fff
     style SD73 fill:#ff006e,color:#fff
+```
+
+## Coalition Mathematics
+<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/coalition-mathematics.md -->
+
+---
+
+### Current Parliamentary Arithmetic
+
+349 total seats; 175 required for majority
+
+#### Current Seat Distribution (2022 election result, unchanged)
+
+| Party | Seats | Bloc |
+|-------|-------|------|
+| S (Socialdemokraterna) | 107 | Opposition |
+| SD (Sverigedemokraterna) | 73 | Tidö |
+| M (Moderaterna) | 68 | Tidö |
+| V (Vänsterpartiet) | 24 | Opposition |
+| C (Centerpartiet) | 24 | Opposition (de facto) |
+| MP (Miljöpartiet) | 18 | Opposition |
+| KD (Kristdemokraterna) | 19 | Tidö |
+| L (Liberalerna) | 16 | Tidö |
+| **Total** | **349** | |
+
+**Tidö (M+SD+KD+L)**: 68+73+19+16 = **176** seats → +1 majority  
+**Opposition (S+V+MP+C)**: 107+24+18+24 = **173** seats  
+
+---
+
+### Coalition Options (2026 Post-Election)
+
+#### Option A: Tidö Renewed (Most Likely)
+**Seats needed from current polling**: 175+
+- M (est.): 63–68 seats
+- SD (est.): 68–73 seats
+- KD (est.): 16–19 seats (THRESHOLD RISK if energy fracture worsens)
+- L (est.): 13–16 seats (THRESHOLD RISK if below 4%)
+- **Total est.**: 160–176 seats
+- **Viability**: POSSIBLE if KD+L both clear threshold; MARGINAL if both underperform
+
+#### Option B: S-led "Swedish Model" Coalition
+- S (est.): 100–108 seats
+- C (est.): 17–22 seats
+- L (est.): 13–16 seats  
+- MP (est.): 14–18 seats
+- **Total est.**: 144–164 seats
+- **Viability**: LOW — far from majority; requires V support or SD acquiescence
+
+#### Option C: Broad Left Coalition (S+V+MP+C)
+- S: ~104 seats
+- V: ~22 seats
+- MP: ~16 seats
+- C: ~20 seats
+- **Total est.**: ~162 seats
+- **Viability**: LOW — 13 short of majority; C would need to commit to left bloc explicitly (politically implausible today)
+
+#### Option D: Cross-Bloc (S+SD — "Nordic Model" taboo)
+- S+SD combined: ~174–181 seats
+- **Viability**: POLITICALLY TABOO but arithmetically sufficient; only viable after sustained political realignment
+- **Today's signal**: S's JA on security issues opens ideological space, but formal coalition remains taboo
+
+---
+
+### Threshold Watch (4% barrier)
+
+| Party | Latest Poll | Today's Signal | Threshold Risk |
+|-------|-------------|----------------|----------------|
+| L | 3.5–4.5% | Quiet positive (JA votes) | MEDIUM |
+| KD | 4.0–5.0% | SD energy friction | MEDIUM |
+| MP | 3.5–4.5% | Consistent niche | MEDIUM |
+| C | 4.5–6.0% | NEJ gambit — uncertain | MEDIUM-LOW |
+
+**High-risk scenario**: If L + KD both fall below 4% in September 2026, Tidö loses ~35 seats and is no longer viable. SD would need to find a new partner.
+
+---
+
+### Mathematical Swing Points
+
+- **C's 24 seats**: If C joins a S-led coalition, the math shifts dramatically (S+C = 131, plus V+MP = 173 — still short)
+- **Single-seat majority for Tidö**: If M or SD loses 2 seats, Tidö falls to 174 — still viable via speaker margin
+- **Threshold cascades**: If MP + L + KD all fall below 4%, combined ~53 seats eliminated; redistribution could give S a plurality but not majority
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e"}}}%%
+xychart-beta
+    title "Current Seats by Party (2022 result)"
+    x-axis [S, SD, M, V, C, KD, MP, L]
+    y-axis "Seats" 0 --> 120
+    bar [107, 73, 68, 24, 24, 19, 18, 16]
+```
+
+## Voter Segmentation
+<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/voter-segmentation.md -->
+
+---
+
+### Segmentation Framework
+
+Six key voter segments identified as pivotal for 2026 election outcome:
+
+---
+
+### Segment 1: Security-First Voters (~22% of electorate)
+
+**Profile**: Crime is top concern; support strict migration; accept gun regulation; often former S voters
+**2022 behaviour**: Split between S (declining) and SD (rising)
+**Today's signal**: JuU10 + SfU28 both adopted → this segment's agenda is being delivered across blocs
+**Movement risk**: LOW — agenda being served by current Riksdag; less likely to punish Tidö
+**Party competition**: S is actively competing for this segment (today's cross-bloc JA votes)
+
+---
+
+### Segment 2: Rural/Agricultural Liberal Voters (~7% of electorate)
+
+**Profile**: Hunting rights, gun ownership, property rights; formerly reliable C voters
+**2022 behaviour**: Many moved from C to M; C fell to 6.7%
+**Today's signal**: C voted NEJ on JuU10 — directly protecting this segment's interest
+**Movement risk**: MEDIUM — C is trying to recapture this segment; M competing
+**Party competition**: C vs M for rural liberal voter
+
+---
+
+### Segment 3: Security-Liberal Crossover (~8% of electorate)
+
+**Profile**: Educated urban; support EU/NATO; suspicious of SD; support moderate crime legislation; attracted to C or L
+**2022 behaviour**: Split L/C/M
+**Today's signal**: C voted NEJ on gun regulation (civil liberties signal) while supporting FöU20 (security)
+**Movement risk**: HIGH — C's principled positioning has potential to attract this segment away from L
+**Party competition**: C vs L; both at risk of falling below 4% threshold
+
+---
+
+### Segment 4: Working-Class Security Voters (~15% of electorate)
+
+**Profile**: Blue-collar; LO membership; crime/migration concern; traditional S loyalty eroding
+**2022 behaviour**: Large S-to-SD transfer; S lost ~4pp to SD among this group
+**Today's signal**: S's JA on security legislation is directly targeted at this segment
+**Movement risk**: MEDIUM — S's security pivot may halt bleeding; SD's gas bridge stance (protecting industrial jobs) competes
+**Party competition**: S vs SD for working-class north/industrial vote
+
+---
+
+### Segment 5: Public-Sector Female Voters (~13% of electorate)
+
+**Profile**: High public sector employment; welfare state concerns; HVB scandal directly resonant
+**2022 behaviour**: Stable S + MP
+**Today's signal**: HVB scandal (HD10454) directly concerns this segment — welfare institutions infiltrated by criminals
+**Movement risk**: HIGH — if HVB scandal escalates, this segment punishes Tidö (insufficient oversight) AND S (if perceived as enabler)
+**Party competition**: S retains if accountability message; MP and V compete on care/welfare narrative
+
+---
+
+### Segment 6: Green Economy Voters (~9% of electorate)
+
+**Profile**: Climate policy as top concern; educated urban; below-35
+**2022 behaviour**: MP + V + L (green-liberal overlap)
+**Today's signal**: SD vs KD energy fracture (gas bridge HD10453) raises doubt about Tidö's green credentials
+**Movement risk**: MEDIUM — V's NATO isolation may deter some; MP depends on crossing 4% threshold
+**Party competition**: MP vs V vs L; energy fracture benefits opposition narrative
+
+---
+
+### Cross-Segment Summary
+
+| Segment | Size | Today's Driver | Key Risk | Party Competition |
+|---------|------|---------------|----------|-------------------|
+| Security-First | 22% | Weapons+Citizenship ADOPTED | Low risk for Tidö | S vs SD |
+| Rural Liberal | 7% | C NEJ JuU10 | C recapture | C vs M |
+| Security-Liberal | 8% | C civil-liberties signal | C/L threshold risk | C vs L |
+| Working-Class Security | 15% | S security pivot | SD industrial appeal | S vs SD |
+| Public-Sector Female | 13% | HVB scandal | Welfare accountability | S vs MP |
+| Green Economy | 9% | Energy fracture (SD-KD) | Threshold risk MP/L | MP vs V vs L |
+
+```mermaid
+%%{init: {"theme": "base"}}%%
+pie title Voter Segment Distribution (Pivotal Segments)
+    "Security-First 22%" : 22
+    "Working-Class Security 15%" : 15
+    "Public-Sector Female 13%" : 13
+    "Green Economy 9%" : 9
+    "Security-Liberal 8%" : 8
+    "Rural Liberal 7%" : 7
+    "Other 24%" : 24
 ```
 
 ## Forward Indicators
@@ -703,6 +808,79 @@ flowchart TD
 
 ---
 
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/election-2026-analysis.md -->
+
+---
+
+### Electoral Context
+
+**Next Swedish general election**: September 2026 (ordinary Riksdag election day: third Sunday in September = 20 September 2026, approx 144 days away)
+
+**Current parliamentary arithmetic** (349 seats, majority = 175):
+- Tidö bloc (M+SD+KD+L): 68+73+19+16 = 176 seats
+- Opposition (S+V+MP+C): 107+24+18+24 = 173 seats
+- Governing majority: 1 seat margin
+
+---
+
+### Today's Electoral Signals
+
+#### Signal 1: JuU10 — C's Electoral Gambit
+- C voted unanimously NEJ on weapons law that passed 325:20 (approximate)
+- **Electoral interpretation**: C is signalling to its rural, liberal base that it is NOT a Tidö satellite
+- **Risk**: Perceived as obstructionist by security-focused voters
+- **Opportunity**: Gains distinctiveness vs M and SD on civil liberties
+- **Poll impact**: Insufficient data for one-day shift; monitor 2-week trend
+
+#### Signal 2: SfU28 — S's Election-Year Security Pivot
+- S majority JA on citizenship law
+- **Electoral interpretation**: S cannot fight 2026 on "soft on migration" ground after 2022 defeat on immigration
+- **Risk**: Hemorrhages V-adjacent voters (already V has 5.8% in latest SVT Pejl)
+- **Opportunity**: Recaptures security-concerned S-leavers who went M in 2022
+
+#### Signal 3: HVB + Criminal Economy — Accountability Liability for Tidö
+- Opposition interpellations on HVB (HD10454) and criminal economy (HD10451)
+- **Electoral interpretation**: Opposition has found a compelling accountability narrative: "Tidö promised safe Sweden, but criminals run children's homes"
+- **Timeline**: If JO report published before summer recess, could dominate July-August campaign prep
+
+---
+
+### Party-by-Party Electoral Forecast Adjustment
+
+| Party | Current poll est. | 2022 result | Today's signal | Adjusted outlook |
+|-------|------------------|-------------|----------------|-----------------|
+| S | 29–31% | 30.3% | JA on security — stabilising | HOLD |
+| SD | 19–21% | 20.5% | Gas bridge friction vs KD | SLIGHT DOWN (KD friction visible) |
+| M | 17–19% | 19.1% | Strong day — JuU10+SfU28 passed | HOLD |
+| C | 4–6% | 6.7% | NEJ gambit — too early to call | UNCERTAIN |
+| V | 5–7% | 6.7% | NATO isolation; gaining S-left | SLIGHT UP |
+| KD | 4–5% | 5.3% | Energy under pressure from SD | DOWN RISK |
+| MP | 3–5% | 5.1% | Consistent niche; below risk threshold | HOLD |
+| L | 3–4% | 4.7% | Quiet day; JA on both | HOLD |
+
+---
+
+### 2026 Coalition Arithmetic Scenarios
+
+| Coalition | Seats (estimate) | Viable? |
+|-----------|-----------------|---------|
+| Tidö renewed (M+SD+KD+L) | ~172–180 | POSSIBLE (requires L above 4%) |
+| "Swedish model" (S+C+L+MP) | ~155–170 | DIFFICULT (C+L alignment required) |
+| S+V+MP+C | ~167–175 | NARROW (needs C to join left bloc) |
+| S+SD (Nordic model) | ~180+ | TABOO but arithmetically feasible |
+
+**Most likely outcome (S1 base case)**: Tidö renewed with narrow majority. S strengthened in opposition but insufficient for government.
+
+```mermaid
+%%{init: {"theme": "base"}}%%
+xychart-beta
+    title "Estimated Seat Ranges — Election 2026 (preliminary)"
+    x-axis [S, SD, M, C, V, KD, MP, L]
+    y-axis "Seats" 0 --> 130
+    bar [103, 70, 65, 20, 22, 17, 16, 13]
+```
+
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/risk-assessment.md -->
 
@@ -925,261 +1103,69 @@ flowchart TD
     style G3 fill:#1a1e3d,color:#e0e0e0
 ```
 
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/election-2026-analysis.md -->
+## Historical Parallels
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/historical-parallels.md -->
 
 ---
 
-### Electoral Context
+### Historical Parallel 1: JuU10 — C's NEJ vs Folkpartiet 1991–1994
 
-**Next Swedish general election**: September 2026 (ordinary Riksdag election day: third Sunday in September = 20 September 2026, approx 144 days away)
+**Situation**: In 1991–1994, Folkpartiet (FP, now L) participated in the Bildt government coalition but positioned itself on specific civil liberties votes as distinct from M and KD. This created temporary isolation but ultimately preserved the "liberal" brand.
 
-**Current parliamentary arithmetic** (349 seats, majority = 175):
-- Tidö bloc (M+SD+KD+L): 68+73+19+16 = 176 seats
-- Opposition (S+V+MP+C): 107+24+18+24 = 173 seats
-- Governing majority: 1 seat margin
+**Today**: C voted NEJ on JuU10 while supporting FöU14 (military). This mirrors FP's selective positioning — strategic NEJ on rights-adjacent issues, JA on defence.
 
----
-
-### Today's Electoral Signals
-
-#### Signal 1: JuU10 — C's Electoral Gambit
-- C voted unanimously NEJ on weapons law that passed 325:20 (approximate)
-- **Electoral interpretation**: C is signalling to its rural, liberal base that it is NOT a Tidö satellite
-- **Risk**: Perceived as obstructionist by security-focused voters
-- **Opportunity**: Gains distinctiveness vs M and SD on civil liberties
-- **Poll impact**: Insufficient data for one-day shift; monitor 2-week trend
-
-#### Signal 2: SfU28 — S's Election-Year Security Pivot
-- S majority JA on citizenship law
-- **Electoral interpretation**: S cannot fight 2026 on "soft on migration" ground after 2022 defeat on immigration
-- **Risk**: Hemorrhages V-adjacent voters (already V has 5.8% in latest SVT Pejl)
-- **Opportunity**: Recaptures security-concerned S-leavers who went M in 2022
-
-#### Signal 3: HVB + Criminal Economy — Accountability Liability for Tidö
-- Opposition interpellations on HVB (HD10454) and criminal economy (HD10451)
-- **Electoral interpretation**: Opposition has found a compelling accountability narrative: "Tidö promised safe Sweden, but criminals run children's homes"
-- **Timeline**: If JO report published before summer recess, could dominate July-August campaign prep
+**Lesson**: Single-issue isolation does not destroy a party if the issue is clearly ideologically coherent. C's rural gun-ownership interest is coherent with its agrarian-liberal roots.
 
 ---
 
-### Party-by-Party Electoral Forecast Adjustment
+### Historical Parallel 2: SfU28 — S's Security Pivot vs SAP 1993–1995
 
-| Party | Current poll est. | 2022 result | Today's signal | Adjusted outlook |
-|-------|------------------|-------------|----------------|-----------------|
-| S | 29–31% | 30.3% | JA on security — stabilising | HOLD |
-| SD | 19–21% | 20.5% | Gas bridge friction vs KD | SLIGHT DOWN (KD friction visible) |
-| M | 17–19% | 19.1% | Strong day — JuU10+SfU28 passed | HOLD |
-| C | 4–6% | 6.7% | NEJ gambit — too early to call | UNCERTAIN |
-| V | 5–7% | 6.7% | NATO isolation; gaining S-left | SLIGHT UP |
-| KD | 4–5% | 5.3% | Energy under pressure from SD | DOWN RISK |
-| MP | 3–5% | 5.1% | Consistent niche; below risk threshold | HOLD |
-| L | 3–4% | 4.7% | Quiet day; JA on both | HOLD |
+**Situation**: In 1993–1995, Ingvar Carlsson's SAP adopted stricter asylum policy after the Bosniakris exposed internal party tensions. The move was defensive-electoral, opposed by a small left wing, and ultimately did not damage S's long-term position.
+
+**Today**: S majority JA on SfU28 (citizenship), with lone dissenter Annika Strandhäll. Structurally identical: leadership endorsing rightward shift, vocal internal minority dissenting.
+
+**Lesson**: S has precedent for security/migration pivot without electoral collapse. The 1993–95 shift did not collapse S; S returned to government in 1994 with 45.3%.
 
 ---
 
-### 2026 Coalition Arithmetic Scenarios
+### Historical Parallel 3: HVB Crisis vs Systembolagets Corruption Investigations 2003–2006
 
-| Coalition | Seats (estimate) | Viable? |
-|-----------|-----------------|---------|
-| Tidö renewed (M+SD+KD+L) | ~172–180 | POSSIBLE (requires L above 4%) |
-| "Swedish model" (S+C+L+MP) | ~155–170 | DIFFICULT (C+L alignment required) |
-| S+V+MP+C | ~167–175 | NARROW (needs C to join left bloc) |
-| S+SD (Nordic model) | ~180+ | TABOO but arithmetically feasible |
+**Situation**: In 2003–2006, a series of procurement scandals at Systembolaget and later Stockholm County Council (Karolinska) showed that state-adjacent institutions were vulnerable to contractor fraud. Each scandal followed a similar pattern: initial denial → investigation → systemic reform.
 
-**Most likely outcome (S1 base case)**: Tidö renewed with narrow majority. S strengthened in opposition but insufficient for government.
+**Today**: HVB criminal operator scandal follows the same institutional pattern: initial intelligence (police databases) not shared → external exposure via interpellation → government defensive.
+
+**Lesson**: Scandals of this type typically require 2–3 years from exposure to systemic reform. If today is the "exposure" phase, reform legislation is unlikely before 2028. However, electoral impact can be felt as early as the next election.
+
+---
+
+### Historical Parallel 4: Gas Bridge vs 1979 Energy Crisis (Sweden)
+
+**Situation**: Sweden's 1979–1980 nuclear referendum and subsequent energy debate created a cross-party fracture that took decades to resolve (nuclear phase-out oscillating on/off through 2000s–2020s).
+
+**Today**: SD's gas bridge demand vs KD's nuclear-first creates an energy fracture within the coalition. The gas bridge question is a short-term fix vs long-term transition debate, analogous to the nuclear vs hydro debate post-1979.
+
+**Lesson**: Swedish energy politics has a long history of unresolved cross-cutting fractures that persist across coalition boundaries. Today's gas bridge tension may not resolve in this electoral term.
+
+---
+
+### Parallel Confidence Table
+
+| Parallel | Historical Event | Confidence | Predictive Value |
+|----------|-----------------|------------|-----------------|
+| C isolation | FP 1991–94 | MEDIUM | Moderate — different fragmentation |
+| S security pivot | SAP 1993–95 | HIGH | High — direct structural analogy |
+| HVB scandal pattern | Systembolaget 2003–06 | MEDIUM-HIGH | High for timeline; moderate for scale |
+| Gas bridge fracture | 1979 energy crisis | MEDIUM | High for persistence of fracture |
 
 ```mermaid
 %%{init: {"theme": "base"}}%%
-xychart-beta
-    title "Estimated Seat Ranges — Election 2026 (preliminary)"
-    x-axis [S, SD, M, C, V, KD, MP, L]
-    y-axis "Seats" 0 --> 130
-    bar [103, 70, 65, 20, 22, 17, 16, 13]
-```
-
-## Coalition Mathematics
-<!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/coalition-mathematics.md -->
-
----
-
-### Current Parliamentary Arithmetic
-
-349 total seats; 175 required for majority
-
-#### Current Seat Distribution (2022 election result, unchanged)
-
-| Party | Seats | Bloc |
-|-------|-------|------|
-| S (Socialdemokraterna) | 107 | Opposition |
-| SD (Sverigedemokraterna) | 73 | Tidö |
-| M (Moderaterna) | 68 | Tidö |
-| V (Vänsterpartiet) | 24 | Opposition |
-| C (Centerpartiet) | 24 | Opposition (de facto) |
-| MP (Miljöpartiet) | 18 | Opposition |
-| KD (Kristdemokraterna) | 19 | Tidö |
-| L (Liberalerna) | 16 | Tidö |
-| **Total** | **349** | |
-
-**Tidö (M+SD+KD+L)**: 68+73+19+16 = **176** seats → +1 majority  
-**Opposition (S+V+MP+C)**: 107+24+18+24 = **173** seats  
-
----
-
-### Coalition Options (2026 Post-Election)
-
-#### Option A: Tidö Renewed (Most Likely)
-**Seats needed from current polling**: 175+
-- M (est.): 63–68 seats
-- SD (est.): 68–73 seats
-- KD (est.): 16–19 seats (THRESHOLD RISK if energy fracture worsens)
-- L (est.): 13–16 seats (THRESHOLD RISK if below 4%)
-- **Total est.**: 160–176 seats
-- **Viability**: POSSIBLE if KD+L both clear threshold; MARGINAL if both underperform
-
-#### Option B: S-led "Swedish Model" Coalition
-- S (est.): 100–108 seats
-- C (est.): 17–22 seats
-- L (est.): 13–16 seats  
-- MP (est.): 14–18 seats
-- **Total est.**: 144–164 seats
-- **Viability**: LOW — far from majority; requires V support or SD acquiescence
-
-#### Option C: Broad Left Coalition (S+V+MP+C)
-- S: ~104 seats
-- V: ~22 seats
-- MP: ~16 seats
-- C: ~20 seats
-- **Total est.**: ~162 seats
-- **Viability**: LOW — 13 short of majority; C would need to commit to left bloc explicitly (politically implausible today)
-
-#### Option D: Cross-Bloc (S+SD — "Nordic Model" taboo)
-- S+SD combined: ~174–181 seats
-- **Viability**: POLITICALLY TABOO but arithmetically sufficient; only viable after sustained political realignment
-- **Today's signal**: S's JA on security issues opens ideological space, but formal coalition remains taboo
-
----
-
-### Threshold Watch (4% barrier)
-
-| Party | Latest Poll | Today's Signal | Threshold Risk |
-|-------|-------------|----------------|----------------|
-| L | 3.5–4.5% | Quiet positive (JA votes) | MEDIUM |
-| KD | 4.0–5.0% | SD energy friction | MEDIUM |
-| MP | 3.5–4.5% | Consistent niche | MEDIUM |
-| C | 4.5–6.0% | NEJ gambit — uncertain | MEDIUM-LOW |
-
-**High-risk scenario**: If L + KD both fall below 4% in September 2026, Tidö loses ~35 seats and is no longer viable. SD would need to find a new partner.
-
----
-
-### Mathematical Swing Points
-
-- **C's 24 seats**: If C joins a S-led coalition, the math shifts dramatically (S+C = 131, plus V+MP = 173 — still short)
-- **Single-seat majority for Tidö**: If M or SD loses 2 seats, Tidö falls to 174 — still viable via speaker margin
-- **Threshold cascades**: If MP + L + KD all fall below 4%, combined ~53 seats eliminated; redistribution could give S a plurality but not majority
-
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e"}}}%%
-xychart-beta
-    title "Current Seats by Party (2022 result)"
-    x-axis [S, SD, M, V, C, KD, MP, L]
-    y-axis "Seats" 0 --> 120
-    bar [107, 73, 68, 24, 24, 19, 18, 16]
-```
-
-## Voter Segmentation
-<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/voter-segmentation.md -->
-
----
-
-### Segmentation Framework
-
-Six key voter segments identified as pivotal for 2026 election outcome:
-
----
-
-### Segment 1: Security-First Voters (~22% of electorate)
-
-**Profile**: Crime is top concern; support strict migration; accept gun regulation; often former S voters
-**2022 behaviour**: Split between S (declining) and SD (rising)
-**Today's signal**: JuU10 + SfU28 both adopted → this segment's agenda is being delivered across blocs
-**Movement risk**: LOW — agenda being served by current Riksdag; less likely to punish Tidö
-**Party competition**: S is actively competing for this segment (today's cross-bloc JA votes)
-
----
-
-### Segment 2: Rural/Agricultural Liberal Voters (~7% of electorate)
-
-**Profile**: Hunting rights, gun ownership, property rights; formerly reliable C voters
-**2022 behaviour**: Many moved from C to M; C fell to 6.7%
-**Today's signal**: C voted NEJ on JuU10 — directly protecting this segment's interest
-**Movement risk**: MEDIUM — C is trying to recapture this segment; M competing
-**Party competition**: C vs M for rural liberal voter
-
----
-
-### Segment 3: Security-Liberal Crossover (~8% of electorate)
-
-**Profile**: Educated urban; support EU/NATO; suspicious of SD; support moderate crime legislation; attracted to C or L
-**2022 behaviour**: Split L/C/M
-**Today's signal**: C voted NEJ on gun regulation (civil liberties signal) while supporting FöU20 (security)
-**Movement risk**: HIGH — C's principled positioning has potential to attract this segment away from L
-**Party competition**: C vs L; both at risk of falling below 4% threshold
-
----
-
-### Segment 4: Working-Class Security Voters (~15% of electorate)
-
-**Profile**: Blue-collar; LO membership; crime/migration concern; traditional S loyalty eroding
-**2022 behaviour**: Large S-to-SD transfer; S lost ~4pp to SD among this group
-**Today's signal**: S's JA on security legislation is directly targeted at this segment
-**Movement risk**: MEDIUM — S's security pivot may halt bleeding; SD's gas bridge stance (protecting industrial jobs) competes
-**Party competition**: S vs SD for working-class north/industrial vote
-
----
-
-### Segment 5: Public-Sector Female Voters (~13% of electorate)
-
-**Profile**: High public sector employment; welfare state concerns; HVB scandal directly resonant
-**2022 behaviour**: Stable S + MP
-**Today's signal**: HVB scandal (HD10454) directly concerns this segment — welfare institutions infiltrated by criminals
-**Movement risk**: HIGH — if HVB scandal escalates, this segment punishes Tidö (insufficient oversight) AND S (if perceived as enabler)
-**Party competition**: S retains if accountability message; MP and V compete on care/welfare narrative
-
----
-
-### Segment 6: Green Economy Voters (~9% of electorate)
-
-**Profile**: Climate policy as top concern; educated urban; below-35
-**2022 behaviour**: MP + V + L (green-liberal overlap)
-**Today's signal**: SD vs KD energy fracture (gas bridge HD10453) raises doubt about Tidö's green credentials
-**Movement risk**: MEDIUM — V's NATO isolation may deter some; MP depends on crossing 4% threshold
-**Party competition**: MP vs V vs L; energy fracture benefits opposition narrative
-
----
-
-### Cross-Segment Summary
-
-| Segment | Size | Today's Driver | Key Risk | Party Competition |
-|---------|------|---------------|----------|-------------------|
-| Security-First | 22% | Weapons+Citizenship ADOPTED | Low risk for Tidö | S vs SD |
-| Rural Liberal | 7% | C NEJ JuU10 | C recapture | C vs M |
-| Security-Liberal | 8% | C civil-liberties signal | C/L threshold risk | C vs L |
-| Working-Class Security | 15% | S security pivot | SD industrial appeal | S vs SD |
-| Public-Sector Female | 13% | HVB scandal | Welfare accountability | S vs MP |
-| Green Economy | 9% | Energy fracture (SD-KD) | Threshold risk MP/L | MP vs V vs L |
-
-```mermaid
-%%{init: {"theme": "base"}}%%
-pie title Voter Segment Distribution (Pivotal Segments)
-    "Security-First 22%" : 22
-    "Working-Class Security 15%" : 15
-    "Public-Sector Female 13%" : 13
-    "Green Economy 9%" : 9
-    "Security-Liberal 8%" : 8
-    "Rural Liberal 7%" : 7
-    "Other 24%" : 24
+timeline
+    title Historical Parallels Timeline
+    1979 : Sweden nuclear referendum\nEnergy policy fracture (→Gas bridge 2026)
+    1991-1994 : FP selective NEJ strategy\nLiberal brand preservation (→C NEJ JuU10 2026)
+    1993-1995 : SAP asylum policy pivot\nSecurity-electoral realignment (→S SfU28 JA 2026)
+    2003-2006 : Systembolaget corruption\nState-adjacent institution fraud (→HVB 2026)
+    2026 : Today – all four parallels\nconverge in one session
 ```
 
 ## Comparative International
@@ -1278,71 +1264,6 @@ quadrantChart
     Denmark LA isolation: [0.5, 0.2]
 ```
 
-## Historical Parallels
-<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/historical-parallels.md -->
-
----
-
-### Historical Parallel 1: JuU10 — C's NEJ vs Folkpartiet 1991–1994
-
-**Situation**: In 1991–1994, Folkpartiet (FP, now L) participated in the Bildt government coalition but positioned itself on specific civil liberties votes as distinct from M and KD. This created temporary isolation but ultimately preserved the "liberal" brand.
-
-**Today**: C voted NEJ on JuU10 while supporting FöU14 (military). This mirrors FP's selective positioning — strategic NEJ on rights-adjacent issues, JA on defence.
-
-**Lesson**: Single-issue isolation does not destroy a party if the issue is clearly ideologically coherent. C's rural gun-ownership interest is coherent with its agrarian-liberal roots.
-
----
-
-### Historical Parallel 2: SfU28 — S's Security Pivot vs SAP 1993–1995
-
-**Situation**: In 1993–1995, Ingvar Carlsson's SAP adopted stricter asylum policy after the Bosniakris exposed internal party tensions. The move was defensive-electoral, opposed by a small left wing, and ultimately did not damage S's long-term position.
-
-**Today**: S majority JA on SfU28 (citizenship), with lone dissenter Annika Strandhäll. Structurally identical: leadership endorsing rightward shift, vocal internal minority dissenting.
-
-**Lesson**: S has precedent for security/migration pivot without electoral collapse. The 1993–95 shift did not collapse S; S returned to government in 1994 with 45.3%.
-
----
-
-### Historical Parallel 3: HVB Crisis vs Systembolagets Corruption Investigations 2003–2006
-
-**Situation**: In 2003–2006, a series of procurement scandals at Systembolaget and later Stockholm County Council (Karolinska) showed that state-adjacent institutions were vulnerable to contractor fraud. Each scandal followed a similar pattern: initial denial → investigation → systemic reform.
-
-**Today**: HVB criminal operator scandal follows the same institutional pattern: initial intelligence (police databases) not shared → external exposure via interpellation → government defensive.
-
-**Lesson**: Scandals of this type typically require 2–3 years from exposure to systemic reform. If today is the "exposure" phase, reform legislation is unlikely before 2028. However, electoral impact can be felt as early as the next election.
-
----
-
-### Historical Parallel 4: Gas Bridge vs 1979 Energy Crisis (Sweden)
-
-**Situation**: Sweden's 1979–1980 nuclear referendum and subsequent energy debate created a cross-party fracture that took decades to resolve (nuclear phase-out oscillating on/off through 2000s–2020s).
-
-**Today**: SD's gas bridge demand vs KD's nuclear-first creates an energy fracture within the coalition. The gas bridge question is a short-term fix vs long-term transition debate, analogous to the nuclear vs hydro debate post-1979.
-
-**Lesson**: Swedish energy politics has a long history of unresolved cross-cutting fractures that persist across coalition boundaries. Today's gas bridge tension may not resolve in this electoral term.
-
----
-
-### Parallel Confidence Table
-
-| Parallel | Historical Event | Confidence | Predictive Value |
-|----------|-----------------|------------|-----------------|
-| C isolation | FP 1991–94 | MEDIUM | Moderate — different fragmentation |
-| S security pivot | SAP 1993–95 | HIGH | High — direct structural analogy |
-| HVB scandal pattern | Systembolaget 2003–06 | MEDIUM-HIGH | High for timeline; moderate for scale |
-| Gas bridge fracture | 1979 energy crisis | MEDIUM | High for persistence of fracture |
-
-```mermaid
-%%{init: {"theme": "base"}}%%
-timeline
-    title Historical Parallels Timeline
-    1979 : Sweden nuclear referendum\nEnergy policy fracture (→Gas bridge 2026)
-    1991-1994 : FP selective NEJ strategy\nLiberal brand preservation (→C NEJ JuU10 2026)
-    1993-1995 : SAP asylum policy pivot\nSecurity-electoral realignment (→S SfU28 JA 2026)
-    2003-2006 : Systembolaget corruption\nState-adjacent institution fraud (→HVB 2026)
-    2026 : Today – all four parallels\nconverge in one session
-```
-
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/implementation-feasibility.md -->
 
@@ -1433,6 +1354,85 @@ quadrantChart
     Citizenship Law: [0.3, 0.8]
     Critical Infrastructure: [0.7, 0.85]
     Weapons Register: [0.55, 0.65]
+```
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/media-framing-analysis.md -->
+
+---
+
+### Expected Media Frames (29–30 April 2026)
+
+#### Frame 1: "Riksdagen skärper vapenlagen — C protesterar ensam" (SVT/DN likely)
+**Source story**: JuU10 adopted 325:20
+**Expected outlets**: SVT, Dagens Nyheter, Aftonbladet (crime desk)
+**Angle**: Wide majority for gun law; C isolated; government delivers on security promise
+**Opposition angle**: V and MP may argue the law doesn't address root causes
+**C angle**: "Vi försvara rättssäkerheten och lantbefolkningens rätt"
+**Intelligence value**: Frame reinforces security consensus narrative; C's position likely framed as fringe dissent
+
+#### Frame 2: "S röstade med regeringen om medborgarskap — intern splittring" (Expressen/SVT Politik likely)
+**Source story**: SfU28 adopted, S majority JA with lone NEJ (Strandhäll)
+**Expected outlets**: Expressen, Aftonbladet, SVT Political desk
+**Angle**: S's rightward shift; Strandhäll vs leadership
+**Party response**: S leadership expected to say "Vi tar brottsofferperspektivet på allvar"
+**Intelligence value**: Exposes S internal tension; amplifies rightward drift narrative
+
+#### Frame 3: "Kriminella driver HVB-hem — riksdagsman kräver svar" (Aftonbladet/Expressen)
+**Source story**: HD10454 interpellation
+**Expected outlets**: Aftonbladet (tabloid crime coverage), regional media (personal stories)
+**Angle**: Scandal frame — vulnerable children in criminally-operated homes
+**Government response**: Expected defensive; point to ongoing IVO and police reviews
+**Intelligence value**: HIGH electoral impact potential; if photos/names emerge, cascade likely
+
+#### Frame 4: "SD och KD bryter om gas — koalitionstension" (Dagens Nyheter/GP)
+**Source story**: HD10453 interpellation; gas bridge vs nuclear
+**Expected outlets**: Dagens Nyheter, Göteborgs-Posten, Norrländska Socialdemokraten (SD constituency)
+**Angle**: Internal coalition tension; energy policy uncertainty
+**Intelligence value**: MEDIUM initially; HIGH if gas supply discussion reaches business press
+
+#### Frame 5: "Kina-frågan når riksdagen — tre motioner på en dag" (FP/Expressen international desk)
+**Source story**: HD12744 + HD12746 motions
+**Expected outlets**: Foreign Policy (Swedish edition), Expressen international desk, SVT World
+**Angle**: Sweden's China policy under scrutiny; organ trafficking allegations
+**Government response**: Likely cautious; UD does not comment on intelligence matters
+**Intelligence value**: LOW domestic traction initially; HIGH if EU-level China policy develops
+
+---
+
+### Framing Risk Assessment
+
+| Frame | Amplification Risk | Government Response Adequacy | Electoral Impact |
+|-------|------------------|------------------------------|-----------------|
+| Vapenlag (Frame 1) | LOW | HIGH (government wins narrative) | NEUTRAL |
+| S citizenship split (Frame 2) | MEDIUM | MEDIUM (S internal management) | MEDIUM |
+| HVB criminal homes (Frame 3) | HIGH | LOW (no proactive comms) | HIGH (adverse) |
+| SD–KD energy (Frame 4) | MEDIUM | LOW (KD defensive) | MEDIUM |
+| China risk (Frame 5) | LOW-MEDIUM | LOW | LOW short-term |
+
+---
+
+### Narrative Control Recommendations
+
+1. **HVB**: Government should proactively announce JO referral or IVO investigation expansion within 48 hours to regain narrative control before tabloid amplification
+2. **S split**: S leadership should clarify SfU28 rationale to prevent Expressen driving "party in crisis" frame
+3. **Energy**: KD needs to clarify gas bridge timeline to prevent SD from setting the media agenda
+
+```mermaid
+%%{init: {"theme": "base"}}%%
+quadrantChart
+    title Media Frame Risk Matrix
+    x-axis Low Amplification Risk --> High Amplification Risk
+    y-axis Low Electoral Impact --> High Electoral Impact
+    quadrant-1 High risk high impact
+    quadrant-2 Monitor closely
+    quadrant-3 Low priority
+    quadrant-4 Handle proactively
+    HVB Criminal Homes: [0.8, 0.85]
+    S Citizenship Split: [0.55, 0.6]
+    SD-KD Energy: [0.5, 0.55]
+    China Risk: [0.4, 0.3]
+    Weapons Law: [0.25, 0.2]
 ```
 
 ## Devil's Advocate
@@ -1850,19 +1850,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/media-framing-analysis.md)
 - [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/stakeholder-perspectives.md)
+- [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/coalition-mathematics.md)
+- [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/voter-segmentation.md)
 - [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/forward-indicators.md)
 - [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/election-2026-analysis.md)
 - [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/risk-assessment.md)
 - [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/swot-analysis.md)
 - [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/threat-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/election-2026-analysis.md)
-- [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/coalition-mathematics.md)
-- [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/comparative-international.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/evening-analysis/cross-reference-map.md)

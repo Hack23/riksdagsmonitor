@@ -5,7 +5,7 @@ date: 2026-04-29
 subfolder: propositions
 slug: 2026-04-29-propositions
 source_folder: analysis/daily/2026-04-29/propositions
-generated_at: 2026-05-04T09:52:32.517Z
+generated_at: 2026-05-04T12:16:14.200Z
 language: en
 layout: article
 ---
@@ -66,10 +66,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -231,456 +231,6 @@ xychart-beta
 style HD03259 fill:#ff006e
 style HD03247 fill:#ffbe0b
 style HD03257 fill:#00d9ff
-
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/media-framing-analysis.md -->
-
-### Förväntade ramverk per proposition
-
-#### HD03259 — Nationell transportplan 2026–2037
-
-**Frame 1: "Historisk satsning" (Koalitionsnarratv)**
-- Avsändare: Ulf Kristersson, Andreas Carlson (L), Tidömedia
-- Nyckelbudskap: "Det största infrastrukturpaketet i modern tid"
-- Medier: SVT Agenda, Expressen, Dagens Industri
-- Risk för frame: Opposition kontrar med inflationsargument
-
-**Frame 2: "Väg på bekostnad av järnväg" (Oppositionsnarrativ)**
-- Avsändare: Magdalena Andersson (S), Magnus Ek (C), Miljöpartiet
-- Nyckelbudskap: "Klimatmålen offras för motorvägar"
-- Medier: Aftonbladet, Rapport SVT, ETC
-- Risk för frame: SD:s järnvägskrav synliggörs
-
-**Frame 3: "Norrbotniabanan och Norrlandsfrågan"**
-- Avsändare: Norrbottenspolitiker, regionala medier
-- Nyckelbudskap: "Hur mycket till norra Sverige?"
-- Medier: Norrbottens-Kuriren, P4 Norrbotten, Västerbottens-Kuriren
-- Sannolik vinkel: Om Norrbotniabanan är finansierad → positiv frame
-
-**Frame 4: "Kostnadsrisker och budgetsprickor"**
-- Avsändare: Riksrevisionen, ekonomikorrespondenter
-- Nyckelbudskap: "875 miljarder räcker inte — inflation slukar värdet"
-- Medier: SvD Näringsliv, Ekot SR, DN Ekonomi
-- Trolig tidpunkt: Trafikverkets revidering Q4 2026
-
-#### HD03247 — OTC-läkemedelsrådgivning
-
-**Frame 5: "Säkrare läkemedelsanvändning"**
-- Koalitionsnarrativ: Patientsäkerhet och EU-anpassning
-- Medier: Läkartidningen, Pharmaindustri
-- Sannolik tone: Teknisk-positiv, låg nyhetsvärde
-
-**Frame 6: "Risk för glesbygdsapotek"**
-- Oppositionsnarrativ: Kostnadstryck kan stänga lokalapotek
-- Medier: Regionala tidningar, Landsbygdsnytt
-- Sannolik ton: Kritisk, med human interest
-
-#### HD03257 — Kommunal lantmäteri IT
-
-**Frame 7: "Digital förvaltning" (neutral)**
-- Inga starka politiska ramar; teknisk-administrativ nyhet
-- Trolig bevakning: Fastighets- och teknikmedier
-
-### Propagandaanalys (OSINT-perspektiv)
-
-**Desinformationsrisker kring HD03259**:
-- Falsk premiss: "Sverige riskerar EU-böter om planen antas" → Osann; TEN-T-krav gäller infrastrukturstandarder
-- Overstatement: "875 Mdr räcker till hela klimatomställningen" → Ointressant förenkling
-- Understatement: "Bara 11 % mer än förra planen" → Tekniskt sant men missar inflationsjustering
-
-**Övervakningsrekommendationer**:
-1. Observera SD:s interna kommunikation om järnvägsandel (SNS, Arbetsgrupp transport)
-2. Övervaka Trafikverkets omvärldsrapporter för kostnadssignaler
-3. Granska oppositionspartiernas egna alternativplaner (S och V har egna NTP-kalkyler)
-
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27"}}}%%
-flowchart TD
-    HD03259[HD03259 Transportplan] --> F1[Frame 1: Historisk satsning]
-    HD03259 --> F2[Frame 2: Järnvägsgapet]
-    HD03259 --> F3[Frame 3: Norrlandsfrågan]
-    HD03259 --> F4[Frame 4: Kostnadsrisk]
-    HD03247[HD03247 OTC] --> F5[Frame 5: Patientsäkerhet]
-    HD03247 --> F6[Frame 6: Glesbygdsapotek]
-    HD03257[HD03257 IT-lantmäteri] --> F7[Frame 7: Digital förvaltning]
-    style F1 fill:#00d9ff,color:#0a0e27
-    style F2 fill:#ff006e,color:#fff
-    style F3 fill:#ffbe0b,color:#0a0e27
-    style F4 fill:#ff006e,color:#fff
-    style F5 fill:#00d9ff,color:#0a0e27
-    style F6 fill:#ffbe0b,color:#0a0e27
-    style F7 fill:#00d9ff,color:#0a0e27
-```
-
-## Stakeholder Perspectives
-<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/stakeholder-perspectives.md -->
-
-### 6-Lens Stakeholder Matrix
-
-| Aktör | Roll | Position HD03259 | Position HD03247 | Position HD03257 | Inflytande | Intressen |
-|-------|------|-----------------|-----------------|-----------------|-----------|----------|
-| Moderaterna (M) | Koalitionsledare | Stöder ramen; vill ha väg+järnväg balans | Neutralt; EU-anpassning | Neutralt | VERY HIGH | Väljarmandat, infrastrukturlöften [HD03259] |
-| Sverigedemokraterna (SD) | Stödparti (Tidöavtalet) | Accepterar ramen; kräver mer järnväg | Neutralt | Neutralt | HIGH | Valkretslöften, tågpendlare [HD03259] |
-| Socialdemokraterna (S) | Oppositionsledare | Stöder princip; kräver mer klimatambition | Stöder | Neutralt | HIGH | Facklig anknytning, järnvägsarbetare [HD03259] |
-| Vänsterpartiet (V) | Opposition | Ifrågasätter väginvesteringarna | Positiv | Neutralt | MEDIUM | Klimat, kollektivtrafik [HD03259] |
-| Miljöpartiet (MP) | Opposition | Kräver Parisavtals-kompatibilitet | Positiv | Neutralt | MEDIUM | Klimat, cykel, kollektivtrafik [HD03259] |
-| Trafikverket | Genomförande | Neutral; önskar klara prioriteringar | N/A | N/A | HIGH | Effektiv upphandling [HD03259] |
-| Kommuner/Regioner | Direkt påverkade | Varierar; glesbygdskommuner vill ha mer vägpengar | Måste anpassa apotek | Måste uppgradera IT-system | HIGH | Lokal tillgänglighet [HD03259] [HD03247] [HD03257] |
-| Apotekskedjor (Apoteket AB, Apotek Hjärtat) | Reguleringsadressat | N/A | Ambivalent — kostnad | N/A | MEDIUM | Lönsamhet, kundförtroende [HD03247] |
-| Fastighetssektorn | Indirekt | Gynnas av förbättrad infrastruktur | N/A | Gynnas av effektivare lantmäteri | MEDIUM | Fastighetspriser, byggtakt [HD03259] [HD03257] |
-| EU-kommissionen | Extern norm-setter | Kräver TEN-T-kompatibilitet | Kräver direktiv-impl. | Neutral | HIGH (extern) | Harmonisering [HD03259] [HD03247] |
-
-### Influence Network
-
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27"}}}%%
-graph TD
-    Kristersson[Ulf Kristersson PM] --> HD03259
-    Carlson[Andreas Carlson] --> HD03259
-    Carlson --> HD03257
-    Forssmed[Jakob Forssmed] --> HD03247
-    HD03259 --> TU[Transportutskottet]
-    HD03247 --> SoU[Socialutskottet]
-    HD03257 --> CU[Civilutskottet]
-    TU --> M_pos[M: Stöder]
-    TU --> SD_krav[SD: Kräver järnväg]
-    TU --> S_pos[S: Mer klimat]
-    SoU --> Apotek[Apotekskedjor]
-    CU --> Kommuner[Kommunala lantmäterimyndigheter]
-    style HD03259 fill:#ff006e,color:#fff
-    style HD03247 fill:#ffbe0b,color:#0a0e27
-    style HD03257 fill:#00d9ff,color:#0a0e27
-    style Kristersson fill:#1a1e3d,stroke:#00d9ff
-    style Carlson fill:#1a1e3d,stroke:#00d9ff
-    style Forssmed fill:#1a1e3d,stroke:#00d9ff
-    style TU fill:#1a1e3d,stroke:#ff006e
-    style SoU fill:#1a1e3d,stroke:#ffbe0b
-    style CU fill:#1a1e3d,stroke:#00d9ff
-```
-
-### Named Actor Analysis
-
-- **Andreas Carlson** (Landsbygds- och infrastrukturdepartementet): ansvarig för både HD03259 och HD03257 — dubbelt tryck att leverera [HD03259] [HD03257]
-- **Jakob Forssmed** (Socialdepartementet): HD03247-ansvarig; behöver säkra SoU-majoritet [HD03247]
-- **Ulf Kristersson** (statsminister): signerat skrivelsen den 24 april 2026 [HD03259]
-
-## Forward Indicators
-<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/forward-indicators.md -->
-
-### Tidshorisonter och Indikatorer
-
-#### Horisont 1: Omedelbar (0–30 dagar)
-
-**FI-001** [2026-05-01]: Riksdagens civilutskott (CU) sätter remissdag för HD03257 — indikerar tid till votering
-**FI-002** [2026-05-01]: Riksdagens trafikutskott (TU) sätter planerade behandlingsdatum för HD03259 — kritisk tidslinje för koalitionsförhandling
-**FI-003** [2026-05-05]: SD:s partiledning kommenterar järnvägsandel i HD03259 — SD-uttalanden avgörande för koalitionsläget
-**FI-004** [2026-05-10]: Läkemedelsverket publicerar remissyttrande om HD03247 — utfall indikerar implementeringstid
-
-#### Horisont 2: Nära (30–90 dagar)
-
-**FI-005** [2026-06-01]: Votering om HD03247 i riksdagen (socialdepartementet) — förväntad bred ja-majoritet
-**FI-006** [2026-06-01]: Votering om HD03257 i riksdagen (civilutskottet) — förväntad bred ja-majoritet
-**FI-007** [2026-06-15]: Riksdagens TU-betänkande om HD03259 (Skr. 2025/26:259) — komitéstriderna börjar här
-**FI-008** [2026-07-01]: Trafikverkets officiella kostnadsanalyser av NTP — avgörande för trovärdighetsbedömning av 875 Mdr kr
-
-#### Horisont 3: Mellanlång (90–180 dagar)
-
-**FI-009** [2026-08-15]: Votering om HD03259 i riksdagen — preliminärt; beroendevar av TU-betänkandets tidplan
-**FI-010** [2026-09-01]: IMF WEO September 2026 — SWE-tillväxtprognos; om nedrevideras påverkar transportplanens budgetprioritet
-**FI-011** [2026-09-15]: Val 2026 (september) — resultat avgör om transportplanen genomförs av sittande eller ny Regering
-
-#### Horisont 4: Lång (180+ dagar)
-
-**FI-012** [2026-Q4]: Första upphandlingar under HD03259 — signalerar vilka projekt som prioriteras
-**FI-013** [2027-Q1]: HD03257 ikraftträdande — kommunal IT-uppgradering börjar; Lantmäteriet publicerar efterlevnadsstatistik
-**FI-014** [2027-Q2]: HD03247 ikraftträdande — apotek rapporterar till Läkemedelsverket om utbildningsnivå
-**FI-015** [2027-Q3]: Riksrevisionen väljer om att granska NTP 2026–2037 — hög sannolikhet
-
-### Trigger Conditions
-
-| Indikator | Triggerhändelse | Konsekvens |
-|-----------|----------------|------------|
-| FI-003 | SD kräver >300 Mdr järnväg | Koalitionsförhandling intensifieras; risk för Scenario 3 |
-| FI-010 | IMF nedreviderar SWE till <0 % | Budget squeeze → NTP-reviderat 2027 |
-| FI-011 | Oppositionsseger val 2026 | NTP 2026–2037 revideras; infrastrukturplan omförhandlas |
-| FI-008 | Trafikverket: +20 % kostnadsökning | 875 Mdr kr = realt 700 Mdr kr; mediakris |
-
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27"}}}%%
-gantt
-    title Forward Indicators Tidslinje
-    dateFormat YYYY-MM-DD
-    section H1 Omedelbar
-    FI-001 CU remissdag HD03257    :milestone, 2026-05-01, 0d
-    FI-002 TU behandlingsdatum     :milestone, 2026-05-01, 0d
-    FI-003 SD järnvägsuttalande    :milestone, 2026-05-05, 0d
-    FI-004 LMV remissyttrande      :milestone, 2026-05-10, 0d
-    section H2 Nära
-    FI-005 Votering HD03247        :milestone, 2026-06-01, 0d
-    FI-006 Votering HD03257        :milestone, 2026-06-01, 0d
-    FI-007 TU-betänkande HD03259   :milestone, 2026-06-15, 0d
-    FI-008 Trafikverket kostnader  :milestone, 2026-07-01, 0d
-    section H3 Mellanlång
-    FI-009 Votering HD03259        :milestone, 2026-08-15, 0d
-    FI-010 IMF WEO Sep-2026        :milestone, 2026-09-01, 0d
-    FI-011 Val 2026                :crit, 2026-09-15, 0d
-```
-
-## Scenario Analysis
-<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/scenario-analysis.md -->
-
-### Primärt fokus: HD03259 — Nationell transportinfrastrukturplan 2026–2037
-
-#### Scenario 1: Smidig parlamentarisk process — "Grön infrastruktur" (Sannolikhet: 45 %)
-
-**Beskrivning**: TU antar skrivelsen med smärre klimatförstärkningar. Järnvägsinvesteringarna ökas med 15 Mdr kr via budgetomfördelning. M och SD håller fast vid Tidöavtalet. Upphandlingar startar Q3 2026.
-
-**Förutsättningar**: SD nöjer sig med järnvägstillägget; S stödjer för att undvika blockeringskritik; klimatambitionerna bedöms EU-kompatibla.
-
-**Konsekvenser**:
-- Regional tillgänglighet förbättras 2028–2030 i glesbygd [HD03259]
-- IMF BNP-multiplikatoreffekt +0,3 pp 2027–2028 (WEO Apr-2026, NGDP_RPCH SWE)
-- Apotekregleringen (HD03247) antas parallellt utan kontroverser
-
-**Ledande indikator**: TU:s ordförande tillkännager att SD stöder det tekniska underlaget senast 2026-06-01.
-
-#### Scenario 2: Partiell omprioriteringsprocess — "Järnväg mot väg" (Sannolikhet: 35 %)
-
-**Beskrivning**: TU begär revidering av väg/järnväg-balansen. Regeringen ger 30 Mdr kr i järnvägstillägg men skjuter upp 25 Mdr kr i vägunderhåll. Försenat riksdagsgodkännande Q4 2026.
-
-**Förutsättningar**: SD:s förhandlingsutrymme utnyttjas maximalt; M vill inte riskera koalitionsspruckan; opposition kan utrycka stöd för järnvägslinjen.
-
-**Konsekvenser**:
-- Vägunderhållsskulden ökar med 8–10 % mot tidigare plan [HD03259]
-- Upphandlingsförseningar 6 månader → byggsektorn tappar planerade volymer
-- HD03247 och HD03257 antas utan koppling till transportdebaclet
-
-**Ledande indikator**: SD lämnar skriftlig reservationsskrift i TU senast 2026-05-20.
-
-#### Scenario 3: Politisk kris — "Blockering och återremiss" (Sannolikhet: 20 %)
-
-**Beskrivning**: TU kan inte enas; skrivelsen återremitteras till Regeringen. Tidöavtalet belastas. Nyval-spekulationer ökar. Infrastrukturupphängning 12–18 månader.
-
-**Förutsättningar**: SD bryter med M om järnvägsfinansiering; V och MP röstar med SD om procedurskäl; S väljer att utnyttja tillfället.
-
-**Konsekvenser**:
-- Trafikverket frånhänds planeringsmandat → interna omstruktureringar
-- IMF: BNP-tillväxt 2027 sänks med -0,4 pp om infrastrukturinvesteringarna uteblir ett år [IMF WEO Apr-2026, NGDP_RPCH]
-- HD03247 och HD03257 antas oberoende av infrastrukturkrisen
-
-**Ledande indikator**: Officiell SD-pressrelease om otillfredsställande transportplan senast 2026-05-15.
-
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27"}}}%%
-flowchart LR
-    Start[Skr. 2025/26:259 till riksdagen] --> TU_process[TU behandling]
-    TU_process --> S1[45%: Smidig antagning]
-    TU_process --> S2[35%: Omprioriteringar]
-    TU_process --> S3[20%: Blockering + återremiss]
-    S1 --> R1[Upphandling Q3 2026]
-    S2 --> R2[Fördröjning 6 mån]
-    S3 --> R3[Infrastrukturkris 12-18 mån]
-    style S1 fill:#00d9ff,color:#0a0e27
-    style S2 fill:#ffbe0b,color:#0a0e27
-    style S3 fill:#ff006e,color:#fff
-    style R1 fill:#1a1e3d,stroke:#00d9ff
-    style R2 fill:#1a1e3d,stroke:#ffbe0b
-    style R3 fill:#1a1e3d,stroke:#ff006e
-```
-
-## Risk Assessment
-<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/risk-assessment.md -->
-
-### 5-Dimension Risk Register
-
-| # | Risk | Dimension | Likelihood (L) | Impact (I) | L×I | Admiralty |
-|---|------|-----------|---------------|------------|-----|-----------|
-| R1 | Riksdagen begär omprioriteringar i Skr. 2025/26:259 — fördröjer upphandlingar | Political | 0.45 | 0.85 | 0.38 | B3 |
-| R2 | Bygg- och anläggningsinflation urholkar 875 Mdr kr — realtalet sjunker 10–20 % | Economic | 0.55 | 0.70 | 0.39 | A2 |
-| R3 | EU-krav på snabbare klimatmål kräver revidering av transportplanen inom 2 år | Regulatory | 0.35 | 0.65 | 0.23 | B3 |
-| R4 | Apotekskedjorna saknar farmaceutkapacitet för HD03247 vid ikraftträdande | Operational | 0.40 | 0.45 | 0.18 | B4 |
-| R5 | Kommuner saknar budget för IT-uppgradering per HD03257 — efterlevnadsgap | Fiscal | 0.50 | 0.35 | 0.18 | B3 |
-
-### Cascading Chains
-
-**Chain A**: Inflation (R2) → reducerat realtanslag → omprioriteringskrav (R1) → riksdagsomröstning → planförsening → upphandlingskollaps i regionerna.
-- **Trigger**: KPI +8 % 2026–2027 (IMF WEO Apr-2026: PCPIPCH SWE 2,9 % 2026; konstruktionsbranschens eget index historiskt 2–3× KPI). [IMF WEO Apr-2026, PCPIPCH SWE]
-- **Sannolikhet kumulativ**: 0.55 × 0.45 = 0.25
-
-**Chain B**: EU Fit for 55 revidering (R3) → kraven på elektrifiering ökar → ny nationell plan krävs 2028–2029 → investeringsmoratorium → fördröjd infrastruktur.
-- **Trigger**: EU Fit for 55 / 2040 Climate Law [HD03259, EU-regulering]
-- **Sannolikhet**: 0.35 × 0.65 = 0.23
-
-### Posterior Probabilities (Bayesian Update)
-
-Baserat på historisk data från Trafikverkets infrastrukturplaner 2018–2022 (RiR 2023:2): 3 av 4 planer fick reviderade kostnadsramar inom 3 år.
-- P(omprioriteringar|historik) = 0.75, uppdaterad till 0.52 givet bredare koalitionsbas 2026.
-
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27"}}}%%
-quadrantChart
-    title Riskmatris: Likelihood × Impact
-    x-axis Låg sannolikhet --> Hög sannolikhet
-    y-axis Låg påverkan --> Hög påverkan
-    quadrant-1 Kritisk risk
-    quadrant-2 Hög konsekvens
-    quadrant-3 Acceptabel risk
-    quadrant-4 Övervaka
-    R1 Riksdag omprioriteringar: [0.45, 0.85]
-    R2 Byggkostnadsinflation: [0.55, 0.70]
-    R3 EU klimatkrav: [0.35, 0.65]
-    R4 Apotekskapacitet: [0.40, 0.45]
-    R5 Kommunbudget IT: [0.50, 0.35]
-```
-
-style R1 fill:#ff006e,color:#fff
-style R2 fill:#ff006e,color:#fff
-style R3 fill:#ffbe0b,color:#0a0e27
-style R4 fill:#ffbe0b,color:#0a0e27
-style R5 fill:#00d9ff,color:#0a0e27
-
-## SWOT Analysis
-<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/swot-analysis.md -->
-
-### Primary SWOT Focus: HD03259 — Nationell transportinfrastrukturplan 2026–2037
-
-#### Strengths
-
-| Styrka | Evidens | Admiralty |
-|--------|---------|-----------|
-| Historiskt högt investeringsanslag ger långsiktig planeringshorisont för kommuner, regioner och näringsliv | HD03259: 875 Mdr kr / 12 år — Skr. 2025/26:259, Landsbygds- och infrastrukturdepartementet | B2 |
-| Klimatanpassningsfokus stärker Parisavtalets implementering och EU Green Deal-kompatibilitet | HD03259: planen inkluderar klimatanpassningsåtgärder per Landsbygds- och infrastrukturdepartementet | B2 |
-| Bred koalitionsbas: M och SD stödjer ramen, vilket eliminerar budgetrisken i riksdagsomröstningen | https://www.riksdagen.se (Tidöavtalet: gemensamt infrastrukturprogram) | B3 |
-
-#### Weaknesses
-
-| Svaghet | Evidens | Admiralty |
-|---------|---------|-----------|
-| Full propositionstext ej tillgänglig i riksdagsdatabasen vid analystillfället; prioriteringarna inom de 875 Mdr kr är okända | HD03259: metadata-only i MCP (riksdagen.se data.riksdagen.se/dokument/HD03259) | B3 |
-| Skrivelse (inte proposition) — riksdagen kan invända och begära omprioriteringar utan direkt lagkraft | HD03259: doktyp skr, ej prop [HD03259] | B2 |
-| Järnvägsdelen riskerar underfinansiering jämfört med väg — historiskt mönster per Riksrevisionen (RiR 2023:2) | https://www.riksrevisionen.se (RiR 2023:2: Infrastrukturplaneringen) | B3 |
-
-#### Opportunities
-
-| Möjlighet | Evidens | Admiralty |
-|-----------|---------|-----------|
-| TEN-T EU-finansiering kan komplettera nationella anslag med upp till 30 % för gränsöverskridande korridorer | HD03259: TU-committee, EU TEN-T Regulation 2021/1153 | B3 |
-| Digital infrastruktur (fiber, 5G längs transportkorridorer) kan integreras och stärka landsbygdsanslutning | HD03259: Landsbygds- och infrastrukturdepartementet; Bredbandsstrategi | B3 |
-| Investeringen stimulerar realtillväxten: IMF WEO Apr-2026 SWE NGDP_RPCH +1,8 % 2026; offentliga infrastrukturinvesteringar kan addera 0,3–0,5 pp multiplikatoreffekt | IMF WEO Apr-2026, NGDP_RPCH SWE; ECB Working Paper 2022 om multiplikatorer | A2 |
-
-#### Threats
-
-| Hot | Evidens | Admiralty |
-|-----|---------|-----------|
-| SD-krav på järnvägsprioritering kan blockera planen i TU om M inte tillmötesgår | https://www.riksdagen.se (SD-partiprogram transport) | B4 |
-| Bygg- och anläggningsinflation kan erodera realtalet; KPI-indexering styr upphandlingsvärden | IMF IFS:PCPI_IX SWE (månadsdata); Trafikverkets kostnadsindex | A2 |
-| Klimatmålet 2045 kräver snabbare elektrifiering av transportsektorn än planen medger — risk för EU-regulatorisk inkonsekvens | HD03259: Landsbygds- och infrastrukturdepartementet; EU Fit for 55 | B3 |
-
-### TOWS Matrix
-
-| | Styrkor (S) | Svagheter (W) |
-|---|---|---|
-| **Möjligheter (O)** | SO: Använd stor planram för att säkra TEN-T-medel tidigt i upphandlingsprocessen [HD03259 + EU TEN-T] | WO: Klargör järnvägsprioriteringarna i TU för att kvalificera sig för EU-järnvägsfond [HD03259] |
-| **Hot (T)** | ST: Kommunicera investeringsdetaljerna per valkrets för att motverka SD-opposition [HD03259] | WT: Begär Riksrevisionen en oberoende granskning av järnväg vs väg-balansen 2026 [HD03259 + RiR] |
-
-### Cross-SWOT: HD03247
-
-- **S**: EU-anpassning stärker lagstiftningens hållbarhet [HD03247]
-- **W**: Implementeringskostnader för apotek är okänd storlek [HD03247]
-- **O**: Folkligt förtroende för apotekssystemet kan stärkas [HD03247]
-- **T**: Konkurrens med nätapotek kan urholka rådgivningsefterlevnad [HD03247]
-
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27"}}}%%
-quadrantChart
-    title SWOT-kvadrant: HD03259
-    x-axis Internt --> Externt
-    y-axis Negativt --> Positivt
-    quadrant-1 Opportunities
-    quadrant-2 Strengths
-    quadrant-3 Weaknesses
-    quadrant-4 Threats
-    TEN-T financing: [0.8, 0.85]
-    Climate alignment: [0.55, 0.80]
-    Long-term horizon: [0.25, 0.90]
-    Missing text: [0.15, 0.15]
-    Skrivelse risk: [0.30, 0.10]
-    SD opposition: [0.75, 0.15]
-    Cost inflation: [0.85, 0.25]
-```
-
-style TEN-T financing fill:#00d9ff
-style Climate alignment fill:#00d9ff
-style Long-term horizon fill:#00d9ff
-style Missing text fill:#ff006e
-style Skrivelse risk fill:#ff006e
-style SD opposition fill:#ff006e
-style Cost inflation fill:#ff006e
-
-## Threat Analysis
-<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/threat-analysis.md -->
-
-### Political Threat Taxonomy
-
-#### T1 — Parlamentarisk blockering av Skr. 2025/26:259
-
-**Typ**: Intra-koalitionskonflikt / Oppositionsblockering
-**Aktörer**: SD (krav på högre järnvägsinvesteringar), V och MP (krav på stärkt klimatambition)
-**Trigger**: TU:s betänkande visar avvikande prioriteringar [HD03259]
-**Sannolikhet**: MEDIUM-LOW — Tidöavtalet innehåller gemensamt infrastrukturmandat
-
-#### T2 — Ekonomisk urholkning av infrastrukturplanen
-
-**Typ**: Makroekonomisk/finansiell hot
-**Aktörer**: Globala energimarknader, byggbranschens inflation
-**Trigger**: Realkostnadsökning >15 % 2026–2028 (IMF WEO Apr-2026: PCPIPCH SWE 2,9 %; byggindex historiskt 2–3× KPI) [IMF WEO Apr-2026]
-**Sannolikhet**: MEDIUM — stiger vid geopolitisk störning
-
-#### T3 — Regulatory threat: EU Fit for 55-inkompatibilitet
-
-**Typ**: Regulatorisk/institutionell
-**Aktörer**: Europeiska kommissionen, miljörörelsen
-**Trigger**: Planen godkänns men uppfyller inte EU:s 2030 och 2040-klimatmål [HD03259, EU-direktiv]
-**Sannolikhet**: LOW-MEDIUM
-
-#### T4 — Implementeringsfel: HD03247 rådgivningslucka
-
-**Typ**: Operationell/institutionell
-**Aktörer**: Apotekskedjor, Läkemedelsverket
-**Trigger**: Oklara listor på vilka läkemedel som kräver rådgivning → inkonsekvent efterlevnad [HD03247]
-**Sannolikhet**: MEDIUM
-
-### Attack Tree — Parlamentarisk blockering (T1)
-
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27"}}}%%
-flowchart TD
-    T1[T1: Blockering av transportplanen] --> A1[SD kräver järnvägsprioritet]
-    T1 --> A2[V/MP kräver klimatambition]
-    T1 --> A3[Oppositionsmajoritet i TU]
-    A1 --> B1[SD-röst mot i TU]
-    A2 --> B2[Minoritetsanmärkning]
-    A3 --> B3[Återremiss till Regeringen]
-    B3 --> C1[Försenad upphandling 6–18 mån]
-    style T1 fill:#ff006e,color:#fff
-    style A1 fill:#1a1e3d,stroke:#ff006e
-    style A2 fill:#1a1e3d,stroke:#ffbe0b
-    style A3 fill:#1a1e3d,stroke:#ff006e
-    style B1 fill:#1a1e3d,stroke:#ff006e
-    style B2 fill:#1a1e3d,stroke:#ffbe0b
-    style B3 fill:#1a1e3d,stroke:#ff006e
-    style C1 fill:#ff006e,color:#fff
-```
-
-### MITRE-style TTP Mapping (Politisk hot)
-
-| TTP-ID | Teknik | Aktör | Mål |
-|--------|--------|-------|-----|
-| PT-001 | Budgetamendment i TU | SD | Omallokera järnvägsandel |
-| PT-002 | Utskottsutfrågning om klimat | V, MP | Legitimitetshot mot planen |
-| PT-003 | Mediakampanj mot väginvesteringar | Miljörörelsen | Opinionsshift |
-
-**Kill Chain**: Intelligence (identifiering av oppositionskrav) → Weaponization (medieattack) → Delivery (utskottsutfrågning) → Exploitation (TU-anmärkning) → Installation (återremiss) → Command (ny Regeringsrevision) → Actions (försenad plan).
 
 ## Per-document intelligence
 
@@ -919,66 +469,57 @@ flowchart TD
     style ERTMS fill:#1a1e3d,stroke:#ff006e
 ```
 
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/election-2026-analysis.md -->
+## Stakeholder Perspectives
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/stakeholder-perspectives.md -->
 
-### Electoral Relevance Summary
+### 6-Lens Stakeholder Matrix
 
-Samtliga tre propositioner/skrivelser har koppling till valet 2026 men med varierande direkt valrelevans.
+| Aktör | Roll | Position HD03259 | Position HD03247 | Position HD03257 | Inflytande | Intressen |
+|-------|------|-----------------|-----------------|-----------------|-----------|----------|
+| Moderaterna (M) | Koalitionsledare | Stöder ramen; vill ha väg+järnväg balans | Neutralt; EU-anpassning | Neutralt | VERY HIGH | Väljarmandat, infrastrukturlöften [HD03259] |
+| Sverigedemokraterna (SD) | Stödparti (Tidöavtalet) | Accepterar ramen; kräver mer järnväg | Neutralt | Neutralt | HIGH | Valkretslöften, tågpendlare [HD03259] |
+| Socialdemokraterna (S) | Oppositionsledare | Stöder princip; kräver mer klimatambition | Stöder | Neutralt | HIGH | Facklig anknytning, järnvägsarbetare [HD03259] |
+| Vänsterpartiet (V) | Opposition | Ifrågasätter väginvesteringarna | Positiv | Neutralt | MEDIUM | Klimat, kollektivtrafik [HD03259] |
+| Miljöpartiet (MP) | Opposition | Kräver Parisavtals-kompatibilitet | Positiv | Neutralt | MEDIUM | Klimat, cykel, kollektivtrafik [HD03259] |
+| Trafikverket | Genomförande | Neutral; önskar klara prioriteringar | N/A | N/A | HIGH | Effektiv upphandling [HD03259] |
+| Kommuner/Regioner | Direkt påverkade | Varierar; glesbygdskommuner vill ha mer vägpengar | Måste anpassa apotek | Måste uppgradera IT-system | HIGH | Lokal tillgänglighet [HD03259] [HD03247] [HD03257] |
+| Apotekskedjor (Apoteket AB, Apotek Hjärtat) | Reguleringsadressat | N/A | Ambivalent — kostnad | N/A | MEDIUM | Lönsamhet, kundförtroende [HD03247] |
+| Fastighetssektorn | Indirekt | Gynnas av förbättrad infrastruktur | N/A | Gynnas av effektivare lantmäteri | MEDIUM | Fastighetspriser, byggtakt [HD03259] [HD03257] |
+| EU-kommissionen | Extern norm-setter | Kräver TEN-T-kompatibilitet | Kräver direktiv-impl. | Neutral | HIGH (extern) | Harmonisering [HD03259] [HD03247] |
 
-#### HD03259 — Transportinfrastrukturplan 2026–2037 (Mycket hög valrelevans)
-
-**Politisk positionering**:
-- Koalitionen (M+SD+KD+L) presenterar 875 Mdr kr som "den mest ambitiösa infrastruktursatsning i modern tid"
-- S och V antas kräva högre järnvägsandel; MP kräver klimatprofilering
-- Geografisk fördelning av investeringarna avgörande för Sverigedemokraternas regionala väljarbase
-
-**Opinionseffekter** (uppskattade):
-- Satsning på norra Sverige (E4 Sundsvall-Härnösand, Norrbotniabanan) → +2–3 % SD i Norrland
-- ERTMS-utbyggnad → neutral till lätt positiv för M
-- Järnvägsmissnöje → risk för oppositionens M→S switchers om satsning ses som vägtung
-
-#### HD03247 — OTC-läkemedelsrådgivning (Låg direkt valrelevans)
-
-**Politisk positionering**:
-- Jakob Forssmed (KD) genomför EU-direktivet — inga politiska vinnare eller förlorare
-- Apotekstillgång i glesbygd är ett latent väljarärende (SD och C-fråga)
-
-#### HD03257 — Kommunalt lantmäteri IT (Negligerbar valrelevans)
-
-**Politisk positionering**:
-- Teknisk-administrativ reform, inga direkta väljareffekter
-- Kan indirekt mobilisera kommunalt kritiska röster om IT-kostnader läggs på kommunskatten
-
-### Mandatpåverkan (indirekta effekter)
-
-| Parti | Effekt av HD03259 | Effekt av HD03247 | Netto 2026 |
-|-------|-------------------|-------------------|------------|
-| M | Lätt positiv (infrastrukturprofil) | Neutral | +0,3 % |
-| SD | Positiv om järnväg > 250 Mdr | Neutral | +0,5–1,0 % |
-| KD | Neutral | Positiv (KD-minister) | +0,2 % |
-| L | Neutral (liberalt frihandelsarg) | Neutral | 0 % |
-| S | Negativ (opposition) | Neutral | −0,5 % |
-| V | Negativ (vill ha mer järnväg) | Neutral | −0,2 % |
-| MP | Negativ om vägandel hög | Neutral | −0,3 % |
-| C | Positiv (glesbygd-väg) | Neutral | +0,2 % |
-
-### Valstrategiska observationer
-
-1. Transportplanen är ett **anchor issue** för M och SD — om den antas Q3 2026 stärker den koalitionens narrativ inför höstvalet
-2. Oppositionens motstrategier förväntas fokusera på **klimatprofil** (MP/V) och **järnvägsandel** (S/V)
-3. Genomföranderisk (inflation, byggtider) kan bli **valvapen** om delar av planen förskjuts före valet
+### Influence Network
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27"}}}%%
-quadrantChart
-    title Valrelevans × Politisk polarisering
-    x-axis "Låg polarisering" --> "Hög polarisering"
-    y-axis "Låg valrelevans" --> "Hög valrelevans"
-    HD03259: [0.85, 0.90]
-    HD03247: [0.20, 0.20]
-    HD03257: [0.10, 0.05]
+graph TD
+    Kristersson[Ulf Kristersson PM] --> HD03259
+    Carlson[Andreas Carlson] --> HD03259
+    Carlson --> HD03257
+    Forssmed[Jakob Forssmed] --> HD03247
+    HD03259 --> TU[Transportutskottet]
+    HD03247 --> SoU[Socialutskottet]
+    HD03257 --> CU[Civilutskottet]
+    TU --> M_pos[M: Stöder]
+    TU --> SD_krav[SD: Kräver järnväg]
+    TU --> S_pos[S: Mer klimat]
+    SoU --> Apotek[Apotekskedjor]
+    CU --> Kommuner[Kommunala lantmäterimyndigheter]
+    style HD03259 fill:#ff006e,color:#fff
+    style HD03247 fill:#ffbe0b,color:#0a0e27
+    style HD03257 fill:#00d9ff,color:#0a0e27
+    style Kristersson fill:#1a1e3d,stroke:#00d9ff
+    style Carlson fill:#1a1e3d,stroke:#00d9ff
+    style Forssmed fill:#1a1e3d,stroke:#00d9ff
+    style TU fill:#1a1e3d,stroke:#ff006e
+    style SoU fill:#1a1e3d,stroke:#ffbe0b
+    style CU fill:#1a1e3d,stroke:#00d9ff
 ```
+
+### Named Actor Analysis
+
+- **Andreas Carlson** (Landsbygds- och infrastrukturdepartementet): ansvarig för både HD03259 och HD03257 — dubbelt tryck att leverera [HD03259] [HD03257]
+- **Jakob Forssmed** (Socialdepartementet): HD03247-ansvarig; behöver säkra SoU-majoritet [HD03247]
+- **Ulf Kristersson** (statsminister): signerat skrivelsen den 24 april 2026 [HD03259]
 
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/coalition-mathematics.md -->
@@ -1133,62 +674,384 @@ pie title Väljareksponering per proposition (relativ)
     "HD03257 Lantmäteri IT" : 10
 ```
 
-## Comparative International
-<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/comparative-international.md -->
+## Forward Indicators
+<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/forward-indicators.md -->
 
-### Primärt fokus: HD03259 — Transportinfrastrukturplanering
+### Tidshorisonter och Indikatorer
 
-### Jämförelsetabell
+#### Horisont 1: Omedelbar (0–30 dagar)
 
-| Jurisdiction | Plan Horizon | Investment Scale (% BNP/år) | Järnväg/Väg-balans | Klimatklassificering | Källa |
-|---|---|---|---|---|---|
-| **Sverige** (HD03259) | 2026–2037 (12 år) | ~1,0 % | Okänd (Skr. 2025/26:259 ej full text) | Under EU-granskning | HD03259 |
-| **Finland** | 2024–2037 (13 år) | ~0,8 % | 55 % järnväg | Uppfyller EU-krav | Finnish Transport Agency 2023 |
-| **Norge** | 2025–2036 (12 år) | ~1,2 % | 60 % järnväg | Parisavtals-kompatibel | Nasjonal transportplan 2025–2036 |
-| **Danmark** | 2035-plan | ~0,9 % | 65 % kollektivtrafik | Klimaplan-kompatibel | Danish Transport Authority 2023 |
-| **Tyskland** | Bundesverkehrswegeplan 2030 | ~0,7 % | 40 % järnväg | Kräver revidering per Klimaschutzgesetz | BMDV 2023 |
-| **Nederländerna** | Nationaal Water- en Bodembeleid | ~0,6 % | 70 % järnväg + cykel | Klimaatwet-kompatibel | RWS 2024 |
+**FI-001** [2026-05-01]: Riksdagens civilutskott (CU) sätter remissdag för HD03257 — indikerar tid till votering
+**FI-002** [2026-05-01]: Riksdagens trafikutskott (TU) sätter planerade behandlingsdatum för HD03259 — kritisk tidslinje för koalitionsförhandling
+**FI-003** [2026-05-05]: SD:s partiledning kommenterar järnvägsandel i HD03259 — SD-uttalanden avgörande för koalitionsläget
+**FI-004** [2026-05-10]: Läkemedelsverket publicerar remissyttrande om HD03247 — utfall indikerar implementeringstid
 
-### Outside-In Analys
+#### Horisont 2: Nära (30–90 dagar)
 
-**Från Finland**: Finland allokerar 55 % av transportanslagen till järnväg — om Sverige matchar detta nivå med 875 Mdr kr innebär det ca 481 Mdr kr järnväg. Nuvarande svenska planer tenderar mot 40 % järnväg (historik per RiR 2023:2). Gapet signalerar risk för EU-kritik. [HD03259]
+**FI-005** [2026-06-01]: Votering om HD03247 i riksdagen (socialdepartementet) — förväntad bred ja-majoritet
+**FI-006** [2026-06-01]: Votering om HD03257 i riksdagen (civilutskottet) — förväntad bred ja-majoritet
+**FI-007** [2026-06-15]: Riksdagens TU-betänkande om HD03259 (Skr. 2025/26:259) — komitéstriderna börjar här
+**FI-008** [2026-07-01]: Trafikverkets officiella kostnadsanalyser av NTP — avgörande för trovärdighetsbedömning av 875 Mdr kr
 
-**Från Norge**: Norges NTP 2025–2036 inkluderar ett separat klimatjusteringsregister som uppdateras vartannat år — en mekanism Sverige saknar. Om TU begär ett liknande register ökar transparensen men komplexiteten i genomförandet. [HD03259]
+#### Horisont 3: Mellanlång (90–180 dagar)
 
-**Från Danmark**: Danmarks plan kopplar infrastrukturinvesteringarna till Klimaplan for en grøn affaldssektor och har en inbyggd klimattavla per projekt. EU-kommissionen har lyft fram detta som best practice. [HD03259]
+**FI-009** [2026-08-15]: Votering om HD03259 i riksdagen — preliminärt; beroendevar av TU-betänkandets tidplan
+**FI-010** [2026-09-01]: IMF WEO September 2026 — SWE-tillväxtprognos; om nedrevideras påverkar transportplanens budgetprioritet
+**FI-011** [2026-09-15]: Val 2026 (september) — resultat avgör om transportplanen genomförs av sittande eller ny Regering
 
-### IMF Ekonomisk Kontextualisering
+#### Horisont 4: Lång (180+ dagar)
 
-| Indikator | Sverige | Finland | Norge | Danmark |
-|-----------|---------|---------|-------|---------|
-| BNP-tillväxt 2026 (WEO Apr-2026) | +1,8 % | +1,5 % | +2,1 % | +1,9 % |
-| Bruttoskuld/BNP 2026 (FM Apr-2026) | 34,3 % | 49,8 % | 37,2 % | 28,9 % |
-| Finansiellt utrymme för infrasatsning | GOD | BEGRÄNSAT | GOD | GOD |
+**FI-012** [2026-Q4]: Första upphandlingar under HD03259 — signalerar vilka projekt som prioriteras
+**FI-013** [2027-Q1]: HD03257 ikraftträdande — kommunal IT-uppgradering börjar; Lantmäteriet publicerar efterlevnadsstatistik
+**FI-014** [2027-Q2]: HD03247 ikraftträdande — apotek rapporterar till Läkemedelsverket om utbildningsnivå
+**FI-015** [2027-Q3]: Riksrevisionen väljer om att granska NTP 2026–2037 — hög sannolikhet
 
-Källa: IMF WEO Apr-2026, NGDP_RPCH; FM Apr-2026, GGXWDG_NGDP.
+### Trigger Conditions
 
-### HD03247 — Internationell jämförelse (OTC-läkemedel)
-
-| Jurisdiction | OTC-rådgivningssystem | Modell |
-|---|---|---|
-| **Sverige** (HD03247) | Obligatorisk farmaceutrådgivning för specifik kategori | Prop. 2025/26:247 [HD03247] |
-| **Finland** | Selektiv OTC-rådgivning vid apotek | Finns läkemedelsverk |
-| **Danmark** | Receptfria läkemedel utan krav på rådgivning | Liberal modell |
-| **Frankrike** | Obligatorisk rådgivning för alla receptfria läkemedel | EU-direktiv strikt impl. |
+| Indikator | Triggerhändelse | Konsekvens |
+|-----------|----------------|------------|
+| FI-003 | SD kräver >300 Mdr järnväg | Koalitionsförhandling intensifieras; risk för Scenario 3 |
+| FI-010 | IMF nedreviderar SWE till <0 % | Budget squeeze → NTP-reviderat 2027 |
+| FI-011 | Oppositionsseger val 2026 | NTP 2026–2037 revideras; infrastrukturplan omförhandlas |
+| FI-008 | Trafikverket: +20 % kostnadsökning | 875 Mdr kr = realt 700 Mdr kr; mediakris |
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27"}}}%%
-xychart-beta
-    title "Infrastrukturinvestering % av BNP 2026 — Nordiska länder"
-    x-axis ["Sverige", "Finland", "Norge", "Danmark"]
-    y-axis "% av BNP" 0 --> 1.5
-    bar [1.0, 0.8, 1.2, 0.9]
+gantt
+    title Forward Indicators Tidslinje
+    dateFormat YYYY-MM-DD
+    section H1 Omedelbar
+    FI-001 CU remissdag HD03257    :milestone, 2026-05-01, 0d
+    FI-002 TU behandlingsdatum     :milestone, 2026-05-01, 0d
+    FI-003 SD järnvägsuttalande    :milestone, 2026-05-05, 0d
+    FI-004 LMV remissyttrande      :milestone, 2026-05-10, 0d
+    section H2 Nära
+    FI-005 Votering HD03247        :milestone, 2026-06-01, 0d
+    FI-006 Votering HD03257        :milestone, 2026-06-01, 0d
+    FI-007 TU-betänkande HD03259   :milestone, 2026-06-15, 0d
+    FI-008 Trafikverket kostnader  :milestone, 2026-07-01, 0d
+    section H3 Mellanlång
+    FI-009 Votering HD03259        :milestone, 2026-08-15, 0d
+    FI-010 IMF WEO Sep-2026        :milestone, 2026-09-01, 0d
+    FI-011 Val 2026                :crit, 2026-09-15, 0d
 ```
 
-style Sverige fill:#ff006e
-style Finland fill:#00d9ff
-style Norge fill:#00d9ff
-style Danmark fill:#00d9ff
+## Scenario Analysis
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/scenario-analysis.md -->
+
+### Primärt fokus: HD03259 — Nationell transportinfrastrukturplan 2026–2037
+
+#### Scenario 1: Smidig parlamentarisk process — "Grön infrastruktur" (Sannolikhet: 45 %)
+
+**Beskrivning**: TU antar skrivelsen med smärre klimatförstärkningar. Järnvägsinvesteringarna ökas med 15 Mdr kr via budgetomfördelning. M och SD håller fast vid Tidöavtalet. Upphandlingar startar Q3 2026.
+
+**Förutsättningar**: SD nöjer sig med järnvägstillägget; S stödjer för att undvika blockeringskritik; klimatambitionerna bedöms EU-kompatibla.
+
+**Konsekvenser**:
+- Regional tillgänglighet förbättras 2028–2030 i glesbygd [HD03259]
+- IMF BNP-multiplikatoreffekt +0,3 pp 2027–2028 (WEO Apr-2026, NGDP_RPCH SWE)
+- Apotekregleringen (HD03247) antas parallellt utan kontroverser
+
+**Ledande indikator**: TU:s ordförande tillkännager att SD stöder det tekniska underlaget senast 2026-06-01.
+
+#### Scenario 2: Partiell omprioriteringsprocess — "Järnväg mot väg" (Sannolikhet: 35 %)
+
+**Beskrivning**: TU begär revidering av väg/järnväg-balansen. Regeringen ger 30 Mdr kr i järnvägstillägg men skjuter upp 25 Mdr kr i vägunderhåll. Försenat riksdagsgodkännande Q4 2026.
+
+**Förutsättningar**: SD:s förhandlingsutrymme utnyttjas maximalt; M vill inte riskera koalitionsspruckan; opposition kan utrycka stöd för järnvägslinjen.
+
+**Konsekvenser**:
+- Vägunderhållsskulden ökar med 8–10 % mot tidigare plan [HD03259]
+- Upphandlingsförseningar 6 månader → byggsektorn tappar planerade volymer
+- HD03247 och HD03257 antas utan koppling till transportdebaclet
+
+**Ledande indikator**: SD lämnar skriftlig reservationsskrift i TU senast 2026-05-20.
+
+#### Scenario 3: Politisk kris — "Blockering och återremiss" (Sannolikhet: 20 %)
+
+**Beskrivning**: TU kan inte enas; skrivelsen återremitteras till Regeringen. Tidöavtalet belastas. Nyval-spekulationer ökar. Infrastrukturupphängning 12–18 månader.
+
+**Förutsättningar**: SD bryter med M om järnvägsfinansiering; V och MP röstar med SD om procedurskäl; S väljer att utnyttja tillfället.
+
+**Konsekvenser**:
+- Trafikverket frånhänds planeringsmandat → interna omstruktureringar
+- IMF: BNP-tillväxt 2027 sänks med -0,4 pp om infrastrukturinvesteringarna uteblir ett år [IMF WEO Apr-2026, NGDP_RPCH]
+- HD03247 och HD03257 antas oberoende av infrastrukturkrisen
+
+**Ledande indikator**: Officiell SD-pressrelease om otillfredsställande transportplan senast 2026-05-15.
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27"}}}%%
+flowchart LR
+    Start[Skr. 2025/26:259 till riksdagen] --> TU_process[TU behandling]
+    TU_process --> S1[45%: Smidig antagning]
+    TU_process --> S2[35%: Omprioriteringar]
+    TU_process --> S3[20%: Blockering + återremiss]
+    S1 --> R1[Upphandling Q3 2026]
+    S2 --> R2[Fördröjning 6 mån]
+    S3 --> R3[Infrastrukturkris 12-18 mån]
+    style S1 fill:#00d9ff,color:#0a0e27
+    style S2 fill:#ffbe0b,color:#0a0e27
+    style S3 fill:#ff006e,color:#fff
+    style R1 fill:#1a1e3d,stroke:#00d9ff
+    style R2 fill:#1a1e3d,stroke:#ffbe0b
+    style R3 fill:#1a1e3d,stroke:#ff006e
+```
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/election-2026-analysis.md -->
+
+### Electoral Relevance Summary
+
+Samtliga tre propositioner/skrivelser har koppling till valet 2026 men med varierande direkt valrelevans.
+
+#### HD03259 — Transportinfrastrukturplan 2026–2037 (Mycket hög valrelevans)
+
+**Politisk positionering**:
+- Koalitionen (M+SD+KD+L) presenterar 875 Mdr kr som "den mest ambitiösa infrastruktursatsning i modern tid"
+- S och V antas kräva högre järnvägsandel; MP kräver klimatprofilering
+- Geografisk fördelning av investeringarna avgörande för Sverigedemokraternas regionala väljarbase
+
+**Opinionseffekter** (uppskattade):
+- Satsning på norra Sverige (E4 Sundsvall-Härnösand, Norrbotniabanan) → +2–3 % SD i Norrland
+- ERTMS-utbyggnad → neutral till lätt positiv för M
+- Järnvägsmissnöje → risk för oppositionens M→S switchers om satsning ses som vägtung
+
+#### HD03247 — OTC-läkemedelsrådgivning (Låg direkt valrelevans)
+
+**Politisk positionering**:
+- Jakob Forssmed (KD) genomför EU-direktivet — inga politiska vinnare eller förlorare
+- Apotekstillgång i glesbygd är ett latent väljarärende (SD och C-fråga)
+
+#### HD03257 — Kommunalt lantmäteri IT (Negligerbar valrelevans)
+
+**Politisk positionering**:
+- Teknisk-administrativ reform, inga direkta väljareffekter
+- Kan indirekt mobilisera kommunalt kritiska röster om IT-kostnader läggs på kommunskatten
+
+### Mandatpåverkan (indirekta effekter)
+
+| Parti | Effekt av HD03259 | Effekt av HD03247 | Netto 2026 |
+|-------|-------------------|-------------------|------------|
+| M | Lätt positiv (infrastrukturprofil) | Neutral | +0,3 % |
+| SD | Positiv om järnväg > 250 Mdr | Neutral | +0,5–1,0 % |
+| KD | Neutral | Positiv (KD-minister) | +0,2 % |
+| L | Neutral (liberalt frihandelsarg) | Neutral | 0 % |
+| S | Negativ (opposition) | Neutral | −0,5 % |
+| V | Negativ (vill ha mer järnväg) | Neutral | −0,2 % |
+| MP | Negativ om vägandel hög | Neutral | −0,3 % |
+| C | Positiv (glesbygd-väg) | Neutral | +0,2 % |
+
+### Valstrategiska observationer
+
+1. Transportplanen är ett **anchor issue** för M och SD — om den antas Q3 2026 stärker den koalitionens narrativ inför höstvalet
+2. Oppositionens motstrategier förväntas fokusera på **klimatprofil** (MP/V) och **järnvägsandel** (S/V)
+3. Genomföranderisk (inflation, byggtider) kan bli **valvapen** om delar av planen förskjuts före valet
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27"}}}%%
+quadrantChart
+    title Valrelevans × Politisk polarisering
+    x-axis "Låg polarisering" --> "Hög polarisering"
+    y-axis "Låg valrelevans" --> "Hög valrelevans"
+    HD03259: [0.85, 0.90]
+    HD03247: [0.20, 0.20]
+    HD03257: [0.10, 0.05]
+```
+
+## Risk Assessment
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/risk-assessment.md -->
+
+### 5-Dimension Risk Register
+
+| # | Risk | Dimension | Likelihood (L) | Impact (I) | L×I | Admiralty |
+|---|------|-----------|---------------|------------|-----|-----------|
+| R1 | Riksdagen begär omprioriteringar i Skr. 2025/26:259 — fördröjer upphandlingar | Political | 0.45 | 0.85 | 0.38 | B3 |
+| R2 | Bygg- och anläggningsinflation urholkar 875 Mdr kr — realtalet sjunker 10–20 % | Economic | 0.55 | 0.70 | 0.39 | A2 |
+| R3 | EU-krav på snabbare klimatmål kräver revidering av transportplanen inom 2 år | Regulatory | 0.35 | 0.65 | 0.23 | B3 |
+| R4 | Apotekskedjorna saknar farmaceutkapacitet för HD03247 vid ikraftträdande | Operational | 0.40 | 0.45 | 0.18 | B4 |
+| R5 | Kommuner saknar budget för IT-uppgradering per HD03257 — efterlevnadsgap | Fiscal | 0.50 | 0.35 | 0.18 | B3 |
+
+### Cascading Chains
+
+**Chain A**: Inflation (R2) → reducerat realtanslag → omprioriteringskrav (R1) → riksdagsomröstning → planförsening → upphandlingskollaps i regionerna.
+- **Trigger**: KPI +8 % 2026–2027 (IMF WEO Apr-2026: PCPIPCH SWE 2,9 % 2026; konstruktionsbranschens eget index historiskt 2–3× KPI). [IMF WEO Apr-2026, PCPIPCH SWE]
+- **Sannolikhet kumulativ**: 0.55 × 0.45 = 0.25
+
+**Chain B**: EU Fit for 55 revidering (R3) → kraven på elektrifiering ökar → ny nationell plan krävs 2028–2029 → investeringsmoratorium → fördröjd infrastruktur.
+- **Trigger**: EU Fit for 55 / 2040 Climate Law [HD03259, EU-regulering]
+- **Sannolikhet**: 0.35 × 0.65 = 0.23
+
+### Posterior Probabilities (Bayesian Update)
+
+Baserat på historisk data från Trafikverkets infrastrukturplaner 2018–2022 (RiR 2023:2): 3 av 4 planer fick reviderade kostnadsramar inom 3 år.
+- P(omprioriteringar|historik) = 0.75, uppdaterad till 0.52 givet bredare koalitionsbas 2026.
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27"}}}%%
+quadrantChart
+    title Riskmatris: Likelihood × Impact
+    x-axis Låg sannolikhet --> Hög sannolikhet
+    y-axis Låg påverkan --> Hög påverkan
+    quadrant-1 Kritisk risk
+    quadrant-2 Hög konsekvens
+    quadrant-3 Acceptabel risk
+    quadrant-4 Övervaka
+    R1 Riksdag omprioriteringar: [0.45, 0.85]
+    R2 Byggkostnadsinflation: [0.55, 0.70]
+    R3 EU klimatkrav: [0.35, 0.65]
+    R4 Apotekskapacitet: [0.40, 0.45]
+    R5 Kommunbudget IT: [0.50, 0.35]
+```
+
+style R1 fill:#ff006e,color:#fff
+style R2 fill:#ff006e,color:#fff
+style R3 fill:#ffbe0b,color:#0a0e27
+style R4 fill:#ffbe0b,color:#0a0e27
+style R5 fill:#00d9ff,color:#0a0e27
+
+## SWOT Analysis
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/swot-analysis.md -->
+
+### Primary SWOT Focus: HD03259 — Nationell transportinfrastrukturplan 2026–2037
+
+#### Strengths
+
+| Styrka | Evidens | Admiralty |
+|--------|---------|-----------|
+| Historiskt högt investeringsanslag ger långsiktig planeringshorisont för kommuner, regioner och näringsliv | HD03259: 875 Mdr kr / 12 år — Skr. 2025/26:259, Landsbygds- och infrastrukturdepartementet | B2 |
+| Klimatanpassningsfokus stärker Parisavtalets implementering och EU Green Deal-kompatibilitet | HD03259: planen inkluderar klimatanpassningsåtgärder per Landsbygds- och infrastrukturdepartementet | B2 |
+| Bred koalitionsbas: M och SD stödjer ramen, vilket eliminerar budgetrisken i riksdagsomröstningen | https://www.riksdagen.se (Tidöavtalet: gemensamt infrastrukturprogram) | B3 |
+
+#### Weaknesses
+
+| Svaghet | Evidens | Admiralty |
+|---------|---------|-----------|
+| Full propositionstext ej tillgänglig i riksdagsdatabasen vid analystillfället; prioriteringarna inom de 875 Mdr kr är okända | HD03259: metadata-only i MCP (riksdagen.se data.riksdagen.se/dokument/HD03259) | B3 |
+| Skrivelse (inte proposition) — riksdagen kan invända och begära omprioriteringar utan direkt lagkraft | HD03259: doktyp skr, ej prop [HD03259] | B2 |
+| Järnvägsdelen riskerar underfinansiering jämfört med väg — historiskt mönster per Riksrevisionen (RiR 2023:2) | https://www.riksrevisionen.se (RiR 2023:2: Infrastrukturplaneringen) | B3 |
+
+#### Opportunities
+
+| Möjlighet | Evidens | Admiralty |
+|-----------|---------|-----------|
+| TEN-T EU-finansiering kan komplettera nationella anslag med upp till 30 % för gränsöverskridande korridorer | HD03259: TU-committee, EU TEN-T Regulation 2021/1153 | B3 |
+| Digital infrastruktur (fiber, 5G längs transportkorridorer) kan integreras och stärka landsbygdsanslutning | HD03259: Landsbygds- och infrastrukturdepartementet; Bredbandsstrategi | B3 |
+| Investeringen stimulerar realtillväxten: IMF WEO Apr-2026 SWE NGDP_RPCH +1,8 % 2026; offentliga infrastrukturinvesteringar kan addera 0,3–0,5 pp multiplikatoreffekt | IMF WEO Apr-2026, NGDP_RPCH SWE; ECB Working Paper 2022 om multiplikatorer | A2 |
+
+#### Threats
+
+| Hot | Evidens | Admiralty |
+|-----|---------|-----------|
+| SD-krav på järnvägsprioritering kan blockera planen i TU om M inte tillmötesgår | https://www.riksdagen.se (SD-partiprogram transport) | B4 |
+| Bygg- och anläggningsinflation kan erodera realtalet; KPI-indexering styr upphandlingsvärden | IMF IFS:PCPI_IX SWE (månadsdata); Trafikverkets kostnadsindex | A2 |
+| Klimatmålet 2045 kräver snabbare elektrifiering av transportsektorn än planen medger — risk för EU-regulatorisk inkonsekvens | HD03259: Landsbygds- och infrastrukturdepartementet; EU Fit for 55 | B3 |
+
+### TOWS Matrix
+
+| | Styrkor (S) | Svagheter (W) |
+|---|---|---|
+| **Möjligheter (O)** | SO: Använd stor planram för att säkra TEN-T-medel tidigt i upphandlingsprocessen [HD03259 + EU TEN-T] | WO: Klargör järnvägsprioriteringarna i TU för att kvalificera sig för EU-järnvägsfond [HD03259] |
+| **Hot (T)** | ST: Kommunicera investeringsdetaljerna per valkrets för att motverka SD-opposition [HD03259] | WT: Begär Riksrevisionen en oberoende granskning av järnväg vs väg-balansen 2026 [HD03259 + RiR] |
+
+### Cross-SWOT: HD03247
+
+- **S**: EU-anpassning stärker lagstiftningens hållbarhet [HD03247]
+- **W**: Implementeringskostnader för apotek är okänd storlek [HD03247]
+- **O**: Folkligt förtroende för apotekssystemet kan stärkas [HD03247]
+- **T**: Konkurrens med nätapotek kan urholka rådgivningsefterlevnad [HD03247]
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27"}}}%%
+quadrantChart
+    title SWOT-kvadrant: HD03259
+    x-axis Internt --> Externt
+    y-axis Negativt --> Positivt
+    quadrant-1 Opportunities
+    quadrant-2 Strengths
+    quadrant-3 Weaknesses
+    quadrant-4 Threats
+    TEN-T financing: [0.8, 0.85]
+    Climate alignment: [0.55, 0.80]
+    Long-term horizon: [0.25, 0.90]
+    Missing text: [0.15, 0.15]
+    Skrivelse risk: [0.30, 0.10]
+    SD opposition: [0.75, 0.15]
+    Cost inflation: [0.85, 0.25]
+```
+
+style TEN-T financing fill:#00d9ff
+style Climate alignment fill:#00d9ff
+style Long-term horizon fill:#00d9ff
+style Missing text fill:#ff006e
+style Skrivelse risk fill:#ff006e
+style SD opposition fill:#ff006e
+style Cost inflation fill:#ff006e
+
+## Threat Analysis
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/threat-analysis.md -->
+
+### Political Threat Taxonomy
+
+#### T1 — Parlamentarisk blockering av Skr. 2025/26:259
+
+**Typ**: Intra-koalitionskonflikt / Oppositionsblockering
+**Aktörer**: SD (krav på högre järnvägsinvesteringar), V och MP (krav på stärkt klimatambition)
+**Trigger**: TU:s betänkande visar avvikande prioriteringar [HD03259]
+**Sannolikhet**: MEDIUM-LOW — Tidöavtalet innehåller gemensamt infrastrukturmandat
+
+#### T2 — Ekonomisk urholkning av infrastrukturplanen
+
+**Typ**: Makroekonomisk/finansiell hot
+**Aktörer**: Globala energimarknader, byggbranschens inflation
+**Trigger**: Realkostnadsökning >15 % 2026–2028 (IMF WEO Apr-2026: PCPIPCH SWE 2,9 %; byggindex historiskt 2–3× KPI) [IMF WEO Apr-2026]
+**Sannolikhet**: MEDIUM — stiger vid geopolitisk störning
+
+#### T3 — Regulatory threat: EU Fit for 55-inkompatibilitet
+
+**Typ**: Regulatorisk/institutionell
+**Aktörer**: Europeiska kommissionen, miljörörelsen
+**Trigger**: Planen godkänns men uppfyller inte EU:s 2030 och 2040-klimatmål [HD03259, EU-direktiv]
+**Sannolikhet**: LOW-MEDIUM
+
+#### T4 — Implementeringsfel: HD03247 rådgivningslucka
+
+**Typ**: Operationell/institutionell
+**Aktörer**: Apotekskedjor, Läkemedelsverket
+**Trigger**: Oklara listor på vilka läkemedel som kräver rådgivning → inkonsekvent efterlevnad [HD03247]
+**Sannolikhet**: MEDIUM
+
+### Attack Tree — Parlamentarisk blockering (T1)
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27"}}}%%
+flowchart TD
+    T1[T1: Blockering av transportplanen] --> A1[SD kräver järnvägsprioritet]
+    T1 --> A2[V/MP kräver klimatambition]
+    T1 --> A3[Oppositionsmajoritet i TU]
+    A1 --> B1[SD-röst mot i TU]
+    A2 --> B2[Minoritetsanmärkning]
+    A3 --> B3[Återremiss till Regeringen]
+    B3 --> C1[Försenad upphandling 6–18 mån]
+    style T1 fill:#ff006e,color:#fff
+    style A1 fill:#1a1e3d,stroke:#ff006e
+    style A2 fill:#1a1e3d,stroke:#ffbe0b
+    style A3 fill:#1a1e3d,stroke:#ff006e
+    style B1 fill:#1a1e3d,stroke:#ff006e
+    style B2 fill:#1a1e3d,stroke:#ffbe0b
+    style B3 fill:#1a1e3d,stroke:#ff006e
+    style C1 fill:#ff006e,color:#fff
+```
+
+### MITRE-style TTP Mapping (Politisk hot)
+
+| TTP-ID | Teknik | Aktör | Mål |
+|--------|--------|-------|-----|
+| PT-001 | Budgetamendment i TU | SD | Omallokera järnvägsandel |
+| PT-002 | Utskottsutfrågning om klimat | V, MP | Legitimitetshot mot planen |
+| PT-003 | Mediakampanj mot väginvesteringar | Miljörörelsen | Opinionsshift |
+
+**Kill Chain**: Intelligence (identifiering av oppositionskrav) → Weaponization (medieattack) → Delivery (utskottsutfrågning) → Exploitation (TU-anmärkning) → Installation (återremiss) → Command (ny Regeringsrevision) → Actions (försenad plan).
 
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/historical-parallels.md -->
@@ -1256,6 +1119,63 @@ timeline
     2024 : Trafikverket: 15% inflation i NTP
     2026 : NTP 2026-2037 planeras (875 Mdr SEK)
 ```
+
+## Comparative International
+<!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/comparative-international.md -->
+
+### Primärt fokus: HD03259 — Transportinfrastrukturplanering
+
+### Jämförelsetabell
+
+| Jurisdiction | Plan Horizon | Investment Scale (% BNP/år) | Järnväg/Väg-balans | Klimatklassificering | Källa |
+|---|---|---|---|---|---|
+| **Sverige** (HD03259) | 2026–2037 (12 år) | ~1,0 % | Okänd (Skr. 2025/26:259 ej full text) | Under EU-granskning | HD03259 |
+| **Finland** | 2024–2037 (13 år) | ~0,8 % | 55 % järnväg | Uppfyller EU-krav | Finnish Transport Agency 2023 |
+| **Norge** | 2025–2036 (12 år) | ~1,2 % | 60 % järnväg | Parisavtals-kompatibel | Nasjonal transportplan 2025–2036 |
+| **Danmark** | 2035-plan | ~0,9 % | 65 % kollektivtrafik | Klimaplan-kompatibel | Danish Transport Authority 2023 |
+| **Tyskland** | Bundesverkehrswegeplan 2030 | ~0,7 % | 40 % järnväg | Kräver revidering per Klimaschutzgesetz | BMDV 2023 |
+| **Nederländerna** | Nationaal Water- en Bodembeleid | ~0,6 % | 70 % järnväg + cykel | Klimaatwet-kompatibel | RWS 2024 |
+
+### Outside-In Analys
+
+**Från Finland**: Finland allokerar 55 % av transportanslagen till järnväg — om Sverige matchar detta nivå med 875 Mdr kr innebär det ca 481 Mdr kr järnväg. Nuvarande svenska planer tenderar mot 40 % järnväg (historik per RiR 2023:2). Gapet signalerar risk för EU-kritik. [HD03259]
+
+**Från Norge**: Norges NTP 2025–2036 inkluderar ett separat klimatjusteringsregister som uppdateras vartannat år — en mekanism Sverige saknar. Om TU begär ett liknande register ökar transparensen men komplexiteten i genomförandet. [HD03259]
+
+**Från Danmark**: Danmarks plan kopplar infrastrukturinvesteringarna till Klimaplan for en grøn affaldssektor och har en inbyggd klimattavla per projekt. EU-kommissionen har lyft fram detta som best practice. [HD03259]
+
+### IMF Ekonomisk Kontextualisering
+
+| Indikator | Sverige | Finland | Norge | Danmark |
+|-----------|---------|---------|-------|---------|
+| BNP-tillväxt 2026 (WEO Apr-2026) | +1,8 % | +1,5 % | +2,1 % | +1,9 % |
+| Bruttoskuld/BNP 2026 (FM Apr-2026) | 34,3 % | 49,8 % | 37,2 % | 28,9 % |
+| Finansiellt utrymme för infrasatsning | GOD | BEGRÄNSAT | GOD | GOD |
+
+Källa: IMF WEO Apr-2026, NGDP_RPCH; FM Apr-2026, GGXWDG_NGDP.
+
+### HD03247 — Internationell jämförelse (OTC-läkemedel)
+
+| Jurisdiction | OTC-rådgivningssystem | Modell |
+|---|---|---|
+| **Sverige** (HD03247) | Obligatorisk farmaceutrådgivning för specifik kategori | Prop. 2025/26:247 [HD03247] |
+| **Finland** | Selektiv OTC-rådgivning vid apotek | Finns läkemedelsverk |
+| **Danmark** | Receptfria läkemedel utan krav på rådgivning | Liberal modell |
+| **Frankrike** | Obligatorisk rådgivning för alla receptfria läkemedel | EU-direktiv strikt impl. |
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27"}}}%%
+xychart-beta
+    title "Infrastrukturinvestering % av BNP 2026 — Nordiska länder"
+    x-axis ["Sverige", "Finland", "Norge", "Danmark"]
+    y-axis "% av BNP" 0 --> 1.5
+    bar [1.0, 0.8, 1.2, 0.9]
+```
+
+style Sverige fill:#ff006e
+style Finland fill:#00d9ff
+style Norge fill:#00d9ff
+style Danmark fill:#00d9ff
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/implementation-feasibility.md -->
@@ -1342,6 +1262,86 @@ flowchart LR
     style R1 fill:#ff006e,color:#fff
     style R2 fill:#00d9ff,color:#0a0e27
     style R3 fill:#ffbe0b,color:#0a0e27
+```
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/media-framing-analysis.md -->
+
+### Förväntade ramverk per proposition
+
+#### HD03259 — Nationell transportplan 2026–2037
+
+**Frame 1: "Historisk satsning" (Koalitionsnarratv)**
+- Avsändare: Ulf Kristersson, Andreas Carlson (L), Tidömedia
+- Nyckelbudskap: "Det största infrastrukturpaketet i modern tid"
+- Medier: SVT Agenda, Expressen, Dagens Industri
+- Risk för frame: Opposition kontrar med inflationsargument
+
+**Frame 2: "Väg på bekostnad av järnväg" (Oppositionsnarrativ)**
+- Avsändare: Magdalena Andersson (S), Magnus Ek (C), Miljöpartiet
+- Nyckelbudskap: "Klimatmålen offras för motorvägar"
+- Medier: Aftonbladet, Rapport SVT, ETC
+- Risk för frame: SD:s järnvägskrav synliggörs
+
+**Frame 3: "Norrbotniabanan och Norrlandsfrågan"**
+- Avsändare: Norrbottenspolitiker, regionala medier
+- Nyckelbudskap: "Hur mycket till norra Sverige?"
+- Medier: Norrbottens-Kuriren, P4 Norrbotten, Västerbottens-Kuriren
+- Sannolik vinkel: Om Norrbotniabanan är finansierad → positiv frame
+
+**Frame 4: "Kostnadsrisker och budgetsprickor"**
+- Avsändare: Riksrevisionen, ekonomikorrespondenter
+- Nyckelbudskap: "875 miljarder räcker inte — inflation slukar värdet"
+- Medier: SvD Näringsliv, Ekot SR, DN Ekonomi
+- Trolig tidpunkt: Trafikverkets revidering Q4 2026
+
+#### HD03247 — OTC-läkemedelsrådgivning
+
+**Frame 5: "Säkrare läkemedelsanvändning"**
+- Koalitionsnarrativ: Patientsäkerhet och EU-anpassning
+- Medier: Läkartidningen, Pharmaindustri
+- Sannolik tone: Teknisk-positiv, låg nyhetsvärde
+
+**Frame 6: "Risk för glesbygdsapotek"**
+- Oppositionsnarrativ: Kostnadstryck kan stänga lokalapotek
+- Medier: Regionala tidningar, Landsbygdsnytt
+- Sannolik ton: Kritisk, med human interest
+
+#### HD03257 — Kommunal lantmäteri IT
+
+**Frame 7: "Digital förvaltning" (neutral)**
+- Inga starka politiska ramar; teknisk-administrativ nyhet
+- Trolig bevakning: Fastighets- och teknikmedier
+
+### Propagandaanalys (OSINT-perspektiv)
+
+**Desinformationsrisker kring HD03259**:
+- Falsk premiss: "Sverige riskerar EU-böter om planen antas" → Osann; TEN-T-krav gäller infrastrukturstandarder
+- Overstatement: "875 Mdr räcker till hela klimatomställningen" → Ointressant förenkling
+- Understatement: "Bara 11 % mer än förra planen" → Tekniskt sant men missar inflationsjustering
+
+**Övervakningsrekommendationer**:
+1. Observera SD:s interna kommunikation om järnvägsandel (SNS, Arbetsgrupp transport)
+2. Övervaka Trafikverkets omvärldsrapporter för kostnadssignaler
+3. Granska oppositionspartiernas egna alternativplaner (S och V har egna NTP-kalkyler)
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#0a0e27","primaryTextColor": "#e0e0e0","primaryBorderColor": "#00d9ff","lineColor": "#ff006e","sectionBkgColor": "#1a1e3d","altSectionBkgColor": "#0a0e27"}}}%%
+flowchart TD
+    HD03259[HD03259 Transportplan] --> F1[Frame 1: Historisk satsning]
+    HD03259 --> F2[Frame 2: Järnvägsgapet]
+    HD03259 --> F3[Frame 3: Norrlandsfrågan]
+    HD03259 --> F4[Frame 4: Kostnadsrisk]
+    HD03247[HD03247 OTC] --> F5[Frame 5: Patientsäkerhet]
+    HD03247 --> F6[Frame 6: Glesbygdsapotek]
+    HD03257[HD03257 IT-lantmäteri] --> F7[Frame 7: Digital förvaltning]
+    style F1 fill:#00d9ff,color:#0a0e27
+    style F2 fill:#ff006e,color:#fff
+    style F3 fill:#ffbe0b,color:#0a0e27
+    style F4 fill:#ff006e,color:#fff
+    style F5 fill:#00d9ff,color:#0a0e27
+    style F6 fill:#ffbe0b,color:#0a0e27
+    style F7 fill:#00d9ff,color:#0a0e27
 ```
 
 ## Devil's Advocate
@@ -1641,22 +1641,22 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/threat-analysis.md)
 - [`documents/HD03247-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/documents/HD03247-analysis.md)
 - [`documents/HD03257-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/documents/HD03257-analysis.md)
 - [`documents/HD03259-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/documents/HD03259-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/propositions/cross-reference-map.md)

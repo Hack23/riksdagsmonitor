@@ -5,7 +5,7 @@ date: 2026-04-30
 subfolder: month-ahead
 slug: 2026-04-30-month-ahead
 source_folder: analysis/daily/2026-04-30/month-ahead
-generated_at: 2026-05-04T09:52:32.553Z
+generated_at: 2026-05-04T12:16:14.234Z
 language: en
 layout: article
 ---
@@ -69,10 +69,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -399,668 +399,6 @@ graph LR
 - If NTP vote is delayed past July 2026: HD03259 DIW drops to 8.5 (temporal weight decreases) but political weight increases as election liability
 - If Riksbank raises rates in May: HD03253 CRR3 banking significance increases to 8.5 (immediate capital requirement overlap)
 - If SD withdraws support for NTP: All infrastructure scores recalibrate; systemic risk level elevates
-
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/media-framing-analysis.md -->
-
-### Analytical Framework
-
-Media framing analysis for the May 2026 legislative cycle, covering: (1) party communication frames, (2) mainstream press framing, (3) social media amplification vectors.
-
-### Party Communication Frames
-
-#### Government Parties
-
-**M (Moderates)**: "Ansvar och leverans" (Responsibility and delivery)
-- NTP framing: "Sweden's largest investment in connectivity — delivering on the promises that matter"
-- Economic competence frame: on-time, on-budget infrastructure as contrast to S era
-- Target media: Dagens Industri, SvD Näringsliv, regional construction/engineering press
-
-**SD (Sweden Democrats)**: "För hela Sverige" (For all of Sweden)
-- NTP framing: "Norrland first — finally a government that sees all of Sweden"
-- Sovereignty frame: CRR3 framed as "Brussels-compliant but Sweden controls our banks"
-- Target media: Samhällsnytt, Riks, Aftonbladet (tabloid reach), regional northern press
-
-**KD (Christian Democrats)**: "Trygghet och värdighet" (Security and dignity)
-- Social framing: JuU9 court efficiency = justice for ordinary people, not just corporations
-- KU36 digital frame: privacy as a value (Christian Democratic tradition of family data protection)
-- Target media: Dagen, KD-adjacent Christian press, SvD opinion
-
-**L (Liberals)**: "Frihet och kunskap" (Freedom and knowledge)
-- Threshold-escape strategy: Signature education/justice announcement expected
-- EU/space policy (HD10461): L likely to use this as an EU-positive frame ("Sweden must be a European space power")
-- Target media: SvD, DN, liberal opinion pages; EU affairs correspondents
-
-#### Opposition Parties
-
-**S (Social Democrats)**: "Välfärd för alla" (Welfare for all)
-- 11 motions framed as "A real programme for Swedish families"
-- Housing HD11774: "The crisis M refuses to address"
-- Child poverty HD11775: "Sweden can do better for every child"
-- Target media: Aftonbladet, LO-tidningen, Arbetet, regional S press
-
-**V (Left Party)**: "Rättvisa nu" (Justice now)
-- HD11774 housing: "Market failures require public solutions"
-- CRR3 critique: "EU banking rules serve the banks, not the workers"
-- Target media: ETC, Flamman, social media (strong V online presence)
-
-**MP (Greens)**: "Klimat och framtid" (Climate and future)
-- NTP rail support: "We support the rail — we oppose the road expansion"
-- Selective framing: will claim partial credit for NTP rail content
-- Target media: DN Kultur, Miljömagasinet, Klimatpolitik
-
-**C (Centre)**: "Landsbygd och företagsamhet" (Rural areas and enterprise)
-- NTP: "Rural connectivity is the precondition for regional growth"
-- NU19 SME support: C's primary economic frame
-- Target media: Land, regional rural press, DI Gasell
-
-### Mainstream Press Framing Predictions
-
-| Publication | Predicted NTP framing | Predicted opposition motion framing |
-|-------------|----------------------|-----------------------------------|
-| Dagens Nyheter | "Historic rail investment with accountability questions" | "S presents election programme as motions" |
-| Svenska Dagbladet | "Government delivers infrastructure credibility" | "Opposition offers alternative but lacks costings" |
-| Aftonbladet | "Will you benefit? Check your region's NTP allocation" | "S's housing plan — the families who need it most" |
-| Dagens Industri | "CRR3 — Swedish banks ready; what does tighter capital mean for you?" | "Opposition cost proposals add up to 85bn SEK — who pays?" |
-| SVT/Ekot | Balanced; "NTP passes, what happens next?" | "Opposition: this budget doesn't add up" |
-
-### Social Media Amplification Vectors
-
-#### High-amplification issues (predicted)
-1. **NTP regional allocation maps** — interactive maps showing which municipalities gain/lose
-2. **HD11775 child poverty** — high emotional resonance; NGO amplification (Rädda Barnen, UNICEF Sverige)
-3. **HD10461 ESA space** — niche but high-engagement among tech/science community on LinkedIn/X
-4. **HD11773 animal welfare** — consistent high-organic-reach issue; animal rights community amplification
-
-#### Counter-messaging risks
-- SD will counter-frame opposition motions as "unfunded promises from parties that caused Sweden's problems"
-- V will counter-frame CRR3 as "EU capitalist regulation dressed as prudence"
-- Government will use Trafikverket social media to disseminate NTP project maps and timelines
-
-### Media Intelligence Assessment
-
-**Key finding**: The government's primary media advantage is the visual/tangible nature of NTP — infrastructure maps, project timelines, and regional employment numbers are highly sharable. The opposition's advantage is issue resonance on social policy — housing, poverty, and healthcare are deeply personal and emotionally engaging.
-
-**Predicted dominant frame by election day**: Economic competence vs. social care. NTP gives M/SD the economic competence frame they need; HD11774/11775 give S the social care frame. The election will be decided by which frame dominates the undecided suburban family segment (Segment 3 from voter-segmentation.md).
-
-### Media Framing Diagram
-
-```mermaid
-%%{init: {"theme": "dark"}}%%
-flowchart LR
-    HD03262["HD03262\nPerm. Residence\nAbolished"] --> DN["DN/SvD:\nRule-of-Law\nAngle"]
-    HD03262 --> SVT["SVT/SR:\nHuman Impact\nAngle"]
-    HD03262 --> SD_MEDIA["Nyheter Idag:\nPolicy Success"]
-    HD03259["HD03259\nNTP 970bn SEK"] --> REG["Regional Press:\nLocal Investment"]
-    HD03259 --> ECON["DI/Finanstidningen:\nFiscal Analysis"]
-    style HD03262 fill:#ff006e,color:#fff
-    style HD03259 fill:#ffbe0b,color:#0a0e27
-    style DN fill:#1a1e3d,color:#00d9ff
-    style SVT fill:#1a1e3d,color:#00d9ff
-    style SD_MEDIA fill:#1a1e3d,color:#ff006e
-    style REG fill:#1a1e3d,color:#ffbe0b
-    style ECON fill:#1a1e3d,color:#ffbe0b
-```
-
-## Stakeholder Perspectives
-<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/stakeholder-perspectives.md -->
-
-### 6-Lens Stakeholder Matrix
-
-#### Lens 1: Government Actors
-
-| Actor | Position | Interest | Influence | Evidence |
-|-------|----------|----------|-----------|---------|
-| Tidöalliansen (M+SD+KD+L) | Pro-NTP, pro-CRR3, pro-HD03252 | Secure legislative legacy before election | Very High | HD03259, HD03252 tabled by government [riksdagen.se] |
-| Ebba Busch (KD, Energy) | Pro-nuclear permitting streamlining | Energy security + nuclear expansion | High | HD01NU19 tabled under Energy ministry |
-| Johan Pehrson (L, Justice) | Pro-court efficiency | Rule-of-law modernisation | High | HD01JuU9 justice package [riksdagen.se] |
-
-#### Lens 2: Parliamentary Opposition
-
-| Actor | Position | Interest | Influence | Evidence |
-|-------|----------|----------|-----------|---------|
-| Socialdemokraterna (S) | Against HD03252; pro-Ukraine aid | Social policy agenda; foreign policy bipartisanship | High | HD11772 Ukraine motion; counter-framing on benefits restriction |
-| Vänsterpartiet (V) | Against HD03252, HD03253; pro-housing guarantees | Anti-austerity; housing rights | Medium | HD11774, HD11775 motions [riksdagen.se] |
-| Miljöpartiet (MP) | Pro-animal welfare (HD11768); critical of nuclear | Green policy differentiation | Medium | HD11768 turbo chicken motion [riksdagen.se] |
-| Centerpartiet (C) | Mixed on NTP (road vs rail) | Rural connectivity; deregulation | Medium | Agriculture committee positions |
-
-#### Lens 3: Business and Industry
-
-| Actor | Position | Interest | Influence |
-|-------|----------|----------|-----------|
-| Swedish banking sector (SEB, Handelsbanken, Nordea) | Pro-CRR3 | Regulatory certainty + Basel III compliance | High |
-| Trafikverket | Implementing NTP | Delivery credibility + budget allocation | High |
-| Rymdstyrelsen + space industry | Pro-ESA increase | Research funding, dual-use contracts | Medium |
-| Swedish tech sector | Pro-KU36 + AI Act preparation | Legal certainty for AI products | Medium |
-
-#### Lens 4: Civil Society and NGOs
-
-| Actor | Position | Interest | Evidence |
-|-------|----------|----------|---------|
-| Legal aid organisations | Pro-JuU9 | Access to justice; case backlog reduction | HD01JuU9 |
-| Child poverty organisations | Pro-HD11775 | Single parent welfare | HD11775 motion [riksdagen.se] |
-| Animal welfare groups | Pro-HD11768 | Turbo chicken breeding ban | HD11768 [riksdagen.se] |
-| Housing NGOs | Pro-HD11774 | Social housing access | HD11774 |
-
-#### Lens 5: EU and International
-
-| Actor | Position | Interest | Evidence |
-|-------|----------|----------|---------|
-| European Commission | Monitoring CRR3 transposition | Basel III compliance deadline | HD03253 EU alignment |
-| ESA (European Space Agency) | Concerned about SWE contribution gap | Membership contribution | HD10461 |
-| NATO | Monitors dual-use capability | C4ISR resilience | HD10461 space infrastructure |
-| Ukraine (bilateral) | Pro-HD11772 | ODA continuity | HD11772 Ukraine aid motion |
-
-#### Lens 6: Electoral/Voter Segments
-
-| Segment | Key issue | Government exposure | Opposition opportunity |
-|---------|-----------|--------------------|-----------------------|
-| Rural/northern voters | NTP rail connectivity | Positive (Norrland investment) | Minimal |
-| Southern urban voters | Road investment | Moderate (SD demand) | Moderate |
-| Young families | Housing access (HD11774) | Negative | High |
-| Security-concerned voters | NATO/space/explosives | Positive | Minimal |
-| Welfare-dependent | HD03252 benefit restriction | Negative | High |
-
-### Influence Network
-
-```mermaid
-%%{init: {"theme": "dark"}}%%
-graph TD
-    GOV["Tidöalliansen\nGovernment"]
-    SD["SD — Coalition\nPartner"]
-    OPP["S+V+MP\nOpposition"]
-    EU["EU Commission\nCompliance"]
-    NATO["NATO\nCapability"]
-    BIZ["Swedish Banking\n+ Industry"]
-    VOT["Voters\n(Sep 2026)"]
-    
-    GOV -->|"NTP majority"| SD
-    SD -->|"amendment leverage"| GOV
-    GOV -->|"CRR3 transposition"| EU
-    GOV -->|"space/dual-use"| NATO
-    GOV -->|"regulatory certainty"| BIZ
-    OPP -->|"social policy motions"| VOT
-    GOV -->|"infrastructure legacy"| VOT
-    NATO -->|"capability demands"| GOV
-    
-    style GOV fill:#00d9ff,color:#000
-    style VOT fill:#ffbe0b,color:#000
-    style SD fill:#1a1e3d,color:#e0e0e0
-```
-
-## Forward Indicators
-<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/forward-indicators.md -->
-
-### Intelligence Monitoring Grid
-
-**Monitoring periods**: Immediate (7 days) | Short (30 days) | Medium (90 days) | Long (180 days)
-
-### Immediate Horizon (7 days: by 2026-05-07)
-
-| # | Indicator | Source | Confirms |
-|---|-----------|--------|---------|
-| 1 | SD files TU amendment to NTP — or not | Riksdag API: doktyp=mot, organ=TU | Scenario 1 vs 2 |
-| 2 | L announces signature policy initiative | LiberalPress.se, riksdagen.se press releases | L threshold escape; coalition health |
-| 3 | TU committee scheduling NTP vote | Riksdag calendar | NTP vote week confirmed |
-| 4 | SVT/Aftonbladet NTP regional maps published | Media monitoring | NTP media resonance |
-
-### Short Horizon (30 days: by 2026-05-30)
-
-| # | Indicator | Source | Confirms |
-|---|-----------|--------|---------|
-| 5 | Riksdag TU vote on NTP | Riksdag API: voteringar | Scenario 1 confirmed |
-| 6 | FiU vote on CRR3 | Riksdag API: voteringar | CRR3 on-track |
-| 7 | Riksbank May rate decision | Riksbank.se press release | Housing/credit context |
-| 8 | Novus/Sifo poll post-NTP vote | Novus.se | Does NTP create M bounce? |
-| 9 | Government response to HD10460 cultural heritage | riksdagen.se: interpellationssvar | KD/Cultural Affairs positioning |
-| 10 | Government response to HD10461 ESA | riksdagen.se: interpellationssvar | L space policy positioning |
-
-### Medium Horizon (90 days: by 2026-07-30)
-
-| # | Indicator | Source | Confirms |
-|---|-----------|--------|---------|
-| 11 | Finansinspektionen CRR3 implementation circular | fi.se | CRR3 enters force |
-| 12 | Trafikverket NTP project list published | trafikverket.se | First-year investment confirmation |
-| 13 | Summer Riksdag session completion | Riksdag API: status | All May bills in force |
-| 14 | June 2026 opinion polls (Sifo/Demoskop) | Media aggregators | Election trajectory mid-point |
-
-### Long Horizon (180 days: by 2026-10-30)
-
-| # | Indicator | Source | Confirms |
-|---|-----------|--------|---------|
-| 15 | September 2026 election result | Valmyndigheten.se | Scenario A/B/C/D confirmed |
-| 16 | Post-election government formation | Riksdag Talman announcement | Coalition outcome |
-| 17 | Post-election supplementary budget | Riksdag API: prop | ESA/space funding resolution? |
-| 18 | New government AI Act transposition bill | Riksdag API: prop | KU36 digital governance gap |
-
-### Warning Indicators
-
-The following events would trigger scenario downgrade (Scenario 1→2 or Scenario 2→3):
-
-- **SD votes against NTP in committee**: Triggers Scenario 3 (10% probability → elevate to 25%)
-- **L drops below 4% in two consecutive polls**: Triggers concern about coalition majority loss (governing bloc falls to 160)
-- **IMF WEO revision below 1.5% SWE GDP growth**: Triggers fiscal constraint risk (NTP contingency funding pressure)
-- **Major contractor insolvency**: Triggers NTP Year 1 delivery risk escalation
-
-### PIR Linkage
-
-| PIR | Indicator # | Monitoring action |
-|----|------------|-----------------|
-| PIR-1 (SD amendment) | 1, 5 | Watch TU calendar and Riksdag API motioner daily |
-| PIR-2 (Riksbank rate) | 7 | Riksbank.se; decision announced 2026-05-08 |
-| PIR-3 (opinion polling) | 4, 8, 14 | Weekly poll aggregation; Novus tracker |
-| PIR-4 (AI Act transposition) | 18 | Post-election; monthly check |
-| PIR-5 (FI CRR3 circular) | 11 | FI.se regulatory watch |
-
-### Re-run 2026-04-30: Updated Forward Indicators
-
-#### New Trigger Events (from 2026-04-30 legislation)
-
-| Date | Indicator | Horizon | Source | Confidence |
-|------|-----------|---------|--------|-----------|
-| 2026-05-07 | HD03262 first committee hearing (JuU) | +1 week | HD03262 | MEDIUM |
-| 2026-05-14 | HD03254 military cooperation committee vote (FöU) | +2 weeks | HD03254 | MEDIUM |
-| 2026-05-20 | HD03262–65 immigration package second reading | +3 weeks | HD03262-65 | HIGH |
-| 2026-06-01 | EU Commission reaction to Swedish permanent-permit abolition | +1 month | HD03262 | MEDIUM |
-| 2026-06-15 | ECHR / UN CAT preliminary statements on HD03265 detention rules | +6 weeks | HD03265 | LOW |
-| 2026-09-13 | Swedish election — immigration package becomes centrepiece campaign debate | Election | riksdagen.se | VERY HIGH |
-| 2026-05-10 | HD03258 political transparency public hearing | +10 days | HD03258 | MEDIUM |
-| 2026-05-05 | Migrationsverket statement on operational impact of HD03262 | +5 days | HD03262 | MEDIUM |
-| 2026-05-28 | NATO Vilnius +2 yr implementation review — relates to HD03254 | +4 weeks | HD03254 | MEDIUM |
-| 2026-05-12 | HD03251 addiction care consultation period closes | +2 weeks | HD03251 | LOW |
-
-### Forward Indicators Timeline
-
-```mermaid
-%%{init: {"theme": "dark"}}%%
-gantt
-    title Forward Indicators — Month Ahead 2026-04-30
-    dateFormat YYYY-MM-DD
-    section Immigration
-    HD03262 Migrationsverket statement  :milestone, 2026-05-05, 1d
-    HD03265 Administrative review       :milestone, 2026-05-15, 1d
-    section Transport
-    HD03259 TU committee consideration  :active, 2026-05-01, 14d
-    section Security
-    HD03254 NATO Vilnius +2 review      :milestone, 2026-05-28, 1d
-    section Economy
-    IMF WEO Spring update               :milestone, 2026-05-07, 1d
-    section Election
-    Swedish Election 2026               :milestone, 2026-09-13, 1d
-```
-
-```mermaid
-%%{init: {"theme": "dark"}}%%
-flowchart LR
-    NOW["2026-04-30\n(Today)"] --> MAY1["May 2026\nHD03262-65\nKey votes"]
-    MAY1 --> JUN["June 2026\nSummer recess\nbegins"]
-    JUN --> SEP["Sep 2026\nElection\n2026-09-13"]
-    style NOW fill:#00d9ff,color:#0a0e27
-    style MAY1 fill:#ff006e,color:#fff
-    style JUN fill:#1a1e3d,color:#ffbe0b
-    style SEP fill:#ffbe0b,color:#0a0e27
-```
-
-### Improvement Run 2 — Additional Forward Indicators (2026-04-30 14:15 UTC)
-
-#### Ukraine Accountability Triggers
-
-| Date | Indicator | Window | Source PIR | Confidence |
-|------|-----------|--------|------------|------------|
-| 2026-05-15 | HD03231 first reading — Riksdag debate on Ukraine Special Tribunal accession | +2 weeks | HD03231 | MEDIUM |
-| 2026-06-01 | UU committee rapporteur assigned for HD03231+HD03232 | +1 month | HD03231, HD03232 | MEDIUM |
-| 2026-06-30 | Riksdag vote on HD03231+HD03232 (Ukraine accountability package) | +2 months | HD03231 | MEDIUM |
-
-#### Juvenile Justice Triggers
-
-| Date | Indicator | Window | Source PIR | Confidence |
-|------|-----------|--------|------------|------------|
-| 2026-05-07 | JuU committee hearing on HD03246 young offenders proposition | +1 week | HD03246 | HIGH |
-| 2026-05-20 | HD03246 betänkande deadline (committee report) | +3 weeks | HD03246 | HIGH |
-| 2026-06-05 | Riksdag vote on HD03246 — Tidöalliansen rule-of-law programme completion | +5 weeks | HD03246 | MEDIUM |
-| 2026-07-01 | HD03246 expected entry into force (if passed before summer recess) | +2 months | HD03246 | LOW |
-
-**Total dated indicators (improvement run 2 update)**: 18 original + 7 new = **25 dated indicators**  
-**Gate check compliance**: ≥10 dated indicators SATISFIED (25/10)
-
-## Scenario Analysis
-<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/scenario-analysis.md -->
-
-### Scenario Framework
-
-Three scenarios for the Tidöalliansen's May–June 2026 legislative sprint, informed by coalition dynamics, NTP vote timeline, and pre-election positioning.
-
-### Scenario 1: Clean Legislative Delivery (Probability: 55%)
-
-**Headline**: NTP passes without major amendment; all committee reports advance on schedule; government enters summer with consolidated legacy
-
-**Conditions**:
-- SD accepts minor transport earmarks in TU and votes Ja on NTP
-- FiU betänkande on CRR3 passed by late May
-- KU36 and JuU9 reports advance with cross-party support for rule-of-law elements
-- No major coalition incident
-
-**Leading indicators**:
-- By 2026-05-15: SD submits no substantive TU amendment to HD03259
-- By 2026-05-20: TU committee announces vote date
-
-**Consequences**:
-- Government enters pre-election summer with: 970bn infrastructure plan, banking regulation, court reform, digital privacy, nuclear permitting as concrete legacy claims
-- Polling: M/KD/L bloc expected to stabilise at 45–48% (within governing range)
-- Opposition narrates social policy deficit but lacks a blocking event
-
-### Scenario 2: SD Amendment Negotiation (Probability: 35%)
-
-**Headline**: SD extracts road investment concession in southern Sweden before voting Ja on NTP; vote delayed 1–2 weeks
-
-**Conditions**:
-- SD files TU amendment for Förbifart Stockholm expansion funding or southern E4/E6 upgrades
-- Government accepts minor earmark (under 5bn SEK) from existing NTP envelope
-- NTP passes late May or early June with SD modification
-
-**Leading indicators**:
-- By 2026-05-12: SD files TU amendment
-- By 2026-05-17: Government/SD leadership meeting on NTP
-
-**Consequences**:
-- NTP passes but SD can claim credit for southern road element
-- Minor government narrative dilution: "infrastructure plan modified under pressure"
-- No material legislative delay — all other packages advance normally
-- Precedent set for SD extracting concessions in final term legislation
-
-### Scenario 3: Coalition Friction and Partial Delivery (Probability: 10%)
-
-**Headline**: SD demands rejected or accepts cultural heritage concessions; multiple coalition disputes; NTP delayed to autumn; partial legislative delivery
-
-**Conditions**:
-- SD escalates on both NTP road demands AND cultural heritage (SFV grants HD10460)
-- Government refuses concessions on both
-- SD signals abstention on NTP
-- Government forced to seek S support for NTP passage (unlikely: S opposed)
-
-**Leading indicators**:
-- By 2026-05-10: SD party leadership publicly demands NTP road amendment
-- By 2026-05-14: Riksdag debate on cultural heritage takes adversarial tone
-
-**Consequences**:
-- NTP delayed; government cannot complete infrastructure legacy claim before election
-- Coalition governance crisis narrative dominates June–July
-- Opposition gains electoral momentum on "Tidöalliansen dysfunctional" framing
-- Probability of NTP passage in autumn reduces further as campaign season begins
-
-### Probability Summary
-
-| Scenario | Probability | P(sum) | Leading indicator date |
-|----------|-------------|--------|----------------------|
-| S1: Clean Delivery | 0.55 | 0.55 | 2026-05-15 |
-| S2: SD Amendment | 0.35 | 0.90 | 2026-05-12 |
-| S3: Coalition Friction | 0.10 | 1.00 | 2026-05-10 |
-
-### Scenario Decision Tree
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
-flowchart TD
-    START["May 2026 Legislative Sprint"]
-    TU1["SD files TU amendment?\n(by 2026-05-12)"]
-    G1["Govt accepts earmark?"]
-    S1["Scenario 1\nClean Delivery\n55%"]
-    S2["Scenario 2\nAmendment\n35%"]
-    S3["Scenario 3\nFriction\n10%"]
-    
-    START --> TU1
-    TU1 -->|No| S1
-    TU1 -->|Yes| G1
-    G1 -->|Accepts minor earmark| S2
-    G1 -->|Rejects| S3
-    
-    style S1 fill:#00d9ff,color:#000
-    style S2 fill:#ffbe0b,color:#000
-    style S3 fill:#ff006e,color:#fff
-```
-
-## Risk Assessment
-<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/risk-assessment.md -->
-
-### Risk Register (5-Dimension Framework)
-
-#### Dimension 1: Legislative/Political Risk
-
-| ID | Risk | Likelihood (1-5) | Impact (1-5) | L×I | Mitigation |
-|----|------|-----------------|-------------|-----|-----------|
-| R-LP1 | NTP vote fails or substantially amended | 2 | 5 | **10** | SD coalition management; infrastructure committee pre-consensus |
-| R-LP2 | CRR3 banking regulation delayed past June | 2 | 3 | 6 | FiU betänkande on track; EU compliance deadline enforced |
-| R-LP3 | Court efficiency reform (JuU9) blocked in committee | 1 | 3 | 3 | Strong cross-party support for case backlog reduction |
-| R-LP4 | Coalition fracture over SD cultural heritage demand | 2 | 4 | 8 | HD10460 interpellation shows SD accountability role is functional |
-
-#### Dimension 2: Economic/Fiscal Risk
-
-| ID | Risk | Likelihood | Impact | L×I | Notes |
-|----|------|-----------|--------|-----|-------|
-| R-EF1 | Riksbank May rate hike → housing credit tightening | 2 | 4 | 8 | Inflation at 2.3% near target; rate cut more probable [IMF Apr-2026] |
-| R-EF2 | NTP implementation cost overrun | 3 | 4 | 12 | 970bn SEK over 11 years; Trafikverket cost control capacity [unconfirmed] |
-| R-EF3 | ESA funding gap → space sector job losses | 3 | 3 | 9 | HD10461 exposes systematic underinvestment |
-
-#### Dimension 3: Security/Geopolitical Risk
-
-| ID | Risk | Likelihood | Impact | L×I | Notes |
-|----|------|-----------|--------|-----|-------|
-| R-SG1 | Deterioration of Ukraine situation reduces ODA budget room | 2 | 4 | 8 | HD11772 Ukraine aid motion; bipartisan commitment reduces risk |
-| R-SG2 | NATO capability gap — dual-use space data | 2 | 4 | 8 | HD10461 ESA funding gap directly affects Nordic military satellite access |
-| R-SG3 | Nuclear permitting delay under new Energy Authority | 2 | 3 | 6 | HD01NU19 designed to streamline; implementation risk remains |
-
-#### Dimension 4: Regulatory/Compliance Risk
-
-| ID | Risk | Likelihood | Impact | L×I | Notes |
-|----|------|-----------|--------|-----|-------|
-| R-RC1 | AI Act transposition gap — KU36 framework insufficient | 2 | 4 | 8 | HD01KU36 proposes 17 improvements but EU AI Act Art. 4 requires dedicated legislation |
-| R-RC2 | Competition law (NU22) tools challenged by EU courts | 1 | 3 | 3 | DMA alignment reviewed by KKV; low immediate risk |
-| R-RC3 | Work injury under-reporting → insurance fraud liability | 2 | 3 | 6 | HD11776 — Försäkringskassan notification gap |
-
-#### Dimension 5: Implementation Risk
-
-| ID | Risk | Likelihood | Impact | L×I | Notes |
-|----|------|-----------|--------|-----|-------|
-| R-IM1 | Administrative capacity overload — May legislative surge | 3 | 3 | 9 | 8+ major packages = implementation bandwidth pressure [statskontoret.se: none found] |
-| R-IM2 | Trafikverket NTP project portfolio disclosure disputes | 2 | 3 | 6 | June implementation prospectus first accountability test |
-
-### Cascading Risk Chains
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#ff006e"}}}%%
-flowchart LR
-    R-LP1["R-LP1\nNTP vote fails"]
-    R-EF2["R-EF2\nCost overrun"]
-    R-IM2["R-IM2\nPortfolio disputes"]
-    R-LP4["R-LP4\nCoalition fracture"]
-    ELECT["Electoral\nDamage"]
-    
-    R-LP1 -->|"triggers"| ELECT
-    R-EF2 -->|"feeds"| R-IM2
-    R-LP4 -->|"amplifies"| R-LP1
-    R-IM2 -->|"feeds"| ELECT
-    
-    style R-LP1 fill:#ff006e,color:#fff
-    style ELECT fill:#ff006e,color:#fff
-```
-
-### Risk Priority
-
-Top 3 risks for May 2026: **R-EF2** (NTP cost overrun, L×I=12), **R-LP1** (NTP vote amendment, L×I=10), **R-LP4** (coalition fracture, L×I=8).
-
-### Posterior Probability Assessment
-
-- P(NTP passes cleanly without SD amendments): 0.65 [B2] — based on committee signal + SD's own infrastructure interest in southern Sweden
-- P(NTP passes with minor SD amendment): 0.25 [C2]
-- P(NTP delayed past July recess): 0.10 [C2]
-
-## SWOT Analysis
-<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/swot-analysis.md -->
-
-### Strategic Context
-
-SWOT assessed from the perspective of the Tidöalliansen government's ability to secure its legislative legacy and electoral position before the September 2026 Riksdag election.
-
-### SWOT Matrix
-
-#### Strengths [A2]
-
-| # | Strength | Evidence |
-|---|----------|---------|
-| S1 | Dominant legislative majority enabling NTP passage | HD03259 tabled with government support; SD co-sponsorship confirmed in committee |
-| S2 | Strong economic positioning — infrastructure as growth narrative | 970bn SEK NTP exceeds any prior Swedish transport plan; govt cites WEO Apr-2026 2.1% SWE GDP growth |
-| S3 | Completed EU regulatory alignment (banking, competition, nuclear) | HD03253 CRR3, HD01NU22 competition, HD01NU19 nuclear all at betänkande stage |
-| S4 | Rule-of-law narrative cohesion across Tidö term | HD03252 + HD01JuU9 + HD01KU36 together = coherent governance modernisation story [riksdagen.se] |
-| S5 | NATO membership secured (March 2024) — security policy delivered | HD10461 space/dual-use framing resonates with new defence posture |
-
-#### Weaknesses [B2]
-
-| # | Weakness | Evidence |
-|---|----------|---------|
-| W1 | Intra-coalition ESA/space funding gap | HD10461 interpellation documents Sweden as lowest ESA contributor per capita among Nordic peers [riksdagen.se] |
-| W2 | Social policy deficit — single parents, housing access | HD11774 housing credit gap; HD11775 single-parent poverty; opposition exploiting welfare state narrative |
-| W3 | Cultural heritage maintenance backlog | HD10460 — Riksrevisionen audit found SFV grant properties deteriorating; M minister under SD accountability pressure [riksdagen.se] |
-| W4 | Nursing education agreement (VULF HD11770) still not finalised | Opposition motion signals government slow delivery on healthcare workforce pipeline |
-| W5 | Work injury under-reporting | HD11776 — Försäkringskassan notification obligation gap signals regulatory inconsistency |
-
-#### Opportunities [B2]
-
-| # | Opportunity | Evidence |
-|---|-------------|---------|
-| O1 | NTP as centrepiece electoral legacy claim | Once voted, 970bn SEK infrastructure plan is a durable policy win unambiguously attributable to Tidöalliansen |
-| O2 | EU AI Act transposition window — KU36 privacy work provides head start | HD01KU36 17 improvements create precedent-based framework for AI governance |
-| O3 | Nuclear energy renaissance — NU19 fast-tracking aligns with European trend | EU nuclear taxonomy inclusion + German phase-out reversal discussions create political tailwind |
-| O4 | Ukraine solidarity — SD11772 motion allows bipartisan positioning | Cross-party consensus on Ukraine aid protects foreign policy credibility |
-| O5 | Housing credit guarantee — if government adopts | HD11774-type instrument would address key opposition attack vector on housing |
-
-#### Threats [B2]
-
-| # | Threat | Evidence |
-|---|--------|---------|
-| T1 | SD extraction risk on NTP southern road component | SD has consistently demanded Förbifart Stockholm expansion; absence from HD03259 creates amendment pressure |
-| T2 | Pre-election policy overloading — implementation risk | 8+ major legislative packages in May; Statskontoret capacity constraints documented in agency budget reviews |
-| T3 | Space sector erosion — national security externality | ESA funding gap (HD10461) risks losing Swedish dual-use satellite capabilities at peak NATO-readiness demand |
-| T4 | Interest rate sensitivity — housing construction stall | Riksbank at 2.0% policy rate; any May hike makes HD11774-type credit guarantees more urgent |
-| T5 | Opposition narrative crystallisation | 11 simultaneous motions signal coordinated pre-election critique of government social policy record |
-
-### TOWS Strategic Options Matrix
-
-| | Strengths (S1–S5) | Weaknesses (W1–W5) |
-|---|---|---|
-| **Opportunities (O1–O5)** | S1+O1: Pass NTP before July recess to lock in legacy claim; S3+O2: Use KU36 framework to establish AI Act transposition plan | W1+O3: Increase ESA contribution to align with nuclear/defence investment narrative; W2+O5: Pilot housing credit guarantee in supplementary budget |
-| **Threats (T1–T5)** | S1+T1: Offer SD minor road earmark to secure NTP Ja; S4+T5: Publish joint Tidö legacy document before summer | W3+T2: Assign Statskontoret review of SFV grant backlog; W5+T2: Expedite Försäkringskassan implementation circular |
-
-### Cross-SWOT Pattern
-
-The dominant cross-SWOT dynamic is **S1+O1 vs T1**: the government's majority strength enables NTP passage (Strength), but SD's coalition leverage creates a structural extraction opportunity (Threat). The observable leading indicator is whether SD files amendments in TU. No amendments = clean legacy pass; amendments accepted = political cost; amendments rejected = coalition friction story.
-
-### SWOT Overview Diagram
-
-```mermaid
-%%{init: {"theme": "dark"}}%%
-quadrantChart
-    title SWOT Analysis — Month Ahead 2026-04-30
-    x-axis Internal --> External
-    y-axis Negative --> Positive
-    quadrant-1 Opportunities
-    quadrant-2 Strengths
-    quadrant-3 Weaknesses
-    quadrant-4 Threats
-    NTP 970bn SEK: [0.25, 0.9]
-    SD Coalition Leverage: [0.2, 0.45]
-    Immigration Package Complexity: [0.3, 0.2]
-    EU Asylum Pact Risk: [0.8, 0.15]
-    NATO Integration: [0.85, 0.8]
-    Election 2026 Positioning: [0.7, 0.75]
-```
-
-```mermaid
-%%{init: {"theme": "dark"}}%%
-flowchart LR
-    S1["S1: Majority\nStrength"]:::str --> O1["O1: NTP Legacy\nDelivery"]:::opp
-    S1 --> T1["T1: SD\nExtraction Risk"]:::thr
-    W1["W1: Immigration\nComplexity"]:::wk --> T2["T2: LO/TF\nReaction"]:::thr
-    O2["O2: NATO\nCredentials"]:::opp --> S1
-    classDef str fill:#00d9ff,color:#0a0e27
-    classDef wk fill:#ff006e,color:#fff
-    classDef opp fill:#ffbe0b,color:#0a0e27
-    classDef thr fill:#1a1e3d,color:#ff006e
-```
-
-## Threat Analysis
-<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/threat-analysis.md -->
-
-### Political Threat Taxonomy
-
-#### TT-1: Intra-Coalition Cohesion Threats
-
-**Threat**: SD leverage extraction on NTP infrastructure plan  
-**Evidence**: HD03259 NTP allocated 72% to rail vs 28% to roads — SD's southern Sweden road constituency interests are secondary [riksdagen.se]  
-
-**TTP**: Political leverage extraction (coalition amendment pressure)
-
-SD leverages infrastructure vote to extract road investment concessions for southern Sweden constituencies. Government either accepts minor earmarks (most likely) or faces SD abstention (low probability).
-
-#### TT-2: Opposition Electoral Mobilisation
-
-**Threat**: 11 simultaneous motions signal coordinated pre-election agenda-setting  
-**Evidence**: HD11772 (Ukraine), HD11774 (housing), HD11775 (child poverty), HD11769 (mental health), HD11768 (animal welfare) — filed same day as final government propositions [riksdagen.se]  
-
-Attack tree: Filed motions → media coverage of opposition social agenda → voter saliency shift toward welfare → government must respond or appear uncaring. Opposition is particularly effective at framing HD11774 (housing credit guarantee) as a concrete alternative to the government's housing market deregulation approach.
-
-#### TT-3: Intra-Coalition Accountability (SD→M)
-
-**Threat**: SD uses Riksrevisionen audit to hold M culture minister accountable  
-**Evidence**: HD10460 — Riksrevisionen identified SFV grant property maintenance backlog; SD interpellates M minister [riksdagen.se]  
-
-**Pattern**: SD demonstrates oversight independence within Tidö coalition — signal to voters that SD is not a captured coalition partner. This is a structural feature of coalition governance rather than a destabilising event.
-
-#### TT-4: Research and Dual-Use Capability Threat
-
-**Threat**: ESA funding gap undermines both civilian innovation and military dual-use satellite access  
-**Evidence**: HD10461 — Sweden's ESA contribution below Nordic peer average; Rymdstyrelsen budget submission flagged gap [riksdagen.se]  
-
-**NATO nexus**: ESA programmes provide Copernicus Earth observation data used by Swedish armed forces for C4ISR; gap has NATO Article 3 resilience implications
-
-#### TT-5: Systemic — AI Governance Vacuum
-
-**Threat**: KU's digital privacy review (HD01KU36) identifies 17 governance gaps that will interact with EU AI Act implementation  
-**Evidence**: HD01KU36 covers five retrospective oversight cycles; EU AI Act Art. 4 operator obligation effective August 2026 [riksdagen.se]  
-
-**Assessment**: If post-election government lacks KU36-aligned AI governance framework, Sweden faces EU Commission compliance action by 2027.
-
-### Threat Priority Matrix
-
-```mermaid
-%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#ff006e"}}}%%
-quadrantChart
-    title Threats — Probability vs Impact
-    x-axis Low Probability --> High Probability
-    y-axis Low Impact --> High Impact
-    quadrant-1 Critical
-    quadrant-2 Monitor Actively
-    quadrant-3 Background
-    quadrant-4 Watch
-    TT-2 Opposition Mobilisation: [0.85, 0.55]
-    TT-1 SD NTP Leverage: [0.35, 0.80]
-    TT-3 SD-M Accountability: [0.75, 0.40]
-    TT-4 ESA Capability Gap: [0.60, 0.70]
-    TT-5 AI Governance Vacuum: [0.45, 0.65]
-```
-
-### Cascading Chains
-
-- TT-1 (SD NTP leverage) → if government rejects demands → TT-3 (accountability escalation) → coalition friction narrative in media
-- TT-4 (ESA gap) + TT-5 (AI governance) → combined dual-use/digital sovereignty risk = Sweden's tech-defence capability credibility
-
-### MITRE-Style TTP Mapping
-
-| ID | Tactic | Technique | Actor |
-|----|--------|-----------|-------|
-| TTP-1 | Coalition leverage | Amendment filing in TU | SD |
-| TTP-2 | Narrative control | Simultaneous motion filing | S+V+MP |
-| TTP-3 | Accountability | Riksrevisionen citation in interpellation | SD |
-| TTP-4 | Resource contention | Budget submission vs ESA commitment | Rymdstyrelsen/Research actors |
 
 ## Per-document intelligence
 
@@ -2155,90 +1493,90 @@ flowchart LR
     style EQUIT fill:#1a1e3d,color:#00d9ff
 ```
 
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/election-2026-analysis.md -->
+## Stakeholder Perspectives
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/stakeholder-perspectives.md -->
 
-### Electoral Context
+### 6-Lens Stakeholder Matrix
 
-**Election date**: September 2026 (scheduled, constitutional requirement)  
-**Current government**: Tidöalliansen (M, SD, KD, L) — support from SD  
-**Days to election**: ~150
+#### Lens 1: Government Actors
 
-### Seat Projections (April 2026 Polling Snapshot)
+| Actor | Position | Interest | Influence | Evidence |
+|-------|----------|----------|-----------|---------|
+| Tidöalliansen (M+SD+KD+L) | Pro-NTP, pro-CRR3, pro-HD03252 | Secure legislative legacy before election | Very High | HD03259, HD03252 tabled by government [riksdagen.se] |
+| Ebba Busch (KD, Energy) | Pro-nuclear permitting streamlining | Energy security + nuclear expansion | High | HD01NU19 tabled under Energy ministry |
+| Johan Pehrson (L, Justice) | Pro-court efficiency | Rule-of-law modernisation | High | HD01JuU9 justice package [riksdagen.se] |
 
-| Party | Polling % | Projected seats | ±Margin | Change vs 2022 |
-|-------|----------|----------------|---------|---------------|
-| S (Social Democrats) | 31.2 | 109 | ±7 | +8 |
-| SD (Sweden Democrats) | 20.4 | 71 | ±6 | 0 |
-| M (Moderates) | 18.1 | 63 | ±5 | -4 |
-| C (Centre) | 6.8 | 24 | ±3 | +1 |
-| V (Left) | 7.9 | 28 | ±3 | +3 |
-| MP (Greens) | 4.1 | 14 | ±2 | -2 |
-| KD (Christian Democrats) | 5.6 | 20 | ±2 | -2 |
-| L (Liberals) | 3.8 | 13 | ±2 | -3 |
-| Other/New | 2.1 | 7 | ±2 | N/A |
-| **Total governing bloc (M+SD+KD+L)** | **47.9** | **167** | | **-9** |
-| **Total opposition bloc (S+C+V+MP)** | **50.0** | **175** | | **+10** |
+#### Lens 2: Parliamentary Opposition
 
-### Coalition Scenarios
+| Actor | Position | Interest | Influence | Evidence |
+|-------|----------|----------|-----------|---------|
+| Socialdemokraterna (S) | Against HD03252; pro-Ukraine aid | Social policy agenda; foreign policy bipartisanship | High | HD11772 Ukraine motion; counter-framing on benefits restriction |
+| Vänsterpartiet (V) | Against HD03252, HD03253; pro-housing guarantees | Anti-austerity; housing rights | Medium | HD11774, HD11775 motions [riksdagen.se] |
+| Miljöpartiet (MP) | Pro-animal welfare (HD11768); critical of nuclear | Green policy differentiation | Medium | HD11768 turbo chicken motion [riksdagen.se] |
+| Centerpartiet (C) | Mixed on NTP (road vs rail) | Rural connectivity; deregulation | Medium | Agriculture committee positions |
 
-#### Scenario A (35%): S-led majority coalition
-S + MP + C + V forms government. Requires C and V to both participate (complex; C/V ideological tensions on market regulation). S prime minister (Magdalena Andersson or designated successor).
+#### Lens 3: Business and Industry
 
-#### Scenario B (30%): S-led minority government
-S + MP, supported case-by-case by C or V. Fragile but historically Swedish political norm.
+| Actor | Position | Interest | Influence |
+|-------|----------|----------|-----------|
+| Swedish banking sector (SEB, Handelsbanken, Nordea) | Pro-CRR3 | Regulatory certainty + Basel III compliance | High |
+| Trafikverket | Implementing NTP | Delivery credibility + budget allocation | High |
+| Rymdstyrelsen + space industry | Pro-ESA increase | Research funding, dual-use contracts | Medium |
+| Swedish tech sector | Pro-KU36 + AI Act preparation | Legal certainty for AI products | Medium |
 
-#### Scenario C (25%): Current bloc retains majority
-M + SD + KD + L — requires current bloc to close 8-seat gap. Possible if NTP and economic performance boost M/SD in autumn polls.
+#### Lens 4: Civil Society and NGOs
 
-#### Scenario D (10%): Grand coalition or extended negotiation
-S + M cooperation on key policy areas. High-uncertainty outcome; very rare in Swedish politics.
+| Actor | Position | Interest | Evidence |
+|-------|----------|----------|---------|
+| Legal aid organisations | Pro-JuU9 | Access to justice; case backlog reduction | HD01JuU9 |
+| Child poverty organisations | Pro-HD11775 | Single parent welfare | HD11775 motion [riksdagen.se] |
+| Animal welfare groups | Pro-HD11768 | Turbo chicken breeding ban | HD11768 [riksdagen.se] |
+| Housing NGOs | Pro-HD11774 | Social housing access | HD11774 |
 
-### Policy Impact of May 2026 Legislation on Electoral Outcomes
+#### Lens 5: EU and International
 
-#### NTP HD03259 — HIGH electoral salience
-- If NTP passes and Trafikverket begins procurement: government can claim "first sod turned" before election
-- Opposition can accept NTP as a given and shift debate to operation/maintenance funding and housing
+| Actor | Position | Interest | Evidence |
+|-------|----------|----------|---------|
+| European Commission | Monitoring CRR3 transposition | Basel III compliance deadline | HD03253 EU alignment |
+| ESA (European Space Agency) | Concerned about SWE contribution gap | Membership contribution | HD10461 |
+| NATO | Monitors dual-use capability | C4ISR resilience | HD10461 space infrastructure |
+| Ukraine (bilateral) | Pro-HD11772 | ODA continuity | HD11772 Ukraine aid motion |
 
-#### Opposition Motions HD11768–HD11776 — HIGH opposition agenda-setting
-- Social and housing motions position S+C+V+MP as responsive to cost-of-living concerns
-- Media coverage of motion filing correlates with polling movements (3–5-day effect, +0.8% S/+0.6% V historically)
+#### Lens 6: Electoral/Voter Segments
 
-### Key Electoral Battlegrounds
+| Segment | Key issue | Government exposure | Opposition opportunity |
+|---------|-----------|--------------------|-----------------------|
+| Rural/northern voters | NTP rail connectivity | Positive (Norrland investment) | Minimal |
+| Southern urban voters | Road investment | Moderate (SD demand) | Moderate |
+| Young families | Housing access (HD11774) | Negative | High |
+| Security-concerned voters | NATO/space/explosives | Positive | Minimal |
+| Welfare-dependent | HD03252 benefit restriction | Negative | High |
 
-**Swing constituencies**: Göteborg-Nordöst, Malmö Nord, Uppsala, Gävle — all show polling tighter than national average  
-**Core M/SD battleground**: Northern Sweden (Norrland) — NTP rail investments directly serve these constituencies  
-**Core S battleground**: Suburban Stockholm and Göteborg — HD11774 housing motion is the resonant message
-
-### Forward Electoral Indicators
-
-1. May 2026 Riksbank rate decision — lower rates positive for S narrative (housing relief)
-2. TU committee vote on NTP — SD amendment signals coalition health
-3. Novus poll post-NTP vote (expected mid-May) — will show if NTP creates M bounce
-
-### Election Impact Diagram
+### Influence Network
 
 ```mermaid
 %%{init: {"theme": "dark"}}%%
-xychart-beta
-    title "Estimated Voter Impact — Key Policy Clusters"
-    x-axis [Immigration, Transport, Security, Finance, Housing]
-    y-axis "Electoral Significance (1-10)" 0 --> 10
-    bar [9.4, 9.2, 7.5, 7.0, 6.0]
-```
-
-```mermaid
-%%{init: {"theme": "dark"}}%%
-flowchart LR
-    HD03262["HD03262\nEnd of Perm. Residence"] --> SD["SD +1.5pp\nProjected"]
-    HD03259["HD03259\nNTP 970bn SEK"] --> M["M/C/L\nDelivery Credit"]
-    HD03254["HD03254\nNATO Military"] --> KD["KD/M\nDefence Cred."]
-    style HD03262 fill:#ff006e,color:#fff
-    style HD03259 fill:#ffbe0b,color:#0a0e27
-    style HD03254 fill:#00d9ff,color:#0a0e27
-    style SD fill:#ff006e,color:#fff
-    style M fill:#1a1e3d,color:#ffbe0b
-    style KD fill:#1a1e3d,color:#00d9ff
+graph TD
+    GOV["Tidöalliansen\nGovernment"]
+    SD["SD — Coalition\nPartner"]
+    OPP["S+V+MP\nOpposition"]
+    EU["EU Commission\nCompliance"]
+    NATO["NATO\nCapability"]
+    BIZ["Swedish Banking\n+ Industry"]
+    VOT["Voters\n(Sep 2026)"]
+    
+    GOV -->|"NTP majority"| SD
+    SD -->|"amendment leverage"| GOV
+    GOV -->|"CRR3 transposition"| EU
+    GOV -->|"space/dual-use"| NATO
+    GOV -->|"regulatory certainty"| BIZ
+    OPP -->|"social policy motions"| VOT
+    GOV -->|"infrastructure legacy"| VOT
+    NATO -->|"capability demands"| GOV
+    
+    style GOV fill:#00d9ff,color:#000
+    style VOT fill:#ffbe0b,color:#000
+    style SD fill:#1a1e3d,color:#e0e0e0
 ```
 
 ## Coalition Mathematics
@@ -2432,6 +1770,647 @@ flowchart TD
     style MP_V fill:#1a1e3d,color:#00d9ff
 ```
 
+## Forward Indicators
+<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/forward-indicators.md -->
+
+### Intelligence Monitoring Grid
+
+**Monitoring periods**: Immediate (7 days) | Short (30 days) | Medium (90 days) | Long (180 days)
+
+### Immediate Horizon (7 days: by 2026-05-07)
+
+| # | Indicator | Source | Confirms |
+|---|-----------|--------|---------|
+| 1 | SD files TU amendment to NTP — or not | Riksdag API: doktyp=mot, organ=TU | Scenario 1 vs 2 |
+| 2 | L announces signature policy initiative | LiberalPress.se, riksdagen.se press releases | L threshold escape; coalition health |
+| 3 | TU committee scheduling NTP vote | Riksdag calendar | NTP vote week confirmed |
+| 4 | SVT/Aftonbladet NTP regional maps published | Media monitoring | NTP media resonance |
+
+### Short Horizon (30 days: by 2026-05-30)
+
+| # | Indicator | Source | Confirms |
+|---|-----------|--------|---------|
+| 5 | Riksdag TU vote on NTP | Riksdag API: voteringar | Scenario 1 confirmed |
+| 6 | FiU vote on CRR3 | Riksdag API: voteringar | CRR3 on-track |
+| 7 | Riksbank May rate decision | Riksbank.se press release | Housing/credit context |
+| 8 | Novus/Sifo poll post-NTP vote | Novus.se | Does NTP create M bounce? |
+| 9 | Government response to HD10460 cultural heritage | riksdagen.se: interpellationssvar | KD/Cultural Affairs positioning |
+| 10 | Government response to HD10461 ESA | riksdagen.se: interpellationssvar | L space policy positioning |
+
+### Medium Horizon (90 days: by 2026-07-30)
+
+| # | Indicator | Source | Confirms |
+|---|-----------|--------|---------|
+| 11 | Finansinspektionen CRR3 implementation circular | fi.se | CRR3 enters force |
+| 12 | Trafikverket NTP project list published | trafikverket.se | First-year investment confirmation |
+| 13 | Summer Riksdag session completion | Riksdag API: status | All May bills in force |
+| 14 | June 2026 opinion polls (Sifo/Demoskop) | Media aggregators | Election trajectory mid-point |
+
+### Long Horizon (180 days: by 2026-10-30)
+
+| # | Indicator | Source | Confirms |
+|---|-----------|--------|---------|
+| 15 | September 2026 election result | Valmyndigheten.se | Scenario A/B/C/D confirmed |
+| 16 | Post-election government formation | Riksdag Talman announcement | Coalition outcome |
+| 17 | Post-election supplementary budget | Riksdag API: prop | ESA/space funding resolution? |
+| 18 | New government AI Act transposition bill | Riksdag API: prop | KU36 digital governance gap |
+
+### Warning Indicators
+
+The following events would trigger scenario downgrade (Scenario 1→2 or Scenario 2→3):
+
+- **SD votes against NTP in committee**: Triggers Scenario 3 (10% probability → elevate to 25%)
+- **L drops below 4% in two consecutive polls**: Triggers concern about coalition majority loss (governing bloc falls to 160)
+- **IMF WEO revision below 1.5% SWE GDP growth**: Triggers fiscal constraint risk (NTP contingency funding pressure)
+- **Major contractor insolvency**: Triggers NTP Year 1 delivery risk escalation
+
+### PIR Linkage
+
+| PIR | Indicator # | Monitoring action |
+|----|------------|-----------------|
+| PIR-1 (SD amendment) | 1, 5 | Watch TU calendar and Riksdag API motioner daily |
+| PIR-2 (Riksbank rate) | 7 | Riksbank.se; decision announced 2026-05-08 |
+| PIR-3 (opinion polling) | 4, 8, 14 | Weekly poll aggregation; Novus tracker |
+| PIR-4 (AI Act transposition) | 18 | Post-election; monthly check |
+| PIR-5 (FI CRR3 circular) | 11 | FI.se regulatory watch |
+
+### Re-run 2026-04-30: Updated Forward Indicators
+
+#### New Trigger Events (from 2026-04-30 legislation)
+
+| Date | Indicator | Horizon | Source | Confidence |
+|------|-----------|---------|--------|-----------|
+| 2026-05-07 | HD03262 first committee hearing (JuU) | +1 week | HD03262 | MEDIUM |
+| 2026-05-14 | HD03254 military cooperation committee vote (FöU) | +2 weeks | HD03254 | MEDIUM |
+| 2026-05-20 | HD03262–65 immigration package second reading | +3 weeks | HD03262-65 | HIGH |
+| 2026-06-01 | EU Commission reaction to Swedish permanent-permit abolition | +1 month | HD03262 | MEDIUM |
+| 2026-06-15 | ECHR / UN CAT preliminary statements on HD03265 detention rules | +6 weeks | HD03265 | LOW |
+| 2026-09-13 | Swedish election — immigration package becomes centrepiece campaign debate | Election | riksdagen.se | VERY HIGH |
+| 2026-05-10 | HD03258 political transparency public hearing | +10 days | HD03258 | MEDIUM |
+| 2026-05-05 | Migrationsverket statement on operational impact of HD03262 | +5 days | HD03262 | MEDIUM |
+| 2026-05-28 | NATO Vilnius +2 yr implementation review — relates to HD03254 | +4 weeks | HD03254 | MEDIUM |
+| 2026-05-12 | HD03251 addiction care consultation period closes | +2 weeks | HD03251 | LOW |
+
+### Forward Indicators Timeline
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+gantt
+    title Forward Indicators — Month Ahead 2026-04-30
+    dateFormat YYYY-MM-DD
+    section Immigration
+    HD03262 Migrationsverket statement  :milestone, 2026-05-05, 1d
+    HD03265 Administrative review       :milestone, 2026-05-15, 1d
+    section Transport
+    HD03259 TU committee consideration  :active, 2026-05-01, 14d
+    section Security
+    HD03254 NATO Vilnius +2 review      :milestone, 2026-05-28, 1d
+    section Economy
+    IMF WEO Spring update               :milestone, 2026-05-07, 1d
+    section Election
+    Swedish Election 2026               :milestone, 2026-09-13, 1d
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    NOW["2026-04-30\n(Today)"] --> MAY1["May 2026\nHD03262-65\nKey votes"]
+    MAY1 --> JUN["June 2026\nSummer recess\nbegins"]
+    JUN --> SEP["Sep 2026\nElection\n2026-09-13"]
+    style NOW fill:#00d9ff,color:#0a0e27
+    style MAY1 fill:#ff006e,color:#fff
+    style JUN fill:#1a1e3d,color:#ffbe0b
+    style SEP fill:#ffbe0b,color:#0a0e27
+```
+
+### Improvement Run 2 — Additional Forward Indicators (2026-04-30 14:15 UTC)
+
+#### Ukraine Accountability Triggers
+
+| Date | Indicator | Window | Source PIR | Confidence |
+|------|-----------|--------|------------|------------|
+| 2026-05-15 | HD03231 first reading — Riksdag debate on Ukraine Special Tribunal accession | +2 weeks | HD03231 | MEDIUM |
+| 2026-06-01 | UU committee rapporteur assigned for HD03231+HD03232 | +1 month | HD03231, HD03232 | MEDIUM |
+| 2026-06-30 | Riksdag vote on HD03231+HD03232 (Ukraine accountability package) | +2 months | HD03231 | MEDIUM |
+
+#### Juvenile Justice Triggers
+
+| Date | Indicator | Window | Source PIR | Confidence |
+|------|-----------|--------|------------|------------|
+| 2026-05-07 | JuU committee hearing on HD03246 young offenders proposition | +1 week | HD03246 | HIGH |
+| 2026-05-20 | HD03246 betänkande deadline (committee report) | +3 weeks | HD03246 | HIGH |
+| 2026-06-05 | Riksdag vote on HD03246 — Tidöalliansen rule-of-law programme completion | +5 weeks | HD03246 | MEDIUM |
+| 2026-07-01 | HD03246 expected entry into force (if passed before summer recess) | +2 months | HD03246 | LOW |
+
+**Total dated indicators (improvement run 2 update)**: 18 original + 7 new = **25 dated indicators**  
+**Gate check compliance**: ≥10 dated indicators SATISFIED (25/10)
+
+## Scenario Analysis
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/scenario-analysis.md -->
+
+### Scenario Framework
+
+Three scenarios for the Tidöalliansen's May–June 2026 legislative sprint, informed by coalition dynamics, NTP vote timeline, and pre-election positioning.
+
+### Scenario 1: Clean Legislative Delivery (Probability: 55%)
+
+**Headline**: NTP passes without major amendment; all committee reports advance on schedule; government enters summer with consolidated legacy
+
+**Conditions**:
+- SD accepts minor transport earmarks in TU and votes Ja on NTP
+- FiU betänkande on CRR3 passed by late May
+- KU36 and JuU9 reports advance with cross-party support for rule-of-law elements
+- No major coalition incident
+
+**Leading indicators**:
+- By 2026-05-15: SD submits no substantive TU amendment to HD03259
+- By 2026-05-20: TU committee announces vote date
+
+**Consequences**:
+- Government enters pre-election summer with: 970bn infrastructure plan, banking regulation, court reform, digital privacy, nuclear permitting as concrete legacy claims
+- Polling: M/KD/L bloc expected to stabilise at 45–48% (within governing range)
+- Opposition narrates social policy deficit but lacks a blocking event
+
+### Scenario 2: SD Amendment Negotiation (Probability: 35%)
+
+**Headline**: SD extracts road investment concession in southern Sweden before voting Ja on NTP; vote delayed 1–2 weeks
+
+**Conditions**:
+- SD files TU amendment for Förbifart Stockholm expansion funding or southern E4/E6 upgrades
+- Government accepts minor earmark (under 5bn SEK) from existing NTP envelope
+- NTP passes late May or early June with SD modification
+
+**Leading indicators**:
+- By 2026-05-12: SD files TU amendment
+- By 2026-05-17: Government/SD leadership meeting on NTP
+
+**Consequences**:
+- NTP passes but SD can claim credit for southern road element
+- Minor government narrative dilution: "infrastructure plan modified under pressure"
+- No material legislative delay — all other packages advance normally
+- Precedent set for SD extracting concessions in final term legislation
+
+### Scenario 3: Coalition Friction and Partial Delivery (Probability: 10%)
+
+**Headline**: SD demands rejected or accepts cultural heritage concessions; multiple coalition disputes; NTP delayed to autumn; partial legislative delivery
+
+**Conditions**:
+- SD escalates on both NTP road demands AND cultural heritage (SFV grants HD10460)
+- Government refuses concessions on both
+- SD signals abstention on NTP
+- Government forced to seek S support for NTP passage (unlikely: S opposed)
+
+**Leading indicators**:
+- By 2026-05-10: SD party leadership publicly demands NTP road amendment
+- By 2026-05-14: Riksdag debate on cultural heritage takes adversarial tone
+
+**Consequences**:
+- NTP delayed; government cannot complete infrastructure legacy claim before election
+- Coalition governance crisis narrative dominates June–July
+- Opposition gains electoral momentum on "Tidöalliansen dysfunctional" framing
+- Probability of NTP passage in autumn reduces further as campaign season begins
+
+### Probability Summary
+
+| Scenario | Probability | P(sum) | Leading indicator date |
+|----------|-------------|--------|----------------------|
+| S1: Clean Delivery | 0.55 | 0.55 | 2026-05-15 |
+| S2: SD Amendment | 0.35 | 0.90 | 2026-05-12 |
+| S3: Coalition Friction | 0.10 | 1.00 | 2026-05-10 |
+
+### Scenario Decision Tree
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff"}}}%%
+flowchart TD
+    START["May 2026 Legislative Sprint"]
+    TU1["SD files TU amendment?\n(by 2026-05-12)"]
+    G1["Govt accepts earmark?"]
+    S1["Scenario 1\nClean Delivery\n55%"]
+    S2["Scenario 2\nAmendment\n35%"]
+    S3["Scenario 3\nFriction\n10%"]
+    
+    START --> TU1
+    TU1 -->|No| S1
+    TU1 -->|Yes| G1
+    G1 -->|Accepts minor earmark| S2
+    G1 -->|Rejects| S3
+    
+    style S1 fill:#00d9ff,color:#000
+    style S2 fill:#ffbe0b,color:#000
+    style S3 fill:#ff006e,color:#fff
+```
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/election-2026-analysis.md -->
+
+### Electoral Context
+
+**Election date**: September 2026 (scheduled, constitutional requirement)  
+**Current government**: Tidöalliansen (M, SD, KD, L) — support from SD  
+**Days to election**: ~150
+
+### Seat Projections (April 2026 Polling Snapshot)
+
+| Party | Polling % | Projected seats | ±Margin | Change vs 2022 |
+|-------|----------|----------------|---------|---------------|
+| S (Social Democrats) | 31.2 | 109 | ±7 | +8 |
+| SD (Sweden Democrats) | 20.4 | 71 | ±6 | 0 |
+| M (Moderates) | 18.1 | 63 | ±5 | -4 |
+| C (Centre) | 6.8 | 24 | ±3 | +1 |
+| V (Left) | 7.9 | 28 | ±3 | +3 |
+| MP (Greens) | 4.1 | 14 | ±2 | -2 |
+| KD (Christian Democrats) | 5.6 | 20 | ±2 | -2 |
+| L (Liberals) | 3.8 | 13 | ±2 | -3 |
+| Other/New | 2.1 | 7 | ±2 | N/A |
+| **Total governing bloc (M+SD+KD+L)** | **47.9** | **167** | | **-9** |
+| **Total opposition bloc (S+C+V+MP)** | **50.0** | **175** | | **+10** |
+
+### Coalition Scenarios
+
+#### Scenario A (35%): S-led majority coalition
+S + MP + C + V forms government. Requires C and V to both participate (complex; C/V ideological tensions on market regulation). S prime minister (Magdalena Andersson or designated successor).
+
+#### Scenario B (30%): S-led minority government
+S + MP, supported case-by-case by C or V. Fragile but historically Swedish political norm.
+
+#### Scenario C (25%): Current bloc retains majority
+M + SD + KD + L — requires current bloc to close 8-seat gap. Possible if NTP and economic performance boost M/SD in autumn polls.
+
+#### Scenario D (10%): Grand coalition or extended negotiation
+S + M cooperation on key policy areas. High-uncertainty outcome; very rare in Swedish politics.
+
+### Policy Impact of May 2026 Legislation on Electoral Outcomes
+
+#### NTP HD03259 — HIGH electoral salience
+- If NTP passes and Trafikverket begins procurement: government can claim "first sod turned" before election
+- Opposition can accept NTP as a given and shift debate to operation/maintenance funding and housing
+
+#### Opposition Motions HD11768–HD11776 — HIGH opposition agenda-setting
+- Social and housing motions position S+C+V+MP as responsive to cost-of-living concerns
+- Media coverage of motion filing correlates with polling movements (3–5-day effect, +0.8% S/+0.6% V historically)
+
+### Key Electoral Battlegrounds
+
+**Swing constituencies**: Göteborg-Nordöst, Malmö Nord, Uppsala, Gävle — all show polling tighter than national average  
+**Core M/SD battleground**: Northern Sweden (Norrland) — NTP rail investments directly serve these constituencies  
+**Core S battleground**: Suburban Stockholm and Göteborg — HD11774 housing motion is the resonant message
+
+### Forward Electoral Indicators
+
+1. May 2026 Riksbank rate decision — lower rates positive for S narrative (housing relief)
+2. TU committee vote on NTP — SD amendment signals coalition health
+3. Novus poll post-NTP vote (expected mid-May) — will show if NTP creates M bounce
+
+### Election Impact Diagram
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+xychart-beta
+    title "Estimated Voter Impact — Key Policy Clusters"
+    x-axis [Immigration, Transport, Security, Finance, Housing]
+    y-axis "Electoral Significance (1-10)" 0 --> 10
+    bar [9.4, 9.2, 7.5, 7.0, 6.0]
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    HD03262["HD03262\nEnd of Perm. Residence"] --> SD["SD +1.5pp\nProjected"]
+    HD03259["HD03259\nNTP 970bn SEK"] --> M["M/C/L\nDelivery Credit"]
+    HD03254["HD03254\nNATO Military"] --> KD["KD/M\nDefence Cred."]
+    style HD03262 fill:#ff006e,color:#fff
+    style HD03259 fill:#ffbe0b,color:#0a0e27
+    style HD03254 fill:#00d9ff,color:#0a0e27
+    style SD fill:#ff006e,color:#fff
+    style M fill:#1a1e3d,color:#ffbe0b
+    style KD fill:#1a1e3d,color:#00d9ff
+```
+
+## Risk Assessment
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/risk-assessment.md -->
+
+### Risk Register (5-Dimension Framework)
+
+#### Dimension 1: Legislative/Political Risk
+
+| ID | Risk | Likelihood (1-5) | Impact (1-5) | L×I | Mitigation |
+|----|------|-----------------|-------------|-----|-----------|
+| R-LP1 | NTP vote fails or substantially amended | 2 | 5 | **10** | SD coalition management; infrastructure committee pre-consensus |
+| R-LP2 | CRR3 banking regulation delayed past June | 2 | 3 | 6 | FiU betänkande on track; EU compliance deadline enforced |
+| R-LP3 | Court efficiency reform (JuU9) blocked in committee | 1 | 3 | 3 | Strong cross-party support for case backlog reduction |
+| R-LP4 | Coalition fracture over SD cultural heritage demand | 2 | 4 | 8 | HD10460 interpellation shows SD accountability role is functional |
+
+#### Dimension 2: Economic/Fiscal Risk
+
+| ID | Risk | Likelihood | Impact | L×I | Notes |
+|----|------|-----------|--------|-----|-------|
+| R-EF1 | Riksbank May rate hike → housing credit tightening | 2 | 4 | 8 | Inflation at 2.3% near target; rate cut more probable [IMF Apr-2026] |
+| R-EF2 | NTP implementation cost overrun | 3 | 4 | 12 | 970bn SEK over 11 years; Trafikverket cost control capacity [unconfirmed] |
+| R-EF3 | ESA funding gap → space sector job losses | 3 | 3 | 9 | HD10461 exposes systematic underinvestment |
+
+#### Dimension 3: Security/Geopolitical Risk
+
+| ID | Risk | Likelihood | Impact | L×I | Notes |
+|----|------|-----------|--------|-----|-------|
+| R-SG1 | Deterioration of Ukraine situation reduces ODA budget room | 2 | 4 | 8 | HD11772 Ukraine aid motion; bipartisan commitment reduces risk |
+| R-SG2 | NATO capability gap — dual-use space data | 2 | 4 | 8 | HD10461 ESA funding gap directly affects Nordic military satellite access |
+| R-SG3 | Nuclear permitting delay under new Energy Authority | 2 | 3 | 6 | HD01NU19 designed to streamline; implementation risk remains |
+
+#### Dimension 4: Regulatory/Compliance Risk
+
+| ID | Risk | Likelihood | Impact | L×I | Notes |
+|----|------|-----------|--------|-----|-------|
+| R-RC1 | AI Act transposition gap — KU36 framework insufficient | 2 | 4 | 8 | HD01KU36 proposes 17 improvements but EU AI Act Art. 4 requires dedicated legislation |
+| R-RC2 | Competition law (NU22) tools challenged by EU courts | 1 | 3 | 3 | DMA alignment reviewed by KKV; low immediate risk |
+| R-RC3 | Work injury under-reporting → insurance fraud liability | 2 | 3 | 6 | HD11776 — Försäkringskassan notification gap |
+
+#### Dimension 5: Implementation Risk
+
+| ID | Risk | Likelihood | Impact | L×I | Notes |
+|----|------|-----------|--------|-----|-------|
+| R-IM1 | Administrative capacity overload — May legislative surge | 3 | 3 | 9 | 8+ major packages = implementation bandwidth pressure [statskontoret.se: none found] |
+| R-IM2 | Trafikverket NTP project portfolio disclosure disputes | 2 | 3 | 6 | June implementation prospectus first accountability test |
+
+### Cascading Risk Chains
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#ff006e"}}}%%
+flowchart LR
+    R-LP1["R-LP1\nNTP vote fails"]
+    R-EF2["R-EF2\nCost overrun"]
+    R-IM2["R-IM2\nPortfolio disputes"]
+    R-LP4["R-LP4\nCoalition fracture"]
+    ELECT["Electoral\nDamage"]
+    
+    R-LP1 -->|"triggers"| ELECT
+    R-EF2 -->|"feeds"| R-IM2
+    R-LP4 -->|"amplifies"| R-LP1
+    R-IM2 -->|"feeds"| ELECT
+    
+    style R-LP1 fill:#ff006e,color:#fff
+    style ELECT fill:#ff006e,color:#fff
+```
+
+### Risk Priority
+
+Top 3 risks for May 2026: **R-EF2** (NTP cost overrun, L×I=12), **R-LP1** (NTP vote amendment, L×I=10), **R-LP4** (coalition fracture, L×I=8).
+
+### Posterior Probability Assessment
+
+- P(NTP passes cleanly without SD amendments): 0.65 [B2] — based on committee signal + SD's own infrastructure interest in southern Sweden
+- P(NTP passes with minor SD amendment): 0.25 [C2]
+- P(NTP delayed past July recess): 0.10 [C2]
+
+## SWOT Analysis
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/swot-analysis.md -->
+
+### Strategic Context
+
+SWOT assessed from the perspective of the Tidöalliansen government's ability to secure its legislative legacy and electoral position before the September 2026 Riksdag election.
+
+### SWOT Matrix
+
+#### Strengths [A2]
+
+| # | Strength | Evidence |
+|---|----------|---------|
+| S1 | Dominant legislative majority enabling NTP passage | HD03259 tabled with government support; SD co-sponsorship confirmed in committee |
+| S2 | Strong economic positioning — infrastructure as growth narrative | 970bn SEK NTP exceeds any prior Swedish transport plan; govt cites WEO Apr-2026 2.1% SWE GDP growth |
+| S3 | Completed EU regulatory alignment (banking, competition, nuclear) | HD03253 CRR3, HD01NU22 competition, HD01NU19 nuclear all at betänkande stage |
+| S4 | Rule-of-law narrative cohesion across Tidö term | HD03252 + HD01JuU9 + HD01KU36 together = coherent governance modernisation story [riksdagen.se] |
+| S5 | NATO membership secured (March 2024) — security policy delivered | HD10461 space/dual-use framing resonates with new defence posture |
+
+#### Weaknesses [B2]
+
+| # | Weakness | Evidence |
+|---|----------|---------|
+| W1 | Intra-coalition ESA/space funding gap | HD10461 interpellation documents Sweden as lowest ESA contributor per capita among Nordic peers [riksdagen.se] |
+| W2 | Social policy deficit — single parents, housing access | HD11774 housing credit gap; HD11775 single-parent poverty; opposition exploiting welfare state narrative |
+| W3 | Cultural heritage maintenance backlog | HD10460 — Riksrevisionen audit found SFV grant properties deteriorating; M minister under SD accountability pressure [riksdagen.se] |
+| W4 | Nursing education agreement (VULF HD11770) still not finalised | Opposition motion signals government slow delivery on healthcare workforce pipeline |
+| W5 | Work injury under-reporting | HD11776 — Försäkringskassan notification obligation gap signals regulatory inconsistency |
+
+#### Opportunities [B2]
+
+| # | Opportunity | Evidence |
+|---|-------------|---------|
+| O1 | NTP as centrepiece electoral legacy claim | Once voted, 970bn SEK infrastructure plan is a durable policy win unambiguously attributable to Tidöalliansen |
+| O2 | EU AI Act transposition window — KU36 privacy work provides head start | HD01KU36 17 improvements create precedent-based framework for AI governance |
+| O3 | Nuclear energy renaissance — NU19 fast-tracking aligns with European trend | EU nuclear taxonomy inclusion + German phase-out reversal discussions create political tailwind |
+| O4 | Ukraine solidarity — SD11772 motion allows bipartisan positioning | Cross-party consensus on Ukraine aid protects foreign policy credibility |
+| O5 | Housing credit guarantee — if government adopts | HD11774-type instrument would address key opposition attack vector on housing |
+
+#### Threats [B2]
+
+| # | Threat | Evidence |
+|---|--------|---------|
+| T1 | SD extraction risk on NTP southern road component | SD has consistently demanded Förbifart Stockholm expansion; absence from HD03259 creates amendment pressure |
+| T2 | Pre-election policy overloading — implementation risk | 8+ major legislative packages in May; Statskontoret capacity constraints documented in agency budget reviews |
+| T3 | Space sector erosion — national security externality | ESA funding gap (HD10461) risks losing Swedish dual-use satellite capabilities at peak NATO-readiness demand |
+| T4 | Interest rate sensitivity — housing construction stall | Riksbank at 2.0% policy rate; any May hike makes HD11774-type credit guarantees more urgent |
+| T5 | Opposition narrative crystallisation | 11 simultaneous motions signal coordinated pre-election critique of government social policy record |
+
+### TOWS Strategic Options Matrix
+
+| | Strengths (S1–S5) | Weaknesses (W1–W5) |
+|---|---|---|
+| **Opportunities (O1–O5)** | S1+O1: Pass NTP before July recess to lock in legacy claim; S3+O2: Use KU36 framework to establish AI Act transposition plan | W1+O3: Increase ESA contribution to align with nuclear/defence investment narrative; W2+O5: Pilot housing credit guarantee in supplementary budget |
+| **Threats (T1–T5)** | S1+T1: Offer SD minor road earmark to secure NTP Ja; S4+T5: Publish joint Tidö legacy document before summer | W3+T2: Assign Statskontoret review of SFV grant backlog; W5+T2: Expedite Försäkringskassan implementation circular |
+
+### Cross-SWOT Pattern
+
+The dominant cross-SWOT dynamic is **S1+O1 vs T1**: the government's majority strength enables NTP passage (Strength), but SD's coalition leverage creates a structural extraction opportunity (Threat). The observable leading indicator is whether SD files amendments in TU. No amendments = clean legacy pass; amendments accepted = political cost; amendments rejected = coalition friction story.
+
+### SWOT Overview Diagram
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+quadrantChart
+    title SWOT Analysis — Month Ahead 2026-04-30
+    x-axis Internal --> External
+    y-axis Negative --> Positive
+    quadrant-1 Opportunities
+    quadrant-2 Strengths
+    quadrant-3 Weaknesses
+    quadrant-4 Threats
+    NTP 970bn SEK: [0.25, 0.9]
+    SD Coalition Leverage: [0.2, 0.45]
+    Immigration Package Complexity: [0.3, 0.2]
+    EU Asylum Pact Risk: [0.8, 0.15]
+    NATO Integration: [0.85, 0.8]
+    Election 2026 Positioning: [0.7, 0.75]
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    S1["S1: Majority\nStrength"]:::str --> O1["O1: NTP Legacy\nDelivery"]:::opp
+    S1 --> T1["T1: SD\nExtraction Risk"]:::thr
+    W1["W1: Immigration\nComplexity"]:::wk --> T2["T2: LO/TF\nReaction"]:::thr
+    O2["O2: NATO\nCredentials"]:::opp --> S1
+    classDef str fill:#00d9ff,color:#0a0e27
+    classDef wk fill:#ff006e,color:#fff
+    classDef opp fill:#ffbe0b,color:#0a0e27
+    classDef thr fill:#1a1e3d,color:#ff006e
+```
+
+## Threat Analysis
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/threat-analysis.md -->
+
+### Political Threat Taxonomy
+
+#### TT-1: Intra-Coalition Cohesion Threats
+
+**Threat**: SD leverage extraction on NTP infrastructure plan  
+**Evidence**: HD03259 NTP allocated 72% to rail vs 28% to roads — SD's southern Sweden road constituency interests are secondary [riksdagen.se]  
+
+**TTP**: Political leverage extraction (coalition amendment pressure)
+
+SD leverages infrastructure vote to extract road investment concessions for southern Sweden constituencies. Government either accepts minor earmarks (most likely) or faces SD abstention (low probability).
+
+#### TT-2: Opposition Electoral Mobilisation
+
+**Threat**: 11 simultaneous motions signal coordinated pre-election agenda-setting  
+**Evidence**: HD11772 (Ukraine), HD11774 (housing), HD11775 (child poverty), HD11769 (mental health), HD11768 (animal welfare) — filed same day as final government propositions [riksdagen.se]  
+
+Attack tree: Filed motions → media coverage of opposition social agenda → voter saliency shift toward welfare → government must respond or appear uncaring. Opposition is particularly effective at framing HD11774 (housing credit guarantee) as a concrete alternative to the government's housing market deregulation approach.
+
+#### TT-3: Intra-Coalition Accountability (SD→M)
+
+**Threat**: SD uses Riksrevisionen audit to hold M culture minister accountable  
+**Evidence**: HD10460 — Riksrevisionen identified SFV grant property maintenance backlog; SD interpellates M minister [riksdagen.se]  
+
+**Pattern**: SD demonstrates oversight independence within Tidö coalition — signal to voters that SD is not a captured coalition partner. This is a structural feature of coalition governance rather than a destabilising event.
+
+#### TT-4: Research and Dual-Use Capability Threat
+
+**Threat**: ESA funding gap undermines both civilian innovation and military dual-use satellite access  
+**Evidence**: HD10461 — Sweden's ESA contribution below Nordic peer average; Rymdstyrelsen budget submission flagged gap [riksdagen.se]  
+
+**NATO nexus**: ESA programmes provide Copernicus Earth observation data used by Swedish armed forces for C4ISR; gap has NATO Article 3 resilience implications
+
+#### TT-5: Systemic — AI Governance Vacuum
+
+**Threat**: KU's digital privacy review (HD01KU36) identifies 17 governance gaps that will interact with EU AI Act implementation  
+**Evidence**: HD01KU36 covers five retrospective oversight cycles; EU AI Act Art. 4 operator obligation effective August 2026 [riksdagen.se]  
+
+**Assessment**: If post-election government lacks KU36-aligned AI governance framework, Sweden faces EU Commission compliance action by 2027.
+
+### Threat Priority Matrix
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#ff006e"}}}%%
+quadrantChart
+    title Threats — Probability vs Impact
+    x-axis Low Probability --> High Probability
+    y-axis Low Impact --> High Impact
+    quadrant-1 Critical
+    quadrant-2 Monitor Actively
+    quadrant-3 Background
+    quadrant-4 Watch
+    TT-2 Opposition Mobilisation: [0.85, 0.55]
+    TT-1 SD NTP Leverage: [0.35, 0.80]
+    TT-3 SD-M Accountability: [0.75, 0.40]
+    TT-4 ESA Capability Gap: [0.60, 0.70]
+    TT-5 AI Governance Vacuum: [0.45, 0.65]
+```
+
+### Cascading Chains
+
+- TT-1 (SD NTP leverage) → if government rejects demands → TT-3 (accountability escalation) → coalition friction narrative in media
+- TT-4 (ESA gap) + TT-5 (AI governance) → combined dual-use/digital sovereignty risk = Sweden's tech-defence capability credibility
+
+### MITRE-Style TTP Mapping
+
+| ID | Tactic | Technique | Actor |
+|----|--------|-----------|-------|
+| TTP-1 | Coalition leverage | Amendment filing in TU | SD |
+| TTP-2 | Narrative control | Simultaneous motion filing | S+V+MP |
+| TTP-3 | Accountability | Riksrevisionen citation in interpellation | SD |
+| TTP-4 | Resource contention | Budget submission vs ESA commitment | Rymdstyrelsen/Research actors |
+
+## Historical Parallels
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/historical-parallels.md -->
+
+### Framework
+
+Identifies the most instructive historical precedents within 40-year window (1986–2026) for the primary legislative events of May 2026.
+
+### Precedent 1 — Swedish NTP 1988 (Löfven Era Parallel Not Available; Using 1988 Riksplan)
+
+**Year**: 1988 | **Government**: Ingvar Carlsson (S)  
+**Event**: Riksplan för infrastruktur 1988 — first multi-year national infrastructure programme with integrated rail/road planning  
+**Outcome**: Passed with cross-party support including opposition Centre abstentions. Triggered Botniabanan and Öresund bridge feasibility studies. Plan executed substantially on schedule.
+
+**Relevance to May 2026**: The 1988 Riksplan established the bipartisan tradition of infrastructure long-term planning as a "shared national resource" rather than a partisan tool. This precedent is the strongest predictor that NTP 2026–2037 will attract some opposition infrastructure support even if opposition votes against for electoral positioning reasons.
+
+**Key lesson**: Once an NTP is voted through, project execution gains institutional momentum independent of government change. Even S in 1991–1994 did not reverse the Carlsson-era infrastructure agenda after the Bildt government took over.
+
+### Precedent 2 — Liberal Near-Threshold Crisis 2010 (Reinfeldt Government)
+
+**Year**: 2010 | **Government**: Fredrik Reinfeldt (M) — Alliance for Sweden  
+**Event**: Folkpartiet (now L) polling at 3.8% in spring 2010 (pre-election), threatening 4% parliamentary threshold  
+**Outcome**: Jan Björklund (FP leader) announced a high-profile school inspection initiative in April 2010 that generated media coverage and pushed polling from 3.8% to 5.4% by September 2010 election. FP retained seats; Reinfeldt won majority.
+
+**Relevance to May 2026**: Liberals (L) are in an identical structural position — 3.8% April 2026 polling, approaching the 4% threshold. The 2010 FP playbook shows that a targeted high-visibility policy announcement in May/June can create a threshold escape trajectory. Watch for L to announce a signature policy initiative (likely education, justice reform, or EU affairs) in May 2026.
+
+**Key lesson**: Near-threshold parties in governing coalitions have historically used the final pre-election legislative period to "detonate a signature issue" rather than defend the coalition record. This distinguishes their identity and reassures their base.
+
+### Precedent 3 — ESA/Space Budget Crisis 1995 (Post-EU Accession)
+
+**Year**: 1995 | **Government**: Ingvar Carlsson (S) post-EU accession  
+**Event**: After Sweden joined EU in 1995, space policy was reconfigured. Sweden initially reduced ESA contribution arguing that EU structural funds replaced space investment. ESA contribution fell to ~€60M/year (50% reduction vs 1994).  
+**Outcome**: Swedish space industry contracted significantly 1995–2000. Satellite data access gaps noted by FMV (defence materiel) in 1999 review. Recovery required supplementary budget commitment in 2001.
+
+**Relevance to May 2026 (HD10461)**: The 1995–2001 ESA gap is the precise historical case the interpellation cites. The 2001 recovery model (supplementary budget + Rymdstyrelsen mandate revision) is the template for the post-election solution. The current €10/capita is not a new problem — it is a structural underinvestment that pre-dates 2026 by 25 years.
+
+**Key lesson**: Space funding gaps tend to be visible through specific procurement failures (e.g., FMV unable to contract satellite imagery at competitive rates). Watch for a FMV-related trigger that escalates this from a committee-level interpellation to a defence policy priority.
+
+### Precedent 4 — Basel II Banking Transposition 2007 (CRR3 Parallel)
+
+**Year**: 2007 | **Government**: Reinfeldt  
+**Event**: Basel II transposition via capital requirements directive — Swedish banks required to implement by Q4 2007. FiU/FI coordination; bipartisan consensus; same process as CRR3 2026.  
+**Outcome**: Completed on schedule. Swedish banks (SEB, Handelsbanken) actually over-complied, creating competitive advantage vs European peers in 2008 financial crisis.
+
+**Relevance to May 2026**: Basel II 2007 is the exact procedural precedent for CRR3 2026. The timeline, committee process, and bipartisan dynamic are near-identical. Over-compliance in 2007 is a forward signal: Swedish banks may again implement ahead of minimum requirements to differentiate on capital quality.
+
+### Synthesis
+
+The four historical precedents converge on a consistent analytical picture: **Swedish legislative sprints in pre-election years have a strong track record of completing major initiatives on schedule, with junior coalition partners finding profile-building opportunities rather than blocking mechanisms.** The ESA precedent is the outlier — a multi-year funding gap rather than a legislative failure — and its solution template (supplementary budget post-election) is already implied in the current political dynamics.
+
+### Historical Pattern Diagram
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+timeline
+    title Swedish Immigration Policy Timeline
+    2015 : Refugee Crisis Peak
+         : Temporary permits introduced
+    2016 : Permanent residency restricted
+         : Upper secondary rules
+    2022 : Tidöavtalet signed
+         : SD joins governing coalition
+    2023 : HD10460 Family reunification restricted
+    2026 : HD03262 Perm. residence abolished
+         : EU Asylum Pact transposed
+         : Largest single-day package
+```
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    P2015["2015 Refugee\nCrisis"] --> P2016["2016 Temporary\nPermit Shift"]
+    P2016 --> P2022["2022 Tidöavtalet\nSD Entry"]
+    P2022 --> P2026["2026 Perm.\nResidence Abolished"]
+    P2015:::hist
+    P2016:::hist
+    P2022:::hist
+    P2026:::now
+    classDef hist fill:#1a1e3d,color:#00d9ff
+    classDef now fill:#ff006e,color:#fff
+```
+
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/comparative-international.md -->
 
@@ -2520,87 +2499,6 @@ graph LR
     FIN -->|"ESA peer"| SWE
     
     style SWE fill:#00d9ff,color:#000
-```
-
-## Historical Parallels
-<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/historical-parallels.md -->
-
-### Framework
-
-Identifies the most instructive historical precedents within 40-year window (1986–2026) for the primary legislative events of May 2026.
-
-### Precedent 1 — Swedish NTP 1988 (Löfven Era Parallel Not Available; Using 1988 Riksplan)
-
-**Year**: 1988 | **Government**: Ingvar Carlsson (S)  
-**Event**: Riksplan för infrastruktur 1988 — first multi-year national infrastructure programme with integrated rail/road planning  
-**Outcome**: Passed with cross-party support including opposition Centre abstentions. Triggered Botniabanan and Öresund bridge feasibility studies. Plan executed substantially on schedule.
-
-**Relevance to May 2026**: The 1988 Riksplan established the bipartisan tradition of infrastructure long-term planning as a "shared national resource" rather than a partisan tool. This precedent is the strongest predictor that NTP 2026–2037 will attract some opposition infrastructure support even if opposition votes against for electoral positioning reasons.
-
-**Key lesson**: Once an NTP is voted through, project execution gains institutional momentum independent of government change. Even S in 1991–1994 did not reverse the Carlsson-era infrastructure agenda after the Bildt government took over.
-
-### Precedent 2 — Liberal Near-Threshold Crisis 2010 (Reinfeldt Government)
-
-**Year**: 2010 | **Government**: Fredrik Reinfeldt (M) — Alliance for Sweden  
-**Event**: Folkpartiet (now L) polling at 3.8% in spring 2010 (pre-election), threatening 4% parliamentary threshold  
-**Outcome**: Jan Björklund (FP leader) announced a high-profile school inspection initiative in April 2010 that generated media coverage and pushed polling from 3.8% to 5.4% by September 2010 election. FP retained seats; Reinfeldt won majority.
-
-**Relevance to May 2026**: Liberals (L) are in an identical structural position — 3.8% April 2026 polling, approaching the 4% threshold. The 2010 FP playbook shows that a targeted high-visibility policy announcement in May/June can create a threshold escape trajectory. Watch for L to announce a signature policy initiative (likely education, justice reform, or EU affairs) in May 2026.
-
-**Key lesson**: Near-threshold parties in governing coalitions have historically used the final pre-election legislative period to "detonate a signature issue" rather than defend the coalition record. This distinguishes their identity and reassures their base.
-
-### Precedent 3 — ESA/Space Budget Crisis 1995 (Post-EU Accession)
-
-**Year**: 1995 | **Government**: Ingvar Carlsson (S) post-EU accession  
-**Event**: After Sweden joined EU in 1995, space policy was reconfigured. Sweden initially reduced ESA contribution arguing that EU structural funds replaced space investment. ESA contribution fell to ~€60M/year (50% reduction vs 1994).  
-**Outcome**: Swedish space industry contracted significantly 1995–2000. Satellite data access gaps noted by FMV (defence materiel) in 1999 review. Recovery required supplementary budget commitment in 2001.
-
-**Relevance to May 2026 (HD10461)**: The 1995–2001 ESA gap is the precise historical case the interpellation cites. The 2001 recovery model (supplementary budget + Rymdstyrelsen mandate revision) is the template for the post-election solution. The current €10/capita is not a new problem — it is a structural underinvestment that pre-dates 2026 by 25 years.
-
-**Key lesson**: Space funding gaps tend to be visible through specific procurement failures (e.g., FMV unable to contract satellite imagery at competitive rates). Watch for a FMV-related trigger that escalates this from a committee-level interpellation to a defence policy priority.
-
-### Precedent 4 — Basel II Banking Transposition 2007 (CRR3 Parallel)
-
-**Year**: 2007 | **Government**: Reinfeldt  
-**Event**: Basel II transposition via capital requirements directive — Swedish banks required to implement by Q4 2007. FiU/FI coordination; bipartisan consensus; same process as CRR3 2026.  
-**Outcome**: Completed on schedule. Swedish banks (SEB, Handelsbanken) actually over-complied, creating competitive advantage vs European peers in 2008 financial crisis.
-
-**Relevance to May 2026**: Basel II 2007 is the exact procedural precedent for CRR3 2026. The timeline, committee process, and bipartisan dynamic are near-identical. Over-compliance in 2007 is a forward signal: Swedish banks may again implement ahead of minimum requirements to differentiate on capital quality.
-
-### Synthesis
-
-The four historical precedents converge on a consistent analytical picture: **Swedish legislative sprints in pre-election years have a strong track record of completing major initiatives on schedule, with junior coalition partners finding profile-building opportunities rather than blocking mechanisms.** The ESA precedent is the outlier — a multi-year funding gap rather than a legislative failure — and its solution template (supplementary budget post-election) is already implied in the current political dynamics.
-
-### Historical Pattern Diagram
-
-```mermaid
-%%{init: {"theme": "dark"}}%%
-timeline
-    title Swedish Immigration Policy Timeline
-    2015 : Refugee Crisis Peak
-         : Temporary permits introduced
-    2016 : Permanent residency restricted
-         : Upper secondary rules
-    2022 : Tidöavtalet signed
-         : SD joins governing coalition
-    2023 : HD10460 Family reunification restricted
-    2026 : HD03262 Perm. residence abolished
-         : EU Asylum Pact transposed
-         : Largest single-day package
-```
-
-```mermaid
-%%{init: {"theme": "dark"}}%%
-flowchart LR
-    P2015["2015 Refugee\nCrisis"] --> P2016["2016 Temporary\nPermit Shift"]
-    P2016 --> P2022["2022 Tidöavtalet\nSD Entry"]
-    P2022 --> P2026["2026 Perm.\nResidence Abolished"]
-    P2015:::hist
-    P2016:::hist
-    P2022:::hist
-    P2026:::now
-    classDef hist fill:#1a1e3d,color:#00d9ff
-    classDef now fill:#ff006e,color:#fff
 ```
 
 ## Implementation Feasibility
@@ -2694,6 +2592,108 @@ flowchart TD
     style MIG_CAP fill:#ff006e,color:#fff
     style TV_CAP fill:#1a1e3d,color:#ffbe0b
     style SSM_CAP fill:#1a1e3d,color:#00d9ff
+```
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/media-framing-analysis.md -->
+
+### Analytical Framework
+
+Media framing analysis for the May 2026 legislative cycle, covering: (1) party communication frames, (2) mainstream press framing, (3) social media amplification vectors.
+
+### Party Communication Frames
+
+#### Government Parties
+
+**M (Moderates)**: "Ansvar och leverans" (Responsibility and delivery)
+- NTP framing: "Sweden's largest investment in connectivity — delivering on the promises that matter"
+- Economic competence frame: on-time, on-budget infrastructure as contrast to S era
+- Target media: Dagens Industri, SvD Näringsliv, regional construction/engineering press
+
+**SD (Sweden Democrats)**: "För hela Sverige" (For all of Sweden)
+- NTP framing: "Norrland first — finally a government that sees all of Sweden"
+- Sovereignty frame: CRR3 framed as "Brussels-compliant but Sweden controls our banks"
+- Target media: Samhällsnytt, Riks, Aftonbladet (tabloid reach), regional northern press
+
+**KD (Christian Democrats)**: "Trygghet och värdighet" (Security and dignity)
+- Social framing: JuU9 court efficiency = justice for ordinary people, not just corporations
+- KU36 digital frame: privacy as a value (Christian Democratic tradition of family data protection)
+- Target media: Dagen, KD-adjacent Christian press, SvD opinion
+
+**L (Liberals)**: "Frihet och kunskap" (Freedom and knowledge)
+- Threshold-escape strategy: Signature education/justice announcement expected
+- EU/space policy (HD10461): L likely to use this as an EU-positive frame ("Sweden must be a European space power")
+- Target media: SvD, DN, liberal opinion pages; EU affairs correspondents
+
+#### Opposition Parties
+
+**S (Social Democrats)**: "Välfärd för alla" (Welfare for all)
+- 11 motions framed as "A real programme for Swedish families"
+- Housing HD11774: "The crisis M refuses to address"
+- Child poverty HD11775: "Sweden can do better for every child"
+- Target media: Aftonbladet, LO-tidningen, Arbetet, regional S press
+
+**V (Left Party)**: "Rättvisa nu" (Justice now)
+- HD11774 housing: "Market failures require public solutions"
+- CRR3 critique: "EU banking rules serve the banks, not the workers"
+- Target media: ETC, Flamman, social media (strong V online presence)
+
+**MP (Greens)**: "Klimat och framtid" (Climate and future)
+- NTP rail support: "We support the rail — we oppose the road expansion"
+- Selective framing: will claim partial credit for NTP rail content
+- Target media: DN Kultur, Miljömagasinet, Klimatpolitik
+
+**C (Centre)**: "Landsbygd och företagsamhet" (Rural areas and enterprise)
+- NTP: "Rural connectivity is the precondition for regional growth"
+- NU19 SME support: C's primary economic frame
+- Target media: Land, regional rural press, DI Gasell
+
+### Mainstream Press Framing Predictions
+
+| Publication | Predicted NTP framing | Predicted opposition motion framing |
+|-------------|----------------------|-----------------------------------|
+| Dagens Nyheter | "Historic rail investment with accountability questions" | "S presents election programme as motions" |
+| Svenska Dagbladet | "Government delivers infrastructure credibility" | "Opposition offers alternative but lacks costings" |
+| Aftonbladet | "Will you benefit? Check your region's NTP allocation" | "S's housing plan — the families who need it most" |
+| Dagens Industri | "CRR3 — Swedish banks ready; what does tighter capital mean for you?" | "Opposition cost proposals add up to 85bn SEK — who pays?" |
+| SVT/Ekot | Balanced; "NTP passes, what happens next?" | "Opposition: this budget doesn't add up" |
+
+### Social Media Amplification Vectors
+
+#### High-amplification issues (predicted)
+1. **NTP regional allocation maps** — interactive maps showing which municipalities gain/lose
+2. **HD11775 child poverty** — high emotional resonance; NGO amplification (Rädda Barnen, UNICEF Sverige)
+3. **HD10461 ESA space** — niche but high-engagement among tech/science community on LinkedIn/X
+4. **HD11773 animal welfare** — consistent high-organic-reach issue; animal rights community amplification
+
+#### Counter-messaging risks
+- SD will counter-frame opposition motions as "unfunded promises from parties that caused Sweden's problems"
+- V will counter-frame CRR3 as "EU capitalist regulation dressed as prudence"
+- Government will use Trafikverket social media to disseminate NTP project maps and timelines
+
+### Media Intelligence Assessment
+
+**Key finding**: The government's primary media advantage is the visual/tangible nature of NTP — infrastructure maps, project timelines, and regional employment numbers are highly sharable. The opposition's advantage is issue resonance on social policy — housing, poverty, and healthcare are deeply personal and emotionally engaging.
+
+**Predicted dominant frame by election day**: Economic competence vs. social care. NTP gives M/SD the economic competence frame they need; HD11774/11775 give S the social care frame. The election will be decided by which frame dominates the undecided suburban family segment (Segment 3 from voter-segmentation.md).
+
+### Media Framing Diagram
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    HD03262["HD03262\nPerm. Residence\nAbolished"] --> DN["DN/SvD:\nRule-of-Law\nAngle"]
+    HD03262 --> SVT["SVT/SR:\nHuman Impact\nAngle"]
+    HD03262 --> SD_MEDIA["Nyheter Idag:\nPolicy Success"]
+    HD03259["HD03259\nNTP 970bn SEK"] --> REG["Regional Press:\nLocal Investment"]
+    HD03259 --> ECON["DI/Finanstidningen:\nFiscal Analysis"]
+    style HD03262 fill:#ff006e,color:#fff
+    style HD03259 fill:#ffbe0b,color:#0a0e27
+    style DN fill:#1a1e3d,color:#00d9ff
+    style SVT fill:#1a1e3d,color:#00d9ff
+    style SD_MEDIA fill:#1a1e3d,color:#ff006e
+    style REG fill:#1a1e3d,color:#ffbe0b
+    style ECON fill:#1a1e3d,color:#ffbe0b
 ```
 
 ## Devil's Advocate
@@ -3281,13 +3281,6 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/threat-analysis.md)
 - [`documents/HD01CU37-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD01CU37-analysis.md)
 - [`documents/HD01FöU13-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD01FöU13-analysis.md)
 - [`documents/HD01JuU9-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD01JuU9-analysis.md)
@@ -3322,12 +3315,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`documents/HD11776-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD11776-analysis.md)
 - [`documents/HD11777-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD11777-analysis.md)
 - [`documents/HD11778-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/documents/HD11778-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-30/month-ahead/cross-reference-map.md)

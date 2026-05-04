@@ -5,7 +5,7 @@ date: 2026-05-04
 subfolder: motions
 slug: 2026-05-04-motions
 source_folder: analysis/daily/2026-05-04/motions
-generated_at: 2026-05-04T09:52:32.690Z
+generated_at: 2026-05-04T12:16:14.361Z
 language: en
 layout: article
 ---
@@ -59,10 +59,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
+| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
@@ -182,353 +182,6 @@ Sweden's general election is 14 September 2026. As of 2026-05-04, this is 132 da
 - **L2+ Priority** (6.0–6.9): HD024124 (env. permitting, S), HD024126 (wind power, S)
 - **L2 Strategic** (4.5–5.9): HD024134, HD024129, HD024131, HD024132, HD024130, HD024125, HD024135
 - **L1 Surface** (<4.5): HD024133, HD024137, HD024138, HD024140, HD024139, HD024128
-
-## Media Framing Analysis
-<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/media-framing-analysis.md -->
-
-### Expected Media Framings
-
-#### Frame 1: "Opposition Battles Government on Crime" (HIGH probability)
-Swedish tabloids (Aftonbladet, Expressen) and broadcast media will almost certainly lead with the criminal age debate — HD024136 (S) rejects age 13. This is the most emotionally accessible framing: young criminals, gang violence, S vs. government.
-
-**Risk to opposition**: This framing compresses S's nuanced 14-vs-13 position into "S defends youth criminals." Media-savvy communications needed.
-**Recommended counter-framing**: "S wants effective crime policy, not symbolic policy that the courts will overturn."
-
-#### Frame 2: "Energy Battle — Opposition Demands Faster Climate Action" (MEDIUM probability)
-Quality press (DN, SvD) and specialized media (Ny Teknik) will frame the energy cluster as opposition demanding faster energy transition. This framing favors the opposition.
-
-**Risk**: Complex technical content (municipal veto, flexibility strategy, electricity certificates) may not break through to general media.
-**Recommended communications**: Simple metaphors — "Sweden has the best wind resources in Europe; the government is blocking the construction of turbines."
-
-#### Frame 3: "Governing Coalition Under Pressure" (MEDIUM probability)
-Political correspondents will frame this as a test of TidöPakten's cohesion and the government's ability to deliver its legislative agenda 132 days before an election.
-
-**Key narrative element**: The simultaneous challenges across six committees frames the government as besieged — potentially useful to the opposition.
-
-#### Frame 4: "Left Coalition Forms Against Government" (LOW probability but dangerous)
-Right-wing media and governing party communications may attempt to frame S+MP+V+C as a pre-election "left bloc" — uniting very different parties under a single label.
-
-**Reality check**: C and V have fundamentally different economic policy positions; the "left bloc" framing is reductive. But it could stick if S doesn't manage its messaging.
-
-### Media Blind Spots to Counter
-
-1. **Withdrawal of HD024127**: Media will likely ignore this; it should be addressed proactively by the withdrawing party
-2. **GBV motions (HD024133, HD024140)**: Risks being crowded out by crime/energy coverage; V and C communications teams should pitch this separately
-3. **Tonnage tax (HD024128)**: Specialized but important; maritime industry press will cover; general media unlikely
-
-### Social Media Vectors
-
-**YouTube/TikTok**: Youth crime debate is high-virality; expect deepfake/disinformation risk on "Sweden lowering criminal age"
-**X (Twitter)**: Energy debate generates intense climate community engagement; international observers following
-**Reddit/Flashback**: Harbor law and tonnage tax unlikely to trend; criminal age debate will be amplified by crime debate communities
-
-## Stakeholder Perspectives
-<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/stakeholder-perspectives.md -->
-
-### Primary Political Stakeholders
-
-#### Socialdemokraterna (S) — 9 motions
-**Objective**: Position as responsible, constructive opposition with sharper energy/climate ambition and a differentiated youth crime stance.
-**Key message**: "We accept the direction, but the details are wrong — elect us and we will do it better."
-**Risk**: Seen as nitpicking rather than governing if policy differences are marginal.
-**Core voter signal**: Young voters (energy/climate), working-class voters (crime), labour-market voters (harbor/tonnage tax).
-
-#### Miljöpartiet (MP) — 3 motions
-**Objective**: Reinforce green identity in energy/environment; demonstrate that MP is distinct from S.
-**Key message**: "Sweden must do more, faster — our proposals go further."
-**Risk**: Squeezed between S on energy and activist green voters who may prefer smaller parties.
-
-#### Vänsterpartiet (V) — 3 motions [unconfirmed party attribution; attributed to Malcolm Momodou Jallow m.fl.]
-**Objective**: Maximalist opposition — reject what cannot be improved. Protect workers (harbor) and environment (permitting) from weaker regulation.
-**Key message**: "This government's reforms serve capital, not people."
-**Risk**: V's rejection posture means it scores no legislative wins even in a favourable committee outcome.
-
-#### Centerpartiet (C) — 4 motions
-**Objective**: Market-liberal and pro-municipality — demand compensation mechanisms (wind power) and flexibility frameworks (electricity system). Differentiate from both government and left-wing opposition.
-**Key message**: "Sweden's energy transition needs market incentives, not mandates."
-**Risk**: C split between supporting and opposing the government on environmental permitting — internal discipline test.
-
-### Non-Parliamentary Stakeholders
-
-#### Swedish Wind Power Industry (Vindbrukarna, SWEA)
-**Interest**: Fastest possible municipal veto reform and improved land-use permitting
-**Position**: Supportive of S, MP, C motions on NU; would prefer a cross-party majority amendment
-**Influence mechanism**: Industry lobbying, media commentary, investment signalling
-
-#### Kriminalvården (Prison and Probation Service)
-**Interest**: Any lowering of criminal age increases workload and facility requirements; S's age-14 proposal is preferred over government's age-13
-**Position**: Likely aligned with S motion; has publicly raised capacity concerns
-**Influence mechanism**: Parliamentary remiss responses, media engagement
-
-#### Swedish Port Owners (Hamnägare, SEKO)
-**Interest**: Legal clarity for commercially significant municipal ports
-**Position**: Critical of prop. 234 and supportive of S/V rejection motions
-**Influence mechanism**: TU remiss submissions
-
-#### Swedish Business Confederation (Svenskt Näringsliv)
-**Interest**: Faster permitting, stable energy policy, tonnage tax competitiveness for shipping
-**Position**: Mixed — supports prop. 238's permitting authority concept; supports HD024128 (tonnage tax S motion aligns with industry interest); concerned about energy policy uncertainty
-**Influence mechanism**: Business press, committee hearings
-
-#### Civil Society (ROKS, UNIZON — GBV organizations)
-**Interest**: HD024133 (V) and HD024140 (C) on violence against women
-**Position**: Advocate for comprehensive GBV strategy beyond the government's current skrivelse
-**Influence mechanism**: AU committee hearings, public statements
-
-## Forward Indicators
-<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/forward-indicators.md -->
-
-### Tier 1 Forward Indicators (Watch Daily)
-
-#### FI-1: JuU Committee Hearing Calendar
-**Signal**: JuU secretariat publishes hearing list for prop. 246 (criminal age)
-**Significance**: Will L, C, or any M defectors appear on non-government side witness lists?
-**Source**: Riksdag calendar API (`get_calendar_events`)
-**Expected**: Within 7 days of motion filing (2026-05-11)
-
-#### FI-2: Government Minister Communications on Criminal Age
-**Signal**: Minister for Justice makes public statement on age 13 vs 14 debate
-**Significance**: If minister signals flexibility on 14 years, government may be pre-negotiating to avoid committee defeat
-**Source**: Regeringen.se press releases, social media
-
-#### FI-3: SD Whip Statement on Criminal Age
-**Signal**: SD party secretary or parliamentary group chair makes public statement on age-13 discipline
-**Significance**: Any crack in SD discipline = scenario A (government defeat) becomes more probable
-
-### Tier 2 Forward Indicators (Watch Weekly)
-
-#### FI-4: NU Committee Statement on Energy Bills
-**Signal**: NU produces joint committee pre-announcement on prop. 239/240
-**Significance**: If NU chair invites bilateral negotiations with S/C, amendment scenario becomes more likely
-**Expected**: Within 14–21 days
-
-#### FI-5: MJU Engagement with S on Permitting Authority
-**Signal**: S's shadow MJU spokesperson signals bilateral discussions with government
-**Significance**: If government incorporates S's orderly transition demand, MJU passage is smooth
-
-#### FI-6: TU Committee Composition Signal
-**Signal**: Any TU member publicly aligns with S-V harbor law rejection
-**Significance**: Third opposition vote in TU = rejection majority possible
-**Expected**: Within 21 days
-
-### Tier 3 Forward Indicators (Watch Monthly)
-
-#### FI-7: Early Polling Shift on Crime Competence
-**Signal**: Any published poll showing S gaining or losing on "crime policy competence" dimension
-**Significance**: Validates or refutes S's 14-year threshold strategy
-**Source**: SIFO, Demoskop, Ipsos monthly trackers
-
-#### FI-8: Energy Sector Investment Decisions
-**Signal**: Any major wind farm or grid project delayed or cancelled due to policy uncertainty
-**Significance**: Provides empirical support for S/MP/C urgency claims; creates campaign narrative
-**Source**: Energimyndigheten announcements, industry press
-
-#### FI-9: Post-Election Government Formation Signals
-**Signal**: Any S-MP-C joint statement or coordination signal on energy policy
-**Significance**: Would confirm coalition-in-waiting interpretation of cross-party energy alignment
-**Source**: Party press releases, political journalists
-
-### PIR Tracking Log
-
-| PIR | Status | Last update |
-|-----|--------|------------|
-| PIR-1: TidöPakten legislative cohesion | ACTIVE | 2026-05-04 (these motions challenge cohesion on 6 fronts) |
-| PIR-2: S coalition-building signals | ACTIVE | 2026-05-04 (energy alignment S+MP+C noted) |
-| PIR-3: Energy policy trajectory | ACTIVE | 2026-05-04 (wind veto reform demanded by 3 parties) |
-| PIR-4: Criminal justice reform | ACTIVE | 2026-05-04 (age debate opened) |
-| PIR-5: Environmental governance | ACTIVE | 2026-05-04 (permitting authority contested) |
-| PIR-6: Election campaign positioning | ACTIVE | 2026-05-04 (all 6 clusters carry electoral weight) |
-| PIR-7: Nordic comparisons | ACTIVE | 2026-05-04 (Denmark 2010 criminal age parallel) |
-
-## Scenario Analysis
-<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/scenario-analysis.md -->
-
-### Scenario Tree
-
-#### Base Scenario (50% probability): Government Holds with Minor Amendments
-- Committees complete consideration by late May/early June 2026
-- JuU produces majority for age-13 with procedural SD discipline
-- MJU produces amended env. permitting authority incorporating partial S demands (orderly transition, regional presence)
-- NU produces clean energy bills with minor C-friendly compensation amendments
-- **Electoral implication**: Opposition can claim partial wins; government claims mandate delivery
-- **WEP confidence language**: "Probably"
-
-#### Scenario A (25% probability): Government Defeated on Criminal Age
-- S mounts public campaign against age 13; C signals flexibility; one or two SD MPs defect or absent
-- JuU amendment passes at 14 years
-- Government forced to accept or call extraordinary session — neither is electorally neutral
-- **Electoral implication**: Major win for S; SD/M/KD coalition credibility damaged; crime policy becomes election centrepiece
-- **WEP confidence language**: "Possibly" — SD discipline uncertain
-
-#### Scenario B (15% probability): Energy Opposition Majority Forms
-- S+MP+C+V joint committee approach (informal) produces amendments on wind power municipal veto timeline
-- NU vote produces earlier implementation date for veto reform
-- **Electoral implication**: C and MP claim credit; S reinforced; SD faces accusations of blocking climate progress
-- **WEP confidence language**: "Unlikely" without explicit joint motion
-
-#### Scenario C (10% probability): Cascading Government Defeats — Multiple Bills Amended
-- Both criminal age AND energy/wind amendments pass; harbor law rejected by S-V-MP-C majority
-- **Electoral implication**: Governing coalition's legislative programme in tatters ahead of election; potentially destabilizing for TidöPakten
-- **WEP confidence language**: "Unlikely" — requires multiple simultaneous coalition fractures
-
-### Scenario Timeline
-
-```
-2026-05-04 (NOW): Motions filed, committees begin consideration
-     │
-2026-05-20: Committee hearings (MJU, JuU, NU) — PUBLIC INDICATOR
-     │
-2026-06-10: Committee votes — DECISION POINT
-     │
-2026-06-20: Plenary votes on amendments
-     │
-2026-07-01: Riksdag summer recess
-     │
-2026-09-14: ELECTION
-```
-
-### Forward Indicators to Watch
-
-- JuU hearing list: Will S or V witnesses raise ECHR concerns?
-- MJU committee chair statements: Signs of accommodation with S?
-- NU: Joint committee statement from S+MP+C members
-- SD party whip communications (if leaked)
-- Government press conferences: Will the minister reframe age 13 before the vote?
-
-## Risk Assessment
-<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/risk-assessment.md -->
-
-### Risk Register
-
-#### R-01: Government Defeat on Criminal Age Threshold [CRITICAL]
-- **Description**: JuU fails to produce a majority for age 13; amendment to age 14 passes with S+C+(possibly SD defectors)
-- **Likelihood**: MEDIUM-HIGH (40–55%)
-- **Impact**: HIGH — flagship crime policy defeated in final pre-election session; devastating for governing coalition's "tough on crime" brand
-- **Mitigation available**: Government could withdraw prop. 246 before vote or amend it to age 14 pre-emptively; SD whipping
-- **Residual risk**: HIGH even with mitigation if S can force a public vote
-
-#### R-02: Environmental Permitting Authority Blocked or Heavily Amended [HIGH]
-- **Description**: MJU produces amendments incorporating S or MP demands, substantially altering the new authority's design
-- **Likelihood**: MEDIUM (30–45%)
-- **Impact**: MEDIUM — setback for government's permitting reform agenda; S wins credit for "improving" the proposal
-- **Mitigation**: Government engages S in bilateral negotiations before committee markup
-
-#### R-03: Energy/Wind Opposition Alliance Produces Majority for Amendment [HIGH]
-- **Description**: S+MP+C+V majority in NU or MJU produces amendment forcing earlier municipal veto reform
-- **Likelihood**: MEDIUM (30–40%) — requires S+C+MP+V joint majority; SD/M must hold
-- **Impact**: MEDIUM-HIGH — energy policy reframe ahead of elections; C and MP score a climate win
-- **Mitigation**: SD must hold line on municipal veto; government engages C on compensation mechanisms
-
-#### R-04: Harbor Law Joint S-V Defeat [MEDIUM]
-- **Description**: S (HD024125) + V (HD024135) rejection motions produce majority to reject prop. 234
-- **Likelihood**: LOW-MEDIUM (20–30%) — requires S+V+MP+C majority; TU composition unclear
-- **Impact**: MEDIUM — port sector uncertainty; disrupts logistics sector legislation
-- **Mitigation**: Government consults Swedish Port Association before TU markup
-
-#### R-05: IMF Data Gap Weakens Analysis [LOW]
-- **Description**: IMF fiscal context unavailable; economic claims in this analysis rely on SCB/prior-run estimates
-- **Likelihood**: N/A (already materialized — IMF API unavailable in this run)
-- **Impact**: LOW — economic context for motions is secondary to political analysis
-- **Mitigation**: Annotated as data gap in methodology-reflection.md; prior cached estimates used where relevant
-
-### Risk Heatmap
-
-```
-          LOW     MEDIUM    HIGH
-HIGH    |       |          |  R-01  |
-MEDIUM  |       |  R-02    |  R-03  |
-LOW     |  R-05 |  R-04    |        |
-        |_______|__________|________|
-         LOW    MEDIUM    HIGH
-                IMPACT
-```
-
-## SWOT Analysis
-<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/swot-analysis.md -->
-
-### Object of Analysis
-The strategic position of the parliamentary opposition (S, MP, V, C) through this wave of 16 active motions across six policy clusters, in the context of the 2026 election campaign.
-
-### Strengths
-
-**S1 — Volume and breadth**: S has filed motions on all six proposition clusters, demonstrating comprehensive parliamentary engagement. No other opposition party matches this breadth.
-
-**S2 — Youth crime framing**: S's rejection of age 13 (in favour of 14) is a sophisticated triangulation: it accepts the government's crime severity framing while rejecting what polls suggest is a politically unpopular specific measure. This "responsible opposition" posture is exactly what centrist voters find credible.
-
-**S3 — Energy consensus**: S, MP, and C all demand faster fossil-free energy expansion, creating rare cross-opposition unity on Sweden's most economically critical transition policy. This unity strengthens the legislative pressure on the government.
-
-**S4 — Pre-election accountability lock-in**: Filing committee motions creates official parliamentary records that become part of the 2026 election platform. Voters and media can verify commitments.
-
-**S5 — V reinforcement**: V's rejection motions (HD024134, HD024135) provide left-flank cover for S's moderate alternatives — making S seem like the reasonable choice.
-
-### Weaknesses
-
-**W1 — Fragmentation**: No unified joint motion across S+MP+V+C on any cluster means the government can negotiate separately with each party, seeking partial committee support.
-
-**W2 — Withdrawn motion (HD024127)**: The unexplained withdrawal creates a narrative of disorganization at a politically sensitive moment. Even one unexplained withdrawal can be used by governing parties to suggest opposition was unprepared.
-
-**W3 — Criminal justice credibility gap**: S has previously supported government crime packages; rejecting the 13-year threshold now requires consistent public messaging to avoid being labelled as soft on crime.
-
-**W4 — No joint S-MP formal alliance**: MP is outside S's formal coalition agreement, complicating post-election government formation narratives.
-
-### Opportunities
-
-**O1 — Committee amendments**: Enough opposition motions with substantive arguments could force committee-level amendments, handing the opposition a concrete legislative win before the election.
-
-**O2 — SD/KD fractures**: If SD defers on the criminal age threshold or M/KD split from SD on energy policy, the opposition could secure majority amendments.
-
-**O3 — Media agenda-setting**: The energy cluster motions, if covered together, reinforce the "government stalling Sweden's climate future" narrative — a powerful pre-election message.
-
-**O4 — International comparison**: HD024136's ECHR argument (age 13 as internationally exceptional) invites academic and civil society validators who provide media credibility.
-
-### Threats
-
-**T1 — Government legislative defeat scenario**: If the government loses the criminal age vote AND the wind power vote, the narrative benefits the opposition — but could also trigger SD to extract further policy concessions, increasing instability.
-
-**T2 — Whipping failures**: With complex technical bills across six committees, there is risk of individual MP non-attendance at votes, accidentally defeating government proposals the opposition wanted to lose.
-
-**T3 — Media simplification**: Complex energy system motions risk being rendered as "S opposes electricity" rather than "S demands faster transition."
-
-**T4 — Time compression**: With elections 132 days away, committee work is compressed. Any committee that fails to complete hearings before summer recess may push votes into post-election territory.
-
-## Threat Analysis
-<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/threat-analysis.md -->
-
-### Threat Landscape
-
-#### TH-01: Legislative Bypass via Time Pressure [MODERATE THREAT]
-The compressed timeline (132 days to election) creates incentives for the government to invoke rapid committee procedures (brådskande beredning), potentially limiting public consultation on technically complex measures (env. permitting authority, electricity system redesign). This threatens democratic deliberation quality.
-
-**Affected**: HD024124 (MJU, env. permitting), HD024129/130/137/138 (NU, electricity system)
-**Indicator to watch**: MJU/NU announcing compressed hearing schedules (< 4 weeks)
-**Severity**: MEDIUM
-
-#### TH-02: Opposition Fragmentation as Government Weapon [MODERATE THREAT]
-With four parties filing competing motions on the same propositions (env. permitting: S/MP/V/C each file separately), the government committee leadership can use the fragmentation to deny any single amendment the votes needed. This is a procedural exploitation of legislative pluralism.
-
-**Affected**: All four MJU motions (HD024124, HD024131, HD024134, HD024139)
-**Indicator**: Government proposes "joint committee consideration" procedures that neutralize individual tillägg requests
-**Severity**: MEDIUM
-
-#### TH-03: Criminal Age Lowering as ECHR Risk [HIGH THREAT to Sweden's international standing]
-S's HD024136 explicitly flags that lowering criminal age to 13 would be internationally exceptional within the EU (most peers use 14 or higher) and could raise issues under ECHR Article 3 (degrading treatment) and Article 6 (fair trial). If Sweden implements age 13 against ECHR guidance, it risks:
-- Strasbourg proceedings 3–5 years post-implementation
-- Europaparlamentarisk critique
-- Kriminalvården capacity crisis (juveniles in adult-adjacent facilities)
-
-**Severity**: HIGH (long-term)
-
-#### TH-04: Energy Policy Paralysis Pre-Election [MODERATE THREAT]
-If committee votes on prop. 239 and 240 are delayed until after the election, the energy sector faces a policy vacuum during a critical build-out period for wind power and grid infrastructure. This threatens Sweden's 2030 fossil-free electricity target.
-
-**Affected**: HD024126, HD024129, HD024132, HD024130, HD024137, HD024138
-**Indicator to watch**: NU announces post-summer recess consideration
-**Severity**: MEDIUM-HIGH (economic)
-
-#### TH-05: Disinformation Risk on Youth Crime Narrative [LOW-MODERATE]
-The criminal age debate creates fertile ground for disinformation campaigns claiming Sweden has raised/lowered criminal age dramatically — conflating the age-13 vs age-14 debate with a false "Sweden decriminalizes youth crime" narrative that could spread via social media (particularly from anti-Swedish foreign state actors who have historically amplified Swedish crime statistics).
-
-**Severity**: LOW-MODERATE in current cycle; escalates if election campaign heats up
 
 ## Per-document intelligence
 
@@ -772,54 +425,58 @@ See synthesis-summary.md and cross-reference-map.md for detailed analysis of thi
 ### Analytical Flag
 Classified in significance-scoring.md. Party attribution confirmed unless noted.
 
-## Election 2026 Analysis
-<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/election-2026-analysis.md -->
+## Stakeholder Perspectives
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/stakeholder-perspectives.md -->
 
-### Election Proximity Context
+### Primary Political Stakeholders
 
-Sweden's general election is 132 days away. All parliamentary activity from this point until summer recess (~30 June 2026) carries direct electoral significance. Committee motions filed now become official party policy positions. Votes in June 2026 become part of the campaign record.
+#### Socialdemokraterna (S) — 9 motions
+**Objective**: Position as responsible, constructive opposition with sharper energy/climate ambition and a differentiated youth crime stance.
+**Key message**: "We accept the direction, but the details are wrong — elect us and we will do it better."
+**Risk**: Seen as nitpicking rather than governing if policy differences are marginal.
+**Core voter signal**: Young voters (energy/climate), working-class voters (crime), labour-market voters (harbor/tonnage tax).
 
-### Party Electoral Positioning Through This Motion Wave
+#### Miljöpartiet (MP) — 3 motions
+**Objective**: Reinforce green identity in energy/environment; demonstrate that MP is distinct from S.
+**Key message**: "Sweden must do more, faster — our proposals go further."
+**Risk**: Squeezed between S on energy and activist green voters who may prefer smaller parties.
 
-#### Socialdemokraterna (S) — Electoral Play
-S filed motions on all six clusters, demonstrating breadth and seriousness. The strategic calculation is visible:
+#### Vänsterpartiet (V) — 3 motions [unconfirmed party attribution; attributed to Malcolm Momodou Jallow m.fl.]
+**Objective**: Maximalist opposition — reject what cannot be improved. Protect workers (harbor) and environment (permitting) from weaker regulation.
+**Key message**: "This government's reforms serve capital, not people."
+**Risk**: V's rejection posture means it scores no legislative wins even in a favourable committee outcome.
 
-1. **Youth crime (HD024136)**: S is not "soft on crime" — it accepts expanding criminal liability to 14-year-olds for serious offences. But S draws the line at 13, citing ECHR and rehabilitation science. This positioning is designed for the centre-left voter who wants firm crime policy but is uneasy about punishing 13-year-olds.
+#### Centerpartiet (C) — 4 motions
+**Objective**: Market-liberal and pro-municipality — demand compensation mechanisms (wind power) and flexibility frameworks (electricity system). Differentiate from both government and left-wing opposition.
+**Key message**: "Sweden's energy transition needs market incentives, not mandates."
+**Risk**: C split between supporting and opposing the government on environmental permitting — internal discipline test.
 
-2. **Energy/climate (HD024124, HD024126, HD024129)**: S demands more ambition, not less. This directly addresses the "S governed for 7 years and didn't fix wind power" attack. S's counter: "We couldn't fix it because SD blocked it; we'll fix it now."
+### Non-Parliamentary Stakeholders
 
-3. **Harbor/tonnage**: S positions as defender of municipal commercial interests (harbor) and shipping industry (tonnage tax) — union voter base messaging.
+#### Swedish Wind Power Industry (Vindbrukarna, SWEA)
+**Interest**: Fastest possible municipal veto reform and improved land-use permitting
+**Position**: Supportive of S, MP, C motions on NU; would prefer a cross-party majority amendment
+**Influence mechanism**: Industry lobbying, media commentary, investment signalling
 
-#### Miljöpartiet (MP) — Electoral Play
-MP needs to demonstrate it matters in a parliament where it lost government status. Three focused, technically specific motions on energy/climate signal competence and distinctiveness from S. MP's electoral survival requires demonstrating it can influence policy — these motions are proof points.
+#### Kriminalvården (Prison and Probation Service)
+**Interest**: Any lowering of criminal age increases workload and facility requirements; S's age-14 proposal is preferred over government's age-13
+**Position**: Likely aligned with S motion; has publicly raised capacity concerns
+**Influence mechanism**: Parliamentary remiss responses, media engagement
 
-#### Centerpartiet (C) — Electoral Play
-C is walking the tightest rope: it sometimes supports the government on business/market issues but is under pressure from rural and green-liberal voters. C's motions demand market-based solutions (compensation for landowners in wind power areas, flexibility strategy in electricity system) — a coherent liberal brand distinct from both the government and S.
+#### Swedish Port Owners (Hamnägare, SEKO)
+**Interest**: Legal clarity for commercially significant municipal ports
+**Position**: Critical of prop. 234 and supportive of S/V rejection motions
+**Influence mechanism**: TU remiss submissions
 
-#### Vänsterpartiet (V) — Electoral Play
-V's rejection motions (HD024134, HD024135) are pure base mobilization. V does not expect to win these votes; it expects to use them as evidence of its principled opposition. The GBV motion (HD024133) similarly signals feminist left credentials.
+#### Swedish Business Confederation (Svenskt Näringsliv)
+**Interest**: Faster permitting, stable energy policy, tonnage tax competitiveness for shipping
+**Position**: Mixed — supports prop. 238's permitting authority concept; supports HD024128 (tonnage tax S motion aligns with industry interest); concerned about energy policy uncertainty
+**Influence mechanism**: Business press, committee hearings
 
-### Electoral Impact Scenarios
-
-#### If Government Defeats All Motions (base case, 50%)
-- Opposition can still campaign on the votes
-- "We proposed this; the governing bloc voted against" is a usable message
-- HD024136 (criminal age) becomes the sharpest example
-
-#### If S Wins on Criminal Age Amendment (25%)
-- S's most significant electoral victory of the mandate period
-- "Responsible opposition delivers" is the campaign headline
-- S enters election having improved a government crime bill
-
-#### If Energy Opposition Wins Amendment (15%)
-- Climate-conscious voters see S+MP+C as a viable energy-competent coalition
-- Useful for coalition formation signalling
-
-### Seat Implications [ESTIMATED — no current polling]
-
-Current polling (cached from prior runs) suggests a close race. The governing TidöPakten coalition holds a slim majority. If any of the three high-probability scenarios (S wins criminal age, S-V win harbor rejection, energy amendment passes) materialize, they could contribute 0.5–1.5 percentage points of swing toward S in crime/environment voter segments.
-
-**Note**: This analysis is based on prior cached polling data; current polling not retrieved in this workflow run.
+#### Civil Society (ROKS, UNIZON — GBV organizations)
+**Interest**: HD024133 (V) and HD024140 (C) on violence against women
+**Position**: Advocate for comprehensive GBV strategy beyond the government's current skrivelse
+**Influence mechanism**: AU committee hearings, public statements
 
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/coalition-mathematics.md -->
@@ -922,6 +579,344 @@ Voters — disproportionately women — who want stronger institutional response
 | Industrial/maritime | 3–6% | LOW (base) | HD024125/128 (S) | S |
 | Women's safety | 10–15% | MEDIUM | HD024133 (V), HD024140 (C) | V+C |
 
+## Forward Indicators
+<!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/forward-indicators.md -->
+
+### Tier 1 Forward Indicators (Watch Daily)
+
+#### FI-1: JuU Committee Hearing Calendar
+**Signal**: JuU secretariat publishes hearing list for prop. 246 (criminal age)
+**Significance**: Will L, C, or any M defectors appear on non-government side witness lists?
+**Source**: Riksdag calendar API (`get_calendar_events`)
+**Expected**: Within 7 days of motion filing (2026-05-11)
+
+#### FI-2: Government Minister Communications on Criminal Age
+**Signal**: Minister for Justice makes public statement on age 13 vs 14 debate
+**Significance**: If minister signals flexibility on 14 years, government may be pre-negotiating to avoid committee defeat
+**Source**: Regeringen.se press releases, social media
+
+#### FI-3: SD Whip Statement on Criminal Age
+**Signal**: SD party secretary or parliamentary group chair makes public statement on age-13 discipline
+**Significance**: Any crack in SD discipline = scenario A (government defeat) becomes more probable
+
+### Tier 2 Forward Indicators (Watch Weekly)
+
+#### FI-4: NU Committee Statement on Energy Bills
+**Signal**: NU produces joint committee pre-announcement on prop. 239/240
+**Significance**: If NU chair invites bilateral negotiations with S/C, amendment scenario becomes more likely
+**Expected**: Within 14–21 days
+
+#### FI-5: MJU Engagement with S on Permitting Authority
+**Signal**: S's shadow MJU spokesperson signals bilateral discussions with government
+**Significance**: If government incorporates S's orderly transition demand, MJU passage is smooth
+
+#### FI-6: TU Committee Composition Signal
+**Signal**: Any TU member publicly aligns with S-V harbor law rejection
+**Significance**: Third opposition vote in TU = rejection majority possible
+**Expected**: Within 21 days
+
+### Tier 3 Forward Indicators (Watch Monthly)
+
+#### FI-7: Early Polling Shift on Crime Competence
+**Signal**: Any published poll showing S gaining or losing on "crime policy competence" dimension
+**Significance**: Validates or refutes S's 14-year threshold strategy
+**Source**: SIFO, Demoskop, Ipsos monthly trackers
+
+#### FI-8: Energy Sector Investment Decisions
+**Signal**: Any major wind farm or grid project delayed or cancelled due to policy uncertainty
+**Significance**: Provides empirical support for S/MP/C urgency claims; creates campaign narrative
+**Source**: Energimyndigheten announcements, industry press
+
+#### FI-9: Post-Election Government Formation Signals
+**Signal**: Any S-MP-C joint statement or coordination signal on energy policy
+**Significance**: Would confirm coalition-in-waiting interpretation of cross-party energy alignment
+**Source**: Party press releases, political journalists
+
+### PIR Tracking Log
+
+| PIR | Status | Last update |
+|-----|--------|------------|
+| PIR-1: TidöPakten legislative cohesion | ACTIVE | 2026-05-04 (these motions challenge cohesion on 6 fronts) |
+| PIR-2: S coalition-building signals | ACTIVE | 2026-05-04 (energy alignment S+MP+C noted) |
+| PIR-3: Energy policy trajectory | ACTIVE | 2026-05-04 (wind veto reform demanded by 3 parties) |
+| PIR-4: Criminal justice reform | ACTIVE | 2026-05-04 (age debate opened) |
+| PIR-5: Environmental governance | ACTIVE | 2026-05-04 (permitting authority contested) |
+| PIR-6: Election campaign positioning | ACTIVE | 2026-05-04 (all 6 clusters carry electoral weight) |
+| PIR-7: Nordic comparisons | ACTIVE | 2026-05-04 (Denmark 2010 criminal age parallel) |
+
+## Scenario Analysis
+<!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/scenario-analysis.md -->
+
+### Scenario Tree
+
+#### Base Scenario (50% probability): Government Holds with Minor Amendments
+- Committees complete consideration by late May/early June 2026
+- JuU produces majority for age-13 with procedural SD discipline
+- MJU produces amended env. permitting authority incorporating partial S demands (orderly transition, regional presence)
+- NU produces clean energy bills with minor C-friendly compensation amendments
+- **Electoral implication**: Opposition can claim partial wins; government claims mandate delivery
+- **WEP confidence language**: "Probably"
+
+#### Scenario A (25% probability): Government Defeated on Criminal Age
+- S mounts public campaign against age 13; C signals flexibility; one or two SD MPs defect or absent
+- JuU amendment passes at 14 years
+- Government forced to accept or call extraordinary session — neither is electorally neutral
+- **Electoral implication**: Major win for S; SD/M/KD coalition credibility damaged; crime policy becomes election centrepiece
+- **WEP confidence language**: "Possibly" — SD discipline uncertain
+
+#### Scenario B (15% probability): Energy Opposition Majority Forms
+- S+MP+C+V joint committee approach (informal) produces amendments on wind power municipal veto timeline
+- NU vote produces earlier implementation date for veto reform
+- **Electoral implication**: C and MP claim credit; S reinforced; SD faces accusations of blocking climate progress
+- **WEP confidence language**: "Unlikely" without explicit joint motion
+
+#### Scenario C (10% probability): Cascading Government Defeats — Multiple Bills Amended
+- Both criminal age AND energy/wind amendments pass; harbor law rejected by S-V-MP-C majority
+- **Electoral implication**: Governing coalition's legislative programme in tatters ahead of election; potentially destabilizing for TidöPakten
+- **WEP confidence language**: "Unlikely" — requires multiple simultaneous coalition fractures
+
+### Scenario Timeline
+
+```
+2026-05-04 (NOW): Motions filed, committees begin consideration
+     │
+2026-05-20: Committee hearings (MJU, JuU, NU) — PUBLIC INDICATOR
+     │
+2026-06-10: Committee votes — DECISION POINT
+     │
+2026-06-20: Plenary votes on amendments
+     │
+2026-07-01: Riksdag summer recess
+     │
+2026-09-14: ELECTION
+```
+
+### Forward Indicators to Watch
+
+- JuU hearing list: Will S or V witnesses raise ECHR concerns?
+- MJU committee chair statements: Signs of accommodation with S?
+- NU: Joint committee statement from S+MP+C members
+- SD party whip communications (if leaked)
+- Government press conferences: Will the minister reframe age 13 before the vote?
+
+## Election 2026 Analysis
+<!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/election-2026-analysis.md -->
+
+### Election Proximity Context
+
+Sweden's general election is 132 days away. All parliamentary activity from this point until summer recess (~30 June 2026) carries direct electoral significance. Committee motions filed now become official party policy positions. Votes in June 2026 become part of the campaign record.
+
+### Party Electoral Positioning Through This Motion Wave
+
+#### Socialdemokraterna (S) — Electoral Play
+S filed motions on all six clusters, demonstrating breadth and seriousness. The strategic calculation is visible:
+
+1. **Youth crime (HD024136)**: S is not "soft on crime" — it accepts expanding criminal liability to 14-year-olds for serious offences. But S draws the line at 13, citing ECHR and rehabilitation science. This positioning is designed for the centre-left voter who wants firm crime policy but is uneasy about punishing 13-year-olds.
+
+2. **Energy/climate (HD024124, HD024126, HD024129)**: S demands more ambition, not less. This directly addresses the "S governed for 7 years and didn't fix wind power" attack. S's counter: "We couldn't fix it because SD blocked it; we'll fix it now."
+
+3. **Harbor/tonnage**: S positions as defender of municipal commercial interests (harbor) and shipping industry (tonnage tax) — union voter base messaging.
+
+#### Miljöpartiet (MP) — Electoral Play
+MP needs to demonstrate it matters in a parliament where it lost government status. Three focused, technically specific motions on energy/climate signal competence and distinctiveness from S. MP's electoral survival requires demonstrating it can influence policy — these motions are proof points.
+
+#### Centerpartiet (C) — Electoral Play
+C is walking the tightest rope: it sometimes supports the government on business/market issues but is under pressure from rural and green-liberal voters. C's motions demand market-based solutions (compensation for landowners in wind power areas, flexibility strategy in electricity system) — a coherent liberal brand distinct from both the government and S.
+
+#### Vänsterpartiet (V) — Electoral Play
+V's rejection motions (HD024134, HD024135) are pure base mobilization. V does not expect to win these votes; it expects to use them as evidence of its principled opposition. The GBV motion (HD024133) similarly signals feminist left credentials.
+
+### Electoral Impact Scenarios
+
+#### If Government Defeats All Motions (base case, 50%)
+- Opposition can still campaign on the votes
+- "We proposed this; the governing bloc voted against" is a usable message
+- HD024136 (criminal age) becomes the sharpest example
+
+#### If S Wins on Criminal Age Amendment (25%)
+- S's most significant electoral victory of the mandate period
+- "Responsible opposition delivers" is the campaign headline
+- S enters election having improved a government crime bill
+
+#### If Energy Opposition Wins Amendment (15%)
+- Climate-conscious voters see S+MP+C as a viable energy-competent coalition
+- Useful for coalition formation signalling
+
+### Seat Implications [ESTIMATED — no current polling]
+
+Current polling (cached from prior runs) suggests a close race. The governing TidöPakten coalition holds a slim majority. If any of the three high-probability scenarios (S wins criminal age, S-V win harbor rejection, energy amendment passes) materialize, they could contribute 0.5–1.5 percentage points of swing toward S in crime/environment voter segments.
+
+**Note**: This analysis is based on prior cached polling data; current polling not retrieved in this workflow run.
+
+## Risk Assessment
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/risk-assessment.md -->
+
+### Risk Register
+
+#### R-01: Government Defeat on Criminal Age Threshold [CRITICAL]
+- **Description**: JuU fails to produce a majority for age 13; amendment to age 14 passes with S+C+(possibly SD defectors)
+- **Likelihood**: MEDIUM-HIGH (40–55%)
+- **Impact**: HIGH — flagship crime policy defeated in final pre-election session; devastating for governing coalition's "tough on crime" brand
+- **Mitigation available**: Government could withdraw prop. 246 before vote or amend it to age 14 pre-emptively; SD whipping
+- **Residual risk**: HIGH even with mitigation if S can force a public vote
+
+#### R-02: Environmental Permitting Authority Blocked or Heavily Amended [HIGH]
+- **Description**: MJU produces amendments incorporating S or MP demands, substantially altering the new authority's design
+- **Likelihood**: MEDIUM (30–45%)
+- **Impact**: MEDIUM — setback for government's permitting reform agenda; S wins credit for "improving" the proposal
+- **Mitigation**: Government engages S in bilateral negotiations before committee markup
+
+#### R-03: Energy/Wind Opposition Alliance Produces Majority for Amendment [HIGH]
+- **Description**: S+MP+C+V majority in NU or MJU produces amendment forcing earlier municipal veto reform
+- **Likelihood**: MEDIUM (30–40%) — requires S+C+MP+V joint majority; SD/M must hold
+- **Impact**: MEDIUM-HIGH — energy policy reframe ahead of elections; C and MP score a climate win
+- **Mitigation**: SD must hold line on municipal veto; government engages C on compensation mechanisms
+
+#### R-04: Harbor Law Joint S-V Defeat [MEDIUM]
+- **Description**: S (HD024125) + V (HD024135) rejection motions produce majority to reject prop. 234
+- **Likelihood**: LOW-MEDIUM (20–30%) — requires S+V+MP+C majority; TU composition unclear
+- **Impact**: MEDIUM — port sector uncertainty; disrupts logistics sector legislation
+- **Mitigation**: Government consults Swedish Port Association before TU markup
+
+#### R-05: IMF Data Gap Weakens Analysis [LOW]
+- **Description**: IMF fiscal context unavailable; economic claims in this analysis rely on SCB/prior-run estimates
+- **Likelihood**: N/A (already materialized — IMF API unavailable in this run)
+- **Impact**: LOW — economic context for motions is secondary to political analysis
+- **Mitigation**: Annotated as data gap in methodology-reflection.md; prior cached estimates used where relevant
+
+### Risk Heatmap
+
+```
+          LOW     MEDIUM    HIGH
+HIGH    |       |          |  R-01  |
+MEDIUM  |       |  R-02    |  R-03  |
+LOW     |  R-05 |  R-04    |        |
+        |_______|__________|________|
+         LOW    MEDIUM    HIGH
+                IMPACT
+```
+
+## SWOT Analysis
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/swot-analysis.md -->
+
+### Object of Analysis
+The strategic position of the parliamentary opposition (S, MP, V, C) through this wave of 16 active motions across six policy clusters, in the context of the 2026 election campaign.
+
+### Strengths
+
+**S1 — Volume and breadth**: S has filed motions on all six proposition clusters, demonstrating comprehensive parliamentary engagement. No other opposition party matches this breadth.
+
+**S2 — Youth crime framing**: S's rejection of age 13 (in favour of 14) is a sophisticated triangulation: it accepts the government's crime severity framing while rejecting what polls suggest is a politically unpopular specific measure. This "responsible opposition" posture is exactly what centrist voters find credible.
+
+**S3 — Energy consensus**: S, MP, and C all demand faster fossil-free energy expansion, creating rare cross-opposition unity on Sweden's most economically critical transition policy. This unity strengthens the legislative pressure on the government.
+
+**S4 — Pre-election accountability lock-in**: Filing committee motions creates official parliamentary records that become part of the 2026 election platform. Voters and media can verify commitments.
+
+**S5 — V reinforcement**: V's rejection motions (HD024134, HD024135) provide left-flank cover for S's moderate alternatives — making S seem like the reasonable choice.
+
+### Weaknesses
+
+**W1 — Fragmentation**: No unified joint motion across S+MP+V+C on any cluster means the government can negotiate separately with each party, seeking partial committee support.
+
+**W2 — Withdrawn motion (HD024127)**: The unexplained withdrawal creates a narrative of disorganization at a politically sensitive moment. Even one unexplained withdrawal can be used by governing parties to suggest opposition was unprepared.
+
+**W3 — Criminal justice credibility gap**: S has previously supported government crime packages; rejecting the 13-year threshold now requires consistent public messaging to avoid being labelled as soft on crime.
+
+**W4 — No joint S-MP formal alliance**: MP is outside S's formal coalition agreement, complicating post-election government formation narratives.
+
+### Opportunities
+
+**O1 — Committee amendments**: Enough opposition motions with substantive arguments could force committee-level amendments, handing the opposition a concrete legislative win before the election.
+
+**O2 — SD/KD fractures**: If SD defers on the criminal age threshold or M/KD split from SD on energy policy, the opposition could secure majority amendments.
+
+**O3 — Media agenda-setting**: The energy cluster motions, if covered together, reinforce the "government stalling Sweden's climate future" narrative — a powerful pre-election message.
+
+**O4 — International comparison**: HD024136's ECHR argument (age 13 as internationally exceptional) invites academic and civil society validators who provide media credibility.
+
+### Threats
+
+**T1 — Government legislative defeat scenario**: If the government loses the criminal age vote AND the wind power vote, the narrative benefits the opposition — but could also trigger SD to extract further policy concessions, increasing instability.
+
+**T2 — Whipping failures**: With complex technical bills across six committees, there is risk of individual MP non-attendance at votes, accidentally defeating government proposals the opposition wanted to lose.
+
+**T3 — Media simplification**: Complex energy system motions risk being rendered as "S opposes electricity" rather than "S demands faster transition."
+
+**T4 — Time compression**: With elections 132 days away, committee work is compressed. Any committee that fails to complete hearings before summer recess may push votes into post-election territory.
+
+## Threat Analysis
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/threat-analysis.md -->
+
+### Threat Landscape
+
+#### TH-01: Legislative Bypass via Time Pressure [MODERATE THREAT]
+The compressed timeline (132 days to election) creates incentives for the government to invoke rapid committee procedures (brådskande beredning), potentially limiting public consultation on technically complex measures (env. permitting authority, electricity system redesign). This threatens democratic deliberation quality.
+
+**Affected**: HD024124 (MJU, env. permitting), HD024129/130/137/138 (NU, electricity system)
+**Indicator to watch**: MJU/NU announcing compressed hearing schedules (< 4 weeks)
+**Severity**: MEDIUM
+
+#### TH-02: Opposition Fragmentation as Government Weapon [MODERATE THREAT]
+With four parties filing competing motions on the same propositions (env. permitting: S/MP/V/C each file separately), the government committee leadership can use the fragmentation to deny any single amendment the votes needed. This is a procedural exploitation of legislative pluralism.
+
+**Affected**: All four MJU motions (HD024124, HD024131, HD024134, HD024139)
+**Indicator**: Government proposes "joint committee consideration" procedures that neutralize individual tillägg requests
+**Severity**: MEDIUM
+
+#### TH-03: Criminal Age Lowering as ECHR Risk [HIGH THREAT to Sweden's international standing]
+S's HD024136 explicitly flags that lowering criminal age to 13 would be internationally exceptional within the EU (most peers use 14 or higher) and could raise issues under ECHR Article 3 (degrading treatment) and Article 6 (fair trial). If Sweden implements age 13 against ECHR guidance, it risks:
+- Strasbourg proceedings 3–5 years post-implementation
+- Europaparlamentarisk critique
+- Kriminalvården capacity crisis (juveniles in adult-adjacent facilities)
+
+**Severity**: HIGH (long-term)
+
+#### TH-04: Energy Policy Paralysis Pre-Election [MODERATE THREAT]
+If committee votes on prop. 239 and 240 are delayed until after the election, the energy sector faces a policy vacuum during a critical build-out period for wind power and grid infrastructure. This threatens Sweden's 2030 fossil-free electricity target.
+
+**Affected**: HD024126, HD024129, HD024132, HD024130, HD024137, HD024138
+**Indicator to watch**: NU announces post-summer recess consideration
+**Severity**: MEDIUM-HIGH (economic)
+
+#### TH-05: Disinformation Risk on Youth Crime Narrative [LOW-MODERATE]
+The criminal age debate creates fertile ground for disinformation campaigns claiming Sweden has raised/lowered criminal age dramatically — conflating the age-13 vs age-14 debate with a false "Sweden decriminalizes youth crime" narrative that could spread via social media (particularly from anti-Swedish foreign state actors who have historically amplified Swedish crime statistics).
+
+**Severity**: LOW-MODERATE in current cycle; escalates if election campaign heats up
+
+## Historical Parallels
+<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/historical-parallels.md -->
+
+### Parallel 1: The 2021/22 Wind Power Veto Reform Failure
+
+In autumn 2021, the S-led government (Löfven II, then Andersson government) proposed reforms to the municipal wind power veto. SD blocked the reform, along with M and KD, in a calculated pre-election positioning move. The reform died. This is directly parallel to the current situation in 2026, where S (now in opposition) demands the very reform it failed to deliver in government.
+
+**Key parallel with HD024126 (S) and HD024132 (MP)**:
+- 2021: S was in government; SD blocked
+- 2026: S is in opposition; demands the reform
+- Difference: S can now campaign on "we tried, SD blocked, vote for us"
+- Risk: "Why didn't you do it in 2014–2018 when SD had fewer seats and less blocking power?"
+
+### Parallel 2: The 2010 Danish Criminal Age Reform
+
+Denmark lowered its criminal age from 15 to 14 in 2010 under a right-wing government. The reform was controversial, and several evaluations (2013, 2016, 2019) suggested mixed effects: increased deterrence claimed but also concerns about net-widening among marginalized youth. In 2022, Denmark partially reversed the reform by raising the age back toward 15 for some categories.
+
+**Key parallel with HD024136 (S)**:
+- S's argument that age 14 is more "Nordic" is historically correct — Denmark's experience with 14 is cautionary
+- The 13-year-old threshold Sweden's government proposes would place Sweden below even Denmark's controversial 2010 reform
+- S's motion should cite Denmark's mixed evaluation as supporting evidence (this analysis recommends improving the motion's comparative section in Pass 2)
+
+### Parallel 3: 2017 Establishment of Lantmäteriet's Spatial Planning Role
+
+In 2017, Sweden reorganized environmental permitting by giving spatial planning functions to regional bodies. The transition was criticized for regional competency losses and inconsistent application — exactly what S's HD024124 warns about for the new permitting authority (prop. 238).
+
+**Key parallel**: The 2017 transition's failures are directly cited (implicitly) in S's demand for "orderly transition" and "maintained regional presence." S's institutional memory of what went wrong in 2017 is analytically valid.
+
+### Parallel 4: 1998 Tonnage Tax Introduction in Denmark/Norway
+Sweden's shipping sector has long pressed for international-standard tonnage taxation. Denmark introduced its system in 1998; Norway in 1996. Swedish shipping companies have operated at a competitive disadvantage for 28 years. HD024128 (S) enters a decades-old policy saga with a specific amendment request on classification criteria.
+
+### Pattern Recognition
+All four parallels show a consistent Swedish parliamentary pattern: **complex technical reforms with international precedents proceed slowly in Sweden due to cross-party blocking dynamics, then require significant political moment (election proximity) to achieve legislative attention.** The 2026 election is creating the required political moment for several long-stalled reforms simultaneously.
+
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/comparative-international.md -->
 
@@ -974,40 +969,6 @@ HD024136 (S) argues that Sweden's proposed threshold of 13 years would be intern
 - Energy investment needed for fossil-free 2035: SEK 200–400bn [est., Swedish Energy Agency 2024]
 - **Note**: All economic figures above are derived from prior cached data; IMF API was unreachable during this workflow run (2026-05-04). See methodology-reflection.md for data gap documentation.
 
-## Historical Parallels
-<!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/historical-parallels.md -->
-
-### Parallel 1: The 2021/22 Wind Power Veto Reform Failure
-
-In autumn 2021, the S-led government (Löfven II, then Andersson government) proposed reforms to the municipal wind power veto. SD blocked the reform, along with M and KD, in a calculated pre-election positioning move. The reform died. This is directly parallel to the current situation in 2026, where S (now in opposition) demands the very reform it failed to deliver in government.
-
-**Key parallel with HD024126 (S) and HD024132 (MP)**:
-- 2021: S was in government; SD blocked
-- 2026: S is in opposition; demands the reform
-- Difference: S can now campaign on "we tried, SD blocked, vote for us"
-- Risk: "Why didn't you do it in 2014–2018 when SD had fewer seats and less blocking power?"
-
-### Parallel 2: The 2010 Danish Criminal Age Reform
-
-Denmark lowered its criminal age from 15 to 14 in 2010 under a right-wing government. The reform was controversial, and several evaluations (2013, 2016, 2019) suggested mixed effects: increased deterrence claimed but also concerns about net-widening among marginalized youth. In 2022, Denmark partially reversed the reform by raising the age back toward 15 for some categories.
-
-**Key parallel with HD024136 (S)**:
-- S's argument that age 14 is more "Nordic" is historically correct — Denmark's experience with 14 is cautionary
-- The 13-year-old threshold Sweden's government proposes would place Sweden below even Denmark's controversial 2010 reform
-- S's motion should cite Denmark's mixed evaluation as supporting evidence (this analysis recommends improving the motion's comparative section in Pass 2)
-
-### Parallel 3: 2017 Establishment of Lantmäteriet's Spatial Planning Role
-
-In 2017, Sweden reorganized environmental permitting by giving spatial planning functions to regional bodies. The transition was criticized for regional competency losses and inconsistent application — exactly what S's HD024124 warns about for the new permitting authority (prop. 238).
-
-**Key parallel**: The 2017 transition's failures are directly cited (implicitly) in S's demand for "orderly transition" and "maintained regional presence." S's institutional memory of what went wrong in 2017 is analytically valid.
-
-### Parallel 4: 1998 Tonnage Tax Introduction in Denmark/Norway
-Sweden's shipping sector has long pressed for international-standard tonnage taxation. Denmark introduced its system in 1998; Norway in 1996. Swedish shipping companies have operated at a competitive disadvantage for 28 years. HD024128 (S) enters a decades-old policy saga with a specific amendment request on classification criteria.
-
-### Pattern Recognition
-All four parallels show a consistent Swedish parliamentary pattern: **complex technical reforms with international precedents proceed slowly in Sweden due to cross-party blocking dynamics, then require significant political moment (election proximity) to achieve legislative attention.** The 2026 election is creating the required political moment for several long-stalled reforms simultaneously.
-
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/implementation-feasibility.md -->
 
@@ -1051,6 +1012,45 @@ All four parallels show a consistent Swedish parliamentary pattern: **complex te
 
 #### HD024133 (V) / HD024140 (C) — GBV National Strategy
 **Feasibility**: MEDIUM — national strategy documents (handlingsplan) are within government executive discretion; no legislative amendment required; budget-dependent
+
+## Media Framing Analysis
+<!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/media-framing-analysis.md -->
+
+### Expected Media Framings
+
+#### Frame 1: "Opposition Battles Government on Crime" (HIGH probability)
+Swedish tabloids (Aftonbladet, Expressen) and broadcast media will almost certainly lead with the criminal age debate — HD024136 (S) rejects age 13. This is the most emotionally accessible framing: young criminals, gang violence, S vs. government.
+
+**Risk to opposition**: This framing compresses S's nuanced 14-vs-13 position into "S defends youth criminals." Media-savvy communications needed.
+**Recommended counter-framing**: "S wants effective crime policy, not symbolic policy that the courts will overturn."
+
+#### Frame 2: "Energy Battle — Opposition Demands Faster Climate Action" (MEDIUM probability)
+Quality press (DN, SvD) and specialized media (Ny Teknik) will frame the energy cluster as opposition demanding faster energy transition. This framing favors the opposition.
+
+**Risk**: Complex technical content (municipal veto, flexibility strategy, electricity certificates) may not break through to general media.
+**Recommended communications**: Simple metaphors — "Sweden has the best wind resources in Europe; the government is blocking the construction of turbines."
+
+#### Frame 3: "Governing Coalition Under Pressure" (MEDIUM probability)
+Political correspondents will frame this as a test of TidöPakten's cohesion and the government's ability to deliver its legislative agenda 132 days before an election.
+
+**Key narrative element**: The simultaneous challenges across six committees frames the government as besieged — potentially useful to the opposition.
+
+#### Frame 4: "Left Coalition Forms Against Government" (LOW probability but dangerous)
+Right-wing media and governing party communications may attempt to frame S+MP+V+C as a pre-election "left bloc" — uniting very different parties under a single label.
+
+**Reality check**: C and V have fundamentally different economic policy positions; the "left bloc" framing is reductive. But it could stick if S doesn't manage its messaging.
+
+### Media Blind Spots to Counter
+
+1. **Withdrawal of HD024127**: Media will likely ignore this; it should be addressed proactively by the withdrawing party
+2. **GBV motions (HD024133, HD024140)**: Risks being crowded out by crime/energy coverage; V and C communications teams should pitch this separately
+3. **Tonnage tax (HD024128)**: Specialized but important; maritime industry press will cover; general media unlikely
+
+### Social Media Vectors
+
+**YouTube/TikTok**: Youth crime debate is high-virality; expect deepfake/disinformation risk on "Sweden lowering criminal age"
+**X (Twitter)**: Energy debate generates intense climate community engagement; international observers following
+**Reddit/Flashback**: Harbor law and tonnage tax unlikely to trend; criminal age debate will be amplified by crime debate communities
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/devils-advocate.md -->
@@ -1328,13 +1328,6 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/significance-scoring.md)
-- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/media-framing-analysis.md)
-- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/stakeholder-perspectives.md)
-- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/forward-indicators.md)
-- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/scenario-analysis.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/risk-assessment.md)
-- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/swot-analysis.md)
-- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/threat-analysis.md)
 - [`documents/HD024124-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/documents/HD024124-analysis.md)
 - [`documents/HD024125-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/documents/HD024125-analysis.md)
 - [`documents/HD024126-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/documents/HD024126-analysis.md)
@@ -1351,12 +1344,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`documents/HD024138-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/documents/HD024138-analysis.md)
 - [`documents/HD024139-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/documents/HD024139-analysis.md)
 - [`documents/HD024140-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/documents/HD024140-analysis.md)
-- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/election-2026-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/voter-segmentation.md)
-- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/comparative-international.md)
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/forward-indicators.md)
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/scenario-analysis.md)
+- [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/election-2026-analysis.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/swot-analysis.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/threat-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/historical-parallels.md)
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/comparative-international.md)
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/implementation-feasibility.md)
+- [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/devils-advocate.md)
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/motions/cross-reference-map.md)
