@@ -1,0 +1,99 @@
+{
+  "generated_at": "2026-05-04T00:00:00Z",
+  "article_date": "2026-05-04",
+  "subfolder": "propositions",
+  "pir_cycle": "2025-26-Q4",
+  "election_proximity_days": 132,
+  "diw_multiplier": 1.5,
+  "pir_items": [
+    {
+      "id": "PIR-MIG-01",
+      "title": "Migration Policy Trajectory",
+      "status": "ANSWERED",
+      "evidence": "HD03262-HD03265 submitted 2026-04-30; permanent permit elimination confirmed; EU pact transposition underway",
+      "confidence": "HIGH",
+      "next_review": "2026-05-18",
+      "triggered_by": ["HD03262", "HD03263", "HD03264", "HD03265"]
+    },
+    {
+      "id": "PIR-DEF-01",
+      "title": "NATO Integration Depth",
+      "status": "PARTIALLY_ANSWERED",
+      "evidence": "HD03254 provides operational framework; classified operational details not available in public proposition",
+      "confidence": "MEDIUM",
+      "next_review": "2026-06-01",
+      "triggered_by": ["HD03254"]
+    },
+    {
+      "id": "PIR-ELEC-01",
+      "title": "Government Pre-Election Legislative Completion",
+      "status": "ANSWERED",
+      "evidence": "Migration cluster + NATO + transparency propositions confirm government completing Tidö Agreement agenda ahead of September 2026 election",
+      "confidence": "HIGH",
+      "next_review": "2026-06-01",
+      "triggered_by": ["HD03262", "HD03254", "HD03258"]
+    },
+    {
+      "id": "PIR-ECON-01",
+      "title": "Fiscal Impact of Migration Reforms",
+      "status": "PARTIALLY_ANSWERED",
+      "evidence": "IMF WEO April 2026: Sweden GDP 2.0% forecast 2026, debt 36.7% GDP. Fiscal space adequate. Detailed implementation costs require Riksrevisionen analysis.",
+      "confidence": "MEDIUM",
+      "data_source": {
+        "provider": "imf",
+        "dataflow": "WEO",
+        "indicators": ["NGDP_RPCH", "GGXWDG_NGDP"],
+        "vintage": "April 2026",
+        "retrieved_at": "2026-05-04"
+      },
+      "next_review": "2026-07-01",
+      "triggered_by": ["HD03262", "HD03263"]
+    },
+    {
+      "id": "PIR-TRANS-01",
+      "title": "Political Transparency Reform",
+      "status": "ANSWERED",
+      "evidence": "HD03258 provides lobbying register, party finance disclosure, asset declarations pre-election",
+      "confidence": "HIGH",
+      "next_review": "2026-06-15",
+      "triggered_by": ["HD03258"]
+    }
+  ],
+  "forward_pir": [
+    {
+      "id": "PIR-LAGR-01",
+      "title": "Lagrådet Opinions on HD03262 and HD03265",
+      "status": "PENDING",
+      "expected_by": "2026-05-25",
+      "intelligence_value": "HIGH"
+    },
+    {
+      "id": "PIR-COAL-01",
+      "title": "Centre Party Post-Election Coalition Preference",
+      "status": "PENDING",
+      "expected_by": "2026-08-01",
+      "intelligence_value": "VERY_HIGH"
+    },
+    {
+      "id": "PIR-MP-01",
+      "title": "MP Threshold Risk",
+      "status": "ONGOING",
+      "watch_threshold": "Below 4% in two consecutive polls",
+      "intelligence_value": "CRITICAL"
+    }
+  ],
+  "economic_provenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicators_used": ["NGDP_RPCH", "GGXWDG_NGDP"],
+    "vintage": "April 2026",
+    "retrieved_at": "2026-05-04",
+    "values": {
+      "SWE_NGDP_RPCH_2024": 1.0,
+      "SWE_NGDP_RPCH_2025F": 1.5,
+      "SWE_NGDP_RPCH_2026F": 2.0,
+      "SWE_GGXWDG_NGDP_2024": 33.9,
+      "SWE_GGXWDG_NGDP_2026F": 36.7
+    }
+  }
+}
