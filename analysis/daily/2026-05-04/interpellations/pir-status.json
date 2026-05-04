@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-05-04T07:45:00Z",
+  "article_date": "2026-05-04",
+  "subfolder": "interpellations",
+  "workflow": "news-interpellations",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "description": "Will the government announce measurable gang crime KPIs following the HD10458 interpellation?",
+      "status": "open",
+      "priority": "critical",
+      "source_dok_id": "HD10458",
+      "collection_trigger": "Government press release or chamber debate response (May 19-25)",
+      "expected_resolution": "2026-05-25",
+      "wep_probability": 0.55,
+      "carry_forward": true
+    },
+    {
+      "id": "PIR-2",
+      "description": "Will Sweden commit to restoring ESA contribution ranking by 2027 ministerial cycle?",
+      "status": "open",
+      "priority": "high",
+      "source_dok_id": "HD10461",
+      "collection_trigger": "Edholm chamber response or VÅP (supplementary budget)",
+      "expected_resolution": "2026-06-15",
+      "wep_probability": 0.50,
+      "carry_forward": true
+    },
+    {
+      "id": "PIR-3",
+      "description": "Will SD escalate agency governance campaign with additional interpellations after HD10459?",
+      "status": "open",
+      "priority": "medium",
+      "source_dok_id": "HD10459",
+      "collection_trigger": "New SD interpellations on agency governance; SD congress statement",
+      "expected_resolution": "2026-07-01",
+      "wep_probability": 0.75,
+      "carry_forward": true
+    },
+    {
+      "id": "PIR-4",
+      "description": "Will government commit to SFV capital investment in autumn 2026 budget following RiR 2025:30?",
+      "status": "open",
+      "priority": "medium",
+      "source_dok_id": "HD10460",
+      "collection_trigger": "Liljestrand response or autumn budget appropriation table",
+      "expected_resolution": "2026-09-30",
+      "wep_probability": 0.70,
+      "carry_forward": true
+    }
+  ],
+  "closed_pirs": [],
+  "prior_pirs_carried_forward": 0,
+  "new_pirs_raised": 4
+}
