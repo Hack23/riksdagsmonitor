@@ -67,7 +67,7 @@ function makeStubClient(b: StubBehaviour = {}): ImfClient {
   return {
     weoVintage: 'WEO-2026-04',
     async getWeoIndicator(_iso3: string, weoCode: string): Promise<ImfDataPoint[]> {
-      const mode = weoCode === 'GGXONLB_NGDP' ? (b.fm ?? 'ok') : (b.weo ?? 'ok');
+      const mode = weoCode === 'GGXWDG_NGDP' ? (b.fm ?? 'ok') : (b.weo ?? 'ok');
       if (mode === 'throw') throw new Error('network: ECONNREFUSED');
       if (mode === 'empty') return [];
       return [fakeDataPoint(2025, 1.9)];

@@ -11,7 +11,7 @@ description: |
        on success/degradation or `data/imf-unavailable.flag` on critical
        WEO/FM failure, so the agentic analysis pipeline can annotate per
        `analysis/imf/agentic-integration.md` §"Pre-warm gate" and
-       `.github/aw/ECONOMIC_DATA_CONTRACT.md` v2.1.
+       `.github/aw/ECONOMIC_DATA_CONTRACT.md` v3.0.
 
   This action exists to deduplicate ~80 lines of identical YAML across the 11
   news workflow files. Edit it in one place.
@@ -162,7 +162,7 @@ runs:
           "stale": true,
           "probes": [],
           "checkedAt": "$NOW",
-          "warningBlock": "> ⚠️ **IMF context unavailable**\n>\n> The IMF pre-flight check at $NOW timed out or crashed before completing. Economic claims in this article are grounded in the most recent cached IMF release where available; figures labelled \"inferred\" use SCB ground-truth or Riksbank minutes as the fallback source per \`analysis/imf/agentic-integration.md\` §6.1.\n>\n> Failed probes: pre-flight script timeout-or-crash-before-artifact-write.\n>\n> This annotation is required by \`.github/aw/ECONOMIC_DATA_CONTRACT.md\` v2.1 §\"Vintage discipline\" and the AI-FIRST quality principle in \`AGENTS.md\`.",
+          "warningBlock": "> ⚠️ **IMF context unavailable**\n>\n> The IMF pre-flight check at $NOW timed out or crashed before completing. Economic claims in this article are grounded in the most recent cached IMF release where available; figures labelled \"inferred\" use SCB ground-truth or Riksbank minutes as the fallback source per \`analysis/imf/agentic-integration.md\` §6.1.\n>\n> Failed probes: pre-flight script timeout-or-crash-before-artifact-write.\n>\n> This annotation is required by \`.github/aw/ECONOMIC_DATA_CONTRACT.md\` v3.0 §\"Vintage discipline\" and the AI-FIRST quality principle in \`AGENTS.md\`.",
           "reason": "timeout-or-crash-before-artifact-write"
         }
         EOF
