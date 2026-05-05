@@ -245,7 +245,7 @@ jobs:
       
       - name: Install dependencies
         if: steps.nightly.outputs.version != ''
-        run: npm ci --ignore-engines
+        run: npm ci
       
       - name: TypeScript type-check (browser)
         if: steps.nightly.outputs.version != ''

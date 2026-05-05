@@ -1,7 +1,7 @@
 name: 'News workflow pre-warm & pre-flight'
 description: |
   Shared setup for every `.github/workflows/news-*.md` agentic workflow:
-    1. Set up Node.js 25 (matches `runtimes.node.version` in every workflow).
+    1. Set up Node.js 26 (matches `runtimes.node.version` in every workflow).
     2. `npm ci --prefer-offline --no-audit`.
     3. Pre-warm the riksdag-regering MCP server (Render.com cold-start mitigation).
     4. Pre-flight DNS + HTTPS reachability + MCP `tools/list` probe for the
@@ -19,7 +19,7 @@ inputs:
   node-version:
     description: 'Node.js version (must match the workflow `runtimes.node.version`).'
     required: false
-    default: '25'
+    default: '26'
   mcp-url:
     description: 'Riksdag-regering MCP HTTP endpoint to pre-warm.'
     required: false
