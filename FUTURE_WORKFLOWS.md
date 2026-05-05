@@ -715,7 +715,7 @@ gantt
 
 | Year | Projected Distinct Workflows | New Capabilities |
 | --- | --- | --- |
-| 2026 Q1 | **32** (43 files) | TypeScript foundation, 11 agentic workflows, Node.js 25 ✅ |
+| 2026 Q1 | **32** (43 files) | TypeScript foundation, 11 agentic workflows, Node.js 26 ✅ |
 | 2026 Q2 | **33** (44 files) | **Node.js 26 Current upgrade** (around Apr release; LTS later 2026) |
 | 2026 Q4 | **39** (50 files) | CIA pipeline v2, preview deploys, visual regression |
 | 2027 Q4 | **44** (55 files) | Node.js 27 LTS, OSINT pipeline, ML predictions, real-time streams |

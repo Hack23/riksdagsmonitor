@@ -108,7 +108,7 @@ Every news workflow declares the **same** tool & runtime surface for parity, res
 
 | Field | Value | Purpose |
 |-------|-------|---------|
-| `runtimes.node.version` | `"25"` | Pinned Node 25 for IMF CLI + render scripts |
+| `runtimes.node.version` | `"26"` | Pinned Node 26 for IMF CLI + render scripts |
 | `engine.id` / `engine.model` | `copilot` / `claude-sonnet-4.6` | Faster Sonnet model (replaced `claude-opus-4.7` in the v0.71.3 refactor for throughput within the 60-min budget) |
 | `engine.mcp.session-timeout` | ~~`1h`~~ **removed** | This field was added in gh-aw v0.71.3 but is rejected by MCP Gateway v0.3.1 (`additionalProperties 'sessionTimeout' not allowed`). Removed from all workflows until a compatible MCP Gateway version ships. |
 | `tools.github.toolsets` | `[all]` | Full GitHub MCP surface (issues, PRs, repos, code-search, actions, releases, discussions, …); see [`github-tools.md`](https://github.com/github/gh-aw/blob/main/docs/src/content/docs/reference/github-tools.md) |
@@ -119,7 +119,7 @@ Every news workflow declares the **same** tool & runtime surface for parity, res
 | `timeout-minutes` | `60` | Job ceiling measured from job start; agent phases target completion by agent minute 40, PR by agent minute 42 (hard 45) to reserve setup/safe-output headroom |
 | `safe-outputs.create-pull-request.fallback-as-issue` | `true` (explicit) | If org disables Actions PR creation, fall back to an issue + branch link instead of failing |
 | `safe-outputs.create-pull-request.if-no-changes` | `warn` | Empty patches emit a warning instead of failing the run (e.g. duplicate-date dispatches) |
-| `network.allowed` | `node`, `github`, `defaults` + explicit Docker Hub hosts (`docker.io`, `registry-1.docker.io`, `auth.docker.io`, `production.cloudflare.docker.com`) + IMF/SCB/Riksdag/Statskontoret/site domains | Ecosystem identifiers preferred per upstream `network.md`. The broad `containers` ecosystem (which would also permit `ghcr.io`, `quay.io`, `gcr.io`, `mcr.microsoft.com`, `pkgs.k8s.io`, …) is **deliberately omitted** to keep least-privilege egress; only the minimal Docker Hub hosts actually required to resolve `node:25-alpine` for the SCB and World Bank MCP servers are enumerated. Any future switch to `ghcr.io`, `quay.io`, or other registries must add the specific hosts and be reviewed against the egress allowlist policy before merge. |
+| `network.allowed` | `node`, `github`, `defaults` + explicit Docker Hub hosts (`docker.io`, `registry-1.docker.io`, `auth.docker.io`, `production.cloudflare.docker.com`) + IMF/SCB/Riksdag/Statskontoret/site domains | Ecosystem identifiers preferred per upstream `network.md`. The broad `containers` ecosystem (which would also permit `ghcr.io`, `quay.io`, `gcr.io`, `mcr.microsoft.com`, `pkgs.k8s.io`, …) is **deliberately omitted** to keep least-privilege egress; only the minimal Docker Hub hosts actually required to resolve `node:26-alpine` for the SCB and World Bank MCP servers are enumerated. Any future switch to `ghcr.io`, `quay.io`, or other registries must add the specific hosts and be reviewed against the egress allowlist policy before merge. |
 | `permissions` | `contents: read`, `issues: read`, `pull-requests: read`, `actions: read`, `discussions: read`, `security-events: read` | Least-privilege agent token; write capabilities live exclusively in the safe-outputs runner job |
 
 ## 🛠️ Automation & Tooling (4)

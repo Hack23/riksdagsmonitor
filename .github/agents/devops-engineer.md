@@ -164,7 +164,7 @@ jobs:
 
 - **Trigger**: `push` to `main`/`develop`, `pull_request` to `main`
 - **Permissions**: `contents: read`, `pull-requests: write`, `checks: write` (least privilege default)
-- **Stage 1 — Quality**: harden-runner → checkout → setup-node@SHA (Node 25) with npm cache → `npm ci` → `npm run lint:html` → `check:links` → `validate:json`
+- **Stage 1 — Quality**: harden-runner → checkout → setup-node@SHA (Node 26) with npm cache → `npm ci` → `npm run lint:html` → `check:links` → `validate:json`
 - **Stage 2 — Security**: `github/codeql-action/analyze@SHA` → `npm audit --audit-level=high`
 - **Stage 3 — Build**: `npm run build` → `npm run test:build` → upload artifact (`site-build`, 7-day retention)
 - **Stage 4 — Performance**: download artifact → Lighthouse CI (`@lhci/cli`)
@@ -178,7 +178,7 @@ All actions **pinned to SHA**; `step-security/harden-runner@SHA` is the first st
 
 - **Trigger**: `schedule: cron '0 2 * * *'` (02:00 CET daily) + `workflow_dispatch` with `force_refresh` boolean input
 - **Permissions**: `contents: write`, `pull-requests: write`
-- **Steps**: harden-runner → checkout → setup-node (Node 25 + npm cache) → `npm ci` → `npm run pipeline:fetch-cia` → `pipeline:validate` → `pipeline:cache` → `peter-evans/create-pull-request@SHA` producing branch `automated/cia-data-YYYYMMDD`, labels `automated-pipeline,data-update`, assignee `data-pipeline-specialist`.
+- **Steps**: harden-runner → checkout → setup-node (Node 26 + npm cache) → `npm ci` → `npm run pipeline:fetch-cia` → `pipeline:validate` → `pipeline:cache` → `peter-evans/create-pull-request@SHA` producing branch `automated/cia-data-YYYYMMDD`, labels `automated-pipeline,data-update`, assignee `data-pipeline-specialist`.
 
 ### Performance Optimization
 

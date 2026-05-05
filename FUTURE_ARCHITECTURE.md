@@ -640,7 +640,7 @@ Amplify Hosting (SSR) → CloudFront
 **Compute:**
 | Current | Future | Rationale |
 |---------|--------|-----------|
-| Static HTML | AWS Lambda (Python 3.12, Node.js 25) | Serverless functions, pay-per-request |
+| Static HTML | AWS Lambda (Python 3.12, Node.js 26) | Serverless functions, pay-per-request |
 | N/A | AWS Amplify Hosting | Server-side rendering (SSR), edge functions |
 
 **API:**
@@ -2009,7 +2009,7 @@ C4Container
     Person(reader, "Reader / Researcher", "Riksdagsmonitor.com")
     System_Boundary(rm, "Riksdagsmonitor — AWS Serverless") {
         Container(api, "API Gateway", "REST / WebSocket", "Edge entry")
-        Container(lambda, "Lambda Workers", "Node 25 / TypeScript", "News + analysis pipeline")
+        Container(lambda, "Lambda Workers", "Node 26 / TypeScript", "News + analysis pipeline")
         Container(bedrock, "Amazon Bedrock", "Claude Sonnet · Haiku", "AI analysis")
         Container(neptune, "Neptune Graph", "Property graph", "Political relationships")
         Container(aurora, "Aurora Serverless", "PostgreSQL", "Time-series + voting")

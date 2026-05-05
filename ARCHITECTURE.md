@@ -213,7 +213,7 @@ graph TB
         
         Dashboards[Interactive Dashboards<br/>Container: Client-Side App<br/>Chart.js v4.4.1, D3.js v7.9.0<br/>Papa Parse v5.5.3]
         
-        NewsEngine[Agentic News Pipeline<br/>Container: gh-aw + Node 25 scripts<br/>23 artifacts → article.md → HTML]
+        NewsEngine[Agentic News Pipeline<br/>Container: gh-aw + Node 26 scripts<br/>23 artifacts → article.md → HTML]
     end
     
     subgraph "Storage Layer"
@@ -270,7 +270,7 @@ graph TB
 |-----------|------------|----------------|--------|
 | **Static Website** | HTML5/CSS3/JavaScript | Present intelligence content, 14-language support | ✅ Active |
 | **Interactive Dashboards** | Chart.js v4.4.1, D3.js v7.9.0, Papa Parse v5.5.3 | Data visualization, committee analysis, coalition tracking | ✅ Active |
-| **Agentic News Pipeline** | GitHub Agentic Workflows, Node 25 scripts, riksdag-regering MCP, SCB MCP, IMF TypeScript client | 23-artifact analysis, deterministic article aggregation, 14-language HTML rendering | ✅ Active |
+| **Agentic News Pipeline** | GitHub Agentic Workflows, Node 26 scripts, riksdag-regering MCP, SCB MCP, IMF TypeScript client | 23-artifact analysis, deterministic article aggregation, 14-language HTML rendering | ✅ Active |
 | **AWS CloudFront** | AWS CDN | Primary global content delivery, DDoS protection | ✅ Active |
 | **S3 us-east-1** | AWS S3 | Primary object storage with versioning | ✅ Active |
 | **S3 eu-west-1** | AWS S3 | Replica storage with cross-region replication | ✅ Active |
@@ -1928,7 +1928,7 @@ graph TB
 
 ## 🏛️ Statskontoret Integration — Current Architecture
 
-> **Effective:** 2026-04-25 · **Classification:** Public · **Runtime:** Node.js 25 / TypeScript CLI · **MCP status:** intentionally **not** an MCP server.
+> **Effective:** 2026-04-25 · **Classification:** Public · **Runtime:** Node.js 26 / TypeScript CLI · **MCP status:** intentionally **not** an MCP server.
 
 Statskontoret is now the Swedish public-administration and central-government budget-execution context layer. It complements the existing provider split: IMF remains primary for macro/fiscal projections, SCB remains Swedish official-statistics ground truth, World Bank remains governance/environment/social residue, and Statskontoret supplies agency structure plus budget outturn detail that the other providers do not expose in the same operational form.
 
@@ -1936,7 +1936,7 @@ Statskontoret is now the Swedish public-administration and central-government bu
 
 ```mermaid
 flowchart LR
-    Workflow[Agentic news workflow<br/>Node 25] --> CLI[statskontoret-fetch.ts<br/>list-sources · discover · headcount]
+    Workflow[Agentic news workflow<br/>Node 26] --> CLI[statskontoret-fetch.ts<br/>list-sources · discover · headcount]
     CLI --> Client[StatskontoretClient<br/>statskontoret-client.ts]
     Client --> Source[www.statskontoret.se<br/>open data pages]
     Source --> XLSX[Excel workbooks]

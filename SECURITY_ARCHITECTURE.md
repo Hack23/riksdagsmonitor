@@ -3049,7 +3049,7 @@ Riksdagsmonitor's overall security posture as of 2026-02-25:
 ```mermaid
 flowchart LR
     subgraph Trusted["Trust Boundary — Riksdagsmonitor build/news pipeline"]
-        Worker[News-* workflow worker · Node 25 · tsx scripts/imf-fetch.ts]
+        Worker[News-* workflow worker · Node 26 · tsx scripts/imf-fetch.ts]
         Cache[(analysis/imf/ + analysis/daily/*/economic-data.json · vintage-tagged · SHA-256 pinned)]
         Audit[Workflow logs · news-* runs]
     end

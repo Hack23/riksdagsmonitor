@@ -205,11 +205,11 @@ All agentic workflows MUST specify the Node.js runtime version:
 ```yaml
 runtimes:
   node:
-    version: "25"    # Required: Node.js 25 for all workflows
+    version: "26"    # Required: Node.js 26 for all workflows
 ```
 
 Runtime configuration properties:
-- `version:` — Runtime version (e.g., `"25"`, `"3.12"`, `"latest"`)
+- `version:` — Runtime version (e.g., `"26"`, `"3.12"`, `"latest"`)
 - `action-repo:` — GitHub Actions setup action (e.g., `"actions/setup-node"`)
 - `action-version:` — Setup action version (e.g., `"v4"`, `"v5"`)
 - `if:` — Optional condition (e.g., `"hashFiles('go.mod') != ''"`)

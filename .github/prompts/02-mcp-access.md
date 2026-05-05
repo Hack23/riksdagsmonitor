@@ -11,8 +11,8 @@ News workflows declare three data MCP servers + the built-in `github` toolset (v
 | Server / tool | Transport | Declared in | Tool-name style | Example tools |
 |---------------|-----------|-------------|-----------------|---------------|
 | `riksdag-regering` | HTTP (Render) | workflow `mcp-servers:` | `snake_case` | `get_sync_status`, `search_dokument`, `get_voteringar`, `get_dokument_innehall` |
-| `scb` | container (`@jarib/pxweb-mcp`, `node:25-alpine`) | workflow `mcp-servers:` | `snake_case` | `search_tables`, `get_table_info`, `query_table` |
-| `world-bank` | container (`worldbank-mcp`, `node:25-alpine`) | workflow `mcp-servers:` | `kebab-case` | `get-economic-data` *(despite the legacy name, this method serves the non-economic indicator IDs documented in `analysis/worldbank/indicators-inventory.json`: governance WGI, environment, social/education residue, defence historicals, crime/justice; route economic context through `scripts/imf-fetch.ts`)*, `get-country-info`, `search-indicators` |
+| `scb` | container (`@jarib/pxweb-mcp`, `node:26-alpine`) | workflow `mcp-servers:` | `snake_case` | `search_tables`, `get_table_info`, `query_table` |
+| `world-bank` | container (`worldbank-mcp`, `node:26-alpine`) | workflow `mcp-servers:` | `kebab-case` | `get-economic-data` *(despite the legacy name, this method serves the non-economic indicator IDs documented in `analysis/worldbank/indicators-inventory.json`: governance WGI, environment, social/education residue, defence historicals, crime/justice; route economic context through `scripts/imf-fetch.ts`)*, `get-country-info`, `search-indicators` |
 | `github` | HTTP (Copilot MCP) | workflow `tools.github` (`toolsets: [all]`) | standard | full GitHub MCP toolset (issues, PRs, repos, code-search, actions, releases, discussions, …) |
 | `bash` | local helper | workflow `tools.bash: true` | standard | shell execution (**also hosts the IMF CLI — see § IMF CLI below**) |
 | `edit` | local helper | workflow `tools.edit:` | standard | filesystem edits inside `$GITHUB_WORKSPACE` |

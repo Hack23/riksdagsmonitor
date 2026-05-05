@@ -916,7 +916,7 @@ All agentic workflows MUST include the `runtimes:` field to enforce specific run
 ```yaml
 runtimes:
   node:
-    version: "25"    # Required: Node.js 25
+    version: "26"    # Required: Node.js 26
   python:
     version: "3.12"  # Optional: Python 3.12
     action-repo: "actions/setup-python"
