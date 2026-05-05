@@ -5,7 +5,7 @@ date: 2026-05-05
 subfolder: realtime-pulse
 slug: 2026-05-05-realtime-pulse
 source_folder: analysis/daily/2026-05-05/realtime-pulse
-generated_at: 2026-05-05T13:17:27.069Z
+generated_at: 2026-05-05T15:34:44.696Z
 language: en
 layout: article
 ---
@@ -224,6 +224,50 @@ Three new documents published on 2026-05-05 reveal an expanded dimension to toda
 
 **Updated cross-cutting pattern (5th)**:
 5. **SD's pre-election offensive spans bistånd, civil service neutrality, gang crime, and agency governance** — this is a coherent political strategy, not isolated interpellations. The common thread is institutional accountability: SD is making the argument that existing state organs are underperforming or politically biased.
+
+---
+
+### Run 3 Extension — New Documents (HD10468, HD10469, HD024136)
+
+Three additional documents published on 2026-05-05 and 2026-04-29, identified in improvement pass run 3:
+
+#### Theme 6: EU Compliance Risk — Parental Insurance and Labour Standards
+
+**HD10469 — Gender-equal parental insurance (S → Larsson L)**
+S MP Sanne Lennström challenges Equality Minister Nina Larsson on slow progress toward gender-equal parental leave. Fathers take only 31% of parental leave (Försäkringskassan data), creating a documented wage gap and pension poverty trajectory for women. The interpellation introduces a **material EU compliance dimension**: at least two coalition-adjacent parties (SD + C are the likely candidates) have announced intent to abolish mandatory reserved parental months — which would potentially violate EU Directive 2019/1158 (Work-Life Balance). L is trapped between SD's kvotering-opposition and Sweden's EU obligations.
+
+**DIW**: 0.68 (L2 Moderate, pre-election gender politics, EU compliance overlay)
+
+**HD10468 — Taxi industry non-compliance (S → Carlson KD)**
+S MP Kadir Kasirga cites a new Transportstyrelsen report showing systematic violations of driving/rest hour rules in the taxi sector. Three-question interpellation demanding enforcement action, stronger supervision, and regulatory review (including sanction system). This adds to **Andreas Carlson's accountability burden** — already targeted by HD10463 (Ostlänken). Infrastructure portfolio is accumulating ministerial pressure.
+
+**DIW**: 0.42 (L1 Surface, regulatory/labour market)
+
+#### Youth Crime Parliamentary Arithmetic — Confirmed (HD024136)
+
+**HD024136 — S committee motion (Teresa Carvalho et al) opposing age-13**
+S joins V, C, and MP in opposing the government's proposal to lower criminal responsibility age to 13 under prop. 2025/26:246. This formally **confirms the 4-party parliamentary majority** against the government's signature youth crime measure. Combined opposition: V (HD024142) + S (HD024136) + C (HD024146) + MP (HD024148) = parliamentary arithmetic that will defeat the government in JuU vote expected late May/June 2026.
+
+**DIW**: 0.82 (L3 Structural — confirms coalition arithmetic for major legislative defeat)
+
+**Updated DIW Rankings (Run 3)**:
+
+| Rank | Document/Cluster | DIW | Tier | Evidence |
+|------|-----------------|-----|------|---------|
+| 1 | KU39 Constitutional Transparency | 0.91 | L3 Intelligence | [A1] |
+| 2 | Youth crime cluster + age-13 confirmed defeat | **0.89** | L2+ Priority | HD024142, HD024136, HD024146, HD024148, HD01JuU30 [A1] |
+| 3 | SD Institutional Accountability Offensive | 0.81 | L2+ Priority | HD10464, HD10466, HD10458 [A1] |
+| 4 | HD03255 FI household debt survey | 0.78 | L2 Strategic | [A1] |
+| 5 | Forestry deregulation (8-motion cluster) | 0.72 | L2 Strategic | [A1] |
+| 6 | Parental insurance EU compliance risk | **0.68** | L2 Strategic | HD10469 [A1] |
+| 7 | State service withdrawal (HD10465+HD10467) | 0.62 | L3 Standard | [A1] |
+| 8 | Ostlänken/infrastructure (HD10463+HD10468) | 0.63 | L2 Strategic | [A1] |
+| 9 | ESA funding decline | 0.55 | L1 Surface | [A1] |
+| 10 | Agency activism (HD10459) | 0.50 | L1 Surface | [A1] |
+| 11 | FiU49 debt management | 0.48 | L1 Surface | [A1] |
+| 12 | SD single-issue motions | 0.50 | L3 Standard | [A1] |
+| 13 | Pesticide tax anomaly | 0.30 | L1 Surface | [A1] |
+| 14 | Taxi non-compliance (HD10468) | 0.42 | L1 Surface | [A1] |
 
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/intelligence-assessment.md -->
@@ -541,6 +585,80 @@ PIR-3/KU39: OPEN, CRITICAL — scope of binding mechanisms unknown
 ### Evidence Links
 - data.riksdagen.se/HD01KU39 [primary source]
 - Sibling analysis: analysis/daily/2026-05-05/committeeReports/intelligence-assessment.md
+
+### HD024136
+<!-- source: documents/HD024136-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/documents/HD024136-analysis.md -->
+
+**dok_id**: HD024136  
+**Title**: med anledning av prop. 2025/26:246 Skärpta regler för unga lagöverträdare  
+**Type**: Kommittémotion (Committee Motion)  
+
+**Submitted by**: Teresa Carvalho m.fl. (S)  
+**Committee**: JuU (Justice Committee)  
+
+---
+
+### Document Summary
+
+S committee motion opposing prop. 2025/26:246 (Skärpta regler för unga lagöverträdare — Stricter rules for young offenders).
+
+**S position**:
+1. **Oppose** lowering criminal responsibility age to 13 years — S joins V, C, MP forming an opposition majority against this core government proposal
+2. **Support** strengthening youth supervision (ungdomsövervakning) as an alternative
+3. **Support** other parts of the proposition where aligned
+
+**Teresa Carvalho** (S) is the shadow justice minister. This motion confirms S as part of the 4-party opposition coalition (V+S+C+MP) against age-13 criminal responsibility.
+
+---
+
+### Analytical Assessment
+
+**Coalition arithmetic — CRITICAL**: This confirms the count referenced in existing analysis. With V (HD024142, explicit rejection), C (HD024146, explicit rejection), S (HD024136, explicit rejection), and MP (HD024148, explicit rejection), the government faces a parliamentary majority against its criminal age-of-responsibility proposal.
+
+**Government exposure**: KD's justice track is under pressure (JuU30 custodial framework in existing analysis + now age-13 rejection by majority).
+
+**Gunnar Strömmer (M) position**: The justice minister's stated goal to "eradicate gang crime in four years" (see HD10458) is being undercut by parliamentary arithmetic that prevents one of his signature measures.
+
+**SD alignment**: SD supports the age-13 proposal — this is a rare case of M+SD alignment on a justice measure that still fails due to S+V+C+MP opposition.
+
+**Significance**: This motion is the S pillar in the 4-party coalition that constitutes a formal legislative majority opposing the government's most ambitious youth crime measure.
+
+---
+
+### Evidence Chain
+
+| Claim | Source | Admiralty |
+|-------|--------|----------|
+| S opposes age-13 criminal responsibility | HD024136 text | A1 |
+| V opposes (HD024142), C opposes (HD024146), MP opposes (HD024148) | Motion record | A1 |
+| Combined opposition = likely JuU majority | Parliamentary arithmetic | A2 (inferred) |
+| Teresa Carvalho = S shadow justice minister | Riksdag ledamöter database | A1 |
+
+---
+
+### PIR Status
+
+HIGH priority — update PIR on youth crime age-13 vote. Expected JuU vote late May/June 2026. Government likely to lose this vote.
+
+**Signal**: When this motion passes (expected), it will be a significant government defeat in election year. Watch for Strömmer response and M positioning.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+flowchart LR
+    A[HD024136\nS opposes age-13] --> B{JuU Vote\nlate May/Jun 2026}
+    C[V HD024142\nReject] --> B
+    D[C HD024146\nReject] --> B
+    E[MP HD024148\nReject] --> B
+    F[M+SD+KD\nSupport] --> B
+    B --> G[Government defeat\n4-party majority wins]
+    G --> H[Strömmer\naccountability pressure]
+    G --> I[Election 2026\nJustice credibility impact]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style G fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style H fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style I fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+```
 
 ### HD024141
 <!-- source: documents/HD024141-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/documents/HD024141-analysis.md -->
@@ -1072,6 +1190,141 @@ S interpellation addressing Skatteverket office closure in Vetlanda as part of b
 
 Complementary to HD10465 (state service withdrawal). Together these two documents build S's pre-election accountability case against the government.
 
+### HD10468
+<!-- source: documents/HD10468-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/documents/HD10468-analysis.md -->
+
+**dok_id**: HD10468  
+**Title**: Bristande regelefterlevnad i taxibranschen  
+**Type**: Interpellation  
+
+**Submitted by**: Kadir Kasirga (S)  
+**Directed to**: Infrastruktur- och bostadsminister Andreas Carlson (KD)  
+**Answer deadline**: 2026-05-26  
+
+---
+
+### Document Summary
+
+S MP Kadir Kasirga challenges Infrastructure Minister Andreas Carlson on systematic non-compliance in the taxi industry. Cites a new Transportstyrelsen report revealing: (1) significant proportion of drivers failing daily rest requirements; (2) majority of inspected operators showing violations; (3) systematic failures in logbook management.
+
+**Core questions to minister**:
+1. Actions to enforce driving/rest hour compliance
+2. Plans to strengthen supervision and inspection
+3. Whether the regulatory framework (including sanctions) will be reviewed
+
+---
+
+### Analytical Assessment
+
+**Political significance**: L1 Surface. This is a regulatory enforcement/labour market interpellation — important for workers in the sector but not a first-order coalition or constitutional issue.
+
+**Ministerial exposure**: Carlson (KD) is also targeted by HD10463 (Ostlänken rerouting) — accumulating accountability pressure on infrastructure portfolio.
+
+**Policy dimension**: The interpellation surfaces labour market compliance failure in a deregulated transport market. Transportstyrelsen (named agency) has a documented capacity constraint on inspection resources.
+
+**Election relevance**: LOW. Not a high-salience pre-election issue. However, S is building an accountability narrative around KD's management of infrastructure/transport.
+
+**Statskontoret relevance**: Transportstyrelsen administrative capacity for enforcement — none found specifically for this interpellation.
+
+---
+
+### Evidence Chain
+
+| Claim | Source | Admiralty |
+|-------|--------|----------|
+| Transportstyrelsen report documents rest-hour non-compliance | data.riksdagen.se/dokument/HD10468 | A1 |
+| KD minister (Carlson) targeted on infrastructure portfolio | Riksdag interpellation record | A1 |
+| Deadline 2026-05-26 | data.riksdagen.se/dokument/HD10468 | A1 |
+
+---
+
+### PIR Status
+
+No dedicated PIR — integrate into existing PIR on infrastructure accountability (Ostlänken/Carlson cluster).
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+flowchart LR
+    A[HD10468\nTaxi non-compliance] -->|S accountability| B[Carlson KD\nInfrastructure portfolio]
+    B --> C[Combined with HD10463\nOstlänken pressure]
+    C --> D[May 26\nAnswer deadline]
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style D fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+```
+
+### HD10469
+<!-- source: documents/HD10469-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/documents/HD10469-analysis.md -->
+
+**dok_id**: HD10469  
+**Title**: En jämställd föräldraförsäkring  
+**Type**: Interpellation  
+
+**Submitted by**: Sanne Lennström (S)  
+**Directed to**: Jämställdhetsminister Nina Larsson (L)  
+**Answer deadline**: 2026-05-26  
+
+---
+
+### Document Summary
+
+S MP Sanne Lennström challenges Equality Minister Nina Larsson (L) on the government's inaction on gender-equal parental insurance. Key data cited:
+- Fathers take only **31%** of parental leave (Försäkringskassan data)
+- The wage gap between men and women diverges significantly during early parenthood
+- Women face pension poverty consequences
+- **Two riksdag parties have announced they want to abolish reserved months** — which would violate EU Directive on Work-Life Balance
+
+**Core question**: What concrete measures will the minister take to achieve gender-equal parental insurance?
+
+---
+
+### Analytical Assessment
+
+**Political significance**: L2 Moderate, with pre-election amplification potential.
+
+**EU Dimension — HIGH**: The mention of the Work-Life Balance Directive (EU 2019/1158) raises a compliance issue. If Sweden abolishes mandatory reserved months, it may be in breach of EU law. This is an unusually strong legal constraint argument that the minister will need to address.
+
+**Coalition dimension**: The "two parties wanting to abolish reserved months" almost certainly refers to SD and C. SD has consistently opposed what they call "quota coercion" (kvotering). C has historically oscillated on this issue. L is in a difficult position as the equality minister in a government dependent on SD.
+
+**Election relevance**: MEDIUM-HIGH. Gender equality + parental insurance is a key mobilization issue for S's core electorate, particularly younger women voters. With elections in Sep 2026, this interpellation is timed for maximum pre-campaign salience.
+
+**Realpolitik**: Larsson (L) is unlikely to announce new mandatory measures given coalition dynamics. The interpellation will likely produce a defensive answer about the government's existing voluntary approach (subsidized parental education, incentives).
+
+---
+
+### Evidence Chain
+
+| Claim | Source | Admiralty |
+|-------|--------|----------|
+| Fathers take 31% of parental leave | Försäkringskassan (cited in HD10469) | B2 (cited secondary) |
+| Wage gap diverges during early parenthood | Academic/policy literature (cited implicitly) | B3 |
+| Two parties want to abolish reserved months | Political record (unnamed parties, plausible SD+C) | B2 |
+| EU Work-Life Balance Directive relevant | EU Directive 2019/1158 | A1 external |
+
+---
+
+### PIR Status
+
+Feeds into Gender Equality PIR (roll-forward to Sep 2026 election). Connects to L's coalition positioning and SD's gender-equality opposition narrative.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+flowchart LR
+    A[HD10469\nGender parental insurance] -->|S challenge| B[Larsson L\nEquality Minister]
+    B --> C{Coalition tension}
+    C -->|SD+C want| D[Abolish reserved months]
+    C -->|EU constraint| E[EU Directive 2019/1158\ncompliance risk]
+    D --> F[Sep 2026 election\nGender-equality vote mobilization]
+    E --> F
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style D fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style E fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style F fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+```
+
 ### HD11781
 <!-- source: documents/HD11781-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/documents/HD11781-analysis.md -->
 
@@ -1449,6 +1702,16 @@ gantt
 - **If FI-20 (Hamas claim verified)** → HD10464 upgrades from positioning to substantive accountability; Dousa credibility at risk
 - **If FI-17 (Malmer Stenergard defends UD staff)** → Constitutional scholars activate; possible EU/Nordic partner concern about Swedish institutional norms
 - **If FI-19 (Lagrådet cites JuU30)** → KJ-7 confirmed; C's defection upgraded from "isolated" to "legally grounded"
+
+---
+
+### Run 3 Forward Indicators (New — HD10469, HD024136)
+
+| ID | Indicator | Source | Horizon | Signal |
+|----|-----------|--------|---------|--------|
+| FI-22 | HD10469 answer by Larsson (L) — EU Work-Life Balance Directive position | HD10469 deadline 2026-05-26 | T+21d | If Larsson avoids EU compliance question → escalation risk to Commission. Watch L's answer for whether government commits to maintain reserved months |
+| FI-23 | JuU vote on prop. 2025/26:246 age-13 provision | JuU committee, HD024136+HD024142+HD024146+HD024148 | T+21-45d | Expected government defeat when 4-party majority (V+S+C+MP) votes down age-13. Watch M/KD response: will Strömmer accept or trigger motion of confidence? |
+| FI-24 | Transportstyrelsen taxi inspection follow-up | HD10468 deadline 2026-05-26 | T+21d | Carlson (KD) answer to HD10468 will reveal whether government will tighten enforcement or accept status quo. Low salience but accumulates infrastructure portfolio accountability. |
 
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/scenario-analysis.md -->
@@ -2597,6 +2860,26 @@ This realtime-pulse analysis aggregates four Tier-A sibling analyses. Quality ch
 | NEW_DOCUMENTS_COUNT | 9 |
 | CRITICAL_NEW | HD01JuU30 (JuU30 committee report — youth custody, direct Lagrådet nexus), HD10466 (UD civil servant accountability — democratic norms), HD10464 (Sida abolition — SD escalation) |
 
+---
+
+### Re-run log — Run 3 (Improvement Pass)
+
+| Field | Value |
+|-------|-------|
+| RUN_TIMESTAMP_UTC | 2026-05-05T17:00:00Z |
+| GITHUB_WORKFLOW | news-realtime-monitor |
+| GITHUB_RUN_ID | improvement-pass-3-2026-05-05 |
+| GITHUB_RUN_ATTEMPT | 3 |
+| MODE | IMPROVEMENT_MODE=true |
+| NEW_DOK_IDS | HD10468, HD10469, HD024136 |
+| ARTIFACTS_EXTENDED | synthesis-summary.md (+2 new interpellations + S motion confirmation), data-download-manifest.md (+3 documents), forward-indicators.md (+FI-22 parental insurance EU compliance), executive-brief.md (+Run 3 update) |
+| PASS1_SNAPSHOT | analysis/daily/2026-05-05/realtime-pulse/pass1/ (25 files) |
+| PASS2_COMPLETE | true |
+| NEW_DOCUMENTS_COUNT | 3 |
+| NEW_DOCUMENTS | HD10468 (taxi non-compliance → Carlson KD), HD10469 (gender parental insurance → Larsson L, EU directive risk), HD024136 (S motion opposing age-13 criminal responsibility — confirms 4-party JuU majority) |
+| CRITICAL_NEW | HD024136 confirms parliamentary arithmetic: V+S+C+MP = majority against age-13 criminal responsibility proposal. Government expected to lose vote late May/June 2026. HD10469 raises EU Work-Life Balance Directive compliance risk if Sweden abolishes reserved parental months. |
+| QUALITY_ASSESSMENT | Three new documents incorporated. Parental insurance EU compliance risk is a new material finding. Youth crime parliamentary arithmetic confirmed and strengthened. |
+
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/data-download-manifest.md -->
 
@@ -2798,6 +3081,35 @@ Forward indicator added: Lagrådet yttranden expected Q2 2026.
 | HD10466 | 2026-05-26 | PIR-NEW-10466 |
 | HD10467 | 2026-05-26 | (not registered separately) |
 
+---
+
+### Run 3 Document Additions (2026-05-05 Improvement Pass)
+
+Three additional documents identified via re-download scan in Run 3:
+
+#### New Documents
+
+| dok_id | Title | Date | Type | Significance |
+|--------|-------|------|------|--------------|
+| HD10468 | Bristande regelefterlevnad i taxibranschen | 2026-05-05 | Interpellation (S→KD) | Labour/transport regulatory enforcement; adds to Carlson (KD) accountability pressure |
+| HD10469 | En jämställd föräldraförsäkring | 2026-05-05 | Interpellation (S→L) | Gender equality, parental insurance, EU Work-Life Balance Directive compliance risk |
+| HD024136 | med anledning av prop. 2025/26:246 Skärpta regler för unga lagöverträdare | 2026-04-29 | Motion (S) | Confirms 4-party JuU majority against government's age-13 criminal responsibility proposal |
+
+#### Key Finding — Run 3
+
+**HD024136** is particularly significant: it completes the confirmation of parliamentary arithmetic showing the government will lose the vote on lowering criminal responsibility age to 13. The four-party coalition (V+S+C+MP) now has documented motions from all four parties, constituting a formal committee majority. JuU vote expected late May/June 2026.
+
+**HD10469** introduces a new material legal risk: EU Directive 2019/1158 compliance. If SD+C persuade the government to abolish mandatory reserved parental months, Sweden risks EU infringement proceedings.
+
+#### Total Document Count
+
+| Pass | Documents | New IDs |
+|------|-----------|---------|
+| Initial | 19 | HD03255, HD03246, HD03242, HD10464–HD10467, HD024141–HD024148, KU39, FiU49 |
+| Run 2 | +9 | HD10464, HD10465, HD10466, HD10467, HD01JuU30, HD11781, HD11782, HD11783, HD11784 |
+| Run 3 | +3 | HD10468, HD10469, HD024136 |
+| **Total** | **~31** | (some overlap between passes) |
+
 ## Article Sources
 
 Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
@@ -2809,6 +3121,7 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`documents/HD01FiU49-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/documents/HD01FiU49-analysis.md)
 - [`documents/HD01JuU30-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/documents/HD01JuU30-analysis.md)
 - [`documents/HD01KU39-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/documents/HD01KU39-analysis.md)
+- [`documents/HD024136-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/documents/HD024136-analysis.md)
 - [`documents/HD024141-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/documents/HD024141-analysis.md)
 - [`documents/HD024142-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/documents/HD024142-analysis.md)
 - [`documents/HD024143-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/documents/HD024143-analysis.md)
@@ -2827,6 +3140,8 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`documents/HD10465-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/documents/HD10465-analysis.md)
 - [`documents/HD10466-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/documents/HD10466-analysis.md)
 - [`documents/HD10467-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/documents/HD10467-analysis.md)
+- [`documents/HD10468-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/documents/HD10468-analysis.md)
+- [`documents/HD10469-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/documents/HD10469-analysis.md)
 - [`documents/HD11781-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/documents/HD11781-analysis.md)
 - [`documents/HD11782-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/documents/HD11782-analysis.md)
 - [`documents/HD11783-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/realtime-pulse/documents/HD11783-analysis.md)

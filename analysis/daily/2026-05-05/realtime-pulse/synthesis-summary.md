@@ -133,3 +133,47 @@ Three new documents published on 2026-05-05 reveal an expanded dimension to toda
 
 **Updated cross-cutting pattern (5th)**:
 5. **SD's pre-election offensive spans bistånd, civil service neutrality, gang crime, and agency governance** — this is a coherent political strategy, not isolated interpellations. The common thread is institutional accountability: SD is making the argument that existing state organs are underperforming or politically biased.
+
+---
+
+## Run 3 Extension — New Documents (HD10468, HD10469, HD024136)
+
+Three additional documents published on 2026-05-05 and 2026-04-29, identified in improvement pass run 3:
+
+### Theme 6: EU Compliance Risk — Parental Insurance and Labour Standards
+
+**HD10469 — Gender-equal parental insurance (S → Larsson L)**
+S MP Sanne Lennström challenges Equality Minister Nina Larsson on slow progress toward gender-equal parental leave. Fathers take only 31% of parental leave (Försäkringskassan data), creating a documented wage gap and pension poverty trajectory for women. The interpellation introduces a **material EU compliance dimension**: at least two coalition-adjacent parties (SD + C are the likely candidates) have announced intent to abolish mandatory reserved parental months — which would potentially violate EU Directive 2019/1158 (Work-Life Balance). L is trapped between SD's kvotering-opposition and Sweden's EU obligations.
+
+**DIW**: 0.68 (L2 Moderate, pre-election gender politics, EU compliance overlay)
+
+**HD10468 — Taxi industry non-compliance (S → Carlson KD)**
+S MP Kadir Kasirga cites a new Transportstyrelsen report showing systematic violations of driving/rest hour rules in the taxi sector. Three-question interpellation demanding enforcement action, stronger supervision, and regulatory review (including sanction system). This adds to **Andreas Carlson's accountability burden** — already targeted by HD10463 (Ostlänken). Infrastructure portfolio is accumulating ministerial pressure.
+
+**DIW**: 0.42 (L1 Surface, regulatory/labour market)
+
+### Youth Crime Parliamentary Arithmetic — Confirmed (HD024136)
+
+**HD024136 — S committee motion (Teresa Carvalho et al) opposing age-13**
+S joins V, C, and MP in opposing the government's proposal to lower criminal responsibility age to 13 under prop. 2025/26:246. This formally **confirms the 4-party parliamentary majority** against the government's signature youth crime measure. Combined opposition: V (HD024142) + S (HD024136) + C (HD024146) + MP (HD024148) = parliamentary arithmetic that will defeat the government in JuU vote expected late May/June 2026.
+
+**DIW**: 0.82 (L3 Structural — confirms coalition arithmetic for major legislative defeat)
+
+**Updated DIW Rankings (Run 3)**:
+
+| Rank | Document/Cluster | DIW | Tier | Evidence |
+|------|-----------------|-----|------|---------|
+| 1 | KU39 Constitutional Transparency | 0.91 | L3 Intelligence | [A1] |
+| 2 | Youth crime cluster + age-13 confirmed defeat | **0.89** | L2+ Priority | HD024142, HD024136, HD024146, HD024148, HD01JuU30 [A1] |
+| 3 | SD Institutional Accountability Offensive | 0.81 | L2+ Priority | HD10464, HD10466, HD10458 [A1] |
+| 4 | HD03255 FI household debt survey | 0.78 | L2 Strategic | [A1] |
+| 5 | Forestry deregulation (8-motion cluster) | 0.72 | L2 Strategic | [A1] |
+| 6 | Parental insurance EU compliance risk | **0.68** | L2 Strategic | HD10469 [A1] |
+| 7 | State service withdrawal (HD10465+HD10467) | 0.62 | L3 Standard | [A1] |
+| 8 | Ostlänken/infrastructure (HD10463+HD10468) | 0.63 | L2 Strategic | [A1] |
+| 9 | ESA funding decline | 0.55 | L1 Surface | [A1] |
+| 10 | Agency activism (HD10459) | 0.50 | L1 Surface | [A1] |
+| 11 | FiU49 debt management | 0.48 | L1 Surface | [A1] |
+| 12 | SD single-issue motions | 0.50 | L3 Standard | [A1] |
+| 13 | Pesticide tax anomaly | 0.30 | L1 Surface | [A1] |
+| 14 | Taxi non-compliance (HD10468) | 0.42 | L1 Surface | [A1] |

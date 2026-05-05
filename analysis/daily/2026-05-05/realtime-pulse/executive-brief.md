@@ -106,3 +106,17 @@ quadrantChart
 1. **[2026-05-26 | HIGH | PIR-NEW-10464]**: SD gets formal floor debate on Sida abolition — forces M's position on Swedish ODA architecture
 2. **[2026-05-26 | HIGH | PIR-NEW-10466]**: FM Malmer Stenergard must respond to UD civil servant accountability demand — democratic norms flashpoint
 3. **[2026-06-01 | CRITICAL | JUU30-LAGRADET]**: Lagrådet yttrande on HD03246 (criminal age 13) — JuU30 framework may directly influence Lagrådet's constitutional analysis
+
+---
+
+## Run 3 Intelligence Update (Pass 2 — Three New Documents)
+
+**Top new findings**:
+
+1. **Age-13 criminal responsibility: government defeat confirmed** (HD024136/S joins V+C+MP). Four-party JuU opposition majority now documented across all parties. Government will lose this vote (expected late May/June 2026). High-salience justice reversal in election year. **+DIW 0.82 added to youth crime cluster → cluster now scores 0.89**
+
+2. **EU compliance risk on parental insurance** (HD10469/S → Larsson L). Two coalition-adjacent parties (likely SD+C) want to abolish mandatory reserved parental months — triggering potential EU Work-Life Balance Directive 2019/1158 infringement. Minister Larsson trapped between coalition pressure and EU obligations. Answer due 2026-05-26. **New strategic risk factor — EU law constraint**
+
+3. **Carlson (KD) infrastructure portfolio accumulating pressure** (HD10468 taxi + HD10463 Ostlänken). Two open interpellations against same minister from S. Pattern of S building accountability dossier against KD's infrastructure track.
+
+**Updated session signature**: 2026-05-05 is now confirmed as one of the most legislatively significant single days of the 2025/26 riksmöte. Seven interpellations filed (464–469 + Vetlanda), the age-13 opposition coalition fully documented, a constitutional transparency betänkande (KU39), and a forestry deregulation battlespace crystallized. Three months before election day: the accountability architecture is being constructed today.

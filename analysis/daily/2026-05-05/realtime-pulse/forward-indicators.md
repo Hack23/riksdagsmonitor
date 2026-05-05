@@ -81,3 +81,13 @@ gantt
 - **If FI-20 (Hamas claim verified)** → HD10464 upgrades from positioning to substantive accountability; Dousa credibility at risk
 - **If FI-17 (Malmer Stenergard defends UD staff)** → Constitutional scholars activate; possible EU/Nordic partner concern about Swedish institutional norms
 - **If FI-19 (Lagrådet cites JuU30)** → KJ-7 confirmed; C's defection upgraded from "isolated" to "legally grounded"
+
+---
+
+## Run 3 Forward Indicators (New — HD10469, HD024136)
+
+| ID | Indicator | Source | Horizon | Signal |
+|----|-----------|--------|---------|--------|
+| FI-22 | HD10469 answer by Larsson (L) — EU Work-Life Balance Directive position | HD10469 deadline 2026-05-26 | T+21d | If Larsson avoids EU compliance question → escalation risk to Commission. Watch L's answer for whether government commits to maintain reserved months |
+| FI-23 | JuU vote on prop. 2025/26:246 age-13 provision | JuU committee, HD024136+HD024142+HD024146+HD024148 | T+21-45d | Expected government defeat when 4-party majority (V+S+C+MP) votes down age-13. Watch M/KD response: will Strömmer accept or trigger motion of confidence? |
+| FI-24 | Transportstyrelsen taxi inspection follow-up | HD10468 deadline 2026-05-26 | T+21d | Carlson (KD) answer to HD10468 will reveal whether government will tighten enforcement or accept status quo. Low salience but accumulates infrastructure portfolio accountability. |

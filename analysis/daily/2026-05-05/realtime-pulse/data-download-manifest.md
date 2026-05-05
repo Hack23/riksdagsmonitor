@@ -201,3 +201,32 @@ Forward indicator added: Lagrådet yttranden expected Q2 2026.
 | HD10465 | 2026-05-26 | PIR-NEW-10465 |
 | HD10466 | 2026-05-26 | PIR-NEW-10466 |
 | HD10467 | 2026-05-26 | (not registered separately) |
+
+---
+
+## Run 3 Document Additions (2026-05-05 Improvement Pass)
+
+Three additional documents identified via re-download scan in Run 3:
+
+### New Documents
+
+| dok_id | Title | Date | Type | Significance |
+|--------|-------|------|------|--------------|
+| HD10468 | Bristande regelefterlevnad i taxibranschen | 2026-05-05 | Interpellation (S→KD) | Labour/transport regulatory enforcement; adds to Carlson (KD) accountability pressure |
+| HD10469 | En jämställd föräldraförsäkring | 2026-05-05 | Interpellation (S→L) | Gender equality, parental insurance, EU Work-Life Balance Directive compliance risk |
+| HD024136 | med anledning av prop. 2025/26:246 Skärpta regler för unga lagöverträdare | 2026-04-29 | Motion (S) | Confirms 4-party JuU majority against government's age-13 criminal responsibility proposal |
+
+### Key Finding — Run 3
+
+**HD024136** is particularly significant: it completes the confirmation of parliamentary arithmetic showing the government will lose the vote on lowering criminal responsibility age to 13. The four-party coalition (V+S+C+MP) now has documented motions from all four parties, constituting a formal committee majority. JuU vote expected late May/June 2026.
+
+**HD10469** introduces a new material legal risk: EU Directive 2019/1158 compliance. If SD+C persuade the government to abolish mandatory reserved parental months, Sweden risks EU infringement proceedings.
+
+### Total Document Count
+
+| Pass | Documents | New IDs |
+|------|-----------|---------|
+| Initial | 19 | HD03255, HD03246, HD03242, HD10464–HD10467, HD024141–HD024148, KU39, FiU49 |
+| Run 2 | +9 | HD10464, HD10465, HD10466, HD10467, HD01JuU30, HD11781, HD11782, HD11783, HD11784 |
+| Run 3 | +3 | HD10468, HD10469, HD024136 |
+| **Total** | **~31** | (some overlap between passes) |
