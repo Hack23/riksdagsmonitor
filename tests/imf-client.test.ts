@@ -42,6 +42,8 @@ describe('ImfClient', () => {
       expect(defaults.maxRetries).toBe(2);
       expect(defaults.userAgent).toContain('Riksdagsmonitor');
       expect(defaults.userAgent).not.toMatch(/Riksdagsmonitor\/\d/);
+      // Mozilla/5.0 prefix is required for IMF Datamapper (403 without it, confirmed via curl)
+      expect(defaults.userAgent).toMatch(/^Mozilla\/5\.0\b/);
       expect(defaults.weoVintage).toMatch(/^WEO-\d{4}-\d{2}$/);
     });
 
@@ -222,6 +224,8 @@ describe('ImfClient', () => {
         headers: Record<string, string>;
       };
       expect(init.headers['User-Agent']).toContain('Riksdagsmonitor');
+      // Browser-style Mozilla/5.0 prefix prevents IMF Datamapper 403 (verified via curl)
+      expect(init.headers['User-Agent']).toMatch(/^Mozilla\/5\.0\b/);
     });
   });
 
