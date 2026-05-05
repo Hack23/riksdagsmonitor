@@ -179,6 +179,28 @@ flowchart LR
 
 ---
 
+## 🌐 Data Source Connectivity Audit
+
+> **[REQUIRED]** — Record the live connectivity status of every external data source attempted during this run. This feeds the improvement backlog and enables tracking of systematic fetch failures across runs.
+
+| Source | Endpoint | Status | Fallback Used | Notes |
+|--------|----------|:------:|:-------------:|-------|
+| **IMF WEO** | `tsx scripts/imf-fetch.ts weo` | 🟢 live / 🟡 cached / 🔴 failed | Y/N | vintage: `{WEO-MMM-YYYY}` |
+| **IMF SDMX** | `tsx scripts/imf-fetch.ts sdmx` | 🟢 live / 🔴 failed | N/A | dataflow: `{e.g. CPI, IFS}` |
+| **Riksdag MCP** | `riksdag-regering` | 🟢 live / 🔴 failed | N/A | sync time: `{ISO timestamp}` |
+| **Statskontoret** | `web_fetch statskontoret.se` | 🟢 live / 🟡 no trigger / 🔴 blocked | N/A | — |
+| **Lagrådet** | `web_fetch lagradet.se` | 🟢 live / 🟡 N/A / 🔴 blocked | N/A | — |
+| **SCB** | `scb` MCP | 🟢 live / 🟡 not needed / 🔴 failed | N/A | — |
+| **World Bank** | `world-bank` MCP | 🟢 live / 🟡 not needed / 🔴 failed | N/A | non-economic only |
+
+> **IMF fallback hierarchy** (codified in `scripts/imf-fetch.ts`):
+> 1. Live fetch → persist result with `--persist`
+> 2. If live fails → load from `analysis/data/imf/{indicator}/{country}.json` cache
+> 3. If cache is >6 months old → annotate with `>6 month vintage` warning
+> 4. If no cache exists → report as 🔴 in this table and flag in §What to Improve
+
+---
+
 ## 🎓 What Worked
 
 - Pass-2 rewrite substantially sharpened `synthesis-summary.md` §Finding 1 by adding SEK-denominated figures and SIFO polling gap.
