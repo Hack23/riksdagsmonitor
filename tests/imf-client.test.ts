@@ -40,6 +40,7 @@ describe('ImfClient', () => {
       expect(defaults.sdmxBaseURL).toBe('https://api.imf.org/external/sdmx/3.0');
       expect(defaults.timeout).toBe(15_000);
       expect(defaults.maxRetries).toBe(2);
+      expect(defaults.userAgent).toContain('Riksdagsmonitor');
       expect(defaults.weoVintage).toMatch(/^WEO-\d{4}-\d{2}$/);
     });
 
@@ -49,12 +50,14 @@ describe('ImfClient', () => {
         sdmxBaseURL: 'https://sdmx.example.test',
         timeout: 1_000,
         maxRetries: 0,
+        userAgent: 'custom-agent',
         weoVintage: 'WEO-2999-99',
       });
       expect(custom.datamapperBaseURL).toBe('https://example.test/api');
       expect(custom.sdmxBaseURL).toBe('https://sdmx.example.test');
       expect(custom.timeout).toBe(1_000);
       expect(custom.maxRetries).toBe(0);
+      expect(custom.userAgent).toBe('custom-agent');
       expect(custom.weoVintage).toBe('WEO-2999-99');
     });
   });
@@ -203,6 +206,21 @@ describe('ImfClient', () => {
       await client.getWeoIndicator('swe', 'NGDP_RPCH');
       const calledUrl = (spy as unknown as { mock: { calls: unknown[][] } }).mock.calls[0][0] as string;
       expect(calledUrl).toContain('/NGDP_RPCH/SWE');
+    });
+
+    it('sends an explicit User-Agent for IMF Datamapper compatibility', async () => {
+      const spy = vi.fn(async () =>
+        new Response(
+          JSON.stringify({ values: { NGDP_RPCH: { SWE: { '2024': 1.1 } } } }),
+          { status: 200 },
+        ),
+      ) as unknown as typeof global.fetch;
+      global.fetch = spy;
+      await client.getWeoIndicator('SWE', 'NGDP_RPCH');
+      const init = (spy as unknown as { mock: { calls: unknown[][] } }).mock.calls[0][1] as {
+        headers: Record<string, string>;
+      };
+      expect(init.headers['User-Agent']).toContain('Riksdagsmonitor');
     });
   });
 

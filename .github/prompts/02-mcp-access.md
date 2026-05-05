@@ -48,7 +48,7 @@ Rules:
 - **Provider decision**: macro / fiscal / monetary / external → IMF; governance (WGI) / environment / social residue → World Bank; Swedish-specific ground truth → SCB.
 - **Authoritative inventory**: [`analysis/imf/indicators-inventory.json`](../../analysis/imf/indicators-inventory.json) (machine-readable) · [`analysis/imf/data-dictionary.md`](../../analysis/imf/data-dictionary.md) (dataflow reference) · [`analysis/imf/agentic-integration.md`](../../analysis/imf/agentic-integration.md) (7-step playbook) · [`analysis/imf/indicator-policy-mapping.md`](../../analysis/imf/indicator-policy-mapping.md) (committee matrix).
 - **Contract**: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../aw/ECONOMIC_DATA_CONTRACT.md) v3.0+.
-- **Firewall egress**: `data.imf.org`, `api.imf.org`, `www.imf.org` (already in every workflow's `network.allowed`).
+- **Firewall egress**: `www.imf.org`, `api.imf.org`, `data.imf.org`, `sdmxcentral.imf.org` (already in every workflow's `network.allowed`). The TypeScript IMF client sends an explicit Riksdagsmonitor `User-Agent`; do not replace it with raw `node` / undici fetch calls because IMF Datamapper can reject those with HTTP 403.
 - **Statskontoret egress**: `www.statskontoret.se` / `statskontoret.se` are public non-MCP web sources used for agency capacity, state-governance evaluations, implementation feasibility, administrative burden and public-sector efficiency evidence.
 - **Lagrådet egress**: `www.lagradet.se` / `lagradet.se` are public non-MCP web sources for Council on Legislation referrals and yttranden on government propositions touching constitutional law, fundamental rights, criminal procedure, court organisation, surveillance, and taxation principles. Allow-listed in every news workflow's `network.allowed`. Required input for major-bill `risk-assessment.md`, `threat-analysis.md` and `forward-indicators.md` per `03-data-download.md §Lagrådet enrichment`.
 
@@ -61,7 +61,10 @@ Run once at workflow start, then proceed — do not loop forever.
    - **Prior analysis on disk** (`[ -s "$ANALYSIS_DIR/synthesis-summary.md" ]` returns true): do **not** exit. Route to improvement-mode in `04-analysis-pipeline.md` and continue without live MCP — extend artifacts using on-disk evidence, refresh `article.md` + rendered HTML, and commit one PR.
    - **No prior analysis on disk** (`[ ! -s "$ANALYSIS_DIR/synthesis-summary.md" ]`): apply the MCP-unreachable no-op policy from `07-commit-and-pr.md §No-op policy` and exit.
 3. Once `get_sync_status` succeeds, proceed. Do not spend more than **2 minutes** on warm-up.
-4. Pre-warm IMF with one throwaway `weo` call: `tsx scripts/imf-fetch.ts weo --country SWE --indicator NGDP_RPCH --years 1 >/dev/null 2>&1 || true ; sleep 1`.
+4. Read `data/imf-context.json` from the pre-warm action before making economic claims:
+   - `status: ok` / `stale-vintage` / `degraded`: continue IMF-first. For `degraded`, use WEO/FM Datamapper evidence and avoid SDMX-only claims unless cached data exists.
+   - `status: unavailable` or `data/imf-unavailable.flag` present: inject the standard warning block and use cached IMF / SCB fallback only; never substitute World Bank for macroeconomic claims.
+5. Pre-warm IMF with one throwaway `weo` call through the CLI (not raw `fetch`): `npx tsx scripts/imf-fetch.ts weo --country SWE --indicator NGDP_RPCH --years 1 >/dev/null 2>&1 || true ; sleep 1`.
 
 ## Data sourcing rules
 

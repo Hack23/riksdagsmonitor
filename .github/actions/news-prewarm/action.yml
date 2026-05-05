@@ -7,9 +7,9 @@ description: |
     4. Pre-flight DNS + HTTPS reachability + MCP `tools/list` probe for the
        upstream services consumed by the news pipeline.
     5. IMF connectivity & vintage pre-flight gate
-       (`scripts/check-imf-connectivity.ts`) writing `data/imf-context.json`
-       on success or `data/imf-unavailable.flag` on failure, so the
-       agentic analysis pipeline can fail-fast or annotate per
+        (`scripts/check-imf-connectivity.ts`) writing `data/imf-context.json`
+       on success/degradation or `data/imf-unavailable.flag` on critical
+       WEO/FM failure, so the agentic analysis pipeline can annotate per
        `analysis/imf/agentic-integration.md` §"Pre-warm gate" and
        `.github/aw/ECONOMIC_DATA_CONTRACT.md` v2.1.
 
@@ -70,7 +70,7 @@ runs:
         echo "═══════════════════════════════════════════"
         echo ""
         echo "📡 DNS Resolution Tests:"
-        for domain in riksdag-regering-ai.onrender.com api.scb.se api.worldbank.org data.riksdagen.se www.riksdagen.se www.regeringen.se www.statskontoret.se statskontoret.se; do
+        for domain in riksdag-regering-ai.onrender.com api.scb.se api.worldbank.org www.imf.org api.imf.org data.imf.org sdmxcentral.imf.org data.riksdagen.se www.riksdagen.se www.regeringen.se www.statskontoret.se statskontoret.se www.lagradet.se lagradet.se; do
           if nslookup "$domain" >/dev/null 2>&1; then
             IP=$(nslookup "$domain" 2>/dev/null | grep -A1 "Name:" | grep "Address:" | head -1 | awk '{print $2}')
             echo "  ✅ $domain → $IP"
@@ -84,6 +84,7 @@ runs:
           "$MCP_URL" \
           "https://api.scb.se/OV0104/v2beta" \
           "https://api.worldbank.org/v2/country/SE?format=json" \
+          "https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH/SWE" \
           "https://data.riksdagen.se/dokumentlista/?sok=test&doktyp=bet&utformat=json&a=1" \
         ; do
           HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "$url" 2>/dev/null || echo "000")
@@ -115,9 +116,9 @@ runs:
       shell: bash
       # Probes the three IMF transports (WEO + FM via Datamapper, IFS via
       # SDMX 3.0) and writes data/imf-context.json with the result. On
-      # connectivity failure also writes data/imf-unavailable.flag, which
-      # downstream analysis steps read to inject the standard "⚠️ IMF
-      # context unavailable" block into executive-brief.md,
+      # critical WEO/FM connectivity failure also writes
+      # data/imf-unavailable.flag, which downstream analysis steps read to
+      # inject the standard "⚠️ IMF context unavailable" block into executive-brief.md,
       # comparative-international.md, and synthesis-summary.md per
       # analysis/imf/agentic-integration.md §6.1.
       #
@@ -139,7 +140,11 @@ runs:
         elif [ -f data/imf-context.json ]; then
           STATUS=$(grep -o '"status": "[^"]*"' data/imf-context.json | head -1 | cut -d'"' -f4)
           AGE=$(grep -o '"vintageAgeMonths": [0-9-]*' data/imf-context.json | head -1 | awk '{print $2}')
-          echo "  ✅ IMF connectivity OK (status=$STATUS, vintageAgeMonths=$AGE)"
+          if [ "$STATUS" = "degraded" ]; then
+            echo "  ℹ️ IMF connectivity DEGRADED (status=$STATUS, vintageAgeMonths=$AGE) — critical WEO/FM context is available"
+          else
+            echo "  ✅ IMF connectivity OK (status=$STATUS, vintageAgeMonths=$AGE)"
+          fi
         else
           # Script was killed by `timeout 60` or crashed before it could
           # write either artifact. Synthesise a minimal `unavailable`
