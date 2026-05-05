@@ -101,3 +101,23 @@ This realtime-pulse analysis aggregates four Tier-A sibling analyses. Quality ch
 | PASS2_COMPLETE | true |
 | NEW_DOCUMENTS_COUNT | 9 |
 | CRITICAL_NEW | HD01JuU30 (JuU30 committee report — youth custody, direct Lagrådet nexus), HD10466 (UD civil servant accountability — democratic norms), HD10464 (Sida abolition — SD escalation) |
+
+---
+
+## Re-run log — Run 3 (Improvement Pass)
+
+| Field | Value |
+|-------|-------|
+| RUN_TIMESTAMP_UTC | 2026-05-05T17:00:00Z |
+| GITHUB_WORKFLOW | news-realtime-monitor |
+| GITHUB_RUN_ID | improvement-pass-3-2026-05-05 |
+| GITHUB_RUN_ATTEMPT | 3 |
+| MODE | IMPROVEMENT_MODE=true |
+| NEW_DOK_IDS | HD10468, HD10469, HD024136 |
+| ARTIFACTS_EXTENDED | synthesis-summary.md (+2 new interpellations + S motion confirmation), data-download-manifest.md (+3 documents), forward-indicators.md (+FI-22 parental insurance EU compliance), executive-brief.md (+Run 3 update) |
+| PASS1_SNAPSHOT | analysis/daily/2026-05-05/realtime-pulse/pass1/ (25 files) |
+| PASS2_COMPLETE | true |
+| NEW_DOCUMENTS_COUNT | 3 |
+| NEW_DOCUMENTS | HD10468 (taxi non-compliance → Carlson KD), HD10469 (gender parental insurance → Larsson L, EU directive risk), HD024136 (S motion opposing age-13 criminal responsibility — confirms 4-party JuU majority) |
+| CRITICAL_NEW | HD024136 confirms parliamentary arithmetic: V+S+C+MP = majority against age-13 criminal responsibility proposal. Government expected to lose vote late May/June 2026. HD10469 raises EU Work-Life Balance Directive compliance risk if Sweden abolishes reserved parental months. |
+| QUALITY_ASSESSMENT | Three new documents incorporated. Parental insurance EU compliance risk is a new material finding. Youth crime parliamentary arithmetic confirmed and strengthened. |
