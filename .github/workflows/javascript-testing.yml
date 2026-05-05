@@ -230,7 +230,8 @@ jobs:
       - name: Setup Node.js 27 nightly
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
-          node-version: '27-nightly'
+          node-version: '27.0.0-nightly'
+          check-latest: true
           cache: 'npm'
       
       - name: Install dependencies
