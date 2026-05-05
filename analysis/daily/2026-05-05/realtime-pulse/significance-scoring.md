@@ -88,3 +88,39 @@ pie title Tier Distribution — 2026-05-05 Pulse
 | L1 Surface | 4 | Contextual treatment, cluster grouping |
 
 style KU39 fill:#ff006e,stroke:#ff006e
+
+---
+
+## Improvement Pass — Updated Significance Scores (9 New Documents)
+
+| Document/Cluster | DIW Score | Tier | Rationale |
+|-----------------|-----------|------|-----------|
+| HD10464 (Sida abolition — SD) | 0.80 | L2+ Priority | SD escalation to Sida dissolution pre-election; Hamas-link framing; forces M position |
+| HD10466 (UD civil servants — SD) | 0.82 | L2+ Priority | Constitutional RF Chapter 12 dimension; democratic norms flashpoint; international echo potential |
+| HD01JuU30 (JuU30 youth custody) | 0.82 | L2+ Priority | Direct constitutional ballast for C's HD024146 defection; Lagrådet nexus |
+| HD10465 (state service withdrawal — S) | 0.62 | L3 Standard | Pre-election S accountability offensive; 23 closed offices; KD vulnerability |
+| HD10467 (Skatteverket Vetlanda — S) | 0.55 | L3 Standard | Complements HD10465 narrative; limited standalone significance |
+| HD11782 (SILC extremist classification — SD) | 0.60 | L3 Standard | Counter-extremism positioning; requires Säpo/NCTE assessment |
+| HD11783 (Taiwan flight permit — SD) | 0.58 | L3 Standard | One China / Sweden-Taiwan foreign policy; symbolic significance |
+| HD11784 (Ostlänken Linköping costs — S) | 0.65 | L3 Standard | Extends Ostlänken accountability narrative; pre-election infrastructure cost |
+| HD11781 (single-use plastics — SD) | 0.42 | L4 Background | EU transposition; routine environmental motion |
+
+**Updated Tier Distribution (post-improvement)**:
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+pie title Tier Distribution — 2026-05-05 Pulse (Improved, 19 items)
+    "L3 Intelligence" : 1
+    "L2+ Priority" : 4
+    "L2 Strategic" : 4
+    "L3 Standard" : 7
+    "L4 Background" : 1
+    "L1 Surface" : 2
+```
+
+**Tier-C Quality Update**:
+- ✅ 9 new documents incorporated into all relevant artifacts
+- ✅ Per-document analysis files created for all 9 new items in `documents/`
+- ✅ New PIRs registered: PIR-NEW-10464, PIR-NEW-10466, JUU30-LAGRADET, PIR-NEW-10465
+- ✅ DIW scores updated across synthesis-summary.md ranking table
+- ✅ Pass 2 evidence: all 23 artifacts modified from pass1 snapshot

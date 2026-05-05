@@ -63,3 +63,21 @@ gantt
 **If FI-13 (polls) shows C below 5%** → FI-12 election outcome scenario shifts toward Scenario B/C  
 **If FI-09 (EU Commission) formal request arrives** → EU-HABITATS-SE PIR escalates to HIGH; impact on SD/M forestry deregulation narrative
 
+
+---
+
+## Updated Forward Indicators — Improvement Pass (9 New Documents)
+
+| # | Indicator | Expected Date | Significance | PIR Link |
+|---|-----------|--------------|-------------|---------|
+| FI-16 | HD10464 interpellation answer (Sida abolition) | 2026-05-26 | SD floor debate on Sida future — M government ODA position | PIR-NEW-10464 |
+| FI-17 | HD10466 interpellation answer (UD civil servants) | 2026-05-26 | FM Malmer Stenergard on civil service neutrality | PIR-NEW-10466 |
+| FI-18 | HD10465 interpellation answer (state service withdrawal) | 2026-05-26 | Civilminister Slottner on 23 closed service offices | PIR-NEW-10465 |
+| FI-19 | JuU30 → Lagrådet HD03246 reference | ~2026-06-01 | Does Lagrådet cite JuU30 in youth crime yttrande? | JUU30-LAGRADET |
+| FI-20 | Media amplification of Sida 55 MSEK Hamas claim | Within 7 days | Will HD10464 claim be substantiated or refuted? | PIR-NEW-10464 |
+| FI-21 | Government formal Sida abolition proposal | 2026-07 to 2026-09 | Would require Riksdag act — pre-election legislative window closing | PIR-NEW-10464 |
+
+**Conditional triggers (new)**:
+- **If FI-20 (Hamas claim verified)** → HD10464 upgrades from positioning to substantive accountability; Dousa credibility at risk
+- **If FI-17 (Malmer Stenergard defends UD staff)** → Constitutional scholars activate; possible EU/Nordic partner concern about Swedish institutional norms
+- **If FI-19 (Lagrådet cites JuU30)** → KJ-7 confirmed; C's defection upgraded from "isolated" to "legally grounded"

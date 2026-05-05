@@ -91,3 +91,18 @@ quadrantChart
   }
 }
 ```
+
+---
+
+## Improvement Pass — Additional Intelligence (9 New Documents)
+
+**BLUF Update**: The initial analysis has been expanded with 9 documents (4 interpellations, 1 committee report, 4 motions) discovered in a post-initial data refresh. The most significant additions are:
+
+- 🏛️ **SD Institutional Offensive (CRITICAL)**: HD10464 (Sida abolition) + HD10466 (UD civil servant accountability) reveal a coordinated SD strategy targeting state organs as politically compromised pre-election. SD Markus Wiechel targets both Biståndsminister Dousa (M) and FM Malmer Stenergard (M) simultaneously. Sida abolition framed via 55 MSEK Hamas-linked payment scandal [A2 unverified].
+- ⚖️ **JuU30 custody framework (HIGH)**: Justice Committee's betänkande on custodial sentences for children/youth provides CRC/ECHR constitutional ballast directly supporting C's defection on HD024146 and feeding the Lagrådet review (~2026-06-01).
+- 🏢 **State service withdrawal (MEDIUM-HIGH)**: HD10465 + HD10467 reveal coordinated S accountability offensive — 148 → 125 service offices, 130 MSEK budget cut — targeting KD's Civilminister Slottner.
+
+**Updated Top Forward Triggers**:
+1. **[2026-05-26 | HIGH | PIR-NEW-10464]**: SD gets formal floor debate on Sida abolition — forces M's position on Swedish ODA architecture
+2. **[2026-05-26 | HIGH | PIR-NEW-10466]**: FM Malmer Stenergard must respond to UD civil servant accountability demand — democratic norms flashpoint
+3. **[2026-06-01 | CRITICAL | JUU30-LAGRADET]**: Lagrådet yttrande on HD03246 (criminal age 13) — JuU30 framework may directly influence Lagrådet's constitutional analysis

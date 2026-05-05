@@ -78,3 +78,17 @@
 
 **ACH Assessment**: H-04 has merit at national level but underestimates regional cumulative effects. Risk assessment should weight Östergötland regional mobilisation as a secondary, not primary, electoral risk.
 
+
+---
+
+## Improvement Pass — Devil's Advocate Challenges (New Documents)
+
+### Challenge H-07: SD's Sida Abolition Is Positioning, Not Intent (HD10464)
+**Claim challenged**: SD genuinely wants to abolish Sida before 2026-09 election  
+**Devil's advocate**: SD knows abolition requires full legislative process impossible before recess; the interpellation is electoral theatre. Hamas-link claim [A2 unverified] may be based on political rather than audited sources. SD's actual preference may be reform, not abolition.  
+**Implication**: Overweighting HD10464 as substantive policy risk would be analytic error.
+
+### Challenge H-08: JuU30 Has No Real Lagrådet Impact (HD01JuU30)
+**Claim challenged**: JuU30 provides constitutional ballast to Lagrådet review of HD03246  
+**Devil's advocate**: Lagrådet has its own constitutional analysis tools and is not bound by committee positions. JuU30 represents committee consensus, not Lagrådet's framework. Lagrådet may reach different conclusions independently.  
+**Implication**: JUU30-LAGRADET PIR should be MEDIUM rather than HIGH confidence on the Lagrådet-citing-JuU30 scenario.

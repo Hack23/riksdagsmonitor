@@ -85,3 +85,19 @@ xychart-beta
     y-axis "Projected Seats" 0 --> 130
     bar [119, 66, 62, 27, 25, 20, 18, 13]
 ```
+
+---
+
+## Improvement Pass — 2026 Election Update (New Documents)
+
+### SD Pre-Election Positioning (HD10464, HD10466, HD10458)
+**Pattern confirmed**: SD is running a coherent institutional accountability offensive across three ministerial portfolios simultaneously:
+- Gang crime KPIs (Justice/Strömmer)
+- Sida performance and Hamas-link (Aid/Dousa)  
+- Foreign Ministry civil servant neutrality (FM/Malmer Stenergard)
+
+**Electoral logic**: SD positions as the party exposing government institutional failures, resonating with core "accountability" voter motivation. This complements SD's traditional crime/immigration portfolio.
+
+**Risk for M**: All three interpellations target M ministers. If SD succeeds in driving the narrative that M's own ministers are failing or tolerating politically biased institutions, this creates a coalition tension between SD's accountability messaging and M's record.
+
+**C vulnerability**: JuU30 + HD024146 defection establishes C as the rights-defender in youth justice. Pre-election this is C's differentiation signal — "we support reform but not unconstitutional reform." C is polling ~7.5%; any further drop threatens their mandate-threshold survival.

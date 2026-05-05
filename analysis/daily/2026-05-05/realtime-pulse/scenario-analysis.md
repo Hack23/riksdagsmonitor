@@ -87,3 +87,18 @@ flowchart LR
     style B1 fill:#ffbe0b,stroke:#ffbe0b
     style C1 fill:#ff006e,stroke:#ff006e
 ```
+
+---
+
+## Improvement Pass — Scenario Updates (9 New Documents)
+
+### Scenario A Update — SD Institutional Accountability Escalation
+**Trigger**: HD10464 + HD10466 answer by 2026-05-26  
+**Scenario A1 (P=0.45)**: Dousa defends Sida reform without abolition; Malmer Stenergard refuses career audit → SD floor debates amplify but no policy change  
+**Scenario A2 (P=0.35)**: Hamas-link claim verified → Dousa faces real accountability pressure; possible government Sida review → SD gains electoral resonance  
+**Scenario A3 (P=0.20)**: Government announces "Sida reform package" as pre-emptive response → SD escalates to motion; legislative response possible
+
+### JuU30 → Lagrådet Scenario
+**Trigger**: Lagrådet yttrande on HD03246 ~2026-06-01  
+**If Lagrådet cites JuU30 (P=0.50)**: C's defection confirmed as legally grounded → reproducible; coalition stress increases  
+**If Lagrådet ignores JuU30 (P=0.50)**: Committee report significance remains background; C defection remains isolated

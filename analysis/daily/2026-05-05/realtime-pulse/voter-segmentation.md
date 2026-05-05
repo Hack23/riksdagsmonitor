@@ -66,3 +66,12 @@ flowchart LR
     PS --> L_KD["✅ L/KD incremental"]
     RUR --> SD_C["✅ SD/C retention"]
 ```
+
+---
+
+## Improvement Pass — Voter Segmentation Update
+
+### SD Institutional Accountability Frame Voter Impact
+**SD core (anti-establishment, crime/security)**: HD10464 + HD10466 + HD10458 resonates strongly — all three target existing state institutions as failing or biased. Net: reinforces SD base.  
+**Soft-M voters**: Sida abolition (HD10464) — mixed; M's ODA commitment creates crossfire for M-soft voters  
+**Rural/service-dependent voters**: HD10465 state service withdrawal — strongly anti-government frame among voters affected by office closures (regional Sweden)

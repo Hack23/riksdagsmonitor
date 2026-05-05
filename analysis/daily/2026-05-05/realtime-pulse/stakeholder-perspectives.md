@@ -65,3 +65,21 @@ graph LR
     style C2 fill:#ffbe0b,stroke:#ffbe0b
 ```
 
+
+---
+
+## Improvement Pass — New Stakeholder Perspectives
+
+### Sida (institutional target — HD10464)
+**Position**: Defensive — must demonstrate accountability for aid disbursement  
+**Interests**: Institutional survival, mission continuity, donor partner confidence  
+**SD claim exposure**: Hamas-linked 55 MSEK payment [A2 unverified] — if confirmed, internal governance failure; if denied, reputational vindication
+
+### UD Civil Servants (HD10466)
+**Position**: Collectively targeted; professional rights and constitutional protections at stake  
+**Interests**: RF Chapter 12 compliance confirmation; protection from political career consequences  
+**Alliance**: ST (Statstjänstemännens) union, constitutional scholars, opposition parties
+
+### Centerpartiet (HD01JuU30 intersection)
+**Position**: JuU30 provides additional CRC/ECHR legal ballast for existing HD024146 defection  
+**Interests**: Differentiation from government on rights-based grounds while maintaining coalition-adjacent status

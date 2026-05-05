@@ -156,3 +156,48 @@ Forward indicator added: Lagrådet yttranden expected Q2 2026.
 | Riksbank FSR 2025 | Household debt/GDP ~170% | Nov 2025 | Available (public URL) |
 | IMF WEO | GGXWDG_NGDP ~35%, NGDP_RPCH 2.1% | Oct 2025 | Vintage (live API partially blocked) |
 | SCB | Swedish AKU unemployment ~8.5% | Feb 2026 | Available |
+
+---
+
+## Improvement Pass — New Documents (2026-05-05 Data Refresh)
+
+**Refresh timestamp**: See methodology-reflection.md Re-run log  
+**IMPROVEMENT_MODE**: true  
+**New documents found**: 9  
+
+### Full-Text Fetch Outcomes
+
+| dok_id | Title | Type | Admiralty | Full Text Fetched | Notes |
+|--------|-------|------|----------|------------------|-------|
+| HD10464 | Avveckling av Sida | Interpellation (SD→M) | A1 | YES | Full text — Hamas-linked payment 55 MSEK, Afghanistan 14 BSEK |
+| HD10465 | Statlig närvaro och service | Interpellation (S→KD) | A1 | YES | Full text — 148→125 servicekontor, 130 MSEK cut |
+| HD10466 | Opolitiska tjänstemän vid Regeringskansliet | Interpellation (SD→M) | A1 | YES | Full text — 2018 skamlistan, 261 UD signatories |
+| HD10467 | Nedläggning av Skatteverkets kontor i Vetlanda | Interpellation | A1 | PARTIAL | Snippet only — complements HD10465 |
+| HD01JuU30 | Frihetsberövande påföljder för barn och unga | Betänkande (JuU) | A1 | PARTIAL | Key metadata confirmed; full HTML large (105KB) |
+| HD11781 | Producentansvar för engångsplast | Motion (SD) | A1 | PARTIAL | Snippet |
+| HD11782 | Klassning av Silc som extremistisk organisation | Motion (SD) | A1 | PARTIAL | Snippet |
+| HD11783 | Återtaget flygtillstånd för Taiwans president | Motion (SD) | A1 | PARTIAL | Snippet |
+| HD11784 | Kostnader för Ostlänkens anslutning till Linköping | Motion (S) | A1 | PARTIAL | Snippet |
+
+### Per-Document Analysis Files Created
+
+| dok_id | Analysis file | Admiralty | DIW |
+|--------|-------------|----------|-----|
+| HD10464 | documents/HD10464-analysis.md | A1 | 0.80 |
+| HD10465 | documents/HD10465-analysis.md | A1 | 0.62 |
+| HD10466 | documents/HD10466-analysis.md | A1 | 0.82 |
+| HD10467 | documents/HD10467-analysis.md | A1 | 0.55 |
+| HD01JuU30 | documents/HD01JuU30-analysis.md | A1 | 0.82 |
+| HD11781 | documents/HD11781-analysis.md | A1 | 0.42 |
+| HD11782 | documents/HD11782-analysis.md | A1 | 0.60 |
+| HD11783 | documents/HD11783-analysis.md | A1 | 0.58 |
+| HD11784 | documents/HD11784-analysis.md | A1 | 0.65 |
+
+### Answer Deadlines Registered (New Interpellations)
+
+| dok_id | Sista svarsdatum | PIR |
+|--------|-----------------|-----|
+| HD10464 | 2026-05-26 | PIR-NEW-10464 |
+| HD10465 | 2026-05-26 | PIR-NEW-10465 |
+| HD10466 | 2026-05-26 | PIR-NEW-10466 |
+| HD10467 | 2026-05-26 | (not registered separately) |

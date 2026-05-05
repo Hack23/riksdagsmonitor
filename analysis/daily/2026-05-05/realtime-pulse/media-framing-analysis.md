@@ -89,3 +89,24 @@
 | T0049 | Run polarising campaigns | CRC rights vs youth crime (HD024146/HD024148) | V+C+MP |
 | T0062 | Selective amplification | KU39 cosmetics narrative vs. substantive reform | S/V |
 
+
+---
+
+## Improvement Pass — New Media Framing (HD10464, HD10466)
+
+### Sida Abolition Frame (HD10464)
+**Dominant frame**: Accountability — "taxpayer money to Hamas-linked groups"  
+**Counter-frame**: International solidarity — "Sweden's aid credibility undermined by SD attack"  
+**Media amplification probability**: HIGH (tabloid + political media; international NGO sector will respond)  
+**Framing winner**: SD gains in nationalist/fiscally conservative media; loses in humanitarian/international media
+
+### Civil Servant Accountability Frame (HD10466)
+**Dominant frame**: "Political civil servants must be neutral" (SD frame — constitutional language)  
+**Counter-frame**: "SD conducting political purge of foreign ministry staff" (opposition frame)  
+**Media amplification probability**: HIGH (constitutional scholars, human rights organisations, EU watchers)  
+**Framing risk**: International media may frame as democratic backsliding
+
+### JuU30 Committee Report Frame  
+**Dominant frame**: Legal/procedural — committee establishing custodial framework for under-18s  
+**Political resonance**: C will cite JuU30 in defending HD024146 defection  
+**Media amplification probability**: MEDIUM (specialist legal/political coverage only)
