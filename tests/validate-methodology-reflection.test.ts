@@ -64,6 +64,12 @@ Self-audit of this dossier's tradecraft. \`[HIGH]\`
 
 ### R1. Something
 
+## 🌐 Data Source Connectivity Audit
+
+| Source | Endpoint | Status | Fallback Used | Notes |
+|--------|----------|:------:|:-------------:|-------|
+| IMF WEO | tsx scripts/imf-fetch.ts weo | 🟢 live | N | vintage: WEO-2026-04 |
+
 ## 📎 References
 
 - [Sibling](../../2026-04-18/weekly-review/)
@@ -272,6 +278,27 @@ describe('validateMethodologyReflection — required-section rule', () => {
     const report = await validateMethodologyReflection(file);
     expect(report.ok).toBe(true);
   });
+
+  it('flags missing §Data Source Connectivity Audit in Tier-C', async () => {
+    const withoutAudit = PASSING_TIER_C.replace(
+      /## 🌐 Data Source Connectivity Audit[\s\S]*?(?=## )/,
+      '',
+    );
+    const file = await writeFixture('2026-01-05b/weekly-review/methodology-reflection.md', withoutAudit);
+    const report = await validateMethodologyReflection(file);
+    expect(report.ok).toBe(false);
+    expect(
+      report.issues.some(
+        (i) => i.rule === 'required-section' && i.message.includes('Data Source Connectivity Audit'),
+      ),
+    ).toBe(true);
+  });
+
+  it('does NOT require §Data Source Connectivity Audit in doc-type folders', async () => {
+    const file = await writeFixture('2026-01-05c/motions/methodology-reflection.md', PASSING_DOC_TYPE);
+    const report = await validateMethodologyReflection(file);
+    expect(report.issues.some((i) => i.rule === 'required-section' && i.message.includes('Data Source Connectivity Audit'))).toBe(false);
+  });
 });
 
 describe('validateMethodologyReflection — watchpoint-table rule (Tier-C only)', () => {
@@ -324,5 +351,29 @@ describe('validateMethodologyReflection — confidence-label rule (universal)', 
     const file = await writeFixture('2026-01-12/weekly-review/methodology-reflection.md', withVeryHigh);
     const report = await validateMethodologyReflection(file);
     expect(report.issues.some((i) => i.rule === 'confidence-label')).toBe(false);
+  });
+});
+
+describe('validateMethodologyReflection — imf-primary-violation rule', () => {
+  it('warns when World Bank is used for GDP data (economic substitution)', async () => {
+    const withWBSubstitution = PASSING_TIER_C.replace(
+      'Filler prose. ',
+      'Economic context relies on World Bank GDP growth data. Filler prose. '
+    );
+    const file = await writeFixture('2026-01-13/motions/methodology-reflection.md', withWBSubstitution);
+    const report = await validateMethodologyReflection(file);
+    expect(report.issues.some((i) => i.rule === 'imf-primary-violation')).toBe(true);
+    // Should be a warning, not an error — so file still passes
+    expect(report.ok).toBe(true);
+  });
+
+  it('does not warn when World Bank is used for governance data', async () => {
+    const withWBGovernance = PASSING_TIER_C.replace(
+      'Filler prose. ',
+      'World Bank governance indicators (WGI) used for rule-of-law comparison. Filler prose. '
+    );
+    const file = await writeFixture('2026-01-14/motions/methodology-reflection.md', withWBGovernance);
+    const report = await validateMethodologyReflection(file);
+    expect(report.issues.some((i) => i.rule === 'imf-primary-violation')).toBe(false);
   });
 });

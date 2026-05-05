@@ -19,7 +19,7 @@
  * pipeline depends on:
  *
  *   1. **WEO** (Datamapper) — `NGDP_RPCH` SWE, last 1 year
- *   2. **FM/fiscal** (Datamapper) — `GGXWDG_NGDP` SWE, last 1 year
+ *   2. **FM** (Datamapper)  — `GGXWDG_NGDP` SWE, last 1 year
  *   3. **IFS** (SDMX 3.0)    — CPI monthly index probe
  *
  * Each probe must return HTTP 200 and parse as JSON. The WEO probe
@@ -100,6 +100,13 @@ export interface ImfConnectivityReport {
   readonly checkedAt: string;
   readonly warningBlock: string;
 }
+
+// ---------------------------------------------------------------------------
+// Probe configuration constants
+// ---------------------------------------------------------------------------
+
+/** SDMX CPI dataflow — updated when IMF bumps the version (was 4.0.0 before 2026-05). */
+const SDMX_CPI_PROBE_PATH = '/data/IMF.STA,CPI,5.0.0/M.SE.PCPI_IX?startPeriod=2024-01';
 
 // ---------------------------------------------------------------------------
 // Pure helpers (exported for testability)
@@ -314,8 +321,8 @@ export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
     }
   }
 
-  // Probe 2: fiscal/debt context via Datamapper. Use the WEO/FM-shared
-  // gross-debt indicator because `GGXONLB_NGDP` is not exposed for SWE on
+  // Probe 2: FM via Datamapper (GGXWDG_NGDP = gross government debt % GDP).
+  // Use this indicator because `GGXONLB_NGDP` is not exposed for SWE on
   // the public Datamapper surface and would create a false outage.
   {
     const start = Date.now();
@@ -343,14 +350,18 @@ export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
     }
   }
 
-  // Probe 3: IFS monthly CPI index via SDMX 3.0
-  // We only assert "request returned a JSON-shaped object" — the SDMX
-  // envelope shape is exercised in `imf-client.test.ts` and is too verbose
-  // to re-verify here.
+  // Probe 3: SDMX 3.0 connectivity — CPI data endpoint.
+  // Uses the primary data path (IMF.STA,CPI,5.0.0). If the IMF data
+  // endpoint returns 404 (a known infrastructure issue since ~2026-05)
+  // this probe correctly returns ok=false so the unavailable flag IS written
+  // and downstream workflows use the degradation path.  The error message
+  // will include the HTTP status (e.g. "404 Resource Not Found") which is
+  // enough for operators to distinguish "full SDMX outage" from "data
+  // endpoint broken while structure/dataflow still responds".
   {
     const start = Date.now();
     const result = await withTimeout(
-      client.sdmxFetch('/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2024-01'),
+      client.sdmxFetch(SDMX_CPI_PROBE_PATH),
       PROBE_TIMEOUT_MS,
     );
     if (isProbeErr(result)) {

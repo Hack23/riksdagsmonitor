@@ -145,6 +145,16 @@ For every downloaded document reference, fetch full text when available (`get_do
 
 For every committee-report, motion, or interpellation cycle, enrich the manifest with **prior-vote context** for the same committee + topic cluster. Call `search_voteringar` (riksdag-regering MCP) with the committee `bet` prefix (e.g. `KU`, `JuU`, `FöU`, `SoU`, `SfU`, `UbU`, `FiU`) and / or the proposition number a motion responds to, scoped to the **last 4 riksmöten** (`rm` filter). Record the most relevant 3–5 prior votes (Ja/Nej/Avstår tally + party split) under a `## Prior-Voteringar Enrichment` section in `data-download-manifest.md`. This is required input for `historical-parallels.md`, `coalition-mathematics.md` and `swot-analysis.md`'s evidence rows. If no prior votes exist on the topic, state `Prior voteringar: no directly comparable vote found in last 4 riksmöten` — do not fabricate.
 
+### Voteringar fallback for new riksmöten
+
+When a new riksmöte has begun and no votes are yet indexed for the current session (common in September–November each year, and occasionally until the first betänkande vote in a committee cycle), apply this fallback hierarchy:
+
+1. **Expand riksmöte scope** — widen `rm` filter from the last 4 to the last **6 riksmöten** to capture the most recent available votes from the same committee.
+2. **Search by proposition parent** — for motions responding to a proposition, search voteringar for the parent proposition's beteckning (e.g. if motion responds to prop. 2025/26:242, search `bet: "2025/26:242"`).
+3. **Search by committee + keyword** — use the committee abbreviation plus a topic keyword from the document title (e.g. `organ: "JuU"` + `avser: "brottslighet"`).
+4. **Document the gap explicitly** — if all searches return empty, record: `Prior voteringar: new riksmöte — no votes indexed yet for {committee} in 2025/26; using {rm} cycle proxy (most recent: {dok_id}, {date})`. Never use "historical patterns" without citing the specific prior vote dok_id.
+5. **Tag as methodology limitation** — report this in `methodology-reflection.md §Content Metrics` under the `Prior-voteringar enrichment` row as 🟡 (partial) with the fallback strategy documented.
+
 ## Statskontoret enrichment
 
 Statskontoret pre-warm is a **mandatory checklist evaluation** for every cycle, not "if relevant" — the trigger list below is **always evaluated**, even when no actual `web_fetch` is needed. For each downloaded document, judge against this trigger list — if **any** trigger fires, perform a Statskontoret search; if **no** trigger fires, record the negative finding so downstream artifacts know absence was examined, not skipped:

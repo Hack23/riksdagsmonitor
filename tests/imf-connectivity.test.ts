@@ -187,7 +187,8 @@ describe('runProbes', () => {
     try {
       const probesPromise = runProbes(hangingClient);
       // Three sequential probes × PROBE_TIMEOUT_MS — advance enough virtual
-      // time for all three to time out.
+      // time for all three to time out. The probe budget is 3×20 s = 60 s,
+      // matching the pre-warm action's `timeout 60` envelope.
       await vi.advanceTimersByTimeAsync(PROBE_TIMEOUT_MS * 3 + 100);
       const probes = await probesPromise;
       expect(probes).toHaveLength(3);

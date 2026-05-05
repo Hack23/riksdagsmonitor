@@ -100,6 +100,10 @@ export const REQUIRED_SECTIONS: ReadonlyArray<RegExp> = [
   /^##[^\n]{0,30}(?:Recommendations for(?:\s+Doctrine)?\s+Codification|Recommended Upstream Changes|Lessons for Future\b[^\n]*)\b/mi,
   // References — synonyms: "Cross-References", "Cross References".
   /^##[^\n]{0,30}\b(?:Cross[-\s]?)?References\b/mi,
+  // Data Source Connectivity Audit — records live connectivity of every external
+  // data source attempted. Required so systematic IMF/Riksdag fetch failures are
+  // tracked rather than silently falling back without an audit trail.
+  /^##[^\n]{0,30}\bData Source Connectivity Audit\b/mi,
 ];
 
 /** Human-readable labels parallel to {@link REQUIRED_SECTIONS}. */
@@ -112,6 +116,7 @@ export const REQUIRED_SECTION_LABELS: ReadonlyArray<string> = [
   'Pass-1 → Pass-2 Improvement Evidence',
   'Recommendations for Doctrine Codification',
   'References',
+  'Data Source Connectivity Audit',
 ];
 
 /** Confidence-label tokens — at least one must appear. */
@@ -310,6 +315,19 @@ export async function validateMethodologyReflection(filePath: string): Promise<V
     }
   }
 
+  // Rule 7 (universal, warning): Detect World Bank economic substitution.
+  // Per ECONOMIC_DATA_CONTRACT v2.1, IMF is the primary provider for all
+  // economic context. Using World Bank for GDP/growth/debt/inflation is a
+  // methodology gap that should be surfaced.
+  const WB_ECONOMIC_DATA_REGEX = /World\s+Bank\s+(?:GDP|growth|debt|inflation|fiscal|unemployment)|worldbank\.org.{0,50}(?:GDP|NY\.GDP|GROWTH)/i;
+  if (WB_ECONOMIC_DATA_REGEX.test(content)) {
+    issues.push({
+      severity: 'warning',
+      rule: 'imf-primary-violation',
+      message: 'World Bank appears to be used for economic data (GDP/growth/debt/inflation). Per ECONOMIC_DATA_CONTRACT, IMF is the primary economic-data source. Use IMF with fallback cache; World Bank is reserved for governance, environment, and social residue.',
+    });
+  }
+
   const ok = issues.every((i) => i.severity !== 'error');
   return { file: filePath, bytes, minBytes, isTierC: tierC, issues, ok };
 }
@@ -331,6 +349,11 @@ async function main(): Promise<void> {
     const label = report.isTierC ? '[Tier-C]' : '[Doc-type]';
     if (report.ok) {
       console.log(`✅ ${label} ${report.file} (${report.bytes} B, min ${report.minBytes} B)`);
+      // Also print warnings so operators see them even when the file passes.
+      const warnings = report.issues.filter((i) => i.severity === 'warning');
+      for (const w of warnings) {
+        console.warn(`   ⚠️  [${w.rule}] ${w.message}`);
+      }
     } else {
       console.error(`❌ ${label} ${report.file} (${report.bytes} B, min ${report.minBytes} B)`);
       for (const issue of report.issues) {
