@@ -314,8 +314,8 @@ export async function validateMethodologyReflection(filePath: string): Promise<V
   // Per ECONOMIC_DATA_CONTRACT v2.1, IMF is the primary provider for all
   // economic context. Using World Bank for GDP/growth/debt/inflation is a
   // methodology gap that should be surfaced.
-  const WB_ECONOMIC_SUBSTITUTION = /World\s+Bank\s+(?:GDP|growth|debt|inflation|fiscal|unemployment)|worldbank\.org.{0,50}(?:GDP|NY\.GDP|GROWTH)/i;
-  if (WB_ECONOMIC_SUBSTITUTION.test(content)) {
+  const WB_ECONOMIC_DATA_REGEX = /World\s+Bank\s+(?:GDP|growth|debt|inflation|fiscal|unemployment)|worldbank\.org.{0,50}(?:GDP|NY\.GDP|GROWTH)/i;
+  if (WB_ECONOMIC_DATA_REGEX.test(content)) {
     issues.push({
       severity: 'warning',
       rule: 'imf-primary-violation',

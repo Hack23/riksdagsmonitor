@@ -69,13 +69,35 @@ function loadCachedIMFData(indicator: string, country: string): { data: unknown;
 
 /**
  * Check if cached data is stale (> 6 months old).
+ * Returns true for invalid/unparseable dates (conservative: treat unknown age as stale).
  */
 function isCacheStale(fetchedAt: string): boolean {
   const fetched = new Date(fetchedAt);
-  if (Number.isNaN(fetched.getTime())) return true;
+  if (Number.isNaN(fetched.getTime())) return true; // unparseable → treat as stale
   const sixMonthsAgo = new Date();
   sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
   return fetched < sixMonthsAgo;
+}
+
+/**
+ * Build a standardised fallback payload with metadata indicating cache usage.
+ */
+function buildFallbackPayload(
+  cachedData: unknown,
+  err: unknown,
+  cachedAt: string,
+  stale: boolean,
+): Record<string, unknown> {
+  return {
+    ...cachedData as Record<string, unknown>,
+    _fallback: true,
+    _fallbackReason: err instanceof Error ? err.message : String(err),
+    _cachedAt: cachedAt,
+    _staleVintage: stale,
+    _vintageAnnotation: stale
+      ? `>6 month vintage (cached ${cachedAt}); live fetch failed`
+      : `cached ${cachedAt}; live fetch failed`,
+  };
 }
 
 // ---------------------------------------------------------------------------
@@ -166,16 +188,7 @@ async function runWeo(flags: ReadonlyMap<string, string>, booleans: ReadonlySet<
     const cached = loadCachedIMFData(indicator, country);
     if (cached) {
       const stale = isCacheStale(cached.meta.fetchedAt);
-      const fallbackPayload = {
-        ...cached.data as Record<string, unknown>,
-        _fallback: true,
-        _fallbackReason: err instanceof Error ? err.message : String(err),
-        _cachedAt: cached.meta.fetchedAt,
-        _staleVintage: stale,
-        _vintageAnnotation: stale
-          ? `>6 month vintage (cached ${cached.meta.fetchedAt}); live fetch failed`
-          : `cached ${cached.meta.fetchedAt}; live fetch failed`,
-      };
+      const fallbackPayload = buildFallbackPayload(cached.data, err, cached.meta.fetchedAt, stale);
       process.stderr.write(`imf-fetch: live fetch failed, using cached data from ${cached.meta.fetchedAt}${stale ? ' (STALE >6mo)' : ''}\n`);
       process.stdout.write(`${JSON.stringify(fallbackPayload, null, 2)}\n`);
     } else {
@@ -228,12 +241,10 @@ async function runCompare(flags: ReadonlyMap<string, string>, booleans: Readonly
       }
     }
     if (anyFound) {
-      const payload = {
-        indicator, countries, results: byCountry,
-        _fallback: true,
-        _fallbackReason: err instanceof Error ? err.message : String(err),
-        _staleVintage: staleAny,
-      };
+      const payload = buildFallbackPayload(
+        { indicator, countries, results: byCountry },
+        err, 'mixed', staleAny,
+      );
       process.stderr.write(`imf-fetch: live compare failed, using cached data${staleAny ? ' (some STALE >6mo)' : ''}\n`);
       process.stdout.write(`${JSON.stringify(payload, null, 2)}\n`);
     } else {
