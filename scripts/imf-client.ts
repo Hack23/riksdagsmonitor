@@ -100,7 +100,7 @@ const DEFAULT_DATAMAPPER_BASE_URL = 'https://www.imf.org/external/datamapper/api
 const DEFAULT_SDMX_BASE_URL = 'https://api.imf.org/external/sdmx/3.0';
 const DEFAULT_TIMEOUT = 15_000;
 const DEFAULT_MAX_RETRIES = 2;
-const DEFAULT_USER_AGENT = 'Mozilla/5.0 (compatible; Riksdagsmonitor/0.8.75; +https://riksdagsmonitor.com)';
+const DEFAULT_USER_AGENT = 'Mozilla/5.0 (compatible; Riksdagsmonitor; +https://riksdagsmonitor.com)';
 /** Default vintage. Update in April / October when the WEO re-releases. */
 const DEFAULT_WEO_VINTAGE = 'WEO-2026-04';
 

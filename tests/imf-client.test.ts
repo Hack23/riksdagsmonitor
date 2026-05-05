@@ -41,6 +41,7 @@ describe('ImfClient', () => {
       expect(defaults.timeout).toBe(15_000);
       expect(defaults.maxRetries).toBe(2);
       expect(defaults.userAgent).toContain('Riksdagsmonitor');
+      expect(defaults.userAgent).not.toMatch(/Riksdagsmonitor\/\d/);
       expect(defaults.weoVintage).toMatch(/^WEO-\d{4}-\d{2}$/);
     });
 

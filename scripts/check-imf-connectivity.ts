@@ -38,7 +38,7 @@
  * -------
  * On success this script writes `data/imf-context.json` containing:
  *
- *   - `status`: 'ok' | 'stale-vintage'
+ *   - `status`: 'ok' | 'stale-vintage' | 'degraded' | 'unavailable'
  *   - `vintage`: e.g. `WEO-2026-04`
  *   - `vintageAgeMonths`: integer
  *   - `probes`: per-probe latency / status
