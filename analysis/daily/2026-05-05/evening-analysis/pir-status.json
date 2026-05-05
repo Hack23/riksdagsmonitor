@@ -1,0 +1,112 @@
+{
+  "metadata": {
+    "date": "2026-05-05",
+    "cycle": "evening-analysis",
+    "generated": "2026-05-05T18:45:00Z",
+    "prior_cycle": "2026-05-04/evening-analysis"
+  },
+  "pirs": [
+    {
+      "id": "PIR-001",
+      "title": "Gang crime eradication promise — police + legislative delivery",
+      "origin": "HD10458, 2026-04-29/interpellations",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "last_signal": "JuU30 committee clearance (HD01JuU30), 2026-05-05",
+      "next_indicator": "JuU30 plenum vote 2026-05-14",
+      "horizon": "T+7 to T+21"
+    },
+    {
+      "id": "PIR-002",
+      "title": "ESA space sector — ministerial response to HD10461",
+      "origin": "HD10461, 2026-04-29/interpellations",
+      "status": "MONITORING-ONLY",
+      "priority": "LOW",
+      "last_signal": "Ministerial answer formulaic (confirmed by 2026-05-04 cycle). No new signal 2026-05-05.",
+      "next_indicator": "HD10461 ministerial answer published in diarium",
+      "horizon": "T+30 (reduced priority)",
+      "note": "Downgraded from OPEN per devils-advocate.md recommendation: no new signal >7 days"
+    },
+    {
+      "id": "PIR-003",
+      "title": "Agency activism constitutional framing — SD's captured-state narrative",
+      "origin": "HD10459, 2026-04-29/evening-analysis",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "last_signal": "HD10466 (opolitiska tjänstemän, 2026-05-05) — third interpellation in cluster",
+      "next_indicator": "Ministerial answers to HD10466 due 2026-05-26",
+      "horizon": "T+14 to T+30",
+      "note": "UPGRADED: SD has now filed 3 interpellations in this cluster (HD10459, HD10464, HD10466). PIR-003 now covers both independent agencies AND RK civil servants."
+    },
+    {
+      "id": "PIR-004",
+      "title": "Migration — permanent permit elimination package HD03262-265",
+      "origin": "2026-04-30/evening-analysis",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "last_signal": "No new signal 2026-05-05",
+      "next_indicator": "SfU committee vote expected late May",
+      "horizon": "T+21 to T+45"
+    },
+    {
+      "id": "PIR-005",
+      "title": "Coalition durability — C-party post-election flexibility",
+      "origin": "2026-05-04/evening-analysis",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "last_signal": "SD-M friction from HD10464/HD10466 adds marginal pressure",
+      "next_indicator": "C party spokesperson statement; SD public satisfaction signal",
+      "horizon": "T+30 to T+131 (election)"
+    },
+    {
+      "id": "PIR-006",
+      "title": "Nuclear EIA legal challenge — Mark- och miljödomstolen post June 17",
+      "origin": "2026-05-04/evening-analysis",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "last_signal": "No new signal 2026-05-05. HD11787 NPT question is a separate nuclear track.",
+      "next_indicator": "June 17 MKB deadline",
+      "horizon": "T+43 (June 17 2026)"
+    },
+    {
+      "id": "PIR-007",
+      "title": "Ostlänken route change — ministerial response",
+      "origin": "2026-05-04/interpellations, 2026-04-29",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "last_signal": "HD11784 (written question Linköping costs, 2026-05-05) — confirms continued attention",
+      "next_indicator": "Ministerial answer to HD11784 due 2026-05-26",
+      "horizon": "T+21"
+    },
+    {
+      "id": "PIR-EA-2505-01",
+      "title": "Will Sida abolition interpellation (HD10464) produce a formal government review?",
+      "origin": "HD10464, 2026-05-05/evening-analysis",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "last_signal": "HD10464 filed 2026-05-05",
+      "next_indicator": "Ministerial answer due 2026-05-26; Sida management reaction window 2026-05-12",
+      "horizon": "T+21 to T+30"
+    },
+    {
+      "id": "PIR-EA-2505-02",
+      "title": "Will opolitiska tjänstemän interpellation (HD10466) produce HR action or KU investigation?",
+      "origin": "HD10466, 2026-05-05/evening-analysis",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "last_signal": "HD10466 filed 2026-05-05",
+      "next_indicator": "Ministerial answer due 2026-05-26; KU motion window from S/V/MP",
+      "horizon": "T+21"
+    },
+    {
+      "id": "PIR-EA-2505-03",
+      "title": "Will Sweden's NPT 2026 answer reveal NATO nuclear integration depth?",
+      "origin": "HD11787, 2026-05-05/evening-analysis",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "last_signal": "HD11787 filed 2026-05-05; NPT conference active April 27 – May 22",
+      "next_indicator": "NPT conference outcome 2026-05-22; ministerial answer due 2026-05-26",
+      "horizon": "T+17 to T+21"
+    }
+  ]
+}
