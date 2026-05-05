@@ -1,0 +1,74 @@
+{
+  "analysis_date": "2026-05-05",
+  "subfolder": "committeeReports",
+  "generated_at": "2026-05-05T07:30:00Z",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "question": "What is the trajectory of Sweden's fiscal sustainability and borrowing capacity?",
+      "status": "OPEN",
+      "priority": "L2",
+      "source_date": "2026-05-04",
+      "review_date": "2026-06-08",
+      "notes": "FiU49 (HD01FiU49) will partially resolve upon publication"
+    },
+    {
+      "id": "PIR-2",
+      "question": "How is the government coalition managing internal tensions on key policy disputes?",
+      "status": "OPEN",
+      "priority": "L2",
+      "source_date": "2026-05-04",
+      "review_date": "2026-06-16",
+      "notes": "KU39 coalition dynamics (L vs SD on transparency) will provide evidence"
+    },
+    {
+      "id": "PIR-3",
+      "question": "Are there signals of constitutional or electoral rule changes affecting the September 2026 election?",
+      "status": "OPEN",
+      "priority": "L3",
+      "source_date": "2026-05-04",
+      "review_date": "2026-06-09",
+      "notes": "KU39 (HD01KU39) is direct evidence for PIR-3; CRITICAL resolution event"
+    },
+    {
+      "id": "PIR-4",
+      "question": "What is the state of Nordic cooperation and Sweden's bilateral relationships?",
+      "status": "OPEN",
+      "priority": "L2",
+      "source_date": "2026-05-04",
+      "review_date": "2026-07-01",
+      "notes": "No direct FiU49/KU39 relevance; monitor separately"
+    },
+    {
+      "id": "PIR-5",
+      "question": "Are there indicators of election integrity risk in the 2026 campaign?",
+      "status": "OPEN",
+      "priority": "L3",
+      "source_date": "2026-05-04",
+      "review_date": "2026-06-09",
+      "notes": "KU39 digital advertising transparency provisions directly relevant; CRITICAL"
+    },
+    {
+      "id": "PIR-6",
+      "question": "What conclusions does the Finance Committee draw from Riksgalden's debt management 2021-2025?",
+      "status": "OPEN",
+      "priority": "L2",
+      "source_date": "2026-05-05",
+      "source_document": "HD01FiU49",
+      "review_date": "2026-06-08",
+      "notes": "FiU49 text publication est. June 8; confirms or revises predicted positive assessment"
+    },
+    {
+      "id": "PIR-7",
+      "question": "What specific obligations does KU39 create for (a) lobbying disclosure, (b) party finance, (c) digital political advertising?",
+      "status": "OPEN",
+      "priority": "L3",
+      "source_date": "2026-05-05",
+      "source_document": "HD01KU39",
+      "review_date": "2026-06-09",
+      "notes": "CRITICAL PRIORITY - KU39 text publication est. June 9 resolves election-cycle transparency architecture"
+    }
+  ],
+  "cycle_notes": "Subfolder naming inconsistency: 2026-05-04 used 'committee-reports'; 2026-05-05 uses 'committeeReports'. Standardise on committeeReports going forward.",
+  "next_analysis_date": "2026-06-08"
+}
