@@ -1,5 +1,5 @@
 {
-  "version": "0.8.74",
+  "version": "0.8.75",
   "name": "riksdagsmonitor",
   "problems": [
     "extraneous: @emnapi/core@1.10.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor/node_modules/@emnapi/core",
@@ -4741,7 +4741,7 @@
           "overridden": false,
           "dependencies": {
             "axios": {
-              "version": "1.15.0"
+              "version": "1.16.0"
             },
             "joi": {
               "version": "18.1.2",
@@ -6186,8 +6186,8 @@
           }
         },
         "axios": {
-          "version": "1.15.0",
-          "resolved": "https://registry.npmjs.org/axios/-/axios-1.15.0.tgz",
+          "version": "1.16.0",
+          "resolved": "https://registry.npmjs.org/axios/-/axios-1.16.0.tgz",
           "overridden": false,
           "dependencies": {
             "follow-redirects": {
