@@ -1,0 +1,79 @@
+{
+  "$schema": "https://riksdagsmonitor.com/schemas/pir-status.schema.json",
+  "version": "1.0",
+  "generated": "2026-05-05T08:30:00Z",
+  "article_date": "2026-05-05",
+  "subfolder": "propositions",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "title": "Government proposition legislative status and passage probability",
+      "status": "ADDRESSED",
+      "confidence": "HIGH",
+      "key_judgments": ["KJ-1"],
+      "evidence": ["HD03255", "H6D1plan", "HDC120260615vo"],
+      "next_update": "2026-06-15",
+      "notes": "FiU45 scheduled for kammarvotering 2026-06-15; government majority sufficient"
+    },
+    {
+      "id": "PIR-2",
+      "title": "Financial stability governance — household debt data authority",
+      "status": "ADDRESSED",
+      "confidence": "MODERATE",
+      "key_judgments": ["KJ-3", "KJ-4"],
+      "evidence": ["HD03255"],
+      "next_update": "2026-07-01",
+      "notes": "Survey authority to FI; first data expected H2 2026"
+    },
+    {
+      "id": "PIR-3",
+      "title": "Tidö coalition legislative programme status (financial regulation)",
+      "status": "ADDRESSED",
+      "confidence": "MODERATE",
+      "key_judgments": ["KJ-1"],
+      "evidence": ["HD03255", "H6D1plan"],
+      "next_update": "2026-06-15",
+      "notes": "HD03255 part of financial stability governance programme"
+    },
+    {
+      "id": "PIR-4",
+      "title": "ESRB/EU compliance posture for Sweden",
+      "status": "PARTIALLY_ADDRESSED",
+      "confidence": "LOW",
+      "key_judgments": ["KJ-5"],
+      "evidence": ["HD03255"],
+      "next_update": "2026-06-15",
+      "notes": "IMF/ESRB data unavailable (network blocked); ESRB gap partially filled by HD03255"
+    },
+    {
+      "id": "PIR-5",
+      "title": "Constitutional/privacy — Lagrådet review outcome",
+      "status": "PENDING",
+      "confidence": "MODERATE",
+      "key_judgments": ["KJ-2"],
+      "evidence": ["HD03255"],
+      "next_update": "2026-05-20",
+      "notes": "Lagrådet yttrande not yet published as of 2026-05-05; critical forward indicator FI-01"
+    },
+    {
+      "id": "PIR-6",
+      "title": "Election 2026 — policy competence signalling by Tidö government",
+      "status": "ADDRESSED",
+      "confidence": "MODERATE",
+      "key_judgments": [],
+      "evidence": ["HD03255", "election-2026-analysis.md"],
+      "next_update": "2026-09-13",
+      "notes": "HD03255 has LOW direct electoral salience; MEDIUM indirect competence signal"
+    },
+    {
+      "id": "PIR-7",
+      "title": "Nordic macro-prudential data gap comparison",
+      "status": "ADDRESSED",
+      "confidence": "HIGH",
+      "key_judgments": ["KJ-4"],
+      "evidence": ["comparative-international.md"],
+      "next_update": "2026-12-01",
+      "notes": "Sweden behind Norway/Denmark/Finland; HD03255 closes gap"
+    }
+  ]
+}
