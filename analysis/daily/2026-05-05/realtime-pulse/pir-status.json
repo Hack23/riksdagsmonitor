@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "cycle": "2026-05-05",
+  "date": "2026-05-05",
+  "subfolder": "realtime-pulse",
+  "generated_at": "2026-05-05T00:00:00Z",
+  "pirs": [
+    {
+      "id": "PIR-3/KU39",
+      "question": "Will KU39 produce binding constitutional transparency reform before September 13, 2026?",
+      "priority": "CRITICAL",
+      "status": "OPEN",
+      "source_document": "HD01KU39",
+      "eta": "pre-election (est. Aug 2026)",
+      "confidence": "HIGH",
+      "notes": "Cross-party KU committee investigation; L/KD electoral incentive for substantive reform"
+    },
+    {
+      "id": "PIR-5/HD03255",
+      "question": "What is Lagrådet's yttrande on HD03255 (FI household debt survey mandate)?",
+      "priority": "HIGH",
+      "status": "PENDING",
+      "source_document": "HD03255",
+      "eta": "~2026-05-20",
+      "confidence": "MODERATE-HIGH",
+      "notes": "Expected compliance-conditional, not blocking; Norway precedent supports passage"
+    },
+    {
+      "id": "LAGRÅDET-246",
+      "question": "Will Lagrådet issue blocking or significant reservations on HD03246 (criminal responsibility age 13)?",
+      "priority": "HIGH",
+      "status": "ACTIVE",
+      "source_document": "HD024146",
+      "eta": "~2026-06-01",
+      "confidence": "MODERATE",
+      "notes": "CRC argument from HD024148 (V+C+MP) has substantive legal basis; Lagrådet opinion critical"
+    },
+    {
+      "id": "EU-HABITATS-SE",
+      "question": "Will EU Commission open Art. 258 proceedings on Swedish forestry deregulation?",
+      "priority": "MEDIUM",
+      "status": "ACTIVE",
+      "source_documents": ["HD024141", "HD024142", "HD024143", "HD024144", "HD024145"],
+      "eta": "T+12-24m (est. 2027-2028)",
+      "confidence": "LOW-MODERATE",
+      "notes": "Finnish C-297/22 precedent; cumulative deregulation exceeds Art. 6(3) safe-harbour risk threshold"
+    },
+    {
+      "id": "PIR-NEW-10458",
+      "question": "What KPI baseline does Justice Minister Strömmer provide in response to HD10458?",
+      "priority": "HIGH",
+      "status": "NEW",
+      "source_document": "HD10458",
+      "eta": "May 2026 riksdag session",
+      "confidence": "MODERATE",
+      "notes": "New PIR created at realtime-pulse level; answer will determine gang crime accountability narrative trajectory"
+    }
+  ]
+}
