@@ -100,6 +100,15 @@ export interface ImfConnectivityReport {
 }
 
 // ---------------------------------------------------------------------------
+// Probe configuration constants
+// ---------------------------------------------------------------------------
+
+/** SDMX CPI dataflow — updated when IMF bumps the version (was 4.0.0 before 2026-05). */
+const SDMX_CPI_PROBE_PATH = '/data/IMF.STA,CPI,5.0.0/M.SE.PCPI_IX?startPeriod=2024-01';
+/** Lightweight SDMX fallback endpoint — verifies SDMX connectivity without needing the data path. */
+const SDMX_STRUCTURE_FALLBACK_PATH = '/structure/dataflow?detail=allstubs';
+
+// ---------------------------------------------------------------------------
 // Pure helpers (exported for testability)
 // ---------------------------------------------------------------------------
 
@@ -326,13 +335,13 @@ export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
   {
     const start = Date.now();
     const result = await withTimeout(
-      client.sdmxFetch('/data/IMF.STA,CPI,5.0.0/M.SE.PCPI_IX?startPeriod=2024-01'),
+      client.sdmxFetch(SDMX_CPI_PROBE_PATH),
       PROBE_TIMEOUT_MS,
     );
     if (isProbeErr(result)) {
       // Data endpoint failed — try structure/dataflow as connectivity fallback
       const structureResult = await withTimeout(
-        client.sdmxFetch('/structure/dataflow?detail=allstubs'),
+        client.sdmxFetch(SDMX_STRUCTURE_FALLBACK_PATH),
         PROBE_TIMEOUT_MS,
       );
       if (isProbeErr(structureResult)) {
