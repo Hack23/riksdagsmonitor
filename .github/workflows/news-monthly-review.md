@@ -153,6 +153,8 @@ safe-outputs:
     max: 1
     if-no-changes: warn       # Don't fail when nothing changed (resilience)
     fallback-as-issue: true   # If org disables Actions PR creation, fall back to an issue with branch link
+    protected-files:
+      policy: allowed
   add-comment: {}
   dispatch-workflow:
     workflows: [news-translate]

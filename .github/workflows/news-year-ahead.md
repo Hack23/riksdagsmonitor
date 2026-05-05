@@ -152,6 +152,8 @@ safe-outputs:
     max: 1
     if-no-changes: warn
     fallback-as-issue: true
+    protected-files:
+      policy: allowed
   add-comment: {}
   dispatch-workflow:
     workflows: [news-translate]
