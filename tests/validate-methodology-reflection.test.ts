@@ -326,3 +326,27 @@ describe('validateMethodologyReflection — confidence-label rule (universal)', 
     expect(report.issues.some((i) => i.rule === 'confidence-label')).toBe(false);
   });
 });
+
+describe('validateMethodologyReflection — imf-primary-violation rule', () => {
+  it('warns when World Bank is used for GDP data (economic substitution)', async () => {
+    const withWBSubstitution = PASSING_TIER_C.replace(
+      'Filler prose. ',
+      'Economic context relies on World Bank GDP growth data. Filler prose. '
+    );
+    const file = await writeFixture('2026-01-13/motions/methodology-reflection.md', withWBSubstitution);
+    const report = await validateMethodologyReflection(file);
+    expect(report.issues.some((i) => i.rule === 'imf-primary-violation')).toBe(true);
+    // Should be a warning, not an error — so file still passes
+    expect(report.ok).toBe(true);
+  });
+
+  it('does not warn when World Bank is used for governance data', async () => {
+    const withWBGovernance = PASSING_TIER_C.replace(
+      'Filler prose. ',
+      'World Bank governance indicators (WGI) used for rule-of-law comparison. Filler prose. '
+    );
+    const file = await writeFixture('2026-01-14/motions/methodology-reflection.md', withWBGovernance);
+    const report = await validateMethodologyReflection(file);
+    expect(report.issues.some((i) => i.rule === 'imf-primary-violation')).toBe(false);
+  });
+});

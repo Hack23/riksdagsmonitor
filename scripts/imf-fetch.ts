@@ -31,8 +31,52 @@
  *   2 — bad CLI arguments
  */
 
+import { existsSync, readFileSync } from 'node:fs';
+import { join, resolve } from 'node:path';
+
 import { ImfClient, IMF_WEO_INDICATORS, IMF_FM_INDICATORS } from './imf-client.js';
 import { persistIMFData } from './parliamentary-data/data-persistence.js';
+
+// ---------------------------------------------------------------------------
+// IMF cache fallback — when live fetch fails, try persisted data
+// ---------------------------------------------------------------------------
+
+const DATA_ROOT = resolve(process.cwd(), 'analysis', 'data');
+
+/**
+ * Sanitize indicator/country for filesystem path (mirrors data-persistence.ts).
+ */
+function sanitizeForPath(s: string): string {
+  return s.replace(/[^a-zA-Z0-9._-]/g, '_');
+}
+
+/**
+ * Attempt to load previously-persisted IMF data for a given indicator/country.
+ * Returns `{ data, meta }` if cache exists, or `null` otherwise.
+ */
+function loadCachedIMFData(indicator: string, country: string): { data: unknown; meta: { fetchedAt: string; database?: string; projectionVintage?: string } } | null {
+  const dataPath = join(DATA_ROOT, 'imf', sanitizeForPath(indicator), `${sanitizeForPath(country)}.json`);
+  const metaPath = join(DATA_ROOT, 'imf', sanitizeForPath(indicator), `${sanitizeForPath(country)}.meta.json`);
+  if (!existsSync(dataPath)) return null;
+  try {
+    const data = JSON.parse(readFileSync(dataPath, 'utf8'));
+    const meta = existsSync(metaPath) ? JSON.parse(readFileSync(metaPath, 'utf8')) : { fetchedAt: 'unknown' };
+    return { data, meta };
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Check if cached data is stale (> 6 months old).
+ */
+function isCacheStale(fetchedAt: string): boolean {
+  const fetched = new Date(fetchedAt);
+  if (Number.isNaN(fetched.getTime())) return true;
+  const sixMonthsAgo = new Date();
+  sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
+  return fetched < sixMonthsAgo;
+}
 
 // ---------------------------------------------------------------------------
 // CLI argument parsing
@@ -105,16 +149,39 @@ async function runWeo(flags: ReadonlyMap<string, string>, booleans: ReadonlySet<
   }
 
   const client = new ImfClient();
-  const series = await client.getWeoIndicator(country, indicator, years);
-  const payload = { indicator, country, years, dataPoints: series };
-  process.stdout.write(`${JSON.stringify(payload, null, 2)}\n`);
+  try {
+    const series = await client.getWeoIndicator(country, indicator, years);
+    const payload = { indicator, country, years, dataPoints: series };
+    process.stdout.write(`${JSON.stringify(payload, null, 2)}\n`);
 
-  if (booleans.has('persist')) {
-    const vintage = series.find((p) => p.projectionVintage)?.projectionVintage;
-    persistIMFData(indicator, country, payload, {
-      database: flags.get('database') ?? 'WEO',
-      ...(vintage ? { projectionVintage: vintage } : {}),
-    });
+    if (booleans.has('persist')) {
+      const vintage = series.find((p) => p.projectionVintage)?.projectionVintage;
+      persistIMFData(indicator, country, payload, {
+        database: flags.get('database') ?? 'WEO',
+        ...(vintage ? { projectionVintage: vintage } : {}),
+      });
+    }
+  } catch (err: unknown) {
+    // Fallback to cached data when live fetch fails
+    const cached = loadCachedIMFData(indicator, country);
+    if (cached) {
+      const stale = isCacheStale(cached.meta.fetchedAt);
+      const fallbackPayload = {
+        ...cached.data as Record<string, unknown>,
+        _fallback: true,
+        _fallbackReason: err instanceof Error ? err.message : String(err),
+        _cachedAt: cached.meta.fetchedAt,
+        _staleVintage: stale,
+        _vintageAnnotation: stale
+          ? `>6 month vintage (cached ${cached.meta.fetchedAt}); live fetch failed`
+          : `cached ${cached.meta.fetchedAt}; live fetch failed`,
+      };
+      process.stderr.write(`imf-fetch: live fetch failed, using cached data from ${cached.meta.fetchedAt}${stale ? ' (STALE >6mo)' : ''}\n`);
+      process.stdout.write(`${JSON.stringify(fallbackPayload, null, 2)}\n`);
+    } else {
+      // No cache available — re-throw
+      throw err;
+    }
   }
 }
 
@@ -128,20 +195,49 @@ async function runCompare(flags: ReadonlyMap<string, string>, booleans: Readonly
   }
 
   const client = new ImfClient();
-  const results = await client.compareCountriesWeo(countries, indicator);
-  const byCountry: Record<string, unknown> = {};
-  results.forEach((point, code) => {
-    byCountry[code] = point;
-  });
-  const payload = { indicator, countries, results: byCountry };
-  process.stdout.write(`${JSON.stringify(payload, null, 2)}\n`);
+  try {
+    const results = await client.compareCountriesWeo(countries, indicator);
+    const byCountry: Record<string, unknown> = {};
+    results.forEach((point, code) => {
+      byCountry[code] = point;
+    });
+    const payload = { indicator, countries, results: byCountry };
+    process.stdout.write(`${JSON.stringify(payload, null, 2)}\n`);
 
-  if (booleans.has('persist')) {
-    for (const [code, point] of results) {
-      persistIMFData(indicator, code, { indicator, country: code, dataPoint: point }, {
-        database: flags.get('database') ?? 'WEO',
-        ...(point?.projectionVintage ? { projectionVintage: point.projectionVintage } : {}),
-      });
+    if (booleans.has('persist')) {
+      for (const [code, point] of results) {
+        persistIMFData(indicator, code, { indicator, country: code, dataPoint: point }, {
+          database: flags.get('database') ?? 'WEO',
+          ...(point?.projectionVintage ? { projectionVintage: point.projectionVintage } : {}),
+        });
+      }
+    }
+  } catch (err: unknown) {
+    // Fallback: try loading cached data for each country
+    const byCountry: Record<string, unknown> = {};
+    let anyFound = false;
+    let staleAny = false;
+    for (const code of countries) {
+      const cached = loadCachedIMFData(indicator, code);
+      if (cached) {
+        anyFound = true;
+        if (isCacheStale(cached.meta.fetchedAt)) staleAny = true;
+        byCountry[code] = { ...cached.data as Record<string, unknown>, _cached: true, _cachedAt: cached.meta.fetchedAt };
+      } else {
+        byCountry[code] = null;
+      }
+    }
+    if (anyFound) {
+      const payload = {
+        indicator, countries, results: byCountry,
+        _fallback: true,
+        _fallbackReason: err instanceof Error ? err.message : String(err),
+        _staleVintage: staleAny,
+      };
+      process.stderr.write(`imf-fetch: live compare failed, using cached data${staleAny ? ' (some STALE >6mo)' : ''}\n`);
+      process.stdout.write(`${JSON.stringify(payload, null, 2)}\n`);
+    } else {
+      throw err;
     }
   }
 }
