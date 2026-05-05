@@ -185,9 +185,10 @@ describe('runProbes', () => {
     vi.useFakeTimers();
     try {
       const probesPromise = runProbes(hangingClient);
-      // Three sequential probes × PROBE_TIMEOUT_MS — advance enough virtual
-      // time for all three to time out.
-      await vi.advanceTimersByTimeAsync(PROBE_TIMEOUT_MS * 3 + 100);
+      // Three sequential probes × PROBE_TIMEOUT_MS, plus the SDMX fallback
+      // probe (structure/dataflow) when the primary data probe times out —
+      // advance enough virtual time for all to time out.
+      await vi.advanceTimersByTimeAsync(PROBE_TIMEOUT_MS * 4 + 200);
       const probes = await probesPromise;
       expect(probes).toHaveLength(3);
       expect(probes.every((p) => p.ok === false)).toBe(true);

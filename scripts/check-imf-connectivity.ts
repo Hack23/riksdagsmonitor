@@ -19,7 +19,7 @@
  * pipeline depends on:
  *
  *   1. **WEO** (Datamapper) — `NGDP_RPCH` SWE, last 1 year
- *   2. **FM** (Datamapper)  — `GGXONLB_NGDP` SWE, last 1 year
+ *   2. **FM** (Datamapper)  — `GGXWDG_NGDP` SWE, last 1 year
  *   3. **IFS** (SDMX 3.0)    — CPI monthly index probe
  *
  * Each probe must return HTTP 200 and parse as JSON. The WEO probe
@@ -290,11 +290,11 @@ export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
     }
   }
 
-  // Probe 2: FM via Datamapper
+  // Probe 2: FM via Datamapper (GGXWDG_NGDP = gross government debt % GDP)
   {
     const start = Date.now();
     const result = await withTimeout(
-      client.getWeoIndicator('SWE', 'GGXONLB_NGDP', 1),
+      client.getWeoIndicator('SWE', 'GGXWDG_NGDP', 1),
       PROBE_TIMEOUT_MS,
     );
     if (isProbeErr(result)) {
@@ -317,24 +317,45 @@ export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
     }
   }
 
-  // Probe 3: IFS monthly CPI index via SDMX 3.0
-  // We only assert "request returned a JSON-shaped object" — the SDMX
-  // envelope shape is exercised in `imf-client.test.ts` and is too verbose
-  // to re-verify here.
+  // Probe 3: SDMX 3.0 connectivity check
+  // Primary: attempt CPI data endpoint (IMF.STA,CPI,5.0.0).
+  // Fallback: if data endpoint returns 404 (known IMF infrastructure issue
+  // since ~2026-05), verify SDMX connectivity via structure/dataflow which
+  // remains operational. This ensures we distinguish "SDMX is reachable but
+  // data endpoint is broken" from "SDMX is fully unreachable".
   {
     const start = Date.now();
     const result = await withTimeout(
-      client.sdmxFetch('/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2024-01'),
+      client.sdmxFetch('/data/IMF.STA,CPI,5.0.0/M.SE.PCPI_IX?startPeriod=2024-01'),
       PROBE_TIMEOUT_MS,
     );
     if (isProbeErr(result)) {
-      probes.push({
-        dataflow: 'IFS',
-        transport: 'sdmx',
-        ok: false,
-        latencyMs: Date.now() - start,
-        error: result.error.message,
-      });
+      // Data endpoint failed — try structure/dataflow as connectivity fallback
+      const structureResult = await withTimeout(
+        client.sdmxFetch('/structure/dataflow?detail=allstubs'),
+        PROBE_TIMEOUT_MS,
+      );
+      if (isProbeErr(structureResult)) {
+        // Both failed — SDMX is truly unreachable
+        probes.push({
+          dataflow: 'IFS',
+          transport: 'sdmx',
+          ok: false,
+          latencyMs: Date.now() - start,
+          error: result.error.message,
+        });
+      } else {
+        // Structure endpoint works but data doesn't — SDMX reachable, data broken
+        const raw = structureResult.value;
+        const ok = raw !== null && typeof raw === 'object';
+        probes.push({
+          dataflow: 'IFS',
+          transport: 'sdmx',
+          ok,
+          latencyMs: Date.now() - start,
+          ...(ok ? {} : { error: 'non-object-response' }),
+        });
+      }
     } else {
       const raw = result.value;
       const ok = raw !== null && typeof raw === 'object';

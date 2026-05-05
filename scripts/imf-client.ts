@@ -97,6 +97,14 @@ const DEFAULT_MAX_RETRIES = 2;
 /** Default vintage. Update in April / October when the WEO re-releases. */
 const DEFAULT_WEO_VINTAGE = 'WEO-2026-04';
 
+/**
+ * User-Agent header required by IMF Datamapper — without it the endpoint
+ * returns HTTP 403 Forbidden (WAF rule blocks requests with empty/missing UA).
+ * Node.js `fetch()` / undici does not send a User-Agent by default.
+ * The IMF WAF also blocks simple bot-style UAs; a browser-like prefix is needed.
+ */
+const IMF_USER_AGENT = 'Mozilla/5.0 (compatible; riksdagsmonitor/1.0; +https://riksdagsmonitor.com)';
+
 /** Base delay (ms) for the exponential back-off used on 429 / 5xx / network errors. */
 const RETRY_BASE_DELAY_MS = 1_000;
 /**
@@ -359,7 +367,11 @@ export class ImfClient {
     try {
       const response = await fetch(url, {
         signal: controller.signal,
-        headers: { Accept: 'application/json', ...extraHeaders },
+        headers: {
+          'User-Agent': IMF_USER_AGENT,
+          Accept: 'application/json',
+          ...extraHeaders,
+        },
       });
 
       if (!response.ok) {
