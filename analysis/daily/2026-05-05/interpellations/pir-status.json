@@ -1,0 +1,46 @@
+{
+  "date": "2026-05-05",
+  "article_type": "interpellations",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "title": "Government gang crime KPI commitment (HD10458)",
+      "status": "open",
+      "wep": 0.65,
+      "expected_resolution": "2026-05-19",
+      "notes": "Strömmer answer due May 19. Classify as Commitment/Hedge/Climb-down."
+    },
+    {
+      "id": "PIR-2",
+      "title": "Sweden ESA contribution — rank #17 recovery",
+      "status": "open",
+      "wep": 0.45,
+      "expected_resolution": "2026-05-19",
+      "notes": "Edholm answer due May 19. Key question: autumn 2026 budget review signaled?"
+    },
+    {
+      "id": "PIR-3",
+      "title": "SD agency governance campaign — Slottner response",
+      "status": "open",
+      "wep": 0.70,
+      "expected_resolution": "2026-05-20",
+      "notes": "Slottner answer due May 20. Classify on scale: full endorsement / partial / refusal."
+    },
+    {
+      "id": "PIR-4",
+      "title": "SFV capital investment in 2026 autumn budget (HD10460)",
+      "status": "open",
+      "wep": 0.70,
+      "expected_resolution": "2026-09-30",
+      "notes": "HD10460 in this batch — full text not retrieved. Monitor answer when available."
+    },
+    {
+      "id": "PIR-5",
+      "title": "Ostlänken Östergötland — regional mobilisation and Carlson response",
+      "status": "open",
+      "wep": 0.55,
+      "expected_resolution": "2026-05-25",
+      "notes": "New PIR. HD10463 — Carlson answer due May 25. Track regional political reaction (Corren, NWT, municipal statements)."
+    }
+  ]
+}
