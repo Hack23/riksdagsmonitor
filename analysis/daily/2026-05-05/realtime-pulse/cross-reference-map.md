@@ -77,3 +77,17 @@ graph TD
 | LAGRÅDET-246 | 2026-05-05 motions | `analysis/daily/2026-05-05/motions/data-download-manifest.md` | ACTIVE, ~2026-06-01 |
 | EU-HABITATS-SE | 2026-05-05 motions | `analysis/daily/2026-05-05/motions/risk-assessment.md` | ACTIVE, T+12-24m |
 
+
+---
+
+## Improvement Pass — New Document Cross-References
+
+| New dok_id | Cross-references | Connections |
+|-----------|-----------------|------------|
+| HD10464 | HD10458 (SD accountability pattern), HD024141 (foreign aid motions) | `analysis/daily/2026-05-05/interpellations/` sibling |
+| HD10465 | HD10467 (S state service narrative cluster) | `analysis/daily/2026-05-05/interpellations/` sibling |
+| HD10466 | HD01KU39 (constitutional transparency), HD10464 (SD institutional offensive) | `analysis/daily/2026-05-05/interpellations/` sibling |
+| HD01JuU30 | HD024146 (C defection), HD024142 (youth crime motions), prop. 2025/26:246 | `analysis/daily/2026-05-05/committeeReports/` sibling |
+| HD11784 | HD10463 (Ostlänken accountability) | `analysis/daily/2026-05-05/motions/` sibling |
+
+**SD Institutional Offensive cross-link**: HD10458 + HD10464 + HD10466 = coordinated SD pre-election accountability pattern. Cross-references confirmed in intelligence-assessment.md (KJ-6) and synthesis-summary.md (Theme 5).

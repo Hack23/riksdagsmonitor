@@ -53,3 +53,15 @@ xychart-beta
     y-axis "L×I Score" 0 --> 0.5
     bar [0.13, 0.25, 0.46, 0.27, 0.20, 0.09, 0.36, 0.28, 0.20, 0.21]
 ```
+
+---
+
+## Improvement Pass — New Risk Items
+
+| Risk | Probability | Impact | Source Documents |
+|------|------------|--------|-----------------|
+| Sida Hamas-link claim forces ODA architecture debate pre-election | P=0.65 | HIGH | HD10464 |
+| UD civil servant accountability demand perceived as democratic backsliding by EU/Nordic partners | P=0.40 | HIGH | HD10466 |
+| JuU30 constitutional analysis constrains prop. 2025/26:246 beyond Lagrådet | P=0.55 | MEDIUM-HIGH | HD01JuU30 |
+| State service withdrawal becomes major S electoral attack vector | P=0.75 | MEDIUM | HD10465, HD10467 |
+| Ostlänken cost controversy escalates pre-election | P=0.55 | MEDIUM | HD11784 |

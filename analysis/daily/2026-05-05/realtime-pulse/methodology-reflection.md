@@ -83,3 +83,21 @@ This realtime-pulse analysis aggregates four Tier-A sibling analyses. Quality ch
 - ✅ New PIR (PIR-NEW-10458) added at pulse level, not duplicated from siblings
 - ✅ IMF economic provenance block present in comparative-international.md and risk-assessment.md
 
+
+---
+
+## Re-run log
+
+| Field | Value |
+|-------|-------|
+| RUN_TIMESTAMP_UTC | 2026-05-05T13:12:49Z |
+| GITHUB_WORKFLOW | news-realtime-monitor |
+| GITHUB_RUN_ID | improvement-pass-2026-05-05 |
+| GITHUB_RUN_ATTEMPT | 2 |
+| MODE | IMPROVEMENT_MODE=true |
+| NEW_DOK_IDS | HD10464, HD10465, HD10466, HD10467, HD01JuU30, HD11781, HD11782, HD11783, HD11784 |
+| ARTIFACTS_EXTENDED | intelligence-assessment.md (+KJ-6, KJ-7, +4 PIRs), synthesis-summary.md (+Theme 5, updated DIW table), executive-brief.md (+improvement section), significance-scoring.md (+9 items), forward-indicators.md (+FI-16 through FI-21), all 9 per-document analyses created |
+| PASS1_SNAPSHOT | analysis/daily/2026-05-05/realtime-pulse/pass1/ (23 files) |
+| PASS2_COMPLETE | true |
+| NEW_DOCUMENTS_COUNT | 9 |
+| CRITICAL_NEW | HD01JuU30 (JuU30 committee report — youth custody, direct Lagrådet nexus), HD10466 (UD civil servant accountability — democratic norms), HD10464 (Sida abolition — SD escalation) |

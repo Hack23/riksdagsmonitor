@@ -59,3 +59,16 @@ quadrantChart
     style Forestry oversight fill:#ff006e,stroke:#ff006e
 ```
 
+
+---
+
+## Improvement Pass — Implementation Feasibility (New Documents)
+
+### Sida Abolition (HD10464) — Feasibility: VERY LOW (pre-election)
+Abolishing Sida requires: government proposal → Riksdag debate → committee review → kammarvotering. Timeline: 12-18 months minimum. Pre-election window closes ~2026-06-20 (summer recess). Feasibility before election: 0%.
+
+### UD Civil Servant Accountability (HD10466) — Feasibility: LOW
+Legally, the government cannot conduct career/salary audits based on political opinion expression alone (RF Ch.12 and FOI protections). Any such audit would face immediate Justitiekanslern challenge. The interpellation will produce a ministerial answer refusing the audit. Feasibility of career audit: 0%.
+
+### State Service Restoration (HD10465) — Feasibility: VERY LOW
+The 130 MSEK budget cut is embedded in the spring budget. Reversal before election requires supplementary budget. No political will from government. Feasibility of reversal pre-election: <5%.

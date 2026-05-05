@@ -47,3 +47,15 @@
 
 **Applicable insight**: Sweden has repeatedly initiated but not completed lobbying transparency reforms — 1996, 2004, 2011, and now KU39 (2026). The historical pattern suggests KU39 will produce recommendations that are adopted in part and then weakened in implementation. This supports devil's-advocate H-01 pessimism about binding outcomes.
 
+
+---
+
+## Improvement Pass — Historical Parallels (New Documents)
+
+### Sida Abolition (HD10464)
+**Parallel**: NORAD restructuring (Norway, 2013) — right-wing government merged NORAD functions into MFA without full abolition; development cooperation capacity reduced by ~15%. Sweden's SD demand goes further.  
+**Parallel**: USAID threat (USA, 2025) — DOGE-era pressure on USAID; ultimately restructured not abolished. SD may use this as template.
+
+### UD Civil Servant Accountability (HD10466)
+**Parallel**: Hungary 2010-2014 "politicisation" of civil service — government replaced neutral civil servants with politically aligned appointees. Constitutional scholars in Sweden will invoke this parallel as warning.  
+**Historical contrast**: Sweden's Ämbetsmannatraditionen (non-political civil service tradition) has withstood similar pressures since the 19th century; RF Chapter 12 provides stronger protection than most EU peers.

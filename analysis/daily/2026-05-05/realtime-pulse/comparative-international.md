@@ -80,3 +80,25 @@ Sweden macro comparison with Nordic peers (WEO Oct-2025, economicProvenance.prov
 
 Sweden's fiscal position is strong relative to Finland and comparable to Denmark. This provides context for HD03255 macro-prudential priority: Sweden's household debt risk is behavioural, not sovereign-fiscal.
 
+
+---
+
+## Improvement Pass — Comparative International Context (New Documents)
+
+### Sida vs Peer Aid Agencies (HD10464)
+Sweden's ODA as % of GNI (Sida-managed): ~0.7% (2025, estimated, down from 1.05% peak). Peer comparison:
+- Norway: 0.97% GNI (NORAD managed)
+- Denmark: 0.75% GNI
+- Germany: 0.83% GNI
+
+SD's abolition demand, if realised, would drop Sweden below OECD DAC minimum recommendation (0.7%). EU 2030 commitment context: EU members committed to 0.7% by 2030.
+
+### Civil Service Neutrality (HD10466) — Comparative
+| Country | Civil service neutrality model | Year codified |
+|---------|-------------------------------|--------------|
+| Sweden | RF Ch.12 — very strong | 1809/1974 |
+| UK | Civil Service Code | 1996 |
+| Finland | Law on Civil Servants (750/1994) | 1994 |
+| Hungary | Changed 2010-2014 — significant politicisation | 2010 |
+
+Sweden's constitutional protection for civil servant neutrality is among the strongest in Europe. HD10466's demand, if implemented, would constitute a significant deviation from Sweden's constitutional tradition.

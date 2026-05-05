@@ -74,3 +74,15 @@ pie title Current Parliamentary Arithmetic (349 seats)
     "V (24)" : 24
     "MP (18)" : 18
 ```
+
+---
+
+## Improvement Pass — Coalition Mathematics Update
+
+### Impact of 9 New Documents on Coalition Arithmetic
+- **HD10464, HD10466**: SD interpellations targeting M ministers — no coalition arithmetic impact; SD continues to support government majority
+- **HD01JuU30**: Adds constitutional legal resources for C's HD024146 defection position; still no majority impact (176 seats intact)
+- **HD10465, HD10467**: S opposition accountability motions — no majority impact
+- **HD11781-HD11784**: SD/S motions in motion period — no vote scheduled; no majority impact
+
+**Conclusion**: All new documents are pre-vote positioning. The 176-seat majority (M68+SD73+KD19+L16) remains stable through summer recess. KJ-5 unchanged.

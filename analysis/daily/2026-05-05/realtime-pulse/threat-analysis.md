@@ -71,3 +71,37 @@ flowchart TD
 | T0023 | Flooding information space | 5 simultaneous interpellations (coordination) | S/V/MP/C |
 | T0049 | Run polarizing campaigns | Youth crime vs constitutional rights (HD024146/HD024148) | V+C+MP |
 
+
+---
+
+## Improvement Pass — New Threat Vectors (HD10464, HD10466, HD01JuU30)
+
+### TT-NEW-1 — Sida Abolition Narrative (HD10464)
+**Source**: SD via Markus Wiechel  
+**Type**: Political institution attack  
+**Target**: Sida, M's Biståndsminister Dousa  
+**Vector**: Hamas-linked payment allegation (55 MSEK) [A2 unverified] weaponised as accountability frame  
+**Risk**: If confirmed → legitimate accountability, Dousa credibility risk; If denied → SD misinformation pattern
+
+### TT-NEW-2 — "Political Civil Servant" Accountability (HD10466)
+**Source**: SD via Markus Wiechel  
+**Type**: Democratic norm threat / institutional attack  
+**Target**: UD civil service, FM Malmer Stenergard  
+**Vector**: DISARM T0003 (amplify 2018 skamlistan); demand for career audit of 261 state officials  
+**Risk**: Constitutional scholars, EU partners, Nordic allies may perceive as RF Chapter 12 violation attempt  
+**DISARM TTP**: T0017 (polarising narrative: "deep state political bias in foreign ministry")
+
+### TT-NEW-3 — JuU30 / Youth Crime Legal Legitimisation (HD01JuU30)
+**Source**: JuU committee (bipartisan)  
+**Type**: Constitutional legitimacy signal  
+**Target**: Prop. 2025/26:246 (criminal age 13) — government reform  
+**Vector**: Committee establishes CRC/ECHR baseline that constrains HD03246's constitutionality  
+**Risk**: Low (this is the normal legislative process) but the committee report provides legal resources to reform opponents
+
+### Updated DISARM Table
+
+| TTP | Description | Applied To (NEW) | Origin |
+|-----|-------------|-----------------|--------|
+| T0003 | Amplify existing content | 2018 skamlistan (HD10466) | SD |
+| T0017 | Promote polarizing narratives | "State serving ideological interests" (HD10464, HD10466) | SD |
+| T0023 | Flooding information space | 7 new interpellations on single day | S/SD coordinated |

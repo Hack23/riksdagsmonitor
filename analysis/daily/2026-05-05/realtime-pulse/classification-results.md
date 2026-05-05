@@ -48,3 +48,18 @@
 
 This realtime pulse contains two L3 items (KU39, HD10458, HD10463) that will have direct electoral impact in the 131-day window to September 13, 2026. Classification upgrade from routine daily analysis is warranted.
 
+
+---
+
+## Improvement Pass — Classification Update (9 New Documents)
+
+| dok_id | Type | Classification | GDPR basis | Admty |
+|--------|------|---------------|-----------|-------|
+| HD10464 | Interpellation | PUBLIC | Art. 9(2)(e)(g) political data | A1 |
+| HD10465 | Interpellation | PUBLIC | Art. 9(2)(e)(g) | A1 |
+| HD10466 | Interpellation | PUBLIC | Art. 9(2)(e)(g) | A1 |
+| HD10467 | Interpellation | PUBLIC | Art. 9(2)(g) | A1 |
+| HD01JuU30 | Betänkande | PUBLIC | Art. 9(2)(g) legislative | A1 |
+| HD11781-HD11784 | Motions | PUBLIC | Art. 9(2)(e)(g) | A1 |
+
+All documents contain political opinion data covered by GDPR Art. 9(2)(e) (manifestly made public by data subjects in official parliamentary records) and Art. 9(2)(g) (substantial public interest). No PII requiring special handling.

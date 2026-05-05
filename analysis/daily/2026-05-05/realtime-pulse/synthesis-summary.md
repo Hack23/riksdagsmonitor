@@ -100,3 +100,36 @@ flowchart TD
     style CAMP fill:#ff006e,stroke:#ff006e,color:#fff
     style EU fill:#1a1e3d,stroke:#ff006e,color:#ff006e
 ```
+
+### Theme 5: SD Institutional Accountability Offensive (NEW — HD10464, HD10466, HD01JuU30)
+
+Three new documents published on 2026-05-05 reveal an expanded dimension to today's parliamentary session that was absent from the initial analysis: **SD is running a systematic institutional accountability offensive targeting four state organs** (Sida, UD civil service, Riksdag committee JuU, Skatteverket) in the final pre-election window.
+
+**Sida abolition trajectory (HD10464 — Wiechel/SD → Biståndsminister Dousa)**: SD MP Markus Wiechel is demanding public accountability for Sida's continued existence, citing a 55 MSEK payment to ICHR/Hamas-linked organisations and 14 billion SEK in Afghan development aid that SD frames as entirely wasted. The interpellation formally activates the floor-debate track on Sida abolition, forcing the M-led government to defend Sweden's aid architecture publicly before September 13. This is SD escalation: from "reform bistånd" to "avveckla Sida."
+
+**Non-political civil servants controversy (HD10466 — Wiechel/SD → FM Malmer Stenergard)**: SD is demanding a career audit of 261 UD (Foreign Ministry) officials who signed a public protest letter in 2018 against the incoming centre-right coalition. This "skamlistan" interpellation invokes RF Chapter 12 (civil service neutrality) while simultaneously pursuing a narrative of political infiltration of the foreign ministry. It creates a constitutional dilemma for Malmer Stenergard: defend UD staff (appearing S-sympathetic) or signal career consequences (alarming international partners and constitutional scholars).
+
+**JuU30 committee report on youth custodial framework (HD01JuU30)**: The Justice Committee's betänkande on custodial sentences for children and youth, published today, provides the constitutional-legal baseline for the very cohort whose criminal accountability is being expanded under prop. 2025/26:246. JuU30's documentation of CRC and ECHR obligations gives Centerpartiet additional legal ammunition for their HD024146 defection and feeds directly into the Lagrådet review timeline (~2026-06-01). This is the committee establishing the legal floor below which youth justice reform cannot go — directly constraining the government's reform trajectory.
+
+**Strategic coherence**: HD10464 + HD10466 + HD10458 form a consistent pre-election pattern. SD is positioning as the party demanding institutional accountability: gang crime KPIs (police/justice), Sida performance (foreign aid), UD civil servant neutrality (foreign ministry). The message is: *existing state organs are failing and politically compromised*. This is electorally resonant with SD's core voter base.
+
+**Updated DIW Rankings (incorporating new documents)**:
+
+| Rank | Document/Cluster | DIW | Tier | Evidence |
+|------|-----------------|-----|------|---------|
+| 1 | KU39 Constitutional Transparency | 0.91 | L3 Intelligence | data.riksdagen.se [A1] |
+| 2 | Youth crime cluster + JuU30 custodial framework | 0.86 | L2+ Priority | HD024142, HD024146, HD024148, HD01JuU30 [A1] |
+| 3 | HD03255 FI household debt survey | 0.78 | L2 Strategic | HD03255 [A1] |
+| 4 | SD Institutional Accountability Offensive (HD10464+HD10466) | 0.81 | L2+ Priority | HD10464, HD10466 [A1] |
+| 5 | Forestry deregulation (8-motion cluster) | 0.72 | L2 Strategic | HD024141–HD024147 [A1] |
+| 6 | Gang crime KPI accountability (HD10458) | 0.68 | L2 Strategic | HD10458 [A1] |
+| 7 | State service withdrawal (HD10465+HD10467) | 0.62 | L3 Standard | HD10465, HD10467 [A1] |
+| 8 | Ostlänken rerouting (HD10463+HD11784) | 0.63 | L2 Strategic | HD10463, HD11784 [A1] |
+| 9 | ESA funding decline (HD10461) | 0.55 | L1 Surface | HD10461 [A1] |
+| 10 | Agency activism (HD10459) | 0.50 | L1 Surface | HD10459 [A1] |
+| 11 | FiU49 debt management evaluation | 0.48 | L1 Surface | H6D1plan [A1] |
+| 12 | SD single-issue motions (HD11781-HD11783) | 0.50 | L3 Standard | HD11781, HD11782, HD11783 [A1] |
+| 13 | Pesticide tax anomaly (HD10462) | 0.30 | L1 Surface | HD10462 [A1] |
+
+**Updated cross-cutting pattern (5th)**:
+5. **SD's pre-election offensive spans bistånd, civil service neutrality, gang crime, and agency governance** — this is a coherent political strategy, not isolated interpellations. The common thread is institutional accountability: SD is making the argument that existing state organs are underperforming or politically biased.

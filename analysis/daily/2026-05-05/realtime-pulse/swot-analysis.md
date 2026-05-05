@@ -70,3 +70,22 @@ quadrantChart
     style Lagrådet risk fill:#ff006e,stroke:#ff006e
     style EU infringement fill:#ff006e,stroke:#ff006e
 ```
+
+---
+
+## Improvement Pass — SWOT Updates (9 New Documents)
+
+### Updated Threats (T)
+
+| Threat | Evidence | Magnitude |
+|--------|---------|----------|
+| SD institutional accountability offensive (Sida, UD, gang crime) | HD10464, HD10466, HD10458 [A1] | HIGH — pre-election wedge |
+| Democratic backsliding perception risk (HD10466 civil servant audit demand) | HD10466 [A1], RF Ch.12 | MEDIUM-HIGH — international echo |
+| C defection legal entrenchment via JuU30 | HD01JuU30 [A1] | MEDIUM — Lagrådet nexus |
+
+### Updated Weaknesses (W)
+
+| Weakness | Evidence | Magnitude |
+|----------|---------|----------|
+| M government unable to defend Sida without appearing ODA-generous | HD10464 [A1] | MEDIUM |
+| KD Civilminister accountability on service office closures | HD10465 [A1] | MEDIUM — KD vulnerability |
