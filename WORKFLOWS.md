@@ -11,15 +11,19 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-7.3-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Updated-2026--05--02-success?style=for-the-badge" alt="Last Updated"/>
+  <img src="https://img.shields.io/badge/Version-7.4-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Updated-2026--05--05-success?style=for-the-badge" alt="Last Updated"/>
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 7.3 | **📅 Last Updated:** 2026-05-02 (UTC)
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-02
+**📋 Document Owner:** CEO | **📄 Version:** 7.4 | **📅 Last Updated:** 2026-05-05 (UTC)
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-05
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
+> **🆕 What changed since last review (v7.3 → v7.4, 2026-05-05):**
+> - ♻️ Reconciled this document with the current `package.json` toolchain: TypeScript 6.0.3, Vite 8.0.10, Vitest 4.1.5, Cypress 15.14.2, and the current 3,319-test baseline observed in `npm test`.
+> - 🤖 Corrected the agentic-news engine and workflow narrative to **14 workflows** using `claude-sonnet-4.6`, the 23-artifact baseline, nested election-cycle folders, and all-language article rendering via `render-articles.ts --all --lang all`.
+>
 > **🆕 What changed since last review (v7.2 → v7.3, 2026-05-02):**
 > - 🔮 **Long-horizon forward-look pipelines** added: `news-quarter-ahead` (90d, × 1.7), `news-year-ahead` (365d, × 2.0), and `news-election-cycle` (1460d, × 2.5). Workflow count is now **14 agentic** (was 11) bringing total workflow files to **50** (22 `.yml` + 14 `.md` + 14 `.lock.yml`).
 > - Added §6.2 "Long-Horizon Forward-Look Pipelines" with Mermaid flowchart + sequence diagrams for each new horizon, ISMS control mapping table, and KPI definitions.
@@ -167,10 +171,10 @@ graph LR
 | Component | Version | Purpose |
 | --- | --- | --- |
 | Node.js | 25 | Runtime (native TypeScript strip-types) |
-| TypeScript | 6.0.2 | Type system |
-| Vite | 8.0.3 | Build toolchain (esbuild) |
-| Vitest | 4.1.2 | Unit testing (2890 tests) |
-| Cypress | 15.13.0 | E2E testing |
+| TypeScript | 6.0.3 | Type system |
+| Vite | 8.0.10 | Build toolchain (esbuild) |
+| Vitest | 4.1.5 | Unit testing (3,319 tests) |
+| Cypress | 15.14.2 | E2E testing (optional dependency) |
 | TypeDoc | 0.28.18 | API documentation |
 | ESLint | 10.x | Linting (flat config) |
 
@@ -371,7 +375,7 @@ flowchart TB
         direction TB
         PR --> UnitTests[🧪 TypeScript & JS Testing]
         UnitTests --> TypeCheck[TSC Type Check]
-        UnitTests --> Vitest[Vitest 2890 Tests]
+        UnitTests --> Vitest[Vitest 3319 Tests]
         UnitTests --> CypressE2E[Cypress E2E]
         PR --> DashboardE2E[🖥️ Dashboard E2E]
         PR --> HomepageE2E[🏠 Homepage E2E]
@@ -396,7 +400,7 @@ flowchart TB
 
     subgraph "🤖 Agentic News Generation"
         direction TB
-        AgenticTrigger[⏰ Scheduled / Manual] --> NewsGen[📰 12 News Workflows]
+        AgenticTrigger[⏰ Scheduled / Manual] --> NewsGen[📰 14 News Workflows]
         NewsGen --> Translate[🌍 Translation]
         Translate --> ContentDeploy[📤 Content Deploy]
     end
@@ -440,7 +444,7 @@ flowchart TB
 | **HTMLHint Validation** | Zero errors | quality-checks.yml | Required ✅ |
 | **Link Integrity** | Zero broken internal links | quality-checks.yml | Required ✅ |
 | **Knip Dead Code (files/deps/dups)** | Zero unused files, deps, binaries, or duplicate exports | knip.yml | Required ✅ |
-| **Unit Test Pass Rate** | 100% (2890 tests) | javascript-testing.yml | Required ✅ |
+| **Unit Test Pass Rate** | 100% (3,319 tests) | javascript-testing.yml | Required ✅ |
 | **CodeQL SAST** | No critical/high | codeql.yml | Required ✅ |
 | **Dependency Vulnerabilities** | No critical/high | dependency-review.yml | Required ✅ |
 | **Translation Completeness** | All 14 languages valid | translation-validation.yml | Required ✅ |
@@ -613,7 +617,7 @@ flowchart TD
 - `tsconfig.scripts.json` — validates `scripts/**/*.ts` + `tests/**/*.ts`
 - Both use `noEmit: true` (Vite/esbuild handles actual compilation)
 
-**Test Coverage:** 2890 unit tests (Vitest) + Happy-DOM environment for browser modules + V8 coverage provider
+**Test Coverage:** 3,319 unit tests (Vitest) + Happy-DOM environment for browser modules + V8 coverage provider
 
 ---
 
@@ -723,33 +727,35 @@ flowchart TD
 
 ### 🤖 Stage 6: Agentic News Generation
 
-Twelve agentic workflows use the `gh-aw` (GitHub Agentic Workflows) framework with Claude Opus 4.7 to generate political news content following OSINT/INTOP editorial standards.
+Fourteen agentic workflows use the `gh-aw` (GitHub Agentic Workflows) framework with `claude-sonnet-4.6` to generate political-intelligence content following OSINT/INTOP editorial standards and the 23-artifact analysis baseline.
 
 ```mermaid
 flowchart TD
     subgraph "📰 News Generation Pipeline"
         Trigger[⏰ Scheduled / Manual] --> PreAnalysis[📊 Pre-Article Analysis]
         PreAnalysis --> Download[📥 Download Riksdag Data]
-        Download --> AIAnalysis[🤖 AI Analysis - Claude Opus 4.7]
+        Download --> AIAnalysis[🤖 AI Analysis - Claude Sonnet 4.6]
         AIAnalysis --> Generate[📝 Generate Article]
         Generate --> QualityCheck[✅ Quality Validation]
         QualityCheck --> Translate[🌍 Multi-Language Translation]
         Translate --> Deploy[📤 Commit & Deploy]
     end
 
-    subgraph "📋 12 News Workflows"
-        W1[📰 Article Generator]
-        W2[🌅 Evening Analysis]
-        W3[📡 Realtime Monitor]
-        W4[📋 Motions]
-        W5[📊 Committee Reports]
-        W6[📰 Weekly Review]
-        W7[📆 Monthly Review]
-        W8[🔮 Week Ahead]
-        W9[📅 Month Ahead]
-        W10[🏛️ Propositions]
-        W11[❓ Interpellations]
-        W12[🌍 Translate]
+    subgraph "📋 14 News Workflows"
+        W1[📊 Committee Reports]
+        W2[🏛️ Propositions]
+        W3[📋 Motions]
+        W4[❓ Interpellations]
+        W5[📡 Realtime Monitor]
+        W6[🌅 Evening Analysis]
+        W7[🔮 Week Ahead]
+        W8[📅 Month Ahead]
+        W9[📐 Quarter Ahead]
+        W10[📆 Year Ahead]
+        W11[🗳️ Election Cycle]
+        W12[📰 Weekly Review]
+        W13[📊 Monthly Review]
+        W14[🌍 Translate]
     end
 
     classDef pipeline fill:#e1bee7,stroke:#6a1b9a,stroke-width:1.5px,color:black
@@ -758,7 +764,7 @@ flowchart TD
 
     class Trigger,PreAnalysis,Download,Generate,QualityCheck,Translate,Deploy pipeline
     class AIAnalysis ai
-    class W1,W2,W3,W4,W5,W6,W7,W8,W9,W10,W11,W12 workflow
+    class W1,W2,W3,W4,W5,W6,W7,W8,W9,W10,W11,W12,W13,W14 workflow
 ```
 
 **MCP Tools Available:**
@@ -1533,12 +1539,12 @@ flowchart TB
 
 | Metric | Target | Actual | Status |
 | --- | --- | --- | --- |
-| Test Count | > 1000 | **2890** | ✅ |
+| Test Count | > 1000 | **3,319** | ✅ |
 | Test Pass Rate | 100% | **100%** | ✅ |
 | TypeScript Errors | 0 | **0** | ✅ |
 | ESLint Errors | 0 | **0** | ✅ |
 | Build Time | < 5s | **3.4s** | ✅ |
-| Test Duration | < 30s | **15s** | ✅ |
+| Test Duration | Tracked in CI | **139s local full suite** | ✅ |
 | Action SHA Pinning | 100% | **100%** | ✅ |
 | Harden Runner | All workflows | **All** | ✅ |
 | Language Coverage | 14 | **14** | ✅ |
@@ -1583,8 +1589,8 @@ flowchart TB
 
 ---
 
-**📋 Document Owner:** CEO | **📄 Version:** 7.3 | **📅 Last Updated:** 2026-05-02 (UTC)
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-02
+**📋 Document Owner:** CEO | **📄 Version:** 7.4 | **📅 Last Updated:** 2026-05-05 (UTC)
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-05
 **🏢 Classification:** Public | **🏛️ Owner:** Hack23 AB (Org.nr 5595347807)
 
 ---

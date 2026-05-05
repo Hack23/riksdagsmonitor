@@ -123,12 +123,17 @@ function aggregateAllDays(quiet: boolean): number {
     .map((e) => e.name)
     .sort();
   for (const date of dateDirs) {
-    const subs = fs.readdirSync(path.join(DAILY_DIR, date), { withFileTypes: true })
-      .filter((e) => e.isDirectory())
-      .map((e) => e.name);
-    for (const subfolder of subs) {
-      if (aggregateOne(date, subfolder, quiet)) count += 1;
-    }
+    const discoverSubfolders = (dir: string, prefix: string): void => {
+      const entries = fs.readdirSync(dir, { withFileTypes: true })
+        .filter((e) => e.isDirectory())
+        .sort((a, b) => a.name.localeCompare(b.name));
+      for (const entry of entries) {
+        const subfolder = prefix ? `${prefix}/${entry.name}` : entry.name;
+        if (aggregateOne(date, subfolder, quiet)) count += 1;
+        discoverSubfolders(path.join(dir, entry.name), subfolder);
+      }
+    };
+    discoverSubfolders(path.join(DAILY_DIR, date), '');
   }
   return count;
 }

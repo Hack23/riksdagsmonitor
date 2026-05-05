@@ -11,15 +11,19 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-2.3-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--05--03-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-2.4-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--05-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.3 | **📅 Last Updated:** 2026-05-03 (UTC)
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-03  
+**📋 Document Owner:** CEO | **📄 Version:** 2.4 | **📅 Last Updated:** 2026-05-05 (UTC)
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-05  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
+> **🆕 What changed since last review (v2.3 → v2.4, 2026-05-05):**
+> - 📰 Replaced legacy `generate-daily-news.js` architecture references with the current GitHub Agentic Workflows newsroom: 14 `news-*.md` sources, 14 compiled `.lock.yml` files, 23-artifact analysis folders, deterministic `aggregate-analysis.ts`, and sanitized `render-articles.ts` output for all 14 languages.
+> - 🧩 Updated component/container views to reflect the TypeScript browser modules, local Chart.js/D3/Papa Parse assets, IMF TypeScript client, SCB/World Bank MCP servers, and nested election-cycle article paths.
+>
 > **🆕 What changed since last review (v2.2 → v2.3, 2026-05-03):**
 > - 🔄 **Drift reconciliation** with `.github/workflows/README.md` and live label set: GitHub Actions surface is now **50 files** total (**22 standard `.yml` + 14 agentic `.md` sources + 14 compiled `.lock.yml`** siblings); **14 agentic news workflows** orchestrated via the five-layer safe-output security model and Squid + iptables egress firewall (was 43 / 21 / 11 / 11 in v2.2).
 > - 📚 Added the **Documentation Portfolio Matrix** section (acceptance criterion #2 of the documentation-refresh issue) cross-linking every top-level architecture / ISMS / operational document to its ISMS-PUBLIC authority root and current owner / version / next-review date.
@@ -34,7 +38,7 @@
 > - 🧠 Runtime baseline tightened to **Node.js ≥25**; toolchain bumped to TypeScript 6.0.3, Vite 8.0.9, Vitest 4.1.4, ESLint 10.2.1, Cypress 15.14.0 (optional), Playwright 1.59.1, typedoc 0.28.19, happy-dom 20.9.0, knip 6.5.0, ajv 8.18.0.
 > - 🗂️ CIA data now spans **15 subsystems** under `cia-data/` (anomaly, coalition, committee, distribution, election, election-cycle, ministry, parties, party, percentile, politician, pre-election, risk, seasonal, voting). Prior "19 products" framing has been retired in favour of subsystem count.
 > - 🌍 Content footprint: **14 languages** (EN, SV, DA, NB (`_no`), DE, ES, FI, FR, HE RTL, AR RTL, JA, KO, NL, ZH) • **2,669 files** under `news/`.
-> - 🤖 GitHub Actions surface: **50 files** total (22 standard `.yml`, 14 agentic `.md` sources, 14 compiled `.lock.yml` siblings). Fourteen agentic news workflows orchestrated via the five-layer safe-output security model and egress firewall (Squid + iptables). _(Updated in v2.3 from the `43 files / 11 agentic` figure originally published with v2.2; see `.github/workflows/README.md` for the live inventory.)_
+> - 🤖 GitHub Actions surface: **50 files** total (22 standard `.yml`, 14 agentic `.md` sources, 14 compiled `.lock.yml` siblings). Fourteen agentic news workflows orchestrated via the five-layer safe-output security model and egress firewall (Squid + iptables). _(Current live inventory; see `.github/workflows/README.md`.)_
 > - 🧩 Copilot ecosystem: **24 custom agents** under `.github/agents/`, **91 skills** under `.github/skills/`, **8 MCP servers** (`riksdag-regering`, `scb`, `world-bank`, `github` insiders, `filesystem`, `memory`, `sequential-thinking`, `playwright`) wired via `.github/copilot-mcp.json`.
 > - ☁️ Production distribution: AWS CloudFront + S3 dual-region (us-east-1 primary, eu-west-1 replica) via OIDC-only deploy; GitHub Pages (`hack23.github.io`) as DR fallback.
 > - 🛡️ Integrity: SRI enabled via `vite-plugin-sri-gen@1.3.2`; all Actions SHA-pinned; `step-security/harden-runner` across workflows; CodeQL, Dependabot, dependency-review, Scorecards, Secret Scanning, OpenSSF Best Practices #12069 active.
@@ -207,9 +211,9 @@ graph TB
     subgraph "Application Layer - Riksdagsmonitor"
         Static[Static Website<br/>Container: Web Application<br/>HTML5/CSS3/JavaScript<br/>14 Languages]
         
-        Dashboards[Interactive Dashboards<br/>Container: Client-Side App<br/>Chart.js v4.4.1, D3.js v7<br/>Papa Parse v5.5.3]
+        Dashboards[Interactive Dashboards<br/>Container: Client-Side App<br/>Chart.js v4.4.1, D3.js v7.9.0<br/>Papa Parse v5.5.3]
         
-        NewsEngine[News Generator<br/>Container: Node.js Scripts<br/>generate-daily-news.js<br/>riksdag-regering-mcp]
+        NewsEngine[Agentic News Pipeline<br/>Container: gh-aw + Node 25 scripts<br/>23 artifacts → article.md → HTML]
     end
     
     subgraph "Storage Layer"
@@ -265,8 +269,8 @@ graph TB
 | Container | Technology | Responsibility | Status |
 |-----------|------------|----------------|--------|
 | **Static Website** | HTML5/CSS3/JavaScript | Present intelligence content, 14-language support | ✅ Active |
-| **Interactive Dashboards** | Chart.js v4.4.1, D3.js v7, Papa Parse v5.5.3 | Data visualization, committee analysis, coalition tracking | ✅ Active |
-| **News Generator** | Node.js scripts, riksdag-regering-mcp | Automated news generation, evening analysis | ✅ Active |
+| **Interactive Dashboards** | Chart.js v4.4.1, D3.js v7.9.0, Papa Parse v5.5.3 | Data visualization, committee analysis, coalition tracking | ✅ Active |
+| **Agentic News Pipeline** | GitHub Agentic Workflows, Node 25 scripts, riksdag-regering MCP, SCB MCP, IMF TypeScript client | 23-artifact analysis, deterministic article aggregation, 14-language HTML rendering | ✅ Active |
 | **AWS CloudFront** | AWS CDN | Primary global content delivery, DDoS protection | ✅ Active |
 | **S3 us-east-1** | AWS S3 | Primary object storage with versioning | ✅ Active |
 | **S3 eu-west-1** | AWS S3 | Replica storage with cross-region replication | ✅ Active |
@@ -311,7 +315,7 @@ graph TD
         
         HTMLUtils[html-utils.js<br/>Component: HTML Generation<br/>Template rendering, multi-language]
         
-        NewsGen[generate-daily-news.js<br/>Component: News Generation<br/>Evening analysis, 5 editorial pillars]
+        NewsGen[aggregate-analysis.ts + render-articles.ts<br/>Component: Article Generation<br/>23 artifacts → article.md → 14-language HTML]
     end
     
     subgraph "Styling"
@@ -407,9 +411,10 @@ graph TD
    - Advanced Anomaly Detection Dashboard
 
 #### Scripts and Utilities
-- **scripts/generate-daily-news.js** - Evening analysis generation (5 editorial pillars)
-- **scripts/data-transformers.js** - CSV parsing and data cleaning
-- **scripts/html-utils.js** - Template rendering and HTML generation
+- **scripts/aggregate-analysis.ts** - Recursively regenerates `analysis/daily/**/article.md` from analysis artifacts
+- **scripts/render-articles.ts** - Renders `article.md` / `article.<lang>.md` into sanitized `news/*-{lang}.html` files
+- **scripts/render-lib/** - Shared Markdown sanitization, article chrome, JSON-LD, source appendix, language alternates, and aggregator ordering
+- **src/browser/** - TypeScript dashboard modules compiled by Vite
 
 ---
 
@@ -506,7 +511,7 @@ graph LR
 ```mermaid
 sequenceDiagram
     participant Cron as GitHub Actions Cron
-    participant NewsGen as generate-daily-news.js
+    participant NewsGen as gh-aw news workflow
     participant MCP as riksdag-regering-mcp
     participant SCB as scb-mcp
     participant IMF as imf-ts-client
@@ -538,19 +543,16 @@ sequenceDiagram
     IMF-->>NewsGen: WEO / Fiscal Monitor / IFS (2025 finals + projections to 2031)
     Note over NewsGen,IMF: IMF via pure-TS `scripts/imf-client.ts` invoked by the bash tool (no MCP);<br/>optional enrichment — graceful fallback to cached `analysis/data/imf/` on failure
     
-    NewsGen->>NewsGen: Analyze data + Generate 5 editorial pillars
-    Note over NewsGen: 1. Lead Story (400-800 words)<br/>2. Parliamentary Pulse (200-400 words)<br/>3. Government Watch (200-300 words)<br/>4. Opposition Dynamics (200-300 words)<br/>5. Looking Ahead (100-200 words)
+    NewsGen->>NewsGen: Produce 23 analysis artifacts + per-document files
+    Note over NewsGen: AI-FIRST Pass 1 + Pass 2; no article before the analysis gate passes
     
-    NewsGen->>NewsGen: Validate quality metrics
-    Note over NewsGen: Analytical depth ≥0.6<br/>Party coverage ≥6<br/>Source citations ≥5
-    
-    NewsGen->>NewsGen: Generate 14-language versions
-    Note over NewsGen: en, sv, da, no, fi, de, fr, es,<br/>nl, ar, he, ja, ko, zh
+    NewsGen->>NewsGen: Aggregate article.md and render HTML
+    Note over NewsGen: aggregate-analysis.ts creates article.md; render-articles.ts emits en/sv immediately and all 14 languages during full regeneration
     
     NewsGen->>State: Update workflow state
     State-->>NewsGen: State saved (deduplication cache)
     
-    NewsGen->>Git: Commit HTML articles (14 files)
+    NewsGen->>Git: Open safe-output PR with artifacts, article.md, and HTML
     Git->>CI: Trigger deployment workflow
     CI->>CI: Run quality checks
     CI->>S3: Deploy to CloudFront
@@ -1007,7 +1009,7 @@ graph LR
 ```mermaid
 graph TB
     subgraph "Language Generation"
-        Source[Agent Generation<br/>Claude Opus 4.7<br/>English source]
+        Source[Agent Generation<br/>Claude Sonnet 4.6<br/>English source]
         
         Nordic[Nordic Languages<br/>en, sv, da, no, fi<br/>Germanic language family]
         EU[EU Core Languages<br/>de, fr, es, nl<br/>Western European]

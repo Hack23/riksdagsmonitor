@@ -5,7 +5,7 @@ date: 2026-05-04
 subfolder: election-cycle/next
 slug: 2026-05-04-election-cycle/next
 source_folder: analysis/daily/2026-05-04/election-cycle/next
-generated_at: 2026-05-04T12:30:47.470Z
+generated_at: 2026-05-05T09:25:12.039Z
 language: en
 layout: article
 ---
@@ -190,41 +190,6 @@ All assessments for the 2026–2030 cycle are at lower confidence than current c
 | SD cabinet question transforms Swedish politics | HIGH | No precedent exists; consequence certain |
 | Specific policy outcomes | MEDIUM-LOW | Depend on which government forms |
 
-## Risk Assessment
-<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/risk-assessment.md -->
-
-### Risk Register (Top 10)
-
-| # | Risk | Probability | Impact | Level | Horizon |
-|---|---|---|---|---|---|
-| 1 | Extended formation crisis (C3 scenario) | 10% | CRITICAL | HIGH | T+90d |
-| 2 | SD cabinet inclusion destabilises coalition | 35% | CRITICAL | HIGH | T+90d–T+365d |
-| 3 | Nuclear construction decision deferred again | 30% | HIGH | MEDIUM-HIGH | T+730d |
-| 4 | European recession hits Sweden 2028–2029 | 25% | HIGH | MEDIUM-HIGH | T+730d |
-| 5 | L falls below threshold 2026 | 32% | MEDIUM | MEDIUM | T+0d |
-| 6 | MP falls below threshold 2026 (S-bloc weakened) | 38% | HIGH | HIGH | T+0d |
-| 7 | Municipal fiscal crisis (eldercare+defence) | 40% | HIGH | HIGH | T+365d |
-| 8 | Russia-NATO confrontation spillover | 8% | CATASTROPHIC | HIGH | T+any |
-| 9 | EU political fragmentation post-2029 EP | 20% | MEDIUM | MEDIUM | T+1095d |
-| 10 | Housing crisis deepens despite mandate action | 35% | HIGH | HIGH | T+1460d |
-
-### Top 5 Deep Dives
-
-#### Risk 1: Extended Formation Crisis
-The 2026 election is within polling margin of error. A hung result (C3: 10%) produces a formation crisis without precedent since 2018–2019. A 73-day process in 2018; a 2026 version could be longer given SD cabinet demand adding complexity. Mitigation: Cross-bloc housing deal as formation incentive.
-
-#### Risk 2: SD Cabinet Destabilisation  
-If SD enters cabinet (A2), the governing risk is SD ministers' institutional culture clash. SD's experience with state administration is limited. Coalition partners face guilt-by-association on SD policy. International reputation risk. Mitigation: Clear ministerial portfolio boundaries; SD excluded from security-sensitive ministries initially.
-
-#### Risk 3: Nuclear Decision Deferral
-Nuclear requires a positive investment decision, not just legal permission. Capital commitment (est. SEK 300–500bn) requires parliamentary support beyond the ruling coalition. If M+KD+SD cannot form 5/6 majority on nuclear, the decision is deferred. Mitigation: S-M grand coalition nuclear agreement provides supermajority.
-
-#### Risk 7: Municipal Fiscal Crisis
-Municipalities face simultaneous pressure: ageing population (eldercare demand +18% by 2030); defence contributions; energy transition costs; migration integration costs. Central government transfers insufficient. Risk of municipal service cuts. Mitigation: Municipal finance reform; earmarked eldercare grants.
-
-#### Risk 10: Housing Crisis Deepens
-Historical pattern: Swedish housing crises persist 10–15 years after onset due to planning and capital formation cycle lengths. Even with mandate action in 2027, housing starts may not recover until 2030. Mitigation: State construction guarantees; planning override powers; expanded tenant rights.
-
 ## Cycle Trajectory
 <!-- source: cycle-trajectory.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/cycle-trajectory.md -->
 
@@ -300,140 +265,40 @@ By September 2030, the 2026–2030 government will be evaluated on:
 
 **Most likely legacy** (probability-weighted): "The mandate that activated nuclear energy and partially resolved the housing crisis, while permanently settling the SD inclusion question."
 
-## PESTLE Analysis
-<!-- source: pestle-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/pestle-analysis.md -->
+## Risk Assessment
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/risk-assessment.md -->
 
-### P — Political
+### Risk Register (Top 10)
 
-**Government formation uncertainty**: The 2026 election produces the opening conditions. Formation outcome determines all political factors downstream.
+| # | Risk | Probability | Impact | Level | Horizon |
+|---|---|---|---|---|---|
+| 1 | Extended formation crisis (C3 scenario) | 10% | CRITICAL | HIGH | T+90d |
+| 2 | SD cabinet inclusion destabilises coalition | 35% | CRITICAL | HIGH | T+90d–T+365d |
+| 3 | Nuclear construction decision deferred again | 30% | HIGH | MEDIUM-HIGH | T+730d |
+| 4 | European recession hits Sweden 2028–2029 | 25% | HIGH | MEDIUM-HIGH | T+730d |
+| 5 | L falls below threshold 2026 | 32% | MEDIUM | MEDIUM | T+0d |
+| 6 | MP falls below threshold 2026 (S-bloc weakened) | 38% | HIGH | HIGH | T+0d |
+| 7 | Municipal fiscal crisis (eldercare+defence) | 40% | HIGH | HIGH | T+365d |
+| 8 | Russia-NATO confrontation spillover | 8% | CATASTROPHIC | HIGH | T+any |
+| 9 | EU political fragmentation post-2029 EP | 20% | MEDIUM | MEDIUM | T+1095d |
+| 10 | Housing crisis deepens despite mandate action | 35% | HIGH | HIGH | T+1460d |
 
-**SD cabinet question**: The decade-defining political question. SD in government = normalisation; SD as C&S = asymmetric influence continuing. Either way, SD is the pivotal actor.
+### Top 5 Deep Dives
 
-**Multi-party fragmentation**: L and MP threshold risks create formation complexity. A Swedish parliament without L would be historically anomalous; without MP would accelerate climate policy retreat.
+#### Risk 1: Extended Formation Crisis
+The 2026 election is within polling margin of error. A hung result (C3: 10%) produces a formation crisis without precedent since 2018–2019. A 73-day process in 2018; a 2026 version could be longer given SD cabinet demand adding complexity. Mitigation: Cross-bloc housing deal as formation incentive.
 
-**International political alignment**: Sweden increasingly aligned with NATO centre; EU reformist; bilateral US relationship uncertain.
+#### Risk 2: SD Cabinet Destabilisation  
+If SD enters cabinet (A2), the governing risk is SD ministers' institutional culture clash. SD's experience with state administration is limited. Coalition partners face guilt-by-association on SD policy. International reputation risk. Mitigation: Clear ministerial portfolio boundaries; SD excluded from security-sensitive ministries initially.
 
-### E — Economic
+#### Risk 3: Nuclear Decision Deferral
+Nuclear requires a positive investment decision, not just legal permission. Capital commitment (est. SEK 300–500bn) requires parliamentary support beyond the ruling coalition. If M+KD+SD cannot form 5/6 majority on nuclear, the decision is deferred. Mitigation: S-M grand coalition nuclear agreement provides supermajority.
 
-**GDP growth**: IMF WEO Apr-2026: 2.4% (2026), 2.0–2.5% (2027–2030). Sweden outperforms EU average.
+#### Risk 7: Municipal Fiscal Crisis
+Municipalities face simultaneous pressure: ageing population (eldercare demand +18% by 2030); defence contributions; energy transition costs; migration integration costs. Central government transfers insufficient. Risk of municipal service cuts. Mitigation: Municipal finance reform; earmarked eldercare grants.
 
-**Defence fiscal drag**: 2.4% GDP = ~SEK 200bn/year defence budget by 2028. Additional fiscal pressure requires either tax revenue or other spending reductions.
-
-**Housing investment gap**: Annual housing investment needed: SEK 80–120bn. Current: ~SEK 50bn. Gap: SEK 30–70bn requiring either state or market activation.
-
-**Nuclear capital**: SEK 300–500bn estimated for 2–4 new reactors over 15 years. Requires state guarantee and private capital.
-
-**provenance.provider**: imf | indicator: GDP RPCH | vintage: WEO Apr-2026
-
-### S — Social
-
-**Demographic ageing**: Old-age dependency ratio 32%→36% (2026→2030). Care workforce demand rising.
-
-**Housing inequality**: A generation locked out of ownership. Political time bomb; housing is the defining generational equity issue.
-
-**Integration challenges**: Migration restriction reduces new integration challenges but existing integration gap (25%+ foreign-born in some municipalities) is structural.
-
-**Crime and violence**: Gang-related crime is the public's first or second concern. 2026–2030 mandate expected to show tangible results or face accountability.
-
-### T — Technological
-
-**Nuclear technology**: SMR maturity enables smaller, faster, cheaper reactors. Sweden can be nuclear-first mover at lower cost than historical models.
-
-**AI transformation**: EU AI Act shapes public sector AI; private sector AI (Klarna, Spotify) grows; industrial AI (SAAB, Volvo) accelerates.
-
-**Digital infrastructure**: 5G/6G deployment; fibre broadband; cybersecurity requirements all require regulatory and investment attention.
-
-**Defence technology**: SAAB Gripen E export; Swedish contribution to NATO cyber and information operations.
-
-### L — Legal
-
-**EU AI Act**: Non-negotiable implementation 2027–2030.
-
-**ECHR constraints**: HD03262 (migration) faces ECHR Art 8 challenges; ECJ may annul elements.
-
-**Nuclear law (HD01NU19)**: Enables construction; detailed permits require environmental law compliance and Lagrådet review.
-
-**EPBD (housing energy)**: Requires renovation targets for housing stock by 2030.
-
-### E2 — Environmental
-
-**Climate targets**: Sweden's 2045 net-zero target requires rapid decarbonisation across all sectors.
-
-**Nuclear as climate tool**: New nuclear is climate-compatible (carbon-free). V/MP opposition contradicts climate logic; this contradiction is increasingly exposed.
-
-**Green steel (SSAB H2Green)**: HYBRIT hydrogen steel production commencing; requires clean electricity (nuclear + wind).
-
-**Water resources**: Swedish hydrological security good; climate change affects precipitation patterns but not catastrophically.
-
-## Wildcards & Black Swans
-<!-- source: wildcards-blackswans.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/wildcards-blackswans.md -->
-
-### Wildcards (Known unknowns)
-
-#### W1: US NATO Withdrawal (Probability: 12%)
-**Trigger**: Second Trump term; domestic US political pressure; NATO rebalancing
-**Impact**: Sweden defence strategy transformation; European solidarity imperative; Swedish defence investment ceiling removed
-**Response**: Sweden+Finland bilateral security agreement activated; Nordic-Baltic defence pact accelerated
-
-#### W2: Russia-Finland/Baltic Crisis (Probability: 8%)
-**Trigger**: Russia tests NATO Article 5 in Baltic state; Sweden activated
-**Impact**: Full mobilisation of Swedish defence; NATO operational command; Swedish territory at risk
-**Response**: Article 5 invocation; Swedish forces deployed; civilian emergency management
-
-#### W3: Nuclear Construction Cost Overrun 2028–2030 (Probability: 35%)
-**Trigger**: Site geology; regulatory requirements; supply chain costs
-**Impact**: Political controversy; coalition crisis on budget; public trust in nuclear decision
-**Response**: International comparison (Finland Hanhikivi, UK Hinkley) to contextualise; state guarantee expansion
-
-#### W4: European Economic Crisis 2028 (Probability: 20%)
-**Trigger**: US tariff war; Chinese real estate collapse; EU banking stress
-**Impact**: Swedish export collapse; unemployment rise; housing values fall
-**Response**: Counter-cyclical fiscal policy; automatic stabilisers; EU solidarity mechanism
-
-#### W5: SD Splits from Åkesson Leadership (Probability: 10%)
-**Trigger**: SD in cabinet fails to deliver; leadership challenge
-**Impact**: Right-wing fragmentation; possible formation crisis; new extreme-right formation
-**Response**: Formation flexibility; potential S+M emergency coalition
-
-#### W6: L Falls Below Threshold AND New Centre-Right Party Emerges (Probability: 8%)
-**Trigger**: L fails 2026; market liberal wing forms new party by 2029
-**Impact**: 2030 election with new party at 5–6%; Tidö bloc arithmetic changes
-**Response**: M recalibration; coalition building includes new actors
-
-#### W7: Sweden-Norway Energy Price Dispute (Probability: 15%)
-**Trigger**: Electricity price differentials; Norwegian hydro vs Swedish nuclear; price transmission
-**Impact**: Nordic energy market tensions; Swedish energy security argument strengthened
-**Response**: Bilateral negotiation; Nordic Council arbitration; accelerated Swedish supply
-
-### Black Swans (Unknown unknowns — by category)
-
-#### BS1: Russian Nuclear Incident (Near Baltic)
-**Scenario**: Accidental radiation release; Baltic Sea contamination; Swedish emergency
-**Why unexpected**: Previous incidents (Chernobyl 1986) changed Swedish nuclear politics for 40 years
-
-#### BS2: Swedish Political Leader Assassination
-**Scenario**: Targeting of PM or SD leader by domestic or foreign extremist
-**Why unexpected**: Last Swedish PM assassination (Palme, 1986) transformed politics; structural trauma
-
-#### BS3: AI-Driven Disinformation in 2030 Election
-**Scenario**: Deepfake videos of party leaders; AI-generated "evidence" of corruption; election integrity crisis
-**Why unexpected**: Scale and quality of AI disinformation would be unprecedented in Swedish context
-
-#### BS4: Nordic Climate Feedback Loop (Extreme Weather Events)
-**Scenario**: Consecutive extreme summers; drought+flood; agricultural collapse
-**Why unexpected**: Sweden perceives itself as resilient to climate; structural denial
-
-#### BS5: Swedish Banking Sector Crisis
-**Scenario**: Housing price crash + bank exposure to mortgage portfolio
-**Why unexpected**: Housing correction could trigger bank stress; Sweden has bank crisis historical memory (1990s)
-
-### Interaction Matrix
-
-| Wildcard | W1 NATO | W4 Recession | W3 Nuclear |
-|---|---|---|---|
-| W2 Russia crisis | Synergy (both raise defence) | Moderate (recession reduces response capacity) | Neutral |
-| W5 SD split | Synergy (formation crisis amplified) | Synergy (crisis politics) | Neutral |
-| W6 New centre-right | Neutral | Moderate (crisis helps establish parties) | Neutral |
+#### Risk 10: Housing Crisis Deepens
+Historical pattern: Swedish housing crises persist 10–15 years after onset due to planning and capital formation cycle lengths. Even with mandate action in 2027, housing starts may not recover until 2030. Mitigation: State construction guarantees; planning override powers; expanded tenant rights.
 
 ## Quantitative SWOT
 <!-- source: quantitative-swot.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/quantitative-swot.md -->
@@ -582,6 +447,141 @@ STRIDE level: HIGH
 | Tampering (procedural blocking) | MEDIUM | 25% | Medium | 6 |
 | Information (foreign intelligence) | MEDIUM | 20% | High | 7 |
 | Tampering (electoral integrity) | LOW | 5% | Critical | 8 |
+
+## Wildcards & Black Swans
+<!-- source: wildcards-blackswans.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/wildcards-blackswans.md -->
+
+### Wildcards (Known unknowns)
+
+#### W1: US NATO Withdrawal (Probability: 12%)
+**Trigger**: Second Trump term; domestic US political pressure; NATO rebalancing
+**Impact**: Sweden defence strategy transformation; European solidarity imperative; Swedish defence investment ceiling removed
+**Response**: Sweden+Finland bilateral security agreement activated; Nordic-Baltic defence pact accelerated
+
+#### W2: Russia-Finland/Baltic Crisis (Probability: 8%)
+**Trigger**: Russia tests NATO Article 5 in Baltic state; Sweden activated
+**Impact**: Full mobilisation of Swedish defence; NATO operational command; Swedish territory at risk
+**Response**: Article 5 invocation; Swedish forces deployed; civilian emergency management
+
+#### W3: Nuclear Construction Cost Overrun 2028–2030 (Probability: 35%)
+**Trigger**: Site geology; regulatory requirements; supply chain costs
+**Impact**: Political controversy; coalition crisis on budget; public trust in nuclear decision
+**Response**: International comparison (Finland Hanhikivi, UK Hinkley) to contextualise; state guarantee expansion
+
+#### W4: European Economic Crisis 2028 (Probability: 20%)
+**Trigger**: US tariff war; Chinese real estate collapse; EU banking stress
+**Impact**: Swedish export collapse; unemployment rise; housing values fall
+**Response**: Counter-cyclical fiscal policy; automatic stabilisers; EU solidarity mechanism
+
+#### W5: SD Splits from Åkesson Leadership (Probability: 10%)
+**Trigger**: SD in cabinet fails to deliver; leadership challenge
+**Impact**: Right-wing fragmentation; possible formation crisis; new extreme-right formation
+**Response**: Formation flexibility; potential S+M emergency coalition
+
+#### W6: L Falls Below Threshold AND New Centre-Right Party Emerges (Probability: 8%)
+**Trigger**: L fails 2026; market liberal wing forms new party by 2029
+**Impact**: 2030 election with new party at 5–6%; Tidö bloc arithmetic changes
+**Response**: M recalibration; coalition building includes new actors
+
+#### W7: Sweden-Norway Energy Price Dispute (Probability: 15%)
+**Trigger**: Electricity price differentials; Norwegian hydro vs Swedish nuclear; price transmission
+**Impact**: Nordic energy market tensions; Swedish energy security argument strengthened
+**Response**: Bilateral negotiation; Nordic Council arbitration; accelerated Swedish supply
+
+### Black Swans (Unknown unknowns — by category)
+
+#### BS1: Russian Nuclear Incident (Near Baltic)
+**Scenario**: Accidental radiation release; Baltic Sea contamination; Swedish emergency
+**Why unexpected**: Previous incidents (Chernobyl 1986) changed Swedish nuclear politics for 40 years
+
+#### BS2: Swedish Political Leader Assassination
+**Scenario**: Targeting of PM or SD leader by domestic or foreign extremist
+**Why unexpected**: Last Swedish PM assassination (Palme, 1986) transformed politics; structural trauma
+
+#### BS3: AI-Driven Disinformation in 2030 Election
+**Scenario**: Deepfake videos of party leaders; AI-generated "evidence" of corruption; election integrity crisis
+**Why unexpected**: Scale and quality of AI disinformation would be unprecedented in Swedish context
+
+#### BS4: Nordic Climate Feedback Loop (Extreme Weather Events)
+**Scenario**: Consecutive extreme summers; drought+flood; agricultural collapse
+**Why unexpected**: Sweden perceives itself as resilient to climate; structural denial
+
+#### BS5: Swedish Banking Sector Crisis
+**Scenario**: Housing price crash + bank exposure to mortgage portfolio
+**Why unexpected**: Housing correction could trigger bank stress; Sweden has bank crisis historical memory (1990s)
+
+### Interaction Matrix
+
+| Wildcard | W1 NATO | W4 Recession | W3 Nuclear |
+|---|---|---|---|
+| W2 Russia crisis | Synergy (both raise defence) | Moderate (recession reduces response capacity) | Neutral |
+| W5 SD split | Synergy (formation crisis amplified) | Synergy (crisis politics) | Neutral |
+| W6 New centre-right | Neutral | Moderate (crisis helps establish parties) | Neutral |
+
+## PESTLE Analysis
+<!-- source: pestle-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/pestle-analysis.md -->
+
+### P — Political
+
+**Government formation uncertainty**: The 2026 election produces the opening conditions. Formation outcome determines all political factors downstream.
+
+**SD cabinet question**: The decade-defining political question. SD in government = normalisation; SD as C&S = asymmetric influence continuing. Either way, SD is the pivotal actor.
+
+**Multi-party fragmentation**: L and MP threshold risks create formation complexity. A Swedish parliament without L would be historically anomalous; without MP would accelerate climate policy retreat.
+
+**International political alignment**: Sweden increasingly aligned with NATO centre; EU reformist; bilateral US relationship uncertain.
+
+### E — Economic
+
+**GDP growth**: IMF WEO Apr-2026: 2.4% (2026), 2.0–2.5% (2027–2030). Sweden outperforms EU average.
+
+**Defence fiscal drag**: 2.4% GDP = ~SEK 200bn/year defence budget by 2028. Additional fiscal pressure requires either tax revenue or other spending reductions.
+
+**Housing investment gap**: Annual housing investment needed: SEK 80–120bn. Current: ~SEK 50bn. Gap: SEK 30–70bn requiring either state or market activation.
+
+**Nuclear capital**: SEK 300–500bn estimated for 2–4 new reactors over 15 years. Requires state guarantee and private capital.
+
+**provenance.provider**: imf | indicator: GDP RPCH | vintage: WEO Apr-2026
+
+### S — Social
+
+**Demographic ageing**: Old-age dependency ratio 32%→36% (2026→2030). Care workforce demand rising.
+
+**Housing inequality**: A generation locked out of ownership. Political time bomb; housing is the defining generational equity issue.
+
+**Integration challenges**: Migration restriction reduces new integration challenges but existing integration gap (25%+ foreign-born in some municipalities) is structural.
+
+**Crime and violence**: Gang-related crime is the public's first or second concern. 2026–2030 mandate expected to show tangible results or face accountability.
+
+### T — Technological
+
+**Nuclear technology**: SMR maturity enables smaller, faster, cheaper reactors. Sweden can be nuclear-first mover at lower cost than historical models.
+
+**AI transformation**: EU AI Act shapes public sector AI; private sector AI (Klarna, Spotify) grows; industrial AI (SAAB, Volvo) accelerates.
+
+**Digital infrastructure**: 5G/6G deployment; fibre broadband; cybersecurity requirements all require regulatory and investment attention.
+
+**Defence technology**: SAAB Gripen E export; Swedish contribution to NATO cyber and information operations.
+
+### L — Legal
+
+**EU AI Act**: Non-negotiable implementation 2027–2030.
+
+**ECHR constraints**: HD03262 (migration) faces ECHR Art 8 challenges; ECJ may annul elements.
+
+**Nuclear law (HD01NU19)**: Enables construction; detailed permits require environmental law compliance and Lagrådet review.
+
+**EPBD (housing energy)**: Requires renovation targets for housing stock by 2030.
+
+### E2 — Environmental
+
+**Climate targets**: Sweden's 2045 net-zero target requires rapid decarbonisation across all sectors.
+
+**Nuclear as climate tool**: New nuclear is climate-compatible (carbon-free). V/MP opposition contradicts climate logic; this contradiction is increasingly exposed.
+
+**Green steel (SSAB H2Green)**: HYBRIT hydrogen steel production commencing; requires clean electricity (nuclear + wind).
+
+**Water resources**: Swedish hydrological security good; climate change affects precipitation patterns but not catastrophically.
 
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/cross-reference-map.md -->
@@ -1406,12 +1406,12 @@ Each section above projects one analysis artifact. The full audited markdown is 
 
 - [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/executive-brief.md)
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/synthesis-summary.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/risk-assessment.md)
 - [`cycle-trajectory.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/cycle-trajectory.md)
-- [`pestle-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/pestle-analysis.md)
-- [`wildcards-blackswans.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/wildcards-blackswans.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/risk-assessment.md)
 - [`quantitative-swot.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/quantitative-swot.md)
 - [`political-stride-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/political-stride-assessment.md)
+- [`wildcards-blackswans.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/wildcards-blackswans.md)
+- [`pestle-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/pestle-analysis.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/cross-reference-map.md)
 - [`actor-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/actor-assessment.md)
 - [`coalition-dynamics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/coalition-dynamics.md)

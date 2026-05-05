@@ -19,9 +19,9 @@
   <img src="https://img.shields.io/badge/AI--FIRST-2%20Passes-ff006e?style=for-the-badge" alt="AI FIRST"/>
 </p>
 
-**📋 Document Owner:** CEO | **📅 Last Updated:** 2026-04-25 (UTC)  
+**📋 Document Owner:** CEO | **📅 Last Updated:** 2026-05-05 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 559534-7807) | **🏷️ Classification:** Public
-**Primary example:** [`analysis/daily/2026-04-24/interpellations/article.md`](analysis/daily/2026-04-24/interpellations/article.md) → [`news/2026-04-24-interpellations-en.html`](news/2026-04-24-interpellations-en.html) / [`news/2026-04-24-interpellations-sv.html`](news/2026-04-24-interpellations-sv.html)
+**Primary example:** [`analysis/daily/2026-05-05/interpellations/article.md`](analysis/daily/2026-05-05/interpellations/article.md) → [`news/2026-05-05-interpellations-en.html`](news/2026-05-05-interpellations-en.html) / [`news/2026-05-05-interpellations-sv.html`](news/2026-05-05-interpellations-sv.html) / all 14 language siblings
 
 ---
 
@@ -165,7 +165,7 @@ It declares:
 | **Schedule** | Daily around 07:00 on weekdays |
 | **Manual inputs** | `article_date`, `force_generation`, `languages`, `analysis_depth` |
 | **Runtime** | Node.js `25` |
-| **Engine** | Copilot with `claude-opus-4.7` |
+| **Engine** | Copilot with `claude-sonnet-4.6` |
 | **Permissions** | Read-only content/issues/PR/actions/discussions/security-events for AI job |
 | **MCP gateway** | Enabled |
 | **Safe outputs** | One PR max, labels `agentic-news`, `analysis-data`, one translation dispatch max |
@@ -227,7 +227,7 @@ The interpellation workflow documents a compressed single-run budget:
 | 22–24 min | Aggregate `article.md` and render EN/SV HTML |
 | 24–28 min | Stage, commit and create exactly one PR |
 
-This budget exists because the `safeoutputs` MCP session may expire after approximately 30–35 minutes of idle time. The workflow explicitly prefers **scope compression over skipping Pass 2**.
+This budget reserves job-level headroom inside the 60-minute workflow ceiling and safe-output PR handoff. The workflow explicitly prefers **scope compression over skipping Pass 2**.
 
 ### Agentic security model
 
@@ -460,7 +460,7 @@ npx tsx scripts/aggregate-analysis.ts \
   --subfolder interpellations
 ```
 
-For all existing analysis folders:
+For all existing analysis folders, including nested folders such as `election-cycle/current` and `election-cycle/next`:
 
 ```bash
 npx tsx scripts/aggregate-analysis.ts --all
@@ -636,6 +636,12 @@ For all existing articles:
 
 ```bash
 npx tsx scripts/render-articles.ts --all --lang en,sv
+```
+
+For a full repository refresh of every supported language, use:
+
+```bash
+npx tsx scripts/render-articles.ts --all --lang all
 ```
 
 ### Markdown pipeline
