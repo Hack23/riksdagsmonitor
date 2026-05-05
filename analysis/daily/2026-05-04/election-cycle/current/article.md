@@ -5,7 +5,7 @@ date: 2026-05-04
 subfolder: election-cycle/current
 slug: 2026-05-04-election-cycle/current
 source_folder: analysis/daily/2026-05-04/election-cycle/current
-generated_at: 2026-05-04T12:30:46.615Z
+generated_at: 2026-05-05T09:19:33.729Z
 language: en
 layout: article
 ---
@@ -202,72 +202,6 @@ The Tidö coalition holds exactly **175/349 seats** — the mathematical minimum
 | IMF 2.1% growth 2026 | HIGH | WEO Apr-2026, latest vintage |
 | Gang crime measurable reduction | MEDIUM | BRÅ preliminary, not yet final |
 
-## Risk Assessment
-<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/risk-assessment.md -->
-
----
-
-### Risk Register
-
-| Risk ID | Description | Likelihood | Impact | Risk Score | Owner/Domain |
-|---|---|---|---|---|---|
-| R01 | L fails 4% threshold | 32% (HIGH) | 5 (Critical) | **160** | Electoral |
-| R02 | MP fails 4% threshold | 38% (HIGH) | 4 (High) | **152** | Electoral |
-| R03 | HD03262 Lagrådet rejection | 35% (HIGH) | 4 (High) | **140** | Legal |
-| R04 | Housing crisis electoral backlash | 85% (VERY HIGH) | 3 (Med-high) | **255** | Economic |
-| R05 | Trade war GDP downgrade | 20% (LOW-MED) | 4 (High) | **80** | Economic |
-| R06 | SD post-election cabinet demand | 70% (HIGH) | 4 (High) | **280** | Political |
-| R07 | Government formation crisis >90 days | 20% (LOW-MED) | 4 (High) | **80** | Constitutional |
-| R08 | Russia hybrid attack on election | 18% (LOW-MED) | 5 (Critical) | **90** | Security |
-| R09 | SD discipline breakdown on key vote | 15% (LOW-MED) | 4 (High) | **60** | Coalition |
-| R10 | KD–SD energy fault line ruptures | 25% (MEDIUM) | 3 (Med-high) | **75** | Coalition |
-
-### Top-5 Priority Risks (by Score)
-
-#### #1: SD Post-Election Cabinet Demand (R06, Score: 280)
-**Description**: If Tidö wins, SD will demand ministerial positions as price of coalition renewal. M has historically resisted; this is the central post-election inflection point.  
-**Consequence**: Either SD enters cabinet (transformative) or coalition breaks (formation crisis).  
-**Mitigation**: Pre-agreed written red lines before election campaign; M needs clear public positioning on SD cabinet question.
-
-#### #2: Housing Crisis Electoral Backlash (R04, Score: 255)  
-**Description**: Housing construction at 40-year lows; young voters (18–35) unable to enter market. Issue rated negatively for incumbent by 62% of voters under 35.  
-**Consequence**: Structural swing against coalition among under-35 urban voters (2–3% swing potential).  
-**Mitigation**: Government has announced housing measures (HD01CU37 rent guarantees) but structural fix requires legislative term. A housing "action plan" pre-election announcement may partially blunt impact.
-
-#### #3: L Fails 4% Threshold (R01, Score: 160)
-**Description**: Liberalerna at 4.2% with migration narrative headwinds; 32% probability of falling below threshold.  
-**Consequence**: Coalition loses 16 seats → minority of 159; formation crisis, likely snap election or SD–M–KD minority.  
-**Mitigation**: L campaign focus on education achievements (Edholm); urban tactical voting campaign; differentiation on AI and digital rights issues.
-
-#### #4: MP Fails 4% Threshold (R02, Score: 152)  
-**Description**: Miljöpartiet at 4.0% with climate salience low; 38% probability of falling below threshold.  
-**Consequence**: Red-Green bloc loses 18 seats; S needs C for majority; forces coalition negotiation away from traditional S-left comfort zone.  
-**Mitigation**: MP strategy: climate crisis summer events; youth mobilisation; tactical voting from V and S soft-left to avoid MP exclusion.
-
-#### #5: HD03262 Lagrådet Rejection (R03, Score: 140)  
-**Description**: Permanent residence abolition bill faces ECHR compatibility challenge; 35% probability of negative Lagrådet opinion.  
-**Consequence**: SD's primary coalition demand is legally blocked pre-election; undermines SD "delivery" narrative; potential 1% SD vote decline.  
-**Mitigation**: Government legal team has prepared ECHR analysis; redraft protocol ready; procedural delay to post-election is an option but signals weakness.
-
----
-
-### Risk Interconnection Map
-
-R01 (L fails) + R02 (MP fails) → Creates 12% probability hung parliament  
-R03 (Lagrådet) → Amplifies R01 (L identity eroded further if migration platform fails)  
-R05 (Trade war) → Amplifies R04 (housing worsens in recessionary environment)  
-R06 (SD cabinet demand) + R01 (L fails) → Eliminates any moderate path for coalition renewal
-
-### Residual Risk Assessment
-
-After applying available mitigations:
-- **Residual electoral risk**: MEDIUM-HIGH (still 2 threshold parties in danger zone)
-- **Residual constitutional risk**: LOW (institutions robust; Lagrådet/KU functioning)
-- **Residual security risk**: LOW-MEDIUM (SÄPO/FRA/NATO coordination active)
-- **Residual economic risk**: LOW-MEDIUM (recovery trajectory solid; external tail risk)
-
-**Overall mandate risk rating**: **MEDIUM** — The Tidö government faces manageable but genuine electoral risks. The combination of crime progress, economic normalisation, and durable defence achievements provides a credible incumbent narrative, but the housing crisis and threshold party vulnerabilities keep the risk level elevated.
-
 ## Per-document intelligence
 
 ### HD03254
@@ -462,214 +396,71 @@ Regardless of election outcome, the transition period (Sept 13 – ~Nov 1, 2026)
 
 **Cycle trajectory assessment**: The Tidö mandate will end as a **B+ coalition** — significantly more productive than its predecessors, with durable institutional changes in defence and criminal justice, but with the housing crisis as its most significant and potentially electorally costly failure.
 
-## PESTLE Analysis
-<!-- source: pestle-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/pestle-analysis.md -->
-
-**Artifact class**: Blocking Election-Cycle Extra  
+## Risk Assessment
+<!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/risk-assessment.md -->
 
 ---
 
-### P — Political Factors
+### Risk Register
 
-**Dominant forces**: The Tidö coalition has reoriented Swedish political culture around security, migration restriction, and defence. This represents the most significant shift in Swedish political centre-of-gravity since the 1990s.
+| Risk ID | Description | Likelihood | Impact | Risk Score | Owner/Domain |
+|---|---|---|---|---|---|
+| R01 | L fails 4% threshold | 32% (HIGH) | 5 (Critical) | **160** | Electoral |
+| R02 | MP fails 4% threshold | 38% (HIGH) | 4 (High) | **152** | Electoral |
+| R03 | HD03262 Lagrådet rejection | 35% (HIGH) | 4 (High) | **140** | Legal |
+| R04 | Housing crisis electoral backlash | 85% (VERY HIGH) | 3 (Med-high) | **255** | Economic |
+| R05 | Trade war GDP downgrade | 20% (LOW-MED) | 4 (High) | **80** | Economic |
+| R06 | SD post-election cabinet demand | 70% (HIGH) | 4 (High) | **280** | Political |
+| R07 | Government formation crisis >90 days | 20% (LOW-MED) | 4 (High) | **80** | Constitutional |
+| R08 | Russia hybrid attack on election | 18% (LOW-MED) | 5 (Critical) | **90** | Security |
+| R09 | SD discipline breakdown on key vote | 15% (LOW-MED) | 4 (High) | **60** | Coalition |
+| R10 | KD–SD energy fault line ruptures | 25% (MEDIUM) | 3 (Med-high) | **75** | Coalition |
 
-**Key political dynamics**:
-- SD normalisation: SD has functioned as a responsible coalition partner (no formal ministerial posts, but genuine policy influence). This normalisation accelerates SD's long-term trajectory toward full coalition membership in a future government.
-- Party fragmentation risk: 5 of 8 parties polling within ±1% of the 4% threshold creates unprecedented volatility risk for 2026 election arithmetic.
-- L and MP as mirror threshold parties: Both face existential risk; L from the right (migration identity), MP from the left (climate crowded out by security discourse).
-- Constitutional reform: HD03155 (stärkt konstitutionell beredskap) expands emergency powers — a political legacy that transcends the Tidö mandate and establishes a new governance norm.
+### Top-5 Priority Risks (by Score)
 
-**Political strength of current configuration**: MEDIUM (bare majority, but disciplined)  
-**Political vulnerability**: HIGH (threshold risk for both L and MP changes arithmetic dramatically)
+#### #1: SD Post-Election Cabinet Demand (R06, Score: 280)
+**Description**: If Tidö wins, SD will demand ministerial positions as price of coalition renewal. M has historically resisted; this is the central post-election inflection point.  
+**Consequence**: Either SD enters cabinet (transformative) or coalition breaks (formation crisis).  
+**Mitigation**: Pre-agreed written red lines before election campaign; M needs clear public positioning on SD cabinet question.
 
----
+#### #2: Housing Crisis Electoral Backlash (R04, Score: 255)  
+**Description**: Housing construction at 40-year lows; young voters (18–35) unable to enter market. Issue rated negatively for incumbent by 62% of voters under 35.  
+**Consequence**: Structural swing against coalition among under-35 urban voters (2–3% swing potential).  
+**Mitigation**: Government has announced housing measures (HD01CU37 rent guarantees) but structural fix requires legislative term. A housing "action plan" pre-election announcement may partially blunt impact.
 
-### E — Economic Factors
+#### #3: L Fails 4% Threshold (R01, Score: 160)
+**Description**: Liberalerna at 4.2% with migration narrative headwinds; 32% probability of falling below threshold.  
+**Consequence**: Coalition loses 16 seats → minority of 159; formation crisis, likely snap election or SD–M–KD minority.  
+**Mitigation**: L campaign focus on education achievements (Edholm); urban tactical voting campaign; differentiation on AI and digital rights issues.
 
-**Economic baseline** (IMF WEO Apr-2026):
-- GDP: 0.8% growth in 2025 (recovering from 2024 technical recession); 2.1% forecast 2026
-- Inflation: 2.5% (declining, Riksbank cut cycle at 2.25% repo rate)
-- Unemployment: 8.4% (structural; higher than Nordic neighbours)
-- Public debt: 39% GDP (low by European standards; fiscal headroom)
-- Current account: Surplus (+4.2% GDP); export-led economy exposed to trade war risk
+#### #4: MP Fails 4% Threshold (R02, Score: 152)  
+**Description**: Miljöpartiet at 4.0% with climate salience low; 38% probability of falling below threshold.  
+**Consequence**: Red-Green bloc loses 18 seats; S needs C for majority; forces coalition negotiation away from traditional S-left comfort zone.  
+**Mitigation**: MP strategy: climate crisis summer events; youth mobilisation; tactical voting from V and S soft-left to avoid MP exclusion.
 
-**Economic stress points**:
-1. **Housing market correction**: Construction starts down 40% from 2021 peak. Supply shortfall compounds long-term housing deficit, particularly in urban growth areas.
-2. **Household debt**: 170% of disposable income. With Riksbank rates declining from 4.0% peak, debt service pressure is easing but household balance sheets remain leveraged.
-3. **Trade exposure**: Sweden exports ~46% of GDP. Tariff escalation risk (US–EU trade war T+90d scenario from monthly-review 2026-05-03) poses 0.5–1.0% GDP downside risk.
-4. **Energy cost competitiveness**: Industry (Volvo, SSAB, SKF, Ericsson) concerned about electricity price volatility; nuclear licensing reform (HD01NU19) is a supply-side response but construction is 15+ years away.
-
-**Debt management** (HD03104, 23 April 2026): State debt management review 2021–2025 confirms sound practices. Government borrowing costs remain low. Fiscal space exists for post-election spending increases in defence (from 2.0% to 2.4% GDP).
-
----
-
-### S — Social Factors
-
-**Social cohesion stress indicators**:
-- Gang crime (organised crime): Peak 2022; measurable reduction 2024–2026 (~38%). But public perception lag — polls still show security as top concern (#1 for 71% of voters).
-- Integration deficit: 2015–2017 migration cohort employment rate 10 percentage points below native Swedish rate after 8 years. HD03262's abolition of permanent residence is partly a response to this perceived integration failure.
-- Urban-rural divide: Stockholm metropolitan area accounts for 24% of population but 35% of GDP. Rural areas (Norrland, Götaland rural) have shrinking public services — a KD and SD electoral mobilisation theme.
-- Demographic aging: Sweden's old-age dependency ratio rises from 32% (2022) to 36% (2030). Healthcare and eldercare demand will dominate the next mandate's spending pressure.
-- Trust in institutions: At 47% (slight improvement from 42% in 2020). Nordic comparative: Norway 71%, Denmark 65%, Finland 58%. Sweden's relative deficit is partly a gang crime / migration narrative effect.
-
-**Social policy delivery**:
-- HD03251 (addiction care integration, April 2026): Represents genuine improvement in a severely fragmented system; politically significant for KD/healthcare brand.
-- HD01CU37 (municipal rent guarantees, April 2026): Marginal housing access improvement; does not address supply shortage.
-- School reform: Edholm curriculum — early signals positive from PISA trajectory analysis.
+#### #5: HD03262 Lagrådet Rejection (R03, Score: 140)  
+**Description**: Permanent residence abolition bill faces ECHR compatibility challenge; 35% probability of negative Lagrådet opinion.  
+**Consequence**: SD's primary coalition demand is legally blocked pre-election; undermines SD "delivery" narrative; potential 1% SD vote decline.  
+**Mitigation**: Government legal team has prepared ECHR analysis; redraft protocol ready; procedural delay to post-election is an option but signals weakness.
 
 ---
 
-### T — Technological Factors
+### Risk Interconnection Map
 
-**Digitalisation and political technology**:
-- AI in public administration: Sweden ranks 4th in EU Digital Economy Index (DESI 2025). AI procurement guidelines announced 2025 but no legislation tabled.
-- Cybersecurity: HD01FöU13 includes FRA information-sharing expansion — a response to state-sponsored cyberattacks on Swedish infrastructure (documented 2022–2024).
-- Election security: 2026 election is Sweden's first national election under NATO membership. NSA coordination with Swedish SÄPO on election interference risk. Documented Russian disinformation campaigns against SD and M narratives.
-- Nuclear technology: HD01NU19 enables SMR (small modular reactor) and Gen IV reactor licensing. Sweden's nuclear technology base (Vattenfall, Westinghouse Sweden) positions the country as an EU nuclear hub.
-- Defence technology: HD03254 enables deeper interoperability with NATO digital command structures; STRIKFLT exercise readiness improves.
+R01 (L fails) + R02 (MP fails) → Creates 12% probability hung parliament  
+R03 (Lagrådet) → Amplifies R01 (L identity eroded further if migration platform fails)  
+R05 (Trade war) → Amplifies R04 (housing worsens in recessionary environment)  
+R06 (SD cabinet demand) + R01 (L fails) → Eliminates any moderate path for coalition renewal
 
----
+### Residual Risk Assessment
 
-### L — Legal Factors
+After applying available mitigations:
+- **Residual electoral risk**: MEDIUM-HIGH (still 2 threshold parties in danger zone)
+- **Residual constitutional risk**: LOW (institutions robust; Lagrådet/KU functioning)
+- **Residual security risk**: LOW-MEDIUM (SÄPO/FRA/NATO coordination active)
+- **Residual economic risk**: LOW-MEDIUM (recovery trajectory solid; external tail risk)
 
-**Legal architecture changes this mandate**:
-
-| Law area | Key change | Risk |
-|---|---|---|
-| Migration | HD03262: abolition of permanent residence | ECHR Art 8 challenge; Lagrådet risk HIGH |
-| Criminal procedure | HD01JuU9: early hearing evidence admissible | ECHR Art 6 (fair trial) monitoring required |
-| Nuclear | HD01NU19: direct government licensing | EU Nuclear Safety Directive compatibility confirmed |
-| Competition | HD01NU22: new public sales regulation | Low legal risk; fills regulatory gap |
-| Data protection | KU36 (integrity/technology) | GDPR compliance review ongoing |
-| Explosives | HD01FöU13: expanded police/FRA powers | Art 8 (privacy) constraint; proportionality required |
-
-**Lagrådet risk register** (high-priority):
-- HD03262: VERY HIGH (ECHR Art 8, Directive 2003/109/EC)
-- HD03265 (detention expansion): HIGH (ECHR Art 5)
-- HD03264 (character assessment): MEDIUM (proportionality test)
-- HD01JuU9: LOW (well-prepared, Lagrådet consulted early)
-
-**Legal legacy**: The Tidö mandate has systematically tested constitutional limits on migration and detention law. This creates a body of jurisprudence that will bind future governments — even a Red-Green government cannot simply ignore the Lagrådet opinions generated.
-
----
-
-### E2 — Environmental Factors
-
-**Climate and energy policy**:
-- Sweden's climate goals: Carbon neutral by 2045 (legally binding). Current trajectory: on track, but energy transition path is disputed.
-- Nuclear pivot (HD01NU19): Enabling legislation for new nuclear positions Sweden as a pro-nuclear EU member, in contrast to Germany's phase-out. This is a durable policy choice that will define Sweden's energy mix through the 2050s.
-- Wind energy: HD03168 (wind property tax reform, prior analysis) — moderate incentive adjustment. Offshore wind permitting reforms simplify approval process.
-- EU ETS compliance: Sweden exports carbon allowances (net surplus). EU Fit for 55 package integration ongoing.
-- PFAS contamination: Environmental liability from defence sites (especially Ronneby, Kallinge) — an unresolved legacy issue that creates budget exposure for any future government.
-- Biodiversity loss: Sweden's 2030 biodiversity target at risk; habitat protection legislation lags behind EU Nature Restoration Regulation requirements.
-
-**Environmental political economy**:
-- MP's exclusion from government means environmental policy has been deprioritised at the margin.
-- C's informal coalition role has maintained some rural environmental standards.
-- Green voters (MP, C-left) are the constituency most likely to swing in a close election — climate salience in late summer 2026 could shift 1–2%.
-
-## Wildcards & Black Swans
-<!-- source: wildcards-blackswans.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/wildcards-blackswans.md -->
-
-**Artifact class**: Blocking Election-Cycle Extra  
-
----
-
-### Framework
-
-Wildcards: High-impact events with 5–25% probability in horizon  
-Black Swans: High-impact events with <5% probability; conceptually imaginable but historically unprecedented for Sweden
-
-**Horizon**: 132 days to election (2026-09-13) + 12-month post-election transition  
-**Depth**: Election-cycle scale (2.5×)
-
----
-
-### Current Cycle Wildcards (5–25% probability, high impact)
-
-#### W1: Liberalerna Fails 4% Threshold [32% probability → upgraded to Wildcard+]
-**Impact**: Coalition loses 16 seats → 159/349 → mandatory dissolution. PM Kristersson would need to either call early election or attempt a confidence vote with C support. Probability upgraded above 25% threshold given polling trajectory.  
-**Trigger**: One or two major negative news cycles on migration (HD03262 Lagrådet rejection before election)  
-**Preparation available**: M + KD + SD could attempt to govern as 159-seat minority, impossible in practice. Most likely: Talman calls for new government formation with SD in full coalition.
-
-#### W2: Miljöpartiet Fails 4% Threshold [38% probability → dominant scenario variable]
-**Impact**: Red-Green bloc loses 18 seats. S cannot form traditional bloc majority. Forces S into either C supply-and-confidence or extended formation crisis.  
-**Trigger**: Climate salience stays low through summer; no major environmental catalyst event  
-**Interaction with W1**: If BOTH L and MP fail (probability: ~12%), a hung parliament with no viable majority is possible (scenario C1 in electoral-forecast.md).
-
-#### W3: HD03262 Lagrådet Rejection Before Election [35% probability]
-**Impact**: SD's primary coalition demand is legally blocked. SD enters election campaign unable to claim delivery. Migration mobilisation narrative weakened. Could depress SD vote by 1–2%, helping opposition.  
-**Trigger**: Lagrådet consultation (typically 4–6 weeks from submission); government submitted ~April 30 → Lagrådet opinion expected July/August 2026  
-**Preparation**: Government could redraft to address ECHR concerns; procedural delay possible
-
-#### W4: U.S.-EU Trade War Escalation [20% probability per monthly-review 2026-05-03]
-**Impact**: Swedish export sector (Volvo, Sandvik, SSAB, Ericsson) hit by tariffs. GDP 2026 downgraded from 2.1% to ~1.3%. Unemployment rises from 8.4% to 9.2%. Economic narrative flips against incumbent.  
-**Trigger**: Trump administration expands Section 232 tariffs to European automobiles and machinery  
-**Electoral consequence**: -2 to -3 percentage points for ruling coalition in economic management polling dimension
-
-#### W5: SD Internal Schism Over Coalition Role [15% probability]
-**Impact**: Hardline SD faction (led by nationalist wing) rebels against continued C&S without cabinet posts. Threat of SD abstention on key votes. One confidence vote defeat possible.  
-**Trigger**: Post-election SD negotiation where M refuses SD cabinet demands  
-**Note**: More relevant for post-election period than pre-election period
-
-#### W6: Russian Hybrid Attack on Swedish Critical Infrastructure [18% probability]
-**Impact**: Cyberattack on Riksdag IT systems, power grid, or election administration. Election postponement (constitutional crisis). If election proceeds but with documented interference, legitimacy crisis for winner.  
-**Trigger**: Russian strategic calculation that election disruption weakens NATO cohesion  
-**Preparation**: SÄPO and FRA at high readiness; NATO coordination active (HD03254)
-
-#### W7: C (Centerpartiet) Formal Coalition Endorsement Before Election [12% probability]
-**Impact**: C formal alliance with Tidö would give coalition a comfortable 199-seat majority. Eliminates L threshold risk as decisive factor. Transforms election dynamic dramatically.  
-**Trigger**: C internal polling shows >6% if positioned as coalition moderator  
-**Barrier**: C leader Annie Lööf's successor has ruled out formal Tidö alliance; would require extraordinary circumstance
-
----
-
-### Black Swans (<5% probability, existential impact)
-
-#### BS1: PM Kristersson Resignation During Pre-Election Period [3% probability]
-**Scenario**: Health crisis, major personal scandal, or fundamental coalition breakdown forces PM resignation before Sept 13. No obvious successor within M with ability to hold L and keep SD in C&S.  
-**Impact**: Constitutional precedent (Sweden has no VP equivalent); Talman must negotiate new government formation within current Riksdag.
-
-#### BS2: Snap Election Called Before September 13 [4% probability]
-**Scenario**: Budget defeat in autumn 2025 (already passed — reduced risk) OR a confidence vote is triggered by a major coalition breakdown  
-**Impact**: Enormous disruption; early election campaign in spring 2026; COVID-era precedent of pandemic governance adds complication  
-**Current status**: Budget has passed; risk minimised for this cycle. Most likely scenario window has passed.
-
-#### BS3: Sweden Triggers NATO Article 5 Consultation [2% probability]
-**Scenario**: Russian military provocation in Swedish territorial waters or airspace (Gotland incident) escalates to formal Article 4/5 consultation. Not full conflict, but military alert status.  
-**Impact**: Dominates election campaign; security parties (M, KD, SD) benefit enormously; economic issues evaporate. Potential postponement of election under constitutional emergency provisions.
-
-#### BS4: SD Becomes Pro-Government Coalition Majority's Leader in Formation [2% probability, post-election]
-**Scenario**: Election arithmetic produces SD as the largest right-of-centre party AND M refuses to form government unless SD is in coalition. A first SD minister in Swedish history.  
-**Impact**: Constitutional crisis-level political and media event; international reaction; EU democracy concerns; possible early dissolution again
-
-#### BS5: Draghi 2.0 Shock — EU Fiscal Architecture Changes Mid-Cycle [4% probability, next cycle more relevant]
-**Scenario**: ECB or EU Commission imposes binding fiscal rules that limit Swedish defence spending expansion. Unlikely given Sweden's AAA rating and fiscal headroom, but EU fiscal rule renegotiation in progress.
-
----
-
-### Wildcard Interaction Matrix
-
-| | W1 (L fails) | W2 (MP fails) | W3 (Lagrådet) | W4 (Trade war) |
-|---|---|---|---|---|
-| W1 (L fails) | — | +++ (hung parliament) | + (triggers W1) | neutral |
-| W2 (MP fails) | +++ (see above) | — | neutral | neutral |
-| W3 (Lagrådet) | + (triggers narrative) | neutral | — | neutral |
-| W4 (Trade war) | + (economic damage) | + (economic damage) | neutral | — |
-
-**Highest-risk combined scenario**: W1 + W2 + W3 simultaneously → 12% × 38% × 35% correlation-adjusted ≈ **4% probability of hung parliament with L and MP both below threshold and HD03262 blocked** — effectively a constitutional crisis triggering snap election spring 2027.
-
----
-
-### Intelligence Response to Wildcards
-
-**Pre-election monitoring indicators** (Priority Intelligence Requirements):
-1. L polling — track weekly; alert threshold: 4.0% or below
-2. MP polling — track weekly; alert threshold: 3.8% or below  
-3. Lagrådet schedule — monitor official agenda; HD03262 opinion expected July/August
-4. SCB GDP advance estimate (Q1 2026) — publish June 2026; key economic signal
-5. Russian threat assessment — SÄPO briefings (classified channel); NATO exercise calendar
-6. US trade policy — White House executive order register; WTO notifications
+**Overall mandate risk rating**: **MEDIUM** — The Tidö government faces manageable but genuine electoral risks. The combination of crime progress, economic normalisation, and durable defence achievements provides a credible incumbent narrative, but the housing crisis and threshold party vulnerabilities keep the risk level elevated.
 
 ## Quantitative SWOT
 <!-- source: quantitative-swot.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/quantitative-swot.md -->
@@ -887,6 +678,215 @@ Political STRIDE maps democratic threat categories to Swedish institutional arch
 | Elevation of Privilege | HIGH | CRITICAL | **CRITICAL** | KU review; constitutional norms |
 
 **Overall democratic resilience assessment**: Sweden's institutions are ROBUST with specific vulnerabilities. The strongest risk is at the political-elite level (SD privilege elevation, accountability diffusion through C&S structure), not at the technical electoral infrastructure level. Sweden's electoral system itself is among the world's most secure; the political architecture around it is under more stress.
+
+## Wildcards & Black Swans
+<!-- source: wildcards-blackswans.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/wildcards-blackswans.md -->
+
+**Artifact class**: Blocking Election-Cycle Extra  
+
+---
+
+### Framework
+
+Wildcards: High-impact events with 5–25% probability in horizon  
+Black Swans: High-impact events with <5% probability; conceptually imaginable but historically unprecedented for Sweden
+
+**Horizon**: 132 days to election (2026-09-13) + 12-month post-election transition  
+**Depth**: Election-cycle scale (2.5×)
+
+---
+
+### Current Cycle Wildcards (5–25% probability, high impact)
+
+#### W1: Liberalerna Fails 4% Threshold [32% probability → upgraded to Wildcard+]
+**Impact**: Coalition loses 16 seats → 159/349 → mandatory dissolution. PM Kristersson would need to either call early election or attempt a confidence vote with C support. Probability upgraded above 25% threshold given polling trajectory.  
+**Trigger**: One or two major negative news cycles on migration (HD03262 Lagrådet rejection before election)  
+**Preparation available**: M + KD + SD could attempt to govern as 159-seat minority, impossible in practice. Most likely: Talman calls for new government formation with SD in full coalition.
+
+#### W2: Miljöpartiet Fails 4% Threshold [38% probability → dominant scenario variable]
+**Impact**: Red-Green bloc loses 18 seats. S cannot form traditional bloc majority. Forces S into either C supply-and-confidence or extended formation crisis.  
+**Trigger**: Climate salience stays low through summer; no major environmental catalyst event  
+**Interaction with W1**: If BOTH L and MP fail (probability: ~12%), a hung parliament with no viable majority is possible (scenario C1 in electoral-forecast.md).
+
+#### W3: HD03262 Lagrådet Rejection Before Election [35% probability]
+**Impact**: SD's primary coalition demand is legally blocked. SD enters election campaign unable to claim delivery. Migration mobilisation narrative weakened. Could depress SD vote by 1–2%, helping opposition.  
+**Trigger**: Lagrådet consultation (typically 4–6 weeks from submission); government submitted ~April 30 → Lagrådet opinion expected July/August 2026  
+**Preparation**: Government could redraft to address ECHR concerns; procedural delay possible
+
+#### W4: U.S.-EU Trade War Escalation [20% probability per monthly-review 2026-05-03]
+**Impact**: Swedish export sector (Volvo, Sandvik, SSAB, Ericsson) hit by tariffs. GDP 2026 downgraded from 2.1% to ~1.3%. Unemployment rises from 8.4% to 9.2%. Economic narrative flips against incumbent.  
+**Trigger**: Trump administration expands Section 232 tariffs to European automobiles and machinery  
+**Electoral consequence**: -2 to -3 percentage points for ruling coalition in economic management polling dimension
+
+#### W5: SD Internal Schism Over Coalition Role [15% probability]
+**Impact**: Hardline SD faction (led by nationalist wing) rebels against continued C&S without cabinet posts. Threat of SD abstention on key votes. One confidence vote defeat possible.  
+**Trigger**: Post-election SD negotiation where M refuses SD cabinet demands  
+**Note**: More relevant for post-election period than pre-election period
+
+#### W6: Russian Hybrid Attack on Swedish Critical Infrastructure [18% probability]
+**Impact**: Cyberattack on Riksdag IT systems, power grid, or election administration. Election postponement (constitutional crisis). If election proceeds but with documented interference, legitimacy crisis for winner.  
+**Trigger**: Russian strategic calculation that election disruption weakens NATO cohesion  
+**Preparation**: SÄPO and FRA at high readiness; NATO coordination active (HD03254)
+
+#### W7: C (Centerpartiet) Formal Coalition Endorsement Before Election [12% probability]
+**Impact**: C formal alliance with Tidö would give coalition a comfortable 199-seat majority. Eliminates L threshold risk as decisive factor. Transforms election dynamic dramatically.  
+**Trigger**: C internal polling shows >6% if positioned as coalition moderator  
+**Barrier**: C leader Annie Lööf's successor has ruled out formal Tidö alliance; would require extraordinary circumstance
+
+---
+
+### Black Swans (<5% probability, existential impact)
+
+#### BS1: PM Kristersson Resignation During Pre-Election Period [3% probability]
+**Scenario**: Health crisis, major personal scandal, or fundamental coalition breakdown forces PM resignation before Sept 13. No obvious successor within M with ability to hold L and keep SD in C&S.  
+**Impact**: Constitutional precedent (Sweden has no VP equivalent); Talman must negotiate new government formation within current Riksdag.
+
+#### BS2: Snap Election Called Before September 13 [4% probability]
+**Scenario**: Budget defeat in autumn 2025 (already passed — reduced risk) OR a confidence vote is triggered by a major coalition breakdown  
+**Impact**: Enormous disruption; early election campaign in spring 2026; COVID-era precedent of pandemic governance adds complication  
+**Current status**: Budget has passed; risk minimised for this cycle. Most likely scenario window has passed.
+
+#### BS3: Sweden Triggers NATO Article 5 Consultation [2% probability]
+**Scenario**: Russian military provocation in Swedish territorial waters or airspace (Gotland incident) escalates to formal Article 4/5 consultation. Not full conflict, but military alert status.  
+**Impact**: Dominates election campaign; security parties (M, KD, SD) benefit enormously; economic issues evaporate. Potential postponement of election under constitutional emergency provisions.
+
+#### BS4: SD Becomes Pro-Government Coalition Majority's Leader in Formation [2% probability, post-election]
+**Scenario**: Election arithmetic produces SD as the largest right-of-centre party AND M refuses to form government unless SD is in coalition. A first SD minister in Swedish history.  
+**Impact**: Constitutional crisis-level political and media event; international reaction; EU democracy concerns; possible early dissolution again
+
+#### BS5: Draghi 2.0 Shock — EU Fiscal Architecture Changes Mid-Cycle [4% probability, next cycle more relevant]
+**Scenario**: ECB or EU Commission imposes binding fiscal rules that limit Swedish defence spending expansion. Unlikely given Sweden's AAA rating and fiscal headroom, but EU fiscal rule renegotiation in progress.
+
+---
+
+### Wildcard Interaction Matrix
+
+| | W1 (L fails) | W2 (MP fails) | W3 (Lagrådet) | W4 (Trade war) |
+|---|---|---|---|---|
+| W1 (L fails) | — | +++ (hung parliament) | + (triggers W1) | neutral |
+| W2 (MP fails) | +++ (see above) | — | neutral | neutral |
+| W3 (Lagrådet) | + (triggers narrative) | neutral | — | neutral |
+| W4 (Trade war) | + (economic damage) | + (economic damage) | neutral | — |
+
+**Highest-risk combined scenario**: W1 + W2 + W3 simultaneously → 12% × 38% × 35% correlation-adjusted ≈ **4% probability of hung parliament with L and MP both below threshold and HD03262 blocked** — effectively a constitutional crisis triggering snap election spring 2027.
+
+---
+
+### Intelligence Response to Wildcards
+
+**Pre-election monitoring indicators** (Priority Intelligence Requirements):
+1. L polling — track weekly; alert threshold: 4.0% or below
+2. MP polling — track weekly; alert threshold: 3.8% or below  
+3. Lagrådet schedule — monitor official agenda; HD03262 opinion expected July/August
+4. SCB GDP advance estimate (Q1 2026) — publish June 2026; key economic signal
+5. Russian threat assessment — SÄPO briefings (classified channel); NATO exercise calendar
+6. US trade policy — White House executive order register; WTO notifications
+
+## PESTLE Analysis
+<!-- source: pestle-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/pestle-analysis.md -->
+
+**Artifact class**: Blocking Election-Cycle Extra  
+
+---
+
+### P — Political Factors
+
+**Dominant forces**: The Tidö coalition has reoriented Swedish political culture around security, migration restriction, and defence. This represents the most significant shift in Swedish political centre-of-gravity since the 1990s.
+
+**Key political dynamics**:
+- SD normalisation: SD has functioned as a responsible coalition partner (no formal ministerial posts, but genuine policy influence). This normalisation accelerates SD's long-term trajectory toward full coalition membership in a future government.
+- Party fragmentation risk: 5 of 8 parties polling within ±1% of the 4% threshold creates unprecedented volatility risk for 2026 election arithmetic.
+- L and MP as mirror threshold parties: Both face existential risk; L from the right (migration identity), MP from the left (climate crowded out by security discourse).
+- Constitutional reform: HD03155 (stärkt konstitutionell beredskap) expands emergency powers — a political legacy that transcends the Tidö mandate and establishes a new governance norm.
+
+**Political strength of current configuration**: MEDIUM (bare majority, but disciplined)  
+**Political vulnerability**: HIGH (threshold risk for both L and MP changes arithmetic dramatically)
+
+---
+
+### E — Economic Factors
+
+**Economic baseline** (IMF WEO Apr-2026):
+- GDP: 0.8% growth in 2025 (recovering from 2024 technical recession); 2.1% forecast 2026
+- Inflation: 2.5% (declining, Riksbank cut cycle at 2.25% repo rate)
+- Unemployment: 8.4% (structural; higher than Nordic neighbours)
+- Public debt: 39% GDP (low by European standards; fiscal headroom)
+- Current account: Surplus (+4.2% GDP); export-led economy exposed to trade war risk
+
+**Economic stress points**:
+1. **Housing market correction**: Construction starts down 40% from 2021 peak. Supply shortfall compounds long-term housing deficit, particularly in urban growth areas.
+2. **Household debt**: 170% of disposable income. With Riksbank rates declining from 4.0% peak, debt service pressure is easing but household balance sheets remain leveraged.
+3. **Trade exposure**: Sweden exports ~46% of GDP. Tariff escalation risk (US–EU trade war T+90d scenario from monthly-review 2026-05-03) poses 0.5–1.0% GDP downside risk.
+4. **Energy cost competitiveness**: Industry (Volvo, SSAB, SKF, Ericsson) concerned about electricity price volatility; nuclear licensing reform (HD01NU19) is a supply-side response but construction is 15+ years away.
+
+**Debt management** (HD03104, 23 April 2026): State debt management review 2021–2025 confirms sound practices. Government borrowing costs remain low. Fiscal space exists for post-election spending increases in defence (from 2.0% to 2.4% GDP).
+
+---
+
+### S — Social Factors
+
+**Social cohesion stress indicators**:
+- Gang crime (organised crime): Peak 2022; measurable reduction 2024–2026 (~38%). But public perception lag — polls still show security as top concern (#1 for 71% of voters).
+- Integration deficit: 2015–2017 migration cohort employment rate 10 percentage points below native Swedish rate after 8 years. HD03262's abolition of permanent residence is partly a response to this perceived integration failure.
+- Urban-rural divide: Stockholm metropolitan area accounts for 24% of population but 35% of GDP. Rural areas (Norrland, Götaland rural) have shrinking public services — a KD and SD electoral mobilisation theme.
+- Demographic aging: Sweden's old-age dependency ratio rises from 32% (2022) to 36% (2030). Healthcare and eldercare demand will dominate the next mandate's spending pressure.
+- Trust in institutions: At 47% (slight improvement from 42% in 2020). Nordic comparative: Norway 71%, Denmark 65%, Finland 58%. Sweden's relative deficit is partly a gang crime / migration narrative effect.
+
+**Social policy delivery**:
+- HD03251 (addiction care integration, April 2026): Represents genuine improvement in a severely fragmented system; politically significant for KD/healthcare brand.
+- HD01CU37 (municipal rent guarantees, April 2026): Marginal housing access improvement; does not address supply shortage.
+- School reform: Edholm curriculum — early signals positive from PISA trajectory analysis.
+
+---
+
+### T — Technological Factors
+
+**Digitalisation and political technology**:
+- AI in public administration: Sweden ranks 4th in EU Digital Economy Index (DESI 2025). AI procurement guidelines announced 2025 but no legislation tabled.
+- Cybersecurity: HD01FöU13 includes FRA information-sharing expansion — a response to state-sponsored cyberattacks on Swedish infrastructure (documented 2022–2024).
+- Election security: 2026 election is Sweden's first national election under NATO membership. NSA coordination with Swedish SÄPO on election interference risk. Documented Russian disinformation campaigns against SD and M narratives.
+- Nuclear technology: HD01NU19 enables SMR (small modular reactor) and Gen IV reactor licensing. Sweden's nuclear technology base (Vattenfall, Westinghouse Sweden) positions the country as an EU nuclear hub.
+- Defence technology: HD03254 enables deeper interoperability with NATO digital command structures; STRIKFLT exercise readiness improves.
+
+---
+
+### L — Legal Factors
+
+**Legal architecture changes this mandate**:
+
+| Law area | Key change | Risk |
+|---|---|---|
+| Migration | HD03262: abolition of permanent residence | ECHR Art 8 challenge; Lagrådet risk HIGH |
+| Criminal procedure | HD01JuU9: early hearing evidence admissible | ECHR Art 6 (fair trial) monitoring required |
+| Nuclear | HD01NU19: direct government licensing | EU Nuclear Safety Directive compatibility confirmed |
+| Competition | HD01NU22: new public sales regulation | Low legal risk; fills regulatory gap |
+| Data protection | KU36 (integrity/technology) | GDPR compliance review ongoing |
+| Explosives | HD01FöU13: expanded police/FRA powers | Art 8 (privacy) constraint; proportionality required |
+
+**Lagrådet risk register** (high-priority):
+- HD03262: VERY HIGH (ECHR Art 8, Directive 2003/109/EC)
+- HD03265 (detention expansion): HIGH (ECHR Art 5)
+- HD03264 (character assessment): MEDIUM (proportionality test)
+- HD01JuU9: LOW (well-prepared, Lagrådet consulted early)
+
+**Legal legacy**: The Tidö mandate has systematically tested constitutional limits on migration and detention law. This creates a body of jurisprudence that will bind future governments — even a Red-Green government cannot simply ignore the Lagrådet opinions generated.
+
+---
+
+### E2 — Environmental Factors
+
+**Climate and energy policy**:
+- Sweden's climate goals: Carbon neutral by 2045 (legally binding). Current trajectory: on track, but energy transition path is disputed.
+- Nuclear pivot (HD01NU19): Enabling legislation for new nuclear positions Sweden as a pro-nuclear EU member, in contrast to Germany's phase-out. This is a durable policy choice that will define Sweden's energy mix through the 2050s.
+- Wind energy: HD03168 (wind property tax reform, prior analysis) — moderate incentive adjustment. Offshore wind permitting reforms simplify approval process.
+- EU ETS compliance: Sweden exports carbon allowances (net surplus). EU Fit for 55 package integration ongoing.
+- PFAS contamination: Environmental liability from defence sites (especially Ronneby, Kallinge) — an unresolved legacy issue that creates budget exposure for any future government.
+- Biodiversity loss: Sweden's 2030 biodiversity target at risk; habitat protection legislation lags behind EU Nature Restoration Regulation requirements.
+
+**Environmental political economy**:
+- MP's exclusion from government means environmental policy has been deprioritised at the margin.
+- C's informal coalition role has maintained some rural environmental standards.
+- Green voters (MP, C-left) are the constituency most likely to swing in a close election — climate salience in late summer 2026 could shift 1–2%.
 
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/cross-reference-map.md -->
@@ -2447,14 +2447,14 @@ Each section above projects one analysis artifact. The full audited markdown is 
 
 - [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/executive-brief.md)
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/synthesis-summary.md)
-- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/risk-assessment.md)
 - [`documents/HD03254-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/documents/HD03254-analysis.md)
 - [`documents/HD03262-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/documents/HD03262-analysis.md)
 - [`cycle-trajectory.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/cycle-trajectory.md)
-- [`pestle-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/pestle-analysis.md)
-- [`wildcards-blackswans.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/wildcards-blackswans.md)
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/risk-assessment.md)
 - [`quantitative-swot.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/quantitative-swot.md)
 - [`political-stride-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/political-stride-assessment.md)
+- [`wildcards-blackswans.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/wildcards-blackswans.md)
+- [`pestle-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/pestle-analysis.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/cross-reference-map.md)
 - [`actor-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/actor-assessment.md)
 - [`coalition-dynamics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/coalition-dynamics.md)
