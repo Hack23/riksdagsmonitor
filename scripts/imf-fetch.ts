@@ -35,7 +35,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 
 import { ImfClient, IMF_WEO_INDICATORS, IMF_FM_INDICATORS } from './imf-client.js';
-import { persistIMFData } from './parliamentary-data/data-persistence.js';
+import { persistIMFData, sanitizeDokId } from './parliamentary-data/data-persistence.js';
 
 // ---------------------------------------------------------------------------
 // IMF cache fallback — when live fetch fails, try persisted data
@@ -44,19 +44,14 @@ import { persistIMFData } from './parliamentary-data/data-persistence.js';
 const DATA_ROOT = resolve(process.cwd(), 'analysis', 'data');
 
 /**
- * Sanitize indicator/country for filesystem path (mirrors data-persistence.ts).
- */
-function sanitizeForPath(s: string): string {
-  return s.replace(/[^a-zA-Z0-9._-]/g, '_');
-}
-
-/**
  * Attempt to load previously-persisted IMF data for a given indicator/country.
  * Returns `{ data, meta }` if cache exists, or `null` otherwise.
+ * Uses the same path sanitization as `persistIMFData` (sanitizeDokId):
+ * lowercase + non-alphanumeric → hyphen, so NGDP_RPCH/SWE → ngdp-rpch/swe.json.
  */
 function loadCachedIMFData(indicator: string, country: string): { data: unknown; meta: { fetchedAt: string; database?: string; projectionVintage?: string } } | null {
-  const dataPath = join(DATA_ROOT, 'imf', sanitizeForPath(indicator), `${sanitizeForPath(country)}.json`);
-  const metaPath = join(DATA_ROOT, 'imf', sanitizeForPath(indicator), `${sanitizeForPath(country)}.meta.json`);
+  const dataPath = join(DATA_ROOT, 'imf', sanitizeDokId(indicator), `${sanitizeDokId(country)}.json`);
+  const metaPath = join(DATA_ROOT, 'imf', sanitizeDokId(indicator), `${sanitizeDokId(country)}.meta.json`);
   if (!existsSync(dataPath)) return null;
   try {
     const data = JSON.parse(readFileSync(dataPath, 'utf8'));
@@ -208,47 +203,59 @@ async function runCompare(flags: ReadonlyMap<string, string>, booleans: Readonly
   }
 
   const client = new ImfClient();
-  try {
-    const results = await client.compareCountriesWeo(countries, indicator);
-    const byCountry: Record<string, unknown> = {};
-    results.forEach((point, code) => {
-      byCountry[code] = point;
-    });
-    const payload = { indicator, countries, results: byCountry };
-    process.stdout.write(`${JSON.stringify(payload, null, 2)}\n`);
+  // compareCountriesWeo() fail-softs per country (null on error) and never
+  // throws, so we cannot use a try/catch to detect transport failures.
+  // Instead we inspect the result Map and fill null entries from cache.
+  const results = await client.compareCountriesWeo(countries, indicator);
 
-    if (booleans.has('persist')) {
-      for (const [code, point] of results) {
+  const byCountry: Record<string, unknown> = {};
+  const cacheFilledCountries: string[] = [];
+  let staleAny = false;
+
+  for (const code of countries) {
+    const livePoint = results.get(code) ?? null;
+    if (livePoint !== null) {
+      byCountry[code] = livePoint;
+    } else {
+      // Live fetch returned null — attempt cache fill.
+      // The persisted format is { indicator, country, dataPoint, ... };
+      // we extract dataPoint to match the live result shape.
+      const cached = loadCachedIMFData(indicator, code);
+      if (cached) {
+        const cachedObj = cached.data as Record<string, unknown>;
+        const dataPoint = 'dataPoint' in cachedObj ? cachedObj['dataPoint'] : cachedObj;
+        const stale = isCacheStale(cached.meta.fetchedAt);
+        if (stale) staleAny = true;
+        cacheFilledCountries.push(code);
+        byCountry[code] = dataPoint;
+      } else {
+        byCountry[code] = null;
+      }
+    }
+  }
+
+  const payload: Record<string, unknown> = { indicator, countries, results: byCountry };
+  if (cacheFilledCountries.length > 0) {
+    payload['_cacheFilledCountries'] = cacheFilledCountries;
+    payload['_staleVintage'] = staleAny;
+    payload['_vintageAnnotation'] = staleAny
+      ? `Cache fill used for ${cacheFilledCountries.join(', ')}; some cached data >6 months old`
+      : `Cache fill used for ${cacheFilledCountries.join(', ')}; live fetch returned null`;
+    process.stderr.write(
+      `imf-fetch: cache fill for ${cacheFilledCountries.join(', ')}${staleAny ? ' (some STALE >6mo)' : ''}\n`,
+    );
+  }
+
+  process.stdout.write(`${JSON.stringify(payload, null, 2)}\n`);
+
+  if (booleans.has('persist')) {
+    for (const [code, point] of results) {
+      if (point !== null) {
         persistIMFData(indicator, code, { indicator, country: code, dataPoint: point }, {
           database: flags.get('database') ?? 'WEO',
           ...(point?.projectionVintage ? { projectionVintage: point.projectionVintage } : {}),
         });
       }
-    }
-  } catch (err: unknown) {
-    // Fallback: try loading cached data for each country
-    const byCountry: Record<string, unknown> = {};
-    let anyFound = false;
-    let staleAny = false;
-    for (const code of countries) {
-      const cached = loadCachedIMFData(indicator, code);
-      if (cached) {
-        anyFound = true;
-        if (isCacheStale(cached.meta.fetchedAt)) staleAny = true;
-        byCountry[code] = { ...cached.data as Record<string, unknown>, _cached: true, _cachedAt: cached.meta.fetchedAt };
-      } else {
-        byCountry[code] = null;
-      }
-    }
-    if (anyFound) {
-      const payload = buildFallbackPayload(
-        { indicator, countries, results: byCountry },
-        err, 'mixed', staleAny,
-      );
-      process.stderr.write(`imf-fetch: live compare failed, using cached data${staleAny ? ' (some STALE >6mo)' : ''}\n`);
-      process.stdout.write(`${JSON.stringify(payload, null, 2)}\n`);
-    } else {
-      throw err;
     }
   }
 }

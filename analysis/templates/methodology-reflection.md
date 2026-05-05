@@ -186,7 +186,7 @@ flowchart LR
 | Source | Endpoint | Status | Fallback Used | Notes |
 |--------|----------|:------:|:-------------:|-------|
 | **IMF WEO** | `tsx scripts/imf-fetch.ts weo` | 🟢 live / 🟡 cached / 🔴 failed | Y/N | vintage: `{WEO-MMM-YYYY}` |
-| **IMF SDMX** | `tsx scripts/imf-fetch.ts sdmx` | 🟢 live / 🟡 cached / 🔴 failed | Y/N | dataflow: `{e.g. CPI, IFS}` |
+| **IMF SDMX** | `tsx scripts/imf-fetch.ts sdmx` | 🟢 live / 🔴 failed | N/A | dataflow: `{e.g. CPI, IFS}` |
 | **Riksdag MCP** | `riksdag-regering` | 🟢 live / 🔴 failed | N/A | sync time: `{ISO timestamp}` |
 | **Statskontoret** | `web_fetch statskontoret.se` | 🟢 live / 🟡 no trigger / 🔴 blocked | N/A | — |
 | **Lagrådet** | `web_fetch lagradet.se` | 🟢 live / 🟡 N/A / 🔴 blocked | N/A | — |

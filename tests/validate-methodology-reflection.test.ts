@@ -64,6 +64,12 @@ Self-audit of this dossier's tradecraft. \`[HIGH]\`
 
 ### R1. Something
 
+## 🌐 Data Source Connectivity Audit
+
+| Source | Endpoint | Status | Fallback Used | Notes |
+|--------|----------|:------:|:-------------:|-------|
+| IMF WEO | tsx scripts/imf-fetch.ts weo | 🟢 live | N | vintage: WEO-2026-04 |
+
 ## 📎 References
 
 - [Sibling](../../2026-04-18/weekly-review/)
@@ -271,6 +277,27 @@ describe('validateMethodologyReflection — required-section rule', () => {
     const file = await writeFixture('2026-01-05/weekly-review/methodology-reflection.md', withSynonym);
     const report = await validateMethodologyReflection(file);
     expect(report.ok).toBe(true);
+  });
+
+  it('flags missing §Data Source Connectivity Audit in Tier-C', async () => {
+    const withoutAudit = PASSING_TIER_C.replace(
+      /## 🌐 Data Source Connectivity Audit[\s\S]*?(?=## )/,
+      '',
+    );
+    const file = await writeFixture('2026-01-05b/weekly-review/methodology-reflection.md', withoutAudit);
+    const report = await validateMethodologyReflection(file);
+    expect(report.ok).toBe(false);
+    expect(
+      report.issues.some(
+        (i) => i.rule === 'required-section' && i.message.includes('Data Source Connectivity Audit'),
+      ),
+    ).toBe(true);
+  });
+
+  it('does NOT require §Data Source Connectivity Audit in doc-type folders', async () => {
+    const file = await writeFixture('2026-01-05c/motions/methodology-reflection.md', PASSING_DOC_TYPE);
+    const report = await validateMethodologyReflection(file);
+    expect(report.issues.some((i) => i.rule === 'required-section' && i.message.includes('Data Source Connectivity Audit'))).toBe(false);
   });
 });
 
