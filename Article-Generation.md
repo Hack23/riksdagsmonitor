@@ -123,7 +123,7 @@ The article is therefore a **rendered view of the intelligence object**, not the
 ```mermaid
 %%{init: {"theme":"dark","themeVariables":{"primaryColor":"#1565C0","primaryTextColor":"#ffffff","primaryBorderColor":"#0A3F7F","lineColor":"#90CAF9","secondaryColor":"#2E7D32","secondaryTextColor":"#ffffff","tertiaryColor":"#FF9800","tertiaryTextColor":"#000000","mainBkg":"#1565C0","secondBkg":"#2E7D32","tertiaryBkg":"#FF9800","noteBkgColor":"#FFC107","noteTextColor":"#000000","errorBkgColor":"#D32F2F","fontFamily":"Inter, Helvetica, Arial, sans-serif"}}}%%
 flowchart TB
-    A["Trigger<br/>news-*.md schedule or workflow_dispatch"] --> B["🧰 Runtime setup<br/>Node 25 · npm ci · MCP pre-warm"]
+    A["Trigger<br/>news-*.md schedule or workflow_dispatch"] --> B["🧰 Runtime setup<br/>Node 26 · npm ci · MCP pre-warm"]
     B --> C["📥 Public evidence download<br/>Riksdag/Regering · SCB · IMF · WB residue"]
     C --> D["🧠 Analysis Pass 1<br/>23 artifacts + per-document files"]
     D --> E["🔁 Analysis Pass 2<br/>read back and improve every section"]
@@ -164,7 +164,7 @@ It declares:
 | **Name** | `News: Interpellation Debates` |
 | **Schedule** | Daily around 07:00 on weekdays |
 | **Manual inputs** | `article_date`, `force_generation`, `languages`, `analysis_depth` |
-| **Runtime** | Node.js `25` |
+| **Runtime** | Node.js `26` |
 | **Engine** | Copilot with `claude-sonnet-4.6` |
 | **Permissions** | Read-only content/issues/PR/actions/discussions/security-events for AI job |
 | **MCP gateway** | Enabled |
@@ -963,7 +963,7 @@ The `deploy` job performs:
 
 1. `step-security/harden-runner` with egress policy `block` and explicit allowed endpoints.
 2. Full checkout with `fetch-depth: 0`.
-3. Node.js 25 setup with npm cache.
+3. Node.js 26 setup with npm cache.
 4. `npm ci`.
 5. Guard against broken news article references:
    - No `back-to-top.ts` references in generated article HTML.

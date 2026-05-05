@@ -4,7 +4,7 @@
 
 **Project**: Riksdagsmonitor — Swedish Parliament (Riksdag) monitoring platform
 **Stack**: HTML5, CSS3, TypeScript 6.0.3, Vite 8.0.10, Vitest 4.1.5, Cypress 15.14.1
-**Runtime**: Node.js 25, ES2025 target, ESNext modules
+**Runtime**: Node.js 26, ES2025 target, ESNext modules
 **Deploy**: GitHub Pages + AWS S3 dual deployment
 **Languages**: 14-language support (EN, SV, DA, NB, FI, DE, FR, ES, NL, AR, HE, JA, KO, ZH)
 **Security**: ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1 compliant
@@ -137,11 +137,11 @@ The full workflow contract is split into bounded-context prompt modules under [`
 - **Job budget**: All news workflows declare `timeout-minutes: 60`. Target completing all agent-phase work by **agent minute 40** (AI-FIRST iteration), call `safeoutputs___create_pull_request` by **agent minute 42** (hard deadline **45**) to reserve job-level headroom for setup and safe outputs.
 
 ### Runtime Configuration (All Workflows)
-All agentic workflows MUST include the `runtimes:` field to enforce Node.js 25:
+All agentic workflows MUST include the `runtimes:` field to enforce Node.js 26:
 ```yaml
 runtimes:
   node:
-    version: "25"
+    version: "26"
 ```
 
 ### Engine Configuration (All Workflows)
@@ -176,12 +176,12 @@ mcp-servers:
     url: https://riksdag-regering-ai.onrender.com/mcp
     allowed: ["*"]
   scb:                     # Statistics Sweden (container)
-    container: "node:25-alpine"
+    container: "node:26-alpine"
     entrypoint: "npx"
     entrypointArgs: ["-y", "@jarib/pxweb-mcp@2.0.0", "--url", "https://api.scb.se/OV0104/v2beta"]
     allowed: ["*"]
   world-bank:              # World Bank data (container)
-    container: "node:25-alpine"
+    container: "node:26-alpine"
     entrypoint: "npx"
     entrypointArgs: ["-y", "worldbank-mcp@1.0.1"]
     allowed: ["*"]

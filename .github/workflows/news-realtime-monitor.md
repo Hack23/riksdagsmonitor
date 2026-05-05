@@ -62,12 +62,12 @@ features:
 
 runtimes:
   node:
-    version: "25"
+    version: "26"
 
 network:
   allowed:
     - node
-    # Minimal Docker Hub hosts for node:25-alpine pulls used by SCB + World Bank MCP servers
+    # Minimal Docker Hub hosts for node:26-alpine pulls used by SCB + World Bank MCP servers
     # (replaces the broader `containers` ecosystem identifier to keep least-privilege egress)
     - docker.io
     - registry-1.docker.io
@@ -104,12 +104,12 @@ mcp-servers:
     url: https://riksdag-regering-ai.onrender.com/mcp
     allowed: ["*"]
   scb:
-    container: "node:25-alpine"
+    container: "node:26-alpine"
     entrypoint: "npx"
     entrypointArgs: ["-y", "@jarib/pxweb-mcp@2.0.0", "--url", "https://api.scb.se/OV0104/v2beta"]
     allowed: ["*"]
   world-bank:
-    container: "node:25-alpine"
+    container: "node:26-alpine"
     entrypoint: "npx"
     entrypointArgs: ["-y", "worldbank-mcp@1.0.1"]
     allowed: ["*"]

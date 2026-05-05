@@ -162,7 +162,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
         with:
-          node-version: '25'
+          node-version: '26'
           cache: 'npm'
 ```
 
@@ -321,7 +321,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@SHA
         with:
-          node-version: '25'
+          node-version: '26'
           cache: 'npm'
           
       - name: Install HTMLHint

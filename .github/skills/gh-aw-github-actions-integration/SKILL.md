@@ -111,7 +111,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '25'
+          node-version: '26'
           cache: 'npm'
           
       - name: Install Dependencies
@@ -328,7 +328,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '25'
+          node-version: '26'
           cache: 'npm'
           
       - name: Install Dependencies
@@ -470,7 +470,7 @@ jobs:
       - name: Setup Environment
         uses: actions/setup-node@v4
         with:
-          node-version: '25'
+          node-version: '26'
           cache: 'npm'
           
       - name: Install Dependencies
@@ -537,7 +537,7 @@ steps:
   - name: Setup Node.js
     uses: actions/setup-node@v4
     with:
-      node-version: '25'
+      node-version: '26'
       cache: 'npm'
       
   - name: Install Dependencies
@@ -620,7 +620,7 @@ steps:
   - name: Setup Node.js
     uses: actions/setup-node@v4
     with:
-      node-version: '25'
+      node-version: '26'
       cache: 'npm'
       
   - name: Setup Python
@@ -799,7 +799,7 @@ jobs:
       - name: Setup Environment
         uses: actions/setup-node@v4
         with:
-          node-version: '25'
+          node-version: '26'
           
       - name: Run Agent Analysis
         env:
@@ -921,7 +921,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        node-version: ['25']
+        node-version: ['26']
       fail-fast: false
       
     steps:
@@ -979,7 +979,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '25'
+          node-version: '26'
           cache: 'npm'
           
       - name: Install Dependencies
@@ -1279,7 +1279,7 @@ jobs:
   my-task:
     uses: ./.github/workflows/reusable-agent-setup.yml
     with:
-      node-version: '25'
+      node-version: '26'
       python-version: '3.11'
     secrets:
       anthropic-key: ${{ secrets.ANTHROPIC_API_KEY }}

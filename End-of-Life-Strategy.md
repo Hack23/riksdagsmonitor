@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>🔄 Technology Lifecycle Management for Static Intelligence Platform</strong><br>
-  <em>📦 Node.js 25 Current • ⏭️ Node.js 26 LTS Upgrade Imminent • ⚡ Future-Ready Architecture</em>
+  <em>📦 Node.js 26 Active • ⏭️ Node.js 26 LTS Promotion October 2026 • ⚡ Future-Ready Architecture</em>
 </p>
 
 <p align="center">
@@ -24,7 +24,7 @@
 > - 📈 **IMF data integration** added per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md) (alongside SCB and World Bank). **EOL risk assessment: LOW.** IMF is consumed via the **pure-TypeScript client `scripts/imf-client.ts`** (no runtime dependency on any external MCP package, no Python / uvx / third-party container). Upstream protocols are both stable and long-lived: **SDMX 3.0** (ISO 17369 international standard, backward-compatible versioning) and the **IMF Datamapper JSON v1** public endpoint (`www.imf.org/external/datamapper/api/v1`). No new third-party npm dependencies were introduced — the client uses only the existing Node.js `fetch` stdlib and existing dev/test tooling, so IMF adds **no new EOL pressure** beyond what is already tracked for Node.js, TypeScript, and Vitest. If either transport is ever deprecated by the IMF, the client pattern mirrors `scripts/world-bank-client.ts` and can be repointed without affecting the downstream data contract (Economic Data Contract v2.0).
 >
 > **🆕 What changed since last review (v1.2 → v1.3, 2026-04-20):**
-> - Confirmed runtime alignment with **Node.js ≥25** (`engines.node` in `package.json`); Node 26 LTS upgrade window now the imminent transition target.
+> - Confirmed runtime alignment with **Node.js ≥26** (`engines.node` in `package.json`); Node 26 LTS upgrade window now the imminent transition target.
 > - Locked current EOL/support horizons for the toolchain powering Riksdagsmonitor `v0.8.48`: **TypeScript 6.x**, **Vite 8.x**, **Vitest 4.x**, **ESLint 10.x**, **Cypress 15.x**, **Playwright 1.59.x**, **typedoc 0.28.x**, **happy-dom 20.x**, **knip 6.x**, **ajv 8.x**, **htmlhint 1.9.x**.
 > - Peer-dependency runtime surface (optional to consumers of the npm package): **Chart.js ^4**, **chartjs-plugin-annotation ^3**, **D3 ^7**, **papaparse ^5**.
 > - Added **npm package deprecation policy**: public API contract lives in exported subpaths `./`, `./shared`, `./shared/*`, `./cia/*`, `./dashboards/*`, `./ui/*`. Breaking changes require a major SemVer bump, a 2-release deprecation window with `@deprecated` JSDoc, and a migration note in `RELEASE_PROCESS.md`.
@@ -35,9 +35,9 @@
 
 ## Overview
 
-**Riksdagsmonitor** is a static HTML5/CSS3 website deployed to AWS CloudFront + S3 (primary) and GitHub Pages (disaster recovery), built with **Vite**, tested with **Vitest** and **Cypress**, and powered by **Node.js 25 Current**. The platform provides Swedish Parliament transparency through interactive **Chart.js** and **D3.js** visualisations across **14 languages**.
+**Riksdagsmonitor** is a static HTML5/CSS3 website deployed to AWS CloudFront + S3 (primary) and GitHub Pages (disaster recovery), built with **Vite**, tested with **Vitest** and **Cypress**, and powered by **Node.js 26**. The platform provides Swedish Parliament transparency through interactive **Chart.js** and **D3.js** visualisations across **14 languages**.
 
-> **⚡ Upgrade Notice (March 2026):** Riksdagsmonitor has been upgraded to Node.js 25 (Current) as a stepping stone in preparation for the imminent **Node.js 26 LTS release (~April 1, 2026)**. Node.js 26 will be adopted immediately upon its release to stay on the supported LTS track. See the [Node.js Migration Roadmap](#️-nodejs-migration-roadmap) for the full plan.
+> **⚡ Upgrade Note (May 2026):** Riksdagsmonitor has been upgraded to Node.js 26 (Current → LTS in October 2026). Node.js 26 will be promoted to LTS in October 2026 — no additional migration step needed. A Node.js 27 nightly compatibility CI job (`continue-on-error: true`) tracks the next-generation release. See the [Node.js Migration Roadmap](#️-nodejs-migration-roadmap) for the full plan.
 
 This document defines the technology lifecycle management strategy — covering the current stack, Node.js release schedule evolution, dependency EOL timelines, and migration plans — to ensure stability, compatibility, and security throughout the project's operational life.
 
@@ -123,7 +123,7 @@ This allows early detection of breaking changes in Node.js alpha while keeping p
 
 | Category | Technology | Current Version | EOL Date | Replacement Path |
 |----------|-----------|----------------|----------|-----------------|
-| **Runtime** | [Node.js 25 Current](https://nodejs.org/) | 25.x | **April 2026** (EOL when Node.js 26 releases) | Node.js 26 LTS (**imminent**, ~April 2026) → Node.js 27 LTS |
+| **Runtime** | [Node.js 26](https://nodejs.org/) | 26.x | **April 2029** (Maintenance end) | Node.js 27 LTS (2027) |
 | **Package Manager** | [npm](https://www.npmjs.com/) | Bundled with Node.js | Follows Node.js | Follows Node.js upgrades |
 | **Language** | [TypeScript](https://www.typescriptlang.org/) | 6.0.2 | Active (quarterly releases) | Track latest stable |
 | **Build Tool** | [Vite](https://vite.dev/) | 8.0.3 | Active | Track latest major |
@@ -197,43 +197,33 @@ This allows early detection of breaking changes in Node.js alpha while keeping p
 |-----------|------|--------|
 | Node.js 24 Current Release | April 2025 | ✅ Adopted |
 | Node.js 24 LTS Promotion | October 2025 | ✅ Production deployment |
-| Node.js 24 → 25 Migration | March 2026 | ✅ **Completed** (this release) |
+| Node.js 24 → 25 Migration | March 2026 | ✅ **Completed** |
+| Node.js 25 → 26 Migration | May 2026 | ✅ **Completed** (this release) |
 
-### 🟡 Current: Node.js 25 Current (Interim)
-
-Node.js 25 is an **odd-numbered Current release** under the old model — it will not receive LTS status. It serves as an interim upgrade to test Node.js 25 features and prepare for the imminent Node.js 26 LTS.
-
-| Milestone | Date | Action |
-|-----------|------|--------|
-| Node.js 25 Current Release | October 2025 | ✅ Available |
-| Riksdagsmonitor upgrade to 25 | **March 2026** | ✅ **Completed** |
-| Node.js 25 EOL | **~April 2026** | Node.js 26 releases → 25 reaches EOL |
-
-> ⚠️ **Node.js 25 is short-lived.** Riksdagsmonitor will be on Node.js 25 for only ~2 weeks before upgrading to Node.js 26 LTS upon its release.
-
-### 🔜 Imminent: Node.js 26 (Action: Upgrade in ~2 weeks)
+### ✅ Current: Node.js 26 (Last Old-Model Release — LTS)
 
 Node.js 26 is the **last release under the old two-per-year schedule**. It releases as "Current" in April 2026 and will be promoted to **LTS in October 2026** — no additional migration will be needed at that point, as the project will already be on Node.js 26.
 
-> **Strategy**: Adopt Node.js 26 **immediately after its release** (~April 1, 2026). Since Node.js 26 will become LTS in October 2026, adopting it promptly as "Current" and staying on it satisfies the LTS principle — the project will transition from Current to LTS **in-place** without another upgrade step.
+> **Strategy**: Stay on Node.js 26 from Current through LTS in-place — no additional upgrade step required at October 2026 LTS promotion.
 
-| Milestone | Date | Action |
+| Milestone | Date | Status |
 |-----------|------|--------|
-| Node.js 26 Current Release | **~April 1, 2026** | 🚀 **Upgrade riksdagsmonitor immediately after release** |
-| Node.js 26 LTS Promotion | October 2026 | ✅ No migration needed — already on Node.js 26 (Current → LTS in-place) |
+| Node.js 26 Current Release | **April 2026** | ✅ **Available** |
+| Riksdagsmonitor upgrade to 26 | **May 2026** | ✅ **Completed** (this release) |
+| Node.js 26 LTS Promotion | October 2026 | ⏳ No migration needed — will transition in-place |
 | Node.js 26 Active LTS End | **October 2027** | Begin evaluating Node.js 27 |
 | Node.js 26 Maintenance End | **April 2029** | Must be off Node.js 26 |
 
-**Upgrade preparation checklist (for Node.js 26):**
-- [ ] Monitor [Node.js 26 release notes](https://nodejs.org/en/blog/) and test against Node.js 26 RC in CI matrix before stable release
-- [ ] Validate TypeScript native type-stripping (`process.features.typescript === "strip"`) still works
-- [ ] Confirm all 43+ workflows pass on Node.js 26 (blocking CI jobs)
-- [ ] Verify GitHub Actions `ubuntu-latest` runners include Node.js 26
-- [ ] Update all `node-version: '25'` → `'26'` across all workflow YAML, lock, and markdown files
-- [ ] Update `package.json` `engines.node` from `>=25` to `>=26`
-- [ ] Update `.nvmrc` from `25` to `26`
-- [ ] Update skills documentation (`./github/skills/**SKILL.md`) code examples
-- [ ] Update documentation (End-of-Life-Strategy.md, WORKFLOWS.md, FUTURE_WORKFLOWS.md, README.md, TESTING.md)
+**Completed upgrade checklist (for Node.js 26):**
+- [x] Validate TypeScript native type-stripping (`process.features.typescript === "strip"`) still works
+- [x] Confirm all 43+ workflows pass on Node.js 26 (blocking CI jobs)
+- [x] Verify GitHub Actions `ubuntu-latest` runners include Node.js 26
+- [x] Update all `node-version: '25'` → `'26'` across all workflow YAML and markdown files
+- [x] Update `package.json` `engines.node` from `>=25` to `>=26`
+- [x] Update `.nvmrc` from `25` to `26`
+- [x] Update skills documentation (`./github/skills/**SKILL.md`) code examples
+- [x] Update documentation (End-of-Life-Strategy.md, WORKFLOWS.md, FUTURE_WORKFLOWS.md, README.md, TESTING.md)
+- [x] Add Node.js 27 nightly CI compatibility job (`continue-on-error: true`)
 
 ### Future: Node.js 27 LTS (New Schedule)
 
@@ -269,9 +259,9 @@ gantt
     Active LTS           :done, n24lts, 2025-10, 2026-03
     Migration Off 24     :done, m24, 2026-03, 2026-03
 
-    section Node.js 25 (interim — Current only)
-    Current (interim)    :active, n25curr, 2025-10, 2026-04
-    Riksdagsmonitor on 25:crit, rm25, 2026-03, 2026-04
+    section Node.js 25 (interim — completed)
+    Current (interim)    :done, n25curr, 2025-10, 2026-04
+    Riksdagsmonitor on 25:done, rm25, 2026-03, 2026-04
 
     section Node.js 26 (last old-model — LTS)
     Current              :n26curr, 2026-04, 2026-10
@@ -333,7 +323,7 @@ Riksdagsmonitor outputs **static HTML5, CSS3, and ES2020+ JavaScript**. Browser 
 | GitHub Actions runners | `ubuntu-latest` | Auto-updated by GitHub |
 | Action versions | SHA-pinned | Update via Dependabot |
 | step-security/harden-runner | SHA-pinned | Update via Dependabot |
-| Node.js in CI | `node-version: '25'` | Update with each Node.js migration |
+| Node.js in CI | `node-version: '26'` | Update with each Node.js migration |
 
 ---
 
@@ -343,7 +333,7 @@ Riksdagsmonitor outputs **static HTML5, CSS3, and ES2020+ JavaScript**. Browser 
 
 | Risk | Likelihood | Impact | Mitigation |
 |------|-----------|--------|------------|
-| Node.js 25 reaches EOL before Node.js 26 upgrade | **Very Low** | Medium | Node.js 26 upgrade planned immediately (~2 weeks); automated process ready |
+| Node.js 26 reaches EOL before Node.js 27 upgrade | **Very Low** | Medium | Node.js 27 upgrade planned when it reaches Current (Oct 2027); automated process ready |
 | Node.js 26 breaking changes | Low | Medium | Test on Node.js 26 RC in CI matrix before it releases |
 | Vite major breaking changes | Medium | Medium | Pin to major version, test upgrades in branch |
 | Chart.js/D3.js API deprecation | Low | Medium | Abstraction layer isolates visualisation logic |
@@ -358,7 +348,7 @@ Riksdagsmonitor outputs **static HTML5, CSS3, and ES2020+ JavaScript**. Browser 
 | Migration | Complexity | Estimated Effort | Risk Level |
 |-----------|-----------|-----------------|------------|
 | Node.js 24 → 25 | Very Low | < 1 day | 🟢 Very Low |
-| Node.js 25 → 26 (**imminent**) | Very Low | < 1 day | 🟢 Very Low |
+| Node.js 25 → 26 (✅ completed) | Very Low | < 1 day | 🟢 Very Low |
 | Node.js 26 → 27 (new schedule) | Low | 1–2 days | 🟢 Low |
 | Vite 7 → next major | Medium | 2–5 days | 🟡 Medium |
 | TypeScript 5 → 6 | Low | < 1 day | 🟢 Very Low (completed) |

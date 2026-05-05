@@ -77,7 +77,7 @@ This document provides comprehensive documentation of the CI/CD workflows implem
 - **CIS Controls (17.1)**: Implement and manage automated secure application deployments
 - **Transparency**: Public demonstration of security automation and quality gates
 
-The project has been migrated from JavaScript to **TypeScript** (31 modules in `src/browser/`) with all workflows updated accordingly. TypeScript compilation is handled by Vite (esbuild) for browser bundles and Node 25's native type-stripping for scripts.
+The project has been migrated from JavaScript to **TypeScript** (31 modules in `src/browser/`) with all workflows updated accordingly. TypeScript compilation is handled by Vite (esbuild) for browser bundles and Node 26's native type-stripping for scripts.
 
 **Total Workflow Files: 50** (22 standard YAML + 14 agentic `.md` sources + 14 compiled `.lock.yml`). Each agentic workflow consists of a source `.md` file and its compiled `.lock.yml` counterpart, yielding **36 distinct workflows** (22 standard + 14 agentic).
 **Security Compliance: 100%** (all actions SHA-pinned, harden-runner enabled)
@@ -170,7 +170,7 @@ graph LR
 
 | Component | Version | Purpose |
 | --- | --- | --- |
-| Node.js | 25 | Runtime (native TypeScript strip-types) |
+| Node.js | 26 | Runtime (native TypeScript strip-types) |
 | TypeScript | 6.0.3 | Type system |
 | Vite | 8.0.10 | Build toolchain (esbuild) |
 | Vitest | 4.1.5 | Unit testing (3,319 tests) |
@@ -1023,13 +1023,13 @@ mcp-servers:
     url: https://riksdag-regering-ai.onrender.com/mcp
     allowed: ["*"]
   scb:                                         # Container (per-run)
-    container: "node:25-alpine"
+    container: "node:26-alpine"
     entrypoint: "npx"
     entrypointArgs: ["-y", "@jarib/pxweb-mcp@2.0.0",
                      "--url", "https://api.scb.se/OV0104/v2beta"]
     allowed: ["*"]
   world-bank:                                  # Container (per-run)
-    container: "node:25-alpine"
+    container: "node:26-alpine"
     entrypoint: "npx"
     entrypointArgs: ["-y", "worldbank-mcp@1.0.1"]
     allowed: ["*"]
@@ -1523,7 +1523,7 @@ flowchart TB
 | --- | --- | --- |
 | 🔴 TypeScript type-check fails | Missing module or incorrect import | Verify `tsconfig.browser.json` includes the file; run `npx tsc --project tsconfig.browser.json --noEmit` locally |
 | 🔴 Workflow not triggering on TS changes | Missing path filter | Add `'**/*.ts'` and `'src/browser/**'` to path filters |
-| 🔴 Node version cannot run .ts scripts | Older Node.js version | Node 25 has native TS type-stripping; verify `node -e "console.log(process.features.typescript)"` outputs `"strip"` |
+| 🔴 Node version cannot run .ts scripts | Older Node.js version | Node 26 has native TS type-stripping; verify `node -e "console.log(process.features.typescript)"` outputs `"strip"` |
 | 🔴 Harden Runner egress failures | New network endpoints accessed | Review egress report and add legitimate endpoints to `allowed-endpoints` |
 | 🔴 Lighthouse CI failures | Performance regression | Check Lighthouse HTML report artifact; optimize images, reduce CSS, fix color contrast |
 | 🔴 Data pipeline skipping fetch | Data freshness < 23 hours | Use `force_refresh: true` input for manual dispatch |

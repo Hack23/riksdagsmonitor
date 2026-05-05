@@ -324,7 +324,7 @@ Riksdagsmonitor uses a **provider-tiered** data architecture, with each provider
 - **Hosting** — AWS CloudFront + S3 dual-region (us-east-1 primary, eu-west-1 replica) via OIDC; GitHub Pages as DR fallback
 - **CI/CD** — 50 GitHub Actions workflow files (22 standard `.yml` + 14 agentic `.md` sources + 14 compiled `.lock.yml`); SHA-pinned, `step-security/harden-runner` everywhere
 - **Data Platform** — Citizen Intelligence Agency (CIA) Java/Spring Boot backend + 15 CIA subsystems
-- **Runtime** — Node.js 25.x
+- **Runtime** — Node.js 26.x
 
 ### Architecture documentation portfolio
 
@@ -404,7 +404,7 @@ import { CIADashboardRenderer } from 'riksdagsmonitor/cia/visualizations';
 ## 🚀 Development
 
 ### Prerequisites
-Node.js ≥ 25 · npm ≥ 10 · Git with GPG signing · GitHub MFA + SSH keys.
+Node.js ≥ 26 · npm ≥ 10 · Git with GPG signing · GitHub MFA + SSH keys.
 
 ### Quick start
 
