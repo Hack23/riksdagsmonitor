@@ -63,6 +63,12 @@ export interface ImfClientConfig {
   readonly sdmxBaseURL?: string;
   /** Request timeout in ms. Default 15_000. */
   readonly timeout?: number;
+  /**
+   * User-Agent sent to IMF HTTP endpoints. Akamai currently rejects Node's
+   * default undici user-agent on the Datamapper API with HTTP 403, while
+   * browser/curl-style user-agents succeed.
+   */
+  readonly userAgent?: string;
   /** Max retry count for transient failures. Default 2. */
   readonly maxRetries?: number;
   /**
@@ -94,16 +100,9 @@ const DEFAULT_DATAMAPPER_BASE_URL = 'https://www.imf.org/external/datamapper/api
 const DEFAULT_SDMX_BASE_URL = 'https://api.imf.org/external/sdmx/3.0';
 const DEFAULT_TIMEOUT = 15_000;
 const DEFAULT_MAX_RETRIES = 2;
+const DEFAULT_USER_AGENT = 'Mozilla/5.0 (compatible; Riksdagsmonitor; +https://riksdagsmonitor.com)';
 /** Default vintage. Update in April / October when the WEO re-releases. */
 const DEFAULT_WEO_VINTAGE = 'WEO-2026-04';
-
-/**
- * User-Agent header required by IMF Datamapper — without it the endpoint
- * returns HTTP 403 Forbidden (WAF rule blocks requests with empty/missing UA).
- * Node.js `fetch()` / undici does not send a User-Agent by default.
- * The IMF WAF also blocks simple bot-style UAs; a browser-like prefix is needed.
- */
-const IMF_USER_AGENT = 'Mozilla/5.0 (compatible; riksdagsmonitor/1.0; +https://riksdagsmonitor.com)';
 
 /** Base delay (ms) for the exponential back-off used on 429 / 5xx / network errors. */
 const RETRY_BASE_DELAY_MS = 1_000;
@@ -221,6 +220,7 @@ export class ImfClient {
   readonly timeout: number;
   readonly maxRetries: number;
   readonly weoVintage: string;
+  readonly userAgent: string;
   private readonly onBatchIndicatorError?: (event: ImfBatchIndicatorErrorEvent) => void;
 
   constructor(config: ImfClientConfig = {}) {
@@ -228,6 +228,7 @@ export class ImfClient {
     this.sdmxBaseURL = config.sdmxBaseURL ?? DEFAULT_SDMX_BASE_URL;
     this.timeout = config.timeout ?? DEFAULT_TIMEOUT;
     this.maxRetries = config.maxRetries ?? DEFAULT_MAX_RETRIES;
+    this.userAgent = config.userAgent ?? DEFAULT_USER_AGENT;
     this.weoVintage = config.weoVintage ?? DEFAULT_WEO_VINTAGE;
     this.onBatchIndicatorError = config.onBatchIndicatorError;
   }
@@ -367,11 +368,7 @@ export class ImfClient {
     try {
       const response = await fetch(url, {
         signal: controller.signal,
-        headers: {
-          'User-Agent': IMF_USER_AGENT,
-          Accept: 'application/json',
-          ...extraHeaders,
-        },
+        headers: { Accept: 'application/json', 'User-Agent': this.userAgent, ...extraHeaders },
       });
 
       if (!response.ok) {

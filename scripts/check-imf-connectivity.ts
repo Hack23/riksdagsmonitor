@@ -38,22 +38,24 @@
  * -------
  * On success this script writes `data/imf-context.json` containing:
  *
- *   - `status`: 'ok' | 'stale-vintage'
+ *   - `status`: 'ok' | 'stale-vintage' | 'degraded' | 'unavailable'
  *   - `vintage`: e.g. `WEO-2026-04`
  *   - `vintageAgeMonths`: integer
  *   - `probes`: per-probe latency / status
  *   - `checkedAt`: ISO-8601 UTC timestamp
  *
- * On failure (any of the three probes fails after the client's normal
+ * On critical failure (WEO or FM probe fails after the client's normal
  * retry budget) this script writes `data/imf-unavailable.flag` containing
  * a short human-readable reason plus a JSON-encoded structured payload.
+ * Non-critical SDMX failure is reported as `status: degraded` in
+ * `data/imf-context.json`, without blocking WEO/FM-based economic context.
  * The same payload is also printed to stdout so a CI step can capture it.
  *
  * Exit codes
  * ----------
  *   0 — connectivity OK (regardless of vintage age — vintage drift is
  *       handled by annotation, not by failing the pre-flight)
- *   1 — connectivity failed (the workflow MUST fall back to the
+ *   1 — critical connectivity failed (the workflow MUST fall back to the
  *       cached-data degradation path documented in
  *       `analysis/imf/agentic-integration.md` §6.1 and inject the
  *       standard `⚠️ IMF context unavailable` block into
@@ -90,7 +92,7 @@ export interface ImfProbeResult {
 
 /** Aggregate status emitted to `data/imf-context.json` or `imf-unavailable.flag`. */
 export interface ImfConnectivityReport {
-  readonly status: 'ok' | 'stale-vintage' | 'unavailable';
+  readonly status: 'ok' | 'stale-vintage' | 'degraded' | 'unavailable';
   readonly vintage: string;
   readonly vintageAgeMonths: number;
   readonly stale: boolean;
@@ -196,6 +198,28 @@ export function formatStaleVintageAnnotation(report: Pick<ImfConnectivityReport,
   ].join('\n');
 }
 
+/**
+ * Render the lighter annotation used when WEO/FM are reachable but an
+ * auxiliary IMF transport such as SDMX is unavailable.
+ */
+export function formatDegradedWarning(report: Pick<ImfConnectivityReport, 'probes' | 'checkedAt'>): string {
+  const failed = report.probes.filter((p) => !p.ok);
+  const failedSummary = failed.length > 0
+    ? failed.map((p) => `${p.dataflow} (${p.transport}): ${p.error ?? 'unknown'}`).join('; ')
+    : 'no probe details available';
+  return [
+    '> ℹ️ **IMF auxiliary transport degraded**',
+    '>',
+    '> The IMF pre-flight check at ' + report.checkedAt + ' reached the critical',
+    '> WEO / Fiscal Monitor Datamapper endpoints, but one or more auxiliary',
+    '> IMF transports failed. Continue citing IMF for WEO/FM economic claims;',
+    '> avoid unsupported SDMX-only claims unless cached data exists and the',
+    '> `economicProvenance` block records the degraded probe.',
+    '>',
+    '> Failed auxiliary probes: ' + failedSummary + '.',
+  ].join('\n');
+}
+
 // ---------------------------------------------------------------------------
 // Probes
 // ---------------------------------------------------------------------------
@@ -297,7 +321,9 @@ export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
     }
   }
 
-  // Probe 2: FM via Datamapper (GGXWDG_NGDP = gross government debt % GDP)
+  // Probe 2: FM via Datamapper (GGXWDG_NGDP = gross government debt % GDP).
+  // Use this indicator because `GGXONLB_NGDP` is not exposed for SWE on
+  // the public Datamapper surface and would create a false outage.
   {
     const start = Date.now();
     const result = await withTimeout(
@@ -373,15 +399,19 @@ export function buildReport(
 ): ImfConnectivityReport {
   const ageMonths = vintageAgeMonths(vintage, now);
   const stale = ageMonths > STALE_VINTAGE_MAX_MONTHS;
-  // We require *all three* probes to succeed for the run to count as
-  // "ok". Even one transport failure means the article's economic claims
-  // are at risk of being inference-only — exactly the failure mode the
-  // 2026-04-26 reflections called out.
-  const allOk = probes.length > 0 && probes.every((p) => p.ok);
-  const status: ImfConnectivityReport['status'] = !allOk
+  // WEO and Fiscal Monitor are the critical pre-flight gates for article
+  // economic context. SDMX is broader catalogue coverage; if it fails while
+  // Datamapper is healthy, the run is degraded but not IMF-unavailable.
+  const criticalOk = ['WEO', 'FM'].every((dataflow) =>
+    probes.some((p) => p.dataflow === dataflow && p.ok),
+  );
+  const anyFailed = probes.some((p) => !p.ok);
+  const status: ImfConnectivityReport['status'] = !criticalOk
     ? 'unavailable'
     : stale
       ? 'stale-vintage'
+      : anyFailed
+        ? 'degraded'
       : 'ok';
   const checkedAt = now.toISOString();
   const baseReport = {
@@ -392,11 +422,13 @@ export function buildReport(
     probes,
     checkedAt,
   } as const;
-  const warningBlock = !allOk
+  const warningBlock = !criticalOk
     ? formatUnavailableWarning({ probes, checkedAt })
     : stale
       ? formatStaleVintageAnnotation({ vintage, vintageAgeMonths: baseReport.vintageAgeMonths })
-      : '';
+      : anyFailed
+        ? formatDegradedWarning({ probes, checkedAt })
+        : '';
   return { ...baseReport, warningBlock };
 }
 

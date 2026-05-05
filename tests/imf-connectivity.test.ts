@@ -27,6 +27,7 @@ import { join } from 'node:path';
 import {
   buildReport,
   formatStaleVintageAnnotation,
+  formatDegradedWarning,
   formatUnavailableWarning,
   parseVintage,
   runProbes,
@@ -66,7 +67,7 @@ function makeStubClient(b: StubBehaviour = {}): ImfClient {
   return {
     weoVintage: 'WEO-2026-04',
     async getWeoIndicator(_iso3: string, weoCode: string): Promise<ImfDataPoint[]> {
-      const mode = weoCode === 'GGXONLB_NGDP' ? (b.fm ?? 'ok') : (b.weo ?? 'ok');
+      const mode = weoCode === 'GGXWDG_NGDP' ? (b.fm ?? 'ok') : (b.weo ?? 'ok');
       if (mode === 'throw') throw new Error('network: ECONNREFUSED');
       if (mode === 'empty') return [];
       return [fakeDataPoint(2025, 1.9)];
@@ -232,16 +233,28 @@ describe('buildReport', () => {
     expect(r.warningBlock).toContain('WEO-2025-04');
   });
 
-  it('returns status=unavailable with ⚠️ block when any probe failed', () => {
+  it('returns status=degraded with ℹ️ block when only the auxiliary SDMX probe failed', () => {
     const probes: ImfProbeResult[] = [
       ...allOk.slice(0, 2),
       { dataflow: 'IFS', transport: 'sdmx', ok: false, latencyMs: 5, error: 'SDMX 503' },
     ];
     const r = buildReport(probes, 'WEO-2026-04', new Date('2026-04-26T00:00:00Z'));
-    expect(r.status).toBe('unavailable');
-    expect(r.warningBlock).toContain('IMF context unavailable');
+    expect(r.status).toBe('degraded');
+    expect(r.warningBlock).toContain('IMF auxiliary transport degraded');
     expect(r.warningBlock).toContain('IFS');
     expect(r.warningBlock).toContain('SDMX 503');
+  });
+
+  it('returns status=unavailable with ⚠️ block when a critical WEO/FM probe failed', () => {
+    const probes: ImfProbeResult[] = [
+      { dataflow: 'WEO', transport: 'datamapper', ok: false, latencyMs: 5, error: '403 Forbidden' },
+      ...allOk.slice(1),
+    ];
+    const r = buildReport(probes, 'WEO-2026-04', new Date('2026-04-26T00:00:00Z'));
+    expect(r.status).toBe('unavailable');
+    expect(r.warningBlock).toContain('IMF context unavailable');
+    expect(r.warningBlock).toContain('WEO');
+    expect(r.warningBlock).toContain('403 Forbidden');
   });
 
   it('treats malformed vintage as definitely stale', () => {
@@ -288,6 +301,22 @@ describe('formatStaleVintageAnnotation', () => {
     expect(block).toContain('unknown age');
     expect(block).toContain('invalid vintage tag');
     expect(block).not.toContain('-1 months');
+  });
+});
+
+describe('formatDegradedWarning', () => {
+  it('renders failed auxiliary probes without saying IMF is unavailable', () => {
+    const block = formatDegradedWarning({
+      probes: [
+        { dataflow: 'WEO', transport: 'datamapper', ok: true, latencyMs: 10 },
+        { dataflow: 'IFS', transport: 'sdmx', ok: false, latencyMs: 5, error: '404' },
+      ],
+      checkedAt: '2026-05-05T00:00:00.000Z',
+    });
+    expect(block).toContain('IMF auxiliary transport degraded');
+    expect(block).toContain('IFS');
+    expect(block).toContain('404');
+    expect(block).not.toContain('IMF context unavailable');
   });
 });
 
@@ -342,6 +371,24 @@ describe('writeReport', () => {
     const lines = flag.split('\n').filter((l) => l.length > 0);
     const json = JSON.parse(lines[lines.length - 1]) as { status: string };
     expect(json.status).toBe('unavailable');
+  });
+
+  it('does NOT write the unavailable flag on degraded auxiliary SDMX failure', () => {
+    const r = buildReport(
+      [
+        { dataflow: 'WEO', transport: 'datamapper', ok: true, latencyMs: 10 },
+        { dataflow: 'FM', transport: 'datamapper', ok: true, latencyMs: 10 },
+        { dataflow: 'IFS', transport: 'sdmx', ok: false, latencyMs: 5, error: 'SDMX 404' },
+      ],
+      'WEO-2026-04',
+      new Date('2026-04-26T00:00:00Z'),
+    );
+    writeReport(r, { outputDir: tmp });
+    expect(existsSync(join(tmp, 'imf-context.json'))).toBe(true);
+    expect(existsSync(join(tmp, 'imf-unavailable.flag'))).toBe(false);
+    const ctx = JSON.parse(readFileSync(join(tmp, 'imf-context.json'), 'utf8')) as { status: string; warningBlock: string };
+    expect(ctx.status).toBe('degraded');
+    expect(ctx.warningBlock).toContain('IMF auxiliary transport degraded');
   });
 
   it('does NOT write the unavailable flag when status is stale-vintage (annotate, do not block)', () => {
