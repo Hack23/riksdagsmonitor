@@ -659,7 +659,7 @@ flowchart TD
 | Year | Node.js | TypeScript | Bundler | Test Runner |
 | --- | --- | --- | --- | --- |
 | 2026 Q1 | 25 (Current) | 6.0 | Vite 8 | Vitest 4 |
-| 2026 Q2 | 26 (Current, target upgrade ~Apr 1; LTS later 2026) | 6.0 | Vite 8 | Vitest 4 |
+| 2026 Q2 | **26** (Current, upgraded Apr 2026 ✅; LTS later 2026) | 6.0 | Vite 8 | Vitest 4 |
 | 2027 | 27 LTS | 7.x | Vite 8 | Vitest 5 |
 | 2028 | 28 LTS | 7.x | Vite 9 / Turbopack | Vitest 6 |
 | 2029 | 29 LTS | 8.x | Next-gen bundler | Native test runner |
@@ -715,8 +715,8 @@ gantt
 
 | Year | Projected Distinct Workflows | New Capabilities |
 | --- | --- | --- |
-| 2026 Q1 | **32** (43 files) | TypeScript foundation, 11 agentic workflows, Node.js 26 ✅ |
-| 2026 Q2 | **33** (44 files) | **Node.js 26 Current upgrade** (around Apr release; LTS later 2026) |
+| 2026 Q1 | **32** (43 files) | TypeScript foundation, 11 agentic workflows |
+| 2026 Q2 | **33** (44 files) | **Node.js 26 Current upgrade** ✅ (Apr 2026); nightly compat check added |
 | 2026 Q4 | **39** (50 files) | CIA pipeline v2, preview deploys, visual regression |
 | 2027 Q4 | **44** (55 files) | Node.js 27 LTS, OSINT pipeline, ML predictions, real-time streams |
 | 2028 Q4 | **54** (65 files) | Node.js 28 LTS, self-healing, canary deploy, AI editorial board |

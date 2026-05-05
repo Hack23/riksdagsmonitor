@@ -259,9 +259,9 @@ gantt
     Active LTS           :done, n24lts, 2025-10, 2026-03
     Migration Off 24     :done, m24, 2026-03, 2026-03
 
-    section Node.js 26 (interim — Current only)
-    Current (interim)    :active, n25curr, 2025-10, 2026-04
-    Riksdagsmonitor on 25:crit, rm25, 2026-03, 2026-04
+    section Node.js 25 (interim — completed)
+    Current (interim)    :done, n25curr, 2025-10, 2026-04
+    Riksdagsmonitor on 25:done, rm25, 2026-03, 2026-04
 
     section Node.js 26 (last old-model — LTS)
     Current              :n26curr, 2026-04, 2026-10
@@ -333,7 +333,7 @@ Riksdagsmonitor outputs **static HTML5, CSS3, and ES2020+ JavaScript**. Browser 
 
 | Risk | Likelihood | Impact | Mitigation |
 |------|-----------|--------|------------|
-| Node.js 26 reaches EOL before Node.js 26 upgrade | **Very Low** | Medium | Node.js 26 upgrade planned immediately (~2 weeks); automated process ready |
+| Node.js 26 reaches EOL before Node.js 27 upgrade | **Very Low** | Medium | Node.js 27 upgrade planned when it reaches Current (Oct 2027); automated process ready |
 | Node.js 26 breaking changes | Low | Medium | Test on Node.js 26 RC in CI matrix before it releases |
 | Vite major breaking changes | Medium | Medium | Pin to major version, test upgrades in branch |
 | Chart.js/D3.js API deprecation | Low | Medium | Abstraction layer isolates visualisation logic |
@@ -348,7 +348,7 @@ Riksdagsmonitor outputs **static HTML5, CSS3, and ES2020+ JavaScript**. Browser 
 | Migration | Complexity | Estimated Effort | Risk Level |
 |-----------|-----------|-----------------|------------|
 | Node.js 24 → 25 | Very Low | < 1 day | 🟢 Very Low |
-| Node.js 26 → 26 (**imminent**) | Very Low | < 1 day | 🟢 Very Low |
+| Node.js 25 → 26 (✅ completed) | Very Low | < 1 day | 🟢 Very Low |
 | Node.js 26 → 27 (new schedule) | Low | 1–2 days | 🟢 Low |
 | Vite 7 → next major | Medium | 2–5 days | 🟡 Medium |
 | TypeScript 5 → 6 | Low | < 1 day | 🟢 Very Low (completed) |
