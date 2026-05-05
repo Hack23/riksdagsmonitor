@@ -13,7 +13,7 @@ description: |
        `analysis/imf/agentic-integration.md` §"Pre-warm gate" and
        `.github/aw/ECONOMIC_DATA_CONTRACT.md` v3.0.
 
-  This action exists to deduplicate ~80 lines of identical YAML across the 11
+  This action exists to deduplicate ~80 lines of identical YAML across the 14
   news workflow files. Edit it in one place.
 inputs:
   node-version:

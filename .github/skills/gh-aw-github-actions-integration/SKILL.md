@@ -921,7 +921,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        node-version: ['25']
+        node-version: ['26']
       fail-fast: false
       
     steps:

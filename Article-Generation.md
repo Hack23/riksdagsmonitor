@@ -164,7 +164,7 @@ It declares:
 | **Name** | `News: Interpellation Debates` |
 | **Schedule** | Daily around 07:00 on weekdays |
 | **Manual inputs** | `article_date`, `force_generation`, `languages`, `analysis_depth` |
-| **Runtime** | Node.js `25` |
+| **Runtime** | Node.js `26` |
 | **Engine** | Copilot with `claude-sonnet-4.6` |
 | **Permissions** | Read-only content/issues/PR/actions/discussions/security-events for AI job |
 | **MCP gateway** | Enabled |

@@ -232,9 +232,13 @@ jobs:
         id: nightly
         run: |
           VERSION=$(curl -sfL 'https://nodejs.org/download/nightly/index.json' | \
-            python3 -c "import json,sys; data=json.load(sys.stdin); print(data[0]['version'].lstrip('v'))" 2>/dev/null || echo '')
+            python3 -c "import json,sys; data=json.load(sys.stdin); print(data[0]['version'].lstrip('v'))" || echo '')
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
-          echo "Latest nightly: ${VERSION:-not available}"
+          if [ -z "$VERSION" ]; then
+            echo "::warning::Could not resolve Node.js nightly version — nodejs.org nightly index unavailable or schema changed; skipping compat steps"
+          else
+            echo "Latest nightly: $VERSION"
+          fi
       
       - name: Setup Node.js nightly
         if: steps.nightly.outputs.version != ''

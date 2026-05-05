@@ -170,7 +170,7 @@ graph LR
 
 | Component | Version | Purpose |
 | --- | --- | --- |
-| Node.js | 25 | Runtime (native TypeScript strip-types) |
+| Node.js | 26 | Runtime (native TypeScript strip-types) |
 | TypeScript | 6.0.3 | Type system |
 | Vite | 8.0.10 | Build toolchain (esbuild) |
 | Vitest | 4.1.5 | Unit testing (3,319 tests) |
