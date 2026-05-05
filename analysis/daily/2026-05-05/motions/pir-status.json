@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "cycle": "2025/26",
+  "date": "2026-05-05",
+  "subfolder": "motions",
+  "generated_at": "2026-05-05T08:00:00Z",
+  "pirs": [
+    {
+      "id": "LAGRÅDET-246",
+      "title": "Lagrådet yttrande on prop. 2025/26:246 (criminal responsibility age cut)",
+      "status": "ACTIVE",
+      "priority": "HIGH",
+      "created": "2026-05-05",
+      "expected_resolution": "~2026-06-01",
+      "description": "Lagrådet review of HD03246 (prop. 2025/26:246) pending. CRC Art. 40(3)(a) compliance is the key legal question. V (HD024142), C (HD024146), MP (HD024148) have all invoked CRC as grounds for rejection. If Lagrådet flags incompatibility, probability of government retreat increases from ~15% to ~30-40%.",
+      "forward_indicator": "FI-01",
+      "sources": ["HD024142", "HD024146", "HD024148", "HD03246"]
+    },
+    {
+      "id": "EU-HABITATS-SE",
+      "title": "EU Habitats Directive and NRL compliance risk from forestry deregulation",
+      "status": "ACTIVE",
+      "priority": "MEDIUM",
+      "created": "2026-05-05",
+      "expected_resolution": "~2027-03-01 (EC annual report)",
+      "description": "Sweden's prop. 2025/26:242 (HD03242) reduces samrådsplikten and avverkningsanmälan obligations. Combined with prior deregulation since 2022, EU Habitats Directive Art. 6 and NRL Reg. 2024/1991 compliance is at risk. V (HD024141) and MP (HD024147) have provided detailed legal analysis. Naturvårdsverket compliance opinion pending.",
+      "forward_indicator": "FI-02, FI-06, FI-10",
+      "sources": ["HD024141", "HD024147", "HD024144", "HD03242"]
+    },
+    {
+      "id": "COALITION-C-JuU",
+      "title": "Centerpartiet position consolidation on JuU criminal age cut",
+      "status": "ACTIVE",
+      "priority": "MEDIUM",
+      "created": "2026-05-05",
+      "expected_resolution": "~2026-06-08 (post-Lagrådet)",
+      "description": "C's HD024146 opposes criminal responsibility age cut on CRC grounds. C is the pivotal actor — if C intensifies opposition and S joins, the government majority narrows to 165 vs 163 (or fails if L wavers). Monitor C riksdag group statement after Lagrådet yttrande on HD03246.",
+      "forward_indicator": "FI-11, FI-04",
+      "sources": ["HD024146", "HD024142", "HD024148"]
+    },
+    {
+      "id": "S-CRC-JOIN",
+      "title": "S decision on whether to join CRC opposition coalition on HD03246",
+      "status": "MONITORING",
+      "priority": "HIGH",
+      "created": "2026-05-05",
+      "expected_resolution": "~2026-05-20",
+      "description": "S (94 seats) has not yet declared a position on the criminal responsibility age cut. If S joins V+C+MP (forming 163-seat coalition), government's 165-seat majority becomes razor-thin. S decision is likely driven by (a) Lagrådet outcome, (b) Barnombudsmannen statement, (c) polling on crime vs rights.",
+      "forward_indicator": "FI-05",
+      "sources": ["HD024144", "HD024142", "HD024146", "HD024148"]
+    }
+  ]
+}
