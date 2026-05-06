@@ -13,7 +13,7 @@
  */
 
 import type { Language } from '../../types/language.js';
-import { LANGUAGE_META } from '../../generate-sitemap-html.js';
+import { LANGUAGE_META } from '../../sitemap-html/index.js';
 import { BASE_URL, LANGUAGES } from '../constants.js';
 
 /**

@@ -38,7 +38,7 @@ export interface ChromeOptions {
   readonly publishedIso?: string;
   /** ISO-8601 date for `article:modified_time` / `og:updated_time`. */
   readonly modifiedIso?: string;
-  /** JSON-LD blob(s) appended inside `<head>`. Already-stringified objects. */
+  /** JSON-LD object(s) to inject inside `<head>` as `<script type="application/ld+json">`. Pass plain (non-serialised) JS objects — the head renderer serialises them via `JSON.stringify`. */
   readonly jsonLd?: readonly unknown[];
   /** Extra `<meta>` / `<link>` lines to splice into `<head>`. */
   readonly extraHead?: string;

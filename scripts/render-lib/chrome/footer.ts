@@ -13,8 +13,7 @@
  * @license Apache-2.0
  */
 
-import type { Language } from '../../types/language.js';
-import { LANGUAGE_META, escapeHtml } from '../../generate-sitemap-html.js';
+import { LANGUAGE_META, escapeHtml } from '../../sitemap-html/index.js';
 import { GITHUB_BLOB, LANGUAGES } from '../constants.js';
 import { chromeStrings } from '../chrome-i18n.js';
 import type { ChromeOptions } from './types.js';

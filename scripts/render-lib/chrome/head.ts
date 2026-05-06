@@ -12,7 +12,7 @@
  * @license Apache-2.0
  */
 
-import { LANGUAGE_META, escapeHtml } from '../../generate-sitemap-html.js';
+import { LANGUAGE_META, escapeHtml } from '../../sitemap-html/index.js';
 import { BASE_URL, LANGUAGES } from '../constants.js';
 import type { ChromeOptions } from './types.js';
 import { depth, renderHreflangBlock } from './helpers.js';
@@ -150,7 +150,7 @@ export function renderChromeHead(opts: ChromeOptions): string {
 ${hreflangHtml}
 
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-    <link rel="alternate" type="application/rss+xml" title="Riksdagsmonitor news (${escapeHtml(meta.nativeName)})" href="${opts.rssHref ?? '/rss.xml'}">
+    <link rel="alternate" type="application/rss+xml" title="Riksdagsmonitor news (${escapeHtml(meta.nativeName)})" href="${opts.rssHref ?? (opts.lang === 'en' ? '/rss.xml' : `/rss_${opts.lang}.xml`)}">
 ${pagerLinksHtml}
     <meta property="og:type" content="${ogType}">
     <meta property="og:site_name" content="Riksdagsmonitor">
