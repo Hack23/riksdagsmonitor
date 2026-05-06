@@ -2279,14 +2279,14 @@ However, Hack23 AB voluntarily maps to NIS2 requirements as a **best practice an
 |---------------|-----------------|---------------------------|----------------|------------|
 | **LLM01: Prompt Injection** | Malicious content in retrieved data manipulates LLM behavior | riksdag-regering-mcp fetches only structured JSON from authenticated riksdag.se API. MCP tool outputs are data objects, not raw text. Prompt template is version-controlled and reviewed. User input never included in prompts | Structured data pipeline, no free-text user input, prompt templates in Git | LOW |
 | **LLM02: Insecure Output Handling** | LLM output injected into downstream systems without sanitization | All LLM-generated HTML is validated by HTMLHint before merge. Content Security Policy headers prevent XSS execution. Output encoding applied. Human reviewer inspects content before publication | HTMLHint validation, CSP headers, human review gate, PR review required | MEDIUM — human review mitigates |
-| **LLM03: Training Data Poisoning** | Manipulated training data causes malicious model behavior | Riksdagsmonitor uses Amazon Bedrock hosted models (not self-trained). Claude Opus is trained by Anthropic with safety measures. Model selection from trusted provider | Amazon Bedrock hosted models, Anthropic safety training, no fine-tuning on riksdag data | LOW |
-| **LLM04: Model Denial of Service** | Excessive resource consumption through crafted inputs | GitHub Actions MCP jobs have timeout limits. Amazon Bedrock API calls limited to 30s timeout. Max 3 retries with exponential backoff. Daily cron (not continuous). Input data size limits in MCP tools | GitHub Actions timeout configuration, retry limits, cron scheduling | LOW |
+| **LLM03: Training Data Poisoning** | Manipulated training data causes malicious model behavior | Riksdagsmonitor uses GitHub Copilot-hosted Claude Sonnet 4.6 models (not self-trained). Anthropic provides model-level safety measures. Model selection from trusted provider | GitHub Copilot engine, Anthropic safety training, no fine-tuning on riksdag data | LOW |
+| **LLM04: Model Denial of Service** | Excessive resource consumption through crafted inputs | GitHub Actions MCP jobs have timeout limits. Tool calls are time-bounded. Max 3 retries with exponential backoff. Daily cron (not continuous). Input data size limits in MCP tools | GitHub Actions timeout configuration, retry limits, cron scheduling | LOW |
 | **LLM05: Supply Chain Vulnerabilities** | Compromised components in LLM application stack | npm packages SHA-pinned via package-lock.json. GitHub Actions pinned to commit SHAs. Dependabot monitors all dependencies. step-security/harden-runner blocks unauthorized egress. SLSA provenance attestation | package-lock.json, SHA-pinned Actions, Dependabot, SLSA attestation | MEDIUM |
 | **LLM06: Sensitive Information Disclosure** | LLM reveals confidential data in outputs | Zero PII in data sources (all Riksdag data is public political information). No sensitive data in prompts. No user data processed. Data classification: all data PUBLIC | Data classification policy, no-PII architecture, source data is public | LOW |
 | **LLM07: Insecure Plugin Design** | Unsafe LLM plugin/tool implementations | MCP server (riksdag-regering-mcp) has defined tool schema with typed parameters. No arbitrary code execution. Read-only API access. All MCP tool outputs are structured JSON | MCP tool schema definitions, read-only API access, structured outputs | LOW |
-| **LLM08: Excessive Agency** | LLM performs unintended actions with excessive permissions | Amazon Bedrock API key has only `bedrock:InvokeModel` permission. MCP client in GitHub Actions has read-only access to Riksdag APIs. No write permissions granted to LLM pipeline. All outputs require human approval (PR review) before publication | IAM least privilege, read-only MCP access, human review gate, PR-required merge | LOW |
+| **LLM08: Excessive Agency** | LLM performs unintended actions with excessive permissions | Agent phase uses read-only repository and MCP access. Write actions are isolated to the safe-output PR boundary. No direct merge or deployment permission is granted to the LLM pipeline. All outputs require human approval (PR review) before publication | Least privilege, read-only MCP access, safe-output boundary, human review gate, PR-required merge | LOW |
 | **LLM09: Overreliance** | Excessive trust in LLM outputs without human verification | Mandatory human review (PR review by James P. Sörling) before any generated article is published. Quality score threshold (0.8/1.0) gates generation. Correction policy for published errors. Human retains final editorial control | PR review requirement, quality gate, editorial policy, correction procedure | LOW |
-| **LLM10: Model Theft** | Unauthorized extraction or replication of model | Amazon Bedrock API key stored in GitHub Secrets (encrypted at rest). Key never exposed in logs (GitHub Secrets masking). Least privilege IAM. 90-day key rotation policy. step-security/harden-runner monitors egress | GitHub Secrets encryption, IAM least privilege, key rotation, egress monitoring | LOW |
+| **LLM10: Model Theft** | Unauthorized extraction or replication of model | Model access is mediated by GitHub Copilot / GitHub Actions runtime controls. No model weights are available to workflows. Tokens are masked in logs and scoped by job. step-security/harden-runner monitors egress | GitHub token scoping, secrets masking, no model weights, egress monitoring | LOW |
 
 **Overall LLM Risk Assessment for Riksdagsmonitor MCP Pipeline:** LOW-MEDIUM
 
@@ -2420,7 +2420,7 @@ The primary residual risks are LLM02 (output handling) mitigated by human review
 | **GV.OC-02** | Internal and external stakeholders are understood and their needs considered | Stakeholders: Swedish public (users), researchers, journalists, Hack23 AB (operator). External: GitHub, AWS, Anthropic (providers), Riksdag (data source). Mapped in THREAT_MODEL.md |
 | **GV.OC-03** | Legal, regulatory, and contractual cybersecurity obligations are understood and managed | GDPR (no PII), CRA (documented in CRA-ASSESSMENT.md), NIS2 (voluntary alignment), Swedish law compliance. Legal review annually |
 | **GV.OC-04** | Critical objectives, capabilities, and services that stakeholders depend on are understood and communicated | Critical service: 24/7 web availability of political transparency data. Documented in BCPPlan.md BIA section. RTO/RPO defined |
-| **GV.OC-05** | Outcomes, capabilities, and services that the organization depends on are understood and communicated | Dependencies: GitHub (source control, CI/CD, Pages), AWS (CDN, S3), Riksdag API (data), Amazon Bedrock (AI). Documented in ARCHITECTURE.md and BCPPlan.md |
+| **GV.OC-05** | Outcomes, capabilities, and services that the organization depends on are understood and communicated | Dependencies: GitHub (source control, CI/CD, Pages, Copilot engine), AWS (CDN, S3), Riksdag API (data), Anthropic (Claude Sonnet 4.6 model). Documented in ARCHITECTURE.md and BCPPlan.md |
 
 ### GV.RM — Risk Management Strategy
 
@@ -2441,7 +2441,7 @@ The primary residual risks are LLM02 (output handling) mitigated by human review
 | **CEO/CISO/DPO** | James Pether Sörling | All security architecture, ISMS ownership, incident response, compliance, risk acceptance |
 | **GitHub Security** | GitHub Platform | Secret scanning, CodeQL, Dependabot, audit logging (automated) |
 | **AWS Security** | AWS Platform | CloudFront DDoS protection, S3 encryption, IAM enforcement (platform) |
-| **Anthropic Safety** | Anthropic | Claude Opus safety guardrails, model security (provider responsibility) |
+| **Anthropic Safety** | Anthropic | Claude Sonnet 4.6 safety guardrails, model security (provider responsibility) |
 | **Security Community** | Public | Responsible disclosure via security@hack23.com |
 
 ### GV.PO — Policy
@@ -2479,7 +2479,7 @@ The primary residual risks are LLM02 (output handling) mitigated by human review
 |----------|----------|-----------|----------|------------------|
 | **GitHub** | Source control, CI/CD, hosting | HIGH (critical path) | GitHub Enterprise ToS, ISMS Third Party Policy, MFA, branch protection | Annual contract review |
 | **AWS** | CDN, S3, Route 53 | HIGH (production hosting) | AWS DPA, CloudFront TLS, IAM least privilege, MFA root | Annual contract review |
-| **Anthropic (via Bedrock)** | AI content generation | MEDIUM | Amazon Bedrock DPA, API key rotation, least privilege IAM, content filtering | Annual review |
+| **Anthropic (via GitHub Copilot)** | AI content generation | MEDIUM | GitHub Copilot runtime controls, least-privilege workflow permissions, content filtering, safe-output PR boundary | Annual review |
 | **riksdag-regering-mcp** | Data pipeline | MEDIUM | Pinned version, Dependabot monitoring, code review | Per release |
 | **npm ecosystem** | JavaScript dependencies | MEDIUM | package-lock.json SHA pinning, Dependabot, npm audit | Daily automated |
 | **GitHub Actions marketplace** | CI/CD automation | MEDIUM | SHA-pinned actions only, step-security/harden-runner, egress control | Per workflow update |
@@ -2588,7 +2588,7 @@ Riksdagsmonitor's cyber supply chain is documented in the Third Party Management
    - SLA: 99.99% CloudFront availability SLA
 
 **Supplier Tier 2 (Service-Level Dependency):**
-3. **Anthropic (via Amazon Bedrock)** — Claude Opus AI model
+3. **Anthropic (via GitHub Copilot)** — Claude Sonnet 4.6 AI model
    - Dependency type: MEDIUM — content generation only; cached content available
    - Risk treatment: Caching, fallback to template articles, graceful degradation
 
@@ -2743,7 +2743,7 @@ stateDiagram-v2
 
 | Credential | Storage | Rotation Period | Access Level | Emergency Contact |
 |-----------|---------|-----------------|--------------|-------------------|
-| Amazon Bedrock API Key | GitHub Secrets (encrypted) | 90 days | `bedrock:InvokeModel` only | security@hack23.com |
+| GitHub Copilot agent token | GitHub-managed runtime token | Per GitHub platform policy | Agentic workflow scope only | GitHub Support |
 | GitHub PAT (if used) | GitHub Secrets | 90 days | Minimal required scopes | GitHub Support |
 | AWS IAM Access Key | GitHub Secrets | 90 days | Least privilege IAM policy | AWS Support |
 | MCP Server API Keys | GitHub Secrets | Per provider policy | Read-only data access | Provider support |
@@ -2772,7 +2772,7 @@ stateDiagram-v2
 
 **Secret naming convention:**
 ```
-AWS_BEDROCK_API_KEY          # Amazon Bedrock
+GITHUB_TOKEN                 # GitHub-managed workflow token
 AWS_ACCESS_KEY_ID             # AWS IAM (if applicable)
 AWS_SECRET_ACCESS_KEY         # AWS IAM secret
 MCP_RIKSDAG_API_KEY           # riksdag-regering-mcp (if auth required)
@@ -2786,7 +2786,7 @@ MCP_RIKSDAG_API_KEY           # riksdag-regering-mcp (if auth required)
 2. **T+5min:** Access provider console, revoke credential immediately
    - AWS: IAM Console > Users > Security credentials > Deactivate
    - GitHub: Settings > Developer Settings > PATs > Revoke
-   - Bedrock: IAM Console > Access Keys > Delete
+   - GitHub Copilot: disable affected workflow / revoke related GitHub token or PAT
 3. **T+10min:** Update GitHub Secret with new credential (or blank to disable workflow)
 4. **T+15min:** Verify no unauthorized usage since detection (provider access logs)
 5. **T+30min:** Generate new credential, update GitHub Secret, re-enable workflow
@@ -2962,7 +2962,7 @@ Riksdagsmonitor relies on major cloud providers whose security certifications ex
 |---------|---------------|-------------------|----------|
 | **GitHub (Microsoft)** | ISO 27001, SOC 2 Type II, SOC 3, PCI DSS, CSA STAR | Source control, CI/CD, GitHub Pages, Actions | github.com/security |
 | **Amazon Web Services** | ISO 27001, SOC 1/2/3, PCI DSS, FedRAMP, CSA STAR | CloudFront CDN, S3, Route 53 | aws.amazon.com/compliance |
-| **Anthropic (via AWS Bedrock)** | SOC 2 Type II (in progress), ISO 27001 (in progress) | Claude Opus AI model | via Amazon Bedrock compliance |
+| **Anthropic (via GitHub Copilot)** | SOC 2 Type II (provider), ISO 27001 (provider) | Claude Sonnet 4.6 AI model | via GitHub Copilot / Anthropic provider documentation |
 
 ### Shared Responsibility Model
 
@@ -3002,7 +3002,7 @@ flowchart TD
 | GitHub | Platform unavailability | HIGH | CloudFront failover, GitHub SLA monitoring | LOW | Quarterly |
 | GitHub | Credential compromise | HIGH | MFA enforced, branch protection, least privilege | LOW | Annual |
 | AWS CloudFront | CDN outage | MEDIUM | GitHub Pages failover, multi-region S3 | LOW | Quarterly |
-| Amazon Bedrock | AI API unavailability | MEDIUM | Graceful degradation to template articles | LOW | Quarterly |
+| GitHub Copilot / Anthropic | AI API unavailability | MEDIUM | Graceful degradation to template articles; workflow retry and PR review gate | LOW | Quarterly |
 | riksdag-regering-mcp | Data pipeline failure | MEDIUM | Local caching, stale data banner | LOW | Per release |
 | npm registry | Supply chain attack | HIGH | package-lock.json pinning, Dependabot | MEDIUM | Daily automated |
 | Riksdag API | API changes breaking data pipeline | MEDIUM | Schema versioning, monitoring | MEDIUM | Quarterly |
