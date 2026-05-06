@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-05-06",
+  "subfolder": "motions",
+  "cycle": "motions",
+  "generated_by": "news-motions workflow",
+  "pirs": [
+    {
+      "id": "LAGRÅDET-246",
+      "priority": "Critical",
+      "question": "What does the Lagrådet yttrande on prop. 2025/26:246 conclude regarding CRC Art. 40(3)(a) compatibility?",
+      "trigger": "Lagrådet publishes yttrande",
+      "collection": ["lagradet.se", "riksdagen.se/JuU"],
+      "expected_by": "2026-06-05",
+      "status": "open",
+      "carried_forward_from": "2026-05-05"
+    },
+    {
+      "id": "EU-HABITATS-SE",
+      "priority": "High",
+      "question": "Does Naturvårdsverket issue a formal Habitats Directive Art. 6 compatibility opinion on prop. 2025/26:242 before enactment?",
+      "trigger": "Naturvårdsverket press release or remiss",
+      "collection": ["naturvardsverket.se", "riksdagen.se/MJU"],
+      "expected_by": "2026-06-05",
+      "status": "open",
+      "carried_forward_from": "2026-05-05"
+    },
+    {
+      "id": "COALITION-C-JuU",
+      "priority": "High",
+      "question": "Does C make a formal public statement defending the CRC basis of HD024146, or does C quietly allow the provision to pass?",
+      "trigger": "C press conference or party statement",
+      "collection": ["centerpartiet.se", "Swedish political press"],
+      "expected_by": "2026-06-08",
+      "status": "open",
+      "carried_forward_from": "2026-05-05"
+    },
+    {
+      "id": "S-CRC-JOIN",
+      "priority": "Medium",
+      "question": "Does S table a motion or amendment on prop. 2025/26:246 before the JuU committee deadline?",
+      "trigger": "JuU committee agenda update",
+      "collection": ["riksdagen.se/JuU"],
+      "expected_by": "2026-05-20",
+      "status": "open",
+      "carried_forward_from": "2026-05-05"
+    }
+  ]
+}
