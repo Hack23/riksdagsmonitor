@@ -193,8 +193,19 @@ export const EVIDENCE_URL_HOSTS: readonly string[] = Object.freeze([
 export const DOK_ID_PATTERN = /[Hh][A-Za-z0-9]{3,}[0-9]+/;
 
 /**
+ * Escape every character with special meaning in a RegExp so that the
+ * string is matched literally. This prevents inadvertent pattern
+ * injection when URL hosts are interpolated into a compiled regex.
+ */
+function escapeRegexLiteral(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/**
  * Combined evidence regex — matches either a dok_id or a primary-source URL host.
+ * All host strings are fully escaped so that special regex chars (dots, etc.)
+ * are treated as literals.
  */
 export const EVIDENCE_PATTERN = new RegExp(
-  `${DOK_ID_PATTERN.source}|${EVIDENCE_URL_HOSTS.map((h) => h.replace(/\./g, '\\.')).join('|')}`,
+  `${DOK_ID_PATTERN.source}|${EVIDENCE_URL_HOSTS.map(escapeRegexLiteral).join('|')}`,
 );

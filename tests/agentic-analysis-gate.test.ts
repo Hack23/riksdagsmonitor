@@ -5,22 +5,24 @@
  *
  * Tests cover:
  *   - Artifact inventory type definitions and constants
- *   - Gate check 1: artifact existence
+ *   - Gate check 1: artifact existence (present and non-empty)
  *   - Gate check 2: per-document coverage
- *   - Gate check 3: stub placeholder detection
+ *   - Gate check 3: stub placeholder detection (including documents/ dir)
+ *   - Gate check 4: evidence citations (SWOT and significance-scoring)
  *   - Gate check 5: Mermaid diagram validation
+ *   - Gate check 6: Pass-2 evidence (pass1/ snapshot or mtime)
  *   - Gate check 7: Family C structure checks
  *   - Gate check 8: Family D structure checks
- *   - Gate check 9: PIR status sidecar validation
+ *   - Gate check 9: PIR status sidecar validation (incl. answer_summary rule)
  *   - Gate check 9b: Statskontoret evidence
- *   - Integration: full gate validation
+ *   - Integration: full gate validation (result.passed === true)
  *
  * @author Hack23 AB
  * @license Apache-2.0
  */
 
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
-import { mkdirSync, writeFileSync, rmSync, existsSync } from 'node:fs';
+import { mkdirSync, writeFileSync, rmSync, existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 
@@ -45,7 +47,9 @@ import {
   checkArtifactExistence,
   checkPerDocumentCoverage,
   checkNoStubs,
+  checkEvidenceCitations,
   checkMermaidDiagrams,
+  checkPass2Evidence,
   checkFamilyCStructure,
   checkFamilyDStructure,
   checkPirStatus,
@@ -83,6 +87,24 @@ function createMinimalValidAnalysis(dir: string): void {
     // Add specific content for structural checks
     if (artifact.filename === 'executive-brief.md') {
       content = '# Executive Brief\n\n## 🎯 BLUF\n\nBrief summary.\n\n## 🧭 3 Decisions This Brief Supports\n\n1. Decision A\n\n```mermaid\ngraph TD\n  A --> B\n  style A fill:#f00\n```\n';
+    } else if (artifact.filename === 'swot-analysis.md') {
+      // Check 4: SWOT sections with evidence citations (dok_id per bullet)
+      content = '# SWOT Analysis\n\n'
+        + '### Strengths\n- Strong fiscal position H901FiU1 government reform data\n- Parliamentary support HD01CU27 vote record\n\n'
+        + '### Weaknesses\n- Budget deficit riksdagen.se/sv/dokument-lagar\n- Limited capacity regeringen.se/rattsliga-dokument\n\n'
+        + '### Opportunities\n- Economic growth scb.se/statistik\n- Policy reform api.imf.org/external/datamapper\n\n'
+        + '### Threats\n- Geopolitical risks www.imf.org/en/Publications\n- Market volatility data.imf.org/regular.aspx\n\n'
+        + '```mermaid\ngraph TD\n  A --> B\n  style A fill:#f00\n```\n';
+    } else if (artifact.filename === 'significance-scoring.md') {
+      // Check 4: ranked bullets with evidence citations
+      content = '# Significance Scoring\n\n'
+        + '1. Fiscal policy reform H901FiU1 high impact\n'
+        + '2. Tax legislation HD01CU27 medium impact\n'
+        + '3. Social welfare riksdagen.se/sv/ high importance\n\n'
+        + '| Rank | Item | Evidence |\n|------|------|----------|\n'
+        + '| 1 | Reform | H901FiU1 |\n'
+        + '| 2 | Tax | HD01CU27 |\n\n'
+        + '```mermaid\ngraph TD\n  A[H901FiU1] --> B\n  style A fill:#f00\n```\n';
     } else if (artifact.filename === 'intelligence-assessment.md') {
       content = '# Intelligence Assessment\n\n## Key Judgment KJ-1\nHIGH confidence.\n\n## Key Judgment KJ-2\nMEDIUM confidence.\n\n## Key Judgment KJ-3\nLOW confidence.\n\nReferences PIR-FISCAL-001.\n';
     } else if (artifact.filename === 'scenario-analysis.md') {
@@ -109,8 +131,8 @@ function createMinimalValidAnalysis(dir: string): void {
   // Create documents directory with per-document analyses
   const docsDir = join(dir, 'documents');
   mkdirSync(docsDir, { recursive: true });
-  writeFileSync(join(docsDir, 'H901FiU1-analysis.md'), '# H901FiU1 Analysis\n', 'utf-8');
-  writeFileSync(join(docsDir, 'HD01CU27-analysis.md'), '# HD01CU27 Analysis\n', 'utf-8');
+  writeFileSync(join(docsDir, 'H901FiU1-analysis.md'), '# H901FiU1 Analysis\n\nDocument analysis content.\n', 'utf-8');
+  writeFileSync(join(docsDir, 'HD01CU27-analysis.md'), '# HD01CU27 Analysis\n\nDocument analysis content.\n', 'utf-8');
 
   // Create PIR status sidecar
   const pirStatus = {
@@ -129,6 +151,20 @@ function createMinimalValidAnalysis(dir: string): void {
     generated_at: '2026-05-01T10:00:00Z',
   };
   writeFileSync(join(dir, 'pir-status.json'), JSON.stringify(pirStatus, null, 2), 'utf-8');
+
+  // Create pass1/ snapshot directory with content that differs from the current
+  // artifacts — this satisfies check 6 (Pass-2 evidence) without requiring
+  // a 180-second mtime window that is not reproducible in a test environment.
+  const pass1Dir = join(dir, 'pass1');
+  mkdirSync(pass1Dir, { recursive: true });
+  for (const filename of PASS2_REQUIRED_ARTIFACTS) {
+    const mainPath = join(dir, filename);
+    if (existsSync(mainPath)) {
+      const mainContent = readFileSync(mainPath, 'utf-8');
+      // Prepend a pass-1 marker so the snapshot differs from the final version
+      writeFileSync(join(pass1Dir, filename), `<!-- pass1 draft -->\n${mainContent}`, 'utf-8');
+    }
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -280,6 +316,18 @@ describe('checkArtifactExistence', () => {
     expect(failures).toHaveLength(1);
     expect(failures[0]?.artifact).toBe('swot-analysis.md');
   });
+
+  it('reports failure for zero-byte (empty) artifact', () => {
+    for (const filename of REQUIRED_ARTIFACT_FILENAMES) {
+      // Write empty content for one artifact, non-empty for others
+      writeArtifact(testDir, filename, filename === 'README.md' ? '' : 'content');
+    }
+    const results = checkArtifactExistence(testDir);
+    const failures = results.filter((r) => !r.passed);
+    expect(failures).toHaveLength(1);
+    expect(failures[0]?.message).toContain('Empty artifact');
+    expect(failures[0]?.artifact).toBe('README.md');
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -381,6 +429,86 @@ describe('checkNoStubs', () => {
     const failures = results.filter((r) => !r.passed);
     expect(failures).toHaveLength(3);
   });
+
+  it('detects stubs in documents/ directory (Family E)', async () => {
+    // No stubs in required artifacts
+    writeArtifact(testDir, 'README.md', '# README\n\nClean content.');
+    // But stub in documents/ per-document analysis
+    const docsDir = join(testDir, 'documents');
+    mkdirSync(docsDir, { recursive: true });
+    writeFileSync(join(docsDir, 'H901FiU1-analysis.md'), '# Analysis\n\nAI_MUST_REPLACE\n', 'utf-8');
+
+    const results = await checkNoStubs(testDir);
+    const failures = results.filter((r) => !r.passed);
+    expect(failures.length).toBeGreaterThan(0);
+    expect(failures[0]?.artifact).toContain('documents/');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Tests: Check 4 — Evidence Citations
+// ---------------------------------------------------------------------------
+
+describe('checkEvidenceCitations', () => {
+  beforeEach(() => {
+    testDir = createTestDir();
+  });
+
+  afterEach(() => {
+    if (existsSync(testDir)) {
+      rmSync(testDir, { recursive: true, force: true });
+    }
+  });
+
+  it('passes when all SWOT bullets have evidence', async () => {
+    writeArtifact(testDir, 'swot-analysis.md',
+      '# SWOT\n\n'
+      + '### Strengths\n- Strong position H901FiU1 data\n\n'
+      + '### Weaknesses\n- Deficit HD01CU27 evidence\n\n'
+      + '### Opportunities\n- Growth riksdagen.se/sv/\n\n'
+      + '### Threats\n- Risk www.imf.org/en/\n\n'
+    );
+    writeArtifact(testDir, 'significance-scoring.md', '# Scores\n\n1. Item H901FiU1\n');
+    const results = await checkEvidenceCitations(testDir);
+    const failures = results.filter((r) => !r.passed && r.artifact === 'swot-analysis.md');
+    expect(failures).toHaveLength(0);
+  });
+
+  it('fails when a SWOT bullet is missing evidence', async () => {
+    writeArtifact(testDir, 'swot-analysis.md',
+      '# SWOT\n\n### Strengths\n- Strong position with no citation\n'
+    );
+    writeArtifact(testDir, 'significance-scoring.md', '# Scores\n\n');
+    const results = await checkEvidenceCitations(testDir);
+    const failures = results.filter((r) => !r.passed);
+    expect(failures.length).toBeGreaterThan(0);
+    expect(failures[0]?.checkId).toBe('evidence-citations');
+  });
+
+  it('passes when all significance-scoring bullets have evidence', async () => {
+    writeArtifact(testDir, 'swot-analysis.md', '# SWOT\n\n');
+    writeArtifact(testDir, 'significance-scoring.md',
+      '# Significance\n\n1. Reform H901FiU1\n2. Tax HD01CU27\n'
+    );
+    const results = await checkEvidenceCitations(testDir);
+    const failures = results.filter((r) => !r.passed && r.artifact === 'significance-scoring.md');
+    expect(failures).toHaveLength(0);
+  });
+
+  it('fails when significance-scoring bullet is missing evidence', async () => {
+    writeArtifact(testDir, 'swot-analysis.md', '# SWOT\n\n');
+    writeArtifact(testDir, 'significance-scoring.md',
+      '# Significance\n\n1. Generic ranked item with no citation\n'
+    );
+    const results = await checkEvidenceCitations(testDir);
+    const failures = results.filter((r) => !r.passed && r.artifact === 'significance-scoring.md');
+    expect(failures.length).toBeGreaterThan(0);
+  });
+
+  it('returns empty when files do not exist', async () => {
+    const results = await checkEvidenceCitations(testDir);
+    expect(results).toHaveLength(0);
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -426,6 +554,66 @@ describe('checkMermaidDiagrams', () => {
     const failures = results.filter((r) => !r.passed);
     expect(failures.length).toBeGreaterThan(0);
     expect(failures[0]?.message).toContain('colour-coded config');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Tests: Check 6 — Pass-2 Evidence
+// ---------------------------------------------------------------------------
+
+describe('checkPass2Evidence', () => {
+  beforeEach(() => {
+    testDir = createTestDir();
+  });
+
+  afterEach(() => {
+    if (existsSync(testDir)) {
+      rmSync(testDir, { recursive: true, force: true });
+    }
+  });
+
+  it('passes when pass1/ snapshot differs from current file', async () => {
+    writeArtifact(testDir, 'README.md', '# Pass-2 improved content\n\nMore analysis here.\n');
+    const pass1Dir = join(testDir, 'pass1');
+    mkdirSync(pass1Dir, { recursive: true });
+    writeFileSync(join(pass1Dir, 'README.md'), '# Original pass1 draft\n\n', 'utf-8');
+
+    const results = await checkPass2Evidence(testDir);
+    const failures = results.filter((r) => !r.passed && r.artifact === 'README.md');
+    expect(failures).toHaveLength(0);
+  });
+
+  it('fails when pass1/ snapshot is identical to current file (no improvements)', async () => {
+    const content = '# Same content in both passes\n\nNothing changed.\n';
+    writeArtifact(testDir, 'README.md', content);
+    const pass1Dir = join(testDir, 'pass1');
+    mkdirSync(pass1Dir, { recursive: true });
+    writeFileSync(join(pass1Dir, 'README.md'), content, 'utf-8');
+
+    const results = await checkPass2Evidence(testDir);
+    const failures = results.filter((r) => !r.passed && r.artifact === 'README.md');
+    expect(failures.length).toBeGreaterThan(0);
+    expect(failures[0]?.message).toContain('Pass-2 evidence missing');
+  });
+
+  it('skips artifacts that do not exist', async () => {
+    // No files written — all PASS2 artifacts missing
+    const results = await checkPass2Evidence(testDir);
+    // Should return empty (non-existent files are skipped)
+    expect(results).toHaveLength(0);
+  });
+
+  it('returns pass2-evidence checkId on failure', async () => {
+    const content = '# Same content\n';
+    writeArtifact(testDir, 'README.md', content);
+    const pass1Dir = join(testDir, 'pass1');
+    mkdirSync(pass1Dir, { recursive: true });
+    writeFileSync(join(pass1Dir, 'README.md'), content, 'utf-8');
+
+    const results = await checkPass2Evidence(testDir);
+    const failures = results.filter((r) => !r.passed);
+    expect(failures.length).toBeGreaterThan(0);
+    expect(failures[0]?.checkId).toBe('pass2-evidence');
   });
 });
 
@@ -705,6 +893,69 @@ describe('checkPirStatus', () => {
     const failures = results.filter((r) => !r.passed);
     expect(failures.length).toBeGreaterThan(0);
   });
+
+  it('requires answer_summary when status is "answered"', async () => {
+    const pir = {
+      schema_version: '1.0',
+      cycle: 'propositions',
+      date: '2026-05-01',
+      subfolder: 'propositions',
+      pirs: [{
+        pir_id: 'PIR-FISCAL-001',
+        statement: 'Was the budget passed?',
+        status: 'answered',
+        confidence: 'HIGH',
+        // answer_summary intentionally omitted
+      }],
+      generated_at: '2026-05-01T10:00:00Z',
+    };
+    writeFileSync(join(testDir, 'pir-status.json'), JSON.stringify(pir), 'utf-8');
+    const results = await checkPirStatus(testDir);
+    const failures = results.filter((r) => !r.passed);
+    expect(failures.some((f) => f.message.includes('answer_summary'))).toBe(true);
+  });
+
+  it('passes when status is "answered" and answer_summary is present', async () => {
+    const pir = {
+      schema_version: '1.0',
+      cycle: 'propositions',
+      date: '2026-05-01',
+      subfolder: 'propositions',
+      pirs: [{
+        pir_id: 'PIR-FISCAL-001',
+        statement: 'Was the budget passed?',
+        status: 'answered',
+        confidence: 'HIGH',
+        answer_summary: 'Yes, budget was passed with majority.',
+      }],
+      generated_at: '2026-05-01T10:00:00Z',
+    };
+    writeFileSync(join(testDir, 'pir-status.json'), JSON.stringify(pir), 'utf-8');
+    const results = await checkPirStatus(testDir);
+    const failures = results.filter((r) => !r.passed);
+    expect(failures).toHaveLength(0);
+  });
+
+  it('fails when non-answered PIR carries answer_summary', async () => {
+    const pir = {
+      schema_version: '1.0',
+      cycle: 'propositions',
+      date: '2026-05-01',
+      subfolder: 'propositions',
+      pirs: [{
+        pir_id: 'PIR-FISCAL-001',
+        statement: 'What will the budget be?',
+        status: 'open',
+        confidence: 'MEDIUM',
+        answer_summary: 'Not yet resolved.',  // should not be present for 'open'
+      }],
+      generated_at: '2026-05-01T10:00:00Z',
+    };
+    writeFileSync(join(testDir, 'pir-status.json'), JSON.stringify(pir), 'utf-8');
+    const results = await checkPirStatus(testDir);
+    const failures = results.filter((r) => !r.passed);
+    expect(failures.some((f) => f.message.includes('must not carry answer_summary'))).toBe(true);
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -778,12 +1029,14 @@ describe('validateAnalysisGate', () => {
   it('passes with complete valid analysis', async () => {
     createMinimalValidAnalysis(testDir);
     const result = await validateAnalysisGate(testDir);
-    // May still have some failures due to minimal content not meeting all checks
-    // but the structure should be largely valid
-    const structuralFailures = result.checks.filter(
-      (c) => !c.passed && c.checkId === 'artifact-existence'
-    );
-    expect(structuralFailures).toHaveLength(0);
+    // Log failures to aid debugging if the test fails
+    if (!result.passed) {
+      for (const f of result.checks.filter((c) => !c.passed)) {
+        console.error('GATE FAILURE:', f.checkId, f.message);
+      }
+    }
+    expect(result.passed).toBe(true);
+    expect(result.failureCount).toBe(0);
   });
 
   it('returns aggregate failure count', async () => {

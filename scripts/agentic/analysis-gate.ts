@@ -32,7 +32,7 @@
  */
 
 import { readFile, stat, readdir } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
+import { existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
 import {
@@ -72,8 +72,14 @@ export async function validateAnalysisGate(
   // Check 3 — No stubs
   checks.push(...(await checkNoStubs(analysisDir)));
 
+  // Check 4 — Evidence citations
+  checks.push(...(await checkEvidenceCitations(analysisDir)));
+
   // Check 5 — Mermaid diagrams
   checks.push(...(await checkMermaidDiagrams(analysisDir)));
+
+  // Check 6 — Pass-2 evidence
+  checks.push(...(await checkPass2Evidence(analysisDir)));
 
   // Check 7 — Family C structure
   checks.push(...(await checkFamilyCStructure(analysisDir)));
@@ -106,12 +112,18 @@ export function checkArtifactExistence(analysisDir: string): GateCheckResult[] {
   const results: GateCheckResult[] = [];
   for (const filename of REQUIRED_ARTIFACT_FILENAMES) {
     const filePath = join(analysisDir, filename);
-    const exists = existsSync(filePath);
-    if (!exists) {
+    if (!existsSync(filePath)) {
       results.push({
         checkId: 'artifact-existence',
         passed: false,
         message: `Missing artifact: ${filename}`,
+        artifact: filename,
+      });
+    } else if (statSync(filePath).size === 0) {
+      results.push({
+        checkId: 'artifact-existence',
+        passed: false,
+        message: `Empty artifact (zero bytes): ${filename}`,
         artifact: filename,
       });
     } else {
@@ -164,8 +176,8 @@ export async function checkPerDocumentCoverage(
       passed: found,
       message: found
         ? `Document analysis found for ${dokId}`
-        : `Missing document analysis for ${dokId}`,
-      artifact: `documents/${dokId}.md`,
+        : `documents/${dokId}.md or documents/${dokId}-analysis.md missing (any case)`,
+      artifact: `documents/${dokId}-analysis.md`,
     });
   }
 
@@ -200,11 +212,14 @@ function hasDocumentAnalysis(documentsDir: string, dokId: string): boolean {
 // ---------------------------------------------------------------------------
 
 /**
- * Scan all artifacts for stub placeholder strings.
+ * Scan all artifacts (including `documents/` per-document analyses) for stub
+ * placeholder strings. The canonical gate uses a recursive scan over the
+ * whole analysis directory so Family E files are also covered.
  */
 export async function checkNoStubs(analysisDir: string): Promise<GateCheckResult[]> {
   const results: GateCheckResult[] = [];
 
+  // Scan the 23 required artifacts
   for (const filename of REQUIRED_ARTIFACT_FILENAMES) {
     const filePath = join(analysisDir, filename);
     if (!existsSync(filePath)) continue;
@@ -222,11 +237,224 @@ export async function checkNoStubs(analysisDir: string): Promise<GateCheckResult
     }
   }
 
+  // Also scan documents/ directory (Family E per-document analyses)
+  const documentsDir = join(analysisDir, 'documents');
+  if (existsSync(documentsDir)) {
+    const docFiles = await readdir(documentsDir);
+    for (const docFile of docFiles) {
+      if (!docFile.endsWith('.md')) continue;
+      const docPath = join(documentsDir, docFile);
+      const relPath = `documents/${docFile}`;
+      const content = await readFile(docPath, 'utf-8');
+      for (const stub of STUB_PLACEHOLDERS) {
+        if (content.includes(stub)) {
+          results.push({
+            checkId: 'no-stubs',
+            passed: false,
+            message: `Stub placeholder "${stub}" found in ${relPath}`,
+            artifact: relPath,
+          });
+        }
+      }
+    }
+  }
+
   if (results.length === 0) {
     results.push({
       checkId: 'no-stubs',
       passed: true,
       message: 'No stub placeholders detected',
+    });
+  }
+
+  return results;
+}
+
+// ---------------------------------------------------------------------------
+// Check 4 — Evidence citations
+// ---------------------------------------------------------------------------
+
+/**
+ * Verify that swot-analysis.md and significance-scoring.md contain primary-
+ * source evidence (a dok_id or recognised URL host) in each bullet/table row.
+ * Mirrors the awk-based gate in `05-analysis-gate.md` (check 4).
+ */
+export async function checkEvidenceCitations(
+  analysisDir: string,
+): Promise<GateCheckResult[]> {
+  const results: GateCheckResult[] = [];
+
+  results.push(...(await checkSwotEvidence(analysisDir)));
+  results.push(...(await checkSignificanceScoringEvidence(analysisDir)));
+
+  return results;
+}
+
+/** SWOT section headings that trigger per-line evidence enforcement. */
+const SWOT_SECTION_RE = /^###\s+.*(Strengths|Weaknesses|Opportunities|Threats)\b/i;
+/** Any heading resets the active SWOT section. */
+const ANY_HEADING_RE = /^#{1,6}\s+/;
+/** Bullet lines (- or * style). */
+const BULLET_RE = /^\s*[-*]\s+/;
+/** Table row (starts with |). */
+const TABLE_ROW_RE = /^\s*\|/;
+/** Separator row (only |, :, -, whitespace). */
+const TABLE_SEP_RE = /^\s*[|:\-\s]+$/;
+
+/**
+ * Check swot-analysis.md: every bullet and table row inside a SWOT section
+ * must contain at least one evidence citation.
+ */
+async function checkSwotEvidence(analysisDir: string): Promise<GateCheckResult[]> {
+  const results: GateCheckResult[] = [];
+  const filePath = join(analysisDir, 'swot-analysis.md');
+  if (!existsSync(filePath)) return results;
+
+  const content = await readFile(filePath, 'utf-8');
+  const lines = content.split('\n');
+  let currentSection = '';
+  let tableRowCount = 0;
+
+  for (const line of lines) {
+    if (SWOT_SECTION_RE.test(line)) {
+      currentSection = line.trim();
+      tableRowCount = 0;
+      continue;
+    }
+    if (ANY_HEADING_RE.test(line)) {
+      currentSection = '';
+      tableRowCount = 0;
+      continue;
+    }
+    if (!currentSection) continue;
+
+    if (/^\s*$/.test(line)) {
+      tableRowCount = 0;
+      continue;
+    }
+
+    if (BULLET_RE.test(line) && !EVIDENCE_PATTERN.test(line)) {
+      results.push({
+        checkId: 'evidence-citations',
+        passed: false,
+        message: `swot-analysis.md ${currentSection}: bullet missing evidence (dok_id or primary-source URL): ${line.trim()}`,
+        artifact: 'swot-analysis.md',
+      });
+      continue;
+    }
+
+    if (TABLE_ROW_RE.test(line)) {
+      if (TABLE_SEP_RE.test(line)) continue;
+      tableRowCount++;
+      if (tableRowCount === 1) continue; // skip header row
+      if (!EVIDENCE_PATTERN.test(line)) {
+        results.push({
+          checkId: 'evidence-citations',
+          passed: false,
+          message: `swot-analysis.md ${currentSection}: table row missing evidence (dok_id or primary-source URL): ${line.trim()}`,
+          artifact: 'swot-analysis.md',
+        });
+      }
+    }
+  }
+
+  if (results.length === 0) {
+    results.push({
+      checkId: 'evidence-citations',
+      passed: true,
+      message: 'swot-analysis.md: evidence citations present',
+      artifact: 'swot-analysis.md',
+    });
+  }
+
+  return results;
+}
+
+/** Mermaid structural keywords — these lines are never checked for evidence. */
+const MERMAID_STRUCTURAL_RE =
+  /^\s*(%%|style\b|classDef\b|class\b|linkStyle\b|subgraph\b|end\b|graph\b|flowchart\b|quadrantChart\b|mindmap\b|timeline\b|journey\b|gantt\b|pie\b|xychart-beta\b|sequenceDiagram\b|stateDiagram(-v2)?\b|erDiagram\b|sankey-beta\b|gitGraph\b|requirementDiagram\b|block-beta\b)/;
+/** Mermaid node/label content — lines with bracket-enclosed content indicate node labels. */
+const MERMAID_NODE_RE = /\[[^\]\n]+\]|\([^)\n]+\)/;
+
+/**
+ * Check significance-scoring.md: every ranked bullet/list item and table
+ * row (outside Mermaid) must contain evidence. Mermaid node labels are
+ * also checked unless they are structural keywords.
+ */
+async function checkSignificanceScoringEvidence(
+  analysisDir: string,
+): Promise<GateCheckResult[]> {
+  const results: GateCheckResult[] = [];
+  const filePath = join(analysisDir, 'significance-scoring.md');
+  if (!existsSync(filePath)) return results;
+
+  const content = await readFile(filePath, 'utf-8');
+  const lines = content.split('\n');
+  let inMermaid = false;
+  let tableRowCount = 0;
+
+  for (const line of lines) {
+    if (/^```mermaid\s*$/.test(line)) {
+      inMermaid = true;
+      tableRowCount = 0;
+      continue;
+    }
+    if (inMermaid && /^```\s*$/.test(line)) {
+      inMermaid = false;
+      continue;
+    }
+
+    if (inMermaid) {
+      if (MERMAID_STRUCTURAL_RE.test(line)) continue;
+      if (MERMAID_NODE_RE.test(line) && !EVIDENCE_PATTERN.test(line)) {
+        results.push({
+          checkId: 'evidence-citations',
+          passed: false,
+          message: `significance-scoring.md Mermaid node missing evidence (dok_id or primary-source URL): ${line.trim()}`,
+          artifact: 'significance-scoring.md',
+        });
+      }
+      continue;
+    }
+
+    if (/^\s*$/.test(line)) {
+      tableRowCount = 0;
+      continue;
+    }
+
+    // Ranked bullet (- or * or numbered)
+    if (/^\s*([0-9]+\.\s+|[-*]\s+)/.test(line) && !EVIDENCE_PATTERN.test(line)) {
+      results.push({
+        checkId: 'evidence-citations',
+        passed: false,
+        message: `significance-scoring.md ranked item missing evidence (dok_id or primary-source URL): ${line.trim()}`,
+        artifact: 'significance-scoring.md',
+      });
+      continue;
+    }
+
+    // Table rows
+    if (TABLE_ROW_RE.test(line)) {
+      if (TABLE_SEP_RE.test(line)) continue;
+      tableRowCount++;
+      if (tableRowCount === 1) continue; // skip header row
+      if (!EVIDENCE_PATTERN.test(line)) {
+        results.push({
+          checkId: 'evidence-citations',
+          passed: false,
+          message: `significance-scoring.md ranking table row missing evidence (dok_id or primary-source URL): ${line.trim()}`,
+          artifact: 'significance-scoring.md',
+        });
+      }
+    }
+  }
+
+  if (results.length === 0) {
+    results.push({
+      checkId: 'evidence-citations',
+      passed: true,
+      message: 'significance-scoring.md: evidence citations present',
+      artifact: 'significance-scoring.md',
     });
   }
 
@@ -279,6 +507,70 @@ export async function checkMermaidDiagrams(
         checkId: 'mermaid-diagrams',
         passed: true,
         message: `${filename}: Mermaid with colour config present`,
+        artifact: filename,
+      });
+    }
+  }
+
+  return results;
+}
+
+// ---------------------------------------------------------------------------
+// Check 6 — Pass-2 evidence
+// ---------------------------------------------------------------------------
+
+/**
+ * Verify that Pass-2 iteration was performed on each artifact: either a
+ * `pass1/` snapshot exists on disk that differs from the current file, OR
+ * the file's mtime is at least 180 s after its birth time (Linux birth time
+ * may not be reliable; the `pass1/` check is the preferred mechanism).
+ */
+export async function checkPass2Evidence(
+  analysisDir: string,
+): Promise<GateCheckResult[]> {
+  const results: GateCheckResult[] = [];
+  const pass1Dir = join(analysisDir, 'pass1');
+
+  for (const filename of PASS2_REQUIRED_ARTIFACTS) {
+    const filePath = join(analysisDir, filename);
+    if (!existsSync(filePath)) continue;
+
+    let pass2Done = false;
+
+    // Primary evidence: a differing pass1/ snapshot
+    const pass1Path = join(pass1Dir, filename);
+    if (existsSync(pass1Path)) {
+      const [current, snapshot] = await Promise.all([
+        readFile(filePath, 'utf-8'),
+        readFile(pass1Path, 'utf-8'),
+      ]);
+      if (current !== snapshot) {
+        pass2Done = true;
+      }
+    }
+
+    // Fallback: mtime >= birthtime + 180 s (where birth time is available)
+    if (!pass2Done) {
+      const fileStat = await stat(filePath);
+      const birthtimeMs = fileStat.birthtimeMs;
+      const mtimeMs = fileStat.mtimeMs;
+      if (birthtimeMs > 0 && mtimeMs >= birthtimeMs + 180_000) {
+        pass2Done = true;
+      }
+    }
+
+    if (!pass2Done) {
+      results.push({
+        checkId: 'pass2-evidence',
+        passed: false,
+        message: `${filename}: Pass-2 evidence missing (mtime < birth+180s and no differing pass1/ snapshot)`,
+        artifact: filename,
+      });
+    } else {
+      results.push({
+        checkId: 'pass2-evidence',
+        passed: true,
+        message: `${filename}: Pass-2 evidence confirmed`,
         artifact: filename,
       });
     }
@@ -794,6 +1086,24 @@ export async function checkPirStatus(analysisDir: string): Promise<GateCheckResu
         checkId: 'pir-status',
         passed: false,
         message: `pir-status.json pir=${pid}: invalid confidence '${pir.confidence}'`,
+      });
+    }
+
+    // Conditional: answer_summary required iff status == 'answered'; must
+    // not be present for any other status (the canonical Python gate enforces
+    // both directions as a cross-field invariant).
+    if (pir.status === 'answered' && !pir.answer_summary) {
+      results.push({
+        checkId: 'pir-status',
+        passed: false,
+        message: `pir-status.json pir=${pid}: status=answered requires non-empty answer_summary`,
+      });
+    }
+    if (pir.status !== 'answered' && pir.answer_summary !== undefined) {
+      results.push({
+        checkId: 'pir-status',
+        passed: false,
+        message: `pir-status.json pir=${pid}: status=${pir.status} must not carry answer_summary`,
       });
     }
   }
