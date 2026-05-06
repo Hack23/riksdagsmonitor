@@ -11,15 +11,22 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-1.4-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--05--03-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-1.5-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--06-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.4 | **📅 Last Updated:** 2026-05-03 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 1.5 | **📅 Last Updated:** 2026-05-06 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-03  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
+> **🆕 What changed since last review (v1.4 → v1.5, 2026-05-06):**
+> - Added **§11 Political Intelligence Methods Mindmap** (18 methodologies grouped by domain).
+> - Added **§12 Analysis Templates Mindmap** (39 templates grouped by function).
+> - Added **§13 Horizon Stratification Mindmap** (T+72h → T+1460d model with analysis gate).
+> - Updated platform version to **v0.8.76**, test count to **3,319+**, toolchain to Vite 8.0.10 / Vitest 4.1.5.
+> - Updated agent/skills counts: **24 agents**, **93 skills**.
+>
 > **🆕 What changed since last review (v1.2 → v1.3, 2026-04-20):**
 > - 📈 Added **🌐 IMF** branch under Data Integration alongside World Bank (WEO, Fiscal Monitor, IFS, SDMX 3.0, T+5 projections, pure-TypeScript client `scripts/imf-client.ts` — *not an MCP server*, per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md)).
 >
@@ -88,6 +95,11 @@ mindmap
       Threat Model
       Workflows Documentation
       Future Roadmap
+    📦 Platform v0.8.76
+      3,319+ Tests (84 files)
+      24 Agents · 93 Skills
+      14 Languages
+      8 MCP Servers
 ```
 
 ---
@@ -436,6 +448,130 @@ mindmap
       Sitemap.xml Entries
       Language Switching
       Content Localization
+```
+
+---
+
+## 11. 🔬 Political Intelligence Methods Mindmap
+
+```mermaid
+mindmap
+  root((🔬 Political Intelligence<br/>Methods · 18))
+    📊 Core Analysis
+      AI-Driven Analysis Guide
+      Synthesis Methodology
+      Per-Artifact Methodologies
+      Per-Document Methodology
+    🎯 Political Domain
+      Political Classification Guide
+      Political Risk Methodology
+      Political SWOT Framework
+      Political Threat Framework
+      Political Style Guide
+    🌍 Data Sources
+      IMF Indicator Mapping
+      World Bank Indicator Mapping
+      OSINT Tradecraft Standards
+    📐 Structural
+      Structural Metadata Methodology
+      Artifact Catalog
+      Strategic Extensions
+      Electoral Domain Methodology
+    🔍 Quality
+      Analytical Supplementary
+      Reference Quality Thresholds
+```
+
+---
+
+## 12. 📋 Analysis Templates Mindmap
+
+```mermaid
+mindmap
+  root((📋 Analysis<br/>Templates · 39))
+    🎯 Core Analysis
+      Intelligence Assessment
+      Executive Brief
+      Synthesis Summary
+      Analysis Index
+      Significance Scoring
+    ⚠️ Risk & Threat
+      Risk Assessment
+      Threat Analysis
+      Political STRIDE Assessment
+      Devils Advocate
+      Wildcards Black Swans
+    📈 Strategic
+      SWOT Analysis
+      Quantitative SWOT
+      PESTLE Analysis
+      Scenario Analysis
+      Implementation Feasibility
+    🗳️ Electoral
+      Election 2026 Analysis
+      Election Cycle Analysis
+      Coalition Mathematics
+      Voter Segmentation
+    🔭 Forward-Looking
+      Forward Indicators
+      Horizon PIR Roll-Forward
+      Cycle Trajectory
+      Month-Ahead / Week-Ahead
+    🌍 Comparative
+      Comparative International
+      Historical Parallels
+      Media Framing Analysis
+    👥 Stakeholder
+      Stakeholder Impact
+      Political Classification
+      Per-File Political Intel
+    🏛️ Parliamentary
+      Parliamentary Season
+      Session Baseline
+      Cross-Session Intelligence
+    ✅ Quality
+      Methodology Reflection
+      Reference Analysis Quality
+      MCP Reliability Audit
+      Workflow Audit
+    🔧 Infrastructure
+      Cross-Reference Map
+      Cross-Run Diff
+      Data Download Manifest
+```
+
+---
+
+## 13. 🔭 Horizon Stratification Mindmap
+
+```mermaid
+mindmap
+  root((🔭 Horizon<br/>Stratification))
+    ⏱️ Short-Term
+      T+72h Breaking News
+      T+7d Week-Ahead Forecast
+    📅 Medium-Term
+      T+30d Month-Ahead Analysis
+      T+90d Quarter Outlook
+    📆 Long-Term
+      T+365d Annual Projection
+      T+1460d Election Cycle
+      Election Anchor Date
+    🏗️ Structure
+      23-Artifact Families A-D
+      Family A Core Synthesis (9)
+      Family B Structural Metadata (2)
+      Family C Strategic Extensions (5)
+      Family D Electoral Lenses (7)
+    🚦 Analysis Gate
+      Checks 1-9b Automated
+      AI-FIRST 2-Iteration Model
+      Pass 1 Create
+      Pass 2 Review and Improve
+    📊 Scenario Depth
+      Quarter: 4 Scenarios
+      Year: 4+5 Wildcards
+      Election: 12 Leaves + 5 Wildcards
 ```
 
 ---
