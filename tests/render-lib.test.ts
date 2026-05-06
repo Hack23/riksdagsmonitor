@@ -1255,13 +1255,21 @@ describe('render-lib — renderArticleHtml (end-to-end)', () => {
     expect(html.startsWith('<!DOCTYPE html>')).toBe(true);
     expect(html).toContain('<article class="rm-article rm-article-type-propositions"');
     expect(html).toContain('data-article-type="propositions"');
-    expect(html).toContain('<p class="rm-article-eyebrow">Propositions</p>');
+    expect(html).toContain('<p class="rm-article-eyebrow"><span class="rm-icon" aria-hidden="true">🔍</span> Propositions</p>');
     expect(html).toContain('<h1>Propositions 2099-01-01</h1>');
     expect(html).toContain('<p class="rm-article-dek">Real BLUF for propositions.</p>');
     expect(html).toContain('Traceable artifacts');
     expect(html).toContain('class="rm-article-sources"');
     expect(html).toContain('executive-brief.md');
     expect(html).toContain('risk-assessment.md');
+    // New card-based sources: icon + i18n title + filename
+    expect(html).toContain('class="rm-source-card"');
+    expect(html).toContain('rm-source-card-icon');
+    expect(html).toContain('rm-source-card-title');
+    expect(html).toContain('Executive Brief'); // i18n title
+    expect(html).toContain('Risk Assessment'); // i18n title
+    expect(html).toContain('📊'); // executive-brief icon
+    expect(html).toContain('⚠️'); // risk-assessment icon
     // Sources link must resolve to GitHub blob.
     expect(html).toContain(
       `${GITHUB_BLOB}/analysis/daily/2099-01-01/propositions/executive-brief.md`,
@@ -1271,6 +1279,14 @@ describe('render-lib — renderArticleHtml (end-to-end)', () => {
     expect(html).toContain('"isBasedOn"');
     // Body preserves real content.
     expect(html).toContain('The lede paragraph');
+    // Reader Intelligence Guide section.
+    expect(html).toContain('class="rm-reader-guide"');
+    expect(html).toContain('Reader Intelligence Guide');
+    expect(html).toContain('OSINT tradecraft');
+    expect(html).toContain('AI-FIRST dual-pass review');
+    expect(html).toContain('SWOT');
+    expect(html).toContain('Fully traceable artifacts');
+    expect(html).toContain('political-intelligence.html');
   });
 
   it('strips <script> injected via aggregated markdown source', async () => {
@@ -1314,6 +1330,21 @@ describe('render-lib — renderArticleHtml (end-to-end)', () => {
     expect(html).toContain('hreflang="en"');
     expect(html).toContain('hreflang="sv"');
     expect(html).toContain('hreflang="x-default"');
+  });
+
+  it('renders Reader Intelligence Guide in Swedish for lang=sv', async () => {
+    const html = await renderArticleHtml({
+      markdown: articleMd,
+      lang: 'sv',
+      canonicalPath: 'news/2099-01-01-propositions-sv.html',
+      subfolderRepoRelPath: 'analysis/daily/2099-01-01/propositions',
+      artifactsUsed: ['executive-brief.md'],
+    });
+    expect(html).toContain('Läsguide för underrättelseanalys');
+    expect(html).toContain('OSINT-metodik');
+    expect(html).toContain('political-intelligence_sv.html');
+    // Swedish i18n title in source card
+    expect(html).toContain('Chefsbriefing'); // sv title for executive-brief.md
   });
 });
 

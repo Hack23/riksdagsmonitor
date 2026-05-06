@@ -40,6 +40,7 @@ import { buildChrome } from './chrome.js';
 import { buildBreadcrumbListLd, buildNewsArticleLd, buildSpeakableWebPageLd, BREADCRUMB_TITLE_MAX_LENGTH, BREADCRUMB_ELLIPSIS_OVERHEAD } from './jsonld.js';
 
 import { getBySubfolder, getById, loadArticleTypesRegistry } from './article-types.js';
+import { artifactTitle, artifactIcon } from '../political-intelligence/i18n/artifact-i18n.js';
 
 /**
  * CSS selectors identifying the voice-assistant TTS-readable regions of
@@ -196,45 +197,95 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
     section: 'Political Intelligence',
   });
 
-  // Footer "Analysis sources" block — every artifact linked to GitHub.
-  const sourcesList = (input.artifactsUsed ?? [])
+  // Footer "Analysis sources" block — every artifact linked to GitHub
+  // with icon + i18n title + filename in a card grid.
+  const artifacts = input.artifactsUsed ?? [];
+  const sourcesHeading = langMeta.translations.articleSourcesHeading;
+  const sourcesDesc = langMeta.translations.articleSourcesDesc;
+  const methodologyLabel = langMeta.translations.articleMethodologyLabel;
+  const sourceCards = artifacts
     .map((a) => {
       const href = input.subfolderRepoRelPath
         ? buildGithubBlobUrl(`${input.subfolderRepoRelPath}/${a}`)
         : a;
-      return `        <li><a href="${href}" target="_blank" rel="noopener noreferrer"><code>${escapeHtml(a)}</code></a></li>`;
+      const icon = artifactIcon(a);
+      const title = artifactTitle(a, input.lang);
+      return `          <a class="rm-source-card" href="${href}" target="_blank" rel="noopener noreferrer">
+            <span class="rm-source-card-icon" aria-hidden="true">${icon}</span>
+            <span class="rm-source-card-info">
+              <span class="rm-source-card-title">${escapeHtml(title)}</span>
+              <code class="rm-source-card-file">${escapeHtml(a)}</code>
+            </span>
+            <span class="rm-source-card-arrow" aria-hidden="true">↗</span>
+          </a>`;
     })
     .join('\n');
-  const sourcesHtml = sourcesList ? `
+  const sourcesHtml = sourceCards ? `
       <section class="rm-article-sources" aria-labelledby="rm-article-sources-heading">
-        <h2 id="rm-article-sources-heading">Analysis sources</h2>
-        <p>This article is rendered 100% from the analysis artifacts below. Every section of the prose above is traceable to one of these source files on GitHub.</p>
-        <ul class="rm-article-sources-list">
-${sourcesList}
-        </ul>
+        <h2 id="rm-article-sources-heading"><span class="rm-icon" aria-hidden="true">📋</span> ${escapeHtml(sourcesHeading)}</h2>
+        <p>${escapeHtml(sourcesDesc)}</p>
+        <details class="rm-article-methodology" open>
+          <summary><span class="rm-icon" aria-hidden="true">🔬</span> ${escapeHtml(methodologyLabel)} <span class="rm-source-count">(${artifacts.length})</span></summary>
+          <div class="rm-article-sources-grid">
+${sourceCards}
+          </div>
+        </details>
       </section>` : '';
+
+  // Reader Intelligence Guide — explains analysis methods to readers.
+  const rg = langMeta.translations;
+  const piFile = input.lang === 'en' ? 'political-intelligence.html' : `political-intelligence_${input.lang}.html`;
+  const readerGuideHtml = `
+      <section class="rm-reader-guide" aria-labelledby="rm-reader-guide-heading">
+        <h2 id="rm-reader-guide-heading"><span class="rm-icon" aria-hidden="true">🧭</span> ${escapeHtml(rg.articleReaderGuideHeading)}</h2>
+        <p class="rm-reader-guide-desc">${escapeHtml(rg.articleReaderGuideDesc)}</p>
+        <div class="rm-reader-guide-grid">
+          <div class="rm-reader-guide-card">
+            <div class="rm-reader-guide-card-icon" aria-hidden="true">🕵️</div>
+            <h3>${escapeHtml(rg.articleReaderGuideOsint)}</h3>
+            <p>${escapeHtml(rg.articleReaderGuideOsintDesc)}</p>
+          </div>
+          <div class="rm-reader-guide-card">
+            <div class="rm-reader-guide-card-icon" aria-hidden="true">🤖</div>
+            <h3>${escapeHtml(rg.articleReaderGuideAiFirst)}</h3>
+            <p>${escapeHtml(rg.articleReaderGuideAiFirstDesc)}</p>
+          </div>
+          <div class="rm-reader-guide-card">
+            <div class="rm-reader-guide-card-icon" aria-hidden="true">🧮</div>
+            <h3>${escapeHtml(rg.articleReaderGuideSwot)}</h3>
+            <p>${escapeHtml(rg.articleReaderGuideSwotDesc)}</p>
+          </div>
+          <div class="rm-reader-guide-card">
+            <div class="rm-reader-guide-card-icon" aria-hidden="true">🔗</div>
+            <h3>${escapeHtml(rg.articleReaderGuideTraceable)}</h3>
+            <p>${escapeHtml(rg.articleReaderGuideTraceableDesc)}</p>
+          </div>
+        </div>
+        <p class="rm-reader-guide-cta"><a href="/${piFile}"><span class="rm-icon" aria-hidden="true">📚</span> ${escapeHtml(rg.articleReaderGuideMoreMethodologies)}</a></p>
+      </section>`;
 
   return `${chrome.head}
 ${chrome.headerHtml}
       <article class="rm-article rm-article-type-${escapeHtml(articleType.type)}" data-article-type="${escapeHtml(articleType.type)}" lang="${LANGUAGE_META[input.lang].hreflang}">
         <header class="rm-article-header">
-          <p class="rm-article-eyebrow">${escapeHtml(articleType.label)}</p>
+          <p class="rm-article-eyebrow"><span class="rm-icon" aria-hidden="true">🔍</span> ${escapeHtml(articleType.label)}</p>
           <h1>${escapeHtml(title)}</h1>
           <p class="rm-article-dek">${escapeHtml(description)}</p>
           <p class="rm-article-meta">
-            <time datetime="${publishedIso}">${escapeHtml(date)}</time>
+            <time datetime="${publishedIso}"><span class="rm-icon" aria-hidden="true">📅</span> ${escapeHtml(date)}</time>
             · <span class="rm-article-lang">${LANGUAGE_META[input.lang].flag} ${LANGUAGE_META[input.lang].nativeName}</span>
           </p>
           <ul class="rm-article-trust-badges" aria-label="${escapeHtml(LANGUAGE_META[input.lang].translations.articleTrustAriaLabel)}">
-            <li>${escapeHtml(LANGUAGE_META[input.lang].translations.articleTrustPublicSources)}</li>
-            <li>${escapeHtml(LANGUAGE_META[input.lang].translations.articleTrustAiFirst)}</li>
-            <li>${escapeHtml(LANGUAGE_META[input.lang].translations.articleTrustTraceable)}</li>
+            <li><span class="rm-icon" aria-hidden="true">🏛️</span> ${escapeHtml(LANGUAGE_META[input.lang].translations.articleTrustPublicSources)}</li>
+            <li><span class="rm-icon" aria-hidden="true">🤖</span> ${escapeHtml(LANGUAGE_META[input.lang].translations.articleTrustAiFirst)}</li>
+            <li><span class="rm-icon" aria-hidden="true">🔗</span> ${escapeHtml(LANGUAGE_META[input.lang].translations.articleTrustTraceable)}</li>
           </ul>
         </header>
         <div class="rm-article-body">
 ${bodyHtml}
         </div>
 ${sourcesHtml}
+${readerGuideHtml}
       </article>
 ${chrome.footerHtml}`;
 }

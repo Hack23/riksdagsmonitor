@@ -61,6 +61,20 @@ export interface LanguageMeta {
     articleTrustPublicSources: string;
     articleTrustAiFirst: string;
     articleTrustTraceable: string;
+    articleSourcesHeading: string;
+    articleSourcesDesc: string;
+    articleMethodologyLabel: string;
+    articleReaderGuideHeading: string;
+    articleReaderGuideDesc: string;
+    articleReaderGuideOsint: string;
+    articleReaderGuideOsintDesc: string;
+    articleReaderGuideAiFirst: string;
+    articleReaderGuideAiFirstDesc: string;
+    articleReaderGuideSwot: string;
+    articleReaderGuideSwotDesc: string;
+    articleReaderGuideTraceable: string;
+    articleReaderGuideTraceableDesc: string;
+    articleReaderGuideMoreMethodologies: string;
   };
 }
 
@@ -86,6 +100,13 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: 'Test Results', testResultsDesc: 'Automated test results and reports.',
       recentArticles: 'Recent News Articles', newsIndexPages: 'News Index Pages',
       articleTrustAriaLabel: "Article provenance and quality controls", articleTrustPublicSources: "Public sources", articleTrustAiFirst: "AI-FIRST review", articleTrustTraceable: "Traceable artifacts",
+      articleSourcesHeading: "Analysis sources & methodology", articleSourcesDesc: "This article is rendered 100% from the analysis artifacts below — every claim is traceable to an auditable source file on GitHub.", articleMethodologyLabel: "Methodology",
+      articleReaderGuideHeading: "Reader Intelligence Guide", articleReaderGuideDesc: "How to read this analysis — understand the methods and standards behind every article on Riksdagsmonitor.",
+      articleReaderGuideOsint: "OSINT tradecraft", articleReaderGuideOsintDesc: "All data comes from publicly available parliamentary and government sources, collected using professional open-source intelligence standards.",
+      articleReaderGuideAiFirst: "AI-FIRST dual-pass review", articleReaderGuideAiFirstDesc: "Every article undergoes at least two complete analysis passes — the second iteration critically revises and deepens the first, ensuring no shallow conclusions.",
+      articleReaderGuideSwot: "SWOT & risk scoring", articleReaderGuideSwotDesc: "Political positions are evaluated using structured SWOT frameworks and quantitative risk scoring grounded in coalition dynamics, policy volatility, and narrative risk.",
+      articleReaderGuideTraceable: "Fully traceable artifacts", articleReaderGuideTraceableDesc: "Every claim links to an auditable analysis artifact on GitHub — readers can verify any assertion by following the source links.",
+      articleReaderGuideMoreMethodologies: "Explore full methodology library",
     },
   },
   sv: {
@@ -108,6 +129,13 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: 'Testresultat', testResultsDesc: 'Automatiserade testresultat och rapporter.',
       recentArticles: 'Senaste nyhetsartiklar', newsIndexPages: 'Nyhetsindexsidor',
       articleTrustAriaLabel: "Artikelhärkomst och kvalitetskontroller", articleTrustPublicSources: "Offentliga källor", articleTrustAiFirst: "AI-FIRST granskning", articleTrustTraceable: "Spårbara artefakter",
+      articleSourcesHeading: "Analyskällor och metodik", articleSourcesDesc: "Denna artikel renderas till 100 % från analysartefakterna nedan — varje påstående är spårbart till en granskningsbar källfil på GitHub.", articleMethodologyLabel: "Metodik",
+      articleReaderGuideHeading: "Läsguide för underrättelseanalys", articleReaderGuideDesc: "Så läser du denna analys — förstå metoderna och standarderna bakom varje artikel på Riksdagsmonitor.",
+      articleReaderGuideOsint: "OSINT-metodik", articleReaderGuideOsintDesc: "All data kommer från offentligt tillgängliga riksdags- och regeringskällor, insamlade enligt professionella standarder för öppen källinformation.",
+      articleReaderGuideAiFirst: "AI-FIRST dubbelpassgranskning", articleReaderGuideAiFirstDesc: "Varje artikel genomgår minst två kompletta analyspass — den andra iterationen reviderar och fördjupar den första kritiskt, utan ytliga slutsatser.",
+      articleReaderGuideSwot: "SWOT & riskbedömning", articleReaderGuideSwotDesc: "Politiska positioner utvärderas med strukturerade SWOT-ramverk och kvantitativ riskpoängsättning baserad på koalitionsdynamik, politisk volatilitet och narrativa risker.",
+      articleReaderGuideTraceable: "Fullt spårbara artefakter", articleReaderGuideTraceableDesc: "Varje påstående länkar till en granskningsbar analysartefakt på GitHub — läsare kan verifiera alla påståenden genom att följa källlänkarna.",
+      articleReaderGuideMoreMethodologies: "Utforska hela metodbiblioteket",
     },
   },
   da: {
@@ -130,6 +158,13 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: 'Testresultater', testResultsDesc: 'Automatiserede testresultater og rapporter.',
       recentArticles: 'Seneste nyheder', newsIndexPages: 'Nyhedsindekssider',
       articleTrustAriaLabel: "Artikelproveniens og kvalitetskontroller", articleTrustPublicSources: "Offentlige kilder", articleTrustAiFirst: "AI-FIRST gennemgang", articleTrustTraceable: "Sporbare artefakter",
+      articleSourcesHeading: "Analysekilder og metodik", articleSourcesDesc: "Denne artikel er renderet 100 % fra analyseartefakterne nedenfor — enhver påstand er sporbar til en reviderbar kildefil på GitHub.", articleMethodologyLabel: "Metodik",
+      articleReaderGuideHeading: "Læserguide til efterretningsanalyse", articleReaderGuideDesc: "Sådan læser du denne analyse — forstå metoderne og standarderne bag hver artikel på Riksdagsmonitor.",
+      articleReaderGuideOsint: "OSINT-metodik", articleReaderGuideOsintDesc: "Alle data stammer fra offentligt tilgængelige parlaments- og regeringskilder, indsamlet efter professionelle OSINT-standarder.",
+      articleReaderGuideAiFirst: "AI-FIRST dobbeltgennemgang", articleReaderGuideAiFirstDesc: "Hver artikel gennemgår mindst to komplette analysepas — anden iteration reviderer og uddyber den første kritisk.",
+      articleReaderGuideSwot: "SWOT & risikovurdering", articleReaderGuideSwotDesc: "Politiske positioner vurderes med strukturerede SWOT-rammer og kvantitativ risikoscoring baseret på koalitionsdynamik og politisk volatilitet.",
+      articleReaderGuideTraceable: "Fuldt sporbare artefakter", articleReaderGuideTraceableDesc: "Enhver påstand linker til en reviderbar analyseartefakt på GitHub — læsere kan verificere alle påstande.",
+      articleReaderGuideMoreMethodologies: "Udforsk det fulde metodbibliotek",
     },
   },
   no: {
@@ -152,6 +187,13 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: 'Testresultater', testResultsDesc: 'Automatiserte testresultater og rapporter.',
       recentArticles: 'Siste nyheter', newsIndexPages: 'Nyhetsindekssider',
       articleTrustAriaLabel: "Artikelproveniens og kvalitetskontroller", articleTrustPublicSources: "Offentlige kilder", articleTrustAiFirst: "AI-FIRST gjennomgang", articleTrustTraceable: "Sporbare artefakter",
+      articleSourcesHeading: "Analysekilder og metodikk", articleSourcesDesc: "Denne artikkelen er gjengitt 100 % fra analyseartefaktene nedenfor — enhver påstand er sporbar til en reviderbar kildefil på GitHub.", articleMethodologyLabel: "Metodikk",
+      articleReaderGuideHeading: "Leserguide for etterretningsanalyse", articleReaderGuideDesc: "Slik leser du denne analysen — forstå metodene og standardene bak hver artikkel på Riksdagsmonitor.",
+      articleReaderGuideOsint: "OSINT-metodikk", articleReaderGuideOsintDesc: "Alle data kommer fra offentlig tilgjengelige parlamentariske og statlige kilder, samlet inn etter profesjonelle OSINT-standarder.",
+      articleReaderGuideAiFirst: "AI-FIRST dobbeltgjennomgang", articleReaderGuideAiFirstDesc: "Hver artikkel gjennomgår minst to komplette analysepass — den andre iterasjonen reviderer og utdyper den første kritisk.",
+      articleReaderGuideSwot: "SWOT & risikovurdering", articleReaderGuideSwotDesc: "Politiske posisjoner vurderes med strukturerte SWOT-rammeverk og kvantitativ risikoscoring basert på koalisjonsdynamikk og politisk volatilitet.",
+      articleReaderGuideTraceable: "Fullt sporbare artefakter", articleReaderGuideTraceableDesc: "Enhver påstand lenker til en reviderbar analyseartefakt på GitHub — lesere kan verifisere alle påstander.",
+      articleReaderGuideMoreMethodologies: "Utforsk hele metodbiblioteket",
     },
   },
   fi: {
@@ -174,6 +216,13 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: 'Testitulokset', testResultsDesc: 'Automatisoidut testitulokset ja raportit.',
       recentArticles: 'Viimeisimmät uutiset', newsIndexPages: 'Uutisindeksisivut',
       articleTrustAriaLabel: "Artikkelin alkuperä ja laadunvalvonta", articleTrustPublicSources: "Julkiset lähteet", articleTrustAiFirst: "AI-FIRST tarkastus", articleTrustTraceable: "Jäljitettävät artefaktit",
+      articleSourcesHeading: "Analyysilähteet ja metodologia", articleSourcesDesc: "Tämä artikkeli on tuotettu 100 % alla olevista analyysiartifakteista — jokainen väite on jäljitettävissä tarkastettavaan lähdetiedostoon GitHubissa.", articleMethodologyLabel: "Metodologia",
+      articleReaderGuideHeading: "Lukijan tiedusteluopas", articleReaderGuideDesc: "Näin luet tätä analyysiä — ymmärrä Riksdagsmonitorin artikkeleiden takana olevat menetelmät ja standardit.",
+      articleReaderGuideOsint: "OSINT-menetelmät", articleReaderGuideOsintDesc: "Kaikki data tulee julkisesti saatavilla olevista parlamentaarisista ja hallituksen lähteistä, kerätty ammattimaisten OSINT-standardien mukaisesti.",
+      articleReaderGuideAiFirst: "AI-FIRST kaksoisläpikäynti", articleReaderGuideAiFirstDesc: "Jokainen artikkeli käy läpi vähintään kaksi täydellistä analyysikierrosta — toinen iteraatio arvioi ja syventää ensimmäistä kriittisesti.",
+      articleReaderGuideSwot: "SWOT ja riskiarviointi", articleReaderGuideSwotDesc: "Poliittisia kantoja arvioidaan rakenteisilla SWOT-kehyksillä ja määrällisellä riskipisteyttämisellä koalitiodynamiikan ja poliittisen volatiliteetin perusteella.",
+      articleReaderGuideTraceable: "Täysin jäljitettävät artefaktit", articleReaderGuideTraceableDesc: "Jokainen väite linkittää tarkastettavaan analyysiartifaktiin GitHubissa — lukijat voivat todentaa kaikki väitteet.",
+      articleReaderGuideMoreMethodologies: "Tutustu koko menetelmäkirjastoon",
     },
   },
   de: {
@@ -196,6 +245,13 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: 'Testergebnisse', testResultsDesc: 'Automatisierte Testergebnisse und Berichte.',
       recentArticles: 'Aktuelle Nachrichten', newsIndexPages: 'Nachrichtenindexseiten',
       articleTrustAriaLabel: "Artikelherkunft und Qualitätskontrollen", articleTrustPublicSources: "Öffentliche Quellen", articleTrustAiFirst: "AI-FIRST Prüfung", articleTrustTraceable: "Nachvollziehbare Artefakte",
+      articleSourcesHeading: "Analysequellen und Methodik", articleSourcesDesc: "Dieser Artikel wird zu 100 % aus den unten aufgeführten Analyseartefakten gerendert — jede Behauptung ist auf eine überprüfbare Quelldatei auf GitHub zurückführbar.", articleMethodologyLabel: "Methodik",
+      articleReaderGuideHeading: "Leserguide zur Nachrichtenanalyse", articleReaderGuideDesc: "So lesen Sie diese Analyse — verstehen Sie die Methoden und Standards hinter jedem Artikel auf Riksdagsmonitor.",
+      articleReaderGuideOsint: "OSINT-Methodik", articleReaderGuideOsintDesc: "Alle Daten stammen aus öffentlich zugänglichen parlamentarischen und staatlichen Quellen, gesammelt nach professionellen OSINT-Standards.",
+      articleReaderGuideAiFirst: "AI-FIRST Doppelprüfung", articleReaderGuideAiFirstDesc: "Jeder Artikel durchläuft mindestens zwei vollständige Analysedurchgänge — die zweite Iteration überprüft und vertieft die erste kritisch.",
+      articleReaderGuideSwot: "SWOT & Risikobewertung", articleReaderGuideSwotDesc: "Politische Positionen werden mit strukturierten SWOT-Rahmen und quantitativer Risikobewertung basierend auf Koalitionsdynamik und politischer Volatilität bewertet.",
+      articleReaderGuideTraceable: "Vollständig nachverfolgbare Artefakte", articleReaderGuideTraceableDesc: "Jede Behauptung verlinkt auf ein überprüfbares Analyseartefakt auf GitHub — Leser können alle Aussagen verifizieren.",
+      articleReaderGuideMoreMethodologies: "Gesamte Methodenbibliothek erkunden",
     },
   },
   fr: {
@@ -218,6 +274,13 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: 'Résultats des tests', testResultsDesc: 'Résultats de tests automatisés et rapports.',
       recentArticles: 'Articles récents', newsIndexPages: 'Pages d\'index des actualités',
       articleTrustAriaLabel: "Provenance de l'article et contrôles qualité", articleTrustPublicSources: "Sources publiques", articleTrustAiFirst: "Examen AI-FIRST", articleTrustTraceable: "Artefacts traçables",
+      articleSourcesHeading: "Sources d'analyse et méthodologie", articleSourcesDesc: "Cet article est rendu à 100 % à partir des artefacts d'analyse ci-dessous — chaque affirmation est traçable à un fichier source vérifiable sur GitHub.", articleMethodologyLabel: "Méthodologie",
+      articleReaderGuideHeading: "Guide de lecture du renseignement", articleReaderGuideDesc: "Comment lire cette analyse — comprenez les méthodes et les normes derrière chaque article de Riksdagsmonitor.",
+      articleReaderGuideOsint: "Méthodologie OSINT", articleReaderGuideOsintDesc: "Toutes les données proviennent de sources parlementaires et gouvernementales accessibles au public, collectées selon les normes professionnelles de renseignement en source ouverte.",
+      articleReaderGuideAiFirst: "Double révision AI-FIRST", articleReaderGuideAiFirstDesc: "Chaque article subit au moins deux passes d'analyse complètes — la seconde itération révise et approfondit la première de manière critique.",
+      articleReaderGuideSwot: "SWOT et évaluation des risques", articleReaderGuideSwotDesc: "Les positions politiques sont évaluées à l'aide de cadres SWOT structurés et d'une notation quantitative des risques basée sur la dynamique des coalitions et la volatilité politique.",
+      articleReaderGuideTraceable: "Artefacts entièrement traçables", articleReaderGuideTraceableDesc: "Chaque affirmation renvoie à un artefact d'analyse vérifiable sur GitHub — les lecteurs peuvent vérifier toute assertion.",
+      articleReaderGuideMoreMethodologies: "Explorer la bibliothèque de méthodologies",
     },
   },
   es: {
@@ -240,6 +303,13 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: 'Resultados de pruebas', testResultsDesc: 'Resultados de pruebas automatizadas e informes.',
       recentArticles: 'Artículos recientes', newsIndexPages: 'Páginas de índice de noticias',
       articleTrustAriaLabel: "Procedencia del artículo y controles de calidad", articleTrustPublicSources: "Fuentes públicas", articleTrustAiFirst: "Revisión AI-FIRST", articleTrustTraceable: "Artefactos rastreables",
+      articleSourcesHeading: "Fuentes de análisis y metodología", articleSourcesDesc: "Este artículo se renderiza al 100 % a partir de los artefactos de análisis a continuación — cada afirmación es rastreable a un archivo fuente auditable en GitHub.", articleMethodologyLabel: "Metodología",
+      articleReaderGuideHeading: "Guía de lectura de inteligencia", articleReaderGuideDesc: "Cómo leer este análisis — comprenda los métodos y estándares detrás de cada artículo en Riksdagsmonitor.",
+      articleReaderGuideOsint: "Metodología OSINT", articleReaderGuideOsintDesc: "Todos los datos provienen de fuentes parlamentarias y gubernamentales de acceso público, recopilados según estándares profesionales de inteligencia de fuentes abiertas.",
+      articleReaderGuideAiFirst: "Doble revisión AI-FIRST", articleReaderGuideAiFirstDesc: "Cada artículo pasa por al menos dos pasadas de análisis completas — la segunda iteración revisa y profundiza críticamente la primera.",
+      articleReaderGuideSwot: "SWOT y evaluación de riesgos", articleReaderGuideSwotDesc: "Las posiciones políticas se evalúan con marcos SWOT estructurados y puntuación cuantitativa de riesgos basada en dinámica de coaliciones y volatilidad política.",
+      articleReaderGuideTraceable: "Artefactos completamente rastreables", articleReaderGuideTraceableDesc: "Cada afirmación enlaza a un artefacto de análisis auditable en GitHub — los lectores pueden verificar cualquier aseveración.",
+      articleReaderGuideMoreMethodologies: "Explorar la biblioteca de metodologías",
     },
   },
   nl: {
@@ -262,6 +332,13 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: 'Testresultaten', testResultsDesc: 'Geautomatiseerde testresultaten en rapporten.',
       recentArticles: 'Recente artikelen', newsIndexPages: 'Nieuwsindexpagina\'s',
       articleTrustAriaLabel: "Artikelherkomst en kwaliteitscontroles", articleTrustPublicSources: "Openbare bronnen", articleTrustAiFirst: "AI-FIRST controle", articleTrustTraceable: "Traceerbare artefacten",
+      articleSourcesHeading: "Analysebronnen en methodologie", articleSourcesDesc: "Dit artikel is voor 100 % gerenderd uit de onderstaande analyse-artefacten — elke bewering is herleidbaar tot een controleerbaar bronbestand op GitHub.", articleMethodologyLabel: "Methodologie",
+      articleReaderGuideHeading: "Lezersgids voor inlichtingenanalyse", articleReaderGuideDesc: "Zo leest u deze analyse — begrijp de methoden en standaarden achter elk artikel op Riksdagsmonitor.",
+      articleReaderGuideOsint: "OSINT-methodologie", articleReaderGuideOsintDesc: "Alle gegevens komen uit openbaar toegankelijke parlementaire en overheidsbronnen, verzameld volgens professionele OSINT-standaarden.",
+      articleReaderGuideAiFirst: "AI-FIRST dubbele beoordeling", articleReaderGuideAiFirstDesc: "Elk artikel doorloopt ten minste twee volledige analyseronden — de tweede iteratie herziet en verdiept de eerste kritisch.",
+      articleReaderGuideSwot: "SWOT en risicobeoordeling", articleReaderGuideSwotDesc: "Politieke posities worden beoordeeld met gestructureerde SWOT-kaders en kwantitatieve risicoscoring op basis van coalitiedynamiek en politieke volatiliteit.",
+      articleReaderGuideTraceable: "Volledig traceerbare artefacten", articleReaderGuideTraceableDesc: "Elke bewering linkt naar een controleerbaar analyse-artefact op GitHub — lezers kunnen elke uitspraak verifiëren.",
+      articleReaderGuideMoreMethodologies: "Verken de volledige methodenbibliotheek",
     },
   },
   ar: {
@@ -284,6 +361,13 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: 'نتائج الاختبارات', testResultsDesc: 'نتائج الاختبارات الآلية والتقارير.',
       recentArticles: 'أحدث المقالات', newsIndexPages: 'صفحات فهرس الأخبار',
       articleTrustAriaLabel: "مصدر المقال وضوابط الجودة", articleTrustPublicSources: "مصادر عامة", articleTrustAiFirst: "مراجعة AI-FIRST", articleTrustTraceable: "مصنوعات قابلة للتتبع",
+      articleSourcesHeading: "مصادر التحليل والمنهجية", articleSourcesDesc: "تم إنشاء هذا المقال بنسبة 100% من مصنوعات التحليل أدناه — كل ادعاء يمكن تتبعه إلى ملف مصدر قابل للتدقيق على GitHub.", articleMethodologyLabel: "المنهجية",
+      articleReaderGuideHeading: "دليل القارئ للتحليل الاستخباراتي", articleReaderGuideDesc: "كيف تقرأ هذا التحليل — افهم المناهج والمعايير وراء كل مقال في Riksdagsmonitor.",
+      articleReaderGuideOsint: "منهجية المصادر المفتوحة", articleReaderGuideOsintDesc: "جميع البيانات مستمدة من مصادر برلمانية وحكومية متاحة للعموم، تم جمعها وفقًا لمعايير الاستخبارات مفتوحة المصدر المهنية.",
+      articleReaderGuideAiFirst: "مراجعة AI-FIRST مزدوجة", articleReaderGuideAiFirstDesc: "يخضع كل مقال لجولتين تحليليتين كاملتين على الأقل — تراجع الجولة الثانية الأولى وتعمقها بشكل نقدي.",
+      articleReaderGuideSwot: "SWOT وتقييم المخاطر", articleReaderGuideSwotDesc: "يتم تقييم المواقف السياسية باستخدام أطر SWOT منظمة وتسجيل كمي للمخاطر بناءً على ديناميكيات الائتلاف والتقلب السياسي.",
+      articleReaderGuideTraceable: "مصنوعات قابلة للتتبع بالكامل", articleReaderGuideTraceableDesc: "كل ادعاء يرتبط بمصنوع تحليل قابل للتدقيق على GitHub — يمكن للقراء التحقق من أي تأكيد.",
+      articleReaderGuideMoreMethodologies: "استكشف مكتبة المناهج الكاملة",
     },
   },
   he: {
@@ -306,6 +390,13 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: 'תוצאות בדיקות', testResultsDesc: 'תוצאות בדיקות אוטומטיות ודוחות.',
       recentArticles: 'כתבות אחרונות', newsIndexPages: 'דפי אינדקס חדשות',
       articleTrustAriaLabel: "מקור המאמר ובקרות איכות", articleTrustPublicSources: "מקורות ציבוריים", articleTrustAiFirst: "סקירת AI-FIRST", articleTrustTraceable: "פריטי מקור עקיבים",
+      articleSourcesHeading: "מקורות ניתוח ומתודולוגיה", articleSourcesDesc: "מאמר זה מופק ב-100% מפריטי הניתוח שלהלן — כל טענה ניתנת למעקב לקובץ מקור ניתן לביקורת ב-GitHub.", articleMethodologyLabel: "מתודולוגיה",
+      articleReaderGuideHeading: "מדריך קריאה למודיעין", articleReaderGuideDesc: "כיצד לקרוא ניתוח זה — הבן את השיטות והסטנדרטים מאחורי כל מאמר ב-Riksdagsmonitor.",
+      articleReaderGuideOsint: "מתודולוגיית OSINT", articleReaderGuideOsintDesc: "כל הנתונים מגיעים ממקורות פרלמנטריים וממשלתיים הנגישים לציבור, שנאספו לפי סטנדרטים מקצועיים של מודיעין מקורות פתוחים.",
+      articleReaderGuideAiFirst: "סקירה כפולה AI-FIRST", articleReaderGuideAiFirstDesc: "כל מאמר עובר לפחות שני מעברי ניתוח מלאים — האיטרציה השנייה סוקרת ומעמיקה את הראשונה באופן ביקורתי.",
+      articleReaderGuideSwot: "SWOT והערכת סיכונים", articleReaderGuideSwotDesc: "עמדות פוליטיות מוערכות באמצעות מסגרות SWOT מובנות ודירוג סיכונים כמותי המבוסס על דינמיקת קואליציה ותנודתיות פוליטית.",
+      articleReaderGuideTraceable: "ממצאים הניתנים למעקב מלא", articleReaderGuideTraceableDesc: "כל טענה מקושרת למימצא ניתוח הניתן לביקורת ב-GitHub — קוראים יכולים לאמת כל קביעה.",
+      articleReaderGuideMoreMethodologies: "חקור את ספריית המתודולוגיות המלאה",
     },
   },
   ja: {
@@ -328,6 +419,13 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: 'テスト結果', testResultsDesc: '自動テスト結果とレポート。',
       recentArticles: '最新記事', newsIndexPages: 'ニュースインデックスページ',
       articleTrustAriaLabel: "記事の出所と品質管理", articleTrustPublicSources: "公開ソース", articleTrustAiFirst: "AI-FIRSTレビュー", articleTrustTraceable: "追跡可能なアーティファクト",
+      articleSourcesHeading: "分析ソースと方法論", articleSourcesDesc: "この記事は以下の分析アーティファクトから100%レンダリングされています — すべての主張はGitHub上の監査可能なソースファイルに遡ることができます。", articleMethodologyLabel: "方法論",
+      articleReaderGuideHeading: "読者のためのインテリジェンスガイド", articleReaderGuideDesc: "この分析の読み方 — Riksdagsmonitorの各記事の背後にある手法と基準を理解してください。",
+      articleReaderGuideOsint: "OSINTの手法", articleReaderGuideOsintDesc: "すべてのデータは、公開されている議会および政府の情報源から、プロフェッショナルなOSINT基準に従って収集されています。",
+      articleReaderGuideAiFirst: "AI-FIRSTデュアルパスレビュー", articleReaderGuideAiFirstDesc: "各記事は少なくとも2回の完全な分析パスを経ます — 2回目の反復は最初の結果を批判的に見直し、深掘りします。",
+      articleReaderGuideSwot: "SWOTとリスク評価", articleReaderGuideSwotDesc: "政治的立場は、連立力学と政治的変動性に基づく構造化SWOTフレームワークと定量的リスクスコアリングで評価されます。",
+      articleReaderGuideTraceable: "完全に追跡可能なアーティファクト", articleReaderGuideTraceableDesc: "すべての主張はGitHub上の監査可能な分析アーティファクトにリンクしています — 読者はすべての主張を検証できます。",
+      articleReaderGuideMoreMethodologies: "方法論ライブラリ全体を探索",
     },
   },
   ko: {
@@ -350,6 +448,13 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: '테스트 결과', testResultsDesc: '자동화된 테스트 결과 및 보고서.',
       recentArticles: '최신 기사', newsIndexPages: '뉴스 인덱스 페이지',
       articleTrustAriaLabel: "기사 출처 및 품질 관리", articleTrustPublicSources: "공개 출처", articleTrustAiFirst: "AI-FIRST 검토", articleTrustTraceable: "추적 가능한 아티팩트",
+      articleSourcesHeading: "분석 출처 및 방법론", articleSourcesDesc: "이 기사는 아래 분석 아티팩트로부터 100% 렌더링됩니다 — 모든 주장은 GitHub의 감사 가능한 소스 파일로 추적할 수 있습니다.", articleMethodologyLabel: "방법론",
+      articleReaderGuideHeading: "독자를 위한 정보 분석 가이드", articleReaderGuideDesc: "이 분석을 읽는 방법 — Riksdagsmonitor의 모든 기사 뒤에 있는 방법과 기준을 이해하세요.",
+      articleReaderGuideOsint: "OSINT 방법론", articleReaderGuideOsintDesc: "모든 데이터는 공개적으로 이용 가능한 의회 및 정부 출처에서 전문적인 공개 출처 정보 표준에 따라 수집됩니다.",
+      articleReaderGuideAiFirst: "AI-FIRST 이중 검토", articleReaderGuideAiFirstDesc: "모든 기사는 최소 두 번의 완전한 분석 과정을 거칩니다 — 두 번째 반복은 첫 번째를 비판적으로 검토하고 심화합니다.",
+      articleReaderGuideSwot: "SWOT 및 위험 평가", articleReaderGuideSwotDesc: "정치적 입장은 연합 역학과 정치적 변동성에 기반한 구조화된 SWOT 프레임워크와 정량적 위험 점수로 평가됩니다.",
+      articleReaderGuideTraceable: "완전 추적 가능한 아티팩트", articleReaderGuideTraceableDesc: "모든 주장은 GitHub의 감사 가능한 분석 아티팩트에 연결됩니다 — 독자는 모든 주장을 검증할 수 있습니다.",
+      articleReaderGuideMoreMethodologies: "전체 방법론 라이브러리 탐색",
     },
   },
   zh: {
@@ -372,6 +477,13 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: '测试结果', testResultsDesc: '自动化测试结果和报告。',
       recentArticles: '最新文章', newsIndexPages: '新闻索引页面',
       articleTrustAriaLabel: "文章来源与质量控制", articleTrustPublicSources: "公开来源", articleTrustAiFirst: "AI-FIRST审查", articleTrustTraceable: "可追溯产物",
+      articleSourcesHeading: "分析来源与方法论", articleSourcesDesc: "本文100%由以下分析产物渲染 — 每项声明均可追溯到GitHub上可审计的源文件。", articleMethodologyLabel: "方法论",
+      articleReaderGuideHeading: "读者情报指南", articleReaderGuideDesc: "如何阅读本分析 — 了解Riksdagsmonitor每篇文章背后的方法和标准。",
+      articleReaderGuideOsint: "OSINT方法论", articleReaderGuideOsintDesc: "所有数据来源于公开可用的议会和政府信息，按照专业开源情报标准收集。",
+      articleReaderGuideAiFirst: "AI-FIRST双重审查", articleReaderGuideAiFirstDesc: "每篇文章至少经过两轮完整的分析 — 第二轮迭代批判性地审查和深化第一轮的结论。",
+      articleReaderGuideSwot: "SWOT与风险评估", articleReaderGuideSwotDesc: "政治立场通过结构化SWOT框架和基于联盟动态与政治波动性的定量风险评分进行评估。",
+      articleReaderGuideTraceable: "完全可追溯的工件", articleReaderGuideTraceableDesc: "每项声明都链接到GitHub上可审计的分析工件 — 读者可以验证任何断言。",
+      articleReaderGuideMoreMethodologies: "探索完整方法论库",
     },
   },
 };
