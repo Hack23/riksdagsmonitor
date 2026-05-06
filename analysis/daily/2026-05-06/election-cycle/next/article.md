@@ -1,11 +1,11 @@
 ---
 title: "Post-2026 Coalition Intelligence (2026-2030)"
-description: "The post-2026 election cycle (2026-2030) — shaped by HD01CU25 (prison expansion), HD01FöU18 (SIGINT reform), and HD01SfU21/24 (welfare reform) — will be governed by one of two fundamentally different coalitions — Tidö continuation (WEP LIKELY) or Red-Green bloc (WEP UNLIKELY)."
+description: "The post-2026 election cycle (2026-2030) will be governed by one of two fundamentally different coalitions — Tidö continuation (WEP LIKELY) or Red-Green bloc (WEP UNLIKELY)."
 date: 2026-05-06
 subfolder: election-cycle/next
 slug: 2026-05-06-election-cycle/next
 source_folder: analysis/daily/2026-05-06/election-cycle/next
-generated_at: 2026-05-06T21:25:49.132Z
+generated_at: 2026-05-06T23:41:46.690Z
 language: en
 layout: article
 ---
@@ -14,7 +14,7 @@ layout: article
 
 ### BLUF
 
-The post-2026 election cycle (2026-2030) — shaped by HD01CU25 (prison expansion), HD01FöU18 (SIGINT reform), and HD01SfU21/24 (welfare reform) — will be governed by one of two fundamentally different coalitions — Tidö continuation (WEP LIKELY) or Red-Green bloc (WEP UNLIKELY). The 2026-05-06 documents reveal the policy contestation terrain for this next mandate: social insurance reform, SIGINT authority, and foreign policy orientation (Gaza) are the three primary policy battlegrounds between cycles.
+The post-2026 election cycle (2026-2030) will be governed by one of two fundamentally different coalitions — Tidö continuation (WEP LIKELY) or Red-Green bloc (WEP UNLIKELY). The 2026-05-06 documents reveal the policy contestation terrain for this next mandate: social insurance reform, SIGINT authority, and foreign policy orientation (Gaza) are the three primary policy battlegrounds between cycles.
 
 ### Three Key Decisions for Next Government
 
