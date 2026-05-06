@@ -11,15 +11,22 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-1.3-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--06-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.2 | **📅 Last Updated:** 2026-04-20 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-20  
+**📋 Document Owner:** CEO | **📄 Version:** 1.3 | **📅 Last Updated:** 2026-05-06 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-06  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
+> **🆕 What changed since last review (v1.2 → v1.3, 2026-05-06):**
+> - Added **Political Intelligence Generation Flow** (§16): documents `generate-political-intelligence.ts` pipeline with catalog, daily-streams, i18n, and render stages.
+> - Added **Analysis Gate Validation Flow** (§17): documents the 9-check (1–9b) analysis gate in `scripts/agentic/analysis-gate.ts` validating 23 artifacts across Families A–D.
+> - Added **Parliamentary Data Download Flow** (§18): documents `download-parliamentary-data.ts`, `fetch-voting-records.ts`, and `fetch-calendar.ts` pipelines.
+> - Updated Process Inventory tables with political intelligence, analysis gate, and parliamentary data processes.
+> - Package version aligned to 0.8.76; 51 workflow files (22 standard + 14 agentic .md + 14 compiled .lock.yml + 1 README).
+>
 > **🆕 What changed since last review (v1.1 → v1.2, 2026-04-20):**
 > - 📈 Added **IMF** to the agentic news-pipeline fan-out as a third primary economic data source alongside SCB and World Bank, per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md). IMF is reached via the **IMF TypeScript client `scripts/imf-client.ts` invoked through the bash tool** — *pure-TS, no MCP* — so the MCP server count is unchanged.
 >
@@ -345,6 +352,9 @@ flowchart TD
 | 4 | User Journey | Page visit | < 3s | On demand |
 | 5 | Security Scanning | Code change | 5-10 min | Per commit |
 | 6 | Multi-Language | Content creation | 15-30 min | Per article |
+| 7 | Political Intelligence | Prebuild chain | 2-4 min | Per build |
+| 8 | Analysis Gate | Pre-article | 1-2 min | Per article |
+| 9 | Parliamentary Data | Cron daily | 5-10 min | Daily |
 
 ---
 
@@ -881,6 +891,122 @@ flowchart TD
 
 ---
 
+## 16. 🧠 Political Intelligence Generation Flow
+
+```mermaid
+flowchart TD
+    TRIGGER[generate-political-intelligence.ts] --> CATALOG[catalog.ts<br/>Load article-types.json registry]
+    CATALOG --> STREAMS[daily-streams.ts<br/>Identify active streams per horizon]
+    STREAMS --> HORIZON{Horizon Stratification}
+    HORIZON --> H72[T+72h Short-term]
+    HORIZON --> H7D[T+7d Weekly]
+    HORIZON --> H30D[T+30d Monthly]
+    HORIZON --> H90D[T+90d Quarterly]
+    HORIZON --> H365D[T+365d Annual]
+    HORIZON --> H1460D[T+1460d Election cycle]
+
+    H72 --> I18N[i18n/<br/>14-language translation]
+    H7D --> I18N
+    H30D --> I18N
+    H90D --> I18N
+    H365D --> I18N
+    H1460D --> I18N
+
+    I18N --> RENDER[render/<br/>Template-based HTML rendering]
+    RENDER --> OUTPUT[Output: political-intelligence*.html<br/>14 language variants]
+
+    style TRIGGER fill:#2196f3,color:#ffffff
+    style OUTPUT fill:#4caf50,color:#000000
+    style HORIZON fill:#ff9800,color:#000000
+    style CATALOG fill:#9c27b0,color:#ffffff
+    style STREAMS fill:#9c27b0,color:#ffffff
+    style RENDER fill:#9c27b0,color:#ffffff
+```
+
+---
+
+## 17. ✅ Analysis Gate Validation Flow
+
+```mermaid
+flowchart TD
+    INPUT[analysis/daily/DATE/ folder] --> CHECK1{Check 1:<br/>Artifact existence<br/>23 files across Families A-D}
+    CHECK1 -->|Pass| CHECK2{Check 2:<br/>No stub content}
+    CHECK1 -->|Fail| FAILED[❌ Gate FAILED<br/>Missing artifacts]
+
+    CHECK2 -->|Pass| CHECK3{Check 3:<br/>Minimum word count}
+    CHECK2 -->|Fail| FAILED
+
+    CHECK3 -->|Pass| CHECK4{Check 4:<br/>Evidence citations}
+    CHECK3 -->|Fail| FAILED
+
+    CHECK4 -->|Pass| CHECK5{Check 5:<br/>Mermaid diagrams present}
+    CHECK4 -->|Fail| FAILED
+
+    CHECK5 -->|Pass| CHECK6{Check 6:<br/>Pass-2 iteration evidence}
+    CHECK5 -->|Fail| FAILED
+
+    CHECK6 -->|Pass| CHECK7{Check 7:<br/>Cross-references valid}
+    CHECK6 -->|Fail| FAILED
+
+    CHECK7 -->|Pass| CHECK8{Check 8:<br/>Data-source audit trail}
+    CHECK7 -->|Fail| FAILED
+
+    CHECK8 -->|Pass| CHECK9A{Check 9a:<br/>Political classification}
+    CHECK8 -->|Fail| FAILED
+
+    CHECK9A -->|Pass| CHECK9B{Check 9b:<br/>Agency evidence}
+    CHECK9A -->|Fail| FAILED
+
+    CHECK9B -->|Pass| PASSED[✅ Gate PASSED<br/>Article generation proceeds]
+    CHECK9B -->|Fail| FAILED
+
+    FAILED --> BLOCK[Block article pipeline<br/>Return error details]
+
+    style INPUT fill:#2196f3,color:#ffffff
+    style PASSED fill:#4caf50,color:#000000
+    style FAILED fill:#f44336,color:#ffffff
+    style BLOCK fill:#f44336,color:#ffffff
+    style CHECK1 fill:#ff9800,color:#000000
+    style CHECK9B fill:#ff9800,color:#000000
+```
+
+---
+
+## 18. 📥 Parliamentary Data Download Flow
+
+```mermaid
+flowchart TD
+    TRIGGER[download-parliamentary-data.ts] --> PROPS[Fetch Propositions<br/>from data.riksdagen.se]
+    TRIGGER --> MOTIONS[Fetch Motions<br/>from data.riksdagen.se]
+    TRIGGER --> BET[Fetch Betänkanden<br/>from data.riksdagen.se]
+
+    PROPS --> VALIDATE_P[Validate & transform]
+    MOTIONS --> VALIDATE_M[Validate & transform]
+    BET --> VALIDATE_B[Validate & transform]
+
+    VALIDATE_P --> DATA_DIR[Output: data/ directory]
+    VALIDATE_M --> DATA_DIR
+    VALIDATE_B --> DATA_DIR
+
+    TRIGGER --> VOTING[fetch-voting-records.ts<br/>Download voting records]
+    VOTING --> VOTE_DATA[Voting data validated]
+    VOTE_DATA --> DATA_DIR
+
+    TRIGGER --> CALENDAR[fetch-calendar.ts<br/>Download calendar events]
+    CALENDAR --> CAL_DATA[Calendar data validated]
+    CAL_DATA --> DATA_DIR
+
+    DATA_DIR --> READY[Parliamentary data ready<br/>for analysis pipeline]
+
+    style TRIGGER fill:#2196f3,color:#ffffff
+    style READY fill:#4caf50,color:#000000
+    style DATA_DIR fill:#ff9800,color:#000000
+    style VOTING fill:#9c27b0,color:#ffffff
+    style CALENDAR fill:#9c27b0,color:#ffffff
+```
+
+---
+
 ## Updated Process Inventory
 
 | # | Process | Trigger | Duration | Frequency | Security Controls |
@@ -897,6 +1023,9 @@ flowchart TD
 | 10 | Data Validation | Per data fetch | 1-2 min | Per fetch | 9-stage validation pipeline |
 | 11 | Content Integrity | Per content | < 1 min | Per article | Git signatures, Sigstore (build artifacts) |
 | 12 | Runner Hardening | Per job | Continuous | Per job | iptables, egress audit |
+| 13 | Political Intelligence | Prebuild chain | 2-4 min | Per build | HTMLHint, schema validation |
+| 14 | Analysis Gate | Pre-article | 1-2 min | Per article | 9-check validation (23 artifacts) |
+| 15 | Parliamentary Data | Cron daily | 5-10 min | Daily | Data validation, freshness check |
 
 ---
 
