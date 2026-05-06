@@ -89,7 +89,7 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: 'Test Results', testResultsDesc: 'Automated test results and reports.',
       recentArticles: 'Recent News Articles', newsIndexPages: 'News Index Pages',
       articleTrustAriaLabel: "Article provenance and quality controls", articleTrustPublicSources: "Public sources", articleTrustAiFirst: "AI-FIRST review", articleTrustTraceable: "Traceable artifacts",
-      articleSourcesHeading: "Analysis sources & methodology", articleSourcesDesc: "This article is rendered 100 % from the analysis artifacts below — every claim is traceable to an auditable source file on GitHub.", articleMethodologyLabel: "Methodology",
+      articleSourcesHeading: "Analysis sources & methodology", articleSourcesDesc: "This article is rendered 100% from the analysis artifacts below — every claim is traceable to an auditable source file on GitHub.", articleMethodologyLabel: "Methodology",
     },
   },
   sv: {
