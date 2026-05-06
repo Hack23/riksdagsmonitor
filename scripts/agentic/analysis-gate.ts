@@ -333,14 +333,16 @@ async function checkSwotEvidence(analysisDir: string): Promise<GateCheckResult[]
       continue;
     }
 
-    if (BULLET_RE.test(line) && !EVIDENCE_PATTERN.test(line)) {
-      results.push({
-        checkId: 'evidence-citations',
-        passed: false,
-        message: `swot-analysis.md ${currentSection}: bullet missing evidence (dok_id or primary-source URL): ${line.trim()}`,
-        artifact: 'swot-analysis.md',
-      });
-      continue;
+    if (BULLET_RE.test(line)) {
+      if (!EVIDENCE_PATTERN.test(line)) {
+        results.push({
+          checkId: 'evidence-citations',
+          passed: false,
+          message: `swot-analysis.md ${currentSection}: bullet missing evidence (dok_id or primary-source URL): ${line.trim()}`,
+          artifact: 'swot-analysis.md',
+        });
+      }
+      continue; // bullet lines are never also table rows
     }
 
     if (TABLE_ROW_RE.test(line)) {
@@ -520,6 +522,13 @@ export async function checkMermaidDiagrams(
 // ---------------------------------------------------------------------------
 
 /**
+ * Minimum mtime delta (ms) from birth time that constitutes evidence of a
+ * second-pass edit (180 seconds = 3 minutes, matching the bash gate threshold
+ * in `05-analysis-gate.md §Check 6`).
+ */
+const PASS2_MTIME_THRESHOLD_MS = 180_000;
+
+/**
  * Verify that Pass-2 iteration was performed on each artifact: either a
  * `pass1/` snapshot exists on disk that differs from the current file, OR
  * the file's mtime is at least 180 s after its birth time (Linux birth time
@@ -554,7 +563,7 @@ export async function checkPass2Evidence(
       const fileStat = await stat(filePath);
       const birthtimeMs = fileStat.birthtimeMs;
       const mtimeMs = fileStat.mtimeMs;
-      if (birthtimeMs > 0 && mtimeMs >= birthtimeMs + 180_000) {
+      if (birthtimeMs > 0 && mtimeMs >= birthtimeMs + PASS2_MTIME_THRESHOLD_MS) {
         pass2Done = true;
       }
     }
