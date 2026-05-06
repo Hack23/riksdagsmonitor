@@ -40,14 +40,14 @@
  * @license Apache-2.0
  */
 
-import path from 'path';
-
 import matter from 'gray-matter';
 
-import { GITHUB_BLOB } from '../../constants.js';
 import { stripPassTwoSection } from './pass-two.js';
 import { stripLeadingAdminBylines } from './admin-bylines.js';
 import { stripProcessMetaLines } from './process-meta.js';
+import { demoteHeadings } from './heading-demotion.js';
+import { rewriteRelativeLinks } from './link-rewriting.js';
+import { dedupeAdjacentDuplicateLines, collapseRepeatedFooterBlocks } from './deduplication.js';
 
 /**
  * Remove `_Source: \`file.md\`_` (and `_Source: [\`file.md\`](url)_`)
@@ -95,164 +95,14 @@ export function stripInlineReaderGuide(body: string): string {
   );
 }
 
-/**
- * Collapse identical adjacent non-blank lines that appear two-or-more
- * times in a row. Defensive cleaning for the common AI-authored failure
- * mode where a classification row, ISMS footer or metadata sentinel is
- * pasted twice into the same artifact body.
- *
- * Lines inside fenced code blocks are preserved verbatim — duplication
- * inside a code block may be intentional (e.g. config snippets). Blank
- * lines are not deduplicated; they participate as paragraph separators
- * and are handled later by the `\n{3,}` collapse step.
- *
- * Stable on already-deduped inputs: the function is idempotent —
- * applying it twice yields the same result.
- */
-export function dedupeAdjacentDuplicateLines(body: string): string {
-  const lines = body.split('\n');
-  const out: string[] = [];
-  let inFence = false;
-  let prevNonBlank: string | null = null;
-  for (const line of lines) {
-    if (/^\s{0,3}(?:```|~~~)/.test(line)) {
-      inFence = !inFence;
-      out.push(line);
-      prevNonBlank = null;
-      continue;
-    }
-    if (inFence) {
-      out.push(line);
-      prevNonBlank = null;
-      continue;
-    }
-    if (line.trim() === '') {
-      out.push(line);
-      // Blank lines reset the adjacency window — duplicates separated
-      // by blank lines are a different concern (handled by
-      // `collapseRepeatedFooterBlocks`).
-      prevNonBlank = null;
-      continue;
-    }
-    if (prevNonBlank !== null && line === prevNonBlank) {
-      // Skip the duplicate.
-      continue;
-    }
-    out.push(line);
-    prevNonBlank = line;
-  }
-  return out.join('\n');
-}
+// Re-exported from dedicated deduplication module (extracted for ≤200 LOC constraint).
+export { dedupeAdjacentDuplicateLines, collapseRepeatedFooterBlocks } from './deduplication.js';
 
-/**
- * Footer-block markers that templates and AI agents have historically
- * emitted at the end of every artifact (sometimes twice). The aggregator
- * already strips a curated set of trailing administrative blocks (see
- * {@link cleanArtifactBody}); this function catches the *intra-body*
- * duplicates — when an ISMS / classification / GDPR provenance line
- * appears two-or-more times in the same artifact body, only the first
- * occurrence is kept.
- *
- * A "footer block" is a single line (post-trim) that:
- *   - starts with the bold marker `**ISMS …`, `**Classified under …`,
- *     `**GDPR …`, `**Article-Generation contract**`, `**Hack23 ISMS**`,
- *     `**Provenance**`, or
- *   - starts with the italic marker `_Classified under …` or
- *     `*Classified under …`.
- *
- * Lines inside fenced code blocks are preserved verbatim. Subsequent
- * occurrences of the *exact same* footer line are removed (along with a
- * single trailing blank line so the surrounding paragraph spacing is
- * preserved).
- */
-export function collapseRepeatedFooterBlocks(body: string): string {
-  const FOOTER_LINE = /^\s*(?:\*\*|[*_])\s*(?:ISMS\b|Classified\s+under\b|GDPR\b|Hack23\s+ISMS\b|Article-Generation\s+contract\b|Provenance\b)/i;
-  const lines = body.split('\n');
-  const seen = new Set<string>();
-  const out: string[] = [];
-  let inFence = false;
-  for (let i = 0; i < lines.length; i += 1) {
-    const line = lines[i]!;
-    if (/^\s{0,3}(?:```|~~~)/.test(line)) {
-      inFence = !inFence;
-      out.push(line);
-      continue;
-    }
-    if (inFence) {
-      out.push(line);
-      continue;
-    }
-    const trimmed = line.trim();
-    if (FOOTER_LINE.test(trimmed)) {
-      if (seen.has(trimmed)) {
-        // Skip this duplicated footer line. Also swallow a single
-        // trailing blank line so we don't leave a stranded gap.
-        if (i + 1 < lines.length && lines[i + 1]!.trim() === '') {
-          i += 1;
-        }
-        continue;
-      }
-      seen.add(trimmed);
-    }
-    out.push(line);
-  }
-  return out.join('\n');
-}
+// Re-export from dedicated module (extracted for ≤200 LOC constraint).
+export { demoteHeadings } from './heading-demotion.js';
 
-/**
- * Demote ATX headings by one level inside an artifact body — `##` → `###`,
- * `###` → `####`, …, capped at `######`. The aggregator wraps each
- * artifact under its own injected `## <title>`, so without this the
- * rendered article outline ends up flat (every artifact's internal H2s
- * become siblings of the wrapper H2). Indentation, fenced code blocks
- * and table contents are not affected — only line-anchored ATX headings
- * are matched.
- *
- * Headings inside fenced code blocks are explicitly excluded by
- * tracking fence state line-by-line.
- */
-export function demoteHeadings(body: string): string {
-  const lines = body.split('\n');
-  let inFence = false;
-  for (let i = 0; i < lines.length; i += 1) {
-    const line = lines[i]!;
-    // Track entry/exit of triple-backtick or triple-tilde fenced code.
-    if (/^\s{0,3}(?:```|~~~)/.test(line)) {
-      inFence = !inFence;
-      continue;
-    }
-    if (inFence) continue;
-    const m = line.match(/^(#{1,6})(\s+\S)/);
-    if (!m) continue;
-    const current = m[1]!.length;
-    if (current >= 6) continue;          // already at H6, can't demote further
-    if (current === 1) continue;         // H1 already stripped by upstream regex; defensive
-    lines[i] = '#'.repeat(current + 1) + line.slice(current);
-  }
-  return lines.join('\n');
-}
-
-/**
- * Rewrite relative `[label](path.md)` links in the aggregated markdown to
- * absolute GitHub blob URLs — the rendered HTML lives at a different path
- * than the source artifacts, so every link must be auditable back to
- * GitHub. Leaves absolute `http(s)://…` links, fragment-only links and
- * `mailto:` links untouched.
- */
-export function rewriteRelativeLinks(body: string, subfolderRepoRelPath: string): string {
-  return body.replace(
-    /\]\((?!https?:\/\/|#|mailto:)([^)]+)\)/g,
-    (_match, target: string) => {
-      const [pathPart, anchor] = target.split('#', 2) as [string, string | undefined];
-      if (!pathPart) return `](${target})`;
-      const resolved = path.posix.normalize(
-        path.posix.join(subfolderRepoRelPath, pathPart),
-      );
-      const href = `${GITHUB_BLOB}/${resolved}` + (anchor ? `#${anchor}` : '');
-      return `](${href})`;
-    },
-  );
-}
+// Re-export from dedicated module (extracted for ≤200 LOC constraint).
+export { rewriteRelativeLinks } from './link-rewriting.js';
 
 /**
  * Strip a leading YAML front-matter block, the first top-level H1 (it is

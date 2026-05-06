@@ -90,6 +90,24 @@ export type {
   ReaderGuideEntryI18n,
 } from './reader-guide-i18n.js';
 
+// --- Pipeline interfaces & orchestrator (new bounded-context API) -----------
+export { runArticlePipeline } from './pipeline.js';
+export type {
+  PipelineResult,
+  PipelineStage,
+  ReadStageInput,
+  ReadStageOutput,
+  ArtifactFile,
+  ValidateStageOutput,
+  ValidationDiagnostic,
+  AggregateStageOutput,
+  ArticleSection,
+  EnrichStageOutput,
+  EnrichmentMetadata,
+  WriteStageOutput,
+  ArticlePipelineConfig,
+} from './interfaces.js';
+
 /**
  * Strict shape of the test-only escape hatch. Frozen so accidental
  * mutation of the regex constants (which carry `lastIndex` state) is
