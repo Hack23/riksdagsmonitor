@@ -61,6 +61,9 @@ export interface LanguageMeta {
     articleTrustPublicSources: string;
     articleTrustAiFirst: string;
     articleTrustTraceable: string;
+    articleSourcesHeading: string;
+    articleSourcesDesc: string;
+    articleMethodologyLabel: string;
   };
 }
 
@@ -86,6 +89,7 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: 'Test Results', testResultsDesc: 'Automated test results and reports.',
       recentArticles: 'Recent News Articles', newsIndexPages: 'News Index Pages',
       articleTrustAriaLabel: "Article provenance and quality controls", articleTrustPublicSources: "Public sources", articleTrustAiFirst: "AI-FIRST review", articleTrustTraceable: "Traceable artifacts",
+      articleSourcesHeading: "Analysis sources & methodology", articleSourcesDesc: "This article is rendered 100 % from the analysis artifacts below — every claim is traceable to an auditable source file on GitHub.", articleMethodologyLabel: "Methodology",
     },
   },
   sv: {
@@ -108,6 +112,7 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: 'Testresultat', testResultsDesc: 'Automatiserade testresultat och rapporter.',
       recentArticles: 'Senaste nyhetsartiklar', newsIndexPages: 'Nyhetsindexsidor',
       articleTrustAriaLabel: "Artikelhärkomst och kvalitetskontroller", articleTrustPublicSources: "Offentliga källor", articleTrustAiFirst: "AI-FIRST granskning", articleTrustTraceable: "Spårbara artefakter",
+      articleSourcesHeading: "Analyskällor och metodik", articleSourcesDesc: "Denna artikel renderas till 100 % från analysartefakterna nedan — varje påstående är spårbart till en granskningsbar källfil på GitHub.", articleMethodologyLabel: "Metodik",
     },
   },
   da: {
@@ -130,6 +135,7 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: 'Testresultater', testResultsDesc: 'Automatiserede testresultater og rapporter.',
       recentArticles: 'Seneste nyheder', newsIndexPages: 'Nyhedsindekssider',
       articleTrustAriaLabel: "Artikelproveniens og kvalitetskontroller", articleTrustPublicSources: "Offentlige kilder", articleTrustAiFirst: "AI-FIRST gennemgang", articleTrustTraceable: "Sporbare artefakter",
+      articleSourcesHeading: "Analysekilder og metodik", articleSourcesDesc: "Denne artikel er renderet 100 % fra analyseartefakterne nedenfor — enhver påstand er sporbar til en reviderbar kildefil på GitHub.", articleMethodologyLabel: "Metodik",
     },
   },
   no: {
@@ -152,6 +158,7 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: 'Testresultater', testResultsDesc: 'Automatiserte testresultater og rapporter.',
       recentArticles: 'Siste nyheter', newsIndexPages: 'Nyhetsindekssider',
       articleTrustAriaLabel: "Artikelproveniens og kvalitetskontroller", articleTrustPublicSources: "Offentlige kilder", articleTrustAiFirst: "AI-FIRST gjennomgang", articleTrustTraceable: "Sporbare artefakter",
+      articleSourcesHeading: "Analysekilder og metodikk", articleSourcesDesc: "Denne artikkelen er gjengitt 100 % fra analyseartefaktene nedenfor — enhver påstand er sporbar til en reviderbar kildefil på GitHub.", articleMethodologyLabel: "Metodikk",
     },
   },
   fi: {
@@ -174,6 +181,7 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: 'Testitulokset', testResultsDesc: 'Automatisoidut testitulokset ja raportit.',
       recentArticles: 'Viimeisimmät uutiset', newsIndexPages: 'Uutisindeksisivut',
       articleTrustAriaLabel: "Artikkelin alkuperä ja laadunvalvonta", articleTrustPublicSources: "Julkiset lähteet", articleTrustAiFirst: "AI-FIRST tarkastus", articleTrustTraceable: "Jäljitettävät artefaktit",
+      articleSourcesHeading: "Analyysilähteet ja metodologia", articleSourcesDesc: "Tämä artikkeli on tuotettu 100 % alla olevista analyysiartifakteista — jokainen väite on jäljitettävissä tarkastettavaan lähdetiedostoon GitHubissa.", articleMethodologyLabel: "Metodologia",
     },
   },
   de: {
@@ -196,6 +204,7 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: 'Testergebnisse', testResultsDesc: 'Automatisierte Testergebnisse und Berichte.',
       recentArticles: 'Aktuelle Nachrichten', newsIndexPages: 'Nachrichtenindexseiten',
       articleTrustAriaLabel: "Artikelherkunft und Qualitätskontrollen", articleTrustPublicSources: "Öffentliche Quellen", articleTrustAiFirst: "AI-FIRST Prüfung", articleTrustTraceable: "Nachvollziehbare Artefakte",
+      articleSourcesHeading: "Analysequellen und Methodik", articleSourcesDesc: "Dieser Artikel wird zu 100 % aus den unten aufgeführten Analyseartefakten gerendert — jede Behauptung ist auf eine überprüfbare Quelldatei auf GitHub zurückführbar.", articleMethodologyLabel: "Methodik",
     },
   },
   fr: {
@@ -218,6 +227,7 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: 'Résultats des tests', testResultsDesc: 'Résultats de tests automatisés et rapports.',
       recentArticles: 'Articles récents', newsIndexPages: 'Pages d\'index des actualités',
       articleTrustAriaLabel: "Provenance de l'article et contrôles qualité", articleTrustPublicSources: "Sources publiques", articleTrustAiFirst: "Examen AI-FIRST", articleTrustTraceable: "Artefacts traçables",
+      articleSourcesHeading: "Sources d'analyse et méthodologie", articleSourcesDesc: "Cet article est rendu à 100 % à partir des artefacts d'analyse ci-dessous — chaque affirmation est traçable à un fichier source vérifiable sur GitHub.", articleMethodologyLabel: "Méthodologie",
     },
   },
   es: {
@@ -240,6 +250,7 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: 'Resultados de pruebas', testResultsDesc: 'Resultados de pruebas automatizadas e informes.',
       recentArticles: 'Artículos recientes', newsIndexPages: 'Páginas de índice de noticias',
       articleTrustAriaLabel: "Procedencia del artículo y controles de calidad", articleTrustPublicSources: "Fuentes públicas", articleTrustAiFirst: "Revisión AI-FIRST", articleTrustTraceable: "Artefactos rastreables",
+      articleSourcesHeading: "Fuentes de análisis y metodología", articleSourcesDesc: "Este artículo se renderiza al 100 % a partir de los artefactos de análisis a continuación — cada afirmación es rastreable a un archivo fuente auditable en GitHub.", articleMethodologyLabel: "Metodología",
     },
   },
   nl: {
@@ -262,6 +273,7 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: 'Testresultaten', testResultsDesc: 'Geautomatiseerde testresultaten en rapporten.',
       recentArticles: 'Recente artikelen', newsIndexPages: 'Nieuwsindexpagina\'s',
       articleTrustAriaLabel: "Artikelherkomst en kwaliteitscontroles", articleTrustPublicSources: "Openbare bronnen", articleTrustAiFirst: "AI-FIRST controle", articleTrustTraceable: "Traceerbare artefacten",
+      articleSourcesHeading: "Analysebronnen en methodologie", articleSourcesDesc: "Dit artikel is voor 100 % gerenderd uit de onderstaande analyse-artefacten — elke bewering is herleidbaar tot een controleerbaar bronbestand op GitHub.", articleMethodologyLabel: "Methodologie",
     },
   },
   ar: {
@@ -284,6 +296,7 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: 'نتائج الاختبارات', testResultsDesc: 'نتائج الاختبارات الآلية والتقارير.',
       recentArticles: 'أحدث المقالات', newsIndexPages: 'صفحات فهرس الأخبار',
       articleTrustAriaLabel: "مصدر المقال وضوابط الجودة", articleTrustPublicSources: "مصادر عامة", articleTrustAiFirst: "مراجعة AI-FIRST", articleTrustTraceable: "مصنوعات قابلة للتتبع",
+      articleSourcesHeading: "مصادر التحليل والمنهجية", articleSourcesDesc: "تم إنشاء هذا المقال بنسبة 100% من مصنوعات التحليل أدناه — كل ادعاء يمكن تتبعه إلى ملف مصدر قابل للتدقيق على GitHub.", articleMethodologyLabel: "المنهجية",
     },
   },
   he: {
@@ -306,6 +319,7 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: 'תוצאות בדיקות', testResultsDesc: 'תוצאות בדיקות אוטומטיות ודוחות.',
       recentArticles: 'כתבות אחרונות', newsIndexPages: 'דפי אינדקס חדשות',
       articleTrustAriaLabel: "מקור המאמר ובקרות איכות", articleTrustPublicSources: "מקורות ציבוריים", articleTrustAiFirst: "סקירת AI-FIRST", articleTrustTraceable: "פריטי מקור עקיבים",
+      articleSourcesHeading: "מקורות ניתוח ומתודולוגיה", articleSourcesDesc: "מאמר זה מופק ב-100% מפריטי הניתוח שלהלן — כל טענה ניתנת למעקב לקובץ מקור ניתן לביקורת ב-GitHub.", articleMethodologyLabel: "מתודולוגיה",
     },
   },
   ja: {
@@ -328,6 +342,7 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: 'テスト結果', testResultsDesc: '自動テスト結果とレポート。',
       recentArticles: '最新記事', newsIndexPages: 'ニュースインデックスページ',
       articleTrustAriaLabel: "記事の出所と品質管理", articleTrustPublicSources: "公開ソース", articleTrustAiFirst: "AI-FIRSTレビュー", articleTrustTraceable: "追跡可能なアーティファクト",
+      articleSourcesHeading: "分析ソースと方法論", articleSourcesDesc: "この記事は以下の分析アーティファクトから100%レンダリングされています — すべての主張はGitHub上の監査可能なソースファイルに遡ることができます。", articleMethodologyLabel: "方法論",
     },
   },
   ko: {
@@ -350,6 +365,7 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: '테스트 결과', testResultsDesc: '자동화된 테스트 결과 및 보고서.',
       recentArticles: '최신 기사', newsIndexPages: '뉴스 인덱스 페이지',
       articleTrustAriaLabel: "기사 출처 및 품질 관리", articleTrustPublicSources: "공개 출처", articleTrustAiFirst: "AI-FIRST 검토", articleTrustTraceable: "추적 가능한 아티팩트",
+      articleSourcesHeading: "분석 출처 및 방법론", articleSourcesDesc: "이 기사는 아래 분석 아티팩트로부터 100% 렌더링됩니다 — 모든 주장은 GitHub의 감사 가능한 소스 파일로 추적할 수 있습니다.", articleMethodologyLabel: "방법론",
     },
   },
   zh: {
@@ -372,6 +388,7 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       testResults: '测试结果', testResultsDesc: '自动化测试结果和报告。',
       recentArticles: '最新文章', newsIndexPages: '新闻索引页面',
       articleTrustAriaLabel: "文章来源与质量控制", articleTrustPublicSources: "公开来源", articleTrustAiFirst: "AI-FIRST审查", articleTrustTraceable: "可追溯产物",
+      articleSourcesHeading: "分析来源与方法论", articleSourcesDesc: "本文100%由以下分析产物渲染 — 每项声明均可追溯到GitHub上可审计的源文件。", articleMethodologyLabel: "方法论",
     },
   },
 };

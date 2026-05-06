@@ -12996,6 +12996,44 @@ html[data-theme="light"] .rm-article-body pre.mermaid > svg {
   font-size: 0.8125rem;
 }
 
+/* ── Article methodology collapsible ── */
+.rm-article-methodology {
+  margin-top: 0.75rem;
+}
+
+.rm-article-methodology summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--primary-cyan, #00d9ff);
+  padding: 0.5rem 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.rm-article-methodology summary::before {
+  content: '▸';
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.rm-article-methodology[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.rm-article-methodology summary::-webkit-details-marker {
+  display: none;
+}
+
+/* ── Article inline icons ── */
+.rm-icon {
+  display: inline-flex;
+  align-items: center;
+  margin-inline-end: 0.25em;
+  font-style: normal;
+}
+
 /* ---- site footer ---- */
 
 .rm-site-footer {

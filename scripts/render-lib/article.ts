@@ -205,30 +205,36 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
       return `        <li><a href="${href}" target="_blank" rel="noopener noreferrer"><code>${escapeHtml(a)}</code></a></li>`;
     })
     .join('\n');
+  const sourcesHeading = langMeta.translations.articleSourcesHeading;
+  const sourcesDesc = langMeta.translations.articleSourcesDesc;
+  const methodologyLabel = langMeta.translations.articleMethodologyLabel;
   const sourcesHtml = sourcesList ? `
       <section class="rm-article-sources" aria-labelledby="rm-article-sources-heading">
-        <h2 id="rm-article-sources-heading">Analysis sources</h2>
-        <p>This article is rendered 100% from the analysis artifacts below. Every section of the prose above is traceable to one of these source files on GitHub.</p>
-        <ul class="rm-article-sources-list">
+        <h2 id="rm-article-sources-heading"><span class="rm-icon" aria-hidden="true">📋</span> ${escapeHtml(sourcesHeading)}</h2>
+        <p>${escapeHtml(sourcesDesc)}</p>
+        <details class="rm-article-methodology">
+          <summary><span class="rm-icon" aria-hidden="true">🔬</span> ${escapeHtml(methodologyLabel)}</summary>
+          <ul class="rm-article-sources-list">
 ${sourcesList}
-        </ul>
+          </ul>
+        </details>
       </section>` : '';
 
   return `${chrome.head}
 ${chrome.headerHtml}
       <article class="rm-article rm-article-type-${escapeHtml(articleType.type)}" data-article-type="${escapeHtml(articleType.type)}" lang="${LANGUAGE_META[input.lang].hreflang}">
         <header class="rm-article-header">
-          <p class="rm-article-eyebrow">${escapeHtml(articleType.label)}</p>
+          <p class="rm-article-eyebrow"><span class="rm-icon" aria-hidden="true">🔍</span> ${escapeHtml(articleType.label)}</p>
           <h1>${escapeHtml(title)}</h1>
           <p class="rm-article-dek">${escapeHtml(description)}</p>
           <p class="rm-article-meta">
-            <time datetime="${publishedIso}">${escapeHtml(date)}</time>
+            <time datetime="${publishedIso}"><span class="rm-icon" aria-hidden="true">📅</span> ${escapeHtml(date)}</time>
             · <span class="rm-article-lang">${LANGUAGE_META[input.lang].flag} ${LANGUAGE_META[input.lang].nativeName}</span>
           </p>
           <ul class="rm-article-trust-badges" aria-label="${escapeHtml(LANGUAGE_META[input.lang].translations.articleTrustAriaLabel)}">
-            <li>${escapeHtml(LANGUAGE_META[input.lang].translations.articleTrustPublicSources)}</li>
-            <li>${escapeHtml(LANGUAGE_META[input.lang].translations.articleTrustAiFirst)}</li>
-            <li>${escapeHtml(LANGUAGE_META[input.lang].translations.articleTrustTraceable)}</li>
+            <li><span class="rm-icon" aria-hidden="true">🏛️</span> ${escapeHtml(LANGUAGE_META[input.lang].translations.articleTrustPublicSources)}</li>
+            <li><span class="rm-icon" aria-hidden="true">🤖</span> ${escapeHtml(LANGUAGE_META[input.lang].translations.articleTrustAiFirst)}</li>
+            <li><span class="rm-icon" aria-hidden="true">🔗</span> ${escapeHtml(LANGUAGE_META[input.lang].translations.articleTrustTraceable)}</li>
           </ul>
         </header>
         <div class="rm-article-body">
