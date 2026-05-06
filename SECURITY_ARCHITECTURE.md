@@ -11,16 +11,24 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-2.3-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--05--03-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-2.4-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--06-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/>
   <a href="https://www.bestpractices.dev/projects/12069"><img src="https://www.bestpractices.dev/projects/12069/badge" alt="OpenSSF Best Practices"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.3 | **📅 Last Updated:** 2026-05-03 (UTC)  
-**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-05-03  
+**📋 Document Owner:** CEO | **📄 Version:** 2.4 | **📅 Last Updated:** 2026-05-06 (UTC)  
+**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-05-06  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
+> **🆕 What changed since last review (v2.3 → v2.4, 2026-05-06):**
+> - 📌 **Reconciliation with Riksdagsmonitor `v0.8.76`** (was `v0.8.48` baseline). All version-specific control narratives below remain valid; the additions in this revision document the **political-intelligence security surface** that was previously listed as a backlog item in the [`documentation-portfolio-audit-2026-05-03.md`](analysis/audits/documentation-portfolio-audit-2026-05-03.md) follow-up.
+> - 🆕 **New §"Political Intelligence Security Surface"** (see end of this document) covering: (a) the **39 analysis templates** under `analysis/templates/*.md` and **18 methodologies** under `analysis/methodologies/*.md` consumed by AI agents, treated as a **trusted control plane** — version-controlled, PR-reviewed, and validated by the analysis gate; (b) the **analysis gate (checks 1–9b)** — implemented in [`scripts/agentic/analysis-gate.ts`](scripts/agentic/analysis-gate.ts) and specified in [`.github/prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md) — documented as a **structural-integrity security control** with explicit bypass-resistance properties (typed checks, recursive scan, fail-closed default); (c) the **methodology-reflection validator** in [`scripts/validate-methodology-reflection.ts`](scripts/validate-methodology-reflection.ts) as an **integrity-of-process control**; (d) **political classification** as a data-governance control bound to the [`CLASSIFICATION.md`](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) framework; (e) **OSINT tradecraft compliance** as an operational control; (f) **horizon stratification** as a data-flow boundary that limits which upstream classes may inform which forecast band.
+> - 🆕 **Five-layer safe-output security model** documented in detail (sanitisation → schema-validate → policy-check → human-review → merge), including bypass-resistance assessment and explicit per-layer failure modes; cross-referenced from [`THREAT_MODEL.md`](THREAT_MODEL.md) row TB-PI series.
+> - 🛡️ **External data-provider trust model** consolidated into a single table covering **IMF (TS client)**, **SCB MCP**, **World Bank MCP**, **Riksdag API**, **Riksbank**, **Statskontoret**, **Riksrevisionen** — with cache-integrity, schema-validation, and `.meta.json` tamper-evidence rows.
+> - 🔒 **Compliance mapping reconfirmed** for v0.8.76: ISO 27001:2022 Annex A.5/A.8 (full), NIST CSF 2.0 GV/ID/PR/DE/RS/RC, CIS Controls v8.1 (#1–#18 applicable subset), GDPR Art. 32, NIS2 Art. 21, EU CRA Annex I (essential-requirement coverage tracked in [`CRA-ASSESSMENT.md`](CRA-ASSESSMENT.md) v1.4).
+> - 📋 No control changes; this is a **documentation-only** reconciliation. Code paths, egress allow-lists, MCP server set (8), agent count (24), skill count (91), and workflow set (50 files = 22 standard `.yml` + 14 agentic `.md` + 14 compiled `.lock.yml`) are unchanged from v2.3.
+>
 > **🆕 What changed since last review (v2.2 → v2.3, 2026-05-03):**
 > - 🔄 **Drift reconciliation** with `.github/workflows/README.md`: agentic workflow count updated to **14 agentic news workflows** (was 11) wrapped in the same five-layer safe-outputs validator and Squid + iptables egress firewall. Total GitHub Actions surface is now **50 files** (22 standard `.yml` + 14 agentic `.md` + 14 compiled `.lock.yml`).
 > - 🛡️ Reaffirmed **MCP Gateway v0.3.1** schema constraint: workflow frontmatter MUST NOT include `engine.mcp.session-timeout` (rejected as unknown additional property by the gateway) — this is a hard control surface item.
