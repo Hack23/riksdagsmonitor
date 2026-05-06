@@ -92,8 +92,9 @@ describe('pipeline interfaces — type contracts', () => {
       { level: 'info', message: 'Generated successfully' },
     ];
     expect(diags).toHaveLength(3);
-    expect(diags[0]!.level).toBe('error');
-    expect(diags[1]!.file).toBeUndefined();
+    const [firstDiag, secondDiag] = diags;
+    expect(firstDiag!.level).toBe('error');
+    expect(secondDiag!.file).toBeUndefined();
   });
 
   it('ArticleSection ties markdown to its source file', () => {
@@ -198,6 +199,8 @@ describe('runArticlePipeline — happy path', () => {
     // executive-brief should come before significance-scoring
     const briefIdx = result.value!.artifactsUsed.indexOf('executive-brief.md');
     const sigIdx = result.value!.artifactsUsed.indexOf('significance-scoring.md');
+    expect(briefIdx).toBeGreaterThanOrEqual(0);
+    expect(sigIdx).toBeGreaterThanOrEqual(0);
     expect(briefIdx).toBeLessThan(sigIdx);
   });
 });
