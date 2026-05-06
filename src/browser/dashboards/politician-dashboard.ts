@@ -38,8 +38,9 @@ import {
 } from '../shared/index.js';
 
 import type { CSVRow } from '../shared/index.js';
+import type { ChartConstructor } from '../shared/global-libs.js';
 
-const Chart = (globalThis as any).Chart;
+const Chart = (globalThis as unknown as { Chart: ChartConstructor }).Chart;
 
 // ============================================================================
 // INTERFACES
@@ -290,7 +291,7 @@ function createCareerTrajectoryChart(data: CSVRow[]): void {
   const ctx = canvas.getContext('2d');
   if (!ctx) return;
 
-  let chartData: any;
+  let chartData: Record<string, unknown>;
   if (data && data.length > 0) {
     const byPeriod: Record<
       string,
@@ -405,7 +406,7 @@ function createProductivityInfluenceChart(
   const ctx = canvas.getContext('2d');
   if (!ctx) return;
 
-  let chartData: any;
+  let chartData: Record<string, unknown>;
   if (riskData && riskData.length > 0 && influenceData && influenceData.length > 0) {
     const influenceLookup: Record<string, { connections: number; classification: string }> = {};
     influenceData.forEach((row) => {
@@ -476,8 +477,8 @@ function createProductivityInfluenceChart(
           borderColor: '#00d9ff',
           borderWidth: 1,
           callbacks: {
-            label(context: any) {
-              const raw = context.raw as BubblePoint;
+            label(context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) {
+              const raw = context.raw as unknown as BubblePoint;
               return [
                 raw.name ? `${raw.name} (${raw.party})` : '',
                 `Votes: ${context.parsed.x}`,

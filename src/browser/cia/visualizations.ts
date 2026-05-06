@@ -23,6 +23,7 @@
  * @marketing Visual content factory — every rendered visualization is a potential marketing asset: embeddable widgets, shareable images, presentation slides, and report graphics. High-quality visualizations are the most shared content type, driving organic reach and brand recognition.
  * */
 
+import type { ChartConstructor } from '../shared/global-libs.js';
 import type {
   OverviewDashboard,
   PartyPerformance,
@@ -41,7 +42,7 @@ import type {
 /*  Global library reference (loaded via <script> tag)                */
 /* ------------------------------------------------------------------ */
 
-const Chart = (globalThis as any).Chart;
+const Chart = (globalThis as unknown as { Chart: ChartConstructor }).Chart;
 
 /* ------------------------------------------------------------------ */
 /*  Interfaces                                                        */

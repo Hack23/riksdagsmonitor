@@ -47,6 +47,7 @@ import { addChartKeyboardNav } from '../shared/chart-factory.js';
 
 import { detectLanguage } from '../shared/index.js';
 import type { CSVRow } from '../shared/index.js';
+import type { ChartConstructor } from '../shared/global-libs.js';
 
 // ============================================================================
 // INTERFACES
@@ -735,7 +736,7 @@ async function fetchData(filename: string): Promise<CSVRow[]> {
 
 /** Apply cyberpunk-themed Chart.js global defaults. */
 function initChartDefaults(): void {
-  const Chart = (globalThis as any).Chart;
+  const Chart = (globalThis as unknown as { Chart: ChartConstructor }).Chart;
   if (typeof Chart === 'undefined') {
     logger.error('Chart.js not loaded');
     return;
@@ -767,7 +768,7 @@ function createEffectivenessChart(data: CSVRow[]): void {
   const ctx = document.getElementById('partyEffectivenessChart') as HTMLCanvasElement | null;
   if (!ctx) return;
 
-  const Chart = (globalThis as any).Chart;
+  const Chart = (globalThis as unknown as { Chart: ChartConstructor }).Chart;
   const t = getTranslations();
 
   // Update ARIA label for current language with fallback to English
@@ -836,7 +837,7 @@ function createEffectivenessChart(data: CSVRow[]): void {
         legend: { display: true, position: 'bottom' },
         tooltip: {
           callbacks: {
-            label(context: any) {
+            label(context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) {
               return `${context.dataset.label}: ${(context.parsed.y as number).toFixed(1)}`;
             },
           },
@@ -872,7 +873,7 @@ function createComparisonChart(data: CSVRow[]): void {
   const ctx = document.getElementById('partyComparisonChart') as HTMLCanvasElement | null;
   if (!ctx) return;
 
-  const Chart = (globalThis as any).Chart;
+  const Chart = (globalThis as unknown as { Chart: ChartConstructor }).Chart;
   const t = getTranslations();
 
   // Update ARIA label for current language with fallback to English
@@ -932,7 +933,7 @@ function createComparisonChart(data: CSVRow[]): void {
         legend: { display: false },
         tooltip: {
           callbacks: {
-            label(context: any) {
+            label(context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) {
               return `Score: ${(context.parsed.x as number).toFixed(1)}`;
             },
           },
@@ -1055,7 +1056,7 @@ function createMomentumChart(data: CSVRow[]): void {
   const ctx = document.getElementById('partyMomentumChart') as HTMLCanvasElement | null;
   if (!ctx) return;
 
-  const Chart = (globalThis as any).Chart;
+  const Chart = (globalThis as unknown as { Chart: ChartConstructor }).Chart;
   const t = getTranslations();
 
   // Update ARIA label for current language with fallback to English
@@ -1116,13 +1117,13 @@ function createMomentumChart(data: CSVRow[]): void {
         legend: { display: true, position: 'right' },
         tooltip: {
           callbacks: {
-            label(context: any) {
-              const total = (context.dataset.data as number[]).reduce(
+            label(context: { parsed: number; dataset: { label?: string; data: number[] }; label: string; raw: Record<string, unknown> }) {
+              const total = context.dataset.data.reduce(
                 (a: number, b: number) => a + b,
                 0,
               );
               const percentage = ((context.parsed / total) * 100).toFixed(1);
-              return `${context.label}: ${(context.parsed as number).toFixed(1)} (${percentage}%)`;
+              return `${context.label}: ${context.parsed.toFixed(1)} (${percentage}%)`;
             },
           },
         },
@@ -1160,7 +1161,7 @@ export async function init(): Promise<void> {
   }
 
   // Wait for Chart.js to load
-  const Chart = (globalThis as any).Chart;
+  const Chart = (globalThis as unknown as { Chart: ChartConstructor }).Chart;
   if (typeof Chart === 'undefined') {
     logger.error('Chart.js not loaded. Please include Chart.js before this script.');
     return;

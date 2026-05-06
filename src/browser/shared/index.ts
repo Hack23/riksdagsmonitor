@@ -17,6 +17,7 @@ export * from './dom-utils.js';
 export * from './data-loader.js';
 export * from './fallback-ui.js';
 export * from './error-boundary.js';
+export * from './global-libs.js';
 
 // Note: chart-factory is intentionally excluded from this barrel export
 // to keep the root entry point free of chart.js type dependencies.

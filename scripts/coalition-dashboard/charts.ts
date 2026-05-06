@@ -10,7 +10,7 @@
  * @license Apache-2.0
  */
 
-declare const d3: any;
+declare const d3: typeof import('d3');
 import type { PartyNode, CoalitionLink, HeatMapDatum, PartyConfig, CoalitionAlignment, DataCache } from './types.js';
 
 // These symbols are provided by the enclosing IIFE in coalition-dashboard.ts at runtime
@@ -32,7 +32,7 @@ function renderCoalitionNetwork(): void {
   const height: number = 600;
 
   // Create SVG
-  const svg: d3.Selection<SVGSVGElement, unknown, HTMLElement, any> = d3.select('#coalitionNetwork')
+  const svg: d3.Selection<SVGSVGElement, unknown, HTMLElement, unknown> = d3.select('#coalitionNetwork')
     .append('svg')
     .attr('width', width)
     .attr('height', height)
@@ -230,14 +230,14 @@ function renderAlignmentHeatMap(): void {
   const innerWidth: number = width - margin.left - margin.right;
   const innerHeight: number = height - margin.top - margin.bottom;
 
-  const svg: d3.Selection<SVGSVGElement, unknown, HTMLElement, any> = d3.select('#alignmentHeatMap')
+  const svg: d3.Selection<SVGSVGElement, unknown, HTMLElement, unknown> = d3.select('#alignmentHeatMap')
     .append('svg')
     .attr('width', width)
     .attr('height', height)
     .attr('viewBox', `0 0 ${width} ${height}`)
     .attr('style', 'max-width: 100%; height: auto;');
 
-  const g: d3.Selection<SVGGElement, unknown, HTMLElement, any> = svg.append('g')
+  const g: d3.Selection<SVGGElement, unknown, HTMLElement, unknown> = svg.append('g')
     .attr('transform', `translate(${margin.left},${margin.top})`);
 
   const partyIds: string[] = Object.keys(PARTIES);

@@ -14,8 +14,8 @@
  * @license Apache-2.0
  */
 
-declare const Chart: any;
-declare const d3: any;
+declare const Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown };
+declare const d3: typeof import('d3');
 import type { PartyNode, CoalitionLink, VotingAnomaly, PartyConfig, DataCache, BehavioralPatterns, AnnualVotes, AnnualVoteEntry, CoalitionAlignment } from './types.js';
 
 // These symbols are provided by the enclosing IIFE in coalition-dashboard.ts at runtime
@@ -33,7 +33,7 @@ function renderVotingAnomalyChart(): void {
   const anomalies: VotingAnomaly[] = dataCache.votingAnomalies || [];
   
   // Prepare data
-  const datasets: any[] = Object.keys(PARTIES).map((partyId: string) => {
+  const datasets: Record<string, unknown>[] = Object.keys(PARTIES).map((partyId: string) => {
     const partyData: VotingAnomaly[] = anomalies.filter((a: VotingAnomaly) => a.party === partyId);
     
     return {
@@ -63,7 +63,7 @@ function renderVotingAnomalyChart(): void {
         },
         tooltip: {
           callbacks: {
-            label: function(context: any): string {
+            label: function(context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string }): string {
               const date: Date = new Date(context.parsed.x);
               return `${context.dataset.label}: Deviation ${context.parsed.y.toFixed(2)} on ${date.toLocaleDateString()}`;
             }
@@ -115,7 +115,7 @@ function renderBehavioralPatternsChart(): void {
   
   const behavioral: BehavioralPatterns = dataCache.behavioralPatterns || {};
   const partyIds: string[] = Object.keys(PARTIES);
-  const data: any = {
+  const data: Record<string, unknown> = {
     labels: partyIds.map((id: string) => PARTIES[id].name),
     datasets: [{
       label: 'Party Consistency Score (%)',
@@ -144,7 +144,7 @@ function renderBehavioralPatternsChart(): void {
         },
         tooltip: {
           callbacks: {
-            label: function(context: any): string {
+            label: function(context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string }): string {
               return `Consistency: ${context.parsed.x.toFixed(1)}%`;
             }
           }
@@ -199,7 +199,7 @@ function renderDecisionTrendsChart(): void {
     console.log('📊 Using generated data for decision trends');
   }
 
-  const datasets: any[] = Object.keys(PARTIES).map((partyId: string) => {
+  const datasets: Record<string, unknown>[] = Object.keys(PARTIES).map((partyId: string) => {
     let data: number[];
     
     if (useRealData && annualVotes[partyId]) {
@@ -249,7 +249,7 @@ function renderDecisionTrendsChart(): void {
           mode: 'index',
           intersect: false,
           callbacks: {
-            label: function(context: any): string {
+            label: function(context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string }): string {
               return context.dataset.label + ': ' + context.parsed.y.toLocaleString() + ' votes';
             }
           }

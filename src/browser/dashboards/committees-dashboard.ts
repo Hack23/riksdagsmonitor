@@ -21,14 +21,16 @@
  * */
 
 import { logger, showDataSourceDisclaimer } from '../shared/index.js';
+import type { CSVRow, ChartLike } from '../shared/index.js';
+import type { ChartConstructor } from '../shared/global-libs.js';
 
 /* ------------------------------------------------------------------ */
 /*  Global library references (loaded via <script> tags)              */
 /* ------------------------------------------------------------------ */
 
-const d3 = (globalThis as any).d3;
-const Chart = (globalThis as any).Chart;
-const Papa = (globalThis as any).Papa;
+const d3 = (globalThis as unknown as { d3: typeof import('d3') }).d3;
+const Chart = (globalThis as unknown as { Chart: ChartConstructor }).Chart;
+const Papa = (globalThis as unknown as { Papa: { parse(input: string, config?: Record<string, unknown>): { data: CSVRow[]; errors: unknown[] } } }).Papa;
 
 /* ------------------------------------------------------------------ */
 /*  Interfaces                                                        */
@@ -85,11 +87,11 @@ interface CacheEntry<T> {
 }
 
 interface AllCommitteeData {
-  productivityMatrix: any[];
-  committeeDecisions: any[];
-  annualDocuments: any[];
-  ballotSummary: any[];
-  seasonalPatterns: any[];
+  productivityMatrix: CSVRow[];
+  committeeDecisions: CSVRow[];
+  annualDocuments: CSVRow[];
+  ballotSummary: CSVRow[];
+  seasonalPatterns: CSVRow[];
 }
 
 interface VisualizationInstances {
@@ -167,7 +169,7 @@ class DataManager {
   }
 
   /** Fetch CSV data with caching & fallback URLs. */
-  async fetchData(key: string, url: string | string[]): Promise<any[]> {
+  async fetchData(key: string, url: string | string[]): Promise<CSVRow[]> {
     if (CONFIG.cache.enabled) {
       const cached = this.getCached(key);
       if (cached) {
@@ -204,7 +206,7 @@ class DataManager {
           logger.warn(`[DataManager] CSV parsing warnings for ${key}:`, parsed.errors);
         }
 
-        const data = parsed.data as any[];
+        const data = parsed.data as CSVRow[];
 
         if (CONFIG.cache.enabled) {
           this.setCached(key, data);
@@ -212,9 +214,9 @@ class DataManager {
 
         logger.info(`[DataManager] Successfully loaded ${key} from ${i === 0 ? 'local' : 'remote'} source`);
         return data;
-      } catch (error: any) {
-        logger.warn(`[DataManager] Failed to fetch ${key} from ${currentUrl}:`, error.message);
-        lastError = error;
+      } catch (error: unknown) {
+        logger.warn(`[DataManager] Failed to fetch ${key} from ${currentUrl}:`, (error as Error).message);
+        lastError = error as Error;
       }
     }
 
@@ -223,13 +225,13 @@ class DataManager {
   }
 
   /** Read from localStorage cache. */
-  private getCached(key: string): any[] | null {
+  private getCached(key: string): CSVRow[] | null {
     const cacheKey = CONFIG.cache.prefix + key;
     try {
       const cached = localStorage.getItem(cacheKey);
       if (!cached) return null;
 
-      const { data, timestamp } = JSON.parse(cached) as CacheEntry<any[]>;
+      const { data, timestamp } = JSON.parse(cached) as CacheEntry<CSVRow[]>;
       const age = Date.now() - timestamp;
 
       if (age < CONFIG.cache.ttl) {
@@ -244,12 +246,12 @@ class DataManager {
   }
 
   /** Write to localStorage cache. */
-  private setCached(key: string, data: any[]): void {
+  private setCached(key: string, data: CSVRow[]): void {
     const cacheKey = CONFIG.cache.prefix + key;
-    const cacheData: CacheEntry<any[]> = { data, timestamp: Date.now() };
+    const cacheData: CacheEntry<CSVRow[]> = { data, timestamp: Date.now() };
     try {
       localStorage.setItem(cacheKey, JSON.stringify(cacheData));
-    } catch (error: any) {
+    } catch (error: unknown) {
       logger.warn(`[DataManager] Failed to cache ${key}:`, error);
     }
   }
@@ -286,14 +288,12 @@ class DataManager {
 class NetworkDiagram {
   private containerId: string;
   private data: AllCommitteeData;
-  private svg: any;
-  private simulation: any;
+  private svg!: import('d3').Selection<SVGSVGElement, unknown, HTMLElement, unknown>;
+  private simulation!: import('d3').Simulation<NetworkNode, NetworkLink>;
 
   constructor(containerId: string, data: AllCommitteeData) {
     this.containerId = containerId;
     this.data = data;
-    this.svg = null;
-    this.simulation = null;
   }
 
   /** Render force-directed network diagram. */
@@ -318,16 +318,16 @@ class NetworkDiagram {
       .attr('role', 'img')
       .attr('aria-label', 'Committee network connections diagram')
       .attr('viewBox', `0 0 ${width} ${height}`)
-      .style('background', 'var(--card-bg)');
+      .style('background', 'var(--card-bg)') as unknown as import('d3').Selection<SVGSVGElement, unknown, HTMLElement, unknown>;
 
     const { nodes, links } = this.processNetworkData();
 
     this.simulation = d3
-      .forceSimulation(nodes)
-      .force('link', d3.forceLink(links).id((d: any) => d.id).distance(100))
+      .forceSimulation<NetworkNode>(nodes)
+      .force('link', d3.forceLink<NetworkNode, NetworkLink>(links).id((d) => d.id).distance(100))
       .force('charge', d3.forceManyBody().strength(-400))
       .force('center', d3.forceCenter(width / 2, height / 2))
-      .force('collision', d3.forceCollide().radius((d: any) => d.radius + 10));
+      .force('collision', d3.forceCollide<NetworkNode>().radius((d) => d.radius + 10));
 
     const link = this.svg
       .append('g')
@@ -337,7 +337,7 @@ class NetworkDiagram {
       .enter()
       .append('line')
       .attr('stroke', 'var(--border-color)')
-      .attr('stroke-width', (d: any) => Math.sqrt(d.value) * 2)
+      .attr('stroke-width', (d: NetworkLink) => Math.sqrt(d.value) * 2)
       .attr('stroke-opacity', 0.6);
 
     const node = this.svg
@@ -349,19 +349,18 @@ class NetworkDiagram {
       .append('g')
       .attr('tabindex', '0')
       .attr('role', 'button')
-      .attr('aria-label', (d: any) => `${d.name} committee with ${d.productivity} productivity score`)
+      .attr('aria-label', (d: NetworkNode) => `${d.name} committee with ${d.productivity} productivity score`)
       .call(
-        d3
-          .drag()
-          .on('start', (event: any) => this.dragStarted(event))
-          .on('drag', (event: any) => this.dragged(event))
-          .on('end', (event: any) => this.dragEnded(event)),
+        d3.drag<SVGGElement, NetworkNode>()
+          .on('start', (event: { active: boolean; subject: NetworkNode }) => this.dragStarted(event))
+          .on('drag', (event: { x: number; y: number; subject: NetworkNode }) => this.dragged(event))
+          .on('end', (event: { active: boolean; subject: NetworkNode }) => this.dragEnded(event)),
       );
 
     node
       .append('circle')
-      .attr('r', (d: any) => d.radius)
-      .attr('fill', (d: any) => d.color)
+      .attr('r', (d: NetworkNode) => d.radius)
+      .attr('fill', (d: NetworkNode) => d.color)
       .attr('stroke', 'var(--card-bg)')
       .attr('stroke-width', 2);
 
@@ -372,20 +371,20 @@ class NetworkDiagram {
       .attr('font-size', '12px')
       .attr('font-weight', 'bold')
       .attr('fill', 'var(--text-color)')
-      .text((d: any) => d.code);
+      .text((d: NetworkNode) => d.code);
 
     node
       .append('title')
-      .text((d: any) => `${d.name}\nProductivity: ${d.productivity}\nDecisions: ${d.decisions}`);
+      .text((d: NetworkNode) => `${d.name}\nProductivity: ${d.productivity}\nDecisions: ${d.decisions}`);
 
     this.simulation.on('tick', () => {
       link
-        .attr('x1', (d: any) => d.source.x)
-        .attr('y1', (d: any) => d.source.y)
-        .attr('x2', (d: any) => d.target.x)
-        .attr('y2', (d: any) => d.target.y);
+        .attr('x1', (d: NetworkLink) => (d.source as NetworkNode).x ?? 0)
+        .attr('y1', (d: NetworkLink) => (d.source as NetworkNode).y ?? 0)
+        .attr('x2', (d: NetworkLink) => (d.target as NetworkNode).x ?? 0)
+        .attr('y2', (d: NetworkLink) => (d.target as NetworkNode).y ?? 0);
 
-      node.attr('transform', (d: any) => `translate(${d.x},${d.y})`);
+      node.attr('transform', (d: NetworkNode) => `translate(${d.x},${d.y})`);
     });
 
     this.addLegend(width, height);
@@ -487,8 +486,8 @@ class NetworkDiagram {
 
     for (const node of nodes) {
       const connections = links.filter((l) => {
-        const sourceId = typeof l.source === 'string' ? l.source : (l.source as any)?.id;
-        const targetId = typeof l.target === 'string' ? l.target : (l.target as any)?.id;
+        const sourceId = typeof l.source === 'string' ? l.source : (l.source as NetworkNode)?.id;
+        const targetId = typeof l.target === 'string' ? l.target : (l.target as NetworkNode)?.id;
         return sourceId === node.id || targetId === node.id;
       }).length;
       html += `<tr>
@@ -504,18 +503,18 @@ class NetworkDiagram {
   }
 
   /* Drag handlers */
-  private dragStarted(event: any): void {
+  private dragStarted(event: { active: boolean; subject: NetworkNode }): void {
     if (!event.active) this.simulation.alphaTarget(0.3).restart();
     event.subject.fx = event.subject.x;
     event.subject.fy = event.subject.y;
   }
 
-  private dragged(event: any): void {
+  private dragged(event: { x: number; y: number; subject: NetworkNode }): void {
     event.subject.fx = event.x;
     event.subject.fy = event.y;
   }
 
-  private dragEnded(event: any): void {
+  private dragEnded(event: { active: boolean; subject: NetworkNode }): void {
     if (!event.active) this.simulation.alphaTarget(0);
     event.subject.fx = null;
     event.subject.fy = null;
@@ -529,12 +528,11 @@ class NetworkDiagram {
 class ProductivityHeatMap {
   private containerId: string;
   private data: AllCommitteeData;
-  private svg: any;
+  private svg!: import('d3').Selection<SVGSVGElement, unknown, HTMLElement, unknown>;
 
   constructor(containerId: string, data: AllCommitteeData) {
     this.containerId = containerId;
     this.data = data;
-    this.svg = null;
   }
 
   /** Render the productivity heat map. */
@@ -563,7 +561,7 @@ class ProductivityHeatMap {
       .attr('role', 'img')
       .attr('aria-label', 'Committee productivity matrix over time')
       .attr('viewBox', `0 0 ${width} ${height}`)
-      .style('background', 'var(--card-bg)');
+      .style('background', 'var(--card-bg)') as unknown as import('d3').Selection<SVGSVGElement, unknown, HTMLElement, unknown>;
 
     const g = this.svg
       .append('g')
@@ -579,16 +577,16 @@ class ProductivityHeatMap {
       .data(matrix)
       .enter()
       .append('rect')
-      .attr('x', (d: any) => xScale(d.year))
-      .attr('y', (d: any) => yScale(d.committee))
+      .attr('x', (d: HeatMapCell) => xScale(d.year) ?? 0)
+      .attr('y', (d: HeatMapCell) => yScale(d.committee) ?? 0)
       .attr('width', xScale.bandwidth())
       .attr('height', yScale.bandwidth())
-      .attr('fill', (d: any) => colorScale(d.value))
+      .attr('fill', (d: HeatMapCell) => colorScale(d.value))
       .attr('stroke', 'var(--card-bg)')
       .attr('stroke-width', 1)
       .attr('tabindex', '0')
       .attr('role', 'button')
-      .attr('aria-label', (d: any) => `${d.committee} in ${d.year}: ${d.value.toFixed(1)} productivity`)
+      .attr('aria-label', (d: HeatMapCell) => `${d.committee} in ${d.year}: ${d.value.toFixed(1)} productivity`)
       .on('mouseover', function (this: SVGRectElement) {
         d3.select(this).attr('stroke', 'var(--accent-color)').attr('stroke-width', 2);
       })
@@ -596,7 +594,7 @@ class ProductivityHeatMap {
         d3.select(this).attr('stroke', 'var(--card-bg)').attr('stroke-width', 1);
       })
       .append('title')
-      .text((d: any) => `${d.committee} (${d.year})\nProductivity: ${d.value.toFixed(1)}`);
+      .text((d: HeatMapCell) => `${d.committee} (${d.year})\nProductivity: ${d.value.toFixed(1)}`);
 
     // X axis
     g.append('g')
@@ -675,7 +673,7 @@ class ProductivityHeatMap {
   }
 
   /** Add a gradient color legend below the heatmap. */
-  private addColorLegend(g: any, _colorScale: any, innerWidth: number, innerHeight: number): void {
+  private addColorLegend(g: import('d3').Selection<SVGGElement, unknown, import('d3').BaseType, unknown>, _colorScale: unknown, innerWidth: number, innerHeight: number): void {
     const legendWidth = 200;
     const legendHeight = 15;
 
@@ -735,7 +733,7 @@ class ProductivityHeatMap {
 /* ------------------------------------------------------------------ */
 
 class ChartJSVisualizations {
-  private charts: Record<string, any>;
+  private charts: Record<string, ChartLike>;
 
   constructor() {
     this.charts = {};
@@ -805,7 +803,7 @@ class ChartJSVisualizations {
         plugins: {
           title: { display: true, text: 'Committee Productivity Comparison', color: textColor, font: { size: 16, weight: 'bold' } },
           legend: { display: false },
-          tooltip: { callbacks: { label: (context: any) => `Productivity: ${context.parsed.y.toFixed(1)}` } },
+          tooltip: { callbacks: { label: (context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) => `Productivity: ${context.parsed.y.toFixed(1)}` } },
         },
         scales: {
           y: { beginAtZero: true, max: 100, title: { display: true, text: 'Productivity Score (0-100)', color: textColor }, ticks: { color: textColor }, grid: { color: borderColor } },
@@ -877,7 +875,7 @@ class ChartJSVisualizations {
         plugins: {
           title: { display: true, text: 'Decision Outcomes by Year', color: textColor, font: { size: 16, weight: 'bold' } },
           legend: { labels: { color: textColor } },
-          tooltip: { callbacks: { label: (context: any) => `${context.dataset.label}: ${context.parsed.y.toFixed(1)}%` } },
+          tooltip: { callbacks: { label: (context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) => `${context.dataset.label}: ${context.parsed.y.toFixed(1)}%` } },
         },
         scales: {
           x: { stacked: true, title: { display: true, text: 'Year', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor } },
@@ -905,7 +903,7 @@ class ChartJSVisualizations {
         const quarter = parseInt(row.quarter) || 0;
         if (year && quarter >= 1 && quarter <= 4) {
           if (!yearQuarterData[year]) yearQuarterData[year] = {};
-          yearQuarterData[year][quarter] = parseFloat(row.median || row.total_ballots || row.value || 0);
+          yearQuarterData[year][quarter] = parseFloat(row.median ?? row.total_ballots ?? row.value ?? '0');
         }
       }
     }
@@ -945,7 +943,7 @@ class ChartJSVisualizations {
         plugins: {
           title: { display: true, text: 'Quarterly Activity Patterns (2023-2025)', color: textColor, font: { size: 16, weight: 'bold' } },
           legend: { labels: { color: textColor } },
-          tooltip: { callbacks: { label: (context: any) => `${context.dataset.label}: ${context.parsed.y} activity score` } },
+          tooltip: { callbacks: { label: (context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) => `${context.dataset.label}: ${context.parsed.y} activity score` } },
         },
         scales: {
           y: { beginAtZero: true, max: 100, title: { display: true, text: 'Activity Score', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor } },
@@ -1075,9 +1073,9 @@ async function initializeDashboard(): Promise<void> {
 
     hideLoadingIndicator();
     logger.info('[CommitteeDashboard] Initialization complete');
-  } catch (error: any) {
+  } catch (error: unknown) {
     logger.error('[CommitteeDashboard] Initialization failed:', error);
-    showErrorMessage(error.message);
+    showErrorMessage((error as Error).message);
   } finally {
     isInitializing = false;
   }

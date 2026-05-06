@@ -21,7 +21,7 @@ export default [
     },
     rules: {
       // Override/add rules here
-      'no-unused-vars': ['warn', { 
+      'no-unused-vars': ['error', { 
         argsIgnorePattern: '^_',
         varsIgnorePattern: '^_',
         caughtErrorsIgnorePattern: '^_',
@@ -54,8 +54,8 @@ export default [
       'no-undef': 'off', // TypeScript compiler handles this
       'no-redeclare': 'off', // TypeScript handles this
       'no-console': 'off',
-      // Type-safety rules — warn to flag existing usage, enforce in new code
-      '@typescript-eslint/no-explicit-any': 'warn',
+      // Type-safety rules — enforced: zero any types allowed
+      '@typescript-eslint/no-explicit-any': 'error',
     },
   },
   {

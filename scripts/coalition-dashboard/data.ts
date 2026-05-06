@@ -10,7 +10,7 @@
  * @license Apache-2.0
  */
 
-declare const d3: any;
+declare const d3: typeof import('d3');
 import type {
   PartyConfig, PartyNode, CoalitionLink, VotingAnomaly,
   AnnualVoteEntry, DataCache, DataFiles, DataConfig,

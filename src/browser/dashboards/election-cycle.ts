@@ -34,11 +34,12 @@ import {
   showDataSourceDisclaimer,
 } from '../shared/index.js';
 
-import type { CSVRow } from '../shared/index.js';
+import type { CSVRow, ChartLike } from '../shared/index.js';
+import type { ChartConstructor } from '../shared/global-libs.js';
 
-const d3 = (globalThis as any).d3;
-const Chart = (globalThis as any).Chart;
-const Papa = (globalThis as any).Papa;
+const d3 = (globalThis as unknown as { d3: typeof import('d3') }).d3;
+const Chart = (globalThis as unknown as { Chart: ChartConstructor }).Chart;
+const Papa = (globalThis as unknown as { Papa: { parse(input: string, config?: Record<string, unknown>): { data: CSVRow[] } } }).Papa;
 
 // ============================================================================
 // INTERFACES
@@ -286,7 +287,7 @@ export class ElectionCycleDataManager {
 // ============================================================================
 
 class ElectionCycleCharts {
-  private charts: Record<string, any> = {};
+  private charts: Record<string, ChartLike> = {};
 
   constructor(
     _dataManager: ElectionCycleDataManager,
@@ -317,7 +318,7 @@ class ElectionCycleCharts {
     this.charts[canvasId] = new Chart(ctx, {
       type: 'line', data: { datasets },
       options: { responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false },
-        plugins: { title: { display: true, text: this.translations.charts.timeline.title, font: { size: 16, weight: 'bold' } }, legend: { display: true, position: 'bottom' }, tooltip: { callbacks: { label: (context: any) => `${context.dataset.label}: ${context.parsed.y ? context.parsed.y.toFixed(2) : 'N/A'}` } } },
+        plugins: { title: { display: true, text: this.translations.charts.timeline.title, font: { size: 16, weight: 'bold' } }, legend: { display: true, position: 'bottom' }, tooltip: { callbacks: { label: (context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) => `${context.dataset.label}: ${context.parsed.y ? context.parsed.y.toFixed(2) : 'N/A'}` } } },
         scales: { x: { type: 'category', title: { display: true, text: this.translations.filters.cycle } }, y: { beginAtZero: false, min: 50, max: 100, title: { display: true, text: 'Performance Score' } } }
       }
     });
@@ -354,9 +355,9 @@ class ElectionCycleCharts {
     const yScale = d3.scaleBand().domain(parties).range([0, parties.length * cellSize]).padding(0.05);
 
     g.selectAll('rect').data(heatmapData).enter().append('rect')
-      .attr('x', (d: any) => xScale(d.cycle)).attr('y', (d: any) => yScale(d.party)).attr('width', xScale.bandwidth()).attr('height', yScale.bandwidth())
-      .attr('fill', (d: any) => colorScale(d.approval)).attr('stroke', '#fff').attr('stroke-width', 1)
-      .append('title').text((d: any) => `${d.party} - ${d.cycle}\nApproval: ${d.approval.toFixed(1)}%\n${d.effectiveness}`);
+      .attr('x', (d: { party: string; cycle: string; approval: number; effectiveness: string }) => xScale(d.cycle) ?? 0).attr('y', (d: { party: string; cycle: string; approval: number; effectiveness: string }) => yScale(d.party) ?? 0).attr('width', xScale.bandwidth()).attr('height', yScale.bandwidth())
+      .attr('fill', (d: { party: string; cycle: string; approval: number; effectiveness: string }) => colorScale(d.approval)).attr('stroke', '#fff').attr('stroke-width', 1)
+      .append('title').text((d: { party: string; cycle: string; approval: number; effectiveness: string }) => `${d.party} - ${d.cycle}\nApproval: ${d.approval.toFixed(1)}%\n${d.effectiveness}`);
 
     g.append('g').attr('transform', `translate(0,${parties.length * cellSize})`).call(d3.axisBottom(xScale)).selectAll('text').attr('transform', 'rotate(-45)').style('text-anchor', 'end');
     g.append('g').call(d3.axisLeft(yScale));
@@ -369,7 +370,7 @@ class ElectionCycleCharts {
     const ctx = canvas.getContext('2d');
     if (this.charts[canvasId]) this.charts[canvasId].destroy();
 
-    const stableData: any[] = []; const escalationData: any[] = [];
+    const stableData: { x: string; y: number; r: number; confidence: string; ministries: string | number }[] = []; const escalationData: { x: string; y: number; r: number; confidence: string; ministries: string | number }[] = [];
     predictiveData.forEach(d => {
       const point = { x: d['election_cycle_id'] || d['cycle_year'], y: parseFloat(String(d['avg_risk_score_change'] ?? 0)), r: Math.sqrt((Number(d['politicians_at_risk']) || 0) / 10) + 3, confidence: d['forecast_confidence'] || 'unknown', ministries: d['ministries_at_risk'] || 0 };
       if (d['risk_forecast_category'] === 'STABLE') stableData.push(point); else if (d['risk_forecast_category'] === 'RAPID_ESCALATION') escalationData.push(point);
@@ -380,7 +381,7 @@ class ElectionCycleCharts {
         { label: 'STABLE', data: stableData, backgroundColor: CONFIG.riskColors['STABLE'] + '80', borderColor: CONFIG.riskColors['STABLE'], borderWidth: 2 },
         { label: 'RAPID_ESCALATION', data: escalationData, backgroundColor: CONFIG.riskColors['RAPID_ESCALATION'] + '80', borderColor: CONFIG.riskColors['RAPID_ESCALATION'], borderWidth: 2 }
       ] },
-      options: { responsive: true, maintainAspectRatio: false, plugins: { title: { display: true, text: this.translations.charts.risk.title, font: { size: 16, weight: 'bold' } }, legend: { display: true, position: 'bottom' }, tooltip: { callbacks: { label: (context: any) => { const data = context.raw; return [`Risk Change: ${data.y.toFixed(2)}`, `Politicians at Risk: ${Math.round(Math.pow((data.r - 3), 2) * 10)}`, `Confidence: ${data.confidence}`]; } } } }, scales: { x: { type: 'category', title: { display: true, text: this.translations.filters.cycle } }, y: { title: { display: true, text: 'Avg Risk Score Change' } } } }
+      options: { responsive: true, maintainAspectRatio: false, plugins: { title: { display: true, text: this.translations.charts.risk.title, font: { size: 16, weight: 'bold' } }, legend: { display: true, position: 'bottom' }, tooltip: { callbacks: { label: (context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) => { const data = context.raw as { y: number; r: number; confidence: string }; return [`Risk Change: ${data.y.toFixed(2)}`, `Politicians at Risk: ${Math.round(Math.pow((data.r - 3), 2) * 10)}`, `Confidence: ${data.confidence}`]; } } } }, scales: { x: { type: 'category', title: { display: true, text: this.translations.filters.cycle } }, y: { title: { display: true, text: 'Avg Risk Score Change' } } } }
     });
   }
 

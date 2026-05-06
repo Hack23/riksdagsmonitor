@@ -43,9 +43,9 @@
   // always read from globalThis at the point of use, not at IIFE load time.
   // This ensures late-loaded libraries (defer/async/dynamic ordering) are
   // always picked up correctly.
-  let d3: any;
-  let Chart: any;
-  let Papa: any;
+  let d3: typeof import('d3');
+  let Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown };
+  let Papa: { parse(input: string, config?: Record<string, unknown>): { data: string[][] } };
 
   // ==============================================
   // CONFIGURATION
@@ -100,7 +100,7 @@
   // ==============================================
 
   class DataManager {
-    private cache: Map<string, Record<string, any>[]>;
+    private cache: Map<string, Record<string, string>[]>;
 
     constructor() {
       this.cache = new Map();
@@ -110,9 +110,9 @@
      * Fetch CSV data with caching support
      * @param {string} key - Cache key identifier
      * @param {string|string[]} url - URL(s) to fetch data from (tries in order if array)
-     * @returns {Promise<Record<string, any>[]>} Parsed CSV data
+     * @returns {Promise<Record<string, string>[]>} Parsed CSV data
      */
-    async fetchData(key: string, url: string | string[]): Promise<Record<string, any>[]> {
+    async fetchData(key: string, url: string | string[]): Promise<Record<string, string>[]> {
       // Check cache first
       if (CONFIG.cache.enabled) {
         const cached = this.getCached(key);
@@ -154,7 +154,7 @@
             console.warn(`[DataManager] CSV parsing warnings for ${key}:`, parsed.errors);
           }
 
-          const data: Record<string, any>[] = parsed.data;
+          const data: Record<string, string>[] = parsed.data;
           
           // Cache the result
           if (CONFIG.cache.enabled) {
@@ -178,9 +178,9 @@
     /**
      * Get cached data if valid
      * @param {string} key - Cache key
-     * @returns {Record<string, any>[] | null} Cached data or null
+     * @returns {Record<string, string>[] | null} Cached data or null
      */
-    getCached(key: string): Record<string, any>[] | null {
+    getCached(key: string): Record<string, string>[] | null {
       const cacheKey: string = CONFIG.cache.prefix + key;
       try {
         const cached: string | null = localStorage.getItem(cacheKey);
@@ -212,9 +212,9 @@
     /**
      * Set cached data
      * @param {string} key - Cache key
-     * @param {Record<string, any>[]} data - Data to cache
+     * @param {Record<string, string>[]} data - Data to cache
      */
-    setCached(key: string, data: Record<string, any>[]): void {
+    setCached(key: string, data: Record<string, string>[]): void {
       const cacheKey: string = CONFIG.cache.prefix + key;
       const cacheData: CacheEntry = {
         data: data,
@@ -364,10 +364,10 @@
       // Update positions on simulation tick
       this.simulation.on('tick', () => {
         link
-          .attr('x1', (d: any) => d.source.x)
-          .attr('y1', (d: any) => d.source.y)
-          .attr('x2', (d: any) => d.target.x)
-          .attr('y2', (d: any) => d.target.y);
+          .attr('x1', (d: { source: { x: number }; target: { x: number } }) => d.source.x)
+          .attr('y1', (d: { source: { y: number }; target: { y: number } }) => d.source.y)
+          .attr('x2', (d: { source: { x: number }; target: { x: number } }) => d.target.x)
+          .attr('y2', (d: { source: { y: number }; target: { y: number } }) => d.target.y);
 
         node
           .attr('transform', (d: NetworkNode) => `translate(${d.x},${d.y})`);
@@ -433,8 +433,8 @@
           const prodDiff: number = Math.abs(nodes[i].productivity - nodes[j].productivity);
           if (prodDiff < 20) {
             links.push({
-              source: nodes[i].id as any,
-              target: nodes[j].id as any,
+              source: nodes[i].id as string,
+              target: nodes[j].id as string,
               value: 10 - prodDiff / 2
             });
           }
@@ -484,8 +484,8 @@
       nodes.forEach((node: NetworkNode) => {
         // Handle both string and object types for source/target
         const connections: number = links.filter((l: NetworkLink) => {
-          const sourceId: string = typeof l.source === 'string' ? l.source : (l.source as any)?.id ?? '';
-          const targetId: string = typeof l.target === 'string' ? l.target : (l.target as any)?.id ?? '';
+          const sourceId: string = typeof l.source === 'string' ? l.source : (l.source as { id: string })?.id ?? '';
+          const targetId: string = typeof l.target === 'string' ? l.target : (l.target as { id: string })?.id ?? '';
           return sourceId === node.id || targetId === node.id;
         }).length;
         html += `<tr>
@@ -777,7 +777,7 @@
   // ==============================================
 
   class ChartJSVisualizations {
-    private charts: Record<string, any>;
+    private charts: Record<string, unknown>;
 
     constructor() {
       this.charts = {};
@@ -863,7 +863,7 @@
             },
             tooltip: {
               callbacks: {
-                label: function(context: any): string {
+                label: function(context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string }): string {
                   return `Productivity: ${context.parsed.y.toFixed(1)}`;
                 }
               }
@@ -1004,7 +1004,7 @@
             },
             tooltip: {
               callbacks: {
-                label: function(context: any): string {
+                label: function(context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string }): string {
                   return `${context.dataset.label}: ${context.parsed.y.toFixed(1)}%`;
                 }
               }
@@ -1080,7 +1080,7 @@
       const availableYears: string[] = Object.keys(yearQuarterData).sort().slice(-3);
       const yearColors: string[] = ['#1e88e5', '#43a047', '#fb8c00'];
       
-      const datasets: any[] = availableYears.length > 0 
+      const datasets: Record<string, unknown>[] = availableYears.length > 0 
         ? availableYears.map((year: string, idx: number) => ({
             label: year,
             data: [1, 2, 3, 4].map((q: number) => yearQuarterData[year][q] || 0),
@@ -1127,7 +1127,7 @@
             },
             tooltip: {
               callbacks: {
-                label: function(context: any): string {
+                label: function(context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string }): string {
                   return `${context.dataset.label}: ${context.parsed.y} activity score`;
                 }
               }
@@ -1218,9 +1218,9 @@
 
     try {
       // Resolve browser globals here so late-loaded libraries are picked up.
-      d3 = (globalThis as any).d3;
-      Chart = (globalThis as any).Chart;
-      Papa = (globalThis as any).Papa;
+      d3 = (globalThis as unknown as { d3: typeof import('d3') }).d3;
+      Chart = (globalThis as unknown as { Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown } }).Chart;
+      Papa = (globalThis as unknown as { Papa: { parse(input: string, config?: Record<string, unknown>): { data: string[][] } } }).Papa;
 
       // Check if required libraries are loaded
       if (typeof d3 === 'undefined') {
