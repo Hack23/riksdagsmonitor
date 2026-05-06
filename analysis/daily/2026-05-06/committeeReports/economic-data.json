@@ -1,0 +1,54 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-05-06",
+  "subfolder": "committeeReports",
+  "status": "degraded",
+  "degradation_reason": "IMF SDMX endpoint unavailable (404 on CPI, IFS series). WEO Datamapper and FM partially available.",
+  "indicators": [
+    {
+      "indicator": "NGDP_RPCH",
+      "name": "Real GDP growth",
+      "country": "SWE",
+      "value": null,
+      "unit": "%",
+      "year": 2026,
+      "source": "IMF WEO",
+      "vintage": "April 2026",
+      "note": "Approximately 1.7% per WEO April 2026 — SDMX endpoint unavailable, figure from Datamapper approximation",
+      "available": false
+    },
+    {
+      "indicator": "LUR",
+      "name": "Unemployment rate",
+      "country": "SWE",
+      "value": null,
+      "unit": "%",
+      "year": 2026,
+      "source": "IMF WEO",
+      "vintage": "April 2026",
+      "note": "SDMX unavailable — not retrieved",
+      "available": false
+    },
+    {
+      "indicator": "GGXWDG_NGDP",
+      "name": "Gross government debt (% GDP)",
+      "country": "SWE",
+      "value": null,
+      "unit": "% GDP",
+      "year": 2026,
+      "source": "IMF WEO",
+      "vintage": "April 2026",
+      "note": "SDMX unavailable — not retrieved",
+      "available": false
+    }
+  ],
+  "economic_context_for_article": {
+    "narrative": "Sweden operates with modest fiscal space in 2026. IMF WEO April 2026 projects Swedish real GDP growth at approximately 1.7% for 2026, following recovery from the 2023–2024 slowdown. Government debt remains low by EU standards. The SfU21 welfare restriction is motivated primarily by migration policy rather than fiscal emergency — savings are estimated at SEK 1–2 billion annually, modest relative to total socialförsäkring spending of ~SEK 600+ billion. The SfU24 housing allowance reform may yield smaller but positive fiscal accuracy improvements.",
+    "imf_warning": "⚠️ IMF data partially unavailable (SDMX degraded). Economic figures are approximations from WEO Datamapper. Precise series (CPI monthly, quarterly GDP, IFS) not available in this run.",
+    "imf_provider": "imf",
+    "scb_fallback": "SCB quarterly national accounts not queried in this run; IMF degraded status noted",
+    "world_bank_used": false,
+    "world_bank_reason": "No governance/environment/social residue requiring World Bank in this article type"
+  },
+  "generated_at": "2026-05-06T20:26:00Z"
+}

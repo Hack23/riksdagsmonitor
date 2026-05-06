@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0",
+  "subfolder": "committeeReports",
+  "date": "2026-05-06",
+  "pirs": [
+    {
+      "id": "PIR-01",
+      "title": "SfU21 qualifying period length in implementing förordning",
+      "status": "open",
+      "priority": "high",
+      "horizon": "T+30d",
+      "watch_signal": "Government website förordning publication",
+      "opened": "2026-05-06",
+      "closed": null
+    },
+    {
+      "id": "PIR-02",
+      "title": "Försäkringskassan supplementary appropriation request for SfU21+SfU24 IT",
+      "status": "open",
+      "priority": "high",
+      "horizon": "T+60d",
+      "watch_signal": "Regleringsbrev amendment",
+      "opened": "2026-05-06",
+      "closed": null
+    },
+    {
+      "id": "PIR-03",
+      "title": "FRA operational directive under FöU18",
+      "status": "open",
+      "priority": "medium",
+      "horizon": "T+90d",
+      "watch_signal": "FUN årsredovisning 2026; FRA press release",
+      "opened": "2026-05-06",
+      "closed": null
+    },
+    {
+      "id": "PIR-04",
+      "title": "CU25 prison site selection",
+      "status": "open",
+      "priority": "medium",
+      "horizon": "T+90d",
+      "watch_signal": "Kriminalvården press release",
+      "opened": "2026-05-06",
+      "closed": null
+    },
+    {
+      "id": "PIR-05",
+      "title": "Polling movement post-SfU21",
+      "status": "open",
+      "priority": "medium",
+      "horizon": "T+14d",
+      "watch_signal": "Novus, Ipsos, Sifo polls",
+      "opened": "2026-05-06",
+      "closed": null
+    }
+  ],
+  "carry_forward_from_prior": [],
+  "cycle": "committeeReports",
+  "generated_at": "2026-05-06T20:25:00Z"
+}
