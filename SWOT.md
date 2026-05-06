@@ -11,15 +11,22 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-1.3-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--05--03-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-1.4-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--06-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.3 | **📅 Last Updated:** 2026-05-03 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 1.4 | **📅 Last Updated:** 2026-05-06 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-03  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
+> **🆕 What changed since last review (v1.3 → v1.4, 2026-05-06):**
+> - 📈 **Strengths (new S9):** Political Intelligence Methodology — 18 methodologies, 39 templates, analysis gate checks 1-9b, AI-FIRST 2-iteration model, 23-artifact structure (Families A-D: 9+2+5+7), horizon stratification (T+72h → T+1460d).
+> - 📈 **S7 updated:** 24 agents (was 13), 93 skills (was 41), 14 agentic news workflows (was 11).
+> - 📈 **S4 updated:** Vite 8.0.10 (was Vite 7).
+> - 📊 **Executive Summary updated:** v0.8.76, 3,319+ tests.
+> - ⚠️ **W5 updated:** 14 agentic news workflows now in production (was 10).
+>
 > **🆕 What changed since last review (v1.1 → v1.2, 2026-04-20):**
 > - 📈 **Strengths (new):** IMF added as a third primary economic-data source with T+5 projections; pure-TypeScript client (`scripts/imf-client.ts`) fully covered by the npm SBOM — **no Python / uvx / third-party MCP** supply-chain surface; three-source economic posture (SCB + World Bank + IMF) mitigates any single upstream outage or vintage lag. Per [ADR 0001](docs/adr/0001-adopt-imf-data-alongside-world-bank.md).
 > - 🚀 **Opportunities (new):** IMF WEO / Fiscal Monitor projections unlock forward-looking news products (`week-ahead`, `month-ahead`, `weekly-review`, `monthly-review`) with credible official macro/fiscal outlooks through 2031.
@@ -48,7 +55,7 @@
 This SWOT analysis evaluates Riksdagsmonitor's strategic position as a Swedish Parliament intelligence platform. The analysis identifies internal strengths and weaknesses alongside external opportunities and threats, providing a foundation for strategic decision-making aligned with Hack23 AB's Information Security Management System (ISMS).
 
 **Key Findings:**
-- **Dominant Strengths:** 50+ years of comprehensive political data, 14-language support, 19 CIA intelligence products, modern static architecture
+- **Dominant Strengths:** 50+ years of comprehensive political data, 14-language support, 19 CIA intelligence products, modern static architecture, 3,319+ tests (v0.8.76)
 - **Critical Weaknesses:** Single developer dependency, no monetization model, limited marketing reach
 - **Major Opportunities:** Nordic expansion, EU Parliament integration, API monetization, international partnerships
 - **Significant Threats:** Competitive platforms, regulatory uncertainty, technical evolution, market dynamics
@@ -197,7 +204,7 @@ quadrantChart
 - **Inherent Security:** No server-side code execution, no database vulnerabilities
 - **Global Performance:** CloudFront distribution with multi-region S3 replication
 - **99.998% Availability:** AWS SLA-backed infrastructure with automated failover
-- **Build System:** Vite 7 with ES modules, code splitting, tree-shaking
+- **Build System:** Vite 8.0.10 with ES modules, code splitting, tree-shaking
 - **Single-Source-of-Truth Articles:** `scripts/aggregate-analysis.ts` concatenates `analysis/daily/$DATE/$SUB/*.md` into a canonical `article.md`; `scripts/render-articles.ts` + `scripts/render-lib/` emits sanitised HTML via `unified → remark → rehype → rehype-sanitize`. No HTML scaffolding, no `AI_MUST_REPLACE` markers, every claim traceable back to a committed analysis file.
 
 **Evidence:**
@@ -253,22 +260,22 @@ quadrantChart
 
 ---
 
-### S7: GitHub Copilot Agent Ecosystem (13 Agents)
+### S7: GitHub Copilot Agent Ecosystem (24 Agents)
 
-**Description:** Comprehensive set of 13 specialized GitHub Copilot agents for security, documentation, quality, frontend, intelligence, and operations.
+**Description:** Comprehensive set of 24 specialized GitHub Copilot agents (14 persona + 9 workflow-specialist + 1 developer-instructions) for security, documentation, quality, frontend, intelligence, and operations.
 
 **Competitive Advantage:**
-- **13 Specialized Agents:** security-architect, documentation-architect, quality-engineer, frontend-specialist, isms-compliance-manager, deployment-specialist, intelligence-operative, task-agent, ui-enhancement-specialist, data-pipeline-specialist, data-visualization-specialist, content-generator, devops-engineer
-- **41 Skills:** Complete skill library covering ISMS, political intelligence, security, development, UI/UX, testing, and data integration
+- **24 Specialized Agents:** security-architect, documentation-architect, quality-engineer, frontend-specialist, isms-compliance-manager, deployment-specialist, intelligence-operative, task-agent, ui-enhancement-specialist, data-pipeline-specialist, data-visualization-specialist, content-generator, devops-engineer, news-journalist + 9 workflow-specialist agents + shared developer instructions
+- **93 Skills:** Complete skill library covering ISMS, political intelligence, security, development, UI/UX, testing, data integration, and GitHub Agentic Workflows
 - **Automated Workflows:** AI-powered content generation, quality checks, security scanning
 - **ISMS Compliance:** All agents follow Hack23 secure development standards
 
 **Evidence:**
 - `AGENTS.md` (comprehensive agent documentation)
-- `SKILLS.md` (41 specialized skills)
+- `SKILLS.md` (93 specialized skills)
 - `.github/agents/` (agent configuration files)
 - `.github/skills/` (skill libraries)
-- Active agentic workflows: 11 workflows in production — 10 single-run news pipelines (news-evening-analysis, news-realtime-monitor, news-motions, news-committee-reports, news-weekly-review, news-monthly-review, news-week-ahead, news-month-ahead, news-propositions, news-interpellations) plus 1 out-of-band translator (news-translate)
+- Active agentic workflows: 14 workflows in production — news-evening-analysis, news-realtime-monitor, news-motions, news-committee-reports, news-weekly-review, news-monthly-review, news-week-ahead, news-month-ahead, news-propositions, news-interpellations, news-quarter-ahead, news-year-ahead, news-election-cycle, plus news-translate
 
 **Strategic Value:** Scalable AI-driven development and content generation addressing single-developer constraint.
 
@@ -291,6 +298,29 @@ quadrantChart
 - `cia-data/` with complete CSV exports for dashboards
 
 **Strategic Value:** Provides unique analytical insights unavailable on competing platforms, appeals to researchers and journalists.
+
+---
+
+### S9: Political Intelligence Methodology (18 Methods + 39 Templates)
+
+**Description:** Comprehensive political intelligence framework with 18 methodologies, 39 analysis templates, automated quality gate (checks 1-9b), AI-FIRST 2-iteration model, and 23-artifact structure with horizon stratification.
+
+**Competitive Advantage:**
+- **18 Methodologies:** AI-driven analysis, OSINT tradecraft, political risk, SWOT/STRIDE frameworks, electoral domain, synthesis, IMF/World Bank indicator mapping
+- **39 Templates:** Covering intelligence assessment, risk, threat, PESTLE, scenario analysis, election forecasting, coalition mathematics, stakeholder impact, and quality audits
+- **23-Artifact Structure:** Families A-D (Core Synthesis 9 + Structural Metadata 2 + Strategic Extensions 5 + Electoral Lenses 7) enforced per analysis run
+- **Horizon Stratification:** T+72h / T+7d / T+30d / T+90d / T+365d / T+1460d / election with per-band confidence language
+- **Analysis Gate:** Automated checks 1-9b block publication of sub-standard output
+- **AI-FIRST:** Minimum 2-iteration quality model — Pass 1 creates, Pass 2 reads back and improves
+
+**Evidence:**
+- `analysis/methodologies/` (18 methodology files)
+- `analysis/templates/` (39 template files)
+- `.github/prompts/05-analysis-gate.md` (gate enforcement)
+- `.github/prompts/04-analysis-pipeline.md` (artifact catalogue)
+- `analysis/article-types.json` (horizon registry)
+
+**Strategic Value:** Establishes industrial-grade intelligence production standards that ensure every published article is backed by structured, repeatable, auditable analysis — a unique differentiator against ad-hoc competitors.
 
 ---
 
@@ -394,7 +424,7 @@ quadrantChart
 
 **Current State:**
 - **14 Language Files:** Manual maintenance of index_*.html files
-- **News Articles:** 10 single-run agentic workflows (news-evening-analysis, news-realtime-monitor, news-motions, news-committee-reports, news-weekly-review, news-monthly-review, news-week-ahead, news-month-ahead, news-propositions, news-interpellations) each running **analysis → aggregate → render → PR** in one pass; translations decoupled into news-translate
+- **News Articles:** 14 agentic news workflows (news-evening-analysis, news-realtime-monitor, news-motions, news-committee-reports, news-weekly-review, news-monthly-review, news-week-ahead, news-month-ahead, news-propositions, news-interpellations, news-quarter-ahead, news-year-ahead, news-election-cycle, news-translate) each running **analysis → aggregate → render → PR** in one pass
 - **Translation Validation:** Automated checks but human review required
 
 **Efficiency Issues:**
@@ -403,7 +433,7 @@ quadrantChart
 - **Scaling Constraint:** Cannot rapidly expand content without automation
 
 **Mitigation Progress:**
-- **Agentic Workflows:** 10 AI-powered news generation workflows (article generator, evening analysis, realtime monitor, motions, committee reports, weekly/monthly review, week/month ahead, propositions)
+- **Agentic Workflows:** 14 AI-powered news generation workflows covering propositions, motions, committee reports, interpellations, evening analysis, realtime monitor, week/month/quarter/year ahead, weekly/monthly review, election cycle, and translation
 - **Translation Scripts:** Automated validation (validate-news-translations.js)
 - **Content Templates:** Standardized HTML structures for consistency
 
