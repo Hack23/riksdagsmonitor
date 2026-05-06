@@ -1,0 +1,51 @@
+{
+  "date": "2026-05-06",
+  "subfolder": "evening-analysis",
+  "generated_at": "2026-05-06T22:00:00Z",
+  "pirs": [
+    {
+      "id": "PIR-01",
+      "name": "LAGRÅDET-246",
+      "priority": "CRITICAL",
+      "question": "Lagrådet yttrande on prop. 2025/26:246 — CRC compatibility of criminal age cut to 13",
+      "expected": "2026-06",
+      "status": "open",
+      "probability_negative": 0.35,
+      "probability_positive": 0.35,
+      "probability_unclear": 0.30
+    },
+    {
+      "id": "PIR-02",
+      "name": "JuU30-IMPL",
+      "priority": "HIGH",
+      "question": "What conditions will first 15-17yo face under JuU30 from 2026-07-01",
+      "expected": "2026-07",
+      "status": "open"
+    },
+    {
+      "id": "PIR-03",
+      "name": "FK-IMPL-SfU21",
+      "priority": "HIGH",
+      "question": "Is Försäkringskassan ready for SfU21 implementation on 2026-08-01",
+      "expected": "2026-07/08",
+      "status": "open",
+      "probability_success": 0.35
+    },
+    {
+      "id": "PIR-04",
+      "name": "POLL-POST-JuU30",
+      "priority": "HIGH",
+      "question": "Do polls shift following JuU30 adoption",
+      "expected": "2026-05-20",
+      "status": "open"
+    },
+    {
+      "id": "PIR-05",
+      "name": "C-COALITION",
+      "priority": "MEDIUM",
+      "question": "Does C signal post-election coalition preference",
+      "expected": "2026-06/08",
+      "status": "open"
+    }
+  ]
+}
