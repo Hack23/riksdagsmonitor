@@ -1271,6 +1271,14 @@ describe('render-lib — renderArticleHtml (end-to-end)', () => {
     expect(html).toContain('"isBasedOn"');
     // Body preserves real content.
     expect(html).toContain('The lede paragraph');
+    // Reader Intelligence Guide section.
+    expect(html).toContain('class="rm-reader-guide"');
+    expect(html).toContain('Reader Intelligence Guide');
+    expect(html).toContain('OSINT tradecraft');
+    expect(html).toContain('AI-FIRST dual-pass review');
+    expect(html).toContain('SWOT');
+    expect(html).toContain('Fully traceable artifacts');
+    expect(html).toContain('political-intelligence.html');
   });
 
   it('strips <script> injected via aggregated markdown source', async () => {
@@ -1314,6 +1322,19 @@ describe('render-lib — renderArticleHtml (end-to-end)', () => {
     expect(html).toContain('hreflang="en"');
     expect(html).toContain('hreflang="sv"');
     expect(html).toContain('hreflang="x-default"');
+  });
+
+  it('renders Reader Intelligence Guide in Swedish for lang=sv', async () => {
+    const html = await renderArticleHtml({
+      markdown: articleMd,
+      lang: 'sv',
+      canonicalPath: 'news/2099-01-01-propositions-sv.html',
+      subfolderRepoRelPath: 'analysis/daily/2099-01-01/propositions',
+      artifactsUsed: ['executive-brief.md'],
+    });
+    expect(html).toContain('Läsguide för underrättelseanalys');
+    expect(html).toContain('OSINT-metodik');
+    expect(html).toContain('political-intelligence_sv.html');
   });
 });
 

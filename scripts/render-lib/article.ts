@@ -220,6 +220,38 @@ ${sourcesList}
         </details>
       </section>` : '';
 
+  // Reader Intelligence Guide — explains analysis methods to readers.
+  const rg = langMeta.translations;
+  const piFile = input.lang === 'en' ? 'political-intelligence.html' : `political-intelligence_${input.lang}.html`;
+  const readerGuideHtml = `
+      <section class="rm-reader-guide" aria-labelledby="rm-reader-guide-heading">
+        <h2 id="rm-reader-guide-heading"><span class="rm-icon" aria-hidden="true">🧭</span> ${escapeHtml(rg.articleReaderGuideHeading)}</h2>
+        <p class="rm-reader-guide-desc">${escapeHtml(rg.articleReaderGuideDesc)}</p>
+        <div class="rm-reader-guide-grid">
+          <div class="rm-reader-guide-card">
+            <div class="rm-reader-guide-card-icon" aria-hidden="true">🕵️</div>
+            <h3>${escapeHtml(rg.articleReaderGuideOsint)}</h3>
+            <p>${escapeHtml(rg.articleReaderGuideOsintDesc)}</p>
+          </div>
+          <div class="rm-reader-guide-card">
+            <div class="rm-reader-guide-card-icon" aria-hidden="true">🤖</div>
+            <h3>${escapeHtml(rg.articleReaderGuideAiFirst)}</h3>
+            <p>${escapeHtml(rg.articleReaderGuideAiFirstDesc)}</p>
+          </div>
+          <div class="rm-reader-guide-card">
+            <div class="rm-reader-guide-card-icon" aria-hidden="true">🧮</div>
+            <h3>${escapeHtml(rg.articleReaderGuideSwot)}</h3>
+            <p>${escapeHtml(rg.articleReaderGuideSwotDesc)}</p>
+          </div>
+          <div class="rm-reader-guide-card">
+            <div class="rm-reader-guide-card-icon" aria-hidden="true">🔗</div>
+            <h3>${escapeHtml(rg.articleReaderGuideTraceable)}</h3>
+            <p>${escapeHtml(rg.articleReaderGuideTraceableDesc)}</p>
+          </div>
+        </div>
+        <p class="rm-reader-guide-cta"><a href="/${piFile}"><span class="rm-icon" aria-hidden="true">📚</span> ${escapeHtml(rg.articleReaderGuideMoreMethodologies)}</a></p>
+      </section>`;
+
   return `${chrome.head}
 ${chrome.headerHtml}
       <article class="rm-article rm-article-type-${escapeHtml(articleType.type)}" data-article-type="${escapeHtml(articleType.type)}" lang="${LANGUAGE_META[input.lang].hreflang}">
@@ -241,6 +273,7 @@ ${chrome.headerHtml}
 ${bodyHtml}
         </div>
 ${sourcesHtml}
+${readerGuideHtml}
       </article>
 ${chrome.footerHtml}`;
 }
