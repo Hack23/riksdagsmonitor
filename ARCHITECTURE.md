@@ -11,15 +11,26 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-2.4-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--05--05-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-2.5-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--06-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.4 | **📅 Last Updated:** 2026-05-05 (UTC)
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-05  
+**📋 Document Owner:** CEO | **📄 Version:** 2.5 | **📅 Last Updated:** 2026-05-06 (UTC)
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-06  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
+> **🆕 What changed since last review (v2.4 → v2.5, 2026-05-06):**
+> - 📦 Aligned to **package v0.8.76**: TypeScript 6.0.3, **Vite 8.0.10**, **Vitest 4.1.5**, Node.js ≥26 baseline, `"type": "module"`. Subpath exports (`./`, `./shared`, `./shared/*`, `./cia/*`, `./dashboards/*`, `./ui/*`) and explicit `sideEffects` (browser CIA entry + register-globals) documented in the Tech Stack and Container views.
+> - 🧠 Surfaced two new **bounded contexts** in Container/Component views: `scripts/political-intelligence/` (catalog + daily-streams + i18n + render leaves) and `scripts/agentic/` (analysis-gate checks 1–9b, typed `ArtifactDefinition` inventory of **23 artifacts** across Families A–E, with 76 vitest tests in `tests/agentic-analysis-gate.test.ts`).
+> - 🧩 Expanded **render-lib component breakdown** to its true sub-tree: `aggregator/` (incl. `cleaning/`, `seo/`, frontmatter/per-document/sources-appendix/order/pipeline), `chrome/` (head/header/footer/helpers/types façade), `markdown/` (mermaid canonical theme + preprocess, sanitize-schema, rehype-slug-prefixed, rehype-wrap-tables, pipeline).
+> - 🌍 Consolidated the **economic + administrative TypeScript-client landscape**: IMF (`scripts/imf-*.ts`), SCB (`scripts/scb-*.ts`), World Bank (`scripts/world-bank-*.ts`), Riksbank (`scripts/riksbank-fetch.ts`), Statskontoret (`scripts/statskontoret-*.ts` + `scripts/fetch-statskontoret.ts`), RiR (`scripts/rir-followups-client.ts` + `scripts/fetch-rir-followups.ts`), parliamentary-data (`scripts/parliamentary-data/` with data-downloader/data-persistence/pdf-converter and `scripts/download-parliamentary-data.ts` / `fetch-voting-records.ts` / `fetch-calendar.ts`).
+> - 📚 Added **"## 🧠 Political Intelligence Architecture"** section: 18-methodology framework (`analysis/methodologies/`), 39-template catalog (`analysis/templates/`), 7-band horizon stratification (T+72h … T+1460d / election) as an architectural pattern, AI-FIRST 2-pass iteration as a quality constraint, OSINT tradecraft, classification/SWOT/threat/PESTLE/scenario template roles, election-cycle and coalition-mathematics templates.
+> - 🗂️ Documented **dashboard containers** explicitly: `scripts/coalition-dashboard.ts` + `scripts/coalition-dashboard/`, `scripts/committees-dashboard.ts` + `scripts/committees-dashboard/`, plus `politician-dashboard.html` × 14 languages.
+> - 🧪 Verified **schema governance pipeline**: `sync-cia-schemas.ts` → `validate-against-cia-schemas.ts` → `check-cia-schema-updates.ts` → `generate-types-from-cia-schemas.ts`, sourcing from `schemas/cia/` plus root schemas (`article-types.schema.json`, `pir-status.schema.json`, `rir-followups-schema.json`).
+> - 🔌 MCP integration section affirmed at **8 MCP servers**; explicit reminder that **IMF is a pure-TypeScript client (not MCP)** — npm-SBOM-covered, allowlisted hosts `data.imf.org`, `api.imf.org`, `www.imf.org`.
+> - ⚙️ ESLint baseline (`no-explicit-any` = error, `no-unused-vars` = error) + typed `DashboardGlobals` (`src/browser/shared/global-libs.ts`) noted as architectural quality gates.
+>
 > **🆕 What changed since last review (v2.3 → v2.4, 2026-05-05):**
 > - 📰 Replaced legacy `generate-daily-news.js` architecture references with the current GitHub Agentic Workflows newsroom: 14 `news-*.md` sources, 14 compiled `.lock.yml` files, 23-artifact analysis folders, deterministic `aggregate-analysis.ts`, and sanitized `render-articles.ts` output for all 14 languages.
 > - 🧩 Updated component/container views to reflect the TypeScript browser modules, local Chart.js/D3/Papa Parse assets, IMF TypeScript client, SCB/World Bank MCP servers, and nested election-cycle article paths.
@@ -81,8 +92,8 @@ Authority for each row flows from the master [Information_Security_Policy](https
 
 | # | Document | Owner | Version | Last reviewed | Review cycle | Next review | ISMS authority |
 |---|---|---|---|---|---|---|---|
-| 1 | [`ARCHITECTURE.md`](ARCHITECTURE.md) | CEO | 2.3 | 2026-05-03 | Quarterly | 2026-08-03 | [Secure_Development_Policy §4](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) |
-| 2 | [`DATA_MODEL.md`](DATA_MODEL.md) | CEO | 1.2 | 2026-04-20 | Quarterly | 2026-07-20 | [CLASSIFICATION](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) |
+| 1 | [`ARCHITECTURE.md`](ARCHITECTURE.md) | CEO | 2.5 | 2026-05-06 | Quarterly | 2026-08-06 | [Secure_Development_Policy §4](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) |
+| 2 | [`DATA_MODEL.md`](DATA_MODEL.md) | CEO | 1.3 | 2026-05-06 | Annual | 2027-05-06 | [CLASSIFICATION](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) |
 | 3 | [`FLOWCHART.md`](FLOWCHART.md) | CEO | 1.2 | 2026-04-20 | Quarterly | 2026-07-20 | [Secure_Development_Policy §6](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) |
 | 4 | [`STATEDIAGRAM.md`](STATEDIAGRAM.md) | CEO | 1.1 | 2026-04-20 | Quarterly | 2026-07-20 | [Change_Management §5](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management.md) |
 | 5 | [`MINDMAP.md`](MINDMAP.md) | CEO | 1.4 | 2026-05-03 | Quarterly | 2026-08-03 | [Information_Security_Policy §5.5](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) |
@@ -214,6 +225,24 @@ graph TB
         Dashboards[Interactive Dashboards<br/>Container: Client-Side App<br/>Chart.js v4.4.1, D3.js v7.9.0<br/>Papa Parse v5.5.3]
         
         NewsEngine[Agentic News Pipeline<br/>Container: gh-aw + Node 26 scripts<br/>23 artifacts → article.md → HTML]
+
+        PIBuilder[scripts/political-intelligence/<br/>Container: PI Catalog &amp; Daily-Streams<br/>catalog.ts · daily-streams.ts<br/>i18n/ · render/]
+
+        AgenticGate[scripts/agentic/<br/>Container: Analysis Gate &amp; Inventory<br/>analysis-gate.ts (checks 1–9b)<br/>artifact-inventory.ts (23 artifacts, A–E)]
+
+        DashCoalition[scripts/coalition-dashboard.ts<br/>+ coalition-dashboard/<br/>Container: Coalition Renderer]
+        DashCommittees[scripts/committees-dashboard.ts<br/>+ committees-dashboard/<br/>Container: Committee Renderer]
+        DashPolitician[politician-dashboard.html<br/>× 14 languages<br/>Container: Politician Renderer]
+    end
+
+    subgraph "TypeScript Data-Source Clients (no MCP)"
+        IMFClient[scripts/imf-*.ts<br/>Datamapper JSON + SDMX 3.0]
+        SCBClient[scripts/scb-*.ts<br/>PxWeb v2 client]
+        WBClient[scripts/world-bank-*.ts<br/>WGI + WDI client]
+        RiksbankClient[scripts/riksbank-fetch.ts<br/>Policy-rate + FX]
+        StatskontoretClient[scripts/statskontoret-*.ts<br/>+ fetch-statskontoret.ts<br/>Myndighetsförteckning + budget outturn]
+        RiRClient[scripts/rir-followups-client.ts<br/>+ fetch-rir-followups.ts<br/>RiR follow-ups]
+        ParliamentaryDL[scripts/parliamentary-data/<br/>+ download-parliamentary-data.ts<br/>+ fetch-voting-records.ts<br/>+ fetch-calendar.ts<br/>data-downloader · data-persistence · pdf-converter]
     end
     
     subgraph "Storage Layer"
@@ -247,6 +276,19 @@ graph TB
     
     NewsEngine -->|Generates| Static
     NewsEngine -->|Commits to| GitHub
+    NewsEngine -->|Gated by| AgenticGate
+    NewsEngine -->|Catalog/streams from| PIBuilder
+    NewsEngine -->|Fetches macro/fiscal| IMFClient
+    NewsEngine -->|Fetches Swedish stats| SCBClient
+    NewsEngine -->|Fetches governance| WBClient
+    NewsEngine -->|Fetches policy rates| RiksbankClient
+    NewsEngine -->|Fetches admin/budget| StatskontoretClient
+    NewsEngine -->|Fetches audit follow-ups| RiRClient
+    NewsEngine -->|Fetches votes/cal/docs| ParliamentaryDL
+    PIBuilder --> Static
+    DashCoalition --> Static
+    DashCommittees --> Static
+    DashPolitician --> Static
     
     GitHub --> Actions
     Actions -->|Deploy| S3US
@@ -260,6 +302,18 @@ graph TB
     style Static fill:#81c784,color:#000000
     style Dashboards fill:#ff9800,color:#000000
     style NewsEngine fill:#9c27b0,color:#ffffff
+    style PIBuilder fill:#7e57c2,color:#ffffff
+    style AgenticGate fill:#5e35b1,color:#ffffff
+    style IMFClient fill:#00897b,color:#ffffff
+    style SCBClient fill:#00acc1,color:#ffffff
+    style WBClient fill:#26a69a,color:#000000
+    style RiksbankClient fill:#80cbc4,color:#000000
+    style StatskontoretClient fill:#4db6ac,color:#000000
+    style RiRClient fill:#80deea,color:#000000
+    style ParliamentaryDL fill:#b2dfdb,color:#000000
+    style DashCoalition fill:#ffb74d,color:#000000
+    style DashCommittees fill:#ffb74d,color:#000000
+    style DashPolitician fill:#ffb74d,color:#000000
     style GitHub fill:#ff6f00,color:#000000
     style Actions fill:#00bcd4,color:#000000
 ```
@@ -279,6 +333,18 @@ graph TB
 | **GitHub Actions** | CI/CD automation | Build, test, deploy workflows | ✅ Active |
 | **Git Repository** | GitHub | Version control, source of truth | ✅ Active |
 | **CSV/JSON Files** | Static data | Dashboard data, workflow state | ✅ Active |
+| **scripts/political-intelligence/** | TypeScript (Node ≥26) | PI catalog, daily-streams index, i18n (artifact/methodology/page/stream/template), render leaves (daily-day, grid, page, style) | ✅ Active |
+| **scripts/agentic/** | TypeScript (Node ≥26) | Analysis-gate (checks 1–9b, `PASS2_MTIME_THRESHOLD_MS = 180_000`), typed `ArtifactDefinition` inventory of 23 artifacts (Families A–E), 76 vitest tests | ✅ Active |
+| **IMF TS client** | TypeScript (Node ≥26) | Datamapper JSON v1 + SDMX 3.0 transports for WEO, FM, IFS, MFS, GFS_COFOG, DOTS — *not* an MCP server | ✅ Active |
+| **SCB TS client** | TypeScript (Node ≥26) | PxWeb v2 client for Statistics Sweden tables — sibling pattern to IMF/WB | ✅ Active |
+| **World Bank TS client** | TypeScript (Node ≥26) | WGI / WDI client for governance + long-horizon social/education residue | ✅ Active |
+| **Riksbank TS client** | TypeScript (Node ≥26) | Policy-rate, FX, monetary series fetcher | ✅ Active |
+| **Statskontoret TS client** | TypeScript (Node ≥26) | Myndighetsförteckning + Årsutfall + Månadsutfall download discovery and parsing | ✅ Active |
+| **RiR TS client** | TypeScript (Node ≥26) | Riksrevisionen audit follow-ups fetcher | ✅ Active |
+| **parliamentary-data subdir** | TypeScript (Node ≥26) | data-downloader + data-persistence + pdf-converter primitives backing votes/calendar/document downloads | ✅ Active |
+| **Coalition Dashboard** | TypeScript + Chart.js/D3 | `scripts/coalition-dashboard.ts` + `coalition-dashboard/` — coalition viability rendering | ✅ Active |
+| **Committees Dashboard** | TypeScript + Chart.js/D3 | `scripts/committees-dashboard.ts` + `committees-dashboard/` — committee productivity rendering | ✅ Active |
+| **Politician Dashboard** | Static HTML × 14 langs | `politician-dashboard.html` + `politician-dashboard_<lang>.html` for SV, DA, NO, FI, DE, FR, ES, NL, AR, HE, JA, KO, ZH | ✅ Active |
 
 ---
 
@@ -1165,6 +1231,265 @@ The citation chain is encoded in JSON-LD `NewsArticle.about` and `NewsArticle.ci
 - ❌ No per-type generator classes — section ordering is configuration in the aggregator
 - ❌ No translation logic in the per-type workflows — that lives only in `news-translate`
 
+#### C4 Component view — `scripts/render-lib/` (true sub-tree)
+
+The `render-lib` barrel (`scripts/render-lib/index.ts`) re-exports across four leaf-trees. The internal layout below is the **true** filesystem at v0.8.76 — consumers still import only from the barrel.
+
+```mermaid
+graph LR
+    subgraph "render-lib leaves"
+        Article[article.ts<br/>+ article-types.ts]
+        ChromeFacade[chrome.ts<br/>(façade)]
+        ChromeI18n[chrome-i18n.ts]
+        FaqI18n[faq-i18n.ts]
+        Constants[constants.ts]
+        UrlHelpers[url-helpers.ts]
+        JsonLd[jsonld.ts]
+        Barrel[index.ts<br/>(public surface)]
+    end
+    subgraph "render-lib/chrome/"
+        Head[head/]
+        Header[header/]
+        Footer[footer/]
+        Helpers[helpers/]
+        Types[types/]
+        ChromeIndex[index.ts]
+    end
+    subgraph "render-lib/aggregator/"
+        AggMain[aggregate.ts<br/>+ pipeline.ts<br/>+ index.ts]
+        Front[frontmatter.ts<br/>(language='en', layout='article' defaults)]
+        Interfaces[interfaces.ts]
+        PerDoc[per-document.ts]
+        Reader[reader-guide.ts<br/>+ reader-guide-i18n.ts]
+        Sources[sources-appendix.ts]
+        Order[order.ts]
+        subgraph "aggregator/cleaning/"
+            Bylines[admin-bylines]
+            Dedup[deduplication]
+            Demote[heading-demotion]
+            LinkRewrite[link-rewriting]
+            PassTwo[pass-two]
+            ProcessMeta[process-meta]
+            Structural[structural]
+        end
+        subgraph "aggregator/seo/"
+            SeoDesc[description.ts]
+            SeoTitle[title.ts]
+        end
+    end
+    subgraph "render-lib/markdown/"
+        MdIndex[index.ts]
+        MdPipeline[pipeline.ts]
+        MermaidCanon[mermaid-canonical-theme.ts]
+        MermaidPre[mermaid-preprocess.ts]
+        SlugPrefixed[rehype-slug-prefixed.ts]
+        WrapTables[rehype-wrap-tables.ts]
+        Sanitize[sanitize-schema.ts<br/>(single trust boundary)]
+    end
+
+    Barrel --> Article
+    Barrel --> ChromeFacade
+    Barrel --> AggMain
+    Barrel --> MdIndex
+    ChromeFacade --> ChromeIndex
+    ChromeIndex --> Head
+    ChromeIndex --> Header
+    ChromeIndex --> Footer
+    ChromeIndex --> Helpers
+    ChromeIndex --> Types
+    AggMain --> Front
+    AggMain --> Interfaces
+    AggMain --> PerDoc
+    AggMain --> Reader
+    AggMain --> Sources
+    AggMain --> Order
+    AggMain --> Bylines
+    AggMain --> Dedup
+    AggMain --> Demote
+    AggMain --> LinkRewrite
+    AggMain --> PassTwo
+    AggMain --> ProcessMeta
+    AggMain --> Structural
+    AggMain --> SeoDesc
+    AggMain --> SeoTitle
+    MdIndex --> MdPipeline
+    MdPipeline --> MermaidCanon
+    MdPipeline --> MermaidPre
+    MdPipeline --> SlugPrefixed
+    MdPipeline --> WrapTables
+    MdPipeline --> Sanitize
+    Article --> JsonLd
+    Article --> ChromeFacade
+    Article --> MdIndex
+
+    style Sanitize fill:#e57373,stroke:#b71c1c,stroke-width:2px,color:#000000
+    style Front fill:#fff59d,color:#000000
+    style Barrel fill:#9c27b0,color:#ffffff
+```
+
+#### C4 Component view — `scripts/agentic/` (analysis-gate &amp; 23-artifact inventory)
+
+The agentic bounded context owns the **analysis gate** (single block point before any article render) and the **typed artifact inventory** that drives every newsroom check. The gate enforces nine numbered checks (1, 2, 3, 4, 5, 6, 7, 8, 9b) with `PASS2_MTIME_THRESHOLD_MS = 180_000` ms separating Pass-1 from Pass-2 evidence.
+
+```mermaid
+graph TD
+    subgraph "scripts/agentic/"
+        Gate[analysis-gate.ts<br/>checks 1, 2, 3, 4, 5, 6, 7, 8, 9b<br/>PASS2_MTIME_THRESHOLD_MS = 180_000]
+        Inventory[artifact-inventory.ts<br/>typed ArtifactDefinition[]<br/>23 required artifacts, Families A–E]
+        AgenticIdx[index.ts<br/>(barrel)]
+    end
+
+    subgraph "Family A — Core Synthesis (9)"
+        A1[README.md · Pass-2]
+        A2[executive-brief.md · Mermaid · Pass-2]
+        A3[synthesis-summary.md · Mermaid · Pass-2]
+        A4[significance-scoring.md · Mermaid · Pass-2]
+        A5[classification-results.md · Mermaid · Pass-2]
+        A6[swot-analysis.md · Mermaid · Pass-2]
+        A7[risk-assessment.md · Mermaid · Pass-2]
+        A8[threat-analysis.md · Mermaid · Pass-2]
+        A9[stakeholder-perspectives.md · Mermaid · Pass-2]
+    end
+    subgraph "Family B — Structural Metadata (2)"
+        B1[data-download-manifest.md]
+        B2[cross-reference-map.md · Mermaid · Pass-2]
+    end
+    subgraph "Family C — Strategic Extensions (5)"
+        C1[scenario-analysis.md · Pass-2]
+        C2[comparative-international.md · Pass-2]
+        C3[devils-advocate.md · Pass-2]
+        C4[intelligence-assessment.md · Pass-2]
+        C5[methodology-reflection.md · Pass-2]
+    end
+    subgraph "Family D — Electoral &amp; Domain Lenses (7)"
+        D1[election-2026-analysis.md · Mermaid · Pass-2]
+        D2[voter-segmentation.md · Mermaid · Pass-2]
+        D3[coalition-mathematics.md · Mermaid · Pass-2]
+        D4[historical-parallels.md · Mermaid · Pass-2]
+        D5[media-framing-analysis.md · Mermaid · Pass-2]
+        D6[implementation-feasibility.md · Mermaid · Pass-2]
+        D7[forward-indicators.md · Mermaid · Pass-2]
+    end
+    subgraph "Family E — Per-document (variable)"
+        E1[documents/{dok_id}-analysis.md<br/>one per source document]
+    end
+
+    AgenticIdx --> Gate
+    AgenticIdx --> Inventory
+    Inventory --> A1
+    Inventory --> A2
+    Inventory --> A3
+    Inventory --> A4
+    Inventory --> A5
+    Inventory --> A6
+    Inventory --> A7
+    Inventory --> A8
+    Inventory --> A9
+    Inventory --> B1
+    Inventory --> B2
+    Inventory --> C1
+    Inventory --> C2
+    Inventory --> C3
+    Inventory --> C4
+    Inventory --> C5
+    Inventory --> D1
+    Inventory --> D2
+    Inventory --> D3
+    Inventory --> D4
+    Inventory --> D5
+    Inventory --> D6
+    Inventory --> D7
+    Inventory --> E1
+    Gate --> Inventory
+
+    style Gate fill:#e57373,stroke:#b71c1c,stroke-width:2px,color:#000000
+    style Inventory fill:#7e57c2,color:#ffffff
+    style AgenticIdx fill:#5e35b1,color:#ffffff
+```
+
+Test surface: `tests/agentic-analysis-gate.test.ts` (vitest, 76 tests). Optional standalone driver: `npx tsx scripts/validate-methodology-reflection.ts` for ICD-203 audit of `methodology-reflection.md`.
+
+---
+
+## 🧠 Political Intelligence Architecture
+
+The political-intelligence pipeline turns 18 methodology files and 39 templates into 23 per-day analysis artifacts which the analysis-gate then admits (or rejects) before article rendering. This section is the architectural complement to the data-model side under [`DATA_MODEL.md` §11 "Analysis Artifact Data Model"](DATA_MODEL.md).
+
+### Methodology framework (`analysis/methodologies/`, 18 files)
+
+| # | File | Editorial role |
+|---|---|---|
+| 1 | `ai-driven-analysis-guide.md` | Master AI-FIRST authoring contract |
+| 2 | `analytical-supplementary-methodology.md` | Supplementary analytic techniques |
+| 3 | `artifact-catalog.md` | Catalogue of every artifact and its acceptance criteria |
+| 4 | `electoral-domain-methodology.md` | Election-cycle and Family-D analysis discipline |
+| 5 | `imf-indicator-mapping.md` | IMF WEO/FM/IFS indicator → article-type mapping |
+| 6 | `osint-tradecraft-standards.md` | Source vetting, ICD 203 alignment, ACH discipline |
+| 7 | `per-artifact-methodologies.md` | Per-artifact (A–E) analytic recipes |
+| 8 | `per-document-methodology.md` | Family-E per-document analysis recipe |
+| 9 | `political-classification-guide.md` | 7-dimension political classification |
+| 10 | `political-risk-methodology.md` | Risk matrix, residual risk, mitigation |
+| 11 | `political-style-guide.md` (+ `.json`) | Editorial voice + machine-checkable style rules |
+| 12 | `political-swot-framework.md` | S/W/O/T evidence + TOWS |
+| 13 | `political-threat-framework.md` | STRIDE-style political threat model |
+| 14 | `reference-quality-thresholds.json` | Reference-grade thresholds (machine-readable) |
+| 15 | `strategic-extensions-methodology.md` | Family-C strategic extensions discipline |
+| 16 | `structural-metadata-methodology.md` | Family-B structural metadata recipe |
+| 17 | `synthesis-methodology.md` | Lead-story synthesis + DIW ranking recipe |
+| 18 | `worldbank-indicator-mapping.md` | World Bank WGI/WDI indicator → article-type mapping |
+
+(Plus `README.md` and the two JSON sidecars; the markdown-methodology count is 18.)
+
+### Template catalog (`analysis/templates/`, 39 files)
+
+Templates fall into three architectural roles:
+
+- **Per-artifact templates** (one per Family-A/B/C/D required artifact): `executive-brief`, `synthesis-summary`, `significance-scoring`, `swot-analysis`, `risk-assessment`, `threat-analysis`, `stakeholder-impact`, `data-download-manifest`, `cross-reference-map`, `scenario-analysis`, `comparative-international`, `devils-advocate`, `intelligence-assessment`, `methodology-reflection`, `election-2026-analysis`, `voter-segmentation`, `coalition-mathematics`, `historical-parallels`, `media-framing-analysis`, `implementation-feasibility`, `forward-indicators`, `political-classification`, `political-stride-assessment`, `quantitative-swot`, `pestle-analysis`.
+- **Pipeline templates** (cross-cutting): `analysis-index`, `cross-run-diff`, `cross-session-intelligence`, `cycle-trajectory`, `forward-indicators`, `horizon-pir-rollforward`, `parliamentary-season`, `per-file-political-intelligence`, `reference-analysis-quality`, `session-baseline`, `significance-scoring`, `synthesis-summary`, `wildcards-blackswans`, `workflow-audit`, `mcp-reliability-audit`.
+- **Election-cycle templates**: `election-cycle-analysis`, `election-2026-analysis`, `coalition-mathematics`, `voter-segmentation`, `parliamentary-season`.
+
+Total: **39** files including `README.md`.
+
+### Horizon stratification (architectural pattern)
+
+Article generation is stratified across **7 horizon bands**. Runtime context is computed by `scripts/horizon-context.ts` from `analysis/article-types.json`; every article-type targets one band so the analysis-gate, methodology selection, and template selection are deterministic at any commit.
+
+```mermaid
+timeline
+    title Horizon stratification (T = publication time)
+    T+72h    : Daily / week-ahead briefs : tactical signals
+    T+7d     : Weekly review : near-term trajectory
+    T+30d    : Monthly review : structural deltas
+    T+90d    : Quarterly outlook : fiscal-cycle alignment
+    T+365d   : Annual outlook : election-year framing
+    T+1460d  : Mandate-period outlook : 4-year horizon
+    election : Election special : voter segmentation + coalition math
+```
+
+### AI-FIRST 2-pass iteration (quality constraint)
+
+Every methodology and every Family-A/C/D artifact MUST go through **two complete passes** separated by ≥ 180 s wall-clock (enforced by `PASS2_MTIME_THRESHOLD_MS = 180_000` in `scripts/agentic/analysis-gate.ts`). Pass 1 establishes the structural draft; Pass 2 re-reads every section and tightens evidence, corrects banned-phrase drift, and adds missing Mermaid diagrams. Completing early with shallow output is **never** acceptable — this is an architectural quality gate, not a stylistic preference.
+
+### OSINT tradecraft integration
+
+`analysis/methodologies/osint-tradecraft-standards.md` enforces ICD 203 (analytic standards), ACH (Analysis of Competing Hypotheses) for `devils-advocate.md`, and source vetting for `data-download-manifest.md`. The standards are referenced by every Family-A and Family-C artifact and are validated by the analysis-gate's check 9b.
+
+### Classification / SWOT / threat / PESTLE / scenario template roles
+
+| Template | Family | Methodology authority |
+|---|---|---|
+| `political-classification` | A | `political-classification-guide.md` (7-dimension) |
+| `swot-analysis` (+ `quantitative-swot`) | A | `political-swot-framework.md` (+ TOWS matrix) |
+| `threat-analysis` (+ `political-stride-assessment`) | A | `political-threat-framework.md` (STRIDE-style) |
+| `pestle-analysis` | A/cross | `analytical-supplementary-methodology.md` |
+| `scenario-analysis` (≥3 scenarios) | C | `strategic-extensions-methodology.md` |
+
+### Election-cycle and coalition-mathematics templates
+
+`election-cycle-analysis`, `election-2026-analysis`, `coalition-mathematics`, `voter-segmentation`, and `parliamentary-season` templates are the Family-D backbone for the 2026 Riksdag election cycle. They consume CIA `coalition/`, `election-cycle/`, `pre-election/`, `voting/`, and `seasonal/` data subsystems alongside SCB demographic series and IMF macro context.
+
+---
+
 ---
 
 ## 🔒 Security Architecture Integration
@@ -1395,9 +1720,14 @@ graph TB
 | **HTMLHint** | Latest | HTML validation | Industry standard validator | MIT |
 | **Linkinator** | v6 | Link checking | Reliable, actively maintained | Apache-2.0 |
 | **npm** | Latest | Package management | JavaScript dependency management | Artistic-2.0 |
-| **Vite** | Latest | Build tool | Fast build times, optimized output | MIT |
+| **Vite** | v8.0.10 | Build tool | Fast build times, optimized output | MIT |
+| **Vitest** | v4.1.5 | Unit / integration test runner | Vite-native, ESM-first, watch mode | MIT |
+| **TypeScript** | v6.0.3 | Source language | Strict typing across `src/`, `scripts/`, `tests/` | Apache-2.0 |
+| **Node.js** | ≥26 | Runtime baseline | Native TypeScript loader, ESM, modern fetch | MIT |
 
 ### External Dependencies
+
+> **📦 Public npm package surface (v0.8.76):** `riksdagsmonitor` exports the typed subpaths `./`, `./shared`, `./shared/*`, `./cia/*`, `./dashboards/*`, `./ui/*` (`package.json` `exports` map). `"type": "module"` (pure ESM). `"sideEffects"` is restricted to `./dist/lib/shared/register-globals.js` and `./src/browser/cia-entry.ts` so tree-shaking works for downstream consumers. **ESLint baseline**: `no-explicit-any` = error and `no-unused-vars` = error are enforced repository-wide; the typed `DashboardGlobals` interface (`src/browser/shared/global-libs.ts`) replaces `any` for Chart.js / D3 / PapaParse browser globals.
 
 | Dependency | Type | Risk Level | Mitigation | Update Strategy |
 |------------|------|------------|------------|-----------------|
@@ -1622,6 +1952,28 @@ git push origin main
 ### GitHub Copilot MCP Server Architecture
 
 Riksdagsmonitor leverages GitHub Copilot with Model Context Protocol (MCP) servers for advanced political intelligence analysis and automation.
+
+> **🔢 Server count (v0.8.76):** **8 MCP servers** are wired via `.github/copilot-mcp.json`: `riksdag-regering`, `scb`, `world-bank`, `github` (insiders), `filesystem`, `memory`, `sequential-thinking`, `playwright`. The IMF integration is **intentionally not** an MCP server — it ships as the pure-TypeScript client `scripts/imf-client.ts` (Datamapper JSON v1 + SDMX 3.0), fully covered by the npm SBOM, with allowlisted egress hosts `data.imf.org`, `api.imf.org`, `www.imf.org`. Same pattern is used for SCB (`scripts/scb-client.ts`), World Bank (`scripts/world-bank-client.ts`), Riksbank (`scripts/riksbank-fetch.ts`), Statskontoret (`scripts/statskontoret-client.ts`), RiR (`scripts/rir-followups-client.ts`), and parliamentary-data downloads when invoked from build-time scripts.
+
+#### Schema governance pipeline (`schemas/` + `scripts/`)
+
+Schema drift between the upstream CIA platform and Riksdagsmonitor's typed surface is governed by four scripts under `scripts/`, executed in order:
+
+```mermaid
+flowchart LR
+    Sync[scripts/sync-cia-schemas.ts<br/>pulls upstream schemas/cia/]
+    Validate[scripts/validate-against-cia-schemas.ts<br/>ajv 8.18.0 schema validation]
+    Check[scripts/check-cia-schema-updates.ts<br/>diff vs. last sync, exit 1 on drift]
+    GenTypes[scripts/generate-types-from-cia-schemas.ts<br/>emits .d.ts for ./cia/* subpath]
+    Schemas[(schemas/)<br/>article-types.schema.json<br/>pir-status.schema.json<br/>rir-followups-schema.json<br/>cia/*.schema.json]
+    PkgExports[package.json exports<br/>./cia/* · ./dashboards/* · ./shared/* · ./ui/*]
+
+    Sync --> Schemas
+    Schemas --> Validate
+    Schemas --> Check
+    Schemas --> GenTypes
+    GenTypes --> PkgExports
+```
 
 #### MCP Server Architecture
 
@@ -1902,14 +2254,14 @@ graph TB
 | Field | Value |
 |-------|-------|
 | **Document ID** | ARCH-001 |
-| **Version** | 2.2 |
+| **Version** | 2.5 |
 | **Classification** | Public |
 | **Owner** | CEO, Hack23 AB |
 | **Repository** | https://github.com/Hack23/riksdagsmonitor |
 | **Path** | /ARCHITECTURE.md |
 | **Format** | Markdown with Mermaid C4 Diagrams |
-| **Last Updated** | 2026-04-20 (UTC) |
-| **Next Review** | 2026-07-20 |
+| **Last Updated** | 2026-05-06 (UTC) |
+| **Next Review** | 2026-08-06 |
 | **Review Cycle** | Quarterly |
 
 <p align="center">
