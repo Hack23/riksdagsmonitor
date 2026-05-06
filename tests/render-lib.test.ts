@@ -1262,6 +1262,14 @@ describe('render-lib — renderArticleHtml (end-to-end)', () => {
     expect(html).toContain('class="rm-article-sources"');
     expect(html).toContain('executive-brief.md');
     expect(html).toContain('risk-assessment.md');
+    // New card-based sources: icon + i18n title + filename
+    expect(html).toContain('class="rm-source-card"');
+    expect(html).toContain('rm-source-card-icon');
+    expect(html).toContain('rm-source-card-title');
+    expect(html).toContain('Executive Brief'); // i18n title
+    expect(html).toContain('Risk Assessment'); // i18n title
+    expect(html).toContain('📊'); // executive-brief icon
+    expect(html).toContain('⚠️'); // risk-assessment icon
     // Sources link must resolve to GitHub blob.
     expect(html).toContain(
       `${GITHUB_BLOB}/analysis/daily/2099-01-01/propositions/executive-brief.md`,
@@ -1335,6 +1343,8 @@ describe('render-lib — renderArticleHtml (end-to-end)', () => {
     expect(html).toContain('Läsguide för underrättelseanalys');
     expect(html).toContain('OSINT-metodik');
     expect(html).toContain('political-intelligence_sv.html');
+    // Swedish i18n title in source card
+    expect(html).toContain('Chefsbriefing'); // sv title for executive-brief.md
   });
 });
 

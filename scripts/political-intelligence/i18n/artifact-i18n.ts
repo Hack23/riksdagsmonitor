@@ -83,7 +83,153 @@ export const ARTIFACT_TITLE_I18N: Record<string, LangMap> = {
     de: 'Lies mich', fr: 'Lisez-moi', es: 'Léame', nl: 'Lees mij',
     ar: 'اقرأني', he: 'קרא אותי', ja: 'お読みください', ko: '읽어 주세요', zh: '自述文件',
   },
+  'synthesis-summary.md': {
+    en: 'Synthesis Summary', sv: 'Syntessammanfattning', da: 'Synteseoversigt', no: 'Synteseoppsummering', fi: 'Synteesin yhteenveto',
+    de: 'Synthese-Zusammenfassung', fr: 'Résumé de synthèse', es: 'Resumen de síntesis', nl: 'Synthese-samenvatting',
+    ar: 'ملخص التوليف', he: 'סיכום סינתזה', ja: '統合サマリー', ko: '종합 요약', zh: '综合摘要',
+  },
+  'intelligence-assessment.md': {
+    en: 'Intelligence Assessment', sv: 'Underrättelsebedömning', da: 'Efterretningsvurdering', no: 'Etterretningsvurdering', fi: 'Tiedusteluarvio',
+    de: 'Geheimdienstliche Bewertung', fr: 'Évaluation du renseignement', es: 'Evaluación de inteligencia', nl: 'Inlichtingenbeoordeling',
+    ar: 'تقييم استخباراتي', he: 'הערכת מודיעין', ja: 'インテリジェンス評価', ko: '정보 평가', zh: '情报评估',
+  },
+  'significance-scoring.md': {
+    en: 'Significance Scoring', sv: 'Betydelsepoängsättning', da: 'Betydningsscoring', no: 'Betydningsscoring', fi: 'Merkityspisteet',
+    de: 'Signifikanz-Bewertung', fr: 'Notation de signification', es: 'Puntuación de significancia', nl: 'Significantiescoring',
+    ar: 'تسجيل الأهمية', he: 'דירוג חשיבות', ja: '重要度スコアリング', ko: '중요도 점수', zh: '重要性评分',
+  },
+  'stakeholder-perspectives.md': {
+    en: 'Stakeholder Perspectives', sv: 'Intressentperspektiv', da: 'Interessentperspektiver', no: 'Interessentperspektiver', fi: 'Sidosryhmänäkökulmat',
+    de: 'Stakeholder-Perspektiven', fr: 'Perspectives des parties prenantes', es: 'Perspectivas de partes interesadas', nl: 'Stakeholder-perspectieven',
+    ar: 'وجهات نظر الأطراف المعنية', he: 'נקודות מבט של בעלי עניין', ja: 'ステークホルダー視点', ko: '이해관계자 관점', zh: '利益相关者观点',
+  },
+  'coalition-mathematics.md': {
+    en: 'Coalition Mathematics', sv: 'Koalitionsmatematik', da: 'Koalitionsmatematik', no: 'Koalisjonsmatematikk', fi: 'Koalitiomatematiikka',
+    de: 'Koalitionsmathematik', fr: 'Mathématiques de coalition', es: 'Matemáticas de coalición', nl: 'Coalitiemathematica',
+    ar: 'رياضيات الائتلاف', he: 'מתמטיקת קואליציה', ja: '連立方程式', ko: '연합 수학', zh: '联盟数学',
+  },
+  'voter-segmentation.md': {
+    en: 'Voter Segmentation', sv: 'Väljaranalys', da: 'Vælgersegmentering', no: 'Velgersegmentering', fi: 'Äänestäjäsegmentointi',
+    de: 'Wählersegmentierung', fr: 'Segmentation des électeurs', es: 'Segmentación electoral', nl: 'Kiezersegmentatie',
+    ar: 'تقسيم الناخبين', he: 'פילוח בוחרים', ja: '有権者セグメンテーション', ko: '유권자 세분화', zh: '选民细分',
+  },
+  'forward-indicators.md': {
+    en: 'Forward Indicators', sv: 'Framåtblickande indikatorer', da: 'Fremadrettede indikatorer', no: 'Fremtidsindikatorer', fi: 'Tulevaisuusindikaattorit',
+    de: 'Zukunftsindikatoren', fr: 'Indicateurs avancés', es: 'Indicadores prospectivos', nl: 'Toekomstindicatoren',
+    ar: 'مؤشرات مستقبلية', he: 'מדדים עתידיים', ja: '先行指標', ko: '선행 지표', zh: '前瞻指标',
+  },
+  'scenario-analysis.md': {
+    en: 'Scenario Analysis', sv: 'Scenarioanalys', da: 'Scenarieanalyse', no: 'Scenarioanalyse', fi: 'Skenaarioanalyysi',
+    de: 'Szenarioanalyse', fr: 'Analyse de scénarios', es: 'Análisis de escenarios', nl: 'Scenarioanalyse',
+    ar: 'تحليل السيناريوهات', he: 'ניתוח תרחישים', ja: 'シナリオ分析', ko: '시나리오 분석', zh: '情景分析',
+  },
+  'election-2026-analysis.md': {
+    en: 'Election 2026 Analysis', sv: 'Valanalys 2026', da: 'Valganalyse 2026', no: 'Valganalyse 2026', fi: 'Vaalianalyysi 2026',
+    de: 'Wahlanalyse 2026', fr: 'Analyse électorale 2026', es: 'Análisis electoral 2026', nl: 'Verkiezingsanalyse 2026',
+    ar: 'تحليل انتخابات 2026', he: 'ניתוח בחירות 2026', ja: '2026年選挙分析', ko: '2026 선거 분석', zh: '2026年选举分析',
+  },
+  'historical-parallels.md': {
+    en: 'Historical Parallels', sv: 'Historiska paralleller', da: 'Historiske paralleller', no: 'Historiske paralleller', fi: 'Historialliset rinnakkaisuudet',
+    de: 'Historische Parallelen', fr: 'Parallèles historiques', es: 'Paralelos históricos', nl: 'Historische parallellen',
+    ar: 'أوجه التشابه التاريخية', he: 'הקבלות היסטוריות', ja: '歴史的類似事例', ko: '역사적 유사 사례', zh: '历史相似案例',
+  },
+  'comparative-international.md': {
+    en: 'Comparative International', sv: 'Internationell jämförelse', da: 'International sammenligning', no: 'Internasjonal sammenligning', fi: 'Kansainvälinen vertailu',
+    de: 'Internationaler Vergleich', fr: 'Comparaison internationale', es: 'Comparativa internacional', nl: 'Internationaal vergelijk',
+    ar: 'مقارنة دولية', he: 'השוואה בינלאומית', ja: '国際比較', ko: '국제 비교', zh: '国际比较',
+  },
+  'implementation-feasibility.md': {
+    en: 'Implementation Feasibility', sv: 'Genomförbarhet', da: 'Gennemførlighed', no: 'Gjennomførbarhet', fi: 'Toteutettavuus',
+    de: 'Umsetzungsmachbarkeit', fr: 'Faisabilité de mise en œuvre', es: 'Viabilidad de implementación', nl: 'Haalbaarheidsanalyse',
+    ar: 'جدوى التنفيذ', he: 'כדאיות יישום', ja: '実現可能性', ko: '구현 타당성', zh: '实施可行性',
+  },
+  'media-framing-analysis.md': {
+    en: 'Media Framing Analysis', sv: 'Medieramanalys', da: 'Medierammeanalyse', no: 'Medierammeanalyse', fi: 'Mediakehystysanalyysi',
+    de: 'Medienrahmenanalyse', fr: 'Analyse du cadrage médiatique', es: 'Análisis de encuadre mediático', nl: 'Media-framinganalyse',
+    ar: 'تحليل تأطير إعلامي', he: 'ניתוח מסגור תקשורתי', ja: 'メディアフレーミング分析', ko: '미디어 프레이밍 분석', zh: '媒体框架分析',
+  },
+  'devils-advocate.md': {
+    en: "Devil's Advocate", sv: 'Djävulens advokat', da: 'Djævelens advokat', no: 'Djevelens advokat', fi: 'Paholaisen asianajaja',
+    de: 'Advocatus Diaboli', fr: "Avocat du diable", es: 'Abogado del diablo', nl: 'Advocaat van de duivel',
+    ar: 'محامي الشيطان', he: 'סנגורו של השטן', ja: '反証分析', ko: '악마의 변호인', zh: '魔鬼代言人',
+  },
+  'classification-results.md': {
+    en: 'Classification Results', sv: 'Klassificeringsresultat', da: 'Klassificeringsresultater', no: 'Klassifiseringsresultater', fi: 'Luokitustulokset',
+    de: 'Klassifikationsergebnisse', fr: 'Résultats de classification', es: 'Resultados de clasificación', nl: 'Classificatieresultaten',
+    ar: 'نتائج التصنيف', he: 'תוצאות סיווג', ja: '分類結果', ko: '분류 결과', zh: '分类结果',
+  },
+  'cross-reference-map.md': {
+    en: 'Cross-Reference Map', sv: 'Korsreferenskarta', da: 'Krydsreferencekort', no: 'Kryssreferansekart', fi: 'Ristiviittauskartta',
+    de: 'Querverweiskarte', fr: 'Carte de références croisées', es: 'Mapa de referencias cruzadas', nl: 'Kruisverwijzingskaart',
+    ar: 'خريطة الإسناد الترافقي', he: 'מפת הפניות צולבות', ja: '相互参照マップ', ko: '교차 참조 맵', zh: '交叉引用图',
+  },
+  'methodology-reflection.md': {
+    en: 'Methodology Reflection', sv: 'Metodreflektion', da: 'Metoderefleksion', no: 'Metoderefleksjon', fi: 'Metodologinen pohdinta',
+    de: 'Methodenreflexion', fr: 'Réflexion méthodologique', es: 'Reflexión metodológica', nl: 'Methodereflectie',
+    ar: 'تأمل منهجي', he: 'רפלקציה מתודולוגית', ja: '方法論の振り返り', ko: '방법론 성찰', zh: '方法论反思',
+  },
+  'data-download-manifest.md': {
+    en: 'Data Download Manifest', sv: 'Datanedladdningsmanifest', da: 'Datadownloadmanifest', no: 'Datanedlastingsmanifest', fi: 'Tietojen latausmanifesti',
+    de: 'Daten-Download-Manifest', fr: 'Manifeste de téléchargement', es: 'Manifiesto de descarga de datos', nl: 'Data-downloadmanifest',
+    ar: 'بيان تنزيل البيانات', he: 'מניפסט הורדת נתונים', ja: 'データ取得マニフェスト', ko: '데이터 다운로드 매니페스트', zh: '数据下载清单',
+  },
+  'pir-status.json': {
+    en: 'PIR Status', sv: 'PIR-status', da: 'PIR-status', no: 'PIR-status', fi: 'PIR-tila',
+    de: 'PIR-Status', fr: 'Statut PIR', es: 'Estado PIR', nl: 'PIR-status',
+    ar: 'حالة PIR', he: 'סטטוס PIR', ja: 'PIR ステータス', ko: 'PIR 상태', zh: 'PIR 状态',
+  },
 };
+
+/**
+ * Icon mapping for known analysis artifacts.
+ * Falls back to a default icon for unknown files.
+ */
+export const ARTIFACT_ICON: Record<string, string> = {
+  'executive-brief.md': '📊',
+  'synthesis-summary.md': '🧠',
+  'intelligence-assessment.md': '🎯',
+  'significance-scoring.md': '📈',
+  'classification-results.md': '🏷️',
+  'classification-results.json': '🏷️',
+  'swot-analysis.md': '🧮',
+  'risk-assessment.md': '⚠️',
+  'threat-analysis.md': '🛡️',
+  'stakeholder-perspectives.md': '👥',
+  'stakeholder-map.md': '👥',
+  'data-download-manifest.md': '📦',
+  'cross-reference-map.md': '🔀',
+  'scenario-analysis.md': '🔮',
+  'scenario-planning.md': '🔮',
+  'comparative-international.md': '🌍',
+  'devils-advocate.md': '😈',
+  'methodology-reflection.md': '🔬',
+  'election-2026-analysis.md': '🗳️',
+  'voter-segmentation.md': '📋',
+  'coalition-mathematics.md': '🔢',
+  'historical-parallels.md': '📜',
+  'forward-indicators.md': '🔭',
+  'media-framing-analysis.md': '📰',
+  'implementation-feasibility.md': '⚙️',
+  'behavioral-analysis.md': '🧩',
+  'synthesis.md': '🧠',
+  'timeline.md': '⏱️',
+  'economic-data.json': '💹',
+  'pir-status.json': '📡',
+  'README.md': '📘',
+};
+
+/** Return the icon for a given artifact filename (with document/ prefix fallback). */
+export function artifactIcon(file: string): string {
+  // Strip documents/ prefix for matching
+  const baseName = file.replace(/^documents\//, '');
+  if (ARTIFACT_ICON[baseName]) return ARTIFACT_ICON[baseName];
+  if (ARTIFACT_ICON[file]) return ARTIFACT_ICON[file];
+  // Pattern-based fallbacks
+  if (file.endsWith('.json')) return '📄';
+  if (file.startsWith('documents/') && file.endsWith('-analysis.md')) return '📑';
+  if (file.startsWith('documents/')) return '📎';
+  return '📝';
+}
 
 /** Generic library-display-name phrases, localised per language. */
 export const LIBRARY_NAME_I18N: Record<'methodologies' | 'templates', LangMap> = {

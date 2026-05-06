@@ -12996,6 +12996,76 @@ html[data-theme="light"] .rm-article-body pre.mermaid > svg {
   font-size: 0.8125rem;
 }
 
+/* ── Article sources card grid ── */
+.rm-article-sources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+}
+
+.rm-source-card {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.6rem 0.85rem;
+  border: 1px solid rgba(0, 217, 255, 0.18);
+  border-radius: 10px;
+  background: rgba(0, 217, 255, 0.04);
+  color: var(--light-text, #e0e0e0);
+  text-decoration: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.rm-source-card:hover,
+.rm-source-card:focus-visible {
+  border-color: rgba(0, 217, 255, 0.45);
+  box-shadow: 0 3px 14px rgba(0, 217, 255, 0.1);
+  background: rgba(0, 217, 255, 0.08);
+}
+
+.rm-source-card-icon {
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.rm-source-card-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.rm-source-card-title {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--primary-cyan, #00d9ff);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rm-source-card-file {
+  font-size: 0.7rem;
+  color: color-mix(in srgb, var(--light-text, #e0e0e0) 55%, transparent);
+  font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rm-source-card-arrow {
+  font-size: 0.85rem;
+  color: color-mix(in srgb, var(--primary-cyan, #00d9ff) 50%, transparent);
+  flex-shrink: 0;
+}
+
+.rm-source-count {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: color-mix(in srgb, var(--light-text, #e0e0e0) 60%, transparent);
+}
+
 /* ── Article methodology collapsible ── */
 .rm-article-methodology {
   margin-top: 0.75rem;
@@ -13394,6 +13464,34 @@ html[data-theme="light"] .rm-site-footer {
   html:not([data-theme]) .rm-article-sources-list code {
     background: rgba(0, 102, 51, 0.06);
     color: var(--text-color, #1a1a1a);
+  }
+
+  html:not([data-theme]) .rm-source-card {
+    border-color: var(--card-border, #dee2e6);
+    background: rgba(0, 102, 51, 0.03);
+    color: var(--text-color, #1a1a1a);
+  }
+
+  html:not([data-theme]) .rm-source-card:hover,
+  html:not([data-theme]) .rm-source-card:focus-visible {
+    border-color: rgba(0, 102, 51, 0.4);
+    background: rgba(0, 102, 51, 0.06);
+  }
+
+  html:not([data-theme]) .rm-source-card-title {
+    color: var(--link-color, #007744);
+  }
+
+  html:not([data-theme]) .rm-source-card-file {
+    color: var(--text-secondary, #4a4a4a);
+  }
+
+  html:not([data-theme]) .rm-source-card-arrow {
+    color: color-mix(in srgb, var(--link-color, #007744) 50%, transparent);
+  }
+
+  html:not([data-theme]) .rm-source-count {
+    color: var(--text-secondary, #4a4a4a);
   }
 
   html:not([data-theme]) .rm-article-dek {
@@ -13842,6 +13940,35 @@ html[data-theme="light"] .rm-article-sources-list a:focus-visible {
 html[data-theme="light"] .rm-article-sources-list code {
   background: rgba(var(--rm-article-accent-rgb), 0.08);
   color: #1a1a1a;
+}
+
+html[data-theme="light"] .rm-source-card {
+  border-color: rgba(var(--rm-article-accent-rgb), 0.20);
+  background: rgba(var(--rm-article-accent-rgb), 0.04);
+  color: var(--text-color, #1a1a1a);
+}
+
+html[data-theme="light"] .rm-source-card:hover,
+html[data-theme="light"] .rm-source-card:focus-visible {
+  border-color: rgba(var(--rm-article-accent-rgb), 0.45);
+  background: rgba(var(--rm-article-accent-rgb), 0.08);
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.06);
+}
+
+html[data-theme="light"] .rm-source-card-title {
+  color: color-mix(in srgb, var(--rm-article-accent, #007744) 80%, #003020);
+}
+
+html[data-theme="light"] .rm-source-card-file {
+  color: var(--text-secondary, #4a4a4a);
+}
+
+html[data-theme="light"] .rm-source-card-arrow {
+  color: color-mix(in srgb, var(--rm-article-accent, #007744) 50%, transparent);
+}
+
+html[data-theme="light"] .rm-source-count {
+  color: var(--text-secondary, #4a4a4a);
 }
 
 html[data-theme="light"] .rm-article-trust-badges li {

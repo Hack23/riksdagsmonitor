@@ -40,6 +40,7 @@ import { buildChrome } from './chrome.js';
 import { buildBreadcrumbListLd, buildNewsArticleLd, buildSpeakableWebPageLd, BREADCRUMB_TITLE_MAX_LENGTH, BREADCRUMB_ELLIPSIS_OVERHEAD } from './jsonld.js';
 
 import { getBySubfolder, getById, loadArticleTypesRegistry } from './article-types.js';
+import { artifactTitle, artifactIcon } from '../political-intelligence/i18n/artifact-i18n.js';
 
 /**
  * CSS selectors identifying the voice-assistant TTS-readable regions of
@@ -196,27 +197,38 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
     section: 'Political Intelligence',
   });
 
-  // Footer "Analysis sources" block — every artifact linked to GitHub.
-  const sourcesList = (input.artifactsUsed ?? [])
+  // Footer "Analysis sources" block — every artifact linked to GitHub
+  // with icon + i18n title + filename in a card grid.
+  const artifacts = input.artifactsUsed ?? [];
+  const sourcesHeading = langMeta.translations.articleSourcesHeading;
+  const sourcesDesc = langMeta.translations.articleSourcesDesc;
+  const methodologyLabel = langMeta.translations.articleMethodologyLabel;
+  const sourceCards = artifacts
     .map((a) => {
       const href = input.subfolderRepoRelPath
         ? buildGithubBlobUrl(`${input.subfolderRepoRelPath}/${a}`)
         : a;
-      return `        <li><a href="${href}" target="_blank" rel="noopener noreferrer"><code>${escapeHtml(a)}</code></a></li>`;
+      const icon = artifactIcon(a);
+      const title = artifactTitle(a, input.lang);
+      return `          <a class="rm-source-card" href="${href}" target="_blank" rel="noopener noreferrer">
+            <span class="rm-source-card-icon" aria-hidden="true">${icon}</span>
+            <span class="rm-source-card-info">
+              <span class="rm-source-card-title">${escapeHtml(title)}</span>
+              <code class="rm-source-card-file">${escapeHtml(a)}</code>
+            </span>
+            <span class="rm-source-card-arrow" aria-hidden="true">↗</span>
+          </a>`;
     })
     .join('\n');
-  const sourcesHeading = langMeta.translations.articleSourcesHeading;
-  const sourcesDesc = langMeta.translations.articleSourcesDesc;
-  const methodologyLabel = langMeta.translations.articleMethodologyLabel;
-  const sourcesHtml = sourcesList ? `
+  const sourcesHtml = sourceCards ? `
       <section class="rm-article-sources" aria-labelledby="rm-article-sources-heading">
         <h2 id="rm-article-sources-heading"><span class="rm-icon" aria-hidden="true">📋</span> ${escapeHtml(sourcesHeading)}</h2>
         <p>${escapeHtml(sourcesDesc)}</p>
-        <details class="rm-article-methodology">
-          <summary><span class="rm-icon" aria-hidden="true">🔬</span> ${escapeHtml(methodologyLabel)}</summary>
-          <ul class="rm-article-sources-list">
-${sourcesList}
-          </ul>
+        <details class="rm-article-methodology" open>
+          <summary><span class="rm-icon" aria-hidden="true">🔬</span> ${escapeHtml(methodologyLabel)} <span class="rm-source-count">(${artifacts.length})</span></summary>
+          <div class="rm-article-sources-grid">
+${sourceCards}
+          </div>
         </details>
       </section>` : '';
 
