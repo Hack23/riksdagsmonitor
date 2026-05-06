@@ -536,7 +536,8 @@ async function checkComparativeInternational(
   const content = await readFile(filePath, 'utf-8');
 
   // Check for "Comparator set:" line with non-empty value
-  const hasComparatorSet = /^\s*\*{0,2}Comparator set\*{0,2}\s*:/m.test(content) &&
+  const COMPARATOR_SET_RE = /^\s*\*{0,2}Comparator set\*{0,2}\s*:/m;
+  const hasComparatorSet = COMPARATOR_SET_RE.test(content) &&
     !/^\s*\*{0,2}Comparator set\*{0,2}\s*:\s*[-–—]*\s*$/m.test(content);
 
   // Count non-header table rows (excluding separator rows)
@@ -598,6 +599,9 @@ async function checkForwardIndicators(analysisDir: string): Promise<GateCheckRes
   if (!existsSync(filePath)) return results;
 
   const content = await readFile(filePath, 'utf-8');
+  // Loose date detection (not strict calendar validation) — matches the
+  // original bash gate pattern; false positives are acceptable here since
+  // the goal is to verify the author included date-anchored indicators.
   const datePattern = /20[0-9]{2}-[0-1][0-9]-[0-3][0-9]|20[0-9]{2}Q[1-4]|\+[0-9]+\s*(h|d|day|week|month)/g;
   const matches = content.match(datePattern);
   const count = matches ? matches.length : 0;
