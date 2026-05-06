@@ -11,20 +11,27 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--04--20-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--06-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.1 | **📅 Last Updated:** 2026-04-20 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-20  
+**📋 Document Owner:** CEO | **📄 Version:** 1.2 | **📅 Last Updated:** 2026-05-06 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-06  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
+> **🆕 What changed since last review (v1.1 → v1.2, 2026-05-06):**
+> - Added **analysis artifact lifecycle** state diagram (empty → populated → gate-checked → passed → consumed) documenting the 23-artifact analysis folder lifecycle.
+> - Added **analysis gate check** state machine (check-1 through check-9b) per `scripts/agentic/analysis-gate.ts`.
+> - Added **political intelligence states** (collection → processing → analysis → dissemination → feedback).
+> - Anchored to current toolchain: Node.js ≥26, TypeScript 6.0.3, Vite 8.0.10, Vitest 4.1.5, Cypress 15.14.2.
+> - Verified all existing state diagrams: news article lifecycle, agentic workflow states, CIA data refresh, release pipeline, incident state machine, npm package lifecycle.
+>
 > **🆕 What changed since last review (v1.0 → v1.1, 2026-04-20):**
 > - Refreshed lifecycle state machines for: (a) **news articles** (draft → safe-output validation → translator fan-out across 14 languages → merged → published → superseded/retired); (b) **agentic workflow runs** (queued → running → safe-output-validation → reviewer-PR → merged/rolled-back); (c) **CIA data refresh** (scheduled → download → schema-validate → diff → auto-PR → merge → deploy); (d) **release pipeline** (tag → build → provenance-attest → npm publish → S3 sync → CloudFront invalidation); (e) **translation states** across 14 locales including RTL (HE, AR).
 > - Added state diagrams for **npm package lifecycle** (unpublished → published-with-provenance → deprecated → security-advisory → superseded) aligned with `End-of-Life-Strategy.md`.
 > - Added **incident state machine**: detected → triaged → contained → eradicated → recovered → post-mortem, mapped to [Incident_Response_Plan](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md).
-> - Anchored to current toolchain: Node.js ≥25, TypeScript 6.0.3, Vite 8.0.9, Vitest 4.1.4, Cypress 15.14.0 (optional), Playwright 1.59.1.
+> - Anchored to current toolchain: Node.js ≥26, TypeScript 6.0.3, Vite 8.0.10, Vitest 4.1.5, Cypress 15.14.2, Playwright 1.52.0.
 > - Compliance mapping: ISO 27001:2022 A.5.24/A.5.26, NIST CSF 2.0 RS.AN/RS.MI/RC.RP, CIS Controls v8.1 #17, NIS2 Art. 21, EU CRA Annex I §2.
 
 ---
@@ -927,6 +934,155 @@ Action Required:
 - **Backoff Strategy:** None (immediate re-validation)
 - **Retry Triggers:** Markers detected, validation script exit 1
 - **Manual Intervention:** If markers persist after 3 translation attempts
+
+---
+
+## 6A. 📦 Analysis Artifact Lifecycle States
+
+**📊 Data Focus:** 23 analysis artifacts (Families A-D) produced by every agentic news workflow.
+
+**🔄 Process Focus:** Shows artifact folder lifecycle from creation through consumption by article rendering.
+
+**🤖 AI Integration:** Artifacts are produced by Copilot agents and validated by `scripts/agentic/analysis-gate.ts`.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Empty
+    
+    Empty --> Populating: Agentic workflow starts writing artifacts
+    
+    Populating --> Populated: All 23 artifacts written
+    Populating --> Incomplete: Timeout or agent error
+    
+    Populated --> GateChecking: analysis-gate.ts invoked
+    
+    GateChecking --> GatePassed: All checks 1-9b pass
+    GateChecking --> GateFailed: One or more checks fail
+    
+    GateFailed --> Populating: Agent retries failed artifacts
+    
+    GatePassed --> Consumed: render-articles.ts reads artifacts
+    
+    Consumed --> Archived: Article published, artifacts retained
+    Archived --> [*]
+    
+    Incomplete --> [*]: Workflow terminates with error
+    
+    note right of Empty
+        analysis/daily/YYYY-MM-DD/type/ folder
+        23 expected files (Families A-D)
+    end note
+    
+    note right of GateChecking
+        Check 1: Artifact existence (23 files)
+        Check 2: No stub placeholders
+        Check 3: Minimum word count
+        Check 4: Evidence citations
+        Check 5: Mermaid diagrams with colour
+        Check 6: Pass-2 evidence (revision proof)
+        Check 7: Cross-references
+        Check 8: Data-source connectivity audit
+        Check 9a: Political classification
+        Check 9b: Agency evidence (Statskontoret)
+    end note
+    
+    note right of Consumed
+        aggregate-analysis.ts aggregates
+        render-articles.ts renders HTML
+        Artifacts become read-only
+    end note
+```
+
+### 6A.1 State Definitions
+
+| State | Description | Entry Conditions | Exit Conditions | Typical Duration |
+|-------|-------------|------------------|-----------------|------------------|
+| **EMPTY** | Analysis folder created but no artifacts written | Workflow triggered | First artifact written | Seconds |
+| **POPULATING** | Agent writing artifacts to folder | First artifact write | All 23 present or timeout | 5-15 minutes |
+| **INCOMPLETE** | Timeout or error, fewer than 23 artifacts | Agent timeout/error | Workflow terminates | N/A |
+| **POPULATED** | All 23 artifacts present in folder | 23 files written | Gate check invoked | Seconds |
+| **GATE_CHECKING** | analysis-gate.ts running checks 1-9b | Populated state | Pass or fail | 5-30 seconds |
+| **GATE_PASSED** | All gate checks passed | All checks pass | Render starts | Seconds |
+| **GATE_FAILED** | One or more checks failed | Any check fails | Retry or terminate | Variable |
+| **CONSUMED** | Artifacts read by render pipeline | render-articles.ts invoked | Article published | 1-5 minutes |
+| **ARCHIVED** | Artifacts retained for audit trail | Article published | Permanent | Permanent |
+
+---
+
+## 6B. 🕵️ Political Intelligence Assessment States
+
+**📊 Data Focus:** Intelligence assessment lifecycle for political analysis products.
+
+**🔄 Process Focus:** Shows the intelligence cycle from collection through dissemination and feedback.
+
+**🤖 AI Integration:** Horizon stratification (T+72h → T+1460d) drives assessment scope and confidence levels.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Collection
+    
+    Collection --> Processing: Raw data gathered
+    
+    Processing --> Analysis: Data cleaned and structured
+    
+    Analysis --> Assessment: Analytical products created
+    
+    Assessment --> Dissemination: Confidence labels assigned
+    
+    Dissemination --> Feedback: Published to audience
+    
+    Feedback --> Collection: New requirements identified
+    Feedback --> [*]: Cycle complete
+    
+    Collection --> Collection: Continuous monitoring
+    
+    note right of Collection
+        Sources: Riksdag MCP (32 tools)
+        SCB statistics, IMF economic data
+        Government documents, voting records
+    end note
+    
+    note right of Analysis
+        20 methodologies applied
+        39 analysis templates used
+        Horizon-specific framing:
+        T+72h, T+7d, T+30d, T+90d, T+365d, T+1460d
+    end note
+    
+    note right of Assessment
+        Confidence levels: High/Medium/Low
+        WEP language ladder per horizon band
+        Scenario analysis (≥3 scenarios)
+    end note
+    
+    note right of Dissemination
+        14 languages, RTL support
+        Article rendering pipeline
+        RSS, sitemap, indexes generated
+    end note
+```
+
+### 6B.1 State Definitions
+
+| State | Description | Entry Conditions | Exit Conditions | Typical Duration |
+|-------|-------------|------------------|-----------------|------------------|
+| **COLLECTION** | Gathering raw political data from sources | Workflow trigger or schedule | Sufficient data gathered | 2-5 minutes |
+| **PROCESSING** | Cleaning, structuring, deduplication | Raw data available | Structured data ready | 1-3 minutes |
+| **ANALYSIS** | Applying methodologies and templates | Structured data ready | Analysis artifacts produced | 5-15 minutes |
+| **ASSESSMENT** | Assigning confidence, creating judgments | Analysis complete | Assessment products ready | 2-5 minutes |
+| **DISSEMINATION** | Publishing to audience in multiple languages | Assessment approved | Content published | 3-10 minutes |
+| **FEEDBACK** | Receiving feedback, identifying new requirements | Content published | New PIRs identified | Continuous |
+
+### 6B.2 Horizon Stratification
+
+| Horizon | Timeframe | Scope | Confidence Band | Scenario Depth |
+|---------|-----------|-------|-----------------|----------------|
+| **T+72h** | 3 days | Tactical | High | 2-3 scenarios |
+| **T+7d** | 1 week | Tactical/Operational | High-Medium | 3 scenarios |
+| **T+30d** | 1 month | Operational | Medium | 3-4 scenarios |
+| **T+90d** | Quarter | Strategic | Medium-Low | 4 scenarios |
+| **T+365d** | 1 year | Strategic | Low-Medium | 4+ scenarios + wildcards |
+| **T+1460d** | Election cycle | Grand strategic | Low | 4×3 coalition branches + wildcards |
 
 ---
 

@@ -11,15 +11,22 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-7.4-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Updated-2026--05--05-success?style=for-the-badge" alt="Last Updated"/>
+  <img src="https://img.shields.io/badge/Version-7.5-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Updated-2026--05--06-success?style=for-the-badge" alt="Last Updated"/>
   <img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 7.4 | **📅 Last Updated:** 2026-05-05 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 7.5 | **📅 Last Updated:** 2026-05-06 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-05
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
+> **🆕 What changed since last review (v7.4 → v7.5, 2026-05-06):**
+> - 🏛️ Reconciled document with **v0.8.76** — confirmed 51 workflow files (22 standard `.yml` + 14 agentic `.md` + 14 compiled `.lock.yml` + 1 README).
+> - 🧠 Added §"Political Intelligence Validation Pipeline" documenting: `generate-political-intelligence.ts`, `validate-methodology-reflection.ts`, `validate-quality-scores.cjs`, `validate-article.ts`, and analysis-gate enforcement (checks 1-9b).
+> - 📦 Documented analysis-gate as a CI/CD concern: every agentic workflow MUST pass 23-artifact gate before article rendering.
+> - 📋 Updated prebuild chain to current 13-step sequence (added `generate-article-types-doc`, `copy-vendor-mermaid`, `aggregate-analysis`, `render-articles`, `normalize-static-html-chrome`, `backfill-translated-chrome`, `strip-legacy-chrome-script-tags`).
+> - 🌐 Added parliamentary data download scripts: `download-parliamentary-data.ts`, `fetch-voting-records.ts`, `fetch-calendar.ts`, `fetch-statskontoret.ts`, `fetch-rir-followups.ts`.
+>
 > **🆕 What changed since last review (v7.3 → v7.4, 2026-05-05):**
 > - ♻️ Reconciled this document with the current `package.json` toolchain: TypeScript 6.0.3, Vite 8.0.10, Vitest 4.1.5, Cypress 15.14.2, and the current 3,319-test baseline observed in `npm test`.
 > - 🤖 Corrected the agentic-news engine and workflow narrative to **14 workflows** using `claude-sonnet-4.6`, the 23-artifact baseline, nested election-cycle folders, and all-language article rendering via `render-articles.ts --all --lang all`.
@@ -1445,6 +1452,60 @@ The inline bash validation logic embedded in `.github/prompts/05-analysis-gate.m
 
 ---
 
+## Political Intelligence Validation Pipeline
+
+The political intelligence generation and validation is a CI/CD concern enforced both in the prebuild chain and within agentic workflows:
+
+### Prebuild Chain (13 Steps)
+
+```
+generate-article-types-doc → copy-vendor-mermaid → aggregate-analysis → render-articles →
+generate-news-indexes → extract-news-metadata → generate-sitemap-html →
+generate-political-intelligence → generate-rss → generate-sitemap →
+normalize-static-html-chrome → backfill-translated-chrome → strip-legacy-chrome-script-tags
+```
+
+### Analysis Gate Enforcement
+
+Every agentic news workflow MUST produce 23 analysis artifacts (Families A-D) and pass the analysis gate (`scripts/agentic/analysis-gate.ts`) before article rendering:
+
+| Check | Validation | Script |
+|-------|-----------|--------|
+| 1 | Artifact existence (23 files) | `analysis-gate.ts` |
+| 2 | No stub placeholders (`AI_MUST_REPLACE`, `[REQUIRED]`, `TODO:`) | `analysis-gate.ts` |
+| 3 | Minimum word count per artifact | `analysis-gate.ts` |
+| 4 | Evidence citations (SWOT + significance) | `analysis-gate.ts` |
+| 5 | Mermaid diagrams with colour configuration | `analysis-gate.ts` |
+| 6 | Pass-2 evidence (revision proof via mtime/snapshot diff) | `analysis-gate.ts` |
+| 7 | Cross-references between artifacts | `analysis-gate.ts` |
+| 8 | Data-source connectivity audit | `analysis-gate.ts` |
+| 9a | Political classification completeness | `analysis-gate.ts` |
+| 9b | Agency evidence (Statskontoret recognised agencies) | `analysis-gate.ts` |
+
+### Additional Validation Scripts
+
+| Script | Purpose | Trigger |
+|--------|---------|---------|
+| `validate-methodology-reflection.ts` | Validates methodology-reflection.md structure and required sections | Agentic workflow |
+| `validate-quality-scores.cjs` | Validates quality score thresholds | CI quality checks |
+| `validate-article.ts` | Validates article HTML structure and metadata | Prebuild + CI |
+| `validate-news-translations.ts` | Detects remaining data-translate markers | Translation validation workflow |
+| `validate-translations.ts` | Validates all translation files | CI |
+
+### Parliamentary Data Scripts
+
+| Script | Purpose | Schedule |
+|--------|---------|----------|
+| `download-parliamentary-data.ts` | Download propositions, motions, betänkanden from Riksdag API | Nightly / on-demand |
+| `fetch-voting-records.ts` | Fetch voting records from Riksdag | Nightly |
+| `fetch-calendar.ts` | Fetch parliamentary calendar events | Nightly |
+| `fetch-statskontoret.ts` | Fetch Statskontoret agency data (headcount, budget) | Weekly |
+| `fetch-rir-followups.ts` | Fetch Riksrevisionen follow-up reports | Weekly |
+| `scb-fetch.ts` | Fetch SCB statistical data | On-demand |
+| `imf-fetch.ts` | Fetch IMF economic data (WEO, FM, IFS, DOTS) | On-demand |
+
+---
+
 ## 🔒 Workflow Security Architecture
 
 ### Supply Chain Security
@@ -1614,7 +1675,7 @@ flowchart TB
 
 ---
 
-**📋 Document Owner:** CEO | **📄 Version:** 7.4 | **📅 Last Updated:** 2026-05-05 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 7.5 | **📅 Last Updated:** 2026-05-06 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-05
 **🏢 Classification:** Public | **🏛️ Owner:** Hack23 AB (Org.nr 5595347807)
 
