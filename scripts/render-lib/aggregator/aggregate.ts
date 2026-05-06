@@ -43,9 +43,10 @@ import { cleanArticleTitle, readFirstHeading, titleFromBluf } from './seo/title.
 import { buildSourcesAppendix } from './sources-appendix.js';
 
 /**
- * Inputs to {@link aggregateAnalysis}. All four fields are required;
- * the absolute path is used for filesystem reads, the repo-relative
- * path is used to build GitHub source URLs.
+ * Inputs to {@link aggregateAnalysis}. All four required fields provide
+ * the filesystem and metadata context; the optional config fields allow
+ * callers (e.g. `runArticlePipeline`) to override front-matter values
+ * without forking the aggregation logic.
  */
 export interface AggregationInput {
   /** Absolute path to `analysis/daily/$DATE/$SUBFOLDER`. */
@@ -56,6 +57,12 @@ export interface AggregationInput {
   readonly date: string;
   /** `$SUBFOLDER` (e.g. `propositions`). */
   readonly subfolder: string;
+  /** Override the `generated_at` front-matter field (ISO-8601). Defaults to `new Date().toISOString()`. */
+  readonly generated_at?: string;
+  /** Language code injected into front-matter (defaults to `'en'`). */
+  readonly language?: string;
+  /** Layout template injected into front-matter (defaults to `'article'`). */
+  readonly layout?: string;
 }
 
 /**
@@ -217,7 +224,9 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
     date,
     subfolder,
     source_folder: subfolderRepoRelPath,
-    generated_at: new Date().toISOString(),
+    generated_at: input.generated_at ?? new Date().toISOString(),
+    language: input.language,
+    layout: input.layout,
   });
 
   const body = sections.join('\n\n');

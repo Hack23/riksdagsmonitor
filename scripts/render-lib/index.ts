@@ -68,10 +68,24 @@ export {
   titleForArtifact,
   aggregateAnalysis,
   __test__,
+  runArticlePipeline,
 } from './aggregator/index.js';
 export type {
   AggregationInput,
   AggregationResult,
+  PipelineResult,
+  PipelineStage,
+  ReadStageInput,
+  ReadStageOutput,
+  ArtifactFile,
+  ValidateStageOutput,
+  ValidationDiagnostic,
+  AggregateStageOutput,
+  ArticleSection,
+  EnrichStageOutput,
+  EnrichmentMetadata,
+  WriteStageOutput,
+  ArticlePipelineConfig,
 } from './aggregator/index.js';
 
 // --- Markdown ---------------------------------------------------------------
