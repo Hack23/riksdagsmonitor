@@ -11,16 +11,24 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/>
-  <img src="https://img.shields.io/badge/Version-2.3-555?style=for-the-badge" alt="Version"/>
-  <img src="https://img.shields.io/badge/Effective-2026--05--03-success?style=for-the-badge" alt="Effective Date"/>
+  <img src="https://img.shields.io/badge/Version-2.4-555?style=for-the-badge" alt="Version"/>
+  <img src="https://img.shields.io/badge/Effective-2026--05--06-success?style=for-the-badge" alt="Effective Date"/>
   <img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/>
   <a href="https://www.bestpractices.dev/projects/12069"><img src="https://www.bestpractices.dev/projects/12069/badge" alt="OpenSSF Best Practices"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.3 | **📅 Last Updated:** 2026-05-03 (UTC)  
-**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-05-03  
+**📋 Document Owner:** CEO | **📄 Version:** 2.4 | **📅 Last Updated:** 2026-05-06 (UTC)  
+**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-05-06  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
+> **🆕 What changed since last review (v2.3 → v2.4, 2026-05-06):**
+> - 📌 **Reconciliation with Riksdagsmonitor `v0.8.76`** (was `v0.8.48` baseline). All version-specific control narratives below remain valid; the additions in this revision document the **political-intelligence security surface** that was previously listed as a backlog item in the [`documentation-portfolio-audit-2026-05-03.md`](analysis/audits/documentation-portfolio-audit-2026-05-03.md) follow-up.
+> - 🆕 **New §"Political Intelligence Security Surface"** (see end of this document) covering: (a) the **39 analysis templates** under `analysis/templates/*.md` and **18 methodologies** under `analysis/methodologies/*.md` consumed by AI agents, treated as a **trusted control plane** — version-controlled, PR-reviewed, and validated by the analysis gate; (b) the **analysis gate (checks 1–9b)** — implemented in [`scripts/agentic/analysis-gate.ts`](scripts/agentic/analysis-gate.ts) and specified in [`.github/prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md) — documented as a **structural-integrity security control** with explicit bypass-resistance properties (typed checks, recursive scan, fail-closed default); (c) the **methodology-reflection validator** in [`scripts/validate-methodology-reflection.ts`](scripts/validate-methodology-reflection.ts) as an **integrity-of-process control**; (d) **political classification** as a data-governance control bound to the [`CLASSIFICATION.md`](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) framework; (e) **OSINT tradecraft compliance** as an operational control; (f) **horizon stratification** as a data-flow boundary that limits which upstream classes may inform which forecast band.
+> - 🆕 **Five-layer safe-output security model** documented in detail (sanitisation → schema-validate → policy-check → human-review → merge), including bypass-resistance assessment and explicit per-layer failure modes; cross-referenced from [`THREAT_MODEL.md`](THREAT_MODEL.md) row TB-PI series.
+> - 🛡️ **External data-provider trust model** consolidated into a single table covering **IMF (TS client)**, **SCB MCP**, **World Bank MCP**, **Riksdag API**, **Riksbank**, **Statskontoret**, **Riksrevisionen** — with cache-integrity, schema-validation, and `.meta.json` tamper-evidence rows.
+> - 🔒 **Compliance mapping reconfirmed** for v0.8.76: ISO 27001:2022 Annex A.5/A.8 (full), NIST CSF 2.0 GV/ID/PR/DE/RS/RC, CIS Controls v8.1 (#1–#18 applicable subset), GDPR Art. 32, NIS2 Art. 21, EU CRA Annex I (essential-requirement coverage tracked in [`CRA-ASSESSMENT.md`](CRA-ASSESSMENT.md) v1.4).
+> - 📋 No control changes; this is a **documentation-only** reconciliation. Code paths, egress allow-lists, MCP server set (8), agent count (24), skill count (91), and workflow set (50 files = 22 standard `.yml` + 14 agentic `.md` + 14 compiled `.lock.yml`) are unchanged from v2.3.
+>
 > **🆕 What changed since last review (v2.2 → v2.3, 2026-05-03):**
 > - 🔄 **Drift reconciliation** with `.github/workflows/README.md`: agentic workflow count updated to **14 agentic news workflows** (was 11) wrapped in the same five-layer safe-outputs validator and Squid + iptables egress firewall. Total GitHub Actions surface is now **50 files** (22 standard `.yml` + 14 agentic `.md` + 14 compiled `.lock.yml`).
 > - 🛡️ Reaffirmed **MCP Gateway v0.3.1** schema constraint: workflow frontmatter MUST NOT include `engine.mcp.session-timeout` (rejected as unknown additional property by the gateway) — this is a hard control surface item.
@@ -2271,14 +2279,14 @@ However, Hack23 AB voluntarily maps to NIS2 requirements as a **best practice an
 |---------------|-----------------|---------------------------|----------------|------------|
 | **LLM01: Prompt Injection** | Malicious content in retrieved data manipulates LLM behavior | riksdag-regering-mcp fetches only structured JSON from authenticated riksdag.se API. MCP tool outputs are data objects, not raw text. Prompt template is version-controlled and reviewed. User input never included in prompts | Structured data pipeline, no free-text user input, prompt templates in Git | LOW |
 | **LLM02: Insecure Output Handling** | LLM output injected into downstream systems without sanitization | All LLM-generated HTML is validated by HTMLHint before merge. Content Security Policy headers prevent XSS execution. Output encoding applied. Human reviewer inspects content before publication | HTMLHint validation, CSP headers, human review gate, PR review required | MEDIUM — human review mitigates |
-| **LLM03: Training Data Poisoning** | Manipulated training data causes malicious model behavior | Riksdagsmonitor uses Amazon Bedrock hosted models (not self-trained). Claude Opus is trained by Anthropic with safety measures. Model selection from trusted provider | Amazon Bedrock hosted models, Anthropic safety training, no fine-tuning on riksdag data | LOW |
-| **LLM04: Model Denial of Service** | Excessive resource consumption through crafted inputs | GitHub Actions MCP jobs have timeout limits. Amazon Bedrock API calls limited to 30s timeout. Max 3 retries with exponential backoff. Daily cron (not continuous). Input data size limits in MCP tools | GitHub Actions timeout configuration, retry limits, cron scheduling | LOW |
+| **LLM03: Training Data Poisoning** | Manipulated training data causes malicious model behavior | Riksdagsmonitor uses GitHub Copilot-hosted Claude Sonnet 4.6 models (not self-trained). Anthropic provides model-level safety measures. Model selection from trusted provider | GitHub Copilot engine, Anthropic safety training, no fine-tuning on riksdag data | LOW |
+| **LLM04: Model Denial of Service** | Excessive resource consumption through crafted inputs | GitHub Actions MCP jobs have timeout limits. Tool calls are time-bounded. Max 3 retries with exponential backoff. Daily cron (not continuous). Input data size limits in MCP tools | GitHub Actions timeout configuration, retry limits, cron scheduling | LOW |
 | **LLM05: Supply Chain Vulnerabilities** | Compromised components in LLM application stack | npm packages SHA-pinned via package-lock.json. GitHub Actions pinned to commit SHAs. Dependabot monitors all dependencies. step-security/harden-runner blocks unauthorized egress. SLSA provenance attestation | package-lock.json, SHA-pinned Actions, Dependabot, SLSA attestation | MEDIUM |
 | **LLM06: Sensitive Information Disclosure** | LLM reveals confidential data in outputs | Zero PII in data sources (all Riksdag data is public political information). No sensitive data in prompts. No user data processed. Data classification: all data PUBLIC | Data classification policy, no-PII architecture, source data is public | LOW |
 | **LLM07: Insecure Plugin Design** | Unsafe LLM plugin/tool implementations | MCP server (riksdag-regering-mcp) has defined tool schema with typed parameters. No arbitrary code execution. Read-only API access. All MCP tool outputs are structured JSON | MCP tool schema definitions, read-only API access, structured outputs | LOW |
-| **LLM08: Excessive Agency** | LLM performs unintended actions with excessive permissions | Amazon Bedrock API key has only `bedrock:InvokeModel` permission. MCP client in GitHub Actions has read-only access to Riksdag APIs. No write permissions granted to LLM pipeline. All outputs require human approval (PR review) before publication | IAM least privilege, read-only MCP access, human review gate, PR-required merge | LOW |
+| **LLM08: Excessive Agency** | LLM performs unintended actions with excessive permissions | Agent phase uses read-only repository and MCP access. Write actions are isolated to the safe-output PR boundary. No direct merge or deployment permission is granted to the LLM pipeline. All outputs require human approval (PR review) before publication | Least privilege, read-only MCP access, safe-output boundary, human review gate, PR-required merge | LOW |
 | **LLM09: Overreliance** | Excessive trust in LLM outputs without human verification | Mandatory human review (PR review by James P. Sörling) before any generated article is published. Quality score threshold (0.8/1.0) gates generation. Correction policy for published errors. Human retains final editorial control | PR review requirement, quality gate, editorial policy, correction procedure | LOW |
-| **LLM10: Model Theft** | Unauthorized extraction or replication of model | Amazon Bedrock API key stored in GitHub Secrets (encrypted at rest). Key never exposed in logs (GitHub Secrets masking). Least privilege IAM. 90-day key rotation policy. step-security/harden-runner monitors egress | GitHub Secrets encryption, IAM least privilege, key rotation, egress monitoring | LOW |
+| **LLM10: Model Theft** | Unauthorized extraction or replication of model | Model access is mediated by GitHub Copilot / GitHub Actions runtime controls. No model weights are available to workflows. Tokens are masked in logs and scoped by job. step-security/harden-runner monitors egress | GitHub token scoping, secrets masking, no model weights, egress monitoring | LOW |
 
 **Overall LLM Risk Assessment for Riksdagsmonitor MCP Pipeline:** LOW-MEDIUM
 
@@ -2412,7 +2420,7 @@ The primary residual risks are LLM02 (output handling) mitigated by human review
 | **GV.OC-02** | Internal and external stakeholders are understood and their needs considered | Stakeholders: Swedish public (users), researchers, journalists, Hack23 AB (operator). External: GitHub, AWS, Anthropic (providers), Riksdag (data source). Mapped in THREAT_MODEL.md |
 | **GV.OC-03** | Legal, regulatory, and contractual cybersecurity obligations are understood and managed | GDPR (no PII), CRA (documented in CRA-ASSESSMENT.md), NIS2 (voluntary alignment), Swedish law compliance. Legal review annually |
 | **GV.OC-04** | Critical objectives, capabilities, and services that stakeholders depend on are understood and communicated | Critical service: 24/7 web availability of political transparency data. Documented in BCPPlan.md BIA section. RTO/RPO defined |
-| **GV.OC-05** | Outcomes, capabilities, and services that the organization depends on are understood and communicated | Dependencies: GitHub (source control, CI/CD, Pages), AWS (CDN, S3), Riksdag API (data), Amazon Bedrock (AI). Documented in ARCHITECTURE.md and BCPPlan.md |
+| **GV.OC-05** | Outcomes, capabilities, and services that the organization depends on are understood and communicated | Dependencies: GitHub (source control, CI/CD, Pages, Copilot engine), AWS (CDN, S3), Riksdag API (data), Anthropic (Claude Sonnet 4.6 model). Documented in ARCHITECTURE.md and BCPPlan.md |
 
 ### GV.RM — Risk Management Strategy
 
@@ -2433,7 +2441,7 @@ The primary residual risks are LLM02 (output handling) mitigated by human review
 | **CEO/CISO/DPO** | James Pether Sörling | All security architecture, ISMS ownership, incident response, compliance, risk acceptance |
 | **GitHub Security** | GitHub Platform | Secret scanning, CodeQL, Dependabot, audit logging (automated) |
 | **AWS Security** | AWS Platform | CloudFront DDoS protection, S3 encryption, IAM enforcement (platform) |
-| **Anthropic Safety** | Anthropic | Claude Opus safety guardrails, model security (provider responsibility) |
+| **Anthropic Safety** | Anthropic | Claude Sonnet 4.6 safety guardrails, model security (provider responsibility) |
 | **Security Community** | Public | Responsible disclosure via security@hack23.com |
 
 ### GV.PO — Policy
@@ -2471,7 +2479,7 @@ The primary residual risks are LLM02 (output handling) mitigated by human review
 |----------|----------|-----------|----------|------------------|
 | **GitHub** | Source control, CI/CD, hosting | HIGH (critical path) | GitHub Enterprise ToS, ISMS Third Party Policy, MFA, branch protection | Annual contract review |
 | **AWS** | CDN, S3, Route 53 | HIGH (production hosting) | AWS DPA, CloudFront TLS, IAM least privilege, MFA root | Annual contract review |
-| **Anthropic (via Bedrock)** | AI content generation | MEDIUM | Amazon Bedrock DPA, API key rotation, least privilege IAM, content filtering | Annual review |
+| **Anthropic (via GitHub Copilot)** | AI content generation | MEDIUM | GitHub Copilot runtime controls, least-privilege workflow permissions, content filtering, safe-output PR boundary | Annual review |
 | **riksdag-regering-mcp** | Data pipeline | MEDIUM | Pinned version, Dependabot monitoring, code review | Per release |
 | **npm ecosystem** | JavaScript dependencies | MEDIUM | package-lock.json SHA pinning, Dependabot, npm audit | Daily automated |
 | **GitHub Actions marketplace** | CI/CD automation | MEDIUM | SHA-pinned actions only, step-security/harden-runner, egress control | Per workflow update |
@@ -2580,7 +2588,7 @@ Riksdagsmonitor's cyber supply chain is documented in the Third Party Management
    - SLA: 99.99% CloudFront availability SLA
 
 **Supplier Tier 2 (Service-Level Dependency):**
-3. **Anthropic (via Amazon Bedrock)** — Claude Opus AI model
+3. **Anthropic (via GitHub Copilot)** — Claude Sonnet 4.6 AI model
    - Dependency type: MEDIUM — content generation only; cached content available
    - Risk treatment: Caching, fallback to template articles, graceful degradation
 
@@ -2735,7 +2743,7 @@ stateDiagram-v2
 
 | Credential | Storage | Rotation Period | Access Level | Emergency Contact |
 |-----------|---------|-----------------|--------------|-------------------|
-| Amazon Bedrock API Key | GitHub Secrets (encrypted) | 90 days | `bedrock:InvokeModel` only | security@hack23.com |
+| GitHub Copilot agent token | GitHub-managed runtime token | Per GitHub platform policy | Agentic workflow scope only | GitHub Support |
 | GitHub PAT (if used) | GitHub Secrets | 90 days | Minimal required scopes | GitHub Support |
 | AWS IAM Access Key | GitHub Secrets | 90 days | Least privilege IAM policy | AWS Support |
 | MCP Server API Keys | GitHub Secrets | Per provider policy | Read-only data access | Provider support |
@@ -2764,7 +2772,7 @@ stateDiagram-v2
 
 **Secret naming convention:**
 ```
-AWS_BEDROCK_API_KEY          # Amazon Bedrock
+GITHUB_TOKEN                 # GitHub-managed workflow token
 AWS_ACCESS_KEY_ID             # AWS IAM (if applicable)
 AWS_SECRET_ACCESS_KEY         # AWS IAM secret
 MCP_RIKSDAG_API_KEY           # riksdag-regering-mcp (if auth required)
@@ -2778,7 +2786,7 @@ MCP_RIKSDAG_API_KEY           # riksdag-regering-mcp (if auth required)
 2. **T+5min:** Access provider console, revoke credential immediately
    - AWS: IAM Console > Users > Security credentials > Deactivate
    - GitHub: Settings > Developer Settings > PATs > Revoke
-   - Bedrock: IAM Console > Access Keys > Delete
+   - GitHub Copilot: disable affected workflow / revoke related GitHub token or PAT
 3. **T+10min:** Update GitHub Secret with new credential (or blank to disable workflow)
 4. **T+15min:** Verify no unauthorized usage since detection (provider access logs)
 5. **T+30min:** Generate new credential, update GitHub Secret, re-enable workflow
@@ -2954,7 +2962,7 @@ Riksdagsmonitor relies on major cloud providers whose security certifications ex
 |---------|---------------|-------------------|----------|
 | **GitHub (Microsoft)** | ISO 27001, SOC 2 Type II, SOC 3, PCI DSS, CSA STAR | Source control, CI/CD, GitHub Pages, Actions | github.com/security |
 | **Amazon Web Services** | ISO 27001, SOC 1/2/3, PCI DSS, FedRAMP, CSA STAR | CloudFront CDN, S3, Route 53 | aws.amazon.com/compliance |
-| **Anthropic (via AWS Bedrock)** | SOC 2 Type II (in progress), ISO 27001 (in progress) | Claude Opus AI model | via Amazon Bedrock compliance |
+| **Anthropic (via GitHub Copilot)** | SOC 2 Type II (provider), ISO 27001 (provider) | Claude Sonnet 4.6 AI model | via GitHub Copilot / Anthropic provider documentation |
 
 ### Shared Responsibility Model
 
@@ -2994,7 +3002,7 @@ flowchart TD
 | GitHub | Platform unavailability | HIGH | CloudFront failover, GitHub SLA monitoring | LOW | Quarterly |
 | GitHub | Credential compromise | HIGH | MFA enforced, branch protection, least privilege | LOW | Annual |
 | AWS CloudFront | CDN outage | MEDIUM | GitHub Pages failover, multi-region S3 | LOW | Quarterly |
-| Amazon Bedrock | AI API unavailability | MEDIUM | Graceful degradation to template articles | LOW | Quarterly |
+| GitHub Copilot / Anthropic | AI API unavailability | MEDIUM | Graceful degradation to template articles; workflow retry and PR review gate | LOW | Quarterly |
 | riksdag-regering-mcp | Data pipeline failure | MEDIUM | Local caching, stale data banner | LOW | Per release |
 | npm registry | Supply chain attack | HIGH | package-lock.json pinning, Dependabot | MEDIUM | Daily automated |
 | Riksdag API | API changes breaking data pipeline | MEDIUM | Schema versioning, monitoring | MEDIUM | Quarterly |
@@ -3019,16 +3027,19 @@ Riksdagsmonitor's overall security posture as of 2026-02-25:
 ## 📋 Document Control
 
 **📋 Document Owner:** James Pether Sörling, CEO & CISO  
-**📄 Version:** 2.1  
-**📅 Last Updated:** 2026-02-25 (UTC)  
+**📄 Version:** 2.4  
+**📅 Last Updated:** 2026-05-06 (UTC)  
 **✅ Approved by:** James Pether Sörling, CEO  
-**🔄 Review Cycle:** Annual (February)  
-**⏰ Next Review:** 2027-02-25  
+**🔄 Review Cycle:** Annual  
+**⏰ Next Review:** 2027-05-06  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807)  
 **📤 Distribution:** Public  
 **🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels) [![Integrity: High](https://img.shields.io/badge/I-High-orange?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#integrity-levels) [![Availability: High](https://img.shields.io/badge/A-High-orange?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#availability-levels)
 
 **Version History:**
+- v2.4 (2026-05-06): v0.8.76 reconciliation — added Political Intelligence Security Surface, Five-Layer Safe-Output detail, External Data Provider Trust Model, STRIDE threat-boundary additions for political intelligence
+- v2.3 (2026-05-03): Drift reconciliation with workflows README (14 agentic workflows), MCP Gateway v0.3.1 schema constraint
+- v2.2 (2026-04-20): IMF added as third external economic data provider, MCP security posture, 24 agents + 91 skills under review
 - v2.1 (2026-02-25): Added NIS2 mapping, OWASP LLM Top 10, ISO 27001 SoA, NIST CSF Govern function, CIS Controls IG classification, supply chain security, content integrity, credential lifecycle, and security KPIs sections
 - v2.0 (2026-02-20): Major revision with STRIDE analysis, 6-layer defense model, compliance framework mappings
 
@@ -3110,6 +3121,192 @@ Statskontoret is a read-only public-data integration using in-repository TypeScr
 
 Security classification: **PUBLIC / High Integrity / Medium-High Availability**. Mapped controls: ISO 27001 A.5.23 (cloud/service use), A.8.9 (configuration management), A.8.12 (data leakage prevention by design), A.8.20 (network security), NIST CSF 2.0 ID.IM / PR.DS / PR.PS, CIS Controls 4, 8, 12 and 16.
 
+
+---
+
+## 🕵️ Political Intelligence Security Surface (v0.8.76)
+
+> **Added:** v2.4 (2026-05-06) — Previously backlog item from the [documentation-portfolio-audit-2026-05-03](analysis/audits/documentation-portfolio-audit-2026-05-03.md). This section documents the security controls governing the AI-driven political intelligence analysis pipeline.
+
+### Overview
+
+Riksdagsmonitor's political intelligence pipeline introduces a unique attack surface: **39 analysis templates** and **18 methodologies** processed by AI agents (Claude Sonnet 4.6) within 14 agentic workflows. These templates define the analytical structure that shapes all output articles. A compromise of the template content or a bypass of the structural validation gate could lead to biased, fabricated, or manipulated political intelligence output.
+
+### Trust Model
+
+```mermaid
+flowchart TD
+    subgraph "Trusted Control Plane (Git-reviewed)"
+        TMPL["39 Analysis Templates<br/>analysis/templates/*.md"]
+        METH["18 Methodologies<br/>analysis/methodologies/*.md"]
+        GATE["Analysis Gate<br/>scripts/agentic/analysis-gate.ts"]
+        REFL["Methodology Reflection Validator<br/>scripts/validate-methodology-reflection.ts"]
+        PROMPT["Prompt Modules<br/>.github/prompts/"]
+    end
+    subgraph "AI Agent Runtime (Sandboxed)"
+        AGENT["Claude Sonnet 4.6<br/>(14 agentic workflows)"]
+    end
+    subgraph "Output (PR-Gated)"
+        ART["Analysis Artifacts<br/>analysis/daily/YYYY-MM-DD/"]
+        NEWS["News Articles<br/>content/"]
+    end
+    TMPL --> AGENT
+    METH --> AGENT
+    PROMPT --> AGENT
+    AGENT --> ART
+    ART --> GATE
+    ART --> REFL
+    GATE -->|pass| NEWS
+    GATE -->|fail| REJECT["❌ Workflow fails"]
+```
+
+### Security Control: Analysis Gate (Checks 1–9b)
+
+**Implementation:** [`scripts/agentic/analysis-gate.ts`](scripts/agentic/analysis-gate.ts) · **Specification:** [`.github/prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md)
+
+The analysis gate is a **fail-closed structural-integrity control** that validates all 23 required analysis artifacts before any article content proceeds to PR review. It operates as Layer 0 of the safe-output pipeline (pre-sanitisation validation).
+
+| Check | Control | What It Validates | Bypass Resistance |
+|-------|---------|-------------------|-------------------|
+| 1 | Artifact existence | All 23 files present and non-empty | Typed filename set; recursive scan; size > 0 |
+| 2 | Per-document coverage | Family E vs manifest | `dok_id` regex validation; cross-ref to artifact inventory |
+| 3 | No stub placeholders | Recursive `.md` scan for known stub phrases | Pattern list version-controlled; `collectMdFilesRecursive()` |
+| 4 | Evidence citations | SWOT + significance scoring contain evidence | `EVIDENCE_PATTERN` regex; real source IDs required |
+| 5 | Mermaid diagrams | Colour config + node labels in diagrams | `MERMAID_NODE_RE` matches `[]`, `()`, `{}` label shapes |
+| 6 | Pass-2 evidence | Mtime or `pass1/` snapshot diff | `PASS2_MTIME_THRESHOLD_MS = 180_000` (3 min) |
+| 7 | Family C structure | Strategic extension artifacts well-formed | Typed interface validation |
+| 8 | Family D structure | Electoral & domain lens artifacts well-formed | Typed interface validation |
+| 9 | PIR status sidecar | Priority Intelligence Requirements file present | JSON schema check |
+| 9b | Statskontoret evidence | Implementation-feasibility references Statskontoret | `RECOGNISED_AGENCIES` list (12 entries) |
+
+**Test coverage:** 76 tests in [`tests/agentic-analysis-gate.test.ts`](tests/agentic-analysis-gate.test.ts).
+
+**Failure mode:** If any check fails, the entire workflow run fails — no article is generated and no PR is created. This prevents partial or manipulated output from reaching the human-review gate.
+
+### Security Control: Methodology-Reflection Validator
+
+**Implementation:** [`scripts/validate-methodology-reflection.ts`](scripts/validate-methodology-reflection.ts)
+
+Validates that each `methodology-reflection.md` artifact meets the integrity-of-process contract:
+
+| Validation | Purpose |
+|------------|---------|
+| Required H2 sections (8) | Ensures complete analytical reflection |
+| Minimum byte threshold (scaled by period-scope) | Prevents trivial/empty reflections |
+| Confidence labels (`[HIGH]`, `[MEDIUM]`, `[LOW]`) | Enforces uncertainty acknowledgement |
+| Upstream-watchpoint reconciliation table (Tier-C) | Cross-validates upstream data references |
+
+### Security Control: Political Classification
+
+All political data (MPs, votes, parties, speeches) is classified under the [Hack23 CLASSIFICATION framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md):
+
+- **Confidentiality:** Public (all source data is from open government APIs)
+- **Integrity:** HIGH — incorrect political intelligence could damage reputations or mislead citizens
+- **Availability:** HIGH — platform is a public accountability tool
+
+### Security Control: Horizon Stratification Boundaries
+
+Horizon stratification limits which data classes can inform which forecast band:
+
+| Horizon Band | Permitted Data Sources | Prohibited |
+|--------------|----------------------|------------|
+| T+72h (short-term) | Riksdag calendar, vote records, committee schedules | Future economic projections |
+| T+7d (week-ahead) | Parliamentary schedule, government press releases | Speculative coalition analysis |
+| T+30d (month-ahead) | IMF WEO projections, SCB statistics, government proposals | Election-cycle scenarios |
+| T+90d – T+365d (quarter/year) | All economic data, trend analysis, historical patterns | N/A |
+| T+1460d (election-cycle) | Full scenario trees, coalition modelling | N/A — all sources permitted |
+
+**Control:** The prompt modules in `.github/prompts/` encode horizon constraints. The analysis gate validates artifact structure matches the declared article type (from [`analysis/article-types.json`](analysis/article-types.json)).
+
+### Security Control: OSINT Tradecraft Compliance
+
+AI-generated content must comply with OSINT operational standards:
+
+- **Source attribution**: Every factual claim traces to a `dok_id` (Riksdag document ID) or named data source
+- **No single-source conclusions**: Significance scoring requires multiple evidence citations (Check 4)
+- **Confidence labelling**: All analytical claims carry `[HIGH]`/`[MEDIUM]`/`[LOW]` confidence markers
+- **No speculation without disclosure**: Horizon constraints prevent presenting projections as facts
+
+---
+
+## 🔐 Five-Layer Safe-Output Security Model (Detailed)
+
+> **Cross-reference:** [THREAT_MODEL.md](THREAT_MODEL.md) §TB-PI series · [`.github/workflows/README.md`](.github/workflows/README.md)
+
+The five-layer model governs all 14 agentic news workflows. Each layer is independent — a bypass of one layer does not compromise the subsequent layers.
+
+```mermaid
+flowchart TD
+    AGENT["AI Agent Output"] --> L1["Layer 1: Sanitisation<br/>(rehype-sanitize allow-list)"]
+    L1 --> L2["Layer 2: Schema Validation<br/>(artifact structure + YAML front-matter)"]
+    L2 --> L3["Layer 3: Policy Check<br/>(analysis gate checks 1–9b)"]
+    L3 --> L4["Layer 4: Human Review<br/>(mandatory PR approval)"]
+    L4 --> L5["Layer 5: Merge & Deploy<br/>(branch protection rules)"]
+    L1 -->|"blocks <script>, <iframe>, handlers"| FAIL["❌ Rejected"]
+    L2 -->|"missing fields / malformed YAML"| FAIL
+    L3 -->|"gate check failure"| FAIL
+    L4 -->|"reviewer rejects"| FAIL
+```
+
+| Layer | Control | Bypass Resistance | Failure Mode |
+|-------|---------|-------------------|--------------|
+| **1. Sanitisation** | `rehype-sanitize` allow-list blocks `<script>`, `<iframe>`, inline event handlers, `javascript:` URIs | Allow-list approach (not deny-list); Mermaid rendered in `securityLevel: 'strict'` | Malicious HTML stripped silently |
+| **2. Schema Validation** | YAML front-matter schema; artifact file structure; 23-file completeness | Typed TypeScript validators; JSON schema | Workflow fails with validation error |
+| **3. Policy Check** | Analysis gate (checks 1–9b); methodology-reflection validator | Fail-closed; 76 unit tests; no partial pass | Workflow fails — no PR created |
+| **4. Human Review** | Mandatory PR approval by repository maintainer | Branch protection rule; `CODEOWNERS`; cannot self-approve | PR blocked until approved |
+| **5. Merge & Deploy** | Signed commits; CI must pass; deploy via OIDC (no stored creds) | GitHub branch protection; SLSA provenance | Merge blocked if CI fails |
+
+### Egress Firewall (Squid + iptables)
+
+All agentic workflows execute behind a **Squid proxy** with domain allow-list enforcement and **iptables** rules that DROP all non-allowlisted outbound connections:
+
+- **Allowlisted domains:** `riksdagen.se`, `www.riksdagen.se`, `data.riksdagen.se`, `regeringen.se`, `www.regeringen.se`, `riksdag-regering-ai.onrender.com`, `api.scb.se`, `api.worldbank.org`, `www.imf.org`, `sdmxcentral.imf.org`, `api.imf.org`, `data.imf.org`, `github.com`, `raw.githubusercontent.com`, `hack23.github.io`, `hack23.com`, `www.hack23.com`, `riksdagsmonitor.com`
+- **Effect:** Tool-call exfiltration attempts are blocked at the network layer — the agent cannot reach arbitrary external hosts
+- **Monitoring:** Squid access logs + `step-security/harden-runner` egress audit
+
+### MCP Server Token Scoping
+
+| MCP Server | Authentication | Scope |
+|------------|---------------|-------|
+| `riksdag-regering` | HTTPS (anonymous public API) | Read-only parliamentary data |
+| `scb` | Container-isolated; anonymous | Read-only statistics |
+| `world-bank` | Container-isolated; anonymous | Read-only indicators |
+| `github` | PAT (scoped to repository) | Repo read + PR write |
+| `filesystem` | Local (no network) | Working directory only |
+| `memory` | Local (no network) | Session-scoped KV store |
+| `sequential-thinking` | Local (no network) | No external access |
+| `playwright` | Local (headless) | No navigation outside allowlist |
+
+### Prompt Injection Mitigation Controls
+
+| Attack Vector | Mitigation | Effectiveness |
+|---------------|-----------|---------------|
+| Indirect injection via Riksdag document titles | MCP returns structured JSON (not raw HTML); titles are data fields, not executable prompts | HIGH — structured data pipeline |
+| Poisoned methodology file | Version-controlled in Git; PR-reviewed; immutable once merged | HIGH — Git integrity |
+| Template manipulation | Templates in `analysis/templates/` are PR-reviewed; changes require CEO approval per Change Management | HIGH — change control |
+| Cross-session data leakage | Each workflow run is stateless; `repo-memory` branch is append-only and reviewed | MEDIUM — review-dependent |
+| Model hallucination as injection vector | Analysis gate checks evidence citations; mandatory `dok_id` validation | HIGH — structural validation |
+
+---
+
+## 🌐 External Data Provider Trust Model (Consolidated)
+
+| Provider | Transport | Auth | Schema Validation | Cache Integrity | Tamper Detection | Trust Level |
+|----------|-----------|------|-------------------|-----------------|------------------|-------------|
+| **IMF** (Datamapper + SDMX) | HTTPS/TLS 1.3 | Anonymous | `DatamapperResponse` shape + finite-numeric + year parse-guard | `analysis/data/imf/{indicator}/{country}.json` | `.meta.json` sidecars (vintage, timestamp, hash) | PUBLIC / Read-only |
+| **SCB** (MCP container) | HTTPS to `api.scb.se` | Anonymous | PxWeb JSON-stat2 schema | `analysis/data/scb/{tableId}.json` | `.meta.json` sidecars | PUBLIC / Read-only |
+| **World Bank** (MCP container) | HTTPS to `api.worldbank.org` | Anonymous | JSON response schema | `analysis/data/worldbank/{indicator}/{country}.json` | `.meta.json` sidecars | PUBLIC / Read-only |
+| **Riksdag API** | HTTPS to `data.riksdagen.se` | Anonymous | XML/JSON schema (dok_id format) | N/A (live API) | `dok_id` cross-validation | PUBLIC / Read-only |
+| **Riksbank** | HTTPS | Anonymous | CSV/JSON schema | `analysis/data/riksbank/` | `.meta.json` sidecars | PUBLIC / Read-only |
+| **Statskontoret** | HTTPS to `www.statskontoret.se` | Anonymous | HTML/XLSX structure checks | `analysis/data/statskontoret/` | `.meta.json` sidecars | PUBLIC / Read-only |
+| **Riksrevisionen** | HTTPS | Anonymous | Report structure validation | `analysis/data/rir/` | `.meta.json` sidecars | PUBLIC / Read-only |
+
+**Common controls across all providers:**
+- TLS/HTTPS only (no plaintext)
+- Read-only data flow (inbound only; no credentials transmitted)
+- Git-tracked diffs on all cached data (PR review required for changes)
+- Graceful fallback to cached snapshots on upstream outage
+- No PII in any upstream data source
 
 ---
 
