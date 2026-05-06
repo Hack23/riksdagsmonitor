@@ -20,7 +20,7 @@
 import { describe, expect, it } from 'vitest';
 
 // Direct imports from decomposed sub-modules (proves isolation)
-import type { BreadcrumbItem, ChromeOptions, SiteChrome } from '../scripts/render-lib/chrome/types.js';
+import type { BreadcrumbItem, ChromeOptions } from '../scripts/render-lib/chrome/types.js';
 import { depth, renderHreflangBlock, fallbackAlternateHref } from '../scripts/render-lib/chrome/helpers.js';
 import { renderChromeHead } from '../scripts/render-lib/chrome/head.js';
 import { buildHeaderHtml } from '../scripts/render-lib/chrome/header.js';
