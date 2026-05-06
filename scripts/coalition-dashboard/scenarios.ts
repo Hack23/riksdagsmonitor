@@ -14,7 +14,7 @@
  * @license Apache-2.0
  */
 
-declare const Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown };
+declare const Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown };
 declare const d3: typeof import('d3');
 import type { PartyNode, CoalitionLink, VotingAnomaly, PartyConfig, DataCache, BehavioralPatterns, AnnualVotes, AnnualVoteEntry, CoalitionAlignment } from './types.js';
 

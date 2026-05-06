@@ -2,7 +2,7 @@
  * @module Shared/RegisterGlobals
  * @description Imports Chart.js, D3.js, and Papa Parse as ES modules and registers them on globalThis.
  *
- * Dashboard modules access these libraries via `(globalThis as unknown as { Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart`,
+ * Dashboard modules access these libraries via `(globalThis as unknown as { Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart`,
  * `(globalThis as unknown as { d3: typeof import('d3') }).d3`, and `(globalThis as unknown as { Papa: { parse(input: string, config?: Record<string, unknown>): { data: string[][] } } }).Papa`. ES module side-effect
  * imports (`import 'chart.js/auto'`) do NOT set globals, so this module must be
  * imported before any dashboard module to ensure the globals are available at
@@ -16,7 +16,7 @@ import * as d3 from 'd3';
 import Papa from 'papaparse';
 
 export function registerBrowserGlobals(): void {
-  // Expose on globalThis so dashboard modules can access via (globalThis as unknown as { Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart / .d3 / .Papa
+  // Expose on globalThis so dashboard modules can access via (globalThis as unknown as { Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart / .d3 / .Papa
   (globalThis as Record<string, unknown>).Chart = Chart;
   (globalThis as Record<string, unknown>).d3 = d3;
   (globalThis as Record<string, unknown>).Papa = Papa;

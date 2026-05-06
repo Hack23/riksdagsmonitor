@@ -41,7 +41,7 @@ import type {
 /*  Global library reference (loaded via <script> tag)                */
 /* ------------------------------------------------------------------ */
 
-const Chart = (globalThis as unknown as { Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
+const Chart = (globalThis as unknown as { Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
 
 /* ------------------------------------------------------------------ */
 /*  Interfaces                                                        */

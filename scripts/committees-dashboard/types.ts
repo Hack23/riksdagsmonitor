@@ -13,7 +13,7 @@
 import type { SimulationNodeDatum, SimulationLinkDatum } from 'd3';
 
 // Chart.js and Papa Parse are loaded as browser globals via script tags
-declare const Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown };
+declare const Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown };
 declare const Papa: {
   parse(input: string, config?: {
     header?: boolean;

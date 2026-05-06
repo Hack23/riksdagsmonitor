@@ -44,7 +44,7 @@
   // This ensures late-loaded libraries (defer/async/dynamic ordering) are
   // always picked up correctly.
   let d3: typeof import('d3');
-  let Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown };
+  let Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown };
   let Papa: { parse(input: string, config?: Record<string, unknown>): { data: string[][] } };
 
   // ==============================================
@@ -1219,7 +1219,7 @@
     try {
       // Resolve browser globals here so late-loaded libraries are picked up.
       d3 = (globalThis as unknown as { d3: typeof import('d3') }).d3;
-      Chart = (globalThis as unknown as { Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown } }).Chart;
+      Chart = (globalThis as unknown as { Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown } }).Chart;
       Papa = (globalThis as unknown as { Papa: { parse(input: string, config?: Record<string, unknown>): { data: string[][] } } }).Papa;
 
       // Check if required libraries are loaded

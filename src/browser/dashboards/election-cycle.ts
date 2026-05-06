@@ -37,7 +37,7 @@ import {
 import type { CSVRow } from '../shared/index.js';
 
 const d3 = (globalThis as unknown as { d3: typeof import('d3') }).d3;
-const Chart = (globalThis as unknown as { Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
+const Chart = (globalThis as unknown as { Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
 const Papa = (globalThis as unknown as { Papa: { parse(input: string, config?: Record<string, unknown>): { data: string[][] } } }).Papa;
 
 // ============================================================================

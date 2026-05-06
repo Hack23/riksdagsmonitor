@@ -10,7 +10,7 @@
  * @license Apache-2.0
  */
 
-declare const Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown };
+declare const Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown };
 import { CONFIG } from './data.js';
 import type { CommitteeData, CommitteeDefinition, ProductivityMatrixRow, AnnualDocumentRow, SeasonalPatternRow } from './types.js';
 

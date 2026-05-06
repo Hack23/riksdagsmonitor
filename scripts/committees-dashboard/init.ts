@@ -13,7 +13,7 @@
  */
 
 declare const d3: typeof import('d3');
-declare const Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown };
+declare const Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown };
 declare const Papa: { parse(input: string, config?: Record<string, unknown>): { data: string[][] } };
 
 import type { CommitteeData } from './types.js';

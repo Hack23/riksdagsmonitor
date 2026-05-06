@@ -11,16 +11,8 @@ import type * as d3Namespace from 'd3';
 
 /** Minimal Chart.js constructor interface for dashboard usage. */
 export interface ChartConstructor {
-  new (ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown;
+  new (ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown;
   register(...items: unknown[]): void;
-}
-
-/** Chart.js tooltip callback context (minimal subset used in dashboards). */
-export interface ChartTooltipContext {
-  parsed: { x: number; y: number };
-  dataset: { label?: string };
-  label: string;
-  raw: Record<string, unknown>;
 }
 
 /** PapaParse interface for CSV parsing. */

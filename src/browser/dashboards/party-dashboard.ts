@@ -735,7 +735,7 @@ async function fetchData(filename: string): Promise<CSVRow[]> {
 
 /** Apply cyberpunk-themed Chart.js global defaults. */
 function initChartDefaults(): void {
-  const Chart = (globalThis as unknown as { Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
+  const Chart = (globalThis as unknown as { Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
   if (typeof Chart === 'undefined') {
     logger.error('Chart.js not loaded');
     return;
@@ -767,7 +767,7 @@ function createEffectivenessChart(data: CSVRow[]): void {
   const ctx = document.getElementById('partyEffectivenessChart') as HTMLCanvasElement | null;
   if (!ctx) return;
 
-  const Chart = (globalThis as unknown as { Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
+  const Chart = (globalThis as unknown as { Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
   const t = getTranslations();
 
   // Update ARIA label for current language with fallback to English
@@ -872,7 +872,7 @@ function createComparisonChart(data: CSVRow[]): void {
   const ctx = document.getElementById('partyComparisonChart') as HTMLCanvasElement | null;
   if (!ctx) return;
 
-  const Chart = (globalThis as unknown as { Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
+  const Chart = (globalThis as unknown as { Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
   const t = getTranslations();
 
   // Update ARIA label for current language with fallback to English
@@ -1055,7 +1055,7 @@ function createMomentumChart(data: CSVRow[]): void {
   const ctx = document.getElementById('partyMomentumChart') as HTMLCanvasElement | null;
   if (!ctx) return;
 
-  const Chart = (globalThis as unknown as { Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
+  const Chart = (globalThis as unknown as { Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
   const t = getTranslations();
 
   // Update ARIA label for current language with fallback to English
@@ -1160,7 +1160,7 @@ export async function init(): Promise<void> {
   }
 
   // Wait for Chart.js to load
-  const Chart = (globalThis as unknown as { Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
+  const Chart = (globalThis as unknown as { Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
   if (typeof Chart === 'undefined') {
     logger.error('Chart.js not loaded. Please include Chart.js before this script.');
     return;

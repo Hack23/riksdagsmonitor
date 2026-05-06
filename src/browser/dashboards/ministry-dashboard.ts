@@ -1043,7 +1043,7 @@ function renderInfluenceChart(
   const canvas = document.getElementById(canvasId) as HTMLCanvasElement | null;
   if (!canvas || !data || data.length === 0) return;
 
-  const Chart = (globalThis as unknown as { Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
+  const Chart = (globalThis as unknown as { Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
   if (!Chart) return;
 
   const sorted = [...data].sort((a, b) => (Number(b.influence) || 0) - (Number(a.influence) || 0)).slice(0, 10);
@@ -1078,7 +1078,7 @@ function renderProductivityChart(
   const canvas = document.getElementById(canvasId) as HTMLCanvasElement | null;
   if (!canvas || !data || data.length === 0) return;
 
-  const Chart = (globalThis as unknown as { Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
+  const Chart = (globalThis as unknown as { Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
   if (!Chart) return;
 
   const ministryTranslations = MINISTRY_TRANSLATIONS[lang] || MINISTRY_TRANSLATIONS.en;
@@ -1117,7 +1117,7 @@ function renderDecisionImpactChart(
   const canvas = document.getElementById(canvasId) as HTMLCanvasElement | null;
   if (!canvas || !data || data.length === 0) return;
 
-  const Chart = (globalThis as unknown as { Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
+  const Chart = (globalThis as unknown as { Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
   if (!Chart) return;
 
   const ministries = Array.from(new Set(data.map((d) => d.ministry))).slice(0, 5);
