@@ -1420,6 +1420,31 @@ flowchart LR
 
 ---
 
+### 🧩 Extracted Script Modules (`scripts/agentic/`)
+
+The inline bash validation logic embedded in `.github/prompts/05-analysis-gate.md` has been extracted into strictly-typed TypeScript modules under `scripts/agentic/`. This bounded context provides:
+
+| Module | Responsibility |
+|--------|---------------|
+| `scripts/agentic/artifact-inventory.ts` | Typed definitions for all 23 required artifacts (Families A–D), stub placeholders, evidence patterns, agency lists, dok_id patterns |
+| `scripts/agentic/analysis-gate.ts` | Gate validation checks 1–9b: artifact existence, per-document coverage, stub detection, Mermaid validation, Family C/D structure, PIR sidecar, Statskontoret evidence |
+| `scripts/agentic/index.ts` | Barrel export — single public surface for downstream consumers |
+
+**Key types exported:**
+- `ArtifactFamily` — `'A' | 'B' | 'C' | 'D' | 'E'`
+- `ArtifactDefinition` — filename, family, description, gate metadata
+- `GateCheckResult` — per-check pass/fail with message and artifact reference
+- `GateValidationResult` — aggregate result with failure count
+
+**Design principles:**
+- Zero `any` types — explicit interfaces for all data structures
+- Gate module factored for readability (single-responsibility check functions)
+- Co-located tests: `tests/agentic-analysis-gate.test.ts` (76 tests)
+- ESLint clean with zero warnings
+- No circular dependencies (barrel imports only)
+
+---
+
 ## 🔒 Workflow Security Architecture
 
 ### Supply Chain Security

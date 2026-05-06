@@ -15,6 +15,7 @@
     "scripts/political-intelligence/**/*.ts",
     "scripts/render-lib/**/*.ts",
     "scripts/rss/**/*.ts",
+    "scripts/agentic/**/*.ts",
     "scripts/shared/**/*.ts",
     "scripts/sitemap-html/**/*.ts",
     "scripts/sitemap-xml/**/*.ts",
