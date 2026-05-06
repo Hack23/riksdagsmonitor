@@ -38,6 +38,7 @@ import { buildGithubBlobUrl } from './url-helpers.js';
 import { renderMarkdownToHtml } from './markdown/index.js';
 import { buildChrome } from './chrome.js';
 import { buildBreadcrumbListLd, buildNewsArticleLd, buildSpeakableWebPageLd, BREADCRUMB_TITLE_MAX_LENGTH, BREADCRUMB_ELLIPSIS_OVERHEAD } from './jsonld.js';
+import { depth } from './chrome/helpers.js';
 
 import { getBySubfolder, getById, loadArticleTypesRegistry } from './article-types.js';
 import { artifactTitle, artifactIcon } from '../political-intelligence/i18n/artifact-i18n.js';
@@ -234,6 +235,7 @@ ${sourceCards}
 
   // Reader Intelligence Guide — explains analysis methods to readers.
   const rg = langMeta.translations;
+  const prefix = depth(input.canonicalPath);
   const piFile = input.lang === 'en' ? 'political-intelligence.html' : `political-intelligence_${input.lang}.html`;
   const readerGuideHtml = `
       <section class="rm-reader-guide" aria-labelledby="rm-reader-guide-heading">
@@ -261,7 +263,7 @@ ${sourceCards}
             <p>${escapeHtml(rg.articleReaderGuideTraceableDesc)}</p>
           </div>
         </div>
-        <p class="rm-reader-guide-cta"><a href="/${piFile}"><span class="rm-icon" aria-hidden="true">📚</span> ${escapeHtml(rg.articleReaderGuideMoreMethodologies)}</a></p>
+        <p class="rm-reader-guide-cta"><a href="${prefix}${piFile}"><span class="rm-icon" aria-hidden="true">📚</span> ${escapeHtml(rg.articleReaderGuideMoreMethodologies)}</a></p>
       </section>`;
 
   return `${chrome.head}

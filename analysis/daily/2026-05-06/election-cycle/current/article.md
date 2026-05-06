@@ -1,11 +1,11 @@
 ---
 title: "Tidö Current Mandate"
-description: "Sweden's Tidö coalition (M+KD+L+SD) completes its final legislative sprint — anchored by HD01CU25 (prison expansion), HD01FöU18 (SIGINT reform), HD01SfU21 (social insurance), and HD01SfU24 (housing allowance) — with five major committee reports on 2026-05-06 confirming the mandate's core narrative: criminal justice delivery, defence…"
+description: "Sweden's Tidö coalition (M+KD+L+SD) completes its final legislative sprint with five major committee reports on 2026-05-06 confirming the mandate's core narrative: criminal justice delivery, defence…"
 date: 2026-05-06
 subfolder: election-cycle/current
 slug: 2026-05-06-election-cycle/current
 source_folder: analysis/daily/2026-05-06/election-cycle/current
-generated_at: 2026-05-06T21:25:49.116Z
+generated_at: 2026-05-06T23:41:46.687Z
 language: en
 layout: article
 ---
@@ -14,7 +14,7 @@ layout: article
 
 ### 🎯 BLUF
 
-Sweden's Tidö coalition (M+KD+L+SD) completes its final legislative sprint — anchored by HD01CU25 (prison expansion), HD01FöU18 (SIGINT reform), HD01SfU21 (social insurance), and HD01SfU24 (housing allowance) — with five major committee reports on 2026-05-06 confirming the mandate's core narrative: **criminal justice delivery, defence modernisation, and welfare targeting** are advancing while **foreign policy stress** (Gaza/Israel, war-crimes accountability) tests coalition cohesion at the worst possible electoral moment. With 130 days to polling day, the mandate scorecard reads: **criminal justice ✓ | defence ✓ | migration ⚠ | welfare partial | fiscal consolidation partial**.
+Sweden's Tidö coalition (M+KD+L+SD) completes its final legislative sprint with five major committee reports on 2026-05-06 confirming the mandate's core narrative: **criminal justice delivery, defence modernisation, and welfare targeting** are advancing while **foreign policy stress** (Gaza/Israel, war-crimes accountability) tests coalition cohesion at the worst possible electoral moment. With 130 days to polling day, the mandate scorecard reads: **criminal justice ✓ | defence ✓ | migration ⚠ | welfare partial | fiscal consolidation partial**.
 
 ### 🧭 3 Decisions This Brief Supports
 
@@ -1250,7 +1250,7 @@ This analysis challenges the dominant intelligence picture (Tidö re-election LI
 
 **Mainstream view**: Tidö's comprehensive criminal justice reform (HD01CU25 prison expansion) is a decisive electoral asset that locks in SD and M voters.
 
-**Devil's advocate**: The prison expansion will not be visible before the election (construction takes 3-5 years). What voters will SEE in September 2026 is: continued high crime rates in media reports, short staffing in existing prisons, and cost overruns. The Statskontoret Kriminalvården capacity report documents a 3,000-place gap that HD01CU25 promises to address — but construction cannot complete before the election. If a high-profile crime occurs in the summer campaign season, Tidö bears responsibility for "not fixing the problem" despite legislating.
+**Devil's advocate**: The prison expansion will not be visible before the election (construction takes 3-5 years). What voters will SEE in September 2026 is: continued high crime rates in media reports, short staffing in existing prisons, and cost overruns. The Statskontoret Kriminalvården capacity report documents a 3,000-place gap that HD01CU25 promises to fill — but cannot fill in time. If a high-profile crime occurs in the summer campaign season, Tidö bears responsibility for "not fixing the problem" despite legislating.
 
 **Counterfactual**: If crime salience is HIGH in August-September 2026, the criminal justice agenda may be a liability, not an asset. Voters may punish Tidö for overpromising. This is exactly what happened to the UK Conservative government in 2024 on crime.
 
