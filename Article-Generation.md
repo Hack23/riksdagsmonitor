@@ -448,9 +448,44 @@ The HTML article is a pure projection. If the analysis is weak, the article will
 | File | Responsibility |
 |---|---|
 | [`scripts/aggregate-analysis.ts`](scripts/aggregate-analysis.ts) | CLI wrapper for aggregating one folder or all folders. |
-| [`scripts/render-lib/aggregator.ts`](scripts/render-lib/aggregator.ts) | Deterministic logic for ordering, reader-guide insertion, cleaning, linking and front matter. |
+| [`scripts/render-lib/aggregator/aggregate.ts`](scripts/render-lib/aggregator/aggregate.ts) | Slim orchestrator: reads artifacts, delegates to leaf modules, returns `AggregationResult`. |
+| [`scripts/render-lib/aggregator/interfaces.ts`](scripts/render-lib/aggregator/interfaces.ts) | Shared pipeline interfaces (`PipelineResult`, `ReadStageInput`, `WriteStageOutput`, etc.). |
+| [`scripts/render-lib/aggregator/pipeline.ts`](scripts/render-lib/aggregator/pipeline.ts) | Composable pipeline orchestrator (`runArticlePipeline`). |
+| [`scripts/render-lib/aggregator/cleaning/`](scripts/render-lib/aggregator/cleaning/) | Body cleaning: admin-bylines, pass-two, process-meta, structural, heading-demotion, link-rewriting, deduplication. |
+| [`scripts/render-lib/aggregator/seo/`](scripts/render-lib/aggregator/seo/) | Title and description extraction for SEO metadata. |
+| [`scripts/render-lib/aggregator/order.ts`](scripts/render-lib/aggregator/order.ts) | Canonical narrative order (`AGGREGATION_ORDER`). |
+| [`scripts/render-lib/aggregator/frontmatter.ts`](scripts/render-lib/aggregator/frontmatter.ts) | YAML front-matter assembly and escape helpers. |
+| [`scripts/render-lib/aggregator/reader-guide.ts`](scripts/render-lib/aggregator/reader-guide.ts) | Reader Intelligence Guide table generation. |
+| [`scripts/render-lib/aggregator/per-document.ts`](scripts/render-lib/aggregator/per-document.ts) | Per-document `documents/` expansion. |
+| [`scripts/render-lib/aggregator/sources-appendix.ts`](scripts/render-lib/aggregator/sources-appendix.ts) | Article Sources appendix generation. |
 | [`scripts/render-lib/url-helpers.ts`](scripts/render-lib/url-helpers.ts) | GitHub blob/tree URL construction. |
 | [`scripts/render-lib/constants.ts`](scripts/render-lib/constants.ts) | Shared paths, base URLs and language constants. |
+
+### Pipeline architecture (bounded contexts)
+
+```
+scripts/render-lib/aggregator/
+├── interfaces.ts            # Shared pipeline types (PipelineResult, ReadStageInput, etc.)
+├── pipeline.ts              # Composable pipeline orchestrator (runArticlePipeline)
+├── aggregate.ts             # Core orchestrator (aggregateAnalysis)
+├── order.ts                 # Canonical narrative order
+├── frontmatter.ts           # YAML front-matter + escape helpers
+├── reader-guide.ts          # Reader Intelligence Guide
+├── reader-guide-i18n.ts     # 14-language i18n for Reader Guide
+├── per-document.ts          # documents/ expansion
+├── sources-appendix.ts      # Article Sources appendix
+├── cleaning/
+│   ├── structural.ts        # cleanArtifactBody orchestrator
+│   ├── admin-bylines.ts     # Admin-byline paragraph stripping
+│   ├── pass-two.ts          # AI self-audit section stripping
+│   ├── process-meta.ts      # Process-metadata line stripping
+│   ├── heading-demotion.ts  # Heading level demotion (## → ###)
+│   ├── link-rewriting.ts    # Relative → GitHub blob URL rewriting
+│   └── deduplication.ts     # Adjacent-line and footer-block dedup
+└── seo/
+    ├── title.ts             # Article title extraction + cleaning
+    └── description.ts       # BLUF / first-paragraph description
+```
 
 ### Aggregation command
 
