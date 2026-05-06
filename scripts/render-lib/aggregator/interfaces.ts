@@ -15,15 +15,16 @@
 // ─── Pipeline Stage Contracts ────────────────────────────────────────────────
 
 /**
- * Generic result type for pipeline stages. Encapsulates either success
- * with a value or failure with an error message and optional diagnostics.
+ * Discriminated union result type for pipeline stages. The `ok` discriminant
+ * guarantees TypeScript can narrow to exactly one branch — `ok: true` always
+ * carries `value: T` and never `error`; `ok: false` always carries `error`
+ * and never `value`. This prevents impossible states such as
+ * `{ ok: true, error: '…' }` and eliminates the need for non-null assertions
+ * in well-typed consumers.
  */
-export interface PipelineResult<T> {
-  readonly ok: boolean;
-  readonly value?: T;
-  readonly error?: string;
-  readonly warnings?: readonly string[];
-}
+export type PipelineResult<T> =
+  | { readonly ok: true; readonly value: T; readonly warnings?: readonly string[] }
+  | { readonly ok: false; readonly error: string; readonly warnings?: readonly string[] };
 
 /**
  * A single pipeline stage: takes an input and produces a typed result.
@@ -122,7 +123,9 @@ export interface AggregateStageOutput {
 // ─── Enrich Stage ────────────────────────────────────────────────────────────
 
 /**
- * SEO and metadata fields added during enrichment.
+ * SEO and metadata fields added during enrichment. Field names are aligned
+ * with `FrontMatterFields` (snake_case) so there is no impedance mismatch
+ * when passing this struct into `buildFrontMatter()`.
  */
 export interface EnrichmentMetadata {
   readonly title: string;
@@ -130,9 +133,13 @@ export interface EnrichmentMetadata {
   readonly date: string;
   readonly subfolder: string;
   readonly slug: string;
-  readonly sourceFolder: string;
-  readonly generatedAt: string;
+  /** Repo-relative path to the source analysis folder. */
+  readonly source_folder: string;
+  /** ISO-8601 generation timestamp. */
+  readonly generated_at: string;
   readonly language: string;
+  /** Article layout template (defaults to `'article'`). */
+  readonly layout: string;
 }
 
 /**
@@ -163,13 +170,14 @@ export interface WriteStageOutput {
 // ─── Full Pipeline ───────────────────────────────────────────────────────────
 
 /**
- * Configuration for the full article pipeline.
+ * Configuration for the full article pipeline. Field names mirror
+ * `FrontMatterFields` (snake_case) to avoid impedance mismatch.
  */
 export interface ArticlePipelineConfig {
-  /** Override the generated_at timestamp (for deterministic tests). */
-  readonly generatedAt?: string;
-  /** Language code (defaults to 'en'). */
+  /** Override the `generated_at` front-matter field (ISO-8601). Used for deterministic tests. */
+  readonly generated_at?: string;
+  /** Language code injected into front-matter (defaults to `'en'`). */
   readonly language?: string;
-  /** Layout template (defaults to 'article'). */
+  /** Layout template injected into front-matter (defaults to `'article'`). */
   readonly layout?: string;
 }

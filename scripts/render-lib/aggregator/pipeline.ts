@@ -31,17 +31,18 @@ import type { AggregationInput } from './aggregate.js';
  * Execute the full article pipeline from analysis artifacts to article.md.
  *
  * This is a thin wrapper around `aggregateAnalysis()` that conforms to
- * the new `PipelineResult<WriteStageOutput>` interface. Existing consumers
- * can continue using `aggregateAnalysis()` directly; new consumers should
- * prefer this typed pipeline entry point.
+ * the new `PipelineResult<WriteStageOutput>` discriminated union interface.
+ * Existing consumers can continue using `aggregateAnalysis()` directly;
+ * new consumers should prefer this typed pipeline entry point.
  *
  * @param input - Filesystem location and metadata for the analysis folder.
- * @param config - Optional pipeline configuration overrides.
- * @returns A typed result with either the generated article or an error.
+ * @param config - Optional overrides for `generated_at`, `language`, and `layout`
+ *   front-matter fields. When omitted, defaults match `aggregateAnalysis()`.
+ * @returns A discriminated union: `{ ok: true, value }` or `{ ok: false, error }`.
  */
 export function runArticlePipeline(
   input: ReadStageInput,
-  _config?: ArticlePipelineConfig,
+  config?: ArticlePipelineConfig,
 ): PipelineResult<WriteStageOutput> {
   try {
     const aggregationInput: AggregationInput = {
@@ -49,6 +50,9 @@ export function runArticlePipeline(
       subfolderRepoRelPath: input.subfolderRepoRelPath,
       date: input.date,
       subfolder: input.subfolder,
+      generated_at: config?.generated_at,
+      language: config?.language,
+      layout: config?.layout,
     };
 
     const result = aggregateAnalysis(aggregationInput);

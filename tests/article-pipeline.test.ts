@@ -27,6 +27,20 @@ import type {
   ValidationDiagnostic,
 } from '../scripts/render-lib/aggregator/interfaces.js';
 
+// ─── Test Utilities ──────────────────────────────────────────────────────────
+
+/**
+ * Narrows a `PipelineResult<T>` to the success branch and returns the value.
+ * Throws (failing the test) if the result is an error, printing the message.
+ * Eliminates the need for `!` non-null assertions throughout tests.
+ */
+function requireOk<T>(result: PipelineResult<T>): T {
+  if (!result.ok) {
+    throw new Error(`Expected ok result but got error: ${result.error}`);
+  }
+  return result.value;
+}
+
 // ─── Test Fixtures ───────────────────────────────────────────────────────────
 
 let tmpDir: string;
@@ -62,25 +76,36 @@ function createMinimalAnalysisFolder(): void {
 // ─── Pipeline Interface Type Tests ───────────────────────────────────────────
 
 describe('pipeline interfaces — type contracts', () => {
-  it('PipelineResult shape has ok + value on success', () => {
+  it('PipelineResult success branch has ok=true and value', () => {
     const result: PipelineResult<string> = { ok: true, value: 'hello' };
     expect(result.ok).toBe(true);
-    expect(result.value).toBe('hello');
-    expect(result.error).toBeUndefined();
+    if (result.ok) {
+      expect(result.value).toBe('hello');
+    }
   });
 
-  it('PipelineResult shape has ok=false + error on failure', () => {
+  it('PipelineResult failure branch has ok=false and error', () => {
     const result: PipelineResult<string> = { ok: false, error: 'boom' };
     expect(result.ok).toBe(false);
-    expect(result.error).toBe('boom');
-    expect(result.value).toBeUndefined();
+    if (!result.ok) {
+      expect(result.error).toBe('boom');
+    }
   });
 
-  it('PipelineResult supports optional warnings', () => {
+  it('PipelineResult success branch supports optional warnings', () => {
     const result: PipelineResult<string> = {
       ok: true,
       value: 'data',
       warnings: ['minor issue'],
+    };
+    expect(result.warnings).toHaveLength(1);
+  });
+
+  it('PipelineResult failure branch supports optional warnings', () => {
+    const result: PipelineResult<string> = {
+      ok: false,
+      error: 'bad input',
+      warnings: ['check X'],
     };
     expect(result.warnings).toHaveLength(1);
   });
@@ -118,13 +143,11 @@ describe('runArticlePipeline — happy path', () => {
       date: '2026-05-06',
       subfolder: 'propositions',
     };
-    const result = runArticlePipeline(input);
-    expect(result.ok).toBe(true);
-    expect(result.value).toBeDefined();
-    expect(result.value!.markdown).toContain('---');
-    expect(result.value!.title).toBeTruthy();
-    expect(result.value!.description).toBeTruthy();
-    expect(result.value!.artifactsUsed).toContain('executive-brief.md');
+    const value = requireOk(runArticlePipeline(input));
+    expect(value.markdown).toContain('---');
+    expect(value.title).toBeTruthy();
+    expect(value.description).toBeTruthy();
+    expect(value.artifactsUsed).toContain('executive-brief.md');
   });
 
   it('extracts title from the executive-brief H1', () => {
@@ -135,9 +158,8 @@ describe('runArticlePipeline — happy path', () => {
       date: '2026-05-06',
       subfolder: 'propositions',
     };
-    const result = runArticlePipeline(input);
-    expect(result.ok).toBe(true);
-    expect(result.value!.title).toContain('Budget Analysis 2026');
+    const value = requireOk(runArticlePipeline(input));
+    expect(value.title).toContain('Budget Analysis 2026');
   });
 
   it('extracts description from the BLUF paragraph', () => {
@@ -148,9 +170,8 @@ describe('runArticlePipeline — happy path', () => {
       date: '2026-05-06',
       subfolder: 'propositions',
     };
-    const result = runArticlePipeline(input);
-    expect(result.ok).toBe(true);
-    expect(result.value!.description).toContain('defence spending');
+    const value = requireOk(runArticlePipeline(input));
+    expect(value.description).toContain('defence spending');
   });
 
   it('includes YAML front-matter with required fields', () => {
@@ -161,16 +182,32 @@ describe('runArticlePipeline — happy path', () => {
       date: '2026-05-06',
       subfolder: 'propositions',
     };
-    const result = runArticlePipeline(input);
-    expect(result.ok).toBe(true);
-    const md = result.value!.markdown;
-    expect(md).toMatch(/^---\n/);
-    expect(md).toContain('title:');
-    expect(md).toContain('description:');
-    expect(md).toContain('date: 2026-05-06');
-    expect(md).toContain('subfolder: propositions');
-    expect(md).toContain('language: en');
-    expect(md).toContain('layout: article');
+    const value = requireOk(runArticlePipeline(input));
+    expect(value.markdown).toMatch(/^---\n/);
+    expect(value.markdown).toContain('title:');
+    expect(value.markdown).toContain('description:');
+    expect(value.markdown).toContain('date: 2026-05-06');
+    expect(value.markdown).toContain('subfolder: propositions');
+    expect(value.markdown).toContain('language: en');
+    expect(value.markdown).toContain('layout: article');
+  });
+
+  it('config overrides are wired into the front-matter', () => {
+    createMinimalAnalysisFolder();
+    const input: ReadStageInput = {
+      subfolderAbsPath: tmpDir,
+      subfolderRepoRelPath: 'analysis/daily/2026-05-06/propositions',
+      date: '2026-05-06',
+      subfolder: 'propositions',
+    };
+    const value = requireOk(runArticlePipeline(input, {
+      generated_at: '2026-05-06T00:00:00.000Z',
+      language: 'sv',
+      layout: 'article-full',
+    }));
+    expect(value.markdown).toContain('generated_at: 2026-05-06T00:00:00.000Z');
+    expect(value.markdown).toContain('language: sv');
+    expect(value.markdown).toContain('layout: article-full');
   });
 
   it('aggregates multiple artifacts in canonical order', () => {
@@ -192,13 +229,12 @@ describe('runArticlePipeline — happy path', () => {
       date: '2026-05-06',
       subfolder: 'propositions',
     };
-    const result = runArticlePipeline(input);
-    expect(result.ok).toBe(true);
-    expect(result.value!.artifactsUsed).toContain('significance-scoring.md');
-    expect(result.value!.artifactsUsed).toContain('stakeholder-perspectives.md');
+    const value = requireOk(runArticlePipeline(input));
+    expect(value.artifactsUsed).toContain('significance-scoring.md');
+    expect(value.artifactsUsed).toContain('stakeholder-perspectives.md');
     // executive-brief should come before significance-scoring
-    const briefIdx = result.value!.artifactsUsed.indexOf('executive-brief.md');
-    const sigIdx = result.value!.artifactsUsed.indexOf('significance-scoring.md');
+    const briefIdx = value.artifactsUsed.indexOf('executive-brief.md');
+    const sigIdx = value.artifactsUsed.indexOf('significance-scoring.md');
     expect(briefIdx).toBeGreaterThanOrEqual(0);
     expect(sigIdx).toBeGreaterThanOrEqual(0);
     expect(briefIdx).toBeLessThan(sigIdx);
@@ -215,7 +251,9 @@ describe('runArticlePipeline — error cases', () => {
     };
     const result = runArticlePipeline(input);
     expect(result.ok).toBe(false);
-    expect(result.error).toContain('not found');
+    if (!result.ok) {
+      expect(result.error).toContain('not found');
+    }
   });
 
   it('returns error when executive-brief.md is missing', () => {
@@ -229,7 +267,9 @@ describe('runArticlePipeline — error cases', () => {
     };
     const result = runArticlePipeline(input);
     expect(result.ok).toBe(false);
-    expect(result.error).toContain('executive-brief.md');
+    if (!result.ok) {
+      expect(result.error).toContain('executive-brief.md');
+    }
   });
 
   it('handles empty executive-brief.md gracefully', () => {
@@ -241,9 +281,8 @@ describe('runArticlePipeline — error cases', () => {
       subfolder: 'propositions',
     };
     // Should not crash — may produce a fallback title/description
-    const result = runArticlePipeline(input);
-    expect(result.ok).toBe(true);
-    expect(result.value!.title).toBeTruthy(); // Fallback title
+    const value = requireOk(runArticlePipeline(input));
+    expect(value.title).toBeTruthy(); // Fallback title
   });
 
   it('handles executive-brief.md with only YAML front-matter', () => {
@@ -254,9 +293,8 @@ describe('runArticlePipeline — error cases', () => {
       date: '2026-05-06',
       subfolder: 'propositions',
     };
-    const result = runArticlePipeline(input);
-    expect(result.ok).toBe(true);
-    expect(result.value!.title).toBeTruthy();
+    const value = requireOk(runArticlePipeline(input));
+    expect(value.title).toBeTruthy();
   });
 });
 
@@ -270,10 +308,9 @@ describe('runArticlePipeline — edge cases', () => {
       date: '2026-05-06',
       subfolder: 'propositions',
     };
-    const result = runArticlePipeline(input);
-    expect(result.ok).toBe(true);
-    expect(result.value!.artifactsUsed).not.toContain('README.md');
-    expect(result.value!.markdown).not.toContain('Do not include this');
+    const value = requireOk(runArticlePipeline(input));
+    expect(value.artifactsUsed).not.toContain('README.md');
+    expect(value.markdown).not.toContain('Do not include this');
   });
 
   it('excludes article.md and article.<lang>.md from aggregation', () => {
@@ -286,10 +323,9 @@ describe('runArticlePipeline — edge cases', () => {
       date: '2026-05-06',
       subfolder: 'propositions',
     };
-    const result = runArticlePipeline(input);
-    expect(result.ok).toBe(true);
-    expect(result.value!.artifactsUsed).not.toContain('article.md');
-    expect(result.value!.artifactsUsed).not.toContain('article.sv.md');
+    const value = requireOk(runArticlePipeline(input));
+    expect(value.artifactsUsed).not.toContain('article.md');
+    expect(value.artifactsUsed).not.toContain('article.sv.md');
   });
 
   it('handles artifacts with malformed YAML front-matter', () => {
@@ -312,8 +348,9 @@ describe('runArticlePipeline — edge cases', () => {
     // gray-matter may throw on malformed YAML; pipeline should catch it
     const result = runArticlePipeline(input);
     // Either succeeds (gray-matter is lenient) or returns a clean error
-    expect(typeof result.ok).toBe('boolean');
-    if (!result.ok) {
+    if (result.ok) {
+      expect(result.value.title).toBeTruthy();
+    } else {
       expect(result.error).toBeTruthy();
     }
   });
@@ -331,9 +368,8 @@ describe('runArticlePipeline — edge cases', () => {
       date: '2026-05-06',
       subfolder: 'propositions',
     };
-    const result = runArticlePipeline(input);
-    expect(result.ok).toBe(true);
-    expect(result.value!.artifactsUsed).toContain('pestle-analysis.md');
+    const value = requireOk(runArticlePipeline(input));
+    expect(value.artifactsUsed).toContain('pestle-analysis.md');
   });
 });
 
