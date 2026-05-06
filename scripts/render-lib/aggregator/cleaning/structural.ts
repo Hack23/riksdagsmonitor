@@ -46,7 +46,6 @@ import { stripPassTwoSection } from './pass-two.js';
 import { stripLeadingAdminBylines } from './admin-bylines.js';
 import { stripProcessMetaLines } from './process-meta.js';
 import { demoteHeadings } from './heading-demotion.js';
-import { rewriteRelativeLinks } from './link-rewriting.js';
 import { dedupeAdjacentDuplicateLines, collapseRepeatedFooterBlocks } from './deduplication.js';
 
 /**
