@@ -1438,8 +1438,8 @@ The inline bash validation logic embedded in `.github/prompts/05-analysis-gate.m
 
 **Design principles:**
 - Zero `any` types — explicit interfaces for all data structures
-- Each module < 300 lines (bounded context separation)
-- Co-located tests: `tests/agentic-analysis-gate.test.ts` (62 tests)
+- Gate module factored for readability (single-responsibility check functions)
+- Co-located tests: `tests/agentic-analysis-gate.test.ts` (76 tests)
 - ESLint clean with zero warnings
 - No circular dependencies (barrel imports only)
 

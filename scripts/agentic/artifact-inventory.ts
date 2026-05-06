@@ -159,6 +159,7 @@ export const STUB_PLACEHOLDERS: readonly string[] = Object.freeze([
  */
 export const RECOGNISED_AGENCIES: readonly string[] = Object.freeze([
   'Kriminalvården',
+  'Kriminalvård',
   'Polismyndigheten',
   'Försäkringskassan',
   'Skatteverket',

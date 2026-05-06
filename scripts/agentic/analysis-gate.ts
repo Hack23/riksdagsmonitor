@@ -3,13 +3,16 @@
  * @description TypeScript implementation of the analysis gate validation
  *              logic defined in `.github/prompts/05-analysis-gate.md`.
  *
- * This module extracts the inline bash gate checks into testable,
- * strictly-typed functions. Each check corresponds to a numbered rule
- * in the prompt module:
+ * This module extracts a subset of the inline bash gate checks into
+ * testable, strictly-typed functions. It implements checks 1–9b of the
+ * prompt specification. Additional prompt-level gates (e.g. check 10
+ * full-text outcomes, supplementary/editorial gates) are NOT covered
+ * here and must be validated separately.
  *
+ * Implemented checks:
  *   1. Artifact existence (all 23 files present and non-empty)
  *   2. Per-document coverage (Family E vs manifest)
- *   3. No stub placeholders
+ *   3. No stub placeholders (recursive scan)
  *   4. Evidence citations in SWOT and significance-scoring
  *   5. Mermaid diagrams with colour config
  *   6. Pass-2 evidence (mtime or pass1/ snapshot)
@@ -195,7 +198,8 @@ export function extractDokIds(content: string): string[] {
 }
 
 /**
- * Check if a document analysis file exists (any case variant).
+ * Check if a document analysis file exists and is non-empty (any case variant).
+ * Mirrors the prompt gate's `-s` check (file exists AND size > 0).
  */
 function hasDocumentAnalysis(documentsDir: string, dokId: string): boolean {
   const variants = [
@@ -204,7 +208,10 @@ function hasDocumentAnalysis(documentsDir: string, dokId: string): boolean {
     `${dokId.toLowerCase()}.md`,
     `${dokId.toLowerCase()}-analysis.md`,
   ];
-  return variants.some((v) => existsSync(join(documentsDir, v)));
+  return variants.some((v) => {
+    const p = join(documentsDir, v);
+    return existsSync(p) && statSync(p).size > 0;
+  });
 }
 
 // ---------------------------------------------------------------------------
@@ -212,49 +219,27 @@ function hasDocumentAnalysis(documentsDir: string, dokId: string): boolean {
 // ---------------------------------------------------------------------------
 
 /**
- * Scan all artifacts (including `documents/` per-document analyses) for stub
- * placeholder strings. The canonical gate uses a recursive scan over the
- * whole analysis directory so Family E files are also covered.
+ * Scan all markdown files under the analysis directory (recursive, including
+ * `documents/` and `pass1/` subdirs) for stub placeholder strings. The
+ * canonical gate uses a recursive grep over the entire `$ANALYSIS_DIR`.
  */
 export async function checkNoStubs(analysisDir: string): Promise<GateCheckResult[]> {
   const results: GateCheckResult[] = [];
 
-  // Scan the 23 required artifacts
-  for (const filename of REQUIRED_ARTIFACT_FILENAMES) {
-    const filePath = join(analysisDir, filename);
-    if (!existsSync(filePath)) continue;
+  // Recursively collect all .md files under analysisDir
+  const mdFiles = await collectMdFilesRecursive(analysisDir, '');
 
+  for (const relPath of mdFiles) {
+    const filePath = join(analysisDir, relPath);
     const content = await readFile(filePath, 'utf-8');
     for (const stub of STUB_PLACEHOLDERS) {
       if (content.includes(stub)) {
         results.push({
           checkId: 'no-stubs',
           passed: false,
-          message: `Stub placeholder "${stub}" found in ${filename}`,
-          artifact: filename,
+          message: `Stub placeholder "${stub}" found in ${relPath}`,
+          artifact: relPath,
         });
-      }
-    }
-  }
-
-  // Also scan documents/ directory (Family E per-document analyses)
-  const documentsDir = join(analysisDir, 'documents');
-  if (existsSync(documentsDir)) {
-    const docFiles = await readdir(documentsDir);
-    for (const docFile of docFiles) {
-      if (!docFile.endsWith('.md')) continue;
-      const docPath = join(documentsDir, docFile);
-      const relPath = `documents/${docFile}`;
-      const content = await readFile(docPath, 'utf-8');
-      for (const stub of STUB_PLACEHOLDERS) {
-        if (content.includes(stub)) {
-          results.push({
-            checkId: 'no-stubs',
-            passed: false,
-            message: `Stub placeholder "${stub}" found in ${relPath}`,
-            artifact: relPath,
-          });
-        }
       }
     }
   }
@@ -267,6 +252,30 @@ export async function checkNoStubs(analysisDir: string): Promise<GateCheckResult
     });
   }
 
+  return results;
+}
+
+/**
+ * Recursively collect all `.md` files under a directory, returning paths
+ * relative to `baseDir`. Used by the stub scanner to mirror the canonical
+ * gate's recursive grep over the entire analysis tree.
+ */
+async function collectMdFilesRecursive(
+  baseDir: string,
+  prefix: string,
+): Promise<string[]> {
+  const results: string[] = [];
+  const currentDir = prefix ? join(baseDir, prefix) : baseDir;
+  if (!existsSync(currentDir)) return results;
+  const entries = await readdir(currentDir, { withFileTypes: true });
+  for (const entry of entries) {
+    const relPath = prefix ? `${prefix}/${entry.name}` : entry.name;
+    if (entry.isDirectory()) {
+      results.push(...(await collectMdFilesRecursive(baseDir, relPath)));
+    } else if (entry.name.endsWith('.md')) {
+      results.push(relPath);
+    }
+  }
   return results;
 }
 
@@ -375,8 +384,8 @@ async function checkSwotEvidence(analysisDir: string): Promise<GateCheckResult[]
 /** Mermaid structural keywords — these lines are never checked for evidence. */
 const MERMAID_STRUCTURAL_RE =
   /^\s*(%%|style\b|classDef\b|class\b|linkStyle\b|subgraph\b|end\b|graph\b|flowchart\b|quadrantChart\b|mindmap\b|timeline\b|journey\b|gantt\b|pie\b|xychart-beta\b|sequenceDiagram\b|stateDiagram(-v2)?\b|erDiagram\b|sankey-beta\b|gitGraph\b|requirementDiagram\b|block-beta\b)/;
-/** Mermaid node/label content — lines with bracket-enclosed content indicate node labels. */
-const MERMAID_NODE_RE = /\[[^\]\n]+\]|\([^)\n]+\)/;
+/** Mermaid node/label content — lines with bracket/paren/curly-enclosed content indicate node labels. */
+const MERMAID_NODE_RE = /\[[^\]\n]+\]|\([^)\n]+\)|\{[^}\n]+\}/;
 
 /**
  * Check significance-scoring.md: every ranked bullet/list item and table
@@ -675,9 +684,12 @@ async function checkIntelligenceAssessment(
 
   const content = await readFile(filePath, 'utf-8');
 
-  // ≥3 Key Judgments
-  const kjMatches = content.match(/(Key\s+Judgment|KJ-?\d+)/g);
-  const kjCount = kjMatches ? kjMatches.length : 0;
+  // ≥3 Key Judgments — count distinct matching lines (not raw occurrences)
+  // to mirror the canonical gate's `grep -cE` behaviour. A line like
+  // "Key Judgment KJ-1" counts as 1, not 2.
+  const kjPattern = /(Key\s+Judgment|KJ-?\d+)/;
+  const kjLines = content.split('\n').filter((line) => kjPattern.test(line));
+  const kjCount = kjLines.length;
   if (kjCount < 3) {
     results.push({
       checkId: 'family-c-structure',

@@ -222,7 +222,7 @@ describe('Artifact Inventory', () => {
   it('RECOGNISED_AGENCIES contains known Swedish agencies', () => {
     expect(RECOGNISED_AGENCIES).toContain('Skatteverket');
     expect(RECOGNISED_AGENCIES).toContain('Polismyndigheten');
-    expect(RECOGNISED_AGENCIES.length).toBe(11);
+    expect(RECOGNISED_AGENCIES.length).toBe(12);
   });
 
   it('EVIDENCE_URL_HOSTS covers all required primary sources', () => {
