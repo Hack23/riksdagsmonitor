@@ -337,7 +337,7 @@ quadrantChart
 - **Scaling Limitation:** Cannot parallelize development efforts
 
 **Mitigation Strategies:**
-- **GitHub Copilot Agents:** 13 specialized agents automate development tasks
+- **GitHub Copilot Agents:** 24 specialized agents automate development tasks
 - **Comprehensive Documentation:** 20+ architecture and policy documents (ARCHITECTURE.md, SECURITY_ARCHITECTURE.md, THREAT_MODEL.md, WORKFLOWS.md, DATA_MODEL.md, etc.)
 - **Code Simplicity:** Static HTML/CSS architecture (no complex backend)
 - **Community Building:** Open-source model invites external contributions
@@ -774,7 +774,7 @@ quadrantChart
 - **Documentation Overhead:** Comprehensive docs require significant effort
 
 **Mitigations:**
-- **GitHub Copilot Agents:** Automate development tasks (14 agents)
+- **GitHub Copilot Agents:** Automate development tasks (24 agents)
 - **Simple Architecture:** Static site minimizes maintenance overhead
 - **Open Source Model:** Invite community contributions
 - **Sustainable Scope:** Focus on high-value features, avoid feature creep
