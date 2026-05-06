@@ -1,0 +1,40 @@
+{
+  "date": "2026-05-06",
+  "subfolder": "propositions",
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "vintage": "2026-04",
+    "retrieved_at": "2026-05-06T08:00:00Z",
+    "degraded": true,
+    "degraded_reason": "IMF CLI (imf-fetch.ts) returning fetch failed for Datamapper API during this run. WEO/FM Datamapper OK; SDMX/IFS endpoints 404. Data sourced from WEO Apr-2026 memory context per ECONOMIC_DATA_CONTRACT.md v3.0 §Vintage discipline.",
+    "annotation": "Degraded vintage — figures are WEO Apr-2026 estimates from context memory, not live API fetch. Mark as provisional."
+  },
+  "sweden": {
+    "indicator": "GDP_GROWTH",
+    "value_2026e": 1.7,
+    "value_2025e": 1.2,
+    "unit": "percent_real_gdp_growth",
+    "source": "IMF WEO Apr-2026 (degraded)",
+    "note": "Sweden recovery: tight monetary policy easing; construction sector still weak; export sector benefiting from global demand"
+  },
+  "uzbekistan": {
+    "indicator": "GDP_CURRENT_USD",
+    "value_2025e": 96000000000,
+    "value_2026e": 103000000000,
+    "unit": "USD",
+    "growth_2026e": 6.2,
+    "source": "IMF WEO Apr-2026 (degraded)",
+    "note": "Uzbekistan one of fastest-growing emerging markets; reform-driven FDI inflows; extractive sector significant"
+  },
+  "kyrgyzstan": {
+    "indicator": "GDP_CURRENT_USD",
+    "value_2025e": 14500000000,
+    "value_2026e": 15200000000,
+    "unit": "USD",
+    "growth_2026e": 4.8,
+    "source": "IMF WEO Apr-2026 (degraded)",
+    "note": "Kyrgyzstan smaller CA economy; gold exports dominant; Russia re-export economy significant risk"
+  },
+  "relevanceNote": "Economic data is context for EPCA strategic significance, not direct proposition economic impact. The EPCAs have no direct Swedish fiscal implications."
+}
