@@ -10,7 +10,7 @@
  * @license Apache-2.0
  */
 
-declare const d3: any;
+declare const d3: typeof import('d3');
 import type { CommitteeData, NetworkNode, NetworkLink, HeatMapCell, HeatMapData } from './types.js';
 
 // ==============================================
@@ -115,10 +115,10 @@ export class NetworkDiagram {
     // Update positions on simulation tick
     this.simulation.on('tick', () => {
       link
-        .attr('x1', (d: any) => d.source.x)
-        .attr('y1', (d: any) => d.source.y)
-        .attr('x2', (d: any) => d.target.x)
-        .attr('y2', (d: any) => d.target.y);
+        .attr('x1', (d: NetworkLink) => (d.source as NetworkNode).x ?? 0)
+        .attr('y1', (d: NetworkLink) => (d.source as NetworkNode).y ?? 0)
+        .attr('x2', (d: NetworkLink) => (d.target as NetworkNode).x ?? 0)
+        .attr('y2', (d: NetworkLink) => (d.target as NetworkNode).y ?? 0);
 
       node
         .attr('transform', (d: NetworkNode) => `translate(${d.x},${d.y})`);
@@ -184,8 +184,8 @@ export class NetworkDiagram {
         const prodDiff: number = Math.abs(nodes[i].productivity - nodes[j].productivity);
         if (prodDiff < 20) {
           links.push({
-            source: nodes[i].id as any,
-            target: nodes[j].id as any,
+            source: nodes[i].id as string,
+            target: nodes[j].id as string,
             value: 10 - prodDiff / 2
           });
         }
@@ -235,8 +235,8 @@ export class NetworkDiagram {
     nodes.forEach((node: NetworkNode) => {
       // Handle both string and object types for source/target
       const connections: number = links.filter((l: NetworkLink) => {
-        const sourceId: string = typeof l.source === 'string' ? l.source : (l.source as any)?.id ?? '';
-        const targetId: string = typeof l.target === 'string' ? l.target : (l.target as any)?.id ?? '';
+        const sourceId: string = typeof l.source === 'string' ? l.source : (l.source as NetworkNode)?.id ?? '';
+        const targetId: string = typeof l.target === 'string' ? l.target : (l.target as NetworkNode)?.id ?? '';
         return sourceId === node.id || targetId === node.id;
       }).length;
       html += `<tr>

@@ -39,7 +39,7 @@ import {
 
 import type { CSVRow } from '../shared/index.js';
 
-const Chart = (globalThis as any).Chart;
+const Chart = (globalThis as unknown as { Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
 
 // ============================================================================
 // INTERFACES
@@ -290,7 +290,7 @@ function createCareerTrajectoryChart(data: CSVRow[]): void {
   const ctx = canvas.getContext('2d');
   if (!ctx) return;
 
-  let chartData: any;
+  let chartData: Record<string, unknown>;
   if (data && data.length > 0) {
     const byPeriod: Record<
       string,
@@ -405,7 +405,7 @@ function createProductivityInfluenceChart(
   const ctx = canvas.getContext('2d');
   if (!ctx) return;
 
-  let chartData: any;
+  let chartData: Record<string, unknown>;
   if (riskData && riskData.length > 0 && influenceData && influenceData.length > 0) {
     const influenceLookup: Record<string, { connections: number; classification: string }> = {};
     influenceData.forEach((row) => {
@@ -476,7 +476,7 @@ function createProductivityInfluenceChart(
           borderColor: '#00d9ff',
           borderWidth: 1,
           callbacks: {
-            label(context: any) {
+            label(context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) {
               const raw = context.raw as BubblePoint;
               return [
                 raw.name ? `${raw.name} (${raw.party})` : '',

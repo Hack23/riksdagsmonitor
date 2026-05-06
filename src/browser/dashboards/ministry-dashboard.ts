@@ -47,7 +47,7 @@ import {
 import type { CSVRow } from '../shared/index.js';
 
 // D3 is loaded as a global <script> for DOM manipulation / SVG features
-const d3 = (globalThis as any).d3;
+const d3 = (globalThis as unknown as { d3: typeof import('d3') }).d3;
 
 // ============================================================================
 // INTERFACES
@@ -1043,7 +1043,7 @@ function renderInfluenceChart(
   const canvas = document.getElementById(canvasId) as HTMLCanvasElement | null;
   if (!canvas || !data || data.length === 0) return;
 
-  const Chart = (globalThis as any).Chart;
+  const Chart = (globalThis as unknown as { Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
   if (!Chart) return;
 
   const sorted = [...data].sort((a, b) => (Number(b.influence) || 0) - (Number(a.influence) || 0)).slice(0, 10);
@@ -1061,7 +1061,7 @@ function renderInfluenceChart(
       indexAxis: 'y',
       responsive: true,
       maintainAspectRatio: false,
-      plugins: { legend: { display: false }, tooltip: { backgroundColor: 'rgba(0,0,0,0.8)', callbacks: { label: (ctx: any) => `Influence: ${ctx.parsed.x.toFixed(2)}` } } },
+      plugins: { legend: { display: false }, tooltip: { backgroundColor: 'rgba(0,0,0,0.8)', callbacks: { label: (ctx: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) => `Influence: ${ctx.parsed.x.toFixed(2)}` } } },
       scales: {
         x: { beginAtZero: true, max: 100, ticks: { color: 'var(--text-color)' }, grid: { color: 'var(--border-color)' } },
         y: { ticks: { color: 'var(--text-color)', font: { size: 12 } }, grid: { display: false } },
@@ -1078,7 +1078,7 @@ function renderProductivityChart(
   const canvas = document.getElementById(canvasId) as HTMLCanvasElement | null;
   if (!canvas || !data || data.length === 0) return;
 
-  const Chart = (globalThis as any).Chart;
+  const Chart = (globalThis as unknown as { Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
   if (!Chart) return;
 
   const ministryTranslations = MINISTRY_TRANSLATIONS[lang] || MINISTRY_TRANSLATIONS.en;
@@ -1117,7 +1117,7 @@ function renderDecisionImpactChart(
   const canvas = document.getElementById(canvasId) as HTMLCanvasElement | null;
   if (!canvas || !data || data.length === 0) return;
 
-  const Chart = (globalThis as any).Chart;
+  const Chart = (globalThis as unknown as { Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
   if (!Chart) return;
 
   const ministries = Array.from(new Set(data.map((d) => d.ministry))).slice(0, 5);

@@ -30,7 +30,7 @@ import {
 
 import type { CSVRow } from '../shared/index.js';
 
-const Chart = (globalThis as any).Chart;
+const Chart = (globalThis as unknown as { Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
 
 // ============================================================================
 // INTERFACES
@@ -255,9 +255,9 @@ class PreElectionDataManager {
       headers.forEach((header, index) => {
         const value = values[index]?.trim() || '';
         if (!isNaN(Number(value)) && value !== '') {
-          (row as any)[header] = parseFloat(value);
+          (row as Record<string, string | number>)[header] = parseFloat(value);
         } else {
-          (row as any)[header] = value;
+          (row as Record<string, string | number>)[header] = value;
         }
       });
       data.push(row);
@@ -386,7 +386,7 @@ class PreElectionCharts {
       options: {
         responsive: true, maintainAspectRatio: false,
         interaction: { mode: 'index', intersect: false },
-        plugins: { legend: { position: 'top', labels: { color: '#e0e0e0' } }, tooltip: { callbacks: { label: (context: any) => { let label = context.dataset.label || ''; if (label) label += ': '; label += context.parsed.y.toLocaleString(); return label; } } } },
+        plugins: { legend: { position: 'top', labels: { color: '#e0e0e0' } }, tooltip: { callbacks: { label: (context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) => { let label = context.dataset.label || ''; if (label) label += ': '; label += context.parsed.y.toLocaleString(); return label; } } } },
         scales: {
           y1: { type: 'linear', position: 'left', title: { display: true, text: t.chartLabels['ballots'], color: CONFIG.chartColors.ballots }, ticks: { color: '#e0e0e0' }, grid: { color: '#ffffff22' } },
           y2: { type: 'linear', position: 'right', title: { display: true, text: t.chartLabels['documents'], color: CONFIG.chartColors.documents }, ticks: { color: '#e0e0e0' }, grid: { drawOnChartArea: false } },
@@ -415,7 +415,7 @@ class PreElectionCharts {
       },
       options: {
         responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { position: 'top', labels: { color: '#e0e0e0' } }, tooltip: { callbacks: { label: (context: any) => context.dataset.label + ': ' + (context.parsed.y || 0).toLocaleString() + ' ' + t.chartLabels['ballots'].toLowerCase() } } },
+        plugins: { legend: { position: 'top', labels: { color: '#e0e0e0' } }, tooltip: { callbacks: { label: (context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) => context.dataset.label + ': ' + (context.parsed.y || 0).toLocaleString() + ' ' + t.chartLabels['ballots'].toLowerCase() } } },
         scales: { y: { beginAtZero: true, title: { display: true, text: 'Total Ballots', color: '#e0e0e0' }, ticks: { color: '#e0e0e0' }, grid: { color: '#ffffff22' } }, x: { ticks: { color: '#e0e0e0', maxRotation: 45, minRotation: 45 }, grid: { color: '#ffffff22' } } }
       }
     });
@@ -501,7 +501,7 @@ class PreElectionCharts {
       },
       options: {
         responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { display: false }, tooltip: { callbacks: { label: (context: any) => { const value = context.parsed.y; const label = context.label; if (label.includes('Change')) return (value > 0 ? '+' : '') + value.toLocaleString() + ' ballots'; return value.toLocaleString() + ' ballots'; } } } },
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: (context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) => { const value = context.parsed.y; const label = context.label; if (label.includes('Change')) return (value > 0 ? '+' : '') + value.toLocaleString() + ' ballots'; return value.toLocaleString() + ' ballots'; } } } },
         scales: { y: { title: { display: true, text: 'Ballots', color: '#e0e0e0' }, ticks: { color: '#e0e0e0' }, grid: { color: '#ffffff22' } }, x: { ticks: { color: '#e0e0e0' }, grid: { color: '#ffffff22' } } }
       }
     });

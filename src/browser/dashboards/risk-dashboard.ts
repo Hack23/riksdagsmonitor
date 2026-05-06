@@ -37,8 +37,8 @@ import type { CSVRow, ChartTooltipContext } from '../shared/index.js';
 // D3 is loaded as a global <script> for its DOM manipulation / SVG features.
 // Its surface is too broad to retype structurally without forcing @types/d3
 // into the browser tsconfig, so we keep one localised `any` here.
-// eslint-disable-next-line @typescript-eslint/no-explicit-any -- d3 global; structural typing not viable here.
-const d3 = (globalThis as any).d3;
+ 
+const d3 = (globalThis as unknown as { d3: typeof import('d3') }).d3;
 
 // ============================================================================
 // INTERFACES

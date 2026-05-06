@@ -42,8 +42,8 @@ import {
 
 import type { CSVRow, DataSourceType } from '../shared/index.js';
 
-const d3 = (globalThis as any).d3;
-const Chart = (globalThis as any).Chart;
+const d3 = (globalThis as unknown as { d3: typeof import('d3') }).d3;
+const Chart = (globalThis as unknown as { Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
 
 // ============================================================================
 // INTERFACES
@@ -600,7 +600,7 @@ class AnomalyAlertSystem {
 
 class AnomalyDetectionCharts {
   private readonly dataManager: AnomalyDetectionDataManager;
-  private chartInstances: Record<string, any> = {};
+  private chartInstances: Record<string, unknown> = {};
 
   constructor(dataManager: AnomalyDetectionDataManager) {
     this.dataManager = dataManager;
@@ -662,7 +662,7 @@ class AnomalyDetectionCharts {
           legend: { display: false },
           tooltip: {
             callbacks: {
-              label: (context: any) => {
+              label: (context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) => {
                 const record = context.raw.record;
                 return [
                   `${record.year} Q${record.quarter}`,
@@ -678,12 +678,12 @@ class AnomalyDetectionCharts {
         scales: {
           x: {
             title: { display: true, text: 'Year' },
-            ticks: { callback: (value: any) => Math.floor(value) },
+            ticks: { callback: (value: number | string) => Math.floor(value) },
           },
           y: {
             title: { display: true, text: 'Z-Score' },
             grid: {
-              color: (context: any) => {
+              color: (context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) => {
                 if (context.tick.value === 2.0 || context.tick.value === -2.0) {
                   return '#f57c00';
                 }
@@ -756,7 +756,7 @@ class AnomalyDetectionCharts {
         plugins: {
           legend: { display: false },
           tooltip: {
-            callbacks: { label: (context: any) => `Count: ${context.parsed.y}` },
+            callbacks: { label: (context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) => `Count: ${context.parsed.y}` },
           },
         },
         scales: {
@@ -803,7 +803,7 @@ class AnomalyDetectionCharts {
           legend: { position: 'bottom' },
           tooltip: {
             callbacks: {
-              label: (context: any) => {
+              label: (context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) => {
                 const total = ballotCount + documentCount + attendanceCount;
                 const pct = total > 0 ? ((context.parsed / total) * 100).toFixed(1) : 0;
                 return `${context.label}: ${context.parsed} (${pct}%)`;
@@ -841,18 +841,18 @@ class AnomalyDetectionCharts {
 
     cells
       .append('rect')
-      .attr('x', (d: any) => margin.left + (parseInt(d.quarter) - 1) * cellWidth)
-      .attr('y', (d: any) => {
+      .attr('x', (d: CSVRow) => margin.left + (parseInt(d.quarter) - 1) * cellWidth)
+      .attr('y', (d: CSVRow) => {
         const yearIndex = years.indexOf(parseInt(d.year));
         return margin.top + yearIndex * cellHeight;
       })
       .attr('width', cellWidth - 2)
       .attr('height', cellHeight - 2)
-      .attr('fill', (d: any) => this.getHeatmapColor(d.anomaly_severity))
+      .attr('fill', (d: CSVRow) => this.getHeatmapColor(d.anomaly_severity))
       .attr('stroke', '#0a0e27')
       .attr('stroke-width', 1)
       .style('cursor', 'pointer')
-      .on('mouseover', function (this: SVGRectElement, event: any, d: any) {
+      .on('mouseover', function (this: SVGRectElement, event: MouseEvent, d: CSVRow) {
         d3.select(this).attr('stroke', '#00d9ff').attr('stroke-width', 2);
 
         d3.select('body')
@@ -887,12 +887,12 @@ class AnomalyDetectionCharts {
       .append('text')
       .attr('class', 'year-label')
       .attr('x', margin.left - 10)
-      .attr('y', (_d: any, i: number) => margin.top + i * cellHeight + cellHeight / 2)
+      .attr('y', (_d: unknown, i: number) => margin.top + i * cellHeight + cellHeight / 2)
       .attr('text-anchor', 'end')
       .attr('dominant-baseline', 'middle')
       .attr('fill', '#e0e0e0')
       .attr('font-size', '12px')
-      .text((d: any) => d);
+      .text((d: number) => d);
 
     svg
       .selectAll('.quarter-label')
@@ -900,12 +900,12 @@ class AnomalyDetectionCharts {
       .enter()
       .append('text')
       .attr('class', 'quarter-label')
-      .attr('x', (_d: any, i: number) => margin.left + i * cellWidth + cellWidth / 2)
+      .attr('x', (_d: unknown, i: number) => margin.left + i * cellWidth + cellWidth / 2)
       .attr('y', margin.top - 10)
       .attr('text-anchor', 'middle')
       .attr('fill', '#e0e0e0')
       .attr('font-size', '12px')
-      .text((d: any) => `Q${d}`);
+      .text((d: number) => `Q${d}`);
   }
 
   private async renderQuarterlyFrequency(): Promise<void> {

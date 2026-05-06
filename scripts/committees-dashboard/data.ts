@@ -8,7 +8,7 @@
  * @license Apache-2.0
  */
 
-declare const Papa: any;
+declare const Papa: { parse(input: string, config?: Record<string, unknown>): { data: string[][] } };
 import type {
   AppConfig,
   CommitteeData,
@@ -71,7 +71,7 @@ export const CONFIG: AppConfig = {
 // ==============================================
 
 export class DataManager {
-  private cache: Map<string, Record<string, any>[]>;
+  private cache: Map<string, Record<string, string>[]>;
 
   constructor() {
     this.cache = new Map();
@@ -81,9 +81,9 @@ export class DataManager {
    * Fetch CSV data with caching support
    * @param {string} key - Cache key identifier
    * @param {string|string[]} url - URL(s) to fetch data from (tries in order if array)
-   * @returns {Promise<Record<string, any>[]>} Parsed CSV data
+   * @returns {Promise<Record<string, string>[]>} Parsed CSV data
    */
-  async fetchData(key: string, url: string | string[]): Promise<Record<string, any>[]> {
+  async fetchData(key: string, url: string | string[]): Promise<Record<string, string>[]> {
     // Check cache first
     if (CONFIG.cache.enabled) {
       const cached = this.getCached(key);
@@ -125,7 +125,7 @@ export class DataManager {
           console.warn(`[DataManager] CSV parsing warnings for ${key}:`, parsed.errors);
         }
 
-        const data: Record<string, any>[] = parsed.data;
+        const data: Record<string, string>[] = parsed.data;
         
         // Cache the result
         if (CONFIG.cache.enabled) {
@@ -149,9 +149,9 @@ export class DataManager {
   /**
    * Get cached data if valid
    * @param {string} key - Cache key
-   * @returns {Record<string, any>[] | null} Cached data or null
+   * @returns {Record<string, string>[] | null} Cached data or null
    */
-  getCached(key: string): Record<string, any>[] | null {
+  getCached(key: string): Record<string, string>[] | null {
     const cacheKey: string = CONFIG.cache.prefix + key;
     try {
       const cached: string | null = localStorage.getItem(cacheKey);
@@ -183,9 +183,9 @@ export class DataManager {
   /**
    * Set cached data
    * @param {string} key - Cache key
-   * @param {Record<string, any>[]} data - Data to cache
+   * @param {Record<string, string>[]} data - Data to cache
    */
-  setCached(key: string, data: Record<string, any>[]): void {
+  setCached(key: string, data: Record<string, string>[]): void {
     const cacheKey: string = CONFIG.cache.prefix + key;
     const cacheData: CacheEntry = {
       data: data,

@@ -71,7 +71,7 @@ try {
 
   /* ── Spec duration parsing ── */
   const durationMatch = log.match(/(\d+:\d+)\s+(\d+)\s+(\d+)\s+(\d+|-)\s+(\d+|-)\s+(\d+|-)\s*$/m);
-  const totalDuration = durationMatch ? durationMatch[1] : '-';
+  const _totalDuration = durationMatch ? durationMatch[1] : '-';
 
   const specTableRows = specLines.map(s => {
     const icon = s.failing > 0 ? '❌' : '✅';

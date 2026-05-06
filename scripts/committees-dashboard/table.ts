@@ -10,7 +10,7 @@
  * @license Apache-2.0
  */
 
-declare const Chart: any;
+declare const Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown };
 import { CONFIG } from './data.js';
 import type { CommitteeData, CommitteeDefinition, ProductivityMatrixRow, AnnualDocumentRow, SeasonalPatternRow } from './types.js';
 
@@ -19,7 +19,7 @@ import type { CommitteeData, CommitteeDefinition, ProductivityMatrixRow, AnnualD
 // ==============================================
 
 export class ChartJSVisualizations {
-  private charts: Record<string, any>;
+  private charts: Record<string, unknown>;
 
   constructor() {
     this.charts = {};
@@ -105,7 +105,7 @@ export class ChartJSVisualizations {
           },
           tooltip: {
             callbacks: {
-              label: function(context: any): string {
+              label: function(context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string }): string {
                 return `Productivity: ${context.parsed.y.toFixed(1)}`;
               }
             }
@@ -246,7 +246,7 @@ export class ChartJSVisualizations {
           },
           tooltip: {
             callbacks: {
-              label: function(context: any): string {
+              label: function(context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string }): string {
                 return `${context.dataset.label}: ${context.parsed.y.toFixed(1)}%`;
               }
             }
@@ -322,7 +322,7 @@ export class ChartJSVisualizations {
     const availableYears: string[] = Object.keys(yearQuarterData).sort().slice(-3);
     const yearColors: string[] = ['#1e88e5', '#43a047', '#fb8c00'];
     
-    const datasets: any[] = availableYears.length > 0 
+    const datasets: Record<string, unknown>[] = availableYears.length > 0 
       ? availableYears.map((year: string, idx: number) => ({
           label: year,
           data: [1, 2, 3, 4].map((q: number) => yearQuarterData[year][q] || 0),
@@ -369,7 +369,7 @@ export class ChartJSVisualizations {
           },
           tooltip: {
             callbacks: {
-              label: function(context: any): string {
+              label: function(context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string }): string {
                 return `${context.dataset.label}: ${context.parsed.y} activity score`;
               }
             }

@@ -13,13 +13,13 @@
 import type { SimulationNodeDatum, SimulationLinkDatum } from 'd3';
 
 // Chart.js and Papa Parse are loaded as browser globals via script tags
-declare const Chart: any;
+declare const Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown };
 declare const Papa: {
   parse(input: string, config?: {
     header?: boolean;
     dynamicTyping?: boolean;
     skipEmptyLines?: boolean;
-  }): { data: Record<string, any>[]; errors: { message: string }[] };
+  }): { data: Record<string, string>[]; errors: { message: string }[] };
 };
 
 // ==============================================
@@ -75,14 +75,14 @@ export interface ProductivityMatrixRow {
   committee_code?: string;
   year?: string | number;
   productivity_level?: string;
-  [key: string]: any;
+  [key: string]: string;
 }
 
 export interface AnnualDocumentRow {
   committee?: string;
   year?: string | number;
   doc_count?: string | number;
-  [key: string]: any;
+  [key: string]: string;
 }
 
 export interface SeasonalPatternRow {
@@ -91,14 +91,14 @@ export interface SeasonalPatternRow {
   median?: string | number;
   total_ballots?: string | number;
   value?: string | number;
-  [key: string]: any;
+  [key: string]: string;
 }
 
 export interface CommitteeData {
   productivityMatrix: ProductivityMatrixRow[];
-  committeeDecisions: Record<string, any>[];
+  committeeDecisions: Record<string, string>[];
   annualDocuments: AnnualDocumentRow[];
-  ballotSummary: Record<string, any>[];
+  ballotSummary: Record<string, string>[];
   seasonalPatterns: SeasonalPatternRow[];
 }
 
@@ -129,7 +129,7 @@ export interface HeatMapData {
 }
 
 export interface CacheEntry {
-  data: Record<string, any>[];
+  data: Record<string, string>[];
   timestamp: number;
 }
 

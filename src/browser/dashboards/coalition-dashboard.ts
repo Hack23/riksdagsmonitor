@@ -27,8 +27,8 @@ import {
 
 import type { DataSourceType } from '../shared/index.js';
 
-const d3 = (globalThis as any).d3;
-const Chart = (globalThis as any).Chart;
+const d3 = (globalThis as unknown as { d3: typeof import('d3') }).d3;
+const Chart = (globalThis as unknown as { Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
 
 // ============================================================================
 // INTERFACES
@@ -53,8 +53,8 @@ interface CoalitionNode {
 }
 
 interface CoalitionLink {
-  source: any;
-  target: any;
+  source: string | PartyNode;
+  target: string | PartyNode;
   strength: number;
 }
 
@@ -73,7 +73,7 @@ interface AnnualVoteEntry {
 interface DataCache {
   coalitionAlignment: Record<string, Record<string, number>> | null;
   behavioralPatterns: Record<string, number> | null;
-  decisionPatterns: any[] | null;
+  decisionPatterns: Record<string, string>[] | null;
   votingAnomalies: AnomalyEntry[] | null;
   annualVotes: Record<string, AnnualVoteEntry[]> | null;
 }
@@ -130,7 +130,7 @@ let coalitionDataSourceType: DataSourceType = 'live';
 
 function parseCSV(csvText: string): Record<string, string>[] {
   try {
-    const Papa = (globalThis as any).Papa;
+    const Papa = (globalThis as unknown as { Papa: { parse(input: string, config?: Record<string, unknown>): { data: string[][] } } }).Papa;
     if (Papa) {
       const parsed = Papa.parse(csvText, { header: true, skipEmptyLines: true });
       return parsed.data;
@@ -318,49 +318,49 @@ function renderCoalitionNetwork(): void {
   });
 
   const simulation = d3.forceSimulation(nodes)
-    .force('link', d3.forceLink(links).id((d: any) => d.id).distance(150))
+    .force('link', d3.forceLink(links).id((d: PartyNode) => d.id).distance(150))
     .force('charge', d3.forceManyBody().strength(-400))
     .force('center', d3.forceCenter(width / 2, height / 2))
-    .force('collision', d3.forceCollide().radius((d: any) => d.influence * 3 + 10));
+    .force('collision', d3.forceCollide().radius((d: PartyNode) => d.influence * 3 + 10));
 
   const link = svg.append('g').attr('class', 'links').selectAll('line').data(links).enter().append('line')
-    .attr('stroke', '#999').attr('stroke-opacity', (d: any) => d.strength).attr('stroke-width', (d: any) => Math.sqrt(d.strength * 10))
+    .attr('stroke', '#999').attr('stroke-opacity', (d: CoalitionLink) => d.strength).attr('stroke-width', (d: CoalitionLink) => Math.sqrt(d.strength * 10))
     .style('cursor', 'pointer')
-    .on('mouseover', function(this: SVGLineElement, event: any, d: any) {
+    .on('mouseover', function(this: SVGLineElement, event: MouseEvent, d: CoalitionLink) {
       d3.select(this).attr('stroke', '#ff6600').attr('stroke-width', Math.sqrt(d.strength * 10) + 2);
       showTooltip(event, `Coalition Strength: ${(d.strength * 100).toFixed(0)}%`);
     })
-    .on('mouseout', function(this: SVGLineElement, _event: any, d: any) {
+    .on('mouseout', function(this: SVGLineElement, _event: MouseEvent, d: CoalitionLink) {
       d3.select(this).attr('stroke', '#999').attr('stroke-width', Math.sqrt(d.strength * 10));
       hideTooltip();
     });
 
   const node = svg.append('g').attr('class', 'nodes').selectAll('g').data(nodes).enter().append('g')
-    .attr('tabindex', '0').attr('role', 'button').attr('aria-label', (d: any) => `${d.fullName} party node`).style('cursor', 'pointer')
+    .attr('tabindex', '0').attr('role', 'button').attr('aria-label', (d: PartyNode) => `${d.fullName} party node`).style('cursor', 'pointer')
     .call(d3.drag()
-      .on('start', (event: any, d: any) => { if (!event.active) simulation.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
-      .on('drag', (_event: any, d: any) => { d.fx = _event.x; d.fy = _event.y; })
-      .on('end', (event: any, d: any) => { if (!event.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; }));
+      .on('start', (event: { active: boolean }, d: PartyNode) => { if (!event.active) simulation.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+      .on('drag', (_event: { x: number; y: number }, d: PartyNode) => { d.fx = _event.x; d.fy = _event.y; })
+      .on('end', (event: { active: boolean }, d: PartyNode) => { if (!event.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; }));
 
-  node.append('circle').attr('r', (d: any) => d.influence * 3).attr('fill', (d: any) => d.color).attr('stroke', '#fff').attr('stroke-width', 2);
-  node.append('text').text((d: any) => d.id).attr('x', 0).attr('y', 0).attr('text-anchor', 'middle').attr('dominant-baseline', 'middle').attr('fill', '#fff').attr('font-weight', 'bold').attr('font-size', '14px').attr('pointer-events', 'none');
-  node.append('text').text((d: any) => d.name).attr('x', 0).attr('y', (d: any) => d.influence * 3 + 15).attr('text-anchor', 'middle').attr('font-size', '12px').attr('fill', 'var(--text-color)').attr('pointer-events', 'none');
+  node.append('circle').attr('r', (d: PartyNode) => d.influence * 3).attr('fill', (d: PartyNode) => d.color).attr('stroke', '#fff').attr('stroke-width', 2);
+  node.append('text').text((d: PartyNode) => d.id).attr('x', 0).attr('y', 0).attr('text-anchor', 'middle').attr('dominant-baseline', 'middle').attr('fill', '#fff').attr('font-weight', 'bold').attr('font-size', '14px').attr('pointer-events', 'none');
+  node.append('text').text((d: PartyNode) => d.name).attr('x', 0).attr('y', (d: PartyNode) => d.influence * 3 + 15).attr('text-anchor', 'middle').attr('font-size', '12px').attr('fill', 'var(--text-color)').attr('pointer-events', 'none');
 
-  node.on('mouseover', function(this: SVGGElement, event: any, d: any) {
+  node.on('mouseover', function(this: SVGGElement, event: MouseEvent, d: PartyNode) {
     d3.select(this).select('circle').attr('stroke-width', 4).attr('stroke', '#ff6600');
     showTooltip(event, `${d.fullName}<br>Influence: ${d.influence.toFixed(1)}`);
   }).on('mouseout', function(this: SVGGElement) {
     d3.select(this).select('circle').attr('stroke-width', 2).attr('stroke', '#fff');
     hideTooltip();
-  }).on('click', function(this: SVGGElement, _event: any, d: any) {
+  }).on('click', function(this: SVGGElement, _event: MouseEvent, d: PartyNode) {
     alert(`${d.fullName}\nInfluence Score: ${d.influence.toFixed(1)}\nColor: ${d.color}`);
-  }).on('keydown', function(event: any, d: any) {
+  }).on('keydown', function(event: KeyboardEvent, d: PartyNode) {
     if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); alert(`${d.fullName}\nInfluence Score: ${d.influence.toFixed(1)}\nColor: ${d.color}`); }
   });
 
   simulation.on('tick', () => {
-    link.attr('x1', (d: any) => d.source.x).attr('y1', (d: any) => d.source.y).attr('x2', (d: any) => d.target.x).attr('y2', (d: any) => d.target.y);
-    node.attr('transform', (d: any) => `translate(${d.x},${d.y})`);
+    link.attr('x1', (d: CoalitionLink) => (d.source as PartyNode).x ?? 0).attr('y1', (d: CoalitionLink) => (d.source as PartyNode).y ?? 0).attr('x2', (d: CoalitionLink) => (d.target as PartyNode).x ?? 0).attr('y2', (d: CoalitionLink) => (d.target as PartyNode).y ?? 0);
+    node.attr('transform', (d: PartyNode) => `translate(${d.x},${d.y})`);
   });
 
   createAccessibleNetworkTable(nodes, links);
@@ -394,13 +394,13 @@ function renderAlignmentHeatMap(): void {
   });
 
   g.selectAll('rect').data(heatMapData).enter().append('rect')
-    .attr('x', (d: any) => partyIds.indexOf(d.party2) * cellSize).attr('y', (d: any) => partyIds.indexOf(d.party1) * cellSize)
-    .attr('width', cellSize).attr('height', cellSize).attr('fill', (d: any) => colorScale(d.alignment)).attr('stroke', '#fff').attr('stroke-width', 1).style('cursor', 'pointer')
-    .on('mouseover', function(event: any, d: any) { showTooltip(event, `${PARTIES[d.party1].name} ↔ ${PARTIES[d.party2].name}<br>Alignment: ${(d.alignment * 100).toFixed(0)}%`); })
+    .attr('x', (d: { party1: string; party2: string; alignment: number }) => partyIds.indexOf(d.party2) * cellSize).attr('y', (d: { party1: string; party2: string; alignment: number }) => partyIds.indexOf(d.party1) * cellSize)
+    .attr('width', cellSize).attr('height', cellSize).attr('fill', (d: { party1: string; party2: string; alignment: number }) => colorScale(d.alignment)).attr('stroke', '#fff').attr('stroke-width', 1).style('cursor', 'pointer')
+    .on('mouseover', function(event: MouseEvent, d: { party1: string; party2: string; alignment: number }) { showTooltip(event, `${PARTIES[d.party1].name} ↔ ${PARTIES[d.party2].name}<br>Alignment: ${(d.alignment * 100).toFixed(0)}%`); })
     .on('mouseout', hideTooltip);
 
-  g.selectAll('.row-label').data(partyIds).enter().append('text').attr('class', 'row-label').attr('x', -10).attr('y', (_d: any, i: number) => i * cellSize + cellSize / 2).attr('text-anchor', 'end').attr('dominant-baseline', 'middle').attr('font-size', '12px').attr('fill', 'var(--text-color)').text((d: any) => PARTIES[d].name);
-  g.selectAll('.col-label').data(partyIds).enter().append('text').attr('class', 'col-label').attr('x', (_d: any, i: number) => i * cellSize + cellSize / 2).attr('y', -10).attr('text-anchor', 'middle').attr('font-size', '12px').attr('fill', 'var(--text-color)').text((d: any) => d);
+  g.selectAll('.row-label').data(partyIds).enter().append('text').attr('class', 'row-label').attr('x', -10).attr('y', (_d: unknown, i: number) => i * cellSize + cellSize / 2).attr('text-anchor', 'end').attr('dominant-baseline', 'middle').attr('font-size', '12px').attr('fill', 'var(--text-color)').text((d: string) => PARTIES[d].name);
+  g.selectAll('.col-label').data(partyIds).enter().append('text').attr('class', 'col-label').attr('x', (_d: unknown, i: number) => i * cellSize + cellSize / 2).attr('y', -10).attr('text-anchor', 'middle').attr('font-size', '12px').attr('fill', 'var(--text-color)').text((d: string) => d);
   svg.append('text').attr('x', width / 2).attr('y', 20).attr('text-anchor', 'middle').attr('font-size', '14px').attr('font-weight', 'bold').attr('fill', 'var(--text-color)').text('Party Voting Alignment Matrix');
 }
 
@@ -424,8 +424,8 @@ function renderVotingAnomalyChart(): void {
     type: 'scatter', data: { datasets },
     options: {
       responsive: true, maintainAspectRatio: false,
-      plugins: { title: { display: true, text: 'Voting Anomalies (Last 5 Years)', font: { size: 16, weight: 'bold' } }, tooltip: { callbacks: { label: (context: any) => { const date = new Date(context.parsed.x); return `${context.dataset.label}: Deviation ${context.parsed.y.toFixed(2)} on ${date.toLocaleDateString()}`; } } }, legend: { display: true, position: 'bottom' } },
-      scales: { x: { type: 'linear', title: { display: true, text: 'Date' }, ticks: { callback: (value: any) => new Date(value).getFullYear().toString() } }, y: { title: { display: true, text: 'Deviation Score' }, beginAtZero: true } }
+      plugins: { title: { display: true, text: 'Voting Anomalies (Last 5 Years)', font: { size: 16, weight: 'bold' } }, tooltip: { callbacks: { label: (context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) => { const date = new Date(context.parsed.x); return `${context.dataset.label}: Deviation ${context.parsed.y.toFixed(2)} on ${date.toLocaleDateString()}`; } } }, legend: { display: true, position: 'bottom' } },
+      scales: { x: { type: 'linear', title: { display: true, text: 'Date' }, ticks: { callback: (value: number | string) => new Date(value).getFullYear().toString() } }, y: { title: { display: true, text: 'Deviation Score' }, beginAtZero: true } }
     }
   });
 }
@@ -441,7 +441,7 @@ function renderBehavioralPatternsChart(): void {
     data: { labels: partyIds.map(id => PARTIES[id].name), datasets: [{ label: 'Party Consistency Score (%)', data: partyIds.map(id => dataCache.behavioralPatterns?.[id] || 80), backgroundColor: partyIds.map(id => PARTIES[id].color), borderColor: partyIds.map(id => PARTIES[id].color), borderWidth: 1 }] },
     options: {
       indexAxis: 'y', responsive: true, maintainAspectRatio: false,
-      plugins: { title: { display: true, text: 'Party Voting Consistency (2019-2024)', font: { size: 16, weight: 'bold' } }, legend: { display: false }, tooltip: { callbacks: { label: (context: any) => `Consistency: ${context.parsed.x.toFixed(1)}%` } } },
+      plugins: { title: { display: true, text: 'Party Voting Consistency (2019-2024)', font: { size: 16, weight: 'bold' } }, legend: { display: false }, tooltip: { callbacks: { label: (context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) => `Consistency: ${context.parsed.x.toFixed(1)}%` } } },
       scales: { x: { beginAtZero: true, max: 100, title: { display: true, text: 'Consistency Score (%)' } } }
     }
   });
@@ -476,7 +476,7 @@ function renderDecisionTrendsChart(): void {
     type: 'line', data: { labels: years, datasets },
     options: {
       responsive: true, maintainAspectRatio: false,
-      plugins: { title: { display: true, text: `Annual Voting Activity Trends (${years[0]}-${years[years.length - 1]})`, font: { size: 16, weight: 'bold' } }, legend: { display: true, position: 'bottom' }, tooltip: { mode: 'index', intersect: false, callbacks: { label: (context: any) => context.dataset.label + ': ' + context.parsed.y.toLocaleString() + ' votes' } } },
+      plugins: { title: { display: true, text: `Annual Voting Activity Trends (${years[0]}-${years[years.length - 1]})`, font: { size: 16, weight: 'bold' } }, legend: { display: true, position: 'bottom' }, tooltip: { mode: 'index', intersect: false, callbacks: { label: (context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) => context.dataset.label + ': ' + context.parsed.y.toLocaleString() + ' votes' } } },
       scales: { x: { title: { display: true, text: 'Year' } }, y: { title: { display: true, text: 'Number of Votes' }, beginAtZero: true } }
     }
   });
@@ -579,7 +579,7 @@ function generateMockBehavioralData(): Record<string, number> {
   return data;
 }
 
-function generateMockDecisionData(): any[] { return []; }
+function generateMockDecisionData(): Record<string, string>[] { return []; }
 
 export function generateMockAnomalyData(): AnomalyEntry[] {
   // Deterministic fallback data when CIA anomaly data is unavailable

@@ -12,9 +12,9 @@
  * @license Apache-2.0
  */
 
-declare const d3: any;
-declare const Chart: any;
-declare const Papa: any;
+declare const d3: typeof import('d3');
+declare const Chart: { new(ctx: CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown };
+declare const Papa: { parse(input: string, config?: Record<string, unknown>): { data: string[][] } };
 
 import type { CommitteeData } from './types.js';
 import { CONFIG, DataManager } from './data.js';
