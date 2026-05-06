@@ -40,10 +40,11 @@ import {
   showDataSourceDisclaimer,
 } from '../shared/index.js';
 
-import type { CSVRow, DataSourceType } from '../shared/index.js';
+import type { CSVRow, DataSourceType, ChartLike } from '../shared/index.js';
+import type { ChartConstructor } from '../shared/global-libs.js';
 
 const d3 = (globalThis as unknown as { d3: typeof import('d3') }).d3;
-const Chart = (globalThis as unknown as { Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
+const Chart = (globalThis as unknown as { Chart: ChartConstructor }).Chart;
 
 // ============================================================================
 // INTERFACES
@@ -600,7 +601,7 @@ class AnomalyAlertSystem {
 
 class AnomalyDetectionCharts {
   private readonly dataManager: AnomalyDetectionDataManager;
-  private chartInstances: Record<string, unknown> = {};
+  private chartInstances: Record<string, ChartLike> = {};
 
   constructor(dataManager: AnomalyDetectionDataManager) {
     this.dataManager = dataManager;
@@ -663,12 +664,12 @@ class AnomalyDetectionCharts {
           tooltip: {
             callbacks: {
               label: (context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) => {
-                const record = context.raw.record;
+                const record = context.raw.record as Record<string, string | number>;
                 return [
                   `${record.year} Q${record.quarter}`,
                   `Type: ${record.anomaly_type}`,
                   `Severity: ${record.anomaly_severity}`,
-                  `Z-Score: ${parseFloat(record.max_z_score).toFixed(2)}`,
+                  `Z-Score: ${parseFloat(String(record.max_z_score)).toFixed(2)}`,
                   `Direction: ${record.anomaly_direction}`,
                 ];
               },
@@ -678,12 +679,12 @@ class AnomalyDetectionCharts {
         scales: {
           x: {
             title: { display: true, text: 'Year' },
-            ticks: { callback: (value: number | string) => Math.floor(value) },
+            ticks: { callback: (value: number | string) => Math.floor(Number(value)) },
           },
           y: {
             title: { display: true, text: 'Z-Score' },
             grid: {
-              color: (context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) => {
+              color: (context: { tick: { value: number } }) => {
                 if (context.tick.value === 2.0 || context.tick.value === -2.0) {
                   return '#f57c00';
                 }
@@ -803,7 +804,7 @@ class AnomalyDetectionCharts {
           legend: { position: 'bottom' },
           tooltip: {
             callbacks: {
-              label: (context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) => {
+              label: (context: { parsed: number; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) => {
                 const total = ballotCount + documentCount + attendanceCount;
                 const pct = total > 0 ? ((context.parsed / total) * 100).toFixed(1) : 0;
                 return `${context.label}: ${context.parsed} (${pct}%)`;

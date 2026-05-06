@@ -45,6 +45,7 @@ import {
 } from '../shared/index.js';
 
 import type { CSVRow } from '../shared/index.js';
+import type { ChartConstructor } from '../shared/global-libs.js';
 
 // D3 is loaded as a global <script> for DOM manipulation / SVG features
 const d3 = (globalThis as unknown as { d3: typeof import('d3') }).d3;
@@ -960,14 +961,14 @@ function renderRiskHeatMap(
   const yScale = d3.scaleBand().domain(ministries).range([0, height]).padding(0.1);
   const xScale = d3.scaleLinear().domain([0, 10]).range([0, width]);
   const colorScale = d3
-    .scaleThreshold()
+    .scaleThreshold<number, string>()
     .domain([4.0, 6.0, 8.0])
     .range([CONFIG.colors.riskLow, CONFIG.colors.riskMedium, CONFIG.colors.riskHigh, CONFIG.colors.riskCritical]);
 
   svg.append('g').call(d3.axisLeft(yScale)).selectAll('text').style('font-size', '14px').style('fill', 'var(--text-color)');
   svg.append('g').attr('transform', `translate(0,${height})`).call(d3.axisBottom(xScale).ticks(10)).selectAll('text').style('font-size', '12px').style('fill', 'var(--text-color)');
 
-  let tooltip = d3.select('body').select('.ministry-tooltip');
+  let tooltip = d3.select('body').select<HTMLDivElement>('.ministry-tooltip');
   if (tooltip.empty()) {
     tooltip = d3.select('body')
       .append('div')
@@ -1043,7 +1044,7 @@ function renderInfluenceChart(
   const canvas = document.getElementById(canvasId) as HTMLCanvasElement | null;
   if (!canvas || !data || data.length === 0) return;
 
-  const Chart = (globalThis as unknown as { Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
+  const Chart = (globalThis as unknown as { Chart: ChartConstructor }).Chart;
   if (!Chart) return;
 
   const sorted = [...data].sort((a, b) => (Number(b.influence) || 0) - (Number(a.influence) || 0)).slice(0, 10);
@@ -1078,7 +1079,7 @@ function renderProductivityChart(
   const canvas = document.getElementById(canvasId) as HTMLCanvasElement | null;
   if (!canvas || !data || data.length === 0) return;
 
-  const Chart = (globalThis as unknown as { Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
+  const Chart = (globalThis as unknown as { Chart: ChartConstructor }).Chart;
   if (!Chart) return;
 
   const ministryTranslations = MINISTRY_TRANSLATIONS[lang] || MINISTRY_TRANSLATIONS.en;
@@ -1117,7 +1118,7 @@ function renderDecisionImpactChart(
   const canvas = document.getElementById(canvasId) as HTMLCanvasElement | null;
   if (!canvas || !data || data.length === 0) return;
 
-  const Chart = (globalThis as unknown as { Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
+  const Chart = (globalThis as unknown as { Chart: ChartConstructor }).Chart;
   if (!Chart) return;
 
   const ministries = Array.from(new Set(data.map((d) => d.ministry))).slice(0, 5);

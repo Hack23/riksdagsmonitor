@@ -26,9 +26,10 @@ import {
 } from '../shared/index.js';
 
 import type { DataSourceType } from '../shared/index.js';
+import type { ChartConstructor } from '../shared/global-libs.js';
 
 const d3 = (globalThis as unknown as { d3: typeof import('d3') }).d3;
-const Chart = (globalThis as unknown as { Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
+const Chart = (globalThis as unknown as { Chart: ChartConstructor }).Chart;
 
 // ============================================================================
 // INTERFACES
@@ -51,6 +52,9 @@ interface CoalitionNode {
   fx?: number | null;
   fy?: number | null;
 }
+
+/** Alias used in D3 force simulation callbacks. */
+type PartyNode = CoalitionNode;
 
 interface CoalitionLink {
   source: string | PartyNode;
@@ -130,7 +134,7 @@ let coalitionDataSourceType: DataSourceType = 'live';
 
 function parseCSV(csvText: string): Record<string, string>[] {
   try {
-    const Papa = (globalThis as unknown as { Papa: { parse(input: string, config?: Record<string, unknown>): { data: string[][] } } }).Papa;
+    const Papa = (globalThis as unknown as { Papa: { parse(input: string, config?: Record<string, unknown>): { data: Record<string, string>[] } } }).Papa;
     if (Papa) {
       const parsed = Papa.parse(csvText, { header: true, skipEmptyLines: true });
       return parsed.data;
@@ -317,11 +321,11 @@ function renderCoalitionNetwork(): void {
     });
   });
 
-  const simulation = d3.forceSimulation(nodes)
-    .force('link', d3.forceLink(links).id((d: PartyNode) => d.id).distance(150))
+  const simulation = d3.forceSimulation<CoalitionNode>(nodes)
+    .force('link', d3.forceLink<CoalitionNode, CoalitionLink>(links).id((d) => d.id).distance(150))
     .force('charge', d3.forceManyBody().strength(-400))
     .force('center', d3.forceCenter(width / 2, height / 2))
-    .force('collision', d3.forceCollide().radius((d: PartyNode) => d.influence * 3 + 10));
+    .force('collision', d3.forceCollide<CoalitionNode>().radius((d) => d.influence * 3 + 10));
 
   const link = svg.append('g').attr('class', 'links').selectAll('line').data(links).enter().append('line')
     .attr('stroke', '#999').attr('stroke-opacity', (d: CoalitionLink) => d.strength).attr('stroke-width', (d: CoalitionLink) => Math.sqrt(d.strength * 10))
@@ -337,7 +341,7 @@ function renderCoalitionNetwork(): void {
 
   const node = svg.append('g').attr('class', 'nodes').selectAll('g').data(nodes).enter().append('g')
     .attr('tabindex', '0').attr('role', 'button').attr('aria-label', (d: PartyNode) => `${d.fullName} party node`).style('cursor', 'pointer')
-    .call(d3.drag()
+    .call(d3.drag<SVGGElement, PartyNode>()
       .on('start', (event: { active: boolean }, d: PartyNode) => { if (!event.active) simulation.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
       .on('drag', (_event: { x: number; y: number }, d: PartyNode) => { d.fx = _event.x; d.fy = _event.y; })
       .on('end', (event: { active: boolean }, d: PartyNode) => { if (!event.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; }));
@@ -492,8 +496,8 @@ function createAccessibleNetworkTable(nodes: CoalitionNode[], links: CoalitionLi
   let html = '<caption>Coalition Network Data</caption><thead><tr><th>Party</th><th>Influence</th><th>Coalition Partners</th></tr></thead><tbody>';
   nodes.forEach(n => {
     const partners = links
-      .filter(l => (l.source.id || l.source) === n.id || (l.target.id || l.target) === n.id)
-      .map(l => { const pid = (l.source.id || l.source) === n.id ? (l.target.id || l.target) : (l.source.id || l.source); return `${PARTIES[pid]?.name || pid} (${(l.strength * 100).toFixed(0)}%)`; })
+      .filter(l => (typeof l.source === 'object' ? l.source.id : l.source) === n.id || (typeof l.target === 'object' ? l.target.id : l.target) === n.id)
+      .map(l => { const pid = (typeof l.source === 'object' ? l.source.id : l.source) === n.id ? (typeof l.target === 'object' ? l.target.id : l.target) : (typeof l.source === 'object' ? l.source.id : l.source); return `${PARTIES[pid]?.name || pid} (${(l.strength * 100).toFixed(0)}%)`; })
       .join(', ');
     html += `<tr><td>${n.fullName}</td><td>${n.influence.toFixed(1)}</td><td>${partners}</td></tr>`;
   });

@@ -38,8 +38,9 @@ import {
 } from '../shared/index.js';
 
 import type { CSVRow } from '../shared/index.js';
+import type { ChartConstructor } from '../shared/global-libs.js';
 
-const Chart = (globalThis as unknown as { Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
+const Chart = (globalThis as unknown as { Chart: ChartConstructor }).Chart;
 
 // ============================================================================
 // INTERFACES
@@ -477,7 +478,7 @@ function createProductivityInfluenceChart(
           borderWidth: 1,
           callbacks: {
             label(context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) {
-              const raw = context.raw as BubblePoint;
+              const raw = context.raw as unknown as BubblePoint;
               return [
                 raw.name ? `${raw.name} (${raw.party})` : '',
                 `Votes: ${context.parsed.x}`,

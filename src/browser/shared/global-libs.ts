@@ -8,16 +8,31 @@
  */
 
 import type * as d3Namespace from 'd3';
+import type { Chart as ChartInstance, Defaults } from 'chart.js';
 
-/** Minimal Chart.js constructor interface for dashboard usage. */
+/** Chart.js constructor interface matching the actual Chart.js API. */
 export interface ChartConstructor {
-  new (ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown;
+  new (ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): ChartInstance;
   register(...items: unknown[]): void;
+  defaults: Defaults;
+}
+
+/** PapaParse parse result including errors and meta. */
+export interface PapaParseResult<T = string[]> {
+  data: T[];
+  errors: Array<{ message: string; type: string; code: string; row?: number }>;
+  meta: {
+    delimiter: string;
+    linebreak: string;
+    aborted: boolean;
+    fields?: string[];
+    truncated: boolean;
+  };
 }
 
 /** PapaParse interface for CSV parsing. */
 export interface PapaParseStatic {
-  parse(input: string, config?: Record<string, unknown>): { data: string[][] };
+  parse<T = string[]>(input: string, config?: Record<string, unknown>): PapaParseResult<T>;
 }
 
 /** D3 library type alias. */

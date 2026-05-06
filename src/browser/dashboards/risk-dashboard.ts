@@ -335,7 +335,7 @@ function createHeatMap(data: RiskScore[]): void {
 
   // Group data by politician
   const politicians = [...new Set(data.map(d => d.politician))];
-  const rules = [...new Set(data.map(d => d.rule))].sort((a, b) => a - b);
+  const rules = [...new Set(data.map(d => String(d.rule)))].sort();
 
   // Create scales
   const xScale = d3
@@ -357,7 +357,7 @@ function createHeatMap(data: RiskScore[]): void {
 
   // Add zoom behavior
   const zoom = d3
-    .zoom()
+    .zoom<SVGSVGElement, unknown>()
     .scaleExtent([1, 10])
     .translateExtent([
       [0, 0],
@@ -387,8 +387,8 @@ function createHeatMap(data: RiskScore[]): void {
     .enter()
     .append('rect')
     .attr('class', 'cell')
-    .attr('x', (d: RiskScore) => xScale(d.rule))
-    .attr('y', (d: RiskScore) => yScale(d.politician))
+    .attr('x', (d: RiskScore) => xScale(String(d.rule)) ?? 0)
+    .attr('y', (d: RiskScore) => yScale(d.politician) ?? 0)
     .attr('width', xScale.bandwidth())
     .attr('height', yScale.bandwidth())
     .attr('fill', (d: RiskScore) => getRiskColor(d.score))
@@ -401,7 +401,7 @@ function createHeatMap(data: RiskScore[]): void {
     .on('keydown', function (this: SVGRectElement, event: KeyboardEvent, d: RiskScore) {
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
-        d3.select(this).dispatch('click', { detail: { d, element: this } });
+        d3.select(this).dispatch('click', { bubbles: true, cancelable: true, detail: { d, element: this } });
       }
     })
     .on('mouseover', function (this: SVGRectElement, _event: MouseEvent, d: RiskScore) {
@@ -494,12 +494,12 @@ function createHeatMap(data: RiskScore[]): void {
     .data(rules)
     .enter()
     .append('text')
-    .attr('x', (d: number) => xScale(d)! + xScale.bandwidth() / 2)
+    .attr('x', (d: string) => (xScale(d) ?? 0) + xScale.bandwidth() / 2)
     .attr('y', -10)
     .attr('text-anchor', 'middle')
     .attr('font-size', '10px')
     .attr('fill', 'currentColor')
-    .text((d: number) => String(d ?? '').replace('Rule_', 'R'));
+    .text((d: string) => d.replace('Rule_', 'R'));
 
   // Add Y axis labels (politicians) - Sample every 10th
   g.append('g')
@@ -534,10 +534,10 @@ function createHeatMap(data: RiskScore[]): void {
   // Rule filter
   const ruleFilter = document.getElementById('riskRuleFilter') as HTMLSelectElement | null;
   if (ruleFilter) {
-    rules.forEach((rule: number) => {
+    rules.forEach((rule: string) => {
       const option = document.createElement('option');
-      option.value = String(rule);
-      option.textContent = String(rule ?? '').replace('Rule_', 'Risk Rule ');
+      option.value = rule;
+      option.textContent = rule.replace('Rule_', 'Risk Rule ');
       ruleFilter.appendChild(option);
     });
 

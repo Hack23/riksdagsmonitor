@@ -21,14 +21,16 @@
  * */
 
 import { logger, showDataSourceDisclaimer } from '../shared/index.js';
+import type { CSVRow, ChartLike } from '../shared/index.js';
+import type { ChartConstructor } from '../shared/global-libs.js';
 
 /* ------------------------------------------------------------------ */
 /*  Global library references (loaded via <script> tags)              */
 /* ------------------------------------------------------------------ */
 
 const d3 = (globalThis as unknown as { d3: typeof import('d3') }).d3;
-const Chart = (globalThis as unknown as { Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart;
-const Papa = (globalThis as unknown as { Papa: { parse(input: string, config?: Record<string, unknown>): { data: string[][] } } }).Papa;
+const Chart = (globalThis as unknown as { Chart: ChartConstructor }).Chart;
+const Papa = (globalThis as unknown as { Papa: { parse(input: string, config?: Record<string, unknown>): { data: CSVRow[]; errors: unknown[] } } }).Papa;
 
 /* ------------------------------------------------------------------ */
 /*  Interfaces                                                        */
@@ -213,8 +215,8 @@ class DataManager {
         logger.info(`[DataManager] Successfully loaded ${key} from ${i === 0 ? 'local' : 'remote'} source`);
         return data;
       } catch (error: unknown) {
-        logger.warn(`[DataManager] Failed to fetch ${key} from ${currentUrl}:`, error.message);
-        lastError = error;
+        logger.warn(`[DataManager] Failed to fetch ${key} from ${currentUrl}:`, (error as Error).message);
+        lastError = error as Error;
       }
     }
 
@@ -286,14 +288,12 @@ class DataManager {
 class NetworkDiagram {
   private containerId: string;
   private data: AllCommitteeData;
-  private svg: unknown;
-  private simulation: unknown;
+  private svg!: import('d3').Selection<SVGSVGElement, unknown, HTMLElement, unknown>;
+  private simulation!: import('d3').Simulation<NetworkNode, NetworkLink>;
 
   constructor(containerId: string, data: AllCommitteeData) {
     this.containerId = containerId;
     this.data = data;
-    this.svg = null;
-    this.simulation = null;
   }
 
   /** Render force-directed network diagram. */
@@ -318,16 +318,16 @@ class NetworkDiagram {
       .attr('role', 'img')
       .attr('aria-label', 'Committee network connections diagram')
       .attr('viewBox', `0 0 ${width} ${height}`)
-      .style('background', 'var(--card-bg)');
+      .style('background', 'var(--card-bg)') as unknown as import('d3').Selection<SVGSVGElement, unknown, HTMLElement, unknown>;
 
     const { nodes, links } = this.processNetworkData();
 
     this.simulation = d3
-      .forceSimulation(nodes)
-      .force('link', d3.forceLink(links).id((d: NetworkNode) => d.id).distance(100))
+      .forceSimulation<NetworkNode>(nodes)
+      .force('link', d3.forceLink<NetworkNode, NetworkLink>(links).id((d) => d.id).distance(100))
       .force('charge', d3.forceManyBody().strength(-400))
       .force('center', d3.forceCenter(width / 2, height / 2))
-      .force('collision', d3.forceCollide().radius((d: NetworkNode) => d.radius + 10));
+      .force('collision', d3.forceCollide<NetworkNode>().radius((d) => d.radius + 10));
 
     const link = this.svg
       .append('g')
@@ -351,8 +351,7 @@ class NetworkDiagram {
       .attr('role', 'button')
       .attr('aria-label', (d: NetworkNode) => `${d.name} committee with ${d.productivity} productivity score`)
       .call(
-        d3
-          .drag()
+        d3.drag<SVGGElement, NetworkNode>()
           .on('start', (event: { active: boolean; subject: NetworkNode }) => this.dragStarted(event))
           .on('drag', (event: { x: number; y: number; subject: NetworkNode }) => this.dragged(event))
           .on('end', (event: { active: boolean; subject: NetworkNode }) => this.dragEnded(event)),
@@ -529,12 +528,11 @@ class NetworkDiagram {
 class ProductivityHeatMap {
   private containerId: string;
   private data: AllCommitteeData;
-  private svg: unknown;
+  private svg!: import('d3').Selection<SVGSVGElement, unknown, HTMLElement, unknown>;
 
   constructor(containerId: string, data: AllCommitteeData) {
     this.containerId = containerId;
     this.data = data;
-    this.svg = null;
   }
 
   /** Render the productivity heat map. */
@@ -563,7 +561,7 @@ class ProductivityHeatMap {
       .attr('role', 'img')
       .attr('aria-label', 'Committee productivity matrix over time')
       .attr('viewBox', `0 0 ${width} ${height}`)
-      .style('background', 'var(--card-bg)');
+      .style('background', 'var(--card-bg)') as unknown as import('d3').Selection<SVGSVGElement, unknown, HTMLElement, unknown>;
 
     const g = this.svg
       .append('g')
@@ -579,8 +577,8 @@ class ProductivityHeatMap {
       .data(matrix)
       .enter()
       .append('rect')
-      .attr('x', (d: HeatMapCell) => xScale(d.year))
-      .attr('y', (d: HeatMapCell) => yScale(d.committee))
+      .attr('x', (d: HeatMapCell) => xScale(d.year) ?? 0)
+      .attr('y', (d: HeatMapCell) => yScale(d.committee) ?? 0)
       .attr('width', xScale.bandwidth())
       .attr('height', yScale.bandwidth())
       .attr('fill', (d: HeatMapCell) => colorScale(d.value))
@@ -675,7 +673,7 @@ class ProductivityHeatMap {
   }
 
   /** Add a gradient color legend below the heatmap. */
-  private addColorLegend(g: unknown, _colorScale: unknown, innerWidth: number, innerHeight: number): void {
+  private addColorLegend(g: import('d3').Selection<SVGGElement, unknown, import('d3').BaseType, unknown>, _colorScale: unknown, innerWidth: number, innerHeight: number): void {
     const legendWidth = 200;
     const legendHeight = 15;
 
@@ -735,7 +733,7 @@ class ProductivityHeatMap {
 /* ------------------------------------------------------------------ */
 
 class ChartJSVisualizations {
-  private charts: Record<string, unknown>;
+  private charts: Record<string, ChartLike>;
 
   constructor() {
     this.charts = {};
@@ -905,7 +903,7 @@ class ChartJSVisualizations {
         const quarter = parseInt(row.quarter) || 0;
         if (year && quarter >= 1 && quarter <= 4) {
           if (!yearQuarterData[year]) yearQuarterData[year] = {};
-          yearQuarterData[year][quarter] = parseFloat(row.median || row.total_ballots || row.value || 0);
+          yearQuarterData[year][quarter] = parseFloat(row.median ?? row.total_ballots ?? row.value ?? '0');
         }
       }
     }
@@ -1077,7 +1075,7 @@ async function initializeDashboard(): Promise<void> {
     logger.info('[CommitteeDashboard] Initialization complete');
   } catch (error: unknown) {
     logger.error('[CommitteeDashboard] Initialization failed:', error);
-    showErrorMessage(error.message);
+    showErrorMessage((error as Error).message);
   } finally {
     isInitializing = false;
   }
