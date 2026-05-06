@@ -3027,16 +3027,19 @@ Riksdagsmonitor's overall security posture as of 2026-02-25:
 ## 📋 Document Control
 
 **📋 Document Owner:** James Pether Sörling, CEO & CISO  
-**📄 Version:** 2.1  
-**📅 Last Updated:** 2026-02-25 (UTC)  
+**📄 Version:** 2.4  
+**📅 Last Updated:** 2026-05-06 (UTC)  
 **✅ Approved by:** James Pether Sörling, CEO  
-**🔄 Review Cycle:** Annual (February)  
-**⏰ Next Review:** 2027-02-25  
+**🔄 Review Cycle:** Annual  
+**⏰ Next Review:** 2027-05-06  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807)  
 **📤 Distribution:** Public  
 **🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels) [![Integrity: High](https://img.shields.io/badge/I-High-orange?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#integrity-levels) [![Availability: High](https://img.shields.io/badge/A-High-orange?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#availability-levels)
 
 **Version History:**
+- v2.4 (2026-05-06): v0.8.76 reconciliation — added Political Intelligence Security Surface, Five-Layer Safe-Output detail, External Data Provider Trust Model, STRIDE threat-boundary additions for political intelligence
+- v2.3 (2026-05-03): Drift reconciliation with workflows README (14 agentic workflows), MCP Gateway v0.3.1 schema constraint
+- v2.2 (2026-04-20): IMF added as third external economic data provider, MCP security posture, 24 agents + 91 skills under review
 - v2.1 (2026-02-25): Added NIS2 mapping, OWASP LLM Top 10, ISO 27001 SoA, NIST CSF Govern function, CIS Controls IG classification, supply chain security, content integrity, credential lifecycle, and security KPIs sections
 - v2.0 (2026-02-20): Major revision with STRIDE analysis, 6-layer defense model, compliance framework mappings
 
@@ -3118,6 +3121,192 @@ Statskontoret is a read-only public-data integration using in-repository TypeScr
 
 Security classification: **PUBLIC / High Integrity / Medium-High Availability**. Mapped controls: ISO 27001 A.5.23 (cloud/service use), A.8.9 (configuration management), A.8.12 (data leakage prevention by design), A.8.20 (network security), NIST CSF 2.0 ID.IM / PR.DS / PR.PS, CIS Controls 4, 8, 12 and 16.
 
+
+---
+
+## 🕵️ Political Intelligence Security Surface (v0.8.76)
+
+> **Added:** v2.4 (2026-05-06) — Previously backlog item from the [documentation-portfolio-audit-2026-05-03](analysis/audits/documentation-portfolio-audit-2026-05-03.md). This section documents the security controls governing the AI-driven political intelligence analysis pipeline.
+
+### Overview
+
+Riksdagsmonitor's political intelligence pipeline introduces a unique attack surface: **39 analysis templates** and **18 methodologies** processed by AI agents (Claude Sonnet 4.6) within 14 agentic workflows. These templates define the analytical structure that shapes all output articles. A compromise of the template content or a bypass of the structural validation gate could lead to biased, fabricated, or manipulated political intelligence output.
+
+### Trust Model
+
+```mermaid
+flowchart TD
+    subgraph "Trusted Control Plane (Git-reviewed)"
+        TMPL["39 Analysis Templates<br/>analysis/templates/*.md"]
+        METH["18 Methodologies<br/>analysis/methodologies/*.md"]
+        GATE["Analysis Gate<br/>scripts/agentic/analysis-gate.ts"]
+        REFL["Methodology Reflection Validator<br/>scripts/validate-methodology-reflection.ts"]
+        PROMPT["Prompt Modules<br/>.github/prompts/"]
+    end
+    subgraph "AI Agent Runtime (Sandboxed)"
+        AGENT["Claude Sonnet 4.6<br/>(14 agentic workflows)"]
+    end
+    subgraph "Output (PR-Gated)"
+        ART["Analysis Artifacts<br/>analysis/daily/YYYY-MM-DD/"]
+        NEWS["News Articles<br/>content/"]
+    end
+    TMPL --> AGENT
+    METH --> AGENT
+    PROMPT --> AGENT
+    AGENT --> ART
+    ART --> GATE
+    ART --> REFL
+    GATE -->|pass| NEWS
+    GATE -->|fail| REJECT["❌ Workflow fails"]
+```
+
+### Security Control: Analysis Gate (Checks 1–9b)
+
+**Implementation:** [`scripts/agentic/analysis-gate.ts`](scripts/agentic/analysis-gate.ts) · **Specification:** [`.github/prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md)
+
+The analysis gate is a **fail-closed structural-integrity control** that validates all 23 required analysis artifacts before any article content proceeds to PR review. It operates as Layer 0 of the safe-output pipeline (pre-sanitisation validation).
+
+| Check | Control | What It Validates | Bypass Resistance |
+|-------|---------|-------------------|-------------------|
+| 1 | Artifact existence | All 23 files present and non-empty | Typed filename set; recursive scan; size > 0 |
+| 2 | Per-document coverage | Family E vs manifest | `dok_id` regex validation; cross-ref to artifact inventory |
+| 3 | No stub placeholders | Recursive `.md` scan for known stub phrases | Pattern list version-controlled; `collectMdFilesRecursive()` |
+| 4 | Evidence citations | SWOT + significance scoring contain evidence | `EVIDENCE_PATTERN` regex; real source IDs required |
+| 5 | Mermaid diagrams | Colour config + node labels in diagrams | `MERMAID_NODE_RE` matches `[]`, `()`, `{}` label shapes |
+| 6 | Pass-2 evidence | Mtime or `pass1/` snapshot diff | `PASS2_MTIME_THRESHOLD_MS = 180_000` (3 min) |
+| 7 | Family C structure | Strategic extension artifacts well-formed | Typed interface validation |
+| 8 | Family D structure | Electoral & domain lens artifacts well-formed | Typed interface validation |
+| 9 | PIR status sidecar | Priority Intelligence Requirements file present | JSON schema check |
+| 9b | Statskontoret evidence | Implementation-feasibility references Statskontoret | `RECOGNISED_AGENCIES` list (12 entries) |
+
+**Test coverage:** 76 tests in [`tests/agentic-analysis-gate.test.ts`](tests/agentic-analysis-gate.test.ts).
+
+**Failure mode:** If any check fails, the entire workflow run fails — no article is generated and no PR is created. This prevents partial or manipulated output from reaching the human-review gate.
+
+### Security Control: Methodology-Reflection Validator
+
+**Implementation:** [`scripts/validate-methodology-reflection.ts`](scripts/validate-methodology-reflection.ts)
+
+Validates that each `methodology-reflection.md` artifact meets the integrity-of-process contract:
+
+| Validation | Purpose |
+|------------|---------|
+| Required H2 sections (8) | Ensures complete analytical reflection |
+| Minimum byte threshold (scaled by period-scope) | Prevents trivial/empty reflections |
+| Confidence labels (`[HIGH]`, `[MEDIUM]`, `[LOW]`) | Enforces uncertainty acknowledgement |
+| Upstream-watchpoint reconciliation table (Tier-C) | Cross-validates upstream data references |
+
+### Security Control: Political Classification
+
+All political data (MPs, votes, parties, speeches) is classified under the [Hack23 CLASSIFICATION framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md):
+
+- **Confidentiality:** Public (all source data is from open government APIs)
+- **Integrity:** HIGH — incorrect political intelligence could damage reputations or mislead citizens
+- **Availability:** HIGH — platform is a public accountability tool
+
+### Security Control: Horizon Stratification Boundaries
+
+Horizon stratification limits which data classes can inform which forecast band:
+
+| Horizon Band | Permitted Data Sources | Prohibited |
+|--------------|----------------------|------------|
+| T+72h (short-term) | Riksdag calendar, vote records, committee schedules | Future economic projections |
+| T+7d (week-ahead) | Parliamentary schedule, government press releases | Speculative coalition analysis |
+| T+30d (month-ahead) | IMF WEO projections, SCB statistics, government proposals | Election-cycle scenarios |
+| T+90d – T+365d (quarter/year) | All economic data, trend analysis, historical patterns | N/A |
+| T+1460d (election-cycle) | Full scenario trees, coalition modelling | N/A — all sources permitted |
+
+**Control:** The prompt modules in `.github/prompts/` encode horizon constraints. The analysis gate validates artifact structure matches the declared article type (from [`analysis/article-types.json`](analysis/article-types.json)).
+
+### Security Control: OSINT Tradecraft Compliance
+
+AI-generated content must comply with OSINT operational standards:
+
+- **Source attribution**: Every factual claim traces to a `dok_id` (Riksdag document ID) or named data source
+- **No single-source conclusions**: Significance scoring requires multiple evidence citations (Check 4)
+- **Confidence labelling**: All analytical claims carry `[HIGH]`/`[MEDIUM]`/`[LOW]` confidence markers
+- **No speculation without disclosure**: Horizon constraints prevent presenting projections as facts
+
+---
+
+## 🔐 Five-Layer Safe-Output Security Model (Detailed)
+
+> **Cross-reference:** [THREAT_MODEL.md](THREAT_MODEL.md) §TB-PI series · [`.github/workflows/README.md`](.github/workflows/README.md)
+
+The five-layer model governs all 14 agentic news workflows. Each layer is independent — a bypass of one layer does not compromise the subsequent layers.
+
+```mermaid
+flowchart TD
+    AGENT["AI Agent Output"] --> L1["Layer 1: Sanitisation<br/>(rehype-sanitize allow-list)"]
+    L1 --> L2["Layer 2: Schema Validation<br/>(artifact structure + YAML front-matter)"]
+    L2 --> L3["Layer 3: Policy Check<br/>(analysis gate checks 1–9b)"]
+    L3 --> L4["Layer 4: Human Review<br/>(mandatory PR approval)"]
+    L4 --> L5["Layer 5: Merge & Deploy<br/>(branch protection rules)"]
+    L1 -->|"blocks <script>, <iframe>, handlers"| FAIL["❌ Rejected"]
+    L2 -->|"missing fields / malformed YAML"| FAIL
+    L3 -->|"gate check failure"| FAIL
+    L4 -->|"reviewer rejects"| FAIL
+```
+
+| Layer | Control | Bypass Resistance | Failure Mode |
+|-------|---------|-------------------|--------------|
+| **1. Sanitisation** | `rehype-sanitize` allow-list blocks `<script>`, `<iframe>`, inline event handlers, `javascript:` URIs | Allow-list approach (not deny-list); Mermaid rendered in `securityLevel: 'strict'` | Malicious HTML stripped silently |
+| **2. Schema Validation** | YAML front-matter schema; artifact file structure; 23-file completeness | Typed TypeScript validators; JSON schema | Workflow fails with validation error |
+| **3. Policy Check** | Analysis gate (checks 1–9b); methodology-reflection validator | Fail-closed; 76 unit tests; no partial pass | Workflow fails — no PR created |
+| **4. Human Review** | Mandatory PR approval by repository maintainer | Branch protection rule; `CODEOWNERS`; cannot self-approve | PR blocked until approved |
+| **5. Merge & Deploy** | Signed commits; CI must pass; deploy via OIDC (no stored creds) | GitHub branch protection; SLSA provenance | Merge blocked if CI fails |
+
+### Egress Firewall (Squid + iptables)
+
+All agentic workflows execute behind a **Squid proxy** with domain allow-list enforcement and **iptables** rules that DROP all non-allowlisted outbound connections:
+
+- **Allowlisted domains:** `riksdagen.se`, `www.riksdagen.se`, `data.riksdagen.se`, `regeringen.se`, `www.regeringen.se`, `riksdag-regering-ai.onrender.com`, `api.scb.se`, `api.worldbank.org`, `www.imf.org`, `sdmxcentral.imf.org`, `api.imf.org`, `data.imf.org`, `github.com`, `raw.githubusercontent.com`, `hack23.github.io`, `hack23.com`, `www.hack23.com`, `riksdagsmonitor.com`
+- **Effect:** Tool-call exfiltration attempts are blocked at the network layer — the agent cannot reach arbitrary external hosts
+- **Monitoring:** Squid access logs + `step-security/harden-runner` egress audit
+
+### MCP Server Token Scoping
+
+| MCP Server | Authentication | Scope |
+|------------|---------------|-------|
+| `riksdag-regering` | HTTPS (anonymous public API) | Read-only parliamentary data |
+| `scb` | Container-isolated; anonymous | Read-only statistics |
+| `world-bank` | Container-isolated; anonymous | Read-only indicators |
+| `github` | PAT (scoped to repository) | Repo read + PR write |
+| `filesystem` | Local (no network) | Working directory only |
+| `memory` | Local (no network) | Session-scoped KV store |
+| `sequential-thinking` | Local (no network) | No external access |
+| `playwright` | Local (headless) | No navigation outside allowlist |
+
+### Prompt Injection Mitigation Controls
+
+| Attack Vector | Mitigation | Effectiveness |
+|---------------|-----------|---------------|
+| Indirect injection via Riksdag document titles | MCP returns structured JSON (not raw HTML); titles are data fields, not executable prompts | HIGH — structured data pipeline |
+| Poisoned methodology file | Version-controlled in Git; PR-reviewed; immutable once merged | HIGH — Git integrity |
+| Template manipulation | Templates in `analysis/templates/` are PR-reviewed; changes require CEO approval per Change Management | HIGH — change control |
+| Cross-session data leakage | Each workflow run is stateless; `repo-memory` branch is append-only and reviewed | MEDIUM — review-dependent |
+| Model hallucination as injection vector | Analysis gate checks evidence citations; mandatory `dok_id` validation | HIGH — structural validation |
+
+---
+
+## 🌐 External Data Provider Trust Model (Consolidated)
+
+| Provider | Transport | Auth | Schema Validation | Cache Integrity | Tamper Detection | Trust Level |
+|----------|-----------|------|-------------------|-----------------|------------------|-------------|
+| **IMF** (Datamapper + SDMX) | HTTPS/TLS 1.3 | Anonymous | `DatamapperResponse` shape + finite-numeric + year parse-guard | `analysis/data/imf/{indicator}/{country}.json` | `.meta.json` sidecars (vintage, timestamp, hash) | PUBLIC / Read-only |
+| **SCB** (MCP container) | HTTPS to `api.scb.se` | Anonymous | PxWeb JSON-stat2 schema | `analysis/data/scb/{tableId}.json` | `.meta.json` sidecars | PUBLIC / Read-only |
+| **World Bank** (MCP container) | HTTPS to `api.worldbank.org` | Anonymous | JSON response schema | `analysis/data/worldbank/{indicator}/{country}.json` | `.meta.json` sidecars | PUBLIC / Read-only |
+| **Riksdag API** | HTTPS to `data.riksdagen.se` | Anonymous | XML/JSON schema (dok_id format) | N/A (live API) | `dok_id` cross-validation | PUBLIC / Read-only |
+| **Riksbank** | HTTPS | Anonymous | CSV/JSON schema | `analysis/data/riksbank/` | `.meta.json` sidecars | PUBLIC / Read-only |
+| **Statskontoret** | HTTPS to `www.statskontoret.se` | Anonymous | HTML/XLSX structure checks | `analysis/data/statskontoret/` | `.meta.json` sidecars | PUBLIC / Read-only |
+| **Riksrevisionen** | HTTPS | Anonymous | Report structure validation | `analysis/data/rir/` | `.meta.json` sidecars | PUBLIC / Read-only |
+
+**Common controls across all providers:**
+- TLS/HTTPS only (no plaintext)
+- Read-only data flow (inbound only; no credentials transmitted)
+- Git-tracked diffs on all cached data (PR review required for changes)
+- Graceful fallback to cached snapshots on upstream outage
+- No PII in any upstream data source
 
 ---
 
