@@ -1,0 +1,52 @@
+{
+  "$schema": "../../schemas/pir-status.schema.json",
+  "date": "2026-05-07",
+  "subfolder": "propositions",
+  "generated_at": "2026-05-07T09:00:00Z",
+  "workflow": "news-propositions",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "question": "Will UU betänkande include HR monitoring conditions for CA EPCAs?",
+      "status": "open",
+      "horizon": "T+60d",
+      "priority": "medium",
+      "answerable_by": "UU committee hearings and betänkande publication",
+      "current_assessment": "Possible (40%) based on V/MP historical pattern in comparable AA ratifications"
+    },
+    {
+      "id": "PIR-2",
+      "question": "Which EU member states are still pending KG/UZ EPCA ratification?",
+      "status": "open",
+      "horizon": "immediate",
+      "priority": "medium",
+      "answerable_by": "EU Council treaty database (treaties.un.org, EUR-Lex)",
+      "current_assessment": "Not resolved this run — requires direct EU Council query"
+    },
+    {
+      "id": "PIR-3",
+      "question": "Has Uzbekistan activated CRM discussions with EU Commission pre-ratification?",
+      "status": "open",
+      "horizon": "T+30d",
+      "priority": "high",
+      "answerable_by": "EU Commission press releases, DG GROW, EU-UZ bilateral statements",
+      "current_assessment": "No evidence found in this run; monitoring recommended"
+    },
+    {
+      "id": "PIR-4",
+      "question": "What is Kyrgyzstan's CSTO obligations status relative to EPCA commitments?",
+      "status": "open",
+      "horizon": "T+90d",
+      "priority": "medium",
+      "answerable_by": "CSTO treaty documentation + legal analysis of conflicting obligations",
+      "current_assessment": "Not resolved — requires dedicated legal analysis"
+    }
+  ],
+  "closed_pirs": [],
+  "collection_gaps": [
+    "Full EPCA text (scanned PDF unavailable)",
+    "EU Council member state ratification status table",
+    "UU prior hearings on CA EPCAs",
+    "Uzbekistan pre-ratification CRM discussions"
+  ]
+}
