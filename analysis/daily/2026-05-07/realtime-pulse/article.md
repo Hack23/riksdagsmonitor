@@ -1,11 +1,11 @@
 ---
-title: "Sweden Security State Consolidation: Tidö Coalition Banks Electoral Narrative Before 2026 Vote"
-description: "Sweden's Tidö coalition submits security detention, digital surveillance, and state e-ID legislation in coordinated pre-election legislative banking — 128 days to September 2026 election."
+title: "---"
+description: "---"
 date: 2026-05-07
 subfolder: realtime-pulse
 slug: 2026-05-07-realtime-pulse
 source_folder: analysis/daily/2026-05-07/realtime-pulse
-generated_at: 2026-05-07T13:36:25.278Z
+generated_at: 2026-05-07T15:11:39.341Z
 language: en
 layout: article
 ---
@@ -806,6 +806,8 @@ For a stable government at 175+ seats, the possible coalitions are:
 | FI-08 | Datainspektionen/HD03261 | T+30-90d | — | 🟡 MEDIUM |
 | FI-09 | Civil society challenge | T+14-45d | — | 🟡 MEDIUM |
 | FI-10 | IMF IFS restoration | T+0-60d | PIR-RT-004 | 🟡 MEDIUM |
+
+---
 
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/scenario-analysis.md -->
@@ -1691,6 +1693,8 @@ No specific indicators of coordinated disinformation related to today's legislat
 
 **Recommended monitoring**: Swedish MSB (Myndigheten för samhällsskydd och beredskap) influence operations radar. Not immediate action required.
 
+---
+
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/devils-advocate.md -->
 
@@ -1927,6 +1931,8 @@ No other subfolders generated for 2026-05-07 yet at time of analysis (realtime-p
 | Swedish CPI/employment | IFS | DEGRADED | 404 — cannot cite monthly |
 
 *economicProvenance: { provider: "imf", dataflow: "WEO", vintage: "2026-04", retrieved_at: "2026-05-07", degraded_probe: "IFS-SDMX-404" }*
+
+---
 
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/methodology-reflection.md -->
