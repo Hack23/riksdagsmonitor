@@ -26,6 +26,7 @@ import {
   renderChromeHead,
   buildChrome,
   renderArticleHtml,
+  stripBodyDuplicateSections,
   __test__,
 } from '../scripts/render-lib/index.js';
 
@@ -1901,5 +1902,145 @@ describe('render-lib — aggregateAnalysis end-to-end contract', () => {
     expect(result.title).toContain('Finance Minister Svantesson');
     expect(result.title.length).toBeLessThanOrEqual(70);
     expect(result.title).not.toMatch(/Executive Brief|2026-04-22/);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// stripBodyDuplicateSections — removes inline Reader Guide + Article Sources
+// ---------------------------------------------------------------------------
+
+describe('render-lib — stripBodyDuplicateSections', () => {
+  it('strips the ## Reader Intelligence Guide section from article body', () => {
+    const body = [
+      '## Executive Brief',
+      '',
+      'Some content here.',
+      '',
+      '## Reader Intelligence Guide',
+      '',
+      'Use this guide to read the article.',
+      '',
+      '| Reader need | What you\'ll get | Source artifact |',
+      '|---|---|---|',
+      '| BLUF | fast answer | `executive-brief.md` |',
+      '',
+      '## Risk Assessment',
+      '',
+      'Risk body.',
+    ].join('\n');
+    const result = stripBodyDuplicateSections(body);
+    expect(result).not.toContain('Reader Intelligence Guide');
+    expect(result).not.toContain('Use this guide to read');
+    expect(result).toContain('## Executive Brief');
+    expect(result).toContain('## Risk Assessment');
+    expect(result).toContain('Risk body.');
+  });
+
+  it('strips the ## Article Sources section from article body', () => {
+    const body = [
+      '## Executive Brief',
+      '',
+      'Lede content.',
+      '',
+      '## Article Sources',
+      '',
+      'Each section above projects one analysis artifact.',
+      '',
+      '- [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/x/executive-brief.md)',
+      '- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/x/risk-assessment.md)',
+    ].join('\n');
+    const result = stripBodyDuplicateSections(body);
+    expect(result).not.toContain('Article Sources');
+    expect(result).not.toContain('Each section above');
+    expect(result).toContain('## Executive Brief');
+    expect(result).toContain('Lede content.');
+  });
+
+  it('strips both sections when present together', () => {
+    const body = [
+      '## Executive Brief',
+      '',
+      'Content.',
+      '',
+      '## Reader Intelligence Guide',
+      '',
+      'Guide preamble.',
+      '',
+      '| Col1 | Col2 |',
+      '|---|---|',
+      '| A | B |',
+      '',
+      '## Synthesis Summary',
+      '',
+      'Synthesis content.',
+      '',
+      '## Article Sources',
+      '',
+      '- [`file.md`](url)',
+    ].join('\n');
+    const result = stripBodyDuplicateSections(body);
+    expect(result).not.toContain('Reader Intelligence Guide');
+    expect(result).not.toContain('Article Sources');
+    expect(result).toContain('## Executive Brief');
+    expect(result).toContain('## Synthesis Summary');
+    expect(result).toContain('Synthesis content.');
+  });
+
+  it('returns body unchanged when neither section is present', () => {
+    const body = '## Executive Brief\n\nContent.\n\n## Risk Assessment\n\nRisk.\n';
+    expect(stripBodyDuplicateSections(body)).toBe(body);
+  });
+
+  it('renders no inline Reader Guide or Article Sources in final HTML (integration)', async () => {
+    const mdWithDuplicates = [
+      '---',
+      'title: "Test Article"',
+      'description: "Test desc"',
+      'date: 2099-01-01',
+      '---',
+      '',
+      '## Executive Brief',
+      '',
+      'The lede paragraph.',
+      '',
+      '## Reader Intelligence Guide',
+      '',
+      'Use this guide to read the article as a political-intelligence product.',
+      '',
+      '| Reader need | What you\'ll get | Source artifact |',
+      '|---|---|---|',
+      '| BLUF | fast answer | `executive-brief.md` |',
+      '',
+      '## Risk Assessment',
+      '',
+      'Risk body.',
+      '',
+      '## Article Sources',
+      '',
+      'Each section above projects one analysis artifact.',
+      '',
+      '- [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/x)',
+    ].join('\n');
+
+    const html = await renderArticleHtml({
+      markdown: mdWithDuplicates,
+      lang: 'sv',
+      canonicalPath: 'news/2099-01-01-test-sv.html',
+      subfolderRepoRelPath: 'analysis/daily/2099-01-01/test',
+      artifactsUsed: ['executive-brief.md', 'risk-assessment.md'],
+    });
+
+    // The body should NOT contain the markdown-rendered Reader Guide table
+    // (it would appear as a <table> with "Reader need" header if not stripped)
+    expect(html).not.toMatch(/<th>Reader need<\/th>/);
+    // But the chrome-level Swedish Reader Guide section SHOULD be present
+    expect(html).toContain('Läsguide för underrättelseanalys');
+    // The body should NOT contain the markdown-rendered Article Sources list
+    expect(html).not.toContain('Each section above projects one analysis artifact.');
+    // But the chrome-level Swedish sources heading SHOULD be present
+    expect(html).toContain('Analyskällor och metodik');
+    // Article content remains
+    expect(html).toContain('The lede paragraph');
+    expect(html).toContain('Risk body.');
   });
 });

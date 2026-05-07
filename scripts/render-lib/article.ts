@@ -129,6 +129,35 @@ function inferArticleType(canonicalPath: string, title: string): { type: string;
   };
 }
 
+/**
+ * Strip the markdown-based "Reader Intelligence Guide" table and the
+ * "Article Sources" appendix from the article body. These sections are
+ * injected by the aggregator in English-only; the renderer emits
+ * properly localized, styled HTML versions via chrome, so the markdown
+ * duplicates must be removed to avoid showing the same content twice
+ * (once untranslated, once translated).
+ *
+ * Matches:
+ * - `## Reader Intelligence Guide` (any case) + all content until the
+ *   next H2 or end-of-string.
+ * - `## Article Sources` + all content until the next H2 or end-of-string.
+ *
+ * Exported for testability.
+ */
+export function stripBodyDuplicateSections(body: string): string {
+  // Strip "## Reader Intelligence Guide" section (from heading to next ## or end)
+  let cleaned = body.replace(
+    /^##\s+Reader Intelligence Guide[^\n]*\n(?:(?!^## )[^\n]*\n?)*/gim,
+    '',
+  );
+  // Strip "## Article Sources" section (from heading to next ## or end)
+  cleaned = cleaned.replace(
+    /^##\s+Article Sources[^\n]*\n(?:(?!^## )[^\n]*\n?)*/gim,
+    '',
+  );
+  return cleaned;
+}
+
 export async function renderArticleHtml(input: RenderArticleInput): Promise<string> {
   const parsed = matter(input.markdown);
   const fm = parsed.data as Record<string, unknown>;
@@ -147,7 +176,12 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
   const modifiedIso = new Date().toISOString();
   const articleType = inferArticleType(input.canonicalPath, title);
 
-  const bodyHtml = await renderMarkdownToHtml(parsed.content);
+  // Strip the markdown-based Reader Intelligence Guide and Article Sources
+  // from the body — the chrome-level localized HTML versions are emitted
+  // below and are properly translated for all 14 languages.
+  const cleanedContent = stripBodyDuplicateSections(parsed.content);
+
+  const bodyHtml = await renderMarkdownToHtml(cleanedContent);
 
   const articleUrl = `${BASE_URL}/${input.canonicalPath}`;
   const langMeta = LANGUAGE_META[input.lang];
