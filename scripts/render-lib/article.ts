@@ -308,7 +308,7 @@ ${sourceCards}
   guideRows.push(`            <tr>
               <td><a href="#rm-classification-results">${escapeHtml(guideChrome.auditLabel)}</a></td>
               <td>${escapeHtml(guideChrome.auditValue)}</td>
-              <td>appendix artifacts</td>
+              <td>${escapeHtml(guideChrome.auditArtifactLabel)}</td>
             </tr>`);
 
   const guideTableHtml = guideRows.length > 0 ? `

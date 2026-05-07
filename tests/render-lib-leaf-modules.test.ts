@@ -554,6 +554,7 @@ describe('aggregator/reader-guide-i18n — 14-language coverage', () => {
       expect(READER_GUIDE_I18N[lang]).toBeDefined();
       expect(READER_GUIDE_I18N[lang].chrome.heading).toBeTruthy();
       expect(READER_GUIDE_I18N[lang].chrome.preamble.length).toBeGreaterThan(20);
+      expect(READER_GUIDE_I18N[lang].chrome.auditArtifactLabel).toBeTruthy();
     }
   });
 
@@ -562,6 +563,14 @@ describe('aggregator/reader-guide-i18n — 14-language coverage', () => {
     for (const lang of LANGUAGES) {
       if (lang === 'en') continue;
       expect(READER_GUIDE_I18N[lang].chrome.heading).not.toBe(enHeading);
+    }
+  });
+
+  it('non-English languages have localised audit artifact label', () => {
+    const enAuditArtifactLabel = READER_GUIDE_I18N.en.chrome.auditArtifactLabel;
+    for (const lang of LANGUAGES) {
+      if (lang === 'en') continue;
+      expect(READER_GUIDE_I18N[lang].chrome.auditArtifactLabel).not.toBe(enAuditArtifactLabel);
     }
   });
 
@@ -591,7 +600,9 @@ describe('aggregator/reader-guide — i18n integration', () => {
       'sv',
     );
     expect(guide).toContain('## Läsarens underrättelseguide');
+    expect(guide).toContain('appendixartefakter');
     expect(guide).not.toContain('Reader Intelligence Guide');
+    expect(guide).not.toContain('appendix artifacts');
   });
 
   it('buildReaderGuide with lang=ja produces Japanese heading', () => {

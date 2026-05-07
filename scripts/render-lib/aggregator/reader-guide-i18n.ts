@@ -35,6 +35,7 @@ export interface ReaderGuideChrome {
   /** Label for the audit appendix pointer row. */
   readonly auditLabel: string;
   readonly auditValue: string;
+  readonly auditArtifactLabel: string;
 }
 
 /**
@@ -66,6 +67,7 @@ const EN_CHROME: ReaderGuideChrome = {
   perDocValue: 'dok_id-level evidence, named actors, dates, and primary-source traceability',
   auditLabel: 'Audit appendix',
   auditValue: 'classification, cross-reference, methodology and manifest evidence for reviewers',
+  auditArtifactLabel: 'appendix artifacts',
 };
 
 const EN_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -111,6 +113,7 @@ const SV_CHROME: ReaderGuideChrome = {
   perDocValue: 'dok_id-nivå bevisning, namngivna aktörer, datum och primärkällspårbarhet',
   auditLabel: 'Revisionsappendix',
   auditValue: 'klassificering, korsreferens, metodik och manifestbevisning för granskare',
+  auditArtifactLabel: 'appendixartefakter',
 };
 
 const SV_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -156,6 +159,7 @@ const DA_CHROME: ReaderGuideChrome = {
   perDocValue: 'dok_id-niveau bevismateriale, navngivne aktører, datoer og primærkildesporing',
   auditLabel: 'Revisionsappendiks',
   auditValue: 'klassifikation, krydsreference, metodik og manifest-bevismateriale til anmeldere',
+  auditArtifactLabel: 'appendiksartefakter',
 };
 
 const DA_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -201,6 +205,7 @@ const NO_CHROME: ReaderGuideChrome = {
   perDocValue: 'dok_id-nivå bevis, navngitte aktører, datoer og primærkildesporing',
   auditLabel: 'Revisjonsvedlegg',
   auditValue: 'klassifisering, kryssreferanse, metodikk og manifest-bevis for anmeldere',
+  auditArtifactLabel: 'vedleggsartefakter',
 };
 
 const NO_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -246,6 +251,7 @@ const FI_CHROME: ReaderGuideChrome = {
   perDocValue: 'dok_id-tason todistusaineisto, nimetyt toimijat, päivämäärät ja alkuperäislähteen jäljitettävyys',
   auditLabel: 'Tarkastusliite',
   auditValue: 'luokitus, ristiviittaus, metodologia ja manifest-todistusaineisto tarkastajille',
+  auditArtifactLabel: 'liiteartefaktit',
 };
 
 const FI_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -291,6 +297,7 @@ const DE_CHROME: ReaderGuideChrome = {
   perDocValue: 'dok_id-Ebene Beweismaterial, benannte Akteure, Daten und Primärquellenrückverfolgbarkeit',
   auditLabel: 'Prüfungsanhang',
   auditValue: 'Klassifizierung, Querverweise, Methodik und Manifest-Beweismaterial für Prüfer',
+  auditArtifactLabel: 'Anhangsartefakte',
 };
 
 const DE_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -336,6 +343,7 @@ const FR_CHROME: ReaderGuideChrome = {
   perDocValue: "preuve au niveau dok_id, acteurs nommés, dates et traçabilité de la source primaire",
   auditLabel: "Annexe d'audit",
   auditValue: "classification, références croisées, méthodologie et preuve manifeste pour les réviseurs",
+  auditArtifactLabel: 'artefacts d’annexe',
 };
 
 const FR_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -381,6 +389,7 @@ const ES_CHROME: ReaderGuideChrome = {
   perDocValue: 'evidencia a nivel de dok_id, actores nombrados, fechas y trazabilidad de fuente primaria',
   auditLabel: 'Apéndice de auditoría',
   auditValue: 'clasificación, referencias cruzadas, metodología y evidencia manifiesta para revisores',
+  auditArtifactLabel: 'artefactos del apéndice',
 };
 
 const ES_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -426,6 +435,7 @@ const NL_CHROME: ReaderGuideChrome = {
   perDocValue: 'bewijs op dok_id-niveau, benoemde actoren, datums en traceerbaarheid van primaire bron',
   auditLabel: 'Auditbijlage',
   auditValue: 'classificatie, kruisverwijzingen, methodologie en manifest-bewijs voor beoordelaars',
+  auditArtifactLabel: 'appendixartefacten',
 };
 
 const NL_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -471,6 +481,7 @@ const AR_CHROME: ReaderGuideChrome = {
   perDocValue: 'أدلة على مستوى dok_id، فاعلون مسمّون، تواريخ، وتتبع المصدر الأساسي',
   auditLabel: 'ملحق التدقيق',
   auditValue: 'تصنيف، إسناد ترافقي، منهجية وأدلة بيان للمراجعين',
+  auditArtifactLabel: 'مخرجات الملحق',
 };
 
 const AR_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -516,6 +527,7 @@ const HE_CHROME: ReaderGuideChrome = {
   perDocValue: 'ראיות ברמת dok_id, שחקנים בשם, תאריכים ועקיבות מקור ראשוני',
   auditLabel: 'נספח ביקורת',
   auditValue: 'סיווג, הפניות צולבות, מתודולוגיה וראיות מניפסט לסוקרים',
+  auditArtifactLabel: 'תוצרי נספח',
 };
 
 const HE_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -561,6 +573,7 @@ const JA_CHROME: ReaderGuideChrome = {
   perDocValue: 'dok_idレベルの証拠、名前付きアクター、日付、一次資料の追跡可能性',
   auditLabel: '監査付録',
   auditValue: '分類、相互参照、方法論、レビュアー向けマニフェスト証拠',
+  auditArtifactLabel: '付録アーティファクト',
 };
 
 const JA_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -606,6 +619,7 @@ const KO_CHROME: ReaderGuideChrome = {
   perDocValue: 'dok_id 수준 증거, 명명된 행위자, 날짜 및 1차 출처 추적 가능성',
   auditLabel: '감사 부록',
   auditValue: '분류, 교차 참조, 방법론 및 검토자를 위한 매니페스트 증거',
+  auditArtifactLabel: '부록 산출물',
 };
 
 const KO_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -651,6 +665,7 @@ const ZH_CHROME: ReaderGuideChrome = {
   perDocValue: 'dok_id级别证据、命名行动者、日期和一手来源可追溯性',
   auditLabel: '审计附录',
   auditValue: '分类、交叉引用、方法论和审阅者清单证据',
+  auditArtifactLabel: '附录工件',
 };
 
 const ZH_ENTRIES: Record<string, ReaderGuideEntryI18n> = {

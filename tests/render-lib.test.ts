@@ -2058,24 +2058,24 @@ describe('render-lib — stripBodyDuplicateSections', () => {
     ].join('\n');
 
     // Test all 14 languages to verify localization works
-    const expectations: Array<{ lang: 'en' | 'sv' | 'da' | 'no' | 'fi' | 'de' | 'fr' | 'es' | 'nl' | 'ar' | 'he' | 'ja' | 'ko' | 'zh'; contains: string }> = [
-      { lang: 'en', contains: 'Reader Intelligence Guide' },
-      { lang: 'sv', contains: 'Läsarens underrättelseguide' },
-      { lang: 'da', contains: 'Læserens efterretningsguide' },
-      { lang: 'no', contains: 'Leserens etterretningsguide' },
-      { lang: 'fi', contains: 'Lukijan tiedusteluopas' },
-      { lang: 'de', contains: 'Nachrichtendienstlicher Leseleitfaden' },
-      { lang: 'fr', contains: 'Guide de renseignement du lecteur' },
-      { lang: 'es', contains: 'Guía de inteligencia del lector' },
-      { lang: 'nl', contains: 'Inlichtingengids voor de lezer' },
-      { lang: 'ar', contains: 'دليل القارئ الاستخباراتي' },
-      { lang: 'he', contains: 'מדריך המודיעין לקורא' },
-      { lang: 'ja', contains: '読者向けインテリジェンスガイド' },
-      { lang: 'ko', contains: '독자 인텔리전스 가이드' },
-      { lang: 'zh', contains: '读者情报指南' },
+    const expectations: Array<{ lang: 'en' | 'sv' | 'da' | 'no' | 'fi' | 'de' | 'fr' | 'es' | 'nl' | 'ar' | 'he' | 'ja' | 'ko' | 'zh'; heading: string; auditArtifact: string }> = [
+      { lang: 'en', heading: 'Reader Intelligence Guide', auditArtifact: 'appendix artifacts' },
+      { lang: 'sv', heading: 'Läsarens underrättelseguide', auditArtifact: 'appendixartefakter' },
+      { lang: 'da', heading: 'Læserens efterretningsguide', auditArtifact: 'appendiksartefakter' },
+      { lang: 'no', heading: 'Leserens etterretningsguide', auditArtifact: 'vedleggsartefakter' },
+      { lang: 'fi', heading: 'Lukijan tiedusteluopas', auditArtifact: 'liiteartefaktit' },
+      { lang: 'de', heading: 'Nachrichtendienstlicher Leseleitfaden', auditArtifact: 'Anhangsartefakte' },
+      { lang: 'fr', heading: 'Guide de renseignement du lecteur', auditArtifact: 'artefacts d’annexe' },
+      { lang: 'es', heading: 'Guía de inteligencia del lector', auditArtifact: 'artefactos del apéndice' },
+      { lang: 'nl', heading: 'Inlichtingengids voor de lezer', auditArtifact: 'appendixartefacten' },
+      { lang: 'ar', heading: 'دليل القارئ الاستخباراتي', auditArtifact: 'مخرجات الملحق' },
+      { lang: 'he', heading: 'מדריך המודיעין לקורא', auditArtifact: 'תוצרי נספח' },
+      { lang: 'ja', heading: '読者向けインテリジェンスガイド', auditArtifact: '付録アーティファクト' },
+      { lang: 'ko', heading: '독자 인텔리전스 가이드', auditArtifact: '부록 산출물' },
+      { lang: 'zh', heading: '读者情报指南', auditArtifact: '附录工件' },
     ];
 
-    for (const { lang, contains } of expectations) {
+    for (const { lang, heading, auditArtifact } of expectations) {
       const html = await renderArticleHtml({
         markdown: md,
         lang,
@@ -2083,11 +2083,21 @@ describe('render-lib — stripBodyDuplicateSections', () => {
         subfolderRepoRelPath: 'analysis/daily/2099-01-01/test',
         artifactsUsed: ['executive-brief.md', 'risk-assessment.md'],
       });
-      expect(html, `lang=${lang} should contain localized heading`).toContain(contains);
+      expect(html, `lang=${lang} should contain localized heading`).toContain(heading);
+      expect(html, `lang=${lang} should contain localized audit artifact label`).toContain(auditArtifact);
+      expect(html, `lang=${lang} should render responsive Reader Guide table chrome`).toContain('class="rm-reader-guide-table"');
       // Table column headers should also be localized (not English "Reader need")
       if (lang !== 'en') {
         expect(html, `lang=${lang} should not have English table header`).not.toContain('<th>Reader need</th>');
+        expect(html, `lang=${lang} should not have English audit artifact label`).not.toContain('<td>appendix artifacts</td>');
       }
     }
+  });
+
+  it('styles Reader Intelligence Guide table outside the article body', () => {
+    const css = fs.readFileSync(path.join(process.cwd(), 'styles.css'), 'utf-8');
+    expect(css).toContain('.rm-reader-guide .rm-table-wrap');
+    expect(css).toContain('.rm-reader-guide-table');
+    expect(css).toMatch(/\.rm-reader-guide-table\s*\{[\s\S]*?min-width:\s*42rem/);
   });
 });
