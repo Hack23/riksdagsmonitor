@@ -75,17 +75,29 @@ describe('PR file-budget enforcement', () => {
     expect(commitPrompt).toContain('non-negotiable');
   });
 
-  it('news-propositions.md workflow has max-patch-files < 100', () => {
-    const workflow = fs.readFileSync(
-      path.join(WORKFLOWS_DIR, 'news-propositions.md'),
-      'utf8',
-    );
+  it('all 14 news workflows have max-patch-files in safe-outputs block and ≤ 100', () => {
+    const newsWorkflows = fs.readdirSync(WORKFLOWS_DIR)
+      .filter((f) => f.startsWith('news-') && f.endsWith('.md'));
 
-    const match = workflow.match(/max-patch-files:\s*(\d+)/);
-    expect(match).not.toBeNull();
-    const maxPatchFiles = parseInt(match![1]!, 10);
-    expect(maxPatchFiles).toBeLessThan(MAX_PR_FILES);
-    expect(maxPatchFiles).toBeLessThanOrEqual(SAFE_THRESHOLD);
+    expect(newsWorkflows.length, 'expected exactly 14 news-*.md workflows').toBe(14);
+
+    for (const file of newsWorkflows) {
+      const workflow = fs.readFileSync(
+        path.join(WORKFLOWS_DIR, file),
+        'utf8',
+      );
+
+      // Extract the safe-outputs block (between "safe-outputs:" and "create-pull-request:")
+      // to avoid matching prose mentions of max-patch-files
+      const safeOutputsMatch = workflow.match(/safe-outputs:\s*\n([\s\S]*?)create-pull-request:/);
+      expect(safeOutputsMatch, `${file} must have a safe-outputs config block`).not.toBeNull();
+
+      const safeOutputsBlock = safeOutputsMatch![1]!;
+      const match = safeOutputsBlock.match(/max-patch-files:\s*(\d+)/);
+      expect(match, `${file} must declare max-patch-files in safe-outputs`).not.toBeNull();
+      const maxPatchFiles = parseInt(match![1]!, 10);
+      expect(maxPatchFiles, `${file} max-patch-files (${maxPatchFiles}) must be ≤ ${MAX_PR_FILES}`).toBeLessThanOrEqual(MAX_PR_FILES);
+    }
   });
 
   it('existing analysis folders stay under file budget', () => {

@@ -67,6 +67,7 @@ network:
     - data.imf.org
     - www.imf.org
     - sdmxcentral.imf.org
+    - dataservices.imf.org
     - data.riksdagen.se
     - www.riksdagen.se
     - riksdagen.se
@@ -125,6 +126,7 @@ safe-outputs:
     - data.imf.org
     - www.imf.org
     - sdmxcentral.imf.org
+    - dataservices.imf.org
     - data.riksdagen.se
     - www.riksdagen.se
     - riksdagen.se
@@ -141,6 +143,7 @@ safe-outputs:
     - raw.githubusercontent.com
     - hack23.github.io
   max-patch-size: 10240
+  max-patch-files: 100
   create-pull-request:
     labels: [agentic-news, analysis-data, long-horizon, forward-look]
     draft: false
