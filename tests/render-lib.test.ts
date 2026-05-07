@@ -1341,7 +1341,7 @@ describe('render-lib — renderArticleHtml (end-to-end)', () => {
       subfolderRepoRelPath: 'analysis/daily/2099-01-01/propositions',
       artifactsUsed: ['executive-brief.md'],
     });
-    expect(html).toContain('Läsguide för underrättelseanalys');
+    expect(html).toContain('Läsarens underrättelseguide');
     expect(html).toContain('OSINT-metodik');
     expect(html).toContain('political-intelligence_sv.html');
     // Swedish i18n title in source card
@@ -2034,7 +2034,7 @@ describe('render-lib — stripBodyDuplicateSections', () => {
     // (it would appear as a <table> with "Reader need" header if not stripped)
     expect(html).not.toMatch(/<th>Reader need<\/th>/);
     // But the chrome-level Swedish Reader Guide section SHOULD be present
-    expect(html).toContain('Läsguide för underrättelseanalys');
+    expect(html).toContain('Läsarens underrättelseguide');
     // The body should NOT contain the markdown-rendered Article Sources list
     expect(html).not.toContain('Each section above projects one analysis artifact.');
     // But the chrome-level Swedish sources heading SHOULD be present
@@ -2042,5 +2042,49 @@ describe('render-lib — stripBodyDuplicateSections', () => {
     // Article content remains
     expect(html).toContain('The lede paragraph');
     expect(html).toContain('Risk body.');
+  });
+
+  it('renders fully localized Reader Intelligence Guide table for all 14 languages', async () => {
+    const md = [
+      '---',
+      'title: "Test"',
+      'description: "Test"',
+      'date: 2099-01-01',
+      '---',
+      '',
+      '## Executive Brief',
+      '',
+      'Content.',
+    ].join('\n');
+
+    // Test a sample of languages to verify localization works
+    const expectations: Array<{ lang: 'en' | 'sv' | 'da' | 'no' | 'fi' | 'de' | 'fr' | 'es' | 'nl' | 'ar' | 'he' | 'ja' | 'ko' | 'zh'; contains: string }> = [
+      { lang: 'en', contains: 'Reader Intelligence Guide' },
+      { lang: 'sv', contains: 'Läsarens underrättelseguide' },
+      { lang: 'da', contains: 'Læserens efterretningsguide' },
+      { lang: 'no', contains: 'Leserens etterretningsguide' },
+      { lang: 'fi', contains: 'Lukijan tiedusteluopas' },
+      { lang: 'de', contains: 'Nachrichtendienstlicher Leseleitfaden' },
+      { lang: 'fr', contains: 'Guide de renseignement du lecteur' },
+      { lang: 'es', contains: 'Guía de inteligencia del lector' },
+      { lang: 'nl', contains: 'Inlichtingengids voor de lezer' },
+      { lang: 'ja', contains: '読者向けインテリジェンスガイド' },
+      { lang: 'ko', contains: '독자 인텔리전스 가이드' },
+    ];
+
+    for (const { lang, contains } of expectations) {
+      const html = await renderArticleHtml({
+        markdown: md,
+        lang,
+        canonicalPath: `news/2099-01-01-test-${lang}.html`,
+        subfolderRepoRelPath: 'analysis/daily/2099-01-01/test',
+        artifactsUsed: ['executive-brief.md', 'risk-assessment.md'],
+      });
+      expect(html, `lang=${lang} should contain localized heading`).toContain(contains);
+      // Table column headers should also be localized (not English "Reader need")
+      if (lang !== 'en') {
+        expect(html, `lang=${lang} should not have English table header`).not.toContain('<th>Reader need</th>');
+      }
+    }
   });
 });

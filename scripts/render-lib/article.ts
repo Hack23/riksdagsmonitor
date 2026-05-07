@@ -42,6 +42,9 @@ import { depth } from './chrome/helpers.js';
 
 import { getBySubfolder, getById, loadArticleTypesRegistry } from './article-types.js';
 import { artifactTitle, artifactIcon } from '../political-intelligence/i18n/artifact-i18n.js';
+import { readerGuideI18n } from './aggregator/reader-guide-i18n.js';
+import { READER_GUIDE_ENTRIES, anchorForTitle } from './aggregator/reader-guide.js';
+import { titleForArtifact } from './aggregator/order.js';
 
 /**
  * CSS selectors identifying the voice-assistant TTS-readable regions of
@@ -267,14 +270,68 @@ ${sourceCards}
         </details>
       </section>` : '';
 
-  // Reader Intelligence Guide — explains analysis methods to readers.
+  // Reader Intelligence Guide — full localized per-artifact table + methodology cards.
   const rg = langMeta.translations;
   const prefix = depth(input.canonicalPath);
   const piFile = input.lang === 'en' ? 'political-intelligence.html' : `political-intelligence_${input.lang}.html`;
+
+  // Build the full localized Reader Intelligence Guide table
+  const guideI18n = readerGuideI18n(input.lang);
+  const guideChrome = guideI18n.chrome;
+  const availableArtifacts = new Set(artifacts);
+  const guideRows = READER_GUIDE_ENTRIES
+    .filter((entry) => availableArtifacts.has(entry.file))
+    .map((entry) => {
+      const sectionTitle = titleForArtifact(entry.file);
+      const anchor = anchorForTitle(sectionTitle);
+      const localised = guideI18n.entries[entry.file];
+      const label = localised?.label ?? entry.label;
+      const readerValue = localised?.readerValue ?? entry.readerValue;
+      return `            <tr>
+              <td><a href="#${anchor}">${escapeHtml(label)}</a></td>
+              <td>${escapeHtml(readerValue)}</td>
+              <td><code>${escapeHtml(entry.file)}</code></td>
+            </tr>`;
+    });
+
+  // Add per-document intelligence row if document analyses exist
+  const hasDocAnalyses = artifacts.some((a) => a.startsWith('documents/') && a.endsWith('-analysis.md'));
+  if (hasDocAnalyses) {
+    guideRows.push(`            <tr>
+              <td>${escapeHtml(guideChrome.perDocLabel)}</td>
+              <td>${escapeHtml(guideChrome.perDocValue)}</td>
+              <td><code>documents/*-analysis.md</code></td>
+            </tr>`);
+  }
+
+  // Add audit appendix row
+  guideRows.push(`            <tr>
+              <td>${escapeHtml(guideChrome.auditLabel)}</td>
+              <td>${escapeHtml(guideChrome.auditValue)}</td>
+              <td>appendix artifacts</td>
+            </tr>`);
+
+  const guideTableHtml = guideRows.length > 0 ? `
+        <div class="rm-table-wrap">
+          <table class="rm-reader-guide-table">
+            <thead>
+              <tr>
+                <th>${escapeHtml(guideChrome.colReaderNeed)}</th>
+                <th>${escapeHtml(guideChrome.colWhatYouGet)}</th>
+                <th>${escapeHtml(guideChrome.colSourceArtifact)}</th>
+              </tr>
+            </thead>
+            <tbody>
+${guideRows.join('\n')}
+            </tbody>
+          </table>
+        </div>` : '';
+
   const readerGuideHtml = `
       <section class="rm-reader-guide" aria-labelledby="rm-reader-guide-heading">
-        <h2 id="rm-reader-guide-heading"><span class="rm-icon" aria-hidden="true">🧭</span> ${escapeHtml(rg.articleReaderGuideHeading)}</h2>
-        <p class="rm-reader-guide-desc">${escapeHtml(rg.articleReaderGuideDesc)}</p>
+        <h2 id="rm-reader-guide-heading"><span class="rm-icon" aria-hidden="true">🧭</span> ${escapeHtml(guideChrome.heading)}</h2>
+        <p class="rm-reader-guide-desc">${escapeHtml(guideChrome.preamble)}</p>
+${guideTableHtml}
         <div class="rm-reader-guide-grid">
           <div class="rm-reader-guide-card">
             <div class="rm-reader-guide-card-icon" aria-hidden="true">🕵️</div>
