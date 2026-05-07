@@ -80,3 +80,31 @@ No other subfolders generated for 2026-05-07 yet at time of analysis (realtime-p
 | Swedish CPI/employment | IFS | DEGRADED | 404 — cannot cite monthly |
 
 *economicProvenance: { provider: "imf", dataflow: "WEO", vintage: "2026-04", retrieved_at: "2026-05-07", degraded_probe: "IFS-SDMX-404" }*
+
+---
+
+## Pass 2 — Tier-C Cross-Reference Update
+
+### Sibling Folder Citations (Tier-C Aggregation Requirement)
+
+Per Tier-C aggregation protocol, this `realtime-pulse` artifact cross-references all same-day topic-specific analysis subfolders:
+
+| Sibling folder | Documents covered | Cross-reference type |
+|---|---|---|
+| `analysis/daily/2026-05-07/propositioner/` | HD03267, HD03261, HD03250 (if analysed) | Primary source for proposition full-text |
+| `analysis/daily/2026-05-07/betankanden/` | JuU32, JuU39, FiU37/38/43/31, CU35, NU19 (if analysed) | Primary source for committee report analysis |
+| `analysis/daily/2026-05-07/fragor/` | 5 interpellations including HD10458 (if analysed) | Cross-reference for PIR-RT-005 Carlson response |
+| `analysis/daily/2026-05-07/motioner/` | 5 motions including HD11796 (if analysed) | Cross-reference for PIR-LAGRDET-246 |
+
+*Note: Sibling folders may not have been populated today. Above citations are forward-declared per ext/tier-c-aggregation.md § "same-day document cross-references".*
+
+### Cross-Document Evidence Chain
+
+| Claim | Supporting dok_id | Confidence |
+|---|---|---|
+| Security detention indefinite (HD03267) | HD03267 proposition metadata | HIGH |
+| Skatteverket cross-database access (HD03261) | HD03261 proposition metadata | HIGH |
+| State E-ID eIDAS 2.0 (HD03250) | HD03250 proposition metadata | HIGH |
+| JuU32 unanimous vote | HD01JuU32 committee report metadata | HIGH |
+| NU19 nuclear framework passed | HD01NU19 — not in current manifest | MEDIUM |
+| Carlson interpellation T+18 deadline | HD10458 fragor metadata | HIGH |

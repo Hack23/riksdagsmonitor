@@ -124,3 +124,44 @@
 | FI-08 | Datainspektionen/HD03261 | T+30-90d | — | 🟡 MEDIUM |
 | FI-09 | Civil society challenge | T+14-45d | — | 🟡 MEDIUM |
 | FI-10 | IMF IFS restoration | T+0-60d | PIR-RT-004 | 🟡 MEDIUM |
+
+---
+
+## Pass 2 — Critical Timing Additions (2026-05-07)
+
+### T+18 Days (2026-05-25) — Minister Carlson Ostlänken Deadline
+- **PIR**: PIR-RT-005 (Ostlänken infrastructure response)
+- **Watch**: Carlson must respond to interpellation HD10458 by 2026-05-25
+- **Significance**: Infrastructure spending priorities going into election. Opposition frames this as fiscal mismanagement.
+- **Trigger threshold**: Response delay or evasive non-answer would amplify opposition narrative.
+
+### T+40 Days (2026-06-16) — KU39 Constitutional Transparency Vote
+- **PIR**: PIR-3-KU39 (constitutional scrutiny outcome)
+- **Watch**: Konstitutionsutskottet (KU) vote on scrutiny report KU39 regarding government transparency obligations
+- **Significance**: Government ministers potentially exposed to formal constitutional criticism. S using as anti-coalition electoral issue.
+- **Trigger threshold**: Formal ministerial criticism in KU39 = significant electoral damage.
+- **Coalition position**: M/SD/KD/L bloc expected to protect ministers; opposition S/V/MP expected to criticise.
+
+### T+41 Days (2026-06-17) — Nuclear Energy Act Effective Date
+- **PIR**: PIR-RT-006 (NU19 nuclear applications)
+- **Watch**: New nuclear construction permission framework (from bet. NU19) enters into force
+- **Significance**: First legal framework for new Swedish nuclear since 1980. Major Tidö coalition energy agenda milestone.
+- **Trigger threshold**: Application from Vattenfall or other operator before or immediately after T+41 = confirming momentum.
+
+### T+128 Days (2026-09-13) — Election Day
+- **Coalition survival requirement**: Maintain 176-seat majority through summer recess votes
+- **Key risks**: L discipline on security detention (HD03267 final vote), Lagrådet yttrande on migration props
+- **Polling watch**: Novus/Demoskop weekly releases from T+14 onward
+
+---
+
+## IMF Economic Timing Context (Pass 2 Addition)
+
+| Indicator | Source | Status | Next release |
+|---|---|---|---|
+| WEO Sweden GDP growth 2026 | IMF WEO-2026-04 | +0.8% (downgraded) | WEO Update July 2026 |
+| Fiscal balance 2026 | IMF FM-2026-04 | -0.4% GDP | — |
+| CPI monthly Sweden | IFS SDMX | DEGRADED (404) | Unknown — probe daily |
+| KIX-weighted EUR/SEK | IMF ER | Available via WEO | — |
+
+*ANNOTATION: IFS SDMX 404 since 2026-05-07. Use WEO-2026-04 vintage only. Claims older than 6 months require annotation.*

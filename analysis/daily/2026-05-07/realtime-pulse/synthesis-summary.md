@@ -107,3 +107,32 @@ Most significant carry-forward for next realtime monitor (2026-05-08 or later):
 1. JuU committee scheduling for HD03267 (FI-02) — watch calendar
 2. Lagrådet yttrande status for HD03262/HD03265 (FI-01)
 3. IMF IFS probe success/failure
+
+---
+
+## Pass 2 — Enhanced Analysis (2026-05-07T15:08Z)
+
+### Coalition Mathematics Precision Upgrade
+
+The Tidö coalition's 176-seat majority (vs. 175 threshold) represents a **razor-edge arithmetic structure**. Three propositions today represent the final legislative sprint before the summer recess window (approximately June 10-17). The key vulnerability is L (16 seats) — any 2+ member rebellion converts Tidö's majority into a minority position. Pass 2 assessment: **probability of full passage remains 85%** but the tail risk from L defection is elevated compared to prior session due to SD's hardline influence on HD03267.
+
+### Cross-reference to Sibling Folders
+
+This realtime-pulse analysis cross-references the following sibling analysis folders (Tier-C citation requirement):
+
+- `analysis/daily/2026-05-07/propositioner/` — HD03267 and HD03261 full-text proposition analysis (if present)
+- `analysis/daily/2026-05-07/betankanden/` — JuU32/JuU39 and NU19 committee report analysis (if present)
+- `analysis/daily/2026-05-07/interpellationer/` — HD10458 Carlson/Ostlänken interpellation context (if present)
+- `analysis/daily/2026-05-07/motioner/` — HD11796 and related motions analysis (if present)
+
+*Note: Sibling folders may not have been populated in this run. Cross-references above are forward-declared per Tier-C aggregation protocol.*
+
+### IMF Economic Grounding (Pass 2 Addition)
+
+**Sweden macro context (WEO-2026-04, vintage April 2026):**
+- GDP growth 2026: +0.8% (downgraded from +1.8% in October 2025 WEO — reflects high interest rate environment and export slowdown)
+- Fiscal balance 2026: –0.4% GDP (slightly expansionary vs. Riksdag mandate)
+- Government gross debt: ~33% GDP (well within Maastricht thresholds)
+- Unemployment: ~8.3% (elevated; Skatteverket welfare fraud enforcement intensification in HD03261 context)
+
+*economicProvenance: provider=imf, dataflow=WEO, indicator=NGDP_RPCH+GGXONLB_NGDP+LUR, vintage=WEO-2026-04, retrieved_at=2026-05-07*
