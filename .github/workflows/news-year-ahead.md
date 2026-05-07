@@ -206,7 +206,7 @@ The agent translates `article.md` into `article.<lang>.md` for every non-English
 
 > 🟡 **Scope-compression rule**: if you reach agent minute 35 without Pass 2 complete, halt Pass 2 deepening and run the gate against whatever you have — `if-no-changes: warn` will not silently fail the run, but a missing PR will. Always trim depth before iterating.
 
-> ⚠️ **HARD FILE LIMIT (100 files)**: The safe-outputs handler hard-rejects PRs with > 100 files (E003). You **MUST** run the 100-file guard from `07-commit-and-pr.md` before calling `safeoutputs___create_pull_request`. Budget: 23 core artifacts + README + article.md + 13 article.<lang>.md + 14 HTML + pir-status.json ≈ 52 files. **Never stage `documents/` or `pass1/` directories.** If staged count exceeds 90, unstage `documents/` then JSON files until under budget. This is non-negotiable — the previous run failed with 269 files.
+> ⚠️ **HARD FILE LIMIT (100 files)**: The safe-outputs handler hard-rejects PRs with > 100 files (E003). You **MUST** run the 100-file guard from `07-commit-and-pr.md` before calling `safeoutputs___create_pull_request`. Budget: 23 core artifacts + README (1) + article.md (1) + 13 article.<lang>.md + 14 HTML + pir-status.json (1) ≈ 53 files. **Never stage `documents/` or `pass1/` directories.** If staged count exceeds 90, unstage `documents/` then JSON files until under budget. This is non-negotiable — the previous run failed with 269 files.
 
 ## Inputs
 
