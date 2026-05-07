@@ -135,9 +135,9 @@
   --font-size-5xl: 3rem; /* 48px */
   
   /* Heading Sizes (approximately 1.25 ratio, optimized for readability) */
-  --h1-size: 2.5rem; /* 40px */
-  --h2-size: 2rem; /* 32px */
-  --h3-size: 1.625rem; /* 26px */
+  --h1-size: clamp(2rem, 2.4vw, 2.375rem); /* 32-38px */
+  --h2-size: clamp(1.5rem, 1.8vw, 1.875rem); /* 24-30px */
+  --h3-size: clamp(1.25rem, 1.4vw, 1.5rem); /* 20-24px */
   --h4-size: 1.25rem; /* 20px */
   --h5-size: 1.125rem; /* 18px */
   --h6-size: 1rem; /* 16px */
@@ -158,10 +158,10 @@
   --spacing-2xl: 3rem; /* 48px */
   --spacing-3xl: 4rem; /* 64px */
   --spacing-4xl: 6rem; /* 96px */
-  /* Shared responsive edge gutter for full-width pages/chrome. Generated
-     article, news-index, footer and header layouts use this token so they can
-     span the viewport while keeping readable touch-safe horizontal breathing
-     room on phones and large displays. */
+  /* Shared responsive edge gutter for full-width pages/chrome. Scales from
+     0.75rem on narrow phones toward 2rem on wide desktops. Generated article,
+     news-index, footer and header layouts use this token so they can span the
+     viewport while keeping readable touch-safe horizontal breathing room. */
   --page-gutter: clamp(0.75rem, 2vw, 2rem);
 
   /* ── Design Tokens: Spacing Scale (T-shirt → numeric alias) ──────────── */
@@ -1414,8 +1414,8 @@ header {
  * tighter than the hand-authored index hero, and add bottom spacing so the
  * language bar / breadcrumb does not collide with the banner image. */
 .rm-article-body .hero-banner {
-  /* Article/news chrome keeps the same fully-visible image treatment as the
-     homepage hero but uses a tighter maximum so the article lead remains above
+  /* Article/news chrome uses the same `contain`/full-artwork approach as the
+     homepage hero, with a smaller maximum so the article lead remains above
      the fold on common laptop viewports. */
   height: clamp(140px, 22vw, 320px);
   margin-bottom: var(--spacing-md);
@@ -9218,7 +9218,7 @@ body.news-page {
 
 .news-page h1 {
   font-family: 'Orbitron', 'Orbitron Fallback', sans-serif;
-  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-size: clamp(1.5rem, 3vw, 2.35rem);
   margin: 0 0 0.75rem 0;
   background: linear-gradient(135deg, var(--primary-color), var(--link-color));
   -webkit-background-clip: text;
@@ -12681,8 +12681,8 @@ html[data-theme="light"] .footer-disclaimer a {
 /* Page shell only: buildChrome places `rm-article-body` on <body> for all
    generated pages. Keep the viewport background/min-height here rather than on
    nested article content blocks; applying `min-height:100vh` to inner
-   `.rm-article-body` wrappers caused the article double-scroll / over-tall
-   section behavior visible in the screenshot. */
+   `.rm-article-body` wrappers caused nested scroll-like pages where each
+   prose chunk tried to fill a full viewport height. */
 
 body.rm-article-body {
   color: var(--light-text, #e0e0e0);
@@ -12719,13 +12719,13 @@ body.rm-article-body {
 }
 
 .rm-article-header {
-  margin-bottom: clamp(1.75rem, 4vw, 3rem);
+  margin-bottom: clamp(1rem, 2.5vw, 2rem);
 }
 
 .rm-article-header h1 {
   font-family: var(--font-heading, 'Orbitron', sans-serif);
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
-  line-height: 1.15;
+  font-size: clamp(1.45rem, 3vw, 2.2rem);
+  line-height: 1.12;
   color: var(--primary-cyan, #00d9ff);
   margin: 0 0 0.5rem;
   text-shadow: 0 0 16px color-mix(in srgb, var(--primary-cyan, #00d9ff) 35%, transparent);
@@ -12735,8 +12735,8 @@ body.rm-article-body {
   max-width: 74ch;
   margin: 0.85rem 0 1rem;
   color: color-mix(in srgb, var(--light-text, #e0e0e0) 88%, transparent);
-  font-size: clamp(1.0625rem, 2vw, 1.25rem);
-  line-height: 1.65;
+  font-size: clamp(1rem, 1.3vw, 1.125rem);
+  line-height: 1.6;
 }
 
 .rm-article-meta {
@@ -12768,7 +12768,7 @@ body.rm-article-body {
 
 .rm-article-body h2 {
   font-family: var(--font-heading, 'Orbitron', sans-serif);
-  font-size: clamp(1.375rem, 2.5vw, 1.875rem);
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
   color: var(--primary-yellow, #ffbe0b);
   margin: 2.5rem 0 0.75rem;
   padding-bottom: 0.25rem;
@@ -12778,7 +12778,7 @@ body.rm-article-body {
 
 .rm-article-body h3 {
   font-family: var(--font-heading, 'Orbitron', sans-serif);
-  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
   color: var(--primary-magenta, #ff006e);
   margin: 1.75rem 0 0.5rem;
   scroll-margin-top: 5rem;
