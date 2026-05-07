@@ -50,7 +50,7 @@ Stage analysis + article.md + news/*.html → Commit → ONE create_pull_request
 ```
 
 - The article HTML is a **pure projection** of the analysis `.md` artefacts — 100 % of article prose lives under `analysis/daily/$DATE/$SUB/`. There is no scaffold, no `AI_MUST_REPLACE`, and no separate "article run".
-- Translations to the remaining twelve languages are produced by the dedicated **`news-translate`** workflow, which consumes published en/sv articles and runs independently. Per-type workflows only render `en,sv`.
+- The dedicated **`news-translate`** workflow is now a quality / catch-up workflow only — it re-validates upstream translations and back-fills any language a per-type workflow could not finish. Per-type workflows themselves render **all 14 languages** in the same agentic run via the per-language Markdown translation step in `06-article-generation.md`.
 - Same-day re-runs always use the same `$ANALYSIS_DIR` folder — never create a parallel folder for the same date + type combination unless `force_generation=true`.
 
 ## Session timing

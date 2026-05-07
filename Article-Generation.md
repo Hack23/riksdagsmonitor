@@ -130,8 +130,8 @@ flowchart TB
     E --> F{"🚦 05 Analysis Gate<br/>evidence · Mermaid · Pass-2 · structure"}
     F -- fail --> E
     F -- pass --> G["📝 aggregate-analysis.ts<br/>analysis folder → article.md"]
-    G --> H["🌐 render-articles.ts<br/>article.md → news/*-{en,sv}.html"]
-    H --> I["🌍 news-translate.md<br/>12 additional languages"]
+    G --> H["🌐 render-articles.ts<br/>article.md → news/*-{14 languages}.html"]
+    H --> I["🌍 news-translate.md (catch-up only)<br/>refines/upgrades English-fallback files"]
     H --> J["📦 Vite build<br/>prebuild aggregates/renders/indexes/rss/sitemap"]
     I --> J
     J --> K["🚀 deploy-s3.yml<br/>S3 upload + CloudFront invalidation"]
@@ -163,13 +163,13 @@ It declares:
 |---|---|
 | **Name** | `News: Interpellation Debates` |
 | **Schedule** | Daily around 07:00 on weekdays |
-| **Manual inputs** | `article_date`, `force_generation`, `languages`, `analysis_depth` |
+| **Manual inputs** | `article_date`, `force_generation`, `analysis_depth` (no `languages` input — every run renders all 14) |
 | **Runtime** | Node.js `26` |
 | **Engine** | Copilot with `claude-sonnet-4.6` |
 | **Permissions** | Read-only content/issues/PR/actions/discussions/security-events for AI job |
 | **MCP gateway** | Enabled |
-| **Safe outputs** | One PR max, labels `agentic-news`, `analysis-data`, one translation dispatch max |
-| **Core output** | `analysis/daily/$ARTICLE_DATE/interpellations/article.md` and `news/$ARTICLE_DATE-interpellations-{en,sv}.html` |
+| **Safe outputs** | One PR max, labels `agentic-news`, `analysis-data` (no translation dispatch — all 14 languages rendered in-run) |
+| **Core output** | `analysis/daily/$ARTICLE_DATE/interpellations/article.md` + `article.<lang>.md` × 13 + `news/$ARTICLE_DATE-interpellations-{en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html` (always all 14 languages) |
 
 ### Registered article types
 
@@ -664,20 +664,16 @@ The validator is wired into `npm run validate-all` and runs as a hard CI gate af
 npx tsx scripts/render-articles.ts \
   --date 2026-04-24 \
   --subfolder interpellations \
-  --lang en,sv
+  --lang all
 ```
 
 For all existing articles:
 
 ```bash
-npx tsx scripts/render-articles.ts --all --lang en,sv
-```
-
-For a full repository refresh of every supported language, use:
-
-```bash
 npx tsx scripts/render-articles.ts --all --lang all
 ```
+
+`--lang all` is the canonical mode: every per-type agentic run, the prebuild step, and any local rebuild always render the full 14-language set. Older `--lang en,sv` and `--lang core` modes still work for ad-hoc local debugging, but no automated path uses them any more.
 
 ### Markdown pipeline
 
@@ -696,14 +692,26 @@ The sanitizer deliberately allows only the extra attributes needed for Mermaid b
 
 ### HTML output
 
-For the example article:
+For the example article, the renderer writes one complete HTML file per supported language — **always all 14**:
 
 ```text
 news/2026-04-24-interpellations-en.html
 news/2026-04-24-interpellations-sv.html
+news/2026-04-24-interpellations-da.html
+news/2026-04-24-interpellations-no.html
+news/2026-04-24-interpellations-fi.html
+news/2026-04-24-interpellations-de.html
+news/2026-04-24-interpellations-fr.html
+news/2026-04-24-interpellations-es.html
+news/2026-04-24-interpellations-nl.html
+news/2026-04-24-interpellations-ar.html
+news/2026-04-24-interpellations-he.html
+news/2026-04-24-interpellations-ja.html
+news/2026-04-24-interpellations-ko.html
+news/2026-04-24-interpellations-zh.html
 ```
 
-The renderer writes one complete HTML file per requested language.
+When the agent could not produce `article.<lang>.md` for a given language under the time budget, the renderer transparently falls back to the English source — the file is still emitted so the language switcher and hreflang surface remain consistent. The `news-translate` workflow upgrades any English-fallback files to real translations on the next scheduled run.
 
 ### HTML page structure
 
@@ -940,11 +948,13 @@ Norwegian is in a compatibility migration state, not a permanent language-code d
 
 ### Translation workflow
 
-Per-type content workflows render only core languages, normally `en,sv`. The dedicated translation workflow is:
+Per-type content workflows now render **all 14 languages** themselves: every per-type agentic run produces `article.<lang>.md` for the 13 non-English languages, then invokes `scripts/render-articles.ts --lang all` to emit one HTML file per language in the same PR.
+
+The dedicated translation workflow is:
 
 - [`.github/workflows/news-translate.md`](.github/workflows/news-translate.md)
 
-It consumes already-rendered English/Swedish articles and produces the remaining 12 language variants. This separation prevents every content workflow from trying to translate all languages under the same time and safe-output budget.
+It is now a **quality / catch-up workflow**, not the primary translation path. It re-validates upstream-produced translations, refines them where `scripts/validate-news-translations.ts` flags drift, refreshes stale `dateModified`, and back-fills any language that an upstream run could not finish under its 60-minute budget (in which case the renderer fell back to English content under a non-English `<html lang>`). It never generates original analysis.
 
 ### Language UI
 
@@ -968,7 +978,7 @@ The canonical repository file is [`.github/workflows/deploy-s3.yml`](.github/wor
 [`package.json`](package.json) defines the build pipeline:
 
 ```json
-"prebuild": "npx tsx scripts/aggregate-analysis.ts --all --quiet && npx tsx scripts/render-articles.ts --all --lang en,sv --quiet && npx tsx scripts/generate-news-indexes/index.ts && npx tsx scripts/extract-news-metadata.ts && npx tsx scripts/generate-sitemap-html.ts && npx tsx scripts/generate-political-intelligence.ts && npx tsx scripts/generate-rss.ts && npx tsx scripts/generate-sitemap.ts",
+"prebuild": "npx tsx scripts/aggregate-analysis.ts --all --quiet && npx tsx scripts/render-articles.ts --all --lang all --quiet && npx tsx scripts/generate-news-indexes/index.ts && npx tsx scripts/extract-news-metadata.ts && npx tsx scripts/generate-sitemap-html.ts && npx tsx scripts/generate-political-intelligence.ts && npx tsx scripts/generate-rss.ts && npx tsx scripts/generate-sitemap.ts",
 "build": "vite build",
 "postbuild": "cp rss.xml dist/rss.xml && cp sitemap.xml dist/sitemap.xml && cp -r cia-data dist/cia-data"
 ```
@@ -1132,9 +1142,10 @@ The article pipeline specifically mitigates threats called out in [THREAT_MODEL.
 - [ ] Run or verify the `05-analysis-gate.md` inline checks.
 - [ ] Run `aggregate-analysis.ts` for the date/subfolder.
 - [ ] Inspect `article.md` for title, BLUF, source links and section order.
-- [ ] Run `render-articles.ts --lang en,sv`.
-- [ ] Confirm `news/$DATE-$SUB-en.html` and `news/$DATE-$SUB-sv.html` exist and contain `<article class="rm-article">` and `rm-article-sources`.
-- [ ] Let `news-translate.md` produce the remaining 12 languages.
+- [ ] Confirm `article.<lang>.md` exists for every non-English language (sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh) — anything missing will silently fall back to English in the rendered HTML.
+- [ ] Run `render-articles.ts --lang all`.
+- [ ] Confirm `news/$DATE-$SUB-{en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html` (all 14 files) exist and contain `<article class="rm-article">` and `rm-article-sources`.
+- [ ] Let `news-translate.md` upgrade any English-fallback files to real translations on its next scheduled run.
 - [ ] Let CI run `validate-news`, HTMLHint, build and deployment checks.
 
 ### For local reproduction of the example
@@ -1142,7 +1153,6 @@ The article pipeline specifically mitigates threats called out in [THREAT_MODEL.
 ```bash
 ARTICLE_DATE=2026-04-24
 SUBFOLDER=interpellations
-CORE_LANGUAGES=en,sv
 
 npx tsx scripts/aggregate-analysis.ts \
   --date "$ARTICLE_DATE" \
@@ -1151,15 +1161,28 @@ npx tsx scripts/aggregate-analysis.ts \
 npx tsx scripts/render-articles.ts \
   --date "$ARTICLE_DATE" \
   --subfolder "$SUBFOLDER" \
-  --lang "$CORE_LANGUAGES"
+  --lang all
 ```
 
-Expected outputs:
+Expected outputs (always all 14 languages):
 
 ```text
 analysis/daily/2026-04-24/interpellations/article.md
+analysis/daily/2026-04-24/interpellations/article.sv.md       # plus 12 more article.<lang>.md siblings
 news/2026-04-24-interpellations-en.html
 news/2026-04-24-interpellations-sv.html
+news/2026-04-24-interpellations-da.html
+news/2026-04-24-interpellations-no.html
+news/2026-04-24-interpellations-fi.html
+news/2026-04-24-interpellations-de.html
+news/2026-04-24-interpellations-fr.html
+news/2026-04-24-interpellations-es.html
+news/2026-04-24-interpellations-nl.html
+news/2026-04-24-interpellations-ar.html
+news/2026-04-24-interpellations-he.html
+news/2026-04-24-interpellations-ja.html
+news/2026-04-24-interpellations-ko.html
+news/2026-04-24-interpellations-zh.html
 ```
 
 ---

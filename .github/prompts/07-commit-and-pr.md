@@ -19,12 +19,13 @@ Every run performs analysis **and** article generation end-to-end and produces *
 | Analysis summaries | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/*.md` |
 | Visualisation data | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/*.json` |
 | Aggregated article markdown | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.md` |
-| Rendered articles (core languages) | `news/$ARTICLE_DATE-$SUBFOLDER-{en,sv}.html` |
+| Per-language article markdown (13 non-English) | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.<lang>.md` for `sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh` |
+| Rendered articles (all 14 languages) | `news/$ARTICLE_DATE-$SUBFOLDER-{en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html` |
 
 PR title: `📰 ${Article Type} — $ARTICLE_DATE`.
 PR labels: `agentic-news` + article-type label.
 
-Translations for the remaining twelve languages are produced by the dedicated **`news-translate`** workflow, which runs on a separate schedule and creates its own PR. Per-type workflows must **not** attempt to translate or dispatch translation themselves.
+The dedicated **`news-translate`** workflow is now a quality / catch-up workflow only — it re-validates translations produced upstream and back-fills any language a per-type run could not finish. Per-type workflows themselves now produce **all 14 language HTML files** in the same agentic run via the per-language Markdown translation step in `06-article-generation.md`.
 
 ## Stage → commit → PR
 
@@ -35,8 +36,9 @@ Translations for the remaining twelve languages are produced by the dedicated **
    | Analysis summaries | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/*.md` |
    | Visualisation data | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/*.json` |
    | Aggregated article markdown | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.md` |
-   | Rendered articles (core languages) | `news/$ARTICLE_DATE-$SUBFOLDER-{en,sv}.html` |
-   | Translations (news-translate only) | `news/$ARTICLE_DATE-$SUBFOLDER-<lang>.html` |
+   | Per-language article markdown (13 non-English) | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.<lang>.md` |
+   | Rendered articles (all 14 languages) | `news/$ARTICLE_DATE-$SUBFOLDER-{en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html` |
+   | News-translate quality refinements (only when run by `news-translate.md`) | `news/$ARTICLE_DATE-$SUBFOLDER-<lang>.html` |
 
    Never stage `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/documents/` wholesale — it often contains 100+ files. Stage only `documents/*.md` **if** your `documents/` stays under the safe-outputs 100-file cap; otherwise stage only summary files. Never stage `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/pass1/` — it is a local gate-evidence snapshot (see `04-analysis-pipeline.md`), not a deliverable.
 
@@ -154,7 +156,7 @@ In addition, the **Sandbox commit handoff** in step 4 above is the *third* (and 
 
 - **Article type**: $ARTICLE_TYPE
 - **Article date**: $ARTICLE_DATE
-- **Languages**: $CORE_LANGUAGES
+- **Languages**: all 14 (en, sv, da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh)
 - **Analysis depth**: $ANALYSIS_DEPTH
 - **Scope**: <2–3 sentence human-readable scope>
 

@@ -1,6 +1,6 @@
 ---
 name: "News: Quarter Ahead"
-description: Generates quarter-ahead strategic outlook articles in core languages (EN, SV). Long-horizon-forecast workflow with 90-day window — covers next-quarter parliamentary calendar, committee schedules, government propositions tabling deadlines, Riksbank rate decisions, and SCB quarterly NA release. Tier-C aggregation × 1.7 depth multiplier. Translations handled by news-translate workflow. Runs 1st and 15th of each month.
+description: Generates quarter-ahead strategic outlook articles and renders HTML in all 14 supported languages in a single agentic run (EN + SV + 12 translated). Long-horizon-forecast workflow with 90-day window — covers next-quarter parliamentary calendar, committee schedules, government propositions tabling deadlines, Riksbank rate decisions, and SCB quarterly NA release. Tier-C aggregation × 1.7 depth multiplier. Runs 1st and 15th of each month.
 strict: false
 imports:
   - ../prompts/00-base-contract.md
@@ -26,10 +26,6 @@ on:
         type: boolean
         required: false
         default: false
-      languages:
-        description: 'Core languages for content generation (en,sv | nordic | eu-core | all). Translations for remaining languages are handled by the dedicated news-translate workflow.'
-        required: false
-        default: en,sv
       analysis_depth:
         description: 'Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, scenario tree depth, and dashboard charts.'
         required: false
@@ -155,9 +151,6 @@ safe-outputs:
     protected-files:
       policy: allowed
   add-comment: {}
-  dispatch-workflow:
-    workflows: [news-translate]
-    max: 1
 
 steps:
   - name: News pre-warm & pre-flight (composite)
@@ -169,18 +162,18 @@ engine:
 
 # 🧭 Quarter Ahead
 
-Generates deep political intelligence analysis **and** the rendered HTML article for forward-looking quarterly political intelligence (Tier-C aggregation × 1.7 depth multiplier — see `ext/tier-c-aggregation.md` and `ext/long-horizon-forecasting.md`) in one single agentic run. The 90-day window covers the next-quarter parliamentary calendar (committee schedules, chamber votes, government propositions tabling deadlines, Lagrådet referrals, Riksbank rate decisions, SCB quarterly NA release).
+Generates deep political intelligence analysis **and** renders the HTML article in **all 14 supported languages** for forward-looking quarterly political intelligence (Tier-C aggregation × 1.7 depth multiplier — see `ext/tier-c-aggregation.md` and `ext/long-horizon-forecasting.md`) in one single agentic run. The 90-day window covers the next-quarter parliamentary calendar (committee schedules, chamber votes, government propositions tabling deadlines, Lagrådet referrals, Riksbank rate decisions, SCB quarterly NA release).
 
-Core languages are `en` + `sv`; translations to the remaining twelve languages are produced by the separate `news-translate` workflow.
+The agent translates `article.md` into `article.<lang>.md` for every non-English language before invoking the renderer with `--lang all`. The dedicated `news-translate` workflow only refines / back-fills existing translations on follow-up runs.
 
 ## What this workflow does
 
 - **Article type**: `quarter-ahead` (registry id; see `analysis/article-types.json`)
 - **Analysis subfolder**: `analysis/daily/$ARTICLE_DATE/quarter-ahead/`
 - **Aggregated markdown**: `analysis/daily/$ARTICLE_DATE/quarter-ahead/article.md`
-- **Rendered HTML**: `news/$ARTICLE_DATE-quarter-ahead-{en,sv}.html`
+- **Rendered HTML**: `news/$ARTICLE_DATE-quarter-ahead-{en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html` — **always all 14 languages**
 - **Horizon**: 90 days; lookback 90 days (sibling per-type folders + most-recent week-ahead + month-ahead).
-- **Single-run model**: download → analysis Pass 1 + 2 → gate → aggregate → render → ONE PR.
+- **Single-run model**: download → analysis Pass 1 + 2 → gate → aggregate → translate → render (14 languages) → ONE PR.
 
 ## Long-horizon mandate (from `ext/long-horizon-forecasting.md`)
 
@@ -202,8 +195,10 @@ Core languages are `en` + `sv`; translations to the remaining twelve languages a
 | 7–25 | Analysis Pass 1 (all 23 artifacts at 1.7× depth, scenario tree depth 4, ≥ 12 forward indicators) | 04 + ext/long-horizon-forecasting |
 | 25–34 | Analysis Pass 2 (read-back + improvements; ≥ 2 counterfactuals) | 04 |
 | 34–36 | Analysis Gate (checks 1–11 + Tier-C additive + long-horizon checks) | 05 |
-| 36–39 | Aggregate + render (`article.md` + EN/SV HTML) | 06 |
-| 39–42 | Stage + commit + ONE `safeoutputs___create_pull_request` — **HARD DEADLINE agent minute 45** | 07 |
+| 36–38 | Aggregate (`article.md`) | 06 |
+| 38–40 | Translate `article.md` → `article.<lang>.md` × 13 (sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh) | 06 |
+| 40–42 | Render (`scripts/render-articles.ts --lang all` → all 14 HTML) | 06 |
+| 42–43 | Stage + commit + ONE `safeoutputs___create_pull_request` — **HARD DEADLINE agent minute 45** | 07 |
 
 Use the setup-aware agent budget for AI-FIRST iteration; trim scope before quality and open the PR by agent minute 42 (hard 45). Never open a second PR within a run.
 
@@ -211,8 +206,9 @@ Use the setup-aware agent budget for AI-FIRST iteration; trim scope before quali
 
 - `article_date` — override date (defaults to today)
 - `force_generation` — regenerate even if today's content exists
-- `languages` — core content languages (default `en,sv`)
 - `analysis_depth` — `standard` | `deep` (default) | `comprehensive`
+
+> **Note**: there is no `languages` input. Every run produces all 14 language HTML files. Translation depth-of-quality scales with the time budget (see the table above).
 
 ## Run-mode selection
 
