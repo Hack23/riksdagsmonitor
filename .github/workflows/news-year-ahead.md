@@ -141,7 +141,7 @@ safe-outputs:
     - raw.githubusercontent.com
     - hack23.github.io
   max-patch-size: 10240
-  max-patch-files: 80
+  max-patch-files: 100
   create-pull-request:
     labels: [agentic-news, analysis-data, long-horizon, forward-look, year-ahead]
     draft: false
@@ -206,7 +206,7 @@ The agent translates `article.md` into `article.<lang>.md` for every non-English
 
 > 🟡 **Scope-compression rule**: if you reach agent minute 35 without Pass 2 complete, halt Pass 2 deepening and run the gate against whatever you have — `if-no-changes: warn` will not silently fail the run, but a missing PR will. Always trim depth before iterating.
 
-> ⚠️ **HARD FILE LIMIT**: This workflow sets `max-patch-files: 80` (safe-outputs will reject PRs with > 80 files; the platform hard cap is 100 / E003). The 100-file guard in `07-commit-and-pr.md` uses a threshold of 90 as a secondary safety net, but **this workflow's effective limit is 80**. Budget: 23 core artifacts + README + article.md + 13 article.<lang>.md + 14 HTML + pir-status.json ≈ 52 files max. **Never stage `documents/` or `pass1/` directories.** If after unstaging those the count is still > 80, unstage JSON files next.
+> ⚠️ **HARD FILE LIMIT (100 files)**: The safe-outputs handler hard-rejects PRs with > 100 files (E003). You **MUST** run the 100-file guard from `07-commit-and-pr.md` before calling `safeoutputs___create_pull_request`. Budget: 23 core artifacts + README + article.md + 13 article.<lang>.md + 14 HTML + pir-status.json ≈ 52 files. **Never stage `documents/` or `pass1/` directories.** If staged count exceeds 90, unstage `documents/` then JSON files until under budget. This is non-negotiable — the previous run failed with 269 files.
 
 ## Inputs
 

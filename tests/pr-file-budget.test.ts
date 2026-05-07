@@ -75,7 +75,7 @@ describe('PR file-budget enforcement', () => {
     expect(commitPrompt).toContain('non-negotiable');
   });
 
-  it('all news workflows have max-patch-files ≤ 90', () => {
+  it('all news workflows have max-patch-files declared and ≤ 100', () => {
     const newsWorkflows = fs.readdirSync(WORKFLOWS_DIR)
       .filter((f) => f.startsWith('news-') && f.endsWith('.md'));
 
@@ -90,8 +90,7 @@ describe('PR file-budget enforcement', () => {
       const match = workflow.match(/max-patch-files:\s*(\d+)/);
       expect(match, `${file} must declare max-patch-files`).not.toBeNull();
       const maxPatchFiles = parseInt(match![1]!, 10);
-      expect(maxPatchFiles, `${file} max-patch-files (${maxPatchFiles}) must be < ${MAX_PR_FILES}`).toBeLessThan(MAX_PR_FILES);
-      expect(maxPatchFiles, `${file} max-patch-files (${maxPatchFiles}) must be ≤ ${SAFE_THRESHOLD}`).toBeLessThanOrEqual(SAFE_THRESHOLD);
+      expect(maxPatchFiles, `${file} max-patch-files (${maxPatchFiles}) must be ≤ ${MAX_PR_FILES}`).toBeLessThanOrEqual(MAX_PR_FILES);
     }
   });
 

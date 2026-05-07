@@ -140,7 +140,7 @@ safe-outputs:
     - raw.githubusercontent.com
     - hack23.github.io
   max-patch-size: 10240
-  max-patch-files: 80
+  max-patch-files: 100
   create-pull-request:
     labels: [agentic-news, analysis-data]
     draft: false
@@ -178,7 +178,7 @@ Generates deep political intelligence analysis **and** renders the HTML article 
 >
 > **AI-FIRST within the setup-aware 40-minute agent target**: Pass 2 is still mandatory. Target completing all agent-phase analysis/rendering work by agent minute 40 so the PR can be opened before the hard agent-minute-45 cutoff. Prefer **scope compression over iteration skipping** when needed — reduce the **download/manifest scope** (use `--limit 10` max for document-type workflows to stay well under the **80-file PR cap** given that 14 HTML + 13 article.<lang>.md now consume 27 file slots), but maintain **1:1 per-document coverage** for every `dok_id` that remains in the manifest (required by `05-analysis-gate.md` check 2) and always perform a full read-back-and-improve Pass 2 on whatever artifacts exist. For scheduled runs treat `analysis_depth` as `deep` (default); reserve `comprehensive` for manual `workflow_dispatch` backfills.
 >
-> ⚠️ **HARD FILE LIMIT**: This workflow sets `max-patch-files: 80` (safe-outputs will reject PRs with > 80 files; the platform hard cap is 100 / E003). The 100-file guard in `07-commit-and-pr.md` uses a threshold of 90 as a secondary safety net, but **this workflow's effective limit is 80**. Budget: 23 core artifacts + README + article.md + 13 article.<lang>.md + ≤ 10 per-document analyses + 14 HTML + pir-status.json ≈ 63 files max. Never download more than 10 documents when all 14 languages are rendered.
+> ⚠️ **HARD FILE LIMIT (100 files)**: The safe-outputs handler hard-rejects PRs with > 100 files (E003). You **MUST** run the 100-file guard from `07-commit-and-pr.md` before calling `safeoutputs___create_pull_request`. Budget: 23 core artifacts + README + article.md + 13 article.<lang>.md + ≤ 10 per-document analyses + 14 HTML + pir-status.json ≈ 63 files max. Never download more than 10 documents when all 14 languages are rendered. If staged count exceeds 90, unstage `documents/` then JSON files until under budget.
 
 **Single run** (produces all 23 analysis artifacts + aggregated `article.md` + per-language `article.<lang>.md` × 13 + 14 HTML files, target ~42 agent minutes in a 60-min job):
 

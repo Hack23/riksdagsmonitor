@@ -149,7 +149,7 @@ safe-outputs:
     - raw.githubusercontent.com
     - hack23.github.io
   max-patch-size: 10240
-  max-patch-files: 80
+  max-patch-files: 100
   create-pull-request:
     labels: [agentic-news, translation]
     draft: false
