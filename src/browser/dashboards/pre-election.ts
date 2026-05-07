@@ -24,6 +24,7 @@
 
 import {
   logger,
+  safeSetItem,
   detectLanguage,
   showDataSourceDisclaimer,
 } from '../shared/index.js';
@@ -277,8 +278,7 @@ class PreElectionDataManager {
   }
 
   saveToCache(key: string, data: CSVRow[]): void {
-    try { localStorage.setItem(CONFIG.cachePrefix + key, JSON.stringify({ data, timestamp: Date.now() })); }
-    catch (e) { logger.error('Cache save error:', e); }
+    safeSetItem(CONFIG.cachePrefix + key, JSON.stringify({ data, timestamp: Date.now() }), CONFIG.cachePrefix);
   }
 
   getLatestYear(): number | null {

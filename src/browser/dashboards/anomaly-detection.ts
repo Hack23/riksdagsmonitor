@@ -36,6 +36,7 @@
 
 import {
   logger,
+  safeSetItem,
   detectLanguage,
   showDataSourceDisclaimer,
 } from '../shared/index.js';
@@ -458,14 +459,11 @@ class AnomalyDetectionDataManager {
   }
 
   setCachedData(data: CSVRow[]): void {
-    try {
-      localStorage.setItem(
-        CONFIG.cacheKey,
-        JSON.stringify({ data, timestamp: Date.now() }),
-      );
-    } catch (error) {
-      logger.error('Error setting cache:', error);
-    }
+    safeSetItem(
+      CONFIG.cacheKey,
+      JSON.stringify({ data, timestamp: Date.now() }),
+      CONFIG.cacheKey,
+    );
   }
 
   identifyActiveAnomalies(): CSVRow[] {

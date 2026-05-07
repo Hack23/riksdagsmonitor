@@ -40,6 +40,7 @@
 
 import {
   logger,
+  safeSetItem,
   showDataSourceDisclaimer,
   renderErrorFallback,
 } from '../shared/index.js';
@@ -692,8 +693,8 @@ async function fetchData(filename: string): Promise<CSVRow[]> {
     if (localResponse.ok) {
       const csvText = await localResponse.text();
       if (csvText.trim().split('\n').length > 1) {
-        localStorage.setItem(cacheKey, csvText);
-        localStorage.setItem(cacheKey + '_timestamp', Date.now().toString());
+        safeSetItem(cacheKey, csvText, CONFIG.cachePrefix);
+        safeSetItem(cacheKey + '_timestamp', Date.now().toString(), CONFIG.cachePrefix);
         return parseCSVText(csvText);
       }
     }
@@ -713,8 +714,8 @@ async function fetchData(filename: string): Promise<CSVRow[]> {
     const csvText = await response.text();
 
     // Cache the data
-    localStorage.setItem(cacheKey, csvText);
-    localStorage.setItem(cacheKey + '_timestamp', Date.now().toString());
+    safeSetItem(cacheKey, csvText, CONFIG.cachePrefix);
+    safeSetItem(cacheKey + '_timestamp', Date.now().toString(), CONFIG.cachePrefix);
 
     return parseCSVText(csvText);
   } catch (error) {

@@ -30,6 +30,7 @@
 
 import {
   logger,
+  safeSetItem,
   detectLanguage,
   showDataSourceDisclaimer,
 } from '../shared/index.js';
@@ -249,26 +250,7 @@ export class ElectionCycleDataManager {
 
   setCache(key: string, data: unknown): void {
     const payload = JSON.stringify({ data, timestamp: Date.now() });
-    try {
-      localStorage.setItem(key, payload);
-    } catch (e: unknown) {
-      if (!(e instanceof DOMException && e.name === 'QuotaExceededError')) {
-        logger.error('Cache storage error:', e);
-        return;
-      }
-      // QuotaExceededError — evict all election-cycle cache entries and retry
-      try {
-        const keysToRemove: string[] = [];
-        for (let i = 0; i < localStorage.length; i++) {
-          const k = localStorage.key(i);
-          if (k?.startsWith(CONFIG.cachePrefix)) keysToRemove.push(k);
-        }
-        keysToRemove.forEach(k => localStorage.removeItem(k));
-        localStorage.setItem(key, payload);
-      } catch (retryErr) {
-        logger.error('Cache storage error after eviction:', retryErr);
-      }
-    }
+    safeSetItem(key, payload, CONFIG.cachePrefix);
   }
 
   getElectionCycles(): string[] {

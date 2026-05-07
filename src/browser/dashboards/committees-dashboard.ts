@@ -20,7 +20,7 @@
  * @marketing Expert audience engagement — committee analysis content attracts high-value audiences: policy researchers, lobbyists, and legislative affairs professionals. This audience has high conversion potential for premium analytics and API subscriptions.
  * */
 
-import { logger, showDataSourceDisclaimer } from '../shared/index.js';
+import { logger, safeSetItem, showDataSourceDisclaimer } from '../shared/index.js';
 import type { CSVRow, ChartLike } from '../shared/index.js';
 import type { ChartConstructor } from '../shared/global-libs.js';
 
@@ -249,10 +249,9 @@ class DataManager {
   private setCached(key: string, data: CSVRow[]): void {
     const cacheKey = CONFIG.cache.prefix + key;
     const cacheData: CacheEntry<CSVRow[]> = { data, timestamp: Date.now() };
-    try {
-      localStorage.setItem(cacheKey, JSON.stringify(cacheData));
-    } catch (error: unknown) {
-      logger.warn(`[DataManager] Failed to cache ${key}:`, error);
+    if (!safeSetItem(cacheKey, JSON.stringify(cacheData), CONFIG.cache.prefix)) {
+      // Quota exhausted even after eviction — skip caching this entry.
+      logger.debug(`[DataManager] Skipped caching ${key} (storage quota)`);
     }
   }
 
