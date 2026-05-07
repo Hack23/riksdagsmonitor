@@ -16081,3 +16081,90 @@ html[data-theme="light"] .rm-reader-guide-table td a {
 html[data-theme="light"] .rm-source-count {
   color: var(--text-secondary, #4a4a4a);
 }
+
+/* ════════════════════════════════════════════════════════════════════════
+   §  Article body light-mode parity (Session 3 — high-traffic surfaces)
+   ────────────────────────────────────────────────────────────────────────
+   Each generated article ships ~38 tables, ~24 fenced code blocks and
+   numerous <details>/<summary> sections. The dark-mode rules around
+   line 12800-12925 hard-code cyan on dark backgrounds, so on a light
+   page these surfaces previously rendered as black/cyan blocks over a
+   white card — illegible and visually jarring. These rules anchor every
+   table, code block and disclosure to the light card tokens so the
+   light theme reaches WCAG-AA contrast.
+   ──────────────────────────────────────────────────────────────────── */
+
+/* Tables — wrappers, borders and zebra-stripe */
+html[data-theme="light"] .rm-article-body .rm-table-wrap,
+html[data-theme="light"] .rm-article-body table {
+  border-color: var(--border-color, rgba(0, 102, 51, 0.20));
+  background: #ffffff;
+}
+
+html[data-theme="light"] .rm-article-body th,
+html[data-theme="light"] .rm-article-body td {
+  border-color: var(--border-color, rgba(0, 102, 51, 0.16));
+  color: var(--text-color, #1a1a1a);
+}
+
+html[data-theme="light"] .rm-article-body th {
+  background: rgba(0, 102, 51, 0.07);
+  color: var(--primary-color, #006633);
+}
+
+/* Subtle zebra-stripe so dense political-data tables stay scannable */
+html[data-theme="light"] .rm-article-body tbody tr:nth-child(even) td {
+  background: rgba(0, 102, 51, 0.03);
+}
+
+html[data-theme="light"] .rm-article-body td a {
+  color: var(--link-color, #007744);
+}
+
+/* Fenced code blocks — `<pre>` and `<pre><code>`. Mermaid pre-blocks
+ * are NOT included here (they keep their dark card via the existing
+ * `pre.mermaid` rule above so the cyan/magenta diagram stays
+ * readable). */
+html[data-theme="light"] .rm-article-body pre:not(.mermaid) {
+  background: rgba(0, 102, 51, 0.04);
+  border: 1px solid var(--border-color, rgba(0, 102, 51, 0.18));
+  box-shadow: inset 0 1px 0 rgba(0, 102, 51, 0.04);
+}
+
+html[data-theme="light"] .rm-article-body pre:not(.mermaid) code {
+  color: var(--primary-dark, #004422);
+  background: transparent;
+}
+
+/* Disclosure widgets (<details>/<summary>) used for "How was this made?"
+ * sections, methodology accordions and audit-trail collapsibles. */
+html[data-theme="light"] .rm-article-body details {
+  background: #ffffff;
+  border: 1px solid var(--border-color, rgba(0, 102, 51, 0.18));
+  border-radius: clamp(8px, 0.8vw, 12px);
+  padding: clamp(0.6rem, 1.4vw, 1rem) clamp(0.8rem, 1.8vw, 1.2rem);
+  margin: 1rem 0;
+  box-shadow: 0 1px 6px rgba(0, 102, 51, 0.05);
+}
+
+html[data-theme="light"] .rm-article-body details > summary {
+  color: var(--primary-color, #006633);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+html[data-theme="light"] .rm-article-body details[open] > summary {
+  margin-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border-color, rgba(0, 102, 51, 0.14));
+  padding-bottom: 0.4rem;
+}
+
+/* Headings inside the article body — h3/h4/h5 still use the dark
+ * cyan accent in light mode without an override, which produces
+ * low-contrast neon text on white. Anchor them to the light primary. */
+html[data-theme="light"] .rm-article-body h3,
+html[data-theme="light"] .rm-article-body h4,
+html[data-theme="light"] .rm-article-body h5,
+html[data-theme="light"] .rm-article-body h6 {
+  color: var(--primary-color, #006633);
+}
