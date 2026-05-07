@@ -47,6 +47,7 @@ import type {
 import {
   renderArticleHtml,
   splitBodyAtSecondH2,
+  parseFrontMatterDate,
 } from '../scripts/render-lib/article.js';
 import type {
   RenderArticleInput,
@@ -471,5 +472,43 @@ describe('render-lib boundary (no CLI side-effect imports)', () => {
 
     expect(offenders, `library code should import from sitemap-html/index.ts, not generate-sitemap-html.ts:\n  ${offenders.join('\n  ')}`)
       .toEqual([]);
+  });
+});
+
+describe('parseFrontMatterDate', () => {
+  const FROZEN_NOW = new Date('2026-05-07T12:00:00.000Z');
+
+  it('returns YYYY-MM-DD for a Date instance', () => {
+    expect(parseFrontMatterDate(new Date('2026-04-23T18:30:00.000Z'), FROZEN_NOW)).toBe('2026-04-23');
+  });
+
+  it('returns YYYY-MM-DD for an ISO-8601 string', () => {
+    expect(parseFrontMatterDate('2026-04-23T18:30:00.000Z', FROZEN_NOW)).toBe('2026-04-23');
+  });
+
+  it('returns YYYY-MM-DD for a bare YYYY-MM-DD string', () => {
+    expect(parseFrontMatterDate('2026-04-23', FROZEN_NOW)).toBe('2026-04-23');
+  });
+
+  it('falls back to "now" when the value is undefined / null / wrong shape', () => {
+    expect(parseFrontMatterDate(undefined, FROZEN_NOW)).toBe('2026-05-07');
+    expect(parseFrontMatterDate(null, FROZEN_NOW)).toBe('2026-05-07');
+    expect(parseFrontMatterDate(42, FROZEN_NOW)).toBe('2026-05-07');
+    expect(parseFrontMatterDate({}, FROZEN_NOW)).toBe('2026-05-07');
+  });
+
+  it('falls back to "now" when the string does not start with YYYY-MM-DD', () => {
+    expect(parseFrontMatterDate('April 23, 2026', FROZEN_NOW)).toBe('2026-05-07');
+    expect(parseFrontMatterDate('', FROZEN_NOW)).toBe('2026-05-07');
+  });
+
+  it('falls back to "now" when given an Invalid Date instance', () => {
+    expect(parseFrontMatterDate(new Date('not-a-date'), FROZEN_NOW)).toBe('2026-05-07');
+  });
+
+  it('uses the live clock when no `now` is supplied', () => {
+    const result = parseFrontMatterDate(undefined);
+    expect(result).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    expect(result).toBe(new Date().toISOString().slice(0, 10));
   });
 });

@@ -207,20 +207,36 @@ export function splitBodyAtSecondH2(bodyHtml: string): { lead: string; rest: str
   };
 }
 
+/**
+ * Parse a `date` value from front-matter into a stable `YYYY-MM-DD`
+ * string. Front-matter dates can arrive as either a parsed `Date` (when
+ * `gray-matter` recognises an ISO-8601 scalar) or as a raw string. When
+ * the value is missing or unrecognised, today's UTC date is used so the
+ * article still renders with a valid `<time datetime>`.
+ *
+ * Exported for testability — pure function, no I/O.
+ *
+ * @param dateRaw The raw `data.date` field returned by `gray-matter`.
+ * @param now     Injection seam for "today" — defaults to `new Date()`.
+ *                Tests pass a frozen clock to make assertions deterministic.
+ * @returns       A `YYYY-MM-DD` string.
+ */
+export function parseFrontMatterDate(dateRaw: unknown, now: Date = new Date()): string {
+  if (dateRaw instanceof Date && !Number.isNaN(dateRaw.getTime())) {
+    return dateRaw.toISOString().slice(0, 10);
+  }
+  if (typeof dateRaw === 'string' && /^\d{4}-\d{2}-\d{2}/.test(dateRaw)) {
+    return dateRaw.slice(0, 10);
+  }
+  return now.toISOString().slice(0, 10);
+}
+
 export async function renderArticleHtml(input: RenderArticleInput): Promise<string> {
   const parsed = matter(input.markdown);
   const fm = parsed.data as Record<string, unknown>;
   const title = String(fm.title ?? 'Political Intelligence');
   const description = String(fm.description ?? 'Riksdagsmonitor political intelligence report.');
-  const dateRaw = fm.date;
-  let date: string;
-  if (dateRaw instanceof Date) {
-    date = dateRaw.toISOString().slice(0, 10);
-  } else if (typeof dateRaw === 'string' && /^\d{4}-\d{2}-\d{2}/.test(dateRaw)) {
-    date = dateRaw.slice(0, 10);
-  } else {
-    date = new Date().toISOString().slice(0, 10);
-  }
+  const date = parseFrontMatterDate(fm.date);
   const publishedIso = `${date}T00:00:00Z`;
   const modifiedIso = new Date().toISOString();
   const articleType = inferArticleType(input.canonicalPath, title);
