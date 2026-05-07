@@ -628,7 +628,7 @@ body {
   background-color: var(--bg-color);
   max-width: 100%;
   margin: 0;
-  padding: var(--spacing-md) var(--spacing-xl);
+  padding: clamp(0.5rem, 1.2vw, 1rem);
   position: relative;
   overflow-x: hidden;
   font-size: 16px;
@@ -1347,7 +1347,7 @@ header {
   position: relative;
   width: 100%;
   /* Single smooth clamp avoids layout jumps at breakpoints */
-  height: clamp(100px, 22vw, 280px);
+  height: clamp(180px, 42vw, 720px);
   overflow: hidden;
   background:
     radial-gradient(circle at 50% 20%, rgba(0, 217, 255, 0.12), transparent 45%),
@@ -1409,7 +1409,7 @@ header {
  * tighter than the hand-authored index hero, and add bottom spacing so the
  * language bar / breadcrumb does not collide with the banner image. */
 .rm-article-body .hero-banner {
-  height: clamp(80px, 14vw, 200px);
+  height: clamp(180px, 34vw, 620px);
   margin-bottom: var(--spacing-md);
 }
 
@@ -1728,7 +1728,7 @@ html[data-theme="dark"] .article-site-logo {
   -webkit-flex: 1 1 280px;
   -ms-flex: 1 1 280px;
   flex: 1 1 280px;
-  max-width: 450px;
+  max-width: none;
   min-width: 280px;
 }
 
@@ -1736,8 +1736,8 @@ html[data-theme="dark"] .article-site-logo {
 @supports (display: grid) {
   .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 480px));
-    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    justify-content: stretch;
   }
   
   .cards > * {
@@ -9238,9 +9238,10 @@ body.news-page {
 }
 
 .news-page .container {
+  width: 100%;
   max-width: 100%;
   margin: 0 auto;
-  padding: 1.5rem 1.5rem 3rem;
+  padding: clamp(1rem, 2vw, 2rem) clamp(0.75rem, 2vw, 2rem) 3rem;
 }
 
 /* Language notice for fallback content */
@@ -9366,8 +9367,8 @@ body.news-page {
 /* Articles grid */
 .news-page .articles-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: clamp(1rem, 1.8vw, 2rem);
   margin-top: 2rem;
 }
 
@@ -11068,6 +11069,13 @@ a:not(.btn):not(.btn-primary-large):not(.btn-secondary):not(.nav-link):not([clas
   margin-inline: auto;
 }
 
+/* Generated article pages put `news-article` on <body>; do not constrain the
+   viewport wrapper, only legacy article cards/containers that use the class. */
+body.news-article {
+  max-width: none;
+  margin-inline: 0;
+}
+
 /* ── 6. Pull-Quote Styling ────────────────────────────────────────────────── */
 .pull-quote {
   font-size: var(--fluid-lg, 1.333rem);
@@ -12245,12 +12253,19 @@ html[data-theme="light"] .footer-disclaimer a {
     var(--dark-bg, #0a0e27) 0%,
     var(--mid-bg, #1a1e3d) 100%);
   border-bottom: 1px solid color-mix(in srgb, var(--primary-cyan, #00d9ff) 35%, transparent);
+  border-radius: 0;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4), 0 0 32px color-mix(in srgb, var(--primary-cyan, #00d9ff) 10%, transparent);
   position: sticky;
   top: 0;
   z-index: 100;
   -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  text-align: initial;
+  align-items: stretch;
 }
 
 /* Publishes the sticky header's nominal height so siblings positioned
@@ -12263,9 +12278,10 @@ html[data-theme="light"] .footer-disclaimer a {
 }
 
 .rm-site-header-inner {
-  max-width: 1200px;
+  width: 100%;
+  max-width: none;
   margin: 0 auto;
-  padding: 0.65rem 1.5rem;
+  padding: 0.65rem clamp(0.75rem, 2vw, 2rem);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -12590,9 +12606,10 @@ html[data-theme="light"] .footer-disclaimer a {
 /* ---- site sub-navigation (breadcrumbs + published date) ---- */
 
 .rm-site-subnav {
-  max-width: 1200px;
+  width: 100%;
+  max-width: none;
   margin: 0 auto;
-  padding: 0.35rem 1.5rem 0.6rem;
+  padding: 0.35rem clamp(0.75rem, 2vw, 2rem) 0.6rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -12651,19 +12668,28 @@ html[data-theme="light"] .footer-disclaimer a {
 
 /* ---- article body ---- */
 
-.rm-article-body {
+body.rm-article-body {
   color: var(--light-text, #e0e0e0);
   background: var(--dark-bg, #0a0e27);
   min-height: 100vh;
 }
 
+.rm-article .rm-article-body {
+  color: inherit;
+  background: transparent;
+  min-height: 0;
+}
+
 .rm-article-main {
-  max-width: min(1120px, calc(100vw - 1rem));
+  width: 100%;
+  max-width: none;
   margin: 0 auto;
-  padding: clamp(1rem, 3vw, 2.5rem) clamp(0.75rem, 3vw, 1.75rem) 4rem;
+  padding: clamp(1rem, 2.5vw, 2.25rem) clamp(0.75rem, 2vw, 2rem) 4rem;
 }
 
 .rm-article {
+  width: 100%;
+  box-sizing: border-box;
   background:
     radial-gradient(circle at top left, color-mix(in srgb, var(--primary-cyan, #00d9ff) 8%, transparent), transparent 34rem),
     color-mix(in srgb, var(--mid-bg, #1a1e3d) 64%, transparent);
@@ -13252,9 +13278,10 @@ html[data-theme="light"] .rm-article-body pre.mermaid > svg {
 }
 
 .rm-site-footer-inner {
-  max-width: 1200px;
+  width: 100%;
+  max-width: none;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 clamp(0.75rem, 2vw, 2rem);
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 2rem;
@@ -13356,9 +13383,10 @@ html[data-theme="light"] .rm-article-body pre.mermaid > svg {
 
 /* Always-visible inline secondary language switcher in the footer. */
 .rm-footer-langs {
-  max-width: 1200px;
+  width: 100%;
+  max-width: none;
   margin: 1.75rem auto 0;
-  padding: 1.25rem 1.5rem 0;
+  padding: 1.25rem clamp(0.75rem, 2vw, 2rem) 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -13399,9 +13427,10 @@ html[data-theme="light"] .rm-article-body pre.mermaid > svg {
 }
 
 .rm-footer-legal {
-  max-width: 1200px;
+  width: 100%;
+  max-width: none;
   margin: 1.25rem auto 0;
-  padding: 1rem 1.5rem 0;
+  padding: 1rem clamp(0.75rem, 2vw, 2rem) 0;
   font-size: 0.8125rem;
   color: color-mix(in srgb, var(--light-text, #e0e0e0) 65%, transparent);
   border-top: 1px solid color-mix(in srgb, var(--primary-cyan, #00d9ff) 12%, transparent);
@@ -13409,10 +13438,14 @@ html[data-theme="light"] .rm-article-body pre.mermaid > svg {
 
 /* ---- light-theme override for generated articles ---- */
 
-html[data-theme="light"] .rm-article-body,
 html[data-theme="light"] body.rm-article-body {
   color: var(--text-color, #1a1a1a);
   background: var(--bg-color, #f8f9fa);
+}
+
+html[data-theme="light"] .rm-article .rm-article-body {
+  color: inherit;
+  background: transparent;
 }
 
 html[data-theme="light"] .rm-article {
@@ -13434,6 +13467,38 @@ html[data-theme="light"] .rm-site-header {
 html[data-theme="light"] .rm-logo,
 html[data-theme="light"] .rm-site-nav a { color: var(--text-color, #1a1a1a); text-shadow: none; }
 
+html[data-theme="light"] .rm-logo-tagline,
+html[data-theme="light"] .rm-lang-switcher > summary,
+html[data-theme="light"] .rm-breadcrumb li[aria-current="page"],
+html[data-theme="light"] .rm-site-subnav {
+  color: var(--text-secondary, #4a4a4a);
+  text-shadow: none;
+}
+
+html[data-theme="light"] .rm-lang-switcher > summary,
+html[data-theme="light"] .rm-lang-switcher-dropdown,
+html[data-theme="light"] .rm-lang-bar,
+html[data-theme="light"] .rm-footer-langs a {
+  background: rgba(255, 255, 255, 0.94);
+  border-color: var(--card-border, #dee2e6);
+  color: var(--text-color, #1a1a1a);
+}
+
+html[data-theme="light"] .rm-lang-switcher-dropdown a,
+html[data-theme="light"] .rm-footer-langs a {
+  color: var(--text-color, #1a1a1a);
+}
+
+html[data-theme="light"] .hero-banner {
+  background:
+    radial-gradient(circle at 50% 20%, rgba(0, 119, 68, 0.08), transparent 45%),
+    linear-gradient(135deg, #ffffff, #eef3f0);
+}
+
+html[data-theme="light"] .hero-banner-bg {
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.12));
+}
+
 html[data-theme="light"] .rm-site-footer {
   background: #ffffff;
   border-top-color: var(--card-border, #dee2e6);
@@ -13441,10 +13506,14 @@ html[data-theme="light"] .rm-site-footer {
 }
 
 @media (prefers-color-scheme: light) {
-  html:not([data-theme]) .rm-article-body,
   html:not([data-theme]) body.rm-article-body {
     color: var(--text-color, #1a1a1a);
     background: var(--bg-color, #f8f9fa);
+  }
+
+  html:not([data-theme]) .rm-article .rm-article-body {
+    color: inherit;
+    background: transparent;
   }
 
   html:not([data-theme]) .rm-article {
