@@ -511,8 +511,12 @@ export function scanNewsArticles(): Record<string, NewsArticleMetadata[]> {
   return articlesByLang;
 }
 
-/** Language-suffix pattern shared across slug-normalisation helpers. */
-const LANG_SUFFIX_RE = /-(en|sv|da|no|nb|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/;
+/**
+ * Language-suffix pattern derived from the LANGUAGES constant so there is a
+ * single source of truth for supported language codes.
+ * Constructed once at module load; safe to share across calls.
+ */
+const LANG_SUFFIX_RE: RegExp = new RegExp(`-(${LANG_CODES})\\.html$`);
 
 /**
  * Build map of base slugs to available languages for cross-language discovery.
@@ -539,7 +543,12 @@ export function buildSlugToLanguagesMap(articlesByLang: Record<string, NewsArtic
     });
   });
 
-  // Pass 2: map each article slug to the collected language list
+  // Pass 2: map each article slug to the collected language list.
+  // The fallback `[lang]` handles the edge case where an article slug does not
+  // end with a recognised language suffix (e.g. legacy files without a suffix);
+  // Pass 1 would have stored the baseSlug unchanged, leaving baseSlugToLangs
+  // populated for that entry, so the fallback is effectively unreachable for
+  // well-formed slugs.
   const slugToLanguages: Record<string, string[]> = {};
 
   Object.entries(articlesByLang).forEach(([lang, articles]) => {
