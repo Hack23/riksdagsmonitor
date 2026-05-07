@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "cycle": "interpellations",
+  "date": "2026-05-07",
+  "subfolder": "interpellations",
+  "generated_at": "2026-05-07T00:00:00Z",
+  "pirs": [
+    {
+      "pir_id": "PIR-ILO-001",
+      "question": "Has Sweden's Sida funding for ILO technical cooperation programs been reduced in 2024–2026 compared to 2022–2023?",
+      "priority": "P1",
+      "status": "OPEN",
+      "collection_methods": ["Sida årsredovisning 2024/2025", "Regleringsbrev", "UD budget questionnaire"],
+      "diagnostic_value": "HIGH — resolves H1 vs H2 hypothesis",
+      "updated": "2026-05-07"
+    },
+    {
+      "pir_id": "PIR-ILO-002",
+      "question": "Has Sweden's voting behavior in the ILO Governing Body changed under the Tidö coalition on freedom of association or forced labor resolutions?",
+      "priority": "P2",
+      "status": "OPEN",
+      "collection_methods": ["ILO Governing Body records (public)", "Nordic labor ministry consultation minutes"],
+      "diagnostic_value": "MEDIUM — direct evidence of engagement quality",
+      "updated": "2026-05-07"
+    },
+    {
+      "pir_id": "PIR-ILO-003",
+      "question": "How many ILO-related interpellations has S filed in 2022–2026, and what is the pattern of government responses?",
+      "priority": "P3",
+      "status": "OPEN",
+      "collection_methods": ["Riksdag document search for IP with ILO/arbetsrätt/multilateral terms"],
+      "diagnostic_value": "LOW-MEDIUM — confirms systematic campaign vs one-off",
+      "updated": "2026-05-07"
+    }
+  ]
+}

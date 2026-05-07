@@ -1,0 +1,30 @@
+{
+  "status": "degraded",
+  "warning": "IMF SDMX fetch failed at analysis time. All economic figures use prior-vintage estimates only.",
+  "vintage": "WEO-2026-04",
+  "retrieved_at": "prior to 2026-05-07",
+  "provider": "imf",
+  "country": "SWE",
+  "indicators": [
+    {
+      "indicator": "NGDP_RPCH",
+      "description": "GDP growth rate (real)",
+      "value": 2.0,
+      "unit": "percent",
+      "year": 2026,
+      "confidence": "C3",
+      "note": "WEO-2026-04 estimate, degraded status"
+    },
+    {
+      "indicator": "LUR",
+      "description": "Unemployment rate",
+      "value": 8.5,
+      "unit": "percent",
+      "year": 2026,
+      "confidence": "C3",
+      "note": "WEO-2026-04 estimate, degraded status"
+    }
+  ],
+  "economic_relevance_to_topic": "LOW — ILO engagement is political, not primarily economic. Sida ILO technical cooperation budget is fiscal marginal relative to GDP. No substitution with World Bank data performed.",
+  "imf_degraded_notice": "IMF data provider status is degraded. Do not use these figures for precise economic claims. Economic context in articles should note IMF vintage WEO-2026-04 with degraded status warning."
+}
