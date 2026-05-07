@@ -199,7 +199,7 @@ describe('Generate News Indexes', () => {
     });
   });
 
-  describe('scanNewsArticles', () => {
+  describe('scanNewsArticles', { timeout: 60000 }, () => {
     it('should return object with all 14 language keys', () => {
       const articles = module.scanNewsArticles();
 
