@@ -1,0 +1,100 @@
+{
+  "generated": "2026-05-07T20:30:00Z",
+  "article_date": "2026-05-07",
+  "subfolder": "evening-analysis",
+  "workflow": "news-evening-analysis",
+  "pirs": [
+    {
+      "id": "PIR-EVA-01",
+      "status": "OPEN",
+      "question": "Will SIGINT Reform (FöU18) pass without major amendment?",
+      "confidence": "Almost Certain (90%+)",
+      "opened": "2026-05-07",
+      "trigger": "FöU18 SIGINT modernisation committee report",
+      "next_collection": "Lagrådet yttrande + plenary vote T+14-21d",
+      "assessment": "Base scenario: passes with narrow oversight amendments. Lagrådet yttrande is the key indicator."
+    },
+    {
+      "id": "PIR-EVA-02",
+      "status": "OPEN",
+      "question": "Criminal Responsibility Age (prop. 246) — CRC challenge timeline",
+      "confidence": "Likely (70%)",
+      "opened": "2026-05-07",
+      "trigger": "Motions sibling analysis (V, C, MP challenges)",
+      "next_collection": "JuU committee report on prop. 246",
+      "assessment": "If prop. 246 passes as drafted, CRC formal complaint within 24 months via 2027-28 country review."
+    },
+    {
+      "id": "PIR-EVA-03",
+      "status": "OPEN",
+      "question": "ILO Funding — Sweden's multilateral commitment under Tidö government",
+      "confidence": "Likely (65%)",
+      "opened": "2026-05-07",
+      "trigger": "HD10475 S interpellation",
+      "next_collection": "Minister response to HD10475 (T+22d)",
+      "assessment": "Minister will confirm Governing Body participation but likely avoid direct Sida reduction question."
+    },
+    {
+      "id": "PIR-EVA-04",
+      "status": "OPEN",
+      "question": "Will JuU39 (psychological violence) prosecution framework be operationally ready within 18 months?",
+      "confidence": "Possible (40%)",
+      "opened": "2026-05-07",
+      "trigger": "JuU39 committee report + Denmark implementation comparison",
+      "next_collection": "Åklagarmyndigheten prosecution guidance publication",
+      "assessment": "Denmark experience suggests 18 months minimum. Sweden may face similar delays."
+    },
+    {
+      "id": "PIR-EVA-05",
+      "status": "OPEN",
+      "question": "Will HD03250 (state e-ID) achieve 5% adoption within 3 years of enactment?",
+      "confidence": "Unlikely (20%)",
+      "opened": "2026-05-07",
+      "trigger": "HD03250 proposition",
+      "next_collection": "Digg annual report 2027",
+      "assessment": "BankID dominance makes state e-ID adoption extremely unlikely without mandatory use case."
+    },
+    {
+      "id": "PIR-EVA-06",
+      "status": "OPEN",
+      "question": "Will MP's children's rights electoral narrative produce measurable polling gain?",
+      "confidence": "Possible (35%)",
+      "opened": "2026-05-07",
+      "trigger": "HD10476 + HD11796 + HD10478 MP documents",
+      "next_collection": "Novus/SIFO post-sprint poll T+14-21d",
+      "assessment": "MP at 4.8% — needs 0.5-1% gain to feel secure above threshold."
+    },
+    {
+      "id": "PIR-EVA-07",
+      "status": "OPEN",
+      "question": "Will SD maintain coalition discipline after prop. 242 amendment motion rebuff?",
+      "confidence": "Likely (75%)",
+      "opened": "2026-05-07",
+      "trigger": "SD amendment motion against prop. 242 (motions sibling)",
+      "next_collection": "MJU committee report + SD leadership statements",
+      "assessment": "SD's structural incentives to remain in coalition are strong. Soft dissent ≠ coalition break."
+    }
+  ],
+  "tier_c_sibling_pirs": [
+    {
+      "sibling_folder": "propositions",
+      "open_pirs": 0,
+      "note": "EU-CA EPCA ratifications — no open PIRs (almost certain passage)"
+    },
+    {
+      "sibling_folder": "committeeReports",
+      "open_pirs": 2,
+      "note": "FöU18 SIGINT (PIR-EVA-01) + CU25 prison expansion implementation"
+    },
+    {
+      "sibling_folder": "motions",
+      "open_pirs": 2,
+      "note": "Prop. 246 (PIR-EVA-02) + prop. 242 SD coalition (PIR-EVA-07)"
+    },
+    {
+      "sibling_folder": "interpellations",
+      "open_pirs": 1,
+      "note": "ILO accountability (PIR-EVA-03)"
+    }
+  ]
+}
