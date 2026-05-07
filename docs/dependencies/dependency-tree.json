@@ -1,5 +1,5 @@
 {
-  "version": "0.9.0",
+  "version": "0.9.1",
   "name": "riksdagsmonitor",
   "problems": [
     "extraneous: @emnapi/core@1.10.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor/node_modules/@emnapi/core",
@@ -2979,8 +2979,8 @@
       }
     },
     "knip": {
-      "version": "6.11.0",
-      "resolved": "https://registry.npmjs.org/knip/-/knip-6.11.0.tgz",
+      "version": "6.12.0",
+      "resolved": "https://registry.npmjs.org/knip/-/knip-6.12.0.tgz",
       "overridden": false,
       "dependencies": {
         "fdir": {
@@ -5329,13 +5329,13 @@
           }
         },
         "vite": {
-          "version": "8.0.10"
+          "version": "8.0.11"
         }
       }
     },
     "vite": {
-      "version": "8.0.10",
-      "resolved": "https://registry.npmjs.org/vite/-/vite-8.0.10.tgz",
+      "version": "8.0.11",
+      "resolved": "https://registry.npmjs.org/vite/-/vite-8.0.11.tgz",
       "overridden": false,
       "dependencies": {
         "@types/node": {
@@ -5385,13 +5385,13 @@
           "version": "4.0.4"
         },
         "postcss": {
-          "version": "8.5.10",
-          "resolved": "https://registry.npmjs.org/postcss/-/postcss-8.5.10.tgz",
+          "version": "8.5.14",
+          "resolved": "https://registry.npmjs.org/postcss/-/postcss-8.5.14.tgz",
           "overridden": false,
           "dependencies": {
             "nanoid": {
-              "version": "3.3.11",
-              "resolved": "https://registry.npmjs.org/nanoid/-/nanoid-3.3.11.tgz",
+              "version": "3.3.12",
+              "resolved": "https://registry.npmjs.org/nanoid/-/nanoid-3.3.12.tgz",
               "overridden": false
             },
             "picocolors": {
@@ -5405,14 +5405,12 @@
           }
         },
         "rolldown": {
-          "version": "1.0.0-rc.17",
-          "resolved": "https://registry.npmjs.org/rolldown/-/rolldown-1.0.0-rc.17.tgz",
+          "version": "1.0.0-rc.18",
+          "resolved": "https://registry.npmjs.org/rolldown/-/rolldown-1.0.0-rc.18.tgz",
           "overridden": false,
           "dependencies": {
             "@oxc-project/types": {
-              "version": "0.127.0",
-              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.127.0.tgz",
-              "overridden": false
+              "version": "0.128.0"
             },
             "@rolldown/binding-android-arm64": {},
             "@rolldown/binding-darwin-arm64": {},
@@ -5424,13 +5422,13 @@
             "@rolldown/binding-linux-ppc64-gnu": {},
             "@rolldown/binding-linux-s390x-gnu": {},
             "@rolldown/binding-linux-x64-gnu": {
-              "version": "1.0.0-rc.17",
-              "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-x64-gnu/-/binding-linux-x64-gnu-1.0.0-rc.17.tgz",
+              "version": "1.0.0-rc.18",
+              "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-x64-gnu/-/binding-linux-x64-gnu-1.0.0-rc.18.tgz",
               "overridden": false
             },
             "@rolldown/binding-linux-x64-musl": {
-              "version": "1.0.0-rc.17",
-              "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-x64-musl/-/binding-linux-x64-musl-1.0.0-rc.17.tgz",
+              "version": "1.0.0-rc.18",
+              "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-x64-musl/-/binding-linux-x64-musl-1.0.0-rc.18.tgz",
               "overridden": false
             },
             "@rolldown/binding-openharmony-arm64": {},
@@ -5438,8 +5436,8 @@
             "@rolldown/binding-win32-arm64-msvc": {},
             "@rolldown/binding-win32-x64-msvc": {},
             "@rolldown/pluginutils": {
-              "version": "1.0.0-rc.17",
-              "resolved": "https://registry.npmjs.org/@rolldown/pluginutils/-/pluginutils-1.0.0-rc.17.tgz",
+              "version": "1.0.0-rc.18",
+              "resolved": "https://registry.npmjs.org/@rolldown/pluginutils/-/pluginutils-1.0.0-rc.18.tgz",
               "overridden": false
             }
           }
@@ -5536,7 +5534,7 @@
             },
             "msw": {},
             "vite": {
-              "version": "8.0.10"
+              "version": "8.0.11"
             }
           }
         },
@@ -5648,7 +5646,7 @@
           "version": "3.1.0"
         },
         "vite": {
-          "version": "8.0.10"
+          "version": "8.0.11"
         },
         "why-is-node-running": {
           "version": "2.3.0",
@@ -5686,7 +5684,7 @@
               "overridden": false,
               "dependencies": {
                 "hono": {
-                  "version": "4.12.14"
+                  "version": "4.12.18"
                 }
               }
             },
@@ -6121,8 +6119,8 @@
               }
             },
             "hono": {
-              "version": "4.12.14",
-              "resolved": "https://registry.npmjs.org/hono/-/hono-4.12.14.tgz",
+              "version": "4.12.18",
+              "resolved": "https://registry.npmjs.org/hono/-/hono-4.12.18.tgz",
               "overridden": false
             },
             "jose": {
