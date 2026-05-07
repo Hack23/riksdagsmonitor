@@ -158,6 +158,10 @@
   --spacing-2xl: 3rem; /* 48px */
   --spacing-3xl: 4rem; /* 64px */
   --spacing-4xl: 6rem; /* 96px */
+  /* Shared responsive edge gutter for full-width pages/chrome. Generated
+     article, news-index, footer and header layouts use this token so they can
+     span the viewport while keeping readable touch-safe horizontal breathing
+     room on phones and large displays. */
   --page-gutter: clamp(0.75rem, 2vw, 2rem);
 
   /* ── Design Tokens: Spacing Scale (T-shirt → numeric alias) ──────────── */
@@ -12674,12 +12678,21 @@ html[data-theme="light"] .footer-disclaimer a {
 
 /* ---- article body ---- */
 
+/* Page shell only: buildChrome places `rm-article-body` on <body> for all
+   generated pages. Keep the viewport background/min-height here rather than on
+   nested article content blocks; applying `min-height:100vh` to inner
+   `.rm-article-body` wrappers caused the article double-scroll / over-tall
+   section behavior visible in the screenshot. */
+
 body.rm-article-body {
   color: var(--light-text, #e0e0e0);
   background: var(--dark-bg, #0a0e27);
   min-height: 100vh;
 }
 
+/* Content sections: renderArticleHtml also uses `.rm-article-body` inside the
+   article for the lead/rest prose chunks. These must inherit the article card
+   surface instead of becoming independent viewport-height page shells. */
 .rm-article .rm-article-body {
   color: inherit;
   background: transparent;
@@ -13449,6 +13462,9 @@ html[data-theme="light"] body.rm-article-body {
   background: var(--bg-color, #f8f9fa);
 }
 
+/* Same shell/content split as the dark default above: only the generated page
+   body owns the light-mode page surface; nested prose chunks stay transparent
+   so theme changes cannot reintroduce inner scroll panels. */
 html[data-theme="light"] .rm-article .rm-article-body {
   color: inherit;
   background: transparent;
@@ -16035,7 +16051,7 @@ html[data-theme="light"] .rm-footer-heading {
 
 /* ── Improved subnav / breadcrumb spacing ─────────────────────────────── */
 .rm-site-subnav {
-  padding: 0.35rem 0;
+  padding: 0.35rem var(--page-gutter) 0.6rem;
 }
 
 .rm-breadcrumb ol {
@@ -16057,12 +16073,13 @@ html[data-theme="light"] .rm-footer-heading {
    image is readable against a light page chrome.
    ──────────────────────────────────────────────────────────────────── */
 
-.rm-article-body.news-article .hero-banner {
+.rm-article-body.news-article .hero-banner,
+.rm-article-body.news-page .hero-banner {
   /* Override the upstream `max-height: 180px; overflow:hidden` rule that
    * was cropping the banner. A flexible clamp gives the banner room to
    * breathe on desktop while staying compact on mobile. */
   max-height: none;
-  height: clamp(140px, 18vw, 240px);
+  height: clamp(150px, 24vw, 420px);
   margin-bottom: var(--spacing-md);
   border-bottom: 2px solid var(--primary-cyan, #00d9ff);
   background:
@@ -16072,7 +16089,8 @@ html[data-theme="light"] .rm-footer-heading {
   overflow: hidden;
 }
 
-.rm-article-body.news-article .hero-banner .hero-banner-bg {
+.rm-article-body.news-article .hero-banner .hero-banner-bg,
+.rm-article-body.news-page .hero-banner .hero-banner-bg {
   /* `contain` keeps the entire banner artwork visible (brand + tagline
    * are at the bottom of the asset). `cover` cropped them away. */
   object-fit: contain;
@@ -16085,10 +16103,12 @@ html[data-theme="light"] .rm-footer-heading {
 }
 
 @media (max-width: 767px) {
-  .rm-article-body.news-article .hero-banner {
-    height: clamp(110px, 22vw, 160px);
+  .rm-article-body.news-article .hero-banner,
+  .rm-article-body.news-page .hero-banner {
+    height: clamp(120px, 28vw, 190px);
   }
-  .rm-article-body.news-article .hero-banner .hero-banner-bg {
+  .rm-article-body.news-article .hero-banner .hero-banner-bg,
+  .rm-article-body.news-page .hero-banner .hero-banner-bg {
     height: 100%;
   }
 }
@@ -16097,7 +16117,8 @@ html[data-theme="light"] .rm-footer-heading {
  * banner artwork stays readable. Without this, the banner sat over the
  * dark default `.hero-banner` background which is jarring on a light
  * page. */
-html[data-theme="light"] .rm-article-body.news-article .hero-banner {
+html[data-theme="light"] .rm-article-body.news-article .hero-banner,
+html[data-theme="light"] .rm-article-body.news-page .hero-banner {
   background:
     radial-gradient(circle at 50% 45%, rgba(0, 102, 51, 0.10), transparent 42%),
     linear-gradient(90deg, #f6fbff 0%, #eaf6ff 50%, #f6fbff 100%);
