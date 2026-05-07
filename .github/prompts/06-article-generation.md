@@ -7,7 +7,7 @@ Articles are **100 % rendered from the analysis artifacts** produced in module `
 - Module `05-analysis-gate.md` has passed — every required artifact exists, every `dok_id` in the manifest has a `documents/{dok_id}-analysis.md`, Mermaid/colour/ICD 203 audit passes.
 - `$ARTICLE_DATE` (YYYY-MM-DD) and `$SUBFOLDER` (e.g. `propositions`, `motions`, `committee-reports`, `evening-analysis`, …) are exported in the environment.
 
-## Generation steps (exactly two)
+## Generation steps (exactly three)
 
 ### Step 1 — Aggregate
 
@@ -61,25 +61,49 @@ Any heading like `## Pass 2 …` / `### Pass 2 refinements` / `## 🔁 Pass 2 ad
 
 If a required artifact is missing the aggregator aborts with a non-zero exit code — return to `04-analysis-pipeline.md` and produce the missing file; do **not** hand-edit `article.md`.
 
-### Step 2 — Render
+### Step 2 — Translate `article.md` to every non-English language
+
+Before rendering, the agent **MUST** produce a per-language Markdown sibling for every supported non-English language. The translation surface is the same canonical `article.md`; the renderer picks up `article.<lang>.md` automatically when it exists, and falls back to the English source otherwise — so any missing sibling silently degrades that language's HTML to English content under a non-English `<html lang>`. That degradation is **not acceptable** for the published site.
+
+Target languages (13 — every supported language except `en`):
+
+```text
+sv  da  no  fi  de  fr  es  nl  ar  he  ja  ko  zh
+```
+
+For each target language the agent produces:
+
+`analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.<lang>.md`
+
+Translation contract:
+
+- Translate the body prose, headings and table cells.
+- **Preserve verbatim**: YAML front-matter values that are identifiers (`subfolder`, `slug`, `source_folder`, `dok_id` references, file paths, GitHub URLs), Mermaid code fences, JSON code blocks, numeric values, and Schema.org / dataflow / dataset identifiers. Update `language:` in the front-matter to the target language code.
+- Keep Swedish political terminology in Swedish where it is the proper noun (party names, committee names, document type acronyms, Riksdagsmonitor brand).
+- For Arabic (`ar`) and Hebrew (`he`) the chrome handles `dir="rtl"` automatically — do not add inline direction overrides.
+- Keep IMF / SCB / WB / Statskontoret citation blocks intact, including `economicProvenance` JSON.
+
+If the time budget is exhausted before every language is translated, ship whatever has been produced and let the `news-translate` quality-improvement workflow fill the remainder on the next scheduled run. **Never commit a half-translated file** — either the language is fully translated or the renderer falls back to the English source for that slot.
+
+### Step 3 — Render
 
 ```bash
 npx tsx scripts/render-articles.ts \
   --date     "$ARTICLE_DATE" \
   --subfolder "$SUBFOLDER" \
-  --lang     "$CORE_LANGUAGES"   # always "en,sv" for automated workflows
+  --lang     all              # always render every supported language
 ```
 
 What the renderer does:
 
-1. Reads `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.md` (or `article.<lang>.md` if the `news-translate` workflow has already published one).
+1. Reads `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.md` and, for each requested language, prefers `article.<lang>.md` when it exists.
 2. Parses it through the `unified` → `remark-parse` → `remark-gfm` → `remark-rehype` → `rehype-raw` → `rehype-slug` → `rehype-autolink-headings` → `rehype-sanitize` → `rehype-stringify` pipeline. Mermaid ```` ```mermaid ```` fences are preserved as `<pre class="mermaid">` and upgraded to SVG client-side by `js/lib/mermaid-init.mjs`.
-3. Wraps the sanitised body in the shared site chrome (`scripts/render-lib/index.ts:buildChrome`): full `<head>` with hreflang × all target languages, Open Graph / Twitter / JSON-LD `NewsArticle` (with `isBasedOn` citing every source artifact), cyberpunk header with skip-link + language switcher, article dek + provenance badges, footer with "Analysis sources" block linking every source `.md` / `.json` artifact under the source folder back to GitHub. Generated `article.md`, translated `article.<lang>.md`, and `pass1/` snapshots are excluded from the public source list.
-4. Writes one HTML file per requested language:
+3. Wraps the sanitised body in the shared site chrome (`scripts/render-lib/index.ts:buildChrome`): full `<head>` with hreflang × all 14 supported languages, Open Graph / Twitter / JSON-LD `NewsArticle` (with `isBasedOn` citing every source artifact), cyberpunk header with skip-link + language switcher, article dek + provenance badges, footer with "Analysis sources" block linking every source `.md` / `.json` artifact under the source folder back to GitHub. Generated `article.md`, translated `article.<lang>.md`, and `pass1/` snapshots are excluded from the public source list.
+4. Writes one HTML file per supported language — **always all 14**:
 
-   `news/$ARTICLE_DATE-$SUBFOLDER-$LANG.html`   (e.g. `news/2026-04-23-propositions-en.html`)
+   `news/$ARTICLE_DATE-$SUBFOLDER-$LANG.html`   (e.g. `news/2026-04-23-propositions-en.html` … `news/2026-04-23-propositions-zh.html`)
 
-Automated per-type workflows always render `en,sv`. The remaining twelve languages are the responsibility of the dedicated `news-translate` workflow (see `.github/workflows/news-translate.md`) — this module never dispatches translation and never produces the other twelve HTML files itself.
+Every per-type workflow renders the full 14-language set in the same agentic run. The dedicated `news-translate` workflow no longer owns the primary translation hand-off — it is now a quality / catch-up workflow that re-validates existing translations, refines them where the validator flags drift, and back-fills any language that an upstream run could not finish. See `.github/workflows/news-translate.md` for the improvement contract.
 
 ## What the AI does NOT do any more
 
@@ -108,10 +132,11 @@ All of those checks were artefacts of the old scaffold pipeline. With the aggreg
       || { echo "❌ article.md cites $d but no documents/${d}-analysis.md"; exit 1; }
   done
   ```
-- ✅ Verify the rendered HTML exists for every target language:
+- ✅ Verify the rendered HTML exists for every supported language (always all 14):
 
   ```bash
-  for LANG in $(echo "$CORE_LANGUAGES" | tr ',' ' '); do
+  ALL_LANGS="en sv da no fi de fr es nl ar he ja ko zh"
+  for LANG in $ALL_LANGS; do
     OUT="news/${ARTICLE_DATE}-${SUBFOLDER}-${LANG}.html"
     [ -s "$OUT" ] || { echo "❌ $OUT missing"; exit 1; }
     grep -q '<article class="rm-article"' "$OUT" || { echo "❌ $OUT lacks article wrapper"; exit 1; }
@@ -135,7 +160,7 @@ Before staging, read the generated `article.md` once and verify it reads as a co
 
 ## Translations
 
-Article translation remains a **separate workflow**: `news-translate` consumes published English + Swedish articles and produces the remaining twelve language variants. Per-type analysis workflows must not attempt to render the other twelve languages themselves.
+Every per-type workflow renders the full **14-language set** (English + Swedish + 12 additional languages) in the same agentic run. The `news-translate` workflow remains in the repository as a **quality-improvement / catch-up** workflow: it re-validates existing translations, refines them where the validator flags drift, and back-fills any language that an upstream run could not finish under its time budget. Per-type workflows never delegate the *primary* translation hand-off any more — the canonical 14-language render happens inside the per-type run itself.
 
 ## Quality floor
 

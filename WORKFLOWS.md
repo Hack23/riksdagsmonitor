@@ -1018,7 +1018,7 @@ All workflows produce the same **23 always-on artifacts** (Family A 9 + Family B
 | **Tier-C aggregation** | `news-evening-analysis`, `news-realtime-monitor`, `news-week-ahead`, `news-month-ahead`, `news-weekly-review`, `news-monthly-review`, `news-quarter-ahead` | **23** (+ S1–S7 per tier/type) | × 1.0–1.7 | [`prompts/ext/tier-c-aggregation.md`](.github/prompts/ext/tier-c-aggregation.md) |
 | **Tier-C + year-ahead** | `news-year-ahead` | **24** (23 + `pestle-analysis.md` via LH-4; + S1–S7 per tier) | × 2.0 | [`prompts/ext/tier-c-aggregation.md`](.github/prompts/ext/tier-c-aggregation.md) + LH-4 |
 | **Tier-C + election-cycle** | `news-election-cycle` | **28** (23 + 5 via LH-4 + LH-5; + S1–S7 per tier) | × 2.5 | [`prompts/ext/tier-c-aggregation.md`](.github/prompts/ext/tier-c-aggregation.md) + LH-4 + LH-5 |
-| **Translation** (N/A) | `news-translate` | N/A (post-hoc) | — | Direct text pipeline |
+| **Translation** (N/A) | `news-translate` | N/A (catch-up only — primary translation now happens inside each per-type run) | — | Direct text pipeline |
 
 All artifacts are written under `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` — see [`analysis/README.md`](analysis/README.md) for the on-disk layout and [`analysis/templates/README.md`](analysis/templates/README.md) for the 23 canonical templates.
 
@@ -1392,7 +1392,7 @@ flowchart LR
 
 > Each agentic workflow is authored as a Markdown source (`.md`) and **compiled** to a hardened GitHub Actions workflow (`.lock.yml`) via `compile-agentic-workflows.yml`. Only the `.lock.yml` executes on the runner; the `.md` is the source of truth, reviewed in PRs. Both files are SHA-pinned, run behind the Squid/iptables egress firewall, and route all write-side effects through the five-layer **safe-outputs** validator (sanitisation → schema-validate → policy-check → human-review → merge).
 >
-> **Pipeline model**: each per-type news workflow runs **analysis → aggregate → render → PR** in a single agentic run. The legacy two-step `news-article-generator` (scaffold + later fill) workflow has been removed; articles are now derived directly from `analysis/daily/$DATE/$SUB/` artifacts via [`scripts/aggregate-analysis.ts`](scripts/aggregate-analysis.ts) → [`scripts/render-articles.ts`](scripts/render-articles.ts). Translations are handled out-of-band by `news-translate` only.
+> **Pipeline model**: each per-type news workflow runs **analysis → aggregate → translate (13 non-English languages) → render (`--lang all`, 14 HTML files) → PR** in a single agentic run. The legacy two-step `news-article-generator` (scaffold + later fill) workflow has been removed; articles are now derived directly from `analysis/daily/$DATE/$SUB/` artifacts via [`scripts/aggregate-analysis.ts`](scripts/aggregate-analysis.ts) → per-language Markdown translation → [`scripts/render-articles.ts --lang all`](scripts/render-articles.ts). The dedicated `news-translate` workflow is now a quality / catch-up workflow only — it re-validates upstream translations and back-fills any language that an upstream run could not finish under its 60-min budget.
 
 | # | Workflow | Source | Lock | Purpose |
 | --- | --- | --- | --- | --- |
@@ -1406,7 +1406,7 @@ flowchart LR
 | 5.8 | 📅 News Month Ahead | `news-month-ahead.md` | `news-month-ahead.lock.yml` | Tier-C aggregation: upcoming month preview |
 | 5.9 | 🏛️ News Propositions | `news-propositions.md` | `news-propositions.lock.yml` | Single-type: government proposition coverage |
 | 5.10 | ❓ News Interpellations | `news-interpellations.md` | `news-interpellations.lock.yml` | Single-type: interpellation debate tracking |
-| 5.11 | 🌍 News Translate | `news-translate.md` | `news-translate.lock.yml` | Out-of-band translation: rendered EN+SV → 12 other languages |
+| 5.11 | 🌍 News Translate (catch-up) | `news-translate.md` | `news-translate.lock.yml` | Quality / catch-up only: re-validates upstream translations, refines drift, back-fills languages an upstream run could not finish |
 | 5.12 | 📐 News Quarter Ahead | `news-quarter-ahead.md` | `news-quarter-ahead.lock.yml` | Tier-C aggregation × 1.7: 90-day parliamentary-season + Riksbank/SCB calendar |
 | 5.13 | 📆 News Year Ahead | `news-year-ahead.md` | `news-year-ahead.lock.yml` | Tier-C aggregation × 2.0: 365-day annual outlook anchored in IMF WEO Apr/Oct vintage |
 | 5.14 | 🗳️ News Election Cycle | `news-election-cycle.md` | `news-election-cycle.lock.yml` | Tier-C aggregation × 2.5: full 4-year mandate; dispatch-only until runtime measured |

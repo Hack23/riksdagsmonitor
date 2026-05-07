@@ -1,6 +1,6 @@
 ---
 name: "News: Translate Articles"
-description: Dedicated translation workflow for news articles. Generates high-quality translations for all non-core languages. Dispatched by content workflows or run manually/on schedule to translate untranslated articles.
+description: Quality-improvement / catch-up workflow for news article translations. Per-type news workflows now produce all 14 language HTML files in a single agentic run; this workflow only re-validates existing translations, refines them where the validator flags drift, refreshes stale `dateModified`, and back-fills any language that an upstream run could not finish.
 strict: false
 imports:
   - ../prompts/00-base-contract.md
@@ -242,17 +242,24 @@ engine:
   model: claude-sonnet-4.6
 ---
 
-# 🌐 News Translate
+# 🌐 News Translate (quality / catch-up only)
 
-Dedicated translation workflow. Consumes completed EN/SV articles and produces translations in the remaining 12 languages. Never generates original analysis.
+Quality-improvement and catch-up workflow. Per-type news workflows (`news-propositions`, `news-motions`, `news-committee-reports`, `news-interpellations`, `news-evening-analysis`, `news-realtime-monitor`, `news-week-ahead`, `news-month-ahead`, `news-monthly-review`, `news-weekly-review`, `news-quarter-ahead`, `news-year-ahead`, `news-election-cycle`) **already produce all 14 language HTML files** in a single agentic run via the per-language `article.<lang>.md` translation step inside `06-article-generation.md`. This workflow no longer owns the primary translation hand-off; it exists to:
+
+1. Re-validate every translation produced upstream against the English source (`scripts/validate-news-translations.ts`).
+2. Refine translations where the validator flags drift, missing Schema.org metadata, or SEO regressions.
+3. Refresh stale `dateModified` after content changes.
+4. Back-fill any language that an upstream run could not finish under its time budget — when this happens the renderer fell back to English content under a non-English `<html lang>`, which this workflow upgrades to a real translation.
+
+It never generates original analysis.
 
 ## Pipeline
 
 Translation is a pure-derivative workflow:
 
-1. Scan `news/` for articles in the source language (default `en`) missing translations for target languages.
+1. Scan `news/` for articles in the source language (default `en`) that have either (a) a missing translation, or (b) a translation that fails `scripts/validate-news-translations.ts`.
 2. For each candidate, read the source HTML in full.
-3. Translate into every requested target language, preserving Schema.org markup, `dok_id` references, Swedish political terminology, and RTL layout for `ar` / `he`.
+3. Translate / refine into every requested target language, preserving Schema.org markup, `dok_id` references, Swedish political terminology, and RTL layout for `ar` / `he`.
 4. Stage, commit, and call `safeoutputs___create_pull_request` **exactly once** covering every translation produced.
 
 ## Inputs
