@@ -511,32 +511,43 @@ export function scanNewsArticles(): Record<string, NewsArticleMetadata[]> {
   return articlesByLang;
 }
 
+/** Language-suffix pattern shared across slug-normalisation helpers. */
+const LANG_SUFFIX_RE = /-(en|sv|da|no|nb|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/;
+
 /**
  * Build map of base slugs to available languages for cross-language discovery.
+ *
+ * O(n) implementation: two-pass approach avoids the previous O(n²) nested
+ * iteration that caused timeouts when the news/ directory grew large.
+ *
+ * Pass 1 – baseSlug → string[] of languages that have that article.
+ * Pass 2 – article.slug → the language list from pass 1.
  */
 export function buildSlugToLanguagesMap(articlesByLang: Record<string, NewsArticleMetadata[]>): Record<string, string[]> {
+  // Pass 1: build baseSlug → languages[] map
+  const baseSlugToLangs: Record<string, string[]> = {};
+
+  Object.entries(articlesByLang).forEach(([lang, articles]) => {
+    articles.forEach((article) => {
+      const baseSlug: string = article.slug.replace(LANG_SUFFIX_RE, '.html');
+      if (!baseSlugToLangs[baseSlug]) {
+        baseSlugToLangs[baseSlug] = [];
+      }
+      if (!baseSlugToLangs[baseSlug]!.includes(lang)) {
+        baseSlugToLangs[baseSlug]!.push(lang);
+      }
+    });
+  });
+
+  // Pass 2: map each article slug to the collected language list
   const slugToLanguages: Record<string, string[]> = {};
 
-  // Iterate through all articles in all languages
-  Object.entries(articlesByLang).forEach(([_lang, articles]) => {
+  Object.entries(articlesByLang).forEach(([lang, articles]) => {
     articles.forEach((article) => {
-      // Strip language suffix from slug to get base slug
-      const baseSlug: string = article.slug.replace(/-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/, '.html');
-
       if (!slugToLanguages[article.slug]) {
-        slugToLanguages[article.slug] = [];
+        const baseSlug: string = article.slug.replace(LANG_SUFFIX_RE, '.html');
+        slugToLanguages[article.slug] = baseSlugToLangs[baseSlug] ?? [lang];
       }
-
-      // Find all articles with the same base slug across languages
-      Object.entries(articlesByLang).forEach(([otherLang, otherArticles]) => {
-        otherArticles.forEach((otherArticle) => {
-          const otherBaseSlug: string = otherArticle.slug.replace(/-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/, '.html');
-
-          if (baseSlug === otherBaseSlug && !slugToLanguages[article.slug]!.includes(otherLang)) {
-            slugToLanguages[article.slug]!.push(otherLang);
-          }
-        });
-      });
     });
   });
 
