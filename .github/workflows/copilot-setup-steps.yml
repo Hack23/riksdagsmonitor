@@ -83,7 +83,7 @@ jobs:
           
           # Install Playwright browser binaries (chromium) for the @playwright/mcp server
           # so agents can run browser automation without per-session install delays.
-          npx --yes playwright install --with-deps chromium
+          # npx --yes playwright install --with-deps chromium
           
           # Install World Bank MCP server for economic data
           npm install -g worldbank-mcp@1.0.1
