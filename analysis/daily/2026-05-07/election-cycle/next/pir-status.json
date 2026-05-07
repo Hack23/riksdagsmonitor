@@ -1,0 +1,36 @@
+{
+  "date": "2026-05-07",
+  "cycle": "next",
+  "election": "2026-09-13",
+  "generated_at": "2026-05-07T00:00:00Z",
+  "pir_items": [
+    {
+      "id": "NC-PIR-001",
+      "question": "Will post-2026 government reverse social insurance reform?",
+      "wep": "UNLIKELY",
+      "horizon": "cycle",
+      "source": "HD01SfU21 analysis"
+    },
+    {
+      "id": "NC-PIR-002",
+      "question": "Will SIGINT authority be maintained?",
+      "wep": "VERY LIKELY",
+      "horizon": "cycle",
+      "source": "HD01FöU18, bipartisan support"
+    },
+    {
+      "id": "NC-PIR-003",
+      "question": "Will SD formally enter government 2026-2030?",
+      "wep": "LIKELY",
+      "horizon": "cycle",
+      "source": "Scenario A1 analysis"
+    }
+  ],
+  "aggregate_assessment": "Post-2026 mandate: Tidö continuation LIKELY; SIGINT and criminal justice policy durable regardless of outcome",
+  "imf_provenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "vintage": "WEO Apr-2026",
+    "retrieved_at": "2026-05-07"
+  }
+}
