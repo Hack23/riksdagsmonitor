@@ -1,5 +1,5 @@
 ---
-title: "Interpellation Debates,"
+title: "Interpellation Debates"
 description: "Five interpellations filed 2026-05-06 reveal a Swedish opposition (S, independents) pressing the Tidö government on three policy fronts simultaneously: (1) a politically explosive international…"
 date: 2026-05-06
 subfolder: interpellations
