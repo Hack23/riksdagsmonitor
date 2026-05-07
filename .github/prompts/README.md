@@ -81,7 +81,7 @@ flowchart LR
   E -- pass --> F[Aggregate analysis → article.md<br/>module 06]
   E -- fail --> G[Fix &amp; retry]
   G --> E
-  F --> H[Render article.md → HTML en,sv<br/>module 06]
+  F --> H[Render article.md → HTML × 14 languages<br/>module 06]
   H --> I[Stage &amp; commit<br/>module 07]
   I --> J[ONE create_pull_request<br/>module 07]
   style A fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
