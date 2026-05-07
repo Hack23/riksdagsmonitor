@@ -41,6 +41,7 @@ import { buildBreadcrumbListLd, buildNewsArticleLd, buildSpeakableWebPageLd, BRE
 import { depth } from './chrome/helpers.js';
 
 import { getBySubfolder, getById, loadArticleTypesRegistry } from './article-types.js';
+import { articleTypeLabel } from './article-type-i18n.js';
 import { artifactTitle, artifactIcon } from '../political-intelligence/i18n/artifact-i18n.js';
 import { readerGuideI18n } from './aggregator/reader-guide-i18n.js';
 import { READER_GUIDE_ENTRIES, anchorForTitle } from './aggregator/reader-guide.js';
@@ -419,7 +420,7 @@ ${guideTableHtml}
 ${chrome.headerHtml}
       <article class="rm-article rm-article-type-${escapeHtml(articleType.type)}" data-article-type="${escapeHtml(articleType.type)}" lang="${LANGUAGE_META[input.lang].hreflang}">
         <header class="rm-article-header">
-          <p class="rm-article-eyebrow"><span class="rm-icon" aria-hidden="true">🔍</span> ${escapeHtml(articleType.label)}</p>
+          <p class="rm-article-eyebrow"><span class="rm-icon" aria-hidden="true">🔍</span> ${escapeHtml(articleTypeLabel(articleType.type, input.lang, articleType.label))}</p>
           <h1>${escapeHtml(title)}</h1>
           <p class="rm-article-dek">${escapeHtml(description)}</p>
           <p class="rm-article-meta">
