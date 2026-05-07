@@ -151,7 +151,7 @@ safe-outputs:
     - www.riksdagsmonitor.com
     - raw.githubusercontent.com
     - hack23.github.io
-  max-patch-size: 4096
+  max-patch-size: 10240
   create-pull-request:
     labels: [agentic-news, analysis-data]
     draft: false
