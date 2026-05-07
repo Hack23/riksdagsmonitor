@@ -249,7 +249,7 @@ Quality-improvement and catch-up workflow. Per-type news workflows (`news-propos
 1. Re-validate every translation produced upstream against the English source (`scripts/validate-news-translations.ts`).
 2. Refine translations where the validator flags drift, missing Schema.org metadata, or SEO regressions.
 3. Refresh stale `dateModified` after content changes.
-4. Back-fill any language that an upstream run could not finish under its time budget — when this happens the renderer fell back to English content under a non-English `<html lang>`, which this workflow upgrades to a real translation.
+4. Back-fill any language that an upstream run could not finish under its time budget — when this happens the renderer fell back to English content under a non-English `<html lang>`. This workflow **writes the missing `article.<lang>.md`** into `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` and then re-renders the corresponding HTML via `scripts/render-articles.ts`, making the translation durable across future `prebuild` / `render-articles.ts` runs (which regenerate HTML from the Markdown sources).
 
 It never generates original analysis.
 

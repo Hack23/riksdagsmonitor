@@ -63,7 +63,7 @@ If a required artifact is missing the aggregator aborts with a non-zero exit cod
 
 ### Step 2 — Translate `article.md` to every non-English language
 
-Before rendering, the agent **MUST** produce a per-language Markdown sibling for every supported non-English language. The translation surface is the same canonical `article.md`; the renderer picks up `article.<lang>.md` automatically when it exists, and falls back to the English source otherwise — so any missing sibling silently degrades that language's HTML to English content under a non-English `<html lang>`. That degradation is **not acceptable** for the published site.
+Before rendering, the agent **SHOULD** produce a per-language Markdown sibling for every supported non-English language. The translation surface is the same canonical `article.md`; the renderer picks up `article.<lang>.md` automatically when it exists, and falls back to the English source otherwise — so any missing sibling temporarily degrades that language's HTML to English content under a non-English `<html lang>`. This fallback is acceptable as a **temporary** state within a single run's time budget; the `news-translate` quality-improvement workflow will back-fill missing `article.<lang>.md` files (and re-render the corresponding HTML) on the next scheduled pass, making the fix durable across future rebuilds.
 
 Target languages (13 — every supported language except `en`):
 
@@ -83,7 +83,7 @@ Translation contract:
 - For Arabic (`ar`) and Hebrew (`he`) the chrome handles `dir="rtl"` automatically — do not add inline direction overrides.
 - Keep IMF / SCB / WB / Statskontoret citation blocks intact, including `economicProvenance` JSON.
 
-If the time budget is exhausted before every language is translated, ship whatever has been produced and let the `news-translate` quality-improvement workflow fill the remainder on the next scheduled run. **Never commit a half-translated file** — either the language is fully translated or the renderer falls back to the English source for that slot.
+If the time budget is exhausted before every language is translated, ship whatever has been produced — temporary English fallback for missing languages is acceptable. The `news-translate` quality-improvement workflow will back-fill missing `article.<lang>.md` files (and re-render the corresponding HTML) on the next scheduled run, ensuring durability across future `render-articles.ts` rebuilds. **Never commit a half-translated file** — either the language is fully translated or the renderer falls back to the English source for that slot.
 
 ### Step 3 — Render
 

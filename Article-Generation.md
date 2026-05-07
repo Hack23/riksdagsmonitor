@@ -168,7 +168,7 @@ It declares:
 | **Engine** | Copilot with `claude-sonnet-4.6` |
 | **Permissions** | Read-only content/issues/PR/actions/discussions/security-events for AI job |
 | **MCP gateway** | Enabled |
-| **Safe outputs** | One PR max, labels `agentic-news`, `analysis-data`, one translation dispatch max |
+| **Safe outputs** | One PR max, labels `agentic-news`, `analysis-data` (no translation dispatch — all 14 languages rendered in-run) |
 | **Core output** | `analysis/daily/$ARTICLE_DATE/interpellations/article.md` + `article.<lang>.md` × 13 + `news/$ARTICLE_DATE-interpellations-{en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html` (always all 14 languages) |
 
 ### Registered article types
