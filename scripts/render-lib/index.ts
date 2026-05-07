@@ -100,5 +100,5 @@ export { buildBreadcrumbListLd, buildNewsArticleLd, buildSpeakableWebPageLd, BRE
 export type { BreadcrumbEntry, BreadcrumbEntryWithItem, BreadcrumbEntryCurrentPage, NewsArticleLdInput, BreadcrumbListLd, NewsArticleLd, SpeakableWebPageLd, JsonLdListItem } from './jsonld.js';
 
 // --- Article (orchestrator) -------------------------------------------------
-export { renderArticleHtml, stripBodyDuplicateSections } from './article.js';
+export { renderArticleHtml, stripBodyDuplicateSections, splitBodyAtSecondH2 } from './article.js';
 export type { RenderArticleInput } from './article.js';

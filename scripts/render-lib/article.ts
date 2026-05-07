@@ -161,6 +161,51 @@ export function stripBodyDuplicateSections(body: string): string {
   return cleaned;
 }
 
+/**
+ * Split rendered article body HTML into two chunks at the boundary of
+ * the second `<h2` element:
+ *
+ *   - `lead`  — everything from the start through (but not including)
+ *               the second `<h2`. By aggregator contract the first H2 is
+ *               always **Executive Brief**, so this chunk contains the
+ *               opening BLUF / executive summary and nothing else.
+ *   - `rest`  — the remainder of the body (Synthesis Summary onwards).
+ *
+ * The renderer composes the page as
+ * `header → lead → reader-guide → rest → sources` so that readers see
+ * the Executive Brief immediately, then the Reader Intelligence Guide
+ * (which explains *how* to read the rest), then the full analysis, then
+ * the source-card appendix. This is the journalist-optimal "fast answer
+ * → operating manual → deep analysis → provenance" arc.
+ *
+ * If the body contains fewer than two `<h2` elements (very short
+ * articles), the entire body is returned as `lead` and `rest` is empty —
+ * the reader guide will then render after the whole body which still
+ * matches the "executive brief first, then reader guide" intent because
+ * a single-section body is, by definition, the executive brief.
+ *
+ * Exported for testability.
+ */
+export function splitBodyAtSecondH2(bodyHtml: string): { lead: string; rest: string } {
+  // Match `<h2` as a tag opener (followed by space, `>`, or attributes).
+  // Find all positions, then pick the second one if available.
+  const h2OpenRe = /<h2[\s>]/gi;
+  const positions: number[] = [];
+  let match: RegExpExecArray | null;
+  while ((match = h2OpenRe.exec(bodyHtml)) !== null) {
+    positions.push(match.index);
+    if (positions.length >= 2) break;
+  }
+  if (positions.length < 2) {
+    return { lead: bodyHtml, rest: '' };
+  }
+  const splitAt = positions[1];
+  return {
+    lead: bodyHtml.slice(0, splitAt),
+    rest: bodyHtml.slice(splitAt),
+  };
+}
+
 export async function renderArticleHtml(input: RenderArticleInput): Promise<string> {
   const parsed = matter(input.markdown);
   const fm = parsed.data as Record<string, unknown>;
@@ -185,6 +230,11 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
   const cleanedContent = stripBodyDuplicateSections(parsed.content);
 
   const bodyHtml = await renderMarkdownToHtml(cleanedContent);
+
+  // Reading-order optimisation: split the body so the rendered page
+  // surfaces Executive Brief → Reader Intelligence Guide → rest →
+  // Sources. See {@link splitBodyAtSecondH2}.
+  const { lead: leadHtml, rest: restHtml } = splitBodyAtSecondH2(bodyHtml);
 
   const articleUrl = `${BASE_URL}/${input.canonicalPath}`;
   const langMeta = LANGUAGE_META[input.lang];
@@ -375,10 +425,13 @@ ${chrome.headerHtml}
           </ul>
         </header>
         <div class="rm-article-body">
-${bodyHtml}
+${leadHtml}
         </div>
+${readerGuideHtml}${restHtml ? `
+        <div class="rm-article-body rm-article-body-rest">
+${restHtml}
+        </div>` : ''}
 ${sourcesHtml}
-${readerGuideHtml}
       </article>
 ${chrome.footerHtml}`;
 }

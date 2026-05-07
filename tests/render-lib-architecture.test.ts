@@ -46,6 +46,7 @@ import type {
 
 import {
   renderArticleHtml,
+  splitBodyAtSecondH2,
 } from '../scripts/render-lib/article.js';
 import type {
   RenderArticleInput,
@@ -365,5 +366,63 @@ describe('article.ts (orchestrator)', () => {
     expect(jsonLd['@type']).toBe('NewsArticle');
     expect(jsonLd.inLanguage).toBe('sv');
     expect(jsonLd.headline).toBe('Orchestrator Test');
+  });
+
+  it('renderArticleHtml emits reader guide BETWEEN executive brief and the rest of the body', async () => {
+    const longInput: RenderArticleInput = {
+      ...input,
+      markdown: [
+        '---',
+        'title: "Reading Order Test"',
+        'description: "Asserts the executive-brief → reader-guide → rest order."',
+        'date: 2026-05-07',
+        '---',
+        '',
+        '## Executive Brief',
+        '',
+        'Lead paragraph that must come first.',
+        '',
+        '## Synthesis Summary',
+        '',
+        'Detail paragraph that must come AFTER the reader guide.',
+        '',
+      ].join('\n'),
+    };
+    const html = await renderArticleHtml(longInput);
+    const briefIdx = html.indexOf('Lead paragraph that must come first');
+    const guideIdx = html.indexOf('rm-reader-guide-heading');
+    const restIdx = html.indexOf('Detail paragraph that must come AFTER');
+    const sourcesIdx = html.indexOf('rm-article-sources-heading');
+    expect(briefIdx).toBeGreaterThan(0);
+    expect(guideIdx).toBeGreaterThan(briefIdx);
+    expect(restIdx).toBeGreaterThan(guideIdx);
+    expect(sourcesIdx).toBeGreaterThan(restIdx);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// 6b. splitBodyAtSecondH2 — pure splitter
+// ---------------------------------------------------------------------------
+
+describe('splitBodyAtSecondH2', () => {
+  it('splits at the second <h2 boundary', () => {
+    const body = '<h2 id="a">A</h2><p>one</p><h2 id="b">B</h2><p>two</p>';
+    const { lead, rest } = splitBodyAtSecondH2(body);
+    expect(lead).toBe('<h2 id="a">A</h2><p>one</p>');
+    expect(rest).toBe('<h2 id="b">B</h2><p>two</p>');
+  });
+
+  it('returns the entire body as lead when only one <h2 exists', () => {
+    const body = '<h2 id="only">Only</h2><p>just one</p>';
+    const { lead, rest } = splitBodyAtSecondH2(body);
+    expect(lead).toBe(body);
+    expect(rest).toBe('');
+  });
+
+  it('returns the entire body as lead when no <h2 exists', () => {
+    const body = '<p>plain</p>';
+    const { lead, rest } = splitBodyAtSecondH2(body);
+    expect(lead).toBe(body);
+    expect(rest).toBe('');
   });
 });
