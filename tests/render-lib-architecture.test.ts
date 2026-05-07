@@ -17,7 +17,7 @@
  * been broken and the import graph should be inspected before shipping.
  */
 
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 
 import {
   AGGREGATION_ORDER,
@@ -507,8 +507,17 @@ describe('parseFrontMatterDate', () => {
   });
 
   it('uses the live clock when no `now` is supplied', () => {
-    const result = parseFrontMatterDate(undefined);
-    expect(result).toMatch(/^\d{4}-\d{2}-\d{2}$/);
-    expect(result).toBe(new Date().toISOString().slice(0, 10));
+    // Use fake timers so the call inside parseFrontMatterDate sees the
+    // exact same wall-clock instant as the assertion below — otherwise
+    // a midnight-UTC tick between the two `new Date()` calls would flake.
+    vi.useFakeTimers();
+    try {
+      vi.setSystemTime(new Date('2026-05-07T23:59:59.999Z'));
+      const result = parseFrontMatterDate(undefined);
+      expect(result).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      expect(result).toBe('2026-05-07');
+    } finally {
+      vi.useRealTimers();
+    }
   });
 });

@@ -547,7 +547,7 @@ The aggregated markdown places the `## Reader Intelligence Guide` ahead of `## E
 
 > **Header → Executive Brief → Reader Intelligence Guide → rest of analysis → Article Sources**
 
-This is implemented by [`splitBodyAtSecondH2()` in `scripts/render-lib/article.ts`](scripts/render-lib/article.ts) — a pure helper that splits the rendered body at the second `<h2>` element. The first slice (everything up to but not including the second H2) is the executive brief; the rest is appended after the chrome-rendered `<section class="rm-reader-guide">` block. Tested by `tests/render-lib.test.ts > splitBodyAtSecondH2`.
+This is implemented by [`splitBodyAtSecondH2()` in `scripts/render-lib/article.ts`](scripts/render-lib/article.ts) — a pure helper that splits the rendered body at the second `<h2>` element. The first slice (everything up to but not including the second H2) is the executive brief; the rest is appended after the chrome-rendered `<section class="rm-reader-guide">` block. Tested by `tests/render-lib-architecture.test.ts > splitBodyAtSecondH2`.
 
 #### Article-type eyebrow localisation (Session 4)
 
