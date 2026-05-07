@@ -148,7 +148,7 @@ export function buildReaderGuide(available: ReadonlySet<string>, hasDocuments: b
   }
 
   entries.push(
-    `| [${chrome.auditLabel}](#${HEADING_ID_PREFIX}classification-results) | ${chrome.auditValue} | appendix artifacts |`,
+    `| [${chrome.auditLabel}](#${HEADING_ID_PREFIX}classification-results) | ${chrome.auditValue} | ${chrome.auditArtifactLabel} |`,
   );
 
   return [

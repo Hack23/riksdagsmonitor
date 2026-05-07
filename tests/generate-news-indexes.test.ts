@@ -242,10 +242,28 @@ describe('Generate News Indexes', () => {
     });
   });
 
-  describe('generateAllIndexes', { timeout: 60000 }, () => {
-    it('should return result object with success status', () => {
-      const result = module.generateAllIndexes();
+  describe('generateAllIndexes', () => {
+    // Run generateAllIndexes() once for all tests in this block.
+    // Scanning 4000+ articles per test causes timeouts on slower CI (nightly Node).
+    // This mirrors the beforeAll pattern used by the "Phase 2 UI features" block below.
+    let result: ReturnType<GenerateNewsIndexesModule['generateAllIndexes']>;
+    let enContent: string;
+    let svContent: string;
+    let deContent: string;
+    let arContent: string;
+    let heContent: string;
 
+    beforeAll(async () => {
+      const localModule = await import('../scripts/generate-news-indexes.js') as unknown as GenerateNewsIndexesModule;
+      result = localModule.generateAllIndexes();
+      enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
+      svContent = fs.readFileSync(path.join(NEWS_DIR, 'index_sv.html'), 'utf-8');
+      deContent = fs.readFileSync(path.join(NEWS_DIR, 'index_de.html'), 'utf-8');
+      arContent = fs.readFileSync(path.join(NEWS_DIR, 'index_ar.html'), 'utf-8');
+      heContent = fs.readFileSync(path.join(NEWS_DIR, 'index_he.html'), 'utf-8');
+    }, 60_000);
+
+    it('should return result object with success status', () => {
       expect(result).toHaveProperty('success');
       expect(result).toHaveProperty('successCount');
       expect(result).toHaveProperty('errorCount');
@@ -253,23 +271,17 @@ describe('Generate News Indexes', () => {
     });
 
     it('should generate indexes successfully', () => {
-      const result = module.generateAllIndexes();
-
       // Should generate at least some index files successfully
       expect(result.successCount).toBeGreaterThan(0);
     });
 
     it('should generate index files for all 14 languages', () => {
-      module.generateAllIndexes();
-
-      // Check that index files exist
+      // Check that index files exist (written by beforeAll)
       expect(fs.existsSync(path.join(NEWS_DIR, 'index.html'))).toBe(true);
       expect(fs.existsSync(path.join(NEWS_DIR, 'index_sv.html'))).toBe(true);
     });
 
     it('should generate index files with correct lang attribute', () => {
-      module.generateAllIndexes();
-
       const langFiles: Record<string, Language> = {
         'index.html': 'en',
         'index_sv.html': 'sv',
@@ -289,39 +301,28 @@ describe('Generate News Indexes', () => {
     });
 
     it('should include domain-specific keywords in generated indexes', () => {
-      module.generateAllIndexes();
-
       // English should have political terms in keywords
-      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
       expect(enContent).toContain('committee reports');
       expect(enContent).toContain('government bills');
       expect(enContent).toContain('parliamentary votes');
 
       // Swedish should have Swedish political terms
-      const svContent = fs.readFileSync(path.join(NEWS_DIR, 'index_sv.html'), 'utf-8');
       expect(svContent).toContain('propositioner');
       expect(svContent).toContain('betänkanden');
       expect(svContent).toContain('motioner');
     });
 
     it('should include translated Schema.org WebSite description per language', () => {
-      module.generateAllIndexes();
-
       // Unified chrome serialises JSON-LD via `JSON.stringify(blob)` with no
       // pretty-print, so `@type` keys have no space after the colon.
-      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
       expect(enContent).toContain('"inLanguage":"en"');
 
       // German index should have German schema description
-      const deContent = fs.readFileSync(path.join(NEWS_DIR, 'index_de.html'), 'utf-8');
       expect(deContent).toContain('"inLanguage":"de"');
       expect(deContent).toContain('Schwedische Parlaments');
     });
 
     it('should include publisher and about in Schema.org ItemList articles', () => {
-      module.generateAllIndexes();
-
-      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
       // Publisher should be in the schema
       expect(enContent).toContain('"publisher"');
       expect(enContent).toContain('"Hack23 AB"');
@@ -331,21 +332,14 @@ describe('Generate News Indexes', () => {
     });
 
     it('should set dir="rtl" for Arabic and Hebrew indexes', () => {
-      module.generateAllIndexes();
-
-      const arContent = fs.readFileSync(path.join(NEWS_DIR, 'index_ar.html'), 'utf-8');
       expect(arContent).toContain('dir="rtl"');
       expect(arContent).toContain('lang="ar"');
 
-      const heContent = fs.readFileSync(path.join(NEWS_DIR, 'index_he.html'), 'utf-8');
       expect(heContent).toContain('dir="rtl"');
       expect(heContent).toContain('lang="he"');
     });
 
     it('should include search input with id and aria-label', () => {
-      module.generateAllIndexes();
-
-      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
       expect(enContent).toContain('id="search-input"');
       expect(enContent).toContain('type="search"');
       // aria-label present (non-empty) and autocomplete disabled, order-independent
@@ -354,9 +348,6 @@ describe('Generate News Indexes', () => {
     });
 
     it('should include load-more button and article counter', () => {
-      module.generateAllIndexes();
-
-      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
       expect(enContent).toContain('id="load-more-btn"');
       expect(enContent).toContain('id="article-counter"');
       expect(enContent).toContain('aria-live="polite"');
@@ -366,27 +357,18 @@ describe('Generate News Indexes', () => {
     });
 
     it('should include PAGE_SIZE and pagination logic', () => {
-      module.generateAllIndexes();
-
-      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
       expect(enContent).toContain('PAGE_SIZE');
       expect(enContent).toContain('loadMore()');
       expect(enContent).toContain('visibleCount');
     });
 
     it('should include readURLParams and updateURL for URL state management', () => {
-      module.generateAllIndexes();
-
-      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
       expect(enContent).toContain('readURLParams()');
       expect(enContent).toContain('updateURL()');
       expect(enContent).toContain('URLSearchParams');
     });
 
     it('should not include conflicting DOMContentLoaded content loader', () => {
-      module.generateAllIndexes();
-
-      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
       // The old dynamic content loader must not be present (it could overwrite pagination state)
       expect(enContent).not.toContain("document.addEventListener('DOMContentLoaded'");
       // #no-articles is the intentional empty-state element for "no articles at all"
@@ -396,9 +378,6 @@ describe('Generate News Indexes', () => {
     });
 
     it('should include esc() helper and apply it to article fields in buildArticleCard', () => {
-      module.generateAllIndexes();
-
-      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
       // esc() helper must be present to prevent XSS via innerHTML
       expect(enContent).toContain('function esc(');
       expect(enContent).toContain('.replace(/&/g,');
@@ -412,36 +391,24 @@ describe('Generate News Indexes', () => {
     });
 
     it('should include AI-Disrupted News Generation section', () => {
-      module.generateAllIndexes();
-
-      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
       expect(enContent).toContain('ai-newsroom-section');
       expect(enContent).toContain('AI-Disrupted News Generation');
       expect(enContent).toContain('agentic news generation pipeline');
     });
 
     it('should localise AI newsroom section for non-English languages', () => {
-      module.generateAllIndexes();
-
-      const svContent = fs.readFileSync(path.join(NEWS_DIR, 'index_sv.html'), 'utf-8');
       expect(svContent).toContain('ai-newsroom-section');
       expect(svContent).toContain('AI-styrd nyhetsproduktion');
       expect(svContent).not.toContain('>🤖 AI-Disrupted News Generation<');
     });
 
     it('should include app version marker', () => {
-      module.generateAllIndexes();
-
-      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
       // News-index emits an HTML-comment app-version marker immediately after
       // the AI-newsroom section. Format: `<!-- app-version: v0.0.0 -->`.
       expect(enContent).toMatch(/<!-- app-version: v\d+\.\d+\.\d+ -->/);
     });
 
     it('should include the unified `rm-site-footer` 3-column trust block', () => {
-      module.generateAllIndexes();
-
-      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
       // Legacy `.footer-disclaimer` row is replaced by the canonical
       // 3-column rm-footer trust block (parity with article + sitemap + PI).
       expect(enContent).toContain('class="rm-footer-col rm-footer-trust"');
@@ -451,21 +418,15 @@ describe('Generate News Indexes', () => {
     });
 
     it('should localise footer brand description for non-English languages', () => {
-      module.generateAllIndexes();
-
       // The unified chrome footer description (`mainPlatformDesc`) is sourced
       // from `LANGUAGE_META[lang].translations` so it is translated for every
       // language. The Swedish version must therefore contain Swedish-language
       // text in the brand column rather than English.
-      const svContent = fs.readFileSync(path.join(NEWS_DIR, 'index_sv.html'), 'utf-8');
       expect(svContent).toContain('class="rm-footer-col rm-footer-brand"');
       expect(svContent).toContain('lang="sv"');
     });
 
     it('should include the unified `rm-site-header` chrome with theme toggle', () => {
-      module.generateAllIndexes();
-
-      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
       expect(enContent).toContain('class="rm-site-header"');
       expect(enContent).toContain('id="theme-toggle"');
       // Legacy `.theme-toggle-btn` is replaced by `.rm-theme-toggle`.
@@ -476,15 +437,11 @@ describe('Generate News Indexes', () => {
     });
 
     it('should include the anti-flash inline theme bootstrap in <head>', () => {
-      module.generateAllIndexes();
-      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
       expect(enContent).toContain("'riksdagsmonitor-theme'");
       expect(enContent).toContain("document.documentElement.setAttribute('data-theme'");
     });
 
     it('should emit Organization + WebSite + ItemList + BreadcrumbList JSON-LD', () => {
-      module.generateAllIndexes();
-      const enContent = fs.readFileSync(path.join(NEWS_DIR, 'index.html'), 'utf-8');
       expect(enContent).toContain('"@type":"Organization"');
       expect(enContent).toContain('"@type":"WebSite"');
       expect(enContent).toContain('"@type":"ItemList"');

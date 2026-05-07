@@ -26,8 +26,10 @@ import {
   renderChromeHead,
   buildChrome,
   renderArticleHtml,
+  stripBodyDuplicateSections,
   __test__,
 } from '../scripts/render-lib/index.js';
+import type { Language } from '../scripts/types/language.js';
 
 const {
   stripPassTwoSection,
@@ -1340,7 +1342,7 @@ describe('render-lib — renderArticleHtml (end-to-end)', () => {
       subfolderRepoRelPath: 'analysis/daily/2099-01-01/propositions',
       artifactsUsed: ['executive-brief.md'],
     });
-    expect(html).toContain('Läsguide för underrättelseanalys');
+    expect(html).toContain('Läsarens underrättelseguide');
     expect(html).toContain('OSINT-metodik');
     expect(html).toContain('political-intelligence_sv.html');
     // Swedish i18n title in source card
@@ -1901,5 +1903,203 @@ describe('render-lib — aggregateAnalysis end-to-end contract', () => {
     expect(result.title).toContain('Finance Minister Svantesson');
     expect(result.title.length).toBeLessThanOrEqual(70);
     expect(result.title).not.toMatch(/Executive Brief|2026-04-22/);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// stripBodyDuplicateSections — removes inline Reader Guide + Article Sources
+// ---------------------------------------------------------------------------
+
+describe('render-lib — stripBodyDuplicateSections', () => {
+  it('strips the ## Reader Intelligence Guide section from article body', () => {
+    const body = [
+      '## Executive Brief',
+      '',
+      'Some content here.',
+      '',
+      '## Reader Intelligence Guide',
+      '',
+      'Use this guide to read the article.',
+      '',
+      '| Reader need | What you\'ll get | Source artifact |',
+      '|---|---|---|',
+      '| BLUF | fast answer | `executive-brief.md` |',
+      '',
+      '## Risk Assessment',
+      '',
+      'Risk body.',
+    ].join('\n');
+    const result = stripBodyDuplicateSections(body);
+    expect(result).not.toContain('Reader Intelligence Guide');
+    expect(result).not.toContain('Use this guide to read');
+    expect(result).toContain('## Executive Brief');
+    expect(result).toContain('## Risk Assessment');
+    expect(result).toContain('Risk body.');
+  });
+
+  it('strips the ## Article Sources section from article body', () => {
+    const body = [
+      '## Executive Brief',
+      '',
+      'Lede content.',
+      '',
+      '## Article Sources',
+      '',
+      'Each section above projects one analysis artifact.',
+      '',
+      '- [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/x/executive-brief.md)',
+      '- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/x/risk-assessment.md)',
+    ].join('\n');
+    const result = stripBodyDuplicateSections(body);
+    expect(result).not.toContain('Article Sources');
+    expect(result).not.toContain('Each section above');
+    expect(result).toContain('## Executive Brief');
+    expect(result).toContain('Lede content.');
+  });
+
+  it('strips both sections when present together', () => {
+    const body = [
+      '## Executive Brief',
+      '',
+      'Content.',
+      '',
+      '## Reader Intelligence Guide',
+      '',
+      'Guide preamble.',
+      '',
+      '| Col1 | Col2 |',
+      '|---|---|',
+      '| A | B |',
+      '',
+      '## Synthesis Summary',
+      '',
+      'Synthesis content.',
+      '',
+      '## Article Sources',
+      '',
+      '- [`file.md`](url)',
+    ].join('\n');
+    const result = stripBodyDuplicateSections(body);
+    expect(result).not.toContain('Reader Intelligence Guide');
+    expect(result).not.toContain('Article Sources');
+    expect(result).toContain('## Executive Brief');
+    expect(result).toContain('## Synthesis Summary');
+    expect(result).toContain('Synthesis content.');
+  });
+
+  it('returns body unchanged when neither section is present', () => {
+    const body = '## Executive Brief\n\nContent.\n\n## Risk Assessment\n\nRisk.\n';
+    expect(stripBodyDuplicateSections(body)).toBe(body);
+  });
+
+  it('renders no inline Reader Guide or Article Sources in final HTML (integration)', async () => {
+    const mdWithDuplicates = [
+      '---',
+      'title: "Test Article"',
+      'description: "Test desc"',
+      'date: 2099-01-01',
+      '---',
+      '',
+      '## Executive Brief',
+      '',
+      'The lede paragraph.',
+      '',
+      '## Reader Intelligence Guide',
+      '',
+      'Use this guide to read the article as a political-intelligence product.',
+      '',
+      '| Reader need | What you\'ll get | Source artifact |',
+      '|---|---|---|',
+      '| BLUF | fast answer | `executive-brief.md` |',
+      '',
+      '## Risk Assessment',
+      '',
+      'Risk body.',
+      '',
+      '## Article Sources',
+      '',
+      'Each section above projects one analysis artifact.',
+      '',
+      '- [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/x)',
+    ].join('\n');
+
+    const html = await renderArticleHtml({
+      markdown: mdWithDuplicates,
+      lang: 'sv',
+      canonicalPath: 'news/2099-01-01-test-sv.html',
+      subfolderRepoRelPath: 'analysis/daily/2099-01-01/test',
+      artifactsUsed: ['executive-brief.md', 'risk-assessment.md'],
+    });
+
+    // The body should NOT contain the markdown-rendered Reader Guide table
+    // (it would appear as a <table> with "Reader need" header if not stripped)
+    expect(html).not.toMatch(/<th>Reader need<\/th>/);
+    // But the chrome-level Swedish Reader Guide section SHOULD be present
+    expect(html).toContain('Läsarens underrättelseguide');
+    // The body should NOT contain the markdown-rendered Article Sources list
+    expect(html).not.toContain('Each section above projects one analysis artifact.');
+    // But the chrome-level Swedish sources heading SHOULD be present
+    expect(html).toContain('Analyskällor och metodik');
+    // Article content remains
+    expect(html).toContain('The lede paragraph');
+    expect(html).toContain('Risk body.');
+  });
+
+  it('renders fully localized Reader Intelligence Guide table for all 14 languages', async () => {
+    const md = [
+      '---',
+      'title: "Test"',
+      'description: "Test"',
+      'date: 2099-01-01',
+      '---',
+      '',
+      '## Executive Brief',
+      '',
+      'Content.',
+    ].join('\n');
+
+    // Test all canonical languages to verify localization works
+    const localizedExpectations = {
+      en: { heading: 'Reader Intelligence Guide', auditArtifact: 'appendix artifacts' },
+      sv: { heading: 'Läsarens underrättelseguide', auditArtifact: 'appendixartefakter' },
+      da: { heading: 'Læserens efterretningsguide', auditArtifact: 'appendiksartefakter' },
+      no: { heading: 'Leserens etterretningsguide', auditArtifact: 'vedleggsartefakter' },
+      fi: { heading: 'Lukijan tiedusteluopas', auditArtifact: 'liiteartefaktit' },
+      de: { heading: 'Nachrichtendienstlicher Leseleitfaden', auditArtifact: 'Anhangsartefakte' },
+      fr: { heading: 'Guide de renseignement du lecteur', auditArtifact: 'artefacts d’annexe' },
+      es: { heading: 'Guía de inteligencia del lector', auditArtifact: 'artefactos del apéndice' },
+      nl: { heading: 'Inlichtingengids voor de lezer', auditArtifact: 'appendixartefacten' },
+      ar: { heading: 'دليل القارئ الاستخباراتي', auditArtifact: 'مخرجات الملحق' },
+      he: { heading: 'מדריך המודיעין לקורא', auditArtifact: 'תוצרי נספח' },
+      ja: { heading: '読者向けインテリジェンスガイド', auditArtifact: '付録アーティファクト' },
+      ko: { heading: '독자 인텔리전스 가이드', auditArtifact: '부록 산출물' },
+      zh: { heading: '读者情报指南', auditArtifact: '附录工件' },
+    } satisfies Record<Language, { heading: string; auditArtifact: string }>;
+    const expectations = LANGUAGES.map(lang => ({ lang, ...localizedExpectations[lang] }));
+
+    for (const { lang, heading, auditArtifact } of expectations) {
+      const html = await renderArticleHtml({
+        markdown: md,
+        lang,
+        canonicalPath: `news/2099-01-01-test-${lang}.html`,
+        subfolderRepoRelPath: 'analysis/daily/2099-01-01/test',
+        artifactsUsed: ['executive-brief.md', 'risk-assessment.md'],
+      });
+      expect(html, `lang=${lang} should contain localized heading`).toContain(heading);
+      expect(html, `lang=${lang} should contain localized audit artifact label`).toContain(auditArtifact);
+      expect(html, `lang=${lang} should render responsive Reader Guide table chrome`).toContain('class="rm-reader-guide-table"');
+      // Table column headers should also be localized (not English "Reader need")
+      if (lang !== 'en') {
+        expect(html, `lang=${lang} should not have English table header`).not.toContain('<th>Reader need</th>');
+        expect(html, `lang=${lang} should not have English audit artifact label`).not.toContain('appendix artifacts');
+      }
+    }
+  });
+
+  it('styles Reader Intelligence Guide table outside the article body', () => {
+    const css = fs.readFileSync(path.join(process.cwd(), 'styles.css'), 'utf-8');
+    expect(css).toContain('.rm-reader-guide .rm-table-wrap');
+    expect(css).toContain('.rm-reader-guide-table');
+    expect(css).toMatch(/\.rm-reader-guide-table\s*\{[\s\S]*?min-width:\s*42rem/);
   });
 });

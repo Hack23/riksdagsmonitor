@@ -13121,6 +13121,52 @@ html[data-theme="light"] .rm-article-body pre.mermaid > svg {
   max-width: 72ch;
 }
 
+.rm-reader-guide .rm-table-wrap {
+  width: 100%;
+  margin: 1.25rem 0 1.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid color-mix(in srgb, var(--primary-cyan, #00d9ff) 12%, transparent);
+  border-radius: 8px;
+}
+
+.rm-reader-guide-table {
+  width: 100%;
+  min-width: 42rem;
+  margin: 0;
+  border: 0;
+  border-collapse: collapse;
+  border-radius: 0;
+  font-size: 0.9rem;
+}
+
+.rm-reader-guide-table th,
+.rm-reader-guide-table td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--primary-cyan, #00d9ff) 18%, transparent);
+  text-align: start;
+  vertical-align: top;
+}
+
+.rm-reader-guide-table th {
+  background: color-mix(in srgb, var(--primary-cyan, #00d9ff) 10%, transparent);
+  color: var(--primary-cyan, #00d9ff);
+  font-family: var(--font-heading, 'Orbitron', sans-serif);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+}
+
+.rm-reader-guide-table code {
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .rm-reader-guide-table {
+    min-width: 38rem;
+    font-size: 0.85rem;
+  }
+}
+
 .rm-reader-guide-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
