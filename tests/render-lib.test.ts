@@ -2089,7 +2089,7 @@ describe('render-lib — stripBodyDuplicateSections', () => {
       // Table column headers should also be localized (not English "Reader need")
       if (lang !== 'en') {
         expect(html, `lang=${lang} should not have English table header`).not.toContain('<th>Reader need</th>');
-        expect(html, `lang=${lang} should not have English audit artifact label`).not.toContain('<td>appendix artifacts</td>');
+        expect(html, `lang=${lang} should not have English audit artifact label`).not.toContain('appendix artifacts');
       }
     }
   });
