@@ -435,3 +435,41 @@ describe('splitBodyAtSecondH2', () => {
     expect(rest).toBe('');
   });
 });
+
+/**
+ * Regression guard: library code under `scripts/render-lib/` must not
+ * import from `scripts/generate-sitemap-html.ts`. That file is a CLI
+ * entry point with a top-level `console.log('🗺️ Sitemap HTML
+ * Generation Script')` banner and a `main()` guard, so importing it
+ * from a library module triggers the banner on every consumer (tests,
+ * other scripts, the dashboard build, …). The same `escapeHtml` and
+ * `LANGUAGE_META` symbols are exported from the side-effect-free
+ * `scripts/sitemap-html/index.ts`, which is the canonical import site.
+ */
+describe('render-lib boundary (no CLI side-effect imports)', () => {
+  it('no file under scripts/render-lib/ imports from scripts/generate-sitemap-html', async () => {
+    const { readdir, readFile } = await import('node:fs/promises');
+    const { join, resolve } = await import('node:path');
+
+    const root = resolve(process.cwd(), 'scripts/render-lib');
+
+    async function* walk(dir: string): AsyncGenerator<string> {
+      for (const entry of await readdir(dir, { withFileTypes: true })) {
+        const full = join(dir, entry.name);
+        if (entry.isDirectory()) yield* walk(full);
+        else if (entry.isFile() && entry.name.endsWith('.ts')) yield full;
+      }
+    }
+
+    const offenders: string[] = [];
+    for await (const file of walk(root)) {
+      const src = await readFile(file, 'utf8');
+      if (/from\s+['"][^'"]*generate-sitemap-html(?:\.js)?['"]/.test(src)) {
+        offenders.push(file);
+      }
+    }
+
+    expect(offenders, `library code should import from sitemap-html/index.ts, not generate-sitemap-html.ts:\n  ${offenders.join('\n  ')}`)
+      .toEqual([]);
+  });
+});

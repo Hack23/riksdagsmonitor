@@ -32,7 +32,7 @@
 import matter from 'gray-matter';
 
 import type { Language } from '../types/language.js';
-import { LANGUAGE_META, escapeHtml } from '../generate-sitemap-html.js';
+import { LANGUAGE_META, escapeHtml } from '../sitemap-html/index.js';
 import { BASE_URL } from './constants.js';
 import { buildGithubBlobUrl } from './url-helpers.js';
 import { renderMarkdownToHtml } from './markdown/index.js';

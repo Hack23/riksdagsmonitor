@@ -48,7 +48,7 @@
 
 // --- Pass-through re-exports ------------------------------------------------
 
-export { LANGUAGE_META, escapeHtml } from '../generate-sitemap-html.js';
+export { LANGUAGE_META, escapeHtml } from '../sitemap-html/index.js';
 export {
   BASE_URL,
   GITHUB_BLOB,
