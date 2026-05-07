@@ -17,7 +17,7 @@
  * been broken and the import graph should be inspected before shipping.
  */
 
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 
 import {
   AGGREGATION_ORDER,
@@ -46,6 +46,8 @@ import type {
 
 import {
   renderArticleHtml,
+  splitBodyAtSecondH2,
+  parseFrontMatterDate,
 } from '../scripts/render-lib/article.js';
 import type {
   RenderArticleInput,
@@ -365,5 +367,157 @@ describe('article.ts (orchestrator)', () => {
     expect(jsonLd['@type']).toBe('NewsArticle');
     expect(jsonLd.inLanguage).toBe('sv');
     expect(jsonLd.headline).toBe('Orchestrator Test');
+  });
+
+  it('renderArticleHtml uses the dedicated News banner image and news-article body class', async () => {
+    const html = await renderArticleHtml(input);
+    expect(html).toContain('riksdagsmonitornews-banner.webp');
+    // body class added by chrome.header
+    expect(html).toMatch(/<body class="rm-article-body[^"]*\bnews-article\b/);
+    // Default banner image must NOT be referenced for news articles
+    expect(html).not.toMatch(/riksdagsmonitor-banner\.webp/);
+  });
+
+  it('renderArticleHtml emits reader guide BETWEEN executive brief and the rest of the body', async () => {
+    const longInput: RenderArticleInput = {
+      ...input,
+      markdown: [
+        '---',
+        'title: "Reading Order Test"',
+        'description: "Asserts the executive-brief → reader-guide → rest order."',
+        'date: 2026-05-07',
+        '---',
+        '',
+        '## Executive Brief',
+        '',
+        'Lead paragraph that must come first.',
+        '',
+        '## Synthesis Summary',
+        '',
+        'Detail paragraph that must come AFTER the reader guide.',
+        '',
+      ].join('\n'),
+    };
+    const html = await renderArticleHtml(longInput);
+    const briefIdx = html.indexOf('Lead paragraph that must come first');
+    const guideIdx = html.indexOf('rm-reader-guide-heading');
+    const restIdx = html.indexOf('Detail paragraph that must come AFTER');
+    const sourcesIdx = html.indexOf('rm-article-sources-heading');
+    expect(briefIdx).toBeGreaterThan(0);
+    expect(guideIdx).toBeGreaterThan(briefIdx);
+    expect(restIdx).toBeGreaterThan(guideIdx);
+    expect(sourcesIdx).toBeGreaterThan(restIdx);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// 6b. splitBodyAtSecondH2 — pure splitter
+// ---------------------------------------------------------------------------
+
+describe('splitBodyAtSecondH2', () => {
+  it('splits at the second <h2 boundary', () => {
+    const body = '<h2 id="a">A</h2><p>one</p><h2 id="b">B</h2><p>two</p>';
+    const { lead, rest } = splitBodyAtSecondH2(body);
+    expect(lead).toBe('<h2 id="a">A</h2><p>one</p>');
+    expect(rest).toBe('<h2 id="b">B</h2><p>two</p>');
+  });
+
+  it('returns the entire body as lead when only one <h2 exists', () => {
+    const body = '<h2 id="only">Only</h2><p>just one</p>';
+    const { lead, rest } = splitBodyAtSecondH2(body);
+    expect(lead).toBe(body);
+    expect(rest).toBe('');
+  });
+
+  it('returns the entire body as lead when no <h2 exists', () => {
+    const body = '<p>plain</p>';
+    const { lead, rest } = splitBodyAtSecondH2(body);
+    expect(lead).toBe(body);
+    expect(rest).toBe('');
+  });
+});
+
+/**
+ * Regression guard: library code under `scripts/render-lib/` must not
+ * import from `scripts/generate-sitemap-html.ts`. That file is a CLI
+ * entry point with a top-level `console.log('🗺️ Sitemap HTML
+ * Generation Script')` banner and a `main()` guard, so importing it
+ * from a library module triggers the banner on every consumer (tests,
+ * other scripts, the dashboard build, …). The same `escapeHtml` and
+ * `LANGUAGE_META` symbols are exported from the side-effect-free
+ * `scripts/sitemap-html/index.ts`, which is the canonical import site.
+ */
+describe('render-lib boundary (no CLI side-effect imports)', () => {
+  it('no file under scripts/render-lib/ imports from scripts/generate-sitemap-html', async () => {
+    const { readdir, readFile } = await import('node:fs/promises');
+    const { join, resolve } = await import('node:path');
+
+    const root = resolve(process.cwd(), 'scripts/render-lib');
+
+    async function* walk(dir: string): AsyncGenerator<string> {
+      for (const entry of await readdir(dir, { withFileTypes: true })) {
+        const full = join(dir, entry.name);
+        if (entry.isDirectory()) yield* walk(full);
+        else if (entry.isFile() && entry.name.endsWith('.ts')) yield full;
+      }
+    }
+
+    const offenders: string[] = [];
+    for await (const file of walk(root)) {
+      const src = await readFile(file, 'utf8');
+      if (/from\s+['"][^'"]*generate-sitemap-html(?:\.js)?['"]/.test(src)) {
+        offenders.push(file);
+      }
+    }
+
+    expect(offenders, `library code should import from sitemap-html/index.ts, not generate-sitemap-html.ts:\n  ${offenders.join('\n  ')}`)
+      .toEqual([]);
+  });
+});
+
+describe('parseFrontMatterDate', () => {
+  const FROZEN_NOW = new Date('2026-05-07T12:00:00.000Z');
+
+  it('returns YYYY-MM-DD for a Date instance', () => {
+    expect(parseFrontMatterDate(new Date('2026-04-23T18:30:00.000Z'), FROZEN_NOW)).toBe('2026-04-23');
+  });
+
+  it('returns YYYY-MM-DD for an ISO-8601 string', () => {
+    expect(parseFrontMatterDate('2026-04-23T18:30:00.000Z', FROZEN_NOW)).toBe('2026-04-23');
+  });
+
+  it('returns YYYY-MM-DD for a bare YYYY-MM-DD string', () => {
+    expect(parseFrontMatterDate('2026-04-23', FROZEN_NOW)).toBe('2026-04-23');
+  });
+
+  it('falls back to "now" when the value is undefined / null / wrong shape', () => {
+    expect(parseFrontMatterDate(undefined, FROZEN_NOW)).toBe('2026-05-07');
+    expect(parseFrontMatterDate(null, FROZEN_NOW)).toBe('2026-05-07');
+    expect(parseFrontMatterDate(42, FROZEN_NOW)).toBe('2026-05-07');
+    expect(parseFrontMatterDate({}, FROZEN_NOW)).toBe('2026-05-07');
+  });
+
+  it('falls back to "now" when the string does not start with YYYY-MM-DD', () => {
+    expect(parseFrontMatterDate('April 23, 2026', FROZEN_NOW)).toBe('2026-05-07');
+    expect(parseFrontMatterDate('', FROZEN_NOW)).toBe('2026-05-07');
+  });
+
+  it('falls back to "now" when given an Invalid Date instance', () => {
+    expect(parseFrontMatterDate(new Date('not-a-date'), FROZEN_NOW)).toBe('2026-05-07');
+  });
+
+  it('uses the live clock when no `now` is supplied', () => {
+    // Use fake timers so the call inside parseFrontMatterDate sees the
+    // exact same wall-clock instant as the assertion below — otherwise
+    // a midnight-UTC tick between the two `new Date()` calls would flake.
+    vi.useFakeTimers();
+    try {
+      vi.setSystemTime(new Date('2026-05-07T23:59:59.999Z'));
+      const result = parseFrontMatterDate(undefined);
+      expect(result).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      expect(result).toBe('2026-05-07');
+    } finally {
+      vi.useRealTimers();
+    }
   });
 });

@@ -48,7 +48,7 @@
 
 // --- Pass-through re-exports ------------------------------------------------
 
-export { LANGUAGE_META, escapeHtml } from '../generate-sitemap-html.js';
+export { LANGUAGE_META, escapeHtml } from '../sitemap-html/index.js';
 export {
   BASE_URL,
   GITHUB_BLOB,
@@ -100,5 +100,5 @@ export { buildBreadcrumbListLd, buildNewsArticleLd, buildSpeakableWebPageLd, BRE
 export type { BreadcrumbEntry, BreadcrumbEntryWithItem, BreadcrumbEntryCurrentPage, NewsArticleLdInput, BreadcrumbListLd, NewsArticleLd, SpeakableWebPageLd, JsonLdListItem } from './jsonld.js';
 
 // --- Article (orchestrator) -------------------------------------------------
-export { renderArticleHtml, stripBodyDuplicateSections } from './article.js';
+export { renderArticleHtml, stripBodyDuplicateSections, splitBodyAtSecondH2 } from './article.js';
 export type { RenderArticleInput } from './article.js';

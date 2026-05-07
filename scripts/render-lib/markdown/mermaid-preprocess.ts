@@ -16,7 +16,7 @@
  * @license Apache-2.0
  */
 
-import { escapeHtml } from '../../generate-sitemap-html.js';
+import { escapeHtml } from '../../sitemap-html/index.js';
 import { ensureMermaidTheme } from './mermaid-canonical-theme.js';
 
 /**

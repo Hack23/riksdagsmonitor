@@ -541,6 +541,18 @@ npx tsx scripts/aggregate-analysis.ts --all
 23. `data-download-manifest.md`
 24. Remaining supplementary `.md` files, alphabetically.
 
+#### Render-time reading order (Session 1)
+
+The aggregated markdown places the `## Reader Intelligence Guide` ahead of `## Executive Brief` so audit tooling sees the navigation layer first. At HTML render time, however, the renderer rearranges the body so a public reader meets the editorial lead before the navigation projection:
+
+> **Header → Executive Brief → Reader Intelligence Guide → rest of analysis → Article Sources**
+
+This is implemented by [`splitBodyAtSecondH2()` in `scripts/render-lib/article.ts`](scripts/render-lib/article.ts) — a pure helper that splits the rendered body at the second `<h2>` element. The first slice (everything up to but not including the second H2) is the executive brief; the rest is appended after the chrome-rendered `<section class="rm-reader-guide">` block. Tested by `tests/render-lib-architecture.test.ts > splitBodyAtSecondH2`.
+
+#### Article-type eyebrow localisation (Session 4)
+
+Every article header carries an article-type "eyebrow" label (e.g. *Propositions*, *Committee Reports*, *Week Ahead*) inside `<p class="rm-article-eyebrow">`. The label originates from `analysis/article-types.json`, which only stores a single English `label` field per type. To keep the eyebrow in the reader's language across the full 14-language matrix, [`scripts/render-lib/article-type-i18n.ts`](scripts/render-lib/article-type-i18n.ts) provides a per-language label map for the 15 registry types + 5 legacy fallback IDs + a generic `political-intelligence` fallback (= 294 strings). The renderer calls `articleTypeLabel(typeId, lang, fallback)`, which falls back to the registry's English `label` field when no translation is registered, so newly added types never render an empty eyebrow. Tested by `tests/article-type-i18n.test.ts`.
+
 ### Cleaning and transformation rules
 
 The aggregator (see [`scripts/render-lib/aggregator.ts`](scripts/render-lib/aggregator.ts) `cleanArtifactBody`):

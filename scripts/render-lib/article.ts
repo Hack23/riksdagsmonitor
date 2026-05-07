@@ -32,7 +32,7 @@
 import matter from 'gray-matter';
 
 import type { Language } from '../types/language.js';
-import { LANGUAGE_META, escapeHtml } from '../generate-sitemap-html.js';
+import { LANGUAGE_META, escapeHtml } from '../sitemap-html/index.js';
 import { BASE_URL } from './constants.js';
 import { buildGithubBlobUrl } from './url-helpers.js';
 import { renderMarkdownToHtml } from './markdown/index.js';
@@ -41,6 +41,7 @@ import { buildBreadcrumbListLd, buildNewsArticleLd, buildSpeakableWebPageLd, BRE
 import { depth } from './chrome/helpers.js';
 
 import { getBySubfolder, getById, loadArticleTypesRegistry } from './article-types.js';
+import { articleTypeLabel } from './article-type-i18n.js';
 import { artifactTitle, artifactIcon } from '../political-intelligence/i18n/artifact-i18n.js';
 import { readerGuideI18n } from './aggregator/reader-guide-i18n.js';
 import { READER_GUIDE_ENTRIES, anchorForTitle } from './aggregator/reader-guide.js';
@@ -161,20 +162,81 @@ export function stripBodyDuplicateSections(body: string): string {
   return cleaned;
 }
 
+/**
+ * Split rendered article body HTML into two chunks at the boundary of
+ * the second `<h2` element:
+ *
+ *   - `lead`  — everything from the start through (but not including)
+ *               the second `<h2`. By aggregator contract the first H2 is
+ *               always **Executive Brief**, so this chunk contains the
+ *               opening BLUF / executive summary and nothing else.
+ *   - `rest`  — the remainder of the body (Synthesis Summary onwards).
+ *
+ * The renderer composes the page as
+ * `header → lead → reader-guide → rest → sources` so that readers see
+ * the Executive Brief immediately, then the Reader Intelligence Guide
+ * (which explains *how* to read the rest), then the full analysis, then
+ * the source-card appendix. This is the journalist-optimal "fast answer
+ * → operating manual → deep analysis → provenance" arc.
+ *
+ * If the body contains fewer than two `<h2` elements (very short
+ * articles), the entire body is returned as `lead` and `rest` is empty —
+ * the reader guide will then render after the whole body which still
+ * matches the "executive brief first, then reader guide" intent because
+ * a single-section body is, by definition, the executive brief.
+ *
+ * Exported for testability.
+ */
+export function splitBodyAtSecondH2(bodyHtml: string): { lead: string; rest: string } {
+  // Match `<h2` as a tag opener (followed by space, `>`, or attributes).
+  // Find all positions, then pick the second one if available.
+  const h2OpenRe = /<h2[\s>]/gi;
+  const positions: number[] = [];
+  let match: RegExpExecArray | null;
+  while ((match = h2OpenRe.exec(bodyHtml)) !== null) {
+    positions.push(match.index);
+    if (positions.length >= 2) break;
+  }
+  if (positions.length < 2) {
+    return { lead: bodyHtml, rest: '' };
+  }
+  const splitAt = positions[1];
+  return {
+    lead: bodyHtml.slice(0, splitAt),
+    rest: bodyHtml.slice(splitAt),
+  };
+}
+
+/**
+ * Parse a `date` value from front-matter into a stable `YYYY-MM-DD`
+ * string. Front-matter dates can arrive as either a parsed `Date` (when
+ * `gray-matter` recognises an ISO-8601 scalar) or as a raw string. When
+ * the value is missing or unrecognised, today's UTC date is used so the
+ * article still renders with a valid `<time datetime>`.
+ *
+ * Exported for testability — pure function, no I/O.
+ *
+ * @param dateRaw The raw `data.date` field returned by `gray-matter`.
+ * @param now     Injection seam for "today" — defaults to `new Date()`.
+ *                Tests pass a frozen clock to make assertions deterministic.
+ * @returns       A `YYYY-MM-DD` string.
+ */
+export function parseFrontMatterDate(dateRaw: unknown, now: Date = new Date()): string {
+  if (dateRaw instanceof Date && !Number.isNaN(dateRaw.getTime())) {
+    return dateRaw.toISOString().slice(0, 10);
+  }
+  if (typeof dateRaw === 'string' && /^\d{4}-\d{2}-\d{2}/.test(dateRaw)) {
+    return dateRaw.slice(0, 10);
+  }
+  return now.toISOString().slice(0, 10);
+}
+
 export async function renderArticleHtml(input: RenderArticleInput): Promise<string> {
   const parsed = matter(input.markdown);
   const fm = parsed.data as Record<string, unknown>;
   const title = String(fm.title ?? 'Political Intelligence');
   const description = String(fm.description ?? 'Riksdagsmonitor political intelligence report.');
-  const dateRaw = fm.date;
-  let date: string;
-  if (dateRaw instanceof Date) {
-    date = dateRaw.toISOString().slice(0, 10);
-  } else if (typeof dateRaw === 'string' && /^\d{4}-\d{2}-\d{2}/.test(dateRaw)) {
-    date = dateRaw.slice(0, 10);
-  } else {
-    date = new Date().toISOString().slice(0, 10);
-  }
+  const date = parseFrontMatterDate(fm.date);
   const publishedIso = `${date}T00:00:00Z`;
   const modifiedIso = new Date().toISOString();
   const articleType = inferArticleType(input.canonicalPath, title);
@@ -185,6 +247,11 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
   const cleanedContent = stripBodyDuplicateSections(parsed.content);
 
   const bodyHtml = await renderMarkdownToHtml(cleanedContent);
+
+  // Reading-order optimisation: split the body so the rendered page
+  // surfaces Executive Brief → Reader Intelligence Guide → rest →
+  // Sources. See {@link splitBodyAtSecondH2}.
+  const { lead: leadHtml, rest: restHtml } = splitBodyAtSecondH2(bodyHtml);
 
   const articleUrl = `${BASE_URL}/${input.canonicalPath}`;
   const langMeta = LANGUAGE_META[input.lang];
@@ -233,6 +300,14 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
     modifiedIso,
     jsonLd: [newsArticleLd, breadcrumbLd, speakableLd],
     section: 'Political Intelligence',
+    // All generated articles live under news/… so they get the dedicated
+    // "Riksdagsmonitor News" branded banner image. The .news-article
+    // body class triggers article-specific banner styling
+    // (object-fit: contain so the banner remains fully visible on every
+    // breakpoint, and a softer light-mode treatment) — see styles.css
+    // §"news-article banner & light-mode parity" near the end of the file.
+    heroBannerImage: 'images/riksdagsmonitornews-banner.webp',
+    bodyClass: 'news-article',
   });
 
   // Footer "Analysis sources" block — every artifact linked to GitHub
@@ -361,7 +436,7 @@ ${guideTableHtml}
 ${chrome.headerHtml}
       <article class="rm-article rm-article-type-${escapeHtml(articleType.type)}" data-article-type="${escapeHtml(articleType.type)}" lang="${LANGUAGE_META[input.lang].hreflang}">
         <header class="rm-article-header">
-          <p class="rm-article-eyebrow"><span class="rm-icon" aria-hidden="true">🔍</span> ${escapeHtml(articleType.label)}</p>
+          <p class="rm-article-eyebrow"><span class="rm-icon" aria-hidden="true">🔍</span> ${escapeHtml(articleTypeLabel(articleType.type, input.lang, articleType.label))}</p>
           <h1>${escapeHtml(title)}</h1>
           <p class="rm-article-dek">${escapeHtml(description)}</p>
           <p class="rm-article-meta">
@@ -375,10 +450,13 @@ ${chrome.headerHtml}
           </ul>
         </header>
         <div class="rm-article-body">
-${bodyHtml}
+${leadHtml}
         </div>
+${readerGuideHtml}${restHtml ? `
+        <div class="rm-article-body rm-article-body-rest">
+${restHtml}
+        </div>` : ''}
 ${sourcesHtml}
-${readerGuideHtml}
       </article>
 ${chrome.footerHtml}`;
 }
