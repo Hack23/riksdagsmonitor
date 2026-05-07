@@ -283,6 +283,14 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
     modifiedIso,
     jsonLd: [newsArticleLd, breadcrumbLd, speakableLd],
     section: 'Political Intelligence',
+    // All generated articles live under news/… so they get the dedicated
+    // "Riksdagsmonitor News" branded banner image. The .news-article
+    // body class triggers article-specific banner styling
+    // (object-fit: contain so the banner remains fully visible on every
+    // breakpoint, and a softer light-mode treatment) — see styles.css
+    // §"news-article banner & light-mode parity" near the end of the file.
+    heroBannerImage: 'images/riksdagsmonitornews-banner.webp',
+    bodyClass: 'news-article',
   });
 
   // Footer "Analysis sources" block — every artifact linked to GitHub

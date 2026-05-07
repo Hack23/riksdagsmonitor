@@ -368,6 +368,15 @@ describe('article.ts (orchestrator)', () => {
     expect(jsonLd.headline).toBe('Orchestrator Test');
   });
 
+  it('renderArticleHtml uses the dedicated News banner image and news-article body class', async () => {
+    const html = await renderArticleHtml(input);
+    expect(html).toContain('riksdagsmonitornews-banner.webp');
+    // body class added by chrome.header
+    expect(html).toMatch(/<body class="rm-article-body[^"]*\bnews-article\b/);
+    // Default banner image must NOT be referenced for news articles
+    expect(html).not.toMatch(/riksdagsmonitor-banner\.webp/);
+  });
+
   it('renderArticleHtml emits reader guide BETWEEN executive brief and the rest of the body', async () => {
     const longInput: RenderArticleInput = {
       ...input,
