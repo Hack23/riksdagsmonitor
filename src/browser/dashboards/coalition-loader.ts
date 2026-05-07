@@ -32,6 +32,7 @@
 
 import {
   logger,
+  safeSetItem,
   detectLanguage,
 } from '../shared/index.js';
 
@@ -444,14 +445,11 @@ function getCachedData(key: string): CSVRow[] | null {
 }
 
 function setCachedData(key: string, data: CSVRow[]): void {
-  try {
-    localStorage.setItem(
-      CONFIG.cachePrefix + key,
-      JSON.stringify({ data, timestamp: Date.now() }),
-    );
-  } catch (e) {
-    logger.warn('Cache storage error:', e);
-  }
+  safeSetItem(
+    CONFIG.cachePrefix + key,
+    JSON.stringify({ data, timestamp: Date.now() }),
+    CONFIG.cachePrefix,
+  );
 }
 
 // ============================================================================

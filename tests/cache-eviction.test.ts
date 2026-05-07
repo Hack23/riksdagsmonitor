@@ -224,12 +224,17 @@ describe('Election-cycle cache eviction', () => {
     );
     const manager = new ElectionCycleDataManager();
 
-    // Call production setCache — should trigger eviction + retry
+    // Call production setCache — should trigger eviction + retry.
+    // The shared safeSetItem helper evicts the OLDEST half of same-prefix
+    // entries (here: comparative is older than decision) then retries.
     manager.setCache(`${cachePrefix}temporal`, [{ id: 1 }]);
 
     expect(storage.has(`${cachePrefix}temporal`)).toBe(true);
+    // Oldest entry evicted
     expect(storage.has(`${cachePrefix}comparative`)).toBe(false);
-    expect(storage.has(`${cachePrefix}decision`)).toBe(false);
+    // Newer same-prefix entry preserved (retry succeeded after first eviction)
+    expect(storage.has(`${cachePrefix}decision`)).toBe(true);
+    // Unrelated entries must NEVER be touched
     expect(storage.get('theme')).toBe('dark');
     expect(storage.get('other_app_data')).toBe('important');
   });
