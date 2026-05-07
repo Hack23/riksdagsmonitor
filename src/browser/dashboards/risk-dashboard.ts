@@ -192,11 +192,29 @@ async function fetchCIAData(url: string): Promise<PoliticianRiskRow[] | null> {
   }
 }
 
+/**
+ * Fetch politician risk data with local-first strategy: try the bundled
+ * `cia-data/politician/view_politician_risk_summary_sample.csv` first, then
+ * fall back to the upstream GitHub raw URL. This keeps the risk heat map
+ * working when raw.githubusercontent.com is rate-limited or offline.
+ */
+async function fetchPoliticianRiskData(): Promise<PoliticianRiskRow[] | null> {
+  const localUrl = 'cia-data/politician/view_politician_risk_summary_sample.csv';
+  const local = await fetchCIAData(localUrl);
+  if (local && local.length > 0) {
+    logger.debug(`Loaded ${local.length} politicians from local cia-data/`);
+    return local;
+  }
+  logger.debug('Local risk CSV unavailable — falling back to upstream raw URL');
+  return fetchCIAData(CIA_DATA_URLS.politicianRisk);
+}
+
 async function loadCIAData(): Promise<RiskScore[] | null> {
   logger.debug('Loading CIA politician risk data from view_politician_risk_summary_sample.csv...');
 
   // Load detailed politician risk data (403 politicians with full risk assessment)
-  const politicianRiskData = await fetchCIAData(CIA_DATA_URLS.politicianRisk);
+  // — local-first: bundled CSV → upstream raw URL fallback.
+  const politicianRiskData = await fetchPoliticianRiskData();
 
   if (!politicianRiskData || politicianRiskData.length === 0) {
     logger.error('Failed to load politician risk data');
