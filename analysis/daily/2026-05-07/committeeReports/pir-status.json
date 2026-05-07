@@ -1,0 +1,78 @@
+{
+  "generated": "2026-05-07",
+  "workflow": "committee-reports",
+  "subfolder": "committeeReports",
+  "article_date": "2026-05-07",
+  "pirs": [
+    {
+      "id": "PIR-FöU18-01",
+      "question": "Will Lagrådet approve FöU18 without substantive amendments?",
+      "status": "open",
+      "horizon": "T+30d",
+      "trigger": "Lagrådet opinion publication",
+      "source_dok_id": "HD01FöU18",
+      "confidence": "MEDIUM",
+      "admiralty": "B2",
+      "created": "2026-05-07",
+      "next_review": "2026-06-07"
+    },
+    {
+      "id": "PIR-FöU18-02",
+      "question": "Will an ECtHR application be filed within 12 months of FöU18 enactment?",
+      "status": "open",
+      "horizon": "T+12mo",
+      "trigger": "Civil society legal challenge announcement",
+      "source_dok_id": "HD01FöU18",
+      "confidence": "MEDIUM",
+      "admiralty": "B2",
+      "created": "2026-05-07",
+      "next_review": "2026-10-07"
+    },
+    {
+      "id": "PIR-CU25-01",
+      "question": "Which municipalities will receive PBL-exempt prison sites first?",
+      "status": "open",
+      "horizon": "T+90d",
+      "trigger": "Kriminalvården site selection announcement",
+      "source_dok_id": "HD01CU25",
+      "confidence": "HIGH",
+      "admiralty": "B1",
+      "created": "2026-05-07",
+      "next_review": "2026-08-07"
+    },
+    {
+      "id": "PIR-SfU21-01",
+      "question": "How many benefit recipients lose SGI eligibility in first quarter of implementation?",
+      "status": "open",
+      "horizon": "T+6mo",
+      "trigger": "Försäkringskassan statistics publication",
+      "source_dok_id": "HD01SfU21",
+      "confidence": "MEDIUM",
+      "admiralty": "B3",
+      "created": "2026-05-07",
+      "next_review": "2026-11-07"
+    },
+    {
+      "id": "PIR-FöU16-01",
+      "question": "What specific permit changes does FöU16 implement for FOI?",
+      "status": "open",
+      "horizon": "T+60d",
+      "trigger": "FöU16 full text available / FOI/ISP announcements",
+      "source_dok_id": "HD01FöU16",
+      "confidence": "LOW",
+      "admiralty": "C2",
+      "created": "2026-05-07",
+      "next_review": "2026-07-07"
+    }
+  ],
+  "carry_forward": [],
+  "closed_this_cycle": [],
+  "imf_provenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "vintage": "WEO Apr-2026",
+    "retrieved_at": "2026-05-07",
+    "status": "cached-degraded",
+    "annotation": "IFS SDMX unavailable; WEO/FM Datamapper OK"
+  }
+}
