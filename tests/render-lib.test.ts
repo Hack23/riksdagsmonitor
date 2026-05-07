@@ -2057,7 +2057,7 @@ describe('render-lib — stripBodyDuplicateSections', () => {
       'Content.',
     ].join('\n');
 
-    // Test a sample of languages to verify localization works
+    // Test all 14 languages to verify localization works
     const expectations: Array<{ lang: 'en' | 'sv' | 'da' | 'no' | 'fi' | 'de' | 'fr' | 'es' | 'nl' | 'ar' | 'he' | 'ja' | 'ko' | 'zh'; contains: string }> = [
       { lang: 'en', contains: 'Reader Intelligence Guide' },
       { lang: 'sv', contains: 'Läsarens underrättelseguide' },
@@ -2068,8 +2068,11 @@ describe('render-lib — stripBodyDuplicateSections', () => {
       { lang: 'fr', contains: 'Guide de renseignement du lecteur' },
       { lang: 'es', contains: 'Guía de inteligencia del lector' },
       { lang: 'nl', contains: 'Inlichtingengids voor de lezer' },
+      { lang: 'ar', contains: 'دليل القارئ الاستخباراتي' },
+      { lang: 'he', contains: 'מדריך המודיעין לקורא' },
       { lang: 'ja', contains: '読者向けインテリジェンスガイド' },
       { lang: 'ko', contains: '독자 인텔리전스 가이드' },
+      { lang: 'zh', contains: '读者情报指南' },
     ];
 
     for (const { lang, contains } of expectations) {

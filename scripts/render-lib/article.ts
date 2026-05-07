@@ -298,7 +298,7 @@ ${sourceCards}
   const hasDocAnalyses = artifacts.some((a) => a.startsWith('documents/') && a.endsWith('-analysis.md'));
   if (hasDocAnalyses) {
     guideRows.push(`            <tr>
-              <td>${escapeHtml(guideChrome.perDocLabel)}</td>
+              <td><a href="#rm-per-document-intelligence">${escapeHtml(guideChrome.perDocLabel)}</a></td>
               <td>${escapeHtml(guideChrome.perDocValue)}</td>
               <td><code>documents/*-analysis.md</code></td>
             </tr>`);
@@ -306,7 +306,7 @@ ${sourceCards}
 
   // Add audit appendix row
   guideRows.push(`            <tr>
-              <td>${escapeHtml(guideChrome.auditLabel)}</td>
+              <td><a href="#rm-classification-results">${escapeHtml(guideChrome.auditLabel)}</a></td>
               <td>${escapeHtml(guideChrome.auditValue)}</td>
               <td>appendix artifacts</td>
             </tr>`);
