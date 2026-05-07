@@ -93,3 +93,38 @@ No specific indicators of coordinated disinformation related to today's legislat
 - Far-right international accounts may celebrate "Sweden finally gets tough" as endorsement of their agenda
 
 **Recommended monitoring**: Swedish MSB (Myndigheten för samhällsskydd och beredskap) influence operations radar. Not immediate action required.
+
+---
+
+## Pass 2 — Enhanced Media Framing Analysis (v2.1 doctrine)
+
+### Swedish Media Ecosystem Assessment (as of 2026-05-07)
+
+**Government-supporting coverage (SVT, SR — public service):**
+- Framing likely: "Government delivers on security pledges ahead of election"
+- Emphasis: SÄPO capability enhancement; Ostlänken as ongoing infrastructure dialogue
+- Risk: Public service required to present balanced view → will amplify criticism from S/V/MP
+
+**Opposition-allied media (Aftonbladet, ETC):**
+- Framing likely: "Coalition builds surveillance state before election"
+- Emphasis: HD03267 indefinite detention; Skatteverket overreach fears; KU39 accountability failings
+- Electoral hook: "Four years of SD influence normalised extreme-right policy"
+
+**Business media (Dagens Industri, SvD Näringsliv):**
+- Framing likely: "Nuclear framework creates investment certainty; E-ID reduces transaction friction"
+- Emphasis: NU19 nuclear framework; HD03250 State E-ID benefits for business
+- BankID framing: "Competition for dominant payment infrastructure is coming"
+
+**International media (Reuters, FT, AP):**
+- Framing likely: "Sweden tightens security laws amid pre-election sprint"
+- Electoral angle: Useful comparison with other Nordic pre-election securitisation efforts
+- Watch: EU Commission comment on unlimited detention compatibility with ECHR Article 5
+
+### Narrative Contention Points (Priority for Monitoring)
+
+| Narrative | Coalition frame | Opposition frame | Arbiter |
+|---|---|---|---|
+| HD03267 | "Protecting public safety" | "Indefinite detention without conviction" | Lagrådet yttrande; ECtHR |
+| HD03261 | "Fighting welfare fraud" | "Surveillance creep vs. poor families" | Datainspektionen audit |
+| NU19 | "Securing Sweden's energy future" | "Unproven technology gambling public funds" | Vattenfall announcement |
+| KU39 | "Government acted legally" | "Ministers evading accountability" | KU committee vote T+40 |

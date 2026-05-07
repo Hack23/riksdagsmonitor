@@ -1,113 +1,90 @@
 {
+  "schema_version": "1.0",
+  "cycle": "realtime-pulse",
   "date": "2026-05-07",
   "subfolder": "realtime-pulse",
-  "pass": 2,
+  "generated_at": "2026-05-07T15:08:30Z",
   "pirs": [
     {
-      "id": "PIR-RT-001",
-      "label": "Security Detention Legislation (HD03267 + HD03262/HD03265)",
-      "status": "PARTIAL-UPDATED",
-      "priority": "CRITICAL",
-      "summary": "HD03267 submitted. Probable Lagrådets yttrande in Bilaga 5 but text not extracted. Migration props HD03262/HD03265 strand still open.",
-      "next_collection": "Lagrådet yttrande text for HD03262/HD03265; JuU committee hearing date for HD03267",
-      "forward_indicator": "FI-01"
+      "pir_id": "PIR-RT-001",
+      "statement": "Has Lagrådet issued its yttrande on migration propositions HD03262/HD03265, and what are the constitutional implications?",
+      "status": "open",
+      "confidence": "HIGH",
+      "collection_target": "data.riksdagen.se — Lagrådets yttrande search for HD03262/HD03265",
+      "forward_indicator": "FI-01",
+      "note": "Security strand (HD03267 Bil.5) partially resolved. Migration strand remains open (CRITICAL priority)."
     },
     {
-      "id": "LAGRÅDET-246",
-      "label": "Lagrådet Yttrande on Child Rights in Security Legislation",
-      "status": "ELEVATED",
-      "priority": "HIGH",
-      "summary": "MP raised HD11796 (prison schools at 13). Child detention provisions in HD03267 draw elevated civil society attention.",
-      "next_collection": "Lagrådet Bilaga 5 text; civil society response",
-      "forward_indicator": "FI-09"
+      "pir_id": "PIR-RT-003",
+      "statement": "Do latest Novus/Demoskop polls show MP crossing below 4% threshold or Tidö coalition changing electoral position?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "collection_target": "Novus.se/Demoskop.se public releases",
+      "forward_indicator": "FI-03",
+      "note": "MP carry-forward at ~4.1%. No new polling data in this cycle."
     },
     {
-      "id": "PIR-RT-003",
-      "label": "Opposition Polling Threshold Risk (MP, POLL)",
-      "status": "OPEN",
-      "priority": "HIGH",
-      "summary": "No new polling data received. MP at ~4.1% carry-forward. Next update expected Novus release.",
-      "next_collection": "Novus/Demoskop release (expected within 14 days)",
-      "forward_indicator": "FI-03"
+      "pir_id": "PIR-RT-004",
+      "statement": "Has IMF IFS SDMX endpoint been restored, enabling monthly Swedish CPI, employment and exchange rate data?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "collection_target": "api.imf.org IFS probe (daily)",
+      "forward_indicator": "FI-10",
+      "note": "IFS SDMX returning 404 since 2026-05-07. WEO and FM Datamapper available."
     },
     {
-      "id": "PIR-RT-004",
-      "label": "IMF IFS Monthly Data Availability",
-      "status": "OPEN-DEGRADED",
-      "priority": "MEDIUM",
-      "summary": "IFS SDMX endpoint 404. WEO and FM available. Swedish monthly macro data unavailable.",
-      "next_collection": "IMF IFS API probe (daily)",
-      "forward_indicator": "FI-10"
+      "pir_id": "PIR-RT-005",
+      "statement": "What is Minister Carlson's substantive response to interpellation HD10458 on Ostlänken infrastructure decision?",
+      "status": "open",
+      "confidence": "HIGH",
+      "collection_target": "Riksdag interpellation response system — deadline 2026-05-25",
+      "forward_indicator": "FI-04",
+      "note": "Response deadline T+18 days (2026-05-25). HD10458 filed by opposition."
     },
     {
-      "id": "PIR-RT-005",
-      "label": "Ostlänken Infrastructure Decision (Minister Carlson HD10458)",
-      "status": "OPEN",
-      "priority": "HIGH",
-      "summary": "HD10458 interpellation filed. Carlson response deadline 2026-05-25 (T+18).",
-      "next_collection": "Carlson formal response",
-      "forward_indicator": "FI-04"
+      "pir_id": "PIR-RT-006",
+      "statement": "Have major energy companies filed NU19-required nuclear construction applications or indicated timeline plans ahead of 2026-06-17 effective date?",
+      "status": "open",
+      "confidence": "HIGH",
+      "collection_target": "Klimat- och näringslivsdepartementet; Energimyndigheten announcements",
+      "forward_indicator": "FI-06",
+      "note": "NU19 effective 2026-06-17 (T+41). No company filings observed to date."
     },
     {
-      "id": "PIR-RT-006",
-      "label": "Nuclear Energy NU19 Company Response",
-      "status": "OPEN",
-      "priority": "HIGH",
-      "summary": "NU19 law effective 2026-06-17 (T+41). No company responses yet. Energy companies must act.",
-      "next_collection": "Company filings; Klimat- och näringslivsdepartementet announcements",
-      "forward_indicator": "FI-06"
+      "pir_id": "PIR-3-KU39",
+      "statement": "What is the outcome of the KU39 constitutional transparency vote and which parties support/oppose the governing bloc?",
+      "status": "open",
+      "confidence": "HIGH",
+      "collection_target": "KU committee report; chamber calendar — vote expected 2026-06-16",
+      "forward_indicator": "FI-07",
+      "note": "Vote T+40 days. S using as electoral issue. Bloc outcome unclear."
     },
     {
-      "id": "PIR-3",
-      "label": "KU39 Constitutional Transparency Vote",
-      "status": "OPEN",
-      "priority": "CRITICAL",
-      "summary": "Vote expected 2026-06-16 (T+40). Bloc outcome unclear — S using as electoral issue.",
-      "next_collection": "KU committee report publication; chamber calendar",
-      "forward_indicator": "FI-07"
+      "pir_id": "PIR-LAGRDET-246",
+      "statement": "Has Lagrådet issued its yttrande on the criminal responsibility age reduction proposition, and what is its assessment of child rights compliance?",
+      "status": "open",
+      "confidence": "HIGH",
+      "collection_target": "www.lagradet.se; Riksdag document search for Lagrådet + criminal responsibility age",
+      "forward_indicator": "FI-09",
+      "note": "Elevated by HD11796 (MP motion on prison schools for 13-year-olds). Political pressure increasing."
     },
     {
-      "id": "PIR-NEW-001",
-      "label": "State E-ID Implementation (HD03250)",
-      "status": "NEW-OPEN",
-      "priority": "MEDIUM",
-      "summary": "Prop 2025/26:250 submitted today. Full text not extracted. BankID commercial response pending.",
-      "next_collection": "Full text extraction HD03250; BankID position paper",
-      "forward_indicator": "FI-12"
+      "pir_id": "PIR-NEW-001",
+      "statement": "What specific provisions does Prop 2025/26:250 (State E-ID) contain regarding data retention, privacy safeguards, and BankID displacement?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "collection_target": "data.riksdagen.se — HD03250 full text extraction; BankID public statement",
+      "forward_indicator": "FI-12",
+      "note": "Full text not yet extracted. Metadata-only analysis in this cycle."
     },
     {
-      "id": "PIR-NEW-002",
-      "label": "Skatteverket Cross-Matching Powers (HD03261)",
-      "status": "NEW-OPEN",
-      "priority": "MEDIUM",
-      "summary": "Prop 2025/26:261 submitted today. Full text not extracted. Datainspektionen review pending.",
-      "next_collection": "Full text extraction HD03261; DI guidance announcement",
-      "forward_indicator": "FI-08"
+      "pir_id": "PIR-NEW-002",
+      "statement": "What cross-system data matching rights does Prop 2025/26:261 grant Skatteverket, and what oversight mechanisms apply?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "collection_target": "data.riksdagen.se — HD03261 full text extraction; Datainspektionen guidance",
+      "forward_indicator": "FI-08",
+      "note": "Full text not yet extracted. CSS truncation prevented extraction in initial run."
     }
-  ],
-  "imf_context": {
-    "provider": "imf",
-    "dataflows": ["WEO-2026-04", "FM-2026-04"],
-    "degraded": ["IFS-SDMX-404"],
-    "sweden_gdp_2026_pct": 2.1,
-    "sweden_debt_gdp_pct": 35.0,
-    "vintage": "2026-04",
-    "retrieved_at": "2026-05-07",
-    "annotation": "IFS degraded — monthly macro claims unavailable"
-  },
-  "election_countdown": {
-    "election_date": "2026-09-13",
-    "days_remaining": 128,
-    "diw_multiplier": 1.5,
-    "tidö_seat_estimate": 176,
-    "tidö_threshold": 175,
-    "margin": 1
-  },
-  "collection_gaps": [
-    "Lagrådet yttrande text for HD03267 Bilaga 5",
-    "Lagrådet yttrande for HD03262/HD03265 (not submitted yet)",
-    "Full text HD03261, HD03250",
-    "New parliamentary polling data",
-    "IMF IFS monthly Swedish macro data"
   ]
 }

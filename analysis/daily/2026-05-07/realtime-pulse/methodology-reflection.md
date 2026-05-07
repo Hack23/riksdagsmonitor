@@ -79,3 +79,16 @@ All analysis based on official public documents (riksdag.se API). No anonymous s
 
 Economic claims comply with IMF-first discipline:
 - *economicProvenance: { provider: "imf", dataflow: "WEO", vintage: "2026-04", retrieved_at: "2026-05-07", degraded_probe: "IFS-SDMX-404" }*
+
+## Re-run log
+
+| Field | Value |
+|---|---|
+| RUN_TIMESTAMP_UTC | 2026-05-07T15:08:30Z |
+| workflow | news-realtime-monitor |
+| run_id | gh-aw-improvement-pass-2026-05-07 |
+| new_dok_ids | none (0 new documents since 13:09 UTC first run) |
+| artifacts_extended | pir-status.json rewritten to schema v1.0; forward-indicators.md extended with T+18/T+40/T+41 timing; coalition-mathematics.md sharpened |
+| flags_closed | none |
+| vintage_refresh | WEO-2026-04 (ok), FM (ok), IFS SDMX 404 (degraded — no change) |
+| pass | 2 |
