@@ -1,11 +1,11 @@
 ---
 title: "Riksdag Monthly Review: April–May 2026"
-description: "---"
+description: "1. Lead story: HC01FiU20 Spring Fiscal Bill — four opposition parties (S, V, C, MP) contested the Tidö economic policy framework; US tariff shock revised GDP to 1.9% (2025)."
 date: 2026-04-29
 subfolder: monthly-review
 slug: 2026-04-29-monthly-review
 source_folder: analysis/daily/2026-04-29/monthly-review
-generated_at: 2026-05-07T13:04:44.815Z
+generated_at: 2026-05-07T21:17:59.846Z
 language: en
 layout: article
 ---

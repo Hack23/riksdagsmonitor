@@ -1,11 +1,11 @@
 ---
-title: "Riksdag Evening Analysis 2026-05-07: Sweden's Security-State Legislative Sprint — 125 Days Before Election"
-description: "Three executive propositions and six committee reports advance Sweden's security state simultaneously as election countdown begins. FiU capital markets reform, JuU criminal justice cluster, and opposition humanitarian accountability campaign analyzed."
+title: "WEP: Likely [B2] DIW Aggregate: 8.4 Horizon: T+72h to T+90d Reading"
+description: "WEP: Likely [B2] DIW Aggregate: 8.4 Horizon: T+72h to T+90d Reading time: ~5 minutes"
 date: 2026-05-07
 subfolder: evening-analysis
 slug: 2026-05-07-evening-analysis
 source_folder: analysis/daily/2026-05-07/evening-analysis
-generated_at: 2026-05-07T18:57:48.484Z
+generated_at: 2026-05-07T21:18:00.196Z
 language: en
 layout: article
 ---

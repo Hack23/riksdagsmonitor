@@ -1,11 +1,11 @@
 ---
 title: "Riksdag Monthly Review: April 2026 (Spring Term Peak)"
-description: "---"
+description: "<p align=\"center\"> <em>One-page decision-maker briefing for newsroom editors, policy advisors, and senior analysts — 30-day retrospective</em> </p>"
 date: 2026-04-19
 subfolder: monthly-review
 slug: 2026-04-19-monthly-review
 source_folder: analysis/daily/2026-04-19/monthly-review
-generated_at: 2026-05-07T13:04:44.488Z
+generated_at: 2026-05-07T21:17:59.420Z
 language: en
 layout: article
 ---

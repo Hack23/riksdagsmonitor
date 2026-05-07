@@ -1,11 +1,11 @@
 ---
 title: "Sweden Month-Ahead Strategic Outlook (19 April → 19 May 2026)"
-description: "---"
+description: "<p align=\"center\"> <em>One-page decision-maker briefing for newsroom editors, policy advisors, and senior analysts</em> </p>"
 date: 2026-04-19
 subfolder: month-ahead
 slug: 2026-04-19-month-ahead
 source_folder: analysis/daily/2026-04-19/month-ahead
-generated_at: 2026-05-07T13:04:44.482Z
+generated_at: 2026-05-07T21:17:59.411Z
 language: en
 layout: article
 ---
