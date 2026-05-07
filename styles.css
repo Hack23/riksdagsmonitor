@@ -633,7 +633,7 @@ body {
   background-color: var(--bg-color);
   max-width: 100%;
   margin: 0;
-  padding: var(--page-gutter);
+  padding: var(--spacing-md) var(--page-gutter);
   position: relative;
   overflow-x: hidden;
   font-size: 16px;
@@ -1352,7 +1352,7 @@ header {
   position: relative;
   width: 100%;
   /* Single smooth clamp avoids layout jumps at breakpoints */
-  height: clamp(160px, 30vw, 520px);
+  height: clamp(150px, 28vw, 420px);
   overflow: hidden;
   background:
     radial-gradient(circle at 50% 20%, rgba(0, 217, 255, 0.12), transparent 45%),
@@ -1417,7 +1417,7 @@ header {
   /* Article/news chrome keeps the same fully-visible image treatment as the
      homepage hero but uses a tighter maximum so the article lead remains above
      the fold on common laptop viewports. */
-  height: clamp(150px, 24vw, 420px);
+  height: clamp(140px, 22vw, 320px);
   margin-bottom: var(--spacing-md);
 }
 
@@ -16077,9 +16077,10 @@ html[data-theme="light"] .rm-footer-heading {
 .rm-article-body.news-page .hero-banner {
   /* Override the upstream `max-height: 180px; overflow:hidden` rule that
    * was cropping the banner. A flexible clamp gives the banner room to
-   * breathe on desktop while staying compact on mobile. */
+   * breathe on desktop while staying compact enough to keep the news/article
+   * lead visible above the fold on common laptop displays. */
   max-height: none;
-  height: clamp(150px, 24vw, 420px);
+  height: clamp(140px, 22vw, 320px);
   margin-bottom: var(--spacing-md);
   border-bottom: 2px solid var(--primary-cyan, #00d9ff);
   background:
