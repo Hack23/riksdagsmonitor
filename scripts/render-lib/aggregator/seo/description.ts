@@ -134,6 +134,7 @@ export function readBlufParagraph(markdown: string): string | null {
     if (/^\|/.test(p)) continue;
     if (/^```/.test(p)) continue;
     if (/^[>*]\s/.test(p)) continue;
+    if (/^[-*_]{3,}\s*$/.test(p)) continue;        // skip thematic breaks (---, ***, ___)
     const fragments = p.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
     if (fragments.length > 0 && fragments.every((f) => ADMIN_FIELD_RE.test(f.trim()))) continue;
     return markdownInlineToText(p);
@@ -155,6 +156,7 @@ export function readFirstParagraph(markdown: string): string | null {
     if (/^\|/.test(p)) continue;                 // skip tables
     if (/^```/.test(p)) continue;                // skip code fences
     if (/^[>*]\s/.test(p)) continue;             // skip blockquotes / bullet-only lines
+    if (/^[-*_]{3,}\s*$/.test(p)) continue;      // skip thematic breaks (---, ***, ___)
     // Structural-only delimiter (see ADMIN_FRAGMENT_SPLITTER JSDoc).
     const fragments = p.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
     if (fragments.length > 0 && fragments.every((f) => ADMIN_FIELD_RE.test(f.trim()))) continue;

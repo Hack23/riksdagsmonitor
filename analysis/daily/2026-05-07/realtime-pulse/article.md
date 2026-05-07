@@ -1,11 +1,11 @@
 ---
-title: "---"
-description: "---"
+title: "Sweden's Tidö coalition is executing a coordinated end-of-session"
+description: "Sweden's Tidö coalition is executing a coordinated end-of-session security-state consolidation before the September 2026 election. In a single legislative day, the government submitted three major…"
 date: 2026-05-07
 subfolder: realtime-pulse
 slug: 2026-05-07-realtime-pulse
 source_folder: analysis/daily/2026-05-07/realtime-pulse
-generated_at: 2026-05-07T15:11:39.341Z
+generated_at: 2026-05-07T21:01:04.189Z
 language: en
 layout: article
 ---
