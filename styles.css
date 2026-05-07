@@ -135,9 +135,9 @@
   --font-size-5xl: 3rem; /* 48px */
   
   /* Heading Sizes (approximately 1.25 ratio, optimized for readability) */
-  --h1-size: 2.5rem; /* 40px */
-  --h2-size: 2rem; /* 32px */
-  --h3-size: 1.625rem; /* 26px */
+  --h1-size: clamp(2rem, 2.4vw, 2.375rem); /* 32-38px */
+  --h2-size: clamp(1.5rem, 1.8vw, 1.875rem); /* 24-30px */
+  --h3-size: clamp(1.25rem, 1.4vw, 1.5rem); /* 20-24px */
   --h4-size: 1.25rem; /* 20px */
   --h5-size: 1.125rem; /* 18px */
   --h6-size: 1rem; /* 16px */
@@ -158,6 +158,11 @@
   --spacing-2xl: 3rem; /* 48px */
   --spacing-3xl: 4rem; /* 64px */
   --spacing-4xl: 6rem; /* 96px */
+  /* Shared responsive edge gutter for full-width pages/chrome. Scales from
+     0.75rem on narrow phones toward 2rem on wide desktops. Generated article,
+     news-index, footer and header layouts use this token so they can span the
+     viewport while keeping readable touch-safe horizontal breathing room. */
+  --page-gutter: clamp(0.75rem, 2vw, 2rem);
 
   /* ── Design Tokens: Spacing Scale (T-shirt → numeric alias) ──────────── */
   /* 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 96 px */
@@ -628,7 +633,7 @@ body {
   background-color: var(--bg-color);
   max-width: 100%;
   margin: 0;
-  padding: var(--spacing-md) var(--spacing-xl);
+  padding: var(--spacing-md) var(--page-gutter);
   position: relative;
   overflow-x: hidden;
   font-size: 16px;
@@ -1347,7 +1352,7 @@ header {
   position: relative;
   width: 100%;
   /* Single smooth clamp avoids layout jumps at breakpoints */
-  height: clamp(100px, 22vw, 280px);
+  height: clamp(150px, 28vw, 420px);
   overflow: hidden;
   background:
     radial-gradient(circle at 50% 20%, rgba(0, 217, 255, 0.12), transparent 45%),
@@ -1409,7 +1414,10 @@ header {
  * tighter than the hand-authored index hero, and add bottom spacing so the
  * language bar / breadcrumb does not collide with the banner image. */
 .rm-article-body .hero-banner {
-  height: clamp(80px, 14vw, 200px);
+  /* Article/news chrome uses the same `contain`/full-artwork approach as the
+     homepage hero, with a smaller maximum so the article lead remains above
+     the fold on common laptop viewports. */
+  height: clamp(140px, 22vw, 320px);
   margin-bottom: var(--spacing-md);
 }
 
@@ -1728,7 +1736,7 @@ html[data-theme="dark"] .article-site-logo {
   -webkit-flex: 1 1 280px;
   -ms-flex: 1 1 280px;
   flex: 1 1 280px;
-  max-width: 450px;
+  max-width: none;
   min-width: 280px;
 }
 
@@ -1736,8 +1744,8 @@ html[data-theme="dark"] .article-site-logo {
 @supports (display: grid) {
   .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 480px));
-    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    justify-content: stretch;
   }
   
   .cards > * {
@@ -9210,7 +9218,7 @@ body.news-page {
 
 .news-page h1 {
   font-family: 'Orbitron', 'Orbitron Fallback', sans-serif;
-  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-size: clamp(1.5rem, 3vw, 2.35rem);
   margin: 0 0 0.75rem 0;
   background: linear-gradient(135deg, var(--primary-color), var(--link-color));
   -webkit-background-clip: text;
@@ -9238,9 +9246,10 @@ body.news-page {
 }
 
 .news-page .container {
+  width: 100%;
   max-width: 100%;
   margin: 0 auto;
-  padding: 1.5rem 1.5rem 3rem;
+  padding: clamp(1rem, 2vw, 2rem) var(--page-gutter) 3rem;
 }
 
 /* Language notice for fallback content */
@@ -9367,7 +9376,7 @@ body.news-page {
 .news-page .articles-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: clamp(1rem, 1.8vw, 2rem);
   margin-top: 2rem;
 }
 
@@ -11068,6 +11077,13 @@ a:not(.btn):not(.btn-primary-large):not(.btn-secondary):not(.nav-link):not([clas
   margin-inline: auto;
 }
 
+/* Generated article pages put `news-article` on <body>; do not constrain the
+   viewport wrapper, only legacy article cards/containers that use the class. */
+body.news-article {
+  max-width: none;
+  margin-inline: 0;
+}
+
 /* ── 6. Pull-Quote Styling ────────────────────────────────────────────────── */
 .pull-quote {
   font-size: var(--fluid-lg, 1.333rem);
@@ -12245,12 +12261,21 @@ html[data-theme="light"] .footer-disclaimer a {
     var(--dark-bg, #0a0e27) 0%,
     var(--mid-bg, #1a1e3d) 100%);
   border-bottom: 1px solid color-mix(in srgb, var(--primary-cyan, #00d9ff) 35%, transparent);
+  /* Override the legacy global `header` card rule so generated chrome spans
+     the full viewport edge-to-edge instead of inheriting rounded card chrome. */
+  border-radius: 0;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4), 0 0 32px color-mix(in srgb, var(--primary-cyan, #00d9ff) 10%, transparent);
   position: sticky;
   top: 0;
   z-index: 100;
   -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  text-align: initial;
+  align-items: stretch;
 }
 
 /* Publishes the sticky header's nominal height so siblings positioned
@@ -12263,9 +12288,10 @@ html[data-theme="light"] .footer-disclaimer a {
 }
 
 .rm-site-header-inner {
-  max-width: 1200px;
+  width: 100%;
+  max-width: none;
   margin: 0 auto;
-  padding: 0.65rem 1.5rem;
+  padding: 0.65rem var(--page-gutter);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -12590,9 +12616,10 @@ html[data-theme="light"] .footer-disclaimer a {
 /* ---- site sub-navigation (breadcrumbs + published date) ---- */
 
 .rm-site-subnav {
-  max-width: 1200px;
+  width: 100%;
+  max-width: none;
   margin: 0 auto;
-  padding: 0.35rem 1.5rem 0.6rem;
+  padding: 0.35rem var(--page-gutter) 0.6rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -12651,19 +12678,37 @@ html[data-theme="light"] .footer-disclaimer a {
 
 /* ---- article body ---- */
 
-.rm-article-body {
+/* Page shell only: buildChrome places `rm-article-body` on <body> for all
+   generated pages. Keep the viewport background/min-height here rather than on
+   nested article content blocks; applying `min-height:100vh` to inner
+   `.rm-article-body` wrappers caused nested scroll-like pages where each
+   prose chunk tried to fill a full viewport height. */
+
+body.rm-article-body {
   color: var(--light-text, #e0e0e0);
   background: var(--dark-bg, #0a0e27);
   min-height: 100vh;
 }
 
+/* Content sections: renderArticleHtml also uses `.rm-article-body` inside the
+   article for the lead/rest prose chunks. These must inherit the article card
+   surface instead of becoming independent viewport-height page shells. */
+.rm-article .rm-article-body {
+  color: inherit;
+  background: transparent;
+  min-height: 0;
+}
+
 .rm-article-main {
-  max-width: min(1120px, calc(100vw - 1rem));
+  width: 100%;
+  max-width: none;
   margin: 0 auto;
-  padding: clamp(1rem, 3vw, 2.5rem) clamp(0.75rem, 3vw, 1.75rem) 4rem;
+  padding: clamp(1rem, 2.5vw, 2.25rem) var(--page-gutter) 4rem;
 }
 
 .rm-article {
+  width: 100%;
+  box-sizing: border-box;
   background:
     radial-gradient(circle at top left, color-mix(in srgb, var(--primary-cyan, #00d9ff) 8%, transparent), transparent 34rem),
     color-mix(in srgb, var(--mid-bg, #1a1e3d) 64%, transparent);
@@ -12674,13 +12719,13 @@ html[data-theme="light"] .footer-disclaimer a {
 }
 
 .rm-article-header {
-  margin-bottom: clamp(1.75rem, 4vw, 3rem);
+  margin-bottom: clamp(1rem, 2.5vw, 2rem);
 }
 
 .rm-article-header h1 {
   font-family: var(--font-heading, 'Orbitron', sans-serif);
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
-  line-height: 1.15;
+  font-size: clamp(1.45rem, 3vw, 2.2rem);
+  line-height: 1.12;
   color: var(--primary-cyan, #00d9ff);
   margin: 0 0 0.5rem;
   text-shadow: 0 0 16px color-mix(in srgb, var(--primary-cyan, #00d9ff) 35%, transparent);
@@ -12690,8 +12735,8 @@ html[data-theme="light"] .footer-disclaimer a {
   max-width: 74ch;
   margin: 0.85rem 0 1rem;
   color: color-mix(in srgb, var(--light-text, #e0e0e0) 88%, transparent);
-  font-size: clamp(1.0625rem, 2vw, 1.25rem);
-  line-height: 1.65;
+  font-size: clamp(1rem, 1.3vw, 1.125rem);
+  line-height: 1.6;
 }
 
 .rm-article-meta {
@@ -12723,7 +12768,7 @@ html[data-theme="light"] .footer-disclaimer a {
 
 .rm-article-body h2 {
   font-family: var(--font-heading, 'Orbitron', sans-serif);
-  font-size: clamp(1.375rem, 2.5vw, 1.875rem);
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
   color: var(--primary-yellow, #ffbe0b);
   margin: 2.5rem 0 0.75rem;
   padding-bottom: 0.25rem;
@@ -12733,7 +12778,7 @@ html[data-theme="light"] .footer-disclaimer a {
 
 .rm-article-body h3 {
   font-family: var(--font-heading, 'Orbitron', sans-serif);
-  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
   color: var(--primary-magenta, #ff006e);
   margin: 1.75rem 0 0.5rem;
   scroll-margin-top: 5rem;
@@ -13252,9 +13297,10 @@ html[data-theme="light"] .rm-article-body pre.mermaid > svg {
 }
 
 .rm-site-footer-inner {
-  max-width: 1200px;
+  width: 100%;
+  max-width: none;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 var(--page-gutter);
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 2rem;
@@ -13356,9 +13402,10 @@ html[data-theme="light"] .rm-article-body pre.mermaid > svg {
 
 /* Always-visible inline secondary language switcher in the footer. */
 .rm-footer-langs {
-  max-width: 1200px;
+  width: 100%;
+  max-width: none;
   margin: 1.75rem auto 0;
-  padding: 1.25rem 1.5rem 0;
+  padding: 1.25rem var(--page-gutter) 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -13399,9 +13446,10 @@ html[data-theme="light"] .rm-article-body pre.mermaid > svg {
 }
 
 .rm-footer-legal {
-  max-width: 1200px;
+  width: 100%;
+  max-width: none;
   margin: 1.25rem auto 0;
-  padding: 1rem 1.5rem 0;
+  padding: 1rem var(--page-gutter) 0;
   font-size: 0.8125rem;
   color: color-mix(in srgb, var(--light-text, #e0e0e0) 65%, transparent);
   border-top: 1px solid color-mix(in srgb, var(--primary-cyan, #00d9ff) 12%, transparent);
@@ -13409,10 +13457,17 @@ html[data-theme="light"] .rm-article-body pre.mermaid > svg {
 
 /* ---- light-theme override for generated articles ---- */
 
-html[data-theme="light"] .rm-article-body,
 html[data-theme="light"] body.rm-article-body {
   color: var(--text-color, #1a1a1a);
   background: var(--bg-color, #f8f9fa);
+}
+
+/* Same shell/content split as the dark default above: only the generated page
+   body owns the light-mode page surface; nested prose chunks stay transparent
+   so theme changes cannot reintroduce inner scroll panels. */
+html[data-theme="light"] .rm-article .rm-article-body {
+  color: inherit;
+  background: transparent;
 }
 
 html[data-theme="light"] .rm-article {
@@ -13434,6 +13489,38 @@ html[data-theme="light"] .rm-site-header {
 html[data-theme="light"] .rm-logo,
 html[data-theme="light"] .rm-site-nav a { color: var(--text-color, #1a1a1a); text-shadow: none; }
 
+html[data-theme="light"] .rm-logo-tagline,
+html[data-theme="light"] .rm-lang-switcher > summary,
+html[data-theme="light"] .rm-breadcrumb li[aria-current="page"],
+html[data-theme="light"] .rm-site-subnav {
+  color: var(--text-secondary, #4a4a4a);
+  text-shadow: none;
+}
+
+html[data-theme="light"] .rm-lang-switcher > summary,
+html[data-theme="light"] .rm-lang-switcher-dropdown,
+html[data-theme="light"] .rm-lang-bar,
+html[data-theme="light"] .rm-footer-langs a {
+  background: rgba(255, 255, 255, 0.94);
+  border-color: var(--card-border, #dee2e6);
+  color: var(--text-color, #1a1a1a);
+}
+
+html[data-theme="light"] .rm-lang-switcher-dropdown a,
+html[data-theme="light"] .rm-footer-langs a {
+  color: var(--text-color, #1a1a1a);
+}
+
+html[data-theme="light"] .hero-banner {
+  background:
+    radial-gradient(circle at 50% 20%, rgba(0, 119, 68, 0.08), transparent 45%),
+    linear-gradient(135deg, #ffffff, #eef3f0);
+}
+
+html[data-theme="light"] .hero-banner-bg {
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.12));
+}
+
 html[data-theme="light"] .rm-site-footer {
   background: #ffffff;
   border-top-color: var(--card-border, #dee2e6);
@@ -13441,10 +13528,14 @@ html[data-theme="light"] .rm-site-footer {
 }
 
 @media (prefers-color-scheme: light) {
-  html:not([data-theme]) .rm-article-body,
   html:not([data-theme]) body.rm-article-body {
     color: var(--text-color, #1a1a1a);
     background: var(--bg-color, #f8f9fa);
+  }
+
+  html:not([data-theme]) .rm-article .rm-article-body {
+    color: inherit;
+    background: transparent;
   }
 
   html:not([data-theme]) .rm-article {
@@ -15960,7 +16051,7 @@ html[data-theme="light"] .rm-footer-heading {
 
 /* ── Improved subnav / breadcrumb spacing ─────────────────────────────── */
 .rm-site-subnav {
-  padding: 0.35rem 0;
+  padding: 0.35rem var(--page-gutter) 0.6rem;
 }
 
 .rm-breadcrumb ol {
@@ -15982,12 +16073,14 @@ html[data-theme="light"] .rm-footer-heading {
    image is readable against a light page chrome.
    ──────────────────────────────────────────────────────────────────── */
 
-.rm-article-body.news-article .hero-banner {
+.rm-article-body.news-article .hero-banner,
+.rm-article-body.news-page .hero-banner {
   /* Override the upstream `max-height: 180px; overflow:hidden` rule that
    * was cropping the banner. A flexible clamp gives the banner room to
-   * breathe on desktop while staying compact on mobile. */
+   * breathe on desktop while staying compact enough to keep the news/article
+   * lead visible above the fold on common laptop displays. */
   max-height: none;
-  height: clamp(140px, 18vw, 240px);
+  height: clamp(140px, 22vw, 320px);
   margin-bottom: var(--spacing-md);
   border-bottom: 2px solid var(--primary-cyan, #00d9ff);
   background:
@@ -15997,7 +16090,8 @@ html[data-theme="light"] .rm-footer-heading {
   overflow: hidden;
 }
 
-.rm-article-body.news-article .hero-banner .hero-banner-bg {
+.rm-article-body.news-article .hero-banner .hero-banner-bg,
+.rm-article-body.news-page .hero-banner .hero-banner-bg {
   /* `contain` keeps the entire banner artwork visible (brand + tagline
    * are at the bottom of the asset). `cover` cropped them away. */
   object-fit: contain;
@@ -16010,10 +16104,12 @@ html[data-theme="light"] .rm-footer-heading {
 }
 
 @media (max-width: 767px) {
-  .rm-article-body.news-article .hero-banner {
-    height: clamp(110px, 22vw, 160px);
+  .rm-article-body.news-article .hero-banner,
+  .rm-article-body.news-page .hero-banner {
+    height: clamp(120px, 28vw, 190px);
   }
-  .rm-article-body.news-article .hero-banner .hero-banner-bg {
+  .rm-article-body.news-article .hero-banner .hero-banner-bg,
+  .rm-article-body.news-page .hero-banner .hero-banner-bg {
     height: 100%;
   }
 }
@@ -16022,7 +16118,8 @@ html[data-theme="light"] .rm-footer-heading {
  * banner artwork stays readable. Without this, the banner sat over the
  * dark default `.hero-banner` background which is jarring on a light
  * page. */
-html[data-theme="light"] .rm-article-body.news-article .hero-banner {
+html[data-theme="light"] .rm-article-body.news-article .hero-banner,
+html[data-theme="light"] .rm-article-body.news-page .hero-banner {
   background:
     radial-gradient(circle at 50% 45%, rgba(0, 102, 51, 0.10), transparent 42%),
     linear-gradient(90deg, #f6fbff 0%, #eaf6ff 50%, #f6fbff 100%);
