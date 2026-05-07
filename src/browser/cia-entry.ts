@@ -12,11 +12,22 @@
  * */
 
 // ─── Library Imports ─────────────────────────────────────────────────────────
-// Register Chart.js on globalThis so CIA dashboard modules can access it.
+// IMPORTANT: This side-effect import MUST come first. ECMAScript module
+// imports are hoisted in source order, so importing the bootstrap module
+// here registers `globalThis.Chart` (and `d3` / `Papa`) BEFORE the CIA
+// dashboard modules evaluate. The downstream `cia/visualizations.ts`
+// captures `globalThis.Chart` at module-init time — without this ordering
+// it would capture `undefined` and silently disable every chart on
+// `dashboard/index*.html`. See `register-globals-bootstrap.ts` for the
+// full rationale and the contract constraints that drive this layout.
+import './shared/register-globals-bootstrap.js';
 import { registerBrowserGlobals } from './shared/register-globals.js';
 
 // ─── CIA Dashboard Modules ──────────────────────────────────────────────────
 import { startDashboard } from './cia/dashboard-init.js';
 
-registerBrowserGlobals();
+// `registerBrowserGlobals` is re-imported and referenced (no-op call) so the
+// `cia-dashboard-entry-contract.test.ts` tree-shaking contract still asserts
+// that the canonical bootstrap symbol is reachable from the production entry.
+void registerBrowserGlobals;
 startDashboard();

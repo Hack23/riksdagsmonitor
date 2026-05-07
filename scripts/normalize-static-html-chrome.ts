@@ -82,11 +82,13 @@ function primaryNav(prefix: string, current: Language): string {
   const newsFile = `${prefix}news/index${suffix}.html`;
   const dashboardFile = `${prefix}dashboard/index${suffix}.html`;
   const piFile = `${prefix}political-intelligence${suffix}.html`;
+  const politiciansFile = `${prefix}politician-dashboard${suffix}.html`;
   const sitemapFile = `${prefix}sitemap${suffix}.html`;
   return `<nav class="site-header-nav" aria-label="${cs.mainNav}" data-rm-static-primary-nav="true">
   <a href="${indexFile}">${t.home}</a>
   <a href="${newsFile}">${cs.news}</a>
   <a href="${dashboardFile}">${cs.dashboard}</a>
+  <a href="${politiciansFile}"><span aria-hidden="true">👤</span> ${cs.politicians}</a>
   <a href="${piFile}"><span aria-hidden="true">🧠</span> ${cs.politicalIntelligence}</a>
   <a href="${sitemapFile}"><span aria-hidden="true">🗺️</span> ${t.siteMap}</a>
   <a href="${API_DOCS_URL}"><span aria-hidden="true">📚</span> ${t.apiDocs}</a>
@@ -102,6 +104,7 @@ function footer(prefix: string, family: PageFamily, current: Language): string {
   const newsFile = current === 'en' ? 'news/index.html' : `news/index_${current}.html`;
   const dashboardFile = current === 'en' ? 'dashboard/index.html' : `dashboard/index_${current}.html`;
   const piFile = current === 'en' ? 'political-intelligence.html' : `political-intelligence_${current}.html`;
+  const politiciansFile = current === 'en' ? 'politician-dashboard.html' : `politician-dashboard_${current}.html`;
   const sitemapFile = current === 'en' ? 'sitemap.html' : `sitemap_${current}.html`;
   const year = new Date().getUTCFullYear();
 
@@ -127,6 +130,7 @@ function footer(prefix: string, family: PageFamily, current: Language): string {
         <li><a href="${prefix}${indexFile}">${t.home}</a></li>
         <li><a href="${prefix}${newsFile}">${cs.news}</a></li>
         <li><a href="${prefix}${dashboardFile}">${cs.dashboard}</a></li>
+        <li><a href="${prefix}${politiciansFile}"><span aria-hidden="true">👤</span> ${cs.politicians}</a></li>
         <li><a href="${prefix}${piFile}"><span aria-hidden="true">🧠</span> ${cs.politicalIntelligence}</a></li>
         <li><a href="${prefix}${sitemapFile}"><span aria-hidden="true">🗺️</span> ${t.siteMap}</a></li>
         <li><a href="${API_DOCS_URL}"><span aria-hidden="true">📚</span> ${cs.linkApiDocs}</a></li>

@@ -30,6 +30,7 @@ export function buildFooterHtml(opts: ChromeOptions): string {
   const indexFile = opts.lang === 'en' ? 'index.html' : `index_${opts.lang}.html`;
   const sitemapFile = opts.lang === 'en' ? 'sitemap.html' : `sitemap_${opts.lang}.html`;
   const piFile = opts.lang === 'en' ? 'political-intelligence.html' : `political-intelligence_${opts.lang}.html`;
+  const politiciansFile = opts.lang === 'en' ? 'politician-dashboard.html' : `politician-dashboard_${opts.lang}.html`;
   const newsFile = opts.lang === 'en' ? 'news/index.html' : `news/index_${opts.lang}.html`;
   const dashboardFile = opts.lang === 'en' ? 'dashboard/index.html' : `dashboard/index_${opts.lang}.html`;
   const rssHref = opts.rssHref ?? (opts.lang === 'en' ? '/rss.xml' : `/rss_${opts.lang}.xml`);
@@ -72,6 +73,7 @@ export function buildFooterHtml(opts: ChromeOptions): string {
             <li><a href="${prefix}${indexFile}">${escapeHtml(t.home)}</a></li>
             <li><a href="${prefix}${newsFile}">${escapeHtml(cs.news)}</a></li>
             <li><a href="${prefix}${dashboardFile}">${escapeHtml(cs.dashboard)}</a></li>
+            <li><a href="${prefix}${politiciansFile}"><span aria-hidden="true">👤</span> ${escapeHtml(cs.politicians)}</a></li>
             <li><a href="${prefix}${piFile}"><span aria-hidden="true">🧠</span> ${escapeHtml(cs.politicalIntelligence)}</a></li>
             <li><a href="${prefix}${sitemapFile}"><span aria-hidden="true">🗺️</span> ${escapeHtml(t.siteMap)}</a></li>
             <li><a href="${apiDocsHref}"><span aria-hidden="true">📚</span> ${escapeHtml(cs.linkApiDocs)}</a></li>
