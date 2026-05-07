@@ -30,6 +30,7 @@ export function buildHeaderHtml(opts: ChromeOptions): string {
   const indexFile = opts.lang === 'en' ? 'index.html' : `index_${opts.lang}.html`;
   const sitemapFile = opts.lang === 'en' ? 'sitemap.html' : `sitemap_${opts.lang}.html`;
   const piFile = opts.lang === 'en' ? 'political-intelligence.html' : `political-intelligence_${opts.lang}.html`;
+  const politiciansFile = opts.lang === 'en' ? 'politician-dashboard.html' : `politician-dashboard_${opts.lang}.html`;
   const newsFile = opts.lang === 'en' ? 'news/index.html' : `news/index_${opts.lang}.html`;
   const dashboardFile = opts.lang === 'en' ? 'dashboard/index.html' : `dashboard/index_${opts.lang}.html`;
   const apiDocsHref = 'https://riksdagsmonitor.com/docs/api/index.html';
@@ -93,6 +94,7 @@ export function buildHeaderHtml(opts: ChromeOptions): string {
           <a href="${prefix}${indexFile}">${escapeHtml(t.home)}</a>
           <a href="${prefix}${newsFile}">${escapeHtml(cs.news)}</a>
           <a href="${prefix}${dashboardFile}">${escapeHtml(cs.dashboard)}</a>
+          <a href="${prefix}${politiciansFile}">👤 ${escapeHtml(cs.politicians)}</a>
           <a href="${prefix}${piFile}">🧠 ${escapeHtml(cs.politicalIntelligence)}</a>
           <a href="${prefix}${sitemapFile}">${escapeHtml(t.siteMap)}</a>
           <a href="${apiDocsHref}">${escapeHtml(t.apiDocs)}</a>

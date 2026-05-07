@@ -15,6 +15,7 @@ export * from './theme.js';
 export * from './logger.js';
 export * from './dom-utils.js';
 export * from './data-loader.js';
+export * from './safe-storage.js';
 export * from './fallback-ui.js';
 export * from './error-boundary.js';
 export * from './global-libs.js';

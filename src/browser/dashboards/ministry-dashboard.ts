@@ -40,6 +40,7 @@
 
 import {
   logger,
+  safeSetItem,
   detectLanguage,
   showDataSourceDisclaimer,
 } from '../shared/index.js';
@@ -634,9 +635,9 @@ class DataCache {
       this.cache.forEach((value, key) => {
         data[key] = value;
       });
-      localStorage.setItem(this.storageKey, JSON.stringify(data));
+      safeSetItem(this.storageKey, JSON.stringify(data), this.storageKey);
     } catch (e) {
-      logger.warn('Failed to save cache to storage:', e);
+      logger.debug('Failed to serialize cache for storage:', e);
     }
   }
 

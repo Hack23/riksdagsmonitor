@@ -23,6 +23,7 @@
 
 import {
   logger,
+  safeSetItem,
   detectLanguage,
   showDataSourceDisclaimer,
 } from '../shared/index.js';
@@ -294,8 +295,7 @@ class SeasonalPatternsDataManager {
   }
 
   setCachedData(data: CSVRow[]): void {
-    try { localStorage.setItem(CONFIG.cacheKey, JSON.stringify({ data, timestamp: Date.now() })); }
-    catch (e) { logger.error('Error caching data:', e); }
+    safeSetItem(CONFIG.cacheKey, JSON.stringify({ data, timestamp: Date.now() }), CONFIG.cacheKey);
   }
 
   aggregateByQuarter(): Record<string, QuarterAggregate> | null {
