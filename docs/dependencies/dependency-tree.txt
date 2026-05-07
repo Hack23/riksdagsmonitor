@@ -1,19 +1,6 @@
-riksdagsmonitor@0.9.1 /home/runner/work/riksdagsmonitor/riksdagsmonitor
-├─┬ @emnapi/core@1.10.0 extraneous
-│ ├── @emnapi/wasi-threads@1.2.1 deduped
-│ └── tslib@2.8.1
-├─┬ @emnapi/runtime@1.10.0 extraneous
-│ └── tslib@2.8.1 deduped
-├─┬ @emnapi/wasi-threads@1.2.1 extraneous
-│ └── tslib@2.8.1 deduped
+riksdagsmonitor@0.9.2 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.3.0 deduped
-├─┬ @napi-rs/wasm-runtime@1.1.4 extraneous
-│ ├── @emnapi/core@1.10.0 deduped
-│ ├── @emnapi/runtime@1.10.0 deduped
-│ └── @tybys/wasm-util@0.10.1 deduped
-├─┬ @tybys/wasm-util@0.10.1 extraneous
-│ └── tslib@2.8.1 deduped
 ├─┬ @types/d3@7.4.3
 │ ├── @types/d3-array@3.2.2
 │ ├─┬ @types/d3-axis@3.0.6
@@ -60,10 +47,10 @@ riksdagsmonitor@0.9.1 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │   └── @types/d3-selection@3.0.11 deduped
 ├─┬ @types/hast@3.0.4
 │ └── @types/unist@3.0.3
-├─┬ @types/node@25.6.0
+├─┬ @types/node@25.6.1
 │ └── undici-types@7.19.2
 ├─┬ @types/papaparse@5.5.2
-│ └── @types/node@25.6.0 deduped
+│ └── @types/node@25.6.1 deduped
 ├─┬ @vitest/coverage-v8@4.1.5
 │ ├── @bcoe/v8-coverage@1.0.2
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser@4.1.5
@@ -276,7 +263,7 @@ riksdagsmonitor@0.9.1 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └── pify@2.3.0
 │ ├─┬ extract-zip@2.0.1
 │ │ ├─┬ @types/yauzl@2.10.3
-│ │ │ └── @types/node@25.6.0 deduped
+│ │ │ └── @types/node@25.6.1 deduped
 │ │ ├── debug@4.4.3 deduped
 │ │ ├── get-stream@5.2.0 deduped
 │ │ └── yauzl@2.10.0 deduped
@@ -497,7 +484,7 @@ riksdagsmonitor@0.9.1 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── imurmurhash@0.1.4
 │ ├─┬ is-glob@4.0.3
 │ │ └── is-extglob@2.1.1
-│ ├── jiti@2.6.1
+│ ├── jiti@2.7.0
 │ ├── json-stable-stringify-without-jsonify@1.0.1
 │ ├─┬ minimatch@10.2.4
 │ │ └─┬ brace-expansion@5.0.2
@@ -525,10 +512,10 @@ riksdagsmonitor@0.9.1 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └── kind-of@6.0.3 deduped
 │ └── strip-bom-string@1.0.0
 ├─┬ happy-dom@20.9.0
-│ ├── @types/node@25.6.0 deduped
+│ ├── @types/node@25.6.1 deduped
 │ ├── @types/whatwg-mimetype@3.0.2
 │ ├─┬ @types/ws@8.18.1
-│ │ └── @types/node@25.6.0 deduped
+│ │ └── @types/node@25.6.1 deduped
 │ ├── entities@7.0.1
 │ ├── whatwg-mimetype@3.0.0
 │ └─┬ ws@8.19.0
@@ -584,7 +571,7 @@ riksdagsmonitor@0.9.1 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ │ └── safe-buffer@5.1.2
 │ │ └── util-deprecate@1.0.2
 │ └── setimmediate@1.0.5
-├─┬ knip@6.12.0
+├─┬ knip@6.12.1
 │ ├─┬ fdir@6.5.0
 │ │ └── picomatch@4.0.4 deduped
 │ ├─┬ formatly@0.3.0
@@ -592,7 +579,7 @@ riksdagsmonitor@0.9.1 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │   └── walk-up-path@4.0.0
 │ ├─┬ get-tsconfig@4.14.0
 │ │ └── resolve-pkg-maps@1.0.0
-│ ├── jiti@2.6.1 deduped
+│ ├── jiti@2.7.0 deduped
 │ ├── minimist@1.2.8 deduped
 │ ├─┬ oxc-parser@0.128.0
 │ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-android-arm-eabi@0.128.0
@@ -1032,7 +1019,7 @@ riksdagsmonitor@0.9.1 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │   ├── lodash@4.18.1 deduped
 │   ├── minimist@1.2.8 deduped
 │   └─┬ rxjs@7.8.2
-│     └── tslib@2.8.1 deduped
+│     └── tslib@2.8.1
 ├─┬ tsx@4.21.0
 │ ├─┬ esbuild@0.27.3
 │ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/aix-ppc64@0.27.3
@@ -1172,11 +1159,11 @@ riksdagsmonitor@0.9.1 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └── entities@6.0.1
 │ └── vite@8.0.11 deduped
 ├─┬ vite@8.0.11
-│ ├── @types/node@25.6.0 deduped
+│ ├── @types/node@25.6.1 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY @vitejs/devtools@^0.1.18
 │ ├── esbuild@0.27.3 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY fsevents@~2.3.3
-│ ├── jiti@2.6.1 deduped
+│ ├── jiti@2.7.0 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY less@^4.0.0
 │ ├─┬ lightningcss@1.32.0
 │ │ ├── detect-libc@2.1.2
@@ -1225,7 +1212,7 @@ riksdagsmonitor@0.9.1 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ vitest@4.1.5
 │ ├── UNMET OPTIONAL DEPENDENCY @edge-runtime/vm@*
 │ ├── UNMET OPTIONAL DEPENDENCY @opentelemetry/api@^1.9.0
-│ ├── @types/node@25.6.0 deduped
+│ ├── @types/node@25.6.1 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-playwright@4.1.5
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-preview@4.1.5
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-webdriverio@4.1.5
