@@ -29,6 +29,7 @@ import {
   stripBodyDuplicateSections,
   __test__,
 } from '../scripts/render-lib/index.js';
+import type { Language } from '../scripts/types/language.js';
 
 const {
   stripPassTwoSection,
@@ -2057,23 +2058,24 @@ describe('render-lib — stripBodyDuplicateSections', () => {
       'Content.',
     ].join('\n');
 
-    // Test all 14 languages to verify localization works
-    const expectations: Array<{ lang: 'en' | 'sv' | 'da' | 'no' | 'fi' | 'de' | 'fr' | 'es' | 'nl' | 'ar' | 'he' | 'ja' | 'ko' | 'zh'; heading: string; auditArtifact: string }> = [
-      { lang: 'en', heading: 'Reader Intelligence Guide', auditArtifact: 'appendix artifacts' },
-      { lang: 'sv', heading: 'Läsarens underrättelseguide', auditArtifact: 'appendixartefakter' },
-      { lang: 'da', heading: 'Læserens efterretningsguide', auditArtifact: 'appendiksartefakter' },
-      { lang: 'no', heading: 'Leserens etterretningsguide', auditArtifact: 'vedleggsartefakter' },
-      { lang: 'fi', heading: 'Lukijan tiedusteluopas', auditArtifact: 'liiteartefaktit' },
-      { lang: 'de', heading: 'Nachrichtendienstlicher Leseleitfaden', auditArtifact: 'Anhangsartefakte' },
-      { lang: 'fr', heading: 'Guide de renseignement du lecteur', auditArtifact: 'artefacts d’annexe' },
-      { lang: 'es', heading: 'Guía de inteligencia del lector', auditArtifact: 'artefactos del apéndice' },
-      { lang: 'nl', heading: 'Inlichtingengids voor de lezer', auditArtifact: 'appendixartefacten' },
-      { lang: 'ar', heading: 'دليل القارئ الاستخباراتي', auditArtifact: 'مخرجات الملحق' },
-      { lang: 'he', heading: 'מדריך המודיעין לקורא', auditArtifact: 'תוצרי נספח' },
-      { lang: 'ja', heading: '読者向けインテリジェンスガイド', auditArtifact: '付録アーティファクト' },
-      { lang: 'ko', heading: '독자 인텔리전스 가이드', auditArtifact: '부록 산출물' },
-      { lang: 'zh', heading: '读者情报指南', auditArtifact: '附录工件' },
-    ];
+    // Test all canonical languages to verify localization works
+    const localizedExpectations = {
+      en: { heading: 'Reader Intelligence Guide', auditArtifact: 'appendix artifacts' },
+      sv: { heading: 'Läsarens underrättelseguide', auditArtifact: 'appendixartefakter' },
+      da: { heading: 'Læserens efterretningsguide', auditArtifact: 'appendiksartefakter' },
+      no: { heading: 'Leserens etterretningsguide', auditArtifact: 'vedleggsartefakter' },
+      fi: { heading: 'Lukijan tiedusteluopas', auditArtifact: 'liiteartefaktit' },
+      de: { heading: 'Nachrichtendienstlicher Leseleitfaden', auditArtifact: 'Anhangsartefakte' },
+      fr: { heading: 'Guide de renseignement du lecteur', auditArtifact: 'artefacts d’annexe' },
+      es: { heading: 'Guía de inteligencia del lector', auditArtifact: 'artefactos del apéndice' },
+      nl: { heading: 'Inlichtingengids voor de lezer', auditArtifact: 'appendixartefacten' },
+      ar: { heading: 'دليل القارئ الاستخباراتي', auditArtifact: 'مخرجات الملحق' },
+      he: { heading: 'מדריך המודיעין לקורא', auditArtifact: 'תוצרי נספח' },
+      ja: { heading: '読者向けインテリジェンスガイド', auditArtifact: '付録アーティファクト' },
+      ko: { heading: '독자 인텔리전스 가이드', auditArtifact: '부록 산출물' },
+      zh: { heading: '读者情报指南', auditArtifact: '附录工件' },
+    } satisfies Record<Language, { heading: string; auditArtifact: string }>;
+    const expectations = LANGUAGES.map(lang => ({ lang, ...localizedExpectations[lang] }));
 
     for (const { lang, heading, auditArtifact } of expectations) {
       const html = await renderArticleHtml({
