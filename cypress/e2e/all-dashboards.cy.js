@@ -221,34 +221,59 @@ describe('All Dashboards - Comprehensive Coverage', () => {
   });
   
   describe('Dashboard Integration', () => {
-    it('all 9 dashboards should be present on main page', () => {
+    it('all 9 dashboards should have a unique slug + container ID', () => {
+      const slugs = dashboards.map(d => d.slug);
+      const ids   = dashboards.map(d => d.id);
+      expect(new Set(slugs).size).to.equal(slugs.length);
+      expect(new Set(ids).size).to.equal(ids.length);
+      expect(slugs).to.have.length(9);
+    });
+
+    it('home page hub should link to every dashboard slug', () => {
+      cy.visit('/');
+      cy.get('#political-intelligence-dashboards').should('exist');
       dashboards.forEach(dashboard => {
-        cy.get(`#${dashboard.id}`).should('exist');
+        cy.get(
+          `#political-intelligence-dashboards a[href$="dashboards/${dashboard.slug}.html"]`,
+        ).should('exist');
       });
     });
-    
-    it('should not have duplicate dashboard IDs', () => {
-      const dashboardIds = dashboards.map(d => d.id);
-      const uniqueIds = [...new Set(dashboardIds)];
-      expect(dashboardIds.length).to.equal(uniqueIds.length);
+
+    it('every dashboard page should expose a back-to-home link', () => {
+      dashboards.forEach(dashboard => {
+        cy.visit(`/dashboards/${dashboard.slug}.html`);
+        cy.get('nav.dashboard-page-back a.back-link[href*="index.html"], nav.dashboard-page-back a.back-link[href="../"]')
+          .should('exist');
+      });
     });
-    
-    it('should load all dashboards without console errors', () => {
-      cy.visit('/');
-      cy.get('#party-dashboard', { timeout: 10000 }).should('be.visible');
-      cy.get('#risk-dashboard', { timeout: 10000 }).should('be.visible');
+
+    it('every dashboard page should link to the other 8 dashboards via related-dashboards aside', () => {
+      dashboards.forEach(dashboard => {
+        cy.visit(`/dashboards/${dashboard.slug}.html`);
+        cy.get('aside.dashboard-related').within(() => {
+          dashboards
+            .filter(other => other.slug !== dashboard.slug)
+            .forEach(other => {
+              cy.get(`a[href$="${other.slug}.html"][data-rm-dashboard-slug="${other.slug}"]`)
+                .should('exist');
+            });
+          // Self-link must NOT appear in the related aside
+          cy.get(`a[data-rm-dashboard-slug="${dashboard.slug}"]`).should('not.exist');
+        });
+      });
     });
   });
-  
+
   describe('Performance', () => {
-    it('should load all dashboards within 10 seconds', () => {
-      cy.get('#party-dashboard', { timeout: 10000 }).should('be.visible');
-      cy.get('#risk-dashboard', { timeout: 10000 }).should('be.visible');
-      cy.get('#ministry-dashboard', { timeout: 10000 }).should('be.visible');
+    it('every dashboard page should mount its container within 5s', () => {
+      dashboards.forEach(dashboard => {
+        cy.visit(`/dashboards/${dashboard.slug}.html`);
+        cy.get(`#${dashboard.id}`, { timeout: 5000 }).should('be.visible');
+      });
     });
-    
-    it('should render Chart.js charts within reasonable time', () => {
-      // First chart should render quickly (scoped to dashboard container)
+
+    it('parties dashboard renders its first Chart.js canvas with non-zero size', () => {
+      cy.visit('/dashboards/parties.html');
       cy.get('#party-dashboard')
         .find('#partyEffectivenessChart', { timeout: 5000 })
         .should('exist')

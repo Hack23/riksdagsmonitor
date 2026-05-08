@@ -39,6 +39,7 @@ License: Apache-2.0
 
 from __future__ import annotations
 
+import html
 import re
 import shutil
 from dataclasses import dataclass
@@ -239,7 +240,12 @@ def remove_sections(html: str, section_ids: List[str]) -> str:
 
 
 def first_h2_text(section_html: str) -> str:
-    """Return the inner text of the first <h2> in a section (with emoji etc.)."""
+    """Return the inner text of the first <h2> in a section as plain text.
+
+    The returned value is HTML-unescaped so that callers can safely re-escape
+    it via ``_html_safe`` (or embed it in JSON-LD via ``_json_safe``) without
+    double-escaping ampersands like ``Risk Assessment & Anomaly Detection``.
+    """
     m = re.search(r'<h2[^>]*>(.*?)</h2>', section_html, re.DOTALL)
     if not m:
         return ''
@@ -247,12 +253,15 @@ def first_h2_text(section_html: str) -> str:
     # strip <span aria-hidden="true">…</span> wrappers but keep their text
     raw = re.sub(r'<span[^>]*>(.*?)</span>', r'\1', raw, flags=re.DOTALL)
     raw = re.sub(r'<[^>]+>', '', raw)            # any other tags
-    return ' '.join(raw.split())
+    return html.unescape(' '.join(raw.split()))
 
 
 def first_p_text(section_html: str) -> str:
     """Return the inner text of the first <p> right after the section's <h2>.
-    Used to seed each dashboard page's <meta name="description">.
+
+    Used to seed each dashboard page's <meta name="description">. The text is
+    HTML-unescaped (see ``first_h2_text``) so re-escaping by callers does not
+    produce ``&amp;amp;``.
     """
     m = re.search(
         r'<h2[^>]*>.*?</h2>\s*<p[^>]*>(.*?)</p>',
@@ -261,7 +270,7 @@ def first_p_text(section_html: str) -> str:
     if not m:
         return ''
     raw = re.sub(r'<[^>]+>', '', m.group(1))
-    return ' '.join(raw.split())
+    return html.unescape(' '.join(raw.split()))
 
 
 # ────────────────────────────────────────────────────────────────────────────
