@@ -102,3 +102,18 @@ export type { BreadcrumbEntry, BreadcrumbEntryWithItem, BreadcrumbEntryCurrentPa
 // --- Article (orchestrator) -------------------------------------------------
 export { renderArticleHtml, stripBodyDuplicateSections, splitBodyAtSecondH2 } from './article.js';
 export type { RenderArticleInput } from './article.js';
+
+// Reusable per-article side-block renderers (reader navigation,
+// analysis-artifacts reference, methods reference). Extracted so that
+// every article-type renderer (current and future) can share the same
+// i18n / icon / accessibility wiring without duplication.
+export {
+  renderReaderNavigation,
+  renderAnalysisArtifactsReference,
+  renderMethodsReference,
+} from './article-aside.js';
+export type {
+  ReaderNavigationInput,
+  AnalysisArtifactsReferenceInput,
+  MethodsReferenceInput,
+} from './article-aside.js';

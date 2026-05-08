@@ -13277,6 +13277,35 @@ html[data-theme="light"] .rm-article-body pre.mermaid > svg {
   border-color: var(--primary-cyan, #00d9ff);
 }
 
+/* ── Methods reference (footer methodology cards, after analysis-artifacts) ── */
+.rm-methods-reference {
+  margin-top: 2rem;
+  padding: 2rem clamp(1rem, 3vw, 2rem);
+  border: 1px solid color-mix(in srgb, var(--primary-magenta, #ff006e) 25%, transparent);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at top right, rgba(255, 0, 110, 0.06), transparent 28rem),
+    linear-gradient(135deg, rgba(26, 30, 61, 0.85), rgba(10, 14, 39, 0.95));
+}
+
+.rm-methods-reference h2 {
+  font-family: var(--font-heading, 'Orbitron', sans-serif);
+  font-size: clamp(1.15rem, 1.05rem + 0.5vw, 1.4rem);
+  color: var(--primary-magenta, #ff006e);
+  margin: 0 0 0.6rem;
+}
+
+.rm-methods-reference-desc {
+  color: color-mix(in srgb, var(--light-text, #e0e0e0) 85%, transparent);
+  font-size: 0.95rem;
+  margin: 0 0 1.25rem;
+  max-width: 72ch;
+}
+
+.rm-methods-reference .rm-reader-guide-grid {
+  margin-top: 0.5rem;
+}
+
 /* ── Article inline icons ── */
 .rm-icon {
   display: inline-flex;
@@ -13573,7 +13602,8 @@ html[data-theme="light"] .rm-site-footer {
   }
 
   html:not([data-theme]) .rm-lang-switcher-dropdown,
-  html:not([data-theme]) .rm-article-sources {
+  html:not([data-theme]) .rm-article-sources,
+  html:not([data-theme]) .rm-methods-reference {
     background: var(--card-bg, #ffffff);
     border-color: var(--card-border, #dee2e6);
   }
@@ -13642,6 +13672,14 @@ html[data-theme="light"] .rm-site-footer {
   html:not([data-theme]) .rm-reader-guide {
     background: var(--card-bg, #ffffff);
     border-color: var(--card-border, #dee2e6);
+  }
+
+  html:not([data-theme]) .rm-methods-reference h2 {
+    color: var(--text-color, #1a1a1a);
+  }
+
+  html:not([data-theme]) .rm-methods-reference-desc {
+    color: var(--text-secondary, #4a4a4a);
   }
 
   html:not([data-theme]) .rm-reader-guide h2 {
@@ -14172,6 +14210,23 @@ html[data-theme="light"] .rm-reader-guide-cta a:hover,
 html[data-theme="light"] .rm-reader-guide-cta a:focus-visible {
   background: rgba(var(--rm-article-accent-rgb), 0.15);
   border-color: var(--rm-article-accent, #007744);
+}
+
+/* ── Methods-reference light-theme parity ── */
+html[data-theme="light"] .rm-methods-reference {
+  background:
+    radial-gradient(circle at top right, rgba(var(--rm-article-accent-rgb), 0.07), transparent 28rem),
+    #f8faf9;
+  border-color: rgba(var(--rm-article-accent-rgb), 0.28);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+html[data-theme="light"] .rm-methods-reference h2 {
+  color: color-mix(in srgb, var(--rm-article-accent, #007744) 80%, #102030);
+}
+
+html[data-theme="light"] .rm-methods-reference-desc {
+  color: var(--text-secondary, #4a4a4a);
 }
 
 html[data-theme="light"] .rm-article-body h2::before,
@@ -16135,7 +16190,8 @@ html[data-theme="light"] .rm-article-body.news-page .hero-banner {
    with the page-accent border. */
 
 html[data-theme="light"] .rm-reader-guide,
-html[data-theme="light"] .rm-article-sources {
+html[data-theme="light"] .rm-article-sources,
+html[data-theme="light"] .rm-methods-reference {
   background: var(--card-bg, #ffffff);
   color: var(--text-color, #1a1a1a);
   border: 1px solid var(--border-color, rgba(0, 102, 51, 0.18));

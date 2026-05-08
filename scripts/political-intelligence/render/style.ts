@@ -19,18 +19,32 @@ export const PI_EXTRA_STYLE: string = `
         .pi-container { max-width: 1280px; margin: 0 auto; padding: 2rem 1rem 4rem; }
         .pi-page-hero {
             text-align: center;
-            padding: 3rem 1rem;
+            padding: 3.25rem 1rem 3rem;
             margin-bottom: 2.5rem;
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.08), rgba(255, 0, 110, 0.06));
+            background:
+                radial-gradient(circle at 25% 15%, rgba(0, 217, 255, 0.10), transparent 32rem),
+                radial-gradient(circle at 75% 85%, rgba(255, 0, 110, 0.08), transparent 30rem),
+                linear-gradient(135deg, rgba(0, 217, 255, 0.08), rgba(255, 0, 110, 0.06));
             border: 1px solid rgba(0, 217, 255, 0.25);
-            border-radius: 12px;
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
         }
+        .pi-page-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 0, transparent 70%, rgba(10, 14, 39, 0.45) 100%);
+            pointer-events: none;
+        }
+        .pi-page-hero > * { position: relative; }
         .pi-page-hero h1 {
             font-family: var(--font-heading, 'Orbitron', sans-serif);
             color: var(--primary-cyan, #00d9ff);
             font-size: clamp(2rem, 4.5vw, 3.25rem);
             margin: 0 0 0.5rem;
             letter-spacing: 0.02em;
+            text-shadow: 0 2px 18px rgba(0, 217, 255, 0.25);
         }
         .pi-page-hero p.pi-subtitle {
             color: var(--primary-yellow, #ffbe0b);
@@ -44,7 +58,7 @@ export const PI_EXTRA_STYLE: string = `
             margin: 1rem auto 0;
             line-height: 1.7;
         }
-        .pi-stats { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; }
+        .pi-stats { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.75rem; }
         .pi-stat {
             background: rgba(0, 217, 255, 0.08);
             border: 1px solid rgba(0, 217, 255, 0.3);
@@ -52,8 +66,10 @@ export const PI_EXTRA_STYLE: string = `
             border-radius: 999px;
             color: var(--light-text, #e0e0e0);
             font-size: 0.95rem;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
         }
-        .pi-stat strong { color: var(--primary-cyan, #00d9ff); font-size: 1.15rem; margin-right: 0.35rem; }
+        .pi-stat:hover { transform: translateY(-1px); border-color: rgba(0, 217, 255, 0.55); box-shadow: 0 4px 14px rgba(0, 217, 255, 0.18); }
+        .pi-stat strong { color: var(--primary-cyan, #00d9ff); font-size: 1.15rem; margin-right: 0.35rem; font-variant-numeric: tabular-nums; }
         .toc-nav {
             background: var(--mid-bg, #1a1e3d);
             border-radius: 8px;
@@ -97,12 +113,24 @@ export const PI_EXTRA_STYLE: string = `
         .pi-card {
             background: var(--card-bg, rgba(26, 30, 61, 0.5));
             border: 1px solid rgba(0, 217, 255, 0.18);
-            border-radius: 10px;
-            padding: 1.25rem;
+            border-radius: 12px;
+            padding: 1.35rem 1.25rem 1.25rem;
             transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            position: relative;
+            overflow: hidden;
         }
-        .pi-card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0, 217, 255, 0.15); border-color: rgba(0, 217, 255, 0.45); }
-        .pi-card-icon { font-size: 2rem; line-height: 1; margin-bottom: 0.5rem; }
+        .pi-card::before {
+            content: "";
+            position: absolute;
+            inset: 0 0 auto 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-cyan, #00d9ff), var(--primary-magenta, #ff006e));
+            opacity: 0.55;
+            transition: opacity 0.2s ease;
+        }
+        .pi-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0, 217, 255, 0.18); border-color: rgba(0, 217, 255, 0.5); }
+        .pi-card:hover::before { opacity: 1; }
+        .pi-card-icon { font-size: 2rem; line-height: 1; margin-bottom: 0.5rem; filter: drop-shadow(0 2px 6px rgba(0, 217, 255, 0.25)); }
         .pi-card-title { margin: 0 0 0.5rem; font-family: var(--font-heading, 'Orbitron', sans-serif); font-size: 1.05rem; }
         .pi-card-title a { color: var(--primary-cyan, #00d9ff); text-decoration: none; }
         .pi-card-title a:hover, .pi-card-title a:focus { text-decoration: underline; }
@@ -112,10 +140,11 @@ export const PI_EXTRA_STYLE: string = `
         .pi-card-link a { color: var(--primary-cyan, #00d9ff); font-size: 0.9rem; text-decoration: none; }
         .pi-card-link a:hover { text-decoration: underline; }
 
-        .pi-day { background: var(--card-bg, rgba(26, 30, 61, 0.5)); border: 1px solid rgba(0, 217, 255, 0.18); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+        .pi-day { background: var(--card-bg, rgba(26, 30, 61, 0.5)); border: 1px solid rgba(0, 217, 255, 0.18); border-radius: 12px; padding: 1.25rem; margin-bottom: 1rem; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+        .pi-day:hover { border-color: rgba(0, 217, 255, 0.4); box-shadow: 0 6px 22px rgba(0, 217, 255, 0.12); }
         .pi-day-header { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 0.75rem; }
-        .pi-day-header h3 { margin: 0; font-family: var(--font-heading, 'Orbitron', sans-serif); color: var(--primary-cyan, #00d9ff); font-size: 1.2rem; }
-        .pi-day-total { background: rgba(255, 0, 110, 0.12); border: 1px solid rgba(255, 0, 110, 0.35); color: var(--primary-magenta, #ff006e); padding: 0.15rem 0.6rem; border-radius: 999px; font-size: 0.85rem; }
+        .pi-day-header h3 { margin: 0; font-family: var(--font-heading, 'Orbitron', sans-serif); color: var(--primary-cyan, #00d9ff); font-size: 1.2rem; font-variant-numeric: tabular-nums; }
+        .pi-day-total { background: rgba(255, 0, 110, 0.12); border: 1px solid rgba(255, 0, 110, 0.35); color: var(--primary-magenta, #ff006e); padding: 0.15rem 0.6rem; border-radius: 999px; font-size: 0.85rem; font-variant-numeric: tabular-nums; }
         .pi-day-github { margin-left: auto; color: var(--primary-cyan, #00d9ff); text-decoration: none; font-size: 0.9rem; }
         .pi-day-github:hover { text-decoration: underline; }
 
@@ -123,11 +152,12 @@ export const PI_EXTRA_STYLE: string = `
         .pi-stream-link {
             display: flex; align-items: center; gap: 0.5rem; color: var(--primary-cyan, #00d9ff); text-decoration: none;
             background: rgba(0, 217, 255, 0.05); padding: 0.5rem 0.75rem; border-radius: 6px; border: 1px solid rgba(0, 217, 255, 0.15);
+            transition: background 0.2s ease, border-color 0.2s ease;
         }
         .pi-stream-link:hover, .pi-stream-link:focus { background: rgba(0, 217, 255, 0.12); border-color: rgba(0, 217, 255, 0.4); }
         .pi-stream-icon { font-size: 1.1rem; }
         .pi-stream-name { flex: 1; font-weight: 600; }
-        .pi-stream-count { background: rgba(0, 217, 255, 0.18); color: var(--primary-cyan, #00d9ff); padding: 0.1rem 0.5rem; border-radius: 999px; font-size: 0.8rem; }
+        .pi-stream-count { background: rgba(0, 217, 255, 0.18); color: var(--primary-cyan, #00d9ff); padding: 0.1rem 0.5rem; border-radius: 999px; font-size: 0.8rem; font-variant-numeric: tabular-nums; }
         .pi-stream-desc { margin: 0.25rem 0 0; font-size: 0.8rem; color: var(--muted-text, #a0a3bd); line-height: 1.5; }
 
         .pi-stream-artifacts { margin: 0.4rem 0 0; }
