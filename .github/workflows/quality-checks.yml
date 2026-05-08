@@ -33,6 +33,9 @@ jobs:
         with:
           node-version: '26'
           cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            .github/workflows/quality-checks.yml
 
       - name: Install dependencies
         run: npm ci
@@ -81,20 +84,37 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Setup Node.js
+        # Built-in npm cache (~/.npm) keyed by package-lock.json + workflow file
+        # + Node version is the single source of truth for npm caching across this repo.
+        # See WORKFLOWS.md §"Cache Strategy".
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version: '26'
+          cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            .github/workflows/quality-checks.yml
 
-      - name: Cache npm global packages
-        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-global-${{ hashFiles('**/package-lock.json') }}-htmlhint
-          restore-keys: |
-            ${{ runner.os }}-npm-global-
-
-      - name: Install HTMLHint
-        run: npm install -g htmlhint
+      - name: Install HTMLHint (with retry for registry resilience)
+        run: |
+          # Resilient global install: 3 attempts × exponential backoff +
+          # npm-level fetch retries, to absorb transient registry.npmjs.org
+          # outages and DNS hiccups. See WORKFLOWS.md §"Resilience requirements (registry / apt / browser tooling)".
+          npm config set fetch-retries 5
+          npm config set fetch-retry-mintimeout 20000
+          npm config set fetch-retry-maxtimeout 120000
+          for attempt in 1 2 3; do
+            if npm install -g htmlhint; then
+              echo "✅ htmlhint installed (attempt $attempt)"
+              break
+            fi
+            echo "⚠️ htmlhint install failed (attempt $attempt) — retrying in $((attempt * 10))s"
+            sleep $((attempt * 10))
+            if [ "$attempt" -eq 3 ]; then
+              echo "❌ htmlhint install failed after 3 attempts"
+              exit 1
+            fi
+          done
 
       - name: Validate HTML
         run: |
@@ -156,30 +176,34 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Setup Node.js
+        # Built-in npm cache (~/.npm) — see WORKFLOWS.md §"Cache Strategy".
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version: '26'
+          cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            .github/workflows/quality-checks.yml
 
-      - name: Cache npm packages
-        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-linkinator6-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-linkinator6-
-
-      - name: Cache apt packages
-        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
-        with:
-          path: /var/cache/apt/archives
-          key: ${{ runner.os }}-apt-${{ hashFiles('**/.github/workflows/quality-checks.yml') }}
-          restore-keys: |
-            ${{ runner.os }}-apt-
-
-      - name: Install linkinator@6
+      - name: Install linkinator@6 (with retry for registry resilience)
         run: |
           echo "Installing linkinator v6 (v7.5.2 has module resolution bug)..."
-          npm install -g linkinator@6
+          # Resilient global install — see WORKFLOWS.md §"Resilience requirements (registry / apt / browser tooling)".
+          npm config set fetch-retries 5
+          npm config set fetch-retry-mintimeout 20000
+          npm config set fetch-retry-maxtimeout 120000
+          for attempt in 1 2 3; do
+            if npm install -g linkinator@6; then
+              echo "✅ linkinator installed (attempt $attempt)"
+              break
+            fi
+            echo "⚠️ linkinator install failed (attempt $attempt) — retrying in $((attempt * 10))s"
+            sleep $((attempt * 10))
+            if [ "$attempt" -eq 3 ]; then
+              echo "❌ linkinator install failed after 3 attempts"
+              exit 1
+            fi
+          done
           linkinator --version
           echo "✅ linkinator v6 installed successfully"
 

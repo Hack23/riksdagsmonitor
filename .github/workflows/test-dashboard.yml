@@ -47,6 +47,9 @@ jobs:
         with:
           node-version: '26'
           cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            .github/workflows/test-dashboard.yml
       
       - name: Install dependencies
         run: npm ci
@@ -93,6 +96,9 @@ jobs:
         with:
           node-version: '26'
           cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            .github/workflows/test-dashboard.yml
       
       - name: Install dependencies
         run: npm ci
