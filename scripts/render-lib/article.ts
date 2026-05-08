@@ -38,14 +38,14 @@ import { buildGithubBlobUrl } from './url-helpers.js';
 import { renderMarkdownToHtml } from './markdown/index.js';
 import { buildChrome } from './chrome.js';
 import { buildBreadcrumbListLd, buildNewsArticleLd, buildSpeakableWebPageLd, BREADCRUMB_TITLE_MAX_LENGTH, BREADCRUMB_ELLIPSIS_OVERHEAD } from './jsonld.js';
-import { depth } from './chrome/helpers.js';
 
 import { getBySubfolder, getById, loadArticleTypesRegistry } from './article-types.js';
 import { articleTypeLabel } from './article-type-i18n.js';
-import { artifactTitle, artifactIcon } from '../political-intelligence/i18n/artifact-i18n.js';
-import { readerGuideI18n } from './aggregator/reader-guide-i18n.js';
-import { READER_GUIDE_ENTRIES, anchorForTitle } from './aggregator/reader-guide.js';
-import { titleForArtifact } from './aggregator/order.js';
+import {
+  renderReaderNavigation,
+  renderAnalysisArtifactsReference,
+  renderMethodsReference,
+} from './article-aside.js';
 
 /**
  * CSS selectors identifying the voice-assistant TTS-readable regions of
@@ -310,127 +310,26 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
     bodyClass: 'news-article',
   });
 
-  // Footer "Analysis sources" block — every artifact linked to GitHub
-  // with icon + i18n title + filename in a card grid.
+  // Build the three reusable side-block sections. Layout contract:
+  //   header → lead → reader-navigation → rest → analysis-artifacts → methods
+  // The analysis-artifacts reference renders at the very end with the
+  // methods reference immediately after — this is the user-visible
+  // "reference of analysis artifacts at the end with methods after"
+  // contract enforced by tests.
   const artifacts = input.artifactsUsed ?? [];
-  const sourcesHeading = langMeta.translations.articleSourcesHeading;
-  const sourcesDesc = langMeta.translations.articleSourcesDesc;
-  const methodologyLabel = langMeta.translations.articleMethodologyLabel;
-  const sourceCards = artifacts
-    .map((a) => {
-      const href = input.subfolderRepoRelPath
-        ? buildGithubBlobUrl(`${input.subfolderRepoRelPath}/${a}`)
-        : a;
-      const icon = artifactIcon(a);
-      const title = artifactTitle(a, input.lang);
-      return `          <a class="rm-source-card" href="${href}" target="_blank" rel="noopener noreferrer">
-            <span class="rm-source-card-icon" aria-hidden="true">${icon}</span>
-            <span class="rm-source-card-info">
-              <span class="rm-source-card-title">${escapeHtml(title)}</span>
-              <code class="rm-source-card-file">${escapeHtml(a)}</code>
-            </span>
-            <span class="rm-source-card-arrow" aria-hidden="true">↗</span>
-          </a>`;
-    })
-    .join('\n');
-  const sourcesHtml = sourceCards ? `
-      <section class="rm-article-sources" aria-labelledby="rm-article-sources-heading">
-        <h2 id="rm-article-sources-heading"><span class="rm-icon" aria-hidden="true">📋</span> ${escapeHtml(sourcesHeading)}</h2>
-        <p>${escapeHtml(sourcesDesc)}</p>
-        <details class="rm-article-methodology" open>
-          <summary><span class="rm-icon" aria-hidden="true">🔬</span> ${escapeHtml(methodologyLabel)} <span class="rm-source-count">(${artifacts.length})</span></summary>
-          <div class="rm-article-sources-grid">
-${sourceCards}
-          </div>
-        </details>
-      </section>` : '';
-
-  // Reader Intelligence Guide — full localized per-artifact table + methodology cards.
-  const rg = langMeta.translations;
-  const prefix = depth(input.canonicalPath);
-  const piFile = input.lang === 'en' ? 'political-intelligence.html' : `political-intelligence_${input.lang}.html`;
-
-  // Build the full localized Reader Intelligence Guide table
-  const guideI18n = readerGuideI18n(input.lang);
-  const guideChrome = guideI18n.chrome;
-  const availableArtifacts = new Set(artifacts);
-  const guideRows = READER_GUIDE_ENTRIES
-    .filter((entry) => availableArtifacts.has(entry.file))
-    .map((entry) => {
-      const sectionTitle = titleForArtifact(entry.file);
-      const anchor = anchorForTitle(sectionTitle);
-      const localised = guideI18n.entries[entry.file];
-      const label = localised?.label ?? entry.label;
-      const readerValue = localised?.readerValue ?? entry.readerValue;
-      return `            <tr>
-              <td><a href="#${anchor}">${escapeHtml(label)}</a></td>
-              <td>${escapeHtml(readerValue)}</td>
-              <td><code>${escapeHtml(entry.file)}</code></td>
-            </tr>`;
-    });
-
-  // Add per-document intelligence row if document analyses exist
-  const hasDocAnalyses = artifacts.some((a) => a.startsWith('documents/') && a.endsWith('-analysis.md'));
-  if (hasDocAnalyses) {
-    guideRows.push(`            <tr>
-              <td><a href="#rm-per-document-intelligence">${escapeHtml(guideChrome.perDocLabel)}</a></td>
-              <td>${escapeHtml(guideChrome.perDocValue)}</td>
-              <td><code>documents/*-analysis.md</code></td>
-            </tr>`);
-  }
-
-  // Add audit appendix row
-  guideRows.push(`            <tr>
-              <td><a href="#rm-classification-results">${escapeHtml(guideChrome.auditLabel)}</a></td>
-              <td>${escapeHtml(guideChrome.auditValue)}</td>
-              <td>${escapeHtml(guideChrome.auditArtifactLabel)}</td>
-            </tr>`);
-
-  const guideTableHtml = guideRows.length > 0 ? `
-        <div class="rm-table-wrap">
-          <table class="rm-reader-guide-table">
-            <thead>
-              <tr>
-                <th>${escapeHtml(guideChrome.colReaderNeed)}</th>
-                <th>${escapeHtml(guideChrome.colWhatYouGet)}</th>
-                <th>${escapeHtml(guideChrome.colSourceArtifact)}</th>
-              </tr>
-            </thead>
-            <tbody>
-${guideRows.join('\n')}
-            </tbody>
-          </table>
-        </div>` : '';
-
-  const readerGuideHtml = `
-      <section class="rm-reader-guide" aria-labelledby="rm-reader-guide-heading">
-        <h2 id="rm-reader-guide-heading"><span class="rm-icon" aria-hidden="true">🧭</span> ${escapeHtml(guideChrome.heading)}</h2>
-        <p class="rm-reader-guide-desc">${escapeHtml(guideChrome.preamble)}</p>
-${guideTableHtml}
-        <div class="rm-reader-guide-grid">
-          <div class="rm-reader-guide-card">
-            <div class="rm-reader-guide-card-icon" aria-hidden="true">🕵️</div>
-            <h3>${escapeHtml(rg.articleReaderGuideOsint)}</h3>
-            <p>${escapeHtml(rg.articleReaderGuideOsintDesc)}</p>
-          </div>
-          <div class="rm-reader-guide-card">
-            <div class="rm-reader-guide-card-icon" aria-hidden="true">🤖</div>
-            <h3>${escapeHtml(rg.articleReaderGuideAiFirst)}</h3>
-            <p>${escapeHtml(rg.articleReaderGuideAiFirstDesc)}</p>
-          </div>
-          <div class="rm-reader-guide-card">
-            <div class="rm-reader-guide-card-icon" aria-hidden="true">🧮</div>
-            <h3>${escapeHtml(rg.articleReaderGuideSwot)}</h3>
-            <p>${escapeHtml(rg.articleReaderGuideSwotDesc)}</p>
-          </div>
-          <div class="rm-reader-guide-card">
-            <div class="rm-reader-guide-card-icon" aria-hidden="true">🔗</div>
-            <h3>${escapeHtml(rg.articleReaderGuideTraceable)}</h3>
-            <p>${escapeHtml(rg.articleReaderGuideTraceableDesc)}</p>
-          </div>
-        </div>
-        <p class="rm-reader-guide-cta"><a href="${prefix}${piFile}"><span class="rm-icon" aria-hidden="true">📚</span> ${escapeHtml(rg.articleReaderGuideMoreMethodologies)}</a></p>
-      </section>`;
+  const readerNavigationHtml = renderReaderNavigation({
+    lang: input.lang,
+    artifactsUsed: artifacts,
+  });
+  const analysisArtifactsHtml = renderAnalysisArtifactsReference({
+    lang: input.lang,
+    artifactsUsed: artifacts,
+    subfolderRepoRelPath: input.subfolderRepoRelPath,
+  });
+  const methodsReferenceHtml = renderMethodsReference({
+    lang: input.lang,
+    canonicalPath: input.canonicalPath,
+  });
 
   return `${chrome.head}
 ${chrome.headerHtml}
@@ -452,11 +351,11 @@ ${chrome.headerHtml}
         <div class="rm-article-body">
 ${leadHtml}
         </div>
-${readerGuideHtml}${restHtml ? `
+${readerNavigationHtml}${restHtml ? `
         <div class="rm-article-body rm-article-body-rest">
 ${restHtml}
         </div>` : ''}
-${sourcesHtml}
+${analysisArtifactsHtml}${methodsReferenceHtml}
       </article>
 ${chrome.footerHtml}`;
 }
