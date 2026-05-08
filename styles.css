@@ -3690,15 +3690,6 @@ footer {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .political-intelligence-cta {
-    background:
-      radial-gradient(circle at top left, rgba(0, 217, 255, 0.2), transparent 24rem),
-      linear-gradient(135deg, rgba(0, 217, 255, 0.16) 0%, rgba(255, 0, 110, 0.12) 100%);
-    border-color: rgba(0, 217, 255, 0.64);
-  }
-}
-
 /* ==================================================
    DASHBOARD CTA BANNER
    Prominent call-to-action for Intelligence Dashboard
