@@ -1,0 +1,62 @@
+{
+  "analysis_date": "2026-05-08",
+  "subfolder": "propositions",
+  "pir_status": "active",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "title": "Tidö coalition legislative unity on HD03267",
+      "status": "active",
+      "current_answer": "LIKELY YES (L, 75-80%)",
+      "next_update_trigger": "JuU committee hearings mid-May 2026",
+      "alert_condition": "L files blocking motion"
+    },
+    {
+      "id": "PIR-2",
+      "title": "ECHR litigation against HD03267 before 2028",
+      "status": "active",
+      "current_answer": "LIKELY YES (L, 65-75%)",
+      "next_update_trigger": "NGO announcement of legal challenge",
+      "alert_condition": "ECHR interim measure applied"
+    },
+    {
+      "id": "PIR-3",
+      "title": "HD03250 EUDIW conformity by Q3 2026",
+      "status": "active",
+      "current_answer": "LIKELY NO full conformity; YES notification (LN, 55-60%)",
+      "next_update_trigger": "European Commission notification response",
+      "alert_condition": "Infringement proceedings initiated"
+    },
+    {
+      "id": "PIR-4",
+      "title": "Electoral impact of security legislation package",
+      "status": "active",
+      "current_answer": "UNCERTAIN — asymmetric (UNK, 45-55%)",
+      "next_update_trigger": "May-June 2026 polling data",
+      "alert_condition": "SD gains >2pp or L loses >1pp"
+    },
+    {
+      "id": "PIR-5",
+      "title": "Post-election reversal risk",
+      "status": "active",
+      "current_answer": "PARTIAL REVERSAL LIKELY if centre-left wins (LN, 35-40%)",
+      "next_update_trigger": "September 2026 election result",
+      "alert_condition": "S-led government forms"
+    }
+  ],
+  "sirs": [
+    {"id": "SIR-001", "title": "Lagrådet opinion on HD03267", "status": "open", "expected": "May 2026"},
+    {"id": "SIR-002", "title": "DIGG implementation plan for state e-ID", "status": "open", "expected": "Q4 2026"},
+    {"id": "SIR-003", "title": "IMY position on HD03261", "status": "open", "expected": "May-June 2026"},
+    {"id": "SIR-004", "title": "SD public messaging on HD03267", "status": "open", "expected": "T+72h"},
+    {"id": "SIR-267-A", "title": "Lagrådet opinion text for HD03267", "status": "open", "expected": "May 2026"},
+    {"id": "SIR-267-B", "title": "SÄPO caseload under lag 2022:700", "status": "open", "expected": "Classified"},
+    {"id": "SIR-250-A", "title": "DIGG capacity for major IT projects", "status": "open", "expected": "Public sources"},
+    {"id": "SIR-250-B", "title": "EU Commission EUDIW notification status", "status": "open", "expected": "Q3 2026"},
+    {"id": "SIR-261-A", "title": "IMY formal consultation on HD03261", "status": "open", "expected": "May-June 2026"},
+    {"id": "SIR-261-B", "title": "Skatteverket folkbokföring capacity", "status": "open", "expected": "Budget documents"}
+  ],
+  "generated": "2026-05-08T09:xx:00Z",
+  "analysis_pass": "2",
+  "documents_analysed": ["HD03267", "HD03250", "HD03261"]
+}
