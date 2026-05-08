@@ -5,7 +5,7 @@ date: 2026-05-08
 subfolder: election-cycle/current
 slug: 2026-05-08-election-cycle/current
 source_folder: analysis/daily/2026-05-08/election-cycle/current
-generated_at: 2026-05-08T09:31:17.132Z
+generated_at: 2026-05-08T11:05:24.131Z
 language: en
 layout: article
 ---
@@ -272,51 +272,6 @@ Sweden has a structural teacher shortage (~15% vacancy rate per Skolverket 2025)
 - Prior: 10-year school legislation (Prop. 2024/25:XXX)
 - Skolverket: Certification database maintained by Skolverket — no new system required
 - Next cycle: Teacher supply challenge continues; this is administrative fix, not structural solution
-
-### HD03250
-<!-- source: documents/HD03250-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/documents/HD03250-analysis.md -->
-
-**dok_id**: HD03250 | **Type**: prop | **Ministry**: Finansdepartementet | **Minister**: Erik Slottner (KD)  
-
-### Summary
-Proposition for Sweden's first nationally owned digital identity system (statlig e-legitimation). The new e-ID serves as a BankID alternative under public control, interoperable with EU eIDAS 2.0. Covers ~400,000 adults currently excluded from BankID (no bank account, elderly, recent immigrants).
-
-### Electoral Significance
-CRITICAL for KD and L. Erik Slottner (KD) delivers Sweden's most significant digital governance legislation in a decade. L sees digital inclusion angle. M sees competitive digital infrastructure for Swedish business.
-
-### Implementation Details
-- Target operational: Q1 2028
-- Procured via LOU (public procurement)
-- Interoperable with Lantmäteriet, Migrationsverket, Skatteverket
-- GDPR-compliant; Datainspektionen review integrated
-
-### Cross-references
-- Complements: HD03261 (Skatteverket address registry — digital identity ↔ population register)
-- EU obligation: eIDAS 2.0 compliance by Aug 2026
-- Next cycle: Implementation spans 2026-2028; next government inherits
-
-> pir_trigger: PIR-006 (state e-ID Riksdag passage before recess)
-
-### HD03261
-<!-- source: documents/HD03261-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/documents/HD03261-analysis.md -->
-
-**dok_id**: HD03261 | **Type**: prop | **Ministry**: Finansdepartementet | **Minister**: Niklas Wykman (M)  
-
-### Summary
-Proposition to expand Skatteverket's authority to investigate and correct false folkbokföring (population register) entries. Addresses the 12% false-address problem identified by Statskontoret 2024. New authorities: cross-check against Lantmäteriet property data; resident interviews; sanctions for persistent non-compliance.
-
-### Electoral Significance
-HIGH. This addresses voter concerns about welfare fraud, false address registrations enabling crime, and register inaccuracies. M frames as "cleaning up the system." S cannot oppose root principles (they've criticised false addresses since 2019).
-
-### Statskontoret Reference
-Source: Statskontoret 2024 folkbokföring report. 12% false-address rate documented. Policy recommendation: expanded Skatteverket investigative authority. This proposition directly implements Statskontoret's recommendation. URL: https://www.statskontoret.se/publicerat/publikationer/2024/folkbokforing-och-adressregistrering/
-
-### Cross-references
-- Complements: HD03250 (state e-ID — digital identity ↔ address register)
-- Privacy: GDPR interface significant; Datainspektionen review integrated
-- Welfare fraud: HD01FiU43 (welfare system false payments) — adjacent issue
-
-> pir_trigger: FI-11 (false-address rate target)
 
 ### HD03267
 <!-- source: documents/HD03267-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/documents/HD03267-analysis.md -->
@@ -1669,8 +1624,6 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/significance-scoring.md)
 - [`documents/HD01UbU28-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/documents/HD01UbU28-analysis.md)
-- [`documents/HD03250-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/documents/HD03250-analysis.md)
-- [`documents/HD03261-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/documents/HD03261-analysis.md)
 - [`documents/HD03267-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/documents/HD03267-analysis.md)
 - [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/election-cycle/current/coalition-mathematics.md)
