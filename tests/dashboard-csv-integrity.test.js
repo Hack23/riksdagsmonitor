@@ -14,6 +14,15 @@ import { readFileSync, existsSync, readdirSync } from 'fs';
 import { resolve, join } from 'path';
 
 const CIA_DATA_DIR = resolve(process.cwd(), 'cia-data');
+// Static filenames keep the repository's legacy `_no` suffix for Norwegian;
+// rendered `hreflang` attributes use BCP-47 `nb` and are validated elsewhere.
+const LOCALIZED_FILE_SUFFIXES = ['', '_ar', '_da', '_de', '_es', '_fi', '_fr', '_he', '_ja', '_ko', '_nl', '_no', '_sv', '_zh'];
+const LOCALIZED_STATIC_PAGE_SETS = [
+  // index + dashboard/index existence is already asserted by dedicated describes above;
+  // only list page sets that don't have their own existence block.
+  { base: 'politician-dashboard', directory: '.', label: 'politician dashboard' },
+  { base: 'political-intelligence', directory: '.', label: 'political intelligence' },
+];
 
 /**
  * Dashboard-to-CSV dependency map.
@@ -266,9 +275,7 @@ describe('Dashboard-CSV Data Integrity', () => {
   });
 
   describe('CIA dashboard HTML files exist for all 14 languages', () => {
-    const languages = ['', '_ar', '_da', '_de', '_es', '_fi', '_fr', '_he', '_ja', '_ko', '_nl', '_no', '_sv', '_zh'];
-
-    languages.forEach(suffix => {
+    LOCALIZED_FILE_SUFFIXES.forEach(suffix => {
       const filename = `dashboard/index${suffix}.html`;
       it(`should have ${filename}`, () => {
         const filePath = resolve(process.cwd(), filename);
@@ -278,13 +285,53 @@ describe('Dashboard-CSV Data Integrity', () => {
   });
 
   describe('Main page HTML files exist for all 14 languages', () => {
-    const languages = ['', '_ar', '_da', '_de', '_es', '_fi', '_fr', '_he', '_ja', '_ko', '_nl', '_no', '_sv', '_zh'];
-
-    languages.forEach(suffix => {
+    LOCALIZED_FILE_SUFFIXES.forEach(suffix => {
       const filename = suffix === '' ? 'index.html' : `index${suffix}.html`;
       it(`should have ${filename}`, () => {
         const filePath = resolve(process.cwd(), filename);
         expect(existsSync(filePath), `Missing main page: ${filename}`).toBe(true);
+      });
+    });
+  });
+
+  describe('Political Intelligence localized page coverage', () => {
+    LOCALIZED_STATIC_PAGE_SETS.forEach(({ base, directory, label }) => {
+      LOCALIZED_FILE_SUFFIXES.forEach(suffix => {
+        const filename = `${base}${suffix}.html`;
+        const relativePath = directory === '.' ? filename : `${directory}/${filename}`;
+        const languageLabel = suffix === '' ? 'en (default)' : suffix.slice(1);
+
+        it(`should have ${label} for ${languageLabel}`, () => {
+          expect(existsSync(resolve(process.cwd(), relativePath)),
+            `Missing localized ${label}: ${relativePath}`).toBe(true);
+        });
+      });
+    });
+
+    LOCALIZED_FILE_SUFFIXES.forEach(suffix => {
+      const homepage = suffix === '' ? 'index.html' : `index${suffix}.html`;
+      const piPage = suffix === '' ? 'political-intelligence.html' : `political-intelligence${suffix}.html`;
+
+      it(`should promote Political Intelligence on ${homepage}`, () => {
+        const content = readFileSync(resolve(process.cwd(), homepage), 'utf-8');
+        expect(content).toContain('<section class="political-intelligence-cta"');
+        expect(content).toContain(`href="${piPage}"`);
+        expect(content).not.toContain('<nav class="political-intelligence-cta"');
+      });
+
+      it(`should hide decorative Political Intelligence CTA feature emojis on ${homepage}`, () => {
+        const content = readFileSync(resolve(process.cwd(), homepage), 'utf-8');
+        const match = content.match(/<ul class="political-intelligence-cta-features"[\s\S]*?<\/ul>/);
+        expect(match, `Missing Political Intelligence CTA features in ${homepage}`).not.toBeNull();
+        if (match === null) return;
+        const features = match[0];
+        expect(features).toContain('<span aria-hidden="true">🧭</span>');
+        expect(features).toContain('<span aria-hidden="true">📚</span>');
+        expect(features).toContain('<span aria-hidden="true">⚠️</span>');
+        expect(features).toContain('<span aria-hidden="true">🔎</span>');
+        ['<li>🧭', '<li>📚', '<li>⚠️', '<li>🔎'].forEach(rawEmojiListItem => {
+          expect(features).not.toContain(rawEmojiListItem);
+        });
       });
     });
   });
