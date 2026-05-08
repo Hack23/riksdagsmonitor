@@ -1601,6 +1601,27 @@ flowchart TB
 
 ---
 
+## 🧰 Cache and External-Registry Resilience Standard
+
+### Cache Strategy (standard workflows)
+
+- **Primary cache mechanism:** `actions/setup-node` built-in npm cache (`cache: 'npm'`), with explicit `cache-dependency-path` including:
+  - `package-lock.json`
+  - the owning workflow file path (for per-workflow cache key uniqueness)
+- **Single direct `actions/cache` usage:** only `dependency-review.yml` (apt archive cache), pinned to:
+  - `actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5`
+- **Cache invalidation:** key version prefixes (e.g., `-v2-`) are used to force expiration of prior cache generations when strategy changes.
+- **Cache TTL note:** GitHub Actions does not support per-workflow explicit cache expiration/TTL configuration; retention is managed by GitHub cache eviction policy.
+
+### Resilience requirements (registry / apt / browser tooling)
+
+- Add retry + exponential backoff for `apt-get update` and `apt-get install` in workflows that install system dependencies.
+- Add retry + npm fetch-retry tuning (`fetch-retries`, min/max timeout) for global npm installs and `npm ci` in setup-heavy workflows.
+- Add step-level `timeout-minutes` on dependency-install steps most exposed to external outage/hanging behavior.
+- Prefer browser/binary installs without extra apt dependency fetches where possible (e.g., Playwright browser-only install).
+
+---
+
 ## 🛠️ Workflow Troubleshooting Guide
 
 ### Common Issues and Solutions
