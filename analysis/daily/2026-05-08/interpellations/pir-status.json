@@ -1,0 +1,85 @@
+{
+  "generated": "2026-05-08T00:00:00Z",
+  "article_date": "2026-05-08",
+  "subfolder": "interpellations",
+  "run_id": "25541899851",
+  "pass": 1,
+  "pir_items": [
+    {
+      "id": "PIR-1",
+      "question": "Will Sweden issue a formal diplomatic protest over the flotilla interception before the 2026-05-22 debate?",
+      "status": "open",
+      "threshold": "Any Malmer Stenergard statement using language equivalent to diplomatic protest",
+      "deadline": "2026-05-21",
+      "dok_id": "HD10478"
+    },
+    {
+      "id": "PIR-2",
+      "question": "Will Slottner announce a Postnord service continuity package for Dorotea, Åsele, Sorsele?",
+      "status": "open",
+      "threshold": "Postnord or civil ministry announcement of service continuity",
+      "deadline": "2026-05-21",
+      "dok_id": "HD10477"
+    },
+    {
+      "id": "PIR-3",
+      "question": "Will the government table a supplementary budget for MUCF minority organisation funding restoration?",
+      "status": "open",
+      "threshold": "Extrabudgetär anslagshöjning or budget proposition amendment",
+      "deadline": "2026-06-30",
+      "dok_id": "HD10479"
+    },
+    {
+      "id": "PIR-4",
+      "question": "Will Britz publicly state that Sweden's ILO governing body positions have not weakened?",
+      "status": "open",
+      "threshold": "Specific ILO session votes confirmed in debate answer",
+      "deadline": "2026-05-22",
+      "dok_id": "HD10475"
+    },
+    {
+      "id": "PIR-5",
+      "question": "Will Dousa announce new concrete Gaza aid commitments beyond existing SIDA allocations?",
+      "status": "open",
+      "threshold": "Press statement or parliamentary answer with specific new commitment",
+      "deadline": "2026-05-22",
+      "dok_id": "HD10476"
+    }
+  ],
+  "eei_items": [
+    {
+      "id": "EEI-1",
+      "information": "Sweden's specific ILO governing body votes 2022-2026",
+      "source": "ilo.org/gb"
+    },
+    {
+      "id": "EEI-2",
+      "information": "MUCF multi-year grant data for Finland-Swedish minority organisations 2019-2026",
+      "source": "MUCF annual reports"
+    },
+    {
+      "id": "EEI-3",
+      "information": "Postnord's published service point rationalisation plan",
+      "source": "Postnord annual report / press release"
+    },
+    {
+      "id": "EEI-4",
+      "information": "Sweden's diplomatic communications to Israel regarding the flotilla",
+      "source": "UD/MFA public statements"
+    },
+    {
+      "id": "EEI-5",
+      "information": "Totalförsvar planning documents referencing postal logistics in Lappland/Ångermanland",
+      "source": "MSB/FOI published planning documents"
+    }
+  ],
+  "carry_forward": [],
+  "imf_status": {
+    "vintage": "WEO-2026-04",
+    "fetch_status": "degraded",
+    "endpoints_ok": ["datamapper-weo", "datamapper-fm"],
+    "endpoints_failed": ["sdmx-ifs"],
+    "gdp_growth_swe_2026_estimate": 2.2,
+    "note": "Use WEO/FM claims only; avoid SDMX-specific claims; cite WEO Apr-2026 on every projection"
+  }
+}
