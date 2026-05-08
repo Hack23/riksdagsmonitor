@@ -1,17 +1,21 @@
 /**
  * Cypress E2E Tests - Dashboards
- * 
+ *
  * @author Hack23 AB
  * @license Apache-2.0
+ *
+ * NOTE: PR #2349 split each dashboard onto its own /dashboards/<slug>.html
+ * page. The container/widget IDs are unchanged so JS lazy loaders bind
+ * identically; only the host URL differs from the legacy single-page layout.
  */
 
 describe('Dashboard Functionality', () => {
-  beforeEach(() => {
-    cy.stubCIAData();
-    cy.visit('/');
-  });
-  
   describe('Party Dashboard', () => {
+    beforeEach(() => {
+      cy.stubCIAData();
+      cy.visit('/dashboards/parties.html');
+    });
+
     it('should display party dashboard', () => {
       cy.get('#party-dashboard').should('be.visible');
     });
@@ -40,6 +44,11 @@ describe('Dashboard Functionality', () => {
   });
   
   describe('Anomaly Detection Dashboard', () => {
+    beforeEach(() => {
+      cy.stubCIAData();
+      cy.visit('/dashboards/anomaly-detection.html');
+    });
+
     it('should display anomaly dashboard', () => {
       cy.get('#anomaly-detection-dashboard').should('exist');
     });
@@ -91,6 +100,11 @@ describe('Dashboard Functionality', () => {
   });
   
   describe('Seasonal Patterns Dashboard', () => {
+    beforeEach(() => {
+      cy.stubCIAData();
+      cy.visit('/dashboards/seasonal-patterns.html');
+    });
+
     it('should display seasonal patterns dashboard', () => {
       cy.get('#seasonal-patterns-dashboard').should('exist');
     });
@@ -105,6 +119,11 @@ describe('Dashboard Functionality', () => {
   });
   
   describe('Pre-Election Dashboard', () => {
+    beforeEach(() => {
+      cy.stubCIAData();
+      cy.visit('/dashboards/pre-election.html');
+    });
+
     it('should display pre-election dashboard', () => {
       cy.get('#pre-election-dashboard').should('exist');
     });
@@ -115,6 +134,13 @@ describe('Dashboard Functionality', () => {
   });
   
   describe('Dashboard Accessibility', () => {
+    // Use the parties dashboard as a representative page; chart and SR
+    // markup is identical across all 9 specialised dashboard pages.
+    beforeEach(() => {
+      cy.stubCIAData();
+      cy.visit('/dashboards/parties.html');
+    });
+
     it('should have ARIA labels on charts', () => {
       cy.get('canvas[role="img"]').should('have.attr', 'aria-label');
     });
@@ -130,6 +156,8 @@ describe('Dashboard Functionality', () => {
   
   describe('Dashboard Performance', () => {
     it('should load dashboards within reasonable time', () => {
+      cy.stubCIAData();
+      cy.visit('/dashboards/parties.html');
       cy.get('#party-dashboard', { timeout: 5000 }).should('be.visible');
     });
     
@@ -139,7 +167,7 @@ describe('Dashboard Functionality', () => {
         body: 'Not Found'
       });
       
-      cy.visit('/');
+      cy.visit('/dashboards/parties.html');
       cy.get('.error-message, .dashboard-error').should('exist');
     });
   });

@@ -279,6 +279,22 @@ export default defineConfig({
             { path: 'political-intelligence_zh.html' },
           ],
         },
+        {
+          // The 9 specialised political-intelligence dashboard pages
+          // (parties, anomaly-detection, network-analysis, voting-cohesion,
+          // momentum, coalitions, seasonal-patterns, pre-election, ministers,
+          // risk, election-cycle, committees) × 14 languages = 126 files,
+          // emitted by scripts/build-dashboard-pages.py. They are pure
+          // static HTML that loads existing chart bundles via root-relative
+          // <script src="/assets/js/...">, so they don't need to be Rollup
+          // entry points — staticPagesPlugin just copies them to dist/ and
+          // rewrites the styles.css link to the hashed asset.
+          // Without this entry vite preview returned 404 for /dashboards/*.html
+          // (every Cypress assertion in cypress/e2e/dashboards.cy.js failed —
+          // 1 passing / 20 failing in run 25549240331).
+          label: 'dashboards',
+          sources: [{ path: 'dashboards', recurse: false }],
+        },
       ],
     }),
 

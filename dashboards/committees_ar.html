@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<title>🏛️ أداء اللجان وتحليلات الشبكة | Riksdagsmonitor</title>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
+<script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){/* storage unavailable */}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){/* storage unavailable */}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../styles.css">
+<link rel="canonical" href="https://riksdagsmonitor.com/dashboards/committees_ar.html">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="description" content="🏛️ أداء اللجان وتحليلات الشبكة">
+<meta name="keywords" content="committee performance, committee network, productivity heatmap, decision effectiveness, parliamentary committees, انتخابات السويد 2026، Riksdagsmonitor، مراقبة البرلمان السويدي، توقعات الائتلاف، استخبارات سياسية، منصة OSINT، تحليل برلماني، Citizen Intelligence Agency، السياسة السويدية، مراقبة الانتخابات، الشفافية الديمقراطية، 349 نائباً، 45 قاعدة مخاطر، الشفافية البرلمانية، ديمقراطية السويد، توقعات انتخابات 2026">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="James Pether Sörling, CISSP, CISM">
+<meta name="application-name" content="Riksdagsmonitor">
+<meta name="theme-color" content="#0a0e27">
+<meta name="color-scheme" content="dark light">
+
+<!-- hreflang chain across all 14 languages -->
+<link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/dashboards/committees.html">
+<link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/dashboards/committees_sv.html">
+<link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/dashboards/committees_da.html">
+<link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/dashboards/committees_no.html">
+<link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/dashboards/committees_fi.html">
+<link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/dashboards/committees_de.html">
+<link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/dashboards/committees_fr.html">
+<link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/dashboards/committees_es.html">
+<link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/dashboards/committees_nl.html">
+<link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/dashboards/committees_ar.html">
+<link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/dashboards/committees_he.html">
+<link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/dashboards/committees_ja.html">
+<link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/dashboards/committees_ko.html">
+<link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/dashboards/committees_zh.html">
+<link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/dashboards/committees.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://riksdagsmonitor.com/dashboards/committees_ar.html">
+<meta property="og:site_name" content="Riksdagsmonitor">
+<meta property="og:title" content="🏛️ أداء اللجان وتحليلات الشبكة | Riksdagsmonitor">
+<meta property="og:description" content="🏛️ أداء اللجان وتحليلات الشبكة">
+<meta property="og:image" content="https://riksdagsmonitor.com/images/og-image.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="🏛️ أداء اللجان وتحليلات الشبكة | Riksdagsmonitor">
+<meta property="og:locale" content="ar_SA">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="🏛️ أداء اللجان وتحليلات الشبكة | Riksdagsmonitor">
+<meta name="twitter:description" content="🏛️ أداء اللجان وتحليلات الشبكة">
+<meta name="twitter:image" content="https://riksdagsmonitor.com/images/og-image.webp">
+<meta name="twitter:image:alt" content="🏛️ أداء اللجان وتحليلات الشبكة | Riksdagsmonitor">
+<meta name="twitter:site" content="@riksdagsmonitor">
+<meta name="twitter:creator" content="@jamessorling">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="dns-prefetch" href="https://cia.sourceforge.io">
+<link rel="dns-prefetch" href="https://raw.githubusercontent.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap"></noscript>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://riksdagsmonitor.com/dashboards/committees_ar.html#webpage",
+      "name": "🏛️ أداء اللجان وتحليلات الشبكة | Riksdagsmonitor",
+      "description": "🏛️ أداء اللجان وتحليلات الشبكة",
+      "url": "https://riksdagsmonitor.com/dashboards/committees_ar.html",
+      "inLanguage": "ar",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Riksdagsmonitor",
+        "url": "https://riksdagsmonitor.com"
+      },
+      "about": [
+        { "@type": "Thing", "name": "Swedish Riksdag" },
+        { "@type": "Thing", "name": "Political Intelligence" },
+        { "@type": "Thing", "name": "🏛️ أداء اللجان وتحليلات الشبكة" }
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "Hack23 AB",
+        "url": "https://www.hack23.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://riksdagsmonitor.com/images/android-chrome-512x512.png"
+        }
+      },
+      "breadcrumb": { "@id": "https://riksdagsmonitor.com/dashboards/committees_ar.html#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://riksdagsmonitor.com/dashboards/committees_ar.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://riksdagsmonitor.com/" },
+        { "@type": "ListItem", "position": 2, "name": "لوحات المعلومات", "item": "https://riksdagsmonitor.com/dashboard/index.html" },
+        { "@type": "ListItem", "position": 3, "name": "🏛️ أداء اللجان وتحليلات الشبكة", "item": "https://riksdagsmonitor.com/dashboards/committees_ar.html" }
+      ]
+    },
+    {
+      "@type": "Dataset",
+      "name": "🏛️ أداء اللجان وتحليلات الشبكة",
+      "description": "🏛️ أداء اللجان وتحليلات الشبكة",
+      "creator": { "@type": "Organization", "name": "Citizen Intelligence Agency" },
+      "publisher": { "@type": "Organization", "name": "Hack23 AB" },
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "isAccessibleForFree": true,
+      "keywords": "committee performance, committee network, productivity heatmap, decision effectiveness, parliamentary committees, Swedish Riksdag, OSINT, parliament"
+    }
+  ]
+}
+</script>
+</head>
+<body class="rm-dashboard-page rm-dashboard-committees">
+<a href="#main-content" class="skip-to-content">الانتقال إلى المحتوى الرئيسي</a>
+<nav aria-label="Breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="../index_ar.html">الرئيسية</a>
+</li>
+<li class="breadcrumb-item">
+<a href="../dashboard/index_ar.html">لوحات المعلومات</a>
+</li>
+<li class="breadcrumb-item" aria-current="page">
+🏛️ أداء اللجان وتحليلات الشبكة
+</li>
+</ol>
+</nav>
+
+<header>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="تبديل السمة"
+        title="تبديل السمة"
+        data-label-dark="التبديل إلى السمة الفاتحة"
+        data-label-light="التبديل إلى السمة الداكنة"
+        data-rm-static-theme-toggle="true">
+  <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
+  <span class="theme-icon theme-icon-sun" aria-hidden="true">☀️</span>
+  <span class="theme-toggle-label">السمة</span>
+</button>
+
+<!-- Hero Banner -->
+<div class="hero-banner">
+  <img src="../images/riksdagsmonitor-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" aria-hidden="true">
+</div>
+
+<!-- Hero Title -->
+<div class="hero-header-text">
+  <h1> Riksdagsmonitor<br><span class="h1-subtitle">منصة استخبارات الانتخابات السويدية 2026</span></h1>
+  <p class="tagline">مراقبة برلمانية فورية · توقعات ائتلافية · 45 قاعدة مخاطر · أكثر من 50 عاماً من البيانات</p>
+</div>
+
+
+<div class="election-countdown">
+<h2>الانتخابات بعد: <span id="countdown">13 سبتمبر 2026 (الأحد الثاني من سبتمبر)</span></h2>
+<p>13 سبتمبر 2026 (الأحد الثاني من سبتمبر)</p>
+</div>
+
+<div class="hero-stats">
+<div class="stat">
+<span class="number" data-stat-id="stat-historical-persons">2,494</span>
+<span class="label"><span aria-hidden="true">👥</span> سياسيون تتم مراقبتهم</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-against-proposals">6M+</span>
+<span class="label"><span aria-hidden="true">🗳️</span> تصويتات الريكسداغ</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-total-documents">500K+</span>
+<span class="label"><span aria-hidden="true">📄</span> وثائق تمت معالجتها</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-government-proposals">10K+</span>
+<span class="label"><span aria-hidden="true">📜</span> مشاريع قوانين حكومية</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-committee-decisions">20K+</span>
+<span class="label"><span aria-hidden="true">🏛️</span> قرارات اللجان</span>
+</div>
+</div>
+<nav class="site-header-nav" aria-label="المنصة الرئيسية" data-rm-static-primary-nav="true">
+  <a href="../index_ar.html">الرئيسية</a>
+  <a href="news/index_ar.html">الأخبار</a>
+  <a href="dashboard/index_ar.html">لوحة المعلومات</a>
+  <a href="politician-dashboard_ar.html"><span aria-hidden="true">👤</span> السياسيون</a>
+  <a href="political-intelligence_ar.html"><span aria-hidden="true">🧠</span> الاستخبارات السياسية</a>
+  <a href="sitemap_ar.html"><span aria-hidden="true">🗺️</span> خريطة الموقع</a>
+  <a href="https://riksdagsmonitor.com/docs/api/index.html"><span aria-hidden="true">📚</span> توثيق API</a>
+  <a class="rm-header-cta rm-header-cta-transparency" href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer" title="التزام Hack23 بالشفافية والأمان" aria-label="التزام Hack23 بالشفافية والأمان"><span aria-hidden="true">🔐</span> الشفافية والأمان</a>
+  <a class="rm-header-cta rm-header-cta-sponsor" href="https://github.com/sponsors/Hack23" target="_blank" rel="noopener noreferrer" title="كن راعيًا لـ Hack23 على GitHub" aria-label="كن راعيًا لـ Hack23 على GitHub"><span aria-hidden="true">💖</span> ادعم Hack23</a>
+</nav>
+<nav class="language-switcher site-language-switcher" aria-label="هذه الصفحة بلغات أخرى" data-rm-static-language-switcher="true">
+        <a href="../dashboards/committees.html" lang="en" hreflang="en" title="English" aria-label="تغيير اللغة: English"><span aria-hidden="true">🇬🇧</span> EN</a>
+        <a href="../dashboards/committees_sv.html" lang="sv" hreflang="sv" title="Svenska" aria-label="تغيير اللغة: Swedish"><span aria-hidden="true">🇸🇪</span> SV</a>
+        <a href="../dashboards/committees_da.html" lang="da" hreflang="da" title="Dansk" aria-label="تغيير اللغة: Danish"><span aria-hidden="true">🇩🇰</span> DA</a>
+        <a href="../dashboards/committees_no.html" lang="no" hreflang="nb" title="Norsk" aria-label="تغيير اللغة: Norwegian"><span aria-hidden="true">🇳🇴</span> NO</a>
+        <a href="../dashboards/committees_fi.html" lang="fi" hreflang="fi" title="Suomi" aria-label="تغيير اللغة: Finnish"><span aria-hidden="true">🇫🇮</span> FI</a>
+        <a href="../dashboards/committees_de.html" lang="de" hreflang="de" title="Deutsch" aria-label="تغيير اللغة: German"><span aria-hidden="true">🇩🇪</span> DE</a>
+        <a href="../dashboards/committees_fr.html" lang="fr" hreflang="fr" title="Français" aria-label="تغيير اللغة: French"><span aria-hidden="true">🇫🇷</span> FR</a>
+        <a href="../dashboards/committees_es.html" lang="es" hreflang="es" title="Español" aria-label="تغيير اللغة: Spanish"><span aria-hidden="true">🇪🇸</span> ES</a>
+        <a href="../dashboards/committees_nl.html" lang="nl" hreflang="nl" title="Nederlands" aria-label="تغيير اللغة: Dutch"><span aria-hidden="true">🇳🇱</span> NL</a>
+        <a href="../dashboards/committees_ar.html" lang="ar" hreflang="ar" title="العربية" aria-label="تغيير اللغة: Arabic" aria-current="page" class="active"><span aria-hidden="true">🇸🇦</span> AR</a>
+        <a href="../dashboards/committees_he.html" lang="he" hreflang="he" title="עברית" aria-label="تغيير اللغة: Hebrew"><span aria-hidden="true">🇮🇱</span> HE</a>
+        <a href="../dashboards/committees_ja.html" lang="ja" hreflang="ja" title="日本語" aria-label="تغيير اللغة: Japanese"><span aria-hidden="true">🇯🇵</span> JA</a>
+        <a href="../dashboards/committees_ko.html" lang="ko" hreflang="ko" title="한국어" aria-label="تغيير اللغة: Korean"><span aria-hidden="true">🇰🇷</span> KO</a>
+        <a href="../dashboards/committees_zh.html" lang="zh" hreflang="zh" title="中文" aria-label="تغيير اللغة: Chinese"><span aria-hidden="true">🇨🇳</span> ZH</a>
+</nav>
+</header>
+
+<main id="main-content" role="main">
+<nav class="dashboard-page-back" aria-label="→ العودة إلى الصفحة الرئيسية">
+<a href="../index_ar.html" class="back-link">→ العودة إلى الصفحة الرئيسية</a>
+</nav>
+
+<section id="committee-dashboard" class="dashboard-container">
+<h2>🏛️ أداء اللجان وتحليلات الشبكة</h2>
+
+<div class="dashboard-grid">
+<!-- مخطط الشبكة (بعرض كامل) -->
+<div class="chart-card wide">
+<h3>مخطط شبكة اللجان</h3>
+<p>تصور تفاعلي لعلاقات اللجان وإنتاجيتها. اسحب العُقد لاستكشاف الروابط.</p>
+<div id="committeeNetwork" role="img" aria-label="مخطط اتصالات شبكة اللجان يوضح العلاقات بين 15 لجنة في الريكسداغ السويدي"></div>
+<table class="sr-only" id="committeeNetworkTable" aria-label="جدول بيانات اتصالات شبكة اللجان">
+<!-- جدول بديل قابل للوصول يُملأ عبر JavaScript -->
+</table>
+</div>
+
+<!-- خريطة الإنتاجية الحرارية (بعرض كامل) -->
+<div class="chart-card wide">
+<h3>مصفوفة الإنتاجية (2020-2026)</h3>
+<p>خريطة حرارية تعرض درجات إنتاجية اللجان عبر الزمن. مرّر المؤشر فوق الخلايا للحصول على معلومات تفصيلية.</p>
+<div id="productivityMatrix" role="img" aria-label="مصفوفة إنتاجية اللجان تُظهر الأداء عبر الزمن من 2020 إلى 2026"></div>
+<table class="sr-only" id="productivityMatrixTable" aria-label="جدول بيانات مصفوفة إنتاجية اللجان">
+<!-- جدول بديل قابل للوصول يُملأ عبر JavaScript -->
+</table>
+</div>
+
+<!-- مقارنة اللجان -->
+<div class="chart-card">
+<h3>مقارنة اللجان</h3>
+<p>قارن درجات الإنتاجية عبر جميع اللجان الخمس عشرة.</p>
+<canvas id="committeeComparisonChart" role="img" aria-label="مخطط أعمدة يقارن درجات الإنتاجية عبر اللجان"></canvas>
+</div>
+
+<!-- فعالية القرارات -->
+<div class="chart-card">
+<h3>فعالية القرارات</h3>
+<p>تتبّع نتائج القرارات (موافق عليها، مرفوضة، معلّقة) عبر الزمن.</p>
+<canvas id="decisionEffectivenessChart" role="img" aria-label="مخطط أعمدة مكدس يوضح فعالية القرارات عبر السنوات"></canvas>
+</div>
+
+<!-- الأنماط الموسمية (بعرض كامل) -->
+<div class="chart-card wide">
+<h3>أنماط النشاط الموسمية</h3>
+<p>اتجاهات النشاط الربعية التي توضح كيف يختلف عمل اللجان خلال السنة.</p>
+<canvas id="seasonalPatternsChart" role="img" aria-label="مخطط خطي يعرض أنماط النشاط الموسمية حسب الربع"></canvas>
+</div>
+</div>
+
+<div class="dashboard-attribution">
+<p><small>📊 البيانات مدعومة من <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">منصة CIA</a> | آخر تحديث: <span id="committeeLastUpdated">جارٍ التحميل...</span></small></p>
+</div>
+</section>
+
+<aside class="dashboard-related" aria-labelledby="related-dashboards-heading">
+<h2 id="related-dashboards-heading">👥 مزيد من اللوحات</h2>
+<div class="dashboard-tile-grid">
+<a href="election-cycle_ar.html" class="dashboard-tile" data-rm-dashboard-slug="election-cycle"><span class="dashboard-tile-icon" aria-hidden="true">🗳️</span><span class="dashboard-tile-label">🗳️ استخبارات الدورات الانتخابية (1994-2034)</span></a>
+<a href="parties_ar.html" class="dashboard-tile" data-rm-dashboard-slug="parties"><span class="dashboard-tile-icon" aria-hidden="true">🏛️</span><span class="dashboard-tile-label">🗳️ أداء الأحزاب وفعاليتها</span></a>
+<a href="coalitions_ar.html" class="dashboard-tile" data-rm-dashboard-slug="coalitions"><span class="dashboard-tile-icon" aria-hidden="true">🤝</span><span class="dashboard-tile-label">🤝 تحليل الائتلاف وأنماط التصويت</span></a>
+<a href="seasonal-patterns_ar.html" class="dashboard-tile" data-rm-dashboard-slug="seasonal-patterns"><span class="dashboard-tile-icon" aria-hidden="true">📅</span><span class="dashboard-tile-label">📅 أنماط النشاط الموسمية (2002-2025)</span></a>
+<a href="pre-election_ar.html" class="dashboard-tile" data-rm-dashboard-slug="pre-election"><span class="dashboard-tile-icon" aria-hidden="true">⚠️</span><span class="dashboard-tile-label">🗳️ لوحة مراقبة ما قبل الانتخابات (الربع 4 2023-2025)</span></a>
+<a href="anomaly-detection_ar.html" class="dashboard-tile" data-rm-dashboard-slug="anomaly-detection"><span class="dashboard-tile-icon" aria-hidden="true">🚨</span><span class="dashboard-tile-label">🚨 كشف الشذوذ ونظام الإنذار المبكر</span></a>
+<a href="ministers_ar.html" class="dashboard-tile" data-rm-dashboard-slug="ministers"><span class="dashboard-tile-icon" aria-hidden="true">🎖️</span><span class="dashboard-tile-label">🎖️ مخاطر وتأثير وزراء الحكومة</span></a>
+<a href="risk_ar.html" class="dashboard-tile" data-rm-dashboard-slug="risk"><span class="dashboard-tile-icon" aria-hidden="true">⚠️</span><span class="dashboard-tile-label">⚠️ تقييم المخاطر وكشف الشذوذ</span></a>
+</div>
+</aside>
+</main>
+
+<footer role="contentinfo" class="site-footer" data-rm-static-footer="true">
+  <div class="footer-content">
+    <div class="footer-section">
+      <a href="../index_ar.html" aria-label="Riksdagsmonitor الرئيسية">
+        <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="footer-logo" width="80" height="80" loading="lazy">
+      </a>
+      <h3><span aria-hidden="true">📖</span> حول Riksdagsmonitor</h3>
+      <p>منصة استخبارات حية لمراقبة البرلمان السويدي باستخدام قدرات CIA OSINT. تحسينات مستمرة — يرجى الإبلاغ عن أي مشاكل على GitHub.</p>
+      <p>استشارات سويدية للأمن السيبراني متخصصة في الشفافية السياسية واستخبارات المصادر المفتوحة.</p>
+      <ul class="footer-stats">
+        <li><strong>349 نواب</strong> متابَعون</li>
+        <li><strong>45 قواعد مخاطر</strong> نشطة</li>
+        <li><strong>14 لغات</strong> مدعومة</li>
+        <li><strong>50+ عامًا</strong> بيانات تاريخية</li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3><span aria-hidden="true">🔗</span> روابط سريعة</h3>
+      <ul>
+        <li><a href="../index_ar.html">الرئيسية</a></li>
+        <li><a href="news/index_ar.html">الأخبار</a></li>
+        <li><a href="dashboard/index_ar.html">لوحة المعلومات</a></li>
+        <li><a href="politician-dashboard_ar.html"><span aria-hidden="true">👤</span> السياسيون</a></li>
+        <li><a href="political-intelligence_ar.html"><span aria-hidden="true">🧠</span> الاستخبارات السياسية</a></li>
+        <li><a href="sitemap_ar.html"><span aria-hidden="true">🗺️</span> خريطة الموقع</a></li>
+        <li><a href="https://riksdagsmonitor.com/docs/api/index.html"><span aria-hidden="true">📚</span> وثائق API (TypeDoc)</a></li>
+        <li><a href="https://github.com/Hack23/cia" target="_blank" rel="noopener noreferrer">منصة CIA</a></li>
+        <li><a href="https://github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer">مستودع GitHub</a></li>
+        <li><a href="https://www.riksdagen.se" target="_blank" rel="noopener noreferrer">البرلمان السويدي</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3><span aria-hidden="true">🏢</span> بُني بواسطة Hack23 AB</h3>
+      <p>استشارات سويدية للأمن السيبراني متخصصة في الشفافية السياسية واستخبارات المصادر المفتوحة.</p>
+      <ul>
+        <li><a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23.com</a></li>
+        <li><a href="https://www.hack23.com/riksdagsmonitor.html" target="_blank" rel="noopener noreferrer">Hack23 · Riksdagsmonitor</a></li>
+        <li><a href="https://www.hack23.com/riksdagsmonitor-features.html" target="_blank" rel="noopener noreferrer">Hack23 · الميزات</a></li>
+        <li><a href="https://github.com/sponsors/Hack23" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">💖</span> ادعم Hack23</a></li>
+        <li><a href="https://www.linkedin.com/company/hack23/" target="_blank" rel="noopener noreferrer">الشركة على LinkedIn</a></li>
+        <li><a href="https://github.com/Hack23" target="_blank" rel="noopener noreferrer">منظمة Hack23 على GitHub</a></li>
+        <li><a href="mailto:info@hack23.com">اتصل بنا</a></li>
+        <li><a href="https://github.com/Hack23/riksdagsmonitor/issues/new/choose" target="_blank" rel="noopener noreferrer">الإبلاغ عن مشكلة GitHub</a></li>
+      </ul>
+    </div>
+    <div class="footer-section rm-footer-isms">
+      <h3><span aria-hidden="true">🛡️</span> Hack23 ISMS</h3>
+      <p>نظام إدارة أمن المعلومات العام متوافق مع ISO 27001:2022 و NIST CSF 2.0 و CIS Controls v8.1 و EU CRA و NIS2.</p>
+      <ul>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC" target="_blank" rel="noopener noreferrer">مستودع ISMS العام</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md" target="_blank" rel="noopener noreferrer">سياسة أمن المعلومات</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Privacy_Policy.md" target="_blank" rel="noopener noreferrer">سياسة الخصوصية</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md" target="_blank" rel="noopener noreferrer">سياسة التطوير الآمن</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md" target="_blank" rel="noopener noreferrer">سياسة الذكاء الاصطناعي</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md" target="_blank" rel="noopener noreferrer">نمذجة التهديدات</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md" target="_blank" rel="noopener noreferrer">إدارة الثغرات</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md" target="_blank" rel="noopener noreferrer">خطة الاستجابة للحوادث</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Access_Control_Policy.md" target="_blank" rel="noopener noreferrer">سياسة التحكم في الوصول</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Cryptography_Policy.md" target="_blank" rel="noopener noreferrer">سياسة التشفير</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md" target="_blank" rel="noopener noreferrer">سياسة المصادر المفتوحة</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management.md" target="_blank" rel="noopener noreferrer">إدارة التغيير</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md" target="_blank" rel="noopener noreferrer">التصنيف</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Security_Metrics.md" target="_blank" rel="noopener noreferrer">مقاييس الأمان</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3><span aria-hidden="true">🌍</span> اللغات</h3>
+      <div class="language-grid">
+        <a href="../dashboards/committees.html" lang="en" hreflang="en" title="English" aria-label="تغيير اللغة: English"><span aria-hidden="true">🇬🇧</span> EN</a>
+        <a href="../dashboards/committees_sv.html" lang="sv" hreflang="sv" title="Svenska" aria-label="تغيير اللغة: Swedish"><span aria-hidden="true">🇸🇪</span> SV</a>
+        <a href="../dashboards/committees_da.html" lang="da" hreflang="da" title="Dansk" aria-label="تغيير اللغة: Danish"><span aria-hidden="true">🇩🇰</span> DA</a>
+        <a href="../dashboards/committees_no.html" lang="no" hreflang="nb" title="Norsk" aria-label="تغيير اللغة: Norwegian"><span aria-hidden="true">🇳🇴</span> NO</a>
+        <a href="../dashboards/committees_fi.html" lang="fi" hreflang="fi" title="Suomi" aria-label="تغيير اللغة: Finnish"><span aria-hidden="true">🇫🇮</span> FI</a>
+        <a href="../dashboards/committees_de.html" lang="de" hreflang="de" title="Deutsch" aria-label="تغيير اللغة: German"><span aria-hidden="true">🇩🇪</span> DE</a>
+        <a href="../dashboards/committees_fr.html" lang="fr" hreflang="fr" title="Français" aria-label="تغيير اللغة: French"><span aria-hidden="true">🇫🇷</span> FR</a>
+        <a href="../dashboards/committees_es.html" lang="es" hreflang="es" title="Español" aria-label="تغيير اللغة: Spanish"><span aria-hidden="true">🇪🇸</span> ES</a>
+        <a href="../dashboards/committees_nl.html" lang="nl" hreflang="nl" title="Nederlands" aria-label="تغيير اللغة: Dutch"><span aria-hidden="true">🇳🇱</span> NL</a>
+        <a href="../dashboards/committees_ar.html" lang="ar" hreflang="ar" title="العربية" aria-label="تغيير اللغة: Arabic" aria-current="page" class="active"><span aria-hidden="true">🇸🇦</span> AR</a>
+        <a href="../dashboards/committees_he.html" lang="he" hreflang="he" title="עברית" aria-label="تغيير اللغة: Hebrew"><span aria-hidden="true">🇮🇱</span> HE</a>
+        <a href="../dashboards/committees_ja.html" lang="ja" hreflang="ja" title="日本語" aria-label="تغيير اللغة: Japanese"><span aria-hidden="true">🇯🇵</span> JA</a>
+        <a href="../dashboards/committees_ko.html" lang="ko" hreflang="ko" title="한국어" aria-label="تغيير اللغة: Korean"><span aria-hidden="true">🇰🇷</span> KO</a>
+        <a href="../dashboards/committees_zh.html" lang="zh" hreflang="zh" title="中文" aria-label="تغيير اللغة: Chinese"><span aria-hidden="true">🇨🇳</span> ZH</a>
+      </div>
+    </div>
+  </div>
+  <nav class="rm-footer-trust-badges" aria-label="شارات مفتوحة للثقة والجودة والأمان">
+    <a href="https://www.npmjs.com/package/riksdagsmonitor" target="_blank" rel="noopener noreferrer" aria-label="Riksdagsmonitor on npmjs"><img src="https://img.shields.io/npm/v/riksdagsmonitor.svg?logo=npm&label=npm" alt="Riksdagsmonitor on npmjs" width="100" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer" aria-label="OpenSSF Scorecard"><img src="https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge" alt="OpenSSF Scorecard" width="120" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://www.bestpractices.dev/projects/12069" target="_blank" rel="noopener noreferrer" aria-label="OpenSSF Best Practices"><img src="https://www.bestpractices.dev/projects/12069/badge" alt="OpenSSF Best Practices" width="124" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/riksdagsmonitor/actions/workflows/codeql.yml" target="_blank" rel="noopener noreferrer" aria-label="CodeQL workflow status"><img src="https://github.com/Hack23/riksdagsmonitor/actions/workflows/codeql.yml/badge.svg" alt="CodeQL workflow status" width="120" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml" target="_blank" rel="noopener noreferrer" aria-label="Quality checks workflow status"><img src="https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml/badge.svg" alt="Quality checks workflow status" width="160" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml" target="_blank" rel="noopener noreferrer" aria-label="Dependency review workflow status"><img src="https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml/badge.svg" alt="Dependency review workflow status" width="170" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/riksdagsmonitor/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" aria-label="Apache-2.0 License"><img src="https://img.shields.io/github/license/Hack23/riksdagsmonitor" alt="Apache-2.0 License" width="120" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/ISMS-PUBLIC" target="_blank" rel="noopener noreferrer" aria-label="Hack23 ISMS-PUBLIC"><img src="https://img.shields.io/badge/Hack23-ISMS-blue?logo=shield" alt="Hack23 ISMS-PUBLIC" width="100" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md" target="_blank" rel="noopener noreferrer" aria-label="ISO 27001:2022 alignment"><img src="https://img.shields.io/badge/ISO-27001:2022-purple" alt="ISO 27001:2022 alignment" width="110" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md" target="_blank" rel="noopener noreferrer" aria-label="NIST CSF 2.0 alignment"><img src="https://img.shields.io/badge/NIST-CSF_2.0-orange" alt="NIST CSF 2.0 alignment" width="100" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md" target="_blank" rel="noopener noreferrer" aria-label="CIS Controls v8.1 alignment"><img src="https://img.shields.io/badge/CIS-Controls_v8.1-red" alt="CIS Controls v8.1 alignment" width="120" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://riksdagsmonitor.com" target="_blank" rel="noopener noreferrer" aria-label="Riksdagsmonitor.com website status"><img src="https://img.shields.io/website?url=https%3A%2F%2Friksdagsmonitor.com" alt="Riksdagsmonitor.com website status" width="120" height="20" loading="lazy" decoding="async"></a>
+  </nav>
+  <div class="footer-bottom">
+    <p>&copy; 2008-<time datetime="2026">2026</time> <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23 AB</a> (Org.nr 5595347807) | Gothenburg, Sweden</p>
+    <p class="footer-disclaimer">⚠️ <a href="https://github.com/Hack23/riksdagsmonitor/issues/new/choose" target="_blank" rel="noopener noreferrer">الإبلاغ عن مشكلة GitHub</a></p>
+  </div>
+</footer>
+
+<button id="back-to-top" class="back-to-top" aria-label="العودة إلى الأعلى" title="العودة إلى الأعلى">
+  <span aria-hidden="true">↑</span>
+</button>
+
+<!-- Main application entry point -->
+    <script type="module" src="/src/browser/main.ts"></script>
+    
+</body>
+</html>

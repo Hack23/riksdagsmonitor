@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Riksdagsmonitor | Plataforma de inteligencia de las elecciones suecas 2026 | Monitoreo parlamentario</title>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
+<script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){/* storage unavailable */}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){/* storage unavailable */}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<link rel="canonical" href="https://riksdagsmonitor.com/index_es.html">
+<link rel="manifest" href="site.webmanifest">
+<meta name="description" content="Riksdagsmonitor: plataforma de inteligencia de las elecciones suecas 2026. Monitoreo en tiempo real de 349 diputados en 8 partidos, predicciones de coalición, 45 reglas de riesgo y más de 50 años de datos parlamentarios de la plataforma OSINT de Citizen Intelligence Agency (CIA).">
+<meta name="keywords" content="elecciones suecas 2026, riksdagsmonitor, monitoreo del riksdag, predicción de coaliciones, inteligencia política, plataforma OSINT, análisis parlamentario, Citizen Intelligence Agency, política sueca, monitoreo electoral, riksdagsval 2026, Sveriges riksdag, transparencia democrática, 349 diputados, 45 reglas de riesgo, transparencia parlamentaria, democracia en Suecia, pronóstico electoral 2026">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="James Pether Sörling, CISSP, CISM">
+
+<!-- Geographic Meta Tags -->
+<meta name="geo.region" content="SE">
+<meta name="geo.placename" content="Gothenburg">
+<meta name="geo.position" content="57.708870;11.974560">
+<meta name="ICBM" content="57.708870, 11.974560">
+
+<!-- Mobile Web App Tags -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Riksdagsmonitor">
+<meta name="HandheldFriendly" content="true">
+<meta name="MobileOptimized" content="320">
+
+<!-- Open Graph / Social Media -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://riksdagsmonitor.com/index_es.html">
+<meta property="og:site_name" content="Riksdagsmonitor">
+<meta property="og:title" content="Riksdagsmonitor | Plataforma de inteligencia de las elecciones suecas 2026">
+<meta property="og:description" content="Monitoreo en tiempo real de 349 diputados en 8 partidos. Predicciones de coalición, 45 reglas de riesgo, pronóstico electoral y más de 50 años de datos parlamentarios. Gratis y de código abierto.">
+<meta property="og:image" content="https://riksdagsmonitor.com/images/og-image.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Riksdagsmonitor - Plataforma de inteligencia del parlamento sueco">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="ar_SA">
+<meta property="og:locale:alternate" content="da_DK">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="fi_FI">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="he_IL">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="nb_NO">
+<meta property="og:locale:alternate" content="sv_SE">
+<meta property="og:locale:alternate" content="zh_CN">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Riksdagsmonitor | Plataforma de inteligencia de las elecciones suecas 2026">
+<meta name="twitter:description" content="Monitoreo en tiempo real de 349 diputados en 8 partidos. Predicciones de coalición, 45 reglas de riesgo, pronóstico electoral y más de 50 años de datos parlamentarios. Gratis y de código abierto.">
+<meta name="twitter:image" content="https://riksdagsmonitor.com/images/og-image.webp">
+<meta name="twitter:image:alt" content="Riksdagsmonitor - Plataforma de inteligencia del parlamento sueco">
+<meta name="twitter:site" content="@riksdagsmonitor">
+<meta name="twitter:creator" content="@jamessorling">
+<meta name="twitter:domain" content="riksdagsmonitor.com">
+
+<!-- DNS Prefetch & Preconnect for Performance -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="dns-prefetch" href="https://cia.sourceforge.io">
+<link rel="dns-prefetch" href="https://raw.githubusercontent.com">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap"></noscript>
+
+<meta name="application-name" content="Riksdagsmonitor">
+<meta name="theme-color" content="#0a0e27">
+<!-- Favicons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://riksdagsmonitor.com/#organization",
+      "name": "Riksdagsmonitor",
+      "legalName": "Hack23 AB",
+      "url": "https://riksdagsmonitor.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://riksdagsmonitor.com/images/android-chrome-512x512.png",
+        "width": 512,
+        "height": 512
+      },
+      "description": "Plataforma de monitoreo del parlamento sueco que ofrece inteligencia en tiempo real, pronóstico electoral y transparencia política mediante análisis OSINT de la CIA.",
+      "foundingDate": "2008",
+      "founder": {
+        "@type": "Person",
+        "@id": "https://riksdagsmonitor.com/#founder",
+        "name": "James Pether Sörling",
+        "jobTitle": "Fundador y Director de Inteligencia",
+        "hasCredential": ["CISSP", "CISM"],
+        "sameAs": [
+          "https://www.linkedin.com/in/jamessorling/",
+          "https://github.com/Hack23"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "SE",
+        "addressLocality": "Gothenburg"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Soporte técnico",
+        "availableLanguage": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"]
+      },
+      "sameAs": [
+        "https://github.com/Hack23/riksdagsmonitor",
+        "https://github.com/Hack23/cia"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://riksdagsmonitor.com/#website",
+      "url": "https://riksdagsmonitor.com",
+      "name": "Riksdagsmonitor - Plataforma de inteligencia del parlamento sueco",
+      "description": "Monitoreo en tiempo real del parlamento sueco con análisis OSINT de la CIA, pronóstico electoral, predicciones de coalición y transparencia política integral.",
+      "publisher": {
+        "@id": "https://riksdagsmonitor.com/#organization"
+      },
+      "inLanguage": "es",
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://riksdagsmonitor.com/index_es.html#webpage",
+      "url": "https://riksdagsmonitor.com/index_es.html",
+      "name": "Riksdagsmonitor | Plataforma de inteligencia de las elecciones suecas 2026",
+      "description": "Monitoreo en tiempo real del parlamento sueco con análisis OSINT de Citizen Intelligence Agency (CIA). Se rastrean 349 diputados en 8 partidos con 45 reglas de riesgo, predicciones de coalición y más de 50 años de datos históricos.",
+      "isPartOf": {
+        "@id": "https://riksdagsmonitor.com/#website"
+      },
+      "about": {
+        "@id": "https://riksdagsmonitor.com/#event"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://riksdagsmonitor.com/images/og-image.webp",
+        "width": 1200,
+        "height": 630
+      },
+      "datePublished": "2008-01-01T00:00:00+00:00",
+      "dateModified": "2026-02-13T00:00:00+00:00",
+      "breadcrumb": {
+        "@id": "https://riksdagsmonitor.com/#breadcrumb"
+      },
+      "inLanguage": "es",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": "https://riksdagsmonitor.com/index_es.html"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://riksdagsmonitor.com/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://riksdagsmonitor.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Elecciones suecas 2026",
+          "item": "https://riksdagsmonitor.com/index_es.html"
+        }
+      ]
+    },
+    {
+      "@type": "Event",
+      "@id": "https://riksdagsmonitor.com/#event",
+      "name": "Elecciones parlamentarias suecas 2026",
+      "description": "Las elecciones parlamentarias suecas están programadas para el 13 de septiembre de 2026. Plataforma de inteligencia en vivo que monitorea 349 diputados en 8 partidos con capacidades OSINT de la CIA, predicciones de coalición y evaluación integral de riesgos. Siga patrones de votación, actividad de comisiones y transparencia política en tiempo real. Base de datos histórica: 2494 políticos rastreados desde 1971.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://riksdagsmonitor.com/images/og-image.webp",
+        "width": 1200,
+        "height": 630
+      },
+      "startDate": "2026-09-13",
+      "endDate": "2026-09-13",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Suecia",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "SE",
+          "addressRegion": "Suecia"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 59.329323,
+          "longitude": 18.068581
+        }
+      },
+      "organizer": {
+        "@id": "https://riksdagsmonitor.com/#organization"
+      },
+      "performer": {
+        "@type": "Organization",
+        "name": "Riksdag de Suecia",
+        "sameAs": "https://www.riksdagen.se"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://riksdagsmonitor.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es Riksdagsmonitor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Riksdagsmonitor es una plataforma integral de monitoreo del parlamento sueco que proporciona inteligencia en tiempo real, pronóstico electoral y transparencia política mediante análisis OSINT de la CIA. Rastrea 349 diputados en 8 partidos con 45 reglas de riesgo y análisis parlamentario integral. La base de datos histórica incluye 2494 políticos de 1971 a 2024."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuándo son las elecciones suecas de 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Las elecciones parlamentarias suecas de 2026 están programadas para el 13 de septiembre de 2026 (segundo domingo de septiembre). Es una elección nacional para determinar la composición del Riksdag (parlamento sueco) con 349 escaños. Riksdagsmonitor rastrea políticos actuales e históricos (2494 en total desde 1971)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuántos diputados rastrea Riksdagsmonitor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Riksdagsmonitor rastrea a los 349 miembros del parlamento sueco, monitoreando en tiempo real sus patrones de votación, asistencia, trabajo en comisiones y desempeño en debates. La base de datos histórica incluye 2494 políticos rastreados desde 1971."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuáles son las 45 reglas de riesgo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Las 45 reglas de riesgo son criterios de evaluación conductual en 4 dominios: nivel de político (20 reglas sobre asistencia, consistencia de voto, conflictos de rol y productividad), nivel de partido (12 reglas sobre disciplina de coalición, deriva ideológica y conflictos internos), nivel de comisión (8 reglas sobre productividad legislativa y bloqueo partidista) y nivel ministerial (5 reglas sobre sobrecostes presupuestarios, fallas de política y rendición de cuentas)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Riksdagsmonitor es gratuito?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, Riksdagsmonitor es completamente gratuito. Proporciona acceso abierto al monitoreo del parlamento sueco, pronóstico electoral y datos de transparencia política en 14 idiomas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué idiomas admite Riksdagsmonitor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Riksdagsmonitor admite 14 idiomas: inglés, sueco, danés, noruego, finés, alemán, francés, español, neerlandés, árabe, hebreo, japonés, coreano y chino, haciendo accesible la inteligencia política sueca a una audiencia global."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo funciona la predicción de coaliciones?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La predicción de coaliciones utiliza algoritmos que analizan patrones de votación, comportamiento en comisiones, puntuaciones de disciplina partidaria y datos históricos de formación de coaliciones durante más de 50 años. El sistema evalúa compatibilidad ideológica, distribución de escaños e indicadores de estabilidad para prever formaciones de gobierno probables."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué es la plataforma Citizen Intelligence Agency (CIA)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La Citizen Intelligence Agency (CIA) es una plataforma OSINT de código abierto para la transparencia política, desarrollada por Hack23 AB. Procesa miles de votaciones al año, analiza documentos parlamentarios y ofrece monitoreo en tiempo real con paneles integrales de evaluación de riesgo."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "GovernmentOrganization",
+      "name": "Sveriges riksdag",
+      "alternateName": "Parlamento sueco",
+      "url": "https://www.riksdagen.se",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "100 12 Stockholm",
+        "addressLocality": "Stockholm",
+        "addressCountry": "SE"
+      },
+      "numberOfEmployees": 349,
+      "foundingDate": "1866"
+    }
+  ]
+}
+</script>
+
+<link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/index_ar.html">
+<link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/index_da.html">
+<link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/index_de.html">
+<link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/index.html">
+<link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/index_es.html">
+<link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/index_fi.html">
+<link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/index_fr.html">
+<link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/index_he.html">
+<link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/index_ja.html">
+<link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/index_ko.html">
+<link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/index_nl.html">
+<link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/index_no.html">
+<link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/index_sv.html">
+<link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/index_zh.html">
+<link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/index.html">
+
+</head>
+<body>
+<!-- Enlace de salto al contenido para accesibilidad -->
+<a href="#main-content" class="skip-to-content">Saltar al contenido principal</a>
+
+<!-- Navegación de migas de pan -->
+<nav aria-label="Migas de pan">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="index_es.html">Inicio</a>
+</li>
+<li class="breadcrumb-item" aria-current="page">
+Elecciones suecas 2026
+</li>
+</ol>
+</nav>
+
+<header>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Cambiar tema"
+        title="Cambiar tema"
+        data-label-dark="Cambiar al tema claro"
+        data-label-light="Cambiar al tema oscuro"
+        data-rm-static-theme-toggle="true">
+  <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
+  <span class="theme-icon theme-icon-sun" aria-hidden="true">☀️</span>
+  <span class="theme-toggle-label">Tema</span>
+</button>
+
+<!-- Hero Banner -->
+<div class="hero-banner">
+  <img src="images/riksdagsmonitor-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" aria-hidden="true">
+</div>
+
+<!-- Hero Title -->
+<div class="hero-header-text">
+  <h1> Riksdagsmonitor<br><span class="h1-subtitle">Plataforma de inteligencia de las elecciones suecas 2026</span></h1>
+  <p class="tagline">Monitoreo parlamentario en tiempo real · Predicciones de coalición · 45 reglas de riesgo · 50+ años de datos</p>
+</div>
+
+
+<div class="election-countdown">
+<h2>Elecciones en: <span id="countdown">13 de septiembre de 2026 (Segundo domingo de septiembre)</span></h2>
+<p>13 de septiembre de 2026 (Segundo domingo de septiembre)</p>
+</div>
+
+<div class="hero-stats">
+<div class="stat">
+<span class="number" data-stat-id="stat-historical-persons">2,494</span>
+<span class="label"><span aria-hidden="true">👥</span> Políticos monitoreados</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-against-proposals">6M+</span>
+<span class="label"><span aria-hidden="true">🗳️</span> Votaciones del Riksdag</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-total-documents">500K+</span>
+<span class="label"><span aria-hidden="true">📄</span> Documentos procesados</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-government-proposals">10K+</span>
+<span class="label"><span aria-hidden="true">📜</span> Proyectos de ley del gobierno</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-committee-decisions">20K+</span>
+<span class="label"><span aria-hidden="true">🏛️</span> Decisiones de comisión</span>
+</div>
+</div>
+<nav class="site-header-nav" aria-label="Plataforma principal" data-rm-static-primary-nav="true">
+  <a href="index_es.html">Inicio</a>
+  <a href="news/index_es.html">Noticias</a>
+  <a href="dashboard/index_es.html">Panel</a>
+  <a href="politician-dashboard_es.html"><span aria-hidden="true">👤</span> Políticos</a>
+  <a href="political-intelligence_es.html"><span aria-hidden="true">🧠</span> Inteligencia política</a>
+  <a href="sitemap_es.html"><span aria-hidden="true">🗺️</span> Mapa del sitio</a>
+  <a href="https://riksdagsmonitor.com/docs/api/index.html"><span aria-hidden="true">📚</span> Documentación API</a>
+  <a class="rm-header-cta rm-header-cta-transparency" href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer" title="Compromiso de Hack23 con la transparencia y la seguridad" aria-label="Compromiso de Hack23 con la transparencia y la seguridad"><span aria-hidden="true">🔐</span> Transparencia &amp; Seguridad</a>
+  <a class="rm-header-cta rm-header-cta-sponsor" href="https://github.com/sponsors/Hack23" target="_blank" rel="noopener noreferrer" title="Conviértete en patrocinador de Hack23 en GitHub" aria-label="Conviértete en patrocinador de Hack23 en GitHub"><span aria-hidden="true">💖</span> Patrocinar Hack23</a>
+</nav>
+<nav class="language-switcher site-language-switcher" aria-label="Esta página en otros idiomas" data-rm-static-language-switcher="true">
+        <a href="index.html" lang="en" hreflang="en" title="English" aria-label="Cambiar idioma: English"><span aria-hidden="true">🇬🇧</span> EN</a>
+        <a href="index_sv.html" lang="sv" hreflang="sv" title="Svenska" aria-label="Cambiar idioma: Swedish"><span aria-hidden="true">🇸🇪</span> SV</a>
+        <a href="index_da.html" lang="da" hreflang="da" title="Dansk" aria-label="Cambiar idioma: Danish"><span aria-hidden="true">🇩🇰</span> DA</a>
+        <a href="index_no.html" lang="nb" hreflang="nb" title="Norsk" aria-label="Cambiar idioma: Norwegian"><span aria-hidden="true">🇳🇴</span> NO</a>
+        <a href="index_fi.html" lang="fi" hreflang="fi" title="Suomi" aria-label="Cambiar idioma: Finnish"><span aria-hidden="true">🇫🇮</span> FI</a>
+        <a href="index_de.html" lang="de" hreflang="de" title="Deutsch" aria-label="Cambiar idioma: German"><span aria-hidden="true">🇩🇪</span> DE</a>
+        <a href="index_fr.html" lang="fr" hreflang="fr" title="Français" aria-label="Cambiar idioma: French"><span aria-hidden="true">🇫🇷</span> FR</a>
+        <a href="index_es.html" lang="es" hreflang="es" title="Español" aria-label="Cambiar idioma: Spanish" aria-current="page" class="active"><span aria-hidden="true">🇪🇸</span> ES</a>
+        <a href="index_nl.html" lang="nl" hreflang="nl" title="Nederlands" aria-label="Cambiar idioma: Dutch"><span aria-hidden="true">🇳🇱</span> NL</a>
+        <a href="index_ar.html" lang="ar" hreflang="ar" title="العربية" aria-label="Cambiar idioma: Arabic"><span aria-hidden="true">🇸🇦</span> AR</a>
+        <a href="index_he.html" lang="he" hreflang="he" title="עברית" aria-label="Cambiar idioma: Hebrew"><span aria-hidden="true">🇮🇱</span> HE</a>
+        <a href="index_ja.html" lang="ja" hreflang="ja" title="日本語" aria-label="Cambiar idioma: Japanese"><span aria-hidden="true">🇯🇵</span> JA</a>
+        <a href="index_ko.html" lang="ko" hreflang="ko" title="한국어" aria-label="Cambiar idioma: Korean"><span aria-hidden="true">🇰🇷</span> KO</a>
+        <a href="index_zh.html" lang="zh" hreflang="zh" title="中文" aria-label="Cambiar idioma: Chinese"><span aria-hidden="true">🇨🇳</span> ZH</a>
+</nav>
+</header>
+
+
+<!-- Navegación de noticias -->
+<nav class="news-navigation" aria-label="Noticias">
+<p class="news-navigation-heading"><span aria-hidden="true">📰</span> Periodismo político impulsado por IA</p>
+<p class="news-navigation-description">Cobertura de inteligencia política del Riksdag sueco generada por IA, producida diariamente por agentes de IA con datos OSINT de Citizen Intelligence Agency. Análisis automatizado de proposiciones gubernamentales, informes de comisiones, mociones de la oposición, preguntas parlamentarias y análisis nocturnos — en 14 idiomas.</p>
+<ul class="news-navigation-features" aria-label="Tipos de cobertura">
+<li>📋 Informes de comisiones</li>
+<li>📜 Proposiciones gubernamentales</li>
+<li>✊ Mociones de oposición</li>
+<li>❓ Preguntas parlamentarias</li>
+<li>🌙 Análisis nocturno</li>
+<li>🌍 14 idiomas</li>
+</ul>
+<a href="news/index_es.html" class="news-navigation-link" aria-label="Leer las últimas noticias">
+<span class="news-navigation-link-icon" aria-hidden="true">📰</span>
+<span>Leer noticias</span>
+</a>
+</nav>
+
+<!-- Intelligence Dashboard CTA -->
+<nav class="dashboard-cta" aria-label="Panel de inteligencia">
+<h2 class="dashboard-cta-heading"><span aria-hidden="true">📊</span> Panel de inteligencia</h2>
+<p class="dashboard-cta-description">Explore visualizaciones interactivas de Citizen Intelligence Agency — pronóstico electoral 2026, análisis de rendimiento de partidos, evaluación de riesgos con 45 reglas para 349 diputados, estabilidad de coaliciones y análisis de redes de comisiones.</p>
+<ul class="dashboard-cta-features" aria-label="Aspectos destacados del panel">
+<li>🗳️ Pronóstico electoral 2026</li>
+<li>📈 Rendimiento de partidos</li>
+<li>⚠️ Evaluación de riesgos</li>
+<li>🤝 Análisis de coalición</li>
+<li>🏛️ Redes de comisiones</li>
+<li>👥 Ranking de diputados</li>
+</ul>
+<a href="dashboard/index_es.html" class="dashboard-cta-link" aria-label="Abrir el panel de inteligencia">
+<span class="dashboard-cta-link-icon" aria-hidden="true">📊</span>
+<span>Abrir panel</span>
+</a>
+</nav>
+
+<main id="main-content" role="main">
+<section id="coalition-status">
+<h2>Coalición actual: Acuerdo de Tidö</h2>
+<p>Formación: octubre de 2022 | Estado: Activa | Mayoría: 176 escaños (de 349 en total)</p>
+
+<div class="cards">
+<!-- Coalition party cards dynamically loaded from CIA data -->
+<p class="loading-message"></p>
+</div>
+
+<div class="coalition-stability">
+<h3>Evaluación de estabilidad de la coalición</h3>
+<div class="stability-info">
+<p><strong>Margen de mayoría:</strong> 1 escaño (estrecho)</p>
+<p><strong>Evaluación de riesgo de la CIA:</strong> 12 alertas MAYORES, 5 alertas CRÍTICAS detectadas (últimos 90 días)</p>
+<p><strong>Indicadores de fragilidad:</strong> tensiones ideológicas entre SD y L, vulnerable a deserciones</p>
+<p><strong>Puntuación de estabilidad:</strong> Riesgo moderado (72%)</p>
+</div>
+</div>
+</section>
+
+
+<!-- Panel de evaluación de riesgos y detección de anomalías -->
+
+
+<section id="election-cycle-dashboard" class="dashboard-section">
+<h2>🗳️ Inteligencia de ciclos electorales (1994-2034)</h2>
+<p>Análisis integral de 40 años de ciclos electorales del parlamento sueco, con evolución del rendimiento de los partidos, efectividad en la toma de decisiones, pronóstico de riesgo predictivo y patrones temporales de votación a lo largo de más de 9 ciclos electorales.</p>
+
+<div class="dashboard-loader">
+Cargando datos...
+</div>
+
+<div class="dashboard-error">
+No se pudieron cargar los datos
+</div>
+
+<!-- Filters -->
+<div class="dashboard-filters">
+<div class="filter-group">
+<label for="election-cycle-filter">Ciclo electoral:</label>
+<select id="election-cycle-filter">
+<option value="all">Todos los ciclos</option>
+</select>
+</div>
+
+<div class="filter-group">
+<label for="election-party-filter">Partido:</label>
+<select id="election-party-filter">
+<option value="all">Todos los partidos</option>
+</select>
+</div>
+
+<div class="filter-group">
+<label for="election-metric-filter">Métrica:</label>
+<select id="election-metric-filter">
+<option value="performance">Rendimiento</option>
+<option value="decisions">Decisiones</option>
+<option value="risk">Riesgo</option>
+<option value="attendance">Asistencia</option>
+</select>
+</div>
+</div>
+
+<!-- Visualizations Grid -->
+<div class="dashboard-grid">
+<!-- Chart 1: Election Cycle Timeline -->
+<div class="chart-card wide">
+<h3>Línea temporal de rendimiento por ciclo electoral</h3>
+<div class="chart-container">
+<canvas id="cycle-timeline-chart"></canvas>
+</div>
+<p class="chart-description">
+Evolución del rendimiento de los partidos en 9 ciclos electorales (1994-2034)
+</p>
+</div>
+
+<!-- Chart 2: Decision Effectiveness Matrix -->
+<div class="chart-card">
+<h3>Mapa de calor de efectividad de decisiones</h3>
+<div id="decision-heatmap" class="chart-container chart-container--scrollable"></div>
+<p class="chart-description">
+Tasas de aprobación legislativa por partido y ciclo
+</p>
+</div>
+
+<!-- Chart 3: Risk Forecasting -->
+<div class="chart-card">
+<h3>Pronóstico de riesgo predictivo</h3>
+<div class="chart-container">
+<canvas id="risk-forecast-chart"></canvas>
+</div>
+<p class="chart-description">
+Trayectoria del riesgo y niveles de confianza (2022-2034)
+</p>
+</div>
+
+<!-- Chart 4: Temporal Trends -->
+<div class="chart-card wide">
+<h3>Patrones temporales de votación</h3>
+<div class="chart-container">
+<canvas id="temporal-trends-chart"></canvas>
+</div>
+<p class="chart-description">
+Tendencias de asistencia, votaciones y volatilidad
+</p>
+</div>
+
+<!-- Chart 5: Party Comparative Analysis -->
+<div class="chart-card">
+<h3>Distribución por nivel de partido</h3>
+<div class="chart-container">
+<canvas id="party-tier-chart"></canvas>
+</div>
+<p class="chart-description">
+Niveles de rendimiento (ntile_party_tier: 1-4)
+</p>
+</div>
+</div>
+
+<p class="note dashboard-attribution">
+<strong>Datos de la plataforma Citizen Intelligence Agency</strong> | Actualizado desde datos de ejemplo de GitHub | Caché de 24 horas
+</p>
+</section>
+
+
+<section id="party-dashboard" class="dashboard-container">
+<h2><span aria-hidden="true">🗳️</span> Rendimiento y efectividad de partidos</h2>
+<p>Análisis integral de los partidos políticos suecos usando más de 50 años de datos de la plataforma CIA. Siga tendencias de efectividad, dinámicas de coalición e indicadores de impulso en 8 partidos.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card">
+<h3>Tendencias de efectividad (1990-2026)</h3>
+<p>Puntuaciones históricas de efectividad partidaria que muestran productividad legislativa, consistencia de voto e impacto político a lo largo del tiempo.</p>
+<canvas id="partyEffectivenessChart" role="img" aria-label="Gráfico de líneas de efectividad de partidos con tendencias de 1990 a 2026 para los 8 partidos políticos suecos"></canvas>
+<span class="sr-only">Gráfico de líneas que muestra puntuaciones de efectividad para socialdemócratas, moderados, demócratas de Suecia, partido de centro, partido de izquierda, demócrata cristianos, liberales y partido verde de 1990 a 2026.</span>
+</div>
+
+<div class="chart-card">
+<h3>Comparación de partidos (periodo actual)</h3>
+<p>Análisis comparativo de métricas de rendimiento de partidos para el periodo legislativo actual.</p>
+<canvas id="partyComparisonChart" role="img" aria-label="Gráfico de barras que compara puntuaciones actuales de rendimiento de los 8 partidos políticos suecos"></canvas>
+<span class="sr-only">Gráfico de barras horizontal que muestra puntuaciones comparativas de rendimiento para todos los partidos del periodo legislativo actual, ordenadas por puntuación.</span>
+</div>
+
+<div class="chart-card">
+<h3>Alineación de coaliciones</h3>
+<p>Patrones de coalición y redes de colaboración entre partidos.</p>
+<div id="coalitionAlignmentChart" role="region" aria-label="Visualización de alineación de coaliciones que muestra la fuerza de colaboración entre partidos políticos"></div>
+<span class="sr-only">Representación visual de patrones de coalición con porcentajes de fuerza de colaboración entre distintas combinaciones de partidos.</span>
+</div>
+
+<div class="chart-card">
+<h3>Indicadores de impulso</h3>
+<p>Puntuaciones de impulso partidario con referencias percentilares (P50, P90) que indican la trayectoria electoral.</p>
+<canvas id="partyMomentumChart" role="img" aria-label="Gráfico de dona que muestra puntuaciones de impulso para los 8 partidos políticos suecos"></canvas>
+<span class="sr-only">Gráfico de dona que muestra puntuaciones de indicadores de impulso para cada partido con referencias percentilares.</span>
+</div>
+</div>
+</section>
+
+<section id="committee-dashboard" class="dashboard-container">
+<h2>🏛️ Rendimiento de comisiones y analítica de redes</h2>
+
+<div class="dashboard-grid">
+<!-- Network Diagram (Full Width) -->
+<div class="chart-card wide">
+<h3>Diagrama de red de comisiones</h3>
+<p>Visualización interactiva de relaciones y productividad de comisiones. Arrastre nodos para explorar conexiones.</p>
+<div id="committeeNetwork" role="img" aria-label="Diagrama de conexiones de red de comisiones que muestra relaciones entre 15 comisiones del Riksdag sueco"></div>
+<table class="sr-only" id="committeeNetworkTable" aria-label="Tabla de datos de conexiones de red de comisiones">
+<!-- Accessible fallback table populated by JavaScript -->
+</table>
+</div>
+
+<!-- Productivity Heat Map (Full Width) -->
+<div class="chart-card wide">
+<h3>Matriz de productividad (2020-2026)</h3>
+<p>Mapa de calor que muestra puntuaciones de productividad de comisiones en el tiempo. Pase el cursor sobre las celdas para información detallada.</p>
+<div id="productivityMatrix" role="img" aria-label="Matriz de productividad de comisiones que muestra rendimiento entre 2020 y 2026"></div>
+<table class="sr-only" id="productivityMatrixTable" aria-label="Tabla de datos de matriz de productividad de comisiones">
+<!-- Accessible fallback table populated by JavaScript -->
+</table>
+</div>
+
+<!-- Committee Comparison -->
+<div class="chart-card">
+<h3>Comparación de comisiones</h3>
+<p>Compare puntuaciones de productividad entre las 15 comisiones.</p>
+<canvas id="committeeComparisonChart" role="img" aria-label="Gráfico de barras que compara puntuaciones de productividad entre comisiones"></canvas>
+</div>
+
+<!-- Decision Effectiveness -->
+<div class="chart-card">
+<h3>Efectividad de decisiones</h3>
+<p>Seguimiento de resultados de decisiones (aprobadas, rechazadas, pendientes) a lo largo del tiempo.</p>
+<canvas id="decisionEffectivenessChart" role="img" aria-label="Gráfico de barras apiladas que muestra efectividad de decisiones por años"></canvas>
+</div>
+
+<!-- Seasonal Patterns (Full Width) -->
+<div class="chart-card wide">
+<h3>Patrones estacionales de actividad</h3>
+<p>Tendencias trimestrales de actividad que muestran cómo varía el trabajo de comisiones durante el año.</p>
+<canvas id="seasonalPatternsChart" role="img" aria-label="Gráfico de líneas que muestra patrones estacionales de actividad por trimestre"></canvas>
+</div>
+</div>
+
+<div class="dashboard-attribution">
+<p><small>📊 Datos proporcionados por la <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">plataforma CIA</a> | Actualizado: <span id="committeeLastUpdated">Cargando...</span></small></p>
+</div>
+</section>
+
+<section id="coalition-dashboard" class="dashboard-container">
+<h2>🤝 Análisis de coaliciones y patrones de votación</h2>
+<p>Análisis interactivo de dinámicas de coalición, alineaciones partidarias y patrones de comportamiento de voto en el Riksdag sueco.</p>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>Red de coaliciones (interactiva)</h3>
+<p>Grafo dirigido por fuerzas que muestra la fortaleza de coalición entre partidos políticos suecos. Arrastre nodos, haga zoom y pulse para más detalles.</p>
+<div id="coalitionNetwork" role="img" aria-label="Diagrama de red de coaliciones que muestra relaciones entre 8 partidos políticos suecos"></div>
+<table class="sr-only" id="coalitionNetworkTable">
+<!-- Accessible table fallback populated by JavaScript -->
+</table>
+</div>
+
+<div class="chart-card">
+<h3>Anomalías de votación (últimos 5 años)</h3>
+<p>Gráfico de dispersión que resalta patrones de votación inusuales y deserciones partidarias respecto al comportamiento esperado.</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="Gráfico de dispersión de anomalías de votación que muestra puntuaciones de desviación para todos los partidos"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Mapa de calor de alineación partidaria</h3>
+<p>Visualización matricial que muestra niveles de acuerdo de voto entre partidos según registros históricos.</p>
+<div id="alignmentHeatMap" role="img" aria-label="Mapa de calor de alineación partidaria que muestra porcentajes de acuerdo de voto entre todos los pares de partidos"></div>
+</div>
+
+<div class="chart-card">
+<h3>Patrones de comportamiento</h3>
+<p>Puntuaciones de consistencia de voto partidario que miden la adhesión a la línea del partido en todas las votaciones.</p>
+<canvas id="behavioralPatternsChart" role="img" aria-label="Gráfico de barras de patrones de comportamiento que muestra porcentajes de consistencia de voto para todos los partidos"></canvas>
+</div>
+
+<div class="chart-card wide">
+<h3>Tendencias de decisiones (1990-2026)</h3>
+<p>Línea temporal histórica que muestra tendencias anuales de actividad de votación para todos los partidos durante 36 años.</p>
+<canvas id="decisionTrendsChart" role="img" aria-label="Línea temporal de tendencias de decisiones que muestra volúmenes anuales de votación de 1990 a 2026"></canvas>
+</div>
+</div>
+
+<p class="note dashboard-attribution">
+<strong>Atribución de datos:</strong> Visualizaciones impulsadas por exportaciones de inteligencia de la plataforma CIA. Los datos se actualizan semanalmente desde APIs abiertas del parlamento sueco.
+</p>
+</section>
+
+<section id="seasonal-patterns-dashboard">
+<h2>📅 Patrones estacionales de actividad (2002-2025)</h2>
+<p class="subtitle">Análisis trimestral con detección de anomalías por Z-Score</p>
+
+<!-- Filters -->
+<div class="dashboard-filters">
+<select id="seasonal-year-filter" aria-label="Filtrar por año">
+<option value="all">Todos los años</option>
+</select>
+
+<select id="seasonal-quarter-filter" aria-label="Filtrar por trimestre">
+<option value="all">Todos los trimestres</option>
+<option value="1">T1 - Sesión de invierno</option>
+<option value="2">T2 - Sesión de primavera</option>
+<option value="3">T3 - Receso de verano</option>
+<option value="4">T4 - Sesión de otoño</option>
+</select>
+
+<select id="seasonal-election-filter" aria-label="Filtrar por estado electoral">
+<option value="all">Todos</option>
+<option value="election">Años electorales</option>
+<option value="non-election">Años no electorales</option>
+</select>
+
+<select id="classification-filter" aria-label="Filtrar por clasificación de actividad">
+<option value="all">Todas las clasificaciones</option>
+</select>
+</div>
+
+<!-- Visualizations -->
+<div class="dashboard-grid">
+<!-- Chart 1: Quarterly Activity Heat Map -->
+<div class="chart-card wide">
+<h3>Mapa de calor de actividad trimestral (2002-2025)</h3>
+<div id="seasonal-heatmap"></div>
+<p class="chart-description">Volumen de votaciones por año y trimestre con superposición de Z-Score. Los círculos rojos indican anomalías estadísticas (|Z| ≥ 2.0).</p>
+</div>
+
+<!-- Chart 2: Z-Score Anomaly Timeline -->
+<div class="chart-card">
+<h3>Detección de anomalías por Z-Score</h3>
+<canvas id="zscore-timeline-chart" role="img" aria-label="Gráfico de líneas que muestra la línea temporal de Z-Score para métricas de votaciones, documentos y asistencia"></canvas>
+<p class="chart-description">Los valores atípicos estadísticos (|Z| ≥ 2.0) se marcan en rojo según los umbrales de anomalía.</p>
+</div>
+
+<!-- Chart 3: Cross-Year Quarter Comparison -->
+<div class="chart-card">
+<h3>Actividad media por trimestre (todos los años)</h3>
+<canvas id="quarter-comparison-chart" role="img" aria-label="Gráfico de barras que muestra votaciones medias por trimestre en todos los años"></canvas>
+<p class="chart-description">Líneas base T1–T4 en todos los años. Muestra patrones típicos de actividad por estación.</p>
+</div>
+
+<!-- Chart 4: Activity Classification Distribution -->
+<div class="chart-card wide">
+<h3>Clasificación de patrones estacionales</h3>
+<canvas id="classification-chart" role="img" aria-label="Gráfico de barras apiladas que muestra distribución de clasificaciones de actividad por año"></canvas>
+<p class="chart-description">Distribución de patrones NORMAL, ELEVADO, REDUCIDO y ANOMALÍA a lo largo de los años.</p>
+</div>
+
+<!-- Chart 5: QoQ Change Waterfall -->
+<div class="chart-card">
+<h3>Cambios trimestre a trimestre</h3>
+<canvas id="qoq-change-chart" role="img" aria-label="Gráfico de barras que muestra cambios de votaciones trimestre a trimestre en porcentaje"></canvas>
+<p class="chart-description">Cambios secuenciales de votación (% y absoluto). Verde indica aumento, rojo indica descenso.</p>
+</div>
+</div>
+
+<p class="data-attribution">📊 Datos de la plataforma CIA | Actualizado diariamente</p>
+</section>
+
+<section id="pre-election-dashboard" class="dashboard-section">
+<h2><span aria-hidden="true">🗳️</span> Panel de monitoreo preelectoral (T4 2023-2025)</h2>
+<p class="dashboard-intro">Siga la actividad parlamentaria del T4 en los 12-15 meses críticos antes de las elecciones de 2026. Compare la actividad actual con líneas base históricas y patrones de años electorales.</p>
+
+<!-- Real-Time Status Cards -->
+<div class="status-cards">
+<div class="status-card" data-metric="ballots">
+<h3><span aria-hidden="true">📊</span> Actividad de votación</h3>
+<p class="current-value">16,750</p>
+<p class="baseline-comparison">+4.34% vs línea base</p>
+<span class="status-badge normal">NORMAL</span>
+</div>
+
+<div class="status-card" data-metric="documents">
+<h3><span aria-hidden="true">📄</span> Producción de documentos</h3>
+<p class="current-value">3,451</p>
+<p class="baseline-comparison">+25.55% vs línea base</p>
+<span class="status-badge normal">NORMAL</span>
+</div>
+
+<div class="status-card" data-metric="attendance">
+<h3><span aria-hidden="true">✅</span> Tasa de asistencia</h3>
+<p class="current-value">85.75%</p>
+<p class="baseline-comparison">+0.75% vs línea base</p>
+<span class="status-badge normal">ESTABLE</span>
+</div>
+
+<div class="status-card" data-metric="party-performance">
+<h3><span aria-hidden="true">🎯</span> Tasa de éxito partidaria</h3>
+<p class="current-value">59.72%</p>
+<p class="baseline-comparison">+3.55% YoY</p>
+<span class="status-badge improving">MEJORANDO</span>
+</div>
+</div>
+
+<!-- Visualizations -->
+<div class="dashboard-grid">
+<!-- Chart 1: Q4 Activity Timeline (2023-2025) -->
+<div class="chart-card wide">
+<h3>Línea temporal de actividad T4 (2023-2025)</h3>
+<div class="chart-container">
+<canvas id="q4-timeline-chart" aria-label="Línea temporal de actividad T4 que muestra tendencias de votaciones, documentos y asistencia de 2023 a 2025"></canvas>
+</div>
+<p class="chart-description">Tendencias de votaciones, documentos y asistencia con superposición de línea base</p>
+</div>
+
+<!-- Chart 2: Election Year Comparison -->
+<div class="chart-card">
+<h3>Patrones T4 en años electorales vs no electorales</h3>
+<div class="chart-container">
+<canvas id="election-comparison-chart" aria-label="Comparación de actividad de votación T4 en años electorales y no electorales de 2002 a 2025"></canvas>
+</div>
+<p class="chart-description">Actividad histórica de T4 (2002-2025): años electorales vs no electorales</p>
+</div>
+
+<!-- Chart 3: Baseline Deviation Radar -->
+<div class="chart-card">
+<h3>Desviación respecto a la línea base (T4 2025)</h3>
+<div class="chart-container">
+<canvas id="deviation-radar-chart" aria-label="Gráfico radial que muestra métricas de T4 2025 comparadas con líneas base históricas"></canvas>
+</div>
+<p class="chart-description">Multi-metric deviation analysis</p>
+</div>
+
+<!-- Chart 4: Party Performance Shifts -->
+<div class="chart-card wide">
+<h3>Tendencias de rendimiento de partidos (2023-2025)</h3>
+<div class="chart-container">
+<canvas id="party-trends-chart" aria-label="Gráfico de líneas que muestra tasa de éxito partidaria, tasa de ausencia y producción de documentos de 2023 a 2025"></canvas>
+</div>
+<p class="chart-description">Win rate, absence rate, document production by year</p>
+</div>
+
+<!-- Chart 5: YoY Change Waterfall -->
+<div class="chart-card">
+<h3>Cambios interanuales</h3>
+<div class="chart-container">
+<canvas id="yoy-waterfall-chart" aria-label="Gráfico de cascada que muestra cambios interanuales de actividad de votación de 2023 a 2025"></canvas>
+</div>
+<p class="chart-description">Ballot activity changes: 2023 → 2024 → 2025</p>
+</div>
+
+<!-- Chart 6: Early Warning Indicators -->
+<div class="chart-card">
+<h3>Matriz de indicadores de alerta temprana</h3>
+<div id="warning-matrix" role="region" aria-label="Matriz de indicadores de alerta temprana que muestra el estado de 4 métricas monitorizadas: votaciones, documentos, asistencia y cambio interanual"></div>
+<p class="chart-description">Estado en tiempo real de 4 métricas monitorizadas (votaciones, documentos, asistencia, cambio interanual)</p>
+</div>
+</div>
+
+<p class="data-attribution">📊 Datos de la plataforma CIA | Actualizado diariamente</p>
+</section>
+
+<section id="anomaly-detection-dashboard">
+<h2>🚨 Detección de anomalías y sistema de alerta temprana</h2>
+<p>Identificación de valores atípicos estadísticos en la actividad del parlamento sueco (2002-2026) usando análisis Z-Score</p>
+
+<!-- Alert Banner (for active anomalies) -->
+<div id="anomaly-alert-banner" class="alert-banner critical hidden">
+<span class="alert-icon">🔴</span>
+<p><strong id="alert-prefix">ANOMALÍA CRÍTICA DETECTADA:</strong> <span id="alert-message"></span></p>
+<button class="dismiss-alert">Cerrar</button>
+</div>
+
+<!-- Filters -->
+<div class="dashboard-filters">
+<select id="anomaly-severity-filter" aria-label="Filtrar por severidad">
+<option value="all">Todas las severidades</option>
+<option value="CRITICAL">🔴 Crítica</option>
+<option value="HIGH">🟠 Alta</option>
+<option value="MODERATE">🟡 Moderada</option>
+<option value="LOW">🟢 Baja</option>
+</select>
+<select id="anomaly-type-filter" aria-label="Filtrar por tipo de anomalía">
+<option value="all">Todos los tipos</option>
+<option value="BALLOT_ANOMALY">Anomalía de votación</option>
+<option value="DOCUMENT_ANOMALY">Anomalía de documentos</option>
+<option value="ATTENDANCE_ANOMALY">Anomalía de asistencia</option>
+<option value="NO_ANOMALY">Sin anomalía</option>
+</select>
+<select id="anomaly-direction-filter" aria-label="Filtrar por dirección">
+<option value="all">Todas las direcciones</option>
+<option value="UNUSUALLY_HIGH">Inusualmente alta</option>
+<option value="UNUSUALLY_LOW">Inusualmente baja</option>
+<option value="WITHIN_NORMAL_RANGE">Dentro del rango normal</option>
+</select>
+<select id="anomaly-year-filter" aria-label="Filtrar por año">
+<option value="all">Todos los años</option>
+</select>
+</div>
+
+<!-- Visualizations -->
+<div class="dashboard-grid">
+<!-- Chart 1: Anomaly Timeline -->
+<div class="chart-card wide">
+<h3>Línea temporal de anomalías (2002-2026)</h3>
+<canvas id="anomaly-timeline-chart" role="img" aria-label="Gráfico de dispersión que muestra anomalías en el tiempo"></canvas>
+<p class="chart-description">Chronological view of detected anomalies with severity coding</p>
+</div>
+
+<!-- Chart 2: Z-Score Distribution -->
+<div class="chart-card">
+<h3>Distribución de Z-Score</h3>
+<canvas id="zscore-distribution-chart" role="img" aria-label="Histograma de distribución de Z-Score"></canvas>
+<p class="chart-description">Normal curve with outlier markers (|Z| ≥ 2.0)</p>
+</div>
+
+<!-- Chart 3: Anomaly Type Breakdown -->
+<div class="chart-card">
+<h3>Distribución de tipos de anomalía</h3>
+<canvas id="anomaly-type-chart" role="img" aria-label="Gráfico de dona que muestra tipos de anomalía"></canvas>
+<p class="chart-description">Ballot vs. Document anomaly distribution</p>
+</div>
+
+<!-- Chart 4: Severity Heat Map -->
+<div class="chart-card wide">
+<h3>Mapa de calor de severidad (año × trimestre)</h3>
+<div id="severity-heatmap" role="img" aria-label="Mapa de calor que muestra severidad por año y trimestre"></div>
+<p class="chart-description">Grid showing anomaly severity by year and quarter</p>
+</div>
+
+<!-- Chart 5: Quarterly Anomaly Frequency -->
+<div class="chart-card">
+<h3>Frecuencia de anomalías por trimestre</h3>
+<canvas id="quarterly-frequency-chart" role="img" aria-label="Gráfico de barras que muestra frecuencia de anomalías por trimestre"></canvas>
+<p class="chart-description">Conteo de anomalías T1-T4 en todos los años</p>
+</div>
+
+<!-- Chart 6: Recent Anomalies Feed -->
+<div class="chart-card">
+<h3>Anomalías recientes (últimas 5)</h3>
+<div id="recent-anomalies-feed" role="feed" aria-label="Feed de anomalías recientes"></div>
+<p class="chart-description">Anomalías más recientes con detalles</p>
+</div>
+</div>
+</section>
+
+<section id="ministry-dashboard" class="dashboard-container">
+<h2>🎖️ Riesgo e influencia de ministros del gobierno</h2>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>Mapa de calor de riesgo ministerial</h3>
+<div id="ministryRiskHeatMap" role="img" aria-label="Mapa de calor de riesgo ministerial que muestra niveles de riesgo en departamentos del gobierno"></div>
+</div>
+
+<div class="chart-card">
+<h3>Top 10 ministros más influyentes</h3>
+<canvas id="ministerInfluenceChart" role="img" aria-label="Gráfico de barras que muestra los 10 ministros más influyentes"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Matriz de productividad ministerial</h3>
+<canvas id="ministryProductivityChart" role="img" aria-label="Gráfico de barras que compara productividad ministerial entre trimestres"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>Tendencias de impacto de decisiones</h3>
+<canvas id="decisionImpactChart" role="img" aria-label="Gráfico de líneas que muestra tendencias de impacto de decisiones en el tiempo"></canvas>
+</div>
+</div>
+
+<!-- Alternative data table for screen readers -->
+<details class="sr-only-alternative">
+<summary>Ver datos como tabla accesible</summary>
+<table id="ministryDataTable">
+<!-- Populated by JavaScript -->
+</table>
+</details>
+</section>
+
+<section id="risk-dashboard" class="dashboard-container">
+<h2><span aria-hidden="true">⚠️</span> Evaluación de riesgo y detección de anomalías</h2>
+<p class="dashboard-description">Análisis integral de inteligencia usando 45 reglas de riesgo sobre 349 diputados con detección estadística de anomalías (umbrales P90/P99). El análisis histórico incluye 2494 políticos (1971-2024).</p>
+
+<div class="alert-banner" id="earlyWarnings" role="alert" aria-live="polite" aria-atomic="true">
+  <!-- Alerts populated by JavaScript -->
+</div>
+
+<div class="dashboard-grid">
+  <div class="chart-card full-width">
+    <h3>Mapa de calor de nivel de riesgo (45 reglas × 349 diputados)</h3>
+    <p class="chart-description">Mapa de calor interactivo que muestra puntuaciones de riesgo para cada diputado en las 45 reglas de transparencia. Pulse celdas para detalles.</p>
+    <div class="controls">
+      <label class="control-label">
+        <input type="checkbox" id="filterHighRisk" aria-label="Mostrar solo diputados de alto riesgo (puntuación ≥6.0)" aria-describedby="filterHighRiskDesc">
+        <span id="filterHighRiskDesc">Mostrar solo alto riesgo (≥6.0)</span>
+      </label>
+      <label class="control-label">
+        <span>Filtrar por regla:</span>
+        <select id="riskRuleFilter" aria-label="Filtrar por regla de riesgo">
+          <option value="">Todas las reglas</option>
+        </select>
+      </label>
+      <button id="resetZoom" class="btn btn-sm" aria-label="Restablecer zoom">Restablecer zoom</button>
+    </div>
+    <div id="riskHeatMap" role="img" aria-label="Mapa de calor de evaluación de riesgo que muestra 45 reglas por 349 diputados"></div>
+    <div id="heatMapLegend" class="legend" role="img" aria-label="Leyenda de colores del mapa de calor"></div>
+  </div>
+  
+  <div class="chart-card">
+    <h3>Distribución de riesgo</h3>
+    <p class="chart-description">Distribución de puntuaciones de riesgo en todos los diputados</p>
+    <canvas id="riskDistributionChart" role="img" aria-label="Gráfico de barras que muestra distribución de puntuaciones de riesgo"></canvas>
+  </div>
+  
+  <div class="chart-card">
+    <h3>Detección de anomalías (P90/P99)</h3>
+    <p class="chart-description">Anomalías de votación con umbrales estadísticos en los percentiles 90 y 99</p>
+    <canvas id="anomalyDetectionChart" role="img" aria-label="Gráfico de dispersión que muestra anomalías de votación"></canvas>
+  </div>
+  
+  <div class="chart-card">
+    <h3>Indicadores de resiliencia ante crisis</h3>
+    <p class="chart-description">Puntuaciones de resiliencia por partido y métricas de estabilidad gubernamental</p>
+    <canvas id="crisisResilienceChart" role="img" aria-label="Gráfico radar que muestra indicadores de resiliencia ante crisis"></canvas>
+  </div>
+  
+  <div class="chart-card">
+    <h3>Línea temporal de evolución del riesgo (2020-2026)</h3>
+    <p class="chart-description">Tendencias históricas de categorías de riesgo a lo largo del tiempo</p>
+    <canvas id="riskEvolutionChart" role="img" aria-label="Gráfico de líneas que muestra evolución del riesgo en el tiempo"></canvas>
+  </div>
+  
+  <div class="chart-card">
+    <h3>Top 10 preocupaciones éticas</h3>
+    <p class="chart-description">Diputados con mayores puntuaciones de riesgo ético</p>
+    <ol id="ethicsConcernsList" aria-label="Lista de las 10 principales preocupaciones éticas">
+      <!-- Populated by JavaScript -->
+    </ol>
+  </div>
+  
+  <div class="chart-card">
+    <h3>Riesgo electoral (diputados en riesgo)</h3>
+    <p class="chart-description">Diputados con mayor vulnerabilidad electoral para las elecciones de 2026</p>
+    <ol id="electoralRiskList" aria-label="Top 10 diputados en riesgo electoral">
+      <!-- Populated by JavaScript -->
+    </ol>
+  </div>
+</div>
+
+<div class="data-attribution">
+  <p><strong>Fuente de datos:</strong> <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">Citizen Intelligence Agency</a> | <strong>Última actualización:</strong> <span id="lastUpdated">Cargando...</span></p>
+  <p class="methodology-note"><em>Las puntuaciones de riesgo se calculan usando 45 reglas de transparencia en 4 dominios (político, partido, comisión, ministerio). La detección de anomalías utiliza umbrales estadísticos P90 (advertencia) y P99 (crítico).</em></p>
+</div>
+</section>
+
+  <section id="intelligence-capabilities">
+<h2>Plataforma integral de inteligencia</h2>
+<p>La CIA proporciona transparencia política sistemática mediante 45 reglas de riesgo en 4 dominios y 5 marcos analíticos.</p>
+
+<div class="cards">
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>🔍 Monitoreo en tiempo real</h3>
+<ul>
+<li>349 diputados rastreados automáticamente (<span data-stat-id="stat-historical-persons">2,494</span> históricos)</li>
+<li><span data-stat-id="stat-total-votes">—</span> registros de votación individuales analizados</li>
+<li><span data-stat-id="stat-total-documents">500K+</span> documentos procesados</li>
+<li><span data-stat-id="stat-member-proposals">—</span> propuestas de diputados rastreadas</li>
+<li><span data-stat-id="stat-government-proposals">10K+</span> propuestas del gobierno monitorizadas</li>
+<li>Trabajo de comisiones cuantificado (<span data-stat-id="stat-committee-documents">—</span> documentos)</li>
+</ul>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>📊 Predicción de coaliciones</h3>
+<ul>
+<li>4 escenarios electorales modelados</li>
+<li>Historical pattern analysis (1971-2024)</li>
+<li>Seguimiento de disciplina partidaria</li>
+<li>Estimación de probabilidad de deserción</li>
+<li>Simulación de formación de gobierno</li>
+</ul>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>✅ Infraestructura de verificación de hechos</h3>
+<ul>
+<li>Declaraciones de políticos vs registros de votación</li>
+<li>Análisis de consistencia de programas de partido</li>
+<li>Seguimiento de promesas de campaña</li>
+<li>Verificación de debates en tiempo real</li>
+<li>Métricas históricas de rendición de cuentas</li>
+</ul>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>⚠️ Evaluación de riesgo</h3>
+<ul>
+<li>45 reglas de riesgo conductual activas</li>
+<li>MINOR/MAJOR/CRITICAL severity levels</li>
+<li>Sistema automatizado de alertas</li>
+<li>Análisis de tendencias para contexto</li>
+<li>Metodología transparente</li>
+</ul>
+</div>
+</div>
+
+<div class="risk-rules-breakdown">
+<h3>45 reglas de riesgo en 4 dominios</h3>
+<ul>
+<li><strong>Nivel político (20 reglas):</strong> Asistencia, consistencia de voto, conflictos de rol, productividad</li>
+<li><strong>Nivel partidario (12 reglas):</strong> Disciplina de coalición, deriva ideológica, conflictos internos</li>
+<li><strong>Nivel de comisión (8 reglas):</strong> Productividad legislativa, bloqueo partidista, testimonio experto</li>
+<li><strong>Nivel ministerial (5 reglas):</strong> Sobrecostes presupuestarios, fallos de política, fallos de rendición de cuentas</li>
+</ul>
+
+<h3>5 marcos analíticos</h3>
+<ul>
+<li><strong>Análisis temporal:</strong> Detección de tendencias en periodos de tiempo</li>
+<li><strong>Análisis comparativo:</strong> Benchmarking entre partidos/diputados</li>
+<li><strong>Reconocimiento de patrones:</strong> Detección de anomalías de comportamiento</li>
+<li><strong>Inteligencia predictiva:</strong> Pronóstico de resultados electorales, modelado de coaliciones</li>
+<li><strong>Análisis de redes:</strong> Mapeo de influencia, patrones de colaboración</li>
+</ul>
+</div>
+</section>
+
+<section id="data-sources">
+<h2><span aria-hidden="true">📊</span> Productos de datos de Citizen Intelligence Agency</h2>
+<p>Riksdagsmonitor funciona con la <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">Citizen Intelligence Agency (CIA)</a> — una plataforma OSINT de código abierto que transforma datos parlamentarios suecos en productos de inteligencia accionables.</p>
+
+<div class="cards">
+<div class="card">
+<div class="scanner-effect"></div>
+<h3><span aria-hidden="true">📈</span> Informes de evaluación de riesgo</h3>
+<p>45 reglas de riesgo en 4 dominios analizan comportamiento político, disciplina partidaria, efectividad de comisiones y rendición de cuentas ministerial en tiempo real.</p>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3><span aria-hidden="true">📅</span> Análisis de actividad estacional</h3>
+<p>La detección de anomalías por Z-Score identifica patrones inusuales de actividad parlamentaria por trimestre, con líneas base históricas desde 2002 hasta hoy.</p>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3><span aria-hidden="true">🎯</span> Inteligencia de ciclo electoral</h3>
+<p>Seguimiento del rendimiento en más de 9 ciclos electorales (1994–2034) con pronóstico predictivo de riesgo, análisis de niveles de partido y modelado de probabilidad de coaliciones.</p>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3><span aria-hidden="true">🔗</span> Integración de datos abiertos</h3>
+<p>Todos los productos de inteligencia se derivan de fuentes oficiales de datos abiertos. Las visualizaciones se actualizan automáticamente mediante canalizaciones nocturnas con caché de 24 horas.</p>
+</div>
+</div>
+
+<p class="note">Todos los productos de datos están disponibles a través de la plataforma Citizen Intelligence Agency con actualizaciones en tiempo real desde APIs abiertas del parlamento sueco.</p>
+</section>
+
+  
+<section id="data-integration">
+<h2><span aria-hidden="true">🔗</span> Fuentes de datos e integración</h2>
+<p>Riksdagsmonitor integra múltiples fuentes de datos suecas e internacionales de referencia:</p>
+
+<div class="cards">
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>Parlamento sueco (Riksdagen)</h3>
+<p>Datos parlamentarios oficiales, incluyendo votaciones, documentos, trabajo de comisiones e información de diputados.</p>
+<a href="https://data.riksdagen.se/" target="_blank" rel="noopener noreferrer">data.riksdagen.se</a>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>Autoridad Electoral Sueca</h3>
+<p>Resultados electorales históricos, participación y estadísticas electorales para todas las elecciones nacionales.</p>
+<a href="https://www.val.se/" target="_blank" rel="noopener noreferrer">val.se</a>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>Autoridad de Gestión Financiera (ESV)</h3>
+<p>Datos de presupuesto gubernamental, análisis de gasto público e informes de rendición de cuentas financiera.</p>
+<a href="https://www.esv.se/psidata/" target="_blank" rel="noopener noreferrer">esv.se/psidata</a>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>Datos abiertos del Banco Mundial</h3>
+<p>Indicadores económicos y de desarrollo a nivel país para análisis comparativo internacional.</p>
+<a href="https://data.worldbank.org/" target="_blank" rel="noopener noreferrer">data.worldbank.org</a>
+</div>
+</div>
+</section>
+<section class="ai-newsroom-section" aria-labelledby="ai-newsroom-heading">
+<div class="container">
+<h2 id="ai-newsroom-heading"><span aria-hidden="true">🤖</span> Redacción de noticias impulsada por IA</h2>
+<p>La cadena agente de generación de noticias de Riksdagsmonitor es la primera redacción de inteligencia política del mundo totalmente impulsada por IA para el monitoreo parlamentario. Impulsada por Claude Opus a través de GitHub Copilot Coding Agent, nuestras 10 canalizaciones especializadas (9 programadas y 1 bajo demanda) producen de forma autónoma análisis políticos profundos — no simples resúmenes, sino productos de inteligencia estructurados con verificación de fuentes, equilibrio multipartidista y una metodología OSINT compatible con el RGPD.</p>
+</div>
+</section>
+</main>
+
+<footer role="contentinfo" class="site-footer" data-rm-static-footer="true">
+  <div class="footer-content">
+    <div class="footer-section">
+      <a href="index_es.html" aria-label="Riksdagsmonitor Inicio">
+        <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="footer-logo" width="80" height="80" loading="lazy">
+      </a>
+      <h3><span aria-hidden="true">📖</span> Acerca de Riksdagsmonitor</h3>
+      <p>Plataforma de inteligencia en vivo para monitorizar el Parlamento sueco con capacidades OSINT del CIA. Mejoras continuas — informe de cualquier problema en GitHub.</p>
+      <p>Consultora sueca de ciberseguridad especializada en transparencia política e inteligencia de código abierto.</p>
+      <ul class="footer-stats">
+        <li><strong>349 parlamentarios</strong> rastreados</li>
+        <li><strong>45 reglas de riesgo</strong> activas</li>
+        <li><strong>14 idiomas</strong> admitidos</li>
+        <li><strong>50+ años</strong> datos históricos</li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3><span aria-hidden="true">🔗</span> Enlaces rápidos</h3>
+      <ul>
+        <li><a href="index_es.html">Inicio</a></li>
+        <li><a href="news/index_es.html">Noticias</a></li>
+        <li><a href="dashboard/index_es.html">Panel</a></li>
+        <li><a href="politician-dashboard_es.html"><span aria-hidden="true">👤</span> Políticos</a></li>
+        <li><a href="political-intelligence_es.html"><span aria-hidden="true">🧠</span> Inteligencia política</a></li>
+        <li><a href="sitemap_es.html"><span aria-hidden="true">🗺️</span> Mapa del sitio</a></li>
+        <li><a href="https://riksdagsmonitor.com/docs/api/index.html"><span aria-hidden="true">📚</span> Documentación de API (TypeDoc)</a></li>
+        <li><a href="https://github.com/Hack23/cia" target="_blank" rel="noopener noreferrer">Plataforma CIA</a></li>
+        <li><a href="https://github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer">Repositorio de GitHub</a></li>
+        <li><a href="https://www.riksdagen.se" target="_blank" rel="noopener noreferrer">Parlamento de Suecia</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3><span aria-hidden="true">🏢</span> Construido por Hack23 AB</h3>
+      <p>Consultora sueca de ciberseguridad especializada en transparencia política e inteligencia de código abierto.</p>
+      <ul>
+        <li><a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23.com</a></li>
+        <li><a href="https://www.hack23.com/riksdagsmonitor.html" target="_blank" rel="noopener noreferrer">Hack23 · Riksdagsmonitor</a></li>
+        <li><a href="https://www.hack23.com/riksdagsmonitor-features.html" target="_blank" rel="noopener noreferrer">Hack23 · Funcionalidades</a></li>
+        <li><a href="https://github.com/sponsors/Hack23" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">💖</span> Patrocinar Hack23</a></li>
+        <li><a href="https://www.linkedin.com/company/hack23/" target="_blank" rel="noopener noreferrer">Empresa en LinkedIn</a></li>
+        <li><a href="https://github.com/Hack23" target="_blank" rel="noopener noreferrer">Organización de GitHub de Hack23</a></li>
+        <li><a href="mailto:info@hack23.com">Contáctanos</a></li>
+        <li><a href="https://github.com/Hack23/riksdagsmonitor/issues/new/choose" target="_blank" rel="noopener noreferrer">Reportar un issue de GitHub</a></li>
+      </ul>
+    </div>
+    <div class="footer-section rm-footer-isms">
+      <h3><span aria-hidden="true">🛡️</span> Hack23 ISMS</h3>
+      <p>ISMS público alineado con ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1, EU CRA &amp; NIS2.</p>
+      <ul>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC" target="_blank" rel="noopener noreferrer">Repositorio público ISMS</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md" target="_blank" rel="noopener noreferrer">Política de seguridad de la información</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Privacy_Policy.md" target="_blank" rel="noopener noreferrer">Política de privacidad</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md" target="_blank" rel="noopener noreferrer">Política de desarrollo seguro</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md" target="_blank" rel="noopener noreferrer">Política de IA</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md" target="_blank" rel="noopener noreferrer">Modelado de amenazas</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md" target="_blank" rel="noopener noreferrer">Gestión de vulnerabilidades</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md" target="_blank" rel="noopener noreferrer">Plan de respuesta a incidentes</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Access_Control_Policy.md" target="_blank" rel="noopener noreferrer">Política de control de acceso</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Cryptography_Policy.md" target="_blank" rel="noopener noreferrer">Política de criptografía</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md" target="_blank" rel="noopener noreferrer">Política de código abierto</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management.md" target="_blank" rel="noopener noreferrer">Gestión de cambios</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md" target="_blank" rel="noopener noreferrer">Clasificación</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Security_Metrics.md" target="_blank" rel="noopener noreferrer">Métricas de seguridad</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3><span aria-hidden="true">🌍</span> Idiomas</h3>
+      <div class="language-grid">
+        <a href="index.html" lang="en" hreflang="en" title="English" aria-label="Cambiar idioma: English"><span aria-hidden="true">🇬🇧</span> EN</a>
+        <a href="index_sv.html" lang="sv" hreflang="sv" title="Svenska" aria-label="Cambiar idioma: Swedish"><span aria-hidden="true">🇸🇪</span> SV</a>
+        <a href="index_da.html" lang="da" hreflang="da" title="Dansk" aria-label="Cambiar idioma: Danish"><span aria-hidden="true">🇩🇰</span> DA</a>
+        <a href="index_no.html" lang="nb" hreflang="nb" title="Norsk" aria-label="Cambiar idioma: Norwegian"><span aria-hidden="true">🇳🇴</span> NO</a>
+        <a href="index_fi.html" lang="fi" hreflang="fi" title="Suomi" aria-label="Cambiar idioma: Finnish"><span aria-hidden="true">🇫🇮</span> FI</a>
+        <a href="index_de.html" lang="de" hreflang="de" title="Deutsch" aria-label="Cambiar idioma: German"><span aria-hidden="true">🇩🇪</span> DE</a>
+        <a href="index_fr.html" lang="fr" hreflang="fr" title="Français" aria-label="Cambiar idioma: French"><span aria-hidden="true">🇫🇷</span> FR</a>
+        <a href="index_es.html" lang="es" hreflang="es" title="Español" aria-label="Cambiar idioma: Spanish" aria-current="page" class="active"><span aria-hidden="true">🇪🇸</span> ES</a>
+        <a href="index_nl.html" lang="nl" hreflang="nl" title="Nederlands" aria-label="Cambiar idioma: Dutch"><span aria-hidden="true">🇳🇱</span> NL</a>
+        <a href="index_ar.html" lang="ar" hreflang="ar" title="العربية" aria-label="Cambiar idioma: Arabic"><span aria-hidden="true">🇸🇦</span> AR</a>
+        <a href="index_he.html" lang="he" hreflang="he" title="עברית" aria-label="Cambiar idioma: Hebrew"><span aria-hidden="true">🇮🇱</span> HE</a>
+        <a href="index_ja.html" lang="ja" hreflang="ja" title="日本語" aria-label="Cambiar idioma: Japanese"><span aria-hidden="true">🇯🇵</span> JA</a>
+        <a href="index_ko.html" lang="ko" hreflang="ko" title="한국어" aria-label="Cambiar idioma: Korean"><span aria-hidden="true">🇰🇷</span> KO</a>
+        <a href="index_zh.html" lang="zh" hreflang="zh" title="中文" aria-label="Cambiar idioma: Chinese"><span aria-hidden="true">🇨🇳</span> ZH</a>
+      </div>
+    </div>
+  </div>
+  <nav class="rm-footer-trust-badges" aria-label="Insignias abiertas de confianza, calidad y seguridad">
+    <a href="https://www.npmjs.com/package/riksdagsmonitor" target="_blank" rel="noopener noreferrer" aria-label="Riksdagsmonitor on npmjs"><img src="https://img.shields.io/npm/v/riksdagsmonitor.svg?logo=npm&label=npm" alt="Riksdagsmonitor on npmjs" width="100" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer" aria-label="OpenSSF Scorecard"><img src="https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge" alt="OpenSSF Scorecard" width="120" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://www.bestpractices.dev/projects/12069" target="_blank" rel="noopener noreferrer" aria-label="OpenSSF Best Practices"><img src="https://www.bestpractices.dev/projects/12069/badge" alt="OpenSSF Best Practices" width="124" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/riksdagsmonitor/actions/workflows/codeql.yml" target="_blank" rel="noopener noreferrer" aria-label="CodeQL workflow status"><img src="https://github.com/Hack23/riksdagsmonitor/actions/workflows/codeql.yml/badge.svg" alt="CodeQL workflow status" width="120" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml" target="_blank" rel="noopener noreferrer" aria-label="Quality checks workflow status"><img src="https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml/badge.svg" alt="Quality checks workflow status" width="160" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml" target="_blank" rel="noopener noreferrer" aria-label="Dependency review workflow status"><img src="https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml/badge.svg" alt="Dependency review workflow status" width="170" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/riksdagsmonitor/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" aria-label="Apache-2.0 License"><img src="https://img.shields.io/github/license/Hack23/riksdagsmonitor" alt="Apache-2.0 License" width="120" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/ISMS-PUBLIC" target="_blank" rel="noopener noreferrer" aria-label="Hack23 ISMS-PUBLIC"><img src="https://img.shields.io/badge/Hack23-ISMS-blue?logo=shield" alt="Hack23 ISMS-PUBLIC" width="100" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md" target="_blank" rel="noopener noreferrer" aria-label="ISO 27001:2022 alignment"><img src="https://img.shields.io/badge/ISO-27001:2022-purple" alt="ISO 27001:2022 alignment" width="110" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md" target="_blank" rel="noopener noreferrer" aria-label="NIST CSF 2.0 alignment"><img src="https://img.shields.io/badge/NIST-CSF_2.0-orange" alt="NIST CSF 2.0 alignment" width="100" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md" target="_blank" rel="noopener noreferrer" aria-label="CIS Controls v8.1 alignment"><img src="https://img.shields.io/badge/CIS-Controls_v8.1-red" alt="CIS Controls v8.1 alignment" width="120" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://riksdagsmonitor.com" target="_blank" rel="noopener noreferrer" aria-label="Riksdagsmonitor.com website status"><img src="https://img.shields.io/website?url=https%3A%2F%2Friksdagsmonitor.com" alt="Riksdagsmonitor.com website status" width="120" height="20" loading="lazy" decoding="async"></a>
+  </nav>
+  <div class="footer-bottom">
+    <p>&copy; 2008-<time datetime="2026">2026</time> <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23 AB</a> (Org.nr 5595347807) | Gothenburg, Sweden</p>
+    <p class="footer-disclaimer">⚠️ <a href="https://github.com/Hack23/riksdagsmonitor/issues/new/choose" target="_blank" rel="noopener noreferrer">Reportar un issue de GitHub</a></p>
+  </div>
+</footer>
+
+<!-- Botón volver arriba -->
+<button id="back-to-top" class="back-to-top" aria-label="Volver arriba" title="Volver arriba">
+  <span aria-hidden="true">↑</span>
+</button>
+
+    <!-- Main application entry point -->
+    <script type="module" src="/src/browser/main.ts"></script>
+    <!-- Mermaid + back-to-top + theme toggle bootstrap.
+         Imperatively assembled so Vite's HTML transformer does not try to
+         bundle / hash / re-emit the underlying modules. -->
+    <script>
+      (function () {
+        function inject(src, isModule) {
+          var s = document.createElement('script');
+          if (isModule) s.type = 'module';
+          else s.defer = true;
+          s.src = src;
+          document.head.appendChild(s);
+        }
+        inject('/js/lib/mermaid-init.mjs', true);
+        inject('/js/back-to-top.js', true);
+        inject('/js/theme-toggle.js', false);
+      })();
+    </script>
+  </body>
+</html>
