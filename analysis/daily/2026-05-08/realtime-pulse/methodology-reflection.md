@@ -57,3 +57,11 @@ This is **Pass 1** (first run). Pass 2 iterative improvement applied to all 23 a
 
 ---
 *Methodology reflection per Riksdagsmonitor quality assurance protocol · 2026-05-08*
+
+## Re-run log
+
+- **Re-run**: 2026-05-08T10:35:21Z · workflow=news-realtime-monitor · run_id=25550706648 · attempt=1
+  - new dok_ids: 0 (no new legislative documents found since 09:56Z prior run)
+  - artifacts extended: synthesis-summary.md, data-download-manifest.md, article.md (Frågestund/May 7 context added)
+  - flags closed: none (no new evidence to close PIRs)
+  - vintage refresh: IMF WEO Apr-2026 confirmed degraded (IFS SDMX 404); WEO/FM Datamapper operational
