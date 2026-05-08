@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "cycle": "realtime-pulse",
+  "subfolder": "realtime-pulse",
+  "date": "2026-05-08",
+  "generated_at": "2026-05-08T10:30:00Z",
+  "workflow": "news-realtime-monitor",
+  "pirs": [
+    {
+      "id": "PIR-RT-001",
+      "question": "Will Finance Minister Svantesson's response to HD10480 close or open the retroactive-taxation narrative?",
+      "opened": "2026-05-07",
+      "status": "open",
+      "priority": "high",
+      "linked_documents": ["HD10480"],
+      "carry_from": "2026-05-07/realtime-pulse",
+      "notes": "Partially addressed by today's interpellation filing; full answer pending ministerial response"
+    },
+    {
+      "id": "PIR-RT-002",
+      "question": "Is L (Liberalerna) polling at threshold risk for the 2026 election?",
+      "opened": "2026-05-07",
+      "status": "open",
+      "priority": "high",
+      "linked_documents": [],
+      "carry_from": "2026-05-07/realtime-pulse",
+      "notes": "Monitoring FI-10; next polling due ~2026-06-01"
+    },
+    {
+      "id": "PIR-RT-003",
+      "question": "How will Education Minister Mohamsson respond to SD's veil-ban probe (HD11802) — will it signal coalition tension?",
+      "opened": "2026-05-07",
+      "status": "open",
+      "priority": "high",
+      "linked_documents": ["HD11802"],
+      "carry_from": "2026-05-07/realtime-pulse",
+      "notes": "Question filed today; written answer due within 14 days"
+    },
+    {
+      "id": "PIR-RT-004",
+      "question": "What is the timeline and adequacy of the 10-year school implementation for teacher workforce outcomes?",
+      "opened": "2026-05-07",
+      "status": "open",
+      "priority": "medium",
+      "linked_documents": ["HD01UbU28"],
+      "carry_from": "2026-05-07/realtime-pulse",
+      "notes": "UbU28 partially addresses; Skolverket guidance expected within 90 days of enactment"
+    },
+    {
+      "id": "PIR-RT-005",
+      "question": "Will Infrastructure Minister Carlson demonstrate rural connectivity commitment in response to HD11801?",
+      "opened": "2026-05-07",
+      "status": "open",
+      "priority": "medium",
+      "linked_documents": ["HD11801"],
+      "carry_from": "2026-05-07/realtime-pulse",
+      "notes": "Written answer expected within 14 days; PTS review commitment the key test"
+    },
+    {
+      "id": "PIR-RT-006",
+      "question": "Did the government take adequate consular and diplomatic action on Israel/Swedish citizens incident (HD11803)?",
+      "opened": "2026-05-07",
+      "status": "open",
+      "priority": "high",
+      "linked_documents": ["HD11803"],
+      "carry_from": "2026-05-07/realtime-pulse",
+      "notes": "Facts of incident unclear; FM response pending"
+    },
+    {
+      "id": "PIR-RT-007",
+      "question": "What is SD's formal integration policy escalation strategy ahead of the 2026 election?",
+      "opened": "2026-05-07",
+      "status": "open",
+      "priority": "medium",
+      "linked_documents": ["HD11802"],
+      "carry_from": "2026-05-07/realtime-pulse",
+      "notes": "HD11802 is one data point in an ongoing pattern; next SD integration probe TBD"
+    },
+    {
+      "id": "PIR-RT-008",
+      "question": "What is the CU34 vote outcome and did any major party deviate from expected Ja vote?",
+      "opened": "2026-05-08",
+      "status": "open",
+      "priority": "critical",
+      "linked_documents": ["HD01CU34"],
+      "carry_from": null,
+      "notes": "New PIR opened today; vote expected 2026-05-08 chamber proceedings"
+    },
+    {
+      "id": "PIR-RT-009",
+      "question": "Will UbU28's transitional provisions for teacher credentials address or worsen the 45,000 teacher shortage?",
+      "opened": "2026-05-08",
+      "status": "open",
+      "priority": "critical",
+      "linked_documents": ["HD01UbU28"],
+      "carry_from": null,
+      "notes": "New PIR opened today; betänkande partially addresses; full answer requires Skolverket guidance and union response"
+    }
+  ],
+  "pir_counts": {
+    "total": 9,
+    "open": 9,
+    "closed": 0,
+    "critical": 2,
+    "high": 4,
+    "medium": 3
+  }
+}
