@@ -1,0 +1,41 @@
+{
+  "analysis_date": "2026-05-08",
+  "subfolder": "propositions",
+  "imf_status": "degraded",
+  "imf_note": "IMF SDMX API returned 404 on analysis date. IMF WEO/FM Datamapper returned null results. All economic data is analytical inference or prior vintage — treat as D6 (reliability unknown).",
+  "sweden_economic_context": {
+    "source": "prior_knowledge",
+    "vintage": "April 2026 WEO estimate (unconfirmed — API unavailable)",
+    "provider": "imf",
+    "gdp_growth_2025": "~2.0-2.5% (estimate)",
+    "gdp_growth_2026": "~2.5-3.0% (estimate)",
+    "unemployment_2025": "~8.5% (estimate)",
+    "inflation_2026": "~2.0-2.5% (estimate, approaching Riksbanken target)",
+    "public_debt_gdp": "~35% (estimate — one of lowest in EU)",
+    "fiscal_balance": "near balance or slight surplus (estimate)",
+    "note": "All values are analytical estimates. IMF API unavailable. Vintage: prior to analysis date. Annotation required per ECONOMIC_DATA_CONTRACT.md."
+  },
+  "nordic_comparison": {
+    "source": "prior_knowledge",
+    "note": "No confirmed comparative data retrieved. IMF compare endpoint returned null.",
+    "countries": ["SWE", "DNK", "NOR", "FIN", "DEU"],
+    "status": "D6 — not retrieved"
+  },
+  "fiscal_implications_legislative_package": {
+    "HD03267_annual_cost": "SEK 100-300M/year (estimate — SÄPO + Kriminalvård expansion)",
+    "HD03250_total_cost": "SEK 500M-2B (estimate — state e-ID infrastructure build)",
+    "HD03261_annual_cost": "SEK 50-150M/year (estimate — Skatteverket expansion)",
+    "HD03261_annual_savings": "SEK 250M-1B/year (estimate — fraud reduction benefit)",
+    "confidence": "C3 — analytical inference, unconfirmed",
+    "source": "analytical"
+  },
+  "retrieved_at": "2026-05-08T09:xx:00Z",
+  "economic_provenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "vintage": "April 2026 (unconfirmed)",
+    "retrieved_at": "2026-05-08T09:xx:00Z",
+    "status": "degraded — D6"
+  }
+}

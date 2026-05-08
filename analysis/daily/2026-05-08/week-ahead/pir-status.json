@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "cycle": "week-ahead",
+  "date": "2026-05-08",
+  "subfolder": "week-ahead",
+  "generated_at": "2026-05-08T12:00:00Z",
+  "pirs": [
+    {
+      "pir_id": "PIR-MIGR-001",
+      "statement": "Will HD03262 (abolition of permanent residence permits for new arrivals) be scheduled for SfU committee report and kammaren vote before the September 2026 election?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "notes": "HD03267 (security deportation) submitted week 20 but is separate legislation. HD03262 still in SfU — no scheduling signals in week 20 data."
+    },
+    {
+      "pir_id": "PIR-MIGR-002",
+      "statement": "Will the government submit the expected proposition batch on migration restriction measures (HD03263 companion legislation) in Q2 2026?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "notes": "HD03267 (security deportation) submitted May 7 — this is partial answer but HD03263 companion is different scope. PIR remains open for full migration batch."
+    },
+    {
+      "pir_id": "PIR-MIGR-003",
+      "statement": "Will any migration legislation submitted in spring 2026 receive a negative Lagrådet opinion before the election?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "notes": "HD03267 submitted May 7 without Lagrådet yttrande. Risk: Lagrådet negative opinion possible June-July 2026. PIR active."
+    },
+    {
+      "pir_id": "PIR-JUSTSEC-001",
+      "statement": "When will the government's public gathering safety legislation (Allmänna sammankomster) reach the Riksdag floor for vote?",
+      "status": "answered",
+      "confidence": "HIGH",
+      "answer_summary": "HD01JuU32 committee report confirmed ready for vote week 20 (May 11-17, 2026). Government majority expected."
+    },
+    {
+      "pir_id": "PIR-JUSTSEC-002",
+      "statement": "Will the government table new security legislation for Riksdag passage in the pre-election window (Q2 2026)?",
+      "status": "answered",
+      "confidence": "HIGH",
+      "answer_summary": "Multiple items: HD01FöU18 (signal intelligence), HD03267 (security deportation), HD01JuU32 (public safety) all confirmed for week 20. Government security legislative push is confirmed."
+    },
+    {
+      "pir_id": "PIR-EDUC-001",
+      "statement": "When will UbU28 (10-year primary school teacher credentials) reach debate and vote in Riksdag?",
+      "status": "answered",
+      "confidence": "VERY HIGH",
+      "answer_summary": "Debate opened 2026-05-08. Vote expected week 20 (May 12-13). Broad majority anticipated."
+    },
+    {
+      "pir_id": "PIR-INTL-001",
+      "statement": "How will the Swedish government respond diplomatically to Israeli military actions affecting Swedish interests or citizens in Q2 2026?",
+      "status": "open",
+      "confidence": "LOW",
+      "notes": "HD11803 (Global Sumud flotilla boarding with Swedish citizens) emerged week 20 as new information. PIR partially activated but outcome unknown — flotilla diplomatic response pending."
+    },
+    {
+      "pir_id": "PIR-FIN-001",
+      "statement": "Will FiU37 (operational crisis management in financial sector) pass with cross-party support in week 20?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "notes": "HD01FiU37 confirmed ready for vote week 20 but vote count not yet available. Expected: broad support as EU-implementing legislation."
+    },
+    {
+      "pir_id": "PIR-DIGITAL-001",
+      "statement": "Will the state e-legitimation proposition (HD03250) be submitted and given a committee review timeline before the election?",
+      "status": "answered",
+      "confidence": "HIGH",
+      "answer_summary": "HD03250 submitted May 7, 2026. Enters FiU committee review. Vote likely August-September 2026, possibly post-election. Submission confirmed."
+    },
+    {
+      "pir_id": "PIR-DEFENCE-001",
+      "statement": "Will FöU18 signal intelligence modernisation pass Riksdag with a margin above 180 seats (strong mandate)?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "notes": "Coalition math suggests ~200 Ja if C supports. If C files reservations and some abstain, margin could be 175-185. Vote outcome observable week 20."
+    },
+    {
+      "pir_id": "PIR-ECON-001",
+      "statement": "Will Sweden's IMF economic data (IFS SDMX) availability be restored for week-ahead analysis by June 2026?",
+      "status": "open",
+      "confidence": "LOW",
+      "notes": "IFS SDMX returning 404 as of 2026-05-08. WEO/FM Datamapper available. Timeline for IMF API restoration unknown. Using cached WEO Apr-2026 vintage."
+    }
+  ]
+}

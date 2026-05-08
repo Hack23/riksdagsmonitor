@@ -70,3 +70,16 @@ Justitiedepartementet (owner of JuU39 + JuU32)
 | Riksbankslagen | FiU37 | 2026-07-01 |
 | [Nordic enforcement treaty] | JuU34 | TBD |
 | [EU clearing regulation] | FiU38 | EU-timed |
+
+---
+
+## Re-run Update — 2026-05-08
+
+### HD01UbU28 Cross-References
+
+- **Prop. linkage**: UbU28 implements schoollagen amendment stemming from the 2023/24 10-year school reform proposition
+- **Committee chain**: UbU28 → UbU9 (HD01UbU9, Lärare och elever, 2026-03-05) → UbU12 (HD01UbU12, Högskolan, 2026-03-17) — forms the 2025/26 UbU reform cluster
+- **Implementation chain**: HD01UbU28 → Skolverket → teacher legitimation database update → 2028/29 school year
+- **No policy cross-reference to JuU/FiU cluster**: Education reform is legislatively independent of the justice/finance bills
+- **Election cluster**: HD01UbU28 + HD01JuU39 + HD01FiU37 = three pillars of Tidö election delivery narrative
+
