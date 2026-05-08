@@ -5,7 +5,7 @@ date: 2026-05-08
 subfolder: realtime-pulse
 slug: 2026-05-08-realtime-pulse
 source_folder: analysis/daily/2026-05-08/realtime-pulse
-generated_at: 2026-05-08T14:00:05.791Z
+generated_at: 2026-05-08T14:48:53.300Z
 language: en
 layout: article
 ---
@@ -130,6 +130,26 @@ HD11803 (Israel/Swedish citizens in international waters) reflects continued opp
 
 ---
 *Improvement run update · 2026-05-08T10:34Z*
+
+#### Vote Schedule Addendum (2026-05-08T14:46Z)
+
+**Vote calendar correction from Riksdag talarlista (HD0J20260520, HD0J20260521)**:
+
+Riksdag calendar data confirms the formal chamber votes for today's debated betänkanden are **not** scheduled for 2026-05-08:
+
+- **CU34** (distansutmätning): Voted on **2026-05-20 at 16:00** — 12 days after the debate day
+- **UbU28** (tioårig grundskola teacher credentials): Voted on **2026-05-21 at 15:20** — 13 days after the debate day
+
+This is consistent with Riksdag standard procedure: betänkanden debated in arbetsplenum are formally voted upon at the next designated voteringstillfälle, which is typically 1–3 weeks after the debate. The prior forward-indicator assessment marking FI-01 and FI-03 as "due date: 2026-05-08 (today)" reflected an error in vote-day estimation.
+
+**Practical intelligence significance**: No vote outcomes will appear in the Riksdag voteringar API until after May 20 and May 21 respectively. The 2025/26 vote records confirming party-by-party tallies for CU34 (S+MP reservation noted; government parties expected Ja) and UbU28 (broad committee majority) will be the authoritative monitoring signal for PIR-RT-008 and PIR-RT-009.
+
+**CU34 committee signal (from betänkande)**: "Jämför reservationen S, MP" — Social Democrats and Miljöpartiet entered a formal reservation on the proportionality clause for cohabiting partners (sambor). All government parties (M, SD, C, KD, L) and KD expected to pass; S+MP will vote Nej.
+
+**UbU28 committee signal (from betänkande)**: "Utskottet ställer sig bakom regeringens förslag" — committee unanimously endorsed the government bill; no formal reservation registered. Broad cross-bloc passage expected on May 21.
+
+---
+*Vote schedule correction · 2026-05-08T14:46Z*
 
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/realtime-pulse/intelligence-assessment.md -->
@@ -715,10 +735,12 @@ Today's parliamentary activities are assessed for their resonance with key voter
 
 #### Indicator FI-01
 **Description**: UbU28 chamber vote outcome — party-by-party Ja/Nej tally  
-**Due date**: 2026-05-08 (today, after chamber proceedings)  
+**Due date**: 2026-05-21 (Thursday, 15:20, confirmed from Riksdag t-lista HD0J20260521)  
+**Status**: PENDING — debate held 2026-05-08; vote scheduled 13 days later on May 21  
 **Source**: Riksdagen voteringar, data.riksdagen.se  
 **PIR linkage**: PIR-RT-009  
-**Alert threshold**: Any major party deviating from expected Ja vote; any Nej majority
+**Alert threshold**: Any major party deviating from expected Ja vote; any Nej majority  
+**Updated**: 2026-05-08T14:46Z — due date corrected from 2026-05-08 to 2026-05-21 per Riksdag calendar confirmation
 
 #### Indicator FI-02
 **Description**: Teacher union (Lärarnas Riksförbund / Lärarförbundet) public response to UbU28  
@@ -729,10 +751,12 @@ Today's parliamentary activities are assessed for their resonance with key voter
 
 #### Indicator FI-03
 **Description**: CU34 chamber vote outcome  
-**Due date**: 2026-05-08 (today)  
+**Due date**: 2026-05-20 (Wednesday, 16:00 votering, confirmed from Riksdag t-lista HD0J20260520)  
+**Status**: PENDING — debate held 2026-05-08; vote scheduled 12 days later on May 20  
 **Source**: Riksdagen voteringar  
 **PIR linkage**: PIR-RT-008  
-**Alert threshold**: Unexpected Nej majority (>80% probability of Ja passage)
+**Alert threshold**: Unexpected Nej majority (>80% probability of Ja passage per committee reservation pattern: S+MP have reservation, all government parties expected Ja)  
+**Updated**: 2026-05-08T14:46Z — due date corrected from 2026-05-08 to 2026-05-20 per Riksdag calendar confirmation
 
 #### Indicator FI-04
 **Description**: Finance Minister Svantesson's interpellation response on HD10480 (stadigvarande vistelse)  
@@ -803,8 +827,8 @@ Today's parliamentary activities are assessed for their resonance with key voter
 
 | Priority | Indicator | Days to Due | PIR |
 |----------|-----------|------------|-----|
-| CRITICAL | FI-01 (UbU28 vote) | 0 | PIR-RT-009 |
-| CRITICAL | FI-03 (CU34 vote) | 0 | PIR-RT-008 |
+| CRITICAL | FI-01 (UbU28 vote) | 13 (2026-05-21) | PIR-RT-009 |
+| CRITICAL | FI-03 (CU34 vote) | 12 (2026-05-20) | PIR-RT-008 |
 | HIGH | FI-02 (Union response) | 7 | PIR-RT-009 |
 | HIGH | FI-04 (Svantesson response) | 14 | PIR-RT-001 |
 | HIGH | FI-10 (L polling) | 24 | PIR-RT-002 |
@@ -1573,6 +1597,15 @@ This is **Pass 1** (first run). Pass 2 iterative improvement applied to all 23 a
   - artifacts extended: synthesis-summary.md, data-download-manifest.md, article.md (Frågestund/May 7 context added)
   - flags closed: none (no new evidence to close PIRs)
   - vintage refresh: IMF WEO Apr-2026 confirmed degraded (IFS SDMX 404); WEO/FM Datamapper operational
+- **Re-run**: 2026-05-08T14:46Z · workflow=news-realtime-monitor · run_id=25561760804 · attempt=1
+  - new dok_ids: 0 (no new legislative documents found since 10:35Z improvement run)
+  - **KEY CORRECTION**: Vote schedule for CU34 and UbU28 confirmed from Riksdag t-lista (talarlista) calendar:
+    - CU34 (distansutmätning): Chamber vote **2026-05-20** at 16:00 (not 2026-05-08)
+    - UbU28 (tioårig grundskola teacher credentials): Chamber vote **2026-05-21** at 15:20 (not 2026-05-08)
+  - FI-01 and FI-03 due dates corrected in forward-indicators.md (from 2026-05-08 → 2026-05-21 / 2026-05-20)
+  - artifacts extended: forward-indicators.md (vote schedule correction), data-download-manifest.md (re-query section), synthesis-summary.md (vote schedule note)
+  - flags closed: none
+  - vintage refresh: IMF WEO Apr-2026 still current; IFS SDMX still degraded
 
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/realtime-pulse/data-download-manifest.md -->
@@ -1664,6 +1697,23 @@ New PIRs opened this cycle:
 
 **New dok_ids**: None — no genuinely new legislative documents identified since 09:56Z run  
 **Manifest unchanged**: Core 7 dok_ids remain the analysis set for 2026-05-08
+
+### Re-run 2026-05-08 14:46 UTC
+
+**Re-query scope**: Riksdag talarlista (calendar) for CU34/UbU28 vote scheduling; voteringar search; lärarbehörighet search; anföranden for UbU28 debate
+
+**New data found**:
+- **CRITICAL CORRECTION — Vote schedule from Riksdag t-lista**:
+  - CU34 (distansutmätning): Arbetsplenum debate **2026-05-08 09:00**, votering **2026-05-20 16:00** (HD0J20260520)
+  - UbU28 (tioårig grundskola credentials): Arbetsplenum debate **2026-05-08**, votering **2026-05-21 15:20** (HD0J20260521)
+  - Prior analysis had both votes as due "2026-05-08 (today)" — this was an error; Riksdag calendar confirms 12–13 day gap between betänkande debate day and formal vote
+- **Voteringar search**: No votes yet indexed for CU34 or UbU28 in 2025/26 (expected after May 20/21)
+- **UbU28 committee position confirmed**: "Utskottet ställer sig bakom regeringens förslag" (unanimous committee majority); no reservation noted in betänkande summary; S+MP reservation on CU34 distansutmätning proportionality clause (noted in CU34 betänkande: "Jämför reservationen S, MP")
+- **No new ministerial answers**: Written responses to HD11800–HD11803 still pending (expected 2026-05-15 to 2026-05-22)
+- **No new anföranden for UbU28 debate**: Chamber debate anföranden not yet indexed via API
+
+**New dok_ids**: None — core 7 dok_ids unchanged  
+**FI corrections**: FI-01 due date updated 2026-05-08 → 2026-05-21; FI-03 due date updated 2026-05-08 → 2026-05-20
 
 ## Article Sources
 
