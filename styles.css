@@ -3572,7 +3572,7 @@ footer {
   left: 0;
   width: 200%;
   height: 3px;
-  background: linear-gradient(90deg, transparent, #00d9ff, #ff006e, #ffbe0b, transparent);
+  background: linear-gradient(90deg, transparent, var(--primary-cyan), var(--primary-magenta), var(--primary-yellow), transparent);
   transform: translateX(-100%);
   animation: political-intelligence-cta-shimmer 5s linear infinite;
 }
