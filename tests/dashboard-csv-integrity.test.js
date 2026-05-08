@@ -14,6 +14,13 @@ import { readFileSync, existsSync, readdirSync } from 'fs';
 import { resolve, join } from 'path';
 
 const CIA_DATA_DIR = resolve(process.cwd(), 'cia-data');
+const ALL_LANGUAGE_SUFFIXES = ['', '_ar', '_da', '_de', '_es', '_fi', '_fr', '_he', '_ja', '_ko', '_nl', '_no', '_sv', '_zh'];
+const LOCALIZED_STATIC_PAGE_SETS = [
+  { base: 'index', directory: '.', label: 'main page' },
+  { base: 'politician-dashboard', directory: '.', label: 'politician dashboard' },
+  { base: 'political-intelligence', directory: '.', label: 'political intelligence' },
+  { base: 'index', directory: 'dashboard', label: 'CIA dashboard' },
+];
 
 /**
  * Dashboard-to-CSV dependency map.
@@ -266,9 +273,7 @@ describe('Dashboard-CSV Data Integrity', () => {
   });
 
   describe('CIA dashboard HTML files exist for all 14 languages', () => {
-    const languages = ['', '_ar', '_da', '_de', '_es', '_fi', '_fr', '_he', '_ja', '_ko', '_nl', '_no', '_sv', '_zh'];
-
-    languages.forEach(suffix => {
+    ALL_LANGUAGE_SUFFIXES.forEach(suffix => {
       const filename = `dashboard/index${suffix}.html`;
       it(`should have ${filename}`, () => {
         const filePath = resolve(process.cwd(), filename);
@@ -278,13 +283,49 @@ describe('Dashboard-CSV Data Integrity', () => {
   });
 
   describe('Main page HTML files exist for all 14 languages', () => {
-    const languages = ['', '_ar', '_da', '_de', '_es', '_fi', '_fr', '_he', '_ja', '_ko', '_nl', '_no', '_sv', '_zh'];
-
-    languages.forEach(suffix => {
+    ALL_LANGUAGE_SUFFIXES.forEach(suffix => {
       const filename = suffix === '' ? 'index.html' : `index${suffix}.html`;
       it(`should have ${filename}`, () => {
         const filePath = resolve(process.cwd(), filename);
         expect(existsSync(filePath), `Missing main page: ${filename}`).toBe(true);
+      });
+    });
+  });
+
+  describe('Political Intelligence localized page coverage', () => {
+    LOCALIZED_STATIC_PAGE_SETS.forEach(({ base, directory, label }) => {
+      ALL_LANGUAGE_SUFFIXES.forEach(suffix => {
+        const filename = `${base}${suffix}.html`;
+        const relativePath = directory === '.' ? filename : `${directory}/${filename}`;
+
+        it(`should have ${label} for ${suffix || '_en'}`, () => {
+          expect(existsSync(resolve(process.cwd(), relativePath)),
+            `Missing localized ${label}: ${relativePath}`).toBe(true);
+        });
+      });
+    });
+
+    ALL_LANGUAGE_SUFFIXES.forEach(suffix => {
+      const homepage = suffix === '' ? 'index.html' : `index${suffix}.html`;
+      const piPage = suffix === '' ? 'political-intelligence.html' : `political-intelligence${suffix}.html`;
+
+      it(`should promote Political Intelligence on ${homepage}`, () => {
+        const content = readFileSync(resolve(process.cwd(), homepage), 'utf-8');
+        expect(content).toContain('<section class="political-intelligence-cta"');
+        expect(content).toContain(`href="${piPage}"`);
+        expect(content).not.toContain('<nav class="political-intelligence-cta"');
+      });
+
+      it(`should hide decorative Political Intelligence CTA feature emojis on ${homepage}`, () => {
+        const content = readFileSync(resolve(process.cwd(), homepage), 'utf-8');
+        const match = content.match(/<ul class="political-intelligence-cta-features"[\s\S]*?<\/ul>/);
+        expect(match, `Missing Political Intelligence CTA features in ${homepage}`).not.toBeNull();
+        const features = match[0];
+        expect(features).toContain('<span aria-hidden="true">🧭</span>');
+        expect(features).toContain('<span aria-hidden="true">📚</span>');
+        expect(features).toContain('<span aria-hidden="true">⚠️</span>');
+        expect(features).toContain('<span aria-hidden="true">🔎</span>');
+        expect(features).not.toMatch(/<li>[🧭📚⚠️🔎]/u);
       });
     });
   });
