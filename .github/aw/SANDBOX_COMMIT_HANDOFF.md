@@ -95,9 +95,9 @@ A standalone `workflow_run`-triggered workflow listens for completion of all 11 
 
 | Path | Trigger | Action |
 |------|---------|--------|
-| **Primary — bundle handoff** | `aw-fallback.bundle` (and ideally `aw-fallback.json`) present | `git fetch <bundle> '+refs/heads/*:refs/aw-fallback/*'`, then `git push --force-with-lease` to origin under the host PAT, then `gh pr create` (or `gh pr edit` if a PR for the branch already exists). |
+| **Primary — bundle handoff** | `aw-fallback.bundle` (and ideally `aw-fallback.json`) present, or a failed safeoutputs run left `aw-main.bundle` | `git fetch <bundle> '+refs/heads/*:refs/aw-fallback/*'`, then `git push --force-with-lease` to origin under the host PAT, then `gh pr create` (or `gh pr edit` if a PR for the branch already exists). `aw-main.bundle` carries a default-branch ref, so the fallback republishes it under a synthetic `news/<date>-<slug>-run-<source-run-id>` recovery branch before the protected-branch gate. |
 | **Secondary — legacy** | No bundle, but `aw-*.patch` artifact and `session not found` in `agent-stdio.log` | Apply the patch to a fresh `main` checkout, stage only `analysis/daily/**` and `news/**`, commit on a synthetic recovery branch, push, open PR. Kept for backwards compatibility with older agent runs that pre-date the bundle protocol. |
-| **No-op (skip)** | safeoutputs already produced a `create_pull_request` event in `safeoutputs.jsonl` | Exit 0 with a step-summary note. Never duplicate PRs. |
+| **No-op (skip)** | safeoutputs produced a `create_pull_request` event in `safeoutputs.jsonl` and the triggering workflow concluded `success` | Exit 0 with a step-summary note. Never duplicate PRs. Failed safeoutputs runs also contain the attempted event, so failure conclusions continue into recovery. |
 | **No-op (no handoff)** | No bundle, no patch, no `session not found` marker | Exit 0 with a step-summary note. The agent run was either successful or pre-Stage-E. |
 
 ### Failure semantics
