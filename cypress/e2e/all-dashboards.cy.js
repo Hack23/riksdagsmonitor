@@ -17,11 +17,8 @@
  */
 
 describe('All Dashboards - Comprehensive Coverage', () => {
-  beforeEach(() => {
-    // Use real CIA CSV sample data from the repository to ensure correct schemas per dashboard
-    // cy.stubCIAData(); // Disabled: causes dashboards to render empty/fallback states
-    cy.visit('/');
-  });
+  // Note: PR #2349 split each dashboard onto a dedicated /dashboards/<slug>.html
+  // page. Each dashboard's beforeEach below visits the matching page.
   
   /**
    * Dashboard configuration for systematic testing
@@ -29,6 +26,7 @@ describe('All Dashboards - Comprehensive Coverage', () => {
   const dashboards = [
     {
       id: 'party-dashboard',
+      slug: 'parties',
       name: 'Party Dashboard',
       charts: ['partyEffectivenessChart', 'partyComparisonChart', 'partyMomentumChart'],
       hasD3: true, // coalitionAlignmentChart is a div container, not a canvas
@@ -36,6 +34,7 @@ describe('All Dashboards - Comprehensive Coverage', () => {
     },
     {
       id: 'election-cycle-dashboard',
+      slug: 'election-cycle',
       name: 'Election Cycle Dashboard',
       charts: ['cycle-timeline-chart', 'risk-forecast-chart', 'temporal-trends-chart', 'party-tier-chart'],
       hasD3: true,
@@ -43,6 +42,7 @@ describe('All Dashboards - Comprehensive Coverage', () => {
     },
     {
       id: 'committee-dashboard',
+      slug: 'committees',
       name: 'Committee Dashboard',
       charts: ['committeeComparisonChart', 'decisionEffectivenessChart', 'seasonalPatternsChart'],
       hasD3: true,
@@ -50,6 +50,7 @@ describe('All Dashboards - Comprehensive Coverage', () => {
     },
     {
       id: 'coalition-dashboard',
+      slug: 'coalitions',
       name: 'Coalition Dashboard',
       charts: ['votingAnomalyChart', 'behavioralPatternsChart', 'decisionTrendsChart'],
       hasD3: true,
@@ -57,6 +58,7 @@ describe('All Dashboards - Comprehensive Coverage', () => {
     },
     {
       id: 'seasonal-patterns-dashboard',
+      slug: 'seasonal-patterns',
       name: 'Seasonal Patterns Dashboard',
       charts: ['zscore-timeline-chart', 'quarter-comparison-chart', 'classification-chart', 'qoq-change-chart'],
       hasD3: true,
@@ -64,12 +66,14 @@ describe('All Dashboards - Comprehensive Coverage', () => {
     },
     {
       id: 'pre-election-dashboard',
+      slug: 'pre-election',
       name: 'Pre-Election Dashboard',
       charts: ['q4-timeline-chart', 'election-comparison-chart', 'deviation-radar-chart', 'party-trends-chart', 'yoy-waterfall-chart'],
       hasD3: false // warning-matrix is a non-canvas region, not a D3 container
     },
     {
       id: 'anomaly-detection-dashboard',
+      slug: 'anomaly-detection',
       name: 'Anomaly Detection Dashboard',
       charts: ['anomaly-timeline-chart', 'zscore-distribution-chart', 'anomaly-type-chart', 'quarterly-frequency-chart'],
       hasD3: true,
@@ -77,6 +81,7 @@ describe('All Dashboards - Comprehensive Coverage', () => {
     },
     {
       id: 'ministry-dashboard',
+      slug: 'ministers',
       name: 'Ministry Dashboard',
       charts: ['ministerInfluenceChart', 'ministryProductivityChart', 'decisionImpactChart'],
       hasD3: true,
@@ -84,6 +89,7 @@ describe('All Dashboards - Comprehensive Coverage', () => {
     },
     {
       id: 'risk-dashboard',
+      slug: 'risk',
       name: 'Risk Dashboard',
       charts: ['riskDistributionChart', 'anomalyDetectionChart', 'crisisResilienceChart', 'riskEvolutionChart'],
       hasD3: true,
@@ -93,6 +99,12 @@ describe('All Dashboards - Comprehensive Coverage', () => {
   
   dashboards.forEach(dashboard => {
     describe(`${dashboard.name}`, () => {
+      beforeEach(() => {
+        // Use real CIA CSV sample data from the repository to ensure correct schemas per dashboard
+        // cy.stubCIAData(); // Disabled: causes dashboards to render empty/fallback states
+        cy.visit(`/dashboards/${dashboard.slug}.html`);
+      });
+      
       it('should exist and be visible', () => {
         cy.get(`#${dashboard.id}`).should('exist').should('be.visible');
       });

@@ -213,24 +213,54 @@ describe('Dashboard-CSV Data Integrity', () => {
     });
   });
 
-  describe('No orphaned dashboard HTML containers (main page)', () => {
-    const DASHBOARD_CONTAINER_IDS = [
-      'party-dashboard',
-      'election-cycle-dashboard',
-      'committee-dashboard',
-      'coalition-dashboard',
-      'seasonal-patterns-dashboard',
-      'pre-election-dashboard',
-      'anomaly-detection-dashboard',
-      'ministry-dashboard',
-      'risk-dashboard'
+  describe('No orphaned dashboard HTML containers (specialised dashboard pages)', () => {
+    // Each dashboard now lives on its own /dashboards/<slug>.html page
+    // (PR #2349). The container ID stays the same so JS lazy-loaders bind
+    // unchanged; only the host page changes.
+    const DASHBOARD_CONTAINERS = [
+      { id: 'party-dashboard',              page: 'dashboards/parties.html' },
+      { id: 'election-cycle-dashboard',     page: 'dashboards/election-cycle.html' },
+      { id: 'committee-dashboard',          page: 'dashboards/committees.html' },
+      { id: 'coalition-dashboard',          page: 'dashboards/coalitions.html' },
+      { id: 'seasonal-patterns-dashboard',  page: 'dashboards/seasonal-patterns.html' },
+      { id: 'pre-election-dashboard',       page: 'dashboards/pre-election.html' },
+      { id: 'anomaly-detection-dashboard',  page: 'dashboards/anomaly-detection.html' },
+      { id: 'ministry-dashboard',           page: 'dashboards/ministers.html' },
+      { id: 'risk-dashboard',               page: 'dashboards/risk.html' },
     ];
 
-    const indexHtml = readFileSync(resolve(process.cwd(), 'index.html'), 'utf-8');
+    DASHBOARD_CONTAINERS.forEach(({ id, page }) => {
+      it(`${page} should have container #${id}`, () => {
+        const html = readFileSync(resolve(process.cwd(), page), 'utf-8');
+        expect(html).toContain(`id="${id}"`);
+      });
+    });
 
-    DASHBOARD_CONTAINER_IDS.forEach(containerId => {
-      it(`index.html should have container #${containerId}`, () => {
-        expect(indexHtml).toContain(`id="${containerId}"`);
+    it('index.html should expose a hub linking to every specialised dashboard', () => {
+      const indexHtml = readFileSync(resolve(process.cwd(), 'index.html'), 'utf-8');
+      expect(indexHtml).toContain('id="political-intelligence-dashboards"');
+      DASHBOARD_CONTAINERS.forEach(({ page }) => {
+        expect(indexHtml).toContain(`href="${page}"`);
+      });
+    });
+  });
+
+  describe('Specialised dashboard pages exist for all 14 languages', () => {
+    const DASHBOARD_SLUGS = [
+      'parties', 'election-cycle', 'committees', 'coalitions',
+      'seasonal-patterns', 'pre-election', 'anomaly-detection',
+      'ministers', 'risk',
+    ];
+    const LANG_SUFFIXES = ['', '_ar', '_da', '_de', '_es', '_fi', '_fr',
+      '_he', '_ja', '_ko', '_nl', '_no', '_sv', '_zh'];
+
+    DASHBOARD_SLUGS.forEach(slug => {
+      LANG_SUFFIXES.forEach(suffix => {
+        const filename = `dashboards/${slug}${suffix}.html`;
+        it(`should have ${filename}`, () => {
+          expect(existsSync(resolve(process.cwd(), filename)),
+            `Missing dashboard page: ${filename}`).toBe(true);
+        });
       });
     });
   });
