@@ -81,3 +81,16 @@ From 2026-05-07 realtime-pulse (9 open PIRs):
 New PIRs opened this cycle:
 - **PIR-RT-008**: What is the Finance Minister's substantive response to HD10480 on permanent residence and the retroactive application of the October 2025 rule change?
 - **PIR-RT-009**: Will the UbU28 teacher-credentials reform significantly close the projected 45,000 teacher shortfall by 2030 according to Skolverket projections?
+
+## Improvement Run Re-Query (2026-05-08T10:34Z)
+
+**Re-query scope**: Latest anföranden + voteringar for CU34/UbU28 + new documents since 09:56Z
+
+**New data found**:
+- **Anföranden for "Effektiv och säker byggprocess" (CU24/prop. 2025/26:172)**: 3 speakers indexed (Larry Söder/KD, David Josefsson/M, Leif Nysmed/S) — confirmed as May 7 session debate, not today's new data
+- **Frågestund (May 7)**: Confirmed participation by Strömmer, Malmer Stenergard, Carlson, Lann — provides ministerial context for HD11801 and HD11803
+- **No new vote outcomes**: CU34 and UbU28 votes for 8 May not yet indexed in Riksdag API
+- **No ministerial written answers**: Responses to HD11800–HD11803 not yet available (expected 2026-05-15 to 2026-05-22)
+
+**New dok_ids**: None — no genuinely new legislative documents identified since 09:56Z run  
+**Manifest unchanged**: Core 7 dok_ids remain the analysis set for 2026-05-08

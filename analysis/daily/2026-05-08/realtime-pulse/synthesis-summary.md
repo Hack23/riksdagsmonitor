@@ -44,3 +44,20 @@ HD11803 (Israel/Swedish citizens in international waters) reflects continued opp
 
 ---
 *Sources: HD01CU34, HD01UbU28, HD10480, HD11800–HD11803 · 2026-05-08*
+
+### Improvement-Run Addendum (2026-05-08T10:34Z)
+
+**New context from MCP re-query (improvement run)**:
+
+- **May 7 Frågestund confirmed**: Justice Minister Strömmer (M), Foreign Minister Malmer Stenergard (M), Infrastructure Minister Carlson (KD), and Healthcare Minister Lann (KD) all participated in 7 May Frågestund. This establishes ministerial presence context directly relevant to HD11801 (Carlson/rural broadband) and HD11803 (Malmer Stenergard/Israel).
+
+- **CU24 "Effektiv och säker byggprocess" passed May 7**: Building process streamlining reform — part of the government's deregulation agenda — was adopted yesterday. Combined with CU34 (distansutmätning), the government is demonstrating consistent delivery in the civil law domain.
+
+- **SoU25 "Stärkta insatser för äldre" passed May 7**: Eldercare and carer-support reform passed yesterday, completing a parallel social-policy track to UbU28's education reform. The simultaneous delivery on social care + education + debt enforcement signals a coordinated pre-election legislative sprint.
+
+- **No new vote outcomes indexed for CU34/UbU28**: Chamber votes for today's items not yet in Riksdag API. FI-01 and FI-03 remain pending.
+
+**Revised signal matrix update**: The legislative sprint signal upgraded to **VERY HIGH** in light of three major reforms passing in two consecutive sessions (CU24/SoU25 yesterday; CU34/UbU28 today).
+
+---
+*Improvement run update · 2026-05-08T10:34Z*
