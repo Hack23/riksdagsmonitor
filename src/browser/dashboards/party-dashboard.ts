@@ -1171,26 +1171,46 @@ export async function init(): Promise<void> {
   try {
     initChartDefaults();
 
-    // Fetch all data sources in parallel for performance
+    // Fetch all data sources in parallel for performance. Track per-source
+    // failures so we can surface a visible error fallback when every CIA CSV
+    // is unreachable (e.g. offline, 404 from upstream, or test stubs).
+    const failures: string[] = [];
+    const trackFailure = (source: string) => (e: unknown) => {
+      logger.warn(`${source}:`, e);
+      failures.push(source);
+      return [] as CSVRow[];
+    };
     const [partyPerformance, partyEffectiveness, partyMomentum, coalitionAlignment] =
       await Promise.all([
-        fetchData(CONFIG.dataSources.partyPerformance).catch((e) => {
-          logger.warn('partyPerformance:', e);
-          return [] as CSVRow[];
-        }),
-        fetchData(CONFIG.dataSources.partyEffectiveness).catch((e) => {
-          logger.warn('partyEffectiveness:', e);
-          return [] as CSVRow[];
-        }),
-        fetchData(CONFIG.dataSources.partyMomentum).catch((e) => {
-          logger.warn('partyMomentum:', e);
-          return [] as CSVRow[];
-        }),
-        fetchData(CONFIG.dataSources.coalitionAlignment).catch((e) => {
-          logger.warn('coalitionAlignment:', e);
-          return [] as CSVRow[];
-        }),
+        fetchData(CONFIG.dataSources.partyPerformance).catch(trackFailure('partyPerformance')),
+        fetchData(CONFIG.dataSources.partyEffectiveness).catch(
+          trackFailure('partyEffectiveness'),
+        ),
+        fetchData(CONFIG.dataSources.partyMomentum).catch(trackFailure('partyMomentum')),
+        fetchData(CONFIG.dataSources.coalitionAlignment).catch(
+          trackFailure('coalitionAlignment'),
+        ),
       ]);
+
+    // If every data source failed, surface a visible error fallback so users
+    // (and E2E assertions) can detect the data-loading failure instead of
+    // silently rendering empty charts.
+    if (failures.length === 4) {
+      const errContainer = document.createElement('div');
+      dashboardSection.appendChild(errContainer);
+      renderErrorFallback(
+        errContainer,
+        t.errorMessage,
+        () => {
+          errContainer.remove();
+          init().catch((err) =>
+            logger.error('Retry failed during party dashboard re-initialization:', err),
+          );
+        },
+        t.retryMessage,
+      );
+      return;
+    }
 
     // Create visualizations
     const hasData = partyEffectiveness.length > 0 || partyPerformance.length > 0;
