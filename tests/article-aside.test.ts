@@ -60,10 +60,10 @@ describe('article-aside — renderReaderNavigation', () => {
     expect(html).toContain('rm-per-document-intelligence');
   });
 
-  it('returns empty string when no artifacts and no audit row would render', () => {
-    // Audit appendix row is always pushed, so empty input still produces
-    // a non-empty navigation. Use this to assert the function never
-    // throws on an empty list.
+  it('always includes the audit-appendix row even when no READER_GUIDE_ENTRIES matched', () => {
+    // The audit appendix row is unconditionally pushed so the function
+    // never returns an empty string. Verify the audit row is present
+    // and the function does not throw on an empty artifact list.
     const html = renderReaderNavigation({ lang: 'en', artifactsUsed: [] });
     expect(html).toContain('rm-classification-results');
   });

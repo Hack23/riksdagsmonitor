@@ -14212,6 +14212,23 @@ html[data-theme="light"] .rm-reader-guide-cta a:focus-visible {
   border-color: var(--rm-article-accent, #007744);
 }
 
+/* ── Methods-reference light-theme parity ── */
+html[data-theme="light"] .rm-methods-reference {
+  background:
+    radial-gradient(circle at top right, rgba(var(--rm-article-accent-rgb), 0.07), transparent 28rem),
+    #f8faf9;
+  border-color: rgba(var(--rm-article-accent-rgb), 0.28);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+html[data-theme="light"] .rm-methods-reference h2 {
+  color: color-mix(in srgb, var(--rm-article-accent, #007744) 80%, #102030);
+}
+
+html[data-theme="light"] .rm-methods-reference-desc {
+  color: var(--text-secondary, #4a4a4a);
+}
+
 html[data-theme="light"] .rm-article-body h2::before,
 html[data-theme="light"] .news-article[class*="article-type-"] .article-content h2::before,
 html[data-theme="light"] .news-article[class*="article-type-"] h2::before {
@@ -16173,7 +16190,8 @@ html[data-theme="light"] .rm-article-body.news-page .hero-banner {
    with the page-accent border. */
 
 html[data-theme="light"] .rm-reader-guide,
-html[data-theme="light"] .rm-article-sources {
+html[data-theme="light"] .rm-article-sources,
+html[data-theme="light"] .rm-methods-reference {
   background: var(--card-bg, #ffffff);
   color: var(--text-color, #1a1a1a);
   border: 1px solid var(--border-color, rgba(0, 102, 51, 0.18));

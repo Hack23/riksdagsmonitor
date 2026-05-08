@@ -64,8 +64,9 @@ export interface ReaderNavigationInput {
  * article is which `READER_GUIDE_ENTRIES` rows survive the
  * "available artifacts" filter.
  *
- * Returns the empty string when no rows would render so callers can
- * concatenate without a wrapper conditional.
+ * Always produces a non-empty table because the audit-appendix row is
+ * unconditionally appended regardless of which READER_GUIDE_ENTRIES
+ * matched. Callers can concatenate the return value directly.
  */
 export function renderReaderNavigation(input: ReaderNavigationInput): string {
   const guideI18n = readerGuideI18n(input.lang);
@@ -106,8 +107,6 @@ export function renderReaderNavigation(input: ReaderNavigationInput): string {
               <td>${escapeHtml(guideChrome.auditValue)}</td>
               <td>${escapeHtml(guideChrome.auditArtifactLabel)}</td>
             </tr>`);
-
-  if (guideRows.length === 0) return '';
 
   return `
       <section class="rm-reader-guide" aria-labelledby="rm-reader-guide-heading">
