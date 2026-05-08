@@ -65,3 +65,12 @@ This is **Pass 1** (first run). Pass 2 iterative improvement applied to all 23 a
   - artifacts extended: synthesis-summary.md, data-download-manifest.md, article.md (Frågestund/May 7 context added)
   - flags closed: none (no new evidence to close PIRs)
   - vintage refresh: IMF WEO Apr-2026 confirmed degraded (IFS SDMX 404); WEO/FM Datamapper operational
+- **Re-run**: 2026-05-08T14:46Z · workflow=news-realtime-monitor · run_id=25561760804 · attempt=1
+  - new dok_ids: 0 (no new legislative documents found since 10:35Z improvement run)
+  - **KEY CORRECTION**: Vote schedule for CU34 and UbU28 confirmed from Riksdag t-lista (talarlista) calendar:
+    - CU34 (distansutmätning): Chamber vote **2026-05-20** at 16:00 (not 2026-05-08)
+    - UbU28 (tioårig grundskola teacher credentials): Chamber vote **2026-05-21** at 15:20 (not 2026-05-08)
+  - FI-01 and FI-03 due dates corrected in forward-indicators.md (from 2026-05-08 → 2026-05-21 / 2026-05-20)
+  - artifacts extended: forward-indicators.md (vote schedule correction), data-download-manifest.md (re-query section), synthesis-summary.md (vote schedule note)
+  - flags closed: none
+  - vintage refresh: IMF WEO Apr-2026 still current; IFS SDMX still degraded

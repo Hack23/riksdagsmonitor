@@ -94,3 +94,20 @@ New PIRs opened this cycle:
 
 **New dok_ids**: None — no genuinely new legislative documents identified since 09:56Z run  
 **Manifest unchanged**: Core 7 dok_ids remain the analysis set for 2026-05-08
+
+## Re-run 2026-05-08 14:46 UTC
+
+**Re-query scope**: Riksdag talarlista (calendar) for CU34/UbU28 vote scheduling; voteringar search; lärarbehörighet search; anföranden for UbU28 debate
+
+**New data found**:
+- **CRITICAL CORRECTION — Vote schedule from Riksdag t-lista**:
+  - CU34 (distansutmätning): Arbetsplenum debate **2026-05-08 09:00**, votering **2026-05-20 16:00** (HD0J20260520)
+  - UbU28 (tioårig grundskola credentials): Arbetsplenum debate **2026-05-08**, votering **2026-05-21 15:20** (HD0J20260521)
+  - Prior analysis had both votes as due "2026-05-08 (today)" — this was an error; Riksdag calendar confirms 12–13 day gap between betänkande debate day and formal vote
+- **Voteringar search**: No votes yet indexed for CU34 or UbU28 in 2025/26 (expected after May 20/21)
+- **UbU28 committee position confirmed**: "Utskottet ställer sig bakom regeringens förslag" (unanimous committee majority); no reservation noted in betänkande summary; S+MP reservation on CU34 distansutmätning proportionality clause (noted in CU34 betänkande: "Jämför reservationen S, MP")
+- **No new ministerial answers**: Written responses to HD11800–HD11803 still pending (expected 2026-05-15 to 2026-05-22)
+- **No new anföranden for UbU28 debate**: Chamber debate anföranden not yet indexed via API
+
+**New dok_ids**: None — core 7 dok_ids unchanged  
+**FI corrections**: FI-01 due date updated 2026-05-08 → 2026-05-21; FI-03 due date updated 2026-05-08 → 2026-05-20
