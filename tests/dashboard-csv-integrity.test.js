@@ -16,7 +16,7 @@ import { resolve, join } from 'path';
 const CIA_DATA_DIR = resolve(process.cwd(), 'cia-data');
 // Static filenames keep the repository's legacy `_no` suffix for Norwegian;
 // rendered `hreflang` attributes use BCP-47 `nb` and are validated elsewhere.
-const ALL_LOCALIZED_FILE_SUFFIXES = ['', '_ar', '_da', '_de', '_es', '_fi', '_fr', '_he', '_ja', '_ko', '_nl', '_no', '_sv', '_zh'];
+const LOCALIZED_FILE_SUFFIXES = ['', '_ar', '_da', '_de', '_es', '_fi', '_fr', '_he', '_ja', '_ko', '_nl', '_no', '_sv', '_zh'];
 const LOCALIZED_STATIC_PAGE_SETS = [
   { base: 'index', directory: '.', label: 'main page' },
   { base: 'politician-dashboard', directory: '.', label: 'politician dashboard' },
@@ -275,7 +275,7 @@ describe('Dashboard-CSV Data Integrity', () => {
   });
 
   describe('CIA dashboard HTML files exist for all 14 languages', () => {
-    ALL_LOCALIZED_FILE_SUFFIXES.forEach(suffix => {
+    LOCALIZED_FILE_SUFFIXES.forEach(suffix => {
       const filename = `dashboard/index${suffix}.html`;
       it(`should have ${filename}`, () => {
         const filePath = resolve(process.cwd(), filename);
@@ -285,7 +285,7 @@ describe('Dashboard-CSV Data Integrity', () => {
   });
 
   describe('Main page HTML files exist for all 14 languages', () => {
-    ALL_LOCALIZED_FILE_SUFFIXES.forEach(suffix => {
+    LOCALIZED_FILE_SUFFIXES.forEach(suffix => {
       const filename = suffix === '' ? 'index.html' : `index${suffix}.html`;
       it(`should have ${filename}`, () => {
         const filePath = resolve(process.cwd(), filename);
@@ -296,18 +296,19 @@ describe('Dashboard-CSV Data Integrity', () => {
 
   describe('Political Intelligence localized page coverage', () => {
     LOCALIZED_STATIC_PAGE_SETS.forEach(({ base, directory, label }) => {
-      ALL_LOCALIZED_FILE_SUFFIXES.forEach(suffix => {
+      LOCALIZED_FILE_SUFFIXES.forEach(suffix => {
         const filename = `${base}${suffix}.html`;
         const relativePath = directory === '.' ? filename : `${directory}/${filename}`;
+        const languageLabel = suffix === '' ? 'en (default)' : suffix.slice(1);
 
-        it(`should have ${label} for ${suffix || '_en'}`, () => {
+        it(`should have ${label} for ${languageLabel}`, () => {
           expect(existsSync(resolve(process.cwd(), relativePath)),
             `Missing localized ${label}: ${relativePath}`).toBe(true);
         });
       });
     });
 
-    ALL_LOCALIZED_FILE_SUFFIXES.forEach(suffix => {
+    LOCALIZED_FILE_SUFFIXES.forEach(suffix => {
       const homepage = suffix === '' ? 'index.html' : `index${suffix}.html`;
       const piPage = suffix === '' ? 'political-intelligence.html' : `political-intelligence${suffix}.html`;
 
