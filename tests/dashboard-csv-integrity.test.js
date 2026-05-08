@@ -323,6 +323,7 @@ describe('Dashboard-CSV Data Integrity', () => {
         const content = readFileSync(resolve(process.cwd(), homepage), 'utf-8');
         const match = content.match(/<ul class="political-intelligence-cta-features"[\s\S]*?<\/ul>/);
         expect(match, `Missing Political Intelligence CTA features in ${homepage}`).not.toBeNull();
+        if (match === null) return;
         const features = match[0];
         expect(features).toContain('<span aria-hidden="true">🧭</span>');
         expect(features).toContain('<span aria-hidden="true">📚</span>');
