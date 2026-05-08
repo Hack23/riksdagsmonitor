@@ -53,7 +53,6 @@ function runScript(opts: RunOptions): RunResult {
     PATH: process.env.PATH,
     HOME: process.env.HOME,
     ...opts.env,
-    GH_AW_PAT_FALLBACK_BUNDLE: path.join(opts.ghAwDir, 'aw-fallback.bundle'),
     // Per-test sandbox of the auto-probe paths so the script never reads or
     // writes the real `/tmp/gh-aw/...` shared by every test.
     GH_AW_PAT_FALLBACK_MANIFEST_PRIMARY: path.join(opts.ghAwDir, 'agent', 'aw-fallback.json'),
@@ -69,6 +68,11 @@ function runScript(opts: RunOptions): RunResult {
     GITHUB_STEP_SUMMARY: summaryPath,
     DEFAULT_BRANCH: 'main',
   };
+  // Most scenarios exercise the historical aw-fallback.bundle path. Tests can
+  // provide GH_AW_PAT_FALLBACK_BUNDLE explicitly to cover alternate bundle names.
+  if (!opts.env?.GH_AW_PAT_FALLBACK_BUNDLE) {
+    env.GH_AW_PAT_FALLBACK_BUNDLE = path.join(opts.ghAwDir, 'aw-fallback.bundle');
+  }
   if (!opts.skipManifestOverride) {
     env.GH_AW_PAT_FALLBACK_MANIFEST = path.join(opts.ghAwDir, 'aw-fallback.json');
   }
@@ -286,10 +290,54 @@ describe('gh-aw-pat-pr-fallback.sh', () => {
     fs.copyFileSync(handoff.bundlePath, path.join(ghAwDir, 'aw-fallback.bundle'));
     fs.writeFileSync(path.join(ghAwDir, 'aw-fallback.json'), JSON.stringify(handoff.manifest));
 
-    const result = runScript({ ghAwDir, hostRepoDir });
+    const result = runScript({
+      ghAwDir,
+      hostRepoDir,
+      env: { GH_AW_PAT_FALLBACK_TRIGGER_CONCLUSION: 'success' },
+    });
     expect(result.status).toBe(0);
     expect(result.audit).toMatch(/"event":"skip"/);
     expect(result.audit).not.toMatch(/"event":"primary_start"/);
+  });
+
+  it('recovers failed safeoutputs aw-main bundle instead of treating the request as success', () => {
+    const hostRepoDir = makeHostRepo(rootTmp);
+    const ghAwDir = path.join(rootTmp, 'gh-aw');
+    fs.mkdirSync(ghAwDir, { recursive: true });
+    const sandbox = path.join(rootTmp, 'sandbox-aw-main');
+    fs.mkdirSync(sandbox, { recursive: true });
+    execFileSync('git', ['clone', '-q', hostRepoDir, sandbox]);
+    git(sandbox, ['config', 'user.email', 'agent@example.invalid']);
+    git(sandbox, ['config', 'user.name', 'Agent']);
+    const dir = path.join(sandbox, 'analysis', 'daily', '2026-05-08', 'committee-reports');
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, 'article.md'), '# Committee Report\n\nBody.\n');
+    git(sandbox, ['add', '.']);
+    git(sandbox, ['commit', '-q', '-m', 'news: committee report']);
+    const bundlePath = path.join(rootTmp, 'aw-main.bundle');
+    execFileSync('git', ['bundle', 'create', bundlePath, 'main'], { cwd: sandbox });
+    fs.copyFileSync(bundlePath, path.join(ghAwDir, 'aw-main.bundle'));
+    fs.writeFileSync(
+      path.join(ghAwDir, 'safeoutputs.jsonl'),
+      '{"type":"create_pull_request","title":"📰 Committee Reports — 2026-05-08","body":"x"}\n',
+    );
+
+    const result = runScript({
+      ghAwDir,
+      hostRepoDir,
+      env: {
+        GH_AW_PAT_FALLBACK_SLUG: 'committee-reports',
+        GH_AW_PAT_FALLBACK_BUNDLE: path.join(ghAwDir, 'aw-main.bundle'),
+        GH_AW_PAT_FALLBACK_SOURCE_RUN_ID: '25537084240',
+        GH_AW_PAT_FALLBACK_TRIGGER_CONCLUSION: 'failure',
+        TODAY: '2026-05-08',
+      },
+    });
+    expect(result.status).toBe(0);
+    expect(result.audit).toMatch(/"event":"primary_start"/);
+    expect(result.audit).toMatch(/safeoutputs aw-main bundle ref renamed for recovery/);
+    expect(result.audit).toMatch(/"branch":"news\/2026-05-08-committee-reports-run-25537084240"/);
+    expect(result.audit).not.toMatch(/"event":"skip"/);
   });
 
   it('fails non-zero when manifest is malformed JSON', () => {

@@ -151,7 +151,9 @@ jobs:
           have_bundle=0
           have_manifest=0
           have_stdio=0
-          [ -f /tmp/gh-aw/aw-fallback.bundle ] && have_bundle=1 || true
+          if [ -f /tmp/gh-aw/aw-fallback.bundle ] || [ -f /tmp/gh-aw/aw-main.bundle ]; then
+            have_bundle=1
+          fi
           # Manifest lives in /tmp/gh-aw/agent/aw-fallback.json (current) or
           # /tmp/gh-aw/aw-fallback.json (legacy). Probe both.
           if [ -f /tmp/gh-aw/agent/aw-fallback.json ] || [ -f /tmp/gh-aw/aw-fallback.json ]; then
@@ -174,6 +176,8 @@ jobs:
           GH_AW_PAT_FALLBACK_SLUG: ${{ steps.target.outputs.slug }}
           GH_AW_PAT_FALLBACK_RUN_URL: ${{ steps.target.outputs.run_url }}
           GH_AW_PAT_FALLBACK_WORKFLOW_NAME: ${{ steps.target.outputs.wf_name }}
+          GH_AW_PAT_FALLBACK_SOURCE_RUN_ID: ${{ steps.target.outputs.run_id }}
+          GH_AW_PAT_FALLBACK_TRIGGER_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
           DEFAULT_BRANCH: main
         run: |
           if [ -z "${GH_AW_PAT_PR_FALLBACK_TOKEN:-}" ]; then

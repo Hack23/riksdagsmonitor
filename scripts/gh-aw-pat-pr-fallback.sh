@@ -47,10 +47,12 @@
 #   GH_AW_PAT_FALLBACK_SLUG      Article slug (e.g. `week-in-review`)
 #   GH_AW_PAT_FALLBACK_RUN_URL   URL of the agent run that produced the bundle
 #   GH_AW_PAT_FALLBACK_WORKFLOW_NAME  Human-readable workflow name
+#   GH_AW_PAT_FALLBACK_SOURCE_RUN_ID  Original agent run ID (for recovery branch names)
 #   GITHUB_REPOSITORY, GITHUB_SERVER_URL, GITHUB_RUN_ID  (set by Actions)
 #
 # Optional env:
-#   GH_AW_PAT_FALLBACK_BUNDLE   Override path (default /tmp/gh-aw/aw-fallback.bundle)
+#   GH_AW_PAT_FALLBACK_BUNDLE   Override path (default /tmp/gh-aw/aw-fallback.bundle,
+#                                falling back to /tmp/gh-aw/aw-main.bundle)
 #   GH_AW_PAT_FALLBACK_MANIFEST Override path (default /tmp/gh-aw/aw-fallback.json)
 #   GH_AW_PAT_FALLBACK_STDIO_LOG Override path (default /tmp/gh-aw/agent-stdio.log)
 #   GH_AW_PAT_FALLBACK_AUDIT_LOG Override path (default /tmp/gh-aw/fallback-events.jsonl)
@@ -134,7 +136,16 @@ primary_branch_from_bundle() {
 # Trigger evaluation
 # ---------------------------------------------------------------------------
 
-bundle="${GH_AW_PAT_FALLBACK_BUNDLE:-/tmp/gh-aw/aw-fallback.bundle}"
+bundle="${GH_AW_PAT_FALLBACK_BUNDLE:-}"
+if [ -z "$bundle" ]; then
+  for cand in /tmp/gh-aw/aw-fallback.bundle /tmp/gh-aw/aw-main.bundle; do
+    if [ -f "$cand" ]; then
+      bundle="$cand"
+      break
+    fi
+  done
+  [ -n "$bundle" ] || bundle="/tmp/gh-aw/aw-fallback.bundle"
+fi
 # The gh-aw `agent` artifact upload glob in compiled news-*.lock.yml only
 # matches `/tmp/gh-aw/aw-*.bundle` and `/tmp/gh-aw/aw-*.patch` (no `aw-*.json`),
 # but the entire `/tmp/gh-aw/agent/` directory is uploaded recursively. Stage E
@@ -161,9 +172,13 @@ safeoutputs_file="${GH_AW_PAT_FALLBACK_SAFEOUTPUTS_FILE:-${GH_AW_SAFE_OUTPUTS:-/
 default_branch="${DEFAULT_BRANCH:-main}"
 
 # A successful safeoutputs PR creation writes a `create_pull_request` event to
-# safeoutputs.jsonl. If that event exists, the deliverable already shipped via
-# safeoutputs and the host-side fallback must skip — never duplicate PRs.
-if [ -f "$safeoutputs_file" ] && grep -q '"create_pull_request"' "$safeoutputs_file"; then
+# safeoutputs.jsonl and the triggering workflow concludes successfully. Failed
+# safeoutputs runs also leave the attempted request in safeoutputs.jsonl, so use
+# the workflow conclusion as the success discriminator before skipping.
+trigger_conclusion="${GH_AW_PAT_FALLBACK_TRIGGER_CONCLUSION:-}"
+if [ "$trigger_conclusion" = "success" ] \
+  && [ -f "$safeoutputs_file" ] \
+  && grep -q '"create_pull_request"' "$safeoutputs_file"; then
   log "safeoutputs already produced a create_pull_request event; fallback skipped"
   step_summary "✅ Host-side PAT PR fallback skipped — safeoutputs PR already created."
   audit "skip" "safeoutputs PR already created"
@@ -260,7 +275,7 @@ if [ "$primary_active" -eq 1 ]; then
   head_sha=""
   parent_sha=""
   slug="${GH_AW_PAT_FALLBACK_SLUG:-}"
-  today=""
+  today="${TODAY:-}"
   analysis_dir=""
   article_md_path=""
   title=""
@@ -298,6 +313,9 @@ if [ "$primary_active" -eq 1 ]; then
   # Derive title from article markdown when manifest didn't carry one.
   if [ -z "$title" ] && [ -n "$article_md_path" ] && [ -f "$article_md_path" ]; then
     title=$(awk '/^# / { sub(/^# /, ""); print; exit }' "$article_md_path")
+  fi
+  if [ -z "$today" ]; then
+    today=$(date -u +%Y-%m-%d)
   fi
   if [ -z "$title" ]; then
     if [ -n "$slug" ] && [ -n "$today" ]; then
@@ -341,6 +359,17 @@ if [ "$primary_active" -eq 1 ]; then
     log "warning: manifest head_sha=$head_sha differs from bundle head=$recovered_sha — trusting bundle"
     audit "warn" "manifest/bundle head mismatch" \
       "$(printf '{"manifest_head":"%s","bundle_head":"%s"}' "$head_sha" "$recovered_sha")"
+  fi
+
+  if [ "$branch" = "$default_branch" ] && [ "${bundle##*/}" = "aw-main.bundle" ]; then
+    safe_slug="${slug:-recovery}"
+    safe_slug=$(printf '%s' "$safe_slug" | tr -cs 'A-Za-z0-9._/-' '-' | sed -E 's#^-+|-+$##g')
+    [ -n "$safe_slug" ] || safe_slug="recovery"
+    recovery_run_id="${GH_AW_PAT_FALLBACK_SOURCE_RUN_ID:-${GITHUB_RUN_ID:-manual}}"
+    branch="news/${today}-${safe_slug}-run-${recovery_run_id}"
+    log "bundle carries default-branch ref from safeoutputs handoff; publishing as recovery branch $branch"
+    audit "warn" "safeoutputs aw-main bundle ref renamed for recovery" \
+      "$(printf '{"branch":"%s","bundle_ref":"%s"}' "$branch" "$default_branch")"
   fi
 
   # ---- Fail-closed safety checks before any push ----
