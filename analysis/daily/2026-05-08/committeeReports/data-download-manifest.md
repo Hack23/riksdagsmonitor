@@ -70,3 +70,20 @@ JuU32 contains provisions touching RF chapter 2 §1 (freedom of assembly). Lagr�
 | IMF economic context | DEGRADED | Proxied | API 404 error |
 | Opposition reservations | HIGH | All captured | From betänkande text |
 | Lagrådet opinions | UNVERIFIED | JuU32 gap | See Gap 3 |
+
+---
+
+## Re-run 2026-05-08 08:32 UTC
+
+**New documents discovered**: 1
+
+| dok_id | Committee | Title | Published | Full text |
+|--------|-----------|-------|-----------|-----------|
+| HD01UbU28 | UbU | Legitimation och behörighet i den tioåriga grundskolan | 2026-05-08 | ⚠️ metadata+summary only |
+
+**Notes**: HD01UbU28 published today (2026-05-08) by UbU. Unanimous cross-party adoption. Technical implementation of Tidö 10-year school reform. Full text unavailable via API at this time; core content confirmed from summary.
+
+**Voteringar update**: Queried `search_voteringar` for UbU28/2025/26 — 0 results (new riksmöte indexing lag; consistent with gap documented in original manifest). Voteringar gap remains.
+
+**full-text-fallback: HD01UbU28 — full text unavailable from MCP server at analysis time; metadata+summary used**
+

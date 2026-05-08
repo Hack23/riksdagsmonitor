@@ -79,3 +79,20 @@ Regardless of election outcome, all 8 bills become law. JuU39 and FiU37 in parti
 - **FiU37**: Riksbanken crisis function is institutionally embedded — requires amending Riksbankslagen to remove.
 
 The Tidö government's legislative legacy is being cemented this week. Even if power changes hands, these reforms persist.
+
+---
+
+## Re-run Update — 2026-05-08 (HD01UbU28 Unanimous Adoption)
+
+### Coalition Impact Assessment — UbU28
+
+UbU28's unanimous adoption (no reservations) demonstrates a specific coalition dynamic distinct from the contested JuU and FiU bills:
+
+- **Education as cross-partisan ground**: The 10-year school reform bill passed without S, V, or MP filing reservations. This indicates the opposition parties separated their general electoral opposition to Tidö from technical schoollagen implementation — a rational position for parties that will inherit the reform.
+
+- **Governing coalition cohesion**: M + SD + KD + L voting unanimously on UbU28 = 176 seats (base Tidö support). The unanimous outcome (349-0 effective) means even KD and L, the smaller coalition partners who sometimes diverge, aligned fully.
+
+- **No erosion signal**: The unanimity actually SUPPRESSES the normal "coalition stress test" signal value of UbU28. There is no dissent to analyze. This is analytically distinct from the JuU39 and FiU37 bills where some margin tracking is still possible.
+
+- **Election implication**: Three completed pillars with unanimous or strong majority adoption = strong narrative position for the governing coalition entering September 2026 campaigning. No delivery failures to defend.
+

@@ -80,3 +80,23 @@ This three-way opposition coalition will not hold coherently in campaign — eac
 
 ### 7. Riksbanken's New Role: Historical Context
 The last time Sweden faced a systemic financial crisis requiring institutional coordination (1990–1994, Nordbanken/Gota Bank collapse), the government had NO statutory crisis coordination framework. Resolution proceeded through ad hoc Cabinet decisions and extraordinary Riksdag appropriations. FiU37 permanently closes that institutional gap. This is the most historically significant institutional design change in this week's batch.
+
+---
+
+## Re-run Update — 2026-05-08 08:33 UTC
+
+### New Document: HD01UbU28 (UbU — Education)
+
+**Legitimation och behörighet i den tioåriga grundskolan** (HD01UbU28) published today by the Education Committee (UbU) adds a ninth legislative item to this week's cluster. It is the administrative capstone of the Tidö government's 10-year compulsory school reform:
+
+- **Unanimous adoption** — no reservations from S, V, C, MP. This is politically significant: the earlier 10-year school reform was contested; the implementation mechanism has achieved broad consensus.
+- **Election narrative completion** — adds "education delivery" to the government's campaign platform alongside "financial resilience" (FiU cluster) and "justice/security" (JuU cluster). The government can now claim all three pillars of its Tidö program are legislatively complete before September 2026.
+- **Electoral taxonomy update**: the nine betänkanden now span three electoral battleground domains:
+  1. **Financial stability** (FiU37, FiU38, FiU43, FiU31) — government competence signal
+  2. **Justice/order/rights** (JuU39, JuU32, JuU34) — values + security signal
+  3. **Education reform** (UbU28) — delivery + competence signal
+
+### Revised Cross-Cutting Narrative
+
+The week's legislative output now tells a three-pillar pre-election delivery story. Nine bills, three domains, one date anchor (1 July 2026 for 7 of 9). This is not coincidental legislative convergence — it reflects deliberate Tidö legislative calendar management designed to maximise deliverable count before the pre-election political truce begins in August 2026.
+

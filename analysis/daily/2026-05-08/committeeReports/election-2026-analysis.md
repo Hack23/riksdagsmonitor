@@ -84,3 +84,23 @@
 **Financial legislation** (FiU37, 38, 43): negligible direct electoral impact; contributes to "stable government" meta-narrative which is worth ~0.5pp overall.
 
 **Combined effect**: Small but positive for Tidö coalition heading into election. Not decisive — election remains competitive and will be decided on immigration, housing, and economy fundamentals.
+
+---
+
+## Re-run Update — 2026-05-08 (HD01UbU28 — Education Pillar)
+
+### Education Reform Completion Signal
+
+HD01UbU28 completes the Tidö government's education legislative programme before the September 2026 election. Key electoral implications:
+
+**Government framing opportunity**: "We promised a 10-year school. We delivered the 10-year school." Unanimous adoption (no S, V, C, MP reservations) means the opposition cannot credibly challenge the delivery claim — only the quality and resourcing claims.
+
+**Opposition counter-framing**: Parties (especially S, V, MP) will pivot from "opposed the reform" to "we'll resource it properly" — conceding the structural change while contesting implementation. This is a weaker opposition position in the campaign.
+
+**Teacher vote**: Approximately 170,000 teachers in Sweden, represented primarily by Lärarförbundet (S-leaning) and Lärarnas Riksförbund (more politically mixed). UbU28's unanimous passage removes a potential teacher union grievance about credential uncertainty. However, teacher supply shortages and salary debates remain.
+
+**Voter segments most affected**:
+- Parents of 6-year-olds (current cohort entering school 2022–24 who will benefit from 10-year structure)
+- Primary school teachers (credential clarity, implementation concerns)
+- Rural school administrations (understaffed; will face extra administrative burden)
+

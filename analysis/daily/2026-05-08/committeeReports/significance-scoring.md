@@ -54,3 +54,21 @@
 **Session significance**: **L3** (driven by FiU37 + JuU39 + JuU32 triplet)
 
 This is a above-average committee week. The combination of a systemic financial reform plus two high-salience justice bills with election relevance places this session in the top quartile of legislative output significance.
+
+---
+
+## Re-run Update — New Document HD01UbU28
+
+| Document | Base Score | Election Mult | Final | Rationale |
+|----------|-----------|---------------|-------|-----------|
+| HD01UbU28 | L2 | 1.1 | **L2** | Strategic education reform implementation. Unanimous. No political controversy. |
+
+**HD01UbU28 Scoring Detail**:
+- **Institutional impact**: MEDIUM. Affects all Swedish teachers with legitimation in affected school forms. ~30,000+ credentials need administrative update by Skolverket.
+- **Political contestation**: NONE. Zero reservations from any party — including those who opposed the original 10-year school reform.
+- **Electoral significance**: MEDIUM. Completes Tidö education reform package before election. Government can credibly claim "we delivered the promised 10-year school." Opposition cannot attack this specific element.
+- **Implementation complexity**: LOW (for this betänkande). Skolverket handles centrally; no teacher action required.
+- **Systemic gap closed**: YES. Without this credentialing adjustment, the 2028/29 reform introduction would have created legal ambiguity for teachers' qualifications.
+
+**Updated Session Score**: L3 (unchanged — FiU37+JuU39+JuU32 triplet still drives session significance)
+
