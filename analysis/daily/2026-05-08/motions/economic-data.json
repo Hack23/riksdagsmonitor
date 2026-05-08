@@ -1,0 +1,20 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-05-08",
+  "status": "degraded",
+  "degradation_reason": "IMF SDMX 404 — IFS endpoint unavailable; WEO/FM Datamapper functional",
+  "sources": [
+    {
+      "provider": "imf_weo_fm_only",
+      "dataflow": "WEO",
+      "vintage": "April 2025",
+      "retrieved_at": "2026-05-08",
+      "indicators": {
+        "NGDP_RPCH": {"value": 2.1, "unit": "percent", "year": 2025, "country": "SWE"},
+        "LUR": {"value": 8.3, "unit": "percent", "year": 2025, "country": "SWE"},
+        "GGXCNL_NGDP": {"value": -0.8, "unit": "percent_gdp", "year": 2025, "country": "SWE"}
+      }
+    }
+  ],
+  "notes": "IFS SDMX endpoint returned 404; GFS_COFOG justice/environment data unavailable. Fiscal context for Kriminalvården and Skogsstyrelsen uses Statskontoret reports (2024:3, 2024:5, 2024:11). IMF WEO/FM vintage >1 month; within acceptable freshness threshold."
+}
