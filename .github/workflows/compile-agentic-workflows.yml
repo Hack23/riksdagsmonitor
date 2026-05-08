@@ -46,6 +46,34 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
 
+      - name: Patch safe_outputs fetch-depth for bundle compatibility
+        # The gh-aw compiler generates fetch-depth: 1 in the safe_outputs job checkout.
+        # When main advances while an agent run is in progress, the shallow clone
+        # (depth=1) only fetches the new HEAD and loses the prerequisite commit that
+        # the bundle was created from — causing "Repository lacks these prerequisite
+        # commits" and a failed create_pull_request safe output.
+        # Switching to fetch-depth: 0 (full history) ensures all historical commits
+        # are available regardless of how much main has advanced during the run.
+        # Uniquely targets the safe_outputs checkout: it has `persist-credentials: false`
+        # immediately before `fetch-depth: 1`, unlike the agent checkout which has
+        # `sparse-checkout-cone-mode: true` before its `fetch-depth: 1`.
+        run: |
+          python3 - << 'PYEOF'
+          import glob
+          PATTERN     = '          persist-credentials: false\n          fetch-depth: 1'
+          REPLACEMENT = '          persist-credentials: false\n          fetch-depth: 0'
+          files = glob.glob('.github/workflows/news-*.lock.yml')
+          for f in sorted(files):
+              with open(f) as fp:
+                  content = fp.read()
+              if PATTERN in content:
+                  with open(f, 'w') as fp:
+                      fp.write(content.replace(PATTERN, REPLACEMENT, 1))
+                  print(f'Patched {f}')
+              else:
+                  print(f'WARN: pattern not found in {f}')
+          PYEOF
+
       - name: Enforce prompt-module architecture
         run: |
           set -e
