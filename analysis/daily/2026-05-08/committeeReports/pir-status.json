@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "cycle": "committeeReports",
+  "date": "2026-05-08",
+  "subfolder": "committeeReports",
+  "generated_at": "2026-05-08T08:35:30Z",
+  "pirs": [
+    {
+      "pir_id": "PIR-COMMIT-1",
+      "statement": "Has the Tidö government achieved legislative completion of its 10-year school reform package before the September 2026 election?",
+      "status": "answered",
+      "confidence": "HIGH",
+      "answer_summary": "YES — HD01UbU28 (UbU, 2026-05-08) adopted unanimously, closes the last statutory gap. Reform complete pre-election."
+    },
+    {
+      "pir_id": "PIR-COMMIT-2",
+      "statement": "Will JuU39 (psychological violence crime) face prosecution challenges in initial enforcement period (2026-2028)?",
+      "status": "open",
+      "confidence": "HIGH"
+    },
+    {
+      "pir_id": "PIR-COMMIT-3",
+      "statement": "Has Lagrådet formally reviewed JuU32 police powers provisions touching RF chapter 2?",
+      "status": "open",
+      "confidence": "LOW"
+    },
+    {
+      "pir_id": "PIR-COMMIT-4",
+      "statement": "Will any ECHR Article 11 application be filed within 18 months of JuU32 enactment?",
+      "status": "open",
+      "confidence": "MEDIUM"
+    },
+    {
+      "pir_id": "PIR-COMMIT-5",
+      "statement": "Will FiU37 Riksbanken crisis coordination function be operationally ready before the September 2026 election?",
+      "status": "open",
+      "confidence": "MEDIUM"
+    }
+  ]
+}

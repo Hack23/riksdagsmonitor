@@ -93,3 +93,17 @@
 | Police invoke JuU32 against pre-election demonstration | Escalate; media monitor; assess for ECHR Article 11 application |
 | First JuU39 prosecution acquittal (high profile) | Update enforcement gap assessment; track S/opposition response |
 | Financial stability event triggering FiU37 function | Full crisis tracking protocol; assess new function performance |
+
+---
+
+## Re-run Update — 2026-05-08 (New: HD01UbU28)
+
+### Additional Forward Indicators (Education Domain)
+
+| # | Date | Indicator | Trigger | Source |
+|---|------|-----------|---------|--------|
+| FI-24 | 2026-06-01 | Skolverket publishes teacher legitimation update guidelines | HD01UbU28 enacted | Skolverket press |
+| FI-25 | 2026-08 | Government education campaign material mentions 10-year school completion | Election campaign period | Party websites |
+| FI-26 | 2028-08-01 (deadline) | Skolverket completes all teacher credential updates | HD01UbU28 HD01UbU28 implementation | Skolverket annual report |
+| FI-27 | 2026-Q3 | Lärarförbundet/Lärarnas Riksförbund response to implementation timeline | Post-enactment | Teacher union press |
+

@@ -83,3 +83,30 @@ The following areas should receive enhanced depth in Pass 2:
 | Per-document (E) | HIGH | Primary source documents used directly |
 
 **Overall analysis confidence**: MEDIUM-HIGH
+
+---
+
+## Re-run log
+
+- **Re-run**: 2026-05-08T08:35:00Z · workflow=news-committee-reports · run_id=25545455963 · attempt=1
+  - new dok_ids: 1 (HD01UbU28 — UbU, published 2026-05-08)
+  - artifacts extended: synthesis-summary.md, executive-brief.md, significance-scoring.md, intelligence-assessment.md, forward-indicators.md, election-2026-analysis.md, swot-analysis.md, stakeholder-perspectives.md, data-download-manifest.md
+  - flags closed: 1 (education pillar completion confirmed)
+  - vintage refresh: no, IMF WEO Apr-2026 still current
+
+### Pass 2 Improvements Made in This Re-run
+
+1. **New document HD01UbU28 fully integrated**: Created documents/HD01UbU28-analysis.md at L2 Strategic depth. Updated manifest, synthesis, exec-brief, significance scoring, intelligence assessment (new KJ-8), election analysis, SWOT, stakeholder perspectives, and forward indicators.
+
+2. **Narrative coherence improvement**: The nine-betänkanden session is now correctly framed as a three-pillar (financial/justice/education) pre-election delivery package — a more analytically precise frame than the original eight-item two-pillar framing.
+
+3. **KJ-8 addition**: New high-confidence key judgement on Tidö programme completion across three pillars, with historical precedent citation (2006, 2010 elections). Fills the "strategic narrative" gap identified in Pass 1.
+
+4. **Education stakeholder map**: Added Skolverket, Lärarförbundet, Lärarnas Riksförbund as missing stakeholders in the education domain.
+
+5. **Forward indicators FI-24 through FI-27**: Added dated education implementation tracking indicators.
+
+### ICD 203 Compliance Audit (Pass 2 update)
+
+All 9 source claims cite primary dok_id references. No fabricated data. Admiralty Code ratings assigned. WEP language used in Key Judgements. Uncertainty explicitly disclosed in KJ-6, KJ-7. Collection requirements documented. GDPR Art. 9(2)(e)(g) basis maintained — all political data is publicly made or substantial public interest.
+

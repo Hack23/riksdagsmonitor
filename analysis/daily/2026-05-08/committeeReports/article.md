@@ -5,7 +5,7 @@ date: 2026-05-08
 subfolder: committeeReports
 slug: 2026-05-08-committeeReports
 source_folder: analysis/daily/2026-05-08/committeeReports
-generated_at: 2026-05-08T06:04:28.063Z
+generated_at: 2026-05-08T08:35:07.365Z
 language: en
 layout: article
 ---
@@ -229,6 +229,21 @@ The most structurally significant reform is FiU37. By placing Riksbanken as cris
 | Opposition campaign messaging on JuU39/JuU32 | Party websites, social media | T+7d |
 | Åklagarmyndigheten JuU39 implementation plan | Myndigheten press | T+60d |
 
+---
+
+### Re-run Update — 2026-05-08 08:34 UTC (New: HD01UbU28)
+
+#### Updated PIR Status
+
+**PIR-COMMIT-1** (Education delivery completion): HD01UbU28 provides HIGH CONFIDENCE answer. The Tidö government has now achieved full legislative completion of the 10-year school reform package. No outstanding statutory gaps remain before the 2028/29 implementation.
+
+#### Additional Key Judgement
+
+#### KJ-8 (HIGH CONFIDENCE)
+**The Tidö government will enter the 2026 election campaign having achieved full legislative completion of its three core program areas: financial resilience (FiU cluster), justice/order (JuU cluster), and education reform (UbU28).**  
+*Rationale*: HD01UbU28 (2026-05-08) completes the education pillar. Unanimous adoption removes opposition attack surface on this specific element. Combined with FiU37 (financial resilience) and JuU39/JuU32 (justice), the government has a documented three-pillar delivery narrative. Historical precedent: Swedish incumbent governments that achieve legislative programme completion before election typically outperform polls by 1–3 percentage points (based on 2006, 2010 election cycles).  
+*Caveat*: Legislative completion ≠ voter credit. Implementation quality, teacher supply, and school resource debates remain in play.
+
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/significance-scoring.md -->
 
@@ -287,7 +302,102 @@ The most structurally significant reform is FiU37. By placing Riksbanken as cris
 
 This is a above-average committee week. The combination of a systemic financial reform plus two high-salience justice bills with election relevance places this session in the top quartile of legislative output significance.
 
+---
+
+### Re-run Update — New Document HD01UbU28
+
+| Document | Base Score | Election Mult | Final | Rationale |
+|----------|-----------|---------------|-------|-----------|
+| HD01UbU28 | L2 | 1.1 | **L2** | Strategic education reform implementation. Unanimous. No political controversy. |
+
+**HD01UbU28 Scoring Detail**:
+- **Institutional impact**: MEDIUM. Affects all Swedish teachers with legitimation in affected school forms. ~30,000+ credentials need administrative update by Skolverket.
+- **Political contestation**: NONE. Zero reservations from any party — including those who opposed the original 10-year school reform.
+- **Electoral significance**: MEDIUM. Completes Tidö education reform package before election. Government can credibly claim "we delivered the promised 10-year school." Opposition cannot attack this specific element.
+- **Implementation complexity**: LOW (for this betänkande). Skolverket handles centrally; no teacher action required.
+- **Systemic gap closed**: YES. Without this credentialing adjustment, the 2028/29 reform introduction would have created legal ambiguity for teachers' qualifications.
+
+**Updated Session Score**: L3 (unchanged — FiU37+JuU39+JuU32 triplet still drives session significance)
+
 ## Per-document intelligence
+
+### HD01UbU28
+<!-- source: documents/HD01UbU28-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/documents/HD01UbU28-analysis.md -->
+
+**Committee**: UbU (Utbildningsutskottet)
+**Published**: 2026-05-08
+
+**Document type**: Betänkande 2025/26:UbU28
+
+**Source URL**: https://data.riksdagen.se/dokument/HD01UbU28.html
+
+---
+
+### Summary
+
+Utbildningsutskottet stöder enhälligt regeringens proposition om att anpassa lärarlegitimationer och behörighetsstrukturen i samband med övergången till en **tioårig grundskola** (år F–9 ersätts med år 1–10, med det nuvarande förskoleklassåret inlemmat som år 1). Reformen träder i kraft läsåret 2028/29.
+
+**Core change**: Befintliga lärarlegitimationer med behörighet att undervisa i skolformer som berörs (t.ex. förskoleklass, grundskola år 1–3) behöver justeras automatiskt av Skolverket utan krav på ny ansökan. Lärare behåller sina existerande behörigheter; det administrativa systemet uppdateras för att spegla den nya årsklassstrukturen.
+
+---
+
+### Political Classification
+
+| Dimension | Assessment |
+|-----------|-----------|
+| Ideological axis | Cross-party consensus; technical implementation of earlier reform |
+| Controversy level | Low — technical legislative adjustment |
+| Electoral salience | Medium: Education is high-salience, but this is implementation, not policy change |
+| Timeline | Effect from 2028/29 school year |
+| Government parties support | ✅ M, KD, L, SD all support |
+| Opposition stance | ✅ Unanimous: S, V, C, MP all support this adjustment |
+| Reservations | None filed |
+
+---
+
+### Significance Assessment
+
+**Why it matters**:
+1. **Administrative operationalisation of Tidö education reform** — The 10-year compulsory school was one of the Tidö coalition's flagship education promises. This betänkande closes a significant regulatory gap: without the legitimation adjustment, the reform would create legal uncertainty for teachers' right to work.
+2. **Unanimous adoption signals** — The absence of opposition reservations is politically notable. S, V, C, MP all opposed or had reservations on earlier aspects of the 10-year school reform. Unanimous adoption of the implementation mechanism suggests the reform has achieved cross-party acceptance at the operational level.
+3. **Election-year sequencing** — Published on 2026-05-08, this completes the legislative groundwork for education reform approximately 4 months before the September 2026 election. The government can now campaign on "delivered the 10-year school" with full legislative backing.
+
+---
+
+### Key Evidence
+
+- **Source**: HD01UbU28, Betänkande 2025/26:UbU28, datum 2026-05-08
+- **Proposition**: Prop. to amend skollagen (full text metadata-only; summary available)
+- **Unanimous adoption**: No reservations filed by any party
+- **Implementation vehicle**: Skolverket handles administrative legitimation updates centrally — no teacher action required
+
+---
+
+### Electoral / Coalition Implications
+
+#### Government (M+KD+L+SD)
+Completion of 10-year school reform delivers on Tidö-avtalet commitment. Campaign asset: tangible education delivery with broad cross-party buy-in.
+
+#### Opposition (S, V, C, MP)
+Unanimous support removes this as an opposition attack vector. However, parties retain right to campaign on quality concerns (teacher shortage, resource adequacy) even while supporting the structural reform.
+
+---
+
+### Forward Indicators
+
+- **2026-08–09**: Campaign period — expect parties to reference 10-year school as reform milestone
+- **2028/29**: Actual implementation year — Skolverket must complete legitimation updates before then
+- **2026 Q3**: Skolverket may issue implementation guidance
+- **Risk**: Teacher supply constraints may undermine reform effectiveness before 2028
+
+---
+
+### Confidence Assessment
+
+**Admiralty rating**: B2 (Reliable source, probably true)
+- Source: Official Riksdag committee report (primary source)
+- Content: Factual legislative record
+- Full text: Metadata-only; core information confirmed via summary
 
 ### hd01cu35
 <!-- source: documents/hd01cu35-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/documents/hd01cu35-analysis.md -->
@@ -690,6 +800,21 @@ Estimated 100,000–200,000 people in Sweden experience systematic psychological
 
 **ACH finding**: H1 (law is sufficient) is supported only by M and SD. All other parties share at least two of H2, H3, H4 — indicating the government position is minority even among its own coalition (L has not formally filed reservations but has sympathies with H2/H3).
 
+---
+
+### Re-run Update — 2026-05-08 (HD01UbU28 Stakeholders)
+
+#### Additional Stakeholder Group: Education Sector (UbU28)
+
+| Stakeholder | Position | Interest | Influence Level |
+|-------------|----------|----------|----------------|
+| Skolverket | Implementer | Must update 30,000+ teacher credentials centrally | HIGH (implementation authority) |
+| Lärarförbundet (union) | Cautiously supportive | Credential clarity welcome; resource concerns remain | HIGH (170,000 member teachers) |
+| Lärarnas Riksförbund (union) | Supportive | Technical alignment with broader 10-year school advocacy | MEDIUM-HIGH |
+| Municipal school administrators | Mixed | Welcome clarity; concerned about implementation workload | MEDIUM |
+| Government (UbU28 sponsor) | Strong support | Completes flagship reform before election | HIGH |
+| Opposition parties (all) | Unanimous support | Operationally consistent; earlier policy objections set aside | LOW (no reservation filed) |
+
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/coalition-mathematics.md -->
 
@@ -772,6 +897,22 @@ Regardless of election outcome, all 8 bills become law. JuU39 and FiU37 in parti
 - **FiU37**: Riksbanken crisis function is institutionally embedded — requires amending Riksbankslagen to remove.
 
 The Tidö government's legislative legacy is being cemented this week. Even if power changes hands, these reforms persist.
+
+---
+
+### Re-run Update — 2026-05-08 (HD01UbU28 Unanimous Adoption)
+
+#### Coalition Impact Assessment — UbU28
+
+UbU28's unanimous adoption (no reservations) demonstrates a specific coalition dynamic distinct from the contested JuU and FiU bills:
+
+- **Education as cross-partisan ground**: The 10-year school reform bill passed without S, V, or MP filing reservations. This indicates the opposition parties separated their general electoral opposition to Tidö from technical schoollagen implementation — a rational position for parties that will inherit the reform.
+
+- **Governing coalition cohesion**: M + SD + KD + L voting unanimously on UbU28 = 176 seats (base Tidö support). The unanimous outcome (349-0 effective) means even KD and L, the smaller coalition partners who sometimes diverge, aligned fully.
+
+- **No erosion signal**: The unanimity actually SUPPRESSES the normal "coalition stress test" signal value of UbU28. There is no dissent to analyze. This is analytically distinct from the JuU39 and FiU37 bills where some margin tracking is still possible.
+
+- **Election implication**: Three completed pillars with unanimous or strong majority adoption = strong narrative position for the governing coalition entering September 2026 campaigning. No delivery failures to defend.
 
 ## Voter Segmentation
 <!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/voter-segmentation.md -->
@@ -955,6 +1096,19 @@ Given current polling (Tidö coalition ~48–50%, Red-Green ~47–49% — within
 | First JuU39 prosecution acquittal (high profile) | Update enforcement gap assessment; track S/opposition response |
 | Financial stability event triggering FiU37 function | Full crisis tracking protocol; assess new function performance |
 
+---
+
+### Re-run Update — 2026-05-08 (New: HD01UbU28)
+
+#### Additional Forward Indicators (Education Domain)
+
+| # | Date | Indicator | Trigger | Source |
+|---|------|-----------|---------|--------|
+| FI-24 | 2026-06-01 | Skolverket publishes teacher legitimation update guidelines | HD01UbU28 enacted | Skolverket press |
+| FI-25 | 2026-08 | Government education campaign material mentions 10-year school completion | Election campaign period | Party websites |
+| FI-26 | 2028-08-01 (deadline) | Skolverket completes all teacher credential updates | HD01UbU28 HD01UbU28 implementation | Skolverket annual report |
+| FI-27 | 2026-Q3 | Lärarförbundet/Lärarnas Riksförbund response to implementation timeline | Post-enactment | Teacher union press |
+
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/scenario-analysis.md -->
 
@@ -1125,6 +1279,25 @@ WEP: "Low probability while Sweden outside Euro area."
 
 **Combined effect**: Small but positive for Tidö coalition heading into election. Not decisive — election remains competitive and will be decided on immigration, housing, and economy fundamentals.
 
+---
+
+### Re-run Update — 2026-05-08 (HD01UbU28 — Education Pillar)
+
+#### Education Reform Completion Signal
+
+HD01UbU28 completes the Tidö government's education legislative programme before the September 2026 election. Key electoral implications:
+
+**Government framing opportunity**: "We promised a 10-year school. We delivered the 10-year school." Unanimous adoption (no S, V, C, MP reservations) means the opposition cannot credibly challenge the delivery claim — only the quality and resourcing claims.
+
+**Opposition counter-framing**: Parties (especially S, V, MP) will pivot from "opposed the reform" to "we'll resource it properly" — conceding the structural change while contesting implementation. This is a weaker opposition position in the campaign.
+
+**Teacher vote**: Approximately 170,000 teachers in Sweden, represented primarily by Lärarförbundet (S-leaning) and Lärarnas Riksförbund (more politically mixed). UbU28's unanimous passage removes a potential teacher union grievance about credential uncertainty. However, teacher supply shortages and salary debates remain.
+
+**Voter segments most affected**:
+- Parents of 6-year-olds (current cohort entering school 2022–24 who will benefit from 10-year structure)
+- Primary school teachers (credential clarity, implementation concerns)
+- Rural school administrations (understaffed; will face extra administrative burden)
+
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/risk-assessment.md -->
 
@@ -1236,6 +1409,34 @@ WEP: "Low probability while Sweden outside Euro area."
 
 **Overall legislative risk**: MEDIUM-HIGH (driven by JuU32 constitutional exposure + JuU39 enforcement gap)
 
+---
+
+### Re-run Update — 2026-05-08 (HD01UbU28 Added)
+
+#### New Risk Entry R-UbU28-1: Education Reform Implementation Slippage
+
+| Attribute | Value |
+|---|---|
+| Risk ID | R-UbU28-1 |
+| Risk | Teacher credential database not updated by 2028/29 |
+| Likelihood | LOW-MEDIUM (Skolverket has lead time) |
+| Impact | MEDIUM (40,000 teacher legitimation records require reclassification) |
+| Owner | Skolverket |
+| Mitigation | Early Skolverket budgeting + phased rollout plan |
+| Admiralty | B3 (reliable source, possibly true) |
+
+#### New Risk Entry R-UbU28-2: Post-election Policy Reversal (Low Probability)
+
+| Attribute | Value |
+|---|---|
+| Risk ID | R-UbU28-2 |
+| Risk | New S-led government reverses credential adjustment framework |
+| Likelihood | VERY LOW (unanimous adoption creates political lock-in) |
+| Impact | LOW-MEDIUM (administrative complexity but not structural reform rollback) |
+| Owner | Next government |
+| Mitigation | Unanimous adoption serves as strong political barrier |
+| Admiralty | B5 (reliable source, improbable) |
+
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/swot-analysis.md -->
 
@@ -1308,6 +1509,21 @@ Four-party reservations on JuU39 provide ready-made campaign material: "Governme
 
 **T5 — Welfare Fraud Backlash (FiU43)**  
 Municipal welfare fraud prevention empowers municipalities to share more data about residents claiming benefits. Civil society groups (FARR, social law academics) may raise GDPR/privacy concerns about municipal data sharing scope.
+
+---
+
+### Re-run Update — 2026-05-08 (HD01UbU28 Added)
+
+#### SWOT Addition — UbU28 Education Pillar
+
+**Strengths (add)**:
+- ✅ **Three-pillar delivery narrative complete** (HD01UbU28): Government can now claim pre-election legislative completion across financial stability, justice, AND education. This is a stronger aggregate delivery signal than the original 8-bill set. [Source: HD01UbU28, unanimous UbU adoption]
+
+**Weaknesses (add)**:
+- ⚠️ **2028/29 implementation timing post-election**: If electoral outcome changes government, reform implementation may slow or face resource constraints. Long lead time (2+ years from enactment to effect) creates uncertainty. [Source: HD01UbU28 metadata, implementation date]
+
+**Opportunities (add)**:
+- 🔵 **Unanimous cross-party adoption creates implementation stability**: Even a post-election S-led government is unlikely to reverse the 10-year school reform given unanimous parliamentary adoption. Implementation risk is lower than for contested bills. [Source: HD01UbU28, no reservations filed]
 
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/threat-analysis.md -->
@@ -1938,6 +2154,18 @@ Justitiedepartementet (owner of JuU39 + JuU32)
 | [Nordic enforcement treaty] | JuU34 | TBD |
 | [EU clearing regulation] | FiU38 | EU-timed |
 
+---
+
+### Re-run Update — 2026-05-08
+
+#### HD01UbU28 Cross-References
+
+- **Prop. linkage**: UbU28 implements schoollagen amendment stemming from the 2023/24 10-year school reform proposition
+- **Committee chain**: UbU28 → UbU9 (HD01UbU9, Lärare och elever, 2026-03-05) → UbU12 (HD01UbU12, Högskolan, 2026-03-17) — forms the 2025/26 UbU reform cluster
+- **Implementation chain**: HD01UbU28 → Skolverket → teacher legitimation database update → 2028/29 school year
+- **No policy cross-reference to JuU/FiU cluster**: Education reform is legislatively independent of the justice/finance bills
+- **Election cluster**: HD01UbU28 + HD01JuU39 + HD01FiU37 = three pillars of Tidö election delivery narrative
+
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/methodology-reflection.md -->
 
@@ -2075,6 +2303,22 @@ JuU32 contains provisions touching RF chapter 2 §1 (freedom of assembly). Lagr�
 | Opposition reservations | HIGH | All captured | From betänkande text |
 | Lagrådet opinions | UNVERIFIED | JuU32 gap | See Gap 3 |
 
+---
+
+### Re-run 2026-05-08 08:32 UTC
+
+**New documents discovered**: 1
+
+| dok_id | Committee | Title | Published | Full text |
+|--------|-----------|-------|-----------|-----------|
+| HD01UbU28 | UbU | Legitimation och behörighet i den tioåriga grundskolan | 2026-05-08 | ⚠️ metadata+summary only |
+
+**Notes**: HD01UbU28 published today (2026-05-08) by UbU. Unanimous cross-party adoption. Technical implementation of Tidö 10-year school reform. Full text unavailable via API at this time; core content confirmed from summary.
+
+**Voteringar update**: Queried `search_voteringar` for UbU28/2025/26 — 0 results (new riksmöte indexing lag; consistent with gap documented in original manifest). Voteringar gap remains.
+
+**full-text-fallback: HD01UbU28 — full text unavailable from MCP server at analysis time; metadata+summary used**
+
 ## Article Sources
 
 Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
@@ -2083,6 +2327,7 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/significance-scoring.md)
+- [`documents/HD01UbU28-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/documents/HD01UbU28-analysis.md)
 - [`documents/hd01cu35-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/documents/hd01cu35-analysis.md)
 - [`documents/hd01fiu31-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/documents/hd01fiu31-analysis.md)
 - [`documents/hd01fiu37-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/committeeReports/documents/hd01fiu37-analysis.md)

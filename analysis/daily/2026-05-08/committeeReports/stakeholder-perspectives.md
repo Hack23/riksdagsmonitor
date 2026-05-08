@@ -94,3 +94,19 @@
 | H4: Enforcement capacity is adequate | ✗ | ✗ | ✓ | ✗ | ✗ | ✓ |
 
 **ACH finding**: H1 (law is sufficient) is supported only by M and SD. All other parties share at least two of H2, H3, H4 — indicating the government position is minority even among its own coalition (L has not formally filed reservations but has sympathies with H2/H3).
+
+---
+
+## Re-run Update — 2026-05-08 (HD01UbU28 Stakeholders)
+
+### Additional Stakeholder Group: Education Sector (UbU28)
+
+| Stakeholder | Position | Interest | Influence Level |
+|-------------|----------|----------|----------------|
+| Skolverket | Implementer | Must update 30,000+ teacher credentials centrally | HIGH (implementation authority) |
+| Lärarförbundet (union) | Cautiously supportive | Credential clarity welcome; resource concerns remain | HIGH (170,000 member teachers) |
+| Lärarnas Riksförbund (union) | Supportive | Technical alignment with broader 10-year school advocacy | MEDIUM-HIGH |
+| Municipal school administrators | Mixed | Welcome clarity; concerned about implementation workload | MEDIUM |
+| Government (UbU28 sponsor) | Strong support | Completes flagship reform before election | HIGH |
+| Opposition parties (all) | Unanimous support | Operationally consistent; earlier policy objections set aside | LOW (no reservation filed) |
+

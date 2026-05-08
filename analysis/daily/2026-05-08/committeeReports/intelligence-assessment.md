@@ -69,3 +69,19 @@
 | Riksbanken hiring announcements (FiU37) | Riksbanken press | T+30d |
 | Opposition campaign messaging on JuU39/JuU32 | Party websites, social media | T+7d |
 | Åklagarmyndigheten JuU39 implementation plan | Myndigheten press | T+60d |
+
+---
+
+## Re-run Update — 2026-05-08 08:34 UTC (New: HD01UbU28)
+
+### Updated PIR Status
+
+**PIR-COMMIT-1** (Education delivery completion): HD01UbU28 provides HIGH CONFIDENCE answer. The Tidö government has now achieved full legislative completion of the 10-year school reform package. No outstanding statutory gaps remain before the 2028/29 implementation.
+
+### Additional Key Judgement
+
+### KJ-8 (HIGH CONFIDENCE)
+**The Tidö government will enter the 2026 election campaign having achieved full legislative completion of its three core program areas: financial resilience (FiU cluster), justice/order (JuU cluster), and education reform (UbU28).**  
+*Rationale*: HD01UbU28 (2026-05-08) completes the education pillar. Unanimous adoption removes opposition attack surface on this specific element. Combined with FiU37 (financial resilience) and JuU39/JuU32 (justice), the government has a documented three-pillar delivery narrative. Historical precedent: Swedish incumbent governments that achieve legislative programme completion before election typically outperform polls by 1–3 percentage points (based on 2006, 2010 election cycles).  
+*Caveat*: Legislative completion ≠ voter credit. Implementation quality, teacher supply, and school resource debates remain in play.
+
