@@ -10,10 +10,12 @@
 
 ### Indicator FI-01
 **Description**: UbU28 chamber vote outcome — party-by-party Ja/Nej tally  
-**Due date**: 2026-05-08 (today, after chamber proceedings)  
+**Due date**: 2026-05-21 (Thursday, 15:20, confirmed from Riksdag t-lista HD0J20260521)  
+**Status**: PENDING — debate held 2026-05-08; vote scheduled 13 days later on May 21  
 **Source**: Riksdagen voteringar, data.riksdagen.se  
 **PIR linkage**: PIR-RT-009  
-**Alert threshold**: Any major party deviating from expected Ja vote; any Nej majority
+**Alert threshold**: Any major party deviating from expected Ja vote; any Nej majority  
+**Updated**: 2026-05-08T14:46Z — due date corrected from 2026-05-08 to 2026-05-21 per Riksdag calendar confirmation
 
 ### Indicator FI-02
 **Description**: Teacher union (Lärarnas Riksförbund / Lärarförbundet) public response to UbU28  
@@ -24,10 +26,12 @@
 
 ### Indicator FI-03
 **Description**: CU34 chamber vote outcome  
-**Due date**: 2026-05-08 (today)  
+**Due date**: 2026-05-20 (Wednesday, 16:00 votering, confirmed from Riksdag t-lista HD0J20260520)  
+**Status**: PENDING — debate held 2026-05-08; vote scheduled 12 days later on May 20  
 **Source**: Riksdagen voteringar  
 **PIR linkage**: PIR-RT-008  
-**Alert threshold**: Unexpected Nej majority (>80% probability of Ja passage)
+**Alert threshold**: Unexpected Nej majority (>80% probability of Ja passage per committee reservation pattern: S+MP have reservation, all government parties expected Ja)  
+**Updated**: 2026-05-08T14:46Z — due date corrected from 2026-05-08 to 2026-05-20 per Riksdag calendar confirmation
 
 ### Indicator FI-04
 **Description**: Finance Minister Svantesson's interpellation response on HD10480 (stadigvarande vistelse)  
@@ -98,8 +102,8 @@
 
 | Priority | Indicator | Days to Due | PIR |
 |----------|-----------|------------|-----|
-| CRITICAL | FI-01 (UbU28 vote) | 0 | PIR-RT-009 |
-| CRITICAL | FI-03 (CU34 vote) | 0 | PIR-RT-008 |
+| CRITICAL | FI-01 (UbU28 vote) | 13 (2026-05-21) | PIR-RT-009 |
+| CRITICAL | FI-03 (CU34 vote) | 12 (2026-05-20) | PIR-RT-008 |
 | HIGH | FI-02 (Union response) | 7 | PIR-RT-009 |
 | HIGH | FI-04 (Svantesson response) | 14 | PIR-RT-001 |
 | HIGH | FI-10 (L polling) | 24 | PIR-RT-002 |

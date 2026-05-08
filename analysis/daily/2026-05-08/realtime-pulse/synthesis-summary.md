@@ -61,3 +61,23 @@ HD11803 (Israel/Swedish citizens in international waters) reflects continued opp
 
 ---
 *Improvement run update · 2026-05-08T10:34Z*
+
+### Vote Schedule Addendum (2026-05-08T14:46Z)
+
+**Vote calendar correction from Riksdag talarlista (HD0J20260520, HD0J20260521)**:
+
+Riksdag calendar data confirms the formal chamber votes for today's debated betänkanden are **not** scheduled for 2026-05-08:
+
+- **CU34** (distansutmätning): Voted on **2026-05-20 at 16:00** — 12 days after the debate day
+- **UbU28** (tioårig grundskola teacher credentials): Voted on **2026-05-21 at 15:20** — 13 days after the debate day
+
+This is consistent with Riksdag standard procedure: betänkanden debated in arbetsplenum are formally voted upon at the next designated voteringstillfälle, which is typically 1–3 weeks after the debate. The prior forward-indicator assessment marking FI-01 and FI-03 as "due date: 2026-05-08 (today)" reflected an error in vote-day estimation.
+
+**Practical intelligence significance**: No vote outcomes will appear in the Riksdag voteringar API until after May 20 and May 21 respectively. The 2025/26 vote records confirming party-by-party tallies for CU34 (S+MP reservation noted; government parties expected Ja) and UbU28 (broad committee majority) will be the authoritative monitoring signal for PIR-RT-008 and PIR-RT-009.
+
+**CU34 committee signal (from betänkande)**: "Jämför reservationen S, MP" — Social Democrats and Miljöpartiet entered a formal reservation on the proportionality clause for cohabiting partners (sambor). All government parties (M, SD, C, KD, L) and KD expected to pass; S+MP will vote Nej.
+
+**UbU28 committee signal (from betänkande)**: "Utskottet ställer sig bakom regeringens förslag" — committee unanimously endorsed the government bill; no formal reservation registered. Broad cross-bloc passage expected on May 21.
+
+---
+*Vote schedule correction · 2026-05-08T14:46Z*
