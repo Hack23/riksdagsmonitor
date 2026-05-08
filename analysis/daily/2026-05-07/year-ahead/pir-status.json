@@ -1,0 +1,97 @@
+{
+  "pir_cycle": "year-ahead",
+  "article_date": "2026-05-07",
+  "generated_at": "2026-05-07T23:55:00Z",
+  "workflow": "news-year-ahead",
+  "run_id": "25527437086",
+  "election_anchor": "2026-09-13",
+  "days_to_election": 129,
+  "election_proximity_multiplier": 1.5,
+  "pirs": [
+    {
+      "id": "PIR-YA-2026-001",
+      "question": "Will the Tidö coalition retain a working majority after the September 13, 2026 election?",
+      "status": "OPEN",
+      "horizon_band": "T+129",
+      "created": "2026-05-07",
+      "expected_close": "2026-09-13",
+      "probability_yes": 0.32,
+      "probability_no": 0.68,
+      "notes": "Four coalition configurations viable. Key dependencies: L above 4% threshold, SD seat retention. See coalition-mathematics.md.",
+      "carry_forward": true,
+      "scenario_link": ["A", "B", "C", "D"]
+    },
+    {
+      "id": "PIR-YA-2026-002",
+      "question": "How will HD03267 (security expulsion) and JuU32 (event security) laws be operationalised after the election?",
+      "status": "OPEN",
+      "horizon_band": "T+180",
+      "created": "2026-05-07",
+      "expected_close": "2026-11-30",
+      "probability_full_implementation": 0.62,
+      "probability_partial": 0.28,
+      "probability_blocked": 0.10,
+      "notes": "Lagrådet yttrande (FI-01, FI-02) is the key indicator. Probability conditional on Lagrådet positive: 0.75 full implementation.",
+      "carry_forward": true,
+      "scenario_link": ["A", "B"]
+    },
+    {
+      "id": "PIR-YA-2026-003",
+      "question": "What timeline emerges for state e-ID (HD03250) operational rollout?",
+      "status": "OPEN",
+      "horizon_band": "T+90 to T+365",
+      "created": "2026-05-07",
+      "expected_close": "2027-05-07",
+      "probability_2027_launch": 0.55,
+      "probability_2028_launch": 0.35,
+      "probability_failure_to_launch": 0.10,
+      "notes": "Strong cross-bloc support but complex implementation. BankID ecosystem resistance and post-election transition are main risks. Norwegian MinID precedent suggests 2028 realistic for meaningful adoption.",
+      "carry_forward": true,
+      "scenario_link": ["A", "B", "C"]
+    },
+    {
+      "id": "PIR-YA-2026-004",
+      "question": "Will the new financial crisis management function (FiU37) be adequately staffed and operational?",
+      "status": "OPEN",
+      "horizon_band": "T+180",
+      "created": "2026-05-07",
+      "expected_close": "2026-11-30",
+      "probability_operational_t180": 0.35,
+      "probability_operational_t270": 0.70,
+      "probability_operational_t365": 0.85,
+      "notes": "Non-partisan issue; all coalitions will implement. Timeline realism is the constraint (20/25 score). German precedent: 24 months to functional crisis unit.",
+      "carry_forward": true,
+      "scenario_link": ["A", "B", "C", "D"]
+    },
+    {
+      "id": "PIR-YA-2026-005",
+      "question": "How will the new government's fiscal stance interact with the Riksbank easing cycle?",
+      "status": "OPEN",
+      "horizon_band": "T+270",
+      "created": "2026-05-07",
+      "expected_close": "2027-02-28",
+      "scenario_a_path": "Fiscal consolidation + Riksbank easing = balanced recovery; Riksbank rate 2.0% by Dec 2026",
+      "scenario_b_path": "Mild fiscal expansion + Riksbank easing = moderate growth acceleration; possible Riksbank caution",
+      "scenario_c_path": "Centrist fiscal neutrality + Riksbank easing = stable; C demands offset fiscal expansion",
+      "scenario_d_path": "Governance vacuum = caretaker budget; Riksbank emergency cut possible",
+      "notes": "IMF WEO Apr-2026 baseline: GDP +2.1% in 2027. Diverges most sharply under Scenario D.",
+      "carry_forward": true,
+      "economic_provenance": {
+        "provider": "imf",
+        "dataflow": "WEO",
+        "vintage": "2026-04",
+        "retrieved_at": "2026-05-07T23:25:00Z",
+        "imf_sdmx_status": "degraded",
+        "weo_datamapper_status": "available"
+      },
+      "scenario_link": ["A", "B", "C", "D"]
+    }
+  ],
+  "predecessor_analyses": {
+    "quarter_ahead": "<predecessor-missing>",
+    "monthly_review": "<predecessor-missing>",
+    "note": "First-run baseline. No prior year-ahead, quarter-ahead, or monthly-review analyses found in analysis/daily/ as of 2026-05-07."
+  },
+  "next_review": "2027-05-07",
+  "rollforward_trigger": "next year-ahead workflow run OR FI-10 (election result) closing PIR-YA-2026-001"
+}
