@@ -3552,17 +3552,28 @@ footer {
    ================================================== */
 
 .political-intelligence-cta {
+  --pi-cta-bg-orb: color-mix(in srgb, var(--primary-cyan) 16%, transparent);
+  --pi-cta-bg-start: color-mix(in srgb, var(--primary-magenta) 12%, transparent);
+  --pi-cta-bg-end: color-mix(in srgb, var(--primary-cyan) 8%, transparent);
+  --pi-cta-border-color: color-mix(in srgb, var(--primary-cyan) 72%, transparent);
+  --pi-cta-shadow-base: color-mix(in srgb, var(--dark-bg) 16%, transparent);
+  --pi-cta-shadow-accent: color-mix(in srgb, var(--primary-cyan) 12%, transparent);
+  --pi-cta-chip-bg: color-mix(in srgb, var(--primary-cyan) 9%, transparent);
+  --pi-cta-chip-border: color-mix(in srgb, var(--primary-cyan) 35%, transparent);
+  --pi-cta-link-shadow: color-mix(in srgb, var(--primary-color) 28%, transparent);
+  --pi-cta-link-shadow-hover: color-mix(in srgb, var(--primary-color) 36%, transparent);
+  --pi-cta-link-glow: color-mix(in srgb, var(--primary-cyan) 18%, transparent);
   background:
-    radial-gradient(circle at top left, rgba(0, 217, 255, 0.16), transparent 24rem),
-    linear-gradient(135deg, rgba(255, 0, 110, 0.12) 0%, rgba(0, 217, 255, 0.08) 100%);
-  border: 2px solid rgba(0, 217, 255, 0.72);
+    radial-gradient(circle at top left, var(--pi-cta-bg-orb), transparent 24rem),
+    linear-gradient(135deg, var(--pi-cta-bg-start) 0%, var(--pi-cta-bg-end) 100%);
+  border: 2px solid var(--pi-cta-border-color);
   border-radius: var(--border-radius);
   padding: clamp(1rem, 2.5vw, 1.5rem) var(--spacing-lg);
   margin: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
   text-align: center;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.16), 0 0 26px rgba(0, 217, 255, 0.12);
+  box-shadow: 0 18px 46px var(--pi-cta-shadow-base), 0 0 26px var(--pi-cta-shadow-accent);
 }
 
 .political-intelligence-cta::before {
@@ -3589,6 +3600,14 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   .political-intelligence-cta::before {
     animation: none;
+  }
+
+  .political-intelligence-cta-link {
+    transition: none;
+  }
+
+  .political-intelligence-cta-link:hover {
+    transform: none;
   }
 }
 
@@ -3620,8 +3639,8 @@ footer {
 }
 
 .political-intelligence-cta-features li {
-  background: rgba(0, 217, 255, 0.09);
-  border: 1px solid rgba(0, 217, 255, 0.35);
+  background: var(--pi-cta-chip-bg);
+  border: 1px solid var(--pi-cta-chip-border);
   border-radius: 2rem;
   padding: 0.3rem 0.85rem;
   font-size: var(--font-size-sm, 0.875rem);
@@ -3646,12 +3665,12 @@ footer {
   min-height: 48px;
   border-radius: var(--border-radius);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
-  box-shadow: 0 4px 14px rgba(0, 102, 51, 0.28);
+  box-shadow: 0 4px 14px var(--pi-cta-link-shadow);
 }
 
 .political-intelligence-cta-link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 102, 51, 0.36), 0 0 22px rgba(0, 217, 255, 0.18);
+  box-shadow: 0 8px 24px var(--pi-cta-link-shadow-hover), 0 0 22px var(--pi-cta-link-glow);
   background: linear-gradient(135deg, var(--primary-color), var(--button-bg));
   text-decoration: none;
 }
@@ -11587,11 +11606,17 @@ html[data-theme="dark"] .dashboard-cta {
 }
 
 html[data-theme="dark"] .political-intelligence-cta {
+  --pi-cta-bg-orb: color-mix(in srgb, var(--primary-cyan) 18%, transparent);
+  --pi-cta-bg-start: color-mix(in srgb, var(--dark-bg) 70%, transparent);
+  --pi-cta-bg-end: color-mix(in srgb, var(--primary-magenta) 8%, transparent);
+  --pi-cta-border-color: color-mix(in srgb, var(--primary-cyan) 50%, transparent);
+  --pi-cta-shadow-accent: color-mix(in srgb, var(--primary-cyan) 14%, transparent);
+  --pi-cta-link-glow: color-mix(in srgb, var(--primary-magenta) 12%, transparent);
   background:
-    radial-gradient(circle at top left, rgba(0, 217, 255, 0.18), transparent 24rem),
-    linear-gradient(135deg, rgba(0, 28, 37, 0.7), rgba(255, 0, 110, 0.08));
-  border-color: rgba(0, 217, 255, 0.5);
-  box-shadow: 0 0 28px rgba(0, 217, 255, 0.14), 0 0 18px rgba(255, 0, 110, 0.08);
+    radial-gradient(circle at top left, var(--pi-cta-bg-orb), transparent 24rem),
+    linear-gradient(135deg, var(--pi-cta-bg-start), var(--pi-cta-bg-end));
+  border-color: var(--pi-cta-border-color);
+  box-shadow: 0 0 28px var(--pi-cta-shadow-accent), 0 0 18px var(--pi-cta-link-glow);
 }
 
 html[data-theme="dark"] .news-navigation {
@@ -11778,11 +11803,14 @@ html[data-theme="light"] .news-navigation {
 }
 
 html[data-theme="light"] .political-intelligence-cta {
+  --pi-cta-bg-orb: color-mix(in srgb, var(--primary-cyan) 8%, transparent);
+  --pi-cta-border-color: color-mix(in srgb, var(--primary-cyan) 28%, transparent);
+  --pi-cta-shadow-accent: color-mix(in srgb, var(--primary-cyan) 8%, transparent);
   background:
-    radial-gradient(circle at top left, rgba(0, 119, 182, 0.08), transparent 22rem),
-    #ffffff;
-  border-color: rgba(0, 119, 182, 0.28);
-  box-shadow: 0 8px 28px rgba(0, 119, 182, 0.08), var(--card-shadow-resting);
+    radial-gradient(circle at top left, var(--pi-cta-bg-orb), transparent 22rem),
+    var(--card-bg);
+  border-color: var(--pi-cta-border-color);
+  box-shadow: 0 8px 28px var(--pi-cta-shadow-accent), var(--card-shadow-resting);
 }
 
 html[data-theme="light"] .breadcrumb {
