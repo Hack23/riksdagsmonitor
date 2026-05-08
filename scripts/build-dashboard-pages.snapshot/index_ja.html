@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<title>Riksdagsmonitor | スウェーデン総選挙2026インテリジェンス・プラットフォーム | 議会モニタリング</title>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
+<script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){/* storage unavailable */}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){/* storage unavailable */}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<link rel="canonical" href="https://riksdagsmonitor.com/index_ja.html">
+<link rel="manifest" href="site.webmanifest">
+<meta name="description" content="Riksdagsmonitor：スウェーデン総選挙2026のインテリジェンス・プラットフォーム。8政党・349人の国会議員をリアルタイムで監視し、連立予測、45のリスクルール、Citizen Intelligence Agency（CIA）のOSINTプラットフォームによる50年以上の議会データを提供します。">
+<meta name="keywords" content="2026年スウェーデン総選挙, Riksdagsmonitor, スウェーデン議会モニタリング, 連立予測, 政治インテリジェンス, OSINTプラットフォーム, 議会分析, Citizen Intelligence Agency, スウェーデン政治, 選挙監視, 民主的透明性, 349人の議員, 45のリスクルール, 議会の透明性, スウェーデン民主主義, 2026年選挙予測">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="James Pether Sörling, CISSP, CISM">
+
+<!-- Geographic Meta Tags -->
+<meta name="geo.region" content="SE">
+<meta name="geo.placename" content="Gothenburg">
+<meta name="geo.position" content="57.708870;11.974560">
+<meta name="ICBM" content="57.708870, 11.974560">
+
+<!-- Mobile Web App Tags -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Riksdagsmonitor">
+<meta name="HandheldFriendly" content="true">
+<meta name="MobileOptimized" content="320">
+
+<!-- Open Graph / Social Media -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://riksdagsmonitor.com/index_ja.html">
+<meta property="og:site_name" content="Riksdagsmonitor">
+<meta property="og:title" content="Riksdagsmonitor | スウェーデン総選挙2026インテリジェンス・プラットフォーム">
+<meta property="og:description" content="8政党・349人の国会議員をリアルタイム監視。連立予測、45のリスクルール、選挙予測、50年以上の議会データを提供。無料のオープンソースです。">
+<meta property="og:image" content="https://riksdagsmonitor.com/images/og-image.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Riksdagsmonitor - スウェーデン議会インテリジェンス・プラットフォーム">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="ar_SA">
+<meta property="og:locale:alternate" content="da_DK">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="fi_FI">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="he_IL">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:locale:alternate" content="nb_NO">
+<meta property="og:locale:alternate" content="sv_SE">
+<meta property="og:locale:alternate" content="zh_CN">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Riksdagsmonitor | スウェーデン総選挙2026インテリジェンス・プラットフォーム">
+<meta name="twitter:description" content="8政党・349人の国会議員をリアルタイム監視。連立予測、45のリスクルール、選挙予測、50年以上の議会データを提供。無料のオープンソースです。">
+<meta name="twitter:image" content="https://riksdagsmonitor.com/images/og-image.webp">
+<meta name="twitter:image:alt" content="Riksdagsmonitor - スウェーデン議会インテリジェンス・プラットフォーム">
+<meta name="twitter:site" content="@riksdagsmonitor">
+<meta name="twitter:creator" content="@jamessorling">
+<meta name="twitter:domain" content="riksdagsmonitor.com">
+
+<!-- DNS Prefetch & Preconnect for パフォーマンス -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="dns-prefetch" href="https://cia.sourceforge.io">
+<link rel="dns-prefetch" href="https://raw.githubusercontent.com">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap"></noscript>
+
+<meta name="application-name" content="Riksdagsmonitor">
+<meta name="theme-color" content="#0a0e27">
+<!-- Favicons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://riksdagsmonitor.com/#organization",
+      "name": "Riksdagsmonitor",
+      "legalName": "Hack23 AB",
+      "url": "https://riksdagsmonitor.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://riksdagsmonitor.com/images/android-chrome-512x512.png",
+        "width": 512,
+        "height": 512
+      },
+      "description": "CIA OSINT分析を通じて、リアルタイム情報、選挙予測、政治的透明性を提供するスウェーデン議会監視プラットフォーム。",
+      "foundingDate": "2008",
+      "founder": {
+        "@type": "Person",
+        "@id": "https://riksdagsmonitor.com/#founder",
+        "name": "James Pether Sörling",
+        "jobTitle": "創設者兼最高インテリジェンス責任者",
+        "hasCredential": ["CISSP", "CISM"],
+        "sameAs": [
+          "https://www.linkedin.com/in/jamessorling/",
+          "https://github.com/Hack23"
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "SE",
+        "addressLocality": "Gothenburg"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "技術サポート",
+        "availableLanguage": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"]
+      },
+      "sameAs": [
+        "https://github.com/Hack23/riksdagsmonitor",
+        "https://github.com/Hack23/cia"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://riksdagsmonitor.com/#website",
+      "url": "https://riksdagsmonitor.com",
+      "name": "Riksdagsmonitor - スウェーデン議会インテリジェンス・プラットフォーム",
+      "description": "CIA OSINT分析によるスウェーデン議会のリアルタイム監視、選挙予測、連立予測、包括的な政治的透明性。",
+      "publisher": {
+        "@id": "https://riksdagsmonitor.com/#organization"
+      },
+      "inLanguage": ["en", "sv", "da", "no", "fi", "de", "fr", "es", "nl", "ar", "he", "ja", "ko", "zh"]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://riksdagsmonitor.com/#webpage",
+      "url": "https://riksdagsmonitor.com/index.html",
+      "name": "Riksdagsmonitor | スウェーデン総選挙2026インテリジェンス・プラットフォーム",
+      "description": "Citizen Intelligence Agency（CIA）のOSINT分析によるスウェーデン議会のリアルタイム監視。8政党・349人の議員を45のリスクルールで追跡し、連立予測と50年以上の歴史データを提供。",
+      "isPartOf": {
+        "@id": "https://riksdagsmonitor.com/#website"
+      },
+      "about": {
+        "@id": "https://riksdagsmonitor.com/#event"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://riksdagsmonitor.com/images/og-image.webp",
+        "width": 1200,
+        "height": 630
+      },
+      "datePublished": "2008-01-01T00:00:00+00:00",
+      "dateModified": "2026-02-13T00:00:00+00:00",
+      "breadcrumb": {
+        "@id": "https://riksdagsmonitor.com/#breadcrumb"
+      },
+      "inLanguage": "ja",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": "https://riksdagsmonitor.com/index_ja.html"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://riksdagsmonitor.com/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム",
+          "item": "https://riksdagsmonitor.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "スウェーデン総選挙2026",
+          "item": "https://riksdagsmonitor.com/index.html"
+        }
+      ]
+    },
+    {
+      "@type": "Event",
+      "@id": "https://riksdagsmonitor.com/#event",
+      "name": "スウェーデン議会選挙2026",
+      "description": "スウェーデン議会選挙は 2026 年 9 月 13 日に予定されています。CIA OSINT 機能、連合予測、および包括的なリスク評価を使用して、8 政党にわたる 349 人の国会議員を監視するライブ インテリジェンス プラットフォーム。投票パターン、委員会の活動、政治の透明性をリアルタイムで追跡します。歴史データベース: 1971 年以降、2494 人の政治家を追跡。",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://riksdagsmonitor.com/images/og-image.webp",
+        "width": 1200,
+        "height": 630
+      },
+      "startDate": "2026-09-13",
+      "endDate": "2026-09-13",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "スウェーデン",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "SE",
+          "addressRegion": "スウェーデン"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 59.329323,
+          "longitude": 18.068581
+        }
+      },
+      "organizer": {
+        "@id": "https://riksdagsmonitor.com/#organization"
+      },
+      "performer": {
+        "@type": "Organization",
+        "name": "スウェーデン国会",
+        "sameAs": "https://www.riksdagen.se"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://riksdagsmonitor.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Riksdagsmonitorとは何ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Riksdagsmonitorは、CIA OSINT分析を通じてリアルタイム情報、選挙予測、政治的透明性を提供する包括的なスウェーデン議会監視プラットフォームです。8政党に所属する349人の議員を45のリスクルールで追跡し、包括的な議会分析を提供します。履歴データベースには1971年から2024年までの2494人の政治家が含まれます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "2026年スウェーデン選挙はいつですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "2026年スウェーデン議会選挙は2026年9月13日（9月第2日曜日）に予定されています。これは349議席のリクスダーゲン（スウェーデン議会）の構成を決定する全国選挙です。Riksdagsmonitorは現在および過去の政治家を追跡しています（1971年以降合計2494人）。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Riksdagsmonitorは何人の議員を追跡していますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Riksdagsmonitorは、スウェーデンのリクスダーゲンに所属する349人の国会議員（MP）全員を追跡し、投票パターン、出席、委員会活動、討論でのパフォーマンスをリアルタイムで監視します。履歴データベースには1971年以降に追跡された2494人の政治家が含まれます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "45のリスクルールとは何ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "45のリスクルールは、4つの領域にわたる行動評価基準です。政治家レベル（出席、投票の一貫性、役割の衝突、生産性を対象とする20ルール）、政党レベル（連立規律、理念の乖離、内部対立に関する12ルール）、委員会レベル（立法生産性、党派的行き詰まりに関する8ルール）、省庁レベル（予算超過、政策失敗、説明責任に関する5ルール）で構成されます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Riksdagsmonitorは無料で利用できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、Riksdagsmonitorは完全に無料で利用できます。スウェーデン議会モニタリング、選挙予測、政治的透明性データへのオープンアクセスを14言語で提供します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Riksdagsmonitorはどの言語をサポートしていますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Riksdagsmonitorは14言語をサポートしています。英語、スウェーデン語、デンマーク語、ノルウェー語、フィンランド語、ドイツ語、フランス語、スペイン語、オランダ語、アラビア語、ヘブライ語、日本語、韓国語、中国語です。これによりスウェーデン政治インテリジェンスを世界中の利用者が利用できます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "連立予測はどのように機能しますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "連立予測は、投票パターン、委員会行動、政党規律スコア、50年以上にわたる過去の連立形成データを分析するアルゴリズムを使用します。システムは理念の適合性、議席配分、安定性指標を評価し、成立可能性の高い政権構成を予測します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Citizen Intelligence Agency（CIA）プラットフォームとは何ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Citizen Intelligence Agency（CIA）は、Hack23 ABが開発した政治的透明性のためのオープンソースOSINTプラットフォームです。毎年数千件の投票を処理し、議会文書を分析し、包括的なリスク評価ダッシュボードとともにリアルタイム監視を提供します。"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "GovernmentOrganization",
+      "name": "Sveriges riksdag",
+      "alternateName": "スウェーデン議会",
+      "url": "https://www.riksdagen.se",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "100 12 Stockholm",
+        "addressLocality": "Stockholm",
+        "addressCountry": "SE"
+      },
+      "numberOfEmployees": 349,
+      "foundingDate": "1866"
+    }
+  ]
+}
+</script>
+
+<link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/index_ar.html">
+<link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/index_da.html">
+<link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/index_de.html">
+<link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/index.html">
+<link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/index_es.html">
+<link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/index_fi.html">
+<link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/index_fr.html">
+<link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/index_he.html">
+<link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/index_ja.html">
+<link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/index_ko.html">
+<link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/index_nl.html">
+<link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/index_no.html">
+<link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/index_sv.html">
+<link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/index_zh.html">
+<link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/index.html">
+
+</head>
+<body>
+<!-- アクセシビリティ用メインコンテンツへのスキップリンク -->
+<a href="#main-content" class="skip-to-content">メインコンテンツへスキップ</a>
+
+<!-- パンくずナビゲーション -->
+<nav aria-label="パンくず">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="index_ja.html">ホーム</a>
+</li>
+<li class="breadcrumb-item" aria-current="page">
+スウェーデン総選挙2026
+</li>
+</ol>
+</nav>
+
+<header>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="テーマ切り替え"
+        title="テーマ切り替え"
+        data-label-dark="ライトテーマに切り替え"
+        data-label-light="ダークテーマに切り替え"
+        data-rm-static-theme-toggle="true">
+  <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
+  <span class="theme-icon theme-icon-sun" aria-hidden="true">☀️</span>
+  <span class="theme-toggle-label">テーマ</span>
+</button>
+
+<!-- Hero Banner -->
+<div class="hero-banner">
+  <img src="images/riksdagsmonitor-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" aria-hidden="true">
+</div>
+
+<!-- Hero Title -->
+<div class="hero-header-text">
+  <h1> Riksdagsmonitor<br><span class="h1-subtitle">スウェーデン選挙インテリジェンスプラットフォーム 2026</span></h1>
+  <p class="tagline">リアルタイム議会監視 · 連立予測 · 45のリスクルール · 50年以上のデータ</p>
+</div>
+
+
+<div class="election-countdown">
+<h2>選挙まで: <span id="countdown">2026年9月13日（9月の第2日曜日）</span></h2>
+<p>2026年9月13日（9月の第2日曜日）</p>
+</div>
+
+<div class="hero-stats">
+<div class="stat">
+<span class="number" data-stat-id="stat-historical-persons">2,494</span>
+<span class="label"><span aria-hidden="true">👥</span> 監視中の政治家</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-against-proposals">6M+</span>
+<span class="label"><span aria-hidden="true">🗳️</span> リクスダーグの投票</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-total-documents">500K+</span>
+<span class="label"><span aria-hidden="true">📄</span> 処理済みドキュメント</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-government-proposals">10K+</span>
+<span class="label"><span aria-hidden="true">📜</span> 政府法案</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-committee-decisions">20K+</span>
+<span class="label"><span aria-hidden="true">🏛️</span> 委員会決定</span>
+</div>
+</div>
+<nav class="site-header-nav" aria-label="メインプラットフォーム" data-rm-static-primary-nav="true">
+  <a href="index_ja.html">ホーム</a>
+  <a href="news/index_ja.html">ニュース</a>
+  <a href="dashboard/index_ja.html">ダッシュボード</a>
+  <a href="politician-dashboard_ja.html"><span aria-hidden="true">👤</span> 政治家</a>
+  <a href="political-intelligence_ja.html"><span aria-hidden="true">🧠</span> 政治インテリジェンス</a>
+  <a href="sitemap_ja.html"><span aria-hidden="true">🗺️</span> サイトマップ</a>
+  <a href="https://riksdagsmonitor.com/docs/api/index.html"><span aria-hidden="true">📚</span> APIドキュメント</a>
+  <a class="rm-header-cta rm-header-cta-transparency" href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer" title="Hack23の透明性とセキュリティへの取り組み" aria-label="Hack23の透明性とセキュリティへの取り組み"><span aria-hidden="true">🔐</span> 透明性とセキュリティ</a>
+  <a class="rm-header-cta rm-header-cta-sponsor" href="https://github.com/sponsors/Hack23" target="_blank" rel="noopener noreferrer" title="GitHubでHack23のスポンサーになる" aria-label="GitHubでHack23のスポンサーになる"><span aria-hidden="true">💖</span> Hack23をスポンサー</a>
+</nav>
+<nav class="language-switcher site-language-switcher" aria-label="このページの他言語版" data-rm-static-language-switcher="true">
+        <a href="index.html" lang="en" hreflang="en" title="English" aria-label="言語切り替え: English"><span aria-hidden="true">🇬🇧</span> EN</a>
+        <a href="index_sv.html" lang="sv" hreflang="sv" title="Svenska" aria-label="言語切り替え: Swedish"><span aria-hidden="true">🇸🇪</span> SV</a>
+        <a href="index_da.html" lang="da" hreflang="da" title="Dansk" aria-label="言語切り替え: Danish"><span aria-hidden="true">🇩🇰</span> DA</a>
+        <a href="index_no.html" lang="nb" hreflang="nb" title="Norsk" aria-label="言語切り替え: Norwegian"><span aria-hidden="true">🇳🇴</span> NO</a>
+        <a href="index_fi.html" lang="fi" hreflang="fi" title="Suomi" aria-label="言語切り替え: Finnish"><span aria-hidden="true">🇫🇮</span> FI</a>
+        <a href="index_de.html" lang="de" hreflang="de" title="Deutsch" aria-label="言語切り替え: German"><span aria-hidden="true">🇩🇪</span> DE</a>
+        <a href="index_fr.html" lang="fr" hreflang="fr" title="Français" aria-label="言語切り替え: French"><span aria-hidden="true">🇫🇷</span> FR</a>
+        <a href="index_es.html" lang="es" hreflang="es" title="Español" aria-label="言語切り替え: Spanish"><span aria-hidden="true">🇪🇸</span> ES</a>
+        <a href="index_nl.html" lang="nl" hreflang="nl" title="Nederlands" aria-label="言語切り替え: Dutch"><span aria-hidden="true">🇳🇱</span> NL</a>
+        <a href="index_ar.html" lang="ar" hreflang="ar" title="العربية" aria-label="言語切り替え: Arabic"><span aria-hidden="true">🇸🇦</span> AR</a>
+        <a href="index_he.html" lang="he" hreflang="he" title="עברית" aria-label="言語切り替え: Hebrew"><span aria-hidden="true">🇮🇱</span> HE</a>
+        <a href="index_ja.html" lang="ja" hreflang="ja" title="日本語" aria-label="言語切り替え: Japanese" aria-current="page" class="active"><span aria-hidden="true">🇯🇵</span> JA</a>
+        <a href="index_ko.html" lang="ko" hreflang="ko" title="한국어" aria-label="言語切り替え: Korean"><span aria-hidden="true">🇰🇷</span> KO</a>
+        <a href="index_zh.html" lang="zh" hreflang="zh" title="中文" aria-label="言語切り替え: Chinese"><span aria-hidden="true">🇨🇳</span> ZH</a>
+</nav>
+</header>
+
+
+<!-- ニュースナビゲーション -->
+<nav class="news-navigation" aria-label="ニュース">
+<p class="news-navigation-heading"><span aria-hidden="true">📰</span> AI活用の政治ジャーナリズム</p>
+<p class="news-navigation-description">OSINT/INTOPデータに基づくAI生成の政治インテリジェンス報道を、Citizen Intelligence AgencyのOSINTデータを使用してAIエージェントが毎日生成。政府法案、委員会報告、野党動議、議会質問、夕方の深掘り分析を自動分析 — 14言語で配信。</p>
+<ul class="news-navigation-features" aria-label="ニュース報道の種類">
+<li>📋 委員会報告</li>
+<li>📜 政府法案</li>
+<li>✊ 野党動議</li>
+<li>❓ 議会質問</li>
+<li>🌙 夕方分析</li>
+<li>🌍 14言語</li>
+</ul>
+<a href="news/index_ja.html" class="news-navigation-link" aria-label="最新ニュースを読む">
+<span class="news-navigation-link-icon" aria-hidden="true">📰</span>
+<span>ニュースを読む</span>
+</a>
+</nav>
+
+<!-- Intelligence Dashboard CTA -->
+<nav class="dashboard-cta" aria-label="インテリジェンスダッシュボード">
+<h2 class="dashboard-cta-heading"><span aria-hidden="true">📊</span> インテリジェンスダッシュボード</h2>
+<p class="dashboard-cta-description">Citizen Intelligence Agencyのインタラクティブな可視化を探索 — 2026年選挙予測、政党業績分析、349名の議員に対する45ルールのリスク評価、連立安定性、委員会ネットワーク分析。</p>
+<ul class="dashboard-cta-features" aria-label="ダッシュボードのハイライト">
+<li>🗳️ 2026年選挙予測</li>
+<li>📈 政党業績</li>
+<li>⚠️ リスク評価</li>
+<li>🤝 連立分析</li>
+<li>🏛️ 委員会ネットワーク</li>
+<li>👥 議員ランキング</li>
+</ul>
+<a href="dashboard/index_ja.html" class="dashboard-cta-link" aria-label="インテリジェンスダッシュボードを開く">
+<span class="dashboard-cta-link-icon" aria-hidden="true">📊</span>
+<span>ダッシュボードを開く</span>
+</a>
+</nav>
+
+<main id="main-content" role="main">
+<section id="coalition-status">
+<h2>現在の連立: ティデ協定</h2>
+<p>発足: 2022年10月 | 状態: 稼働中 | 過半数: 176議席（全349議席中）</p>
+
+<div class="cards">
+<!-- Coalition party cards dynamically loaded from CIA data -->
+<p class="loading-message"></p>
+</div>
+
+<div class="coalition-stability">
+<h3>連立安定性評価</h3>
+<div class="stability-info">
+<p><strong>過半数マージン:</strong> 1議席（僅差）</p>
+<p><strong>CIAリスク評価:</strong> 重大アラート12件、危機的アラート5件を検知（直近90日）</p>
+<p><strong>脆弱性指標:</strong> SDとLの間のイデオロギー的緊張、離反に脆弱</p>
+<p><strong>安定性スコア:</strong> 中程度リスク（72%）</p>
+</div>
+</div>
+</section>
+
+
+<!-- リスク Assessment & 異常 Detection ダッシュボード -->
+
+
+<section id="election-cycle-dashboard" class="dashboard-section">
+<h2>🗳️ 選挙サイクル・インテリジェンス (1994-2034)</h2>
+<p>40 年にわたるスウェーデン議会の選挙サイクルを包括的に分析し、政党のパフォーマンスの進化、意思決定の有効性、予測リスク予測、9 回以上の選挙サイクルにわたる一時的な投票パターンを分析します。</p>
+
+<div class="dashboard-loader">
+データを読み込み中...
+</div>
+
+<div class="dashboard-error">
+データの読み込みに失敗しました
+</div>
+
+<!-- フィルター -->
+<div class="dashboard-filters">
+<div class="filter-group">
+<label for="election-cycle-filter">選挙サイクル:</label>
+<select id="election-cycle-filter">
+<option value="all">すべてのサイクル</option>
+</select>
+</div>
+
+<div class="filter-group">
+<label for="election-party-filter">政党:</label>
+<select id="election-party-filter">
+<option value="all">すべての政党</option>
+</select>
+</div>
+
+<div class="filter-group">
+<label for="election-metric-filter">指標:</label>
+<select id="election-metric-filter">
+<option value="performance">パフォーマンス</option>
+<option value="decisions">決定</option>
+<option value="risk">リスク</option>
+<option value="attendance">出席</option>
+</select>
+</div>
+</div>
+
+<!-- 可視化グリッド -->
+<div class="dashboard-grid">
+<!-- チャート 1: 選挙サイクルのタイムライン -->
+<div class="chart-card wide">
+<h3>選挙サイクル・パフォーマンスタイムライン</h3>
+<div class="chart-container">
+<canvas id="cycle-timeline-chart"></canvas>
+</div>
+<p class="chart-description">
+9 回の選挙サイクル (1994 年から 2034 年) にわたる党のパフォーマンスの進化
+</p>
+</div>
+
+<!-- Chart 2: 意思決定有効性 Matrix -->
+<div class="chart-card">
+<h3>意思決定有効性ヒートマップ</h3>
+<div id="decision-heatmap" class="chart-container chart-container--scrollable"></div>
+<p class="chart-description">
+政党別・サイクル別の立法承認率
+</p>
+</div>
+
+<!-- Chart 3: リスク Forecasting -->
+<div class="chart-card">
+<h3>予測的リスク予報</h3>
+<div class="chart-container">
+<canvas id="risk-forecast-chart"></canvas>
+</div>
+<p class="chart-description">
+リスク推移と信頼水準（2022-2034）
+</p>
+</div>
+
+<!-- Chart 4: Temporal Trends -->
+<div class="chart-card wide">
+<h3>時系列の投票パターン</h3>
+<div class="chart-container">
+<canvas id="temporal-trends-chart"></canvas>
+</div>
+<p class="chart-description">
+出席、投票数、変動性のトレンド
+</p>
+</div>
+
+<!-- 図表 5: 政党比較分析 -->
+<div class="chart-card">
+<h3>政党ティア分布</h3>
+<div class="chart-container">
+<canvas id="party-tier-chart"></canvas>
+</div>
+<p class="chart-description">
+パフォーマンス階層（ntile_party_tier: 1-4）
+</p>
+</div>
+</div>
+
+<p class="note dashboard-attribution">
+<strong>Citizen Intelligence Agency Platform提供データ</strong> | GitHubサンプルデータから更新 | 24時間キャッシュ
+</p>
+</section>
+
+
+<section id="party-dashboard" class="dashboard-container">
+<h2><span aria-hidden="true">🗳️</span> 政党パフォーマンスと有効性</h2>
+<p>50 年以上の CIA プラットフォーム データを使用したスウェーデンの政党の包括的な分析。 8 政党にわたる有効性の傾向、連立の動向、勢いの指標を追跡します。</p>
+
+<div class="dashboard-grid">
+<div class="chart-card">
+<h3>政党有効性トレンド（1990-2026）</h3>
+<p>立法生産性、投票の一貫性、政策インパクトの時系列推移を示す政党有効性スコアです。</p>
+<canvas id="partyEffectivenessChart" role="img" aria-label="スウェーデンの 8 つの政党すべての 1990 年から 2026 年までの傾向を示す党効性折れ線グラフ"></canvas>
+<span class="sr-only">1990 年から 2026 年までの社会民主党、中党、スウェーデン民主党、中央党、左翼党、キリスト教民主党、自由党、緑の党の有効性スコアを表示する折れ線グラフ。</span>
+</div>
+
+<div class="chart-card">
+<h3>政党比較（当期）</h3>
+<p>現立法期間における政党パフォーマンス指標の比較分析です。</p>
+<canvas id="partyComparisonChart" role="img" aria-label="スウェーデンの 8 つの政党すべての現在のパフォーマンス スコアを比較した棒グラフ"></canvas>
+<span class="sr-only">現立法期間における全政党の比較パフォーマンススコアを、スコア順で示す横棒グラフです。</span>
+</div>
+
+<div class="chart-card">
+<h3>連合の連携</h3>
+<p>連立パターンと政党間の協力ネットワーク。</p>
+<div id="coalitionAlignmentChart" role="region" aria-label="政党間の連携の強さを示す連立連携の視覚化"></div>
+<span class="sr-only">政党の組み合わせごとの協力強度（%）を示す連立パターンの可視化です。</span>
+</div>
+
+<div class="chart-card">
+<h3>モメンタム指標</h3>
+<p>選挙の軌跡を示すパーセンタイルベンチマーク (P50、P90) を使用した政党の勢いスコア。</p>
+<canvas id="partyMomentumChart" role="img" aria-label="スウェーデンの 8 つの政党すべての勢いスコアを示すドーナツ グラフ"></canvas>
+<span class="sr-only">各政党のモメンタム指標スコアとパーセンタイル基準を示すドーナツグラフです。</span>
+</div>
+</div>
+</section>
+
+<section id="committee-dashboard" class="dashboard-container">
+<h2>🏛️ 委員会パフォーマンスとネットワーク分析</h2>
+
+<div class="dashboard-grid">
+<!-- Network Diagram (Full Width) -->
+<div class="chart-card wide">
+<h3>委員会ネットワーク図</h3>
+<p>委員会間の関係と生産性をインタラクティブに可視化します。ノードをドラッグして関連性を探索できます。</p>
+<div id="committeeNetwork" role="img" aria-label="スウェーデンの国会議事堂の 15 の委員会間の関係を示す委員会ネットワーク接続図"></div>
+<table class="sr-only" id="committeeNetworkTable" aria-label="委員会ネットワーク接続データテーブル">
+<!-- Accessible fallback table populated by JavaScript -->
+</table>
+</div>
+
+<!-- Productivity Heat Map (Full Width) -->
+<div class="chart-card wide">
+<h3>生産性マトリクス（2020-2026）</h3>
+<p>委員会の生産性スコアを時系列で示すヒートマップです。セルにホバーすると詳細を確認できます。</p>
+<div id="productivityMatrix" role="img" aria-label="2020 年から 2026 年までの長期にわたるパフォーマンスを示す委員会の生産性マトリックス"></div>
+<table class="sr-only" id="productivityMatrixTable" aria-label="委員会生産性マトリックス データ表">
+<!-- Accessible fallback table populated by JavaScript -->
+</table>
+</div>
+
+<!-- 委員会比較 -->
+<div class="chart-card">
+<h3>委員会比較</h3>
+<p>15の全委員会の生産性スコアを比較します。</p>
+<canvas id="committeeComparisonChart" role="img" aria-label="委員会ごとの生産性スコアを比較する棒グラフ"></canvas>
+</div>
+
+<!-- 意思決定有効性 -->
+<div class="chart-card">
+<h3>意思決定有効性</h3>
+<p>意思決定結果（可決・否決・保留）の推移を追跡します。</p>
+<canvas id="decisionEffectivenessChart" role="img" aria-label="年次の意思決定有効性を示す積み上げ棒グラフ"></canvas>
+</div>
+
+<!-- Seasonal Patterns (Full Width) -->
+<div class="chart-card wide">
+<h3>季節別活動パターン</h3>
+<p>委員会活動が年間でどう変化するかを、四半期トレンドで示します。</p>
+<canvas id="seasonalPatternsChart" role="img" aria-label="四半期ごとの季節別活動パターンを示す折れ線グラフ"></canvas>
+</div>
+</div>
+
+<div class="dashboard-attribution">
+<p><small>📊 データ提供: <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">CIA プラットフォーム</a> | 更新: <span id="committeeLastUpdated">読み込み中...</span></small></p>
+</div>
+</section>
+
+<section id="coalition-dashboard" class="dashboard-container">
+<h2>🤝 連立と投票パターン分析</h2>
+<p>スウェーデン国民党における連立のダイナミクス、政党の連携、投票行動パターンのインタラクティブな分析。</p>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>連立ネットワーク（インタラクティブ）</h3>
+<p>スウェーデンの政党間の連合の強さを示す勢力主導のグラフ。ノードをドラッグし、ズームし、クリックして詳細を表示します。</p>
+<div id="coalitionNetwork" role="img" aria-label="スウェーデンの 8 つの政党間の関係を示す連合ネットワーク図"></div>
+<table class="sr-only" id="coalitionNetworkTable">
+<!-- Accessible table fallback populated by JavaScript -->
+</table>
+</div>
+
+<div class="chart-card">
+<h3>投票異常（直近5年）</h3>
+<p>通常と異なる投票パターンや、想定から外れた党内離反を強調する散布図です。</p>
+<canvas id="votingAnomalyChart" role="img" aria-label="全政党の偏差スコアを示す投票異常散布図"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>政党整合ヒートマップ</h3>
+<p>過去の投票記録に基づき、政党間の投票一致度をマトリクスで可視化します。</p>
+<div id="alignmentHeatMap" role="img" aria-label="すべての政党ペア間の投票同意率を示す政党連携ヒート マップ"></div>
+</div>
+
+<div class="chart-card">
+<h3>行動パターン</h3>
+<p>政党の投票の一貫性スコアは、すべての投票における党の方針の遵守を測定します。</p>
+<canvas id="behavioralPatternsChart" role="img" aria-label="全政党の投票一貫性比率を示す行動パターン棒グラフ"></canvas>
+</div>
+
+<div class="chart-card wide">
+<h3>意思決定トレンド（1990-2026）</h3>
+<p>36年間にわたる全政党の年次投票活動トレンドを示すヒストリカルタイムラインです。</p>
+<canvas id="decisionTrendsChart" role="img" aria-label="1990 年から 2026 年までの年間投票量を示す意思決定動向タイムライン"></canvas>
+</div>
+</div>
+
+<p class="note dashboard-attribution">
+<strong>データ出典:</strong> CIA プラットフォームのインテリジェンス エクスポートを活用した視覚化。データはスウェーデン議会のオープンデータ API から毎週更新されます。
+</p>
+</section>
+
+<section id="seasonal-patterns-dashboard">
+<h2>📅 季節別活動パターン（2002-2025）</h2>
+<p class="subtitle">Zスコア異常検知を用いた四半期分析</p>
+
+<!-- Filters -->
+<div class="dashboard-filters">
+<select id="seasonal-year-filter" aria-label="年で絞り込み">
+<option value="all">すべての年</option>
+</select>
+
+<select id="seasonal-quarter-filter" aria-label="四半期で絞り込み">
+<option value="all">すべての四半期</option>
+<option value="1">Q1 - 冬会期</option>
+<option value="2">Q2 - 春会期</option>
+<option value="3">Q3 - 夏季休会</option>
+<option value="4">Q4 - 秋会期</option>
+</select>
+
+<select id="seasonal-election-filter" aria-label="選挙ステータスで絞り込み">
+<option value="all">すべて</option>
+<option value="election">選挙年</option>
+<option value="non-election">非選挙年</option>
+</select>
+
+<select id="classification-filter" aria-label="活動分類で絞り込み">
+<option value="all">すべての分類</option>
+</select>
+</div>
+
+<!-- Visualizations -->
+<div class="dashboard-grid">
+<!-- Chart 1: Quarterly Activity Heat Map -->
+<div class="chart-card wide">
+<h3>四半期活動ヒートマップ（2002-2025）</h3>
+<div id="seasonal-heatmap"></div>
+<p class="chart-description">年・四半期ごとの投票量にZスコアを重ねて表示。赤い円は統計的異常（|Z| ≥ 2.0）を示します。</p>
+</div>
+
+<!-- Chart 2: Z-Score 異常 Timeline -->
+<div class="chart-card">
+<h3>Z スコアの異常検出</h3>
+<canvas id="zscore-timeline-chart" role="img" aria-label="投票・文書・出席指標のZスコア時系列を示す折れ線グラフ"></canvas>
+<p class="chart-description">異常閾値に基づき、統計的外れ値（|Z| ≥ 2.0）を赤で表示します。</p>
+</div>
+
+<!-- Chart 3: Cross-Year Quarter Comparison -->
+<div class="chart-card">
+<h3>四半期別平均活動（全年度）</h3>
+<canvas id="quarter-comparison-chart" role="img" aria-label="全年度の四半期別平均投票量を示す棒グラフ"></canvas>
+<p class="chart-description">全年度におけるQ1〜Q4の基準線を示し、季節ごとの典型的活動パターンを把握できます。</p>
+</div>
+
+<!-- Chart 4: Activity Classification Distribution -->
+<div class="chart-card wide">
+<h3>季節パターン分類</h3>
+<canvas id="classification-chart" role="img" aria-label="年度別活動分類の分布を示す積み上げ棒グラフ"></canvas>
+<p class="chart-description">年度ごとの NORMAL・ELEVATED・REDUCED・ANOMALY パターン分布です。</p>
+</div>
+
+<!-- Chart 5: QoQ Change Waterfall -->
+<div class="chart-card">
+<h3>前四半期比の変化</h3>
+<canvas id="qoq-change-chart" role="img" aria-label="投票量の前四半期比変化率を示す棒グラフ"></canvas>
+<p class="chart-description">連続四半期の投票変化（%と絶対値）。緑は増加、赤は減少を示します。</p>
+</div>
+</div>
+
+<p class="data-attribution">📊 データ: CIA プラットフォーム | 毎日更新</p>
+</section>
+
+<section id="pre-election-dashboard" class="dashboard-section">
+<h2><span aria-hidden="true">🗳️</span> 選挙前モニタリングダッシュボード (Q4 2023-2025)</h2>
+<p class="dashboard-intro">2026年選挙前の重要な12〜15か月における第4四半期の議会活動を追跡します。現在の活動を過去のベースラインと選挙年のパターンと比較してください。</p>
+
+<!-- Real-Time Status Cards -->
+<div class="status-cards">
+<div class="status-card" data-metric="ballots">
+<h3><span aria-hidden="true">📊</span> 投票活動</h3>
+<p class="current-value">16,750</p>
+<p class="baseline-comparison">基準比 +4.34%</p>
+<span class="status-badge normal">通常</span>
+</div>
+
+<div class="status-card" data-metric="documents">
+<h3><span aria-hidden="true">📄</span> 文書生産</h3>
+<p class="current-value">3,451</p>
+<p class="baseline-comparison">基準比 +25.55%</p>
+<span class="status-badge normal">通常</span>
+</div>
+
+<div class="status-card" data-metric="attendance">
+<h3><span aria-hidden="true">✅</span> 出席率</h3>
+<p class="current-value">85.75%</p>
+<p class="baseline-comparison">基準比 +0.75%</p>
+<span class="status-badge normal">安定</span>
+</div>
+
+<div class="status-card" data-metric="party-performance">
+<h3><span aria-hidden="true">🎯</span> 政党勝率</h3>
+<p class="current-value">59.72%</p>
+<p class="baseline-comparison">前年比 +3.55%</p>
+<span class="status-badge improving">改善中</span>
+</div>
+</div>
+
+<!-- Visualizations -->
+<div class="dashboard-grid">
+<!-- Chart 1: Q4 Activity Timeline (2023-2025) -->
+<div class="chart-card wide">
+<h3>Q4 活動タイムライン（2023-2025）</h3>
+<div class="chart-container">
+<canvas id="q4-timeline-chart" aria-label="2023年から2025年の投票・文書・出席トレンドを示すQ4活動タイムライン"></canvas>
+</div>
+<p class="chart-description">基準線を重ねた投票・文書・出席トレンド</p>
+</div>
+
+<!-- 図 2: 選挙年の比較 -->
+<div class="chart-card">
+<h3>選挙年と非選挙年のQ4パターン</h3>
+<div class="chart-container">
+<canvas id="election-comparison-chart" aria-label="2002年から2025年の選挙年と非選挙年におけるQ4投票活動の比較"></canvas>
+</div>
+<p class="chart-description">第 4 四半期の過去の活動 (2002 ～ 2025 年): 選挙年と非選挙年</p>
+</div>
+
+<!-- Chart 3: Baseline Deviation Radar -->
+<div class="chart-card">
+<h3>基準からの乖離（2025年Q4）</h3>
+<div class="chart-container">
+<canvas id="deviation-radar-chart" aria-label="2025年Q4指標を過去基準と比較するレーダーチャート"></canvas>
+</div>
+<p class="chart-description">複数指標の乖離分析</p>
+</div>
+
+<!-- チャート 4: パーティー パフォーマンス シフト -->
+<div class="chart-card wide">
+<h3>政党パフォーマンストレンド (2023-2025)</h3>
+<div class="chart-container">
+<canvas id="party-trends-chart" aria-label="Line chart showing party win rate, absence rate, and document production from 2023 to 2025"></canvas>
+</div>
+<p class="chart-description">年別の勝率・欠席率・文書生産量</p>
+</div>
+
+<!-- Chart 5: YoY Change Waterfall -->
+<div class="chart-card">
+<h3>前年比変化</h3>
+<div class="chart-container">
+<canvas id="yoy-waterfall-chart" aria-label="2023年から2025年の投票活動の前年比変化を示すウォーターフォールチャート"></canvas>
+</div>
+<p class="chart-description">投票活動の変化: 2023 → 2024 → 2025</p>
+</div>
+
+<!-- Chart 6: Early Warning Indicators -->
+<div class="chart-card">
+<h3>早期警戒指標マトリクス</h3>
+<div id="warning-matrix" role="region" aria-label="4つの監視指標（投票、文書、出席、前年比変化）の状態を示す早期警戒指標マトリクス"></div>
+<p class="chart-description">4つの監視指標のリアルタイム状態（投票、文書、出席、前年比変化）</p>
+</div>
+</div>
+
+<p class="data-attribution">📊 Data by CIA Platform | 毎日更新</p>
+</section>
+
+<section id="anomaly-detection-dashboard">
+<h2>🚨 異常検知と早期警戒システム</h2>
+<p>Z スコア分析を使用したスウェーデン議会活動 (2002 ～ 2026 年) における統計的外れ値の特定</p>
+
+<!-- Alert Banner (for active anomalies) -->
+<div id="anomaly-alert-banner" class="alert-banner critical hidden">
+<span class="alert-icon">🔴</span>
+<p><strong id="alert-prefix">重大な異常を検知:</strong> <span id="alert-message"></span></p>
+<button class="dismiss-alert">閉じる</button>
+</div>
+
+<!-- Filters -->
+<div class="dashboard-filters">
+<select id="anomaly-severity-filter" aria-label="重大度でフィルタリングする">
+<option value="all">すべての重大度</option>
+<option value="CRITICAL">🔴 重大</option>
+<option value="HIGH">🟠 高</option>
+<option value="MODERATE">🟡 中</option>
+<option value="LOW">🟢 低</option>
+</select>
+<select id="anomaly-type-filter" aria-label="異常の種類によるフィルター">
+<option value="all">すべてのタイプ</option>
+<option value="BALLOT_ANOMALY">投票異常</option>
+<option value="DOCUMENT_ANOMALY">文書異常</option>
+<option value="ATTENDANCE_ANOMALY">出席 異常</option>
+<option value="NO_ANOMALY">異常なし</option>
+</select>
+<select id="anomaly-direction-filter" aria-label="方向でフィルタリングする">
+<option value="all">すべての方向</option>
+<option value="UNUSUALLY_HIGH">異常に高い</option>
+<option value="UNUSUALLY_LOW">異常に低い</option>
+<option value="WITHIN_NORMAL_RANGE">正常範囲内</option>
+</select>
+<select id="anomaly-year-filter" aria-label="年で絞り込み">
+<option value="all">すべての年</option>
+</select>
+</div>
+
+<!-- Visualizations -->
+<div class="dashboard-grid">
+<!-- Chart 1: 異常 Timeline -->
+<div class="chart-card wide">
+<h3>異常タイムライン（2002-2026）</h3>
+<canvas id="anomaly-timeline-chart" role="img" aria-label="時間経過に沿った異常を示す散布図"></canvas>
+<p class="chart-description">検出された異常を重大度コード付きで時系列表示</p>
+</div>
+
+<!-- Chart 2: Z-Score Distribution -->
+<div class="chart-card">
+<h3>Zスコア分布</h3>
+<canvas id="zscore-distribution-chart" role="img" aria-label="Zスコア分布ヒストグラム"></canvas>
+<p class="chart-description">外れ値マーカー付き正規曲線（|Z| ≥ 2.0）</p>
+</div>
+
+<!-- Chart 3: 異常 Type Breakdown -->
+<div class="chart-card">
+<h3>異常タイプ分布</h3>
+<canvas id="anomaly-type-chart" role="img" aria-label="異常タイプの分布を示すドーナツチャート"></canvas>
+<p class="chart-description">投票異常と文書異常の分布</p>
+</div>
+
+<!-- Chart 4: Severity Heat Map -->
+<div class="chart-card wide">
+<h3>重大度ヒートマップ（年 × 四半期）</h3>
+<div id="severity-heatmap" role="img" aria-label="年と四半期ごとの重大度を示すヒートマップ"></div>
+<p class="chart-description">年・四半期ごとの異常重大度を示すグリッド</p>
+</div>
+
+<!-- Chart 5: Quarterly 異常 Frequency -->
+<div class="chart-card">
+<h3>四半期別異常頻度</h3>
+<canvas id="quarterly-frequency-chart" role="img" aria-label="四半期ごとの異常頻度を示す棒グラフ"></canvas>
+<p class="chart-description">Q1-Q4 anomaly counts across all years</p>
+</div>
+
+<!-- Chart 6: Recent Anomalies Feed -->
+<div class="chart-card">
+<h3>最近の異常（最新5件）</h3>
+<div id="recent-anomalies-feed" role="feed" aria-label="最近の異常フィード"></div>
+<p class="chart-description">最新の異常と詳細情報</p>
+</div>
+</div>
+</section>
+
+<section id="ministry-dashboard" class="dashboard-container">
+<h2>🎖️ 政府大臣のリスクと影響力</h2>
+
+<div class="dashboard-grid">
+<div class="chart-card wide">
+<h3>省庁リスクヒートマップ</h3>
+<div id="ministryRiskHeatMap" role="img" aria-label="政府各省庁のリスク水準を示す省庁リスクヒートマップ"></div>
+</div>
+
+<div class="chart-card">
+<h3>最も影響力のある大臣トップ10</h3>
+<canvas id="ministerInfluenceChart" role="img" aria-label="影響力の高い大臣トップ10を示す棒グラフ"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>省庁生産性マトリクス</h3>
+<canvas id="ministryProductivityChart" role="img" aria-label="四半期ごとの省庁生産性を比較する棒グラフ"></canvas>
+</div>
+
+<div class="chart-card">
+<h3>意思決定の影響の傾向</h3>
+<canvas id="decisionImpactChart" role="img" aria-label="Line chart showing decision impact trends over time"></canvas>
+</div>
+</div>
+
+<!-- Alternative data table for screen readers -->
+<details class="sr-only-alternative">
+<summary>データをアクセシブルな表で表示</summary>
+<table id="ministryDataTable">
+<!-- Populated by JavaScript -->
+</table>
+</details>
+</section>
+
+<section id="risk-dashboard" class="dashboard-container">
+<h2><span aria-hidden="true">⚠️</span> リスク評価と異常検知</h2>
+<p class="dashboard-description">349人の議員に対して45のリスクルールを適用し、統計的異常検知（P90/P99閾値）を組み合わせた包括的インテリジェンス分析です。履歴分析には1971-2024年の2494人の政治家データを含みます。</p>
+
+<div class="alert-banner" id="earlyWarnings" role="alert" aria-live="polite" aria-atomic="true">
+  <!-- Alerts populated by JavaScript -->
+</div>
+
+<div class="dashboard-grid">
+  <div class="chart-card full-width">
+    <h3>リスクレベルヒートマップ（45ルール × 349議員）</h3>
+    <p class="chart-description">45の透明性ルールにわたる各議員のリスクスコアを示すインタラクティブヒートマップです。セルをクリックすると詳細を表示します。</p>
+    <div class="controls">
+      <label class="control-label">
+        <input type="checkbox" id="filterHighRisk" aria-label="高リスク議員のみ表示（スコア ≥6.0）" aria-describedby="filterHighRiskDesc">
+        <span id="filterHighRiskDesc">高リスクのみ表示（≥6.0）</span>
+      </label>
+      <label class="control-label">
+        <span>ルールで絞り込み:</span>
+        <select id="riskRuleFilter" aria-label="リスクルールで絞り込み">
+          <option value="">すべてのルール</option>
+        </select>
+      </label>
+      <button id="resetZoom" class="btn btn-sm" aria-label="Reset zoom">ズームをリセット</button>
+    </div>
+    <div id="riskHeatMap" role="img" aria-label="349議員と45ルールのリスク評価ヒートマップ"></div>
+    <div id="heatMapLegend" class="legend" role="img" aria-label="Heat map color legend"></div>
+  </div>
+  
+  <div class="chart-card">
+    <h3>リスク分布</h3>
+    <p class="chart-description">全議員におけるリスクスコア分布</p>
+    <canvas id="riskDistributionChart" role="img" aria-label="リスクスコア分布を示す棒グラフ"></canvas>
+  </div>
+  
+  <div class="chart-card">
+    <h3>異常検知（P90/P99）</h3>
+    <p class="chart-description">90・99パーセンタイル閾値に基づく投票異常</p>
+    <canvas id="anomalyDetectionChart" role="img" aria-label="投票異常を示す散布図"></canvas>
+  </div>
+  
+  <div class="chart-card">
+    <h3>危機レジリエンス指標</h3>
+    <p class="chart-description">政党別レジリエンススコアと政権安定性指標</p>
+    <canvas id="crisisResilienceChart" role="img" aria-label="危機レジリエンス指標を示すレーダーチャート"></canvas>
+  </div>
+  
+  <div class="chart-card">
+    <h3>リスク推移タイムライン（2020-2026）</h3>
+    <p class="chart-description">時間経過に伴うリスクカテゴリの履歴トレンド</p>
+    <canvas id="riskEvolutionChart" role="img" aria-label="リスクの時系列推移を示す折れ線グラフ"></canvas>
+  </div>
+  
+  <div class="chart-card">
+    <h3>倫理リスク上位10名</h3>
+    <p class="chart-description">倫理リスクスコアが最も高い議員</p>
+    <ol id="ethicsConcernsList" aria-label="倫理リスク上位10名リスト">
+      <!-- Populated by JavaScript -->
+    </ol>
+  </div>
+  
+  <div class="chart-card">
+    <h3>選挙リスク（高リスク議員）</h3>
+    <p class="chart-description">2026年選挙で最も脆弱性が高い議員</p>
+    <ol id="electoralRiskList" aria-label="選挙リスク上位10名議員">
+      <!-- Populated by JavaScript -->
+    </ol>
+  </div>
+</div>
+
+<div class="data-attribution">
+  <p><strong>データソース:</strong> <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">Citizen Intelligence Agency</a> | <strong>最終更新:</strong> <span id="lastUpdated">読み込み中...</span></p>
+  <p class="methodology-note"><em>リスクスコアは4領域（政治家、政党、委員会、省庁）における45の透明性ルールで算出。異常検知はP90（警告）・P99（重大）の統計閾値を使用します。</em></p>
+</div>
+</section>
+
+  <section id="intelligence-capabilities">
+<h2>総合インテリジェンスプラットフォーム</h2>
+<p>CIAは4領域の45リスクルールと5つの分析フレームワークにより、政治的透明性を体系的に提供します。</p>
+
+<div class="cards">
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>🔍 リアルタイム監視</h3>
+<ul>
+<li>349名の議員を自動追跡（履歴データ <span data-stat-id="stat-historical-persons">2,494</span> 名）</li>
+<li>個別投票記録 <span data-stat-id="stat-total-votes">—</span> 件を分析</li>
+<li>文書 <span data-stat-id="stat-total-documents">500K+</span> 件を処理</li>
+<li>議員提案 <span data-stat-id="stat-member-proposals">—</span> 件を追跡</li>
+<li>政府提案 <span data-stat-id="stat-government-proposals">10K+</span> 件を監視</li>
+<li>委員会業務を定量化（文書 <span data-stat-id="stat-committee-documents">—</span> 件）</li>
+</ul>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>📊 連合の予測</h3>
+<ul>
+<li>4つの選挙シナリオをモデル化</li>
+<li>履歴パターン分析（1971-2024）</li>
+<li>党規律の追跡</li>
+<li>離反確率の推定</li>
+<li>政権形成シミュレーション</li>
+</ul>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>✅ ファクトチェック基盤</h3>
+<ul>
+<li>政治家発言と投票記録の照合</li>
+<li>パーティプラットフォームの一貫性分析</li>
+<li>公約トラッキング</li>
+<li>リアルタイム討論検証</li>
+<li>履歴説明責任指標</li>
+</ul>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>⚠️ リスク評価</h3>
+<ul>
+<li>45の行動リスクルールを運用</li>
+<li>MINOR/MAJOR/CRITICAL の重大度区分</li>
+<li>自動アラートシステム</li>
+<li>文脈を踏まえたトレンド分析</li>
+<li>透明性のある方法論</li>
+</ul>
+</div>
+</div>
+
+<div class="risk-rules-breakdown">
+<h3>4領域にわたる45のリスクルール</h3>
+<ul>
+<li><strong>政治家レベル（20ルール）:</strong> 出席、投票一貫性、役割衝突、生産性</li>
+<li><strong>パーティーレベル (12 ルール):</strong> 連立規律、理念の乖離、内部対立</li>
+<li><strong>委員会レベル（8ルール）:</strong> 立法生産性、党派的行き詰まり、専門家証言</li>
+<li><strong>省庁レベル（5ルール）:</strong> 予算超過、政策失敗、説明責任の欠如</li>
+</ul>
+
+<h3>5つの分析フレームワーク</h3>
+<ul>
+<li><strong>時系列分析:</strong> 期間横断のトレンド検出</li>
+<li><strong>比較分析:</strong> 政党/議員間ベンチマーク</li>
+<li><strong>パターン認識:</strong> 行動異常検知</li>
+<li><strong>予測インテリジェンス:</strong> 選挙結果予測、連立モデリング</li>
+<li><strong>ネットワーク分析:</strong> 影響力マッピング、協調パターン</li>
+</ul>
+</div>
+</section>
+
+<section id="data-sources">
+<h2><span aria-hidden="true">📊</span> Citizen Intelligence Agency データ製品</h2>
+<p>Riksdagsmonitor は、<a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">Citizen Intelligence Agency (CIA)</a>— スウェーデンの議会データを処理して実用的なインテリジェンス製品を作成するオープンソースの OSINT プラットフォーム。</p>
+
+<div class="cards">
+<div class="card">
+<div class="scanner-effect"></div>
+<h3><span aria-hidden="true">📈</span> リスク評価レポート</h3>
+<p>4領域の45リスクルールにより、政治家行動・政党規律・委員会有効性・省庁説明責任をリアルタイム分析します。</p>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3><span aria-hidden="true">📅</span> 季節別活動分析</h3>
+<p>Zスコア異常検知により四半期ごとの異常議会活動を特定し、2002年以降の基準線と比較します。</p>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3><span aria-hidden="true">🎯</span> 選挙サイクル・インテリジェンス</h3>
+<p>9回以上の選挙サイクル（1994-2034）でパフォーマンスを追跡し、予測リスク、政党階層分析、連立確率モデリングを提供します。</p>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3><span aria-hidden="true">🔗</span> オープンデータ統合</h3>
+<p>すべてのインテリジェンス製品は公式のオープンデータソースに基づいています。可視化は夜間データパイプラインにより自動更新され、24時間キャッシュされます。</p>
+</div>
+</div>
+
+<p class="note">すべてのデータ製品は、スウェーデン議会のオープン データ API からのリアルタイム更新を備えた市民情報局プラットフォームを通じて利用できます。</p>
+</section>
+
+  
+<section id="data-integration">
+<h2><span aria-hidden="true">🔗</span> データソースと統合</h2>
+<p>Riksdagsmonitor は、複数の信頼できるスウェーデンおよび国際的なデータ ソースを統合します。</p>
+
+<div class="cards">
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>スウェーデン議会 (リクスダーゲン)</h3>
+<p>投票、文書、委員会活動、議員情報を含む公式議会データ。</p>
+<a href="https://data.riksdagen.se/" target="_blank" rel="noopener noreferrer">data.riksdagen.se</a>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>スウェーデン選挙管理局</h3>
+<p>全国選挙の履歴結果、投票率、選挙統計データ。</p>
+<a href="https://www.val.se/" target="_blank" rel="noopener noreferrer">val.se</a>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>財政管理庁（ESV）</h3>
+<p>政府予算データ、公共支出分析、財政説明責任レポート。</p>
+<a href="https://www.esv.se/psidata/" target="_blank" rel="noopener noreferrer">esv.se/psidata</a>
+</div>
+
+<div class="card">
+<div class="scanner-effect"></div>
+<h3>世界銀行オープンデータ</h3>
+<p>国際比較分析のための国別経済・開発指標。</p>
+<a href="https://data.worldbank.org/" target="_blank" rel="noopener noreferrer">data.worldbank.org</a>
+</div>
+</div>
+</section>
+<section class="ai-newsroom-section" aria-labelledby="ai-newsroom-heading">
+<div class="container">
+<h2 id="ai-newsroom-heading"><span aria-hidden="true">🤖</span> AIによるニュース生成革命</h2>
+<p>Riksdagsmonitor のエージェント型ニュース生成パイプラインは、議会モニタリングのための世界初のフルAI駆動型「政治インテリジェンス・ニュースルーム」です。GitHub Copilot Coding Agent 経由で動作する Claude Opus を中核に、10個の専門ワークフロー（定期実行9本＋オンデマンド1本）が、自律的に高度な政治分析を生成します。単なる要約ではなく、情報源検証、複数政党への公平性、GDPRに準拠したOSINT手法に基づく構造化インテリジェンスとして提供します。</p>
+</div>
+</section>
+</main>
+
+<footer role="contentinfo" class="site-footer" data-rm-static-footer="true">
+  <div class="footer-content">
+    <div class="footer-section">
+      <a href="index_ja.html" aria-label="Riksdagsmonitor ホーム">
+        <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="footer-logo" width="80" height="80" loading="lazy">
+      </a>
+      <h3><span aria-hidden="true">📖</span> Riksdagsmonitorについて</h3>
+      <p>CIAのOSINT機能を活用したスウェーデン議会監視のためのライブインテリジェンスプラットフォーム。継続的な改善を行っています — 問題があればGitHubで報告してください。</p>
+      <p>スウェーデンのサイバーセキュリティコンサルティング会社 — 政治的透明性とオープンソースインテリジェンスを専門としています。</p>
+      <ul class="footer-stats">
+        <li><strong>349 議員</strong> 追跡中</li>
+        <li><strong>45 リスクルール</strong> アクティブ</li>
+        <li><strong>14 言語</strong> サポート</li>
+        <li><strong>50年以上</strong> 履歴データ</li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3><span aria-hidden="true">🔗</span> クイックリンク</h3>
+      <ul>
+        <li><a href="index_ja.html">ホーム</a></li>
+        <li><a href="news/index_ja.html">ニュース</a></li>
+        <li><a href="dashboard/index_ja.html">ダッシュボード</a></li>
+        <li><a href="politician-dashboard_ja.html"><span aria-hidden="true">👤</span> 政治家</a></li>
+        <li><a href="political-intelligence_ja.html"><span aria-hidden="true">🧠</span> 政治インテリジェンス</a></li>
+        <li><a href="sitemap_ja.html"><span aria-hidden="true">🗺️</span> サイトマップ</a></li>
+        <li><a href="https://riksdagsmonitor.com/docs/api/index.html"><span aria-hidden="true">📚</span> APIドキュメント (TypeDoc)</a></li>
+        <li><a href="https://github.com/Hack23/cia" target="_blank" rel="noopener noreferrer">CIAプラットフォーム</a></li>
+        <li><a href="https://github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer">GitHubリポジトリ</a></li>
+        <li><a href="https://www.riksdagen.se" target="_blank" rel="noopener noreferrer">スウェーデン議会</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3><span aria-hidden="true">🏢</span> Hack23 AB制作</h3>
+      <p>スウェーデンのサイバーセキュリティコンサルティング会社 — 政治的透明性とオープンソースインテリジェンスを専門としています。</p>
+      <ul>
+        <li><a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23.com</a></li>
+        <li><a href="https://www.hack23.com/riksdagsmonitor.html" target="_blank" rel="noopener noreferrer">Hack23 · Riksdagsmonitor</a></li>
+        <li><a href="https://www.hack23.com/riksdagsmonitor-features.html" target="_blank" rel="noopener noreferrer">Hack23 · 機能</a></li>
+        <li><a href="https://github.com/sponsors/Hack23" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">💖</span> Hack23をスポンサー</a></li>
+        <li><a href="https://www.linkedin.com/company/hack23/" target="_blank" rel="noopener noreferrer">企業LinkedIn</a></li>
+        <li><a href="https://github.com/Hack23" target="_blank" rel="noopener noreferrer">Hack23 GitHub組織</a></li>
+        <li><a href="mailto:info@hack23.com">お問い合わせ</a></li>
+        <li><a href="https://github.com/Hack23/riksdagsmonitor/issues/new/choose" target="_blank" rel="noopener noreferrer">GitHubイシューを報告</a></li>
+      </ul>
+    </div>
+    <div class="footer-section rm-footer-isms">
+      <h3><span aria-hidden="true">🛡️</span> Hack23 ISMS</h3>
+      <p>ISO 27001:2022、NIST CSF 2.0、CIS Controls v8.1、EU CRA、NIS2に整合した公開ISMS。</p>
+      <ul>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC" target="_blank" rel="noopener noreferrer">公開ISMSリポジトリ</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md" target="_blank" rel="noopener noreferrer">情報セキュリティポリシー</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Privacy_Policy.md" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md" target="_blank" rel="noopener noreferrer">セキュア開発ポリシー</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md" target="_blank" rel="noopener noreferrer">AIポリシー</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md" target="_blank" rel="noopener noreferrer">脅威モデリング</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md" target="_blank" rel="noopener noreferrer">脆弱性管理</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md" target="_blank" rel="noopener noreferrer">インシデント対応計画</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Access_Control_Policy.md" target="_blank" rel="noopener noreferrer">アクセス制御ポリシー</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Cryptography_Policy.md" target="_blank" rel="noopener noreferrer">暗号ポリシー</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md" target="_blank" rel="noopener noreferrer">オープンソースポリシー</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management.md" target="_blank" rel="noopener noreferrer">変更管理</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md" target="_blank" rel="noopener noreferrer">分類</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Security_Metrics.md" target="_blank" rel="noopener noreferrer">セキュリティメトリクス</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3><span aria-hidden="true">🌍</span> 言語</h3>
+      <div class="language-grid">
+        <a href="index.html" lang="en" hreflang="en" title="English" aria-label="言語切り替え: English"><span aria-hidden="true">🇬🇧</span> EN</a>
+        <a href="index_sv.html" lang="sv" hreflang="sv" title="Svenska" aria-label="言語切り替え: Swedish"><span aria-hidden="true">🇸🇪</span> SV</a>
+        <a href="index_da.html" lang="da" hreflang="da" title="Dansk" aria-label="言語切り替え: Danish"><span aria-hidden="true">🇩🇰</span> DA</a>
+        <a href="index_no.html" lang="nb" hreflang="nb" title="Norsk" aria-label="言語切り替え: Norwegian"><span aria-hidden="true">🇳🇴</span> NO</a>
+        <a href="index_fi.html" lang="fi" hreflang="fi" title="Suomi" aria-label="言語切り替え: Finnish"><span aria-hidden="true">🇫🇮</span> FI</a>
+        <a href="index_de.html" lang="de" hreflang="de" title="Deutsch" aria-label="言語切り替え: German"><span aria-hidden="true">🇩🇪</span> DE</a>
+        <a href="index_fr.html" lang="fr" hreflang="fr" title="Français" aria-label="言語切り替え: French"><span aria-hidden="true">🇫🇷</span> FR</a>
+        <a href="index_es.html" lang="es" hreflang="es" title="Español" aria-label="言語切り替え: Spanish"><span aria-hidden="true">🇪🇸</span> ES</a>
+        <a href="index_nl.html" lang="nl" hreflang="nl" title="Nederlands" aria-label="言語切り替え: Dutch"><span aria-hidden="true">🇳🇱</span> NL</a>
+        <a href="index_ar.html" lang="ar" hreflang="ar" title="العربية" aria-label="言語切り替え: Arabic"><span aria-hidden="true">🇸🇦</span> AR</a>
+        <a href="index_he.html" lang="he" hreflang="he" title="עברית" aria-label="言語切り替え: Hebrew"><span aria-hidden="true">🇮🇱</span> HE</a>
+        <a href="index_ja.html" lang="ja" hreflang="ja" title="日本語" aria-label="言語切り替え: Japanese" aria-current="page" class="active"><span aria-hidden="true">🇯🇵</span> JA</a>
+        <a href="index_ko.html" lang="ko" hreflang="ko" title="한국어" aria-label="言語切り替え: Korean"><span aria-hidden="true">🇰🇷</span> KO</a>
+        <a href="index_zh.html" lang="zh" hreflang="zh" title="中文" aria-label="言語切り替え: Chinese"><span aria-hidden="true">🇨🇳</span> ZH</a>
+      </div>
+    </div>
+  </div>
+  <nav class="rm-footer-trust-badges" aria-label="公開されている信頼性・品質・セキュリティバッジ">
+    <a href="https://www.npmjs.com/package/riksdagsmonitor" target="_blank" rel="noopener noreferrer" aria-label="Riksdagsmonitor on npmjs"><img src="https://img.shields.io/npm/v/riksdagsmonitor.svg?logo=npm&label=npm" alt="Riksdagsmonitor on npmjs" width="100" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer" aria-label="OpenSSF Scorecard"><img src="https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge" alt="OpenSSF Scorecard" width="120" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://www.bestpractices.dev/projects/12069" target="_blank" rel="noopener noreferrer" aria-label="OpenSSF Best Practices"><img src="https://www.bestpractices.dev/projects/12069/badge" alt="OpenSSF Best Practices" width="124" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/riksdagsmonitor/actions/workflows/codeql.yml" target="_blank" rel="noopener noreferrer" aria-label="CodeQL workflow status"><img src="https://github.com/Hack23/riksdagsmonitor/actions/workflows/codeql.yml/badge.svg" alt="CodeQL workflow status" width="120" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml" target="_blank" rel="noopener noreferrer" aria-label="Quality checks workflow status"><img src="https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml/badge.svg" alt="Quality checks workflow status" width="160" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml" target="_blank" rel="noopener noreferrer" aria-label="Dependency review workflow status"><img src="https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml/badge.svg" alt="Dependency review workflow status" width="170" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/riksdagsmonitor/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" aria-label="Apache-2.0 License"><img src="https://img.shields.io/github/license/Hack23/riksdagsmonitor" alt="Apache-2.0 License" width="120" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/ISMS-PUBLIC" target="_blank" rel="noopener noreferrer" aria-label="Hack23 ISMS-PUBLIC"><img src="https://img.shields.io/badge/Hack23-ISMS-blue?logo=shield" alt="Hack23 ISMS-PUBLIC" width="100" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md" target="_blank" rel="noopener noreferrer" aria-label="ISO 27001:2022 alignment"><img src="https://img.shields.io/badge/ISO-27001:2022-purple" alt="ISO 27001:2022 alignment" width="110" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md" target="_blank" rel="noopener noreferrer" aria-label="NIST CSF 2.0 alignment"><img src="https://img.shields.io/badge/NIST-CSF_2.0-orange" alt="NIST CSF 2.0 alignment" width="100" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md" target="_blank" rel="noopener noreferrer" aria-label="CIS Controls v8.1 alignment"><img src="https://img.shields.io/badge/CIS-Controls_v8.1-red" alt="CIS Controls v8.1 alignment" width="120" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://riksdagsmonitor.com" target="_blank" rel="noopener noreferrer" aria-label="Riksdagsmonitor.com website status"><img src="https://img.shields.io/website?url=https%3A%2F%2Friksdagsmonitor.com" alt="Riksdagsmonitor.com website status" width="120" height="20" loading="lazy" decoding="async"></a>
+  </nav>
+  <div class="footer-bottom">
+    <p>&copy; 2008-<time datetime="2026">2026</time> <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23 AB</a> (Org.nr 5595347807) | Gothenburg, Sweden</p>
+    <p class="footer-disclaimer">⚠️ <a href="https://github.com/Hack23/riksdagsmonitor/issues/new/choose" target="_blank" rel="noopener noreferrer">GitHubイシューを報告</a></p>
+  </div>
+</footer>
+
+<!-- トップへ戻るボタン -->
+<button id="back-to-top" class="back-to-top" aria-label="トップに戻る" title="トップに戻る">
+  <span aria-hidden="true">↑</span>
+</button>
+
+    <!-- Main application entry point -->
+    <script type="module" src="/src/browser/main.ts"></script>
+    <!-- Mermaid + back-to-top + theme toggle bootstrap.
+         Imperatively assembled so Vite's HTML transformer does not try to
+         bundle / hash / re-emit the underlying modules. -->
+    <script>
+      (function () {
+        function inject(src, isModule) {
+          var s = document.createElement('script');
+          if (isModule) s.type = 'module';
+          else s.defer = true;
+          s.src = src;
+          document.head.appendChild(s);
+        }
+        inject('/js/lib/mermaid-init.mjs', true);
+        inject('/js/back-to-top.js', true);
+        inject('/js/theme-toggle.js', false);
+      })();
+    </script>
+  </body>
+</html>

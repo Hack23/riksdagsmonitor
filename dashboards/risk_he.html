@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<title>⚠️ הערכת סיכון וזיהוי אנומליות | Riksdagsmonitor</title>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
+<script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){/* storage unavailable */}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){/* storage unavailable */}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../styles.css">
+<link rel="canonical" href="https://riksdagsmonitor.com/dashboards/risk_he.html">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="description" content="ניתוח מודיעיני מקיף המשתמש ב-45 כללי סיכון עבור 349 חברי פרלמנט עם זיהוי אנומליות סטטיסטי (ספי P90/P99). הניתוח ההיסטורי כולל 2494 פוליטיקאים (1971-2024).">
+<meta name="keywords" content="risk assessment, 45 risk rules, anomaly detection, MP risk scoring, parliamentary risk analytics, בחירות שוודיה 2026, Riksdagsmonitor, ניטור הפרלמנט השוודי, חיזוי קואליציות, מודיעין פוליטי, פלטפורמת OSINT, ניתוח פרלמנטרי, Citizen Intelligence Agency, פוליטיקה שוודית, מעקב בחירות, שקיפות דמוקרטית, 349 חברי פרלמנט, 45 כללי סיכון, שקיפות פרלמנטרית, דמוקרטיה בשוודיה, תחזית בחירות 2026">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="James Pether Sörling, CISSP, CISM">
+<meta name="application-name" content="Riksdagsmonitor">
+<meta name="theme-color" content="#0a0e27">
+<meta name="color-scheme" content="dark light">
+
+<!-- hreflang chain across all 14 languages -->
+<link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/dashboards/risk.html">
+<link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/dashboards/risk_sv.html">
+<link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/dashboards/risk_da.html">
+<link rel="alternate" hreflang="nb" href="https://riksdagsmonitor.com/dashboards/risk_no.html">
+<link rel="alternate" hreflang="fi" href="https://riksdagsmonitor.com/dashboards/risk_fi.html">
+<link rel="alternate" hreflang="de" href="https://riksdagsmonitor.com/dashboards/risk_de.html">
+<link rel="alternate" hreflang="fr" href="https://riksdagsmonitor.com/dashboards/risk_fr.html">
+<link rel="alternate" hreflang="es" href="https://riksdagsmonitor.com/dashboards/risk_es.html">
+<link rel="alternate" hreflang="nl" href="https://riksdagsmonitor.com/dashboards/risk_nl.html">
+<link rel="alternate" hreflang="ar" href="https://riksdagsmonitor.com/dashboards/risk_ar.html">
+<link rel="alternate" hreflang="he" href="https://riksdagsmonitor.com/dashboards/risk_he.html">
+<link rel="alternate" hreflang="ja" href="https://riksdagsmonitor.com/dashboards/risk_ja.html">
+<link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/dashboards/risk_ko.html">
+<link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/dashboards/risk_zh.html">
+<link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/dashboards/risk.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://riksdagsmonitor.com/dashboards/risk_he.html">
+<meta property="og:site_name" content="Riksdagsmonitor">
+<meta property="og:title" content="⚠️ הערכת סיכון וזיהוי אנומליות | Riksdagsmonitor">
+<meta property="og:description" content="ניתוח מודיעיני מקיף המשתמש ב-45 כללי סיכון עבור 349 חברי פרלמנט עם זיהוי אנומליות סטטיסטי (ספי P90/P99). הניתוח ההיסטורי כולל 2494 פוליטיקאים (1971-2024).">
+<meta property="og:image" content="https://riksdagsmonitor.com/images/og-image.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="⚠️ הערכת סיכון וזיהוי אנומליות | Riksdagsmonitor">
+<meta property="og:locale" content="he_IL">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="⚠️ הערכת סיכון וזיהוי אנומליות | Riksdagsmonitor">
+<meta name="twitter:description" content="ניתוח מודיעיני מקיף המשתמש ב-45 כללי סיכון עבור 349 חברי פרלמנט עם זיהוי אנומליות סטטיסטי (ספי P90/P99). הניתוח ההיסטורי כולל 2494 פוליטיקאים (1971-2024).">
+<meta name="twitter:image" content="https://riksdagsmonitor.com/images/og-image.webp">
+<meta name="twitter:image:alt" content="⚠️ הערכת סיכון וזיהוי אנומליות | Riksdagsmonitor">
+<meta name="twitter:site" content="@riksdagsmonitor">
+<meta name="twitter:creator" content="@jamessorling">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="dns-prefetch" href="https://cia.sourceforge.io">
+<link rel="dns-prefetch" href="https://raw.githubusercontent.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap"></noscript>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://riksdagsmonitor.com/dashboards/risk_he.html#webpage",
+      "name": "⚠️ הערכת סיכון וזיהוי אנומליות | Riksdagsmonitor",
+      "description": "ניתוח מודיעיני מקיף המשתמש ב-45 כללי סיכון עבור 349 חברי פרלמנט עם זיהוי אנומליות סטטיסטי (ספי P90/P99). הניתוח ההיסטורי כולל 2494 פוליטיקאים (1971-2024).",
+      "url": "https://riksdagsmonitor.com/dashboards/risk_he.html",
+      "inLanguage": "he",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Riksdagsmonitor",
+        "url": "https://riksdagsmonitor.com"
+      },
+      "about": [
+        { "@type": "Thing", "name": "Swedish Riksdag" },
+        { "@type": "Thing", "name": "Political Intelligence" },
+        { "@type": "Thing", "name": "⚠️ הערכת סיכון וזיהוי אנומליות" }
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "Hack23 AB",
+        "url": "https://www.hack23.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://riksdagsmonitor.com/images/android-chrome-512x512.png"
+        }
+      },
+      "breadcrumb": { "@id": "https://riksdagsmonitor.com/dashboards/risk_he.html#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://riksdagsmonitor.com/dashboards/risk_he.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "בית", "item": "https://riksdagsmonitor.com/" },
+        { "@type": "ListItem", "position": 2, "name": "לוחות מחוונים", "item": "https://riksdagsmonitor.com/dashboard/index.html" },
+        { "@type": "ListItem", "position": 3, "name": "⚠️ הערכת סיכון וזיהוי אנומליות", "item": "https://riksdagsmonitor.com/dashboards/risk_he.html" }
+      ]
+    },
+    {
+      "@type": "Dataset",
+      "name": "⚠️ הערכת סיכון וזיהוי אנומליות",
+      "description": "ניתוח מודיעיני מקיף המשתמש ב-45 כללי סיכון עבור 349 חברי פרלמנט עם זיהוי אנומליות סטטיסטי (ספי P90/P99). הניתוח ההיסטורי כולל 2494 פוליטיקאים (1971-2024).",
+      "creator": { "@type": "Organization", "name": "Citizen Intelligence Agency" },
+      "publisher": { "@type": "Organization", "name": "Hack23 AB" },
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "isAccessibleForFree": true,
+      "keywords": "risk assessment, 45 risk rules, anomaly detection, MP risk scoring, parliamentary risk analytics, Swedish Riksdag, OSINT, parliament"
+    }
+  ]
+}
+</script>
+</head>
+<body class="rm-dashboard-page rm-dashboard-risk">
+<a href="#main-content" class="skip-to-content">דלג לתוכן הראשי</a>
+<nav aria-label="Breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="../index_he.html">בית</a>
+</li>
+<li class="breadcrumb-item">
+<a href="../dashboard/index_he.html">לוחות מחוונים</a>
+</li>
+<li class="breadcrumb-item" aria-current="page">
+⚠️ הערכת סיכון וזיהוי אנומליות
+</li>
+</ol>
+</nav>
+
+<header>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="החלפת ערכת נושא"
+        title="החלפת ערכת נושא"
+        data-label-dark="החלף לערכת נושא בהירה"
+        data-label-light="החלף לערכת נושא כהה"
+        data-rm-static-theme-toggle="true">
+  <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
+  <span class="theme-icon theme-icon-sun" aria-hidden="true">☀️</span>
+  <span class="theme-toggle-label">ערכת נושא</span>
+</button>
+
+<!-- Hero Banner -->
+<div class="hero-banner">
+  <img src="../images/riksdagsmonitor-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" aria-hidden="true">
+</div>
+
+<!-- Hero Title -->
+<div class="hero-header-text">
+  <h1> Riksdagsmonitor<br><span class="h1-subtitle">פלטפורמת מודיעין לבחירות שוודיה 2026</span></h1>
+  <p class="tagline">ניטור פרלמנטרי בזמן אמת · תחזיות קואליציה · 45 כללי סיכון · נתונים של 50+ שנים</p>
+</div>
+
+
+<div class="election-countdown">
+<h2>הבחירות בעוד: <span id="countdown">13 בספטמבר 2026 (יום ראשון השני בספטמבר)</span></h2>
+<p>13 בספטמבר 2026 (יום ראשון השני בספטמבר)</p>
+</div>
+
+<div class="hero-stats">
+<div class="stat">
+<span class="number" data-stat-id="stat-historical-persons">2,494</span>
+<span class="label"><span aria-hidden="true">👥</span> פוליטיקאים בניטור</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-against-proposals">6M+</span>
+<span class="label"><span aria-hidden="true">🗳️</span> הצבעות הריקסדאג</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-total-documents">500K+</span>
+<span class="label"><span aria-hidden="true">📄</span> מסמכים שעובדו</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-government-proposals">10K+</span>
+<span class="label"><span aria-hidden="true">📜</span> הצעות חוק ממשלתיות</span>
+</div>
+<div class="stat">
+<span class="number" data-stat-id="stat-committee-decisions">20K+</span>
+<span class="label"><span aria-hidden="true">🏛️</span> החלטות ועדות</span>
+</div>
+</div>
+<nav class="site-header-nav" aria-label="פלטפורמה ראשית" data-rm-static-primary-nav="true">
+  <a href="../index_he.html">דף הבית</a>
+  <a href="news/index_he.html">חדשות</a>
+  <a href="dashboard/index_he.html">לוח מחוונים</a>
+  <a href="politician-dashboard_he.html"><span aria-hidden="true">👤</span> פוליטיקאים</a>
+  <a href="political-intelligence_he.html"><span aria-hidden="true">🧠</span> מודיעין פוליטי</a>
+  <a href="sitemap_he.html"><span aria-hidden="true">🗺️</span> מפת האתר</a>
+  <a href="https://riksdagsmonitor.com/docs/api/index.html"><span aria-hidden="true">📚</span> תיעוד API</a>
+  <a class="rm-header-cta rm-header-cta-transparency" href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer" title="מחויבות Hack23 לשקיפות ואבטחה" aria-label="מחויבות Hack23 לשקיפות ואבטחה"><span aria-hidden="true">🔐</span> שקיפות ואבטחה</a>
+  <a class="rm-header-cta rm-header-cta-sponsor" href="https://github.com/sponsors/Hack23" target="_blank" rel="noopener noreferrer" title="הפכו לתומכים של Hack23 ב-GitHub" aria-label="הפכו לתומכים של Hack23 ב-GitHub"><span aria-hidden="true">💖</span> תמכו ב-Hack23</a>
+</nav>
+<nav class="language-switcher site-language-switcher" aria-label="דף זה בשפות אחרות" data-rm-static-language-switcher="true">
+        <a href="../dashboards/risk.html" lang="en" hreflang="en" title="English" aria-label="החלפת שפה: English"><span aria-hidden="true">🇬🇧</span> EN</a>
+        <a href="../dashboards/risk_sv.html" lang="sv" hreflang="sv" title="Svenska" aria-label="החלפת שפה: Swedish"><span aria-hidden="true">🇸🇪</span> SV</a>
+        <a href="../dashboards/risk_da.html" lang="da" hreflang="da" title="Dansk" aria-label="החלפת שפה: Danish"><span aria-hidden="true">🇩🇰</span> DA</a>
+        <a href="../dashboards/risk_no.html" lang="no" hreflang="nb" title="Norsk" aria-label="החלפת שפה: Norwegian"><span aria-hidden="true">🇳🇴</span> NO</a>
+        <a href="../dashboards/risk_fi.html" lang="fi" hreflang="fi" title="Suomi" aria-label="החלפת שפה: Finnish"><span aria-hidden="true">🇫🇮</span> FI</a>
+        <a href="../dashboards/risk_de.html" lang="de" hreflang="de" title="Deutsch" aria-label="החלפת שפה: German"><span aria-hidden="true">🇩🇪</span> DE</a>
+        <a href="../dashboards/risk_fr.html" lang="fr" hreflang="fr" title="Français" aria-label="החלפת שפה: French"><span aria-hidden="true">🇫🇷</span> FR</a>
+        <a href="../dashboards/risk_es.html" lang="es" hreflang="es" title="Español" aria-label="החלפת שפה: Spanish"><span aria-hidden="true">🇪🇸</span> ES</a>
+        <a href="../dashboards/risk_nl.html" lang="nl" hreflang="nl" title="Nederlands" aria-label="החלפת שפה: Dutch"><span aria-hidden="true">🇳🇱</span> NL</a>
+        <a href="../dashboards/risk_ar.html" lang="ar" hreflang="ar" title="العربية" aria-label="החלפת שפה: Arabic"><span aria-hidden="true">🇸🇦</span> AR</a>
+        <a href="../dashboards/risk_he.html" lang="he" hreflang="he" title="עברית" aria-label="החלפת שפה: Hebrew" aria-current="page" class="active"><span aria-hidden="true">🇮🇱</span> HE</a>
+        <a href="../dashboards/risk_ja.html" lang="ja" hreflang="ja" title="日本語" aria-label="החלפת שפה: Japanese"><span aria-hidden="true">🇯🇵</span> JA</a>
+        <a href="../dashboards/risk_ko.html" lang="ko" hreflang="ko" title="한국어" aria-label="החלפת שפה: Korean"><span aria-hidden="true">🇰🇷</span> KO</a>
+        <a href="../dashboards/risk_zh.html" lang="zh" hreflang="zh" title="中文" aria-label="החלפת שפה: Chinese"><span aria-hidden="true">🇨🇳</span> ZH</a>
+</nav>
+</header>
+
+<main id="main-content" role="main">
+<nav class="dashboard-page-back" aria-label="→ חזרה לדף הבית">
+<a href="../index_he.html" class="back-link">→ חזרה לדף הבית</a>
+</nav>
+
+<section id="risk-dashboard" class="dashboard-container">
+<h2><span aria-hidden="true">⚠️</span> הערכת סיכון וזיהוי אנומליות</h2>
+<p class="dashboard-description">ניתוח מודיעיני מקיף המשתמש ב-45 כללי סיכון עבור 349 חברי פרלמנט עם זיהוי אנומליות סטטיסטי (ספי P90/P99). הניתוח ההיסטורי כולל 2494 פוליטיקאים (1971-2024).</p>
+
+<div class="alert-banner" id="earlyWarnings" role="alert" aria-live="polite" aria-atomic="true">
+  <!-- Alerts populated by JavaScript -->
+</div>
+
+<div class="dashboard-grid">
+  <div class="chart-card full-width">
+    <h3>מפת חום רמת סיכון (45 כללים × 349 חברי פרלמנט)</h3>
+    <p class="chart-description">מפת חום אינטראקטיבית המציגה ציוני סיכון לכל חבר פרלמנט על פני כל 45 כללי השקיפות. לחצו על תאים לפרטים.</p>
+    <div class="controls">
+      <label class="control-label">
+        <input type="checkbox" id="filterHighRisk" aria-label="הצג רק חברי פרלמנט בסיכון גבוה (score ≥6.0)" aria-describedby="filterHighRiskDesc">
+        <span id="filterHighRiskDesc">הצג רק בסיכון גבוה (≥6.0)</span>
+      </label>
+      <label class="control-label">
+        <span>סינון לפי כלל:</span>
+        <select id="riskRuleFilter" aria-label="סינון לפי כלל סיכון">
+          <option value="">כל הכללים</option>
+        </select>
+      </label>
+      <button id="resetZoom" class="btn btn-sm" aria-label="Reset zoom">איפוס תצוגה</button>
+    </div>
+    <div id="riskHeatMap" role="img" aria-label="מפת חום להערכת סיכון המציגה 45 כללים עבור 349 חברי פרלמנט"></div>
+    <div id="heatMapLegend" class="legend" role="img" aria-label="Heat map color legend"></div>
+  </div>
+  
+  <div class="chart-card">
+    <h3>התפלגות סיכון</h3>
+    <p class="chart-description">התפלגות ציוני סיכון על פני כל חברי הפרלמנט</p>
+    <canvas id="riskDistributionChart" role="img" aria-label="תרשים עמודות המציג התפלגות ציוני סיכון"></canvas>
+  </div>
+  
+  <div class="chart-card">
+    <h3>זיהוי אנומליות (P90/P99)</h3>
+    <p class="chart-description">חריגות הצבעה עם ספים סטטיסטיים באחוזונים 90 ו-99</p>
+    <canvas id="anomalyDetectionChart" role="img" aria-label="תרשים פיזור המציג חריגות הצבעה"></canvas>
+  </div>
+  
+  <div class="chart-card">
+    <h3>מדדי חוסן במשבר</h3>
+    <p class="chart-description">ציוני חוסן לפי מפלגה ומדדי יציבות ממשלתית</p>
+    <canvas id="crisisResilienceChart" role="img" aria-label="תרשים רדאר המציג מדדי חוסן במשבר"></canvas>
+  </div>
+  
+  <div class="chart-card">
+    <h3>ציר זמן התפתחות סיכון (2020-2026)</h3>
+    <p class="chart-description">מגמות היסטוריות של קטגוריות סיכון לאורך זמן</p>
+    <canvas id="riskEvolutionChart" role="img" aria-label="תרשים קווי המציג התפתחות סיכון לאורך זמן"></canvas>
+  </div>
+  
+  <div class="chart-card">
+    <h3>10 חששות האתיקה המובילים</h3>
+    <p class="chart-description">חברי פרלמנט עם ציוני סיכון אתי הגבוהים ביותר</p>
+    <ol id="ethicsConcernsList" aria-label="רשימת 10 חששות האתיקה המובילים">
+      <!-- Populated by JavaScript -->
+    </ol>
+  </div>
+  
+  <div class="chart-card">
+    <h3>סיכון אלקטורלי (חברי פרלמנט בסיכון)</h3>
+    <p class="chart-description">חברי פרלמנט עם הפגיעות האלקטורלית הגבוהה ביותר לבחירות 2026</p>
+    <ol id="electoralRiskList" aria-label="10 חברי פרלמנט מובילים בסיכון אלקטורלי">
+      <!-- Populated by JavaScript -->
+    </ol>
+  </div>
+</div>
+
+<div class="data-attribution">
+  <p><strong>מקור נתונים:</strong> <a href="https://www.hack23.com/cia" target="_blank" rel="noopener noreferrer">Citizen Intelligence Agency</a> | <strong>עודכן לאחרונה:</strong> <span id="lastUpdated">טוען...</span></p>
+  <p class="methodology-note"><em>ציוני סיכון מחושבים באמצעות 45 כללי שקיפות ב-4 תחומים (פוליטיקאי, מפלגה, ועדה, משרד). זיהוי אנומליות משתמש בספים סטטיסטיים P90 (אזהרה) ו-P99 (קריטי).</em></p>
+</div>
+</section>
+
+<aside class="dashboard-related" aria-labelledby="related-dashboards-heading">
+<h2 id="related-dashboards-heading">⚠️ לוחות מחוונים נוספים</h2>
+<div class="dashboard-tile-grid">
+<a href="election-cycle_he.html" class="dashboard-tile" data-rm-dashboard-slug="election-cycle"><span class="dashboard-tile-icon" aria-hidden="true">🗳️</span><span class="dashboard-tile-label">🗳️ מודיעין מחזורי בחירות (1994-2034)</span></a>
+<a href="parties_he.html" class="dashboard-tile" data-rm-dashboard-slug="parties"><span class="dashboard-tile-icon" aria-hidden="true">🏛️</span><span class="dashboard-tile-label">🗳️ ביצועי מפלגות ואפקטיביות</span></a>
+<a href="committees_he.html" class="dashboard-tile" data-rm-dashboard-slug="committees"><span class="dashboard-tile-icon" aria-hidden="true">👥</span><span class="dashboard-tile-label">🏛️ ביצועי ועדות וניתוח רשת</span></a>
+<a href="coalitions_he.html" class="dashboard-tile" data-rm-dashboard-slug="coalitions"><span class="dashboard-tile-icon" aria-hidden="true">🤝</span><span class="dashboard-tile-label">🤝 ניתוח קואליציה ודפוסי הצבעה</span></a>
+<a href="seasonal-patterns_he.html" class="dashboard-tile" data-rm-dashboard-slug="seasonal-patterns"><span class="dashboard-tile-icon" aria-hidden="true">📅</span><span class="dashboard-tile-label">📅 דפוסי פעילות עונתיים (2002-2025)</span></a>
+<a href="pre-election_he.html" class="dashboard-tile" data-rm-dashboard-slug="pre-election"><span class="dashboard-tile-icon" aria-hidden="true">⚠️</span><span class="dashboard-tile-label">🗳️ לוח מחוונים לניטור טרום-בחירות (Q4 2023-2025)</span></a>
+<a href="anomaly-detection_he.html" class="dashboard-tile" data-rm-dashboard-slug="anomaly-detection"><span class="dashboard-tile-icon" aria-hidden="true">🚨</span><span class="dashboard-tile-label">🚨 זיהוי אנומליות ומערכת התרעה מוקדמת</span></a>
+<a href="ministers_he.html" class="dashboard-tile" data-rm-dashboard-slug="ministers"><span class="dashboard-tile-icon" aria-hidden="true">🎖️</span><span class="dashboard-tile-label">🎖️ סיכון והשפעה של שרי ממשלה</span></a>
+</div>
+</aside>
+</main>
+
+<footer role="contentinfo" class="site-footer" data-rm-static-footer="true">
+  <div class="footer-content">
+    <div class="footer-section">
+      <a href="../index_he.html" aria-label="Riksdagsmonitor דף הבית">
+        <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="footer-logo" width="80" height="80" loading="lazy">
+      </a>
+      <h3><span aria-hidden="true">📖</span> אודות Riksdagsmonitor</h3>
+      <p>פלטפורמת מודיעין חיה לניטור הפרלמנט השוודי בעזרת יכולות CIA OSINT. שיפורים מתמשכים — אנא דווחו על בעיות ב-GitHub.</p>
+      <p>ייעוץ סייבר שוודי המתמחה בשקיפות פוליטית ומודיעין קוד פתוח.</p>
+      <ul class="footer-stats">
+        <li><strong>349 חברי פרלמנט</strong> במעקב</li>
+        <li><strong>45 כללי סיכון</strong> פעילים</li>
+        <li><strong>14 שפות</strong> נתמכות</li>
+        <li><strong>50+ שנים</strong> נתונים היסטוריים</li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3><span aria-hidden="true">🔗</span> קישורים מהירים</h3>
+      <ul>
+        <li><a href="../index_he.html">דף הבית</a></li>
+        <li><a href="news/index_he.html">חדשות</a></li>
+        <li><a href="dashboard/index_he.html">לוח מחוונים</a></li>
+        <li><a href="politician-dashboard_he.html"><span aria-hidden="true">👤</span> פוליטיקאים</a></li>
+        <li><a href="political-intelligence_he.html"><span aria-hidden="true">🧠</span> מודיעין פוליטי</a></li>
+        <li><a href="sitemap_he.html"><span aria-hidden="true">🗺️</span> מפת האתר</a></li>
+        <li><a href="https://riksdagsmonitor.com/docs/api/index.html"><span aria-hidden="true">📚</span> תיעוד API (TypeDoc)</a></li>
+        <li><a href="https://github.com/Hack23/cia" target="_blank" rel="noopener noreferrer">פלטפורמת CIA</a></li>
+        <li><a href="https://github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer">מאגר GitHub</a></li>
+        <li><a href="https://www.riksdagen.se" target="_blank" rel="noopener noreferrer">הפרלמנט השוודי</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3><span aria-hidden="true">🏢</span> נבנה על ידי Hack23 AB</h3>
+      <p>ייעוץ סייבר שוודי המתמחה בשקיפות פוליטית ומודיעין קוד פתוח.</p>
+      <ul>
+        <li><a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23.com</a></li>
+        <li><a href="https://www.hack23.com/riksdagsmonitor.html" target="_blank" rel="noopener noreferrer">Hack23 · Riksdagsmonitor</a></li>
+        <li><a href="https://www.hack23.com/riksdagsmonitor-features.html" target="_blank" rel="noopener noreferrer">Hack23 · תכונות</a></li>
+        <li><a href="https://github.com/sponsors/Hack23" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">💖</span> תמכו ב-Hack23</a></li>
+        <li><a href="https://www.linkedin.com/company/hack23/" target="_blank" rel="noopener noreferrer">החברה ב-LinkedIn</a></li>
+        <li><a href="https://github.com/Hack23" target="_blank" rel="noopener noreferrer">ארגון Hack23 ב-GitHub</a></li>
+        <li><a href="mailto:info@hack23.com">צרו קשר</a></li>
+        <li><a href="https://github.com/Hack23/riksdagsmonitor/issues/new/choose" target="_blank" rel="noopener noreferrer">דווח על תקלת GitHub</a></li>
+      </ul>
+    </div>
+    <div class="footer-section rm-footer-isms">
+      <h3><span aria-hidden="true">🛡️</span> Hack23 ISMS</h3>
+      <p>ISMS ציבורי תואם ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1, EU CRA ו-NIS2.</p>
+      <ul>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC" target="_blank" rel="noopener noreferrer">מאגר ISMS ציבורי</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md" target="_blank" rel="noopener noreferrer">מדיניות אבטחת מידע</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Privacy_Policy.md" target="_blank" rel="noopener noreferrer">מדיניות פרטיות</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md" target="_blank" rel="noopener noreferrer">מדיניות פיתוח מאובטח</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md" target="_blank" rel="noopener noreferrer">מדיניות בינה מלאכותית</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md" target="_blank" rel="noopener noreferrer">מידול איומים</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md" target="_blank" rel="noopener noreferrer">ניהול פגיעויות</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md" target="_blank" rel="noopener noreferrer">תוכנית תגובה לאירועים</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Access_Control_Policy.md" target="_blank" rel="noopener noreferrer">מדיניות בקרת גישה</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Cryptography_Policy.md" target="_blank" rel="noopener noreferrer">מדיניות הצפנה</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md" target="_blank" rel="noopener noreferrer">מדיניות קוד פתוח</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management.md" target="_blank" rel="noopener noreferrer">ניהול שינויים</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md" target="_blank" rel="noopener noreferrer">סיווג</a></li>
+        <li><a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Security_Metrics.md" target="_blank" rel="noopener noreferrer">מדדי אבטחה</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3><span aria-hidden="true">🌍</span> שפות</h3>
+      <div class="language-grid">
+        <a href="../dashboards/risk.html" lang="en" hreflang="en" title="English" aria-label="החלפת שפה: English"><span aria-hidden="true">🇬🇧</span> EN</a>
+        <a href="../dashboards/risk_sv.html" lang="sv" hreflang="sv" title="Svenska" aria-label="החלפת שפה: Swedish"><span aria-hidden="true">🇸🇪</span> SV</a>
+        <a href="../dashboards/risk_da.html" lang="da" hreflang="da" title="Dansk" aria-label="החלפת שפה: Danish"><span aria-hidden="true">🇩🇰</span> DA</a>
+        <a href="../dashboards/risk_no.html" lang="no" hreflang="nb" title="Norsk" aria-label="החלפת שפה: Norwegian"><span aria-hidden="true">🇳🇴</span> NO</a>
+        <a href="../dashboards/risk_fi.html" lang="fi" hreflang="fi" title="Suomi" aria-label="החלפת שפה: Finnish"><span aria-hidden="true">🇫🇮</span> FI</a>
+        <a href="../dashboards/risk_de.html" lang="de" hreflang="de" title="Deutsch" aria-label="החלפת שפה: German"><span aria-hidden="true">🇩🇪</span> DE</a>
+        <a href="../dashboards/risk_fr.html" lang="fr" hreflang="fr" title="Français" aria-label="החלפת שפה: French"><span aria-hidden="true">🇫🇷</span> FR</a>
+        <a href="../dashboards/risk_es.html" lang="es" hreflang="es" title="Español" aria-label="החלפת שפה: Spanish"><span aria-hidden="true">🇪🇸</span> ES</a>
+        <a href="../dashboards/risk_nl.html" lang="nl" hreflang="nl" title="Nederlands" aria-label="החלפת שפה: Dutch"><span aria-hidden="true">🇳🇱</span> NL</a>
+        <a href="../dashboards/risk_ar.html" lang="ar" hreflang="ar" title="العربية" aria-label="החלפת שפה: Arabic"><span aria-hidden="true">🇸🇦</span> AR</a>
+        <a href="../dashboards/risk_he.html" lang="he" hreflang="he" title="עברית" aria-label="החלפת שפה: Hebrew" aria-current="page" class="active"><span aria-hidden="true">🇮🇱</span> HE</a>
+        <a href="../dashboards/risk_ja.html" lang="ja" hreflang="ja" title="日本語" aria-label="החלפת שפה: Japanese"><span aria-hidden="true">🇯🇵</span> JA</a>
+        <a href="../dashboards/risk_ko.html" lang="ko" hreflang="ko" title="한국어" aria-label="החלפת שפה: Korean"><span aria-hidden="true">🇰🇷</span> KO</a>
+        <a href="../dashboards/risk_zh.html" lang="zh" hreflang="zh" title="中文" aria-label="החלפת שפה: Chinese"><span aria-hidden="true">🇨🇳</span> ZH</a>
+      </div>
+    </div>
+  </div>
+  <nav class="rm-footer-trust-badges" aria-label="תגי אמון, איכות ואבטחה פתוחים">
+    <a href="https://www.npmjs.com/package/riksdagsmonitor" target="_blank" rel="noopener noreferrer" aria-label="Riksdagsmonitor on npmjs"><img src="https://img.shields.io/npm/v/riksdagsmonitor.svg?logo=npm&label=npm" alt="Riksdagsmonitor on npmjs" width="100" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer" aria-label="OpenSSF Scorecard"><img src="https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge" alt="OpenSSF Scorecard" width="120" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://www.bestpractices.dev/projects/12069" target="_blank" rel="noopener noreferrer" aria-label="OpenSSF Best Practices"><img src="https://www.bestpractices.dev/projects/12069/badge" alt="OpenSSF Best Practices" width="124" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/riksdagsmonitor/actions/workflows/codeql.yml" target="_blank" rel="noopener noreferrer" aria-label="CodeQL workflow status"><img src="https://github.com/Hack23/riksdagsmonitor/actions/workflows/codeql.yml/badge.svg" alt="CodeQL workflow status" width="120" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml" target="_blank" rel="noopener noreferrer" aria-label="Quality checks workflow status"><img src="https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml/badge.svg" alt="Quality checks workflow status" width="160" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml" target="_blank" rel="noopener noreferrer" aria-label="Dependency review workflow status"><img src="https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml/badge.svg" alt="Dependency review workflow status" width="170" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/riksdagsmonitor/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" aria-label="Apache-2.0 License"><img src="https://img.shields.io/github/license/Hack23/riksdagsmonitor" alt="Apache-2.0 License" width="120" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/ISMS-PUBLIC" target="_blank" rel="noopener noreferrer" aria-label="Hack23 ISMS-PUBLIC"><img src="https://img.shields.io/badge/Hack23-ISMS-blue?logo=shield" alt="Hack23 ISMS-PUBLIC" width="100" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md" target="_blank" rel="noopener noreferrer" aria-label="ISO 27001:2022 alignment"><img src="https://img.shields.io/badge/ISO-27001:2022-purple" alt="ISO 27001:2022 alignment" width="110" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md" target="_blank" rel="noopener noreferrer" aria-label="NIST CSF 2.0 alignment"><img src="https://img.shields.io/badge/NIST-CSF_2.0-orange" alt="NIST CSF 2.0 alignment" width="100" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md" target="_blank" rel="noopener noreferrer" aria-label="CIS Controls v8.1 alignment"><img src="https://img.shields.io/badge/CIS-Controls_v8.1-red" alt="CIS Controls v8.1 alignment" width="120" height="20" loading="lazy" decoding="async"></a>
+    <a href="https://riksdagsmonitor.com" target="_blank" rel="noopener noreferrer" aria-label="Riksdagsmonitor.com website status"><img src="https://img.shields.io/website?url=https%3A%2F%2Friksdagsmonitor.com" alt="Riksdagsmonitor.com website status" width="120" height="20" loading="lazy" decoding="async"></a>
+  </nav>
+  <div class="footer-bottom">
+    <p>&copy; 2008-<time datetime="2026">2026</time> <a href="https://www.hack23.com" target="_blank" rel="noopener noreferrer">Hack23 AB</a> (Org.nr 5595347807) | Gothenburg, Sweden</p>
+    <p class="footer-disclaimer">⚠️ <a href="https://github.com/Hack23/riksdagsmonitor/issues/new/choose" target="_blank" rel="noopener noreferrer">דווח על תקלת GitHub</a></p>
+  </div>
+</footer>
+
+<button id="back-to-top" class="back-to-top" aria-label="חזרה למעלה" title="חזרה למעלה">
+  <span aria-hidden="true">↑</span>
+</button>
+
+<!-- Main application entry point -->
+    <script type="module" src="/src/browser/main.ts"></script>
+    
+</body>
+</html>
