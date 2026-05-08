@@ -325,7 +325,9 @@ describe('Dashboard-CSV Data Integrity', () => {
         expect(features).toContain('<span aria-hidden="true">📚</span>');
         expect(features).toContain('<span aria-hidden="true">⚠️</span>');
         expect(features).toContain('<span aria-hidden="true">🔎</span>');
-        expect(features).not.toMatch(/<li>[🧭📚⚠️🔎]/u);
+        ['<li>🧭', '<li>📚', '<li>⚠️', '<li>🔎'].forEach(rawEmojiListItem => {
+          expect(features).not.toContain(rawEmojiListItem);
+        });
       });
     });
   });
