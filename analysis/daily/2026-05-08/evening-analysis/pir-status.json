@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0",
+  "cycle": "evening-analysis",
+  "date": "2026-05-08",
+  "subfolder": "evening-analysis",
+  "generated_at": "2026-05-08T18:38:00Z",
+  "pirs": [
+    {
+      "id": "PIR-EVA-01",
+      "description": "FöU18 SIGINT Reform passage timeline and implementation",
+      "wep": "AC",
+      "wep_percent": 90,
+      "status": "open",
+      "carry_forward_from": "2026-05-07",
+      "update": "No new information today; scheduled for next week. Status maintained.",
+      "next_review": "2026-05-09"
+    },
+    {
+      "id": "PIR-EVA-02",
+      "description": "Prop. 246 Criminal Responsibility Age — CRC challenge probability",
+      "wep": "L",
+      "wep_percent": 70,
+      "status": "open",
+      "carry_forward_from": "2026-05-07",
+      "update": "Lagrådet yttrande pending — watch SoU committee proceedings. No new information today.",
+      "next_review": "2026-05-09"
+    },
+    {
+      "id": "PIR-EVA-03",
+      "description": "ILO Funding minister response and international labour organisation implications",
+      "wep": "L",
+      "wep_percent": 65,
+      "status": "open",
+      "carry_forward_from": "2026-05-07",
+      "update": "Not addressed today. Status maintained.",
+      "next_review": "2026-05-10"
+    },
+    {
+      "id": "PIR-EVA-04",
+      "description": "JuU39 psychological violence prosecution readiness — acquittal risk in initial cases",
+      "wep": "P",
+      "wep_percent": 40,
+      "status": "open",
+      "carry_forward_from": "2026-05-07",
+      "update": "KJ-2 from committeeReports confirms acquittal rate >30% in first 24 months. Assessment unchanged but evidence strengthened.",
+      "next_review": "2026-05-15"
+    },
+    {
+      "id": "PIR-EVA-05",
+      "description": "HD03250 state e-ID EUDIW conformity by Q3 2026 deadline",
+      "wep": "U",
+      "wep_percent": 20,
+      "status": "open",
+      "carry_forward_from": "2026-05-07",
+      "update": "PIR-3 from propositions analysis confirms EUDIW conformity unlikely by Q3. Confirmed at U 20%.",
+      "next_review": "2026-05-15"
+    },
+    {
+      "id": "PIR-EVA-06",
+      "description": "MP children's rights polling gain following Gaza flotilla media visibility",
+      "wep": "P",
+      "wep_percent": 40,
+      "status": "open",
+      "carry_forward_from": "2026-05-07",
+      "update": "Gaza flotilla issue (HD11803 written question) increases MP media visibility on humanitarian issues. Upgraded from P/35% to P/40%.",
+      "next_review": "2026-05-11"
+    },
+    {
+      "id": "PIR-EVA-07",
+      "description": "SD coalition discipline after prop. 242 rebuff — sustained through election",
+      "wep": "L",
+      "wep_percent": 75,
+      "status": "open",
+      "carry_forward_from": "2026-05-07",
+      "update": "HD11802 full-veil ban question is within normal SD pressure channel; no defection signal. Discipline maintained. L 75% unchanged.",
+      "next_review": "2026-05-10"
+    },
+    {
+      "id": "PIR-EVA-08",
+      "description": "L party response to SD full-veil ban pressure — campaign liability assessment",
+      "wep": "AC",
+      "wep_percent": 95,
+      "status": "open",
+      "carry_forward_from": null,
+      "update": "New PIR generated 2026-05-08. Mohamsson expected to deflect HD11802 (AC 95%); monitoring formulation for any policy drift signal.",
+      "next_review": "2026-05-10"
+    }
+  ]
+}
