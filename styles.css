@@ -16532,3 +16532,224 @@ html[data-theme="light"] .dashboard-related {
   background: #f6f8fa;
   border-color: rgba(0, 102, 51, 0.18);
 }
+
+/* ── Cross-family chrome harmonisation (static `.site-header`/`.site-footer` + article `.rm-site-header`/`.rm-site-footer`) ──── */
+/*
+ * Goal: visual + interaction parity between the two chrome families used across
+ * the platform (static landing/dashboard pages and generated article pages),
+ * without touching any HTML markup. All selectors target both class families
+ * via :where()/:is() to keep specificity controlled and overridable, and no
+ * !important is used.
+ *
+ * Token map (all reused, no new tokens introduced):
+ *   --primary-cyan, --card-bg, --border-color, --text-color, --light-text
+ *
+ * Surfaces covered:
+ *   - Sticky headers (.site-header / .rm-site-header)
+ *   - Header inner row, logo, theme toggle, language switcher
+ *   - Site footers (.site-footer / .rm-site-footer)
+ *   - Trust badge row, footer-bottom + footer-disclaimer, footer language pills
+ *   - Dark + light theme polish
+ *   - Mobile touch targets (≥ 44×44) and :focus-visible rings
+ *   - Reduced-motion guard for hover transforms / shadow transitions
+ */
+
+/* 1 ── Header: sticky positioning + glass background, both families ───────── */
+:where(.site-header, .rm-site-header) {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: var(--card-bg);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid color-mix(in srgb, var(--primary-cyan, #00d9ff) 22%, var(--border-color));
+}
+
+/* 1a ── Header inner row: shared layout ───────────────────────────────────── */
+:where(.site-header-inner, .rm-site-header-inner) {
+  max-width: 1400px;
+  margin-inline: auto;
+  padding: 0.6rem clamp(1rem, 3vw, 2rem);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* 1b ── Logo / brand block ────────────────────────────────────────────────── */
+:where(.site-header, .rm-site-header) :where(.site-logo-img, .rm-logo-img) {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+:where(.site-header, .rm-site-header) :where(.site-logo, .rm-logo) {
+  gap: 0.6rem;
+  font-size: 1.05rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+:where(.site-header, .rm-site-header) :where(.site-logo-tagline, .rm-logo-tagline) {
+  font-size: 0.7rem;
+  opacity: 0.78;
+}
+
+/* 2 ── Theme toggle: 36×36 square, identical for both families ────────────── */
+:where(#theme-toggle.theme-toggle-btn, .rm-theme-toggle) {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: color-mix(in srgb, var(--primary-cyan, #00d9ff) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--primary-cyan, #00d9ff) 28%, var(--border-color));
+  cursor: pointer;
+  margin-inline-start: auto; /* push to the right edge of the flex row */
+}
+
+:where(#theme-toggle.theme-toggle-btn, .rm-theme-toggle):hover {
+  background: color-mix(in srgb, var(--primary-cyan, #00d9ff) 22%, transparent);
+}
+
+:where(#theme-toggle.theme-toggle-btn, .rm-theme-toggle) :where(.theme-icon-sun, .theme-icon-moon) {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* 3 ── Language switcher: pill style with cyan border-tint, both families ── */
+:where(.site-language-switcher, .rm-lang-switcher) > summary,
+:where(.site-language-switcher > button, .rm-lang-switcher > summary) {
+  padding: 0.4rem 0.7rem;
+  font-size: 0.85rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--primary-cyan, #00d9ff) 35%, var(--border-color));
+  background: color-mix(in srgb, var(--primary-cyan, #00d9ff) 6%, transparent);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* 4 ── Footer: shared padding + top border, both families ─────────────────── */
+:where(.site-footer, .rm-site-footer) {
+  padding: 2rem clamp(1rem, 3vw, 2rem) 1.25rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* 4a ── Trust badge row ───────────────────────────────────────────────────── */
+:where(.site-footer, .rm-site-footer) .rm-footer-trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem 0.6rem;
+}
+
+:where(.site-footer, .rm-site-footer) .rm-footer-trust-badges img {
+  height: 20px;
+  width: auto;
+}
+
+/* 4b ── Footer bottom + disclaimer typography ─────────────────────────────── */
+:where(.site-footer .footer-bottom, .site-footer .footer-disclaimer,
+       .rm-site-footer .footer-bottom, .rm-site-footer .footer-disclaimer,
+       .rm-site-footer .rm-footer-legal) {
+  font-size: 0.8125rem;
+  opacity: 0.85;
+  text-align: center;
+}
+
+/* 4c ── Footer language pills (article footer .rm-footer-langs) ───────────── */
+.rm-site-footer .rm-footer-langs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+.rm-site-footer .rm-footer-langs :where(a, .rm-lang-code) {
+  padding: 0.2rem 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  text-decoration: none;
+}
+
+/* 5 ── Dark mode polish (default scheme + explicit data-theme="dark") ────── */
+html[data-theme="dark"] :where(.site-header, .rm-site-header) {
+  border-bottom-color: color-mix(in srgb, var(--primary-cyan, #00d9ff) 22%, transparent);
+}
+
+html[data-theme="dark"] :where(.site-footer, .rm-site-footer) .rm-footer-trust-badges img {
+  filter: brightness(0.95);
+}
+
+/* 6 ── Light mode polish ──────────────────────────────────────────────────── */
+html[data-theme="light"] :where(.site-header, .rm-site-header) {
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom-color: color-mix(in srgb, #00d9ff 30%, #e0e0e0 70%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+html[data-theme="light"] :where(.site-footer, .rm-site-footer) {
+  background: var(--card-bg);
+}
+
+html[data-theme="light"] :where(#theme-toggle.theme-toggle-btn, .rm-theme-toggle) {
+  color: var(--text-color);
+}
+
+html[data-theme="light"] :where(.site-footer, .rm-site-footer) .rm-footer-trust-badges img {
+  filter: brightness(1);
+}
+
+/* 7 ── Touch targets ≥ 44×44 on mobile (WCAG 2.5.5 / 2.5.8) ───────────────── */
+@media (max-width: 768px) {
+  :where(#theme-toggle.theme-toggle-btn, .rm-theme-toggle) {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+  }
+
+  :where(.site-language-switcher, .rm-lang-switcher) > summary,
+  :where(.site-language-switcher > button, .rm-lang-switcher > summary) {
+    min-height: 44px;
+    padding: 0.55rem 0.85rem;
+  }
+}
+
+/* 8 ── Visible focus ring for header CTAs + footer links (WCAG 2.4.7) ────── */
+:where(.site-header, .rm-site-header)
+  :where(a, button, summary, #theme-toggle.theme-toggle-btn, .rm-theme-toggle):focus-visible,
+:where(.site-footer, .rm-site-footer) :where(a, button):focus-visible {
+  outline: 2px solid var(--primary-cyan, #00d9ff);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* 9 ── Reduced-motion guard: hover lift + shadow transitions only when allowed */
+@media (prefers-reduced-motion: no-preference) {
+  :where(.site-header, .rm-site-header) {
+    transition: box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+
+  :where(.site-header, .rm-site-header):is(:hover, :focus-within) {
+    box-shadow: 0 2px 12px rgba(0, 217, 255, 0.08);
+  }
+
+  html[data-theme="light"] :where(.site-header, .rm-site-header):is(:hover, :focus-within) {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  }
+
+  :where(#theme-toggle.theme-toggle-btn, .rm-theme-toggle) {
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  :where(#theme-toggle.theme-toggle-btn, .rm-theme-toggle):hover {
+    transform: translateY(-1px);
+  }
+}
