@@ -66,6 +66,9 @@ jobs:
         with:
           node-version: '26'
           cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            .github/workflows/javascript-testing.yml
       
       - name: Install dependencies
         run: npm ci
@@ -115,6 +118,9 @@ jobs:
         with:
           node-version: '26'
           cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            .github/workflows/javascript-testing.yml
       
       - name: Install dependencies
         run: npm ci
@@ -174,6 +180,9 @@ jobs:
         with:
           node-version: '26'
           cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            .github/workflows/javascript-testing.yml
       
       - name: Install dependencies
         run: npm ci
@@ -245,6 +254,9 @@ jobs:
         with:
           node-version: ${{ steps.nightly.outputs.version }}
           cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            .github/workflows/javascript-testing.yml
       
       - name: Install dependencies
         if: steps.nightly.outputs.version != ''
