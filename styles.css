@@ -3638,7 +3638,7 @@ footer {
   align-items: center;
   gap: 0.55rem;
   color: var(--button-text);
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  background: linear-gradient(135deg, var(--button-bg), var(--primary-color));
   text-decoration: none;
   font-weight: 800;
   font-size: var(--font-size-base);
@@ -3652,14 +3652,14 @@ footer {
 .political-intelligence-cta-link:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 102, 51, 0.36), 0 0 22px rgba(0, 217, 255, 0.18);
-  background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+  background: linear-gradient(135deg, var(--primary-color), var(--button-bg));
   text-decoration: none;
 }
 
 .political-intelligence-cta-link:focus-visible {
   outline: 3px solid var(--primary-color);
   outline-offset: 4px;
-  border-radius: var(--border-radius-sm, 4px);
+  border-radius: var(--border-radius);
 }
 
 .political-intelligence-cta-link-icon {
