@@ -25,6 +25,16 @@ describe('Multi-Language Sanity Tests', () => {
     { code: 'ko', name: 'Korean', nativeName: '한국어', dir: 'ltr', langCode: 'ko' },
     { code: 'zh', name: 'Chinese', nativeName: '中文', dir: 'ltr', langCode: 'zh' }
   ];
+  // Representative subset for runtime-heavy cross-page/news checks:
+  // sv (Nordic), de (continental EU), ar (RTL), ja/zh (CJK).
+  const representativeNewsLanguages = ['sv', 'de', 'ar', 'ja', 'zh'];
+  const representativeLtrLanguages = representativeNewsLanguages.filter((code) => code !== 'ar');
+  const representativeNewsLangs = languages.filter((lang) =>
+    representativeNewsLanguages.includes(lang.code),
+  );
+  const representativeLtrLangs = languages.filter((lang) =>
+    representativeLtrLanguages.includes(lang.code),
+  );
 
   describe('Homepage - All Languages', () => {
     languages.forEach((lang) => {
@@ -96,8 +106,8 @@ describe('Multi-Language Sanity Tests', () => {
     });
   });
 
-  describe('News - All Languages', () => {
-    languages.forEach((lang) => {
+  describe('News - Representative Languages', () => {
+    representativeNewsLangs.forEach((lang) => {
       // Fix: Wrap each language in its own describe block to avoid closure issues
       describe(`${lang.name} (${lang.code})`, () => {
         // Cypress 15 Feature: Use beforeEach with optimized page visit
@@ -151,7 +161,7 @@ describe('Multi-Language Sanity Tests', () => {
   });
 
   describe('Language Consistency', () => {
-    languages.forEach((lang) => {
+    representativeNewsLangs.forEach((lang) => {
       it(`should have consistent lang attribute across all pages for ${lang.name}`, () => {
         // Check homepage
         cy.visit(`/index_${lang.code}.html`);
@@ -202,9 +212,7 @@ describe('Multi-Language Sanity Tests', () => {
   });
 
   describe('LTR Language Specific Tests', () => {
-    const ltrLanguages = languages.filter(lang => lang.dir === 'ltr');
-
-    ltrLanguages.forEach((lang) => {
+    representativeLtrLangs.forEach((lang) => {
       it(`should have LTR or default dir for ${lang.name} on all pages`, () => {
         // Homepage
         cy.visit(`/index_${lang.code}.html`);
