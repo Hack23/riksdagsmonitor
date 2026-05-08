@@ -1,0 +1,68 @@
+{
+  "date": "2026-05-08",
+  "cycle": "next",
+  "election": "2030-09-08",
+  "cycle_anchor": "2026-09-13",
+  "days_to_anchor": 128,
+  "generated_at": "2026-05-08T09:40:00Z",
+  "pir_items": [
+    {
+      "id": "PIR-N01",
+      "question": "Which coalition will form the next government after 2026-09-13?",
+      "current_value": "Tidö 40%, Red-Green 27%, Hung 15%",
+      "threshold": "Coalition formation within 4 weeks of election",
+      "wep": "ROUGHLY EVEN",
+      "horizon": "election",
+      "last_updated": "2026-05-08",
+      "source": "Scenario analysis; poll extrapolation"
+    },
+    {
+      "id": "PIR-N02",
+      "question": "Will the next government reverse security threat legislation (HD03267)?",
+      "current_value": "Bipartisan security consensus",
+      "threshold": "Formal repeal proposal",
+      "wep": "VERY UNLIKELY",
+      "horizon": "cycle",
+      "last_updated": "2026-05-08",
+      "source": "S, C, M positions on security framework"
+    },
+    {
+      "id": "PIR-N03",
+      "question": "Will state e-ID (HD03250) be operational by Q1 2028?",
+      "current_value": "Proposition stage",
+      "threshold": "Q1 2028 launch",
+      "wep": "LIKELY",
+      "horizon": "year",
+      "last_updated": "2026-05-08",
+      "source": "HD03250 implementation timeline"
+    },
+    {
+      "id": "PIR-N04",
+      "question": "Will unemployment fall below 7.5% by 2028?",
+      "current_value": "8.4% (2026)",
+      "threshold": "7.5% by 2028",
+      "wep": "ROUGHLY EVEN",
+      "horizon": "cycle",
+      "last_updated": "2026-05-08",
+      "source": "IMF WEO Apr-2026 projections"
+    },
+    {
+      "id": "PIR-N05",
+      "question": "Will nuclear energy development proceed under next government?",
+      "current_value": "Enabling legislation passed",
+      "threshold": "Site selection and reactor procurement commence",
+      "wep": "LIKELY if Tidö; UNLIKELY if Red-Green",
+      "horizon": "cycle",
+      "last_updated": "2026-05-08",
+      "source": "HD01NU19 framework; party positions"
+    }
+  ],
+  "aggregate_assessment": "Next cycle outcome ROUGHLY EVEN between Tidö II and Red-Green; nine durable anchors constrain policy space regardless of outcome",
+  "imf_provenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "vintage": "WEO Apr-2026",
+    "retrieved_at": "2026-05-08",
+    "status": "degraded — WEO/FM usable"
+  }
+}
