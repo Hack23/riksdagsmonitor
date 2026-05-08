@@ -68,6 +68,8 @@ function runScript(opts: RunOptions): RunResult {
     GITHUB_STEP_SUMMARY: summaryPath,
     DEFAULT_BRANCH: 'main',
   };
+  // Most scenarios exercise the historical aw-fallback.bundle path. Tests can
+  // provide GH_AW_PAT_FALLBACK_BUNDLE explicitly to cover alternate bundle names.
   if (!opts.env?.GH_AW_PAT_FALLBACK_BUNDLE) {
     env.GH_AW_PAT_FALLBACK_BUNDLE = path.join(opts.ghAwDir, 'aw-fallback.bundle');
   }

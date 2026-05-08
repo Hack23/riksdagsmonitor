@@ -361,7 +361,7 @@ if [ "$primary_active" -eq 1 ]; then
       "$(printf '{"manifest_head":"%s","bundle_head":"%s"}' "$head_sha" "$recovered_sha")"
   fi
 
-  if [ "$branch" = "$default_branch" ] && [ "$(basename "$bundle")" = "aw-main.bundle" ]; then
+  if [ "$branch" = "$default_branch" ] && [ "${bundle##*/}" = "aw-main.bundle" ]; then
     safe_slug="${slug:-recovery}"
     safe_slug=$(printf '%s' "$safe_slug" | tr -cs 'A-Za-z0-9._/-' '-' | sed -E 's#^-+|-+$##g')
     [ -n "$safe_slug" ] || safe_slug="recovery"
