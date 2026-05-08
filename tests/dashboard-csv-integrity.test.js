@@ -18,10 +18,10 @@ const CIA_DATA_DIR = resolve(process.cwd(), 'cia-data');
 // rendered `hreflang` attributes use BCP-47 `nb` and are validated elsewhere.
 const LOCALIZED_FILE_SUFFIXES = ['', '_ar', '_da', '_de', '_es', '_fi', '_fr', '_he', '_ja', '_ko', '_nl', '_no', '_sv', '_zh'];
 const LOCALIZED_STATIC_PAGE_SETS = [
-  { base: 'index', directory: '.', label: 'main page' },
+  // index + dashboard/index existence is already asserted by dedicated describes above;
+  // only list page sets that don't have their own existence block.
   { base: 'politician-dashboard', directory: '.', label: 'politician dashboard' },
   { base: 'political-intelligence', directory: '.', label: 'political intelligence' },
-  { base: 'index', directory: 'dashboard', label: 'CIA dashboard' },
 ];
 
 /**
