@@ -61,14 +61,14 @@ jobs:
           echo "🔧 Setting up complete Web test environment..."
 
           # Install system dependencies for Web rendering with retries to reduce
-          # transient apt mirror/network failures and hanging installs.
+          # the impact of transient apt mirror/network failures and hanging installs.
           for attempt in 1 2 3; do
             if sudo apt-get update -o Acquire::Retries=5 -o Acquire::http::Timeout=30; then
               break
             fi
             echo "⚠️ apt-get update failed (attempt $attempt) — retrying in $((attempt * 10))s"
             sleep $((attempt * 10))
-            if [ "$attempt" = "3" ]; then
+            if [ "$attempt" -eq 3 ]; then
               echo "❌ apt-get update failed after 3 attempts"
               exit 1
             fi
@@ -92,7 +92,7 @@ jobs:
             fi
             echo "⚠️ apt-get install failed (attempt $attempt) — retrying in $((attempt * 10))s"
             sleep $((attempt * 10))
-            if [ "$attempt" = "3" ]; then
+            if [ "$attempt" -eq 3 ]; then
               echo "❌ apt-get install failed after 3 attempts"
               exit 1
             fi

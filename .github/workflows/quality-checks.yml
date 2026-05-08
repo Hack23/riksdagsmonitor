@@ -84,8 +84,8 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Setup Node.js
-        # Built-in npm cache (~/.npm) keyed by package-lock.json + Node version
-        # is the single source of truth for npm caching across this repo.
+        # Built-in npm cache (~/.npm) keyed by package-lock.json + workflow file
+        # + Node version is the single source of truth for npm caching across this repo.
         # See WORKFLOWS.md §"Cache Strategy".
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
@@ -99,7 +99,7 @@ jobs:
         run: |
           # Resilient global install: 3 attempts × exponential backoff +
           # npm-level fetch retries, to absorb transient registry.npmjs.org
-          # outages and DNS hiccups. See WORKFLOWS.md §"External-Registry Resilience".
+          # outages and DNS hiccups. See WORKFLOWS.md §"Resilience requirements (registry / apt / browser tooling)".
           npm config set fetch-retries 5
           npm config set fetch-retry-mintimeout 20000
           npm config set fetch-retry-maxtimeout 120000
@@ -110,7 +110,7 @@ jobs:
             fi
             echo "⚠️ htmlhint install failed (attempt $attempt) — retrying in $((attempt * 10))s"
             sleep $((attempt * 10))
-            if [ "$attempt" = "3" ]; then
+            if [ "$attempt" -eq 3 ]; then
               echo "❌ htmlhint install failed after 3 attempts"
               exit 1
             fi
@@ -188,7 +188,7 @@ jobs:
       - name: Install linkinator@6 (with retry for registry resilience)
         run: |
           echo "Installing linkinator v6 (v7.5.2 has module resolution bug)..."
-          # Resilient global install — see WORKFLOWS.md §"External-Registry Resilience".
+          # Resilient global install — see WORKFLOWS.md §"Resilience requirements (registry / apt / browser tooling)".
           npm config set fetch-retries 5
           npm config set fetch-retry-mintimeout 20000
           npm config set fetch-retry-maxtimeout 120000
@@ -199,7 +199,7 @@ jobs:
             fi
             echo "⚠️ linkinator install failed (attempt $attempt) — retrying in $((attempt * 10))s"
             sleep $((attempt * 10))
-            if [ "$attempt" = "3" ]; then
+            if [ "$attempt" -eq 3 ]; then
               echo "❌ linkinator install failed after 3 attempts"
               exit 1
             fi

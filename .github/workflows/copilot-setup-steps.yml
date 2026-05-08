@@ -56,7 +56,7 @@ jobs:
             fi
             echo "⚠️ apt-get update failed (attempt $attempt) — retrying in $((attempt * 10))s"
             sleep $((attempt * 10))
-            if [ "$attempt" = "3" ]; then
+            if [ "$attempt" -eq 3 ]; then
               echo "❌ apt-get update failed after 3 attempts"
               exit 1
             fi
@@ -68,7 +68,7 @@ jobs:
             fi
             echo "⚠️ apt-get install graphviz failed (attempt $attempt) — retrying in $((attempt * 10))s"
             sleep $((attempt * 10))
-            if [ "$attempt" = "3" ]; then
+            if [ "$attempt" -eq 3 ]; then
               echo "❌ apt-get install graphviz failed after 3 attempts"
               exit 1
             fi
@@ -106,7 +106,7 @@ jobs:
             fi
             echo "⚠️ npm ci failed (attempt $attempt) — retrying in $((attempt * 10))s"
             sleep $((attempt * 10))
-            if [ "$attempt" = "3" ]; then
+            if [ "$attempt" -eq 3 ]; then
               echo "❌ npm ci failed after 3 attempts"
               exit 1
             fi
@@ -144,7 +144,10 @@ jobs:
           # Pre-cache @playwright/mcp for faster startup
           install_global_retry @playwright/mcp
 
-          # Install Playwright browser binaries (chromium) with retry, but avoid apt-level deps here.
+          # Install Playwright browser binaries (chromium) with retry.
+          # Avoid `--with-deps` here because it can trigger extra apt installs
+          # outside this step's retry controls; ubuntu-latest is expected to
+          # provide required browser system dependencies.
           for attempt in 1 2 3; do
             if npx --yes playwright install chromium; then
               echo "✅ Playwright chromium installed (attempt $attempt)"
@@ -152,7 +155,7 @@ jobs:
             fi
             echo "⚠️ Playwright chromium install failed (attempt $attempt) — retrying in $((attempt * 10))s"
             sleep $((attempt * 10))
-            if [ "$attempt" = "3" ]; then
+            if [ "$attempt" -eq 3 ]; then
               echo "❌ Playwright chromium install failed after 3 attempts"
               exit 1
             fi
