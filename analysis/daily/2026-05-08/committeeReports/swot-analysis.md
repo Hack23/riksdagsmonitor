@@ -69,3 +69,19 @@ Four-party reservations on JuU39 provide ready-made campaign material: "Governme
 
 **T5 — Welfare Fraud Backlash (FiU43)**  
 Municipal welfare fraud prevention empowers municipalities to share more data about residents claiming benefits. Civil society groups (FARR, social law academics) may raise GDPR/privacy concerns about municipal data sharing scope.
+
+---
+
+## Re-run Update — 2026-05-08 (HD01UbU28 Added)
+
+### SWOT Addition — UbU28 Education Pillar
+
+**Strengths (add)**:
+- ✅ **Three-pillar delivery narrative complete** (HD01UbU28): Government can now claim pre-election legislative completion across financial stability, justice, AND education. This is a stronger aggregate delivery signal than the original 8-bill set. [Source: HD01UbU28, unanimous UbU adoption]
+
+**Weaknesses (add)**:
+- ⚠️ **2028/29 implementation timing post-election**: If electoral outcome changes government, reform implementation may slow or face resource constraints. Long lead time (2+ years from enactment to effect) creates uncertainty. [Source: HD01UbU28 metadata, implementation date]
+
+**Opportunities (add)**:
+- 🔵 **Unanimous cross-party adoption creates implementation stability**: Even a post-election S-led government is unlikely to reverse the 10-year school reform given unanimous parliamentary adoption. Implementation risk is lower than for contested bills. [Source: HD01UbU28, no reservations filed]
+

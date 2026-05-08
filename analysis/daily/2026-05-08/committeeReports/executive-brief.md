@@ -73,3 +73,28 @@ The new crisis coordination function under Riksbanken is specifically motivated 
 
 ### JuU32 Constitutional Mechanism
 RF chapter 2 §20 allows restrictions on freedom of assembly only through law (lag), and §21 requires the restriction to be "necessary in a democratic society." The proportionality test in §21 is Sweden's domestication of ECHR Art. 11 §2 language. Specific JuU32 provisions on pre-screening and risk-based surveillance need to pass this two-part test. The concern is not that restrictions are impossible — it is that without Lagrådet's proportionality analysis, the drafting quality is uncertain.
+
+---
+
+## Re-run Update — 2026-05-08 (New Document: HD01UbU28)
+
+### P4 — HD01UbU28: Teacher Credentialing for 10-Year Primary School (L2)
+**Subject**: UbU (Education Committee) unanimously approves administrative adjustment of teacher legitimation credentials ahead of 2028/29 introduction of the tioårig grundskola.  
+**Significance**: Closes the last statutory gap in the Tidö government's flagship education reform. Unanimous cross-party adoption (no reservations from S, V, C, MP) signals operational consensus even where political opposition existed at the policy design phase.  
+**Election angle**: Medium. Government can claim "completed the 10-year school reform" as full legislative package. Unanimous adoption prevents opposition from attacking this element.  
+**Effective**: 2028/29 school year — post-election, but legislative completion pre-election.
+
+### Updated Summary Matrix
+
+| Doc | Topic | Effective | Opposition | Election Weight |
+|-----|-------|-----------|-----------|----------------|
+| FiU37 | Financial crisis management | 2026-07-01 | None | Low (technical) |
+| JuU39 | Psychological violence crime | 2026-07-01 | S,V,C,MP (4 reservations) | HIGH |
+| JuU32 | Police at demonstrations | 2026-07-01 | Motion-based (5 reservations) | HIGH |
+| FiU31 | State property management | (Riksrevisionens) | V, MP | Medium |
+| JuU34 | Nordic criminal enforcement | TBD | None | Low |
+| FiU38 | OTC derivatives clearing | EU-timed | None | Low |
+| FiU43 | Municipal welfare fraud prevention | TBD | None | Low |
+| CU35 | MTF platform stocks | TBD | None | Low |
+| **HD01UbU28** | **Teacher legitimation / 10-year school** | **2028/29** | **None (unanimous)** | **Medium** |
+

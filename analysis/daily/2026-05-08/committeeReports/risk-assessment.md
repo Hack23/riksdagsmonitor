@@ -108,3 +108,32 @@
 | RISK-004 (FiU43 GDPR) | 7/25 | 🟡 MEDIUM |
 
 **Overall legislative risk**: MEDIUM-HIGH (driven by JuU32 constitutional exposure + JuU39 enforcement gap)
+
+---
+
+## Re-run Update — 2026-05-08 (HD01UbU28 Added)
+
+### New Risk Entry R-UbU28-1: Education Reform Implementation Slippage
+
+| Attribute | Value |
+|---|---|
+| Risk ID | R-UbU28-1 |
+| Risk | Teacher credential database not updated by 2028/29 |
+| Likelihood | LOW-MEDIUM (Skolverket has lead time) |
+| Impact | MEDIUM (40,000 teacher legitimation records require reclassification) |
+| Owner | Skolverket |
+| Mitigation | Early Skolverket budgeting + phased rollout plan |
+| Admiralty | B3 (reliable source, possibly true) |
+
+### New Risk Entry R-UbU28-2: Post-election Policy Reversal (Low Probability)
+
+| Attribute | Value |
+|---|---|
+| Risk ID | R-UbU28-2 |
+| Risk | New S-led government reverses credential adjustment framework |
+| Likelihood | VERY LOW (unanimous adoption creates political lock-in) |
+| Impact | LOW-MEDIUM (administrative complexity but not structural reform rollback) |
+| Owner | Next government |
+| Mitigation | Unanimous adoption serves as strong political barrier |
+| Admiralty | B5 (reliable source, improbable) |
+
