@@ -3574,7 +3574,6 @@ footer {
   height: 3px;
   background: linear-gradient(90deg, transparent, #00d9ff, #ff006e, #ffbe0b, transparent);
   transform: translateX(-100%);
-  will-change: transform;
   animation: political-intelligence-cta-shimmer 5s linear infinite;
 }
 
@@ -11590,7 +11589,6 @@ html[data-theme="dark"] ul li::before {
   top: 0.3rem;
 }
 
-html[data-theme="dark"] .political-intelligence-cta,
 html[data-theme="dark"] .dashboard-cta {
   background: rgba(0, 28, 37, 0.6);
   border: 1px solid rgba(0, 204, 102, 0.3);
@@ -11781,7 +11779,6 @@ html[data-theme="light"] .sticky-nav {
   backdrop-filter: blur(12px);
 }
 
-html[data-theme="light"] .political-intelligence-cta,
 html[data-theme="light"] .dashboard-cta,
 html[data-theme="light"] .news-navigation {
   background: var(--card-bg);
