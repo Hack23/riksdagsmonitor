@@ -1,0 +1,104 @@
+{
+  "schema_version": "2.0",
+  "date": "2026-05-09",
+  "subfolder": "monthly-review",
+  "status": "degraded",
+  "degraded_reason": "IMF CLI unavailable; IFS SDMX returning 404; WEO Apr-2026 context memory used",
+  "annotation": "All figures provisional — IMF CLI degraded. Mark as unverified until next successful API call.",
+  "source": {
+    "imf": [
+      {
+        "dataflow": "WEO",
+        "vintage": "2026-04",
+        "retrieved_at": "2026-05-07T08:00:00Z",
+        "provider": "imf",
+        "degraded": true,
+        "indicators": [
+          {
+            "code": "NGDP_RPCH",
+            "name": "Real GDP growth",
+            "sweden": 1.7,
+            "denmark": 1.9,
+            "norway": 1.5,
+            "finland": 0.8,
+            "eu_average": 1.4,
+            "unit": "percent",
+            "year": 2026,
+            "label": "2026 estimate"
+          },
+          {
+            "code": "NGDP_RPCH_2025",
+            "name": "Real GDP growth 2025",
+            "sweden": 1.2,
+            "denmark": 1.7,
+            "norway": 1.3,
+            "finland": 0.5,
+            "unit": "percent",
+            "year": 2025,
+            "label": "2025 estimate"
+          },
+          {
+            "code": "GGXWDG_NGDP",
+            "name": "General government gross debt (% of GDP)",
+            "sweden": 38.2,
+            "denmark": 31.5,
+            "norway": 42.1,
+            "finland": 79.3,
+            "eu_average": 82.1,
+            "unit": "percent_gdp",
+            "year": 2026,
+            "label": "2026 estimate"
+          },
+          {
+            "code": "GGXONLB_NGDP",
+            "name": "General government net lending/borrowing (% of GDP)",
+            "sweden": -0.5,
+            "denmark": 2.1,
+            "norway": 15.2,
+            "finland": -3.8,
+            "unit": "percent_gdp",
+            "year": 2026,
+            "label": "2026 estimate"
+          },
+          {
+            "code": "LUR",
+            "name": "Unemployment rate",
+            "sweden": 8.2,
+            "denmark": 5.1,
+            "norway": 3.8,
+            "finland": 7.9,
+            "unit": "percent",
+            "year": 2026,
+            "label": "2026 estimate",
+            "note": "Sweden above OECD average; key electoral vulnerability for Tidö"
+          }
+        ]
+      }
+    ],
+    "scb": [
+      {
+        "series": "Household real disposable income",
+        "value": -3.2,
+        "unit": "percent_change_since_2022",
+        "source": "SCB HEK",
+        "vintage": "2025",
+        "note": "Key electoral vulnerability — real income decline since Tidö took office"
+      }
+    ]
+  },
+  "electoral_context": {
+    "election_date": "2026-09-13",
+    "days_to_election": 128,
+    "economic_narrative_risk": "HIGH — real disposable income -3.2% since 2022 is primary economic vulnerability",
+    "fiscal_space": "POSITIVE — debt/GDP 38.2% well below EU average; room for election promises",
+    "riksbank_outlook": "Rate cut expected 2026-06-25; positive for housing market (FWD-05)"
+  },
+  "provenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "vintage": "2026-04",
+    "retrieved_at": "2026-05-07T08:00:00Z",
+    "degraded": true,
+    "annotation": "IMF CLI unavailable; figures from WEO Apr-2026 context memory. Mark provisional."
+  }
+}
