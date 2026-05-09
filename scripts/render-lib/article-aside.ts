@@ -60,52 +60,82 @@ export interface ReaderNavigationInput {
 /**
  * Render the localised Reader Intelligence Guide navigation table that
  * appears between the executive brief (lead) and the rest of the
- * article body. Same content for every article type — what changes per
- * article is which `READER_GUIDE_ENTRIES` rows survive the
- * "available artifacts" filter.
+ * article body.
+ *
+ * Iterates over **all** analysis artifacts consumed by the article so
+ * the guide acts as a complete, navigable index — not just the
+ * curated {@link READER_GUIDE_ENTRIES} lenses. Each row carries an
+ * artifact icon, the localised section label (anchor link) and a
+ * reader-value description; the legacy "Source artifact" filename
+ * column is dropped (audit-grade traceability now lives exclusively in
+ * the Analysis Sources card grid at the article foot).
+ *
+ * Curated lenses use their bespoke `entries[*]` description; non-
+ * curated artifacts fall back to the localised
+ * {@link ReaderGuideChrome.defaultReaderValue} so every row carries
+ * meaningful copy in all 14 languages.
  *
  * Always produces a non-empty table because the audit-appendix row is
- * unconditionally appended regardless of which READER_GUIDE_ENTRIES
- * matched. Callers can concatenate the return value directly.
+ * unconditionally appended regardless of which artifacts matched.
  */
 export function renderReaderNavigation(input: ReaderNavigationInput): string {
   const guideI18n = readerGuideI18n(input.lang);
   const guideChrome = guideI18n.chrome;
-  const availableArtifacts = new Set(input.artifactsUsed);
 
-  const guideRows = READER_GUIDE_ENTRIES
-    .filter((entry) => availableArtifacts.has(entry.file))
-    .map((entry) => {
-      const sectionTitle = titleForArtifact(entry.file);
-      const anchor = anchorForTitle(sectionTitle);
-      const localised = guideI18n.entries[entry.file];
-      const label = localised?.label ?? entry.label;
-      const readerValue = localised?.readerValue ?? entry.readerValue;
-      return `            <tr>
+  // Deduplicate artifactsUsed (preserve canonical aggregation order),
+  // skipping per-document analyses (folded into a single "Per-document
+  // intelligence" row) and empty/non-artifact entries.
+  const seen = new Set<string>();
+  const rootArtifacts: string[] = [];
+  let hasDocAnalyses = false;
+  for (const a of input.artifactsUsed) {
+    if (!a || seen.has(a)) continue;
+    seen.add(a);
+    if (a.startsWith('documents/') && a.endsWith('-analysis.md')) {
+      hasDocAnalyses = true;
+      continue;
+    }
+    if (!/\.(md|json)$/i.test(a)) continue;
+    rootArtifacts.push(a);
+  }
+
+  const guideRows = rootArtifacts.map((file) => {
+    const sectionTitle = titleForArtifact(file);
+    const anchor = anchorForTitle(sectionTitle);
+    const localised = guideI18n.entries[file];
+    const curated = READER_GUIDE_ENTRIES.find((e) => e.file === file);
+    // Prefer localised curated label; fall back to curated label; fall
+    // back to the localised i18n artifact title (artifactTitle) — but
+    // anchor link text MUST match the actual rendered section heading
+    // (`titleForArtifact`) so the in-page navigation reads naturally.
+    const label =
+      localised?.label
+      ?? curated?.label
+      ?? (artifactTitle(file, input.lang) || sectionTitle);
+    const readerValue =
+      localised?.readerValue ?? curated?.readerValue ?? guideChrome.defaultReaderValue;
+    const icon = artifactIcon(file);
+    return `            <tr>
+              <td class="rm-reader-guide-icon" aria-hidden="true">${icon}</td>
               <td><a href="#${anchor}">${escapeHtml(label)}</a></td>
               <td>${escapeHtml(readerValue)}</td>
-              <td><code>${escapeHtml(entry.file)}</code></td>
             </tr>`;
-    });
+  });
 
-  // Per-document intelligence row (when document-level analyses exist).
-  const hasDocAnalyses = input.artifactsUsed.some(
-    (a) => a.startsWith('documents/') && a.endsWith('-analysis.md'),
-  );
   if (hasDocAnalyses) {
     guideRows.push(`            <tr>
+              <td class="rm-reader-guide-icon" aria-hidden="true">📑</td>
               <td><a href="#rm-per-document-intelligence">${escapeHtml(guideChrome.perDocLabel)}</a></td>
               <td>${escapeHtml(guideChrome.perDocValue)}</td>
-              <td><code>documents/*-analysis.md</code></td>
             </tr>`);
   }
 
   // Audit appendix row — always present so reviewers find the
   // classification + cross-reference manifests.
   guideRows.push(`            <tr>
+              <td class="rm-reader-guide-icon" aria-hidden="true">🏷️</td>
               <td><a href="#rm-classification-results">${escapeHtml(guideChrome.auditLabel)}</a></td>
               <td>${escapeHtml(guideChrome.auditValue)}</td>
-              <td>${escapeHtml(guideChrome.auditArtifactLabel)}</td>
             </tr>`);
 
   return `
@@ -116,9 +146,9 @@ export function renderReaderNavigation(input: ReaderNavigationInput): string {
           <table class="rm-reader-guide-table">
             <thead>
               <tr>
+                <th scope="col" class="rm-reader-guide-icon-col"><span class="sr-only">${escapeHtml(guideChrome.colReaderNeed)}</span></th>
                 <th scope="col">${escapeHtml(guideChrome.colReaderNeed)}</th>
                 <th scope="col">${escapeHtml(guideChrome.colWhatYouGet)}</th>
-                <th scope="col">${escapeHtml(guideChrome.colSourceArtifact)}</th>
               </tr>
             </thead>
             <tbody>

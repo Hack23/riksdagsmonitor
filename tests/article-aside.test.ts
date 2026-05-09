@@ -24,9 +24,17 @@ describe('article-aside — renderReaderNavigation', () => {
     expect(html).toContain('class="rm-reader-guide"');
     expect(html).toContain('Reader Intelligence Guide');
     expect(html).toContain('class="rm-reader-guide-table"');
-    // Available artifacts surface as table cells.
-    expect(html).toContain('<code>executive-brief.md</code>');
-    expect(html).toContain('<code>risk-assessment.md</code>');
+    // Localised artifact labels surface as anchor link text — the
+    // legacy <code>filename</code> column is removed, audit-grade
+    // traceability lives in the Analysis Sources card grid instead.
+    expect(html).toContain('BLUF and editorial decisions');
+    expect(html).toContain('Risk assessment');
+    expect(html).not.toContain('<code>executive-brief.md</code>');
+    expect(html).not.toContain('<code>risk-assessment.md</code>');
+    // Per-row icons (artifactIcon mapping) are present.
+    expect(html).toContain('class="rm-reader-guide-icon"');
+    expect(html).toContain('📊'); // executive-brief icon
+    expect(html).toContain('⚠️'); // risk-assessment icon
     // Always-present audit appendix row.
     expect(html).toContain('rm-classification-results');
     // The methodology cards must NOT be in the navigation table — they
@@ -60,12 +68,33 @@ describe('article-aside — renderReaderNavigation', () => {
     expect(html).toContain('rm-per-document-intelligence');
   });
 
-  it('always includes the audit-appendix row even when no READER_GUIDE_ENTRIES matched', () => {
+  it('always includes the audit-appendix row even when no curated artifacts matched', () => {
     // The audit appendix row is unconditionally pushed so the function
     // never returns an empty string. Verify the audit row is present
     // and the function does not throw on an empty artifact list.
     const html = renderReaderNavigation({ lang: 'en', artifactsUsed: [] });
     expect(html).toContain('rm-classification-results');
+  });
+
+  it('renders rows for ALL analysis artifacts, not just the curated lenses', () => {
+    // Non-curated artifacts (e.g. `pestle-analysis.md`,
+    // `wildcards-blackswans.md`) must still appear as navigable rows
+    // — the user-visible "always generate the whole section to include
+    // all analysis artifacts" contract.
+    const html = renderReaderNavigation({
+      lang: 'en',
+      artifactsUsed: [
+        'executive-brief.md',
+        'pestle-analysis.md',
+        'wildcards-blackswans.md',
+      ],
+    });
+    expect(html).toContain('BLUF and editorial decisions');
+    // Non-curated artifacts surface their generic title as the row
+    // label and the localised default reader-value description.
+    expect(html).toMatch(/PESTLE/i);
+    expect(html).toMatch(/Wildcard|Black/i);
+    expect(html).toContain('supporting analytical lens');
   });
 });
 

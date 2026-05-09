@@ -36,6 +36,15 @@ export interface ReaderGuideChrome {
   readonly auditLabel: string;
   readonly auditValue: string;
   readonly auditArtifactLabel: string;
+  /**
+   * Generic localized fallback description used as the "reader value"
+   * cell for any analysis artifact that is not in the curated
+   * {@link ../reader-guide.js#READER_GUIDE_ENTRIES} list. Allows the
+   * Reader Intelligence Guide to render a row for **every** analysis
+   * artifact (icon + section anchor + description) so the table acts
+   * as a complete, navigable index of the article's analytical lenses.
+   */
+  readonly defaultReaderValue: string;
 }
 
 /**
@@ -68,6 +77,7 @@ const EN_CHROME: ReaderGuideChrome = {
   auditLabel: 'Audit appendix',
   auditValue: 'classification, cross-reference, methodology and manifest evidence for reviewers',
   auditArtifactLabel: 'appendix artifacts',
+  defaultReaderValue: 'supporting analytical lens with primary-source evidence and audit-traceable citations',
 };
 
 const EN_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -114,6 +124,7 @@ const SV_CHROME: ReaderGuideChrome = {
   auditLabel: 'Revisionsappendix',
   auditValue: 'klassificering, korsreferens, metodik och manifestbevisning för granskare',
   auditArtifactLabel: 'appendixartefakter',
+  defaultReaderValue: 'stödjande analytisk lins med primärkällsbevisning och spårbara citat',
 };
 
 const SV_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -160,6 +171,7 @@ const DA_CHROME: ReaderGuideChrome = {
   auditLabel: 'Revisionsappendiks',
   auditValue: 'klassifikation, krydsreference, metodik og manifest-bevismateriale til anmeldere',
   auditArtifactLabel: 'appendiksartefakter',
+  defaultReaderValue: 'støttende analytisk linse med primærkildebevis og sporbare citater',
 };
 
 const DA_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -206,6 +218,7 @@ const NO_CHROME: ReaderGuideChrome = {
   auditLabel: 'Revisjonsvedlegg',
   auditValue: 'klassifisering, kryssreferanse, metodikk og manifest-bevis for anmeldere',
   auditArtifactLabel: 'vedleggsartefakter',
+  defaultReaderValue: 'støttende analytisk linse med primærkildebevis og sporbare sitater',
 };
 
 const NO_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -252,6 +265,7 @@ const FI_CHROME: ReaderGuideChrome = {
   auditLabel: 'Tarkastusliite',
   auditValue: 'luokitus, ristiviittaus, metodologia ja manifest-todistusaineisto tarkastajille',
   auditArtifactLabel: 'liiteartefaktit',
+  defaultReaderValue: 'tukeva analyyttinen näkökulma ensisijaislähde-todisteilla ja jäljitettävillä viittauksilla',
 };
 
 const FI_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -298,6 +312,7 @@ const DE_CHROME: ReaderGuideChrome = {
   auditLabel: 'Prüfungsanhang',
   auditValue: 'Klassifizierung, Querverweise, Methodik und Manifest-Beweismaterial für Prüfer',
   auditArtifactLabel: 'Anhangsartefakte',
+  defaultReaderValue: 'unterstützende analytische Linse mit Primärquellenbeweisen und nachvollziehbaren Zitaten',
 };
 
 const DE_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -344,6 +359,7 @@ const FR_CHROME: ReaderGuideChrome = {
   auditLabel: "Annexe d'audit",
   auditValue: "classification, références croisées, méthodologie et preuve manifeste pour les réviseurs",
   auditArtifactLabel: 'artefacts d’annexe',
+  defaultReaderValue: 'lentille analytique de soutien avec preuves de source primaire et citations traçables',
 };
 
 const FR_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -390,6 +406,7 @@ const ES_CHROME: ReaderGuideChrome = {
   auditLabel: 'Apéndice de auditoría',
   auditValue: 'clasificación, referencias cruzadas, metodología y evidencia manifiesta para revisores',
   auditArtifactLabel: 'artefactos del apéndice',
+  defaultReaderValue: 'lente analítica de apoyo con evidencia de fuente primaria y citas trazables',
 };
 
 const ES_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -436,6 +453,7 @@ const NL_CHROME: ReaderGuideChrome = {
   auditLabel: 'Auditbijlage',
   auditValue: 'classificatie, kruisverwijzingen, methodologie en manifest-bewijs voor beoordelaars',
   auditArtifactLabel: 'appendixartefacten',
+  defaultReaderValue: 'ondersteunende analytische lens met primaire-bron bewijs en traceerbare citaten',
 };
 
 const NL_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -482,6 +500,7 @@ const AR_CHROME: ReaderGuideChrome = {
   auditLabel: 'ملحق التدقيق',
   auditValue: 'تصنيف، إسناد ترافقي، منهجية وأدلة بيان للمراجعين',
   auditArtifactLabel: 'مخرجات الملحق',
+  defaultReaderValue: 'عدسة تحليلية مساندة مع أدلة من مصادر أولية واقتباسات قابلة للتتبع',
 };
 
 const AR_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -528,6 +547,7 @@ const HE_CHROME: ReaderGuideChrome = {
   auditLabel: 'נספח ביקורת',
   auditValue: 'סיווג, הפניות צולבות, מתודולוגיה וראיות מניפסט לסוקרים',
   auditArtifactLabel: 'תוצרי נספח',
+  defaultReaderValue: 'עדשה אנליטית תומכת עם ראיות ממקור ראשון וציטוטים ניתנים למעקב',
 };
 
 const HE_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -574,6 +594,7 @@ const JA_CHROME: ReaderGuideChrome = {
   auditLabel: '監査付録',
   auditValue: '分類、相互参照、方法論、レビュアー向けマニフェスト証拠',
   auditArtifactLabel: '付録アーティファクト',
+  defaultReaderValue: '一次資料の証拠と監査追跡可能な引用を備えた補完的分析レンズ',
 };
 
 const JA_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -620,6 +641,7 @@ const KO_CHROME: ReaderGuideChrome = {
   auditLabel: '감사 부록',
   auditValue: '분류, 교차 참조, 방법론 및 검토자를 위한 매니페스트 증거',
   auditArtifactLabel: '부록 산출물',
+  defaultReaderValue: '1차 자료 증거와 추적 가능한 인용이 포함된 보조 분석 렌즈',
 };
 
 const KO_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -666,6 +688,7 @@ const ZH_CHROME: ReaderGuideChrome = {
   auditLabel: '审计附录',
   auditValue: '分类、交叉引用、方法论和审阅者清单证据',
   auditArtifactLabel: '附录工件',
+  defaultReaderValue: '具有原始资料证据和可审计引用的补充分析视角',
 };
 
 const ZH_ENTRIES: Record<string, ReaderGuideEntryI18n> = {

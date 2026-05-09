@@ -25,6 +25,7 @@ import GithubSlugger from 'github-slugger';
 
 import type { Language } from '../../types/language.js';
 import { HEADING_ID_PREFIX } from '../markdown/sanitize-schema.js';
+import { artifactIcon } from '../../political-intelligence/i18n/artifact-i18n.js';
 import { titleForArtifact } from './order.js';
 import { readerGuideI18n } from './reader-guide-i18n.js';
 
@@ -118,37 +119,59 @@ export function anchorForTitle(title: string): string {
 
 /**
  * Build the Reader Intelligence Guide markdown table for a single
- * aggregated article. Filters {@link READER_GUIDE_ENTRIES} to only the
- * artifacts that exist in `available`, appends a "Per-document
- * intelligence" row when document-level analyses exist, and always
- * closes with the "Audit appendix" pointer row.
+ * aggregated article. Iterates over **all** available analysis
+ * artifacts (not just the curated {@link READER_GUIDE_ENTRIES} lenses)
+ * so the guide acts as a complete, navigable index of the article's
+ * analytical product. Each row carries an icon, the localised section
+ * label and a reader-value description; the legacy "Source artifact"
+ * filename column is dropped.
  *
- * When `lang` is supplied, all user-visible strings (heading, preamble,
- * column headers, entry labels and reader-value lenses) are sourced
- * from the {@link READER_GUIDE_I18N} map for that language.
+ * Curated lenses use their bespoke {@link READER_GUIDE_ENTRIES} /
+ * `entries[*]` description; non-curated artifacts fall back to the
+ * generic localised `defaultReaderValue` so every artifact gets a
+ * meaningful row in all 14 languages.
+ *
+ * Always closes with the "Audit appendix" pointer row, and inserts a
+ * single "Per-document intelligence" row when document-level analyses
+ * exist (regardless of how many `documents/*-analysis.md` files are
+ * present).
  */
 export function buildReaderGuide(available: ReadonlySet<string>, hasDocuments: boolean, lang?: Language): string {
   const i18n = readerGuideI18n(lang ?? 'en');
   const { chrome } = i18n;
 
-  const entries = READER_GUIDE_ENTRIES
-    .filter((entry) => available.has(entry.file))
-    .map((entry) => {
-      const title = titleForArtifact(entry.file);
-      const localised = i18n.entries[entry.file];
-      const label = localised?.label ?? entry.label;
-      const readerValue = localised?.readerValue ?? entry.readerValue;
-      return `| [${label}](#${anchorForTitle(title)}) | ${readerValue} | \`${entry.file}\` |`;
-    });
+  // Order: curated lenses first (canonical journalist arc), then any
+  // remaining available .md artifacts alphabetically. Per-document
+  // entries (`documents/*-analysis.md`) are folded into the single
+  // "Per-document intelligence" row below; raw `*.json` artifacts are
+  // skipped here (they live in the audit-appendix row's scope).
+  const curatedFiles = READER_GUIDE_ENTRIES.map((e) => e.file).filter((f) => available.has(f));
+  const remaining = [...available]
+    .filter((f) => /\.md$/i.test(f))
+    .filter((f) => !f.startsWith('documents/'))
+    .filter((f) => !curatedFiles.includes(f))
+    .sort();
+  const allFiles = [...curatedFiles, ...remaining];
+
+  const entries = allFiles.map((file) => {
+    const title = titleForArtifact(file);
+    const localised = i18n.entries[file];
+    const curated = READER_GUIDE_ENTRIES.find((e) => e.file === file);
+    const label = localised?.label ?? curated?.label ?? title;
+    const readerValue =
+      localised?.readerValue ?? curated?.readerValue ?? chrome.defaultReaderValue;
+    const icon = artifactIcon(file);
+    return `| ${icon} | [${label}](#${anchorForTitle(title)}) | ${readerValue} |`;
+  });
 
   if (hasDocuments) {
     entries.push(
-      `| [${chrome.perDocLabel}](#${HEADING_ID_PREFIX}per-document-intelligence) | ${chrome.perDocValue} | \`documents/*-analysis.md\` |`,
+      `| 📑 | [${chrome.perDocLabel}](#${HEADING_ID_PREFIX}per-document-intelligence) | ${chrome.perDocValue} |`,
     );
   }
 
   entries.push(
-    `| [${chrome.auditLabel}](#${HEADING_ID_PREFIX}classification-results) | ${chrome.auditValue} | ${chrome.auditArtifactLabel} |`,
+    `| 🏷️ | [${chrome.auditLabel}](#${HEADING_ID_PREFIX}classification-results) | ${chrome.auditValue} |`,
   );
 
   return [
@@ -156,7 +179,7 @@ export function buildReaderGuide(available: ReadonlySet<string>, hasDocuments: b
     '',
     chrome.preamble,
     '',
-    `| ${chrome.colReaderNeed} | ${chrome.colWhatYouGet} | ${chrome.colSourceArtifact} |`,
+    `|  | ${chrome.colReaderNeed} | ${chrome.colWhatYouGet} |`,
     '|---|---|---|',
     ...entries,
   ].join('\n');

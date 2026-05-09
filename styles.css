@@ -13394,6 +13394,22 @@ html[data-theme="light"] .rm-article-body pre.mermaid > svg {
   white-space: nowrap;
 }
 
+/* Icon column — narrow, visually centered, decorative only. The column
+   header carries an sr-only label so AT users still get a column name. */
+.rm-reader-guide-table .rm-reader-guide-icon-col {
+  width: 2.5rem;
+  text-align: center;
+}
+
+.rm-reader-guide-table .rm-reader-guide-icon {
+  width: 2.5rem;
+  font-size: 1.15rem;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1;
+  user-select: none;
+}
+
 @media (max-width: 640px) {
   .rm-reader-guide-table {
     min-width: 38rem;
