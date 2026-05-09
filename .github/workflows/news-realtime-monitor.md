@@ -63,8 +63,6 @@ runtimes:
 network:
   allowed:
     - node
-    # Browser downloads for Playwright CLI mode (replaces deprecated MCP container)
-    - playwright
     # Minimal Docker Hub hosts for node:26-alpine pulls used by SCB + World Bank MCP servers
     # (replaces the broader `containers` ecosystem identifier to keep least-privilege egress)
     - docker.io
@@ -123,8 +121,6 @@ tools:
   bash: true
   edit:
   web-fetch:
-  playwright:
-    mode: cli
   cache-memory:
     key: news-${{ github.workflow }}-${{ inputs.article_date || 'today' }}
     retention-days: 14
