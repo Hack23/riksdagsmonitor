@@ -124,8 +124,23 @@ export function cleanArticleTitle(raw: string | null, subfolder?: string): strin
         'committees', 'reports', 'report', 'debates', 'debate',
         'realtime', 'pulse', 'monitor', 'analysis',
       ]);
-      const isStem = (w: string): boolean =>
-        slugStems.some((stem) => w.includes(stem) || stem.includes(w));
+      const isStem = (w: string): boolean => {
+        // Match against stem tokens with simple plural-equivalence
+        // (`interpellation` ≡ `interpellations`, `motion` ≡ `motions`).
+        // We deliberately do NOT use unrestricted substring matching
+        // (which would over-match `motion` ⊂ `emotion`); instead we
+        // require either an exact match or a 1-2 char tail difference
+        // limited to plural suffixes (`s`, `es`).
+        if (slugStems.includes(w)) return true;
+        return slugStems.some((stem) => {
+          const sw = stem.length - w.length;
+          if (sw === 1 && stem === w + 's') return true;
+          if (sw === 2 && stem === w + 'es') return true;
+          if (sw === -1 && w === stem + 's') return true;
+          if (sw === -2 && w === stem + 'es') return true;
+          return false;
+        });
+      };
       const allBoilerplate = titleWords.every(
         (w) => connectorSet.has(w) || isStem(w),
       );
