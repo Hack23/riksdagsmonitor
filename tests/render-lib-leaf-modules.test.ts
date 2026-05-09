@@ -63,6 +63,7 @@ import {
 } from '../scripts/render-lib/aggregator/reader-guide.js';
 import {
   SENTENCE_END_RE,
+  isAbbreviationDot,
   markdownInlineToText,
   readBlufParagraph,
   readFirstParagraph,
@@ -410,6 +411,42 @@ describe('aggregator/seo/description — BLUF / first-paragraph readers', () => 
       tail;
     const out = truncateToSentenceBoundary(text, 80, 100);
     expect(out.endsWith('vote.')).toBe(true);
+  });
+
+  it('isAbbreviationDot recognises simple abbreviations (prop., Mr., etc.)', () => {
+    // "prop." — dot at index 4
+    expect(isAbbreviationDot('prop.', 4)).toBe(true);
+    // "Mr." — dot at index 2
+    expect(isAbbreviationDot('Mr.', 2)).toBe(true);
+    // real sentence end — "vote."
+    expect(isAbbreviationDot('vote.', 4)).toBe(false);
+  });
+
+  it('isAbbreviationDot recognises multi-dot abbreviations e.g., i.e., bl.a., d.v.s.', () => {
+    // "e.g." — the trailing dot is at the end
+    const eg = 'e.g.';
+    expect(isAbbreviationDot(eg, eg.length - 1)).toBe(true);
+    // "i.e." — same pattern
+    const ie = 'i.e.';
+    expect(isAbbreviationDot(ie, ie.length - 1)).toBe(true);
+    // "bl.a." — Swedish "bland annat"
+    const bla = 'bl.a.';
+    expect(isAbbreviationDot(bla, bla.length - 1)).toBe(true);
+    // "d.v.s." — Swedish "det vill säga"
+    const dvs = 'd.v.s.';
+    expect(isAbbreviationDot(dvs, dvs.length - 1)).toBe(true);
+  });
+
+  it('truncateToSentenceBoundary does not cut at e.g. / i.e. / bl.a.', () => {
+    // The abbreviation dot in "e.g." should not trigger a cut.
+    expect(truncateToSentenceBoundary('This is often, e.g. in practice. Final sentence.', 20, 40))
+      .toBe('This is often, e.g. in practice.');
+    // "i.e." likewise
+    expect(truncateToSentenceBoundary('The policy, i.e. the act. Further detail.', 20, 30))
+      .toBe('The policy, i.e. the act.');
+    // "bl.a." (Swedish)
+    expect(truncateToSentenceBoundary('Åtgärder bl.a. inom skolan. Mer info.', 20, 30))
+      .toBe('Åtgärder bl.a. inom skolan.');
   });
 
   it('readBlufParagraph returns null when no BLUF heading exists', () => {

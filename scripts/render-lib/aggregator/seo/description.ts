@@ -81,19 +81,40 @@ const SENTENCE_END_ABBREV_SET = new Set(
 
 /**
  * Return `true` when the `.` at `text[dotIndex]` is the trailing dot of
- * a known abbreviation rather than a real sentence terminator. Looks
- * back at the immediate word preceding the dot (whitespace-delimited).
+ * a known abbreviation rather than a real sentence terminator.
+ *
+ * Looks back from the dot position to the first whitespace boundary,
+ * collecting the **full** preceding token — including any internal dots.
+ * This allows multi-dot abbreviations like `e.g.`, `i.e.`, `U.S.`,
+ * `bl.a.`, `d.v.s.` to be detected in addition to simple ones like
+ * `prop.` and `Mr.`
+ *
+ * Normalisation: the token is lower-cased and all `.` characters are
+ * stripped before the set lookup, so both `e.g` and `eg` match the
+ * entry `'eg'` in {@link SENTENCE_END_ABBREVIATIONS}.
  *
  * Pure function — exported only for testability.
  */
 export function isAbbreviationDot(text: string, dotIndex: number): boolean {
   if (dotIndex < 0 || dotIndex >= text.length || text[dotIndex] !== '.') return false;
-  // Walk back from the character before the dot to the previous whitespace.
+  // Walk back from the character before the dot to the nearest whitespace,
+  // allowing letters and internal dots (for e.g. / i.e. / U.S. etc.).
   let start = dotIndex - 1;
-  while (start >= 0 && /[A-Za-z]/.test(text[start]!)) start -= 1;
-  const word = text.slice(start + 1, dotIndex);
-  if (!word) return false;
-  return SENTENCE_END_ABBREV_SET.has(word.toLowerCase());
+  while (start >= 0 && /[A-Za-z.]/.test(text[start]!)) start -= 1;
+  const rawToken = text.slice(start + 1, dotIndex);
+  if (!rawToken) return false;
+  // Normalise: lower-case and strip all dots so `e.g` → `eg`, `d.v.s` → `dvs`.
+  // This handles abbreviations whose dotless form is already in the set (eg, ie, dvs).
+  const normalised = rawToken.toLowerCase().replace(/\./g, '');
+  if (SENTENCE_END_ABBREV_SET.has(normalised)) return true;
+  // For compound abbreviations with internal dots (e.g. `bl.a.`) the
+  // dotless form (`bla`) may not be in the set even though each component
+  // is.  Check whether ANY individual component (split at `.`) matches.
+  if (rawToken.includes('.')) {
+    const components = rawToken.toLowerCase().split('.').filter(Boolean);
+    if (components.some((c) => SENTENCE_END_ABBREV_SET.has(c))) return true;
+  }
+  return false;
 }
 
 /**
