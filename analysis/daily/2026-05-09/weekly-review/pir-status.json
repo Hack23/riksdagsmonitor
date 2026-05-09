@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "cycle": "weekly-review",
+  "date": "2026-05-09",
+  "subfolder": "weekly-review",
+  "generated_at": "2026-05-09T10:00:00Z",
+  "inherited_from": null,
+  "pirs": [
+    {
+      "id": "PIR-W01",
+      "question": "What action has the Swedish Foreign Minister taken in response to the Israeli interception of the Global Sumud Flotilla carrying Swedish citizens?",
+      "status": "open",
+      "horizon": "T+72h",
+      "threshold": "FM issues formal statement or files diplomatic note",
+      "last_updated": "2026-05-09"
+    },
+    {
+      "id": "PIR-W02",
+      "question": "How are Swedish media and the public responding to the passage of CU31 housing flexibility reform?",
+      "status": "open",
+      "horizon": "T+72h",
+      "threshold": "Hyresgästföreningen calls for emergency review",
+      "last_updated": "2026-05-09"
+    },
+    {
+      "id": "PIR-W03",
+      "question": "How is the Liberal Party (L) responding to SD's veil-ban question targeting minister Simona Mohamsson?",
+      "status": "open",
+      "horizon": "T+7d",
+      "threshold": "L announces internal review of state neutrality rules",
+      "last_updated": "2026-05-09"
+    },
+    {
+      "id": "PIR-W04",
+      "question": "What major legislation is scheduled for the final weeks of the 2025/26 riksmöte before the summer recess?",
+      "status": "open",
+      "horizon": "T+7d",
+      "threshold": "KU or FiU places significant legislation in May calendar",
+      "last_updated": "2026-05-09"
+    },
+    {
+      "id": "PIR-W05",
+      "question": "Are there early signs of rental price movement in new-build units following CU31 entry into force?",
+      "status": "open",
+      "horizon": "T+30d",
+      "threshold": "SBC or Hyresgästföreningen reports price increase in new CU31 contracts",
+      "last_updated": "2026-05-09"
+    },
+    {
+      "id": "PIR-W06",
+      "question": "Is SD adjusting its electoral positioning away from coalition cooperation toward an independent campaign profile?",
+      "status": "open",
+      "horizon": "T+30d",
+      "threshold": "SD publishes election manifesto elements diverging materially from Tidö agreement",
+      "last_updated": "2026-05-09"
+    },
+    {
+      "id": "PIR-W07",
+      "question": "What is the outcome for Swedish citizens involved in the Global Sumud Flotilla interception?",
+      "status": "open",
+      "horizon": "T+30d",
+      "threshold": "Swedish citizen detained beyond 7 days",
+      "last_updated": "2026-05-09"
+    },
+    {
+      "id": "PIR-W08",
+      "question": "Does housing become a top-3 election issue in August 2026 polling?",
+      "status": "open",
+      "horizon": "T+90d",
+      "threshold": "Housing listed in top 3 voter concerns in two consecutive polling agencies",
+      "last_updated": "2026-05-09"
+    },
+    {
+      "id": "PIR-W09",
+      "question": "Is the Liberal Party (L) maintaining its 4% electoral threshold floor?",
+      "status": "open",
+      "horizon": "T+90d",
+      "threshold": "L polls below 4.5% in two consecutive measurement agencies",
+      "last_updated": "2026-05-09"
+    },
+    {
+      "id": "PIR-W10",
+      "question": "Are municipalities reporting inability to comply with UbU28 teacher credential requirements for September 2026?",
+      "status": "open",
+      "horizon": "T+90d",
+      "threshold": "3 or more municipalities publicly declare non-compliance with UbU28",
+      "last_updated": "2026-05-09"
+    }
+  ]
+}
