@@ -35,6 +35,62 @@ import { cleanArtifactBody } from '../cleaning/structural.js';
 export const SENTENCE_END_RE = /(?:[.!?…](?=\s|$))|[。।]/g;
 
 /**
+ * Common abbreviations that end with `.` followed by a space — these
+ * must NOT be treated as sentence boundaries by {@link truncateToSentenceBoundary},
+ * otherwise the description gets cut mid-sentence at e.g.
+ * `… two propositions: the forestry deregulation (prop.` (audit
+ * 2026-05-09 of `news/2026-05-08-motions-en.html`).
+ *
+ * Token comparison is case-sensitive on the trailing letter so `Mr.`
+ * does not also match the in-word `Imr.` substring. Matching is done
+ * by looking at the last whitespace-delimited word ending at the
+ * candidate sentence-end position.
+ *
+ * Keep the list short and high-signal — false-negatives (we miss an
+ * abbreviation and cut early) only mean the description fragment is a
+ * bit shorter; false-positives (we treat a real sentence end as an
+ * abbreviation and overrun) would push the description past `hardMax`,
+ * which is unrecoverable downstream.
+ */
+export const SENTENCE_END_ABBREVIATIONS: readonly string[] = [
+  // Document references — the leak case
+  'prop', 'props', 'mot', 'bet', 'skr', 'art', 'sec', 'ch', 'no', 'nr',
+  'p', 'pp', 'ed', 'eds', 'vol', 'fig', 'cf',
+  // Latin abbreviations
+  'etc', 'vs', 'eg', 'ie', 'al',
+  // Honorifics and titles (English + Swedish)
+  'Mr', 'Mrs', 'Ms', 'Dr', 'Prof', 'Sr', 'Jr', 'St',
+  // Swedish-specific common abbreviations
+  'bl', 'dvs', 'fr', 't', 'ex', 'tex', 'kl',
+];
+
+/**
+ * Set form of {@link SENTENCE_END_ABBREVIATIONS} for O(1) lookup.
+ * Comparison is case-insensitive — abbreviations like `prop.` and
+ * `Prop.` are both treated as non-terminating.
+ */
+const SENTENCE_END_ABBREV_SET = new Set(
+  SENTENCE_END_ABBREVIATIONS.map((a) => a.toLowerCase()),
+);
+
+/**
+ * Return `true` when the `.` at `text[dotIndex]` is the trailing dot of
+ * a known abbreviation rather than a real sentence terminator. Looks
+ * back at the immediate word preceding the dot (whitespace-delimited).
+ *
+ * Pure function — exported only for testability.
+ */
+export function isAbbreviationDot(text: string, dotIndex: number): boolean {
+  if (dotIndex < 0 || dotIndex >= text.length || text[dotIndex] !== '.') return false;
+  // Walk back from the character before the dot to the previous whitespace.
+  let start = dotIndex - 1;
+  while (start >= 0 && /[A-Za-z]/.test(text[start]!)) start -= 1;
+  const word = text.slice(start + 1, dotIndex);
+  if (!word) return false;
+  return SENTENCE_END_ABBREV_SET.has(word.toLowerCase());
+}
+
+/**
  * Convert markdown inline syntax (links, images, emphasis) to plain
  * text suitable for the `<meta description>` value. Whitespace is
  * collapsed; trailing punctuation is preserved.
@@ -83,12 +139,18 @@ export function truncateToSentenceBoundary(
   if (normalised.length === 0) return '';
   if (normalised.length <= hardMax) return normalised;
 
-  // Find every sentence-end position in the prefix within hardMax.
+  // Find every sentence-end position in the prefix within hardMax,
+  // **excluding** dots that are part of common abbreviations
+  // (`prop.`, `art.`, `Mr.`, …) — those would otherwise cut the
+  // description mid-sentence. See {@link isAbbreviationDot}.
   const window = normalised.slice(0, hardMax + 1);
   SENTENCE_END_RE.lastIndex = 0;
   const ends: number[] = [];
   let m: RegExpExecArray | null;
   while ((m = SENTENCE_END_RE.exec(window)) !== null) {
+    // Skip abbreviation dots so `prop.` / `art.` / `Mr.` don't terminate
+    // a sentence. `m[0]` is one of `.!?…。।`; only `.` triggers the guard.
+    if (m[0] === '.' && isAbbreviationDot(window, m.index)) continue;
     ends.push(m.index + m[0].length);
   }
 

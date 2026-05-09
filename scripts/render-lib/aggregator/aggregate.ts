@@ -152,7 +152,7 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
   // fall back to `<subfolder> — <date>`. See `seo-metadata-contract.md`
   // §2.
   const title =
-    cleanArticleTitle(readFirstHeading(briefRaw)) ||
+    cleanArticleTitle(readFirstHeading(briefRaw), subfolder) ||
     titleFromBluf(rawBlufParagraph ?? rawFirstParagraph) ||
     `${prettifyFallbackTitle(subfolder)} — ${date}`;
 

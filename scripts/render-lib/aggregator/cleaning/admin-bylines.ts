@@ -179,6 +179,25 @@ export const ADMIN_FIELD_NAMES: readonly string[] = [
   'Level',
   'Relates\\s*to',
   'frs',
+  // Round 7 (2026-05-09) — preamble fields observed leaking into
+  // <meta description> for propositions / realtime-pulse / interpellation
+  // articles. Audit of news/2026-05-08-*-en.html showed:
+  //   - propositions: "DIW Composite: 10.0/10 (election-adjusted)"
+  //   - realtime-pulse: "Audience: Editors, researchers, engaged citizens"
+  // The paragraph-level stripper requires every fragment in the leading
+  // paragraph to match ADMIN_FIELD_RE; without these labels the whole
+  // admin block survives into the <meta description>. Per
+  // seo-metadata-contract.md §3.1 ("No admin metadata"), these MUST
+  // never reach the SERP snippet.
+  'WEP',
+  'WEP\\s*\\+\\s*ODNI',
+  'DIW(?:\\s*(?:Composite|Total|Index|Rating))?',
+  'Audience(?:\\s*for\\s*this\\s*brief)?',
+  'Disseminated\\s*at',
+  'Generated\\s*at',
+  'Iteration',
+  'Editor',
+  'Editorial\\s*owner',
 ];
 
 /**

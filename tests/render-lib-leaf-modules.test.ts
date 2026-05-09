@@ -157,6 +157,39 @@ describe('aggregator/cleaning/admin-bylines — paragraph-level admin stripper',
     expect(out).not.toContain('**Author**');
     expect(out).not.toContain('**Run ID**');
   });
+
+  // ──────────────────────────────────────────────────────────────────
+  // Round 7 (2026-05-09) — admin-field expansion. Preamble fields that
+  // leaked into <meta description> across news/2026-05-08-*-en.html.
+  // ──────────────────────────────────────────────────────────────────
+
+  it('ADMIN_FIELD_RE matches Round 7 leak fields (DIW Composite, WEP, Audience)', () => {
+    expect('**DIW Composite**: 10.0/10 (election-adjusted)'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**WEP**: Almost Certainly (AC, 90-95%)'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**Audience**: Editors, researchers, engaged citizens'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**Audience for this brief**: Editors'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**Iteration**: Pass 2'.match(ADMIN_FIELD_RE)).not.toBeNull();
+  });
+
+  it('stripLeadingAdminBylines removes the realtime-pulse Audience admin block', () => {
+    // Reproduces the leak shape from analysis/daily/2026-05-08/realtime-pulse/executive-brief.md.
+    const input =
+      '**Classification**: UNCLASSIFIED — PUBLIC  \n**Audience**: Editors, researchers, engaged citizens  \n**Date**: 2026-05-08  \n**Prepared by**: Riksdagsmonitor news-realtime-monitor\n\nThe Riksdag chamber on 8 May 2026 debates two significant committee reports.';
+    const out = stripLeadingAdminBylines(input);
+    expect(out).toContain('The Riksdag chamber on 8 May 2026');
+    expect(out).not.toContain('Audience');
+    expect(out).not.toContain('Classification');
+  });
+
+  it('stripLeadingAdminBylines removes the propositions DIW Composite admin block', () => {
+    // Reproduces the leak shape from analysis/daily/2026-05-08/propositions/executive-brief.md.
+    const input =
+      '**Classification**: B2 (Probably True / Reliable) | **WEP**: Almost Certainly (AC, 90-95%)  \n**DIW Composite**: 10.0/10 (election-adjusted)  \n**Analyst**: AI political intelligence synthesis  \n**Date**: 2026-05-08\n\nOn 7 May 2026, the Tidö government submitted three propositions.';
+    const out = stripLeadingAdminBylines(input);
+    expect(out).toContain('On 7 May 2026');
+    expect(out).not.toContain('DIW Composite');
+    expect(out).not.toContain('WEP');
+  });
 });
 
 describe('aggregator/cleaning/pass-two — Pass 2 self-audit stripper', () => {
@@ -295,6 +328,40 @@ describe('aggregator/seo/description — BLUF / first-paragraph readers', () => 
     expect(out).not.toBe('…');
   });
 
+  // Round 7 (2026-05-09) — abbreviation guard. Without the guard,
+  // descriptions get cut mid-sentence at common abbreviations like
+  // `prop.`, `art.`, `Mr.` (audit of news/2026-05-08-motions-en.html).
+  it('truncateToSentenceBoundary does not cut mid-sentence at "prop." abbreviation', () => {
+    const text =
+      'Eight opposition motions filed 2026-05-04 mount challenges against two government propositions: the forestry deregulation (prop. 2025/26:236) and the youth justice reform (prop. 2025/26:237). Both will be voted before recess.';
+    const out = truncateToSentenceBoundary(text, 140, 200);
+    // Must not end at the `prop.` abbreviation period.
+    expect(out).not.toMatch(/\bprop\.$/);
+    expect(out).not.toMatch(/\(prop\.$/);
+  });
+
+  it('truncateToSentenceBoundary does not cut at "art." / "Mr." / "etc." abbreviations', () => {
+    expect(truncateToSentenceBoundary('See art. 5 ECHR. The minister noted concerns.', 20, 30))
+      .not.toMatch(/\bart\.$/);
+    expect(truncateToSentenceBoundary('Mr. Strömmer told the press. He confirmed.', 15, 25))
+      .not.toMatch(/\bMr\.$/);
+    expect(truncateToSentenceBoundary('Reform, training etc. is needed. Plans follow.', 20, 30))
+      .not.toMatch(/\betc\.$/);
+  });
+
+  it('truncateToSentenceBoundary still cuts at real sentence ends after abbreviations', () => {
+    // After the guard skips `prop.`, the next real `.` in window is the
+    // sentence terminator after "vote" — that should still be honoured
+    // when the input exceeds hardMax.
+    const tail =
+      ' Beyond that point follows further analysis that should be cut off entirely because it is past the sentence terminator we want to land on.';
+    const text =
+      'Eight motions challenge prop. 2025/26:236 and prop. 2025/26:237 in the chamber vote.' +
+      tail;
+    const out = truncateToSentenceBoundary(text, 80, 100);
+    expect(out.endsWith('vote.')).toBe(true);
+  });
+
   it('readBlufParagraph returns null when no BLUF heading exists', () => {
     expect(readBlufParagraph('# Heading\n\nProse only.')).toBeNull();
   });
@@ -339,6 +406,95 @@ describe('aggregator/seo/title — title cleanup & BLUF synthesis', () => {
   it('titleFromBluf returns null on empty/null input', () => {
     expect(titleFromBluf(null)).toBeNull();
     expect(titleFromBluf('')).toBeNull();
+  });
+
+  // ──────────────────────────────────────────────────────────────────
+  // Round 7 (2026-05-09) — quality-fix regressions for known-bad
+  // titles/descriptions observed in news/2026-05-08-*-en.html.
+  // ──────────────────────────────────────────────────────────────────
+
+  it('cleanArticleTitle returns null when title equals prettified subfolder (boilerplate guard)', () => {
+    // `# Executive Brief — Government Propositions 2026-05-08` →
+    // `Government Propositions` after strip → equals `prettifyFallbackTitle('propositions')`
+    // → null (forces BLUF fallback).
+    expect(
+      cleanArticleTitle(
+        'Executive Brief — Government Propositions 2026-05-08',
+        'propositions',
+      ),
+    ).toBeNull();
+    // Same for `Interpellation Debates` ↔ `interpellations`.
+    expect(
+      cleanArticleTitle('Interpellation Debates', 'interpellations'),
+    ).toBeNull();
+    // And the realtime-pulse case: `Riksdag Realtime Pulse` ends with
+    // the prettified subfolder `Realtime Pulse` so the guard fires.
+    expect(
+      cleanArticleTitle('Riksdag Realtime Pulse', 'realtime-pulse'),
+    ).toBeNull();
+  });
+
+  it('cleanArticleTitle preserves a real story title even when subfolder is supplied', () => {
+    expect(
+      cleanArticleTitle(
+        'Opposition Motions Challenge Forestry and Youth Justice Reforms',
+        'motions',
+      ),
+    ).toBe('Opposition Motions Challenge Forestry and Youth Justice Reforms');
+  });
+
+  it('titleFromBluf strips a leading "On <date>, " prefix (no literal date in title)', () => {
+    const bluf =
+      'On 7 May 2026, the Tidö government submitted three interlocking propositions.';
+    const out = titleFromBluf(bluf, 70);
+    expect(out).not.toMatch(/\b2026\b/);
+    expect(out).not.toMatch(/^On\s+\d/);
+    // First letter recapped from lower-case `the` after strip.
+    expect(out!.startsWith('The Tidö government')).toBe(true);
+  });
+
+  it('titleFromBluf strips a leading weekday + date prefix when result remains grammatical', () => {
+    // No verb-leading after strip → date prefix is removed.
+    const bluf =
+      'Friday 8 May 2026, the Riksdag advanced six committee reports.';
+    const out = titleFromBluf(bluf, 70);
+    expect(out).not.toMatch(/\b2026\b/);
+    expect(out).not.toMatch(/^Friday/);
+    expect(out!.length).toBeGreaterThan(10);
+  });
+
+  it('titleFromBluf KEEPS the date prefix when stripping would leave a verb-leading subjectless fragment', () => {
+    // `Friday 8 May 2026 marks …` → strip would leave `marks …` which is
+    // ungrammatical (lost subject). Better to ship the date than break
+    // grammar — see VERB_LEADING_TOKENS guard.
+    const bluf =
+      'Friday 8 May 2026 marks a legislative heavy-load day in the Riksdag.';
+    const out = titleFromBluf(bluf, 70);
+    expect(out!.startsWith('Friday')).toBe(true);
+    expect(out).not.toMatch(/^Marks\s/);
+  });
+
+  it('titleFromBluf strips a leading "The week of <range>" prefix', () => {
+    const bluf =
+      'The week of 2–9 May 2026 produced a cluster of domestic legislation.';
+    const out = titleFromBluf(bluf, 70);
+    expect(out).not.toMatch(/\b2026\b/);
+    expect(out).not.toMatch(/^The week of/);
+  });
+
+  it('titleFromBluf does not end on a trailing comma or coordinating connector', () => {
+    // Worst-case from news/2026-05-08-evening-analysis-en.html: cut at
+    // "in the Riksdag," — both the comma and the connector should be
+    // stripped by the post-cut cleanup.
+    const bluf =
+      'A legislative heavy-load day in the Riksdag, with six committee reports advancing toward chamber vote.';
+    const out = titleFromBluf(bluf, 70);
+    expect(out).not.toMatch(/[,;:]$/);
+    expect(out).not.toMatch(/\b(?:and|or|but|with|the|a|in|of|to|for|on|at|by|from|that|which|have|has|had|is|are|was|were|will|would)$/i);
+  });
+
+  it('titleFromBluf still returns null on empty input after date strip', () => {
+    expect(titleFromBluf('On 7 May 2026, .')).toBeNull();
   });
 });
 
