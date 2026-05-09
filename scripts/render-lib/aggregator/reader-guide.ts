@@ -124,7 +124,7 @@ export function anchorForTitle(title: string): string {
  * Intelligence Guide can hyperlink to.
  *
  * Mirrors the same selection / de-duplication rules used by
- * {@link ../aggregate.ts}:
+ * {@link ./aggregate.ts} (the article aggregator):
  *
  * 1. Only `*.md` artifacts are eligible (`*.json` artifacts are
  *    referenced by the audit-appendix row, not by their own section).

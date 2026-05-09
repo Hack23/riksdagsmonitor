@@ -96,10 +96,13 @@ export function renderReaderNavigation(input: ReaderNavigationInput): string {
     const anchor = anchorForTitle(sectionTitle);
     const localised = guideI18n.entries[file];
     const curated = READER_GUIDE_ENTRIES.find((e) => e.file === file);
-    // Prefer localised curated label; fall back to curated label; fall
-    // back to the localised i18n artifact title (artifactTitle) — but
-    // anchor link text MUST match the actual rendered section heading
-    // (`titleForArtifact`) so the in-page navigation reads naturally.
+    // Prefer the localised curated label, then the English curated
+    // label, then the localised artifact title, finally the rendered
+    // section title. The `href` is what MUST match the rendered
+    // heading slug (`anchorForTitle(titleForArtifact(file))`); the
+    // visible link text is intentionally a localised, descriptive
+    // journalist-need phrase (e.g. "BLUF and editorial decisions"
+    // points at the `## Executive Brief` heading).
     const label =
       localised?.label
       ?? curated?.label
@@ -107,8 +110,14 @@ export function renderReaderNavigation(input: ReaderNavigationInput): string {
     const readerValue =
       localised?.readerValue ?? curated?.readerValue ?? guideChrome.defaultReaderValue;
     const icon = artifactIcon(file);
+    // The `<td>` itself stays in the accessibility tree so the
+    // 3-column structure remains intact for screen-reader table
+    // navigation; only the decorative emoji glyph is hidden via the
+    // inner `<span aria-hidden>`. The column header carries the
+    // localised `colIcon` sr-only label so AT users hear a meaningful
+    // column name.
     return `            <tr>
-              <td class="rm-reader-guide-icon" aria-hidden="true">${icon}</td>
+              <td class="rm-reader-guide-icon"><span aria-hidden="true">${icon}</span></td>
               <td><a href="#${anchor}">${escapeHtml(label)}</a></td>
               <td>${escapeHtml(readerValue)}</td>
             </tr>`;
@@ -116,7 +125,7 @@ export function renderReaderNavigation(input: ReaderNavigationInput): string {
 
   if (hasDocAnalyses) {
     guideRows.push(`            <tr>
-              <td class="rm-reader-guide-icon" aria-hidden="true">📑</td>
+              <td class="rm-reader-guide-icon"><span aria-hidden="true">📑</span></td>
               <td><a href="#rm-per-document-intelligence">${escapeHtml(guideChrome.perDocLabel)}</a></td>
               <td>${escapeHtml(guideChrome.perDocValue)}</td>
             </tr>`);
@@ -125,7 +134,7 @@ export function renderReaderNavigation(input: ReaderNavigationInput): string {
   // Audit appendix row — always present so reviewers find the
   // classification + cross-reference manifests.
   guideRows.push(`            <tr>
-              <td class="rm-reader-guide-icon" aria-hidden="true">🏷️</td>
+              <td class="rm-reader-guide-icon"><span aria-hidden="true">🏷️</span></td>
               <td><a href="#rm-classification-results">${escapeHtml(guideChrome.auditLabel)}</a></td>
               <td>${escapeHtml(guideChrome.auditValue)}</td>
             </tr>`);

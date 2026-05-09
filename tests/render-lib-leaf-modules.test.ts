@@ -864,7 +864,8 @@ describe('aggregator/reader-guide-i18n — 14-language coverage', () => {
       expect(READER_GUIDE_I18N[lang]).toBeDefined();
       expect(READER_GUIDE_I18N[lang].chrome.heading).toBeTruthy();
       expect(READER_GUIDE_I18N[lang].chrome.preamble.length).toBeGreaterThan(20);
-      expect(READER_GUIDE_I18N[lang].chrome.auditArtifactLabel).toBeTruthy();
+      expect(READER_GUIDE_I18N[lang].chrome.auditLabel).toBeTruthy();
+      expect(READER_GUIDE_I18N[lang].chrome.colIcon).toBeTruthy();
     }
   });
 
@@ -876,11 +877,11 @@ describe('aggregator/reader-guide-i18n — 14-language coverage', () => {
     }
   });
 
-  it('non-English languages have localised audit artifact label', () => {
-    const enAuditArtifactLabel = READER_GUIDE_I18N.en.chrome.auditArtifactLabel;
+  it('non-English languages have localised audit appendix label', () => {
+    const enAuditLabel = READER_GUIDE_I18N.en.chrome.auditLabel;
     for (const lang of LANGUAGES) {
       if (lang === 'en') continue;
-      expect(READER_GUIDE_I18N[lang].chrome.auditArtifactLabel).not.toBe(enAuditArtifactLabel);
+      expect(READER_GUIDE_I18N[lang].chrome.auditLabel).not.toBe(enAuditLabel);
     }
   });
 
