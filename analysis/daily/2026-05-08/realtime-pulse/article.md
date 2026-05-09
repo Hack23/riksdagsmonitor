@@ -1,18 +1,16 @@
 ---
-title: "Riksdag Realtime Pulse"
-description: "Audience: Editors, researchers, engaged citizens"
+title: "The Riksdag chamber on 8 May 2026 debates two significant committee"
+description: "The Riksdag chamber on 8 May 2026 debates two significant committee reports: UbU28 (teacher qualifications in the new 10-year compulsory school — DIW 8/9) and CU34 (modernised debt-enforcement rules…"
 date: 2026-05-08
 subfolder: realtime-pulse
 slug: 2026-05-08-realtime-pulse
 source_folder: analysis/daily/2026-05-08/realtime-pulse
-generated_at: 2026-05-09T06:33:55.744Z
+generated_at: 2026-05-09T10:11:20.977Z
 language: en
 layout: article
 ---
 ## Executive Brief
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/realtime-pulse/executive-brief.md -->
-
-**Audience**: Editors, researchers, engaged citizens  
 
 ---
 
@@ -449,22 +447,14 @@ Four written questions filed on 2026-05-08 across three policy domains:
 #### HD11800 — Småföretagares trygghet i Hässelby-Vällingby (S, Kadir Kasirga → Justice Minister Strömmer)
 A Socialdemokraterna question on local business security in the Stockholm district of Hässelby-Vällingby, referencing recent news coverage of crime affecting small businesses. Asks Justice Minister Strömmer (M) what measures the government intends to take to protect small business owners in the district. This is a constituency-service question with limited systemic policy significance but with electoral relevance for suburban Stockholm voters (S priority ground).
 
-**DIW**: 3/9 L1 Surface — local crime/business question, no legislative action triggered.
-
 #### HD11801 — Nedsläckning av lands- och glesbygd (V, Birger Lahti → Infrastructure Minister Carlson)
 Vänsterpartiet MP Birger Lahti references SVT's "Uppdrag granskning" investigation and asks Infrastructure and Housing Minister Carlson (KD) about planned "nedsläckning" (sunset/shutdown) of mobile and broadband networks in rural and sparsely-populated areas. This touches PTS (Post- och telestyrelsen) obligations and the government's rural connectivity commitments. Connects to open PIR-RT-005 (Carlson responsiveness on infrastructure).
-
-**DIW**: 4/9 L1 Surface — targeted rural digital infrastructure accountability; elevated by SVT media coverage and PIR-RT-005 linkage.
 
 #### HD11802 — Förbud mot heltäckande slöja (SD, Nima Gholam Ali Pour → Education/Integration Minister Mohamsson)
 Sverigedemokraterna question from Nima Gholam Ali Pour asking Education and Integration Minister Simona Mohamsson (L) about the government's position on a full-face veil ban (burqa/niqab ban). This is a recurring SD policy probe testing the Liberal minister's position on Islamic dress restrictions. L has historically opposed face-covering bans on civil liberties grounds; this question forces a public ministerial position ahead of 2026 election.
 
-**DIW**: 4/9 L1 Surface — signals Tidö coalition tension between SD and L on integration policy; media-framing significance higher than legislative significance.
-
 #### HD11803 — Israels ingripande på internationellt vatten mot svenska medborgare (S, Johan Büser → Foreign Minister Malmer Stenergard)
 S MP Johan Büser asks Foreign Minister Maria Malmer Stenergard (M) about Israel's intervention in international waters affecting Swedish citizens. This is in the context of Gaza solidarity flotilla incidents and Swedish citizens aboard vessels in international waters. Asks what consular and diplomatic steps the government has taken.
-
-**DIW**: 5/9 L2 Strategic — foreign policy/consular accountability with international law dimension (UNCLOS, Vienna Convention on Consular Relations); 2026 election resonance given S base support for Palestinian cause.
 
 ### Cluster Political Significance
 

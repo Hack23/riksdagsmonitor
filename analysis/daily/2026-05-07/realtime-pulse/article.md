@@ -5,7 +5,7 @@ date: 2026-05-07
 subfolder: realtime-pulse
 slug: 2026-05-07-realtime-pulse
 source_folder: analysis/daily/2026-05-07/realtime-pulse
-generated_at: 2026-05-09T06:33:55.678Z
+generated_at: 2026-05-09T10:11:20.925Z
 language: en
 layout: article
 ---
@@ -125,8 +125,6 @@ Use this guide to read the article as a political-intelligence product rather th
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/realtime-pulse/synthesis-summary.md -->
-
-**Prepared**: 2026-05-07 | **Type**: Realtime Pulse | **Pass**: 1
 
 ---
 

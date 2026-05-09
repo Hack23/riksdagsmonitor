@@ -5,7 +5,7 @@ date: 2026-04-22
 subfolder: evening-analysis
 slug: 2026-04-22-evening-analysis
 source_folder: analysis/daily/2026-04-22/evening-analysis
-generated_at: 2026-05-09T06:33:54.969Z
+generated_at: 2026-05-09T10:11:20.346Z
 language: en
 layout: article
 ---
@@ -405,8 +405,6 @@ Betänkande CU27 — Civilutskottet bostadsrätt/hyresrätt reform. Retrieved as
 
 ### Intelligence Significance
 
-**DIW**: I (Indicator) — Document included in evening synthesis cross-reference map.
-
 See parent analysis files for full significance assessment and cross-references.
 
 ### HD01CU28
@@ -420,8 +418,6 @@ See parent analysis files for full significance assessment and cross-references.
 Betänkande CU28 — Civilutskottet bostadsrättslagen ändring. Retrieved as part of Tier-C evening analysis cross-type synthesis 2026-04-22.
 
 ### Intelligence Significance
-
-**DIW**: I (Indicator) — Document included in evening synthesis cross-reference map.
 
 See parent analysis files for full significance assessment and cross-references.
 
@@ -466,8 +462,6 @@ HD01FiU48 is the committee report on the government's extra ändringsbudget for 
 
 ### Intelligence Significance
 
-**DIW**: W (Warning) — Enacted measure immediately affects national budget and sets political precedent for cross-bloc cooperation.
-
 **Key analytical point**: S participation was mathematically necessary for supermajority. S's 107 Ja votes added to M+SD+KD (160) = 267. Without S, government coalition alone at 160 would have passed with only bare majority (160 > 175 is false — actually 160 < 175). S's votes were therefore pivotal to the political optics of broad consensus, even if legally the government had enough with SD included to reach 176 (M+SD+KD = 160 < 175... actually M+SD+KD+L = 176 > 175). Clarification: The government bloc (M+SD+KD+L = 176) had enough without S. S's Ja vote was not mathematically required but was politically significant as a cross-bloc endorsement.
 
 **Corrected analysis**: Government bloc (176) > 175 threshold. S participation was **politically voluntary** — not mathematically necessary. This makes S's decision MORE significant: they had the freedom to abstain or vote Nej, but chose Ja.
@@ -484,8 +478,6 @@ Betänkande KU32 — Grundlagsändring medietillgänglighet (Stage 1). Retrieved
 
 ### Intelligence Significance
 
-**DIW**: I (Indicator) — Document included in evening synthesis cross-reference map.
-
 See parent analysis files for full significance assessment and cross-references.
 
 ### HD01KU33
@@ -499,8 +491,6 @@ See parent analysis files for full significance assessment and cross-references.
 Betänkande KU33 — Grundlagsändring husrannsakan insyn (Stage 1). Retrieved as part of Tier-C evening analysis cross-type synthesis 2026-04-22.
 
 ### Intelligence Significance
-
-**DIW**: I (Indicator) — Document included in evening synthesis cross-reference map.
 
 See parent analysis files for full significance assessment and cross-references.
 
@@ -540,8 +530,6 @@ HD024082 is one of three parallel climate counter-motions filed by S, V, and MP 
 
 ### Intelligence Significance
 
-**DIW**: I (Indicator) — HD024082 is an indicator of S's internal strategic tensions between climate/environmental wing and rural/cost-of-living electoral bloc.
-
 **Long-term significance**: The motion will be processed in committee (likely rejected with government majority). However, it will remain in the parliamentary record permanently, available for:
 - Academic research on S climate positioning
 - Opposition campaign research
@@ -559,8 +547,6 @@ Motion 2024/90 — Klimat och energiomställning (relaterad). Retrieved as part 
 
 ### Intelligence Significance
 
-**DIW**: I (Indicator) — Document included in evening synthesis cross-reference map.
-
 See parent analysis files for full significance assessment and cross-references.
 
 ### HD024092
@@ -574,8 +560,6 @@ See parent analysis files for full significance assessment and cross-references.
 Motion V — Klimatmotion mot HD03236 (parallell till HD024082). Retrieved as part of Tier-C evening analysis cross-type synthesis 2026-04-22.
 
 ### Intelligence Significance
-
-**DIW**: I (Indicator) — Document included in evening synthesis cross-reference map.
 
 See parent analysis files for full significance assessment and cross-references.
 
@@ -591,8 +575,6 @@ Motion 2024/95 — Energipolitik. Retrieved as part of Tier-C evening analysis c
 
 ### Intelligence Significance
 
-**DIW**: I (Indicator) — Document included in evening synthesis cross-reference map.
-
 See parent analysis files for full significance assessment and cross-references.
 
 ### HD024097
@@ -607,8 +589,6 @@ Motion 2024/97 — Energi och klimat. Retrieved as part of Tier-C evening analys
 
 ### Intelligence Significance
 
-**DIW**: I (Indicator) — Document included in evening synthesis cross-reference map.
-
 See parent analysis files for full significance assessment and cross-references.
 
 ### HD024098
@@ -622,8 +602,6 @@ See parent analysis files for full significance assessment and cross-references.
 Motion MP — Miljöpartiet klimatmotion mot HD03236. Retrieved as part of Tier-C evening analysis cross-type synthesis 2026-04-22.
 
 ### Intelligence Significance
-
-**DIW**: I (Indicator) — Document included in evening synthesis cross-reference map.
 
 See parent analysis files for full significance assessment and cross-references.
 
@@ -653,8 +631,6 @@ HD03100 is the 2026 Economic Spring Budget (Vårproposition). As a pre-election 
 
 ### Pre-Election Fiscal Manifesto Assessment
 
-**DIW**: I (Indicator) — Vårproposition is a structural policy statement that anchors fiscal expectations for election campaign period.
-
 **Key intelligence value**:
 The Vårproposition is the government's last major economic document before the election. It is effectively a political manifesto dressed as a budget document. The opposition (S) will use it as a contrast document in campaign messaging.
 
@@ -680,8 +656,6 @@ Prop HD03232 — Sverige ansluter sig till ukrainskt skadeståndsregister. Retri
 
 ### Intelligence Significance
 
-**DIW**: I (Indicator) — Document included in evening synthesis cross-reference map.
-
 See parent analysis files for full significance assessment and cross-references.
 
 ### HD03236
@@ -695,8 +669,6 @@ See parent analysis files for full significance assessment and cross-references.
 Prop HD03236 — Extra ändringsbudget 2026 (source for HD01FiU48). Retrieved as part of Tier-C evening analysis cross-type synthesis 2026-04-22.
 
 ### Intelligence Significance
-
-**DIW**: I (Indicator) — Document included in evening synthesis cross-reference map.
 
 See parent analysis files for full significance assessment and cross-references.
 
@@ -712,8 +684,6 @@ Prop HD03239 — Stärkt försörjningsberedskap inom energiområdet. Retrieved 
 
 ### Intelligence Significance
 
-**DIW**: I (Indicator) — Document included in evening synthesis cross-reference map.
-
 See parent analysis files for full significance assessment and cross-references.
 
 ### HD03240
@@ -728,8 +698,6 @@ Prop HD03240 — Nya elsystemlagar och energisäkerhetsramverk. Retrieved as par
 
 ### Intelligence Significance
 
-**DIW**: I (Indicator) — Document included in evening synthesis cross-reference map.
-
 See parent analysis files for full significance assessment and cross-references.
 
 ### HD0399
@@ -743,8 +711,6 @@ See parent analysis files for full significance assessment and cross-references.
 Prop HD0399 — Vårändringbudget 2026. Retrieved as part of Tier-C evening analysis cross-type synthesis 2026-04-22.
 
 ### Intelligence Significance
-
-**DIW**: I (Indicator) — Document included in evening synthesis cross-reference map.
 
 See parent analysis files for full significance assessment and cross-references.
 
@@ -784,8 +750,6 @@ HD10442 is an interpellation to a government minister (Svantesson or Health Mini
 
 ### Intelligence Significance
 
-**DIW**: W (Warning) — The court documentation makes this interpellation uniquely persistent. Unlike most IPs that are answered perfunctorily, HD10442 creates a documented record that will outlast the parliamentary session.
-
 **Party accountability value for S**: This is the highest-quality document in the interpellation cluster. The other 4 (HD10443-HD10446) are standard accountability questions. HD10442 with court documentation is qualitatively different.
 
 ### HD10443
@@ -799,8 +763,6 @@ HD10442 is an interpellation to a government minister (Svantesson or Health Mini
 Interpellation HD10443 — Social dumpning (Svantesson). Retrieved as part of Tier-C evening analysis cross-type synthesis 2026-04-22.
 
 ### Intelligence Significance
-
-**DIW**: I (Indicator) — Document included in evening synthesis cross-reference map.
 
 See parent analysis files for full significance assessment and cross-references.
 
@@ -816,8 +778,6 @@ Interpellation HD10444 — Arbetsgivaravgifter bostadssektor. Retrieved as part 
 
 ### Intelligence Significance
 
-**DIW**: I (Indicator) — Document included in evening synthesis cross-reference map.
-
 See parent analysis files for full significance assessment and cross-references.
 
 ### HD10445
@@ -832,8 +792,6 @@ Interpellation HD10445 — Energikostnader hushåll. Retrieved as part of Tier-C
 
 ### Intelligence Significance
 
-**DIW**: I (Indicator) — Document included in evening synthesis cross-reference map.
-
 See parent analysis files for full significance assessment and cross-references.
 
 ### HD10446
@@ -847,8 +805,6 @@ See parent analysis files for full significance assessment and cross-references.
 Interpellation HD10446 — Uppföljning socialtjänst. Retrieved as part of Tier-C evening analysis cross-type synthesis 2026-04-22.
 
 ### Intelligence Significance
-
-**DIW**: I (Indicator) — Document included in evening synthesis cross-reference map.
 
 See parent analysis files for full significance assessment and cross-references.
 
@@ -1053,8 +1009,6 @@ The HD01FiU48 cross-party majority (M+SD+KD+S) is **constitutionally and elector
 1. It demonstrates S can cooperate on budget issues across the bloc divide
 2. It sets a precedent for post-election grand bargain discussions
 3. L's Nej vote creates a fissure within the government coalition — if L were to leave, government majority falls to 160
-
-**WEP**: It is **Unlikely** [15–25%] that L would formally withdraw from the government coalition over this single vote. However, it is **Likely** [60–70%] that L will emphasise its Nej vote in campaign materials as environmental credibility marker.
 
 ## Voter Segmentation
 <!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/voter-segmentation.md -->

@@ -5,7 +5,7 @@ date: 2026-04-19
 subfolder: deep-inspection
 slug: 2026-04-19-deep-inspection
 source_folder: analysis/daily/2026-04-19/deep-inspection
-generated_at: 2026-05-09T06:33:54.861Z
+generated_at: 2026-05-09T10:11:20.260Z
 language: en
 layout: article
 ---
@@ -953,8 +953,6 @@ flowchart TD
 - But the valrörelse window is the highest-value window over the next 18 months
 - Pattern-matches against 2024 EP election interference attempts
 
-**Analyst confidence**: MEDIUM.
-
 ---
 
 #### ⚡ WILDCARD 2 — "US Non-Cooperation Blocks Tribunal" (P = 0.08)
@@ -970,8 +968,6 @@ flowchart TD
 **Key signal:**
 - US DoJ / State Department public posture statements by Q3 2026 `[HIGH]`
 - US participation (or non-participation) in Committee of Ministers meetings `[HIGH]`
-
-**Analyst confidence**: LOW-MEDIUM — US posture is the single largest uncertainty.
 
 ---
 

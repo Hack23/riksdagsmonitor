@@ -1,18 +1,16 @@
 ---
-title: "Government Propositions"
-description: "DIW Composite: 10.0/10 (election-adjusted)"
+title: "The Tidö government (M–SD–KD–L) submitted three interlocking"
+description: "On 7 May 2026, the Tidö government (M–SD–KD–L) submitted three interlocking propositions that collectively advance a state digital-security architecture with significant civil liberties implications."
 date: 2026-05-08
 subfolder: propositions
 slug: 2026-05-08-propositions
 source_folder: analysis/daily/2026-05-08/propositions
-generated_at: 2026-05-09T06:33:55.736Z
+generated_at: 2026-05-09T10:11:20.971Z
 language: en
 layout: article
 ---
 ## Executive Brief
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/executive-brief.md -->
-
-**DIW Composite**: 10.0/10 (election-adjusted)  
 
 ---
 
@@ -81,7 +79,6 @@ Use this guide to read the article as a political-intelligence product rather th
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/propositions/synthesis-summary.md -->
 
 **Admiralty Source**: A1 (Official government source, Riksdagen open data — certain)  
-**WEP**: Almost Certainly (AC, 90-95%)  
 
 ---
 

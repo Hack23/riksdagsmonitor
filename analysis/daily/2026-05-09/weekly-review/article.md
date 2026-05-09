@@ -1,11 +1,11 @@
 ---
-title: "The week of 2–9 May 2026 produced a cluster of domestic legislation"
+title: "Produced a cluster of domestic legislation in housing, education"
 description: "The week of 2–9 May 2026 produced a cluster of domestic legislation in housing, education, social welfare and the rule of law, while foreign-policy questions exposed a sharp cross-party fissure over…"
 date: 2026-05-09
 subfolder: weekly-review
 slug: 2026-05-09-weekly-review
 source_folder: analysis/daily/2026-05-09/weekly-review
-generated_at: 2026-05-09T09:11:40.982Z
+generated_at: 2026-05-09T10:11:20.999Z
 language: en
 layout: article
 ---
@@ -82,8 +82,6 @@ This analysis covers **6 committee reports** (bet) and **5 parliamentary questio
 **Key uncertainty**: The week's documents are debate-stage committee reports — final chamber votes not yet recorded. Outcome confidence is contingent on coalition discipline and potential motions of divergence.
 
 ---
-
-*Source: riksdag-regering MCP | IMF WEO-2026-04 | Riksdagsmonitor Weekly Review 2026-05-09*
 
 ## Reader Intelligence Guide
 
@@ -235,8 +233,6 @@ The housing market (CU31) context is critical: Sweden's owner-occupied housing m
 
 ---
 
-*Source: riksdag-regering MCP (11 documents, riksmöte 2025/26) | IMF WEO-2026-04 | Riksdagsmonitor Weekly Review 2026-05-09*
-
 ---
 
 ## Intelligence Assessment — Key Judgments
@@ -318,8 +314,6 @@ flowchart LR
 **Party neutrality**: KJs assess threats and opportunities without systematic advantage to any single party. Coalition risks (KJ1, KJ4, KJ5) and opposition's own uncertainties (KJ2 is government responsibility, not opposition failure) are both represented.
 
 ---
-
-*Source: riksdag-regering MCP | strategic-extensions-methodology.md §key-judgments | ICD 203 | 2026-05-09*
 
 ---
 
@@ -489,8 +483,6 @@ The housing reform is the most electorally consequential legislation of this wee
 
 ---
 
-*Source: riksdag-regering MCP | 2026-05-09*
-
 ### HD01CU34
 <!-- source: documents/HD01CU34-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/documents/HD01CU34-analysis.md -->
 
@@ -517,8 +509,6 @@ Committee report on updating debt enforcement rules, including provisions for di
 Moderate commercial law relevance. The distance enforcement provision is technically significant (digital transformation of Kronofogden). Limited electoral resonance.
 
 ---
-
-*Source: riksdag-regering MCP | 2026-05-09*
 
 ### HD01SoU36
 <!-- source: documents/HD01SoU36-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/documents/HD01SoU36-analysis.md -->
@@ -547,8 +537,6 @@ Low electoral significance; high administrative relevance. Enables Swedish gover
 
 ---
 
-*Source: riksdag-regering MCP | 2026-05-09*
-
 ### HD01UU13
 <!-- source: documents/HD01UU13-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/documents/HD01UU13-analysis.md -->
 
@@ -576,8 +564,6 @@ Minimal. This is an annual procedural report. Its value is confirmatory — Swed
 
 ---
 
-*Source: riksdag-regering MCP | 2026-05-09*
-
 ### HD01UbU20
 <!-- source: documents/HD01UbU20-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/documents/HD01UbU20-analysis.md -->
 
@@ -604,8 +590,6 @@ Committee report on applying the principle of public access to documents (*offen
 The "friskola transparency" issue is reliably used by S, V, and MP as an example of the government favouring private school operators over accountability. This report will be cited in the election campaign.
 
 ---
-
-*Source: riksdag-regering MCP | 2026-05-09*
 
 ### HD01UbU28
 <!-- source: documents/HD01UbU28-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/documents/HD01UbU28-analysis.md -->
@@ -635,8 +619,6 @@ Committee report extending the teacher licensing and credential requirements to 
 
 ---
 
-*Source: riksdag-regering MCP | 2026-05-09*
-
 ### HD10480
 <!-- source: documents/HD10480-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/documents/HD10480-analysis.md -->
 
@@ -665,8 +647,6 @@ The *stadigvarande vistelse* concept is a continuing battleground between the go
 
 ---
 
-*Source: riksdag-regering MCP | 2026-05-09*
-
 ### HD11800
 <!-- source: documents/HD11800-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/documents/HD11800-analysis.md -->
 
@@ -693,8 +673,6 @@ Written question from S-ledamot to a government minister on the conditions for s
 Limited strategic intelligence value; primarily a local-level S campaign question. The social insurance for self-employed theme will recur in the election campaign.
 
 ---
-
-*Source: riksdag-regering MCP | 2026-05-09*
 
 ### HD11801
 <!-- source: documents/HD11801-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/documents/HD11801-analysis.md -->
@@ -724,8 +702,6 @@ Consistent V theme of rural market failures. The term *nedsläckning* is rhetori
 
 ---
 
-*Source: riksdag-regering MCP | 2026-05-09*
-
 ### HD11802
 <!-- source: documents/HD11802-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/documents/HD11802-analysis.md -->
 
@@ -753,8 +729,6 @@ Written question from SD to Minister for Integration and Migration Simona Mohams
 This is a calculated SD move designed to create a media cycle around L's identity. The question itself has low legislative significance (no motion attached), but high political significance. L's response will either reinforce its liberal brand or show capitulation to SD framing.
 
 ---
-
-*Source: riksdag-regering MCP | 2026-05-09*
 
 ### HD11803
 <!-- source: documents/HD11803-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/documents/HD11803-analysis.md -->
@@ -785,8 +759,6 @@ Written question from S-ledamot to Foreign Minister Maria Malmer Stenergard (M) 
 - Has Sweden filed a diplomatic note? Not stated in the question.
 
 ---
-
-*Source: riksdag-regering MCP | 2026-05-09*
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/stakeholder-perspectives.md -->
@@ -930,8 +902,6 @@ graph TB
 
 ---
 
-*Source: riksdag-regering MCP | synthesis-methodology.md §stakeholder-lenses | 2026-05-09*
-
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/coalition-mathematics.md -->
 
@@ -1054,8 +1024,6 @@ The week's legislation does not change Riksdag arithmetic (no election this week
 
 ---
 
-*Source: riksdag-regering MCP | electoral-domain-methodology.md §sainte-lague | 2022 election data | 2026-05-09*
-
 ## Voter Segmentation
 <!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/voter-segmentation.md -->
 
@@ -1158,8 +1126,6 @@ graph TB
 | Law & Order | 700k | MEDIUM | LOW | 🟢 Priority 3 |
 
 ---
-
-*Source: riksdag-regering MCP | electoral-domain-methodology.md §segmentation | SCB demographics | 2026-05-09*
 
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/forward-indicators.md -->
@@ -1277,8 +1243,6 @@ From **2026-04-26 weekly-review**:
 
 ---
 
-*Source: riksdag-regering MCP | intelligence-assessment-methodology.md §forward-indicators | 2026-05-09*
-
 ---
 
 ## Scenario Analysis
@@ -1342,8 +1306,6 @@ flowchart TD
 
 **Second-order effects**: Coalition enters summer recess with a "reform delivery" story intact. S/V/MP fractured messaging diminishes opposition coordination.
 
-**WEP confidence**: Likely [P~40%] given the coalition's established legislative management capacity and the government's interest in controlling the pre-election narrative.
-
 **Evidence**: Prior weekly-review (2026-04-26) demonstrated similar scenario execution on security legislation. IMF WEO-2026-04 context: low growth environment pressures the narrative but does not prevent legislative delivery.
 
 ---
@@ -1360,8 +1322,6 @@ flowchart TD
 
 **Second-order effects**: Opposition gains a unified "this government fails ordinary people" narrative heading into summer. S poll numbers improve marginally in housing-focused urban constituencies.
 
-**WEP confidence**: Likely [P~40%] — the structural conditions (tenant union mobilisation, foreign policy crisis, SD identity tension) all favour this scenario without active government counter-messaging.
-
 ---
 
 ### Scenario 3 — Dual Crisis (P=20%) [T+7d / T+30d]
@@ -1374,8 +1334,6 @@ flowchart TD
 - Emergency committee hearing requests (UU or FiU/CU)
 
 **Second-order effects**: Coalition forced into defensive communication posture for 2–3 weeks; pre-election reform narrative substantially damaged; opposition coordination improves.
-
-**WEP confidence**: Somewhat unlikely [P~20%] — requires dual external/internal triggers simultaneously.
 
 ---
 
@@ -1390,8 +1348,6 @@ flowchart TD
 **Net**: The central estimate is a coin-flip between S1 and S2, with S2 slightly more probable at T+30d given the structural advantage of opposition narrative in a low-growth environment.
 
 ---
-
-*Source: riksdag-regering MCP | strategic-extensions-methodology.md §scenarios | 2026-05-09*
 
 ## Election 2026 Analysis
 <!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/election-2026-analysis.md -->
@@ -1489,8 +1445,6 @@ Based on prior-cycle analysis (2026-04-26 weekly-review) and Riksdagsmonitor tra
 | S-led government (S+V+MP+C) | 35% | Requires C bloc switch; opposition coordination |
 | Hung parliament / caretaker | 20% | Neither bloc reaches 175 seats majority |
 
-**WEP confidence**: Roughly even [P~45%/35%] with high uncertainty given 16-week horizon. The housing reform framing contest is the single most important near-term electoral variable.
-
 ---
 
 ### Historical Precedent
@@ -1498,8 +1452,6 @@ Based on prior-cycle analysis (2026-04-26 weekly-review) and Riksdagsmonitor tra
 In the 2018 election, the Alliance (M, KD, L, C) lost urban rental-market-heavy constituencies in Stockholm city to S, in part due to M's deregulation agenda not resonating with renters. The CU31 reform echoes that political risk in a demographic that has only grown since 2018.
 
 ---
-
-*Source: riksdag-regering MCP | electoral-domain-methodology.md §election-2026 | IMF WEO-2026-04 | 2026-05-09*
 
 ## Risk Assessment
 <!-- source: risk-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/risk-assessment.md -->
@@ -1593,8 +1545,6 @@ flowchart LR
 Comparing to prior weekly-review (2026-04-26): the overall risk environment has **increased slightly** — the Israel flotilla incident (R2) is a new high-magnitude external risk absent from the previous cycle. The housing reform (R1) was also present in prior cycles but escalates as the election approaches.
 
 ---
-
-*Source: riksdag-regering MCP | political-risk-methodology.md | IMF WEO-2026-04 | 2026-05-09*
 
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/swot-analysis.md -->
@@ -1717,8 +1667,6 @@ If S, V and MP coordinate their critiques on housing (CU31), rural services (HD1
 **Net assessment**: The coalition enters the summer homestretch with a viable reform-delivery story (Strengths) but faces two high-magnitude threats it cannot control (Israel crisis, low growth) and two internal weaknesses that will receive maximum opposition attention (SD–L identity tension, housing narrative risk).
 
 ---
-
-*Source: riksdag-regering MCP | IMF WEO-2026-04 | political-swot-framework.md | 2026-05-09*
 
 ## Threat Analysis
 <!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/threat-analysis.md -->
@@ -1845,8 +1793,6 @@ flowchart TD
 | T6 Credential gap | Elevation | LOW-MEDIUM | T+12 months |
 
 ---
-
-*Source: riksdag-regering MCP | political-threat-framework.md | 2026-05-09*
 
 ## Historical Parallels
 <!-- source: historical-parallels.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/historical-parallels.md -->
@@ -1989,8 +1935,6 @@ timeline
 
 ---
 
-*Source: riksdag-regering MCP | electoral-domain-methodology.md §precedents | Swedish parliamentary archive | 2026-05-09*
-
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/comparative-international.md -->
 
@@ -2111,8 +2055,6 @@ graph LR
 3. **Foreign policy**: Sweden has opportunity for a clear diplomatic position on Israel that aligns with Ireland/EU norms but is constrained by coalition composition.
 
 ---
-
-*Source: IMF WEO-2026-04 | strategic-extensions-methodology.md §comparative | Nordic statistical offices | 2026-05-09*
 
 ## Implementation Feasibility
 <!-- source: implementation-feasibility.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/implementation-feasibility.md -->
@@ -2251,8 +2193,6 @@ xychart-beta
 | UbU28 Teacher credentials | MEDIUM (AMBER) | Teacher supply shortage; timeline |
 
 ---
-
-*Source: riksdag-regering MCP | electoral-domain-methodology.md §feasibility | Skolverket data | 2026-05-09*
 
 ## Media Framing Analysis
 <!-- source: media-framing-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/media-framing-analysis.md -->
@@ -2416,8 +2356,6 @@ This meta-narrative favours the opposition frame of "coalition making last-minut
 
 ---
 
-*Source: riksdag-regering MCP | strategic-communication-analysis.md §framing | Riksdag document metadata | 2026-05-09*
-
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/devils-advocate.md -->
 
@@ -2515,8 +2453,6 @@ The Devil's Advocate analysis reveals three genuine uncertainties:
 These contrarian positions do not negate the primary analysis but should inform the confidence levels and scenario probabilities in this report.
 
 ---
-
-*Source: riksdag-regering MCP | strategic-extensions-methodology.md §ach | 2026-05-09*
 
 ## Classification Results
 <!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/classification-results.md -->
@@ -2625,8 +2561,6 @@ flowchart TD
 
 ---
 
-*Source: riksdag-regering MCP | political-classification-guide.md | 2026-05-09*
-
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/cross-reference-map.md -->
 
@@ -2717,8 +2651,6 @@ HD01UbU28 (teacher credentials) + HD01SoU36 (state personnel deployment) + HD118
 HD11801 (rural lighting) + HD01CU31 (urban rental market) + HD11800 (urban crime) reveal the coalition's difficulty in simultaneously addressing urban affordability and rural service concerns — a structural tension inherent in the Tidö geographic coalition.
 
 ---
-
-*Source: riksdag-regering MCP | structural-metadata-methodology.md | analysis/daily/2026-04-26/weekly-review/ (sibling) | 2026-05-09*
 
 ---
 
@@ -2857,8 +2789,6 @@ Plus: `pir-status.json` (required sidecar; to be created) + 11 per-document anal
 **Pass 2 (AI-FIRST mandatory iteration) scheduled immediately after artifact completion.**
 
 ---
-
-*Source: ICD 203 §analytic standards | intelligence-assessment-methodology.md §methodology-reflection | 2026-05-09*
 
 ---
 

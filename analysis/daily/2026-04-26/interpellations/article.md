@@ -5,7 +5,7 @@ date: 2026-04-26
 subfolder: interpellations
 slug: 2026-04-26-interpellations
 source_folder: analysis/daily/2026-04-26/interpellations
-generated_at: 2026-05-09T06:33:55.100Z
+generated_at: 2026-05-09T10:11:20.460Z
 language: en
 layout: article
 ---
@@ -892,8 +892,6 @@ Three forward scenarios for the government's political trajectory given the Apri
 
 **Outcome**: S's interpellation campaign fails to consolidate a dominant electoral narrative by summer 2026. Government enters autumn budget debate from a position of initiative rather than reaction. Coalition cohesion maintained.
 
-**WEP**: Unlikely (25–37%) — requires four simultaneous responsive ministerial actions in a compressed timeline, which is historically unusual for Swedish coalition governments.
-
 ---
 
 ### Scenario B: Partial Government Response — Narrative Partially Contained [Probability: Likely, 55–70%]
@@ -906,8 +904,6 @@ Three forward scenarios for the government's political trajectory given the Apri
 
 **Outcome**: S succeeds in anchoring the welfare cost-shifting narrative in the sick-pay and housing domains. The employer-contribution reform retains credibility. The government's core narrative (law and order, fiscal responsibility) holds but the welfare periphery is conceded. 2026 election is genuinely competitive.
 
-**WEP**: Likely (55–70%) — consistent with Swedish coalition government response patterns.
-
 ---
 
 ### Scenario C: Government on Defensive — Narrative Dominant for Opposition [Probability: Roughly even, 25–35%]
@@ -919,8 +915,6 @@ Three forward scenarios for the government's political trajectory given the Apri
 - Additional interpellation clusters continue through May and June 2026 without adequate government response
 
 **Outcome**: S successfully frames spring-summer 2026 as a "welfare rollback" period. Coalition faces intensified pressure at autumn budget. SD-KD energy tensions partially visible. 2026 election dominated by welfare vs. fiscal-responsibility binary that favours S in the 50%+ base scenario.
-
-**WEP**: Roughly even (25–35%) — depends critically on Finance Ministry's data-release decision.
 
 ---
 

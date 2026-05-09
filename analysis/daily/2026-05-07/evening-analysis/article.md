@@ -1,21 +1,16 @@
 ---
-title: "WEP: Likely [B2] DIW Aggregate: 8.4 Horizon: T+72h to T+90d Reading"
-description: "WEP: Likely [B2] DIW Aggregate: 8.4 Horizon: T+72h to T+90d Reading time: ~5 minutes"
+title: "Sweden's Security-State Legislative Sprint: Three Executive"
+description: "Sweden's Security-State Legislative Sprint: Three Executive Propositions + Six Committee Reports Advance Simultaneously — 125 Days Before Election"
 date: 2026-05-07
 subfolder: evening-analysis
 slug: 2026-05-07-evening-analysis
 source_folder: analysis/daily/2026-05-07/evening-analysis
-generated_at: 2026-05-09T06:33:55.645Z
+generated_at: 2026-05-09T10:11:20.898Z
 language: en
 layout: article
 ---
 ## Executive Brief
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/executive-brief.md -->
-
-**WEP**: Likely [B2]  
-**DIW Aggregate**: 8.4  
-**Horizon**: T+72h to T+90d  
-**Reading time**: ~5 minutes
 
 ---
 
@@ -96,7 +91,6 @@ Use this guide to read the article as a political-intelligence product rather th
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/synthesis-summary.md -->
 
 **Horizon**: T+72h to T+90d  
-**WEP**: Likely to Almost Certain  
 
 **Cross-references**: propositions/, committeeReports/, motions/, interpellations/ (all 2026-05-07)
 
@@ -359,9 +353,6 @@ The criminal responsibility age proposition (prop. 246) will be the most media-c
 **Type**: Betänkande (Committee Report)  
 **Committee**: CU (Civilutskottet)  
 
-**DIW**: 7.2 / L2  
-**WEP**: Almost Certain [A1]
-
 ### Summary
 
 Committee report implementing revised MiFID II/MiFIR rules for equity securities listed on MTF (Multilateral Trading Facility) platforms. MTF platforms serve as alternative trading venues to regulated markets — approximately 140 Swedish companies are listed on MTF platforms (First North, NGM).
@@ -400,8 +391,6 @@ Routine EU regulatory implementation. No surprises. Will pass unanimously. Enact
 **Title**: Riksrevisionens rapport om statens fastighetsförvaltning  
 **Type**: Betänkande  
 **Committee**: FiU  
-**DIW**: 6.0 / L2  
-**WEP**: Likely [B2]
 
 ### Summary
 
@@ -434,8 +423,6 @@ This is a fiscal accountability document. No electoral significance. The mainten
 **Title**: En ny funktion för operativ krishantering i den finansiella sektorn  
 **Type**: Betänkande  
 **Committee**: FiU  
-**DIW**: 8.0 / L2+  
-**WEP**: Almost Certain [A2]
 
 ### Summary
 
@@ -479,8 +466,6 @@ High DIW because financial crisis management functions have long-term systemic i
 **Title**: Nya regler för att främja central clearing av OTC-derivat i EU
 **Type**: Betänkande
 **Committee**: FiU
-**DIW**: 7.7
-**WEP**: Almost Certain [A1]
 
 ### Analysis
 
@@ -497,8 +482,6 @@ EMIR 3.0 alignment; OTC derivatives central clearing mandatory for SWE CCPs. Tec
 **Title**: Förbättrade förutsättningar för kommuner att motverka felaktiga utbetalningar
 **Type**: Betänkande
 **Committee**: FiU
-**DIW**: 6.7
-**WEP**:  290 municipalities (implementation varies), Social Insurance Agency, municipal welfare officers. Statskontoret 2025:3 directly relevant — documented gap in municipal capability. Implementation challenge: smaller municipalities lack IT capacity. Electoral frame: welfare integrity vs surveillance overreach. MEDIUM electoral significance.:Likely [B2]
 
 ### Analysis
 
@@ -515,8 +498,6 @@ Gives municipalities new cross-agency data sharing tools to detect welfare fraud
 **Title**: Stärkt säkerhet vid allmänna sammankomster och offentliga tillställningar
 **Type**: Betänkande
 **Committee**: JuU
-**DIW**: 7.3
-**WEP**:  expanded police discretion to restrict access zones; new obligations on event organisers; enhanced security assessment requirements. Background: series of security incidents at public events (2022-2025) including knife attacks and crowd disturbances. Legal framework: Ordningslagen amendments. ECHR Art. 11 (assembly) tension — proportionality review required. Cross-party support expected on substance; V may file reservation on police discretion scope.:Almost Certain [B2]
 
 ### Analysis
 
@@ -533,8 +514,6 @@ Strengthens police security powers at public gatherings and public events. Key p
 **Title**: Nordisk verkställighet i brottmål
 **Type**: Betänkande
 **Committee**: JuU
-**DIW**: 7.0
-**WEP**:  reduces the practical benefit of crossing a Nordic border after conviction. Cross-party consensus — unanimously supported. Nordic Council framework. No controversial provisions. HIGH implementation feasibility.:Almost Certain [A1]
 
 ### Analysis
 
@@ -551,8 +530,6 @@ Nordic enforcement in criminal cases. Committee report implementing Nordic conve
 **Title**: En särskild straffbestämmelse för psykiskt våld
 **Type**: Betänkande
 **Committee**: JuU
-**DIW**: 8.3
-**WEP**:  new BrB 4 kap. [X]§ defining psychological violence as systematic pattern of behaviour causing mental harm; maximum 2 years imprisonment; qualified offence maximum 4 years. Background: psychological violence is the most common form of intimate partner violence (estimated 30-40% of all IPV). Sweden is the last Nordic country to criminalise. Denmark (2021), Finland (2023) preceded. Expected 400-600 new prosecutions annually. Implementation challenge: psychological evidence standard, expert witness framework. ECHR Art. 8 dual-use tension (state criminalising private behaviour).:Almost Certain [B2]
 
 ### Analysis
 
@@ -569,8 +546,6 @@ Creates a specific criminal offence for psychological violence in intimate partn
 **Title**: En statlig e-legitimation  
 **Type**: Proposition  
 **Originating department**: Finansdepartementet  
-**DIW**: 8.3 / L2+  
-**WEP**: Likely [B2]
 
 ### Summary
 
@@ -606,8 +581,6 @@ High DIW because this proposition restructures Sweden's digital identity infrast
 **Title**: Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten  
 **Type**: Proposition  
 **Originating department**: Finansdepartementet  
-**DIW**: 8.0 / L2+  
-**WEP**: Likely [B2]
 
 ### Summary
 
@@ -650,8 +623,6 @@ This proposition combines a legitimate policy goal (correct population registrat
 **Title**: Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot  
 **Type**: Proposition  
 **Originating department**: Justitiedepartementet  
-**DIW**: 8.7 / L3  
-**WEP**: Likely [B1]
 
 ### Summary
 
@@ -699,8 +670,6 @@ Highest DIW in today's non-sibling documents (L3 threshold). This proposition ch
 **Title**: Regeringens arbete i ILO  
 **Type**: Interpellation (ip)  
 **Party**: S  
-**DIW**: 6.7  
-**WEP**: Likely [B2]
 
 ### Analysis
 
@@ -717,8 +686,6 @@ Interpellations are constitutional accountability tools. They cannot change legi
 **Title**: Humanitärt tillträde till Gaza  
 **Type**: Interpellation (ip)  
 **Party**: MP  
-**DIW**: 6.3  
-**WEP**: Likely [B2]
 
 ### Analysis
 
@@ -735,8 +702,6 @@ Interpellations are constitutional accountability tools. They cannot change legi
 **Title**: Postnords nedläggningar i inlandskommuner  
 **Type**: Interpellation (ip)  
 **Party**: SD  
-**DIW**: 6.0  
-**WEP**: Likely [B2]
 
 ### Analysis
 
@@ -753,8 +718,6 @@ Interpellations are constitutional accountability tools. They cannot change legi
 **Title**: Sveriges agerande för skydd för civila humanitära konvojer  
 **Type**: Interpellation (ip)  
 **Party**: MP  
-**DIW**: 6.3  
-**WEP**: Likely [B2]
 
 ### Analysis
 
@@ -771,8 +734,6 @@ Interpellations are constitutional accountability tools. They cannot change legi
 **Title**: Uppföljningsrapport om minoritetspolitiken  
 **Type**: Interpellation (ip)  
 **Party**: S  
-**DIW**: 6.3  
-**WEP**: Likely [B2]
 
 ### Analysis
 
@@ -789,8 +750,6 @@ Interpellations are constitutional accountability tools. They cannot change legi
 **Title**: Utbildningsinsatser för journalister  
 **Type**: Motion (mot)  
 **Party**: SD  
-**DIW**: 4.7  
-**WEP**: Possible [B3]
 
 ### Analysis
 
@@ -807,8 +766,6 @@ Motions (motioner) are opposition proposals that are typically declined in commi
 **Title**: Ideella skogsinventerare  
 **Type**: Motion (mot)  
 **Party**: SD  
-**DIW**: 4.3  
-**WEP**: Possible [B3]
 
 ### Analysis
 
@@ -825,8 +782,6 @@ Motions (motioner) are opposition proposals that are typically declined in commi
 **Title**: Regeringens stöd till det iranska folket  
 **Type**: Motion (mot)  
 **Party**: SD  
-**DIW**: 5.7  
-**WEP**: Possible [B3]
 
 ### Analysis
 
@@ -843,8 +798,6 @@ Motions (motioner) are opposition proposals that are typically declined in commi
 **Title**: Skola i fängelset för dömda 13-åringar  
 **Type**: Motion (mot)  
 **Party**: MP  
-**DIW**: 5.3  
-**WEP**: Possible [B3]
 
 ### Analysis
 
@@ -861,8 +814,6 @@ Motions (motioner) are opposition proposals that are typically declined in commi
 **Title**: Teckenspråkiga elevers rätt att utbilda sig  
 **Type**: Motion (mot)  
 **Party**: MP  
-**DIW**: 5.7  
-**WEP**: Possible [B3]
 
 ### Analysis
 
@@ -879,8 +830,6 @@ Motions (motioner) are opposition proposals that are typically declined in commi
 **Title**: Politisering av internationella luftfartssystem  
 **Type**: Motion (mot)  
 **Party**: SD  
-**DIW**: 5.3  
-**WEP**: Possible [B3]
 
 ### Analysis
 
@@ -897,8 +846,6 @@ Motions (motioner) are opposition proposals that are typically declined in commi
 **Title**: En nordisk samordningsstruktur för transportfrågor  
 **Type**: Motion (mot)  
 **Party**: S  
-**DIW**: 5.7  
-**WEP**: Possible [B3]
 
 ### Analysis
 
@@ -1242,10 +1189,6 @@ Sweden's Lagrådet issues strongly worded yttrande on HD03261 (Skatteverket) ide
 
 ## Election 2026 Analysis
 <!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/evening-analysis/election-2026-analysis.md -->
-
-**Horizon**: T+125d (September 2026 election)  
-**Method**: Electoral lens on today's legislative cluster  
-**WEP**: Uncertain [C2] — electoral outcomes carry high uncertainty
 
 ### Electoral Context
 

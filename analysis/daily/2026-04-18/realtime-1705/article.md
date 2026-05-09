@@ -1,11 +1,11 @@
 ---
-title: "Realtime Monitor 1705"
+title: "On 2026-04-13 – 16, the Kristersson government tabled a coordinated"
 description: "On 2026-04-13 – 16, the Kristersson government tabled a coordinated four-document pre-election sprint: Vårproposition 2026 (HD03100, DIW 9.5) sets the macro frame, an extra supplementary budget…"
 date: 2026-04-18
 subfolder: realtime-1705
 slug: 2026-04-18-realtime-1705
 source_folder: analysis/daily/2026-04-18/realtime-1705
-generated_at: 2026-05-09T06:33:54.838Z
+generated_at: 2026-05-09T10:11:20.242Z
 language: en
 layout: article
 ---

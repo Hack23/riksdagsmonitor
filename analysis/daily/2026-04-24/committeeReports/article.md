@@ -5,7 +5,7 @@ date: 2026-04-24
 subfolder: committeeReports
 slug: 2026-04-24-committeeReports
 source_folder: analysis/daily/2026-04-24/committeeReports
-generated_at: 2026-05-09T06:33:55.020Z
+generated_at: 2026-05-09T10:11:20.387Z
 language: en
 layout: article
 ---
@@ -284,7 +284,6 @@ All 5 rows cite a live `dok_id` resolvable via `get_dokument` + a primary-source
 
 **Committee**: Arbetsmarknadsutskottet (AU)
 
-**DIW**: 45
 **Confidence on analysis**: MEDIUM (C3) — title + metadata inference pending full text.
 
 ### Summary
@@ -346,7 +345,6 @@ Pass 2 revalidated DIW 45 against sensitivity band documented in `../significanc
 
 **Committee**: Civilutskottet (CU)
 
-**DIW**: 85
 **Confidence on analysis**: MEDIUM (C3) — title + metadata inference pending full text.
 
 ### Summary
@@ -408,7 +406,6 @@ Pass 2 revalidated DIW 85 against sensitivity band documented in `../significanc
 
 **Committee**: Civilutskottet (CU)
 
-**DIW**: 50
 **Confidence on analysis**: MEDIUM (C3) — title + metadata inference pending full text.
 
 ### Summary
@@ -470,7 +467,6 @@ Pass 2 revalidated DIW 50 against sensitivity band documented in `../significanc
 
 **Committee**: Finansutskottet (FiU)
 
-**DIW**: 65
 **Confidence on analysis**: MEDIUM (C3) — title + metadata inference pending full text.
 
 ### Summary
@@ -532,7 +528,6 @@ Pass 2 revalidated DIW 65 against sensitivity band documented in `../significanc
 
 **Committee**: Socialförsäkringsutskottet (SfU)
 
-**DIW**: 80
 **Confidence on analysis**: MEDIUM (C3) — title + metadata inference pending full text.
 
 ### Summary

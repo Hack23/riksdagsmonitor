@@ -5,7 +5,7 @@ date: 2026-04-28
 subfolder: propositions
 slug: 2026-04-28-propositions
 source_folder: analysis/daily/2026-04-28/propositions
-generated_at: 2026-05-09T06:33:55.255Z
+generated_at: 2026-05-09T10:11:20.578Z
 language: en
 layout: article
 ---
@@ -86,8 +86,6 @@ The second-most-significant document is **HD03252** (welfare restriction for inm
 | 2 | HD03252 | Socialförsäkringsbegränsning vid fängelsestraff | 7.4/10 | L2 Strategic | SfU |
 | 3 | HD03104 | Utvärdering av statens upplåning 2021–2025 | 5.8/10 | L2 Strategic | FiU |
 | 4 | HD03256 | Kraftfullare åtgärder mot färdskrivarmissbruk | 4.2/10 | L1 Surface | TU |
-
-*DIW: Depth × Impact × Watchability — composite score weighting political significance, parliamentary consequence, and civic interest*
 
 ### Integrated Intelligence Picture
 

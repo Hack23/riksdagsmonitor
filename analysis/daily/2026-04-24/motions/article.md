@@ -1,11 +1,11 @@
 ---
-title: "Between 2026-04-15 and 2026-04-17, the four opposition parties (S, V,"
+title: "Between 2026-04-15 and 2026-04-17, the four opposition parties (S, V"
 description: "Between 2026-04-15 and 2026-04-17, the four opposition parties (S, V, MP, C) filed 20 counter-motions against 9 Tidö-government propositions — a coordinated legislative response concentrated in three…"
 date: 2026-04-24
 subfolder: motions
 slug: 2026-04-24-motions
 source_folder: analysis/daily/2026-04-24/motions
-generated_at: 2026-05-09T06:33:55.047Z
+generated_at: 2026-05-09T10:11:20.409Z
 language: en
 layout: article
 ---

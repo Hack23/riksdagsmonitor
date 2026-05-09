@@ -5,7 +5,7 @@ date: 2026-05-04
 subfolder: year-ahead
 slug: 2026-05-04-year-ahead
 source_folder: analysis/daily/2026-05-04/year-ahead
-generated_at: 2026-05-09T06:33:55.526Z
+generated_at: 2026-05-09T10:11:20.802Z
 language: en
 layout: article
 ---
@@ -814,8 +814,6 @@ All scenarios anchored on election date: **2026-09-13**.
 - HC03203 uranium mining implementation accelerated
 - HC03192 housing reform deepened (market-rent expansion)
 
-**WEP**: likely [horizon:election]
-
 ---
 
 #### Scenario B — S-led Majority: Left Bloc with Centerpartiet (Probability 28%) [horizon:election]
@@ -832,8 +830,6 @@ All scenarios anchored on election date: **2026-09-13**.
 - HC03168 wind-power tax reversed
 - HC03155 emergency powers subject to parliamentary oversight committee
 - Defence 2.4% GDP target maintained (bipartisan) but procurement timelines reviewed
-
-**WEP**: likely [horizon:election]
 
 ---
 
@@ -852,8 +848,6 @@ All scenarios anchored on election date: **2026-09-13**.
 - Defence budget maintained via cross-Riksdag agreement
 - Political crisis risk within 18 months [horizon:year]
 
-**WEP**: roughly even chance [horizon:election]
-
 ---
 
 #### Scenario D — Hung Parliament: Electoral Crisis (Probability 12%) [horizon:election]
@@ -868,8 +862,6 @@ All scenarios anchored on election date: **2026-09-13**.
 - Caretaker government administers; HC03155 emergency provisions invoked for continuity
 - NATO commitments honoured by caretaker
 - Economic uncertainty: SEK weakens 3–5% on election night
-
-**WEP**: unlikely [horizon:election]
 
 ---
 
@@ -886,8 +878,6 @@ All scenarios anchored on election date: **2026-09-13**.
 - Cleaner EU relations without SD nationalist friction
 - HC03203 uranium uncertain — C opposed nuclear historically but recent pivot
 - Social reform agenda without extremism
-
-**WEP**: unlikely [horizon:election]
 
 ---
 
@@ -1357,8 +1347,6 @@ Wildcard scenarios are defined as low-probability (<15%), high-impact events tha
 - L campaigns in election as opposition "liberal alternative" — could paradoxically lift to 5–6%
 - Tidö II scenario (A) probability collapses to ~12%
 
-**WEP**: unlikely [horizon:election] — historically Swedish coalition partners do not exit before elections, but L's existential threat level (3.8% polling) creates incentive for "martyr party" strategy.
-
 ---
 
 ### Wildcard 4 — Major Swedish Bank Failure or Near-Failure (P: 3%)
@@ -1382,8 +1370,6 @@ Wildcard scenarios are defined as low-probability (<15%), high-impact events tha
 - If threshold reduced to 3%: opens door for new parties (Alternativ för Sverige, feminist parties) to enter Riksdag — potentially fragmenting both blocs
 - If threshold raised to 5%: L certainly eliminated; MPs at borderline risk
 - Either change fundamentally reorders coalition mathematics for 2026 and beyond
-
-**WEP**: very unlikely [horizon:election] — electoral reform requires broad Riksdag consensus and typically takes years. However, a hung parliament scenario (D) could create emergency incentive for reform to avoid repeat deadlock.
 
 ---
 

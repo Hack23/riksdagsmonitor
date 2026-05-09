@@ -1,11 +1,11 @@
 ---
-title: "Sweden's parliamentary opposition has filed 14 motions in the week of"
-description: "Sweden's parliamentary opposition has filed 14 motions in the week of 13–17 April 2026 challenging the government's extra supplementary budget (prop. 2025/26:236), deportation law reform (prop."
+title: "Sweden's parliamentary opposition has filed 14 motions in the week"
+description: "Sweden's parliamentary opposition has filed 14 motions in the week of 13–17 April 2026 challenging the government's extra supplementary budget (prop. 2025/26:236), deportation law reform (prop.…"
 date: 2026-04-23
 subfolder: motions
 slug: 2026-04-23-motions
 source_folder: analysis/daily/2026-04-23/motions
-generated_at: 2026-05-09T06:33:55.011Z
+generated_at: 2026-05-09T10:11:20.380Z
 language: en
 layout: article
 ---
@@ -296,8 +296,6 @@ This document is catalogued in the data-download-manifest but full text was not 
 
 ### Political Significance
 
-**DIW**: 3–5/10. Lower-priority motion in the 2025/26 riksmöte batch relative to the four flagship motions (HD024082, HD024090, HD024092, HD024098).
-
 ### Key Claims
 
 Available only from title/metadata — specific claims require full text retrieval.
@@ -318,8 +316,6 @@ Full text not fetched. This file should be upgraded to [B1] in Run 2 by fetching
 This document is catalogued in the data-download-manifest but full text was not retrieved in this analysis run. Analysis is based on title, party attribution, and document metadata only.
 
 ### Political Significance
-
-**DIW**: 3–5/10. Lower-priority motion in the 2025/26 riksmöte batch relative to the four flagship motions (HD024082, HD024090, HD024092, HD024098).
 
 ### Key Claims
 
@@ -342,8 +338,6 @@ This document is catalogued in the data-download-manifest but full text was not 
 
 ### Political Significance
 
-**DIW**: 3–5/10. Lower-priority motion in the 2025/26 riksmöte batch relative to the four flagship motions (HD024082, HD024090, HD024092, HD024098).
-
 ### Key Claims
 
 Available only from title/metadata — specific claims require full text retrieval.
@@ -364,8 +358,6 @@ Full text not fetched. This file should be upgraded to [B1] in Run 2 by fetching
 S motion opposing prop. 2025/26:236's supplementary budget. Core argument: the electricity support scheme has a design flaw that excludes approximately 800,000 cooperative housing (*bostadsrätt*) households. S proposes amending the design to include these households, not cancelling the energy support overall.
 
 ### Political Significance
-
-**DIW**: 8/10. This is the flagship opposition budget motion from the largest opposition party, filed by the former Prime Minister (Damberg). It will attract maximal media attention and define S's pre-election fiscal narrative.
 
 ### Key Claims
 
@@ -394,8 +386,6 @@ This document is catalogued in the data-download-manifest but full text was not 
 
 ### Political Significance
 
-**DIW**: 3–5/10. Lower-priority motion in the 2025/26 riksmöte batch relative to the four flagship motions (HD024082, HD024090, HD024092, HD024098).
-
 ### Key Claims
 
 Available only from title/metadata — specific claims require full text retrieval.
@@ -417,8 +407,6 @@ This document is catalogued in the data-download-manifest but full text was not 
 
 ### Political Significance
 
-**DIW**: 3–5/10. Lower-priority motion in the 2025/26 riksmöte batch relative to the four flagship motions (HD024082, HD024090, HD024092, HD024098).
-
 ### Key Claims
 
 Available only from title/metadata — specific claims require full text retrieval.
@@ -439,8 +427,6 @@ Full text not fetched. This file should be upgraded to [B1] in Run 2 by fetching
 C motion on the new reception law (*Mottagandelagen*). C broadly accepts the framework but opposes specific provisions: area restrictions on asylum seekers and the absence of guaranteed emergency welfare rights for municipalities hosting large reception centres.
 
 ### Political Significance
-
-**DIW**: 7/10. Reveals C's pragmatic liberalism on migration — neither fully supporting the restrictive government framework nor opposing it entirely. This is the key "swing vote" document in the migration cluster.
 
 ### Key Claims
 
@@ -470,8 +456,6 @@ V motion demanding rejection of the deportation law (prop. 2025/26:235) on rule-
 
 ### Political Significance
 
-**DIW**: 9/10. Highest-stakes motion in the migration cluster. Lagrådet citation gives it maximum institutional legitimacy for rule-of-law argument.
-
 ### Key Claims
 
 1. Lagrådet explicitly rejected prop. 2025/26:235 as "clearly ill-advised."
@@ -500,8 +484,6 @@ This document is catalogued in the data-download-manifest but full text was not 
 
 ### Political Significance
 
-**DIW**: 3–5/10. Lower-priority motion in the 2025/26 riksmöte batch relative to the four flagship motions (HD024082, HD024090, HD024092, HD024098).
-
 ### Key Claims
 
 Available only from title/metadata — specific claims require full text retrieval.
@@ -522,8 +504,6 @@ Full text not fetched. This file should be upgraded to [B1] in Run 2 by fetching
 V motion opposing the fuel tax cut element of prop. 2025/26:236. V argues the measure is distributionally regressive, citing RUT analysis (dnr 2026:158) showing that the benefit accrues disproportionately to high-income households (5:1 income-skew ratio).
 
 ### Political Significance
-
-**DIW**: 7/10. Strong analytical foundation via RUT cite. V is positioning itself as the distributional-justice voice in the opposition.
 
 ### Key Claims
 
@@ -551,8 +531,6 @@ RUT dnr 2026:158 document not independently fetched — cited as reported in V's
 C motion on the deportation law. Unlike V (HD024090), C does not demand full rejection — instead accepts the framework conditionally, demanding that deportation orders include adequate procedural safeguards and proportionality assessment.
 
 ### Political Significance
-
-**DIW**: 7/10. C's conditional acceptance is politically consequential — it means C will likely vote for the law despite reservations, giving the government a margin of safety beyond its bare 176 majority.
 
 ### Key Claims
 
@@ -582,8 +560,6 @@ MP motion demanding an arms export ban to dictatorships and opposing new secrecy
 
 ### Political Significance
 
-**DIW**: 4/10. Arms export policy is important but less electorally salient than budget and migration in the current cycle.
-
 ### Key Claims (from metadata and title)
 
 1. MP demands a ban on arms exports to authoritarian states.
@@ -612,8 +588,6 @@ This document is catalogued in the data-download-manifest but full text was not 
 
 ### Political Significance
 
-**DIW**: 3–5/10. Lower-priority motion in the 2025/26 riksmöte batch relative to the four flagship motions (HD024082, HD024090, HD024092, HD024098).
-
 ### Key Claims
 
 Available only from title/metadata — specific claims require full text retrieval.
@@ -634,8 +608,6 @@ Full text not fetched. This file should be upgraded to [B1] in Run 2 by fetching
 MP motion opposing the fuel tax cut, citing five expert agencies: Konjunkturinstitutet, Naturvårdsverket, 2030-sekretariatet, Statens energimyndighet, and Trafikverket. MP argues the measure undermines climate targets and contradicts expert advice.
 
 ### Political Significance
-
-**DIW**: 7/10. Five-agency citation gives this motion unusually strong expert legitimacy. MP is positioning as the "expert-aligned" voice.
 
 ### Key Claims
 

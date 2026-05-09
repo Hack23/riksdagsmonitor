@@ -5,7 +5,7 @@ date: 2026-04-23
 subfolder: monthly-review
 slug: 2026-04-23-monthly-review
 source_folder: analysis/daily/2026-04-23/monthly-review
-generated_at: 2026-05-09T06:33:55.002Z
+generated_at: 2026-05-09T10:11:20.373Z
 language: en
 layout: article
 ---
@@ -1033,8 +1033,6 @@ KD's 19 seats in 2022 represents a historical minimum. SoU17 R15 healthcare frac
 #### 3. S's Strategic Position
 
 S at 107 seats needs C (24 seats) to form majority. C's position is ambiguous — market liberal, could support either bloc. S's FiU48 tactical vote signals S is willing to cooperate with right on energy — may attract C.
-
-**WEP**: **Roughly even** whether C supports S-led or M-led government.
 
 ---
 

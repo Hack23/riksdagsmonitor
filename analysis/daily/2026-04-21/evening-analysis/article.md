@@ -5,7 +5,7 @@ date: 2026-04-21
 subfolder: evening-analysis
 slug: 2026-04-21-evening-analysis
 source_folder: analysis/daily/2026-04-21/evening-analysis
-generated_at: 2026-05-09T06:33:54.941Z
+generated_at: 2026-05-09T10:11:20.323Z
 language: en
 layout: article
 ---
@@ -908,8 +908,6 @@ The combination of a pending EU infringement deadline (47 days), climate law obl
 
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/comparative-international.md -->
-
-**CMP-ID**: CMP-2026-04-21-EVE001
 
 ---
 

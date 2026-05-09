@@ -5,7 +5,7 @@ date: 2026-05-06
 subfolder: election-cycle/next
 slug: 2026-05-06-election-cycle/next
 source_folder: analysis/daily/2026-05-06/election-cycle/next
-generated_at: 2026-05-09T06:33:55.598Z
+generated_at: 2026-05-09T10:11:20.861Z
 language: en
 layout: article
 ---
@@ -33,8 +33,6 @@ The post-2026 election cycle (2026-2030) will be governed by one of two fundamen
 | Fiscal balance | -0.8% | -0.5% | -0.2% | IMF FM Apr-2026 |
 
 > economicProvenance: {provider: "imf", dataflow: "WEO+FM", indicator: "NGDP_RPCH, LUR, GGXCNL_NGDP", vintage: "WEO Apr-2026", retrieved_at: "2026-05-06"}
-
-**WEP**: Tidö-led continuation government LIKELY [horizon:cycle]. Economic trajectory under either government: recovery LIKELY [horizon:cycle].
 
 ## Reader Intelligence Guide
 

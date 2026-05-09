@@ -1,11 +1,11 @@
 ---
-title: "Riksdag Realtime Monitor"
+title: "The Swedish Riksdag enters the final pre-election legislative sprint"
 description: "The Swedish Riksdag enters the final pre-election legislative sprint with three simultaneous breaking-news vectors: (1) the Social Democrats have launched a coordinated four-interpellation…"
 date: 2026-04-22
 subfolder: realtime-2338
 slug: 2026-04-22-realtime-2338
 source_folder: analysis/daily/2026-04-22/realtime-2338
-generated_at: 2026-05-09T06:33:54.980Z
+generated_at: 2026-05-09T10:11:20.355Z
 language: en
 layout: article
 ---

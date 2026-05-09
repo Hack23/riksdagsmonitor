@@ -1,19 +1,16 @@
 ---
-title: "Government Propositions"
-description: "WEP Confidence: Almost certain (ratification outcome) | Likely (geopolitical trajectory) DIW: L2 Strategic | Date: 2026-05-06"
+title: "Sweden tables ratification votes for two EU-Central Asia EPCAs"
+description: "Sweden tables ratification votes for two EU-Central Asia EPCAs on 2026-05-06. Both agreements (EU-Kyrgyzstan: HD03248; EU-Uzbekistan: HD03249) are treaty ratification propositions from…"
 date: 2026-05-06
 subfolder: propositions
 slug: 2026-05-06-propositions
 source_folder: analysis/daily/2026-05-06/propositions
-generated_at: 2026-05-09T06:33:55.622Z
+generated_at: 2026-05-09T10:11:20.881Z
 language: en
 layout: article
 ---
 ## Executive Brief
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/propositions/executive-brief.md -->
-
-**WEP Confidence**: Almost certain (ratification outcome) | Likely (geopolitical trajectory)  
-**DIW**: L2 Strategic | **Date**: 2026-05-06
 
 ---
 
@@ -108,9 +105,6 @@ Use this guide to read the article as a political-intelligence product rather th
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/propositions/synthesis-summary.md -->
-
-**DIW**: L2 Strategic | **Horizon**: T+72h to T+1y  
-**WEP**: Likely to Almost Certain | **Admiralty**: [B2]
 
 ### Overview
 
@@ -657,8 +651,6 @@ Extremely unlikely. Would require: (a) major Kyrgyzstan/Uzbekistan political cri
 
 ## Election 2026 Analysis
 <!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-06/propositions/election-2026-analysis.md -->
-
-**Horizon**: T+1460d (election cycle) | **WEP**: Remote impact on Swedish election
 
 ### Electoral Relevance Assessment
 
