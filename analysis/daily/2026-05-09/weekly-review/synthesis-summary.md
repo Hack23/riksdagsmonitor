@@ -137,3 +137,39 @@ The housing market (CU31) context is critical: Sweden's owner-occupied housing m
 ---
 
 *Source: riksdag-regering MCP (11 documents, riksmöte 2025/26) | IMF WEO-2026-04 | Riksdagsmonitor Weekly Review 2026-05-09*
+
+---
+
+## ⚡ Pass 2 Update — Constitutional Reform and European Dimension
+
+*New data sources integrated in Pass 2 (2026-05-09 improvement run):*
+
+### MAJOR GAP CORRECTION: Constitutional Abortion Reform (KU Committee)
+
+**Critical Pass 1 omission**: The Constitutional Committee (KU) approved — as *vilande* (pending, requiring a second vote after September 2026 election) — the government's proposal to constitutionally enshrine abortion rights in the Instrument of Government (*grundlagsskyddad aborträtt* in Regeringsformen). The same package covers expanded grounds to restrict association freedom and citizenship rights.
+
+This is **the most constitutionally significant event of the 2025/26 riksmöte** and should rank equal to or above HD01CU31 in the DIW-weighted ranking. The omission in Pass 1 reflects the riksdag-regering MCP returning this as a summary/news item rather than a formal betänkande document.
+
+**Intelligence significance**:
+- First-reading approval is a coalition **legacy milestone**: M, SD, KD, L all voted in favour (SD's support is politically noteworthy given its historical reluctance on such social-liberal reforms)
+- A second vote is constitutionally required after the election — the reform becomes an **election-campaign anchor**: opposition parties will demand commitment from post-election coalition partners
+- The "association freedom" and "citizenship rights" provisions are more contentious: S, V, MP may endorse the abortion provision but contest the broader package
+- International dimension: Sweden becomes one of few EU states with constitutionally protected abortion rights, reinforcing its international normative profile
+
+### European Dimension — EU Council Meetings 11–12 May 2026
+
+Two EU Council sessions in Brussels on 11–12 May add an international layer to this week's intelligence picture:
+
+1. **EU Foreign Affairs Council (FAC) — 11 May**: The EU High Representative will brief on "current affairs" — almost certainly including the Israel-Gaza situation and potentially the Swedish flotilla incident (HD11803). If the EU issues a collective statement, Foreign Minister Malmer Stenergard's domestic position stiffens or is superseded.
+
+2. **EU FAC — Defence Ministers — 12 May**: Agenda includes an "Updated Comprehensive Threat Analysis" with specific Nordic/Baltic context. Defence Minister Pål Jonson attends. The threat analysis may accelerate Sweden's Totalförsvar legislative timeline.
+
+3. **EU Council — Education, Youth, Culture, Sports (UUKI) — 11–12 May**: Gymnasie- och forskningsminister Lotta Edholm attends. Intersects with HD01UbU28 teacher credential reform and HD01UbU20 friskolorna transparency — Swedish positions in Brussels provide context for domestic reform implementation.
+
+### Europe Day (2026-05-09)
+
+Today (9 May) is Europe Day. The Riksdag is represented at Europafestivalen in Kungsträdgården, Stockholm. EU Commissioner Jessica Roswall and EU-minister Jessica Rosencrantz are among the speakers. This contextualises Sweden's active EU engagement in a week when two EU Council meetings are imminent.
+
+---
+
+*Pass 2 improvement — Source: riksdag-regering MCP re-query, 2026-05-09*

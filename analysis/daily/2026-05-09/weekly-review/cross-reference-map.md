@@ -91,3 +91,26 @@ HD11801 (rural lighting) + HD01CU31 (urban rental market) + HD11800 (urban crime
 ---
 
 *Source: riksdag-regering MCP | structural-metadata-methodology.md | analysis/daily/2026-04-26/weekly-review/ (sibling) | 2026-05-09*
+
+---
+
+## § Sibling Folders — Weekly Review Lookback (Tier-C Requirement)
+
+*Pass 2 improvement: Cross-type synthesis for weekly-review period (2026-05-04 through 2026-05-09)*
+
+| Sibling folder | Analysis files present | Key cross-references |
+|----------------|------------------------|---------------------|
+| analysis/daily/2026-05-08/propositions/ | README.md (available if generated) | Propositioner from 2026-05-08 precede this week's committee reports |
+| analysis/daily/2026-05-07/weekly-review/ | Not available (no prior weekly run found) | N/A |
+| analysis/daily/2026-05-08/monthly-review/ | Check: README.md present | Monthly cross-reference context for PIR roll-forward |
+| analysis/daily/2026-05-09/monthly-review/ | Present (sibling folder confirmed) | Same-day monthly review provides period-scope complement |
+
+### Same-Day Sibling: monthly-review
+
+The `analysis/daily/2026-05-09/monthly-review/` folder exists as a same-day sibling. The monthly-review synthesis covers a broader temporal window (April–May 2026) while this weekly-review focuses on 2026-05-05 to 2026-05-09. Key intersections:
+
+- The constitutional reform (KU *aborträtt*) will appear in both the monthly and weekly analyses
+- The housing reform (CU31) is a weekly-review primary story but should appear in the monthly review's cumulative legislative tracking
+- Any monthly-review PIR items carried forward to this weekly cycle should be noted (see intelligence-assessment.md §Prior-Cycle PIR Roll-forward)
+
+*Source: filesystem inspection 2026-05-09 (Pass 2)*

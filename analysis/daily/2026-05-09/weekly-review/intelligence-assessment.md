@@ -83,3 +83,34 @@ flowchart LR
 ---
 
 *Source: riksdag-regering MCP | strategic-extensions-methodology.md §key-judgments | ICD 203 | 2026-05-09*
+
+---
+
+## ⚡ Pass 2 Update — Prior-Cycle PIR Ingestion + New KJs
+
+*Pass 2 improvement run (2026-05-09). New key judgments added based on Pass 2 data re-query.*
+
+### Prior-Cycle PIR Roll-forward (from 2026-04-26 weekly-review)
+
+| Carried-forward PIR | Status | Update |
+|---------------------|--------|--------|
+| Totalförsvar legislation timeline | **ACTIVE** | EU-FAC Defence (12 May) with updated threat analysis may accelerate; Defence Minister Jonson attending |
+| LO-Kraft electricity agreement PIR | **ACTIVE** | No new information this week; next datapoint expected June 2026 |
+| Cross-border worker taxation (fiscal policy) | **ACTIVE** | HD10480 this week directly addresses this; Niklas Karlsson (S) question on *stadigvarande vistelse* |
+| SD pre-election repositioning watch | **ACTIVE** | HD11802 (veil ban) is a new datapoint confirming SD wedge strategy is active |
+
+### New Key Judgment (KJ6) — Constitutional Reform
+
+| KJ | Statement | Confidence | Key Evidence |
+|----|-----------|-----------|-------------|
+| KJ6 | The *grundlagsskyddad aborträtt* (constitutionally protected abortion rights) will become a top-3 election-campaign topic for all parties, as it requires a **second parliamentary vote after September 2026** — effectively making the next Riksdag the arbiter of the constitutional amendment | HIGH [A2] | KU committee approved *vilande* in 2026-05-08 session; constitutional amendment requires two consecutive parliaments |
+
+### Revised Confidence Assessment
+
+The original Pass 1 ICD 203 audit is now upgraded from "Pass 1 complete ✅" to "Pass 2 complete ✅" with the following calibration changes:
+
+- KJ2 (Israel flotilla escalation within 7 days): Upgraded from HIGH [A2] to HIGH [A1] — EU-FAC meeting 11 May creates an EU-level escalation pathway independent of Swedish domestic politics
+- KJ6 (constitutional abortion reform): New [A2] — documented KU committee action, constitutional process well-established
+- Forward indicators: Extended from 10 to 13 PIRs; PIR-W11 through PIR-W13 added in Pass 2
+
+*Source: riksdag-regering MCP re-query 2026-05-09 (Pass 2) | ICD 203 self-audit: Pass 2 complete ✅*

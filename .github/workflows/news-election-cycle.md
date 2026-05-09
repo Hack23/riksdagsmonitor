@@ -62,6 +62,7 @@ runtimes:
 network:
   allowed:
     - node
+    - playwright
     - docker.io
     - registry-1.docker.io
     - auth.docker.io
