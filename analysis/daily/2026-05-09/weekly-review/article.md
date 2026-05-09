@@ -5,7 +5,7 @@ date: 2026-05-09
 subfolder: weekly-review
 slug: 2026-05-09-weekly-review
 source_folder: analysis/daily/2026-05-09/weekly-review
-generated_at: 2026-05-09T07:39:21.442Z
+generated_at: 2026-05-09T09:11:40.982Z
 language: en
 layout: article
 ---
@@ -237,6 +237,8 @@ The housing market (CU31) context is critical: Sweden's owner-occupied housing m
 
 *Source: riksdag-regering MCP (11 documents, riksmöte 2025/26) | IMF WEO-2026-04 | Riksdagsmonitor Weekly Review 2026-05-09*
 
+---
+
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/intelligence-assessment.md -->
 
@@ -318,6 +320,8 @@ flowchart LR
 ---
 
 *Source: riksdag-regering MCP | strategic-extensions-methodology.md §key-judgments | ICD 203 | 2026-05-09*
+
+---
 
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/significance-scoring.md -->
@@ -1274,6 +1278,8 @@ From **2026-04-26 weekly-review**:
 ---
 
 *Source: riksdag-regering MCP | intelligence-assessment-methodology.md §forward-indicators | 2026-05-09*
+
+---
 
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/scenario-analysis.md -->
@@ -2714,6 +2720,27 @@ HD11801 (rural lighting) + HD01CU31 (urban rental market) + HD11800 (urban crime
 
 *Source: riksdag-regering MCP | structural-metadata-methodology.md | analysis/daily/2026-04-26/weekly-review/ (sibling) | 2026-05-09*
 
+---
+
+### § Sibling Folders — Weekly Review Lookback (Tier-C Requirement)
+
+*Pass 2 improvement: Cross-type synthesis for weekly-review period (2026-05-04 through 2026-05-09)*
+
+| Sibling folder | Analysis files present | Key cross-references |
+|----------------|------------------------|---------------------|
+| analysis/daily/2026-05-08/propositions/ | README.md (available if generated) | Propositioner from 2026-05-08 precede this week's committee reports |
+| analysis/daily/2026-05-07/weekly-review/ | Not available (no prior weekly run found) | N/A |
+| analysis/daily/2026-05-08/monthly-review/ | Check: README.md present | Monthly cross-reference context for PIR roll-forward |
+| analysis/daily/2026-05-09/monthly-review/ | Present (sibling folder confirmed) | Same-day monthly review provides period-scope complement |
+
+#### Same-Day Sibling: monthly-review
+
+The `analysis/daily/2026-05-09/monthly-review/` folder exists as a same-day sibling. The monthly-review synthesis covers a broader temporal window (April–May 2026) while this weekly-review focuses on 2026-05-05 to 2026-05-09. Key intersections:
+
+- The constitutional reform (KU *aborträtt*) will appear in both the monthly and weekly analyses
+- The housing reform (CU31) is a weekly-review primary story but should appear in the monthly review's cumulative legislative tracking
+- Any monthly-review PIR items carried forward to this weekly cycle should be noted (see intelligence-assessment.md §Prior-Cycle PIR Roll-forward)
+
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/methodology-reflection.md -->
 
@@ -2832,6 +2859,8 @@ Plus: `pir-status.json` (required sidecar; to be created) + 11 per-document anal
 ---
 
 *Source: ICD 203 §analytic standards | intelligence-assessment-methodology.md §methodology-reflection | 2026-05-09*
+
+---
 
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/weekly-review/data-download-manifest.md -->
