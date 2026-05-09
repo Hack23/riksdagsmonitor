@@ -5,7 +5,7 @@ date: 2026-05-09
 subfolder: election-cycle/current
 slug: 2026-05-09-election-cycle/current
 source_folder: analysis/daily/2026-05-09/election-cycle/current
-generated_at: 2026-05-09T10:45:33.751Z
+generated_at: 2026-05-09T12:22:22.284Z
 language: en
 layout: article
 ---
@@ -61,7 +61,6 @@ Use this guide to read the article as a political-intelligence product rather th
 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
 | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
-| [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
 | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
 
 ## Synthesis Summary
@@ -251,48 +250,6 @@ The Tidö coalition delivers its most ambitious legislative day of the mandate o
 | 12 | HD01JuU32 | Public gatherings security | 3 | 4 | 4 | 11 | **16.5** | HIGH |
 
 **DIW Score Key**: D=Depth (1-3), I=Impact (1-5), W=Weighted significance (1-5)
-
-## Per-document intelligence
-
-### HD01UbU28
-<!-- source: documents/HD01UbU28-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/election-cycle/current/documents/HD01UbU28-analysis.md -->
-
-**dok_id**: HD01UbU28 | **Type**: bet | **Committee**: UbU | **Minister**: Lotta Edholm (L)  
-
-### Summary
-Committee report on teacher certification and competence in Sweden's new 10-year compulsory school. Key decision: Teachers who held legitimation under the 9-year structure retain full recognition in the 10-year structure without mandatory re-certification. Closes administrative gap that could have forced ~12,000 teachers into bureaucratic re-qualification.
-
-### Electoral Significance
-CRITICAL for Liberalerna. This is Lotta Edholm's signature delivery. The 10-year school reform (grundskola 10 år) — adding a preschool class as formal Grade 1 — is L's most prominent education policy achievement. This committee report shows the reform is administratively coherent and teacher-friendly.
-
-### Policy Context
-Sweden has a structural teacher shortage (~15% vacancy rate per Skolverket 2025). Any reform that creates additional barriers to teaching would worsen the shortage. HD01UbU28 removes a potential unintended consequence of the school structure reform.
-
-### Cross-references
-- Prior: 10-year school legislation (Prop. 2024/25:XXX)
-- Skolverket: Certification database maintained by Skolverket — no new system required
-- Next cycle: Teacher supply challenge continues; this is administrative fix, not structural solution
-
-### HD03267
-<!-- source: documents/HD03267-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/election-cycle/current/documents/HD03267-analysis.md -->
-
-**dok_id**: HD03267 | **Type**: prop | **Ministry**: Justitiedepartementet | **Minister**: Gunnar Strömmer (M)  
-
-### Summary
-Proposition to strengthen the legal framework for expelling foreign nationals who constitute "qualified security threats" (kvalificerade säkerhetshot). Key reforms: (1) Faster Migrationsverket/Säpo coordination pathway; (2) Reduced judicial delay from 24-36 months to 6-12 months; (3) Expanded security certificate scope.
-
-### Electoral Significance
-CRITICAL. This is the hardest security-legislation signal from Tidö. SD voters interpret as identity politics fulfilment. M voters interpret as rule-of-law security competence. L voters accept as proportionate with Lagrådet oversight.
-
-### Constitutional Risk
-Lagrådet review pending. RF 2:4 (freedom of movement, right to remain) proportionality assessment required. Likely outcome: conditional approval with requirement for explicit proportionality guidelines in implementing regulations.
-
-### Cross-references
-- Complements: HD01FöU18 (SIGINT reform)
-- Cross-cycle: Will bind next government regardless of election outcome (bipartisan security consensus)
-- International: ECHR Art.3/8 compatibility required
-
-> pir_trigger: PIR-007 (Lagrådet HD03267 verdict)
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/election-cycle/current/stakeholder-perspectives.md -->
@@ -1617,8 +1574,6 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/election-cycle/current/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/election-cycle/current/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/election-cycle/current/significance-scoring.md)
-- [`documents/HD01UbU28-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/election-cycle/current/documents/HD01UbU28-analysis.md)
-- [`documents/HD03267-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/election-cycle/current/documents/HD03267-analysis.md)
 - [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/election-cycle/current/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/election-cycle/current/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/election-cycle/current/voter-segmentation.md)
