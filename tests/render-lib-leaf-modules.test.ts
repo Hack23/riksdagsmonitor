@@ -63,9 +63,11 @@ import {
 } from '../scripts/render-lib/aggregator/reader-guide.js';
 import {
   SENTENCE_END_RE,
+  isAbbreviationDot,
   markdownInlineToText,
   readBlufParagraph,
   readFirstParagraph,
+  stripBlufLabel,
   truncateToSentenceBoundary,
 } from '../scripts/render-lib/aggregator/seo/description.js';
 import {
@@ -156,6 +158,88 @@ describe('aggregator/cleaning/admin-bylines — paragraph-level admin stripper',
     expect(out).toContain('Story prose here.');
     expect(out).not.toContain('**Author**');
     expect(out).not.toContain('**Run ID**');
+  });
+
+  // ──────────────────────────────────────────────────────────────────
+  // Round 7 (2026-05-09) — admin-field expansion. Preamble fields that
+  // leaked into <meta description> across news/2026-05-08-*-en.html.
+  // ──────────────────────────────────────────────────────────────────
+
+  it('ADMIN_FIELD_RE matches Round 7 leak fields (DIW Composite, WEP, Audience)', () => {
+    expect('**DIW Composite**: 10.0/10 (election-adjusted)'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**WEP**: Almost Certainly (AC, 90-95%)'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**Audience**: Editors, researchers, engaged citizens'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**Audience for this brief**: Editors'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**Iteration**: Pass 2'.match(ADMIN_FIELD_RE)).not.toBeNull();
+  });
+
+  it('stripLeadingAdminBylines removes the realtime-pulse Audience admin block', () => {
+    // Reproduces the leak shape from analysis/daily/2026-05-08/realtime-pulse/executive-brief.md.
+    const input =
+      '**Classification**: UNCLASSIFIED — PUBLIC  \n**Audience**: Editors, researchers, engaged citizens  \n**Date**: 2026-05-08  \n**Prepared by**: Riksdagsmonitor news-realtime-monitor\n\nThe Riksdag chamber on 8 May 2026 debates two significant committee reports.';
+    const out = stripLeadingAdminBylines(input);
+    expect(out).toContain('The Riksdag chamber on 8 May 2026');
+    expect(out).not.toContain('Audience');
+    expect(out).not.toContain('Classification');
+  });
+
+  it('stripLeadingAdminBylines removes the propositions DIW Composite admin block', () => {
+    // Reproduces the leak shape from analysis/daily/2026-05-08/propositions/executive-brief.md.
+    const input =
+      '**Classification**: B2 (Probably True / Reliable) | **WEP**: Almost Certainly (AC, 90-95%)  \n**DIW Composite**: 10.0/10 (election-adjusted)  \n**Analyst**: AI political intelligence synthesis  \n**Date**: 2026-05-08\n\nOn 7 May 2026, the Tidö government submitted three propositions.';
+    const out = stripLeadingAdminBylines(input);
+    expect(out).toContain('On 7 May 2026');
+    expect(out).not.toContain('DIW Composite');
+    expect(out).not.toContain('WEP');
+  });
+
+  // ──────────────────────────────────────────────────────────────────
+  // Round 8 (2026-05-09) — multi-value continuation tolerance.
+  // Audit of analysis/daily/2026-05-07/propositions/ showed
+  // `**WEP Confidence**: Almost certain (ratification outcome) | Likely (geopolitical trajectory)`
+  // surviving the previous "every fragment must match" rule because the
+  // post-pipe value (`Likely (geopolitical trajectory)`) had no field
+  // label. The new per-line rule treats it as a value continuation.
+  // ──────────────────────────────────────────────────────────────────
+
+  it('stripLeadingAdminBylines accepts pipe-separated value continuations on admin lines', () => {
+    const input =
+      '**Classification**: Admiralty [B2] | **Horizon**: T+72h / T+90d  \n**WEP Confidence**: Almost certain (ratification outcome) | Likely (geopolitical trajectory)  \n**DIW**: L2 Strategic | **Date**: 2026-05-07\n\n## 🔴 Key Intelligence Finding\n\nThe Tidö government has signed three interlocking propositions.';
+    const out = stripLeadingAdminBylines(input);
+    expect(out).toContain('Tidö government has signed');
+    expect(out).not.toContain('WEP Confidence');
+    expect(out).not.toContain('Likely (geopolitical');
+    expect(out).not.toContain('DIW');
+  });
+
+  it('stripLeadingAdminBylines preserves prose containing pipes that are NOT admin', () => {
+    // Plain prose with a pipe must survive — the continuation rule
+    // only fires when the line's first fragment is admin.
+    const input =
+      'Sweden | Norway | Finland coordinate Nordic defence policy. The three states issued a joint statement.';
+    const out = stripLeadingAdminBylines(input);
+    expect(out).toContain('Sweden | Norway | Finland');
+    expect(out).toContain('joint statement');
+  });
+
+  it('ADMIN_FIELD_RE matches Round 8 leak fields (Horizon / Workflow / Election Proximity / IMF vintage)', () => {
+    expect('**Horizon**: T+72h to T+90d'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**Reading time**: ~5 minutes'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**Workflow**: news-year-ahead'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**Election**: 2026-09-13 (T+129)'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**Election Proximity**: T−135 days to Sept 14, 2026'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**Election countdown**: T−131 days'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**IMF vintage**: WEO Apr-2026'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**Riksmöte**: 2025/26 (closing phase)'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**For**: Riksdagsmonitor subscribers'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**Prepared**: 2026-05-05T07:15:00Z'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**Analyst confidence**: HIGH'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**WEP Confidence**: Almost certain'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**DIW Aggregate**: 8.4'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    // Real prose starting with `For`, `Election`, `Prepared` should NOT
+    // match (no colon).
+    expect('For decades the Riksdag'.match(ADMIN_FIELD_RE)).toBeNull();
+    expect('Election results show'.match(ADMIN_FIELD_RE)).toBeNull();
   });
 });
 
@@ -295,6 +379,94 @@ describe('aggregator/seo/description — BLUF / first-paragraph readers', () => 
     expect(out).not.toBe('…');
   });
 
+  // Round 7 (2026-05-09) — abbreviation guard. Without the guard,
+  // descriptions get cut mid-sentence at common abbreviations like
+  // `prop.`, `art.`, `Mr.` (audit of news/2026-05-08-motions-en.html).
+  it('truncateToSentenceBoundary does not cut mid-sentence at "prop." abbreviation', () => {
+    const text =
+      'Eight opposition motions filed 2026-05-04 mount challenges against two government propositions: the forestry deregulation (prop. 2025/26:236) and the youth justice reform (prop. 2025/26:237). Both will be voted before recess.';
+    const out = truncateToSentenceBoundary(text, 140, 200);
+    // Must not end at the `prop.` abbreviation period.
+    expect(out).not.toMatch(/\bprop\.$/);
+    expect(out).not.toMatch(/\(prop\.$/);
+  });
+
+  it('truncateToSentenceBoundary does not cut at "art." / "Mr." / "etc." abbreviations', () => {
+    expect(truncateToSentenceBoundary('See art. 5 ECHR. The minister noted concerns.', 20, 30))
+      .not.toMatch(/\bart\.$/);
+    expect(truncateToSentenceBoundary('Mr. Strömmer told the press. He confirmed.', 15, 25))
+      .not.toMatch(/\bMr\.$/);
+    expect(truncateToSentenceBoundary('Reform, training etc. is needed. Plans follow.', 20, 30))
+      .not.toMatch(/\betc\.$/);
+  });
+
+  it('truncateToSentenceBoundary still cuts at real sentence ends after abbreviations', () => {
+    // After the guard skips `prop.`, the next real `.` in window is the
+    // sentence terminator after "vote" — that should still be honoured
+    // when the input exceeds hardMax.
+    const tail =
+      ' Beyond that point follows further analysis that should be cut off entirely because it is past the sentence terminator we want to land on.';
+    const text =
+      'Eight motions challenge prop. 2025/26:236 and prop. 2025/26:237 in the chamber vote.' +
+      tail;
+    const out = truncateToSentenceBoundary(text, 80, 100);
+    expect(out.endsWith('vote.')).toBe(true);
+  });
+
+  it('isAbbreviationDot recognises simple abbreviations (prop., Mr., etc.)', () => {
+    // "prop." — dot at index 4
+    expect(isAbbreviationDot('prop.', 4)).toBe(true);
+    // "Mr." — dot at index 2
+    expect(isAbbreviationDot('Mr.', 2)).toBe(true);
+    // real sentence end — "vote."
+    expect(isAbbreviationDot('vote.', 4)).toBe(false);
+  });
+
+  it('isAbbreviationDot recognises multi-dot abbreviations e.g., i.e., bl.a., d.v.s.', () => {
+    // "e.g." — the trailing dot is at the end
+    const eg = 'e.g.';
+    expect(isAbbreviationDot(eg, eg.length - 1)).toBe(true);
+    // "i.e." — same pattern
+    const ie = 'i.e.';
+    expect(isAbbreviationDot(ie, ie.length - 1)).toBe(true);
+    // "bl.a." — Swedish "bland annat"
+    const bla = 'bl.a.';
+    expect(isAbbreviationDot(bla, bla.length - 1)).toBe(true);
+    // "d.v.s." — Swedish "det vill säga"
+    const dvs = 'd.v.s.';
+    expect(isAbbreviationDot(dvs, dvs.length - 1)).toBe(true);
+  });
+
+  it('isAbbreviationDot does not false-positive on non-abbreviation prefix before known suffix', () => {
+    // `example.al.` — `al` is in the set but `example` is not an abbreviation;
+    // only the FIRST component is checked so this should return false.
+    const text = 'example.al.';
+    expect(isAbbreviationDot(text, text.length - 1)).toBe(false);
+  });
+
+  it('truncateToSentenceBoundary handles multiple consecutive abbreviations', () => {
+    // Both "e.g." and "i.e." should be skipped; the real sentence end at
+    // "final." should still be honoured.
+    const result = truncateToSentenceBoundary(
+      'Text e.g. more i.e. the final sentence. Additional text that should not appear.',
+      20,
+      45,
+    );
+    expect(result).toBe('Text e.g. more i.e. the final sentence.');
+  });
+
+  it('truncateToSentenceBoundary does not cut at e.g. / i.e. / bl.a.', () => {
+    // The abbreviation dot in "e.g." should not trigger a cut.
+    expect(truncateToSentenceBoundary('This is often, e.g. in practice. Final sentence.', 20, 40))
+      .toBe('This is often, e.g. in practice.');
+    // "i.e." likewise
+    expect(truncateToSentenceBoundary('The policy, i.e. the act. Further detail.', 20, 30))
+      .toBe('The policy, i.e. the act.');
+    // "bl.a." (Swedish)
+    expect(truncateToSentenceBoundary('Åtgärder bl.a. inom skolan. Mer info.', 20, 30))
+      .toBe('Åtgärder bl.a. inom skolan.');
+  });
+
   it('readBlufParagraph returns null when no BLUF heading exists', () => {
     expect(readBlufParagraph('# Heading\n\nProse only.')).toBeNull();
   });
@@ -308,6 +480,36 @@ describe('aggregator/seo/description — BLUF / first-paragraph readers', () => 
     const input =
       '**Author**: Jane | **Date**: x\n\nThe real first paragraph.';
     expect(readFirstParagraph(input)).toBe('The real first paragraph.');
+  });
+
+  // ──────────────────────────────────────────────────────────────────
+  // Round 8 (2026-05-09) — `BLUF:` inline-label strip on the BLUF
+  // paragraph itself. Audit of news/2026-05-08-interpellations-en.html
+  // showed `BLUF: Five interpellations filed …` reaching <meta description>
+  // because some analysts write the BLUF label inline on top of the
+  // `## 🎯 BLUF` heading.
+  // ──────────────────────────────────────────────────────────────────
+
+  it('stripBlufLabel removes leading BLUF: / TL;DR: / Bottom Line: prefixes and list markers', () => {
+    expect(stripBlufLabel('BLUF: Five interpellations filed.')).toBe('Five interpellations filed.');
+    expect(stripBlufLabel('TL;DR — Sweden joins NATO.')).toBe('Sweden joins NATO.');
+    expect(stripBlufLabel('Bottom Line: The motion failed.')).toBe('The motion failed.');
+    expect(stripBlufLabel('Top Line: New SIGINT law.')).toBe('New SIGINT law.');
+    // Round 8: also strip leading ordered/unordered list markers so
+    // `1. SD fires …` doesn't survive into <meta description>.
+    expect(stripBlufLabel('1. SD fires two coordinated state-reform salvos.'))
+      .toBe('SD fires two coordinated state-reform salvos.');
+    expect(stripBlufLabel('- The Riksdag voted 173-176.'))
+      .toBe('The Riksdag voted 173-176.');
+  });
+
+  it('stripBlufLabel preserves prose without a BLUF prefix', () => {
+    expect(stripBlufLabel('The Riksdag voted 173-176.')).toBe('The Riksdag voted 173-176.');
+  });
+
+  it('readBlufParagraph strips BLUF: inline-label from the returned paragraph', () => {
+    const input = '## 🎯 BLUF\n\nBLUF: Five interpellations filed today.';
+    expect(readBlufParagraph(input)).toBe('Five interpellations filed today.');
   });
 });
 
@@ -339,6 +541,111 @@ describe('aggregator/seo/title — title cleanup & BLUF synthesis', () => {
   it('titleFromBluf returns null on empty/null input', () => {
     expect(titleFromBluf(null)).toBeNull();
     expect(titleFromBluf('')).toBeNull();
+  });
+
+  // ──────────────────────────────────────────────────────────────────
+  // Round 7 (2026-05-09) — quality-fix regressions for known-bad
+  // titles/descriptions observed in news/2026-05-08-*-en.html.
+  // ──────────────────────────────────────────────────────────────────
+
+  it('cleanArticleTitle returns null when title equals prettified subfolder (boilerplate guard)', () => {
+    // `# Executive Brief — Government Propositions 2026-05-08` →
+    // `Government Propositions` after strip → equals `prettifyFallbackTitle('propositions')`
+    // → null (forces BLUF fallback).
+    expect(
+      cleanArticleTitle(
+        'Executive Brief — Government Propositions 2026-05-08',
+        'propositions',
+      ),
+    ).toBeNull();
+    // Same for `Interpellation Debates` ↔ `interpellations`.
+    expect(
+      cleanArticleTitle('Interpellation Debates', 'interpellations'),
+    ).toBeNull();
+    // And the realtime-pulse case: `Riksdag Realtime Pulse` ends with
+    // the prettified subfolder `Realtime Pulse` so the guard fires.
+    expect(
+      cleanArticleTitle('Riksdag Realtime Pulse', 'realtime-pulse'),
+    ).toBeNull();
+  });
+
+  it('cleanArticleTitle preserves a real story title even when subfolder is supplied', () => {
+    expect(
+      cleanArticleTitle(
+        'Opposition Motions Challenge Forestry and Youth Justice Reforms',
+        'motions',
+      ),
+    ).toBe('Opposition Motions Challenge Forestry and Youth Justice Reforms');
+  });
+
+  it('titleFromBluf strips a leading "On <date>, " prefix (no literal date in title)', () => {
+    const bluf =
+      'On 7 May 2026, the Tidö government submitted three interlocking propositions.';
+    const out = titleFromBluf(bluf, 70);
+    expect(out).not.toMatch(/\b2026\b/);
+    expect(out).not.toMatch(/^On\s+\d/);
+    // First letter recapped from lower-case `the` after strip.
+    expect(out!.startsWith('The Tidö government')).toBe(true);
+  });
+
+  it('titleFromBluf strips a leading weekday + date prefix when result remains grammatical', () => {
+    // No verb-leading after strip → date prefix is removed.
+    const bluf =
+      'Friday 8 May 2026, the Riksdag advanced six committee reports.';
+    const out = titleFromBluf(bluf, 70);
+    expect(out).not.toMatch(/\b2026\b/);
+    expect(out).not.toMatch(/^Friday/);
+    expect(out!.length).toBeGreaterThan(10);
+  });
+
+  it('titleFromBluf KEEPS the date prefix when stripping would leave a verb-leading subjectless fragment', () => {
+    // `Friday 8 May 2026 marks …` → strip would leave `marks …` which is
+    // ungrammatical (lost subject). Better to ship the date than break
+    // grammar — see VERB_LEADING_TOKENS guard.
+    const bluf =
+      'Friday 8 May 2026 marks a legislative heavy-load day in the Riksdag.';
+    const out = titleFromBluf(bluf, 70);
+    expect(out!.startsWith('Friday')).toBe(true);
+    expect(out).not.toMatch(/^Marks\s/);
+  });
+
+  it('titleFromBluf strips a leading "The week of <range>" prefix', () => {
+    const bluf =
+      'The week of 2–9 May 2026 produced a cluster of domestic legislation.';
+    const out = titleFromBluf(bluf, 70);
+    expect(out).not.toMatch(/\b2026\b/);
+    expect(out).not.toMatch(/^The week of/);
+  });
+
+  it('titleFromBluf does not end on a trailing comma or coordinating connector', () => {
+    // Worst-case from news/2026-05-08-evening-analysis-en.html: cut at
+    // "in the Riksdag," — both the comma and the connector should be
+    // stripped by the post-cut cleanup.
+    const bluf =
+      'A legislative heavy-load day in the Riksdag, with six committee reports advancing toward chamber vote.';
+    const out = titleFromBluf(bluf, 70);
+    expect(out).not.toMatch(/[,;:]$/);
+    expect(out).not.toMatch(/\b(?:and|or|but|with|the|a|in|of|to|for|on|at|by|from|that|which|have|has|had|is|are|was|were|will|would)$/i);
+  });
+
+  it('titleFromBluf still returns null on empty input after date strip', () => {
+    expect(titleFromBluf('On 7 May 2026, .')).toBeNull();
+  });
+
+  // Round 8 (2026-05-09) — list-marker strip. Audit of
+  // analysis/daily/2026-05-05/evening-analysis/ showed that an ordered
+  // list `1. SD fires …` produced title `1` because the period after
+  // the digit was treated as a sentence terminator. Now we strip the
+  // list-item marker before extracting the first sentence.
+  it('titleFromBluf strips a leading ordered-list marker (1. / 2) / -)', () => {
+    expect(titleFromBluf('1. SD fires two coordinated state-reform salvos.', 70))
+      .toBe('SD fires two coordinated state-reform salvos');
+    expect(titleFromBluf('2) The opposition mounts coordinated resistance.', 70))
+      .toBe('The opposition mounts coordinated resistance');
+    expect(titleFromBluf('- The Riksdag voted 173 to 176 against the motion.', 70))
+      .toBe('The Riksdag voted 173 to 176 against the motion');
+    expect(titleFromBluf('• Sweden joins NATO summit talks.', 70))
+      .toBe('Sweden joins NATO summit talks');
   });
 });
 

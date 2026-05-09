@@ -96,6 +96,19 @@ export const PROCESS_META_FIELD_NAMES: readonly string[] = [
   // catches them safely (see ADMIN_FIELD_NAMES `[A-Z]{3}[-_]ID` entry).
   'Riksm(?:ö|o)te',
   'Election\\b(?!\\s*date)',  // Bare "Election" — keep "Election date" (a fact)
+  // Round 7 (2026-05-09) — keep parity with admin-bylines stripper so
+  // these labels are also scrubbed when they appear as standalone in-prose
+  // lines (not just inside a leading admin paragraph). See
+  // tests/render-lib-leaf-modules.test.ts §"Round 7 admin field expansion".
+  'WEP',
+  'WEP\\s*\\+\\s*ODNI',
+  'DIW(?:\\s*(?:Composite|Total|Index|Rating))?',
+  'Audience(?:\\s*for\\s*this\\s*brief)?',
+  'Disseminated\\s*at',
+  'Generated\\s*at',
+  'Iteration',
+  'Editor',
+  'Editorial\\s*owner',
 ];
 
 /**

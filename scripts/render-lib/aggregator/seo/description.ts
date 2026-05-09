@@ -35,6 +35,110 @@ import { cleanArtifactBody } from '../cleaning/structural.js';
 export const SENTENCE_END_RE = /(?:[.!?…](?=\s|$))|[。।]/g;
 
 /**
+ * Characters that may appear inside an abbreviation token when walking
+ * backwards from a candidate sentence-end `.`. Letters plus internal dots
+ * allow multi-dot abbreviations like `e.g.`, `bl.a.`, `d.v.s.` to be
+ * captured as a single token by {@link isAbbreviationDot}.
+ * Defined outside the function to avoid allocating a new regex object on
+ * every iteration of the walk-back loop.
+ */
+const ABBREV_TOKEN_CHAR_RE = /[A-Za-z.]/;
+
+/**
+ * Common abbreviations that end with `.` followed by a space — these
+ * must NOT be treated as sentence boundaries by {@link truncateToSentenceBoundary},
+ * otherwise the description gets cut mid-sentence at e.g.
+ * `… two propositions: the forestry deregulation (prop.` (audit
+ * 2026-05-09 of `news/2026-05-08-motions-en.html`).
+ *
+ * Token comparison is **case-insensitive** — abbreviations like `prop.`
+ * and `Prop.` are both treated as non-terminating. Matching is done by
+ * looking at the last whitespace-delimited word ending at the candidate
+ * sentence-end position; the word is lower-cased and looked up in
+ * {@link SENTENCE_END_ABBREV_SET}.
+ *
+ * Note: case-insensitive matching means `Mr.` *will* also match an
+ * (extremely unlikely) in-word `Imr.` ending, but the practical risk is
+ * negligible because the word match is anchored to a whitespace
+ * boundary on the left, not just any character.
+ *
+ * Keep the list short and high-signal — false-negatives (we miss an
+ * abbreviation and cut early) only mean the description fragment is a
+ * bit shorter; false-positives (we treat a real sentence end as an
+ * abbreviation and overrun) would push the description past `hardMax`,
+ * which is unrecoverable downstream.
+ */
+export const SENTENCE_END_ABBREVIATIONS: readonly string[] = [
+  // Document references — the leak case
+  'prop', 'props', 'mot', 'bet', 'skr', 'art', 'sec', 'ch', 'no', 'nr',
+  'p', 'pp', 'ed', 'eds', 'vol', 'fig', 'cf',
+  // Latin abbreviations
+  'etc', 'vs', 'eg', 'ie', 'al',
+  // Honorifics and titles (English + Swedish)
+  'Mr', 'Mrs', 'Ms', 'Dr', 'Prof', 'Sr', 'Jr', 'St',
+  // Swedish-specific common abbreviations
+  'bl', 'dvs', 'fr', 't', 'ex', 'tex', 'kl',
+];
+
+/**
+ * Set form of {@link SENTENCE_END_ABBREVIATIONS} for O(1) lookup.
+ * Comparison is case-insensitive — abbreviations like `prop.` and
+ * `Prop.` are both treated as non-terminating.
+ */
+const SENTENCE_END_ABBREV_SET = new Set(
+  SENTENCE_END_ABBREVIATIONS.map((a) => a.toLowerCase()),
+);
+
+/**
+ * Return `true` when the `.` at `text[dotIndex]` is the trailing dot of
+ * a known abbreviation rather than a real sentence terminator.
+ *
+ * Looks back from the dot position to the first whitespace boundary,
+ * collecting the **full** preceding token — including any internal dots.
+ * This allows multi-dot abbreviations like `e.g.`, `i.e.`, `U.S.`,
+ * `bl.a.`, `d.v.s.` to be detected in addition to simple ones like
+ * `prop.` and `Mr.`
+ *
+ * Normalisation strategy (applied in order):
+ * 1. Lower-case the full token and strip all internal dots; look up the
+ *    dotless form (`e.g` → `eg`, `d.v.s` → `dvs`). This covers most
+ *    multi-dot abbreviations whose canonical form is in the set.
+ * 2. If the dotless form is not in the set but the token contains internal
+ *    dots, check the **first** dot-split component (`bl.a.` → `bl`). Only
+ *    the first component is checked to prevent a non-abbreviation prefix
+ *    from accidentally matching a set member that appears later in the
+ *    token (e.g. `example.al.` must not be treated as an abbreviation
+ *    even though `al` is in the set).
+ *
+ * Pure function — exported only for testability.
+ */
+export function isAbbreviationDot(text: string, dotIndex: number): boolean {
+  if (dotIndex < 0 || dotIndex >= text.length || text[dotIndex] !== '.') return false;
+  // Walk back from the character before the dot to the nearest whitespace,
+  // allowing letters and internal dots (for e.g. / i.e. / U.S. etc.).
+  let start = dotIndex - 1;
+  while (start >= 0 && ABBREV_TOKEN_CHAR_RE.test(text[start]!)) start -= 1;
+  const rawToken = text.slice(start + 1, dotIndex);
+  if (!rawToken) return false;
+  // Normalise: lower-case and strip all dots so `e.g` → `eg`, `d.v.s` → `dvs`.
+  // This handles abbreviations whose dotless form is already in the set (eg, ie, dvs).
+  const normalised = rawToken.toLowerCase().replace(/\./g, '');
+  if (SENTENCE_END_ABBREV_SET.has(normalised)) return true;
+  // For compound abbreviations with internal dots where the dotless form is
+  // not in the set (e.g. `bl.a.` → dotless `bla` is not present, but `bl`
+  // is), check the **first** dot-split component only. Limiting to the
+  // first component avoids false positives where an unrecognised prefix is
+  // followed by a known abbreviation (`example.al.` would incorrectly
+  // match if we checked all components, but it won't match first-component
+  // `example`).
+  if (rawToken.includes('.')) {
+    const firstComponent = rawToken.toLowerCase().split('.')[0];
+    if (firstComponent && SENTENCE_END_ABBREV_SET.has(firstComponent)) return true;
+  }
+  return false;
+}
+
+/**
  * Convert markdown inline syntax (links, images, emphasis) to plain
  * text suitable for the `<meta description>` value. Whitespace is
  * collapsed; trailing punctuation is preserved.
@@ -83,12 +187,18 @@ export function truncateToSentenceBoundary(
   if (normalised.length === 0) return '';
   if (normalised.length <= hardMax) return normalised;
 
-  // Find every sentence-end position in the prefix within hardMax.
+  // Find every sentence-end position in the prefix within hardMax,
+  // **excluding** dots that are part of common abbreviations
+  // (`prop.`, `art.`, `Mr.`, …) — those would otherwise cut the
+  // description mid-sentence. See {@link isAbbreviationDot}.
   const window = normalised.slice(0, hardMax + 1);
   SENTENCE_END_RE.lastIndex = 0;
   const ends: number[] = [];
   let m: RegExpExecArray | null;
   while ((m = SENTENCE_END_RE.exec(window)) !== null) {
+    // Skip abbreviation dots so `prop.` / `art.` / `Mr.` don't terminate
+    // a sentence. `m[0]` is one of `.!?…。।`; only `.` triggers the guard.
+    if (m[0] === '.' && isAbbreviationDot(window, m.index)) continue;
     ends.push(m.index + m[0].length);
   }
 
@@ -137,9 +247,24 @@ export function readBlufParagraph(markdown: string): string | null {
     if (/^[-*_]{3,}\s*$/.test(p)) continue;        // skip thematic breaks (---, ***, ___)
     const fragments = p.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
     if (fragments.length > 0 && fragments.every((f) => ADMIN_FIELD_RE.test(f.trim()))) continue;
-    return markdownInlineToText(p);
+    return stripBlufLabel(markdownInlineToText(p));
   }
   return null;
+}
+
+/**
+ * Strip a leading `BLUF:` / `TL;DR:` / `Bottom Line:` / `Top Line:`
+ * label and any leading ordered/unordered list-item marker from a
+ * paragraph. Some analysts write the label inline at the start of the
+ * BLUF prose, on top of the `## 🎯 BLUF` heading; others use a
+ * numbered/bulleted list as the BLUF itself. Without stripping these
+ * markers, `<meta description>` reads `BLUF: …` or `1. SD fires …`
+ * instead of just the prose. Pure function — exported for tests.
+ */
+export function stripBlufLabel(text: string): string {
+  return text
+    .replace(/^(?:BLUF|TL;DR|Bottom\s+Line|Top\s+Line)\s*[:—–-]\s*/i, '')
+    .replace(/^\s*(?:\d+[.)]|[-*•])\s+/, '');
 }
 
 /**
@@ -160,7 +285,7 @@ export function readFirstParagraph(markdown: string): string | null {
     // Structural-only delimiter (see ADMIN_FRAGMENT_SPLITTER JSDoc).
     const fragments = p.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
     if (fragments.length > 0 && fragments.every((f) => ADMIN_FIELD_RE.test(f.trim()))) continue;
-    return markdownInlineToText(p);
+    return stripBlufLabel(markdownInlineToText(p));
   }
   return null;
 }

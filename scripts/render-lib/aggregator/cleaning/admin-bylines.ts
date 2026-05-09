@@ -179,6 +179,55 @@ export const ADMIN_FIELD_NAMES: readonly string[] = [
   'Level',
   'Relates\\s*to',
   'frs',
+  // Round 7 (2026-05-09) — preamble fields observed leaking into
+  // <meta description> for propositions / realtime-pulse / interpellation
+  // articles. Audit of news/2026-05-08-*-en.html showed:
+  //   - propositions: "DIW Composite: 10.0/10 (election-adjusted)"
+  //   - realtime-pulse: "Audience: Editors, researchers, engaged citizens"
+  // The paragraph-level stripper requires every fragment in the leading
+  // paragraph to match ADMIN_FIELD_RE; without these labels the whole
+  // admin block survives into the <meta description>. Per
+  // seo-metadata-contract.md §3.1 ("No admin metadata"), these MUST
+  // never reach the SERP snippet.
+  'WEP',
+  'WEP\\s*\\+\\s*ODNI',
+  'WEP\\s*Confidence',
+  'WEP\\s*summary',
+  'DIW(?:\\s*(?:Composite|Total|Index|Rating|Aggregate|Score))?',
+  'Audience(?:\\s*for\\s*this\\s*brief)?',
+  'Disseminated\\s*at',
+  'Generated\\s*at',
+  'Iteration',
+  'Editor',
+  'Editorial\\s*owner',
+  // Round 8 (2026-05-09) — additional preamble fields observed in
+  // executive-briefs across analysis/daily/2026-05-{05,06,07}/. Audit
+  // showed the following labels leaking into <title> + <meta description>
+  // because they were not in ADMIN_FIELD_NAMES:
+  //   - 2026-05-07/evening-analysis: `**DIW Aggregate**`, `**Horizon**`,
+  //     `**Reading time**`
+  //   - 2026-05-07/propositions: `**WEP Confidence**`
+  //   - 2026-05-07/year-ahead: `**Workflow**`, `**Election**`,
+  //     `**IMF vintage**`, `**Riksmöte**`
+  //   - 2026-05-05/evening-analysis: `**For**`, `**Election countdown**`
+  //   - 2026-05-05/interpellations: `**Prepared**`, `**Analyst confidence**`,
+  //     `**WEP summary**`
+  // All structured `**Label**: value` fields with one extra job: keep
+  // the regex narrow enough that real prose words (`For example, …`,
+  // `Election results show …`) do NOT match (they have no colon, so the
+  // `\s*:` tail filters them out).
+  'Horizon',
+  'Reading\\s*time',
+  'Workflow',
+  'Election(?:\\s*countdown|\\s*date|\\s*proximity)?',
+  'IMF\\s*vintage',
+  'Riksm(?:ö|o)te',
+  'For',
+  'Prepared',
+  'Analyst\\s*confidence',
+  'Pass(?:\\s*\\d+)?',
+  'AI[-\\s]?FIRST(?:\\s+iterations?)?',
+  'ARTICLE_TYPE',
 ];
 
 /**
@@ -206,22 +255,35 @@ export const ADMIN_FRAGMENT_SPLITTER = /\s*(?:\||｜|、|\n|\s{2,})\s*/;
 
 /**
  * Remove admin-byline paragraphs anywhere in the artifact body. Walks
- * paragraph-by-paragraph; any paragraph whose fragments are 100% bold-
- * label admin metadata (per {@link ADMIN_FIELD_RE}) is dropped. Any
- * paragraph with at least one non-admin fragment is preserved verbatim.
+ * paragraph-by-paragraph; any paragraph whose **lines** are 100% admin
+ * is dropped.
  *
- * Originally this stripper only ran on **leading** paragraphs and stopped
- * at the first prose paragraph (hence the name). Per-document analyses
- * and Family C/D artifacts emit *additional* admin blocks immediately
- * under their internal `### {dok_id}` / `## Section` headings, so the
- * leading-only sweep let ~393 admin-byline lines leak into the published
- * article body across 36 of 41 articles (audit 2026-04-27). Walking the
- * whole body — but still requiring a paragraph to be **fully** admin —
- * keeps body prose intact while removing the duplicate metadata blocks.
+ * Multi-value tolerance (Round 8, 2026-05-09): a single line is treated
+ * as admin when its **first** fragment matches {@link ADMIN_FIELD_RE}
+ * **and** every subsequent fragment on the same line either also
+ * matches or is a value continuation (no colon, no `**…**:` re-
+ * introduction). This accepts pipe-separated multi-value rows like:
+ *
+ *   `**WEP Confidence**: Almost certain (ratification) | Likely (geopolitical)`
+ *
+ * which the 2026-05-09 audit found leaking into the propositions
+ * `<meta description>` because the second pipe-fragment had no field
+ * label and the previous "every fragment is admin" rule rejected the
+ * whole paragraph.
+ *
+ * Historical context: originally this stripper only ran on **leading**
+ * paragraphs and stopped at the first prose paragraph (hence the name).
+ * Per-document analyses and Family C/D artifacts emit *additional*
+ * admin blocks under internal headings, so the leading-only sweep let
+ * ~393 admin-byline lines leak across 36 of 41 articles (audit 2026-
+ * 04-27). The current implementation walks the whole body — but still
+ * requires a paragraph to be **fully** admin (with the multi-value
+ * continuation rule above) — so body prose stays intact while
+ * duplicate metadata blocks are removed.
  *
  * The function name and signature are preserved so callers and tests
- * that imported it through `__test__` continue to work; the behaviour is
- * a strict superset of the previous version.
+ * that imported it through `__test__` continue to work; the behaviour
+ * is a strict superset of every previous version.
  */
 export function stripLeadingAdminBylines(body: string): string {
   const paragraphs = body.split(/\n\n+/);
@@ -229,14 +291,33 @@ export function stripLeadingAdminBylines(body: string): string {
   for (const p of paragraphs) {
     const trimmed = p.trim();
     if (!trimmed) {
-      // Preserve blank paragraph spacing — collapsed downstream by the
-      // `\n{3,}` rule in cleanArtifactBody.
       kept.push(p);
       continue;
     }
-    const fragments = trimmed.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
-    const allAdmin = fragments.every((f) => ADMIN_FIELD_RE.test(f.trim()));
-    if (allAdmin && fragments.length > 0) continue;
+    // Split into lines first, then fragments per line. A line is admin
+    // iff its first fragment matches ADMIN_FIELD_RE and every subsequent
+    // fragment is either admin or a value continuation.
+    const lines = trimmed.split(/\n+/);
+    const allLinesAdmin = lines.every((line) => {
+      const lineTrimmed = line.trim();
+      if (!lineTrimmed) return true;
+      const fragments = lineTrimmed.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
+      if (fragments.length === 0) return true;
+      const firstAdmin = ADMIN_FIELD_RE.test(fragments[0]!.trim());
+      if (!firstAdmin) return false;
+      // Subsequent fragments: admin OR value-continuation. A
+      // value-continuation has no colon (i.e. no new label) and does
+      // not start with `**` (which would also signal a new field).
+      return fragments.slice(1).every((f) => {
+        const ft = f.trim();
+        if (!ft) return true;
+        if (ADMIN_FIELD_RE.test(ft)) return true;
+        if (ft.startsWith('**')) return false; // bold-prefixed = new field
+        if (ft.includes(':')) return false; // colon mid-fragment = label
+        return true; // pure value continuation, accept
+      });
+    });
+    if (allLinesAdmin) continue;
     kept.push(p);
   }
   return kept.join('\n\n');
