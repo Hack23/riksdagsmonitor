@@ -118,3 +118,36 @@ Plus: `pir-status.json` (required sidecar; to be created) + 11 per-document anal
 ---
 
 *Source: ICD 203 §analytic standards | intelligence-assessment-methodology.md §methodology-reflection | 2026-05-09*
+
+---
+
+## Pass 2 — Improvement Run (2026-05-09)
+
+**Run mode**: Improvement (same-day re-run; all 23 artifacts already present from Pass 1)
+**ICD 203 self-audit**: Pass 2 complete ✅
+
+### What Pass 2 Improved
+
+| Area | Pass 1 Status | Pass 2 Action |
+|------|--------------|--------------|
+| Constitutional reform (KU *aborträtt*) | **MISSING** — major gap | Added to synthesis-summary.md, intelligence-assessment.md (KJ6), forward-indicators.md (PIR-W13) |
+| EU-FAC meetings 11–12 May | Not covered | Added to synthesis-summary.md and forward-indicators.md (PIR-W11, PIR-W12) |
+| FAC-Defence threat analysis | Not covered | Added to forward-indicators.md (PIR-W12) |
+| Prior-cycle PIR ingestion (Tier-C requirement) | Partial — 2026-04-26 PIRs referenced | Full roll-forward table added to intelligence-assessment.md |
+| Forward indicators count | 10 PIRs | 13 PIRs (PIR-W11 through W13 added) |
+| Europe Day context | Missing | Added to synthesis-summary.md |
+
+### Data Quality Revised Assessment
+
+| Source | Pass 1 Coverage | Pass 2 Update |
+|--------|----------------|--------------|
+| riksdag-regering MCP | 11 documents (2026-05-08 lookback) | 20 additional documents from 2026-05-08–09; EU-nämnden bilaga documents (HD0N50B3EA, HD0N50B3EC, HD0N50B3EE) recovered |
+| Constitutional reform | Not captured | KU committee news items captured as unstructured summaries; content ingested manually |
+
+### Key Gap Identified in Pass 1
+
+The Constitutional Committee's approval of the *grundlagsskyddad aborträtt* package as *vilande* was the most significant omission in Pass 1. The riksdag-regering MCP returned this as a news summary item rather than a formal betänkande with `dok_id`, causing it to fall below the initial download filter. Pass 2 corrects this by explicitly including KU committee news summaries.
+
+**Lesson for future runs**: Weekly-review analysis should explicitly query riksdag-regering for `doktyp` news/summary items as a supplementary pass to capture committee news that precedes formal betänkande publication.
+
+*Pass 2 complete — 2026-05-09T09:xx:xxZ*

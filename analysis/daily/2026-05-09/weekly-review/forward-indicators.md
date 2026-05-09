@@ -117,3 +117,46 @@ From **2026-04-26 weekly-review**:
 ---
 
 *Source: riksdag-regering MCP | intelligence-assessment-methodology.md §forward-indicators | 2026-05-09*
+
+---
+
+## ⚡ Pass 2 Update — 2026-05-09 (Improvement Run)
+
+*New data discovered in Pass 2 from riksdag-regering MCP re-query:*
+
+### Watch Item 11: EU-FAC Meeting 11 May — Israel/Gaza Context
+**Indicator type**: EU foreign policy signal
+**Trigger**: EU Foreign Affairs Council meets 11 May 2026 in Brussels; EU High Representative to brief on "current affairs" including Middle East
+**Watch for**:
+- EU collective statement on Israel-Gaza / flotilla incidents
+- Any Swedish FM statement timed to FAC meeting
+- Sweden's voting position at FAC if an EU protest resolution tabled
+**Threshold event**: EU collectively condemns flotilla interception → Sweden's FM must align → strengthens domestic S/V/MP call for stronger Swedish stance (HD11803 escalation pathway)
+**Expected**: FAC readout 2026-05-11 evening
+
+### Watch Item 12: EU-FAC Defence Meeting 12 May — Nordic Security Implications
+**Indicator type**: Swedish defence/NATO signal
+**Trigger**: EU Foreign Affairs Council (Defence Ministers, FAC-D) meets 12 May 2026; agenda includes "Updated Comprehensive Threat Analysis"
+**Watch for**:
+- Content of EU updated threat analysis (any Nordic-specific elements)
+- Sweden's Defence Minister Pål Jonson's statement post-meeting
+- Cross-reference to Sweden's Totalförsvar legislation timeline
+**Threshold event**: EU threat analysis escalates Nordic threat level → accelerates Riksdag defence committee work in May–June → carries over from 2026-04-26 PIR on Totalförsvar
+
+### Watch Item 13: Constitutional Reform (KU) — Abortion Rights & Association Freedom
+**Indicator type**: Constitutional milestone — BLOCKING watch
+**Trigger**: KU (Constitutional Committee) has approved as vilande (pending) the government proposal to constitutionally enshrine abortion rights (grundlagsskyddad aborträtt) in the Instrument of Government (Regeringsformen). Also covers expanded grounds to restrict association freedom and citizenship rights.
+**Watch for**:
+- Final chamber vote (expected May–June 2026 session)
+- SD, C positions (both must endorse for 3/4 majority threshold)
+- Second vote required after September 2026 election (constitutional amendment process)
+**Threshold event**: Constitutional reform passes first reading → major legacy achievement for coalition; requires second reading after election → becomes an election-campaign issue
+**Significance**: HIGH [A1] — aborträtten in Regeringsformen is a landmark constitutional milestone and the most constitutionally significant event of the spring session. **This was missing from the original Pass 1 analysis and represents a material gap.**
+
+| PIR ID | Indicator | Horizon | Threshold | Action Required |
+|--------|-----------|---------|-----------|----------------|
+| PIR-W11 | EU-FAC outcome on Israel/Gaza | T+72h | EU condemns flotilla | Reassess FM HD11803 response pathway |
+| PIR-W12 | FAC-Defence threat analysis | T+72h | Nordic threat escalation | Defence analysis update |
+| PIR-W13 | KU constitutional reform vote | T+7d | Chamber passes first reading | Constitutional milestone log |
+
+*Source: riksdag-regering MCP re-query 2026-05-09 (Pass 2) | Documents: HD0N50B3EA, HD0N50B3EC, KU constitutional committee news | Analysis improvement run*
