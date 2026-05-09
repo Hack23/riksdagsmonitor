@@ -5,7 +5,7 @@ date: 2026-05-04
 subfolder: election-cycle/current
 slug: 2026-05-04-election-cycle/current
 source_folder: analysis/daily/2026-05-04/election-cycle/current
-generated_at: 2026-05-09T12:22:22.024Z
+generated_at: 2026-05-09T18:35:30.678Z
 language: en
 layout: article
 ---
@@ -75,12 +75,38 @@ flowchart LR
 
 Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
 
-| Reader need | What you'll get | Source artifact |
+| Icon | Reader need | What you'll get |
 |---|---|---|
-| [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
-| [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
-| [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
-| [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
+| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Cycle Trajectory](#rm-cycle-trajectory) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| ⚠️ | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register |
+| 📝 | [Quantitative SWOT](#rm-quantitative-swot) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Political STRIDE Assessment](#rm-political-stride-assessment) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Wildcards & Black Swans](#rm-wildcards--black-swans) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [PESTLE Analysis](#rm-pestle-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Actor Assessment](#rm-actor-assessment) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Coalition Dynamics](#rm-coalition-dynamics) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Comparative Context](#rm-comparative-context) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Confidence Calibration](#rm-confidence-calibration) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Electoral Forecast](#rm-electoral-forecast) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Forward Look](#rm-forward-look) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Institutional Constraints](#rm-institutional-constraints) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [International Context](#rm-international-context) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Key Developments](#rm-key-developments) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Media Narrative](#rm-media-narrative) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Network Analysis](#rm-network-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Policy Domain Analysis](#rm-policy-domain-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Policy Impact](#rm-policy-impact) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Public Opinion](#rm-public-opinion) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Scenario Tree](#rm-scenario-tree) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Source Inventory](#rm-source-inventory) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Strategic Implications](#rm-strategic-implications) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Timeline Analysis](#rm-timeline-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Trend Analysis](#rm-trend-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
+| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/current/synthesis-summary.md -->

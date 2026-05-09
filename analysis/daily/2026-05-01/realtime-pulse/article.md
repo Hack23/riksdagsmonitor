@@ -5,7 +5,7 @@ date: 2026-05-01
 subfolder: realtime-pulse
 slug: 2026-05-01-realtime-pulse
 source_folder: analysis/daily/2026-05-01/realtime-pulse
-generated_at: 2026-05-09T12:22:21.963Z
+generated_at: 2026-05-09T18:35:30.616Z
 language: en
 layout: article
 ---
@@ -58,17 +58,32 @@ gantt
 
 Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
 
-| Reader need | What you'll get | Source artifact |
+| Icon | Reader need | What you'll get |
 |---|---|---|
-| [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
-| [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
-| [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
-| [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
-| [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
-| [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder | `media-framing-analysis.md` |
-| [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
-| [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
+| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
+| 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📋 | [Voter Segmentation](#rm-voter-segmentation) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 🔭 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later |
+| 🔮 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs |
+| 🗳️ | [Election 2026 Analysis](#rm-election-2026-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| ⚠️ | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register |
+| 🧮 | [SWOT Analysis](#rm-swot-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 🛡️ | [Threat Analysis](#rm-threat-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📜 | [Historical Parallels](#rm-historical-parallels) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 🌍 | [Comparative International](#rm-comparative-international) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
+| 😈 | [Devil's Advocate](#rm-devils-advocate) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 🏷️ | [Classification Results](#rm-classification-results) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📦 | [Data Download Manifest](#rm-data-download-manifest) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
+| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/synthesis-summary.md -->
