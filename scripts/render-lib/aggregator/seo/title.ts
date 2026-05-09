@@ -302,7 +302,12 @@ export function titleFromBluf(bluf: string | null, maxLen: number = 70): string 
   // with a label rather than the story (audit of
   // news/2026-05-08-interpellations-en.html).
   const labelStripped = cleanRaw.replace(/^(?:BLUF|TL;DR|Bottom\s+Line|Top\s+Line)\s*[:—–-]\s*/i, '');
-  const stripped = stripLeadingDatePrefix(labelStripped).trim();
+  // Strip a leading list marker (`1. `, `2) `, `- `, `* `, `• `) so an
+  // ordered/unordered list item used as the BLUF doesn't yield a title
+  // like `1` from sentence-end at the digit's period (audit
+  // 2026-05-09 of analysis/daily/2026-05-05/evening-analysis/).
+  const listStripped = labelStripped.replace(/^\s*(?:\d+[.)]|[-*•])\s+/, '');
+  const stripped = stripLeadingDatePrefix(listStripped).trim();
   // Reject sentences that collapse to nothing meaningful after the
   // date-prefix strip (e.g. `On 7 May 2026, .` → `.`).
   const meaningful = stripped.replace(/^[\s.!?…。।,;:—–-]+/u, '').trim();

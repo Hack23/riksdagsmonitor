@@ -66,6 +66,7 @@ import {
   markdownInlineToText,
   readBlufParagraph,
   readFirstParagraph,
+  stripBlufLabel,
   truncateToSentenceBoundary,
 } from '../scripts/render-lib/aggregator/seo/description.js';
 import {
@@ -189,6 +190,55 @@ describe('aggregator/cleaning/admin-bylines — paragraph-level admin stripper',
     expect(out).toContain('On 7 May 2026');
     expect(out).not.toContain('DIW Composite');
     expect(out).not.toContain('WEP');
+  });
+
+  // ──────────────────────────────────────────────────────────────────
+  // Round 8 (2026-05-09) — multi-value continuation tolerance.
+  // Audit of analysis/daily/2026-05-07/propositions/ showed
+  // `**WEP Confidence**: Almost certain (ratification outcome) | Likely (geopolitical trajectory)`
+  // surviving the previous "every fragment must match" rule because the
+  // post-pipe value (`Likely (geopolitical trajectory)`) had no field
+  // label. The new per-line rule treats it as a value continuation.
+  // ──────────────────────────────────────────────────────────────────
+
+  it('stripLeadingAdminBylines accepts pipe-separated value continuations on admin lines', () => {
+    const input =
+      '**Classification**: Admiralty [B2] | **Horizon**: T+72h / T+90d  \n**WEP Confidence**: Almost certain (ratification outcome) | Likely (geopolitical trajectory)  \n**DIW**: L2 Strategic | **Date**: 2026-05-07\n\n## 🔴 Key Intelligence Finding\n\nThe Tidö government has signed three interlocking propositions.';
+    const out = stripLeadingAdminBylines(input);
+    expect(out).toContain('Tidö government has signed');
+    expect(out).not.toContain('WEP Confidence');
+    expect(out).not.toContain('Likely (geopolitical');
+    expect(out).not.toContain('DIW');
+  });
+
+  it('stripLeadingAdminBylines preserves prose containing pipes that are NOT admin', () => {
+    // Plain prose with a pipe must survive — the continuation rule
+    // only fires when the line's first fragment is admin.
+    const input =
+      'Sweden | Norway | Finland coordinate Nordic defence policy. The three states issued a joint statement.';
+    const out = stripLeadingAdminBylines(input);
+    expect(out).toContain('Sweden | Norway | Finland');
+    expect(out).toContain('joint statement');
+  });
+
+  it('ADMIN_FIELD_RE matches Round 8 leak fields (Horizon / Workflow / Election Proximity / IMF vintage)', () => {
+    expect('**Horizon**: T+72h to T+90d'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**Reading time**: ~5 minutes'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**Workflow**: news-year-ahead'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**Election**: 2026-09-13 (T+129)'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**Election Proximity**: T−135 days to Sept 14, 2026'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**Election countdown**: T−131 days'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**IMF vintage**: WEO Apr-2026'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**Riksmöte**: 2025/26 (closing phase)'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**For**: Riksdagsmonitor subscribers'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**Prepared**: 2026-05-05T07:15:00Z'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**Analyst confidence**: HIGH'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**WEP Confidence**: Almost certain'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    expect('**DIW Aggregate**: 8.4'.match(ADMIN_FIELD_RE)).not.toBeNull();
+    // Real prose starting with `For`, `Election`, `Prepared` should NOT
+    // match (no colon).
+    expect('For decades the Riksdag'.match(ADMIN_FIELD_RE)).toBeNull();
+    expect('Election results show'.match(ADMIN_FIELD_RE)).toBeNull();
   });
 });
 
@@ -376,6 +426,36 @@ describe('aggregator/seo/description — BLUF / first-paragraph readers', () => 
       '**Author**: Jane | **Date**: x\n\nThe real first paragraph.';
     expect(readFirstParagraph(input)).toBe('The real first paragraph.');
   });
+
+  // ──────────────────────────────────────────────────────────────────
+  // Round 8 (2026-05-09) — `BLUF:` inline-label strip on the BLUF
+  // paragraph itself. Audit of news/2026-05-08-interpellations-en.html
+  // showed `BLUF: Five interpellations filed …` reaching <meta description>
+  // because some analysts write the BLUF label inline on top of the
+  // `## 🎯 BLUF` heading.
+  // ──────────────────────────────────────────────────────────────────
+
+  it('stripBlufLabel removes leading BLUF: / TL;DR: / Bottom Line: prefixes and list markers', () => {
+    expect(stripBlufLabel('BLUF: Five interpellations filed.')).toBe('Five interpellations filed.');
+    expect(stripBlufLabel('TL;DR — Sweden joins NATO.')).toBe('Sweden joins NATO.');
+    expect(stripBlufLabel('Bottom Line: The motion failed.')).toBe('The motion failed.');
+    expect(stripBlufLabel('Top Line: New SIGINT law.')).toBe('New SIGINT law.');
+    // Round 8: also strip leading ordered/unordered list markers so
+    // `1. SD fires …` doesn't survive into <meta description>.
+    expect(stripBlufLabel('1. SD fires two coordinated state-reform salvos.'))
+      .toBe('SD fires two coordinated state-reform salvos.');
+    expect(stripBlufLabel('- The Riksdag voted 173-176.'))
+      .toBe('The Riksdag voted 173-176.');
+  });
+
+  it('stripBlufLabel preserves prose without a BLUF prefix', () => {
+    expect(stripBlufLabel('The Riksdag voted 173-176.')).toBe('The Riksdag voted 173-176.');
+  });
+
+  it('readBlufParagraph strips BLUF: inline-label from the returned paragraph', () => {
+    const input = '## 🎯 BLUF\n\nBLUF: Five interpellations filed today.';
+    expect(readBlufParagraph(input)).toBe('Five interpellations filed today.');
+  });
 });
 
 describe('aggregator/seo/title — title cleanup & BLUF synthesis', () => {
@@ -495,6 +575,22 @@ describe('aggregator/seo/title — title cleanup & BLUF synthesis', () => {
 
   it('titleFromBluf still returns null on empty input after date strip', () => {
     expect(titleFromBluf('On 7 May 2026, .')).toBeNull();
+  });
+
+  // Round 8 (2026-05-09) — list-marker strip. Audit of
+  // analysis/daily/2026-05-05/evening-analysis/ showed that an ordered
+  // list `1. SD fires …` produced title `1` because the period after
+  // the digit was treated as a sentence terminator. Now we strip the
+  // list-item marker before extracting the first sentence.
+  it('titleFromBluf strips a leading ordered-list marker (1. / 2) / -)', () => {
+    expect(titleFromBluf('1. SD fires two coordinated state-reform salvos.', 70))
+      .toBe('SD fires two coordinated state-reform salvos');
+    expect(titleFromBluf('2) The opposition mounts coordinated resistance.', 70))
+      .toBe('The opposition mounts coordinated resistance');
+    expect(titleFromBluf('- The Riksdag voted 173 to 176 against the motion.', 70))
+      .toBe('The Riksdag voted 173 to 176 against the motion');
+    expect(titleFromBluf('• Sweden joins NATO summit talks.', 70))
+      .toBe('Sweden joins NATO summit talks');
   });
 });
 

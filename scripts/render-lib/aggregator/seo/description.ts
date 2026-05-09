@@ -199,9 +199,24 @@ export function readBlufParagraph(markdown: string): string | null {
     if (/^[-*_]{3,}\s*$/.test(p)) continue;        // skip thematic breaks (---, ***, ___)
     const fragments = p.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
     if (fragments.length > 0 && fragments.every((f) => ADMIN_FIELD_RE.test(f.trim()))) continue;
-    return markdownInlineToText(p);
+    return stripBlufLabel(markdownInlineToText(p));
   }
   return null;
+}
+
+/**
+ * Strip a leading `BLUF:` / `TL;DR:` / `Bottom Line:` / `Top Line:`
+ * label and any leading ordered/unordered list-item marker from a
+ * paragraph. Some analysts write the label inline at the start of the
+ * BLUF prose, on top of the `## 🎯 BLUF` heading; others use a
+ * numbered/bulleted list as the BLUF itself. Without stripping these
+ * markers, `<meta description>` reads `BLUF: …` or `1. SD fires …`
+ * instead of just the prose. Pure function — exported for tests.
+ */
+export function stripBlufLabel(text: string): string {
+  return text
+    .replace(/^(?:BLUF|TL;DR|Bottom\s+Line|Top\s+Line)\s*[:—–-]\s*/i, '')
+    .replace(/^\s*(?:\d+[.)]|[-*•])\s+/, '');
 }
 
 /**
@@ -222,7 +237,7 @@ export function readFirstParagraph(markdown: string): string | null {
     // Structural-only delimiter (see ADMIN_FRAGMENT_SPLITTER JSDoc).
     const fragments = p.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
     if (fragments.length > 0 && fragments.every((f) => ADMIN_FIELD_RE.test(f.trim()))) continue;
-    return markdownInlineToText(p);
+    return stripBlufLabel(markdownInlineToText(p));
   }
   return null;
 }

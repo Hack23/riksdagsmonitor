@@ -191,13 +191,43 @@ export const ADMIN_FIELD_NAMES: readonly string[] = [
   // never reach the SERP snippet.
   'WEP',
   'WEP\\s*\\+\\s*ODNI',
-  'DIW(?:\\s*(?:Composite|Total|Index|Rating))?',
+  'WEP\\s*Confidence',
+  'WEP\\s*summary',
+  'DIW(?:\\s*(?:Composite|Total|Index|Rating|Aggregate|Score))?',
   'Audience(?:\\s*for\\s*this\\s*brief)?',
   'Disseminated\\s*at',
   'Generated\\s*at',
   'Iteration',
   'Editor',
   'Editorial\\s*owner',
+  // Round 8 (2026-05-09) — additional preamble fields observed in
+  // executive-briefs across analysis/daily/2026-05-{05,06,07}/. Audit
+  // showed the following labels leaking into <title> + <meta description>
+  // because they were not in ADMIN_FIELD_NAMES:
+  //   - 2026-05-07/evening-analysis: `**DIW Aggregate**`, `**Horizon**`,
+  //     `**Reading time**`
+  //   - 2026-05-07/propositions: `**WEP Confidence**`
+  //   - 2026-05-07/year-ahead: `**Workflow**`, `**Election**`,
+  //     `**IMF vintage**`, `**Riksmöte**`
+  //   - 2026-05-05/evening-analysis: `**For**`, `**Election countdown**`
+  //   - 2026-05-05/interpellations: `**Prepared**`, `**Analyst confidence**`,
+  //     `**WEP summary**`
+  // All structured `**Label**: value` fields with one extra job: keep
+  // the regex narrow enough that real prose words (`For example, …`,
+  // `Election results show …`) do NOT match (they have no colon, so the
+  // `\s*:` tail filters them out).
+  'Horizon',
+  'Reading\\s*time',
+  'Workflow',
+  'Election(?:\\s*countdown|\\s*date|\\s*proximity)?',
+  'IMF\\s*vintage',
+  'Riksm(?:ö|o)te',
+  'For',
+  'Prepared',
+  'Analyst\\s*confidence',
+  'Pass(?:\\s*\\d+)?',
+  'AI[-\\s]?FIRST(?:\\s+iterations?)?',
+  'ARTICLE_TYPE',
 ];
 
 /**
@@ -242,20 +272,60 @@ export const ADMIN_FRAGMENT_SPLITTER = /\s*(?:\||｜|、|\n|\s{2,})\s*/;
  * that imported it through `__test__` continue to work; the behaviour is
  * a strict superset of the previous version.
  */
+/**
+ * Remove admin-byline paragraphs anywhere in the artifact body. Walks
+ * paragraph-by-paragraph; any paragraph whose **lines** are 100% admin
+ * is dropped.
+ *
+ * Multi-value tolerance: a single line is treated as admin when its
+ * **first** fragment matches {@link ADMIN_FIELD_RE} **and** every
+ * subsequent fragment on the same line either also matches or is a
+ * value continuation (no colon, no `**…**:` re-introduction). This
+ * accepts pipe-separated multi-value rows like:
+ *
+ *   `**WEP Confidence**: Almost certain (ratification) | Likely (geopolitical)`
+ *
+ * which audit 2026-05-09 found leaking into the propositions
+ * `<meta description>` because the second pipe-fragment had no field
+ * label and the previous "every fragment is admin" rule rejected it.
+ *
+ * The function name and signature are preserved so callers and tests
+ * that imported it through `__test__` continue to work; the behaviour
+ * is a strict superset of the previous version.
+ */
 export function stripLeadingAdminBylines(body: string): string {
   const paragraphs = body.split(/\n\n+/);
   const kept: string[] = [];
   for (const p of paragraphs) {
     const trimmed = p.trim();
     if (!trimmed) {
-      // Preserve blank paragraph spacing — collapsed downstream by the
-      // `\n{3,}` rule in cleanArtifactBody.
       kept.push(p);
       continue;
     }
-    const fragments = trimmed.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
-    const allAdmin = fragments.every((f) => ADMIN_FIELD_RE.test(f.trim()));
-    if (allAdmin && fragments.length > 0) continue;
+    // Split into lines first, then fragments per line. A line is admin
+    // iff its first fragment matches ADMIN_FIELD_RE and every subsequent
+    // fragment is either admin or a value continuation.
+    const lines = trimmed.split(/\n+/);
+    const allLinesAdmin = lines.every((line) => {
+      const lineTrimmed = line.trim();
+      if (!lineTrimmed) return true;
+      const fragments = lineTrimmed.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
+      if (fragments.length === 0) return true;
+      const firstAdmin = ADMIN_FIELD_RE.test(fragments[0]!.trim());
+      if (!firstAdmin) return false;
+      // Subsequent fragments: admin OR value-continuation. A
+      // value-continuation has no colon (i.e. no new label) and does
+      // not start with `**` (which would also signal a new field).
+      return fragments.slice(1).every((f) => {
+        const ft = f.trim();
+        if (!ft) return true;
+        if (ADMIN_FIELD_RE.test(ft)) return true;
+        if (ft.startsWith('**')) return false; // bold-prefixed = new field
+        if (ft.includes(':')) return false; // colon mid-fragment = label
+        return true; // pure value continuation, accept
+      });
+    });
+    if (allLinesAdmin) continue;
     kept.push(p);
   }
   return kept.join('\n\n');
