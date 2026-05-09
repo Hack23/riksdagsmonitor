@@ -192,6 +192,16 @@ export const BLUF_DATE_PREFIX_PATTERNS: readonly RegExp[] = [
  * detected, we skip the strip and accept the date in the title rather
  * than ship a subjectless verb. Better SEO-incorrect than grammatically
  * broken.
+ *
+ * Curation criteria (intentionally a high-precision subset, not
+ * comprehensive coverage):
+ * - Common 3rd-person-singular verbs in political/legislative BLUF
+ *   leads: `marks`, `shows`, `submitted`, `tabled`, …
+ * - Modal/auxiliary verbs that always need a subject: `will`, `would`,
+ *   `must`, `should`, …
+ * Not included: rare or domain-narrow verbs (false-positive risk).
+ * Add new entries when an audit shows a real BLUF starting with the
+ * verb after date-prefix strip; do not pre-emptively expand.
  */
 const VERB_LEADING_TOKENS = new Set([
   // Present tense (3rd person singular) — the most common in BLUF leads

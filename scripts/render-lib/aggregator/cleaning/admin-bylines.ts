@@ -255,43 +255,35 @@ export const ADMIN_FRAGMENT_SPLITTER = /\s*(?:\||｜|、|\n|\s{2,})\s*/;
 
 /**
  * Remove admin-byline paragraphs anywhere in the artifact body. Walks
- * paragraph-by-paragraph; any paragraph whose fragments are 100% bold-
- * label admin metadata (per {@link ADMIN_FIELD_RE}) is dropped. Any
- * paragraph with at least one non-admin fragment is preserved verbatim.
- *
- * Originally this stripper only ran on **leading** paragraphs and stopped
- * at the first prose paragraph (hence the name). Per-document analyses
- * and Family C/D artifacts emit *additional* admin blocks immediately
- * under their internal `### {dok_id}` / `## Section` headings, so the
- * leading-only sweep let ~393 admin-byline lines leak into the published
- * article body across 36 of 41 articles (audit 2026-04-27). Walking the
- * whole body — but still requiring a paragraph to be **fully** admin —
- * keeps body prose intact while removing the duplicate metadata blocks.
- *
- * The function name and signature are preserved so callers and tests
- * that imported it through `__test__` continue to work; the behaviour is
- * a strict superset of the previous version.
- */
-/**
- * Remove admin-byline paragraphs anywhere in the artifact body. Walks
  * paragraph-by-paragraph; any paragraph whose **lines** are 100% admin
  * is dropped.
  *
- * Multi-value tolerance: a single line is treated as admin when its
- * **first** fragment matches {@link ADMIN_FIELD_RE} **and** every
- * subsequent fragment on the same line either also matches or is a
- * value continuation (no colon, no `**…**:` re-introduction). This
- * accepts pipe-separated multi-value rows like:
+ * Multi-value tolerance (Round 8, 2026-05-09): a single line is treated
+ * as admin when its **first** fragment matches {@link ADMIN_FIELD_RE}
+ * **and** every subsequent fragment on the same line either also
+ * matches or is a value continuation (no colon, no `**…**:` re-
+ * introduction). This accepts pipe-separated multi-value rows like:
  *
  *   `**WEP Confidence**: Almost certain (ratification) | Likely (geopolitical)`
  *
- * which audit 2026-05-09 found leaking into the propositions
+ * which the 2026-05-09 audit found leaking into the propositions
  * `<meta description>` because the second pipe-fragment had no field
- * label and the previous "every fragment is admin" rule rejected it.
+ * label and the previous "every fragment is admin" rule rejected the
+ * whole paragraph.
+ *
+ * Historical context: originally this stripper only ran on **leading**
+ * paragraphs and stopped at the first prose paragraph (hence the name).
+ * Per-document analyses and Family C/D artifacts emit *additional*
+ * admin blocks under internal headings, so the leading-only sweep let
+ * ~393 admin-byline lines leak across 36 of 41 articles (audit 2026-
+ * 04-27). The current implementation walks the whole body — but still
+ * requires a paragraph to be **fully** admin (with the multi-value
+ * continuation rule above) — so body prose stays intact while
+ * duplicate metadata blocks are removed.
  *
  * The function name and signature are preserved so callers and tests
  * that imported it through `__test__` continue to work; the behaviour
- * is a strict superset of the previous version.
+ * is a strict superset of every previous version.
  */
 export function stripLeadingAdminBylines(body: string): string {
   const paragraphs = body.split(/\n\n+/);
