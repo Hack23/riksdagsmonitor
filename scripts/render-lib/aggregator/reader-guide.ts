@@ -179,6 +179,10 @@ export function buildReaderGuide(available: ReadonlySet<string>, hasDocuments: b
     '',
     chrome.preamble,
     '',
+    // Three columns: empty icon header (matches the per-row icon
+    // column — kept blank because the icon is a visual cue that
+    // duplicates information in the next column, not standalone
+    // semantic content), then `colReaderNeed` and `colWhatYouGet`.
     `|  | ${chrome.colReaderNeed} | ${chrome.colWhatYouGet} |`,
     '|---|---|---|',
     ...entries,

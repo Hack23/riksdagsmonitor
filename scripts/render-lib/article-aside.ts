@@ -146,7 +146,7 @@ export function renderReaderNavigation(input: ReaderNavigationInput): string {
           <table class="rm-reader-guide-table">
             <thead>
               <tr>
-                <th scope="col" class="rm-reader-guide-icon-col"><span class="sr-only">${escapeHtml(guideChrome.colReaderNeed)}</span></th>
+                <th scope="col" class="rm-reader-guide-icon-col"><span class="sr-only">Icon</span></th>
                 <th scope="col">${escapeHtml(guideChrome.colReaderNeed)}</th>
                 <th scope="col">${escapeHtml(guideChrome.colWhatYouGet)}</th>
               </tr>
