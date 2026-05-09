@@ -1,0 +1,35 @@
+{
+  "generated": "2026-05-09T00:00:00Z",
+  "status": "degraded",
+  "note": "IFS SDMX endpoint returning 404. WEO and FM Datamapper OK. All values from IMF WEO April 2026 vintage.",
+  "country": "SWE",
+  "dataflows_available": ["WEO", "FM"],
+  "dataflows_unavailable": ["IFS", "DOTS", "GFS_COFOG", "PCPS", "ER", "MFS"],
+  "indicators": {
+    "GDP_growth_2026F": {"value": 1.8, "unit": "%", "source": "IMF WEO Apr-2026", "indicator": "NGDP_RPCH"},
+    "GDP_growth_2027F": {"value": 2.1, "unit": "%", "source": "IMF WEO Apr-2026", "indicator": "NGDP_RPCH"},
+    "inflation_CPI_2026F": {"value": 2.2, "unit": "%", "source": "IMF WEO Apr-2026", "indicator": "PCPIPCH"},
+    "unemployment_2026F": {"value": 8.5, "unit": "%", "source": "IMF WEO Apr-2026", "indicator": "LUR"},
+    "government_debt_pct_GDP_2026F": {"value": 36.2, "unit": "% of GDP", "source": "IMF WEO Apr-2026", "indicator": "GGXWDG_NGDP"},
+    "current_account_pct_GDP_2026F": {"value": 5.1, "unit": "% of GDP", "source": "IMF WEO Apr-2026", "indicator": "BCA_NGDPD"},
+    "fiscal_balance_pct_GDP_2026F": {"value": -0.8, "unit": "% of GDP", "source": "IMF WEO Apr-2026", "indicator": "GGXCNL_NGDP"}
+  },
+  "comparators": {
+    "DNK": {"GDP_growth_2026F": 1.9, "debt_pct_GDP": 29.3},
+    "NOR": {"GDP_growth_2026F": 2.3, "debt_pct_GDP": 37.1},
+    "FIN": {"GDP_growth_2026F": 1.1, "debt_pct_GDP": 81.2},
+    "DEU": {"GDP_growth_2026F": 0.6, "debt_pct_GDP": 62.1}
+  },
+  "scb_fallback": {
+    "CPI_april_2026": {"value": 2.1, "unit": "%", "source": "SCB flash CPI April 2026"},
+    "note": "SCB CPI used as IFS SDMX fallback per degraded-IMF protocol"
+  },
+  "provenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "vintage": "WEO April 2026",
+    "retrieved_at": "2026-05-09",
+    "vintage_age_months": 1,
+    "vintage_annotation_required": false
+  }
+}

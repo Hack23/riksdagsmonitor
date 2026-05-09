@@ -1,0 +1,73 @@
+{
+  "generated": "2026-05-09T00:00:00Z",
+  "article_date": "2026-05-09",
+  "effective_data_date": "2026-05-08",
+  "subfolder": "realtime-pulse",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "title": "Will the government's rental reform (HD01CU31) pass the Riksdag plenary and survive judicial review?",
+      "status": "ACTIVE",
+      "priority": "P1",
+      "collection_required": ["riksdagen.se voteringar", "Lagrådsremiss publication"],
+      "resolution_trigger": "Plenary vote date confirmed",
+      "horizon": "T+7d"
+    },
+    {
+      "id": "PIR-2",
+      "title": "Will the Israeli maritime interception of Swedish citizens escalate to a diplomatic incident?",
+      "status": "ACTIVE",
+      "priority": "P1",
+      "collection_required": ["UD press release", "Israeli Foreign Ministry statement"],
+      "resolution_trigger": "UD formal response",
+      "horizon": "T+72h"
+    },
+    {
+      "id": "PIR-3",
+      "title": "What is Liberalerna's polling trajectory ahead of the 4% threshold?",
+      "status": "ACTIVE",
+      "priority": "P1",
+      "collection_required": ["SIFO/Novus May 2026 poll", "L candidate list announcement"],
+      "resolution_trigger": "L drops below 4.5% in 2+ polls",
+      "horizon": "T+90d"
+    },
+    {
+      "id": "PIR-4",
+      "title": "Will SD's veil ban question generate cross-party legislative traction?",
+      "status": "ACTIVE",
+      "priority": "P2",
+      "collection_required": ["Committee response", "L/KD spokesperson statements"],
+      "resolution_trigger": "Legislative proposal tabled or explicitly rejected",
+      "horizon": "T+30d"
+    },
+    {
+      "id": "PIR-5",
+      "title": "What is the Statskontoret view on rental reform implementation costs?",
+      "status": "MONITORING",
+      "priority": "P2",
+      "collection_required": ["Statskontoret remissvar"],
+      "resolution_trigger": "Statskontoret publication",
+      "horizon": "T+30d"
+    },
+    {
+      "id": "PIR-6",
+      "title": "How will opposition block coordinate counter-narrative on HD01CU31?",
+      "status": "MONITORING",
+      "priority": "P3",
+      "collection_required": ["S press conference", "Hyresgästföreningen statement"],
+      "resolution_trigger": "S formal position announced",
+      "horizon": "T+7d"
+    },
+    {
+      "id": "PIR-7",
+      "title": "Will Norrland broadband blackout (HD11801) escalate to a national infrastructure emergency?",
+      "status": "MONITORING",
+      "priority": "P3",
+      "collection_required": ["PTS broadband incident report", "IT&Telekomföretagen statement"],
+      "resolution_trigger": "PTS crisis classification issued",
+      "horizon": "T+30d"
+    }
+  ],
+  "carry_forward_from_prior_cycle": null,
+  "note": "First-run baseline. No prior-cycle PIR data available for ingestion."
+}
