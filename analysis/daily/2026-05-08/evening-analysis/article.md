@@ -1,11 +1,11 @@
 ---
-title: "Sweden Evening Analysis 8 May 2026: Rent Reform, Veil Ban Pressure, and Gaza Flotilla — Riksdag Final Pre-Election Sprint"
+title: "Friday 8 May 2026 marks a legislative heavy-load day in the Riksdag,"
 description: "Friday 8 May 2026 marks a legislative heavy-load day in the Riksdag, with six committee reports (betänkanden) from CU, SoU, and UbU advancing toward chamber vote while five written questions to…"
 date: 2026-05-08
 subfolder: evening-analysis
 slug: 2026-05-08-evening-analysis
 source_folder: analysis/daily/2026-05-08/evening-analysis
-generated_at: 2026-05-08T18:51:32.144Z
+generated_at: 2026-05-09T06:33:55.711Z
 language: en
 layout: article
 ---
