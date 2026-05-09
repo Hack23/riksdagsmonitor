@@ -31,8 +31,11 @@ describe('article-aside — renderReaderNavigation', () => {
     expect(html).toContain('Risk assessment');
     expect(html).not.toContain('<code>executive-brief.md</code>');
     expect(html).not.toContain('<code>risk-assessment.md</code>');
-    // Per-row icons (artifactIcon mapping) are present.
-    expect(html).toContain('class="rm-reader-guide-icon"');
+    // Per-row icon <td> cells are present (assert the actual cell
+    // marker, not the column-header class `rm-reader-guide-icon-col`
+    // which is a substring superset and would mask removal of the
+    // per-row cells).
+    expect(html).toContain('<td class="rm-reader-guide-icon"><span aria-hidden="true">');
     expect(html).toContain('📊'); // executive-brief icon
     expect(html).toContain('⚠️'); // risk-assessment icon
     // Always-present audit appendix row.
