@@ -17,6 +17,7 @@
 import {
   SENTENCE_END_RE,
   markdownInlineToText,
+  stripBlufLabel,
 } from './description.js';
 import { prettifyFallbackTitle } from './../order.js';
 
@@ -306,18 +307,13 @@ export function titleFromBluf(bluf: string | null, maxLen: number = 70): string 
   if (!bluf) return null;
   const cleanRaw = markdownInlineToText(bluf);
   if (!cleanRaw) return null;
-  // Strip a redundant inline `BLUF:` / `TL;DR:` prefix that some
-  // analysts write at the start of the BLUF paragraph itself, on top of
-  // the `## 🎯 BLUF` heading. Without this the synthesised title leads
-  // with a label rather than the story (audit of
-  // news/2026-05-08-interpellations-en.html).
-  const labelStripped = cleanRaw.replace(/^(?:BLUF|TL;DR|Bottom\s+Line|Top\s+Line)\s*[:—–-]\s*/i, '');
-  // Strip a leading list marker (`1. `, `2) `, `- `, `* `, `• `) so an
-  // ordered/unordered list item used as the BLUF doesn't yield a title
-  // like `1` from sentence-end at the digit's period (audit
-  // 2026-05-09 of analysis/daily/2026-05-05/evening-analysis/).
-  const listStripped = labelStripped.replace(/^\s*(?:\d+[.)]|[-*•])\s+/, '');
-  const stripped = stripLeadingDatePrefix(listStripped).trim();
+  // Strip a redundant inline `BLUF:` / `TL;DR:` prefix and any leading
+  // ordered/unordered list-item marker. Both rules are owned by
+  // `stripBlufLabel` in seo/description.ts so the title and description
+  // heuristics stay in lockstep (audit of news/2026-05-08-* and
+  // analysis/daily/2026-05-05/evening-analysis/).
+  const labelStripped = stripBlufLabel(cleanRaw);
+  const stripped = stripLeadingDatePrefix(labelStripped).trim();
   // Reject sentences that collapse to nothing meaningful after the
   // date-prefix strip (e.g. `On 7 May 2026, .` → `.`).
   const meaningful = stripped.replace(/^[\s.!?…。।,;:—–-]+/u, '').trim();

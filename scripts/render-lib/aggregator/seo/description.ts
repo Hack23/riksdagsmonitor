@@ -41,10 +41,16 @@ export const SENTENCE_END_RE = /(?:[.!?…](?=\s|$))|[。।]/g;
  * `… two propositions: the forestry deregulation (prop.` (audit
  * 2026-05-09 of `news/2026-05-08-motions-en.html`).
  *
- * Token comparison is case-sensitive on the trailing letter so `Mr.`
- * does not also match the in-word `Imr.` substring. Matching is done
- * by looking at the last whitespace-delimited word ending at the
- * candidate sentence-end position.
+ * Token comparison is **case-insensitive** — abbreviations like `prop.`
+ * and `Prop.` are both treated as non-terminating. Matching is done by
+ * looking at the last whitespace-delimited word ending at the candidate
+ * sentence-end position; the word is lower-cased and looked up in
+ * {@link SENTENCE_END_ABBREV_SET}.
+ *
+ * Note: case-insensitive matching means `Mr.` *will* also match an
+ * (extremely unlikely) in-word `Imr.` ending, but the practical risk is
+ * negligible because the word match is anchored to a whitespace
+ * boundary on the left, not just any character.
  *
  * Keep the list short and high-signal — false-negatives (we miss an
  * abbreviation and cut early) only mean the description fragment is a

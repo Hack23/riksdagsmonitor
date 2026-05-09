@@ -242,15 +242,43 @@ jobs:
         run: |
           CURL_OUTPUT=$(curl -sfL 'https://nodejs.org/download/nightly/index.json' 2>&1) || { \
             echo "::warning::curl failed fetching nodejs.org nightly index: $CURL_OUTPUT"; echo "version=" >> "$GITHUB_OUTPUT"; exit 0; }
-          VERSION=$(echo "$CURL_OUTPUT" | \
-            python3 -c "import json,sys; data=json.load(sys.stdin); print(data[0]['version'].lstrip('v'))" 2>&1) || { \
-            echo "::warning::Failed to parse nightly index (schema may have changed): $VERSION"; echo "version=" >> "$GITHUB_OUTPUT"; exit 0; }
+          # Walk the nightly index from newest to oldest and pick the first
+          # version whose linux-x64 tarball is actually downloadable. The
+          # raw newest entry can lag the file mirror by 5-30 minutes (audit
+          # 2026-05-09: index advertised 27.0.0-nightly20260509bbf51ad24c
+          # while the tarball was still 404), and setup-node@v6 fails the
+          # step when the binary 404s — bypassing the job-level
+          # continue-on-error budget for the rest of the run summary. The
+          # probe loop keeps the nightly build floating to whichever
+          # tarball exists *right now*, never blocking on mirror lag.
+          VERSION=$(echo "$CURL_OUTPUT" | python3 -c "
+          import json, sys, urllib.request, urllib.error
+          data = json.load(sys.stdin)
+          for entry in data[:5]:
+              v = entry['version'].lstrip('v')
+              url = f'https://nodejs.org/download/nightly/v{v}/node-v{v}-linux-x64.tar.xz'
+              req = urllib.request.Request(url, method='HEAD')
+              try:
+                  with urllib.request.urlopen(req, timeout=10) as resp:
+                      if resp.status == 200:
+                          print(v); sys.exit(0)
+              except (urllib.error.URLError, urllib.error.HTTPError):
+                  continue
+          " 2>&1) || { \
+            echo "::warning::Failed to find a downloadable nightly tarball in the 5 most recent entries: $VERSION"; echo "version=" >> "$GITHUB_OUTPUT"; exit 0; }
+          if [ -z "$VERSION" ]; then
+            echo "::warning::No downloadable nightly tarball in the 5 most recent index entries — skipping nightly compat check."
+            echo "version=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
-          echo "Latest nightly: $VERSION"
+          echo "Latest downloadable nightly: $VERSION"
       
       - name: Setup Node.js nightly
         if: steps.nightly.outputs.version != ''
+        continue-on-error: true
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        id: setup_nightly
         with:
           node-version: ${{ steps.nightly.outputs.version }}
           cache: 'npm'
@@ -259,19 +287,19 @@ jobs:
             .github/workflows/javascript-testing.yml
       
       - name: Install dependencies
-        if: steps.nightly.outputs.version != ''
+        if: steps.nightly.outputs.version != '' && steps.setup_nightly.outcome == 'success'
         run: npm ci
       
       - name: TypeScript type-check (browser)
-        if: steps.nightly.outputs.version != ''
+        if: steps.nightly.outputs.version != '' && steps.setup_nightly.outcome == 'success'
         run: npx tsc --project tsconfig.browser.json --noEmit
       
       - name: TypeScript type-check (scripts)
-        if: steps.nightly.outputs.version != ''
+        if: steps.nightly.outputs.version != '' && steps.setup_nightly.outcome == 'success'
         run: npx tsc --project tsconfig.scripts.json --noEmit
       
       - name: Run Vitest unit tests
-        if: steps.nightly.outputs.version != ''
+        if: steps.nightly.outputs.version != '' && steps.setup_nightly.outcome == 'success'
         run: npm run test
 
   # Summary Report
