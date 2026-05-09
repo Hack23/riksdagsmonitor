@@ -1,0 +1,108 @@
+name: ZAP DAST Scan
+
+# OWASP ZAP dynamic application security testing.
+#
+# Riksdagsmonitor is a fully static HTML/CSS site — there are no forms,
+# no authenticated state, and no server-side mutations. Active-scan
+# probes therefore have no destructive effect on the production site,
+# which is why we use `zaproxy/action-full-scan` (active probes + spider)
+# for both the scheduled and on-demand runs.
+#
+# Maps to:
+#   - ISO 27001:2022 A.8.29 (security testing in development & acceptance)
+#   - NIST CSF 2.0 DE.CM-08 (vulnerability scans performed)
+#   - CIS Controls v8.1 Control 18 (penetration testing)
+#   - Hack23 Vulnerability_Management.md SLAs (Crit 24h / High 7d)
+#
+# Findings are auto-filed as a GitHub issue by the action; the markdown
+# report is also archived as a workflow artifact for 90 days to satisfy
+# the audit-log retention requirement in the ISMS.
+
+on:
+  schedule:
+    # Weekly on Monday at 05:00 UTC (07:00 CEST — outside Swedish
+    # business hours but before any morning agentic news jobs).
+    - cron: '0 5 * * 1'
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'Target URL to scan (default: production site)'
+        type: string
+        default: 'https://riksdagsmonitor.com'
+        required: false
+
+permissions:
+  contents: read
+  # Required so zaproxy/action-full-scan can open / update the
+  # auto-generated tracking issue with each scan's findings.
+  issues: write
+
+jobs:
+  zap-scan:
+    name: OWASP ZAP Full Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@a5ad31d6a139d249332a2605b85202e8c0b78450 # v2.19.1
+        with:
+          # ZAP needs broad outbound access to the scan target plus
+          # docker pulls — `audit` records every endpoint without
+          # blocking the scan, which is the appropriate posture for a
+          # DAST job.
+          egress-policy: audit
+
+      - name: Checkout repository
+        # Needed so the ZAP action can read .zap/rules.tsv from the repo.
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Resolve target URL
+        id: target
+        run: |
+          TARGET_URL="${{ github.event.inputs.url || 'https://riksdagsmonitor.com' }}"
+          echo "url=${TARGET_URL}" >> "$GITHUB_OUTPUT"
+          echo "🎯 ZAP target: ${TARGET_URL}"
+
+      - name: ZAP Scan
+        uses: zaproxy/action-full-scan@3c58388149901b9a03b7718852c5ba889646c27c # v0.13.0
+        with:
+          token: ${{ github.token }}
+          docker_name: 'ghcr.io/zaproxy/zaproxy:stable'
+          target: ${{ steps.target.outputs.url }}
+          rules_file_name: '.zap/rules.tsv'
+          # `-a` includes the alpha (in-development) passive scan rules
+          # in addition to the default release-quality rules.
+          # `-j` enables the Ajax spider for JS-rendered links.
+          cmd_options: '-a -j'
+          # Issue title and label make it easy to triage scan deltas
+          # alongside other security alerts.
+          issue_title: 'ZAP DAST scan findings'
+          allow_issue_writing: true
+          fail_action: false
+
+      - name: Archive ZAP report
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: zap-report-${{ github.run_id }}
+          path: |
+            report_html.html
+            report_md.md
+            report_json.json
+          retention-days: 90
+          if-no-files-found: warn
+
+      - name: Scan summary
+        if: always()
+        run: |
+          {
+            echo "## 🛡️ OWASP ZAP DAST scan"
+            echo ""
+            echo "- Target: \`${{ steps.target.outputs.url }}\`"
+            echo "- Trigger: \`${{ github.event_name }}\`"
+            echo "- Action: \`zaproxy/action-full-scan@v0.13.0\`"
+            echo "- Rules baseline: \`.zap/rules.tsv\`"
+            echo ""
+            echo "Reports archived as workflow artifact \`zap-report-${{ github.run_id }}\` (90-day retention)."
+          } >> "$GITHUB_STEP_SUMMARY"
