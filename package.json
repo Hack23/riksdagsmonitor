@@ -187,7 +187,7 @@
     "js-yaml": "4.1.1",
     "json-schema-to-typescript": "15.0.4",
     "jszip": "3.10.1",
-    "knip": "6.12.1",
+    "knip": "6.12.2",
     "mermaid": "11.14.0",
     "papaparse": "5.5.3",
     "rehype-autolink-headings": "^7.1.0",
