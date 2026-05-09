@@ -437,6 +437,24 @@ describe('aggregator/seo/description — BLUF / first-paragraph readers', () => 
     expect(isAbbreviationDot(dvs, dvs.length - 1)).toBe(true);
   });
 
+  it('isAbbreviationDot does not false-positive on non-abbreviation prefix before known suffix', () => {
+    // `example.al.` — `al` is in the set but `example` is not an abbreviation;
+    // only the FIRST component is checked so this should return false.
+    const text = 'example.al.';
+    expect(isAbbreviationDot(text, text.length - 1)).toBe(false);
+  });
+
+  it('truncateToSentenceBoundary handles multiple consecutive abbreviations', () => {
+    // Both "e.g." and "i.e." should be skipped; the real sentence end at
+    // "final." should still be honoured.
+    const result = truncateToSentenceBoundary(
+      'Text e.g. more i.e. the final sentence. Additional text that should not appear.',
+      20,
+      45,
+    );
+    expect(result).toBe('Text e.g. more i.e. the final sentence.');
+  });
+
   it('truncateToSentenceBoundary does not cut at e.g. / i.e. / bl.a.', () => {
     // The abbreviation dot in "e.g." should not trigger a cut.
     expect(truncateToSentenceBoundary('This is often, e.g. in practice. Final sentence.', 20, 40))

@@ -89,9 +89,16 @@ const SENTENCE_END_ABBREV_SET = new Set(
  * `bl.a.`, `d.v.s.` to be detected in addition to simple ones like
  * `prop.` and `Mr.`
  *
- * Normalisation: the token is lower-cased and all `.` characters are
- * stripped before the set lookup, so both `e.g` and `eg` match the
- * entry `'eg'` in {@link SENTENCE_END_ABBREVIATIONS}.
+ * Normalisation strategy (applied in order):
+ * 1. Lower-case the full token and strip all internal dots; look up the
+ *    dotless form (`e.g` → `eg`, `d.v.s` → `dvs`). This covers most
+ *    multi-dot abbreviations whose canonical form is in the set.
+ * 2. If the dotless form is not in the set but the token contains internal
+ *    dots, check the **first** dot-split component (`bl.a.` → `bl`). Only
+ *    the first component is checked to prevent a non-abbreviation prefix
+ *    from accidentally matching a set member that appears later in the
+ *    token (e.g. `example.al.` must not be treated as an abbreviation
+ *    even though `al` is in the set).
  *
  * Pure function — exported only for testability.
  */
@@ -107,12 +114,16 @@ export function isAbbreviationDot(text: string, dotIndex: number): boolean {
   // This handles abbreviations whose dotless form is already in the set (eg, ie, dvs).
   const normalised = rawToken.toLowerCase().replace(/\./g, '');
   if (SENTENCE_END_ABBREV_SET.has(normalised)) return true;
-  // For compound abbreviations with internal dots (e.g. `bl.a.`) the
-  // dotless form (`bla`) may not be in the set even though each component
-  // is.  Check whether ANY individual component (split at `.`) matches.
+  // For compound abbreviations with internal dots where the dotless form is
+  // not in the set (e.g. `bl.a.` → dotless `bla` is not present, but `bl`
+  // is), check the **first** dot-split component only. Limiting to the
+  // first component avoids false positives where an unrecognised prefix is
+  // followed by a known abbreviation (`example.al.` would incorrectly
+  // match if we checked all components, but it won't match first-component
+  // `example`).
   if (rawToken.includes('.')) {
-    const components = rawToken.toLowerCase().split('.').filter(Boolean);
-    if (components.some((c) => SENTENCE_END_ABBREV_SET.has(c))) return true;
+    const firstComponent = rawToken.toLowerCase().split('.')[0];
+    if (firstComponent && SENTENCE_END_ABBREV_SET.has(firstComponent)) return true;
   }
   return false;
 }
