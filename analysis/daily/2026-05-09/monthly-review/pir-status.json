@@ -1,0 +1,71 @@
+{
+  "schema": "pir-status-v1.0",
+  "subfolder": "monthly-review",
+  "cycle": "monthly-review",
+  "date": "2026-05-09",
+  "election_date": "2026-09-13",
+  "days_to_election": 128,
+  "election_proximity_multiplier": 1.5,
+  "pirsLastUpdated": "2026-05-09T10:00:00Z",
+  "priorities": [
+    {
+      "id": "PIR-MON-01",
+      "title": "Tidö Legislative Delivery — Housing and Security",
+      "question": "Will the Tidö coalition pass CU31 (housing) and the security trilogy (HD03250, HD03261, HD03267) through the Riksdag chamber before the September 2026 election?",
+      "status": "OPEN",
+      "priority": "CRITICAL",
+      "last_update": "2026-05-09",
+      "prior_status": "OPEN",
+      "change": "Upgraded — committee majority secured; chamber vote pending",
+      "evidence_documents": ["HD01CU31", "HD03250", "HD03261", "HD03267"],
+      "forward_indicator": "FWD-01 (CU31 chamber vote 2026-06-10)",
+      "confidence": "HIGH",
+      "assessment": "KJ-1 in intelligence-assessment.md — 80% probability of full passage"
+    },
+    {
+      "id": "PIR-MON-02",
+      "title": "ECHR Challenge Probability on Security Legislation",
+      "question": "What is the probability of a successful ECHR challenge to HD03267 that could be decided before or affect the September 2026 election?",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "last_update": "2026-05-09",
+      "prior_status": "OPEN",
+      "change": "Risk elevated — Lagrådet warning documented and being used by opposition",
+      "evidence_documents": ["HD03267"],
+      "forward_indicator": "FWD-02 (enactment), FWD-11 (ECHR application status)",
+      "confidence": "MODERATE",
+      "assessment": "KJ-3 — unlikely pre-election interim measure (5%); sustained reputational risk likely"
+    },
+    {
+      "id": "PIR-MON-03",
+      "title": "Centre Party Position on CU31",
+      "question": "Will the Centre Party (C) support CU31 without amendments that materially weaken the market-rent mechanism?",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "last_update": "2026-05-09",
+      "prior_status": "OPEN",
+      "change": "UNRESOLVED — no C formal dissent; Demirok silence continues",
+      "evidence_documents": ["HD01CU31"],
+      "forward_indicator": "FWD-01 (CU31 vote)",
+      "confidence": "LOW",
+      "assessment": "T2 (legislative tampering) rated HIGH at 25% probability"
+    },
+    {
+      "id": "PIR-MON-04",
+      "title": "Gaza Interpellation Escalation — Ceiling and Trajectory",
+      "question": "Will the current surge in Gaza-related parliamentary activity (5+ interpellations in 72 hours) escalate to a level that forces a change in government foreign policy, potentially dominating the pre-election narrative?",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "last_update": "2026-05-09",
+      "prior_status": "OPEN",
+      "change": "Risk elevated — HD11803 adds consular/flotilla dimension; 5+ interpellations vs 4 on May 7",
+      "evidence_documents": ["HD10476", "HD10479", "HD11803", "HD11802"],
+      "forward_indicator": "FWD-04 (consular update), FWD-09 (diplomatic status)",
+      "confidence": "MODERATE",
+      "assessment": "KJ-4 — 30-40% probability of dominant pre-election narrative if incident escalates"
+    }
+  ],
+  "completed_pirsThisCycle": [],
+  "newPirsThisCycle": [],
+  "carryForwardNote": "All 4 PIRs carried forward from 2026-05-07/monthly-review per Tier-C PIR roll-forward rules"
+}
