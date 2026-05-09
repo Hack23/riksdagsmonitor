@@ -1,11 +1,11 @@
 ---
 title: "Opposition Motions Challenge Forestry and Youth Justice Reforms"
-description: "Eight opposition motions filed 2026-05-04 mount coordinated legal-strategic challenges against two government propositions: the forestry deregulation (prop."
+description: "Eight opposition motions filed 2026-05-04 mount coordinated legal-strategic challenges against two government propositions: the forestry deregulation (prop. 2025/26:242, HD024141–145/147) and the…"
 date: 2026-05-06
 subfolder: motions
 slug: 2026-05-06-motions
 source_folder: analysis/daily/2026-05-06/motions
-generated_at: 2026-05-09T06:33:55.616Z
+generated_at: 2026-05-09T10:11:20.876Z
 language: en
 layout: article
 ---
@@ -694,44 +694,37 @@ Three primary dimensions: Demographic, Regional, Ideological
 **Conditions**: Lagrådet finds technical issues only; government accepts minor amendments; S stays neutral
 **Consequences**: Criminal age cut to 13 enacted; Barnombudsmannen files formal concern; UN CRC committee monitoring begins; international media cycle on "Sweden OECD outlier"
 **Electoral impact**: Government can claim toughness-on-crime delivery; C defection recorded but no political cost until election
-**WEP**: "We assess with moderate confidence that the proposition will pass substantially unchanged if the Lagrådet yttrande identifies only technical drafting concerns."
 
 #### SC-B: Government Amends Age-Cut Provision (P = 25%)
 **Trigger**: Lagrådet negative yttrande explicitly citing CRC Art. 40(3)(a) incompatibility
 **Conditions**: Government accepts recommendation to raise age to 14 or add CRC-compliant safeguards
 **Consequences**: C and MP claim partial victory; JuU committee marks C's contribution; V dissatisfied (wanted full rejection)
 **Electoral impact**: Moderate — government appears law-abiding; C gets "proportionate response" branding
-**WEP**: "We assess with low-moderate confidence that a significant Lagrådet finding would compel government amendment, given historical patterns of Swedish government compliance with Lagrådet guidance."
 
 #### SC-C: S Joins Opposition, Vote Close (P = 15%)
 **Trigger**: S leadership explicitly endorses CRC objection; proposes competing amendment
 **Conditions**: Opinion polling shows urban-educated voters strongly oppose age cut; S party congress issue
 **Consequences**: Vote 175 vs 163 (12-seat margin); government wins but proposition becomes election issue
 **Electoral impact**: HIGH — this scenario most favourable for S/C/V/MP coalition-building narrative for 2026
-**WEP**: "We assess with low confidence that Socialdemokraterna will formally join the opposition coalition on this vote, given their historical support for lowering age thresholds in earlier legislation."
 
 #### SC-D: Government Delays / Withdraws Proposition (P = 5%)
 **Trigger**: Both Lagrådet negative finding AND S public opposition AND significant media pressure
 **Conditions**: All three triggers fire simultaneously before JuU betänkande
 **Consequences**: Proposition withdrawn; government retables with amendments in autumn 2026 (post-election risk)
-**WEP**: "We assess with very low confidence that the government will withdraw the proposition entirely; historical precedent shows Swedish governments rarely withdraw propositions post-Lagrådet except in cases of fundamental constitutional conflict."
 
 ### Scenario Cluster 2: Proposition 2025/26:242 (Forestry Deregulation)
 
 #### SC-E: Government Passes, EU Compliance Risk (P = 70%)
 **Conditions**: MJU committee accepts S's demand for post-passage review; government adds Naturvårdsverket monitoring mandate
 **Consequences**: Proposition passes; EC monitors NRL 2024/1991 compliance; formal notice risk in 2027
-**WEP**: MODERATE-HIGH confidence on passage; MODERATE confidence on future EU infringement risk
 
 #### SC-F: MJU Adds Binding Impact Assessment Condition (P = 20%)
 **Conditions**: S position converts into binding committee condition rather than opposition motion
 **Consequences**: Proposition passes with cumulative impact assessment obligation; S claims credit; MP partially satisfied
-**WEP**: LOW-MODERATE confidence
 
 #### SC-G: Proposition Delayed Pending EU Compatibility Opinion (P = 10%)
 **Trigger**: Naturvårdsverket formally requests EC pre-clearance before Swedish legislative passage
 **Consequences**: Delay of 6-12 months; SD and C press for faster passage; forestry sector lobbies intensify
-**WEP**: LOW confidence
 
 ### Probability Summary
 

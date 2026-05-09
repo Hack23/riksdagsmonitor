@@ -5,7 +5,7 @@ date: 2026-05-01
 subfolder: realtime-pulse
 slug: 2026-05-01-realtime-pulse
 source_folder: analysis/daily/2026-05-01/realtime-pulse
-generated_at: 2026-05-09T06:33:55.414Z
+generated_at: 2026-05-09T10:11:20.713Z
 language: en
 layout: article
 ---
@@ -1092,8 +1092,6 @@ quadrantChart
 
 ## Election 2026 Analysis
 <!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-01/realtime-pulse/election-2026-analysis.md -->
-
-**Election Proximity**: ≤6 months → 1.5× DIW multiplier ACTIVE (threshold crossed 2026-03-13)
 
 ---
 

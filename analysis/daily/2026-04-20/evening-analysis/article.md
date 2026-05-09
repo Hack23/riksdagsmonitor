@@ -1,11 +1,11 @@
 ---
-title: "Monday April 20 marks a significant escalation in Sweden's"
+title: "April 20 marks a significant escalation in Sweden's pre-election"
 description: "Monday April 20 marks a significant escalation in Sweden's pre-election parliamentary accountability campaign. The Riksdag's Environment and Agriculture Committee (MJU) published a committee report…"
 date: 2026-04-20
 subfolder: evening-analysis
 slug: 2026-04-20-evening-analysis
 source_folder: analysis/daily/2026-04-20/evening-analysis
-generated_at: 2026-05-09T06:33:54.894Z
+generated_at: 2026-05-09T10:11:20.286Z
 language: en
 layout: article
 ---

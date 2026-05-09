@@ -5,7 +5,7 @@ date: 2026-05-04
 subfolder: committee-reports
 slug: 2026-05-04-committee-reports
 source_folder: analysis/daily/2026-05-04/committee-reports
-generated_at: 2026-05-09T06:33:55.460Z
+generated_at: 2026-05-09T10:11:20.751Z
 language: en
 layout: article
 ---
@@ -311,8 +311,6 @@ style NU22 fill:#00d9ff
 ### HD01CU37
 <!-- source: documents/HD01CU37-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/documents/HD01CU37-analysis.md -->
 
-**Committee**: Civilutskottet (CU) | **DIW**: 4.8
-
 Amendments to municipal rental guarantee schemes. Addresses access to housing market for economically vulnerable groups. Limited political controversy; low media salience. Operational significance for municipalities and Boverket.
 
 ### HD01FöU14
@@ -471,8 +469,6 @@ The law was reviewed by Lagrådet in February 2026; the government followed Lagr
 ### HD01NU22
 <!-- source: documents/HD01NU22-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/documents/HD01NU22-analysis.md -->
 
-**Committee**: Näringsutskottet (NU) | **DIW**: 5.8
-
 New tools for competition policy enforcement. Significant for business regulation but limited political controversy. No formal reservations expected. Forward-looking for digital markets/AI compliance context.
 
 ### HD01SfU28
@@ -530,8 +526,6 @@ New tools for competition policy enforcement. Significant for business regulatio
 
 ### HD01SkU22
 <!-- source: documents/HD01SkU22-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/committee-reports/documents/HD01SkU22-analysis.md -->
-
-**Committee**: Skatteutskottet (SkU) | **DIW**: 5.2
 
 Technical measures to combat VAT fraud. Cross-border VAT evasion and carousel fraud. EU VAT Directive alignment. Limited political controversy; broad cross-party support expected. Operational significance for Skatteverket.
 

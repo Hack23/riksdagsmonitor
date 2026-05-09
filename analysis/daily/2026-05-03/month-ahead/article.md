@@ -5,7 +5,7 @@ date: 2026-05-03
 subfolder: month-ahead
 slug: 2026-05-03-month-ahead
 source_folder: analysis/daily/2026-05-03/month-ahead
-generated_at: 2026-05-09T06:33:55.440Z
+generated_at: 2026-05-09T10:11:20.736Z
 language: en
 layout: article
 ---
@@ -260,7 +260,6 @@ As of 2026-05-03 (133 days before September 13 election), the 1.5× multiplier f
 **Source**: Socialdepartementet  
 
 **Tier**: L2  
-**DIW**: 5.8 (no election multiplier)
 
 ### Summary
 
@@ -289,7 +288,6 @@ KD's primary legislative achievement in the 2022–2026 mandate period. Cross-pa
 **Source**: Försvarsdepartementet  
 
 **Tier**: L2+  
-**DIW**: 6.2 (no election multiplier — bipartisan)
 
 ### Summary
 
@@ -320,7 +318,6 @@ HD03254 establishes a legislative framework for Sweden's operational military co
 **Source**: Justitiedepartementet  
 
 **Tier**: L2+  
-**DIW**: 7.5 (raw 5.0 × 1.5 election multiplier)
 
 ### Summary
 
@@ -356,7 +353,6 @@ This proposition is symbolically important to KU (Konstitutionsutskottet) as a g
 **Source**: Justitiedepartementet  
 
 **Tier**: L3 Intelligence-grade  
-**DIW**: 10.2 (raw 6.8 × 1.5 election multiplier)
 
 ### Summary
 
@@ -414,7 +410,6 @@ HD03262 is the centerpiece of the coalition's pre-election migration narrative. 
 **Source**: Justitiedepartementet  
 
 **Tier**: L2+  
-**DIW**: 8.9 (raw 5.9 × 1.5 election multiplier)
 
 ### Summary
 
@@ -447,7 +442,6 @@ HD03263 is the operational enforcement complement to HD03262's legislative frame
 **Source**: Justitiedepartementet  
 
 **Tier**: L2+  
-**DIW**: 8.1 (raw 5.4 × 1.5 election multiplier)
 
 ### Summary
 
@@ -476,7 +470,6 @@ Allows the government to tighten migration based on character without requiring 
 **Source**: Justitiedepartementet  
 
 **Tier**: L2+  
-**DIW**: 7.8 (raw 5.2 × 1.5 election multiplier)
 
 ### Summary
 
@@ -1023,8 +1016,6 @@ pie title Scenario Probability Distribution
 
 ## Election 2026 Analysis
 <!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/month-ahead/election-2026-analysis.md -->
-
-**Method**: Seat projections, coalition viability, electoral dynamics
 
 ### Current Parliamentary Seat Distribution (2022 Election)
 

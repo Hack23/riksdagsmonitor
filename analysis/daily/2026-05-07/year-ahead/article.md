@@ -1,11 +1,11 @@
 ---
 title: "Sweden Year-Ahead Political Intelligence"
-description: "IMF vintage: WEO Apr-2026 | Riksmöte: 2025/26 (closing phase)"
+description: "Sweden is in its most compressed political-legislative cycle since EU accession. With the Riksdag election 129 days away (September 13, 2026), the Tidö coalition under PM Ulf Kristersson is executing…"
 date: 2026-05-07
 subfolder: year-ahead
 slug: 2026-05-07-year-ahead
 source_folder: analysis/daily/2026-05-07/year-ahead
-generated_at: 2026-05-09T06:33:55.686Z
+generated_at: 2026-05-09T10:11:20.931Z
 language: en
 layout: article
 ---
@@ -13,8 +13,6 @@ layout: article
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/year-ahead/executive-brief.md -->
 
 # 2026-05-07 · 365-Day Horizon · Election Proximity ACTIVE
-
-**IMF vintage**: WEO Apr-2026 | **Riksmöte**: 2025/26 (closing phase)
 
 ---
 

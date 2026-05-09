@@ -5,7 +5,7 @@ date: 2026-04-24
 subfolder: propositions
 slug: 2026-04-24-propositions
 source_folder: analysis/daily/2026-04-24/propositions
-generated_at: 2026-05-09T06:33:55.055Z
+generated_at: 2026-05-09T10:11:20.417Z
 language: en
 layout: article
 ---
@@ -151,8 +151,6 @@ flowchart TD
 
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/propositions/intelligence-assessment.md -->
-
-**Audience**: Decision-makers in financial markets, political risk, civil society.
 
 ### Key Judgments
 

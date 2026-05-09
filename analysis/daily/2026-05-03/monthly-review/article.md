@@ -5,7 +5,7 @@ date: 2026-05-03
 subfolder: monthly-review
 slug: 2026-05-03-monthly-review
 source_folder: analysis/daily/2026-05-03/monthly-review
-generated_at: 2026-05-09T06:33:55.449Z
+generated_at: 2026-05-09T10:11:20.742Z
 language: en
 layout: article
 ---
@@ -1260,8 +1260,6 @@ Riksrevisionen's 2025/26 annual plan included migration administration and polic
 
 ## Comparative International
 <!-- source: comparative-international.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-03/monthly-review/comparative-international.md -->
-
-**Scope**: Nordic comparators + EU asylum policy benchmarks + post-2016 Swedish historical precedents  
 
 ---
 

@@ -5,14 +5,12 @@ date: 2026-04-28
 subfolder: realtime-pulse
 slug: 2026-04-28-realtime-pulse
 source_folder: analysis/daily/2026-04-28/realtime-pulse
-generated_at: 2026-05-09T06:33:55.261Z
+generated_at: 2026-05-09T10:11:20.583Z
 language: en
 layout: article
 ---
 ## Executive Brief
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/executive-brief.md -->
-
-**Pass**: 2 (critically reviewed and improved 2026-04-28)
 
 ---
 
@@ -132,8 +130,6 @@ quadrantChart
 
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/intelligence-assessment.md -->
-
-**Pass**: 2 (added prior-cycle PIR ingestion, sharpened KJ-2 confidence rationale, added OSINT sourcing detail)
 
 ### Prior-Cycle PIR Ingestion
 
@@ -625,8 +621,6 @@ timeline
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/scenario-analysis.md -->
 
-**Pass**: 2 (added explicit decision tree with indicator conditions, verified scenario probabilities sum to 100%)
-
 ### Scenario Framework
 
 Scenarios sum to 100%. Three scenarios cover the immediate political trajectory from today (28 Apr) through the September 2026 election and the post-election constitutional confirmation vote.
@@ -781,8 +775,6 @@ flowchart TD
 
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/swot-analysis.md -->
-
-**Pass**: 2 (improved TOWS matrix, verified all bullets have dok_id evidence, added ACH tie-in for each quadrant)
 
 ### SWOT Matrix
 
@@ -1124,8 +1116,6 @@ flowchart TD
 
 ## Devil's Advocate
 <!-- source: devils-advocate.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-28/realtime-pulse/devils-advocate.md -->
-
-**Pass**: 2 (strengthened ACH diagnostics, added monitor URLs to all three hypotheses, tightened H3 fiscal evidence)
 
 ### ACH-Style Alternative Hypotheses
 

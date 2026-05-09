@@ -5,7 +5,7 @@ date: 2026-05-09
 subfolder: monthly-review
 slug: 2026-05-09-monthly-review
 source_folder: analysis/daily/2026-05-09/monthly-review
-generated_at: 2026-05-09T08:24:11.779Z
+generated_at: 2026-05-09T10:11:20.990Z
 language: en
 layout: article
 ---
@@ -80,7 +80,7 @@ Use this guide to read the article as a political-intelligence product rather th
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/synthesis-summary.md -->
 
 **Admiralty Source**: A1 (Official Riksdag data, confirmed)  
-**WEP**: Almost Certainly (AC, 90–95%) for legislative outcomes  
+
 **Election proximity**: T-128 days (DIW 1.5× multiplier active — election ≤ 6 months)  
 
 ---
@@ -261,8 +261,6 @@ This assessment was produced by a single AI analyst (no peer review) — methodo
 
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/significance-scoring.md -->
-
-**Election proximity**: T-128 days (≤ 6 months → 1.5× multiplier applied to opposition motions and contested propositions)  
 
 ---
 
@@ -1105,8 +1103,6 @@ graph TD
 
 ## Election 2026 Analysis
 <!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/election-2026-analysis.md -->
-
-**Method**: Electoral Scenario Analysis + Sainte-Laguë Seat Projection  
 
 ---
 

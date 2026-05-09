@@ -1,11 +1,11 @@
 ---
-title: "Interpellation Debates"
+title: "A single new interpellation (HD10447, S) was announced today, forcing"
 description: "A single new interpellation (HD10447, S) was announced today, forcing Energy- och näringsminister Ebba Busch (KD) to defend the 2024 abolition of the high-sick-pay-cost reimbursement by 2026-05-07."
 date: 2026-04-24
 subfolder: interpellations
 slug: 2026-04-24-interpellations
 source_folder: analysis/daily/2026-04-24/interpellations
-generated_at: 2026-05-09T06:33:55.037Z
+generated_at: 2026-05-09T10:11:20.401Z
 language: en
 layout: article
 ---

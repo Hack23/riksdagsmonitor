@@ -5,7 +5,7 @@ date: 2026-05-08
 subfolder: week-ahead
 slug: 2026-05-08-week-ahead
 source_folder: analysis/daily/2026-05-08/week-ahead
-generated_at: 2026-05-09T06:33:55.750Z
+generated_at: 2026-05-09T10:11:20.983Z
 language: en
 layout: article
 ---
@@ -750,28 +750,28 @@ For the next analysis cycle (week-ahead 2026-05-15):
 ### Horizon: T+7d (May 11-17, 2026)
 
 #### Scenario A: Routine Legislative Week (Base Case)
-**WEP**: *It is likely that week 20 proceeds as a standard high-volume legislative week with all major committee reports voted through.* [B2]
+
 **Probability**: 55%
 **Description**: FöU18 passes with M/SD/KD/L majority. HD03267, HD03250, HD03261 enter committee review. UbU28 and justice package pass with broad majorities. Flotilla issue handled via FM written answer. No Lagrådet yttrande issued in week 20. Government enters week 21 in stable position.
 **Key indicators**: FöU18 vote count ≥175 Ja (above 175-seat government-adjacent majority); no emergency interpellations on flotilla by Tuesday; IMY issues no public statement on HD03261.
 **Electoral outcome**: Neutral-positive for government. Security agenda advances on schedule.
 
 #### Scenario B: Flotilla Crisis Escalation (Tail Risk)
-**WEP**: *It is possible that the flotilla situation escalates to a consular emergency requiring extraordinary government measures.* [B3]
+
 **Probability**: 15%
 **Description**: Swedish citizens detained or injured by Israeli Navy triggers consular emergency protocol. FM Malmer Stenergard forced to issue formal protest note. S/V/MP table emergency interpellation. Government response splits coalition — SD resists condemnatory language, M/C/L/KD more sympathetic to international law framing. Week 20 legislative calendar partially disrupted.
 **Key indicators**: Swedish MFA activating emergency consular response team; Israeli Embassy called to Utrikesdepartementet for formal consultation; S party leader Johan Blix making emergency statement.
 **Electoral outcome**: Government coalition coherence damage visible; S gains on "who is Sweden?" branding.
 
 #### Scenario C: Lagrådet Surprise on New Propositions (Low Probability)
-**WEP**: *It is unlikely but possible that Lagrådet issues a rapid negative opinion on HD03267 or HD03261 within week 20, forcing government revision.* [C2]
+
 **Probability**: 8%
 **Description**: Under normal timeline, Lagrådet opinions on May 7 propositions would not come until late May or June. However, if the government requested expedited review (which formal records would indicate), a week-20 rejection is possible. This would force immediate government revision and signal poor legislative preparation.
 **Key indicators**: Lagrådet website updating with new yttrande entries for HD03267 or HD03261 before May 15.
 **Electoral outcome**: Narrative of incompetent drafting; C and L have cover to distance from security package.
 
 #### Scenario D: FöU18 Amendment Forces Delay
-**WEP**: *It is possible that a significant minority of L or C legislators tables last-minute amendments to FöU18 requiring committee referral.* [C2]
+
 **Probability**: 12%
 **Description**: L's civil-liberties faction (led by Johan Pehrson) or C's rule-of-law contingent tables amendment requiring mandatory sunset clause and/or enhanced IMY oversight. If amendment attracts 8+ votes beyond Nej-bloc, committee must reconvene, delaying final vote to week 21.
 **Key indicators**: L party group protocol (partigruppsmöte) outcome Monday May 11 before plenary debate; any L/C press statements releasing "we will demand amendments" Monday morning.
@@ -1011,28 +1011,28 @@ This analysis applies STRIDE-adjacent political threat modelling to the legislat
 **Actor**: S (Socialdemokraterna) + V + MP combined press conference strategy
 **Vector**: Simultaneous submission of FöU18 (signal intelligence), HD03267 (security deportation), HD03261 (Skatteverket) creates single-week target
 **Target**: Government's credibility as proportionate, rule-of-law-respecting administration
-**WEP**: *The opposition is almost certainly planning to coordinate a "surveillance state" counter-narrative during week 20.* [B2]
+
 **Electoral consequence**: Reinforces S positioning as defender of civil liberties vs M/SD security-maximalism frame. May erode C/L soft support for government.
 
 #### T-LEGAL: Lagrådet Rejection Risk
 **Actor**: Lagrådet (constitutionally independent review body)
 **Vector**: Absence of yttranden for HD03267, HD03261, HD03250 means constitutional review is outstanding
 **Target**: Government's ability to pass security legislation on desired timeline
-**WEP**: *It is likely that Lagrådet will require substantive revisions to at least one of the three May 7 propositions, most probably HD03267.* [B2]
+
 **Electoral consequence**: If rejection comes before election, government faces either (a) delay past election day or (b) rushed amendment that signals incompetent drafting.
 
 #### T-DIPLOMATIC: Israeli Flotilla Crisis
 **Actor**: Israeli Navy, Swedish citizens on Global Sumud, international media
 **Vector**: Naval boarding of civilian vessel with Swedish nationals in international waters
 **Target**: FM Malmer Stenergard's diplomatic positioning; coalition coherence on foreign policy
-**WEP**: *It is likely that at least one parliamentary party will call for a stronger Swedish government response than currently being offered, creating public pressure dynamics before the election.* [B2]
+
 **Electoral consequence**: M-SD tension on Israel policy becomes visible; V/MP energised; potential damage to government's foreign policy credibility.
 
 #### T-RURAL: Infrastructure Grievance Activation
 **Actor**: Trafikverket (executing government cost-saving directive)
 **Vector**: 25,000 street lighting pole removals in rural areas
 **Target**: C and KD rural vote base
-**WEP**: *It is possible that rural politicians in C/KD will publicly distance themselves from the Trafikverket decision, creating government-backbench tension.* [C2]
+
 **Electoral consequence**: Feeds S/V narrative about underfunded rural public services. Limited but real cost in specific constituencies.
 
 ### Threat Interdependencies
@@ -1155,8 +1155,6 @@ The Israeli Navy's boarding of Global Sumud in international waters is the secon
 - Finland has maintained lower diplomatic profile
 
 **Sweden's position**: Sweden recognised Palestinian state in 2014 (first Western EU country). This creates diplomatic basis for a stronger response than the UK/US position. However, Tidö government has systematically avoided escalatory language since 2022. [B2]
-
-**WEP**: *It is likely that Sweden will issue a measured protest note (démarche) but not escalate to ambassador recall unless casualties confirmed.* [B3]
 
 ### Education Reform: EU Comparative
 

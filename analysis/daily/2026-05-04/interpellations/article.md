@@ -1,18 +1,16 @@
 ---
-title: "Interpellation Debates"
-description: "Election Proximity: T−135 days to Sept 14, 2026"
+title: "PIR-1: Will the government's April 20 \"gang crime eradication\""
+description: "PIR-1: Will the government's April 20 \"gang crime eradication\" promise survive political and empirical scrutiny ahead of the election? PIR-2: How will Sweden's declining ESA contribution profile…"
 date: 2026-05-04
 subfolder: interpellations
 slug: 2026-05-04-interpellations
 source_folder: analysis/daily/2026-05-04/interpellations
-generated_at: 2026-05-09T06:33:55.501Z
+generated_at: 2026-05-09T10:11:20.782Z
 language: en
 layout: article
 ---
 ## Executive Brief
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/interpellations/executive-brief.md -->
-
-**Election Proximity**: T−135 days to Sept 14, 2026
 
 ### Priority Intelligence Requirements (PIR)
 

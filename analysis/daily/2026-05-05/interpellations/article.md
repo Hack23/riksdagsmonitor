@@ -1,20 +1,16 @@
 ---
-title: "Prepared: 2026-05-05T07:15:00Z Analyst confidence: HIGH (primary"
-description: "Prepared: 2026-05-05T07:15:00Z Analyst confidence: HIGH (primary sources reviewed) WEP summary: 0.60 moderate-high certainty on near-term political tensions"
+title: "Sweden's parliamentary accountability pulse on 5 May 2026"
+description: "Sweden's parliamentary accountability pulse on 5 May 2026 is dominated by five interpellations that collectively expose three structural fault lines in the Tidö coalition's second term:…"
 date: 2026-05-05
 subfolder: interpellations
 slug: 2026-05-05-interpellations
 source_folder: analysis/daily/2026-05-05/interpellations
-generated_at: 2026-05-09T06:33:55.557Z
+generated_at: 2026-05-09T10:11:20.829Z
 language: en
 layout: article
 ---
 ## Executive Brief
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/interpellations/executive-brief.md -->
-
-**Prepared**: 2026-05-05T07:15:00Z  
-**Analyst confidence**: HIGH (primary sources reviewed)  
-**WEP summary**: 0.60 moderate-high certainty on near-term political tensions  
 
 ---
 
@@ -313,7 +309,6 @@ Basis: The 2026-2028 ESA contribution was already approved in the budget process
 **Submitted**: 2026-04-29  
 **Answer date**: 2026-05-19  
 
-**DIW**: 0.85 | **WEP**: 0.80 | **Composite**: 0.81  
 **PIR linkage**: PIR-1 (active carry-forward)  
 
 ---
@@ -368,7 +363,6 @@ This is a sustained PIR-1 collection target. The answer on May 19 will be catego
 **Submitted**: 2026-04-29  
 **Answer deadline**: 2026-05-20  
 
-**DIW**: 0.80 | **WEP**: 0.65 | **Composite**: 0.68  
 **PIR linkage**: PIR-3 (active carry-forward)  
 
 ---
@@ -423,7 +417,6 @@ PIR-3 remains open. Slottner's answer will be classified on a scale from "full e
 **Submitted**: 2026-04-30  
 **Answer date**: 2026-05-19  
 
-**DIW**: 0.65 | **WEP**: 0.50 | **Composite**: 0.62  
 **PIR linkage**: PIR-2 (active carry-forward)  
 
 ---
@@ -472,8 +465,6 @@ PIR-2 remains open. Key outcome: does Edholm's answer (a) commit to reviewing ES
 **Anmäld**: 2026-05-05  
 **Answer deadline**: 2026-05-25  
 
-**DIW**: 0.45 | **WEP**: 0.30 | **Composite**: 0.44  
-
 ---
 
 ### Document Summary
@@ -521,8 +512,6 @@ Low priority after answer received. If Svantesson provides positive answer: clos
 **Submitted**: 2026-05-04  
 **Anmäld**: 2026-05-05  
 **Answer deadline**: 2026-05-25  
-
-**DIW**: 0.80 | **WEP**: 0.82 | **Composite**: 0.81  
 
 ---
 

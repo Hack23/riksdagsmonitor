@@ -1,20 +1,16 @@
 ---
-title: "For: Riksdagsmonitor subscribers and political analysts"
-description: "For: Riksdagsmonitor subscribers and political analysts"
+title: "SD fires two coordinated state-reform salvos: Interpellations HD10464"
+description: "SD fires two coordinated state-reform salvos: Interpellations HD10464 (abolish Sida) and HD10466 (non-political Regeringskansliet civil servants) signal a pre-election campaign to reframe the Swedish…"
 date: 2026-05-05
 subfolder: evening-analysis
 slug: 2026-05-05-evening-analysis
 source_folder: analysis/daily/2026-05-05/evening-analysis
-generated_at: 2026-05-09T06:33:55.549Z
+generated_at: 2026-05-09T10:11:20.822Z
 language: en
 layout: article
 ---
 ## Executive Brief
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/executive-brief.md -->
-
-**For**: Riksdagsmonitor subscribers and political analysts  
-
-**Election countdown**: T−131 days (2026-09-13)  
 
 ---
 
@@ -81,8 +77,6 @@ Use this guide to read the article as a political-intelligence product rather th
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-05/evening-analysis/synthesis-summary.md -->
-
-**Election proximity**: 131 days to 2026-09-13  
 
 ---
 

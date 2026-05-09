@@ -1,11 +1,11 @@
 ---
-title: "Realtime Monitor 1434"
+title: "Sweden's Konstitutionsutskottet advanced two grundlag amendments"
 description: "Sweden's Konstitutionsutskottet advanced two grundlag amendments (HD01KU32 + HD01KU33) on 2026-04-17 — the first substantive narrowing of Tryckfrihetsförordningen (1766) in the digital-evidence…"
 date: 2026-04-17
 subfolder: realtime-1434
 slug: 2026-04-17-realtime-1434
 source_folder: analysis/daily/2026-04-17/realtime-1434
-generated_at: 2026-05-09T06:33:54.829Z
+generated_at: 2026-05-09T10:11:20.236Z
 language: en
 layout: article
 ---

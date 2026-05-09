@@ -1,11 +1,11 @@
 ---
 title: "Infrastrukturinvestering, läkemedelssäkerhet och kommunal digitalisering: Tre propositioner den 28 april 2026"
-description: "Regeringen Kristersson presenterade den 28 april 2026 tre propositioner med skilda politiska tyngder: den nationella transportinfrastrukturplanen 2026–2037 (Skr."
+description: "Regeringen Kristersson presenterade den 28 april 2026 tre propositioner med skilda politiska tyngder: den nationella transportinfrastrukturplanen 2026–2037 (Skr. 2025/26:259, HD03259) avsätter 875…"
 date: 2026-04-29
 subfolder: propositions
 slug: 2026-04-29-propositions
 source_folder: analysis/daily/2026-04-29/propositions
-generated_at: 2026-05-09T06:33:55.310Z
+generated_at: 2026-05-09T10:11:20.624Z
 language: en
 layout: article
 ---

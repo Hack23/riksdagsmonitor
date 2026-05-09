@@ -5,7 +5,7 @@ date: 2026-04-29
 subfolder: month-ahead
 slug: 2026-04-29-month-ahead
 source_folder: analysis/daily/2026-04-29/month-ahead
-generated_at: 2026-05-09T06:33:55.288Z
+generated_at: 2026-05-09T10:11:20.605Z
 language: en
 layout: article
 ---
@@ -164,8 +164,6 @@ graph LR
 
 ### Key Judgment 1 (KJ-1): Tidö Coalition Will Deliver Core May Legislative Package
 
-**WEP**: LIKELY (65–85% probability)  
-
 The Tidö coalition will successfully pass the Spring Fiscal Bill (HC01FiU20), weapons law (HD01JuU10), and citizenship tightening (HD01SfU28) before the summer recess with HIGH confidence. SD's documented 97.7% voting discipline in 2025/26 and the absence of any documented L or KD defection signals on these bills provide the structural basis. The most credible risk is L's sensitivity to housing-related fiscal provisions in HC01FiU20, which could produce one or two L abstentions but not an outright defeat. Evidence: riksdagen.se committee records; prior session analysis; SD voting history 2025/26.
 
 **Prior-Cycle PIR Status**: PIR-2 (Justice cluster) — tracking YES. PIR-1 (coalition stability) — maintained.
@@ -173,8 +171,6 @@ The Tidö coalition will successfully pass the Spring Fiscal Bill (HC01FiU20), w
 ---
 
 ### Key Judgment 2 (KJ-2): S Interpellation Campaign Will Produce Measurable Electoral Damage
-
-**WEP**: VERY LIKELY (>85%)  
 
 Socialdemokraterna's coordinated interpellation campaign (HD10449, HD10450, HD10451, HD10454, HD11767) will produce measurable electoral damage to the Tidö government in May–June 2026 with HIGH confidence. Historical interpellation analysis shows that seven or more coordinated cross-minister filings in a pre-election 90-day window produce a median 2–4pp opposition polling gain within 6 weeks. The HVB homes case (HD10454) is particularly potent: a two-year government delay in releasing a police list of criminal-linked care homes constitutes a concrete child protection failure with clear ministerial accountability. Evidence: HD10454 full text (riksdagen.se); HD10449/10450/10451 filings; historical Riksdag polling correlation studies.
 
@@ -184,15 +180,11 @@ Socialdemokraterna's coordinated interpellation campaign (HD10449, HD10450, HD10
 
 ### Key Judgment 3 (KJ-3): Sweden's Economic Narrative Will Remain Government-Favourable Through Summer
 
-**WEP**: LIKELY (60–80%)  
-
 Sweden's macroeconomic backdrop will remain broadly supportive of the Tidö government's "fiscal responsibility" electoral narrative through the summer recess, with MEDIUM-HIGH confidence. GDP growth at ~2.0% in 2026 (WEO Apr-2026, NGDP_RPCH), inflation converging toward 2%, and government debt at ~35% of GDP (WEO Apr-2026, GGXWDG_NGDP) — the lowest among major EU states — provides a genuinely strong campaign argument. The main downside risks are US tariff escalation (export sector exposure) and housing market fragility that could trigger mortgage-related consumer confidence drops. Evidence: IMF WEO Apr-2026 (NGDP_RPCH, PCPIPCH, LUR, GGXWDG_NGDP); Riksbank communications.
 
 ---
 
 ### Key Judgment 4 (KJ-4): Ukraine Ratification Will Proceed With All-Party Support
-
-**WEP**: ALMOST CERTAINLY (>95%)  
 
 Sweden's ratification of the Ukraine reparations commission (HD03231) and special tribunal (HD03232) will proceed to a successful all-party Riksdag vote in May–June 2026 with VERY HIGH confidence. All eight parties have expressed support; foreign policy consensus is documented. This represents a non-contentious win for the government that also has cross-party value. Evidence: HD03231, HD03232 (riksdagen.se); HD11752/11753 Russia hardening motions confirming parliamentary consensus.
 

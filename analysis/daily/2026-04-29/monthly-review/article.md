@@ -1,11 +1,11 @@
 ---
 title: "Riksdag Monthly Review: April–May 2026"
-description: "1. Lead story: HC01FiU20 Spring Fiscal Bill — four opposition parties (S, V, C, MP) contested the Tidö economic policy framework; US tariff shock revised GDP to 1.9% (2025)."
+description: "Lead story: HC01FiU20 Spring Fiscal Bill — four opposition parties (S, V, C, MP) contested the Tidö economic policy framework; US tariff shock revised GDP to 1.9% (2025)."
 date: 2026-04-29
 subfolder: monthly-review
 slug: 2026-04-29-monthly-review
 source_folder: analysis/daily/2026-04-29/monthly-review
-generated_at: 2026-05-09T06:33:55.296Z
+generated_at: 2026-05-09T10:11:20.611Z
 language: en
 layout: article
 ---
@@ -1912,9 +1912,6 @@ graph TD
 
 ## Methodology Reflection & Limitations
 <!-- source: methodology-reflection.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-29/monthly-review/methodology-reflection.md -->
-
-**Pass**: 2 (final)  
-**Method**: ai-driven-analysis-guide.md v5.0  
 
 ---
 

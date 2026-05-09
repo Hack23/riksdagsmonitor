@@ -1,11 +1,11 @@
 ---
 title: "Sweden's Pre-Election Legislative Sprint Exposes Coalition Fault Lines"
-description: "The 2026-05-05 parliamentary pulse reveals a Tidö government prosecuting its legislative agenda at pace — household debt surveillance (HD03255), forestry deregulation (prop."
+description: "The 2026-05-05 parliamentary pulse reveals a Tidö government prosecuting its legislative agenda at pace — household debt surveillance (HD03255), forestry deregulation (prop. 2025/26:242), criminal…"
 date: 2026-05-05
 subfolder: realtime-pulse
 slug: 2026-05-05-realtime-pulse
 source_folder: analysis/daily/2026-05-05/realtime-pulse
-generated_at: 2026-05-09T06:33:55.581Z
+generated_at: 2026-05-09T10:11:20.848Z
 language: en
 layout: article
 ---
@@ -236,19 +236,13 @@ Three additional documents published on 2026-05-05 and 2026-04-29, identified in
 **HD10469 — Gender-equal parental insurance (S → Larsson L)**
 S MP Sanne Lennström challenges Equality Minister Nina Larsson on slow progress toward gender-equal parental leave. Fathers take only 31% of parental leave (Försäkringskassan data), creating a documented wage gap and pension poverty trajectory for women. The interpellation introduces a **material EU compliance dimension**: at least two coalition-adjacent parties (SD + C are the likely candidates) have announced intent to abolish mandatory reserved parental months — which would potentially violate EU Directive 2019/1158 (Work-Life Balance). L is trapped between SD's kvotering-opposition and Sweden's EU obligations.
 
-**DIW**: 0.68 (L2 Moderate, pre-election gender politics, EU compliance overlay)
-
 **HD10468 — Taxi industry non-compliance (S → Carlson KD)**
 S MP Kadir Kasirga cites a new Transportstyrelsen report showing systematic violations of driving/rest hour rules in the taxi sector. Three-question interpellation demanding enforcement action, stronger supervision, and regulatory review (including sanction system). This adds to **Andreas Carlson's accountability burden** — already targeted by HD10463 (Ostlänken). Infrastructure portfolio is accumulating ministerial pressure.
-
-**DIW**: 0.42 (L1 Surface, regulatory/labour market)
 
 #### Youth Crime Parliamentary Arithmetic — Confirmed (HD024136)
 
 **HD024136 — S committee motion (Teresa Carvalho et al) opposing age-13**
 S joins V, C, and MP in opposing the government's proposal to lower criminal responsibility age to 13 under prop. 2025/26:246. This formally **confirms the 4-party parliamentary majority** against the government's signature youth crime measure. Combined opposition: V (HD024142) + S (HD024136) + C (HD024146) + MP (HD024148) = parliamentary arithmetic that will defeat the government in JuU vote expected late May/June 2026.
-
-**DIW**: 0.82 (L3 Structural — confirms coalition arithmetic for major legislative defeat)
 
 **Updated DIW Rankings (Run 3)**:
 
@@ -541,7 +535,6 @@ The Justice Committee's betänkande JuU30 addresses custodial sentences for chil
 
 ### Significance Assessment
 
-**DIW**: 0.82 (L2+ Priority — upgraded from initial assessment)  
 **Rationale**: JuU30 was not in the original document set. Its publication today, alongside HD10458 and the pending prop. 2025/26:246, creates a legislative triple-lock on youth criminal justice that is the most complex policy cluster in today's pulse. C's defection gains additional constitutional ballast from the committee's own legal analysis.
 
 ---
@@ -1018,7 +1011,6 @@ Wiechel asks the minister to clarify the government's position on Sida's future.
 
 ### Significance Assessment
 
-**DIW**: 0.80 (L2+ Priority)  
 **Rationale**: Sida abolition is a live pre-election signalling issue. The Hamas-linked payment scandal provides SD with credible accountability framing. M must respond publicly, creating a floor-debate-level wedge moment. High amplification probability in major media.
 
 ---
@@ -1078,7 +1070,6 @@ S MP Peder Björk demands accountability from KD Civilminister Slottner regardin
 
 ### Significance Assessment
 
-**DIW**: 0.62 (L3 Standard)  
 **Rationale**: Important accountability track but limited legislative consequence — the interpellation will generate floor debate, some media, but no policy change before 2026-09 election. The state service withdrawal is a documented policy direction; Slottner's answer is unlikely to reverse it.
 
 ---
@@ -1149,7 +1140,6 @@ The interpellation invokes the principle of opolitiska tjänstemän (politically
 
 ### Significance Assessment
 
-**DIW**: 0.82 (L2+ Priority — HIGH significance)  
 **Rationale**: SD's institutional accountability offensive represents the highest-significance non-legislative story cluster today. HD10466 specifically targets democratic norms (civil service neutrality) and has international echo potential. Media amplification probability: high. Constitutional scholars will respond.
 
 ---
