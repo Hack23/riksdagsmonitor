@@ -35,6 +35,16 @@ import { cleanArtifactBody } from '../cleaning/structural.js';
 export const SENTENCE_END_RE = /(?:[.!?…](?=\s|$))|[。।]/g;
 
 /**
+ * Characters that may appear inside an abbreviation token when walking
+ * backwards from a candidate sentence-end `.`. Letters plus internal dots
+ * allow multi-dot abbreviations like `e.g.`, `bl.a.`, `d.v.s.` to be
+ * captured as a single token by {@link isAbbreviationDot}.
+ * Defined outside the function to avoid allocating a new regex object on
+ * every iteration of the walk-back loop.
+ */
+const ABBREV_TOKEN_CHAR_RE = /[A-Za-z.]/;
+
+/**
  * Common abbreviations that end with `.` followed by a space — these
  * must NOT be treated as sentence boundaries by {@link truncateToSentenceBoundary},
  * otherwise the description gets cut mid-sentence at e.g.
@@ -107,7 +117,7 @@ export function isAbbreviationDot(text: string, dotIndex: number): boolean {
   // Walk back from the character before the dot to the nearest whitespace,
   // allowing letters and internal dots (for e.g. / i.e. / U.S. etc.).
   let start = dotIndex - 1;
-  while (start >= 0 && /[A-Za-z.]/.test(text[start]!)) start -= 1;
+  while (start >= 0 && ABBREV_TOKEN_CHAR_RE.test(text[start]!)) start -= 1;
   const rawToken = text.slice(start + 1, dotIndex);
   if (!rawToken) return false;
   // Normalise: lower-case and strip all dots so `e.g` → `eg`, `d.v.s` → `dvs`.
