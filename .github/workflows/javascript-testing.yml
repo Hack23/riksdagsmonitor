@@ -156,21 +156,29 @@ jobs:
     # than the 5-minute per-page jobs. The previous 5-minute timeout caused
     # repeated cancellations on both PRs and main (see run 3064).
     timeout-minutes: 15
+    # Use the official Cypress browsers image so Chrome/Firefox/Edge are
+    # preinstalled at known versions — eliminates cypress↔chrome version
+    # drift and bundles the system libraries (Xvfb, fonts) Cypress needs.
+    # Node 26 is installed inside the container via actions/setup-node
+    # because no Cypress image yet ships Node 26.
+    # NOTE: the cypress NPM binary itself is still downloaded from
+    # download.cypress.io during `npm ci` — only the browser binaries
+    # are preinstalled by the image. cdn.cypress.io / download.cypress.io
+    # are therefore still required egress; they are no longer in the
+    # allow-list because harden-runner cannot run in a container job.
+    # TODO: pin to an immutable @sha256: digest via Renovate.
+    container:
+      image: cypress/browsers:latest
+      options: --user root
     
     steps:
-      - name: Harden Runner
-        uses: step-security/harden-runner@a5ad31d6a139d249332a2605b85202e8c0b78450 # v2.19.1
-        with:
-          egress-policy: block
-          allowed-endpoints: >
-            api.github.com:443
-            cdn.cypress.io:443
-            codeload.github.com:443
-            download.cypress.io:443
-            github.com:443
-            nodejs.org:443
-            objects.githubusercontent.com:443
-            registry.npmjs.org:443
+      # NOTE: step-security/harden-runner is host-level and is not
+      # compatible with container jobs, so this job runs WITHOUT
+      # runtime egress restrictions — accepted trade-off for browser
+      # version determinism. The harden-runner unit / build jobs above
+      # (with strict block mode) still gate the artifacts and source
+      # this job consumes, but do not enforce outbound restrictions for
+      # this job at runtime.
       
       - name: Checkout code
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -203,6 +211,9 @@ jobs:
           spec: 'cypress/e2e/multi-language-sanity.cy.js'
           config: video=false
           quiet: true
+          # Skip the action's bundled `npm install` — we already ran
+          # `npm ci` above and the container ships browsers preinstalled.
+          install: false
       
       - name: Archive screenshots
         if: failure()

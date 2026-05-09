@@ -2123,6 +2123,7 @@ Riksdagsmonitor achieves robust security posture with minimal financial investme
 6. ✅ **GPG Commit Signing:** Cryptographic commit verification
 7. ✅ **Audit Log:** Track access and changes (90-day retention)
 8. ✅ **Attestations:** SLSA build provenance and SBOM signing
+9. ✅ **OWASP ZAP DAST:** Weekly + on-demand active scans against production via `.github/workflows/zap-scan.yml` (rules baseline `.zap/rules.tsv`); artifacts retained 90 days. Maps to ISO 27001 A.8.29 / NIST CSF DE.CM-08 / CIS Control 18.
 
 **AWS Free Tier Security Features:**
 1. ✅ **Shield Standard:** DDoS protection for CloudFront
@@ -2228,7 +2229,7 @@ Riksdagsmonitor demonstrates that robust security is achievable for static websi
 
 **2028:**
 - Explore GitHub Enterprise for extended audit logging
-- Implement automated pen-testing with OWASP ZAP
+- Expand OWASP ZAP DAST coverage to per-PR scans against `npm run preview` (current scope: weekly + on-demand against production — see `.github/workflows/zap-scan.yml`)
 - Achieve SLSA Level 3 (hermetic builds with ephemeral environments)
 
 ### **Commitment to Security**
@@ -2553,14 +2554,14 @@ The primary residual risks are LLM02 (output handling) mitigated by human review
 | | 16.10 Apply secure design principles in application architectures | IG2 | YES | Defense-in-depth, least privilege, static-first | Core architectural principle |
 | | 16.11 Leverage vetted modules and services | IG2 | YES | npm known-good packages, GitHub Actions marketplace | SHA-pinned, Dependabot monitored |
 | | 16.12 Implement code-level security checks | IG2 | YES | CodeQL, ESLint security rules, HTMLHint | Every PR |
-| | 16.13 Conduct application penetration testing | IG3 | PARTIAL | Manual review; automated pentest planned 2028 | OWASP ZAP planned |
+| | 16.13 Conduct application penetration testing | IG3 | YES | Manual review + OWASP ZAP DAST (`.github/workflows/zap-scan.yml`, weekly + on-demand) | Automated active scans against production |
 | **17: Incident Response Management** | 17.1 Designate personnel for incident response | IG1 | YES | CEO: designated IR coordinator | Documented in BCPPlan.md |
 | | 17.2 Establish incident response process | IG1 | YES | ISMS IRP, BCPPlan.md IR Playbooks | IR-PB-001/002/003 |
 | | 17.3 Test incident response process | IG2 | PARTIAL | Annual BCP test includes IR scenarios | Quarterly BCP test planned |
 | | 17.4 Train workforce on incident response | IG1 | N/A | Single-person company | CEO as sole responder |
 | | 17.5 Evaluate lessons learned | IG2 | YES | Post-incident review in all IR playbooks | Documented |
 | | 17.6 Define metrics for incident response | IG2 | YES | MTTP, RTO, RPO metrics in SECURITY_ARCHITECTURE.md | Tracked |
-| **18: Penetration Testing** | 18.1 Establish a penetration testing program | IG2 | PARTIAL | Manual security review; automated planned 2028 | OWASP ZAP 2028 |
+| **18: Penetration Testing** | 18.1 Establish a penetration testing program | IG2 | YES | OWASP ZAP active scans (weekly + on-demand) via `.github/workflows/zap-scan.yml`; rules baseline `.zap/rules.tsv`; reports retained 90 days | Automated DAST live |
 | | 18.2 Perform periodic external penetration tests | IG3 | PARTIAL | External pen test planned 2027 | Budgeted for 2027 |
 | | 18.3 Remediate penetration test findings | IG2 | YES | Process documented; applied to CodeQL findings | Remediation process active |
 

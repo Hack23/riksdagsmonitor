@@ -74,6 +74,15 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     timeout-minutes: 5 # Max 5 minutes
+    # Use the official Cypress browsers image so Chrome/Firefox/Edge are
+    # preinstalled at known versions — eliminates the previous risk of
+    # cypress↔chrome version drift when GitHub-hosted runner images are
+    # bumped. Node 26 is installed inside the container via
+    # actions/setup-node because no Cypress image yet ships Node 26.
+    # TODO: pin to an immutable @sha256: digest via Renovate.
+    container:
+      image: cypress/browsers:latest
+      options: --user root
     strategy:
       fail-fast: true # Stop immediately on failure
       matrix:
@@ -82,10 +91,12 @@ jobs:
           - 'cypress/e2e/accessibility.cy.js'
     
     steps:
-      - name: Harden Runner
-        uses: step-security/harden-runner@a5ad31d6a139d249332a2605b85202e8c0b78450 # v2.19.1
-        with:
-          egress-policy: audit
+      # NOTE: step-security/harden-runner is a host-level action and is
+      # not compatible with container jobs, so this job runs WITHOUT
+      # runtime egress restrictions — accepted trade-off for browser
+      # version determinism. The harden-runner build job above still
+      # gates the artifacts this job consumes, but does not enforce
+      # outbound restrictions for this job at runtime.
       
       - name: Checkout code
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -117,7 +128,10 @@ jobs:
           browser: chrome
           spec: ${{ matrix.spec }}
           config: video=false
-          quiet: true # Faster output
+          quiet: true
+          # Skip the action's bundled `npm install` — we already ran
+          # `npm ci` above and the container ships browsers preinstalled.
+          install: false # Faster output
       
       - name: Archive screenshots
         if: failure()

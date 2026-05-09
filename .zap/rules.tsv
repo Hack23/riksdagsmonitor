@@ -1,0 +1,14 @@
+# OWASP ZAP rule baseline for riksdagsmonitor
+#
+# Format:  <RULE_ID>\t<ACTION>\t[OPTIONAL_NOTE]
+# Actions: IGNORE | INFO | WARN | FAIL
+#
+# Riksdagsmonitor is a fully static HTML/CSS site hosted on GitHub Pages
+# + AWS S3/CloudFront. Many ZAP rules target dynamic web apps and are
+# not applicable. Tune below as we triage scan findings (see
+# `.github/workflows/zap-scan.yml` for cadence).
+#
+# Maintenance: review every quarter against the SLA in
+# `Vulnerability_Management.md` (Crit 24h / High 7d / Med 30d / Low 90d).
+#
+# RULE_ID	ACTION	NOTE
