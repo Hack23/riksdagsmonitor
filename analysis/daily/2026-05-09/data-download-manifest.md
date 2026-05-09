@@ -1,8 +1,8 @@
 # Data Download Manifest — 2026-05-09
 
-**Generated**: 2026-05-09 07:19 UTC
+**Generated**: 2026-05-09 20:39 UTC
 **Data Sources**: get_propositioner, get_motioner, get_betankanden, search_voteringar, search_anforanden, get_fragor, get_interpellationer, get_dokument_innehall
-**Documents Downloaded**: 120
+**Documents Downloaded**: 180
 **Documents Selected (date-filtered)**: 11
 **Produced By**: download-parliamentary-data script (data download only)
 
@@ -15,13 +15,13 @@
 
 ## Document Counts by Type
 
-- **propositions**: 20 documents
-- **motions**: 20 documents
-- **committeeReports**: 20 documents
+- **propositions**: 30 documents
+- **motions**: 30 documents
+- **committeeReports**: 30 documents
 - **votes**: 0 documents
-- **speeches**: 20 documents
-- **questions**: 20 documents
-- **interpellations**: 20 documents
+- **speeches**: 30 documents
+- **questions**: 30 documents
+- **interpellations**: 30 documents
 
 ## Data Quality Notes
 
