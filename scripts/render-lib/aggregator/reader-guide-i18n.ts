@@ -37,6 +37,15 @@ export interface ReaderGuideChrome {
   readonly auditValue: string;
   readonly auditArtifactLabel: string;
   /**
+   * Localized sr-only label for the icon column header. The icon
+   * column is visually decorative (the icon repeats meaning expressed
+   * in the next column) but assistive technology still needs a name
+   * for the column so users hear something distinct from the adjacent
+   * `colReaderNeed` header. Examples: "Icon" (en), "Ikon" (sv),
+   * "Icône" (fr), "アイコン" (ja).
+   */
+  readonly colIcon: string;
+  /**
    * Generic localized fallback description used as the "reader value"
    * cell for any analysis artifact that is not in the curated
    * {@link ../reader-guide.js#READER_GUIDE_ENTRIES} list. Allows the
@@ -77,6 +86,7 @@ const EN_CHROME: ReaderGuideChrome = {
   auditLabel: 'Audit appendix',
   auditValue: 'classification, cross-reference, methodology and manifest evidence for reviewers',
   auditArtifactLabel: 'appendix artifacts',
+  colIcon: 'Icon',
   defaultReaderValue: 'supporting analytical lens with primary-source evidence and audit-traceable citations',
 };
 
@@ -124,6 +134,7 @@ const SV_CHROME: ReaderGuideChrome = {
   auditLabel: 'Revisionsappendix',
   auditValue: 'klassificering, korsreferens, metodik och manifestbevisning för granskare',
   auditArtifactLabel: 'appendixartefakter',
+  colIcon: 'Ikon',
   defaultReaderValue: 'stödjande analytisk lins med primärkällsbevisning och spårbara citat',
 };
 
@@ -171,6 +182,7 @@ const DA_CHROME: ReaderGuideChrome = {
   auditLabel: 'Revisionsappendiks',
   auditValue: 'klassifikation, krydsreference, metodik og manifest-bevismateriale til anmeldere',
   auditArtifactLabel: 'appendiksartefakter',
+  colIcon: 'Ikon',
   defaultReaderValue: 'støttende analytisk linse med primærkildebevis og sporbare citater',
 };
 
@@ -218,6 +230,7 @@ const NO_CHROME: ReaderGuideChrome = {
   auditLabel: 'Revisjonsvedlegg',
   auditValue: 'klassifisering, kryssreferanse, metodikk og manifest-bevis for anmeldere',
   auditArtifactLabel: 'vedleggsartefakter',
+  colIcon: 'Ikon',
   defaultReaderValue: 'støttende analytisk linse med primærkildebevis og sporbare sitater',
 };
 
@@ -265,6 +278,7 @@ const FI_CHROME: ReaderGuideChrome = {
   auditLabel: 'Tarkastusliite',
   auditValue: 'luokitus, ristiviittaus, metodologia ja manifest-todistusaineisto tarkastajille',
   auditArtifactLabel: 'liiteartefaktit',
+  colIcon: 'Kuvake',
   defaultReaderValue: 'tukeva analyyttinen näkökulma ensisijaislähde-todisteilla ja jäljitettävillä viittauksilla',
 };
 
@@ -312,6 +326,7 @@ const DE_CHROME: ReaderGuideChrome = {
   auditLabel: 'Prüfungsanhang',
   auditValue: 'Klassifizierung, Querverweise, Methodik und Manifest-Beweismaterial für Prüfer',
   auditArtifactLabel: 'Anhangsartefakte',
+  colIcon: 'Symbol',
   defaultReaderValue: 'unterstützende analytische Linse mit Primärquellenbeweisen und nachvollziehbaren Zitaten',
 };
 
@@ -359,6 +374,7 @@ const FR_CHROME: ReaderGuideChrome = {
   auditLabel: "Annexe d'audit",
   auditValue: "classification, références croisées, méthodologie et preuve manifeste pour les réviseurs",
   auditArtifactLabel: 'artefacts d’annexe',
+  colIcon: 'Icône',
   defaultReaderValue: 'lentille analytique de soutien avec preuves de source primaire et citations traçables',
 };
 
@@ -406,6 +422,7 @@ const ES_CHROME: ReaderGuideChrome = {
   auditLabel: 'Apéndice de auditoría',
   auditValue: 'clasificación, referencias cruzadas, metodología y evidencia manifiesta para revisores',
   auditArtifactLabel: 'artefactos del apéndice',
+  colIcon: 'Icono',
   defaultReaderValue: 'lente analítica de apoyo con evidencia de fuente primaria y citas trazables',
 };
 
@@ -453,6 +470,7 @@ const NL_CHROME: ReaderGuideChrome = {
   auditLabel: 'Auditbijlage',
   auditValue: 'classificatie, kruisverwijzingen, methodologie en manifest-bewijs voor beoordelaars',
   auditArtifactLabel: 'appendixartefacten',
+  colIcon: 'Pictogram',
   defaultReaderValue: 'ondersteunende analytische lens met primaire-bron bewijs en traceerbare citaten',
 };
 
@@ -500,6 +518,7 @@ const AR_CHROME: ReaderGuideChrome = {
   auditLabel: 'ملحق التدقيق',
   auditValue: 'تصنيف، إسناد ترافقي، منهجية وأدلة بيان للمراجعين',
   auditArtifactLabel: 'مخرجات الملحق',
+  colIcon: 'أيقونة',
   defaultReaderValue: 'عدسة تحليلية مساندة مع أدلة من مصادر أولية واقتباسات قابلة للتتبع',
 };
 
@@ -547,6 +566,7 @@ const HE_CHROME: ReaderGuideChrome = {
   auditLabel: 'נספח ביקורת',
   auditValue: 'סיווג, הפניות צולבות, מתודולוגיה וראיות מניפסט לסוקרים',
   auditArtifactLabel: 'תוצרי נספח',
+  colIcon: 'אייקון',
   defaultReaderValue: 'עדשה אנליטית תומכת עם ראיות ממקור ראשון וציטוטים ניתנים למעקב',
 };
 
@@ -594,6 +614,7 @@ const JA_CHROME: ReaderGuideChrome = {
   auditLabel: '監査付録',
   auditValue: '分類、相互参照、方法論、レビュアー向けマニフェスト証拠',
   auditArtifactLabel: '付録アーティファクト',
+  colIcon: 'アイコン',
   defaultReaderValue: '一次資料の証拠と監査追跡可能な引用を備えた補完的分析レンズ',
 };
 
@@ -641,6 +662,7 @@ const KO_CHROME: ReaderGuideChrome = {
   auditLabel: '감사 부록',
   auditValue: '분류, 교차 참조, 방법론 및 검토자를 위한 매니페스트 증거',
   auditArtifactLabel: '부록 산출물',
+  colIcon: '아이콘',
   defaultReaderValue: '1차 자료 증거와 추적 가능한 인용이 포함된 보조 분석 렌즈',
 };
 
@@ -688,6 +710,7 @@ const ZH_CHROME: ReaderGuideChrome = {
   auditLabel: '审计附录',
   auditValue: '分类、交叉引用、方法论和审阅者清单证据',
   auditArtifactLabel: '附录工件',
+  colIcon: '图标',
   defaultReaderValue: '具有原始资料证据和可审计引用的补充分析视角',
 };
 

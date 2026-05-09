@@ -44,7 +44,7 @@ import { buildGithubBlobUrl } from './url-helpers.js';
 import { depth } from './chrome/helpers.js';
 import { artifactTitle, artifactIcon } from '../political-intelligence/i18n/artifact-i18n.js';
 import { readerGuideI18n } from './aggregator/reader-guide-i18n.js';
-import { READER_GUIDE_ENTRIES, anchorForTitle } from './aggregator/reader-guide.js';
+import { READER_GUIDE_ENTRIES, anchorForTitle, hasPerDocumentAnalyses, selectReaderGuideArtifacts } from './aggregator/reader-guide.js';
 import { titleForArtifact } from './aggregator/order.js';
 
 // ─────────────────────────────────────────────────────────────────────────
@@ -82,22 +82,14 @@ export function renderReaderNavigation(input: ReaderNavigationInput): string {
   const guideI18n = readerGuideI18n(input.lang);
   const guideChrome = guideI18n.chrome;
 
-  // Deduplicate artifactsUsed (preserve canonical aggregation order),
-  // skipping per-document analyses (folded into a single "Per-document
-  // intelligence" row) and empty/non-artifact entries.
-  const seen = new Set<string>();
-  const rootArtifacts: string[] = [];
-  let hasDocAnalyses = false;
-  for (const a of input.artifactsUsed) {
-    if (!a || seen.has(a)) continue;
-    seen.add(a);
-    if (a.startsWith('documents/') && a.endsWith('-analysis.md')) {
-      hasDocAnalyses = true;
-      continue;
-    }
-    if (!/\.(md|json)$/i.test(a)) continue;
-    rootArtifacts.push(a);
-  }
+  // Filter `artifactsUsed` to the exact set of artifacts the
+  // aggregator emits as `## <title>` sections (alias-deduped, no
+  // README, no JSON, no `documents/*-analysis.md`, no `article*.md`).
+  // Without this filter the guide would emit anchor links whose
+  // targets do not exist in the rendered article — see
+  // `selectReaderGuideArtifacts` for the full contract.
+  const rootArtifacts = selectReaderGuideArtifacts(input.artifactsUsed);
+  const hasDocAnalyses = hasPerDocumentAnalyses(input.artifactsUsed);
 
   const guideRows = rootArtifacts.map((file) => {
     const sectionTitle = titleForArtifact(file);
@@ -146,7 +138,7 @@ export function renderReaderNavigation(input: ReaderNavigationInput): string {
           <table class="rm-reader-guide-table">
             <thead>
               <tr>
-                <th scope="col" class="rm-reader-guide-icon-col"><span class="sr-only">Icon</span></th>
+                <th scope="col" class="rm-reader-guide-icon-col"><span class="sr-only">${escapeHtml(guideChrome.colIcon)}</span></th>
                 <th scope="col">${escapeHtml(guideChrome.colReaderNeed)}</th>
                 <th scope="col">${escapeHtml(guideChrome.colWhatYouGet)}</th>
               </tr>
