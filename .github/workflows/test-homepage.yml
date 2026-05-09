@@ -92,9 +92,11 @@ jobs:
     
     steps:
       # NOTE: step-security/harden-runner is a host-level action and is
-      # not compatible with container jobs. Network egress is instead
-      # restricted via the repository-level OpenSSF Scorecard policy
-      # and the build job above (which still runs harden-runner).
+      # not compatible with container jobs, so this job runs WITHOUT
+      # runtime egress restrictions — accepted trade-off for browser
+      # version determinism. The harden-runner build job above still
+      # gates the artifacts this job consumes, but does not enforce
+      # outbound restrictions for this job at runtime.
       
       - name: Checkout code
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2

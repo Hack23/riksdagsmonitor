@@ -158,9 +158,14 @@ jobs:
     timeout-minutes: 15
     # Use the official Cypress browsers image so Chrome/Firefox/Edge are
     # preinstalled at known versions — eliminates cypress↔chrome version
-    # drift and removes the cdn.cypress.io / download.cypress.io egress
-    # dependency. Node 26 is installed inside the container via
-    # actions/setup-node because no Cypress image yet ships Node 26.
+    # drift and bundles the system libraries (Xvfb, fonts) Cypress needs.
+    # Node 26 is installed inside the container via actions/setup-node
+    # because no Cypress image yet ships Node 26.
+    # NOTE: the cypress NPM binary itself is still downloaded from
+    # download.cypress.io during `npm ci` — only the browser binaries
+    # are preinstalled by the image. cdn.cypress.io / download.cypress.io
+    # are therefore still required egress; they are no longer in the
+    # allow-list because harden-runner cannot run in a container job.
     # TODO: pin to an immutable @sha256: digest via Renovate.
     container:
       image: cypress/browsers:latest
@@ -168,10 +173,12 @@ jobs:
     
     steps:
       # NOTE: step-security/harden-runner is host-level and is not
-      # compatible with container jobs. Egress hardening for this job is
-      # provided by the repository-level Scorecard policy and the unit /
-      # build jobs above (which retain harden-runner with strict block
-      # mode).
+      # compatible with container jobs, so this job runs WITHOUT
+      # runtime egress restrictions — accepted trade-off for browser
+      # version determinism. The harden-runner unit / build jobs above
+      # (with strict block mode) still gate the artifacts and source
+      # this job consumes, but do not enforce outbound restrictions for
+      # this job at runtime.
       
       - name: Checkout code
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
