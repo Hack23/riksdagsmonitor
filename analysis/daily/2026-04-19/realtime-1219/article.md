@@ -5,7 +5,7 @@ date: 2026-04-19
 subfolder: realtime-1219
 slug: 2026-04-19-realtime-1219
 source_folder: analysis/daily/2026-04-19/realtime-1219
-generated_at: 2026-05-09T12:22:21.464Z
+generated_at: 2026-05-09T18:35:30.114Z
 language: en
 layout: article
 ---
@@ -129,14 +129,23 @@ Per-document: [HD01KU33 (LEAD, L3)](https://github.com/Hack23/riksdagsmonitor/bl
 
 Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
 
-| Reader need | What you'll get | Source artifact |
+| Icon | Reader need | What you'll get |
 |---|---|---|
-| [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
-| [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals | `significance-scoring.md` |
-| [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
-| [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register | `risk-assessment.md` |
-| [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
-| [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
+| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
+| 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 🔮 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs |
+| ⚠️ | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register |
+| 🧮 | [SWOT Analysis](#rm-swot-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 🛡️ | [Threat Analysis](#rm-threat-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 🌍 | [Comparative International](#rm-comparative-international) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 🏷️ | [Classification Results](#rm-classification-results) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📦 | [Data Download Manifest](#rm-data-download-manifest) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
+| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-19/realtime-1219/synthesis-summary.md -->

@@ -2058,26 +2058,29 @@ describe('render-lib — stripBodyDuplicateSections', () => {
       'Content.',
     ].join('\n');
 
-    // Test all canonical languages to verify localization works
+    // Test all canonical languages to verify localization works.
+    // `auditLabel` is the localized text of the audit-appendix row's
+    // first cell (still rendered after the source-artifact column was
+    // dropped per the user-visible "remove source artifacts" contract).
     const localizedExpectations = {
-      en: { heading: 'Reader Intelligence Guide', auditArtifact: 'appendix artifacts' },
-      sv: { heading: 'Läsarens underrättelseguide', auditArtifact: 'appendixartefakter' },
-      da: { heading: 'Læserens efterretningsguide', auditArtifact: 'appendiksartefakter' },
-      no: { heading: 'Leserens etterretningsguide', auditArtifact: 'vedleggsartefakter' },
-      fi: { heading: 'Lukijan tiedusteluopas', auditArtifact: 'liiteartefaktit' },
-      de: { heading: 'Nachrichtendienstlicher Leseleitfaden', auditArtifact: 'Anhangsartefakte' },
-      fr: { heading: 'Guide de renseignement du lecteur', auditArtifact: 'artefacts d’annexe' },
-      es: { heading: 'Guía de inteligencia del lector', auditArtifact: 'artefactos del apéndice' },
-      nl: { heading: 'Inlichtingengids voor de lezer', auditArtifact: 'appendixartefacten' },
-      ar: { heading: 'دليل القارئ الاستخباراتي', auditArtifact: 'مخرجات الملحق' },
-      he: { heading: 'מדריך המודיעין לקורא', auditArtifact: 'תוצרי נספח' },
-      ja: { heading: '読者向けインテリジェンスガイド', auditArtifact: '付録アーティファクト' },
-      ko: { heading: '독자 인텔리전스 가이드', auditArtifact: '부록 산출물' },
-      zh: { heading: '读者情报指南', auditArtifact: '附录工件' },
-    } satisfies Record<Language, { heading: string; auditArtifact: string }>;
+      en: { heading: 'Reader Intelligence Guide', auditLabel: 'Audit appendix' },
+      sv: { heading: 'Läsarens underrättelseguide', auditLabel: 'Revisionsappendix' },
+      da: { heading: 'Læserens efterretningsguide', auditLabel: 'Revisionsappendiks' },
+      no: { heading: 'Leserens etterretningsguide', auditLabel: 'Revisjonsvedlegg' },
+      fi: { heading: 'Lukijan tiedusteluopas', auditLabel: 'Tarkastusliite' },
+      de: { heading: 'Nachrichtendienstlicher Leseleitfaden', auditLabel: 'Prüfungsanhang' },
+      fr: { heading: 'Guide de renseignement du lecteur', auditLabel: "Annexe d&#039;audit" },
+      es: { heading: 'Guía de inteligencia del lector', auditLabel: 'Apéndice de auditoría' },
+      nl: { heading: 'Inlichtingengids voor de lezer', auditLabel: 'Auditbijlage' },
+      ar: { heading: 'دليل القارئ الاستخباراتي', auditLabel: 'ملحق التدقيق' },
+      he: { heading: 'מדריך המודיעין לקורא', auditLabel: 'נספח ביקורת' },
+      ja: { heading: '読者向けインテリジェンスガイド', auditLabel: '監査付録' },
+      ko: { heading: '독자 인텔리전스 가이드', auditLabel: '감사 부록' },
+      zh: { heading: '读者情报指南', auditLabel: '审计附录' },
+    } satisfies Record<Language, { heading: string; auditLabel: string }>;
     const expectations = LANGUAGES.map(lang => ({ lang, ...localizedExpectations[lang] }));
 
-    for (const { lang, heading, auditArtifact } of expectations) {
+    for (const { lang, heading, auditLabel } of expectations) {
       const html = await renderArticleHtml({
         markdown: md,
         lang,
@@ -2086,12 +2089,12 @@ describe('render-lib — stripBodyDuplicateSections', () => {
         artifactsUsed: ['executive-brief.md', 'risk-assessment.md'],
       });
       expect(html, `lang=${lang} should contain localized heading`).toContain(heading);
-      expect(html, `lang=${lang} should contain localized audit artifact label`).toContain(auditArtifact);
+      expect(html, `lang=${lang} should contain localized audit-row label`).toContain(auditLabel);
       expect(html, `lang=${lang} should render responsive Reader Guide table chrome`).toContain('class="rm-reader-guide-table"');
       // Table column headers should also be localized (not English "Reader need")
       if (lang !== 'en') {
         expect(html, `lang=${lang} should not have English table header`).not.toContain('<th>Reader need</th>');
-        expect(html, `lang=${lang} should not have English audit artifact label`).not.toContain('appendix artifacts');
+        expect(html, `lang=${lang} should not have English audit-row label`).not.toContain('>Audit appendix<');
       }
     }
   });

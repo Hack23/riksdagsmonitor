@@ -5,7 +5,7 @@ date: 2026-05-08
 subfolder: evening-analysis
 slug: 2026-05-08-evening-analysis
 source_folder: analysis/daily/2026-05-08/evening-analysis
-generated_at: 2026-05-09T12:22:22.240Z
+generated_at: 2026-05-09T18:35:30.899Z
 language: en
 layout: article
 ---
@@ -64,14 +64,32 @@ Today's Riksdag activity confirms the Tidö coalition is executing its pre-elect
 
 Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.
 
-| Reader need | What you'll get | Source artifact |
+| Icon | Reader need | What you'll get |
 |---|---|---|
-| [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger | `executive-brief.md` |
-| [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps | `intelligence-assessment.md` |
-| [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later | `forward-indicators.md` |
-| [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs | `scenario-analysis.md` |
-| [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability | `documents/*-analysis.md` |
-| [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers | appendix artifacts |
+| 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
+| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 🔭 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later |
+| 🔮 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs |
+| 🧮 | [SWOT Analysis](#rm-swot-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Civil Society Response](#rm-civil-society-response) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Comparative Analysis](#rm-comparative-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Economic Impact](#rm-economic-impact) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Electoral Impact](#rm-electoral-impact) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [International Dimensions](#rm-international-dimensions) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Legislative Forecast](#rm-legislative-forecast) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Media Narrative](#rm-media-narrative) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Methodology Notes](#rm-methodology-notes) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Opposition Analysis](#rm-opposition-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Policy Timeline](#rm-policy-timeline) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Public Opinion](#rm-public-opinion) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Risk Register](#rm-risk-register) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Source Register](#rm-source-register) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 👥 | [Stakeholder Map](#rm-stakeholder-map) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
+| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/evening-analysis/synthesis-summary.md -->

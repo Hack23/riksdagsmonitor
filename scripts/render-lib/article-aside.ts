@@ -44,7 +44,7 @@ import { buildGithubBlobUrl } from './url-helpers.js';
 import { depth } from './chrome/helpers.js';
 import { artifactTitle, artifactIcon } from '../political-intelligence/i18n/artifact-i18n.js';
 import { readerGuideI18n } from './aggregator/reader-guide-i18n.js';
-import { READER_GUIDE_ENTRIES, anchorForTitle } from './aggregator/reader-guide.js';
+import { READER_GUIDE_ENTRIES, anchorForTitle, hasPerDocumentAnalyses, selectReaderGuideArtifacts } from './aggregator/reader-guide.js';
 import { titleForArtifact } from './aggregator/order.js';
 
 // ─────────────────────────────────────────────────────────────────────────
@@ -60,52 +60,83 @@ export interface ReaderNavigationInput {
 /**
  * Render the localised Reader Intelligence Guide navigation table that
  * appears between the executive brief (lead) and the rest of the
- * article body. Same content for every article type — what changes per
- * article is which `READER_GUIDE_ENTRIES` rows survive the
- * "available artifacts" filter.
+ * article body.
+ *
+ * Iterates over **all** analysis artifacts consumed by the article so
+ * the guide acts as a complete, navigable index — not just the
+ * curated {@link READER_GUIDE_ENTRIES} lenses. Each row carries an
+ * artifact icon, the localised section label (anchor link) and a
+ * reader-value description; the legacy "Source artifact" filename
+ * column is dropped (audit-grade traceability now lives exclusively in
+ * the Analysis Sources card grid at the article foot).
+ *
+ * Curated lenses use their bespoke `entries[*]` description; non-
+ * curated artifacts fall back to the localised
+ * {@link ReaderGuideChrome.defaultReaderValue} so every row carries
+ * meaningful copy in all 14 languages.
  *
  * Always produces a non-empty table because the audit-appendix row is
- * unconditionally appended regardless of which READER_GUIDE_ENTRIES
- * matched. Callers can concatenate the return value directly.
+ * unconditionally appended regardless of which artifacts matched.
  */
 export function renderReaderNavigation(input: ReaderNavigationInput): string {
   const guideI18n = readerGuideI18n(input.lang);
   const guideChrome = guideI18n.chrome;
-  const availableArtifacts = new Set(input.artifactsUsed);
 
-  const guideRows = READER_GUIDE_ENTRIES
-    .filter((entry) => availableArtifacts.has(entry.file))
-    .map((entry) => {
-      const sectionTitle = titleForArtifact(entry.file);
-      const anchor = anchorForTitle(sectionTitle);
-      const localised = guideI18n.entries[entry.file];
-      const label = localised?.label ?? entry.label;
-      const readerValue = localised?.readerValue ?? entry.readerValue;
-      return `            <tr>
+  // Filter `artifactsUsed` to the exact set of artifacts the
+  // aggregator emits as `## <title>` sections (alias-deduped, no
+  // README, no JSON, no `documents/*-analysis.md`, no `article*.md`).
+  // Without this filter the guide would emit anchor links whose
+  // targets do not exist in the rendered article — see
+  // `selectReaderGuideArtifacts` for the full contract.
+  const rootArtifacts = selectReaderGuideArtifacts(input.artifactsUsed);
+  const hasDocAnalyses = hasPerDocumentAnalyses(input.artifactsUsed);
+
+  const guideRows = rootArtifacts.map((file) => {
+    const sectionTitle = titleForArtifact(file);
+    const anchor = anchorForTitle(sectionTitle);
+    const localised = guideI18n.entries[file];
+    const curated = READER_GUIDE_ENTRIES.find((e) => e.file === file);
+    // Prefer the localised curated label, then the English curated
+    // label, then the localised artifact title, finally the rendered
+    // section title. The `href` is what MUST match the rendered
+    // heading slug (`anchorForTitle(titleForArtifact(file))`); the
+    // visible link text is intentionally a localised, descriptive
+    // journalist-need phrase (e.g. "BLUF and editorial decisions"
+    // points at the `## Executive Brief` heading).
+    const label =
+      localised?.label
+      ?? curated?.label
+      ?? (artifactTitle(file, input.lang) || sectionTitle);
+    const readerValue =
+      localised?.readerValue ?? curated?.readerValue ?? guideChrome.defaultReaderValue;
+    const icon = artifactIcon(file);
+    // The `<td>` itself stays in the accessibility tree so the
+    // 3-column structure remains intact for screen-reader table
+    // navigation; only the decorative emoji glyph is hidden via the
+    // inner `<span aria-hidden>`. The column header carries the
+    // localised `colIcon` sr-only label so AT users hear a meaningful
+    // column name.
+    return `            <tr>
+              <td class="rm-reader-guide-icon"><span aria-hidden="true">${icon}</span></td>
               <td><a href="#${anchor}">${escapeHtml(label)}</a></td>
               <td>${escapeHtml(readerValue)}</td>
-              <td><code>${escapeHtml(entry.file)}</code></td>
             </tr>`;
-    });
+  });
 
-  // Per-document intelligence row (when document-level analyses exist).
-  const hasDocAnalyses = input.artifactsUsed.some(
-    (a) => a.startsWith('documents/') && a.endsWith('-analysis.md'),
-  );
   if (hasDocAnalyses) {
     guideRows.push(`            <tr>
+              <td class="rm-reader-guide-icon"><span aria-hidden="true">📑</span></td>
               <td><a href="#rm-per-document-intelligence">${escapeHtml(guideChrome.perDocLabel)}</a></td>
               <td>${escapeHtml(guideChrome.perDocValue)}</td>
-              <td><code>documents/*-analysis.md</code></td>
             </tr>`);
   }
 
   // Audit appendix row — always present so reviewers find the
   // classification + cross-reference manifests.
   guideRows.push(`            <tr>
+              <td class="rm-reader-guide-icon"><span aria-hidden="true">🏷️</span></td>
               <td><a href="#rm-classification-results">${escapeHtml(guideChrome.auditLabel)}</a></td>
               <td>${escapeHtml(guideChrome.auditValue)}</td>
-              <td>${escapeHtml(guideChrome.auditArtifactLabel)}</td>
             </tr>`);
 
   return `
@@ -116,9 +147,9 @@ export function renderReaderNavigation(input: ReaderNavigationInput): string {
           <table class="rm-reader-guide-table">
             <thead>
               <tr>
+                <th scope="col" class="rm-reader-guide-icon-col"><span class="sr-only">${escapeHtml(guideChrome.colIcon)}</span></th>
                 <th scope="col">${escapeHtml(guideChrome.colReaderNeed)}</th>
                 <th scope="col">${escapeHtml(guideChrome.colWhatYouGet)}</th>
-                <th scope="col">${escapeHtml(guideChrome.colSourceArtifact)}</th>
               </tr>
             </thead>
             <tbody>

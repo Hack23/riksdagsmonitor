@@ -24,9 +24,20 @@ describe('article-aside — renderReaderNavigation', () => {
     expect(html).toContain('class="rm-reader-guide"');
     expect(html).toContain('Reader Intelligence Guide');
     expect(html).toContain('class="rm-reader-guide-table"');
-    // Available artifacts surface as table cells.
-    expect(html).toContain('<code>executive-brief.md</code>');
-    expect(html).toContain('<code>risk-assessment.md</code>');
+    // Localised artifact labels surface as anchor link text — the
+    // legacy <code>filename</code> column is removed, audit-grade
+    // traceability lives in the Analysis Sources card grid instead.
+    expect(html).toContain('BLUF and editorial decisions');
+    expect(html).toContain('Risk assessment');
+    expect(html).not.toContain('<code>executive-brief.md</code>');
+    expect(html).not.toContain('<code>risk-assessment.md</code>');
+    // Per-row icon <td> cells are present (assert the actual cell
+    // marker, not the column-header class `rm-reader-guide-icon-col`
+    // which is a substring superset and would mask removal of the
+    // per-row cells).
+    expect(html).toContain('<td class="rm-reader-guide-icon"><span aria-hidden="true">');
+    expect(html).toContain('📊'); // executive-brief icon
+    expect(html).toContain('⚠️'); // risk-assessment icon
     // Always-present audit appendix row.
     expect(html).toContain('rm-classification-results');
     // The methodology cards must NOT be in the navigation table — they
@@ -60,12 +71,95 @@ describe('article-aside — renderReaderNavigation', () => {
     expect(html).toContain('rm-per-document-intelligence');
   });
 
-  it('always includes the audit-appendix row even when no READER_GUIDE_ENTRIES matched', () => {
+  it('always includes the audit-appendix row even when no curated artifacts matched', () => {
     // The audit appendix row is unconditionally pushed so the function
     // never returns an empty string. Verify the audit row is present
     // and the function does not throw on an empty artifact list.
     const html = renderReaderNavigation({ lang: 'en', artifactsUsed: [] });
     expect(html).toContain('rm-classification-results');
+  });
+
+  it('renders rows for ALL analysis artifacts, not just the curated lenses', () => {
+    // Non-curated artifacts (e.g. `pestle-analysis.md`,
+    // `wildcards-blackswans.md`) must still appear as navigable rows
+    // — the user-visible "always generate the whole section to include
+    // all analysis artifacts" contract.
+    const html = renderReaderNavigation({
+      lang: 'en',
+      artifactsUsed: [
+        'executive-brief.md',
+        'pestle-analysis.md',
+        'wildcards-blackswans.md',
+      ],
+    });
+    expect(html).toContain('BLUF and editorial decisions');
+    // Non-curated artifacts surface their generic title as the row
+    // label and the localised default reader-value description.
+    expect(html).toMatch(/PESTLE/i);
+    expect(html).toMatch(/Wildcard|Black/i);
+    expect(html).toContain('supporting analytical lens');
+  });
+
+  it('uses the localised colIcon header for the icon column (not hard-coded English "Icon")', () => {
+    const sv = renderReaderNavigation({ lang: 'sv', artifactsUsed: ['executive-brief.md'] });
+    expect(sv).toContain('class="sr-only">Ikon<');
+    expect(sv).not.toContain('class="sr-only">Icon<');
+
+    const fr = renderReaderNavigation({ lang: 'fr', artifactsUsed: ['executive-brief.md'] });
+    expect(fr).toContain('class="sr-only">Icône<');
+
+    const ja = renderReaderNavigation({ lang: 'ja', artifactsUsed: ['executive-brief.md'] });
+    expect(ja).toContain('class="sr-only">アイコン<');
+  });
+
+  it('skips JSON artifacts and unknown extensions (no broken in-page anchors)', () => {
+    // `pir-status.json` and `economic-data.json` are referenced by the
+    // audit appendix card grid, NOT emitted as their own `## <title>`
+    // section. They must NOT appear as Reader Guide navigation rows
+    // (an anchor to a non-existent heading is a broken link).
+    const html = renderReaderNavigation({
+      lang: 'en',
+      artifactsUsed: [
+        'executive-brief.md',
+        'pir-status.json',
+        'classification-results.json',
+        'economic-data.json',
+      ],
+    });
+    // No JSON artifacts in the navigation rows.
+    expect(html).not.toMatch(/href="#rm-pir-status"/);
+    expect(html).not.toMatch(/href="#rm-economic-data"/);
+    // Curated lens still renders.
+    expect(html).toContain('BLUF and editorial decisions');
+  });
+
+  it('de-duplicates filename-variant alias groups (election-2026-analysis vs election-cycle-analysis)', () => {
+    // Aggregator emits at most one alias per folder — only the first
+    // member encountered in AGGREGATION_ORDER. The Reader Guide must
+    // mirror this so both rows don't try to point at the same heading
+    // (which would render as a single `## Election ... Analysis`
+    // section, leaving the second link broken).
+    const html = renderReaderNavigation({
+      lang: 'en',
+      artifactsUsed: [
+        'executive-brief.md',
+        'election-2026-analysis.md',
+        'election-cycle-analysis.md',
+      ],
+    });
+    // Only one election-analysis row should be present. We can verify
+    // by counting how many anchor links target an `election-` heading.
+    const electionAnchors = (html.match(/href="#rm-election-[^"]*"/g) ?? []);
+    expect(electionAnchors.length).toBe(1);
+  });
+
+  it('skips README.md and article*.md aggregator outputs', () => {
+    const html = renderReaderNavigation({
+      lang: 'en',
+      artifactsUsed: ['executive-brief.md', 'README.md', 'article.md', 'article.sv.md'],
+    });
+    expect(html).not.toContain('href="#rm-readme"');
+    expect(html).not.toContain('href="#rm-article"');
   });
 });
 

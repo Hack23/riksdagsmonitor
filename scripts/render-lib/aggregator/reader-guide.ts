@@ -25,7 +25,8 @@ import GithubSlugger from 'github-slugger';
 
 import type { Language } from '../../types/language.js';
 import { HEADING_ID_PREFIX } from '../markdown/sanitize-schema.js';
-import { titleForArtifact } from './order.js';
+import { artifactIcon } from '../../political-intelligence/i18n/artifact-i18n.js';
+import { AGGREGATION_ORDER, aliasGroupFor, titleForArtifact } from './order.js';
 import { readerGuideI18n } from './reader-guide-i18n.js';
 
 /**
@@ -117,38 +118,142 @@ export function anchorForTitle(title: string): string {
 }
 
 /**
- * Build the Reader Intelligence Guide markdown table for a single
- * aggregated article. Filters {@link READER_GUIDE_ENTRIES} to only the
- * artifacts that exist in `available`, appends a "Per-document
- * intelligence" row when document-level analyses exist, and always
- * closes with the "Audit appendix" pointer row.
+ * Filter a set of consumed artifact filenames down to the artifacts
+ * that the aggregator actually emits as top-level `## <title>`
+ * sections in the rendered article — the exact set the Reader
+ * Intelligence Guide can hyperlink to.
  *
- * When `lang` is supplied, all user-visible strings (heading, preamble,
- * column headers, entry labels and reader-value lenses) are sourced
- * from the {@link READER_GUIDE_I18N} map for that language.
+ * Mirrors the same selection / de-duplication rules used by
+ * {@link ./aggregate.ts} (the article aggregator):
+ *
+ * 1. Only `*.md` artifacts are eligible (`*.json` artifacts are
+ *    referenced by the audit-appendix row, not by their own section).
+ * 2. `documents/*-analysis.md` entries are folded into the single
+ *    "Per-document intelligence" row by the caller, so they're
+ *    excluded here.
+ * 3. `README.md`, `article.md`, `article.<lang>.md` are aggregator
+ *    outputs / metadata, not analytical sections — excluded.
+ * 4. Filename-variant alias groups are de-duplicated: when more than
+ *    one alias is present (e.g. `election-2026-analysis.md` vs
+ *    `election-cycle-analysis.md`), only the first member encountered
+ *    in {@link AGGREGATION_ORDER} is kept — matching the aggregator's
+ *    "first one wins" behaviour so the link's target heading exists.
+ *
+ * Returns artifacts ordered the same way the article body orders them:
+ * `AGGREGATION_ORDER` precedence first, then any remaining `*.md`
+ * artifacts alphabetically.
+ */
+export function selectReaderGuideArtifacts(available: ReadonlySet<string> | readonly string[]): string[] {
+  const availableSet = available instanceof Set ? available : new Set(available);
+
+  const isReaderGuideEligible = (file: string): boolean => {
+    if (!/\.md$/i.test(file)) return false;
+    if (file.startsWith('documents/')) return false;
+    const base = file.includes('/') ? file.slice(file.lastIndexOf('/') + 1) : file;
+    if (base === 'README.md') return false;
+    if (/^article(?:\.[a-z-]+)?\.md$/i.test(base)) return false;
+    return true;
+  };
+
+  const seenAliasMembers = new Set<string>();
+  const result: string[] = [];
+
+  // Pass 1 — preserve AGGREGATION_ORDER for canonical sections,
+  // applying alias dedup so only the first alias of a group is kept.
+  for (const file of AGGREGATION_ORDER) {
+    if (!availableSet.has(file)) continue;
+    if (!isReaderGuideEligible(file)) continue;
+    const aliases = aliasGroupFor(file);
+    if (aliases) {
+      if ([...aliases].some((a) => seenAliasMembers.has(a))) continue;
+      seenAliasMembers.add(file);
+    }
+    result.push(file);
+  }
+
+  // Pass 2 — append remaining *.md artifacts alphabetically (e.g.
+  // pestle-analysis.md, wildcards-blackswans.md, ext/*.md), still
+  // honouring alias dedup.
+  const remaining = [...availableSet]
+    .filter(isReaderGuideEligible)
+    .filter((f) => !result.includes(f))
+    .filter((f) => !AGGREGATION_ORDER.includes(f))
+    .sort();
+  for (const file of remaining) {
+    const aliases = aliasGroupFor(file);
+    if (aliases) {
+      if ([...aliases].some((a) => seenAliasMembers.has(a))) continue;
+      seenAliasMembers.add(file);
+    }
+    result.push(file);
+  }
+
+  return result;
+}
+
+/**
+ * Returns true when at least one entry in `artifactsUsed` is a
+ * per-document analysis (`documents/<dok_id>-analysis.md`). Used by
+ * both the markdown and HTML Reader Intelligence Guide renderers to
+ * decide whether to emit the single "Per-document intelligence" row.
+ */
+export function hasPerDocumentAnalyses(artifactsUsed: ReadonlySet<string> | readonly string[]): boolean {
+  const iter = artifactsUsed instanceof Set ? artifactsUsed : new Set(artifactsUsed);
+  for (const file of iter) {
+    if (file.startsWith('documents/') && file.endsWith('-analysis.md')) return true;
+  }
+  return false;
+}
+
+/**
+ * Build the Reader Intelligence Guide markdown table for a single
+ * aggregated article. Iterates over **all** analysis artifacts that
+ * the aggregator emits as top-level sections (curated lenses + any
+ * remaining `*.md` artifacts) so the guide acts as a complete,
+ * navigable index — not just the curated
+ * {@link READER_GUIDE_ENTRIES} lenses. Each row carries an icon, the
+ * localised section label and a reader-value description; the legacy
+ * "Source artifact" filename column is dropped.
+ *
+ * Curated lenses use their bespoke {@link READER_GUIDE_ENTRIES} /
+ * `entries[*]` description; non-curated artifacts fall back to the
+ * generic localised `defaultReaderValue` so every artifact gets a
+ * meaningful row in all 14 languages.
+ *
+ * Always closes with the "Audit appendix" pointer row, and inserts a
+ * single "Per-document intelligence" row when document-level analyses
+ * exist (regardless of how many `documents/*-analysis.md` files are
+ * present).
+ *
+ * Filtering / de-duplication mirrors the aggregator's behaviour via
+ * {@link selectReaderGuideArtifacts} so every link in the guide
+ * resolves to a heading that actually exists in the rendered article.
  */
 export function buildReaderGuide(available: ReadonlySet<string>, hasDocuments: boolean, lang?: Language): string {
   const i18n = readerGuideI18n(lang ?? 'en');
   const { chrome } = i18n;
 
-  const entries = READER_GUIDE_ENTRIES
-    .filter((entry) => available.has(entry.file))
-    .map((entry) => {
-      const title = titleForArtifact(entry.file);
-      const localised = i18n.entries[entry.file];
-      const label = localised?.label ?? entry.label;
-      const readerValue = localised?.readerValue ?? entry.readerValue;
-      return `| [${label}](#${anchorForTitle(title)}) | ${readerValue} | \`${entry.file}\` |`;
-    });
+  const allFiles = selectReaderGuideArtifacts(available);
+
+  const entries = allFiles.map((file) => {
+    const title = titleForArtifact(file);
+    const localised = i18n.entries[file];
+    const curated = READER_GUIDE_ENTRIES.find((e) => e.file === file);
+    const label = localised?.label ?? curated?.label ?? title;
+    const readerValue =
+      localised?.readerValue ?? curated?.readerValue ?? chrome.defaultReaderValue;
+    const icon = artifactIcon(file);
+    return `| ${icon} | [${label}](#${anchorForTitle(title)}) | ${readerValue} |`;
+  });
 
   if (hasDocuments) {
     entries.push(
-      `| [${chrome.perDocLabel}](#${HEADING_ID_PREFIX}per-document-intelligence) | ${chrome.perDocValue} | \`documents/*-analysis.md\` |`,
+      `| 📑 | [${chrome.perDocLabel}](#${HEADING_ID_PREFIX}per-document-intelligence) | ${chrome.perDocValue} |`,
     );
   }
 
   entries.push(
-    `| [${chrome.auditLabel}](#${HEADING_ID_PREFIX}classification-results) | ${chrome.auditValue} | ${chrome.auditArtifactLabel} |`,
+    `| 🏷️ | [${chrome.auditLabel}](#${HEADING_ID_PREFIX}classification-results) | ${chrome.auditValue} |`,
   );
 
   return [
@@ -156,7 +261,11 @@ export function buildReaderGuide(available: ReadonlySet<string>, hasDocuments: b
     '',
     chrome.preamble,
     '',
-    `| ${chrome.colReaderNeed} | ${chrome.colWhatYouGet} | ${chrome.colSourceArtifact} |`,
+    // Three columns: localised icon header (rendered visually as a
+    // single emoji per row, but column header is kept short and
+    // localised so screen-reader users hear a distinct, meaningful
+    // name), then `colReaderNeed` and `colWhatYouGet`.
+    `| ${chrome.colIcon} | ${chrome.colReaderNeed} | ${chrome.colWhatYouGet} |`,
     '|---|---|---|',
     ...entries,
   ].join('\n');

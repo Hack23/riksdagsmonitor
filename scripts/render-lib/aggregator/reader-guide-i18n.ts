@@ -28,14 +28,30 @@ export interface ReaderGuideChrome {
   readonly preamble: string;
   readonly colReaderNeed: string;
   readonly colWhatYouGet: string;
-  readonly colSourceArtifact: string;
   /** Label for the per-document intelligence row. */
   readonly perDocLabel: string;
   readonly perDocValue: string;
   /** Label for the audit appendix pointer row. */
   readonly auditLabel: string;
   readonly auditValue: string;
-  readonly auditArtifactLabel: string;
+  /**
+   * Localized sr-only label for the icon column header. The icon
+   * column is visually decorative (the icon repeats meaning expressed
+   * in the next column) but assistive technology still needs a name
+   * for the column so users hear something distinct from the adjacent
+   * `colReaderNeed` header. Examples: "Icon" (en), "Ikon" (sv),
+   * "Icône" (fr), "アイコン" (ja).
+   */
+  readonly colIcon: string;
+  /**
+   * Generic localized fallback description used as the "reader value"
+   * cell for any analysis artifact that is not in the curated
+   * {@link ../reader-guide.js#READER_GUIDE_ENTRIES} list. Allows the
+   * Reader Intelligence Guide to render a row for **every** analysis
+   * artifact (icon + section anchor + description) so the table acts
+   * as a complete, navigable index of the article's analytical lenses.
+   */
+  readonly defaultReaderValue: string;
 }
 
 /**
@@ -62,12 +78,12 @@ const EN_CHROME: ReaderGuideChrome = {
   preamble: 'Use this guide to read the article as a political-intelligence product rather than a raw artifact dump. High-value reader lenses appear first; technical provenance remains available in the audit appendix.',
   colReaderNeed: 'Reader need',
   colWhatYouGet: "What you'll get",
-  colSourceArtifact: 'Source artifact',
   perDocLabel: 'Per-document intelligence',
   perDocValue: 'dok_id-level evidence, named actors, dates, and primary-source traceability',
   auditLabel: 'Audit appendix',
   auditValue: 'classification, cross-reference, methodology and manifest evidence for reviewers',
-  auditArtifactLabel: 'appendix artifacts',
+  colIcon: 'Icon',
+  defaultReaderValue: 'supporting analytical lens with primary-source evidence and audit-traceable citations',
 };
 
 const EN_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -108,12 +124,12 @@ const SV_CHROME: ReaderGuideChrome = {
   preamble: 'Använd denna guide för att läsa artikeln som en politisk underrättelseprodukt snarare än en rå artefaktsamling. Högt värde för läsaren visas först; teknisk härkomst finns i revisionsappendixet.',
   colReaderNeed: 'Läsarbehov',
   colWhatYouGet: 'Vad du får',
-  colSourceArtifact: 'Källartefakt',
   perDocLabel: 'Dokumentspecifik underrättelse',
   perDocValue: 'dok_id-nivå bevisning, namngivna aktörer, datum och primärkällspårbarhet',
   auditLabel: 'Revisionsappendix',
   auditValue: 'klassificering, korsreferens, metodik och manifestbevisning för granskare',
-  auditArtifactLabel: 'appendixartefakter',
+  colIcon: 'Ikon',
+  defaultReaderValue: 'stödjande analytisk lins med primärkällsbevisning och spårbara citat',
 };
 
 const SV_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -154,12 +170,12 @@ const DA_CHROME: ReaderGuideChrome = {
   preamble: 'Brug denne guide til at læse artiklen som et politisk efterretningsprodukt frem for en rå artefaktsamling. Højværdi-læserperspektiver vises først; teknisk oprindelse er tilgængelig i revisionsappendiksset.',
   colReaderNeed: 'Læserbehov',
   colWhatYouGet: 'Hvad du får',
-  colSourceArtifact: 'Kildeartefakt',
   perDocLabel: 'Dokumentspecifik efterretning',
   perDocValue: 'dok_id-niveau bevismateriale, navngivne aktører, datoer og primærkildesporing',
   auditLabel: 'Revisionsappendiks',
   auditValue: 'klassifikation, krydsreference, metodik og manifest-bevismateriale til anmeldere',
-  auditArtifactLabel: 'appendiksartefakter',
+  colIcon: 'Ikon',
+  defaultReaderValue: 'støttende analytisk linse med primærkildebevis og sporbare citater',
 };
 
 const DA_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -200,12 +216,12 @@ const NO_CHROME: ReaderGuideChrome = {
   preamble: 'Bruk denne guiden for å lese artikkelen som et politisk etterretningsprodukt i stedet for en rå artefaktsamling. Høyverdiperspektiver for leseren vises først; teknisk opprinnelse er tilgjengelig i revisjonsvedlegget.',
   colReaderNeed: 'Leserbehov',
   colWhatYouGet: 'Hva du får',
-  colSourceArtifact: 'Kildeartefakt',
   perDocLabel: 'Dokumentspesifikk etterretning',
   perDocValue: 'dok_id-nivå bevis, navngitte aktører, datoer og primærkildesporing',
   auditLabel: 'Revisjonsvedlegg',
   auditValue: 'klassifisering, kryssreferanse, metodikk og manifest-bevis for anmeldere',
-  auditArtifactLabel: 'vedleggsartefakter',
+  colIcon: 'Ikon',
+  defaultReaderValue: 'støttende analytisk linse med primærkildebevis og sporbare sitater',
 };
 
 const NO_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -246,12 +262,12 @@ const FI_CHROME: ReaderGuideChrome = {
   preamble: 'Käytä tätä opasta lukeaksesi artikkelin poliittisena tiedustelutuotteena raa\'an artefaktikokoelman sijaan. Korkean arvon lukijanäkökulmat esitetään ensin; tekninen alkuperä on saatavilla tarkastusliitteessä.',
   colReaderNeed: 'Lukijan tarve',
   colWhatYouGet: 'Mitä saat',
-  colSourceArtifact: 'Lähdeartefakti',
   perDocLabel: 'Dokumenttikohtainen tiedustelu',
   perDocValue: 'dok_id-tason todistusaineisto, nimetyt toimijat, päivämäärät ja alkuperäislähteen jäljitettävyys',
   auditLabel: 'Tarkastusliite',
   auditValue: 'luokitus, ristiviittaus, metodologia ja manifest-todistusaineisto tarkastajille',
-  auditArtifactLabel: 'liiteartefaktit',
+  colIcon: 'Kuvake',
+  defaultReaderValue: 'tukeva analyyttinen näkökulma ensisijaislähde-todisteilla ja jäljitettävillä viittauksilla',
 };
 
 const FI_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -292,12 +308,12 @@ const DE_CHROME: ReaderGuideChrome = {
   preamble: 'Nutzen Sie diesen Leitfaden, um den Artikel als nachrichtendienstliches Produkt statt als rohe Artefaktsammlung zu lesen. Hochwertige Leseperspektiven erscheinen zuerst; technische Herkunft ist im Prüfungsanhang verfügbar.',
   colReaderNeed: 'Leserbedarf',
   colWhatYouGet: 'Was Sie erhalten',
-  colSourceArtifact: 'Quellartefakt',
   perDocLabel: 'Dokumentspezifische Analyse',
   perDocValue: 'dok_id-Ebene Beweismaterial, benannte Akteure, Daten und Primärquellenrückverfolgbarkeit',
   auditLabel: 'Prüfungsanhang',
   auditValue: 'Klassifizierung, Querverweise, Methodik und Manifest-Beweismaterial für Prüfer',
-  auditArtifactLabel: 'Anhangsartefakte',
+  colIcon: 'Symbol',
+  defaultReaderValue: 'unterstützende analytische Linse mit Primärquellenbeweisen und nachvollziehbaren Zitaten',
 };
 
 const DE_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -338,12 +354,12 @@ const FR_CHROME: ReaderGuideChrome = {
   preamble: "Utilisez ce guide pour lire l'article comme un produit de renseignement politique plutôt qu'une collection brute d'artefacts. Les perspectives à haute valeur apparaissent en premier ; la provenance technique est disponible dans l'annexe d'audit.",
   colReaderNeed: 'Besoin du lecteur',
   colWhatYouGet: 'Ce que vous obtenez',
-  colSourceArtifact: 'Artefact source',
   perDocLabel: 'Renseignement par document',
   perDocValue: "preuve au niveau dok_id, acteurs nommés, dates et traçabilité de la source primaire",
   auditLabel: "Annexe d'audit",
   auditValue: "classification, références croisées, méthodologie et preuve manifeste pour les réviseurs",
-  auditArtifactLabel: 'artefacts d’annexe',
+  colIcon: 'Icône',
+  defaultReaderValue: 'lentille analytique de soutien avec preuves de source primaire et citations traçables',
 };
 
 const FR_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -384,12 +400,12 @@ const ES_CHROME: ReaderGuideChrome = {
   preamble: 'Use esta guía para leer el artículo como un producto de inteligencia política en lugar de una colección bruta de artefactos. Las perspectivas de alto valor aparecen primero; la procedencia técnica está disponible en el apéndice de auditoría.',
   colReaderNeed: 'Necesidad del lector',
   colWhatYouGet: 'Lo que obtendrá',
-  colSourceArtifact: 'Artefacto fuente',
   perDocLabel: 'Inteligencia por documento',
   perDocValue: 'evidencia a nivel de dok_id, actores nombrados, fechas y trazabilidad de fuente primaria',
   auditLabel: 'Apéndice de auditoría',
   auditValue: 'clasificación, referencias cruzadas, metodología y evidencia manifiesta para revisores',
-  auditArtifactLabel: 'artefactos del apéndice',
+  colIcon: 'Icono',
+  defaultReaderValue: 'lente analítica de apoyo con evidencia de fuente primaria y citas trazables',
 };
 
 const ES_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -430,12 +446,12 @@ const NL_CHROME: ReaderGuideChrome = {
   preamble: 'Gebruik deze gids om het artikel te lezen als een politiek inlichtingenproduct in plaats van een ruwe artefactverzameling. Perspectieven met hoge waarde verschijnen eerst; technische herkomst is beschikbaar in de auditbijlage.',
   colReaderNeed: 'Lezersbehoefte',
   colWhatYouGet: 'Wat u krijgt',
-  colSourceArtifact: 'Bronartefact',
   perDocLabel: 'Documentspecifieke inlichtingen',
   perDocValue: 'bewijs op dok_id-niveau, benoemde actoren, datums en traceerbaarheid van primaire bron',
   auditLabel: 'Auditbijlage',
   auditValue: 'classificatie, kruisverwijzingen, methodologie en manifest-bewijs voor beoordelaars',
-  auditArtifactLabel: 'appendixartefacten',
+  colIcon: 'Pictogram',
+  defaultReaderValue: 'ondersteunende analytische lens met primaire-bron bewijs en traceerbare citaten',
 };
 
 const NL_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -476,12 +492,12 @@ const AR_CHROME: ReaderGuideChrome = {
   preamble: 'استخدم هذا الدليل لقراءة المقال كمنتج استخباراتي سياسي بدلاً من مجموعة خام من المصنوعات. تظهر عدسات القراءة عالية القيمة أولاً؛ المصدر التقني متاح في ملحق التدقيق.',
   colReaderNeed: 'حاجة القارئ',
   colWhatYouGet: 'ما ستحصل عليه',
-  colSourceArtifact: 'المصنوع المصدر',
   perDocLabel: 'استخبارات لكل وثيقة',
   perDocValue: 'أدلة على مستوى dok_id، فاعلون مسمّون، تواريخ، وتتبع المصدر الأساسي',
   auditLabel: 'ملحق التدقيق',
   auditValue: 'تصنيف، إسناد ترافقي، منهجية وأدلة بيان للمراجعين',
-  auditArtifactLabel: 'مخرجات الملحق',
+  colIcon: 'أيقونة',
+  defaultReaderValue: 'عدسة تحليلية مساندة مع أدلة من مصادر أولية واقتباسات قابلة للتتبع',
 };
 
 const AR_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -522,12 +538,12 @@ const HE_CHROME: ReaderGuideChrome = {
   preamble: 'השתמש במדריך זה כדי לקרוא את המאמר כמוצר מודיעין פוליטי ולא כאוסף גולמי של ממצאים. עדשות קריאה בעלות ערך גבוה מופיעות ראשונות; מקור טכני זמין בנספח הביקורת.',
   colReaderNeed: 'צורך הקורא',
   colWhatYouGet: 'מה תקבל',
-  colSourceArtifact: 'ממצא מקור',
   perDocLabel: 'מודיעין לכל מסמך',
   perDocValue: 'ראיות ברמת dok_id, שחקנים בשם, תאריכים ועקיבות מקור ראשוני',
   auditLabel: 'נספח ביקורת',
   auditValue: 'סיווג, הפניות צולבות, מתודולוגיה וראיות מניפסט לסוקרים',
-  auditArtifactLabel: 'תוצרי נספח',
+  colIcon: 'אייקון',
+  defaultReaderValue: 'עדשה אנליטית תומכת עם ראיות ממקור ראשון וציטוטים ניתנים למעקב',
 };
 
 const HE_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -568,12 +584,12 @@ const JA_CHROME: ReaderGuideChrome = {
   preamble: 'このガイドを使用して、記事を生のアーティファクト集ではなく政治インテリジェンス製品として読んでください。高価値の読者視点が最初に表示されます。技術的来歴は監査付録で確認できます。',
   colReaderNeed: '読者のニーズ',
   colWhatYouGet: '得られる内容',
-  colSourceArtifact: 'ソースアーティファクト',
   perDocLabel: '文書別インテリジェンス',
   perDocValue: 'dok_idレベルの証拠、名前付きアクター、日付、一次資料の追跡可能性',
   auditLabel: '監査付録',
   auditValue: '分類、相互参照、方法論、レビュアー向けマニフェスト証拠',
-  auditArtifactLabel: '付録アーティファクト',
+  colIcon: 'アイコン',
+  defaultReaderValue: '一次資料の証拠と監査追跡可能な引用を備えた補完的分析レンズ',
 };
 
 const JA_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -614,12 +630,12 @@ const KO_CHROME: ReaderGuideChrome = {
   preamble: '이 가이드를 사용하여 기사를 원시 아티팩트 모음이 아닌 정치 인텔리전스 제품으로 읽으십시오. 고가치 독자 관점이 먼저 나타나며, 기술적 출처는 감사 부록에서 확인할 수 있습니다.',
   colReaderNeed: '독자 필요',
   colWhatYouGet: '제공되는 내용',
-  colSourceArtifact: '소스 아티팩트',
   perDocLabel: '문서별 인텔리전스',
   perDocValue: 'dok_id 수준 증거, 명명된 행위자, 날짜 및 1차 출처 추적 가능성',
   auditLabel: '감사 부록',
   auditValue: '분류, 교차 참조, 방법론 및 검토자를 위한 매니페스트 증거',
-  auditArtifactLabel: '부록 산출물',
+  colIcon: '아이콘',
+  defaultReaderValue: '1차 자료 증거와 추적 가능한 인용이 포함된 보조 분석 렌즈',
 };
 
 const KO_ENTRIES: Record<string, ReaderGuideEntryI18n> = {
@@ -660,12 +676,12 @@ const ZH_CHROME: ReaderGuideChrome = {
   preamble: '使用本指南将文章作为政治情报产品而非原始工件集合来阅读。高价值读者视角优先显示；技术来源可在审计附录中查阅。',
   colReaderNeed: '读者需求',
   colWhatYouGet: '您将获得',
-  colSourceArtifact: '来源工件',
   perDocLabel: '逐文档情报',
   perDocValue: 'dok_id级别证据、命名行动者、日期和一手来源可追溯性',
   auditLabel: '审计附录',
   auditValue: '分类、交叉引用、方法论和审阅者清单证据',
-  auditArtifactLabel: '附录工件',
+  colIcon: '图标',
+  defaultReaderValue: '具有原始资料证据和可审计引用的补充分析视角',
 };
 
 const ZH_ENTRIES: Record<string, ReaderGuideEntryI18n> = {

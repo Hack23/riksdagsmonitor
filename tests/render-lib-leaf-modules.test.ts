@@ -694,9 +694,12 @@ describe('aggregator/reader-guide — anchor slug parity', () => {
       new Set(['executive-brief.md', 'risk-assessment.md']),
       false,
     );
-    expect(guide).toContain('executive-brief.md');
-    expect(guide).toContain('risk-assessment.md');
-    expect(guide).not.toContain('intelligence-assessment.md');
+    // Localised labels appear (not raw filenames — the source-artifact
+    // column was removed in favour of audit-grade traceability via the
+    // Analysis Sources card grid at the article foot).
+    expect(guide).toContain('BLUF and editorial decisions');
+    expect(guide).toContain('Risk assessment');
+    expect(guide).not.toContain('Key Judgments'); // intelligence-assessment.md not present
     // Audit-appendix pointer is always emitted.
     expect(guide).toContain('Audit appendix');
     // No per-document row when hasDocuments=false.
@@ -861,7 +864,8 @@ describe('aggregator/reader-guide-i18n — 14-language coverage', () => {
       expect(READER_GUIDE_I18N[lang]).toBeDefined();
       expect(READER_GUIDE_I18N[lang].chrome.heading).toBeTruthy();
       expect(READER_GUIDE_I18N[lang].chrome.preamble.length).toBeGreaterThan(20);
-      expect(READER_GUIDE_I18N[lang].chrome.auditArtifactLabel).toBeTruthy();
+      expect(READER_GUIDE_I18N[lang].chrome.auditLabel).toBeTruthy();
+      expect(READER_GUIDE_I18N[lang].chrome.colIcon).toBeTruthy();
     }
   });
 
@@ -873,11 +877,11 @@ describe('aggregator/reader-guide-i18n — 14-language coverage', () => {
     }
   });
 
-  it('non-English languages have localised audit artifact label', () => {
-    const enAuditArtifactLabel = READER_GUIDE_I18N.en.chrome.auditArtifactLabel;
+  it('non-English languages have localised audit appendix label', () => {
+    const enAuditLabel = READER_GUIDE_I18N.en.chrome.auditLabel;
     for (const lang of LANGUAGES) {
       if (lang === 'en') continue;
-      expect(READER_GUIDE_I18N[lang].chrome.auditArtifactLabel).not.toBe(enAuditArtifactLabel);
+      expect(READER_GUIDE_I18N[lang].chrome.auditLabel).not.toBe(enAuditLabel);
     }
   });
 
@@ -907,9 +911,10 @@ describe('aggregator/reader-guide — i18n integration', () => {
       'sv',
     );
     expect(guide).toContain('## Läsarens underrättelseguide');
-    expect(guide).toContain('appendixartefakter');
+    // Swedish localised audit-row label.
+    expect(guide).toContain('Revisionsappendix');
     expect(guide).not.toContain('Reader Intelligence Guide');
-    expect(guide).not.toContain('appendix artifacts');
+    expect(guide).not.toContain('Audit appendix');
   });
 
   it('buildReaderGuide with lang=ja produces Japanese heading', () => {
@@ -943,8 +948,12 @@ describe('aggregator/reader-guide — i18n integration', () => {
   it('buildReaderGuide completeness: row count matches available artifact count + special rows', () => {
     const available = new Set(['executive-brief.md', 'risk-assessment.md', 'scenario-analysis.md']);
     const guide = buildReaderGuide(available, true, 'en');
-    // 3 artifact rows + 1 per-document + 1 audit = 5 data rows
-    const dataRows = guide.split('\n').filter((l) => l.startsWith('| ['));
+    // 3 artifact rows + 1 per-document + 1 audit = 5 data rows.
+    // New row pattern: `| <icon> | [label](#anchor) | description |`
+    // The leading icon glyph is a single Unicode character (emoji),
+    // so we match rows starting with `| ` followed by a non-pipe and
+    // then ` | [`.
+    const dataRows = guide.split('\n').filter((l) => /^\| [^|]+ \| \[/.test(l));
     expect(dataRows.length).toBe(5);
   });
 });
