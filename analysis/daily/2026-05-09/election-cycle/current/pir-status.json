@@ -1,0 +1,87 @@
+{
+  "date": "2026-05-08",
+  "cycle": "current",
+  "election": "2026-09-13",
+  "days_to_election": 128,
+  "generated_at": "2026-05-09T10:45:00Z",
+  "pir_items": [
+    {
+      "id": "PIR-001",
+      "question": "Will Liberalerna remain above the 4.0% electoral threshold?",
+      "current_value": "4.2%",
+      "threshold": "4.0%",
+      "wep": "LIKELY",
+      "horizon": "election",
+      "last_updated": "2026-05-08",
+      "source": "Novus April 2026"
+    },
+    {
+      "id": "PIR-002",
+      "question": "Will Tidö coalition maintain 175-seat majority?",
+      "current_value": "175",
+      "threshold": "175",
+      "wep": "LIKELY",
+      "horizon": "election",
+      "last_updated": "2026-05-08",
+      "source": "Seat projection Novus April 2026"
+    },
+    {
+      "id": "PIR-003",
+      "question": "Will unemployment fall below 8.0% by election?",
+      "current_value": "8.4%",
+      "threshold": "8.0%",
+      "wep": "UNLIKELY",
+      "horizon": "election",
+      "last_updated": "2026-05-08",
+      "source": "IMF WEO Apr-2026"
+    },
+    {
+      "id": "PIR-004",
+      "question": "Will Gaza/war-crimes issue cause coalition split?",
+      "current_value": "ELEVATED",
+      "threshold": "L public dissent from SD position",
+      "wep": "UNLIKELY",
+      "horizon": "election",
+      "last_updated": "2026-05-08",
+      "source": "HD10470, HD11789 parliamentary record"
+    },
+    {
+      "id": "PIR-005",
+      "question": "Will prison expansion receive positive media coverage?",
+      "current_value": "Passed (HD01CU25)",
+      "threshold": "Positive campaign coverage",
+      "wep": "ROUGHLY EVEN",
+      "horizon": "election",
+      "last_updated": "2026-05-08",
+      "source": "HD01CU25"
+    },
+    {
+      "id": "PIR-006",
+      "question": "Will state e-ID (HD03250) pass Riksdag before summer recess?",
+      "current_value": "Proposition submitted 2026-05-07",
+      "threshold": "Riksdag committee referral by 2026-06-15",
+      "wep": "LIKELY",
+      "horizon": "election",
+      "last_updated": "2026-05-08",
+      "source": "HD03250 Riksdag submission"
+    },
+    {
+      "id": "PIR-007",
+      "question": "Will Lagrådet find HD03267 proportionate under RF 2:4?",
+      "current_value": "Lagrådet yttrande pending",
+      "threshold": "No veto or substantial objections",
+      "wep": "LIKELY",
+      "horizon": "quarter",
+      "last_updated": "2026-05-08",
+      "source": "HD03267; Lagrådet precedent on security legislation"
+    }
+  ],
+  "aggregate_assessment": "Tidö coalition LIKELY holds governing mandate through 2026-09-13 election; 78% mandate completion",
+  "imf_provenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "vintage": "WEO Apr-2026",
+    "retrieved_at": "2026-05-08",
+    "status": "degraded — WEO/FM usable"
+  }
+}
