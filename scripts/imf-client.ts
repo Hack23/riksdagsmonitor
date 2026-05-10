@@ -123,6 +123,36 @@ const DEFAULT_USER_AGENT = 'Mozilla/5.0 (compatible; Riksdagsmonitor; +https://r
 /** Default vintage. Update in April / October when the WEO re-releases. */
 const DEFAULT_WEO_VINTAGE = 'WEO-2026-04';
 
+/**
+ * Translate a comma-form SDMX dataflow reference (`/data/AGENCY,FLOW,VERSION/key`
+ * — used by SDMX 2.1 and by all of our docs/CLI/`weoSdmxPath`) into the slash
+ * form (`/data/dataflow/AGENCY/FLOW/VERSION/key`) that the IMF SDMX 3.0 REST
+ * gateway requires. The 2.1 endpoint accepts either form; the 3.0 endpoint
+ * silently 404s the comma form. Verified live against api.imf.org 2026-05-10.
+ *
+ * Only rewrites when the base URL targets `/sdmx/3.0`. No-op for 2.1 and
+ * for paths that already use the slash form.
+ *
+ * @internal exported for unit tests only
+ */
+export function normalizeSdmxPathForBase(baseURL: string, pathWithQuery: string): string {
+  if (!baseURL.includes('/sdmx/3.0')) {
+    return pathWithQuery;
+  }
+  // Match `/data/<AGENCY>,<FLOW>,<VERSION>/<key>` where AGENCY may itself
+  // contain a `.` (e.g. `IMF.STA`). Capture key + optional query string.
+  const re = /^(\/?data)\/([^/,?#]+),([^/,?#]+),([^/,?#]+)(\/[^?#]*)?(\?.*)?$/;
+  const m = re.exec(pathWithQuery);
+  if (!m) {
+    return pathWithQuery;
+  }
+  const [, dataPrefix, agency, flow, version, keyPart, query] = m;
+  if (pathWithQuery.includes('/data/dataflow/')) {
+    return pathWithQuery;
+  }
+  return `${dataPrefix}/dataflow/${agency}/${flow}/${version}${keyPart ?? ''}${query ?? ''}`;
+}
+
 /** Base delay (ms) for the exponential back-off used on 429 / 5xx / network errors. */
 const RETRY_BASE_DELAY_MS = 1_000;
 /**
@@ -529,8 +559,9 @@ export class ImfClient {
    * @param path URL path starting with `/data/...` or `/structure/...`
    */
   async sdmxFetch(pathWithQuery: string): Promise<unknown> {
-    const separator = pathWithQuery.startsWith('/') ? '' : '/';
-    const url = `${this.sdmxBaseURL}${separator}${pathWithQuery}`;
+    const normalized = normalizeSdmxPathForBase(this.sdmxBaseURL, pathWithQuery);
+    const separator = normalized.startsWith('/') ? '' : '/';
+    const url = `${this.sdmxBaseURL}${separator}${normalized}`;
     const headers: Record<string, string> = {
       Accept: 'application/vnd.sdmx.data+json;version=2.0.0',
     };

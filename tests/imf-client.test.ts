@@ -22,6 +22,7 @@ import {
   parseDatamapperValues,
   parseDatamapperIndicators,
   weoSdmxPath,
+  normalizeSdmxPathForBase,
 } from '../scripts/imf-client.js';
 
 describe('ImfClient', () => {
@@ -366,10 +367,13 @@ describe('ImfClient', () => {
         new Response(JSON.stringify({ ok: true }), { status: 200 }),
       ) as unknown as typeof global.fetch;
       global.fetch = spy;
-      await client.sdmxFetch('data/IMF.RES,WEO/NGDP_RPCH.SWE.A.');
+      await client.sdmxFetch('data/IMF.RES,WEO,9.0.0/NGDP_RPCH.SWE.A.');
       const url = (spy as unknown as { mock: { calls: unknown[][] } }).mock.calls[0][0] as string;
+      // sdmxFetch rewrites the SDMX 2.1 comma-form dataflow ref into the
+      // SDMX 3.0 slash-form (`/data/dataflow/<agency>/<flow>/<version>/...`)
+      // because api.imf.org/sdmx/3.0 silently 404s the comma form.
       expect(url).toBe(
-        'https://api.imf.org/external/sdmx/3.0/data/IMF.RES,WEO/NGDP_RPCH.SWE.A.',
+        'https://api.imf.org/external/sdmx/3.0/data/dataflow/IMF.RES/WEO/9.0.0/NGDP_RPCH.SWE.A.',
       );
     });
 
@@ -479,7 +483,12 @@ describe('ImfClient', () => {
       // `/data/...` is hit without a subscription key (verified via
       // curl 2026-05-10). Without this branch a direct sdmxFetch()
       // caller sees an indistinguishable 404 and chases a phantom bug.
-      const keyless = new ImfClient({ maxRetries: 0 });
+      // Force-empty `sdmxSubscriptionKey` to override any
+      // `IMF_SDMX_SUBSCRIPTION_KEY` that the shell environment may
+      // have set (the new copilot-setup-steps wiring exports it
+      // session-wide, which would otherwise short-circuit the
+      // "no key sent" branch under test).
+      const keyless = new ImfClient({ maxRetries: 0, sdmxSubscriptionKey: '' });
       global.fetch = vi.fn(async () =>
         new Response('Resource not found', {
           status: 404,
@@ -908,5 +917,56 @@ describe('ImfClient.listDatamapperIndicators', () => {
     expect(calledUrls[0]).toBe('https://www.imf.org/external/datamapper/api/v1/indicators');
     expect(out.size).toBe(2);
     expect(out.get('NGDP_RPCH')?.dataset).toBe('WEO');
+  });
+});
+
+describe('normalizeSdmxPathForBase (SDMX 3.0 dataflow rewrite)', () => {
+  const SDMX30 = 'https://api.imf.org/external/sdmx/3.0';
+  const SDMX21 = 'https://api.imf.org/external/sdmx/2.1';
+
+  it('rewrites comma-form into /data/dataflow/.../ slash-form for sdmx/3.0', () => {
+    expect(
+      normalizeSdmxPathForBase(SDMX30, '/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX'),
+    ).toBe('/data/dataflow/IMF.STA/CPI/4.0.0/M.SE.PCPI_IX');
+  });
+
+  it('preserves the query string when rewriting', () => {
+    expect(
+      normalizeSdmxPathForBase(
+        SDMX30,
+        '/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2024-01',
+      ),
+    ).toBe('/data/dataflow/IMF.STA/CPI/4.0.0/M.SE.PCPI_IX?startPeriod=2024-01');
+  });
+
+  it('handles missing leading slash on input', () => {
+    expect(
+      normalizeSdmxPathForBase(SDMX30, 'data/IMF.RES,WEO,9.0.0/A.SWE.GGR_NGDP'),
+    ).toBe('data/dataflow/IMF.RES/WEO/9.0.0/A.SWE.GGR_NGDP');
+  });
+
+  it('handles dataflow ref without a key suffix (structure-only query)', () => {
+    expect(
+      normalizeSdmxPathForBase(SDMX30, '/data/IMF.STA,CPI,4.0.0'),
+    ).toBe('/data/dataflow/IMF.STA/CPI/4.0.0');
+  });
+
+  it('does NOT rewrite when base URL targets sdmx/2.1', () => {
+    expect(
+      normalizeSdmxPathForBase(SDMX21, '/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX'),
+    ).toBe('/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX');
+  });
+
+  it('does NOT double-rewrite an already slash-form path', () => {
+    expect(
+      normalizeSdmxPathForBase(SDMX30, '/data/dataflow/IMF.STA/CPI/4.0.0/M.SE.PCPI_IX'),
+    ).toBe('/data/dataflow/IMF.STA/CPI/4.0.0/M.SE.PCPI_IX');
+  });
+
+  it('passes through non-data paths unchanged (e.g. /structure, /dataflow)', () => {
+    expect(normalizeSdmxPathForBase(SDMX30, '/structure/dataflow/IMF.STA')).toBe(
+      '/structure/dataflow/IMF.STA',
+    );
+    expect(normalizeSdmxPathForBase(SDMX30, '/dataflow/IMF.STA')).toBe('/dataflow/IMF.STA');
   });
 });
