@@ -1,11 +1,11 @@
-# Economic Data Contract — Agentic Workflows (v3.0)
+# Economic Data Contract — Agentic Workflows (v3.1)
 
 > **Single source of truth** for live IMF / SCB economic data, Chart.js
 > visualisations, and AI commentary in every news article.
 > Consumed by `scripts/validate-economic-context.ts` and referenced
 > (by link) from every `news-*.md` agentic workflow.
 
-> **Schema v3.0 (2026-04-28)** — IMF is the economic-data source for
+> **Schema v3.1 (2026-05-10)** — IMF is the economic-data source for
 > every economic claim. Every economic indicator (GDP, inflation,
 > unemployment, fiscal aggregates, debt, BoP, trade flows, commodity
 > prices, FX, interest rates) carries `provider: "imf"` and an IMF
@@ -16,6 +16,16 @@
 > `source=75`), environment, social/education residue, defence
 > historicals, and crime/justice. Vintage discipline: economic data
 > older than 6 months carries an explicit annotation.
+>
+> **v3.1 (2026-05-10)** — IMF Data SDMX API now requires the
+> `Ocp-Apim-Subscription-Key` Azure APIM header on every
+> `/data/...` request (SDMX 3.0 *and* SDMX 2.1). All 14 news workflows
+> forward `secrets.IMF_SDMX_SUBSCRIPTION_KEY` (primary, required) to
+> the `news-prewarm` composite action; `IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY`
+> is the optional rotation key (stored only, not consumed by code).
+> The Datamapper transport (WEO + FM) remains unauthenticated and is
+> unaffected. See `analysis/imf/agentic-integration.md` §"Pre-warm gate"
+> for forwarding mechanics and the rotation playbook.
 
 ---
 

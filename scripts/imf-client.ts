@@ -78,6 +78,23 @@ export interface ImfClientConfig {
    */
   readonly weoVintage?: string;
   /**
+   * IMF Data SDMX API subscription key, sent as the
+   * `Ocp-Apim-Subscription-Key` header on every {@link ImfClient.sdmxFetch}
+   * call. The Datamapper transport (`getWeoIndicator` etc.) is NOT
+   * authenticated and never receives this header.
+   *
+   * If omitted the client falls back to `process.env.IMF_SDMX_SUBSCRIPTION_KEY`.
+   * If neither is set, SDMX requests still go out (so connectivity probes can
+   * detect a "no key configured" state) but the IMF Azure APIM gateway will
+   * return HTTP 401, which {@link ImfHttpError} surfaces with a diagnostic
+   * "subscription key missing or invalid" message.
+   *
+   * Confirmed via curl 2026-05-10: every SDMX 3.0/2.1 `/data/...` endpoint
+   * now requires this header (returns HTTP 404 from APIM when missing).
+   * `/structure/...` endpoints remain public.
+   */
+  readonly sdmxSubscriptionKey?: string;
+  /**
    * Optional diagnostic hook invoked when `getWeoIndicatorsBatch()` fail-softs
    * one indicator to an empty series because the IMF transport/API call failed.
    * The default is no-op so callers can opt in without polluting JSON stdout.
@@ -183,12 +200,27 @@ export interface DatamapperResponse {
 export type DatamapperEnvelope = Partial<DatamapperResponse> | null | undefined;
 
 class ImfHttpError extends Error {
+  readonly status: number;
   readonly retryable: boolean;
   readonly retryAfterHeader?: string | null;
 
-  constructor(response: Response) {
-    super(`IMF API error: ${response.status} ${response.statusText} for ${response.url}`);
+  constructor(response: Response, requestUrl?: string) {
+    // `response.url` is empty when constructed via `new Response(body, init)`
+    // in tests; fall back to the explicit requestUrl supplied by the caller.
+    const url = response.url || requestUrl || '';
+    const baseMessage = `IMF API error: ${response.status} ${response.statusText} for ${url}`;
+    // SDMX endpoints under api.imf.org return 401/403 from the Azure APIM
+    // gateway when the Ocp-Apim-Subscription-Key header is missing or invalid.
+    // Surface that explicitly so operators don't waste time chasing
+    // a "404 Resource not found" from the data-path APIM mask.
+    const isAuthFailure = response.status === 401 || response.status === 403;
+    const isSdmxHost = url.includes('://api.imf.org/external/sdmx/') || url === '';
+    const message = isAuthFailure && isSdmxHost
+      ? `${baseMessage} — IMF SDMX subscription key missing or invalid (set IMF_SDMX_SUBSCRIPTION_KEY)`
+      : baseMessage;
+    super(message);
     this.name = 'ImfHttpError';
+    this.status = response.status;
     this.retryable = response.status === 429 || response.status >= 500;
     this.retryAfterHeader = response.headers.get('retry-after');
   }
@@ -221,6 +253,12 @@ export class ImfClient {
   readonly maxRetries: number;
   readonly weoVintage: string;
   readonly userAgent: string;
+  /**
+   * Resolved IMF SDMX subscription key. Empty string when neither the
+   * constructor option nor the `IMF_SDMX_SUBSCRIPTION_KEY` env var is set —
+   * SDMX requests still go out so probes can detect "no key" vs "outage".
+   */
+  readonly sdmxSubscriptionKey: string;
   private readonly onBatchIndicatorError?: (event: ImfBatchIndicatorErrorEvent) => void;
 
   constructor(config: ImfClientConfig = {}) {
@@ -230,6 +268,8 @@ export class ImfClient {
     this.maxRetries = config.maxRetries ?? DEFAULT_MAX_RETRIES;
     this.userAgent = config.userAgent ?? DEFAULT_USER_AGENT;
     this.weoVintage = config.weoVintage ?? DEFAULT_WEO_VINTAGE;
+    this.sdmxSubscriptionKey =
+      config.sdmxSubscriptionKey ?? process.env.IMF_SDMX_SUBSCRIPTION_KEY ?? '';
     this.onBatchIndicatorError = config.onBatchIndicatorError;
   }
 
@@ -346,12 +386,27 @@ export class ImfClient {
    * SDMX endpoint. Consumers are responsible for interpreting the SDMX
    * envelope.
    *
+   * Authentication: when {@link sdmxSubscriptionKey} is set (constructor
+   * option or `IMF_SDMX_SUBSCRIPTION_KEY` env var) the request includes
+   * the `Ocp-Apim-Subscription-Key` header — required by every SDMX 3.0/2.1
+   * `/data/...` endpoint as of 2026-05.
+   *
    * @param path URL path starting with `/data/...` or `/structure/...`
    */
   async sdmxFetch(pathWithQuery: string): Promise<unknown> {
     const separator = pathWithQuery.startsWith('/') ? '' : '/';
     const url = `${this.sdmxBaseURL}${separator}${pathWithQuery}`;
-    return this.fetchWithRetry(url, 0, { Accept: 'application/vnd.sdmx.data+json;version=2.0.0' });
+    const headers: Record<string, string> = {
+      Accept: 'application/vnd.sdmx.data+json;version=2.0.0',
+    };
+    if (this.sdmxSubscriptionKey) {
+      // Azure APIM gateway header (case-sensitive). Used for both the
+      // SDMX 3.0 and SDMX 2.1 surfaces under api.imf.org — same
+      // subscription key works for both per the IMF Data SDMX API
+      // subscription product.
+      headers['Ocp-Apim-Subscription-Key'] = this.sdmxSubscriptionKey;
+    }
+    return this.fetchWithRetry(url, 0, headers);
   }
 
   // -----------------------------------------------------------------------
@@ -372,7 +427,7 @@ export class ImfClient {
       });
 
       if (!response.ok) {
-        throw new ImfHttpError(response);
+        throw new ImfHttpError(response, url);
       }
 
       return await response.json();

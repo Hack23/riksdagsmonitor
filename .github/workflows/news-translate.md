@@ -168,6 +168,8 @@ safe-outputs:
 steps:
   - name: News pre-warm & pre-flight (composite)
     uses: ./.github/actions/news-prewarm
+    with:
+      imf-sdmx-subscription-key: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY }}
   - name: Pre-flight content PR dependency check
     env:
       GH_TOKEN: ${{ github.token }}

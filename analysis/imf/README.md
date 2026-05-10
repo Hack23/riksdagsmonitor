@@ -52,7 +52,7 @@ Rule of thumb: if a journalist would quote "the IMF projects…" in a Financial 
 ## 3 · Adoption strategy (hybrid, no MCP)
 
 - **Agentic workflows** (LLM-driven article authoring) invoke the `scripts/imf-fetch.ts` CLI via the `bash` tool (`tsx scripts/imf-fetch.ts weo|compare|sdmx|list-indicators …`). The CLI is a thin wrapper over `scripts/imf-client.ts` — a pure-TypeScript client — so there is **no Python / `uvx` runtime** and **no third-party MCP server** on the critical path.
-- **Build-time scripts** import `scripts/imf-client.ts` directly. Primary transport is the IMF **Datamapper** JSON endpoint (WEO + FM, no auth); targeted SDMX 3.0 is available via `ImfClient.sdmxFetch()` for IFS / BOP / GFS_COFOG / DOTS / PCPS / ER.
+- **Build-time scripts** import `scripts/imf-client.ts` directly. Primary transport is the IMF **Datamapper** JSON endpoint (WEO + FM, no auth); targeted SDMX 3.0/2.1 is available via `ImfClient.sdmxFetch()` for IFS / BOP / GFS_COFOG / DOTS / PCPS / ER / MFS_IR. Every SDMX request requires the Azure APIM `Ocp-Apim-Subscription-Key` header (set via the `IMF_SDMX_SUBSCRIPTION_KEY` env var); the Datamapper transport remains unauthenticated.
 - **World Bank** (`worldbank-mcp@1.0.1`) remains the MCP server for WGI governance, environment, and social residue — keep WB calls that target these classes. Economic data routes through `scripts/imf-fetch.ts`.
 - **SCB** (`pxweb-mcp`) is unchanged; remains the Swedish primary source for monthly inflation (KPIF), AKU labour, regional data, and budget execution.
 
@@ -72,6 +72,15 @@ See ADR: [`docs/adr/0001-adopt-imf-data-alongside-world-bank.md`](../../docs/adr
 | [`analysis/economic-indicators-inventory.json`](../economic-indicators-inventory.json) | v4.1 multi-provider inventory (IMF-first; WB by reference; SCB via `scripts/scb-context.ts`). |
 
 No MCP server is required for IMF — access is part of the repository's npm SBOM, and the only firewall egress needed is to `data.imf.org`, `api.imf.org`, and `www.imf.org`.
+
+### 4.2 · Authentication & repository secrets
+
+| Repository secret | Status | Consumed by | Purpose |
+|---|---|---|---|
+| `IMF_SDMX_SUBSCRIPTION_KEY` | **Required** (primary) | Every `news-*.md` workflow → `news-prewarm` action → `IMF_SDMX_SUBSCRIPTION_KEY` env var → `scripts/imf-client.ts#sdmxFetch` `Ocp-Apim-Subscription-Key` header | Authenticates every SDMX 3.0/2.1 `/data/...` call. Without it the IMF Azure APIM gateway returns HTTP 404 (masked) on every dataflow request and the connectivity probe records `status: degraded` with reason `sdmx-subscription-key-not-configured`. |
+| `IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY` | Optional (rotation) | **Not consumed by code** — stored as a hot spare so operators can swap primary↔secondary without downtime when the IMF issues a new subscription key. | Mirrors the IMF Data SDMX API "primary / secondary key" subscription product. See `analysis/imf/agentic-integration.md` §"Pre-warm gate" → "Key rotation" for the rotation playbook. |
+
+The Datamapper transport (`getWeoIndicator`, `compareCountriesWeo`, `getWeoIndicatorsBatch`) is unauthenticated. Both keys are obtained from <https://datamarketplace.imf.org/> (formerly <https://data.imf.org/> developer portal) — one subscription per repository.
 
 ### 4.1 · TypeScript API quick reference
 

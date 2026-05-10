@@ -367,6 +367,107 @@ describe('ImfClient', () => {
         'https://api.imf.org/external/sdmx/3.0/data/IMF.RES,WEO/NGDP_RPCH.SWE.A.',
       );
     });
+
+    it('sends Ocp-Apim-Subscription-Key header when configured via constructor option', async () => {
+      const keyed = new ImfClient({ sdmxSubscriptionKey: 'test-primary-key-12345' });
+      const spy = vi.fn(async () =>
+        new Response(JSON.stringify({ ok: true }), { status: 200 }),
+      ) as unknown as typeof global.fetch;
+      global.fetch = spy;
+      await keyed.sdmxFetch('/data/IMF.STA,CPI,5.0.0/M.SE.PCPI_IX');
+      const init = (spy as unknown as { mock: { calls: unknown[][] } }).mock.calls[0][1] as RequestInit;
+      const headers = init.headers as Record<string, string>;
+      expect(headers['Ocp-Apim-Subscription-Key']).toBe('test-primary-key-12345');
+      expect(headers.Accept).toBe('application/vnd.sdmx.data+json;version=2.0.0');
+    });
+
+    it('falls back to IMF_SDMX_SUBSCRIPTION_KEY env var when constructor option omitted', async () => {
+      const original = process.env.IMF_SDMX_SUBSCRIPTION_KEY;
+      process.env.IMF_SDMX_SUBSCRIPTION_KEY = 'env-fallback-key-67890';
+      try {
+        const envClient = new ImfClient();
+        const spy = vi.fn(async () =>
+          new Response(JSON.stringify({ ok: true }), { status: 200 }),
+        ) as unknown as typeof global.fetch;
+        global.fetch = spy;
+        await envClient.sdmxFetch('/data/IMF.STA,CPI,5.0.0/M.SE.PCPI_IX');
+        const init = (spy as unknown as { mock: { calls: unknown[][] } }).mock.calls[0][1] as RequestInit;
+        const headers = init.headers as Record<string, string>;
+        expect(headers['Ocp-Apim-Subscription-Key']).toBe('env-fallback-key-67890');
+      } finally {
+        if (original === undefined) {
+          delete process.env.IMF_SDMX_SUBSCRIPTION_KEY;
+        } else {
+          process.env.IMF_SDMX_SUBSCRIPTION_KEY = original;
+        }
+      }
+    });
+
+    it('omits Ocp-Apim-Subscription-Key when no key is configured', async () => {
+      const original = process.env.IMF_SDMX_SUBSCRIPTION_KEY;
+      delete process.env.IMF_SDMX_SUBSCRIPTION_KEY;
+      try {
+        const noKey = new ImfClient();
+        const spy = vi.fn(async () =>
+          new Response(JSON.stringify({ ok: true }), { status: 200 }),
+        ) as unknown as typeof global.fetch;
+        global.fetch = spy;
+        await noKey.sdmxFetch('/data/IMF.STA,CPI,5.0.0/M.SE.PCPI_IX');
+        const init = (spy as unknown as { mock: { calls: unknown[][] } }).mock.calls[0][1] as RequestInit;
+        const headers = init.headers as Record<string, string>;
+        expect(headers['Ocp-Apim-Subscription-Key']).toBeUndefined();
+      } finally {
+        if (original !== undefined) {
+          process.env.IMF_SDMX_SUBSCRIPTION_KEY = original;
+        }
+      }
+    });
+
+    it('does NOT send the SDMX subscription key on Datamapper (WEO) calls', async () => {
+      const keyed = new ImfClient({ sdmxSubscriptionKey: 'must-not-leak-to-datamapper' });
+      const spy = vi.fn(async () =>
+        new Response(
+          JSON.stringify({ values: { NGDP_RPCH: { SWE: { '2025': 1.9 } } } }),
+          { status: 200 },
+        ),
+      ) as unknown as typeof global.fetch;
+      global.fetch = spy;
+      await keyed.getWeoIndicator('SWE', 'NGDP_RPCH', 1);
+      const init = (spy as unknown as { mock: { calls: unknown[][] } }).mock.calls[0][1] as RequestInit;
+      const headers = init.headers as Record<string, string>;
+      expect(headers['Ocp-Apim-Subscription-Key']).toBeUndefined();
+      // Sanity: Datamapper still gets the standard headers
+      expect(headers.Accept).toBe('application/json');
+      expect(headers['User-Agent']).toMatch(/^Mozilla\/5\.0/);
+    });
+
+    it('surfaces a "subscription key missing or invalid" diagnostic on SDMX 401', async () => {
+      const keyless = new ImfClient({ maxRetries: 0 });
+      global.fetch = vi.fn(async () =>
+        new Response('Unauthorized', {
+          status: 401,
+          statusText: 'Unauthorized',
+          headers: { 'content-type': 'text/plain' },
+        }),
+      ) as unknown as typeof global.fetch;
+      await expect(
+        keyless.sdmxFetch('/data/IMF.STA,CPI,5.0.0/M.SE.PCPI_IX'),
+      ).rejects.toThrow(/IMF SDMX subscription key missing or invalid \(set IMF_SDMX_SUBSCRIPTION_KEY\)/);
+    });
+
+    it('surfaces the auth-failure diagnostic on SDMX 403', async () => {
+      const keyless = new ImfClient({ maxRetries: 0 });
+      global.fetch = vi.fn(async () =>
+        new Response('Forbidden', {
+          status: 403,
+          statusText: 'Forbidden',
+          headers: { 'content-type': 'text/plain' },
+        }),
+      ) as unknown as typeof global.fetch;
+      await expect(
+        keyless.sdmxFetch('/data/IMF.STA,CPI,5.0.0/M.SE.PCPI_IX'),
+      ).rejects.toThrow(/IMF SDMX subscription key missing or invalid/);
+    });
   });
 
   describe('getDefaultImfClient', () => {

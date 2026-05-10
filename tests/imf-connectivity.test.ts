@@ -60,12 +60,14 @@ function fakeDataPoint(year: number, value: number, projection = false): ImfData
 interface StubBehaviour {
   readonly weo?: 'ok' | 'throw' | 'empty';
   readonly fm?: 'ok' | 'throw' | 'empty';
-  readonly sdmx?: 'ok' | 'throw' | 'non-object';
+  readonly sdmx?: 'ok' | 'throw' | 'non-object' | 'auth-401' | 'auth-403' | 'auth-404';
+  readonly sdmxSubscriptionKey?: string;
 }
 
 function makeStubClient(b: StubBehaviour = {}): ImfClient {
   return {
     weoVintage: 'WEO-2026-04',
+    sdmxSubscriptionKey: b.sdmxSubscriptionKey ?? '',
     async getWeoIndicator(_iso3: string, weoCode: string): Promise<ImfDataPoint[]> {
       const mode = weoCode === 'GGXWDG_NGDP' ? (b.fm ?? 'ok') : (b.weo ?? 'ok');
       if (mode === 'throw') throw new Error('network: ECONNREFUSED');
@@ -75,6 +77,20 @@ function makeStubClient(b: StubBehaviour = {}): ImfClient {
     async sdmxFetch(_path: string): Promise<unknown> {
       const mode = b.sdmx ?? 'ok';
       if (mode === 'throw') throw new Error('SDMX 503');
+      if (mode === 'auth-401') {
+        throw new Error(
+          'IMF API error: 401 Unauthorized for https://api.imf.org/external/sdmx/3.0/data/IMF.STA,CPI,5.0.0/M.SE.PCPI_IX — IMF SDMX subscription key missing or invalid (set IMF_SDMX_SUBSCRIPTION_KEY)',
+        );
+      }
+      if (mode === 'auth-403') {
+        throw new Error('IMF API error: 403 Forbidden for https://api.imf.org/external/sdmx/3.0/data/...');
+      }
+      if (mode === 'auth-404') {
+        // Real-world: IMF Azure APIM gateway returns 404 (not 401) when no
+        // Ocp-Apim-Subscription-Key header is sent. Confirmed via curl
+        // 2026-05-10.
+        throw new Error('IMF API error: 404  for https://api.imf.org/external/sdmx/3.0/data/IMF.STA,CPI,5.0.0/M.SE.PCPI_IX');
+      }
       if (mode === 'non-object') return 'plain-string';
       return { dataSets: [{ series: {} }] };
     },
@@ -162,6 +178,49 @@ describe('runProbes', () => {
     const ifs = probes.find((p) => p.dataflow === 'IFS');
     expect(ifs?.ok).toBe(false);
     expect(ifs?.error).toBe('non-object-response');
+  });
+
+  it('reports SDMX as sdmx-subscription-key-not-configured when key missing AND endpoint returns 401/403', async () => {
+    const probes = await runProbes(makeStubClient({ sdmx: 'auth-401' /* sdmxSubscriptionKey defaults to '' */ }));
+    const ifs = probes.find((p) => p.dataflow === 'IFS');
+    expect(ifs?.ok).toBe(false);
+    expect(ifs?.error).toBe('sdmx-subscription-key-not-configured');
+  });
+
+  it('reports SDMX as sdmx-subscription-key-not-configured on 403 when key missing', async () => {
+    const probes = await runProbes(makeStubClient({ sdmx: 'auth-403' }));
+    const ifs = probes.find((p) => p.dataflow === 'IFS');
+    expect(ifs?.error).toBe('sdmx-subscription-key-not-configured');
+  });
+
+  it('reports SDMX as sdmx-subscription-key-not-configured on 404 (real APIM gateway response when no key sent)', async () => {
+    // IMF's Azure APIM gateway masks unauthenticated requests as HTTP 404
+    // on the `/data/...` path (confirmed via curl 2026-05-10). Without
+    // this special-case, operators would chase a non-existent "dataflow
+    // missing" issue instead of the real "secret not set" cause.
+    const probes = await runProbes(makeStubClient({ sdmx: 'auth-404' }));
+    const ifs = probes.find((p) => p.dataflow === 'IFS');
+    expect(ifs?.ok).toBe(false);
+    expect(ifs?.error).toBe('sdmx-subscription-key-not-configured');
+  });
+
+  it('preserves the raw SDMX error when a key IS configured (so ops can see real cause)', async () => {
+    const probes = await runProbes(
+      makeStubClient({ sdmx: 'auth-401', sdmxSubscriptionKey: 'configured-key-xyz' }),
+    );
+    const ifs = probes.find((p) => p.dataflow === 'IFS');
+    expect(ifs?.ok).toBe(false);
+    // Configured key + auth failure means rotated/revoked key — don't mask the cause.
+    expect(ifs?.error).toMatch(/IMF SDMX subscription key missing or invalid/);
+    expect(ifs?.error).not.toBe('sdmx-subscription-key-not-configured');
+  });
+
+  it('preserves a non-auth SDMX failure (e.g. 503) even when key missing', async () => {
+    // SDMX 503 is an outage — the operator must NOT see it as a "key not configured" issue.
+    const probes = await runProbes(makeStubClient({ sdmx: 'throw' }));
+    const ifs = probes.find((p) => p.dataflow === 'IFS');
+    expect(ifs?.ok).toBe(false);
+    expect(ifs?.error).toBe('SDMX 503');
   });
 
   it('enforces PROBE_TIMEOUT_MS so a hung IMF endpoint cannot starve the composite-action budget', async () => {

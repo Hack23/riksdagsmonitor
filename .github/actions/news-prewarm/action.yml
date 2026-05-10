@@ -24,6 +24,24 @@ inputs:
     description: 'Riksdag-regering MCP HTTP endpoint to pre-warm.'
     required: false
     default: 'https://riksdag-regering-ai.onrender.com/mcp'
+  imf-sdmx-subscription-key:
+    description: |
+      IMF Data SDMX API subscription key (Azure APIM `Ocp-Apim-Subscription-Key`).
+      Sent on every SDMX 3.0/2.1 `/data/...` request by `scripts/imf-client.ts`
+      and the `tsx scripts/imf-fetch.ts sdmx ...` CLI. The Datamapper
+      transport (WEO + FM) is unauthenticated and never receives this header.
+      When set, the value is exported to `$GITHUB_ENV` as
+      `IMF_SDMX_SUBSCRIPTION_KEY` so it propagates to the IMF pre-flight
+      step in this composite action AND to the agent's `bash:` tool inside
+      the `Execute GitHub Copilot CLI` step (which runs `awf --env-all`).
+      Default is the empty string — workflows MUST forward
+      `${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY }}` from the calling workflow
+      via `with:` for SDMX calls (IFS / BOP / DOTS / GFS_COFOG / MFS_IR /
+      PCPS / ER) to function. Without the key the connectivity report
+      reports `status: degraded` with reason
+      `sdmx-subscription-key-not-configured`.
+    required: false
+    default: ''
 runs:
   using: 'composite'
   steps:
@@ -35,6 +53,38 @@ runs:
     - name: Install dependencies
       shell: bash
       run: npm ci --prefer-offline --no-audit
+
+    - name: Export IMF SDMX subscription key to job environment
+      shell: bash
+      # Mask the key in any captured logs (defence-in-depth — gh-aw also
+      # wraps every `${{ secrets.* }}` reference) and propagate it to
+      # subsequent steps via $GITHUB_ENV so:
+      #   1. The IMF pre-flight step below sees IMF_SDMX_SUBSCRIPTION_KEY
+      #      and `scripts/imf-client.ts` adds the Ocp-Apim-Subscription-Key
+      #      header to its SDMX request.
+      #   2. The downstream `Execute GitHub Copilot CLI` step runs
+      #      `awf --env-all`, which forwards every runner env var into the
+      #      firewall container, so the agent's `bash:` tool can call
+      #      `tsx scripts/imf-fetch.ts sdmx ...` against the authenticated
+      #      SDMX 3.0 / 2.1 surfaces (IFS / BOP / DOTS / GFS_COFOG / MFS /
+      #      PCPS / ER).
+      # Skipped when no key is provided — the run continues in degraded
+      # mode (WEO/FM still work via Datamapper) and the connectivity
+      # report records `sdmx-subscription-key-not-configured`.
+      env:
+        IMF_KEY: ${{ inputs.imf-sdmx-subscription-key }}
+      run: |
+        if [ -n "${IMF_KEY}" ]; then
+          echo "::add-mask::${IMF_KEY}"
+          {
+            echo "IMF_SDMX_SUBSCRIPTION_KEY<<GH_AW_IMF_KEY_EOF"
+            printf '%s\n' "${IMF_KEY}"
+            echo "GH_AW_IMF_KEY_EOF"
+          } >> "$GITHUB_ENV"
+          echo "  ✅ IMF_SDMX_SUBSCRIPTION_KEY exported to job environment"
+        else
+          echo "  ℹ️ no IMF SDMX subscription key supplied — SDMX 3.0/2.1 calls will report status=degraded"
+        fi
 
     - name: Pre-warm MCP server (Render.com cold start mitigation)
       shell: bash
