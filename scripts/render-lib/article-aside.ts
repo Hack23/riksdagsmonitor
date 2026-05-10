@@ -44,6 +44,7 @@ import { buildGithubBlobUrl } from './url-helpers.js';
 import { depth } from './chrome/helpers.js';
 import { artifactTitle, artifactIcon } from '../political-intelligence/i18n/artifact-i18n.js';
 import { readerGuideI18n } from './aggregator/reader-guide-i18n.js';
+import { readerValueFor } from './aggregator/reader-guide-descriptions-i18n.js';
 import { READER_GUIDE_ENTRIES, anchorForTitle, hasPerDocumentAnalyses, selectReaderGuideArtifacts } from './aggregator/reader-guide.js';
 import { titleForArtifact } from './aggregator/order.js';
 
@@ -108,7 +109,10 @@ export function renderReaderNavigation(input: ReaderNavigationInput): string {
       ?? curated?.label
       ?? (artifactTitle(file, input.lang) || sectionTitle);
     const readerValue =
-      localised?.readerValue ?? curated?.readerValue ?? guideChrome.defaultReaderValue;
+      localised?.readerValue
+      ?? readerValueFor(file, input.lang)
+      ?? curated?.readerValue
+      ?? guideChrome.defaultReaderValue;
     const icon = artifactIcon(file);
     // The `<td>` itself stays in the accessibility tree so the
     // 3-column structure remains intact for screen-reader table
@@ -187,6 +191,7 @@ export function renderAnalysisArtifactsReference(
   const sourcesDesc = langMeta.translations.articleSourcesDesc;
   const methodologyLabel = langMeta.translations.articleMethodologyLabel;
 
+  const guideI18n = readerGuideI18n(input.lang);
   const sourceCards = artifacts
     .map((a) => {
       const href = input.subfolderRepoRelPath
@@ -194,10 +199,23 @@ export function renderAnalysisArtifactsReference(
         : a;
       const icon = artifactIcon(a);
       const title = artifactTitle(a, input.lang);
+      // Localised one-line description for the card. Lookup chain mirrors
+      // the Reader Intelligence Guide so the table rows and the source
+      // cards always agree on the artifact's reader value.
+      const baseName = a.replace(/^documents\//, '');
+      const localisedEntry = guideI18n.entries[baseName] ?? guideI18n.entries[a];
+      const curatedEntry = READER_GUIDE_ENTRIES.find((e) => e.file === baseName || e.file === a);
+      const isPerDocAnalysis = a.startsWith('documents/') && a.endsWith('-analysis.md');
+      const description =
+        localisedEntry?.readerValue
+        ?? readerValueFor(a, input.lang)
+        ?? curatedEntry?.readerValue
+        ?? (isPerDocAnalysis ? guideI18n.chrome.perDocValue : guideI18n.chrome.defaultReaderValue);
       return `          <a class="rm-source-card" href="${href}" target="_blank" rel="noopener noreferrer">
             <span class="rm-source-card-icon" aria-hidden="true">${icon}</span>
             <span class="rm-source-card-info">
               <span class="rm-source-card-title">${escapeHtml(title)}</span>
+              <span class="rm-source-card-desc">${escapeHtml(description)}</span>
               <code class="rm-source-card-file">${escapeHtml(a)}</code>
             </span>
             <span class="rm-source-card-arrow" aria-hidden="true">↗</span>

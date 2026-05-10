@@ -13233,65 +13233,101 @@ html[data-theme="light"] .rm-article-body pre.mermaid > svg {
 /* ── Article sources card grid ── */
 .rm-article-sources-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
-  gap: 0.6rem;
-  margin-top: 0.75rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
+  gap: 0.75rem;
+  margin-top: 0.85rem;
 }
 
 .rm-source-card {
   display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  padding: 0.6rem 0.85rem;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 0.95rem;
   border: 1px solid rgba(0, 217, 255, 0.18);
-  border-radius: 10px;
-  background: rgba(0, 217, 255, 0.04);
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(0, 217, 255, 0.05) 0%, rgba(0, 217, 255, 0.02) 100%);
   color: var(--light-text, #e0e0e0);
   text-decoration: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  min-height: 5.2rem;
 }
 
 .rm-source-card:hover,
 .rm-source-card:focus-visible {
-  border-color: rgba(0, 217, 255, 0.45);
-  box-shadow: 0 3px 14px rgba(0, 217, 255, 0.1);
-  background: rgba(0, 217, 255, 0.08);
+  border-color: rgba(0, 217, 255, 0.55);
+  box-shadow: 0 4px 18px rgba(0, 217, 255, 0.12);
+  background: linear-gradient(180deg, rgba(0, 217, 255, 0.10) 0%, rgba(255, 0, 110, 0.04) 100%);
+  transform: translateY(-1px);
 }
 
 .rm-source-card-icon {
-  font-size: 1.35rem;
+  font-size: 1.65rem;
   flex-shrink: 0;
+  line-height: 1.1;
+  padding-top: 0.05rem;
 }
 
 .rm-source-card-info {
   display: flex;
   flex-direction: column;
+  gap: 0.2rem;
   min-width: 0;
   flex: 1;
 }
 
 .rm-source-card-title {
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.92rem;
   color: var(--primary-cyan, #00d9ff);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  letter-spacing: 0.01em;
+}
+
+.rm-source-card-desc {
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: color-mix(in srgb, var(--light-text, #e0e0e0) 78%, transparent);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .rm-source-card-file {
-  font-size: 0.7rem;
-  color: color-mix(in srgb, var(--light-text, #e0e0e0) 55%, transparent);
+  font-size: 0.66rem;
+  color: color-mix(in srgb, var(--light-text, #e0e0e0) 50%, transparent);
   font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-top: 0.1rem;
 }
 
 .rm-source-card-arrow {
-  font-size: 0.85rem;
-  color: color-mix(in srgb, var(--primary-cyan, #00d9ff) 50%, transparent);
+  font-size: 0.95rem;
+  color: color-mix(in srgb, var(--primary-cyan, #00d9ff) 60%, transparent);
   flex-shrink: 0;
+  align-self: flex-start;
+  padding-top: 0.15rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.rm-source-card:hover .rm-source-card-arrow,
+.rm-source-card:focus-visible .rm-source-card-arrow {
+  color: var(--primary-cyan, #00d9ff);
+  transform: translate(2px, -2px);
+}
+
+/* RTL: arrow points the other way */
+[dir="rtl"] .rm-source-card-arrow {
+  transform: scaleX(-1);
+}
+[dir="rtl"] .rm-source-card:hover .rm-source-card-arrow,
+[dir="rtl"] .rm-source-card:focus-visible .rm-source-card-arrow {
+  transform: scaleX(-1) translate(2px, -2px);
 }
 
 .rm-source-count {
