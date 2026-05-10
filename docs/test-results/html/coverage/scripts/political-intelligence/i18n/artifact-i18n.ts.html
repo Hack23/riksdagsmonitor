@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">67.85% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>19/28</span>
+                <span class='fraction'>24/28</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">48% </span>
+                <span class="strong">72% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>12/25</span>
+                <span class='fraction'>18/25</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.27% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>17/22</span>
+                <span class='fraction'>22/22</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -377,7 +377,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -539,7 +539,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -576,18 +576,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">63x</span>
-<span class="cline-any cline-yes">63x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">182x</span>
+<span class="cline-any cline-yes">182x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -606,16 +606,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">49102x</span>
+<span class="cline-any cline-yes">50672x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">83320x</span>
+<span class="cline-any cline-yes">86060x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">109690x</span>
+<span class="cline-any cline-yes">112417x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -867,13 +867,13 @@ export const ARTIFACT_ICON: Record&lt;string, string&gt; = {
 export function artifactIcon(file: string): string {
   // Strip documents/ prefix for matching
   const baseName = file.replace(/^documents\//, '');
-  <span class="missing-if-branch" title="else path not taken" >E</span>if (ARTIFACT_ICON[baseName]) return ARTIFACT_ICON[baseName];
-<span class="cstat-no" title="statement not covered" >  if (ARTIFACT_ICON[file]) <span class="cstat-no" title="statement not covered" >return ARTIFACT_ICON[file];</span></span>
+  if (ARTIFACT_ICON[baseName]) return ARTIFACT_ICON[baseName];
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (ARTIFACT_ICON[file]) <span class="cstat-no" title="statement not covered" >return ARTIFACT_ICON[file];</span>
   // Pattern-based fallbacks
-<span class="cstat-no" title="statement not covered" >  if (file.endsWith('.json')) <span class="cstat-no" title="statement not covered" >return '📄';</span></span>
-<span class="cstat-no" title="statement not covered" >  if (file.startsWith('documents/') &amp;&amp; file.endsWith('-analysis.md')) <span class="cstat-no" title="statement not covered" >return '📑';</span></span>
-<span class="cstat-no" title="statement not covered" >  if (file.startsWith('documents/')) <span class="cstat-no" title="statement not covered" >return '📎';</span></span>
-<span class="cstat-no" title="statement not covered" >  return '📝';</span>
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (file.endsWith('.json')) <span class="cstat-no" title="statement not covered" >return '📄';</span>
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (file.startsWith('documents/') &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >file.endsWith('-analysis.md'))</span> <span class="cstat-no" title="statement not covered" >return '📑';</span>
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (file.startsWith('documents/')) <span class="cstat-no" title="statement not covered" >return '📎';</span>
+  return '📝';
 }
 &nbsp;
 /** Generic library-display-name phrases, localised per language. */
@@ -940,7 +940,7 @@ export function localisedCatalogDescription(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-09T12:29:41.616Z
+                at 2026-05-10T14:51:12.683Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
