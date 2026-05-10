@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "cycle": "week-ahead",
+  "date": "2026-05-10",
+  "subfolder": "week-ahead",
+  "generated_at": "2026-05-10T08:00:00Z",
+  "pirs": [
+    {
+      "pir_id": "PIR-MIGR-001",
+      "statement": "Will HD03262 (abolition of permanent residence permits for new arrivals) be scheduled for SfU committee report and kammaren vote before the September 2026 election?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "notes": "No new evidence this cycle. PIR active — carry forward."
+    },
+    {
+      "pir_id": "PIR-MIGR-002",
+      "statement": "Will the government submit the expected proposition batch on migration restriction measures (HD03263 companion legislation) in Q2 2026?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "notes": "No new evidence this cycle."
+    },
+    {
+      "pir_id": "PIR-MIGR-003",
+      "statement": "Will any migration legislation submitted in spring 2026 receive a negative Lagrådet opinion before the election?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "notes": "No Lagrådet yttranden this cycle."
+    },
+    {
+      "pir_id": "PIR-INTL-001",
+      "statement": "How will the Swedish government respond diplomatically to Israeli military actions affecting Swedish interests or citizens in Q2 2026?",
+      "status": "partially_answered",
+      "confidence": "MEDIUM",
+      "notes": "HD11803 (Global Sumud Flotilla) confirmed Swedish citizens on board. Foreign Minister Stenergard's written answer pending. PIR partially answered — outcome of diplomatic response still unknown."
+    },
+    {
+      "pir_id": "PIR-FIN-001",
+      "statement": "Will FiU37 (operational crisis management in financial sector) pass with cross-party support in week 20?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "notes": "No new vote data this cycle."
+    },
+    {
+      "pir_id": "PIR-DEFENCE-001",
+      "statement": "Will FöU18 signal intelligence modernisation pass Riksdag with a margin above 180 seats (strong mandate)?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "notes": "Vote expected week 20. No voteringsdata yet."
+    },
+    {
+      "pir_id": "PIR-ECON-001",
+      "statement": "Will Sweden's IMF economic data (IFS SDMX) availability be restored for week-ahead analysis by June 2026?",
+      "status": "open",
+      "confidence": "LOW",
+      "notes": "IFS SDMX still returning 404 as of 2026-05-10. WEO/FM available. Timeline unknown."
+    },
+    {
+      "pir_id": "PIR-HOUS-001",
+      "statement": "Will CU31's privatuthyrningslag produce measurable rental supply increase by Q4 2026?",
+      "status": "new",
+      "confidence": "LOW",
+      "notes": "PIR opened this cycle following CU31 expected passage. Monitor Fastighetsägarna Q3 2026 report."
+    },
+    {
+      "pir_id": "PIR-HOUS-002",
+      "statement": "Will S's 'landlord party' campaign framing on CU31 shift Sifo polling before September 2026?",
+      "status": "new",
+      "confidence": "MEDIUM",
+      "notes": "PIR opened this cycle. Monitor Sifo May–June 2026 results."
+    },
+    {
+      "pir_id": "PIR-INTL-002",
+      "statement": "How will Sweden vote on UN Gaza resolutions in May–June 2026 after the flotilla incident?",
+      "status": "new",
+      "confidence": "LOW",
+      "notes": "New PIR triggered by HD11803. Monitor UN GA/SC voting schedule."
+    },
+    {
+      "pir_id": "PIR-COAL-001",
+      "statement": "Will SD table a formal veil ban motion in the Riksdag before the September 2026 election?",
+      "status": "new",
+      "confidence": "MEDIUM",
+      "notes": "New PIR triggered by HD11802. Monitor riksdag-regering MCP: search_dokument(parti='SD', titel='slöja')."
+    }
+  ]
+}
