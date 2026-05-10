@@ -63,6 +63,8 @@ runtimes:
 network:
   allowed:
     - node
+    # Browser downloads for Playwright CLI mode (kept for cross-workflow network parity)
+    - playwright
     # Minimal Docker Hub hosts for node:26-alpine pulls used by SCB + World Bank MCP servers
     # (replaces the broader `containers` ecosystem identifier to keep least-privilege egress)
     - docker.io

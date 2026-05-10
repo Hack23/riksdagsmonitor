@@ -431,7 +431,7 @@ export const READER_VALUE_I18N: Record<string, LangMap> = {
     en: 'delivery feasibility, capability gaps, timelines and execution risks for the proposed action',
     sv: 'genomförbarhet, kapacitetsglapp, tidsplaner och exekveringsrisker för den föreslagna åtgärden',
     da: 'leveringsdygtighed, kapacitetshuller, tidsplaner og eksekveringsrisici for den foreslåede handling',
-    no: 'leveringsevne, kapasitetsgap, tidsplaner og gjennomføringsrisiko for den foreslåtte tiltaket',
+    no: 'leveringsevne, kapasitetsgap, tidsplaner og gjennomføringsrisiko for det foreslåtte tiltaket',
     fi: 'toteutettavuus, kyvykkyysaukot, aikajanat ja toimeenpanoriskit ehdotetulle toimelle',
     de: 'Umsetzbarkeit, Fähigkeitslücken, Zeitpläne und Ausführungsrisiken der vorgeschlagenen Maßnahme',
     fr: "faisabilité de la mise en œuvre, lacunes de capacités, calendriers et risques d'exécution",
@@ -466,7 +466,7 @@ export const READER_VALUE_I18N: Record<string, LangMap> = {
     da: 'alternative hypoteser, modargumenter i deres stærkeste form og det stærkeste argument imod hovedfortolkningen',
     no: 'alternative hypoteser, motargumenter i sin sterkeste form og det sterkeste argumentet mot hovedtolkningen',
     fi: 'vaihtoehtoiset hypoteesit, vahvimmilleen muotoillut vastaväitteet ja vahvin tapaus pääluentaa vastaan',
-    de: 'alternative Hypothesen, in ihrer stärksten Form formulierte Gegenargumente und der stärkste Fall gegen die Leselesart',
+    de: 'alternative Hypothesen, in ihrer stärksten Form formulierte Gegenargumente und der stärkste Fall gegen die Hauptlesart',
     fr: "hypothèses alternatives, contre-arguments dans leur formulation la plus forte et le cas le plus solide contre la lecture principale",
     es: 'hipótesis alternativas, contraargumentos en su formulación más fuerte y el caso más sólido contra la lectura principal',
     nl: 'alternatieve hypothesen, tegenargumenten in hun sterkste vorm en de sterkste casus tegen de hoofdduiding',
@@ -567,9 +567,11 @@ export const READER_VALUE_I18N: Record<string, LangMap> = {
  * default).
  */
 export function readerValueFor(file: string, lang: Language): string | undefined {
-  // Strip `documents/` prefix so per-document analyses inherit any
-  // future generic description (currently they have a dedicated
-  // perDocValue chrome string, so this branch is a no-op today).
+  // Strip any leading directory (e.g. `documents/`, `subfolder/`) by
+  // taking the last path segment so per-document analyses and any
+  // future nested artifact paths look up by their bare filename.
+  // Falls back to the full path so callers may register entries by
+  // exact path when a basename-collision arises.
   const baseName = file.includes('/') ? file.slice(file.lastIndexOf('/') + 1) : file;
   return READER_VALUE_I18N[baseName]?.[lang] ?? READER_VALUE_I18N[file]?.[lang];
 }
