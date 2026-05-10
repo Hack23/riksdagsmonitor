@@ -517,12 +517,12 @@ flowchart LR
 
 | Tactic | Technique | IMF-specific application |
 |---|---|---|
-| TA0006 Credential Access | T1552 Unsecured credentials | N/A — IMF API is unauthenticated; **risk eliminated by design** |
+| TA0006 Credential Access | T1552 Unsecured credentials | Datamapper transport is unauthenticated; SDMX 3.0 uses an Azure APIM subscription key (`IMF_SDMX_SUBSCRIPTION_KEY`) stored only as a GitHub Actions secret (never on disk, never logged); rotation playbook in `analysis/imf/agentic-integration.md` |
 | TA0007 Discovery | T1083 File and directory discovery | Cache directory permissions (read-only to article workers) |
 | TA0009 Collection | T1530 Cloud storage object | Aurora row-level access controls |
 | TA0040 Impact | T1485 Data destruction | Supersedes-chain prevents destructive overwrite |
 
-**Egress hosts** (allow-list): `www.imf.org` (Datamapper REST · WEO/FM), `api.imf.org` (SDMX 3.0 REST · IFS/BOP/DOTS/GFS/PCPS/ER/MFS_IR/MFS_PR). Both HTTPS-only, anonymous, public — no credentials required.
+**Egress hosts** (allow-list): `www.imf.org` (Datamapper REST · WEO/FM, **unauthenticated**), `api.imf.org` (SDMX 3.0 REST · IFS/BOP/DOTS/GFS/PCPS/ER/MFS_IR/MFS_PR, **subscription-key authenticated** via the Azure APIM `Ocp-Apim-Subscription-Key` header / `IMF_SDMX_SUBSCRIPTION_KEY` secret). Both HTTPS-only; payloads are public macro statistics with no PII.
 
 **Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).
 

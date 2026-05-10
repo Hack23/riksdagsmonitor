@@ -1,4 +1,4 @@
-# Economic Data Contract — Agentic Workflows (v3.1)
+# Economic Data Contract — Agentic Workflows (v3.2)
 
 > **Single source of truth** for live IMF / SCB economic data, Chart.js
 > visualisations, and AI commentary in every news article.

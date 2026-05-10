@@ -140,6 +140,12 @@ export function normalizeSdmxPathForBase(baseURL: string, pathWithQuery: string)
   if (!baseURL.includes('/sdmx/3.0')) {
     return pathWithQuery;
   }
+  // Already in slash-form? — return as-is. Checked before the comma-form
+  // regex so a v3 path with literal commas in query parameters cannot be
+  // mistakenly rewritten.
+  if (pathWithQuery.includes('/data/dataflow/')) {
+    return pathWithQuery;
+  }
   // Match `/data/<AGENCY>,<FLOW>,<VERSION>/<key>` where AGENCY may itself
   // contain a `.` (e.g. `IMF.STA`). Capture key + optional query string.
   const re = /^(\/?data)\/([^/,?#]+),([^/,?#]+),([^/,?#]+)(\/[^?#]*)?(\?.*)?$/;
@@ -148,9 +154,6 @@ export function normalizeSdmxPathForBase(baseURL: string, pathWithQuery: string)
     return pathWithQuery;
   }
   const [, dataPrefix, agency, flow, version, keyPart, query] = m;
-  if (pathWithQuery.includes('/data/dataflow/')) {
-    return pathWithQuery;
-  }
   return `${dataPrefix}/dataflow/${agency}/${flow}/${version}${keyPart ?? ''}${query ?? ''}`;
 }
 
@@ -554,8 +557,9 @@ export class ImfClient {
    *
    * Authentication: when {@link sdmxSubscriptionKey} is set (constructor
    * option or `IMF_SDMX_SUBSCRIPTION_KEY` env var) the request includes
-   * the `Ocp-Apim-Subscription-Key` header — required by every SDMX 3.0/2.1
-   * `/data/...` endpoint as of 2026-05.
+   * the `Ocp-Apim-Subscription-Key` header — required by every SDMX 3.0
+   * `/data/...` endpoint as of 2026-05. SDMX 3.0 is the only IMF SDMX
+   * surface this client targets.
    *
    * @param path URL path starting with `/data/...` or `/structure/...`
    */
