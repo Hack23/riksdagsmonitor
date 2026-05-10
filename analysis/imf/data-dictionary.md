@@ -25,12 +25,14 @@ IMF public data is exposed on two transports, both unauthenticated and both on t
 ### 1.2 SDMX 3.0 (full catalogue)
 
 - Base URL: `https://api.imf.org/external/sdmx/3.0`
-- URL pattern: `/data/{agencyId},{dataflowId},{version}/{key}?startPeriod=…&endPeriod=…`
+- **Authentication (required):** every `/data/...` request to this surface MUST include the `Ocp-Apim-Subscription-Key: <IMF_SDMX_SUBSCRIPTION_KEY>` Azure APIM header. Without it the gateway returns an auth-mask **HTTP 404** (not 401/403), which is silent and easy to misdiagnose. See [`agentic-integration.md`](agentic-integration.md) §"Pre-warm gate" for the env-var forwarding chain.
+- URL pattern (canonical, on the wire): `/data/dataflow/{agencyId}/{dataflowId}/{version}/{key}?startPeriod=…&endPeriod=…` — the SDMX 3.0 REST shape.
+- URL pattern (human-readable, kept in docs/CLI): `/data/{agencyId},{dataflowId},{version}/{key}?startPeriod=…&endPeriod=…` — the legacy comma form. **The `ImfClient.sdmxFetch()` client transparently rewrites comma → slash via `normalizeSdmxPathForBase()` before sending** ([`scripts/imf-client.ts`](../../scripts/imf-client.ts)), because `api.imf.org/sdmx/3.0` 404s the comma form. Docs, CLI examples, and `weoSdmxPath()` keep the readable comma form for clarity.
 - Agency: `IMF.STA` (Statistics Department) for most datasets; `IMF.RES` (Research) for WEO; `IMF.FAD` (Fiscal Affairs) for FM.
 - Country codes: **IMF AREA numeric** (`144`=SWE, `128`=DNK, `142`=NOR, `172`=FIN, `134`=DEU) for IFS/GFS/BOP. WEO still uses ISO-3 here.
 - Response: SDMX-JSON 2.0.0 (`application/vnd.sdmx.data+json;version=2.0.0`).
-- Used by: `scripts/imf-client.ts → sdmxFetch()`.
-- CLI: `tsx scripts/imf-fetch.ts sdmx --path "/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2024-01"`.
+- Used by: `scripts/imf-client.ts → sdmxFetch()` (which applies the comma → slash rewrite + injects the subscription-key header).
+- CLI: `tsx scripts/imf-fetch.ts sdmx --path "/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2024-01"` (CLI keeps comma form; client rewrites it).
 
 ### 1.3 Transport choice matrix
 
