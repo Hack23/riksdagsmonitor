@@ -52,6 +52,32 @@ jobs:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
+      # Forward IMF SDMX subscription keys to the Copilot coding-agent runtime.
+      # The top-level workflow `env:` block ONLY scopes to setup-job steps — it does
+      # NOT propagate to the agent's interactive bash sessions. The Copilot runtime
+      # inherits env vars written to $GITHUB_ENV during setup-steps. This mirrors the
+      # pattern used by .github/actions/news-prewarm/action.yml for news workflows.
+      # Reference: https://docs.github.com/en/copilot/customizing-copilot/customizing-the-development-environment-for-copilot-coding-agent
+      - name: Export IMF SDMX subscription keys to agent env
+        env:
+          IMF_SDMX_SUBSCRIPTION_KEY: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY }}
+          IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY }}
+        run: |
+          if [ -n "${IMF_SDMX_SUBSCRIPTION_KEY:-}" ]; then
+            echo "IMF_SDMX_SUBSCRIPTION_KEY=${IMF_SDMX_SUBSCRIPTION_KEY}" >> "$GITHUB_ENV"
+            echo "::add-mask::${IMF_SDMX_SUBSCRIPTION_KEY}"
+            echo "✅ IMF_SDMX_SUBSCRIPTION_KEY exported to agent env (length=${#IMF_SDMX_SUBSCRIPTION_KEY})"
+          else
+            echo "::warning::IMF_SDMX_SUBSCRIPTION_KEY secret not set — SDMX calls to api.imf.org will fail with 404 auth-mask diagnostic"
+          fi
+          if [ -n "${IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY:-}" ]; then
+            echo "IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY=${IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY}" >> "$GITHUB_ENV"
+            echo "::add-mask::${IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY}"
+            echo "✅ IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY exported to agent env (length=${#IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY})"
+          else
+            echo "ℹ️ IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY not set (optional rotation hot-spare)"
+          fi
+
       # Setup environment
       - name: Setup Environment (resilient apt install)
         timeout-minutes: 10
