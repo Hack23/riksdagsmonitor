@@ -1847,7 +1847,7 @@ tools:
 network:
   allowed:
     - www.imf.org           # Datamapper REST
-    - sdmxcentral.imf.org   # SDMX 3.0
+    - api.imf.org   # SDMX 3.0
 ```
 
 See [`analysis/imf/agentic-integration.md`](../../../analysis/imf/agentic-integration.md) for the seven-step integration contract.

@@ -2059,7 +2059,7 @@ C4Container
 - **IMF + SCB cross-validation worker** — quarterly Lambda compares IMF SWE GDP/CPI vs SCB national-accounts; deltas >0.3 pp open an editorial-review issue.
 - **IMF + WB dual-provider audit** — daily Step Functions workflow `economic-coverage-audit` emits provider-mix telemetry (`imf% / wb% / scb%`) into CloudWatch; alarm if WB economic-citation share rises above 5%.
 
-**Egress hosts** (allow-list): `www.imf.org` (Datamapper REST · WEO/FM), `sdmxcentral.imf.org` (SDMX 3.0 REST · IFS/BOP/DOTS/GFS/PCPS/ER/MFS_IR/MFS_PR). Both HTTPS-only, anonymous, public — no credentials required.
+**Egress hosts** (allow-list): `www.imf.org` (Datamapper REST · WEO/FM), `api.imf.org` (SDMX 3.0 REST · IFS/BOP/DOTS/GFS/PCPS/ER/MFS_IR/MFS_PR). Both HTTPS-only, anonymous, public — no credentials required.
 
 ---
 

@@ -966,7 +966,7 @@ flowchart LR
     end
     subgraph Public["Public-Internet · IMF Open APIs (no auth)"]
         Datamapper[www.imf.org/external/datamapper/api/v1]
-        SDMX[sdmxcentral.imf.org]
+        SDMX[api.imf.org]
     end
     Lambda -- HTTPS · TLS 1.3 · pinned SHA-256 --> Datamapper
     Lambda -- HTTPS · TLS 1.3 · pinned SHA-256 --> SDMX
@@ -980,7 +980,7 @@ flowchart LR
 
 | Control | Implementation | ISO 27001 | NIST CSF 2.0 | CIS v8.1 |
 |---|---|---|---|---|
-| **Egress allow-list** | Squid + iptables limit egress to `www.imf.org`, `sdmxcentral.imf.org` only | A.13.1 | PR.AC-5 | 13.4 |
+| **Egress allow-list** | Squid + iptables limit egress to `www.imf.org`, `api.imf.org` only | A.13.1 | PR.AC-5 | 13.4 |
 | **Payload integrity** | SHA-256 pin per (dataflow, indicator, country, vintage); supersedes-chain | A.8.2 | PR.DS-6 | 3.11 |
 | **Vintage discipline** | Reject payload >6 mo old without staleness annotation | A.8.10 | PR.DS-1 | 3.5 |
 | **Rate-limit guard** | ≤30 req/min self-imposed; exponential back-off; emits metric | A.13.1 | PR.AC-4 | 4.7 |
@@ -994,7 +994,7 @@ flowchart LR
 | IMF cache (Aurora) | PUBLIC | HIGH | STANDARD | 24h | N/A |
 | IMF API egress path | PUBLIC | HIGH | STANDARD | 24h (fallback to last cached vintage) | N/A |
 
-**Egress hosts** (allow-list): `www.imf.org` (Datamapper REST · WEO/FM), `sdmxcentral.imf.org` (SDMX 3.0 REST · IFS/BOP/DOTS/GFS/PCPS/ER/MFS_IR/MFS_PR). Both HTTPS-only, anonymous, public — no credentials required.
+**Egress hosts** (allow-list): `www.imf.org` (Datamapper REST · WEO/FM), `api.imf.org` (SDMX 3.0 REST · IFS/BOP/DOTS/GFS/PCPS/ER/MFS_IR/MFS_PR). Both HTTPS-only, anonymous, public — no credentials required.
 
 **Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).
 

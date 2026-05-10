@@ -28,7 +28,7 @@ IMF public data is exposed on two transports, both unauthenticated and both on t
 - URL pattern: `/data/{agencyId},{dataflowId},{version}/{key}?startPeriod=…&endPeriod=…`
 - Agency: `IMF.STA` (Statistics Department) for most datasets; `IMF.RES` (Research) for WEO; `IMF.FAD` (Fiscal Affairs) for FM.
 - Country codes: **IMF AREA numeric** (`144`=SWE, `128`=DNK, `142`=NOR, `172`=FIN, `134`=DEU) for IFS/GFS/BOP. WEO still uses ISO-3 here.
-- Response: SDMX-JSON 2.1 (structure + observation arrays).
+- Response: SDMX-JSON 2.0.0 (`application/vnd.sdmx.data+json;version=2.0.0`).
 - Used by: `scripts/imf-client.ts → sdmxFetch()`.
 - CLI: `tsx scripts/imf-fetch.ts sdmx --path "/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2024-01"`.
 

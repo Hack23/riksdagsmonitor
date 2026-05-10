@@ -125,13 +125,14 @@ const DEFAULT_WEO_VINTAGE = 'WEO-2026-04';
 
 /**
  * Translate a comma-form SDMX dataflow reference (`/data/AGENCY,FLOW,VERSION/key`
- * — used by SDMX 2.1 and by all of our docs/CLI/`weoSdmxPath`) into the slash
- * form (`/data/dataflow/AGENCY/FLOW/VERSION/key`) that the IMF SDMX 3.0 REST
- * gateway requires. The 2.1 endpoint accepts either form; the 3.0 endpoint
- * silently 404s the comma form. Verified live against api.imf.org 2026-05-10.
+ * — the SDMX 2.x URN style still used by all of our docs / CLI / `weoSdmxPath`
+ * for human readability) into the slash form
+ * (`/data/dataflow/AGENCY/FLOW/VERSION/key`) that the IMF SDMX 3.0 REST gateway
+ * requires. The 3.0 endpoint silently 404s the comma form. Verified live
+ * against `api.imf.org` 2026-05-10.
  *
- * Only rewrites when the base URL targets `/sdmx/3.0`. No-op for 2.1 and
- * for paths that already use the slash form.
+ * SDMX 3.0 is the only IMF SDMX surface this client targets; legacy SDMX
+ * surfaces are not configured anywhere in the repo.
  *
  * @internal exported for unit tests only
  */
@@ -570,10 +571,9 @@ export class ImfClient {
       // case-insensitive per RFC 7230, but we use the exact canonical
       // spelling `Ocp-Apim-Subscription-Key` because that's the object
       // key downstream code (e.g. fetchWithRetry's extraHeaders lookup
-      // in ImfHttpError construction) checks for. Used for both the
-      // SDMX 3.0 and SDMX 2.1 surfaces under api.imf.org — same
-      // subscription key works for both per the IMF Data SDMX API
-      // subscription product.
+      // in ImfHttpError construction) checks for. Required by the IMF
+      // SDMX 3.0 surface under `api.imf.org/external/sdmx/3.0` (the
+      // only IMF SDMX surface this client targets).
       headers['Ocp-Apim-Subscription-Key'] = this.sdmxSubscriptionKey;
     }
     return this.fetchWithRetry(url, 0, headers);

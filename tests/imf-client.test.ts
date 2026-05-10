@@ -369,7 +369,7 @@ describe('ImfClient', () => {
       global.fetch = spy;
       await client.sdmxFetch('data/IMF.RES,WEO,9.0.0/NGDP_RPCH.SWE.A.');
       const url = (spy as unknown as { mock: { calls: unknown[][] } }).mock.calls[0][0] as string;
-      // sdmxFetch rewrites the SDMX 2.1 comma-form dataflow ref into the
+      // sdmxFetch rewrites the human-readable comma-form dataflow ref into the
       // SDMX 3.0 slash-form (`/data/dataflow/<agency>/<flow>/<version>/...`)
       // because api.imf.org/sdmx/3.0 silently 404s the comma form.
       expect(url).toBe(
@@ -922,7 +922,7 @@ describe('ImfClient.listDatamapperIndicators', () => {
 
 describe('normalizeSdmxPathForBase (SDMX 3.0 dataflow rewrite)', () => {
   const SDMX30 = 'https://api.imf.org/external/sdmx/3.0';
-  const SDMX21 = 'https://api.imf.org/external/sdmx/2.1';
+  const NON_SDMX30 = 'https://api.imf.org/external/datamapper/api/v1';
 
   it('rewrites comma-form into /data/dataflow/.../ slash-form for sdmx/3.0', () => {
     expect(
@@ -951,9 +951,12 @@ describe('normalizeSdmxPathForBase (SDMX 3.0 dataflow rewrite)', () => {
     ).toBe('/data/dataflow/IMF.STA/CPI/4.0.0');
   });
 
-  it('does NOT rewrite when base URL targets sdmx/2.1', () => {
+  it('does NOT rewrite when base URL is not the sdmx/3.0 surface (defence-in-depth)', () => {
+    // SDMX 3.0 is the only IMF SDMX surface we target; the rewrite is
+    // gated on the `/sdmx/3.0` segment so any future swap to a different
+    // base URL (e.g. Datamapper) is a no-op.
     expect(
-      normalizeSdmxPathForBase(SDMX21, '/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX'),
+      normalizeSdmxPathForBase(NON_SDMX30, '/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX'),
     ).toBe('/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX');
   });
 

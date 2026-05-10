@@ -3067,7 +3067,7 @@ flowchart LR
     end
     subgraph Public["Public-Internet · IMF Open APIs (no auth)"]
         Datamapper[www.imf.org/external/datamapper/api/v1]
-        SDMX[sdmxcentral.imf.org]
+        SDMX[api.imf.org]
     end
     Worker -- HTTPS · TLS 1.3 --> Datamapper
     Worker -- HTTPS · TLS 1.3 --> SDMX
@@ -3093,14 +3093,14 @@ flowchart LR
 
 | Control | Implementation | Framework mapping |
 |---|---|---|
-| Egress allow-list | `www.imf.org`, `sdmxcentral.imf.org` only | ISO A.13.1 / NIST PR.AC-5 / CIS 13.4 |
+| Egress allow-list | `www.imf.org`, `api.imf.org` only | ISO A.13.1 / NIST PR.AC-5 / CIS 13.4 |
 | Payload integrity | SHA-256 pin per (dataflow, indicator, country, vintage) | ISO A.8.2 / NIST PR.DS-6 / CIS 3.11 |
 | Vintage discipline | Reject >6-month payloads without staleness annotation | ISO A.8.10 / NIST PR.DS-1 / CIS 3.5 |
 | Rate-limit guard | ≤30 req/min; exponential back-off | ISO A.13.1 / NIST PR.AC-4 / CIS 4.7 |
 | Provenance audit | `economicProvenance` block in every article front-matter | ISO A.5.28 / NIST DE.AE-3 / CIS 8.2 |
 | Supply-chain | Scripts in-repo; reviewed; harden-runner egress audit | ISO A.5.21 / NIST PR.IP-2 / CIS 16.11 |
 
-**Egress hosts** (allow-list): `www.imf.org` (Datamapper REST · WEO/FM), `sdmxcentral.imf.org` (SDMX 3.0 REST · IFS/BOP/DOTS/GFS/PCPS/ER/MFS_IR/MFS_PR). Both HTTPS-only, anonymous, public — no credentials required.
+**Egress hosts** (allow-list): `www.imf.org` (Datamapper REST · WEO/FM), `api.imf.org` (SDMX 3.0 REST · IFS/BOP/DOTS/GFS/PCPS/ER/MFS_IR/MFS_PR). Both HTTPS-only, anonymous, public — no credentials required.
 
 **Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).
 
@@ -3261,7 +3261,7 @@ flowchart TD
 
 All agentic workflows execute behind a **Squid proxy** with domain allow-list enforcement and **iptables** rules that DROP all non-allowlisted outbound connections:
 
-- **Allowlisted domains:** `riksdagen.se`, `www.riksdagen.se`, `data.riksdagen.se`, `regeringen.se`, `www.regeringen.se`, `riksdag-regering-ai.onrender.com`, `api.scb.se`, `api.worldbank.org`, `www.imf.org`, `sdmxcentral.imf.org`, `api.imf.org`, `data.imf.org`, `github.com`, `raw.githubusercontent.com`, `hack23.github.io`, `hack23.com`, `www.hack23.com`, `riksdagsmonitor.com`
+- **Allowlisted domains:** `riksdagen.se`, `www.riksdagen.se`, `data.riksdagen.se`, `regeringen.se`, `www.regeringen.se`, `riksdag-regering-ai.onrender.com`, `api.scb.se`, `api.worldbank.org`, `www.imf.org`, `api.imf.org`, `data.imf.org`, `github.com`, `raw.githubusercontent.com`, `hack23.github.io`, `hack23.com`, `www.hack23.com`, `riksdagsmonitor.com`
 - **Effect:** Tool-call exfiltration attempts are blocked at the network layer — the agent cannot reach arbitrary external hosts
 - **Monitoring:** Squid access logs + `step-security/harden-runner` egress audit
 

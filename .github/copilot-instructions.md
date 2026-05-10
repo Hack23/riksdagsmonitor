@@ -209,7 +209,6 @@ network:
     - api.imf.org                      # IMF SDMX 3.0 REST (PRIMARY economic — IFS/BOP/DOTS/GFS/PCPS/ER/MFS)
     - data.imf.org                     # IMF data portal
     - www.imf.org                      # IMF Datamapper REST (PRIMARY economic — WEO/FM)
-    - sdmxcentral.imf.org              # IMF SDMX 3.0 legacy endpoint
     - api.worldbank.org                # World Bank API (governance/environment residue ONLY — never economic; use IMF)
     - data.riksdagen.se                # Riksdag open data
     - riksdagen.se                     # Riksdag website

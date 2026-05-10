@@ -19,13 +19,23 @@
 >
 > **v3.1 (2026-05-10)** — IMF Data SDMX API now requires the
 > `Ocp-Apim-Subscription-Key` Azure APIM header on every
-> `/data/...` request (SDMX 3.0 *and* SDMX 2.1). All 14 news workflows
-> forward `secrets.IMF_SDMX_SUBSCRIPTION_KEY` (primary, required) to
+> `/data/...` request to the SDMX 3.0 surface
+> (`api.imf.org/external/sdmx/3.0`) — the only IMF SDMX surface this repo
+> targets. All 14 news workflows forward
+> `secrets.IMF_SDMX_SUBSCRIPTION_KEY` (primary, required) to
 > the `news-prewarm` composite action; `IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY`
 > is the optional rotation key (stored only, not consumed by code).
 > The Datamapper transport (WEO + FM) remains unauthenticated and is
 > unaffected. See `analysis/imf/agentic-integration.md` §"Pre-warm gate"
 > for forwarding mechanics and the rotation playbook.
+>
+> **v3.2 (2026-05-10)** — SDMX 2.1 transport removed from the contract.
+> The client (`scripts/imf-client.ts::sdmxFetch`) auto-rewrites the
+> human-readable comma-form path
+> (`/data/AGENCY,FLOW,VERSION/key`) into the SDMX 3.0 slash-form
+> (`/data/dataflow/AGENCY/FLOW/VERSION/key`) before sending — so docs,
+> CLI examples, and `weoSdmxPath()` keep the comma form for readability
+> while the wire request always targets SDMX 3.0.
 
 ---
 

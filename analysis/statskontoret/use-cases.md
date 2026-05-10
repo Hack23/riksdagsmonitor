@@ -36,7 +36,7 @@ Evidence standard: cite Statskontoret source URL, year, document type, outturn a
 
 ## 5 · High-frequency monitoring with månadsutfall
 
-Use `manadsutfall` to monitor budget execution monthly for specific agencies or income categories.  Combine with IMF SDMX monthly fiscal data (`sdmxcentral.imf.org`) for cross-validation.
+Use `manadsutfall` to monitor budget execution monthly for specific agencies or income categories.  Combine with IMF SDMX monthly fiscal data (`api.imf.org`) for cross-validation.
 
 Evidence standard: cite Statskontoret månadsutfall URL, year/month, agency name and outturn amount.
 

@@ -187,7 +187,7 @@ Riksdagsmonitor's security practices are part of Hack23 AB's comprehensive Infor
 
 ### IMF data scope
 
-Riksdagsmonitor consumes **public, anonymous, unauthenticated** macro/fiscal/monetary statistics from the IMF Datamapper REST API (`www.imf.org/external/datamapper/api/v1`) and the IMF SDMX 3.0 endpoint (`sdmxcentral.imf.org`). **No personal data, no credentials, no auth tokens** are exchanged with the IMF. The IMF integration is therefore out of scope for GDPR DPIA but in scope for this security policy as a third-party dependency.
+Riksdagsmonitor consumes **public, anonymous, unauthenticated** macro/fiscal/monetary statistics from the IMF Datamapper REST API (`www.imf.org/external/datamapper/api/v1`) and the IMF SDMX 3.0 endpoint (`api.imf.org`). **No personal data, no credentials, no auth tokens** are exchanged with the IMF. The IMF integration is therefore out of scope for GDPR DPIA but in scope for this security policy as a third-party dependency.
 
 ### IMF-specific security posture
 
@@ -206,7 +206,7 @@ If you discover a vulnerability in our IMF integration (e.g., cache integrity by
 
 ### IMF egress allow-list
 
-**Egress hosts** (allow-list): `www.imf.org` (Datamapper REST · WEO/FM), `sdmxcentral.imf.org` (SDMX 3.0 REST · IFS/BOP/DOTS/GFS/PCPS/ER/MFS_IR/MFS_PR). Both HTTPS-only, anonymous, public — no credentials required.
+**Egress hosts** (allow-list): `www.imf.org` (Datamapper REST · WEO/FM), `api.imf.org` (SDMX 3.0 REST · IFS/BOP/DOTS/GFS/PCPS/ER/MFS_IR/MFS_PR). Both HTTPS-only, anonymous, public — no credentials required.
 
 **Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).
 

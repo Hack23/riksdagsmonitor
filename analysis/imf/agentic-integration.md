@@ -72,7 +72,7 @@ sleep 1
 >
 > - **What it probes** — three IMF transports: WEO + FM via Datamapper,
 >   IFS monthly CPI via SDMX 3.0.
-> - **Authentication** — every SDMX 3.0/2.1 `/data/...` endpoint requires
+> - **Authentication** — every SDMX 3.0 `/data/...` endpoint requires
 >   the `Ocp-Apim-Subscription-Key` Azure APIM header (since ~2026-05).
 >   Each news workflow forwards
 >   `secrets.IMF_SDMX_SUBSCRIPTION_KEY` (primary, required) to the
