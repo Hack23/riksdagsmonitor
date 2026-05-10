@@ -24,7 +24,7 @@
 
 import { describe, it, expect } from 'vitest';
 import { readFileSync, readdirSync } from 'node:fs';
-import { join } from 'node:path';
+import { basename, join } from 'node:path';
 
 const WORKFLOWS_DIR = join(process.cwd(), '.github', 'workflows');
 
@@ -41,7 +41,7 @@ describe('news-*.md IMF SDMX subscription key forwarding', () => {
     expect(sources.length).toBe(14);
   });
 
-  it.each(sources.map((s) => [s.split('/').pop() as string, s]))(
+  it.each(sources.map((s) => [basename(s), s]))(
     '%s forwards secrets.IMF_SDMX_SUBSCRIPTION_KEY to news-prewarm composite action',
     (_basename, path) => {
       const content = readFileSync(path, 'utf8');

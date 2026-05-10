@@ -14,7 +14,7 @@ on:
 env:
   GITHUB_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}
   GITHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}
-  COPILOT_GITHUB_TOKEN : ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}
+  COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}
   # IMF SDMX subscription keys — forwarded into the Copilot coding-agent shell so
   # interactive sessions can authenticate api.imf.org / sdmxcentral.imf.org / dataservices.imf.org
   # (WEO via www.imf.org Datamapper is unauthenticated). Primary is consumed by

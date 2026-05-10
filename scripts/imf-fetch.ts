@@ -207,7 +207,7 @@ async function runWeo(flags: ReadonlyMap<string, string>, booleans: ReadonlySet<
     // dataflow when the subscription key is configured. This keeps the
     // `weo` subcommand usable for every IMF_WEO_INDICATORS entry rather
     // than just the ~9 codes the simple Datamapper exposes.
-    if (err instanceof ImfWeoSdmxOnlyError && process.env.IMF_SDMX_SUBSCRIPTION_KEY) {
+    if (err instanceof ImfWeoSdmxOnlyError && client.sdmxSubscriptionKey) {
       const path = err.sdmxPath;
       process.stderr.write(`imf-fetch: routing '${indicator}' via SDMX (${path})\n`);
       const raw = await client.sdmxFetch(path);

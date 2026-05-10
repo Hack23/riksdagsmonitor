@@ -535,7 +535,11 @@ export class ImfClient {
       Accept: 'application/vnd.sdmx.data+json;version=2.0.0',
     };
     if (this.sdmxSubscriptionKey) {
-      // Azure APIM gateway header (case-sensitive). Used for both the
+      // Azure APIM gateway header. The HTTP header name itself is
+      // case-insensitive per RFC 7230, but we use the exact canonical
+      // spelling `Ocp-Apim-Subscription-Key` because that's the object
+      // key downstream code (e.g. fetchWithRetry's extraHeaders lookup
+      // in ImfHttpError construction) checks for. Used for both the
       // SDMX 3.0 and SDMX 2.1 surfaces under api.imf.org — same
       // subscription key works for both per the IMF Data SDMX API
       // subscription product.

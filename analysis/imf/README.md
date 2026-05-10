@@ -73,7 +73,7 @@ See ADR: [`docs/adr/0001-adopt-imf-data-alongside-world-bank.md`](../../docs/adr
 
 No MCP server is required for IMF — access is part of the repository's npm SBOM, and the only firewall egress needed is to `data.imf.org`, `api.imf.org`, and `www.imf.org`.
 
-### 4.2 · Authentication & repository secrets
+### 4.1 · Authentication & repository secrets
 
 | Repository secret | Status | Consumed by | Purpose |
 |---|---|---|---|
@@ -82,7 +82,7 @@ No MCP server is required for IMF — access is part of the repository's npm SBO
 
 The Datamapper transport (`getWeoIndicator`, `compareCountriesWeo`, `getWeoIndicatorsBatch`) is unauthenticated. Both keys are obtained from <https://datamarketplace.imf.org/> (formerly <https://data.imf.org/> developer portal) — one subscription per repository.
 
-### 4.1 · TypeScript API quick reference
+### 4.2 · TypeScript API quick reference
 
 The snippet below assumes it is copied into a TypeScript file at the
 repository root. From this README's directory (`analysis/imf/`), use
