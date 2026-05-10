@@ -13294,6 +13294,10 @@ html[data-theme="light"] .rm-article-body pre.mermaid > svg {
   line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  /* Fallback for browsers that don't support -webkit-line-clamp:
+     cap height at 3 lines (line-height * 3) so long descriptions
+     can't blow up the card grid. */
+  max-height: calc(0.78rem * 1.35 * 3);
 }
 
 .rm-source-card-file {

@@ -46,12 +46,15 @@ import type { LangMap } from '../../political-intelligence/i18n/artifact-i18n.js
  * Per-artifact, per-language reader-value description. Add new
  * artifacts here as a single 14-language block.
  *
- * Translations are kept short (~80–140 characters) and concrete —
- * naming the analytical method, the kind of evidence, or the
- * decision-relevant signal the reader will extract. They are NOT
- * generic filler; if you cannot describe a unique reader benefit in
- * 140 characters, the artifact does not belong in
- * {@link ./order.js#AGGREGATION_ORDER}.
+ * Translations are kept concise (target ~80–140 characters; some
+ * checklist-style artifacts such as `media-framing-analysis.md` may
+ * extend up to ~180 characters when they enumerate distinct deliverables)
+ * and concrete — naming the analytical method, the kind of evidence,
+ * or the decision-relevant signal the reader will extract. They are
+ * NOT generic filler; if you cannot describe a unique reader benefit
+ * within ~180 characters, the artifact does not belong in
+ * {@link ./order.js#AGGREGATION_ORDER}. The card UI clamps to three
+ * lines (see `.rm-source-card-desc` in `styles.css`).
  */
 export const READER_VALUE_I18N: Record<string, LangMap> = {
   // ─── Phase A — Lead & headline judgments (BLUF) ────────────────────
