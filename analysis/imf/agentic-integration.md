@@ -128,6 +128,31 @@ sleep 1
 > No workflow or script reads `IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY`
 > directly — it exists purely as a hot spare. This matches the IMF Azure
 > APIM "regenerate primary key" / "regenerate secondary key" semantics.
+>
+> #### Copilot coding-agent sessions
+>
+> Interactive Copilot coding-agent runners do **not** automatically
+> inherit repository secrets — GitHub's secret store is write-only by
+> design (no PAT, including the agent's own token, can read secret
+> values via the REST API). To make `IMF_SDMX_SUBSCRIPTION_KEY` visible
+> to the agent's `bash:` shell, the secret is forwarded through the
+> top-level `env:` block in
+> [`.github/workflows/copilot-setup-steps.yml`](../../.github/workflows/copilot-setup-steps.yml):
+>
+> ```yaml
+> env:
+>   IMF_SDMX_SUBSCRIPTION_KEY: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY }}
+>   IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY }}
+> ```
+>
+> The Copilot agent runtime materialises this env block into the
+> session's process environment, so `tsx scripts/imf-fetch.ts sdmx ...`
+> and direct `curl -H "Ocp-Apim-Subscription-Key: $IMF_SDMX_SUBSCRIPTION_KEY"`
+> both work without any per-session secret-mounting step. Sessions that
+> were launched *before* this wiring existed will not see the env var
+> retroactively — only sessions started after the wiring change inherit
+> it. WEO + FM via the unauthenticated `www.imf.org` Datamapper
+> transport works in every session regardless.
 
 ### Step 4 — Batched `compare` call for peer-set
 

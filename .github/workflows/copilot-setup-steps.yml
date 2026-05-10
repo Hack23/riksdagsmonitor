@@ -15,6 +15,13 @@ env:
   GITHUB_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}
   GITHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}
   COPILOT_GITHUB_TOKEN : ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}
+  # IMF SDMX subscription keys — forwarded into the Copilot coding-agent shell so
+  # interactive sessions can authenticate api.imf.org / sdmxcentral.imf.org / dataservices.imf.org
+  # (WEO via www.imf.org Datamapper is unauthenticated). Primary is consumed by
+  # scripts/imf-client.ts via Ocp-Apim-Subscription-Key; secondary is a hot-spare rotation key
+  # (stored only, not auto-consumed). See analysis/imf/agentic-integration.md §"Pre-warm gate".
+  IMF_SDMX_SUBSCRIPTION_KEY: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY }}
+  IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY }}
 
 permissions:
   contents: read
