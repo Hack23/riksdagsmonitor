@@ -299,7 +299,9 @@ tsx scripts/imf-fetch.ts list-indicators
 
 **Output discipline:** every economic claim in an article emits an `economicProvenance` block (provider, dataflow, indicator, vintage, retrieved_at). The provenance `provider` field for economic context is `imf` (or `scb` for Swedish-specific ground truth).
 
+**Authentication (SDMX only):** every `sdmx` subcommand (IFS / BOP / DOTS / GFS_COFOG / MFS_IR / PCPS / ER) requires the `IMF_SDMX_SUBSCRIPTION_KEY` env var (Azure APIM `Ocp-Apim-Subscription-Key` header). All 14 `news-*.md` workflows forward `secrets.IMF_SDMX_SUBSCRIPTION_KEY` (primary, required) to the `news-prewarm` composite action, which exports it to `$GITHUB_ENV` so the agent's `bash:` tool inherits it via `awf --env-all`. `IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY` is the optional rotation key — stored only, not consumed by code (see [`analysis/imf/agentic-integration.md`](../analysis/imf/agentic-integration.md) §"Pre-warm gate" → "Key rotation"). The `weo` and `compare` subcommands target the unauthenticated Datamapper transport and need no key.
+
 ---
 
-**Last Updated**: 2026-05-03
-**Version**: 3.8 — removed `sandbox.mcp.keepalive-interval` from all workflows (default value is now sufficient); simplified timer model to Timer A + Timer B only. `engine.mcp.session-timeout` remains removed (MCP Gateway v0.3.1 schema rejects it).
+**Last Updated**: 2026-05-10
+**Version**: 3.9 — IMF SDMX subscription key wired through every `news-*.md` workflow (`IMF_SDMX_SUBSCRIPTION_KEY` primary required, `IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY` rotation hot spare). ECONOMIC_DATA_CONTRACT bumped to v3.1.

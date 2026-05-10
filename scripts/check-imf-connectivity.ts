@@ -351,26 +351,46 @@ export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
   }
 
   // Probe 3: SDMX 3.0 connectivity — CPI data endpoint.
-  // Uses the primary data path (IMF.STA,CPI,5.0.0). If the IMF data
-  // endpoint returns 404 (a known infrastructure issue since ~2026-05)
-  // this probe correctly returns ok=false so the unavailable flag IS written
-  // and downstream workflows use the degradation path.  The error message
-  // will include the HTTP status (e.g. "404 Resource Not Found") which is
-  // enough for operators to distinguish "full SDMX outage" from "data
-  // endpoint broken while structure/dataflow still responds".
+  // Uses the primary data path (IMF.STA,CPI,5.0.0). Every SDMX 3.0/2.1
+  // `/data/...` endpoint requires an `Ocp-Apim-Subscription-Key` header
+  // (Azure APIM gateway, since ~2026-05). When that key is absent the
+  // gateway returns 401/403, which `imf-client.ts` re-labels as
+  // "subscription key missing or invalid". We further specialise that
+  // surface here to a deterministic `sdmx-subscription-key-not-configured`
+  // reason string when the local environment carries no key — operators
+  // can then distinguish "we never set the secret" from "key revoked"
+  // from "IMF outage". WEO/FM stay healthy via the unauthenticated
+  // Datamapper transport in either case so the run only becomes
+  // `degraded`, never `unavailable`, on a missing key alone.
   {
     const start = Date.now();
+    const keyConfigured = Boolean(client.sdmxSubscriptionKey);
     const result = await withTimeout(
       client.sdmxFetch(SDMX_CPI_PROBE_PATH),
       PROBE_TIMEOUT_MS,
     );
     if (isProbeErr(result)) {
+      const rawMessage = result.error.message;
+      // Only override the error when the failure looks auth-related.
+      // The IMF Azure APIM gateway returns:
+      //   - 401 / 403 when an invalid key is sent
+      //   - 404 when no key is sent at all (gateway masks the data path
+      //     completely, so the response looks like a missing dataflow)
+      //   - imf-client.ts re-labels both 401/403 with our diagnostic suffix
+      // Network errors, timeouts, DNS failures, and 5xx outages keep their
+      // original message so the operator sees the real cause.
+      const looksAuthRelated =
+        /\b(401|403|404)\b/.test(rawMessage) ||
+        /subscription key missing or invalid/i.test(rawMessage);
+      const error = !keyConfigured && looksAuthRelated
+        ? 'sdmx-subscription-key-not-configured'
+        : rawMessage;
       probes.push({
         dataflow: 'IFS',
         transport: 'sdmx',
         ok: false,
         latencyMs: Date.now() - start,
-        error: result.error.message,
+        error,
       });
     } else {
       const raw = result.value;

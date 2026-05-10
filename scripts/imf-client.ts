@@ -78,6 +78,25 @@ export interface ImfClientConfig {
    */
   readonly weoVintage?: string;
   /**
+   * IMF Data SDMX API subscription key, sent as the
+   * `Ocp-Apim-Subscription-Key` header on every {@link ImfClient.sdmxFetch}
+   * call. The Datamapper transport (`getWeoIndicator` etc.) is NOT
+   * authenticated and never receives this header.
+   *
+   * If omitted the client falls back to `process.env.IMF_SDMX_SUBSCRIPTION_KEY`.
+   * If neither is set, SDMX requests still go out (so connectivity probes can
+   * detect a "no key configured" state) but the IMF Azure APIM gateway will
+   * mask `/data/...` endpoints as **HTTP 404 "Resource not found"** when the
+   * `Ocp-Apim-Subscription-Key` header is absent (verified via curl
+   * 2026-05-10). When an *invalid* key is sent, APIM returns **401/403**
+   * instead. {@link ImfHttpError} surfaces both modes with a single
+   * "subscription key missing or invalid" diagnostic so operators don't
+   * waste time chasing a generic 404.
+   *
+   * `/structure/...` endpoints remain public (no key required).
+   */
+  readonly sdmxSubscriptionKey?: string;
+  /**
    * Optional diagnostic hook invoked when `getWeoIndicatorsBatch()` fail-softs
    * one indicator to an empty series because the IMF transport/API call failed.
    * The default is no-op so callers can opt in without polluting JSON stdout.
@@ -120,10 +139,15 @@ const NETWORK_TYPE_ERROR_PATTERNS = [
 ] as const;
 
 /**
- * Canonical IMF indicator IDs used by Riksdagsmonitor articles. Each
- * entry is addressable via the Datamapper (`/{indicatorId}`) — the
- * WEO subset — or SDMX 3.0 via `ImfClient.sdmxFetch()` (database='WEO',
- * indicator=code).
+ * Canonical IMF indicator IDs used by Riksdagsmonitor articles.
+ *
+ * **Logical WEO surface** — these are the codes article workflows cite as
+ * `WEO:<code>`. Some are addressable via the simple Datamapper JSON
+ * transport (see {@link IMF_WEO_DATAMAPPER_AVAILABLE}); the rest only
+ * live in the full WEO 9.0.0 SDMX dataflow (`IMF.RES,WEO,9.0.0`) and
+ * require {@link ImfClient.sdmxFetch} with the
+ * `IMF_SDMX_SUBSCRIPTION_KEY` set. The WEO release cadence is twice a
+ * year (April + October) — bump {@link DEFAULT_WEO_VINTAGE} accordingly.
  */
 export const IMF_WEO_INDICATORS = {
   /** Real GDP growth, annual % change — headline macro indicator. */
@@ -138,27 +162,122 @@ export const IMF_WEO_INDICATORS = {
   unemployment: 'LUR',
   /** General government gross debt, % of GDP. */
   generalGovGrossDebt: 'GGXWDG_NGDP',
-  /** General government revenue, % of GDP. */
+  /** General government revenue, % of GDP. SDMX-only on Datamapper as of WEO 2026-04. */
   generalGovRevenue: 'GGR_NGDP',
-  /** General government total expenditure, % of GDP. */
+  /** General government total expenditure, % of GDP. SDMX-only on Datamapper as of WEO 2026-04. */
   generalGovExpenditure: 'GGX_NGDP',
   /** General government net lending / borrowing, % of GDP. */
   generalGovBalance: 'GGXCNL_NGDP',
   /** Current account balance, % of GDP. */
   currentAccountBalance: 'BCA_NGDPD',
-  /** Volume of exports of goods and services, annual % change. */
+  /** Volume of exports of goods and services, annual % change. SDMX-only on Datamapper as of WEO 2026-04. */
   exportsVolumeGrowth: 'TX_RPCH',
   /** Population (millions). */
   population: 'LP',
 } as const;
 
-/** Commonly-referenced IMF Fiscal Monitor (FM) indicators. */
+/**
+ * WEO indicator codes that are reachable through the simple Datamapper
+ * JSON transport (`/external/datamapper/api/v1/{code}/{country}`).
+ *
+ * Verified live on 2026-05-10 against `https://www.imf.org/external/datamapper/api/v1/indicators`
+ * (132 indicators, 15 of which are tagged `dataset: "WEO"`). The 9
+ * codes below are the intersection of {@link IMF_WEO_INDICATORS} and
+ * the live Datamapper WEO set. Codes outside this set must be fetched
+ * via {@link ImfClient.sdmxFetch} against the
+ * `IMF.RES,WEO,9.0.0` SDMX dataflow — see {@link weoSdmxPath}.
+ */
+export const IMF_WEO_DATAMAPPER_AVAILABLE: ReadonlySet<string> = new Set([
+  'NGDP_RPCH',
+  'NGDPD',
+  'NGDPDPC',
+  'PCPIPCH',
+  'LUR',
+  'GGXWDG_NGDP',
+  'GGXCNL_NGDP',
+  'BCA_NGDPD',
+  'LP',
+]);
+
+/**
+ * WEO codes declared by {@link IMF_WEO_INDICATORS} that the Datamapper
+ * does not actually serve. The transport returns HTTP 200 with an
+ * **empty `values` envelope** (verified live 2026-05-10) — never a 404
+ * — so callers cannot rely on HTTP status alone to detect this. Route
+ * these through {@link ImfClient.sdmxFetch} with the WEO 9.0.0
+ * dataflow path produced by {@link weoSdmxPath}.
+ *
+ * `getWeoIndicator()` throws an {@link ImfWeoSdmxOnlyError} for codes in
+ * this set so silent zero-point returns no longer mask transport issues.
+ */
+export const IMF_WEO_SDMX_ONLY: ReadonlySet<string> = new Set([
+  'GGR_NGDP',
+  'GGX_NGDP',
+  'TX_RPCH',
+  'GGXONLB_NGDP',
+]);
+
+/**
+ * Commonly-referenced IMF Fiscal Monitor (FM) indicators. The codes
+ * below are the **logical** FM identifiers used in `FM:<code>` article
+ * citations and routed through {@link ImfClient.sdmxFetch} against the
+ * `IMF.FAD,FM,5.1.0` SDMX dataflow. The Datamapper FM dataset uses
+ * different suffix conventions (`GGXONLB_G01_GDP_PT`,
+ * `G_XWDG_G01_GDP_PT`, …) — see the live catalog via
+ * {@link ImfClient.listDatamapperIndicators}.
+ */
 export const IMF_FM_INDICATORS = {
   /** General government gross debt, % of GDP (FM vintage — may differ slightly from WEO). */
   generalGovGrossDebtFm: 'GGXWDG_NGDP',
   /** General government primary balance, % of GDP. */
   primaryBalance: 'GGXONLB_NGDP',
 } as const;
+
+/**
+ * Build the SDMX 3.0 data path for a WEO code + country, suitable for
+ * {@link ImfClient.sdmxFetch}. Uses the WEO 9.0.0 dataflow (the
+ * `IMF.RES:WEO(9.0.0)` URN browsable at
+ * `https://data.imf.org/en/Data-Explorer?datasetUrn=IMF.RES:WEO(9.0.0)`)
+ * with annual frequency.
+ *
+ * @example
+ *   client.sdmxFetch(weoSdmxPath('SWE', 'GGR_NGDP'));
+ *   // GET https://api.imf.org/external/sdmx/3.0/data/IMF.RES,WEO,9.0.0/A.SWE.GGR_NGDP
+ */
+export function weoSdmxPath(iso3: string, weoCode: string): string {
+  const c = encodeURIComponent(iso3.toUpperCase());
+  const i = encodeURIComponent(weoCode);
+  return `/data/IMF.RES,WEO,9.0.0/A.${c}.${i}`;
+}
+
+/**
+ * Thrown by {@link ImfClient.getWeoIndicator} when the requested code
+ * lives in {@link IMF_WEO_SDMX_ONLY} (i.e. the Datamapper transport
+ * returned zero points). Carries the SDMX path the caller should use
+ * instead so agents can recover programmatically.
+ */
+export class ImfWeoSdmxOnlyError extends Error {
+  readonly weoCode: string;
+  readonly countryCode: string;
+  readonly sdmxPath: string;
+  constructor(iso3: string, weoCode: string) {
+    // Normalise the country code so the error payload is consistent
+    // with sdmxPath (which is built from upper-cased ISO3) and with
+    // getWeoIndicator's internal upper-casing — callers reading
+    // `err.countryCode` always see canonical ISO-3166-1 alpha-3.
+    const normalisedIso3 = iso3.toUpperCase();
+    const sdmxPath = weoSdmxPath(normalisedIso3, weoCode);
+    super(
+      `IMF WEO indicator '${weoCode}' is not exposed by the Datamapper for '${normalisedIso3}'. ` +
+        `Use sdmxFetch('${sdmxPath}') with IMF_SDMX_SUBSCRIPTION_KEY set, or the ` +
+        `'imf-fetch sdmx --path ${sdmxPath} --indicator ${weoCode} --country ${normalisedIso3}' CLI.`,
+    );
+    this.name = 'ImfWeoSdmxOnlyError';
+    this.weoCode = weoCode;
+    this.countryCode = normalisedIso3;
+    this.sdmxPath = sdmxPath;
+  }
+}
 
 // ---------------------------------------------------------------------------
 // Raw Datamapper response shape
@@ -183,12 +302,33 @@ export interface DatamapperResponse {
 export type DatamapperEnvelope = Partial<DatamapperResponse> | null | undefined;
 
 class ImfHttpError extends Error {
+  readonly status: number;
   readonly retryable: boolean;
   readonly retryAfterHeader?: string | null;
 
-  constructor(response: Response) {
-    super(`IMF API error: ${response.status} ${response.statusText} for ${response.url}`);
+  constructor(response: Response, requestUrl?: string, sentSubscriptionKey = false) {
+    // `response.url` is empty when constructed via `new Response(body, init)`
+    // in tests; fall back to the explicit requestUrl supplied by the caller.
+    const url = response.url || requestUrl || '';
+    const baseMessage = `IMF API error: ${response.status} ${response.statusText} for ${url}`;
+    // SDMX endpoints under api.imf.org behave in two distinct ways when the
+    // Ocp-Apim-Subscription-Key header is missing or invalid:
+    //  - **Invalid key sent** → APIM returns 401/403 from the gateway.
+    //  - **No key sent at all** → APIM masks `/data/...` paths as 404
+    //    "Resource not found" (verified via curl 2026-05-10) so direct
+    //    sdmxFetch() callers see an indistinguishable 404.
+    // Surface a single actionable diagnostic for both cases so operators
+    // don't waste time chasing the masked 404.
+    const isAuthFailure = response.status === 401 || response.status === 403;
+    const isMaskedAuthFailure = response.status === 404 && !sentSubscriptionKey;
+    const isSdmxHost = url.includes('://api.imf.org/external/sdmx/') || url === '';
+    const message =
+      (isAuthFailure || isMaskedAuthFailure) && isSdmxHost
+        ? `${baseMessage} — IMF SDMX subscription key missing or invalid (set IMF_SDMX_SUBSCRIPTION_KEY)`
+        : baseMessage;
+    super(message);
     this.name = 'ImfHttpError';
+    this.status = response.status;
     this.retryable = response.status === 429 || response.status >= 500;
     this.retryAfterHeader = response.headers.get('retry-after');
   }
@@ -221,6 +361,12 @@ export class ImfClient {
   readonly maxRetries: number;
   readonly weoVintage: string;
   readonly userAgent: string;
+  /**
+   * Resolved IMF SDMX subscription key. Empty string when neither the
+   * constructor option nor the `IMF_SDMX_SUBSCRIPTION_KEY` env var is set —
+   * SDMX requests still go out so probes can detect "no key" vs "outage".
+   */
+  readonly sdmxSubscriptionKey: string;
   private readonly onBatchIndicatorError?: (event: ImfBatchIndicatorErrorEvent) => void;
 
   constructor(config: ImfClientConfig = {}) {
@@ -230,6 +376,8 @@ export class ImfClient {
     this.maxRetries = config.maxRetries ?? DEFAULT_MAX_RETRIES;
     this.userAgent = config.userAgent ?? DEFAULT_USER_AGENT;
     this.weoVintage = config.weoVintage ?? DEFAULT_WEO_VINTAGE;
+    this.sdmxSubscriptionKey =
+      config.sdmxSubscriptionKey ?? process.env.IMF_SDMX_SUBSCRIPTION_KEY ?? '';
     this.onBatchIndicatorError = config.onBatchIndicatorError;
   }
 
@@ -259,7 +407,34 @@ export class ImfClient {
     const raw = (await this.fetchWithRetry(url)) as DatamapperResponse;
 
     const points = parseDatamapperValues(raw, weoCode, code, this.weoVintage);
+    if (points.length === 0 && IMF_WEO_SDMX_ONLY.has(weoCode)) {
+      // The Datamapper silently returns an empty `values` envelope for
+      // these codes (verified live 2026-05-10). Fail loudly so callers
+      // route through SDMX rather than treating "missing" as "no data".
+      throw new ImfWeoSdmxOnlyError(iso3, weoCode);
+    }
     return points.slice(0, years);
+  }
+
+  /**
+   * Fetch the IMF Datamapper indicator catalog
+   * (`https://www.imf.org/external/datamapper/api/v1/indicators`).
+   *
+   * Returned as a `Map<code, IndicatorMeta>` — 132 entries as of WEO
+   * 2026-04, grouped by `dataset` (`WEO`, `FM`, `FPP`, `IFS`, `BOP`,
+   * `DOTS`, `GFS_COFOG`, `MFS_IR`, `PCPS`, `ER`, `AFRREO`, `APDREO`,
+   * `WHDREO`, `EUREO`, `MCDREO`, `CL`, `CF`, `GD`, `GDD`, `SPRLU`,
+   * `DEBT`, `ARA`, `AIPI`, `FR_FC`).
+   *
+   * Use this to discover any of the 132 Datamapper-addressable
+   * indicators at runtime — the WEO subset is small (~15 codes) and
+   * covers the headline projections; broader queries (full WEO 9.0.0,
+   * IFS, BOP, GFS_COFOG, …) require {@link sdmxFetch}.
+   */
+  async listDatamapperIndicators(): Promise<Map<string, ImfDatamapperIndicatorMeta>> {
+    const url = `${this.datamapperBaseURL}/indicators`;
+    const raw = (await this.fetchWithRetry(url)) as DatamapperIndicatorsResponse;
+    return parseDatamapperIndicators(raw);
   }
 
   /**
@@ -346,12 +521,31 @@ export class ImfClient {
    * SDMX endpoint. Consumers are responsible for interpreting the SDMX
    * envelope.
    *
+   * Authentication: when {@link sdmxSubscriptionKey} is set (constructor
+   * option or `IMF_SDMX_SUBSCRIPTION_KEY` env var) the request includes
+   * the `Ocp-Apim-Subscription-Key` header — required by every SDMX 3.0/2.1
+   * `/data/...` endpoint as of 2026-05.
+   *
    * @param path URL path starting with `/data/...` or `/structure/...`
    */
   async sdmxFetch(pathWithQuery: string): Promise<unknown> {
     const separator = pathWithQuery.startsWith('/') ? '' : '/';
     const url = `${this.sdmxBaseURL}${separator}${pathWithQuery}`;
-    return this.fetchWithRetry(url, 0, { Accept: 'application/vnd.sdmx.data+json;version=2.0.0' });
+    const headers: Record<string, string> = {
+      Accept: 'application/vnd.sdmx.data+json;version=2.0.0',
+    };
+    if (this.sdmxSubscriptionKey) {
+      // Azure APIM gateway header. The HTTP header name itself is
+      // case-insensitive per RFC 7230, but we use the exact canonical
+      // spelling `Ocp-Apim-Subscription-Key` because that's the object
+      // key downstream code (e.g. fetchWithRetry's extraHeaders lookup
+      // in ImfHttpError construction) checks for. Used for both the
+      // SDMX 3.0 and SDMX 2.1 surfaces under api.imf.org — same
+      // subscription key works for both per the IMF Data SDMX API
+      // subscription product.
+      headers['Ocp-Apim-Subscription-Key'] = this.sdmxSubscriptionKey;
+    }
+    return this.fetchWithRetry(url, 0, headers);
   }
 
   // -----------------------------------------------------------------------
@@ -372,7 +566,11 @@ export class ImfClient {
       });
 
       if (!response.ok) {
-        throw new ImfHttpError(response);
+        // Tell ImfHttpError whether this request actually carried the
+        // SDMX subscription key so it can produce an actionable
+        // diagnostic for the APIM 404-mask-when-missing-key case.
+        const sentSubscriptionKey = 'Ocp-Apim-Subscription-Key' in extraHeaders;
+        throw new ImfHttpError(response, url, sentSubscriptionKey);
       }
 
       return await response.json();
@@ -479,6 +677,71 @@ export function parseDatamapperValues(
   // Sort by year desc so consumers can slice newest-first.
   points.sort((a, b) => Number.parseInt(b.date, 10) - Number.parseInt(a.date, 10));
   return points;
+}
+
+// ---------------------------------------------------------------------------
+// Datamapper indicator catalog
+// ---------------------------------------------------------------------------
+
+/** One entry from `https://www.imf.org/external/datamapper/api/v1/indicators`. */
+export interface ImfDatamapperIndicatorMeta {
+  /** Canonical Datamapper indicator code (used as the primary key). */
+  readonly code: string;
+  /** Human-readable label (English). */
+  readonly label: string;
+  /** Long description (English). */
+  readonly description: string;
+  /** Source / publisher (typically "IMF"). */
+  readonly source: string;
+  /** Unit of measurement (e.g. `'Percent of GDP'`, `'Annual percent change'`). */
+  readonly unit: string;
+  /** IMF dataset family (`WEO`, `FM`, `FPP`, `IFS`, `BOP`, `DOTS`, `GFS_COFOG`, …). */
+  readonly dataset: string;
+  /** ISO 8601 last-updated timestamp emitted by the catalog (when present). */
+  readonly lastUpdate?: string;
+}
+
+/** Raw shape of `/external/datamapper/api/v1/indicators`. */
+export interface DatamapperIndicatorsResponse {
+  indicators?: {
+    [code: string]:
+      | {
+          label?: string;
+          description?: string;
+          source?: string;
+          unit?: string;
+          dataset?: string;
+          lastUpdate?: string;
+        }
+      | undefined;
+  };
+}
+
+/**
+ * Pure parser for the Datamapper indicator catalog. Skips entries whose
+ * `dataset` is missing — defensive against IMF schema drift.
+ */
+export function parseDatamapperIndicators(
+  raw: DatamapperIndicatorsResponse | null | undefined,
+): Map<string, ImfDatamapperIndicatorMeta> {
+  const out = new Map<string, ImfDatamapperIndicatorMeta>();
+  const indicators = raw?.indicators;
+  if (!indicators) return out;
+  for (const [code, meta] of Object.entries(indicators)) {
+    if (!meta || typeof meta !== 'object') continue;
+    const dataset = typeof meta.dataset === 'string' ? meta.dataset : '';
+    if (!dataset) continue;
+    out.set(code, {
+      code,
+      label: typeof meta.label === 'string' ? meta.label : '',
+      description: typeof meta.description === 'string' ? meta.description : '',
+      source: typeof meta.source === 'string' ? meta.source : '',
+      unit: typeof meta.unit === 'string' ? meta.unit : '',
+      dataset,
+      ...(typeof meta.lastUpdate === 'string' ? { lastUpdate: meta.lastUpdate } : {}),
+    });
+  }
+  return out;
 }
 
 function isRetryableError(error: unknown): boolean {

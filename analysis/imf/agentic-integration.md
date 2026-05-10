@@ -67,16 +67,28 @@ sleep 1
 > 🔴 **Pre-warm gate** — the throwaway call above is the *manual* cold-start
 > probe. The full pre-warm gate is invoked automatically by the
 > `.github/actions/news-prewarm` composite action (and therefore by every
-> one of the 11 `.github/workflows/news-*.md` workflows) via
+> one of the 14 `.github/workflows/news-*.md` workflows) via
 > `scripts/check-imf-connectivity.ts`:
 >
 > - **What it probes** — three IMF transports: WEO + FM via Datamapper,
 >   IFS monthly CPI via SDMX 3.0.
+> - **Authentication** — every SDMX 3.0/2.1 `/data/...` endpoint requires
+>   the `Ocp-Apim-Subscription-Key` Azure APIM header (since ~2026-05).
+>   Each news workflow forwards
+>   `secrets.IMF_SDMX_SUBSCRIPTION_KEY` (primary, required) to the
+>   composite action via `with: imf-sdmx-subscription-key:`. The action
+>   then exports the key to `$GITHUB_ENV` so both the connectivity probe
+>   AND the agent's `bash:` tool (which runs `awf --env-all`) inherit it.
+>   `IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY` is the rotation key — it is
+>   **not consumed by code**, only stored in repository secrets so
+>   operators can swap primary↔secondary without downtime when the IMF
+>   issues new credentials. See "Key rotation" below.
+>   The unauthenticated WEO + FM Datamapper transport is unaffected.
 > - **Vintage discipline** — parses `ImfClient.weoVintage`
 >   (`WEO-2026-04` at the time of writing) into a calendar age. Anything
 >   older than `STALE_VINTAGE_MAX_MONTHS` (6) flips the report to
 >   `status: "stale-vintage"` and emits an `ℹ️` annotation block per
->   `.github/aw/ECONOMIC_DATA_CONTRACT.md` v2.1 §"Vintage discipline".
+>   `.github/aw/ECONOMIC_DATA_CONTRACT.md` v3.1 §"Vintage discipline".
 > - **Outputs** — always writes `data/imf-context.json`
 >   (`{status, vintage, vintageAgeMonths, stale, probes, checkedAt,
 >   warningBlock}`); on connectivity failure additionally writes
@@ -86,10 +98,61 @@ sleep 1
 >   MUST inject the `⚠️ IMF context unavailable` block into
 >   `executive-brief.md`, `comparative-international.md`, and
 >   `synthesis-summary.md` — the exact wording is provided in
->   `report.warningBlock` so the agent can paste it verbatim.
+>   `report.warningBlock` so the agent can paste it verbatim. When only
+>   the SDMX probe fails the report carries `status: "degraded"` (WEO/FM
+>   still healthy) and a lighter `ℹ️ IMF auxiliary transport degraded`
+>   annotation. A missing/invalid SDMX key surfaces as the deterministic
+>   reason `sdmx-subscription-key-not-configured` instead of the raw
+>   HTTP code so operators can distinguish "secret never set" from
+>   "IMF outage" or "key revoked".
 > - **Manual invocation** — `tsx scripts/check-imf-connectivity.ts
 >   [--strict] [--output-dir data]`. `--strict` flips to fail-fast for
 >   operator debugging.
+>
+> #### Key rotation (primary ↔ secondary)
+>
+> The IMF Data SDMX API subscription product issues two keys per
+> subscription. We mirror this in repository secrets:
+>
+> 1. `IMF_SDMX_SUBSCRIPTION_KEY` — **primary**, **required**, consumed
+>    by every workflow run via `secrets.IMF_SDMX_SUBSCRIPTION_KEY`.
+> 2. `IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY` — **secondary**, **optional**,
+>    stored only so the next rotation can be performed without an outage:
+>      a. Confirm the secondary key works (curl + `Ocp-Apim-Subscription-Key`).
+>      b. Promote: copy `IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY` over
+>         `IMF_SDMX_SUBSCRIPTION_KEY` in repository / org secrets.
+>      c. Re-issue a new key on the IMF portal and store it as the new
+>         `IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY`.
+>      d. Revoke the old primary on the portal.
+>
+> No workflow or script reads `IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY`
+> directly — it exists purely as a hot spare. This matches the IMF Azure
+> APIM "regenerate primary key" / "regenerate secondary key" semantics.
+>
+> #### Copilot coding-agent sessions
+>
+> Interactive Copilot coding-agent runners do **not** automatically
+> inherit repository secrets — GitHub's secret store is write-only by
+> design (no PAT, including the agent's own token, can read secret
+> values via the REST API). To make `IMF_SDMX_SUBSCRIPTION_KEY` visible
+> to the agent's `bash:` shell, the secret is forwarded through the
+> top-level `env:` block in
+> [`.github/workflows/copilot-setup-steps.yml`](../../.github/workflows/copilot-setup-steps.yml):
+>
+> ```yaml
+> env:
+>   IMF_SDMX_SUBSCRIPTION_KEY: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY }}
+>   IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY }}
+> ```
+>
+> The Copilot agent runtime materialises this env block into the
+> session's process environment, so `tsx scripts/imf-fetch.ts sdmx ...`
+> and direct `curl -H "Ocp-Apim-Subscription-Key: $IMF_SDMX_SUBSCRIPTION_KEY"`
+> both work without any per-session secret-mounting step. Sessions that
+> were launched *before* this wiring existed will not see the env var
+> retroactively — only sessions started after the wiring change inherit
+> it. WEO + FM via the unauthenticated `www.imf.org` Datamapper
+> transport works in every session regardless.
 
 ### Step 4 — Batched `compare` call for peer-set
 

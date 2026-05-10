@@ -161,6 +161,8 @@ safe-outputs:
 steps:
   - name: News pre-warm & pre-flight (composite)
     uses: ./.github/actions/news-prewarm
+    with:
+      imf-sdmx-subscription-key: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY }}
 engine:
   id: copilot
   model: claude-sonnet-4.6
