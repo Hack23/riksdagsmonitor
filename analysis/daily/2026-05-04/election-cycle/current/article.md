@@ -5,7 +5,7 @@ date: 2026-05-04
 subfolder: election-cycle/current
 slug: 2026-05-04-election-cycle/current
 source_folder: analysis/daily/2026-05-04/election-cycle/current
-generated_at: 2026-05-09T18:35:30.678Z
+generated_at: 2026-05-10T14:31:56.781Z
 language: en
 layout: article
 ---
@@ -78,14 +78,14 @@ Use this guide to read the article as a political-intelligence product rather th
 | Icon | Reader need | What you'll get |
 |---|---|---|
 | 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 📝 | [Cycle Trajectory](#rm-cycle-trajectory) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
+| 📝 | [Cycle Trajectory](#rm-cycle-trajectory) | election-cycle trajectory: turning points, polling momentum and coalition realignment paths |
 | ⚠️ | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register |
-| 📝 | [Quantitative SWOT](#rm-quantitative-swot) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 📝 | [Political STRIDE Assessment](#rm-political-stride-assessment) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 📝 | [Wildcards & Black Swans](#rm-wildcards--black-swans) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 📝 | [PESTLE Analysis](#rm-pestle-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Quantitative SWOT](#rm-quantitative-swot) | weighted, scored SWOT register with explicit confidence ratings and decision implications |
+| 📝 | [Political STRIDE Assessment](#rm-political-stride-assessment) | STRIDE-based threat model adapted to political institutions and democratic processes |
+| 📝 | [Wildcards & Black Swans](#rm-wildcards--black-swans) | low-probability, high-impact disruptive events that could derail the base-case forecast |
+| 📝 | [PESTLE Analysis](#rm-pestle-analysis) | political, economic, social, technological, legal and environmental drivers shaping the outcome |
+| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 📝 | [Actor Assessment](#rm-actor-assessment) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Coalition Dynamics](#rm-coalition-dynamics) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Comparative Context](#rm-comparative-context) | supporting analytical lens with primary-source evidence and audit-traceable citations |
