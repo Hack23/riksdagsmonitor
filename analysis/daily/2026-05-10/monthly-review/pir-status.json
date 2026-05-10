@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-05-10",
+  "cycle": "monthly-review",
+  "pirs": [
+    {
+      "id": "PIR-A",
+      "title": "L threshold polling risk",
+      "status": "open",
+      "priority": "HIGH",
+      "escalation": "escalated",
+      "note": "HD11802 adds identity-politics pressure on L base",
+      "last_updated": "2026-05-10"
+    },
+    {
+      "id": "PIR-B",
+      "title": "Police reform 9 open Riksrevisionen recommendations",
+      "status": "open",
+      "priority": "MEDIUM",
+      "escalation": "static",
+      "note": "No JuU closure announcement in May download",
+      "last_updated": "2026-05-10"
+    },
+    {
+      "id": "PIR-C",
+      "title": "SD coalition boundary testing",
+      "status": "confirmed",
+      "priority": "HIGH",
+      "escalation": "materialised",
+      "note": "HD11802 veil ban question confirms SD differentiating from L within coalition",
+      "last_updated": "2026-05-10"
+    },
+    {
+      "id": "PIR-D",
+      "title": "SD-KD energy platform divergence",
+      "status": "open",
+      "priority": "CRITICAL",
+      "escalation": "trigger-imminent",
+      "note": "SD congress May 2026 — outcome unknown",
+      "last_updated": "2026-05-10"
+    },
+    {
+      "id": "PIR-E",
+      "title": "CRR3/SIB capital adequacy",
+      "status": "open",
+      "priority": "MEDIUM",
+      "escalation": "static",
+      "note": "No financial regulatory update in May download",
+      "last_updated": "2026-05-10"
+    },
+    {
+      "id": "PIR-F",
+      "title": "Flotilla/Gaza bilateral: Swedish citizen protection",
+      "status": "open",
+      "priority": "MEDIUM",
+      "escalation": "new",
+      "note": "HD11803 opens new PIR; diplomatic response awaited",
+      "last_updated": "2026-05-10"
+    },
+    {
+      "id": "PIR-G",
+      "title": "Stadigvarande vistelse legislative delay",
+      "status": "open",
+      "priority": "LOW-MEDIUM",
+      "escalation": "new",
+      "note": "HD10480 — Finance Ministry backlog since Oct 2025",
+      "last_updated": "2026-05-10"
+    }
+  ]
+}
