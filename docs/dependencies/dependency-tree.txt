@@ -1,4 +1,4 @@
-riksdagsmonitor@0.9.7 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@0.9.8 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.3.0 deduped
 ├─┬ @types/d3@7.4.3
@@ -987,7 +987,7 @@ riksdagsmonitor@0.9.7 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └── vfile@6.0.3 deduped
 │ ├── unified@11.0.5 deduped
 │ └── vfile@6.0.3 deduped
-├─┬ start-server-and-test@3.0.2
+├─┬ start-server-and-test@3.0.4
 │ ├── arg@5.0.2
 │ ├── bluebird@3.7.2 deduped
 │ ├── check-more-types@2.24.0
@@ -1004,9 +1004,9 @@ riksdagsmonitor@0.9.7 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └── strip-final-newline@2.0.0 deduped
 │ ├── lazy-ass@1.6.0
 │ ├── tree-kill@1.2.2 deduped
-│ └─┬ wait-on@9.0.5
+│ └─┬ wait-on@9.0.6
 │   ├── axios@1.16.0 deduped
-│   ├─┬ joi@18.1.2
+│   ├─┬ joi@18.2.1
 │   │ ├─┬ @hapi/address@5.1.1
 │   │ │ └── @hapi/hoek@11.0.7 deduped
 │   │ ├── @hapi/formula@3.0.2

@@ -1,5 +1,5 @@
 {
-  "version": "0.9.7",
+  "version": "0.9.8",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -4581,8 +4581,8 @@
       }
     },
     "start-server-and-test": {
-      "version": "3.0.2",
-      "resolved": "https://registry.npmjs.org/start-server-and-test/-/start-server-and-test-3.0.2.tgz",
+      "version": "3.0.4",
+      "resolved": "https://registry.npmjs.org/start-server-and-test/-/start-server-and-test-3.0.4.tgz",
       "overridden": false,
       "dependencies": {
         "arg": {
@@ -4648,16 +4648,16 @@
           "version": "1.2.2"
         },
         "wait-on": {
-          "version": "9.0.5",
-          "resolved": "https://registry.npmjs.org/wait-on/-/wait-on-9.0.5.tgz",
+          "version": "9.0.6",
+          "resolved": "https://registry.npmjs.org/wait-on/-/wait-on-9.0.6.tgz",
           "overridden": false,
           "dependencies": {
             "axios": {
               "version": "1.16.0"
             },
             "joi": {
-              "version": "18.1.2",
-              "resolved": "https://registry.npmjs.org/joi/-/joi-18.1.2.tgz",
+              "version": "18.2.1",
+              "resolved": "https://registry.npmjs.org/joi/-/joi-18.2.1.tgz",
               "overridden": false,
               "dependencies": {
                 "@hapi/address": {
