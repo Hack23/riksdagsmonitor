@@ -473,6 +473,41 @@ describe('ImfClient', () => {
         keyless.sdmxFetch('/data/IMF.STA,CPI,5.0.0/M.SE.PCPI_IX'),
       ).rejects.toThrow(/IMF SDMX subscription key missing or invalid/);
     });
+
+    it('surfaces the auth-failure diagnostic on SDMX 404 when no subscription key was sent (APIM mask)', async () => {
+      // APIM returns 404 "Resource not found" — not 401 — when
+      // `/data/...` is hit without a subscription key (verified via
+      // curl 2026-05-10). Without this branch a direct sdmxFetch()
+      // caller sees an indistinguishable 404 and chases a phantom bug.
+      const keyless = new ImfClient({ maxRetries: 0 });
+      global.fetch = vi.fn(async () =>
+        new Response('Resource not found', {
+          status: 404,
+          statusText: 'Not Found',
+          headers: { 'content-type': 'text/plain' },
+        }),
+      ) as unknown as typeof global.fetch;
+      await expect(
+        keyless.sdmxFetch('/data/IMF.STA,CPI,5.0.0/M.SE.PCPI_IX'),
+      ).rejects.toThrow(/IMF SDMX subscription key missing or invalid \(set IMF_SDMX_SUBSCRIPTION_KEY\)/);
+    });
+
+    it('does NOT mask a real 404 as auth-failure when a subscription key WAS sent', async () => {
+      const keyed = new ImfClient({ maxRetries: 0, sdmxSubscriptionKey: 'real-key' });
+      global.fetch = vi.fn(async () =>
+        new Response('Resource not found', {
+          status: 404,
+          statusText: 'Not Found',
+          headers: { 'content-type': 'text/plain' },
+        }),
+      ) as unknown as typeof global.fetch;
+      await expect(
+        keyed.sdmxFetch('/data/IMF.STA,DOES_NOT_EXIST,1.0.0/A.SE'),
+      ).rejects.toThrow(/IMF API error: 404/);
+      await expect(
+        keyed.sdmxFetch('/data/IMF.STA,DOES_NOT_EXIST,1.0.0/A.SE'),
+      ).rejects.not.toThrow(/subscription key missing or invalid/);
+    });
   });
 
   describe('getDefaultImfClient', () => {
@@ -791,6 +826,16 @@ describe('ImfClient.getWeoIndicator → SDMX-only diagnostic', () => {
     const client = new ImfClient({ maxRetries: 0, timeout: 3_000 });
     global.fetch = vi.fn(async () => new Response(JSON.stringify({ values: {} }), { status: 200 }));
     await expect(client.getWeoIndicator('SWE', 'EXPERIMENTAL_FUTURE_CODE')).resolves.toEqual([]);
+  });
+
+  it('normalises lower-cased ISO3 inputs to upper-case in the error payload', () => {
+    // Direct construction so the test does not depend on getWeoIndicator's
+    // upper-casing — the error itself must be the canonical source.
+    const err = new ImfWeoSdmxOnlyError('swe', 'GGR_NGDP');
+    expect(err.countryCode).toBe('SWE');
+    expect(err.sdmxPath).toBe('/data/IMF.RES,WEO,9.0.0/A.SWE.GGR_NGDP');
+    expect(err.message).toContain("'SWE'");
+    expect(err.message).not.toContain("'swe'");
   });
 });
 

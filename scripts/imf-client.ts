@@ -86,12 +86,14 @@ export interface ImfClientConfig {
    * If omitted the client falls back to `process.env.IMF_SDMX_SUBSCRIPTION_KEY`.
    * If neither is set, SDMX requests still go out (so connectivity probes can
    * detect a "no key configured" state) but the IMF Azure APIM gateway will
-   * return HTTP 401, which {@link ImfHttpError} surfaces with a diagnostic
-   * "subscription key missing or invalid" message.
+   * mask `/data/...` endpoints as **HTTP 404 "Resource not found"** when the
+   * `Ocp-Apim-Subscription-Key` header is absent (verified via curl
+   * 2026-05-10). When an *invalid* key is sent, APIM returns **401/403**
+   * instead. {@link ImfHttpError} surfaces both modes with a single
+   * "subscription key missing or invalid" diagnostic so operators don't
+   * waste time chasing a generic 404.
    *
-   * Confirmed via curl 2026-05-10: every SDMX 3.0/2.1 `/data/...` endpoint
-   * now requires this header (returns HTTP 404 from APIM when missing).
-   * `/structure/...` endpoints remain public.
+   * `/structure/...` endpoints remain public (no key required).
    */
   readonly sdmxSubscriptionKey?: string;
   /**
@@ -199,8 +201,10 @@ export const IMF_WEO_DATAMAPPER_AVAILABLE: ReadonlySet<string> = new Set([
 
 /**
  * WEO codes declared by {@link IMF_WEO_INDICATORS} that the Datamapper
- * silently 404s on (returns an empty `values` envelope). Callers must
- * route these through {@link ImfClient.sdmxFetch} with the WEO 9.0.0
+ * does not actually serve. The transport returns HTTP 200 with an
+ * **empty `values` envelope** (verified live 2026-05-10) — never a 404
+ * — so callers cannot rely on HTTP status alone to detect this. Route
+ * these through {@link ImfClient.sdmxFetch} with the WEO 9.0.0
  * dataflow path produced by {@link weoSdmxPath}.
  *
  * `getWeoIndicator()` throws an {@link ImfWeoSdmxOnlyError} for codes in
@@ -257,15 +261,20 @@ export class ImfWeoSdmxOnlyError extends Error {
   readonly countryCode: string;
   readonly sdmxPath: string;
   constructor(iso3: string, weoCode: string) {
-    const sdmxPath = weoSdmxPath(iso3, weoCode);
+    // Normalise the country code so the error payload is consistent
+    // with sdmxPath (which is built from upper-cased ISO3) and with
+    // getWeoIndicator's internal upper-casing — callers reading
+    // `err.countryCode` always see canonical ISO-3166-1 alpha-3.
+    const normalisedIso3 = iso3.toUpperCase();
+    const sdmxPath = weoSdmxPath(normalisedIso3, weoCode);
     super(
-      `IMF WEO indicator '${weoCode}' is not exposed by the Datamapper for '${iso3}'. ` +
+      `IMF WEO indicator '${weoCode}' is not exposed by the Datamapper for '${normalisedIso3}'. ` +
         `Use sdmxFetch('${sdmxPath}') with IMF_SDMX_SUBSCRIPTION_KEY set, or the ` +
-        `'imf-fetch sdmx --path ${sdmxPath} --indicator ${weoCode} --country ${iso3}' CLI.`,
+        `'imf-fetch sdmx --path ${sdmxPath} --indicator ${weoCode} --country ${normalisedIso3}' CLI.`,
     );
     this.name = 'ImfWeoSdmxOnlyError';
     this.weoCode = weoCode;
-    this.countryCode = iso3;
+    this.countryCode = normalisedIso3;
     this.sdmxPath = sdmxPath;
   }
 }
@@ -297,20 +306,26 @@ class ImfHttpError extends Error {
   readonly retryable: boolean;
   readonly retryAfterHeader?: string | null;
 
-  constructor(response: Response, requestUrl?: string) {
+  constructor(response: Response, requestUrl?: string, sentSubscriptionKey = false) {
     // `response.url` is empty when constructed via `new Response(body, init)`
     // in tests; fall back to the explicit requestUrl supplied by the caller.
     const url = response.url || requestUrl || '';
     const baseMessage = `IMF API error: ${response.status} ${response.statusText} for ${url}`;
-    // SDMX endpoints under api.imf.org return 401/403 from the Azure APIM
-    // gateway when the Ocp-Apim-Subscription-Key header is missing or invalid.
-    // Surface that explicitly so operators don't waste time chasing
-    // a "404 Resource not found" from the data-path APIM mask.
+    // SDMX endpoints under api.imf.org behave in two distinct ways when the
+    // Ocp-Apim-Subscription-Key header is missing or invalid:
+    //  - **Invalid key sent** → APIM returns 401/403 from the gateway.
+    //  - **No key sent at all** → APIM masks `/data/...` paths as 404
+    //    "Resource not found" (verified via curl 2026-05-10) so direct
+    //    sdmxFetch() callers see an indistinguishable 404.
+    // Surface a single actionable diagnostic for both cases so operators
+    // don't waste time chasing the masked 404.
     const isAuthFailure = response.status === 401 || response.status === 403;
+    const isMaskedAuthFailure = response.status === 404 && !sentSubscriptionKey;
     const isSdmxHost = url.includes('://api.imf.org/external/sdmx/') || url === '';
-    const message = isAuthFailure && isSdmxHost
-      ? `${baseMessage} — IMF SDMX subscription key missing or invalid (set IMF_SDMX_SUBSCRIPTION_KEY)`
-      : baseMessage;
+    const message =
+      (isAuthFailure || isMaskedAuthFailure) && isSdmxHost
+        ? `${baseMessage} — IMF SDMX subscription key missing or invalid (set IMF_SDMX_SUBSCRIPTION_KEY)`
+        : baseMessage;
     super(message);
     this.name = 'ImfHttpError';
     this.status = response.status;
@@ -547,7 +562,11 @@ export class ImfClient {
       });
 
       if (!response.ok) {
-        throw new ImfHttpError(response, url);
+        // Tell ImfHttpError whether this request actually carried the
+        // SDMX subscription key so it can produce an actionable
+        // diagnostic for the APIM 404-mask-when-missing-key case.
+        const sentSubscriptionKey = 'Ocp-Apim-Subscription-Key' in extraHeaders;
+        throw new ImfHttpError(response, url, sentSubscriptionKey);
       }
 
       return await response.json();
