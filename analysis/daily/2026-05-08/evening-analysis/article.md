@@ -5,7 +5,7 @@ date: 2026-05-08
 subfolder: evening-analysis
 slug: 2026-05-08-evening-analysis
 source_folder: analysis/daily/2026-05-08/evening-analysis
-generated_at: 2026-05-09T18:35:30.899Z
+generated_at: 2026-05-10T14:31:56.991Z
 language: en
 layout: article
 ---
@@ -67,13 +67,13 @@ Use this guide to read the article as a political-intelligence product rather th
 | Icon | Reader need | What you'll get |
 |---|---|---|
 | 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
 | 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
-| 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
 | 🔭 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later |
 | 🔮 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs |
-| 🧮 | [SWOT Analysis](#rm-swot-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 🧮 | [SWOT Analysis](#rm-swot-analysis) | strengths, weaknesses, opportunities and threats matrix grounded in primary-source evidence |
+| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 📝 | [Civil Society Response](#rm-civil-society-response) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Comparative Analysis](#rm-comparative-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Economic Impact](#rm-economic-impact) | supporting analytical lens with primary-source evidence and audit-traceable citations |

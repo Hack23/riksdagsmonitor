@@ -5,7 +5,7 @@ date: 2026-04-21
 subfolder: committeeReports
 slug: 2026-04-21-committeeReports
 source_folder: analysis/daily/2026-04-21/committeeReports
-generated_at: 2026-05-09T18:35:30.158Z
+generated_at: 2026-05-10T14:31:56.292Z
 language: en
 layout: article
 ---
@@ -142,20 +142,20 @@ Use this guide to read the article as a political-intelligence product rather th
 | Icon | Reader need | What you'll get |
 |---|---|---|
 | 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
-| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
-| 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
+| 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
 | 🔮 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs |
-| 📝 | [Election 2026 Analysis](#rm-election-2026-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Election 2026 Analysis](#rm-election-2026-analysis) | electoral implications for the 2026 cycle — seats at stake, swing voters and coalition viability |
 | ⚠️ | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register |
-| 🧮 | [SWOT Analysis](#rm-swot-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 🛡️ | [Threat Analysis](#rm-threat-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 🌍 | [Comparative International](#rm-comparative-international) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 🏷️ | [Classification Results](#rm-classification-results) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 📦 | [Data Download Manifest](#rm-data-download-manifest) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 🧮 | [SWOT Analysis](#rm-swot-analysis) | strengths, weaknesses, opportunities and threats matrix grounded in primary-source evidence |
+| 🛡️ | [Threat Analysis](#rm-threat-analysis) | actor capabilities, intent and threat vectors targeting institutional integrity |
+| 🌍 | [Comparative International](#rm-comparative-international) | peer-country comparisons (Nordic, EU, OECD) showing how similar measures fared elsewhere |
+| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
+| 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Historical Baseline](#rm-historical-baseline) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |

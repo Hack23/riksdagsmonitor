@@ -93,11 +93,18 @@ describe('article-aside — renderReaderNavigation', () => {
       ],
     });
     expect(html).toContain('BLUF and editorial decisions');
-    // Non-curated artifacts surface their generic title as the row
-    // label and the localised default reader-value description.
+    // Non-curated artifacts (not in the per-language ENTRIES blocks)
+    // now resolve their description from the centralised
+    // READER_VALUE_I18N map, so every row carries a unique reader-
+    // value sentence — no more silent fallback to the generic
+    // "supporting analytical lens..." filler.
     expect(html).toMatch(/PESTLE/i);
     expect(html).toMatch(/Wildcard|Black/i);
-    expect(html).toContain('supporting analytical lens');
+    expect(html).toContain('political, economic, social, technological');
+    expect(html).toContain('low-probability, high-impact disruptive events');
+    // The localised generic fallback ("supporting analytical lens...")
+    // must NOT appear when the central map provides a description.
+    expect(html).not.toContain('supporting analytical lens');
   });
 
   it('uses the localised colIcon header for the icon column (not hard-coded English "Icon")', () => {
@@ -187,6 +194,13 @@ describe('article-aside — renderAnalysisArtifactsReference', () => {
     expect(html).toContain('📊');
     expect(html).toContain('⚠️');
     expect(html).toContain('analysis/daily/2099-01-01/propositions/executive-brief.md');
+    // Each card now carries a localised one-line description (the
+    // same reader-value sentence used by the Reader Intelligence
+    // Guide table) so the cards aren't visually identical filename
+    // boxes.
+    expect(html).toContain('class="rm-source-card-desc"');
+    expect(html).toContain('fast answer to what happened');
+    expect(html).toContain('policy, electoral, institutional');
     // Methodology summary count reflects the supplied artifacts.
     expect(html).toContain('(2)');
   });

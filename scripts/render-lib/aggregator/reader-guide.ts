@@ -28,6 +28,7 @@ import { HEADING_ID_PREFIX } from '../markdown/sanitize-schema.js';
 import { artifactIcon } from '../../political-intelligence/i18n/artifact-i18n.js';
 import { AGGREGATION_ORDER, aliasGroupFor, titleForArtifact } from './order.js';
 import { readerGuideI18n } from './reader-guide-i18n.js';
+import { readerValueFor } from './reader-guide-descriptions-i18n.js';
 
 /**
  * Reader Intelligence Guide row shape. Each entry maps an analysis
@@ -241,7 +242,10 @@ export function buildReaderGuide(available: ReadonlySet<string>, hasDocuments: b
     const curated = READER_GUIDE_ENTRIES.find((e) => e.file === file);
     const label = localised?.label ?? curated?.label ?? title;
     const readerValue =
-      localised?.readerValue ?? curated?.readerValue ?? chrome.defaultReaderValue;
+      localised?.readerValue
+      ?? readerValueFor(file, lang ?? 'en')
+      ?? curated?.readerValue
+      ?? chrome.defaultReaderValue;
     const icon = artifactIcon(file);
     return `| ${icon} | [${label}](#${anchorForTitle(title)}) | ${readerValue} |`;
   });
