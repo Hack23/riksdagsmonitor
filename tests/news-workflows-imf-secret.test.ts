@@ -85,4 +85,19 @@ describe('news-prewarm composite action declares the IMF SDMX subscription key i
     // Defence-in-depth: the secret must be masked in workflow logs.
     expect(content).toMatch(/::add-mask::\$\{IMF_KEY\}/);
   });
+
+  it('does not embed `${{ ... }}` template expressions referencing `secrets` or other unsupported contexts', () => {
+    // Composite action manifests are template-evaluated by the runner, but
+    // `secrets`, `env`, and `vars` contexts are NOT available inside an
+    // `action.yml` (only `inputs`, `github`, `runner`, `job`, `steps`,
+    // `matrix`, `strategy`, `hashFiles()`). Embedding `${{ secrets.* }}`
+    // anywhere in the manifest — including inside multi-line `description:`
+    // blocks or shell `run:` comments — causes the action loader to fail
+    // with: `Unrecognized named-value: 'secrets'`. Reference value docs
+    // for inputs/comments by their bare name (e.g. `secrets.FOO`) instead.
+    const path = join(WORKFLOWS_DIR, '..', 'actions', 'news-prewarm', 'action.yml');
+    const content = readFileSync(path, 'utf8');
+    const forbidden = content.match(/\$\{\{\s*(secrets|env|vars)\.[^}]*\}\}/g);
+    expect(forbidden, `composite action references unsupported context: ${forbidden?.join(', ')}`).toBeNull();
+  });
 });

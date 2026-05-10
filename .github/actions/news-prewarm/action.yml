@@ -35,7 +35,7 @@ inputs:
       step in this composite action AND to the agent's `bash:` tool inside
       the `Execute GitHub Copilot CLI` step (which runs `awf --env-all`).
       Default is the empty string — workflows MUST forward
-      `${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY }}` from the calling workflow
+      `secrets.IMF_SDMX_SUBSCRIPTION_KEY` from the calling workflow
       via `with:` for SDMX calls (IFS / BOP / DOTS / GFS_COFOG / MFS_IR /
       PCPS / ER) to function. Without the key the connectivity report
       reports `status: degraded` with reason
@@ -57,7 +57,7 @@ runs:
     - name: Export IMF SDMX subscription key to job environment
       shell: bash
       # Mask the key in any captured logs (defence-in-depth — gh-aw also
-      # wraps every `${{ secrets.* }}` reference) and propagate it to
+      # wraps every `secrets.*` reference) and propagate it to
       # subsequent steps via $GITHUB_ENV so:
       #   1. The IMF pre-flight step below sees IMF_SDMX_SUBSCRIPTION_KEY
       #      and `scripts/imf-client.ts` adds the Ocp-Apim-Subscription-Key
