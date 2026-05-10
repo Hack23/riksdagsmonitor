@@ -977,7 +977,7 @@ All agents follow these standards:
 | `content-generator` | Render IMF dashboards in automated daily articles; vintage-aware | WEO + FM + IFS |
 | `data-pipeline-specialist` | Own `scripts/imf-context.ts`, `imf-fetch.ts`, `imf-client.ts`, `imf-codes.ts`; vintage cache | All IMF dataflows |
 | `data-visualization-specialist` | IMF dataflow registry as single source of truth for chart axes; vintage badge (yellow >3mo, red >6mo) | WEO + FM + ER + PCPS |
-| `security-architect` | IMF egress allow-list (`www.imf.org`, `sdmxcentral.imf.org`); SHA-256 payload pin; vintage discipline | (security control surface) |
+| `security-architect` | IMF egress allow-list (`www.imf.org`, `api.imf.org`); SHA-256 payload pin; vintage discipline | (security control surface) |
 | `isms-compliance-manager` | IMF data classification: PUBLIC / no PII / GDPR DPIA short-circuit | (compliance evidence) |
 | `documentation-architect` | IMF as first-class C4 container in ARCHITECTURE.md; mirror IMF sequence diagram from `agentic-integration.md` | (architectural surface) |
 | `quality-engineer` | `tests/imf-context.test.ts`, `tests/imf-inventory.test.ts`, `tests/imf-precedence-contract.test.ts` | (test surface) |

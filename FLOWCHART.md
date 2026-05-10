@@ -1097,7 +1097,7 @@ flowchart LR
 - `scripts/imf-client.ts`, `scripts/imf-context.ts`, `scripts/imf-fetch.ts`, `scripts/imf-codes.ts` — implemented, tested, and called by every news-* workflow
 - 24 indicators across 10 IMF dataflows (WEO / FM / IFS / BOP / DOTS / GFS_COFOG / PCPS / ER / MFS_IR / MFS_PR) catalogued in [`analysis/imf/indicators-inventory.json`](analysis/imf/indicators-inventory.json)
 - Vintage discipline (>6 mo → annotation) enforced by `tests/imf-inventory.test.ts` (13 assertions) and `tests/economic-context-multi-provider.test.ts` (asserts IMF queried before WB)
-- Egress allow-list: `www.imf.org`, `sdmxcentral.imf.org` pinned in every workflow `network:` block
+- Egress allow-list: `www.imf.org`, `api.imf.org` pinned in every workflow `network:` block
 
 ---
 

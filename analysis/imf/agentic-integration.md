@@ -72,7 +72,7 @@ sleep 1
 >
 > - **What it probes** — three IMF transports: WEO + FM via Datamapper,
 >   IFS monthly CPI via SDMX 3.0.
-> - **Authentication** — every SDMX 3.0/2.1 `/data/...` endpoint requires
+> - **Authentication** — every SDMX 3.0 `/data/...` endpoint requires
 >   the `Ocp-Apim-Subscription-Key` Azure APIM header (since ~2026-05).
 >   Each news workflow forwards
 >   `secrets.IMF_SDMX_SUBSCRIPTION_KEY` (primary, required) to the
@@ -134,25 +134,42 @@ sleep 1
 > Interactive Copilot coding-agent runners do **not** automatically
 > inherit repository secrets — GitHub's secret store is write-only by
 > design (no PAT, including the agent's own token, can read secret
-> values via the REST API). To make `IMF_SDMX_SUBSCRIPTION_KEY` visible
-> to the agent's `bash:` shell, the secret is forwarded through the
-> top-level `env:` block in
-> [`.github/workflows/copilot-setup-steps.yml`](../../.github/workflows/copilot-setup-steps.yml):
+> values via the REST API). The top-level workflow `env:` block in
+> [`.github/workflows/copilot-setup-steps.yml`](../../.github/workflows/copilot-setup-steps.yml)
+> is **only scoped to the setup-job's own steps** — it is NOT inherited
+> by the agent's interactive `bash:` runtime.
+>
+> The mechanism that DOES propagate to the agent runtime is writing the
+> secret to `$GITHUB_ENV` from within a setup step. The dedicated
+> "Export IMF SDMX subscription keys to agent env" step in
+> `copilot-setup-steps.yml` does exactly that:
 >
 > ```yaml
-> env:
->   IMF_SDMX_SUBSCRIPTION_KEY: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY }}
->   IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY }}
+> - name: Export IMF SDMX subscription keys to agent env
+>   env:
+>     IMF_SDMX_SUBSCRIPTION_KEY: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY }}
+>     IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY }}
+>   run: |
+>     echo "IMF_SDMX_SUBSCRIPTION_KEY=${IMF_SDMX_SUBSCRIPTION_KEY}" >> "$GITHUB_ENV"
+>     echo "::add-mask::${IMF_SDMX_SUBSCRIPTION_KEY}"
+>     # …secondary key handled identically
 > ```
 >
-> The Copilot agent runtime materialises this env block into the
-> session's process environment, so `tsx scripts/imf-fetch.ts sdmx ...`
-> and direct `curl -H "Ocp-Apim-Subscription-Key: $IMF_SDMX_SUBSCRIPTION_KEY"`
-> both work without any per-session secret-mounting step. Sessions that
-> were launched *before* this wiring existed will not see the env var
-> retroactively — only sessions started after the wiring change inherit
-> it. WEO + FM via the unauthenticated `www.imf.org` Datamapper
-> transport works in every session regardless.
+> After this wiring, `tsx scripts/imf-fetch.ts sdmx ...` and
+> `curl -H "Ocp-Apim-Subscription-Key: $IMF_SDMX_SUBSCRIPTION_KEY" ...`
+> both succeed in the agent shell. Sessions that were launched *before*
+> this wiring existed will not see the env var retroactively — only
+> sessions started after the wiring change inherit it. WEO + FM via the
+> unauthenticated `www.imf.org` Datamapper transport works in every
+> session regardless of whether the SDMX key is wired.
+>
+> **Diagnostic:** the env var `COPILOT_AGENT_INJECTED_SECRET_NAMES` in
+> the agent shell lists which secrets the Copilot runtime injected. If
+> `IMF_SDMX_SUBSCRIPTION_KEY` is missing from that list AND missing from
+> `$GITHUB_ENV`, the wiring above failed (most often because the repo
+> secret itself is unset). Repository secrets must exist at
+> `Settings → Secrets and variables → Actions` for `${{ secrets.* }}`
+> resolution to succeed.
 
 ### Step 4 — Batched `compare` call for peer-set
 

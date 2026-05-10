@@ -2990,7 +2990,7 @@ Riksdagsmonitor-specific security practices for civic transparency platforms.
 | ID | Element | STRIDE | Description | Likelihood | Impact | Mitigation |
 |---|---|---|---|---|---|---|
 | **T-IMF-01** | IMF cache (filesystem) | **T**ampering | Vintage substitution — older WEO vintage swapped for newer label | LOW | HIGH | Vintage-tagged filenames; SHA-256 pin in cache index; supersedes-chain audit |
-| **T-IMF-02** | IMF egress path | **I**nformation disclosure | None — IMF data is public macro statistics; no PII; no credentials transmitted | N/A | N/A | Risk eliminated by design |
+| **T-IMF-02** | IMF egress path | **I**nformation disclosure | IMF data is public macro statistics with no PII; SDMX 3.0 requests transmit the `IMF_SDMX_SUBSCRIPTION_KEY` (Azure APIM `Ocp-Apim-Subscription-Key` header) which gates throttle/quota only. Compromise of the key would let an attacker exhaust IMF rate quota under our identity but expose no confidential data. | LOW | LOW | Key stored only as a GitHub Actions secret (`IMF_SDMX_SUBSCRIPTION_KEY`, with `_SECONDARY` rotation hot-spare); `::add-mask::` applied in CI logs; never written to disk; rotation playbook in `analysis/imf/agentic-integration.md` §"Pre-warm gate" |
 | **T-IMF-03** | IMF API | **D**oS | Workflow exceeds IMF rate limit (~30 req/min) → blocks article generation | MEDIUM | MEDIUM | Cache-first; self-imposed ≤30 req/min; exponential back-off; documented in `analysis/imf/agentic-integration.md` |
 | **T-IMF-04** | IMF citation in article | **R**epudiation | Article cites "IMF projects X" without vintage label → unauditable claim | MEDIUM | MEDIUM | `economicProvenance` block required in front-matter; ECONOMIC_DATA_CONTRACT v2.1 banned phrases |
 | **T-IMF-05** | `tsx scripts/imf-fetch.ts` | **E**levation of privilege | Supply-chain tampering of IMF fetch script | LOW | HIGH | Script in-repo; reviewed; no dynamic eval; harden-runner egress audit |
@@ -3006,7 +3006,7 @@ All mitigations are codified in:
 - `scripts/imf-context.ts` — runtime enforcement
 - `tests/imf-context.test.ts` + `tests/imf-inventory.test.ts` — regression prevention
 
-**Egress hosts** (allow-list): `www.imf.org` (Datamapper REST · WEO/FM), `sdmxcentral.imf.org` (SDMX 3.0 REST · IFS/BOP/DOTS/GFS/PCPS/ER/MFS_IR/MFS_PR). Both HTTPS-only, anonymous, public — no credentials required.
+**Egress hosts** (allow-list): `www.imf.org` (Datamapper REST · WEO/FM, **unauthenticated**), `api.imf.org` (SDMX 3.0 REST · IFS/BOP/DOTS/GFS/PCPS/ER/MFS_IR/MFS_PR, **subscription-key authenticated** via the Azure APIM `Ocp-Apim-Subscription-Key` header / `IMF_SDMX_SUBSCRIPTION_KEY` secret). Both HTTPS-only; payloads are public macro statistics with no PII.
 
 **Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).
 

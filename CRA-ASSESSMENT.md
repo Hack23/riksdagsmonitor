@@ -791,8 +791,8 @@ Place: Sweden
 |---|---|
 | Service name | International Monetary Fund — Public APIs (Datamapper REST + SDMX 3.0) |
 | Vendor | International Monetary Fund (IGO; not a commercial vendor) |
-| Hostnames (egress allow-list) | `www.imf.org`, `sdmxcentral.imf.org` |
-| Authentication | None (anonymous public API) |
+| Hostnames (egress allow-list) | `www.imf.org`, `api.imf.org` |
+| Authentication | Datamapper: none (anonymous public API) · SDMX 3.0: Azure APIM subscription key (`Ocp-Apim-Subscription-Key` / `IMF_SDMX_SUBSCRIPTION_KEY`) — gates throttle/quota only; payloads are public |
 | Data classification consumed | PUBLIC macro/fiscal/monetary/external statistics; **no PII** |
 | Data flow direction | Inbound only (read-only) |
 | Rate limit | ~30 req/min observed; self-imposed ≤30 req/min with back-off |
@@ -811,7 +811,7 @@ Place: Sweden
 - Eliminates GDPR DPIA scope (no PII)
 - Provides redundancy via two independent endpoints (Datamapper + SDMX)
 
-**Egress hosts** (allow-list): `www.imf.org` (Datamapper REST · WEO/FM), `sdmxcentral.imf.org` (SDMX 3.0 REST · IFS/BOP/DOTS/GFS/PCPS/ER/MFS_IR/MFS_PR). Both HTTPS-only, anonymous, public — no credentials required.
+**Egress hosts** (allow-list): `www.imf.org` (Datamapper REST · WEO/FM, **unauthenticated**), `api.imf.org` (SDMX 3.0 REST · IFS/BOP/DOTS/GFS/PCPS/ER/MFS_IR/MFS_PR, **subscription-key authenticated** via the Azure APIM `Ocp-Apim-Subscription-Key` header / `IMF_SDMX_SUBSCRIPTION_KEY` secret). Both HTTPS-only; payloads are public macro statistics with no PII.
 
 **Canonical rule.** Every economic claim in a Riksdagsmonitor article cites an IMF dataflow first; World Bank citations are reserved for governance, environment and social residue (the classes IMF does not publish). SCB is the Swedish-specific ground truth layer. See `ECONOMIC_DATA_CONTRACT.md` v2.1 for the banned-phrase list and vintage discipline (>6 mo → annotation).
 

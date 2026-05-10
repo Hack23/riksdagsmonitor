@@ -66,7 +66,7 @@ runs:
       #      `awf --env-all`, which forwards every runner env var into the
       #      firewall container, so the agent's `bash:` tool can call
       #      `tsx scripts/imf-fetch.ts sdmx ...` against the authenticated
-      #      SDMX 3.0 / 2.1 surfaces (IFS / BOP / DOTS / GFS_COFOG / MFS /
+      #      SDMX 3.0 surfaces (IFS / BOP / DOTS / GFS_COFOG / MFS /
       #      PCPS / ER).
       # Skipped when no key is provided — the run continues in degraded
       # mode (WEO/FM still work via Datamapper) and the connectivity
@@ -83,7 +83,7 @@ runs:
           } >> "$GITHUB_ENV"
           echo "  ✅ IMF_SDMX_SUBSCRIPTION_KEY exported to job environment"
         else
-          echo "  ℹ️ no IMF SDMX subscription key supplied — SDMX 3.0/2.1 calls will report status=degraded"
+          echo "  ℹ️ no IMF SDMX subscription key supplied — SDMX 3.0 calls will report status=degraded"
         fi
 
     - name: Pre-warm MCP server (Render.com cold start mitigation)
@@ -120,7 +120,7 @@ runs:
         echo "═══════════════════════════════════════════"
         echo ""
         echo "📡 DNS Resolution Tests:"
-        for domain in riksdag-regering-ai.onrender.com api.scb.se api.worldbank.org www.imf.org api.imf.org data.imf.org sdmxcentral.imf.org data.riksdagen.se www.riksdagen.se www.regeringen.se www.statskontoret.se statskontoret.se www.lagradet.se lagradet.se; do
+        for domain in riksdag-regering-ai.onrender.com api.scb.se api.worldbank.org www.imf.org api.imf.org data.imf.org data.riksdagen.se www.riksdagen.se www.regeringen.se www.statskontoret.se statskontoret.se www.lagradet.se lagradet.se; do
           if nslookup "$domain" >/dev/null 2>&1; then
             IP=$(nslookup "$domain" 2>/dev/null | grep -A1 "Name:" | grep "Address:" | head -1 | awk '{print $2}')
             echo "  ✅ $domain → $IP"
