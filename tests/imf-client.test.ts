@@ -15,8 +15,13 @@ import {
   getDefaultImfClient,
   IMF_WEO_INDICATORS,
   IMF_FM_INDICATORS,
+  IMF_WEO_DATAMAPPER_AVAILABLE,
+  IMF_WEO_SDMX_ONLY,
+  ImfWeoSdmxOnlyError,
   calculateRetryDelay,
   parseDatamapperValues,
+  parseDatamapperIndicators,
+  weoSdmxPath,
 } from '../scripts/imf-client.js';
 
 describe('ImfClient', () => {
@@ -700,5 +705,163 @@ describe('parseDatamapperValues', () => {
   it('tolerates partial Datamapper envelope nodes', () => {
     expect(parseDatamapperValues({ values: { NGDP_RPCH: undefined } }, 'NGDP_RPCH', 'SWE', VINTAGE)).toEqual([]);
     expect(parseDatamapperValues({ values: { NGDP_RPCH: { SWE: undefined } } }, 'NGDP_RPCH', 'SWE', VINTAGE)).toEqual([]);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// WEO transport routing — Datamapper subset vs SDMX-only codes
+// ---------------------------------------------------------------------------
+
+describe('IMF_WEO_DATAMAPPER_AVAILABLE / IMF_WEO_SDMX_ONLY', () => {
+  it('lists exactly the 9 WEO codes verified live on the Datamapper (2026-05-10)', () => {
+    expect([...IMF_WEO_DATAMAPPER_AVAILABLE].sort()).toEqual([
+      'BCA_NGDPD',
+      'GGXCNL_NGDP',
+      'GGXWDG_NGDP',
+      'LP',
+      'LUR',
+      'NGDPD',
+      'NGDPDPC',
+      'NGDP_RPCH',
+      'PCPIPCH',
+    ]);
+  });
+
+  it('flags the 4 IMF_WEO_INDICATORS codes that are SDMX-only (Datamapper returns empty envelopes)', () => {
+    expect([...IMF_WEO_SDMX_ONLY].sort()).toEqual(['GGR_NGDP', 'GGXONLB_NGDP', 'GGX_NGDP', 'TX_RPCH']);
+  });
+
+  it('partitions IMF_WEO_INDICATORS into available + SDMX-only with no overlap', () => {
+    const allWeo = new Set(Object.values(IMF_WEO_INDICATORS));
+    for (const code of IMF_WEO_DATAMAPPER_AVAILABLE) {
+      expect(IMF_WEO_SDMX_ONLY.has(code), `${code} cannot be both Datamapper and SDMX-only`).toBe(false);
+    }
+    // Every IMF_WEO_INDICATORS entry must be on exactly one transport
+    // (so agents always know which transport handles the citation).
+    for (const code of allWeo) {
+      const onDatamapper = IMF_WEO_DATAMAPPER_AVAILABLE.has(code);
+      const onSdmxOnly = IMF_WEO_SDMX_ONLY.has(code);
+      expect(onDatamapper !== onSdmxOnly, `${code} must be in exactly one transport set`).toBe(true);
+    }
+  });
+});
+
+describe('weoSdmxPath', () => {
+  it('builds the canonical WEO 9.0.0 SDMX path', () => {
+    expect(weoSdmxPath('SWE', 'GGR_NGDP')).toBe('/data/IMF.RES,WEO,9.0.0/A.SWE.GGR_NGDP');
+  });
+
+  it('upper-cases the country code so case-mismatched ISO inputs still resolve', () => {
+    expect(weoSdmxPath('swe', 'NGDP_RPCH')).toBe('/data/IMF.RES,WEO,9.0.0/A.SWE.NGDP_RPCH');
+  });
+
+  it('URL-encodes both the indicator and country segments', () => {
+    // Defensive: codes never contain reserved chars in practice, but the
+    // helper must not silently produce an invalid URL if one ever does.
+    expect(weoSdmxPath('SWE', 'A B')).toBe('/data/IMF.RES,WEO,9.0.0/A.SWE.A%20B');
+  });
+});
+
+describe('ImfClient.getWeoIndicator → SDMX-only diagnostic', () => {
+  it('throws ImfWeoSdmxOnlyError when Datamapper returns 0 points for a known SDMX-only code', async () => {
+    const client = new ImfClient({ maxRetries: 0, timeout: 3_000 });
+    global.fetch = vi.fn(async () => new Response(JSON.stringify({ values: {} }), { status: 200 }));
+    await expect(client.getWeoIndicator('SWE', 'GGR_NGDP')).rejects.toThrow(ImfWeoSdmxOnlyError);
+  });
+
+  it('error payload carries the SDMX path so callers can recover programmatically', async () => {
+    const client = new ImfClient({ maxRetries: 0, timeout: 3_000 });
+    global.fetch = vi.fn(async () => new Response(JSON.stringify({ values: {} }), { status: 200 }));
+    try {
+      await client.getWeoIndicator('SWE', 'TX_RPCH');
+      throw new Error('expected ImfWeoSdmxOnlyError');
+    } catch (err) {
+      expect(err).toBeInstanceOf(ImfWeoSdmxOnlyError);
+      const e = err as ImfWeoSdmxOnlyError;
+      expect(e.weoCode).toBe('TX_RPCH');
+      expect(e.countryCode).toBe('SWE');
+      expect(e.sdmxPath).toBe('/data/IMF.RES,WEO,9.0.0/A.SWE.TX_RPCH');
+      expect(e.message).toContain('IMF_SDMX_SUBSCRIPTION_KEY');
+    }
+  });
+
+  it('returns [] (does NOT throw) for non-listed codes when the Datamapper envelope is genuinely empty', async () => {
+    // Future / experimental codes not yet in IMF_WEO_SDMX_ONLY must keep
+    // the soft-empty contract so adding new codes to the catalog is safe.
+    const client = new ImfClient({ maxRetries: 0, timeout: 3_000 });
+    global.fetch = vi.fn(async () => new Response(JSON.stringify({ values: {} }), { status: 200 }));
+    await expect(client.getWeoIndicator('SWE', 'EXPERIMENTAL_FUTURE_CODE')).resolves.toEqual([]);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Datamapper indicator catalog
+// ---------------------------------------------------------------------------
+
+describe('parseDatamapperIndicators', () => {
+  it('converts the indicators envelope into a Map keyed by code', () => {
+    const raw = {
+      indicators: {
+        NGDP_RPCH: { label: 'Real GDP growth', dataset: 'WEO', unit: 'Annual percent change' },
+        GGR_G01_GDP_PT: { label: 'Revenue', dataset: 'FM', unit: '% of GDP' },
+      },
+    };
+    const out = parseDatamapperIndicators(raw);
+    expect(out.size).toBe(2);
+    expect(out.get('NGDP_RPCH')?.label).toBe('Real GDP growth');
+    expect(out.get('GGR_G01_GDP_PT')?.dataset).toBe('FM');
+  });
+
+  it('skips entries missing the dataset field (defensive against schema drift)', () => {
+    const raw = {
+      indicators: {
+        VALID: { label: 'X', dataset: 'WEO' },
+        BROKEN: { label: 'Y' /* no dataset */ },
+        ALSO_BROKEN: null as unknown,
+      },
+    };
+    const out = parseDatamapperIndicators(raw as never);
+    expect([...out.keys()]).toEqual(['VALID']);
+  });
+
+  it('returns an empty Map for null / undefined / missing-indicators envelopes', () => {
+    expect(parseDatamapperIndicators(null).size).toBe(0);
+    expect(parseDatamapperIndicators(undefined).size).toBe(0);
+    expect(parseDatamapperIndicators({}).size).toBe(0);
+  });
+
+  it('passes through optional lastUpdate when present, omits it otherwise', () => {
+    const raw = {
+      indicators: {
+        WITH: { label: 'W', dataset: 'WEO', lastUpdate: '2026-04-22' },
+        WITHOUT: { label: 'X', dataset: 'WEO' },
+      },
+    };
+    const out = parseDatamapperIndicators(raw);
+    expect(out.get('WITH')?.lastUpdate).toBe('2026-04-22');
+    expect(out.get('WITHOUT')?.lastUpdate).toBeUndefined();
+  });
+});
+
+describe('ImfClient.listDatamapperIndicators', () => {
+  it('hits the /indicators endpoint and parses the envelope', async () => {
+    const client = new ImfClient({ maxRetries: 0, timeout: 3_000 });
+    const calledUrls: string[] = [];
+    global.fetch = vi.fn(async (input: RequestInfo | URL) => {
+      calledUrls.push(typeof input === 'string' ? input : input.toString());
+      return new Response(
+        JSON.stringify({
+          indicators: {
+            NGDP_RPCH: { label: 'Real GDP growth', dataset: 'WEO' },
+            GGR_G01_GDP_PT: { label: 'Revenue', dataset: 'FM' },
+          },
+        }),
+        { status: 200 },
+      );
+    });
+    const out = await client.listDatamapperIndicators();
+    expect(calledUrls[0]).toBe('https://www.imf.org/external/datamapper/api/v1/indicators');
+    expect(out.size).toBe(2);
+    expect(out.get('NGDP_RPCH')?.dataset).toBe('WEO');
   });
 });

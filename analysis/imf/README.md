@@ -164,6 +164,7 @@ IMF advertises **~10 req / 5 s**. The client and agentic workflows MUST:
 Every projection value is stamped with a **vintage tag** — the release cycle that produced it.
 
 - Current: **`WEO-2026-04`** (April 2026 flagship, valid until October 2026 ships).
+- WEO release **cadence is twice a year — April and October** ([IMF Data Explorer · WEO 9.0.0](https://data.imf.org/en/Data-Explorer?datasetUrn=IMF.RES:WEO(9.0.0))). Inter-cycle data does not change; only the projection vector revises on each flagship.
 - Commentary citation format: `(WEO Apr-2026, GGXWDG_NGDP)` — **mandatory** for any projection quote.
 - Stale-vintage threshold: 6 months. Older citations trigger a warning annotation in `methodology-reflection.md`.
 - Cut-over checklist on each new flagship (April / October):
@@ -173,6 +174,34 @@ Every projection value is stamped with a **vintage tag** — the release cycle t
   4. Release calendar row in [`data-dictionary.md`](data-dictionary.md) § 4.
 
 Ship all four in **one PR** titled `chore(imf): cut over to WEO-YYYY-MM vintage`.
+
+---
+
+## 7a · WEO transport split — Datamapper vs SDMX 9.0.0
+
+The WEO universe is reachable via two transports with very different surfaces:
+
+| Transport | URL pattern | Indicators | Auth | Use case |
+|-----------|-------------|------------|------|----------|
+| **Datamapper** (simple JSON) | `/external/datamapper/api/v1/{code}/{ISO3}` | **15 WEO codes** (the headline subset) | None | Default for fast historical+projection pulls |
+| **SDMX 3.0** (`IMF.RES,WEO,9.0.0`) | `/external/sdmx/3.0/data/IMF.RES,WEO,9.0.0/A.{ISO3}.{code}` | **Full WEO catalogue** (all ~45 series, all countries) | `IMF_SDMX_SUBSCRIPTION_KEY` (Azure APIM `Ocp-Apim-Subscription-Key` header) | Codes outside the Datamapper subset, or when historical depth back to 1980 is needed |
+
+The 9 codes in [`scripts/imf-client.ts`](../../scripts/imf-client.ts) `IMF_WEO_DATAMAPPER_AVAILABLE` (`NGDP_RPCH`, `NGDPD`, `NGDPDPC`, `PCPIPCH`, `LUR`, `GGXWDG_NGDP`, `GGXCNL_NGDP`, `BCA_NGDPD`, `LP`) are reachable through `getWeoIndicator()`. The 4 codes in `IMF_WEO_SDMX_ONLY` (`GGR_NGDP`, `GGX_NGDP`, `GGXONLB_NGDP`, `TX_RPCH`) **only resolve via SDMX** — `getWeoIndicator()` raises `ImfWeoSdmxOnlyError` with the resolved SDMX path so callers can recover programmatically. The `imf-fetch weo` CLI auto-routes those codes to SDMX when `IMF_SDMX_SUBSCRIPTION_KEY` is set.
+
+**Discover any indicator at runtime** (no SDMX key needed):
+
+```bash
+# Print the static partition + an SDMX path example
+tsx scripts/imf-fetch.ts list-indicators
+
+# Live-fetch the IMF Datamapper indicator catalog (~132 entries across
+# 24 datasets: WEO, FM, FPP, IFS, BOP, DOTS, GFS_COFOG, MFS_IR, PCPS,
+# ER, AFRREO, …). Filter by dataset to focus.
+tsx scripts/imf-fetch.ts list-datamapper-indicators --dataset WEO
+tsx scripts/imf-fetch.ts list-datamapper-indicators --dataset FM
+```
+
+The Datamapper FM dataset uses different suffix conventions from `IMF_FM_INDICATORS` (`GGR_G01_GDP_PT`, `G_X_G01_GDP_PT`, `GGXONLB_G01_GDP_PT`, `G_XWDG_G01_GDP_PT`). Use `list-datamapper-indicators --dataset FM` to enumerate them.
 
 ---
 

@@ -34,7 +34,15 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 
-import { ImfClient, IMF_WEO_INDICATORS, IMF_FM_INDICATORS } from './imf-client.js';
+import {
+  ImfClient,
+  IMF_WEO_INDICATORS,
+  IMF_FM_INDICATORS,
+  IMF_WEO_DATAMAPPER_AVAILABLE,
+  IMF_WEO_SDMX_ONLY,
+  ImfWeoSdmxOnlyError,
+  weoSdmxPath,
+} from './imf-client.js';
 import { persistIMFData, sanitizeDokId } from './parliamentary-data/data-persistence.js';
 
 // ---------------------------------------------------------------------------
@@ -100,7 +108,13 @@ function buildFallbackPayload(
 // ---------------------------------------------------------------------------
 
 interface ParsedArgs {
-  readonly command: 'weo' | 'compare' | 'sdmx' | 'list-indicators' | 'help';
+  readonly command:
+    | 'weo'
+    | 'compare'
+    | 'sdmx'
+    | 'list-indicators'
+    | 'list-datamapper-indicators'
+    | 'help';
   readonly flags: ReadonlyMap<string, string>;
   readonly booleans: ReadonlySet<string>;
 }
@@ -108,11 +122,19 @@ interface ParsedArgs {
 const HELP = `tsx scripts/imf-fetch.ts <command> [flags]
 
 Commands:
-  weo              Fetch a WEO time series for one country
-  compare          Fetch the latest WEO value across several countries
-  sdmx             Low-level SDMX 3.0 passthrough (IFS / BOP / FM / GFS / DOTS)
-  list-indicators  Print the built-in WEO + FM indicator catalog
-  help             Show this message
+  weo                          Fetch a WEO time series for one country
+                               (auto-routes to SDMX when the requested code is
+                               in IMF_WEO_SDMX_ONLY and IMF_SDMX_SUBSCRIPTION_KEY
+                               is set)
+  compare                      Fetch the latest WEO value across several countries
+  sdmx                         Low-level SDMX 3.0 passthrough (IFS / BOP / FM /
+                               GFS / DOTS / full WEO 9.0.0)
+  list-indicators              Print the built-in WEO + FM indicator catalog
+  list-datamapper-indicators   Fetch the live IMF Datamapper indicator catalog
+                               (~132 entries, grouped by dataset). Use to discover
+                               any indicator addressable without an SDMX
+                               subscription key.
+  help                         Show this message
 
 Common flags:
   --country <ISO3>         ISO-3 country code (e.g. SWE)
@@ -122,6 +144,8 @@ Common flags:
   --path <PATH>            SDMX URL path (sdmx)
   --persist                Write the response under analysis/data/imf/
   --database <NAME>        Provenance override (default WEO for weo/compare)
+  --dataset <NAME>         Filter list-datamapper-indicators by dataset
+                           (e.g. WEO, FM, FPP, IFS, BOP, DOTS, GFS_COFOG)
 `;
 
 function parseArgs(argv: readonly string[]): ParsedArgs {
@@ -179,6 +203,30 @@ async function runWeo(flags: ReadonlyMap<string, string>, booleans: ReadonlySet<
       });
     }
   } catch (err: unknown) {
+    // SDMX-only WEO indicator? Auto-route through the WEO 9.0.0 SDMX
+    // dataflow when the subscription key is configured. This keeps the
+    // `weo` subcommand usable for every IMF_WEO_INDICATORS entry rather
+    // than just the ~9 codes the simple Datamapper exposes.
+    if (err instanceof ImfWeoSdmxOnlyError && process.env.IMF_SDMX_SUBSCRIPTION_KEY) {
+      const path = err.sdmxPath;
+      process.stderr.write(`imf-fetch: routing '${indicator}' via SDMX (${path})\n`);
+      const raw = await client.sdmxFetch(path);
+      const payload = {
+        indicator,
+        country,
+        years,
+        transport: 'sdmx',
+        sdmxPath: path,
+        sdmxResponse: raw,
+      };
+      process.stdout.write(`${JSON.stringify(payload, null, 2)}\n`);
+      if (booleans.has('persist')) {
+        persistIMFData(indicator, country, payload, {
+          database: flags.get('database') ?? 'WEO',
+        });
+      }
+      return;
+    }
     // Fallback to cached data when live fetch fails
     const cached = loadCachedIMFData(indicator, country);
     if (cached) {
@@ -283,7 +331,44 @@ async function runSdmx(flags: ReadonlyMap<string, string>, booleans: ReadonlySet
 }
 
 function runListIndicators(): void {
-  process.stdout.write(`${JSON.stringify({ weo: IMF_WEO_INDICATORS, fm: IMF_FM_INDICATORS }, null, 2)}\n`);
+  process.stdout.write(
+    `${JSON.stringify(
+      {
+        weo: IMF_WEO_INDICATORS,
+        fm: IMF_FM_INDICATORS,
+        weoDatamapperAvailable: [...IMF_WEO_DATAMAPPER_AVAILABLE].sort(),
+        weoSdmxOnly: [...IMF_WEO_SDMX_ONLY].sort(),
+        weoSdmxPathExample: weoSdmxPath('SWE', 'GGR_NGDP'),
+      },
+      null,
+      2,
+    )}\n`,
+  );
+}
+
+async function runListDatamapperIndicators(flags: ReadonlyMap<string, string>): Promise<void> {
+  const datasetFilter = flags.get('dataset')?.toUpperCase();
+  const client = new ImfClient();
+  const catalog = await client.listDatamapperIndicators();
+  const filtered = datasetFilter
+    ? new Map([...catalog].filter(([, meta]) => meta.dataset.toUpperCase() === datasetFilter))
+    : catalog;
+  const grouped: Record<string, unknown[]> = {};
+  for (const meta of filtered.values()) {
+    (grouped[meta.dataset] ??= []).push({
+      code: meta.code,
+      label: meta.label,
+      unit: meta.unit,
+      ...(meta.lastUpdate ? { lastUpdate: meta.lastUpdate } : {}),
+    });
+  }
+  process.stdout.write(
+    `${JSON.stringify(
+      { totalIndicators: filtered.size, datasets: Object.keys(grouped).sort(), byDataset: grouped },
+      null,
+      2,
+    )}\n`,
+  );
 }
 
 // ---------------------------------------------------------------------------
@@ -304,6 +389,9 @@ async function main(): Promise<void> {
       return;
     case 'list-indicators':
       runListIndicators();
+      return;
+    case 'list-datamapper-indicators':
+      await runListDatamapperIndicators(flags);
       return;
     case 'help':
     default:
