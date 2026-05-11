@@ -342,21 +342,29 @@ describe('validate-article — findUnclosedMermaidFences', () => {
     expect(out[0]!.lineNumber).toBe(2);
   });
 
-  it('treats a fenced non-mermaid code block opening as a closing boundary too', () => {
-    // If the AI emits ```mermaid then ```typescript without closing the
-    // first, both should be treated as separate fences and the mermaid
-    // one flagged as unclosed.
+  it('detects every unclosed fence in a chain of unclosed mermaid openings (regression: no loop-skip)', () => {
+    // Reproducer for the loop-skip bug: three unclosed mermaid fences
+    // in a row must each be reported. Previously the walker advanced
+    // `i = j + 1` when stopping at the next opening, skipping that
+    // opening and missing subsequent unclosed fences.
     const md = [
       '```mermaid',
       'flowchart LR',
       'A --> B',
-      '```typescript',
-      'const x = 1;',
+      '```mermaid',
+      'flowchart TD',
+      'C --> D',
+      '```mermaid',
+      'flowchart RL',
+      'E --> F',
       '```',
     ].join('\n');
     const out = findUnclosedMermaidFences(md);
-    expect(out).toHaveLength(1);
+    // Lines 1 and 4 are unclosed (each stops at the next ```mermaid).
+    // Line 7 is properly closed by the trailing ```.
+    expect(out).toHaveLength(2);
     expect(out[0]!.lineNumber).toBe(1);
+    expect(out[1]!.lineNumber).toBe(4);
   });
 });
 

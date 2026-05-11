@@ -310,6 +310,7 @@ export function findUnclosedMermaidFences(body: string): readonly UnclosedMermai
       const openLine = i + 1; // 1-indexed
       let j = i + 1;
       let closed = false;
+      let stoppedAtNextOpening = false;
       for (; j < lines.length; j += 1) {
         const cur = lines[j]!;
         if (/^```[\t ]*$/.test(cur)) {
@@ -317,14 +318,21 @@ export function findUnclosedMermaidFences(body: string): readonly UnclosedMermai
           break;
         }
         if (/^```/.test(cur)) {
-          // Next opening fence before close — unclosed.
+          // Next opening fence before close — unclosed. Leave the next
+          // opening on the stream so the outer loop processes it; we
+          // would otherwise skip it (and miss further unclosed fences)
+          // by advancing past `j`.
+          stoppedAtNextOpening = true;
           break;
         }
       }
       if (!closed) {
         out.push({ lineNumber: openLine, impliedEndLineNumber: j + 1 });
       }
-      i = j + 1;
+      // When we consumed a real closing fence, skip past it. When we
+      // stopped at a new opening, resume at `j` so that opening is
+      // re-examined. When we hit EOF, both branches converge.
+      i = stoppedAtNextOpening ? j : j + 1;
       continue;
     }
     i += 1;
@@ -779,10 +787,14 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
 
   // 10. Mermaid fence integrity — every `\`\`\`mermaid` opening fence
   //     in the aggregated article must have a matching `\`\`\`` close.
-  //     Unclosed fences cause the renderer to merge two diagrams into
-  //     one (the next opening becomes the implicit close) and silently
-  //     drop every other diagram. The renderer recovers gracefully but
-  //     the source artifact still needs to be fixed.
+  //     The renderer's line-based walker
+  //     ({@link preprocessMermaidFences}) recovers gracefully by
+  //     treating the next code-fence opening (or end-of-input) as an
+  //     implicit close, so each diagram still becomes its own
+  //     `<pre class="mermaid">`. However, the source artifact still
+  //     needs to be fixed because IDE preview, the analysis-gate
+  //     Check 5 awk-based fence tracker, and `gh aw mcp inspect`
+  //     audits all assume a well-formed close.
   const unclosedFences = findUnclosedMermaidFences(text);
   if (unclosedFences.length > 0) {
     const sample = unclosedFences
@@ -801,6 +813,12 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
   //     `article.md`. Counts opening fences (closing fences are not
   //     reliable signal — see check 10). When the article is missing
   //     mermaid blocks present on disk, the aggregator regressed.
+  //
+  //     Errors from the filesystem walk are scoped: only ENOENT /
+  //     ENOTDIR (folder genuinely missing, surfaced by checks 1/2/6)
+  //     are swallowed; every other error becomes a dedicated
+  //     `mermaid-coverage-check-failed` violation so the validator
+  //     never silently skips the regression guard.
   try {
     const sourceMermaidCount = await countSourceArtifactMermaidOpenings(parentDir);
     const articleMermaidCount = countMermaidOpenings(text);
@@ -811,9 +829,19 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
         message: `article.md contains ${articleMermaidCount} \`\`\`mermaid opening(s) but the source artifacts in ${relative(REPO_ROOT, parentDir)}/ contain ${sourceMermaidCount}. The aggregator must include every diagram authored in the analysis artifacts — see scripts/render-lib/aggregator/aggregate.ts.`,
       });
     }
-  } catch {
-    // Folder may be missing or unreadable — the artifact-existence
-    // checks (1, 2, 6) will surface that separately.
+  } catch (err) {
+    const code = (err as NodeJS.ErrnoException | undefined)?.code;
+    if (code === 'ENOENT' || code === 'ENOTDIR') {
+      // Folder genuinely missing or not a directory — checks 1/2/6
+      // already surface that.
+    } else {
+      const detail = err instanceof Error ? err.message : String(err);
+      violations.push({
+        file: rel,
+        code: 'mermaid-coverage-check-failed',
+        message: `Mermaid coverage cross-check could not be executed against ${relative(REPO_ROOT, parentDir)}/: ${detail}. Investigate before merging — the regression guard is currently inactive for this article.`,
+      });
+    }
   }
 
   return violations;
