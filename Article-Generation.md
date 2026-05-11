@@ -725,6 +725,17 @@ news/2026-04-24-interpellations-zh.html
 
 When the agent could not produce `article.<lang>.md` for a given language under the time budget, the renderer transparently falls back to the English source — the file is still emitted so the language switcher and hreflang surface remain consistent. The `news-translate` workflow upgrades any English-fallback files to real translations on the next scheduled run.
 
+#### Localized + English merge (avoids truncated non-EN HTML)
+
+Per-type runs only have minutes per language to author `article.<lang>.md`, so the resulting file is typically a short hand-curated executive summary (≈50 lines) — *not* a full translation of the canonical `article.md` (often >2 000 lines aggregated from 23 artifacts). To guarantee that **every published HTML page is complete** — i.e. carries every analysis section a reader would see in English (Coalition Mathematics, Risk Assessment, SWOT, Threat Analysis, Sources, …) — `scripts/render-articles.ts` no longer swaps the English source for the small localized file. Instead, when a non-English `article.<lang>.md` exists, [`scripts/render-lib/article-merge.ts`](scripts/render-lib/article-merge.ts) merges the two into a single Markdown document:
+
+1. **Localized front matter** — title, description and `language: <lang>` come from the localized file (canonical-identity fields like `date`, `slug`, `subfolder`, `source_folder` always come from the English source).
+2. **Localized executive summary first** — the localized body opens the article so the reader's first-page experience is in their own language.
+3. **Localized boundary** — a `## ⟨translated "Detailed analysis (in English)"⟩` H2 + an aside note explaining the fallback (translated for all 14 languages via `articleEnglishCoverageHeading` / `articleEnglishCoverageNote` in `scripts/sitemap-html/i18n.ts`).
+4. **Full English body** — every English section is appended verbatim so no analytical depth is lost.
+
+The `news-translate` workflow can later replace the entire localized body with a full per-section translation; until then the boundary block disappears organically as the localized file grows. Tests: [`tests/article-merge.test.ts`](tests/article-merge.test.ts).
+
 ### HTML page structure
 
 ```mermaid

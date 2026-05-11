@@ -75,6 +75,37 @@ export interface LanguageMeta {
     articleReaderGuideTraceable: string;
     articleReaderGuideTraceableDesc: string;
     articleReaderGuideMoreMethodologies: string;
+    /**
+     * Section heading rendered between the localized executive summary
+     * and the full English body in non-English news articles. Used by
+     * `scripts/render-lib/article-merge.ts` when an `article.<lang>.md`
+     * file exists alongside the canonical `article.md`. The merged
+     * Markdown becomes (note the leading horizontal rule and the
+     * `ℹ️` info marker on the aside note):
+     *
+     *   ```markdown
+     *   <localized body>
+     *
+     *   ---
+     *
+     *   ## ${articleEnglishCoverageHeading}
+     *
+     *   > ℹ️ ${articleEnglishCoverageNote}
+     *
+     *   <full English body>
+     *   ```
+     *
+     * The exact boundary string is produced by
+     * `buildEnglishCoverageBoundary(lang)` in `article-merge.ts`.
+     * Keep concise (max ~60 chars) — it appears as an `<h2>`.
+     */
+    articleEnglishCoverageHeading: string;
+    /**
+     * Aside note that explains to the reader that the sections beneath
+     * the boundary are currently available in English only and that a
+     * full translation is in progress. Plain prose (no Markdown).
+     */
+    articleEnglishCoverageNote: string;
   };
 }
 
@@ -107,6 +138,8 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       articleReaderGuideSwot: "SWOT & risk scoring", articleReaderGuideSwotDesc: "Political positions are evaluated using structured SWOT frameworks and quantitative risk scoring grounded in coalition dynamics, policy volatility, and narrative risk.",
       articleReaderGuideTraceable: "Fully traceable artifacts", articleReaderGuideTraceableDesc: "Every claim links to an auditable analysis artifact on GitHub — readers can verify any assertion by following the source links.",
       articleReaderGuideMoreMethodologies: "Explore full methodology library",
+      articleEnglishCoverageHeading: "Detailed analysis (in English)",
+      articleEnglishCoverageNote: "The full analytical depth below — Coalition Mathematics, Forward Indicators, Risk Assessment, SWOT, Threat Analysis, Sources and more — is currently available in English only. Translation of these sections is in progress and will be back-filled by the next news-translate run.",
     },
   },
   sv: {
@@ -136,6 +169,8 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       articleReaderGuideSwot: "SWOT & riskbedömning", articleReaderGuideSwotDesc: "Politiska positioner utvärderas med strukturerade SWOT-ramverk och kvantitativ riskpoängsättning baserad på koalitionsdynamik, politisk volatilitet och narrativa risker.",
       articleReaderGuideTraceable: "Fullt spårbara artefakter", articleReaderGuideTraceableDesc: "Varje påstående länkar till en granskningsbar analysartefakt på GitHub — läsare kan verifiera alla påståenden genom att följa källlänkarna.",
       articleReaderGuideMoreMethodologies: "Utforska hela metodbiblioteket",
+      articleEnglishCoverageHeading: "Detaljerad analys (på engelska)",
+      articleEnglishCoverageNote: "Det fullständiga analysmaterialet nedan — koalitionsmatematik, framåtblickande indikatorer, riskbedömning, SWOT, hotanalys, källor och mer — är för närvarande endast tillgängligt på engelska. Översättning av dessa avsnitt pågår och kompletteras vid nästa news-translate-körning.",
     },
   },
   da: {
@@ -165,6 +200,8 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       articleReaderGuideSwot: "SWOT & risikovurdering", articleReaderGuideSwotDesc: "Politiske positioner vurderes med strukturerede SWOT-rammer og kvantitativ risikoscoring baseret på koalitionsdynamik og politisk volatilitet.",
       articleReaderGuideTraceable: "Fuldt sporbare artefakter", articleReaderGuideTraceableDesc: "Enhver påstand linker til en reviderbar analyseartefakt på GitHub — læsere kan verificere alle påstande.",
       articleReaderGuideMoreMethodologies: "Udforsk det fulde metodbibliotek",
+      articleEnglishCoverageHeading: "Detaljeret analyse (på engelsk)",
+      articleEnglishCoverageNote: "Det fulde analysemateriale nedenfor — koalitionsmatematik, fremadrettede indikatorer, risikovurdering, SWOT, trusselsanalyse, kilder og mere — er i øjeblikket kun tilgængeligt på engelsk. Oversættelse af disse afsnit er i gang og udfyldes ved næste news-translate-kørsel.",
     },
   },
   no: {
@@ -194,6 +231,8 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       articleReaderGuideSwot: "SWOT & risikovurdering", articleReaderGuideSwotDesc: "Politiske posisjoner vurderes med strukturerte SWOT-rammeverk og kvantitativ risikoscoring basert på koalisjonsdynamikk og politisk volatilitet.",
       articleReaderGuideTraceable: "Fullt sporbare artefakter", articleReaderGuideTraceableDesc: "Enhver påstand lenker til en reviderbar analyseartefakt på GitHub — lesere kan verifisere alle påstander.",
       articleReaderGuideMoreMethodologies: "Utforsk hele metodbiblioteket",
+      articleEnglishCoverageHeading: "Detaljert analyse (på engelsk)",
+      articleEnglishCoverageNote: "Det fullstendige analysematerialet nedenfor — koalisjonsmatematikk, fremoverrettede indikatorer, risikovurdering, SWOT, trusselanalyse, kilder og mer — er for øyeblikket kun tilgjengelig på engelsk. Oversettelse av disse avsnittene pågår og fylles ut ved neste news-translate-kjøring.",
     },
   },
   fi: {
@@ -223,6 +262,8 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       articleReaderGuideSwot: "SWOT ja riskiarviointi", articleReaderGuideSwotDesc: "Poliittisia kantoja arvioidaan rakenteisilla SWOT-kehyksillä ja määrällisellä riskipisteyttämisellä koalitiodynamiikan ja poliittisen volatiliteetin perusteella.",
       articleReaderGuideTraceable: "Täysin jäljitettävät artefaktit", articleReaderGuideTraceableDesc: "Jokainen väite linkittää tarkastettavaan analyysiartifaktiin GitHubissa — lukijat voivat todentaa kaikki väitteet.",
       articleReaderGuideMoreMethodologies: "Tutustu koko menetelmäkirjastoon",
+      articleEnglishCoverageHeading: "Yksityiskohtainen analyysi (englanniksi)",
+      articleEnglishCoverageNote: "Alla oleva kattava analyysi — koalitiomatematiikka, ennakoivat indikaattorit, riskinarviointi, SWOT, uhka-analyysi, lähteet ja muut — on tällä hetkellä saatavilla vain englanniksi. Näiden osioiden käännös on käynnissä ja täydennetään seuraavalla news-translate-ajolla.",
     },
   },
   de: {
@@ -252,6 +293,8 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       articleReaderGuideSwot: "SWOT & Risikobewertung", articleReaderGuideSwotDesc: "Politische Positionen werden mit strukturierten SWOT-Rahmen und quantitativer Risikobewertung basierend auf Koalitionsdynamik und politischer Volatilität bewertet.",
       articleReaderGuideTraceable: "Vollständig nachverfolgbare Artefakte", articleReaderGuideTraceableDesc: "Jede Behauptung verlinkt auf ein überprüfbares Analyseartefakt auf GitHub — Leser können alle Aussagen verifizieren.",
       articleReaderGuideMoreMethodologies: "Gesamte Methodenbibliothek erkunden",
+      articleEnglishCoverageHeading: "Detaillierte Analyse (auf Englisch)",
+      articleEnglishCoverageNote: "Die vollständige analytische Tiefe unten — Koalitionsmathematik, vorausschauende Indikatoren, Risikobewertung, SWOT, Bedrohungsanalyse, Quellen und mehr — ist derzeit nur auf Englisch verfügbar. Die Übersetzung dieser Abschnitte ist in Arbeit und wird beim nächsten news-translate-Lauf ergänzt.",
     },
   },
   fr: {
@@ -281,6 +324,8 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       articleReaderGuideSwot: "SWOT et évaluation des risques", articleReaderGuideSwotDesc: "Les positions politiques sont évaluées à l'aide de cadres SWOT structurés et d'une notation quantitative des risques basée sur la dynamique des coalitions et la volatilité politique.",
       articleReaderGuideTraceable: "Artefacts entièrement traçables", articleReaderGuideTraceableDesc: "Chaque affirmation renvoie à un artefact d'analyse vérifiable sur GitHub — les lecteurs peuvent vérifier toute assertion.",
       articleReaderGuideMoreMethodologies: "Explorer la bibliothèque de méthodologies",
+      articleEnglishCoverageHeading: "Analyse détaillée (en anglais)",
+      articleEnglishCoverageNote: "L'analyse complète ci-dessous — mathématiques de coalition, indicateurs prospectifs, évaluation des risques, SWOT, analyse des menaces, sources et plus — n'est actuellement disponible qu'en anglais. La traduction de ces sections est en cours et sera complétée lors de la prochaine exécution de news-translate.",
     },
   },
   es: {
@@ -310,6 +355,8 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       articleReaderGuideSwot: "SWOT y evaluación de riesgos", articleReaderGuideSwotDesc: "Las posiciones políticas se evalúan con marcos SWOT estructurados y puntuación cuantitativa de riesgos basada en dinámica de coaliciones y volatilidad política.",
       articleReaderGuideTraceable: "Artefactos completamente rastreables", articleReaderGuideTraceableDesc: "Cada afirmación enlaza a un artefacto de análisis auditable en GitHub — los lectores pueden verificar cualquier aseveración.",
       articleReaderGuideMoreMethodologies: "Explorar la biblioteca de metodologías",
+      articleEnglishCoverageHeading: "Análisis detallado (en inglés)",
+      articleEnglishCoverageNote: "El análisis completo a continuación — matemáticas de coalición, indicadores prospectivos, evaluación de riesgos, SWOT, análisis de amenazas, fuentes y más — actualmente solo está disponible en inglés. La traducción de estas secciones está en curso y se completará en la próxima ejecución de news-translate.",
     },
   },
   nl: {
@@ -339,6 +386,8 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       articleReaderGuideSwot: "SWOT en risicobeoordeling", articleReaderGuideSwotDesc: "Politieke posities worden beoordeeld met gestructureerde SWOT-kaders en kwantitatieve risicoscoring op basis van coalitiedynamiek en politieke volatiliteit.",
       articleReaderGuideTraceable: "Volledig traceerbare artefacten", articleReaderGuideTraceableDesc: "Elke bewering linkt naar een controleerbaar analyse-artefact op GitHub — lezers kunnen elke uitspraak verifiëren.",
       articleReaderGuideMoreMethodologies: "Verken de volledige methodenbibliotheek",
+      articleEnglishCoverageHeading: "Gedetailleerde analyse (in het Engels)",
+      articleEnglishCoverageNote: "De volledige analytische diepgang hieronder — coalitiewiskunde, vooruitkijkende indicatoren, risicobeoordeling, SWOT, dreigingsanalyse, bronnen en meer — is momenteel alleen in het Engels beschikbaar. Vertaling van deze secties is in uitvoering en wordt aangevuld bij de volgende news-translate-uitvoering.",
     },
   },
   ar: {
@@ -368,6 +417,8 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       articleReaderGuideSwot: "SWOT وتقييم المخاطر", articleReaderGuideSwotDesc: "يتم تقييم المواقف السياسية باستخدام أطر SWOT منظمة وتسجيل كمي للمخاطر بناءً على ديناميكيات الائتلاف والتقلب السياسي.",
       articleReaderGuideTraceable: "مصنوعات قابلة للتتبع بالكامل", articleReaderGuideTraceableDesc: "كل ادعاء يرتبط بمصنوع تحليل قابل للتدقيق على GitHub — يمكن للقراء التحقق من أي تأكيد.",
       articleReaderGuideMoreMethodologies: "استكشف مكتبة المناهج الكاملة",
+      articleEnglishCoverageHeading: "تحليل مفصل (بالإنجليزية)",
+      articleEnglishCoverageNote: "التحليل التفصيلي الكامل أدناه — رياضيات الائتلاف، المؤشرات الاستشرافية، تقييم المخاطر، SWOT، تحليل التهديدات، المصادر والمزيد — متاح حاليًا باللغة الإنجليزية فقط. ترجمة هذه الأقسام قيد التنفيذ وسيتم استكمالها في تشغيل news-translate التالي.",
     },
   },
   he: {
@@ -397,6 +448,8 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       articleReaderGuideSwot: "SWOT והערכת סיכונים", articleReaderGuideSwotDesc: "עמדות פוליטיות מוערכות באמצעות מסגרות SWOT מובנות ודירוג סיכונים כמותי המבוסס על דינמיקת קואליציה ותנודתיות פוליטית.",
       articleReaderGuideTraceable: "ממצאים הניתנים למעקב מלא", articleReaderGuideTraceableDesc: "כל טענה מקושרת למימצא ניתוח הניתן לביקורת ב-GitHub — קוראים יכולים לאמת כל קביעה.",
       articleReaderGuideMoreMethodologies: "חקור את ספריית המתודולוגיות המלאה",
+      articleEnglishCoverageHeading: "ניתוח מפורט (באנגלית)",
+      articleEnglishCoverageNote: "העומק האנליטי המלא להלן — מתמטיקת קואליציה, מדדים צופי פני עתיד, הערכת סיכונים, SWOT, ניתוח איומים, מקורות ועוד — זמין כעת באנגלית בלבד. תרגום סעיפים אלה מתבצע וישולם בריצת news-translate הבאה.",
     },
   },
   ja: {
@@ -426,6 +479,8 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       articleReaderGuideSwot: "SWOTとリスク評価", articleReaderGuideSwotDesc: "政治的立場は、連立力学と政治的変動性に基づく構造化SWOTフレームワークと定量的リスクスコアリングで評価されます。",
       articleReaderGuideTraceable: "完全に追跡可能なアーティファクト", articleReaderGuideTraceableDesc: "すべての主張はGitHub上の監査可能な分析アーティファクトにリンクしています — 読者はすべての主張を検証できます。",
       articleReaderGuideMoreMethodologies: "方法論ライブラリ全体を探索",
+      articleEnglishCoverageHeading: "詳細分析（英語）",
+      articleEnglishCoverageNote: "以下の完全な分析的深さ — 連立数学、先行指標、リスク評価、SWOT、脅威分析、出典など — は現在英語のみで利用可能です。これらのセクションの翻訳は進行中であり、次回の news-translate 実行時に補完されます。",
     },
   },
   ko: {
@@ -455,6 +510,8 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       articleReaderGuideSwot: "SWOT 및 위험 평가", articleReaderGuideSwotDesc: "정치적 입장은 연합 역학과 정치적 변동성에 기반한 구조화된 SWOT 프레임워크와 정량적 위험 점수로 평가됩니다.",
       articleReaderGuideTraceable: "완전 추적 가능한 아티팩트", articleReaderGuideTraceableDesc: "모든 주장은 GitHub의 감사 가능한 분석 아티팩트에 연결됩니다 — 독자는 모든 주장을 검증할 수 있습니다.",
       articleReaderGuideMoreMethodologies: "전체 방법론 라이브러리 탐색",
+      articleEnglishCoverageHeading: "상세 분석(영어)",
+      articleEnglishCoverageNote: "아래의 전체 분석 심층 — 연합 수학, 선행 지표, 위험 평가, SWOT, 위협 분석, 출처 등 — 은 현재 영어로만 제공됩니다. 이 섹션의 번역이 진행 중이며 다음 news-translate 실행 시 보충됩니다.",
     },
   },
   zh: {
@@ -484,6 +541,8 @@ export const LANGUAGE_META: Record<Language, LanguageMeta> = {
       articleReaderGuideSwot: "SWOT与风险评估", articleReaderGuideSwotDesc: "政治立场通过结构化SWOT框架和基于联盟动态与政治波动性的定量风险评分进行评估。",
       articleReaderGuideTraceable: "完全可追溯的工件", articleReaderGuideTraceableDesc: "每项声明都链接到GitHub上可审计的分析工件 — 读者可以验证任何断言。",
       articleReaderGuideMoreMethodologies: "探索完整方法论库",
+      articleEnglishCoverageHeading: "详细分析（英文）",
+      articleEnglishCoverageNote: "下方完整的分析深度 — 联盟数学、前瞻性指标、风险评估、SWOT、威胁分析、来源等 — 目前仅以英文提供。这些部分的翻译正在进行中，将在下一次 news-translate 运行时补充。",
     },
   },
 };

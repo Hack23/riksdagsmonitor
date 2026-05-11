@@ -38,6 +38,7 @@ import {
   renderArticleHtml,
   aggregateAnalysis,
   DAILY_DIR,
+  mergeLocalizedWithEnglish,
 } from './render-lib/index.js';
 // Registry is consumed inside render-lib/article.ts (called by renderArticleHtml)
 // — no direct usage needed here but the import documents the dependency chain.
@@ -170,9 +171,26 @@ async function renderOne(
       path.dirname(rc.articleMdPath),
       `article.${lang}.md`,
     );
-    const mdForLang = fs.existsSync(langSpecific)
-      ? fs.readFileSync(langSpecific, 'utf8')
-      : markdown;
+    // Regression fix: when an agent-translated `article.<lang>.md` exists
+    // it almost always carries only a short hand-curated summary (~50
+    // lines) — far less than the canonical English `article.md` (often
+    // >2 000 lines aggregated from 23 artifacts). Previously the renderer
+    // swapped the full English source for that small file, publishing
+    // truncated non-English HTML pages. We now MERGE the two so the HTML
+    // contains the localized executive summary AND the full English
+    // analytical depth (Coalition Mathematics, Risk Assessment, SWOT,
+    // Threat Analysis, Sources, …) under a localized boundary heading.
+    let mdForLang: string;
+    if (lang === 'en' || !fs.existsSync(langSpecific)) {
+      mdForLang = markdown;
+    } else {
+      const localizedMarkdown = fs.readFileSync(langSpecific, 'utf8');
+      mdForLang = mergeLocalizedWithEnglish({
+        englishMarkdown: markdown,
+        localizedMarkdown,
+        lang,
+      });
+    }
     const canonicalPath = canonicalPathFor(rc.date, rc.subfolder, lang, rc.date);
     const html = await renderArticleHtml({
       markdown: mdForLang,
