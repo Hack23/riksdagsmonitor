@@ -80,9 +80,23 @@ export interface LanguageMeta {
      * and the full English body in non-English news articles. Used by
      * `scripts/render-lib/article-merge.ts` when an `article.<lang>.md`
      * file exists alongside the canonical `article.md`. The merged
-     * Markdown becomes:
-     *   `<localized body>` + `## ${articleEnglishCoverageHeading}` +
-     *   `> ${articleEnglishCoverageNote}` + `<full English body>`.
+     * Markdown becomes (note the leading horizontal rule and the
+     * `ℹ️` info marker on the aside note):
+     *
+     *   ```markdown
+     *   <localized body>
+     *
+     *   ---
+     *
+     *   ## ${articleEnglishCoverageHeading}
+     *
+     *   > ℹ️ ${articleEnglishCoverageNote}
+     *
+     *   <full English body>
+     *   ```
+     *
+     * The exact boundary string is produced by
+     * `buildEnglishCoverageBoundary(lang)` in `article-merge.ts`.
      * Keep concise (max ~60 chars) — it appears as an `<h2>`.
      */
     articleEnglishCoverageHeading: string;
