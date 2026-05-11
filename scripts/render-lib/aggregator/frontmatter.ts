@@ -41,6 +41,7 @@ export function escapeInlineMd(text: string): string {
 export interface FrontMatterFields {
   readonly title: string;
   readonly description: string;
+  readonly keywords?: string;
   readonly date: string;
   readonly subfolder: string;
   /** Auto-derived from `${date}-${subfolder}` if the caller omits it. */
@@ -64,6 +65,7 @@ export function buildFrontMatter(fm: FrontMatterFields): string {
     '---',
     `title: "${escapeYaml(fm.title)}"`,
     `description: "${escapeYaml(fm.description)}"`,
+    ...(fm.keywords ? [`keywords: "${escapeYaml(fm.keywords)}"`] : []),
     `date: ${fm.date}`,
     `subfolder: ${fm.subfolder}`,
     `slug: ${slug}`,

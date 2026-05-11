@@ -25,6 +25,7 @@ import {
   renderMarkdownToHtml,
   renderChromeHead,
   buildChrome,
+  buildArticleSeoMetadata,
   renderArticleHtml,
   stripBodyDuplicateSections,
   __test__,
@@ -506,6 +507,8 @@ describe('render-lib — aggregateAnalysis (integration)', () => {
     // Description must be the real BLUF, NOT the admin byline.
     expect(result.description).toContain('widget committee reported five actionable findings');
     expect(result.description).not.toMatch(/Classification|Run ID|Author/i);
+    expect(result.keywords).toContain('Widgets');
+    expect(result.markdown).toContain('keywords: "Widgets');
 
     // Aggregated markdown must carry real content but no Pass-2 / no admin byline.
     expect(result.markdown).toContain('## Reader Intelligence Guide');
@@ -552,6 +555,37 @@ describe('render-lib — aggregateAnalysis (integration)', () => {
     expect(result.markdown).not.toContain('old swedish');
     expect(result.artifactsUsed).not.toContain('article.md');
     expect(result.artifactsUsed).not.toContain('article.sv.md');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// article SEO metadata
+// ---------------------------------------------------------------------------
+
+describe('render-lib — article SEO metadata', () => {
+  it('adds language, date and article type context to otherwise-identical descriptions', () => {
+    const base = {
+      title: 'Security, identity and state control: three propositions',
+      description: 'Three government propositions expand identity controls, population-register oversight and detention powers for security threats.',
+      date: '2026-05-11',
+      articleTypeLabel: 'Propositions',
+      articleTypeId: 'propositions',
+      canonicalPath: 'news/2026-05-11-propositions-en.html',
+    };
+    const en = buildArticleSeoMetadata({ ...base, lang: 'en' });
+    const de = buildArticleSeoMetadata({
+      ...base,
+      lang: 'de',
+      articleTypeLabel: 'Regierungsvorlagen',
+      canonicalPath: 'news/2026-05-11-propositions-de.html',
+    });
+    expect(en.description).not.toBe(de.description);
+    expect(en.description.length).toBeGreaterThanOrEqual(145);
+    expect(en.description.length).toBeLessThanOrEqual(200);
+    expect(de.description).toContain('deutsche Ausgabe');
+    expect(de.title).toContain('Deutsch');
+    expect(de.keywords).toContain('Regierungsvorlagen');
+    expect(de.keywords).toContain('German');
   });
 });
 
@@ -1259,7 +1293,8 @@ describe('render-lib — renderArticleHtml (end-to-end)', () => {
     expect(html).toContain('data-article-type="propositions"');
     expect(html).toContain('<p class="rm-article-eyebrow"><span class="rm-icon" aria-hidden="true">🔍</span> Propositions</p>');
     expect(html).toContain('<h1>Propositions 2099-01-01</h1>');
-    expect(html).toContain('<p class="rm-article-dek">Real BLUF for propositions.</p>');
+    expect(html).toContain('<p class="rm-article-dek">Real BLUF for propositions. Coverage: Propositions, 2099-01-01, English edition');
+    expect(html).toContain('<meta name="keywords" content="Propositions');
     expect(html).toContain('Traceable artifacts');
     expect(html).toContain('class="rm-article-sources"');
     expect(html).toContain('executive-brief.md');
