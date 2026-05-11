@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "cycle": "2025/26",
+  "date": "2026-05-11",
+  "subfolder": "committeeReports",
+  "generated_at": "2026-05-11T12:00:00Z",
+  "pirs": [
+    {
+      "id": "PIR-2026-HOUSING",
+      "title": "Housing policy reform trajectory before September 2026 election",
+      "status": "active",
+      "evidence": ["HD01CU31"],
+      "confidence": "MODERATE",
+      "carry_forward": true,
+      "next_review": "2026-06-01",
+      "notes": "privatuthyrningslag (HD01CU31) is primary evidence. Monitor Royal assent, Lagrådet opinion, and Hyresgästföreningen response."
+    },
+    {
+      "id": "PIR-2026-EDUCATION",
+      "title": "School transparency and private sector accountability reform",
+      "status": "active",
+      "evidence": ["HD01UbU20", "HD01UbU28"],
+      "confidence": "MODERATE",
+      "carry_forward": true,
+      "next_review": "2026-07-01",
+      "notes": "OSL/TF dimension of HD01UbU20 requires monitoring. Constitutional challenge possible. HD01UbU28 is uncontested."
+    },
+    {
+      "id": "PIR-2026-ENFORCEMENT",
+      "title": "Debt enforcement modernisation (Kronofogden distansutmätning)",
+      "status": "satisfied",
+      "evidence": ["HD01CU34"],
+      "confidence": "HIGH",
+      "carry_forward": false,
+      "next_review": "2027-01-01",
+      "notes": "HD01CU34 satisfies this PIR. Kronofogden IT procurement monitoring from Q3 2026."
+    },
+    {
+      "id": "PIR-2026-INTERNATIONAL",
+      "title": "Swedish international capacity and overseas personnel deployment",
+      "status": "satisfied",
+      "evidence": ["HD01SoU36", "HD01UU13"],
+      "confidence": "HIGH",
+      "carry_forward": false,
+      "next_review": "2026-12-01",
+      "notes": "HD01SoU36 and HD01UU13 satisfy this PIR. Unanimous adoption, low risk."
+    }
+  ]
+}
