@@ -42,18 +42,6 @@ export function rehypeSlugWithPrefix() {
         return;
       }
       const text = hastToString(node);
-      // Pre-strip leading non-letter/non-number characters BEFORE slug
-      // generation, so the slugger never sees an `🎯 BLUF` heading and
-      // emits a leading-hyphen slug that we'd then trim away (which
-      // would silently desynchronise its duplicate-suffix state and
-      // produce two `rm-sources` IDs from `### 📜 Sources` and a
-      // later `### Sources`). Cleaning before slug-time keeps the
-      // slugger's state consistent so duplicates get `-1`, `-2` …
-      // suffixes correctly. If cleaning would produce an empty
-      // string (heading is pure emoji / punctuation), fall back to
-      // the original text so we still emit *some* slug — the
-      // article-validator's `empty-heading-slug` rule blocks those
-      // upstream.
       const cleanedText = text.replace(/^[^\p{L}\p{N}]+/u, '').trim() || text;
       const slug = slugger.slug(cleanedText);
       node.properties.id = `${HEADING_ID_PREFIX}${slug}`;

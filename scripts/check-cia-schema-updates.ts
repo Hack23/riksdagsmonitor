@@ -258,8 +258,7 @@ class CIASchemaUpdateChecker {
       return { content, hash };
     } catch (error: unknown) {
       if ((error as NodeJS.ErrnoException).code === 'ENOENT') {
-        return null; // Schema doesn't exist locally
-      }
+        return null;       }
       throw error;
     }
   }
@@ -271,7 +270,6 @@ class CIASchemaUpdateChecker {
     console.log(`🔍 Checking: ${schemaName}...`);
     
     try {
-      // Fetch remote and local hashes
       const remote: SchemaHashResult = await this.fetchRemoteSchemaHash(schemaName);
       const local: SchemaHashResult | null = await this.loadLocalSchemaHash(schemaName);
       
@@ -317,19 +315,14 @@ class CIASchemaUpdateChecker {
 
     for (const schemaName of CIA_SCHEMAS) {
       await this.checkSchemaUpdate(schemaName);
-      // Small delay to avoid rate limiting
       await new Promise<void>(resolve => setTimeout(resolve, 100));
     }
 
-    // Save update report
     await this.saveUpdateReport();
 
-    // Print summary
     this.printSummary();
 
-    // Return exit code
-    return this.updates.length > 0 ? 1 : 0; // Exit 1 if updates available
-  }
+    return this.updates.length > 0 ? 1 : 0;   }
 
   /**
    * Save update report
@@ -348,7 +341,6 @@ class CIASchemaUpdateChecker {
     await fs.mkdir(this.metadataDir, { recursive: true });
     await fs.writeFile(reportPath, JSON.stringify(report, null, 2), 'utf8');
 
-    // Output for GitHub Actions
     if (process.env.GITHUB_OUTPUT) {
       const outputLine = `updates=${this.updates.length > 0 ? 'true' : 'false'}\n`;
       await fs.appendFile(process.env.GITHUB_OUTPUT, outputLine, 'utf8');

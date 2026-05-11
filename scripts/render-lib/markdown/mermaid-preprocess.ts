@@ -62,11 +62,6 @@ export function preprocessMermaidFences(markdownBody: string): string {
   while (i < lines.length) {
     const line = lines[i]!;
     if (/^```mermaid[\t ]*$/.test(line)) {
-      // Find the closing fence. A closing fence is a line whose only
-      // content is `\`\`\`` (any trailing whitespace allowed). If the
-      // next opening fence (`\`\`\`<anything>`) appears first, treat
-      // *that* as the implicit close so we never swallow it into the
-      // mermaid body and lose a downstream diagram.
       const bodyLines: string[] = [];
       let consumedClose = false;
       let j = i + 1;
@@ -77,16 +72,12 @@ export function preprocessMermaidFences(markdownBody: string): string {
           break;
         }
         if (/^```/.test(cur)) {
-          // New fence opens before the current one closed — leave it
-          // for the next iteration of the outer loop to handle.
           break;
         }
         bodyLines.push(cur);
       }
       const themed = ensureMermaidTheme(bodyLines.join('\n').trimEnd());
       const escaped = escapeHtml(themed);
-      // Surrounding blank lines mirror the legacy regex output so
-      // remark-parse sees a clean block-level boundary.
       out.push('', `<pre class="mermaid" data-mermaid-source="true" tabindex="0">${escaped}</pre>`, '');
       i = consumedClose ? j + 1 : j;
       continue;

@@ -54,7 +54,6 @@ export function validateRss(xml: string): boolean {
     throw new Error('No items in RSS feed');
   }
 
-  // Validate all items have required elements
   const titleCount = (xml.match(/<item>[\s\S]*?<title>/g) || []).length;
   const linkCount = (xml.match(/<item>[\s\S]*?<link>/g) || []).length;
   const guidCount = (xml.match(/<guid/g) || []).length;

@@ -48,6 +48,5 @@ export function initBackToTop(): void {
     }
   });
 
-  // Initial state
   toggleVisibility();
 }

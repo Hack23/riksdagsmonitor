@@ -294,9 +294,6 @@ export function stripLeadingAdminBylines(body: string): string {
       kept.push(p);
       continue;
     }
-    // Split into lines first, then fragments per line. A line is admin
-    // iff its first fragment matches ADMIN_FIELD_RE and every subsequent
-    // fragment is either admin or a value continuation.
     const lines = trimmed.split(/\n+/);
     const allLinesAdmin = lines.every((line) => {
       const lineTrimmed = line.trim();
@@ -305,17 +302,11 @@ export function stripLeadingAdminBylines(body: string): string {
       if (fragments.length === 0) return true;
       const firstAdmin = ADMIN_FIELD_RE.test(fragments[0]!.trim());
       if (!firstAdmin) return false;
-      // Subsequent fragments: admin OR value-continuation. A
-      // value-continuation has no colon (i.e. no new label) and does
-      // not start with `**` (which would also signal a new field).
       return fragments.slice(1).every((f) => {
         const ft = f.trim();
         if (!ft) return true;
         if (ADMIN_FIELD_RE.test(ft)) return true;
-        if (ft.startsWith('**')) return false; // bold-prefixed = new field
-        if (ft.includes(':')) return false; // colon mid-fragment = label
-        return true; // pure value continuation, accept
-      });
+        if (ft.startsWith('**')) return false;         if (ft.includes(':')) return false;         return true;       });
     });
     if (allLinesAdmin) continue;
     kept.push(p);

@@ -37,48 +37,22 @@ export function cleanSummaryForDisplay(text: string | null | undefined): string 
   if (!text) return '';
   let s = String(text);
 
-  // 1. Decode common HTML entities so downstream regexes see real whitespace.
   s = s.replace(/&nbsp;/gi, ' ');
 
-  // 2. Strip Riksdag dok-id / metadata prefix that may still precede real prose.
-  //    Shape: `5287561 HD03242 2025/26 242 prop prop prop Proposition 2025/26:242`
-  //    We strip up to — but not including — the human-readable token that
-  //    follows the metadata cluster.
   const DOK_PREFIX = /^\s*\d{6,}\s+HD\S+\s+\d{4}\/\d{2}\s+\d+\s+(?:[a-zäöå]{2,4}\s+){1,10}/i;
   if (DOK_PREFIX.test(s)) {
     s = s.replace(DOK_PREFIX, '');
   }
 
-  // 3. Remove inline `#page_\d+` and `#id_\d+` anchors that the PDF→text
-  //    extractor leaves embedded in prose.
   s = s.replace(/#(?:page|id)_\d+\b/gi, ' ');
 
-  // 4. Strip CSS rule fragments on a best-effort basis. Bounded quantifier
-  //    guarantees linear-time matching. Delegates the heavy CSS work to
-  //    {@link stripRiksdagRawDump}, but catches residual single rules like
-  //    `.p436{text-align:center}` that leak into summary fields directly.
-  //    The `\s*` between selector and `{` handles both the compact shape
-  //    (`.p436{…}`) produced by Riksdag's HTML-to-text extractor and the
-  //    expanded shape (`.page { margin: 0; }`) occasionally present when the
-  //    upstream HTML was pretty-printed.
   s = s.replace(/\.[a-z_][a-z0-9_-]{0,80}\s*\{[^{}]{0,400}\}/gi, ' ');
 
-  // 5. Collapse same-word stutters repeated ≥ 3 times ("Proposition Proposition
-  //    Proposition Utr…" → "Proposition Utr…"). Guards against replacing
-  //    legitimate prose — we only collapse when the word repeats back-to-back
-  //    three or more times. The token class uses Unicode property escapes:
-  //      - `\p{L}` matches any Unicode letter (covers Swedish å/ä/ö and
-  //        Latin-script accents)
-  //      - `\p{M}` matches combining marks (accents that live in separate
-  //        code points from their base letter, e.g. NFD-normalised input)
-  //    Punctuation and digits are excluded so the match never crosses a
-  //    sentence boundary or hyphenated number.
   s = s.replace(
     /\b([\p{L}][\p{L}\p{M}]{1,40})(?:\s+\1\b){2,}/giu,
     '$1'
   );
 
-  // 6. Collapse whitespace and trim.
   s = s.replace(/\s+/g, ' ').trim();
 
   return s;

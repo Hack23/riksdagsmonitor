@@ -570,7 +570,6 @@ function updateStatusCards(dataManager: PreElectionDataManager): void {
   const deviations = dataManager.calculateDeviations(latestYear ?? undefined);
   if (!deviations) return;
 
-  // Ballot activity
   const ballotCard = document.querySelector('.status-card[data-metric="ballots"]');
   if (ballotCard) {
     const currentValue = ballotCard.querySelector('.current-value');
@@ -585,7 +584,6 @@ function updateStatusCards(dataManager: PreElectionDataManager): void {
     }
   }
 
-  // Document production
   const docCard = document.querySelector('.status-card[data-metric="documents"]');
   if (docCard) {
     const currentValue = docCard.querySelector('.current-value');
@@ -596,7 +594,6 @@ function updateStatusCards(dataManager: PreElectionDataManager): void {
     if (badge) { badge.textContent = t.normal; badge.className = 'status-badge normal'; }
   }
 
-  // Attendance rate
   const attendanceCard = document.querySelector('.status-card[data-metric="attendance"]');
   if (attendanceCard) {
     const currentValue = attendanceCard.querySelector('.current-value');
@@ -607,7 +604,6 @@ function updateStatusCards(dataManager: PreElectionDataManager): void {
     if (badge) { badge.textContent = t.stable; badge.className = 'status-badge normal'; }
   }
 
-  // Party performance
   const partyCard = document.querySelector('.status-card[data-metric="party-performance"]');
   if (partyCard) {
     const currentValue = partyCard.querySelector('.current-value');

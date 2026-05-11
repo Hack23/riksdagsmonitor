@@ -40,7 +40,6 @@ export async function loadCommitteeNetwork(loadCSV: LoadCSV): Promise<CommitteeN
     loadCSV(CSV_SOURCES.committeeActivity.local)
   ]);
 
-  // Build activity lookup by org code
   const activityMap: Record<string, number> = {};
   activity.forEach(a => {
     activityMap[a.org as string] = (a.document_count as number) || 0;
@@ -48,7 +47,6 @@ export async function loadCommitteeNetwork(loadCSV: LoadCSV): Promise<CommitteeN
 
   const nameToOrgCode = COMMITTEE_ORG_CODES;
 
-  // Deduplicate committees by name, keeping the entry with the most data
   const bestByName: Record<string, CSVRow> = {};
   productivity.forEach(c => {
     const name = c.committee_name as string;
@@ -61,7 +59,6 @@ export async function loadCommitteeNetwork(loadCSV: LoadCSV): Promise<CommitteeN
     }
   });
 
-  // Normalize committee metrics first so filtering and rendering use one consistent source.
   const committees: CommitteeEntry[] = Object.values(bestByName)
     .map(c => {
       const name = c.committee_name as string;
@@ -88,7 +85,6 @@ export async function loadCommitteeNetwork(loadCSV: LoadCSV): Promise<CommitteeN
       };
     })
     .filter(c => {
-      // Keep real committees only; skip generic node and inactive rows with no measured output.
       return (
         c.name !== 'Riksdagen' &&
         c.memberCount > 0 &&
@@ -97,14 +93,12 @@ export async function loadCommitteeNetwork(loadCSV: LoadCSV): Promise<CommitteeN
     })
     .sort((a, b) => b.documentsProcessed - a.documentsProcessed);
 
-  // Build simple network graph from committees
   const nodes: NetworkNode[] = committees.map(c => ({
     id: c.id,
     name: c.name,
     size: c.influenceScore
   }));
 
-  // Create edges between committees that share similar productivity levels
   const edges: NetworkEdge[] = [];
   for (let i = 0; i < committees.length; i++) {
     for (let j = i + 1; j < committees.length && edges.length < 10; j++) {

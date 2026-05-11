@@ -122,19 +122,11 @@ export function parseArgs(argv: readonly string[]): ParseArgsResult {
 export function extractBetValues(manifestText: string): string[] {
   const bets = new Set<string>();
 
-  // Pattern: beteckning like "FiU48", "AU10", "KU20", "MJU15", "SoU12" etc.
-  // Swedish committee abbreviations can be mixed-case (e.g. Fi=Finansutskottet,
-  // So=Socialutskottet). Pattern: starts with uppercase, up to 4 more
-  // letters (upper or lower), then one or more digits.
   const BET_RE = /\b([A-ZÅÄÖ][a-zåäöA-ZÅÄÖ]{0,4}\d+)\b/g;
   for (const match of manifestText.matchAll(BET_RE)) {
     const candidate = match[1];
     if (!candidate) continue;
-    // Require at least one letter before the digits (already guaranteed by regex)
-    // Filter year/version-like tokens that are not committee designations,
-    // for example a single-letter prefix followed by a 4-digit year: "A2026".
     if (/^[A-ZÅÄÖ]\d{4}$/.test(candidate)) continue;
-    // Skip if the digit-free prefix alone is a known false-positive acronym
     const letterPart = candidate.replace(/\d+$/, '');
     if (/^(Se|En|Sv|Da|No|Fi|De|Fr|Es|Nl|Ar|He|Ja|Ko|Zh|Id|Ok|In|As|At|By|Be|Do|Go|Is|It|If|Of|On|Or|To|Up|Us|We)$/i.test(letterPart)) continue;
     bets.add(candidate);
@@ -159,7 +151,6 @@ export function detectDefectors(votes: unknown[]): {
     return { defectors: [], status: 'vote_pending' };
   }
 
-  // Tally party majority votes
   const partyTally = new Map<string, Map<string, number>>();
   for (const rawVote of votes) {
     const vote = rawVote as Record<string, unknown>;
@@ -172,10 +163,6 @@ export function detectDefectors(votes: unknown[]): {
     tally.set(rost, (tally.get(rost) ?? 0) + 1);
   }
 
-  // Determine majority vote per party. Ties for the maximum count are
-  // ambiguous (e.g. equal Ja/Nej splits), so we leave the majority
-  // *undefined* for those parties rather than picking an arbitrary winner
-  // based on iteration order — that previously produced false defectors.
   const partyMajority = new Map<string, string>();
   for (const [parti, tally] of partyTally) {
     let maxCount = 0;
@@ -195,7 +182,6 @@ export function detectDefectors(votes: unknown[]): {
     }
   }
 
-  // Find defectors
   const defectors: DefectorRecord[] = [];
   for (const rawVote of votes) {
     const vote = rawVote as Record<string, unknown>;
@@ -239,7 +225,6 @@ export function generateMermaidVoteChart(partyVotes: PartyVoteRow[], bet: string
     return `%%{init: {"theme": "base"}}%%\nflowchart LR\n  NA["No voting data for ${bet}"]`;
   }
 
-  // Sort by total votes descending
   const sorted = [...partyVotes].sort(
     (a, b) => (b.ja + b.nej + b.avstar) - (a.ja + a.nej + a.avstar),
   );
@@ -365,10 +350,6 @@ async function fetchVotingForBet(client: MCPClient, bet: string): Promise<Voting
 
     rawIndividualVotes = await client.fetchVotingRecords({ bet, limit: 200 });
   } catch (err) {
-    // Distinguish fetch failures (transient/network/MCP errors) from a
-    // confirmed empty voting record. `'not_found'` is reserved for the
-    // case where the MCP returned successfully but had zero data, while
-    // `'error'` carries the error message for downstream annotation.
     const message = err instanceof Error ? err.message : String(err);
     process.stderr.write(`⚠️  fetch-voting-records: MCP error for bet=${bet}: ${message}\n`);
     const errorRecord: VotingRecordOutput = {
@@ -386,10 +367,6 @@ async function fetchVotingForBet(client: MCPClient, bet: string): Promise<Voting
   }
 
   if (partyVotes.length === 0 && rawIndividualVotes.length === 0) {
-    // MCP returned successfully but with zero data — treat as a confirmed
-    // empty result (`not_found`) so downstream can distinguish from
-    // `vote_pending` (used by editorial tooling that *knows* a vote is
-    // upcoming) and `error` (transient MCP/network failure).
     const notFoundRecord: VotingRecordOutput = {
       bet,
       rm: rm || null,
@@ -433,7 +410,6 @@ async function main(): Promise<void> {
 
   const { date, docType, persist } = args;
 
-  // Locate manifests
   const dailyRoot = path.join(REPO_ROOT, 'analysis', 'daily', date);
   const manifestPaths: string[] = [];
 
@@ -441,7 +417,6 @@ async function main(): Promise<void> {
     const p = path.join(dailyRoot, docType, 'data-download-manifest.md');
     if (fs.existsSync(p)) manifestPaths.push(p);
   } else {
-    // Scan all subdirectories
     if (fs.existsSync(dailyRoot)) {
       for (const entry of fs.readdirSync(dailyRoot, { withFileTypes: true })) {
         if (entry.isDirectory()) {
@@ -452,7 +427,6 @@ async function main(): Promise<void> {
     }
   }
 
-  // Also check root manifest
   const rootManifest = path.join(dailyRoot, 'data-download-manifest.md');
   if (fs.existsSync(rootManifest)) manifestPaths.push(rootManifest);
 
@@ -463,7 +437,6 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
-  // Collect all unique bet values
   const allBets = new Set<string>();
   for (const manifestPath of manifestPaths) {
     const text = fs.readFileSync(manifestPath, 'utf8');
@@ -491,20 +464,16 @@ async function main(): Promise<void> {
     const record = await fetchVotingForBet(client, bet);
     results.push(record);
 
-    // Write per-bet output
     const outFile = path.join(outDir, `${sanitizeBet(bet)}.json`);
     fs.writeFileSync(outFile, JSON.stringify(record, null, 2) + '\n', 'utf8');
     process.stderr.write(`  ✓ ${bet} → ${path.relative(REPO_ROOT, outFile)} [${record.status}]\n`);
 
-    // Write injection templates if --persist
     if (persist && record.injectionMarkdown) {
-      // Determine which docType directory to write into
       const docTypeDirs = docType
         ? [path.join(dailyRoot, docType)]
         : manifestPaths
             .map((p) => path.dirname(p))
-            .filter((d) => !d.endsWith(date)); // skip root
-
+            .filter((d) => !d.endsWith(date)); 
       for (const dtDir of docTypeDirs) {
         const injectionDir = path.join(dtDir, 'voting-records');
         fs.mkdirSync(injectionDir, { recursive: true });

@@ -41,7 +41,6 @@ export function buildFooterHtml(opts: ChromeOptions): string {
 
   const altBase = opts.defaultAlternateBase ?? 'index.html';
 
-  // Footer inline lang-switcher
   const footerLangRow = LANGUAGES
     .filter((l) => l !== opts.lang)
     .map((l) => {

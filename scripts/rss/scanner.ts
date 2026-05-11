@@ -61,7 +61,6 @@ export function getRssArticles(): RssArticle[] {
     .readdirSync(NEWS_DIR)
     .filter((file) => file.endsWith('.html') && file !== 'index.html' && !file.startsWith('index_'));
 
-  // Group files by base slug
   const articleGroups = new Map<string, Map<Language, string>>();
   for (const file of files) {
     const match = file.match(/^(.+?)-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/);
@@ -75,11 +74,9 @@ export function getRssArticles(): RssArticle[] {
     }
   }
 
-  // Build RSS articles from English entries (with multi-language alternates)
   const articles: RssArticle[] = [];
 
   for (const [baseSlug, langMap] of articleGroups) {
-    // Primary: use English if available, otherwise skip this group for RSS
     const enFile = langMap.get('en');
     if (!enFile) continue;
 
@@ -110,7 +107,6 @@ export function getRssArticles(): RssArticle[] {
     });
   }
 
-  // Sort by publication date descending (most recent first)
   articles.sort((a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime());
 
   console.log(`  Found ${articles.length} English articles with multi-language alternates`);

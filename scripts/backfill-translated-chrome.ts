@@ -29,7 +29,6 @@ function detectLang(html: string): Language {
   const m = html.match(/<html\b[^>]*\blang="([a-zA-Z-]+)"/i);
   if (!m) return 'en';
   const raw = m[1].toLowerCase();
-  // BCP-47 → internal code (collapse `nb` → `no` for legacy variant pages).
   const primary = raw.split('-')[0];
   if (primary === 'nb') return 'no';
   if (SUPPORTED_LANGS.has(primary)) return primary as Language;
@@ -110,9 +109,6 @@ interface Stats {
 }
 
 function injectLegacyTranslatedHeaderCtas(html: string, lang: Language): { html: string; changed: boolean } {
-  // Translated articles use `<header role="banner">` with a `<nav role="navigation">`
-  // and no `site-header-nav`/`rm-site-header` markers. Inject the sponsor +
-  // transparency anchors right before the closing </nav> of the banner header.
   if (html.includes('rm-header-cta-sponsor')) return { html, changed: false };
   const bannerHeader = html.match(/<header[^>]*role="banner"[^>]*>([\s\S]*?)<\/header>/i);
   if (!bannerHeader) return { html, changed: false };
@@ -143,8 +139,6 @@ function injectFooterIsmsAndBadges(html: string, lang: Language): { html: string
   let changed = false;
   const cs = chromeStrings(lang);
 
-  // Insert ISMS column right before the existing rm-footer-trust column whose
-  // labelledby is `rm-ft-compliance` (the "Trust & compliance" column).
   if (!next.includes('id="rm-ft-isms"')) {
     const compliancePattern = /(\s*)<section class="rm-footer-col rm-footer-trust" aria-labelledby="rm-ft-compliance">/;
     if (compliancePattern.test(next)) {
@@ -153,9 +147,6 @@ function injectFooterIsmsAndBadges(html: string, lang: Language): { html: string
     }
   }
 
-  // Insert trust-badges row right before the language switcher nav. Match any
-  // pre-existing aria-label (English or already-translated) so we are robust
-  // to articles produced by older revisions of `chrome.ts`.
   if (!next.includes('rm-footer-trust-badges')) {
     const langsPattern = /(\s*)<nav class="rm-footer-langs" aria-label="[^"]*">/;
     if (langsPattern.test(next)) {
@@ -164,8 +155,6 @@ function injectFooterIsmsAndBadges(html: string, lang: Language): { html: string
     }
   }
 
-  // Add sponsor + Hack23 quick links into the existing "Built by Hack23 AB"
-  // column so the footer-list link inventory matches the modern chrome.
   if (!next.includes('https://github.com/sponsors/Hack23')) {
     const linkedinAnchor = /(<li><a href="https:\/\/www\.linkedin\.com\/company\/hack23\/")/;
     if (linkedinAnchor.test(next)) {

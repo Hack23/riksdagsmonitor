@@ -137,8 +137,6 @@ function extractBlock(html: string, pattern: RegExp): BlockInventory {
 
 function extractHeaderBlock(html: string): BlockInventory {
   const headerBlock = extractBlock(html, HEADER_PATTERN);
-  // For pages where the primary nav lives outside <header>, fold its links/images
-  // into the inventory so the report captures the actual primary navigation.
   const primaryNav = extractBlock(html, PRIMARY_NAV_PATTERN);
   if (!primaryNav.present) return headerBlock;
   if (!headerBlock.present) {
@@ -149,7 +147,6 @@ function extractHeaderBlock(html: string): BlockInventory {
       images: primaryNav.images,
     };
   }
-  // Already present — only fold in nav links if header didn't already include them.
   const headerLinkHrefs = new Set(headerBlock.links.map((l) => l.href));
   const merged: ExtractedLink[] = [...headerBlock.links];
   for (const link of primaryNav.links) {

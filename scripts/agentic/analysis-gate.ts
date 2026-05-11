@@ -66,34 +66,24 @@ export async function validateAnalysisGate(
 ): Promise<GateValidationResult> {
   const checks: GateCheckResult[] = [];
 
-  // Check 1 — Artifact existence
   checks.push(...checkArtifactExistence(analysisDir));
 
-  // Check 2 — Per-document coverage
   checks.push(...(await checkPerDocumentCoverage(analysisDir)));
 
-  // Check 3 — No stubs
   checks.push(...(await checkNoStubs(analysisDir)));
 
-  // Check 4 — Evidence citations
   checks.push(...(await checkEvidenceCitations(analysisDir)));
 
-  // Check 5 — Mermaid diagrams
   checks.push(...(await checkMermaidDiagrams(analysisDir)));
 
-  // Check 6 — Pass-2 evidence
   checks.push(...(await checkPass2Evidence(analysisDir)));
 
-  // Check 7 — Family C structure
   checks.push(...(await checkFamilyCStructure(analysisDir)));
 
-  // Check 8 — Family D structure
   checks.push(...(await checkFamilyDStructure(analysisDir)));
 
-  // Check 9 — PIR status sidecar
   checks.push(...(await checkPirStatus(analysisDir)));
 
-  // Check 9b — Statskontoret evidence
   checks.push(...(await checkStatskontoretEvidence(analysisDir)));
 
   const failureCount = checks.filter((c) => !c.passed).length;
@@ -156,8 +146,7 @@ export async function checkPerDocumentCoverage(
   const manifestPath = join(analysisDir, 'data-download-manifest.md');
 
   if (!existsSync(manifestPath)) {
-    return results; // Manifest missing handled by check 1
-  }
+    return results;   }
 
   const content = await readFile(manifestPath, 'utf-8');
   const dokIds = extractDokIds(content);
@@ -226,7 +215,6 @@ function hasDocumentAnalysis(documentsDir: string, dokId: string): boolean {
 export async function checkNoStubs(analysisDir: string): Promise<GateCheckResult[]> {
   const results: GateCheckResult[] = [];
 
-  // Recursively collect all .md files under analysisDir
   const mdFiles = await collectMdFilesRecursive(analysisDir, '');
 
   for (const relPath of mdFiles) {
@@ -351,14 +339,12 @@ async function checkSwotEvidence(analysisDir: string): Promise<GateCheckResult[]
           artifact: 'swot-analysis.md',
         });
       }
-      continue; // bullet lines are never also table rows
-    }
+      continue;     }
 
     if (TABLE_ROW_RE.test(line)) {
       if (TABLE_SEP_RE.test(line)) continue;
       tableRowCount++;
-      if (tableRowCount === 1) continue; // skip header row
-      if (!EVIDENCE_PATTERN.test(line)) {
+      if (tableRowCount === 1) continue;       if (!EVIDENCE_PATTERN.test(line)) {
         results.push({
           checkId: 'evidence-citations',
           passed: false,
@@ -433,7 +419,6 @@ async function checkSignificanceScoringEvidence(
       continue;
     }
 
-    // Ranked bullet (- or * or numbered)
     if (/^\s*([0-9]+\.\s+|[-*]\s+)/.test(line) && !EVIDENCE_PATTERN.test(line)) {
       results.push({
         checkId: 'evidence-citations',
@@ -444,12 +429,10 @@ async function checkSignificanceScoringEvidence(
       continue;
     }
 
-    // Table rows
     if (TABLE_ROW_RE.test(line)) {
       if (TABLE_SEP_RE.test(line)) continue;
       tableRowCount++;
-      if (tableRowCount === 1) continue; // skip header row
-      if (!EVIDENCE_PATTERN.test(line)) {
+      if (tableRowCount === 1) continue;       if (!EVIDENCE_PATTERN.test(line)) {
         results.push({
           checkId: 'evidence-citations',
           passed: false,
@@ -555,7 +538,6 @@ export async function checkPass2Evidence(
 
     let pass2Done = false;
 
-    // Primary evidence: a differing pass1/ snapshot
     const pass1Path = join(pass1Dir, filename);
     if (existsSync(pass1Path)) {
       const [current, snapshot] = await Promise.all([
@@ -567,7 +549,6 @@ export async function checkPass2Evidence(
       }
     }
 
-    // Fallback: mtime >= birthtime + 180 s (where birth time is available)
     if (!pass2Done) {
       const fileStat = await stat(filePath);
       const birthtimeMs = fileStat.birthtimeMs;
@@ -609,22 +590,16 @@ export async function checkFamilyCStructure(
 ): Promise<GateCheckResult[]> {
   const results: GateCheckResult[] = [];
 
-  // executive-brief.md: BLUF + Decisions sections
   results.push(...(await checkExecutiveBrief(analysisDir)));
 
-  // intelligence-assessment.md: ≥3 Key Judgments + confidence + PIR
   results.push(...(await checkIntelligenceAssessment(analysisDir)));
 
-  // scenario-analysis.md: ≥3 scenarios
   results.push(...(await checkScenarioAnalysis(analysisDir)));
 
-  // devils-advocate.md: ≥3 hypotheses
   results.push(...(await checkDevilsAdvocate(analysisDir)));
 
-  // methodology-reflection.md: ICD 203 or improvements
   results.push(...(await checkMethodologyReflection(analysisDir)));
 
-  // comparative-international.md: comparator set or ≥2 rows
   results.push(...(await checkComparativeInternational(analysisDir)));
 
   return results;
@@ -684,9 +659,6 @@ async function checkIntelligenceAssessment(
 
   const content = await readFile(filePath, 'utf-8');
 
-  // ≥3 Key Judgments — count distinct matching lines (not raw occurrences)
-  // to mirror the canonical gate's `grep -cE` behaviour. A line like
-  // "Key Judgment KJ-1" counts as 1, not 2.
   const kjPattern = /(Key\s+Judgment|KJ-?\d+)/;
   const kjLines = content.split('\n').filter((line) => kjPattern.test(line));
   const kjCount = kjLines.length;
@@ -699,7 +671,6 @@ async function checkIntelligenceAssessment(
     });
   }
 
-  // ≥3 confidence labels
   const confMatches = content.match(
     /\b(VERY\s+HIGH|VERY\s+LOW|HIGH|MEDIUM|LOW)\b/g,
   );
@@ -713,7 +684,6 @@ async function checkIntelligenceAssessment(
     });
   }
 
-  // PIR reference
   const hasPir = /PIR/i.test(content);
   if (!hasPir) {
     results.push({
@@ -848,12 +818,10 @@ async function checkComparativeInternational(
 
   const content = await readFile(filePath, 'utf-8');
 
-  // Check for "Comparator set:" line with non-empty value
   const COMPARATOR_SET_RE = /^\s*\*{0,2}Comparator set\*{0,2}\s*:/m;
   const hasComparatorSet = COMPARATOR_SET_RE.test(content) &&
     !/^\s*\*{0,2}Comparator set\*{0,2}\s*:\s*[-–—]*\s*$/m.test(content);
 
-  // Count non-header table rows (excluding separator rows)
   const tableRows = content.split('\n').filter((line) => {
     if (!/^\|/.test(line)) return false;
     if (/^\|[\s:-]+(\|[\s:-]+)+\|?\s*$/.test(line)) return false;
@@ -894,10 +862,8 @@ export async function checkFamilyDStructure(
 ): Promise<GateCheckResult[]> {
   const results: GateCheckResult[] = [];
 
-  // forward-indicators.md: ≥10 dated indicators
   results.push(...(await checkForwardIndicators(analysisDir)));
 
-  // coalition-mathematics.md: seat-count table
   results.push(...(await checkCoalitionMathematics(analysisDir)));
 
   return results;
@@ -912,9 +878,6 @@ async function checkForwardIndicators(analysisDir: string): Promise<GateCheckRes
   if (!existsSync(filePath)) return results;
 
   const content = await readFile(filePath, 'utf-8');
-  // Loose date detection (not strict calendar validation) — matches the
-  // original bash gate pattern; false positives are acceptable here since
-  // the goal is to verify the author included date-anchored indicators.
   const datePattern = /20[0-9]{2}-[0-1][0-9]-[0-3][0-9]|20[0-9]{2}Q[1-4]|\+[0-9]+\s*(h|d|day|week|month)/g;
   const matches = content.match(datePattern);
   const count = matches ? matches.length : 0;
@@ -1032,7 +995,6 @@ export async function checkPirStatus(analysisDir: string): Promise<GateCheckResu
     return results;
   }
 
-  // Required top-level fields
   const requiredFields = ['schema_version', 'cycle', 'date', 'subfolder', 'pirs', 'generated_at'] as const;
   for (const field of requiredFields) {
     if (!(field in data) || data[field as keyof PirStatusFile] === undefined) {
@@ -1044,7 +1006,6 @@ export async function checkPirStatus(analysisDir: string): Promise<GateCheckResu
     }
   }
 
-  // schema_version check
   if (data.schema_version !== '1.0') {
     results.push({
       checkId: 'pir-status',
@@ -1053,7 +1014,6 @@ export async function checkPirStatus(analysisDir: string): Promise<GateCheckResu
     });
   }
 
-  // pirs must be an array
   if (!Array.isArray(data.pirs)) {
     results.push({
       checkId: 'pir-status',
@@ -1063,7 +1023,6 @@ export async function checkPirStatus(analysisDir: string): Promise<GateCheckResu
     return results;
   }
 
-  // subfolder must equal cycle
   if (data.subfolder !== data.cycle) {
     results.push({
       checkId: 'pir-status',
@@ -1072,7 +1031,6 @@ export async function checkPirStatus(analysisDir: string): Promise<GateCheckResu
     });
   }
 
-  // Validate each PIR entry
   for (const pir of data.pirs) {
     const pid = pir.pir_id ?? '(no id)';
 
@@ -1110,9 +1068,6 @@ export async function checkPirStatus(analysisDir: string): Promise<GateCheckResu
       });
     }
 
-    // Conditional: answer_summary required iff status == 'answered'; must
-    // not be present for any other status (the canonical Python gate enforces
-    // both directions as a cross-field invariant).
     if (pir.status === 'answered' && !pir.answer_summary) {
       results.push({
         checkId: 'pir-status',
@@ -1157,10 +1112,8 @@ export async function checkStatskontoretEvidence(
 
   const content = await readFile(filePath, 'utf-8');
 
-  // Check if any recognised agency is mentioned
   const agencyPattern = new RegExp(RECOGNISED_AGENCIES.join('|'), 'i');
   if (!agencyPattern.test(content)) {
-    // No agency mentioned, check passes
     results.push({
       checkId: 'statskontoret-evidence',
       passed: true,
@@ -1170,7 +1123,6 @@ export async function checkStatskontoretEvidence(
     return results;
   }
 
-  // Agency mentioned — check for Statskontoret relevance row
   const statskontoretRow =
     /^\|\s*\*{0,2}Statskontoret relevance\*{0,2}\s*\|\s*([^|]*statskontoret\.se[^|]*|[^|]*none found[^|]*)\|/im;
 

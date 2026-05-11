@@ -66,50 +66,18 @@ function normaliseTitleForCompare(text: string): string {
 export function cleanArticleTitle(raw: string | null, subfolder?: string): string | null {
   if (!raw) return null;
   let t = raw.trim();
-  // Strip leading pictograph / emoji / punctuation that sometimes
-  // prefixes boilerplate H1s (e.g. `📋 Executive Brief — …`). Match
-  // any run of non-letter/number/Arabic/CJK characters at the start.
   t = t.replace(/^[\s\p{Emoji_Presentation}\p{Emoji}\p{Extended_Pictographic}\p{P}\p{S}]+/u, '').trim();
-  // Strip boilerplate prefixes (en-dash, em-dash, hyphen) — keep the story.
   t = t.replace(/^(?:Executive\s+Brief|Intelligence\s+Brief|Intelligence\s+Assessment|Realtime\s+Monitor|Riksdag\s+Realtime\s+Monitor|Daily\s+Brief|BLUF|TL;DR|Top\s+Line|Bottom\s+Line)\s*[—–\-:]\s*/i, '');
-  // Strip trailing ISO date (with or without a separator).
   t = t.replace(/\s*[—–\-:]?\s*\d{4}[-/]\d{2}[-/]\d{2}(?:\s+\d{1,2}[:\-.]\d{2}(?:\s*UTC)?)?\s*$/i, '');
-  // Strip any ISO date that remains embedded mid-title (e.g. "Week
-  // Ahead: 2026-02-23 to" → "Week Ahead: to"). We normalise
-  // collapsing whitespace after the strip. This is important for
-  // translated titles where the date is often inlined between two
-  // non-Latin fragments that the trailing-strip can't reach.
   t = t.replace(/\s*\d{4}[-/]\d{2}[-/]\d{2}(?:\s+\d{1,2}[:\-.]\d{2}(?:\s*UTC)?)?\s*/g, ' ');
-  // Strip trailing connector words left behind when a date was mid-title,
-  // like "… to" / "… – " / "… —" / "… :" / Swedish "… till" / German
-  // "… bis" / French "… à" / Spanish "… a" / Arabic "… إلى" / Japanese
-  // "… から" / Norwegian-Danish "… til" / Finnish "… –". This is a
-  // best-effort clean-up — if the trailing token is not in the list we
-  // leave it alone.
   t = t.replace(/[\s,;:]*(?:to|till|bis|à|a|إلى|から|til|–|—|-|:)\s*$/iu, '').trim();
   t = t.replace(/\s+/g, ' ').trim();
   if (t.length < 20) return null;
 
-  // Subfolder-equality guard: when the cleaned title is just the
-  // prettified subfolder name (e.g. `Government Propositions` for
-  // `propositions`, `Interpellation Debates` for `interpellations`,
-  // `Riksdag Realtime Pulse` for `realtime-pulse`), it's a generic
-  // category label — exactly the boilerplate the SEO contract bans.
-  // Returning null forces the aggregator to fall back to titleFromBluf.
-  //
-  // Heuristic: split the subfolder slug into stem tokens (≥4 chars) and
-  // require ≥1 token to appear in the cleaned title. If the cleaned
-  // title contains *only* such category tokens (no actor, no number, no
-  // verb-bearing prose), reject it. We approximate "no real story" by
-  // checking that every word in the cleaned title is either a category
-  // stem token or a short connector (`and`, `the`, `for`, `of`, `in`,
-  // `on`, …) — i.e. no novel content beyond the category label.
   if (subfolder) {
     const cleaned = normaliseTitleForCompare(t);
     const fallback = normaliseTitleForCompare(prettifyFallbackTitle(subfolder));
     if (fallback && cleaned === fallback) return null;
-    // Token-overlap heuristic: pure-category titles dominated by
-    // subfolder slug stems with no other content words.
     const slugStems = subfolder
       .toLowerCase()
       .split(/[-_/]+/)
@@ -119,19 +87,11 @@ export function cleanArticleTitle(raw: string | null, subfolder?: string): strin
       const connectorSet = new Set([
         'the', 'a', 'an', 'and', 'or', 'of', 'for', 'in', 'on', 'at',
         'by', 'to', 'with', 'from', 'as', 'is', 'are',
-        // Common category boilerplate amplifiers — these add no signal
-        // beyond the subfolder label.
         'riksdag', 'riksdagen', 'government', 'opposition', 'committee',
         'committees', 'reports', 'report', 'debates', 'debate',
         'realtime', 'pulse', 'monitor', 'analysis',
       ]);
       const isStem = (w: string): boolean => {
-        // Match against stem tokens with simple plural-equivalence
-        // (`interpellation` ≡ `interpellations`, `motion` ≡ `motions`).
-        // We deliberately do NOT use unrestricted substring matching
-        // (which would over-match `motion` ⊂ `emotion`); instead we
-        // require either an exact match or a 1-2 char tail difference
-        // limited to plural suffixes (`s`, `es`).
         if (slugStems.includes(w)) return true;
         return slugStems.some((stem) => {
           const sw = stem.length - w.length;
@@ -223,7 +183,6 @@ function startsWithVerb(text: string): boolean {
   return VERB_LEADING_TOKENS.has(m[1]!.toLowerCase());
 }
 
-
 /**
  * Strip a leading English date prefix from a BLUF sentence so the
  * synthesised title doesn't open with a literal date. Returns the input
@@ -239,9 +198,6 @@ export function stripLeadingDatePrefix(text: string): string {
   for (const re of BLUF_DATE_PREFIX_PATTERNS) {
     const next = text.replace(re, '');
     if (next !== text) {
-      // Don't strip if the result begins with a verb — losing the
-      // subject produces ungrammatical fragments like "Marks a heavy-
-      // load day" (audit of news/2026-05-08-evening-analysis-en.html).
       if (startsWithVerb(next.trim())) return text;
       return next;
     }
@@ -281,7 +237,6 @@ const TRAILING_CONNECTOR_RE =
 
 function trimTrailingConnectors(text: string): string {
   let prev = text;
-  // Run until fixpoint so chains like `… have to` collapse cleanly.
   for (let i = 0; i < 5; i += 1) {
     const next = prev.replace(TRAILING_CONNECTOR_RE, '').replace(/[\s,;:—–-]+$/u, '').trim();
     if (next === prev) break;
@@ -307,19 +262,11 @@ export function titleFromBluf(bluf: string | null, maxLen: number = 70): string 
   if (!bluf) return null;
   const cleanRaw = markdownInlineToText(bluf);
   if (!cleanRaw) return null;
-  // Strip a redundant inline `BLUF:` / `TL;DR:` prefix and any leading
-  // ordered/unordered list-item marker. Both rules are owned by
-  // `stripBlufLabel` in seo/description.ts so the title and description
-  // heuristics stay in lockstep (audit of news/2026-05-08-* and
-  // analysis/daily/2026-05-05/evening-analysis/).
   const labelStripped = stripBlufLabel(cleanRaw);
   const stripped = stripLeadingDatePrefix(labelStripped).trim();
-  // Reject sentences that collapse to nothing meaningful after the
-  // date-prefix strip (e.g. `On 7 May 2026, .` → `.`).
   const meaningful = stripped.replace(/^[\s.!?…。।,;:—–-]+/u, '').trim();
   if (meaningful.length < 5) return null;
   const clean = capitaliseFirst(meaningful);
-  // Take the first sentence (bounded by . ! ? 。) — but never exceed maxLen.
   SENTENCE_END_RE.lastIndex = 0;
   const m = SENTENCE_END_RE.exec(clean);
   const firstSentence = m ? clean.slice(0, m.index + m[0].length) : clean;
@@ -327,7 +274,6 @@ export function titleFromBluf(bluf: string | null, maxLen: number = 70): string 
     const trimmed = firstSentence.replace(/\s*[.!?…。।]+\s*$/, '').trim();
     return trimTrailingConnectors(trimmed) || null;
   }
-  // First sentence too long — take word-boundary prefix ≤ maxLen.
   const sliced = firstSentence.slice(0, maxLen);
   const lastSpace = sliced.lastIndexOf(' ');
   const cut = (lastSpace > 30 ? sliced.slice(0, lastSpace) : sliced).trim();

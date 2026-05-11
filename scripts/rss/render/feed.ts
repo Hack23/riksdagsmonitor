@@ -41,7 +41,6 @@ export function generateRss(): string {
   const articles = getRssArticles();
   const now = new Date().toUTCString();
 
-  // Use most recent article date for lastBuildDate
   const lastBuildDate = articles.length > 0
     ? new Date(articles[0]!.pubDate).toUTCString()
     : now;
@@ -74,7 +73,6 @@ export function generateRss(): string {
     </image>
     <atom:link href="${BASE_URL}/rss.xml" rel="self" type="application/rss+xml"/>`;
 
-  // Add category tags for the channel
   const channelCategories = [
     'Swedish Politics', 'Parliament', 'Riksdag', 'Political Intelligence',
     'Election Analysis', 'Legislative Monitoring',
@@ -84,9 +82,7 @@ export function generateRss(): string {
     <category>${escapeXml(cat)}</category>`;
   }
 
-  // Add items
   for (const article of articles) {
-    // Derive type-tagged category from the registry
     const subfolder = subfolderFromBaseSlug(article.baseSlug);
     const typeEntry = subfolder ? getBySubfolder(subfolder) : undefined;
     const categoryLabel = typeEntry
@@ -104,7 +100,6 @@ export function generateRss(): string {
       <category>${escapeXml(categoryLabel)}</category>
       <atom:link href="${escapeXml(article.link)}" rel="alternate" type="text/html" hreflang="en"/>`;
 
-    // Add multi-language alternate links
     for (const alt of article.alternateLanguages) {
       xml += `
       <atom:link href="${escapeXml(alt.href)}" rel="alternate" type="text/html" hreflang="${hreflangCode(alt.lang)}"/>`;

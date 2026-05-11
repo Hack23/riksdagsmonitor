@@ -88,7 +88,6 @@ function setCache(key: string, data: string): void {
       logger.warn('Cache storage error (non-quota):', e);
       return;
     }
-    // QuotaExceededError — evict oldest entries from this module's namespace and retry
     try {
       const entries: { key: string; timestamp: number }[] = [];
       for (let i = 0; i < localStorage.length; i++) {
@@ -101,7 +100,6 @@ function setCache(key: string, data: string): void {
           }
         } catch { /* skip non-cache entries */ }
       }
-      // Remove oldest half of this module's cache entries
       entries.sort((a, b) => a.timestamp - b.timestamp);
       const removeCount = Math.max(1, Math.ceil(entries.length / 2));
       entries.slice(0, removeCount).forEach(e => localStorage.removeItem(e.key));
@@ -126,7 +124,6 @@ export async function loadText(
     retryBackoff = DEFAULT_RETRY_BACKOFF,
   } = options;
 
-  // Check cache first
   if (cacheKey) {
     const cached = getFromCache(cacheKey, cacheTTL);
     if (cached) {
@@ -135,7 +132,6 @@ export async function loadText(
     }
   }
 
-  // Try primary URL, then fallbacks
   const urls = [source.primary, ...(source.fallbacks ?? [])];
   let lastError: Error | null = null;
 
@@ -184,7 +180,6 @@ export async function loadJSON<T = unknown>(
  * Does NOT use d3.csvParse as it requires the `unsafe-` dynamic-code-execution CSP directive.
  */
 export function parseCSV(text: string): CSVRow[] {
-  // Use PapaParse if available (CSP-compatible — no dynamic code execution)
   const PapaGlobal = (globalThis as Record<string, unknown>).Papa as
     | { parse: (text: string, config: Record<string, unknown>) => { data: CSVRow[] } }
     | undefined;
@@ -192,7 +187,6 @@ export function parseCSV(text: string): CSVRow[] {
     return PapaGlobal.parse(text, { header: true, skipEmptyLines: true }).data;
   }
 
-  // CSP-safe fallback: simple CSV parser
   const lines = text.trim().split('\n');
   if (lines.length < 2) return [];
   const headers = lines[0]!.split(',').map((h) => h.trim().replace(/^"|"$/g, ''));

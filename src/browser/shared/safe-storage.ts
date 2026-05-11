@@ -52,13 +52,11 @@ export function safeSetItem(
     return true;
   } catch (e: unknown) {
     if (!isQuotaError(e)) {
-      // Non-quota error (e.g. SecurityError when storage is disabled) — warn and bail.
       logger.warn('safeSetItem: non-quota storage error', e);
       return false;
     }
   }
 
-  // Quota exceeded — collect candidates with the same prefix.
   const candidates: { key: string; timestamp: number }[] = [];
   try {
     for (let i = 0; i < localStorage.length; i++) {
@@ -77,11 +75,9 @@ export function safeSetItem(
       candidates.push({ key: k, timestamp: ts });
     }
   } catch {
-    // Iteration over localStorage failed (e.g. storage disabled mid-flight) — give up.
     return false;
   }
 
-  // Evict oldest half (at minimum one).
   candidates.sort((a, b) => a.timestamp - b.timestamp);
   const removeCount = Math.max(1, Math.ceil(candidates.length / 2));
   for (const entry of candidates.slice(0, removeCount)) {
@@ -93,7 +89,6 @@ export function safeSetItem(
     return true;
   } catch (retryErr) {
     if (isQuotaError(retryErr)) {
-      // Single payload still too large — skip silently. Caller will re-fetch on next load.
       return false;
     }
     logger.warn('safeSetItem: retry failed', retryErr);

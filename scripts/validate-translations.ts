@@ -258,8 +258,7 @@ const checks: ValidationChecks = {
   },
   
   rtlAttribute: (content: string, lang: LanguageConfig): boolean => {
-    if (!lang.rtl) return true; // Not required for LTR languages
-    return content.includes('dir="rtl"');
+    if (!lang.rtl) return true;     return content.includes('dir="rtl"');
   },
   
   hasTitle: (content: string): boolean => {
@@ -275,13 +274,10 @@ const checks: ValidationChecks = {
   },
   
   hasHreflang: (content: string): boolean => {
-    // Check for at least some hreflang tags
     const count: number = (content.match(/hreflang=/g) || []).length;
-    return count >= 14; // Should have at least 14 (one for each language)
-  },
+    return count >= 14;   },
   
   hasOgLocale: (content: string, _lang: LanguageConfig): boolean => {
-    // Check for Open Graph locale
     return content.includes(`<meta property="og:locale" content="`);
   },
   
@@ -291,10 +287,8 @@ const checks: ValidationChecks = {
   
   // NEW: Check for untranslated Swedish content markers
   noUntranslatedMarkers: (content: string, lang: LanguageConfig): boolean => {
-    // Swedish files can have Swedish content
     if (lang.code === 'sv') return true;
     
-    // Non-Swedish files should NOT have data-translate markers
     return !content.includes('data-translate="true"');
   }
 };
@@ -313,7 +307,6 @@ function validateLanguageFile(lang: LanguageConfig): ValidationResult {
       failed: []
     };
     
-    // Run all checks
     if (checks.langAttribute(content, lang)) {
       results.passed.push('lang attribute');
     } else {
@@ -362,15 +355,12 @@ function validateLanguageFile(lang: LanguageConfig): ValidationResult {
       results.failed.push('Schema.org structured data missing');
     }
     
-    // NEW: Check for untranslated Swedish content
     if (checks.noUntranslatedMarkers(content, lang)) {
       results.passed.push('No untranslated Swedish markers');
     } else {
-      // Count how many markers remain
       const markerCount: number = (content.match(/data-translate="true"/g) || []).length;
       results.failed.push(`Contains ${markerCount} untranslated Swedish content markers (data-translate="true")`);
       
-      // Extract a sample for debugging
       const sampleMatch: RegExpMatchArray | null = content.match(/<span data-translate="true"[^>]*>([^<]{0,50})/);
       if (sampleMatch) {
         results.untranslatedSample = sampleMatch[1] + (sampleMatch[1].length >= 50 ? '...' : '');
@@ -421,7 +411,6 @@ function printResults(results: ValidationResult[]): number {
           console.log(`    ${colors.red}✗ ${failure}${colors.reset}`);
         });
         
-        // Show untranslated sample if available
         if (successResult.untranslatedSample) {
           console.log(`    ${colors.yellow}Sample: "${successResult.untranslatedSample}"${colors.reset}`);
         }
@@ -433,7 +422,6 @@ function printResults(results: ValidationResult[]): number {
     console.log('');
   });
   
-  // Summary
   console.log(`${colors.bold}${colors.cyan}===========================================`);
   console.log(`Summary`);
   console.log(`===========================================${colors.reset}\n`);

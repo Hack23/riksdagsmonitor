@@ -30,9 +30,6 @@ export function rehypeWrapTables() {
       if (node.tagName !== 'table' || !parent || typeof index !== 'number') {
         return;
       }
-      // Skip if already wrapped (idempotent). HAST `className` can be either
-      // a string or string[] depending on whether the wrapper was emitted by
-      // markdown processing (array) or pre-existing raw HTML (string).
       if (
         parent.type === 'element' &&
         (parent as Element).tagName === 'div'
@@ -51,7 +48,6 @@ export function rehypeWrapTables() {
         properties: { className: ['rm-table-wrap'] },
         children: [node],
       };
-      // Replace the table in the parent's children with the wrapper.
       (parent.children as unknown as Element[])[index] = wrapper;
       return [SKIP, index + 1];
     });

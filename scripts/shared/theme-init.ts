@@ -45,13 +45,10 @@ function minifyBootstrap(src: string): string {
 
 function loadBootstrap(): string {
   try {
-    // From scripts/shared/theme-init.ts → repo root is two parents up.
     const path = join(__dirname, '..', '..', 'js', 'theme-init.js');
     const raw = readFileSync(path, 'utf-8');
     return minifyBootstrap(raw);
   } catch {
-    // Defensive fallback: hand-written copy identical to js/theme-init.js.
-    // Kept in sync manually; `tests/theme-init.test.ts` asserts they match.
     return "(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());";
   }
 }

@@ -159,8 +159,7 @@ export function activeCycleAnchor(articleDate: string): 'current' | 'next' {
 export function weoVintage(articleDate: string): string {
   const d = new Date(articleDate);
   const year = d.getUTCFullYear();
-  const month = d.getUTCMonth() + 1; // 1-12, always covered by the branches below.
-  if (month >= 11) return `Oct-${year}`;
+  const month = d.getUTCMonth() + 1;   if (month >= 11) return `Oct-${year}`;
   if (month >= 5) return `Apr-${year}`;
   return `Oct-${year - 1}`;
 }
@@ -174,8 +173,7 @@ export function sessionPhase(
   articleDate: string,
 ): 'autumn' | 'xmas-recess' | 'spring' | 'summer-recess' {
   const d = new Date(articleDate);
-  const m = d.getUTCMonth() + 1; // 1-12
-  const day = d.getUTCDate();
+  const m = d.getUTCMonth() + 1;   const day = d.getUTCDate();
   if (m === 9 || m === 10 || m === 11 || (m === 12 && day < 18)) return 'autumn';
   if ((m === 12 && day >= 18) || m === 1) return 'xmas-recess';
   if (m === 2 || m === 3 || m === 4 || m === 5 || (m === 6 && day < 18)) return 'spring';

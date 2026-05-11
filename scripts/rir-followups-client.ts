@@ -163,13 +163,10 @@ export function calculateSkrivelseDeadline(
     throw new RangeError(`Invalid publish_date: ${publishDate}`);
   }
   const year = pub.getUTCFullYear();
-  const month = pub.getUTCMonth(); // 0-indexed
-  const day = pub.getUTCDate();
+  const month = pub.getUTCMonth();   const day = pub.getUTCDate();
 
   const deadlineYear = year + Math.floor((month + months) / 12);
-  const deadlineMonth = (month + months) % 12; // 0-indexed
-
-  // Clamp to last day of deadline month
+  const deadlineMonth = (month + months) % 12; 
   const daysInDeadlineMonth = new Date(Date.UTC(deadlineYear, deadlineMonth + 1, 0)).getUTCDate();
   const deadlineDay = Math.min(day, daysInDeadlineMonth);
 
@@ -204,7 +201,6 @@ export function deriveResponseStatus(
 ): RirResponseStatus {
   const now = typeof asOf === 'string' ? new Date(asOf + 'T00:00:00Z') : asOf;
 
-  // Rule 1: a recorded skrivelse ID is the canonical signal of a response.
   if (record.response_skrivelse_id) {
     if (
       record.gov_response_status === 'PARTIAL' ||
@@ -215,7 +211,6 @@ export function deriveResponseStatus(
     return 'RESPONDED';
   }
 
-  // Rule 2: no response yet — check deadline.
   if (record.skrivelse_deadline) {
     const deadline = new Date(record.skrivelse_deadline + 'T00:00:00Z');
     if (now > deadline) {
@@ -223,7 +218,6 @@ export function deriveResponseStatus(
     }
   }
 
-  // Rule 3: default.
   return 'PENDING';
 }
 
@@ -289,7 +283,6 @@ export function detectOverdueAlerts(
     }
   }
 
-  // Sort by days_overdue descending (most overdue first)
   return alerts.sort((a, b) => b.days_overdue - a.days_overdue);
 }
 
@@ -384,7 +377,6 @@ export function injectRirTableIntoDocument(
     );
   }
 
-  // No existing markers — append to end
   return documentContent.trimEnd() + '\n\n' + block + '\n';
 }
 
@@ -496,7 +488,6 @@ export function validateRirRecord(record: RirFollowUpRecord): readonly string[] 
     errors.push('response_skrivelse_id must be a string or null');
   }
 
-  // Consistency: RESPONDED requires a response_skrivelse_id
   if (record.gov_response_status === 'RESPONDED' && !record.response_skrivelse_id) {
     errors.push('RESPONDED status requires response_skrivelse_id to be set');
   }

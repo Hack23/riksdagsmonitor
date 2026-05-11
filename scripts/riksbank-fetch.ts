@@ -227,7 +227,6 @@ async function fetchWithManualRedirects(
       if (!location) {
         throw new Error(`Riksbank redirect ${response.status} without Location header`);
       }
-      // Drain redirect body to free the connection.
       await safeCancel(response.body);
       const next = new URL(location, current);
       assertRiksbankFetchTarget(next.toString());
@@ -281,7 +280,6 @@ export async function fetchRiksbankPayload(
     const retrievedAt = new Date().toISOString();
 
     if (contentType.includes('json')) {
-      // JSON responses are typically small; still cap to TEXT_RESPONSE_MAX_BYTES.
       if (contentLength !== undefined && contentLength > TEXT_RESPONSE_MAX_BYTES) {
         await safeCancel(response.body);
         return buildOutagePayload(

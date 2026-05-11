@@ -124,13 +124,11 @@ function updateStat(identifier: string, value: number | string): void {
 
   const displayValue = formatDisplayValue(value);
 
-  // Update by ID
   const elById = document.getElementById(identifier) as HTMLElement | null;
   if (elById) {
     elById.textContent = displayValue;
   }
 
-  // Update ALL elements with matching data-stat-id attribute
   const elements = document.querySelectorAll<HTMLElement>(
     `[data-stat-id="${identifier}"]`,
   );

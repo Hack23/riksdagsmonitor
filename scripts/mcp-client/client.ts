@@ -175,19 +175,15 @@ function getDefaultAuthToken(): string {
   if (process.env['MCP_AUTH_TOKEN']) return process.env['MCP_AUTH_TOKEN'].replace(/^Bearer\s+/i, '');
   if (process.env['MCP_GATEWAY_API_KEY']) return process.env['MCP_GATEWAY_API_KEY'];
 
-  // Try reading from MCP config file
   const configPath = process.env['GH_AW_MCP_CONFIG'] ?? '/home/runner/.copilot/mcp-config.json';
   try {
     if (fs.existsSync(configPath)) {
       const raw = JSON.parse(fs.readFileSync(configPath, 'utf8')) as Record<string, unknown>;
 
-      // Priority 3: legacy gateway.apiKey
       const gateway = raw['gateway'] as Record<string, unknown> | undefined;
       const apiKey = gateway?.['apiKey'] as string | undefined;
       if (apiKey) return apiKey.replace(/^Bearer\s+/i, '');
 
-      // Priority 4: mcpServers['riksdag-regering'].headers.Authorization
-      // Strip legacy "Bearer " prefix if present — gateway expects raw API key
       const mcpServers = raw['mcpServers'] as Record<string, unknown> | undefined;
       const rrServer = mcpServers?.['riksdag-regering'] as Record<string, unknown> | undefined;
       const headers = rrServer?.['headers'] as Record<string, unknown> | undefined;
@@ -267,9 +263,6 @@ export class MCPClient {
     const timeoutId = setTimeout(() => controller.abort(), this.timeout);
 
     try {
-      // The MCP gateway routes by URL path (e.g., /mcp/riksdag-regering),
-      // so tool names should always be bare (e.g., 'get_motioner', not
-      // 'riksdag-regering--get_motioner'). No server prefix is needed.
       const toolName = tool;
 
       const jsonRpcRequest: JsonRpcRequest = {
@@ -597,8 +590,6 @@ export class MCPClient {
       'get_voting_group',
       params as unknown as Record<string, unknown>,
     );
-    // MCP server returns 'groups' when groupBy is provided (grouped results),
-    // or 'votes' when no grouping is applied (flat voting list fallback)
     return (response['groups'] ?? response['votes'] ?? []) as unknown[];
   }
 
@@ -709,7 +700,6 @@ export class MCPClient {
       const response = await this.request('get_g0v_document_content', {
         regeringenUrl,
       });
-      // g0v API returns content in 'content' field; 'markdown'/'text' are fallbacks
       return (response['content'] ?? response['markdown'] ?? response['text'] ?? null) as string | null;
     } catch (error: unknown) {
       console.warn(`⚠️ Could not fetch government document content for ${regeringenUrl}: ${(error as Error).message}`);

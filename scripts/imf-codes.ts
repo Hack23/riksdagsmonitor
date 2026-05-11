@@ -89,8 +89,6 @@ export const IMF_AREA_TO_ISO3: Readonly<Record<string, string>> = Object.freeze(
  */
 export function toDatamapperCode(iso3: string): string {
   const upper = iso3.trim().toUpperCase();
-  // The Datamapper accepts EU / EURO aggregates as-is. ISO-3 regular
-  // states pass through unchanged.
   return upper;
 }
 

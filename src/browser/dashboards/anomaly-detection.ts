@@ -267,7 +267,6 @@ const TRANSLATIONS: Record<string, AnomalyTranslations> = {
 function getTranslations(): AnomalyTranslationsFull {
   const lang = detectLanguage();
   const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
-  // Merge minimal translations over the English defaults
   if (!('loading' in t)) {
     return { ...(TRANSLATIONS.en as AnomalyTranslationsFull), ...t };
   }
@@ -286,7 +285,6 @@ function generateFallbackData(): CSVRow[] {
 
   for (let year = 2018; year <= 2025; year++) {
     for (let quarter = 1; quarter <= 4; quarter++) {
-      // Deterministic, bounded z-scores to avoid random HIGH/CRITICAL anomalies in fallback data
       const ballotZRaw = (((year * 31 + quarter * 17) % 300) / 100) - 1.5;
       const docZRaw = (((year * 19 + quarter * 23) % 300) / 100) - 1.5;
       const ballotZ = ballotZRaw.toFixed(4);
@@ -307,7 +305,6 @@ function generateFallbackData(): CSVRow[] {
         year: String(year),
         quarter: String(quarter),
         is_election_year: (year === 2022) ? 't' : 'f',
-        // Deterministic synthetic counts for reproducible fallback data
         total_ballots: String(100 + ((year * 13 + quarter * 7) % 200)),
         active_politicians: '349',
         attendance_rate: '100.00',
@@ -354,7 +351,6 @@ class AnomalyDetectionDataManager {
   }
 
   async fetchData(): Promise<CSVRow[]> {
-    // Check cache first
     const cached = this.getCachedData();
     if (cached) {
       logger.debug('Using cached anomaly data');

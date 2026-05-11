@@ -63,13 +63,8 @@ export interface ClassificationResult {
 /** Parse `news/YYYY-MM-DD-<slug>-<lang>.html` into its three tokens. */
 export function parseArticleFilename(relPath: string): ArticleFingerprint {
   const base = path.basename(relPath).replace(/\.html$/i, '');
-  // Greedy date at the start, greedy lang at the end.
   const m = base.match(/^(\d{4}-\d{2}-\d{2})-(.+?)-([a-z]{2})$/i);
   if (!m) {
-    // Empty `lang` rather than `'en'` so unparseable filenames are not
-    // silently treated as English by `--lang` filtering. The CLI still
-    // applies a final `meta.lang || fp.lang || 'en'` fallback when
-    // resolving the language window for contract checks.
     return { relPath, date: null, subfolder: null, lang: '' };
   }
   return {
@@ -121,7 +116,6 @@ export function classify(
 
   const analysisSource = findAnalysisSource(analysisRootAbs, fp);
 
-  // --- Tier A ------------------------------------------------------------
   if (analysisSource) {
     tiers.push('A');
     reasons.A = `analysis source exists at ${path.relative(
@@ -130,21 +124,11 @@ export function classify(
     )}`;
   }
 
-  // --- Tier B ------------------------------------------------------------
-  // Legacy flat-structure article whose source markdown is gone. Includes
-  // everything with no analysisSource. We still need *some* way to
-  // identify it, so an article without source + without tier-C
-  // translation-repair needs still ends up as tier B so every file gets
-  // classified. That satisfies the issue's "every file in news/ must be
-  // in at least one tier" acceptance criterion.
   if (!analysisSource) {
     tiers.push('B');
     reasons.B = 'no analysis source on disk — rewrite in place from HTML body';
   }
 
-  // --- Tier C ------------------------------------------------------------
-  // Non-EN article with a below-floor description OR above-ceiling title.
-  // Use windowFor() so unknown langs fall back to the Latin window.
   if (fp.lang !== 'en') {
     const window = windowFor(fp.lang);
     const hasLowerFloorMiss = contract.violations.some(

@@ -83,12 +83,6 @@ export function renderReaderNavigation(input: ReaderNavigationInput): string {
   const guideI18n = readerGuideI18n(input.lang);
   const guideChrome = guideI18n.chrome;
 
-  // Filter `artifactsUsed` to the exact set of artifacts the
-  // aggregator emits as `## <title>` sections (alias-deduped, no
-  // README, no JSON, no `documents/*-analysis.md`, no `article*.md`).
-  // Without this filter the guide would emit anchor links whose
-  // targets do not exist in the rendered article — see
-  // `selectReaderGuideArtifacts` for the full contract.
   const rootArtifacts = selectReaderGuideArtifacts(input.artifactsUsed);
   const hasDocAnalyses = hasPerDocumentAnalyses(input.artifactsUsed);
 
@@ -97,13 +91,6 @@ export function renderReaderNavigation(input: ReaderNavigationInput): string {
     const anchor = anchorForTitle(sectionTitle);
     const localised = guideI18n.entries[file];
     const curated = READER_GUIDE_ENTRIES.find((e) => e.file === file);
-    // Prefer the localised curated label, then the English curated
-    // label, then the localised artifact title, finally the rendered
-    // section title. The `href` is what MUST match the rendered
-    // heading slug (`anchorForTitle(titleForArtifact(file))`); the
-    // visible link text is intentionally a localised, descriptive
-    // journalist-need phrase (e.g. "BLUF and editorial decisions"
-    // points at the `## Executive Brief` heading).
     const label =
       localised?.label
       ?? curated?.label
@@ -114,12 +101,6 @@ export function renderReaderNavigation(input: ReaderNavigationInput): string {
       ?? curated?.readerValue
       ?? guideChrome.defaultReaderValue;
     const icon = artifactIcon(file);
-    // The `<td>` itself stays in the accessibility tree so the
-    // 3-column structure remains intact for screen-reader table
-    // navigation; only the decorative emoji glyph is hidden via the
-    // inner `<span aria-hidden>`. The column header carries the
-    // localised `colIcon` sr-only label so AT users hear a meaningful
-    // column name.
     return `            <tr>
               <td class="rm-reader-guide-icon"><span aria-hidden="true">${icon}</span></td>
               <td><a href="#${anchor}">${escapeHtml(label)}</a></td>
@@ -135,8 +116,6 @@ export function renderReaderNavigation(input: ReaderNavigationInput): string {
             </tr>`);
   }
 
-  // Audit appendix row — always present so reviewers find the
-  // classification + cross-reference manifests.
   guideRows.push(`            <tr>
               <td class="rm-reader-guide-icon"><span aria-hidden="true">🏷️</span></td>
               <td><a href="#rm-classification-results">${escapeHtml(guideChrome.auditLabel)}</a></td>
@@ -199,9 +178,6 @@ export function renderAnalysisArtifactsReference(
         : a;
       const icon = artifactIcon(a);
       const title = artifactTitle(a, input.lang);
-      // Localised one-line description for the card. Lookup chain mirrors
-      // the Reader Intelligence Guide so the table rows and the source
-      // cards always agree on the artifact's reader value.
       const baseName = a.replace(/^documents\//, '');
       const localisedEntry = guideI18n.entries[baseName] ?? guideI18n.entries[a];
       const curatedEntry = READER_GUIDE_ENTRIES.find((e) => e.file === baseName || e.file === a);

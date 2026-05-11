@@ -335,18 +335,15 @@ export function detectStatisticalClaims(
   const seen = new Set<string>();
 
   for (const claimPattern of CLAIM_PATTERNS) {
-    // Reset regex state for each iteration
     const pattern = new RegExp(claimPattern.pattern.source, claimPattern.pattern.flags);
     let match: RegExpExecArray | null;
 
     while ((match = pattern.exec(text)) !== null) {
       const sourceText = match[0];
-      // Deduplicate by source text
       const key = `${claimPattern.topic}:${sourceText}`;
       if (seen.has(key)) continue;
       seen.add(key);
 
-      // Parse the claimed numeric value
       let claimedValue: number | undefined;
       if (match[1]) {
         const normalized = match[1].replace(/\s/g, '').replace(',', '.');
@@ -354,7 +351,6 @@ export function detectStatisticalClaims(
         if (isNaN(claimedValue)) claimedValue = undefined;
       }
 
-      // Determine unit from context
       const claimedUnit = detectUnit(sourceText);
 
       claims.push({

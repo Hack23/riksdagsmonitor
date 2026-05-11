@@ -102,8 +102,6 @@ async function fetchRiksdagSkrivelser(
   const documents: RiksdagDocumentResult[] = [];
   let page = 1;
 
-  // Page through results until exhausted, so 90-day windows with > pageSize
-  // skrivelser do not silently drop matches.
   for (;;) {
     const params = new URLSearchParams({
       doktyp: 'skr',
@@ -145,13 +143,11 @@ async function fetchRiksdagSkrivelser(
     const pageDocuments = json?.dokumentlista?.dokument ?? [];
     documents.push(...pageDocuments);
 
-    // Stop when the page is short or empty (last/only page).
     if (pageDocuments.length === 0 || pageDocuments.length < pageSize) {
       break;
     }
 
     page += 1;
-    // Hard safety cap to avoid runaway loops on misbehaving APIs.
     if (page > 50) break;
   }
 
@@ -201,17 +197,12 @@ function matchSkrivelse(
   records: readonly RirFollowUpRecord[],
 ): RirFollowUpRecord | null {
   const title = (skrivelse.titel ?? '').toLowerCase();
-  // beteckning is the human reference (e.g. "2025/26:78"); compare against
-  // record.response_skrivelse_id ("Skr. 2025/26:78") after normalisation.
   const beteckningNorm = skrivelse.beteckning ? normalizeSkrivelseRef(skrivelse.beteckning) : '';
 
   for (const record of records) {
-    // Match on rir_report_id in title
     if (title.includes(record.rir_report_id.toLowerCase())) return record;
-    // Match on rir_number (e.g. "RiR 2026:6") in title
     const rirNum = record.rir_number.toLowerCase();
     if (title.includes(rirNum)) return record;
-    // Match on response_skrivelse_id via beteckning (normalised both sides).
     if (record.response_skrivelse_id && beteckningNorm) {
       const recordRefNorm = normalizeSkrivelseRef(record.response_skrivelse_id);
       if (recordRefNorm && beteckningNorm === recordRefNorm) return record;
@@ -236,7 +227,6 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
-  // Validate dataset on load
   const validationErrors = validateRirDataset(dataset);
   if (validationErrors.size > 0) {
     console.warn(`[fetch-rir-followups] Validation warnings in dataset:`);
@@ -247,7 +237,6 @@ async function main(): Promise<void> {
     }
   }
 
-  // Fetch recent skrivelser (last 90 days, UTC-safe arithmetic)
   const toDate = opts.asOf.toISOString().slice(0, 10);
   const fromDate90 = new Date(opts.asOf);
   fromDate90.setUTCDate(fromDate90.getUTCDate() - 90);
@@ -257,10 +246,8 @@ async function main(): Promise<void> {
   const skrivelser = await fetchRiksdagSkrivelser(fromDate, toDate);
   console.log(`[fetch-rir-followups] Fetched ${skrivelser.length} skrivelse documents`);
 
-  // Match and update records
   let updatedCount = 0;
   const updatedRecords = dataset.records.map((record): RirFollowUpRecord => {
-    // Skip fully-responded records — no further action needed
     if (record.gov_response_status === 'RESPONDED' && record.response_skrivelse_id) return record;
 
     for (const skr of skrivelser) {
@@ -268,10 +255,6 @@ async function main(): Promise<void> {
         const newId = skr.beteckning ?? skr.dok_id ?? skr.id ?? null;
         if (newId && (!record.response_skrivelse_id || record.gov_response_status === 'PARTIAL')) {
           const prevStatus = record.gov_response_status;
-          // Derive the persisted status from a candidate record so stored data
-          // stays consistent with the canonical library rules — e.g. a response
-          // recorded while open_recommendations > 0 remains PARTIAL rather than
-          // being forced to RESPONDED.
           const candidateRecord: RirFollowUpRecord = {
             ...record,
             response_skrivelse_id: newId,
@@ -289,7 +272,6 @@ async function main(): Promise<void> {
       }
     }
 
-    // Re-derive status based on deadline
     const derivedStatus = deriveResponseStatus(record, opts.asOf);
     if (derivedStatus !== record.gov_response_status) {
       console.log(
@@ -302,7 +284,6 @@ async function main(): Promise<void> {
     return record;
   });
 
-  // Detect overdue alerts (derived from current dataset, no mutation)
   const updatedDataset: RirFollowUpsDataset = { ...dataset, records: updatedRecords };
   const alerts = detectOverdueAlerts(updatedDataset, opts.asOf);
 
@@ -318,9 +299,6 @@ async function main(): Promise<void> {
     console.log('[fetch-rir-followups] No overdue skrivelse deadlines detected.');
   }
 
-  // Persist only when stored records actually change.
-  // Overdue alerts are derived from the dataset and do not mutate persisted state,
-  // so they alone should NOT cause a noisy rewrite of the JSON file.
   if (!opts.dryRun) {
     if (updatedCount > 0) {
       saveRirDataset(updatedDataset, opts.dataFile);
@@ -332,7 +310,6 @@ async function main(): Promise<void> {
     console.log('[fetch-rir-followups] --dry-run: no changes written to disk.');
   }
 
-  // Alert exit code
   if (opts.alertOnOverdue && alerts.length > 0) {
     console.error(`[fetch-rir-followups] Exiting with code 1: ${alerts.length} overdue alert(s).`);
     process.exit(1);

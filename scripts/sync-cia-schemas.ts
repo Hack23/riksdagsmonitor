@@ -89,7 +89,6 @@ async function findCsvFiles(dir: string): Promise<string[]> {
   try {
     entries = await fs.readdir(dir, { withFileTypes: true });
   } catch {
-    // Directory does not exist — nothing to scan
     return results;
   }
   for (const entry of entries) {
@@ -150,7 +149,6 @@ class CIADataSync {
     const basename: string = path.basename(localPath);
     const relPath: string = path.relative(this.repoRoot, localPath);
 
-    // Check if this basename exists upstream
     if (!this.upstreamFiles.has(basename)) {
       console.log(`   ⏭️  Skipped (no upstream match): ${relPath}`);
       this.results.skipped.push({
@@ -172,7 +170,6 @@ class CIADataSync {
 
       const content: string = await response.text();
 
-      // Basic validation
       const lines = content.trim().split('\n');
       if (lines.length === 0 || lines[0].trim() === '') {
         throw new Error('Empty or invalid CSV file');
@@ -211,37 +208,30 @@ class CIADataSync {
     console.log(`🎯 Source: ${CIA_CSV_BASE_URL}`);
     console.log('');
 
-    // 1. Load upstream index
     await this.loadUpstreamIndex();
     console.log('');
 
-    // 2. Discover all existing CSV files in the repo
     const localFiles: string[] = [];
     for (const dir of SCAN_DIRS) {
       const absDir = path.join(this.repoRoot, dir);
       const found = await findCsvFiles(absDir);
       localFiles.push(...found);
     }
-    // Deduplicate (same basename may appear in multiple dirs — update all copies)
     localFiles.sort();
     this.results.total = localFiles.length;
 
     console.log(`📋 Found ${localFiles.length} existing CSV files to update`);
     console.log('');
 
-    // 3. Update each file from upstream
     for (const filePath of localFiles) {
       await this.updateFile(filePath);
-      // Small delay to avoid rate limiting
       await new Promise<void>((resolve) => setTimeout(resolve, 50));
     }
 
-    // 4. Save metadata & print summary
     await fs.mkdir(this.metadataDir, { recursive: true });
     await this.saveMetadata();
     this.printSummary();
 
-    // Exit 0 if at least one file synced and no failures
     return this.results.failed.length === 0 ? 0 : 1;
   }
 

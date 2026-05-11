@@ -64,17 +64,14 @@ export function decodeHtmlEntities(text: string | null | undefined): string {
 
   let result = String(text);
 
-  // Decode numeric entities: &#228; → ä
   result = result.replace(/&#(\d+);/g, (_match: string, code: string): string => {
     const codePoint = parseInt(code, 10);
     try {
       return String.fromCodePoint(codePoint);
     } catch {
-      return _match; // Keep invalid entities as-is
-    }
+      return _match;     }
   });
 
-  // Decode hex entities: &#x00E4; → ä
   result = result.replace(/&#x([0-9a-fA-F]+);/g, (_match: string, hex: string): string => {
     const codePoint = parseInt(hex, 16);
     try {
@@ -84,7 +81,6 @@ export function decodeHtmlEntities(text: string | null | undefined): string {
     }
   });
 
-  // Decode named entities
   result = result.replace(
     /&(?:amp|lt|gt|quot|apos|nbsp|mdash|ndash|lsquo|rsquo|ldquo|rdquo|bull);/g,
     (m: string): string => NAMED_ENTITY_MAP[m] ?? m,

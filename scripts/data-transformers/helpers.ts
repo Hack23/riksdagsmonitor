@@ -23,11 +23,8 @@ import { cleanSummaryForDisplay } from './text-cleaner.js';
 export function sanitizeUrl(url: string | undefined | null): string {
   if (!url || typeof url !== 'string') return '#';
   const trimmed = url.trim();
-  // Block dangerous schemes
   if (/^(javascript|data|vbscript):/i.test(trimmed)) return '#';
-  // Only allow http, https, and relative URLs
   if (/^[a-z]+:/i.test(trimmed) && !/^https?:/i.test(trimmed)) return '#';
-  // Escape HTML attribute characters
   return trimmed.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
@@ -77,9 +74,6 @@ export function svSpan(escapedText: string, _lang: Language | string): string {
       );
     }
   }
-  // NOTE: `_lang` is intentionally unused in non-strict mode and retained
-  // solely so existing call sites do not need to be updated; all spans are
-  // marked as Swedish.
   return `<span data-translate="true" lang="sv">${escapedText}</span>`;
 }
 
@@ -163,15 +157,11 @@ export function parseMotionAuthorParty(text: string): { author: string; party: s
  * and truncates at "Förslag till riksdagsbeslut".
  */
 export function cleanMotionText(raw: string): string {
-  // Minimum cleaned text length before falling back to raw; max excerpt lengths
   const MIN_CLEANED = 20;
   const MAX_CLEANED = 300;
   const MAX_RAW_FALLBACK = 200;
-  // Truncate at formal ballot section
   let text = raw.replace(/Förslag till riksdagsbeslut[\s\S]*/i, '').trim();
-  // Strip leading "Motion till riksdagen YYYY/YY:NNN av AUTHOR (PARTY) " prefix
   text = text.replace(/^Motion till riksdagen\s+\S+\s+av\s+[^(]+\([A-ZÅÄÖ]{1,5}\)\s*/i, '').trim();
-  // Strip "med anledning av prop. YYYY/YY:NNN " prefix
   text = text.replace(/^med anledning av prop\.\s+\S+\s*/i, '').trim();
   return text.length > MIN_CLEANED ? text.slice(0, MAX_CLEANED) : raw.slice(0, MAX_RAW_FALLBACK);
 }
@@ -199,7 +189,6 @@ export function cleanMotionText(raw: string): string {
 export function isPersonProfileText(text: string): boolean {
   if (!text) return false;
   const trimmed = text.trimStart();
-  // Ordered from most specific to least; any match → it is a person profile excerpt
   return (
     /^Tjänstgörande riksdagsledamot/u.test(trimmed) ||
     /^Tidigare riksdagsledamot/u.test(trimmed) ||
@@ -212,11 +201,8 @@ export function isPersonProfileText(text: string): boolean {
     /^Tidigare statsminister/u.test(trimmed) ||
     /^Inga uppdrag/u.test(trimmed) ||
     /^Avgången/u.test(trimmed) ||
-    // Deceased: "Avliden YYYY-MM-DD ..."
     /^Avliden\s+\d{4}-\d{2}-\d{2}/u.test(trimmed) ||
-    // Contains riksdag email address — always a profile page
     /[a-zA-Z0-9._%+-]+@riksdagen\.se/u.test(trimmed) ||
-    // Contains "Aktuella uppdrag Riksdagsledamot" — profile header
     /Aktuella uppdrag\s+Riksdagsledamot/u.test(trimmed)
   );
 }
@@ -248,42 +234,27 @@ export function propSummaryFromOrgan(organ: string, lang: Language | string): st
  * Uses document type, subtype, organ, and other metadata to create informative placeholder
  */
 export function generateEnhancedSummary(doc: RawDocument, type: string, lang: Language | string): string {
-  // For motions/interpellations: clean raw Swedish notis text before returning.
-  // Note: cleanMotionText() only handles motion-specific boilerplate ("Motion till riksdagen",
-  // "Förslag till riksdagsbeslut"); interpellation text without those phrases is returned as-is.
   if ((type === 'motion' || type === 'interpellation') && (doc.summary || doc.notis)) {
     const raw = (doc.summary || doc.notis || '');
-    // Skip person-profile data (e.g. "Tjänstgörande riksdagsledamot...", "Avliden 2011-09-20...")
     if (!isPersonProfileText(raw)) {
       if (raw.includes('Motion till riksdagen') || raw.includes('Förslag till riksdagsbeslut')) {
-        // Apply prose-hygiene filter on top of the motion-specific cleaner to
-        // strip any residual dok-id prefix, `#page_N` anchors, `&nbsp;` noise,
-        // or CSS rule fragments (§P0-4).
         return cleanSummaryForDisplay(cleanMotionText(raw));
       }
       return cleanSummaryForDisplay(raw);
     }
   }
 
-  // If we have a real summary or notis (not person profile data), use it as-is
   if (doc.summary || doc.notis) {
     const text = doc.summary || doc.notis || '';
     if (!isPersonProfileText(text)) {
-      // §P0-4: run the prose-hygiene filter so CSS rule fragments, dok-id
-      // metadata prefixes, `#page_N` anchors, and `&nbsp;` noise never reach
-      // article HTML. Upstream {@link stripRiksdagRawDump} handles the big-block
-      // cases in extracted document text; this catches residual noise in
-      // summary/notis fields that bypass `extractKeyPassage`.
       return cleanSummaryForDisplay(text);
     }
   }
 
-  // Generate enhanced summary based on metadata
   const organ = doc.organ || doc.committee;
   const subtyp = doc.subtyp || doc.subtype;
   const doktyp = doc.doktyp || doc.documentType;
 
-  // Build contextual summary based on available metadata
   const parts: string[] = [];
 
   if (type === 'report' && organ) {
@@ -294,7 +265,6 @@ export function generateEnhancedSummary(doc: RawDocument, type: string, lang: La
       parts.push(`${typeof onVal === 'string' ? onVal : ''} ${subtyp}`);
     }
   } else if (type === 'proposition') {
-    // Try ministry-specific framing first
     const ministrySummary = organ ? propSummaryFromOrgan(organ, lang) : '';
     if (ministrySummary) {
       return ministrySummary;
@@ -323,11 +293,6 @@ export function generateEnhancedSummary(doc: RawDocument, type: string, lang: La
       parts.push(`${typeof onVal === 'string' ? onVal : ''} ${subtyp}`);
     }
   } else if (type === 'interpellation') {
-    // NOTE: do NOT prefix with author/party here — renderInterpellationEntry()
-    // already renders a dedicated "Filed by:" line, so including it in the
-    // summary would duplicate the attribution.
-    // Include target minister (mottagare) if available
-    // NOTE: do NOT escapeHtml here — callers escape the returned summary string
     if (doc.mottagare) {
       parts.push(`→ ${doc.mottagare}`);
     }
@@ -337,12 +302,10 @@ export function generateEnhancedSummary(doc: RawDocument, type: string, lang: La
     }
   }
 
-  // Add document type information if useful
   if (doktyp && doktyp !== type) {
     parts.push(`(${doktyp})`);
   }
 
-  // Fallback to default if no useful metadata
   if (parts.length === 0) {
     const fallback = type === 'report' ? L(lang, 'reportDefault') :
            type === 'proposition' ? L(lang, 'propDefault') :
@@ -368,7 +331,6 @@ export function getCommitteeName(code: string | undefined, lang: Language | stri
   }
   const entry: CommitteeName | undefined = COMMITTEE_NAMES[code];
   if (!entry) return code;
-  // Use Swedish name for sv, English for all others (other languages get translated via data-translate)
   return lang === 'sv' ? entry.sv : entry.en;
 }
 
@@ -395,49 +357,23 @@ export function stripRiksdagRawDump(text: string): string {
   if (!text) return text;
   let s = text;
 
-  // 1. Remove embedded CSS rule blocks ("selector { properties }"). Only strip
-  //    blocks whose body looks CSS-like so we never touch legitimate Swedish
-  //    prose that happens to contain braces. No nesting in Riksdag dumps.
-  //
-  //    The outer pattern is bounded ({0,300} selector, {0,1000} body) to prevent
-  //    catastrophic backtracking on pathological inputs. `[^{}]` further guarantees
-  //    linear-time matching because the inner class cannot overlap the delimiters.
-  //    A capture group isolates the `{...body...}` so the CSS signature is tested
-  //    only against the block body — not the selector / surrounding prose — which
-  //    avoids false positives on Swedish text like `"prisökning: 10 procent"`
-  //    that precedes an unrelated brace pair.
-  //
-  //    `CSS_PROPERTY_SIGNATURE` recognises common CSS property syntax patterns:
-  //      - `: <digit>` (numeric value assignments, e.g. `top: 0`, `z-index: -1`)
-  //      - CSS length units (`px`, `em`, `rem`) as whole words
-  //      - `%;` (percent value terminator)
-  //      - CSS hex colours (`#abc` or `#aabbcc`)
-  //      - Known CSS property names followed by `:`
   const CSS_PROPERTY_SIGNATURE = /(?::\s*-?\d|\b(?:px|em|rem)\b|%\s*;|#[0-9a-f]{3,6}\b|position\s*:|margin\s*:|padding\s*:|overflow\s*:|width\s*:|height\s*:|top\s*:|left\s*:|z-index\s*:|display\s*:|font-|border\s*:)/i;
   s = s.replace(/[^{}]{0,300}(\{[^{}]{0,1000}\})/g, (m, body: string) =>
     CSS_PROPERTY_SIGNATURE.test(body) ? ' ' : m
   );
 
-  // 2. Detect Riksdag metadata prefix. Always begins with: numeric doc-id,
-  //    HD-<dok_id>, and a riksmöte (YYYY/YY).
   const metaPrefix = /^\s*\d{6,}\s+HD\S+\s+\d{4}\/\d{2}\s+/;
   if (metaPrefix.test(s)) {
-    // Preferred boundary: "html-ec <doktype>-RIM <UUID>" marker — strip up to and including it.
     const rimRegex = /^[\s\S]*?html-ec\s+\S+-RIM\s+[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\s*/i;
     if (rimRegex.test(s)) {
       s = s.replace(rimRegex, '');
     } else {
-      // Fallback 1: strip up to and including the first bare UUID if it is
-      // still within the metadata header window (first ~1.5k chars).
       const uuidIdx = s.search(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i);
       if (uuidIdx > -1 && uuidIdx < 1500) {
         s = s
           .slice(uuidIdx)
           .replace(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\s*/i, '');
       } else {
-        // Fallback 2: strip the fixed metadata header up to the last
-        // `YYYY-MM-DD HH:MM:SS` timestamp that appears within the first
-        // 800 chars, then any additional repeated timestamps.
         const shortHeader = /^\s*\d{6,}\s+HD\S+\s+\d{4}\/\d{2}[\s\S]{0,800}?\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}\s+/;
         const m = s.match(shortHeader);
         if (m) {
@@ -459,18 +395,12 @@ export function stripRiksdagRawDump(text: string): string {
  */
 export function extractKeyPassage(fullText: string | undefined, maxChars = 600): string {
   if (!fullText) return '';
-  // Strip HTML tags if present
   let plain = fullText.replace(/<[^>]+>/g, ' ');
-  // Strip markdown links — keep link text, remove URL: [text](url) → text
   plain = plain.replace(/\[([^\]]*)\]\([^)]+\)/g, '$1');
-  // Strip bare URLs (http/https)
   plain = plain.replace(/https?:\/\/[^\s)]+/g, '');
-  // Strip Riksdag raw-dump prefix (metadata header + embedded CSS rule blocks)
   plain = stripRiksdagRawDump(plain);
-  // Collapse whitespace
   plain = plain.replace(/\s+/g, ' ').trim();
   if (plain.length <= maxChars) return plain;
-  // Find a sentence boundary near maxChars
   const cut = plain.lastIndexOf('.', maxChars);
   return cut > 100 ? plain.slice(0, cut + 1) : plain.slice(0, maxChars) + '…';
 }
@@ -519,18 +449,14 @@ export function formatDocumentDate(doc: RawDocument, lang: Language | string): s
  * @returns Filtered array containing only fresh documents
  */
 export function filterFreshDocuments(docs: RawDocument[], maxAgeDays = 30): RawDocument[] {
-  // Normalize cutoff to midnight UTC so day-based threshold is consistent
   const now = new Date();
   const cutoffMs = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()) - maxAgeDays * 24 * 60 * 60 * 1000;
   return docs.filter(doc => {
     if (!doc.datum) {
-      // keep documents without dates (benefit of the doubt)
       return true;
     }
-    // Interpret datum (YYYY-MM-DD) as midnight UTC for deterministic comparison
     const docTime = Date.parse(`${doc.datum}T00:00:00Z`);
     if (Number.isNaN(docTime)) {
-      // If the date cannot be parsed, keep the document rather than dropping it
       return true;
     }
     return docTime >= cutoffMs;

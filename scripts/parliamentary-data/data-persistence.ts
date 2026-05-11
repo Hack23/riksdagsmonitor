@@ -161,13 +161,11 @@ function writeDocumentAndMeta(
   metadata: PersistenceMetadata,
 ): void {
   ensureDir(dir);
-  // Write raw data only — deterministic across parallel workflow runs
   fs.writeFileSync(
     path.join(dir, baseFilename),
     JSON.stringify(doc, null, 2),
     'utf8',
   );
-  // Write provenance sidecar — safe to overwrite (non-conflicting)
   const metaFilename = baseFilename.replace(/\.json$/, '.meta.json');
   fs.writeFileSync(
     path.join(dir, metaFilename),
@@ -250,7 +248,6 @@ export function persistDownloadedData(
       }
 
       let docId = resolveDocId(doc, i);
-      // Collision avoidance: append suffix if ID already used in this batch
       if (seenIds.has(docId)) {
         let suffix = 1;
         while (seenIds.has(`${docId}-${suffix}`)) suffix++;
@@ -259,7 +256,6 @@ export function persistDownloadedData(
       seenIds.add(docId);
       const filename = `${docId}.json`;
 
-      // For date-stamped vote ballots, also persist under votes/{date}/
       if (docType === 'votes' && doc.datum) {
         const voteDate = typeof doc.datum === 'string'
           ? doc.datum.slice(0, 10)
@@ -365,11 +361,8 @@ export function persistMPs(
  * but removes slashes, null bytes, and dots-only sequences.
  */
 function sanitizePathSegment(segment: string): string {
-  // Remove path separators and null bytes
   let safe = segment.replace(/[/\\:\0]/g, '_');
-  // Collapse dots-only segments (e.g. "..", ".")
   if (/^\.+$/.test(safe)) safe = '_dots_';
-  // Remove characters that are unsafe in paths but preserve underscores
   safe = safe.replace(/[^a-zA-Z0-9_\-åäöÅÄÖ]/g, '_')
     .replace(/_+/g, '_')
     .replace(/^_|_$/g, '')
@@ -411,7 +404,6 @@ export function persistMCPResponse(
     'utf8',
   );
 
-  // Derive riksmöte: explicit param > call.params.rm > empty
   const resolvedRiksmote = riksmote
     ?? (typeof call.params.rm === 'string' ? call.params.rm : '');
 

@@ -114,23 +114,12 @@ const SENTENCE_END_ABBREV_SET = new Set(
  */
 export function isAbbreviationDot(text: string, dotIndex: number): boolean {
   if (dotIndex < 0 || dotIndex >= text.length || text[dotIndex] !== '.') return false;
-  // Walk back from the character before the dot to the nearest whitespace,
-  // allowing letters and internal dots (for e.g. / i.e. / U.S. etc.).
   let start = dotIndex - 1;
   while (start >= 0 && ABBREV_TOKEN_CHAR_RE.test(text[start]!)) start -= 1;
   const rawToken = text.slice(start + 1, dotIndex);
   if (!rawToken) return false;
-  // Normalise: lower-case and strip all dots so `e.g` → `eg`, `d.v.s` → `dvs`.
-  // This handles abbreviations whose dotless form is already in the set (eg, ie, dvs).
   const normalised = rawToken.toLowerCase().replace(/\./g, '');
   if (SENTENCE_END_ABBREV_SET.has(normalised)) return true;
-  // For compound abbreviations with internal dots where the dotless form is
-  // not in the set (e.g. `bl.a.` → dotless `bla` is not present, but `bl`
-  // is), check the **first** dot-split component only. Limiting to the
-  // first component avoids false positives where an unrecognised prefix is
-  // followed by a known abbreviation (`example.al.` would incorrectly
-  // match if we checked all components, but it won't match first-component
-  // `example`).
   if (rawToken.includes('.')) {
     const firstComponent = rawToken.toLowerCase().split('.')[0];
     if (firstComponent && SENTENCE_END_ABBREV_SET.has(firstComponent)) return true;
@@ -187,32 +176,20 @@ export function truncateToSentenceBoundary(
   if (normalised.length === 0) return '';
   if (normalised.length <= hardMax) return normalised;
 
-  // Find every sentence-end position in the prefix within hardMax,
-  // **excluding** dots that are part of common abbreviations
-  // (`prop.`, `art.`, `Mr.`, …) — those would otherwise cut the
-  // description mid-sentence. See {@link isAbbreviationDot}.
   const window = normalised.slice(0, hardMax + 1);
   SENTENCE_END_RE.lastIndex = 0;
   const ends: number[] = [];
   let m: RegExpExecArray | null;
   while ((m = SENTENCE_END_RE.exec(window)) !== null) {
-    // Skip abbreviation dots so `prop.` / `art.` / `Mr.` don't terminate
-    // a sentence. `m[0]` is one of `.!?…。।`; only `.` triggers the guard.
     if (m[0] === '.' && isAbbreviationDot(window, m.index)) continue;
     ends.push(m.index + m[0].length);
   }
 
-  // Prefer the last sentence end that is ≥ softMin and ≤ hardMax.
   for (let i = ends.length - 1; i >= 0; i -= 1) {
     const end = ends[i]!;
     if (end >= softMin && end <= hardMax) return normalised.slice(0, end).trim();
   }
 
-  // No sentence end in window — fall back to last word boundary
-  // before hardMax, appending a true Unicode ellipsis so the cut is
-  // intentional rather than mid-word. The `trim()` on the sliced prefix
-  // followed by the explicit `'…'` guarantees a non-empty result even
-  // when the input is a pathological single-token string.
   const sliced = normalised.slice(0, hardMax);
   const lastSpace = sliced.lastIndexOf(' ');
   if (lastSpace >= softMin) return sliced.slice(0, lastSpace).trim() + '…';
@@ -230,22 +207,16 @@ export function truncateToSentenceBoundary(
  */
 export function readBlufParagraph(markdown: string): string | null {
   const body = cleanArtifactBody(markdown);
-  // Match `## BLUF`, `## 🎯 BLUF`, `### BLUF` — any heading containing
-  // the token `BLUF` as a standalone word. Case-insensitive. Consume
-  // the heading line and any immediately-following blank line.
   const blufMatch = body.match(/^#{2,6}\s+(?:[^\n]*?\s)?BLUF\b[^\n]*\n+/im);
   if (!blufMatch || blufMatch.index === undefined) return null;
   const after = body.slice(blufMatch.index + blufMatch[0].length);
-  // Take paragraph-by-paragraph, skip non-prose, stop at first match.
   const paragraphs = after.split(/\n\n+/).map((p) => p.trim()).filter(Boolean);
   for (const p of paragraphs) {
-    if (/^#+\s/.test(p)) break;                   // hit next heading — give up
-    if (/^<!--/.test(p)) continue;
+    if (/^#+\s/.test(p)) break;                       if (/^<!--/.test(p)) continue;
     if (/^\|/.test(p)) continue;
     if (/^```/.test(p)) continue;
     if (/^[>*]\s/.test(p)) continue;
-    if (/^[-*_]{3,}\s*$/.test(p)) continue;        // skip thematic breaks (---, ***, ___)
-    const fragments = p.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
+    if (/^[-*_]{3,}\s*$/.test(p)) continue;            const fragments = p.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
     if (fragments.length > 0 && fragments.every((f) => ADMIN_FIELD_RE.test(f.trim()))) continue;
     return stripBlufLabel(markdownInlineToText(p));
   }
@@ -276,14 +247,7 @@ export function readFirstParagraph(markdown: string): string | null {
   const body = cleanArtifactBody(markdown);
   const lines = body.split(/\n\n/).map((p) => p.trim()).filter(Boolean);
   for (const p of lines) {
-    if (/^#+\s/.test(p)) continue;               // skip headings
-    if (/^<!--/.test(p)) continue;               // skip HTML comments
-    if (/^\|/.test(p)) continue;                 // skip tables
-    if (/^```/.test(p)) continue;                // skip code fences
-    if (/^[>*]\s/.test(p)) continue;             // skip blockquotes / bullet-only lines
-    if (/^[-*_]{3,}\s*$/.test(p)) continue;      // skip thematic breaks (---, ***, ___)
-    // Structural-only delimiter (see ADMIN_FRAGMENT_SPLITTER JSDoc).
-    const fragments = p.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
+    if (/^#+\s/.test(p)) continue;                   if (/^<!--/.test(p)) continue;                   if (/^\|/.test(p)) continue;                     if (/^```/.test(p)) continue;                    if (/^[>*]\s/.test(p)) continue;                 if (/^[-*_]{3,}\s*$/.test(p)) continue;          const fragments = p.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
     if (fragments.length > 0 && fragments.every((f) => ADMIN_FIELD_RE.test(f.trim()))) continue;
     return stripBlufLabel(markdownInlineToText(p));
   }

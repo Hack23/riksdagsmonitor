@@ -80,8 +80,6 @@ export function generatePoliticalIntelligenceHtml(lang: Language): string {
   const recentDaysHtml = recentDays.map((d) => renderDailyDay(d, t, lang)).join('\n');
   const olderDaysHtml = olderDays.map((d) => renderDailyDay(d, t, lang)).join('\n');
 
-  // Latest analysis date — used as `dateModified` for SEO/JSON-LD; falls back
-  // to today when no daily artifacts have been generated yet.
   const latestDate = days[0]?.date ?? new Date().toISOString().slice(0, 10);
   const buildIso = new Date().toISOString();
 
@@ -125,10 +123,6 @@ export function generatePoliticalIntelligenceHtml(lang: Language): string {
     })),
   } : null;
 
-  // Methodology + template ItemLists — round-7 SEO uplift. The
-  // `CollectionPage.hasPart` already references the directories, but
-  // crawlers reward an explicit `ItemList` of the individual catalogued
-  // entries (one ListItem per methodology / template).
   const methodologiesItemList = methodologies.length > 0 ? {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -187,17 +181,11 @@ export function generatePoliticalIntelligenceHtml(lang: Language): string {
   if (methodologiesItemList) jsonLd.push(methodologiesItemList);
   if (templatesItemList) jsonLd.push(templatesItemList);
 
-  // Localised keyword aggregation (round-7 SEO) — extends the
-  // `t.metaKeywords` baseline with deduplicated methodology + template
-  // titles so each per-language page exposes section-specific
-  // long-tail vocabulary instead of an English-leaning fallback.
   const keywordSet = new Set<string>(
     t.metaKeywords.split(',').map((s) => s.trim()).filter(Boolean),
   );
   for (const m of methodologies) keywordSet.add(m.title);
   for (const tpl of templates) keywordSet.add(tpl.title);
-  // Cap aggregated keywords to ~30 unique entries (Bing flags >50 as
-  // stuffing); preserve insertion order for stable test snapshots.
   const aggregatedKeywords = Array.from(keywordSet).slice(0, 30).join(', ');
 
   const faqItems = getFaqItems('politicalIntelligence', lang);

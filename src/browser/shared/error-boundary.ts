@@ -50,47 +50,33 @@ export async function renderWithFallback(
   fallbackMessage = 'Data temporarily unavailable',
   options: RenderWithFallbackOptions = {},
 ): Promise<void> {
-  // Snapshot original markup so retry attempts can restore pre-existing DOM
-  // elements (e.g. <canvas> elements) that renderFn depends on.
-  // Note: restore uses innerHTML, so child element references held by callers
-  // are not preserved across retries — they will point to recreated nodes.
   const originalHTML = container.innerHTML;
   let inFlight = false;
   let isFirstAttempt = true;
 
   const attempt = async (): Promise<void> => {
     if (inFlight) {
-      // Prevent overlapping attempts that could cause race conditions.
       return;
     }
 
     inFlight = true;
 
-    // On retry, restore the original markup so any required child elements
-    // (e.g. <canvas> targets) are present for the re-render. The first
-    // attempt skips this to preserve existing DOM element references held
-    // by the caller.
     if (!isFirstAttempt) {
       container.innerHTML = originalHTML;
     }
     isFirstAttempt = false;
 
-    // Append a dedicated loading overlay so the skeleton stays visible while
-    // the async render is in progress without destroying required children.
     const loadingOverlay = document.createElement('div');
     loadingOverlay.setAttribute('data-error-boundary-loading', 'true');
     loadingOverlay.setAttribute('aria-busy', 'true');
     loadingOverlay.className = 'error-boundary-loading-overlay';
 
-    // Ensure the container provides a positioning context for the overlay.
-    // Capture the prior inline value so it can be restored in the finally block.
     const priorInlinePosition = container.style.position;
     const currentPosition = getComputedStyle(container).position;
     if (currentPosition === '' || currentPosition === 'static') {
       container.style.position = 'relative';
     }
 
-    // Style the overlay to cover the container without affecting layout.
     loadingOverlay.style.position = 'absolute';
     loadingOverlay.style.top = '0';
     loadingOverlay.style.right = '0';
@@ -111,12 +97,9 @@ export async function renderWithFallback(
       logger.error('[ErrorBoundary] Render failed:', err);
       renderErrorFallback(container, fallbackMessage, attempt, options.retryLabel);
     } finally {
-      // Remove the overlay once the attempt finishes (success or failure).
       if (loadingOverlay.parentNode === container) {
         container.removeChild(loadingOverlay);
       }
-      // Restore the container's original inline position value to avoid
-      // permanently altering its stacking context after the overlay is gone.
       container.style.position = priorInlinePosition;
       inFlight = false;
     }

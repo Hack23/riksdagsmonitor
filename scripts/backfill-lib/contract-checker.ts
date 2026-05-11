@@ -201,7 +201,6 @@ export function checkAgainstContract(
   const title = meta.title ?? '';
   const description = meta.description ?? '';
 
-  // --- Title checks -------------------------------------------------------
   const titleLen = visualLength(title.trim());
   if (titleLen === 0) {
     violations.push({
@@ -259,7 +258,6 @@ export function checkAgainstContract(
     }
   }
 
-  // --- Description checks -------------------------------------------------
   const descTrimmed = description.trim();
   const descLen = visualLength(descTrimmed);
 

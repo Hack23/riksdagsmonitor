@@ -223,7 +223,6 @@ export async function callMcpCalendarEvents(
     clearTimeout(tid);
   }
 
-  // Detect HTML error page masquerading as a 200 OK response.
   if (isHtmlErrorResponse(responseText)) {
     throw new CalendarMcpError(
       'MCP returned HTML instead of JSON',
@@ -232,7 +231,6 @@ export async function callMcpCalendarEvents(
     );
   }
 
-  // Parse JSON-RPC response.
   let rpc: JsonRpcResponse;
   try {
     rpc = JSON.parse(responseText) as JsonRpcResponse;
@@ -250,7 +248,6 @@ export async function callMcpCalendarEvents(
 
   const result = rpc.result ?? {};
 
-  // Handle the content-envelope pattern used by the MCP server.
   const content = result['content'] as Array<{ text?: string }> | undefined;
   if (Array.isArray(content) && content[0]?.text) {
     let inner: Record<string, unknown>;
@@ -318,7 +315,6 @@ export function normalizeMcpCalendarEvent(raw: unknown): CalendarEvent {
   const summary =
     String(r['summary'] ?? r['SUMMARY'] ?? r['titel'] ?? r['title'] ?? '').trim();
 
-  // Collect document references from various possible fields.
   const docRefs: string[] = [];
   for (const key of ['dok_id', 'dokid', 'url', 'href', 'beteckning', 'doc_id']) {
     const val = r[key];
@@ -377,7 +373,6 @@ export function normalizeMcpCalendarEvent(raw: unknown): CalendarEvent {
 export function parseRiksdagKalendariumHtml(html: string): CalendarEvent[] {
   const events: CalendarEvent[] = [];
 
-  // Extract <article> blocks, then retain only calendar-item articles (Pattern A).
   const articleRe = /<article\b([^>]*)>([\s\S]*?)<\/article>/gi;
   for (const articleMatch of html.matchAll(articleRe)) {
     const attrs = articleMatch[1] ?? '';
@@ -387,7 +382,6 @@ export function parseRiksdagKalendariumHtml(html: string): CalendarEvent[] {
     if (event) events.push(event);
   }
 
-  // If no articles found, try <li> blocks (Pattern B).
   if (events.length === 0) {
     const liRe = /<li\b([^>]*class=(["'])[^"']*calendar[^"']*\2[^>]*)>([\s\S]*?)<\/li>/gi;
     for (const liMatch of html.matchAll(liRe)) {
@@ -441,7 +435,6 @@ export function parseCalendarListItem(attrs: string, body: string): CalendarEven
   const dtstart = extractDatetime(body);
   if (!dtstart) return null;
 
-  // organ can come from a dedicated span or a data attribute.
   const org =
     extractDataAttr(attrs, 'organ') ??
     extractSpanText(body, 'organ') ??
@@ -513,12 +506,10 @@ function extractSpanText(html: string, name: string): string | null {
  * reference links from an event block.
  */
 function extractHeadingAndLinks(html: string): { summary: string; docRefs: string[] } {
-  // Try heading first.
   const headingRe = /<h[1-6]\b[^>]*>([\s\S]*?)<\/h[1-6]>/i;
   const headingMatch = html.match(headingRe);
   const summary = headingMatch ? (headingMatch[1] ?? '') : extractFirstAnchorText(html);
 
-  // Collect document reference links (/sv/dokument-och-lagar/… or /dokument/…).
   const docRefs: string[] = [];
   const hrefRe = /<a\b[^>]*\bhref=(["'])([^"']+)\1[^>]*>/gi;
   for (const m of html.matchAll(hrefRe)) {
@@ -653,7 +644,6 @@ export async function fetchCalendarWithFallback(
 
   const resolved = { mcpUrl, webBaseUrl, timeout, fetchFn, sleepFn };
 
-  // ── MCP primary path (with retry) ──────────────────────────────────────
   let primaryError: string | undefined;
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
     if (attempt > 0) {
@@ -685,12 +675,10 @@ export async function fetchCalendarWithFallback(
       primaryError = msg;
       const kind = err instanceof CalendarMcpError ? err.kind : 'unknown';
       console.warn(`  ⚠️  [fetch-calendar] MCP attempt ${attempt + 1} failed (${kind}): ${msg.slice(0, 120)}`);
-      // HTML error is definitive — no point retrying the same endpoint.
       if (err instanceof CalendarMcpError && err.kind === 'html') break;
     }
   }
 
-  // ── Web fallback path ──────────────────────────────────────────────────
   console.error(`  🔄 [fetch-calendar] Falling back to riksdagen.se/sv/kalendarium/…`);
   let fallbackError: string | undefined;
   try {
@@ -713,7 +701,6 @@ export async function fetchCalendarWithFallback(
     console.error(`  ❌ [fetch-calendar] Web fallback also failed: ${fallbackError}`);
   }
 
-  // ── Both paths exhausted ───────────────────────────────────────────────
   return {
     events: [],
     manifest: {
@@ -830,7 +817,6 @@ export function parseCalendarArgs(argv: readonly string[]): {
   }
   const ISO_DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
   const from = flags.get('from') ?? '';
-  // Accept both `--to` and `--tom` (Swedish alias used in repo docs).
   const to = flags.get('to') ?? flags.get('tom') ?? '';
   if (!ISO_DATE_RE.test(from)) {
     throw new CliArgsError(`--from must be an ISO 8601 date (YYYY-MM-DD), got: "${from}"`);
@@ -847,13 +833,11 @@ async function main(): Promise<void> {
 
   const result = await fetchCalendarWithFallback(args.from, args.to);
 
-  // Manifest is human-readable status info → stderr, not stdout.
   console.error(formatManifestMarkdown(result.manifest));
 
   if (args.persist) {
     persistCalendarJson(args.from, result);
   } else {
-    // Print JSON to stdout for piping / agentic workflow consumption.
     process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);
   }
 
@@ -866,7 +850,6 @@ async function main(): Promise<void> {
 if (path.resolve(fileURLToPath(import.meta.url)) === path.resolve(process.argv[1] ?? '')) {
   main().catch((err: unknown) => {
     console.error('❌ [fetch-calendar] Fatal error:', err instanceof Error ? err.message : err);
-    // Bad CLI arguments → exit code 2 (per module header & repo convention).
     process.exit(err instanceof CliArgsError ? 2 : 1);
   });
 }

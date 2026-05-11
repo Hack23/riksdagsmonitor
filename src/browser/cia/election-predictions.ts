@@ -104,7 +104,6 @@ export class Election2026Predictions {
       const seatsDiv = document.createElement('div');
       seatsDiv.className = 'prediction-seats';
 
-      // Current seats
       const currentDiv = document.createElement('div');
       currentDiv.className = 'seats-current';
       const currentLabel = document.createElement('div');
@@ -115,12 +114,10 @@ export class Election2026Predictions {
       currentDiv.appendChild(currentLabel);
       currentDiv.appendChild(currentValue);
 
-      // Arrow
       const arrowDiv = document.createElement('div');
       arrowDiv.className = 'seats-arrow';
       arrowDiv.textContent = '→';
 
-      // Predicted seats
       const predictedDiv = document.createElement('div');
       predictedDiv.className = 'seats-predicted';
       const predictedLabel = document.createElement('div');
@@ -135,12 +132,10 @@ export class Election2026Predictions {
       seatsDiv.appendChild(arrowDiv);
       seatsDiv.appendChild(predictedDiv);
 
-      // Change
       const changeDiv = document.createElement('div');
       changeDiv.className = `seats-change ${changeClass}`;
       changeDiv.textContent = `${changeSymbol}${party.change} seats (${party.voteShare}%)`;
 
-      // Confidence interval with defensive check
       const confidenceDiv = document.createElement('div');
       confidenceDiv.className = 'confidence-interval';
       let ciText = '95% CI: N/A';

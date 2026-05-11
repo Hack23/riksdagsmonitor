@@ -258,28 +258,21 @@ function replaceHero(html: string, lang: Language): string {
   const cs = chromeStrings(lang);
   let next = html;
 
-  // 1. Theme toggle button — replace whole element so aria/title/icons
-  //    stay in lock-step with chrome-i18n.ts. Existing pages may carry
-  //    either the legacy single-icon button or the new dual-icon button.
   next = next.replace(
     /<button\s+id="theme-toggle"[\s\S]*?<\/button>/i,
     themeToggleButton(cs),
   );
 
-  // 2. Hero h1 subtitle — regenerate from `cs.heroSubtitle`.
   next = next.replace(
     /(<span\s+class="h1-subtitle">)[\s\S]*?(<\/span>)/i,
     `$1${cs.heroSubtitle}$2`,
   );
 
-  // 3. Hero tagline.
   next = next.replace(
     /(<p\s+class="tagline">)[\s\S]*?(<\/p>)/i,
     `$1${cs.heroTagline}$2`,
   );
 
-  // 4. Election countdown block — preserve `id="countdown"` so the
-  //    countdown JS keeps wiring up.
   next = next.replace(
     /<div\s+class="election-countdown">[\s\S]*?<\/div>/i,
     `<div class="election-countdown">
@@ -288,11 +281,6 @@ function replaceHero(html: string, lang: Language): string {
 </div>`,
   );
 
-  // 5. Hero-stats labels by `data-stat-id`. We rewrite the visible
-  //    `.label` text with localized copy *and* prefix the matching icon
-  //    glyph (👥 🗳️ 📄 📜 🏛️) so the stats row reads as iconography
-  //    + number + label across all 14 languages without per-page edits.
-  //    Numbers stay sourced from CIA stats.
   const STAT_LABELS: Record<string, { label: string; icon: string }> = {
     'stat-historical-persons':    { label: cs.heroStatPoliticians, icon: '👥' },
     'stat-against-proposals':     { label: cs.heroStatBallots,     icon: '🗳️' },
@@ -302,9 +290,6 @@ function replaceHero(html: string, lang: Language): string {
   };
   for (const [statId, { label, icon }] of Object.entries(STAT_LABELS)) {
     const escaped = statId.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    // Locate the number span, then replace the entire label span that follows.
-    // We match from `<span class="label">` through `</div>` and rebuild the
-    // label cleanly, which avoids fragile nested-span regex gymnastics.
     const re = new RegExp(
       `(<span\\s+class="number"\\s+data-stat-id="${escaped}">[\\s\\S]*?<\\/span>\\s*)[\\s\\S]*?(<\\/div>)`,
       'i',

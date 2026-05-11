@@ -219,11 +219,6 @@ function processFile(file: string, stats: SweepStats): void {
   let html = original;
   let modified = false;
 
-  // Step 0: strip `integrity="…"` and `crossorigin[="…"]` from any
-  // `<script>` tag pointing at a first-party JS path. SRI on first-party
-  // JS is no longer required (deliveries are trusted via S3/CloudFront),
-  // and stale SRI hashes embedded in committed HTML would block legitimate
-  // updates. Done first so the subsequent steps see clean tags.
   html = html.replace(FIRST_PARTY_JS_SCRIPT_TAG_RE, (match, attrs) => {
     let cleaned: string = attrs;
     let hadSri = false;
@@ -246,12 +241,6 @@ function processFile(file: string, stats: SweepStats): void {
   });
   FIRST_PARTY_JS_SCRIPT_TAG_RE.lastIndex = 0;
 
-  // Step 1: replace the external anti-flash tag with the inline bootstrap.
-  // This is independent of the chrome injector — even pages that already
-  // have the modern inject block can still be carrying the external
-  // theme-init tag (the inject block does NOT include theme-init because
-  // the inline anti-flash needs to run before first paint, which the
-  // dynamic injector cannot guarantee).
   if (LEGACY_THEME_INIT_RE.test(html)) {
     LEGACY_THEME_INIT_RE.lastIndex = 0;
     html = html.replace(LEGACY_THEME_INIT_RE, INLINE_THEME_INIT);
@@ -260,9 +249,6 @@ function processFile(file: string, stats: SweepStats): void {
   }
   LEGACY_THEME_INIT_RE.lastIndex = 0;
 
-  // Step 2: replace the legacy `<script src="…/(theme-toggle|back-to-top).js">`
-  // tag pair with the modern dynamic-inject footer block — but only if
-  // the page does not already contain the inject block.
   if (!html.includes(INJECT_MARKER) && LEGACY_TAG_RE.test(html)) {
     LEGACY_TAG_RE.lastIndex = 0;
     html = html.replace(LEGACY_TAG_RE, '');

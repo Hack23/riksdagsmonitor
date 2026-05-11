@@ -29,13 +29,11 @@ export async function loadTop10Influential(loadCSV: LoadCSV): Promise<Top10Influ
     loadCSV(CSV_SOURCES.riskSummary.local)
   ]);
 
-  // Build risk lookup by person_id
   const riskMap: Record<string, CSVRow> = {};
   riskSummary.forEach(r => {
     riskMap[r.person_id as string] = r;
   });
 
-  // Sort by network_connections descending, take top 10
   const sorted = [...influence]
     .filter(mp => (mp.network_connections as number) > 0)
     .sort((a, b) => ((b.network_connections as number) || 0) - ((a.network_connections as number) || 0))

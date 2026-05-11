@@ -29,9 +29,6 @@ export function renderErrorFallback(
   container.innerHTML = '';
 
   const card = document.createElement('div');
-  // Include 'error-message' and 'dashboard-error' so external consumers
-  // (Cypress E2E, screen readers, ad-hoc CSS) can rely on a stable class
-  // contract for fallback error cards across all dashboards.
   card.className = 'fallback-error-card error-message dashboard-error';
   card.setAttribute('role', 'alert');
   card.setAttribute('aria-live', 'assertive');

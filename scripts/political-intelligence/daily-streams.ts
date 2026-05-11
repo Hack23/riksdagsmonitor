@@ -89,8 +89,7 @@ export function collectDailyDays(): DailyDay[] {
   const dateEntries = fs.readdirSync(DAILY_DIR, { withFileTypes: true })
     .filter((e) => e.isDirectory() && /^\d{4}-\d{2}-\d{2}$/.test(e.name))
     .map((e) => e.name)
-    .sort((a, b) => b.localeCompare(a)); // newest first
-
+    .sort((a, b) => b.localeCompare(a)); 
   for (const date of dateEntries) {
     const dateDir = path.join(DAILY_DIR, date);
     const streamNames = fs.readdirSync(dateDir, { withFileTypes: true })

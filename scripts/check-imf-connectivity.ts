@@ -154,8 +154,6 @@ export function vintageAgeMonths(vintage: string, now: Date = new Date()): numbe
   if (!parsed) return Number.POSITIVE_INFINITY;
   const refMonths = now.getUTCFullYear() * 12 + (now.getUTCMonth() + 1);
   const vintageMonths = parsed.year * 12 + parsed.month;
-  // Future-dated vintages clamp to 0 (e.g. an October release viewed in
-  // August counts as fresh, not negative).
   return Math.max(0, refMonths - vintageMonths);
 }
 
@@ -306,7 +304,6 @@ async function withTimeout<T>(
 export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
   const probes: ImfProbeResult[] = [];
 
-  // Probe 1: WEO via Datamapper
   {
     const start = Date.now();
     const result = await withTimeout(
@@ -333,9 +330,6 @@ export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
     }
   }
 
-  // Probe 2: FM via Datamapper (GGXWDG_NGDP = gross government debt % GDP).
-  // Use this indicator because `GGXONLB_NGDP` is not exposed for SWE on
-  // the public Datamapper surface and would create a false outage.
   {
     const start = Date.now();
     const result = await withTimeout(
@@ -362,18 +356,6 @@ export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
     }
   }
 
-  // Probe 3: SDMX 3.0 connectivity — CPI data endpoint.
-  // Uses the primary data path (IMF.STA,CPI,5.0.0). Every SDMX 3.0/2.1
-  // `/data/...` endpoint requires an `Ocp-Apim-Subscription-Key` header
-  // (Azure APIM gateway, since ~2026-05). When that key is absent the
-  // gateway returns 401/403, which `imf-client.ts` re-labels as
-  // "subscription key missing or invalid". We further specialise that
-  // surface here to a deterministic `sdmx-subscription-key-not-configured`
-  // reason string when the local environment carries no key — operators
-  // can then distinguish "we never set the secret" from "key revoked"
-  // from "IMF outage". WEO/FM stay healthy via the unauthenticated
-  // Datamapper transport in either case so the run only becomes
-  // `degraded`, never `unavailable`, on a missing key alone.
   {
     const start = Date.now();
     const keyConfigured = Boolean(client.sdmxSubscriptionKey);
@@ -383,14 +365,6 @@ export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
     );
     if (isProbeErr(result)) {
       const rawMessage = result.error.message;
-      // Only override the error when the failure looks auth-related.
-      // The IMF Azure APIM gateway returns:
-      //   - 401 / 403 when an invalid key is sent
-      //   - 404 when no key is sent at all (gateway masks the data path
-      //     completely, so the response looks like a missing dataflow)
-      //   - imf-client.ts re-labels both 401/403 with our diagnostic suffix
-      // Network errors, timeouts, DNS failures, and 5xx outages keep their
-      // original message so the operator sees the real cause.
       const looksAuthRelated =
         /\b(401|403|404)\b/.test(rawMessage) ||
         /subscription key missing or invalid/i.test(rawMessage);
@@ -406,19 +380,6 @@ export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
       });
     } else {
       const raw = result.value;
-      // Require both a JSON envelope AND at least one series. The IMF
-      // SDMX 3.0 gateway happily returns 200 with an empty `dataSets[0]
-      // .series` map when the dataflow version, country code, or
-      // indicator no longer exists — that "soft-fail" used to mask
-      // outdated probe paths (e.g. the legacy `M.SE.PCPI_IX` key). We
-      // now treat zero-series responses as `degraded` so the operator
-      // sees the drift instead of a misleading green tick.
-      //
-      // Two response shapes are accepted:
-      //   - SDMX-JSON 2.0 envelope: `{ data: { dataSets: [...] } }`
-      //     (live IMF SDMX 3.0 endpoint)
-      //   - Bare envelope: `{ dataSets: [...] }`
-      //     (some test stubs and any future shape variation)
       const isObj = raw !== null && typeof raw === 'object';
       let seriesCount = 0;
       if (isObj) {
@@ -455,9 +416,6 @@ export function buildReport(
 ): ImfConnectivityReport {
   const ageMonths = vintageAgeMonths(vintage, now);
   const stale = ageMonths > STALE_VINTAGE_MAX_MONTHS;
-  // WEO and Fiscal Monitor are the critical pre-flight gates for article
-  // economic context. SDMX is broader catalogue coverage; if it fails while
-  // Datamapper is healthy, the run is degraded but not IMF-unavailable.
   const criticalOk = ['WEO', 'FM'].every((dataflow) =>
     probes.some((p) => p.dataflow === dataflow && p.ok),
   );
@@ -622,7 +580,6 @@ async function mainCli(): Promise<void> {
 // by the Vitest test runner).
 const isDirectInvocation = (() => {
   if (typeof process === 'undefined' || !process.argv[1]) return false;
-  // tsx rewrites argv[1] to the .ts file path; compare by basename.
   const entry = process.argv[1];
   return entry.endsWith('check-imf-connectivity.ts') || entry.endsWith('check-imf-connectivity.js');
 })();

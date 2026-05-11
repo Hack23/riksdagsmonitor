@@ -570,13 +570,6 @@ export const READER_VALUE_I18N: Record<string, LangMap> = {
  * default).
  */
 export function readerValueFor(file: string, lang: Language): string | undefined {
-  // Lookup precedence:
-  //  1. Exact-path entry (e.g. `subfolder/foo.md`) — wins so callers can
-  //     register a path-specific override when two artifacts share a
-  //     basename in different directories.
-  //  2. Basename entry (the last path segment) — the common case for
-  //     per-document analyses and nested artifact paths that should
-  //     inherit the generic per-artifact description.
   const baseName = file.includes('/') ? file.slice(file.lastIndexOf('/') + 1) : file;
   return READER_VALUE_I18N[file]?.[lang] ?? READER_VALUE_I18N[baseName]?.[lang];
 }

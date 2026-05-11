@@ -89,10 +89,8 @@ const ARTICLE_TYPE_LABELS_FALLBACK: Record<string, string> = {
  * Build a label lookup from the registry + legacy fallbacks.
  */
 function getArticleTypeLabel(type: string): string {
-  // Try registry first
   const entry = getById(type) ?? getBySubfolder(type);
   if (entry) return entry.label;
-  // Fallback for types not in registry
   return ARTICLE_TYPE_LABELS_FALLBACK[type] ?? 'Political intelligence';
 }
 
@@ -108,7 +106,6 @@ function normalizeArticleType(value: string): string {
 function inferArticleType(canonicalPath: string, title: string): { type: string; label: string } {
   const source = `${canonicalPath} ${title}`.toLowerCase();
 
-  // Try all registered types from the registry first
   const registry = loadArticleTypesRegistry();
   for (const entry of registry.types) {
     if (source.includes(entry.subfolder.toLowerCase()) || source.includes(entry.id.toLowerCase())) {
@@ -116,7 +113,6 @@ function inferArticleType(canonicalPath: string, title: string): { type: string;
     }
   }
 
-  // Fallback: legacy candidates not (yet) in the registry
   const legacyCandidates = [
     'committeeReports',
     'deep-inspection',
@@ -149,12 +145,10 @@ function inferArticleType(canonicalPath: string, title: string): { type: string;
  * Exported for testability.
  */
 export function stripBodyDuplicateSections(body: string): string {
-  // Strip "## Reader Intelligence Guide" section (from heading to next ## or end)
   let cleaned = body.replace(
     /^##\s+Reader Intelligence Guide[^\n]*\n(?:(?!^## )[^\n]*\n?)*/gim,
     '',
   );
-  // Strip "## Article Sources" section (from heading to next ## or end)
   cleaned = cleaned.replace(
     /^##\s+Article Sources[^\n]*\n(?:(?!^## )[^\n]*\n?)*/gim,
     '',
@@ -188,8 +182,6 @@ export function stripBodyDuplicateSections(body: string): string {
  * Exported for testability.
  */
 export function splitBodyAtSecondH2(bodyHtml: string): { lead: string; rest: string } {
-  // Match `<h2` as a tag opener (followed by space, `>`, or attributes).
-  // Find all positions, then pick the second one if available.
   const h2OpenRe = /<h2[\s>]/gi;
   const positions: number[] = [];
   let match: RegExpExecArray | null;
@@ -241,22 +233,15 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
   const modifiedIso = new Date().toISOString();
   const articleType = inferArticleType(input.canonicalPath, title);
 
-  // Strip the markdown-based Reader Intelligence Guide and Article Sources
-  // from the body — the chrome-level localized HTML versions are emitted
-  // below and are properly translated for all 14 languages.
   const cleanedContent = stripBodyDuplicateSections(parsed.content);
 
   const bodyHtml = await renderMarkdownToHtml(cleanedContent);
 
-  // Reading-order optimisation: split the body so the rendered page
-  // surfaces Executive Brief → Reader Intelligence Guide → rest →
-  // Sources. See {@link splitBodyAtSecondH2}.
   const { lead: leadHtml, rest: restHtml } = splitBodyAtSecondH2(bodyHtml);
 
   const articleUrl = `${BASE_URL}/${input.canonicalPath}`;
   const langMeta = LANGUAGE_META[input.lang];
 
-  // NewsArticle JSON-LD with isBasedOn provenance
   const newsArticleLd = buildNewsArticleLd({
     headline: title,
     description,
@@ -272,7 +257,6 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
     })),
   });
 
-  // BreadcrumbList JSON-LD for hierarchical navigation
   const breadcrumbName = title.length > BREADCRUMB_TITLE_MAX_LENGTH
     ? title.substring(0, BREADCRUMB_TITLE_MAX_LENGTH - BREADCRUMB_ELLIPSIS_OVERHEAD) + '…'
     : title;
@@ -282,8 +266,6 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
     { name: breadcrumbName },
   ]);
 
-  // SpeakableSpecification — voice-assistant TTS regions. Selectors must
-  // match the class names used in the article HTML template below.
   const speakableLd = buildSpeakableWebPageLd(
     articleUrl,
     langMeta.hreflang,
@@ -300,22 +282,10 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
     modifiedIso,
     jsonLd: [newsArticleLd, breadcrumbLd, speakableLd],
     section: 'Political Intelligence',
-    // All generated articles live under news/… so they get the dedicated
-    // "Riksdagsmonitor News" branded banner image. The .news-article
-    // body class triggers article-specific banner styling
-    // (object-fit: contain so the banner remains fully visible on every
-    // breakpoint, and a softer light-mode treatment) — see styles.css
-    // §"news-article banner & light-mode parity" near the end of the file.
     heroBannerImage: 'images/riksdagsmonitornews-banner.webp',
     bodyClass: 'news-article',
   });
 
-  // Build the three reusable side-block sections. Layout contract:
-  //   header → lead → reader-navigation → rest → analysis-artifacts → methods
-  // The analysis-artifacts reference renders at the very end with the
-  // methods reference immediately after — this is the user-visible
-  // "reference of analysis artifacts at the end with methods after"
-  // contract enforced by tests.
   const artifacts = input.artifactsUsed ?? [];
   const readerNavigationHtml = renderReaderNavigation({
     lang: input.lang,

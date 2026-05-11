@@ -361,17 +361,14 @@ function parseSwotEntries(sectionText: string): AnalysisSwotEntry[] {
     const text = block.replace(/^\s*(?:[-*]|\d+\.)\s+/, '').trim();
     if (!text || text.startsWith('#')) continue;
 
-    // Detect confidence: HIGH, MEDIUM, LOW in square brackets or inline
     const confMatch = /\[(HIGH|MEDIUM|LOW)\]/i.exec(text);
     const confidence = confMatch ? toConfidenceLabel(confMatch[1]!) : 'MEDIUM';
 
-    // Detect impact
     const impactMatch = /impact:\s*(high|medium|low)/i.exec(text);
     const impact = impactMatch
       ? (impactMatch[1]!.toLowerCase() as 'high' | 'medium' | 'low')
       : undefined;
 
-    // Detect source doc IDs (alphanumeric document ID patterns like H9011, H902A)
     const docIdMatches = text.match(DOC_ID_PATTERN) ?? [];
 
     entries.push({
@@ -396,16 +393,13 @@ export function parseClassificationResults(markdown: string): ClassificationResu
   const priority = toPriorityLevel(extractValue(markdown, 'Priority'));
   const confidence = toConfidenceLabel(extractValue(markdown, 'Confidence'));
 
-  // Extract document IDs mentioned in the text
   const documentIds = Array.from(new Set(markdown.match(DOC_ID_PATTERN) ?? []));
 
-  // Extract domains from bullet list in Domains or Policy Domains section
   const domainsSection = extractSection(markdown, 'Policy Domains') || extractSection(markdown, 'Domains');
   const domains = domainsSection
     ? extractBulletList(domainsSection)
     : extractBulletList(extractSection(markdown, 'Classification') || '');
 
-  // Summary: prefer explicit `## Summary` section, fallback to first non-heading paragraph
   const summarySection = extractSection(markdown, 'Summary');
   const summary =
     (summarySection && summarySection.trim()) ||
@@ -507,7 +501,6 @@ export function parseSignificanceScoring(markdown: string): SignificanceScoringR
   const urgency = toUrgencyLabel(extractValue(markdown, 'Urgency') || 'standard');
   const confidence = toConfidenceLabel(extractValue(markdown, 'Confidence'));
 
-  // Extract top documents from a list
   const topDocumentsSection = extractSection(markdown, 'Top Documents') || extractSection(markdown, 'Significant Documents');
   const topDocuments: Array<{ docId: string; score: number; reason: string }> = [];
   for (const line of topDocumentsSection.split('\n')) {
@@ -538,7 +531,6 @@ export function parseSynthesisSummary(markdown: string): SynthesisSummaryResult 
   const forwardSection = extractSection(markdown, 'Forward Indicators') || extractSection(markdown, 'What to Watch');
   const forwardIndicators = forwardSection ? extractBulletList(forwardSection) : [];
 
-  // Extract data freshness from Data Quality Notes section if present
   const freshnessMatch = /\*\*Data Freshness\*\*:\s*Documents sourced from \*\*(\d{4}-\d{2}-\d{2})\*\*/.exec(markdown);
   const dataFreshness = freshnessMatch?.[1] ?? null;
 
@@ -584,13 +576,8 @@ async function readAnalysisFile(date: string, filename: string, basePath?: strin
   const resolvedBase = basePath ?? ANALYSIS_BASE_PATH;
   const dateDir = join(resolvedBase, date);
 
-  // Prefer subdirectory files (AI-generated deep analysis) over root-level
-  // files (script-generated heuristic analysis). AI workflows write to
-  // article-type subfolders (e.g., propositions/, evening-analysis/) contain
-  // publication-quality analysis. Root-level files should only be used as fallback.
   try {
     const entries = await readdir(dateDir, { withFileTypes: true });
-    // Sort alphabetically for deterministic selection when multiple subdirs exist
     const sortedDirs = entries.filter(e => e.isDirectory()).sort((a, b) => a.name.localeCompare(b.name));
     for (const entry of sortedDirs) {
       const subPath = join(dateDir, entry.name, filename);
@@ -604,7 +591,6 @@ async function readAnalysisFile(date: string, filename: string, basePath?: strin
     // Date directory doesn't exist or can't be read
   }
 
-  // Fallback to root-level file (script-generated or legacy)
   const rootPath = join(resolvedBase, date, filename);
   try {
     return await readFile(rootPath, 'utf-8');
@@ -702,12 +688,9 @@ export async function findLatestAnalysisDate(maxDaysBack = 7, basePath?: string)
     const dateStr = d.toISOString().split('T')[0]!;
     const dirPath = join(resolvedBase, dateStr);
     if (existsSync(dirPath)) {
-      // Check root-level analysis files first
       const hasRootFile = Object.values(ANALYSIS_FILES).some(f => existsSync(join(dirPath, f)));
       if (hasRootFile) return dateStr;
 
-      // Check subdirectories (e.g., deep-inspection/, propositions/)
-      // Sort alphabetically for deterministic iteration order
       try {
         const entries = await readdir(dirPath, { withFileTypes: true });
         const sortedDirs = entries.filter(e => e.isDirectory()).sort((a, b) => a.name.localeCompare(b.name));
@@ -786,10 +769,6 @@ export function deriveArticleClassificationMeta(analysis: DailyAnalysis): {
  */
 export function isNonEmptyAnalysis(analysis: DailyAnalysis): boolean {
   if (!analysis.hasAnalysis) return false;
-  // When the synthesis-summary.md was not present, synthesis is null — that
-  // alone is not proof of empty analysis (other files may still be present).
-  // However, if synthesis exists and has no key themes / no narrative, the
-  // analysis is considered empty.
   if (analysis.synthesis === null) return analysis.hasAnalysis;
   const hasThemes = analysis.synthesis.keyThemes.length > 0;
   const hasNarrative = analysis.synthesis.narrativeDirection.length > 0;
@@ -814,14 +793,12 @@ export async function readLatestNonEmptyAnalysis(
   maxDaysBack = 5,
   basePath?: string,
 ): Promise<DailyAnalysis> {
-  // Guard against malformed date strings to prevent Date arithmetic errors.
   if (!DATE_FORMAT_RE.test(date)) {
     return readDailyAnalysis(date, basePath);
   }
   const primary = await readDailyAnalysis(date, basePath);
   if (isNonEmptyAnalysis(primary)) return primary;
 
-  // Lookback: try previous days
   for (let i = 1; i <= maxDaysBack; i++) {
     const d = new Date(`${date}T00:00:00Z`);
     d.setUTCDate(d.getUTCDate() - i);
@@ -833,6 +810,5 @@ export async function readLatestNonEmptyAnalysis(
     }
   }
 
-  // No non-empty analysis found within range — return the original
   return primary;
 }

@@ -188,22 +188,12 @@ function extractPerDocumentSections(article: string): Array<{ id: string; body: 
   const start = article.match(/^##\s+Per-document intelligence\s*$/m);
   if (!start || start.index === undefined) return [];
   const tail = article.slice(start.index + start[0].length);
-  // Stop at the next `## ` heading (next top-level section in the article).
   const stop = tail.search(/^##\s+\S/m);
   const region = stop === -1 ? tail : tail.slice(0, stop);
   const sections: Array<{ id: string; body: string }> = [];
 
-  // The aggregator emits one `### <dok_id>` per per-document analysis,
-  // where `<dok_id>` is a riksdagen identifier such as `HD12345` or
-  // `FiU17`. After in-body heading demotion (`### Document summary`,
-  // `### Classification`, …) every other `### …` heading inside the
-  // section body is *content*, not a new per-document boundary.
-  // We therefore split only on H3 headings whose text matches a
-  // dok_id-shaped token — everything between two such headings (or
-  // from the last one to end-of-region) is one section's body.
   const DOK_ID_HEADING = /^###\s+(H[A-Z0-9]{6,10}|[A-ZÅÄÖ]{1,4}\d{4,8})\s*$/m;
   let cursor = region;
-  // First pass — anchor to the first dok_id heading.
   let m = cursor.match(DOK_ID_HEADING);
   while (m && m.index !== undefined) {
     const id = m[1]!;
@@ -232,32 +222,11 @@ function extractPerDocumentSections(article: string): Array<{ id: string; body: 
  */
 export function countBlufEvidenceAnchors(bluf: string): number {
   const patterns: RegExp[] = [
-    // Riksdag dok_ids and committee betänkande codes — merged into one
-    // alternation so the engine counts each token exactly once:
-    //
-    //   Branch 1 (H-series): `H` + lookahead requiring ≥1 digit + 6–10
-    //   alphanumeric chars. Matches `HD03259`, `HC01SoU29`, `HD024100`.
-    //   The lookahead prevents ordinary words like "Hardened" (no digits)
-    //   or "Helsinki" (no digits) from matching.
-    //
-    //   Branch 2 (committee codes): two uppercase Riksdag-alphabet letters
-    //   + 1–8 digits. Matches `KU23`, `AU10`, `TU5`. Does NOT re-match
-    //   H-series tokens — the regex engine tries branch 1 first at any H;
-    //   if branch 1 succeeds (e.g. `HD03259`) it consumes the whole token
-    //   before the `g` flag advances, so branch 2 is never attempted there.
     /\b(?:H(?=[A-Za-z0-9]*[0-9])[A-Za-z0-9]{6,10}|[A-ZÅÄÖ]{2}\d{1,8})\b/g,
-    // Parliamentary doc references.
     /\b(?:Prop|Skr|Mot|Bet|Ds|SOU|Dir)\.\s*\d{4}\/\d{2}:\d+/gi,
-    // Riksrevisionen audit references — "RiR 2025:30".
     /\bRiR\s+\d{4}:\d+/gi,
-    // Vote IDs.
     /\bvotering(?:_id)?\b[^\n]*?\d/gi,
-    // Primary-source URLs (matches the full URL token so that each URL
-    // contributes exactly one anchor regardless of any embedded dok_id in
-    // the path segment — dok_id double-counting is acceptable because the
-    // URL is independently verifiable).
     /https?:\/\/(?:www\.)?(?:data\.riksdagen\.se|riksdagen\.se|regeringen\.se|scb\.se|imf\.org)[^\s)]*/gi,
-    // Markdown anchors to per-document / aggregator sections.
     /#rm-[a-z0-9-]+/g,
   ];
   let total = 0;
@@ -307,8 +276,7 @@ export function findUnclosedMermaidFences(body: string): readonly UnclosedMermai
   while (i < lines.length) {
     const line = lines[i]!;
     if (/^```mermaid[\t ]*$/.test(line)) {
-      const openLine = i + 1; // 1-indexed
-      let j = i + 1;
+      const openLine = i + 1;       let j = i + 1;
       let closed = false;
       let stoppedAtNextOpening = false;
       for (; j < lines.length; j += 1) {
@@ -318,10 +286,6 @@ export function findUnclosedMermaidFences(body: string): readonly UnclosedMermai
           break;
         }
         if (/^```/.test(cur)) {
-          // Next opening fence before close — unclosed. Leave the next
-          // opening on the stream so the outer loop processes it; we
-          // would otherwise skip it (and miss further unclosed fences)
-          // by advancing past `j`.
           stoppedAtNextOpening = true;
           break;
         }
@@ -329,9 +293,6 @@ export function findUnclosedMermaidFences(body: string): readonly UnclosedMermai
       if (!closed) {
         out.push({ lineNumber: openLine, impliedEndLineNumber: j + 1 });
       }
-      // When we consumed a real closing fence, skip past it. When we
-      // stopped at a new opening, resume at `j` so that opening is
-      // re-examined. When we hit EOF, both branches converge.
       i = stoppedAtNextOpening ? j : j + 1;
       continue;
     }
@@ -371,7 +332,6 @@ export function loadBannedPhrases(repoRoot: string = REPO_ROOT): string[] | null
     if (!Array.isArray(data.allPhrases) || data.allPhrases.length === 0) {
       _bannedPhrasesCache = null;
     } else {
-      // Validate elements, filter to non-empty strings, de-duplicate
       const seen = new Set<string>();
       const phrases: string[] = [];
       for (const item of data.allPhrases) {
@@ -410,8 +370,7 @@ export function scanBannedPhrases(
   const lower = text.toLowerCase();
   for (const phrase of bannedPhrases) {
     const trimmed = phrase.trim();
-    if (trimmed.length === 0) continue; // skip empty/whitespace phrases
-    const needle = trimmed.toLowerCase();
+    if (trimmed.length === 0) continue;     const needle = trimmed.toLowerCase();
     let idx = lower.indexOf(needle);
     while (idx !== -1) {
       const start = Math.max(0, idx - 20);
@@ -450,27 +409,18 @@ export function countArticleEvidenceAnchors(text: string): number {
  * Count words in text (splits on whitespace, excludes markdown syntax tokens).
  */
 export function countWords(text: string): number {
-  // Strip markdown links, images, HTML tags, fenced code blocks, and tables
   let cleaned = text;
-  // Remove fenced code blocks (with optional language tag)
   cleaned = cleaned.replace(/```[^\n]*\n[\s\S]*?```/g, '');
-  // Remove inline code
   cleaned = cleaned.replace(/`[^`]+`/g, '');
-  // Remove images
   cleaned = cleaned.replace(/!\[[^\]]*\]\([^)]*\)/g, '');
-  // Remove HTML tags (iterate to handle nested)
   let prev = '';
   while (prev !== cleaned) {
     prev = cleaned;
     cleaned = cleaned.replace(/<[^>]+>/g, '');
   }
-  // Remove markdown table alignment rows (e.g. |---|:---:|---:|)
   cleaned = cleaned.replace(/^\s*\|[\s:|-]+\|\s*$/gm, '');
-  // Remove pipe characters used as table column separators
   cleaned = cleaned.replace(/\|/g, ' ');
-  // Remove list/quote/heading markers at line start
   cleaned = cleaned.replace(/^\s*[>#+*-]\s*/gm, '');
-  // Convert markdown links to just their text
   cleaned = cleaned.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1');
   const words = cleaned.split(/\s+/).filter((w) => w.length > 0);
   return words.length;
@@ -505,7 +455,6 @@ export function scanStaleProvenance(
   referenceDate: Date = new Date(),
 ): Array<{ retrievedAt: string; ageMonths: number }> {
   const stale: Array<{ retrievedAt: string; ageMonths: number }> = [];
-  // Match retrieved_at dates in YAML-like blocks
   const dateRe = /retrieved_at:\s*(\d{4}-\d{2}-\d{2})/g;
   let m: RegExpExecArray | null;
   while ((m = dateRe.exec(text)) !== null) {
@@ -514,9 +463,6 @@ export function scanStaleProvenance(
     const diffMs = referenceDate.getTime() - retrieved.getTime();
     const diffMonths = diffMs / (1000 * 60 * 60 * 24 * 30.44);
     if (diffMonths > 6) {
-      // Check the immediately preceding line for the annotation comment.
-      // Contract: annotation must be on the line directly before the
-      // retrieved_at line: `<!-- stale-vintage: reason -->`
       const lineStart = text.lastIndexOf('\n', m.index) + 1;
       const prevLineEnd = lineStart > 0 ? lineStart - 1 : 0;
       const prevLineStart = text.lastIndexOf('\n', prevLineEnd - 1) + 1;
@@ -552,7 +498,6 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
   const text = await readFile(absPath, 'utf8');
   const violations: ArticleViolation[] = [];
 
-  // 1. Placeholder strings must not survive Pass-2.
   for (const pat of PLACEHOLDER_PATTERNS) {
     const m = text.match(pat);
     if (m) {
@@ -564,7 +509,6 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
     }
   }
 
-  // 2. Required reader-facing landmarks.
   for (const landmark of REQUIRED_LANDMARKS) {
     if (!landmark.pattern.test(text)) {
       violations.push({
@@ -575,7 +519,6 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
     }
   }
 
-  // 2b. Reader Intelligence Guide single-occurrence invariant.
   const guideMatches = text.match(/^##\s+Reader Intelligence Guide\s*$/gm);
   if (guideMatches && guideMatches.length > 1) {
     violations.push({
@@ -585,7 +528,6 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
     });
   }
 
-  // 3. BLUF must be a real prose paragraph, not a stub.
   const bluf = extractBluf(text);
   if (bluf !== null) {
     if (bluf.length < MIN_BLUF_PROSE_CHARS) {
@@ -602,8 +544,6 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
         message: `BLUF prose is ${bluf.length} chars — maximum is ${MAX_BLUF_PROSE_CHARS}. Move the long-form analysis to the Synthesis Summary or Intelligence Assessment section.`,
       });
     }
-    // 3b. BLUF must carry at least one evidence anchor — every claim
-    //     should be reachable from a primary source.
     const anchors = countBlufEvidenceAnchors(bluf);
     if (anchors < MIN_BLUF_EVIDENCE_ANCHORS) {
       violations.push({
@@ -614,17 +554,11 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
     }
   }
 
-  // 3c. Reader Intelligence Guide must contain at least one data row,
-  //     not just the heading. The aggregator emits the table; missing
-  //     rows means the artifact set is empty or the renderer regressed.
   const guideHeadingMatch = text.match(/^##\s+Reader Intelligence Guide\s*$/m);
   if (guideHeadingMatch && guideHeadingMatch.index !== undefined) {
     const after = text.slice(guideHeadingMatch.index + guideHeadingMatch[0].length);
     const stop = after.search(/^##\s+\S/m);
     const region = stop === -1 ? after : after.slice(0, stop);
-    // A data row in the RIG table starts with `| [` (the markdown link
-    // wrapping the reader-need cell). Heuristic, but exactly matches
-    // {@link buildReaderGuide}'s output.
     const dataRows = region.match(/^\|\s*\[/gm) ?? [];
     if (dataRows.length === 0) {
       violations.push({
@@ -635,16 +569,9 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
     }
   }
 
-  // 3d. Footer-style markers must not appear more than once in the
-  //     aggregated article. The cleaning pipeline collapses duplicates
-  //     before aggregation; a duplicate here means cleaning regressed
-  //     or the AI agent emitted the same footer in two artifact bodies.
   for (const marker of FOOTER_MARKER_PATTERNS) {
     const matches = text.match(marker.pattern) ?? [];
     if (matches.length > 1) {
-      // Count *unique* occurrences — a footer that legitimately recurs
-      // (e.g. distinct ISMS classifications per per-document section)
-      // produces different strings; only true duplicates are flagged.
       const unique = new Set(matches);
       if (unique.size < matches.length) {
         violations.push({
@@ -656,9 +583,6 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
     }
   }
 
-  // 4. Heading-anchor health: no `--` doubles after `rm-` prefix is applied.
-  //    We test the equivalent at the markdown level: no heading whose
-  //    permissive slug is empty or starts with `-`.
   const headingLines = text.match(/^#{2,6}\s+\S[^\n]*$/gm) ?? [];
   for (const h of headingLines) {
     const text = h.replace(/^#+\s+/, '').trim();
@@ -672,7 +596,6 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
     }
   }
 
-  // 5. Per-document sections must cite at least one dok_id-style code.
   const docSections = extractPerDocumentSections(text);
   const dokIdRe = /\b(?:H[A-Z0-9]{6,10}|[A-ZÅÄÖ]{1,4}\d{4,8})\b/;
   for (const section of docSections) {
@@ -686,8 +609,6 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
     }
   }
 
-  // 6. Registry-driven required artifacts check: ensure per-type
-  //    `extraArtifacts` are present in the analysis subfolder.
   const parentDir = dirname(absPath);
   const subfolderName = basename(parentDir);
   const typeEntry = getBySubfolder(subfolderName);
@@ -711,7 +632,6 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
     }
   }
 
-  // 7. Editorial QA: banned-phrase scan.
   const bannedPhrases = loadBannedPhrases();
   if (bannedPhrases === null) {
     violations.push({
@@ -731,7 +651,6 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
     }
   }
 
-  // 8. Editorial QA: citation density.
   const wordCount = countWords(text);
   const anchors = countArticleEvidenceAnchors(text);
   if (wordCount > 0 && anchors === 0) {
@@ -742,9 +661,7 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
     });
   } else if (anchors > 0) {
     const density = wordCount / anchors;
-    // Load per-article-type threshold from reference-quality-thresholds.json
-    let threshold = 200; // fallback default
-    if (subfolderName) {
+    let threshold = 200;     if (subfolderName) {
       try {
         const thresholdsPath = join(REPO_ROOT, 'analysis', 'methodologies', 'reference-quality-thresholds.json');
         if (existsSync(thresholdsPath)) {
@@ -772,7 +689,6 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
     }
   }
 
-  // 9. Editorial QA: economicProvenance vintage check.
   if (text.includes('retrieved_at:')) {
     const staleEntries = scanStaleProvenance(text);
     if (staleEntries.length > 0) {
@@ -785,16 +701,6 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
     }
   }
 
-  // 10. Mermaid fence integrity — every `\`\`\`mermaid` opening fence
-  //     in the aggregated article must have a matching `\`\`\`` close.
-  //     The renderer's line-based walker
-  //     ({@link preprocessMermaidFences}) recovers gracefully by
-  //     treating the next code-fence opening (or end-of-input) as an
-  //     implicit close, so each diagram still becomes its own
-  //     `<pre class="mermaid">`. However, the source artifact still
-  //     needs to be fixed because IDE preview, the analysis-gate
-  //     Check 5 awk-based fence tracker, and `gh aw mcp inspect`
-  //     audits all assume a well-formed close.
   const unclosedFences = findUnclosedMermaidFences(text);
   if (unclosedFences.length > 0) {
     const sample = unclosedFences
@@ -808,17 +714,6 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
     });
   }
 
-  // 11. Mermaid coverage — every `\`\`\`mermaid` block in the source
-  //     artifacts under the same folder must survive aggregation into
-  //     `article.md`. Counts opening fences (closing fences are not
-  //     reliable signal — see check 10). When the article is missing
-  //     mermaid blocks present on disk, the aggregator regressed.
-  //
-  //     Errors from the filesystem walk are scoped: only ENOENT /
-  //     ENOTDIR (folder genuinely missing, surfaced by checks 1/2/6)
-  //     are swallowed; every other error becomes a dedicated
-  //     `mermaid-coverage-check-failed` violation so the validator
-  //     never silently skips the regression guard.
   try {
     const sourceMermaidCount = await countSourceArtifactMermaidOpenings(parentDir);
     const articleMermaidCount = countMermaidOpenings(text);
