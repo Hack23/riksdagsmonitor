@@ -5,7 +5,7 @@ date: 2026-05-01
 subfolder: month-ahead
 slug: 2026-05-01-month-ahead
 source_folder: analysis/daily/2026-05-01/month-ahead
-generated_at: 2026-05-10T23:08:43.475Z
+generated_at: 2026-05-11T01:16:32.941Z
 language: en
 layout: article
 ---
