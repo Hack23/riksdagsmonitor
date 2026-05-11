@@ -384,6 +384,72 @@ describe('vite-plugin-static-pages', () => {
     expect(out).toContain('src="https://cdn.example.com/lib.mjs"');
   });
 
+  it('does not duplicate the crossorigin attribute when the source tag already has one', async () => {
+    // Regression: previously the rewrite always injected `crossorigin=""`
+    // even when the source tag carried its own `crossorigin` attribute,
+    // producing a malformed `<script ... crossorigin="" ... crossorigin="">` tag.
+    seedHashedMainJs(rig);
+    const html = [
+      '<!doctype html><html><head>',
+      '<link rel="stylesheet" href="../styles.css">',
+      '</head><body>',
+      '<script type="module" crossorigin="anonymous" src="/src/browser/main.ts"></script>',
+      '</body></html>',
+    ].join('\n');
+    writePage(rig.projectRoot, 'dashboards/parties.html', html);
+
+    const plugin = staticPagesPlugin({
+      projectRoot: rig.projectRoot,
+      outDir: 'dist',
+      pageSets: [{ label: 'dashboards', sources: [{ path: 'dashboards', recurse: false }] }],
+    });
+
+    await runCloseBundle(plugin);
+
+    const out = fs.readFileSync(
+      path.join(rig.distDir, 'dashboards/parties.html'),
+      'utf8',
+    );
+    expect(out).toContain('src="/assets/js/main-Ab12C3.js"');
+    // Exactly one crossorigin attribute on the rewritten <script>.
+    const scriptTag = out.match(/<script\b[^>]*src="\/assets\/js\/main-Ab12C3\.js"[^>]*><\/script>/);
+    expect(scriptTag, 'rewritten <script> tag').to.not.equal(null);
+    const crossoriginCount = (scriptTag![0].match(/\bcrossorigin\b/g) || []).length;
+    expect(crossoriginCount).toBe(1);
+  });
+
+  it('does not rewrite a non-module <script> tag whose src points at /src/browser/<name>.ts', async () => {
+    // Regression: earlier MODULE_SCRIPT_RE did not require type="module" so
+    // a classic `<script>` could have been rewritten to a hashed ESM bundle,
+    // which throws "Cannot use import statement outside a module" at runtime.
+    seedHashedMainJs(rig);
+    const html = [
+      '<!doctype html><html><head>',
+      '<link rel="stylesheet" href="../styles.css">',
+      '</head><body>',
+      '<script src="/src/browser/main.ts"></script>',
+      '</body></html>',
+    ].join('\n');
+    writePage(rig.projectRoot, 'dashboards/parties.html', html);
+
+    const plugin = staticPagesPlugin({
+      projectRoot: rig.projectRoot,
+      outDir: 'dist',
+      pageSets: [{ label: 'dashboards', sources: [{ path: 'dashboards', recurse: false }] }],
+    });
+
+    await runCloseBundle(plugin);
+
+    const out = fs.readFileSync(
+      path.join(rig.distDir, 'dashboards/parties.html'),
+      'utf8',
+    );
+    // Classic <script> should be left untouched (the dev path will 404
+    // visibly rather than being silently rewritten to a broken ESM load).
+    expect(out).toContain('<script src="/src/browser/main.ts"></script>');
+    expect(out).not.toContain('/assets/js/main-Ab12C3.js');
+  });
+
   it('rewrites the dev script tag across many pages but resolves the manifest only once per entry', async () => {
     seedHashedMainJs(rig);
     for (const slug of ['parties', 'pre-election', 'coalitions', 'committees']) {

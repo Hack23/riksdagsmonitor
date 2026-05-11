@@ -120,11 +120,14 @@ const STYLESHEET_LINK_RE =
  * dashboard loader never runs → every dashboard page renders empty.
  *
  * We only match the canonical absolute `/src/browser/<name>.ts` form (the
- * only one used in this codebase). Captures: 1=before-attrs, 2=name,
- * 3=after-attrs.
+ * only one used in this codebase) AND require `type="module"` so we never
+ * rewrite a non-module `<script>` tag (which would silently break at
+ * runtime — an ESM bundle loaded as a classic script throws "Cannot use
+ * import statement outside a module"). Captures: 1=before-attrs,
+ * 2=name, 3=after-attrs.
  */
 const MODULE_SCRIPT_RE =
-  /<script\b([^>]*?)\bsrc\s*=\s*"\/src\/browser\/([A-Za-z0-9_-]+)\.ts"([^>]*)>\s*<\/script>/gi;
+  /<script\b(?=[^>]*?\btype\s*=\s*"module")([^>]*?)\bsrc\s*=\s*"\/src\/browser\/([A-Za-z0-9_-]+)\.ts"([^>]*)>\s*<\/script>/gi;
 
 /**
  * Read Vite's emitted manifest to map `styles.css` → its hashed
@@ -361,8 +364,17 @@ export default function staticPagesPlugin(options) {
                 return match;
               }
               didScriptRewrite = true;
-              const attrsBefore = before.replace(/\bsrc\s*=\s*"[^"]*"/i, '').trim();
-              const attrsAfter = after.replace(/\bsrc\s*=\s*"[^"]*"/i, '').trim();
+              // Strip any pre-existing `src` and `crossorigin` attributes from
+              // either side of the original `src` so we never emit duplicate
+              // attributes when the source tag already carried them (Vite
+              // sometimes emits `crossorigin` on its module preload tags).
+              const stripAttrs = (s) =>
+                s
+                  .replace(/\bsrc\s*=\s*"[^"]*"/i, '')
+                  .replace(/\bcrossorigin(?:\s*=\s*"[^"]*")?/i, '')
+                  .trim();
+              const attrsBefore = stripAttrs(before);
+              const attrsAfter = stripAttrs(after);
               const beforeStr = attrsBefore ? ` ${attrsBefore}` : '';
               const afterStr = attrsAfter ? ` ${attrsAfter}` : '';
               return `<script${beforeStr} crossorigin="" src="/${hashedJs}"${afterStr}></script>`;

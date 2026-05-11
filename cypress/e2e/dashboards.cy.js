@@ -40,6 +40,12 @@ describe('Dashboard Functionality', () => {
     });
     
     it('should render charts after data loads', () => {
+      // Scroll the dashboard into view so the IntersectionObserver-based
+      // lazy loader (src/browser/main.ts → loadDashboard) fires and
+      // registerBrowserGlobals() attaches Chart.js to window.Chart.
+      // Without this, the canvas is below the viewport in headless Chrome
+      // and waitForChart() times out waiting for window.Chart.
+      cy.get('#party-dashboard').scrollIntoView();
       cy.waitForChart('partyEffectivenessChart');
       cy.get('#partyEffectivenessChart').should('be.visible');
     });

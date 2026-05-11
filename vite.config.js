@@ -281,10 +281,10 @@ export default defineConfig({
         },
         {
           // The 9 specialised political-intelligence dashboard pages
-          // (parties, anomaly-detection, network-analysis, voting-cohesion,
-          // momentum, coalitions, seasonal-patterns, pre-election, ministers,
-          // risk, election-cycle, committees) × 14 languages = 126 files,
-          // emitted by scripts/build-dashboard-pages.py.
+          // (anomaly-detection, coalitions, committees, election-cycle,
+          // ministers, parties, pre-election, risk, seasonal-patterns)
+          // × 14 languages = 126 files, emitted by
+          // scripts/build-dashboard-pages.py.
           //
           // They inherit `<script type="module" src="/src/browser/main.ts">`
           // from index.html, so staticPagesPlugin rewrites that tag to the
