@@ -45,14 +45,28 @@ Cypress.Commands.add('testResponsive', (selector) => {
 
 /**
  * Wait for Chart.js to render
+ *
+ * Verifies that:
+ *   1. The canvas exists and is visible
+ *   2. The bundled `main.ts` actually executed and Chart.js attached a
+ *      chart instance to the canvas (`Chart.getChart(canvas)` returns
+ *      truthy). A bare `canvas.width > 0` check is NOT sufficient — the
+ *      default canvas dimensions are 300×150 even when no JS has run,
+ *      so it would pass even when `<script src="/src/browser/main.ts">`
+ *      404s in production (the bug fixed in this PR).
  */
 Cypress.Commands.add('waitForChart', (canvasId) => {
   cy.get(`#${canvasId}`).should('be.visible');
-  // Wait for chart to be fully rendered by checking canvas has content
-  cy.get(`#${canvasId}`).should(($canvas) => {
-    const canvas = $canvas[0];
-    expect(canvas.width).to.be.greaterThan(0);
-    expect(canvas.height).to.be.greaterThan(0);
+  // Wait for Chart.js to attach an instance — proves main.ts loaded,
+  // the lazy dashboard module was imported, CSV data was fetched, and
+  // a chart was actually drawn (not just a default-sized empty canvas).
+  cy.window({ timeout: 10000 }).should((win) => {
+    const Chart = win.Chart;
+    expect(Chart, 'window.Chart from main.ts bundle').to.exist;
+    const canvas = win.document.getElementById(canvasId);
+    expect(canvas, `<canvas id="${canvasId}">`).to.exist;
+    const instance = Chart.getChart(canvas);
+    expect(instance, `Chart.js instance attached to #${canvasId}`).to.exist;
   });
 });
 

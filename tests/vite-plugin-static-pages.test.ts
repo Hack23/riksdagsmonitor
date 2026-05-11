@@ -249,4 +249,166 @@ describe('vite-plugin-static-pages', () => {
     expect(plugin.closeBundle).toBeTypeOf('object');
     expect((plugin.closeBundle as { handler: unknown }).handler).toBeTypeOf('function');
   });
+
+  // ──────────────────────────────────────────────────────────────────────
+  // <script type="module" src="/src/browser/<name>.ts"> rewrite
+  // (regression for the empty-dashboards bug: dashboard pages emitted by
+  // staticPagesPlugin inherited the dev-only path from index.html, which
+  // S3/CloudFront serves as text/html → no JS executed → no charts).
+  // ──────────────────────────────────────────────────────────────────────
+
+  function pageWithModuleScript(scriptSrc: string): string {
+    return [
+      '<!doctype html>',
+      '<html lang="en"><head>',
+      '<link rel="stylesheet" href="../styles.css">',
+      '<title>Dashboard</title>',
+      '</head><body>',
+      '<section id="pre-election-dashboard"></section>',
+      `<script type="module" src="${scriptSrc}"></script>`,
+      '</body></html>',
+    ].join('\n');
+  }
+
+  function seedHashedMainJs(rig: TestRig, fileName = 'main-Ab12C3.js'): void {
+    const jsDir = path.join(rig.distDir, 'assets', 'js');
+    fs.mkdirSync(jsDir, { recursive: true });
+    fs.writeFileSync(path.join(jsDir, fileName), 'export {};');
+    const manifestPath = path.join(rig.distDir, '.vite', 'manifest.json');
+    const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+    manifest['src/browser/main.ts'] = { file: `assets/js/${fileName}`, isEntry: true };
+    fs.writeFileSync(manifestPath, JSON.stringify(manifest));
+  }
+
+  it('rewrites <script type="module" src="/src/browser/main.ts"> → hashed bundle from manifest', async () => {
+    seedHashedMainJs(rig);
+    writePage(
+      rig.projectRoot,
+      'dashboards/pre-election.html',
+      pageWithModuleScript('/src/browser/main.ts'),
+    );
+
+    const plugin = staticPagesPlugin({
+      projectRoot: rig.projectRoot,
+      outDir: 'dist',
+      pageSets: [{ label: 'dashboards', sources: [{ path: 'dashboards', recurse: false }] }],
+    });
+
+    await runCloseBundle(plugin);
+
+    const out = fs.readFileSync(
+      path.join(rig.distDir, 'dashboards/pre-election.html'),
+      'utf8',
+    );
+    // Dev path must be gone; hashed production path must be present with
+    // crossorigin attribute (matching what Vite emits in index.html).
+    expect(out).not.toContain('/src/browser/main.ts');
+    expect(out).toContain('src="/assets/js/main-Ab12C3.js"');
+    expect(out).toContain('crossorigin=""');
+    // Type=module attribute and surrounding tags must survive.
+    expect(out).toMatch(/<script\b[^>]*type="module"[^>]*src="\/assets\/js\/main-Ab12C3\.js"[^>]*><\/script>/);
+    // No double-rewrite: only one <script type="module"> per page.
+    expect(out.match(/<script\b[^>]*type="module"[^>]*>/g)).toHaveLength(1);
+  });
+
+  it('falls back to scanning dist/assets/js/ when manifest lacks a src/browser/<name>.ts entry', async () => {
+    // Seed a hashed bundle but DON'T register it in the manifest.
+    const jsDir = path.join(rig.distDir, 'assets', 'js');
+    fs.mkdirSync(jsDir, { recursive: true });
+    fs.writeFileSync(path.join(jsDir, 'main-XyZ987.js'), 'export {};');
+    writePage(
+      rig.projectRoot,
+      'dashboards/parties.html',
+      pageWithModuleScript('/src/browser/main.ts'),
+    );
+
+    const plugin = staticPagesPlugin({
+      projectRoot: rig.projectRoot,
+      outDir: 'dist',
+      pageSets: [{ label: 'dashboards', sources: [{ path: 'dashboards', recurse: false }] }],
+    });
+
+    await runCloseBundle(plugin);
+
+    const out = fs.readFileSync(path.join(rig.distDir, 'dashboards/parties.html'), 'utf8');
+    expect(out).toContain('src="/assets/js/main-XyZ987.js"');
+    expect(out).not.toContain('/src/browser/main.ts');
+  });
+
+  it('leaves the dev script tag untouched when no hashed bundle can be resolved', async () => {
+    // No JS bundle and no manifest entry — leave the tag alone so the
+    // missing entry surfaces as a clear 404 rather than a silent
+    // rewrite to a wrong path.
+    writePage(
+      rig.projectRoot,
+      'dashboards/orphan.html',
+      pageWithModuleScript('/src/browser/main.ts'),
+    );
+
+    const plugin = staticPagesPlugin({
+      projectRoot: rig.projectRoot,
+      outDir: 'dist',
+      pageSets: [{ label: 'dashboards', sources: [{ path: 'dashboards', recurse: false }] }],
+    });
+
+    await runCloseBundle(plugin);
+
+    const out = fs.readFileSync(path.join(rig.distDir, 'dashboards/orphan.html'), 'utf8');
+    expect(out).toContain('src="/src/browser/main.ts"');
+  });
+
+  it('does not rewrite script tags whose src does not match /src/browser/<name>.ts', async () => {
+    seedHashedMainJs(rig);
+    const html = [
+      '<!doctype html><html><head>',
+      '<link rel="stylesheet" href="styles.css">',
+      '</head><body>',
+      '<script type="module" src="/assets/js/already-bundled.js"></script>',
+      '<script src="/inline.js"></script>',
+      '<script type="module" src="https://cdn.example.com/lib.mjs"></script>',
+      '</body></html>',
+    ].join('\n');
+    writePage(rig.projectRoot, 'sitemap.html', html);
+
+    const plugin = staticPagesPlugin({
+      projectRoot: rig.projectRoot,
+      outDir: 'dist',
+      pageSets: [{ label: 'sitemaps', sources: [{ path: 'sitemap.html' }] }],
+    });
+
+    await runCloseBundle(plugin);
+
+    const out = fs.readFileSync(path.join(rig.distDir, 'sitemap.html'), 'utf8');
+    expect(out).toContain('src="/assets/js/already-bundled.js"');
+    expect(out).toContain('src="/inline.js"');
+    expect(out).toContain('src="https://cdn.example.com/lib.mjs"');
+  });
+
+  it('rewrites the dev script tag across many pages but resolves the manifest only once per entry', async () => {
+    seedHashedMainJs(rig);
+    for (const slug of ['parties', 'pre-election', 'coalitions', 'committees']) {
+      writePage(
+        rig.projectRoot,
+        `dashboards/${slug}.html`,
+        pageWithModuleScript('/src/browser/main.ts'),
+      );
+    }
+
+    const plugin = staticPagesPlugin({
+      projectRoot: rig.projectRoot,
+      outDir: 'dist',
+      pageSets: [{ label: 'dashboards', sources: [{ path: 'dashboards', recurse: false }] }],
+    });
+
+    await runCloseBundle(plugin);
+
+    for (const slug of ['parties', 'pre-election', 'coalitions', 'committees']) {
+      const out = fs.readFileSync(
+        path.join(rig.distDir, 'dashboards', `${slug}.html`),
+        'utf8',
+      );
+      expect(out).toContain('src="/assets/js/main-Ab12C3.js"');
+      expect(out).not.toContain('/src/browser/main.ts');
+    }
+  });
 });

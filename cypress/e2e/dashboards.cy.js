@@ -183,4 +183,59 @@ describe('Dashboard Functionality', () => {
       });
     });
   });
+
+  /**
+   * Regression: dashboard pages MUST load the bundled `/assets/js/main-*.js`
+   * (rewritten by `scripts/vite-plugin-static-pages.js`), not the dev-only
+   * `/src/browser/main.ts` path. In production, S3/CloudFront serves the
+   * dev path as `index.html` (text/html); the browser silently rejects
+   * loading HTML as a JS module → no lazy loader → all charts empty.
+   *
+   * Caught zero alarm bells in PR #2403's run because the previous
+   * waitForChart only validated default canvas dimensions. These checks
+   * inspect the actual served HTML and the runtime side-effects.
+   */
+  describe('Dashboard Bundle Integration', () => {
+    const SLUGS = [
+      'parties',
+      'pre-election',
+      'coalitions',
+      'committees',
+      'seasonal-patterns',
+      'anomaly-detection',
+      'risk',
+      'ministers',
+      'election-cycle',
+    ];
+
+    SLUGS.forEach((slug) => {
+      it(`/dashboards/${slug}.html ships hashed main bundle (no /src/browser/main.ts)`, () => {
+        cy.stubCIAData();
+        cy.request(`/dashboards/${slug}.html`).then((response) => {
+          expect(response.status).to.equal(200);
+          expect(response.headers['content-type']).to.match(/text\/html/);
+          expect(response.body).to.match(
+            /<script\b[^>]*type="module"[^>]*src="\/assets\/js\/main-[A-Za-z0-9_-]+\.js"/,
+            'Hashed main-*.js script tag must be present',
+          );
+          expect(response.body).not.to.include(
+            '/src/browser/main.ts',
+            'Dev-only path must not appear in production HTML',
+          );
+        });
+      });
+    });
+
+    it('runs main.ts → registers Chart.js global on dashboard pages', () => {
+      cy.stubCIAData();
+      cy.visit('/dashboards/parties.html');
+      // main.ts → register-globals.ts attaches Chart to window when any
+      // lazy dashboard loads. Wait for at least one chart container to
+      // intersect the viewport and trigger the import.
+      cy.get('#party-dashboard').scrollIntoView();
+      cy.window({ timeout: 15000 }).should((win) => {
+        expect(win.Chart, 'window.Chart attached by register-globals').to.exist;
+      });
+    });
+  });
 });
