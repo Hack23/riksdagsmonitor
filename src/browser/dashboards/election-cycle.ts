@@ -108,20 +108,22 @@ const CONFIG: ElectionCycleConfig = {
   cachePrefix: 'riksdag_election_cycle_',
   cacheExpiry: 24 * 60 * 60 * 1000,
   dataUrls: {
+    // Absolute paths so this works from `/dashboards/election-cycle.html`
+    // (a bare `cia-data/…` would resolve to `/dashboards/cia-data/…`).
     comparative: [
-      'cia-data/election-cycle/view_election_cycle_comparative_analysis_sample.csv',
+      '/cia-data/election-cycle/view_election_cycle_comparative_analysis_sample.csv',
       'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_election_cycle_comparative_analysis_sample.csv'
     ],
     decision: [
-      'cia-data/election-cycle/view_election_cycle_decision_intelligence_sample.csv',
+      '/cia-data/election-cycle/view_election_cycle_decision_intelligence_sample.csv',
       'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_election_cycle_decision_intelligence_sample.csv'
     ],
     predictive: [
-      'cia-data/election-cycle/view_election_cycle_predictive_intelligence_sample.csv',
+      '/cia-data/election-cycle/view_election_cycle_predictive_intelligence_sample.csv',
       'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_election_cycle_predictive_intelligence_sample.csv'
     ],
     temporal: [
-      'cia-data/election-cycle/view_election_cycle_temporal_trends_sample.csv',
+      '/cia-data/election-cycle/view_election_cycle_temporal_trends_sample.csv',
       'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_election_cycle_temporal_trends_sample.csv'
     ]
   },

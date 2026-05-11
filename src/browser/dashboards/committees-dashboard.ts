@@ -105,25 +105,28 @@ interface VisualizationInstances {
 /* ------------------------------------------------------------------ */
 
 const CONFIG: CommitteeConfig = {
+  // Absolute `/cia-data/…` paths so this works from
+  // `/dashboards/committees.html` (a bare `cia-data/…` would resolve to
+  // `/dashboards/cia-data/…` and 404 on the local-first hop).
   dataUrls: {
     productivityMatrix: [
-      'cia-data/distribution_committee_productivity_matrix.csv',
+      '/cia-data/distribution_committee_productivity_matrix.csv',
       'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/distribution_committee_productivity_matrix.csv',
     ],
     committeeDecisions: [
-      'cia-data/view_riksdagen_committee_decisions.csv',
+      '/cia-data/view_riksdagen_committee_decisions.csv',
       'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_riksdagen_committee_decisions_sample.csv',
     ],
     annualDocuments: [
-      'cia-data/distribution_annual_committee_documents.csv',
+      '/cia-data/distribution_annual_committee_documents.csv',
       'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/distribution_annual_committee_documents.csv',
     ],
     ballotSummary: [
-      'cia-data/view_riksdagen_committee_ballot_decision_party_summary.csv',
+      '/cia-data/view_riksdagen_committee_ballot_decision_party_summary.csv',
       'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_riksdagen_committee_ballot_decision_party_summary_sample.csv',
     ],
     seasonalPatterns: [
-      'cia-data/percentile_seasonal_activity_patterns.csv',
+      '/cia-data/percentile_seasonal_activity_patterns.csv',
       'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/percentile_seasonal_activity_patterns.csv',
     ],
   },

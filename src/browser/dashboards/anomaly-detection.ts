@@ -123,7 +123,9 @@ type AnomalyTranslations = AnomalyTranslationsFull | AnomalyTranslationsMinimal;
 
 const CONFIG: AnomalyConfig = {
   dataUrls: [
-    'cia-data/seasonal/view_riksdagen_seasonal_anomaly_detection_sample.csv',
+    // Absolute path so this works from `/dashboards/anomaly-detection.html`
+    // (a bare `cia-data/…` would resolve to `/dashboards/cia-data/…` and 404).
+    '/cia-data/seasonal/view_riksdagen_seasonal_anomaly_detection_sample.csv',
     'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_riksdagen_seasonal_anomaly_detection_sample.csv',
   ],
   cacheKey: 'riksdag_anomaly_detection',
