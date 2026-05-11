@@ -8,8 +8,8 @@
 
 ## Key Judgments
 
-**KJ-1**: The spring 2026 committee report batch represents a **calculated pre-election legislative consolidation** by the Tidö coalition, with HD01CU31 and HD01UbU20 serving as dual-purpose reforms — substantive policy objectives combined with electoral positioning against the S-led opposition bloc.  
-**Confidence**: MODERATE (Admiralty B2) — Pattern consistent with known coalition electoral strategy; uncertainty remains on voter perception of housing reform.
+**KJ-1**: The spring 2026 committee report batch represents a **calculated pre-election legislative consolidation** by the Tidö coalition, with HD01CU31 and HD01UbU20 serving as dual-purpose reforms — substantive policy objectives combined with electoral positioning against the S-led opposition bloc. **Pass-2 update (2026-05-11)**: HD01CU25 voted by Riksdagen on 2026-05-06 ("Riksdagen sa ja") confirms the coalition majority's legislative functionality in this riksmöte week, providing direct vote-count evidence supporting this judgment. [Source: HD01CU25, riksdagen.se]  
+**Confidence**: HIGH (Admiralty B1) — upgraded from MODERATE on basis of HD01CU25 vote evidence confirming coalition cohesion.
 
 **KJ-2**: HD01CU31 (privatuthyrningslag) **will increase formal private rental supply** in the short term (2–5 years) but **carries MEDIUM-HIGH electoral risk** of S/V/MP campaigning effectively on tenant protection regression themes before September 2026.  
 **Confidence**: MODERATE-HIGH (Admiralty B2) — Nordic housing market data and Boverket modelling support supply prediction; electoral effect is modelled, not measured.

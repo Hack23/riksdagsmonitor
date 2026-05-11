@@ -64,3 +64,13 @@ No withdrawn documents in this batch.
 ## PIR Carry-Forward
 
 No prior PIRs found in cache-memory or prior cycle folders for committeeReports. Starting fresh PIR set.
+
+## PIR Carry-Forward
+
+PIR-2026-HOUSING: status=open, carry forward — HD01CU31 chamber vote (FI-08) pending 2026-05-15.  
+PIR-2026-EDUCATION: status=open, carry forward — HD01UbU20 chamber vote pending; Lagrådet opinion pending.  
+PIR-2026-ENFORCEMENT: status=answered — HD01CU34 analysis complete; no further monitoring needed near-term.
+
+**Improvement run (2026-05-11T06:45:00Z)**:
+- Adjacent betänkande cross-check: HD01CU25 (CU, 2026-05-06) "Riksdagen sa ja" — confirms Tidö 200-seat majority functional; incorporated into coalition-mathematics.md.
+- No new betänkanden indexed for the 2026-05-08 batch since prior analysis. Voteringar for CU31 still empty (not yet voted).

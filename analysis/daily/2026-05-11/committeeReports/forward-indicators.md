@@ -17,7 +17,7 @@
 | FI-05 | Novus/Sifo May 2026 housing poll | 2026-05-25 | Shift toward S on housing = R-01 signal | novus.se / sifo.se | PIR-2026-HOUSING |
 | FI-06 | Kronofogden procurement notice for distansutmätning IT | 2026-08-01 | Confirms HD01CU34 implementation on track | Upphandlingsmyndigheten | R-04 |
 | FI-07 | Skolinspektionen guidance on HD01UbU20 OSL scope | 2026-12-01 | Narrow = implementation progressing; broad/absent = R-02 rising | skolinspektionen.se | PIR-2026-EDUCATION |
-| FI-08 | Chamber vote date on all six betänkanden | 2026-05-15 | Confirms passage; SD vote deviation = major alert | Riksdagen voteringar | All |
+| FI-08 | Chamber vote date on all six betänkanden | 2026-05-15 | Confirms passage; SD vote deviation = major alert | Riksdagen voteringar | All | **Status update (2026-05-11)**: Not yet voted as of this run. Proxy evidence available: HD01CU25 voted 2026-05-06 confirms coalition 200-seat majority functional. FI-08 expected within 4 days. |
 | FI-09 | SD public statement on HD01CU31 ahead of vote | 2026-05-13 | Any reservation = coalition fracture signal | sd.se press releases | Coalition stability |
 | FI-10 | M election manifesto housing section | 2026-06-01 | Positive emphasis on CU31 = electoral positioning confirmed | moderaterna.se | PIR-2026-HOUSING |
 | FI-11 | IMF WEO May update (if issued) on Sweden housing sector | 2026-05-15 | GDP downgrade → rental market pressure | api.imf.org WEO | Economic context |

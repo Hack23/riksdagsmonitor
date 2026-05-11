@@ -61,3 +61,11 @@ This analysis of the spring 2026 committee reports (betänkanden) batch applied:
 - [ ] Add Boverket reference to evidence section with date
 - [ ] Check if Lagrådet yttrande published since analysis started
 - [ ] Confirm Finnish reference date and scope
+
+## Re-run log
+
+- **Re-run**: 2026-05-11T06:45:00Z · workflow=news-committee-reports · run_id=25654428729 · attempt=2
+  - new dok_ids: HD01CU25 (confirmed passed 2026-05-06), HD01CU35 (noted in CU batch)
+  - artifacts extended: coalition-mathematics.md (HD01CU25 vote evidence), synthesis-summary.md (cross-batch confirmation), forward-indicators.md (FI-08 status update), intelligence-assessment.md (vintage refresh)
+  - flags closed: 0 (no prior [unconfirmed] flags; Lagrådet still pending as expected)
+  - vintage refresh: no, IMF WEO Apr-2026 still current (imf-context.json status: ok)
