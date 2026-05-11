@@ -902,7 +902,7 @@ The Mermaid distribution is vendored at build time:
 
 | Step | Location | What it does |
 |---|---|---|
-| **Pin** | [`package.json`](package.json) `devDependencies` | `mermaid` is pinned (currently `11.4.1`) — supply-chain audited like every other dependency, in the npm SBOM. |
+| **Pin** | [`package.json`](package.json) `devDependencies` | `mermaid` is pinned (currently `11.15.0`) — supply-chain audited like every other dependency, in the npm SBOM. |
 | **Copy** | [`scripts/copy-vendor-mermaid.ts`](scripts/copy-vendor-mermaid.ts) | Run as the first step of `prebuild` (and `predev`). Copies `node_modules/mermaid/dist/mermaid.esm.min.mjs` and its required `chunks/mermaid.esm.min/*.mjs` into `js/lib/mermaid/` (≈2.6 MB, 64 files). Sourcemaps, type declarations, mocks and other ESM variants are excluded. |
 | **Gitignore** | [`.gitignore`](.gitignore) | `js/lib/mermaid/` is intentionally ignored — the directory is reproducible from the pinned dependency, so we don't commit duplicates of `node_modules` content. |
 | **Bundle** | [`.github/workflows/deploy-s3.yml`](.github/workflows/deploy-s3.yml) | The "Copy JS libraries to build output" step merges the full `js/` tree (including `js/lib/mermaid/`) into `dist/js/` after the Vite build, alongside `chart.umd.4.4.1.js`, `d3.7.9.0.min.js`, etc. |
