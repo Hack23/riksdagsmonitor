@@ -235,18 +235,18 @@ sleep 1
 
 # COFOG 07 — Health (SoU)
 tsx scripts/imf-fetch.ts sdmx \
-  --path "/data/IMF.STA,GFS_COFOG,4.0.0/A.144.G.G07._Z._Z._Z._Z.XDC_R_B1GQ?startPeriod=2015" \
+  --path "/data/IMF.STA,GFS_COFOG,11.0.0/SWE.S13.G2MF.GF07_T.POGDP_PT.A?startPeriod=2015" \
   --indicator GF07_T --country SWE --persist
 sleep 1
 
 # COFOG 09 — Education (UbU)
 tsx scripts/imf-fetch.ts sdmx \
-  --path "/data/IMF.STA,GFS_COFOG,4.0.0/A.144.G.G09._Z._Z._Z._Z.XDC_R_B1GQ?startPeriod=2015" \
+  --path "/data/IMF.STA,GFS_COFOG,11.0.0/SWE.S13.G2MF.GF09_T.POGDP_PT.A?startPeriod=2015" \
   --indicator GF09_T --country SWE --persist
 ```
 
 **Commentary**:
 
-> On the IMF GFS COFOG vintage for 2024 (T+1), Sweden's general-government spending by function allocated **1.6 %** of GDP to defence (function 02, `GFS_COFOG:GF02_T`), **7.2 %** to health (function 07, `G07`), and **6.8 %** to education (function 09, `G09`). The defence ratio has climbed from 1.1 % in 2019 — consistent with the FöU-driven NATO-readiness ramp. Health tracks close to the OECD median; education retains Sweden's historical above-median position.
+> On the IMF GFS COFOG vintage for 2024 (T+1), Sweden's general-government spending by function allocated **1.6 %** of GDP to defence (function 02, `GFS_COFOG:GF02_T`), **7.2 %** to health (function 07, `GFS_COFOG:GF07_T`), and **6.8 %** to education (function 09, `GFS_COFOG:GF09_T`). The defence ratio has climbed from 1.1 % in 2019 — consistent with the FöU-driven NATO-readiness ramp. Health tracks close to the OECD median; education retains Sweden's historical above-median position.
 
 This article's `source.imf` field: `["GFS_COFOG:GF02_T", "GFS_COFOG:GF07_T", "GFS_COFOG:GF09_T"]`.

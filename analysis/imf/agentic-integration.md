@@ -372,24 +372,24 @@ tsx scripts/imf-fetch.ts weo --country SWE --indicator NGDP_RPCH --years 15 --pe
 tsx scripts/imf-fetch.ts weo --country SWE --indicator PCPIPCH    --years 15 --persist
 tsx scripts/imf-fetch.ts weo --country SWE --indicator LUR        --years 15 --persist
 
-# Recipe C — High-frequency inflation (monthly, IFS)
+# Recipe C — High-frequency inflation (monthly, CPI)
 tsx scripts/imf-fetch.ts sdmx \
   --path "/data/IMF.STA,CPI,5.0.0/SWE.CPI._T.IX.M?startPeriod=2023-01" \
   --indicator _T.IX --country SWE --persist
 
-# Recipe D — Trade partner analysis (NU / UU articles, DOTS)
+# Recipe D — Trade partner analysis (NU / UU articles, IMTS)
 tsx scripts/imf-fetch.ts sdmx \
   --path "/data/IMF.STA,IMTS,1.0.0/SWE.XG_FOB_USD.RUS.M?startPeriod=2022-01" \
   --indicator XG_FOB_USD --country SWE --persist
 
 # Recipe E — Commodity pass-through (MJU, FiU inflation drivers)
 tsx scripts/imf-fetch.ts sdmx \
-  --path "/data/IMF.RES,PCPS,4.0.0/M..POILAPSP?startPeriod=2022-01" \
-  --indicator POILAPSP --country WORLD --persist
+  --path "/data/IMF.RES,PCPS,9.0.0/G001.POILBRE.USD.M?startPeriod=2022-01" \
+  --indicator POILBRE --country WORLD --persist
 
 # Recipe F — COFOG spending decomposition (SoU, UbU, FöU, SfU)
 tsx scripts/imf-fetch.ts sdmx \
-  --path "/data/IMF.STA,GFS_COFOG,4.0.0/A.144.G.G07._Z._Z._Z._Z.XDC_R_B1GQ?startPeriod=2018" \
+  --path "/data/IMF.STA,GFS_COFOG,11.0.0/SWE.S13.G2MF.GF07_T.POGDP_PT.A?startPeriod=2018" \
   --indicator GF07_T --country SWE --persist
 
 # Recipe G — Discovery: list all built-in indicator codes (no network call)

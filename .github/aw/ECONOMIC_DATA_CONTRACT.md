@@ -397,14 +397,14 @@ Every economic claim cites the IMF dataflow + indicator code. Use:
   `FM:GGXONLB_NGDP` for primary balance · `FM:GGSB_NPGDP` for the
   cyclically-adjusted balance.
 - `WEO:GGR_NGDP` for revenue / GDP · `WEO:GGX_NGDP` for expenditure /
-  GDP · `GFS_COFOG:GF02_T / G07 / G09 / G10` for COFOG functional
+  GDP · `GFS_COFOG:GF02_T / GF07_T / GF09_T / GF10_T` for COFOG functional
   decomposition.
 - `WEO:BCA_NGDPD` for current account · `BOP:*` for BoP detail ·
   `WEO:TX_RPCH` / `WEO:TM_RPCH` for export/import volume growth ·
   `IMTS:XG_FOB_USD`, `IMTS:MG_CIF_USD` for bilateral trade flows.
 - `MFS_IR:MMRT_RT_PT_A_PT` for the Riksbank policy rate ·
-  `ER:USD_XDC.PA_RT` / `ER:ENDE_XDC_EUR_RATE` for exchange rates ·
-  `PCPS:POILAPSP` / `PCPS:PALLFNF` for commodity prices.
+  `ER:USD_XDC.PA_RT` / `ER:EUR_XDC.PA_RT` for exchange rates ·
+  `PCPS:POILBRE` / `PCPS:PALLFNF` for commodity prices.
 
 World Bank citations remain authoritative for non-economic context:
 WGI governance (`*.EST`), environment (`EN.*`, `EG.*`, `AG.LND.FRST.ZS`),

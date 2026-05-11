@@ -29,7 +29,7 @@ IMF public data is exposed on two transports, both unauthenticated and both on t
 - URL pattern (canonical, on the wire): `/data/dataflow/{agencyId}/{dataflowId}/{version}/{key}?startPeriod=…&endPeriod=…` — the SDMX 3.0 REST shape.
 - URL pattern (human-readable, kept in docs/CLI): `/data/{agencyId},{dataflowId},{version}/{key}?startPeriod=…&endPeriod=…` — the legacy comma form. **The `ImfClient.sdmxFetch()` client transparently rewrites comma → slash via `normalizeSdmxPathForBase()` before sending** ([`scripts/imf-client.ts`](../../scripts/imf-client.ts)), because `api.imf.org/sdmx/3.0` 404s the comma form. Docs, CLI examples, and `weoSdmxPath()` keep the readable comma form for clarity.
 - Agency: `IMF.STA` (Statistics Department) for most datasets; `IMF.RES` (Research) for WEO; `IMF.FAD` (Fiscal Affairs) for FM.
-- Country codes: **IMF AREA numeric** (`144`=SWE, `128`=DNK, `142`=NOR, `172`=FIN, `134`=DEU) for IFS/GFS/BOP. WEO still uses ISO-3 here.
+- Country codes: **ISO 3166-1 alpha-3** (`SWE`, `DNK`, `NOR`, `FIN`, `DEU`) for every dataflow we cite. The legacy 3-digit numeric IMF AREA codes (e.g. `144`=SWE) were retired in the 2026-05 SDMX 3.0 refactor; passing them now yields an empty `dataSets[].series` (HTTP 200, zero observations).
 - Response: SDMX-JSON 2.0.0 (`application/vnd.sdmx.data+json;version=2.0.0`).
 - Used by: `scripts/imf-client.ts → sdmxFetch()` (which applies the comma → slash rewrite + injects the subscription-key header).
 - CLI: `tsx scripts/imf-fetch.ts sdmx --path "/data/IMF.STA,CPI,5.0.0/SWE.CPI._T.IX.M?startPeriod=2024-01"` (CLI keeps comma form; client rewrites it).
@@ -38,15 +38,15 @@ IMF public data is exposed on two transports, both unauthenticated and both on t
 
 | Dataset | Preferred transport | Notes |
 |---------|---------------------|-------|
-| WEO     | Datamapper (faster, JSON) | SDMX also works via `/data/IMF.RES,WEO,4.0.0/…` |
+| WEO     | Datamapper (faster, JSON) | SDMX also works via `/data/IMF.RES,WEO,9.0.0/…` |
 | FM      | Datamapper | SDMX fallback via `/data/IMF.FAD,FM,4.0.0/…` |
-| IFS     | **SDMX only** | No Datamapper coverage |
-| BOP / BOP_AGG | **SDMX only** | |
-| GFS_COFOG | **SDMX only** | |
-| MFS_IR (policy rates) | **SDMX only** | |
-| DOTS    | **SDMX only** | Bilateral flows require partner-country dimension |
-| PCPS    | **SDMX only** | |
-| ER (exchange rates) | **SDMX only** | |
+| CPI     | **SDMX only** | Dissolved out of legacy IFS in the 2026-05 refactor; v5.0.0 |
+| BOP / BOP_AGG | **SDMX only** | v21.0.0 |
+| GFS_COFOG | **SDMX only** | v11.0.0; ISO3 country, indicators `GF{02,07,09,10}_T` |
+| MFS_IR (policy rates) | **SDMX only** | v8.0.1; `FPOLM_PA` retired for SWE — use `MMRT_RT_PT_A_PT` proxy |
+| IMTS    | **SDMX only** | v1.0.0; replaces retired DOTS dataflow; bilateral flows require partner-country dimension |
+| PCPS    | **SDMX only** | v9.0.0, agency `IMF.RES` (moved from `IMF.STA`) |
+| ER (exchange rates) | **SDMX only** | v4.0.1; `ENDA_/ENDE_XDC_USD_RATE` retired — use `USD_XDC.PA_RT` / `EOP_RT` |
 
 ---
 

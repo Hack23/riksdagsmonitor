@@ -23,7 +23,7 @@
   "clients": {
     "cli": "tsx scripts/imf-fetch.ts (commands: weo, compare, sdmx, list-indicators)",
     "library": "scripts/imf-client.ts (ImfClient class)",
-    "codes": "scripts/imf-codes.ts (ISO3 codes for SDMX 3.0 \u2014 the legacy 3-digit IMF AREA codes were retired in the 2026-05 SDMX 3.0 refactor; SDMX 3.0 dataflows now accept ISO3 directly as COUNTRY)",
+    "codes": "scripts/imf-codes.ts (ISO3 country codes for the Riksdagsmonitor peer set, plus a legacy ISO3\u2194IMF-AREA mapping kept only for backward compatibility \u2014 SDMX 3.0 dataflows after the 2026-05 refactor accept ISO3 directly as COUNTRY and reject the legacy 3-digit numeric AREA codes)",
     "context": "scripts/imf-context.ts (policy-area \u2194 committee mapping, IMF_NORDIC_PEERS)"
   },
   "notes": {

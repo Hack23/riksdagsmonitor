@@ -60,7 +60,7 @@ function fakeDataPoint(year: number, value: number, projection = false): ImfData
 interface StubBehaviour {
   readonly weo?: 'ok' | 'throw' | 'empty';
   readonly fm?: 'ok' | 'throw' | 'empty';
-  readonly sdmx?: 'ok' | 'throw' | 'non-object' | 'auth-401' | 'auth-403' | 'auth-404';
+  readonly sdmx?: 'ok' | 'throw' | 'non-object' | 'empty-series' | 'auth-401' | 'auth-403' | 'auth-404';
   readonly sdmxSubscriptionKey?: string;
 }
 
@@ -92,6 +92,14 @@ function makeStubClient(b: StubBehaviour = {}): ImfClient {
         throw new Error('IMF API error: 404  for https://api.imf.org/external/sdmx/3.0/data/IMF.STA,CPI,5.0.0/SWE.CPI._T.IX.M');
       }
       if (mode === 'non-object') return 'plain-string';
+      if (mode === 'empty-series') {
+        // SDMX 3.0 silent-drift case: gateway returns 200 with a
+        // well-formed envelope but an EMPTY `dataSets[].series` map. The
+        // probe must surface this as `error='sdmx-empty-series'` so the
+        // operator notices outdated dataflow versions / country codes /
+        // indicator names instead of a misleading green tick.
+        return { data: { dataSets: [{ series: {} }] } };
+      }
       // SDMX-JSON 2.0 envelope shape: at least one named series so the
       // post-2026-05 connectivity probe (which now requires non-empty
       // `dataSets[].series` to mark CPI ok) sees a healthy response.
@@ -181,6 +189,17 @@ describe('runProbes', () => {
     const ifs = probes.find((p) => p.dataflow === 'CPI');
     expect(ifs?.ok).toBe(false);
     expect(ifs?.error).toBe('non-object-response');
+  });
+
+  it('marks SDMX 200-but-empty-series responses as not ok with sdmx-empty-series (silent-drift guard)', async () => {
+    // Real-world risk: IMF SDMX 3.0 returns 200 with `dataSets[0].series = {}`
+    // when a dataflow version, country code or indicator becomes outdated
+    // (e.g. the legacy `M.SE.PCPI_IX` key after the 2026-05 refactor). This
+    // would otherwise look like a green tick and silently mask drift.
+    const probes = await runProbes(makeStubClient({ sdmx: 'empty-series' }));
+    const cpi = probes.find((p) => p.dataflow === 'CPI');
+    expect(cpi?.ok).toBe(false);
+    expect(cpi?.error).toBe('sdmx-empty-series');
   });
 
   it('reports SDMX as sdmx-subscription-key-not-configured when key missing AND endpoint returns 401/403', async () => {
