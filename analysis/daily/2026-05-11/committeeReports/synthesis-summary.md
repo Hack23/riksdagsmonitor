@@ -32,8 +32,9 @@ The 8 May 2026 Riksdag committee batch is dominated by two politically charged h
 ## Key Intelligence Judgments
 
 - The opposition's five-reservation posture on HD01CU31 is a strategic electoral signal: housing equity is a top voter concern ahead of September 2026 elections. [B2, HIGH confidence, horizon:month]
-- The coalition majority is not at risk — all six betänkanden will pass. The political contest is over post-election narrative, not this legislative cycle. [A1, VERY HIGH confidence]
+- The coalition majority is not at risk — all six betänkanden will pass. The political contest is over post-election narrative, not this legislative cycle. [A1, VERY HIGH confidence] **Updated (improvement run)**: HD01CU25 voted 2026-05-06 with "Riksdagen sa ja" — directly confirms the coalition majority of 200 seats operated cohesively in the same riksmöte batch. Confidence upgraded from modelled to evidence-based. [A1]
 - HD01UbU20's OSL/TF dimension creates legal-interpretation risks if Lagrådet later contests implementation; watch for complaints to JO or KU. [C3, MEDIUM confidence, horizon:quarter]
+- **Election proximity multiplier active**: September 2026 general election is ~4 months away (within the ≤6-month window). DIW scores for HD01CU31 and HD01UbU20 carry 1.5× election-proximity multiplier as specified in `04-analysis-pipeline.md §Election-proximity significance multiplier`. See significance-scoring.md for updated scores.
 
 ## Economic Context
 

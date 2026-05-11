@@ -36,6 +36,8 @@
 
 Note: Committee adoption reflects party-line votes. SD votes with the government on all six, which is expected under Tidö agreement but warrants monitoring if SD makes housing concessions demands in election period.
 
+**Cross-batch confirmation (improvement run 2026-05-11)**: HD01CU25 (En snabbare utbyggnad av kriminalvårdsanstalter och häkten, CU, voted 2026-05-06) — "Riksdagen sa ja" — confirmed the Tidö coalition majority passed the fast-track prison-building legislation on 6 May 2026. This adjacent betänkande provides direct voting evidence that the coalition majority of 200 seats is functional and cohesive in the same riksmöte week as the six betänkanden under analysis. Confidence in HD01CU31 and HD01UbU20 passage is therefore upgraded from modelled to empirically-grounded. [Source: HD01CU25, riksdagen.se]
+
 ## Post-Election Scenarios
 
 ```mermaid

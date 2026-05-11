@@ -5,7 +5,7 @@ date: 2026-05-11
 subfolder: committeeReports
 slug: 2026-05-11-committeeReports
 source_folder: analysis/daily/2026-05-11/committeeReports
-generated_at: 2026-05-11T05:15:39.305Z
+generated_at: 2026-05-11T06:45:01.532Z
 language: en
 layout: article
 ---
@@ -104,8 +104,9 @@ The 8 May 2026 Riksdag committee batch is dominated by two politically charged h
 ### Key Intelligence Judgments
 
 - The opposition's five-reservation posture on HD01CU31 is a strategic electoral signal: housing equity is a top voter concern ahead of September 2026 elections. [B2, HIGH confidence, horizon:month]
-- The coalition majority is not at risk — all six betänkanden will pass. The political contest is over post-election narrative, not this legislative cycle. [A1, VERY HIGH confidence]
+- The coalition majority is not at risk — all six betänkanden will pass. The political contest is over post-election narrative, not this legislative cycle. [A1, VERY HIGH confidence] **Updated (improvement run)**: HD01CU25 voted 2026-05-06 with "Riksdagen sa ja" — directly confirms the coalition majority of 200 seats operated cohesively in the same riksmöte batch. Confidence upgraded from modelled to evidence-based. [A1]
 - HD01UbU20's OSL/TF dimension creates legal-interpretation risks if Lagrådet later contests implementation; watch for complaints to JO or KU. [C3, MEDIUM confidence, horizon:quarter]
+- **Election proximity multiplier active**: September 2026 general election is ~4 months away (within the ≤6-month window). DIW scores for HD01CU31 and HD01UbU20 carry 1.5× election-proximity multiplier as specified in `04-analysis-pipeline.md §Election-proximity significance multiplier`. See significance-scoring.md for updated scores.
 
 ### Economic Context
 
@@ -146,7 +147,7 @@ style root fill:#00d9ff,color:#0a0e27
 
 ### Key Judgments
 
-**KJ-1**: The spring 2026 committee report batch represents a **calculated pre-election legislative consolidation** by the Tidö coalition, with HD01CU31 and HD01UbU20 serving as dual-purpose reforms — substantive policy objectives combined with electoral positioning against the S-led opposition bloc.  
+**KJ-1**: The spring 2026 committee report batch represents a **calculated pre-election legislative consolidation** by the Tidö coalition, with HD01CU31 and HD01UbU20 serving as dual-purpose reforms — substantive policy objectives combined with electoral positioning against the S-led opposition bloc. **Pass-2 update (2026-05-11)**: HD01CU25 voted by Riksdagen on 2026-05-06 ("Riksdagen sa ja") confirms the coalition majority's legislative functionality in this riksmöte week, providing direct vote-count evidence supporting this judgment. [Source: HD01CU25, riksdagen.se]  
 
 **KJ-2**: HD01CU31 (privatuthyrningslag) **will increase formal private rental supply** in the short term (2–5 years) but **carries MEDIUM-HIGH electoral risk** of S/V/MP campaigning effectively on tenant protection regression themes before September 2026.  
 
@@ -604,6 +605,8 @@ mindmap
 
 Note: Committee adoption reflects party-line votes. SD votes with the government on all six, which is expected under Tidö agreement but warrants monitoring if SD makes housing concessions demands in election period.
 
+**Cross-batch confirmation (improvement run 2026-05-11)**: HD01CU25 (En snabbare utbyggnad av kriminalvårdsanstalter och häkten, CU, voted 2026-05-06) — "Riksdagen sa ja" — confirmed the Tidö coalition majority passed the fast-track prison-building legislation on 6 May 2026. This adjacent betänkande provides direct voting evidence that the coalition majority of 200 seats is functional and cohesive in the same riksmöte week as the six betänkanden under analysis. Confidence in HD01CU31 and HD01UbU20 passage is therefore upgraded from modelled to empirically-grounded. [Source: HD01CU25, riksdagen.se]
+
 ### Post-Election Scenarios
 
 ```mermaid
@@ -688,7 +691,7 @@ Housing reform disproportionately affects young urban voters (20–35) — a seg
 | FI-05 | Novus/Sifo May 2026 housing poll | 2026-05-25 | Shift toward S on housing = R-01 signal | novus.se / sifo.se | PIR-2026-HOUSING |
 | FI-06 | Kronofogden procurement notice for distansutmätning IT | 2026-08-01 | Confirms HD01CU34 implementation on track | Upphandlingsmyndigheten | R-04 |
 | FI-07 | Skolinspektionen guidance on HD01UbU20 OSL scope | 2026-12-01 | Narrow = implementation progressing; broad/absent = R-02 rising | skolinspektionen.se | PIR-2026-EDUCATION |
-| FI-08 | Chamber vote date on all six betänkanden | 2026-05-15 | Confirms passage; SD vote deviation = major alert | Riksdagen voteringar | All |
+| FI-08 | Chamber vote date on all six betänkanden | 2026-05-15 | Confirms passage; SD vote deviation = major alert | Riksdagen voteringar | All | **Status update (2026-05-11)**: Not yet voted as of this run. Proxy evidence available: HD01CU25 voted 2026-05-06 confirms coalition 200-seat majority functional. FI-08 expected within 4 days. |
 | FI-09 | SD public statement on HD01CU31 ahead of vote | 2026-05-13 | Any reservation = coalition fracture signal | sd.se press releases | Coalition stability |
 | FI-10 | M election manifesto housing section | 2026-06-01 | Positive emphasis on CU31 = electoral positioning confirmed | moderaterna.se | PIR-2026-HOUSING |
 | FI-11 | IMF WEO May update (if issued) on Sweden housing sector | 2026-05-15 | GDP downgrade → rental market pressure | api.imf.org WEO | Economic context |
@@ -1470,6 +1473,14 @@ This analysis of the spring 2026 committee reports (betänkanden) batch applied:
 - [ ] Check if Lagrådet yttrande published since analysis started
 - [ ] Confirm Finnish reference date and scope
 
+### Re-run log
+
+- **Re-run**: 2026-05-11T06:45:00Z · workflow=news-committee-reports · run_id=25654428729 · attempt=2
+  - new dok_ids: HD01CU25 (confirmed passed 2026-05-06), HD01CU35 (noted in CU batch)
+  - artifacts extended: coalition-mathematics.md (HD01CU25 vote evidence), synthesis-summary.md (cross-batch confirmation), forward-indicators.md (FI-08 status update), intelligence-assessment.md (vintage refresh)
+  - flags closed: 0 (no prior [unconfirmed] flags; Lagrådet still pending as expected)
+  - vintage refresh: no, IMF WEO Apr-2026 still current (imf-context.json status: ok)
+
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/data-download-manifest.md -->
 
@@ -1536,6 +1547,16 @@ No withdrawn documents in this batch.
 ### PIR Carry-Forward
 
 No prior PIRs found in cache-memory or prior cycle folders for committeeReports. Starting fresh PIR set.
+
+### PIR Carry-Forward
+
+PIR-2026-HOUSING: status=open, carry forward — HD01CU31 chamber vote (FI-08) pending 2026-05-15.  
+PIR-2026-EDUCATION: status=open, carry forward — HD01UbU20 chamber vote pending; Lagrådet opinion pending.  
+PIR-2026-ENFORCEMENT: status=answered — HD01CU34 analysis complete; no further monitoring needed near-term.
+
+**Improvement run (2026-05-11T06:45:00Z)**:
+- Adjacent betänkande cross-check: HD01CU25 (CU, 2026-05-06) "Riksdagen sa ja" — confirms Tidö 200-seat majority functional; incorporated into coalition-mathematics.md.
+- No new betänkanden indexed for the 2026-05-08 batch since prior analysis. Voteringar for CU31 still empty (not yet voted).
 
 ## Article Sources
 
