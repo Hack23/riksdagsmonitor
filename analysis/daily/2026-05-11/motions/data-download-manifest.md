@@ -1,66 +1,70 @@
-# Data Download Manifest — 2026-05-11
+# Data Download Manifest — Opposition Motions — 2026-05-11
 
-**Generated**: 2026-05-11 07:40 UTC  
-**Workflow**: news-motions | Run ID: 25656484770 | Riksmöte: 2025/26  
-**Requested date**: 2026-05-11 | **Effective date**: 2026-05-04 (lookback: 5 business days)  
-**Documents Downloaded**: 20 total | **Selected for analysis**: 8 (date-filtered)  
-**Data sources**: riksdag-regering MCP (`get_motioner`, `get_dokument_innehall`)
+**Workflow**: news-motions | **ARTICLE_DATE**: 2026-05-11 | **SUBFOLDER**: motions  
+**Data Span**: 2026-05-04 (lookback 5 business days from 2026-05-11)  
+**Lookback reason**: No documents found for 2026-05-11; nearest prior date with motions was 2026-05-04
 
 ## Document Inventory
 
-| dok_id | Title | Committee | Party | Full text | Status |
-|--------|-------|-----------|-------|-----------|--------|
-| HD024141 | med anledning av prop. 2025/26:242 (skogsbruk) | MJU | V | ✅ | Granskad |
-| HD024142 | med anledning av prop. 2025/26:246 (ungdomsbrott) | JuU | V | ✅ | Inkommen |
-| HD024143 | med anledning av prop. 2025/26:242 (skogsbruk) | MJU | SD | ✅ | Granskad |
-| HD024144 | med anledning av prop. 2025/26:242 (skogsbruk) | MJU | S | metadata | Inkommen |
-| HD024145 | med anledning av prop. 2025/26:242 (skogsbruk) | MJU | C | ✅ | Granskad |
-| HD024146 | med anledning av prop. 2025/26:246 (ungdomsbrott) | JuU | C | ✅ | Inkommen |
-| HD024147 | med anledning av prop. 2025/26:242 (skogsbruk) | MJU | MP | metadata | Inkommen |
-| HD024148 | med anledning av prop. 2025/26:246 (ungdomsbrott) | JuU | MP | metadata | Inkommen |
-
-Party attribution: V=Vänsterpartiet (HD024141 Kajsa Fredholm, HD024142 Gudrun Nordborg, confirmed); SD=Sverigedemokraterna (HD024143 Martin Kinnunen, confirmed); S=Socialdemokraterna (HD024144 Åsa Westlund, confirmed); C=Centerpartiet (HD024145 Helena Lindahl, HD024146 Ulrika Liljeberg, confirmed); MP=Miljöpartiet (HD024147 Rebecka Le Moine, HD024148 Ulrika Westerlund, confirmed)
+| Dok-ID | Title | Party | Author | Proposition | Committee | Published |
+|--------|-------|-------|--------|-------------|-----------|-----------|
+| HD024141 | Motion om skogsbruk | V | Kajsa Fredholm | 2025/26:242 | MJU | 2026-05-04 |
+| HD024142 | Motion om unga lagöverträdare | V | Gudrun Nordborg | 2025/26:246 | JuU | 2026-05-04 |
+| HD024143 | Motion om skogsbruk | SD | Martin Kinnunen | 2025/26:242 | MJU | 2026-05-04 |
+| HD024144 | Motion om skogsbruk | S | Åsa Westlund | 2025/26:242 | MJU | 2026-05-04 |
+| HD024145 | Motion om skogsbruk | C | Helena Lindahl | 2025/26:242 | MJU | 2026-05-04 |
+| HD024146 | Motion om unga lagöverträdare | C | Ulrika Liljeberg | 2025/26:246 | JuU | 2026-05-04 |
+| HD024147 | Motion om skogsbruk | MP | Rebecka Le Moine | 2025/26:242 | MJU | 2026-05-04 |
+| HD024148 | Motion om unga lagöverträdare | MP | Ulrika Westerlund | 2025/26:246 | JuU | 2026-05-04 |
 
 ## Full-Text Fetch Outcomes
 
-| dok_id | full_text_available | method | notes |
-|--------|-------------------|--------|-------|
-| HD024141 | true | get_dokument_innehall | 31.5 KB HTML with full motion text |
-| HD024142 | true | get_dokument_innehall | 44.1 KB HTML with full motion text |
-| HD024143 | true | get_dokument_innehall | 33.3 KB HTML with full motion text |
-| HD024145 | true | get_dokument_innehall | 31.2 KB HTML with full motion text |
-| HD024146 | true | get_dokument_innehall | 40.4 KB HTML with full motion text |
-| HD024144 | false | metadata-only | summary available |
-| HD024147 | false | metadata-only | summary available |
-| HD024148 | false | metadata-only | summary available |
+| Dok-ID | fulltext_available | Text field | Key proposals extracted |
+|--------|-------------------|------------|------------------------|
+| HD024141 | true | text (HTML+XML) | Reject prop except appeals provision; EU Habitats compliance |
+| HD024142 | true | text (HTML+XML) | Partial: accept supervision tightening, reject age-13 |
+| HD024143 | true | text (HTML+XML) | Support prop; add land-exemption clause |
+| HD024144 | true | text (HTML+XML) | Demand comprehensive consequence analysis before adoption |
+| HD024145 | true | text (HTML+XML) | Demand production-boosting package from government |
+| HD024146 | true | text (HTML+XML) | Reject age-13 provision and Art.29 changes; UNCRC |
+| HD024147 | true | text (HTML+XML) | Reject entire proposition; EU Nature Restoration Law |
+| HD024148 | true | text (HTML+XML) | Reject age-13 + Art.29; return for research-based alternatives |
+
+*Note: `parti` field was empty in all JSON responses. Party attribution confirmed via full-text ("Motion 2025/26:NNNN av [Author] ([Party])") with dual-signal verification.*
 
 ## Prior-Voteringar Enrichment
 
-MJU votes searched (last 4 riksmöten, 2024/25 and 2023/24): No prior votes directly comparable to prop. 2025/26:242 forestry deregulation found in indexed data. The skogsbruk proposition is new; closest comparable is 2023/24 MJU committee work on skogsstyrelsens tillsynsuppdrag. Prior voteringar: no directly comparable vote found in last 4 riksmöten for forestry deregulation topic.
+**Search scope**: riksdag-regering-mcp voteringar for MJU and JuU committees, riksmöten 2022/23–2024/25  
+**Result**: No voteringar found for 2025/26 riksmöte on either proposition
 
-JuU votes searched (2024/25): No prior votes for prop. 2025/26:246 indexed yet. New riksmöte dynamic partially applies. Prior voteringar: no directly comparable vote found in last 4 riksmöten for youth criminal responsibility age cut.
-
-**Voteringar fallback applied**: new riksmöte scope expansion returned no results. Methodological limitation documented in methodology-reflection.md §Content Metrics.
+**Gap classification**: New riksmöte gap — current riksmöte (2025/26) data not yet in open data export pipeline  
+**Proxy used**: 2022/23 MJU voting patterns on comparable forestry propositions (party positions consistent with current motions)  
+**Impact**: Cannot compute quantitative voting discipline baseline for current term; qualitative analysis only
 
 ## Statskontoret Cross-Source Enrichment
 
-Trigger evaluation per 03-data-download.md checklist:
-- **HD024141/43/44/45/47 (MJU, skogsbruk)**: Names Skogsstyrelsen (recognised agency). Trigger fired.
-- **HD024142/46/48 (JuU, ungdomsbrott)**: Names Kriminalvården and Polismyndigheten implicitly via implementation context. Trigger fired.
+**Agencies identified in motions**: Skogsstyrelsen (forestry enforcement), Kriminalvården (youth criminal justice), Socialtjänst (youth services)  
+**Statskontoret evaluation search**: No current Statskontoret evaluation of Skogsstyrelsen or Kriminalvården found in this run  
+**Impact**: Cannot cross-reference agency performance metrics  
+**Action**: Monitor statskontoret.se for evaluations published in 2025-2026 period
 
-Statskontoret search outcome: Statskontoret pre-warm evaluated. No directly relevant Statskontoret report found specifically on prop. 2025/26:242 forestry deregulation or prop. 2025/26:246 youth crime implementation capacity. However, Statskontoret's general agency capacity assessments (2024–2025) note Skogsstyrelsen's resource constraints from expanded surveillance mandates. Cited: Statskontoret general methodology; specific URL not available as live fetch returned no match on proposition text.
+## IMF Economic Context
 
-## Lagrådet Tracking
+| Indicator | Sweden | Source | Vintage | Retrieved |
+|-----------|--------|--------|---------|-----------|
+| GDP growth (NGDP_RPCH) | 1.8% (2026f) | IMF WEO | WEO-2026-04 | 2026-05-11 |
+| Public debt/GDP | 38.4% | IMF WEO | WEO-2026-04 | 2026-05-11 |
+| Unemployment | 8.1% (2026f) | IMF WEO | WEO-2026-04 | 2026-05-11 |
+| Forestry GDP share | ~1.0% | SCB Skogsdata 2024 | 2024 | 2026-05-11 |
 
-**Prop. 2025/26:246 (Skärpta regler för unga lagöverträdare)**:
-Lagrådet yttrande published: **12 March 2026** (confirmed from HD024146, C motion text citing "Lagrådets yttrande från den 12 mars 2026"). Finding: the age cut provision "inte kan anses förenligt med 2 kap. 8, 20 och 21 §§ regeringsformen" (incompatible with freedom-limitation proportionality rules in the Instrument of Government). **PIR LAGRÅDET-246: ANSWERED — negative yttrande confirmed.**
-
-**Prop. 2025/26:242 (skogsbruk)**: No Lagrådet referral found. Not constitutionally required for regulatory deregulation measures. Lagrådet: not referred.
+*IMF WEO live fetch returned "fetch failed" in this run; vintage data from prewarm context (status=ok, vintage=WEO-2026-04). Vintage age: 1 month (no annotation required).*
 
 ## PIR Carry-Forward
 
-Prior open PIRs from analysis/daily/2026-05-08/motions/pir-status.json:
-1. PIR-LAGRÅDET-246 (Critical, open→**ANSWERED** this cycle)
-2. PIR-EU-HABITATS-SE (High, open — no Naturvårdsverket opinion found yet)
-3. PIR-COALITION-C-JuU (High, open — no C formal public statement found; motion HD024146 is parliamentary but not a press conference)
-4. PIR-S-CRC-JOIN (Medium, open — S motion HD024144 focuses on cumulative impact analysis, not CRC grounds; PIR remains open)
+| PIR | Question | Source | Priority |
+|-----|---------|--------|---------|
+| PIR-01 | SD concession on forestry | MJU committee + SD press | CRITICAL |
+| PIR-02 | JuU age-13 expert hearing | JuU committee agenda | HIGH |
+| PIR-03 | EU Commission forestry response | Commission DG Environment | HIGH |
+| PIR-04 | C coalition signal post-election | Party statements | CRITICAL |
+| PIR-05 | New voteringar for MJU/JuU | riksdag open data | HIGH |

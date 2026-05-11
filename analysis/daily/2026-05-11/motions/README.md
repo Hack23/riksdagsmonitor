@@ -1,71 +1,80 @@
-# Analysis: Opposition Motions — 2026-05-11
-**Workflow**: news-motions | **Subfolder**: motions | **Cycle**: 2025/26  
-**Generated**: 2026-05-11 | **Classification**: OSINT — Public Sources  
-**Effective data date**: 2026-05-04 (lookback applied)
+# Analysis Index — Opposition Motions — 2026-05-11
 
-## Summary
+**Date**: 2026-05-11 | **Type**: motions | **Workflow**: news-motions  
+**Data Span**: 2026-05-04 (lookback 5 business days)  
+**IMF Vintage**: WEO-2026-04 | **Election Proximity**: T-125 days (2026-09-13) | **DIW Multiplier**: 1.5×
 
-This analysis covers 8 committee motions filed 2026-05-04 across two proposition clusters:
+## Political Summary
 
-1. **Prop. 2025/26:242** — Forestry deregulation (5 MJU motions: V, SD, S, C, MP)
-2. **Prop. 2025/26:246** — Youth criminal justice reform (3 JuU motions: V, C, MP)
+Eight opposition motions filed in response to two government propositions:
+- **Prop. 2025/26:242** — "Ett tydligt regelverk för aktivt skogsbruk" (Forestry deregulation) → MJU committee — 5 motions from V, SD, S, C, MP
+- **Prop. 2025/26:246** — "Skärpta regler för unga lagöverträdare" (Stricter rules for young offenders) → JuU committee — 3 motions from V, C, MP
 
-Key intelligence: Lagrådet issued a negative yttrande (12 March 2026) finding prop. 246's age-cut to 13 years unconstitutional under RF 2 kap. 8, 20–21 §§. PIR LAGRÅDET-246 is now ANSWERED. Centerpartiet's dual defection (HD024145 + HD024146) confirms a coherent pre-election positioning strategy with 4 months until the general election.
+Cross-bloc opposition on both files: the government coalition (M/KD/L/SD) faces resistance from Left, Green, Social Democrats, and Centrists on different grounds. In election year 2026 these motions crystallise contested terrain — environmental stewardship vs. economic production, and evidence-based criminal justice vs. punitive responses to youth crime.
 
-## Artifact Index
+## Party-Document Map
 
-### Family A — Core Synthesis (9 files)
-- `README.md` — This file
-- `executive-brief.md` — BLUF + 3 decisions
-- `synthesis-summary.md` — Full intelligence synthesis
-- `significance-scoring.md` — DIW scoring with election multiplier
-- `classification-results.md` — Intel taxonomy classification
-- `swot-analysis.md` — SWOT for both proposition clusters
-- `risk-assessment.md` — Risk register (R01–R07)
-- `threat-analysis.md` — STRIDE-P threat actors
-- `stakeholder-perspectives.md` — 8 stakeholder analyses
+| Dok-ID | Party | Author | Proposition | Committee |
+|--------|-------|--------|-------------|-----------|
+| HD024141 | V | Kajsa Fredholm | 2025/26:242 (Skogsbruk) | MJU |
+| HD024142 | V | Gudrun Nordborg | 2025/26:246 (Unga lagöverträdare) | JuU |
+| HD024143 | SD | Martin Kinnunen | 2025/26:242 (Skogsbruk) | MJU |
+| HD024144 | S | Åsa Westlund | 2025/26:242 (Skogsbruk) | MJU |
+| HD024145 | C | Helena Lindahl | 2025/26:242 (Skogsbruk) | MJU |
+| HD024146 | C | Ulrika Liljeberg | 2025/26:246 (Unga lagöverträdare) | JuU |
+| HD024147 | MP | Rebecka Le Moine | 2025/26:242 (Skogsbruk) | MJU |
+| HD024148 | MP | Ulrika Westerlund | 2025/26:246 (Unga lagöverträdare) | JuU |
 
-### Family B — Structural Metadata (2 files)
-- `data-download-manifest.md` — Download provenance + PIR carry-forward
-- `cross-reference-map.md` — Document linkage graph + economic provenance
+## Artifact Inventory (23 required)
 
-### Family C — Strategic Extensions (5 files)
-- `scenario-analysis.md` — 4 scenarios with probabilities
-- `comparative-international.md` — Norway MACR, Białowieża, EU comparators
-- `devils-advocate.md` — Counter-narratives for both propositions
-- `intelligence-assessment.md` — KIQs + confidence ladder
-- `methodology-reflection.md` — Data quality, analytics, AI FIRST note
+### Family A — Core Synthesis (9)
+- [README.md](README.md) — This index ✓
+- [executive-brief.md](executive-brief.md)
+- [synthesis-summary.md](synthesis-summary.md)
+- [significance-scoring.md](significance-scoring.md)
+- [classification-results.md](classification-results.md)
+- [swot-analysis.md](swot-analysis.md)
+- [risk-assessment.md](risk-assessment.md)
+- [threat-analysis.md](threat-analysis.md)
+- [stakeholder-perspectives.md](stakeholder-perspectives.md)
 
-### Family D — Electoral & Domain Lenses (7 files)
-- `election-2026-analysis.md` — Electoral constituency impact + C's strategy
-- `voter-segmentation.md` — 5 voter segments with electoral mathematics
-- `coalition-mathematics.md` — Vote arithmetic for both propositions
-- `historical-parallels.md` — 5 historical cases
-- `media-framing-analysis.md` — 4 dominant frames + social media
-- `implementation-feasibility.md` — Administrative + legal feasibility
-- `forward-indicators.md` — T+7/30/90 indicators + new PIRs
+### Family B — Structural Metadata (2)
+- [data-download-manifest.md](data-download-manifest.md)
+- [cross-reference-map.md](cross-reference-map.md)
 
-### Family E — Per-Document Analyses (8 files)
-- `documents/HD024141-analysis.md` — V, forestry
-- `documents/HD024142-analysis.md` — V, youth crime
-- `documents/HD024143-analysis.md` — SD, forestry
-- `documents/HD024144-analysis.md` — S, forestry
-- `documents/HD024145-analysis.md` — C, forestry
-- `documents/HD024146-analysis.md` — C, youth crime
-- `documents/HD024147-analysis.md` — MP, forestry
-- `documents/HD024148-analysis.md` — MP, youth crime
+### Family C — Strategic Extensions (5)
+- [scenario-analysis.md](scenario-analysis.md)
+- [comparative-international.md](comparative-international.md)
+- [devils-advocate.md](devils-advocate.md)
+- [intelligence-assessment.md](intelligence-assessment.md)
+- [methodology-reflection.md](methodology-reflection.md)
 
-### Sidecar files
-- `pir-status.json` — PIR status (4 PIRs, 2 answered this cycle)
-- `economic-data.json` — IMF economic context provenance
+### Family D — Electoral & Domain Lenses (7)
+- [election-2026-analysis.md](election-2026-analysis.md)
+- [voter-segmentation.md](voter-segmentation.md)
+- [coalition-mathematics.md](coalition-mathematics.md)
+- [historical-parallels.md](historical-parallels.md)
+- [media-framing-analysis.md](media-framing-analysis.md)
+- [implementation-feasibility.md](implementation-feasibility.md)
+- [forward-indicators.md](forward-indicators.md)
 
-## Quality Metrics
+### Family E — Per-Document (8)
+- [documents/hd024141-analysis.md](documents/hd024141-analysis.md)
+- [documents/hd024142-analysis.md](documents/hd024142-analysis.md)
+- [documents/hd024143-analysis.md](documents/hd024143-analysis.md)
+- [documents/hd024144-analysis.md](documents/hd024144-analysis.md)
+- [documents/hd024145-analysis.md](documents/hd024145-analysis.md)
+- [documents/hd024146-analysis.md](documents/hd024146-analysis.md)
+- [documents/hd024147-analysis.md](documents/hd024147-analysis.md)
+- [documents/hd024148-analysis.md](documents/hd024148-analysis.md)
 
-| Metric | Value | Required |
-|--------|-------|---------|
-| Artifacts complete | 23/23 | 23/23 ✅ |
-| Doc analyses | 8/8 | Required ✅ |
-| Full text (≥2 docs) | 5/8 | ≥2 ✅ |
-| Economic provenance | ✅ | Required ✅ |
-| PIRs updated | 2 answered, 2 open | All addressed ✅ |
-| Election multiplier | 1.5× applied | Required ✅ |
+## Economic Context (IMF WEO-2026-04)
+
+| Indicator | Sweden 2025 | 2026 Forecast | Source |
+|-----------|-------------|---------------|--------|
+| GDP Growth (NGDP_RPCH) | 0.8% | 1.8% | IMF WEO Apr-2026 |
+| Public Debt/GDP (GGXWDG_NGDP) | 38.4% | 37.9% | IMF WEO Apr-2026 |
+| Unemployment (LUR) | 8.4% | 8.1% | IMF WEO Apr-2026 |
+| CPI Inflation (PCPIPCH) | 2.1% | 1.9% | IMF WEO Apr-2026 |
+
+*Economic data provider: IMF (WEO-2026-04 vintage, retrieved 2026-05-11). Swedish forestry sector contributes ~1.0% of GDP and ~90 000 direct jobs (SCB 2024).*

@@ -1,59 +1,65 @@
-# Voter Segmentation — Opposition Motions 2026-05-11
+# Voter Segmentation — Opposition Motions — 2026-05-11
 
-## Relevant Voter Segments
+**Family**: D | **Confidence**: HIGH
 
-### Segment 1: Rural Private Forest Owners (~350,000 households)
-**Policy interest**: Prop. 2025/26:242 — forestry deregulation
-**Party affinity**: SD (rural conservative), M (rural liberal), C (rural liberal-agrarian)
-**Motion alignment**: SD supports (HD024143); C wants more (HD024145); S wants delay (HD024144); V/MP reject (HD024141/147)
-**Turnout motivation**: HIGH — direct economic and property rights interest
-**Swing potential**: LOW — already strongly right-of-centre; marginal votes between SD/M/C
-**Message resonance**: SD's "small owner exemption" (<50 ha) directly addresses this segment's cost-benefit concern.
+## Target Voter Segments by Motion
 
-### Segment 2: Suburban Parents (Crime-Concerned, 2.5m voters)
-**Policy interest**: Prop. 2025/26:246 — youth criminal justice
-**Party affinity**: Dispersed — M, KD, some S, some SD
-**Motion alignment**: SD and governing bloc support the age-cut; V/C/MP oppose
-**Turnout motivation**: MEDIUM-HIGH — youth crime salience in suburban Sweden
-**Swing potential**: MEDIUM — S needs to retain suburban parents who also care about economy
-**Message resonance**: "Tough on youth crime" resonates; "constitutional" argument less salient to this group.
+### Forestry Motions (Prop. 2025/26:242)
 
-### Segment 3: Educated Urban Liberals (Constitutional Care, ~600k voters)
-**Policy interest**: Rule of law, institutional quality, constitutional compliance
-**Party affinity**: L, C, soft-M
-**Motion alignment**: C's HD024146 is directly targeted at this segment
-**Turnout motivation**: HIGH — abstract democratic norms motivate this group when activated
-**Swing potential**: HIGH — this is the battleground between L and C for educated urban liberal votes
-**Message resonance**: "Government repeatedly ignores Lagrådet and the constitution" (C's framing) is highly resonant.
+| Segment | Size (est.) | Priority Party | Motion Appeal |
+|---------|------------|---------------|--------------|
+| Rural forest workers | ~90 000 direct, 400 000 dependent | C, S, SD | Economic security: C offers production; S offers prudence; SD offers land rights |
+| Environmental activists | ~5-8% active voters | MP, V | Biodiversity protection — MP/V total rejection |
+| Forestland owners (private) | ~230 000 households | C, SD, M | Deregulation appeal; SD exemption demand speaks directly |
+| Rural municipalities | Elected officials + residents | C, S | Economic vitality of timber communities |
+| Climate-concerned urban | ~15-20% voters | MP, V, S | Environment vs. production tension |
 
-### Segment 4: Environmental Voters (Biodiversity-Concerned, ~400k voters)
-**Policy interest**: Prop. 2025/26:242 — forestry as biodiversity threat; also EU law compliance
-**Party affinity**: MP, soft-C, some V
-**Motion alignment**: V and MP full rejection; C wants better environmental outcomes from deregulation
-**Turnout motivation**: HIGH for MP base; MEDIUM for soft-C and soft-M environmentalists
-**Swing potential**: MEDIUM — these voters are already at the edges of the electoral distribution
-**Message resonance**: Skogsstyrelsen 26,000 ha/year is a concrete, shocking number if communicated effectively.
+### Youth Crime Motions (Prop. 2025/26:246)
 
-### Segment 5: Legal Professionals and Academics (~150k voters, high influence)
-**Policy interest**: Constitutional compliance; Lagrådet authority; RF integrity
-**Party affinity**: L, C, independent
-**Motion alignment**: HD024146 most resonant; also HD024142
-**Turnout motivation**: HIGH — strongly engaged with rule-of-law issues
-**Swing potential**: LOW in numbers but HIGH in media influence and expert opinion generation
-**Message resonance**: This group will likely generate op-eds and expert commentary that amplify HD024146's constitutional framing.
+| Segment | Size (est.) | Priority Party | Motion Appeal |
+|---------|------------|---------------|--------------|
+| Suburban moderates (crime concern) | ~10-15% | C, M, L | C "smart on crime" differentiation from punitive M |
+| Working-class urban (safety concern) | ~15-20% | SD, S | SD punitive; S procedural |
+| Parents of adolescents | Broad cross-segment | C, V | Age-13 raises parental concern about criminalising teens |
+| Youth justice professionals | Opinion leaders | V, C, MP | Evidence-based consensus; opposition reinforces expert community |
+| Rights-oriented urban progressive | ~8-12% | V, MP | Civil liberties, UNCRC, anti-criminalisation |
 
-## Cross-Segment Electoral Mathematics
+## Cross-Segment Electoral Dynamics
 
-The combined electoral weight of Segments 3 and 5 (educated urban liberals + legal professionals) is approximately 750,000 voters — roughly 10% of the electorate. These segments are C and L's core differentiation target. If C successfully occupies the constitutional compliance space through its HD024146 position while L remains silent (no L motion filed), C could shift 0.5–1% of the electorate from L to C.
+The most significant segmentation finding is the **suburban moderate voter**:
+- This voter wants crime action but does not want extreme measures
+- C's "smart on crime" framing (HD024146) speaks directly to this segment
+- If C successfully differentiates from M on criminal justice while maintaining economic credibility on forestry (HD024145), C can consolidate moderate voter support
+- This is a classic centre-party squeeze play between punitive right (M/SD) and rights-focused left (V/MP)
 
-The suburban parents (Segment 2) are the key battleground. The governing bloc's youth crime toughening directly targets this segment. The question is whether S can make the "constitutional risk" argument resonate with suburban parents — probably not as a first-order campaign message, but as a "competence" argument (government makes bad laws).
+## Mermaid: Voter Segment Map
 
-## Voter Segment Impact Summary
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d'}}}%%
+graph TD
+    classDef rural fill:#0a0e27,stroke:#00ff88,color:#00ff88
+    classDef urban fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+    classDef moderate fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
 
-| Segment | Estimated size | Motion salience | Electoral impact |
-|---------|---------------|----------------|-----------------|
-| Rural forest owners | ~350k | HIGH (prop. 242) | Marginal intra-right redistribution |
-| Suburban crime-concerned | ~2.5m | HIGH (prop. 246) | Net Tidö benefit; C loses some |
-| Educated urban liberals | ~600k | HIGH (both) | C gain from L |
-| Environmental voters | ~400k | HIGH (prop. 242) | MP/V consolidation |
-| Legal/academic | ~150k | HIGH (prop. 246) | Media multiplier for C |
+    RW["Rural forest workers<br/>~90 000 direct"]:::rural
+    FO["Forestland owners<br/>~230 000"]:::rural
+    EA["Environmental activists<br/>~5-8% voters"]:::urban
+    CU["Climate-concerned urban<br/>~15-20%"]:::urban
+    SM["Suburban moderates<br/>~10-15%"]:::moderate
+    PA["Parents of adolescents<br/>broad cross-segment"]:::moderate
+
+    RW --> C1["C: production package<br/>S: prudent approach<br/>SD: land rights"]
+    FO --> C2["SD: land exemption<br/>C: deregulation+<br/>M: full prop"]
+    EA --> C3["MP+V: full rejection<br/>Environmental protection"]
+    CU --> C4["MP+V+S: EU compliance<br/>nature restoration"]
+    SM --> C5["C: smart-on-crime<br/>M: punitive approach"]
+    PA --> C6["C+V+MP: reject age-13<br/>parental resonance"]
+```
+
+**Evidence Anchors**:
+
+| Claim | Evidence | Retrieved | Confidence |
+|-------|----------|-----------|------------|
+| 90 000 forestry direct jobs | SCB Skogsdata 2024 | 2026-05-11 | MEDIUM |
+| C smart-on-crime moderate targeting | HD024146 explicit "smart on crime" framing | 2026-05-11 | HIGH |
+| SD land-exemption = rural landowner targeting | HD024143 förslag specifics | 2026-05-11 | HIGH |

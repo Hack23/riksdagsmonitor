@@ -1,58 +1,89 @@
-# Forward Indicators — Opposition Motions 2026-05-11
-**Horizon**: T+7d / T+30d / T+90d (election) | PIR update required: Yes
+# Forward Indicators — Opposition Motions — 2026-05-11
 
-## T+7 Days: Early Signal Events
+**Family**: D | **Horizon**: T+30d / T+90d / T+125d (election) / T+365d (post-election)
 
-| Indicator | Expected by | Significance | PIR |
-|-----------|-------------|-------------|-----|
-| MJU committee hearing on prop. 242 | 2026-05-18 | Did committee adopt S's cumulative impact demand? | EU-HABITATS-SE |
-| JuU committee hearing on prop. 246 | 2026-05-18 | Government's formal RF compatibility memo published? | LAGRÅDET-246 follow-up |
-| C leader statement on HD024146 | 2026-05-15 | Does C party chair amplify the constitutional framing at press briefing? | COALITION-C-JuU |
-| SD response to HD024143 outcome | 2026-05-15 | Has government signalled acceptance of small-owner exemption? | none |
+## Priority Intelligence Requirements (PIR)
 
-## T+30 Days: Structural Events
+### PIR-01: SD Forestry Concession (T+30–T+90)
+**Question**: Does government offer SD a land-exemption concession on Prop. 2025/26:242 before MJU committee vote?
+**Trigger indicators**:
+- SD press release or Martin Kinnunen statement clarifying conditions
+- MJU committee agenda including SD-specific amendment
+- Government minister (Näringsdepartementet) bilateral meeting with SD
+**Significance level**: CRITICAL — determines forestry bill fate
 
-| Indicator | Expected by | Significance | PIR |
-|-----------|-------------|-------------|-----|
-| MJU committee report on prop. 242 | 2026-06-10 | Final committee position; S's demand adopted/rejected | EU-HABITATS-SE |
-| JuU committee report on prop. 246 | 2026-06-10 | C's formal reservation text; RF amendment offered? | LAGRÅDET-246 follow-up |
-| Plenary vote on prop. 242 | 2026-06-15 | Final vote margins; C's actual vote | none |
-| Plenary vote on prop. 246 | 2026-06-15 | Final vote margins; split/separate provision votes? | none |
-| Naturvårdsverket statement on Habitats Directive | open | Proactive Art. 6 screening or silence? | EU-HABITATS-SE |
-| S JuU plenary position statement | 2026-06-10 | S formally opposes age-cut? | S-CRC-JOIN |
+### PIR-02: JuU Age-13 Committee Hearing (T+30–T+90)
+**Question**: Does JuU committee hear expert testimony that might shift SD's position on age-13?
+**Trigger indicators**:
+- Brå or Barnombudsmannen invited to JuU committee hearing
+- SD MP statement specifically on age-13 (distinct from youth crime in general)
+- V+C+MP coordinated press conference on JuU before committee vote
+**Significance level**: HIGH
 
-## T+90 Days (Election Period)
+### PIR-03: EU Commission Response to Forestry Bill (T+90+)
+**Question**: Does the European Commission issue any formal opinion, letter, or preliminary assessment of Sweden's Prop. 2025/26:242 in relation to Nature Restoration Law compliance?
+**Trigger indicators**:
+- Commission DG Environment communication to Swedish Miljödepartement
+- European Parliament MEP from Sweden's green delegation raising the Swedish bill
+- Naturvårdsverket publishing an EU compliance assessment
+**Significance level**: HIGH — would dramatically strengthen opposition position
 
-| Indicator | Expected by | Significance |
-|-----------|-------------|-------------|
-| C opinion poll trend | 2026-07-01 | C above 8% sustained = constitutional framing working |
-| Media "lawless government" coverage | ongoing | Frequency of "government overrides Lagrådet" stories |
-| Legal challenge filing on prop. 246 | 2026-09-01 | V, MP or NGO files constitutional challenge |
-| EU Commission response to Habitats complaint | 2026-10-01 | NGO complaint filed; Commission acknowledgement |
+### PIR-04: Centern Post-Election Coalition Signalling (T+125+)
+**Question**: After September 2026 election, which coalition does C enter?
+**Trigger indicators**:
+- C leader statement on coalition preference post-election
+- C pre-election declaration on age-13 as "red line"
+- Polling: C's vote share and directional movement
+**Significance level**: CRITICAL — these two motions are C's positioning for post-election negotiation
 
-## Updated PIR Status
+### PIR-05: New Voteringar Data (T+90–T+125)
+**Question**: Do MJU and/or JuU produce voteringar on these propositions before September 2026?
+**Trigger indicators**:
+- MJU committee vote on Prop. 2025/26:242
+- JuU committee vote on Prop. 2025/26:246
+- Chamber vote scheduled
+**Significance level**: HIGH — would close the voteringar gap and enable quantitative analysis
 
-| PIR ID | Prior status | Updated status | Evidence |
-|--------|-------------|----------------|---------|
-| LAGRÅDET-246 | OPEN | **ANSWERED** | Lagrådet yttrande 12 March 2026; RF 2 kap. 8, 20–21 §§ incompatible |
-| EU-HABITATS-SE | OPEN | OPEN — monitoring | No Naturvårdsverket Art. 6 opinion published; flag: HD024141 confirms V is monitoring this |
-| COALITION-C-JuU | OPEN | **ANSWERED (parliamentary)** | HD024146 is C's formal parliamentary statement; press conference status remains OPEN |
-| S-CRC-JOIN | OPEN | OPEN — intelligence gap confirmed | S filed no JuU committee motion; S's floor position on CRC grounds unconfirmed |
+## Forward Timeline
 
-## New PIRs Generated This Cycle
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d'}}}%%
+gantt
+    title Forward Events Timeline
+    dateFormat YYYY-MM-DD
+    axisFormat %b %Y
 
-| PIR ID | Question | Priority | Deadline |
-|--------|----------|---------|---------|
-| GOVT-RF-MEMO-246 | What specific RF compatibility argument does the government submit to JuU committee? | HIGH | 2026-06-10 |
-| S-JuU-FLOOR-VOTE | Will S vote against prop. 246 (youth crime) in plenary and on what grounds? | MEDIUM | 2026-06-15 |
-| NATURVARDSVERKET-ART6 | Has Naturvårdsverket issued an Art. 6 screening opinion on prop. 242? | HIGH | 2026-06-10 |
+    section Forestry Bill
+    SD concession expected: 2026-05-11, 30d
+    MJU committee hearings: 2026-06-01, 60d
+    MJU committee vote: 2026-08-01, 20d
+    Chamber vote window: 2026-08-21, 20d
 
-## Economic Forward Indicators (WEO Apr-2026, cached)
+    section Youth Crime Bill
+    JuU committee hearings: 2026-05-20, 60d
+    JuU committee vote: 2026-07-20, 20d
+    Chamber vote window: 2026-08-10, 25d
 
-| Indicator | Current | Horizon | Relevance |
-|-----------|---------|---------|----------|
-| Sweden GDP growth | 2.1% (2026F) | stable | Fiscal space available for Kriminalvården capacity expansion |
-| Government debt/GDP | 36.6% | stable | Government can fund youth justice capacity without fiscal risk |
-| Forestry export value | ~SEK 140 bn/year | at risk if EU Habitats | Any EU infringement threat creates export uncertainty |
+    section Election
+    Election day: crit, 2026-09-13, 1d
+    New parliament: 2026-09-30, 10d
+    New government formation: 2026-10-01, 60d
+```
 
-*Economic data provenance: IMF WEO-2026-04 vintage; live fetch degraded; pre-warm context used; annotated as (WEO Apr-2026, cached). SCB industry data 2024.*
+## Leading Indicators Scoreboard
+
+| Indicator | Status (2026-05-11) | Watch Date |
+|-----------|--------------------|-----------| 
+| SD concession on forestry | 🟡 Pending | June 2026 |
+| MJU committee hearing dates | 🟡 Not announced | June 2026 |
+| EU Commission forestry response | 🔵 Not yet triggered | Q3 2026 |
+| C coalition signal | 🟡 Motion filed (signal sent) | Sept 2026 |
+| New voteringar availability | 🔴 Gap confirmed | Aug-Sept 2026 |
+
+**Evidence Anchors**:
+
+| Claim | Evidence | Retrieved | Confidence |
+|-------|----------|-----------|------------|
+| PIR-01 SD concession as critical path | HD024143 explicit conditions | 2026-05-11 | HIGH |
+| PIR-04 C coalition optionality | HD024145+HD024146 dual departure | 2026-05-11 | HIGH |
+| Voteringar gap confirmed | riksdag-regering-mcp null search | 2026-05-11 | HIGH |

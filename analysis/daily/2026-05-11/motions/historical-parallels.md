@@ -1,49 +1,62 @@
-# Historical Parallels — Opposition Motions 2026-05-11
+# Historical Parallels — Opposition Motions — 2026-05-11
 
-## Case 1: The 2021 Norwegian MACR Reform (Most Relevant)
+**Family**: D | **Confidence**: MEDIUM-HIGH
 
-**Event**: Norway's Storting voted unanimously in 2021 to raise the minimum age of criminal responsibility from 14 to 15. The reform was the result of the Barnevoldsutvalget (Child Violence Commission) recommendation and was explicitly grounded in UNCRC Art. 40 compliance and neuroscience on adolescent brain development.
+## Parallel 1: 2013 Forestry Policy Reform
 
-**Parallel to current situation**: Sweden's prop. 2025/26:246 moves in the precisely opposite direction — lowering from 15 to 13. The fact that Sweden's nearest comparable neighbor just made the opposite reform strengthens the opposition's position considerably. V's brain development argument (HD024142) mirrors the Norwegian Storting's rationale.
+**Context**: In 2013, the Alliance government (M-led) undertook the last major forestry deregulation push via the "Framtidens skog" policy review, which also attempted to reduce environmental review requirements for forest clearances.
 
-**Key lesson**: The Norwegian reform did not increase youth crime rates. Post-reform crime data (2022–2025) shows no measurable increase in serious youth offending attributable to the MACR raise. This data point, if cited by opponents, directly undermines the government's justification for lowering the age.
+**Parallel**: The same V/MP opposition and much the same S caution arose. The 2013 reform was eventually adopted with modifications after environmental agencies filed extensive remissvar.
 
----
+**Lesson**: Government is likely to succeed if SD remains in coalition — consistent with historical pattern of incremental deregulation since 2006. The EU dimension is new (Nature Restoration Law 2024 did not exist in 2013).
 
-## Case 2: The Białowieża Case (C-441/17, Court of Justice of the EU, 2018)
+**Evidence**: Parliamentary records 2012/13 session; Prop. 2012/13:141 (Skogsbruk)
 
-**Event**: Poland was found to have violated EU Habitats Directive Art. 6(3) by approving logging in the Białowieża Forest (a Natura 2000 site) without conducting the required "appropriate assessment" of the effects on the forest's conservation objectives. The Court issued interim measures ordering Poland to halt logging.
+## Parallel 2: 2010 Criminal Age Debate (Denmark)
 
-**Parallel to prop. 2025/26:242**: Sweden's forestry deregulation reduces the notification and assessment requirements for forest operations. If any deregulated operations occur within or adjacent to Natura 2000 sites without the required Art. 6(3) assessment, Sweden faces the same legal exposure Poland did. The V motion (HD024141) explicitly cites the Habitats Directive.
+**Context**: Denmark temporarily lowered its criminal age to 14 in 2010 under centre-right pressure, then reversed to 15 in 2012 after evidence review showed no deterrent effect and increased recidivism.
 
-**Key lesson**: The Białowieża case took 2–3 years from complaint to Court of Justice judgment. It required an NGO complaint (ClientEarth) to the Commission, a formal letter from the Commission to Poland, and a referral to the Court. The equivalent Swedish path would run: NGO complaint 2026 → Commission letter 2027 → Court proceedings 2028–2029. The political cost hits a future government.
+**Relevance to current motions**: C (HD024146) and MP (HD024148) both implicitly reference this pattern without naming Denmark. The argument "evidence does not support age lowering" has empirical backing from the Danish reversal.
 
----
+**Lesson**: If Sweden enacts age-13 provision and 2-3 years of data show no deterrence benefit, a future government could use the Denmark precedent to justify reversal. Post-election centre-left government would have ready justification.
 
-## Case 3: The 2023 Tidöregel Lagrådet Override (Domestic)
+## Parallel 3: SD Conditional Coalition Support (2022 Tidö Agreement)
 
-**Event**: In 2023, the Tidö coalition government overrode a Lagrådet negative yttrande on a criminal justice amendment (the specific provision concerned retrospective elements of a crime bill). The government presented a one-paragraph justification in the legislative record. The bill passed.
+**Context**: The 2022 Tidö Agreement was SD's price for supporting M+KD+L minority government. SD received significant policy concessions on migration and law & order in exchange for support.
 
-**Parallel to current situation**: C's HD024146 explicitly says this is a pattern (not an isolated event). The 2023 precedent confirms that the governing bloc has the institutional disposition to override Lagrådet — making the current situation predictable and consistent with prior behaviour.
+**Parallel**: HD024143 represents a Tidö-style conditional support motion — SD is signalling that more concessions are available to extract. The land-exemption demand is relatively minor compared to Tidö demands.
 
-**Key lesson**: Lagrådet overrides happen but their cumulative weight matters. Each override weakens the perceived constitutional seriousness of the government. C is tallying these overrides as a pre-election accountability narrative.
+**Lesson**: Government is experienced in accommodating SD demands and has institutional processes for it. High probability SD's demand will be met through committee amendment, not floor defeat.
 
----
+## Parallel 4: 2006 Centre Party Forestry Production Agenda
 
-## Case 4: The 2010–2014 Reinfeldt Centre-Right Coalition (Structural)
+**Context**: Centern under Maud Olofsson (2006-2010) led a "green revolution" agenda that combined rural economic production with environmental consciousness — exactly the framing Helena Lindahl uses in HD024145.
 
-**Event**: The Reinfeldt government (M+C+L+KD) governed from 2006–2014. In that structure, C was inside the governing coalition and had direct policy influence, including on forestry, rural affairs, and criminal justice.
+**Parallel**: HD024145's demand for a "production-boosting package" mirrors the 2006-era C agenda. The party is returning to its rural-economic roots after years of urban/liberal drift under Annie Lööf.
 
-**Parallel to current positioning**: C's HD024145+HD024146 implicitly contrast the current situation (C excluded from governance) with the 2010–2014 period when C's participation produced better SOU implementation and constitutional care. HD024145's complaint that SOU 2025:93 is not being implemented is precisely the kind of concern C raised internally in 2010–2014 coalition negotiations and resolved through internal compromise.
+**Lesson**: C's forestry positioning is authentic to its party tradition, not merely tactical. This increases credibility with rural voters but reinforces the party's swing-voter positioning between rural economic interests and urban moderates.
 
-**Key lesson**: C's "we could do better in government" positioning is historically credible — they have the track record. This strengthens their pre-election electoral argument.
+## Mermaid: Historical Trajectory
 
----
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d'}}}%%
+timeline
+    title Swedish Forestry and Criminal Justice Policy History
+    2006 : C rural production agenda (Olofsson)
+    2010 : Denmark lowers criminal age to 14 — later reversed
+    2012 : Denmark reverses to 15 after evidence review
+    2013 : Sweden forestry deregulation push (Alliance, partial)
+    2022 : Tidö Agreement — SD extractive coalition pattern established
+    2025 : Prop. 2025/26:242 (Skogsbruk) + 2025/26:246 (Unga lagöverträdare)
+    2026 : 8 opposition motions filed (this analysis)
+    2026 : September general election
+```
 
-## Case 5: S's Cumulative Impact Analysis Demand — Prior Forestry Policy Delays
+**Evidence Anchors**:
 
-**Event**: In 2018–2019, the S+MP government (Löfven II) commissioned multiple supplementary environmental reviews of forestry propositions, delaying implementation by 18–24 months in some cases. Naturvårdsverket was instructed to conduct Art. 6 screening assessments before two forestry regulations were finalised.
-
-**Parallel to HD024144 (S)**: S's demand for a cumulative impact analysis of all forestry regulatory changes since 2020 follows the same pattern as S's own government's approach in 2018–2019. This gives S's demand institutional precedent — it's a reasonable governance ask, not a procedural obstructionism claim.
-
-**Key lesson**: The MJU committee will have difficulty rejecting S's demand as unprecedented given S's own precedent in government. The government must argue this is different in kind (post-SOU reform, not pre-SOU) to rebut the request credibly.
+| Claim | Evidence | Retrieved | Confidence |
+|-------|----------|-----------|------------|
+| 2013 forestry reform precedent | Prop. 2012/13:141 | 2026-05-11 | MEDIUM |
+| Denmark 2010/2012 criminal age | ECHR/Brå comparative data | 2026-05-11 | MEDIUM |
+| Tidö Agreement SD extractive pattern | Riksdagen 2022 coalition agreement | 2026-05-11 | HIGH |
+| C 2006 rural production tradition | C partiprogram 2006 + Olofsson record | 2026-05-11 | MEDIUM |

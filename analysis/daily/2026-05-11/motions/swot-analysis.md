@@ -1,63 +1,74 @@
-# SWOT Analysis — Opposition Motion Cluster 2026-05-11
+# SWOT Analysis — Opposition Motions — 2026-05-11
 
-## Cluster 1: Forestry Deregulation (MJU, prop. 2025/26:242)
+**Family**: A | **Subject**: Government propositions 2025/26:242 and 2025/26:246 from opposition perspective
 
-### Government/Governing bloc
+## Skogsbruk SWOT (Prop. 2025/26:242)
 
-**Strengths**:
-- Mathematical majority: M+KD+L+SD can pass without C or V/MP support
-- Economic narrative: 350,000 forest owners reduce compliance costs; significant export sector (SEK 140 bn/year)
-- SOU 2025:93 implementation in progress — incremental reform framing available
-- SD's HD024143 is supporting (with qualification) — supply-and-confidence relationship intact
+### Strengths (Opposition arguments)
+- **Breadth of opposition**: 5 parties oppose or condition support — demonstrates cross-ideological concern
+- **EU compliance anchor**: References to Nature Restoration Law and Habitats Directive provide legal grounding (V: HD024141; MP: HD024147; S: HD024144)
+- **Evidence of environmental risk**: Shortened notification periods remove de facto environmental screening; supported by empirical claim that most interventions requiring notification also require environmental assessment
 
-**Weaknesses**:
-- Skogsstyrelsen 2026:07: 26,000 ha/year high-value forest felled — data actively undercuts "sustainable management" narrative
-- EU Habitats Directive Art. 6 compatibility not assessed — creates legal overhang
-- C's "insufficient" signal means even supportive partners are publicly distancing
-- Cumulative regulatory change since 2020 (S demand) is a legitimate and verifiable gap
+### Weaknesses (Opposition challenges)
+- **Fragmented strategy**: V wants rejection; S wants pause; C wants more; SD wants modification — impossible to present a unified alternative
+- **S ambiguity**: Social Democrats do not explicitly oppose direction of deregulation, weakening left coalition
+- **No voteringar baseline**: Cannot use historical voting record to demonstrate prior majority positions in this riksmöte (new riksmöte gap)
 
-**Opportunities**:
-- Accept SD's small-owner exemption (HD024143) as a low-cost concession to broaden perceived support
-- Commission Naturvårdsverket Art. 6 review proactively (addresses V/EU law risk)
-- Use SOU 2025:93 process to promise C more in the next proposition
+### Opportunities
+- **SD leverage**: SD's conditional support (land exemptions) creates opening for cross-bloc negotiation that could force government to accept weakening amendments
+- **EU infringement risk**: If government ignores EU Nature Restoration Law compliance questions, opposition can escalate to Brussels dimension
+- **Election environment**: September 2026 election means every forestry vote in MJU becomes a campaign event; rural areas with strong forestry economy are swing constituencies
 
-**Threats**:
-- EU Commission infringement proceedings if Habitats Directive risk materialises (18–24 month window)
-- If S's cumulative impact demand is taken up by JO or Statskontoret, creates administrative delay
-- 2026 election: forestry deregulation is unpopular in urban areas; may be electoral liability
+### Threats
+- **Government majority**: M+KD+L+SD hold MJU majority if SD does not defect; opposition motions likely to lose on party-line vote
+- **C fragmentation**: Centern's demand for a production package may be co-opted by government through minor concession, neutralising C opposition
+- **Information asymmetry**: Government has access to full consequence analysis; opposition is responding to summaries in the proposition
 
----
+## Unga lagöverträdare SWOT (Prop. 2025/26:246)
 
-## Cluster 2: Youth Criminal Justice (JuU, prop. 2025/26:246)
+### Strengths (Opposition arguments)
+- **Cross-bloc unity on core issue**: V+C+MP all reject age-13 criminal liability — unusual left-centre-green agreement
+- **Research consensus**: International criminology and UNCRC both oppose lowering criminal ages; opposition has scientific establishment on its side
+- **C credibility**: Centern's opposition signals this is not a partisan left-wing stance — it is a principled centrist rejection
 
-### Government/Governing bloc
+### Weaknesses (Opposition challenges)
+- **Partial V acceptance**: V accepts tighter youth supervision rules, creating a split in the "total rejection" bloc
+- **Public opinion**: Swedish public consistently reports concerns about youth crime; government's framing of "stricter rules" may poll well even if expert opinion rejects age lowering
+- **JuU committee composition**: Government coalition likely holds committee majority; opposition needs SD defection to block
 
-**Strengths**:
-- SD's implicit support (no SD motion opposing; supply-and-confidence intact)
-- Youth crime is consistently high-salience electoral issue — majority public favours stricter measures
-- Government can proceed with mathematical majority even against C+V+MP+S(likely)
-- Three provisions in the bill: supervision tightening (V partially supports), reduced youth discount (contested), age cut (contested). Selective passage possible.
+### Opportunities
+- **International comparison**: C (HD024146) and MP (HD024148) both call for return with research-based alternatives — positions opposition as constructive reformers
+- **Post-election relevance**: If C-S-MP coalition forms post-September 2026, these motions become the baseline for a reversed criminal justice bill
 
-**Weaknesses**:
-- Lagrådet yttrande 12 March 2026 is a constitutional red card — RF 2 kap. 8, 20–21 §§ incompatibility on age cut provision
-- C's public framing ("government repeatedly ignores both Lagrådet and the constitution") is a governance-legitimacy attack, not just policy disagreement
-- No CRC Art. 40(3)(a) analysis published to rebut V's argumentation
-- S has not publicly supported any provision — could vote against the entire bill
+### Threats
+- **Crime saliency**: Any high-profile youth crime incident before September 2026 will increase public pressure on opposition parties to accept age lowering
+- **SD wedge**: SD supports the age reduction; if government grants SD the forestry exemptions, SD loyalty on JuU is secured
 
-**Opportunities**:
-- Amend the age-cut provision to comply with RF (lower ambition: retain 15 but add targeted exceptions for most serious offences)
-- Accept V's partial support on supervision orders as a bipartisan signal
-- Use the Lagrådet finding as a "constitution first" moment by offering an amendment — reframes as responsiveness
+## Mermaid: Opposition Strength Map
 
-**Threats**:
-- If bill passes unamended and Supreme Court later invalidates age-cut provision, major political cost
-- C's governance-legitimacy framing could resonate with voters who care about rule of law — "lawless government" narrative risk
-- European Court of Human Rights exposure if 13-year-olds face criminal proceedings incompatible with CRC Art. 40(3)(a)
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d'}}}%%
+graph LR
+    classDef strength fill:#0a0e27,stroke:#00ff88,color:#00ff88
+    classDef weakness fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    classDef opportunity fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+    classDef threat fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
 
----
+    S1["✅ 5-party breadth<br/>(Skogsbruk)"]:::strength
+    S2["✅ EU law anchor<br/>(V,MP,S)"]:::strength
+    S3["✅ Cross-bloc unity<br/>(JuU age rejection)"]:::strength
+    W1["⚠️ Fragmented strategy<br/>(Skogsbruk)"]:::weakness
+    W2["⚠️ S ambiguity<br/>(deregulation direction)"]:::weakness
+    O1["🔵 SD leverage<br/>(exemption demand)"]:::opportunity
+    O2["🔵 Election year<br/>(rural swing seats)"]:::opportunity
+    T1["🟡 Gov't committee majority<br/>(both files)"]:::threat
+    T2["🟡 Crime saliency risk<br/>(JuU public opinion)"]:::threat
+```
 
-## Cross-Cluster SWOT
+**Evidence Anchors**:
 
-**Dual defection risk**: C's parallel positions (insufficient forestry, unconstitutional youth crime) tell a coherent narrative — "this government passes bad laws poorly." If the media packages HD024145 + HD024146 together, the political damage is compounded. Government must decouple the two stories.
-
-**Election proximity**: All SWOT items above are magnified at 1.5× weight given September 2026 election.
+| Claim | Evidence | Retrieved | Confidence |
+|-------|----------|-----------|------------|
+| V cites EU Habitats Directive | HD024141 motivering, EU-hänvisning | 2026-05-11 | HIGH |
+| C invokes UNCRC on age-13 | HD024146 förslag, barnrättsargument | 2026-05-11 | HIGH |
+| SD conditional support (land exemptions) | HD024143 förslag 1 | 2026-05-11 | HIGH |
