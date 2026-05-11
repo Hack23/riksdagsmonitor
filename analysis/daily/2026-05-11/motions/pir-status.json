@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "cycle": "motions",
+  "date": "2026-05-11",
+  "subfolder": "motions",
+  "generated_at": "2026-05-11T10:00:00.000Z",
+  "pirs": [
+    {
+      "pir_id": "PIR-01",
+      "statement": "Will the government accommodate SD's land-exemption demand on Prop. 2025/26:242 (Skogsbruk) before MJU committee vote?",
+      "trigger": "SD press release or Martin Kinnunen statement accepting/withdrawing exemption demand; or MJU committee agenda including SD-specific amendment",
+      "status": "open",
+      "confidence": "HIGH"
+    },
+    {
+      "pir_id": "PIR-02",
+      "statement": "Will JuU committee hear expert testimony (Brå/Barnombudsmannen) on age-13 criminal liability that shifts SD's position?",
+      "trigger": "JuU committee hearing announced with Brå or Barnombudsmannen as invited experts",
+      "status": "open",
+      "confidence": "HIGH"
+    },
+    {
+      "pir_id": "PIR-03",
+      "statement": "Will the EU Commission issue any formal communication on Sweden's Prop. 2025/26:242 compliance with Nature Restoration Law?",
+      "trigger": "Commission DG Environment formal letter to Swedish Miljödepartement or MEP query",
+      "status": "open",
+      "confidence": "MEDIUM"
+    },
+    {
+      "pir_id": "PIR-04",
+      "statement": "Will Centern issue a post-election coalition preference statement confirming independence from M-led coalition?",
+      "trigger": "C party leader statement on coalition preference at or after September 2026 election",
+      "status": "open",
+      "confidence": "HIGH"
+    },
+    {
+      "pir_id": "PIR-05",
+      "statement": "Will MJU and/or JuU produce voteringar on Prop. 2025/26:242 or 2025/26:246 before September 2026 election?",
+      "trigger": "New voteringar records appearing in riksdag-regering-mcp for MJU/JuU in 2025/26 riksmöte",
+      "status": "open",
+      "confidence": "HIGH"
+    }
+  ]
+}
