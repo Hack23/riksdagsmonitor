@@ -1061,6 +1061,34 @@ Diagram-class guidance:
 
 Mermaid renders **client-side** in the article HTML — the aggregator passes ` ```mermaid ` fences through untouched and [`scripts/render-lib/markdown/mermaid-preprocess.ts`](../../scripts/render-lib/markdown/mermaid-preprocess.ts) rewrites them to `<pre class="mermaid">` before the unified pipeline ([`scripts/render-lib/markdown/pipeline.ts`](../../scripts/render-lib/markdown/pipeline.ts)) runs. `js/lib/mermaid-init.mjs` then upgrades each block to SVG after page load against the same-origin vendored runtime under `js/lib/mermaid/`. The full HTML rendering chain is documented in [`Article-Generation.md` §"Mermaid support"](../../Article-Generation.md#mermaid-support).
 
+#### 🚧 Authoring rule — every `\`\`\`mermaid` opening fence MUST have a closing `\`\`\``
+
+Every Mermaid diagram MUST be terminated by its own `\`\`\`` line on a line of its own. This is a hard contract, enforced by `scripts/validate-article.ts` ([`unclosed-mermaid-fence`](../../scripts/validate-article.ts) + [`mermaid-coverage-regression`](../../scripts/validate-article.ts)). When the AI agent drops a closing fence the renderer recovers gracefully (`preprocessMermaidFences` uses the next opening fence as an implicit close, so each diagram still becomes its own `<pre class="mermaid">`), but the source artifact is rejected at PR review because:
+
+1. The IDE preview merges the unclosed diagram with everything that follows until the next `\`\`\`` — the in-editor reading experience is broken.
+2. The analysis-gate Check 5 may falsely pass even though the diagram body is unparseable.
+3. Downstream `gh aw mcp inspect` audits report the wrong diagram count.
+
+Pattern to follow in every template:
+
+```text
+\`\`\`mermaid
+%%{init: …}%%
+flowchart LR
+  A --> B
+\`\`\`
+```
+
+Pattern to NEVER ship:
+
+```text
+\`\`\`mermaid
+flowchart LR
+  A --> B
+                ← missing closing \`\`\`
+## Next section
+```
+
 ---
 
 ## 📄 Template Selection by Data Category

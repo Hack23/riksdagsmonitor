@@ -40,14 +40,59 @@ import { ensureMermaidTheme } from './mermaid-canonical-theme.js';
  * `.github/prompts/05-analysis-gate.md`) still fails CI on the
  * artifact source so the regression surfaces, but readers never see
  * the broken visual.
+ *
+ * **Resilience to unclosed fences** — AI agents occasionally emit a
+ * `\`\`\`mermaid` opening fence without a matching `\`\`\`` close. The
+ * naive non-greedy regex `/\`\`\`mermaid\n[\s\S]*?\`\`\`/g` would then
+ * pair the unclosed opening with the *next* `\`\`\`mermaid` opening
+ * (because that line begins with `\`\`\``), silently merging two
+ * diagrams into one and dropping every other block. To prevent that
+ * data loss we walk the body line-by-line and treat the next
+ * `\`\`\`mermaid`/`\`\`\`<lang>`/end-of-input as an implicit close —
+ * each opening fence becomes exactly one `<pre class="mermaid">`.
+ * The companion validator (`scripts/validate-article.ts` →
+ * `unclosed-mermaid-fence`) still fails CI on the source artifact so
+ * the regression surfaces, but the rendered HTML never silently loses
+ * diagrams.
  */
 export function preprocessMermaidFences(markdownBody: string): string {
-  return markdownBody.replace(
-    /```mermaid\n([\s\S]*?)```/g,
-    (_m, diagram: string) => {
-      const themed = ensureMermaidTheme(diagram.trimEnd());
+  const lines = markdownBody.split('\n');
+  const out: string[] = [];
+  let i = 0;
+  while (i < lines.length) {
+    const line = lines[i]!;
+    if (/^```mermaid[\t ]*$/.test(line)) {
+      // Find the closing fence. A closing fence is a line whose only
+      // content is `\`\`\`` (any trailing whitespace allowed). If the
+      // next opening fence (`\`\`\`<anything>`) appears first, treat
+      // *that* as the implicit close so we never swallow it into the
+      // mermaid body and lose a downstream diagram.
+      const bodyLines: string[] = [];
+      let consumedClose = false;
+      let j = i + 1;
+      for (; j < lines.length; j += 1) {
+        const cur = lines[j]!;
+        if (/^```[\t ]*$/.test(cur)) {
+          consumedClose = true;
+          break;
+        }
+        if (/^```/.test(cur)) {
+          // New fence opens before the current one closed — leave it
+          // for the next iteration of the outer loop to handle.
+          break;
+        }
+        bodyLines.push(cur);
+      }
+      const themed = ensureMermaidTheme(bodyLines.join('\n').trimEnd());
       const escaped = escapeHtml(themed);
-      return `\n<pre class="mermaid" data-mermaid-source="true" tabindex="0">${escaped}</pre>\n`;
-    },
-  );
+      // Surrounding blank lines mirror the legacy regex output so
+      // remark-parse sees a clean block-level boundary.
+      out.push('', `<pre class="mermaid" data-mermaid-source="true" tabindex="0">${escaped}</pre>`, '');
+      i = consumedClose ? j + 1 : j;
+      continue;
+    }
+    out.push(line);
+    i += 1;
+  }
+  return out.join('\n');
 }

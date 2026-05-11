@@ -272,3 +272,99 @@ describe('validate-article — scanStaleProvenance', () => {
     expect(stale.length).toBe(1);
   });
 });
+
+// ---------------------------------------------------------------------------
+// Mermaid fence integrity (article-quality issue — diagram coverage)
+// ---------------------------------------------------------------------------
+
+import {
+  countMermaidOpenings,
+  findUnclosedMermaidFences,
+} from '../scripts/validate-article.js';
+
+describe('validate-article — countMermaidOpenings', () => {
+  it('returns 0 when no mermaid fences are present', () => {
+    expect(countMermaidOpenings('Plain markdown body.\n\n## Heading\n\n')).toBe(0);
+  });
+
+  it('counts one opening fence per `\\`\\`\\`mermaid` line', () => {
+    const md = '```mermaid\nflowchart LR\n  A-->B\n```\n\n```mermaid\nflowchart TD\n  C-->D\n```';
+    expect(countMermaidOpenings(md)).toBe(2);
+  });
+
+  it('does not count `\\`\\`\\`mermaid` inside a fenced code block prose example', () => {
+    // The opening must be at the start of a line; prose markers like
+    // "use ```mermaid blocks for diagrams" never trigger.
+    const md = 'In a doc you write ```mermaid blocks for diagrams.\n';
+    expect(countMermaidOpenings(md)).toBe(0);
+  });
+
+  it('counts even when an opening has no matching close (raw count)', () => {
+    // The unclosed-fence check is a separate concern — the raw count
+    // is the input to the coverage cross-check.
+    const md = '```mermaid\nflowchart LR\n  A-->B\n\n## Next\n\n```mermaid\nflowchart TD\n  C-->D\n```';
+    expect(countMermaidOpenings(md)).toBe(2);
+  });
+});
+
+describe('validate-article — findUnclosedMermaidFences', () => {
+  it('returns an empty array when every fence is properly closed', () => {
+    const md = '```mermaid\nflowchart LR\nA-->B\n```\n\n```mermaid\nflowchart TD\nC-->D\n```';
+    expect(findUnclosedMermaidFences(md)).toHaveLength(0);
+  });
+
+  it('flags a single unclosed fence', () => {
+    const md = '```mermaid\nflowchart LR\nA-->B\n';
+    const out = findUnclosedMermaidFences(md);
+    expect(out).toHaveLength(1);
+    expect(out[0]!.lineNumber).toBe(1);
+  });
+
+  it('flags an unclosed fence followed by a properly closed one', () => {
+    // Real-world reproducer: the AI agent dropped the closing fence on
+    // the first diagram, then wrote a new ```mermaid opening for the
+    // next diagram. Both should be detected as separate diagrams; only
+    // the first should be flagged as unclosed.
+    const md = [
+      'preamble',
+      '```mermaid',
+      'flowchart LR',
+      'A --> B',
+      '## Next section',
+      '',
+      '```mermaid',
+      'flowchart TD',
+      'C --> D',
+      '```',
+    ].join('\n');
+    const out = findUnclosedMermaidFences(md);
+    expect(out).toHaveLength(1);
+    expect(out[0]!.lineNumber).toBe(2);
+  });
+
+  it('detects every unclosed fence in a chain of unclosed mermaid openings (regression: no loop-skip)', () => {
+    // Reproducer for the loop-skip bug: three unclosed mermaid fences
+    // in a row must each be reported. Previously the walker advanced
+    // `i = j + 1` when stopping at the next opening, skipping that
+    // opening and missing subsequent unclosed fences.
+    const md = [
+      '```mermaid',
+      'flowchart LR',
+      'A --> B',
+      '```mermaid',
+      'flowchart TD',
+      'C --> D',
+      '```mermaid',
+      'flowchart RL',
+      'E --> F',
+      '```',
+    ].join('\n');
+    const out = findUnclosedMermaidFences(md);
+    // Lines 1 and 4 are unclosed (each stops at the next ```mermaid).
+    // Line 7 is properly closed by the trailing ```.
+    expect(out).toHaveLength(2);
+    expect(out[0]!.lineNumber).toBe(1);
+    expect(out[1]!.lineNumber).toBe(4);
+  });
+});
+

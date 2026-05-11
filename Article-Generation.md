@@ -902,6 +902,18 @@ CSP impact: scripts can be allowed with `script-src 'self'` only — no third-pa
 
 The analysis gate requires color-coded Mermaid through `style` directives or Mermaid `themeVariables` / `%%{init}` blocks.
 
+#### Fence integrity & coverage (script-enforced)
+
+Two `validate-article` rules guard the diagram-rendering chain end-to-end:
+
+| Rule code | Failure mode caught | Implementation |
+|---|---|---|
+| `unclosed-mermaid-fence` | AI agent emitted a ````` ```mermaid ````` opening without a matching closing ````` ``` `````. The renderer's `preprocessMermaidFences` recovers gracefully (treats the next opening fence as an implicit close so each diagram still becomes its own `<pre class="mermaid">`), but the source artifact would still mis-render in IDE preview and confuse downstream audits. | [`scripts/validate-article.ts` → `findUnclosedMermaidFences`](scripts/validate-article.ts) |
+| `mermaid-coverage-regression` | The aggregated `article.md` contains fewer ````` ```mermaid ````` opening fences than the sum of all source artifacts (including `documents/*.md`) under the same `analysis/daily/$DATE/$SUBFOLDER/` folder — i.e. the aggregator regressed and dropped a diagram. | [`scripts/validate-article.ts` → `countSourceArtifactMermaidOpenings`](scripts/validate-article.ts) |
+| `mermaid-coverage-check-failed` | The coverage cross-check itself could not be executed (filesystem error other than the folder being absent). Emitted so the validator never silently skips the regression guard. | [`scripts/validate-article.ts`](scripts/validate-article.ts) check 11 |
+
+The renderer-side defence (`preprocessMermaidFences` walks line-by-line and treats the next opening fence or end-of-input as the implicit close) ensures the rendered HTML never silently loses diagrams even when a regression slips past CI. The two validators above ensure every regression is caught and fixed at the source so the analysis-gate Check 5, IDE preview and `gh aw mcp inspect` audits all stay consistent.
+
 ### D3 and Chart.js support
 
 Current article Markdown rendering is intentionally static and sanitized. D3 and Chart.js are supported by the broader site and dashboards, not by arbitrary inline article scripts.

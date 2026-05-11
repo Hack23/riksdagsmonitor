@@ -764,6 +764,66 @@ describe('markdown/* — leaf module isolation', () => {
     expect(out).not.toContain('&quot;theme&quot;: &quot;dark&quot;');
   });
 
+  it('returns body unchanged when there are no mermaid fences', () => {
+    const md = '## Heading\n\nSome prose with `inline code` and a [link](https://x).';
+    expect(preprocessMermaidFences(md)).toBe(md);
+  });
+
+  it('recovers from an unclosed mermaid fence by terminating at the next opening fence', () => {
+    // Reproducer for the motions/article.md regression: AI agent emits
+    // two `\`\`\`mermaid` openings with the closing fence dropped on the
+    // first. The naive non-greedy regex would silently merge both into
+    // one diagram and lose the second. The line-based preprocessor must
+    // emit exactly two `<pre class="mermaid">` blocks.
+    const md = [
+      '```mermaid',
+      'flowchart LR',
+      '  A --> B',
+      // (no closing fence!)
+      '',
+      '## Next section',
+      '',
+      '```mermaid',
+      'flowchart TD',
+      '  C --> D',
+      '```',
+    ].join('\n');
+    const out = preprocessMermaidFences(md);
+    const preCount = (out.match(/<pre class="mermaid"/g) ?? []).length;
+    expect(preCount).toBe(2);
+    // Each block contains its own diagram body (no merge).
+    expect(out).toContain('flowchart LR');
+    expect(out).toContain('flowchart TD');
+    // The intervening heading is preserved.
+    expect(out).toContain('## Next section');
+  });
+
+  it('recovers from an unclosed mermaid fence at end-of-input', () => {
+    const md = '```mermaid\nflowchart LR\n  A --> B\n';
+    const out = preprocessMermaidFences(md);
+    expect(out).toContain('<pre class="mermaid"');
+    expect(out).toContain('flowchart LR');
+    // Ensure the opening fence is consumed (no stray `\`\`\`mermaid` left).
+    expect(out).not.toContain('```mermaid');
+  });
+
+  it('preserves the open/close pairing for back-to-back well-formed mermaid blocks', () => {
+    const md = [
+      '```mermaid',
+      'flowchart LR',
+      '  A --> B',
+      '```',
+      '',
+      '```mermaid',
+      'flowchart TD',
+      '  C --> D',
+      '```',
+    ].join('\n');
+    const out = preprocessMermaidFences(md);
+    const preCount = (out.match(/<pre class="mermaid"/g) ?? []).length;
+    expect(preCount).toBe(2);
+  });
+
   it('hasMermaidTheme detects every Check-5 theme signal', () => {
     expect(hasMermaidTheme('flowchart LR\nA --> B')).toBe(false);
     expect(hasMermaidTheme('%%{init: {"theme":"dark"}}%%\nflowchart LR')).toBe(true);
