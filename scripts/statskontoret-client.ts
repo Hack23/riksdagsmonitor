@@ -413,8 +413,6 @@ export function parseBudgetRows(
       '';
 
     const title =
-      // 'Inkomsttitelnamn' is the descriptive name; 'Inkomsttitel' is the numeric code.
-      // Check the name-specific candidates first to avoid shadowing by the code field.
       findField(lookup, [
         'inkomsttitelnamn', 'inkomsttitelgruppsnamn',
         'anslagsnamn', 'utgiftsomradesnamn', 'utgiftsomrade',
@@ -422,7 +420,6 @@ export function parseBudgetRows(
       ])?.trim() ?? '';
 
     const code = findField(lookup, [
-      // 'inkomsttitel' is the numeric income-title code (e.g. 1111, 1211)
       'inkomsttitel', 'inkomsttitelnummer', 'inkomsttitelnr',
       'anslagsnr', 'anslagsnummer', 'anslagspost',
       'utgiftsomradesnr', 'kod', 'code', 'nummer',
@@ -472,7 +469,6 @@ export function buildBudgetTimeSeries(
 ): StatskontoretBudgetRow[] {
   const rows: StatskontoretBudgetRow[] = [];
   for (const sheet of workbook.sheets) {
-    // Derive a document-type hint from the sheet name when not forced by options
     const sheetDocType = options.documentType ?? inferDocTypeFromSheetName(sheet.name);
     const sheetOptions: StatskontoretBudgetOptions = {
       ...options,
@@ -601,10 +597,6 @@ function parseWorksheetRows(xml: string, sharedStrings: readonly string[]): stri
       const cellIndex = cellRefToColumnIndex(ref) ?? row.length;
       row[cellIndex] = parseCellValue(cellMatch[2] ?? '', attrs.get('t'), sharedStrings);
     }
-    // Densify the sparse row: cells with explicit refs (e.g. C5) can leave
-    // holes when intermediate columns are absent; `Array.prototype.map` skips
-    // those holes, so downstream `rowsToRecords` would receive misaligned
-    // columns. Iterate every index up to the max set position to fill gaps.
     rows.push(Array.from({ length: row.length }, (_, i) => row[i] ?? ''));
   }
   return rows;
@@ -621,7 +613,6 @@ function parseCellValue(xml: string, type: string | undefined, sharedStrings: re
 function findLikelyHeaderRow(rows: readonly (readonly string[])[]): number {
   for (let i = 0; i < rows.length; i++) {
     const normalized = rows[i].map(normalizeKey);
-    // Headcount (myndighetsförteckning) signals
     const headcountScore = [
       normalized.some((cell) => cell.includes('myndighet')),
       normalized.some((cell) => cell.includes('departement')),
@@ -629,7 +620,6 @@ function findLikelyHeaderRow(rows: readonly (readonly string[])[]): number {
       normalized.some((cell) => cell === 'ar' || cell === 'year'),
     ].filter(Boolean).length;
     if (headcountScore >= 2) return i;
-    // Budget-outturn (årsutfall / månadsutfall / budget-time-series) signals
     const budgetScore = [
       normalized.some((cell) => cell.includes('utfall') || cell.includes('outturn')),
       normalized.some((cell) =>
@@ -755,8 +745,6 @@ function cellRefToColumnIndex(ref: string): number | undefined {
   if (!letters) return undefined;
   let index = 0;
   for (const char of letters.toUpperCase()) {
-    // Excel columns are bijective base-26 labels; keep a one-based accumulator
-    // (A=1, Z=26, AA=27) and convert to a zero-based array index below.
     index = index * 26 + (char.charCodeAt(0) - 65 + 1);
   }
   return index - 1;
@@ -797,9 +785,6 @@ function extractPageLastModified(html: string): string | undefined {
 }
 
 function decodeHtml(value: string): string {
-  // Reuse the centralized infrastructure decoder to keep entity handling consistent
-  // with the rest of the platform; `&nbsp;` is normalised to a regular space here
-  // to keep downstream whitespace and link-text matching predictable.
   return decodeHtmlEntities(value).replace(/\u00a0/g, ' ');
 }
 

@@ -108,11 +108,6 @@ export const READER_GUIDE_ENTRIES: readonly ReaderGuideEntry[] = [
  * canonical artifact section title.
  */
 export function anchorForTitle(title: string): string {
-  // Mirror the pre-clean performed by markdown/rehype-slug-prefixed.ts:
-  // strip leading non-letter/non-number characters before slugging so
-  // an emoji-prefixed section title (e.g. `🎯 BLUF`) doesn't produce a
-  // leading-dash slug that would render as `rm--bluf` once the prefix
-  // is applied.
   const cleaned = title.replace(/^[^\p{L}\p{N}]+/u, '').trim() || title;
   const slug = new GithubSlugger().slug(cleaned);
   return `${HEADING_ID_PREFIX}${slug}`;
@@ -159,8 +154,6 @@ export function selectReaderGuideArtifacts(available: ReadonlySet<string> | read
   const seenAliasMembers = new Set<string>();
   const result: string[] = [];
 
-  // Pass 1 — preserve AGGREGATION_ORDER for canonical sections,
-  // applying alias dedup so only the first alias of a group is kept.
   for (const file of AGGREGATION_ORDER) {
     if (!availableSet.has(file)) continue;
     if (!isReaderGuideEligible(file)) continue;
@@ -172,9 +165,6 @@ export function selectReaderGuideArtifacts(available: ReadonlySet<string> | read
     result.push(file);
   }
 
-  // Pass 2 — append remaining *.md artifacts alphabetically (e.g.
-  // pestle-analysis.md, wildcards-blackswans.md, ext/*.md), still
-  // honouring alias dedup.
   const remaining = [...availableSet]
     .filter(isReaderGuideEligible)
     .filter((f) => !result.includes(f))
@@ -265,10 +255,6 @@ export function buildReaderGuide(available: ReadonlySet<string>, hasDocuments: b
     '',
     chrome.preamble,
     '',
-    // Three columns: localised icon header (rendered visually as a
-    // single emoji per row, but column header is kept short and
-    // localised so screen-reader users hear a distinct, meaningful
-    // name), then `colReaderNeed` and `colWhatYouGet`.
     `| ${chrome.colIcon} | ${chrome.colReaderNeed} | ${chrome.colWhatYouGet} |`,
     '|---|---|---|',
     ...entries,

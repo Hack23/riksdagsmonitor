@@ -60,13 +60,11 @@ export function isFileOwnedByCategory(
   category: WorkflowCategory,
 ): boolean {
   if (!filepath.startsWith('news/') || !filepath.endsWith('.html')) {
-    // Non-news or non-HTML files are always allowed (metadata, indexes, etc.)
     return true;
   }
 
   const lang = extractLangFromPath(filepath);
   if (!lang) {
-    // Files without a language suffix (e.g., news/index.html) are allowed for both
     return true;
   }
 

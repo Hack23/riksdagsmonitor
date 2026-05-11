@@ -121,14 +121,9 @@ export function buildCatalog(
     const dirPath = path.join(dataRoot, subdir);
     if (!fs.existsSync(dirPath)) continue;
 
-    // The directory may contain date subdirectories (e.g. votes/2026-03-28/)
-    // or direct JSON files.  We scan recursively but only pick up *.json
-    // files that are NOT .meta.json.
     const jsonFiles = collectJsonFiles(dirPath);
 
     for (const filePath of jsonFiles) {
-      // Use path relative to the type directory (sans .json) as id.
-      // For flat dirs: "P1".  For nested dirs: "ind1/SE".
       const id = path.relative(dirPath, filePath).replace(/\.json$/, '').split(path.sep).join('/');
       const metaPath = filePath.replace(/\.json$/, '.meta.json');
       const analysisPath = filePath.replace(/\.json$/, '.analysis.md');
@@ -158,43 +153,30 @@ export function buildCatalog(
     }
   }
 
-  // De-duplicate vote entries: when the same vote file appears in both
-  // documents/votes and votes/YYYY-MM-DD, prefer the date-stamped path.
-  // Only votes are scoped for dedup (the only type with two scan dirs).
-  // Vote ids use the basename portion for matching since documents/votes/
-  // stores files flat while votes/YYYY-MM-DD/ nests under date dirs.
   const bestByKey = new Map<string, (typeof allEntries)[number]>();
   for (const e of allEntries) {
-    // For votes, use basename as dedup key (ignores date-dir nesting)
     const idPart = e.type === 'votes' ? e.id.split('/').pop()! : e.id;
     const key = `${e.type}::${idPart}`;
     const existing = bestByKey.get(key);
     if (!existing) {
       bestByKey.set(key, e);
     } else if (e.type === 'votes') {
-      // Prefer the entry whose path contains a date directory (votes/YYYY-MM-DD)
       const existingHasDate = /votes\/\d{4}-\d{2}-\d{2}\//.test(existing.path);
       const currentHasDate = /votes\/\d{4}-\d{2}-\d{2}\//.test(e.path);
       if (currentHasDate && !existingHasDate) {
         bestByKey.set(key, e);
       }
-      // Otherwise keep existing (first-seen or already date-stamped)
     }
-    // Non-vote duplicates: keep first-seen (shouldn't occur with current DATA_SUBDIRS)
   }
   const dedupedEntries = [...bestByKey.values()];
 
-  // Compute totals from the full scan (before pendingOnly filter)
   const totalCompleted = dedupedEntries.filter((e) => e.hasAnalysis).length;
   const totalPending = dedupedEntries.length - totalCompleted;
 
-  // Apply pendingOnly filter after computing totals
   const entries = pendingOnly
     ? dedupedEntries.filter((e) => !e.hasAnalysis)
     : dedupedEntries;
 
-  // Ensure deterministic ordering across platforms/filesystems.
-  // Use simple < / > string compare (locale-independent) for stable collation.
   entries.sort((a, b) => {
     if (a.type < b.type) return -1;
     if (a.type > b.type) return 1;
@@ -282,7 +264,6 @@ function main() {
   console.error(`   ⏳ Pending: ${catalog.pendingAnalysis}`);
   console.error();
 
-  // Write catalog JSON to stdout for piping
   console.log(JSON.stringify(catalog, null, 2));
 }
 

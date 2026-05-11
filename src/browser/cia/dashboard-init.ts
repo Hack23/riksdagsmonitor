@@ -38,24 +38,20 @@ import type { RendererData } from './visualizations.js';
 async function initDashboard(): Promise<void> {
   const loader = new CIADataLoader();
 
-  // Update loading text with i18n
   const loadingText = document.querySelector('#loading-state p') as HTMLElement | null;
   if (loadingText) {
     loadingText.textContent = t('loadingData');
   }
 
   try {
-    // Load all CIA exports using the loadAll method
     const data: CIADataPayload = await loader.loadAll();
     const { overview, election, partyPerf, top10, committees, votingPatterns, ministry, demographics, documentActivity, riskEvolution } = data;
 
-    // Hide loading state
     const loadingState = document.getElementById('loading-state');
     if (loadingState) loadingState.classList.add('hidden');
     const dashboardContent = document.getElementById('dashboard-content');
     if (dashboardContent) dashboardContent.classList.remove('hidden');
 
-    // Initialize renderers
     const rendererData: RendererData = {
       overview,
       partyPerf,
@@ -71,7 +67,6 @@ async function initDashboard(): Promise<void> {
 
     const electionRenderer = new Election2026Predictions(election);
 
-    // Render all sections
     renderer.renderKeyMetrics();
     renderer.renderPartyPerformance();
     renderer.renderTop10Rankings();
@@ -93,12 +88,10 @@ async function initDashboard(): Promise<void> {
     const errorState = document.getElementById('error-state');
     if (errorState) errorState.classList.remove('hidden');
 
-    // Use i18n for user-facing error message, log technical details to console
     const errorMessage = t('errorLoadingData');
     const errorMessageEl = document.getElementById('error-message');
     if (errorMessageEl) errorMessageEl.textContent = errorMessage;
 
-    // Retry button with i18n text
     const retryButton = document.getElementById('retry-button') as HTMLButtonElement | null;
     if (retryButton) {
       retryButton.textContent = t('retryButton');

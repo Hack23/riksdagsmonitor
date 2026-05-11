@@ -140,14 +140,9 @@ export function normalizeSdmxPathForBase(baseURL: string, pathWithQuery: string)
   if (!baseURL.includes('/sdmx/3.0')) {
     return pathWithQuery;
   }
-  // Already in slash-form? — return as-is. Checked before the comma-form
-  // regex so a v3 path with literal commas in query parameters cannot be
-  // mistakenly rewritten.
   if (pathWithQuery.includes('/data/dataflow/')) {
     return pathWithQuery;
   }
-  // Match `/data/<AGENCY>,<FLOW>,<VERSION>/<key>` where AGENCY may itself
-  // contain a `.` (e.g. `IMF.STA`). Capture key + optional query string.
   const re = /^(\/?data)\/([^/,?#]+),([^/,?#]+),([^/,?#]+)(\/[^?#]*)?(\?.*)?$/;
   const m = re.exec(pathWithQuery);
   if (!m) {
@@ -295,10 +290,6 @@ export class ImfWeoSdmxOnlyError extends Error {
   readonly countryCode: string;
   readonly sdmxPath: string;
   constructor(iso3: string, weoCode: string) {
-    // Normalise the country code so the error payload is consistent
-    // with sdmxPath (which is built from upper-cased ISO3) and with
-    // getWeoIndicator's internal upper-casing — callers reading
-    // `err.countryCode` always see canonical ISO-3166-1 alpha-3.
     const normalisedIso3 = iso3.toUpperCase();
     const sdmxPath = weoSdmxPath(normalisedIso3, weoCode);
     super(
@@ -341,18 +332,8 @@ class ImfHttpError extends Error {
   readonly retryAfterHeader?: string | null;
 
   constructor(response: Response, requestUrl?: string, sentSubscriptionKey = false) {
-    // `response.url` is empty when constructed via `new Response(body, init)`
-    // in tests; fall back to the explicit requestUrl supplied by the caller.
     const url = response.url || requestUrl || '';
     const baseMessage = `IMF API error: ${response.status} ${response.statusText} for ${url}`;
-    // SDMX endpoints under api.imf.org behave in two distinct ways when the
-    // Ocp-Apim-Subscription-Key header is missing or invalid:
-    //  - **Invalid key sent** → APIM returns 401/403 from the gateway.
-    //  - **No key sent at all** → APIM masks `/data/...` paths as 404
-    //    "Resource not found" (verified via curl 2026-05-10) so direct
-    //    sdmxFetch() callers see an indistinguishable 404.
-    // Surface a single actionable diagnostic for both cases so operators
-    // don't waste time chasing the masked 404.
     const isAuthFailure = response.status === 401 || response.status === 403;
     const isMaskedAuthFailure = response.status === 404 && !sentSubscriptionKey;
     const isSdmxHost = url.includes('://api.imf.org/external/sdmx/') || url === '';
@@ -436,15 +417,11 @@ export class ImfClient {
       throw new Error(`getWeoIndicator: 'years' must be a positive integer, got ${years}`);
     }
     const code = toDatamapperCode(iso3);
-    // IMF Datamapper URL pattern: /{indicator}/{country}
     const url = `${this.datamapperBaseURL}/${encodeURIComponent(weoCode)}/${encodeURIComponent(code)}`;
     const raw = (await this.fetchWithRetry(url)) as DatamapperResponse;
 
     const points = parseDatamapperValues(raw, weoCode, code, this.weoVintage);
     if (points.length === 0 && IMF_WEO_SDMX_ONLY.has(weoCode)) {
-      // The Datamapper silently returns an empty `values` envelope for
-      // these codes (verified live 2026-05-10). Fail loudly so callers
-      // route through SDMX rather than treating "missing" as "no data".
       throw new ImfWeoSdmxOnlyError(iso3, weoCode);
     }
     return points.slice(0, years);
@@ -561,7 +538,9 @@ export class ImfClient {
    * `/data/...` endpoint as of 2026-05. SDMX 3.0 is the only IMF SDMX
    * surface this client targets.
    *
-   * @param path URL path starting with `/data/...` or `/structure/...`
+   * @param pathWithQuery URL path starting with `/data/...` or `/structure/...`,
+   *   optionally followed by a `?...` query string.
+   * @returns The parsed JSON envelope from the IMF SDMX 3.0 endpoint.
    */
   async sdmxFetch(pathWithQuery: string): Promise<unknown> {
     const normalized = normalizeSdmxPathForBase(this.sdmxBaseURL, pathWithQuery);
@@ -571,13 +550,6 @@ export class ImfClient {
       Accept: 'application/vnd.sdmx.data+json;version=2.0.0',
     };
     if (this.sdmxSubscriptionKey) {
-      // Azure APIM gateway header. The HTTP header name itself is
-      // case-insensitive per RFC 7230, but we use the exact canonical
-      // spelling `Ocp-Apim-Subscription-Key` because that's the object
-      // key downstream code (e.g. fetchWithRetry's extraHeaders lookup
-      // in ImfHttpError construction) checks for. Required by the IMF
-      // SDMX 3.0 surface under `api.imf.org/external/sdmx/3.0` (the
-      // only IMF SDMX surface this client targets).
       headers['Ocp-Apim-Subscription-Key'] = this.sdmxSubscriptionKey;
     }
     return this.fetchWithRetry(url, 0, headers);
@@ -601,9 +573,6 @@ export class ImfClient {
       });
 
       if (!response.ok) {
-        // Tell ImfHttpError whether this request actually carried the
-        // SDMX subscription key so it can produce an actionable
-        // diagnostic for the APIM 404-mask-when-missing-key case.
         const sentSubscriptionKey = 'Ocp-Apim-Subscription-Key' in extraHeaders;
         throw new ImfHttpError(response, url, sentSubscriptionKey);
       }
@@ -612,10 +581,6 @@ export class ImfClient {
     } catch (error) {
       const retryAfterHeader = error instanceof ImfHttpError ? error.retryAfterHeader : undefined;
       if (attempt < this.maxRetries && isRetryableError(error)) {
-        // Retryable errors use exponential backoff starting at 1 s
-        // (1 s → 2 s → 4 s → … depending on maxRetries).
-        // HTTP 429 additionally honours Retry-After (delta-seconds), capped
-        // at 30 s to avoid pathological waits.
         const delay = calculateRetryDelay(attempt, retryAfterHeader);
         clearTimeout(timeoutId);
         await new Promise((resolve) => setTimeout(resolve, delay));
@@ -685,10 +650,6 @@ export function parseDatamapperValues(
   const currentYear = new Date().getUTCFullYear();
   const points: ImfDataPoint[] = [];
   for (const [year, rawValue] of Object.entries(countryNode)) {
-    // Defensive: IMF can emit null / 'n/a' / undefined for missing
-    // observations. `Number(null)` === 0, which would silently inject
-    // a bogus zero into the chart — gate on explicit null/undefined
-    // and then on NaN from string coercion.
     if (rawValue === null || rawValue === undefined) continue;
     const numeric = typeof rawValue === 'number' ? rawValue : Number(rawValue);
     if (!Number.isFinite(numeric)) continue;
@@ -709,7 +670,6 @@ export function parseDatamapperValues(
     points.push(dp);
   }
 
-  // Sort by year desc so consumers can slice newest-first.
   points.sort((a, b) => Number.parseInt(b.date, 10) - Number.parseInt(a.date, 10));
   return points;
 }

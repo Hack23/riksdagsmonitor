@@ -94,8 +94,6 @@ export function parseArgs(argv: string[]): {
   const now = new Date();
   const todayIso = now.toISOString().slice(0, 10);
 
-  // When aggregate weekly, --date supplies the week label (YYYY-WNN), not a
-  // calendar date.  `date` is always a YYYY-MM-DD value (defaults to today).
   const weekLabel = aggregate
     ? (dateArg || `${now.getUTCFullYear()}-W${isoWeekNumber(now).toString().padStart(2, '0')}`)
     : null;
@@ -107,7 +105,6 @@ export function parseArgs(argv: string[]): {
     throw new Error(`Invalid --date value: ${dateArg}. Expected YYYY-MM-DD or 'today'.`);
   }
 
-  // In aggregate mode, date is always today; the week-specific field is weekLabel.
   const isoDate = aggregate
     ? todayIso
     : (dateArg === 'today' || !dateArg ? todayIso : dateArg);
@@ -135,7 +132,6 @@ export function parseArgs(argv: string[]): {
     docType = docTypeArg;
   }
 
-  // --document-ids: Comma-separated Riksdag dok_id values for targeted fetch.
   const documentIdsArg = get('--document-ids');
   const DOK_ID_PATTERN = /^[A-Za-z0-9_-]+$/;
   const documentIds = documentIdsArg
@@ -149,11 +145,6 @@ export function parseArgs(argv: string[]): {
       })
     : [];
 
-  // --auto-full-text-top-n: Override the per-type full-text enrichment limit and
-  // persist full text outcomes for the first N documents in the current filtered
-  // array order. Defaults to null when omitted so downloadAllDocuments uses
-  // MAX_ENRICHMENT_PER_TYPE; explicit 0 disables per-type enrichment and
-  // persisted full-text fetching. No DIW significance ranking is applied here.
   const autoFullTextTopNArg = get('--auto-full-text-top-n');
   let autoFullTextTopN: number | null = null;
   if (autoFullTextTopNArg !== null) {
@@ -270,7 +261,6 @@ function serializeDataManifest(
     lines.push(`Data sourced from ${dataFreshness} via lookback fallback — check freshness indicators.`);
   }
 
-  // Append full-text fetch outcomes when --auto-full-text-top-n was used.
   if (fullTextOutcomes && fullTextOutcomes.length > 0) {
     lines.push('', '## Full-Text Fetch Outcomes', '');
     lines.push('| dok_id | full_text_available | chars | notes |');
@@ -314,7 +304,6 @@ function runWeeklyAggregation(weekLabel: string): void {
     ]);
     for (const dir of dailyDirs) {
       if (!isDateInIsoWeek(dir, weekLabel)) continue;
-      // Check for data-download-manifest.md in unscoped path or doc-type subdirectories
       const dayDir = path.join(dailyRoot, dir);
       const unscopedManifest = path.join(dayDir, 'data-download-manifest.md');
       let dayHasData = false;
@@ -421,8 +410,6 @@ async function runPreArticleAnalysis(opts: {
   console.log('ℹ️  This script downloads data ONLY. Analysis is performed by AI agents.');
   console.log('   See: analysis/methodologies/ai-driven-analysis-guide.md');
 
-  // When --doc-type is specified, scope output to a subdirectory to avoid
-  // conflicts between parallel workflow runs.
   const outputDir = docType
     ? path.join(ANALYSIS_DIR, 'daily', date, docType)
     : path.join(ANALYSIS_DIR, 'daily', date);
@@ -430,7 +417,6 @@ async function runPreArticleAnalysis(opts: {
 
   const generatedAt = formatTimestampForMarkdown();
 
-  // ── Step 1: Download data ─────────────────────────────────────────────────
   console.log('\n📥 Step 1: Downloading documents from riksdag-regering-mcp...');
   if (docType) {
     console.log(`   📋 Scoped to document type: ${docType}`);
@@ -442,9 +428,6 @@ async function runPreArticleAnalysis(opts: {
   if (docType) {
     downloadOpts.docTypes = [docType];
   }
-  // --auto-full-text-top-n wires the CLI flag into the per-type enrichment
-  // limit, enabling more targeted full-text fetching for significance scoring.
-  // When null, downloadAllDocuments uses MAX_ENRICHMENT_PER_TYPE (5) by default.
   if (autoFullTextTopN !== null) {
     downloadOpts.enrichLimit = autoFullTextTopN;
     console.log(`   📝 Full-text enrichment: top ${autoFullTextTopN} documents per type (--auto-full-text-top-n=${autoFullTextTopN})`);
@@ -453,7 +436,6 @@ async function runPreArticleAnalysis(opts: {
   const { data, manifest } = await downloadAllDocuments(client, downloadOpts);
   const flattenedDocs = flattenDocuments(data);
 
-  // Build a set of explicitly requested document IDs for targeted fetch.
   const requestedIdSet = new Set(documentIds.map(id => id.toUpperCase()));
 
   const allDocs = flattenedDocs.filter((doc: RawDocument) => {
@@ -467,7 +449,6 @@ async function runPreArticleAnalysis(opts: {
     return false;
   });
 
-  // ── Lookback fallback: widen the date filter when no documents match ────
   let dataFreshness: string | null = null;
   if (allDocs.length === 0 && requestedIdSet.size === 0) {
     for (let lookback = 1; lookback <= MAX_LOOKBACK_BUSINESS_DAYS; lookback++) {
@@ -490,8 +471,6 @@ async function runPreArticleAnalysis(opts: {
     }
   }
 
-  // If document IDs were requested but not found in the bulk download, attempt
-  // to fetch them individually via fetchDocumentDetails.
   if (requestedIdSet.size > 0) {
     const foundIds = new Set(allDocs.map((d: RawDocument) => (d.dok_id ?? '').toUpperCase()));
     const missingIds = documentIds.filter(id => !foundIds.has(id.toUpperCase()));
@@ -527,12 +506,10 @@ async function runPreArticleAnalysis(opts: {
   console.log(`   Duration: ${manifest.durationMs}ms`);
   console.log(`   Riksmöte: ${resolvedRm}`);
 
-  // ── Step 2: Persist raw data to analysis/data/ for verification & reuse ──
   console.log('\n🗄️  Step 2: Persisting raw MCP data to analysis/data/...');
   const persistResult = persistDownloadedData(data, resolvedRm);
   console.log(`   🗄️  Persisted data for ${persistResult.written} documents to ${path.relative(REPO_ROOT, persistResult.dataRoot)}/ (${persistResult.skipped} skipped)`);
 
-  // ── Step 2b: Auto-fetch full text for top-N documents ────────────────────
   let fullTextOutcomes: FullTextFetchOutcome[] | undefined;
   if (autoFullTextTopN !== null && autoFullTextTopN > 0 && allDocs.length > 0) {
     console.log(`\n📄 Step 2b: Auto-fetching full text for top-${autoFullTextTopN} documents (--auto-full-text-top-n=${autoFullTextTopN})...`);
@@ -549,7 +526,6 @@ async function runPreArticleAnalysis(opts: {
     }
   }
 
-  // Write data-download-manifest.md (factual download summary — NOT analysis)
   const manifestContent = serializeDataManifest(
     date, generatedAt, manifest.dataSources, manifest.docCounts,
     allDocs.length, dataFreshness, fullTextOutcomes,
@@ -558,7 +534,6 @@ async function runPreArticleAnalysis(opts: {
   fs.writeFileSync(manifestPath, manifestContent, 'utf8');
   console.log(`  ✅ Written: ${path.relative(REPO_ROOT, manifestPath)}`);
 
-  // ── Step 3: Store each downloaded document as JSON ─────────────────────
   console.log('\n💾 Step 3: Storing downloaded documents as JSON...');
   const documentsDir = path.join(outputDir, 'documents');
   ensureDir(documentsDir);
@@ -583,8 +558,7 @@ async function runPreArticleAnalysis(opts: {
     console.warn('\n⚠️  No documents downloaded for this date.');
   }
 
-  // ── Summary ───────────────────────────────────────────────────────────────
-  const totalFiles = 1 + storedCount; // 1 manifest + stored documents
+  const totalFiles = 1 + storedCount;
   console.log(`\n✅ Data download complete! Results in: ${path.relative(REPO_ROOT, outputDir)}/`);
   console.log(`   📄 ${totalFiles} total files written (1 manifest + ${storedCount} documents)`);
   console.log(`   📊 ${allDocs.length} documents available for AI analysis`);

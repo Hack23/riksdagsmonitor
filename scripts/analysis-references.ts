@@ -372,14 +372,12 @@ export function scanAnalysisFiles(options: AnalysisReferencesOptions): AnalysisF
 
   if (!fs.existsSync(analysisDir)) return null;
 
-  // Scan for all .md files in the subfolder (not recursing into documents/)
   const entries = fs.readdirSync(analysisDir, { withFileTypes: true });
   const files = entries
     .filter(e => e.isFile() && e.name.endsWith('.md'))
     .map(e => e.name)
     .sort();
 
-  // Check for documents/ subdirectory and enumerate per-document .md files
   const hasDocumentsDir = entries.some(e => e.isDirectory() && e.name === 'documents');
   let documentFiles: string[] = [];
   if (hasDocumentsDir) {
@@ -428,7 +426,6 @@ export function generateAnalysisReferencesHtml(options: AnalysisReferencesOption
   /** URL-encode a single path segment (filename) for use in href attributes. */
   const encodePathSegment = (segment: string): string => encodeURIComponent(segment);
 
-  // Build list items for known files (in canonical order), then any extras
   const listItems: string[] = [];
   const processedFiles = new Set<string>();
 
@@ -441,7 +438,6 @@ export function generateAnalysisReferencesHtml(options: AnalysisReferencesOption
     }
   }
 
-  // Add any remaining .md files not in the known list
   for (const file of files) {
     if (!processedFiles.has(file)) {
       const rawLabel = file.replace(/\.md$/, '').replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
@@ -451,8 +447,6 @@ export function generateAnalysisReferencesHtml(options: AnalysisReferencesOption
     }
   }
 
-  // For aggregation types (evening-analysis, weekly-review, etc.), add links to
-  // sibling analysis folders from the same date
   const siblingItems: string[] = [];
   if (AGGREGATION_ARTICLE_TYPES.has(options.articleType)) {
     const basePath = options.analysisBasePath ?? 'analysis/daily';
@@ -469,7 +463,6 @@ export function generateAnalysisReferencesHtml(options: AnalysisReferencesOption
           const sibHref = `${GITHUB_TREE_BASE}/analysis/daily/${date}/${sibDir}`;
           siblingItems.push(`    <li><a href="${sibHref}" rel="noopener noreferrer">${display.emoji} ${sibLabel}</a></li>`);
         } else {
-          // Unknown sibling — use generic label
           const rawLabel = sibDir.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
           const sibHref = `${GITHUB_TREE_BASE}/analysis/daily/${date}/${sibDir}`;
           siblingItems.push(`    <li><a href="${sibHref}" rel="noopener noreferrer">📂 ${escapeHtml(rawLabel)}</a></li>`);
@@ -478,17 +471,14 @@ export function generateAnalysisReferencesHtml(options: AnalysisReferencesOption
     }
   }
 
-  // Always add methodology link
   const methodologyHref = `${GITHUB_BLOB_BASE}/analysis/methodologies/ai-driven-analysis-guide.md`;
   listItems.push(`    <li><a href="${methodologyHref}" rel="noopener noreferrer">🤖 ${escapeHtml(methodologyLabel)}</a></li>`);
 
-  // Build the HTML
   let html = `\n  <section class="analysis-references" aria-label="${escapeHtml(ariaLabel)}">
     <h2>📊 ${escapeHtml(sectionTitle)}</h2>
     <p>${escapeHtml(introText)}</p>
     <ul>\n${listItems.join('\n')}\n    </ul>`;
 
-  // Add sibling analysis links for aggregation types
   if (siblingItems.length > 0) {
     const crossRefTitle: Record<Language, string> = {
       en: 'Cross-Referenced Analysis', sv: 'Korsrefererad analys', da: 'Krydsrefereret analyse',
@@ -504,8 +494,6 @@ export function generateAnalysisReferencesHtml(options: AnalysisReferencesOption
   if (hasDocumentsDir) {
     const { documentFiles } = result;
     if (documentFiles.length > 0) {
-      // Render an explicit list of every per-document analysis file so readers can
-      // open individual documents directly — not just the documents/ folder.
       const docItems = documentFiles.map(df => {
         const rawLabel = df.replace(/\.md$/, '').replace(/-/g, ' ');
         const label = escapeHtml(rawLabel);

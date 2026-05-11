@@ -246,7 +246,6 @@ class SeasonalPatternsDataManager {
       }
     }
 
-    // Try expired cache as fallback
     const cached2 = localStorage.getItem(CONFIG.cacheKey);
     if (cached2) {
       try {
@@ -266,7 +265,6 @@ class SeasonalPatternsDataManager {
       const parsed = Papa.parse(csvText, { header: true, dynamicTyping: true, skipEmptyLines: true });
       return parsed.data as CSVRow[];
     }
-    // CSP-safe fallback: simple CSV parser (no d3.csvParse — it requires the unsafe dynamic-code-execution CSP directive)
     const lines = csvText.trim().split('\n');
     if (lines.length < 2) return [];
     const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, ''));

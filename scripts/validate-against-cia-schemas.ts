@@ -127,7 +127,7 @@ class CIASchemaValidator {
     this.ajv = new Ajv({ 
       allErrors: true, 
       verbose: true,
-      strict: false  // Allow additional properties not in schema
+      strict: false
     });
     addFormats(this.ajv);
     this.results = [];
@@ -157,13 +157,10 @@ class CIASchemaValidator {
     console.log(`🔍 Validating: ${productName}...`);
     
     try {
-      // Load schema
       const schema: Record<string, unknown> = await this.loadCIASchema(productName);
       
-      // Compile schema
       const validate = this.ajv.compile(schema);
       
-      // Validate data
       const valid: boolean = validate(data);
       
       if (!valid) {
@@ -171,7 +168,6 @@ class CIASchemaValidator {
         console.log(`   ❌ Validation failed for ${productName}`);
         console.log(`   Errors (${errors.length}):`);
         
-        // Show first 5 errors
         const displayErrors: ErrorObject[] = errors.slice(0, 5);
         for (const error of displayErrors) {
           console.log(`      - ${error.instancePath || '/'}: ${error.message}`);
@@ -222,7 +218,6 @@ class CIASchemaValidator {
     console.log(`📁 Data directory: ${this.dataDir}`);
     console.log('');
 
-    // Check if data directory exists
     try {
       await fs.access(this.dataDir);
     } catch (_error: unknown) {
@@ -231,7 +226,6 @@ class CIASchemaValidator {
       return 0;
     }
 
-    // Get all JSON files in data directory
     let exportFiles: string[];
     try {
       const files: string[] = await fs.readdir(this.dataDir);
@@ -250,7 +244,6 @@ class CIASchemaValidator {
     console.log(`📊 Found ${exportFiles.length} export file(s)`);
     console.log('');
 
-    // Validate each export
     for (const exportFile of exportFiles) {
       const productName: string = exportFile.replace('.json', '');
       const dataPath: string = path.join(this.dataDir, exportFile);
@@ -269,13 +262,10 @@ class CIASchemaValidator {
       }
     }
 
-    // Save validation report
     await this.saveReport();
 
-    // Print summary
     this.printSummary();
 
-    // Return exit code (0 if all valid, 1 if any failed)
     const failedCount: number = this.results.filter((r: ValidationResult) => !r.valid).length;
     return failedCount === 0 ? 0 : 1;
   }

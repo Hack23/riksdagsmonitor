@@ -117,7 +117,6 @@ export function createChart<T extends keyof ChartTypeRegistry>(
     throw new Error(`Canvas element not found: ${canvas}`);
   }
 
-  // Merge responsive options with user config
   const responsive = getResponsiveOptions();
   const mergedConfig: ChartConfiguration<T> = {
     ...config,

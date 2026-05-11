@@ -32,17 +32,14 @@ export async function loadOverviewDashboard(loadCSV: LoadCSV): Promise<OverviewD
     loadCSV(CSV_SOURCES.crisisResilience.local)
   ]);
 
-  // Count active MPs
   const activeRow = personStatus.find(r => r.status === 'Tjänstgörande riksdagsledamot');
   const totalMPs = activeRow ? (activeRow.person_count as number) : 349;
 
-  // Count unique parties from risk data (only real riksdag parties)
   const partiesInData = new Set(
     riskByParty.map(r => r.party as string).filter(p => RIKSDAG_PARTIES.includes(p))
   );
   const totalParties = partiesInData.size || 8;
 
-  // Risk alerts from risk_by_party
   const highRisk = riskByParty.filter(r => r.risk_level === 'HIGH');
   const medRisk = riskByParty.filter(r => r.risk_level === 'MEDIUM');
   const lowRisk = riskByParty.filter(r => r.risk_level === 'LOW');
@@ -50,17 +47,14 @@ export async function loadOverviewDashboard(loadCSV: LoadCSV): Promise<OverviewD
   const major = medRisk.reduce((sum, r) => sum + ((r.politician_count as number) || 0), 0);
   const minor = lowRisk.reduce((sum, r) => sum + ((r.politician_count as number) || 0), 0);
 
-  // Total risk rules from risk levels
   const totalRiskRules = riskLevels.length > 0
     ? riskLevels.reduce((sum, r) => sum + ((r.politician_count as number) || 0), 0)
     : 45;
 
-  // Latest year ballot activity
   const latestBallot: CSVRow = annualBallots.length > 0
     ? annualBallots[annualBallots.length - 1]
     : {};
 
-  // Coalition stability from resilience scores (Tidö = M, KD, L, SD)
   const tidoParties = ['M', 'KD', 'L', 'SD'];
   const tidoResilience = resilience.filter(r => tidoParties.includes(r.party as string));
   const avgResilience = tidoResilience.length > 0

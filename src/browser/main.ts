@@ -98,18 +98,11 @@ async function initAll(): Promise<void> {
   logger.info('Riksdagsmonitor initializing...');
   const start = performance.now();
 
-  // Init UI components (sync, fast)
   initBackToTop();
 
-  // Register lazy dashboards immediately — IntersectionObserver must be live
-  // before initStats()'s async I/O so containers already in/near the viewport
-  // on initial render are not missed.
   _lazyObserver = initLazyDashboards(LAZY_DASHBOARDS);
-  // Read the module-level variable to satisfy noUnusedLocals — the observer
-  // must stay referenced at module scope to avoid garbage collection.
   void _lazyObserver;
 
-  // Eager: stats loader populates hero metrics — no chart libraries needed
   try {
     await initStats();
     logger.debug('✓ stats initialized');
@@ -142,27 +135,18 @@ if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
       .then((reg) => {
         logger.info('[SW] Registered:', reg.scope);
 
-        // Silently check for updates when the page regains focus.
         document.addEventListener('visibilitychange', () => {
           if (document.visibilityState === 'visible') {
             reg.update().catch(() => { /* ignore offline */ });
           }
         });
 
-        // Fire one update check immediately after registration.
         reg.update().catch(() => { /* ignore offline */ });
 
-        // public/sw.js calls self.skipWaiting() in its install event, so
-        // a newly downloaded worker skips the waiting phase and activates
-        // immediately. No additional logic is needed here; the handler below
-        // is retained only as a defensive fallback for any future SW variant
-        // that may not call skipWaiting() during install.
         reg.addEventListener('updatefound', () => {
           const installing = reg.installing;
           if (!installing) return;
           installing.addEventListener('statechange', () => {
-            // Post SKIP_WAITING in case a waiting worker exists (e.g. if a
-            // future SW build no longer calls skipWaiting() in install).
             if (installing.state === 'installed' && reg.waiting) {
               reg.waiting.postMessage({ type: 'SKIP_WAITING' });
             }

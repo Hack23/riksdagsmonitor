@@ -89,7 +89,6 @@ export class CIADashboardRenderer {
       return;
     }
 
-    // Update metric values with null checks
     const totalMpsEl = document.getElementById('metric-total-mps');
     if (totalMpsEl && overview.keyMetrics) {
       totalMpsEl.textContent = String(overview.keyMetrics.totalMPs);
@@ -107,7 +106,6 @@ export class CIADashboardRenderer {
       coalitionSeatsEl.textContent = String(overview.keyMetrics.coalitionSeats);
     }
 
-    // Update risk alerts with null checks
     const hasRiskAlerts = overview.riskAlerts && overview.riskAlerts.last90Days;
     const alertCriticalEl = document.getElementById('alert-critical');
     if (alertCriticalEl && hasRiskAlerts) {
@@ -127,16 +125,13 @@ export class CIADashboardRenderer {
   renderPartyPerformance(): void {
     const { partyPerf } = this.data;
 
-    // Defensive check for data structure
     if (!partyPerf || !Array.isArray(partyPerf.parties)) {
       console.warn('Invalid or missing party performance data');
       return;
     }
 
-    // Party Seats Chart
     const seatsCtx = document.getElementById('party-seats-chart') as HTMLCanvasElement | null;
     if (seatsCtx && typeof Chart !== 'undefined') {
-      // Defensive check for nested party properties
       const hasValidMetrics = partyPerf.parties.every(
         p => p && p.metrics && typeof p.metrics.seats === 'number'
       );
@@ -200,7 +195,6 @@ export class CIADashboardRenderer {
       });
     }
 
-    // Party Cohesion Chart
     const cohesionCtx = document.getElementById('party-cohesion-chart') as HTMLCanvasElement | null;
     if (cohesionCtx && typeof Chart !== 'undefined') {
       const hasValidVoting = partyPerf.parties.every(
@@ -479,7 +473,6 @@ export class CIADashboardRenderer {
 
     container.appendChild(fragment);
 
-    // Add simple network visualization note
     const networkViz = document.getElementById('network-visualization');
     if (networkViz) {
       networkViz.textContent = '';
@@ -581,7 +574,6 @@ export class CIADashboardRenderer {
       return;
     }
 
-    // Gender chart
     const genderCtx = document.getElementById('gender-chart') as HTMLCanvasElement | null;
     if (genderCtx && typeof Chart !== 'undefined' && demographics.genderByParty.length > 0) {
       const riksdagParties = CIADashboardRenderer.RIKSDAG_PARTIES;
@@ -633,7 +625,6 @@ export class CIADashboardRenderer {
       });
     }
 
-    // Experience chart
     const expCtx = document.getElementById('experience-chart') as HTMLCanvasElement | null;
     if (expCtx && typeof Chart !== 'undefined' && demographics.experienceByParty.length > 0) {
       const riksdagParties = CIADashboardRenderer.RIKSDAG_PARTIES;
@@ -697,12 +688,8 @@ export class CIADashboardRenderer {
 
     const docCtx = document.getElementById('document-trends-chart') as HTMLCanvasElement | null;
     if (docCtx && typeof Chart !== 'undefined' && documentActivity.documentTypes.length > 0) {
-      // Aggregate by year for the main doc types
-      // Primary Swedish parliament document types:
-      // mot = motions, bet = committee reports (betänkanden), prop = government propositions.
       const mainTypes = ['mot', 'bet', 'prop'];
       const years = [...new Set(documentActivity.documentTypes.map(d => d.year))].sort();
-      // Only show recent years (last 10)
       const recentYears = years.slice(-10);
 
       this.charts.documents = new Chart(docCtx, {
@@ -759,10 +746,9 @@ export class CIADashboardRenderer {
     container.textContent = '';
     const fragment = document.createDocumentFragment();
 
-    // Group by period
     const periodGroups: Record<string, typeof riskEvolution.entries> = {};
     riskEvolution.entries.forEach(e => {
-      const period = e.period.substring(0, 7); // YYYY-MM
+      const period = e.period.substring(0, 7);
       if (!periodGroups[period]) periodGroups[period] = [];
       periodGroups[period].push(e);
     });

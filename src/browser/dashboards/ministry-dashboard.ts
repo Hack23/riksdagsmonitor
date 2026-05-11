@@ -1243,7 +1243,6 @@ export async function init(): Promise<void> {
   }
 
   try {
-    // Show loading state
     const loadingMsg = document.createElement('div');
     loadingMsg.id = 'ministry-loading';
     loadingMsg.className = 'loading-message';
@@ -1252,24 +1251,20 @@ export async function init(): Promise<void> {
     loadingMsg.setAttribute('aria-live', 'polite');
     container.prepend(loadingMsg);
 
-    // Fetch data
     const fetcher = new DataFetcher();
     const rawData = await fetcher.fetchAllData();
     const data = transformCIAData(rawData);
 
-    // Hide loading
     loadingMsg.remove();
 
     showDataSourceDisclaimer(container, 'live');
 
-    // Render visualisations
     renderRiskHeatMap('ministryRiskHeatMap', data.riskLevels, lang);
     renderInfluenceChart('ministerInfluenceChart', data.influence);
     renderProductivityChart('ministryProductivityChart', data.productivity, lang);
     renderDecisionImpactChart('decisionImpactChart', data.decisionImpact, lang);
     renderAccessibilityTable('ministryDataTable', data, lang);
 
-    // Attribution
     const attribution = document.createElement('p');
     attribution.className = 'data-attribution';
     const emoji = document.createTextNode('📊 ');

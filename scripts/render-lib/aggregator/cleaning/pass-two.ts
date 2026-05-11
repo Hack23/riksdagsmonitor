@@ -33,8 +33,6 @@ export const PASS_TWO_HEADING_RE =
  * file because it is always the last thing the agent writes.
  */
 export function stripPassTwoSection(body: string): string {
-  // Use a fresh, non-`g` regex to avoid `lastIndex` state leaking between
-  // calls. PASS_TWO_HEADING_RE is exported with `g` for tests/iteration.
   const re = /^#{1,6}\s+(?:[^\n#]*?\s)?Pass\s*2\b[^\n]*$/im;
   const match = body.match(re);
   if (!match || match.index === undefined) return body;

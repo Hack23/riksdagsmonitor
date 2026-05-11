@@ -104,18 +104,16 @@ export const LIGHT_THEME_COLORS: ThemeColors = {
  * ```
  */
 export function getActiveThemeColors(): ThemeColors {
-  if (typeof document === 'undefined') return DARK_THEME_COLORS; // SSR / test guard
+  if (typeof document === 'undefined') return DARK_THEME_COLORS;
   const theme = document.documentElement.getAttribute('data-theme');
   if (theme === 'light') return LIGHT_THEME_COLORS;
   if (theme === 'dark') return DARK_THEME_COLORS;
-  // data-theme not set — mirror the CSS prefers-color-scheme behaviour
   if (typeof window !== 'undefined' && window.matchMedia &&
       window.matchMedia('(prefers-color-scheme: dark)').matches) {
     return DARK_THEME_COLORS;
   }
   return LIGHT_THEME_COLORS;
 }
-
 
 /* ── Breakpoints ────────────────────────────────────────────────────────── */
 

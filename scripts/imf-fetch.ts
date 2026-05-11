@@ -76,7 +76,7 @@ function loadCachedIMFData(indicator: string, country: string): { data: unknown;
  */
 function isCacheStale(fetchedAt: string): boolean {
   const fetched = new Date(fetchedAt);
-  if (Number.isNaN(fetched.getTime())) return true; // unparseable → treat as stale
+  if (Number.isNaN(fetched.getTime())) return true;
   const sixMonthsAgo = new Date();
   sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
   return fetched < sixMonthsAgo;
@@ -203,10 +203,6 @@ async function runWeo(flags: ReadonlyMap<string, string>, booleans: ReadonlySet<
       });
     }
   } catch (err: unknown) {
-    // SDMX-only WEO indicator? Auto-route through the WEO 9.0.0 SDMX
-    // dataflow when the subscription key is configured. This keeps the
-    // `weo` subcommand usable for every IMF_WEO_INDICATORS entry rather
-    // than just the ~9 codes the simple Datamapper exposes.
     if (err instanceof ImfWeoSdmxOnlyError && client.sdmxSubscriptionKey) {
       const path = err.sdmxPath;
       process.stderr.write(`imf-fetch: routing '${indicator}' via SDMX (${path})\n`);
@@ -227,7 +223,6 @@ async function runWeo(flags: ReadonlyMap<string, string>, booleans: ReadonlySet<
       }
       return;
     }
-    // Fallback to cached data when live fetch fails
     const cached = loadCachedIMFData(indicator, country);
     if (cached) {
       const stale = isCacheStale(cached.meta.fetchedAt);
@@ -235,7 +230,6 @@ async function runWeo(flags: ReadonlyMap<string, string>, booleans: ReadonlySet<
       process.stderr.write(`imf-fetch: live fetch failed, using cached data from ${cached.meta.fetchedAt}${stale ? ' (STALE >6mo)' : ''}\n`);
       process.stdout.write(`${JSON.stringify(fallbackPayload, null, 2)}\n`);
     } else {
-      // No cache available — re-throw
       throw err;
     }
   }
@@ -251,9 +245,6 @@ async function runCompare(flags: ReadonlyMap<string, string>, booleans: Readonly
   }
 
   const client = new ImfClient();
-  // compareCountriesWeo() fail-softs per country (null on error) and never
-  // throws, so we cannot use a try/catch to detect transport failures.
-  // Instead we inspect the result Map and fill null entries from cache.
   const results = await client.compareCountriesWeo(countries, indicator);
 
   const byCountry: Record<string, unknown> = {};
@@ -265,9 +256,6 @@ async function runCompare(flags: ReadonlyMap<string, string>, booleans: Readonly
     if (livePoint !== null) {
       byCountry[code] = livePoint;
     } else {
-      // Live fetch returned null — attempt cache fill.
-      // The persisted format is { indicator, country, dataPoint, ... };
-      // we extract dataPoint to match the live result shape.
       const cached = loadCachedIMFData(indicator, code);
       if (cached) {
         const cachedObj = cached.data as Record<string, unknown>;
@@ -315,13 +303,6 @@ async function runSdmx(flags: ReadonlyMap<string, string>, booleans: ReadonlySet
   process.stdout.write(`${JSON.stringify(raw, null, 2)}\n`);
 
   if (booleans.has('persist')) {
-    // Derive a reasonable cache key: prefer explicit --indicator / --country
-    // flags; otherwise fall back to the second-to-last SDMX path segment
-    // (typically the dataflow ID, e.g. ".../IMF.STA,CPI,5.0.0/SWE.CPI._T.IX.M"
-    // → "IMF.STA,CPI,5.0.0"). This is a pragmatic heuristic — not a hash —
-    // so different SDMX queries that share a dataflow will share a cache
-    // slot. Pass `--indicator` / `--country` explicitly when collision-free
-    // caching matters.
     const indicator = flags.get('indicator') ?? pathWithQuery.split('/').slice(-2)[0] ?? 'sdmx';
     const country = flags.get('country') ?? 'all';
     persistIMFData(indicator, country, raw, {

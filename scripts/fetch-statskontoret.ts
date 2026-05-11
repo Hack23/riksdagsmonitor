@@ -157,7 +157,6 @@ export async function fetchStatskontoretCached(
   const source = getStatskontoretSource(sourceKey);
   const filePath = cacheFilePath(sourceKey, cacheRoot);
 
-  // --- Cache hit ---
   const cached = readCacheEntry(filePath);
   if (cached !== undefined && isCacheFresh(cached.fetchedAt, cacheTtlMs)) {
     const cacheAgeMs = Date.now() - new Date(cached.fetchedAt).getTime();
@@ -173,19 +172,15 @@ export async function fetchStatskontoretCached(
     };
   }
 
-  // --- Cache miss or stale: fetch from origin ---
   const client = new StatskontoretClient(clientConfig);
   let links: StatskontoretDownloadLink[];
   let fetchedAt: string;
 
   try {
     links = await client.discoverDownloads(sourceKey);
-    // Stamp provenance after discovery completes so `fetchedAt` reflects the
-    // cache completion time, not when the request was issued.
     fetchedAt = new Date().toISOString();
     writeCacheEntry(filePath, { fetchedAt, sourceKey, links });
   } catch (error) {
-    // --- Resilience: return stale cache on fetch failure ---
     if (cached !== undefined) {
       const cacheAgeMs = Date.now() - new Date(cached.fetchedAt).getTime();
       return {

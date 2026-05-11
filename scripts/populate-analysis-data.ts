@@ -135,7 +135,6 @@ async function main(): Promise<void> {
 
   const client = new MCPClient();
 
-  // ── Step 1: Download all document types ─────────────────────────────────
   console.log('📄 Step 1/7: Downloading parliamentary documents...');
   try {
     const { data, manifest } = await downloadAllDocuments(client, { limit, rm });
@@ -148,7 +147,6 @@ async function main(): Promise<void> {
     console.error('   ❌ Document download failed:', errorMessage(err));
   }
 
-  // ── Step 2: Download calendar events ────────────────────────────────────
   console.log('\n📅 Step 2/7: Downloading calendar events...');
   try {
     const today = new Date(date + 'T00:00:00Z');
@@ -170,7 +168,6 @@ async function main(): Promise<void> {
     console.error('   ❌ Calendar event download failed:', errorMessage(err));
   }
 
-  // ── Step 3: Download MP profiles ────────────────────────────────────────
   console.log('\n👤 Step 3/7: Downloading MP profiles...');
   try {
     const rawMPs = await client.fetchMPs({ limit });
@@ -185,7 +182,6 @@ async function main(): Promise<void> {
     console.error('   ❌ MP download failed:', errorMessage(err));
   }
 
-  // ── Step 4: Download government documents ───────────────────────────────
   console.log('\n🏛️  Step 4/7: Downloading government documents...');
   try {
     const thirtyDaysAgo = new Date(date + 'T00:00:00Z');
@@ -215,7 +211,6 @@ async function main(): Promise<void> {
     console.error('   ❌ Government document download failed:', errorMessage(err));
   }
 
-  // ── Step 5: Download voting groups by party ─────────────────────────────
   console.log('\n🗳️  Step 5/7: Downloading voting groups by party...');
   try {
     const rawGroups = await client.fetchVotingGroup({ rm, groupBy: 'parti', limit });
@@ -241,7 +236,6 @@ async function main(): Promise<void> {
     console.error('   ❌ Voting group download failed:', errorMessage(err));
   }
 
-  // ── Step 6: Download World Bank indicators for Sweden ───────────────────
   console.log('\n🌍 Step 6/7: Downloading World Bank indicators for Sweden...');
   try {
     const wb = new WorldBankClient();
@@ -265,7 +259,6 @@ async function main(): Promise<void> {
     console.error('   ❌ World Bank data download failed:', errorMessage(err));
   }
 
-  // ── Step 7: Download SCB statistics for key domains ─────────────────────
   console.log('\n📊 Step 7/7: Downloading SCB statistics...');
   try {
     const scb = new SCBClient();

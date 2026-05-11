@@ -39,7 +39,6 @@ export async function loadVotingPatterns(loadCSV: LoadCSV): Promise<VotingPatter
     'Left', 'Christian Democrats', 'Liberals', 'Green'
   ];
 
-  // Build agreement matrix from real coalition alignment data
   const alignmentLookup: Record<string, number> = {};
   coalitionAlignment
     .filter(r => RIKSDAG_PARTIES.includes(r.party1 as string) && RIKSDAG_PARTIES.includes(r.party2 as string))
@@ -62,7 +61,6 @@ export async function loadVotingPatterns(loadCSV: LoadCSV): Promise<VotingPatter
       })
     );
   } else {
-    // Fallback: build from win rate similarity
     const latestWinRate: Record<string, CSVRow> = {};
     effectiveness
       .filter(e => RIKSDAG_PARTIES.includes(e.party as string))
@@ -87,7 +85,6 @@ export async function loadVotingPatterns(loadCSV: LoadCSV): Promise<VotingPatter
     });
   }
 
-  // Rebellion tracking from risk data (HIGH risk ~ rebellious)
   const rebellionTracking: RebellionEntry[] = RIKSDAG_PARTIES
     .map(party => {
       const partyRisks = riskByParty.filter(r => r.party === party);

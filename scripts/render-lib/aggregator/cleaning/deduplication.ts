@@ -52,14 +52,10 @@ export function dedupeAdjacentDuplicateLines(body: string): string {
     }
     if (line.trim() === '') {
       out.push(line);
-      // Blank lines reset the adjacency window — duplicates separated
-      // by blank lines are a different concern (handled by
-      // `collapseRepeatedFooterBlocks`).
       prevNonBlank = null;
       continue;
     }
     if (prevNonBlank !== null && line === prevNonBlank) {
-      // Skip the duplicate.
       continue;
     }
     out.push(line);
@@ -109,8 +105,6 @@ export function collapseRepeatedFooterBlocks(body: string): string {
     const trimmed = line.trim();
     if (FOOTER_LINE.test(trimmed)) {
       if (seen.has(trimmed)) {
-        // Skip this duplicated footer line. Also swallow a single
-        // trailing blank line so we don't leave a stranded gap.
         if (i + 1 < lines.length && lines[i + 1]!.trim() === '') {
           i += 1;
         }

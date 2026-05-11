@@ -70,7 +70,6 @@ function aggregateOne(date: string, subfolder: string, quiet: boolean): boolean 
     if (!quiet) console.log(`⏭  Skipped ${subRepoRel} — folder does not exist.`);
     return false;
   }
-  // A real analysis run must contain at least executive-brief.md.
   if (!fs.existsSync(path.join(subAbs, 'executive-brief.md'))) {
     if (!quiet) console.log(`⏭  Skipped ${subRepoRel} — no executive-brief.md.`);
     return false;
@@ -83,7 +82,6 @@ function aggregateOne(date: string, subfolder: string, quiet: boolean): boolean 
       subfolder,
     });
 
-    // Enforce per-type articleWordFloor from the registry.
     const typeEntry = getBySubfolder(subfolder);
     if (typeEntry) {
       const wordCount = result.markdown.split(/\s+/).filter(Boolean).length;

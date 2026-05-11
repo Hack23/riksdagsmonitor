@@ -52,7 +52,12 @@
     "**/*.test.*",
     "**/*.spec.*",
     "**/*.d.ts",
-    "**/*.cjs"
+    "**/*.cjs",
+    "**/coalition-dashboard.ts",
+    "**/coalition-dashboard/**",
+    "**/committees-dashboard.ts",
+    "**/committees-dashboard/**",
+    "scripts/strip-in-method-comments.ts"
   ],
   "blockTags": [
     "@author",
@@ -72,9 +77,11 @@
     "@license",
     "@link",
     "@module",
+    "@name",
     "@osint",
     "@override",
     "@param",
+    "@property",
     "@returns",
     "@remarks",
     "@risk",

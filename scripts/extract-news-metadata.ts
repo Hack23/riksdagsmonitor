@@ -78,7 +78,6 @@ function extractMetadata(): void {
   for (const file of files) {
     const content = readFileSync(join(newsDir, file), 'utf-8');
 
-    // Extract JSON-LD blocks
     const jsonLdRegex = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g;
     let match: RegExpExecArray | null;
     let articleData: JsonLdArticle | null = null;
@@ -100,15 +99,12 @@ function extractMetadata(): void {
       continue;
     }
 
-    // Extract Open Graph image
     const ogImageMatch = content.match(/property="og:image" content="([^"]+)"/);
     const ogImage: string = ogImageMatch?.[1] ?? '';
 
-    // Extract language from filename
     const langMatch = file.match(/-([a-z]{2})\.html$/);
     const lang: string = langMatch?.[1] ?? 'en';
 
-    // Extract slug (filename without language suffix)
     const slug = file.replace(/-[a-z]{2}\.html$/, '');
 
     articles.push({
@@ -131,7 +127,6 @@ function extractMetadata(): void {
     });
   }
 
-  // Sort by date descending, then by language
   articles.sort((a, b) => {
     const dateCompare = b.datePublished.localeCompare(a.datePublished);
     if (dateCompare !== 0) return dateCompare;

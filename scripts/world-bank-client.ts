@@ -35,7 +35,6 @@ export interface WorldBankIndicator {
   readonly unit: string;
 }
 
-
 /** Raw indicator value from the API */
 interface RawIndicatorValue {
   indicator?: { id?: string; value?: string };
@@ -355,7 +354,6 @@ export class WorldBankClient {
     indicatorId: string,
     perPage = 50,
   ): Promise<WorldBankDataPoint[]> {
-    // WGI governance indicators require source=75
     const sourceParam = WGI_INDICATOR_IDS.has(indicatorId) ? `&source=${WB_SOURCES.wgi}` : '';
     const url = `${this.baseURL}/country/${encodeURIComponent(countryCode)}/indicator/${encodeURIComponent(indicatorId)}?format=json&per_page=${perPage}${sourceParam}`;
 
@@ -413,7 +411,6 @@ export class WorldBankClient {
   ): Promise<Map<string, WorldBankDataPoint | null>> {
     const results = new Map<string, WorldBankDataPoint | null>();
 
-    // Fetch sequentially to respect API rate limits
     for (const code of countryCodes) {
       try {
         const latest = await this.getLatestIndicator(code, indicatorId);

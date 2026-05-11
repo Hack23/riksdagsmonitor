@@ -114,7 +114,6 @@ function resolveInventoryPath(): string {
     const thisDir = dirname(fileURLToPath(import.meta.url));
     return resolve(thisDir, '..', 'analysis', 'worldbank', 'indicators-inventory.json');
   } catch {
-    // Fallback for environments where import.meta.url is unavailable
     return resolve(process.cwd(), 'analysis', 'worldbank', 'indicators-inventory.json');
   }
 }
@@ -152,7 +151,6 @@ function loadIndicatorsFromInventory(): readonly WorldBankIndicatorContext[] {
         ? err
         : new Error(`[world-bank-context] Failed to load indicators inventory: ${String(err)}`);
 
-    // Tests may intentionally mock or omit the inventory file.
     if (process.env.NODE_ENV === 'test') {
       return [];
     }
@@ -413,9 +411,7 @@ export function hasEconomicContext(content: string): boolean {
     /\bEN\.ATM/i, // WB environment residue
     /\bSH\.XPD/i, // WB health residue
     /\bSE\.XPD/i, // WB education residue
-    // IMF citations — `DATABASE:INDICATOR_ID` (v2.1 contract; see imfCitation())
     /\b(?:WEO|FM|IFS|BOP|BOP_AGG|GFS_COFOG|MFS_IR|DOTS|PCPS|ER):[A-Z][A-Z0-9_]+/i,
-    // IMF projection vintage tag, e.g. "(WEO Apr-2026, GGXWDG_NGDP)"
     /\bWEO\s+(?:Apr|Oct|April|October)-\d{4}\b/i,
   ];
 

@@ -37,7 +37,6 @@ export function demoteHeadings(body: string): string {
   let inFence = false;
   for (let i = 0; i < lines.length; i += 1) {
     const line = lines[i]!;
-    // Track entry/exit of triple-backtick or triple-tilde fenced code.
     if (/^\s{0,3}(?:```|~~~)/.test(line)) {
       inFence = !inFence;
       continue;
@@ -46,8 +45,8 @@ export function demoteHeadings(body: string): string {
     const m = line.match(/^(#{1,6})(\s+\S)/);
     if (!m) continue;
     const current = m[1]!.length;
-    if (current >= 6) continue;          // already at H6, can't demote further
-    if (current === 1) continue;         // H1 already stripped by upstream regex; defensive
+    if (current >= 6) continue;
+    if (current === 1) continue;
     lines[i] = '#'.repeat(current + 1) + line.slice(current);
   }
   return lines.join('\n');

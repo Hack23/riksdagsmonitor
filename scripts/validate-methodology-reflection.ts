@@ -226,7 +226,6 @@ export async function validateMethodologyReflection(filePath: string): Promise<V
   ]);
   const bytes = statResult.size;
 
-  // Rule 1: size floor.
   if (bytes < minBytes) {
     issues.push({
       severity: 'error',
@@ -235,18 +234,12 @@ export async function validateMethodologyReflection(filePath: string): Promise<V
     });
   }
 
-  // Rule 2: required sections. Tier-C requires all; per-document-type folders
-  // have a lighter contract — Pipeline Overview / Methodology equivalent,
-  // plus References. They are leaf workflows and document the pipeline that
-  // produced them rather than Tier-C's continuity-of-intelligence chain.
   let requiredForThisFile: ReadonlyArray<RegExp>;
   let requiredLabelsForThisFile: ReadonlyArray<string>;
   if (tierC) {
     requiredForThisFile = REQUIRED_SECTIONS;
     requiredLabelsForThisFile = REQUIRED_SECTION_LABELS;
   } else {
-    // Index 1 = Methodology Application Matrix / Pipeline Overview (allowed
-    // synonym); index 7 = References. These two rows are the doc-type floor.
     requiredForThisFile = [REQUIRED_SECTIONS[1], REQUIRED_SECTIONS[7]];
     requiredLabelsForThisFile = [REQUIRED_SECTION_LABELS[1], REQUIRED_SECTION_LABELS[7]];
   }
@@ -261,8 +254,6 @@ export async function validateMethodologyReflection(filePath: string): Promise<V
     }
   }
 
-  // Rule 3: at least one confidence label — analytical-quality rule that
-  // applies to every methodology-reflection file regardless of tier.
   if (!CONFIDENCE_TOKEN.test(content)) {
     issues.push({
       severity: 'error',
@@ -271,9 +262,6 @@ export async function validateMethodologyReflection(filePath: string): Promise<V
     });
   }
 
-  // Rule 4 (Tier-C only): at least one cross-reference link to a sibling
-  // run. Doc-type leaf workflows do not participate in the continuity-of-
-  // intelligence chain, so this rule does not apply to them.
   if (tierC && !SIBLING_LINK.test(content)) {
     issues.push({
       severity: 'error',
@@ -282,17 +270,7 @@ export async function validateMethodologyReflection(filePath: string): Promise<V
     });
   }
 
-  // Rule 5 (Tier-C only): Upstream-Watchpoint Reconciliation must contain a
-  // markdown table whose rows carry a recognised disposition keyword. This
-  // is the "zero silent drops" rule — without this, Upstream Watchpoint
-  // Reconciliation is section-present-but-content-missing.
   if (tierC) {
-    // Extract the section body until the next `## ` heading or EOF.
-    // The `(?=^##\s|$(?![\s\S]))` lookahead matches either the start of the
-    // next H2 heading or the absolute end of the input. `$(?![\s\S])` is
-    // the "no more characters after this point" anchor — equivalent to
-    // `\z` in regex flavors that support it; the RegExp engine in V8 does
-    // not, hence this explicit form.
     const watchpointSectionMatch = /^##[^\n]{0,30}\bUpstream Watchpoint Reconciliation\b[\s\S]*?(?=^##\s|$(?![\s\S]))/mi.exec(content);
     if (watchpointSectionMatch) {
       const body = watchpointSectionMatch[0];
@@ -315,10 +293,6 @@ export async function validateMethodologyReflection(filePath: string): Promise<V
     }
   }
 
-  // Rule 7 (universal, warning): Detect World Bank economic substitution.
-  // Per ECONOMIC_DATA_CONTRACT v2.1, IMF is the primary provider for all
-  // economic context. Using World Bank for GDP/growth/debt/inflation is a
-  // methodology gap that should be surfaced.
   const WB_ECONOMIC_DATA_REGEX = /World\s+Bank\s+(?:GDP|growth|debt|inflation|fiscal|unemployment)|worldbank\.org.{0,50}(?:GDP|NY\.GDP|GROWTH)/i;
   if (WB_ECONOMIC_DATA_REGEX.test(content)) {
     issues.push({
@@ -349,7 +323,6 @@ async function main(): Promise<void> {
     const label = report.isTierC ? '[Tier-C]' : '[Doc-type]';
     if (report.ok) {
       console.log(`✅ ${label} ${report.file} (${report.bytes} B, min ${report.minBytes} B)`);
-      // Also print warnings so operators see them even when the file passes.
       const warnings = report.issues.filter((i) => i.severity === 'warning');
       for (const w of warnings) {
         console.warn(`   ⚠️  [${w.rule}] ${w.message}`);

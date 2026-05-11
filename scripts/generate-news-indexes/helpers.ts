@@ -57,10 +57,7 @@ export function generateLanguageSwitcherNav(currentLang: string): string {
     const flag: string = LANGUAGE_FLAGS[code] || '🌐';
     const filename: string = code === 'en' ? 'index.html' : `index_${code}.html`;
     const activeClass: string = code === currentLang ? ' active' : '';
-    // Norwegian files use filename suffix 'no' but must be advertised as 'nb' per BCP-47.
     const bcp47: string = code === 'no' ? 'nb' : code;
-    // `lang=` ensures screen-readers pronounce the native language name
-    // using the correct voice, independent of the page's <html lang>.
     return `  <a href="${filename}" class="lang-link${activeClass}" hreflang="${bcp47}" lang="${bcp47}">${flag} ${data.name}</a>`;
   }).join('\n');
   return `<nav class="language-switcher" role="navigation" aria-label="Language selection">\n${links}\n</nav>`;
@@ -78,7 +75,6 @@ export function generateAvailableLanguages(languages: string[], currentLang: str
 
   return `<p class="available-languages"><strong>${availableText}:</strong> ${badges}</p>`;
 }
-
 
 /**
  * Extract the JSON-LD `description` field from a NewsArticle blob
@@ -142,7 +138,6 @@ export function parseArticleMetadata(filePath: string): NewsArticleMetadata | nu
     const content: string = fs.readFileSync(filePath, 'utf-8');
     const fileName: string = path.basename(filePath);
 
-    // Extract language from filename (e.g., article-en.html → en, article-da.html → da)
     const langMatch: RegExpMatchArray | null = fileName.match(/-(en|sv|da|no|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/);
     if (!langMatch) {
       console.warn(`  ⚠️ Skipping ${fileName}: no language suffix`);
@@ -151,8 +146,6 @@ export function parseArticleMetadata(filePath: string): NewsArticleMetadata | nu
 
     const lang: string = langMatch[1]!;
 
-    // Extract metadata from HTML meta tags
-    // Decode HTML entities to UTF-8 to prevent double-escaping in index pages
     const rawTitle =
       extractMetaContent(content, 'og:title') ||
       extractTitle(content) ||
@@ -162,7 +155,6 @@ export function parseArticleMetadata(filePath: string): NewsArticleMetadata | nu
       extractMetaContent(content, 'description'),
       extractDescriptionFromJSONLD(content),
     );
-    // Compute relative path from NEWS_DIR for subdirectory-aware classification
     const relativePath: string = path.relative(NEWS_DIR, filePath).split(path.sep).join('/');
     const topics = extractTopics(content, fileName);
     const metadata: NewsArticleMetadata = {
@@ -194,17 +186,14 @@ export function parseArticleMetadata(filePath: string): NewsArticleMetadata | nu
  * Fixed: regex now properly handles apostrophes and special characters in content.
  */
 export function extractMetaContent(html: string, property: string): string | null {
-  // Match double-quoted attributes
   const doubleQuotePattern = new RegExp(`<meta\\s+(?:property|name)="${property}"\\s+content="([^"]+)"`, 'i');
   const doubleQuoteMatch: RegExpMatchArray | null = html.match(doubleQuotePattern);
   if (doubleQuoteMatch) return doubleQuoteMatch[1]!;
 
-  // Match single-quoted attributes
   const singleQuotePattern = new RegExp(`<meta\\s+(?:property|name)='${property}'\\s+content='([^']+)'`, 'i');
   const singleQuoteMatch: RegExpMatchArray | null = html.match(singleQuotePattern);
   if (singleQuoteMatch) return singleQuoteMatch[1]!;
 
-  // Try reversed order (content before property/name)
   const reversedDoublePattern = new RegExp(`<meta\\s+content="([^"]+)"\\s+(?:property|name)="${property}"`, 'i');
   const reversedDoubleMatch: RegExpMatchArray | null = html.match(reversedDoublePattern);
   if (reversedDoubleMatch) return reversedDoubleMatch[1]!;
@@ -230,17 +219,14 @@ export function extractTitle(html: string): string | null {
 export function normalizeDateString(dateStr: string | null): string {
   if (!dateStr) return new Date().toISOString().split('T')[0]!;
 
-  // If already in YYYY-MM-DD format, return as-is
   if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
     return dateStr;
   }
 
-  // If ISO timestamp (with time), extract just the date part
   if (dateStr.includes('T')) {
     return dateStr.split('T')[0]!;
   }
 
-  // If has timezone offset like +01:00, remove it first
   const cleaned: string = dateStr.replace(/[+-]\d{2}:\d{2}$/, '');
   if (cleaned.includes('T')) {
     return cleaned.split('T')[0]!;
@@ -254,14 +240,12 @@ export function normalizeDateString(dateStr: string | null): string {
  */
 export function extractDateFromJSONLD(html: string): string | null {
   try {
-    // Extract JSON-LD script tag content
     const jsonLdMatch: RegExpMatchArray | null = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/i);
     if (!jsonLdMatch) return null;
 
     const jsonLdText: string = jsonLdMatch[1]!.trim();
     const jsonData: { datePublished?: string } = JSON.parse(jsonLdText) as { datePublished?: string };
 
-    // Extract datePublished from NewsArticle schema
     if (jsonData.datePublished) {
       const dateStr: string = jsonData.datePublished.split('T')[0]!;
       return dateStr;
@@ -269,7 +253,6 @@ export function extractDateFromJSONLD(html: string): string | null {
 
     return null;
   } catch {
-    // Silently fail - this is a fallback mechanism
     return null;
   }
 }
@@ -290,7 +273,6 @@ export function extractFromFilename(fileName: string): string {
  * against the registry (for subdirectory-based articles like election-cycle/).
  */
 export function classifyArticleType(content: string, fileName: string, relativePath?: string): ArticleTypeValue {
-  // Try registry-driven classification first: extract subfolder slug from filename
   const slugMatch = fileName.match(new RegExp(`^\\d{4}-\\d{2}-\\d{2}-(.+?)-(${LANG_CODES})\\.html$`));
   if (slugMatch) {
     const slug = slugMatch[1]!;
@@ -300,8 +282,6 @@ export function classifyArticleType(content: string, fileName: string, relativeP
       if (entry.family === 'single-type') return 'analysis';
       if (entry.family === 'tier-c-aggregation') return 'retrospective';
     }
-    // For compound slugs (e.g. "election-cycle-current"), try progressively
-    // shorter prefixes against the registry until a match is found.
     const parts = slug.split('-');
     for (let i = parts.length - 1; i >= 1; i--) {
       const prefix = parts.slice(0, i).join('-');
@@ -314,8 +294,6 @@ export function classifyArticleType(content: string, fileName: string, relativeP
     }
   }
 
-  // For subdirectory articles (e.g. "2026-05-04-election-cycle/current-en.html"),
-  // extract the article-type subfolder from the parent directory name.
   if (relativePath && relativePath.includes('/')) {
     const parentDir = relativePath.split('/')[0]!;
     const dirSlugMatch = parentDir.match(/^\d{4}-\d{2}-\d{2}-(.+)$/);
@@ -332,7 +310,6 @@ export function classifyArticleType(content: string, fileName: string, relativeP
 
   const lowerContent: string = content.toLowerCase();
 
-  // Prospective: week-ahead / upcoming previews
   const prospectiveKeywords: string[] = [
     'week ahead', 'week-ahead', 'upcoming', 'preview', 'look ahead',           // en
     'veckan som kommer', 'kommande vecka', 'framåtblick',                       // sv
@@ -347,14 +324,13 @@ export function classifyArticleType(content: string, fileName: string, relativeP
     'השבוע הבא', 'הקרוב',                                                       // he
     '来週の展望', '今後',                                                          // ja
     '주간 전망', '다가오는',                                                       // ko
-    '一周展望', '即将'                                                             // zh
+    '一周展望', '即将'
   ];
 
   if (fileName.includes('week-ahead') || fileName.includes('month-ahead') || prospectiveKeywords.some((kw) => lowerContent.includes(kw.toLowerCase()))) {
     return 'prospective';
   }
 
-  // Analysis: committee reports, propositions, motions
   const analysisKeywords: string[] = [
     'committee reports', 'analysis', 'review', 'assessment',                     // en
     'utskottsbetänkanden', 'analys', 'granskning', 'betänkande',                // sv
@@ -369,7 +345,7 @@ export function classifyArticleType(content: string, fileName: string, relativeP
     'דוחות ועדות', 'ניתוח', 'דוח ועדה',                                         // he
     '委員会報告', '分析',                                                          // ja
     '위원회 보고서', '분석',                                                       // ko
-    '委员会报告', '分析'                                                           // zh
+    '委员会报告', '分析'
   ];
 
   if (fileName.includes('committee-reports') || fileName.includes('propositions') || fileName.includes('motions') ||
@@ -378,7 +354,6 @@ export function classifyArticleType(content: string, fileName: string, relativeP
     return 'analysis';
   }
 
-  // Breaking: urgent/alert news
   const breakingKeywords: string[] = [
     'breaking', 'urgent', 'alert', 'flash',                                      // en
     'senaste nytt', 'akut', 'brådskande',                                        // sv
@@ -393,7 +368,7 @@ export function classifyArticleType(content: string, fileName: string, relativeP
     'חדשות אחרונות', 'דחוף',                                                     // he
     '速報', '緊急',                                                               // ja
     '속보', '긴급',                                                               // ko
-    '突发新闻', '紧急'                                                             // zh
+    '突发新闻', '紧急'
   ];
 
   if (fileName.includes('breaking') || breakingKeywords.some((kw) => lowerContent.includes(kw.toLowerCase()))) {
@@ -428,7 +403,7 @@ export function extractTopics(content: string, fileName: string = ''): string[] 
     if (pattern.test(sourceSample)) topics.push(topic);
   }
 
-  return [...new Set(topics)].slice(0, 5); // Unique, max 5
+  return [...new Set(topics)].slice(0, 5);
 }
 
 /**
@@ -449,7 +424,7 @@ export function extractTags(content: string, fileName: string = '', inferredTopi
     tags.push(inferredType, ...inferredTopics);
   }
 
-  return [...new Set(tags.filter((tag) => tag.trim().length > 0))].slice(0, 4); // Max 4 tags for display
+  return [...new Set(tags.filter((tag) => tag.trim().length > 0))].slice(0, 4);
 }
 
 /**
@@ -480,7 +455,6 @@ export function scanNewsArticles(): Record<string, NewsArticleMetadata[]> {
 
   console.log(`  Found ${filePaths.length} article files`);
 
-  // Initialize buckets for all 14 supported languages
   const articlesByLang: Record<string, NewsArticleMetadata[]> = Object.fromEntries(
     Object.keys(LANGUAGES).map((lang) => [lang, []]),
   );
@@ -489,7 +463,6 @@ export function scanNewsArticles(): Record<string, NewsArticleMetadata[]> {
     const metadata: NewsArticleMetadata | null = parseArticleMetadata(filePath);
 
     if (metadata) {
-      // Set slug to relative path from NEWS_DIR (e.g., "2026/02/2026-02-13-article-en.html")
       metadata.slug = path.relative(NEWS_DIR, filePath).split(path.sep).join('/');
 
       if (articlesByLang[metadata.lang]) {
@@ -498,7 +471,6 @@ export function scanNewsArticles(): Record<string, NewsArticleMetadata[]> {
     }
   });
 
-  // Sort by date descending (newest first)
   Object.keys(articlesByLang).forEach((lang) => {
     articlesByLang[lang]?.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   });
@@ -528,7 +500,6 @@ const LANG_SUFFIX_RE: RegExp = new RegExp(`-(${LANG_CODES})\\.html$`);
  * Pass 2 – article.slug → the language list from pass 1.
  */
 export function buildSlugToLanguagesMap(articlesByLang: Record<string, NewsArticleMetadata[]>): Record<string, string[]> {
-  // Pass 1: build baseSlug → languages[] map
   const baseSlugToLangs: Record<string, string[]> = {};
 
   Object.entries(articlesByLang).forEach(([lang, articles]) => {
@@ -543,12 +514,6 @@ export function buildSlugToLanguagesMap(articlesByLang: Record<string, NewsArtic
     });
   });
 
-  // Pass 2: map each article slug to the collected language list.
-  // The fallback `[lang]` handles the edge case where an article slug does not
-  // end with a recognised language suffix (e.g. legacy files without a suffix);
-  // Pass 1 would have stored the baseSlug unchanged, leaving baseSlugToLangs
-  // populated for that entry, so the fallback is effectively unreachable for
-  // well-formed slugs.
   const slugToLanguages: Record<string, string[]> = {};
 
   Object.entries(articlesByLang).forEach(([lang, articles]) => {

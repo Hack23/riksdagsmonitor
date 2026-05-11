@@ -212,7 +212,6 @@ function readJsonLdField(
   field: 'headline' | 'alternativeHeadline' | 'description',
 ): string {
   if (!parsed || typeof parsed !== 'object') return '';
-  // JSON-LD can be a single object or a `@graph` array.
   const candidates: unknown[] = [];
   const record = parsed as Record<string, unknown>;
   if (Array.isArray(record['@graph'])) {
@@ -247,10 +246,6 @@ export function inspectHtmlContent(html: string, filePath: string = ''): Article
   const lang = extractHtmlLang(html);
   const title = match1(html, REGEXES.title);
 
-  // Parse `<meta>` tags and JSON-LD blocks once per file rather than
-  // scanning the document for every requested field. The CLI walks
-  // thousands of articles, so collapsing 5 + 3 sequential passes into
-  // one each keeps the hot path tight.
   const metaMap = parseAllMetaTags(html);
   const jsonLdBlocks = parseAllJsonLdBlocks(html);
 

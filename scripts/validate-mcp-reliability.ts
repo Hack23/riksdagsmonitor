@@ -152,34 +152,21 @@ export function parseMCPTable(sectionBody: string): {
   }
 
   const splitCells = (line: string): string[] => {
-    // Strip leading/trailing pipe before splitting so we don't get empty
-    // cells from the outer delimiters.
     const stripped = line.replace(/^\|/, '').replace(/\|$/, '');
     return stripped.split('|').map((c) => c.trim());
   };
 
   const headerRow = splitCells(tableLines[0]);
-  // tableLines[1] is the `|:---:|…|` separator — skip it.
   const dataLines = tableLines.slice(2);
 
   const rows: MCPReliabilityRow[] = [];
   for (let i = 0; i < dataLines.length; i++) {
     const cells = splitCells(dataLines[i]);
-    // Defensive: skip malformed rows (fewer than 7 cells). The validator
-    // will surface this as a required-column violation.
     if (cells.length < 7) continue;
 
     const toInt = (v: string): number => {
-      // Strip every non-digit character (including hyphens) before parsing so
-      // malformed strings like `'5-3'` or `'--5'` cannot be coerced into
-      // negative numbers. The spec requires non-negative integers, so we
-      // reject every non-digit outright rather than parsing and checking
-      // the sign afterwards.
       const digitsOnly = v.replace(/[^0-9]/g, '');
       if (digitsOnly === '' || digitsOnly !== v.trim()) {
-        // Empty after stripping, or the stripped version differs from the
-        // original (meaning the cell contained non-digit noise) → flag as
-        // NaN so the caller surfaces a `non-numeric-cell` violation.
         return NaN;
       }
       const n = parseInt(digitsOnly, 10);
@@ -250,7 +237,6 @@ export async function validateMCPReliability(filePath: string): Promise<Validati
     return { file: filePath, rows: [], issues, ok: false };
   }
 
-  // Rule 3: canonical columns in order, case-insensitive.
   for (let i = 0; i < CANONICAL_COLUMNS.length; i++) {
     const expected = CANONICAL_COLUMNS[i].toLowerCase();
     const got = (headers[i] ?? '').toLowerCase();
@@ -280,7 +266,6 @@ export async function validateMCPReliability(filePath: string): Promise<Validati
     return { file: filePath, rows: [], issues, ok: false };
   }
 
-  // Rule 4 & 5: numeric columns parse + arithmetic consistency.
   for (const row of rows) {
     const numericFields: Array<[string, number]> = [
       ['Calls', row.calls],
@@ -311,7 +296,6 @@ export async function validateMCPReliability(filePath: string): Promise<Validati
     }
   }
 
-  // Rule 6: required-server coverage.
   const servers = new Set(rows.map((r) => r.server.toLowerCase()));
   for (const required of REQUIRED_SERVERS) {
     if (!servers.has(required.toLowerCase())) {

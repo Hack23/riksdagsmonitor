@@ -127,17 +127,12 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
     used.push(fileName);
   };
 
-  // 1. Executive brief is mandatory — both title and description derive from it.
   const briefPath = path.join(subfolderAbsPath, 'executive-brief.md');
   if (!fs.existsSync(briefPath)) {
     throw new Error(`Aggregation requires executive-brief.md in ${subfolderRepoRelPath}`);
   }
   const briefRaw = fs.readFileSync(briefPath, 'utf8');
 
-  // Description: prefer the `## 🎯 BLUF` paragraph (editors write this as
-  // the publishable lede), fall back to the first prose paragraph. Always
-  // run through the sentence-aware truncator so SERP snippets never end
-  // mid-word. See `seo-metadata-contract.md` §3.
   const rawBlufParagraph = readBlufParagraph(briefRaw);
   const rawFirstParagraph = readFirstParagraph(briefRaw);
   const rawDescriptionSource =
@@ -146,11 +141,6 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
     `Evidence-based political intelligence analysis for ${subfolder} on ${date}.`;
   const description = truncateToSentenceBoundary(rawDescriptionSource);
 
-  // Title: strip boilerplate prefix + trailing ISO date from the H1. If
-  // the cleaned title is too short to be a real story headline,
-  // synthesise one from the first BLUF sentence. If that also fails,
-  // fall back to `<subfolder> — <date>`. See `seo-metadata-contract.md`
-  // §2.
   const title =
     cleanArticleTitle(readFirstHeading(briefRaw), subfolder) ||
     titleFromBluf(rawBlufParagraph ?? rawFirstParagraph) ||
@@ -164,30 +154,11 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
   );
   const docsExist = hasPerDocumentAnalyses(subfolderAbsPath);
 
-  // 2. Emit the executive brief FIRST so the reader meets the BLUF /
-  //    so-what frame before any navigation metadata. The Reader
-  //    Intelligence Guide is then injected immediately after, routing
-  //    the reader into the deeper analytical lenses with the executive
-  //    context already loaded.
   readSection('executive-brief.md', false);
   sections.push(buildReaderGuide(rootArtifactSet, docsExist));
 
-  // 3. Emit the rest of the canonical narrative order, expanding
-  //    documents/ between significance-scoring and stakeholder-
-  //    perspectives so primary-source evidence (the actual motions,
-  //    propositions and committee reports with their `dok_id`) lands
-  //    immediately after the so-what ranking and BEFORE any
-  //    interpretive lenses. This is the "show your work" pattern
-  //    intelligence consumers expect (cf. ICD 203, NIC NIE structure).
-  //    Article types that produce only a subset of the canonical
-  //    artifacts (realtime, week-ahead, monthly-review) are supported
-  //    transparently — readSection skips missing files and the Reader
-  //    Guide above filters its rows on `available.has(entry.file)`.
   for (const fileName of AGGREGATION_ORDER) {
-    if (fileName === 'executive-brief.md') continue; // already emitted in Round 0
-    // Filename-variant alias dedup: if a sibling alias of this file has
-    // already been rendered in this folder, skip — only one member of an
-    // alias group is emitted per folder. See order.ts → FILENAME_ALIASES.
+    if (fileName === 'executive-brief.md') continue;
     const aliases = aliasGroupFor(fileName);
     if (aliases && used.some((usedFile) => aliases.has(usedFile))) continue;
     readSection(fileName, true);
@@ -198,10 +169,6 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
     }
   }
 
-  // 4. Append any remaining *.md (supplementary artifacts such as
-  //    pestle-analysis.md, wildcards-blackswans.md, ext/*.md) in
-  //    alphabetical order. Exclude README.md, article.md (aggregator
-  //    output), and language-specific article.<lang>.md.
   const allMd = fs.readdirSync(subfolderAbsPath)
     .filter((f) => /\.md$/i.test(f))
     .filter((f) => f !== 'README.md')
@@ -213,11 +180,9 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
     readSection(f, true);
   }
 
-  // 5. Article Sources appendix — single canonical list at the end.
   const sourcesAppendix = buildSourcesAppendix(used, subfolderRepoRelPath);
   if (sourcesAppendix) sections.push(sourcesAppendix);
 
-  // 6. Compose final markdown with YAML front-matter.
   const frontMatter = buildFrontMatter({
     title,
     description,

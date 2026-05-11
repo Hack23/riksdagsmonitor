@@ -48,7 +48,6 @@ export function getNewsArticles(): ArticleGroup[] {
     return [];
   }
 
-  // Group articles by base slug (without language suffix)
   const articles = new Map<string, ArticleGroup>();
 
   function scanDir(dir: string): void {
@@ -65,7 +64,6 @@ export function getNewsArticles(): ArticleGroup[] {
           const filePath = path.join(dir, file);
           const fileModTime = getFileModTime(filePath);
 
-          // Include subdirectory prefix in baseSlug (e.g., "2026/02/2026-02-13-article")
           const relDir = path.relative(NEWS_DIR, dir).split(path.sep).join('/');
           const fullBaseSlug = relDir ? `${relDir}/${baseSlug}` : baseSlug;
 
@@ -92,13 +90,9 @@ export function getNewsArticles(): ArticleGroup[] {
 
   console.log(`  Found ${articles.size} news article groups`);
 
-  // Type-aware sorting: sort by date descending (most recent first),
-  // then by registry-driven horizonDays descending as tiebreaker.
   return Array.from(articles.values()).sort((a, b) => {
-    // Primary: lastmod descending (most recent first)
     const dateCmp = b.lastmod.localeCompare(a.lastmod);
     if (dateCmp !== 0) return dateCmp;
-    // Tiebreaker: registry horizonDays descending (long-horizon articles first)
     const subA = a.baseSlug.match(/\d{4}-\d{2}-\d{2}-(.+)/)?.[1] ?? '';
     const subB = b.baseSlug.match(/\d{4}-\d{2}-\d{2}-(.+)/)?.[1] ?? '';
     const entryA = getBySubfolder(subA);

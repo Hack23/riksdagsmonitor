@@ -32,7 +32,6 @@ export async function loadPartyPerformance(loadCSV: LoadCSV): Promise<PartyPerfo
 
   const activePerformance = performance.filter(p => RIKSDAG_PARTIES.includes(p.party as string));
 
-  // Build a lookup from the detailed metrics
   const metricsMap: Record<string, CSVRow> = {};
   metrics.forEach(m => {
     if (RIKSDAG_PARTIES.includes(m.party as string)) {
@@ -40,7 +39,6 @@ export async function loadPartyPerformance(loadCSV: LoadCSV): Promise<PartyPerfo
     }
   });
 
-  // Get latest momentum per party
   const latestMomentum: Record<string, CSVRow> = {};
   momentum
     .filter(m => RIKSDAG_PARTIES.includes(m.party as string))
@@ -56,7 +54,6 @@ export async function loadPartyPerformance(loadCSV: LoadCSV): Promise<PartyPerfo
       }
     });
 
-  // Known seat counts (from 2022 election results)
   const seatMap: Record<string, number> = {
     S: 107, SD: 73, M: 68, C: 24, V: 24, KD: 19, L: 16, MP: 18
   };
@@ -92,7 +89,6 @@ export async function loadPartyPerformance(loadCSV: LoadCSV): Promise<PartyPerfo
     };
   });
 
-  // Sort by seats descending
   parties.sort((a, b) => (b.metrics.seats || 0) - (a.metrics.seats || 0));
 
   return {

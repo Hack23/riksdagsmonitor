@@ -107,8 +107,6 @@ function locateArticleMd(date: string, subfolder: string): string | null {
 }
 
 function canonicalPathFor(_date: string, subfolder: string, lang: Language, date: string): string {
-  // Flatten nested subfolders (e.g. "election-cycle/current") into dashes
-  // so the output is always a flat file: news/2026-05-04-election-cycle-current-en.html
   const flatSubfolder = subfolder.replace(/\//g, '-');
   return `news/${date}-${flatSubfolder}-${lang}.html`;
 }
@@ -121,8 +119,6 @@ function allCaseDates(): RenderCase[] {
     .map((e) => e.name)
     .sort();
   for (const date of dateDirs) {
-    // Recursively discover all subfolders (including nested ones like
-    // "election-cycle/current") that contain an article.md
     const dateDir = path.join(DAILY_DIR, date);
     const discoverSubfolders = (dir: string, prefix: string): void => {
       const entries = fs.readdirSync(dir, { withFileTypes: true })
@@ -134,7 +130,6 @@ function allCaseDates(): RenderCase[] {
         if (md) {
           out.push({ date, subfolder, articleMdPath: md, subfolderRepoRelPath: subRepoRel });
         }
-        // Recurse into subdirectories (e.g. election-cycle/current, election-cycle/next)
         discoverSubfolders(path.join(dir, entry.name), subfolder);
       }
     };
@@ -149,20 +144,11 @@ async function renderOne(
   quiet: boolean,
 ): Promise<number> {
   const markdown = fs.readFileSync(rc.articleMdPath, 'utf8');
-  // Populate hreflang alternates for EVERY supported language — not just
-  // the ones being rendered in this invocation — so the language switcher
-  // in the chrome always points at the sibling article
-  // (`news/{date}-{subfolder}-{lang}.html`) instead of falling back to
-  // the language homepage. Translation of missing languages is handled
-  // by the dedicated `news-translate` agentic workflow; the alternates
-  // URLs stay stable and predictable.
   const hreflangAlternates: Partial<Record<Language, string>> = {};
   for (const l of LANGUAGES) {
     hreflangAlternates[l] = canonicalPathFor(rc.date, rc.subfolder, l, rc.date);
   }
 
-  // Parse the artifact list from the aggregator's generated markdown — fall
-  // back to the analysis folder contents if the aggregator didn't store a list.
   const artifactsUsed = resolveArtifactList(rc);
 
   let count = 0;
@@ -171,15 +157,6 @@ async function renderOne(
       path.dirname(rc.articleMdPath),
       `article.${lang}.md`,
     );
-    // Regression fix: when an agent-translated `article.<lang>.md` exists
-    // it almost always carries only a short hand-curated summary (~50
-    // lines) — far less than the canonical English `article.md` (often
-    // >2 000 lines aggregated from 23 artifacts). Previously the renderer
-    // swapped the full English source for that small file, publishing
-    // truncated non-English HTML pages. We now MERGE the two so the HTML
-    // contains the localized executive summary AND the full English
-    // analytical depth (Coalition Mathematics, Risk Assessment, SWOT,
-    // Threat Analysis, Sources, …) under a localized boundary heading.
     let mdForLang: string;
     if (lang === 'en' || !fs.existsSync(langSpecific)) {
       mdForLang = markdown;
@@ -250,7 +227,6 @@ async function main(): Promise<void> {
 
   let md = locateArticleMd(args.date, args.subfolder);
   if (!md) {
-    // Auto-aggregate if article.md is missing but analysis exists.
     const subAbs = path.join(DAILY_DIR, args.date, args.subfolder);
     if (fs.existsSync(subAbs)) {
       const result = aggregateAnalysis({

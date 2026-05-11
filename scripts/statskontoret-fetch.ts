@@ -159,9 +159,6 @@ function isDirectExecution(): boolean {
   try {
     return import.meta.url === pathToFileURL(path.resolve(entry)).href;
   } catch {
-    // `pathToFileURL` throws on malformed paths; `path.resolve` is used to
-    // normalise the entry first so most runners reach the comparison, and the
-    // catch keeps the module import-safe across exotic launchers.
     return false;
   }
 }

@@ -35,7 +35,6 @@ export function renderChromeHead(opts: ChromeOptions): string {
   const published = opts.publishedIso ?? new Date().toISOString();
   const modified = opts.modifiedIso ?? published;
 
-  // Auto-emit FAQPage JSON-LD when caller supplies ≥2 faqItems.
   const autoJsonLd: unknown[] = [];
   if (opts.faqItems && opts.faqItems.length >= 2) {
     autoJsonLd.push({
@@ -52,7 +51,6 @@ export function renderChromeHead(opts: ChromeOptions): string {
     });
   }
 
-  // Auto-emit WebPage self-node with SpeakableSpecification.
   let mergedJsonLd = opts.jsonLd ?? [];
   if (opts.speakableSelectors && opts.speakableSelectors.length > 0) {
     const speakableSpec = {
@@ -91,13 +89,11 @@ export function renderChromeHead(opts: ChromeOptions): string {
     })
     .join('\n');
 
-  // Pagination link relations.
   const pagerLinks: string[] = [];
   if (opts.relPrev) pagerLinks.push(`    <link rel="prev" href="${escapeHtml(opts.relPrev)}">`);
   if (opts.relNext) pagerLinks.push(`    <link rel="next" href="${escapeHtml(opts.relNext)}">`);
   const pagerLinksHtml = pagerLinks.length > 0 ? pagerLinks.join('\n') + '\n' : '';
 
-  // Title brand discipline.
   const brandedTitle = /riksdagsmonitor/i.test(opts.title)
     ? opts.title
     : `${opts.title} — Riksdagsmonitor`;

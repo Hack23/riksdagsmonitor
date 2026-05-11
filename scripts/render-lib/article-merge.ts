@@ -124,7 +124,6 @@ export function buildEnglishCoverageBoundary(lang: Language): string {
 export function mergeLocalizedWithEnglish(input: MergeLocalizedInput): string {
   const { englishMarkdown, localizedMarkdown, lang } = input;
 
-  // Defensive: English language asks for no merge.
   if (lang === 'en') return englishMarkdown;
 
   const english = matter(englishMarkdown);
@@ -133,30 +132,23 @@ export function mergeLocalizedWithEnglish(input: MergeLocalizedInput): string {
   const englishData = (english.data ?? {}) as Record<string, unknown>;
   const localizedData = (localized.data ?? {}) as Record<string, unknown>;
 
-  // Build merged front-matter — start from English, overlay localized
-  // fields except for the canonical-identity keys.
   const mergedData: Record<string, unknown> = { ...englishData };
   for (const [key, value] of Object.entries(localizedData)) {
     if (ENGLISH_ONLY_FRONT_MATTER_KEYS.has(key)) continue;
     if (value === undefined || value === null || value === '') continue;
     mergedData[key] = value;
   }
-  // Always pull title/description/language from the localized data when
-  // present — these are the user-visible header strings.
   for (const key of LOCALIZED_FIRST_FRONT_MATTER_KEYS) {
     const value = localizedData[key];
     if (value !== undefined && value !== null && value !== '') {
       mergedData[key] = value;
     }
   }
-  // Force language to the target language so JSON-LD `inLanguage` is
-  // correct even if the localized file forgot to set it.
   mergedData.language = lang;
 
   const englishBody = english.content.trimStart();
   const localizedBody = localized.content.trim();
 
-  // No localized body — surface English body with localized front-matter.
   if (localizedBody.length === 0) {
     return matter.stringify(englishBody, mergedData);
   }

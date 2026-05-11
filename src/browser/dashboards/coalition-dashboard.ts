@@ -142,7 +142,6 @@ function parseCSV(csvText: string): Record<string, string>[] {
       const parsed = Papa.parse(csvText, { header: true, skipEmptyLines: true });
       return parsed.data;
     }
-    // CSP-safe fallback: simple header-based CSV parser
     const lines = csvText.trim().split('\n');
     if (lines.length < 2) return [];
     const headers = lines[0]!.split(',').map((h) => h.trim().replace(/^"|"$/g, ''));
@@ -236,7 +235,6 @@ async function fetchAnomalyData(): Promise<void> {
     const csvData = await fetchCSV(DATA_CONFIG.files['anomalyByParty']);
     if (csvData && csvData.length > 0) {
       const anomalies: AnomalyEntry[] = [];
-      // Group by party: compute a weighted average deviation score per party
       const partyAnomalies: Record<string, { totalRebellions: number; totalCount: number; classifications: string[] }> = {};
       csvData.forEach(row => {
         const party = row['party'];
@@ -249,11 +247,10 @@ async function fetchAnomalyData(): Promise<void> {
         partyAnomalies[party].totalCount += count;
         partyAnomalies[party].classifications.push(classification);
       });
-      // Create one anomaly entry per party with weighted average
       Object.entries(partyAnomalies).forEach(([party, data]) => {
         if (data.totalCount > 0) {
           const weightedAvg = data.totalRebellions / data.totalCount;
-          const deviation = Math.min(6, weightedAvg / 5); // Normalize to 0-6 scale
+          const deviation = Math.min(6, weightedAvg / 5);
           const hasHighRebels = data.classifications.some(c => c === 'FREQUENT_STRONG_REBEL' || c === 'CONSISTENT_REBEL');
           anomalies.push({
             party,
@@ -589,7 +586,6 @@ function generateMockBehavioralData(): Record<string, number> {
 function generateMockDecisionData(): Record<string, string>[] { return []; }
 
 export function generateMockAnomalyData(): AnomalyEntry[] {
-  // Deterministic fallback data when CIA anomaly data is unavailable
   const deviations: Record<string, number> = {
     'S': 1.85, 'M': 2.10, 'SD': 3.25, 'V': 1.45,
     'MP': 2.70, 'C': 1.30, 'L': 1.95, 'KD': 2.50
@@ -603,7 +599,6 @@ export function generateMockAnomalyData(): AnomalyEntry[] {
 }
 
 export function generateMockAnnualVotesData(): Record<string, AnnualVoteEntry[]> {
-  // Deterministic fallback data for annual vote trends
   const data: Record<string, AnnualVoteEntry[]> = {};
   const partyBaselines: Record<string, number> = {
     'S': 50000, 'M': 35000, 'SD': 25000, 'V': 12000,
@@ -613,7 +608,6 @@ export function generateMockAnnualVotesData(): Record<string, AnnualVoteEntry[]>
     data[party] = [];
     const baseline = partyBaselines[party] || 15000;
     for (let year = 2002; year <= 2025; year++) {
-      // Deterministic variation: alternates ±10% based on year parity
       const variation = year % 2 === 0 ? 0.9 : 1.1;
       data[party].push({ year, votes: Math.round(baseline * variation) });
     }

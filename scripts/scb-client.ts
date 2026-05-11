@@ -371,7 +371,6 @@ export class SCBClient {
       const response = await this.fetchWithRetry(toolName, params);
       return response as T;
     } catch (error) {
-      // Log for debugging MCP connection issues; return null as graceful fallback
       console.warn(`SCB MCP call to ${toolName} failed:`, error instanceof Error ? error.message : error);
       return null;
     }
@@ -411,7 +410,6 @@ export class SCBClient {
         throw new Error(`SCB MCP tool error: ${JSON.stringify(json.error)}`);
       }
 
-      // MCP responses wrap content in result.content[].text
       const text = json.result?.content?.[0]?.text;
       if (text) {
         try {

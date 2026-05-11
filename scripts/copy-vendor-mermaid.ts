@@ -60,7 +60,6 @@ function copyTree(src: string, dst: string): number {
   if (!existsSync(dst)) mkdirSync(dst, { recursive: true });
   let count = 0;
   for (const entry of readdirSync(src)) {
-    // Skip non-runtime artefacts: source maps, type declarations, test mocks.
     if (entry.endsWith('.map')) continue;
     if (entry.endsWith('.d.ts')) continue;
     if (entry === '__mocks__') continue;
@@ -71,7 +70,6 @@ function copyTree(src: string, dst: string): number {
     if (st.isDirectory()) {
       count += copyTree(s, d);
     } else if (st.isFile()) {
-      // Only copy ESM runtime files actually loaded by the browser.
       if (!entry.endsWith('.mjs')) continue;
       copyFileSync(s, d);
       count += 1;
@@ -88,11 +86,9 @@ function copyTree(src: string, dst: string): number {
  */
 function copyMermaidRuntime(): number {
   let count = 0;
-  // 1. Top-level entry point.
   if (!existsSync(TARGET)) mkdirSync(TARGET, { recursive: true });
   copyFileSync(join(SOURCE, 'mermaid.esm.min.mjs'), join(TARGET, 'mermaid.esm.min.mjs'));
   count += 1;
-  // 2. Chunks the entry dynamically imports.
   const chunksSrc = join(SOURCE, 'chunks', 'mermaid.esm.min');
   const chunksDst = join(TARGET, 'chunks', 'mermaid.esm.min');
   if (existsSync(chunksSrc)) {

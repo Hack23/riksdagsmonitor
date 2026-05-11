@@ -49,14 +49,10 @@ export function generateSitemapHtml(lang: Language, articlesByLang: Map<Language
   const newsIndexFile = isEnglish ? 'news/index.html' : `news/index_${lang}.html`;
 
   const articles = articlesByLang.get(lang) || [];
-  // Include every article for the target language — the problem statement
-  // explicitly calls for "links to all pages". Articles are already sorted
-  // by publication date (desc) in getArticlesByLanguage().
   const recentArticles = articles;
 
   const docsSections = getDocsSections();
 
-  // Build other language links section
   const otherLanguageLinks = LANGUAGES
     .filter((l) => l !== lang)
     .map((l) => {
@@ -68,7 +64,6 @@ export function generateSitemapHtml(lang: Language, articlesByLang: Map<Language
     })
     .join('\n');
 
-  // Build multi-language platform links
   const multiLangLinks = LANGUAGES.map((l) => {
     const lm = LANGUAGE_META[l];
     const href = l === 'en' ? 'index.html' : `index_${l}.html`;
@@ -77,7 +72,6 @@ export function generateSitemapHtml(lang: Language, articlesByLang: Map<Language
                     </li>`;
   }).join('\n');
 
-  // Build dashboard links
   const dashboardLinks = LANGUAGES.map((l) => {
     const lm = LANGUAGE_META[l];
     const dFile = l === 'en' ? 'dashboard/index.html' : `dashboard/index_${l}.html`;
@@ -88,10 +82,6 @@ export function generateSitemapHtml(lang: Language, articlesByLang: Map<Language
                     </li>`;
   }).filter(Boolean).join('\n');
 
-  // Build news article list — includes every article for this language,
-  // sorted by publication date (desc). Each entry exposes the date as a
-  // semantic <time datetime="…"> element for machine parsing and visual
-  // confirmation that newest articles are listed first.
   const articleListHtml = recentArticles.map((article) => {
     const escapedTitle = escapeHtml(article.title);
     const escapedDesc = escapeHtml(article.description);
@@ -105,7 +95,6 @@ export function generateSitemapHtml(lang: Language, articlesByLang: Map<Language
                     </li>`;
   }).join('\n');
 
-  // Build docs section
   let docsHtml = '';
   if (docsSections.index || docsSections.api || docsSections.coverage || docsSections.testResults || docsSections.cypress) {
     docsHtml = `
@@ -152,17 +141,11 @@ export function generateSitemapHtml(lang: Language, articlesByLang: Map<Language
             </section>`;
   }
 
-  // Build hreflang alternates map for the chrome — each language maps to
-  // its sibling sitemap file (sitemap.html / sitemap_${lang}.html).
   const hreflangAlternates: Partial<Record<Language, string>> = {};
   for (const l of LANGUAGES) {
     hreflangAlternates[l] = l === 'en' ? 'sitemap.html' : `sitemap_${l}.html`;
   }
 
-  // SEO uplift (round-7): build a localised meta description that cites
-  // the article count + native language name. Per-language char budgets
-  // follow `seo-metadata-contract.md` §4:
-  //   ja/ko/zh: 70–120; ar/he: 120–170; others: 140–200.
   const CJK_LANGS: ReadonlySet<Language> = new Set(['ja', 'ko', 'zh']);
   const RTL_LANGS: ReadonlySet<Language> = new Set(['ar', 'he']);
   const descMin = CJK_LANGS.has(lang) ? 70 : RTL_LANGS.has(lang) ? 120 : 140;
@@ -170,18 +153,13 @@ export function generateSitemapHtml(lang: Language, articlesByLang: Map<Language
 
   const articleCount = recentArticles.length;
   const baseDescription = t.completeNavigation;
-  // `${baseDescription}` is typically 30–80 chars — extend with article
-  // count + native lang + brand to land in the target band.
   const rawDescription = `${baseDescription} — ${articleCount} ${t.recentArticles} · ${meta.nativeName} · Riksdagsmonitor (${t.mainPlatform}, ${t.dashboards}, ${t.newsAnalysis}, ${t.documentation}).`;
-  // Clamp to per-language min/max: truncate with ellipsis if too long,
-  // or pad with site context if under minimum.
   let seoDescription = rawDescription;
   if (seoDescription.length > descMax) {
     seoDescription = seoDescription.slice(0, descMax - 3).trimEnd() + '…';
   } else if (seoDescription.length < descMin) {
     const pad = ` ${t.resources} — ${meta.nativeName} · Riksdagsmonitor.`;
     seoDescription = (seoDescription + pad);
-    // Re-clamp after padding
     if (seoDescription.length > descMax) {
       seoDescription = seoDescription.slice(0, descMax - 3).trimEnd() + '…';
     }
@@ -200,13 +178,8 @@ export function generateSitemapHtml(lang: Language, articlesByLang: Map<Language
   ].join(', ');
   const seoTitle = `${t.siteMap} — ${meta.nativeName}`;
 
-  // FAQ entries for this language (round-7 SEO uplift).
   const faqItems = getFaqItems('sitemap', lang);
 
-  // JSON-LD: Organization + WebSite (always) + SiteNavigationElement +
-  // BreadcrumbList. The article renderer emits the same Organization +
-  // WebSite shape so the three top-level navigable pages are now
-  // structurally consistent for Google Rich Results.
   const jsonLd: unknown[] = [
     {
       '@context': 'https://schema.org',
@@ -247,8 +220,6 @@ export function generateSitemapHtml(lang: Language, articlesByLang: Map<Language
     },
   ];
 
-  // WebPage self-node — provides `mainEntity` pointing at the catalogued
-  // article ItemList plus `dateModified` for freshness signalling.
   const buildIso = new Date().toISOString();
   jsonLd.push({
     '@context': 'https://schema.org',
@@ -264,9 +235,6 @@ export function generateSitemapHtml(lang: Language, articlesByLang: Map<Language
     breadcrumb: { '@id': `${BASE_URL}/${sitemapFile}#breadcrumb` },
   });
 
-  // ItemList of catalogued articles (up to 200) — exposes the sitemap's
-  // article inventory (title + URL + position) so crawlers see the
-  // archive even if the visual UI paginates client-side.
   if (recentArticles.length > 0) {
     const cappedArticles = recentArticles.slice(0, 200);
     jsonLd.push({
@@ -285,9 +253,6 @@ export function generateSitemapHtml(lang: Language, articlesByLang: Map<Language
     });
   }
 
-  // Inline page-specific stylesheet for the sitemap body. Chrome owns
-  // header + footer + theme bootstrap; the styles below scope only to
-  // sitemap-specific markup (.sitemap-section, .sitemap-list, etc.).
   const extraStyle = `
         .sitemap-container {
             max-width: 1200px;
@@ -452,9 +417,6 @@ export function generateSitemapHtml(lang: Language, articlesByLang: Map<Language
     modifiedIso: buildIso,
   });
 
-  // Body content — keeps the rich sitemap sections from the legacy
-  // template; the surrounding chrome (header / breadcrumb / footer /
-  // language switcher / theme toggle) is now provided by `buildChrome`.
   const body = `    <div class="sitemap-container">
         <header class="sitemap-page-hero">
             <h1>${escapeHtml(t.siteMap)}</h1>

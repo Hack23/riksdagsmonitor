@@ -363,8 +363,6 @@ export const STREAM_GENERIC_DESC_I18N: Record<Language, string> = {
 // description when a specific key/lang combination is missing.
 // ---------------------------------------------------------------------------
 
-
-
 /**
  * Convert `propositions` → `Propositions`, `committee_reports` → `Committee Reports`.
  * Pure string transform; English-only — used as the cross-language fallback.
@@ -394,11 +392,9 @@ export function streamIcon(name: string): string {
 export function streamDisplayName(name: string, lang: Language): string {
   const hit = STREAM_NAME_I18N[name]?.[lang];
   if (hit) return hit;
-  // Preserve timestamp suffix for realtime-HHMM → "Realtime HH:MM" variants
   const match = name.match(/^realtime-(\d{2})(\d{2})$/);
   if (match) {
     const base = STREAM_NAME_I18N['breaking-news']?.[lang] ?? 'Realtime';
-    // Use English "Realtime" label for clarity across languages
     return `${lang === 'en' ? 'Realtime' : base.replace(/breaking[-\s]?news?/i, 'Realtime')} ${match[1]}:${match[2]}`;
   }
   return prettifyStream(name);

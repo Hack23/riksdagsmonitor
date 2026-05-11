@@ -52,7 +52,6 @@ export function initLazyDashboards(
   options: IntersectionObserverInit = { rootMargin: '200px', threshold: 0.01 },
 ): IntersectionObserver | undefined {
   if (typeof IntersectionObserver === 'undefined') {
-    // Graceful fallback: load immediately, but only when the container exists in the DOM
     for (const { containerId, loader } of dashboards) {
       const el = document.getElementById(containerId);
       if (!el) {
@@ -60,7 +59,6 @@ export function initLazyDashboards(
         continue;
       }
       el.classList.add(CHART_SKELETON_CLASS);
-      // Wrap in Promise.resolve() so a synchronous throw becomes a rejection
       Promise.resolve()
         .then(() => loader())
         .then(() => {
@@ -74,7 +72,6 @@ export function initLazyDashboards(
     return undefined;
   }
 
-  // Map element → loader for O(1) lookup inside the observer callback
   const pending = new Map<Element, () => Promise<void>>();
 
   const observer = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
@@ -88,10 +85,8 @@ export function initLazyDashboards(
       if (!loaderFn) continue;
       pending.delete(el);
 
-      // Show skeleton while the module is downloading / initialising
       el.classList.add(CHART_SKELETON_CLASS);
 
-      // Wrap in Promise.resolve() so a synchronous throw becomes a rejection
       Promise.resolve()
         .then(() => loaderFn())
         .then(() => {
@@ -115,6 +110,5 @@ export function initLazyDashboards(
     observer.observe(el);
   }
 
-  // Return the observer so the caller retains a reference (prevents GC)
   return observer;
 }

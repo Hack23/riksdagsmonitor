@@ -174,11 +174,9 @@ const SWEDISH_LEAKAGE_PHRASES: readonly RegExp[] = [
  * intended to remove nested script/style content more completely.
  */
 function extractBodyParagraphs(html: string): string[] {
-  // Reset lastIndex for module-level regexes (they carry state with /g flag)
   SCRIPT_TAG_RE.lastIndex = 0;
   STYLE_TAG_RE.lastIndex = 0;
 
-  // Use iterative removal to fully strip script/style blocks.
   let cleaned = html;
   let prev = '';
   while (prev !== cleaned) {
@@ -191,14 +189,11 @@ function extractBodyParagraphs(html: string): string[] {
     cleaned = cleaned.replace(STYLE_TAG_RE, '');
   }
 
-  // Extract paragraph text
   const paragraphs: string[] = [];
   const pRegex = /<p[^>]*>([\s\S]*?)<\/p>/gi;
   let match: RegExpExecArray | null;
   while ((match = pRegex.exec(cleaned)) !== null) {
-    // Strip remaining HTML tags from paragraph content (text-only comparison, not for rendering)
     let text = match[1] ?? '';
-    // Iteratively remove any surviving tags
     let prevText = '';
     while (prevText !== text) {
       prevText = text;
@@ -221,7 +216,6 @@ function checkBodyContentLeakage(
   enSourcePath: string | null,
   fileLang: string,
 ): ContentLeakageRecord | null {
-  // Skip EN files — they are the source
   if (fileLang === 'en') return null;
 
   const translatedContent = readFileSync(translatedFilePath, 'utf-8');
@@ -234,11 +228,9 @@ function checkBodyContentLeakage(
   let phraseLeakageCount = 0;
   const samples: string[] = [];
 
-  // 1. Check for English paragraph leakage from EN source
   if (enSourcePath && existsSync(enSourcePath)) {
     const enContent = readFileSync(enSourcePath, 'utf-8');
     const enParagraphs = extractBodyParagraphs(enContent);
-    // Use a Set for O(1) lookup instead of O(n) array.includes()
     const translatedParagraphSet = new Set(translatedParagraphs);
 
     for (const enPara of enParagraphs) {
@@ -251,7 +243,6 @@ function checkBodyContentLeakage(
     }
   }
 
-  // 2. Check for known English boilerplate phrases
   for (const pattern of ENGLISH_LEAKAGE_PHRASES) {
     if (pattern.test(translatedContent)) {
       phraseLeakageCount++;
@@ -262,8 +253,6 @@ function checkBodyContentLeakage(
     }
   }
 
-  // 3. Check for Swedish raw text leakage in non-Swedish translated files
-  //    that reach this point (EN files return early above because they are the source)
   if (fileLang !== 'sv') {
     for (const pattern of SWEDISH_LEAKAGE_PHRASES) {
       if (pattern.test(translatedContent)) {
@@ -277,7 +266,6 @@ function checkBodyContentLeakage(
   }
 
   const totalParagraphs = translatedParagraphs.length;
-  // Percentage is based on EN paragraph leakage only; phrase matches are reported separately.
   const percentUntranslated = totalParagraphs > 0
     ? Math.round((enParagraphLeakageCount / totalParagraphs) * 100)
     : 0;
@@ -308,7 +296,7 @@ function deriveEnSourcePath(filepath: string): string | null {
   const dir = dirname(filepath);
   const name = basename(filepath);
   const enName = name.replace(/-[a-z]{2}\.html$/, '-en.html');
-  if (enName === name) return null; // couldn't derive
+  if (enName === name) return null;
   const enPath = join(dir, enName);
   return existsSync(enPath) ? enPath : null;
 }
@@ -349,7 +337,6 @@ export function validateBCP47Consistency(filePath: string, fileLang: string): BC
   const expectedTag = BCP47_TAG[fileLang] ?? fileLang;
   const expectedLocale = OG_LOCALE_EXPECTED[fileLang];
 
-  // Check html lang attribute
   const htmlLangMatch = content.match(/<html\s[^>]*lang="([^"]+)"/);
   if (htmlLangMatch) {
     const actual = htmlLangMatch[1] ?? '';
@@ -358,7 +345,6 @@ export function validateBCP47Consistency(filePath: string, fileLang: string): BC
     }
   }
 
-  // Check og:locale
   if (expectedLocale) {
     const ogMatch = content.match(/property="og:locale"\s+content="([^"]+)"/);
     if (ogMatch) {
@@ -369,7 +355,6 @@ export function validateBCP47Consistency(filePath: string, fileLang: string): BC
     }
   }
 
-  // Check JSON-LD inLanguage
   const inLangMatch = content.match(/"inLanguage":\s*"([^"]+)"/);
   if (inLangMatch) {
     const actual = inLangMatch[1] ?? '';
@@ -378,7 +363,6 @@ export function validateBCP47Consistency(filePath: string, fileLang: string): BC
     }
   }
 
-  // Check dir="rtl" for RTL languages
   if (fileLang === 'ar' || fileLang === 'he') {
     if (!content.includes('dir="rtl"')) {
       errors.push({ field: 'dir', expected: 'rtl', actual: 'missing' });
@@ -404,7 +388,6 @@ function checkFileForUntranslatedContent(filepath: string): CheckResult {
       return { passed: true };
     }
 
-    // Extract samples of untranslated content
     const samples: string[] = [];
     const sampleRegex = /<span data-translate="true"[^>]*>([^<]{0,80})/g;
     let match: RegExpExecArray | null;
@@ -495,7 +478,6 @@ function validateNewsTranslations(directory: string = 'news'): number {
     const lang = getLanguageCode(filename);
     const result = checkFileForUntranslatedContent(filepath);
 
-    // BCP-47 consistency check
     const bcp47Errors = lang ? validateBCP47Consistency(filepath, lang) : [];
     if (bcp47Errors.length > 0) {
       totalBCP47Errors += bcp47Errors.length;
@@ -505,7 +487,6 @@ function validateNewsTranslations(directory: string = 'news'): number {
       }
     }
 
-    // Body content leakage check (EN/SV text in non-EN/SV articles)
     let fileLeakage: ContentLeakageRecord | null = null;
     if (lang && lang !== 'en') {
       const enSourcePath = deriveEnSourcePath(filepath);
@@ -560,13 +541,11 @@ function validateNewsTranslations(directory: string = 'news'): number {
     }
   }
 
-  // Summary
   console.log(`\n${colors.bold}${colors.cyan}===========================================`);
   console.log(`Summary`);
   console.log(`===========================================${colors.reset}\n`);
   console.log(`Total articles checked: ${nonSwedishFiles.length}`);
   if (totalContentLeakage > 0) {
-    // When leakage warnings exist, clarify that "passed" means marker checks only
     const fullyClean = totalPassed - totalContentLeakage;
     if (fullyClean > 0) {
       console.log(`${colors.green}✓ Fully translated: ${fullyClean}${colors.reset}`);
@@ -592,8 +571,6 @@ function validateNewsTranslations(directory: string = 'news'): number {
   }
 
   const hasHardFailures = totalFailed > 0 || totalBCP47Errors > 0;
-  // Content leakage is a warning that will become a hard failure when translation
-  // workflows are updated. For now, report but don't block.
 
   if (hasHardFailures) {
     console.log(`\n${colors.bold}${colors.red}❌ VALIDATION FAILED${colors.reset}`);
@@ -641,7 +618,6 @@ function validateNewsTranslations(directory: string = 'news'): number {
     console.log(`2. Raw Swedish API text (interpellation/proposition excerpts) must be translated or summarized`);
     console.log(`3. English analytical paragraphs must not appear verbatim in non-EN articles`);
     console.log(`4. Re-run the news-translate workflow with improved prompts\n`);
-    // Return warning exit code (0 for now, will become 1 when workflow is updated)
     return 0;
   }
 

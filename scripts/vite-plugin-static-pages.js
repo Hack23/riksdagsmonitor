@@ -148,7 +148,6 @@ function readStylesAssetName(distDir) {
     if (entry && entry.file && entry.file.endsWith('.css')) return entry.file;
   }
 
-  // Fallback — scan dist/assets/ for the unique hashed `styles-*.css`.
   const assetsDir = path.join(distDir, 'assets');
   if (fs.existsSync(assetsDir)) {
     const hits = fs
@@ -199,7 +198,6 @@ function readModuleAssetName(distDir, entryName) {
     if (entry && entry.file && entry.file.endsWith('.js')) return entry.file;
   }
 
-  // Fallback — scan dist/assets/js/ for a unique `<name>-<hash>.js`.
   const jsDir = path.join(distDir, 'assets', 'js');
   if (fs.existsSync(jsDir)) {
     const re = new RegExp(`^${entryName}-[A-Za-z0-9_-]+\\.js$`);
@@ -305,8 +303,6 @@ export default function staticPagesPlugin(options) {
         const cssBuf = fs.readFileSync(cssAbs);
         const integrity = `sha384-${sha384Base64(cssBuf)}`;
 
-        // Cache resolved hashed JS bundles (by entry name) so we hit the
-        // manifest at most once per entry across all emitted pages.
         /** @type {Map<string, string | null>} */
         const moduleAssetCache = new Map();
         const resolveModule = (entryName) => {
@@ -347,27 +343,12 @@ export default function staticPagesPlugin(options) {
               },
             );
 
-            // Rewrite `<script type="module" src="/src/browser/<name>.ts">`
-            // (dev-only path Vite resolves) → hashed production bundle.
-            // Without this, S3/CloudFront serves the dev path as
-            // index.html (text/html) and the browser silently rejects
-            // loading HTML as a JS module → no charts on dashboard pages.
-            // First-party JS is excluded from SRI per vite.config.js
-            // skipResources, so we only add `crossorigin` (matching the
-            // attribute Vite emits on bundled module scripts).
             out = out.replace(MODULE_SCRIPT_RE, (match, before, entryName, after) => {
               const hashedJs = resolveModule(entryName);
               if (!hashedJs) {
-                // Leave untouched so the missing entry surfaces as a
-                // visible 404 in the dev-tools network panel rather than
-                // a silent rewrite to a wrong path.
                 return match;
               }
               didScriptRewrite = true;
-              // Strip any pre-existing `src` and `crossorigin` attributes from
-              // either side of the original `src` so we never emit duplicate
-              // attributes when the source tag already carried them (Vite
-              // sometimes emits `crossorigin` on its module preload tags).
               const stripAttrs = (s) =>
                 s
                   .replace(/\bsrc\s*=\s*"[^"]*"/i, '')

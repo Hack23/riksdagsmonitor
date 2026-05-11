@@ -88,19 +88,14 @@ function loadStats(): StatsData {
 function updateHTMLFile(filePath: string, stats: StatsData): UpdateResult {
   const { counts } = stats;
 
-  // Current MPs (official Riksdag size)
   const currentMPs = 349;
 
-  // Historical politicians (all persons in CIA database)
   const historicalPoliticians = counts.total_persons;
 
-  // Total votes
   const totalVotes = counts.total_votes;
 
-  // Total documents
   const totalDocuments = counts.total_documents;
 
-  // Rule violations
   const ruleViolations = counts.total_rule_violations;
 
   try {
@@ -108,7 +103,6 @@ function updateHTMLFile(filePath: string, stats: StatsData): UpdateResult {
     const originalContent = content;
     let changeCount = 0;
 
-    // Language-specific descriptions (only update if explicitly defined)
     const descriptions: Record<string, LangDescriptions> = {
       'index.html': {
         heroDescription: `Real-time monitoring · Coalition predictions · Systematic transparency. 45 risk rules tracking ${currentMPs} MPs (${historicalPoliticians} historical politicians in database).`,
@@ -135,63 +129,54 @@ function updateHTMLFile(filePath: string, stats: StatsData): UpdateResult {
     const lang = path.basename(filePath);
     const desc: LangDescriptions | undefined = descriptions[lang];
 
-    // Update meta description
     const ogDescPattern = /<meta property="og:description" content="[^"]*">/;
     if (ogDescPattern.test(content) && desc?.heroDescription) {
       content = content.replace(ogDescPattern, `<meta property="og:description" content="${desc.heroDescription}">`);
       changeCount++;
     }
 
-    // Update Twitter description
     const twitterDescPattern = /<meta name="twitter:description" content="[^"]*">/;
     if (twitterDescPattern.test(content) && desc?.twitterDescription) {
       content = content.replace(twitterDescPattern, `<meta name="twitter:description" content="${desc.twitterDescription}">`);
       changeCount++;
     }
 
-    // Update stats counter
     const statsCounterPattern = /<span class="number" id="stat-mps">\d+<\/span>/;
     if (statsCounterPattern.test(content)) {
       content = content.replace(statsCounterPattern, `<span class="number" id="stat-mps">${currentMPs}</span>`);
       changeCount++;
     }
 
-    // Update coalition formation text
     const coalitionPattern = /Formation: October 2022 \| Status: Active \| Majority: 176 seats \(of \d+ total\)/;
     if (coalitionPattern.test(content)) {
       content = content.replace(coalitionPattern, `Formation: October 2022 | Status: Active | Majority: 176 seats (of ${currentMPs} total)`);
       changeCount++;
     }
 
-    // Update dashboard description
     const dashboardDescPattern = /Comprehensive intelligence analysis using 45 risk rules(?: \(detecting <span[^>]*>\d+<\/span> violations\))? across \d+ MPs with statistical anomaly detection \(P90\/P99 thresholds\)(?:[^<]*)?(?:<span[^>]*>\d+<\/span>[^.]*)?/;
     if (dashboardDescPattern.test(content) && desc?.dashboardDescription) {
       content = content.replace(dashboardDescPattern, desc.dashboardDescription);
       changeCount++;
     }
 
-    // Update risk heat map title
     const riskHeatMapTitlePattern = /<h3>Risk Level Heat Map \(45 Rules × \d+ MPs\)<\/h3>/;
     if (riskHeatMapTitlePattern.test(content) && desc?.riskHeatMapTitle) {
       content = content.replace(riskHeatMapTitlePattern, `<h3>${desc.riskHeatMapTitle}</h3>`);
       changeCount++;
     }
 
-    // Update risk heat map aria-label
     const riskHeatMapAriaPattern = /aria-label="Risk assessment heat map showing 45 rules by \d+ MPs"/;
     if (riskHeatMapAriaPattern.test(content)) {
       content = content.replace(riskHeatMapAriaPattern, `aria-label="Risk assessment heat map showing 45 rules by ${currentMPs} MPs"`);
       changeCount++;
     }
 
-    // Update feature list
     const featureListPattern = /<li>\d+ MPs tracked( automatically)?<\/li>/;
     if (featureListPattern.test(content) && desc?.featureListMPs) {
       content = content.replace(featureListPattern, `<li>${desc.featureListMPs} automatically</li>`);
       changeCount++;
     }
 
-    // Update Schema.org descriptions
     if (desc?.schemaDescription) {
       const schemaDescPattern1 = /"description": "Swedish Election 2026 live intelligence platform with CIA OSINT monitoring of \d+ MPs[^"]*"/g;
       content = content.replace(schemaDescPattern1, `"description": "${desc.schemaDescription}"`);
@@ -234,7 +219,6 @@ function updateHTMLFile(filePath: string, stats: StatsData): UpdateResult {
       changeCount++;
     }
 
-    // Update JavaScript heat map generation
     const heatMapLoopPattern = /for \(let mpIdx = 0; mpIdx < \d+; mpIdx\+\+\) \{(?: \/\/ Current MPs)*/;
     if (heatMapLoopPattern.test(content)) {
       content = content.replace(
@@ -271,7 +255,6 @@ function updateHTMLFile(filePath: string, stats: StatsData): UpdateResult {
       changeCount++;
     }
 
-    // Add CIA database stats comment at the top of the statistics section
     const statsCommentPattern = /<!-- Statistics Section -->/;
     if (statsCommentPattern.test(content)) {
       const comment = `<!-- Statistics Section -->
@@ -287,7 +270,6 @@ function updateHTMLFile(filePath: string, stats: StatsData): UpdateResult {
       changeCount++;
     }
 
-    // Write back if changed
     if (content !== originalContent) {
       fs.writeFileSync(filePath, content, 'utf8');
       return { file: path.basename(filePath), changes: changeCount, updated: true };
@@ -313,7 +295,6 @@ async function main(): Promise<void> {
   console.log('='.repeat(80));
   console.log();
 
-  // Load statistics
   console.log(`Loading statistics from: ${STATS_FILE}`);
   const stats = loadStats();
   console.log('✅ Statistics loaded');
@@ -328,7 +309,6 @@ async function main(): Promise<void> {
   console.log(`  Last Updated: ${stats.metadata.last_updated}`);
   console.log();
 
-  // Update HTML files
   console.log(`Updating ${INDEX_FILES.length} language files...`);
   console.log();
 

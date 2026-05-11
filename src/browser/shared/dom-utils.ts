@@ -124,7 +124,6 @@ export function showDataSourceDisclaimer(
   container: HTMLElement,
   sourceType: DataSourceType,
 ): void {
-  // Remove any existing disclaimer in this container
   const existing = container.querySelector('.data-source-disclaimer');
   if (existing) existing.remove();
 
@@ -152,7 +151,6 @@ export function showDataSourceDisclaimer(
 
   disclaimer.textContent = `${icon} ${text}`;
 
-  // Insert after the first heading if present, otherwise at the top of the container
   const heading = container.querySelector('h2, h3');
   if (heading) {
     heading.insertAdjacentElement('afterend', disclaimer);

@@ -225,7 +225,6 @@ function extractStatistics(data: CSVRow[]): StatsData {
     },
   };
 
-  // Key tables mapping to stat counts
   const keyTables: Readonly<Record<string, keyof StatsCounts>> = {
     person_data: 'total_persons',
     vote_data: 'total_votes',
@@ -241,7 +240,6 @@ function extractStatistics(data: CSVRow[]): StatsData {
     document_content_data: 'total_document_content',
   };
 
-  // Key views mapping
   const keyViews: Readonly<Record<string, keyof StatsCounts>> = {
     view_riksdagen_party: 'total_riksdag_parties',
     view_riksdagen_goverment: 'total_governments',
@@ -260,7 +258,6 @@ function extractStatistics(data: CSVRow[]): StatsData {
     view_riksdagen_vote_data_ballot_politician_summary: 'total_ballot_politician_summaries',
   };
 
-  // Process each row
   data.forEach((row) => {
     const objectType = row['object_type'] ?? '';
     const objectName = row['object_name'] ?? '';
@@ -268,13 +265,11 @@ function extractStatistics(data: CSVRow[]): StatsData {
     const rowCount = row['row_count'] ?? '0';
     const extractionTime = row['extraction_time'] ?? '';
 
-    // Track extraction time (use latest timestamp)
     if (extractionTime && (!stats.metadata.extraction_time || extractionTime > stats.metadata.extraction_time)) {
       stats.metadata.extraction_time = extractionTime;
       stats.metadata.last_updated = extractionTime;
     }
 
-    // Process tables and views with success status
     if (status === 'success') {
       const count = parseInt(rowCount, 10) || 0;
 
@@ -325,8 +320,6 @@ function getCachedData(cacheFile: string, maxAgeHours: number): StatsData | null
 
     const data = JSON.parse(fs.readFileSync(cacheFile, 'utf8')) as StatsData;
 
-    // Invalidate if the cached file was generated against a different upstream
-    // URL (e.g. caller set CIA_EXTRACTION_SUMMARY_URL to pin a specific SHA).
     const cachedSourceUrl = data?.metadata?.source_url;
     if (cachedSourceUrl && cachedSourceUrl !== CSV_URL) {
       console.log(
@@ -335,9 +328,6 @@ function getCachedData(cacheFile: string, maxAgeHours: number): StatsData | null
       return null;
     }
 
-    // Prefer `metadata.generated_at` for age — it's embedded in the JSON and
-    // survives `git checkout`/`npm ci`/`actions/checkout`, unlike `mtime`.
-    // Fall back to mtime only when the metadata timestamp is missing.
     const generatedAt = data?.metadata?.generated_at;
     const generatedMs = generatedAt ? Date.parse(generatedAt) : NaN;
     const referenceMs = Number.isFinite(generatedMs)
@@ -387,7 +377,6 @@ async function main(): Promise<StatsData> {
   console.log('='.repeat(80));
   console.log();
 
-  // Check for fresh cache first
   const cachedData = getCachedData(CACHE_FILE, CACHE_MAX_AGE_HOURS);
   if (cachedData) {
     console.log('✅ Using cached statistics');
@@ -460,7 +449,6 @@ async function main(): Promise<StatsData> {
     console.error('❌ Error:', (err as Error).message);
     console.log();
 
-    // Try to use stale cache as fallback
     try {
       const staleCache = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf8')) as StatsData;
       console.log('⚠️  Using stale cached data as fallback');

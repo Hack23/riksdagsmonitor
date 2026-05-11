@@ -94,8 +94,6 @@ function buildRecencyLabels(langKey: string): Record<string, string> {
 
 /** Map a news-index `langKey` to a `Language` accepted by `buildChrome`. */
 function toChromeLang(langKey: string): Language {
-  // The render-lib `Language` union currently uses the legacy `'no'` code
-  // for Norwegian (BCP-47 hreflang `nb` is emitted by `LANGUAGE_META.no`).
   return langKey as Language;
 }
 
@@ -109,7 +107,6 @@ export function generateIndexHTML(
   const filename: string = langKey === 'en' ? 'index.html' : `index_${langKey === 'no' ? 'no' : langKey}.html`;
   const isRTL: boolean = ['ar', 'he'].includes(langKey);
 
-  // Display only articles in this language
   const displayArticles: NewsArticleMetadata[] = languageArticles;
   const needsLanguageNotice: boolean = languageArticles.length === 0;
 
@@ -129,24 +126,17 @@ export function generateIndexHTML(
     : new Date().toISOString().slice(0, 10);
   const heroMetricLabels = HERO_METRIC_LABELS[langKey] ?? HERO_METRIC_LABELS.en!;
 
-  // ── Build hreflang alternates map for the chrome —————————————————
   const hreflangAlternates: Partial<Record<Language, string>> = {};
   for (const k of Object.keys(LANGUAGES)) {
     const fName = k === 'en' ? 'index.html' : `index_${k === 'no' ? 'no' : k}.html`;
     hreflangAlternates[toChromeLang(k)] = `news/${fName}`;
   }
 
-  // BCP-47 normalisation: Norwegian articles ship with the legacy
-  // `'no'` language code in their slug + frontmatter, but
-  // {@link https://datatracker.ietf.org/doc/html/rfc5646 RFC 5646}
-  // (and consequently Google / Bing) require `'nb'`. Normalise here so
-  // every emitted JSON-LD `inLanguage` field is a valid BCP-47 tag.
   const toBcp47 = (code: string | undefined): string => {
     if (!code) return lang.code;
     return code === 'no' ? 'nb' : code;
   };
 
-  // ── JSON-LD: Organization + WebSite (always) + ItemList + BreadcrumbList ──
   const itemListLd: unknown = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -222,15 +212,10 @@ export function generateIndexHTML(
     },
   };
 
-  // FAQ entries for this language — emitted as `FAQPage` JSON-LD via
-  // chrome auto-graph + rendered as a visible `<details>` section
-  // before the AI-newsroom block (crawlable progressive disclosure).
   const faqItems = getFaqItems('newsIndex', toChromeLang(langKey));
 
   const jsonLd: unknown[] = [organizationLd, websiteLd, itemListLd, breadcrumbLd];
 
-  // News-index needs a Google Fonts preconnect (Inter + Orbitron) plus a
-  // small RTL override block. Chrome owns the rest of <head>.
   const extraHead = `    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -263,20 +248,12 @@ export function generateIndexHTML(
     jsonLd,
     extraHead,
     extraStyle,
-    // Opt back into the legacy colour-coded `.news-page .article-card` palette
-    // (≈300 LOC starting at `body.news-page` in `styles.css`). Without this
-    // class the `rm-article-body` chrome bypassed the news-index visual
-    // language entirely (see issue #2012-regression).
     bodyClass: 'news-page',
     heroBannerImage: 'images/riksdagsmonitornews-banner.webp',
     faqItems,
     speakableSelectors: ['header.news-page-heading h1', 'header.news-page-heading .news-page-subtitle'],
   });
 
-  // News-index body — preserves the rich filter bar, articles grid, JS,
-  // pagination, AI-newsroom block. The surrounding chrome (head, header,
-  // theme toggle, lang switcher, 3-column footer) is now provided by
-  // `buildChrome` for parity with the article + sitemap + PI renderers.
   const APP_VERSION = (process.env.npm_package_version ?? APP_VERSION_FALLBACK).trim();
   const APP_VERSION_MARKER = `<!-- app-version: v${APP_VERSION} -->`;
   const body = `  <div class="container">
@@ -854,9 +831,6 @@ export function generateRTLStyles(isRTL: boolean | undefined): string {
     }
   </style>`;
 }
-
-
-
 
 /**
  * Generate language availability notice for non-EN/SV indexes.

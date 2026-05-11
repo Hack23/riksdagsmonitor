@@ -253,7 +253,6 @@ class DataManager {
     const cacheKey = CONFIG.cache.prefix + key;
     const cacheData: CacheEntry<CSVRow[]> = { data, timestamp: Date.now() };
     if (!safeSetItem(cacheKey, JSON.stringify(cacheData), CONFIG.cache.prefix)) {
-      // Quota exhausted even after eviction — skip caching this entry.
       logger.debug(`[DataManager] Skipped caching ${key} (storage quota)`);
     }
   }
@@ -598,7 +597,6 @@ class ProductivityHeatMap {
       .append('title')
       .text((d: HeatMapCell) => `${d.committee} (${d.year})\nProductivity: ${d.value.toFixed(1)}`);
 
-    // X axis
     g.append('g')
       .attr('class', 'x-axis')
       .attr('transform', `translate(0,${innerHeight})`)
@@ -606,14 +604,12 @@ class ProductivityHeatMap {
       .selectAll('text')
       .attr('fill', 'var(--text-color)');
 
-    // Y axis
     g.append('g')
       .attr('class', 'y-axis')
       .call(d3.axisLeft(yScale))
       .selectAll('text')
       .attr('fill', 'var(--text-color)');
 
-    // Title
     this.svg
       .append('text')
       .attr('x', width / 2)

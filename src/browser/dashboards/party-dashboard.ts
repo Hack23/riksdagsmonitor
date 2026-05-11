@@ -675,7 +675,6 @@ async function fetchData(filename: string): Promise<CSVRow[]> {
   const cached = localStorage.getItem(cacheKey);
   const cacheTime = localStorage.getItem(cacheKey + '_timestamp');
 
-  // Check cache freshness
   if (cached && cacheTime) {
     const age = Date.now() - parseInt(cacheTime, 10);
     if (age < CONFIG.freshnessThreshold) {
@@ -686,9 +685,6 @@ async function fetchData(filename: string): Promise<CSVRow[]> {
     }
   }
 
-  // Try local file first.
-  // Absolute path so this works from `/dashboards/parties.html` (where a
-  // bare `cia-data/…` would resolve to `/dashboards/cia-data/…` and 404).
   const localUrl = `/cia-data/party/${filename}`;
   try {
     const localResponse = await fetch(localUrl);
@@ -704,7 +700,6 @@ async function fetchData(filename: string): Promise<CSVRow[]> {
     logger.warn(`Local fetch failed for ${filename}, trying remote...`);
   }
 
-  // Fetch from remote
   const url = `${CONFIG.githubRawBase}/${filename}`;
 
   try {
@@ -715,7 +710,6 @@ async function fetchData(filename: string): Promise<CSVRow[]> {
 
     const csvText = await response.text();
 
-    // Cache the data
     safeSetItem(cacheKey, csvText, CONFIG.cachePrefix);
     safeSetItem(cacheKey + '_timestamp', Date.now().toString(), CONFIG.cachePrefix);
 
@@ -723,7 +717,6 @@ async function fetchData(filename: string): Promise<CSVRow[]> {
   } catch (error) {
     logger.error(`Error fetching ${filename}:`, error);
 
-    // Fall back to cached data if available
     if (cached) {
       logger.warn('Using stale cached data due to fetch error');
       return parseCSVText(cached);
@@ -774,7 +767,6 @@ function createEffectivenessChart(data: CSVRow[]): void {
   const Chart = (globalThis as unknown as { Chart: ChartConstructor }).Chart;
   const t = getTranslations();
 
-  // Update ARIA label for current language with fallback to English
   ctx.setAttribute(
     'aria-label',
     t.effectivenessAriaLabel ?? TRANSLATIONS.en.effectivenessAriaLabel ?? '',
@@ -785,7 +777,6 @@ function createEffectivenessChart(data: CSVRow[]): void {
       t.effectivenessSrOnly ?? TRANSLATIONS.en.effectivenessSrOnly ?? '';
   }
 
-  // Process real CSV data
   const partyData: Record<string, Record<number, number>> = {};
   const allYears = new Set<number>();
 
@@ -803,10 +794,8 @@ function createEffectivenessChart(data: CSVRow[]): void {
     }
   });
 
-  // Create sorted year array
   const years: number[] = Array.from(allYears).sort((a, b) => a - b);
   if (years.length === 0) {
-    // Fallback to year range if no data
     years.push(...Array.from({ length: 37 }, (_, i) => 1990 + i));
   }
 
@@ -879,7 +868,6 @@ function createComparisonChart(data: CSVRow[]): void {
   const Chart = (globalThis as unknown as { Chart: ChartConstructor }).Chart;
   const t = getTranslations();
 
-  // Update ARIA label for current language with fallback to English
   ctx.setAttribute(
     'aria-label',
     t.comparisonAriaLabel ?? TRANSLATIONS.en.comparisonAriaLabel ?? '',
@@ -890,17 +878,13 @@ function createComparisonChart(data: CSVRow[]): void {
       t.comparisonSrOnly ?? TRANSLATIONS.en.comparisonSrOnly ?? '';
   }
 
-  // Process real CSV data
   const chartData: ComparisonDataPoint[] = PARTIES.map((party) => {
     const partyRow = data.find((row) => row.party === party);
-    let score = 50; // Default fallback
+    let score = 50;
 
     if (partyRow) {
-      // Use docs_per_member as performance score, normalized to 0-100 scale
       score = parseFloat(partyRow.docs_per_member) || 0;
-      // If very small numbers, multiply by 10 for visibility
       if (score > 0 && score < 10) score *= 10;
-      // Cap at 100 for chart scale
       if (score > 100) score = 100;
     }
 
@@ -911,7 +895,6 @@ function createComparisonChart(data: CSVRow[]): void {
     };
   });
 
-  // Sort by score descending
   chartData.sort((a, b) => b.score - a.score);
 
   const chart = new Chart(ctx, {
@@ -976,7 +959,6 @@ function createCoalitionNetwork(data: CSVRow[]): void {
 
   const t = getTranslations();
 
-  // Update ARIA label for current language with fallback to English
   container.setAttribute(
     'aria-label',
     t.coalitionAriaLabel ?? TRANSLATIONS.en.coalitionAriaLabel ?? '',
@@ -987,7 +969,6 @@ function createCoalitionNetwork(data: CSVRow[]): void {
       t.coalitionSrOnly ?? TRANSLATIONS.en.coalitionSrOnly ?? '';
   }
 
-  // Process real CSV data for coalitions
   const coalitions: CoalitionDataPoint[] = [];
 
   data.forEach((row) => {
@@ -1005,13 +986,10 @@ function createCoalitionNetwork(data: CSVRow[]): void {
     }
   });
 
-  // Sort by strength descending
   coalitions.sort((a, b) => b.strength - a.strength);
 
-  // Take top 6 coalitions
   let topCoalitions = coalitions.slice(0, 6);
 
-  // Fallback if no data
   if (topCoalitions.length === 0) {
     topCoalitions = [
       {
@@ -1062,7 +1040,6 @@ function createMomentumChart(data: CSVRow[]): void {
   const Chart = (globalThis as unknown as { Chart: ChartConstructor }).Chart;
   const t = getTranslations();
 
-  // Update ARIA label for current language with fallback to English
   ctx.setAttribute(
     'aria-label',
     t.momentumAriaLabel ?? TRANSLATIONS.en.momentumAriaLabel ?? '',
@@ -1073,15 +1050,12 @@ function createMomentumChart(data: CSVRow[]): void {
       t.momentumSrOnly ?? TRANSLATIONS.en.momentumSrOnly ?? '';
   }
 
-  // Process real CSV data for momentum
   const momentumData: MomentumDataPoint[] = PARTIES.map((party) => {
-    // Filter data for this party and get most recent quarter
     const partyRows = data.filter(
       (row) => row.party === party && row.momentum !== undefined && row.momentum !== '',
     );
 
     if (partyRows.length > 0) {
-      // Sort by year and quarter to get latest
       partyRows.sort((a, b) => {
         const yearDiff = parseInt(b.year, 10) - parseInt(a.year, 10);
         if (yearDiff !== 0) return yearDiff;
@@ -1089,14 +1063,13 @@ function createMomentumChart(data: CSVRow[]): void {
       });
 
       const momentum = parseFloat(partyRows[0].momentum) || 0;
-      // Scale momentum to 0-100 range for visualization
       return {
         party,
         momentum: Math.abs(momentum) * 100 || 50, // Default to 50 if 0
       };
     }
 
-    return { party, momentum: 50 }; // Default value
+    return { party, momentum: 50 };
   });
 
   const chart = new Chart(ctx, {
@@ -1156,14 +1129,12 @@ export async function init(): Promise<void> {
 
   const t = getTranslations();
 
-  // Show loading state
   const dashboardSection = document.getElementById('party-dashboard');
   if (!dashboardSection) {
     logger.warn('Dashboard section #party-dashboard not found');
     return;
   }
 
-  // Wait for Chart.js to load
   const Chart = (globalThis as unknown as { Chart: ChartConstructor }).Chart;
   if (typeof Chart === 'undefined') {
     logger.error('Chart.js not loaded. Please include Chart.js before this script.');
@@ -1173,9 +1144,6 @@ export async function init(): Promise<void> {
   try {
     initChartDefaults();
 
-    // Fetch all data sources in parallel for performance. Track per-source
-    // failures so we can surface a visible error fallback when every CIA CSV
-    // is unreachable (e.g. offline, 404 from upstream, or test stubs).
     const failures: string[] = [];
     const trackFailure = (source: string) => (e: unknown) => {
       logger.warn(`${source}:`, e);
@@ -1194,9 +1162,6 @@ export async function init(): Promise<void> {
         ),
       ]);
 
-    // If every data source failed, surface a visible error fallback so users
-    // (and E2E assertions) can detect the data-loading failure instead of
-    // silently rendering empty charts.
     if (failures.length === 4) {
       const errContainer = document.createElement('div');
       dashboardSection.appendChild(errContainer);
@@ -1214,7 +1179,6 @@ export async function init(): Promise<void> {
       return;
     }
 
-    // Create visualizations
     const hasData = partyEffectiveness.length > 0 || partyPerformance.length > 0;
     showDataSourceDisclaimer(dashboardSection, hasData ? 'live' : 'synthetic');
     createEffectivenessChart(partyEffectiveness);
@@ -1222,7 +1186,6 @@ export async function init(): Promise<void> {
     createCoalitionNetwork(coalitionAlignment);
     createMomentumChart(partyMomentum);
 
-    // Add data attribution
     const attribution = document.createElement('p');
     attribution.className = 'data-attribution';
     attribution.style.cssText =
@@ -1233,8 +1196,6 @@ export async function init(): Promise<void> {
     logger.debug('✅ Party dashboard initialized successfully');
   } catch (error) {
     logger.error('Error initializing party dashboard:', error);
-    // Append a dedicated error container so the rest of the section's DOM
-    // (including <canvas> elements) is preserved for a subsequent retry.
     const errContainer = document.createElement('div');
     dashboardSection.appendChild(errContainer);
     renderErrorFallback(errContainer, t.errorMessage, () => {

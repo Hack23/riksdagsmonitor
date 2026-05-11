@@ -115,7 +115,6 @@ export function getArticlesByLanguage(): Map<Language, ArticleInfo[]> {
     for (const entry of entries) {
       const fullPath = path.join(dir, entry.name);
       if (entry.isDirectory()) {
-        // Skip lock/metadata directories that don't contain articles.
         if (entry.name === 'metadata' || entry.name.startsWith('.')) continue;
         scanDir(fullPath);
       } else if (
@@ -131,8 +130,6 @@ export function getArticlesByLanguage(): Map<Language, ArticleInfo[]> {
         const lang = match[2]! as Language;
         const meta = extractArticleMeta(fullPath);
 
-        // Preserve subdirectory prefix (relative to NEWS_DIR) in the
-        // emitted href so links like `news/2026/02/…` keep working.
         const relDir = path.relative(NEWS_DIR, dir).split(path.sep).join('/');
         const hrefFile = relDir ? `${relDir}/${entry.name}` : entry.name;
 
@@ -153,10 +150,6 @@ export function getArticlesByLanguage(): Map<Language, ArticleInfo[]> {
 
   scanDir(NEWS_DIR);
 
-  // Sort each language's articles by publication date (desc), then by
-  // filename (desc) as a deterministic tiebreaker when dates match or are
-  // missing. This guarantees "newest articles on top" regardless of slug
-  // alphabetisation.
   for (const [, list] of articlesByLang) {
     list.sort((a, b) => {
       if (a.date !== b.date) return b.date.localeCompare(a.date);

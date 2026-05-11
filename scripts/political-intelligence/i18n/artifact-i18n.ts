@@ -220,11 +220,9 @@ export const ARTIFACT_ICON: Record<string, string> = {
 
 /** Return the icon for a given artifact filename (with document/ prefix fallback). */
 export function artifactIcon(file: string): string {
-  // Strip documents/ prefix for matching
   const baseName = file.replace(/^documents\//, '');
   if (ARTIFACT_ICON[baseName]) return ARTIFACT_ICON[baseName];
   if (ARTIFACT_ICON[file]) return ARTIFACT_ICON[file];
-  // Pattern-based fallbacks
   if (file.endsWith('.json')) return '📄';
   if (file.startsWith('documents/') && file.endsWith('-analysis.md')) return '📑';
   if (file.startsWith('documents/')) return '📎';
@@ -244,7 +242,6 @@ export const LIBRARY_NAME_I18N: Record<'methodologies' | 'templates', LangMap> =
     ar: 'قوالب', he: 'תבניות', ja: 'テンプレート', ko: '템플릿', zh: '模板',
   },
 };
-
 
 /**
  * Convert a markdown / json filename to a Title-Case English title.

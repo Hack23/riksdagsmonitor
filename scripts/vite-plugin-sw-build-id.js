@@ -86,8 +86,6 @@ export default function swBuildIdPlugin(options) {
     enforce: 'post',
 
     closeBundle: {
-      // After Vite/Rollup and `static-pages-emit` have finished, so the
-      // `dist/sw.js` we write here is the canonical one shipped to S3.
       order: 'post',
       sequential: true,
       handler() {
@@ -114,8 +112,6 @@ export default function swBuildIdPlugin(options) {
           );
         }
 
-        // Replace ALL occurrences (defensive — even though there's only
-        // one today, future edits could add more without realising).
         const out = src.split('__BUILD_ID__').join(buildId);
 
         fs.mkdirSync(path.dirname(destPath), { recursive: true });

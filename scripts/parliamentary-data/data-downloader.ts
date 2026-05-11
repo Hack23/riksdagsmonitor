@@ -133,7 +133,7 @@ export function subtractBusinessDays(dateStr: string, days: number): string {
   let remaining = Math.max(0, Math.floor(days));
   while (remaining > 0) {
     d.setUTCDate(d.getUTCDate() - 1);
-    const dow = d.getUTCDay(); // 0=Sun, 6=Sat
+    const dow = d.getUTCDay();
     if (dow !== 0 && dow !== 6) {
       remaining--;
     }
@@ -184,8 +184,7 @@ const FETCH_TASK_TYPE_MAP: Record<FetchTaskName, DocumentTypeKey> = {
 function currentRm(): string {
   const now = new Date();
   const year = now.getUTCFullYear();
-  const month = now.getUTCMonth() + 1; // 1-based
-  // Swedish parliamentary year runs roughly October–September
+  const month = now.getUTCMonth() + 1;
   if (month >= 10) {
     return `${year}/${String(year + 1).slice(-2)}`;
   }
@@ -217,7 +216,7 @@ export async function downloadAllDocuments(
   const start = Date.now();
   const limit = options.limit ?? 20;
   const rm = options.rm ?? currentRm();
-  const docTypes = options.docTypes ?? null; // null means fetch all types
+  const docTypes = options.docTypes ?? null;
 
   const dataSources: string[] = [];
   const data: DownloadedData = {
@@ -230,8 +229,6 @@ export async function downloadAllDocuments(
     interpellations: [],
   };
 
-  // Run independent MCP fetches in parallel to reduce total latency while
-  // still collecting partial results on failure.
   const fetchTasks = [
     {
       name: 'fetchPropositions',
@@ -277,9 +274,6 @@ export async function downloadAllDocuments(
     },
   ] as const;
 
-  // When docTypes is specified, only fetch the listed document types.
-  // task.name is typed as FetchTaskName via the `as const` assertion on
-  // fetchTasks, so the lookup is safe without a cast.
   const activeTasks = docTypes
     ? fetchTasks.filter(task => {
         const mapped = FETCH_TASK_TYPE_MAP[task.name];
@@ -322,12 +316,6 @@ export async function downloadAllDocuments(
     interpellations: data.interpellations.length,
   };
 
-  // -----------------------------------------------------------------------
-  // Enrichment pass: fetch full-text content for top documents per type.
-  // Uses fetchDocumentDetails(dok_id, true) to request actual full text
-  // via get_dokument_innehall. Without this step, the analysis pipeline
-  // produces LOW-confidence metadata-only analysis.
-  // -----------------------------------------------------------------------
   const enrichLimit = options.enrichLimit ?? MAX_ENRICHMENT_PER_TYPE;
   if (enrichLimit > 0) {
     const enrichableTypes: DocumentTypeKey[] = [
@@ -344,7 +332,6 @@ export async function downloadAllDocuments(
 
       const toEnrich = docs.slice(0, enrichLimit);
 
-      // Enrich with limited parallelism (concurrency of 3) using Promise.allSettled
       const CONCURRENCY = 3;
       let fullTextCount = 0;
       let detailsOnlyCount = 0;
@@ -364,38 +351,22 @@ export async function downloadAllDocuments(
               .find((value): value is string => value.length > 0);
             if (!dokId) return null;
             const details = await client.fetchDocumentDetails(dokId, true) as Record<string, unknown>;
-            // Normalize MCP response fields to match RawDocument conventions.
-            // get_dokument_innehall returns: { text, snippet, fulltext_available, ... }
-            //   details.text     → raw Riksdag dump (metadata + embedded HTML) — use as fullContent
-            //   details.snippet  → 400-char excerpt — use as summary fallback
-            // Legacy fields (fullText, html, summary, notis) are NOT returned by the
-            // current MCP server but are kept as fallbacks for compatibility.
             const str = (v: unknown): string => typeof v === 'string' ? v : '';
-            // Sanitize text fields: filter out MP profile/deceased-notice text
-            // (consistent with weekly-review/data-loader.ts sanitization pattern)
             const sanitize = (v: unknown): string => {
               const s = str(v).trim();
               return isPersonProfileText(s) ? '' : s;
             };
-            // Primary: MCP returns 'text' (raw dump with embedded HTML)
-            // Fallback: legacy 'fullText' field (if MCP server format changes)
             const rawText = str(details['text']).trim();
             const verifiedFullText = sanitize(details['fullText']) || '';
-            // Use raw 'text' as fullContent (it contains embedded HTML from Riksdag)
-            // Fallback: legacy 'html' field
             const verifiedFullContent = rawText.length > FULL_TEXT_MIN_LENGTH
               ? rawText
               : str(details['html']).trim();
-            // Only set fullText/fullContent when exceeding FULL_TEXT_MIN_LENGTH
-            // to avoid leaving short/placeholder values that downstream pipeline
-            // code may misinterpret as meaningful full-text content.
             if (verifiedFullContent.length > FULL_TEXT_MIN_LENGTH) {
               docRecord['fullContent'] = verifiedFullContent;
             }
             if (verifiedFullText.length > FULL_TEXT_MIN_LENGTH) {
               docRecord['fullText'] = verifiedFullText;
             }
-            // Propagate summary: prefer MCP 'snippet', fall back to legacy fields
             const detailsSnippet = sanitize(details['snippet']);
             const detailsSummary = sanitize(details['summary']);
             const detailsNotis = sanitize(details['notis']);
@@ -415,7 +386,6 @@ export async function downloadAllDocuments(
         for (const result of results) {
           if (result.status === 'fulfilled' && result.value !== null) {
             const details = result.value as Record<string, unknown>;
-            // Only count as full-text if fullText or fullContent is actually populated
             const hasFullText = typeof details['fullText'] === 'string' && (details['fullText'] as string).length > FULL_TEXT_MIN_LENGTH;
             const hasFullContent = typeof details['fullContent'] === 'string' && (details['fullContent'] as string).length > FULL_TEXT_MIN_LENGTH;
             if (hasFullText || hasFullContent) {
@@ -430,8 +400,6 @@ export async function downloadAllDocuments(
             );
           }
         }
-        // Small delay between batches to avoid rate limiting on get_dokument_innehall
-        // (consistent with weekly-review/data-loader.ts pattern)
         if (i + CONCURRENCY < toEnrich.length) {
           await new Promise<void>(r => setTimeout(r, 300));
         }
@@ -544,7 +512,6 @@ export async function fetchFullTextForTopN(
   const fullTextDir = path.join(outputDir, 'full-text');
   fs.mkdirSync(fullTextDir, { recursive: true });
 
-  // Resolve dok_id for each candidate in the same priority order as enrichment.
   const candidates: Array<{ dokId: string; doc: RawDocument }> = [];
   for (const doc of docs) {
     if (candidates.length >= topN) break;
@@ -575,14 +542,9 @@ export async function fetchFullTextForTopN(
       const selectContent = (source: Record<string, unknown>): string => {
         const rawText = str(source['text']).trim();
         const rawFullContent = sanitize(source['fullContent']);
-        // fullText may contain MP profile/deceased-notice text — sanitize it.
-        // text and html fields are structural content from the Riksdag dump and
-        // do not contain person-profile text, so str().trim() is sufficient.
         const rawFullText = sanitize(source['fullText']);
         const rawHtml = str(source['html']).trim();
 
-        // Prefer normalized/enriched content already present on the document,
-        // then fall back to the raw HTML dump fields.
         return rawText.length > FULL_TEXT_MIN_LENGTH
           ? rawText
           : rawFullContent.length > FULL_TEXT_MIN_LENGTH
@@ -592,9 +554,6 @@ export async function fetchFullTextForTopN(
               : rawHtml;
       };
 
-      // Reuse already-enriched fields on the document (set by downloadAllDocuments)
-      // before issuing a duplicate MCP call. Only call fetchDocumentDetails when
-      // the document does not already carry meaningful content.
       const docRecord = doc as Record<string, unknown>;
       let details: Record<string, unknown> | null = null;
       let content = selectContent(docRecord);
@@ -613,8 +572,6 @@ export async function fetchFullTextForTopN(
           sanitize(details?.['snippet']) ||
           sanitize(details?.['summary']) ||
           '';
-        // Build header without filtering blank lines so Markdown structure is preserved.
-        // The array is joined with \n and must end with \n so content starts on a new line.
         const headerLines = [
           `# Full Text — ${dokId}`,
           '',
@@ -624,9 +581,6 @@ export async function fetchFullTextForTopN(
         ];
         const header = headerLines.join('\n');
         fs.writeFileSync(filePath, header + content, 'utf8');
-        // Use outputDir as the stable base for the relative path so the manifest
-        // entry is consistent regardless of the caller's working directory.
-        // Normalize separators to POSIX form for byte-identical artifacts across OSes.
         outcome = {
           dokId,
           success: true,

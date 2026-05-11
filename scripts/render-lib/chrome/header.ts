@@ -37,7 +37,6 @@ export function buildHeaderHtml(opts: ChromeOptions): string {
 
   const altBase = opts.defaultAlternateBase ?? 'index.html';
 
-  // Header dropdown language switcher
   const languageSwitcher = LANGUAGES
     .filter((l) => l !== opts.lang)
     .map((l) => {
@@ -49,7 +48,6 @@ export function buildHeaderHtml(opts: ChromeOptions): string {
 
   const tagline = cs.headerTagline;
 
-  // Breadcrumb sub-navigation
   const breadcrumbItems: readonly BreadcrumbItem[] = opts.breadcrumb ?? [
     { label: t.home, href: `${prefix}${indexFile}` },
     { label: cs.politicalIntelligence, href: `${prefix}${piFile}` },
@@ -65,7 +63,6 @@ export function buildHeaderHtml(opts: ChromeOptions): string {
     })
     .join('\n');
 
-  // Horizontal language bar
   const horizontalLangBar = LANGUAGES
     .map((l) => {
       const lm = LANGUAGE_META[l];

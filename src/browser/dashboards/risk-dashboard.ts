@@ -162,13 +162,11 @@ function getRiskColor(score: number): string {
 }
 
 function parseCSV(text: string): CSVRow[] {
-  // Use PapaParse for CSP-compatible CSV parsing (no dynamic code execution)
   const Papa = (globalThis as { Papa?: { parse: (text: string, config: { header: boolean; skipEmptyLines: boolean }) => { data: CSVRow[] } } }).Papa;
   if (Papa) {
     const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
     return parsed.data;
   }
-  // CSP-safe fallback: simple header-based CSV parser
   const lines = text.trim().split('\n');
   if (lines.length < 2) return [];
   const headers = lines[0]!.split(',').map((h) => h.trim().replace(/^"|"$/g, ''));
@@ -199,8 +197,6 @@ async function fetchCIAData(url: string): Promise<PoliticianRiskRow[] | null> {
  * working when raw.githubusercontent.com is rate-limited or offline.
  */
 async function fetchPoliticianRiskData(): Promise<PoliticianRiskRow[] | null> {
-  // Absolute path so this works from `/dashboards/risk.html` (a bare
-  // `cia-data/…` would resolve to `/dashboards/cia-data/…` and 404).
   const localUrl = '/cia-data/politician/view_politician_risk_summary_sample.csv';
   const local = await fetchCIAData(localUrl);
   if (local && local.length > 0) {
@@ -214,8 +210,6 @@ async function fetchPoliticianRiskData(): Promise<PoliticianRiskRow[] | null> {
 async function loadCIAData(): Promise<RiskScore[] | null> {
   logger.debug('Loading CIA politician risk data from view_politician_risk_summary_sample.csv...');
 
-  // Load detailed politician risk data (403 politicians with full risk assessment)
-  // — local-first: bundled CSV → upstream raw URL fallback.
   const politicianRiskData = await fetchPoliticianRiskData();
 
   if (!politicianRiskData || politicianRiskData.length === 0) {
@@ -225,8 +219,6 @@ async function loadCIAData(): Promise<RiskScore[] | null> {
 
   logger.debug(`Loaded ${politicianRiskData.length} politicians from CIA Platform`);
 
-  // Transform CIA view data to risk matrix format for heat map
-  // Each politician needs multiple rules (45 total) for the heat map visualization
   const transformed: RiskScore[] = [];
 
   politicianRiskData.forEach((politician, idx) => {
@@ -236,10 +228,7 @@ async function loadCIAData(): Promise<RiskScore[] | null> {
     const party = politician.party || 'IND';
     const riskScore = parseFloat(politician.risk_score ?? '0') || 0;
 
-    // Create risk matrix entries for each rule
-    // Use actual risk score as base, with slight variations per rule
     RISK_RULES.forEach((ruleName, ruleIdx) => {
-      // Add small variation (±10%) to base risk score for each rule
       const variation = (Math.random() - 0.5) * 0.2 * riskScore;
       const ruleScore = Math.max(0, Math.min(10, riskScore + variation));
 
@@ -283,7 +272,6 @@ function updateEarlyWarnings(riskData: RiskScore[]): void {
     const uniqueMPs = [...new Set(criticalMPs.map(d => d.politician))];
     warningBanner.className = 'alert-banner critical';
 
-    // Build banner content safely using DOM methods
     warningBanner.textContent = '';
     const strong = document.createElement('strong');
     strong.textContent = '⚠️ CRITICAL:';
@@ -323,14 +311,12 @@ function createHeatMap(data: RiskScore[]): void {
   const container = d3.select('#riskHeatMap');
   container.selectAll('*').remove();
 
-  // Dimensions
   const margin = { top: 80, right: 40, bottom: 60, left: 120 };
   const cellWidth = 15;
   const cellHeight = 15;
   const width = 45 * cellWidth + margin.left + margin.right;
-  const height = 349 * cellHeight + margin.top + margin.bottom; // Current MPs
+  const height = 349 * cellHeight + margin.top + margin.bottom;
 
-  // Create SVG
   const svg = container
     .append('svg')
     .attr('width', '100%')
@@ -338,7 +324,6 @@ function createHeatMap(data: RiskScore[]): void {
     .attr('viewBox', `0 0 ${width} ${height}`)
     .attr('preserveAspectRatio', 'xMidYMid meet');
 
-  // Create tooltip
   const tooltip = d3
     .select('body')
     .append('div')
@@ -353,11 +338,9 @@ function createHeatMap(data: RiskScore[]): void {
     .style('pointer-events', 'none')
     .style('z-index', '1000');
 
-  // Group data by politician
   const politicians = [...new Set(data.map(d => d.politician))];
   const rules = [...new Set(data.map(d => String(d.rule)))].sort();
 
-  // Create scales
   const xScale = d3
     .scaleBand()
     .domain(rules)
@@ -367,15 +350,13 @@ function createHeatMap(data: RiskScore[]): void {
   const yScale = d3
     .scaleBand()
     .domain(politicians)
-    .range([0, 349 * cellHeight]) // Current MPs
+    .range([0, 349 * cellHeight])
     .padding(0.05);
 
-  // Create main group
   const g = svg
     .append('g')
     .attr('transform', `translate(${margin.left},${margin.top})`);
 
-  // Add zoom behavior
   const zoom = d3
     .zoom<SVGSVGElement, unknown>()
     .scaleExtent([1, 10])
@@ -392,7 +373,6 @@ function createHeatMap(data: RiskScore[]): void {
 
   svg.call(zoom);
 
-  // Reset zoom button handler
   const resetBtn = document.getElementById('resetZoom');
   if (resetBtn) {
     resetBtn.addEventListener('click', () => {
@@ -400,7 +380,6 @@ function createHeatMap(data: RiskScore[]): void {
     });
   }
 
-  // Draw cells
   const cells = g
     .selectAll('.cell')
     .data(data)
@@ -446,10 +425,8 @@ function createHeatMap(data: RiskScore[]): void {
     })
     .on('click', function (this: SVGRectElement, _event: MouseEvent, d: RiskScore) {
       const triggerElement = this as unknown as HTMLElement;
-      // Show details in an accessible on-page element
       let detailsPanel = d3.select('#risk-details-panel');
       if (detailsPanel.empty()) {
-        // Create details panel if it doesn't exist
         const panel = d3
           .select('body')
           .append('div')
@@ -473,13 +450,12 @@ function createHeatMap(data: RiskScore[]): void {
         panel.append('div').attr('class', 'risk-details-content');
         panel.append('button').attr('class', 'btn').style('margin-top', '1rem').text('Close');
 
-        void panel; // created above, re-selected below
+        void panel;
       }
 
       const panel = d3.select('#risk-details-panel');
-      // Build dialog content safely using DOM methods
       const content = panel.select('.risk-details-content');
-      content.html(''); // Clear existing content
+      content.html('');
 
       const createField = (label: string, value: string): HTMLParagraphElement => {
         const p = document.createElement('p');
@@ -499,7 +475,6 @@ function createHeatMap(data: RiskScore[]): void {
 
       panel.style('display', 'block');
 
-      // Update close button handler to return focus
       panel.select('button').on('click', () => {
         panel.style('display', 'none');
         triggerElement.focus();
@@ -508,7 +483,6 @@ function createHeatMap(data: RiskScore[]): void {
       (panel.select('button').node() as HTMLElement)?.focus();
     });
 
-  // Add X axis labels (rules)
   g.append('g')
     .selectAll('text')
     .data(rules)
@@ -521,7 +495,6 @@ function createHeatMap(data: RiskScore[]): void {
     .attr('fill', 'currentColor')
     .text((d: string) => d.replace('Rule_', 'R'));
 
-  // Add Y axis labels (politicians) - Sample every 10th
   g.append('g')
     .selectAll('text')
     .data(politicians.filter((_: string, i: number) => i % 10 === 0))
@@ -535,10 +508,8 @@ function createHeatMap(data: RiskScore[]): void {
     .attr('fill', 'currentColor')
     .text((d: string) => d);
 
-  // Create legend
   createLegend();
 
-  // Filter functionality
   const filterCheckbox = document.getElementById('filterHighRisk') as HTMLInputElement | null;
   if (filterCheckbox) {
     filterCheckbox.addEventListener('change', (e: Event) => {
@@ -551,7 +522,6 @@ function createHeatMap(data: RiskScore[]): void {
     });
   }
 
-  // Rule filter
   const ruleFilter = document.getElementById('riskRuleFilter') as HTMLSelectElement | null;
   if (ruleFilter) {
     rules.forEach((rule: string) => {
@@ -614,7 +584,6 @@ function createRiskDistributionChart(data: RiskScore[]): void {
   const canvas = document.getElementById('riskDistributionChart') as HTMLCanvasElement | null;
   if (!canvas) return;
 
-  // Group by score buckets
   const buckets: Record<string, number> = {
     '0-4': data.filter(d => d.score < 4).length,
     '4-6': data.filter(d => d.score >= 4 && d.score < 6).length,
@@ -673,8 +642,6 @@ function createAnomalyDetectionChart(): void {
   const canvas = document.getElementById('anomalyDetectionChart') as HTMLCanvasElement | null;
   if (!canvas) return;
 
-  // Generate synthetic anomaly time series for visualization
-  // (Chart uses computed scores until real-time data feed is available)
   const anomalies: AnomalyPoint[] = [];
   const today = new Date();
 
@@ -682,9 +649,8 @@ function createAnomalyDetectionChart(): void {
     const date = new Date(today);
     date.setDate(date.getDate() - i);
 
-    // Generate random anomaly scores
     const baseScore = 50 + Math.random() * 30;
-    const spike = Math.random() > 0.9 ? Math.random() * 40 : 0; // 10% chance of spike
+    const spike = Math.random() > 0.9 ? Math.random() * 40 : 0;
     const totalScore = baseScore + spike;
     anomalies.push({
       x: date.getTime(),
@@ -692,12 +658,10 @@ function createAnomalyDetectionChart(): void {
     });
   }
 
-  // Calculate P90 and P99 from the generated scores
   const scores = anomalies.map(a => a.y);
   const p90 = calculatePercentile(scores, 90);
   const p99 = calculatePercentile(scores, 99);
 
-  // Now update classification based on actual percentiles
   anomalies.forEach(a => {
     a.isCritical = a.y > p99;
     a.isWarning = a.y > p90 && a.y <= p99;
@@ -796,8 +760,6 @@ function createCrisisResilienceChart(): void {
   const canvas = document.getElementById('crisisResilienceChart') as HTMLCanvasElement | null;
   if (!canvas) return;
 
-  // Compute resilience scores from party distribution in risk data
-  // Until real-time resilience feed is available, scores are estimated from party size
   const parties = Object.keys(PARTY_COLORS);
   const resilienceData: ResiliencePoint[] = parties.map(party => ({
     party,
@@ -848,7 +810,6 @@ function createRiskEvolutionChart(): void {
   const canvas = document.getElementById('riskEvolutionChart') as HTMLCanvasElement | null;
   if (!canvas) return;
 
-  // Generate time series data 2020-2026
   const years: Date[] = [];
   const currentYear = new Date().getFullYear();
 
@@ -859,14 +820,13 @@ function createRiskEvolutionChart(): void {
     }
   }
 
-  // Generate trends for different risk categories
   const categories = ['Attendance', 'Voting Consistency', 'Ethics', 'Productivity'];
   const partyColorValues = Object.values(PARTY_COLORS);
   const datasets = categories.map((category, idx) => {
     const baseValue = 3 + idx * 0.5;
     const data = years.map((_date, i) => {
-      const trend = 0.02 * i; // Slight upward trend
-      const seasonal = Math.sin(i / 6) * 0.5; // Seasonal variation
+      const trend = 0.02 * i;
+      const seasonal = Math.sin(i / 6) * 0.5;
       const noise = (Math.random() - 0.5) * 0.3;
       return baseValue + trend + seasonal + noise;
     });
@@ -919,7 +879,6 @@ function createRiskEvolutionChart(): void {
 // ============================================================================
 
 function createTop10Lists(riskData: RiskScore[]): void {
-  // Ethics Concerns
   const ethicsList = document.getElementById('ethicsConcernsList');
   if (ethicsList) {
     const ethicsData = riskData
@@ -941,7 +900,6 @@ function createTop10Lists(riskData: RiskScore[]): void {
     }
   }
 
-  // Electoral Risk
   const electoralList = document.getElementById('electoralRiskList');
   if (electoralList) {
     const electoralData = riskData
@@ -982,11 +940,9 @@ export async function init(): Promise<void> {
 
   let riskData: RiskScore[];
   try {
-    // Load real CIA politician risk data
     logger.debug('Loading CIA risk data from view_politician_risk_summary_sample.csv...');
     const loadedData = await loadCIAData();
 
-    // Validate loaded data
     if (!loadedData || !Array.isArray(loadedData) || loadedData.length === 0) {
       throw new Error('CIA risk data is empty or invalid');
     }
@@ -996,9 +952,6 @@ export async function init(): Promise<void> {
   } catch (error) {
     logger.error('❌ Failed to load CIA risk data:', error);
 
-    // Display error message to user using the shared error boundary fallback.
-    // Render into a child container prepended to #risk-dashboard so the rest
-    // of the section's DOM is preserved for a subsequent retry.
     const dashboardSection = document.getElementById('risk-dashboard');
     if (dashboardSection) {
       const errContainer = document.createElement('div');
@@ -1015,18 +968,15 @@ export async function init(): Promise<void> {
       );
     }
 
-    // Cannot proceed without data - exit gracefully
     logger.error('Dashboard initialization failed - no data available');
     return;
   }
 
-  // Update last updated timestamp
   const lastUpdatedEl = document.getElementById('lastUpdated');
   if (lastUpdatedEl) {
     lastUpdatedEl.textContent = new Date().toLocaleString('sv-SE');
   }
 
-  // Initialize visualizations with real data
   const riskDashboard = document.getElementById('risk-dashboard');
   if (riskDashboard) {
     showDataSourceDisclaimer(riskDashboard, 'live');

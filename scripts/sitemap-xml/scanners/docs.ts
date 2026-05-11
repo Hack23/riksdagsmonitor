@@ -65,7 +65,6 @@ export function getDocFiles(): DocFile[] {
 
   scanDir(DOCS_DIR);
 
-  // Sort for deterministic output across platforms/filesystems
   results.sort((a, b) => a.file.localeCompare(b.file));
 
   console.log(`  Found ${results.length} documentation files in docs/`);

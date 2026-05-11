@@ -123,7 +123,6 @@ export function buildBreadcrumbListLd(entries: readonly BreadcrumbEntry[]): Brea
   if (entries.length === 0) {
     throw new Error('BreadcrumbList requires at least one entry.');
   }
-  // Validate: all entries except the last must have `item`
   for (let i = 0; i < entries.length - 1; i++) {
     if (!('item' in entries[i]) || !(entries[i] as BreadcrumbEntryWithItem).item) {
       throw new Error(

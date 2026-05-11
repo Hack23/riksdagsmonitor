@@ -16,7 +16,6 @@ import * as d3 from 'd3';
 import Papa from 'papaparse';
 
 export function registerBrowserGlobals(): void {
-  // Expose on globalThis so dashboard modules can access via (globalThis as unknown as { Chart: { new(ctx: HTMLCanvasElement | CanvasRenderingContext2D | null, config: Record<string, unknown>): unknown; register(...items: unknown[]): void } }).Chart / .d3 / .Papa
   (globalThis as Record<string, unknown>).Chart = Chart;
   (globalThis as Record<string, unknown>).d3 = d3;
   (globalThis as Record<string, unknown>).Papa = Papa;

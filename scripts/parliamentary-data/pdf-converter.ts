@@ -77,7 +77,6 @@ export function convertPdfToText(pdfPath: string): ConversionResult {
     return { success: false, text: '', tool: 'none', error: `File not found: ${pdfPath}` };
   }
 
-  // Try pdftotext first
   if (isPdfToTextAvailable()) {
     try {
       const text = execFileSync('pdftotext', ['-layout', '-enc', 'UTF-8', pdfPath, '-'], {
@@ -92,7 +91,6 @@ export function convertPdfToText(pdfPath: string): ConversionResult {
     }
   }
 
-  // No system tool available
   return {
     success: false,
     text: '',
@@ -143,7 +141,6 @@ export function textToMarkdown(text: string): string {
   for (const line of lines) {
     const trimmed = line.trim();
 
-    // Skip empty lines (preserve paragraph breaks)
     if (!trimmed) {
       if (result.length > 0 && result[result.length - 1] !== '') {
         result.push('');
@@ -151,7 +148,6 @@ export function textToMarkdown(text: string): string {
       continue;
     }
 
-    // Heuristic: short ALL CAPS lines are likely headings in Swedish parliamentary PDFs
     if (
       trimmed.length > MIN_HEADING_LENGTH &&
       trimmed.length < MAX_HEADING_LENGTH &&

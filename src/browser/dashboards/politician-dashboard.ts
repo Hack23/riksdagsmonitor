@@ -659,7 +659,6 @@ export async function init(): Promise<void> {
       showDataSourceDisclaimer(politicianDashboard, 'live');
     }
 
-    // --- Top 10 Most Productive (by annual_vote_count) ---
     const activeRiskData = riskData.filter(
       (r) => r.status === 'Tjänstgörande riksdagsledamot',
     );
@@ -676,7 +675,6 @@ export async function init(): Promise<void> {
         score: (r.annual_vote_count as string) || '0',
       }));
 
-    // --- Top 10 Most Influential (by network_connections) ---
     const top10Influential: Top10Item[] = [...influenceData]
       .sort(
         (a, b) =>
@@ -690,7 +688,6 @@ export async function init(): Promise<void> {
         score: (r.network_connections as string) || '0',
       }));
 
-    // --- Top 10 Rising Stars (low risk + high vote count) ---
     const top10RisingStars: Top10Item[] = [...activeRiskData]
       .filter((r) => parseInt(r.annual_vote_count as string, 10) > 0)
       .sort((a, b) => {
@@ -709,7 +706,6 @@ export async function init(): Promise<void> {
         score: (r.risk_score as string) || '0',
       }));
 
-    // --- Top 10 Controversial (highest risk_score) ---
     const top10Controversial: Top10Item[] = [...activeRiskData]
       .sort(
         (a, b) =>

@@ -164,7 +164,6 @@ function stripTagsToText(fragment: string): string {
 /** Decode common HTML entities used in our articles (numeric + named). */
 function decodeEntities(s: string): string {
   let out = htmlUnescape(s);
-  // Numeric character references — e.g. &#8212; for em-dash.
   out = out.replace(/&#(\d+);/g, (_, n: string) => String.fromCodePoint(Number(n)));
   out = out.replace(/&#x([0-9a-f]+);/gi, (_, n: string) => String.fromCodePoint(parseInt(n, 16)));
   return out;
@@ -178,7 +177,6 @@ function decodeEntities(s: string): string {
  * usable prose is found.
  */
 function extractBestDescription(articleHtml: string): string | null {
-  // Remove structural noise that would otherwise be matched as prose.
   const scrubbed = articleHtml
     .replace(/<pre class="mermaid"[^>]*>[\s\S]*?<\/pre>/gi, '')
     .replace(/<pre\b[^>]*>[\s\S]*?<\/pre>/gi, '')
@@ -189,8 +187,6 @@ function extractBestDescription(articleHtml: string): string | null {
     .replace(/<aside\b[^>]*>[\s\S]*?<\/aside>/gi, '')
     .replace(/<header\b[^>]*>[\s\S]*?<\/header>/gi, '');
 
-  // Iterate every <p>…</p> in order, returning the first whose plain
-  // text is non-admin, non-banned, and non-trivial (≥ 40 chars).
   const re = /<p\b[^>]*>([\s\S]*?)<\/p>/gi;
   let m: RegExpExecArray | null;
   while ((m = re.exec(scrubbed)) !== null) {
@@ -198,16 +194,10 @@ function extractBestDescription(articleHtml: string): string | null {
     const text = decodeEntities(stripTagsToText(raw));
     if (text.length < 40) continue;
 
-    // Strip leading emphasis markers and boilerplate prefixes.
     const cleaned = text.replace(/^\s*(?:🎯|BLUF[:：]?)\s*/i, '').trim();
 
-    // Skip banned filler phrases: "… — AI-generated political intelligence …"
-    // and "Executive Brief — …" which appear as the `<p class="lede">`
-    // site-tagline in some older templates.
     if (BANNED_PHRASES.some((rx) => rx.test(cleaned))) continue;
 
-    // If every structural fragment matches ADMIN_FIELD_RE, skip — it's
-    // an admin byline that leaked into a <p>.
     const fragments = cleaned.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
     const allAdmin = fragments.length > 0 && fragments.every((f) => ADMIN_FIELD_RE.test(f.trim()));
     if (allAdmin) continue;
@@ -237,7 +227,6 @@ function resolveBudget(html: string, filename: string): LangBudget {
   const m = html.match(META_REGEXES.htmlLang);
   let lang = (m?.[1] ?? '').split('-')[0]!.toLowerCase();
   if (!lang) {
-    // Filename fallback: `2026-04-23-committeeReports-en.html` → `en`.
     const fm = filename.match(/-(en|sv|da|no|nb|fi|de|fr|es|nl|ar|he|ja|ko|zh)\.html$/);
     lang = fm?.[1] ?? 'en';
   }
@@ -289,20 +278,9 @@ function detectViolations(
     /Riksdagsmonitor.*Riksdagsmonitor/i.test(twitterTitleText);
 
   const descriptionTooShort = description.trim().length < budget.descMin;
-  // Only flag "too long" when meaningfully over budget — a 207-char
-  // Latin description is SEO-fine (Google's display floor is ~155 and
-  // the ceiling is flexible); only ≥ 30-char overflow is worth
-  // actively rewriting.
   const descriptionTooLong = description.trim().length > budget.descHardMax + 30;
-  // Likewise titles: the 75-char budget is the *display-safe* ceiling,
-  // but 80-120 char titles still parse fine in search / social. Only
-  // rewrite titles when they blow past 120 chars or carry a structural
-  // problem (ISO date, boilerplate prefix, double-brand).
   const titleTooLong = titleText.trim().length > budget.titleMax + 50;
 
-  // Mid-word cut heuristic: description ends with a lowercase letter
-  // (no punctuation) and was probably truncated by the old blind
-  // 300-char slicer. Latin-script only; CJK/RTL have their own rules.
   const midWordDescriptionCut = /[a-zåäöøæéèüñç]$/i.test(description.trim()) &&
     description.length >= 120;
 
@@ -358,7 +336,6 @@ function rewriteOne(filePath: string): { outcome: RewriteOutcome; nextHtml: stri
 
   const budget = resolveBudget(html, filename);
 
-  // --- parse current values -------------------------------------------------
   const docTitleRaw = html.match(META_REGEXES.title)?.[1]?.trim() ?? '';
   const docTitleText = decodeEntities(docTitleRaw);
 
@@ -374,13 +351,9 @@ function rewriteOne(filePath: string): { outcome: RewriteOutcome; nextHtml: stri
   const twTitleRaw = html.match(META_REGEXES.twitterTitle)?.[2] ?? '';
   const twTitleText = decodeEntities(twTitleRaw);
 
-  // Pick the richer description to use as the "current" one (the
-  // chrome template keeps these in sync, but a buggy generator may
-  // have drifted them).
   const richestCurrentDescription =
     [descText, ogDescText].sort((a, b) => b.length - a.length)[0] ?? '';
 
-  // --- violations -----------------------------------------------------------
   const violations = detectViolations(
     docTitleText,
     richestCurrentDescription,
@@ -389,7 +362,6 @@ function rewriteOne(filePath: string): { outcome: RewriteOutcome; nextHtml: stri
     budget,
   );
 
-  // Fast-path: nothing to do.
   if (!needsRewrite(violations) && !violations.descriptionTooShort) {
     return {
       outcome: {
@@ -408,18 +380,14 @@ function rewriteOne(filePath: string): { outcome: RewriteOutcome; nextHtml: stri
   const reasons: string[] = [];
   for (const [k, v] of Object.entries(violations)) if (v) reasons.push(k);
 
-  // --- derive new description ----------------------------------------------
   let newDescription = richestCurrentDescription;
 
-  // Strategy 1: strip admin byline from existing description when present.
   if (violations.adminInDescription || violations.bannedPhraseInDescription || violations.genericFiller) {
     const stripped = stripAdminFromDescription(richestCurrentDescription);
     if (stripped && stripped.length >= 40) newDescription = stripped;
-    else newDescription = ''; // force fallback to article body
+    else newDescription = '';
   }
 
-  // Strategy 2: if still no good description OR it's too short / too long
-  // / truncated mid-word, extract from article body.
   const needsNewFromBody =
     newDescription.length < budget.descMin ||
     newDescription.length > budget.descHardMax ||
@@ -432,13 +400,10 @@ function rewriteOne(filePath: string): { outcome: RewriteOutcome; nextHtml: stri
     if (fromBody && fromBody.length >= budget.descMin) {
       newDescription = fromBody;
     } else if (fromBody && fromBody.length >= 40) {
-      // Even a short body prose is better than admin leakage or generic
-      // filler; take it and let the truncator apply the language budget.
       newDescription = fromBody;
     }
   }
 
-  // Apply sentence-aware truncation to the language budget.
   newDescription = truncateToSentenceBoundary(
     newDescription,
     budget.descSoftMin,
@@ -446,7 +411,6 @@ function rewriteOne(filePath: string): { outcome: RewriteOutcome; nextHtml: stri
   ).trim();
 
   if (newDescription.length === 0) {
-    // Pathological case — nothing usable. Leave file untouched.
     return {
       outcome: {
         file: filePath,
@@ -461,8 +425,6 @@ function rewriteOne(filePath: string): { outcome: RewriteOutcome; nextHtml: stri
     };
   }
 
-  // --- derive new title -----------------------------------------------------
-  // Start from the doc title but strip the trailing brand chrome.
   const titleWithoutBrand = docTitleText.replace(/\s*[—\-|]\s*Riksdagsmonitor\s*$/i, '').trim();
 
   let newTitle = titleWithoutBrand;
@@ -477,20 +439,13 @@ function rewriteOne(filePath: string): { outcome: RewriteOutcome; nextHtml: stri
     if (cleaned) {
       newTitle = cleaned;
     } else {
-      // Fall back to BLUF-style title from the new description.
       const fromBluf = titleFromBluf(newDescription, budget.titleMax);
       if (fromBluf) newTitle = fromBluf;
     }
 
-    // Final safeguard: if the title still contains a raw ISO date
-    // anywhere (trailing OR embedded), strip every occurrence and
-    // tidy trailing connector words that get left behind.
     newTitle = newTitle.replace(/\s*\d{4}-\d{2}-\d{2}(?:\s+\d{1,2}:\d{2})?\s*/g, ' ').replace(/\s+/g, ' ').trim();
     newTitle = newTitle.replace(/[\s,;:]*(?:to|till|bis|à|a|إلى|から|til|–|—|-|:)\s*$/iu, '').trim();
 
-    // Only actively truncate when the title is genuinely excessive
-    // (> titleMax + 50) — otherwise a 103-char publication-quality
-    // headline would be decimated.
     if (newTitle.length > budget.titleMax + 50) {
       const slice = newTitle.slice(0, budget.titleMax);
       const lastSpace = slice.lastIndexOf(' ');
@@ -498,25 +453,14 @@ function rewriteOne(filePath: string): { outcome: RewriteOutcome; nextHtml: stri
     }
 
     if (!newTitle || newTitle.length < 5) {
-      // Degenerate — fall back to the (brand-stripped) original rather
-      // than emitting an empty title. A 5-char floor tolerates very
-      // short CJK headlines (e.g. 11-char `涉及欧盟和外交事务领域`) which
-      // are legitimate; it only catches the pathological zero / 1-2
-      // char case.
       newTitle = titleWithoutBrand || docTitleText;
     }
   }
-  // else: title has no structural issue, keep `titleWithoutBrand` as-is.
 
-  // --- derive OG / Twitter variants ----------------------------------------
-  // The chrome template decides whether to append ` — Riksdagsmonitor`.
-  // We mirror that decision here: append the brand iff the title does
-  // not already contain `Riksdagsmonitor` (contract §3.g).
   const brandedTitle = /riksdagsmonitor/i.test(newTitle)
     ? newTitle
     : `${newTitle} — Riksdagsmonitor`;
 
-  // --- rewrite the HTML -----------------------------------------------------
   let next = html;
   const escTitle = htmlEscape(newTitle);
   const escBranded = htmlEscape(brandedTitle);
@@ -531,16 +475,12 @@ function rewriteOne(filePath: string): { outcome: RewriteOutcome; nextHtml: stri
   next = next.replace(META_REGEXES.ogImageAlt, (_m, pre: string, _old: string, post: string) => `${pre}Riksdagsmonitor ${escTitle}${post}`);
   next = next.replace(META_REGEXES.twitterImageAlt, (_m, pre: string, _old: string, post: string) => `${pre}Riksdagsmonitor ${escTitle}${post}`);
 
-  // JSON-LD: parse the NewsArticle schema and rewrite `headline`,
-  // `description`, and (when present) `alternativeHeadline`. Every
-  // NewsArticle emits the same single-line JSON, so we splice by
-  // stringifying with the same compact formatting.
   next = next.replace(META_REGEXES.jsonLd, (whole: string, body: string) => {
     let parsed: Record<string, unknown>;
     try {
       parsed = JSON.parse(body.trim()) as Record<string, unknown>;
     } catch {
-      return whole; // malformed JSON-LD; leave untouched.
+      return whole;
     }
     if (typeof parsed['@type'] === 'string' && /NewsArticle/i.test(parsed['@type'] as string)) {
       parsed.headline = newTitle;
@@ -655,7 +595,6 @@ function main(): void {
   const mode = args.apply ? 'APPLIED' : 'DRY-RUN';
   console.log(`\n📊 ${mode}: ${files.length} files scanned, ${changed} changed, ${skipped} unchanged, ${errors} errors in ${elapsed}s`);
 
-  // Emit a compact CSV report alongside the files.
   const reportDir = path.join(ROOT_DIR, 'analysis', 'metadata-backfill');
   fs.mkdirSync(reportDir, { recursive: true });
   const reportPath = path.join(reportDir, `rewrite-report-${new Date().toISOString().slice(0, 10)}.csv`);

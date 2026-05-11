@@ -457,7 +457,6 @@ function setCachedData(key: string, data: CSVRow[]): void {
 // ============================================================================
 
 async function fetchCSVRetry(filename: string, retryCount = 0): Promise<string> {
-  // Try local cia-data first, then fall back to remote GitHub
   const localUrl = `${CONFIG.localDataBase}/${filename}`;
   const remoteUrl = `${CONFIG.githubRawBase}/${filename}`;
 
@@ -553,7 +552,6 @@ async function loadGovernmentRoles(): Promise<Record<string, number>> {
         counts[party] = (counts[party] || 0) + 1;
       }
     });
-    // Cache as array of {party, count} for consistency
     const cacheData = Object.entries(counts).map(([party, count]) => ({ party, count: String(count) }));
     setCachedData('government_roles_count', cacheData);
     return counts;

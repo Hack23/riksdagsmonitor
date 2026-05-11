@@ -626,7 +626,7 @@ export function t(key: string, lang: string = detectLanguage()): string {
     value = (value as Record<string, unknown>)?.[k];
     if (value === undefined) {
       console.warn(`Translation missing: ${key} for language ${lang}`);
-      return key; // Return key as fallback
+      return key;
     }
   }
 
