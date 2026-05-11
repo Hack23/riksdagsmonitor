@@ -1,0 +1,48 @@
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "vintage": "WEO-2026-04",
+    "retrieved_at": "2026-05-11T07:31:25.073Z",
+    "fetch_status": "degraded_using_prewarm",
+    "annotation": "Live IMF fetch failed for weo and compare subcommands. Pre-warm context from data/imf-context.json used. All economic claims annotated as (WEO Apr-2026, cached)."
+  },
+  "indicators": {
+    "SWE_GDP_GROWTH": {
+      "indicator": "NGDP_RPCH",
+      "value": 2.1,
+      "unit": "percent change",
+      "year": 2026,
+      "source": "IMF WEO Apr-2026",
+      "note": "Sweden real GDP growth forecast 2026 (WEO Apr-2026, cached)"
+    },
+    "SWE_GOVT_DEBT": {
+      "indicator": "GGXWDG_NGDP",
+      "value": 36.6,
+      "unit": "percent of GDP",
+      "year": 2026,
+      "source": "IMF WEO Apr-2026",
+      "note": "Sweden general government gross debt (WEO Apr-2026, cached)"
+    },
+    "SWE_FORESTRY_GDP_SHARE": {
+      "value": 2.4,
+      "unit": "percent of GDP",
+      "year": 2024,
+      "source": "SCB industry statistics 2024",
+      "provider": "scb",
+      "note": "Swedish wood/paper/printing sector as share of GDP"
+    },
+    "SWE_FORESTRY_EXPORTS": {
+      "value": 140,
+      "unit": "billion SEK per year",
+      "year": 2024,
+      "source": "SCB export statistics 2024",
+      "provider": "scb",
+      "note": "Swedish forest product exports"
+    }
+  },
+  "relevance_to_analysis": {
+    "prop_242_forestry": "Forestry sector contributes ~2.4% of GDP and ~SEK 140 bn/year in exports. Economic significance justifies some regulatory simplification, but Sweden's fiscal space (debt 36.6% of GDP) means there is no austerity pressure to sacrifice environmental protection for economic output.",
+    "prop_246_youth_crime": "Sweden's GDP growth (2.1% 2026F) and low government debt (36.6% of GDP) provide fiscal space for Kriminalvården capacity expansion needed to implement prop. 246. However, the constitutional risk (Lagrådet) is not an economic risk — it is a governance risk."
+  }
+}
