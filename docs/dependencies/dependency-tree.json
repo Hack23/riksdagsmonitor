@@ -267,8 +267,8 @@
       }
     },
     "@vitest/coverage-v8": {
-      "version": "4.1.5",
-      "resolved": "https://registry.npmjs.org/@vitest/coverage-v8/-/coverage-v8-4.1.5.tgz",
+      "version": "4.1.6",
+      "resolved": "https://registry.npmjs.org/@vitest/coverage-v8/-/coverage-v8-4.1.6.tgz",
       "overridden": false,
       "dependencies": {
         "@bcoe/v8-coverage": {
@@ -278,12 +278,12 @@
         },
         "@vitest/browser": {},
         "@vitest/utils": {
-          "version": "4.1.5",
-          "resolved": "https://registry.npmjs.org/@vitest/utils/-/utils-4.1.5.tgz",
+          "version": "4.1.6",
+          "resolved": "https://registry.npmjs.org/@vitest/utils/-/utils-4.1.6.tgz",
           "overridden": false,
           "dependencies": {
             "@vitest/pretty-format": {
-              "version": "4.1.5"
+              "version": "4.1.6"
             },
             "convert-source-map": {
               "version": "2.0.0",
@@ -437,17 +437,17 @@
           "overridden": false
         },
         "vitest": {
-          "version": "4.1.5"
+          "version": "4.1.6"
         }
       }
     },
     "@vitest/ui": {
-      "version": "4.1.5",
-      "resolved": "https://registry.npmjs.org/@vitest/ui/-/ui-4.1.5.tgz",
+      "version": "4.1.6",
+      "resolved": "https://registry.npmjs.org/@vitest/ui/-/ui-4.1.6.tgz",
       "overridden": false,
       "dependencies": {
         "@vitest/utils": {
-          "version": "4.1.5"
+          "version": "4.1.6"
         },
         "fflate": {
           "version": "0.8.2",
@@ -503,7 +503,7 @@
           "version": "3.1.0"
         },
         "vitest": {
-          "version": "4.1.5"
+          "version": "4.1.6"
         }
       }
     },
@@ -3053,8 +3053,8 @@
       }
     },
     "mermaid": {
-      "version": "11.14.0",
-      "resolved": "https://registry.npmjs.org/mermaid/-/mermaid-11.14.0.tgz",
+      "version": "11.15.0",
+      "resolved": "https://registry.npmjs.org/mermaid/-/mermaid-11.15.0.tgz",
       "overridden": false,
       "dependencies": {
         "@braintree/sanitize-url": {
@@ -3126,111 +3126,14 @@
           }
         },
         "@mermaid-js/parser": {
-          "version": "1.1.0",
-          "resolved": "https://registry.npmjs.org/@mermaid-js/parser/-/parser-1.1.0.tgz",
+          "version": "1.1.1",
+          "resolved": "https://registry.npmjs.org/@mermaid-js/parser/-/parser-1.1.1.tgz",
           "overridden": false,
           "dependencies": {
-            "langium": {
-              "version": "4.2.2",
-              "resolved": "https://registry.npmjs.org/langium/-/langium-4.2.2.tgz",
-              "overridden": false,
-              "dependencies": {
-                "@chevrotain/regexp-to-ast": {
-                  "version": "12.0.0",
-                  "resolved": "https://registry.npmjs.org/@chevrotain/regexp-to-ast/-/regexp-to-ast-12.0.0.tgz",
-                  "overridden": false
-                },
-                "chevrotain-allstar": {
-                  "version": "0.4.1",
-                  "resolved": "https://registry.npmjs.org/chevrotain-allstar/-/chevrotain-allstar-0.4.1.tgz",
-                  "overridden": false,
-                  "dependencies": {
-                    "chevrotain": {
-                      "version": "12.0.0"
-                    },
-                    "lodash-es": {
-                      "version": "4.18.1"
-                    }
-                  }
-                },
-                "chevrotain": {
-                  "version": "12.0.0",
-                  "resolved": "https://registry.npmjs.org/chevrotain/-/chevrotain-12.0.0.tgz",
-                  "overridden": false,
-                  "dependencies": {
-                    "@chevrotain/cst-dts-gen": {
-                      "version": "12.0.0",
-                      "resolved": "https://registry.npmjs.org/@chevrotain/cst-dts-gen/-/cst-dts-gen-12.0.0.tgz",
-                      "overridden": false,
-                      "dependencies": {
-                        "@chevrotain/gast": {
-                          "version": "12.0.0"
-                        },
-                        "@chevrotain/types": {
-                          "version": "12.0.0"
-                        }
-                      }
-                    },
-                    "@chevrotain/gast": {
-                      "version": "12.0.0",
-                      "resolved": "https://registry.npmjs.org/@chevrotain/gast/-/gast-12.0.0.tgz",
-                      "overridden": false,
-                      "dependencies": {
-                        "@chevrotain/types": {
-                          "version": "12.0.0"
-                        }
-                      }
-                    },
-                    "@chevrotain/regexp-to-ast": {
-                      "version": "12.0.0"
-                    },
-                    "@chevrotain/types": {
-                      "version": "12.0.0",
-                      "resolved": "https://registry.npmjs.org/@chevrotain/types/-/types-12.0.0.tgz",
-                      "overridden": false
-                    },
-                    "@chevrotain/utils": {
-                      "version": "12.0.0",
-                      "resolved": "https://registry.npmjs.org/@chevrotain/utils/-/utils-12.0.0.tgz",
-                      "overridden": false
-                    }
-                  }
-                },
-                "vscode-languageserver-textdocument": {
-                  "version": "1.0.12",
-                  "resolved": "https://registry.npmjs.org/vscode-languageserver-textdocument/-/vscode-languageserver-textdocument-1.0.12.tgz",
-                  "overridden": false
-                },
-                "vscode-languageserver": {
-                  "version": "9.0.1",
-                  "resolved": "https://registry.npmjs.org/vscode-languageserver/-/vscode-languageserver-9.0.1.tgz",
-                  "overridden": false,
-                  "dependencies": {
-                    "vscode-languageserver-protocol": {
-                      "version": "3.17.5",
-                      "resolved": "https://registry.npmjs.org/vscode-languageserver-protocol/-/vscode-languageserver-protocol-3.17.5.tgz",
-                      "overridden": false,
-                      "dependencies": {
-                        "vscode-jsonrpc": {
-                          "version": "8.2.0",
-                          "resolved": "https://registry.npmjs.org/vscode-jsonrpc/-/vscode-jsonrpc-8.2.0.tgz",
-                          "overridden": false
-                        },
-                        "vscode-languageserver-types": {
-                          "version": "3.17.5",
-                          "resolved": "https://registry.npmjs.org/vscode-languageserver-types/-/vscode-languageserver-types-3.17.5.tgz",
-                          "overridden": false
-                        }
-                      }
-                    }
-                  }
-                },
-                "vscode-uri": {
-                  "version": "3.1.0",
-                  "resolved": "https://registry.npmjs.org/vscode-uri/-/vscode-uri-3.1.0.tgz",
-                  "overridden": false
-                }
-              }
+            "@chevrotain/types": {
+              "version": "11.1.2",
+              "resolved": "https://registry.npmjs.org/@chevrotain/types/-/types-11.1.2.tgz",
+              "overridden": false
             }
           }
         },
@@ -3342,7 +3245,9 @@
               "version": "7.9.0"
             },
             "lodash-es": {
-              "version": "4.18.1"
+              "version": "4.18.1",
+              "resolved": "https://registry.npmjs.org/lodash-es/-/lodash-es-4.18.1.tgz",
+              "overridden": false
             }
           }
         },
@@ -3361,6 +3266,11 @@
             }
           }
         },
+        "es-toolkit": {
+          "version": "1.46.1",
+          "resolved": "https://registry.npmjs.org/es-toolkit/-/es-toolkit-1.46.1.tgz",
+          "overridden": false
+        },
         "katex": {
           "version": "0.16.45",
           "resolved": "https://registry.npmjs.org/katex/-/katex-0.16.45.tgz",
@@ -3376,11 +3286,6 @@
         "khroma": {
           "version": "2.1.0",
           "resolved": "https://registry.npmjs.org/khroma/-/khroma-2.1.0.tgz",
-          "overridden": false
-        },
-        "lodash-es": {
-          "version": "4.18.1",
-          "resolved": "https://registry.npmjs.org/lodash-es/-/lodash-es-4.18.1.tgz",
           "overridden": false
         },
         "marked": {
@@ -5375,8 +5280,8 @@
       }
     },
     "vitest": {
-      "version": "4.1.5",
-      "resolved": "https://registry.npmjs.org/vitest/-/vitest-4.1.5.tgz",
+      "version": "4.1.6",
+      "resolved": "https://registry.npmjs.org/vitest/-/vitest-4.1.6.tgz",
       "overridden": false,
       "dependencies": {
         "@edge-runtime/vm": {},
@@ -5389,11 +5294,11 @@
         "@vitest/browser-webdriverio": {},
         "@vitest/coverage-istanbul": {},
         "@vitest/coverage-v8": {
-          "version": "4.1.5"
+          "version": "4.1.6"
         },
         "@vitest/expect": {
-          "version": "4.1.5",
-          "resolved": "https://registry.npmjs.org/@vitest/expect/-/expect-4.1.5.tgz",
+          "version": "4.1.6",
+          "resolved": "https://registry.npmjs.org/@vitest/expect/-/expect-4.1.6.tgz",
           "overridden": false,
           "dependencies": {
             "@standard-schema/spec": {
@@ -5419,10 +5324,10 @@
               }
             },
             "@vitest/spy": {
-              "version": "4.1.5"
+              "version": "4.1.6"
             },
             "@vitest/utils": {
-              "version": "4.1.5"
+              "version": "4.1.6"
             },
             "chai": {
               "version": "6.2.2",
@@ -5435,12 +5340,12 @@
           }
         },
         "@vitest/mocker": {
-          "version": "4.1.5",
-          "resolved": "https://registry.npmjs.org/@vitest/mocker/-/mocker-4.1.5.tgz",
+          "version": "4.1.6",
+          "resolved": "https://registry.npmjs.org/@vitest/mocker/-/mocker-4.1.6.tgz",
           "overridden": false,
           "dependencies": {
             "@vitest/spy": {
-              "version": "4.1.5"
+              "version": "4.1.6"
             },
             "estree-walker": {
               "version": "3.0.3"
@@ -5455,8 +5360,8 @@
           }
         },
         "@vitest/pretty-format": {
-          "version": "4.1.5",
-          "resolved": "https://registry.npmjs.org/@vitest/pretty-format/-/pretty-format-4.1.5.tgz",
+          "version": "4.1.6",
+          "resolved": "https://registry.npmjs.org/@vitest/pretty-format/-/pretty-format-4.1.6.tgz",
           "overridden": false,
           "dependencies": {
             "tinyrainbow": {
@@ -5465,12 +5370,12 @@
           }
         },
         "@vitest/runner": {
-          "version": "4.1.5",
-          "resolved": "https://registry.npmjs.org/@vitest/runner/-/runner-4.1.5.tgz",
+          "version": "4.1.6",
+          "resolved": "https://registry.npmjs.org/@vitest/runner/-/runner-4.1.6.tgz",
           "overridden": false,
           "dependencies": {
             "@vitest/utils": {
-              "version": "4.1.5"
+              "version": "4.1.6"
             },
             "pathe": {
               "version": "2.0.3"
@@ -5478,15 +5383,15 @@
           }
         },
         "@vitest/snapshot": {
-          "version": "4.1.5",
-          "resolved": "https://registry.npmjs.org/@vitest/snapshot/-/snapshot-4.1.5.tgz",
+          "version": "4.1.6",
+          "resolved": "https://registry.npmjs.org/@vitest/snapshot/-/snapshot-4.1.6.tgz",
           "overridden": false,
           "dependencies": {
             "@vitest/pretty-format": {
-              "version": "4.1.5"
+              "version": "4.1.6"
             },
             "@vitest/utils": {
-              "version": "4.1.5"
+              "version": "4.1.6"
             },
             "magic-string": {
               "version": "0.30.21"
@@ -5497,15 +5402,15 @@
           }
         },
         "@vitest/spy": {
-          "version": "4.1.5",
-          "resolved": "https://registry.npmjs.org/@vitest/spy/-/spy-4.1.5.tgz",
+          "version": "4.1.6",
+          "resolved": "https://registry.npmjs.org/@vitest/spy/-/spy-4.1.6.tgz",
           "overridden": false
         },
         "@vitest/ui": {
-          "version": "4.1.5"
+          "version": "4.1.6"
         },
         "@vitest/utils": {
-          "version": "4.1.5"
+          "version": "4.1.6"
         },
         "es-module-lexer": {
           "version": "2.0.0",
