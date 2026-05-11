@@ -315,7 +315,8 @@ function createHeatMap(data: RiskScore[]): void {
   const cellWidth = 15;
   const cellHeight = 15;
   const width = 45 * cellWidth + margin.left + margin.right;
-  const height = 349 * cellHeight + margin.top + margin.bottom; 
+  const height = 349 * cellHeight + margin.top + margin.bottom;
+
   const svg = container
     .append('svg')
     .attr('width', '100%')
@@ -349,7 +350,8 @@ function createHeatMap(data: RiskScore[]): void {
   const yScale = d3
     .scaleBand()
     .domain(politicians)
-    .range([0, 349 * cellHeight])     .padding(0.05);
+    .range([0, 349 * cellHeight])
+    .padding(0.05);
 
   const g = svg
     .append('g')
@@ -448,11 +450,13 @@ function createHeatMap(data: RiskScore[]): void {
         panel.append('div').attr('class', 'risk-details-content');
         panel.append('button').attr('class', 'btn').style('margin-top', '1rem').text('Close');
 
-        void panel;       }
+        void panel;
+      }
 
       const panel = d3.select('#risk-details-panel');
       const content = panel.select('.risk-details-content');
-      content.html(''); 
+      content.html('');
+
       const createField = (label: string, value: string): HTMLParagraphElement => {
         const p = document.createElement('p');
         const strong = document.createElement('strong');
@@ -646,7 +650,8 @@ function createAnomalyDetectionChart(): void {
     date.setDate(date.getDate() - i);
 
     const baseScore = 50 + Math.random() * 30;
-    const spike = Math.random() > 0.9 ? Math.random() * 40 : 0;     const totalScore = baseScore + spike;
+    const spike = Math.random() > 0.9 ? Math.random() * 40 : 0;
+    const totalScore = baseScore + spike;
     anomalies.push({
       x: date.getTime(),
       y: totalScore,
@@ -820,7 +825,9 @@ function createRiskEvolutionChart(): void {
   const datasets = categories.map((category, idx) => {
     const baseValue = 3 + idx * 0.5;
     const data = years.map((_date, i) => {
-      const trend = 0.02 * i;       const seasonal = Math.sin(i / 6) * 0.5;       const noise = (Math.random() - 0.5) * 0.3;
+      const trend = 0.02 * i;
+      const seasonal = Math.sin(i / 6) * 0.5;
+      const noise = (Math.random() - 0.5) * 0.3;
       return baseValue + trend + seasonal + noise;
     });
 

@@ -69,7 +69,8 @@ export function decodeHtmlEntities(text: string | null | undefined): string {
     try {
       return String.fromCodePoint(codePoint);
     } catch {
-      return _match;     }
+      return _match;
+    }
   });
 
   result = result.replace(/&#x([0-9a-fA-F]+);/g, (_match: string, hex: string): string => {

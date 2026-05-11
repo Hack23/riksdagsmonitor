@@ -880,7 +880,8 @@ function createComparisonChart(data: CSVRow[]): void {
 
   const chartData: ComparisonDataPoint[] = PARTIES.map((party) => {
     const partyRow = data.find((row) => row.party === party);
-    let score = 50; 
+    let score = 50;
+
     if (partyRow) {
       score = parseFloat(partyRow.docs_per_member) || 0;
       if (score > 0 && score < 10) score *= 10;
@@ -1068,7 +1069,8 @@ function createMomentumChart(data: CSVRow[]): void {
       };
     }
 
-    return { party, momentum: 50 };   });
+    return { party, momentum: 50 };
+  });
 
   const chart = new Chart(ctx, {
     type: 'doughnut',

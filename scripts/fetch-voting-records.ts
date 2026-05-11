@@ -473,7 +473,8 @@ async function main(): Promise<void> {
         ? [path.join(dailyRoot, docType)]
         : manifestPaths
             .map((p) => path.dirname(p))
-            .filter((d) => !d.endsWith(date)); 
+            .filter((d) => !d.endsWith(date));
+
       for (const dtDir of docTypeDirs) {
         const injectionDir = path.join(dtDir, 'voting-records');
         fs.mkdirSync(injectionDir, { recursive: true });

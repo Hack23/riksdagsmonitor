@@ -45,7 +45,9 @@ export function demoteHeadings(body: string): string {
     const m = line.match(/^(#{1,6})(\s+\S)/);
     if (!m) continue;
     const current = m[1]!.length;
-    if (current >= 6) continue;              if (current === 1) continue;             lines[i] = '#'.repeat(current + 1) + line.slice(current);
+    if (current >= 6) continue;
+    if (current === 1) continue;
+    lines[i] = '#'.repeat(current + 1) + line.slice(current);
   }
   return lines.join('\n');
 }

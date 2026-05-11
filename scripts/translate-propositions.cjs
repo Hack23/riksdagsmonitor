@@ -603,7 +603,8 @@ function translateFile(sourceFile, outputDir, targetLang) {
   translated = translated.replace(/← Back to News/, trans.backToNews);
   
   const dateMatch = path.basename(sourceFile).match(/(\d{4}-\d{2}-\d{2})/);
-  const datePattern = dateMatch ? dateMatch[1] : '2026-02-18';   
+  const datePattern = dateMatch ? dateMatch[1] : '2026-02-18';
+  
   const removeEnActivePattern = new RegExp(`(<a href="${datePattern}-government-propositions-en\\.html" class="lang-link) active"`, 'g');
   translated = translated.replace(
     removeEnActivePattern,

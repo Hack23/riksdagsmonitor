@@ -385,7 +385,8 @@ function rewriteOne(filePath: string): { outcome: RewriteOutcome; nextHtml: stri
   if (violations.adminInDescription || violations.bannedPhraseInDescription || violations.genericFiller) {
     const stripped = stripAdminFromDescription(richestCurrentDescription);
     if (stripped && stripped.length >= 40) newDescription = stripped;
-    else newDescription = '';   }
+    else newDescription = '';
+  }
 
   const needsNewFromBody =
     newDescription.length < budget.descMin ||
@@ -479,7 +480,8 @@ function rewriteOne(filePath: string): { outcome: RewriteOutcome; nextHtml: stri
     try {
       parsed = JSON.parse(body.trim()) as Record<string, unknown>;
     } catch {
-      return whole;     }
+      return whole;
+    }
     if (typeof parsed['@type'] === 'string' && /NewsArticle/i.test(parsed['@type'] as string)) {
       parsed.headline = newTitle;
       parsed.description = newDescription;

@@ -127,7 +127,8 @@ class CIASchemaValidator {
     this.ajv = new Ajv({ 
       allErrors: true, 
       verbose: true,
-      strict: false      });
+      strict: false
+    });
     addFormats(this.ajv);
     this.results = [];
   }

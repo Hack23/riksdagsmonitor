@@ -104,7 +104,8 @@ export const LIGHT_THEME_COLORS: ThemeColors = {
  * ```
  */
 export function getActiveThemeColors(): ThemeColors {
-  if (typeof document === 'undefined') return DARK_THEME_COLORS;   const theme = document.documentElement.getAttribute('data-theme');
+  if (typeof document === 'undefined') return DARK_THEME_COLORS;
+  const theme = document.documentElement.getAttribute('data-theme');
   if (theme === 'light') return LIGHT_THEME_COLORS;
   if (theme === 'dark') return DARK_THEME_COLORS;
   if (typeof window !== 'undefined' && window.matchMedia &&

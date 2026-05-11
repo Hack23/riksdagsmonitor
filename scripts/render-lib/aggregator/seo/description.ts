@@ -212,11 +212,13 @@ export function readBlufParagraph(markdown: string): string | null {
   const after = body.slice(blufMatch.index + blufMatch[0].length);
   const paragraphs = after.split(/\n\n+/).map((p) => p.trim()).filter(Boolean);
   for (const p of paragraphs) {
-    if (/^#+\s/.test(p)) break;                       if (/^<!--/.test(p)) continue;
+    if (/^#+\s/.test(p)) break;
+    if (/^<!--/.test(p)) continue;
     if (/^\|/.test(p)) continue;
     if (/^```/.test(p)) continue;
     if (/^[>*]\s/.test(p)) continue;
-    if (/^[-*_]{3,}\s*$/.test(p)) continue;            const fragments = p.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
+    if (/^[-*_]{3,}\s*$/.test(p)) continue;
+    const fragments = p.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
     if (fragments.length > 0 && fragments.every((f) => ADMIN_FIELD_RE.test(f.trim()))) continue;
     return stripBlufLabel(markdownInlineToText(p));
   }
@@ -247,7 +249,13 @@ export function readFirstParagraph(markdown: string): string | null {
   const body = cleanArtifactBody(markdown);
   const lines = body.split(/\n\n/).map((p) => p.trim()).filter(Boolean);
   for (const p of lines) {
-    if (/^#+\s/.test(p)) continue;                   if (/^<!--/.test(p)) continue;                   if (/^\|/.test(p)) continue;                     if (/^```/.test(p)) continue;                    if (/^[>*]\s/.test(p)) continue;                 if (/^[-*_]{3,}\s*$/.test(p)) continue;          const fragments = p.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
+    if (/^#+\s/.test(p)) continue;
+    if (/^<!--/.test(p)) continue;
+    if (/^\|/.test(p)) continue;
+    if (/^```/.test(p)) continue;
+    if (/^[>*]\s/.test(p)) continue;
+    if (/^[-*_]{3,}\s*$/.test(p)) continue;
+    const fragments = p.split(ADMIN_FRAGMENT_SPLITTER).filter(Boolean);
     if (fragments.length > 0 && fragments.every((f) => ADMIN_FIELD_RE.test(f.trim()))) continue;
     return stripBlufLabel(markdownInlineToText(p));
   }

@@ -163,10 +163,12 @@ export function calculateSkrivelseDeadline(
     throw new RangeError(`Invalid publish_date: ${publishDate}`);
   }
   const year = pub.getUTCFullYear();
-  const month = pub.getUTCMonth();   const day = pub.getUTCDate();
+  const month = pub.getUTCMonth();
+  const day = pub.getUTCDate();
 
   const deadlineYear = year + Math.floor((month + months) / 12);
-  const deadlineMonth = (month + months) % 12; 
+  const deadlineMonth = (month + months) % 12;
+
   const daysInDeadlineMonth = new Date(Date.UTC(deadlineYear, deadlineMonth + 1, 0)).getUTCDate();
   const deadlineDay = Math.min(day, daysInDeadlineMonth);
 

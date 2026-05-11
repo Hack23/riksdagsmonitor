@@ -748,7 +748,8 @@ export class CIADashboardRenderer {
 
     const periodGroups: Record<string, typeof riskEvolution.entries> = {};
     riskEvolution.entries.forEach(e => {
-      const period = e.period.substring(0, 7);       if (!periodGroups[period]) periodGroups[period] = [];
+      const period = e.period.substring(0, 7);
+      if (!periodGroups[period]) periodGroups[period] = [];
       periodGroups[period].push(e);
     });
 

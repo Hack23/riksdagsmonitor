@@ -306,7 +306,10 @@ export function stripLeadingAdminBylines(body: string): string {
         const ft = f.trim();
         if (!ft) return true;
         if (ADMIN_FIELD_RE.test(ft)) return true;
-        if (ft.startsWith('**')) return false;         if (ft.includes(':')) return false;         return true;       });
+        if (ft.startsWith('**')) return false;
+        if (ft.includes(':')) return false;
+        return true;
+      });
     });
     if (allLinesAdmin) continue;
     kept.push(p);

@@ -558,7 +558,8 @@ async function runPreArticleAnalysis(opts: {
     console.warn('\n⚠️  No documents downloaded for this date.');
   }
 
-  const totalFiles = 1 + storedCount;   console.log(`\n✅ Data download complete! Results in: ${path.relative(REPO_ROOT, outputDir)}/`);
+  const totalFiles = 1 + storedCount;
+  console.log(`\n✅ Data download complete! Results in: ${path.relative(REPO_ROOT, outputDir)}/`);
   console.log(`   📄 ${totalFiles} total files written (1 manifest + ${storedCount} documents)`);
   console.log(`   📊 ${allDocs.length} documents available for AI analysis`);
   if (autoFullTextTopN !== null && autoFullTextTopN > 0) {

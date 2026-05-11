@@ -258,7 +258,8 @@ class CIASchemaUpdateChecker {
       return { content, hash };
     } catch (error: unknown) {
       if ((error as NodeJS.ErrnoException).code === 'ENOENT') {
-        return null;       }
+        return null;
+      }
       throw error;
     }
   }
@@ -322,7 +323,8 @@ class CIASchemaUpdateChecker {
 
     this.printSummary();
 
-    return this.updates.length > 0 ? 1 : 0;   }
+    return this.updates.length > 0 ? 1 : 0;
+  }
 
   /**
    * Save update report

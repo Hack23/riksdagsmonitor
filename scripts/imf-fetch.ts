@@ -76,7 +76,8 @@ function loadCachedIMFData(indicator: string, country: string): { data: unknown;
  */
 function isCacheStale(fetchedAt: string): boolean {
   const fetched = new Date(fetchedAt);
-  if (Number.isNaN(fetched.getTime())) return true;   const sixMonthsAgo = new Date();
+  if (Number.isNaN(fetched.getTime())) return true;
+  const sixMonthsAgo = new Date();
   sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
   return fetched < sixMonthsAgo;
 }

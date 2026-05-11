@@ -250,7 +250,8 @@ async function fetchAnomalyData(): Promise<void> {
       Object.entries(partyAnomalies).forEach(([party, data]) => {
         if (data.totalCount > 0) {
           const weightedAvg = data.totalRebellions / data.totalCount;
-          const deviation = Math.min(6, weightedAvg / 5);           const hasHighRebels = data.classifications.some(c => c === 'FREQUENT_STRONG_REBEL' || c === 'CONSISTENT_REBEL');
+          const deviation = Math.min(6, weightedAvg / 5);
+          const hasHighRebels = data.classifications.some(c => c === 'FREQUENT_STRONG_REBEL' || c === 'CONSISTENT_REBEL');
           anomalies.push({
             party,
             date: '2024-06-15',

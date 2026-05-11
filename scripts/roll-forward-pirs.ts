@@ -381,8 +381,15 @@ function determineOrigin(
  * PIR status file. Groups PIRs by status and stamps each open PIR with an
  * obsolescence date calculated as `targetDate + horizonDays`.
  *
- * @param sourcePirIds - Set of PIR IDs that existed in the source file. Used to
- *   determine whether a PIR was inherited vs. newly created in this run.
+ * @param output - The rolled-forward PIR status file to render.
+ * @param sourcePath - Path of the source file that produced `output`, used to
+ *   compute repo-relative paths in the rendered Markdown.
+ * @param targetDate - The roll-forward target date (YYYY-MM-DD), anchor for
+ *   the obsolescence calculation.
+ * @param options - Optional `repoRoot` override and the `sourcePirIds` Set
+ *   identifying which PIRs were inherited from the source file (vs. newly
+ *   created during this run).
+ * @returns Markdown text for the `horizon-pir-rollforward.md` artifact.
  */
 export function emitRollforwardMd(
   output: PirStatusFile,

@@ -133,7 +133,8 @@ export function subtractBusinessDays(dateStr: string, days: number): string {
   let remaining = Math.max(0, Math.floor(days));
   while (remaining > 0) {
     d.setUTCDate(d.getUTCDate() - 1);
-    const dow = d.getUTCDay();     if (dow !== 0 && dow !== 6) {
+    const dow = d.getUTCDay();
+    if (dow !== 0 && dow !== 6) {
       remaining--;
     }
   }
@@ -183,7 +184,8 @@ const FETCH_TASK_TYPE_MAP: Record<FetchTaskName, DocumentTypeKey> = {
 function currentRm(): string {
   const now = new Date();
   const year = now.getUTCFullYear();
-  const month = now.getUTCMonth() + 1;   if (month >= 10) {
+  const month = now.getUTCMonth() + 1;
+  if (month >= 10) {
     return `${year}/${String(year + 1).slice(-2)}`;
   }
   return `${year - 1}/${String(year).slice(-2)}`;
@@ -214,7 +216,8 @@ export async function downloadAllDocuments(
   const start = Date.now();
   const limit = options.limit ?? 20;
   const rm = options.rm ?? currentRm();
-  const docTypes = options.docTypes ?? null; 
+  const docTypes = options.docTypes ?? null;
+
   const dataSources: string[] = [];
   const data: DownloadedData = {
     propositions: [],

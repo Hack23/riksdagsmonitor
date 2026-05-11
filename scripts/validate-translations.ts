@@ -258,7 +258,8 @@ const checks: ValidationChecks = {
   },
   
   rtlAttribute: (content: string, lang: LanguageConfig): boolean => {
-    if (!lang.rtl) return true;     return content.includes('dir="rtl"');
+    if (!lang.rtl) return true;
+    return content.includes('dir="rtl"');
   },
   
   hasTitle: (content: string): boolean => {
@@ -275,7 +276,8 @@ const checks: ValidationChecks = {
   
   hasHreflang: (content: string): boolean => {
     const count: number = (content.match(/hreflang=/g) || []).length;
-    return count >= 14;   },
+    return count >= 14;
+  },
   
   hasOgLocale: (content: string, _lang: LanguageConfig): boolean => {
     return content.includes(`<meta property="og:locale" content="`);

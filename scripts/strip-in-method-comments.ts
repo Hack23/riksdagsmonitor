@@ -186,9 +186,6 @@ function collectInMethodComments(source: ts.SourceFile, bodyRanges: readonly Bod
  */
 function spliceComment(text: string, removal: CommentToRemove): string {
   let end = removal.end;
-  if (removal.kind === ts.SyntaxKind.SingleLineCommentTrivia && text[end] === '\n') {
-    end += 1;
-  }
   let start = removal.pos;
   let lineStart = start;
   while (lineStart > 0 && text[lineStart - 1] !== '\n') {
@@ -199,8 +196,12 @@ function spliceComment(text: string, removal: CommentToRemove): string {
   const onOwnLine = lineStart === 0 || text[lineStart - 1] === '\n';
   if (onOwnLine) {
     start = lineStart;
-    if (removal.kind === ts.SyntaxKind.MultiLineCommentTrivia && text[end] === '\n') {
-      end += 1;
+    if (text[end] === '\n') end += 1;
+  } else if (removal.kind === ts.SyntaxKind.SingleLineCommentTrivia) {
+    // Trailing line-comment on a code line — strip preceding spaces/tabs so the
+    // surviving line does not have dangling whitespace, but keep the newline.
+    while (start > lineStart && (text[start - 1] === ' ' || text[start - 1] === '\t')) {
+      start -= 1;
     }
   }
   return text.slice(0, start) + text.slice(end);

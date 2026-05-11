@@ -324,7 +324,8 @@ export function classifyArticleType(content: string, fileName: string, relativeP
     'השבוע הבא', 'הקרוב',                                                       // he
     '来週の展望', '今後',                                                          // ja
     '주간 전망', '다가오는',                                                       // ko
-    '一周展望', '即将'                                                               ];
+    '一周展望', '即将'
+  ];
 
   if (fileName.includes('week-ahead') || fileName.includes('month-ahead') || prospectiveKeywords.some((kw) => lowerContent.includes(kw.toLowerCase()))) {
     return 'prospective';
@@ -344,7 +345,8 @@ export function classifyArticleType(content: string, fileName: string, relativeP
     'דוחות ועדות', 'ניתוח', 'דוח ועדה',                                         // he
     '委員会報告', '分析',                                                          // ja
     '위원회 보고서', '분석',                                                       // ko
-    '委员会报告', '分析'                                                             ];
+    '委员会报告', '分析'
+  ];
 
   if (fileName.includes('committee-reports') || fileName.includes('propositions') || fileName.includes('motions') ||
       fileName.includes('deep-inspection') ||
@@ -366,7 +368,8 @@ export function classifyArticleType(content: string, fileName: string, relativeP
     'חדשות אחרונות', 'דחוף',                                                     // he
     '速報', '緊急',                                                               // ja
     '속보', '긴급',                                                               // ko
-    '突发新闻', '紧急'                                                               ];
+    '突发新闻', '紧急'
+  ];
 
   if (fileName.includes('breaking') || breakingKeywords.some((kw) => lowerContent.includes(kw.toLowerCase()))) {
     return 'breaking';
@@ -400,7 +403,8 @@ export function extractTopics(content: string, fileName: string = ''): string[] 
     if (pattern.test(sourceSample)) topics.push(topic);
   }
 
-  return [...new Set(topics)].slice(0, 5); }
+  return [...new Set(topics)].slice(0, 5);
+}
 
 /**
  * Extract tags from article:tag meta tags.
@@ -420,7 +424,8 @@ export function extractTags(content: string, fileName: string = '', inferredTopi
     tags.push(inferredType, ...inferredTopics);
   }
 
-  return [...new Set(tags.filter((tag) => tag.trim().length > 0))].slice(0, 4); }
+  return [...new Set(tags.filter((tag) => tag.trim().length > 0))].slice(0, 4);
+}
 
 /**
  * Collect all article HTML file paths recursively from a directory.

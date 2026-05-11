@@ -158,7 +158,8 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
   sections.push(buildReaderGuide(rootArtifactSet, docsExist));
 
   for (const fileName of AGGREGATION_ORDER) {
-    if (fileName === 'executive-brief.md') continue;     const aliases = aliasGroupFor(fileName);
+    if (fileName === 'executive-brief.md') continue;
+    const aliases = aliasGroupFor(fileName);
     if (aliases && used.some((usedFile) => aliases.has(usedFile))) continue;
     readSection(fileName, true);
     if (fileName === 'significance-scoring.md') {

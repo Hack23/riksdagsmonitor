@@ -276,7 +276,8 @@ export function findUnclosedMermaidFences(body: string): readonly UnclosedMermai
   while (i < lines.length) {
     const line = lines[i]!;
     if (/^```mermaid[\t ]*$/.test(line)) {
-      const openLine = i + 1;       let j = i + 1;
+      const openLine = i + 1;
+      let j = i + 1;
       let closed = false;
       let stoppedAtNextOpening = false;
       for (; j < lines.length; j += 1) {
@@ -370,7 +371,8 @@ export function scanBannedPhrases(
   const lower = text.toLowerCase();
   for (const phrase of bannedPhrases) {
     const trimmed = phrase.trim();
-    if (trimmed.length === 0) continue;     const needle = trimmed.toLowerCase();
+    if (trimmed.length === 0) continue;
+    const needle = trimmed.toLowerCase();
     let idx = lower.indexOf(needle);
     while (idx !== -1) {
       const start = Math.max(0, idx - 20);
@@ -661,7 +663,8 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
     });
   } else if (anchors > 0) {
     const density = wordCount / anchors;
-    let threshold = 200;     if (subfolderName) {
+    let threshold = 200;
+    if (subfolderName) {
       try {
         const thresholdsPath = join(REPO_ROOT, 'analysis', 'methodologies', 'reference-quality-thresholds.json');
         if (existsSync(thresholdsPath)) {

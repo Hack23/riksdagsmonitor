@@ -146,7 +146,8 @@ export async function checkPerDocumentCoverage(
   const manifestPath = join(analysisDir, 'data-download-manifest.md');
 
   if (!existsSync(manifestPath)) {
-    return results;   }
+    return results;
+  }
 
   const content = await readFile(manifestPath, 'utf-8');
   const dokIds = extractDokIds(content);
@@ -339,12 +340,14 @@ async function checkSwotEvidence(analysisDir: string): Promise<GateCheckResult[]
           artifact: 'swot-analysis.md',
         });
       }
-      continue;     }
+      continue;
+    }
 
     if (TABLE_ROW_RE.test(line)) {
       if (TABLE_SEP_RE.test(line)) continue;
       tableRowCount++;
-      if (tableRowCount === 1) continue;       if (!EVIDENCE_PATTERN.test(line)) {
+      if (tableRowCount === 1) continue;
+      if (!EVIDENCE_PATTERN.test(line)) {
         results.push({
           checkId: 'evidence-citations',
           passed: false,
@@ -432,7 +435,8 @@ async function checkSignificanceScoringEvidence(
     if (TABLE_ROW_RE.test(line)) {
       if (TABLE_SEP_RE.test(line)) continue;
       tableRowCount++;
-      if (tableRowCount === 1) continue;       if (!EVIDENCE_PATTERN.test(line)) {
+      if (tableRowCount === 1) continue;
+      if (!EVIDENCE_PATTERN.test(line)) {
         results.push({
           checkId: 'evidence-citations',
           passed: false,

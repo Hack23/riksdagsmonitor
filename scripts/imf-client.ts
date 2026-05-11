@@ -538,7 +538,9 @@ export class ImfClient {
    * `/data/...` endpoint as of 2026-05. SDMX 3.0 is the only IMF SDMX
    * surface this client targets.
    *
-   * @param path URL path starting with `/data/...` or `/structure/...`
+   * @param pathWithQuery URL path starting with `/data/...` or `/structure/...`,
+   *   optionally followed by a `?...` query string.
+   * @returns The parsed JSON envelope from the IMF SDMX 3.0 endpoint.
    */
   async sdmxFetch(pathWithQuery: string): Promise<unknown> {
     const normalized = normalizeSdmxPathForBase(this.sdmxBaseURL, pathWithQuery);

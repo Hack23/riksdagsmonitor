@@ -296,7 +296,8 @@ function deriveEnSourcePath(filepath: string): string | null {
   const dir = dirname(filepath);
   const name = basename(filepath);
   const enName = name.replace(/-[a-z]{2}\.html$/, '-en.html');
-  if (enName === name) return null;   const enPath = join(dir, enName);
+  if (enName === name) return null;
+  const enPath = join(dir, enName);
   return existsSync(enPath) ? enPath : null;
 }
 
