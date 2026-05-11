@@ -48,8 +48,20 @@ Once KU34 passes, any future government seeking to reverse the abortion provisio
 - **Gap**: Evidence re Turkey-Hamas operational linkage claimed in HD11809
 - **Requirement**: UD public statement; open source verification of Hamas-Turkey claim
 
+### KIJ-6: Energy policy debate reveals deepening SD-government tension on green transition framing (MEDIUM confidence)
+Chamber debate on interpellations 2025/26:453 (electricity grid investments, Josef Fransson/SD to Ebba Busch/KD) and 2025/26:448 (disinformation about wind power, Fransson/SD to Busch/KD) reveals a recurring SD pattern of challenging the green energy transition narrative. SD's use of "desinformation om vindkraft" framing signals an attempt to redefine renewable energy discourse ahead of the election. Busch's responses (KD) represent government coalition management of the SD's energy-skeptic wing. This energy-sovereignty narrative links to KIJ-3's SD foreign policy positioning: tech sovereignty + energy sovereignty as a combined SD election message. [Admiralty: B2 — government chamber record; cross-confirmed by multiple speech instances]
+
+## Prior-cycle PIR ingestion (Tier-C)
+
+Carrying forward open PIRs from prior cycles:
+- **PIR-001** (CLOSED): Constitutional reform — closed by KU34 recommendation today
+- **PIR-002** (ONGOING): Migration regime — V motions HD024149/HD024150 add legal challenge vectors; carried forward to T+30d
+- **PIR-003** (ONGOING): Party positioning — SD's energy narrative represents a new campaign vector not in prior-cycle PIR-003 scope; added as PIR-003b
+- **PIR-004** (ACTIVE): NATO/foreign policy — SD's EPG Armenia and Turkey-Hamas interpellations contribute; carried forward
+- **PIR-005** (NEW): Energy sovereignty narrative — SD's coordinated use of desinformation/vindkraft framing warrants new PIR. Indicators: additional SD energy interpellations; party manifesto energy chapter; Busch response tone.
+
 ## Assessment confidence calibration
 - **Source quality**: PRIMARY (official parliamentary records) — HIGH
-- **Temporal currency**: CURRENT (all documents dated 2026-05-11) — HIGH
-- **Analytical depth**: MODERATE-HIGH (fulltext for key docs; summaries for interpellations) — MEDIUM-HIGH
+- **Temporal currency**: CURRENT (all documents dated 2026-05-11; anföranden data confirmed same date) — HIGH
+- **Analytical depth**: MODERATE-HIGH (fulltext for key docs; summaries for interpellations; chamber speeches metadata for energy debates) — MEDIUM-HIGH
 - **Predictive accuracy**: Scenario probabilities are assessments, not predictions; uncertainty increases with horizon
