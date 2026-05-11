@@ -167,6 +167,10 @@ function collectInMethodComments(source: ts.SourceFile, bodyRanges: readonly Bod
     for (const c of leading) handle(c.pos, c.end, c.kind);
     const trailing = ts.getTrailingCommentRanges(text, node.getEnd()) ?? [];
     for (const c of trailing) handle(c.pos, c.end, c.kind);
+    if (ts.isBlock(node) && node.statements.length > 0) {
+      const tail = ts.getLeadingCommentRanges(text, node.statements.end) ?? [];
+      for (const c of tail) handle(c.pos, c.end, c.kind);
+    }
     ts.forEachChild(node, visit);
   };
   visit(source);

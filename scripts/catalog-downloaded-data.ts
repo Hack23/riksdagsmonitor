@@ -166,9 +166,7 @@ export function buildCatalog(
       if (currentHasDate && !existingHasDate) {
         bestByKey.set(key, e);
       }
-      // Otherwise keep existing (first-seen or already date-stamped)
     }
-    // Non-vote duplicates: keep first-seen (shouldn't occur with current DATA_SUBDIRS)
   }
   const dedupedEntries = [...bestByKey.values()];
 
