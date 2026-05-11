@@ -1,88 +1,63 @@
-# Cross-Reference Map — Opposition Motions 2026-05-11
+# Cross-Reference Map — Opposition Motions — 2026-05-11
 
-## Document Linkage Graph
+**Family**: B | **Confidence**: HIGH
 
-### Cluster 1: Prop. 2025/26:242 — Forestry
+## Document Cross-Reference Matrix
 
+| Dok-ID | Proposition | Committee | Party | Related Dok-IDs | Common Arguments |
+|--------|------------|-----------|-------|----------------|-----------------|
+| HD024141 | 2025/26:242 | MJU | V | HD024147 (MP) | EU compliance, biodiversity, full rejection |
+| HD024142 | 2025/26:246 | JuU | V | HD024146, HD024148 | Age-13 rejection, children's rights |
+| HD024143 | 2025/26:242 | MJU | SD | (lone modifier) | Land exemptions, conditional support |
+| HD024144 | 2025/26:242 | MJU | S | (lone proceduralist) | Impact analysis demand, notification periods |
+| HD024145 | 2025/26:242 | MJU | C | HD024146 (same party) | Production package demand |
+| HD024146 | 2025/26:246 | JuU | C | HD024145 (same party) | Smart-on-crime, UNCRC, age-13 rejection |
+| HD024147 | 2025/26:242 | MJU | MP | HD024141 (V) | Full rejection, EU Nature Restoration Law |
+| HD024148 | 2025/26:246 | JuU | MP | HD024142 (V) | Age-13 rejection, Art. 29 sentencing |
+
+## Argument Cluster Network
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d'}}}%%
+graph LR
+    classDef cluster fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+    classDef doc fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+
+    EU["EU Compliance Cluster<br/>(Nature Restoration,<br/>Habitats Directive)"]:::cluster
+    AGE["Age-13 Rejection Cluster<br/>(UNCRC, Research,<br/>Rehabilitation)"]:::cluster
+    PROD["Production Enhancement<br/>Cluster (Competitiveness,<br/>Deregulation+)"]:::cluster
+    PROC["Procedural Caution<br/>Cluster (Impact analysis,<br/>Notification)"]:::cluster
+    LAND["Land-Use Freedom<br/>Cluster (Biological<br/>diversity via freedom)"]:::cluster
+
+    HD024141["HD024141 V/MJU"]:::doc
+    HD024142["HD024142 V/JuU"]:::doc
+    HD024143["HD024143 SD/MJU"]:::doc
+    HD024144["HD024144 S/MJU"]:::doc
+    HD024145["HD024145 C/MJU"]:::doc
+    HD024146["HD024146 C/JuU"]:::doc
+    HD024147["HD024147 MP/MJU"]:::doc
+    HD024148["HD024148 MP/JuU"]:::doc
+
+    EU --> HD024141
+    EU --> HD024147
+    EU --> HD024144
+    AGE --> HD024142
+    AGE --> HD024146
+    AGE --> HD024148
+    PROD --> HD024145
+    PROC --> HD024144
+    LAND --> HD024143
 ```
-Prop. 2025/26:242 (Ett tydligt regelverk för aktivt skogsbruk)
-├── HD024141 (V, Kajsa Fredholm) — REJECT
-│   ├── cites: Skogsstyrelsen 2026:07 [26,000 ha/year high-value felling]
-│   ├── cites: EU Habitats Directive Art. 6
-│   ├── cites: Naturvårdsverket previous positions
-│   └── PIR: EU-HABITATS-SE (open)
-├── HD024143 (SD, Martin Kinnunen) — SUPPORT+QUALIFY
-│   ├── supports deregulation direction
-│   └── adds: <50 ha small owner exemption demand
-├── HD024144 (S, Åsa Westlund) — DELAY/AMEND
-│   ├── demands: cumulative impact analysis (2020–2026 all regulatory changes)
-│   └── cites: SOU 2025:93 (prior reform work)
-├── HD024145 (C, Helena Lindahl) — SUPPORT+INSUFFICIENT
-│   ├── approves deregulation direction
-│   ├── criticises: SOU 2025:93 production incentives deferred
-│   └── signals: wants more, not less
-└── HD024147 (MP, Rebecka Le Moine) — REJECT
-    ├── cites: 2030 biodiversity targets
-    └── cites: EU Habitats Directive compatibility
-```
 
-### Cluster 2: Prop. 2025/26:246 — Youth Crime
+## Prior riksmöte linkages
 
-```
-Prop. 2025/26:246 (Skärpta regler för unga lagöverträdare)
-├── HD024142 (V, Gudrun Nordborg) — PARTIAL SUPPORT / OPPOSE AGE CUT
-│   ├── supports: tightened youth supervision orders
-│   ├── opposes: age cut to 13 (brain research basis)
-│   ├── opposes: reduced ungdomsrabatt
-│   ├── cites: Lagrådet yttrande 12 March 2026
-│   └── cites: adolescent brain development research
-├── HD024146 (C, Ulrika Liljeberg) — OPPOSE (constitutional)
-│   ├── opposes: age cut — RF 2 kap. 8, 20–21 §§ incompatible [Lagrådet yttrande 12 March 2026]
-│   ├── opposes: reduced ungdomsrabatt
-│   ├── warns: "government repeatedly ignores Lagrådet and the constitution"
-│   └── PIR: LAGRÅDET-246 (ANSWERED); PIR: COALITION-C-JuU (ANSWERED as parliamentary)
-└── HD024148 (MP, Ulrika Westerlund) — OPPOSE (CRC basis)
-    ├── opposes: age cut to 13
-    └── cites: CRC Art. 40 (children's right not to be treated as adults in criminal justice)
-```
+- **Voteringar**: No MJU or JuU votes found for 2025/26 riksmöte in MCP search. Gap documented. Proxy: 2022/23 MJU votes on Prop. 2022/23:214 (skogsbruk), 2022/23:233 (ungdomsbrott) — party positions consistent with current motions.
+- **Propositions**: 2025/26:242 and 2025/26:246 are new government propositions in this riksmöte; no prior motion filings on same propositions.
 
-## Cross-Citation Network
+**Evidence Anchors**:
 
-| Source | References | Type |
-|--------|-----------|------|
-| HD024141 (V) | EU Habitats Directive Art. 6; Skogsstyrelsen 2026:07; Naturvårdsverket | External/agency |
-| HD024142 (V) | Lagrådet yttrande 12 March 2026; brain development research; lag 2018:1197 (CRC) | Legal/scientific |
-| HD024143 (SD) | Prop. 2025/26:242; SOU 2025:93 | Prop/SOU |
-| HD024144 (S) | SOU 2025:93; Skogsstyrelsen; cumulative impact framework | SOU/agency |
-| HD024145 (C) | SOU 2025:93; Prop. 2025/26:242 text | Prop/SOU |
-| HD024146 (C) | Lagrådet yttrande 12 March 2026; RF 2 kap. 8,20,21 §§; prior Lagrådet pattern | Constitutional |
-| HD024147 (MP) | Habitats Directive; 2030 biodiversity targets | International |
-| HD024148 (MP) | CRC Art. 40; UN Convention | International |
-
-## Inter-Motion Convergences
-
-| Convergence | Motions | Theme |
-|-------------|---------|-------|
-| Full rejection (skogsbruk) | HD024141 + HD024147 | V+MP environmental coalition |
-| Lagrådet negative yttrande | HD024142 + HD024146 | V+C constitutional coalition |
-| EU law compliance (skogsbruk) | HD024141 + HD024147 | V+MP EU alignment |
-| Age cut rejection | HD024142 + HD024146 + HD024148 | V+C+MP children's rights coalition |
-| Government direction support (skogsbruk) | HD024143 + HD024145 | SD+C support-with-conditions |
-
-## PIR Cross-Reference
-
-| PIR ID | Relevant Motions | Status |
-|--------|-----------------|--------|
-| LAGRÅDET-246 | HD024142, HD024146 | **ANSWERED** (yttrande 12 March 2026) |
-| EU-HABITATS-SE | HD024141, HD024147 | OPEN |
-| COALITION-C-JuU | HD024146 | **ANSWERED** (parliamentary, not press conference) |
-| S-CRC-JOIN | none filed | OPEN |
-
-## Economic Data Provenance
-
-Economic context used in this analysis cycle:
-- Source: `data/imf-context.json` (pre-warm)
-- Provider: IMF | Vintage: WEO-2026-04 | Retrieved: 2026-05-11T07:31:25Z
-- Indicators cited: NGDP_RPCH (Sweden 2026 forecast: 2.1%), GGXWDG_NGDP (36.6% of GDP)
-- Status: Live IMF fetch degraded; pre-warm context used; annotated as `(WEO Apr-2026, cached)`
-- SCB: Swedish forest sector ~2.4% of GDP, SEK 140 bn/year exports (SCB industry stats, 2024)
+| Claim | Evidence | Retrieved | Confidence |
+|-------|----------|-----------|------------|
+| HD024141 and HD024147 share EU argument cluster | HD024141 motivering + HD024147 motivering | 2026-05-11 | HIGH |
+| HD024142, HD024146, HD024148 share age-13 rejection | förslag sections | 2026-05-11 | HIGH |
+| No prior voteringar in 2025/26 | riksdag-regering-mcp null result | 2026-05-11 | HIGH |

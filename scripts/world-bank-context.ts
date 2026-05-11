@@ -376,9 +376,10 @@ export function getSwedishIndicatorQueries(): readonly { countryCode: string; in
  * Detect economic context references in article content.
  *
  * Recognises canonical IMF citations (`WEO:NGDP_RPCH`, `FM:GGXWDG_NGDP`,
- * `IFS:PCPI_IX`, `BOP:*`, `GFS_COFOG:*`, `DOTS:*`, `PCPS:*`, `MFS_IR:*`,
- * `ER:*`) and natural-language economic terms in English and Swedish. Used
- * by the article quality enhancer to score economic depth.
+ * `CPI:_T.IX`, `BOP:*`, `GFS_COFOG:GF02_T`, `IMTS:XG_FOB_USD`, `PCPS:*`,
+ * `MFS_IR:MMRT_RT_PT_A_PT`, `ER:USD_XDC.PA_RT`) and natural-language
+ * economic terms in English and Swedish. Used by the article quality
+ * enhancer to score economic depth.
  *
  * @param content - HTML or text content to analyze
  * @returns True if economic context is present

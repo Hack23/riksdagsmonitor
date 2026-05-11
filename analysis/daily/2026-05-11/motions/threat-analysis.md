@@ -1,42 +1,72 @@
-# Threat Analysis — Opposition Motions 2026-05-11
-**Framework**: STRIDE-P (Spoofing/Tampering/Repudiation/Information disclosure/DoS/Elevation/Policy reversal)
+# Threat Analysis — Opposition Motions — 2026-05-11
 
-## Threat Actors and Intent
+**Family**: A | **Framework**: STRIDE adapted for democratic accountability
 
-| Actor | Intent | Capability | Activity | Threat Level |
-|-------|--------|-----------|----------|-------------|
-| Vänsterpartiet | Full rejection both props; environmental+constitutional | Parliamentary | HD024141, HD024142 filed; public campaign ready | HIGH — systematic opposition |
-| Miljöpartiet | Full rejection skogsbruk; age-cut rejection | Parliamentary, NGO coalition | HD024147, HD024148 filed | MEDIUM — principled opposition |
-| Centerpartiet | Policy improvement (skogsbruk), constitutional compliance (JuU) | Parliamentary, electoral positioning | HD024145, HD024146 | HIGH — swing-vote significance |
-| Socialdemokraterna | Delay/amend skogsbruk via impact analysis; silent on JuU | Parliamentary, government-in-waiting | HD024144 filed; no JuU motion | MEDIUM — blocking delay strategy |
-| Lagrådet | Constitutional review role | Legal/constitutional authority | Yttrande 12 March 2026 issued — negative on age-cut | CRITICAL — formal legal finding |
-| EU Commission | Treaty enforcement | Supranational legal | Monitoring Habitats Directive compliance; no formal action yet | MEDIUM-HIGH — long-term legal threat |
-| Skogsstyrelsen | Agency data provision | Technical | 2026:07 report data actively cited against prop. 242 | MEDIUM — data threat to government narrative |
-| CRC bodies / UNHCR | International soft-law pressure | Monitoring | Potential formal observation on CRC Art. 40 if bill passes | LOW — soft law, no direct enforcement |
+## STRIDE Political Threat Analysis
 
-## STRIDE-P Assessment
+### S — Spoofing (Narrative misrepresentation)
+Opposition parties risk having their nuanced positions reduced to soundbites. V's partial acceptance of youth supervision improvements (HD024142) risks being framed as "V supports stricter youth rules" — misrepresenting their categorical rejection of the age threshold. Government communications teams will exploit opposition fragmentation.
 
-**Spoofing (narrative)**: No evidence of false attribution or astroturfing. All motions filed by named MPs with confirmed committee assignments. Source reliability: B1.
+**Threat actor**: Government press office, pro-government media  
+**Mitigation**: Opposition parties must communicate the specific asks (e.g., "we accept supervision but not age-13") clearly.
 
-**Tampering**: Not applicable to legislative documents. Motions are immutable once filed at riksdagen.se.
+### T — Tampering (Evidence manipulation)
+The government's impact analysis underpinning Prop. 2025/26:242 may omit biodiversity assessments. S (HD024144) explicitly demands a consequence analysis, implying the current one is incomplete. This constitutes a tampering risk in legislative quality.
 
-**Repudiation**: LOW risk. The government can attempt to characterise HD024146 (C, JuU) as "internal C concern" rather than coalition-bloc defection — this would be technically accurate (C is not in the governing coalition) but strategically dishonest given the supply-and-confidence dynamics.
+**Threat actor**: Ministry of Enterprise (Näringsdepartementet), government preparatory commission  
+**Mitigation**: Environmental agencies (Naturvårdsverket, Skogsstyrelsen) could provide counter-analyses via remissvar.
 
-**Information Disclosure**: Lagrådet yttrande (12 March 2026) is now public. All motion texts are public. No classified information involved.
+### R — Repudiation (Accountability evasion)
+Coalition partner SD supports the forestry bill publicly while filing a motion demanding concessions. This dual-track strategy allows SD to claim support if the bill passes and distance if it fails — classic repudiation risk.
 
-**DoS (legislative)**: S's HD024144 (cumulative impact analysis demand) is a potential parliamentary delaying tactic — if adopted by the MJU committee, it could delay prop. 242's committee report by 2–4 months. At election T–4 months, delay pushes implementation past the election.
+**Threat actor**: SD (Martin Kinnunen, HD024143)  
+**Mitigation**: Riksdagsmonitor must flag this conditional dual-track behaviour explicitly.
 
-**Elevation (legal)**: V's EU Habitats Directive Art. 6 argument (HD024141) is an attempt to elevate the legal challenge above Swedish parliamentary level to EU Commission enforcement — an effective escalation if Naturvårdsverket or an NGO files a formal complaint.
+### I — Information disclosure (Data gaps)
+No voteringar data for current riksmöte (2025/26). This is a structural information gap: we cannot compare current committee voting patterns to prior sessions for MJU or JuU.
 
-**Policy reversal risk**: C's dual HD024145+HD024146 creates the foundations for post-election policy reversal if C joins a new government coalition — this is a forward-horizon threat to governance stability of both the forestry deregulation and the youth crime provisions.
+**Threat actor**: Data availability — new riksmöte gap  
+**Mitigation**: Document gap; use 2022/23 MJU proxy analysis.
 
-## Threat Scenarios
+### D — Denial (Democratic bypass)
+If committee processes are truncated before the election (September 2026), both propositions may be rushed to chamber vote without adequate hearing of opposition testimony. Government could invoke urgency to bypass normal deliberation.
 
-**Scenario A — Constitutional collapse (T+3m, LOW probability 20%)**:
-C publicly escalates from parliamentary motion to coalition threat — demands RF amendment to prop. 246 as condition for continued supply-and-confidence. Government either amends bill (retreat) or C withdraws support (crisis). This would trigger an extraordinary constitutional/political event.
+**Threat actor**: Government (Statsminister, committee chairs)  
+**Mitigation**: Monitor committee scheduling announcements from June 2026.
 
-**Scenario B — Delayed skogsbruk (T+2m, MEDIUM probability 40%)**:
-S's cumulative impact analysis demand adopted or amplified by MJU committee leads to a government request for Naturvårdsverket supplementary review. Proposition delayed past 2026 election. Politically convenient for both government (removes an electoral liability) and S (claims credit for responsible governance).
+### E — Elevation (Coalition defection leverage)
+SD's conditional forestry support gives it leverage to extract policy concessions beyond what the proposition offers. This is an "elevation" of SD's de facto veto power within the coalition — structurally destabilising to government discipline.
 
-**Scenario C — Nominal passage, legal challenge (T+6m, HIGH probability 65%)**:
-Both propositions pass with M+KD+L+SD majority. V or MP, or a legal NGO, files a constitutional or EU-law challenge. The legal process runs for 18+ months; no immediate political consequence but creates long-term uncertainty. Youth crime provisions partially invalidated by HD or HFD.
+**Threat actor**: SD (strategic interest in extracting concessions before election)  
+**Mitigation**: Government must decide: full concession, partial accommodation, or call SD's bluff.
+
+## Key Threat Vectors
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d'}}}%%
+flowchart TD
+    classDef high fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    classDef medium fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    classDef low fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+
+    T1["🔴 SD Elevation Threat<br/>Conditional coalition support"]:::high
+    T2["🔴 Narrative Spoofing<br/>V partial acceptance misread"]:::high
+    T3["🟡 Impact Analysis Tampering<br/>Incomplete consequence study"]:::medium
+    T4["🟡 Democratic Denial<br/>Rushed pre-election votes"]:::medium
+    T5["🔵 Data Gap (Information)<br/>No 2025/26 voteringar"]:::low
+
+    T1 --> OUT1["Government forestry bill<br/>at risk of defeat"]
+    T2 --> OUT2["Opposition message<br/>fragmentation"]
+    T3 --> OUT3["EU infringement<br/>post-adoption"]
+    T4 --> OUT4["Legitimacy deficit<br/>in implementation"]
+    T5 --> OUT5["Accountability gap<br/>in monitoring"]
+```
+
+**Evidence Anchors**:
+
+| Claim | Evidence | Retrieved | Confidence |
+|-------|----------|-----------|------------|
+| SD dual-track (support + conditions) | HD024143 | 2026-05-11 | HIGH |
+| V partial acceptance risk | HD024142 partial rejection structure | 2026-05-11 | HIGH |
+| S demands impact analysis (tampering signal) | HD024144 förslag | 2026-05-11 | HIGH |
+| No voteringar 2025/26 | riksdag-regering-mcp search null result | 2026-05-11 | HIGH |

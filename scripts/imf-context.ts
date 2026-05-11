@@ -29,16 +29,24 @@ import { IMF_WEO_INDICATORS, IMF_FM_INDICATORS } from './imf-client.js';
 // Types
 // ---------------------------------------------------------------------------
 
-/** Database family an indicator belongs to. */
+/**
+ * Database family an indicator belongs to.
+ *
+ * The 2026-05 IMF SDMX 3.0 refactor (a) dissolved the legacy IFS dataflow
+ * into CPI / MFS_IR / ER, (b) renamed DOTS → IMTS, and (c) moved PCPS
+ * from IMF.STA to IMF.RES. Older code paths that still reference 'IFS'
+ * or 'DOTS' string literals must be updated. We keep 'BOP_AGG' as a
+ * separate alias for the aggregate-summary view of BOP.
+ */
 export type ImfDatabase =
   | 'WEO'
   | 'FM'
-  | 'IFS'
+  | 'CPI'
   | 'BOP'
   | 'BOP_AGG'
   | 'GFS_COFOG'
   | 'MFS_IR'
-  | 'DOTS'
+  | 'IMTS'
   | 'PCPS'
   | 'ER';
 
@@ -205,62 +213,67 @@ export const IMF_INDICATORS: readonly ImfIndicatorContext[] = Object.freeze([
   },
 
   // --- COFOG — committee-aligned spending decomposition ---
-  // COFOG codes (SDMX: GFS_COFOG database, 3-digit numeric). These are
-  // the four functions Riksdagsmonitor reports align with directly:
+  // COFOG codes (SDMX 3.0: GFS_COFOG v11.0.0). Indicator codes were
+  // renamed from G02/G07/G09/G10 to GF02_T/GF07_T/GF09_T/GF10_T in the
+  // 2026-05 refactor. Canonical Sweden key shape:
+  //   `SWE.S13.G2MF.{INDICATOR}.POGDP_PT.A`
+  // (SECTOR=S13 general-government, GFS_GRP=G2MF, TYPE_OF_TRANSFORMATION
+  // =POGDP_PT for % of GDP). The four functions Riksdagsmonitor reports
+  // align with directly:
   //   02 Defence         → FöU
   //   07 Health          → SoU
   //   09 Education       → UbU
   //   10 Social Protection → SfU
   {
     database: 'GFS_COFOG',
-    indicatorId: 'G02',
+    indicatorId: 'GF02_T',
     name: 'Government spending — Defence (COFOG 02)',
     description:
-      'General-government expenditure on defence as a share of total outlays. Committee-aligned with FöU (Defence).',
+      'General-government expenditure on defence as a share of GDP (POGDP_PT). Committee-aligned with FöU (Defence). 2026-05 refactor renamed the code from G02 → GF02_T.',
     policyAreas: ['defence', 'public spending'],
     committees: ['FöU', 'FiU'],
-    unit: 'Currency (flow) or % of total outlays',
+    unit: '% of GDP (POGDP_PT) or % of total outlays (POTO_PT) or national currency (XDC)',
     publishesProjections: false,
   },
   {
     database: 'GFS_COFOG',
-    indicatorId: 'G07',
+    indicatorId: 'GF07_T',
     name: 'Government spending — Health (COFOG 07)',
-    description: 'General-government expenditure on health. Committee-aligned with SoU (Health & Welfare).',
+    description: 'General-government expenditure on health. Committee-aligned with SoU (Health & Welfare). 2026-05 refactor renamed the code from G07 → GF07_T.',
     policyAreas: ['health', 'public spending'],
     committees: ['SoU', 'FiU'],
-    unit: 'Currency (flow) or % of total outlays',
+    unit: '% of GDP (POGDP_PT) or % of total outlays (POTO_PT) or national currency (XDC)',
     publishesProjections: false,
   },
   {
     database: 'GFS_COFOG',
-    indicatorId: 'G09',
+    indicatorId: 'GF09_T',
     name: 'Government spending — Education (COFOG 09)',
-    description: 'General-government expenditure on education. Committee-aligned with UbU (Education).',
+    description: 'General-government expenditure on education. Committee-aligned with UbU (Education). 2026-05 refactor renamed the code from G09 → GF09_T.',
     policyAreas: ['education', 'public spending'],
     committees: ['UbU', 'FiU'],
-    unit: 'Currency (flow) or % of total outlays',
+    unit: '% of GDP (POGDP_PT) or % of total outlays (POTO_PT) or national currency (XDC)',
     publishesProjections: false,
   },
   {
     database: 'GFS_COFOG',
-    indicatorId: 'G10',
+    indicatorId: 'GF10_T',
     name: 'Government spending — Social protection (COFOG 10)',
     description:
-      'General-government expenditure on social protection. Committee-aligned with SfU (Social Insurance).',
+      'General-government expenditure on social protection. Committee-aligned with SfU (Social Insurance). 2026-05 refactor renamed the code from G10 → GF10_T.',
     policyAreas: ['social protection', 'public spending', 'welfare'],
     committees: ['SfU', 'FiU'],
-    unit: 'Currency (flow) or % of total outlays',
+    unit: '% of GDP (POGDP_PT) or % of total outlays (POTO_PT) or national currency (XDC)',
     publishesProjections: false,
   },
 
   // --- Monetary (FiU — Riksbank oversight) ---
   {
     database: 'MFS_IR',
-    indicatorId: 'FPOLM_PA',
-    name: 'Central bank policy rate',
+    indicatorId: 'MMRT_RT_PT_A_PT',
+    name: 'Money market rate (IMF proxy for Riksbank policy rate)',
     description:
-      'Riksbank policy (styrränta) rate, monthly. Primary monetary-policy reference; pairs with WEO:PCPIPCH for the inflation/policy-rate narrative.',
+      'Money-market rate, monthly. The 2026-05 SDMX 3.0 SWE codelist no longer carries the FPOLM_PA central-bank rate directly — use this as the IMF proxy for the Riksbank styrränta, and prefer Riksbank statistics for the official rate.',
     policyAreas: ['monetary policy', 'interest rates'],
     committees: ['FiU'],
     unit: '% per annum',
@@ -269,24 +282,24 @@ export const IMF_INDICATORS: readonly ImfIndicatorContext[] = Object.freeze([
 
   // --- Trade (NU/UU — bilateral flows) ---
   {
-    database: 'DOTS',
-    indicatorId: 'TXG_FOB_USD',
+    database: 'IMTS',
+    indicatorId: 'XG_FOB_USD',
     name: 'Exports of goods, FOB (USD, bilateral)',
     description:
-      'Bilateral goods exports by partner country. Indispensable for NU trade-policy and UU foreign-affairs coverage where partner-country exposure matters.',
+      'Bilateral goods exports by partner country (annual / quarterly / monthly). Indispensable for NU trade-policy and UU foreign-affairs coverage where partner-country exposure matters. The 2026-05 refactor moved bilateral trade from the retired DOTS dataflow to IMTS and renamed TXG_FOB_USD → XG_FOB_USD.',
     policyAreas: ['trade', 'external sector'],
     committees: ['NU', 'UU'],
-    unit: 'Current USD, millions',
+    unit: 'Current USD',
     publishesProjections: false,
   },
 
   // --- Exchange rates (FiU/NU) ---
   {
     database: 'ER',
-    indicatorId: 'ENDA_XDC_USD_RATE',
-    name: 'Exchange rate — SEK per USD (end of period)',
+    indicatorId: 'USD_XDC.PA_RT',
+    name: 'Exchange rate — SEK per USD (period average)',
     description:
-      'End-of-period nominal exchange rate vs USD. Pairs with WEO:PCPIPCH and PCPS commodity-price overlays for inflation-drivers commentary.',
+      'Period-average nominal exchange rate vs USD (TYPE_OF_TRANSFORMATION=PA_RT; use EOP_RT for end-of-period). Pairs with WEO:PCPIPCH and PCPS commodity-price overlays for inflation-drivers commentary.',
     policyAreas: ['monetary policy', 'exchange rates'],
     committees: ['FiU', 'NU'],
     unit: 'SEK per USD',

@@ -1,49 +1,66 @@
-# Comparative International Analysis — Opposition Motions 2026-05-11
+# Comparative International Analysis — Opposition Motions — 2026-05-11
 
-## Minimum Age of Criminal Responsibility (MACR) — International Comparisons
+**Family**: C | **Confidence**: MEDIUM-HIGH
 
-**Prop. 2025/26:246 seeks to lower MACR from 15 to 13 for serious offences.**
+## Forestry Deregulation: International Context
 
-| Country | MACR | Notes |
-|---------|------|-------|
-| Sweden (current) | 15 | Among highest globally; in line with other Nordics |
-| Norway | 15 | Recently raised from 14 to 15 (2021) — trend opposite to Sweden |
-| Denmark | 15 | Stable |
-| Finland | 15 | Stable |
-| Germany | 14 | Juvenile justice system |
-| Netherlands | 12 | But with protective procedural framework |
-| England/Wales | 10 | Significantly lower; UNCRC Committee critical |
-| Scotland | 12 | |
-| UN CRC optimal standard | 14 minimum (preferred: 16) | UNCRC General Comment No. 24 (2019) |
+Sweden's Prop. 2025/26:242 reflects a broader Nordic and European tension between forestry economic interests and EU environmental obligations.
 
-**Key finding**: Norway's 2021 reform moved in the opposite direction to Sweden's proposed reform. The UN Committee on the Rights of the Child recommends a minimum age of 14 in its 2019 General Comment No. 24, and ideally 15–16. A Swedish lowering to 13 would make Sweden an outlier among Nordic peers and would diverge from the trajectory of most western European nations.
+| Country | Forestry Regulatory Approach | EU Compliance Status | Outcome |
+|---------|------------------------------|---------------------|---------|
+| **Sweden** (proposed) | Deregulation: remove notification/environmental link | Contested — opposition cites Nature Restoration Law compliance risk | Under debate |
+| **Finland** | Moderate regulation; forest owners retain considerable discretion | Generally compliant; some pressure on old-growth | Mixed |
+| **Norway** | Stricter biodiversity assessments for certification | Not EU member; Oslo Agreement covers environmental standards | Stable |
+| **Germany** | Bundeswaldbericht 2024: stricter biodiversity rules imposed after climate damage | EU-compliant; moving toward more regulation | Tightening |
+| **France** | Oak/beech protection; reforestation mandates post-drought | EU-compliant; France supports Nature Restoration Law | Tightening |
 
-The Lagrådet's RF 2 kap. 8, 20–21 §§ finding tracks the same proportionality concerns raised under the ECHR's Art. 3 in the ECtHR's jurisprudence on youth criminal justice (e.g., *T. v United Kingdom* (2000) Grand Chamber).
+**Key finding**: Sweden is moving against the European trend. Germany, France, and others are tightening forestry regulation after climate damage (drought, beetle infestation); Sweden is loosening. This creates a reputational and legal risk in EU context that opposition parties (V, MP) correctly identify.
 
-## Forestry Regulation — EU Comparator Analysis
+**IMF economic context** (WEO-2026-04): Swedish forest exports contribute SEK 140bn+ annually; sector competes globally with Finnish, Canadian, Brazilian timber producers. Government frames deregulation as necessary for competitiveness against non-EU rivals with lower environmental standards.
 
-**Prop. 2025/26:242 deregulates Swedish forestry management notifications and environmental conditions.**
+## Criminal Age of Responsibility: International Context
 
-Sweden has uniquely liberal forestry ownership (private dominance ~50%) combined with one of Europe's highest timber production rates. The regulatory tension between production and biodiversity is pan-European:
+The proposed lowering of criminal age to 13 in Sweden runs counter to the international direction.
 
-| Country | Forestry regime | EU Habitats Directive compliance posture |
-|---------|----------------|----------------------------------------|
-| Sweden | Private-led; deregulation trend 2020–2026 | Under scrutiny (petition EP 2025) |
-| Finland | Similar private-dominant model | Comparable pressures; boreal forest management scrutiny |
-| Germany | Primarily private/state; strict federal controls | Generally compliant; regional variation |
-| France | State/private mixed; ONF governance | Generally compliant |
-| Poland | State-dominant; deforestation controversy | Formal infringement proceedings 2018–2021 (Białowieża) |
-| Austria | Private/state; alpine forest law | Generally compliant |
+| Country | Minimum Criminal Age | Trend | Notes |
+|---------|---------------------|-------|-------|
+| **Sweden** (proposed) | 13 (down from 15) | Lowering | Opposed by V, C, MP — citing research |
+| **Denmark** | 15 (restored in 2012 from 14) | Raised | Denmark reversed a temporary lowering after evidence review |
+| **Finland** | 15 | Stable | Strong rehabilitation tradition |
+| **Norway** | 15 | Stable | Youth justice focus on prevention |
+| **Germany** | 14 | Stable | JGG (Jugendgerichtsgesetz) emphasises rehabilitation |
+| **Netherlands** | 12 | Stable with rehabilitation focus | PIJ measure, not adult criminal process |
+| **UK** | 10 (England/Wales) | Lowered 1994; under review | Ongoing controversy; Scotland: 12 |
 
-**Key finding**: Poland's Białowieża case (Commission v Poland, C-441/17) is the most directly relevant precedent for EU Habitats Directive enforcement against a member state's forestry management decisions. The Court of Justice found Poland violated Art. 6(3) by failing to conduct appropriate assessments before logging. If Sweden's prop. 242 weakens notification and assessment requirements in areas containing Habitats Directive species, the legal parallel is directly applicable.
+**Key finding**: Sweden's proposed lowering to 13 would make it an outlier in the Nordic context (all neighbours: 15 or higher) but not globally extreme. The opposition's strongest argument is the Nordic tradition of 15 years as minimum and research evidence that early criminalisation increases reoffending. The Denmark example (raised back to 15 after evidence review) is the most powerful comparator for C (HD024146) and MP (HD024148) to cite.
 
-**IMF economic context** (WEO Apr-2026, cached): Sweden's forestry sector contributes ~2.4% of GDP (SCB 2024). For comparison: Finland's forest industry represents ~20% of export revenue, creating stronger political pressure to resist EU restrictions. Sweden's position is more balanced — forestry is economically significant but the economy is more diversified.
+## EU Regulatory Dimension
 
-## Youth Justice — Norway 2021 Reform as Nearest Comparable
+Both propositions intersect with EU law:
 
-Norway's 2021 reform (raising MACR from 14 to 15) provides the clearest "reform against the trend" comparator. The Norwegian Storting cited:
-- Research on brain development showing adolescents under 15 lack mature criminal intent
-- Norway's obligations under the CRC Art. 40(3)(a)
-- Restorative justice effectiveness vs. incarceration for sub-15 offenders
+1. **Forestry**: EU Nature Restoration Law (Regulation (EU) 2024/1991) requires Member States to restore at least 30% of degraded ecosystems by 2030. Sweden's forestry deregulation risks reducing forest habitats without adequate assessment → infringement risk.
 
-This is precisely the opposite reform to prop. 2025/26:246. The Norwegian reform was broadly supported by all parties (unanimous Storting vote) in contrast to Sweden's contentious bill. This comparator strengthens V's and C's arguments (HD024142, HD024146).
+2. **Youth criminal justice**: UNCRC Article 37, EU Fundamental Rights Charter Article 24 (children's rights), and EU Directive 2016/800 (procedural safeguards for children) all impose obligations on member states regarding juvenile criminal liability.
+
+**Evidence Anchors**:
+
+| Claim | Evidence | Retrieved | Confidence |
+|-------|----------|-----------|------------|
+| Nature Restoration Law citation | HD024147 EU-rätt, HD024141 | 2026-05-11 | HIGH |
+| UNCRC citation by C | HD024146 barnrättsargument | 2026-05-11 | HIGH |
+| Denmark reversed criminal age | ECHR/Brå comparative research | 2026-05-11 | MEDIUM |
+| Germany tightening forestry | Bundeswaldbericht 2024 | 2026-05-11 | MEDIUM |
+| IMF WEO Sweden GDP | IMF WEO-2026-04 | 2026-05-11 | MEDIUM |
+
+## Mermaid: International Criminal Age Comparison
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d'}}}%%
+xychart-beta
+    title "Minimum Criminal Responsibility Age by Country"
+    x-axis ["Sweden (proposed)", "Sweden (current)", "Norway", "Finland", "Denmark", "Germany", "Netherlands"]
+    y-axis "Age" 10 --> 16
+    bar [13, 15, 15, 15, 15, 14, 12]
+```
+
+*Note: Sweden proposed = 13 (Prop. 2025/26:246); Sweden current = 15; Nordic outlier if enacted.*

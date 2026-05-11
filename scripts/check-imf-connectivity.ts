@@ -20,7 +20,9 @@
  *
  *   1. **WEO** (Datamapper) — `NGDP_RPCH` SWE, last 1 year
  *   2. **FM** (Datamapper)  — `GGXWDG_NGDP` SWE, last 1 year
- *   3. **IFS** (SDMX 3.0)    — CPI monthly index probe
+ *   3. **CPI** (SDMX 3.0)    — CPI monthly index probe (IMF.STA/CPI v5.0.0;
+ *      the legacy "IFS" dataflow was retired in the 2026-05 SDMX 3.0
+ *      refactor and is dissolved into CPI / MFS_IR / ER)
  *
  * Each probe must return HTTP 200 and parse as JSON. The WEO probe
  * additionally must yield at least one data point so we know the JSON
@@ -83,7 +85,7 @@ import { ImfClient } from './imf-client.js';
 
 /** One probe result against a single IMF dataflow / transport. */
 export interface ImfProbeResult {
-  readonly dataflow: 'WEO' | 'FM' | 'IFS';
+  readonly dataflow: 'WEO' | 'FM' | 'CPI';
   readonly transport: 'datamapper' | 'sdmx';
   readonly ok: boolean;
   readonly latencyMs: number;
@@ -105,8 +107,18 @@ export interface ImfConnectivityReport {
 // Probe configuration constants
 // ---------------------------------------------------------------------------
 
-/** SDMX CPI dataflow — updated when IMF bumps the version (was 4.0.0 before 2026-05). */
-const SDMX_CPI_PROBE_PATH = '/data/IMF.STA,CPI,5.0.0/M.SE.PCPI_IX?startPeriod=2024-01';
+/**
+ * SDMX CPI dataflow probe — IMF.STA/CPI v5.0.0 (refactored 2026-05; the
+ * previous v4.0.0 PCPI_IX series was retired). The 5.0.0 dim order is
+ * `COUNTRY.INDEX_TYPE.COICOP_1999.TYPE_OF_TRANSFORMATION.FREQUENCY`, so
+ * the canonical "Sweden CPI all-items index, monthly" key is
+ * `SWE.CPI._T.IX.M`. Country code is **ISO3** (SWE), not ISO2 (SE) and
+ * not the legacy 3-digit IMF area code (144) — verified live against
+ * `api.imf.org/external/sdmx/3.0` 2026-05-11. The probe accepts a 200
+ * envelope with at least one series (an envelope with zero series is
+ * treated as a stale dataflow reference and reported as `degraded`).
+ */
+const SDMX_CPI_PROBE_PATH = '/data/IMF.STA,CPI,5.0.0/SWE.CPI._T.IX.M?startPeriod=2024-01';
 
 // ---------------------------------------------------------------------------
 // Pure helpers (exported for testability)
@@ -386,7 +398,7 @@ export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
         ? 'sdmx-subscription-key-not-configured'
         : rawMessage;
       probes.push({
-        dataflow: 'IFS',
+        dataflow: 'CPI',
         transport: 'sdmx',
         ok: false,
         latencyMs: Date.now() - start,
@@ -394,13 +406,37 @@ export async function runProbes(client: ImfClient): Promise<ImfProbeResult[]> {
       });
     } else {
       const raw = result.value;
-      const ok = raw !== null && typeof raw === 'object';
+      // Require both a JSON envelope AND at least one series. The IMF
+      // SDMX 3.0 gateway happily returns 200 with an empty `dataSets[0]
+      // .series` map when the dataflow version, country code, or
+      // indicator no longer exists — that "soft-fail" used to mask
+      // outdated probe paths (e.g. the legacy `M.SE.PCPI_IX` key). We
+      // now treat zero-series responses as `degraded` so the operator
+      // sees the drift instead of a misleading green tick.
+      //
+      // Two response shapes are accepted:
+      //   - SDMX-JSON 2.0 envelope: `{ data: { dataSets: [...] } }`
+      //     (live IMF SDMX 3.0 endpoint)
+      //   - Bare envelope: `{ dataSets: [...] }`
+      //     (some test stubs and any future shape variation)
+      const isObj = raw !== null && typeof raw === 'object';
+      let seriesCount = 0;
+      if (isObj) {
+        type DataSetsHolder = { dataSets?: ReadonlyArray<{ series?: Record<string, unknown> }> };
+        const wrapped = (raw as { data?: DataSetsHolder }).data;
+        const bare = raw as DataSetsHolder;
+        const dataSets = wrapped?.dataSets ?? bare.dataSets ?? [];
+        for (const ds of dataSets) {
+          seriesCount += Object.keys(ds?.series ?? {}).length;
+        }
+      }
+      const ok = isObj && seriesCount > 0;
       probes.push({
-        dataflow: 'IFS',
+        dataflow: 'CPI',
         transport: 'sdmx',
         ok,
         latencyMs: Date.now() - start,
-        ...(ok ? {} : { error: 'non-object-response' }),
+        ...(ok ? {} : { error: isObj ? 'sdmx-empty-series' : 'non-object-response' }),
       });
     }
   }
@@ -497,7 +533,7 @@ interface CliOptions {
 
 const HELP = `tsx scripts/check-imf-connectivity.ts [flags]
 
-Pre-flight IMF connectivity & vintage gate. Probes WEO, FM, and IFS and
+Pre-flight IMF connectivity & vintage gate. Probes WEO, FM, and CPI and
 writes data/imf-context.json (always) plus data/imf-unavailable.flag (on
 failure) for downstream analysis steps to read.
 

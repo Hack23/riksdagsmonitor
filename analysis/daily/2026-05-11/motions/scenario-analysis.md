@@ -1,54 +1,92 @@
-# Scenario Analysis — Opposition Motions 2026-05-11
-**Horizon**: T+72h / T+7d / T+30d / T+90d (election proximity)
+# Scenario Analysis — Opposition Motions — 2026-05-11
 
-## Base Case (Probability 55%)
-**Both propositions pass largely unamended; constitutional risk unresolved**
+**Family**: C | **Confidence**: HIGH | **Horizon**: T+125 days (election) + T+365 days (post-election)
 
-Government proceeds with M+KD+L+SD majority. Prop. 2025/26:242 (forestry) passes with SD's small-owner exemption added as a minor government amendment (cost-free concession). Prop. 2025/26:246 (youth crime) passes with the age-cut provision intact; government acknowledges Lagrådet but declares RF compatibility. C votes against the JuU age-cut provision but does not threaten the supply-and-confidence relationship. No immediate consequences.
+## Scenario Tree
 
-*T+72h*: Committee hearings proceed normally; JuU committee hears government response to Lagrådet.  
-*T+7d*: Committee reports take shape; S's cumulative impact demand rejected by MJU committee majority.  
-*T+30d*: Both bills voted in plenary. Narrow MJU and JuU margins confirmed.  
-*T+90d*: Forestry bill published in SFS; age-cut provision in force. Legal challenges from V/NGO expected within 3 months.
+### Prop. 2025/26:242 (Skogsbruk)
 
-**Electoral consequence (September 2026)**: C runs on "we tried to fix it" message (HD024145+HD024146); government runs on "delivered law and order + forest competitiveness." No dramatic shift in bloc arithmetic.
+**Branch point**: Does government accommodate SD's land-exemption demand?
 
-## Scenario A: Constitutional Retreat on Age Cut (Probability 20%)
-**Government amends prop. 246 to comply with RF**
+**Scenario A: Government accommodates SD** (probability: 55%)
+- SD withdraws opposition motion, supports amended bill in MJU
+- V/S/C/MP outvoted; bill passes with modifications
+- Government claims coalition cohesion victory
+- Environmental groups escalate to EU Nature Restoration Law enforcement
+- Post-election: If centre-left coalition forms, bill likely amended or repealed
+- *WEP confidence*: MODERATE — SD's explicit demand creates genuine leverage
 
-Justitieminister introduces RF-compliant amendment: removes age-cut to 13; retains supervision tightening and modified youth discount. V's partial support on supervision orders creates bipartisan passage. C withdraws formal opposition.
+**Scenario B: Government holds firm, SD defects** (probability: 25%)
+- SD joins V/MP in defeating bill in MJU committee
+- Major government crisis: flagship legislation defeated by own coalition partner
+- Election year narrative: "government incompetent" vs. "SD stands on principle"
+- Government likely withdraws and reintroduces in next parliament
+- *WEP confidence*: LOW-MEDIUM — requires SD to actually follow through
 
-*T+30d*: Amended bill passes JuU with broader majority. Government claims "listening to Lagrådet."  
-*T+90d (election)*: Government portrays constitutional responsiveness as a strength; C loses the "constitutional defence" differentiator; V gets credit for partial influence.
+**Scenario C: S negotiates compromise** (probability: 15%)
+- S joins government in exchange for comprehensive impact analysis commitment
+- V and MP outvoted; bill passes with procedural concession
+- SD satisfied; C satisfied with minor production amendment
+- Government claims cross-bloc success
+- *WEP confidence*: LOW — S breaking with left opposition unlikely pre-election
 
-**Electoral consequence**: Minor government benefit from "rule of law" messaging; C slightly weakened electorally on JuU issue.
+**Scenario D: Bill delayed past election** (probability: 5%)
+- MJU committee hearings run long; no vote before September 2026
+- Becomes post-election negotiating item
+- Centre-right re-elected: original bill passes; Centre-left: bill withdrawn
 
-## Scenario B: Forestry Delay (Probability 15%)
-**S's cumulative impact analysis demand adopted; prop. 242 delayed past election**
+### Prop. 2025/26:246 (Unga lagöverträdare)
 
-MJU committee accepts S's demand or government voluntarily commissions a Naturvårdsverket Art. 6 compatibility assessment. Prop. 242 implementation deferred to post-election riksmöte.
+**Branch point**: Does JuU committee hold firm on age-13?
 
-*T+30d*: Government announces voluntary supplementary environmental review.  
-*T+90d (election)*: Forestry bill absent from legislative record. S claims credit for responsible governance.
+**Scenario E: Age-13 provision survives committee** (probability: 60%)
+- Government coalition maintains JuU majority; V/C/MP outvoted
+- Bill passes; controversial age reduction enacted
+- Post-election: Centre-left majority would repeal age-13 provision first session
+- *WEP confidence*: MODERATE-HIGH — committee majority likely holds
 
-**Electoral consequence**: Rural voters (SD base) frustrated by delay; urban/environmental voters (MP/V base) claim partial victory. Net: slight negative for government.
+**Scenario F: Age-13 removed in committee** (probability: 25%)
+- JuU committee chairs negotiate partial revision: removes age-13, keeps supervision tightening
+- C votes with government on supervision changes; opposition fragmented on partial bill
+- Both sides can claim a win; real C flexibility tested
+- *WEP confidence*: LOW-MEDIUM
 
-## Scenario C: Constitutional Crisis (Probability 5%)
-**C escalates JuU position; supply-and-confidence threatened**
+**Scenario G: Opposition joint amendment** (probability: 15%)
+- V+C+MP file a joint substitute that accepts supervision but deletes age-13
+- Requires unusual cross-bloc legislative drafting
+- If S also joins, creates surprise majority
+- *WEP confidence*: LOW
 
-C publicly announces it will withdraw supply-and-confidence unless prop. 246 is amended to comply with RF. Government faces a choice: amend or face potential minority government crisis with 4 months until election.
+## Scenario Mermaid
 
-*T+7d*: C leader press conference. Government convenes extraordinary legal review.  
-*T+30d*: Government either retreats (as Scenario A) or negotiates a face-saving formula.
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d'}}}%%
+flowchart TD
+    classDef high fill:#0a0e27,stroke:#00ff88,color:#00ff88
+    classDef medium fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    classDef low fill:#0a0e27,stroke:#ff006e,color:#ff006e
 
-**Electoral consequence**: High volatility; C would likely gain significantly as the "constitution-saving party." Government's law-and-order brand severely dented.
+    A["Start: 8 motions filed"]
+    B{"SD exemption<br/>demand met?"}
+    C{"JuU age-13<br/>provision maintained?"}
 
-## Scenario D: EU Habitats Infringement (Long horizon, T+18m)
-**NGO files formal EU complaint; Commission opens Art. 258 proceedings against Sweden**
+    A --> B
+    A --> C
 
-Forestry bill passes; V or Naturskyddsföreningen files formal complaint with DG Environment. Commission writes to Sweden for explanation.
+    B -- "Yes (55%)" --> ScA["Scenario A: Passes<br/>with SD amendment"]:::high
+    B -- "No (25%)" --> ScB["Scenario B: SD defects<br/>Government crisis"]:::medium
+    B -- "S negotiates (15%)" --> ScC["Scenario C: Cross-bloc<br/>compromise"]:::low
+    B -- "Delayed (5%)" --> ScD["Scenario D: Post-election<br/>decision"]:::low
 
-*T+90d (election)*: No immediate consequence; issue not yet salient electorally.  
-*T+18m*: Commission formal letter arrives; new government (regardless of composition) must respond.
+    C -- "Yes (60%)" --> ScE["Scenario E: Bill passes<br/>age-13 enacted"]:::high
+    C -- "Removed (25%)" --> ScF["Scenario F: Partial bill<br/>supervision only"]:::medium
+    C -- "Joint amendment (15%)" --> ScG["Scenario G: V+C+MP<br/>substitute"]:::low
+```
 
-**Electoral consequence in 2026**: Negligible — too slow to affect campaign. Strategic risk: if C or S is in the next government, they can blame the current one for the legal exposure.
+**Evidence Anchors**:
+
+| Claim | Evidence | Retrieved | Confidence |
+|-------|----------|-----------|------------|
+| SD explicit exemption condition | HD024143 förslag 1 | 2026-05-11 | HIGH |
+| C cross-bloc on age-13 | HD024146 | 2026-05-11 | HIGH |
+| Government coalition MJU majority | Riksdagen mandatfördelning 2022 | 2026-05-11 | HIGH |

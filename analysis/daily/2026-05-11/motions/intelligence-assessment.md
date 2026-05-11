@@ -1,43 +1,74 @@
-# Intelligence Assessment — Opposition Motions 2026-05-11
-**Classification**: OSINT | **Method**: All-source structured analytic technique (SAT) | **Date**: 2026-05-11
+# Intelligence Assessment — Opposition Motions — 2026-05-11
 
-## Key Intelligence Questions (KIQ)
+**Family**: C | **Confidence**: HIGH | **Format**: ACH (Analysis of Competing Hypotheses)
 
-### KIQ-1: Will the government amend prop. 246 to comply with RF before parliamentary vote?
-**Assessment**: UNLIKELY (probability 20%). The government's past pattern (cited by C in HD024146) shows a preference for overriding Lagrådet and relying on parliamentary sovereignty. The political narrative ("tough on crime") is more important to the governing bloc electorally than legal tidiness 4 months before an election. **Confidence**: MEDIUM [B2].
+## Key Intelligence Question
 
-### KIQ-2: Will C vote against prop. 246 (youth crime) in plenary?
-**Assessment**: LIKELY (probability 70%) on the age-cut provision specifically. C's HD024146 is explicit and cites constitutional grounds — withdrawing this position would cost C credibility on the "constitutional compliance" brand they're building. However, C may support other provisions (supervision tightening). **Confidence**: HIGH [B2].
+**KIQ-01**: Will the government's forestry proposition (2025/26:242) pass the MJU committee before the September 2026 election?
 
-### KIQ-3: Does C's dual defection (HD024145 + HD024146) signal a post-election coalition intention to join S+MP government?
-**Assessment**: UNLIKELY as a direct signal, but as an electoral positioning strategy, LIKELY. C is building product differentiation from both blocs. Post-election, C's positions are consistent with being a coalition partner in either a right-centre or a grand centre government, not exclusively with S+MP. **Confidence**: MEDIUM [B3 — inference from political logic].
+### Hypothesis Matrix
 
-### KIQ-4: Is the EU Habitats Directive risk to prop. 242 (forestry) an imminent threat?
-**Assessment**: NOT IMMINENT. PIR EU-HABITATS-SE remains open. No Naturvårdsverket Art. 6 assessment has been published. No formal EU complaint has been filed. The risk window is T+6m to T+24m (post-enactment). **Confidence**: HIGH [B2].
+| Hypothesis | H1: Passes (SD stays) | H2: Defeated (SD defects) | H3: Delayed | H4: Amended compromise |
+|-----------|----------------------|--------------------------|-------------|----------------------|
+| SD files explicit conditions (HD024143) | Inconsistent | Consistent | Consistent | Consistent |
+| Government has MJU majority w/SD | Consistent | n/a | Inconsistent | Consistent |
+| V+MP outright reject | Consistent (irrelevant) | Consistent | Consistent | Consistent |
+| S demands study not rejection | Consistent | Consistent | Consistent | Consistent |
+| C wants more, not less | Consistent | Consistent | Consistent | Consistent |
+| Government history of accommodating SD | Consistent | Inconsistent | Inconsistent | Consistent |
+| Time pressure (election Sept 2026) | Consistent | Inconsistent | Consistent | Inconsistent |
 
-### KIQ-5: What is the probability of significant coverage of the "Lagrådet ignored" narrative in Swedish media?
-**Assessment**: HIGH (probability 75%). Swedish political media (DN, SvD, Aftonbladet) have consistently covered Lagrådet override stories as significant constitutional events. C's explicit "pattern" framing (not just this one bill) gives journalists a systemic angle. **Confidence**: MEDIUM [B2].
+**ACH Verdict**: H1 (passes with SD accommodated) or H4 (amended compromise) are most consistent with evidence. H2 (SD defection) remains possible at 25% but requires SD to follow through on explicit conditioning. H3 (delayed) possible if government miscalculates.
 
-## Intelligence Confidence Ladder
+## Key Intelligence Question
 
-| Source | Reliability | Credibility | Overall |
-|--------|------------|-------------|---------|
-| Parliamentary motion texts (HD024141–HD024148) | A (reliable source) | 1 (confirmed) | **A1** |
-| Lagrådet yttrande 12 March 2026 (cited in motions) | B (mostly reliable) | 2 (probably true) | **B2** |
-| Skogsstyrelsen 2026:07 (cited in HD024141) | B (mostly reliable) | 2 (probably true) | **B2** |
-| IMF WEO-2026-04 (pre-warm context, live fetch degraded) | B (mostly reliable) | 2 (probably true) | **B2** |
-| Prior PIR analysis (2026-05-08 run) | A (reliable) | 2 (probably true) | **A2** |
+**KIQ-02**: Will the criminal age provision (13 years) in Prop. 2025/26:246 pass?
 
-## Assessment of Prior Intelligence
+### Key Indicators
 
-Prior analysis (2026-05-08) correctly identified C's dual defection as the primary intelligence signal. This cycle confirms and deepens that assessment with confirmed full-text evidence from HD024145 and HD024146. Prior analysis rated PIR-LAGRÅDET-246 as "Lagrådet yttrande not yet published" — this cycle confirms the yttrande was published 12 March 2026 and is negative.
+- **PIR-01**: SD vote on JuU committee — follow SD's public statements on youth criminal age specifically (distinct from their general law & order position)
+- **PIR-02**: C committee behaviour — will C vote against government in committee or only at chamber stage?
+- **PIR-03**: Government response to scientific criticism — does government acknowledge UNCRC concerns or ignore them?
 
-**Accuracy correction**: Prior analysis estimated PIR-COALITION-C-JuU as "formal party press conference" standard. The confirmed evidence (HD024146) is a parliamentary committee motion — formal but not a press conference. PIR-COALITION-C-JuU status updated to ANSWERED (with caveat on format).
+**Assessment**: JuU passage of age-13 provision most likely (H: 60%) given government committee majority and SD alignment. Cross-bloc opposition (V+C+MP) provides political ammunition for post-election reversal.
 
-## Bottom Line Assessment
+## Strategic Intelligence Assessment
 
-The most important intelligence development this cycle is the **confirmed Lagrådet yttrande (12 March 2026)** finding prop. 2025/26:246 age-cut unconstitutional under RF 2 kap. 8, 20–21 §§. This shifts the PIR-LAGRÅDET-246 status from OPEN to ANSWERED. The political question is no longer whether Lagrådet will object — they already have — but whether the government will amend or proceed regardless.
+The 8 motions reveal a pre-election alignment pattern:
 
-The dual C defection (HD024145+HD024146) confirms a consistent electoral positioning strategy rather than a coalition crisis. The risk of constitutional litigation (R02 in risk-assessment.md) remains the highest-probability adverse outcome at Score 15 (L=3, I=5).
+1. **C is repositioning**: Two motions that break with the coalition on both economic and social dimensions signal Centern's preparation for coalition optionality. This is the most significant strategic signal in this batch.
 
-Sweden is 4 months from a general election. Every legislative decision is now filtered through electoral optics. The government's risk is that it creates a "constitutional recklessness" narrative that C can exploit in the campaign.
+2. **V and MP are coordinating**: HD024141/147 (forestry) and HD024142/148 (youth crime) show both parties filing on same propositions with complementary arguments — this suggests left-green coordination.
+
+3. **S is hedging**: One motion demanding procedural quality on forestry; no motion on youth crime. S is not committing to a strong opposition identity on either file.
+
+4. **SD is extracting**: Forestry motion is a negotiating tool, not an opposition statement. SD expects and likely will receive a concession.
+
+## Mermaid: ACH Evidence Weight
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d'}}}%%
+graph TD
+    classDef high fill:#0a0e27,stroke:#00ff88,color:#00ff88
+    classDef medium fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    classDef low fill:#0a0e27,stroke:#ff006e,color:#ff006e
+
+    KIQ1["KIQ-01: Forestry bill fate"]
+    H1["H1: Passes w/SD accommodation<br/>55% probability"]:::high
+    H4["H4: Amended compromise<br/>15%"]:::medium
+    H2["H2: SD defection defeat<br/>25%"]:::medium
+    H3["H3: Delayed past election<br/>5%"]:::low
+
+    KIQ1 --> H1
+    KIQ1 --> H4
+    KIQ1 --> H2
+    KIQ1 --> H3
+```
+
+**Evidence Anchors**:
+
+| Claim | Evidence | Retrieved | Confidence |
+|-------|----------|-----------|------------|
+| SD conditions assessed as negotiating tool | HD024143 structure + government accommodation history | 2026-05-11 | HIGH |
+| C strategic repositioning signal | HD024145 + HD024146 dual departure | 2026-05-11 | HIGH |
+| V-MP coordination hypothesis | HD024141/147 complementary arguments | 2026-05-11 | MEDIUM |

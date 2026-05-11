@@ -1,29 +1,54 @@
-# Risk Assessment — Opposition Motions 2026-05-11
-**Framework**: Likelihood × Impact (1–5 scale) | **Election multiplier**: 1.5× active
+# Risk Assessment — Opposition Motions — 2026-05-11
+
+**Family**: A | **Confidence**: HIGH | **Election Proximity**: T-125 days
 
 ## Risk Register
 
-| ID | Risk | L | I | Score | Horizon | Trigger |
-|----|------|---|---|-------|---------|---------|
-| R01 | EU Commission opens infringement proceedings on Habitats Directive for prop. 2025/26:242 | 2 | 5 | 10 | T+18–24m | Naturvårdsverket/NGO formal complaint |
-| R02 | Supreme Court or EU court invalidates youth crime age-cut (RF 2 kap. incompatibility) | 3 | 5 | **15** | T+6–24m | Unamended bill passes, constitutional challenge filed |
-| R03 | C exits governing bloc or conditions supply-and-confidence support on RF amendment to prop. 246 | 2 | 4 | 8 | T+3m | C leader public ultimatum |
-| R04 | S "responsible governance" framing on cumulative impact analysis adopted by media — delays prop. 242 | 3 | 3 | 9 | T+1–3m | Committee hearing, JO referral |
-| R05 | V's biodiversity data (Skogsstyrelsen 2026:07) triggers further regulatory restriction request from EU | 2 | 4 | 8 | T+12m | European Commission audit |
-| R06 | Youth crime bill generates backlash if 13-year-old tried criminally and case becomes media story | 3 | 4 | 12 | T+12m post-enactment | First court case under new law |
-| R07 | C's dual defection framing creates "lawless government" narrative that sticks in election campaign | 3 | 4 | 12 | T+4m | Media packages HD024145+HD024146 |
+| Risk ID | Risk Description | Likelihood | Impact | Risk Score | Owner | Mitigation |
+|---------|-----------------|-----------|--------|------------|-------|-----------|
+| R-01 | SD withdraws forestry support → MJU defeat | MEDIUM (35%) | HIGH | 7 | MJU committee | SD land-exemption concession |
+| R-02 | EU infringement proceeding on forestry deregulation | MEDIUM (30%) | HIGH | 6 | Miljödepartementet | Legal review, Habitats compliance audit |
+| R-03 | Youth crime incident before election → C cracks | LOW-MEDIUM (25%) | HIGH | 5 | JuU committee | C commitment to evidence-based reform |
+| R-04 | Opposition fragmentation undermines counter-narrative | HIGH (65%) | MEDIUM | 6.5 | Opposition party leaders | Coordination, joint statement on EU compliance |
+| R-05 | Government co-opts C via minor forestry concession | MEDIUM (40%) | MEDIUM | 5 | C party leadership | C insistence on full production package |
+| R-06 | New riksmöte voteringar gap limits accountability coverage | HIGH (confirmed) | LOW | 2 | Riksdagen open data | Proxy analysis from 2022/23 cycle |
+| R-07 | Criminal age bill passes on party-line JuU vote | HIGH (60%) | MEDIUM | 6 | JuU committee | SD loyalty depends on forestry deal |
 
-## Top Risks Narratives
+## Priority Risks
 
-### R02 — Constitutional Invalidation of Youth Crime Age-Cut (Score 15)
-The Lagrådet yttrande (12 March 2026) is clear: the age-cut provision to 13 years violates RF 2 kap. 8, 20–21 §§. If the government pushes through the bill unamended, the legal risk crystallises within 6–24 months via a Supreme Court (HD or HFD) reference or direct constitutional review. The political cost of retrospective invalidation — criminal proceedings against 13-year-olds later voided — would be severe. **Mitigation**: Government accepts C's implicit invitation to amend age-cut provision; retains supervision tightening and youth discount reduction (which V partially supports) for bipartisan passage of reduced package.
+### R-01: SD Forestry Defection (Highest Consequence)
+SD (Martin Kinnunen, HD024143) explicitly conditions forestry support on a land-exemption clause. The forestry bill is a government flagship. If MJU committee hearings do not accommodate SD's specific demand, the bill could fail or be amended beyond government intent.
 
-### R07 — "Lawless Government" Narrative Before September 2026 Election (Score 12)
-C's HD024146 explicitly states government "repeatedly ignores both Lagrådet and the constitution" — not a one-bill criticism but a systemic one. If the media or the opposition unites behind this framing (Lagrådet rejected, government proceeds regardless), the narrative could dominate the final months of the campaign. The forestry bill's EU law risk can be woven in to show a pattern: ignoring domestic constitution and international obligations simultaneously. **Mitigation**: Government must articulate clear legal memos rebutting both Lagrådet and EU Habitats compatibility concerns; must be proactive and early.
+**Probability pathway**: SD files this motion signalling to government. Government either concedes (probability 55%) or holds firm (probability 45%). If government holds firm, SD defects in committee vote (probability 75% given explicit conditioning).
 
-### R06 — First Criminal Case Against a 13-Year-Old (Score 12)
-This risk is post-enactment but with high resonance. A single case of a 13-year-old being formally charged under the new law would dominate news cycles and human-rights debate. The CRC Art. 40(3)(a) argument (minimum age of criminal responsibility) would be re-litigated publicly. **Mitigation**: Age threshold amendment to 15 with narrow serious-offence exception; or robust legal opinion from a Professor of Constitutional Law supporting compatibility.
+### R-04: Opposition Fragmentation
+Five parties oppose the forestry bill but want five different things. This fragmentation is actually a risk for government (no majority can agree on an alternative) but also a risk for opposition coherence: no unified alternative means no counter-narrative in the election campaign.
 
-## Risk Velocity
+## Mermaid: Risk Heat Map
 
-R02 and R07 are accelerating toward the September 2026 election. The government has approximately **8 weeks** before the summer political recess begins to either amend the bill or cement a narrative to absorb the constitutional objections.
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d'}}}%%
+quadrantChart
+    title "Risk Heat Map — Likelihood vs Impact"
+    x-axis "Low Likelihood" --> "High Likelihood"
+    y-axis "Low Impact" --> "High Impact"
+    quadrant-1 Monitor Closely
+    quadrant-2 Critical Risk
+    quadrant-3 Acceptable
+    quadrant-4 Manage
+    R-01 SD Defection: [0.35, 0.9]
+    R-02 EU Infringement: [0.30, 0.85]
+    R-03 Crime Incident: [0.25, 0.8]
+    R-04 Fragmentation: [0.65, 0.55]
+    R-05 C Co-opt: [0.40, 0.5]
+    R-07 JuU vote: [0.60, 0.55]
+    R-06 Data gap: [0.90, 0.15]
+```
+
+**Evidence Anchors**:
+
+| Claim | Evidence | Retrieved | Confidence |
+|-------|----------|-----------|------------|
+| SD conditions support explicitly | HD024143 förslag 1: "undantag för viss mark" | 2026-05-11 | HIGH |
+| EU legal risk on forestry | HD024141, HD024147: Nature Restoration Law, Habitats Dir. | 2026-05-11 | HIGH |
+| C dual departure from coalition | HD024145, HD024146 | 2026-05-11 | HIGH |

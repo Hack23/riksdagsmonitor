@@ -281,9 +281,9 @@ Quality gates: HTMLHint + linkinator + Dependabot + CodeQL + secret scanning
 # Macro / fiscal / monetary / external — canonical subcommands
 tsx scripts/imf-fetch.ts weo --country SWE --indicator NGDP_RPCH --years 5
 tsx scripts/imf-fetch.ts compare --indicator GGXWDG_NGDP --countries SWE,DNK,NOR,FIN,DEU
-tsx scripts/imf-fetch.ts sdmx --path "/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2024-01" --indicator PCPI_IX --country SWE
-tsx scripts/imf-fetch.ts sdmx --path "/data/IMF.STA,DOT,4.0.0/A.SE.TXG_FOB_USD.US?startPeriod=2023" --indicator TXG_FOB_USD --country SWE
-tsx scripts/imf-fetch.ts sdmx --path "/data/IMF.STA,GFS_COFOG,1.0.0/A.SE.G02.XDC?startPeriod=2020" --indicator G02 --country SWE  # COFOG 02 Defence (FöU); use canonical G02 / G07 / G09 / G10
+tsx scripts/imf-fetch.ts sdmx --path "/data/IMF.STA,CPI,5.0.0/SWE.CPI._T.IX.M?startPeriod=2024-01" --indicator _T.IX --country SWE
+tsx scripts/imf-fetch.ts sdmx --path "/data/IMF.STA,IMTS,1.0.0/SWE.XG_FOB_USD.USA.A?startPeriod=2023" --indicator XG_FOB_USD --country SWE
+tsx scripts/imf-fetch.ts sdmx --path "/data/IMF.STA,GFS_COFOG,11.0.0/SWE.S13.G2MF.GF02_T.POGDP_PT.A?startPeriod=2020" --indicator GF02_T --country SWE  # COFOG 02 Defence (FöU); use canonical GF02_T / GF07_T / GF09_T / GF10_T (the legacy G02 / G07 / G09 / G10 codes were retired in the 2026-05 refactor)
 tsx scripts/imf-fetch.ts list-indicators
 ```
 
