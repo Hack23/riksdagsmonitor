@@ -105,14 +105,17 @@ const PARTIES: Record<string, PartyConfig> = {
 const REMOTE_BASE_URL = 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/';
 
 const DATA_CONFIG: DataConfig = {
+  // Absolute `/cia-data/…` paths so this works from
+  // `/dashboards/coalitions.html` (a bare `cia-data/…` would resolve to
+  // `/dashboards/cia-data/…` and 404 on the local-first hop).
   files: {
-    coalition: ['cia-data/party/distribution_coalition_alignment.csv', REMOTE_BASE_URL + 'distribution_coalition_alignment.csv'],
-    behavioral: ['cia-data/parties/distribution_behavioral_patterns_by_party.csv', REMOTE_BASE_URL + 'distribution_behavioral_patterns_by_party.csv'],
-    decision: ['cia-data/parties/distribution_decision_patterns_by_party.csv', REMOTE_BASE_URL + 'distribution_decision_patterns_by_party.csv'],
-    anomalyByParty: ['cia-data/anomaly/distribution_anomaly_by_party.csv', REMOTE_BASE_URL + 'distribution_anomaly_by_party.csv'],
-    annualVotes: ['cia-data/voting/distribution_annual_party_votes.csv', REMOTE_BASE_URL + 'distribution_annual_party_votes.csv'],
-    decisionTrends: ['cia-data/voting/distribution_decision_trends.csv', REMOTE_BASE_URL + 'distribution_decision_trends.csv'],
-    partyMomentum: ['cia-data/distribution_party_momentum.csv', REMOTE_BASE_URL + 'distribution_party_momentum.csv']
+    coalition: ['/cia-data/party/distribution_coalition_alignment.csv', REMOTE_BASE_URL + 'distribution_coalition_alignment.csv'],
+    behavioral: ['/cia-data/parties/distribution_behavioral_patterns_by_party.csv', REMOTE_BASE_URL + 'distribution_behavioral_patterns_by_party.csv'],
+    decision: ['/cia-data/parties/distribution_decision_patterns_by_party.csv', REMOTE_BASE_URL + 'distribution_decision_patterns_by_party.csv'],
+    anomalyByParty: ['/cia-data/anomaly/distribution_anomaly_by_party.csv', REMOTE_BASE_URL + 'distribution_anomaly_by_party.csv'],
+    annualVotes: ['/cia-data/voting/distribution_annual_party_votes.csv', REMOTE_BASE_URL + 'distribution_annual_party_votes.csv'],
+    decisionTrends: ['/cia-data/voting/distribution_decision_trends.csv', REMOTE_BASE_URL + 'distribution_decision_trends.csv'],
+    partyMomentum: ['/cia-data/distribution_party_momentum.csv', REMOTE_BASE_URL + 'distribution_party_momentum.csv']
   },
   useMockData: false
 };

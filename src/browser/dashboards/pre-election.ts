@@ -101,11 +101,13 @@ interface CacheEntry {
 const CONFIG: PreElectionConfig = {
   dataUrls: {
     preElection: [
-      'cia-data/pre-election/view_riksdagen_pre_election_quarterly_activity_sample.csv',
+      // Absolute path so this works from `/dashboards/pre-election.html`
+      // (a bare `cia-data/…` would resolve to `/dashboards/cia-data/…`).
+      '/cia-data/pre-election/view_riksdagen_pre_election_quarterly_activity_sample.csv',
       'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_riksdagen_pre_election_quarterly_activity_sample.csv'
     ],
     electionComparison: [
-      'cia-data/pre-election/view_riksdagen_q4_election_year_comparison_sample.csv',
+      '/cia-data/pre-election/view_riksdagen_q4_election_year_comparison_sample.csv',
       'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_riksdagen_q4_election_year_comparison_sample.csv'
     ]
   },

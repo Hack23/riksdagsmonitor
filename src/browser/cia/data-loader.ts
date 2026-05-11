@@ -111,7 +111,12 @@ export class CIADataLoader {
   private readonly loadCSVFn: LoadCSV;
 
   constructor() {
-    this.csvBaseURL = '../cia-data/';
+    // Absolute path so the local-first hop works from any depth — the
+    // CIA dashboard ships at `/dashboard/index*.html` today, but this
+    // loader is also reachable from any future page that imports the
+    // module. A bare `../cia-data/` was relative to the document URL
+    // and broke whenever the page lived more than one directory deep.
+    this.csvBaseURL = '/cia-data/';
     this.fallbackURL = 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/';
     this.loadCSVFn = createLoadCSV(this.csvBaseURL, this.fallbackURL);
   }
