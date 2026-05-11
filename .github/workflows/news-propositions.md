@@ -51,40 +51,94 @@ runtimes:
 
 network:
   allowed:
+    # ── Ecosystem identifiers (gh-aw built-ins) ──────────────────────────────
     - node
     # Browser downloads for Playwright CLI mode (kept for cross-workflow network parity)
     - playwright
-    # Minimal Docker Hub hosts for node:26-alpine pulls used by SCB + World Bank MCP servers
-    # (replaces the broader `containers` ecosystem identifier to keep least-privilege egress)
+    - github
+    - defaults
+    # ── Container registries (node:26-alpine pulls for SCB + WB MCP) ─────────
     - docker.io
     - registry-1.docker.io
     - auth.docker.io
     - production.cloudflare.docker.com
-    - github
+    # ── Riksdag / Regering MCP server + Swedish parliament + government ──────
     - riksdag-regering-ai.onrender.com
-    - api.scb.se
-    - api.worldbank.org
-    - api.imf.org
-    - data.imf.org
-    - www.imf.org
-    - dataservices.imf.org
     - data.riksdagen.se
     - www.riksdagen.se
     - riksdagen.se
     - www.regeringen.se
+    - regeringen.se
+    - www.government.se
+    - g0v.se
+    # ── SCB (Statistics Sweden) ──────────────────────────────────────────────
+    - api.scb.se
     - www.scb.se
+    - scb-mcp.onrender.com
+    # ── IMF (canonical economic-data source — see ECONOMIC_DATA_CONTRACT.md) ─
+    - api.imf.org
+    - data.imf.org
+    - www.imf.org
+    - dataservices.imf.org
+    - datamarketplace.imf.org
+    # ── World Bank (governance / environment / social residue) ───────────────
+    - api.worldbank.org
+    - data.worldbank.org
+    - datahelpdesk.worldbank.org
+    - governance.worldbank.org
+    - www.worldbank.org
+    # ── European Parliament + EU institutions ────────────────────────────────
+    - www.europarl.europa.eu
+    - europarl.europa.eu
+    - ec.europa.eu
+    - eur-lex.europa.eu
+    - data.europa.eu
+    - www.consilium.europa.eu
+    - digital-strategy.ec.europa.eu
+    - economy-finance.ec.europa.eu
+    - www.enisa.europa.eu
+    # ── Swedish independent agencies, courts, regulators ─────────────────────
     - www.statskontoret.se
     - statskontoret.se
     - www.lagradet.se
     - lagradet.se
-    - regeringen.se
+    - www.riksbank.se
+    - www.riksrevisionen.se
+    - www.konj.se
+    - www.finanspolitiskaradet.se
+    - www.regelradet.se
+    - www.esv.se
+    - www.ei.se
+    - www.energimyndigheten.se
+    - www.naturvardsverket.se
+    - www.boverket.se
+    - www.do.se
+    - www.domstol.se
+    - www.imy.se
+    - www.konkurrensverket.se
+    - www.kriminalvarden.se
+    - www.migrationsverket.se
+    - www.msb.se
+    - www.av.se
+    - www.svt.se
+    - www.val.se
+    - bra.se
+    # ── Hack23 owned platforms ───────────────────────────────────────────────
     - hack23.com
     - www.hack23.com
+    - hack23.github.io
     - riksdagsmonitor.com
     - www.riksdagsmonitor.com
+    - riksdagsmonitor.hack23.com
+    - riksdagsmonitor.pages.dev
+    - euparliamentmonitor.com
+    - www.euparliamentmonitor.com
+    - ciacompliancemanager.com
+    - www.ciacompliancemanager.com
+    - blacktrigram.com
+    - www.blacktrigram.com
+    # ── GitHub raw content (covered by `github` ecosystem; pinned for safe-outputs subset rule)
     - raw.githubusercontent.com
-    - hack23.github.io
-    - defaults
 
 mcp-servers:
   riksdag-regering:
@@ -119,28 +173,83 @@ safe-outputs:
   threat-detection:
     continue-on-error: true
   allowed-domains:
+    # Riksdag / Regering MCP server + Swedish parliament + government
     - riksdag-regering-ai.onrender.com
-    - api.scb.se
-    - api.worldbank.org
-    - api.imf.org
-    - data.imf.org
-    - www.imf.org
-    - dataservices.imf.org
     - data.riksdagen.se
     - www.riksdagen.se
     - riksdagen.se
     - www.regeringen.se
+    - regeringen.se
+    - www.government.se
+    - g0v.se
+    # SCB (Statistics Sweden)
+    - api.scb.se
     - www.scb.se
+    - scb-mcp.onrender.com
+    # IMF (canonical economic-data source)
+    - api.imf.org
+    - data.imf.org
+    - www.imf.org
+    - dataservices.imf.org
+    - datamarketplace.imf.org
+    # World Bank
+    - api.worldbank.org
+    - data.worldbank.org
+    - datahelpdesk.worldbank.org
+    - governance.worldbank.org
+    - www.worldbank.org
+    # European Parliament + EU institutions
+    - www.europarl.europa.eu
+    - europarl.europa.eu
+    - ec.europa.eu
+    - eur-lex.europa.eu
+    - data.europa.eu
+    - www.consilium.europa.eu
+    - digital-strategy.ec.europa.eu
+    - economy-finance.ec.europa.eu
+    - www.enisa.europa.eu
+    # Swedish independent agencies, courts, regulators
     - www.statskontoret.se
     - statskontoret.se
     - www.lagradet.se
     - lagradet.se
+    - www.riksbank.se
+    - www.riksrevisionen.se
+    - www.konj.se
+    - www.finanspolitiskaradet.se
+    - www.regelradet.se
+    - www.esv.se
+    - www.ei.se
+    - www.energimyndigheten.se
+    - www.naturvardsverket.se
+    - www.boverket.se
+    - www.do.se
+    - www.domstol.se
+    - www.imy.se
+    - www.konkurrensverket.se
+    - www.kriminalvarden.se
+    - www.migrationsverket.se
+    - www.msb.se
+    - www.av.se
+    - www.svt.se
+    - www.val.se
+    - bra.se
+    # Hack23 owned platforms
     - hack23.com
     - www.hack23.com
+    - hack23.github.io
     - riksdagsmonitor.com
     - www.riksdagsmonitor.com
+    - riksdagsmonitor.hack23.com
+    - riksdagsmonitor.pages.dev
+    - euparliamentmonitor.com
+    - www.euparliamentmonitor.com
+    - ciacompliancemanager.com
+    - www.ciacompliancemanager.com
+    - blacktrigram.com
+    - www.blacktrigram.com
+    # GitHub raw content
     - raw.githubusercontent.com
-    - hack23.github.io
   max-patch-size: 10240
   max-patch-files: 100
   create-pull-request:
