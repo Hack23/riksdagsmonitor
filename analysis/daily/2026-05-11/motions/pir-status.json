@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0",
+  "generated": "2026-05-11T08:00:00Z",
+  "subfolder": "motions",
+  "cycle": "motions",
+  "date": "2026-05-11",
+  "pirs": [
+    {
+      "id": "LAGRÅDET-246",
+      "question": "Has Lagrådet issued a yttrande on prop. 2025/26:246 regarding CRC Art. 40(3)(a) or RF compatibility?",
+      "priority": "critical",
+      "status": "answered",
+      "answer": "Lagrådet issued a negative yttrande on 12 March 2026, finding the criminal responsibility age-cut provision incompatible with RF 2 kap. 8, 20, and 21 paragraphs (proportionality rules). Confirmed by two independent motion texts: HD024142 (V) and HD024146 (C), both citing the same date and RF provisions. Note: CRC Art. 40(3)(a) framing was not the primary Lagrådet ground; RF was. CRC dimension addressed separately by V (HD024142) and MP (HD024148).",
+      "sources": ["HD024142", "HD024146"],
+      "answered_cycle": "2026-05-11",
+      "carry_forward": false
+    },
+    {
+      "id": "EU-HABITATS-SE",
+      "question": "Has Naturvårdsverket published a formal Habitats Directive Art. 6 compatibility assessment for prop. 2025/26:242?",
+      "priority": "high",
+      "status": "open",
+      "answer": null,
+      "evidence": "HD024141 (V) cites the Habitats Directive risk and calls for Naturvårdsverket assessment, but no Naturvårdsverket opinion has been found. V's motion confirms the risk is monitored but the PIR question remains unanswered.",
+      "sources": ["HD024141"],
+      "answered_cycle": null,
+      "carry_forward": true,
+      "deadline": "2026-06-10",
+      "monitoring_instruction": "Check Naturvårdsverket publikationer for any Art. 6 screening or yttrande on prop. 2025/26:242"
+    },
+    {
+      "id": "COALITION-C-JuU",
+      "question": "Has Centerpartiet made a formal public statement (press conference or equivalent) opposing the age-cut in prop. 2025/26:246?",
+      "priority": "high",
+      "status": "answered_partial",
+      "answer": "HD024146 (C, Ulrika Liljeberg) is C's formal parliamentary committee motion opposing the age-cut on RF 2 kap. grounds and citing Lagrådet yttrande 12 March 2026. This is C's parliamentary position. The original PIR specified 'press conference or equivalent' — a committee motion is a formal parliamentary act but not a press conference. If the PIR requires public media statement, status remains partially open. If formal parliamentary statement suffices, status is ANSWERED.",
+      "sources": ["HD024146"],
+      "answered_cycle": "2026-05-11",
+      "carry_forward": true,
+      "monitoring_instruction": "Check for C party leader press conference statement on prop. 2025/26:246 before 2026-06-01"
+    },
+    {
+      "id": "S-CRC-JOIN",
+      "question": "Will Socialdemokraterna file a committee motion on prop. 2025/26:246 citing CRC Art. 40 or other children's rights grounds?",
+      "priority": "medium",
+      "status": "open",
+      "answer": null,
+      "evidence": "S filed no committee motion on prop. 2025/26:246 in this cycle. S's HD024144 addresses only prop. 2025/26:242 (forestry). S's JuU position is expected to manifest as a floor vote or rapporteur statement, not a committee motion. PIR remains open.",
+      "sources": [],
+      "answered_cycle": null,
+      "carry_forward": true,
+      "deadline": "2026-05-20"
+    }
+  ],
+  "new_pirs": [
+    {
+      "id": "GOVT-RF-MEMO-246",
+      "question": "What specific RF compatibility argument does the government submit to the JuU committee in response to the Lagrådet yttrande?",
+      "priority": "high",
+      "status": "open",
+      "deadline": "2026-06-10",
+      "carry_forward": true
+    },
+    {
+      "id": "S-JuU-FLOOR-VOTE",
+      "question": "Will S vote against prop. 2025/26:246 in plenary and on what stated grounds?",
+      "priority": "medium",
+      "status": "open",
+      "deadline": "2026-06-15",
+      "carry_forward": true
+    },
+    {
+      "id": "NATURVARDSVERKET-ART6",
+      "question": "Has Naturvårdsverket issued an Art. 6 screening opinion on prop. 2025/26:242?",
+      "priority": "high",
+      "status": "open",
+      "deadline": "2026-06-10",
+      "carry_forward": true
+    }
+  ]
+}
