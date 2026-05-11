@@ -73,3 +73,15 @@ pass: 2
 - **Fiscal balance**: Surplus ~0.5% GDP — no austerity required, slight fiscal space available for election-period spending
 
 **Economic framing implication**: The stable-but-not-great economic conditions do not create a strong incumbency advantage or disadvantage. The election will be won or lost on constitutional achievement, migration, and social state quality — not economics.
+
+## Energy policy forward indicators (new — from anföranden data 2026-05-11)
+
+Based on chamber speeches ip 2025/26:453 (electricity grid) and ip 2025/26:448 (wind power disinformation):
+
+| Date (approx.) | Event | Intelligence significance |
+|----------------|-------|--------------------------|
+| T+7d (2026-05-18) | Government formal response to ip 2025/26:453 (elnät) published | MEDIUM — tests whether Busch commits to accelerated grid expansion timeline |
+| T+14d (2026-05-25) | SD follows up with party energy programme teaser | MEDIUM — watch for "nationell energiplan" narrative rollout |
+| T+30d (2026-06-11) | Energimyndigheten annual report release expected | MEDIUM-HIGH — provides ammunition for or against SD's vindkraft narrative |
+| T+60d (2026-07-11) | Party manifestos — energy chapter comparison | HIGH — confirms whether SD election-cycle energy skepticism is formalised |
+| T+90d (2026-08-20) | Final debate — energy costs/grid likely raised by SD | MEDIUM |

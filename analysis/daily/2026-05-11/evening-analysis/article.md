@@ -5,7 +5,7 @@ date: 2026-05-11
 subfolder: evening-analysis
 slug: 2026-05-11-evening-analysis
 source_folder: analysis/daily/2026-05-11/evening-analysis
-generated_at: 2026-05-11T17:42:24.654Z
+generated_at: 2026-05-11T18:42:58.063Z
 language: en
 layout: article
 ---
@@ -144,10 +144,22 @@ Once KU34 passes, any future government seeking to reverse the abortion provisio
 - **Gap**: Evidence re Turkey-Hamas operational linkage claimed in HD11809
 - **Requirement**: UD public statement; open source verification of Hamas-Turkey claim
 
+#### KIJ-6: Energy policy debate reveals deepening SD-government tension on green transition framing (MEDIUM confidence)
+Chamber debate on interpellations 2025/26:453 (electricity grid investments, Josef Fransson/SD to Ebba Busch/KD) and 2025/26:448 (disinformation about wind power, Fransson/SD to Busch/KD) reveals a recurring SD pattern of challenging the green energy transition narrative. SD's use of "desinformation om vindkraft" framing signals an attempt to redefine renewable energy discourse ahead of the election. Busch's responses (KD) represent government coalition management of the SD's energy-skeptic wing. This energy-sovereignty narrative links to KIJ-3's SD foreign policy positioning: tech sovereignty + energy sovereignty as a combined SD election message. [Admiralty: B2 — government chamber record; cross-confirmed by multiple speech instances]
+
+### Prior-cycle PIR ingestion (Tier-C)
+
+Carrying forward open PIRs from prior cycles:
+- **PIR-001** (CLOSED): Constitutional reform — closed by KU34 recommendation today
+- **PIR-002** (ONGOING): Migration regime — V motions HD024149/HD024150 add legal challenge vectors; carried forward to T+30d
+- **PIR-003** (ONGOING): Party positioning — SD's energy narrative represents a new campaign vector not in prior-cycle PIR-003 scope; added as PIR-003b
+- **PIR-004** (ACTIVE): NATO/foreign policy — SD's EPG Armenia and Turkey-Hamas interpellations contribute; carried forward
+- **PIR-005** (NEW): Energy sovereignty narrative — SD's coordinated use of desinformation/vindkraft framing warrants new PIR. Indicators: additional SD energy interpellations; party manifesto energy chapter; Busch response tone.
+
 ### Assessment confidence calibration
 - **Source quality**: PRIMARY (official parliamentary records) — HIGH
-- **Temporal currency**: CURRENT (all documents dated 2026-05-11) — HIGH
-- **Analytical depth**: MODERATE-HIGH (fulltext for key docs; summaries for interpellations) — MEDIUM-HIGH
+- **Temporal currency**: CURRENT (all documents dated 2026-05-11; anföranden data confirmed same date) — HIGH
+- **Analytical depth**: MODERATE-HIGH (fulltext for key docs; summaries for interpellations; chamber speeches metadata for energy debates) — MEDIUM-HIGH
 - **Predictive accuracy**: Scenario probabilities are assessments, not predictions; uncertainty increases with horizon
 
 ## Significance Scoring
@@ -584,6 +596,18 @@ The citizenship revocation provision may trigger UN HRC scrutiny under ICCPR Art
 - **Fiscal balance**: Surplus ~0.5% GDP — no austerity required, slight fiscal space available for election-period spending
 
 **Economic framing implication**: The stable-but-not-great economic conditions do not create a strong incumbency advantage or disadvantage. The election will be won or lost on constitutional achievement, migration, and social state quality — not economics.
+
+### Energy policy forward indicators (new — from anföranden data 2026-05-11)
+
+Based on chamber speeches ip 2025/26:453 (electricity grid) and ip 2025/26:448 (wind power disinformation):
+
+| Date (approx.) | Event | Intelligence significance |
+|----------------|-------|--------------------------|
+| T+7d (2026-05-18) | Government formal response to ip 2025/26:453 (elnät) published | MEDIUM — tests whether Busch commits to accelerated grid expansion timeline |
+| T+14d (2026-05-25) | SD follows up with party energy programme teaser | MEDIUM — watch for "nationell energiplan" narrative rollout |
+| T+30d (2026-06-11) | Energimyndigheten annual report release expected | MEDIUM-HIGH — provides ammunition for or against SD's vindkraft narrative |
+| T+60d (2026-07-11) | Party manifestos — energy chapter comparison | HIGH — confirms whether SD election-cycle energy skepticism is formalised |
+| T+90d (2026-08-20) | Final debate — energy costs/grid likely raised by SD | MEDIUM |
 
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/scenario-analysis.md -->
@@ -1223,11 +1247,23 @@ Interpellation cluster (HD10481–HD11810) ────────────�
 - Enhanced stakeholder section with UN HRC angle on citizenship revocation (ICCPR Art. 12)
 - Deepened Devil's Advocate challenge 4 (election multiplier) with methodological precision
 
-#### Recommended next-run improvements
-- Fetch Statskontoret recent publications re Migrationsverket
-- Query SfU committee vote schedule API
-- Fetch interpellation ministerial response dates when available (likely T+14–21d)
-- Consider adding Lagrådet yttranden to the download pipeline as a standard enrichment source
+### Re-run YYYY-MM-DD HH:MM UTC
+
+### Re-run 2026-05-11 18:41 UTC (attempt 2)
+
+- **New anföranden found**: ip 2025/26:453 (electricity grid investments — Fransson/SD ↔ Busch/KD, 7 speeches) and ip 2025/26:448 (wind power disinformation — Fransson/SD ↔ Busch/KD, 3 speeches). Retrieved from Riksdag anföranden API.
+- **New dok_ids acquired**: None (no additional legislative documents published after 17:20Z)
+- **Artifacts extended**: `intelligence-assessment.md` (KIJ-6 added for energy debates + PIR-005 new for energy sovereignty), `forward-indicators.md` (energy policy forward watch added), `data-download-manifest.md` (re-run section), `methodology-reflection.md` (this re-run log)
+- **Analysis delta**: SD's energy-sovereignty narrative now documented as election-positioning signal parallel to KIJ-3 foreign policy framing; PIR-003b created
+- **IMF vintage**: WEO-2026-04 confirmed still current (1 month, threshold at 3 months)
+
+### Re-run log
+
+- **Re-run**: 2026-05-11T18:42:00Z · workflow=news-evening-analysis · run_id=25689740944 · attempt=2
+  - new dok_ids: none (no new legislative docs filed after 17:20Z); new anföranden data: ip 2025/26:453 (elnät) and ip 2025/26:448 (vindkraft desinformation) ministerial responses retrieved from chamber speeches API
+  - artifacts extended: intelligence-assessment.md (added energy/elnät debates), forward-indicators.md (energy policy indicators), data-download-manifest.md (new anföranden entries), methodology-reflection.md (this re-run log)
+  - flags closed: 0 ([unconfirmed] flags from prior run remain; interpellation responses still awaited for HD10481-HD11810)
+  - vintage refresh: no, IMF WEO Apr-2026 still current
 
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/data-download-manifest.md -->
