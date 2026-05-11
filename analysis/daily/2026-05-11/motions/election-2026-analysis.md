@@ -1,62 +1,73 @@
-# Election 2026 Analysis — Opposition Motions 2026-05-11
-**Election date**: Second Sunday of September 2026 (approximately 17 September 2026)  
-**T–election**: ~4 months | **Election multiplier**: 1.5× active
+# Election 2026 Analysis — Opposition Motions — 2026-05-11
 
-## Electoral Significance Map
+**Family**: D | **Election**: 2026-09-13 | **T-minus**: 125 days | **DIW**: 1.5×
 
-### Proposition 2025/26:242 (Forestry Deregulation)
-**Electoral constituency impact**:
-- **For deregulation**: ~350,000 Swedish private forest owners; rural landowners (primarily in northern and central Sweden); forestry industry employees (~45,000 FTE). Electoral geography: SD and M strongholds in rural constituencies.
-- **Against deregulation**: Urban voters; voters who prioritise biodiversity (MP/V base, but also soft-C and soft-M environmentalists); younger voters with high climate/biodiversity concern.
-- **Net electoral calculation**: The governing bloc's decision to proceed with forestry deregulation likely helps them in rural constituencies and hurts them in urban/suburban ones. Net effect: small positive in a de-urbanising party composition; the SD-M axis consolidates rural Sweden.
+## Electoral Significance Assessment
 
-**C's "insufficient" framing (HD024145)**: Electorally clever — C captures rural landowner support (by wanting *more* deregulation) without being on the "wrong side" of biodiversity in urban areas (C can say "we demanded better evidence-based implementation, not just deregulation"). This is classic centrist triangulation.
+### Forestry (Prop. 2025/26:242) — Electoral Geography
 
-### Proposition 2025/26:246 (Youth Criminal Justice)
-**Electoral constituency impact**:
-- **For age-cut**: Suburban parents concerned about gang crime; victims of youth crime; law-and-order voters. This is SD's primary constituency and an M/KD electoral target. Polls consistently show 50–65% support for stricter youth crime measures.
-- **Against age-cut (on constitutional grounds)**: Voters who prioritise rule of law and institutional quality; constitutional conservatives (an unusual coalition of V-left and C-liberal); legal professionals.
-- **Net electoral calculation**: The governing bloc expects positive net from youth crime toughening. The risk is that C's constitutional framing resonates with educated centrist voters (C's target demographic) — a segment that cares about institutional quality alongside policy outcomes.
+Sweden's 2026 election will be decided in part by **rural constituencies** where forestry employs large shares of the local workforce. These are primarily in Norrland (Norrbotten, Västernorrland, Västerbotten, Jämtland) and the interior of Götaland (Värmland, Dalarna).
 
-**S's silence on JuU**: Strategically deliberate. S can oppose on the floor (satisfying its justice-oriented left flank) without committing to a specific alternative age threshold or being seen as "soft on youth crime." This will be tested in the campaign.
+| Region | Forestry Employment | 2022 Dominant Party | Opposition Motion Risk |
+|--------|--------------------|--------------------|----------------------|
+| Norrbotten | High | S/V traditionally, SD growing | S cautious position (HD024144) positions them as responsible; C/SD targeting rural landowners |
+| Västernorrland | High | S/C contested | C production package (HD024145) targets C rural base |
+| Jämtland/Härjedalen | High | C traditional | C double play: production demand + independence from government |
+| Dalarna | Medium-High | S/M contested | S and M main competition; forestry salient |
 
-## Party Electoral Positioning Matrix
+**Electoral signal**: The forestry motions are simultaneously appeals to different rural voter segments. C targets the production/economic prosperity voter. V/MP target the environmentally conscious rural voter. S targets the procedural quality / "get this right" rural moderate.
 
-| Party | Forestry position | Youth crime position | Electoral target | Electoral risk |
-|-------|-----------------|---------------------|-----------------|---------------|
-| M (governing) | Pro-deregulation | Pro-age-cut | Rural Sweden, suburbs | Urban loss |
-| KD (governing) | Pro-deregulation | Strongly pro-age-cut | Religious/family conservatives | None visible |
-| L (governing) | Pro-deregulation | Pro (but Lagrådet concerns privately) | Liberal urban | L's liberal base may object to constitution override |
-| SD (supply) | Pro with small-owner exemption | Strongly pro-age-cut | Rural, anti-immigration voters | None from these bills |
-| C | Wants more deregulation | Opposes age-cut (constitutional) | Rural liberals, educated centrists | Losing rural if seen as "green" |
-| S | Demands impact analysis | Silent | Urban workers, welfare state voters | Being "soft on crime" if silent |
-| V | Full rejection | Opposes age-cut + discount | Urban left | None — base agreement |
-| MP | Full rejection | Opposes age-cut | Environmentalists | None — base agreement |
+### Youth Crime (Prop. 2025/26:246) — Electoral Geography
 
-## C's 2026 Electoral Strategy Assessment
+Youth crime is a **suburban and peripheral city** issue — most gang crime concentration in Stockholm suburbs (Rinkeby, Husby, Järva), Gothenburg suburbs (Angered, Biskopsgården), Malmö.
 
-**Helena Lindahl (MJU) and Ulrika Liljeberg (JuU) represent C's dual electoral strategy**:
+| Voter Segment | Issue Position | Party Targeting |
+|--------------|----------------|----------------|
+| Suburban moderates | Want tough action but not at expense of children's rights | C targets this group: "smart on crime" framing |
+| Working-class urban | Want visible results, less concerned with age | SD and M target this segment |
+| Parents of teenagers | Concerned about peer influence, want evidence-based | V+MP target this, C bridges |
+| Progressive urban voters | Rights-based, evidence-driven | V+MP solidify base |
 
-Lindahl's HD024145 says: *More forestry deregulation, better evidence, promises kept from SOU 2025:93.* This is a direct message to rural landowners that C is more pro-forest industry than the government's half-measures suggest.
+**Electoral signal**: C's opposition to age-13 is strategically aimed at suburban moderate voters — the same voters who might swing between C, M, and L. By positioning as "smart-on-crime" rather than "soft-on-crime," C differentiates from both M (punitive) and V (rights-based).
 
-Liljeberg's HD024146 says: *Constitutional compliance, Lagrådet must be respected, government pattern of ignoring the law.* This is a direct message to educated urban liberals that C is the serious, law-governed party in the centre.
+## Party Electoral Positioning
 
-Together they position C as: *the party that takes both economic freedom AND rule of law seriously.* This is the "responsible liberal" brand that distinguishes C from both the Tidö governing bloc (high on economic freedom, low on rule of law care) and S/V/MP (low on economic freedom, high on rule of law).
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d'}}}%%
+graph TD
+    classDef election fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    classDef strategy fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
 
-**Assessment**: C's dual positioning is coherent and electorally rational with ~4 months to election. It requires C to maintain both positions under media scrutiny — if C softens on either (votes yes on prop. 246 without RF amendment, or suddenly finds the forestry bill sufficient), the brand narrative collapses.
+    ELECTION["🗳️ September 2026<br/>General Election"]:::election
 
-## Scenario Impact on Election Outcome
+    C_STRAT["Centern Strategy<br/>Coalition optionality<br/>+ moderate voter appeal"]:::strategy
+    SD_STRAT["SD Strategy<br/>Rural landowner concession<br/>+ law & order base"]:::strategy
+    S_STRAT["S Strategy<br/>Responsibility framing<br/>+ rural moderate defence"]:::strategy
+    V_STRAT["V+MP Strategy<br/>Environmental + rights base<br/>mobilisation"]:::strategy
 
-| Scenario | Impact on bloc arithmetic | Key beneficiary |
-|----------|--------------------------|----------------|
-| Base case (both pass unamended) | Tidö bloc +1–2% in rural; C holds centrist position | M+SD consolidate; C differentiates |
-| Scenario A (246 amended) | Tidö bloc neutral; C loses constitutional issue | Government shows responsiveness; C claims credit |
-| Scenario B (242 delayed) | S +1% (responsible governance); M slightly negative | S gains; urban environmental voters reward S |
-| Scenario C (constitutional crisis) | C +3–4%; M −2–3% | C becomes the election story |
+    ELECTION --> C_STRAT
+    ELECTION --> SD_STRAT
+    ELECTION --> S_STRAT
+    ELECTION --> V_STRAT
 
-## Forward Election Indicators (4-Month Window)
+    C_STRAT --> C_OUT["C: Position for C+S+MP<br/>coalition post-election"]
+    SD_STRAT --> SD_OUT["SD: Stay in coalition<br/>+ extract concessions"]
+    S_STRAT --> S_OUT["S: Credible government<br/>alternative"]
+    V_STRAT --> V_OUT["V+MP: Prevent vote erosion<br/>to S"]
+```
 
-1. **MJU committee report on prop. 242**: Adoption of S's cumulative impact demand = Scenario B signal
-2. **JuU committee hearing on Lagrådet response**: Government's RF compatibility memo publication = key intelligence event
-3. **C leader poll ratings**: If C rises >9% in opinion polls after HD024146 coverage, constitutional framing is working
-4. **S youth crime floor statement**: S's eventual JuU plenary position will clarify whether S campaigns on toughness or on rule of law
+## Poll Context
+
+Current 2026 polling (as of May 2026 context):
+- Left bloc (S+V+MP): ~48–50% combined
+- Right bloc (M+KD+L+SD): ~47–49% combined
+- Election is too close to call — every motion on contentious topics matters for marginal voter mobilisation
+
+**Evidence Anchors**:
+
+| Claim | Evidence | Retrieved | Confidence |
+|-------|----------|-----------|------------|
+| C dual-issue departure signals coalition optionality | HD024145 + HD024146 together | 2026-05-11 | HIGH |
+| Forestry employment in Norrland | SCB skogsdata 2024 | 2026-05-11 | MEDIUM |
+| Youth crime suburban concentration | Brå geographic crime reports 2023-24 | 2026-05-11 | MEDIUM |
+| SD rural landowner constituency | HD024143 förslag, land-exemption specifics | 2026-05-11 | HIGH |

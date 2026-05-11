@@ -1,69 +1,68 @@
-# Media Framing Analysis — Opposition Motions 2026-05-11
+# Media Framing Analysis — Opposition Motions — 2026-05-11
 
-## Dominant Frames in Expected Coverage
+**Family**: D | **Confidence**: MEDIUM-HIGH
 
-### Frame 1: "Constitutional Crisis" (HIGH probability of use by DN, SvD, SVT)
-**Core narrative**: The government is proceeding with youth crime legislation that Lagrådet has declared unconstitutional. This is not an isolated incident but a pattern (HD024146: "recurring phenomenon"). C is the unlikely guardian of Sweden's constitutional order.
+## Competing Media Frames
 
-**Who drives this frame**: C (Ulrika Liljeberg's language is emotionally charged and media-ready), V (Gudrun Nordborg adds brain science), legal academics who will be asked for expert commentary.
+### Forestry (Prop. 2025/26:242)
 
-**Key quote from HD024146** (approximate, from motion text): "Det är problematiskt att regeringen och riksdagen vid upprepade tillfällen inte respekterar de invändningar som Lagrådet framför."
+| Frame | Likely Source | Core Message | Target Audience |
+|-------|--------------|-------------|----------------|
+| Economic competitiveness | Government, LRF, Skogen media | "Deregulation will create jobs, boost exports, strengthen rural Sweden" | Rural workers, industry, business media |
+| Environmental catastrophe | V, MP, environmental NGOs | "Destroying biodiversity for short-term profit; EU infringement risk" | Environmental media, urban progressives |
+| Procedural quality | S | "Needs more study before adoption; responsible governance" | S voters, proceduralists |
+| Production opportunity | C | "Good start but needs a full package; government not ambitious enough" | Forestry sector, rural moderates |
+| Sovereignty/freedom | SD | "Swedish landowners should control their land; biodiversity through freedom" | SD rural base, nationalist media |
 
-**Media outlets likely to lead with this**: Dagens Nyheter (constitutional accountability beat), SVT Nyheter, SR Ekot.
+**Predicted dominant media frame**: Economic competitiveness frame will dominate general Swedish media (Dagens Nyheter, Aftonbladet, SvD). Environmental frame will dominate niche environmental media (Natursidan, Miljöaktuellt). Riksdagsmonitor should prioritise the **political fragmentation frame** — 5-party opposition is underreported by media focused on pro/con binary.
 
-**Counter-frame by government**: "Lagrådet is advisory. Parliament decides. We have thoroughly analysed RF compatibility."
+### Youth Crime (Prop. 2025/26:246)
 
----
+| Frame | Likely Source | Core Message | Target Audience |
+|-------|--------------|-------------|----------------|
+| Law & order | Government, SD, M | "Tougher rules for young criminals; protect public safety" | Crime-concerned suburban voters |
+| Children's rights | V, MP, Barnombudsmannen | "Criminalising 13-year-olds violates UNCRC; evidence shows harm" | Progressive, educated urban |
+| Smart governance | C | "We want effective solutions, not politically driven age numbers" | Moderate, suburban middle-class |
+| Research-based | V, C, MP, Brå | "The evidence does not support age lowering; Denmark tried it, reversed it" | Expert community, quality press |
 
-### Frame 2: "Biodiversity Emergency" (MEDIUM probability, environmental media + NGO amplification)
-**Core narrative**: Sweden is destroying its own forests (26,000 ha/year of high-value habitat) while simultaneously weakening the regulatory protection. EU law is being violated. This is a biodiversity catastrophe dressed up as economic rationalism.
+**Predicted dominant media frame**: Law & order frame will dominate tabloid coverage (Expressen, Aftonbladet crime section). Research-based frame will dominate quality press (DN, SvD). Riksdagsmonitor should prioritise **C's cross-bloc significance** — a centrist breaking with a coalition government on criminal justice is counter-intuitive and underreported.
 
-**Who drives this frame**: V (Kajsa Fredholm's Skogsstyrelsen data), MP (Rebecka Le Moine's biodiversity targets framing), Naturskyddsföreningen (if they issue a statement), international environmentalists.
+## Framing Risk for Opposition
 
-**Data anchor**: 26,000 ha/year (Skogsstyrelsen 2026:07) — a concrete, memorable number.
+1. **Soundbite vulnerability** (Skogsbruk): "Opposition wants to keep forests locked up, killing rural jobs" — government will deploy this. V and MP are vulnerable; S and C are better protected.
 
-**Media outlets likely to use**: Aftonbladet opinion, GP, regional papers in Norrland/skogslänen, European green media.
+2. **Soft-on-crime label** (Unga lagöverträdare): "Left-wing parties want 13-year-old criminals to walk free" — V and MP are vulnerable; C's "smart-on-crime" framing is specifically designed to inoculate against this.
 
-**Counter-frame by government**: "The proposition strengthens *sustainable* forestry management. Clearer rules mean better outcomes."
+## SEO/Framing Recommendations for Riksdagsmonitor
 
----
+- **Headline approach**: Lead with the cross-bloc youth crime opposition (most counter-intuitive); secondary forestry fragmentation
+- **Key phrases**: "Centern bryter med regeringen", "åldersgräns 13 år", "skogsbruk EU-krav", "avvikande röster"
+- **Meta description**: "Åtta oppositionsmotioner mot regeringens skogsbrukslag och ungdomsbrottsregler — Centern bryter med koalitionen på två fronter inför valet 2026"
 
-### Frame 3: "Tough on Youth Crime" (HIGH probability — tabloid and SD-aligned media)
-**Core narrative**: After years of youth gangs terrorising Swedish suburbs, the government is finally acting. Opposition parties (V, C, MP) are prioritising criminals' rights over victims' rights. The constitutional argument is lawyers' sophistry.
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ff006e', 'secondaryColor': '#1a1e3d'}}}%%
+graph LR
+    classDef gov fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    classDef opp fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    classDef centre fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
 
-**Who drives this frame**: SD (Jimmie Åkesson), governing coalition, Aftonbladet crime coverage.
+    GOV_F["Government Frame:<br/>🌲 Economic growth<br/>⚖️ Law & order"]:::gov
+    OPP_F["Opposition Frames:<br/>🌿 Biodiversity<br/>👶 Children's rights"]:::opp
+    C_F["Centern Frame:<br/>🏭 Production+<br/>🧠 Smart justice"]:::centre
 
-**Audience**: Suburban voters with direct concern about youth gang violence. Emotion resonance: fear, desire for order.
+    MEDIA["📰 Swedish Media<br/>Coverage"]
+    RM["🔍 Riksdagsmonitor:<br/>Political fragmentation<br/>+ C cross-bloc signal"]
 
-**Counter-narrative challenge**: The constitutional argument does NOT resonate with this audience as a first-order concern. V and C must translate "unconstitutional" into "bad law that will be overturned = criminals go free" to make it tangible.
+    GOV_F --> MEDIA
+    OPP_F --> MEDIA
+    C_F --> MEDIA
+    MEDIA --> RM
+```
 
----
+**Evidence Anchors**:
 
-### Frame 4: "C as Kingmaker" (MEDIUM probability in political analysis coverage)
-**Core narrative**: With HD024145+HD024146, Centerpartiet is showing it can work with either bloc. C's dual defection (wants more on forestry, wants constitution-compliance on youth crime) defines a coherent centrist alternative to both the governing right and the socialist opposition. C is positioning for coalition negotiations.
-
-**Who drives this frame**: Political reporters, election analysts, Magdalena Andersson/S strategists watching C's moves.
-
-**Electoral implication**: If this frame takes hold, C's poll numbers may rise, which in turn affects all other parties' coalition calculations.
-
----
-
-## Framing Risks for Opposition Parties
-
-**V risk**: The "full rejection" frame on forestry (HD024141) can be dismissed as predictable/reflexive. To break through, V needs the 26,000 ha/year data to create a compelling visual or narrative beyond the committee motion.
-
-**C risk**: The dual defection frame must be maintained consistently. If C softens on HD024146 under government pressure (accepts a minor amendment that doesn't address the age-cut), C loses the constitutional narrative.
-
-**S risk**: The "cumulative impact analysis" demand (HD024144) is technically sound but narratively weak. S needs to be clearer about what's at stake economically and ecologically if S wants media pickup. Currently it reads as a procedural demand.
-
-**MP risk**: Both HD024147 and HD024148 are full rejection motions with limited new evidence beyond V's. MP will be treated as amplifying V and C rather than leading their own argument.
-
----
-
-## Social Media Dynamics
-
-**TikTok/Instagram reach (youth crime topic)**: Age-cut debate will be extremely high-volume on youth-oriented platforms. Youth voices will polarise between "about time" and "criminalising children." C and V need accessible content that translates "RF 2 kap. 8" into human-scale impact.
-
-**Twitter/X (constitutional/political analysts)**: C's constitutional framing will dominate political Twitter among journalists and academics. Likely amplified by #Lagrådet and #Grundlagen hashtags.
-
-**Facebook (rural communities)**: SD's small-owner exemption (HD024143) and C's insufficient forestry proposition (HD024145) will circulate in rural Facebook groups and forestry industry forums.
+| Claim | Evidence | Retrieved | Confidence |
+|-------|----------|-----------|------------|
+| C "smart on crime" self-framing | HD024146 explicit phrase | 2026-05-11 | HIGH |
+| EU Nature Restoration Law = opposition anchor | HD024141, HD024147 | 2026-05-11 | HIGH |
+| C forestry production frame | HD024145 motivering: konkurrenskraft | 2026-05-11 | HIGH |
