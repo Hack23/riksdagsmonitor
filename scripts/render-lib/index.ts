@@ -103,6 +103,13 @@ export type { BreadcrumbEntry, BreadcrumbEntryWithItem, BreadcrumbEntryCurrentPa
 export { renderArticleHtml, stripBodyDuplicateSections, splitBodyAtSecondH2 } from './article.js';
 export type { RenderArticleInput } from './article.js';
 
+// --- Localized + English article merge -------------------------------------
+// Used by `scripts/render-articles.ts` so that non-English news HTML pages
+// always include the full English analytical depth when the agent-translated
+// `article.<lang>.md` only carries a short executive summary.
+export { mergeLocalizedWithEnglish, buildEnglishCoverageBoundary } from './article-merge.js';
+export type { MergeLocalizedInput } from './article-merge.js';
+
 // Reusable per-article side-block renderers (reader navigation,
 // analysis-artifacts reference, methods reference). Extracted so that
 // every article-type renderer (current and future) can share the same
