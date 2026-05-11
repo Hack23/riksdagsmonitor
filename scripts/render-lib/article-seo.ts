@@ -23,22 +23,21 @@ const KEYWORD_MAX = 24;
 const CONTEXT_LABELS: Record<Language, {
   readonly edition: string;
   readonly coverage: string;
-  readonly sourceLinked: string;
 }> = {
-  en: { edition: 'English edition', coverage: 'Coverage', sourceLinked: 'source-linked Swedish parliamentary intelligence and OSINT analysis' },
-  sv: { edition: 'svensk version', coverage: 'Bevakning', sourceLinked: 'källspårad svensk parlamentarisk underrättelseanalys och OSINT' },
-  da: { edition: 'dansk version', coverage: 'Dækning', sourceLinked: 'kildesporbar svensk parlamentarisk efterretning og OSINT-analyse' },
-  no: { edition: 'norsk versjon', coverage: 'Dekning', sourceLinked: 'kildesporbar svensk parlamentarisk etterretning og OSINT-analyse' },
-  fi: { edition: 'suomenkielinen versio', coverage: 'Kattaus', sourceLinked: 'lähdejäljitettävä Ruotsin parlamentaarinen tiedusteluanalyysi ja OSINT' },
-  de: { edition: 'deutsche Ausgabe', coverage: 'Berichterstattung', sourceLinked: 'quellenverknüpfte schwedische Parlamentsaufklärung und OSINT-Analyse' },
-  fr: { edition: 'édition française', coverage: 'Couverture', sourceLinked: 'renseignement parlementaire suédois sourcé et analyse OSINT' },
-  es: { edition: 'edición en español', coverage: 'Cobertura', sourceLinked: 'inteligencia parlamentaria sueca trazable a fuentes y análisis OSINT' },
-  nl: { edition: 'Nederlandse editie', coverage: 'Dekking', sourceLinked: 'brongebonden Zweedse parlementaire inlichtingen en OSINT-analyse' },
-  ar: { edition: 'النسخة العربية', coverage: 'تغطية', sourceLinked: 'تحليل استخباراتي برلماني سويدي مرتبط بالمصادر وتحليل OSINT' },
-  he: { edition: 'מהדורה עברית', coverage: 'סיקור', sourceLinked: 'מודיעין פרלמנטרי שוודי מקושר למקורות וניתוח OSINT' },
-  ja: { edition: '日本語版', coverage: 'カバレッジ', sourceLinked: '出典追跡可能なスウェーデン議会インテリジェンスとOSINT分析' },
-  ko: { edition: '한국어판', coverage: '보도', sourceLinked: '출처 추적 가능한 스웨덴 의회 인텔리전스와 OSINT 분석' },
-  zh: { edition: '中文版', coverage: '报道', sourceLinked: '可追溯来源的瑞典议会情报与 OSINT 分析' },
+  en: { edition: 'English edition', coverage: 'Coverage' },
+  sv: { edition: 'svensk version', coverage: 'Bevakning' },
+  da: { edition: 'dansk version', coverage: 'Dækning' },
+  no: { edition: 'norsk versjon', coverage: 'Dekning' },
+  fi: { edition: 'suomenkielinen versio', coverage: 'Kattaus' },
+  de: { edition: 'deutsche Ausgabe', coverage: 'Berichterstattung' },
+  fr: { edition: 'édition française', coverage: 'Couverture' },
+  es: { edition: 'edición en español', coverage: 'Cobertura' },
+  nl: { edition: 'Nederlandse editie', coverage: 'Dekking' },
+  ar: { edition: 'النسخة العربية', coverage: 'تغطية' },
+  he: { edition: 'מהדורה עברית', coverage: 'סיקור' },
+  ja: { edition: '日本語版', coverage: 'カバレッジ' },
+  ko: { edition: '한국어판', coverage: '보도' },
+  zh: { edition: '中文版', coverage: '报道' },
 };
 
 const CORE_KEYWORDS: readonly string[] = [
@@ -125,9 +124,10 @@ export function buildSeoTitle(input: ArticleSeoMetadataInput): string {
   const base = truncateAtWord(input.title, 82);
   const marker = input.lang === 'en'
     ? `${input.articleTypeLabel} ${input.date}`
-    : `${meta.nativeName} ${input.articleTypeLabel}`;
+    : `${meta.nativeName} ${input.articleTypeLabel} ${input.date}`;
   if (base.toLocaleLowerCase().includes(marker.toLocaleLowerCase())) return base;
-  return truncateAtWord(`${base} | ${marker}`, 96);
+  const maxBase = Math.max(34, 96 - marker.length - 3);
+  return `${truncateAtWord(input.title, maxBase)} | ${marker}`;
 }
 
 /**
@@ -138,7 +138,7 @@ export function buildSeoTitle(input: ArticleSeoMetadataInput): string {
  */
 export function buildSeoDescription(input: ArticleSeoMetadataInput): string {
   const labels = CONTEXT_LABELS[input.lang];
-  const suffix = `${labels.coverage}: ${input.articleTypeLabel}, ${input.date}, ${labels.edition} — ${labels.sourceLinked}.`;
+  const suffix = `${labels.coverage}: ${input.articleTypeLabel}, ${input.date}, ${labels.edition}, Riksdag/OSINT provenance.`;
   const base = collapseWhitespace(input.description);
   const maxBase = Math.max(70, DESCRIPTION_HARD_MAX - suffix.length - 1);
   let description = sentenceJoin(truncateAtWord(base, maxBase), suffix);
