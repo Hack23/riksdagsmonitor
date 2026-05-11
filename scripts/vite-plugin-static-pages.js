@@ -46,8 +46,15 @@
  *    route through Vite.
  * 3. Reads each static HTML page from the project root, performs
  *    a single regex rewrite of the `styles.css` `<link>` tag, and
- *    writes the result into the matching `dist/` location. No DOM
- *    parsing, no full corpus held in memory at once.
+ *    a regex rewrite of any `<script type="module" src="
+ *    /src/browser/<name>.ts">` tag to its hashed `/assets/js/
+ *    <name>-<hash>.js` production bundle, and writes the result
+ *    into the matching `dist/` location. Without the script
+ *    rewrite, dashboard pages emitted here would ship the dev-only
+ *    `/src/browser/main.ts` path, which S3/CloudFront serves as
+ *    `index.html` (text/html) — silently breaking the lazy
+ *    dashboard loader and leaving every dashboard page empty. No
+ *    DOM parsing, no full corpus held in memory at once.
  *
  * Memory profile: O(largest single HTML file) ≈ 2 MB worst case
  * (political-intelligence_*.html). Time profile: O(n) on the
@@ -100,6 +107,29 @@ const STYLESHEET_LINK_RE =
   /<link\b([^>]*?)\brel\s*=\s*"stylesheet"([^>]*?)\bhref\s*=\s*"((?:\.\.\/|\/)?styles\.css)"([^>]*)>/gi;
 
 /**
+ * Match a single `<script type="module" src="/src/browser/<name>.ts">` dev
+ * tag (the one Vite expects in source) so we can rewrite it to the hashed
+ * production bundle (`/assets/js/<name>-<hash>.js`) emitted by Rollup.
+ *
+ * Why this matters: dashboard pages (and any other static page emitted by
+ * this plugin instead of Rollup) inherit `<script type="module" src="
+ * /src/browser/main.ts">` from `index.html`. In dev that source path is
+ * resolved by the Vite dev server, but in production S3/CloudFront serves
+ * `/src/browser/main.ts` as the index.html fallback (text/html). The
+ * browser silently rejects loading HTML as a JS module → the lazy
+ * dashboard loader never runs → every dashboard page renders empty.
+ *
+ * We only match the canonical absolute `/src/browser/<name>.ts` form (the
+ * only one used in this codebase) AND require `type="module"` so we never
+ * rewrite a non-module `<script>` tag (which would silently break at
+ * runtime — an ESM bundle loaded as a classic script throws "Cannot use
+ * import statement outside a module"). Captures: 1=before-attrs,
+ * 2=name, 3=after-attrs.
+ */
+const MODULE_SCRIPT_RE =
+  /<script\b(?=[^>]*?\btype\s*=\s*"module")([^>]*?)\bsrc\s*=\s*"\/src\/browser\/([A-Za-z0-9_-]+)\.ts"([^>]*)>\s*<\/script>/gi;
+
+/**
  * Read Vite's emitted manifest to map `styles.css` → its hashed
  * output path. Falls back to scanning `dist/assets/` for a unique
  * `styles-*.css` if the manifest entry is missing (which can
@@ -138,6 +168,52 @@ function readStylesAssetName(distDir) {
       `Set build.manifest = true in vite.config.js, or check that ` +
       `the main bundle build emitted a styles-*.css under dist/assets/.`,
   );
+}
+
+/**
+ * Resolve the hashed JS bundle for a given `src/browser/<name>.ts` entry.
+ *
+ * Looks up `src/browser/<name>.ts` (the source-relative key Vite uses for
+ * Rollup `input` entries authored as `<script type="module" src="
+ * /src/browser/<name>.ts">` inside an HTML input). Falls back to scanning
+ * `dist/assets/js/` for a unique `<name>-<hash>.js` if the manifest
+ * doesn't contain that key (e.g. when the entry alias differs from the
+ * file basename).
+ *
+ * Returns a path relative to `distDir`, e.g. `assets/js/main-Ab12.js`.
+ * Returns `null` when no match exists — callers leave the script tag
+ * untouched in that case so missing entries surface as clear runtime
+ * 404s rather than silent rewrites to the wrong bundle.
+ *
+ * @param {string} distDir       Absolute path to the Vite output dir.
+ * @param {string} entryName     Bare module name, e.g. `main`.
+ * @returns {string | null}      Hashed asset path (relative) or null.
+ */
+function readModuleAssetName(distDir, entryName) {
+  const manifestPath = path.join(distDir, '.vite', 'manifest.json');
+  if (fs.existsSync(manifestPath)) {
+    /** @type {Record<string, { file?: string; isEntry?: boolean }>} */
+    const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+    const key = `src/browser/${entryName}.ts`;
+    const entry = manifest[key];
+    if (entry && entry.file && entry.file.endsWith('.js')) return entry.file;
+  }
+
+  // Fallback — scan dist/assets/js/ for a unique `<name>-<hash>.js`.
+  const jsDir = path.join(distDir, 'assets', 'js');
+  if (fs.existsSync(jsDir)) {
+    const re = new RegExp(`^${entryName}-[A-Za-z0-9_-]+\\.js$`);
+    const hits = fs.readdirSync(jsDir).filter((f) => re.test(f));
+    if (hits.length === 1) return `assets/js/${hits[0]}`;
+    if (hits.length > 1) {
+      throw new Error(
+        `[static-pages] Found multiple ${entryName}-*.js in dist/assets/js/ ` +
+          `(${hits.join(', ')}). Cannot determine canonical bundle.`,
+      );
+    }
+  }
+
+  return null;
 }
 
 function sha384Base64(buffer) {
@@ -229,14 +305,27 @@ export default function staticPagesPlugin(options) {
         const cssBuf = fs.readFileSync(cssAbs);
         const integrity = `sha384-${sha384Base64(cssBuf)}`;
 
+        // Cache resolved hashed JS bundles (by entry name) so we hit the
+        // manifest at most once per entry across all emitted pages.
+        /** @type {Map<string, string | null>} */
+        const moduleAssetCache = new Map();
+        const resolveModule = (entryName) => {
+          if (!moduleAssetCache.has(entryName)) {
+            moduleAssetCache.set(entryName, readModuleAssetName(distDir, entryName));
+          }
+          return moduleAssetCache.get(entryName);
+        };
+
         let totalEmitted = 0;
         let totalRewritten = 0;
+        let totalScriptRewritten = 0;
         const setSummary = [];
 
         for (const set of pageSets) {
           const files = resolvePageFiles(set, projectRoot);
           let emitted = 0;
           let rewritten = 0;
+          let scriptRewritten = 0;
 
           for (const absPath of files) {
             const rel = path.relative(projectRoot, absPath);
@@ -245,7 +334,8 @@ export default function staticPagesPlugin(options) {
 
             const html = fs.readFileSync(absPath, 'utf8');
             let didRewrite = false;
-            const out = html.replace(
+            let didScriptRewrite = false;
+            let out = html.replace(
               STYLESHEET_LINK_RE,
               (_m, before, mid, href, after) => {
                 didRewrite = true;
@@ -257,22 +347,59 @@ export default function staticPagesPlugin(options) {
               },
             );
 
+            // Rewrite `<script type="module" src="/src/browser/<name>.ts">`
+            // (dev-only path Vite resolves) → hashed production bundle.
+            // Without this, S3/CloudFront serves the dev path as
+            // index.html (text/html) and the browser silently rejects
+            // loading HTML as a JS module → no charts on dashboard pages.
+            // First-party JS is excluded from SRI per vite.config.js
+            // skipResources, so we only add `crossorigin` (matching the
+            // attribute Vite emits on bundled module scripts).
+            out = out.replace(MODULE_SCRIPT_RE, (match, before, entryName, after) => {
+              const hashedJs = resolveModule(entryName);
+              if (!hashedJs) {
+                // Leave untouched so the missing entry surfaces as a
+                // visible 404 in the dev-tools network panel rather than
+                // a silent rewrite to a wrong path.
+                return match;
+              }
+              didScriptRewrite = true;
+              // Strip any pre-existing `src` and `crossorigin` attributes from
+              // either side of the original `src` so we never emit duplicate
+              // attributes when the source tag already carried them (Vite
+              // sometimes emits `crossorigin` on its module preload tags).
+              const stripAttrs = (s) =>
+                s
+                  .replace(/\bsrc\s*=\s*"[^"]*"/i, '')
+                  .replace(/\bcrossorigin(?:\s*=\s*"[^"]*")?/i, '')
+                  .trim();
+              const attrsBefore = stripAttrs(before);
+              const attrsAfter = stripAttrs(after);
+              const beforeStr = attrsBefore ? ` ${attrsBefore}` : '';
+              const afterStr = attrsAfter ? ` ${attrsAfter}` : '';
+              return `<script${beforeStr} crossorigin="" src="/${hashedJs}"${afterStr}></script>`;
+            });
+
             fs.writeFileSync(destAbs, out, 'utf8');
             emitted += 1;
             if (didRewrite) rewritten += 1;
+            if (didScriptRewrite) scriptRewritten += 1;
           }
 
-          setSummary.push({ label: set.label, count: emitted, rewritten });
+          setSummary.push({ label: set.label, count: emitted, rewritten, scriptRewritten });
           totalEmitted += emitted;
           totalRewritten += rewritten;
+          totalScriptRewritten += scriptRewritten;
         }
 
         const summary = setSummary
-          .map((s) => `${s.label}=${s.count}/${s.rewritten}`)
+          .map((s) => `${s.label}=${s.count}/${s.rewritten}/${s.scriptRewritten}`)
           .join(', ');
         console.log(
           `[static-pages] emitted ${totalEmitted} HTML page(s), ` +
-            `rewrote styles.css href in ${totalRewritten} (${summary})`,
+            `rewrote styles.css href in ${totalRewritten}, ` +
+            `rewrote module script src in ${totalScriptRewritten} ` +
+            `(label=count/css/js: ${summary})`,
         );
       },
     },

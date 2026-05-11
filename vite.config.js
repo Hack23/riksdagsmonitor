@@ -281,14 +281,19 @@ export default defineConfig({
         },
         {
           // The 9 specialised political-intelligence dashboard pages
-          // (parties, anomaly-detection, network-analysis, voting-cohesion,
-          // momentum, coalitions, seasonal-patterns, pre-election, ministers,
-          // risk, election-cycle, committees) × 14 languages = 126 files,
-          // emitted by scripts/build-dashboard-pages.py. They are pure
-          // static HTML that loads existing chart bundles via root-relative
-          // <script src="/assets/js/...">, so they don't need to be Rollup
-          // entry points — staticPagesPlugin just copies them to dist/ and
-          // rewrites the styles.css link to the hashed asset.
+          // (anomaly-detection, coalitions, committees, election-cycle,
+          // ministers, parties, pre-election, risk, seasonal-patterns)
+          // × 14 languages = 126 files, emitted by
+          // scripts/build-dashboard-pages.py.
+          //
+          // They inherit `<script type="module" src="/src/browser/main.ts">`
+          // from index.html, so staticPagesPlugin rewrites that tag to the
+          // hashed `/assets/js/main-<hash>.js` bundle (see MODULE_SCRIPT_RE
+          // in scripts/vite-plugin-static-pages.js). Without this rewrite,
+          // S3/CloudFront serves /src/browser/main.ts as index.html
+          // (text/html) → the browser silently rejects loading HTML as a
+          // JS module → dashboards render empty (no charts, no data).
+          //
           // Without this entry vite preview returned 404 for /dashboards/*.html
           // (every Cypress assertion in cypress/e2e/dashboards.cy.js failed —
           // 1 passing / 20 failing in run 25549240331).

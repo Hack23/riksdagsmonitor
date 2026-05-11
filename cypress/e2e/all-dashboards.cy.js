@@ -133,15 +133,14 @@ describe('All Dashboards - Comprehensive Coverage', () => {
             });
             
             it(`${chartId} should be rendered by Chart.js`, () => {
-              // Chart.js v4 no longer uses the old chartjs-render-monitor class
-              cy.get(`#${dashboard.id}`)
-                .find(`#${chartId}`, { timeout: 10000 })
-                .should('be.visible')
-                .should(($canvas) => {
-                  expect($canvas[0]).to.exist;
-                  expect($canvas[0].width).to.be.greaterThan(0);
-                  expect($canvas[0].height).to.be.greaterThan(0);
-                });
+              // Scroll the dashboard into view so the lazy loader triggers
+              cy.get(`#${dashboard.id}`).scrollIntoView();
+              // Verify that Chart.js actually attached an instance to the
+              // canvas. A bare `width > 0` check is NOT sufficient — the
+              // default HTML canvas dimensions are 300×150 even when no JS
+              // has run, so it would pass even when the main bundle fails
+              // to load (the root cause of the PR #2403 empty-dashboard bug).
+              cy.waitForChart(chartId);
             });
           });
         });
@@ -272,14 +271,14 @@ describe('All Dashboards - Comprehensive Coverage', () => {
       });
     });
 
-    it('parties dashboard renders its first Chart.js canvas with non-zero size', () => {
+    it('parties dashboard renders its first Chart.js canvas with Chart.js instance', () => {
       cy.visit('/dashboards/parties.html');
-      cy.get('#party-dashboard')
-        .find('#partyEffectivenessChart', { timeout: 5000 })
-        .should('exist')
-        .should(($canvas) => {
-          expect($canvas[0].width).to.be.greaterThan(0);
-        });
+      // Scroll into view to trigger lazy loading
+      cy.get('#party-dashboard').scrollIntoView();
+      // Use waitForChart which validates Chart.getChart() — proves the
+      // full pipeline: main.ts loaded → register-globals → dashboard
+      // module imported → CSV fetched → chart drawn.
+      cy.waitForChart('partyEffectivenessChart');
     });
   });
 });
