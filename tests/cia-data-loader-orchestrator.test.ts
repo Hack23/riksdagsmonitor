@@ -60,7 +60,7 @@ describe('CIADataLoader orchestrator', () => {
     const loader = new CIADataLoader();
     const rows = await loader.loadCSV('foo.csv');
     expect(rows).toEqual([{ a: 9, b: 8 }]);
-    expect(seen[0]).toBe('../cia-data/foo.csv');
+    expect(seen[0]).toBe('/cia-data/foo.csv');
     expect(seen[1]).toContain('raw.githubusercontent.com');
     expect(seen[1]).toContain('foo.csv');
   });

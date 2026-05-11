@@ -148,7 +148,11 @@ interface CacheItem<T> {
 
 const CONFIG: MinistryDashboardConfig = {
   dataSource: {
-    localUrl: 'cia-data/ministry/',
+    // Absolute path so this works from `/dashboards/ministers.html` (a
+    // bare `cia-data/…` would resolve to `/dashboards/cia-data/…` and
+    // 404). The trailing slash matters — `${localUrl}${filename}` directly
+    // concatenates without inserting one.
+    localUrl: '/cia-data/ministry/',
     remoteUrl:
       'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/',
     files: {

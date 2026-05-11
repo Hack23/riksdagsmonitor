@@ -199,7 +199,9 @@ async function fetchCIAData(url: string): Promise<PoliticianRiskRow[] | null> {
  * working when raw.githubusercontent.com is rate-limited or offline.
  */
 async function fetchPoliticianRiskData(): Promise<PoliticianRiskRow[] | null> {
-  const localUrl = 'cia-data/politician/view_politician_risk_summary_sample.csv';
+  // Absolute path so this works from `/dashboards/risk.html` (a bare
+  // `cia-data/…` would resolve to `/dashboards/cia-data/…` and 404).
+  const localUrl = '/cia-data/politician/view_politician_risk_summary_sample.csv';
   const local = await fetchCIAData(localUrl);
   if (local && local.length > 0) {
     logger.debug(`Loaded ${local.length} politicians from local cia-data/`);

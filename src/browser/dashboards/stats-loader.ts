@@ -55,8 +55,14 @@ const REMOTE_REPO_PATH =
 
 /**
  * Local cached data path (served alongside the site).
+ *
+ * Absolute, root-relative URL so the file resolves from any depth — the
+ * stats hero is loaded by `main.ts` on both `/index*.html` AND every
+ * `/dashboards/<slug>.html` page. A bare `cia-data/…` would resolve to
+ * `/dashboards/cia-data/…` from those pages and 404, forcing a
+ * GitHub-raw fallback on every load.
  */
-const LOCAL_CSV = 'cia-data/extraction_summary_report.csv';
+const LOCAL_CSV = '/cia-data/extraction_summary_report.csv';
 
 /**
  * Maps DOM stat identifiers to their corresponding CIA database object names.
