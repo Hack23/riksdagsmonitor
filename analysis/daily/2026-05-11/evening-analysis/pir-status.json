@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-05-11T17:32:00Z",
+  "article_date": "2026-05-11",
+  "subfolder": "evening-analysis",
+  "pirs": [
+    {
+      "id": "PIR-001",
+      "title": "Constitutional reform finalisation",
+      "status": "CLOSED",
+      "closed_by": ["HD01KU34"],
+      "summary": "KU34 betänkande confirms final adoption of triple constitutional amendment (abortion rights RF 2:18a, association restriction RF 2:24, citizenship revocation). Vilande process complete.",
+      "next_indicator": "Riksdag chamber vote date (T+7–14d); SFS promulgation"
+    },
+    {
+      "id": "PIR-002",
+      "title": "Migration regime tightening — vandel and return",
+      "status": "ONGOING",
+      "updated_by": ["HD024149", "HD024150"],
+      "summary": "V motions challenge props 264 and 263. SfU committee deliberations not yet scheduled. Lagrådet criticism documented. ECHR and EU-law risks identified.",
+      "next_indicator": "SfU committee vote schedule; Commission DG Home observations; ECHR applications"
+    },
+    {
+      "id": "PIR-003",
+      "title": "Party positioning for 2026 election — all 8 parties",
+      "status": "ONGOING",
+      "updated_by": ["HD01KU34", "HD024149", "HD024150", "HD10481", "HD10482", "HD11804", "HD11805", "HD11806", "HD11807", "HD11808", "HD11809", "HD11810"],
+      "summary": "All 8 parties active: government bloc (constitutional achievement, migration delivery), S (social state deterioration), V (legal challenge), C (moderate values + business), SD (foreign policy), MP (climate + rights).",
+      "next_indicator": "First post-KU34 polling data (T+14d); party manifesto publications (T+60d)"
+    },
+    {
+      "id": "PIR-004",
+      "title": "NATO integration and foreign policy evolution",
+      "status": "ACTIVE",
+      "updated_by": ["HD11805", "HD11806", "HD11809"],
+      "summary": "SD foreign policy interpellations on EPG Armenia summit, EU tech sovereignty, Turkey-Hamas. Sweden's foreign policy posture evolving post-NATO accession.",
+      "next_indicator": "Government responses to HD11805, HD11809 (T+14–21d); EPG summit confirmation"
+    }
+  ],
+  "roll_forward_notes": "PIR-002 and PIR-003 carry forward to next run. PIR-004 requires monitoring. PIR-001 closed — verify chamber vote in next evening analysis run."
+}
