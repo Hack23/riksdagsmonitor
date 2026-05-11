@@ -273,6 +273,76 @@ export function countBlufEvidenceAnchors(bluf: string): number {
 // ---------------------------------------------------------------------------
 
 /**
+ * One unclosed `\`\`\`mermaid` fence found in the article body.
+ *
+ * `lineNumber` is 1-indexed and points at the opening `\`\`\`mermaid`
+ * line so the editor can jump straight to the regression.
+ */
+export interface UnclosedMermaidFence {
+  readonly lineNumber: number;
+  /** Line number where the fence implicitly ended (next opening fence
+   *  or end-of-input). Useful for diagnostics. */
+  readonly impliedEndLineNumber: number;
+}
+
+/**
+ * Detect every `\`\`\`mermaid` opening fence whose matching closing
+ * `\`\`\`` is missing in the body. The aggregator concatenates raw
+ * artifact bodies and AI agents occasionally drop the closing fence —
+ * the renderer ({@link preprocessMermaidFences}) recovers gracefully
+ * by treating the next fence opening as an implicit close, but the
+ * source artifact still needs to be fixed so downstream tools (the
+ * `gh aw mcp inspect`-style audits, IDE preview, source review) stop
+ * silently mis-rendering.
+ *
+ * Pure string analysis — never mutates the input.
+ *
+ * @param body Aggregated `article.md` contents.
+ * @returns Empty array when every `\`\`\`mermaid` has a matching close.
+ */
+export function findUnclosedMermaidFences(body: string): readonly UnclosedMermaidFence[] {
+  const lines = body.split('\n');
+  const out: UnclosedMermaidFence[] = [];
+  let i = 0;
+  while (i < lines.length) {
+    const line = lines[i]!;
+    if (/^```mermaid[\t ]*$/.test(line)) {
+      const openLine = i + 1; // 1-indexed
+      let j = i + 1;
+      let closed = false;
+      for (; j < lines.length; j += 1) {
+        const cur = lines[j]!;
+        if (/^```[\t ]*$/.test(cur)) {
+          closed = true;
+          break;
+        }
+        if (/^```/.test(cur)) {
+          // Next opening fence before close — unclosed.
+          break;
+        }
+      }
+      if (!closed) {
+        out.push({ lineNumber: openLine, impliedEndLineNumber: j + 1 });
+      }
+      i = j + 1;
+      continue;
+    }
+    i += 1;
+  }
+  return out;
+}
+
+/**
+ * Count `\`\`\`mermaid` opening fences in a body. Used by the
+ * mermaid-coverage cross-check between `article.md` and the source
+ * artifacts under the same `analysis/daily/$DATE/$SUBFOLDER` folder.
+ */
+export function countMermaidOpenings(body: string): number {
+  const matches = body.match(/^```mermaid[\t ]*$/gm);
+  return matches ? matches.length : 0;
+}
+
+/**
  * Load banned phrases from the canonical JSON file. Returns the flat
  * array of literal substrings. Caches after first load.
  * Returns `null` when the canonical file is missing or malformed so
@@ -707,7 +777,85 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
     }
   }
 
+  // 10. Mermaid fence integrity — every `\`\`\`mermaid` opening fence
+  //     in the aggregated article must have a matching `\`\`\`` close.
+  //     Unclosed fences cause the renderer to merge two diagrams into
+  //     one (the next opening becomes the implicit close) and silently
+  //     drop every other diagram. The renderer recovers gracefully but
+  //     the source artifact still needs to be fixed.
+  const unclosedFences = findUnclosedMermaidFences(text);
+  if (unclosedFences.length > 0) {
+    const sample = unclosedFences
+      .slice(0, 3)
+      .map((f) => `line ${f.lineNumber}`)
+      .join(', ');
+    violations.push({
+      file: rel,
+      code: 'unclosed-mermaid-fence',
+      message: `${unclosedFences.length} unclosed \`\`\`mermaid fence(s) detected (${sample}${unclosedFences.length > 3 ? ', …' : ''}). Add a closing \`\`\` line. The renderer recovers gracefully but the source artifact must be fixed so the analysis-gate Check 5 and IDE preview render correctly.`,
+    });
+  }
+
+  // 11. Mermaid coverage — every `\`\`\`mermaid` block in the source
+  //     artifacts under the same folder must survive aggregation into
+  //     `article.md`. Counts opening fences (closing fences are not
+  //     reliable signal — see check 10). When the article is missing
+  //     mermaid blocks present on disk, the aggregator regressed.
+  try {
+    const sourceMermaidCount = await countSourceArtifactMermaidOpenings(parentDir);
+    const articleMermaidCount = countMermaidOpenings(text);
+    if (sourceMermaidCount > 0 && articleMermaidCount < sourceMermaidCount) {
+      violations.push({
+        file: rel,
+        code: 'mermaid-coverage-regression',
+        message: `article.md contains ${articleMermaidCount} \`\`\`mermaid opening(s) but the source artifacts in ${relative(REPO_ROOT, parentDir)}/ contain ${sourceMermaidCount}. The aggregator must include every diagram authored in the analysis artifacts — see scripts/render-lib/aggregator/aggregate.ts.`,
+      });
+    }
+  } catch {
+    // Folder may be missing or unreadable — the artifact-existence
+    // checks (1, 2, 6) will surface that separately.
+  }
+
   return violations;
+}
+
+/**
+ * Sum the `\`\`\`mermaid` opening-fence count across every source
+ * artifact (.md) in `subfolderAbsPath`, excluding `article.md`,
+ * `README.md`, and any `article.<lang>.md` translation. Each
+ * `documents/*.md` per-document analysis is also counted because the
+ * aggregator expands those into the article.
+ *
+ * Pure with respect to filesystem reads — never mutates state.
+ */
+async function countSourceArtifactMermaidOpenings(subfolderAbsPath: string): Promise<number> {
+  let total = 0;
+  const entries = await readdir(subfolderAbsPath);
+  for (const entry of entries) {
+    const full = join(subfolderAbsPath, entry);
+    const st = await stat(full);
+    if (st.isDirectory()) {
+      if (entry === 'documents') {
+        const docEntries = await readdir(full);
+        for (const docEntry of docEntries) {
+          if (!/\.md$/i.test(docEntry)) continue;
+          const docFull = join(full, docEntry);
+          const docStat = await stat(docFull);
+          if (!docStat.isFile()) continue;
+          const body = await readFile(docFull, 'utf8');
+          total += countMermaidOpenings(body);
+        }
+      }
+      continue;
+    }
+    if (!st.isFile()) continue;
+    if (!/\.md$/i.test(entry)) continue;
+    if (entry === 'README.md') continue;
+    if (/^article(?:\.[a-z-]+)?\.md$/i.test(entry)) continue;
+    const body = await readFile(full, 'utf8');
+    total += countMermaidOpenings(body);
+  }
+  return total;
 }
 
 async function main(): Promise<void> {
