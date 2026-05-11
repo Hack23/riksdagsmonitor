@@ -5,7 +5,7 @@ date: 2026-05-11
 subfolder: motions
 slug: 2026-05-11-motions
 source_folder: analysis/daily/2026-05-11/motions
-generated_at: 2026-05-11T08:19:22.639Z
+generated_at: 2026-05-11T08:44:37.321Z
 language: en
 layout: article
 ---
@@ -307,6 +307,197 @@ xychart-beta
 | T-125 days election proximity | ARTICLE_DATE 2026-05-11 vs 2026-09-13 | 2026-05-11 | HIGH |
 
 ## Per-document intelligence
+
+### HD024141
+<!-- source: documents/HD024141-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/documents/HD024141-analysis.md -->
+
+**dok_id**: HD024141 | **Party**: Vänsterpartiet | **Author**: Kajsa Fredholm  
+**Proposition**: 2025/26:242 | **Committee**: MJU | **Full text**: ✅
+
+### Motion Summary
+Full rejection of prop. 2025/26:242. Argues the proposition accelerates biodiversity collapse, creates EU Habitats Directive Art. 6 legal risk, and fails to account for cumulative environmental damage from 2020–2026 regulatory changes. Central evidence: Skogsstyrelsen Rapport 2026:07 — 26,000 ha of high-conservation-value forest felled annually.
+
+### Key Arguments
+1. **Biodiversity emergency**: 26,000 ha/year of high-value habitat destroyed under existing rules; deregulation will worsen this trajectory.
+2. **EU law risk**: Habitats Directive Art. 6 requires appropriate assessment of impacts on Natura 2000 sites. Reduced notification windows may prevent this assessment.
+3. **SOU 2025:93 ignored**: The government commissioned SOU 2025:93 which recommended production incentives alongside stricter environmental protections; the proposition implements only the deregulation side.
+4. **Naturvårdsverket**: V calls for Naturvårdsverket to publish a formal Art. 6 compatibility opinion.
+
+### Significance
+**DIW_adj**: 54 (T1) | **Horizon**: Long-term (EU law, biodiversity)  
+This is the most evidentially grounded opposition motion in the forestry cluster. The 26,000 ha/year figure from Skogsstyrelsen 2026:07 is a genuine empirical anchor. The EU Habitats argument is well-constructed and directly applicable to the Białowieża precedent.
+
+### PIR Impact
+PIR EU-HABITATS-SE: OPEN — HD024141 confirms V is monitoring but does not confirm Naturvårdsverket has published an Art. 6 opinion. PIR remains open.
+
+### Intelligence Value
+Provides the strongest environmental-legal argument against prop. 242. The Skogsstyrelsen data citation is the key analytical anchor for environmental coverage of this bill.
+
+### HD024142
+<!-- source: documents/HD024142-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/documents/HD024142-analysis.md -->
+
+**dok_id**: HD024142 | **Party**: Vänsterpartiet | **Author**: Gudrun Nordborg  
+**Proposition**: 2025/26:246 | **Committee**: JuU | **Full text**: ✅
+
+### Motion Summary
+Partial support / conditional rejection. V supports tightened youth supervision orders (provision 2 of prop. 246) but opposes the criminal responsibility age-cut to 13 and the reduced ungdomsrabatt (youth sentencing discount). Cites Lagrådet yttrande 12 March 2026 on RF incompatibility and adolescent brain development research.
+
+### Key Arguments
+1. **Lagrådet**: Lagrådet found age-cut provision incompatible with RF 2 kap. 8, 20–21 §§. Government must either amend or provide compelling RF justification.
+2. **Brain development**: Adolescent neuroscience establishes that 13-year-olds have qualitatively different criminal intent capacity. Criminal justice literature shows rehabilitation is more effective at this age than incarceration.
+3. **CRC Art. 40**: Sweden's commitments under lag 2018:1197 (incorporating CRC) require that the minimum age of criminal responsibility not be set "too low."
+4. **Support for supervision**: V acknowledges tightened supervision orders as a potentially effective intervention — this is V's concession to the government's core concern.
+
+### Significance
+**DIW_adj**: 72 (T1) | **Horizon**: Medium-term (political) + long-term (constitutional risk)  
+The highest-scoring motion of the cluster. V's partial support signal on supervision orders creates a potential bipartisan path if the government strips the age-cut provision.
+
+### PIR Impact
+PIR LAGRÅDET-246: **ANSWERED** — HD024142 corroborates HD024146 on the Lagrådet finding (12 March 2026, RF 2 kap. 8, 20–21 §§). Two independent motion texts confirm the same finding.
+
+### Intelligence Value
+Provides the scientific and legal substance underpinning the constitutional opposition. V's selective support creates a detachable "safe passage" option for the government if it chooses Scenario A.
+
+### HD024143
+<!-- source: documents/HD024143-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/documents/HD024143-analysis.md -->
+
+**dok_id**: HD024143 | **Party**: Sverigedemokraterna | **Author**: Martin Kinnunen  
+**Proposition**: 2025/26:242 | **Committee**: MJU | **Full text**: ✅
+
+### Motion Summary
+Supportive motion with a targeted qualification. SD supports the forestry deregulation direction in prop. 2025/26:242 but files a motion requesting that small forest owners (<50 ha) receive an exemption from certain compliance requirements on the grounds of proportionality and rural economic sustainability.
+
+### Key Arguments
+1. **Supports direction**: SD explicitly endorses the core deregulation goal — reducing bureaucratic burden on Swedish forest owners.
+2. **Small owner concern**: Landowners with <50 ha cannot absorb the same compliance costs as large forestry corporations. An exemption threshold would protect rural smallholders.
+3. **Voluntary reforestation**: SD also requests that voluntary reforestation at forest edges be given regulatory recognition (credits or reduced restoration obligation).
+
+### Significance
+**DIW_adj**: 18 (T3) | **Horizon**: Short-term  
+This is a supply-and-confidence motion, not an opposition motion. SD's request for a small-owner exemption is a low-cost concession the government could accept to broaden the apparent political coalition.
+
+### PIR Impact
+None. SD motion confirms supply-and-confidence relationship is intact on forestry.
+
+### Intelligence Value
+Confirms SD's rural voter care (small forest owners are an SD electoral constituency). The government accepting SD's small-owner exemption would be a visible concession that costs little but signals responsiveness. Analytically signals: NO THREAT to prop. 242 passage from SD.
+
+### HD024144
+<!-- source: documents/HD024144-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/documents/HD024144-analysis.md -->
+
+**dok_id**: HD024144 | **Party**: Socialdemokraterna | **Author**: Åsa Westlund  
+**Proposition**: 2025/26:242 | **Committee**: MJU | **Full text**: metadata only
+
+### Motion Summary
+S demands a comprehensive cumulative impact analysis of all forestry regulatory changes made since 2020 before prop. 2025/26:242 is implemented. This is a delaying tactic wrapped in responsible governance language. S does not explicitly reject the proposition's direction but conditions its support on evidence that cumulative regulatory changes are not causing unacceptable environmental damage.
+
+### Key Arguments (from summary)
+1. **Cumulative impact**: Individual regulations may be acceptable; their cumulative effect on forest ecosystems since 2020 has not been assessed.
+2. **SOU 2025:93**: S references the prior SOU work and notes the government is implementing only part of it.
+3. **Responsible governance**: Framed as "we support sustainable forestry but need evidence before proceeding."
+
+### Significance
+**DIW_adj**: 40 (T2) | **Horizon**: Short-term (delaying potential) + medium-term  
+S's motion is potentially the most politically impactful delaying mechanism if adopted by the MJU committee. A 12–18 month delay would push implementation past the September 2026 election.
+
+### PIR Impact
+None directly. S's demand could slow PIR EU-HABITATS-SE timeline if the government commissions a voluntary Naturvårdsverket review in response.
+
+### Intelligence Value
+S is not opposing the forestry bill on environmental principles (that's V and MP); S is opposing it on governance/evidence principles. This is the "responsible governance" brand at work. The analytical distinction matters: S could ultimately vote yes if the government conducts the analysis.
+
+### HD024145
+<!-- source: documents/HD024145-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/documents/HD024145-analysis.md -->
+
+**dok_id**: HD024145 | **Party**: Centerpartiet | **Author**: Helena Lindahl  
+**Proposition**: 2025/26:242 | **Committee**: MJU | **Full text**: ✅
+
+### Motion Summary
+C supports the forestry deregulation direction but calls the proposition "otillräcklig" (insufficient). The motion focuses on the failure to implement SOU 2025:93's production incentive recommendations and the deferral of key measures to an uncertain future. C wants more deregulation, not less.
+
+### Key Arguments
+1. **Supports direction**: C explicitly endorses prop. 242's deregulation goal.
+2. **Insufficient implementation**: SOU 2025:93 proposed production incentives (forest credits, reduced environmental levy for profitable management) that are deferred in this proposition.
+3. **Future uncertainty**: The government's promise to "implement SOU 2025:93 in a future proposition" is inadequate given C's experience of government promises remaining unfulfilled.
+4. **Rural property rights**: C's motion emphasises private property rights for forest owners — consistent with C's agrarian liberal tradition.
+
+### Significance
+**DIW_adj**: 40 (T2) | **Horizon**: Medium-term  
+C's "insufficient" framing is electorally important: it positions C as more pro-forest-industry than the governing bloc. C will likely vote yes on passage while filing this motion as a public record of wanting more. This is classic centrist bargaining position.
+
+### PIR Impact
+None directly. Confirms C is not blocking forestry deregulation. May vote yes while publicly calling it insufficient.
+
+### Intelligence Value
+Key signal for post-election forestry policy: if C joins any government (right or left), C will demand SOU 2025:93 production incentives as a condition. This is C's stated negotiating floor.
+
+### HD024146
+<!-- source: documents/HD024146-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/documents/HD024146-analysis.md -->
+
+**dok_id**: HD024146 | **Party**: Centerpartiet | **Author**: Ulrika Liljeberg  
+**Proposition**: 2025/26:246 | **Committee**: JuU | **Full text**: ✅
+
+### Motion Summary
+Partial opposition on constitutional grounds. C opposes the age-cut provision (lowering criminal responsibility to 13) citing Lagrådet's yttrande of 12 March 2026 (RF 2 kap. 8, 20–21 §§ incompatibility) and characterises the government's pattern of overriding Lagrådet as a "recurring phenomenon" threatening Sweden's constitutional order. C also opposes the reduced ungdomsrabatt.
+
+### Key Arguments
+1. **Lagrådet explicit**: "Lagrådets yttrande från den 12 mars 2026" — Lagrådet found the age-cut "inte kan anses förenligt med 2 kap. 8, 20 och 21 §§ regeringsformen."
+2. **Systemic pattern**: C does not treat this as an isolated case — the motion states the government "vid upprepade tillfällen" (on repeated occasions) ignores both Lagrådet and the constitution.
+3. **Ungdomsrabatt**: C also opposes the reduced youth discount, citing evidence that youth sentences should be calibrated to rehabilitation potential, not retribution.
+4. **What C supports**: Improved youth supervision. C acknowledges the government's supervision tightening provisions positively.
+
+### Significance
+**DIW_adj**: 72 (T1) | **Horizon**: Medium (political) + long (constitutional)  
+This is the most politically charged motion of the entire cluster. The "systemic pattern" framing elevates this from a policy debate to a governance-legitimacy challenge. C's 24 seats are the mathematical swing factor if SD ever wavers.
+
+### PIR Impact
+- PIR LAGRÅDET-246: **ANSWERED** — confirmed 12 March 2026 yttrande + RF provision citations
+- PIR COALITION-C-JuU: **ANSWERED (parliamentary format)** — HD024146 is C's formal parliamentary position on JuU
+
+### Intelligence Value
+The most intelligence-rich document of the cluster. The combination of: (a) specific Lagrådet date + RF provisions; (b) "systemic" framing; (c) C's 24 seats as swing factor; and (d) electoral positioning context, makes HD024146 the analytical anchor of this entire cycle.
+
+### HD024147
+<!-- source: documents/HD024147-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/documents/HD024147-analysis.md -->
+
+**dok_id**: HD024147 | **Party**: Miljöpartiet | **Author**: Rebecka Le Moine  
+**Proposition**: 2025/26:242 | **Committee**: MJU | **Full text**: metadata only
+
+### Motion Summary
+Full rejection of prop. 2025/26:242. MP argues the proposition accelerates biodiversity collapse at a time when Sweden must meet 2030 biodiversity targets under both national law and the EU Nature Restoration Law. EU Habitats Directive Art. 6 compatibility is a central concern.
+
+### Key Arguments (from summary)
+1. **Biodiversity targets**: Sweden's 2030 national biodiversity targets and EU Biodiversity Strategy require increased protection, not deregulation.
+2. **EU Nature Restoration Law**: The EU's new Nature Restoration Law (entered into force 2024) requires member states to restore degraded ecosystems — deregulating forestry moves in the opposite direction.
+3. **EU Habitats compatibility**: Same Art. 6 concern as V (HD024141).
+
+### Significance
+**DIW_adj**: 12 (T3) | **Horizon**: Long-term (biodiversity/EU law)  
+MP's motion amplifies V's environmental argument but adds less new evidence (EU Nature Restoration Law is a useful addition not in V's motion). Limited standalone political impact.
+
+### Intelligence Value
+The EU Nature Restoration Law (2024) reference is a useful addition: it provides a more recent legal hook than the older Habitats Directive. Analysts should note this as a second EU law track alongside Art. 6.
+
+### HD024148
+<!-- source: documents/HD024148-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/documents/HD024148-analysis.md -->
+
+**dok_id**: HD024148 | **Party**: Miljöpartiet | **Author**: Ulrika Westerlund  
+**Proposition**: 2025/26:246 | **Committee**: JuU | **Full text**: metadata only
+
+### Motion Summary
+Opposition to the age-cut to 13 and several other specific provisions. MP frames through the UN Convention on the Rights of the Child (CRC Art. 40) — children's right not to be treated as adults in criminal proceedings.
+
+### Key Arguments (from summary)
+1. **CRC Art. 40**: Minimum age of criminal responsibility must not be set "too low"; UNCRC General Comment No. 24 recommends 14 minimum, preferably 16.
+2. **Age cut to 13 specifically**: MP focuses opposition on the age 13 threshold — below the UNCRC's recommended minimum.
+3. **Specific provisions**: MP also opposes certain other provisions on reduced sentencing discounts for 15–17 year olds.
+
+### Significance
+**DIW_adj**: 27 (T2) | **Horizon**: Medium-term  
+MP contributes the CRC Art. 40 international dimension which V (HD024142) addresses less directly. The UNCRC General Comment No. 24 (2019) framing strengthens the opposition coalition's international law argument.
+
+### Intelligence Value
+Provides the CRC international law layer that completes the opposition's legal argument: RF 2 kap. (domestic, Lagrådet) + CRC Art. 40 (international). Together with HD024142 (V) and HD024146 (C), the opposition has mounted a comprehensive constitutional + international law challenge.
 
 ### hd024141
 <!-- source: documents/hd024141-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/documents/hd024141-analysis.md -->
@@ -1925,6 +2116,14 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/significance-scoring.md)
+- [`documents/HD024141-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/documents/HD024141-analysis.md)
+- [`documents/HD024142-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/documents/HD024142-analysis.md)
+- [`documents/HD024143-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/documents/HD024143-analysis.md)
+- [`documents/HD024144-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/documents/HD024144-analysis.md)
+- [`documents/HD024145-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/documents/HD024145-analysis.md)
+- [`documents/HD024146-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/documents/HD024146-analysis.md)
+- [`documents/HD024147-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/documents/HD024147-analysis.md)
+- [`documents/HD024148-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/documents/HD024148-analysis.md)
 - [`documents/hd024141-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/documents/hd024141-analysis.md)
 - [`documents/hd024142-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/documents/hd024142-analysis.md)
 - [`documents/hd024143-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/motions/documents/hd024143-analysis.md)

@@ -140,7 +140,8 @@ interface CacheEntry {
 
 const CONFIG: SeasonalConfig = {
   dataUrls: [
-    'cia-data/seasonal/view_riksdagen_seasonal_activity_patterns_sample.csv',
+    // Absolute path so this works from `/dashboards/seasonal-patterns.html`.
+    '/cia-data/seasonal/view_riksdagen_seasonal_activity_patterns_sample.csv',
     'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/view_riksdagen_seasonal_activity_patterns_sample.csv'
   ],
   cacheKey: 'riksdag_seasonal_patterns',

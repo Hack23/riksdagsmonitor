@@ -87,7 +87,11 @@ interface BubblePoint {
 // CONSTANTS
 // ============================================================================
 
-const LOCAL_DATA_BASE = 'cia-data';
+// Absolute path so the local-first hop works from any document depth
+// (e.g. `/politician-dashboard.html`, `/dashboards/*.html`). A bare
+// `cia-data` prefix would resolve to `/dashboards/cia-data/…` from the
+// dashboards/ directory and 404, forcing a GitHub-raw fallback.
+const LOCAL_DATA_BASE = '/cia-data';
 const CIA_DATA_BASE_URL =
   'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data';
 

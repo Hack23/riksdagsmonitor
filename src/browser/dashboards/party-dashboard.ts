@@ -686,8 +686,10 @@ async function fetchData(filename: string): Promise<CSVRow[]> {
     }
   }
 
-  // Try local file first
-  const localUrl = `cia-data/party/${filename}`;
+  // Try local file first.
+  // Absolute path so this works from `/dashboards/parties.html` (where a
+  // bare `cia-data/…` would resolve to `/dashboards/cia-data/…` and 404).
+  const localUrl = `/cia-data/party/${filename}`;
   try {
     const localResponse = await fetch(localUrl);
     if (localResponse.ok) {
