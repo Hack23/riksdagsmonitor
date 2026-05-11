@@ -194,6 +194,42 @@ jobs:
           fi
           echo "✅ dist/news/ directory present."
 
+          # Dashboard pages (added by PR #2349) must exist AND contain the
+          # hashed Vite bundle.  The dev-only `/src/browser/main.ts` path
+          # 404s on S3 (CloudFront serves index.html for unknown paths
+          # with text/html), so the browser silently rejects it as a JS
+          # module → lazy loader never runs → all charts empty.
+          DASH_FAIL=0
+          for slug in parties pre-election coalitions committees seasonal-patterns anomaly-detection risk ministers election-cycle; do
+            f="dist/dashboards/${slug}.html"
+            if [ ! -f "$f" ]; then
+              echo "❌ Dashboard missing: $f"
+              DASH_FAIL=1
+              continue
+            fi
+            if grep -q '/src/browser/main.ts' "$f"; then
+              echo "❌ $f still references dev-only /src/browser/main.ts"
+              DASH_FAIL=1
+            fi
+            if ! grep -qE 'src="/assets/js/main-[A-Za-z0-9_-]+\.js"' "$f"; then
+              echo "❌ $f missing hashed main-*.js bundle"
+              DASH_FAIL=1
+            fi
+          done
+          if [ "$DASH_FAIL" -eq 0 ]; then
+            echo "✅ All 9 dashboard pages verified: hashed bundle present, no dev paths."
+          else
+            echo "❌ Dashboard verification failed — aborting deploy."
+            exit 1
+          fi
+
+          # CIA data directory must exist (CSV data for dashboards)
+          if [ ! -d "dist/cia-data" ]; then
+            echo "❌ Build verification failed: 'dist/cia-data/' directory is missing."
+            exit 1
+          fi
+          echo "✅ dist/cia-data/ directory present."
+
       - name: Copy documentation to build output
         run: |
           if [ -d "docs" ]; then
