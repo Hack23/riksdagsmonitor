@@ -130,14 +130,14 @@ exclusive. Keep the existing WB path. `source.imf` stays empty.
 ```bash
 # Monthly CPI level — feed the inflation chart
 tsx scripts/imf-fetch.ts sdmx \
-  --path "/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2022-01" \
-  --indicator PCPI_IX --country SWE --persist
+  --path "/data/IMF.STA,CPI,5.0.0/SWE.CPI._T.IX.M?startPeriod=2022-01" \
+  --indicator _T.IX --country SWE --persist
 sleep 1
 
 # Policy rate (Riksbankens styrränta)
 tsx scripts/imf-fetch.ts sdmx \
-  --path "/data/IMF.STA,IR,4.0.0/M.SE.FPOLM_PA?startPeriod=2022-01" \
-  --indicator FPOLM_PA --country SWE --persist
+  --path "/data/IMF.STA,MFS_IR,8.0.1/SWE.MMRT_RT_PT_A_PT.M?startPeriod=2022-01" \
+  --indicator MMRT_RT_PT_A_PT --country SWE --persist
 sleep 1
 
 # Annual projection overlay
@@ -146,7 +146,7 @@ tsx scripts/imf-fetch.ts weo --country SWE --indicator PCPIPCH --years 12 --pers
 
 **Commentary**:
 
-> The March 2026 HICP reading (`IFS:PCPI_IX`) lifted to 109.4, implying year-on-year inflation near **2.3 %** — within hailing distance of the Riksbank's 2 % target. The IMF's April 2026 WEO projects annual CPI inflation to settle at **2.0 %** for 2027 (`WEO Apr-2026, PCPIPCH`). The policy rate stood at **3.25 %** at month-end (`MFS_IR:FPOLM_PA`), giving the Riksbank **125 bps** of cumulative room below the 2023 peak.
+> The March 2026 HICP reading (`CPI:_T.IX`) lifted to 109.4, implying year-on-year inflation near **2.3 %** — within hailing distance of the Riksbank's 2 % target. The IMF's April 2026 WEO projects annual CPI inflation to settle at **2.0 %** for 2027 (`WEO Apr-2026, PCPIPCH`). The policy rate stood at **3.25 %** at month-end (`MFS_IR:MMRT_RT_PT_A_PT`), giving the Riksbank **125 bps** of cumulative room below the 2023 peak.
 
 ---
 
@@ -159,19 +159,19 @@ tsx scripts/imf-fetch.ts weo --country SWE --indicator PCPIPCH --years 12 --pers
 ```bash
 # Swedish goods exports to Russia (monthly, post-invasion)
 tsx scripts/imf-fetch.ts sdmx \
-  --path "/data/IMF.STA,DOTS,4.0.0/M.SWE.RUS.TXG_FOB_USD?startPeriod=2021-01" \
-  --indicator TXG_FOB_USD --country SWE --persist
+  --path "/data/IMF.STA,IMTS,1.0.0/SWE.XG_FOB_USD.RUS.M?startPeriod=2021-01" \
+  --indicator XG_FOB_USD --country SWE --persist
 sleep 1
 
 # Compare to Nordic peers
 tsx scripts/imf-fetch.ts sdmx \
-  --path "/data/IMF.STA,DOTS,4.0.0/M.DNK.RUS.TXG_FOB_USD?startPeriod=2021-01" \
-  --indicator TXG_FOB_USD --country DNK --persist
+  --path "/data/IMF.STA,IMTS,1.0.0/DNK.XG_FOB_USD.RUS.M?startPeriod=2021-01" \
+  --indicator XG_FOB_USD --country DNK --persist
 ```
 
 **Commentary**:
 
-> Swedish goods exports to Russia collapsed **92 %** between Q4-2021 and Q4-2023 (`DOTS:TXG_FOB_USD`, monthly), from USD 320 m to USD 25 m. The Danish trajectory ran broadly parallel (-89 %), suggesting coordinated Nordic policy transmission rather than Sweden-specific legal posture.
+> Swedish goods exports to Russia collapsed **92 %** between Q4-2021 and Q4-2023 (`IMTS:XG_FOB_USD`, monthly), from USD 320 m to USD 25 m. The Danish trajectory ran broadly parallel (-89 %), suggesting coordinated Nordic policy transmission rather than Sweden-specific legal posture.
 
 ---
 
@@ -188,13 +188,13 @@ tsx scripts/imf-fetch.ts sdmx \
 sleep 1
 
 tsx scripts/imf-fetch.ts sdmx \
-  --path "/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2021-01" \
-  --indicator PCPI_IX --country SWE --persist
+  --path "/data/IMF.STA,CPI,5.0.0/SWE.CPI._T.IX.M?startPeriod=2021-01" \
+  --indicator _T.IX --country SWE --persist
 ```
 
 **Commentary**:
 
-> Brent crude averaged **USD 82/bbl** in March 2026 (`PCPS:POILAPSP`), up 11 % from January. Swedish headline CPI (`IFS:PCPI_IX`) moved from 108.1 to 109.4 across the same window — a commodity pass-through coefficient broadly consistent with the IMF's April 2026 WEO assumption of **PCPIPCH at 2.1 %** for 2026 (`WEO Apr-2026, PCPIPCH`).
+> Brent crude averaged **USD 82/bbl** in March 2026 (`PCPS:POILAPSP`), up 11 % from January. Swedish headline CPI (`CPI:_T.IX`) moved from 108.1 to 109.4 across the same window — a commodity pass-through coefficient broadly consistent with the IMF's April 2026 WEO assumption of **PCPIPCH at 2.1 %** for 2026 (`WEO Apr-2026, PCPIPCH`).
 
 ---
 
@@ -229,24 +229,24 @@ done
 ```bash
 # COFOG 02 — Defence (FöU)
 tsx scripts/imf-fetch.ts sdmx \
-  --path "/data/IMF.STA,GFS_COFOG,4.0.0/A.144.G.G02._Z._Z._Z._Z.XDC_R_B1GQ?startPeriod=2015" \
-  --indicator G02 --country SWE --persist
+  --path "/data/IMF.STA,GFS_COFOG,11.0.0/SWE.S13.G2MF.GF02_T.POGDP_PT.A?startPeriod=2015" \
+  --indicator GF02_T --country SWE --persist
 sleep 1
 
 # COFOG 07 — Health (SoU)
 tsx scripts/imf-fetch.ts sdmx \
-  --path "/data/IMF.STA,GFS_COFOG,4.0.0/A.144.G.G07._Z._Z._Z._Z.XDC_R_B1GQ?startPeriod=2015" \
-  --indicator G07 --country SWE --persist
+  --path "/data/IMF.STA,GFS_COFOG,11.0.0/SWE.S13.G2MF.GF07_T.POGDP_PT.A?startPeriod=2015" \
+  --indicator GF07_T --country SWE --persist
 sleep 1
 
 # COFOG 09 — Education (UbU)
 tsx scripts/imf-fetch.ts sdmx \
-  --path "/data/IMF.STA,GFS_COFOG,4.0.0/A.144.G.G09._Z._Z._Z._Z.XDC_R_B1GQ?startPeriod=2015" \
-  --indicator G09 --country SWE --persist
+  --path "/data/IMF.STA,GFS_COFOG,11.0.0/SWE.S13.G2MF.GF09_T.POGDP_PT.A?startPeriod=2015" \
+  --indicator GF09_T --country SWE --persist
 ```
 
 **Commentary**:
 
-> On the IMF GFS COFOG vintage for 2024 (T+1), Sweden's general-government spending by function allocated **1.6 %** of GDP to defence (function 02, `GFS_COFOG:G02`), **7.2 %** to health (function 07, `G07`), and **6.8 %** to education (function 09, `G09`). The defence ratio has climbed from 1.1 % in 2019 — consistent with the FöU-driven NATO-readiness ramp. Health tracks close to the OECD median; education retains Sweden's historical above-median position.
+> On the IMF GFS COFOG vintage for 2024 (T+1), Sweden's general-government spending by function allocated **1.6 %** of GDP to defence (function 02, `GFS_COFOG:GF02_T`), **7.2 %** to health (function 07, `GFS_COFOG:GF07_T`), and **6.8 %** to education (function 09, `GFS_COFOG:GF09_T`). The defence ratio has climbed from 1.1 % in 2019 — consistent with the FöU-driven NATO-readiness ramp. Health tracks close to the OECD median; education retains Sweden's historical above-median position.
 
-This article's `source.imf` field: `["GFS_COFOG:G02", "GFS_COFOG:G07", "GFS_COFOG:G09"]`.
+This article's `source.imf` field: `["GFS_COFOG:GF02_T", "GFS_COFOG:GF07_T", "GFS_COFOG:GF09_T"]`.

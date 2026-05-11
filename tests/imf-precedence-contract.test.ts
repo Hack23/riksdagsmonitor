@@ -343,8 +343,11 @@ describe('economic-indicators-inventory.json IMF precedence', () => {
     expect(inv.providerSelection.swedenPrimary).not.toBe('imf');
   });
 
-  it('IMF databases list includes the 8 canonical dataflows', () => {
-    const expected = ['WEO', 'FM', 'IFS', 'BOP_AGG', 'GFS_COFOG', 'MFS_IR', 'DOTS', 'PCPS'];
+  it('IMF databases list includes the canonical SDMX 3.0 dataflows', () => {
+    // 2026-05 refactor: IFS dissolved into CPI/MFS_IR/ER, DOTS renamed to
+    // IMTS, PCPS moved from IMF.STA to IMF.RES. The inventory MUST list
+    // every dataflow we cite from articles.
+    const expected = ['WEO', 'FM', 'CPI', 'BOP', 'GFS_COFOG', 'MFS_IR', 'IMTS', 'PCPS', 'ER'];
     expected.forEach((db) => {
       expect(inv.providers.imf.databases).toContain(db);
     });

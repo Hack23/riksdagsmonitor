@@ -18,7 +18,7 @@
  *   tsx scripts/imf-fetch.ts compare --indicator GGXWDG_NGDP --countries SWE,DNK,NOR,FIN,DEU
  *
  *   # Low-level SDMX 3.0 passthrough (for IFS / BOP / FM / GFS / DOTS):
- *   tsx scripts/imf-fetch.ts sdmx --path "/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2024-01" [--persist]
+ *   tsx scripts/imf-fetch.ts sdmx --path "/data/IMF.STA,CPI,5.0.0/SWE.CPI._T.IX.M?startPeriod=2024-01" [--persist]
  *
  * `--persist` writes the raw response under `analysis/data/imf/{indicator}/{country}.json`
  * with sidecar provenance (mcpTool=`imf-ts-client`, `database`, `projectionVintage`)
@@ -317,8 +317,8 @@ async function runSdmx(flags: ReadonlyMap<string, string>, booleans: ReadonlySet
   if (booleans.has('persist')) {
     // Derive a reasonable cache key: prefer explicit --indicator / --country
     // flags; otherwise fall back to the second-to-last SDMX path segment
-    // (typically the dataflow ID, e.g. ".../IMF.STA,CPI,4.0.0/M.SE.PCPI_IX"
-    // → "IMF.STA,CPI,4.0.0"). This is a pragmatic heuristic — not a hash —
+    // (typically the dataflow ID, e.g. ".../IMF.STA,CPI,5.0.0/SWE.CPI._T.IX.M"
+    // → "IMF.STA,CPI,5.0.0"). This is a pragmatic heuristic — not a hash —
     // so different SDMX queries that share a dataflow will share a cache
     // slot. Pass `--indicator` / `--country` explicitly when collision-free
     // caching matters.

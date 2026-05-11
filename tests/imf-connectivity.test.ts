@@ -60,7 +60,7 @@ function fakeDataPoint(year: number, value: number, projection = false): ImfData
 interface StubBehaviour {
   readonly weo?: 'ok' | 'throw' | 'empty';
   readonly fm?: 'ok' | 'throw' | 'empty';
-  readonly sdmx?: 'ok' | 'throw' | 'non-object' | 'auth-401' | 'auth-403' | 'auth-404';
+  readonly sdmx?: 'ok' | 'throw' | 'non-object' | 'empty-series' | 'auth-401' | 'auth-403' | 'auth-404';
   readonly sdmxSubscriptionKey?: string;
 }
 
@@ -79,7 +79,7 @@ function makeStubClient(b: StubBehaviour = {}): ImfClient {
       if (mode === 'throw') throw new Error('SDMX 503');
       if (mode === 'auth-401') {
         throw new Error(
-          'IMF API error: 401 Unauthorized for https://api.imf.org/external/sdmx/3.0/data/IMF.STA,CPI,5.0.0/M.SE.PCPI_IX — IMF SDMX subscription key missing or invalid (set IMF_SDMX_SUBSCRIPTION_KEY)',
+          'IMF API error: 401 Unauthorized for https://api.imf.org/external/sdmx/3.0/data/IMF.STA,CPI,5.0.0/SWE.CPI._T.IX.M — IMF SDMX subscription key missing or invalid (set IMF_SDMX_SUBSCRIPTION_KEY)',
         );
       }
       if (mode === 'auth-403') {
@@ -89,10 +89,21 @@ function makeStubClient(b: StubBehaviour = {}): ImfClient {
         // Real-world: IMF Azure APIM gateway returns 404 (not 401) when no
         // Ocp-Apim-Subscription-Key header is sent. Confirmed via curl
         // 2026-05-10.
-        throw new Error('IMF API error: 404  for https://api.imf.org/external/sdmx/3.0/data/IMF.STA,CPI,5.0.0/M.SE.PCPI_IX');
+        throw new Error('IMF API error: 404  for https://api.imf.org/external/sdmx/3.0/data/IMF.STA,CPI,5.0.0/SWE.CPI._T.IX.M');
       }
       if (mode === 'non-object') return 'plain-string';
-      return { dataSets: [{ series: {} }] };
+      if (mode === 'empty-series') {
+        // SDMX 3.0 silent-drift case: gateway returns 200 with a
+        // well-formed envelope but an EMPTY `dataSets[].series` map. The
+        // probe must surface this as `error='sdmx-empty-series'` so the
+        // operator notices outdated dataflow versions / country codes /
+        // indicator names instead of a misleading green tick.
+        return { data: { dataSets: [{ series: {} }] } };
+      }
+      // SDMX-JSON 2.0 envelope shape: at least one named series so the
+      // post-2026-05 connectivity probe (which now requires non-empty
+      // `dataSets[].series` to mark CPI ok) sees a healthy response.
+      return { data: { dataSets: [{ series: { 'SWE.CPI._T.IX.M': { observations: { '0': [120.5] } } } }] } };
     },
   } as unknown as ImfClient;
 }
@@ -147,7 +158,7 @@ describe('runProbes', () => {
   it('reports ok=true on all three probes when the client succeeds', async () => {
     const probes = await runProbes(makeStubClient());
     expect(probes).toHaveLength(3);
-    expect(probes.map((p) => p.dataflow).sort()).toEqual(['FM', 'IFS', 'WEO']);
+    expect(probes.map((p) => p.dataflow).sort()).toEqual(['CPI', 'FM', 'WEO']);
     expect(probes.every((p) => p.ok)).toBe(true);
     for (const p of probes) {
       expect(p.error).toBeUndefined();
@@ -175,21 +186,32 @@ describe('runProbes', () => {
 
   it('marks non-object SDMX responses as not ok', async () => {
     const probes = await runProbes(makeStubClient({ sdmx: 'non-object' }));
-    const ifs = probes.find((p) => p.dataflow === 'IFS');
+    const ifs = probes.find((p) => p.dataflow === 'CPI');
     expect(ifs?.ok).toBe(false);
     expect(ifs?.error).toBe('non-object-response');
   });
 
+  it('marks SDMX 200-but-empty-series responses as not ok with sdmx-empty-series (silent-drift guard)', async () => {
+    // Real-world risk: IMF SDMX 3.0 returns 200 with `dataSets[0].series = {}`
+    // when a dataflow version, country code or indicator becomes outdated
+    // (e.g. the legacy `M.SE.PCPI_IX` key after the 2026-05 refactor). This
+    // would otherwise look like a green tick and silently mask drift.
+    const probes = await runProbes(makeStubClient({ sdmx: 'empty-series' }));
+    const cpi = probes.find((p) => p.dataflow === 'CPI');
+    expect(cpi?.ok).toBe(false);
+    expect(cpi?.error).toBe('sdmx-empty-series');
+  });
+
   it('reports SDMX as sdmx-subscription-key-not-configured when key missing AND endpoint returns 401/403', async () => {
     const probes = await runProbes(makeStubClient({ sdmx: 'auth-401' /* sdmxSubscriptionKey defaults to '' */ }));
-    const ifs = probes.find((p) => p.dataflow === 'IFS');
+    const ifs = probes.find((p) => p.dataflow === 'CPI');
     expect(ifs?.ok).toBe(false);
     expect(ifs?.error).toBe('sdmx-subscription-key-not-configured');
   });
 
   it('reports SDMX as sdmx-subscription-key-not-configured on 403 when key missing', async () => {
     const probes = await runProbes(makeStubClient({ sdmx: 'auth-403' }));
-    const ifs = probes.find((p) => p.dataflow === 'IFS');
+    const ifs = probes.find((p) => p.dataflow === 'CPI');
     expect(ifs?.error).toBe('sdmx-subscription-key-not-configured');
   });
 
@@ -199,7 +221,7 @@ describe('runProbes', () => {
     // this special-case, operators would chase a non-existent "dataflow
     // missing" issue instead of the real "secret not set" cause.
     const probes = await runProbes(makeStubClient({ sdmx: 'auth-404' }));
-    const ifs = probes.find((p) => p.dataflow === 'IFS');
+    const ifs = probes.find((p) => p.dataflow === 'CPI');
     expect(ifs?.ok).toBe(false);
     expect(ifs?.error).toBe('sdmx-subscription-key-not-configured');
   });
@@ -208,7 +230,7 @@ describe('runProbes', () => {
     const probes = await runProbes(
       makeStubClient({ sdmx: 'auth-401', sdmxSubscriptionKey: 'configured-key-xyz' }),
     );
-    const ifs = probes.find((p) => p.dataflow === 'IFS');
+    const ifs = probes.find((p) => p.dataflow === 'CPI');
     expect(ifs?.ok).toBe(false);
     // Configured key + auth failure means rotated/revoked key — don't mask the cause.
     expect(ifs?.error).toMatch(/IMF SDMX subscription key missing or invalid/);
@@ -218,7 +240,7 @@ describe('runProbes', () => {
   it('preserves a non-auth SDMX failure (e.g. 503) even when key missing', async () => {
     // SDMX 503 is an outage — the operator must NOT see it as a "key not configured" issue.
     const probes = await runProbes(makeStubClient({ sdmx: 'throw' }));
-    const ifs = probes.find((p) => p.dataflow === 'IFS');
+    const ifs = probes.find((p) => p.dataflow === 'CPI');
     expect(ifs?.ok).toBe(false);
     expect(ifs?.error).toBe('SDMX 503');
   });
@@ -269,7 +291,7 @@ describe('buildReport', () => {
   const allOk: ImfProbeResult[] = [
     { dataflow: 'WEO', transport: 'datamapper', ok: true, latencyMs: 10 },
     { dataflow: 'FM', transport: 'datamapper', ok: true, latencyMs: 10 },
-    { dataflow: 'IFS', transport: 'sdmx', ok: true, latencyMs: 10 },
+    { dataflow: 'CPI', transport: 'sdmx', ok: true, latencyMs: 10 },
   ];
 
   it('returns status=ok with no warning block when fresh + all probes ok', () => {
@@ -295,12 +317,12 @@ describe('buildReport', () => {
   it('returns status=degraded with ℹ️ block when only the auxiliary SDMX probe failed', () => {
     const probes: ImfProbeResult[] = [
       ...allOk.slice(0, 2),
-      { dataflow: 'IFS', transport: 'sdmx', ok: false, latencyMs: 5, error: 'SDMX 503' },
+      { dataflow: 'CPI', transport: 'sdmx', ok: false, latencyMs: 5, error: 'SDMX 503' },
     ];
     const r = buildReport(probes, 'WEO-2026-04', new Date('2026-04-26T00:00:00Z'));
     expect(r.status).toBe('degraded');
     expect(r.warningBlock).toContain('IMF auxiliary transport degraded');
-    expect(r.warningBlock).toContain('IFS');
+    expect(r.warningBlock).toContain('CPI');
     expect(r.warningBlock).toContain('SDMX 503');
   });
 
@@ -368,12 +390,12 @@ describe('formatDegradedWarning', () => {
     const block = formatDegradedWarning({
       probes: [
         { dataflow: 'WEO', transport: 'datamapper', ok: true, latencyMs: 10 },
-        { dataflow: 'IFS', transport: 'sdmx', ok: false, latencyMs: 5, error: '404' },
+        { dataflow: 'CPI', transport: 'sdmx', ok: false, latencyMs: 5, error: '404' },
       ],
       checkedAt: '2026-05-05T00:00:00.000Z',
     });
     expect(block).toContain('IMF auxiliary transport degraded');
-    expect(block).toContain('IFS');
+    expect(block).toContain('CPI');
     expect(block).toContain('404');
     expect(block).not.toContain('IMF context unavailable');
   });
@@ -399,7 +421,7 @@ describe('writeReport', () => {
       [
         { dataflow: 'WEO', transport: 'datamapper', ok: true, latencyMs: 10 },
         { dataflow: 'FM', transport: 'datamapper', ok: true, latencyMs: 10 },
-        { dataflow: 'IFS', transport: 'sdmx', ok: true, latencyMs: 10 },
+        { dataflow: 'CPI', transport: 'sdmx', ok: true, latencyMs: 10 },
       ],
       'WEO-2026-04',
       new Date('2026-04-26T00:00:00Z'),
@@ -415,7 +437,7 @@ describe('writeReport', () => {
       [
         { dataflow: 'WEO', transport: 'datamapper', ok: false, latencyMs: 5, error: 'ECONNREFUSED' },
         { dataflow: 'FM', transport: 'datamapper', ok: false, latencyMs: 5, error: 'ECONNREFUSED' },
-        { dataflow: 'IFS', transport: 'sdmx', ok: false, latencyMs: 5, error: 'ECONNREFUSED' },
+        { dataflow: 'CPI', transport: 'sdmx', ok: false, latencyMs: 5, error: 'ECONNREFUSED' },
       ],
       'WEO-2026-04',
       new Date('2026-04-26T00:00:00Z'),
@@ -425,7 +447,7 @@ describe('writeReport', () => {
     expect(existsSync(join(tmp, 'imf-unavailable.flag'))).toBe(true);
     const flag = readFileSync(join(tmp, 'imf-unavailable.flag'), 'utf8');
     expect(flag).toContain('IMF connectivity pre-flight failed');
-    expect(flag).toContain('failed-probes: WEO,FM,IFS');
+    expect(flag).toContain('failed-probes: WEO,FM,CPI');
     // Last non-empty line is the structured JSON payload.
     const lines = flag.split('\n').filter((l) => l.length > 0);
     const json = JSON.parse(lines[lines.length - 1]) as { status: string };
@@ -437,7 +459,7 @@ describe('writeReport', () => {
       [
         { dataflow: 'WEO', transport: 'datamapper', ok: true, latencyMs: 10 },
         { dataflow: 'FM', transport: 'datamapper', ok: true, latencyMs: 10 },
-        { dataflow: 'IFS', transport: 'sdmx', ok: false, latencyMs: 5, error: 'SDMX 404' },
+        { dataflow: 'CPI', transport: 'sdmx', ok: false, latencyMs: 5, error: 'SDMX 404' },
       ],
       'WEO-2026-04',
       new Date('2026-04-26T00:00:00Z'),
@@ -455,7 +477,7 @@ describe('writeReport', () => {
       [
         { dataflow: 'WEO', transport: 'datamapper', ok: true, latencyMs: 10 },
         { dataflow: 'FM', transport: 'datamapper', ok: true, latencyMs: 10 },
-        { dataflow: 'IFS', transport: 'sdmx', ok: true, latencyMs: 10 },
+        { dataflow: 'CPI', transport: 'sdmx', ok: true, latencyMs: 10 },
       ],
       'WEO-2024-04',
       new Date('2026-04-26T00:00:00Z'),

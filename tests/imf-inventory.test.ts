@@ -78,8 +78,10 @@ describe('analysis/imf/indicators-inventory.json (v1.0 canonical)', () => {
     expect(inv.vintageDiscipline.current).toMatch(/^WEO-\d{4}-\d{2}$/);
   });
 
-  it('declares all 9 canonical IMF dataflows', () => {
-    const expected = ['WEO', 'FM', 'IFS', 'BOP', 'GFS_COFOG', 'MFS_IR', 'DOTS', 'PCPS', 'ER'];
+  it('declares all 9 canonical IMF SDMX 3.0 dataflows (post-2026-05 refactor)', () => {
+    // 2026-05 SDMX 3.0 refactor: IFS dissolved into CPI/MFS_IR/ER, DOTS
+    // renamed to IMTS, PCPS moved from IMF.STA to IMF.RES.
+    const expected = ['WEO', 'FM', 'CPI', 'BOP', 'GFS_COFOG', 'MFS_IR', 'IMTS', 'PCPS', 'ER'];
     for (const df of expected) {
       expect(inv.databases[df], `databases missing ${df}`).toBeDefined();
     }

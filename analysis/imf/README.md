@@ -214,7 +214,7 @@ Use this table to pick the right IMF dataflow + indicator for each economic clai
 | Real GDP growth | `WEO:NGDP_RPCH` | Vintage-tagged WEO with T+5 projections |
 | Nominal GDP (USD) | `WEO:NGDPD` | Same |
 | GDP per capita | `WEO:NGDPDPC` | Same |
-| Annual inflation | `WEO:PCPIPCH` | Same; `IFS:PCPI_IX` for monthly |
+| Annual inflation | `WEO:PCPIPCH` | Same; `CPI:_T.IX` for monthly |
 | Unemployment (annual) | `WEO:LUR` | SCB AKU as Swedish-specific ground truth |
 | Gross public debt / GDP | `WEO:GGXWDG_NGDP` (or `FM:GGXWDG_NGDP`) | General-government (EDP) basis |
 | Fiscal balance / GDP | `WEO:GGXCNL_NGDP` (or `FM:GGXCNLB_NGDP`) | GFSM 2014 |
@@ -236,13 +236,13 @@ See the `providerSelection` section of [`indicators-inventory.json`](indicators-
 | **FiU** (Finance) | **IMF primary** | `WEO:NGDP_RPCH`, `WEO:PCPIPCH`, `WEO:GGXWDG_NGDP`, `WEO:GGXCNL_NGDP` |
 | **SkU** (Taxation) | **IMF primary** | `WEO:GGR_NGDP`, `FM:GGXONLB_NGDP` |
 | **AU** (Labour) | **IMF + SCB** | `WEO:LUR` + SCB AKU |
-| **NU** (Business/Trade) | **IMF primary** | `WEO:BCA_NGDPD`, `WEO:TX_RPCH`, `DOTS:TXG_FOB_USD` |
+| **NU** (Business/Trade) | **IMF primary** | `WEO:BCA_NGDPD`, `WEO:TX_RPCH`, `IMTS:XG_FOB_USD` |
 | **UU** (Foreign affairs) | **IMF primary** | `WEO:BCA_NGDPD`, `WEO:TX_RPCH` |
-| **SoU** (Health) | **IMF + WB** | `GFS_COFOG:G07`, `WEO:LP` + `worldBank:SH.XPD.CHEX.GD.ZS` |
-| **SfU** (Social insurance) | **IMF + WB** | `GFS_COFOG:G10`, `WEO:LP`, `WEO:LUR` |
-| **FöU** (Defence) | **IMF + WB** | `GFS_COFOG:G02` + `worldBank:MS.MIL.XPND.GD.ZS` |
+| **SoU** (Health) | **IMF + WB** | `GFS_COFOG:GF07_T`, `WEO:LP` + `worldBank:SH.XPD.CHEX.GD.ZS` |
+| **SfU** (Social insurance) | **IMF + WB** | `GFS_COFOG:GF10_T`, `WEO:LP`, `WEO:LUR` |
+| **FöU** (Defence) | **IMF + WB** | `GFS_COFOG:GF02_T` + `worldBank:MS.MIL.XPND.GD.ZS` |
 | **MJU** (Environment) | **WB primary** | `PCPS:POILAPSP` overlay + `worldBank:EN.ATM.CO2E.PC`, `worldBank:EG.FEC.RNEW.ZS` |
-| **UbU** (Education) | **IMF + WB** | `GFS_COFOG:G09` + `worldBank:SE.XPD.TOTL.GD.ZS` |
+| **UbU** (Education) | **IMF + WB** | `GFS_COFOG:GF09_T` + `worldBank:SE.XPD.TOTL.GD.ZS` |
 | **KU** (Constitution) | **WB only (WGI)** | `worldBank:CC.EST`, `worldBank:RL.EST`, `worldBank:VA.EST` (source=75) |
 | **JuU** (Justice) | **WB only** | `worldBank:VC.IHR.PSRC.P5`, WGI |
 

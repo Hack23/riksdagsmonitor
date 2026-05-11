@@ -225,8 +225,8 @@ data from Riksbank*
 |-------------|----------|--------|
 | Real GDP, inflation, unemployment, fiscal balance, debt/GDP, current account, exports/imports growth | **IMF WEO** | `tsx scripts/imf-fetch.ts weo …` / `compare …` (CLI via `bash`, no MCP) |
 | Primary balance, cyclically-adjusted balance, DSA | **IMF Fiscal Monitor** | same CLI |
-| Monthly CPI, high-frequency rates, Riksbank policy rate | **IMF IFS / MFS_IR** | `tsx scripts/imf-fetch.ts sdmx --path "/data/IMF.STA,CPI,4.0.0/…"` |
-| Bilateral trade flows | **IMF DOTS** | `tsx scripts/imf-fetch.ts sdmx --path "/data/IMF.STA,DOTS,4.0.0/…"` |
+| Monthly CPI, high-frequency rates, money-market rate (IMF proxy for Riksbank policy rate) | **IMF CPI / MFS_IR** | `tsx scripts/imf-fetch.ts sdmx --path "/data/IMF.STA,CPI,5.0.0/SWE.CPI._T.IX.M?startPeriod=2024-01"` |
+| Bilateral trade flows | **IMF IMTS** (replaces legacy DOTS) | `tsx scripts/imf-fetch.ts sdmx --path "/data/IMF.STA,IMTS,1.0.0/SWE.XG_FOB_USD.{COUNTERPART_ISO3}.A?startPeriod=2023"` |
 | Commodity benchmarks (oil, metals) | **IMF PCPS** | same |
 | Exchange rates (SEK/USD, SEK/EUR, REER) | **IMF ER** | same |
 | COFOG spending by function (defence, health, education, social protection) | **IMF GFS_COFOG** | same |
@@ -253,15 +253,18 @@ tsx scripts/imf-fetch.ts weo --country SWE --indicator NGDP_RPCH --years 15 --pe
 tsx scripts/imf-fetch.ts compare --indicator GGXWDG_NGDP \
   --countries SWE,DNK,NOR,FIN,DEU --persist
 
-# Monthly CPI (IFS)
+# Monthly CPI level (post-2026-05 SDMX 3.0 path; CPI dataflow replaces the
+# legacy IFS:PCPI_IX series — request SWE.CPI._T.IX.M against IMF.STA/CPI v5.0.0)
 tsx scripts/imf-fetch.ts sdmx \
-  --path "/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2022-01" \
-  --indicator PCPI_IX --country SWE --persist
+  --path "/data/IMF.STA,CPI,5.0.0/SWE.CPI._T.IX.M?startPeriod=2022-01" \
+  --indicator _T.IX --country SWE --persist
 
-# COFOG health spending (SoU committee)
+# COFOG health spending (SoU committee) — post-2026-05 GFS_COFOG v11.0.0
+# uses GF07_T (renamed from G07) and the canonical SECTOR=S13, GFS_GRP=G2MF,
+# TYPE_OF_TRANSFORMATION=POGDP_PT (% of GDP) shape
 tsx scripts/imf-fetch.ts sdmx \
-  --path "/data/IMF.STA,GFS_COFOG,4.0.0/A.144.G.G07._Z._Z._Z._Z.XDC_R_B1GQ?startPeriod=2015" \
-  --indicator G07 --country SWE --persist
+  --path "/data/IMF.STA,GFS_COFOG,11.0.0/SWE.S13.G2MF.GF07_T.POGDP_PT.A?startPeriod=2015" \
+  --indicator GF07_T --country SWE --persist
 ```
 
 Rate-limit discipline: IMF advertises ~10 req / 5 s; prefer `compare` over parallel `weo`; `sleep 1` between invocations; target ≤ 10 IMF calls per article. Full playbook: [`analysis/imf/agentic-integration.md`](../../../analysis/imf/agentic-integration.md).
