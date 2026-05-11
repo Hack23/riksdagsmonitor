@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "cycle": "realtime-pulse",
+  "date": "2026-05-11",
+  "subfolder": "realtime-pulse",
+  "generated_at": "2026-05-11T16:00:00Z",
+  "pirs": [
+    {
+      "pir_id": "PIR-CONST-ABORT",
+      "statement": "Will the Riksdag pass the first reading of KU34 constitutional abortion protection before the September 2026 election, and does SD support both tracks?",
+      "trigger": "SD official party statement on KU34 aborträtt track (expected week 20, before 15 May 2026) + Riksdag calendar entry for first reading debate",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "evidence_refs": ["HD01KU34"],
+      "horizon": "2026-06-15",
+      "admiralty_grade": "B2"
+    },
+    {
+      "pir_id": "PIR-CLIM-2026",
+      "statement": "Will the government present a climate proposition to Riksdagen before the summer 2026 parliamentary recess?",
+      "trigger": "Government press release announcing climate proposition OR interpellation response confirming no proposition",
+      "status": "open",
+      "confidence": "HIGH",
+      "evidence_refs": ["HD10481", "HD11810"],
+      "horizon": "2026-06-15",
+      "admiralty_grade": "B2"
+    },
+    {
+      "pir_id": "PIR-MIG-RETURN",
+      "statement": "Will prop. 2025/26:263 (stärkt återvändandeverksamhet) pass Riksdagen without significant amendment despite V counter-motion HD024150?",
+      "trigger": "SfU committee vote on HD024150 + Riksdag plenary vote on prop. 263",
+      "status": "open",
+      "confidence": "HIGH",
+      "evidence_refs": ["HD024150", "HD024149"],
+      "horizon": "2026-06-30",
+      "admiralty_grade": "B2"
+    },
+    {
+      "pir_id": "PIR-COAL-STAB",
+      "statement": "Will the Tidö coalition maintain parliamentary majority (≥175 seats effective) through to the September 2026 election without confidence vote failure?",
+      "trigger": "Any defection of SD/KD/L from coalition OR opposition confidence vote initiated",
+      "status": "open",
+      "confidence": "HIGH",
+      "evidence_refs": ["HD01CU25"],
+      "horizon": "election-day",
+      "admiralty_grade": "B2"
+    }
+  ]
+}
