@@ -38,7 +38,7 @@ npx tsx scripts/imf-fetch.ts <command> [flags]
 |---------|---------|---------|
 | `weo` | Single-country WEO time series (annual, incl. T+5 projections) | `tsx scripts/imf-fetch.ts weo --country SWE --indicator NGDP_RPCH --years 15 --persist` |
 | `compare` | Batched WEO compare across the Nordic peer set (1 call, N countries) | `tsx scripts/imf-fetch.ts compare --indicator GGXWDG_NGDP --countries SWE,DNK,NOR,FIN,DEU --persist` |
-| `sdmx` | SDMX 3.0 passthrough (IFS / FM / BOP / GFS_COFOG / MFS_IR / DOTS / PCPS / ER) | `tsx scripts/imf-fetch.ts sdmx --path "/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2024-01" --indicator PCPI_IX --country SWE --persist` |
+| `sdmx` | SDMX 3.0 passthrough (CPI / FM / BOP / GFS_COFOG / MFS_IR / IMTS / PCPS / ER — IFS dissolved into CPI/MFS_IR/ER, DOTS renamed to IMTS, PCPS moved to IMF.RES in the 2026-05 refactor) | `tsx scripts/imf-fetch.ts sdmx --path "/data/IMF.STA,CPI,5.0.0/SWE.CPI._T.IX.M?startPeriod=2024-01" --indicator _T.IX --country SWE --persist` |
 | `list-indicators` | Discovery — list built-in indicator codes | `tsx scripts/imf-fetch.ts list-indicators` |
 
 Rules:

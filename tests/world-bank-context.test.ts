@@ -289,13 +289,13 @@ describe('world-bank-context', () => {
     it('must detect canonical IMF citation strings (DATABASE:INDICATOR_ID)', () => {
       expect(hasEconomicContext('per WEO:NGDP_RPCH the projection rises')).toBe(true);
       expect(hasEconomicContext('IMF FM:GGXWDG_NGDP shows 32.5% of GDP')).toBe(true);
-      expect(hasEconomicContext('GFS_COFOG:G02 defence spending decomposition')).toBe(true);
-      expect(hasEconomicContext('DOTS:TXG_FOB_USD bilateral trade')).toBe(true);
+      expect(hasEconomicContext('GFS_COFOG:GF02_T defence spending decomposition (post-2026-05 code)')).toBe(true);
+      expect(hasEconomicContext('IMTS:XG_FOB_USD bilateral trade (replaces legacy DOTS:TXG_FOB_USD)')).toBe(true);
       expect(hasEconomicContext('PCPS:POILAPSP commodity overlay')).toBe(true);
-      expect(hasEconomicContext('IFS:PCPI_IX monthly Swedish CPI')).toBe(true);
-      expect(hasEconomicContext('BOP:BCA_BP6_USD current account')).toBe(true);
-      expect(hasEconomicContext('MFS_IR:FPOLM policy rate')).toBe(true);
-      expect(hasEconomicContext('ER:ENDA_XDC_USD_RATE bilateral FX')).toBe(true);
+      expect(hasEconomicContext('CPI:_T.IX monthly Swedish CPI (replaces legacy IFS:PCPI_IX)')).toBe(true);
+      expect(hasEconomicContext('BOP:CAB current account')).toBe(true);
+      expect(hasEconomicContext('MFS_IR:MMRT_RT_PT_A_PT money market rate (IMF proxy for policy rate)')).toBe(true);
+      expect(hasEconomicContext('ER:USD_XDC.PA_RT bilateral FX (period average)')).toBe(true);
     });
 
     it('must detect IMF projection vintage tags', () => {

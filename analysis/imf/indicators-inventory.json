@@ -23,13 +23,13 @@
   "clients": {
     "cli": "tsx scripts/imf-fetch.ts (commands: weo, compare, sdmx, list-indicators)",
     "library": "scripts/imf-client.ts (ImfClient class)",
-    "codes": "scripts/imf-codes.ts (ISO3_TO_IMF_AREA for IFS/GFS/BOP numeric area codes)",
-    "context": "scripts/imf-context.ts (policy-area ↔ committee mapping, IMF_NORDIC_PEERS)"
+    "codes": "scripts/imf-codes.ts (ISO3 codes for SDMX 3.0 \u2014 the legacy 3-digit IMF AREA codes were retired in the 2026-05 SDMX 3.0 refactor; SDMX 3.0 dataflows now accept ISO3 directly as COUNTRY)",
+    "context": "scripts/imf-context.ts (policy-area \u2194 committee mapping, IMF_NORDIC_PEERS)"
   },
   "notes": {
     "firewallAllowlist": "data.imf.org, api.imf.org, www.imf.org",
     "noMcp": "IMF is NOT an MCP server. Agentic workflows invoke the TypeScript CLI via the bash tool. This keeps IMF under the same npm/SBOM governance as world-bank-client.ts and scb-client.ts with zero Python/uvx runtime.",
-    "rateLimit": "IMF advertises ~10 req / 5s. Prefer the 'compare' subcommand (single batched call) over parallel 'weo' calls. Client retries 3× on 429/5xx with 1s→2s→4s back-off.",
+    "rateLimit": "IMF advertises ~10 req / 5s. Prefer the 'compare' subcommand (single batched call) over parallel 'weo' calls. Client retries 3\u00d7 on 429/5xx with 1s\u21922s\u21924s back-off.",
     "vintage": "Every projection value carries a projectionVintage tag (e.g. 'WEO-2026-04', 'FM-2026-04'). Update DEFAULT_WEO_VINTAGE in scripts/imf-client.ts when the IMF publishes a new flagship release (April / October).",
     "persistence": "Use the --persist flag to cache raw responses under analysis/data/imf/{indicator}/{country}.json. Reuse across article types within the same daily run to minimise API calls."
   },
@@ -51,60 +51,91 @@
       "frequency": "Annual",
       "cadence": "April / October (flagship releases, aligned with WEO)",
       "projectionHorizon": "T+5",
-      "coverage": "Deeper fiscal detail than WEO — primary balance, cyclically-adjusted balance, interest payments, debt-sustainability analysis.",
+      "coverage": "Deeper fiscal detail than WEO \u2014 primary balance, cyclically-adjusted balance, interest payments, debt-sustainability analysis.",
       "urlPattern": "https://www.imf.org/external/datamapper/api/v1/{indicatorCode}/{iso3}"
     },
-    "IFS": {
-      "label": "International Financial Statistics",
+    "CPI": {
+      "label": "Consumer Price Index (replaces the legacy IFS monthly CPI block)",
       "endpoint": "sdmx",
-      "frequency": "Monthly / Quarterly",
+      "agency": "IMF.STA",
+      "version": "5.0.0",
+      "frequency": "Monthly / Quarterly / Annual",
       "cadence": "Monthly",
-      "coverage": "High-frequency monetary & financial series — policy rates, interest rates, exchange rates, CPI (monthly), money supply, reserves.",
-      "note": "Accessed via ImfClient.sdmxFetch(). Uses IMF 3-digit numeric AREA codes (see scripts/imf-codes.ts)."
+      "coverage": "Headline CPI levels, year-on-year inflation, and COICOP sub-indices for 200+ economies. The 2026-05 SDMX 3.0 refactor retired PCPI_IX and decomposed it into INDEX_TYPE \u00d7 COICOP_1999 \u00d7 TYPE_OF_TRANSFORMATION (e.g. Sweden all-items index = SWE.CPI._T.IX.M).",
+      "dimensionOrder": "COUNTRY.INDEX_TYPE.COICOP_1999.TYPE_OF_TRANSFORMATION.FREQUENCY",
+      "swedenSampleKey": "SWE.CPI._T.IX.M",
+      "note": "IFS (International Financial Statistics) is no longer published as a single SDMX 3.0 dataflow \u2014 its CPI block lives here, its policy-rate block in MFS_IR, and its exchange-rate block in ER."
     },
     "BOP": {
       "label": "Balance of Payments",
       "endpoint": "sdmx",
-      "frequency": "Quarterly",
+      "agency": "IMF.STA",
+      "version": "21.0.0",
+      "frequency": "Quarterly / Annual",
       "cadence": "Quarterly",
       "coverage": "Current account, capital account, financial account, reserve assets. Methodology: BPM6.",
+      "dimensionOrder": "COUNTRY.BOP_ACCOUNTING_ENTRY.INDICATOR.UNIT.FREQUENCY",
+      "swedenSampleKey": "SWE.NETCD_T.CAB.USD.A",
       "note": "BOP_AGG is the aggregate summary; raw BOP has deeper detail."
     },
     "GFS_COFOG": {
-      "label": "Government Finance Statistics — Classification of Functions of Government",
+      "label": "Government Finance Statistics \u2014 Classification of Functions of Government",
       "endpoint": "sdmx",
+      "agency": "IMF.STA",
+      "version": "11.0.0",
       "frequency": "Annual",
       "cadence": "T+1 (data for year Y released in year Y+1)",
-      "coverage": "Government expenditure broken down by function (COFOG 01–10): 02 Defence → FöU, 07 Health → SoU, 09 Education → UbU, 10 Social Protection → SfU.",
-      "note": "Best source for committee-aligned spending decomposition."
+      "coverage": "Government expenditure broken down by function (COFOG 01\u201310): 02 Defence \u2192 F\u00f6U, 07 Health \u2192 SoU, 09 Education \u2192 UbU, 10 Social Protection \u2192 SfU.",
+      "dimensionOrder": "COUNTRY.SECTOR.GFS_GRP.INDICATOR.TYPE_OF_TRANSFORMATION.FREQUENCY",
+      "swedenSampleKey": "SWE.S13.G2MF.GF02_T.POGDP_PT.A",
+      "note": "Best source for committee-aligned spending decomposition. Indicator codes were renamed from G02/G07/G09/G10 to GF02_T/GF07_T/GF09_T/GF10_T in the 2026-05 refactor; SECTOR=S13 (general government), GFS_GRP=G2MF, TYPE_OF_TRANSFORMATION \u2208 {POGDP_PT (% of GDP), POTO_PT (% of total expenditure), XDC (national currency)}."
     },
     "MFS_IR": {
-      "label": "Monetary & Financial Statistics — Interest Rates",
+      "label": "Monetary & Financial Statistics \u2014 Interest Rates",
       "endpoint": "sdmx",
+      "agency": "IMF.STA",
+      "version": "8.0.1",
       "frequency": "Monthly",
       "cadence": "Monthly",
-      "coverage": "Central-bank policy rates, interbank rates, deposit/lending rates."
+      "coverage": "Money-market rates, deposit/lending rates, government-bond yields. Sweden indicators include MMRT_RT_PT_A_PT (money market) and S13BOND_RT_PT_A_PT (sovereign bond yield).",
+      "dimensionOrder": "COUNTRY.INDICATOR.FREQUENCY",
+      "swedenSampleKey": "SWE.MMRT_RT_PT_A_PT.M",
+      "note": "FPOLM_PA (central-bank policy rate) is no longer in the SWE codelist \u2014 use Riksbank statistics for the styrr\u00e4nta directly, or proxy via MMRT money-market rate."
     },
-    "DOTS": {
-      "label": "Direction of Trade Statistics",
+    "IMTS": {
+      "label": "International Merchandise Trade Statistics (replaces the legacy DOTS dataflow)",
       "endpoint": "sdmx",
-      "frequency": "Monthly",
+      "agency": "IMF.STA",
+      "version": "1.0.0",
+      "frequency": "Monthly / Quarterly / Annual",
       "cadence": "Monthly",
-      "coverage": "Bilateral trade flows — exports and imports by partner country. Useful for NU/UU trade-policy coverage."
+      "coverage": "Bilateral merchandise trade \u2014 exports and imports by partner country. Useful for NU/UU trade-policy coverage. INDICATOR codes: XG_FOB_USD (exports FOB), MG_FOB_USD / MG_CIF_USD (imports FOB / CIF), TBG_USD (trade balance).",
+      "dimensionOrder": "COUNTRY.INDICATOR.COUNTERPART_COUNTRY.FREQUENCY",
+      "swedenSampleKey": "SWE.XG_FOB_USD.USA.A",
+      "note": "DOTS / DOT no longer exists as a SDMX 3.0 dataflow \u2014 bilateral trade lives in IMTS. The legacy TXG_FOB_USD / TMG_CIF_USD codes were renamed to XG_FOB_USD / MG_CIF_USD."
     },
     "PCPS": {
       "label": "Primary Commodity Prices",
       "endpoint": "sdmx",
-      "frequency": "Monthly",
+      "agency": "IMF.RES",
+      "version": "9.0.0",
+      "frequency": "Monthly / Quarterly / Annual",
       "cadence": "Monthly",
-      "coverage": "Commodity price indices — energy, metals, food. Feeds inflation-drivers commentary."
+      "coverage": "Commodity price indices \u2014 energy, metals, food. Feeds inflation-drivers commentary. COUNTRY=G001 (global aggregate); INDICATORs include POILBRE (Brent), POILAPSP (avg of Brent/Dubai/WTI), PALLFNF (all-commodities index).",
+      "dimensionOrder": "COUNTRY.INDICATOR.DATA_TRANSFORMATION.FREQUENCY",
+      "globalSampleKey": "G001.POILBRE.USD.M",
+      "note": "Moved from IMF.STA to IMF.RES in the 2026-05 refactor."
     },
     "ER": {
       "label": "Exchange Rates",
       "endpoint": "sdmx",
-      "frequency": "Daily / Monthly",
-      "cadence": "Daily (representative)",
-      "coverage": "SEK/EUR, SEK/USD, nominal/real effective exchange rates."
+      "agency": "IMF.STA",
+      "version": "4.0.1",
+      "frequency": "Monthly / Quarterly / Annual",
+      "cadence": "Monthly (period average) and end-of-period",
+      "coverage": "Bilateral nominal exchange rates. INDICATORs: USD_XDC (USD per national currency), EUR_XDC, XDC_USD, XDC_EUR, XDR_XDC, etc. TYPE_OF_TRANSFORMATION \u2208 {EOP_RT (end of period), PA_RT (period average)}.",
+      "dimensionOrder": "COUNTRY.INDICATOR.TYPE_OF_TRANSFORMATION.FREQUENCY",
+      "swedenSampleKey": "SWE.USD_XDC.PA_RT.M"
     }
   },
   "domains": {
@@ -308,7 +339,7 @@
           "citation": "WEO:LUR",
           "admiralty": "A2",
           "caveats": [
-            "WEO LUR may diverge from SCB AKU by 0.1–0.3 pp due to definitional differences. Prefer SCB for Swedish-specific ground truth; use IMF for cross-country comparison."
+            "WEO LUR may diverge from SCB AKU by 0.1\u20130.3 pp due to definitional differences. Prefer SCB for Swedish-specific ground truth; use IMF for cross-country comparison."
           ]
         },
         {
@@ -332,7 +363,7 @@
       ]
     },
     "fiscal": {
-      "label": "Fiscal policy — general government",
+      "label": "Fiscal policy \u2014 general government",
       "primary": true,
       "committees": [
         "FiU",
@@ -410,7 +441,7 @@
           "database": "WEO",
           "name": "General government net lending / borrowing (% of GDP)",
           "unit": "% of GDP",
-          "description": "Headline fiscal balance (surplus +, deficit −). Projected to T+5.",
+          "description": "Headline fiscal balance (surplus +, deficit \u2212). Projected to T+5.",
           "policyAreas": [
             "fiscal policy",
             "budget"
@@ -450,7 +481,7 @@
           "database": "FM",
           "name": "Cyclically-adjusted primary balance (% of potential GDP)",
           "unit": "% of potential GDP",
-          "description": "Structural fiscal stance — removes business-cycle effects from the primary balance. Preferred metric for assessing discretionary policy.",
+          "description": "Structural fiscal stance \u2014 removes business-cycle effects from the primary balance. Preferred metric for assessing discretionary policy.",
           "policyAreas": [
             "fiscal policy",
             "structural balance"
@@ -551,10 +582,10 @@
         {
           "id": "PCPI_IX",
           "key": "imfCpiMonthly",
-          "database": "IFS",
-          "name": "Consumer Price Index (monthly)",
-          "unit": "Index, 2010=100",
-          "description": "Monthly CPI level. Complements annual WEO PCPIPCH with higher frequency.",
+          "database": "CPI",
+          "name": "Consumer Price Index (monthly all-items)",
+          "unit": "Index, base year per release",
+          "description": "Monthly CPI level. Complements annual WEO PCPIPCH with higher frequency. The 2026-05 SDMX 3.0 refactor retired the standalone PCPI_IX series \u2014 request the same value as `SWE.CPI._T.IX.M` against the IMF.STA/CPI v5.0.0 dataflow.",
           "policyAreas": [
             "monetary policy",
             "inflation"
@@ -563,17 +594,17 @@
             "FiU"
           ],
           "publishesProjections": false,
-          "citation": "IFS:PCPI_IX",
+          "citation": "CPI:_T.IX",
           "admiralty": "A1",
-          "sdmxPath": "/data/IMF.STA,CPI,4.0.0/M.{AREA}.PCPI_IX"
+          "sdmxPath": "/data/IMF.STA,CPI,5.0.0/{ISO3}.CPI._T.IX.M"
         },
         {
           "id": "FPOLM_PA",
           "key": "imfPolicyRate",
           "database": "MFS_IR",
-          "name": "Central bank policy rate",
+          "name": "Central bank policy rate (proxy via money-market rate for SWE)",
           "unit": "% per annum",
-          "description": "Riksbankens styrränta / central-bank target rate. Monthly frequency.",
+          "description": "Riksbankens styrr\u00e4nta proxy / central-bank target rate, monthly. The IMF SDMX 3.0 SWE codelist no longer carries the FPOLM_PA central-bank rate directly \u2014 use `SWE.MMRT_RT_PT_A_PT.M` (money-market rate) as the IMF proxy, and prefer Riksbank statistics for the official styrr\u00e4nta.",
           "policyAreas": [
             "monetary policy"
           ],
@@ -581,16 +612,17 @@
             "FiU"
           ],
           "publishesProjections": false,
-          "citation": "MFS_IR:FPOLM_PA",
-          "admiralty": "A1"
+          "citation": "MFS_IR:MMRT_RT_PT_A_PT",
+          "admiralty": "A1",
+          "sdmxPath": "/data/IMF.STA,MFS_IR,8.0.1/{ISO3}.MMRT_RT_PT_A_PT.M"
         },
         {
           "id": "ENDA_XDC_USD_RATE",
           "key": "imfSekUsdRate",
           "database": "ER",
-          "name": "SEK / USD exchange rate (end of period)",
+          "name": "SEK / USD exchange rate (period average)",
           "unit": "SEK per USD",
-          "description": "Bilateral nominal exchange rate. Useful for monetary-policy coverage and trade commentary.",
+          "description": "Bilateral nominal exchange rate. Useful for monetary-policy coverage and trade commentary. SDMX 3.0 key: `SWE.USD_XDC.PA_RT.M` (period-average). Use TYPE_OF_TRANSFORMATION=EOP_RT for end-of-period.",
           "policyAreas": [
             "monetary policy",
             "external sector"
@@ -600,8 +632,9 @@
             "NU"
           ],
           "publishesProjections": false,
-          "citation": "ER:ENDA_XDC_USD_RATE",
-          "admiralty": "A1"
+          "citation": "ER:USD_XDC.PA_RT",
+          "admiralty": "A1",
+          "sdmxPath": "/data/IMF.STA,ER,4.0.1/{ISO3}.USD_XDC.PA_RT.M"
         }
       ]
     },
@@ -609,7 +642,7 @@
       "label": "Government spending by function (COFOG)",
       "primary": true,
       "committees": [
-        "FöU",
+        "F\u00f6U",
         "SoU",
         "UbU",
         "SfU",
@@ -617,7 +650,7 @@
       ],
       "indicators": [
         {
-          "id": "G02",
+          "id": "GF02_T",
           "key": "imfCofogDefence",
           "database": "GFS_COFOG",
           "name": "Defence spending (COFOG 02, % of GDP)",
@@ -628,15 +661,16 @@
             "fiscal policy"
           ],
           "committees": [
-            "FöU",
+            "F\u00f6U",
             "FiU"
           ],
           "publishesProjections": false,
-          "citation": "GFS_COFOG:G02",
-          "admiralty": "A1"
+          "citation": "GFS_COFOG:GF02_T",
+          "admiralty": "A1",
+          "sdmxPath": "/data/IMF.STA,GFS_COFOG,11.0.0/{ISO3}.S13.G2MF.GF02_T.POGDP_PT.A"
         },
         {
-          "id": "G07",
+          "id": "GF07_T",
           "key": "imfCofogHealth",
           "database": "GFS_COFOG",
           "name": "Health spending (COFOG 07, % of GDP)",
@@ -651,11 +685,12 @@
             "FiU"
           ],
           "publishesProjections": false,
-          "citation": "GFS_COFOG:G07",
-          "admiralty": "A1"
+          "citation": "GFS_COFOG:GF07_T",
+          "admiralty": "A1",
+          "sdmxPath": "/data/IMF.STA,GFS_COFOG,11.0.0/{ISO3}.S13.G2MF.GF07_T.POGDP_PT.A"
         },
         {
-          "id": "G09",
+          "id": "GF09_T",
           "key": "imfCofogEducation",
           "database": "GFS_COFOG",
           "name": "Education spending (COFOG 09, % of GDP)",
@@ -670,11 +705,12 @@
             "FiU"
           ],
           "publishesProjections": false,
-          "citation": "GFS_COFOG:G09",
-          "admiralty": "A1"
+          "citation": "GFS_COFOG:GF09_T",
+          "admiralty": "A1",
+          "sdmxPath": "/data/IMF.STA,GFS_COFOG,11.0.0/{ISO3}.S13.G2MF.GF09_T.POGDP_PT.A"
         },
         {
-          "id": "G10",
+          "id": "GF10_T",
           "key": "imfCofogSocialProtection",
           "database": "GFS_COFOG",
           "name": "Social protection spending (COFOG 10, % of GDP)",
@@ -690,13 +726,14 @@
             "FiU"
           ],
           "publishesProjections": false,
-          "citation": "GFS_COFOG:G10",
-          "admiralty": "A1"
+          "citation": "GFS_COFOG:GF10_T",
+          "admiralty": "A1",
+          "sdmxPath": "/data/IMF.STA,GFS_COFOG,11.0.0/{ISO3}.S13.G2MF.GF10_T.POGDP_PT.A"
         }
       ]
     },
     "trade": {
-      "label": "Bilateral trade (DOTS)",
+      "label": "Bilateral trade (IMTS \u2014 replaces legacy DOTS)",
       "primary": true,
       "committees": [
         "NU",
@@ -704,12 +741,12 @@
       ],
       "indicators": [
         {
-          "id": "TXG_FOB_USD",
+          "id": "XG_FOB_USD",
           "key": "imfExportsBilateral",
-          "database": "DOTS",
-          "name": "Exports of goods, FOB (USD) — bilateral",
+          "database": "IMTS",
+          "name": "Exports of goods, FOB (USD) \u2014 bilateral",
           "unit": "USD",
-          "description": "Monthly bilateral merchandise exports to a named partner country. Useful for trade-policy & sanctions coverage.",
+          "description": "Annual or monthly bilateral merchandise exports to a named partner country. The 2026-05 SDMX 3.0 refactor renamed TXG_FOB_USD \u2192 XG_FOB_USD and moved it from DOTS to IMTS.",
           "policyAreas": [
             "trade",
             "foreign policy"
@@ -719,16 +756,17 @@
             "UU"
           ],
           "publishesProjections": false,
-          "citation": "DOTS:TXG_FOB_USD",
-          "admiralty": "A1"
+          "citation": "IMTS:XG_FOB_USD",
+          "admiralty": "A1",
+          "sdmxPath": "/data/IMF.STA,IMTS,1.0.0/{ISO3}.XG_FOB_USD.{COUNTERPART_ISO3}.A"
         },
         {
-          "id": "TMG_CIF_USD",
+          "id": "MG_CIF_USD",
           "key": "imfImportsBilateral",
-          "database": "DOTS",
-          "name": "Imports of goods, CIF (USD) — bilateral",
+          "database": "IMTS",
+          "name": "Imports of goods, CIF (USD) \u2014 bilateral",
           "unit": "USD",
-          "description": "Monthly bilateral merchandise imports from a named partner country.",
+          "description": "Annual or monthly bilateral merchandise imports from a named partner country. The 2026-05 SDMX 3.0 refactor renamed TMG_CIF_USD \u2192 MG_CIF_USD and moved it from DOTS to IMTS.",
           "policyAreas": [
             "trade"
           ],
@@ -737,8 +775,9 @@
             "UU"
           ],
           "publishesProjections": false,
-          "citation": "DOTS:TMG_CIF_USD",
-          "admiralty": "A1"
+          "citation": "IMTS:MG_CIF_USD",
+          "admiralty": "A1",
+          "sdmxPath": "/data/IMF.STA,IMTS,1.0.0/{ISO3}.MG_CIF_USD.{COUNTERPART_ISO3}.A"
         }
       ]
     },
@@ -767,7 +806,8 @@
           ],
           "publishesProjections": false,
           "citation": "PCPS:PALLFNF",
-          "admiralty": "A1"
+          "admiralty": "A1",
+          "sdmxPath": "/data/IMF.RES,PCPS,9.0.0/G001.PALLFNF.USD.M"
         },
         {
           "id": "POILAPSP",
@@ -787,7 +827,8 @@
           ],
           "publishesProjections": false,
           "citation": "PCPS:POILAPSP",
-          "admiralty": "A1"
+          "admiralty": "A1",
+          "sdmxPath": "/data/IMF.RES,PCPS,9.0.0/G001.POILAPSP.USD.M"
         }
       ]
     },
@@ -869,7 +910,7 @@
       "provider": "IMF + WB",
       "mustQuery": [
         "WEO:LP",
-        "GFS_COFOG:G07"
+        "GFS_COFOG:GF07_T"
       ],
       "secondary": [
         "wb:SH.XPD.CHEX.GD.ZS",
@@ -880,13 +921,13 @@
       "provider": "IMF + WB",
       "mustQuery": [
         "WEO:LP",
-        "GFS_COFOG:G10"
+        "GFS_COFOG:GF10_T"
       ]
     },
-    "FöU": {
+    "F\u00f6U": {
       "provider": "IMF + WB",
       "mustQuery": [
-        "GFS_COFOG:G02"
+        "GFS_COFOG:GF02_T"
       ],
       "secondary": [
         "wb:MS.MIL.XPND.GD.ZS"
@@ -902,7 +943,7 @@
     "UbU": {
       "provider": "IMF + WB",
       "mustQuery": [
-        "GFS_COFOG:G09"
+        "GFS_COFOG:GF09_T"
       ],
       "secondary": [
         "wb:SE.XPD.TOTL.GD.ZS"
@@ -923,7 +964,7 @@
       "april": "Late-April (flagship WEO + Fiscal Monitor)",
       "october": "Mid-October (flagship WEO + Fiscal Monitor)"
     },
-    "rule": "Every projection citation MUST include the vintage tag in parentheses — e.g. '(WEO Apr-2026, GGXWDG_NGDP)'. Historical citations do not need the tag. Any projection citation older than 6 months gets a warning annotation in methodology-reflection.md.",
+    "rule": "Every projection citation MUST include the vintage tag in parentheses \u2014 e.g. '(WEO Apr-2026, GGXWDG_NGDP)'. Historical citations do not need the tag. Any projection citation older than 6 months gets a warning annotation in methodology-reflection.md.",
     "cutover": "When a new WEO release is published, update DEFAULT_WEO_VINTAGE in scripts/imf-client.ts and the 'current' field above in the same PR."
   },
   "referenced": {

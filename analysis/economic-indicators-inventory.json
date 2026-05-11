@@ -19,20 +19,26 @@
       "databases": [
         "WEO",
         "FM",
-        "IFS",
+        "CPI",
+        "BOP",
         "BOP_AGG",
         "GFS_COFOG",
         "MFS_IR",
-        "DOTS",
-        "PCPS"
+        "IMTS",
+        "PCPS",
+        "ER"
       ],
       "refreshCadence": {
         "WEO": "April and October (flagship)",
         "FM": "April and October (flagship)",
-        "IFS": "Monthly",
-        "BOP_AGG": "Quarterly",
+        "CPI": "Monthly (replaces legacy IFS monthly CPI block)",
+        "BOP": "Quarterly / Annual",
+        "BOP_AGG": "Quarterly (aggregate summary)",
         "GFS_COFOG": "Annual (T+1)",
-        "DOTS": "Monthly"
+        "MFS_IR": "Monthly",
+        "IMTS": "Monthly / Annual (replaces legacy DOTS bilateral trade)",
+        "PCPS": "Monthly (IMF.RES, post 2026-05 refactor)",
+        "ER": "Monthly (period-average and end-of-period)"
       },
       "rateLimit": "~10 req / 5 s; prefer 'tsx scripts/imf-fetch.ts compare' for multi-country batches; client retries 3\u00d7 on 429 with 1s\u21922s\u21924s back-off",
       "projectionHorizon": "WEO T+5 (currently 2031), FM T+5"

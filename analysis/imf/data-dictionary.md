@@ -32,7 +32,7 @@ IMF public data is exposed on two transports, both unauthenticated and both on t
 - Country codes: **IMF AREA numeric** (`144`=SWE, `128`=DNK, `142`=NOR, `172`=FIN, `134`=DEU) for IFS/GFS/BOP. WEO still uses ISO-3 here.
 - Response: SDMX-JSON 2.0.0 (`application/vnd.sdmx.data+json;version=2.0.0`).
 - Used by: `scripts/imf-client.ts → sdmxFetch()` (which applies the comma → slash rewrite + injects the subscription-key header).
-- CLI: `tsx scripts/imf-fetch.ts sdmx --path "/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2024-01"` (CLI keeps comma form; client rewrites it).
+- CLI: `tsx scripts/imf-fetch.ts sdmx --path "/data/IMF.STA,CPI,5.0.0/SWE.CPI._T.IX.M?startPeriod=2024-01"` (CLI keeps comma form; client rewrites it).
 
 ### 1.3 Transport choice matrix
 
@@ -100,89 +100,126 @@ IMF public data is exposed on two transports, both unauthenticated and both on t
   - `GGXWDG_NGDP` — gross debt (FM vintage)
   - `GGXCNLB_NGDP` — primary net lending/borrowing
 
-### 2.3 IFS — International Financial Statistics
+### 2.3 CPI — Consumer Price Index (replaces the legacy IFS monthly CPI block)
 
-- **Dataflow ID**: `IFS` (historical) / `CPI`, `IR`, `ER` (post-2024 SDMX 3.0 refactor — several sub-dataflows)
+- **Dataflow ID**: `CPI` (the legacy `IFS` dataflow no longer exists as a single SDMX 3.0 dataflow — its CPI block lives here, its policy-rate block in `MFS_IR`, and its exchange-rate block in `ER`).
 - **Agency**: `IMF.STA`
-- **Frequency**: Monthly (`M`) or Quarterly (`Q`).
+- **Version**: `5.0.0` (post-2026-05 SDMX 3.0 refactor — `4.0.0` and the standalone `PCPI_IX` series were retired).
+- **Frequency**: Monthly (`M`), Quarterly (`Q`), or Annual (`A`).
 - **Release cadence**: Monthly, ~30–45 days after reference period.
-- **No projections** — historical only.
-- **Dimensions**: `FREQ.REF_AREA.INDICATOR` (varies by sub-dataflow).
-- **Known sub-dataflows**:
-  - `CPI,4.0.0` — consumer prices (`PCPI_IX` monthly index, `PCPI_PC_CP_A_PT` year-on-year %)
-  - `IR,4.0.0` — interest rates
-  - `ER,4.0.0` — exchange rates
-- **Example SDMX path**:
+- **No projections** — historical only (use `WEO:PCPIPCH` for forward-looking inflation).
+- **Dimensions** (5): `COUNTRY.INDEX_TYPE.COICOP_1999.TYPE_OF_TRANSFORMATION.FREQUENCY`.
+  - `COUNTRY` — **ISO3** (e.g. `SWE`). The legacy 3-digit IMF AREA code (`144`) is no longer accepted.
+  - `INDEX_TYPE` — `CPI` for consumer-price index; other values include `PPI`, `WPI`.
+  - `COICOP_1999` — classification code; `_T` is "all items".
+  - `TYPE_OF_TRANSFORMATION` — `IX` (level / index), `PC_PA` (year-on-year %), `PC_PP_PT` (period-on-period %).
+  - `FREQUENCY` — `M`, `Q`, `A`.
+- **Example SDMX path** (Sweden all-items CPI level, monthly):
   ```
-  /data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2024-01
+  /data/IMF.STA,CPI,5.0.0/SWE.CPI._T.IX.M?startPeriod=2024-01
   ```
-  (Frequency=M, Country=SE, Indicator=PCPI_IX, monthly CPI index.)
-- **Quirks**: IFS country codes are 2-letter ISO-2 in some sub-dataflows (`SE`, `DK`) and 3-letter ISO-3 in others. Always verify via `/structure/codelist/…`.
+- **Quirks**: All SDMX 3.0 dataflows now accept ISO3 directly as `COUNTRY`. The 2-letter ISO-2 (`SE`) and 3-digit numeric IMF AREA (`144`) are **not** accepted by IMF.STA/CPI v5.0.0 — verified live 2026-05-11.
 
 ### 2.4 BOP / BOP_AGG — Balance of Payments
 
 - **Dataflow ID**: `BOP`, `BOP_AGG`
 - **Agency**: `IMF.STA`
-- **Frequency**: Quarterly (`Q`).
+- **Version**: `21.0.0` (post-2026-05 refactor).
+- **Frequency**: Quarterly (`Q`) or Annual (`A`).
 - **Methodology**: BPM6.
-- **Key measures**: current account, capital account, financial account, reserve assets, errors and omissions.
+- **Dimensions** (5): `COUNTRY.BOP_ACCOUNTING_ENTRY.INDICATOR.UNIT.FREQUENCY`.
+- **Key measures**: current account (`CAB`), capital account, financial account, reserve assets, errors and omissions.
+- **Example SDMX path** (Sweden current-account balance, USD, annual):
+  ```
+  /data/IMF.STA,BOP,21.0.0/SWE.NETCD_T.CAB.USD.A?startPeriod=2020
+  ```
 - **Use case**: Deeper external-sector detail than WEO's `BCA_NGDPD`.
 
 ### 2.5 GFS_COFOG — Government Finance Statistics by Function
 
 - **Dataflow ID**: `GFS_COFOG`
 - **Agency**: `IMF.STA`
+- **Version**: `11.0.0` (post-2026-05 refactor — indicator codes were renamed from `G02`/`G07`/`G09`/`G10` to `GF02_T`/`GF07_T`/`GF09_T`/`GF10_T`).
 - **Frequency**: Annual (`A`).
 - **Release cadence**: T+1 (data for year Y released in late Y+1).
 - **Methodology**: GFSM 2014.
-- **Dimensions**: `FREQ.REF_AREA.SECTOR.FUNCTION.TRANSACTION`.
+- **Dimensions** (6): `COUNTRY.SECTOR.GFS_GRP.INDICATOR.TYPE_OF_TRANSFORMATION.FREQUENCY`.
+  - `SECTOR` — `S13` (general government).
+  - `GFS_GRP` — `G2MF` (expense by function — main).
+  - `INDICATOR` — `GF02_T` (defence), `GF07_T` (health), `GF09_T` (education), `GF10_T` (social protection), etc.
+  - `TYPE_OF_TRANSFORMATION` — `POGDP_PT` (% of GDP), `POTO_PT` (% of total expenditure), `XDC` (national currency).
 - **COFOG functions** (critical for committee mapping):
   - `01` General public services
-  - `02` Defence → **FöU**
+  - `02` Defence (`GF02_T`) → **FöU**
   - `03` Public order and safety → **JuU**
   - `04` Economic affairs
   - `05` Environmental protection → **MJU** (partial — WB still primary)
   - `06` Housing and community amenities
-  - `07` Health → **SoU**
+  - `07` Health (`GF07_T`) → **SoU**
   - `08` Recreation, culture, religion → **KrU**
-  - `09` Education → **UbU**
-  - `10` Social protection → **SfU**
+  - `09` Education (`GF09_T`) → **UbU**
+  - `10` Social protection (`GF10_T`) → **SfU**
+- **Example SDMX path** (Sweden defence spending, % of GDP, annual):
+  ```
+  /data/IMF.STA,GFS_COFOG,11.0.0/SWE.S13.G2MF.GF02_T.POGDP_PT.A?startPeriod=2015
+  ```
 - **Use case**: Committee-aligned spending decomposition when a report or motion concerns function-specific policy.
 
 ### 2.6 MFS_IR — Monetary & Financial Statistics, Interest Rates
 
-- **Dataflow ID**: `MFS_IR` (or sub-dataflow in the new SDMX 3.0 refactor)
+- **Dataflow ID**: `MFS_IR`
 - **Agency**: `IMF.STA`
-- **Frequency**: Monthly.
-- **Key indicators**: `FPOLM_PA` (policy rate, per annum), `FID_PA` (deposit rate), `FILR_PA` (lending rate), `FIR_PA` (interbank rate).
-- **Swedish relevance**: Riksbankens styrränta (policy rate) — complements Riksbank press releases with standardised cross-country comparison.
+- **Version**: `8.0.1` (post-2026-05 refactor).
+- **Frequency**: Monthly (`M`).
+- **Dimensions** (3): `COUNTRY.INDICATOR.FREQUENCY`.
+- **Key indicators (Sweden codelist, verified 2026-05-11)**: `MMRT_RT_PT_A_PT` (money-market rate, IMF proxy for the Riksbank policy rate), `S13BOND_RT_PT_A_PT` (sovereign-bond yield), `MFS135_RT_PT_A_PT`, `MFS162_RT_PT_A_PT`, `MFS166_RT_PT_A_PT`, `MFS171_RT_PT_A_PT`, `GSTBILY_RT_PT_A_PT`.
+- **Example SDMX path** (Sweden money-market rate, monthly):
+  ```
+  /data/IMF.STA,MFS_IR,8.0.1/SWE.MMRT_RT_PT_A_PT.M?startPeriod=2024-01
+  ```
+- **Swedish relevance**: The legacy `FPOLM_PA` central-bank policy-rate code is **no longer in the SWE codelist**. Use `MMRT_RT_PT_A_PT` as the IMF proxy and prefer Riksbank statistics directly for the official styrränta.
 
-### 2.7 DOTS — Direction of Trade Statistics
+### 2.7 IMTS — International Merchandise Trade Statistics (replaces the legacy DOTS dataflow)
 
-- **Dataflow ID**: `DOTS`
+- **Dataflow ID**: `IMTS` (the `DOTS` / `DOT` dataflow no longer exists in SDMX 3.0).
 - **Agency**: `IMF.STA`
-- **Frequency**: Monthly.
-- **Key dimensions**: `FREQ.REF_AREA.COUNTERPART_AREA.INDICATOR.CLASS`.
-- **Key indicators**: `TXG_FOB_USD` (exports FOB, USD), `TMG_CIF_USD` (imports CIF, USD).
+- **Version**: `1.0.0` (post-2026-05 refactor).
+- **Frequency**: Monthly (`M`), Quarterly (`Q`), or Annual (`A`).
+- **Dimensions** (4): `COUNTRY.INDICATOR.COUNTERPART_COUNTRY.FREQUENCY`.
+- **Key indicators**: `XG_FOB_USD` (exports FOB, USD — formerly `TXG_FOB_USD`), `MG_FOB_USD` / `MG_CIF_USD` (imports FOB / CIF, USD — formerly `TMG_CIF_USD`), `TBG_USD` (trade balance, USD).
+- **Example SDMX path** (Sweden exports to USA, annual):
+  ```
+  /data/IMF.STA,IMTS,1.0.0/SWE.XG_FOB_USD.USA.A?startPeriod=2023
+  ```
 - **Use case**: Bilateral trade flows — e.g. Swedish exports to Russia, EU, China. Critical for foreign-policy / sanctions coverage.
 
 ### 2.8 PCPS — Primary Commodity Prices
 
 - **Dataflow ID**: `PCPS`
-- **Agency**: `IMF.RES`
-- **Frequency**: Monthly.
-- **Key indicators**: `PALLFNF` (all commodities, non-fuel), `POILAPSP` (oil, average of Brent/Dubai/WTI).
+- **Agency**: `IMF.RES` (moved from `IMF.STA` to `IMF.RES` in the 2026-05 refactor).
+- **Version**: `9.0.0`.
+- **Frequency**: Monthly (`M`).
+- **Dimensions** (4): `COUNTRY.INDICATOR.DATA_TRANSFORMATION.FREQUENCY` — `COUNTRY=G001` (global aggregate), `DATA_TRANSFORMATION=USD` for nominal USD prices.
+- **Key indicators**: `PALLFNF` (all commodities, non-fuel), `POILAPSP` (oil, average of Brent/Dubai/WTI), `POILBRE` (Brent), `POILWTI` (WTI), `POILDUB` (Dubai).
+- **Example SDMX path** (Brent crude, monthly):
+  ```
+  /data/IMF.RES,PCPS,9.0.0/G001.POILBRE.USD.M?startPeriod=2024-01
+  ```
 - **Use case**: Inflation drivers commentary — tie Swedish CPI movements to commodity shocks.
 
 ### 2.9 ER — Exchange Rates
 
-- **Dataflow ID**: embedded in IFS post-2024 refactor, `ER,4.0.0`.
-- **Agency**: `IMF.STA`.
-- **Frequency**: Daily (representative) + monthly.
-- **Key indicators**:
-  - `ENDA_XDC_USD_RATE` — SEK per USD (end of period)
-  - `ENDE_XDC_EUR_RATE` — SEK per EUR (end of period)
-  - `EREER_IX` — real effective exchange rate index
+- **Dataflow ID**: `ER`
+- **Agency**: `IMF.STA`
+- **Version**: `4.0.1` (post-2026-05 refactor).
+- **Frequency**: Monthly (`M`), Quarterly (`Q`), or Annual (`A`) — period-average and end-of-period variants.
+- **Dimensions** (4): `COUNTRY.INDICATOR.TYPE_OF_TRANSFORMATION.FREQUENCY`.
+  - `TYPE_OF_TRANSFORMATION` — `PA_RT` (period average), `EOP_RT` (end of period).
+- **Key indicators**: `USD_XDC` (USD per national currency), `EUR_XDC` (EUR per national currency), `XDC_USD` (national currency per USD), `XDC_EUR`, `XDR_XDC`, `EREER_IX` (real effective exchange rate index).
+- **Example SDMX path** (Sweden SEK/USD period-average, monthly):
+  ```
+  /data/IMF.STA,ER,4.0.1/SWE.USD_XDC.PA_RT.M?startPeriod=2024-01
+  ```
 - **Use case**: Monetary-policy coverage, export-competitiveness commentary.
 
 ---

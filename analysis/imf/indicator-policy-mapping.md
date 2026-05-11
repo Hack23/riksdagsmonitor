@@ -8,25 +8,25 @@
 
 ## 1 · Committee → IMF indicator matrix
 
-Format key: `DATABASE:CODE` (e.g. `WEO:NGDP_RPCH`, `FM:GGXONLB_NGDP`, `GFS_COFOG:G02`). `[projection]` flags indicators that publish T+5 projections.
+Format key: `DATABASE:CODE` (e.g. `WEO:NGDP_RPCH`, `FM:GGXONLB_NGDP`, `GFS_COFOG:GF02_T`). `[projection]` flags indicators that publish T+5 projections.
 
 | Committee | Remit | IMF role | Primary indicators | Secondary / supporting |
 |-----------|-------|----------|---------------------|------------------------|
-| **FiU** | Finance — macro & budget | **IMF primary** | `WEO:NGDP_RPCH` [proj] (growth) · `WEO:PCPIPCH` [proj] (inflation) · `WEO:NGDPDPC` [proj] (GDP per capita) · `WEO:GGXWDG_NGDP` [proj] (debt/GDP) · `WEO:GGXCNL_NGDP` [proj] (fiscal balance) · `WEO:GGX_NGDP` [proj] (expenditure) · `FM:GGXONLB_NGDP` [proj] (primary balance) | `WEO:PPPPC` [proj] (GDP per capita PPP) · `IFS:PCPI_IX` (monthly CPI) · `ER:ENDA_XDC_USD_RATE` (SEK/USD) |
+| **FiU** | Finance — macro & budget | **IMF primary** | `WEO:NGDP_RPCH` [proj] (growth) · `WEO:PCPIPCH` [proj] (inflation) · `WEO:NGDPDPC` [proj] (GDP per capita) · `WEO:GGXWDG_NGDP` [proj] (debt/GDP) · `WEO:GGXCNL_NGDP` [proj] (fiscal balance) · `WEO:GGX_NGDP` [proj] (expenditure) · `FM:GGXONLB_NGDP` [proj] (primary balance) | `WEO:PPPPC` [proj] (GDP per capita PPP) · `CPI:_T.IX` (monthly CPI) · `ER:USD_XDC.PA_RT` (SEK/USD) |
 | **SkU** | Taxation | **IMF primary** | `WEO:GGR_NGDP` [proj] (revenue/GDP) · `FM:GGXONLB_NGDP` [proj] (primary balance) · `FM:GGSB_NPGDP` [proj] (cyclically-adjusted) · `WEO:GGXWDG_NGDP` [proj] (debt context) | `WEO:GGX_NGDP` [proj] |
 | **AU** | Labour market | **IMF + SCB** | `WEO:LUR` [proj] (unemployment rate) · `WEO:LE` [proj] (employment) | SCB AKU (preferred for Swedish-specific) · `WEO:NGDPDPC` [proj] |
-| **NU** | Business & trade | **IMF primary** | `WEO:BCA_NGDPD` [proj] (current account) · `WEO:TX_RPCH` [proj] (exports growth) · `WEO:TM_RPCH` [proj] (imports growth) · `DOTS:TXG_FOB_USD` (bilateral exports) · `DOTS:TMG_CIF_USD` (bilateral imports) | `PCPS:POILAPSP` (oil — export competitiveness) |
-| **UU** | Foreign affairs | **IMF primary** | `WEO:BCA_NGDPD` [proj] · `WEO:TX_RPCH` [proj] · `DOTS:TXG_FOB_USD` (partner-country exports) · `DOTS:TMG_CIF_USD` (partner-country imports) | — |
-| **SoU** | Health & welfare | **IMF + WB** | `GFS_COFOG:G07` (health spending / GDP) · `WEO:LP` [proj] (population) · `WEO:NGDPDPC` [proj] (per-capita context) | WB `SH.XPD.CHEX.GD.ZS`, `SH.MED.PHYS.ZS`, `SH.MED.BEDS.ZS` |
-| **SfU** | Social insurance | **IMF + WB** | `GFS_COFOG:G10` (social protection) · `WEO:LP` [proj] · `WEO:LUR` [proj] | WB social-residue indicators |
-| **FöU** | Defence | **IMF + WB** | `GFS_COFOG:G02` (defence spending / GDP) | WB `MS.MIL.XPND.GD.ZS` (historical) · `MS.MIL.XPND.CD` |
+| **NU** | Business & trade | **IMF primary** | `WEO:BCA_NGDPD` [proj] (current account) · `WEO:TX_RPCH` [proj] (exports growth) · `WEO:TM_RPCH` [proj] (imports growth) · `IMTS:XG_FOB_USD` (bilateral exports) · `IMTS:MG_CIF_USD` (bilateral imports) | `PCPS:POILAPSP` (oil — export competitiveness) |
+| **UU** | Foreign affairs | **IMF primary** | `WEO:BCA_NGDPD` [proj] · `WEO:TX_RPCH` [proj] · `IMTS:XG_FOB_USD` (partner-country exports) · `IMTS:MG_CIF_USD` (partner-country imports) | — |
+| **SoU** | Health & welfare | **IMF + WB** | `GFS_COFOG:GF07_T` (health spending / GDP) · `WEO:LP` [proj] (population) · `WEO:NGDPDPC` [proj] (per-capita context) | WB `SH.XPD.CHEX.GD.ZS`, `SH.MED.PHYS.ZS`, `SH.MED.BEDS.ZS` |
+| **SfU** | Social insurance | **IMF + WB** | `GFS_COFOG:GF10_T` (social protection) · `WEO:LP` [proj] · `WEO:LUR` [proj] | WB social-residue indicators |
+| **FöU** | Defence | **IMF + WB** | `GFS_COFOG:GF02_T` (defence spending / GDP) | WB `MS.MIL.XPND.GD.ZS` (historical) · `MS.MIL.XPND.CD` |
 | **MJU** | Environment | **WB primary (IMF overlay)** | `PCPS:POILAPSP` (oil — energy transition) · `PCPS:PALLFNF` (commodity index) | WB `EN.ATM.CO2E.PC`, `EG.FEC.RNEW.ZS`, `AG.LND.FRST.ZS` |
-| **UbU** | Education | **IMF + WB** | `GFS_COFOG:G09` (education spending / GDP) | WB `SE.XPD.TOTL.GD.ZS`, `SE.PRM.ENRR`, `SE.TER.ENRR` |
+| **UbU** | Education | **IMF + WB** | `GFS_COFOG:GF09_T` (education spending / GDP) | WB `SE.XPD.TOTL.GD.ZS`, `SE.PRM.ENRR`, `SE.TER.ENRR` |
 | **KU** | Constitution / institutions | **WB only (WGI)** | — | WB `CC.EST`, `RL.EST`, `VA.EST`, `GE.EST`, `RQ.EST`, `PV.EST` (all source=75) |
 | **JuU** | Justice / rule of law | **WB only** | — | WB `VC.IHR.PSRC.P5`, `IQ.CPA.TRAN.XQ`, WGI |
 | **KrU** | Culture | **—** | — | WB `SL.UEM.TOTL.ZS` (sector-specific), `SM.POP.TOTL` |
 | **TU** | Transport | **IMF + WB** | `WEO:NGDP_RPCH` [proj] (growth context) | WB `IS.ROD.TOTL.KM`, `IS.RRS.TOTL.KM` |
-| **CU** | Civil affairs / housing | **IMF + WB** | `GFS_COFOG:G10` | WB housing indicators |
+| **CU** | Civil affairs / housing | **IMF + WB** | `GFS_COFOG:GF10_T` | WB housing indicators |
 
 > **Convention**: When IMF and SCB both cover a Swedish indicator (typically unemployment, inflation), IMF is primary for **cross-country comparison**, SCB is primary for **Swedish-specific ground truth**. Article commentary may cite both with the methodology difference annotated — see `data-dictionary.md` § 5.5.
 
@@ -52,10 +52,10 @@ Format key: `DATABASE:CODE` (e.g. `WEO:NGDP_RPCH`, `FM:GGXONLB_NGDP`, `GFS_COFOG
 | `WEO:TX_RPCH` / `TM_RPCH` | 1980 | 2031 | Apr/Oct |
 | `FM:GGXONLB_NGDP` | 2000 | 2031 | Apr/Oct |
 | `FM:GGSB_NPGDP` | 2000 | 2031 | Apr/Oct |
-| `IFS:PCPI_IX` | 1950s | — (historical only) | Monthly |
-| `MFS_IR:FPOLM_PA` | 1993 | — | Monthly |
-| `GFS_COFOG:G02/07/09/10` | 1995 | — (T+1 annual) | Annual |
-| `DOTS:TXG_FOB_USD` | 1980 | — | Monthly |
+| `CPI:_T.IX` | 1950s | — (historical only) | Monthly |
+| `MFS_IR:MMRT_RT_PT_A_PT` | 1993 | — | Monthly |
+| `GFS_COFOG:GF02_T/07/09/10` | 1995 | — (T+1 annual) | Annual |
+| `IMTS:XG_FOB_USD` | 1980 | — | Monthly |
 | `PCPS:POILAPSP` | 1980 | — | Monthly |
 
 ---
@@ -72,13 +72,13 @@ Format key: `DATABASE:CODE` (e.g. `WEO:NGDP_RPCH`, `FM:GGXONLB_NGDP`, `GFS_COFOG
 
 **High-frequency** (IFS, MFS_IR, DOTS, PCPS, ER):
 
-> "Sweden's HICP reached 109.4 (2010=100) in March 2026 (`IFS:PCPI_IX`, monthly)."
+> "Sweden's HICP reached 109.4 (2010=100) in March 2026 (`CPI:_T.IX`, monthly)."
 >
 > "Brent crude averaged USD 82/bbl in March 2026 (`PCPS:POILAPSP`)."
 
 **Bilateral trade** (DOTS):
 
-> "Swedish goods exports to Russia collapsed 92 % between 2021-Q4 and 2023-Q4 (`DOTS:TXG_FOB_USD`)."
+> "Swedish goods exports to Russia collapsed 92 % between 2021-Q4 and 2023-Q4 (`IMTS:XG_FOB_USD`)."
 
 **Never use** un-attributed forecast phrasing:
 - ❌ "Sweden will grow at 2 % in 2027"

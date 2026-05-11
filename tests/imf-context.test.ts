@@ -30,7 +30,7 @@ describe('imf-context', () => {
       expect(codes.has('WEO:LUR')).toBe(true);
       expect(codes.has('WEO:BCA_NGDPD')).toBe(true);
       expect(codes.has('FM:GGXONLB_NGDP')).toBe(true);
-      expect(codes.has('ER:ENDA_XDC_USD_RATE')).toBe(true);
+      expect(codes.has('ER:USD_XDC.PA_RT')).toBe(true);
       expect(codes.has('PCPS:POILAPSP')).toBe(true);
     });
 
@@ -155,12 +155,12 @@ describe('imf-context', () => {
     });
 
     it('returns undefined when database and id do not co-occur', () => {
-      // GGXWDG_NGDP exists in WEO but not as a same-code IFS catalogue entry.
-      expect(findImfIndicatorByCode('IFS', 'GGXWDG_NGDP')).toBeUndefined();
+      // GGXWDG_NGDP exists in WEO but not as a same-code MFS_IR catalogue entry.
+      expect(findImfIndicatorByCode('MFS_IR', 'GGXWDG_NGDP')).toBeUndefined();
     });
 
-    it('resolves GFS_COFOG committee-aligned spending indicators', () => {
-      for (const id of ['G02', 'G07', 'G09', 'G10']) {
+    it('resolves GFS_COFOG committee-aligned spending indicators (post-2026-05 codes)', () => {
+      for (const id of ['GF02_T', 'GF07_T', 'GF09_T', 'GF10_T']) {
         const hit = findImfIndicatorByCode('GFS_COFOG', id);
         expect(hit?.database).toBe('GFS_COFOG');
         expect(hit?.indicatorId).toBe(id);
@@ -198,7 +198,9 @@ describe('imf-context', () => {
   describe('getImfDatabasesInUse', () => {
     it('includes the IMF databases actually referenced by the catalogue', () => {
       const dbs = getImfDatabasesInUse();
-      for (const db of ['WEO', 'FM', 'GFS_COFOG', 'DOTS', 'ER', 'PCPS', 'MFS_IR']) {
+      // 2026-05 SDMX 3.0 refactor: IFS dissolved into CPI/MFS_IR/ER,
+      // DOTS renamed to IMTS, PCPS moved from IMF.STA to IMF.RES.
+      for (const db of ['WEO', 'FM', 'GFS_COFOG', 'IMTS', 'ER', 'PCPS', 'MFS_IR']) {
         expect(dbs.has(db as Parameters<typeof imfCitation>[0])).toBe(true);
       }
     });
@@ -228,10 +230,10 @@ describe('imf-context', () => {
       expect(fiu).toContain('WEO:PCPIPCH');
     });
 
-    it('FÖU surfaces COFOG G02 (defence spending)', () => {
+    it('FÖU surfaces COFOG GF02_T (defence spending, post-2026-05 code)', () => {
       const fou = getImfCommitteeMatrix().get('FÖU');
       expect(fou).toBeDefined();
-      expect(fou).toContain('GFS_COFOG:G02');
+      expect(fou).toContain('GFS_COFOG:GF02_T');
     });
 
     it('each entry is sorted and deduplicated', () => {

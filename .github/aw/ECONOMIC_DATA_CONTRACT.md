@@ -194,8 +194,8 @@ tsx scripts/imf-fetch.ts compare \
 
 # 3. SDMX 3.0 passthrough for IFS / BOP / FM / GFS / DOTS.
 tsx scripts/imf-fetch.ts sdmx \
-  --path "/data/IMF.STA,CPI,4.0.0/M.SE.PCPI_IX?startPeriod=2024-01" \
-  --indicator PCPI_IX --country SWE --persist
+  --path "/data/IMF.STA,CPI,5.0.0/SWE.CPI._T.IX.M?startPeriod=2024-01" \
+  --indicator _T.IX --country SWE --persist
 
 # 4. Inspect the built-in WEO + FM indicator catalog (no network call).
 tsx scripts/imf-fetch.ts list-indicators
@@ -388,7 +388,7 @@ Every economic claim cites the IMF dataflow + indicator code. Use:
 
 - `WEO:NGDP_RPCH` for real GDP growth · `WEO:NGDPD` for nominal GDP ·
   `WEO:NGDPDPC` for GDP per capita.
-- `WEO:PCPIPCH` for annual CPI inflation · `IFS:PCPI_IX` for monthly
+- `WEO:PCPIPCH` for annual CPI inflation · `CPI:_T.IX` for monthly
   CPI · SCB KPIF for Swedish-specific high-frequency inflation.
 - `WEO:LUR` for the annual unemployment rate · SCB AKU for the
   Swedish-specific labour-force survey.
@@ -397,13 +397,13 @@ Every economic claim cites the IMF dataflow + indicator code. Use:
   `FM:GGXONLB_NGDP` for primary balance · `FM:GGSB_NPGDP` for the
   cyclically-adjusted balance.
 - `WEO:GGR_NGDP` for revenue / GDP · `WEO:GGX_NGDP` for expenditure /
-  GDP · `GFS_COFOG:G02 / G07 / G09 / G10` for COFOG functional
+  GDP · `GFS_COFOG:GF02_T / G07 / G09 / G10` for COFOG functional
   decomposition.
 - `WEO:BCA_NGDPD` for current account · `BOP:*` for BoP detail ·
   `WEO:TX_RPCH` / `WEO:TM_RPCH` for export/import volume growth ·
-  `DOTS:TXG_FOB_USD`, `DOTS:TMG_CIF_USD` for bilateral trade flows.
-- `MFS_IR:FPOLM_PA` for the Riksbank policy rate ·
-  `ER:ENDA_XDC_USD_RATE` / `ER:ENDE_XDC_EUR_RATE` for exchange rates ·
+  `IMTS:XG_FOB_USD`, `IMTS:MG_CIF_USD` for bilateral trade flows.
+- `MFS_IR:MMRT_RT_PT_A_PT` for the Riksbank policy rate ·
+  `ER:USD_XDC.PA_RT` / `ER:ENDE_XDC_EUR_RATE` for exchange rates ·
   `PCPS:POILAPSP` / `PCPS:PALLFNF` for commodity prices.
 
 World Bank citations remain authoritative for non-economic context:
