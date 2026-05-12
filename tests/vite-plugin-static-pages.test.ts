@@ -4,9 +4,18 @@
  * The plugin is the root-cause fix for the OOM during
  * `npm run build` (release run 25133177267): it removes the
  * ~3 540 static HTML pages from Rollup's module graph and emits
- * them itself with a single `styles.css` href rewrite + SHA-384
- * SRI integrity attribute. These tests pin down its public
- * contract so future refactors cannot regress that behaviour.
+ * them itself with a single `styles.css` href rewrite.
+ *
+ * **No SRI** — `vite-plugin-sri-gen` was removed and this plugin
+ * no longer stamps `integrity` attributes onto first-party
+ * `<link rel="stylesheet">` tags. All assets are served from the
+ * Hack23-owned S3 → CloudFront pipeline; integrity is enforced by
+ * TLS + bucket policy + WAF, not by browser-side SRI.
+ *
+ * The CSS bundle uses a STABLE, NON-HASHED filename
+ * (`assets/styles.css` — see vite.config.js `assetFileNames`) so
+ * external consumers and cached HTML pages can rely on a single
+ * canonical URL forever.
  *
  * @author Hack23 AB
  * @license Apache-2.0
@@ -16,14 +25,12 @@ import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import crypto from 'node:crypto';
 import staticPagesPlugin from '../scripts/vite-plugin-static-pages.js';
 
 interface TestRig {
   projectRoot: string;
   distDir: string;
   cssBuf: Buffer;
-  expectedIntegrity: string;
 }
 
 function setupRig(): TestRig {
@@ -32,19 +39,18 @@ function setupRig(): TestRig {
   fs.mkdirSync(path.join(distDir, 'assets'), { recursive: true });
   fs.mkdirSync(path.join(distDir, '.vite'), { recursive: true });
 
-  // Synthetic bundled CSS the plugin will reference.
+  // Synthetic bundled CSS the plugin will reference. Pinned to the
+  // canonical, stable, non-hashed filename `assets/styles.css`.
   const cssBuf = Buffer.from('body{background:#0a0e27;color:#e0e0e0}');
-  const hashedCss = 'styles-AbCdEf12.css';
-  fs.writeFileSync(path.join(distDir, 'assets', hashedCss), cssBuf);
+  fs.writeFileSync(path.join(distDir, 'assets', 'styles.css'), cssBuf);
   fs.writeFileSync(
     path.join(distDir, '.vite', 'manifest.json'),
     JSON.stringify({
-      'styles.css': { file: `assets/${hashedCss}` },
+      'styles.css': { file: 'assets/styles.css' },
     }),
   );
 
-  const expectedIntegrity = `sha384-${crypto.createHash('sha384').update(cssBuf).digest('base64')}`;
-  return { projectRoot, distDir, cssBuf, expectedIntegrity };
+  return { projectRoot, distDir, cssBuf };
 }
 
 function writePage(root: string, rel: string, html: string): void {
@@ -84,7 +90,7 @@ describe('vite-plugin-static-pages', () => {
     fs.rmSync(rig.projectRoot, { recursive: true, force: true });
   });
 
-  it('rewrites root-level styles.css href to the hashed asset path with SRI', async () => {
+  it('rewrites root-level styles.css href to the stable bundle path (no SRI)', async () => {
     writePage(rig.projectRoot, 'sitemap.html', pageHtml('styles.css'));
 
     const plugin = staticPagesPlugin({
@@ -96,9 +102,11 @@ describe('vite-plugin-static-pages', () => {
     await runCloseBundle(plugin);
 
     const out = fs.readFileSync(path.join(rig.distDir, 'sitemap.html'), 'utf8');
-    expect(out).toContain('href="assets/styles-AbCdEf12.css"');
-    expect(out).toContain(`integrity="${rig.expectedIntegrity}"`);
-    expect(out).toContain('crossorigin="anonymous"');
+    expect(out).toContain('href="assets/styles.css"');
+    // No SRI / crossorigin on the stylesheet link — first-party assets
+    // are trusted via the S3/CloudFront integrity boundary.
+    expect(out).not.toContain('integrity=');
+    expect(out).not.toMatch(/<link\b[^>]*\bcrossorigin=/i);
     // Must not double-rewrite or duplicate the link tag.
     expect(out.match(/<link\b[^>]*\bhref=/g)).toHaveLength(1);
   });
@@ -119,11 +127,11 @@ describe('vite-plugin-static-pages', () => {
       path.join(rig.distDir, 'news/2026-04-29-foo-en.html'),
       'utf8',
     );
-    expect(article).toContain('href="../assets/styles-AbCdEf12.css"');
-    expect(article).toContain(`integrity="${rig.expectedIntegrity}"`);
+    expect(article).toContain('href="../assets/styles.css"');
+    expect(article).not.toContain('integrity=');
 
     const index = fs.readFileSync(path.join(rig.distDir, 'news/index.html'), 'utf8');
-    expect(index).toContain('href="../assets/styles-AbCdEf12.css"');
+    expect(index).toContain('href="../assets/styles.css"');
   });
 
   it('emits every HTML file in a directory page set and creates parent directories', async () => {
@@ -169,7 +177,32 @@ describe('vite-plugin-static-pages', () => {
 
   it('falls back to scanning dist/assets/ when the manifest lacks a styles.css entry', async () => {
     // Strip the styles.css entry — simulates a Vite config that registers
-    // CSS only under the entry HTML.
+    // CSS only under the entry HTML. The on-disk `assets/styles.css`
+    // (stable name) should be discovered directly.
+    fs.writeFileSync(path.join(rig.distDir, '.vite', 'manifest.json'), JSON.stringify({}));
+    writePage(rig.projectRoot, 'sitemap.html', pageHtml('styles.css'));
+
+    const plugin = staticPagesPlugin({
+      projectRoot: rig.projectRoot,
+      outDir: 'dist',
+      pageSets: [{ label: 'sitemaps', sources: [{ path: 'sitemap.html' }] }],
+    });
+
+    await runCloseBundle(plugin);
+
+    const out = fs.readFileSync(path.join(rig.distDir, 'sitemap.html'), 'utf8');
+    expect(out).toContain('href="assets/styles.css"');
+  });
+
+  it('discovers a legacy hashed styles-*.css when the stable bundle is absent', async () => {
+    // Back-compat: older builds (or test fixtures still using the old
+    // layout) ship `assets/styles-<hash>.css` instead of the stable
+    // `assets/styles.css`.  The plugin must still find it.
+    fs.unlinkSync(path.join(rig.distDir, 'assets', 'styles.css'));
+    fs.writeFileSync(
+      path.join(rig.distDir, 'assets', 'styles-AbCdEf12.css'),
+      rig.cssBuf,
+    );
     fs.writeFileSync(path.join(rig.distDir, '.vite', 'manifest.json'), JSON.stringify({}));
     writePage(rig.projectRoot, 'sitemap.html', pageHtml('styles.css'));
 
@@ -187,7 +220,7 @@ describe('vite-plugin-static-pages', () => {
 
   it('throws a descriptive error when the bundled styles.css cannot be located', async () => {
     fs.writeFileSync(path.join(rig.distDir, '.vite', 'manifest.json'), JSON.stringify({}));
-    fs.unlinkSync(path.join(rig.distDir, 'assets', 'styles-AbCdEf12.css'));
+    fs.unlinkSync(path.join(rig.distDir, 'assets', 'styles.css'));
     writePage(rig.projectRoot, 'sitemap.html', pageHtml('styles.css'));
 
     const plugin = staticPagesPlugin({
@@ -233,8 +266,9 @@ describe('vite-plugin-static-pages', () => {
     expect(out).toContain('type="text/css"');
     expect(out).toContain('media="all"');
     expect(out).toContain('id="canonical-styles"');
-    expect(out).toContain('href="assets/styles-AbCdEf12.css"');
-    expect(out).toContain(`integrity="${rig.expectedIntegrity}"`);
+    expect(out).toContain('href="assets/styles.css"');
+    // No integrity attribute is added.
+    expect(out).not.toContain('integrity=');
   });
 
   it('exposes the Vite plugin contract (apply, enforce, name, closeBundle hook)', () => {

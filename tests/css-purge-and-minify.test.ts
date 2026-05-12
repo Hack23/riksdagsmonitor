@@ -17,7 +17,6 @@
 
 import { describe, it, expect, beforeAll, afterAll } from 'vitest';
 import { promises as fs } from 'node:fs';
-import { createHash } from 'node:crypto';
 import path from 'node:path';
 import os from 'node:os';
 import { fileURLToPath } from 'node:url';
@@ -25,7 +24,6 @@ import yaml from 'js-yaml';
 
 import { purge, buildSafelist } from '../scripts/purge-css';
 import { run as minifyRun } from '../scripts/minify-dist';
-import { updateSri } from '../scripts/update-sri';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -81,7 +79,16 @@ let tmp: string | undefined;
 beforeAll(async () => {
   tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'rm-purge-test-'));
   await fs.mkdir(path.join(tmp, 'assets'), { recursive: true });
+  // Three fixture stylesheets covering all three accepted purge targets:
+  //   - dist/styles.css            (legacy root copy)
+  //   - dist/assets/styles.css     (canonical stable bundle, current)
+  //   - dist/assets/styles-*.css   (legacy hashed bundle, back-compat)
   await fs.writeFile(path.join(tmp, 'styles.css'), SAMPLE_CSS, 'utf8');
+  await fs.writeFile(
+    path.join(tmp, 'assets', 'styles.css'),
+    SAMPLE_CSS,
+    'utf8',
+  );
   await fs.writeFile(
     path.join(tmp, 'assets', 'styles-AbCd1234.css'),
     SAMPLE_CSS,
@@ -112,14 +119,23 @@ describe('purge-css', () => {
     // scanSourceTree: false so the test only considers the in-fixture
     // HTML/JS as the content corpus — decouples from main repo source.
     const stats = await purge(tmp, { scanSourceTree: false });
-    // Both stylesheet targets are processed.
-    expect(stats).toHaveLength(2);
-    const root = stats.find((s) => s.file.endsWith('styles.css'));
+    // All three stylesheet targets are processed (root, stable bundle,
+    // legacy hashed bundle).
+    expect(stats).toHaveLength(3);
+    const root = stats.find(
+      (s) => s.file.endsWith(path.sep + 'styles.css') && !s.file.includes('assets'),
+    );
+    const stable = stats.find(
+      (s) => s.file.endsWith(path.join('assets', 'styles.css')),
+    );
     const hashed = stats.find((s) => /styles-[A-Za-z0-9_-]+\.css$/.test(s.file));
-    expect(root).toBeDefined();
-    expect(hashed).toBeDefined();
-    // Filenames must not change.
+    expect(root, 'legacy root styles.css').toBeDefined();
+    expect(stable, 'canonical assets/styles.css').toBeDefined();
+    expect(hashed, 'legacy hashed bundle').toBeDefined();
+    // Filenames must not change — deploy-s3.sh and CloudFront cache
+    // headers depend on stable basenames.
     expect(root!.file.endsWith('styles.css')).toBe(true);
+    expect(stable!.file.endsWith(path.join('assets', 'styles.css'))).toBe(true);
     expect(hashed!.file.endsWith('.css')).toBe(true);
 
     const purged = await fs.readFile(path.join(tmp, 'styles.css'), 'utf8');
@@ -205,8 +221,8 @@ describe('minify-dist', () => {
     expect(afterHtml).toBeLessThan(beforeHtml);
     expect(afterCss).toBeLessThan(beforeCss);
     expect(afterJs).toBeLessThan(beforeJs);
-    // Filenames preserved (the deploy-s3 cache headers + SRI rewrites
-    // both depend on stable basenames).
+    // Filenames preserved — deploy-s3 cache headers and the CloudFront
+    // origin paths both depend on stable basenames.
     expect(await fs.readdir(fixture)).toEqual(
       expect.arrayContaining(['index.html', 'styles.css', 'assets']),
     );
@@ -254,10 +270,50 @@ describe('minify-dist', () => {
     expect(await fs.readFile(minMjs, 'utf8')).toBe(original);
     await fs.rm(fixture, { recursive: true, force: true });
   });
+
+  it('skips the vendored Mermaid bundle under js/lib/mermaid/', async () => {
+    // Regression: PR #2428 had `coderaiser/minify` re-process every
+    // file under dist/ including the Mermaid ESM chunk graph
+    // (chunk-*.mjs, NOT carrying `.min.` in the basename), which
+    // risks corrupting Mermaid's dynamic-import wiring. Path-based
+    // skip in SKIP_SUBPATHS guarantees those chunks are never
+    // re-minified.
+    const fixture = await fs.mkdtemp(path.join(os.tmpdir(), 'rm-minify-mermaid-'));
+    const mermaidDir = path.join(fixture, 'js', 'lib', 'mermaid');
+    await fs.mkdir(mermaidDir, { recursive: true });
+
+    const padding = '          '.repeat(50);
+    const chunkBefore =
+      `// mermaid chunk\n${padding}\nexport const x = 1;\n${padding}\n`;
+    const chunkPath = path.join(mermaidDir, 'chunk-ABCD1234.mjs');
+    await fs.writeFile(chunkPath, chunkBefore, 'utf8');
+
+    // Sanity baseline: an arbitrary HTML file outside the skip subtree
+    // must still be minified, proving the skip is targeted and doesn't
+    // disable the pass.
+    const goodHtml = path.join(fixture, 'index.html');
+    await fs.writeFile(
+      goodHtml,
+      `<!DOCTYPE html>\n<html><body>${padding}</body></html>\n`,
+      'utf8',
+    );
+
+    await minifyRun(fixture);
+
+    // Mermaid chunk is byte-identical (skipped).
+    expect(await fs.readFile(chunkPath, 'utf8')).toBe(chunkBefore);
+    // Outside-the-skip-tree HTML still got minified.
+    const htmlAfter = await fs.readFile(goodHtml, 'utf8');
+    expect(htmlAfter.length).toBeLessThan(
+      `<!DOCTYPE html>\n<html><body>${padding}</body></html>\n`.length,
+    );
+
+    await fs.rm(fixture, { recursive: true, force: true });
+  });
 });
 
 describe('deploy-s3 wiring', () => {
-  it('invokes purge → minify → update-sri between dist verification and AWS deploy', async () => {
+  it('invokes purge → minify (no SRI step) between dist verification and AWS deploy', async () => {
     const ymlText = await fs.readFile(
       path.join(REPO_ROOT, '.github', 'workflows', 'deploy-s3.yml'),
       'utf8',
@@ -286,7 +342,6 @@ describe('deploy-s3 wiring', () => {
     const verifyIdx = indexOfStep((s) => s.name === 'Verify build artifacts');
     const purgeIdx = indexOfStep((s) => !!s.run?.includes('scripts/purge-css.ts'));
     const minifyIdx = indexOfStep((s) => !!s.run?.includes('scripts/minify-dist.ts'));
-    const sriIdx = indexOfStep((s) => !!s.run?.includes('scripts/update-sri.ts'));
     const awsIdx = indexOfStep((s) =>
       typeof s.uses === 'string' && s.uses.startsWith('aws-actions/configure-aws-credentials'),
     );
@@ -294,12 +349,20 @@ describe('deploy-s3 wiring', () => {
     expect(verifyIdx).toBeGreaterThanOrEqual(0);
     expect(purgeIdx).toBeGreaterThanOrEqual(0);
     expect(minifyIdx).toBeGreaterThanOrEqual(0);
-    expect(sriIdx).toBeGreaterThanOrEqual(0);
     expect(awsIdx).toBeGreaterThanOrEqual(0);
     expect(verifyIdx).toBeLessThan(purgeIdx);
     expect(purgeIdx).toBeLessThan(minifyIdx);
-    expect(minifyIdx).toBeLessThan(sriIdx);
-    expect(sriIdx).toBeLessThan(awsIdx);
+    expect(minifyIdx).toBeLessThan(awsIdx);
+
+    // SRI rewrite step MUST be gone — `vite-plugin-sri-gen` was
+    // removed and the static-pages plugin no longer stamps integrity
+    // attributes onto first-party `<link>` tags. Re-introducing
+    // update-sri.ts here would re-introduce the cached-HTML
+    // invalidation bug fixed by this PR.
+    const usesUpdateSri = allSteps.some(
+      (s) => !!s.run?.includes('scripts/update-sri.ts'),
+    );
+    expect(usesUpdateSri, 'scripts/update-sri.ts step must not exist').toBe(false);
 
     // No Docker action — the previous implementation used dra1ex/minify-action;
     // assert no `uses:` step references it (parser-level, not substring).
@@ -307,223 +370,6 @@ describe('deploy-s3 wiring', () => {
       (s) => typeof s.uses === 'string' && s.uses.includes('dra1ex/minify-action'),
     );
     expect(usesDra1ex).toBe(false);
-  });
-});
-
-describe('update-sri', () => {
-  it('updates the integrity hash in HTML after CSS is modified', async () => {
-    const fixture = await fs.mkdtemp(path.join(os.tmpdir(), 'rm-sri-'));
-    const assetsDir = path.join(fixture, 'assets');
-    await fs.mkdir(assetsDir, { recursive: true });
-
-    // Write initial CSS content and compute its "build-time" hash.
-    const initialCss = ':root { --primary-color: #006633; }\n.hero { padding: 2rem; }\n';
-    const cssPath = path.join(assetsDir, 'styles-AbCd1234.css');
-    await fs.writeFile(cssPath, initialCss, 'utf8');
-    const oldHash = createHash('sha384').update(Buffer.from(initialCss)).digest('base64');
-    const oldIntegrity = `sha384-${oldHash}`;
-
-    // Create an HTML page that references the CSS with the old integrity hash.
-    const htmlContent =
-      `<!DOCTYPE html>\n<html>\n<head>\n` +
-      `<link rel="stylesheet" href="assets/styles-AbCd1234.css" integrity="${oldIntegrity}" crossorigin="anonymous">\n` +
-      `</head>\n<body></body>\n</html>\n`;
-    await fs.writeFile(path.join(fixture, 'index.html'), htmlContent, 'utf8');
-
-    // Also one in a subdirectory with a relative href.
-    const subDir = path.join(fixture, 'news');
-    await fs.mkdir(subDir);
-    const htmlContent2 =
-      `<!DOCTYPE html>\n<html>\n<head>\n` +
-      `<link rel="stylesheet" href="../assets/styles-AbCd1234.css" integrity="${oldIntegrity}" crossorigin="anonymous">\n` +
-      `</head>\n<body></body>\n</html>\n`;
-    await fs.writeFile(path.join(subDir, 'article.html'), htmlContent2, 'utf8');
-
-    // Simulate CSS content change (purge + minify).
-    const newCss = ':root { --primary-color: #006633; }\n.hero{padding:2rem}\n';
-    await fs.writeFile(cssPath, newCss, 'utf8');
-    const expectedHash = createHash('sha384').update(Buffer.from(newCss)).digest('base64');
-    const expectedIntegrity = `sha384-${expectedHash}`;
-
-    // Run update-sri.
-    const result = await updateSri(fixture);
-
-    expect(result.oldIntegrity).toBe(oldIntegrity);
-    expect(result.newIntegrity).toBe(expectedIntegrity);
-    expect(result.updatedHtml).toBe(2);
-    expect(result.skippedHtml).toBe(0);
-
-    // Verify both HTML files have the new hash.
-    const updatedRoot = await fs.readFile(path.join(fixture, 'index.html'), 'utf8');
-    const updatedSub = await fs.readFile(path.join(subDir, 'article.html'), 'utf8');
-    expect(updatedRoot).toContain(expectedIntegrity);
-    expect(updatedRoot).not.toContain(oldIntegrity);
-    expect(updatedSub).toContain(expectedIntegrity);
-    expect(updatedSub).not.toContain(oldIntegrity);
-
-    await fs.rm(fixture, { recursive: true, force: true });
-  });
-
-  it('leaves HTML unchanged when CSS content has not changed', async () => {
-    const fixture = await fs.mkdtemp(path.join(os.tmpdir(), 'rm-sri-noop-'));
-    const assetsDir = path.join(fixture, 'assets');
-    await fs.mkdir(assetsDir);
-
-    const css = '.a{color:red}\n';
-    const cssPath = path.join(assetsDir, 'styles-XxXx9999.css');
-    await fs.writeFile(cssPath, css, 'utf8');
-    const hash = createHash('sha384').update(Buffer.from(css)).digest('base64');
-    const integrity = `sha384-${hash}`;
-
-    const htmlContent =
-      `<!DOCTYPE html><html><head>` +
-      `<link rel="stylesheet" href="assets/styles-XxXx9999.css" integrity="${integrity}" crossorigin="anonymous">` +
-      `</head><body></body></html>\n`;
-    await fs.writeFile(path.join(fixture, 'index.html'), htmlContent, 'utf8');
-
-    const result = await updateSri(fixture);
-    // Hash matches, so the file should still be "updated" (same content written
-    // is an implementation detail), but the resulting integrity must be correct.
-    expect(result.newIntegrity).toBe(integrity);
-
-    await fs.rm(fixture, { recursive: true, force: true });
-  });
-
-  it('handles unquoted attributes produced by HTML minifier', async () => {
-    const fixture = await fs.mkdtemp(path.join(os.tmpdir(), 'rm-sri-unquoted-'));
-    const assetsDir = path.join(fixture, 'assets');
-    await fs.mkdir(assetsDir);
-
-    const initialCss = '.a { color: red; }\n';
-    const cssPath = path.join(assetsDir, 'styles-Mn0pQrSt.css');
-    await fs.writeFile(cssPath, initialCss, 'utf8');
-    const oldHash = createHash('sha384').update(Buffer.from(initialCss)).digest('base64');
-    const oldIntegrity = `sha384-${oldHash}`;
-
-    // Simulate minified HTML with unquoted attributes (as coderaiser/minify produces)
-    const htmlContent =
-      `<link rel=stylesheet href=assets/styles-Mn0pQrSt.css integrity=${oldIntegrity} crossorigin>`;
-    await fs.writeFile(path.join(fixture, 'index.html'), htmlContent, 'utf8');
-
-    // Simulate CSS content change
-    const newCss = '.a{color:red}\n';
-    await fs.writeFile(cssPath, newCss, 'utf8');
-    const expectedHash = createHash('sha384').update(Buffer.from(newCss)).digest('base64');
-    const expectedIntegrity = `sha384-${expectedHash}`;
-
-    const result = await updateSri(fixture);
-
-    expect(result.oldIntegrity).toBe(oldIntegrity);
-    expect(result.newIntegrity).toBe(expectedIntegrity);
-    expect(result.updatedHtml).toBe(1);
-
-    const updated = await fs.readFile(path.join(fixture, 'index.html'), 'utf8');
-    expect(updated).toContain(expectedIntegrity);
-    expect(updated).not.toContain(oldIntegrity);
-
-    await fs.rm(fixture, { recursive: true, force: true });
-  });
-
-  it('refreshes integrity for hashed JS modulepreload links after content changes', async () => {
-    const fixture = await fs.mkdtemp(path.join(os.tmpdir(), 'rm-sri-js-'));
-    const assetsDir = path.join(fixture, 'assets');
-    const assetsJsDir = path.join(assetsDir, 'js');
-    await fs.mkdir(assetsJsDir, { recursive: true });
-
-    // CSS bundle is required by updateSri's discovery — give it one with a
-    // matching integrity so the existing CSS-side guards stay green.
-    const css = '.a{color:red}\n';
-    const cssBasename = 'styles-AbCd1234.css';
-    await fs.writeFile(path.join(assetsDir, cssBasename), css, 'utf8');
-    const cssHash = createHash('sha384').update(Buffer.from(css)).digest('base64');
-    const cssIntegrity = `sha384-${cssHash}`;
-
-    // Two hashed JS chunks — one will be referenced from a modulepreload tag,
-    // the other from a <script src="…"> tag (both with stale integrity).
-    const initialJs1 = 'export const a=1;\n';
-    const initialJs2 = 'export const b=2;\n';
-    const js1Basename = 'anomaly-detection-BYmYhLL4.js';
-    const js2Basename = 'main-BFL_BFLA.js';
-    await fs.writeFile(path.join(assetsJsDir, js1Basename), initialJs1, 'utf8');
-    await fs.writeFile(path.join(assetsJsDir, js2Basename), initialJs2, 'utf8');
-    const oldJs1Hash = createHash('sha384').update(Buffer.from(initialJs1)).digest('base64');
-    const oldJs2Hash = createHash('sha384').update(Buffer.from(initialJs2)).digest('base64');
-    const oldJs1Integrity = `sha384-${oldJs1Hash}`;
-    const oldJs2Integrity = `sha384-${oldJs2Hash}`;
-
-    const homepage =
-      `<!DOCTYPE html><html><head>` +
-      `<link rel="stylesheet" href="assets/${cssBasename}" integrity="${cssIntegrity}" crossorigin="anonymous">` +
-      `<link rel="modulepreload" href="/assets/js/${js1Basename}" integrity="${oldJs1Integrity}" crossorigin="anonymous">` +
-      `<link rel="modulepreload" href="/assets/js/some-third-party.js" integrity="sha384-DO_NOT_TOUCH" crossorigin="anonymous">` +
-      `<script type="module" src="/assets/js/${js2Basename}" integrity="${oldJs2Integrity}" crossorigin="anonymous"></script>` +
-      `</head><body></body></html>\n`;
-    await fs.writeFile(path.join(fixture, 'index.html'), homepage, 'utf8');
-
-    // Simulate the deploy-time minify pass rewriting the JS bytes.
-    const newJs1 = 'export const a=1';
-    const newJs2 = 'export const b=2';
-    await fs.writeFile(path.join(assetsJsDir, js1Basename), newJs1, 'utf8');
-    await fs.writeFile(path.join(assetsJsDir, js2Basename), newJs2, 'utf8');
-    const expectedJs1Integrity =
-      `sha384-${createHash('sha384').update(Buffer.from(newJs1)).digest('base64')}`;
-    const expectedJs2Integrity =
-      `sha384-${createHash('sha384').update(Buffer.from(newJs2)).digest('base64')}`;
-
-    const result = await updateSri(fixture);
-
-    expect(result.jsBundles).toBe(2);
-    expect(result.jsIntegrityRewrites).toBe(2);
-
-    const updated = await fs.readFile(path.join(fixture, 'index.html'), 'utf8');
-    expect(updated).toContain(expectedJs1Integrity);
-    expect(updated).toContain(expectedJs2Integrity);
-    expect(updated).not.toContain(oldJs1Integrity);
-    expect(updated).not.toContain(oldJs2Integrity);
-    // The third-party preload's integrity must be left untouched —
-    // we only rewrite hashes for assets we own under dist/assets/js/.
-    expect(updated).toContain('sha384-DO_NOT_TOUCH');
-
-    await fs.rm(fixture, { recursive: true, force: true });
-  });
-
-  it('refreshes JS integrity in unquoted (post-minify) HTML attributes', async () => {
-    const fixture = await fs.mkdtemp(path.join(os.tmpdir(), 'rm-sri-js-unquoted-'));
-    const assetsDir = path.join(fixture, 'assets');
-    const assetsJsDir = path.join(assetsDir, 'js');
-    await fs.mkdir(assetsJsDir, { recursive: true });
-
-    const css = '.a{color:red}\n';
-    const cssBasename = 'styles-Mn0pQrSt.css';
-    await fs.writeFile(path.join(assetsDir, cssBasename), css, 'utf8');
-    const cssIntegrity = `sha384-${createHash('sha384').update(Buffer.from(css)).digest('base64')}`;
-
-    const initialJs = 'export const x=1;\n';
-    const jsBasename = 'coalition-dashboard-yoMiQHgv.js';
-    await fs.writeFile(path.join(assetsJsDir, jsBasename), initialJs, 'utf8');
-    const oldJsIntegrity =
-      `sha384-${createHash('sha384').update(Buffer.from(initialJs)).digest('base64')}`;
-
-    // Minified HTML form: unquoted attributes (coderaiser/minify output)
-    const minifiedHomepage =
-      `<link rel=stylesheet href=assets/${cssBasename} integrity=${cssIntegrity} crossorigin>` +
-      `<link rel=modulepreload href=/assets/js/${jsBasename} integrity=${oldJsIntegrity} crossorigin>`;
-    await fs.writeFile(path.join(fixture, 'index.html'), minifiedHomepage, 'utf8');
-
-    // Simulate JS rewrite by minify
-    const newJs = 'export const x=1';
-    await fs.writeFile(path.join(assetsJsDir, jsBasename), newJs, 'utf8');
-    const expectedJsIntegrity =
-      `sha384-${createHash('sha384').update(Buffer.from(newJs)).digest('base64')}`;
-
-    const result = await updateSri(fixture);
-
-    expect(result.jsIntegrityRewrites).toBe(1);
-    const updated = await fs.readFile(path.join(fixture, 'index.html'), 'utf8');
-    expect(updated).toContain(expectedJsIntegrity);
-    expect(updated).not.toContain(oldJsIntegrity);
-
-    await fs.rm(fixture, { recursive: true, force: true });
   });
 });
 

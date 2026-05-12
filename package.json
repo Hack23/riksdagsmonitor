@@ -208,7 +208,6 @@
     "unified": "^11.0.5",
     "unist-util-visit": "5.1.0",
     "vite": "8.0.12",
-    "vite-plugin-sri-gen": "1.4.1",
     "vitest": "4.1.6",
     "worldbank-mcp": "1.0.1"
   },

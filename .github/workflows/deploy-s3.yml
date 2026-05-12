@@ -265,9 +265,10 @@ jobs:
 
       # ── CSS purging ──────────────────────────────────────────────
       # Strip selectors that no built page (HTML, hashed JS bundle,
-      # source TS) actually references. Targets only the two CSS
-      # filenames that ship to S3 (dist/styles.css and the Vite-hashed
-      # dist/assets/styles-*.css), so all <link> hrefs continue to
+      # source TS) actually references. Targets the canonical CSS
+      # bundle (`dist/assets/styles.css`, stable non-hashed URL — see
+      # vite.config.js) and any legacy fallback (`dist/styles.css`),
+      # so all <link> hrefs continue to
       # resolve unchanged.  Lighthouse flagged ~266 KiB of unused CSS
       # on the homepage — the purge typically recovers ≥80% of that
       # before the minify pass shrinks the rest.
@@ -284,28 +285,15 @@ jobs:
       # Minifies every .html / .css / .js / .mjs under dist/ in place.
       # Filenames are preserved so CloudFront origin paths and per-page
       # <link>/<script> references all keep working unchanged.
+      #
+      # No SRI re-stamping step follows: `vite-plugin-sri-gen` was
+      # removed (vite.config.js) and `vite-plugin-static-pages.js`
+      # no longer injects `integrity` attributes onto first-party
+      # `<link>`/`<script>` tags. All assets are served from the
+      # Hack23-owned S3 → CloudFront pipeline; integrity is enforced
+      # by TLS + bucket policy + WAF rather than browser-side SRI.
       - name: Minify HTML/CSS/JS
         run: npx tsx scripts/minify-dist.ts dist
-
-      # ── Re-compute SRI hashes ─────────────────────────────────────
-      # The purge + minify steps above rewrite both the CSS bundle and
-      # the hashed JS chunks under dist/assets/js/.
-      # vite-plugin-static-pages.js injected `integrity="sha384-<OLD>"`
-      # into every <link rel="stylesheet"> tag at build time, and
-      # vite-plugin-sri-gen injected one into every
-      # <link rel="modulepreload"> tag for the homepage's dashboard
-      # chunks (anomaly-detection-*, coalition-dashboard-*, …) — every
-      # one of those hashes is now stale. Browsers enforce SRI by
-      # blocking the resource on a hash mismatch, so the page would
-      # silently lose its stylesheet AND the homepage would block
-      # ~12 dashboard module preloads (with console errors like
-      # "Failed to find a valid digest in the 'integrity' attribute
-      # for resource '…/assets/js/anomaly-detection-*.js'").
-      # scripts/update-sri.ts re-computes sha384 of the final CSS and
-      # of every hashed JS chunk, then rewrites every matching
-      # integrity attribute in every affected HTML file.
-      - name: Update SRI hashes after purge/minify
-        run: npx tsx scripts/update-sri.ts dist
 
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@d979d5b3a71173a29b74b5b88418bfda9437d885 # v6.1.1
