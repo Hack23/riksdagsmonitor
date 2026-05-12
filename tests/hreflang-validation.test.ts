@@ -28,8 +28,11 @@ const VALID_HREFLANG_CODES = new Set([
   'nl', 'ar', 'he', 'ja', 'ko', 'zh', 'x-default',
 ]);
 
-/** Directories to skip (docs, node_modules, coverage reports). */
-const SKIP_DIRS = new Set(['node_modules', 'docs', 'dist', '.git', 'builds', 'coverage']);
+/** Directories to skip (docs, node_modules, coverage reports, snapshots). */
+const SKIP_DIRS = new Set([
+  'node_modules', 'docs', 'dist', '.git', 'builds', 'coverage',
+  'build-dashboard-pages.snapshot',
+]);
 
 /**
  * Recursively collect all `.html` files under `dir`, skipping excluded dirs.
@@ -220,5 +223,140 @@ describe('renderHreflangBlock helper', () => {
     } as Record<string, string>);
     expect(html).toContain('hreflang="nb"');
     expect(html).not.toContain('hreflang="no"');
+  });
+});
+
+describe('hreflang coverage by page type', () => {
+  /** Collect HTML files from a specific directory. */
+  function htmlFilesIn(dir: string): string[] {
+    const full = path.join(ROOT, dir);
+    if (!fs.existsSync(full)) return [];
+    return fs.readdirSync(full)
+      .filter((f) => f.endsWith('.html'))
+      .map((f) => path.join(full, f));
+  }
+
+  describe('static root pages (index, political-intelligence, politician-dashboard)', () => {
+    const rootPages = fs.readdirSync(ROOT)
+      .filter((f) => f.endsWith('.html') && !f.startsWith('.'))
+      .map((f) => path.join(ROOT, f));
+
+    it('all root HTML pages should have hreflang links', () => {
+      const pagesWithoutHreflang = rootPages.filter((f) => {
+        const html = fs.readFileSync(f, 'utf8');
+        return extractHreflangLinks(html).length === 0;
+      });
+      expect(pagesWithoutHreflang.map((f) => path.relative(ROOT, f))).toEqual([]);
+    });
+
+    it('root pages should have absolute hreflang URLs', () => {
+      const bad: string[] = [];
+      for (const f of rootPages) {
+        const html = fs.readFileSync(f, 'utf8');
+        const links = extractHreflangLinks(html);
+        if (links.some((l) => !l.href.startsWith('https://'))) {
+          bad.push(path.relative(ROOT, f));
+        }
+      }
+      expect(bad).toEqual([]);
+    });
+
+    it('root pages should have x-default', () => {
+      const bad: string[] = [];
+      for (const f of rootPages) {
+        const html = fs.readFileSync(f, 'utf8');
+        const links = extractHreflangLinks(html);
+        if (links.length >= 2 && !links.some((l) => l.hreflang === 'x-default')) {
+          bad.push(path.relative(ROOT, f));
+        }
+      }
+      expect(bad).toEqual([]);
+    });
+  });
+
+  describe('dashboard pages (dashboards/)', () => {
+    const dashboardPages = htmlFilesIn('dashboards');
+
+    it('all dashboard pages should have hreflang links', () => {
+      const pagesWithoutHreflang = dashboardPages.filter((f) => {
+        const html = fs.readFileSync(f, 'utf8');
+        return extractHreflangLinks(html).length === 0;
+      });
+      expect(pagesWithoutHreflang.map((f) => path.relative(ROOT, f))).toEqual([]);
+    });
+
+    it('dashboard pages should have absolute hreflang URLs', () => {
+      const bad: string[] = [];
+      for (const f of dashboardPages) {
+        const html = fs.readFileSync(f, 'utf8');
+        const links = extractHreflangLinks(html);
+        if (links.some((l) => !l.href.startsWith('https://'))) {
+          bad.push(path.relative(ROOT, f));
+        }
+      }
+      expect(bad).toEqual([]);
+    });
+
+    it('dashboard pages should have x-default', () => {
+      const bad: string[] = [];
+      for (const f of dashboardPages) {
+        const html = fs.readFileSync(f, 'utf8');
+        const links = extractHreflangLinks(html);
+        if (links.length >= 2 && !links.some((l) => l.hreflang === 'x-default')) {
+          bad.push(path.relative(ROOT, f));
+        }
+      }
+      expect(bad).toEqual([]);
+    });
+  });
+
+  describe('dashboard index pages (dashboard/)', () => {
+    const dashboardIndexPages = htmlFilesIn('dashboard');
+
+    it('all dashboard index pages should have hreflang links', () => {
+      const pagesWithoutHreflang = dashboardIndexPages.filter((f) => {
+        const html = fs.readFileSync(f, 'utf8');
+        return extractHreflangLinks(html).length === 0;
+      });
+      expect(pagesWithoutHreflang.map((f) => path.relative(ROOT, f))).toEqual([]);
+    });
+
+    it('dashboard index pages should have absolute hreflang URLs', () => {
+      const bad: string[] = [];
+      for (const f of dashboardIndexPages) {
+        const html = fs.readFileSync(f, 'utf8');
+        const links = extractHreflangLinks(html);
+        if (links.some((l) => !l.href.startsWith('https://'))) {
+          bad.push(path.relative(ROOT, f));
+        }
+      }
+      expect(bad).toEqual([]);
+    });
+  });
+
+  describe('news article pages', () => {
+    it('news articles with hreflang should have absolute URLs and x-default', () => {
+      // Sample a subset of news files to keep test fast
+      const newsDir = path.join(ROOT, 'news');
+      if (!fs.existsSync(newsDir)) return;
+      const allNews = fs.readdirSync(newsDir)
+        .filter((f) => f.endsWith('.html'))
+        .slice(0, 100)
+        .map((f) => path.join(newsDir, f));
+
+      const bad: string[] = [];
+      for (const f of allNews) {
+        const html = fs.readFileSync(f, 'utf8');
+        const links = extractHreflangLinks(html);
+        if (links.length === 0) continue;
+        if (links.some((l) => !l.href.startsWith('https://'))) {
+          bad.push(`relative: ${path.relative(ROOT, f)}`);
+        }
+        if (links.length >= 2 && !links.some((l) => l.hreflang === 'x-default')) {
+          bad.push(`no x-default: ${path.relative(ROOT, f)}`);
+        }
+      }
+      expect(bad).toEqual([]);
+    });
   });
 });
