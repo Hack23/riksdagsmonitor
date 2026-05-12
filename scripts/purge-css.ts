@@ -54,8 +54,11 @@ interface PurgeStat {
  * `.vite` directories so we never accidentally feed the purger huge
  * vendor blobs.
  */
-async function walk(dir: string, exts: ReadonlySet<string>): Promise<string[]> {
-  const out: string[] = [];
+async function walk(
+  dir: string,
+  exts: ReadonlySet<string>,
+  out: string[] = [],
+): Promise<string[]> {
   let entries: import('node:fs').Dirent[];
   try {
     entries = await fs.readdir(dir, { withFileTypes: true });
@@ -72,7 +75,7 @@ async function walk(dir: string, exts: ReadonlySet<string>): Promise<string[]> {
       ) {
         continue;
       }
-      out.push(...(await walk(full, exts)));
+      await walk(full, exts, out);
     } else if (exts.has(path.extname(entry.name).toLowerCase())) {
       out.push(full);
     }
@@ -103,7 +106,7 @@ function buildSafelist() {
       /^error$/,
       /^block$/,
       /^none$/,
-      /^aria-/,
+      /aria-/,
     ],
     /* Pattern-matched selectors (and any descendants) preserved */
     deep: [

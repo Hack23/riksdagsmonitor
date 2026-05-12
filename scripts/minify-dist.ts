@@ -9,8 +9,15 @@
  *
  * Filenames and paths are preserved (this script only rewrites file
  * contents), so all `<link href="…">` / `<script src="…">` references,
- * SRI hashes already injected by `vite-plugin-sri-gen`, CloudFront
- * origin paths and S3 cache headers continue to work unchanged.
+ * CloudFront origin paths and S3 cache headers continue to work
+ * unchanged.
+ *
+ * **SRI is NOT preserved** — rewriting CSS/JS bytes invalidates any
+ * `integrity="sha384-…"` attributes that `vite-plugin-sri-gen` injected
+ * at build time. The `deploy-s3.yml` pipeline therefore runs
+ * `scripts/update-sri.ts` immediately after this minify pass to
+ * re-compute and rewrite those attributes; without that follow-up
+ * step browsers would block the stylesheet on every page load.
  *
  * Skips:
  *   - any source map (`*.map`) — already minified JSON, and rewriting

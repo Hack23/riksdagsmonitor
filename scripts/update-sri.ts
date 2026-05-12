@@ -57,8 +57,7 @@ function sha384Base64(buf: Buffer): string {
 /**
  * Walk `dir` recursively, collecting every `.html` file.
  */
-async function collectHtml(dir: string): Promise<string[]> {
-  const out: string[] = [];
+async function collectHtml(dir: string, out: string[] = []): Promise<string[]> {
   let entries: import('node:fs').Dirent[];
   try {
     entries = await fs.readdir(dir, { withFileTypes: true });
@@ -74,7 +73,7 @@ async function collectHtml(dir: string): Promise<string[]> {
         entry.name === '.vite'
       )
         continue;
-      out.push(...(await collectHtml(full)));
+      await collectHtml(full, out);
     } else if (entry.isFile() && entry.name.toLowerCase().endsWith('.html')) {
       out.push(full);
     }
