@@ -1,0 +1,85 @@
+{
+  "generatedAt": "2026-05-12",
+  "sourceAnalysis": "analysis/daily/2026-05-11/realtime-pulse/pir-status.json",
+  "pirs": [
+    {
+      "id": "PIR-CONST-ABORT",
+      "title": "SD position on KU34 aborträtt",
+      "status": "open",
+      "opened": "2026-05-09",
+      "lastUpdated": "2026-05-12",
+      "priority": "HIGH",
+      "wep": "10%",
+      "notes": "No new signal from SD on 2026-05-12. Position remains unresolved. KU34 committee report (HD01KU34) in committeeReports sibling. Scenario C fires if SD signals opposition.",
+      "triggerCondition": "SD issues public statement opposing or abstaining on KU34 aborträtt provision",
+      "closureCondition": "KU34 passes with SD support OR SD formally announces abstention/opposition"
+    },
+    {
+      "id": "PIR-CLIM-2026",
+      "title": "Klimatproposition before summer recess",
+      "status": "open",
+      "opened": "2026-05-08",
+      "lastUpdated": "2026-05-12",
+      "priority": "MEDIUM",
+      "wep": "15%",
+      "notes": "KJ-5 from intelligence-assessment.md strengthens 'nej' position at >=85% WEP. No proposition filed. EPBD (HD01CU30) is EU compliance, not domestic climate prop. PIR remains open but low-probability.",
+      "triggerCondition": "Government files klimatproposition before 15 June 2026",
+      "closureCondition": "Session ends without klimatproposition OR prop is filed"
+    },
+    {
+      "id": "PIR-MIG-RETURN",
+      "title": "Proposition 263 return migration passage",
+      "status": "open",
+      "opened": "2026-05-07",
+      "lastUpdated": "2026-05-12",
+      "priority": "MEDIUM",
+      "wep": "70%",
+      "notes": "V immigration motions (today's motions sibling: HD024149, HD024150) continue opposition pressure. Prop 263 remains on track for vote. V's motions are counter-proposals, not blocking mechanism.",
+      "triggerCondition": "Riksdag vote on Prop 263 result",
+      "closureCondition": "Prop 263 voted on — passage (70% WEP) or rejection"
+    },
+    {
+      "id": "PIR-COAL-STAB",
+      "title": "Coalition stability — Tidö-pakten through election",
+      "status": "open",
+      "opened": "2026-05-06",
+      "lastUpdated": "2026-05-12",
+      "priority": "MEDIUM",
+      "wep": "80%",
+      "notes": "Stability remains at 80%. Today's analysis shows no new intra-coalition fractures. Key risk: SD on KU34 (see PIR-CONST-ABORT). New eldercare/gender wage pressures add minor coalition stress but not fracture risk.",
+      "triggerCondition": "Any Riksdag vote where SD or junior coalition party diverges from coalition line on major policy",
+      "closureCondition": "Election 13 September 2026"
+    },
+    {
+      "id": "PIR-ELDER-2026",
+      "title": "Eldercare accountability — ministerial response quality",
+      "status": "open",
+      "opened": "2026-05-12",
+      "lastUpdated": "2026-05-12",
+      "priority": "HIGH",
+      "wep": "65%",
+      "notes": "NEW PIR opened today. HD10484 (V→Tenje) filed 12 May. Ministerial response deadline 29 May. 65% WEP that response will be process-only (Scenario A). Electoral risk: M -1 to -3 seats if eldercare stays salient through summer.",
+      "triggerCondition": "Tenje's ministerial response on 29 May 2026",
+      "closureCondition": "29 May ministerial response published AND media response assessed"
+    },
+    {
+      "id": "PIR-GENDERPAY-2026",
+      "title": "Gender wage gap — L ministerial response and Kommunal amplification",
+      "status": "open",
+      "opened": "2026-05-12",
+      "lastUpdated": "2026-05-12",
+      "priority": "MEDIUM",
+      "wep": "65%",
+      "notes": "NEW PIR opened today. HD10486 (V→Britz) filed 12 May. Britz (L) is ideologically opposed to 30 mdr SEK mandate. Kommunal will amplify. Electoral risk: V +1–2 seats if issue sustained. Finnish comparison shows hybrid model feasible.",
+      "triggerCondition": "Britz's ministerial response AND Kommunal press response",
+      "closureCondition": "Kommunal congress statement + Britz response assessed"
+    }
+  ],
+  "summary": {
+    "totalOpen": 6,
+    "highPriority": 2,
+    "mediumPriority": 4,
+    "newToday": 2,
+    "closedToday": 0
+  }
+}
