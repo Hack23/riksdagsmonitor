@@ -6,7 +6,7 @@ date: 2026-05-11
 subfolder: evening-analysis
 slug: 2026-05-11-evening-analysis
 source_folder: analysis/daily/2026-05-11/evening-analysis
-generated_at: 2026-05-12T10:26:53.726Z
+generated_at: 2026-05-12T14:11:29.702Z
 language: en
 layout: article
 ---
@@ -1338,6 +1338,22 @@ Interpellation cluster (HD10481–HD11810) ────────────�
 - `analysis/daily/2026-05-11/committee-reports/`: HD01KU34, HD01MJU23, HD01SOU31
 - `analysis/daily/2026-05-11/interpellations/`: HD10481–HD11810
 
+## Analysis Artifact Coverage Report
+
+This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
+
+| Coverage area | Count | Reader-facing treatment |
+|---|---:|---|
+| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Per-document analyses | 6 | Expanded under `## Per-document intelligence` immediately after significance scoring |
+| Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
+
+**Absent canonical ordered slots (no alias variant on disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
+
+**Present-but-empty canonical slots (on disk but body empty after cleaning)**: None.
+
+**Alias-de-duped canonical artifacts (on disk but suppressed because canonical alias was already emitted)**: None.
+
 ## Article Sources
 
 Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
@@ -1370,3 +1386,9 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/data-download-manifest.md)
+
+### Supporting Data Artifacts
+
+These machine-readable artifacts are linked for auditability and are not expanded inline, preserving the reader-facing narrative order:
+
+- [`pir-status.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/evening-analysis/pir-status.json)

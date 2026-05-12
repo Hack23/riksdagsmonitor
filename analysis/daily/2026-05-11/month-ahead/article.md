@@ -6,7 +6,7 @@ date: 2026-05-11
 subfolder: month-ahead
 slug: 2026-05-11-month-ahead
 source_folder: analysis/daily/2026-05-11/month-ahead
-generated_at: 2026-05-12T10:26:53.738Z
+generated_at: 2026-05-12T14:11:29.714Z
 language: en
 layout: article
 ---
@@ -77,7 +77,7 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Timeline Of Events](#rm-timeline-of-events) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Voting Record Analysis](#rm-voting-record-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-cross-reference-map) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/month-ahead/synthesis-summary.md -->
@@ -1098,6 +1098,22 @@ pie title Coalition Seat Distribution (2025/26 estimated)
 ### Voting Discipline Insight
 
 The HC01KU22 rejection (government's own proposal on budget classification defeated) provides the only evidence of coalition imperfection in 2025/26. This is an outlier — the Tidö coalition has otherwise maintained near-100% discipline on confidence and supply votes.
+
+## Analysis Artifact Coverage Report
+
+This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
+
+| Coverage area | Count | Reader-facing treatment |
+|---|---:|---|
+| Ordered/root markdown sections | 24 | Expanded as article sections in the narrative order above |
+| Per-document analyses | 3 | Expanded under `## Per-document intelligence` immediately after significance scoring |
+| Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
+
+**Absent canonical ordered slots (no alias variant on disk)**: `significance-scoring.md`, `stakeholder-perspectives.md / stakeholder-impact.md`, `coalition-mathematics.md`, `voter-segmentation.md`, `forward-indicators.md`, `election-2026-analysis.md / election-cycle-analysis.md / election-2026-implications.md`, `cycle-trajectory.md`, `parliamentary-season.md`, `swot-analysis.md`, `quantitative-swot.md`, `threat-analysis.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `media-framing-analysis.md`, `devils-advocate.md`, `classification-results.md / political-classification.md`, `horizon-pir-rollforward.md`
+
+**Present-but-empty canonical slots (on disk but body empty after cleaning)**: None.
+
+**Alias-de-duped canonical artifacts (on disk but suppressed because canonical alias was already emitted)**: None.
 
 ## Article Sources
 

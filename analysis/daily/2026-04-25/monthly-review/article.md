@@ -6,7 +6,7 @@ date: 2026-04-25
 subfolder: monthly-review
 slug: 2026-04-25-monthly-review
 source_folder: analysis/daily/2026-04-25/monthly-review
-generated_at: 2026-05-12T10:26:52.924Z
+generated_at: 2026-05-12T14:11:28.933Z
 language: en
 layout: article
 ---
@@ -1583,6 +1583,22 @@ The `cross-reference-map.md` cites prior siblings: 2026-04-23 monthly-review, 20
 - Fetched: 2026-04-25 by `scripts/download-parliamentary-data.ts` with date=2026-04-24 lookback fallback
 - Manifest at `manifest.json`
 
+## Analysis Artifact Coverage Report
+
+This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
+
+| Coverage area | Count | Reader-facing treatment |
+|---|---:|---|
+| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Per-document analyses | 8 | Expanded under `## Per-document intelligence` immediately after significance scoring |
+| Supporting data artifacts | 8 | Linked in Article Sources, not expanded inline |
+
+**Absent canonical ordered slots (no alias variant on disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
+
+**Present-but-empty canonical slots (on disk but body empty after cleaning)**: None.
+
+**Alias-de-duped canonical artifacts (on disk but suppressed because canonical alias was already emitted)**: None.
+
 ## Article Sources
 
 Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
@@ -1617,3 +1633,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/data-download-manifest.md)
+
+### Supporting Data Artifacts
+
+These machine-readable artifacts are linked for auditability and are not expanded inline, preserving the reader-facing narrative order:
+
+- [`documents/hd01cu24.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/documents/hd01cu24.json)
+- [`documents/hd01juu10.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/documents/hd01juu10.json)
+- [`documents/hd01juu31.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/documents/hd01juu31.json)
+- [`documents/hd01sou25.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/documents/hd01sou25.json)
+- [`documents/hd10448.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/documents/hd10448.json)
+- [`documents/hd11747.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/documents/hd11747.json)
+- [`documents/hd11748.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/documents/hd11748.json)
+- [`documents/hd11749.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/documents/hd11749.json)

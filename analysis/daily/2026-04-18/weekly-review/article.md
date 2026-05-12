@@ -6,7 +6,7 @@ date: 2026-04-18
 subfolder: weekly-review
 slug: 2026-04-18-weekly-review
 source_folder: analysis/daily/2026-04-18/weekly-review
-generated_at: 2026-05-12T10:26:52.685Z
+generated_at: 2026-05-12T14:11:28.724Z
 language: en
 layout: article
 ---
@@ -2738,6 +2738,22 @@ These documents are referenced extensively in this analysis but live in upstream
 
 ---
 
+## Analysis Artifact Coverage Report
+
+This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
+
+| Coverage area | Count | Reader-facing treatment |
+|---|---:|---|
+| Ordered/root markdown sections | 13 | Expanded as article sections in the narrative order above |
+| Per-document analyses | 0 | Expanded under `## Per-document intelligence` immediately after significance scoring |
+| Supporting data artifacts | 12 | Linked in Article Sources, not expanded inline |
+
+**Absent canonical ordered slots (no alias variant on disk)**: `intelligence-assessment.md`, `coalition-mathematics.md`, `voter-segmentation.md`, `forward-indicators.md`, `election-2026-analysis.md / election-cycle-analysis.md / election-2026-implications.md`, `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `historical-parallels.md`, `implementation-feasibility.md`, `media-framing-analysis.md`, `devils-advocate.md`, `horizon-pir-rollforward.md`
+
+**Present-but-empty canonical slots (on disk but body empty after cleaning)**: None.
+
+**Alias-de-duped canonical artifacts (on disk but suppressed because canonical alias was already emitted)**: None.
+
 ## Article Sources
 
 Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
@@ -2755,3 +2771,20 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/data-download-manifest.md)
+
+### Supporting Data Artifacts
+
+These machine-readable artifacts are linked for auditability and are not expanded inline, preserving the reader-facing narrative order:
+
+- [`economic-data.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/economic-data.json)
+- [`documents/hd01cu22.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/documents/hd01cu22.json)
+- [`documents/hd01cu27.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/documents/hd01cu27.json)
+- [`documents/hd01cu28.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/documents/hd01cu28.json)
+- [`documents/hd01cu42.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/documents/hd01cu42.json)
+- [`documents/hd01ku32.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/documents/hd01ku32.json)
+- [`documents/hd01ku33.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/documents/hd01ku33.json)
+- [`documents/hd024098.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/documents/hd024098.json)
+- [`documents/hd10437.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/documents/hd10437.json)
+- [`documents/hd10438.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/documents/hd10438.json)
+- [`documents/hd11718.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/documents/hd11718.json)
+- [`documents/hd11719.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/documents/hd11719.json)

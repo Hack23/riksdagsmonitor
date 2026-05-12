@@ -6,7 +6,7 @@ date: 2026-04-26
 subfolder: realtime-pulse
 slug: 2026-04-26-realtime-pulse
 source_folder: analysis/daily/2026-04-26/realtime-pulse
-generated_at: 2026-05-12T10:26:52.997Z
+generated_at: 2026-05-12T14:11:29.006Z
 language: en
 layout: article
 ---
@@ -1656,6 +1656,22 @@ Per Director of National Intelligence Directive ICD 203 — Analytic Standards f
 ### MCP Notes
 
 - `get_sync_status` confirmed server live. No retries required. Pre-warm completed in under 2 minutes.
+
+## Analysis Artifact Coverage Report
+
+This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
+
+| Coverage area | Count | Reader-facing treatment |
+|---|---:|---|
+| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Per-document analyses | 2 | Expanded under `## Per-document intelligence` immediately after significance scoring |
+| Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
+
+**Absent canonical ordered slots (no alias variant on disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
+
+**Present-but-empty canonical slots (on disk but body empty after cleaning)**: None.
+
+**Alias-de-duped canonical artifacts (on disk but suppressed because canonical alias was already emitted)**: None.
 
 ## Article Sources
 

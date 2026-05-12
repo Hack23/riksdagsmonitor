@@ -6,7 +6,7 @@ date: 2026-04-20
 subfolder: motions
 slug: 2026-04-20-motions
 source_folder: analysis/daily/2026-04-20/motions
-generated_at: 2026-05-12T10:26:52.761Z
+generated_at: 2026-05-12T14:11:28.788Z
 language: en
 layout: article
 ---
@@ -3733,6 +3733,22 @@ Counting the share of opposition motions where **≥ 3 parties file on the same 
 
 ---
 
+## Analysis Artifact Coverage Report
+
+This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
+
+| Coverage area | Count | Reader-facing treatment |
+|---|---:|---|
+| Ordered/root markdown sections | 15 | Expanded as article sections in the narrative order above |
+| Per-document analyses | 4 | Expanded under `## Per-document intelligence` immediately after significance scoring |
+| Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
+
+**Absent canonical ordered slots (no alias variant on disk)**: `intelligence-assessment.md`, `voter-segmentation.md`, `forward-indicators.md`, `election-2026-analysis.md / election-cycle-analysis.md / election-2026-implications.md`, `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `historical-parallels.md`, `implementation-feasibility.md`, `media-framing-analysis.md`, `devils-advocate.md`, `horizon-pir-rollforward.md`
+
+**Present-but-empty canonical slots (on disk but body empty after cleaning)**: None.
+
+**Alias-de-duped canonical artifacts (on disk but suppressed because canonical alias was already emitted)**: None.
+
 ## Article Sources
 
 Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
@@ -3756,3 +3772,9 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/data-download-manifest.md)
 - [`historical-baseline.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/historical-baseline.md)
+
+### Supporting Data Artifacts
+
+These machine-readable artifacts are linked for auditability and are not expanded inline, preserving the reader-facing narrative order:
+
+- [`economic-data.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/economic-data.json)

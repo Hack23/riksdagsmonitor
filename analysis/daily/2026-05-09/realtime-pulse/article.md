@@ -6,7 +6,7 @@ date: 2026-05-09
 subfolder: realtime-pulse
 slug: 2026-05-09-realtime-pulse
 source_folder: analysis/daily/2026-05-09/realtime-pulse
-generated_at: 2026-05-12T10:26:53.648Z
+generated_at: 2026-05-12T14:11:29.627Z
 language: en
 layout: article
 ---
@@ -1286,6 +1286,22 @@ HD01CU31 (rental market reform): Lagrådet referral pending / no yttrande publis
 
 No prior-cycle PIR files found within last 14 days for realtime-pulse subfolder. New PIR baseline established this cycle.
 
+## Analysis Artifact Coverage Report
+
+This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
+
+| Coverage area | Count | Reader-facing treatment |
+|---|---:|---|
+| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Per-document analyses | 11 | Expanded under `## Per-document intelligence` immediately after significance scoring |
+| Supporting data artifacts | 24 | Linked in Article Sources, not expanded inline |
+
+**Absent canonical ordered slots (no alias variant on disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
+
+**Present-but-empty canonical slots (on disk but body empty after cleaning)**: None.
+
+**Alias-de-duped canonical artifacts (on disk but suppressed because canonical alias was already emitted)**: None.
+
 ## Article Sources
 
 Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
@@ -1323,3 +1339,32 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/data-download-manifest.md)
+
+### Supporting Data Artifacts
+
+These machine-readable artifacts are linked for auditability and are not expanded inline, preserving the reader-facing narrative order:
+
+- [`economic-data.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/economic-data.json)
+- [`pir-status.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/pir-status.json)
+- [`documents/hd01cu31-1.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/documents/hd01cu31-1.json)
+- [`documents/hd01cu31.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/documents/hd01cu31.json)
+- [`documents/hd01cu34-1.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/documents/hd01cu34-1.json)
+- [`documents/hd01cu34.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/documents/hd01cu34.json)
+- [`documents/hd01sou36-1.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/documents/hd01sou36-1.json)
+- [`documents/hd01sou36.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/documents/hd01sou36.json)
+- [`documents/hd01ubu20-1.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/documents/hd01ubu20-1.json)
+- [`documents/hd01ubu20.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/documents/hd01ubu20.json)
+- [`documents/hd01ubu28-1.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/documents/hd01ubu28-1.json)
+- [`documents/hd01ubu28.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/documents/hd01ubu28.json)
+- [`documents/hd01uu13-1.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/documents/hd01uu13-1.json)
+- [`documents/hd01uu13.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/documents/hd01uu13.json)
+- [`documents/hd10480-1.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/documents/hd10480-1.json)
+- [`documents/hd10480.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/documents/hd10480.json)
+- [`documents/hd11800-1.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/documents/hd11800-1.json)
+- [`documents/hd11800.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/documents/hd11800.json)
+- [`documents/hd11801-1.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/documents/hd11801-1.json)
+- [`documents/hd11801.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/documents/hd11801.json)
+- [`documents/hd11802-1.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/documents/hd11802-1.json)
+- [`documents/hd11802.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/documents/hd11802.json)
+- [`documents/hd11803-1.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/documents/hd11803-1.json)
+- [`documents/hd11803.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/realtime-pulse/documents/hd11803.json)
