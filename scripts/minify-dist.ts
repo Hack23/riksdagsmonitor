@@ -77,8 +77,9 @@ async function collect(
     } else if (entry.isFile()) {
       const lower = entry.name.toLowerCase();
       if (lower.endsWith('.map')) continue;
-      // Treat *.min.css / *.min.js as already minified.
-      if (/\.min\.(css|js|html)$/.test(lower)) continue;
+      // Treat *.min.* files as already minified (covers .min.css,
+      // .min.js, .min.mjs, .min.html — e.g. mermaid.esm.min.mjs).
+      if (lower.includes('.min.')) continue;
       const ext = path.extname(lower);
       if (exts.has(ext)) out.push(full);
     }

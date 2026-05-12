@@ -155,7 +155,7 @@ jobs:
             echo "- **Time to Interactive (TTI)**: < 3.8s" >> $GITHUB_STEP_SUMMARY
             echo "- **Cumulative Layout Shift (CLS)**: < 0.1 (measured 0.007)" >> $GITHUB_STEP_SUMMARY
             echo "- **Total Blocking Time (TBT)**: < 200ms (measured 0ms)" >> $GITHUB_STEP_SUMMARY
-            echo "- **Stylesheet budget**: ≤ 80 KiB (post-purge target ≤ 60 KiB)" >> $GITHUB_STEP_SUMMARY
+            echo "- **Stylesheet budget**: ≤ 80 KiB (post-purge + minify target ≤ 60 KiB)" >> $GITHUB_STEP_SUMMARY
             echo "- **Document budget**: ≤ 70 KiB (post HTML minify)" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             
@@ -233,9 +233,10 @@ jobs:
           A11Y=$(echo "${{ steps.parse.outputs.accessibility }} * 100" | bc | cut -d. -f1)
           
           echo "📊 Checking performance thresholds..."
-          # Tightened from 70 → 90 after the deploy-s3 CSS purge + dra1ex/minify-action
-          # pipeline (PR adding scripts/purge-css.ts) — Lighthouse desktop already
-          # reports 93 / 96 / 100 / 100, so the 'good' band (≥ 90) is the new floor.
+          # Tightened from 70 → 90 after the deploy-s3 CSS purge + minify
+          # pipeline (scripts/purge-css.ts + scripts/minify-dist.ts) —
+          # Lighthouse desktop already reports 93/96/100/100, so the 'good'
+          # band (≥ 90) is the new floor.
           echo "Performance: $PERF/100 (target: 90+)"
           echo "Accessibility: $A11Y/100 (target: 90+)"
           

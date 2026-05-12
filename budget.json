@@ -1,7 +1,7 @@
 [
   {
     "path": "/*",
-    "comment": "Performance budgets tightened after the CSS purge + dra1ex/minify-action HTML/CSS/JS minification pipeline added in deploy-s3.yml. Lighthouse desktop run on 2026-05-12 reported FCP 1.1s / LCP 1.1s / TBT 0ms / CLS 0.007 with 266 KiB unused CSS still on the wire — purge removes ≥80% of that, minify shrinks the rest. These budgets reserve mobile-throttled headroom so a regression > ~25% above measured baseline fails CI.",
+    "comment": "Performance budgets tightened after the CSS purge + minify pipeline (scripts/purge-css.ts + scripts/minify-dist.ts) added in deploy-s3.yml. Lighthouse desktop run on 2026-05-12 reported FCP 1.1s / LCP 1.1s / TBT 0ms / CLS 0.007 with 266 KiB unused CSS still on the wire — purge removes ≥80% of that, minify shrinks the rest. These budgets reserve mobile-throttled headroom so a regression > ~25% above measured baseline fails CI.",
     "timings": [
       {
         "metric": "first-contentful-paint",
@@ -38,7 +38,7 @@
       {
         "resourceType": "script",
         "budget": 250,
-        "comment": "Post-minify target. esbuild already drops console/debugger; dra1ex/minify-action squeezes the residue."
+        "comment": "Post-minify target. esbuild already drops console/debugger; scripts/minify-dist.ts squeezes the residue."
       },
       {
         "resourceType": "stylesheet",

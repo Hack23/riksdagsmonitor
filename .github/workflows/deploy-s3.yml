@@ -282,11 +282,21 @@ jobs:
       # Run the `minify` (coderaiser/minify) package directly on the
       # runner host — no Docker, no apt-get, no workspace staging.
       # Minifies every .html / .css / .js / .mjs under dist/ in place.
-      # Filenames are preserved so cache headers, SRI hashes, CloudFront
-      # origin paths and per-page <link>/<script> references all keep
-      # working unchanged.
+      # Filenames are preserved so CloudFront origin paths and per-page
+      # <link>/<script> references all keep working unchanged.
       - name: Minify HTML/CSS/JS
         run: npx tsx scripts/minify-dist.ts dist
+
+      # ── Re-compute SRI hashes ─────────────────────────────────────
+      # The purge + minify steps above rewrite the CSS bundle content.
+      # vite-plugin-static-pages.js injected `integrity="sha384-<OLD>"`
+      # into every <link> tag at build time — that hash is now stale.
+      # Browsers enforce SRI by blocking the resource on a hash mismatch,
+      # so every page would silently lose its stylesheet without this step.
+      # scripts/update-sri.ts re-computes sha384 of the final CSS and
+      # rewrites the integrity attribute in every affected HTML file.
+      - name: Update SRI hashes after purge/minify
+        run: npx tsx scripts/update-sri.ts dist
 
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@d979d5b3a71173a29b74b5b88418bfda9437d885 # v6.1.1

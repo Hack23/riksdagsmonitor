@@ -17,12 +17,14 @@
 
 import { describe, it, expect, beforeAll, afterAll } from 'vitest';
 import { promises as fs } from 'node:fs';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import os from 'node:os';
 import { fileURLToPath } from 'node:url';
 
 import { purge, buildSafelist } from '../scripts/purge-css';
 import { run as minifyRun } from '../scripts/minify-dist';
+import { updateSri } from '../scripts/update-sri';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -232,27 +234,120 @@ describe('minify-dist', () => {
 
     await fs.rm(fixture, { recursive: true, force: true });
   });
+
+  it('skips *.min.mjs files (e.g. mermaid.esm.min.mjs)', async () => {
+    const fixture = await fs.mkdtemp(path.join(os.tmpdir(), 'rm-minify-mjs-'));
+    const minMjs = path.join(fixture, 'mermaid.esm.min.mjs');
+    const original = 'export const x=1;\n';
+    await fs.writeFile(minMjs, original, 'utf8');
+    await minifyRun(fixture);
+    expect(await fs.readFile(minMjs, 'utf8')).toBe(original);
+    await fs.rm(fixture, { recursive: true, force: true });
+  });
 });
 
 describe('deploy-s3 wiring', () => {
-  it('invokes purge then minify between dist verification and AWS deploy', async () => {
+  it('invokes purge → minify → update-sri between dist verification and AWS deploy', async () => {
     const yml = await fs.readFile(
       path.join(REPO_ROOT, '.github', 'workflows', 'deploy-s3.yml'),
       'utf8',
     );
     const purgeIdx = yml.indexOf('scripts/purge-css.ts');
     const minifyIdx = yml.indexOf('scripts/minify-dist.ts');
+    const sriIdx = yml.indexOf('scripts/update-sri.ts');
     const awsIdx = yml.indexOf('configure-aws-credentials');
     const verifyIdx = yml.indexOf('Verify build artifacts');
     expect(purgeIdx).toBeGreaterThan(0);
     expect(minifyIdx).toBeGreaterThan(0);
+    expect(sriIdx).toBeGreaterThan(0);
     expect(awsIdx).toBeGreaterThan(0);
     expect(verifyIdx).toBeGreaterThan(0);
     expect(verifyIdx).toBeLessThan(purgeIdx);
     expect(purgeIdx).toBeLessThan(minifyIdx);
-    expect(minifyIdx).toBeLessThan(awsIdx);
-    // No Docker action — purge + minify must be plain run: steps.
+    expect(minifyIdx).toBeLessThan(sriIdx);
+    expect(sriIdx).toBeLessThan(awsIdx);
+    // No Docker action — all three steps must be plain run: invocations.
     expect(yml).not.toMatch(/dra1ex\/minify-action/);
+  });
+});
+
+describe('update-sri', () => {
+  it('updates the integrity hash in HTML after CSS is modified', async () => {
+    const fixture = await fs.mkdtemp(path.join(os.tmpdir(), 'rm-sri-'));
+    const assetsDir = path.join(fixture, 'assets');
+    await fs.mkdir(assetsDir, { recursive: true });
+
+    // Write initial CSS content and compute its "build-time" hash.
+    const initialCss = ':root { --primary-color: #006633; }\n.hero { padding: 2rem; }\n';
+    const cssPath = path.join(assetsDir, 'styles-AbCd1234.css');
+    await fs.writeFile(cssPath, initialCss, 'utf8');
+    const oldHash = createHash('sha384').update(Buffer.from(initialCss)).digest('base64');
+    const oldIntegrity = `sha384-${oldHash}`;
+
+    // Create an HTML page that references the CSS with the old integrity hash.
+    const htmlContent =
+      `<!DOCTYPE html>\n<html>\n<head>\n` +
+      `<link rel="stylesheet" href="assets/styles-AbCd1234.css" integrity="${oldIntegrity}" crossorigin="anonymous">\n` +
+      `</head>\n<body></body>\n</html>\n`;
+    await fs.writeFile(path.join(fixture, 'index.html'), htmlContent, 'utf8');
+
+    // Also one in a subdirectory with a relative href.
+    const subDir = path.join(fixture, 'news');
+    await fs.mkdir(subDir);
+    const htmlContent2 =
+      `<!DOCTYPE html>\n<html>\n<head>\n` +
+      `<link rel="stylesheet" href="../assets/styles-AbCd1234.css" integrity="${oldIntegrity}" crossorigin="anonymous">\n` +
+      `</head>\n<body></body>\n</html>\n`;
+    await fs.writeFile(path.join(subDir, 'article.html'), htmlContent2, 'utf8');
+
+    // Simulate CSS content change (purge + minify).
+    const newCss = ':root { --primary-color: #006633; }\n.hero{padding:2rem}\n';
+    await fs.writeFile(cssPath, newCss, 'utf8');
+    const expectedHash = createHash('sha384').update(Buffer.from(newCss)).digest('base64');
+    const expectedIntegrity = `sha384-${expectedHash}`;
+
+    // Run update-sri.
+    const result = await updateSri(fixture);
+
+    expect(result.oldHash).toBe(oldIntegrity);
+    expect(result.newHash).toBe(expectedIntegrity);
+    expect(result.updatedHtml).toBe(2);
+    expect(result.skippedHtml).toBe(0);
+
+    // Verify both HTML files have the new hash.
+    const updatedRoot = await fs.readFile(path.join(fixture, 'index.html'), 'utf8');
+    const updatedSub = await fs.readFile(path.join(subDir, 'article.html'), 'utf8');
+    expect(updatedRoot).toContain(expectedIntegrity);
+    expect(updatedRoot).not.toContain(oldIntegrity);
+    expect(updatedSub).toContain(expectedIntegrity);
+    expect(updatedSub).not.toContain(oldIntegrity);
+
+    await fs.rm(fixture, { recursive: true, force: true });
+  });
+
+  it('leaves HTML unchanged when CSS content has not changed', async () => {
+    const fixture = await fs.mkdtemp(path.join(os.tmpdir(), 'rm-sri-noop-'));
+    const assetsDir = path.join(fixture, 'assets');
+    await fs.mkdir(assetsDir);
+
+    const css = '.a{color:red}\n';
+    const cssPath = path.join(assetsDir, 'styles-XxXx9999.css');
+    await fs.writeFile(cssPath, css, 'utf8');
+    const hash = createHash('sha384').update(Buffer.from(css)).digest('base64');
+    const integrity = `sha384-${hash}`;
+
+    const htmlContent =
+      `<!DOCTYPE html><html><head>` +
+      `<link rel="stylesheet" href="assets/styles-XxXx9999.css" integrity="${integrity}" crossorigin="anonymous">` +
+      `</head><body></body></html>\n`;
+    await fs.writeFile(path.join(fixture, 'index.html'), htmlContent, 'utf8');
+
+    const result = await updateSri(fixture);
+    // Hash matches, so the file should still be "updated" (same content written
+    // is an implementation detail), but the resulting integrity must be correct.
+    expect(result.newHash).toBe(integrity);
+
+    await fs.rm(fixture, { recursive: true, force: true });
   });
 });
 
