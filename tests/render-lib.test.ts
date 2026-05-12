@@ -559,6 +559,39 @@ describe('render-lib — aggregateAnalysis (integration)', () => {
     expect(result.artifactsUsed).not.toContain('article.md');
     expect(result.artifactsUsed).not.toContain('article.sv.md');
   });
+
+  it('Reader Guide is built from emitted artifacts — a file cleaned to empty is NOT linked', () => {
+    // Regression test: reader guide must only link headings that actually
+    // get emitted. Previously it was built from rootArtifactSet (files on
+    // disk), so a file present on disk but trimmed to empty by
+    // cleanArtifactBody() would produce a broken in-article anchor.
+    const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'rm-render-guide-emitted-'));
+    const sub = path.join(tmp, '2099-01-01', 'guide-emitted');
+    fs.mkdirSync(sub, { recursive: true });
+    // executive-brief is required; synthesis-summary is a real section
+    fs.writeFileSync(path.join(sub, 'executive-brief.md'), '# EB\n\nReal lede.\n');
+    fs.writeFileSync(path.join(sub, 'synthesis-summary.md'), '# Synthesis\n\nReal synthesis.\n');
+    // intelligence-assessment.md contains only Pass-2 / admin content that
+    // cleanArtifactBody() will strip to an empty string — it must NOT
+    // appear in the Reader Guide.
+    fs.writeFileSync(
+      path.join(sub, 'intelligence-assessment.md'),
+      '## Pass 2 internal review\n\nself-audit text only\n',
+    );
+
+    const result = aggregateAnalysis({
+      subfolderAbsPath: sub,
+      subfolderRepoRelPath: 'analysis/daily/2099-01-01/guide-emitted',
+      date: '2099-01-01',
+      subfolder: 'guide-emitted',
+    });
+    // synthesis-summary survived cleaning → appears in guide
+    expect(result.markdown).toContain('[Synthesis Summary]');
+    // intelligence-assessment was cleaned to empty → must NOT appear in guide
+    expect(result.markdown).not.toContain('[Intelligence Assessment]');
+    // The section itself is also absent from the body
+    expect(result.markdown).not.toContain('## Intelligence Assessment');
+  });
 });
 
 // ---------------------------------------------------------------------------

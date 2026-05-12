@@ -218,7 +218,12 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
   };
 
   readSection('executive-brief.md', false);
-  sections.push(buildReaderGuide(rootArtifactSet, docsExist));
+  // Reader Intelligence Guide is inserted AFTER the emission loops
+  // (see below) so it is built from the actually-emitted artifact set
+  // rather than rootArtifactSet (files on disk). Building it here would
+  // produce rows whose #anchors point to headings that never get emitted
+  // when cleanArtifactBody() trims a file to empty or alias resolution
+  // suppresses it — i.e. broken in-article navigation.
 
   for (const fileName of AGGREGATION_ORDER) {
     if (fileName === 'executive-brief.md') continue;
@@ -257,6 +262,12 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
   const emittedRootMarkdownArtifacts = used.filter((file) => !file.startsWith('documents/'));
   const perDocumentArtifacts = used.filter((file) => file.startsWith('documents/'));
   const emittedRootSet = new Set(emittedRootMarkdownArtifacts);
+
+  // Now that all sections have been collected, build the Reader Guide
+  // from the *emitted* set so every row points to a heading that
+  // actually exists. Splice it in at index 1 (immediately after the
+  // Executive Brief) to preserve the canonical reading order.
+  sections.splice(1, 0, buildReaderGuide(emittedRootSet, docsExist));
 
   // Coverage reporting is computed per *slot* rather than per filename
   // so an alias group (e.g. {stakeholder-perspectives.md,

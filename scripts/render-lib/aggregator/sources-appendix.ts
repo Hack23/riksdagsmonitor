@@ -82,7 +82,7 @@ export interface ArtifactCoverageReportInput {
    * Number of supporting-data JSON artifacts that exist on disk but
    * were truncated from `supportingDataArtifacts` because the
    * collector hit its hard cap. Surfaced in the report as an explicit
-   * `(and N more not shown)` annotation. Optional; defaults to 0.
+   * `(+N truncated)` annotation. Optional; defaults to 0.
    */
   readonly supportingDataTruncatedCount?: number;
   /** Canonical artifacts that never existed on disk. */
