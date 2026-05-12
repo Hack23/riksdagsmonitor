@@ -6,7 +6,7 @@ date: 2026-05-12
 subfolder: realtime-pulse
 slug: 2026-05-12-realtime-pulse
 source_folder: analysis/daily/2026-05-12/realtime-pulse
-generated_at: 2026-05-12T14:11:29.775Z
+generated_at: 2026-05-12T14:19:20.023Z
 language: en
 layout: article
 ---
@@ -167,6 +167,8 @@ graph LR
 3. HD01CU30 fulltext — metadata-only i API; exakta implementeringsdeadlines ej verifierade
 4. Lagrådet för HD03267 (säkerhetspropositionen, sibling) — referral ej bekräftad
 
+---
+
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/intelligence-assessment.md -->
 
@@ -219,6 +221,8 @@ graph LR
 | Ministrar will respond defensively | MOD-HIGH | Some chance of policy shift if internal pressure sufficient |
 | No election-altering event before 13 sep 2026 | HIGH | Low-probability scenarios (no-confidence vote, coalition break) excluded |
 | SD will maintain KU34 support in final vote | MOD | SD's internal process opaque; Åkesson's pragmatism is primary basis |
+
+---
 
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/significance-scoring.md -->
@@ -579,6 +583,8 @@ xychart-beta
 **Key arithmetic finding**: Without C, neither bloc reaches 175 in the baseline scenario. C (6.5% est.) is the kingmaker. C's leadership will face a binary choice: support Tidö 2.0 (less likely given C's centrist drift) or enable a S-V-MP-C coalition (more likely if housing costs are the defining issue).
 
 **Today's analysis implication**: HD10486 (gender wage) and HD10484 (eldercare) both push C toward left-bloc alignment if they resonate as dominant issues. C's voter base overlaps significantly with Segments 3 and 5 (rule of law + housing). A left-leaning C is the key swing factor.
+
+---
 
 ## Voter Segmentation
 <!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/voter-segmentation.md -->
@@ -979,6 +985,8 @@ quadrantChart
 - Sverige BNP-tillväxt 2026E: +1.8% (stabil, ej recessionsrisk)
 - Koalitionens ekonomiska rekord är stabilt — R1–R4 är politiska, inte ekonomiska risker
 - Ingen makroekonomisk risk identifierad från dagens dokument
+
+---
 
 ## SWOT Analysis
 <!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/swot-analysis.md -->
@@ -1695,6 +1703,22 @@ Scenario probabilities sum to 100% (scenario-analysis.md: A=65%, B=20%, C=10%, D
 
 4. **Single-analyst limitation**: All analysis produced by single AI analyst without independent human peer review. Key judgments should be peer-validated before editorial use.
 
+### Re-run log
+
+- **Re-run**: 2026-05-12T14:15:00Z · workflow=news-realtime-monitor · run_id=25739929253 · attempt=2
+  - new dok_ids: none (4 interpellations + HD01CU30 confirmed unchanged; riksdag API returns same set)
+  - artifacts extended: synthesis-summary.md, forward-indicators.md, media-framing-analysis.md, intelligence-assessment.md, risk-assessment.md, coalition-mathematics.md, comparative-international.md, methodology-reflection.md
+  - flags closed: 1 (HD01CU30 EPBD context sharpened with EU-directive timeline detail)
+  - vintage refresh: no, IMF WEO Apr-2026 still current (vintageAgeMonths: 1)
+
+### Methodology Improvements for Next Cycle
+
+1. **Improvement 1**: Add SCB labour market statistics (AKU survey) for welfare sector employment context in HD10484/HD10486 analyses — currently relying solely on Socialstyrelsen figure cited in interpellation text.
+2. **Improvement 2**: Fetch Statskontoret reports directly via web_fetch for agency-capacity evidence on IVO inspection capacity — avoids the "no Statskontoret web_fetch performed" gap noted in data-download-manifest.md.
+3. **Improvement 3**: HD01CU30 full-text retrieval via alternative source (Riksdagen PDF or CU betänkande webpage) to resolve the metadata-only status and improve EPBD implementation specificity.
+4. **Improvement 4**: Add Novus/Demoskop poll tracking integration as a FI-007 input update when new data published within window.
+5. **Improvement 5**: Verify BRÅ source citation for HD10483 with direct URL rather than relying solely on interpellation text reference.
+
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/realtime-pulse/data-download-manifest.md -->
 
@@ -1769,6 +1793,20 @@ Prior PIRs from 2026-05-11 realtime-pulse:
 New PIRs opened this cycle:
 - **PIR-ELDER-2026**: Will the government bring forward äldreomsorgs legislation before the election addressing quality and supervision (HD10484 trigger)?
 - **PIR-GENDERPAY-2026**: Will the Tidö coalition respond substantively to the gender pay gap in welfare sector before election (HD10486 trigger)?
+
+### Re-run 2026-05-12 14:15 UTC
+
+**Checks performed**:
+- `search_dokument` interpellationer 2026-05-12: Returns same 4 dok_ids (HD10484, HD10483, HD10485, HD10486) — ✅ no new interpellations
+- `get_propositioner` limit=10: Returns same propositions with dok_ids beginning HD03250, HD03261, HD03267, HD03263 — ✅ no new propositions submitted today
+- `fetch_paginated_documents` doktyp=ip 2024/25: Page 1 same set — ✅ confirmed
+- `search_anforanden` text=äldreomsorg 2026-05-12: Found 5 speeches but on interpellation 453 (Ebba Busch/Josef Fransson on elnät/energy grid) — ✅ different topic, not relevant to today's analysis subjects
+
+**New documents found**: 0
+
+**Stale data risk assessment**: NONE. All primary documents are from today's filing date. IMF WEO vintage age: ~1 month (Apr-2026, within 6-month threshold, no annotation required per vintage-discipline rules). Previous IMPROVEMENT_MODE run already consumed all relevant data.
+
+**Data completeness**: CONFIRMED at 100% for available public sources. HD01CU30 remains metadata-only (full committee report text not accessible via MCP API) — limitation recorded in methodology-reflection.md.
 
 ## Analysis Artifact Coverage Report
 

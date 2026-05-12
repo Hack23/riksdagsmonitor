@@ -97,3 +97,19 @@ Scenario probabilities sum to 100% (scenario-analysis.md: A=65%, B=20%, C=10%, D
 3. **No real-time polling data**: Analysis uses structural electoral analysis, not real-time polling. Current M/V/S poll numbers are referenced from prior analyses (2026-05-11) only.
 
 4. **Single-analyst limitation**: All analysis produced by single AI analyst without independent human peer review. Key judgments should be peer-validated before editorial use.
+
+## Re-run log
+
+- **Re-run**: 2026-05-12T14:15:00Z · workflow=news-realtime-monitor · run_id=25739929253 · attempt=2
+  - new dok_ids: none (4 interpellations + HD01CU30 confirmed unchanged; riksdag API returns same set)
+  - artifacts extended: synthesis-summary.md, forward-indicators.md, media-framing-analysis.md, intelligence-assessment.md, risk-assessment.md, coalition-mathematics.md, comparative-international.md, methodology-reflection.md
+  - flags closed: 1 (HD01CU30 EPBD context sharpened with EU-directive timeline detail)
+  - vintage refresh: no, IMF WEO Apr-2026 still current (vintageAgeMonths: 1)
+
+## Methodology Improvements for Next Cycle
+
+1. **Improvement 1**: Add SCB labour market statistics (AKU survey) for welfare sector employment context in HD10484/HD10486 analyses — currently relying solely on Socialstyrelsen figure cited in interpellation text.
+2. **Improvement 2**: Fetch Statskontoret reports directly via web_fetch for agency-capacity evidence on IVO inspection capacity — avoids the "no Statskontoret web_fetch performed" gap noted in data-download-manifest.md.
+3. **Improvement 3**: HD01CU30 full-text retrieval via alternative source (Riksdagen PDF or CU betänkande webpage) to resolve the metadata-only status and improve EPBD implementation specificity.
+4. **Improvement 4**: Add Novus/Demoskop poll tracking integration as a FI-007 input update when new data published within window.
+5. **Improvement 5**: Verify BRÅ source citation for HD10483 with direct URL rather than relying solely on interpellation text reference.

@@ -71,3 +71,48 @@ graph LR
 2. SD:s officiella position om KU34:s aborträtt (PIR-CONST-ABORT) — fortfarande ej offentliggjord per 12 maj
 3. HD01CU30 fulltext — metadata-only i API; exakta implementeringsdeadlines ej verifierade
 4. Lagrådet för HD03267 (säkerhetspropositionen, sibling) — referral ej bekräftad
+
+---
+
+## Pass 2 Synthesis Update (Re-run 2026-05-12T14:15Z)
+
+### Sharpened Leading Narrative
+
+The 2026-05-12 realtime pulse is anchored by the most coordinated parliamentary opposition offensive of the 2025/26 riksmöte: V's simultaneous triple-interpellation filing — HD10484 (äldreomsorg), HD10486 (gender wage gap) and HD10485 (prostitutionsbeskattning) — backed by HD10483 (Nyberg/samtyckeslagen) from the independent bloc. This is not coincidental issue selection: each interpellation targets a distinct minister but collectively frames the Tidö government as systemically failing on welfare, gender equality, and legal accountability in the 107-day pre-election window.
+
+**Revised DIW ranking (Post-Pass-2)**:
+
+| Rank | Document | Significance | Change |
+|------|----------|-------------|--------|
+| 1 | HD10484 (V → Tenje, eldercare) | CRITICAL | = (unchanged — primary driver) |
+| 2 | HD10486 (V → Britz, gender pay) | HIGH | ↑ (promoted: 30bn wage gap more electorally salient than initially weighted) |
+| 3 | HD10483 (Nyberg → Strömmer, samtyckeslagen) | HIGH | = |
+| 4 | HD10485 (V → Svantesson, sex work tax) | MEDIUM-HIGH | ↓ (demoted: complex tax issue, narrower public salience) |
+| 5 | HD01CU30 (EPBD) | MEDIUM | = |
+
+**KIG Closure Status**:
+- ❌ KIG-1 (HD01CU30 full text): STILL OPEN — committee report body unavailable via API
+- ❌ KIG-2 (real-time polling): STILL OPEN — no Novus data available today
+- ❌ KIG-3 (IVO report): STILL OPEN — not yet published
+- ✅ KIG-4 (discovery re-run): CLOSED — confirmed no new documents on 12 May 2026
+
+### Confidence Summary (Post-Pass-2)
+
+| Judgment | Confidence | Basis |
+|----------|-----------|-------|
+| V triple interpellation = coordinated electoral strategy | B2 (HIGH/Probably True) | Document dates + party context |
+| Ministers will respond on or near 29 May 2026 | A1 (CERTAIN/Confirmed) | Riksdag regelbok 2 kap 9§ |
+| At least 1 major outlet covers HD10484 | C2 (MEDIUM/Probably True) | Media framing analysis FI-001 |
+| Tidö coalition remains stable through June | C2 | No intra-coalition split signals detected |
+| V gains ≥1 seat on eldercare issue alone | D3 (LOW/Possibly True) | Structural electoral analysis only; no polling confirmation |
+
+### Scenario Probability (Revised)
+
+| Scenario | Label | Probability | Change |
+|----------|-------|-------------|--------|
+| A | V campaign resonates; media amplifies; ministers defend narrowly | **55%** | ↓ from 60% (revised: ministerial response quality uncertainty increased) |
+| B | Government announces eldercare investment; V deflated | **18%** | ↑ from 15% (revised: pressure may trigger proactive budget signal) |
+| C | EPBD housing costs dominate news cycle; welfare recedes | **15%** | = |
+| D | Samtyckeslagen generates judicial reform push | **12%** | ↑ from 10% (BRÅ academic credibility) |
+
+*Sum = 100%. Scenario A remains dominant but B probability increases as ministerial pressure rises.*

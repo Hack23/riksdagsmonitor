@@ -60,3 +60,40 @@ subfolder: "realtime-pulse"
 | Ministrar will respond defensively | MOD-HIGH | Some chance of policy shift if internal pressure sufficient |
 | No election-altering event before 13 sep 2026 | HIGH | Low-probability scenarios (no-confidence vote, coalition break) excluded |
 | SD will maintain KU34 support in final vote | MOD | SD's internal process opaque; Åkesson's pragmatism is primary basis |
+
+---
+
+## Pass 2 PIR Status Update (Re-run 2026-05-12T14:15Z)
+
+### PIR-CONST-ABORT (SD on KU34)
+- **Status**: OPEN · Confidence: C2 (MEDIUM | Probably True)
+- **Update**: No SD parliamentary statement on KU34 samtyckeslagen detected in today's MCP data. PIR window extended: 12–19 May 2026. Watch FI-003 for any public SD committee-motion signal.
+
+### PIR-CLIM-2026 (Climate legislation gap)
+- **Status**: WATCH · Confidence: E3 (LOW | Possibly True)
+- **Update**: No new climate legislation movement today. EPBD HD01CU30 is energy/construction rather than explicit climate policy — classified as contributing context, not PIR-CLIM-2026 primary driver. Next expected signal: June 2026 EU climate review.
+
+### PIR-MIG-RETURN (Migration return enforcement)
+- **Status**: WATCH · Confidence: E3
+- **Update**: No migration-related documents today. Dependent on upcoming government SOU. No change from prior cycle.
+
+### PIR-COAL-STAB (Tidö coalition stability)
+- **Status**: WATCH · Confidence: C2
+- **Update**: V's triple interpellation offensive increases baseline coalition pressure. No intra-coalition split signals detected today. FI-011 (SD extraordinary vote) remains the primary trigger — no signal. Coalition confidence: stable but watch window 14–29 May (ministerial response period). Key vulnerability: if Tenje/Britz provide weak answers, L-SD tension on welfare policy may surface.
+
+### PIR-ELDER-2026 (NEW — Eldercare accountability campaign)
+- **Status**: ACTIVE · Confidence: B2 (HIGH | Probably True)
+- **Rationale**: HD10484 formally opens PIR-ELDER-2026. V's Nadja Awad has filed evidence-backed interpellation citing Socialstyrelsen inspection findings. The 29 May minister response deadline is a hard accountability date. Electoral multiplier (107-day proximity) assessed at 1.5×. Signal threshold: ≥2 major media outlets covering HD10484 by 14 May.
+
+### PIR-GENDERPAY-2026 (NEW — Gender wage gap campaign)
+- **Status**: ACTIVE · Confidence: B2
+- **Rationale**: HD10486 cites 30 miljarder wage gap documented by SCB. L minister Britz's response window (29 May) is accountability date. This PIR is cross-cutting: simultaneously welfare, gender equality, and electoral-prime for V's target voters.
+
+### KIG (Key Intelligence Gaps) — Refined
+
+| KIG | Description | Impact | Mitigation |
+|-----|-------------|--------|-----------|
+| KIG-1 | HD01CU30 committee reservation text unavailable | MEDIUM — may contain SD/V reservation revealing true parliamentary fracture | Retrieve via PDF when available |
+| KIG-2 | No real-time polling on eldercare issue salience | MEDIUM — can't verify if HD10484 resonates beyond V base | Novus/Demoskop tracker when available (FI-007) |
+| KIG-3 | IVO eldercare inspection report not yet published | MEDIUM — would confirm or deny factual anchors in HD10484 | Monitor ivo.se (FI-015) |
+| KIG-4 | BRÅ source for HD10483 unverified with direct URL | LOW — interpellation cites BRÅ; likely accurate but unverified | Direct URL retrieval in next cycle |
