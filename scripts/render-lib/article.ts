@@ -41,6 +41,7 @@ import { buildBreadcrumbListLd, buildNewsArticleLd, buildSpeakableWebPageLd, BRE
 
 import { getBySubfolder, getById, loadArticleTypesRegistry } from './article-types.js';
 import { articleTypeLabel } from './article-type-i18n.js';
+import { buildArticleSeoMetadata } from './article-seo.js';
 import {
   renderReaderNavigation,
   renderAnalysisArtifactsReference,
@@ -228,10 +229,22 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
   const fm = parsed.data as Record<string, unknown>;
   const title = String(fm.title ?? 'Political Intelligence');
   const description = String(fm.description ?? 'Riksdagsmonitor political intelligence report.');
+  const rawKeywords = typeof fm.keywords === 'string' ? fm.keywords : undefined;
   const date = parseFrontMatterDate(fm.date);
   const publishedIso = `${date}T00:00:00Z`;
   const modifiedIso = new Date().toISOString();
   const articleType = inferArticleType(input.canonicalPath, title);
+  const localizedArticleTypeLabel = articleTypeLabel(articleType.type, input.lang, articleType.label);
+  const seo = buildArticleSeoMetadata({
+    title,
+    description,
+    keywords: rawKeywords,
+    lang: input.lang,
+    date,
+    articleTypeLabel: localizedArticleTypeLabel,
+    articleTypeId: articleType.type,
+    canonicalPath: input.canonicalPath,
+  });
 
   const cleanedContent = stripBodyDuplicateSections(parsed.content);
 
@@ -244,7 +257,7 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
 
   const newsArticleLd = buildNewsArticleLd({
     headline: title,
-    description,
+    description: seo.description,
     datePublished: publishedIso,
     dateModified: modifiedIso,
     inLanguage: langMeta.hreflang,
@@ -274,8 +287,9 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
 
   const chrome = buildChrome({
     lang: input.lang,
-    title,
-    description,
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
     canonicalPath: input.canonicalPath,
     hreflangAlternates: input.hreflangAlternates,
     publishedIso,
@@ -305,9 +319,9 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
 ${chrome.headerHtml}
       <article class="rm-article rm-article-type-${escapeHtml(articleType.type)}" data-article-type="${escapeHtml(articleType.type)}" lang="${LANGUAGE_META[input.lang].hreflang}">
         <header class="rm-article-header">
-          <p class="rm-article-eyebrow"><span class="rm-icon" aria-hidden="true">🔍</span> ${escapeHtml(articleTypeLabel(articleType.type, input.lang, articleType.label))}</p>
+          <p class="rm-article-eyebrow"><span class="rm-icon" aria-hidden="true">🔍</span> ${escapeHtml(localizedArticleTypeLabel)}</p>
           <h1>${escapeHtml(title)}</h1>
-          <p class="rm-article-dek">${escapeHtml(description)}</p>
+          <p class="rm-article-dek">${escapeHtml(seo.description)}</p>
           <p class="rm-article-meta">
             <time datetime="${publishedIso}"><span class="rm-icon" aria-hidden="true">📅</span> ${escapeHtml(date)}</time>
             · <span class="rm-article-lang">${LANGUAGE_META[input.lang].flag} ${LANGUAGE_META[input.lang].nativeName}</span>

@@ -30,6 +30,7 @@ import fs from 'fs';
 import path from 'path';
 
 import { buildGithubBlobUrl } from '../url-helpers.js';
+import { buildArticleKeywords } from '../article-seo.js';
 import {
   cleanArtifactBody,
   rewriteRelativeLinks,
@@ -80,6 +81,8 @@ export interface AggregationResult {
   readonly title: string;
   /** First non-empty paragraph from `executive-brief.md`, used as description. */
   readonly description: string;
+  /** Context-aware keyword set for front-matter and generated HTML. */
+  readonly keywords: string;
 }
 
 /**
@@ -145,6 +148,14 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
     cleanArticleTitle(readFirstHeading(briefRaw), subfolder) ||
     titleFromBluf(rawBlufParagraph ?? rawFirstParagraph) ||
     `${prettifyFallbackTitle(subfolder)} — ${date}`;
+  const keywords = buildArticleKeywords({
+    title,
+    description,
+    lang: 'en',
+    date,
+    articleTypeLabel: prettifyFallbackTitle(subfolder),
+    articleTypeId: subfolder.replace(/\//g, '-'),
+  });
 
   const rootArtifactSet = new Set(
     fs.readdirSync(subfolderAbsPath)
@@ -186,6 +197,7 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
   const frontMatter = buildFrontMatter({
     title,
     description,
+    keywords,
     date,
     subfolder,
     source_folder: subfolderRepoRelPath,
@@ -201,5 +213,6 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
     artifactsUsed: used,
     title,
     description,
+    keywords,
   };
 }

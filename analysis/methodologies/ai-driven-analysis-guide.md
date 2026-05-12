@@ -180,6 +180,40 @@ If the date yields 0 documents, apply the **Empty-Day Protocol** (§ Empty-Day H
 
 ---
 
+### Step 2B — 14-Language SEO Metadata Seed (DISSEMINATE contract)
+
+Before article aggregation, every workflow must seed the story metadata that will drive all 14 HTML outputs. This is part of the analysis product, not a renderer afterthought:
+
+1. In `executive-brief.md`, write a publishable H1/headline with **actor + active verb + policy object + consequence**. Do not rely on literal dates to make the title unique.
+2. In `## 🎯 BLUF`, make the first paragraph a 145–200 character SERP-ready summary with the concrete story topic, named actor, action and so-what. The renderer localizes metadata around this BLUF for EN, SV, DA, NO/NB, FI, DE, FR, ES, NL, AR, HE, JA, KO and ZH.
+3. Add `## 🌐 14-Language SEO Metadata Seeds` to the executive brief when the workflow has enough evidence. Fill all 14 rows with short localized title angles, description angles and keyword seeds. If a language cannot be human-quality localized, write the English story topic plus the language label and mark it `[machine-assisted — verify]`; do not leave it blank.
+4. Pass 2 must read every language row back and confirm that the title/description is **contextual** (policy object, actor, consequence) rather than a date-stuffed duplicate.
+
+Minimum row schema:
+
+```markdown
+| lang | localized title angle (50–70 chars) | localized description angle (145–200 chars) | keyword seeds (5–8) |
+|------|-------------------------------------|---------------------------------------------|---------------------|
+| en | Actor verb object consequence | SERP-ready summary with so-what and provenance | topic, actor, policy, Riksdag, OSINT |
+| sv | … | … | … |
+| da | … | … | … |
+| no | … | … | … |
+| fi | … | … | … |
+| de | … | … | … |
+| fr | … | … | … |
+| es | … | … | … |
+| nl | … | … | … |
+| ar | … | … | … |
+| he | … | … | … |
+| ja | … | … | … |
+| ko | … | … | … |
+| zh | … | … | … |
+```
+
+The TypeScript renderer still enforces safe fallbacks, but good AI-authored metadata seeds are the quality source. This prevents Bing/Google from seeing 14 translated pages or repeated article runs as duplicate descriptions.
+
+---
+
 ### Step 3 — Per-File Analysis (F3EAD: FINISH)
 
 For every document in the manifest, write one file at:

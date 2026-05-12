@@ -95,6 +95,15 @@ export { sanitizeSchema, renderMarkdownToHtml } from './markdown/index.js';
 export { renderChromeHead, buildChrome } from './chrome.js';
 export type { ChromeOptions, SiteChrome, BreadcrumbItem } from './chrome.js';
 
+// --- Article SEO -------------------------------------------------------------
+export {
+  buildArticleSeoMetadata,
+  buildSeoTitle,
+  buildSeoDescription,
+  buildArticleKeywords,
+} from './article-seo.js';
+export type { ArticleSeoMetadataInput, ArticleSeoMetadata } from './article-seo.js';
+
 // --- JSON-LD builders -------------------------------------------------------
 export { buildBreadcrumbListLd, buildNewsArticleLd, buildSpeakableWebPageLd, BREADCRUMB_TITLE_MAX_LENGTH, BREADCRUMB_ELLIPSIS_OVERHEAD } from './jsonld.js';
 export type { BreadcrumbEntry, BreadcrumbEntryWithItem, BreadcrumbEntryCurrentPage, NewsArticleLdInput, BreadcrumbListLd, NewsArticleLd, SpeakableWebPageLd, JsonLdListItem } from './jsonld.js';

@@ -207,6 +207,16 @@ Authoring guidance:
 5. **Avoid emoji-only headings.** A heading like `## 🎯` slugs to an empty string and the validator blocks it. Always pair the emoji with at least one word: `## 🎯 BLUF`, `## 🔮 Top Forward Trigger`.
 6. **Cite dok_id in every per-document analysis.** The aggregator emits one `### HD12345` (or `### FiU17`) per file under `documents/`; the body must mention that identifier (or another riksdagen identifier) at least once for primary-source traceability.
 
+### 🌐 14-Language SEO Metadata Contract (template-authored)
+
+Every `executive-brief.md` now carries the source metadata for all 14 HTML pages. The renderer can build safe fallbacks, but the template fill is responsible for quality:
+
+- **Titles:** 50–70 characters where possible; include actor, active verb, policy object and consequence. Do **not** make titles unique by appending dates.
+- **Descriptions:** 145–200 characters where possible; summarize the specific story, named actor/action, and why it matters. Include provenance context, not boilerplate.
+- **Keywords:** 5–8 localized seeds per language: article type, policy domain, named actor/party, Riksdag/Regering reference, OSINT/provenance term.
+- **All languages:** EN, SV, DA, NO/NB, FI, DE, FR, ES, NL, AR, HE, JA, KO, ZH must be present. Arabic and Hebrew rows must preserve RTL language in the text even though the Markdown table itself remains LTR.
+- **Pass-2 audit:** compare rows pairwise; if two descriptions are identical except date/language label, rewrite them with stronger story context.
+
 Run the contract locally before commit:
 
 ```bash
