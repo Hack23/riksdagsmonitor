@@ -1,0 +1,59 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-05-12T08:10:00Z",
+  "article_type": "motions",
+  "article_date": "2026-05-12",
+  "subfolder": "motions",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "title": "Lagrådet yttrande status — prop. 2025/26:264",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "description": "Confirm whether Lagrådet issued an yttrande on prop. 2025/26:264 (character requirements for residence permits). If Lagrådet raised ECHR Art. 8 concerns that were not addressed, this substantially strengthens V's legal arguments and increases ECHR litigation risk.",
+      "trigger_document": "HD024149",
+      "collection_method": "Search Lagrådet.se and prop. text for yttrande reference",
+      "due_by": "2026-05-19",
+      "carry_forward_to": "next motions analysis in SfU area"
+    },
+    {
+      "id": "PIR-2",
+      "title": "Lagrådet yttrande status — prop. 2025/26:263",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "description": "Confirm Lagrådet yttrande status for prop. 2025/26:263 (deportation enforcement). Data-sharing mandate constitutional compatibility.",
+      "trigger_document": "HD024150",
+      "collection_method": "Search Lagrådet.se and prop. text",
+      "due_by": "2026-05-19",
+      "carry_forward_to": "next SfU analysis"
+    },
+    {
+      "id": "PIR-3",
+      "title": "Cross-party opposition motion filings on props 263 and 264",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "description": "Have S, MP, or C filed motions opposing props 2025/26:263 or 2025/26:264? V appears isolated in 2026-05-11 window but a wider survey may reveal other opposition arguments. Particularly important: any S motion that accepts enforcement but opposes data-sharing would indicate cross-bloc potential.",
+      "trigger_document": "Both HD024149 and HD024150",
+      "collection_method": "search_dokument for doktyp=mot referencing props 263 and 264",
+      "due_by": "2026-05-15",
+      "carry_forward_to": "election-2026-analysis update"
+    },
+    {
+      "id": "PIR-4",
+      "title": "SfU betänkande schedule for props 263+264",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "description": "When does SfU plan to table the betänkande on props 263+264? Pre-election timing (before 2026-09-13) affects whether props become law before election. If betänkande is delayed to autumn, both props may be handled by a new government.",
+      "trigger_document": "Both",
+      "collection_method": "SfU arbetsplan and riksdag.se committee calendar",
+      "due_by": "2026-05-20",
+      "carry_forward_to": "forward-indicators update"
+    }
+  ],
+  "completed_pirs": [],
+  "analysis_gap_flags": [
+    "IMF live fetch failed — WEO Apr-2026 vintage used from imf-context.json",
+    "Prior voteringar: SfU 2025/26 returned 0 results — new riksmöte gap",
+    "Statskontoret: no directly matching report found for props 263/264 specifically"
+  ]
+}
