@@ -108,3 +108,27 @@ subfolder: "realtime-pulse"
 | FI-011 | SD coalition vote | T+90d | June–Aug | SD diverges | PIR-COAL-STAB |
 | FI-012 | C statement welfare/housing | T+90d | June | C leftward signal | PIR-COAL-STAB |
 | FI-013 | V election result | T+90d+ | 13 Sep | V ≥27 seats | PIR-ELDER-2026 + PIR-GENDERPAY-2026 |
+
+## Pass 2 — Additional Forward Indicators (Re-run 2026-05-12T14:15Z)
+
+**FI-014**: Riksdag committee calendar — CU betänkande HD01CU30 vote scheduling
+- **Date**: 19–26 May 2026
+- **Signal**: Does CU schedule HD01CU30 for chamber vote before summer recess (week 24)?
+- **If vote scheduled before 19 June**: EPBD commitment locked in before election — reduces SD campaign leverage
+- **Source**: riksdag.se utskottskalender, CU mötesprotokoll
+
+**FI-015**: IVO (Inspektionen för vård och omsorg) annual report on private eldercare providers
+- **Date**: May–June 2026 (annual release window)
+- **Signal**: Does IVO annual eldercare quality report cite increase in serious deficiencies at vinstdrivna providers?
+- **If IVO confirms systemic failures**: HD10484's factual anchors confirmed by independent oversight body; R4 probability +15%
+- **Source**: ivo.se årsredovisning 2025 (expected release May 2026)
+
+**FI-016**: Party conference signals — V annual congress June 2026
+- **Date**: June 2026
+- **Signal**: Does V formally adopt eldercare renationalisation as election platform plank?
+- **If yes**: PIR-ELDER-2026 escalates from watch to ALERT; V welfare frame locks in as election issue
+- **Source**: V partiprogram 2026 (vänsterpartiet.se)
+
+## Updated Indicators Summary (Post-Pass-2)
+
+All 13 original indicators (FI-001 to FI-013) remain valid. Three new indicators added (FI-014 to FI-016) extending coverage to 16 total across 4 horizons. Most urgent monitoring window: 14–29 May 2026 (FI-001, FI-002, FI-004, FI-005, FI-006 all converge on this period).
