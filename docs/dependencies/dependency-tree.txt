@@ -1,4 +1,4 @@
-riksdagsmonitor@0.9.10 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@0.9.11 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.3.0 deduped
 ├─┬ @types/d3@7.4.3
@@ -571,7 +571,7 @@ riksdagsmonitor@0.9.10 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ │ └── safe-buffer@5.1.2
 │ │ └── util-deprecate@1.0.2
 │ └── setimmediate@1.0.5
-├─┬ knip@6.12.2
+├─┬ knip@6.13.0
 │ ├─┬ fdir@6.5.0
 │ │ └── picomatch@4.0.4 deduped
 │ ├─┬ formatly@0.3.0
@@ -581,28 +581,28 @@ riksdagsmonitor@0.9.10 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └── resolve-pkg-maps@1.0.0
 │ ├── jiti@2.7.0 deduped
 │ ├── minimist@1.2.8 deduped
-│ ├─┬ oxc-parser@0.128.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-android-arm-eabi@0.128.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-android-arm64@0.128.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-darwin-arm64@0.128.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-darwin-x64@0.128.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-freebsd-x64@0.128.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm-gnueabihf@0.128.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm-musleabihf@0.128.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm64-gnu@0.128.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm64-musl@0.128.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-ppc64-gnu@0.128.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-riscv64-gnu@0.128.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-riscv64-musl@0.128.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-s390x-gnu@0.128.0
-│ │ ├── @oxc-parser/binding-linux-x64-gnu@0.128.0
-│ │ ├── @oxc-parser/binding-linux-x64-musl@0.128.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-openharmony-arm64@0.128.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-wasm32-wasi@0.128.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-arm64-msvc@0.128.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-ia32-msvc@0.128.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-x64-msvc@0.128.0
-│ │ └── @oxc-project/types@0.128.0
+│ ├─┬ oxc-parser@0.130.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-android-arm-eabi@0.130.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-android-arm64@0.130.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-darwin-arm64@0.130.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-darwin-x64@0.130.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-freebsd-x64@0.130.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm-gnueabihf@0.130.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm-musleabihf@0.130.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm64-gnu@0.130.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm64-musl@0.130.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-ppc64-gnu@0.130.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-riscv64-gnu@0.130.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-riscv64-musl@0.130.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-s390x-gnu@0.130.0
+│ │ ├── @oxc-parser/binding-linux-x64-gnu@0.130.0
+│ │ ├── @oxc-parser/binding-linux-x64-musl@0.130.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-openharmony-arm64@0.130.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-wasm32-wasi@0.130.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-arm64-msvc@0.130.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-ia32-msvc@0.130.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-x64-msvc@0.130.0
+│ │ └── @oxc-project/types@0.130.0
 │ ├─┬ oxc-resolver@11.19.1
 │ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-android-arm-eabi@11.19.1
 │ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-android-arm64@11.19.1
@@ -629,7 +629,7 @@ riksdagsmonitor@0.9.10 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── strip-json-comments@5.0.3
 │ ├── tinyglobby@0.2.16 deduped
 │ ├── unbash@3.0.0
-│ ├── yaml@2.8.3
+│ ├── yaml@2.9.0
 │ └── zod@4.3.6
 ├─┬ mermaid@11.15.0
 │ ├── @braintree/sanitize-url@7.1.2
@@ -688,7 +688,174 @@ riksdagsmonitor@0.9.10 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── stylis@4.4.0
 │ ├── ts-dedent@2.2.0
 │ └── uuid@11.1.0
+├─┬ minify@15.3.1
+│ ├── @putout/minify@6.0.7
+│ ├─┬ @swc/core@1.15.33
+│ │ ├── UNMET OPTIONAL DEPENDENCY @swc/core-darwin-arm64@1.15.33
+│ │ ├── UNMET OPTIONAL DEPENDENCY @swc/core-darwin-x64@1.15.33
+│ │ ├── UNMET OPTIONAL DEPENDENCY @swc/core-linux-arm-gnueabihf@1.15.33
+│ │ ├── UNMET OPTIONAL DEPENDENCY @swc/core-linux-arm64-gnu@1.15.33
+│ │ ├── UNMET OPTIONAL DEPENDENCY @swc/core-linux-arm64-musl@1.15.33
+│ │ ├── UNMET OPTIONAL DEPENDENCY @swc/core-linux-ppc64-gnu@1.15.33
+│ │ ├── UNMET OPTIONAL DEPENDENCY @swc/core-linux-s390x-gnu@1.15.33
+│ │ ├── @swc/core-linux-x64-gnu@1.15.33
+│ │ ├── UNMET OPTIONAL DEPENDENCY @swc/core-linux-x64-musl@1.15.33
+│ │ ├── UNMET OPTIONAL DEPENDENCY @swc/core-win32-arm64-msvc@1.15.33
+│ │ ├── UNMET OPTIONAL DEPENDENCY @swc/core-win32-ia32-msvc@1.15.33
+│ │ ├── UNMET OPTIONAL DEPENDENCY @swc/core-win32-x64-msvc@1.15.33
+│ │ ├── @swc/counter@0.1.3
+│ │ ├── UNMET OPTIONAL DEPENDENCY @swc/helpers@>=0.5.17
+│ │ └─┬ @swc/types@0.1.26
+│ │   └── @swc/counter@0.1.3 deduped
+│ ├─┬ clean-css@5.3.3
+│ │ └── source-map@0.6.1
+│ ├── css-b64-images@0.2.5
+│ ├── debug@4.4.3 deduped
+│ ├─┬ esbuild@0.28.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/aix-ppc64@0.28.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/android-arm@0.28.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/android-arm64@0.28.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/android-x64@0.28.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/darwin-arm64@0.28.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/darwin-x64@0.28.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/freebsd-arm64@0.28.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/freebsd-x64@0.28.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/linux-arm@0.28.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/linux-arm64@0.28.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/linux-ia32@0.28.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/linux-loong64@0.28.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/linux-mips64el@0.28.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/linux-ppc64@0.28.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/linux-riscv64@0.28.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/linux-s390x@0.28.0
+│ │ ├── @esbuild/linux-x64@0.28.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/netbsd-arm64@0.28.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/netbsd-x64@0.28.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/openbsd-arm64@0.28.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/openbsd-x64@0.28.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/openharmony-arm64@0.28.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/sunos-x64@0.28.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/win32-arm64@0.28.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/win32-ia32@0.28.0
+│ │ └── UNMET OPTIONAL DEPENDENCY @esbuild/win32-x64@0.28.0
+│ ├─┬ find-up@8.0.0
+│ │ ├─┬ locate-path@8.0.0
+│ │ │ └─┬ p-locate@6.0.0
+│ │ │   └─┬ p-limit@4.0.0
+│ │ │     └── yocto-queue@1.2.2
+│ │ └── unicorn-magic@0.3.0
+│ ├─┬ html-minifier-next@6.2.4
+│ │ ├── @swc/core@1.15.33 deduped
+│ │ ├── commander@14.0.3
+│ │ ├── entities@8.0.0
+│ │ ├── lightningcss@1.32.0 deduped
+│ │ ├─┬ svgo@4.0.1
+│ │ │ ├── commander@11.1.0
+│ │ │ ├─┬ css-select@5.2.2
+│ │ │ │ ├── boolbase@1.0.0
+│ │ │ │ ├── css-what@6.2.2 deduped
+│ │ │ │ ├─┬ domhandler@5.0.3
+│ │ │ │ │ └── domelementtype@2.3.0
+│ │ │ │ ├─┬ domutils@3.2.2
+│ │ │ │ │ ├─┬ dom-serializer@2.0.0
+│ │ │ │ │ │ ├── domelementtype@2.3.0 deduped
+│ │ │ │ │ │ ├── domhandler@5.0.3 deduped
+│ │ │ │ │ │ └── entities@4.5.0
+│ │ │ │ │ ├── domelementtype@2.3.0 deduped
+│ │ │ │ │ └── domhandler@5.0.3 deduped
+│ │ │ │ └─┬ nth-check@2.1.1
+│ │ │ │   └── boolbase@1.0.0 deduped
+│ │ │ ├─┬ css-tree@3.2.1
+│ │ │ │ ├── mdn-data@2.27.1
+│ │ │ │ └── source-map-js@1.2.1 deduped
+│ │ │ ├── css-what@6.2.2
+│ │ │ ├─┬ csso@5.0.5
+│ │ │ │ └─┬ css-tree@2.2.1
+│ │ │ │   ├── mdn-data@2.0.28
+│ │ │ │   └── source-map-js@1.2.1 deduped
+│ │ │ ├── picocolors@1.1.1 deduped
+│ │ │ └── sax@1.6.0
+│ │ └── terser@5.47.1 deduped
+│ ├─┬ lightningcss@1.32.0
+│ │ ├── detect-libc@2.1.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY lightningcss-android-arm64@1.32.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY lightningcss-darwin-arm64@1.32.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY lightningcss-darwin-x64@1.32.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY lightningcss-freebsd-x64@1.32.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY lightningcss-linux-arm-gnueabihf@1.32.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY lightningcss-linux-arm64-gnu@1.32.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY lightningcss-linux-arm64-musl@1.32.0
+│ │ ├── lightningcss-linux-x64-gnu@1.32.0
+│ │ ├── lightningcss-linux-x64-musl@1.32.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY lightningcss-win32-arm64-msvc@1.32.0
+│ │ └── UNMET OPTIONAL DEPENDENCY lightningcss-win32-x64-msvc@1.32.0
+│ ├── montag@1.2.1
+│ ├─┬ oxc-minify@0.125.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-minify/binding-android-arm-eabi@0.125.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-minify/binding-android-arm64@0.125.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-minify/binding-darwin-arm64@0.125.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-minify/binding-darwin-x64@0.125.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-minify/binding-freebsd-x64@0.125.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-minify/binding-linux-arm-gnueabihf@0.125.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-minify/binding-linux-arm-musleabihf@0.125.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-minify/binding-linux-arm64-gnu@0.125.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-minify/binding-linux-arm64-musl@0.125.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-minify/binding-linux-ppc64-gnu@0.125.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-minify/binding-linux-riscv64-gnu@0.125.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-minify/binding-linux-riscv64-musl@0.125.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-minify/binding-linux-s390x-gnu@0.125.0
+│ │ ├── @oxc-minify/binding-linux-x64-gnu@0.125.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-minify/binding-linux-x64-musl@0.125.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-minify/binding-openharmony-arm64@0.125.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-minify/binding-wasm32-wasi@0.125.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-minify/binding-win32-arm64-msvc@0.125.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-minify/binding-win32-ia32-msvc@0.125.0
+│ │ └── UNMET OPTIONAL DEPENDENCY @oxc-minify/binding-win32-x64-msvc@0.125.0
+│ ├─┬ readjson@2.2.2
+│ │ ├── jju@1.4.0
+│ │ └── try-catch@3.0.1
+│ ├── redstd@1.0.2
+│ ├─┬ terser@5.47.1
+│ │ ├─┬ @jridgewell/source-map@0.3.11
+│ │ │ ├─┬ @jridgewell/gen-mapping@0.3.13
+│ │ │ │ ├── @jridgewell/sourcemap-codec@1.5.5 deduped
+│ │ │ │ └── @jridgewell/trace-mapping@0.3.31 deduped
+│ │ │ └── @jridgewell/trace-mapping@0.3.31 deduped
+│ │ ├── acorn@8.16.0 deduped
+│ │ ├── commander@2.20.3
+│ │ └─┬ source-map-support@0.5.21
+│ │   ├── buffer-from@1.1.2
+│ │   └── source-map@0.6.1 deduped
+│ ├── try-catch@4.0.9
+│ └── try-to-catch@4.0.5
 ├── papaparse@5.5.3
+├─┬ purgecss@8.0.0
+│ ├── commander@12.1.0
+│ ├─┬ fast-glob@3.3.3
+│ │ ├── @nodelib/fs.stat@2.0.5
+│ │ ├─┬ @nodelib/fs.walk@1.2.8
+│ │ │ ├─┬ @nodelib/fs.scandir@2.1.5
+│ │ │ │ ├── @nodelib/fs.stat@2.0.5 deduped
+│ │ │ │ └─┬ run-parallel@1.2.0
+│ │ │ │   └── queue-microtask@1.2.3
+│ │ │ └─┬ fastq@1.20.1
+│ │ │   └── reusify@1.1.0
+│ │ ├─┬ glob-parent@5.1.2
+│ │ │ └── is-glob@4.0.3 deduped
+│ │ ├── merge2@1.4.1
+│ │ └─┬ micromatch@4.0.8
+│ │   ├─┬ braces@3.0.3
+│ │   │ └─┬ fill-range@7.1.1
+│ │   │   └─┬ to-regex-range@5.0.1
+│ │   │     └── is-number@7.0.0
+│ │   └── picomatch@2.3.2
+│ ├─┬ postcss-selector-parser@7.1.1
+│ │ ├── cssesc@3.0.0
+│ │ └── util-deprecate@1.0.2 deduped
+│ └─┬ postcss@8.5.14
+│   ├── nanoid@3.3.12
+│   ├── picocolors@1.1.1
+│   └── source-map-js@1.2.1 deduped
 ├─┬ rehype-autolink-headings@7.1.0
 │ ├── @types/hast@3.0.4 deduped
 │ ├── @ungap/structured-clone@1.3.0
@@ -1059,7 +1226,7 @@ riksdagsmonitor@0.9.10 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └─┬ brace-expansion@5.0.5
 │ │   └── balanced-match@4.0.3 deduped
 │ ├── typescript@6.0.3 deduped
-│ └── yaml@2.8.3 deduped
+│ └── yaml@2.9.0 deduped
 ├─┬ typescript-eslint@8.59.3
 │ ├─┬ @typescript-eslint/eslint-plugin@8.59.3
 │ │ ├── @eslint-community/regexpp@4.12.2 deduped
@@ -1146,24 +1313,9 @@ riksdagsmonitor@0.9.10 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── UNMET OPTIONAL DEPENDENCY fsevents@~2.3.3
 │ ├── jiti@2.7.0 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY less@^4.0.0
-│ ├─┬ lightningcss@1.32.0
-│ │ ├── detect-libc@2.1.2
-│ │ ├── UNMET OPTIONAL DEPENDENCY lightningcss-android-arm64@1.32.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY lightningcss-darwin-arm64@1.32.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY lightningcss-darwin-x64@1.32.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY lightningcss-freebsd-x64@1.32.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY lightningcss-linux-arm-gnueabihf@1.32.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY lightningcss-linux-arm64-gnu@1.32.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY lightningcss-linux-arm64-musl@1.32.0
-│ │ ├── lightningcss-linux-x64-gnu@1.32.0
-│ │ ├── lightningcss-linux-x64-musl@1.32.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY lightningcss-win32-arm64-msvc@1.32.0
-│ │ └── UNMET OPTIONAL DEPENDENCY lightningcss-win32-x64-msvc@1.32.0
+│ ├── lightningcss@1.32.0 deduped
 │ ├── picomatch@4.0.4 deduped
-│ ├─┬ postcss@8.5.14
-│ │ ├── nanoid@3.3.12
-│ │ ├── picocolors@1.1.1
-│ │ └── source-map-js@1.2.1 deduped
+│ ├── postcss@8.5.14 deduped
 │ ├─┬ rolldown@1.0.0
 │ │ ├── @oxc-project/types@0.129.0
 │ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-android-arm64@1.0.0
@@ -1186,10 +1338,10 @@ riksdagsmonitor@0.9.10 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── UNMET OPTIONAL DEPENDENCY sass@^1.70.0
 │ ├── UNMET OPTIONAL DEPENDENCY stylus@>=0.54.8
 │ ├── UNMET OPTIONAL DEPENDENCY sugarss@^5.0.0
-│ ├── UNMET OPTIONAL DEPENDENCY terser@^5.16.0
+│ ├── terser@5.47.1 deduped
 │ ├── tinyglobby@0.2.16 deduped
 │ ├── tsx@4.21.0 deduped
-│ └── yaml@2.8.3 deduped
+│ └── yaml@2.9.0 deduped
 ├─┬ vitest@4.1.6
 │ ├── UNMET OPTIONAL DEPENDENCY @edge-runtime/vm@*
 │ ├── UNMET OPTIONAL DEPENDENCY @opentelemetry/api@^1.9.0
