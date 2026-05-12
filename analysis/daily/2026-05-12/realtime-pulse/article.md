@@ -6,7 +6,7 @@ date: 2026-05-12
 subfolder: realtime-pulse
 slug: 2026-05-12-realtime-pulse
 source_folder: analysis/daily/2026-05-12/realtime-pulse
-generated_at: 2026-05-12T11:42:00.456Z
+generated_at: 2026-05-12T12:07:21.670Z
 language: en
 layout: article
 ---
@@ -1772,7 +1772,7 @@ New PIRs opened this cycle:
 
 ## Analysis Artifact Coverage Report
 
-This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run (split between "missing on disk" and "present-but-filtered" so the report matches the rendered output).
+This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
@@ -1782,7 +1782,9 @@ This generated report reconciles the analysis folder with the article projection
 
 **Absent canonical ordered artifacts (missing from disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
 
-**Present-but-filtered canonical artifacts (on disk but omitted by alias de-duplication or empty-after-cleaning)**: None.
+**Present-but-empty canonical artifacts (on disk but body empty after cleaning)**: None.
+
+**Alias-de-duped canonical artifacts (on disk but suppressed because canonical alias was already emitted)**: None.
 
 ## Article Sources
 

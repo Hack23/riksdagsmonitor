@@ -244,6 +244,17 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
     if (aliasGroupHasEmittedMember(file)) return false;
     return !rootArtifactSet.has(file);
   });
+  // Files present on disk but skipped because another alias-group member
+  // was already emitted. Tracked separately so the report is accurate:
+  // these are not "absent" (the file exists) but they are not emitted
+  // either — the canonical alias wins, and only that alias is visible.
+  const aliasDedupedArtifacts = AGGREGATION_ORDER.filter((file) => {
+    if (file === 'executive-brief.md') return false;
+    if (!rootArtifactSet.has(file)) return false;
+    if (emittedRootSet.has(file)) return false;
+    return aliasGroupHasEmittedMember(file);
+  });
+  // Files present on disk but trimmed to an empty body by cleanArtifactBody().
   const presentButFiltered = AGGREGATION_ORDER.filter((file) => {
     if (file === 'executive-brief.md') return false;
     if (!rootArtifactSet.has(file)) return false;
@@ -259,6 +270,7 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
     supportingDataArtifacts,
     absentOrderedArtifacts,
     presentButFilteredArtifacts: presentButFiltered,
+    aliasDedupedArtifacts,
   }));
 
   const sourcesAppendix = buildSourcesAppendix(used, subfolderRepoRelPath, supportingDataArtifacts);

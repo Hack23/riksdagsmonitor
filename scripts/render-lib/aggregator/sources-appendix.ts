@@ -68,12 +68,21 @@ export interface ArtifactCoverageReportInput {
   /** Canonical artifacts that never existed on disk. */
   readonly absentOrderedArtifacts: readonly string[];
   /**
-   * Canonical artifacts that existed on disk but were filtered out of
-   * the article projection (empty body after cleaning, or skipped via
-   * alias de-duplication). Optional for backwards compatibility with
-   * older callers; defaults to an empty list.
+   * Canonical artifacts present on disk but whose body was trimmed to
+   * empty by `cleanArtifactBody()` — the file existed but contributed
+   * nothing to the article projection. Does NOT include alias-de-duped
+   * files (those are tracked in `aliasDedupedArtifacts`).
+   * Optional; defaults to an empty list.
    */
   readonly presentButFilteredArtifacts?: readonly string[];
+  /**
+   * Canonical artifacts present on disk but suppressed because another
+   * member of the same filename-alias group was already emitted first.
+   * The canonical alias is visible in the article; the skipped variant
+   * is surfaced here for audit completeness.
+   * Optional; defaults to an empty list.
+   */
+  readonly aliasDedupedArtifacts?: readonly string[];
 }
 
 export function buildArtifactCoverageReport(input: ArtifactCoverageReportInput): string {
@@ -85,7 +94,7 @@ export function buildArtifactCoverageReport(input: ArtifactCoverageReportInput):
   return [
     '## Analysis Artifact Coverage Report',
     '',
-    'This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run (split between "missing on disk" and "present-but-filtered" so the report matches the rendered output).',
+    'This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run.',
     '',
     '| Coverage area | Count | Reader-facing treatment |',
     '|---|---:|---|',
@@ -95,6 +104,8 @@ export function buildArtifactCoverageReport(input: ArtifactCoverageReportInput):
     '',
     `**Absent canonical ordered artifacts (missing from disk)**: ${fmt(input.absentOrderedArtifacts)}`,
     '',
-    `**Present-but-filtered canonical artifacts (on disk but omitted by alias de-duplication or empty-after-cleaning)**: ${fmt(input.presentButFilteredArtifacts ?? [])}`,
+    `**Present-but-empty canonical artifacts (on disk but body empty after cleaning)**: ${fmt(input.presentButFilteredArtifacts ?? [])}`,
+    '',
+    `**Alias-de-duped canonical artifacts (on disk but suppressed because canonical alias was already emitted)**: ${fmt(input.aliasDedupedArtifacts ?? [])}`,
   ].join('\n');
 }
