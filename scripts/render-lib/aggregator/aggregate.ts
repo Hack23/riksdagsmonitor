@@ -43,6 +43,15 @@ import { readBlufParagraph, readFirstParagraph, truncateToSentenceBoundary } fro
 import { cleanArticleTitle, readFirstHeading, titleFromBluf } from './seo/title.js';
 import { buildArtifactCoverageReport, buildSourcesAppendix } from './sources-appendix.js';
 
+const EXCLUDED_SUPPORTING_DATA_DIRS = new Set(['pass1']);
+
+function isExcludedSupportingDataPath(rel: string): boolean {
+  for (const dir of EXCLUDED_SUPPORTING_DATA_DIRS) {
+    if (rel === dir || rel.startsWith(`${dir}/`)) return true;
+  }
+  return false;
+}
+
 /**
  * Inputs to {@link aggregateAnalysis}. All four required fields provide
  * the filesystem and metadata context; the optional config fields allow
@@ -173,7 +182,9 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
         const full = path.join(dir, entry.name);
         const rel = prefix ? `${prefix}/${entry.name}` : entry.name;
         if (entry.isDirectory()) {
-          if (rel === 'pass1' || rel.startsWith('pass1/')) continue;
+          // Pass-1 drafts are superseded by the Pass-2 audited artifacts and
+          // must not be surfaced as reader-facing supporting data.
+          if (isExcludedSupportingDataPath(rel)) continue;
           walk(full, rel);
         } else if (/\.json$/i.test(entry.name)) {
           out.push(rel);

@@ -561,6 +561,8 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
     const after = text.slice(guideHeadingMatch.index + guideHeadingMatch[0].length);
     const stop = after.search(/^##\s+\S/m);
     const region = stop === -1 ? after : after.slice(0, stop);
+    // Match legacy `| [Label]...` rows and the current icon-first
+    // `| 📊 | [Label]...` Reader Guide table shape.
     const dataRows = region.match(/^\|\s*(?:[^|\n]+\|\s*)?\[/gm) ?? [];
     if (dataRows.length === 0) {
       violations.push({

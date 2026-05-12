@@ -291,6 +291,7 @@ describe('render-lib — AGGREGATION_ORDER', () => {
     const idxKJ = AGGREGATION_ORDER.indexOf('intelligence-assessment.md');
     const idxScoring = AGGREGATION_ORDER.indexOf('significance-scoring.md');
     const idxStakeholders = AGGREGATION_ORDER.indexOf('stakeholder-perspectives.md');
+    const idxStakeholderImpactAlias = AGGREGATION_ORDER.indexOf('stakeholder-impact.md');
     const idxCoalition = AGGREGATION_ORDER.indexOf('coalition-mathematics.md');
     const idxVoter = AGGREGATION_ORDER.indexOf('voter-segmentation.md');
     const idxForward = AGGREGATION_ORDER.indexOf('forward-indicators.md');
@@ -310,7 +311,8 @@ describe('render-lib — AGGREGATION_ORDER', () => {
     // ranking and per-document expansion (which is injected by
     // aggregate.ts after significance-scoring, not via this array).
     expect(idxStakeholders).toBe(idxScoring + 1);
-    expect(idxCoalition).toBeGreaterThan(idxStakeholders);
+    expect(idxStakeholderImpactAlias).toBe(idxStakeholders + 1);
+    expect(idxCoalition).toBe(idxStakeholderImpactAlias + 1);
     expect(idxVoter).toBe(idxCoalition + 1);
 
     // Phase D — Forward trajectory follows the actors cluster.
