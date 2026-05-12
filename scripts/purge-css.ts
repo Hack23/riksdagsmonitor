@@ -195,12 +195,7 @@ async function purge(distDir: string): Promise<PurgeStat[]> {
   for (const cssPath of cssTargets) {
     const before = (await fs.stat(cssPath)).size;
     const result = await new PurgeCSS().purge({
-      content: [
-        ...htmlFiles.map((f) => ({ raw: '', extension: 'html', filename: f })),
-        ...jsFiles.map((f) => ({ raw: '', extension: 'js', filename: f })),
-        ...srcJs.map((f) => ({ raw: '', extension: 'js', filename: f })),
-        ...srcTs.map((f) => ({ raw: '', extension: 'ts', filename: f })),
-      ].map(({ filename }) => filename),
+      content: [...htmlFiles, ...jsFiles, ...srcJs, ...srcTs],
       css: [cssPath],
       safelist,
       defaultExtractor: (content) =>

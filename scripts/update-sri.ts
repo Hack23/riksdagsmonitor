@@ -85,7 +85,10 @@ async function collectHtml(dir: string, out: string[] = []): Promise<string[]> {
 
 /**
  * Update the SRI `integrity` attribute for the given CSS basename in a
- * single HTML file.  Returns `true` when the file was rewritten.
+ * single HTML file.  Returns:
+ *   - `'updated'`  when the file was rewritten with a new hash,
+ *   - `'current'`  when the file already has the correct hash (no write needed),
+ *   - `'absent'`   when the file has no reference to this stylesheet.
  *
  * Matches link tags of the form (produced by vite-plugin-static-pages.js):
  *   href="[optional ../]assets/styles-<hash>.css"
@@ -100,7 +103,7 @@ async function updateIntegrityInFile(
   htmlPath: string,
   cssBasename: string,
   newIntegrity: string,
-): Promise<boolean> {
+): Promise<'updated' | 'current' | 'absent'> {
   const original = await fs.readFile(htmlPath, 'utf8');
   // Match href="…<cssBasename>…" … integrity="sha384-…" inside a <link> tag.
   const escapedName = cssBasename.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -109,14 +112,17 @@ async function updateIntegrityInFile(
       `(integrity\\s*=\\s*")sha384-[A-Za-z0-9+/=]+(")`,
     'gi',
   );
+  if (!linkTagRe.test(original)) return 'absent';
+  // Reset lastIndex after the test()
+  linkTagRe.lastIndex = 0;
   const updated = original.replace(
     linkTagRe,
     (_m: string, p1: string, p2: string, p3: string) =>
       `${p1}${p2}${newIntegrity}${p3}`,
   );
-  if (updated === original) return false;
+  if (updated === original) return 'current';
   await fs.writeFile(htmlPath, updated, 'utf8');
-  return true;
+  return 'updated';
 }
 
 export async function updateSri(distDir: string): Promise<SriResult> {
@@ -175,20 +181,37 @@ export async function updateSri(distDir: string): Promise<SriResult> {
   }
 
   /* 4. Rewrite all HTML files in parallel (bounded by concurrency 20) */
-  let updatedHtml = 0;
-  let skippedHtml = 0;
+  let updatedHtml = 0;  // files where integrity was replaced with a new hash
+  let currentHtml = 0; // files that already had the correct hash (no write needed)
+  let skippedHtml = 0; // files with no reference to this stylesheet
   const concurrency = 20;
   let cursor = 0;
   async function worker(): Promise<void> {
     while (cursor < htmlFiles.length) {
       const f = htmlFiles[cursor++];
       if (f === undefined) return;
-      const changed = await updateIntegrityInFile(f, cssBasename, newIntegrity);
-      if (changed) updatedHtml++;
+      const status = await updateIntegrityInFile(f, cssBasename, newIntegrity);
+      if (status === 'updated') updatedHtml++;
+      else if (status === 'current') currentHtml++;
       else skippedHtml++;
     }
   }
   await Promise.all(Array.from({ length: concurrency }, worker));
+
+  /* Fail fast if no HTML references this stylesheet at all — this means either:
+   *   a) No page links to the hashed stylesheet (corpus drift), or
+   *   b) The HTML minifier changed quoting/attribute order and the regex
+   *      no longer matches.
+   * Either way, leaving stale integrity attributes in place would cause
+   * every browser to block the stylesheet, so we must not silently succeed. */
+  if (updatedHtml === 0 && currentHtml === 0) {
+    throw new Error(
+      `[update-sri] No HTML files reference ${cssBasename} with an integrity attribute. ` +
+        `Integrity attributes may be stale. ` +
+        `Check that at least one HTML page references this stylesheet ` +
+        `with an integrity attribute.`,
+    );
+  }
 
   return {
     cssFile: path.relative(projectRoot, cssPath),
