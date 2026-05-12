@@ -263,6 +263,31 @@ jobs:
             echo "⚠️  No js/ directory found — skipping"
           fi
 
+      # ── CSS purging ──────────────────────────────────────────────
+      # Strip selectors that no built page (HTML, hashed JS bundle,
+      # source TS) actually references. Targets only the two CSS
+      # filenames that ship to S3 (dist/styles.css and the Vite-hashed
+      # dist/assets/styles-*.css), so all <link> hrefs continue to
+      # resolve unchanged.  Lighthouse flagged ~266 KiB of unused CSS
+      # on the homepage — the purge typically recovers ≥80% of that
+      # before the minify pass shrinks the rest.
+      #
+      # Runs AFTER the docs/ and js/ copy so the purger sees every
+      # script that may reference a class name dynamically (e.g.
+      # /js/theme-toggle.js toggling `dark-mode`/`light-mode`).
+      - name: Purge unused CSS
+        run: npx tsx scripts/purge-css.ts dist
+
+      # ── HTML / CSS / JS minification ─────────────────────────────
+      # Run the `minify` (coderaiser/minify) package directly on the
+      # runner host — no Docker, no apt-get, no workspace staging.
+      # Minifies every .html / .css / .js / .mjs under dist/ in place.
+      # Filenames are preserved so cache headers, SRI hashes, CloudFront
+      # origin paths and per-page <link>/<script> references all keep
+      # working unchanged.
+      - name: Minify HTML/CSS/JS
+        run: npx tsx scripts/minify-dist.ts dist
+
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@d979d5b3a71173a29b74b5b88418bfda9437d885 # v6.1.1
         with:
