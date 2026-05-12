@@ -231,6 +231,12 @@ jobs:
     name: Node.js Nightly Compat
     runs-on: ubuntu-latest
     continue-on-error: true
+    # Bound the whole job so a hung checkout/fetch (transient GitHub-hosted
+    # runner flake — see PR #2428 run 25737016620 where `git fetch` stalled
+    # 11 min until the runner received a shutdown signal) fails fast and
+    # cleanly via the job-level `continue-on-error: true`, instead of
+    # consuming the default 360-min budget and waiting for an external kill.
+    timeout-minutes: 10
     
     steps:
       - name: Harden Runner
@@ -247,6 +253,10 @@ jobs:
       
       - name: Checkout code
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        # Bound the checkout step itself so a hung `git fetch` (the
+        # documented failure mode on the previous run) fails inside the
+        # job's 10-minute envelope rather than dragging out the whole job.
+        timeout-minutes: 5
       
       - name: Resolve latest Node.js nightly version
         id: nightly
