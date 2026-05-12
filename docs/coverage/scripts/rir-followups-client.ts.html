@@ -635,14 +635,7 @@
 <a name='L570'></a><a href='#L570'>570</a>
 <a name='L571'></a><a href='#L571'>571</a>
 <a name='L572'></a><a href='#L572'>572</a>
-<a name='L573'></a><a href='#L573'>573</a>
-<a name='L574'></a><a href='#L574'>574</a>
-<a name='L575'></a><a href='#L575'>575</a>
-<a name='L576'></a><a href='#L576'>576</a>
-<a name='L577'></a><a href='#L577'>577</a>
-<a name='L578'></a><a href='#L578'>578</a>
-<a name='L579'></a><a href='#L579'>579</a>
-<a name='L580'></a><a href='#L580'>580</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L573'></a><a href='#L573'>573</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -812,7 +805,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
@@ -848,7 +840,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -859,12 +850,10 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -933,7 +922,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1022,7 +1010,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1138,7 +1125,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">20x</span>
@@ -1386,13 +1372,12 @@ export function calculateSkrivelseDeadline(
     throw new RangeError(`Invalid publish_date: ${publishDate}`);
   }
   const year = pub.getUTCFullYear();
-  const month = pub.getUTCMonth(); // 0-indexed
+  const month = pub.getUTCMonth();
   const day = pub.getUTCDate();
 &nbsp;
   const deadlineYear = year + Math.floor((month + months) / 12);
-  const deadlineMonth = (month + months) % 12; // 0-indexed
+  const deadlineMonth = (month + months) % 12;
 &nbsp;
-  // Clamp to last day of deadline month
   const daysInDeadlineMonth = new Date(Date.UTC(deadlineYear, deadlineMonth + 1, 0)).getUTCDate();
   const deadlineDay = Math.min(day, daysInDeadlineMonth);
 &nbsp;
@@ -1427,7 +1412,6 @@ export function deriveResponseStatus(
 ): RirResponseStatus {
   const now = typeof asOf === 'string' ? new Date(asOf + 'T00:00:00Z') : asOf;
 &nbsp;
-  // Rule 1: a recorded skrivelse ID is the canonical signal of a response.
   if (record.response_skrivelse_id) {
     if (
       record.gov_response_status === 'PARTIAL' ||
@@ -1438,7 +1422,6 @@ export function deriveResponseStatus(
     return 'RESPONDED';
   }
 &nbsp;
-  // Rule 2: no response yet — check deadline.
   if (record.skrivelse_deadline) {
     const deadline = new Date(record.skrivelse_deadline + 'T00:00:00Z');
     if (now &gt; deadline) {
@@ -1446,7 +1429,6 @@ export function deriveResponseStatus(
     }
   }
 &nbsp;
-  // Rule 3: default.
   return 'PENDING';
 }
 &nbsp;
@@ -1512,7 +1494,6 @@ export function detectOverdueAlerts(
     }
   }
 &nbsp;
-  // Sort by days_overdue descending (most overdue first)
   return alerts.sort((a, b) =&gt; b.days_overdue - a.days_overdue);
 }
 &nbsp;
@@ -1607,7 +1588,6 @@ export function injectRirTableIntoDocument(
     );
   }
 &nbsp;
-  // No existing markers — append to end
   return documentContent.trimEnd() + '\n\n' + block + '\n';
 }
 &nbsp;
@@ -1719,7 +1699,6 @@ export function validateRirRecord(record: RirFollowUpRecord): readonly string[] 
     errors.push('response_skrivelse_id must be a string or null');
   }
 &nbsp;
-  // Consistency: RESPONDED requires a response_skrivelse_id
   if (record.gov_response_status === 'RESPONDED' &amp;&amp; !record.response_skrivelse_id) {
     errors.push('RESPONDED status requires response_skrivelse_id to be set');
   }
@@ -1807,7 +1786,7 @@ function defaultWriteFileFn(path: string, data: string, encoding: BufferEncoding
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-11T11:12:36.555Z
+                at 2026-05-12T10:35:32.093Z
             </div>
         <script src="../prettify.js"></script>
         <script>

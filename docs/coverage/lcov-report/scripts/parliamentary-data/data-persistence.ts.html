@@ -731,15 +731,7 @@
 <a name='L666'></a><a href='#L666'>666</a>
 <a name='L667'></a><a href='#L667'>667</a>
 <a name='L668'></a><a href='#L668'>668</a>
-<a name='L669'></a><a href='#L669'>669</a>
-<a name='L670'></a><a href='#L670'>670</a>
-<a name='L671'></a><a href='#L671'>671</a>
-<a name='L672'></a><a href='#L672'>672</a>
-<a name='L673'></a><a href='#L673'>673</a>
-<a name='L674'></a><a href='#L674'>674</a>
-<a name='L675'></a><a href='#L675'>675</a>
-<a name='L676'></a><a href='#L676'>676</a>
-<a name='L677'></a><a href='#L677'>677</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L669'></a><a href='#L669'>669</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -902,9 +894,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">98x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">98x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -991,7 +981,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">28x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">28x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -999,7 +988,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">28x</span>
 <span class="cline-any cline-yes">28x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">28x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -1106,11 +1094,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1147,7 +1132,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1578,13 +1562,11 @@ function writeDocumentAndMeta(
   metadata: PersistenceMetadata,
 ): void {
   ensureDir(dir);
-  // Write raw data only — deterministic across parallel workflow runs
   fs.writeFileSync(
     path.join(dir, baseFilename),
     JSON.stringify(doc, null, 2),
     'utf8',
   );
-  // Write provenance sidecar — safe to overwrite (non-conflicting)
   const metaFilename = baseFilename.replace(/\.json$/, '.meta.json');
   fs.writeFileSync(
     path.join(dir, metaFilename),
@@ -1667,7 +1649,6 @@ export function persistDownloadedData(
       }
 &nbsp;
       let docId = resolveDocId(doc, i);
-      // Collision avoidance: append suffix if ID already used in this batch
       if (seenIds.has(docId)) {
         let suffix = 1;
         while (seenIds.has(`${docId}-${suffix}`)) suffix++;
@@ -1676,7 +1657,6 @@ export function persistDownloadedData(
       seenIds.add(docId);
       const filename = `${docId}.json`;
 &nbsp;
-      // For date-stamped vote ballots, also persist under votes/{date}/
       if (docType === 'votes' &amp;&amp; doc.datum) {
         const voteDate = typeof doc.datum === 'string'
           ? doc.datum.slice(0, 10)
@@ -1782,11 +1762,8 @@ export function persistMPs(
  * but removes slashes, null bytes, and dots-only sequences.
  */
 function sanitizePathSegment(segment: string): string {
-  // Remove path separators and null bytes
   let safe = segment.replace(/[/\\:\0]/g, '_');
-  // Collapse dots-only segments (e.g. "..", ".")
   if (/^\.+$/.test(safe)) safe = '_dots_';
-  // Remove characters that are unsafe in paths but preserve underscores
   safe = safe.replace(/[^a-zA-Z0-9_\-åäöÅÄÖ]/g, '_')
     .replace(/_+/g, '_')
     .replace(/^_|_$/g, '')
@@ -1828,7 +1805,6 @@ export function persistMCPResponse(
     'utf8',
   );
 &nbsp;
-  // Derive riksmöte: explicit param &gt; call.params.rm &gt; empty
   const resolvedRiksmote = riksmote
     ?? (typeof call.params.rm === 'string' ? call.params.rm : '');
 &nbsp;
@@ -2098,7 +2074,7 @@ export function getDataRoot(): string {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-11T11:12:36.650Z
+                at 2026-05-12T10:35:32.189Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
