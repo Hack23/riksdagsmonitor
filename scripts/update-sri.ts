@@ -1,6 +1,6 @@
 /**
- * Re-compute SRI integrity hashes for the hashed CSS bundle after the
- * deploy-time purge + minify passes have rewritten its content.
+ * Re-compute SRI integrity hashes for hashed CSS and JS bundles after the
+ * deploy-time purge + minify passes have rewritten their content.
  *
  * Background
  * ----------
@@ -8,17 +8,27 @@
  * `dist/assets/styles-*.css` at build time and injects it as
  *   `integrity="sha384-<HASH>"  crossorigin="anonymous"`
  * into every `<link rel="stylesheet" …>` emitted by the static-pages
- * plugin.  After `scripts/purge-css.ts` and `scripts/minify-dist.ts`
- * rewrite that stylesheet, the stored hash is stale.  Browsers enforce
- * SRI by blocking the resource when the hash doesn't match — so every
- * page would silently lose its stylesheet if this step were omitted.
+ * plugin.
+ *
+ * In parallel, `vite-plugin-sri-gen` injects integrity attributes on the
+ * `<link rel="modulepreload" …>` tags Vite emits for hashed JS chunks
+ * under `dist/assets/js/` (chunks like `dashboards/anomaly-detection-*.js`
+ * pulled in by the homepage and dashboard pages).
+ *
+ * After `scripts/purge-css.ts` and `scripts/minify-dist.ts` rewrite both
+ * the stylesheet and the JS chunks, every stored hash is stale.  Browsers
+ * enforce SRI by blocking the resource when the hash doesn't match — so
+ * pages would silently lose styling AND the homepage would block ~12
+ * dashboard module preloads (see issue: "Browser errors were logged to
+ * the console").
  *
  * This script:
- *   1. Finds `dist/assets/styles-*.css` (exactly one file expected).
- *   2. Computes its fresh `sha384` digest.
+ *   1. Finds `dist/assets/styles-*.css` (exactly one file expected) and
+ *      every hashed JS chunk under `dist/assets/js/`.
+ *   2. Computes fresh `sha384` digests for each.
  *   3. Walks every `dist/**\/*.html` file.
- *   4. Replaces every `integrity="sha384-<OLD>"` in a `<link>` tag whose
- *      `href` references the hashed stylesheet with the new digest.
+ *   4. Replaces every stale `integrity="sha384-<OLD>"` whose adjacent
+ *      `href`/`src` attribute references one of the known hashed assets.
  *      Tags referencing other assets are left untouched.
  *
  * Filenames and paths are NOT changed, so CloudFront origin paths and the
@@ -46,6 +56,10 @@ interface SriResult {
   newIntegrity: string;
   updatedHtml: number;
   skippedHtml: number;
+  /** Number of hashed JS chunks discovered under `dist/assets/js/`. */
+  jsBundles: number;
+  /** Number of `<link rel="modulepreload">` / `<script src=…>` integrity attrs rewritten. */
+  jsIntegrityRewrites: number;
 }
 
 /**
@@ -84,6 +98,61 @@ async function collectHtml(dir: string, out: string[] = []): Promise<string[]> {
 }
 
 /**
+ * Recursively collect every hashed JS bundle under `assetsJsDir`.
+ * Returns paths relative to `assetsJsDir` (e.g. `anomaly-detection-BYmYhLL4.js`
+ * or `nested/sub-XYZ.js`) so we can match them against `href="/assets/js/…"`.
+ */
+async function collectHashedJs(
+  assetsJsDir: string,
+  base = '',
+  out: string[] = [],
+): Promise<string[]> {
+  let entries: import('node:fs').Dirent[];
+  try {
+    entries = await fs.readdir(assetsJsDir, { withFileTypes: true });
+  } catch {
+    return out;
+  }
+  for (const entry of entries) {
+    const rel = base ? `${base}/${entry.name}` : entry.name;
+    if (entry.isDirectory()) {
+      await collectHashedJs(path.join(assetsJsDir, entry.name), rel, out);
+    } else if (entry.isFile() && entry.name.toLowerCase().endsWith('.js')) {
+      // Only keep files that look hashed: name-<hash>.js. Vite emits an
+      // 8-char alphanumeric hash by default; we accept ≥6 to stay robust
+      // against Vite config changes (e.g. `output.entryFileNames`
+      // shortening the hash). Anything shorter is almost certainly an
+      // unhashed bundle and should not carry an integrity attribute.
+      if (/-[A-Za-z0-9_-]{6,}\.js$/i.test(entry.name)) {
+        out.push(rel);
+      }
+    }
+  }
+  return out;
+}
+
+/**
+ * Extract the file basename from a URL or path. Strips query strings and
+ * fragments before returning the last `/`-separated segment. Returns
+ * `undefined` for inputs that don't yield a non-empty basename — callers
+ * use this to gate further integrity processing safely.
+ *
+ * Examples:
+ *   `/assets/js/anomaly-detection-BYmYhLL4.js?v=1` → `anomaly-detection-BYmYhLL4.js`
+ *   `assets/js/main.js#frag`                       → `main.js`
+ *   `/`                                            → `undefined`
+ *   `''`                                           → `undefined`
+ */
+function extractBasename(url: string): string | undefined {
+  if (!url) return undefined;
+  const noQuery = url.split('?')[0] ?? '';
+  const noFrag = noQuery.split('#')[0] ?? '';
+  const segments = noFrag.split('/');
+  const last = segments[segments.length - 1];
+  return last && last.length > 0 ? last : undefined;
+}
+
+/**
  * Update the SRI `integrity` attribute for the given CSS basename in a
  * single HTML file.  Returns:
  *   - `'updated'`  when the file was rewritten with a new hash,
@@ -103,8 +172,11 @@ async function updateIntegrityInFile(
   htmlPath: string,
   cssBasename: string,
   newIntegrity: string,
-): Promise<'updated' | 'current' | 'absent'> {
+  jsHashByBasename: ReadonlyMap<string, string>,
+): Promise<{ status: 'updated' | 'current' | 'absent'; jsRewrites: number }> {
   const original = await fs.readFile(htmlPath, 'utf8');
+
+  // ── CSS pass ────────────────────────────────────────────────────────────
   // Match href=["']?…<cssBasename>…["']? … integrity=["']?sha384-…["']?
   // inside a <link> tag.  The HTML minifier (coderaiser/minify) strips
   // quotes from attributes whose values contain no special characters,
@@ -115,17 +187,62 @@ async function updateIntegrityInFile(
       `(integrity\\s*=\\s*"?)sha384-[A-Za-z0-9+/=]+("?)`,
     'gi',
   );
-  if (!linkTagRe.test(original)) return 'absent';
-  // Reset lastIndex after the test()
-  linkTagRe.lastIndex = 0;
-  const updated = original.replace(
-    linkTagRe,
-    (_m: string, p1: string, p2: string, p3: string) =>
-      `${p1}${p2}${newIntegrity}${p3}`,
-  );
-  if (updated === original) return 'current';
-  await fs.writeFile(htmlPath, updated, 'utf8');
-  return 'updated';
+  let next = original;
+  const hasCssRef = linkTagRe.test(original);
+  if (hasCssRef) {
+    linkTagRe.lastIndex = 0;
+    next = next.replace(
+      linkTagRe,
+      (_m: string, p1: string, p2: string, p3: string) =>
+        `${p1}${p2}${newIntegrity}${p3}`,
+    );
+  }
+
+  // ── JS pass ─────────────────────────────────────────────────────────────
+  // Rewrite integrity for every <link rel="modulepreload" … integrity=…> or
+  // <script src="…" … integrity=…> tag whose href/src basename matches a
+  // hashed JS chunk under dist/assets/js/. Both quoted and unquoted forms
+  // must be accepted (the minifier strips quotes).
+  let jsRewrites = 0;
+  if (jsHashByBasename.size > 0) {
+    // One regex catches every <link>/<script> tag (with attrs in any order)
+    // that carries an integrity attribute. We then inspect each match to
+    // resolve its href/src basename and decide whether to substitute.
+    const tagRe = /<(link|script)\b[^>]*\bintegrity\s*=\s*"?sha384-[A-Za-z0-9+/=]+"?[^>]*>/gi;
+    next = next.replace(tagRe, (tag) => {
+      const hrefMatch =
+        /\bhref\s*=\s*"([^"]+)"/i.exec(tag) ??
+        /\bhref\s*=\s*([^\s>]+)/i.exec(tag);
+      const srcMatch =
+        /\bsrc\s*=\s*"([^"]+)"/i.exec(tag) ??
+        /\bsrc\s*=\s*([^\s>]+)/i.exec(tag);
+      const url = hrefMatch?.[1] ?? srcMatch?.[1];
+      if (!url) return tag;
+      const basename = extractBasename(url);
+      if (!basename) return tag;
+      const newHash = jsHashByBasename.get(basename);
+      if (!newHash) return tag;
+      const newAttr = `sha384-${newHash}`;
+      const replaced = tag.replace(
+        /(\bintegrity\s*=\s*)("?)sha384-[A-Za-z0-9+/=]+("?)/i,
+        (_m, p1: string, q1: string, q2: string) => `${p1}${q1}${newAttr}${q2}`,
+      );
+      if (replaced !== tag) jsRewrites += 1;
+      return replaced;
+    });
+  }
+
+  if (next === original) {
+    return {
+      status: hasCssRef ? 'current' : 'absent',
+      jsRewrites: 0,
+    };
+  }
+  await fs.writeFile(htmlPath, next, 'utf8');
+  return {
+    status: hasCssRef ? 'updated' : 'absent',
+    jsRewrites,
+  };
 }
 
 export async function updateSri(distDir: string): Promise<SriResult> {
@@ -160,6 +277,22 @@ export async function updateSri(distDir: string): Promise<SriResult> {
   const newHash = sha384Base64(cssBuf);
   const newIntegrity = `sha384-${newHash}`;
 
+  /* 2b. Compute fresh digests for every hashed JS chunk under assets/js/.
+   * Vite emits chunks like `assets/js/anomaly-detection-BYmYhLL4.js` and
+   * `vite-plugin-sri-gen` injects an integrity attribute into the
+   * `<link rel="modulepreload" …>` tag for each one. The minify pass
+   * rewrites those JS bytes — every hash is therefore stale until we
+   * recompute it here. */
+  const assetsJsDir = path.join(assetsDir, 'js');
+  const jsRelPaths = await collectHashedJs(assetsJsDir);
+  const jsHashByBasename = new Map<string, string>();
+  await Promise.all(
+    jsRelPaths.map(async (rel) => {
+      const buf = await fs.readFile(path.join(assetsJsDir, rel));
+      jsHashByBasename.set(path.basename(rel), sha384Base64(buf));
+    }),
+  );
+
   /* 3. Scan HTML and count unique old hashes before rewriting */
   const htmlFiles = await collectHtml(distDir);
   if (htmlFiles.length === 0) {
@@ -184,19 +317,26 @@ export async function updateSri(distDir: string): Promise<SriResult> {
   }
 
   /* 4. Rewrite all HTML files in parallel (bounded by concurrency 20) */
-  let updatedHtml = 0;  // files where integrity was replaced with a new hash
-  let currentHtml = 0; // files that already had the correct hash (no write needed)
+  let updatedHtml = 0;  // files where CSS integrity was replaced with a new hash
+  let currentHtml = 0; // files that already had the correct CSS hash (no write needed)
   let skippedHtml = 0; // files with no reference to this stylesheet
+  let jsIntegrityRewrites = 0; // total number of JS modulepreload/script integrity attrs rewritten
   const concurrency = 20;
   let cursor = 0;
   async function worker(): Promise<void> {
     while (cursor < htmlFiles.length) {
       const f = htmlFiles[cursor++];
       if (f === undefined) return;
-      const status = await updateIntegrityInFile(f, cssBasename, newIntegrity);
-      if (status === 'updated') updatedHtml++;
-      else if (status === 'current') currentHtml++;
+      const result = await updateIntegrityInFile(
+        f,
+        cssBasename,
+        newIntegrity,
+        jsHashByBasename,
+      );
+      if (result.status === 'updated') updatedHtml++;
+      else if (result.status === 'current') currentHtml++;
       else skippedHtml++;
+      jsIntegrityRewrites += result.jsRewrites;
     }
   }
   await Promise.all(Array.from({ length: concurrency }, worker));
@@ -222,6 +362,8 @@ export async function updateSri(distDir: string): Promise<SriResult> {
     newIntegrity,
     updatedHtml,
     skippedHtml,
+    jsBundles: jsHashByBasename.size,
+    jsIntegrityRewrites,
   };
 }
 
@@ -235,6 +377,8 @@ async function main(): Promise<void> {
   console.log(`  New integrity: ${result.newIntegrity}`);
   console.log(`  HTML updated:  ${result.updatedHtml}`);
   console.log(`  HTML skipped (no ref): ${result.skippedHtml}`);
+  console.log(`  JS bundles:    ${result.jsBundles}`);
+  console.log(`  JS integrity rewrites: ${result.jsIntegrityRewrites}`);
   console.log('✅ SRI update complete');
 }
 

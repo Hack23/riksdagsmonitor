@@ -423,6 +423,108 @@ describe('update-sri', () => {
 
     await fs.rm(fixture, { recursive: true, force: true });
   });
+
+  it('refreshes integrity for hashed JS modulepreload links after content changes', async () => {
+    const fixture = await fs.mkdtemp(path.join(os.tmpdir(), 'rm-sri-js-'));
+    const assetsDir = path.join(fixture, 'assets');
+    const assetsJsDir = path.join(assetsDir, 'js');
+    await fs.mkdir(assetsJsDir, { recursive: true });
+
+    // CSS bundle is required by updateSri's discovery — give it one with a
+    // matching integrity so the existing CSS-side guards stay green.
+    const css = '.a{color:red}\n';
+    const cssBasename = 'styles-AbCd1234.css';
+    await fs.writeFile(path.join(assetsDir, cssBasename), css, 'utf8');
+    const cssHash = createHash('sha384').update(Buffer.from(css)).digest('base64');
+    const cssIntegrity = `sha384-${cssHash}`;
+
+    // Two hashed JS chunks — one will be referenced from a modulepreload tag,
+    // the other from a <script src="…"> tag (both with stale integrity).
+    const initialJs1 = 'export const a=1;\n';
+    const initialJs2 = 'export const b=2;\n';
+    const js1Basename = 'anomaly-detection-BYmYhLL4.js';
+    const js2Basename = 'main-BFL_BFLA.js';
+    await fs.writeFile(path.join(assetsJsDir, js1Basename), initialJs1, 'utf8');
+    await fs.writeFile(path.join(assetsJsDir, js2Basename), initialJs2, 'utf8');
+    const oldJs1Hash = createHash('sha384').update(Buffer.from(initialJs1)).digest('base64');
+    const oldJs2Hash = createHash('sha384').update(Buffer.from(initialJs2)).digest('base64');
+    const oldJs1Integrity = `sha384-${oldJs1Hash}`;
+    const oldJs2Integrity = `sha384-${oldJs2Hash}`;
+
+    const homepage =
+      `<!DOCTYPE html><html><head>` +
+      `<link rel="stylesheet" href="assets/${cssBasename}" integrity="${cssIntegrity}" crossorigin="anonymous">` +
+      `<link rel="modulepreload" href="/assets/js/${js1Basename}" integrity="${oldJs1Integrity}" crossorigin="anonymous">` +
+      `<link rel="modulepreload" href="/assets/js/some-third-party.js" integrity="sha384-DO_NOT_TOUCH" crossorigin="anonymous">` +
+      `<script type="module" src="/assets/js/${js2Basename}" integrity="${oldJs2Integrity}" crossorigin="anonymous"></script>` +
+      `</head><body></body></html>\n`;
+    await fs.writeFile(path.join(fixture, 'index.html'), homepage, 'utf8');
+
+    // Simulate the deploy-time minify pass rewriting the JS bytes.
+    const newJs1 = 'export const a=1';
+    const newJs2 = 'export const b=2';
+    await fs.writeFile(path.join(assetsJsDir, js1Basename), newJs1, 'utf8');
+    await fs.writeFile(path.join(assetsJsDir, js2Basename), newJs2, 'utf8');
+    const expectedJs1Integrity =
+      `sha384-${createHash('sha384').update(Buffer.from(newJs1)).digest('base64')}`;
+    const expectedJs2Integrity =
+      `sha384-${createHash('sha384').update(Buffer.from(newJs2)).digest('base64')}`;
+
+    const result = await updateSri(fixture);
+
+    expect(result.jsBundles).toBe(2);
+    expect(result.jsIntegrityRewrites).toBe(2);
+
+    const updated = await fs.readFile(path.join(fixture, 'index.html'), 'utf8');
+    expect(updated).toContain(expectedJs1Integrity);
+    expect(updated).toContain(expectedJs2Integrity);
+    expect(updated).not.toContain(oldJs1Integrity);
+    expect(updated).not.toContain(oldJs2Integrity);
+    // The third-party preload's integrity must be left untouched —
+    // we only rewrite hashes for assets we own under dist/assets/js/.
+    expect(updated).toContain('sha384-DO_NOT_TOUCH');
+
+    await fs.rm(fixture, { recursive: true, force: true });
+  });
+
+  it('refreshes JS integrity in unquoted (post-minify) HTML attributes', async () => {
+    const fixture = await fs.mkdtemp(path.join(os.tmpdir(), 'rm-sri-js-unquoted-'));
+    const assetsDir = path.join(fixture, 'assets');
+    const assetsJsDir = path.join(assetsDir, 'js');
+    await fs.mkdir(assetsJsDir, { recursive: true });
+
+    const css = '.a{color:red}\n';
+    const cssBasename = 'styles-Mn0pQrSt.css';
+    await fs.writeFile(path.join(assetsDir, cssBasename), css, 'utf8');
+    const cssIntegrity = `sha384-${createHash('sha384').update(Buffer.from(css)).digest('base64')}`;
+
+    const initialJs = 'export const x=1;\n';
+    const jsBasename = 'coalition-dashboard-yoMiQHgv.js';
+    await fs.writeFile(path.join(assetsJsDir, jsBasename), initialJs, 'utf8');
+    const oldJsIntegrity =
+      `sha384-${createHash('sha384').update(Buffer.from(initialJs)).digest('base64')}`;
+
+    // Minified HTML form: unquoted attributes (coderaiser/minify output)
+    const minifiedHomepage =
+      `<link rel=stylesheet href=assets/${cssBasename} integrity=${cssIntegrity} crossorigin>` +
+      `<link rel=modulepreload href=/assets/js/${jsBasename} integrity=${oldJsIntegrity} crossorigin>`;
+    await fs.writeFile(path.join(fixture, 'index.html'), minifiedHomepage, 'utf8');
+
+    // Simulate JS rewrite by minify
+    const newJs = 'export const x=1';
+    await fs.writeFile(path.join(assetsJsDir, jsBasename), newJs, 'utf8');
+    const expectedJsIntegrity =
+      `sha384-${createHash('sha384').update(Buffer.from(newJs)).digest('base64')}`;
+
+    const result = await updateSri(fixture);
+
+    expect(result.jsIntegrityRewrites).toBe(1);
+    const updated = await fs.readFile(path.join(fixture, 'index.html'), 'utf8');
+    expect(updated).toContain(expectedJsIntegrity);
+    expect(updated).not.toContain(oldJsIntegrity);
+
+    await fs.rm(fixture, { recursive: true, force: true });
+  });
 });
 
 describe('budget.json — post-optimisation budgets', () => {
