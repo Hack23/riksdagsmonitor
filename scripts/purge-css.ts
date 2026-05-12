@@ -144,7 +144,28 @@ function buildSafelist() {
   };
 }
 
-async function purge(distDir: string): Promise<PurgeStat[]> {
+/**
+ * Options for {@link purge}.
+ */
+interface PurgeOptions {
+  /**
+   * When `true` (default, production behaviour), also scan the
+   * `js/` and `src/browser/` source trees in addition to the `dist/`
+   * output. This is the safety net described in the module header
+   * against tree-shaking eliminating runtime-toggled class strings.
+   *
+   * Tests against in-tree fixtures should pass `false` so the test
+   * stays decoupled from the main repo source corpus and remains
+   * deterministic if unrelated source files change.
+   */
+  scanSourceTree?: boolean;
+}
+
+async function purge(
+  distDir: string,
+  options: PurgeOptions = {},
+): Promise<PurgeStat[]> {
+  const { scanSourceTree = true } = options;
   const htmlExts: ReadonlySet<string> = new Set(['.html']);
   const jsExts: ReadonlySet<string> = new Set(['.js', '.mjs']);
   const cssExts: ReadonlySet<string> = new Set(['.css']);
@@ -152,11 +173,16 @@ async function purge(distDir: string): Promise<PurgeStat[]> {
   /* Collect content sources from the built output (HTML + emitted JS).
    * Adding the source `js/` and `src/browser/` directories captures any
    * class strings that survive minification but were rewritten in the
-   * built bundles. */
+   * built bundles. Tests opt out via `scanSourceTree: false` so the
+   * fixture is the only content corpus considered. */
   const htmlFiles = await walk(distDir, htmlExts);
   const jsFiles = await walk(distDir, jsExts);
-  const srcJs = await walk(path.join(projectRoot, 'js'), jsExts);
-  const srcTs = await walk(path.join(projectRoot, 'src', 'browser'), new Set(['.ts']));
+  const srcJs = scanSourceTree
+    ? await walk(path.join(projectRoot, 'js'), jsExts)
+    : [];
+  const srcTs = scanSourceTree
+    ? await walk(path.join(projectRoot, 'src', 'browser'), new Set(['.ts']))
+    : [];
 
   if (htmlFiles.length === 0) {
     throw new Error(

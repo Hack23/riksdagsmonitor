@@ -20,12 +20,14 @@
  * step browsers would block the stylesheet on every page load.
  *
  * Skips:
- *   - any source map (`*.map`) — already minified JSON, and rewriting
- *     would break the `//# sourceMappingURL=…` lookup;
- *   - any file with `.min.` in the basename — already minified;
- *   - the `cia-data/`, `dashboards/.*\\.csv`, `docs/coverage/` and
- *     `docs/test-results/` payloads, which are not text the runtime
- *     minifier knows how to compress.
+ *   - whole directories matched by `SKIP_DIRS` (`node_modules`, `.git`,
+ *     `.vite`, `cia-data`, `coverage`, `test-results`) — none of these
+ *     ship runtime-minifiable text;
+ *   - any file whose extension is not in the target set (`.html`,
+ *     `.css`, `.js`, `.mjs`) — so JSON, CSV, images, fonts, source
+ *     maps and the like are simply never collected by `collect()`;
+ *   - explicitly: source maps (`*.map`) and any file with `.min.` in
+ *     the basename (e.g. `mermaid.esm.min.mjs`) — already minified.
  *
  * Files that fail to parse are left untouched (and a warning is
  * printed) so a single broken page never aborts the entire deploy.

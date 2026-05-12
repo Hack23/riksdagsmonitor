@@ -21,6 +21,7 @@ import { createHash } from 'node:crypto';
 import path from 'node:path';
 import os from 'node:os';
 import { fileURLToPath } from 'node:url';
+import yaml from 'js-yaml';
 
 import { purge, buildSafelist } from '../scripts/purge-css';
 import { run as minifyRun } from '../scripts/minify-dist';
@@ -108,7 +109,9 @@ describe('purge-css', () => {
 
   it('purges unused selectors and keeps safelisted ones', async () => {
     if (!tmp) throw new Error('tmp fixture not initialised');
-    const stats = await purge(tmp);
+    // scanSourceTree: false so the test only considers the in-fixture
+    // HTML/JS as the content corpus — decouples from main repo source.
+    const stats = await purge(tmp, { scanSourceTree: false });
     // Both stylesheet targets are processed.
     expect(stats).toHaveLength(2);
     const root = stats.find((s) => s.file.endsWith('styles.css'));
@@ -144,7 +147,9 @@ describe('purge-css', () => {
   it('rejects when run against a directory with no HTML', async () => {
     const empty = await fs.mkdtemp(path.join(os.tmpdir(), 'rm-purge-empty-'));
     try {
-      await expect(purge(empty)).rejects.toThrow(/No HTML files/);
+      await expect(purge(empty, { scanSourceTree: false })).rejects.toThrow(
+        /No HTML files/,
+      );
     } finally {
       await fs.rm(empty, { recursive: true, force: true });
     }
@@ -154,7 +159,9 @@ describe('purge-css', () => {
     const noCss = await fs.mkdtemp(path.join(os.tmpdir(), 'rm-purge-no-css-'));
     try {
       await fs.writeFile(path.join(noCss, 'index.html'), '<html></html>', 'utf8');
-      await expect(purge(noCss)).rejects.toThrow(/No styles\.css targets/);
+      await expect(purge(noCss, { scanSourceTree: false })).rejects.toThrow(
+        /No styles\.css targets/,
+      );
     } finally {
       await fs.rm(noCss, { recursive: true, force: true });
     }
@@ -251,26 +258,55 @@ describe('minify-dist', () => {
 
 describe('deploy-s3 wiring', () => {
   it('invokes purge → minify → update-sri between dist verification and AWS deploy', async () => {
-    const yml = await fs.readFile(
+    const ymlText = await fs.readFile(
       path.join(REPO_ROOT, '.github', 'workflows', 'deploy-s3.yml'),
       'utf8',
     );
-    const purgeIdx = yml.indexOf('scripts/purge-css.ts');
-    const minifyIdx = yml.indexOf('scripts/minify-dist.ts');
-    const sriIdx = yml.indexOf('scripts/update-sri.ts');
-    const awsIdx = yml.indexOf('configure-aws-credentials');
-    const verifyIdx = yml.indexOf('Verify build artifacts');
-    expect(purgeIdx).toBeGreaterThan(0);
-    expect(minifyIdx).toBeGreaterThan(0);
-    expect(sriIdx).toBeGreaterThan(0);
-    expect(awsIdx).toBeGreaterThan(0);
-    expect(verifyIdx).toBeGreaterThan(0);
+    // Parse the workflow YAML so step ordering is asserted against the
+    // actual `steps[]` entries (name/run/uses), not raw substring
+    // positions in comments — refactors that move comments around no
+    // longer give false positives/negatives.
+    interface WorkflowStep {
+      name?: string;
+      run?: string;
+      uses?: string;
+    }
+    interface WorkflowJob {
+      steps?: WorkflowStep[];
+    }
+    interface ParsedWorkflow {
+      jobs?: Record<string, WorkflowJob>;
+    }
+    const parsed = yaml.load(ymlText) as ParsedWorkflow;
+    const allSteps: WorkflowStep[] = Object.values(parsed.jobs ?? {})
+      .flatMap((job) => job.steps ?? []);
+    const indexOfStep = (predicate: (s: WorkflowStep) => boolean): number =>
+      allSteps.findIndex(predicate);
+
+    const verifyIdx = indexOfStep((s) => s.name === 'Verify build artifacts');
+    const purgeIdx = indexOfStep((s) => !!s.run?.includes('scripts/purge-css.ts'));
+    const minifyIdx = indexOfStep((s) => !!s.run?.includes('scripts/minify-dist.ts'));
+    const sriIdx = indexOfStep((s) => !!s.run?.includes('scripts/update-sri.ts'));
+    const awsIdx = indexOfStep((s) =>
+      typeof s.uses === 'string' && s.uses.startsWith('aws-actions/configure-aws-credentials'),
+    );
+
+    expect(verifyIdx).toBeGreaterThanOrEqual(0);
+    expect(purgeIdx).toBeGreaterThanOrEqual(0);
+    expect(minifyIdx).toBeGreaterThanOrEqual(0);
+    expect(sriIdx).toBeGreaterThanOrEqual(0);
+    expect(awsIdx).toBeGreaterThanOrEqual(0);
     expect(verifyIdx).toBeLessThan(purgeIdx);
     expect(purgeIdx).toBeLessThan(minifyIdx);
     expect(minifyIdx).toBeLessThan(sriIdx);
     expect(sriIdx).toBeLessThan(awsIdx);
-    // No Docker action — all three steps must be plain run: invocations.
-    expect(yml).not.toMatch(/dra1ex\/minify-action/);
+
+    // No Docker action — the previous implementation used dra1ex/minify-action;
+    // assert no `uses:` step references it (parser-level, not substring).
+    const usesDra1ex = allSteps.some(
+      (s) => typeof s.uses === 'string' && s.uses.includes('dra1ex/minify-action'),
+    );
+    expect(usesDra1ex).toBe(false);
   });
 });
 
