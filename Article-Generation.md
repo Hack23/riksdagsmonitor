@@ -78,7 +78,7 @@ The article-generation pipeline exists to **turn Swedish public parliamentary ev
 | **Collection** | Fetch public parliamentary, government, statistical and economic evidence | `.github/prompts/03-data-download.md`, `scripts/download-parliamentary-data.ts`, `scripts/imf-fetch.ts` |
 | **Analysis** | Produce structured OSINT/INTOP assessments with evidence, uncertainty and color-coded Mermaid | `analysis/methodologies/`, `analysis/templates/`, `.github/prompts/04-analysis-pipeline.md` |
 | **Gate** | Enforce artifact presence, evidence quality, Mermaid coverage and Pass-2 improvement | `.github/prompts/05-analysis-gate.md` |
-| **Aggregation** | Convert the folder of analysis artifacts into canonical `article.md` | `scripts/aggregate-analysis.ts`, `scripts/render-lib/aggregator.ts` |
+| **Aggregation** | Convert the folder of analysis artifacts into canonical `article.md` | `scripts/aggregate-analysis.ts`, `scripts/render-lib/aggregator/` (barrel: `index.ts`, orchestrator: `aggregate.ts`) |
 | **Rendering** | Sanitize Markdown and build complete article HTML with SEO, language switcher and source footer | `scripts/render-articles.ts`, `scripts/render-lib/markdown.ts`, `article.ts`, `chrome.ts` |
 | **Publishing** | Build static assets and deploy with correct MIME types, cache headers and CloudFront invalidation | `package.json`, `vite.config.js`, `.github/workflows/deploy-s3.yml`, `scripts/deploy-s3.sh` |
 
@@ -514,7 +514,7 @@ npx tsx scripts/aggregate-analysis.ts --all
 
 ### Canonical political-intelligence order
 
-`AGGREGATION_ORDER` in [`scripts/render-lib/aggregator.ts`](scripts/render-lib/aggregator.ts) publishes sections in this order:
+`AGGREGATION_ORDER` in [`scripts/render-lib/aggregator/order.ts`](scripts/render-lib/aggregator/order.ts) (consumed by [`scripts/render-lib/aggregator/aggregate.ts`](scripts/render-lib/aggregator/aggregate.ts) via the [`scripts/render-lib/aggregator/`](scripts/render-lib/aggregator/) barrel) publishes sections in this order:
 
 0. Generated `Reader Intelligence Guide` — a deterministic navigation layer that surfaces BLUF, Key Judgments, significance, actors, forward indicators, scenarios, risks, context, critique and dok_id-level evidence before the technical appendix. Its audit row targets the strongest audit section actually present (`classification-results.md`, `political-classification.md`, `cross-reference-map.md`, `methodology-reflection.md`, or `data-download-manifest.md`) so no guide link points at a missing heading.
 1. `executive-brief.md`

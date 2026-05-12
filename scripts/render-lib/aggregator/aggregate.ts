@@ -225,18 +225,40 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
   const emittedRootMarkdownArtifacts = used.filter((file) => !file.startsWith('documents/'));
   const perDocumentArtifacts = used.filter((file) => file.startsWith('documents/'));
   const emittedRootSet = new Set(emittedRootMarkdownArtifacts);
-  const absentOrderedArtifacts = AGGREGATION_ORDER.filter((file) => {
-    if (file === 'executive-brief.md') return false;
+
+  // Two distinct "absent" axes:
+  //   1. missingFromDisk — canonical artifact filename never appeared in
+  //      the subfolder (the analysis run never produced it).
+  //   2. presentButFiltered — the file existed on disk but was trimmed
+  //      to an empty body by `cleanArtifactBody()` or skipped via the
+  //      alias-de-duplication, so the article projection omits it.
+  // Reporting both keeps the coverage table honest about what the
+  // reader actually sees vs. what raw analysis output exists.
+  const aliasGroupHasEmittedMember = (file: string): boolean => {
     const aliases = aliasGroupFor(file);
-    if (aliases && [...aliases].some((alias) => emittedRootSet.has(alias))) return false;
+    if (!aliases) return false;
+    return [...aliases].some((alias) => emittedRootSet.has(alias));
+  };
+  const missingFromDisk = AGGREGATION_ORDER.filter((file) => {
+    if (file === 'executive-brief.md') return false;
+    if (aliasGroupHasEmittedMember(file)) return false;
     return !rootArtifactSet.has(file);
   });
+  const presentButFiltered = AGGREGATION_ORDER.filter((file) => {
+    if (file === 'executive-brief.md') return false;
+    if (!rootArtifactSet.has(file)) return false;
+    if (emittedRootSet.has(file)) return false;
+    if (aliasGroupHasEmittedMember(file)) return false;
+    return true;
+  });
+  const absentOrderedArtifacts = missingFromDisk;
 
   sections.push(buildArtifactCoverageReport({
     emittedMarkdownArtifacts: emittedRootMarkdownArtifacts,
     perDocumentArtifacts,
     supportingDataArtifacts,
     absentOrderedArtifacts,
+    presentButFilteredArtifacts: presentButFiltered,
   }));
 
   const sourcesAppendix = buildSourcesAppendix(used, subfolderRepoRelPath, supportingDataArtifacts);

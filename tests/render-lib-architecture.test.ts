@@ -167,8 +167,15 @@ describe('aggregator.ts (leaf, isolated from markdown/chrome)', () => {
     // (per-document evidence is injected between Phase A and Phase C
     // by aggregate.ts, not via AGGREGATION_ORDER).
     expect(AGGREGATION_ORDER[4]).toBe('stakeholder-perspectives.md');
-    // Phase D — Forward trajectory begins with dated watch items
-    expect(AGGREGATION_ORDER[7]).toBe('forward-indicators.md');
+    // Phase D — Forward trajectory begins with dated watch items. The
+    // exact index slides as alias filenames are added/removed within
+    // Phase C; assert by filename position relative to its phase
+    // anchors instead of pinning a numeric index.
+    const idxForward = AGGREGATION_ORDER.indexOf('forward-indicators.md');
+    const idxScenario = AGGREGATION_ORDER.indexOf('scenario-analysis.md');
+    const idxStakeholders = AGGREGATION_ORDER.indexOf('stakeholder-perspectives.md');
+    expect(idxForward).toBeGreaterThan(idxStakeholders);
+    expect(idxScenario).toBe(idxForward + 1);
     // Phase F — narrative-environment cluster ends with media framing
     // immediately before the devil's-advocate critique.
     const idxMedia = AGGREGATION_ORDER.indexOf('media-framing-analysis.md');

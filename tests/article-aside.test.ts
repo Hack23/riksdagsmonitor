@@ -73,10 +73,15 @@ describe('article-aside — renderReaderNavigation', () => {
 
   it('always includes the audit-appendix row even when no curated artifacts matched', () => {
     // The audit appendix row is unconditionally pushed so the function
-    // never returns an empty string. Verify the audit row is present
-    // and the function does not throw on an empty artifact list.
+    // never returns an empty string. With no audit artifact present
+    // the row falls back to the `#rm-article-sources` anchor (the
+    // wrapping <section> id, distinct from the h2 id
+    // `rm-article-sources-heading` so reader-nav links don't
+    // accidentally match the heading id when the sources block is
+    // absent — see render-lib-architecture.test.ts).
     const html = renderReaderNavigation({ lang: 'en', artifactsUsed: [] });
-    expect(html).toContain('rm-article-sources-heading');
+    expect(html).toContain('href="#rm-article-sources"');
+    expect(html).not.toContain('rm-article-sources-heading');
   });
 
   it('points the audit row at political-classification when that is the available audit artifact', () => {

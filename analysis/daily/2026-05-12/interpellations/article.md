@@ -6,7 +6,7 @@ date: 2026-05-12
 subfolder: interpellations
 slug: 2026-05-12-interpellations
 source_folder: analysis/daily/2026-05-12/interpellations
-generated_at: 2026-05-12T10:58:24.270Z
+generated_at: 2026-05-12T11:41:58.284Z
 language: en
 layout: article
 ---
@@ -1930,7 +1930,7 @@ New cycle PIRs will be established in pir-status.json for this run's topics.
 
 ## Analysis Artifact Coverage Report
 
-This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts were not present in this run.
+This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run (split between "missing on disk" and "present-but-filtered" so the report matches the rendered output).
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
@@ -1938,7 +1938,9 @@ This generated report reconciles the analysis folder with the article projection
 | Per-document analyses | 2 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 3 | Linked in Article Sources, not expanded inline |
 
-**Absent canonical ordered artifacts**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
+**Absent canonical ordered artifacts (missing from disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
+
+**Present-but-filtered canonical artifacts (on disk but omitted by alias de-duplication or empty-after-cleaning)**: None.
 
 ## Article Sources
 

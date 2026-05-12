@@ -6,7 +6,7 @@ date: 2026-05-12
 subfolder: propositions
 slug: 2026-05-12-propositions
 source_folder: analysis/daily/2026-05-12/propositions
-generated_at: 2026-05-12T10:58:26.252Z
+generated_at: 2026-05-12T11:41:59.730Z
 language: en
 layout: article
 ---
@@ -1305,7 +1305,7 @@ Data sourced from 2026-05-07 via lookback fallback — check freshness indicator
 
 ## Analysis Artifact Coverage Report
 
-This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts were not present in this run.
+This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run (split between "missing on disk" and "present-but-filtered" so the report matches the rendered output).
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
@@ -1313,7 +1313,9 @@ This generated report reconciles the analysis folder with the article projection
 | Per-document analyses | 3 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 4 | Linked in Article Sources, not expanded inline |
 
-**Absent canonical ordered artifacts**: `intelligence-assessment.md`, `cycle-trajectory.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `methodology-reflection.md`
+**Absent canonical ordered artifacts (missing from disk)**: `intelligence-assessment.md`, `cycle-trajectory.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `methodology-reflection.md`
+
+**Present-but-filtered canonical artifacts (on disk but omitted by alias de-duplication or empty-after-cleaning)**: None.
 
 ## Article Sources
 

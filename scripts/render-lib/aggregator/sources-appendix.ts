@@ -22,11 +22,11 @@ import { buildGithubBlobUrl } from '../url-helpers.js';
 
 /**
  * Build the `## Article Sources` markdown appendix listing every
- * artifact consumed by the aggregator. Returns `null` when `used` is
- * empty so the caller can omit the section entirely.
- *
- * Each entry is an unordered-list item linking the artifact filename
- * (rendered as inline code) to its absolute GitHub blob URL.
+ * artifact consumed by the aggregator. Returns `null` only when both
+ * `used` and `supportingDataArtifacts` are empty so the caller can
+ * omit the section entirely; if either list contains entries the
+ * appendix is emitted (supporting data artifacts are rendered under a
+ * dedicated `### Supporting Data Artifacts` sub-block).
  */
 export function buildSourcesAppendix(
   used: readonly string[],
@@ -65,21 +65,27 @@ export interface ArtifactCoverageReportInput {
   readonly emittedMarkdownArtifacts: readonly string[];
   readonly perDocumentArtifacts: readonly string[];
   readonly supportingDataArtifacts: readonly string[];
+  /** Canonical artifacts that never existed on disk. */
   readonly absentOrderedArtifacts: readonly string[];
+  /**
+   * Canonical artifacts that existed on disk but were filtered out of
+   * the article projection (empty body after cleaning, or skipped via
+   * alias de-duplication). Optional for backwards compatibility with
+   * older callers; defaults to an empty list.
+   */
+  readonly presentButFilteredArtifacts?: readonly string[];
 }
 
 export function buildArtifactCoverageReport(input: ArtifactCoverageReportInput): string {
   const emittedCount = input.emittedMarkdownArtifacts.length;
   const perDocCount = input.perDocumentArtifacts.length;
   const dataCount = input.supportingDataArtifacts.length;
-  const absent =
-    input.absentOrderedArtifacts.length > 0
-      ? input.absentOrderedArtifacts.map((file) => `\`${file}\``).join(', ')
-      : 'None from the canonical order.';
+  const fmt = (files: readonly string[]): string =>
+    files.length > 0 ? files.map((f) => `\`${f}\``).join(', ') : 'None.';
   return [
     '## Analysis Artifact Coverage Report',
     '',
-    'This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts were not present in this run.',
+    'This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run (split between "missing on disk" and "present-but-filtered" so the report matches the rendered output).',
     '',
     '| Coverage area | Count | Reader-facing treatment |',
     '|---|---:|---|',
@@ -87,6 +93,8 @@ export function buildArtifactCoverageReport(input: ArtifactCoverageReportInput):
     `| Per-document analyses | ${perDocCount} | Expanded under \`## Per-document intelligence\` immediately after significance scoring |`,
     `| Supporting data artifacts | ${dataCount} | Linked in Article Sources, not expanded inline |`,
     '',
-    `**Absent canonical ordered artifacts**: ${absent}`,
+    `**Absent canonical ordered artifacts (missing from disk)**: ${fmt(input.absentOrderedArtifacts)}`,
+    '',
+    `**Present-but-filtered canonical artifacts (on disk but omitted by alias de-duplication or empty-after-cleaning)**: ${fmt(input.presentButFilteredArtifacts ?? [])}`,
   ].join('\n');
 }

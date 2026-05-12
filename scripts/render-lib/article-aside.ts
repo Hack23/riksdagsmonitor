@@ -118,7 +118,7 @@ export function renderReaderNavigation(input: ReaderNavigationInput): string {
 
   guideRows.push(`            <tr>
               <td class="rm-reader-guide-icon"><span aria-hidden="true">🏷️</span></td>
-              <td><a href="#${auditAnchorForArtifacts(input.artifactsUsed, 'rm-article-sources-heading')}">${escapeHtml(guideChrome.auditLabel)}</a></td>
+              <td><a href="#${auditAnchorForArtifacts(input.artifactsUsed)}">${escapeHtml(guideChrome.auditLabel)}</a></td>
               <td>${escapeHtml(guideChrome.auditValue)}</td>
             </tr>`);
 
@@ -200,7 +200,7 @@ export function renderAnalysisArtifactsReference(
     .join('\n');
 
   return `
-      <section class="rm-article-sources" aria-labelledby="rm-article-sources-heading">
+      <section id="rm-article-sources" class="rm-article-sources" aria-labelledby="rm-article-sources-heading">
         <h2 id="rm-article-sources-heading"><span class="rm-icon" aria-hidden="true">📋</span> ${escapeHtml(sourcesHeading)}</h2>
         <p>${escapeHtml(sourcesDesc)}</p>
         <details class="rm-article-methodology" open>
