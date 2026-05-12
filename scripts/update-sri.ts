@@ -118,15 +118,38 @@ async function collectHashedJs(
     if (entry.isDirectory()) {
       await collectHashedJs(path.join(assetsJsDir, entry.name), rel, out);
     } else if (entry.isFile() && entry.name.toLowerCase().endsWith('.js')) {
-      // Only keep files that look hashed: name-<hash>.js (Vite emits an 8-char
-      // alphanumeric hash). This avoids touching unhashed assets (none expected
-      // under assets/js/, but be defensive).
+      // Only keep files that look hashed: name-<hash>.js. Vite emits an
+      // 8-char alphanumeric hash by default; we accept ≥6 to stay robust
+      // against Vite config changes (e.g. `output.entryFileNames`
+      // shortening the hash). Anything shorter is almost certainly an
+      // unhashed bundle and should not carry an integrity attribute.
       if (/-[A-Za-z0-9_-]{6,}\.js$/i.test(entry.name)) {
         out.push(rel);
       }
     }
   }
   return out;
+}
+
+/**
+ * Extract the file basename from a URL or path. Strips query strings and
+ * fragments before returning the last `/`-separated segment. Returns
+ * `undefined` for inputs that don't yield a non-empty basename — callers
+ * use this to gate further integrity processing safely.
+ *
+ * Examples:
+ *   `/assets/js/anomaly-detection-BYmYhLL4.js?v=1` → `anomaly-detection-BYmYhLL4.js`
+ *   `assets/js/main.js#frag`                       → `main.js`
+ *   `/`                                            → `undefined`
+ *   `''`                                           → `undefined`
+ */
+function extractBasename(url: string): string | undefined {
+  if (!url) return undefined;
+  const noQuery = url.split('?')[0] ?? '';
+  const noFrag = noQuery.split('#')[0] ?? '';
+  const segments = noFrag.split('/');
+  const last = segments[segments.length - 1];
+  return last && last.length > 0 ? last : undefined;
 }
 
 /**
@@ -195,7 +218,8 @@ async function updateIntegrityInFile(
         /\bsrc\s*=\s*([^\s>]+)/i.exec(tag);
       const url = hrefMatch?.[1] ?? srcMatch?.[1];
       if (!url) return tag;
-      const basename = url.split('?')[0]!.split('#')[0]!.split('/').pop()!;
+      const basename = extractBasename(url);
+      if (!basename) return tag;
       const newHash = jsHashByBasename.get(basename);
       if (!newHash) return tag;
       const newAttr = `sha384-${newHash}`;
