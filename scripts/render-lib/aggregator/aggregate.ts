@@ -310,17 +310,17 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
     }
     // Slot satisfied; siblings that exist on disk but were not emitted
     // get classified by *why* they were not emitted.
-    for (const m of onDisk) {
-      if (emittedRootSet.has(m)) continue;
-      if (aliasSuppressedAtSelection.has(m)) {
-        aliasDedupedArtifacts.push(m);
-      } else if (cleanedToEmpty.has(m)) {
-        presentButFiltered.push(m);
+    for (const member of onDisk) {
+      if (emittedRootSet.has(member)) continue;
+      if (aliasSuppressedAtSelection.has(member)) {
+        aliasDedupedArtifacts.push(member);
+      } else if (cleanedToEmpty.has(member)) {
+        presentButFiltered.push(member);
       } else {
         // Should not happen in practice (file exists, not emitted, not
         // alias-suppressed, not cleaned-to-empty) — surface defensively
         // as filtered so the report stays honest.
-        presentButFiltered.push(m);
+        presentButFiltered.push(member);
       }
     }
   }
