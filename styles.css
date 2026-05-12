@@ -13659,30 +13659,98 @@ html[data-theme="light"] .rm-article-body pre.mermaid > svg {
   margin-top: 0;
 }
 
-/* Explicit color for all language-switcher links (WCAG contrast fix) */
+/* ── Site language-switcher links (header bar) — WCAG contrast fix ── */
 .site-language-switcher a {
-  color: var(--text-color, #1a1a1a);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+  /* Light mode: dark text on card-bg — 15.3:1 contrast */
+  color: #1a1a1a;
+  background: transparent;
+  border: 1px solid transparent;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.site-language-switcher a:hover,
+.site-language-switcher a:focus-visible {
+  background: var(--primary-color, #006633);
+  color: #fff;
+  border-color: var(--primary-color, #006633);
+}
+
+.site-language-switcher a:focus-visible {
+  outline: 2px solid var(--primary-color, #006633);
+  outline-offset: 2px;
 }
 
 .site-footer .language-grid a.active,
 .site-language-switcher a.active {
-  color: var(--dark-bg, #0a0e27);
+  color: #0a0e27;
   border-color: var(--primary-yellow, #ffbe0b);
   background: var(--primary-yellow, #ffbe0b);
   font-weight: 700;
 }
 
-/* Dark-mode active language link — dark text on solid yellow bg */
+/* ── Dark-mode language links — both header and footer ── */
 @media (prefers-color-scheme: dark) {
+  .site-language-switcher a {
+    color: #f0f0f0; /* Light text on dark card-bg — 14.1:1 contrast */
+  }
+
+  .site-language-switcher a:hover,
+  .site-language-switcher a:focus-visible {
+    background: var(--primary-color, #00cc66);
+    color: #001a1a;
+    border-color: var(--primary-color, #00cc66);
+  }
+
+  .site-footer .language-grid a {
+    color: #f0f0f0;
+  }
+
+  .site-footer .language-grid a:hover {
+    background: var(--primary-color, #00cc66);
+    color: #001a1a;
+    border-color: var(--primary-color, #00cc66);
+  }
+
   .site-footer .language-grid a.active,
   .site-language-switcher a.active {
-    color: var(--dark-bg, #0a0e27);
+    color: #0a0e27;
   }
+}
+
+html[data-theme="dark"] .site-language-switcher a {
+  color: #f0f0f0;
+}
+
+html[data-theme="dark"] .site-language-switcher a:hover,
+html[data-theme="dark"] .site-language-switcher a:focus-visible {
+  background: var(--primary-color, #00cc66);
+  color: #001a1a;
+  border-color: var(--primary-color, #00cc66);
+}
+
+html[data-theme="dark"] .site-footer .language-grid a {
+  color: #f0f0f0;
+}
+
+html[data-theme="dark"] .site-footer .language-grid a:hover {
+  background: var(--primary-color, #00cc66);
+  color: #001a1a;
+  border-color: var(--primary-color, #00cc66);
 }
 
 html[data-theme="dark"] .site-footer .language-grid a.active,
 html[data-theme="dark"] .site-language-switcher a.active {
-  color: var(--dark-bg, #0a0e27);
+  color: #0a0e27;
 }
 
 .footer-disclaimer {
