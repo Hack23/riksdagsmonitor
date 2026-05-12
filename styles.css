@@ -13666,25 +13666,23 @@ html[data-theme="light"] .rm-article-body pre.mermaid > svg {
 
 .site-footer .language-grid a.active,
 .site-language-switcher a.active {
-  color: #0a0e27;
+  color: var(--dark-bg, #0a0e27);
   border-color: var(--primary-yellow, #ffbe0b);
   background: var(--primary-yellow, #ffbe0b);
   font-weight: 700;
 }
 
-/* Dark-mode active language link — light text on yellow bg */
+/* Dark-mode active language link — dark text on solid yellow bg */
 @media (prefers-color-scheme: dark) {
   .site-footer .language-grid a.active,
   .site-language-switcher a.active {
-    color: #0a0e27;
-    background: var(--primary-yellow, #ffbe0b);
+    color: var(--dark-bg, #0a0e27);
   }
 }
 
 html[data-theme="dark"] .site-footer .language-grid a.active,
 html[data-theme="dark"] .site-language-switcher a.active {
-  color: #0a0e27;
-  background: var(--primary-yellow, #ffbe0b);
+  color: var(--dark-bg, #0a0e27);
 }
 
 .footer-disclaimer {
