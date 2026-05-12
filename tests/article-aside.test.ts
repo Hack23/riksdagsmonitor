@@ -19,7 +19,7 @@ describe('article-aside — renderReaderNavigation', () => {
   it('renders a localised navigation table with one row per available artifact + audit appendix', () => {
     const html = renderReaderNavigation({
       lang: 'en',
-      artifactsUsed: ['executive-brief.md', 'risk-assessment.md'],
+      artifactsUsed: ['executive-brief.md', 'risk-assessment.md', 'classification-results.md'],
     });
     expect(html).toContain('class="rm-reader-guide"');
     expect(html).toContain('Reader Intelligence Guide');
@@ -76,7 +76,16 @@ describe('article-aside — renderReaderNavigation', () => {
     // never returns an empty string. Verify the audit row is present
     // and the function does not throw on an empty artifact list.
     const html = renderReaderNavigation({ lang: 'en', artifactsUsed: [] });
-    expect(html).toContain('rm-classification-results');
+    expect(html).toContain('rm-article-sources-heading');
+  });
+
+  it('points the audit row at political-classification when that is the available audit artifact', () => {
+    const html = renderReaderNavigation({
+      lang: 'en',
+      artifactsUsed: ['executive-brief.md', 'political-classification.md'],
+    });
+    expect(html).toContain('href="#rm-political-classification"');
+    expect(html).not.toContain('href="#rm-classification-results"');
   });
 
   it('renders rows for ALL analysis artifacts, not just the curated lenses', () => {

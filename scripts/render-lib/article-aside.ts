@@ -45,7 +45,7 @@ import { depth } from './chrome/helpers.js';
 import { artifactTitle, artifactIcon } from '../political-intelligence/i18n/artifact-i18n.js';
 import { readerGuideI18n } from './aggregator/reader-guide-i18n.js';
 import { readerValueFor } from './aggregator/reader-guide-descriptions-i18n.js';
-import { READER_GUIDE_ENTRIES, anchorForTitle, hasPerDocumentAnalyses, selectReaderGuideArtifacts } from './aggregator/reader-guide.js';
+import { READER_GUIDE_ENTRIES, anchorForTitle, auditAnchorForArtifacts, hasPerDocumentAnalyses, selectReaderGuideArtifacts } from './aggregator/reader-guide.js';
 import { titleForArtifact } from './aggregator/order.js';
 
 // ─────────────────────────────────────────────────────────────────────────
@@ -118,7 +118,7 @@ export function renderReaderNavigation(input: ReaderNavigationInput): string {
 
   guideRows.push(`            <tr>
               <td class="rm-reader-guide-icon"><span aria-hidden="true">🏷️</span></td>
-              <td><a href="#rm-classification-results">${escapeHtml(guideChrome.auditLabel)}</a></td>
+              <td><a href="#${auditAnchorForArtifacts(input.artifactsUsed, 'rm-article-sources-heading')}">${escapeHtml(guideChrome.auditLabel)}</a></td>
               <td>${escapeHtml(guideChrome.auditValue)}</td>
             </tr>`);
 

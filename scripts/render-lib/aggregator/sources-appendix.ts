@@ -31,17 +31,62 @@ import { buildGithubBlobUrl } from '../url-helpers.js';
 export function buildSourcesAppendix(
   used: readonly string[],
   subfolderRepoRelPath: string,
+  supportingDataArtifacts: readonly string[] = [],
 ): string | null {
-  if (used.length === 0) return null;
+  if (used.length === 0 && supportingDataArtifacts.length === 0) return null;
   const sourceLines = used.map((file) => {
     const url = buildGithubBlobUrl(`${subfolderRepoRelPath}/${file}`);
     return `- [\`${file}\`](${url})`;
   });
-  return [
+  const lines = [
     '## Article Sources',
     '',
     'Each section above projects one analysis artifact. The full audited markdown is available on GitHub:',
     '',
     ...sourceLines,
+  ];
+  if (supportingDataArtifacts.length > 0) {
+    lines.push(
+      '',
+      '### Supporting Data Artifacts',
+      '',
+      'These machine-readable artifacts are linked for auditability and are not expanded inline, preserving the reader-facing narrative order:',
+      '',
+      ...supportingDataArtifacts.map((file) => {
+        const url = buildGithubBlobUrl(`${subfolderRepoRelPath}/${file}`);
+        return `- [\`${file}\`](${url})`;
+      }),
+    );
+  }
+  return lines.join('\n');
+}
+
+export interface ArtifactCoverageReportInput {
+  readonly emittedMarkdownArtifacts: readonly string[];
+  readonly perDocumentArtifacts: readonly string[];
+  readonly supportingDataArtifacts: readonly string[];
+  readonly absentOrderedArtifacts: readonly string[];
+}
+
+export function buildArtifactCoverageReport(input: ArtifactCoverageReportInput): string {
+  const emittedCount = input.emittedMarkdownArtifacts.length;
+  const perDocCount = input.perDocumentArtifacts.length;
+  const dataCount = input.supportingDataArtifacts.length;
+  const absent =
+    input.absentOrderedArtifacts.length > 0
+      ? input.absentOrderedArtifacts.map((file) => `\`${file}\``).join(', ')
+      : 'None from the canonical order.';
+  return [
+    '## Analysis Artifact Coverage Report',
+    '',
+    'This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts were not present in this run.',
+    '',
+    '| Coverage area | Count | Reader-facing treatment |',
+    '|---|---:|---|',
+    `| Ordered/root markdown sections | ${emittedCount} | Expanded as article sections in the narrative order above |`,
+    `| Per-document analyses | ${perDocCount} | Expanded under \`## Per-document intelligence\` immediately after significance scoring |`,
+    `| Supporting data artifacts | ${dataCount} | Linked in Article Sources, not expanded inline |`,
+    '',
+    `**Absent canonical ordered artifacts**: ${absent}`,
   ].join('\n');
 }

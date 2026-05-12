@@ -41,7 +41,7 @@ import { expandPerDocumentAnalyses, hasPerDocumentAnalyses } from './per-documen
 import { buildReaderGuide } from './reader-guide.js';
 import { readBlufParagraph, readFirstParagraph, truncateToSentenceBoundary } from './seo/description.js';
 import { cleanArticleTitle, readFirstHeading, titleFromBluf } from './seo/title.js';
-import { buildSourcesAppendix } from './sources-appendix.js';
+import { buildArtifactCoverageReport, buildSourcesAppendix } from './sources-appendix.js';
 
 /**
  * Inputs to {@link aggregateAnalysis}. All four required fields provide
@@ -165,6 +165,25 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
   );
   const docsExist = hasPerDocumentAnalyses(subfolderAbsPath);
 
+  const collectSupportingDataArtifacts = (): string[] => {
+    const out: string[] = [];
+    const walk = (dir: string, prefix: string): void => {
+      for (const entry of fs.readdirSync(dir, { withFileTypes: true })
+        .sort((a, b) => a.name.localeCompare(b.name))) {
+        const full = path.join(dir, entry.name);
+        const rel = prefix ? `${prefix}/${entry.name}` : entry.name;
+        if (entry.isDirectory()) {
+          if (rel === 'pass1' || rel.startsWith('pass1/')) continue;
+          walk(full, rel);
+        } else if (/\.json$/i.test(entry.name)) {
+          out.push(rel);
+        }
+      }
+    };
+    walk(subfolderAbsPath, '');
+    return out;
+  };
+
   readSection('executive-brief.md', false);
   sections.push(buildReaderGuide(rootArtifactSet, docsExist));
 
@@ -191,7 +210,25 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
     readSection(f, true);
   }
 
-  const sourcesAppendix = buildSourcesAppendix(used, subfolderRepoRelPath);
+  const supportingDataArtifacts = collectSupportingDataArtifacts();
+  const emittedRootMarkdownArtifacts = used.filter((file) => !file.startsWith('documents/'));
+  const perDocumentArtifacts = used.filter((file) => file.startsWith('documents/'));
+  const emittedRootSet = new Set(emittedRootMarkdownArtifacts);
+  const absentOrderedArtifacts = AGGREGATION_ORDER.filter((file) => {
+    if (file === 'executive-brief.md') return false;
+    const aliases = aliasGroupFor(file);
+    if (aliases && [...aliases].some((alias) => emittedRootSet.has(alias))) return false;
+    return !rootArtifactSet.has(file);
+  });
+
+  sections.push(buildArtifactCoverageReport({
+    emittedMarkdownArtifacts: emittedRootMarkdownArtifacts,
+    perDocumentArtifacts,
+    supportingDataArtifacts,
+    absentOrderedArtifacts,
+  }));
+
+  const sourcesAppendix = buildSourcesAppendix(used, subfolderRepoRelPath, supportingDataArtifacts);
   if (sourcesAppendix) sections.push(sourcesAppendix);
 
   const frontMatter = buildFrontMatter({
@@ -210,7 +247,7 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
 
   return {
     markdown: frontMatter + body + '\n',
-    artifactsUsed: used,
+    artifactsUsed: [...used, ...supportingDataArtifacts],
     title,
     description,
     keywords,

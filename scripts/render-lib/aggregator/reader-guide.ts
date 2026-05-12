@@ -196,6 +196,38 @@ export function hasPerDocumentAnalyses(artifactsUsed: ReadonlySet<string> | read
   return false;
 }
 
+const AUDIT_ANCHOR_CANDIDATES = [
+  'classification-results.md',
+  'political-classification.md',
+  'cross-reference-map.md',
+  'methodology-reflection.md',
+  'data-download-manifest.md',
+] as const;
+
+/**
+ * Resolve the audit-row link to an emitted section that actually exists.
+ *
+ * Some recent workflows use `political-classification.md` instead of the
+ * older `classification-results.md`. A hard-coded
+ * `#rm-classification-results` link then becomes a broken Reader Guide
+ * anchor even though the article still contains audit material. Prefer the
+ * strongest audit section available, falling back to the Article Sources
+ * appendix when no audit artifact is present.
+ */
+export function auditAnchorForArtifacts(
+  artifactsUsed: ReadonlySet<string> | readonly string[],
+  fallbackAnchor = `${HEADING_ID_PREFIX}article-sources`,
+): string {
+  const availableSet = artifactsUsed instanceof Set ? artifactsUsed : new Set(artifactsUsed);
+  const emittedRootArtifacts = new Set(selectReaderGuideArtifacts(availableSet));
+  for (const file of AUDIT_ANCHOR_CANDIDATES) {
+    if (emittedRootArtifacts.has(file)) {
+      return anchorForTitle(titleForArtifact(file));
+    }
+  }
+  return fallbackAnchor;
+}
+
 /**
  * Build the Reader Intelligence Guide markdown table for a single
  * aggregated article. Iterates over **all** analysis artifacts that
@@ -247,7 +279,7 @@ export function buildReaderGuide(available: ReadonlySet<string>, hasDocuments: b
   }
 
   entries.push(
-    `| 🏷️ | [${chrome.auditLabel}](#${HEADING_ID_PREFIX}classification-results) | ${chrome.auditValue} |`,
+    `| 🏷️ | [${chrome.auditLabel}](#${auditAnchorForArtifacts(available)}) | ${chrome.auditValue} |`,
   );
 
   return [
