@@ -50,15 +50,6 @@ import { buildArtifactCoverageReport, buildSourcesAppendix } from './sources-app
 // the `artifactsUsed` payload.
 const MAX_SUPPORTING_DATA_ARTIFACTS = 100;
 
-const EXCLUDED_SUPPORTING_DATA_DIRS = new Set(['pass1']);
-
-function isExcludedSupportingDataPath(rel: string): boolean {
-  for (const dir of EXCLUDED_SUPPORTING_DATA_DIRS) {
-    if (rel === dir || rel.startsWith(`${dir}/`)) return true;
-  }
-  return false;
-}
-
 /**
  * Inputs to {@link aggregateAnalysis}. All four required fields provide
  * the filesystem and metadata context; the optional config fields allow
@@ -124,6 +115,17 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
 
   const sections: string[] = [];
   const used: string[] = [];
+  // Files that exist on disk and were attempted by `readSection` but
+  // whose body was trimmed to an empty string by `cleanArtifactBody()`
+  // (and therefore omitted from the article projection). Tracked here
+  // so the coverage report can distinguish them from artifacts that
+  // were never attempted because alias resolution suppressed them.
+  const cleanedToEmpty = new Set<string>();
+  // Files skipped at *selection time* by alias-group de-duplication
+  // (i.e. another member of the alias set was already emitted in this
+  // run). Distinct from `cleanedToEmpty` so the report buckets match
+  // their stated semantics.
+  const aliasSuppressedAtSelection = new Set<string>();
 
   const readSection = (fileName: string, skipIfMissing: boolean): void => {
     const abs = path.join(subfolderAbsPath, fileName);
@@ -135,7 +137,10 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
     }
     const raw = fs.readFileSync(abs, 'utf8');
     const clean = rewriteRelativeLinks(cleanArtifactBody(raw), subfolderRepoRelPath);
-    if (!clean) return;
+    if (!clean) {
+      cleanedToEmpty.add(fileName);
+      return;
+    }
     const title = titleForArtifact(fileName);
     const sourceUrl = buildGithubBlobUrl(`${subfolderRepoRelPath}/${fileName}`);
     sections.push(
@@ -200,7 +205,6 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
         if (!entry.isFile()) continue;
         if (!/\.json$/i.test(entry.name)) continue;
         const rel = prefix ? `${prefix}/${entry.name}` : entry.name;
-        if (isExcludedSupportingDataPath(rel)) continue;
         collected.push(rel);
       }
     };
@@ -219,7 +223,15 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
   for (const fileName of AGGREGATION_ORDER) {
     if (fileName === 'executive-brief.md') continue;
     const aliases = aliasGroupFor(fileName);
-    if (aliases && used.some((usedFile) => aliases.has(usedFile))) continue;
+    if (aliases && used.some((usedFile) => aliases.has(usedFile))) {
+      // Only mark as alias-suppressed if the file actually exists on
+      // disk; otherwise it's just absent and will be classified as
+      // missingFromDisk by the per-slot reconciliation below.
+      if (rootArtifactSet.has(fileName)) {
+        aliasSuppressedAtSelection.add(fileName);
+      }
+      continue;
+    }
     readSection(fileName, true);
     if (fileName === 'significance-scoring.md') {
       const docExpansion = expandPerDocumentAnalyses(subfolderAbsPath, subfolderRepoRelPath);
@@ -271,12 +283,15 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
   // Per-slot classification. A slot is:
   //   • missingFromDisk     — no member of the slot exists on disk
   //   • emitted (satisfied) — at least one member was emitted
-  //   • presentButFiltered  — members exist on disk but none emitted
-  //                            (body trimmed to empty by
-  //                            `cleanArtifactBody()`)
-  // For multi-member slots that ARE satisfied, the *non-emitted*
-  // members on disk are surfaced separately as alias-de-duped so the
-  // reader can see which alias variant won.
+  //   • presentButFiltered  — members exist on disk but none emitted;
+  //                            tracked because `cleanArtifactBody()`
+  //                            trimmed them to empty (`cleanedToEmpty`)
+  //   • aliasDeduped        — siblings of an emitted slot member that
+  //                            were skipped at *selection time* (i.e.
+  //                            `aliasSuppressedAtSelection`). Distinct
+  //                            from `cleanedToEmpty` so a sibling that
+  //                            happened to also be empty after cleaning
+  //                            is reported in the right bucket.
   const missingFromDisk: string[] = [];
   const presentButFiltered: string[] = [];
   const aliasDedupedArtifacts: string[] = [];
@@ -288,13 +303,26 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
       continue;
     }
     if (emitted.length === 0) {
-      // None of the on-disk members survived cleaning.
+      // None of the on-disk members survived cleaning. List the actual
+      // on-disk filenames so reviewers can grep them quickly.
       presentButFiltered.push(onDisk.join(', '));
       continue;
     }
-    // Slot satisfied; surface alias siblings that were skipped.
-    const skipped = onDisk.filter((m) => !emittedRootSet.has(m));
-    if (skipped.length > 0) aliasDedupedArtifacts.push(...skipped);
+    // Slot satisfied; siblings that exist on disk but were not emitted
+    // get classified by *why* they were not emitted.
+    for (const m of onDisk) {
+      if (emittedRootSet.has(m)) continue;
+      if (aliasSuppressedAtSelection.has(m)) {
+        aliasDedupedArtifacts.push(m);
+      } else if (cleanedToEmpty.has(m)) {
+        presentButFiltered.push(m);
+      } else {
+        // Should not happen in practice (file exists, not emitted, not
+        // alias-suppressed, not cleaned-to-empty) — surface defensively
+        // as filtered so the report stays honest.
+        presentButFiltered.push(m);
+      }
+    }
   }
   const absentOrderedArtifacts = missingFromDisk;
 

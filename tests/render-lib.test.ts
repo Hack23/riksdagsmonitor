@@ -1450,6 +1450,34 @@ describe('render-lib — aggregateAnalysis edge cases', () => {
     expect(result.artifactsUsed).toContain('documents/HD01BAR-analysis.md');
   });
 
+  it('classifies a sibling that exists on disk + alias-suppressed as alias-de-duped (not present-but-empty) in the coverage report', () => {
+    const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'rm-render-alias-'));
+    const sub = path.join(tmp, '2099-01-01', 'alias-dedup');
+    fs.mkdirSync(sub, { recursive: true });
+    fs.writeFileSync(path.join(sub, 'executive-brief.md'), '# EB\n\nLede.\n');
+    // Both alias members present + non-empty: stakeholder-perspectives.md
+    // appears first in AGGREGATION_ORDER and wins; stakeholder-impact.md
+    // is alias-suppressed at selection time and MUST be reported as
+    // alias-de-duped, not as present-but-empty (which is the
+    // cleanArtifactBody bucket).
+    fs.writeFileSync(
+      path.join(sub, 'stakeholder-perspectives.md'),
+      '# SP\n\nStakeholder perspectives body.\n',
+    );
+    fs.writeFileSync(
+      path.join(sub, 'stakeholder-impact.md'),
+      '# SI\n\nStakeholder impact body.\n',
+    );
+    const result = aggregateAnalysis({
+      subfolderAbsPath: sub,
+      subfolderRepoRelPath: 'analysis/daily/2099-01-01/alias-dedup',
+      date: '2099-01-01',
+      subfolder: 'alias-dedup',
+    });
+    expect(result.markdown).toContain('Alias-de-duped canonical artifacts');
+    expect(result.markdown).toContain('`stakeholder-impact.md`');
+  });
+
   it('appends unknown supplementary *.md after the core order alphabetically', () => {
     const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'rm-render-edge-'));
     const sub = path.join(tmp, '2099-01-01', 'supp');
