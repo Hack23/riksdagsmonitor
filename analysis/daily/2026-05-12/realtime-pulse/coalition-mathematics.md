@@ -98,3 +98,39 @@ xychart-beta
 **Key arithmetic finding**: Without C, neither bloc reaches 175 in the baseline scenario. C (6.5% est.) is the kingmaker. C's leadership will face a binary choice: support Tidö 2.0 (less likely given C's centrist drift) or enable a S-V-MP-C coalition (more likely if housing costs are the defining issue).
 
 **Today's analysis implication**: HD10486 (gender wage) and HD10484 (eldercare) both push C toward left-bloc alignment if they resonate as dominant issues. C's voter base overlaps significantly with Segments 3 and 5 (rule of law + housing). A left-leaning C is the key swing factor.
+
+---
+
+## Pass 2 Coalition Mathematics Update (Re-run 2026-05-12T14:15Z)
+
+### Updated Seat Projections (Based on Structural Analysis)
+
+| Party | Current Riksdag seats | Structural trend | Electoral implication |
+|-------|----------------------|-----------------|----------------------|
+| S | 107 | Stable-declining | Main left-bloc anchor; benefits if welfare frames win |
+| SD | 73 | Stable | Unchanged by today's interpellations (not targeted) |
+| M | 68 | Declining-risk | Tenje vulnerable if eldercare issue escalates |
+| V | 24 | Ascending (welfare issue strength) | HD10484/HD10486 directly feeds electoral positioning |
+| C | 24 | Uncertain | Not challenged today but coalition adjacent |
+| MP | 18 | Stable-low | Green/welfare crossover; may benefit from Frame 1 |
+| KD | 19 | Stable | Coalition support; no direct exposure today |
+| L | 16 | High exposure | Britz under HD10486 gender pay pressure |
+| Nyberg (ind.) | 1 | — | Filing HD10483; judicial accountability anchor |
+
+**Note**: Seat figures are structural baseline estimates from prior cycle analyses. Not updated with real-time polling (KIG-2 remains open).
+
+### Coalition Arithmetic — Scenario A (V welfare gains)
+
+If V gains 3 seats at election (26 → 29): seats come partly from S (structural competition) and partly from new leftward-drifting M/L voters. This does not change government formation unless:
+- V 29 + S 105 + MP 20 + C 24 = **178 seats** (just above 175 majority)
+- Scenario B government: red-green majority requires C formal support — historically C's price is migration liberalisation, which V opposes
+
+**Critical bottleneck**: V-C ideological gap remains primary obstacle to left-bloc government formation regardless of welfare issue performance. Today's documents do not move this bottleneck.
+
+### Electoral Sensitivity Analysis
+
+| V seat change | S needed | C bridge required | Coalition formation probability |
+|--------------|----------|------------------|--------------------------------|
+| V 24 (baseline) | S 107 → 178 gap = 47 needed from others | Yes | UNLIKELY |
+| V 27 (+3) | Same gap | Yes | UNLIKELY without C |
+| V 30 (+6) | Same gap | Yes | POSSIBLE if C and/or MP gains |

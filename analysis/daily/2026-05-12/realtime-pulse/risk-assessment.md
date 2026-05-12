@@ -52,3 +52,28 @@ quadrantChart
 - Sverige BNP-tillväxt 2026E: +1.8% (stabil, ej recessionsrisk)
 - Koalitionens ekonomiska rekord är stabilt — R1–R4 är politiska, inte ekonomiska risker
 - Ingen makroekonomisk risk identifierad från dagens dokument
+
+---
+
+## Pass 2 Risk Refinements (Re-run 2026-05-12T14:15Z)
+
+### Updated Risk Matrix (Post-Pass-2)
+
+| Risk ID | Description | Likelihood | Impact | Velocity | Change |
+|---------|-------------|-----------|--------|---------|--------|
+| R1 | V eldercare narrative achieves electoral traction | HIGH | HIGH | Fast (days) | CONFIRMED — 3 interpellations add velocity |
+| R2 | Samtyckeslagen implementation fails new case | MEDIUM | HIGH | Slow (weeks) | UNCHANGED |
+| R3 | EPBD renovation costs ignite SD anti-EU campaign | MEDIUM | MEDIUM | Slow (months) | UNCHANGED |
+| R4 | IVO eldercare quality report amplifies V narrative | MEDIUM | HIGH | Fast (days when released) | NEW — added based on FI-015 |
+| R5 | Coalition fracture on welfare/gender portfolio | LOW | VERY HIGH | Medium (weeks) | WATCH — L (Britz) most exposed |
+| R6 | Ministerial response quality triggers political crisis | LOW-MEDIUM | HIGH | Fast (same-day 29 May) | ELEVATED from prior run |
+
+### Trigger-Scenario Matrix (Revised)
+
+Highest risk event chain: IVO eldercare report published (R4, FI-015) **→** SVT Rapport covers (FI-001) **→** V uses in election debate (FI-010) **→** R1 materialises **→** Scenario A probability reaches 70%.
+
+### Compounding Factor: Intra-coalition asymmetry
+
+L minister Britz faces HD10486 gender pay gap; M minister Tenje faces HD10484 eldercare. SD is not directly challenged in any of today's interpellations — which is itself notable: V is targeting the moderate coalition partners rather than the largest support party. This strategic choice reflects V's assessment that M/L voters are the persuadable swing electorate, not SD's base.
+
+**Intelligence implication**: R5 (coalition fracture) most likely to manifest as L-M tension on welfare spending, not SD-M tension on migration — different from prior risk assessments that over-weighted SD friction.

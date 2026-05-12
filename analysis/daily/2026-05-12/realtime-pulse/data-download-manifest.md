@@ -86,3 +86,19 @@ Prior PIRs from 2026-05-11 realtime-pulse:
 New PIRs opened this cycle:
 - **PIR-ELDER-2026**: Will the government bring forward äldreomsorgs legislation before the election addressing quality and supervision (HD10484 trigger)?
 - **PIR-GENDERPAY-2026**: Will the Tidö coalition respond substantively to the gender pay gap in welfare sector before election (HD10486 trigger)?
+
+## Re-run 2026-05-12 14:15 UTC
+
+**Purpose**: Improvement-mode re-run; confirming no new documents since original run (09:20 UTC today).
+
+**Checks performed**:
+- `search_dokument` interpellationer 2026-05-12: Returns same 4 dok_ids (HD10484, HD10483, HD10485, HD10486) — ✅ no new interpellations
+- `get_propositioner` limit=10: Returns same propositions with dok_ids beginning HD03250, HD03261, HD03267, HD03263 — ✅ no new propositions submitted today
+- `fetch_paginated_documents` doktyp=ip 2024/25: Page 1 same set — ✅ confirmed
+- `search_anforanden` text=äldreomsorg 2026-05-12: Found 5 speeches but on interpellation 453 (Ebba Busch/Josef Fransson on elnät/energy grid) — ✅ different topic, not relevant to today's analysis subjects
+
+**New documents found**: 0
+
+**Stale data risk assessment**: NONE. All primary documents are from today's filing date. IMF WEO vintage age: ~1 month (Apr-2026, within 6-month threshold, no annotation required per vintage-discipline rules). Previous IMPROVEMENT_MODE run already consumed all relevant data.
+
+**Data completeness**: CONFIRMED at 100% for available public sources. HD01CU30 remains metadata-only (full committee report text not accessible via MCP API) — limitation recorded in methodology-reflection.md.
