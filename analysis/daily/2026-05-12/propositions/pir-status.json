@@ -1,0 +1,54 @@
+{
+  "date": "2026-05-12",
+  "subfolder": "propositions",
+  "documents": ["HD03250", "HD03261", "HD03267"],
+  "imfVintage": "WEO-2026-04",
+  "imfVintageAgeMonths": 1,
+  "imfStale": false,
+  "electionProximityMonths": 4,
+  "diwMultiplier": 1.5,
+  "pirs": [
+    {
+      "id": "PIR-A1",
+      "title": "Committee referral confirmations (TU/SkU/JuU)",
+      "horizon": "T+72h",
+      "status": "OPEN",
+      "priority": "HIGH"
+    },
+    {
+      "id": "PIR-A2",
+      "title": "Lagrådet referral decision for HD03267",
+      "horizon": "T+72h",
+      "status": "OPEN",
+      "priority": "CRITICAL"
+    },
+    {
+      "id": "PIR-B1",
+      "title": "JuU committee agenda published",
+      "horizon": "T+7d",
+      "status": "OPEN",
+      "priority": "HIGH"
+    },
+    {
+      "id": "PIR-C1",
+      "title": "Lagrådet opinion on HD03267 published",
+      "horizon": "T+30d",
+      "status": "OPEN",
+      "priority": "CRITICAL"
+    },
+    {
+      "id": "PIR-C2",
+      "title": "IMY advisory on HD03261",
+      "horizon": "T+30d",
+      "status": "OPEN",
+      "priority": "HIGH"
+    },
+    {
+      "id": "PIR-D1",
+      "title": "Vote outcomes in Riksdag on all three propositions",
+      "horizon": "T+90d",
+      "status": "OPEN",
+      "priority": "HIGH"
+    }
+  ]
+}
