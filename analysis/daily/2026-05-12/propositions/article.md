@@ -1,12 +1,12 @@
 ---
-title: "HD03267 — Security Threats [HIGH SALIENCE] - Expands grounds"
-description: "HD03267 — Security Threats [HIGH SALIENCE] - Expands grounds for expulsion/denial of entry for foreigners deemed \"qualified security threats\" - Widens SÄPO's advisory role in migration decisions -…"
-keywords: "Propositions, English, May 12, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, HD03267 Security Threats HIGH SALIENCE, HD03267, Security, Threats, HIGH, SALIENCE, Expands, grounds, expulsion, denial, entry, foreigners, deemed, qualified"
+title: "Three government propositions submitted 7 May 2026 advance the Tidö"
+description: "Three government propositions submitted 7 May 2026 advance the Tidö coalition's state-capacity agenda in the final parliamentary stretch before the September 2026 election."
+keywords: "Propositions, English, May 12, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Three government propositions submitted advance, Three, government, submitted, 2026, advance, Tidö, coalition, state-capacity, agenda, final, parliamentary, stretch, before"
 date: 2026-05-12
 subfolder: propositions
 slug: 2026-05-12-propositions
 source_folder: analysis/daily/2026-05-12/propositions
-generated_at: 2026-05-12T10:26:53.793Z
+generated_at: 2026-05-12T13:08:14.654Z
 language: en
 layout: article
 ---
@@ -17,7 +17,7 @@ layout: article
 
 ### Classification: PUBLIC | Sensitivity: OPEN
 
-### Key Judgement
+### BLUF
 Three government propositions submitted 7 May 2026 advance the Tidö coalition's state-capacity agenda in the final parliamentary stretch before the September 2026 election. The security proposition (HD03267) carries the highest salience and legal complexity; the Skatteverket expansion (HD03261) the highest societal sensitivity on privacy grounds; the e-ID (HD03250) the broadest public interest.
 
 ### Critical Intelligence Points
@@ -55,6 +55,7 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
 | 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
 | 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
+| 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
 | 📋 | [Voter Segmentation](#rm-voter-segmentation) | voter-bloc exposure: which demographics gain, lose or shift on this issue |
 | 🔭 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later |
@@ -71,13 +72,12 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
+| 🏷️ | [Political Classification](#rm-political-classification) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 📝 | [Horizon PIR Roll-Forward](#rm-horizon-pir-roll-forward) | Priority Intelligence Requirements rolled forward across long horizons (T+72h → T+1460d) |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
-| 📝 | [Political Classification](#rm-political-classification) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 📝 | [Stakeholder Impact](#rm-stakeholder-impact) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-political-classification) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/synthesis-summary.md -->
@@ -356,6 +356,62 @@ This is the session's most significant proposition from a democratic intelligenc
 3. The specific safeguard language that emerges from JuU committee negotiations
 
 **Post-adoption legal challenge probability: 85%** — ECtHR applications from individuals affected will occur within 12–24 months. Swedish courts may also receive administrative challenge.
+
+## Stakeholder Perspectives
+<!-- source: stakeholder-impact.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/stakeholder-impact.md -->
+
+<!-- analysis-type: stakeholder-impact -->
+
+### Stakeholder Matrix
+
+#### Primary Stakeholders (Direct Legislative Impact)
+
+**Swedish citizens without BankID (~10% population, ~1M people)** [HD03250]
+- Impact: HIGH POSITIVE — gain access to state digital services via government-issued e-ID
+- Groups: Elderly, refugees, low-income individuals, those without bank accounts
+
+**Foreign nationals in Sweden suspected of security threats** [HD03267]
+- Impact: HIGH NEGATIVE — expanded grounds for deportation/exclusion
+- Estimated: SÄPO annually flags ~50-100 individuals as "qualified threats"
+- ECHR challenge likelihood: HIGH for this group
+
+**Individuals with fraudulent/incorrect folkbokföring** [HD03261]
+- Impact: MEDIUM NEGATIVE (if fraudulent) / MEDIUM POSITIVE (if victim of fraud)
+- Estimated 50,000+ false registrations in system
+
+#### Secondary Stakeholders (Indirect Impact)
+
+**BankID consortium (banks: SEB, Handelsbanken, Nordea, SHB)** [HD03250]
+- Impact: MEDIUM NEGATIVE — state e-ID creates competition for BankID's near-monopoly
+- Expected response: Intense TU committee lobbying for "technology neutrality" language
+
+**Freja eID+** [HD03250]
+- Impact: MIXED — could lose market share OR could be designated as implementation partner
+- Owner: Verisec (now part of IDEX Biometrics group)
+
+**IMY (Integritetsskyddsmyndigheten / Datainspektionen)** [HD03261, HD03267]
+- Impact: INSTITUTIONAL — expanded workload monitoring compliance
+- Likely to issue advisory opinions; HD03261 triggers mandatory DPIA
+
+**SÄPO (Säkerhetspolisen)** [HD03267]
+- Impact: HIGH POSITIVE — expanded advisory mandate and data access
+- Risk: Accountability gap without corresponding oversight expansion
+
+**Statskontoret** [HD03261]
+- Impact: MONITORING — Skatteverket effectiveness under Statskontoret's oversight mandate
+
+**Civil society (RFSL, Amnesty Sweden, Civil Rights Defenders)** [HD03267]
+- Impact: MOBILISING — will coordinate opposition campaign in JuU hearings
+- Expected: Parliamentary petition, media campaign, legal challenges post-adoption
+
+**Municipalities (kommuner)** [HD03261]
+- Impact: POSITIVE — reduced costs from fraudulent welfare payments
+- Stockholm, Göteborg, Malmö most affected by current registration fraud
+
+### International Stakeholders
+**European Commission** [HD03250, HD03267]
+- Monitoring eIDAS 2.0 compliance (HD03250) and CJEU case law compatibility (HD03267)
+- EU Charter of Fundamental Rights Art 47 (right to effective remedy) applies to HD03267
 
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/coalition-mathematics.md -->
@@ -1096,6 +1152,41 @@ The government would respond: all three propositions have been in preparation fo
 
 **Assessment**: The steelman is partially valid for HD03250 and HD03261 (both have long legislative histories). For HD03267, the timing/content nexus with SD's election campaign is harder to dismiss.
 
+## Political Classification
+<!-- source: political-classification.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/political-classification.md -->
+
+<!-- analysis-type: political-classification -->
+
+### Classification Matrix
+
+| Proposition | Policy Domain | Ideological Axis | Conflict Level | Coalition Position | Opposition Posture |
+|-------------|--------------|-----------------|---------------|-------------------|-------------------|
+| HD03250 (e-ID) | Digital infrastructure | State vs market | Low | Unified (M+SD+KD+L) | Broadly supportive (S); neutral (C) |
+| HD03261 (Skatteverket) | Welfare/fraud prevention | Security vs privacy | Medium | Unified | S split; V/MP oppose |
+| HD03267 (Security threats) | Migration/security | Rights vs security | High | Unified (SD anchor) | S cautious-support; C reservations; V/MP oppose |
+
+### Party-by-Party Classification
+
+**M (Moderaterna — 73 seats)**: Leads all three; digital competence (HD03250), rule-of-law (HD03261), security-realism (HD03267). Central to election messaging.
+
+**SD (Sverigedemokraterna — 73 seats)**: Strongly drives HD03267 (migration-security nexus is SD's signature issue). Supports HD03261 (anti-fraud = anti-welfare-migration). Indifferent but supportive on HD03250.
+
+**KD (Kristdemokraterna — 19 seats)**: Supports all three on "ordered society" grounds. HD03267 fits KD's national sovereignty narrative.
+
+**L (Liberalerna — 16 seats)**: HD03250 aligns with L's digital-rights agenda but may raise data-protection concerns. Most likely to add reservations on HD03261 and HD03267 privacy aspects.
+
+**S (Socialdemokraterna — 107 seats)**: Likely to vote for HD03250 (digital inclusion). May abstain or narrowly support HD03261 (anti-fraud traditionally S-territory). Will vote against HD03267 or add strong reservations.
+
+**V (Vänsterpartiet — 24 seats)**: Oppose all three on structural grounds (state surveillance expansion pattern). Hard no on HD03267.
+
+**MP (Miljöpartiet — 18 seats)**: Oppose HD03267; concerned about HD03261 surveillance; support HD03250 digital inclusion element.
+
+**C (Centerpartiet — 24 seats)**: Support HD03250. Concerned about HD03261 state overreach. Will seek rule-of-law safeguards in HD03267.
+
+### Salience Classification
+- Election relevance: HIGH — all three align with Tidö's 2026 electoral positioning
+- Riksdag urgency: HIGH — propositions submitted at end of riksmöte, targeted for adoption before summer recess
+
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/cross-reference-map.md -->
 
@@ -1212,96 +1303,21 @@ This analysis establishes baseline positions for:
 All documents sourced from official riksdag-regering-mcp API.
 Data sourced from 2026-05-07 via lookback fallback — check freshness indicators.
 
-## Political Classification
-<!-- source: political-classification.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/political-classification.md -->
+## Analysis Artifact Coverage Report
 
-<!-- analysis-type: political-classification -->
+This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
-### Classification Matrix
+| Coverage area | Count | Reader-facing treatment |
+|---|---:|---|
+| Ordered/root markdown sections | 24 | Expanded as article sections in the narrative order above |
+| Per-document analyses | 3 | Expanded under `## Per-document intelligence` immediately after significance scoring |
+| Supporting data artifacts | 4 | Linked in Article Sources, not expanded inline |
 
-| Proposition | Policy Domain | Ideological Axis | Conflict Level | Coalition Position | Opposition Posture |
-|-------------|--------------|-----------------|---------------|-------------------|-------------------|
-| HD03250 (e-ID) | Digital infrastructure | State vs market | Low | Unified (M+SD+KD+L) | Broadly supportive (S); neutral (C) |
-| HD03261 (Skatteverket) | Welfare/fraud prevention | Security vs privacy | Medium | Unified | S split; V/MP oppose |
-| HD03267 (Security threats) | Migration/security | Rights vs security | High | Unified (SD anchor) | S cautious-support; C reservations; V/MP oppose |
+**Absent canonical ordered slots (no alias variant on disk)**: `intelligence-assessment.md`, `cycle-trajectory.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `methodology-reflection.md`
 
-### Party-by-Party Classification
+**Present-but-empty canonical slots (on disk but body empty after cleaning)**: None.
 
-**M (Moderaterna — 73 seats)**: Leads all three; digital competence (HD03250), rule-of-law (HD03261), security-realism (HD03267). Central to election messaging.
-
-**SD (Sverigedemokraterna — 73 seats)**: Strongly drives HD03267 (migration-security nexus is SD's signature issue). Supports HD03261 (anti-fraud = anti-welfare-migration). Indifferent but supportive on HD03250.
-
-**KD (Kristdemokraterna — 19 seats)**: Supports all three on "ordered society" grounds. HD03267 fits KD's national sovereignty narrative.
-
-**L (Liberalerna — 16 seats)**: HD03250 aligns with L's digital-rights agenda but may raise data-protection concerns. Most likely to add reservations on HD03261 and HD03267 privacy aspects.
-
-**S (Socialdemokraterna — 107 seats)**: Likely to vote for HD03250 (digital inclusion). May abstain or narrowly support HD03261 (anti-fraud traditionally S-territory). Will vote against HD03267 or add strong reservations.
-
-**V (Vänsterpartiet — 24 seats)**: Oppose all three on structural grounds (state surveillance expansion pattern). Hard no on HD03267.
-
-**MP (Miljöpartiet — 18 seats)**: Oppose HD03267; concerned about HD03261 surveillance; support HD03250 digital inclusion element.
-
-**C (Centerpartiet — 24 seats)**: Support HD03250. Concerned about HD03261 state overreach. Will seek rule-of-law safeguards in HD03267.
-
-### Salience Classification
-- Election relevance: HIGH — all three align with Tidö's 2026 electoral positioning
-- Riksdag urgency: HIGH — propositions submitted at end of riksmöte, targeted for adoption before summer recess
-
-## Stakeholder Impact
-<!-- source: stakeholder-impact.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/stakeholder-impact.md -->
-
-<!-- analysis-type: stakeholder-impact -->
-
-### Stakeholder Matrix
-
-#### Primary Stakeholders (Direct Legislative Impact)
-
-**Swedish citizens without BankID (~10% population, ~1M people)** [HD03250]
-- Impact: HIGH POSITIVE — gain access to state digital services via government-issued e-ID
-- Groups: Elderly, refugees, low-income individuals, those without bank accounts
-
-**Foreign nationals in Sweden suspected of security threats** [HD03267]
-- Impact: HIGH NEGATIVE — expanded grounds for deportation/exclusion
-- Estimated: SÄPO annually flags ~50-100 individuals as "qualified threats"
-- ECHR challenge likelihood: HIGH for this group
-
-**Individuals with fraudulent/incorrect folkbokföring** [HD03261]
-- Impact: MEDIUM NEGATIVE (if fraudulent) / MEDIUM POSITIVE (if victim of fraud)
-- Estimated 50,000+ false registrations in system
-
-#### Secondary Stakeholders (Indirect Impact)
-
-**BankID consortium (banks: SEB, Handelsbanken, Nordea, SHB)** [HD03250]
-- Impact: MEDIUM NEGATIVE — state e-ID creates competition for BankID's near-monopoly
-- Expected response: Intense TU committee lobbying for "technology neutrality" language
-
-**Freja eID+** [HD03250]
-- Impact: MIXED — could lose market share OR could be designated as implementation partner
-- Owner: Verisec (now part of IDEX Biometrics group)
-
-**IMY (Integritetsskyddsmyndigheten / Datainspektionen)** [HD03261, HD03267]
-- Impact: INSTITUTIONAL — expanded workload monitoring compliance
-- Likely to issue advisory opinions; HD03261 triggers mandatory DPIA
-
-**SÄPO (Säkerhetspolisen)** [HD03267]
-- Impact: HIGH POSITIVE — expanded advisory mandate and data access
-- Risk: Accountability gap without corresponding oversight expansion
-
-**Statskontoret** [HD03261]
-- Impact: MONITORING — Skatteverket effectiveness under Statskontoret's oversight mandate
-
-**Civil society (RFSL, Amnesty Sweden, Civil Rights Defenders)** [HD03267]
-- Impact: MOBILISING — will coordinate opposition campaign in JuU hearings
-- Expected: Parliamentary petition, media campaign, legal challenges post-adoption
-
-**Municipalities (kommuner)** [HD03261]
-- Impact: POSITIVE — reduced costs from fraudulent welfare payments
-- Stockholm, Göteborg, Malmö most affected by current registration fraud
-
-### International Stakeholders
-**European Commission** [HD03250, HD03267]
-- Monitoring eIDAS 2.0 compliance (HD03250) and CJEU case law compatibility (HD03267)
-- EU Charter of Fundamental Rights Art 47 (right to effective remedy) applies to HD03267
+**Alias-de-duped canonical artifacts (on disk but suppressed because canonical alias was already emitted)**: None.
 
 ## Article Sources
 
@@ -1313,6 +1329,7 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`documents/hd03250-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/documents/hd03250-analysis.md)
 - [`documents/hd03261-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/documents/hd03261-analysis.md)
 - [`documents/hd03267-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/documents/hd03267-analysis.md)
+- [`stakeholder-impact.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/stakeholder-impact.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/voter-segmentation.md)
 - [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/forward-indicators.md)
@@ -1329,8 +1346,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/implementation-feasibility.md)
 - [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/devils-advocate.md)
+- [`political-classification.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/political-classification.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/cross-reference-map.md)
 - [`horizon-pir-rollforward.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/horizon-pir-rollforward.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/data-download-manifest.md)
-- [`political-classification.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/political-classification.md)
-- [`stakeholder-impact.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/stakeholder-impact.md)
+
+### Supporting Data Artifacts
+
+These machine-readable artifacts are linked for auditability and are not expanded inline, preserving the reader-facing narrative order:
+
+- [`pir-status.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/pir-status.json)
+- [`documents/hd03250.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/documents/hd03250.json)
+- [`documents/hd03261.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/documents/hd03261.json)
+- [`documents/hd03267.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/propositions/documents/hd03267.json)

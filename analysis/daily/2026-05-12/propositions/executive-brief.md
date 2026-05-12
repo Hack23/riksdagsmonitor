@@ -3,7 +3,7 @@
 
 ## Classification: PUBLIC | Sensitivity: OPEN
 
-## Key Judgement
+## BLUF
 Three government propositions submitted 7 May 2026 advance the Tidö coalition's state-capacity agenda in the final parliamentary stretch before the September 2026 election. The security proposition (HD03267) carries the highest salience and legal complexity; the Skatteverket expansion (HD03261) the highest societal sensitivity on privacy grounds; the e-ID (HD03250) the broadest public interest.
 
 ## Critical Intelligence Points

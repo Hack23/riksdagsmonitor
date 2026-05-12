@@ -58,6 +58,7 @@ import {
 } from '../scripts/render-lib/aggregator/order.js';
 import {
   anchorForTitle,
+  auditAnchorForArtifacts,
   buildReaderGuide,
   READER_GUIDE_ENTRIES,
 } from '../scripts/render-lib/aggregator/reader-guide.js';
@@ -75,7 +76,7 @@ import {
   readFirstHeading,
   titleFromBluf,
 } from '../scripts/render-lib/aggregator/seo/title.js';
-import { buildSourcesAppendix } from '../scripts/render-lib/aggregator/sources-appendix.js';
+import { buildArtifactCoverageReport, buildSourcesAppendix } from '../scripts/render-lib/aggregator/sources-appendix.js';
 import { aggregateAnalysis } from '../scripts/render-lib/aggregator/aggregate.js';
 
 // Markdown leaf modules
@@ -702,6 +703,7 @@ describe('aggregator/reader-guide — anchor slug parity', () => {
     expect(guide).not.toContain('Key Judgments'); // intelligence-assessment.md not present
     // Audit-appendix pointer is always emitted.
     expect(guide).toContain('Audit appendix');
+    expect(guide).toContain('#rm-article-sources');
     // No per-document row when hasDocuments=false.
     expect(guide).not.toContain('Per-document intelligence');
   });
@@ -709,6 +711,17 @@ describe('aggregator/reader-guide — anchor slug parity', () => {
   it('buildReaderGuide emits the per-document row when hasDocuments=true', () => {
     const guide = buildReaderGuide(new Set(['executive-brief.md']), true);
     expect(guide).toContain('Per-document intelligence');
+  });
+
+  it('buildReaderGuide audit row targets political-classification when classification-results is absent', () => {
+    const guide = buildReaderGuide(
+      new Set(['executive-brief.md', 'political-classification.md']),
+      false,
+    );
+    expect(guide).toContain('[Audit appendix](#rm-political-classification)');
+    expect(guide).not.toContain('[Audit appendix](#rm-classification-results)');
+    expect(guide).toContain('ISMS data classification');
+    expect(auditAnchorForArtifacts(['political-classification.md'])).toBe('rm-political-classification');
   });
 });
 
@@ -726,6 +739,75 @@ describe('aggregator/sources-appendix', () => {
     expect(out).toContain('`executive-brief.md`');
     expect(out).toContain('`documents/foo.md`');
     expect(out).toContain('https://github.com/');
+  });
+
+  it('links supporting JSON data artifacts without expanding them inline', () => {
+    const out = buildSourcesAppendix(
+      ['executive-brief.md'],
+      'analysis/daily/2026-05-12/propositions',
+      ['pir-status.json', 'economic-data.json', 'documents/hd03250.json'],
+    );
+    expect(out).toContain('### Supporting Data Artifacts');
+    expect(out).toContain('`pir-status.json`');
+    expect(out).toContain('`economic-data.json`');
+    expect(out).toContain('`documents/hd03250.json`');
+    expect(out).toContain('not expanded inline');
+  });
+
+  it('emits a supporting-data-only preamble when used is empty but supporting data exists', () => {
+    const out = buildSourcesAppendix(
+      [],
+      'analysis/daily/2026-05-12/propositions',
+      ['pir-status.json'],
+    );
+    expect(out).not.toBeNull();
+    expect(out).toContain('## Article Sources');
+    expect(out).toContain('only machine-readable supporting data');
+    expect(out).not.toContain('Each section above projects one analysis artifact');
+    expect(out).toContain('### Supporting Data Artifacts');
+    expect(out).toContain('`pir-status.json`');
+  });
+
+  it('buildArtifactCoverageReport summarizes emitted, data and absent artifacts', () => {
+    const out = buildArtifactCoverageReport({
+      emittedMarkdownArtifacts: ['executive-brief.md', 'political-classification.md'],
+      perDocumentArtifacts: ['documents/HD1-analysis.md'],
+      supportingDataArtifacts: ['pir-status.json'],
+      absentOrderedArtifacts: ['classification-results.md'],
+    });
+    expect(out).toContain('## Analysis Artifact Coverage Report');
+    expect(out).toContain('| Ordered/root markdown sections | 2 |');
+    expect(out).toContain('| Per-document analyses | 1 |');
+    expect(out).toContain('| Supporting data artifacts | 1 |');
+    expect(out).toContain('`classification-results.md`');
+  });
+
+  it('buildArtifactCoverageReport surfaces alias-de-duped and present-but-empty buckets on their own lines', () => {
+    const out = buildArtifactCoverageReport({
+      emittedMarkdownArtifacts: ['executive-brief.md', 'stakeholder-perspectives.md'],
+      perDocumentArtifacts: [],
+      supportingDataArtifacts: [],
+      absentOrderedArtifacts: ['scenario-analysis.md'],
+      presentButFilteredArtifacts: ['threat-analysis.md'],
+      aliasDedupedArtifacts: ['stakeholder-impact.md'],
+    });
+    expect(out).toContain('Absent canonical ordered slots');
+    expect(out).toContain('`scenario-analysis.md`');
+    expect(out).toContain('Present-but-empty canonical slots');
+    expect(out).toContain('`threat-analysis.md`');
+    expect(out).toContain('Alias-de-duped canonical artifacts');
+    expect(out).toContain('`stakeholder-impact.md`');
+  });
+
+  it('buildArtifactCoverageReport annotates the supporting-data count when truncation occurred', () => {
+    const out = buildArtifactCoverageReport({
+      emittedMarkdownArtifacts: ['executive-brief.md'],
+      perDocumentArtifacts: [],
+      supportingDataArtifacts: ['a.json', 'b.json'],
+      supportingDataTruncatedCount: 17,
+      absentOrderedArtifacts: [],
+    });
+    expect(out).toContain('| Supporting data artifacts | 2 (+17 truncated) |');
   });
 });
 

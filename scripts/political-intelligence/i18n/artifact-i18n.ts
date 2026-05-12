@@ -16,6 +16,7 @@
 
 import type { Language } from '../../types/language.js';
 
+import { aliasGroupFor } from '../../render-lib/aggregator/order.js';
 import { METHODOLOGY_DESC_I18N } from './methodology-i18n.js';
 import { TEMPLATE_DESC_I18N, TEMPLATE_GENERIC_DESC_I18N } from './template-i18n.js';
 
@@ -218,11 +219,31 @@ export const ARTIFACT_ICON: Record<string, string> = {
   'README.md': '📘',
 };
 
+/**
+ * Resolve an artifact lookup key by walking the alias group: returns the
+ * first member of the group present in `map`. Falls back to the input
+ * filename when no alias is registered. Used to make the i18n title and
+ * icon maps alias-aware so adding a new alias filename to
+ * {@link FILENAME_ALIASES} does not require duplicating its entry in
+ * every i18n table.
+ */
+function aliasLookupKey<T>(file: string, map: Record<string, T>): string {
+  if (file in map) return file;
+  const aliases = aliasGroupFor(file);
+  if (!aliases) return file;
+  for (const alias of aliases) {
+    if (alias in map) return alias;
+  }
+  return file;
+}
+
 /** Return the icon for a given artifact filename (with document/ prefix fallback). */
 export function artifactIcon(file: string): string {
   const baseName = file.replace(/^documents\//, '');
-  if (ARTIFACT_ICON[baseName]) return ARTIFACT_ICON[baseName];
-  if (ARTIFACT_ICON[file]) return ARTIFACT_ICON[file];
+  const baseKey = aliasLookupKey(baseName, ARTIFACT_ICON);
+  if (ARTIFACT_ICON[baseKey]) return ARTIFACT_ICON[baseKey];
+  const fileKey = aliasLookupKey(file, ARTIFACT_ICON);
+  if (ARTIFACT_ICON[fileKey]) return ARTIFACT_ICON[fileKey];
   if (file.endsWith('.json')) return '📄';
   if (file.startsWith('documents/') && file.endsWith('-analysis.md')) return '📑';
   if (file.startsWith('documents/')) return '📎';
@@ -255,10 +276,11 @@ export function prettifyMarkdownTitle(file: string): string {
     .replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
-/** Localised display title for an artifact filename. Falls back to English prettify. */
+/** Localised display title for an artifact filename. Falls back to alias-group sibling, then English prettify. */
 export function artifactTitle(file: string, lang: Language): string {
-  return ARTIFACT_TITLE_I18N[file]?.[lang]
-      ?? ARTIFACT_TITLE_I18N[file]?.en
+  const key = aliasLookupKey(file, ARTIFACT_TITLE_I18N);
+  return ARTIFACT_TITLE_I18N[key]?.[lang]
+      ?? ARTIFACT_TITLE_I18N[key]?.en
       ?? prettifyMarkdownTitle(file);
 }
 

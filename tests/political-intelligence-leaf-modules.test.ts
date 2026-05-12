@@ -222,6 +222,28 @@ describe('political-intelligence/render/daily-day.ts — artifactBaseName / arti
     const [slug, meta] = Object.entries(TEMPLATE_META)[0]!;
     expect(artifactIcon(slug)).toBe(meta.icon);
   });
+
+  it('artifactIcon resolves alias siblings via FILENAME_ALIASES (stakeholder-impact → stakeholder-perspectives icon)', async () => {
+    // `stakeholder-impact.md` is registered as an alias of
+    // `stakeholder-perspectives.md` in FILENAME_ALIASES but only the
+    // canonical form has an explicit ARTIFACT_ICON entry. The lookup
+    // (the one in `artifact-i18n.ts`, used by the article-aside
+    // renderer) should fall through to the alias-group sibling rather
+    // than the generic '📝' fallback.
+    const { artifactIcon: i18nArtifactIcon } = await import(
+      '../scripts/political-intelligence/i18n/artifact-i18n.js'
+    );
+    expect(i18nArtifactIcon('stakeholder-impact.md'))
+      .toBe(i18nArtifactIcon('stakeholder-perspectives.md'));
+  });
+
+  it('artifactTitle resolves alias siblings via FILENAME_ALIASES (political-classification → classification-results title)', () => {
+    // Same alias-fallback contract on the title side: a new alias
+    // filename should automatically inherit its group’s localised
+    // title rather than falling through to `prettifyMarkdownTitle`.
+    expect(artifactTitle('political-classification.md', 'sv'))
+      .toBe(artifactTitle('classification-results.md', 'sv'));
+  });
 });
 
 // ---------------------------------------------------------------------------

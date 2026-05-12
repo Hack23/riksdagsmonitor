@@ -2,7 +2,7 @@
 
 ## Key Judgments
 
-### KJ-1: KU34 Constitutional Package Will Trigger Split Vote [LIKELY / C2]
+### KJ-1: KU34 Constitutional Package Points to Split Vote [LIKELY / C2]
 
 **Confidence**: LIKELY (55–70%). Admiralty source: B2.  
 **Basis**: The dual-amendment structure (abortion rights + freedom of association restrictions) creates internal coalition tension and cross-block complexity. Historical precedent (RF 1974 amendment process) shows dual-objective constitutional reforms rarely achieve ¾ majority in single vote. S:s interna partiposition delar abortstöd men avvisar föreningsfrihetsbegränsning — skapar röstningsparadox.  
@@ -84,4 +84,3 @@ graph LR
 **Basis**: Scotland 2018 (50% conviction year 1 → stabilized), Norway 2006/2014 (35% long-term). Both required specialist training programs.  
 **Policy implication**: Riksdag should mandate dedicated training program funding as condition of JuU39 effectiveness.  
 **WEP**: JuU39 IS LIKELY to show <40% conviction rate in first 2 years; evidence-gathering infrastructure is the binding constraint.
-

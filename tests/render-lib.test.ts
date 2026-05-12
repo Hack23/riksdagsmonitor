@@ -291,6 +291,7 @@ describe('render-lib — AGGREGATION_ORDER', () => {
     const idxKJ = AGGREGATION_ORDER.indexOf('intelligence-assessment.md');
     const idxScoring = AGGREGATION_ORDER.indexOf('significance-scoring.md');
     const idxStakeholders = AGGREGATION_ORDER.indexOf('stakeholder-perspectives.md');
+    const idxStakeholderImpactAlias = AGGREGATION_ORDER.indexOf('stakeholder-impact.md');
     const idxCoalition = AGGREGATION_ORDER.indexOf('coalition-mathematics.md');
     const idxVoter = AGGREGATION_ORDER.indexOf('voter-segmentation.md');
     const idxForward = AGGREGATION_ORDER.indexOf('forward-indicators.md');
@@ -310,7 +311,8 @@ describe('render-lib — AGGREGATION_ORDER', () => {
     // ranking and per-document expansion (which is injected by
     // aggregate.ts after significance-scoring, not via this array).
     expect(idxStakeholders).toBe(idxScoring + 1);
-    expect(idxCoalition).toBe(idxStakeholders + 1);
+    expect(idxStakeholderImpactAlias).toBe(idxStakeholders + 1);
+    expect(idxCoalition).toBe(idxStakeholderImpactAlias + 1);
     expect(idxVoter).toBe(idxCoalition + 1);
 
     // Phase D — Forward trajectory follows the actors cluster.
@@ -337,9 +339,10 @@ describe('render-lib — AGGREGATION_ORDER', () => {
   });
 
   it('still keeps the appendix group at the very end', () => {
-    const tail = AGGREGATION_ORDER.slice(-5);
+    const tail = AGGREGATION_ORDER.slice(-6);
     expect(tail).toEqual([
       'classification-results.md',
+      'political-classification.md',
       'cross-reference-map.md',
       'horizon-pir-rollforward.md',
       'methodology-reflection.md',
@@ -555,6 +558,39 @@ describe('render-lib — aggregateAnalysis (integration)', () => {
     expect(result.markdown).not.toContain('old swedish');
     expect(result.artifactsUsed).not.toContain('article.md');
     expect(result.artifactsUsed).not.toContain('article.sv.md');
+  });
+
+  it('Reader Guide is built from emitted artifacts — a file cleaned to empty is NOT linked', () => {
+    // Regression test: reader guide must only link headings that actually
+    // get emitted. Previously it was built from rootArtifactSet (files on
+    // disk), so a file present on disk but trimmed to empty by
+    // cleanArtifactBody() would produce a broken in-article anchor.
+    const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'rm-render-guide-emitted-'));
+    const sub = path.join(tmp, '2099-01-01', 'guide-emitted');
+    fs.mkdirSync(sub, { recursive: true });
+    // executive-brief is required; synthesis-summary is a real section
+    fs.writeFileSync(path.join(sub, 'executive-brief.md'), '# EB\n\nReal lede.\n');
+    fs.writeFileSync(path.join(sub, 'synthesis-summary.md'), '# Synthesis\n\nReal synthesis.\n');
+    // intelligence-assessment.md contains only Pass-2 / admin content that
+    // cleanArtifactBody() will strip to an empty string — it must NOT
+    // appear in the Reader Guide.
+    fs.writeFileSync(
+      path.join(sub, 'intelligence-assessment.md'),
+      '## Pass 2 internal review\n\nself-audit text only\n',
+    );
+
+    const result = aggregateAnalysis({
+      subfolderAbsPath: sub,
+      subfolderRepoRelPath: 'analysis/daily/2099-01-01/guide-emitted',
+      date: '2099-01-01',
+      subfolder: 'guide-emitted',
+    });
+    // synthesis-summary survived cleaning → appears in guide
+    expect(result.markdown).toContain('[Synthesis Summary]');
+    // intelligence-assessment was cleaned to empty → must NOT appear in guide
+    expect(result.markdown).not.toContain('[Intelligence Assessment]');
+    // The section itself is also absent from the body
+    expect(result.markdown).not.toContain('## Intelligence Assessment');
   });
 });
 
@@ -1445,6 +1481,34 @@ describe('render-lib — aggregateAnalysis edge cases', () => {
     expect(result.markdown).toContain('Bar body.');
     expect(result.artifactsUsed).toContain('documents/HD01FOO-analysis.md');
     expect(result.artifactsUsed).toContain('documents/HD01BAR-analysis.md');
+  });
+
+  it('classifies a sibling that exists on disk + alias-suppressed as alias-de-duped (not present-but-empty) in the coverage report', () => {
+    const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'rm-render-alias-'));
+    const sub = path.join(tmp, '2099-01-01', 'alias-dedup');
+    fs.mkdirSync(sub, { recursive: true });
+    fs.writeFileSync(path.join(sub, 'executive-brief.md'), '# EB\n\nLede.\n');
+    // Both alias members present + non-empty: stakeholder-perspectives.md
+    // appears first in AGGREGATION_ORDER and wins; stakeholder-impact.md
+    // is alias-suppressed at selection time and MUST be reported as
+    // alias-de-duped, not as present-but-empty (which is the
+    // cleanArtifactBody bucket).
+    fs.writeFileSync(
+      path.join(sub, 'stakeholder-perspectives.md'),
+      '# SP\n\nStakeholder perspectives body.\n',
+    );
+    fs.writeFileSync(
+      path.join(sub, 'stakeholder-impact.md'),
+      '# SI\n\nStakeholder impact body.\n',
+    );
+    const result = aggregateAnalysis({
+      subfolderAbsPath: sub,
+      subfolderRepoRelPath: 'analysis/daily/2099-01-01/alias-dedup',
+      date: '2099-01-01',
+      subfolder: 'alias-dedup',
+    });
+    expect(result.markdown).toContain('Alias-de-duped canonical artifacts');
+    expect(result.markdown).toContain('`stakeholder-impact.md`');
   });
 
   it('appends unknown supplementary *.md after the core order alphabetically', () => {

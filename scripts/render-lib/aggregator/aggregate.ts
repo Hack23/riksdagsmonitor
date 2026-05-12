@@ -41,7 +41,14 @@ import { expandPerDocumentAnalyses, hasPerDocumentAnalyses } from './per-documen
 import { buildReaderGuide } from './reader-guide.js';
 import { readBlufParagraph, readFirstParagraph, truncateToSentenceBoundary } from './seo/description.js';
 import { cleanArticleTitle, readFirstHeading, titleFromBluf } from './seo/title.js';
-import { buildSourcesAppendix } from './sources-appendix.js';
+import { buildArtifactCoverageReport, buildSourcesAppendix } from './sources-appendix.js';
+
+// Maximum number of supporting-data JSON artifacts surfaced in the
+// `## Article Sources` appendix and counted in the coverage report.
+// Caps prevent runaway pipeline output (e.g. a step that drops dozens
+// of intermediate JSON files) from bloating the rendered article and
+// the `artifactsUsed` payload.
+const MAX_SUPPORTING_DATA_ARTIFACTS = 100;
 
 /**
  * Inputs to {@link aggregateAnalysis}. All four required fields provide
@@ -108,6 +115,17 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
 
   const sections: string[] = [];
   const used: string[] = [];
+  // Files that exist on disk and were attempted by `readSection` but
+  // whose body was trimmed to an empty string by `cleanArtifactBody()`
+  // (and therefore omitted from the article projection). Tracked here
+  // so the coverage report can distinguish them from artifacts that
+  // were never attempted because alias resolution suppressed them.
+  const cleanedToEmpty = new Set<string>();
+  // Files skipped at *selection time* by alias-group de-duplication
+  // (i.e. another member of the alias set was already emitted in this
+  // run). Distinct from `cleanedToEmpty` so the report buckets match
+  // their stated semantics.
+  const aliasSuppressedAtSelection = new Set<string>();
 
   const readSection = (fileName: string, skipIfMissing: boolean): void => {
     const abs = path.join(subfolderAbsPath, fileName);
@@ -119,7 +137,10 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
     }
     const raw = fs.readFileSync(abs, 'utf8');
     const clean = rewriteRelativeLinks(cleanArtifactBody(raw), subfolderRepoRelPath);
-    if (!clean) return;
+    if (!clean) {
+      cleanedToEmpty.add(fileName);
+      return;
+    }
     const title = titleForArtifact(fileName);
     const sourceUrl = buildGithubBlobUrl(`${subfolderRepoRelPath}/${fileName}`);
     sections.push(
@@ -165,13 +186,57 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
   );
   const docsExist = hasPerDocumentAnalyses(subfolderAbsPath);
 
+  // Constrained to two intentional locations:
+  //   1. Top-level `*.json` (canonical pipeline outputs:
+  //      `pir-status.json`, `economic-data.json`, `_summary.json`, etc.)
+  //   2. `documents/*.json` (per-document raw payloads).
+  // Any new pipeline step that emits JSON elsewhere has to be added
+  // here explicitly — we deliberately do NOT recurse arbitrary
+  // subdirectories so a future intermediate cache directory cannot
+  // silently flood the appendix and reader-facing artifact list.
+  // A hard cap (`MAX_SUPPORTING_DATA_ARTIFACTS`) provides a final
+  // backstop and the truncation count is surfaced in the report.
+  const collectSupportingDataArtifacts = (): { files: string[]; truncatedCount: number } => {
+    const collected: string[] = [];
+    const collectFromDir = (dirAbs: string, prefix: string): void => {
+      if (!fs.existsSync(dirAbs)) return;
+      for (const entry of fs.readdirSync(dirAbs, { withFileTypes: true })
+        .sort((a, b) => a.name.localeCompare(b.name))) {
+        if (!entry.isFile()) continue;
+        if (!/\.json$/i.test(entry.name)) continue;
+        const rel = prefix ? `${prefix}/${entry.name}` : entry.name;
+        collected.push(rel);
+      }
+    };
+    collectFromDir(subfolderAbsPath, '');
+    collectFromDir(path.join(subfolderAbsPath, 'documents'), 'documents');
+    const truncatedCount = Math.max(0, collected.length - MAX_SUPPORTING_DATA_ARTIFACTS);
+    return {
+      files: truncatedCount > 0 ? collected.slice(0, MAX_SUPPORTING_DATA_ARTIFACTS) : collected,
+      truncatedCount,
+    };
+  };
+
   readSection('executive-brief.md', false);
-  sections.push(buildReaderGuide(rootArtifactSet, docsExist));
+  // Reader Intelligence Guide is inserted AFTER the emission loops
+  // (see below) so it is built from the actually-emitted artifact set
+  // rather than rootArtifactSet (files on disk). Building it here would
+  // produce rows whose #anchors point to headings that never get emitted
+  // when cleanArtifactBody() trims a file to empty or alias resolution
+  // suppresses it — i.e. broken in-article navigation.
 
   for (const fileName of AGGREGATION_ORDER) {
     if (fileName === 'executive-brief.md') continue;
     const aliases = aliasGroupFor(fileName);
-    if (aliases && used.some((usedFile) => aliases.has(usedFile))) continue;
+    if (aliases && used.some((usedFile) => aliases.has(usedFile))) {
+      // Only mark as alias-suppressed if the file actually exists on
+      // disk; otherwise it's just absent and will be classified as
+      // missingFromDisk by the per-slot reconciliation below.
+      if (rootArtifactSet.has(fileName)) {
+        aliasSuppressedAtSelection.add(fileName);
+      }
+      continue;
+    }
     readSection(fileName, true);
     if (fileName === 'significance-scoring.md') {
       const docExpansion = expandPerDocumentAnalyses(subfolderAbsPath, subfolderRepoRelPath);
@@ -191,7 +256,98 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
     readSection(f, true);
   }
 
-  const sourcesAppendix = buildSourcesAppendix(used, subfolderRepoRelPath);
+  const supportingDataResult = collectSupportingDataArtifacts();
+  const supportingDataArtifacts = supportingDataResult.files;
+  const supportingDataTruncatedCount = supportingDataResult.truncatedCount;
+  const emittedRootMarkdownArtifacts = used.filter((file) => !file.startsWith('documents/'));
+  const perDocumentArtifacts = used.filter((file) => file.startsWith('documents/'));
+  const emittedRootSet = new Set(emittedRootMarkdownArtifacts);
+
+  // Now that all sections have been collected, build the Reader Guide
+  // from the *emitted* set so every row points to a heading that
+  // actually exists. Splice it in at index 1 (immediately after the
+  // Executive Brief) to preserve the canonical reading order.
+  sections.splice(1, 0, buildReaderGuide(emittedRootSet, docsExist));
+
+  // Coverage reporting is computed per *slot* rather than per filename
+  // so an alias group (e.g. {stakeholder-perspectives.md,
+  // stakeholder-impact.md}) counts as ONE canonical slot. Otherwise a
+  // missing alias group would be over-reported (both filenames listed
+  // as absent) when the intent is "one of these aliases".
+  type CoverageSlot = { readonly label: string; readonly members: readonly string[] };
+  const orderedSlots: CoverageSlot[] = [];
+  const seenInGroup = new Set<string>();
+  for (const file of AGGREGATION_ORDER) {
+    if (file === 'executive-brief.md') continue;
+    if (seenInGroup.has(file)) continue;
+    const aliases = aliasGroupFor(file);
+    if (aliases) {
+      // Preserve AGGREGATION_ORDER ordering for the group's label.
+      const members = AGGREGATION_ORDER.filter((f) => aliases.has(f));
+      for (const m of members) seenInGroup.add(m);
+      orderedSlots.push({ label: members.join(' / '), members });
+    } else {
+      orderedSlots.push({ label: file, members: [file] });
+    }
+  }
+
+  // Per-slot classification. A slot is:
+  //   • missingFromDisk     — no member of the slot exists on disk
+  //   • emitted (satisfied) — at least one member was emitted
+  //   • presentButFiltered  — members exist on disk but none emitted;
+  //                            tracked because `cleanArtifactBody()`
+  //                            trimmed them to empty (`cleanedToEmpty`)
+  //   • aliasDeduped        — siblings of an emitted slot member that
+  //                            were skipped at *selection time* (i.e.
+  //                            `aliasSuppressedAtSelection`). Distinct
+  //                            from `cleanedToEmpty` so a sibling that
+  //                            happened to also be empty after cleaning
+  //                            is reported in the right bucket.
+  const missingFromDisk: string[] = [];
+  const presentButFiltered: string[] = [];
+  const aliasDedupedArtifacts: string[] = [];
+  for (const slot of orderedSlots) {
+    const onDisk = slot.members.filter((m) => rootArtifactSet.has(m));
+    const emitted = slot.members.filter((m) => emittedRootSet.has(m));
+    if (onDisk.length === 0) {
+      missingFromDisk.push(slot.label);
+      continue;
+    }
+    if (emitted.length === 0) {
+      // None of the on-disk members survived cleaning. List the actual
+      // on-disk filenames so reviewers can grep them quickly.
+      presentButFiltered.push(onDisk.join(', '));
+      continue;
+    }
+    // Slot satisfied; siblings that exist on disk but were not emitted
+    // get classified by *why* they were not emitted.
+    for (const member of onDisk) {
+      if (emittedRootSet.has(member)) continue;
+      if (aliasSuppressedAtSelection.has(member)) {
+        aliasDedupedArtifacts.push(member);
+      } else if (cleanedToEmpty.has(member)) {
+        presentButFiltered.push(member);
+      } else {
+        // Should not happen in practice (file exists, not emitted, not
+        // alias-suppressed, not cleaned-to-empty) — surface defensively
+        // as filtered so the report stays honest.
+        presentButFiltered.push(member);
+      }
+    }
+  }
+  const absentOrderedArtifacts = missingFromDisk;
+
+  sections.push(buildArtifactCoverageReport({
+    emittedMarkdownArtifacts: emittedRootMarkdownArtifacts,
+    perDocumentArtifacts,
+    supportingDataArtifacts,
+    supportingDataTruncatedCount,
+    absentOrderedArtifacts,
+    presentButFilteredArtifacts: presentButFiltered,
+    aliasDedupedArtifacts,
+  }));
+
+  const sourcesAppendix = buildSourcesAppendix(used, subfolderRepoRelPath, supportingDataArtifacts);
   if (sourcesAppendix) sections.push(sourcesAppendix);
 
   const frontMatter = buildFrontMatter({
@@ -210,7 +366,7 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
 
   return {
     markdown: frontMatter + body + '\n',
-    artifactsUsed: used,
+    artifactsUsed: [...used, ...supportingDataArtifacts],
     title,
     description,
     keywords,

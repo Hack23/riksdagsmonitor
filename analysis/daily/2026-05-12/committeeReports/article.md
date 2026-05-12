@@ -6,7 +6,7 @@ date: 2026-05-12
 subfolder: committeeReports
 slug: 2026-05-12-committeeReports
 source_folder: analysis/daily/2026-05-12/committeeReports
-generated_at: 2026-05-12T10:26:53.774Z
+generated_at: 2026-05-12T13:08:17.219Z
 language: en
 layout: article
 ---
@@ -162,7 +162,7 @@ graph TD
 
 ### Key Judgments
 
-#### KJ-1: KU34 Constitutional Package Will Trigger Split Vote [LIKELY / C2]
+#### KJ-1: KU34 Constitutional Package Points to Split Vote [LIKELY / C2]
 
 **Basis**: The dual-amendment structure (abortion rights + freedom of association restrictions) creates internal coalition tension and cross-block complexity. Historical precedent (RF 1974 amendment process) shows dual-objective constitutional reforms rarely achieve ¾ majority in single vote. S:s interna partiposition delar abortstöd men avvisar föreningsfrihetsbegränsning — skapar röstningsparadox.  
 
@@ -1878,6 +1878,22 @@ All röstintentionsanalys är märkt [unconfirmed] eller D4-D5. Analysen bör up
 **HD01KU34** (constitutional amendment): Lagrådet referral expected for RF changes. Constitutional amendments to Chapter 2 RF (basic freedoms) require Lagrådet scrutiny. Tag: `referral status: requires verification at lagradet.se`.  
 **HD01CU31** (rental market): Major property law reform — Lagrådet review likely. Tag: `referral status: requires verification`.
 
+## Analysis Artifact Coverage Report
+
+This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
+
+| Coverage area | Count | Reader-facing treatment |
+|---|---:|---|
+| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
+| Supporting data artifacts | 2 | Linked in Article Sources, not expanded inline |
+
+**Absent canonical ordered slots (no alias variant on disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
+
+**Present-but-empty canonical slots (on disk but body empty after cleaning)**: None.
+
+**Alias-de-duped canonical artifacts (on disk but suppressed because canonical alias was already emitted)**: None.
+
 ## Article Sources
 
 Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
@@ -1909,3 +1925,10 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/data-download-manifest.md)
+
+### Supporting Data Artifacts
+
+These machine-readable artifacts are linked for auditability and are not expanded inline, preserving the reader-facing narrative order:
+
+- [`economic-data.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/economic-data.json)
+- [`pir-status.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/committeeReports/pir-status.json)
