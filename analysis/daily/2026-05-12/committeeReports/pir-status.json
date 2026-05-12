@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "cycle": "committeeReports",
+  "date": "2026-05-12",
+  "subfolder": "committeeReports",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "question": "Will SD support CU31 (hyresreform) in final Riksdag vote?",
+      "rationale": "SD is pivotal — Tidö holds 176 seats (barely above 175 threshold) requiring SD's 73 to hold.",
+      "status": "OPEN",
+      "collection_gap": "Voteringsdata saknas 2025/26 riksmöte",
+      "resolution_indicator": "FI-02 (T+72h) → FI-04 (T+7d)",
+      "confidence": "D5",
+      "priority": "HIGH"
+    },
+    {
+      "id": "PIR-2",
+      "question": "Will S accept freedom of association restriction in KU34?",
+      "rationale": "Determines ¾ majority route vs double-vote procedure for constitutional amendment.",
+      "status": "OPEN",
+      "collection_gap": "S partiinterna debatt ej tillgänglig",
+      "resolution_indicator": "FI-01 (T+72h) → S press statement",
+      "confidence": "C4",
+      "priority": "HIGH"
+    },
+    {
+      "id": "PIR-3",
+      "question": "What is the implementation timeline and budget for SoU31?",
+      "rationale": "Government appropriations bill autumn 2026 will determine resourcing and operational start.",
+      "status": "OPEN",
+      "collection_gap": "Proposition not yet submitted",
+      "resolution_indicator": "Budget proposition 2026/27 (T+150d)",
+      "confidence": "C3",
+      "priority": "MEDIUM"
+    }
+  ]
+}

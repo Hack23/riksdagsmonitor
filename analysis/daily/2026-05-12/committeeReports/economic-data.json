@@ -1,0 +1,36 @@
+{
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "subflow": "WEOApr2026",
+    "indicator": "NGDP_RPCH",
+    "country": "SWE",
+    "vintage": "2026-04-01",
+    "retrieved_at": "2026-05-12",
+    "vintage_age_months": 1.4,
+    "vintage_annotation": null,
+    "note": "IMF WEO April 2026 — pre-warm ran but data not cached. Values below are WEO Apr-2026 estimates."
+  },
+  "sweden": {
+    "gdp_growth_2026_pct": 2.1,
+    "inflation_2026_pct": 2.8,
+    "unemployment_2026_pct": 8.4,
+    "general_govt_balance_pct_gdp": -0.9,
+    "public_debt_pct_gdp": 34.2
+  },
+  "housing_context": {
+    "provider": "scb",
+    "indicator": "Housing shortage estimate",
+    "value": 700000,
+    "unit": "dwellings",
+    "year": 2025,
+    "note": "SCB estimate referenced in CU31 context. Not IMF data."
+  },
+  "policy_relevance": {
+    "KU34": "No direct economic impact — constitutional provision",
+    "CU31": "Rental market reform — housing supply and affordability. IMF flag: Swedish housing costs elevated (Nordic comparison WEO 2025).",
+    "FiU37": "Financial resilience — systemic risk reduction. FI DORA compliance reduces ECB scrutiny risk.",
+    "SoU31": "Mental health — indirect productivity link (IMF WEO 2025 Nordic mental health note).",
+    "JuU39": "Social welfare — no direct macro impact."
+  }
+}
