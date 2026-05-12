@@ -75,7 +75,7 @@ const SAMPLE_HTML = `<!DOCTYPE html>
   </body>
 </html>`;
 
-let tmp: string;
+let tmp: string | undefined;
 
 beforeAll(async () => {
   tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'rm-purge-test-'));
@@ -90,7 +90,9 @@ beforeAll(async () => {
 });
 
 afterAll(async () => {
-  await fs.rm(tmp, { recursive: true, force: true });
+  if (tmp) {
+    await fs.rm(tmp, { recursive: true, force: true });
+  }
 });
 
 describe('purge-css', () => {
@@ -105,6 +107,7 @@ describe('purge-css', () => {
   });
 
   it('purges unused selectors and keeps safelisted ones', async () => {
+    if (!tmp) throw new Error('tmp fixture not initialised');
     const stats = await purge(tmp);
     // Both stylesheet targets are processed.
     expect(stats).toHaveLength(2);
@@ -309,8 +312,8 @@ describe('update-sri', () => {
     // Run update-sri.
     const result = await updateSri(fixture);
 
-    expect(result.oldHash).toBe(oldIntegrity);
-    expect(result.newHash).toBe(expectedIntegrity);
+    expect(result.oldIntegrity).toBe(oldIntegrity);
+    expect(result.newIntegrity).toBe(expectedIntegrity);
     expect(result.updatedHtml).toBe(2);
     expect(result.skippedHtml).toBe(0);
 
@@ -345,7 +348,7 @@ describe('update-sri', () => {
     const result = await updateSri(fixture);
     // Hash matches, so the file should still be "updated" (same content written
     // is an implementation detail), but the resulting integrity must be correct.
-    expect(result.newHash).toBe(integrity);
+    expect(result.newIntegrity).toBe(integrity);
 
     await fs.rm(fixture, { recursive: true, force: true });
   });

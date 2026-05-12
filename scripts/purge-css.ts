@@ -3,9 +3,18 @@
  *
  * Scans every `dist/**\/*.html` page (which already includes the ~3 500
  * generated news articles, dashboards, sitemaps and political-intelligence
- * pages emitted by `vite-plugin-static-pages.js`) plus all first-party JS,
- * and rewrites each stylesheet shipped to S3 in-place — keeping only the
- * selectors that those pages or their runtime JS actually reference.
+ * pages emitted by `vite-plugin-static-pages.js`), all first-party JS
+ * bundled into `dist/` **and** the source trees `js/` + `src/browser/`,
+ * then rewrites each stylesheet shipped to S3 in-place — keeping only the
+ * selectors that those pages or their runtime JS reference.
+ *
+ * The source-tree scan is intentional: Vite tree-shakes / mangles class
+ * strings during bundling, so a class that only appears in `src/browser`
+ * source might not survive in the emitted JS even though the runtime
+ * still toggles it (e.g. via `classList.add('hidden')`). Including the
+ * unminified sources is a safety net against accidentally purging those
+ * runtime-toggled classes; it is the right trade-off for a static-site
+ * pipeline where the source corpus is small relative to the dist tree.
  *
  * Targets:
  *   - `dist/styles.css`           (legacy non-hashed root copy that
@@ -125,9 +134,12 @@ function buildSafelist() {
     ],
     /* Greedy: keep entire selector chain if any token matches */
     greedy: [/article-type-/, /data-theme/],
-    /* CSS custom properties (cyberpunk theme tokens) */
+    /* CSS custom properties — `variables: false` below disables PurgeCSS
+     * variable removal entirely; this entry is a defensive safety net in
+     * case that flag is ever flipped on. */
     variables: [/--/],
-    /* @keyframes referenced only via JS animations */
+    /* @keyframes — `keyframes: false` below disables removal entirely;
+     * this entry is a defensive safety net for the same reason. */
     keyframes: [/.*/],
   };
 }
@@ -193,9 +205,9 @@ async function purge(distDir: string): Promise<PurgeStat[]> {
       safelist,
       defaultExtractor: (content) =>
         content.match(/[A-Za-z0-9_-]+/g) ?? [],
-      keyframes: false, // safelisted .* above
+      keyframes: false, // do not attempt to remove unused @keyframes (Chart.js / Mermaid inject animation names at runtime)
       fontFace: true, // remove unused @font-face
-      variables: false, // safelisted -- above (preserve theme tokens)
+      variables: false, // do not attempt to remove unused CSS variables (theme tokens are referenced from JS-set inline styles)
     });
     const purged = result[0]?.css ?? '';
     await fs.writeFile(cssPath, purged, 'utf8');

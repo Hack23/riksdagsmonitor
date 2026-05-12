@@ -40,8 +40,10 @@ const projectRoot = path.resolve(
 
 interface SriResult {
   cssFile: string;
-  oldHash: string;
-  newHash: string;
+  /** Full integrity attribute value (e.g. `sha384-…`) found in HTML. */
+  oldIntegrity: string;
+  /** Full integrity attribute value (e.g. `sha384-…`) written to HTML. */
+  newIntegrity: string;
   updatedHtml: number;
   skippedHtml: number;
 }
@@ -157,8 +159,8 @@ export async function updateSri(distDir: string): Promise<SriResult> {
     );
   }
 
-  /* Collect old hash from the first file that has one for diagnostics */
-  let oldHash = '(none found)';
+  /* Collect old integrity from the first file that has one (diagnostics) */
+  let oldIntegrity = '(none found)';
   const HASH_SNIFF_RE = new RegExp(
     `href="[^"]*${cssBasename.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[^"]*"[^>]*integrity="sha384-([A-Za-z0-9+/=]+)"`,
     'i',
@@ -167,7 +169,7 @@ export async function updateSri(distDir: string): Promise<SriResult> {
     const sample = await fs.readFile(f, 'utf8');
     const m = HASH_SNIFF_RE.exec(sample);
     if (m) {
-      oldHash = `sha384-${m[1]}`;
+      oldIntegrity = `sha384-${m[1]}`;
       break;
     }
   }
@@ -190,8 +192,8 @@ export async function updateSri(distDir: string): Promise<SriResult> {
 
   return {
     cssFile: path.relative(projectRoot, cssPath),
-    oldHash,
-    newHash: newIntegrity,
+    oldIntegrity,
+    newIntegrity,
     updatedHtml,
     skippedHtml,
   };
@@ -202,10 +204,10 @@ async function main(): Promise<void> {
   const distDir = path.resolve(distArg);
   console.log(`🔐 Re-computing SRI hashes in ${distDir}…`);
   const result = await updateSri(distDir);
-  console.log(`  CSS:      ${result.cssFile}`);
-  console.log(`  Old hash: ${result.oldHash}`);
-  console.log(`  New hash: ${result.newHash}`);
-  console.log(`  HTML updated: ${result.updatedHtml}`);
+  console.log(`  CSS:           ${result.cssFile}`);
+  console.log(`  Old integrity: ${result.oldIntegrity}`);
+  console.log(`  New integrity: ${result.newIntegrity}`);
+  console.log(`  HTML updated:  ${result.updatedHtml}`);
   console.log(`  HTML skipped (no ref): ${result.skippedHtml}`);
   console.log('✅ SRI update complete');
 }
