@@ -50,6 +50,15 @@ const CORE_KEYWORDS: readonly string[] = [
   'democratic transparency',
 ];
 
+const TOPIC_STOPWORDS = new Set([
+  'the', 'and', 'for', 'with', 'from', 'that', 'this', 'into', 'over', 'under',
+  'today', 'coverage', 'edition', 'riksdagsmonitor', 'riksdag', 'riksdagen',
+  'swedish', 'parliament', 'political', 'intelligence', 'analysis', 'osint',
+  'och', 'att', 'med', 'från', 'som', 'det', 'den', 'ett', 'över', 'under',
+  'eine', 'einer', 'und', 'der', 'die', 'das', 'mit', 'pour', 'avec', 'dans',
+  'les', 'des', 'une', 'del', 'con', 'para', 'het', 'een', 'van', 'voor',
+]);
+
 function collapseWhitespace(text: string): string {
   return text.replace(/\s+/g, ' ').trim();
 }
@@ -96,6 +105,41 @@ function wordsFrom(text: string): string[] {
     .filter((w) => w.length >= 4 && !/^\d{4}-\d{2}-\d{2}$/.test(w));
 }
 
+function topicPhrase(input: ArticleSeoMetadataInput, maxWords = 5): string {
+  const candidates = [...wordsFrom(input.title), ...wordsFrom(input.description)];
+  const out: string[] = [];
+  const seen = new Set<string>();
+  for (const raw of candidates) {
+    const normalised = raw
+      .replace(/^\d{1,4}[./:-]\d{1,2}(?:[./:-]\d{1,4})?$/u, '')
+      .replace(/^\d+$/u, '')
+      .trim();
+    if (!normalised) continue;
+    const key = normalised.toLocaleLowerCase();
+    if (TOPIC_STOPWORDS.has(key) || seen.has(key)) continue;
+    seen.add(key);
+    out.push(normalised);
+    if (out.length >= maxWords) break;
+  }
+  if (out.length > 0) return out.join(' ');
+  return input.articleTypeId.replace(/-/g, ' ');
+}
+
+function formatPublicationContext(date: string, lang: Language): string {
+  const parsed = new Date(`${date}T00:00:00Z`);
+  if (Number.isNaN(parsed.getTime())) return date;
+  try {
+    return new Intl.DateTimeFormat(LANGUAGE_META[lang].hreflang, {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      timeZone: 'UTC',
+    }).format(parsed);
+  } catch {
+    return date;
+  }
+}
+
 export interface ArticleSeoMetadataInput {
   readonly title: string;
   readonly description: string;
@@ -116,15 +160,20 @@ export interface ArticleSeoMetadata {
 /**
  * Build a unique, language-aware title for `<title>`, Open Graph and
  * Twitter Cards. The visible H1 can remain the editorial headline while
- * the SEO title carries the locale + article lens that disambiguate the
- * 14 hreflang siblings in search-engine audits.
+ * the SEO title carries the locale, article lens and extracted story topic
+ * that disambiguate the 14 hreflang siblings in search-engine audits.
+ * Publication context is rendered as natural language (`11 May 2026 update`)
+ * rather than a raw ISO suffix, so it disambiguates daily editions without
+ * becoming a substitute for meaningful headlines.
  */
 export function buildSeoTitle(input: ArticleSeoMetadataInput): string {
   const meta = LANGUAGE_META[input.lang];
   const base = truncateAtWord(input.title, 82);
+  const topic = topicPhrase(input, 4);
+  const editionContext = `${formatPublicationContext(input.date, input.lang)} update`;
   const marker = input.lang === 'en'
-    ? `${input.articleTypeLabel} ${input.date}`
-    : `${meta.nativeName} ${input.articleTypeLabel} ${input.date}`;
+    ? `${input.articleTypeLabel}: ${topic} — ${editionContext}`
+    : `${meta.nativeName} ${input.articleTypeLabel}: ${topic} — ${editionContext}`;
   if (base.toLocaleLowerCase().includes(marker.toLocaleLowerCase())) return base;
   const maxBase = Math.max(34, 96 - marker.length - 3);
   return `${truncateAtWord(input.title, maxBase)} | ${marker}`;
@@ -132,13 +181,16 @@ export function buildSeoTitle(input: ArticleSeoMetadataInput): string {
 
 /**
  * Build a 145–200 character description where practical. It preserves the
- * article-specific BLUF first, then appends date, article type and locale
- * context so otherwise-identical translated pages no longer share the
- * same search snippet.
+ * article-specific BLUF first, then appends article type, extracted story
+ * topic and locale context so otherwise-identical translated pages no
+ * longer share the same search snippet. Date context is phrased as a
+ * publication update, not appended as a raw slug.
  */
 export function buildSeoDescription(input: ArticleSeoMetadataInput): string {
   const labels = CONTEXT_LABELS[input.lang];
-  const suffix = `${labels.coverage}: ${input.articleTypeLabel}, ${input.date}, ${labels.edition}, Riksdag/OSINT provenance.`;
+  const topic = topicPhrase(input, 5);
+  const editionContext = formatPublicationContext(input.date, input.lang);
+  const suffix = `${labels.coverage}: ${input.articleTypeLabel} on ${topic}; ${labels.edition} update for ${editionContext} with Riksdag/OSINT provenance.`;
   const base = collapseWhitespace(input.description);
   const maxBase = Math.max(70, DESCRIPTION_HARD_MAX - suffix.length - 1);
   let description = sentenceJoin(truncateAtWord(base, maxBase), suffix);
@@ -156,7 +208,7 @@ export function buildSeoDescription(input: ArticleSeoMetadataInput): string {
 
 /**
  * Build article-specific keywords from front-matter, editorial headline,
- * BLUF description, article lens, date and language. This replaces the
+ * BLUF description, article lens, extracted story topic and language. This replaces the
  * former global keyword fallback that made many article pages identical.
  */
 export function buildArticleKeywords(input: ArticleSeoMetadataInput): string {
@@ -165,9 +217,9 @@ export function buildArticleKeywords(input: ArticleSeoMetadataInput): string {
   for (const keyword of (input.keywords ?? '').split(',')) pushKeyword(out, seen, keyword);
   pushKeyword(out, seen, input.articleTypeLabel);
   pushKeyword(out, seen, input.articleTypeId.replace(/-/g, ' '));
-  pushKeyword(out, seen, input.date);
   pushKeyword(out, seen, LANGUAGE_META[input.lang].name);
   pushKeyword(out, seen, LANGUAGE_META[input.lang].nativeName);
+  pushKeyword(out, seen, `${formatPublicationContext(input.date, input.lang)} update`);
   if (input.canonicalPath) {
     for (const part of input.canonicalPath.replace(/\.html$/i, '').split(/[/-]+/)) {
       if (/^\d{4}$|^\d{2}$|^[a-z]{2}$/i.test(part)) continue;
@@ -175,6 +227,7 @@ export function buildArticleKeywords(input: ArticleSeoMetadataInput): string {
     }
   }
   for (const keyword of CORE_KEYWORDS) pushKeyword(out, seen, keyword);
+  pushKeyword(out, seen, topicPhrase(input, 5));
   for (const word of [...wordsFrom(input.title), ...wordsFrom(input.description)]) {
     if (out.length >= KEYWORD_MAX) break;
     pushKeyword(out, seen, word);

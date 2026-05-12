@@ -563,7 +563,7 @@ describe('render-lib — aggregateAnalysis (integration)', () => {
 // ---------------------------------------------------------------------------
 
 describe('render-lib — article SEO metadata', () => {
-  it('adds language, date and article type context to otherwise-identical descriptions', () => {
+  it('adds language, article type and story-topic context without date-stuffing titles', () => {
     const base = {
       title: 'Security, identity and state control: three propositions',
       description: 'Three government propositions expand identity controls, population-register oversight and detention powers for security threats.',
@@ -582,8 +582,11 @@ describe('render-lib — article SEO metadata', () => {
     expect(en.description).not.toBe(de.description);
     expect(en.description.length).toBeGreaterThanOrEqual(145);
     expect(en.description.length).toBeLessThanOrEqual(200);
+    expect(en.title).not.toContain('2026-05-11');
+    expect(en.title).toContain('May');
     expect(de.description).toContain('deutsche Ausgabe');
     expect(de.title).toContain('Deutsch');
+    expect(de.title).toContain('Security identity state');
     expect(de.keywords).toContain('Regierungsvorlagen');
     expect(de.keywords).toContain('German');
   });
@@ -1293,7 +1296,7 @@ describe('render-lib — renderArticleHtml (end-to-end)', () => {
     expect(html).toContain('data-article-type="propositions"');
     expect(html).toContain('<p class="rm-article-eyebrow"><span class="rm-icon" aria-hidden="true">🔍</span> Propositions</p>');
     expect(html).toContain('<h1>Propositions 2099-01-01</h1>');
-    expect(html).toContain('<p class="rm-article-dek">Real BLUF for propositions. Coverage: Propositions, 2099-01-01, English edition');
+    expect(html).toContain('<p class="rm-article-dek">Real BLUF for propositions. Coverage: Propositions on');
     expect(html).toContain('<meta name="keywords" content="Propositions');
     expect(html).toContain('Traceable artifacts');
     expect(html).toContain('class="rm-article-sources"');

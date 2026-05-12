@@ -94,11 +94,36 @@ ANTI-TEMPLATE — DO NOT:
 
 ## 🎯 BLUF (Bottom Line Up Front)
 
-> **SEO + article handoff:** the first BLUF paragraph becomes `<meta name="description">`. Write one complete 140–200 character sentence first, then add 1–3 supporting sentences if needed. The H1 must be a publishable 55–70 character title with an actor, active news verb, and no literal date. Follow [`.github/prompts/seo-metadata-contract.md`](../../.github/prompts/seo-metadata-contract.md).
+> **SEO + article handoff:** the first BLUF paragraph becomes the primary source for `<meta name="description">`. Write one complete 145–200 character sentence first, then add 1–3 supporting sentences if needed. The H1 must be a publishable 55–70 character title with an actor, active news verb, policy object, consequence, and no literal-date stuffing. Follow [`.github/prompts/seo-metadata-contract.md`](../../.github/prompts/seo-metadata-contract.md).
 
 > **[2–4 sentences.** Lead with the #1 DIW-ranked finding. Name the principal human actor with party. State the concrete action taken or proposed. Quantify impact. End with confidence label.**]**
 
 Example: *Sweden's Riksdag Finance Committee approved FiU48 today, cutting fuel taxes SEK 0.50–0.80/litre and providing electricity/gas price support to ~3 M households. Paired with the new wind-power revenue-sharing law, the move anchors the government's cost-of-living + green narrative ahead of September 2026. [🟩 HIGH — source: `H901FiU48`, vote record 2026-04-21].*
+
+---
+
+## 🌐 14-Language SEO Metadata Seeds
+
+> **Purpose:** seed good titles, descriptions and keywords for every generated HTML language page. Do not leave this to a date suffix. Each row must express the same verified story in the target language with a contextual angle: actor, action, object, consequence and provenance.
+
+| lang | localized title angle (50–70 chars) | localized description angle (145–200 chars) | keyword seeds (5–8) |
+|------|-------------------------------------|---------------------------------------------|---------------------|
+| en | `[REQUIRED: actor + active verb + policy object + consequence]` | `[REQUIRED: SERP-ready summary with named actor/action, so-what, and source provenance]` | `[topic, actor, policy, Riksdag, OSINT]` |
+| sv | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
+| da | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
+| no | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
+| fi | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
+| de | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
+| fr | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
+| es | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
+| nl | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
+| ar | `[REQUIRED — RTL text]` | `[REQUIRED — RTL text]` | `[REQUIRED]` |
+| he | `[REQUIRED — RTL text]` | `[REQUIRED — RTL text]` | `[REQUIRED]` |
+| ja | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
+| ko | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
+| zh | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
+
+> **Pass-2 check:** no two rows may be identical except for date or language label. If they are, rewrite the title/description around the concrete story topic and consequence.
 
 ---
 
@@ -221,4 +246,3 @@ Example: *Chamber vote on FiU48 expected 2026-04-22 to 2026-04-24. A coalition-s
 - [ ] **Cross-references resolve** — every `[link](file.md)` in this artifact points to a file that exists in the run folder (`analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`) or to a methodology / template under `analysis/`.
 - [ ] **Mermaid renders** — every fenced ` ```mermaid ` block parses (no missing class definitions, no orphan nodes, no >40-node graphs that overflow viewport on mobile).
 - [ ] **Line-floor check** — artifact length ≥ the per-artifact floor in [`reference-quality-thresholds.json`](../methodologies/reference-quality-thresholds.json); shorter artifacts trigger Pass-2 rewrite, never a `[truncated]` note.
-
