@@ -388,6 +388,41 @@ describe('update-sri', () => {
 
     await fs.rm(fixture, { recursive: true, force: true });
   });
+
+  it('handles unquoted attributes produced by HTML minifier', async () => {
+    const fixture = await fs.mkdtemp(path.join(os.tmpdir(), 'rm-sri-unquoted-'));
+    const assetsDir = path.join(fixture, 'assets');
+    await fs.mkdir(assetsDir);
+
+    const initialCss = '.a { color: red; }\n';
+    const cssPath = path.join(assetsDir, 'styles-Mn0pQrSt.css');
+    await fs.writeFile(cssPath, initialCss, 'utf8');
+    const oldHash = createHash('sha384').update(Buffer.from(initialCss)).digest('base64');
+    const oldIntegrity = `sha384-${oldHash}`;
+
+    // Simulate minified HTML with unquoted attributes (as coderaiser/minify produces)
+    const htmlContent =
+      `<link rel=stylesheet href=assets/styles-Mn0pQrSt.css integrity=${oldIntegrity} crossorigin>`;
+    await fs.writeFile(path.join(fixture, 'index.html'), htmlContent, 'utf8');
+
+    // Simulate CSS content change
+    const newCss = '.a{color:red}\n';
+    await fs.writeFile(cssPath, newCss, 'utf8');
+    const expectedHash = createHash('sha384').update(Buffer.from(newCss)).digest('base64');
+    const expectedIntegrity = `sha384-${expectedHash}`;
+
+    const result = await updateSri(fixture);
+
+    expect(result.oldIntegrity).toBe(oldIntegrity);
+    expect(result.newIntegrity).toBe(expectedIntegrity);
+    expect(result.updatedHtml).toBe(1);
+
+    const updated = await fs.readFile(path.join(fixture, 'index.html'), 'utf8');
+    expect(updated).toContain(expectedIntegrity);
+    expect(updated).not.toContain(oldIntegrity);
+
+    await fs.rm(fixture, { recursive: true, force: true });
+  });
 });
 
 describe('budget.json — post-optimisation budgets', () => {

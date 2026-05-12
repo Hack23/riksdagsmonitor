@@ -105,11 +105,14 @@ async function updateIntegrityInFile(
   newIntegrity: string,
 ): Promise<'updated' | 'current' | 'absent'> {
   const original = await fs.readFile(htmlPath, 'utf8');
-  // Match href="…<cssBasename>…" … integrity="sha384-…" inside a <link> tag.
+  // Match href=["']?…<cssBasename>…["']? … integrity=["']?sha384-…["']?
+  // inside a <link> tag.  The HTML minifier (coderaiser/minify) strips
+  // quotes from attributes whose values contain no special characters,
+  // so we must handle both quoted and unquoted forms.
   const escapedName = cssBasename.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const linkTagRe = new RegExp(
-    `(<link\\b[^>]*\\bhref\\s*=\\s*"[^"]*${escapedName}[^"]*"[^>]*)` +
-      `(integrity\\s*=\\s*")sha384-[A-Za-z0-9+/=]+(")`,
+    `(<link\\b[^>]*\\bhref\\s*=\\s*"?[^"\\s>]*${escapedName}[^"\\s>]*"?[^>]*)` +
+      `(integrity\\s*=\\s*"?)sha384-[A-Za-z0-9+/=]+("?)`,
     'gi',
   );
   if (!linkTagRe.test(original)) return 'absent';
@@ -168,7 +171,7 @@ export async function updateSri(distDir: string): Promise<SriResult> {
   /* Collect old integrity from the first file that has one (diagnostics) */
   let oldIntegrity = '(none found)';
   const HASH_SNIFF_RE = new RegExp(
-    `href="[^"]*${cssBasename.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[^"]*"[^>]*integrity="sha384-([A-Za-z0-9+/=]+)"`,
+    `href="?[^"\\s>]*${cssBasename.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[^"\\s>]*"?[^>]*integrity="?sha384-([A-Za-z0-9+/=]+)"?`,
     'i',
   );
   for (const f of htmlFiles) {
