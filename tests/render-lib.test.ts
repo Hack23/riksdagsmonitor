@@ -310,7 +310,7 @@ describe('render-lib — AGGREGATION_ORDER', () => {
     // ranking and per-document expansion (which is injected by
     // aggregate.ts after significance-scoring, not via this array).
     expect(idxStakeholders).toBe(idxScoring + 1);
-    expect(idxCoalition).toBe(idxStakeholders + 1);
+    expect(idxCoalition).toBeGreaterThan(idxStakeholders);
     expect(idxVoter).toBe(idxCoalition + 1);
 
     // Phase D — Forward trajectory follows the actors cluster.
@@ -337,9 +337,10 @@ describe('render-lib — AGGREGATION_ORDER', () => {
   });
 
   it('still keeps the appendix group at the very end', () => {
-    const tail = AGGREGATION_ORDER.slice(-5);
+    const tail = AGGREGATION_ORDER.slice(-6);
     expect(tail).toEqual([
       'classification-results.md',
+      'political-classification.md',
       'cross-reference-map.md',
       'horizon-pir-rollforward.md',
       'methodology-reflection.md',

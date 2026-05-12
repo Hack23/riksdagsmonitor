@@ -7,7 +7,7 @@
 
 ## 🎯 BLUF
 
-Two Social Democratic interpellations on 11 May 2026 expose the Tidö coalition's pre-election accountability gap on climate legislation and labour crime enforcement. One — Åsa Westlund's challenge on climate targets — was **withdrawn the same day it was transferred to the minister**, signalling either informal negotiation or strategic pre-election manoeuvring. The active interpellation by Marie Olsson holds Finance Minister Svantesson accountable for a two-year delay in tabling proposals to combat undeclared work (svartarbete), backed by ESO research showing SEK 189 billion in annual shadow-economy losses.
+Two Social Democratic interpellations on 11 May 2026 — HD10481 and HD10482 — expose the Tidö coalition's pre-election accountability gap on climate legislation and labour crime enforcement. One — Åsa Westlund's challenge on climate targets (HD10481) — was **withdrawn the same day it was transferred to the minister**, signalling either informal negotiation or strategic pre-election manoeuvring. The active interpellation by Marie Olsson (HD10482) holds Finance Minister Svantesson accountable for a two-year delay in tabling proposals to combat undeclared work (svartarbete), backed by ESO research showing SEK 189 billion in annual shadow-economy losses.
 
 ## 🧭 3 Decisions
 

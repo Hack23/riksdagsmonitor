@@ -1,12 +1,12 @@
 ---
-title: "Priority: HIGH — election-year immigration debate, constitutional"
-description: "Priority: HIGH — election-year immigration debate, constitutional rights dimensions"
-keywords: "Motions, English, May 12, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Priority HIGH election-year immigration debate, Priority, HIGH, election-year, immigration, debate, constitutional, rights, dimensions"
+title: "Vänsterpartiet filed two committee motions on 2026-05-11 opposing"
+description: "Vänsterpartiet filed two committee motions on 2026-05-11 opposing the Tidö government's tightened immigration regime. Motion HD024149 demands full rejection of prop. 2025/26:264 on stricter character…"
+keywords: "Motions, English, May 12, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Vänsterpartiet filed committee motions opposing, Vänsterpartiet, filed, committee, opposing, Tidö, government, tightened, immigration, regime, Motion, HD024149, demands, full"
 date: 2026-05-12
 subfolder: motions
 slug: 2026-05-12-motions
 source_folder: analysis/daily/2026-05-12/motions
-generated_at: 2026-05-12T10:26:53.787Z
+generated_at: 2026-05-12T10:58:25.269Z
 language: en
 layout: article
 ---
@@ -15,7 +15,7 @@ layout: article
 
 **Priority**: HIGH — election-year immigration debate, constitutional rights dimensions
 
-### Situation in 100 Words
+### BLUF
 
 Vänsterpartiet filed two committee motions on 2026-05-11 opposing the Tidö government's tightened immigration regime. Motion HD024149 demands full rejection of *prop. 2025/26:264* on stricter character requirements for residence permits, citing ECHR Article 8 family-life rights and lack of legal certainty. Motion HD024150 partially opposes *prop. 2025/26:263* on deportation enforcement, accepting some enforcement measures but rejecting mandatory data-sharing between welfare agencies and the police. With the September 2026 election four months away, these motions function simultaneously as legal challenges and political positioning instruments for V's electorate base.
 
@@ -1552,6 +1552,18 @@ No prior pir-status.json found in analysis/daily for motions subfolder. Initiati
 - SCB: not queried (motions are policy/legislative, not requiring SCB statistical baseline for this run)
 - World Bank: not queried (governance WGI not primary for this article)
 
+## Analysis Artifact Coverage Report
+
+This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts were not present in this run.
+
+| Coverage area | Count | Reader-facing treatment |
+|---|---:|---|
+| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Per-document analyses | 2 | Expanded under `## Per-document intelligence` immediately after significance scoring |
+| Supporting data artifacts | 3 | Linked in Article Sources, not expanded inline |
+
+**Absent canonical ordered artifacts**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
+
 ## Article Sources
 
 Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
@@ -1580,3 +1592,11 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/data-download-manifest.md)
+
+### Supporting Data Artifacts
+
+These machine-readable artifacts are linked for auditability and are not expanded inline, preserving the reader-facing narrative order:
+
+- [`documents/hd024149.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/documents/hd024149.json)
+- [`documents/hd024150.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/documents/hd024150.json)
+- [`pir-status.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/motions/pir-status.json)

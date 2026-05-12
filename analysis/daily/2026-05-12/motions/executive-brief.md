@@ -5,7 +5,7 @@
 **Priority**: HIGH — election-year immigration debate, constitutional rights dimensions
 **Article Type**: motions
 
-## Situation in 100 Words
+## BLUF
 
 Vänsterpartiet filed two committee motions on 2026-05-11 opposing the Tidö government's tightened immigration regime. Motion HD024149 demands full rejection of *prop. 2025/26:264* on stricter character requirements for residence permits, citing ECHR Article 8 family-life rights and lack of legal certainty. Motion HD024150 partially opposes *prop. 2025/26:263* on deportation enforcement, accepting some enforcement measures but rejecting mandatory data-sharing between welfare agencies and the police. With the September 2026 election four months away, these motions function simultaneously as legal challenges and political positioning instruments for V's electorate base.
 

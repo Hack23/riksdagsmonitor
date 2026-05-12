@@ -67,6 +67,7 @@ export const AGGREGATION_ORDER: readonly string[] = [
   // voter exposure (whose interests are at stake) — clustered so the
   // "WHO" question is answered as one block.
   'stakeholder-perspectives.md',
+  'stakeholder-impact.md',
   'coalition-mathematics.md',
   'voter-segmentation.md',
   // ─── Phase D — Forward trajectory ──────────────────────────────────
@@ -104,6 +105,7 @@ export const AGGREGATION_ORDER: readonly string[] = [
   'devils-advocate.md',
   // ─── Phase H — Audit appendix ──────────────────────────────────────
   'classification-results.md',
+  'political-classification.md',
   'cross-reference-map.md',
   'horizon-pir-rollforward.md', // long-horizon supplementary
   'methodology-reflection.md',
@@ -124,6 +126,8 @@ export const AGGREGATION_ORDER: readonly string[] = [
  */
 export const FILENAME_ALIASES: ReadonlyArray<ReadonlySet<string>> = [
   new Set(['election-2026-analysis.md', 'election-cycle-analysis.md', 'election-2026-implications.md']),
+  new Set(['stakeholder-perspectives.md', 'stakeholder-impact.md']),
+  new Set(['classification-results.md', 'political-classification.md']),
 ];
 
 /**
@@ -151,6 +155,7 @@ const SECTION_TITLES: Record<string, string> = {
   'synthesis-summary.md': 'Synthesis Summary',
   'significance-scoring.md': 'Significance Scoring',
   'stakeholder-perspectives.md': 'Stakeholder Perspectives',
+  'stakeholder-impact.md': 'Stakeholder Perspectives',
   'swot-analysis.md': 'SWOT Analysis',
   'risk-assessment.md': 'Risk Assessment',
   'threat-analysis.md': 'Threat Analysis',
@@ -175,6 +180,7 @@ const SECTION_TITLES: Record<string, string> = {
   'devils-advocate.md': "Devil's Advocate",
   'intelligence-assessment.md': 'Intelligence Assessment — Key Judgments',
   'classification-results.md': 'Classification Results',
+  'political-classification.md': 'Political Classification',
   'cross-reference-map.md': 'Cross-Reference Map',
   'methodology-reflection.md': 'Methodology Reflection & Limitations',
   'data-download-manifest.md': 'Data Download Manifest',

@@ -571,5 +571,13 @@ export const READER_VALUE_I18N: Record<string, LangMap> = {
  */
 export function readerValueFor(file: string, lang: Language): string | undefined {
   const baseName = file.includes('/') ? file.slice(file.lastIndexOf('/') + 1) : file;
-  return READER_VALUE_I18N[file]?.[lang] ?? READER_VALUE_I18N[baseName]?.[lang];
+  const aliasBaseName =
+    baseName === 'stakeholder-impact.md'
+      ? 'stakeholder-perspectives.md'
+      : baseName === 'political-classification.md'
+        ? 'classification-results.md'
+        : baseName;
+  return READER_VALUE_I18N[file]?.[lang]
+    ?? READER_VALUE_I18N[baseName]?.[lang]
+    ?? READER_VALUE_I18N[aliasBaseName]?.[lang];
 }

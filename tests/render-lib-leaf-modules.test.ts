@@ -720,6 +720,7 @@ describe('aggregator/reader-guide — anchor slug parity', () => {
     );
     expect(guide).toContain('[Audit appendix](#rm-political-classification)');
     expect(guide).not.toContain('[Audit appendix](#rm-classification-results)');
+    expect(guide).toContain('ISMS data classification');
     expect(auditAnchorForArtifacts(['political-classification.md'])).toBe('rm-political-classification');
   });
 });

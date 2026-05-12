@@ -561,7 +561,7 @@ async function validateArticle(absPath: string): Promise<ArticleViolation[]> {
     const after = text.slice(guideHeadingMatch.index + guideHeadingMatch[0].length);
     const stop = after.search(/^##\s+\S/m);
     const region = stop === -1 ? after : after.slice(0, stop);
-    const dataRows = region.match(/^\|\s*\[/gm) ?? [];
+    const dataRows = region.match(/^\|\s*(?:[^|\n]+\|\s*)?\[/gm) ?? [];
     if (dataRows.length === 0) {
       violations.push({
         file: rel,

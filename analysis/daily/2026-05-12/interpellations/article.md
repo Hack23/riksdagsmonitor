@@ -1,12 +1,12 @@
 ---
 title: "Opposition Presses Government on Climate Delay and Shadow Economy Before 2026 Election"
-description: "Two Social Democratic interpellations on 11 May 2026 expose the Tidö coalition's pre-election accountability gap on climate legislation and labour crime enforcement."
-keywords: "Interpellations, English, May 12, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Opposition Presses Government Climate Delay, Opposition, Presses, Government, Climate, Delay, Shadow, Economy, Before, 2026, Election, Social, Democratic, expose"
+description: "Two Social Democratic interpellations on 11 May 2026 — HD10481 and HD10482 — expose the Tidö coalition's pre-election accountability gap on climate legislation and labour crime enforcement."
+keywords: "Interpellations, English, May 12, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Opposition Presses Government Climate Delay, Opposition, Presses, Government, Climate, Delay, Shadow, Economy, Before, 2026, Election, Social, Democratic, HD10481"
 date: 2026-05-12
 subfolder: interpellations
 slug: 2026-05-12-interpellations
 source_folder: analysis/daily/2026-05-12/interpellations
-generated_at: 2026-05-12T10:26:53.780Z
+generated_at: 2026-05-12T10:58:24.270Z
 language: en
 layout: article
 ---
@@ -15,7 +15,7 @@ layout: article
 
 ### 🎯 BLUF
 
-Two Social Democratic interpellations on 11 May 2026 expose the Tidö coalition's pre-election accountability gap on climate legislation and labour crime enforcement. One — Åsa Westlund's challenge on climate targets — was **withdrawn the same day it was transferred to the minister**, signalling either informal negotiation or strategic pre-election manoeuvring. The active interpellation by Marie Olsson holds Finance Minister Svantesson accountable for a two-year delay in tabling proposals to combat undeclared work (svartarbete), backed by ESO research showing SEK 189 billion in annual shadow-economy losses.
+Two Social Democratic interpellations on 11 May 2026 — HD10481 and HD10482 — expose the Tidö coalition's pre-election accountability gap on climate legislation and labour crime enforcement. One — Åsa Westlund's challenge on climate targets (HD10481) — was **withdrawn the same day it was transferred to the minister**, signalling either informal negotiation or strategic pre-election manoeuvring. The active interpellation by Marie Olsson (HD10482) holds Finance Minister Svantesson accountable for a two-year delay in tabling proposals to combat undeclared work (svartarbete), backed by ESO research showing SEK 189 billion in annual shadow-economy losses.
 
 ### 🧭 3 Decisions
 
@@ -1928,6 +1928,18 @@ New cycle PIRs will be established in pir-status.json for this run's topics.
 - IMF SDMX: ✅ ok per prewarm probe  
 - World Bank: not queried (non-economic residue not triggered by these interpellations)
 
+## Analysis Artifact Coverage Report
+
+This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts were not present in this run.
+
+| Coverage area | Count | Reader-facing treatment |
+|---|---:|---|
+| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Per-document analyses | 2 | Expanded under `## Per-document intelligence` immediately after significance scoring |
+| Supporting data artifacts | 3 | Linked in Article Sources, not expanded inline |
+
+**Absent canonical ordered artifacts**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
+
 ## Article Sources
 
 Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
@@ -1956,3 +1968,11 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/data-download-manifest.md)
+
+### Supporting Data Artifacts
+
+These machine-readable artifacts are linked for auditability and are not expanded inline, preserving the reader-facing narrative order:
+
+- [`documents/hd10481.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/documents/hd10481.json)
+- [`documents/hd10482.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/documents/hd10482.json)
+- [`pir-status.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/pir-status.json)

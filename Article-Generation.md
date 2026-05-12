@@ -508,6 +508,7 @@ npx tsx scripts/aggregate-analysis.ts --all
 | Canonical analysis `.md` files in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` excluding `README.md`, `article.md`, and `article.<lang>.md` | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.md` |
 | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/documents/*.md` | Included under `## Per-document intelligence` |
 | Supplementary `.md` files in the subfolder excluding `README.md`, `article.md`, and `article.<lang>.md` | Appended after the canonical sequence |
+| Supporting `.json` files such as `pir-status.json`, `economic-data.json`, and `documents/*.json` | Linked in `## Article Sources` and counted in `## Analysis Artifact Coverage Report`; not expanded inline so the public narrative remains readable |
 
 > **Note:** `README.md` is required for the 23-artifact analysis gate and repository readability, but it is intentionally not aggregated into the published `article.md`. Existing `article.md` and `article.<lang>.md` files are also excluded from aggregation.
 
@@ -515,31 +516,40 @@ npx tsx scripts/aggregate-analysis.ts --all
 
 `AGGREGATION_ORDER` in [`scripts/render-lib/aggregator.ts`](scripts/render-lib/aggregator.ts) publishes sections in this order:
 
-0. Generated `Reader Intelligence Guide` — a deterministic navigation layer that surfaces BLUF, Key Judgments, significance, media framing, forward indicators, scenarios, risks and dok_id-level evidence before the technical appendix.
+0. Generated `Reader Intelligence Guide` — a deterministic navigation layer that surfaces BLUF, Key Judgments, significance, actors, forward indicators, scenarios, risks, context, critique and dok_id-level evidence before the technical appendix. Its audit row targets the strongest audit section actually present (`classification-results.md`, `political-classification.md`, `cross-reference-map.md`, `methodology-reflection.md`, or `data-download-manifest.md`) so no guide link points at a missing heading.
 1. `executive-brief.md`
 2. `synthesis-summary.md`
 3. `intelligence-assessment.md`
 4. `significance-scoring.md`
-5. `media-framing-analysis.md`
-6. `stakeholder-perspectives.md`
-7. `forward-indicators.md`
-8. `scenario-analysis.md`
-9. `risk-assessment.md`
-10. `swot-analysis.md`
-11. `threat-analysis.md`
-12. `documents/*-analysis.md` as `## Per-document intelligence`
-13. `election-2026-analysis.md`
-14. `coalition-mathematics.md`
-15. `voter-segmentation.md`
-16. `comparative-international.md`
-17. `historical-parallels.md`
-18. `implementation-feasibility.md`
-19. `devils-advocate.md`
-20. `classification-results.md`
-21. `cross-reference-map.md`
-22. `methodology-reflection.md`
-23. `data-download-manifest.md`
-24. Remaining supplementary `.md` files, alphabetically.
+5. `documents/*-analysis.md` as `## Per-document intelligence` (injected immediately after significance scoring)
+6. `stakeholder-perspectives.md` / `stakeholder-impact.md` (alias-deduplicated)
+7. `coalition-mathematics.md`
+8. `voter-segmentation.md`
+9. `forward-indicators.md`
+10. `scenario-analysis.md`
+11. `election-2026-analysis.md` / `election-cycle-analysis.md` / `election-2026-implications.md` (alias-deduplicated)
+12. `cycle-trajectory.md`
+13. `parliamentary-season.md`
+14. `risk-assessment.md`
+15. `swot-analysis.md`
+16. `quantitative-swot.md`
+17. `threat-analysis.md`
+18. `political-stride-assessment.md`
+19. `wildcards-blackswans.md`
+20. `pestle-analysis.md`
+21. `historical-parallels.md`
+22. `comparative-international.md`
+23. `implementation-feasibility.md`
+24. `media-framing-analysis.md`
+25. `devils-advocate.md`
+26. `classification-results.md` / `political-classification.md` (alias-deduplicated)
+27. `cross-reference-map.md`
+28. `horizon-pir-rollforward.md`
+29. `methodology-reflection.md`
+30. `data-download-manifest.md`
+31. Remaining supplementary `.md` files, alphabetically.
+32. Generated `Analysis Artifact Coverage Report` — reconciliation of included markdown sections, per-document expansions, supporting JSON links and absent canonical ordered artifacts.
+33. Generated `Article Sources` — GitHub links for every expanded markdown artifact plus supporting JSON data artifacts.
 
 #### Render-time reading order (Session 1)
 
