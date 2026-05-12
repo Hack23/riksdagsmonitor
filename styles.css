@@ -12383,12 +12383,23 @@ html[data-theme="light"] .news-article .event-calendar {
 }
 
 .footer-disclaimer a {
-  color: var(--link-color);
+  color: var(--primary-color, #006633);
   text-decoration: underline;
 }
 
 .footer-disclaimer a:hover {
   color: var(--link-hover);
+}
+
+/* Dark mode footer disclaimer link contrast */
+@media (prefers-color-scheme: dark) {
+  .footer-disclaimer a {
+    color: var(--link-color, #58a6ff);
+  }
+}
+
+html[data-theme="dark"] .footer-disclaimer a {
+  color: var(--link-color, #58a6ff);
 }
 
 /* News index page footer */
@@ -13648,11 +13659,30 @@ html[data-theme="light"] .rm-article-body pre.mermaid > svg {
   margin-top: 0;
 }
 
+/* Explicit color for all language-switcher links (WCAG contrast fix) */
+.site-language-switcher a {
+  color: var(--text-color, #1a1a1a);
+}
+
 .site-footer .language-grid a.active,
 .site-language-switcher a.active {
-  color: var(--primary-yellow, #ffbe0b);
+  color: var(--dark-bg, #0a0e27);
   border-color: var(--primary-yellow, #ffbe0b);
-  background: rgba(255, 190, 11, 0.12);
+  background: var(--primary-yellow, #ffbe0b);
+  font-weight: 700;
+}
+
+/* Dark-mode active language link — dark text on solid yellow bg */
+@media (prefers-color-scheme: dark) {
+  .site-footer .language-grid a.active,
+  .site-language-switcher a.active {
+    color: var(--dark-bg, #0a0e27);
+  }
+}
+
+html[data-theme="dark"] .site-footer .language-grid a.active,
+html[data-theme="dark"] .site-language-switcher a.active {
+  color: var(--dark-bg, #0a0e27);
 }
 
 .footer-disclaimer {
@@ -13697,7 +13727,7 @@ html[data-theme="light"] .rm-article-body pre.mermaid > svg {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  color: color-mix(in srgb, var(--light-text, #e0e0e0) 85%, transparent);
+  color: var(--light-text, #e0e0e0);
   text-decoration: none;
   font-size: 0.8125rem;
   padding: 0.2rem 0.5rem;
@@ -13725,7 +13755,7 @@ html[data-theme="light"] .rm-article-body pre.mermaid > svg {
   margin: 1.25rem auto 0;
   padding: 1rem var(--page-gutter) 0;
   font-size: 0.8125rem;
-  color: color-mix(in srgb, var(--light-text, #e0e0e0) 65%, transparent);
+  color: var(--text-secondary, #aaaaaa);
   border-top: 1px solid color-mix(in srgb, var(--primary-cyan, #00d9ff) 12%, transparent);
 }
 
@@ -16904,7 +16934,6 @@ html[data-theme="light"] .dashboard-related {
        .rm-site-footer .footer-bottom, .rm-site-footer .footer-disclaimer,
        .rm-site-footer .rm-footer-legal) {
   font-size: 0.8125rem;
-  opacity: 0.85;
   text-align: center;
 }
 
