@@ -6,7 +6,7 @@ date: 2026-05-08
 subfolder: interpellations
 slug: 2026-05-08-interpellations
 source_folder: analysis/daily/2026-05-08/interpellations
-generated_at: 2026-05-12T10:26:53.591Z
+generated_at: 2026-05-12T14:11:29.572Z
 language: en
 layout: article
 ---
@@ -2330,6 +2330,22 @@ PIR-3 (MUCF funding restoration) — OPEN
 PIR-4 (ILO positions) — OPEN  
 PIR-5 (Gaza aid commitments) — OPEN
 
+## Analysis Artifact Coverage Report
+
+This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
+
+| Coverage area | Count | Reader-facing treatment |
+|---|---:|---|
+| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
+| Supporting data artifacts | 6 | Linked in Article Sources, not expanded inline |
+
+**Absent canonical ordered slots (no alias variant on disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
+
+**Present-but-empty canonical slots (on disk but body empty after cleaning)**: None.
+
+**Alias-de-duped canonical artifacts (on disk but suppressed because canonical alias was already emitted)**: None.
+
 ## Article Sources
 
 Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
@@ -2361,3 +2377,14 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/data-download-manifest.md)
+
+### Supporting Data Artifacts
+
+These machine-readable artifacts are linked for auditability and are not expanded inline, preserving the reader-facing narrative order:
+
+- [`pir-status.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/pir-status.json)
+- [`documents/hd10475.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/documents/hd10475.json)
+- [`documents/hd10476.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/documents/hd10476.json)
+- [`documents/hd10477.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/documents/hd10477.json)
+- [`documents/hd10478.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/documents/hd10478.json)
+- [`documents/hd10479.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/interpellations/documents/hd10479.json)

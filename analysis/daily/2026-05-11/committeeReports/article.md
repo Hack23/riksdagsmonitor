@@ -6,7 +6,7 @@ date: 2026-05-11
 subfolder: committeeReports
 slug: 2026-05-11-committeeReports
 source_folder: analysis/daily/2026-05-11/committeeReports
-generated_at: 2026-05-12T10:26:53.710Z
+generated_at: 2026-05-12T14:11:29.687Z
 language: en
 layout: article
 ---
@@ -1559,6 +1559,22 @@ PIR-2026-ENFORCEMENT: status=answered — HD01CU34 analysis complete; no further
 - Adjacent betänkande cross-check: HD01CU25 (CU, 2026-05-06) "Riksdagen sa ja" — confirms Tidö 200-seat majority functional; incorporated into coalition-mathematics.md.
 - No new betänkanden indexed for the 2026-05-08 batch since prior analysis. Voteringar for CU31 still empty (not yet voted).
 
+## Analysis Artifact Coverage Report
+
+This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
+
+| Coverage area | Count | Reader-facing treatment |
+|---|---:|---|
+| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Per-document analyses | 6 | Expanded under `## Per-document intelligence` immediately after significance scoring |
+| Supporting data artifacts | 7 | Linked in Article Sources, not expanded inline |
+
+**Absent canonical ordered slots (no alias variant on disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
+
+**Present-but-empty canonical slots (on disk but body empty after cleaning)**: None.
+
+**Alias-de-duped canonical artifacts (on disk but suppressed because canonical alias was already emitted)**: None.
+
 ## Article Sources
 
 Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
@@ -1591,3 +1607,15 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/data-download-manifest.md)
+
+### Supporting Data Artifacts
+
+These machine-readable artifacts are linked for auditability and are not expanded inline, preserving the reader-facing narrative order:
+
+- [`pir-status.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/pir-status.json)
+- [`documents/hd01cu31.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/documents/hd01cu31.json)
+- [`documents/hd01cu34.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/documents/hd01cu34.json)
+- [`documents/hd01sou36.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/documents/hd01sou36.json)
+- [`documents/hd01ubu20.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/documents/hd01ubu20.json)
+- [`documents/hd01ubu28.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/documents/hd01ubu28.json)
+- [`documents/hd01uu13.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-11/committeeReports/documents/hd01uu13.json)

@@ -6,7 +6,7 @@ date: 2026-05-09
 subfolder: monthly-review
 slug: 2026-05-09-monthly-review
 source_folder: analysis/daily/2026-05-09/monthly-review
-generated_at: 2026-05-12T10:26:53.640Z
+generated_at: 2026-05-12T14:11:29.619Z
 language: en
 layout: article
 ---
@@ -2595,6 +2595,22 @@ This analysis cannot be exactly reproduced due to:
 - ECHR documentation: ✅ (Lagrådet yttrande 2026-04-08 cited)
 - IMF degraded annotation: ✅ (All economic claims annotated)
 
+## Analysis Artifact Coverage Report
+
+This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
+
+| Coverage area | Count | Reader-facing treatment |
+|---|---:|---|
+| Ordered/root markdown sections | 29 | Expanded as article sections in the narrative order above |
+| Per-document analyses | 11 | Expanded under `## Per-document intelligence` immediately after significance scoring |
+| Supporting data artifacts | 2 | Linked in Article Sources, not expanded inline |
+
+**Absent canonical ordered slots (no alias variant on disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
+
+**Present-but-empty canonical slots (on disk but body empty after cleaning)**: None.
+
+**Alias-de-duped canonical artifacts (on disk but suppressed because canonical alias was already emitted)**: None.
+
 ## Article Sources
 
 Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
@@ -2639,3 +2655,10 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`reference-analysis-quality.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/reference-analysis-quality.md)
 - [`session-baseline.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/session-baseline.md)
 - [`workflow-audit.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/workflow-audit.md)
+
+### Supporting Data Artifacts
+
+These machine-readable artifacts are linked for auditability and are not expanded inline, preserving the reader-facing narrative order:
+
+- [`economic-data.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/economic-data.json)
+- [`pir-status.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-09/monthly-review/pir-status.json)

@@ -6,7 +6,7 @@ date: 2026-05-03
 subfolder: month-ahead
 slug: 2026-05-03-month-ahead
 source_folder: analysis/daily/2026-05-03/month-ahead
-generated_at: 2026-05-12T10:26:53.308Z
+generated_at: 2026-05-12T14:11:29.299Z
 language: en
 layout: article
 ---
@@ -2270,6 +2270,22 @@ Standing PIRs for this cycle:
 - PIR-3: Defense posture — how does HD03254 military cooperation framework interact with NATO commitments?
 - PIR-4: Healthcare reform momentum — HD03251 vs S/V/MP counter-proposals
 - PIR-5: Transparency (HD03258) — KU committee reception and opposition amendments
+
+## Analysis Artifact Coverage Report
+
+This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
+
+| Coverage area | Count | Reader-facing treatment |
+|---|---:|---|
+| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Per-document analyses | 7 | Expanded under `## Per-document intelligence` immediately after significance scoring |
+| Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
+
+**Absent canonical ordered slots (no alias variant on disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
+
+**Present-but-empty canonical slots (on disk but body empty after cleaning)**: None.
+
+**Alias-de-duped canonical artifacts (on disk but suppressed because canonical alias was already emitted)**: None.
 
 ## Article Sources
 

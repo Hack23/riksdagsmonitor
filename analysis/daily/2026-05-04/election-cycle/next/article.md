@@ -6,7 +6,7 @@ date: 2026-05-04
 subfolder: election-cycle/next
 slug: 2026-05-04-election-cycle/next
 source_folder: analysis/daily/2026-05-04/election-cycle/next
-generated_at: 2026-05-12T10:26:53.349Z
+generated_at: 2026-05-12T14:11:29.341Z
 language: en
 layout: article
 ---
@@ -104,7 +104,7 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📝 | [Strategic Implications](#rm-strategic-implications) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Timeline Analysis](#rm-timeline-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Trend Analysis](#rm-trend-analysis) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-cross-reference-map) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/synthesis-summary.md -->
@@ -1427,6 +1427,22 @@ The deficit compounds at ~30,000 units/year. By 2030, the cumulative deficit wil
 #### Trend 5: AI and Digital Governance (Magnitude: 3/5, Velocity: Very High, Duration: Accelerating)
 EU AI Act implementation begins 2025/26. High-risk AI systems in public sector (welfare, justice) require compliance. Sweden's AI capabilities (Spotify, King, SAAB) create competitive advantage. AI governance framework must be enacted 2026–2028.
 
+## Analysis Artifact Coverage Report
+
+This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
+
+| Coverage area | Count | Reader-facing treatment |
+|---|---:|---|
+| Ordered/root markdown sections | 28 | Expanded as article sections in the narrative order above |
+| Per-document analyses | 0 | Expanded under `## Per-document intelligence` immediately after significance scoring |
+| Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
+
+**Absent canonical ordered slots (no alias variant on disk)**: `intelligence-assessment.md`, `significance-scoring.md`, `stakeholder-perspectives.md / stakeholder-impact.md`, `coalition-mathematics.md`, `voter-segmentation.md`, `forward-indicators.md`, `scenario-analysis.md`, `election-2026-analysis.md / election-cycle-analysis.md / election-2026-implications.md`, `parliamentary-season.md`, `swot-analysis.md`, `threat-analysis.md`, `historical-parallels.md`, `comparative-international.md`, `implementation-feasibility.md`, `media-framing-analysis.md`, `devils-advocate.md`, `classification-results.md / political-classification.md`, `horizon-pir-rollforward.md`, `methodology-reflection.md`, `data-download-manifest.md`
+
+**Present-but-empty canonical slots (on disk but body empty after cleaning)**: None.
+
+**Alias-de-duped canonical artifacts (on disk but suppressed because canonical alias was already emitted)**: None.
+
 ## Article Sources
 
 Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
@@ -1459,3 +1475,9 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`strategic-implications.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/strategic-implications.md)
 - [`timeline-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/timeline-analysis.md)
 - [`trend-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/trend-analysis.md)
+
+### Supporting Data Artifacts
+
+These machine-readable artifacts are linked for auditability and are not expanded inline, preserving the reader-facing narrative order:
+
+- [`analysis-metadata.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-04/election-cycle/next/analysis-metadata.json)

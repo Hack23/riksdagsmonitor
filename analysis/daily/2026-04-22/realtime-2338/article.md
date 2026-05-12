@@ -6,7 +6,7 @@ date: 2026-04-22
 subfolder: realtime-2338
 slug: 2026-04-22-realtime-2338
 source_folder: analysis/daily/2026-04-22/realtime-2338
-generated_at: 2026-05-12T10:26:52.823Z
+generated_at: 2026-05-12T14:11:28.844Z
 language: en
 layout: article
 ---
@@ -2155,6 +2155,22 @@ All analysis in this cycle follows the osint-tradecraft-standards.md canon: ICD 
 - Full text not fetched for all documents (metadata-only for most)
 - Sibling folder synthesis summaries read for Tier-C cross-reference
 - No lookback required — documents confirmed for 2026-04-22
+
+## Analysis Artifact Coverage Report
+
+This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
+
+| Coverage area | Count | Reader-facing treatment |
+|---|---:|---|
+| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
+| Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
+
+**Absent canonical ordered slots (no alias variant on disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
+
+**Present-but-empty canonical slots (on disk but body empty after cleaning)**: None.
+
+**Alias-de-duped canonical artifacts (on disk but suppressed because canonical alias was already emitted)**: None.
 
 ## Article Sources
 

@@ -6,7 +6,7 @@ date: 2026-04-27
 subfolder: committeeReports
 slug: 2026-04-27-committeeReports
 source_folder: analysis/daily/2026-04-27/committeeReports
-generated_at: 2026-05-12T10:26:53.022Z
+generated_at: 2026-05-12T14:11:29.030Z
 language: en
 layout: article
 ---
@@ -1491,6 +1491,22 @@ Admiralty Code applied throughout: B2 primary, B1 single-source flags, C2 contex
 - https://data.riksdagen.se/dokument/HD01FiU23
 - https://data.riksdagen.se/dokument/HD01CU24
 - https://data.riksdagen.se/dokument/HD01JuU31
+
+## Analysis Artifact Coverage Report
+
+This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
+
+| Coverage area | Count | Reader-facing treatment |
+|---|---:|---|
+| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Per-document analyses | 6 | Expanded under `## Per-document intelligence` immediately after significance scoring |
+| Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
+
+**Absent canonical ordered slots (no alias variant on disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
+
+**Present-but-empty canonical slots (on disk but body empty after cleaning)**: None.
+
+**Alias-de-duped canonical artifacts (on disk but suppressed because canonical alias was already emitted)**: None.
 
 ## Article Sources
 

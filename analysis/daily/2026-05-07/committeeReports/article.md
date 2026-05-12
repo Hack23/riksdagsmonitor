@@ -6,7 +6,7 @@ date: 2026-05-07
 subfolder: committeeReports
 slug: 2026-05-07-committeeReports
 source_folder: analysis/daily/2026-05-07/committeeReports
-generated_at: 2026-05-12T10:26:53.499Z
+generated_at: 2026-05-12T14:11:29.485Z
 language: en
 layout: article
 ---
@@ -1877,6 +1877,22 @@ Initial PIRs for this cycle:
 - PIR-CR-002: What is the implementation timeline and capacity gap for prison expansion (CU25)?
 - PIR-CR-003: Will SfU social insurance qualification changes affect immigration-linked benefit access?
 
+## Analysis Artifact Coverage Report
+
+This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
+
+| Coverage area | Count | Reader-facing treatment |
+|---|---:|---|
+| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
+| Supporting data artifacts | 6 | Linked in Article Sources, not expanded inline |
+
+**Absent canonical ordered slots (no alias variant on disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
+
+**Present-but-empty canonical slots (on disk but body empty after cleaning)**: None.
+
+**Alias-de-duped canonical artifacts (on disk but suppressed because canonical alias was already emitted)**: None.
+
 ## Article Sources
 
 Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
@@ -1908,3 +1924,14 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/data-download-manifest.md)
+
+### Supporting Data Artifacts
+
+These machine-readable artifacts are linked for auditability and are not expanded inline, preserving the reader-facing narrative order:
+
+- [`pir-status.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/pir-status.json)
+- [`documents/hd01cu25.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/documents/hd01cu25.json)
+- [`documents/hd01föu16.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/documents/hd01föu16.json)
+- [`documents/hd01föu18.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/documents/hd01föu18.json)
+- [`documents/hd01sfu21.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/documents/hd01sfu21.json)
+- [`documents/hd01sfu24.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-07/committeeReports/documents/hd01sfu24.json)
