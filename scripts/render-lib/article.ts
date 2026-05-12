@@ -256,7 +256,7 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
   const langMeta = LANGUAGE_META[input.lang];
 
   const newsArticleLd = buildNewsArticleLd({
-    headline: seo.title,
+    headline: title,
     description: seo.description,
     datePublished: publishedIso,
     dateModified: modifiedIso,
