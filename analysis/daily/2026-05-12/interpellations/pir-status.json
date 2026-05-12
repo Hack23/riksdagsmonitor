@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0",
+  "cycle": "2026-05-12",
+  "subfolder": "interpellations",
+  "generated_at": "2026-05-12T07:30:00Z",
+  "pirs": [
+    {
+      "id": "PIR-HDSVART-001",
+      "title": "Will government table svartarbete enforcement proposals by 2026-05-29?",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "opened": "2026-05-12",
+      "due": "2026-05-29",
+      "consumer": "Electoral analysis team, political risk team",
+      "collection_need": "Monitor Riksdag protokoll; Finansdepartementet press releases; Svantesson public statements",
+      "related_docs": ["HD10482"],
+      "kj_reference": "KJ-1",
+      "indicator_reference": "FI-08, FI-16",
+      "previous_cycle_answer": null
+    },
+    {
+      "id": "PIR-HDKLIM-001",
+      "title": "Is there evidence of a government-S backchannel on climate legislation?",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "opened": "2026-05-12",
+      "due": "2026-06-15",
+      "consumer": "Political intelligence team",
+      "collection_need": "Monitor L and S public statements on climate; Riksdag interpellation activity; government press releases June-August 2026",
+      "related_docs": ["HD10481"],
+      "kj_reference": "KJ-2",
+      "indicator_reference": "FI-02, FI-10",
+      "previous_cycle_answer": null
+    },
+    {
+      "id": "PIR-S-CAMPAIGN-001",
+      "title": "How are S planning their campaign messaging on climate and svartarbete?",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "opened": "2026-05-12",
+      "due": "2026-09-13",
+      "consumer": "Electoral analysis team",
+      "collection_need": "S party congress materials; S campaign website; S press releases June-September 2026",
+      "related_docs": ["HD10481", "HD10482"],
+      "kj_reference": "KJ-3",
+      "indicator_reference": "FI-12",
+      "previous_cycle_answer": null
+    },
+    {
+      "id": "PIR-ESA-OPEN-001",
+      "title": "ESA topic open from 2026-04-30 cycle",
+      "status": "OPEN",
+      "priority": "LOW",
+      "opened": "2026-04-30",
+      "due": "2026-06-30",
+      "consumer": "Intelligence team",
+      "collection_need": "Carry-forward from 2026-04-30/interpellations/pir-status.json; no relevant documents this cycle",
+      "related_docs": [],
+      "kj_reference": null,
+      "indicator_reference": null,
+      "previous_cycle_answer": "NOT_ANSWERED"
+    },
+    {
+      "id": "PIR-HERITAGE-OPEN-001",
+      "title": "Heritage topic open from 2026-04-30 cycle",
+      "status": "OPEN",
+      "priority": "LOW",
+      "opened": "2026-04-30",
+      "due": "2026-06-30",
+      "consumer": "Intelligence team",
+      "collection_need": "Carry-forward from 2026-04-30/interpellations/pir-status.json; no relevant documents this cycle",
+      "related_docs": [],
+      "kj_reference": null,
+      "indicator_reference": null,
+      "previous_cycle_answer": "NOT_ANSWERED"
+    }
+  ],
+  "answered_this_cycle": [],
+  "new_this_cycle": ["PIR-HDSVART-001", "PIR-HDKLIM-001", "PIR-S-CAMPAIGN-001"],
+  "carried_forward": ["PIR-ESA-OPEN-001", "PIR-HERITAGE-OPEN-001"]
+}
