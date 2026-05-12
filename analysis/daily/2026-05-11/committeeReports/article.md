@@ -1,11 +1,12 @@
 ---
 title: "Riksdag Committee Reports 8 May 2026: Housing Reform, Enforcement Rules, and School Transparency Face Opposition Resistance"
 description: "Six Riksdag committee reports dated 8 May 2026 move significant legislation to chamber vote. The most contentious are the Civil Affairs Committee's (CU) housing market reform (HD01CU31) and the…"
+keywords: "CommitteeReports, English, May 11, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Committee Reports Housing Reform Enforcement, Committee, Reports, 2026, Housing, Reform, Enforcement, Rules, School, Transparency, Face, Opposition, Resistance, dated"
 date: 2026-05-11
 subfolder: committeeReports
 slug: 2026-05-11-committeeReports
 source_folder: analysis/daily/2026-05-11/committeeReports
-generated_at: 2026-05-11T14:23:29.583Z
+generated_at: 2026-05-12T10:26:53.710Z
 language: en
 layout: article
 ---

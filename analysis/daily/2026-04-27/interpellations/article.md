@@ -1,11 +1,12 @@
 ---
 title: "Opposition Mounts Multi-Front Challenge: Railways, Sick Insurance, and Energy Disinformation"
 description: "On 27 April 2026, the Swedish Riksdag received two new interpellations — on railway investment delays and sick insurance reform — while existing interpellations announced for debate include a…"
+keywords: "Interpellations, English, April 27, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Opposition Mounts Multi-Front Challenge Railways, Opposition, Mounts, Multi-Front, Challenge, Railways, Sick, Insurance, Energy, Disinformation, April, 2026, Swedish, received"
 date: 2026-04-27
 subfolder: interpellations
 slug: 2026-04-27-interpellations
 source_folder: analysis/daily/2026-04-27/interpellations
-generated_at: 2026-05-11T14:23:29.123Z
+generated_at: 2026-05-12T10:26:53.036Z
 language: en
 layout: article
 ---

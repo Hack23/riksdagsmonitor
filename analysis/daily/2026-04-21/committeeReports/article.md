@@ -1,11 +1,12 @@
 ---
 title: "Committee Reports (April 21, 2026)"
 description: "On 2026-04-21 the Riksdag's committees adopted a 14-report package that operationalises a three-pillar electoral bet: fiscal relief (FiU48, 4.1B SEK fuel and energy subsidies), enforcement…"
+keywords: "CommitteeReports, English, April 21, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Committee Reports April committees adopted, Committee, Reports, April, 2026, committees, adopted, 14-report, package, that, operationalises, three-pillar, electoral, fiscal"
 date: 2026-04-21
 subfolder: committeeReports
 slug: 2026-04-21-committeeReports
 source_folder: analysis/daily/2026-04-21/committeeReports
-generated_at: 2026-05-11T14:23:28.950Z
+generated_at: 2026-05-12T10:26:52.777Z
 language: en
 layout: article
 ---

@@ -1,11 +1,12 @@
 ---
 title: "Month Ahead — May 2026: Sweden at the Pre-Election Inflection Point"
 description: "Sweden enters May 2026 with the Tidö government deploying its largest pre-election legislative package: the 2026 Spring Budget (HD03100) projecting continued but slow economic recovery, an emergency…"
+keywords: "Month Ahead, English, April 25, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Month Ahead Sweden Pre-Election Inflection, Month, Ahead, 2026, Sweden, Pre-Election, Inflection, Point, enters, with, Tidö, government, deploying, largest"
 date: 2026-04-25
 subfolder: month-ahead
 slug: 2026-04-25-month-ahead
 source_folder: analysis/daily/2026-04-25/month-ahead
-generated_at: 2026-05-11T14:23:29.042Z
+generated_at: 2026-05-12T10:26:52.915Z
 language: en
 layout: article
 ---

@@ -1,11 +1,12 @@
 ---
 title: "BLUF (Bottom Line Up Front): Five interpellations filed 22-30 April"
 description: "BLUF (Bottom Line Up Front): Five interpellations filed 22-30 April 2026 reveal three converging crises — Sweden's criminal economy (352 GSEK/5.5% GDP), gang violence accountability, and declining…"
+keywords: "Interpellations, English, May 1, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, BLUF Bottom Line Front Five, BLUF, Bottom, Line, Front, Five, filed, 22-30, April, 2026, reveal, three, converging, crises"
 date: 2026-05-01
 subfolder: interpellations
 slug: 2026-05-01-interpellations
 source_folder: analysis/daily/2026-05-01/interpellations
-generated_at: 2026-05-11T14:23:29.257Z
+generated_at: 2026-05-12T10:26:53.246Z
 language: en
 layout: article
 ---

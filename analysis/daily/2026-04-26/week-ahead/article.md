@@ -1,11 +1,12 @@
 ---
 title: "Sweden Week Ahead: Justice Reform Wave, Ukraine Solidarity, and Social Welfare Adjustments"
 description: "The Swedish Riksdag enters the final sprint of riksmöte 2025/26 with a dense legislative agenda dominated by the Tidö coalition's justice reform programme."
+keywords: "Week Ahead, English, April 26, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Week Ahead Justice Reform, Sweden, Week, Ahead, Justice, Reform, Wave, Ukraine, Solidarity, Social, Welfare, Adjustments, Swedish, enters"
 date: 2026-04-26
 subfolder: week-ahead
 slug: 2026-04-26-week-ahead
 source_folder: analysis/daily/2026-04-26/week-ahead
-generated_at: 2026-05-11T14:23:29.102Z
+generated_at: 2026-05-12T10:26:53.004Z
 language: en
 layout: article
 ---

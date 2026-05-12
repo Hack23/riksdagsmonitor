@@ -1,11 +1,12 @@
 ---
 title: "Sweden's Pre-Election Migration Reset: May 2026 Monthly Review"
 description: "Sweden enters the final campaign stretch (133 days to 13 September 2026) with the Tidöalliansen having executed a coordinated four-bill migration law transformation (HD03262–HD03265) that…"
+keywords: "Monthly Review, English, May 3, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Pre-Election Migration Reset Monthly, Sweden, Pre-Election, Migration, Reset, 2026, Monthly, Review, enters, final, campaign, stretch, days, September"
 date: 2026-05-03
 subfolder: monthly-review
 slug: 2026-05-03-monthly-review
 source_folder: analysis/daily/2026-05-03/monthly-review
-generated_at: 2026-05-11T14:23:29.304Z
+generated_at: 2026-05-12T10:26:53.316Z
 language: en
 layout: article
 ---

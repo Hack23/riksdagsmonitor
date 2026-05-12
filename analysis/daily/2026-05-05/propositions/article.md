@@ -1,11 +1,12 @@
 ---
 title: "Sweden Strengthens Macro-Prudential Arsenal with Household Debt Survey Law"
 description: "Sweden's government introduced Proposition 2025/26:255 (HD03255) on 5 May 2026, creating a statutory basis for Finansinspektionen to conduct mandatory sample surveys of household debt data from…"
+keywords: "Propositions, English, May 5, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Strengthens Macro-Prudential Arsenal Household, Sweden, Strengthens, Macro-Prudential, Arsenal, with, Household, Debt, Survey, government, introduced, Proposition, 2025, HD03255"
 date: 2026-05-05
 subfolder: propositions
 slug: 2026-05-05-propositions
 source_folder: analysis/daily/2026-05-05/propositions
-generated_at: 2026-05-11T14:23:29.391Z
+generated_at: 2026-05-12T10:26:53.440Z
 language: en
 layout: article
 ---

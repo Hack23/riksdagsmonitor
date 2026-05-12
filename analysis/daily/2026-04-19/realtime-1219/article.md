@@ -1,11 +1,12 @@
 ---
 title: "Sweden's Konstitutionsutskottet (KU) on 2026-04-17 advanced a second"
 description: "Sweden's Konstitutionsutskottet (KU) on 2026-04-17 advanced a second Tryckfrihetsförordningen (TF) amendment in the same riksmöte — betänkande 2025/26:KU33 — narrowing offentlighetsprincipen by…"
+keywords: "Realtime 1219, English, April 19, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Konstitutionsutskottet advanced second Tryckfrihetsförordningen, Sweden, Konstitutionsutskottet, advanced, second, Tryckfrihetsförordningen, amendment, same, riksmöte, betänkande, 2025, KU33, narrowing, offentlighetsprincipen"
 date: 2026-04-19
 subfolder: realtime-1219
 slug: 2026-04-19-realtime-1219
 source_folder: analysis/daily/2026-04-19/realtime-1219
-generated_at: 2026-05-11T14:23:28.917Z
+generated_at: 2026-05-12T10:26:52.730Z
 language: en
 layout: article
 ---

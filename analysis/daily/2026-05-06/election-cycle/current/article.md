@@ -1,11 +1,12 @@
 ---
 title: "Tidö Current Mandate"
 description: "Sweden's Tidö coalition (M+KD+L+SD) completes its final legislative sprint with five major committee reports on 2026-05-06 confirming the mandate's core narrative: criminal justice delivery, defence…"
+keywords: "Current, election cycle current, English, May 6, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Tidö Current Mandate Sweden coalition, Tidö, Mandate, Sweden, coalition, completes, final, legislative, sprint, with, five, major, committee"
 date: 2026-05-06
 subfolder: election-cycle/current
 slug: 2026-05-06-election-cycle/current
 source_folder: analysis/daily/2026-05-06/election-cycle/current
-generated_at: 2026-05-11T14:23:29.407Z
+generated_at: 2026-05-12T10:26:53.464Z
 language: en
 layout: article
 ---

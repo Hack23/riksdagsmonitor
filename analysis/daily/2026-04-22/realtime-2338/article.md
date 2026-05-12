@@ -1,11 +1,12 @@
 ---
 title: "The Swedish Riksdag enters the final pre-election legislative sprint"
 description: "The Swedish Riksdag enters the final pre-election legislative sprint with three simultaneous breaking-news vectors: (1) the Social Democrats have launched a coordinated four-interpellation…"
+keywords: "Realtime 2338, English, April 22, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, enters final pre-election legislative sprint, Swedish, enters, final, pre-election, legislative, sprint, with, three, simultaneous, breaking-news, vectors, Social, Democrats"
 date: 2026-04-22
 subfolder: realtime-2338
 slug: 2026-04-22-realtime-2338
 source_folder: analysis/daily/2026-04-22/realtime-2338
-generated_at: 2026-05-11T14:23:28.979Z
+generated_at: 2026-05-12T10:26:52.823Z
 language: en
 layout: article
 ---

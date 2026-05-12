@@ -1,11 +1,12 @@
 ---
 title: "Tidö Current Mandate"
 description: "The Tidö coalition delivered three major propositions on 2026-05-07 — state e-ID, foreign security threat expulsion, and Skatteverket address fraud powers — bringing mandate completion to 78% and…"
+keywords: "Current, election cycle current, English, May 8, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Tidö Current Mandate coalition delivered, Tidö, Mandate, coalition, delivered, three, major, propositions, state, e-ID, foreign, security, threat"
 date: 2026-05-08
 subfolder: election-cycle/current
 slug: 2026-05-08-election-cycle/current
 source_folder: analysis/daily/2026-05-08/election-cycle/current
-generated_at: 2026-05-11T14:23:29.482Z
+generated_at: 2026-05-12T10:26:53.571Z
 language: en
 layout: article
 ---

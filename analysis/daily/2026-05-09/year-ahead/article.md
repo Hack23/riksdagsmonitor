@@ -1,11 +1,12 @@
 ---
 title: "Sweden Year-Ahead Political Intelligence"
 description: "Sweden is in its most compressed political-legislative cycle since EU accession. With the Riksdag election 129 days away (September 13, 2026), the Tidö coalition under PM Ulf Kristersson is executing…"
+keywords: "Year Ahead, English, May 9, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Year-Ahead most compressed political-legislative, Sweden, Year-Ahead, Political, Intelligence, most, compressed, political-legislative, cycle, since, accession, With, election, days"
 date: 2026-05-09
 subfolder: year-ahead
 slug: 2026-05-09-year-ahead
 source_folder: analysis/daily/2026-05-09/year-ahead
-generated_at: 2026-05-11T14:23:29.546Z
+generated_at: 2026-05-12T10:26:53.665Z
 language: en
 layout: article
 ---

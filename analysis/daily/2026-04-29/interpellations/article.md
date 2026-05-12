@@ -1,11 +1,12 @@
 ---
 title: "Organized Crime, Energy Transition, and Social System Pressures: Swedish Interpellation Storm"
 description: "Sweden's interpellation calendar on 2026-04-29 reveals a government under simultaneous pressure across three strategic fault lines: the penetration of organized crime into welfare and business…"
+keywords: "Interpellations, English, April 29, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Organized Crime Energy Transition Social, Organized, Crime, Energy, Transition, Social, System, Pressures, Swedish, Interpellation, Storm, Sweden, calendar, reveals"
 date: 2026-04-29
 subfolder: interpellations
 slug: 2026-04-29-interpellations
 source_folder: analysis/daily/2026-04-29/interpellations
-generated_at: 2026-05-11T14:23:29.190Z
+generated_at: 2026-05-12T10:26:53.137Z
 language: en
 layout: article
 ---

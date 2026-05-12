@@ -1,11 +1,12 @@
 ---
 title: "Riksdag Week 16, 2026"
 description: "<p align=\"center\"> <em>One-page decision-maker briefing for newsroom editors, policy advisors, and senior analysts</em> </p>"
+keywords: "Weekly Review, English, April 18, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Week align center One-page decision-maker, Week, 2026, align, center, One-page, decision-maker, briefing, newsroom, editors, policy, advisors, senior, analysts"
 date: 2026-04-18
 subfolder: weekly-review
 slug: 2026-04-18-weekly-review
 source_folder: analysis/daily/2026-04-18/weekly-review
-generated_at: 2026-05-11T14:23:28.891Z
+generated_at: 2026-05-12T10:26:52.685Z
 language: en
 layout: article
 ---

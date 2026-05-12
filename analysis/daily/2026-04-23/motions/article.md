@@ -1,11 +1,12 @@
 ---
 title: "Sweden's parliamentary opposition has filed 14 motions in the week"
 description: "Sweden's parliamentary opposition has filed 14 motions in the week of 13–17 April 2026 challenging the government's extra supplementary budget (prop. 2025/26:236), deportation law reform (prop.…"
+keywords: "Motions, English, April 23, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden parliamentary opposition filed motions, Sweden, parliamentary, opposition, filed, week, April, 2026, challenging, government, extra, supplementary, budget, prop"
 date: 2026-04-23
 subfolder: motions
 slug: 2026-04-23-motions
 source_folder: analysis/daily/2026-04-23/motions
-generated_at: 2026-05-11T14:23:29.000Z
+generated_at: 2026-05-12T10:26:52.858Z
 language: en
 layout: article
 ---

@@ -1,11 +1,12 @@
 ---
 title: "Social Democrats Challenge Government on Sweden's ILO Commitment"
 description: "Sweden's opposition Social Democrats have challenged the Tidö coalition government on whether it has maintained Sweden's historic role as a champion of workers' rights in the International Labour…"
+keywords: "Interpellations, English, May 7, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Social Democrats Challenge Government Sweden, Social, Democrats, Challenge, Government, Sweden, Commitment, opposition, have, challenged, Tidö, coalition, whether, maintained"
 date: 2026-05-07
 subfolder: interpellations
 slug: 2026-05-07-interpellations
 source_folder: analysis/daily/2026-05-07/interpellations
-generated_at: 2026-05-11T14:23:29.447Z
+generated_at: 2026-05-12T10:26:53.521Z
 language: en
 layout: article
 ---

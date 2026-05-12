@@ -1,11 +1,12 @@
 ---
 title: "Sweden's Tidö coalition is executing a coordinated end-of-session"
 description: "Sweden's Tidö coalition is executing a coordinated end-of-session security-state consolidation before the September 2026 election. In a single legislative day, the government submitted three major…"
+keywords: "Realtime Pulse, English, May 7, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Tidö coalition executing coordinated, Sweden, Tidö, coalition, executing, coordinated, end-of-session, security-state, consolidation, before, September, 2026, election, single"
 date: 2026-05-07
 subfolder: realtime-pulse
 slug: 2026-05-07-realtime-pulse
 source_folder: analysis/daily/2026-05-07/realtime-pulse
-generated_at: 2026-05-11T14:23:29.466Z
+generated_at: 2026-05-12T10:26:53.549Z
 language: en
 layout: article
 ---

@@ -1,11 +1,12 @@
 ---
 title: "Tidö Coalition's Pre-Election Legislative Sprint: Security, Finance, and Welfare Reforms Define Sweden's 2026 Political Landscape"
 description: "April 28, 2026 marks Sweden's legislative peak of the riksmöte 2025/26: the Tidö coalition simultaneously advanced the EU Banking Package (HD03253), welfare sanctions for prisoners, citizenship…"
+keywords: "Evening Analysis, English, April 28, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Tidö Coalition Pre-Election Legislative Sprint, Tidö, Coalition, Pre-Election, Legislative, Sprint, Security, Finance, Welfare, Reforms, Define, Sweden, 2026, Political"
 date: 2026-04-28
 subfolder: evening-analysis
 slug: 2026-04-28-evening-analysis
 source_folder: analysis/daily/2026-04-28/evening-analysis
-generated_at: 2026-05-11T14:23:29.152Z
+generated_at: 2026-05-12T10:26:53.082Z
 language: en
 layout: article
 ---

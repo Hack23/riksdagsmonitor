@@ -1,11 +1,12 @@
 ---
 title: "April 20 marks a significant escalation in Sweden's pre-election"
 description: "Monday April 20 marks a significant escalation in Sweden's pre-election parliamentary accountability campaign. The Riksdag's Environment and Agriculture Committee (MJU) published a committee report…"
+keywords: "Evening Analysis, English, April 20, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, April marks significant escalation Sweden, April, marks, significant, escalation, Sweden, pre-election, Monday, parliamentary, accountability, campaign, Environment, Agriculture, Committee"
 date: 2026-04-20
 subfolder: evening-analysis
 slug: 2026-04-20-evening-analysis
 source_folder: analysis/daily/2026-04-20/evening-analysis
-generated_at: 2026-05-11T14:23:28.921Z
+generated_at: 2026-05-12T10:26:52.736Z
 language: en
 layout: article
 ---

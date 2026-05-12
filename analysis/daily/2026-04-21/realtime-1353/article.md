@@ -1,11 +1,12 @@
 ---
 title: "Sweden's Riksdag Finance Committee approved an extra budget amendment"
 description: "Sweden's Riksdag Finance Committee approved an extra budget amendment (FiU48) today cutting fuel taxes and providing electricity/gas price support — directly benefiting ~9M citizens."
+keywords: "Realtime 1353, English, April 21, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Finance Committee approved extra, Sweden, Finance, Committee, approved, extra, budget, amendment, FiU48, today, cutting, fuel, taxes, providing"
 date: 2026-04-21
 subfolder: realtime-1353
 slug: 2026-04-21-realtime-1353
 source_folder: analysis/daily/2026-04-21/realtime-1353
-generated_at: 2026-05-11T14:23:28.967Z
+generated_at: 2026-05-12T10:26:52.803Z
 language: en
 layout: article
 ---

@@ -1,11 +1,12 @@
 ---
 title: "Monthly Review, May 2026"
 description: "The Tidö government ends riksmöte 2025/26 with a legislative sprint emphasising state digital control (e-legitimation, Skatteverket), security expansions (säkerhetshot-foreigners, public-gathering…"
+keywords: "Monthly Review, English, May 7, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Monthly Review Tidö government ends, Monthly, Review, 2026, Tidö, government, ends, riksmöte, 2025, with, legislative, sprint, emphasising, state"
 date: 2026-05-07
 subfolder: monthly-review
 slug: 2026-05-07-monthly-review
 source_folder: analysis/daily/2026-05-07/monthly-review
-generated_at: 2026-05-11T14:23:29.452Z
+generated_at: 2026-05-12T10:26:53.528Z
 language: en
 layout: article
 ---

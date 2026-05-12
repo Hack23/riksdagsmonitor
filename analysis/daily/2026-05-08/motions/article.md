@@ -1,11 +1,12 @@
 ---
 title: "Opposition Motions Challenge Forestry and Youth Justice Reforms"
 description: "Eight opposition motions filed 2026-05-04 mount coordinated legal-strategic challenges against two government propositions: the forestry deregulation (prop. 2025/26:242, HD024141–145/147) and the…"
+keywords: "Motions, English, May 8, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Opposition Motions Challenge Forestry Youth, Opposition, Challenge, Forestry, Youth, Justice, Reforms, Eight, filed, mount, coordinated, legal-strategic, challenges, against"
 date: 2026-05-08
 subfolder: motions
 slug: 2026-05-08-motions
 source_folder: analysis/daily/2026-05-08/motions
-generated_at: 2026-05-11T14:23:29.500Z
+generated_at: 2026-05-12T10:26:53.599Z
 language: en
 layout: article
 ---

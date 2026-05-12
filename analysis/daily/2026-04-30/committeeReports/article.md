@@ -1,11 +1,12 @@
 ---
 title: "Riksdag Committee Reports Advance Legislative Accountability and Security Frameworks"
 description: "The Riksdag's 2025/26 spring committee session delivers eight betänkanden spanning privacy oversight, judicial efficiency, explosive materials control, nuclear facility permitting reform, competition…"
+keywords: "CommitteeReports, English, April 30, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Committee Reports Advance Legislative Accountability, Committee, Reports, Advance, Legislative, Accountability, Security, Frameworks, 2025, spring, session, delivers, eight, betänkanden"
 date: 2026-04-30
 subfolder: committeeReports
 slug: 2026-04-30-committeeReports
 source_folder: analysis/daily/2026-04-30/committeeReports
-generated_at: 2026-05-11T14:23:29.219Z
+generated_at: 2026-05-12T10:26:53.181Z
 language: en
 layout: article
 ---

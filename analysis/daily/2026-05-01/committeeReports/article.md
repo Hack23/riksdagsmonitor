@@ -1,11 +1,12 @@
 ---
 title: "Riksdag Committee Reports: Sweden's Economic Course, Migration Controls, and Defence Readiness — 2024/25 Final Week"
 description: "The Riksdag's final week of the 2024/25 riksmöte produced a cluster of consequential committee reports that together define Sweden's economic framework for 2025–2026: the Finance Committee endorsed…"
+keywords: "CommitteeReports, English, May 1, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Committee Reports Sweden Economic Course, Committee, Reports, Sweden, Economic, Course, Migration, Controls, Defence, Readiness, 2024, Final, Week, riksmöte"
 date: 2026-05-01
 subfolder: committeeReports
 slug: 2026-05-01-committeeReports
 source_folder: analysis/daily/2026-05-01/committeeReports
-generated_at: 2026-05-11T14:23:29.253Z
+generated_at: 2026-05-12T10:26:53.241Z
 language: en
 layout: article
 ---

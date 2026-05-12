@@ -1,11 +1,12 @@
 ---
 title: "Riksdag Monthly Review: April 2026 (Spring Term Peak)"
 description: "<p align=\"center\"> <em>One-page decision-maker briefing for newsroom editors, policy advisors, and senior analysts — 30-day retrospective</em> </p>"
+keywords: "Monthly Review, English, April 19, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Monthly Review April Spring Term, Monthly, Review, April, 2026, Spring, Term, Peak, align, center, One-page, decision-maker, briefing, newsroom"
 date: 2026-04-19
 subfolder: monthly-review
 slug: 2026-04-19-monthly-review
 source_folder: analysis/daily/2026-04-19/monthly-review
-generated_at: 2026-05-11T14:23:28.910Z
+generated_at: 2026-05-12T10:26:52.721Z
 language: en
 layout: article
 ---

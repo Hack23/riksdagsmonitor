@@ -1,11 +1,12 @@
 ---
 title: "Swedish Political Intelligence: Evening Analysis"
 description: "Sweden's political landscape on 27 April 2026 is defined by three concurrent vectors converging ahead of the September 2026 general election: the Tidö coalition's aggressive fiscal and security…"
+keywords: "Evening Analysis, English, April 27, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Evening Sweden landscape April defined, Swedish, Political, Intelligence, Evening, Analysis, Sweden, landscape, April, 2026, defined, three, concurrent, vectors"
 date: 2026-04-27
 subfolder: evening-analysis
 slug: 2026-04-27-evening-analysis
 source_folder: analysis/daily/2026-04-27/evening-analysis
-generated_at: 2026-05-11T14:23:29.117Z
+generated_at: 2026-05-12T10:26:53.029Z
 language: en
 layout: article
 ---

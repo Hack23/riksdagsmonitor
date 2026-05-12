@@ -1,11 +1,12 @@
 ---
 title: "Sweden's Konstitutionsutskottet advanced two grundlag amendments"
 description: "Sweden's Konstitutionsutskottet advanced two grundlag amendments (HD01KU32 + HD01KU33) on 2026-04-17 — the first substantive narrowing of Tryckfrihetsförordningen (1766) in the digital-evidence…"
+keywords: "Realtime 1434, English, April 17, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Konstitutionsutskottet advanced grundlag amendments, Sweden, Konstitutionsutskottet, advanced, grundlag, amendments, HD01KU32, HD01KU33, first, substantive, narrowing, Tryckfrihetsförordningen, 1766, digital-evidence"
 date: 2026-04-17
 subfolder: realtime-1434
 slug: 2026-04-17-realtime-1434
 source_folder: analysis/daily/2026-04-17/realtime-1434
-generated_at: 2026-05-11T14:23:28.875Z
+generated_at: 2026-05-12T10:26:52.664Z
 language: en
 layout: article
 ---

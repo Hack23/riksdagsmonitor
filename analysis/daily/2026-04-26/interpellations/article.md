@@ -1,11 +1,12 @@
 ---
 title: "Swedish Riksdag Interpellations: Opposition Challenges Government on Energy Policy, Labour Market and Social Welfare — April 2026"
 description: "The final week of April 2026 saw a concentrated burst of opposition interpellations targeting the Tidö coalition government across five strategic fronts: energy misinformation (HD10448), employer…"
+keywords: "Interpellations, English, April 26, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Interpellations Opposition Challenges Government Energy, Swedish, Opposition, Challenges, Government, Energy, Policy, Labour, Market, Social, Welfare, April, 2026, final"
 date: 2026-04-26
 subfolder: interpellations
 slug: 2026-04-26-interpellations
 source_folder: analysis/daily/2026-04-26/interpellations
-generated_at: 2026-05-11T14:23:29.070Z
+generated_at: 2026-05-12T10:26:52.955Z
 language: en
 layout: article
 ---

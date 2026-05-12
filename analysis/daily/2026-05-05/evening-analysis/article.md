@@ -1,11 +1,12 @@
 ---
 title: "SD fires two coordinated state-reform salvos: Interpellations HD10464"
 description: "SD fires two coordinated state-reform salvos: Interpellations HD10464 (abolish Sida) and HD10466 (non-political Regeringskansliet civil servants) signal a pre-election campaign to reframe the Swedish…"
+keywords: "Evening Analysis, English, May 5, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, fires coordinated state-reform salvos Interpellations, fires, coordinated, state-reform, salvos, Interpellations, HD10464, abolish, Sida, HD10466, non-political, Regeringskansliet, civil, servants"
 date: 2026-05-05
 subfolder: evening-analysis
 slug: 2026-05-05-evening-analysis
 source_folder: analysis/daily/2026-05-05/evening-analysis
-generated_at: 2026-05-11T14:23:29.376Z
+generated_at: 2026-05-12T10:26:53.416Z
 language: en
 layout: article
 ---

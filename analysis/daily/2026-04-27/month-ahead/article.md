@@ -1,11 +1,12 @@
 ---
 title: "May 2026 Swedish Parliamentary Month Ahead: Security, Justice & Infrastructure at the Forefront"
 description: "Sweden's Riksdag enters May 2026 with a legislative agenda dominated by criminal justice expansion, infrastructure investment conflicts, and social insurance reform pressure."
+keywords: "Month Ahead, English, April 27, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Parliamentary Month Ahead Security Justice, 2026, Swedish, Parliamentary, Month, Ahead, Security, Justice, Infrastructure, Forefront, Sweden, enters, with, legislative"
 date: 2026-04-27
 subfolder: month-ahead
 slug: 2026-04-27-month-ahead
 source_folder: analysis/daily/2026-04-27/month-ahead
-generated_at: 2026-05-11T14:23:29.128Z
+generated_at: 2026-05-12T10:26:53.046Z
 language: en
 layout: article
 ---

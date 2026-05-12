@@ -1,11 +1,12 @@
 ---
 title: "Sverige i maj 2026: Infrastruktur, rättssäkerhet och valpositionering i sista lagstiftarspurten"
 description: "May 2026 is the Tidöalliansen's final full legislative month before the September 2026 Riksdag election. Three legislative milestones dominate: the Riksdag vote on the 970 billion SEK National…"
+keywords: "Month Ahead, English, April 30, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sverige Infrastruktur rättssäkerhet valpositionering sista, Sverige, 2026, Infrastruktur, rättssäkerhet, valpositionering, sista, lagstiftarspurten, Tidöalliansen, final, full, legislative, month, before"
 date: 2026-04-30
 subfolder: month-ahead
 slug: 2026-04-30-month-ahead
 source_folder: analysis/daily/2026-04-30/month-ahead
-generated_at: 2026-05-11T14:23:29.234Z
+generated_at: 2026-05-12T10:26:53.204Z
 language: en
 layout: article
 ---
