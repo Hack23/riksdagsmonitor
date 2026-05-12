@@ -6,7 +6,7 @@ date: 2026-05-12
 subfolder: realtime-pulse
 slug: 2026-05-12-realtime-pulse
 source_folder: analysis/daily/2026-05-12/realtime-pulse
-generated_at: 2026-05-12T12:07:21.670Z
+generated_at: 2026-05-12T12:47:21.325Z
 language: en
 layout: article
 ---
@@ -1772,7 +1772,7 @@ New PIRs opened this cycle:
 
 ## Analysis Artifact Coverage Report
 
-This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run.
+This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
@@ -1780,9 +1780,9 @@ This generated report reconciles the analysis folder with the article projection
 | Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
-**Absent canonical ordered artifacts (missing from disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
+**Absent canonical ordered slots (no alias variant on disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
 
-**Present-but-empty canonical artifacts (on disk but body empty after cleaning)**: None.
+**Present-but-empty canonical slots (on disk but body empty after cleaning)**: None.
 
 **Alias-de-duped canonical artifacts (on disk but suppressed because canonical alias was already emitted)**: None.
 

@@ -754,6 +754,20 @@ describe('aggregator/sources-appendix', () => {
     expect(out).toContain('not expanded inline');
   });
 
+  it('emits a supporting-data-only preamble when used is empty but supporting data exists', () => {
+    const out = buildSourcesAppendix(
+      [],
+      'analysis/daily/2026-05-12/propositions',
+      ['pir-status.json'],
+    );
+    expect(out).not.toBeNull();
+    expect(out).toContain('## Article Sources');
+    expect(out).toContain('only machine-readable supporting data');
+    expect(out).not.toContain('Each section above projects one analysis artifact');
+    expect(out).toContain('### Supporting Data Artifacts');
+    expect(out).toContain('`pir-status.json`');
+  });
+
   it('buildArtifactCoverageReport summarizes emitted, data and absent artifacts', () => {
     const out = buildArtifactCoverageReport({
       emittedMarkdownArtifacts: ['executive-brief.md', 'political-classification.md'],
@@ -766,6 +780,34 @@ describe('aggregator/sources-appendix', () => {
     expect(out).toContain('| Per-document analyses | 1 |');
     expect(out).toContain('| Supporting data artifacts | 1 |');
     expect(out).toContain('`classification-results.md`');
+  });
+
+  it('buildArtifactCoverageReport surfaces alias-de-duped and present-but-empty buckets on their own lines', () => {
+    const out = buildArtifactCoverageReport({
+      emittedMarkdownArtifacts: ['executive-brief.md', 'stakeholder-perspectives.md'],
+      perDocumentArtifacts: [],
+      supportingDataArtifacts: [],
+      absentOrderedArtifacts: ['scenario-analysis.md'],
+      presentButFilteredArtifacts: ['threat-analysis.md'],
+      aliasDedupedArtifacts: ['stakeholder-impact.md'],
+    });
+    expect(out).toContain('Absent canonical ordered slots');
+    expect(out).toContain('`scenario-analysis.md`');
+    expect(out).toContain('Present-but-empty canonical slots');
+    expect(out).toContain('`threat-analysis.md`');
+    expect(out).toContain('Alias-de-duped canonical artifacts');
+    expect(out).toContain('`stakeholder-impact.md`');
+  });
+
+  it('buildArtifactCoverageReport annotates the supporting-data count when truncation occurred', () => {
+    const out = buildArtifactCoverageReport({
+      emittedMarkdownArtifacts: ['executive-brief.md'],
+      perDocumentArtifacts: [],
+      supportingDataArtifacts: ['a.json', 'b.json'],
+      supportingDataTruncatedCount: 17,
+      absentOrderedArtifacts: [],
+    });
+    expect(out).toContain('| Supporting data artifacts | 2 (+17 truncated) |');
   });
 });
 

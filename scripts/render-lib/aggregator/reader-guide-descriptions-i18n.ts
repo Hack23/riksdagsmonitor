@@ -39,6 +39,7 @@
  * @license Apache-2.0
  */
 
+import { aliasGroupFor } from './order.js';
 import type { Language } from '../../types/language.js';
 import type { LangMap } from '../../political-intelligence/i18n/artifact-i18n.js';
 
@@ -568,16 +569,24 @@ export const READER_VALUE_I18N: Record<string, LangMap> = {
  * callers can fall through to the next tier of their localisation
  * chain (curated per-language entry → English curated → localised
  * default).
+ *
+ * Alias-group resolution: when the requested filename has no direct
+ * entry, we consult {@link aliasGroupFor} (the single source of truth
+ * for filename-variant equivalence) so any new alias filename inherits
+ * its group's description automatically without having to update this
+ * file in lockstep.
  */
 export function readerValueFor(file: string, lang: Language): string | undefined {
   const baseName = file.includes('/') ? file.slice(file.lastIndexOf('/') + 1) : file;
-  const aliasBaseName =
-    baseName === 'stakeholder-impact.md'
-      ? 'stakeholder-perspectives.md'
-      : baseName === 'political-classification.md'
-        ? 'classification-results.md'
-        : baseName;
-  return READER_VALUE_I18N[file]?.[lang]
-    ?? READER_VALUE_I18N[baseName]?.[lang]
-    ?? READER_VALUE_I18N[aliasBaseName]?.[lang];
+  const direct = READER_VALUE_I18N[file]?.[lang] ?? READER_VALUE_I18N[baseName]?.[lang];
+  if (direct !== undefined) return direct;
+  const aliases = aliasGroupFor(baseName);
+  if (aliases) {
+    for (const alias of aliases) {
+      if (alias === baseName) continue;
+      const value = READER_VALUE_I18N[alias]?.[lang];
+      if (value !== undefined) return value;
+    }
+  }
+  return undefined;
 }

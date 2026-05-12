@@ -43,6 +43,13 @@ import { readBlufParagraph, readFirstParagraph, truncateToSentenceBoundary } fro
 import { cleanArticleTitle, readFirstHeading, titleFromBluf } from './seo/title.js';
 import { buildArtifactCoverageReport, buildSourcesAppendix } from './sources-appendix.js';
 
+// Maximum number of supporting-data JSON artifacts surfaced in the
+// `## Article Sources` appendix and counted in the coverage report.
+// Caps prevent runaway pipeline output (e.g. a step that drops dozens
+// of intermediate JSON files) from bloating the rendered article and
+// the `artifactsUsed` payload.
+const MAX_SUPPORTING_DATA_ARTIFACTS = 100;
+
 const EXCLUDED_SUPPORTING_DATA_DIRS = new Set(['pass1']);
 
 function isExcludedSupportingDataPath(rel: string): boolean {
@@ -174,25 +181,36 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
   );
   const docsExist = hasPerDocumentAnalyses(subfolderAbsPath);
 
-  const collectSupportingDataArtifacts = (): string[] => {
-    const out: string[] = [];
-    const walk = (dir: string, prefix: string): void => {
-      for (const entry of fs.readdirSync(dir, { withFileTypes: true })
+  // Constrained to two intentional locations:
+  //   1. Top-level `*.json` (canonical pipeline outputs:
+  //      `pir-status.json`, `economic-data.json`, `_summary.json`, etc.)
+  //   2. `documents/*.json` (per-document raw payloads).
+  // Any new pipeline step that emits JSON elsewhere has to be added
+  // here explicitly — we deliberately do NOT recurse arbitrary
+  // subdirectories so a future intermediate cache directory cannot
+  // silently flood the appendix and reader-facing artifact list.
+  // A hard cap (`MAX_SUPPORTING_DATA_ARTIFACTS`) provides a final
+  // backstop and the truncation count is surfaced in the report.
+  const collectSupportingDataArtifacts = (): { files: string[]; truncatedCount: number } => {
+    const collected: string[] = [];
+    const collectFromDir = (dirAbs: string, prefix: string): void => {
+      if (!fs.existsSync(dirAbs)) return;
+      for (const entry of fs.readdirSync(dirAbs, { withFileTypes: true })
         .sort((a, b) => a.name.localeCompare(b.name))) {
-        const full = path.join(dir, entry.name);
+        if (!entry.isFile()) continue;
+        if (!/\.json$/i.test(entry.name)) continue;
         const rel = prefix ? `${prefix}/${entry.name}` : entry.name;
-        if (entry.isDirectory()) {
-          // Pass-1 drafts are superseded by the Pass-2 audited artifacts and
-          // must not be surfaced as reader-facing supporting data.
-          if (isExcludedSupportingDataPath(rel)) continue;
-          walk(full, rel);
-        } else if (/\.json$/i.test(entry.name)) {
-          out.push(rel);
-        }
+        if (isExcludedSupportingDataPath(rel)) continue;
+        collected.push(rel);
       }
     };
-    walk(subfolderAbsPath, '');
-    return out;
+    collectFromDir(subfolderAbsPath, '');
+    collectFromDir(path.join(subfolderAbsPath, 'documents'), 'documents');
+    const truncatedCount = Math.max(0, collected.length - MAX_SUPPORTING_DATA_ARTIFACTS);
+    return {
+      files: truncatedCount > 0 ? collected.slice(0, MAX_SUPPORTING_DATA_ARTIFACTS) : collected,
+      truncatedCount,
+    };
   };
 
   readSection('executive-brief.md', false);
@@ -221,53 +239,70 @@ export function aggregateAnalysis(input: AggregationInput): AggregationResult {
     readSection(f, true);
   }
 
-  const supportingDataArtifacts = collectSupportingDataArtifacts();
+  const supportingDataResult = collectSupportingDataArtifacts();
+  const supportingDataArtifacts = supportingDataResult.files;
+  const supportingDataTruncatedCount = supportingDataResult.truncatedCount;
   const emittedRootMarkdownArtifacts = used.filter((file) => !file.startsWith('documents/'));
   const perDocumentArtifacts = used.filter((file) => file.startsWith('documents/'));
   const emittedRootSet = new Set(emittedRootMarkdownArtifacts);
 
-  // Two distinct "absent" axes:
-  //   1. missingFromDisk — canonical artifact filename never appeared in
-  //      the subfolder (the analysis run never produced it).
-  //   2. presentButFiltered — the file existed on disk but was trimmed
-  //      to an empty body by `cleanArtifactBody()` or skipped via the
-  //      alias-de-duplication, so the article projection omits it.
-  // Reporting both keeps the coverage table honest about what the
-  // reader actually sees vs. what raw analysis output exists.
-  const aliasGroupHasEmittedMember = (file: string): boolean => {
+  // Coverage reporting is computed per *slot* rather than per filename
+  // so an alias group (e.g. {stakeholder-perspectives.md,
+  // stakeholder-impact.md}) counts as ONE canonical slot. Otherwise a
+  // missing alias group would be over-reported (both filenames listed
+  // as absent) when the intent is "one of these aliases".
+  type CoverageSlot = { readonly label: string; readonly members: readonly string[] };
+  const orderedSlots: CoverageSlot[] = [];
+  const seenInGroup = new Set<string>();
+  for (const file of AGGREGATION_ORDER) {
+    if (file === 'executive-brief.md') continue;
+    if (seenInGroup.has(file)) continue;
     const aliases = aliasGroupFor(file);
-    if (!aliases) return false;
-    return [...aliases].some((alias) => emittedRootSet.has(alias));
-  };
-  const missingFromDisk = AGGREGATION_ORDER.filter((file) => {
-    if (file === 'executive-brief.md') return false;
-    if (aliasGroupHasEmittedMember(file)) return false;
-    return !rootArtifactSet.has(file);
-  });
-  // Files present on disk but skipped because another alias-group member
-  // was already emitted. Tracked separately so the report is accurate:
-  // these are not "absent" (the file exists) but they are not emitted
-  // either — the canonical alias wins, and only that alias is visible.
-  const aliasDedupedArtifacts = AGGREGATION_ORDER.filter((file) => {
-    if (file === 'executive-brief.md') return false;
-    if (!rootArtifactSet.has(file)) return false;
-    if (emittedRootSet.has(file)) return false;
-    return aliasGroupHasEmittedMember(file);
-  });
-  // Files present on disk but trimmed to an empty body by cleanArtifactBody().
-  const presentButFiltered = AGGREGATION_ORDER.filter((file) => {
-    if (file === 'executive-brief.md') return false;
-    if (!rootArtifactSet.has(file)) return false;
-    if (emittedRootSet.has(file)) return false;
-    if (aliasGroupHasEmittedMember(file)) return false;
-    return true;
-  });
+    if (aliases) {
+      // Preserve AGGREGATION_ORDER ordering for the group's label.
+      const members = AGGREGATION_ORDER.filter((f) => aliases.has(f));
+      for (const m of members) seenInGroup.add(m);
+      orderedSlots.push({ label: members.join(' / '), members });
+    } else {
+      orderedSlots.push({ label: file, members: [file] });
+    }
+  }
+
+  // Per-slot classification. A slot is:
+  //   • missingFromDisk     — no member of the slot exists on disk
+  //   • emitted (satisfied) — at least one member was emitted
+  //   • presentButFiltered  — members exist on disk but none emitted
+  //                            (body trimmed to empty by
+  //                            `cleanArtifactBody()`)
+  // For multi-member slots that ARE satisfied, the *non-emitted*
+  // members on disk are surfaced separately as alias-de-duped so the
+  // reader can see which alias variant won.
+  const missingFromDisk: string[] = [];
+  const presentButFiltered: string[] = [];
+  const aliasDedupedArtifacts: string[] = [];
+  for (const slot of orderedSlots) {
+    const onDisk = slot.members.filter((m) => rootArtifactSet.has(m));
+    const emitted = slot.members.filter((m) => emittedRootSet.has(m));
+    if (onDisk.length === 0) {
+      missingFromDisk.push(slot.label);
+      continue;
+    }
+    if (emitted.length === 0) {
+      // None of the on-disk members survived cleaning.
+      presentButFiltered.push(onDisk.join(', '));
+      continue;
+    }
+    // Slot satisfied; surface alias siblings that were skipped.
+    const skipped = onDisk.filter((m) => !emittedRootSet.has(m));
+    if (skipped.length > 0) aliasDedupedArtifacts.push(...skipped);
+  }
   const absentOrderedArtifacts = missingFromDisk;
 
   sections.push(buildArtifactCoverageReport({
     emittedMarkdownArtifacts: emittedRootMarkdownArtifacts,
     perDocumentArtifacts,
     supportingDataArtifacts,
+    supportingDataTruncatedCount,
     absentOrderedArtifacts,
     presentButFilteredArtifacts: presentButFiltered,
     aliasDedupedArtifacts,

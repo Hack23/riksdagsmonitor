@@ -24,9 +24,18 @@ import { buildGithubBlobUrl } from '../url-helpers.js';
  * Build the `## Article Sources` markdown appendix listing every
  * artifact consumed by the aggregator. Returns `null` only when both
  * `used` and `supportingDataArtifacts` are empty so the caller can
- * omit the section entirely; if either list contains entries the
- * appendix is emitted (supporting data artifacts are rendered under a
- * dedicated `### Supporting Data Artifacts` sub-block).
+ * omit the section entirely.
+ *
+ * Body shape:
+ *   • If `used` is non-empty, the canonical "Each section above
+ *     projects one analysis artifact…" prose + bullet list is emitted.
+ *   • If `used` is empty but `supportingDataArtifacts` is non-empty,
+ *     the appendix opens with a supporting-data-only preamble (no
+ *     misleading "sections above" claim) before the supporting-data
+ *     sub-block.
+ *   • When `supportingDataArtifacts` is non-empty, the dedicated
+ *     `### Supporting Data Artifacts` sub-block is appended in either
+ *     case.
  */
 export function buildSourcesAppendix(
   used: readonly string[],
@@ -34,17 +43,21 @@ export function buildSourcesAppendix(
   supportingDataArtifacts: readonly string[] = [],
 ): string | null {
   if (used.length === 0 && supportingDataArtifacts.length === 0) return null;
-  const sourceLines = used.map((file) => {
-    const url = buildGithubBlobUrl(`${subfolderRepoRelPath}/${file}`);
-    return `- [\`${file}\`](${url})`;
-  });
-  const lines = [
-    '## Article Sources',
-    '',
-    'Each section above projects one analysis artifact. The full audited markdown is available on GitHub:',
-    '',
-    ...sourceLines,
-  ];
+  const lines: string[] = ['## Article Sources', ''];
+  if (used.length > 0) {
+    lines.push(
+      'Each section above projects one analysis artifact. The full audited markdown is available on GitHub:',
+      '',
+      ...used.map((file) => {
+        const url = buildGithubBlobUrl(`${subfolderRepoRelPath}/${file}`);
+        return `- [\`${file}\`](${url})`;
+      }),
+    );
+  } else {
+    lines.push(
+      'No analysis-artifact markdown sections were emitted in this run; only machine-readable supporting data is linked below for audit traceability.',
+    );
+  }
   if (supportingDataArtifacts.length > 0) {
     lines.push(
       '',
@@ -65,6 +78,13 @@ export interface ArtifactCoverageReportInput {
   readonly emittedMarkdownArtifacts: readonly string[];
   readonly perDocumentArtifacts: readonly string[];
   readonly supportingDataArtifacts: readonly string[];
+  /**
+   * Number of supporting-data JSON artifacts that exist on disk but
+   * were truncated from `supportingDataArtifacts` because the
+   * collector hit its hard cap. Surfaced in the report as an explicit
+   * `(and N more not shown)` annotation. Optional; defaults to 0.
+   */
+  readonly supportingDataTruncatedCount?: number;
   /** Canonical artifacts that never existed on disk. */
   readonly absentOrderedArtifacts: readonly string[];
   /**
@@ -89,22 +109,26 @@ export function buildArtifactCoverageReport(input: ArtifactCoverageReportInput):
   const emittedCount = input.emittedMarkdownArtifacts.length;
   const perDocCount = input.perDocumentArtifacts.length;
   const dataCount = input.supportingDataArtifacts.length;
+  const truncated = input.supportingDataTruncatedCount ?? 0;
+  const dataCountCell = truncated > 0
+    ? `${dataCount} (+${truncated} truncated)`
+    : `${dataCount}`;
   const fmt = (files: readonly string[]): string =>
     files.length > 0 ? files.map((f) => `\`${f}\``).join(', ') : 'None.';
   return [
     '## Analysis Artifact Coverage Report',
     '',
-    'This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run.',
+    'This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.',
     '',
     '| Coverage area | Count | Reader-facing treatment |',
     '|---|---:|---|',
     `| Ordered/root markdown sections | ${emittedCount} | Expanded as article sections in the narrative order above |`,
     `| Per-document analyses | ${perDocCount} | Expanded under \`## Per-document intelligence\` immediately after significance scoring |`,
-    `| Supporting data artifacts | ${dataCount} | Linked in Article Sources, not expanded inline |`,
+    `| Supporting data artifacts | ${dataCountCell} | Linked in Article Sources, not expanded inline |`,
     '',
-    `**Absent canonical ordered artifacts (missing from disk)**: ${fmt(input.absentOrderedArtifacts)}`,
+    `**Absent canonical ordered slots (no alias variant on disk)**: ${fmt(input.absentOrderedArtifacts)}`,
     '',
-    `**Present-but-empty canonical artifacts (on disk but body empty after cleaning)**: ${fmt(input.presentButFilteredArtifacts ?? [])}`,
+    `**Present-but-empty canonical slots (on disk but body empty after cleaning)**: ${fmt(input.presentButFilteredArtifacts ?? [])}`,
     '',
     `**Alias-de-duped canonical artifacts (on disk but suppressed because canonical alias was already emitted)**: ${fmt(input.aliasDedupedArtifacts ?? [])}`,
   ].join('\n');

@@ -6,7 +6,7 @@ date: 2026-05-12
 subfolder: interpellations
 slug: 2026-05-12-interpellations
 source_folder: analysis/daily/2026-05-12/interpellations
-generated_at: 2026-05-12T12:07:19.366Z
+generated_at: 2026-05-12T12:47:18.489Z
 language: en
 layout: article
 ---
@@ -1930,7 +1930,7 @@ New cycle PIRs will be established in pir-status.json for this run's topics.
 
 ## Analysis Artifact Coverage Report
 
-This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run.
+This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
@@ -1938,9 +1938,9 @@ This generated report reconciles the analysis folder with the article projection
 | Per-document analyses | 2 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 3 | Linked in Article Sources, not expanded inline |
 
-**Absent canonical ordered artifacts (missing from disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
+**Absent canonical ordered slots (no alias variant on disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
 
-**Present-but-empty canonical artifacts (on disk but body empty after cleaning)**: None.
+**Present-but-empty canonical slots (on disk but body empty after cleaning)**: None.
 
 **Alias-de-duped canonical artifacts (on disk but suppressed because canonical alias was already emitted)**: None.
 
@@ -1977,6 +1977,6 @@ Each section above projects one analysis artifact. The full audited markdown is 
 
 These machine-readable artifacts are linked for auditability and are not expanded inline, preserving the reader-facing narrative order:
 
+- [`pir-status.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/pir-status.json)
 - [`documents/hd10481.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/documents/hd10481.json)
 - [`documents/hd10482.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/documents/hd10482.json)
-- [`pir-status.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-12/interpellations/pir-status.json)
