@@ -45,6 +45,7 @@ jobs:
             nodejs.org:443
             download.cypress.io:443
             release-assets.githubusercontent.com:443
+            cdn.cypress.io:443
             
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
