@@ -74,10 +74,11 @@ aws s3 sync "$SRC" "$BUCKET" \
 
 # CSS files - long cache, immutable (hashed Vite bundles)
 # --size-only is safe: Vite content-hashes filenames; any change → new key.
-# Excludes root styles.css which gets cache-busting override below.
+# Excludes the canonical `assets/styles.css` (stable, non-hashed URL —
+# see vite.config.js) which gets cache-busting override below.
 aws s3 sync "$SRC" "$BUCKET" \
   --exclude '*' --include '*.css' \
-  --exclude 'styles.css' \
+  --exclude 'styles.css' --exclude 'assets/styles.css' \
   --no-guess-mime-type --content-type 'text/css' \
   --cache-control 'public, max-age=31536000, immutable' \
   --size-only \
@@ -152,7 +153,13 @@ echo "✅ Orphan cleanup complete"
 #     never detects a service-worker update.
 #   - PWA manifests are refetched during install/update; stale manifests
 #     block PWA-shortcut and screenshot rotation.
-#   - Root `styles.css` is a non-hashed fallback referenced by legacy pages.
+#   - `assets/styles.css` is the canonical, stable-URL stylesheet (see
+#     vite.config.js — explicitly NOT content-hashed so external consumers
+#     and cached HTML pages can rely on a single forever URL). Cache-busted
+#     with `must-revalidate` so browsers re-validate via ETag on every
+#     navigation.
+#   - Root `styles.css` is a legacy fallback referenced by older builds —
+#     overridden when present, no-op when absent.
 
 if [ -f "$SRC/sw.js" ]; then
   aws s3 cp "$SRC/sw.js" "$BUCKET/sw.js" \
@@ -167,6 +174,12 @@ for MANIFEST in site.webmanifest manifest.json; do
       --cache-control 'public, max-age=300, must-revalidate'
   fi
 done
+
+if [ -f "$SRC/assets/styles.css" ]; then
+  aws s3 cp "$SRC/assets/styles.css" "$BUCKET/assets/styles.css" \
+    --no-guess-mime-type --content-type 'text/css' \
+    --cache-control 'public, max-age=3600, must-revalidate'
+fi
 
 if [ -f "$SRC/styles.css" ]; then
   aws s3 cp "$SRC/styles.css" "$BUCKET/styles.css" \

@@ -74,16 +74,23 @@ describe.skipIf(!hasDist)('Dashboard bundle integrity (post-build)', () => {
         expect(html).not.toContain('/src/browser/main.ts');
       });
 
-      it('has correctly rewritten stylesheet href (not ../styles.css)', () => {
+      it('has correctly rewritten stylesheet href (stable assets/styles.css path)', () => {
         const filepath = join(DIST_DASHBOARDS, filename);
         if (!existsSync(filepath)) return;
         const html = readFileSync(filepath, 'utf8');
 
-        // Should have hashed stylesheet
-        expect(html).toMatch(/href="[^"]*\/assets\/styles-[A-Za-z0-9_-]+\.css"/);
+        // The CSS bundle is pinned to the canonical stable URL
+        // `assets/styles.css` (vite.config.js `assetFileNames`).
+        // Dashboard pages live one level deep so they reference it
+        // via `../assets/styles.css`.  No content hash is present in
+        // the filename — that is intentional (see vite.config.js
+        // header for the cached-HTML invalidation rationale).
+        expect(html).toContain('href="../assets/styles.css"');
 
-        // Should NOT have the dev-only relative path
+        // Belt-and-braces: must NOT regress to the dev-only relative
+        // path or to the legacy hashed-bundle filename.
         expect(html).not.toContain('href="../styles.css"');
+        expect(html).not.toMatch(/href="[^"]*\/assets\/styles-[A-Za-z0-9_-]+\.css"/);
       });
     });
   }

@@ -17,12 +17,18 @@
  * pipeline where the source corpus is small relative to the dist tree.
  *
  * Targets:
- *   - `dist/styles.css`           (legacy non-hashed root copy that
- *                                   `scripts/deploy-s3.sh` cache-busts on
- *                                   every push)
- *   - `dist/assets/styles-*.css`  (Vite-hashed bundle linked from every
- *                                   modern page; the static-pages plugin
- *                                   rewrites the `<link href>` to it)
+ *   - `dist/styles.css`           (legacy non-hashed root copy, only
+ *                                   present in older builds — still
+ *                                   processed if found so a stale
+ *                                   build artefact never ships unpurged)
+ *   - `dist/assets/styles.css`    (canonical Vite bundle linked from
+ *                                   every modern page; the static-pages
+ *                                   plugin rewrites the `<link href>`
+ *                                   to it.  Stable, non-hashed URL —
+ *                                   see `vite.config.js` rationale.)
+ *   - `dist/assets/styles-*.css`  (legacy hashed bundle layout, only
+ *                                   present in older build outputs;
+ *                                   tolerated for back-compat)
  *
  * Filenames are preserved (PurgeCSS only mutates contents) so all
  * existing `<link>` hrefs and CloudFront URLs continue to work.
@@ -191,16 +197,20 @@ async function purge(
     );
   }
 
-  /* Stylesheets to purge.  We only purge the two targets actually
-   * shipped to S3: the legacy root `dist/styles.css` and the Vite-hashed
-   * `dist/assets/styles-*.css`.  Component sub-stylesheets are inlined
-   * into one of those by Vite's CSS bundler, so they don't need a
-   * separate pass. */
+  /* Stylesheets to purge.  We only purge the targets actually shipped
+   * to S3:
+   *   - the legacy root `dist/styles.css` (older builds);
+   *   - the canonical `dist/assets/styles.css` (current builds — the
+   *     static-pages plugin rewrites `<link href>` to this stable path);
+   *   - any legacy hashed `dist/assets/styles-*.css` (back-compat).
+   * Component sub-stylesheets are inlined into one of those by Vite's
+   * CSS bundler, so they don't need a separate pass. */
   const cssCandidates = await walk(distDir, cssExts);
   const cssTargets = cssCandidates.filter((file) => {
     const rel = path.relative(distDir, file);
     return (
       rel === 'styles.css' ||
+      rel === path.join('assets', 'styles.css') ||
       /^assets[/\\]styles-[A-Za-z0-9_-]+\.css$/.test(rel)
     );
   });
@@ -208,7 +218,8 @@ async function purge(
   if (cssTargets.length === 0) {
     throw new Error(
       `[purge-css] No styles.css targets found under ${distDir}. ` +
-        `Expected dist/styles.css or dist/assets/styles-*.css.`,
+        `Expected dist/assets/styles.css (or legacy dist/styles.css / ` +
+        `dist/assets/styles-*.css).`,
     );
   }
 

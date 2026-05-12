@@ -1,15 +1,23 @@
 /**
  * Vite Configuration for Riksdagsmonitor
- * 
- * Static HTML/CSS site with multi-language support
- * Deployed to CloudFront with SRI hash generation
- * 
+ *
+ * Static HTML/CSS site with multi-language support.
+ * Deployed to CloudFront / S3.
+ *
+ * **Trust model:** every first-party resource (CSS, JS, fonts, images,
+ * static HTML) is served from infrastructure we own end-to-end
+ * (Hack23 S3 bucket → Hack23 CloudFront distribution → riksdagsmonitor.com).
+ * Per the platform "trust S3 / CloudFront" classification we do **not**
+ * apply Subresource Integrity to first-party assets — TLS + bucket
+ * policy + CloudFront WAF are the controlling integrity boundary.
+ * `vite-plugin-sri-gen` was removed (it added integrity attributes that
+ * any post-build content rewrite would invalidate, breaking cached pages).
+ *
  * @author Hack23 AB
  * @license Apache-2.0
  */
 
 import { createLogger, defineConfig } from 'vite';
-import sri from 'vite-plugin-sri-gen';
 import { fileURLToPath } from 'node:url';
 import staticPagesPlugin from './scripts/vite-plugin-static-pages.js';
 import swBuildIdPlugin from './scripts/vite-plugin-sw-build-id.js';
@@ -63,6 +71,8 @@ export default defineConfig({
 
   // Suppress only the `vite:build-html` "can't be bundled without
   // type=module" warning for legacy chart.umd/chart-init UMD scripts.
+  // Those scripts are first-party, served from our own S3/CloudFront
+  // and explicitly trusted (no SRI required).
   customLogger: createSuppressingLogger(),
   
   // Server configuration for local development
@@ -87,12 +97,12 @@ export default defineConfig({
     emptyOutDir: true,
 
     // Generate the Vite manifest so `static-pages-emit` can resolve
-    // the hashed `styles.css` filename without scanning `dist/assets/`.
+    // the bundled `styles.css` filename without scanning `dist/assets/`.
     manifest: true,
 
     // Generate source maps for debugging
     sourcemap: true,
-    
+
     // Code splitting configuration
     rollupOptions: {
       input: {
@@ -167,16 +177,34 @@ export default defineConfig({
           }
         },
         
-        // Asset file naming
+        // Asset file naming.
+        //
+        // The main `styles.css` bundle is intentionally emitted at a
+        // STABLE, NON-HASHED URL (`assets/styles.css`).  Rationale:
+        //   1. External consumers (RSS, bookmarks, third-party embeds)
+        //      can rely on a single canonical URL forever.
+        //   2. Browsers that hold cached HTML (max-age=3600) keep
+        //      working across deploys — no chance of `<link href>`
+        //      pointing at an `assets/styles-<hash>.css` that
+        //      `aws s3 sync --delete` has already removed.
+        //   3. Cache freshness is handled by `Cache-Control:
+        //      public, max-age=3600, must-revalidate` + ETag (set
+        //      in scripts/deploy-s3.sh) — no content-hashed URL needed.
+        // All other assets (images, fonts, JS chunks) keep their
+        // content-hashed filenames so they can ship with
+        // `Cache-Control: max-age=31536000, immutable`.
         assetFileNames: (assetInfo) => {
+          if (assetInfo.name === 'styles.css') {
+            return `assets/styles.css`;
+          }
           if (/\.(png|jpe?g|svg|gif|tiff|bmp|ico|webp)$/i.test(assetInfo.name)) {
             return `assets/images/[name]-[hash][extname]`;
           }
-          
+
           if (/\.(woff2?|eot|ttf|otf)$/i.test(assetInfo.name)) {
             return `assets/fonts/[name]-[hash][extname]`;
           }
-          
+
           return `assets/[name]-[hash][extname]`;
         },
         
@@ -204,29 +232,16 @@ export default defineConfig({
   
   // Plugins
   plugins: [
-    // Generate Subresource Integrity (SRI) hashes for security.
-    // Skip:
-    //   - Google Fonts (no CORS for SRI verification).
-    //   - First-party JavaScript and TypeScript output. Per the
-    //     "trust S3 / CloudFront" platform classification, first-party
-    //     JS/TS is delivered from infrastructure we control end-to-end
-    //     and does not require SRI verification. This also keeps the
-    //     `vite:build-html` warnings around chart.umd / chart-init quiet
-    //     because SRI rewriting is no longer attempted on those tags.
-    sri({
-      algorithm: 'sha384',
-      skipResources: [
-        'https://fonts.googleapis.com/*',
-        'https://fonts.gstatic.com/*',
-        '*.js',
-        '*.mjs',
-        '*.ts',
-        '/js/*',
-        '/js/**',
-        '/assets/js/*',
-        '/assets/js/**'
-      ]
-    }),
+    // NOTE: `vite-plugin-sri-gen` was intentionally removed.
+    // All first-party assets (CSS / JS / fonts / images) are served
+    // from the Hack23-owned S3 → CloudFront pipeline; integrity is
+    // enforced by TLS + bucket policy + WAF rather than SRI hashes.
+    // SRI was actively harmful here because the deploy-time
+    // purge/minify pipeline rewrites bytes after Vite has stamped
+    // integrity attributes into HTML — every cached page would then
+    // refuse to load the stylesheet on the next visit. See
+    // commit message and `scripts/vite-plugin-static-pages.js`
+    // header for the full root-cause writeup.
 
     // Emit the ~3 540 static HTML pages (news articles, news/index_*,
     // sitemap_*, political-intelligence_*) outside Rollup's module

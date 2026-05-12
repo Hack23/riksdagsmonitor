@@ -2,7 +2,7 @@
  * vite-plugin-static-pages
  *
  * Emits the (very large) set of pre-rendered "static" HTML pages —
- * news articles, news/index_*.html, sitemap_*.html, and
+ * news articles, news/index_*.html, sitemap_*.html, dashboards, and
  * political-intelligence_*.html — into `dist/` *outside* Rollup's
  * module graph.
  *
@@ -37,14 +37,10 @@
  * Runs in `closeBundle` (after Vite/Rollup have finished writing
  * the real bundled outputs):
  *
- * 1. Reads `dist/.vite/manifest.json` to find the hashed bundle
- *    name for `styles.css` (e.g. `assets/styles-AbCdEf12.css`).
- * 2. Computes the SHA-384 SRI hash of that bundled stylesheet so
- *    we can attach `integrity="sha384-…" crossorigin="anonymous"`
- *    to the rewritten `<link rel="stylesheet">` — preserving the
- *    behaviour of `vite-plugin-sri-gen` for the pages we no longer
- *    route through Vite.
- * 3. Reads each static HTML page from the project root, performs
+ * 1. Reads `dist/.vite/manifest.json` to find the bundled CSS path
+ *    for `styles.css` (always `assets/styles.css` — vite.config.js
+ *    pins the main CSS bundle to a stable, non-hashed URL).
+ * 2. Reads each static HTML page from the project root, performs
  *    a single regex rewrite of the `styles.css` `<link>` tag, and
  *    a regex rewrite of any `<script type="module" src="
  *    /src/browser/<name>.ts">` tag to its hashed `/assets/js/
@@ -67,16 +63,17 @@
  * The pages this plugin emits are entirely produced by the
  * repository's own prebuild scripts (no third-party templates) and
  * served from the same S3 bucket / CloudFront distribution as the
- * bundled CSS. The "trust S3 / CloudFront" classification in
- * `vite.config.js` (SRI dropped for first-party JS) applies here
- * too: we add SRI to the CSS link as a defence-in-depth measure
- * but no other resources need integrity attributes.
+ * bundled CSS. Per the platform "trust S3 / CloudFront"
+ * classification (see `vite.config.js` plugin block), no SRI
+ * `integrity` attribute is added — TLS + bucket policy + WAF are
+ * the controlling integrity boundary, and any post-build content
+ * mutation (purge-css / minify-dist) would otherwise invalidate
+ * cached HTML's stale integrity hash and block the stylesheet.
  *
  * @author Hack23 AB
  * @license Apache-2.0
  */
 
-import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -96,7 +93,7 @@ import path from 'node:path';
 /**
  * Match a single `<link rel="stylesheet" … href="…styles.css">`
  * tag and capture the surrounding attributes so we can splice in
- * `integrity` / `crossorigin` without disturbing the rest.
+ * the rewritten href without disturbing the rest.
  *
  * The literal `styles.css` lives in three accepted forms:
  *   - `styles.css`        (root-level pages)
@@ -130,14 +127,22 @@ const MODULE_SCRIPT_RE =
   /<script\b(?=[^>]*?\btype\s*=\s*"module")([^>]*?)\bsrc\s*=\s*"\/src\/browser\/([A-Za-z0-9_-]+)\.ts"([^>]*)>\s*<\/script>/gi;
 
 /**
- * Read Vite's emitted manifest to map `styles.css` → its hashed
- * output path. Falls back to scanning `dist/assets/` for a unique
- * `styles-*.css` if the manifest entry is missing (which can
- * happen when CSS is registered only under an HTML entry).
+ * Read Vite's emitted manifest to map `styles.css` → its bundled
+ * output path. The repo pins this bundle to the stable, non-hashed
+ * `assets/styles.css` (see `assetFileNames` in vite.config.js), so
+ * the manifest entry should always resolve to that exact file.
+ *
+ * Falls back to:
+ *   1. `assets/styles.css` directly on disk (manifest absent / lacks
+ *      the entry — e.g. when CSS is registered only under an HTML
+ *      entry).
+ *   2. A unique `assets/styles-*.css` (legacy hashed layout) — kept
+ *      for backwards compatibility with any tooling that still
+ *      seeds the old name.
  *
  * @param {string} distDir  Absolute path to the Vite output dir.
- * @returns {string} Hashed asset path relative to `distDir`
- *                   (e.g. `assets/styles-Ab12.css`).
+ * @returns {string} Bundled CSS path relative to `distDir`
+ *                   (e.g. `assets/styles.css`).
  */
 function readStylesAssetName(distDir) {
   const manifestPath = path.join(distDir, '.vite', 'manifest.json');
@@ -150,6 +155,11 @@ function readStylesAssetName(distDir) {
 
   const assetsDir = path.join(distDir, 'assets');
   if (fs.existsSync(assetsDir)) {
+    // Stable, non-hashed bundle is the expected production layout.
+    if (fs.existsSync(path.join(assetsDir, 'styles.css'))) {
+      return 'assets/styles.css';
+    }
+    // Legacy hashed layout — tolerated for tests / older tooling.
     const hits = fs
       .readdirSync(assetsDir)
       .filter((f) => /^styles-[A-Za-z0-9_-]+\.css$/.test(f));
@@ -163,9 +173,9 @@ function readStylesAssetName(distDir) {
   }
 
   throw new Error(
-    `[static-pages] Could not resolve hashed styles.css filename. ` +
+    `[static-pages] Could not resolve styles.css filename. ` +
       `Set build.manifest = true in vite.config.js, or check that ` +
-      `the main bundle build emitted a styles-*.css under dist/assets/.`,
+      `the main bundle build emitted assets/styles.css under dist/.`,
   );
 }
 
@@ -214,10 +224,6 @@ function readModuleAssetName(distDir, entryName) {
   return null;
 }
 
-function sha384Base64(buffer) {
-  return crypto.createHash('sha384').update(buffer).digest('base64');
-}
-
 /**
  * Walk a {@link StaticPageSet} and resolve absolute paths for
  * every HTML file it covers.
@@ -261,18 +267,19 @@ function resolvePageFiles(set, projectRoot) {
 
 /**
  * Resolve the rewritten `href` for a stylesheet link based on the
- * original relative form. The hashed CSS asset always lives at
- * `<dist>/assets/styles-<hash>.css`, so root-level pages reference
- * `assets/...` and one-level-deep pages reference `../assets/...`.
+ * original relative form. The CSS bundle always lives at
+ * `<dist>/<bundledAsset>` (typically `assets/styles.css`), so
+ * root-level pages reference it via `<bundledAsset>` and one-level-
+ * deep pages reference it via `../<bundledAsset>`.
  *
  * @param {string} originalHref  e.g. `styles.css`, `../styles.css`
- * @param {string} hashedAsset   e.g. `assets/styles-Ab12.css`
+ * @param {string} bundledAsset  e.g. `assets/styles.css`
  * @returns {string}
  */
-function rewrittenHref(originalHref, hashedAsset) {
-  if (originalHref.startsWith('../')) return `../${hashedAsset}`;
-  if (originalHref.startsWith('/')) return `/${hashedAsset}`;
-  return hashedAsset;
+function rewrittenHref(originalHref, bundledAsset) {
+  if (originalHref.startsWith('../')) return `../${bundledAsset}`;
+  if (originalHref.startsWith('/')) return `/${bundledAsset}`;
+  return bundledAsset;
 }
 
 /**
@@ -298,10 +305,7 @@ export default function staticPagesPlugin(options) {
       sequential: true,
       handler() {
         const distDir = path.isAbsolute(outDir) ? outDir : path.join(projectRoot, outDir);
-        const hashedAsset = readStylesAssetName(distDir);
-        const cssAbs = path.join(distDir, hashedAsset);
-        const cssBuf = fs.readFileSync(cssAbs);
-        const integrity = `sha384-${sha384Base64(cssBuf)}`;
+        const bundledAsset = readStylesAssetName(distDir);
 
         /** @type {Map<string, string | null>} */
         const moduleAssetCache = new Map();
@@ -331,14 +335,17 @@ export default function staticPagesPlugin(options) {
             const html = fs.readFileSync(absPath, 'utf8');
             let didRewrite = false;
             let didScriptRewrite = false;
+            // Rewrite the styles.css href to the bundled asset path.
+            // No `integrity` / `crossorigin` is injected — see plugin
+            // header "Trust boundary".
             let out = html.replace(
               STYLESHEET_LINK_RE,
               (_m, before, mid, href, after) => {
                 didRewrite = true;
-                const newHref = rewrittenHref(href, hashedAsset);
+                const newHref = rewrittenHref(href, bundledAsset);
                 return (
                   `<link${before}rel="stylesheet"${mid}` +
-                  `href="${newHref}" integrity="${integrity}" crossorigin="anonymous"${after}>`
+                  `href="${newHref}"${after}>`
                 );
               },
             );
