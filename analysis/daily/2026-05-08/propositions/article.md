@@ -1,11 +1,12 @@
 ---
 title: "The Tidö government (M–SD–KD–L) submitted three interlocking"
 description: "On 7 May 2026, the Tidö government (M–SD–KD–L) submitted three interlocking propositions that collectively advance a state digital-security architecture with significant civil liberties implications."
+keywords: "Propositions, English, May 8, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Tidö government submitted three interlocking, Tidö, government, submitted, three, interlocking, 2026, that, collectively, advance, state, digital-security, architecture, with"
 date: 2026-05-08
 subfolder: propositions
 slug: 2026-05-08-propositions
 source_folder: analysis/daily/2026-05-08/propositions
-generated_at: 2026-05-11T14:23:29.506Z
+generated_at: 2026-05-12T10:26:53.608Z
 language: en
 layout: article
 ---

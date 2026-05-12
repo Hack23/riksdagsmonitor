@@ -1,11 +1,12 @@
 ---
 title: "Riksdag Committee Reports — May 5, 2026"
 description: "Two planned betänkanden from the Finance Committee (FiU49) and Constitutional Affairs Committee (KU39) signal Sweden's legislative agenda in the final pre-election sprint before the September 13,…"
+keywords: "CommitteeReports, English, May 5, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Committee Reports planned betänkanden Finance, Committee, Reports, 2026, planned, betänkanden, from, Finance, FiU49, Constitutional, Affairs, KU39, signal, Sweden"
 date: 2026-05-05
 subfolder: committeeReports
 slug: 2026-05-05-committeeReports
 source_folder: analysis/daily/2026-05-05/committeeReports
-generated_at: 2026-05-11T14:23:29.364Z
+generated_at: 2026-05-12T10:26:53.398Z
 language: en
 layout: article
 ---

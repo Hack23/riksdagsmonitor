@@ -1,11 +1,12 @@
 ---
 title: "Monthly Review, May 2026"
 description: "The Tidö coalition (M, SD, KD, L) is executing a disciplined pre-election legislative sprint with 128 days to the September 2026 election. May 2026's parliamentary output reveals a coherent electoral…"
+keywords: "Monthly Review, English, May 9, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Monthly Review Tidö coalition executing, Monthly, Review, 2026, Tidö, coalition, executing, disciplined, pre-election, legislative, sprint, with, days, September"
 date: 2026-05-09
 subfolder: monthly-review
 slug: 2026-05-09-monthly-review
 source_folder: analysis/daily/2026-05-09/monthly-review
-generated_at: 2026-05-11T14:23:29.528Z
+generated_at: 2026-05-12T10:26:53.640Z
 language: en
 layout: article
 ---

@@ -1,11 +1,12 @@
 ---
 title: "Week Ahead: Sweden's Pre-Election Legislative Storm — 4–10 May 2026"
 description: "The week of 4–10 May 2026 arrives five months before Sweden's general election with the Tidöalliansen government having just tabled its most consequential — and constitutionally risky — legislative…"
+keywords: "Week Ahead, English, May 1, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Week Ahead Sweden Pre-Election Legislative, Week, Ahead, Sweden, Pre-Election, Legislative, Storm, 2026, arrives, five, months, before, general, election"
 date: 2026-05-01
 subfolder: week-ahead
 slug: 2026-05-01-week-ahead
 source_folder: analysis/daily/2026-05-01/week-ahead
-generated_at: 2026-05-11T14:23:29.283Z
+generated_at: 2026-05-12T10:26:53.285Z
 language: en
 layout: article
 ---

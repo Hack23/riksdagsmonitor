@@ -1,11 +1,12 @@
 ---
 title: "Swedish Government Propositions, 30 April 2026"
 description: "Sweden's Kristersson government has submitted four significant propositions to the Riksdag in late April 2026, spanning infrastructure investment, criminal justice reform, EU financial regulation,…"
+keywords: "Propositions, English, April 30, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Government Propositions April Sweden Kristersson, Swedish, Government, April, 2026, Sweden, Kristersson, submitted, four, significant, late, spanning, infrastructure, investment"
 date: 2026-04-30
 subfolder: propositions
 slug: 2026-04-30-propositions
 source_folder: analysis/daily/2026-04-30/propositions
-generated_at: 2026-05-11T14:23:29.244Z
+generated_at: 2026-05-12T10:26:53.227Z
 language: en
 layout: article
 ---

@@ -1,11 +1,12 @@
 ---
 title: "Sweden May–June 2026: Migration Mega-Package, Defence Integration and Pre-Election Legislative Sprint"
 description: "The Swedish Riksdag enters May–June 2026 in the most consequential pre-election legislative sprint in a generation. The Tidöalliansen government has filed four simultaneous migration propositions…"
+keywords: "Month Ahead, English, May 1, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden June Migration Mega-Package Defence, Sweden, June, 2026, Migration, Mega-Package, Defence, Integration, Pre-Election, Legislative, Sprint, Swedish, enters, most"
 date: 2026-05-01
 subfolder: month-ahead
 slug: 2026-05-01-month-ahead
 source_folder: analysis/daily/2026-05-01/month-ahead
-generated_at: 2026-05-11T14:23:29.262Z
+generated_at: 2026-05-12T10:26:53.255Z
 language: en
 layout: article
 ---

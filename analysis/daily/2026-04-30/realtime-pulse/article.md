@@ -1,11 +1,12 @@
 ---
 title: "Swedish Parliament Realtime Pulse, 30 April 2026"
 description: "Sweden's Kristersson government has mounted an extraordinary legislative surge on 30 April 2026, submitting a second major batch of propositions that concentrates enforcement power in three…"
+keywords: "Realtime Pulse, English, April 30, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Realtime Pulse April Sweden Kristersson, Swedish, Parliament, Realtime, Pulse, April, 2026, Sweden, Kristersson, government, mounted, extraordinary, legislative, surge"
 date: 2026-04-30
 subfolder: realtime-pulse
 slug: 2026-04-30-realtime-pulse
 source_folder: analysis/daily/2026-04-30/realtime-pulse
-generated_at: 2026-05-11T14:23:29.249Z
+generated_at: 2026-05-12T10:26:53.235Z
 language: en
 layout: article
 ---

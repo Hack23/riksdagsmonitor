@@ -1,11 +1,12 @@
 ---
 title: "Week Ahead: Riksdag Week 20 (May 11–17, 2026)"
 description: "Sweden's Riksdag enters week 20 (May 11–17, 2026) with a packed legislative calendar spanning defence intelligence modernisation, education reform, justice legislation, and EU-aligned financial…"
+keywords: "Week Ahead, English, May 8, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Week Ahead Sweden enters packed, Week, Ahead, 2026, Sweden, enters, with, packed, legislative, calendar, spanning, defence, intelligence, modernisation"
 date: 2026-05-08
 subfolder: week-ahead
 slug: 2026-05-08-week-ahead
 source_folder: analysis/daily/2026-05-08/week-ahead
-generated_at: 2026-05-11T14:23:29.516Z
+generated_at: 2026-05-12T10:26:53.622Z
 language: en
 layout: article
 ---

@@ -1,11 +1,12 @@
 ---
 title: "Swedish Government Propositions Signal Banking Reform and Welfare Sanctions"
 description: "The Tidö government delivered four propositions on 2026-04-23, led by its implementation of the EU Banking Package (HD03253) — the most consequential financial regulation overhaul since 2014 —…"
+keywords: "Propositions, English, April 28, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Government Propositions Signal Banking Reform, Swedish, Government, Signal, Banking, Reform, Welfare, Sanctions, Tidö, delivered, four, implementation, Package, HD03253"
 date: 2026-04-28
 subfolder: propositions
 slug: 2026-04-28-propositions
 source_folder: analysis/daily/2026-04-28/propositions
-generated_at: 2026-05-11T14:23:29.172Z
+generated_at: 2026-05-12T10:26:53.110Z
 language: en
 layout: article
 ---

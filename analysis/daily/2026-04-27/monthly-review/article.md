@@ -1,11 +1,12 @@
 ---
 title: "The 30-day window 2026-03-28 → 2026-04-27 closes the Tidö coalition's"
 description: "The 30-day window 2026-03-28 → 2026-04-27 closes the Tidö coalition's 2025/26 legislative portfolio while simultaneously exposing two new fault lines: intra-coalition SD-KD energy policy tension…"
+keywords: "Monthly Review, English, April 27, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, 30-day window closes Tidö coalition, 30-day, window, closes, Tidö, coalition, 2025, legislative, portfolio, while, simultaneously, exposing, fault, lines"
 date: 2026-04-27
 subfolder: monthly-review
 slug: 2026-04-27-monthly-review
 source_folder: analysis/daily/2026-04-27/monthly-review
-generated_at: 2026-05-11T14:23:29.133Z
+generated_at: 2026-05-12T10:26:53.053Z
 language: en
 layout: article
 ---

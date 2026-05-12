@@ -1,11 +1,12 @@
 ---
 title: "Swedish Opposition Mounts Coordinated Challenge to Government's Energy and Environmental Agend"
 description: "Sweden's Social Democratic opposition filed 16 committee motions on 2026-04-29 — the final pre-summer submission day — spanning five government propositions covering energy system reform,…"
+keywords: "Motions, English, May 1, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Opposition Mounts Coordinated Challenge Government, Swedish, Opposition, Mounts, Coordinated, Challenge, Government, Energy, Environmental, Agend, Sweden, Social, Democratic, filed"
 date: 2026-05-01
 subfolder: motions
 slug: 2026-05-01-motions
 source_folder: analysis/daily/2026-05-01/motions
-generated_at: 2026-05-11T14:23:29.268Z
+generated_at: 2026-05-12T10:26:53.263Z
 language: en
 layout: article
 ---

@@ -1,11 +1,12 @@
 ---
 title: "On 2026-04-13 – 16, the Kristersson government tabled a coordinated"
 description: "On 2026-04-13 – 16, the Kristersson government tabled a coordinated four-document pre-election sprint: Vårproposition 2026 (HD03100, DIW 9.5) sets the macro frame, an extra supplementary budget…"
+keywords: "Realtime 1705, English, April 18, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Kristersson government tabled coordinated four-document, Kristersson, government, tabled, coordinated, four-document, pre-election, sprint, Vårproposition, 2026, HD03100, sets, macro, frame"
 date: 2026-04-18
 subfolder: realtime-1705
 slug: 2026-04-18-realtime-1705
 source_folder: analysis/daily/2026-04-18/realtime-1705
-generated_at: 2026-05-11T14:23:28.881Z
+generated_at: 2026-05-12T10:26:52.673Z
 language: en
 layout: article
 ---

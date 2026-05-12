@@ -1,11 +1,12 @@
 ---
 title: "Sweden Expands SIGINT Powers, Prison Capacity, and Social Insurance Reforms — May 2026 Committee Reports"
 description: "The Riksdag's Defence Committee (FöU) has presented a landmark betänkande modernising Sweden's signals intelligence (SIGINT) law — the most significant reform to the framework since the 2008 FRA law…"
+keywords: "CommitteeReports, English, May 7, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Expands SIGINT Powers Prison, Sweden, Expands, SIGINT, Powers, Prison, Capacity, Social, Insurance, Reforms, 2026, Committee, Reports, Defence"
 date: 2026-05-07
 subfolder: committeeReports
 slug: 2026-05-07-committeeReports
 source_folder: analysis/daily/2026-05-07/committeeReports
-generated_at: 2026-05-11T14:23:29.432Z
+generated_at: 2026-05-12T10:26:53.499Z
 language: en
 layout: article
 ---

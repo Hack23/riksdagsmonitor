@@ -1,11 +1,12 @@
 ---
 title: "Sweden Month-Ahead Strategic Outlook (19 April → 19 May 2026)"
 description: "<p align=\"center\"> <em>One-page decision-maker briefing for newsroom editors, policy advisors, and senior analysts</em> </p>"
+keywords: "Month Ahead, English, April 19, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Month-Ahead Strategic Outlook April, Sweden, Month-Ahead, Strategic, Outlook, April, 2026, align, center, One-page, decision-maker, briefing, newsroom, editors"
 date: 2026-04-19
 subfolder: month-ahead
 slug: 2026-04-19-month-ahead
 source_folder: analysis/daily/2026-04-19/month-ahead
-generated_at: 2026-05-11T14:23:28.905Z
+generated_at: 2026-05-12T10:26:52.711Z
 language: en
 layout: article
 ---

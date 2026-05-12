@@ -1,11 +1,12 @@
 ---
 title: "Sweden's parliament enacted a 4.1 billion SEK emergency energy relief"
 description: "Sweden's parliament enacted a 4.1 billion SEK emergency energy relief package today (HD01FiU48) with an anomalous M+SD+S+KD supermajority — the Social Democrats abandoning their climate…"
+keywords: "Evening Analysis, English, April 22, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden enacted billion emergency energy, Sweden, parliament, enacted, billion, emergency, energy, relief, package, today, HD01FiU48, with, anomalous, supermajority"
 date: 2026-04-22
 subfolder: evening-analysis
 slug: 2026-04-22-evening-analysis
 source_folder: analysis/daily/2026-04-22/evening-analysis
-generated_at: 2026-05-11T14:23:28.973Z
+generated_at: 2026-05-12T10:26:52.812Z
 language: en
 layout: article
 ---

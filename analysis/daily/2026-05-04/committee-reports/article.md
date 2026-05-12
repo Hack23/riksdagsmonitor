@@ -1,11 +1,12 @@
 ---
 title: "Swedish Riksdag Advances Nuclear Licensing Reform and Citizenship Tightening"
 description: "The Riksdag's committee phase of riksmöte 2025/26 delivers two politically seismic betänkanden in the final week of April 2026: the Enterprise Committee (NU) approves a new law enabling direct…"
+keywords: "Committee Reports, English, May 4, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Advances Nuclear Licensing Reform Citizenship, Swedish, Advances, Nuclear, Licensing, Reform, Citizenship, Tightening, committee, phase, riksmöte, 2025, delivers, politically"
 date: 2026-05-04
 subfolder: committee-reports
 slug: 2026-05-04-committee-reports
 source_folder: analysis/daily/2026-05-04/committee-reports
-generated_at: 2026-05-11T14:23:29.311Z
+generated_at: 2026-05-12T10:26:53.327Z
 language: en
 layout: article
 ---

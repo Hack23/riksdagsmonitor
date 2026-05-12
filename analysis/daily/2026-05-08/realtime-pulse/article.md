@@ -1,11 +1,12 @@
 ---
 title: "The Riksdag chamber on 8 May 2026 debates two significant committee"
 description: "The Riksdag chamber on 8 May 2026 debates two significant committee reports: UbU28 (teacher qualifications in the new 10-year compulsory school — DIW 8/9) and CU34 (modernised debt-enforcement rules…"
+keywords: "Realtime Pulse, English, May 8, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, chamber debates significant committee reports, chamber, 2026, debates, significant, committee, reports, UbU28, teacher, qualifications, 10-year, compulsory, school, CU34"
 date: 2026-05-08
 subfolder: realtime-pulse
 slug: 2026-05-08-realtime-pulse
 source_folder: analysis/daily/2026-05-08/realtime-pulse
-generated_at: 2026-05-11T14:23:29.511Z
+generated_at: 2026-05-12T10:26:53.615Z
 language: en
 layout: article
 ---

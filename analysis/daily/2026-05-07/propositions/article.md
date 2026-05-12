@@ -1,11 +1,12 @@
 ---
 title: "Sweden tables ratification votes for two EU-Central Asia EPCAs"
 description: "Sweden tables ratification votes for two EU-Central Asia EPCAs on 2026-05-07. Both agreements (EU-Kyrgyzstan: HD03248; EU-Uzbekistan: HD03249) are treaty ratification propositions from…"
+keywords: "Propositions, English, May 7, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden tables ratification votes EU-Central, Sweden, tables, ratification, votes, EU-Central, Asia, EPCAs, Both, agreements, EU-Kyrgyzstan, HD03248, EU-Uzbekistan, HD03249"
 date: 2026-05-07
 subfolder: propositions
 slug: 2026-05-07-propositions
 source_folder: analysis/daily/2026-05-07/propositions
-generated_at: 2026-05-11T14:23:29.461Z
+generated_at: 2026-05-12T10:26:53.541Z
 language: en
 layout: article
 ---

@@ -1,11 +1,12 @@
 ---
 title: "Riksdag Approves Fuel Tax Cut, New Weapons Law and Fast-Track Prison Expansion"
 description: "The Swedish Riksdag approved an extraordinary supplementary budget cutting fuel taxes by 82 öre/litre (petrol) and 319 SEK/m³ (diesel) from May–September 2026 alongside a 2.4 billion SEK energy…"
+keywords: "CommitteeReports, English, April 26, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Approves Fuel Weapons Fast-Track Prison, Approves, Fuel, Weapons, Fast-Track, Prison, Expansion, Swedish, approved, extraordinary, supplementary, budget, cutting, taxes"
 date: 2026-04-26
 subfolder: committeeReports
 slug: 2026-04-26-committeeReports
 source_folder: analysis/daily/2026-04-26/committeeReports
-generated_at: 2026-05-11T14:23:29.059Z
+generated_at: 2026-05-12T10:26:52.940Z
 language: en
 layout: article
 ---

@@ -1,11 +1,12 @@
 ---
 title: "Sweden's Pre-Election Legislative Sprint: Migration, Crime, and Economic Bind"
 description: "Five months before Sweden's September 2026 general election, the Tidöalliansen government has launched its most ambitious pre-election legislative sprint: a four-bill migration mega-package…"
+keywords: "Realtime Pulse, English, May 1, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Pre-Election Legislative Sprint Migration, Sweden, Pre-Election, Legislative, Sprint, Migration, Crime, Economic, Bind, Five, months, before, September, 2026"
 date: 2026-05-01
 subfolder: realtime-pulse
 slug: 2026-05-01-realtime-pulse
 source_folder: analysis/daily/2026-05-01/realtime-pulse
-generated_at: 2026-05-11T14:23:29.279Z
+generated_at: 2026-05-12T10:26:53.278Z
 language: en
 layout: article
 ---

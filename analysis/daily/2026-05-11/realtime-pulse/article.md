@@ -1,11 +1,12 @@
 ---
 title: "Grundlagsskyddad aborträtt, migrationsmotstånd och klimatdeadlock: Riksdagen 11 maj 2026"
 description: "Riksdagens 11 maj innehåller tre tydliga politiska spänningspunkter som konvergerar fyra månader före septembervalet 2026:"
+keywords: "Realtime Pulse, English, May 11, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Grundlagsskyddad aborträtt migrationsmotstånd klimatdeadlock Riksdagens, Grundlagsskyddad, aborträtt, migrationsmotstånd, klimatdeadlock, Riksdagen, 2026, Riksdagens, innehåller, tydliga, politiska, spänningspunkter, konvergerar, fyra"
 date: 2026-05-11
 subfolder: realtime-pulse
 slug: 2026-05-11-realtime-pulse
 source_folder: analysis/daily/2026-05-11/realtime-pulse
-generated_at: 2026-05-11T15:58:31.572Z
+generated_at: 2026-05-12T10:26:53.761Z
 language: en
 layout: article
 ---

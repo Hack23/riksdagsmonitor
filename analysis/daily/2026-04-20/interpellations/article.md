@@ -1,11 +1,12 @@
 ---
 title: "Interpellation Wave,"
 description: "Between April 7 and April 17, 2026, the Swedish Riksdag received approximately 15 interpellations across the period — of which 10 are in scope for this analysis (HD10429–HD10438, including one…"
+keywords: "Interpellations, English, April 20, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Interpellation Wave Between April received, Interpellation, Wave, Between, April, 2026, Swedish, received, approximately, across, period, which, scope, this"
 date: 2026-04-20
 subfolder: interpellations
 slug: 2026-04-20-interpellations
 source_folder: analysis/daily/2026-04-20/interpellations
-generated_at: 2026-05-11T14:23:28.929Z
+generated_at: 2026-05-12T10:26:52.747Z
 language: en
 layout: article
 ---

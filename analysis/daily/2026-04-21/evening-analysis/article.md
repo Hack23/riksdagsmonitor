@@ -1,11 +1,12 @@
 ---
 title: "Sweden's parliament entered a decisive pre-election week with three"
 description: "Sweden's parliament entered a decisive pre-election week with three simultaneous high-stakes policy developments. Finance Committee FiU48 — an extraordinary 4.1 billion SEK supplementary budget…"
+keywords: "Evening Analysis, English, April 21, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden entered decisive pre-election week, Sweden, parliament, entered, decisive, pre-election, week, with, three, simultaneous, high-stakes, policy, developments, Finance"
 date: 2026-04-21
 subfolder: evening-analysis
 slug: 2026-04-21-evening-analysis
 source_folder: analysis/daily/2026-04-21/evening-analysis
-generated_at: 2026-05-11T14:23:28.953Z
+generated_at: 2026-05-12T10:26:52.782Z
 language: en
 layout: article
 ---

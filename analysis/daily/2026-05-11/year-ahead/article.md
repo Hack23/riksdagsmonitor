@@ -1,11 +1,12 @@
 ---
 title: "Sweden Year-Ahead → +365"
 description: "Constitutional change of magnitude — KU34 (HD01KU34) brings the abortion right toward grundlagsskydd while simultaneously expanding state powers to limit freedom of association (RF 2:24) and…"
+keywords: "Year Ahead, English, May 11, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Year-Ahead Constitutional change magnitude, Sweden, Year-Ahead, Constitutional, change, magnitude, KU34, HD01KU34, brings, abortion, right, toward, grundlagsskydd, while"
 date: 2026-05-11
 subfolder: year-ahead
 slug: 2026-05-11-year-ahead
 source_folder: analysis/daily/2026-05-11/year-ahead
-generated_at: 2026-05-11T15:23:39.511Z
+generated_at: 2026-05-12T10:26:53.768Z
 language: en
 layout: article
 ---

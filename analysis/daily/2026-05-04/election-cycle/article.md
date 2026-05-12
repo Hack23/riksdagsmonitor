@@ -1,11 +1,12 @@
 ---
 title: "Swedish Election Cycle 2022–2030"
 description: "Sweden's Tidö government enters its final 132 days before the September 13, 2026 riksdag election. The M+KD+L minority government, sustained by Sverigedemokraterna (SD) confidence and supply since…"
+keywords: "Election Cycle, English, May 4, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Election Cycle Sweden Tidö government, Swedish, Election, Cycle, 2022, 2030, Sweden, Tidö, government, enters, final, days, before, September"
 date: 2026-05-04
 subfolder: election-cycle
 slug: 2026-05-04-election-cycle
 source_folder: analysis/daily/2026-05-04/election-cycle
-generated_at: 2026-05-11T14:23:29.317Z
+generated_at: 2026-05-12T10:26:53.335Z
 language: en
 layout: article
 ---

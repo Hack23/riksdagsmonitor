@@ -1,11 +1,12 @@
 ---
 title: "Säkerhet, identitet och statlig kontroll: Tre propositioner 7 maj 2026"
 description: "Den 7 maj 2026 presenterade Tidöregeringen tre propositioner med genomgående tema: utvidgad statlig kontroll över identitet, befolkningsregister och frihetsberövande av säkerhetshot."
+keywords: "Propositions, English, May 11, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Säkerhet identitet statlig kontroll propositioner, Säkerhet, identitet, statlig, kontroll, propositioner, 2026, presenterade, Tidöregeringen, genomgående, tema, utvidgad, över, befolkningsregister"
 date: 2026-05-11
 subfolder: propositions
 slug: 2026-05-11-propositions
 source_folder: analysis/daily/2026-05-11/propositions
-generated_at: 2026-05-11T14:23:29.600Z
+generated_at: 2026-05-12T10:26:53.753Z
 language: en
 layout: article
 ---

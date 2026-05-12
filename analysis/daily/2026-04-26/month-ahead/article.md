@@ -1,11 +1,12 @@
 ---
 title: "Swedish Political Intelligence: Month-Ahead Outlook — May–June 2026"
 description: "Sweden's Riksdag enters May–June 2026 in final legislative acceleration before the September 2026 general election, with the Tidö coalition (M-SD-KD-L) pushing through a dense security, justice and…"
+keywords: "Month Ahead, English, April 26, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Month-Ahead Outlook June Sweden enters, Swedish, Political, Intelligence, Month-Ahead, Outlook, June, 2026, Sweden, enters, final, legislative, acceleration, before"
 date: 2026-04-26
 subfolder: month-ahead
 slug: 2026-04-26-month-ahead
 source_folder: analysis/daily/2026-04-26/month-ahead
-generated_at: 2026-05-11T14:23:29.075Z
+generated_at: 2026-05-12T10:26:52.964Z
 language: en
 layout: article
 ---

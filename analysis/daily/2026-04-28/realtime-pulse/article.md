@@ -1,11 +1,12 @@
 ---
 title: "Riksdagen Realtime Pulse — 28 April 2026"
 description: "Sweden's Riksdag entered its final pre-election sprint on 28 April 2026 with a historically dense legislative agenda: the Tidö coalition simultaneously advanced tougher citizenship requirements…"
+keywords: "Realtime Pulse, English, April 28, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Realtime Pulse April Sweden entered, Riksdagen, Realtime, Pulse, April, 2026, Sweden, entered, final, pre-election, sprint, with, historically, dense"
 date: 2026-04-28
 subfolder: realtime-pulse
 slug: 2026-04-28-realtime-pulse
 source_folder: analysis/daily/2026-04-28/realtime-pulse
-generated_at: 2026-05-11T14:23:29.176Z
+generated_at: 2026-05-12T10:26:53.117Z
 language: en
 layout: article
 ---

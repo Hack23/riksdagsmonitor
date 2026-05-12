@@ -1,11 +1,12 @@
 ---
 title: "Five interpellations filed 2026-05-07 in the 2025/26 riksmöte"
 description: "Five interpellations filed 2026-05-07 in the 2025/26 riksmöte collectively reveal a coherent opposition strategy: pressing the Tidö government on international obligations (Gaza/ILO), domestic equity…"
+keywords: "Interpellations, English, May 8, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Five interpellations filed riksmöte collectively, Five, filed, 2025, riksmöte, collectively, reveal, coherent, opposition, strategy, pressing, Tidö, government, international"
 date: 2026-05-08
 subfolder: interpellations
 slug: 2026-05-08-interpellations
 source_folder: analysis/daily/2026-05-08/interpellations
-generated_at: 2026-05-11T14:23:29.495Z
+generated_at: 2026-05-12T10:26:53.591Z
 language: en
 layout: article
 ---

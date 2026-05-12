@@ -1,11 +1,12 @@
 ---
 title: "Opposition Motions Challenging Six Government Propositions in Sweden's Pre-Election Sprint"
 description: "Sixteen active opposition motions filed 2026-04-29 challenge six government propositions across energy, environment, criminal justice, transport, and taxation policy."
+keywords: "Motions, English, May 4, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Opposition Motions Challenging Government Propositions, Opposition, Challenging, Government, Propositions, Sweden, Pre-Election, Sprint, Sixteen, active, filed, challenge, across, energy"
 date: 2026-05-04
 subfolder: motions
 slug: 2026-05-04-motions
 source_folder: analysis/daily/2026-05-04/motions
-generated_at: 2026-05-11T14:23:29.344Z
+generated_at: 2026-05-12T10:26:53.372Z
 language: en
 layout: article
 ---

@@ -1,11 +1,12 @@
 ---
 title: "Riksdag Week Ahead: Housing Reform, School Policy, and Diplomatic Strain — 10–16 May 2026"
 description: "The week of 10–16 May 2026 sees the Swedish Riksdag's Civil Affairs Committee (CU) advancing landmark rental-market liberalisation through the new privatuthyrningslag (HD01CU31) and enforcement…"
+keywords: "Week Ahead, English, May 10, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Week Ahead Housing Reform School, Week, Ahead, Housing, Reform, School, Policy, Diplomatic, Strain, 2026, sees, Swedish, Civil, Affairs"
 date: 2026-05-10
 subfolder: week-ahead
 slug: 2026-05-10-week-ahead
 source_folder: analysis/daily/2026-05-10/week-ahead
-generated_at: 2026-05-11T14:23:29.572Z
+generated_at: 2026-05-12T10:26:53.694Z
 language: en
 layout: article
 ---

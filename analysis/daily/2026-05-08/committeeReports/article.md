@@ -1,11 +1,12 @@
 ---
 title: "The Riksdag's Finance (FiU) and Justice (JuU) committees"
 description: "The Riksdag's Finance (FiU) and Justice (JuU) committees have advanced eight legislative items this week. Three deserve immediate attention: (1) a new financial-sector crisis management function…"
+keywords: "CommitteeReports, English, May 8, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Finance Justice committees have advanced, Finance, Justice, committees, have, advanced, eight, legislative, items, this, week, Three, deserve, immediate"
 date: 2026-05-08
 subfolder: committeeReports
 slug: 2026-05-08-committeeReports
 source_folder: analysis/daily/2026-05-08/committeeReports
-generated_at: 2026-05-11T14:23:29.478Z
+generated_at: 2026-05-12T10:26:53.566Z
 language: en
 layout: article
 ---

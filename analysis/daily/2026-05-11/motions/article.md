@@ -1,11 +1,12 @@
 ---
 title: "Eight opposition motions filed against two government propositions"
 description: "Eight opposition motions filed against two government propositions expose deep cross-party fractures on forestry deregulation and juvenile criminal justice with 125 days to election."
+keywords: "Motions, English, May 11, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Eight opposition motions filed against, Eight, opposition, filed, against, government, propositions, expose, deep, cross-party, fractures, forestry, deregulation, juvenile"
 date: 2026-05-11
 subfolder: motions
 slug: 2026-05-11-motions
 source_folder: analysis/daily/2026-05-11/motions
-generated_at: 2026-05-11T14:23:29.595Z
+generated_at: 2026-05-12T10:26:53.745Z
 language: en
 layout: article
 ---

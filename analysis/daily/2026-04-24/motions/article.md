@@ -1,11 +1,12 @@
 ---
 title: "Between 2026-04-15 and 2026-04-17, the four opposition parties (S, V"
 description: "Between 2026-04-15 and 2026-04-17, the four opposition parties (S, V, MP, C) filed 20 counter-motions against 9 Tidö-government propositions — a coordinated legislative response concentrated in three…"
+keywords: "Motions, English, April 24, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Between four opposition parties filed, Between, four, opposition, parties, filed, counter-motions, against, Tidö-government, propositions, coordinated, legislative, response, concentrated"
 date: 2026-04-24
 subfolder: motions
 slug: 2026-04-24-motions
 source_folder: analysis/daily/2026-04-24/motions
-generated_at: 2026-05-11T14:23:29.026Z
+generated_at: 2026-05-12T10:26:52.894Z
 language: en
 layout: article
 ---

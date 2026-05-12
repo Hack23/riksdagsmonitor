@@ -1,11 +1,12 @@
 ---
 title: "Sweden Month Ahead: Final Pre-Election Sprint — May 2026 Intelligence Brief"
 description: "Sweden enters May 2026 with 137 days until the September 14 general election, making every Riksdag session from now through summer recess an electoral proving ground."
+keywords: "Month Ahead, English, April 29, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Month Ahead Final Pre-Election, Sweden, Month, Ahead, Final, Pre-Election, Sprint, 2026, Intelligence, Brief, enters, with, days, until"
 date: 2026-04-29
 subfolder: month-ahead
 slug: 2026-04-29-month-ahead
 source_folder: analysis/daily/2026-04-29/month-ahead
-generated_at: 2026-05-11T14:23:29.194Z
+generated_at: 2026-05-12T10:26:53.145Z
 language: en
 layout: article
 ---

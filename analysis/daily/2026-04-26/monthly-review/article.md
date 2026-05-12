@@ -1,11 +1,12 @@
 ---
 title: "The 30-day window 2026-03-27 → 2026-04-26 marks the legislative"
 description: "The 30-day window 2026-03-27 → 2026-04-26 marks the legislative completion phase of the Tidö coalition's 2025/26 portfolio. Four April-24 committee reports (HD01JuU10 vapenlag, HD01JuU31…"
+keywords: "Monthly Review, English, April 26, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, 30-day window marks legislative completion, 30-day, window, marks, legislative, completion, phase, Tidö, coalition, 2025, portfolio, Four, April-24, committee"
 date: 2026-04-26
 subfolder: monthly-review
 slug: 2026-04-26-monthly-review
 source_folder: analysis/daily/2026-04-26/monthly-review
-generated_at: 2026-05-11T14:23:29.081Z
+generated_at: 2026-05-12T10:26:52.974Z
 language: en
 layout: article
 ---

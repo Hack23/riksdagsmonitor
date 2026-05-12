@@ -1,11 +1,12 @@
 ---
 title: "Parliamentary Committee Decisions — 6 May 2026"
 description: "Five parliamentary committee decisions were adopted on 6 May 2026, spanning four policy domains. The most consequential is SfU21 — introducing a qualifying period for residence-based social insurance…"
+keywords: "CommitteeReports, English, May 6, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Parliamentary Committee Decisions Five were, Parliamentary, Committee, Decisions, 2026, Five, were, adopted, spanning, four, policy, domains, most, consequential"
 date: 2026-05-06
 subfolder: committeeReports
 slug: 2026-05-06-committeeReports
 source_folder: analysis/daily/2026-05-06/committeeReports
-generated_at: 2026-05-11T14:23:29.404Z
+generated_at: 2026-05-12T10:26:53.458Z
 language: en
 layout: article
 ---

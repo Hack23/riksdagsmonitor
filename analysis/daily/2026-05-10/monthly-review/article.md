@@ -1,11 +1,12 @@
 ---
 title: "The May 2026 monthly window reveals a Tidö government racing"
 description: "The May 2026 monthly window reveals a Tidö government racing to deliver structural legislative reforms in the final parliamentary sprint before the September election."
+keywords: "Monthly Review, English, May 10, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, monthly window reveals Tidö government, 2026, monthly, window, reveals, Tidö, government, racing, deliver, structural, legislative, reforms, final, parliamentary"
 date: 2026-05-10
 subfolder: monthly-review
 slug: 2026-05-10-monthly-review
 source_folder: analysis/daily/2026-05-10/monthly-review
-generated_at: 2026-05-11T14:23:29.558Z
+generated_at: 2026-05-12T10:26:53.681Z
 language: en
 layout: article
 ---
