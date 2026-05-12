@@ -6,7 +6,7 @@ date: 2026-05-08
 subfolder: motions
 slug: 2026-05-08-motions
 source_folder: analysis/daily/2026-05-08/motions
-generated_at: 2026-05-12T10:26:53.599Z
+generated_at: 2026-05-12T14:11:29.580Z
 language: en
 layout: article
 ---
@@ -1493,6 +1493,22 @@ No withdrawn or återtagna documents in this batch.
 
 **Election-proximity update** (2026-05-08): 128 days to general election 2026-09-13. All PIRs now carry elevated electoral-stakes assessment. C defection positions and S legal objections are being watched by media for campaign narrative formation.
 
+## Analysis Artifact Coverage Report
+
+This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
+
+| Coverage area | Count | Reader-facing treatment |
+|---|---:|---|
+| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Per-document analyses | 8 | Expanded under `## Per-document intelligence` immediately after significance scoring |
+| Supporting data artifacts | 10 | Linked in Article Sources, not expanded inline |
+
+**Absent canonical ordered slots (no alias variant on disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
+
+**Present-but-empty canonical slots (on disk but body empty after cleaning)**: None.
+
+**Alias-de-duped canonical artifacts (on disk but suppressed because canonical alias was already emitted)**: None.
+
 ## Article Sources
 
 Each section above projects one analysis artifact. The full audited markdown is available on GitHub:
@@ -1527,3 +1543,18 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/data-download-manifest.md)
+
+### Supporting Data Artifacts
+
+These machine-readable artifacts are linked for auditability and are not expanded inline, preserving the reader-facing narrative order:
+
+- [`economic-data.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/economic-data.json)
+- [`pir-status.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/pir-status.json)
+- [`documents/hd024141.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/documents/hd024141.json)
+- [`documents/hd024142.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/documents/hd024142.json)
+- [`documents/hd024143.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/documents/hd024143.json)
+- [`documents/hd024144.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/documents/hd024144.json)
+- [`documents/hd024145.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/documents/hd024145.json)
+- [`documents/hd024146.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/documents/hd024146.json)
+- [`documents/hd024147.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/documents/hd024147.json)
+- [`documents/hd024148.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-08/motions/documents/hd024148.json)

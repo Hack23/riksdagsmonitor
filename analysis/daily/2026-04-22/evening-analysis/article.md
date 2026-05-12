@@ -6,7 +6,7 @@ date: 2026-04-22
 subfolder: evening-analysis
 slug: 2026-04-22-evening-analysis
 source_folder: analysis/daily/2026-04-22/evening-analysis
-generated_at: 2026-05-12T10:26:52.812Z
+generated_at: 2026-05-12T14:11:28.835Z
 language: en
 layout: article
 ---
@@ -2274,6 +2274,22 @@ This run used: Scenario Analysis, ACH, Red Team, Hypothesis Testing, SWOT, TOWS,
 - API returned 0 direct hits for 2026-04-22 in real-time search; all data sourced from sibling folder analyses produced during today's earlier workflow runs
 - Cross-type synthesis integrates 56 distinct documents across 4 article types
 - Prior cycle PIRs read from analysis/daily/2026-04-21/evening-analysis/ for continuity
+
+## Analysis Artifact Coverage Report
+
+This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
+
+| Coverage area | Count | Reader-facing treatment |
+|---|---:|---|
+| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Per-document analyses | 22 | Expanded under `## Per-document intelligence` immediately after significance scoring |
+| Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
+
+**Absent canonical ordered slots (no alias variant on disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
+
+**Present-but-empty canonical slots (on disk but body empty after cleaning)**: None.
+
+**Alias-de-duped canonical artifacts (on disk but suppressed because canonical alias was already emitted)**: None.
 
 ## Article Sources
 
