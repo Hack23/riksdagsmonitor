@@ -269,10 +269,11 @@ describe('budget.json — post-optimisation budgets', () => {
     const timings = new Map(
       budgets[0]!.timings.map((t) => [t.metric, t.budget]),
     );
-    // Stylesheet budget must be substantially tighter than the pre-purge baseline (≥ 313 KiB).
-    expect(resources.get('stylesheet')).toBeLessThanOrEqual(120);
-    expect(resources.get('document')).toBeLessThanOrEqual(80);
-    expect(resources.get('total')).toBeLessThanOrEqual(1000);
+    // Stylesheet budget: pinned to the post-purge target so any
+    // weakening of budget.json fails CI.  Pre-purge baseline was ≥ 313 KiB.
+    expect(resources.get('stylesheet')).toBeLessThanOrEqual(80);
+    expect(resources.get('document')).toBeLessThanOrEqual(70);
+    expect(resources.get('total')).toBeLessThanOrEqual(900);
     // Core Web Vitals: keep CLS / TBT inside the 'good' band.
     expect(timings.get('cumulative-layout-shift')).toBeLessThanOrEqual(0.1);
     expect(timings.get('total-blocking-time')).toBeLessThanOrEqual(200);
