@@ -154,10 +154,7 @@
 <a name='L89'></a><a href='#L89'>89</a>
 <a name='L90'></a><a href='#L90'>90</a>
 <a name='L91'></a><a href='#L91'>91</a>
-<a name='L92'></a><a href='#L92'>92</a>
-<a name='L93'></a><a href='#L93'>93</a>
-<a name='L94'></a><a href='#L94'>94</a>
-<a name='L95'></a><a href='#L95'>95</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L92'></a><a href='#L92'>92</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -187,7 +184,7 @@
 <span class="cline-any cline-yes">24327x</span>
 <span class="cline-any cline-yes">24324x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1337x</span>
+<span class="cline-any cline-yes">963x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -219,37 +216,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">69266x</span>
+<span class="cline-any cline-yes">71156x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">69249x</span>
+<span class="cline-any cline-yes">71139x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">69249x</span>
-<span class="cline-any cline-yes">8982x</span>
-<span class="cline-any cline-yes">8982x</span>
-<span class="cline-any cline-yes">8982x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">69249x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">71139x</span>
+<span class="cline-any cline-yes">6047x</span>
+<span class="cline-any cline-yes">6047x</span>
+<span class="cline-any cline-yes">6047x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">71139x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">69249x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3805x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">69249x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">71139x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2110x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">71139x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * @module Infrastructure/HTMLSanitization
@@ -317,17 +311,15 @@ export function decodeHtmlEntities(text: string | null | undefined): string {
 &nbsp;
   let result = String(text);
 &nbsp;
-  // Decode numeric entities: &amp;#228; → ä
   result = result.replace(/&amp;#(\d+);/g, (_match: string, code: string): string =&gt; {
     const codePoint = parseInt(code, 10);
     try {
       return String.fromCodePoint(codePoint);
     } catch {
-<span class="cstat-no" title="statement not covered" >      return _match; // Keep invalid entities as-is</span>
+<span class="cstat-no" title="statement not covered" >      return _match;</span>
     }
   });
 &nbsp;
-  // Decode hex entities: &amp;#x00E4; → ä
   result = result.replace(/&amp;#x([0-9a-fA-F]+);/g, (_match: string, hex: string): string =&gt; {
     const codePoint = parseInt(hex, 16);
     try {
@@ -337,7 +329,6 @@ export function decodeHtmlEntities(text: string | null | undefined): string {
     }
   });
 &nbsp;
-  // Decode named entities
   result = result.replace(
     /&amp;(?:amp|lt|gt|quot|apos|nbsp|mdash|ndash|lsquo|rsquo|ldquo|rdquo|bull);/g,
     (m: string): string =&gt; NAMED_ENTITY_MAP[m] ?? <span class="branch-1 cbranch-no" title="branch not covered" >m,</span>
@@ -352,7 +343,7 @@ export function decodeHtmlEntities(text: string | null | undefined): string {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-11T11:12:36.555Z
+                at 2026-05-12T10:35:32.093Z
             </div>
         <script src="../prettify.js"></script>
         <script>

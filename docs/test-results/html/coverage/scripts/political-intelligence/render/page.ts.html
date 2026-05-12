@@ -367,19 +367,7 @@
 <a name='L302'></a><a href='#L302'>302</a>
 <a name='L303'></a><a href='#L303'>303</a>
 <a name='L304'></a><a href='#L304'>304</a>
-<a name='L305'></a><a href='#L305'>305</a>
-<a name='L306'></a><a href='#L306'>306</a>
-<a name='L307'></a><a href='#L307'>307</a>
-<a name='L308'></a><a href='#L308'>308</a>
-<a name='L309'></a><a href='#L309'>309</a>
-<a name='L310'></a><a href='#L310'>310</a>
-<a name='L311'></a><a href='#L311'>311</a>
-<a name='L312'></a><a href='#L312'>312</a>
-<a name='L313'></a><a href='#L313'>313</a>
-<a name='L314'></a><a href='#L314'>314</a>
-<a name='L315'></a><a href='#L315'>315</a>
-<a name='L316'></a><a href='#L316'>316</a>
-<a name='L317'></a><a href='#L317'>317</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L305'></a><a href='#L305'>305</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -450,7 +438,7 @@
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">736x</span>
+<span class="cline-any cline-yes">752x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
@@ -459,9 +447,7 @@
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">224x</span>
-<span class="cline-any cline-yes">512x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">528x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
@@ -502,10 +488,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">224x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -567,18 +549,12 @@
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">125x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">320x</span>
 <span class="cline-any cline-yes">624x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
@@ -777,8 +753,6 @@ export function generatePoliticalIntelligenceHtml(lang: Language): string {
   const recentDaysHtml = recentDays.map((d) =&gt; renderDailyDay(d, t, lang)).join('\n');
   const olderDaysHtml = olderDays.map((d) =&gt; renderDailyDay(d, t, lang)).join('\n');
 &nbsp;
-  // Latest analysis date — used as `dateModified` for SEO/JSON-LD; falls back
-  // to today when no daily artifacts have been generated yet.
   const latestDate = days[0]?.date ?? <span class="branch-1 cbranch-no" title="branch not covered" >new Date().toISOString().slice(0, 10);</span>
   const buildIso = new Date().toISOString();
 &nbsp;
@@ -822,10 +796,6 @@ export function generatePoliticalIntelligenceHtml(lang: Language): string {
     })),
   } : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
 &nbsp;
-  // Methodology + template ItemLists — round-7 SEO uplift. The
-  // `CollectionPage.hasPart` already references the directories, but
-  // crawlers reward an explicit `ItemList` of the individual catalogued
-  // entries (one ListItem per methodology / template).
   const methodologiesItemList = methodologies.length &gt; 0 ? {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -884,17 +854,11 @@ export function generatePoliticalIntelligenceHtml(lang: Language): string {
   <span class="missing-if-branch" title="else path not taken" >E</span>if (methodologiesItemList) jsonLd.push(methodologiesItemList);
   <span class="missing-if-branch" title="else path not taken" >E</span>if (templatesItemList) jsonLd.push(templatesItemList);
 &nbsp;
-  // Localised keyword aggregation (round-7 SEO) — extends the
-  // `t.metaKeywords` baseline with deduplicated methodology + template
-  // titles so each per-language page exposes section-specific
-  // long-tail vocabulary instead of an English-leaning fallback.
   const keywordSet = new Set&lt;string&gt;(
     t.metaKeywords.split(',').map((s) =&gt; s.trim()).filter(Boolean),
   );
   for (const m of methodologies) keywordSet.add(m.title);
   for (const tpl of templates) keywordSet.add(tpl.title);
-  // Cap aggregated keywords to ~30 unique entries (Bing flags &gt;50 as
-  // stuffing); preserve insertion order for stable test snapshots.
   const aggregatedKeywords = Array.from(keywordSet).slice(0, 30).join(', ');
 &nbsp;
   const faqItems = getFaqItems('politicalIntelligence', lang);
@@ -1018,7 +982,7 @@ ${chrome.footerHtml}`;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-11T11:12:36.555Z
+                at 2026-05-12T10:35:32.093Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

@@ -473,11 +473,7 @@
 <a name='L408'></a><a href='#L408'>408</a>
 <a name='L409'></a><a href='#L409'>409</a>
 <a name='L410'></a><a href='#L410'>410</a>
-<a name='L411'></a><a href='#L411'>411</a>
-<a name='L412'></a><a href='#L412'>412</a>
-<a name='L413'></a><a href='#L413'>413</a>
-<a name='L414'></a><a href='#L414'>414</a>
-<a name='L415'></a><a href='#L415'>415</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L411'></a><a href='#L411'>411</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -847,11 +843,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">787x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">659x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1416x</span>
+<span class="cline-any cline-yes">1672x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -860,36 +854,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4146x</span>
-<span class="cline-any cline-yes">1137x</span>
-<span class="cline-any cline-yes">897x</span>
+<span class="cline-any cline-yes">4322x</span>
+<span class="cline-any cline-yes">1233x</span>
+<span class="cline-any cline-yes">977x</span>
+<span class="cline-any cline-yes">289x</span>
+<span class="cline-any cline-yes">289x</span>
+<span class="cline-any cline-yes">289x</span>
 <span class="cline-any cline-yes">241x</span>
-<span class="cline-any cline-yes">241x</span>
-<span class="cline-any cline-yes">241x</span>
-<span class="cline-any cline-yes">193x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4385x</span>
-<span class="cline-any cline-yes">4385x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1137x</span>
-<span class="cline-any cline-yes">1137x</span>
+<span class="cline-any cline-yes">4609x</span>
+<span class="cline-any cline-yes">4609x</span>
+<span class="cline-any cline-yes">1265x</span>
+<span class="cline-any cline-yes">1265x</span>
+<span class="cline-any cline-yes">480x</span>
 <span class="cline-any cline-yes">480x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">480x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">657x</span>
+<span class="cline-any cline-yes">785x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4312x</span>
-<span class="cline-any cline-yes">4312x</span>
-<span class="cline-any cline-yes">896x</span>
-<span class="cline-any cline-yes">240x</span>
-<span class="cline-any cline-yes">4312x</span>
+<span class="cline-any cline-yes">4488x</span>
+<span class="cline-any cline-yes">4488x</span>
+<span class="cline-any cline-yes">976x</span>
+<span class="cline-any cline-yes">288x</span>
+<span class="cline-any cline-yes">4488x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * @module Infrastructure/PoliticalIntelligence/I18n/StreamI18n
@@ -1256,8 +1248,6 @@ export const STREAM_GENERIC_DESC_I18N: Record&lt;Language, string&gt; = {
 // description when a specific key/lang combination is missing.
 // ---------------------------------------------------------------------------
 &nbsp;
-&nbsp;
-&nbsp;
 /**
  * Convert `propositions` → `Propositions`, `committee_reports` → `Committee Reports`.
  * Pure string transform; English-only — used as the cross-language fallback.
@@ -1287,11 +1277,9 @@ export function streamIcon(name: string): string {
 export function streamDisplayName(name: string, lang: Language): string {
   const hit = STREAM_NAME_I18N[name]?.[lang];
   if (hit) return hit;
-  // Preserve timestamp suffix for realtime-HHMM → "Realtime HH:MM" variants
   const match = name.match(/^realtime-(\d{2})(\d{2})$/);
   if (match) {
     const base = STREAM_NAME_I18N['breaking-news']?.[lang] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'Realtime';</span>
-    // Use English "Realtime" label for clarity across languages
     return `${lang === 'en' ? 'Realtime' : base.replace(/breaking[-\s]?news?/i, 'Realtime')} ${match[1]}:${match[2]}`;
   }
   return prettifyStream(name);
@@ -1312,7 +1300,7 @@ export function streamDescription(name: string, lang: Language): string {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-11T11:12:36.650Z
+                at 2026-05-12T10:35:32.189Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

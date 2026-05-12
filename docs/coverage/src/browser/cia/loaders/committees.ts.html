@@ -191,13 +191,7 @@
 <a name='L126'></a><a href='#L126'>126</a>
 <a name='L127'></a><a href='#L127'>127</a>
 <a name='L128'></a><a href='#L128'>128</a>
-<a name='L129'></a><a href='#L129'>129</a>
-<a name='L130'></a><a href='#L130'>130</a>
-<a name='L131'></a><a href='#L131'>131</a>
-<a name='L132'></a><a href='#L132'>132</a>
-<a name='L133'></a><a href='#L133'>133</a>
-<a name='L134'></a><a href='#L134'>134</a>
-<a name='L135'></a><a href='#L135'>135</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L129'></a><a href='#L129'>129</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -235,7 +229,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -247,7 +240,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -257,7 +249,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -287,7 +278,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -295,10 +285,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -373,7 +361,6 @@ export async function loadCommitteeNetwork(loadCSV: LoadCSV): Promise&lt;Committ
     loadCSV(CSV_SOURCES.committeeActivity.local)
   ]);
 &nbsp;
-  // Build activity lookup by org code
   const activityMap: Record&lt;string, number&gt; = {};
   activity.forEach(a =&gt; {
     activityMap[a.org as string] = (a.document_count as number) || <span class="branch-1 cbranch-no" title="branch not covered" >0;</span>
@@ -381,7 +368,6 @@ export async function loadCommitteeNetwork(loadCSV: LoadCSV): Promise&lt;Committ
 &nbsp;
   const nameToOrgCode = COMMITTEE_ORG_CODES;
 &nbsp;
-  // Deduplicate committees by name, keeping the entry with the most data
   const bestByName: Record&lt;string, CSVRow&gt; = {};
   productivity.forEach(c =&gt; {
     const name = c.committee_name as string;
@@ -394,7 +380,6 @@ export async function loadCommitteeNetwork(loadCSV: LoadCSV): Promise&lt;Committ
     }
   });
 &nbsp;
-  // Normalize committee metrics first so filtering and rendering use one consistent source.
   const committees: CommitteeEntry[] = Object.values(bestByName)
     .map(c =&gt; {
       const name = c.committee_name as string;
@@ -421,7 +406,6 @@ export async function loadCommitteeNetwork(loadCSV: LoadCSV): Promise&lt;Committ
       };
     })
     .filter(c =&gt; {
-      // Keep real committees only; skip generic node and inactive rows with no measured output.
       return (
         c.name !== 'Riksdagen' &amp;&amp;
         c.memberCount &gt; 0 &amp;&amp;
@@ -430,14 +414,12 @@ export async function loadCommitteeNetwork(loadCSV: LoadCSV): Promise&lt;Committ
     })
     .sort((a, b) =&gt; b.documentsProcessed - a.documentsProcessed);
 &nbsp;
-  // Build simple network graph from committees
   const nodes: NetworkNode[] = committees.map(c =&gt; ({
     id: c.id,
     name: c.name,
     size: c.influenceScore
   }));
 &nbsp;
-  // Create edges between committees that share similar productivity levels
   const edges: NetworkEdge[] = [];
   for (let i = 0; i &lt; committees.length; i++) {
     for (let j = i + 1; j &lt; committees.length &amp;&amp; edges.length &lt; 10; j++) {
@@ -472,7 +454,7 @@ export async function loadCommitteeNetwork(loadCSV: LoadCSV): Promise&lt;Committ
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-11T11:12:36.555Z
+                at 2026-05-12T10:35:32.093Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
