@@ -66,3 +66,23 @@ Today's migration package connects to:
 ---
 
 *Generated: 2026-05-13T18:14:00Z | Agent: news-evening-analysis | Pass: 1*
+
+## Theme Priority Visualization
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27', 'edgeLabelBackground': '#1a1e3d'}}}%%
+quadrantChart
+  title Theme Priority — 2026-05-13 Evening Analysis
+  x-axis Low Election Salience --> High Election Salience
+  y-axis Low Immediate Impact --> High Immediate Impact
+  quadrant-1 "Critical Priority"
+  quadrant-2 "Monitor — Long Horizon"
+  quadrant-3 "Background"
+  quadrant-4 "Manage Proactively"
+  "Migration Package (Props 262-265)": [0.92, 0.88]
+  "Defence Cooperation (Prop 254)": [0.60, 0.75]
+  "Governance (KU35/CU30)": [0.40, 0.55]
+  "Energy/Transport (NU21/skr259)": [0.35, 0.45]
+```
+
+*Mermaid visualization added in improvement pass: 2026-05-13T19:52:00Z*
