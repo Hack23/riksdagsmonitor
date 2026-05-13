@@ -290,23 +290,18 @@ describe('Multi-Language Sanity Tests', () => {
     });
     
     it('should allow switching between languages on homepage', () => {
-      cy.visit('/');
-      
       // Try to switch to a few languages
       const testLanguages = ['sv', 'de', 'ja'];
-      
+
       testLanguages.forEach((langCode) => {
         cy.visit('/');
-        cy.get('body').then(($body) => {
-          const langLink = $body.find(`a[href*="index_${langCode}.html"]`);
-          if (langLink.length > 0) {
-            cy.get(`a[href*="index_${langCode}.html"]`).first().click();
-            cy.url().should('include', `index_${langCode}.html`);
-            cy.get('body').should('be.visible');
-          } else {
-            cy.log(`Language ${langCode} link not found - skipping`);
-          }
+        cy.get(`nav.rm-lang-bar a[href*="index_${langCode}.html"]`).then(($links) => {
+          const $visible = $links.filter(':visible');
+          expect($visible, `visible language bar link for ${langCode}`).to.have.length.greaterThan(0);
+          cy.wrap($visible.first()).click();
         });
+        cy.url().should('include', `index_${langCode}.html`);
+        cy.get('body').should('be.visible');
       });
     });
   });
