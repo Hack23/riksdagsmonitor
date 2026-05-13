@@ -102,6 +102,8 @@ describe('All Dashboards - Comprehensive Coverage', () => {
       beforeEach(() => {
         // Use real CIA CSV sample data from the repository to ensure correct schemas per dashboard
         // cy.stubCIAData(); // Disabled: causes dashboards to render empty/fallback states
+        // dashboard.id is the page's root dashboard container; scrolling it into view triggers
+        // the IntersectionObserver lazy loader before assertions inspect charts and console output.
         cy.visitDashboard(`/dashboards/${dashboard.slug}.html`, dashboard.id);
       });
 
@@ -109,7 +111,7 @@ describe('All Dashboards - Comprehensive Coverage', () => {
         cy.assertNoConsoleErrors();
       });
       
-      it('should exist and be visible', () => {
+      it('should mount the dashboard container and remain visible', () => {
         cy.get(`#${dashboard.id}`).should('exist').should('be.visible');
       });
       
