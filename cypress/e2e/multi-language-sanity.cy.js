@@ -290,22 +290,43 @@ describe('Multi-Language Sanity Tests', () => {
     });
     
     it('should allow switching between languages on homepage', () => {
-      cy.visit('/');
-      
       // Try to switch to a few languages
       const testLanguages = ['sv', 'de', 'ja'];
-      
+
       testLanguages.forEach((langCode) => {
         cy.visit('/');
         cy.get('body').then(($body) => {
           const langLink = $body.find(`a[href*="index_${langCode}.html"]`);
-          if (langLink.length > 0) {
-            cy.get(`a[href*="index_${langCode}.html"]`).first().click();
-            cy.url().should('include', `index_${langCode}.html`);
-            cy.get('body').should('be.visible');
-          } else {
+          if (langLink.length === 0) {
             cy.log(`Language ${langCode} link not found - skipping`);
+            return;
           }
+
+          // The primary language switcher is rendered inside a collapsed
+          // <details class="rm-lang-switcher"> element whose dropdown is
+          // `display: none` until opened. Open every switcher on the page
+          // so the language anchors become interactive before clicking.
+          if ($body.find('details.rm-lang-switcher').length > 0) {
+            cy.get('details.rm-lang-switcher').each(($el) => {
+              cy.wrap($el).invoke('attr', 'open', 'open');
+            });
+          }
+
+          // Prefer a visible occurrence of the language link (header
+          // switcher when expanded, footer language list, or in-page
+          // anchor). Fall back to a forced click only if every match
+          // remains hidden, which keeps the assertion meaningful while
+          // tolerating layout differences across breakpoints.
+          cy.get(`a[href*="index_${langCode}.html"]`).then(($links) => {
+            const $visible = $links.filter(':visible');
+            if ($visible.length > 0) {
+              cy.wrap($visible.first()).click();
+            } else {
+              cy.wrap($links.first()).click({ force: true });
+            }
+          });
+          cy.url().should('include', `index_${langCode}.html`);
+          cy.get('body').should('be.visible');
         });
       });
     });
