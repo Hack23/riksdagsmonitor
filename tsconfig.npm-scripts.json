@@ -37,6 +37,7 @@
   "exclude": [
     "node_modules",
     "dist",
+    "scripts/build-csv-contracts-fixture.ts",
     "scripts/coalition-dashboard.ts",
     "scripts/coalition-dashboard",
     "scripts/committees-dashboard.ts",
