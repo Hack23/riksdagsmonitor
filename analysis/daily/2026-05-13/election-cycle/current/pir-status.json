@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "horizon": "election",
+  "cycle": "election-cycle/current",
+  "subfolder": "election-cycle/current",
+  "as_of": "2026-05-13",
+  "anchor_event": "2026-09-13 Riksdagsval",
+  "t_minus_days": 123,
+  "pirs": [
+    {
+      "pir_id": "PIR-1",
+      "title": "Tidö coalition stability through election period",
+      "horizon": "election",
+      "status": "open",
+      "indicators": ["coalition-discipline metric", "L-polling 4% threshold", "KU-anmälan disposition"],
+      "current_assessment": "stable; likely (55-70%) holds through election",
+      "last_updated": "2026-05-13"
+    },
+    {
+      "pir_id": "PIR-3",
+      "title": "Constitutional accountability cluster (KU pipeline)",
+      "horizon": "cycle",
+      "status": "active-monitoring",
+      "indicators": ["KU plenary 2026-05-21 disposition", "follow-on plenary scheduling", "anmälan upholding rate"],
+      "current_assessment": "8 active anmälningar; A scenarios -2 pp if upheld",
+      "last_updated": "2026-05-13"
+    },
+    {
+      "pir_id": "PIR-5",
+      "title": "Building/energy sector implementation feasibility (HD01CU30)",
+      "horizon": "cycle",
+      "status": "new-2026-05-13",
+      "indicators": ["Boverket regulation Q3-2026", "renovation-rate quarterly tracking", "EU EED 2030 target"],
+      "current_assessment": "implementation feasible; financing-political question; R5 NEW",
+      "last_updated": "2026-05-13"
+    },
+    {
+      "pir_id": "PIR-7",
+      "title": "Coalition arithmetic post-election 2026-09-13",
+      "horizon": "election",
+      "status": "open",
+      "indicators": ["weekly polling", "L threshold tracking", "C kingmaker positioning"],
+      "current_assessment": "Tidö 32% / S-led 28% / Centre 18% / Hung 22%; coalition-formation 60+ days likely",
+      "last_updated": "2026-05-13"
+    },
+    {
+      "pir_id": "PIR-9",
+      "title": "EU EED transposition compliance pathway (HD01CU30)",
+      "horizon": "cycle",
+      "status": "new-2026-05-13",
+      "indicators": ["Boverket regulation finalisation", "municipal-grant FY2027 budget", "industry-capacity tracking", "Commission monitoring"],
+      "current_assessment": "responsible compliance posture; EU EED 2030 target risk; baseline established 2026-05-13",
+      "last_updated": "2026-05-13"
+    }
+  ]
+}
