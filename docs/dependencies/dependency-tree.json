@@ -1,5 +1,5 @@
 {
-  "version": "0.9.11",
+  "version": "0.9.13",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -567,13 +567,13 @@
       }
     },
     "cypress": {
-      "version": "15.14.2",
-      "resolved": "https://registry.npmjs.org/cypress/-/cypress-15.14.2.tgz",
+      "version": "15.15.0",
+      "resolved": "https://registry.npmjs.org/cypress/-/cypress-15.15.0.tgz",
       "overridden": false,
       "dependencies": {
         "@cypress/request": {
-          "version": "3.0.10",
-          "resolved": "https://registry.npmjs.org/@cypress/request/-/request-3.0.10.tgz",
+          "version": "4.0.0",
+          "resolved": "https://registry.npmjs.org/@cypress/request/-/request-4.0.0.tgz",
           "overridden": false,
           "dependencies": {
             "aws-sign2": {
@@ -1026,11 +1026,6 @@
                   "version": "5.2.1"
                 }
               }
-            },
-            "uuid": {
-              "version": "8.3.2",
-              "resolved": "https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz",
-              "overridden": false
             }
           }
         },
@@ -2891,8 +2886,8 @@
       }
     },
     "knip": {
-      "version": "6.13.0",
-      "resolved": "https://registry.npmjs.org/knip/-/knip-6.13.0.tgz",
+      "version": "6.13.1",
+      "resolved": "https://registry.npmjs.org/knip/-/knip-6.13.1.tgz",
       "overridden": false,
       "dependencies": {
         "fdir": {
@@ -3372,7 +3367,11 @@
               "resolved": "https://registry.npmjs.org/@swc/core-linux-x64-gnu/-/core-linux-x64-gnu-1.15.33.tgz",
               "overridden": false
             },
-            "@swc/core-linux-x64-musl": {},
+            "@swc/core-linux-x64-musl": {
+              "version": "1.15.33",
+              "resolved": "https://registry.npmjs.org/@swc/core-linux-x64-musl/-/core-linux-x64-musl-1.15.33.tgz",
+              "overridden": false
+            },
             "@swc/core-win32-arm64-msvc": {},
             "@swc/core-win32-ia32-msvc": {},
             "@swc/core-win32-x64-msvc": {},
@@ -3651,9 +3650,7 @@
           "overridden": false,
           "dependencies": {
             "detect-libc": {
-              "version": "2.1.2",
-              "resolved": "https://registry.npmjs.org/detect-libc/-/detect-libc-2.1.2.tgz",
-              "overridden": false
+              "version": "2.1.2"
             },
             "lightningcss-android-arm64": {},
             "lightningcss-darwin-arm64": {},
@@ -3704,7 +3701,11 @@
               "resolved": "https://registry.npmjs.org/@oxc-minify/binding-linux-x64-gnu/-/binding-linux-x64-gnu-0.125.0.tgz",
               "overridden": false
             },
-            "@oxc-minify/binding-linux-x64-musl": {},
+            "@oxc-minify/binding-linux-x64-musl": {
+              "version": "0.125.0",
+              "resolved": "https://registry.npmjs.org/@oxc-minify/binding-linux-x64-musl/-/binding-linux-x64-musl-0.125.0.tgz",
+              "overridden": false
+            },
             "@oxc-minify/binding-openharmony-arm64": {},
             "@oxc-minify/binding-wasm32-wasi": {},
             "@oxc-minify/binding-win32-arm64-msvc": {},
@@ -5092,9 +5093,68 @@
         }
       }
     },
+    "sharp": {
+      "version": "0.34.5",
+      "resolved": "https://registry.npmjs.org/sharp/-/sharp-0.34.5.tgz",
+      "overridden": false,
+      "dependencies": {
+        "@img/colour": {
+          "version": "1.1.0",
+          "resolved": "https://registry.npmjs.org/@img/colour/-/colour-1.1.0.tgz",
+          "overridden": false
+        },
+        "@img/sharp-darwin-arm64": {},
+        "@img/sharp-darwin-x64": {},
+        "@img/sharp-libvips-darwin-arm64": {},
+        "@img/sharp-libvips-darwin-x64": {},
+        "@img/sharp-libvips-linux-arm": {},
+        "@img/sharp-libvips-linux-arm64": {},
+        "@img/sharp-libvips-linux-ppc64": {},
+        "@img/sharp-libvips-linux-riscv64": {},
+        "@img/sharp-libvips-linux-s390x": {},
+        "@img/sharp-libvips-linux-x64": {
+          "version": "1.2.4",
+          "resolved": "https://registry.npmjs.org/@img/sharp-libvips-linux-x64/-/sharp-libvips-linux-x64-1.2.4.tgz",
+          "overridden": false
+        },
+        "@img/sharp-libvips-linuxmusl-arm64": {},
+        "@img/sharp-libvips-linuxmusl-x64": {},
+        "@img/sharp-linux-arm": {},
+        "@img/sharp-linux-arm64": {},
+        "@img/sharp-linux-ppc64": {},
+        "@img/sharp-linux-riscv64": {},
+        "@img/sharp-linux-s390x": {},
+        "@img/sharp-linux-x64": {
+          "version": "0.34.5",
+          "resolved": "https://registry.npmjs.org/@img/sharp-linux-x64/-/sharp-linux-x64-0.34.5.tgz",
+          "overridden": false,
+          "dependencies": {
+            "@img/sharp-libvips-linux-x64": {
+              "version": "1.2.4"
+            }
+          }
+        },
+        "@img/sharp-linuxmusl-arm64": {},
+        "@img/sharp-linuxmusl-x64": {},
+        "@img/sharp-wasm32": {},
+        "@img/sharp-win32-arm64": {},
+        "@img/sharp-win32-ia32": {},
+        "@img/sharp-win32-x64": {},
+        "detect-libc": {
+          "version": "2.1.2",
+          "resolved": "https://registry.npmjs.org/detect-libc/-/detect-libc-2.1.2.tgz",
+          "overridden": false
+        },
+        "semver": {
+          "version": "7.7.4",
+          "resolved": "https://registry.npmjs.org/semver/-/semver-7.7.4.tgz",
+          "overridden": false
+        }
+      }
+    },
     "start-server-and-test": {
-      "version": "3.0.4",
-      "resolved": "https://registry.npmjs.org/start-server-and-test/-/start-server-and-test-3.0.4.tgz",
+      "version": "3.0.5",
+      "resolved": "https://registry.npmjs.org/start-server-and-test/-/start-server-and-test-3.0.5.tgz",
       "overridden": false,
       "dependencies": {
         "arg": {
@@ -5160,8 +5220,8 @@
           "version": "1.2.2"
         },
         "wait-on": {
-          "version": "9.0.6",
-          "resolved": "https://registry.npmjs.org/wait-on/-/wait-on-9.0.6.tgz",
+          "version": "9.0.10",
+          "resolved": "https://registry.npmjs.org/wait-on/-/wait-on-9.0.10.tgz",
           "overridden": false,
           "dependencies": {
             "axios": {
@@ -5606,9 +5666,7 @@
               "version": "10.2.4"
             },
             "semver": {
-              "version": "7.7.4",
-              "resolved": "https://registry.npmjs.org/semver/-/semver-7.7.4.tgz",
-              "overridden": false
+              "version": "7.7.4"
             },
             "tinyglobby": {
               "version": "0.2.16"
@@ -5734,28 +5792,6 @@
               "version": "6.0.1"
             }
           }
-        }
-      }
-    },
-    "vite-plugin-sri-gen": {
-      "version": "1.4.1",
-      "resolved": "https://registry.npmjs.org/vite-plugin-sri-gen/-/vite-plugin-sri-gen-1.4.1.tgz",
-      "overridden": false,
-      "dependencies": {
-        "parse5": {
-          "version": "8.0.0",
-          "resolved": "https://registry.npmjs.org/parse5/-/parse5-8.0.0.tgz",
-          "overridden": false,
-          "dependencies": {
-            "entities": {
-              "version": "6.0.1",
-              "resolved": "https://registry.npmjs.org/entities/-/entities-6.0.1.tgz",
-              "overridden": false
-            }
-          }
-        },
-        "vite": {
-          "version": "8.0.12"
         }
       }
     },
