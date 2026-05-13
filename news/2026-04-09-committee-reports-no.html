@@ -228,7 +228,7 @@
 <header role="banner">
   <nav role="navigation" aria-label="Primærnavigasjon">
     <a href="../index_no.html" aria-label="Riksdagsmonitor Home">
-      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+      <img src="../images/riksdagsmonitor-logo.webp" srcset="../images/riksdagsmonitor-logo-48w.webp 48w, ../images/riksdagsmonitor-logo-96w.webp 96w, ../images/riksdagsmonitor-logo-180w.webp 180w" sizes="48px" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
     </a>
     <ul class="nav-links">
       <li><a href="../index_no.html">Hjem</a></li>
@@ -278,14 +278,18 @@
 <article id="main-content" class="news-article article-type-committee-reports">
   <header class="article-header">
     <div class="hero-banner">
-      <img src="../images/riksdagsmonitornews-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" aria-hidden="true">
+      <picture class="hero-banner-picture">
+        <source type="image/avif" srcset="../images/riksdagsmonitornews-banner-480w.avif 480w, ../images/riksdagsmonitornews-banner-768w.avif 768w, ../images/riksdagsmonitornews-banner-1024w.avif 1024w, ../images/riksdagsmonitornews-banner-1536w.avif 1536w" sizes="100vw">
+        <source type="image/webp" srcset="../images/riksdagsmonitornews-banner-480w.webp 480w, ../images/riksdagsmonitornews-banner-768w.webp 768w, ../images/riksdagsmonitornews-banner-1024w.webp 1024w, ../images/riksdagsmonitornews-banner-1536w.webp 1536w" sizes="100vw">
+        <img src="../images/riksdagsmonitornews-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" decoding="async" fetchpriority="high">
+      </picture>
     </div>
     <div class="hero-header-text">
       <h1>Komitéinnstillinger fra Riksdagen</h1>
       <div class="site-tagline">Siste nyheter og analyser fra Sveriges riksdag. AI-generert politisk etterretningsjournalistikk basert på OSINT/INTOP-data som dekker parlament, regjering og myndigheter med systematisk åpenhet.</div>
     </div>
     <a href="index_no.html" aria-label="Riksdagsmonitor News">
-      <img src="../images/riksdagsmonitornews-logo.webp" alt="Riksdagsmonitor News" class="article-site-logo" width="64" height="64" loading="eager">
+      <img src="../images/riksdagsmonitornews-logo.webp" srcset="../images/riksdagsmonitornews-logo-48w.webp 48w, ../images/riksdagsmonitornews-logo-96w.webp 96w, ../images/riksdagsmonitornews-logo-180w.webp 180w" sizes="64px" alt="Riksdagsmonitor News" class="article-site-logo" width="64" height="64" loading="eager">
     </a>
     <div class="article-meta">
       <time datetime="2026-04-09">9. april 2026</time>
@@ -500,7 +504,7 @@
   <div class="footer-content">
     <div class="footer-section">
       <a href="../index_no.html" aria-label="Riksdagsmonitor Hjem">
-        <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="footer-logo" width="80" height="80" loading="lazy">
+        <img src="../images/riksdagsmonitor-logo.webp" srcset="../images/riksdagsmonitor-logo-96w.webp 96w, ../images/riksdagsmonitor-logo-180w.webp 180w" sizes="80px" alt="Riksdagsmonitor" class="footer-logo" width="80" height="80" loading="lazy">
       </a>
       <h3><span aria-hidden="true">📖</span> Om Riksdagsmonitor</h3>
       <p>Live etterretningsplattform for overvåking av Sveriges riksdag med CIA OSINT-funksjoner. Løpende forbedringer — rapporter gjerne problemer på GitHub.</p>

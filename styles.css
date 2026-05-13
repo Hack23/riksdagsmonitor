@@ -1370,6 +1370,12 @@ header {
   padding: clamp(0.25rem, 1vw, 0.75rem);
 }
 
+.hero-banner-picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 /* Title and tagline below banner */
 .hero-header-text {
   padding: var(--spacing-md) var(--spacing-lg) 0;

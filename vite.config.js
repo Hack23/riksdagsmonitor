@@ -197,7 +197,7 @@ export default defineConfig({
           if (assetInfo.name === 'styles.css') {
             return `assets/styles.css`;
           }
-          if (/\.(png|jpe?g|svg|gif|tiff|bmp|ico|webp)$/i.test(assetInfo.name)) {
+          if (/\.(png|jpe?g|svg|gif|tiff|bmp|ico|webp|avif)$/i.test(assetInfo.name)) {
             return `assets/images/[name]-[hash][extname]`;
           }
 

@@ -95,13 +95,54 @@ aws s3 sync "$SRC" "$BUCKET" \
   --size-only \
   "${SKIP[@]}"
 
-# Image files - long cache, immutable
-# --size-only is safe: images are either content-hashed or never change.
-# AWS CLI auto-detects per-extension MIME (webp, png, jpg, gif, svg+xml, x-icon).
+# Image files - long cache, immutable.
+# Use explicit Content-Type per format so optimized WebP/AVIF variants and
+# favicons never depend on AWS CLI MIME guessing.
 aws s3 sync "$SRC" "$BUCKET" \
-  --exclude '*' \
-  --include '*.webp' --include '*.png' --include '*.jpg' --include '*.jpeg' \
-  --include '*.gif' --include '*.svg' --include '*.ico' \
+  --exclude '*' --include '*.webp' \
+  --no-guess-mime-type --content-type 'image/webp' \
+  --cache-control 'public, max-age=31536000, immutable' \
+  --size-only \
+  "${SKIP[@]}"
+
+aws s3 sync "$SRC" "$BUCKET" \
+  --exclude '*' --include '*.avif' \
+  --no-guess-mime-type --content-type 'image/avif' \
+  --cache-control 'public, max-age=31536000, immutable' \
+  --size-only \
+  "${SKIP[@]}"
+
+aws s3 sync "$SRC" "$BUCKET" \
+  --exclude '*' --include '*.png' \
+  --no-guess-mime-type --content-type 'image/png' \
+  --cache-control 'public, max-age=31536000, immutable' \
+  --size-only \
+  "${SKIP[@]}"
+
+aws s3 sync "$SRC" "$BUCKET" \
+  --exclude '*' --include '*.jpg' --include '*.jpeg' \
+  --no-guess-mime-type --content-type 'image/jpeg' \
+  --cache-control 'public, max-age=31536000, immutable' \
+  --size-only \
+  "${SKIP[@]}"
+
+aws s3 sync "$SRC" "$BUCKET" \
+  --exclude '*' --include '*.gif' \
+  --no-guess-mime-type --content-type 'image/gif' \
+  --cache-control 'public, max-age=31536000, immutable' \
+  --size-only \
+  "${SKIP[@]}"
+
+aws s3 sync "$SRC" "$BUCKET" \
+  --exclude '*' --include '*.svg' \
+  --no-guess-mime-type --content-type 'image/svg+xml' \
+  --cache-control 'public, max-age=31536000, immutable' \
+  --size-only \
+  "${SKIP[@]}"
+
+aws s3 sync "$SRC" "$BUCKET" \
+  --exclude '*' --include '*.ico' \
+  --no-guess-mime-type --content-type 'image/x-icon' \
   --cache-control 'public, max-age=31536000, immutable' \
   --size-only \
   "${SKIP[@]}"

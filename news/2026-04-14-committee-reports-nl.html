@@ -93,7 +93,7 @@
 <header role="banner">
   <nav role="navigation" aria-label="Hoofdnavigatie">
     <a href="../index_nl.html" aria-label="Riksdagsmonitor Home">
-      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+      <img src="../images/riksdagsmonitor-logo.webp" srcset="../images/riksdagsmonitor-logo-48w.webp 48w, ../images/riksdagsmonitor-logo-96w.webp 96w, ../images/riksdagsmonitor-logo-180w.webp 180w" sizes="48px" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
     </a>
     <ul class="nav-links">
       <li><a href="../index_nl.html">Start</a></li>
@@ -143,14 +143,18 @@
 <article id="main-content" class="news-article article-type-committee-reports">
   <header class="article-header">
     <div class="hero-banner">
-      <img src="../images/riksdagsmonitornews-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" aria-hidden="true">
+      <picture class="hero-banner-picture">
+        <source type="image/avif" srcset="../images/riksdagsmonitornews-banner-480w.avif 480w, ../images/riksdagsmonitornews-banner-768w.avif 768w, ../images/riksdagsmonitornews-banner-1024w.avif 1024w, ../images/riksdagsmonitornews-banner-1536w.avif 1536w" sizes="100vw">
+        <source type="image/webp" srcset="../images/riksdagsmonitornews-banner-480w.webp 480w, ../images/riksdagsmonitornews-banner-768w.webp 768w, ../images/riksdagsmonitornews-banner-1024w.webp 1024w, ../images/riksdagsmonitornews-banner-1536w.webp 1536w" sizes="100vw">
+        <img src="../images/riksdagsmonitornews-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" decoding="async" fetchpriority="high">
+      </picture>
     </div>
     <div class="hero-header-text">
       <h1>Zweeds parlement versnelt noodverlaging brandstofbelasting terwijl Zweden NAVO-inzet in Finland verdiept</h1>
       <div class="site-tagline">Laatste nieuws en analyses van de Zweedse Riksdag. AI-gegenereerde politieke inlichtingen op basis van OSINT/INTOP-gegevens die het parlement, de regering en de agentschappen systematisch afdekken.</div>
     </div>
     <a href="index.html" aria-label="Riksdagsmonitor Nieuws">
-      <img src="../images/riksdagsmonitornews-logo.webp" alt="Riksdagsmonitor Nieuws" class="article-site-logo" width="64" height="64" loading="eager">
+      <img src="../images/riksdagsmonitornews-logo.webp" srcset="../images/riksdagsmonitornews-logo-48w.webp 48w, ../images/riksdagsmonitornews-logo-96w.webp 96w, ../images/riksdagsmonitornews-logo-180w.webp 180w" sizes="64px" alt="Riksdagsmonitor Nieuws" class="article-site-logo" width="64" height="64" loading="eager">
     </a>
     <div class="article-meta">
       <time datetime="2026-04-14">14 april 2026</time>
@@ -383,7 +387,7 @@
   <div class="footer-content">
     <div class="footer-section">
       <a href="../index_nl.html" aria-label="Riksdagsmonitor Home">
-        <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="footer-logo" width="80" height="80" loading="lazy">
+        <img src="../images/riksdagsmonitor-logo.webp" srcset="../images/riksdagsmonitor-logo-96w.webp 96w, ../images/riksdagsmonitor-logo-180w.webp 180w" sizes="80px" alt="Riksdagsmonitor" class="footer-logo" width="80" height="80" loading="lazy">
       </a>
       <h3><span aria-hidden="true">📖</span> Over Riksdagsmonitor</h3>
       <p>Live inlichtingenplatform voor monitoring van het Zweedse parlement met CIA OSINT-mogelijkheden. Doorlopende verbeteringen — meld problemen op GitHub.</p>

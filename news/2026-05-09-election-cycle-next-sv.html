@@ -104,7 +104,7 @@
     <header class="rm-site-header" role="banner">
       <div class="rm-site-header-inner">
         <a class="rm-logo" href="../index_sv.html" aria-label="Riksdagsmonitor Hem">
-          <img class="rm-logo-img" data-rm-logo-img="true" src="../images/riksdagsmonitor-logo.webp" alt="" width="48" height="48" loading="eager" decoding="async">
+          <img class="rm-logo-img" data-rm-logo-img="true" src="../images/riksdagsmonitor-logo.webp" srcset="../images/riksdagsmonitor-logo-48w.webp 48w, ../images/riksdagsmonitor-logo-96w.webp 96w, ../images/riksdagsmonitor-logo-180w.webp 180w" sizes="48px" alt="" width="48" height="48" loading="eager" decoding="async">
           <span class="rm-logo-glyph" aria-hidden="true">🇸🇪</span>
           <span class="rm-logo-text">
             <span class="rm-logo-brand">Riksdagsmonitor</span>
@@ -187,7 +187,11 @@
       </div>
     </header>
     <div class="hero-banner" aria-hidden="true">
-      <img src="../images/riksdagsmonitornews-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" decoding="async">
+      <picture class="hero-banner-picture">
+        <source type="image/avif" srcset="../images/riksdagsmonitornews-banner-480w.avif 480w, ../images/riksdagsmonitornews-banner-768w.avif 768w, ../images/riksdagsmonitornews-banner-1024w.avif 1024w, ../images/riksdagsmonitornews-banner-1536w.avif 1536w" sizes="100vw">
+        <source type="image/webp" srcset="../images/riksdagsmonitornews-banner-480w.webp 480w, ../images/riksdagsmonitornews-banner-768w.webp 768w, ../images/riksdagsmonitornews-banner-1024w.webp 1024w, ../images/riksdagsmonitornews-banner-1536w.webp 1536w" sizes="100vw">
+        <img src="../images/riksdagsmonitornews-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" decoding="async" fetchpriority="high">
+      </picture>
     </div>
     <nav class="language-switcher rm-lang-bar" role="navigation" aria-label="Denna sida på andra språk">
       <a href="../news/2026-05-09-election-cycle-next-en.html" class="lang-link" hreflang="en" lang="en" title="English"><span aria-hidden="true">🇬🇧</span> English</a>
