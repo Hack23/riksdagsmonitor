@@ -31,9 +31,6 @@ jobs:
   copilot-setup-steps:
     runs-on: ubuntu-latest
 
-    container:
-      image: mcr.microsoft.com/playwright:v1.60.0-noble
-
     # Set the permissions to the lowest permissions possible needed for your steps.
     # Copilot will be given its own token for its operations.
     permissions:
@@ -83,6 +80,40 @@ jobs:
           else
             echo "ℹ️ IMF_SDMX_SUBSCRIPTION_KEY_SECONDARY not set (optional rotation hot-spare)"
           fi
+
+      # Setup environment
+      - name: Setup Environment (resilient apt install)
+        timeout-minutes: 10
+        run: |
+          echo "🔧 Setting up environment..."
+
+          # System dependencies for Web rendering.
+          # Retry apt metadata + install to tolerate transient mirror/network failures.
+          for attempt in 1 2 3; do
+            if sudo apt-get update -o Acquire::Retries=5 -o Acquire::http::Timeout=30; then
+              break
+            fi
+            echo "⚠️ apt-get update failed (attempt $attempt) — retrying in $((attempt * 10))s"
+            sleep $((attempt * 10))
+            if [ "$attempt" -eq 3 ]; then
+              echo "❌ apt-get update failed after 3 attempts"
+              exit 1
+            fi
+          done
+
+          for attempt in 1 2 3; do
+            if sudo apt-get install -y --no-install-recommends graphviz; then
+              break
+            fi
+            echo "⚠️ apt-get install graphviz failed (attempt $attempt) — retrying in $((attempt * 10))s"
+            sleep $((attempt * 10))
+            if [ "$attempt" -eq 3 ]; then
+              echo "❌ apt-get install graphviz failed after 3 attempts"
+              exit 1
+            fi
+          done
+
+          echo "✅ environment setup complete"
  
       # JavaScript/TypeScript setup
       - name: Setup Node.js
