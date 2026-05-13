@@ -6,7 +6,7 @@ date: 2026-05-10
 subfolder: election-cycle/current
 slug: 2026-05-10-election-cycle/current
 source_folder: analysis/daily/2026-05-10/election-cycle/current
-generated_at: 2026-05-13T13:20:11.958Z
+generated_at: 2026-05-13T16:21:26.339Z
 language: en
 layout: article
 ---

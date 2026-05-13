@@ -954,7 +954,11 @@ export function alignmentRateToPercent(rate: number): number {
  * Renders the top-6 coalition pairs as progress bars.
  */
 function createCoalitionNetwork(data: CSVRow[]): void {
-  const container = document.getElementById('partyCoalitionAlignment');
+  // The party dashboard HTML uses `id="coalitionAlignmentChart"` for
+  // this region. There is no fallback for any legacy id — adding
+  // one masks shell/code drift. If the HTML id changes, update
+  // dashboards/parties.html and this lookup in the same commit.
+  const container = document.getElementById('coalitionAlignmentChart');
   if (!container) return;
 
   const t = getTranslations();

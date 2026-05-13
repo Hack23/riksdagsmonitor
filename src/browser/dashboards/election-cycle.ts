@@ -278,20 +278,35 @@ class ElectionCycleCharts {
     private translations: ElectionTranslations
   ) {}
 
-  renderTimeline(canvasId: string, filteredData: CSVRow[]): void {
+  renderTimeline(canvasId: string, decisionData: CSVRow[]): void {
     const canvas = document.getElementById(canvasId) as HTMLCanvasElement | null;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     if (this.charts[canvasId]) this.charts[canvasId].destroy();
 
     const parties = ['M', 'S', 'SD', 'C', 'V', 'MP', 'KD', 'L'];
+    // Strictly read the canonical columns from
+    // view_election_cycle_decision_intelligence_sample.csv:
+    //   - `party`            : grouping dimension
+    //   - `cycle_year`       : x-axis label
+    //   - `temporal_approval_rate` : numeric performance metric
+    // No legacy column fallbacks — schema regressions surface via
+    // the build-time CSV contract test instead of empty charts.
     const datasets = parties.map(party => {
-      const partyData = filteredData.filter(d => d['party'] === party);
+      const partyData = decisionData.filter(d => d['party'] === party);
       const cycleData: Record<string, CyclePerformance> = {};
       partyData.forEach(d => {
-        const year = String(d['cycle_year'] ?? d['election_cycle_id'] ?? '');
+        const year = String(d['cycle_year'] ?? '');
+        if (!year) return;
         if (!cycleData[year]) cycleData[year] = { performance: 0, count: 0 };
-        if (d['overall_performance_score']) { cycleData[year].performance += parseFloat(String(d['overall_performance_score'])); cycleData[year].count++; }
+        const score = d['temporal_approval_rate'];
+        if (score !== undefined && score !== null && score !== '') {
+          const num = parseFloat(String(score));
+          if (Number.isFinite(num)) {
+            cycleData[year].performance += num;
+            cycleData[year].count++;
+          }
+        }
       });
       const data = Object.keys(cycleData).sort().map(year => ({
         x: year, y: cycleData[year].count > 0 ? cycleData[year].performance / cycleData[year].count : null
@@ -303,7 +318,7 @@ class ElectionCycleCharts {
       type: 'line', data: { datasets },
       options: { responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false },
         plugins: { title: { display: true, text: this.translations.charts.timeline.title, font: { size: 16, weight: 'bold' } }, legend: { display: true, position: 'bottom' }, tooltip: { callbacks: { label: (context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) => `${context.dataset.label}: ${context.parsed.y ? context.parsed.y.toFixed(2) : 'N/A'}` } } },
-        scales: { x: { type: 'category', title: { display: true, text: this.translations.filters.cycle } }, y: { beginAtZero: false, min: 50, max: 100, title: { display: true, text: 'Performance Score' } } }
+        scales: { x: { type: 'category', title: { display: true, text: this.translations.filters.cycle } }, y: { beginAtZero: false, min: 0, max: 100, title: { display: true, text: 'Performance Score' } } }
       }
     });
   }
@@ -392,18 +407,24 @@ class ElectionCycleCharts {
     });
   }
 
-  renderPartyTierChart(canvasId: string, comparativeData: CSVRow[]): void {
+  renderPartyTierChart(canvasId: string, decisionData: CSVRow[]): void {
     const canvas = document.getElementById(canvasId) as HTMLCanvasElement | null;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     if (this.charts[canvasId]) this.charts[canvasId].destroy();
 
+    // Strictly read canonical columns from the decision-intelligence
+    // CSV: `election_cycle_id` (x-axis) + `ntile_effectiveness`
+    // (1..4 quartile classification). No legacy column fallbacks —
+    // a schema regression fails the CSV contract test instead of
+    // silently emitting an empty stacked bar chart.
     const cycleData: Record<string, Record<number, number>> = {};
-    comparativeData.forEach(d => {
-      const cycle = String(d['election_cycle_id'] ?? d['cycle_year'] ?? '');
-      const tier = Number(d['ntile_party_tier']);
+    decisionData.forEach(d => {
+      const cycle = String(d['election_cycle_id'] ?? '');
+      if (!cycle) return;
+      const tier = Number(d['ntile_effectiveness']);
       if (!cycleData[cycle]) cycleData[cycle] = { 1: 0, 2: 0, 3: 0, 4: 0 };
-      if (tier >= 1 && tier <= 4) cycleData[cycle][tier]++;
+      if (Number.isFinite(tier) && tier >= 1 && tier <= 4) cycleData[cycle][tier]++;
     });
     const cycles = Object.keys(cycleData).sort();
 
@@ -493,11 +514,18 @@ export class ElectionCycleDashboard {
     const predictive = this.filterData(this.dataManager.data.predictive);
     const temporal = this.filterData(this.dataManager.data.temporal);
 
-    this.chartRenderer.renderTimeline('cycle-timeline-chart', comparative);
+    // Timeline + party-tier charts strictly consume the
+    // decision-intelligence CSV (it is the only CIA export that
+    // carries the (`party`, `cycle_year`, `temporal_approval_rate`,
+    // `ntile_effectiveness`) tuple). No fallback to comparative —
+    // contract test guards the schema.
+    void comparative;
+
+    this.chartRenderer.renderTimeline('cycle-timeline-chart', decision);
     this.chartRenderer.renderDecisionHeatmap('decision-heatmap', decision);
     this.chartRenderer.renderRiskForecast('risk-forecast-chart', predictive);
     this.chartRenderer.renderTemporalTrends('temporal-trends-chart', temporal);
-    this.chartRenderer.renderPartyTierChart('party-tier-chart', comparative);
+    this.chartRenderer.renderPartyTierChart('party-tier-chart', decision);
   }
 
   private showLoading(): void {
