@@ -109,4 +109,98 @@ describe.skipIf(!hasDist)('Dashboard bundle integrity (post-build)', () => {
 
     expect(devPathFiles, 'Files with dev-only /src/browser/main.ts path').toEqual([]);
   });
+
+  /**
+   * Regression for 2026-05-13: the CIA dashboard hub (`/dashboard/index.html`)
+   * was shipping a tree-shaken `cia-entry-*.js` that read
+   * `var Chart = globalThis.Chart;` but never imported `chart.js/auto`,
+   * so every chart on the hub silently failed. Root cause: the bare
+   * side-effect import `import './shared/register-globals-bootstrap.js';`
+   * in `cia-entry.ts` was eliminated because the bootstrap file was not
+   * listed in `package.json#sideEffects`. The fix adds the bootstrap to
+   * the sideEffects list; this test guards the resulting bundle.
+   */
+  describe('CIA dashboard hub bundle (dashboard/index.html)', () => {
+    const DIST_CIA_HUB = join(DIST, 'dashboard', 'index.html');
+    const DIST_ASSETS_JS = join(DIST, 'assets', 'js');
+
+    it('dashboard/index.html exists and ships a hashed cia-entry bundle', () => {
+      if (!existsSync(DIST_CIA_HUB)) return;
+      const html = readFileSync(DIST_CIA_HUB, 'utf8');
+      expect(html).toMatch(/<script\b[^>]*src="[^"]*\/assets\/js\/cia-entry-[A-Za-z0-9_-]+\.js"/);
+    });
+
+    it('cia-entry-*.js statically bundles Chart.js (registerables + auto)', () => {
+      if (!existsSync(DIST_ASSETS_JS)) return;
+      const ciaEntryFiles = readdirSync(DIST_ASSETS_JS).filter((f) =>
+        /^cia-entry-[A-Za-z0-9_-]+\.js$/.test(f),
+      );
+      expect(ciaEntryFiles, 'exactly one cia-entry bundle').toHaveLength(1);
+
+      const ciaEntry = readFileSync(join(DIST_ASSETS_JS, ciaEntryFiles[0]!), 'utf8');
+
+      // cia-entry must import the register-globals chunk *and* invoke it
+      // (vite splits register-globals into its own chunk under
+      // `manualChunks`). Pattern: `import{t as B}from"./register-globals-…js";B();`.
+      const registerImportMatch = ciaEntry.match(
+        /import\s*\{[^}]*\bas\s+(\w+)\s*\}\s*from\s*["']\.\/(register-globals-[A-Za-z0-9_-]+\.js)["']\s*;\s*\1\s*\(\s*\)\s*;/,
+      );
+      expect(
+        registerImportMatch,
+        'cia-entry must import register-globals-*.js AND call the exported register fn at module init',
+      ).not.toBeNull();
+
+      // The register-globals chunk must (a) import the chart chunk, (b)
+      // set `globalThis.Chart = …`, and (c) the chart chunk itself must
+      // call `Chart.register(...registerables)`.
+      const registerChunkName = registerImportMatch![2]!;
+      const registerChunk = readFileSync(join(DIST_ASSETS_JS, registerChunkName), 'utf8');
+
+      expect(
+        /globalThis\.Chart\s*=\s*/.test(registerChunk),
+        'register-globals chunk must set globalThis.Chart',
+      ).toBe(true);
+      expect(
+        /globalThis\.d3\s*=\s*/.test(registerChunk),
+        'register-globals chunk must set globalThis.d3',
+      ).toBe(true);
+      expect(
+        /globalThis\.Papa\s*=\s*/.test(registerChunk),
+        'register-globals chunk must set globalThis.Papa',
+      ).toBe(true);
+
+      const chartChunkMatch = registerChunk.match(
+        /from\s*["']\.\/(chart-[A-Za-z0-9_-]+\.js)["']/,
+      );
+      expect(chartChunkMatch, 'register-globals chunk must import chart-*.js').not.toBeNull();
+      const chartChunk = readFileSync(join(DIST_ASSETS_JS, chartChunkMatch![1]!), 'utf8');
+      expect(
+        /\.register\(\s*\.\.\.\w+\s*\)/.test(chartChunk),
+        'chart chunk must call Chart.register(...registerables)',
+      ).toBe(true);
+    });
+
+    it('cia-entry-*.js bundle graph statically references the d3 chunk', () => {
+      if (!existsSync(DIST_ASSETS_JS)) return;
+      const ciaEntryFiles = readdirSync(DIST_ASSETS_JS).filter((f) =>
+        /^cia-entry-[A-Za-z0-9_-]+\.js$/.test(f),
+      );
+      if (ciaEntryFiles.length === 0) return;
+      const ciaEntry = readFileSync(join(DIST_ASSETS_JS, ciaEntryFiles[0]!), 'utf8');
+
+      const registerImportMatch = ciaEntry.match(
+        /from\s*["']\.\/(register-globals-[A-Za-z0-9_-]+\.js)["']/,
+      );
+      expect(registerImportMatch).not.toBeNull();
+      const registerChunk = readFileSync(
+        join(DIST_ASSETS_JS, registerImportMatch![1]!),
+        'utf8',
+      );
+
+      expect(
+        /from\s*["']\.\/d3-[A-Za-z0-9_-]+\.js["']/.test(registerChunk),
+        'register-globals chunk must statically import d3-*.js',
+      ).toBe(true);
+    });
+  });
 });
