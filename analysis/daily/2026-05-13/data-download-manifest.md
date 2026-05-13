@@ -1,9 +1,9 @@
 # Data Download Manifest — 2026-05-13
 
-**Generated**: 2026-05-13 00:06 UTC
+**Generated**: 2026-05-13 10:58 UTC
 **Data Sources**: get_propositioner, get_motioner, get_betankanden, search_voteringar, search_anforanden, get_fragor, get_interpellationer, get_dokument_innehall
 **Documents Downloaded**: 180
-**Documents Selected (date-filtered)**: 6
+**Documents Selected (date-filtered)**: 17
 **Produced By**: download-parliamentary-data script (data download only)
 
 > ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.
@@ -26,14 +26,3 @@
 ## Data Quality Notes
 
 All documents sourced from official riksdag-regering-mcp API.
-Data sourced from 2026-05-12 via lookback fallback — check freshness indicators.
-
-## Full-Text Fetch Outcomes
-
-| dok_id | full_text_available | chars | notes |
-|--------|--------------------:|------:|-------|
-| HD01CU30 | true | 100015 | persisted: full-text/HD01CU30.md |
-| HD01NU21 | true | 100015 | persisted: full-text/HD01NU21.md |
-| HD10486 | true | 4950 | persisted: full-text/HD10486.md |
-
-**Full-text retrieved**: 3/3 top documents
