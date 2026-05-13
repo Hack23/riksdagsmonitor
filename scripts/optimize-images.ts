@@ -4,7 +4,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 
 import sharp from 'sharp';
 
-const repoRoot = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
+const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const imageDir = path.join(repoRoot, 'public', 'images');
 
 type VariantFormat = 'avif' | 'webp' | 'png';

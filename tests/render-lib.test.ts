@@ -1073,6 +1073,8 @@ describe('render-lib — buildChrome', () => {
     expect(chrome.headerHtml).toMatch(/<\/header>[\s\S]*<div class="hero-banner"/);
     expect(chrome.headerHtml).toContain('hero-banner-bg');
     expect(chrome.headerHtml).toContain('riksdagsmonitor-banner.webp');
+    expect(chrome.headerHtml).toContain('riksdagsmonitor-banner-1536w.avif');
+    expect(chrome.headerHtml).toContain('<picture class="hero-banner-picture">');
     expect(chrome.headerHtml).toMatch(/width="1536"/);
     expect(chrome.headerHtml).toMatch(/height="1024"/);
     // alt is empty (decorative); aria-hidden suppresses for screen-readers.
@@ -1087,6 +1089,7 @@ describe('render-lib — buildChrome', () => {
       canonicalPath: 'news/2026-04-29-realtime-pulse-en.html',
     });
     // News articles live at /news/* → prefix is `../`.
+    expect(nested.headerHtml).toMatch(/srcset="\.\.\/images\/riksdagsmonitor-banner-480w\.avif 480w/);
     expect(nested.headerHtml).toMatch(/<img src="\.\.\/images\/riksdagsmonitor-banner\.webp"/);
   });
 

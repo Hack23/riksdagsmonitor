@@ -465,6 +465,9 @@ describe('chrome/header — hero banner', () => {
   it('includes hero banner by default', () => {
     const header = buildHeaderHtml(minimalOpts());
     expect(header).toContain('hero-banner');
+    expect(header).toContain('hero-banner-picture');
+    expect(header).toContain('riksdagsmonitor-banner-1536w.avif');
+    expect(header).toContain('riksdagsmonitor-logo-96w.webp');
     expect(header).toContain('aria-hidden="true"');
   });
 
