@@ -89,3 +89,21 @@
 **Strategic significance:** With Sweden's NATO membership, this is the "new normal" baseline — all Nordic countries have similar frameworks. But Sweden's 200-year tradition of military non-alignment means this is culturally significant even if legally routine for NATO members.
 
 *Pass 2 completed: 2026-05-13T19:08:00Z*
+
+## Prior-cycle PIR Ingestion
+
+### Carried-Forward Priority Intelligence Requirements
+
+**PIR-2026-PROP-001** (Active, carried from morning propositions cycle):
+- *Original:* "Will the migration package pass with L support intact?"
+- *Updated assessment (evening):* L position remains conditional; Lagrådet opinion is the critical upcoming indicator. Confidence in L support: MEDIUM (P=0.78 if Lagrådet non-blocking; P=0.55 if Lagrådet critical).
+
+**PIR-2026-COAL-003** (Active, carried from realtime-pulse):
+- *Original:* "Coalition coherence risk on detention expansion"
+- *Updated assessment:* Risk elevated to MEDIUM following S filing of 5 counter-motions. L SfU member Johan Hedin's public statements in week 22 are the next trigger point.
+
+**PIR-2026-DEF-001** (Active):
+- *Original:* "Riksdag sovereignty debate on NATO operational command"
+- *Updated assessment:* MP motion HD024176 activates this PIR. Full plenary debate expected. Likely outcome: government position holds (majority), but constitutional committee (KU) motion HD01KU35 may generate post-vote scrutiny.
+
+*PIR section updated in improvement pass: 2026-05-13T19:53:00Z*

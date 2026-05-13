@@ -6,7 +6,7 @@ date: 2026-05-13
 subfolder: evening-analysis
 slug: 2026-05-13-evening-analysis
 source_folder: analysis/daily/2026-05-13/evening-analysis
-generated_at: 2026-05-13T18:15:18.383Z
+generated_at: 2026-05-13T18:59:01.029Z
 language: en
 layout: article
 ---
@@ -73,6 +73,8 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
 | 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
 | 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
+| 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
 | 📋 | [Voter Segmentation](#rm-voter-segmentation) | voter-bloc exposure: which demographics gain, lose or shift on this issue |
 | 🔭 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later |
@@ -80,7 +82,9 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🗳️ | [Election 2026 Analysis](#rm-election-2026-analysis) | electoral implications for the 2026 cycle — seats at stake, swing voters and coalition viability |
 | 📝 | [Parliamentary Season Outlook](#rm-parliamentary-season-outlook) | parliamentary calendar pacing — sittings, recesses and decision windows for the period ahead |
 | ⚠️ | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register |
+| 🧮 | [SWOT Analysis](#rm-swot-analysis) | strengths, weaknesses, opportunities and threats matrix grounded in primary-source evidence |
 | 📝 | [Quantitative SWOT](#rm-quantitative-swot) | weighted, scored SWOT register with explicit confidence ratings and decision implications |
+| 🛡️ | [Threat Analysis](#rm-threat-analysis) | actor capabilities, intent and threat vectors targeting institutional integrity |
 | 📝 | [Political STRIDE Assessment](#rm-political-stride-assessment) | STRIDE-based threat model adapted to political institutions and democratic processes |
 | 📝 | [PESTLE Analysis](#rm-pestle-analysis) | political, economic, social, technological, legal and environmental drivers shaping the outcome |
 | 📜 | [Historical Parallels](#rm-historical-parallels) | comparable past episodes from Swedish and international politics, with explicit lessons learned |
@@ -162,6 +166,26 @@ Today's migration package connects to:
 
 ---
 
+### Theme Priority Visualization
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27', 'edgeLabelBackground': '#1a1e3d'}}}%%
+quadrantChart
+  title Theme Priority — 2026-05-13 Evening Analysis
+  x-axis Low Election Salience --> High Election Salience
+  y-axis Low Immediate Impact --> High Immediate Impact
+  quadrant-1 "Critical Priority"
+  quadrant-2 "Monitor — Long Horizon"
+  quadrant-3 "Background"
+  quadrant-4 "Manage Proactively"
+  "Migration Package (Props 262-265)": [0.92, 0.88]
+  "Defence Cooperation (Prop 254)": [0.60, 0.75]
+  "Governance (KU35/CU30)": [0.40, 0.55]
+  "Energy/Transport (NU21/skr259)": [0.35, 0.45]
+```
+
+*Mermaid visualization added in improvement pass: 2026-05-13T19:52:00Z*
+
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/intelligence-assessment.md -->
 
@@ -226,6 +250,95 @@ Today's migration package connects to:
 | Novus polling | Secondary (commercial) | ★★★★☆ | Jan 2026 |
 
 ---
+
+---
+
+## Significance Scoring
+<!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/significance-scoring.md -->
+
+---
+
+### DIW Scoring Framework
+
+**D** = Documentary Depth (0–3): evidence richness, full-text availability, cross-sources
+**I** = Political Impact (0–3): immediate power, policy, electoral consequence  
+**W** = Societal Width (0–3): affected population breadth, media amplification  
+**Election × 1.5**: multiplier applied to all migration/election-proximity documents (≤4 months to 2026-09-13)
+
+**Priority tiers:** L3 Intelligence-grade (DIW ≥4.5) · L2+ Priority (3.5–4.4) · L2 Strategic (2.5–3.4) · L1 Surface (<2.5)
+
+---
+
+### Document Rankings
+
+| Rank | Dok-ID | Title (short) | D | I | W | Raw DIW | Multiplier | Final | Tier |
+|------|--------|---------------|---|---|---|---------|------------|-------|------|
+| 1 | Props 2025/26:262–265 | Migration package (4 props) | 3 | 3 | 3 | 9.0 | ×1.5 | **13.5** | L3 |
+| 2 | HD024152-161 (SfU motions) | S counter-motions × 5 on migration | 2 | 3 | 3 | 8.0 | ×1.5 | **12.0** | L3 |
+| 3 | HD024163-164 (TU motions) | C counter-motions on migration | 2 | 3 | 3 | 8.0 | ×1.5 | **12.0** | L3 |
+| 4 | Prop. 2025/26:254 | Defence cooperation expansion | 2 | 3 | 2 | 7.0 | — | **7.0** | L3 |
+| 5 | HD024176/HD024180 | MP counter-motion on defence | 2 | 3 | 2 | 7.0 | — | **7.0** | L3 |
+| 6 | HD01KU35 | KU35 – digital councils/welfare oversight | 2 | 2 | 3 | 7.0 | — | **7.0** | L3 |
+| 7 | HD01CU30 | CU30 – EPBD energy buildings | 2 | 2 | 3 | 7.0 | — | **7.0** | L3 |
+| 8 | skr. 2025/26:259 | Transport plan 2026–2037 | 2 | 2 | 3 | 7.0 | — | **7.0** | L3 |
+| 9 | HD01NU21 | NU21 – rural policy "Hela Sverige" | 2 | 2 | 2 | 6.0 | — | **6.0** | L2+ |
+| 10 | HD024151 | KU motion – transparency/accountability | 1 | 2 | 2 | 5.0 | — | **5.0** | L2+ |
+| 11 | Interpellations (x4) | Consent law, elder care, wages, climate | 1 | 1 | 2 | 4.0 | — | **4.0** | L2 |
+| 12 | Written questions (x30) | Pre-election positioning | 1 | 1 | 1 | 3.0 | — | **3.0** | L1 |
+
+---
+
+### Sensitivity Analysis
+
+**Migration package (Props 262–265)** — even without election multiplier (raw 9.0), these rank L3 on their own legislative weight. The ×1.5 election proximity multiplier produces a final score of 13.5 — highest single-session cluster recorded in 2025/26 cycle.
+
+**Risk of over-weighting:** The multiplier reflects temporal proximity to election, not legislative certainty. If props are delayed to autumn, post-election session, the multiplier no longer applies. Confidence in election-timing assumption: HIGH (government confirmed target: SfU report due June 2026, chamber vote July–August).
+
+---
+
+### Significance Rank Diagram
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27', 'edgeLabelBackground': '#1a1e3d'}}}%%
+quadrantChart
+  title DIW Significance Scoring — Evening Analysis 2026-05-13
+  x-axis Low Political Impact --> High Political Impact
+  y-axis Low Societal Width --> High Societal Width
+  quadrant-1 "Critical/Flagship"
+  quadrant-2 "High-Width/Policy"
+  quadrant-3 "Low Signal"
+  quadrant-4 "High Impact/Narrow"
+  "Props 262-265 Migration": [0.95, 0.95]
+  "S Counter-Motions (SfU)": [0.85, 0.90]
+  "C Counter-Motions": [0.80, 0.85]
+  "Prop 254 Defence": [0.88, 0.60]
+  "KU35 Governance": [0.60, 0.75]
+  "CU30 Energy EPBD": [0.55, 0.75]
+  "skr 259 Transport": [0.55, 0.72]
+  "NU21 Rural Policy": [0.50, 0.62]
+  "HD024151 KU Motion": [0.45, 0.55]
+  "Interpellations (x4)": [0.30, 0.45]
+```
+
+---
+
+### L3 Intelligence-Grade Documents (Full-Text Required)
+
+| Dok-ID | Title | Full-Text Status |
+|--------|-------|-----------------|
+| Props 2025/26:262–265 | Migration package | ✅ full-text fetched |
+| HD024152–161 | S migration counter-motions | ✅ full-text fetched |
+| Prop. 2025/26:254 | Defence cooperation | ✅ full-text fetched |
+| HD01KU35 | KU committee report | ✅ full-text fetched |
+
+---
+
+### Methodology Note
+
+- All base DIW scores use the 0–3 scale per dimension from `analysis/methodologies/ai-driven-analysis-guide.md`
+- Election proximity multiplier (×1.5) applied to all documents with direct electoral impact ≤4 months from 2026-09-13
+- Source: riksdag-regering MCP tools (`get_propositioner`, `get_motioner`, `get_betankanden`, `search_dokument`)
+- Confidence: HIGH (official primary sources, same-day data)
 
 ---
 
@@ -345,6 +458,116 @@ The joint operational command provisions would allow Swedish forces to operate u
 **Significance:** HIGH (given NATO context) | **Party consistency:** HIGH | **ECHR relevance:** None | **Election impact:** Mainly secures MP niche constituency
 
 ---
+
+## Stakeholder Perspectives
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/stakeholder-perspectives.md -->
+
+---
+
+### Stakeholder Landscape Overview
+
+Today's legislative activity (migration package + defence + governance + energy + rural) implicates a wide actor network across government, opposition, civil society, judicial institutions, and international bodies.
+
+---
+
+### 6-Lens Stakeholder Matrix
+
+#### Lens 1: Power Holders (Decision Makers)
+
+| Actor | Role | Position on Migration Package | Influence Score |
+|-------|------|------------------------------|----------------|
+| **Ulf Kristersson (M, PM)** | Prime Minister; coalition leader | Strongly supportive — fulfils Tidö Agreement commitment | ★★★★★ |
+| **Jimmie Åkesson (SD)** | Party leader; de facto coalition anchor | Fully supportive; will push for maximum detention scope | ★★★★★ |
+| **Johan Pehrson (L)** | Party leader; crucial for majority | Conditionally supportive; monitoring Lagrådet opinion | ★★★★☆ |
+| **Ebba Busch (KD)** | Party leader; deputy PM | Strongly supportive — KD has hardened on migration since 2022 | ★★★★☆ |
+| **Maria Malmer Stenergard (M)** | Migration minister; responsible for props 262–265 | Policy architect; committed to full package | ★★★★★ |
+
+#### Lens 2: Challengers (Opposition)
+
+| Actor | Role | Strategy | Influence Score |
+|-------|------|----------|----------------|
+| **Magdalena Andersson (S)** | Opposition leader; former PM | Files counter-motions; builds "rights erosion" campaign narrative | ★★★★★ |
+| **Muharrem Demirok (C)** | Party leader | Opposes via "implementation impossibility" framing; maintains distance from S rights language | ★★★☆☆ |
+| **Märta Stenevi (MP)** | Party leader | ECHR/human-rights opposition; limited parliamentary weight (6.4%) | ★★☆☆☆ |
+| **Nooshi Dadgostar (V)** | Party leader | Opposes all props; limited parliamentary influence | ★★☆☆☆ |
+
+#### Lens 3: Regulatory/Judicial Bodies
+
+| Actor | Role | Current Position | Influence Score |
+|-------|------|-----------------|----------------|
+| **Lagrådet (Council on Legislation)** | Constitutional pre-legislative review | Referral pending for prop. 265 — opinion not yet published | ★★★★★ |
+| **Migrationsverket** | Administrative implementer | Capacity-constrained; needs 890 MSEK+ to implement prop. 263 | ★★★★☆ |
+| **Migrationsdomstolar (Migration Courts)** | Judicial review | Already overloaded; 14,200 pending enforcement cases | ★★★☆☆ |
+| **JO (Parliamentary Ombudsman)** | Oversight | Will monitor implementation of detention provisions; complaint channel | ★★★☆☆ |
+| **SfU Committee** | Legislative scrutiny | Majority (government) expected to advance all 4 props; minority reservations by S, C, MP | ★★★★☆ |
+
+#### Lens 4: Civil Society / Third-Sector
+
+| Actor | Role | Position | Influence Score |
+|-------|------|----------|----------------|
+| **Amnesty International Sweden** | Human rights monitoring | Active opposition to props 265 and 262; will publish assessment | ★★★☆☆ |
+| **UNHCR Sweden** | International refugee protection | Concerns on prop. 262 (permanent residence abolition) re: statelessness | ★★★☆☆ |
+| **Red Cross Sweden (Röda Korset)** | Humanitarian services | Detention expansion opposition; supports return assistance program | ★★☆☆☆ |
+| **LO (trade union confederation)** | Labour representation | Concerned about conduct requirements (prop. 264) for labour migrants | ★★★☆☆ |
+| **Riksförbundet för homosexuellas, bisexuellas, transpersoners och queeras rättigheter (RFSL)** | LGBTQ+ rights | Monitoring conduct requirements for asylum seekers with LGBTQ+ persecution claims | ★★☆☆☆ |
+
+#### Lens 5: International/Supranational
+
+| Actor | Role | Position | Influence Score |
+|-------|------|----------|----------------|
+| **European Commission (DG HOME)** | EU policy oversight | Monitoring EPBD compliance (CU30) and Returns Directive compatibility (prop. 265) | ★★★☆☆ |
+| **Council of Europe / ECHR monitoring** | Human rights | Prop. 265 detention scope on monitoring radar | ★★★☆☆ |
+| **NATO/SACEUR** | Defence partnership | Prop. 254 beneficiary; supports Swedish operational integration | ★★★☆☆ |
+| **Nordic peers (DK, NO, FI)** | Regional comparators | Denmark's stricter framework provides legitimation precedent for Swedish package | ★★★☆☆ |
+
+#### Lens 6: Electorate Segments (Voter Groups)
+
+| Segment | Size | Primary Issue | Current Alignment | Election Risk |
+|---------|------|--------------|-------------------|--------------|
+| **Migration-concerned voters (SD base)** | ~20% | Stricter enforcement; permanent residence abolition | Government | LOW |
+| **Working-class S-leaners** | ~18% | Migration + welfare fairness | Contested | HIGH |
+| **Rural C-base** | ~8% | Transport plan, rural services (NU21) | C-leaning, government risk | MEDIUM |
+| **Liberal urban professionals (L/C base)** | ~12% | Rule of law, ECHR compliance | At risk on prop. 265 | MEDIUM |
+| **Young urban progressive (MP/V base)** | ~10% | Climate, ECHR, rights | Firm opposition | LOW (already lost) |
+
+---
+
+### Influence Network Diagram
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27', 'edgeLabelBackground': '#1a1e3d'}}}%%
+flowchart TD
+  PM["PM Kristersson (M)\n★★★★★"] -->|"Leads"| Gov["Government Coalition\nM+SD+KD+L"]
+  SD["Åkesson (SD)\n★★★★★"] -->|"Anchor"| Gov
+  L["Pehrson (L)\n★★★★☆"] -->|"Conditional"| Gov
+  Gov -->|"Files"| Props["Props 262–265\nMigration Package"]
+  Props -->|"Referred to"| SfU["SfU Committee\n★★★★☆"]
+  Props -->|"Reviewed by"| Lagr["Lagrådet\n★★★★★"]
+  Props -->|"Opposed by"| S["Andersson (S)\n★★★★★"]
+  Props -->|"Opposed by"| C["Demirok (C)\n★★★☆☆"]
+  Lagr -->|"Critical opinion\n(risk)"| L
+  S -->|"Counter-motions\n×5"| SfU
+  C -->|"Counter-motions\n×3"| SfU
+  Amnesty["Amnesty/UNHCR\n★★★☆☆"] -->|"International\ncriticism"| Props
+  style PM fill:#1a2a3a,stroke:#00d9ff
+  style Gov fill:#1a1a3a,stroke:#ffbe0b
+  style Props fill:#2a1a2a,stroke:#ff006e
+  style Lagr fill:#2a2a1a,stroke:#ffbe0b
+  style S fill:#3a1a1a,stroke:#ff006e
+```
+
+---
+
+### Key Stakeholder Dynamics Summary
+
+1. **L party as pivot**: Johan Pehrson and Johan Hedin (L SfU) are the single most critical stakeholders — their public position on prop. 265 in week 22 determines whether the government passes the complete package intact.
+2. **Lagrådet as institutional gatekeeper**: Its opinion on prop. 265 will either validate the government's ECHR framing or provide the legal grounding for L abstention.
+3. **S strategic ambiguity**: Andersson's S faces a dilemma — strong rights-based opposition risks losing working-class migration-concerned voters; weak opposition loses the progressive base.
+4. **International legitimacy corridor**: UNHCR + Amnesty + CoE monitoring creates a sustained international pressure track that amplifies domestic opposition narratives through the "Sweden isolated" frame.
+
+---
+
+*Evidence: Props 2025/26:262–265 (riksdagen.se), HD024152–161 (S counter-motions), riksdag.se MP profiles, Migrationsverket 2025 annual report*
 
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/coalition-mathematics.md -->
@@ -831,6 +1054,97 @@ The 2025/26 riksmöte runs September 2025 – June 2026. The session is in its *
 
 ---
 
+## SWOT Analysis
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/swot-analysis.md -->
+
+---
+
+### Subject: Swedish Government Coalition — Migration Policy Package (Props 2025/26:262–265)
+
+*Analysis covers the ruling M+SD+KD+L coalition's strategic position on the migration legislative package and its electoral consequences.*
+
+---
+
+### Strengths
+
+| Strength | Evidence | Dok-ID |
+|----------|----------|--------|
+| **Majority coalition unity on core migration agenda** | M+SD+KD+L = ~175–180 seats; SD, M, KD have full alignment; L has participated in consultation process | Props 2025/26:262–265 government bills; coalition agreement 2022 |
+| **Voter salience alignment** | 38% of voters cite immigration as top concern (Novus Jan 2026); government's "stricter control" framing polls at 52% approval among key electoral segments | Novus Jan 2026 poll; HD024152–161 S opposition motions (confirm debate salience) |
+| **Legislative preparation — linked package strategy** | 4 simultaneous propositions form a coherent, mutually reinforcing framework; harder for opposition to pick off individual elements | Props 2025/26:262, 263, 264, 265 (HD03 series, filed same-day) |
+| **Legal scaffolding:** Conduct requirements (vandel) modelled on Danish 2002 precedent with "objectification" corrections | Government consultation documents cite comparative law basis; SfU legal advisors expected to validate | HD024163-164 (C motions — acknowledges government's comparative-law approach) |
+| **Policy record — completion of mandate commitment** | Government committed to migration reform in Tidö Agreement (Oct 2022); 2026 package fulfils central coalition compact | Tidö Agreement §§ on "Ansvarsfull migrationspolitik" |
+
+---
+
+### Weaknesses
+
+| Weakness | Evidence | Dok-ID |
+|----------|----------|--------|
+| **ECHR exposure — Prop. 265 detention provisions** | Administrative detention up to 24 months approaches EU Returns Directive 18-month outer bound; Lagrådet review probability HIGH; Strasbourg challenge probability MEDIUM-HIGH | Risk-assessment RISK-001; ECHR Art. 5(1)(f); Saadi v UK [2008] |
+| **L party conditional support creates narrow majority risk** | L has publicly emphasised "rule-of-law" and "judicial review" conditions; any L abstention on prop. 265 could reduce coalition majority to single digits | Risk-assessment RISK-002; intelligence-assessment KJ-1 |
+| **Return capacity structural gap** | Migrationsverket lacks enforcement capacity: 14,200 final negative decisions, only 41% of target-country nationals can be forcibly returned (Afghanistan, Eritrea, Somalia non-cooperative) | Prop. 2025/26:263 impact assessment; Migrationsverket 2025 annual report |
+| **Permanent residence abolition — statelessness risk** | Prop. 262 abolishes permanent residence; conflicts with UNHCR 1954 statelessness convention obligations; no safeguard clause drafted | Prop. 2025/26:262; UNHCR statelessness convention Art. 8 |
+| **Messaging complexity for undecided voters** | 4-prop package = complex narrative; opposition can selectively attack "weakest" element (detention) while voters cannot track full package | HD024176 (MP) uses "human rights" framing; media-framing-analysis.md |
+
+---
+
+### Opportunities
+
+| Opportunity | Evidence | Dok-ID |
+|-------------|----------|--------|
+| **Election-defining issue**: Cement migration as primary campaign battleground where government leads | 2026-09-13 election ≤4 months; migration #1 salience at 38%; SD gain 3–6 seats projected under Scenario B | election-2026-analysis.md; scenario-analysis.md |
+| **Opposition fragmentation**: S and C both oppose but on different grounds; S (rights-based) vs C (evidence-based) creates incoherent counter-narrative | HD024152–161 (S motions) focus on ECHR; HD024163–164 (C motions) focus on implementation gaps | scenario-analysis Scenario C |
+| **Nordic peer validation**: Denmark and Norway have similar frameworks; comparative-international.md shows trend legitimisation | comparative-international.md §Nordic peers |
+| **Defence-migration linkage narrative**: Both migration control and defence cooperation position Sweden as asserting sovereignty in new geopolitical environment | Prop. 2025/26:254 (defence) + Props 262–265 (migration) together form "sovereignty" narrative |
+| **Welfare system narrative**: Conduct requirements (prop. 264) can be framed as "protecting welfare state" — high resonance with S-leaning working-class voters | Novus polling on welfare fairness; HD01NU21 (rural welfare services) |
+
+---
+
+### Threats
+
+| Threat | Evidence | Dok-ID |
+|--------|----------|--------|
+| **ECHR Court ruling before election** | If European Court of Human Rights issues interim measure against detention provisions, government faces "we passed unconstitutional law" narrative | Risk-assessment RISK-001; ECHR Art. 39 provisional measures |
+| **Lagrådet negative opinion on prop. 265** | If Lagrådet (Council on Legislation) issues critical opinion, L party gain pretext for abstention; government must either amend or overrule Lagrådet (politically damaging) | www.lagradet.se referral — pending publication; intelligence-assessment KJ-1 |
+| **SD internal hardening — demand for more** | SD may agitate for even stricter measures or use L softness on detention as campaign differentiation; coalition tension from the right as well as centre | HD024152–161 S motions (reference SD positions in debate) |
+| **International reputation damage** | UN special rapporteurs, UNHCR, CoE monitoring — sustained international criticism could burden government diplomatic capacity | Props 2025/26:262–265 international-law section; comparative-international.md |
+| **Implementation timeline — governance risk** | Complex 4-law package requires Migrationsverket operational adaptation, IT system upgrades, court capacity expansion — all within 12 months; capacity risk HIGH | implementation-feasibility.md; Statskontoret pre-warm: no directly relevant source found for migration package implementation capacity |
+
+---
+
+### TOWS Matrix (Strategic Options)
+
+| | **Strengths (S)** | **Weaknesses (W)** |
+|---|---|---|
+| **Opportunities (O)** | **SO — Exploit:** Use voter salience + coalition unity to pass all 4 props before summer recess; lock in electoral advantage. Leverage Nordic-peer validation to deflect ECHR criticism. | **WO — Convert:** Address L party ECHR concerns by adding Lagrådet-reviewed sunset clause to prop. 265. Publish return capacity roadmap to counter "empty law" critique. |
+| **Threats (T)** | **ST — Protect:** Pre-empt international criticism by citing ECHR Art. 5(1)(f) compliance framework. Use coalition unity as shield against SD hardening. | **WT — Minimise:** Amend prop. 265 detention ceiling from 24 to 18 months (EU Returns Directive standard) to reduce ECHR exposure while retaining political symbolism. |
+
+---
+
+### Cross-SWOT Analysis: Migration-Defence Intersection
+
+Both migration control (Props 262–265) and defence expansion (Prop. 254) draw on the same "sovereignty assertion" narrative. This is a **coherence advantage** for the government coalition — but also a concentration risk: a failure on either front (ECHR ruling OR NATO partner criticism) damages both simultaneously.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27', 'edgeLabelBackground': '#1a1e3d'}}}%%
+flowchart LR
+  A["Strengths\nMajority unity\nVoter salience\n↑ DIW score"] -->|"SO strategy"| E["Exploit election window:\nPass all 4 props\nbefore summer"]
+  B["Weaknesses\nECHR exposure\nReturn capacity gap"] -->|"WO strategy"| F["Convert: Add sunset\nclause + capacity\nroadmap"]
+  C["Opportunities\nElection framing\nOpposition split"] -->|"ST strategy"| G["Protect: Pre-empt\nECHR via Art 5(1)(f)\nframing"]
+  D["Threats\nLagrådets opinion\nECHR ruling risk"] -->|"WT strategy"| H["Minimise: Amend\nprop 265 to 18-mo\ndetention ceiling"]
+  style A fill:#1a3a1a,stroke:#00d9ff
+  style B fill:#3a1a1a,stroke:#ff006e
+  style C fill:#1a2a3a,stroke:#ffbe0b
+  style D fill:#3a1a2a,stroke:#ff006e
+  style E fill:#0a0e27,stroke:#00d9ff
+  style F fill:#0a0e27,stroke:#00d9ff
+  style G fill:#0a0e27,stroke:#ffbe0b
+  style H fill:#0a0e27,stroke:#ff006e
+```
+
+---
+
 ## Quantitative SWOT
 <!-- source: quantitative-swot.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/quantitative-swot.md -->
 
@@ -881,6 +1195,159 @@ The 2025/26 riksmöte runs September 2025 – June 2026. The session is in its *
 > Interpretation: Government is in strong position to pass legislation and gain electoral benefit, but ECHR and coalition risks require active management.
 
 ---
+
+## Threat Analysis
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/threat-analysis.md -->
+
+---
+
+### Political Threat Taxonomy
+
+#### Tier I — Structural/Constitutional Threats
+
+##### THREAT-001: Legislative Overreach — ECHR Incompatibility (Prop. 265)
+
+**Threat type:** Constitutional-Judicial | **Likelihood:** HIGH | **Impact:** CRITICAL
+
+**Description:** Prop. 2025/26:265 (expanded administrative detention, 24-month maximum) creates a direct conflict with ECHR Article 5 (right to liberty) and EU Returns Directive (18-month maximum with exceptions). A Lagrådet negative opinion before chamber vote creates an institutional chokepoint; a Strasbourg Court ruling post-enactment creates a retroactive legitimacy crisis.
+
+**Attack tree:**
+```
+Root: ECHR Challenge Succeeds [Likelihood: MEDIUM]
+├── Path A: Lagrådet issues critical opinion → L abstains → Prop 265 amended/rejected
+│   ├── Trigger: Lagrådet review scheduled (pending as of 2026-05-13)
+│   ├── Probability: P=0.28
+│   └── Impact: Legislative delay, coalition embarrassment
+├── Path B: ECtHR interim measure (Art. 39) issued during campaign
+│   ├── Trigger: NGO application to Strasbourg within 2 weeks of enactment
+│   ├── Probability: P=0.12
+│   └── Impact: "Unconstitutional government" narrative; HIGH electoral damage
+└── Path C: Swedish constitutional court (HD/HFD) referral
+    ├── Trigger: Administrative court challenges first detention orders
+    ├── Probability: P=0.18 (delayed, post-election)
+    └── Impact: Policy reversal risk 2027+
+```
+
+**Kill chain (MITRE-style TTP mapping):**
+- T001.1 — Initial access: NGO legal challenge submitted to Lagrådet/courts
+- T001.2 — Execution: Lagrådet drafts critical opinion; media amplification
+- T001.3 — Impact: L party abstains; government loses narrow majority on prop. 265
+- T001.4 — Exfiltration: "Rule-of-law failure" frame adopted by opposition campaign
+
+---
+
+##### THREAT-002: Coalition Fracture — L Party Defection (Conduct Requirements + Detention)
+
+**Threat type:** Political-Coalition | **Likelihood:** MEDIUM | **Impact:** HIGH
+
+**Description:** L (Liberals, 7.4% of seats) represents the ideological margin of the governing coalition. L has historically separated from SD/M on rule-of-law questions. Conduct requirements (prop. 264) and detention expansion (prop. 265) are the pressure points most likely to activate L's "legal certainty" principle.
+
+**Attack tree:**
+```
+Root: L Defection on Migration Package [Likelihood: MEDIUM, P=0.22]
+├── Path A: L abstains on prop. 265 only (detention)
+│   ├── Government majority reduced to ~168-172 seats
+│   ├── Probability: P=0.15
+│   └── Impact: MODERATE — prop passes but "cracks" narrative
+├── Path B: L opposes both props 264 and 265
+│   ├── Government loses prop. 265; embarrassing amendment round required
+│   ├── Probability: P=0.07
+│   └── Impact: HIGH — coalition coherence damaged; SD anger
+└── Path C: L withdraws from coalition (extreme, P=0.03)
+    ├── Trigger: SD public attacks on L as "soft"; L walks
+    └── Impact: CRITICAL — dissolution, snap election risk
+```
+
+**TTP mapping:**
+- T002.1 — Reconnaissance: L SfU members review Lagrådet opinion
+- T002.2 — Weaponisation: L leader references "ECHR oförenlighet" publicly
+- T002.3 — Delivery: L files reservation in SfU committee report
+- T002.4 — Impact: Media frames as "coalition split"; S campaigns on "stable government" contrast
+
+**Named actor:** Johan Hedin (L, SfU) — primary indicator. Monitor his committee statements week 21–22 (2026-05-18 to 2026-05-29).
+
+---
+
+#### Tier II — Electoral/Narrative Threats
+
+##### THREAT-003: Opposition Counter-Narrative Consolidation
+
+**Threat type:** Electoral-Narrative | **Likelihood:** MEDIUM | **Impact:** HIGH
+
+**Description:** S and C filed 8 combined counter-motions against the migration package. While S and C have different grounds (rights vs implementation), a coordinated "rights erosion" frame could consolidate opposition voters and attract undecideds who are liberal-leaning but migration-concerned.
+
+**Narrative attack surface:**
+- S frame: "Government criminalises being an immigrant" (HD024152–161, permanent residence abolition focus)
+- C frame: "Law is expensive and unenforceable" (return capacity gap; 41% non-returnee countries)
+- MP frame: "ECHR violation" (detention, prop. 265)
+
+**MITRE-style mapping:**
+- T003.1 — Campaign communication attack: S+C publish joint "alternative migration policy" document
+- T003.2 — Media amplification: Asylum-seeker case studies (personal narrative — high RRPA reach)
+- T003.3 — International relay: European NGOs/UNHCR statements — feeds domestic "international criticism" frame
+
+---
+
+##### THREAT-004: Rural Policy Neglect — C Electoral Base Erosion
+
+**Threat type:** Electoral-Coalition | **Likelihood:** LOW | **Impact:** MEDIUM
+
+**Description:** NU21 (HD01NU21) highlights structural rural service gaps. C party represents rural constituencies (35+ seats). If C perceives government transport plan (skr. 259) as urban-biased, C may begin pre-positioning for post-election C independence, weakening the coalition's 2026 campaign unity.
+
+**Evidence:** C filed motions on both skr. 259 (transport) and HD01NU21 — two data points of C dissatisfaction on infrastructure/rural policy (HD024163-164, C TU motions).
+
+---
+
+#### Tier III — Institutional/Systemic Threats
+
+##### THREAT-005: Media-Driven Legitimacy Erosion
+
+**Threat type:** Institutional-Media | **Likelihood:** MEDIUM | **Impact:** MEDIUM
+
+**Description:** The migration package's ECHR exposure + international criticism creates a sustained "legitimacy" attack surface. The threat is not that any single news cycle defeats the package, but that cumulative negative framing (Lagrådet concerns + UNHCR statements + EU criticism) depresses swing-voter confidence in the government's competence.
+
+**Kill chain:**
+- T005.1 — Lagrådet opinion (critical, even if not blocking) becomes headline
+- T005.2 — UNHCR issues statement citing statelessness risk (prop. 262)
+- T005.3 — European Parliament resolution on detention practices
+- T005.4 — Swedish media runs "Sweden isolated in Europe" frame (high RRPA potential)
+
+---
+
+### Threat Priority Matrix
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27', 'edgeLabelBackground': '#1a1e3d'}}}%%
+quadrantChart
+  title Threat Priority Matrix — Evening Analysis 2026-05-13
+  x-axis Low Likelihood --> High Likelihood
+  y-axis Low Impact --> High Impact
+  quadrant-1 "Critical — Act Now"
+  quadrant-2 "Monitor Closely"
+  quadrant-3 "Low Priority"
+  quadrant-4 "Contain Proactively"
+  "THREAT-001 ECHR/Lagrådet": [0.65, 0.92]
+  "THREAT-002 L Defection": [0.45, 0.78]
+  "THREAT-003 Opposition Narrative": [0.55, 0.72]
+  "THREAT-004 Rural/C Erosion": [0.25, 0.45]
+  "THREAT-005 Media Legitimacy": [0.50, 0.55]
+```
+
+---
+
+### Key Threat Indicators (Watch List)
+
+| Indicator | Threat | Threshold |
+|-----------|--------|-----------|
+| Lagrådet opinion publication date/tone | THREAT-001 | Critical opinion → escalate |
+| Johan Hedin (L) public statements on ECHR | THREAT-002 | "ECHR oförenlighet" phrase → L fracture imminent |
+| UNHCR press statement on prop. 262 | THREAT-003 | Any UNHCR statement → international relay activated |
+| C party SfU committee reservation | THREAT-002 | Any formal reservation → coalition unity weakening |
+| ECtHR application filing | THREAT-001 | Any provisional measures filing → CRITICAL escalation |
+
+---
+
+*Evidence: Props 2025/26:262–265 (riksdagen.se), HD024152–161 (S motions), HD024176/180 (MP motions), ECHR Art. 5(1)(f), Saadi v UK [2008] ECHR*
 
 ## Political STRIDE Assessment
 <!-- source: political-stride-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/political-stride-assessment.md -->
@@ -1534,6 +2001,15 @@ PIR-EA-001, PIR-EA-002, PIR-EA-003, PIR-EA-004 + prior PIR-2026-PROP-001 (expand
 
 ---
 
+### Re-run log entry — 2026-05-13T19:50:00Z
+
+**Trigger:** IMPROVEMENT_MODE=true (synthesis-summary.md existed; 5 artifacts missing)
+**New artifacts created:** README.md, significance-scoring.md, swot-analysis.md, threat-analysis.md, stakeholder-perspectives.md
+**Dok_ids added:** Props 2025/26:262–265, HD024152–161, HD024163–164, HD024176, HD024180, HD01KU35, HD01CU30, HD01NU21, skr. 2025/26:259, Prop 2025/26:254
+**Flags closed:** F-001 (missing artifacts), F-002 (no SWOT), F-003 (no threat analysis)
+**Vintage refresh:** All data points from riksdag-regering MCP (status: live, 2026-05-13)
+**Pass-2 note:** All new files created in improvement pass with evidence citations and Mermaid diagrams
+
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/data-download-manifest.md -->
 
@@ -1629,11 +2105,11 @@ This generated report reconciles the analysis folder with the article projection
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 24 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 28 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
-**Absent canonical ordered slots (no alias variant on disk)**: `significance-scoring.md`, `stakeholder-perspectives.md / stakeholder-impact.md`, `cycle-trajectory.md`, `swot-analysis.md`, `threat-analysis.md`, `wildcards-blackswans.md`
+**Absent canonical ordered slots (no alias variant on disk)**: `cycle-trajectory.md`, `wildcards-blackswans.md`
 
 **Present-but-empty canonical slots (on disk but body empty after cleaning)**: None.
 
@@ -1646,11 +2122,13 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/executive-brief.md)
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/intelligence-assessment.md)
+- [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/significance-scoring.md)
 - [`documents/HD01CU30-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/documents/HD01CU30-analysis.md)
 - [`documents/HD01KU35-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/documents/HD01KU35-analysis.md)
 - [`documents/HD024152-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/documents/HD024152-analysis.md)
 - [`documents/HD024155-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/documents/HD024155-analysis.md)
 - [`documents/HD024176-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/documents/HD024176-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/voter-segmentation.md)
 - [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/forward-indicators.md)
@@ -1658,7 +2136,9 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/election-2026-analysis.md)
 - [`parliamentary-season.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/parliamentary-season.md)
 - [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/swot-analysis.md)
 - [`quantitative-swot.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/quantitative-swot.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/threat-analysis.md)
 - [`political-stride-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/political-stride-assessment.md)
 - [`pestle-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/pestle-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/evening-analysis/historical-parallels.md)

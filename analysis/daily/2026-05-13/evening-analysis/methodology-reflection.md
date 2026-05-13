@@ -40,3 +40,12 @@
 ---
 
 *Generated: 2026-05-13T18:50:00Z | Agent: news-evening-analysis | Pass: 1*
+
+## Re-run log entry — 2026-05-13T19:50:00Z
+
+**Trigger:** IMPROVEMENT_MODE=true (synthesis-summary.md existed; 5 artifacts missing)
+**New artifacts created:** README.md, significance-scoring.md, swot-analysis.md, threat-analysis.md, stakeholder-perspectives.md
+**Dok_ids added:** Props 2025/26:262–265, HD024152–161, HD024163–164, HD024176, HD024180, HD01KU35, HD01CU30, HD01NU21, skr. 2025/26:259, Prop 2025/26:254
+**Flags closed:** F-001 (missing artifacts), F-002 (no SWOT), F-003 (no threat analysis)
+**Vintage refresh:** All data points from riksdag-regering MCP (status: live, 2026-05-13)
+**Pass-2 note:** All new files created in improvement pass with evidence citations and Mermaid diagrams
