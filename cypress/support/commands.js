@@ -225,7 +225,7 @@ Cypress.Commands.add('visitDashboard', (path, containerId) => {
   }
 });
 
-function formatConsoleArg(arg) {
+function formatDashboardConsoleErrorArgument(arg) {
   if (arg instanceof Error) {
     return `${arg.name}: ${arg.message}`;
   }
@@ -242,7 +242,7 @@ function formatConsoleArg(arg) {
 Cypress.Commands.add('assertNoConsoleErrors', () => {
   cy.window().then((win) => {
     const messages = (win.__rdmConsoleErrors || []).map((args) =>
-      args.map(formatConsoleArg).join(' '),
+      args.map(formatDashboardConsoleErrorArgument).join(' '),
     );
     expect(messages, 'dashboard console.error messages').to.deep.equal([]);
   });

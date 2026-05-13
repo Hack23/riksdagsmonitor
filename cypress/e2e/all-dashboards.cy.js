@@ -117,10 +117,6 @@ describe('All Dashboards - Comprehensive Coverage', () => {
         cy.get(`#${dashboard.id} h2, #${dashboard.id} h3`).first().should('be.visible');
       });
       
-      it('should not have error messages', () => {
-        cy.get(`#${dashboard.id}`).should('be.visible');
-      });
-      
       it('should have data attribution', () => {
         cy.get(`#${dashboard.id}`).then(($dashboard) => {
           expect($dashboard.text().trim().length).to.be.greaterThan(0);
