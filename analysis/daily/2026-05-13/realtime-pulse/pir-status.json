@@ -1,0 +1,100 @@
+{
+  "$schema": "../../../schemas/pir-status.schema.json",
+  "analysis_date": "2026-05-13",
+  "subfolder": "realtime-pulse",
+  "schema_version": "1.0",
+  "generated_at": "2026-05-13T12:00:00Z",
+  "pirs": [
+    {
+      "pir_id": "PIR-CONST-ABORT",
+      "title": "Constitutional challenge to Prop 258 (trade union disclosure)",
+      "status": "open",
+      "wep_percent": 10,
+      "wep_word": "unlikely",
+      "horizon": "T+90d",
+      "last_updated": "2026-05-13",
+      "update_reason": "HD024151 cites Lagrådet 'bräckligt' opinion; S motion filed. No new signal of challenge materialising. WEP unchanged.",
+      "collection_target": "Arbetsdomstolen case filings post-enactment; LO legal announcements",
+      "forward_indicator": "FI-05"
+    },
+    {
+      "pir_id": "PIR-CLIM-2026",
+      "title": "Government climate adaptation proposition before end of 2025/26 session",
+      "status": "open",
+      "wep_percent": 12,
+      "wep_word": "unlikely",
+      "horizon": "T+30d",
+      "last_updated": "2026-05-13",
+      "update_reason": "HD10488 (MP interpellation) confirms 7-month gap since remiss closure. WEP decreased from 15% → 12% as no government signal detected.",
+      "collection_target": "Government press releases; Klimatrådet communications; Britz calendar",
+      "forward_indicator": "FI-07"
+    },
+    {
+      "pir_id": "PIR-MIG-RETURN",
+      "title": "Migration reform package (Props 258-265) passes Riksdag",
+      "status": "open",
+      "wep_percent": 72,
+      "wep_word": "likely",
+      "horizon": "T+30d",
+      "last_updated": "2026-05-13",
+      "update_reason": "S files 6 motions (HD024151-HD024162) — confirms opposition is organised but cannot change seat arithmetic. WEP increased 70% → 72% as opposition filing confirms the reform timeline is on track.",
+      "collection_target": "SfU committee vote schedule; plenary calendar",
+      "forward_indicator": "FI-03"
+    },
+    {
+      "pir_id": "PIR-COAL-STAB",
+      "title": "Current coalition (M+SD+KD+L) survives to September 2026 election without collapse",
+      "status": "open",
+      "wep_percent": 80,
+      "wep_word": "likely",
+      "horizon": "T+120d",
+      "last_updated": "2026-05-13",
+      "update_reason": "No defection signal today. However, V dual interpellation targeting Britz (L) increases L polling risk. WEP unchanged at 80% — threshold for concern is L≤4.1% in June polling.",
+      "collection_target": "June polling releases (SIFO/Novus); coalition coordination signals",
+      "forward_indicator": "FI-06"
+    },
+    {
+      "pir_id": "PIR-ELDER-2026",
+      "title": "Structural reform of private eldercare oversight committed by government",
+      "status": "open",
+      "wep_percent": 65,
+      "wep_word": "roughly even",
+      "horizon": "T+14d",
+      "last_updated": "2026-05-13",
+      "update_reason": "HD10484 interpellation filed — ministerial response (Tenje) due 29 May. Socialstyrelsen evidence cited. WEP unchanged at 65% — hinges entirely on Tenje's response quality.",
+      "collection_target": "Tenje response text (29 May); chamber debate scheduling",
+      "forward_indicator": "FI-01"
+    },
+    {
+      "pir_id": "PIR-GENDERPAY-2026",
+      "title": "Sweden accelerates EU Pay Transparency Directive implementation",
+      "status": "open",
+      "wep_percent": 65,
+      "wep_word": "roughly even",
+      "horizon": "T+14d",
+      "last_updated": "2026-05-13",
+      "update_reason": "HD10486 interpellation filed — ministerial response (Britz/L) due 29 May. EU Directive deadline pressure noted. WEP unchanged at 65% — Britz response is the critical variable.",
+      "collection_target": "Britz response text (29 May); DO/Jämst announcements",
+      "forward_indicator": "FI-02"
+    },
+    {
+      "pir_id": "PIR-TRANSP-2026",
+      "title": "S transport priorities incorporated into TU committee report on Skr 2025/26:259",
+      "status": "open",
+      "wep_percent": 20,
+      "wep_word": "unlikely",
+      "horizon": "T+30d",
+      "last_updated": "2026-05-13",
+      "update_reason": "NEW PIR opened. HD024162 (S transport motion) filed today. Minority government unlikely to adopt S amendments in committee; however, partial wording incorporation is possible.",
+      "collection_target": "TU committee hearing dates; formal committee report publication",
+      "forward_indicator": "FI-03"
+    }
+  ],
+  "summary": {
+    "total_open": 7,
+    "total_closed": 0,
+    "high_priority": ["PIR-ELDER-2026", "PIR-GENDERPAY-2026", "PIR-MIG-RETURN"],
+    "watch_list": ["PIR-COAL-STAB"],
+    "new_this_cycle": ["PIR-TRANSP-2026"]
+  }
+}
