@@ -285,13 +285,29 @@ class ElectionCycleCharts {
     if (this.charts[canvasId]) this.charts[canvasId].destroy();
 
     const parties = ['M', 'S', 'SD', 'C', 'V', 'MP', 'KD', 'L'];
+    // Accept either the legacy `overall_performance_score` column (older
+    // CIA exports) or `temporal_approval_rate` from the
+    // decision-intelligence CSV (current canonical numeric per-party,
+    // per-cycle metric). Without this fallback the chart silently
+    // renders eight empty datasets when only the modern schema is
+    // present.
     const datasets = parties.map(party => {
       const partyData = filteredData.filter(d => d['party'] === party);
       const cycleData: Record<string, CyclePerformance> = {};
       partyData.forEach(d => {
         const year = String(d['cycle_year'] ?? d['election_cycle_id'] ?? '');
         if (!cycleData[year]) cycleData[year] = { performance: 0, count: 0 };
-        if (d['overall_performance_score']) { cycleData[year].performance += parseFloat(String(d['overall_performance_score'])); cycleData[year].count++; }
+        const score =
+          d['overall_performance_score'] ??
+          d['temporal_approval_rate'] ??
+          d['avg_approval_rate'];
+        if (score !== undefined && score !== null && score !== '') {
+          const num = parseFloat(String(score));
+          if (Number.isFinite(num)) {
+            cycleData[year].performance += num;
+            cycleData[year].count++;
+          }
+        }
       });
       const data = Object.keys(cycleData).sort().map(year => ({
         x: year, y: cycleData[year].count > 0 ? cycleData[year].performance / cycleData[year].count : null
@@ -303,7 +319,7 @@ class ElectionCycleCharts {
       type: 'line', data: { datasets },
       options: { responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false },
         plugins: { title: { display: true, text: this.translations.charts.timeline.title, font: { size: 16, weight: 'bold' } }, legend: { display: true, position: 'bottom' }, tooltip: { callbacks: { label: (context: { parsed: { x: number; y: number }; dataset: { label?: string }; label: string; raw: Record<string, unknown> }) => `${context.dataset.label}: ${context.parsed.y ? context.parsed.y.toFixed(2) : 'N/A'}` } } },
-        scales: { x: { type: 'category', title: { display: true, text: this.translations.filters.cycle } }, y: { beginAtZero: false, min: 50, max: 100, title: { display: true, text: 'Performance Score' } } }
+        scales: { x: { type: 'category', title: { display: true, text: this.translations.filters.cycle } }, y: { beginAtZero: false, min: 0, max: 100, title: { display: true, text: 'Performance Score' } } }
       }
     });
   }
@@ -398,12 +414,18 @@ class ElectionCycleCharts {
     const ctx = canvas.getContext('2d');
     if (this.charts[canvasId]) this.charts[canvasId].destroy();
 
+    // Accept the legacy `ntile_party_tier` column or the modern
+    // `ntile_effectiveness` from decision-intelligence CSV (both 1..4
+    // tile classifications). Sample exports ship with only one of the
+    // two; the chart must work with either so the dashboard never
+    // renders an empty stacked-bar.
     const cycleData: Record<string, Record<number, number>> = {};
     comparativeData.forEach(d => {
-      const cycle = String(d['election_cycle_id'] ?? d['cycle_year'] ?? '');
-      const tier = Number(d['ntile_party_tier']);
+      const cycle = String(d['election_cycle_id'] ?? d['cycle_year'] ?? d['calendar_year'] ?? d['year'] ?? '');
+      const tierRaw = d['ntile_party_tier'] ?? d['ntile_effectiveness'] ?? d['ntile_performance'];
+      const tier = Number(tierRaw);
       if (!cycleData[cycle]) cycleData[cycle] = { 1: 0, 2: 0, 3: 0, 4: 0 };
-      if (tier >= 1 && tier <= 4) cycleData[cycle][tier]++;
+      if (Number.isFinite(tier) && tier >= 1 && tier <= 4) cycleData[cycle][tier]++;
     });
     const cycles = Object.keys(cycleData).sort();
 
@@ -493,11 +515,21 @@ export class ElectionCycleDashboard {
     const predictive = this.filterData(this.dataManager.data.predictive);
     const temporal = this.filterData(this.dataManager.data.temporal);
 
-    this.chartRenderer.renderTimeline('cycle-timeline-chart', comparative);
+    // Timeline + party tier charts need the per-party, per-cycle
+    // decision-intelligence dataset (it carries `party`, `cycle_year`,
+    // `temporal_approval_rate`, `ntile_effectiveness`). The
+    // comparative-analysis CSV is aggregated by year and lacks the
+    // party dimension, which previously left both charts empty in
+    // production (the "no data visible" regression). Fall back to
+    // comparative if decision data is missing for backwards
+    // compatibility with older CIA exports.
+    const partyCycleData = decision.length > 0 ? decision : comparative;
+
+    this.chartRenderer.renderTimeline('cycle-timeline-chart', partyCycleData);
     this.chartRenderer.renderDecisionHeatmap('decision-heatmap', decision);
     this.chartRenderer.renderRiskForecast('risk-forecast-chart', predictive);
     this.chartRenderer.renderTemporalTrends('temporal-trends-chart', temporal);
-    this.chartRenderer.renderPartyTierChart('party-tier-chart', comparative);
+    this.chartRenderer.renderPartyTierChart('party-tier-chart', partyCycleData);
   }
 
   private showLoading(): void {
