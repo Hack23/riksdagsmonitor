@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.29% </span>
+                <span class="strong">77.77% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>26/27</span>
+                <span class='fraction'>21/27</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>12/12</span>
+                <span class='fraction'>3/12</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>24/25</span>
+                <span class='fraction'>20/25</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -193,7 +193,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">124868x</span>
+<span class="cline-any cline-yes">125036x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -204,33 +204,33 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">57693x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">57687x</span>
-<span class="cline-any cline-yes">57678x</span>
-<span class="cline-any cline-yes">50700x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">124868x</span>
-<span class="cline-any cline-yes">124868x</span>
-<span class="cline-any cline-yes">124868x</span>
-<span class="cline-any cline-yes">124868x</span>
-<span class="cline-any cline-yes">18300x</span>
-<span class="cline-any cline-yes">18300x</span>
-<span class="cline-any cline-yes">18300x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">125036x</span>
+<span class="cline-any cline-yes">125036x</span>
+<span class="cline-any cline-yes">125036x</span>
+<span class="cline-any cline-yes">125036x</span>
+<span class="cline-any cline-yes">125036x</span>
+<span class="cline-any cline-yes">125036x</span>
+<span class="cline-any cline-yes">125036x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -290,16 +290,16 @@ export function loadGitTimestamps(): void {
     });
     let currentTimestamp = '';
     for (const line of output.split('\n')) {
-      if (line.startsWith('COMMIT ')) {
-        currentTimestamp = new Date(line.substring(7)).toISOString();
-      } else if (line.trim() &amp;&amp; currentTimestamp) {
-        if (!gitTimestampCache.has(line)) {
-          gitTimestampCache.set(line, currentTimestamp);
+<span class="cstat-no" title="statement not covered" >      if (line.startsWith('COMMIT ')) {</span>
+<span class="cstat-no" title="statement not covered" >        currentTimestamp = new Date(line.substring(7)).toISOString();</span>
+      } else <span class="cstat-no" title="statement not covered" >if (line.trim() &amp;&amp; currentTimestamp) {</span>
+<span class="cstat-no" title="statement not covered" >        if (!gitTimestampCache.has(line)) {</span>
+<span class="cstat-no" title="statement not covered" >          gitTimestampCache.set(line, currentTimestamp);</span>
         }
       }
     }
   } catch (_error: unknown) {
-<span class="cstat-no" title="statement not covered" >    console.warn('⚠️ Git timestamps unavailable — falling back to filesystem mtime');</span>
+    console.warn('⚠️ Git timestamps unavailable — falling back to filesystem mtime');
   }
 }
 &nbsp;
@@ -313,7 +313,7 @@ export function getFileModTime(filePath: string): string {
   loadGitTimestamps();
   const relativePath = path.relative(ROOT_DIR, filePath).split(path.sep).join('/');
   const cached = gitTimestampCache.get(relativePath);
-  if (cached) return cached;
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (cached) <span class="cstat-no" title="statement not covered" >return cached;</span>
   try {
     const stats = fs.statSync(filePath);
     return stats.mtime.toISOString();
@@ -328,7 +328,7 @@ export function getFileModTime(filePath: string): string {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-13T21:52:07.854Z
+                at 2026-05-13T23:06:37.891Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
