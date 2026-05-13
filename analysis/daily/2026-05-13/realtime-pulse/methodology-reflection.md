@@ -92,3 +92,37 @@
 4. **Full text enrichment** — 39% metadata-only document coverage is too high; investigate riksdag-regering pagination parameters
 
 *Admiralty Grade: A2 — Reliable source, probably true (self-assessment; no external validation available).*
+
+## Re-run Log — 2026-05-13 14:22 UTC (IMPROVEMENT_MODE)
+
+**Trigger**: 22/23 artifacts found on pre-flight check; `data-download-manifest.md` missing; IMPROVEMENT_MODE=true.
+
+### What Changed
+
+| Item | Pass 1 State | Pass 2 State | Reason |
+|------|-------------|-------------|--------|
+| `data-download-manifest.md` | MISSING | CREATED | 23rd artifact; full manifest of 21 docs + full-text outcomes |
+| `synthesis-summary.md` | C party absent | C party added as critical new finding | Re-run MCP query found HD024157/159/160/161 |
+| `intelligence-assessment.md` | KJ-3 S/V only | KJ-3 updated: S+C+MP opposition; Prop 265 amendment scenario added | C motions broaden opposition |
+| `executive-brief.md` | BLUF: S+V offensive | BLUF: S+C+V+MP offensive | Multi-party migration opposition |
+| `coalition-mathematics.md` | No C section | C internal tension section added with 3-scenario table | Critical coalition management risk |
+
+### New Documents Discovered in Re-run
+
+14 new dok_ids not in pass1 analysis:
+- HD024155, HD024156, HD024157, HD024158, HD024159, HD024160, HD024161 (migration counter-motions S+C)
+- HD10487 (S/equalization → Slottner/KD), HD10489 (Al-Nakba), HD10490 (SD/Cuba), HD10491 (MP/Stockholm emissions)
+- And prior HD024162 (transport infrastructure skrivelse)
+
+### Methodological Lesson
+
+Re-run MCP queries return later-filed documents on the same date. The initial pass captured documents filed before ~10:58Z; the re-run captured documents filed through ~14:00Z. **For realtime-pulse analysis, a second MCP query at 14:00Z local should be standard procedure** (add to data-download methodology).
+
+### ICD 203 Audit Re-check
+
+All five KJs re-evaluated for confirmation bias after C party finding:
+- KJ-3 confidence **lowered** from HIGH to MEDIUM as a result (broadened opposition = higher uncertainty on amendment probability)
+- No other KJ confidence changes
+- DEVIL'S ADVOCATE position on migration: "What if C's child-rights motion PASSES?" added to scenario tree
+
+*Re-run completed: 2026-05-13T14:22Z*

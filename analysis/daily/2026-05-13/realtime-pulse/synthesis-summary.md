@@ -111,15 +111,35 @@ quadrantChart
 
 The eldercare, gender pay, and migration themes compound: workers in eldercare are predominantly women (the gender pay gap target population), many are employed through the private providers whose quality KU35 attempts to improve, and some are from migrant backgrounds affected by the migration reform package. This creates a nested risk: the government's migration reform damages the labour supply for a sector (eldercare) that is already understaffed by 50,000.
 
+## Re-run Delta — 2026-05-13 14:22 UTC
+
+**Critical new finding**: Center Party (C) also filed 4 migration-reform counter-motions on 2026-05-13 (HD024157, HD024159, HD024160, HD024161). This BROADENS the migration opposition coalition. The original synthesis understated the breadth of opposition — it was not only S+V+MP but also C challenging the migration package on child rights (HD024160) and proportionality grounds (HD024161).
+
+**Revised Intelligence Picture**: The opposition front against the migration reform package is now **S + C + MP** (with V interpolation pressure). C's specific concern — children in detention must be in barnsäkrade facilities (HD024160) — creates a child-rights fault line within the coalition where M must balance SD's preference for strict detention with C's human-rights position. This is a potential **coalition management risk** that was absent from the initial analysis.
+
+**Additional new documents**: HD024155+HD024158 (S and C both challenge Prop 251 on mental health care integration — SoU committee); HD10487 (S interpellation on equalization system for welfare → Slottner/KD); HD10491 (MP second interpellation on Stockholm vehicle emissions → Britz/L, doubling climate pressure).
+
+**Updated Evidence Anchors** (new additions):
+
+| Claim | Evidence | Retrieved | Confidence |
+|-------|----------|-----------|------------|
+| C filed motion to reject abolition of permanent residence | HD024157, SfU, C party | 2026-05-13T14:20Z | [A1] |
+| C filed motion for child-rights guarantees in detention | HD024160, SfU, C party — child detention barnsäkrade | 2026-05-13T14:20Z | [A1] |
+| C filed motion on vandel proportionality | HD024161, SfU, C party | 2026-05-13T14:20Z | [A1] |
+| S interpellation on equalization system → Slottner/KD | HD10487, S party, addressee Civilminister Slottner | 2026-05-13T14:20Z | [A1] |
+| MP second interpellation on Stockholm vehicle emissions → Britz | HD10491, MP party, addressee Britz | 2026-05-13T14:20Z | [A1] |
+
 ## Forward Intelligence
 
 **3-day watch** (T+72h):
 - KU35 plenary debate outcome — will S/V oppose any provisions?
-- Any government or coalition press response to S motions on migration
+- Any government or coalition press response to S+C motions on migration
+- Watch M's response to C's child-rights detention challenge (HD024160)
 
 **7-day watch** (T+7d):
-- Further S/V motions on Props 265 (förvar/detention) and 263 (återvändande) — more committee motions expected
+- Government response to broadened opposition — C's child-rights position may force limited concessions
 - Polling data: V's dual interpellation strategy lands best if media picks up eldercare angle
+- SD reaction to C's migration opposition — framing as "open borders" or acknowledging legitimate child-rights concern?
 
 **30-day watch** (T+30d):
 - 29 May: Ministerial responses from Tenje and Britz — critical PIR-ELDER-2026 and PIR-GENDERPAY-2026 collection date

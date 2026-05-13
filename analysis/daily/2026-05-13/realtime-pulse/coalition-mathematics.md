@@ -57,7 +57,36 @@ Sweden's Sainte-Laguë method is sensitive to small polling changes at threshold
 
 If L falls below threshold, its 15 seats are redistributed proportionally — benefiting primarily S and SD (the two largest parties). This would give S approximately +3 additional seats and SD approximately +2, further strengthening the case for a left majority.
 
-## Key Trigger: 29 May Ministerial Responses
+## C Party Internal Tension (New Finding — 2026-05-13 Re-run)
+
+**Center Party paradox**: C is a government-supporting party yet today filed 4 migration opposition motions. This is the key coalition management finding from the re-run analysis.
+
+C's motions do NOT challenge the government's mandate — they challenge specific implementation details:
+- HD024157: permanent residence permit abolition → C wants preservation
+- HD024160: child detention → C demands barnsäkrade facilities (non-negotiable child rights)
+- HD024161: vandel concept → C wants unified proportionality standard
+
+**Why this matters for coalition arithmetic**: C's 23 seats are formally in the opposition bloc (173 seats) but C supports the Tidö government's budget. C voting for its own migration motions while the government defeats them with 176 votes is NORMAL in Swedish parliamentary practice — **it does not threaten the government's majority**. However:
+
+1. If C's child-rights motion (HD024160) GAINS SUPPORT from L (which has libertarian human-rights instincts), the intra-coalition dynamic shifts.
+2. A government concession to C on HD024160 (child detention barnsäkring) would be a **face-saving gesture** that allows C to claim a win without the reform failing.
+3. An outright defeat of HD024160 could harden C's oppositional posture ahead of the election — reducing C's willingness to support post-election M-led government formation.
+
+| Scenario | Coalition Impact | Probability |
+|---------|-----------------|------------|
+| Government defeats all C motions, no concession | C maintains formal opposition; election rhetoric hardens | 60% |
+| Government accommodates HD024160 (child detention) | C gets human-rights win; coalition tension reduced; L relieved | 30% |
+| C escalates to vote with S on Prop 262 (permanent residence) | Direct cross-bloc solidarity — coalition crisis signal | 10% |
+
+**Updated arithmetic for defection scenarios** (revised from prior section):
+
+| Defection type | Vote count | Result |
+|---------------|-----------|--------|
+| C defects on HD024160 only (child detention) | 176 vs 173 → 173 vs 176 if C joins S | Government loses Prop 265 specific vote |
+| C defects on HD024157 (permanent residence) | 176 vs 173 | C+S+V+MP = 173 — still insufficient |
+| Any 3 government-bloc defections | 173 vs 175 | Government loses |
+
+The first scenario (HD024160 specific vote) has the highest real-world probability because child protection is a C/L shared value and one that is harder for M to refuse publicly.
 
 The ministerial responses to HD10484 and HD10486 (due 29 May) are the most significant near-term political events affecting coalition mathematics. Weak responses that generate sustained media coverage through June could accelerate L's polling decline by 0.3-0.5 pp — potentially pushing L below the threshold band.
 
