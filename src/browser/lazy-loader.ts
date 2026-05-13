@@ -7,8 +7,16 @@
  * Falls back to immediate loading when IntersectionObserver is unavailable.
  *
  * @performance Each lazy dashboard defers its dynamic import() until the section
- * scrolls into view (plus a 200 px pre-fetch margin), preventing Chart.js (~200 KB),
- * D3 (~250 KB) and PapaParse (~50 KB) from blocking the initial parse/render.
+ * scrolls into view (plus a `DEFAULT_ROOT_MARGIN` pre-fetch margin), preventing
+ * Chart.js (~200 KB), D3 (~250 KB) and PapaParse (~50 KB) from blocking the
+ * initial parse/render.
+ *
+ * The default pre-fetch margin (`2000 px`) is intentionally generous so that on
+ * dedicated `/dashboards/<name>.html` pages — where a single dashboard container
+ * frequently sits 1 000–1 500 px below the fold beneath hero + navigation — the
+ * IntersectionObserver still fires immediately without any user scroll. A
+ * narrower 200 px margin (the previous default) silently broke those pages
+ * because the dashboard never entered the observer's root.
  */
 
 import { logger } from './shared/logger.js';
@@ -25,6 +33,39 @@ export interface LazyDashboard {
 
 /** CSS class applied to a container while its module is loading. */
 export const CHART_SKELETON_CLASS = 'chart-skeleton';
+
+/**
+ * Default `IntersectionObserver` `rootMargin` used by {@link initLazyDashboards}.
+ *
+ * Set generously (≈ 2 viewport heights) so that on dedicated dashboard pages
+ * (`/dashboards/<name>.html`) the single below-fold dashboard container always
+ * pre-fetches without requiring user scroll — the previous `200px` value left
+ * those pages with empty charts until the user scrolled, because the only
+ * dashboard on the page sits ~1 000–1 500 px below a 720 px viewport.
+ *
+ * Tests assert this exact value to lock the contract.
+ */
+export const DEFAULT_ROOT_MARGIN = '2000px';
+
+/** Default intersection threshold paired with {@link DEFAULT_ROOT_MARGIN}. */
+export const DEFAULT_THRESHOLD = 0.01;
+
+/**
+ * Parse the first component of an `IntersectionObserver` `rootMargin` string
+ * (e.g. `"2000px"`, `"100px 50px"`) into a pixel number. Returns `0` when the
+ * value is missing, percentage-based, or otherwise unparseable — this is
+ * intentionally conservative so the eager-load fallback never fires for
+ * containers that the observer itself would not consider intersecting.
+ */
+export function parseRootMarginPx(rootMargin: string | undefined): number {
+  if (!rootMargin) return 0;
+  const first = rootMargin.trim().split(/\s+/)[0];
+  if (!first) return 0;
+  const match = /^(-?\d+(?:\.\d+)?)px$/.exec(first);
+  if (!match) return 0;
+  const value = Number(match[1]);
+  return Number.isFinite(value) ? value : 0;
+}
 
 // ─── Public API ───────────────────────────────────────────────────────────────
 
@@ -49,7 +90,10 @@ export const CHART_SKELETON_CLASS = 'chart-skeleton';
  */
 export function initLazyDashboards(
   dashboards: LazyDashboard[],
-  options: IntersectionObserverInit = { rootMargin: '200px', threshold: 0.01 },
+  options: IntersectionObserverInit = {
+    rootMargin: DEFAULT_ROOT_MARGIN,
+    threshold: DEFAULT_THRESHOLD,
+  },
 ): IntersectionObserver | undefined {
   if (typeof IntersectionObserver === 'undefined') {
     for (const { containerId, loader } of dashboards) {
@@ -108,6 +152,43 @@ export function initLazyDashboards(
     }
     pending.set(el, loader);
     observer.observe(el);
+  }
+
+  // Belt-and-suspenders fallback: on dedicated dashboard pages the single
+  // observed container often sits 1 000–1 500 px below the fold, well
+  // outside the default 200 px pre-fetch margin used previously. Even with
+  // the new 2 000 px DEFAULT_ROOT_MARGIN, some browser / iframe contexts
+  // (e.g. Cypress AUT) do not always deliver an initial intersection entry
+  // without a user-driven scroll, leaving the dashboard empty until the
+  // user scrolls. Defensively probe each observed container's geometry
+  // against the configured rootMargin one frame after registration and
+  // synthesise a load for anything that would intersect — this fires the
+  // loader exactly once regardless of whether the observer also fires.
+  if (typeof window !== 'undefined' && typeof window.requestAnimationFrame === 'function') {
+    const rootMarginPx = parseRootMarginPx(options.rootMargin);
+    window.requestAnimationFrame(() => {
+      for (const [el, loaderFn] of pending) {
+        const rect = (el as HTMLElement).getBoundingClientRect();
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+        const intersects = rect.bottom >= -rootMarginPx && rect.top <= viewportHeight + rootMarginPx;
+        if (!intersects) continue;
+
+        observer.unobserve(el);
+        pending.delete(el);
+
+        (el as HTMLElement).classList.add(CHART_SKELETON_CLASS);
+        Promise.resolve()
+          .then(() => loaderFn())
+          .then(() => {
+            (el as HTMLElement).classList.remove(CHART_SKELETON_CLASS);
+            logger.debug(`✓ eager-loaded #${el.id} (near-viewport)`);
+          })
+          .catch((err: unknown) => {
+            (el as HTMLElement).classList.remove(CHART_SKELETON_CLASS);
+            logger.error(`✗ eager load failed #${el.id}:`, err);
+          });
+      }
+    });
   }
 
   return observer;
