@@ -310,6 +310,61 @@ describe('minify-dist', () => {
 
     await fs.rm(fixture, { recursive: true, force: true });
   });
+
+  it('skips Vite-bundled JS chunks under assets/js/ (PapaParse SyntaxError regression)', async () => {
+    // Regression: post-PR #2455 the live site served broken
+    // `/assets/js/papa-DM4m4M4O.js` with `var n=A, r=B, this.method()`
+    // (an invalid var declaration) — `coderaiser/minify` had stripped
+    // the outer parentheses from the comma-expression initializer
+    // emitted by esbuild (`var n=A, r=(B, this.method())`), producing
+    // `SyntaxError: Unexpected token 'this'` and breaking every CIA
+    // dashboard on every language hub page. Skipping `assets/js/` in
+    // SKIP_SUBPATHS keeps Vite/esbuild-minified bundles byte-stable
+    // through the deploy pipeline.
+    const fixture = await fs.mkdtemp(path.join(os.tmpdir(), 'rm-minify-assetsjs-'));
+    const assetsJsDir = path.join(fixture, 'assets', 'js');
+    await fs.mkdir(assetsJsDir, { recursive: true });
+
+    // Realistic esbuild output excerpt — the exact pattern that
+    // @putout/minify miscompiled in the field.
+    const bundleBefore =
+      `import{t as me}from"./rolldown-runtime.js";` +
+      `var ke=me(((he,ue)=>{((re,v)=>{re.Papa=v()})(he,function(){` +
+      `function N(e){` +
+      `this._partialLine="",` +
+      `this.parseChunk=function(t){` +
+      `var n=this._partialLine+t,r=(this._partialLine="",this._handle.parse(n,!this._finished));` +
+      `return r}}` +
+      `return N})}));export{ke as t};\n`;
+    const bundlePath = path.join(assetsJsDir, 'papa-ABCD1234.js');
+    await fs.writeFile(bundlePath, bundleBefore, 'utf8');
+
+    // Sanity baseline: an authored static JS file OUTSIDE the skip
+    // subtree must still be minified, proving the skip is targeted.
+    const authoredJsDir = path.join(fixture, 'js');
+    await fs.mkdir(authoredJsDir, { recursive: true });
+    const authoredJs = path.join(authoredJsDir, 'back-to-top.js');
+    const authoredBefore =
+      `// authored static JS\n` +
+      `(function () {\n` +
+      `    'use strict';\n` +
+      `    var button = document.getElementById('back-to-top');\n` +
+      `    if (button) { button.addEventListener('click', function () {}); }\n` +
+      `}());\n`;
+    await fs.writeFile(authoredJs, authoredBefore, 'utf8');
+
+    await minifyRun(fixture);
+
+    // Vite-bundled chunk is byte-identical (skipped) — esbuild
+    // already minified it, no further mutation is desirable or safe.
+    expect(await fs.readFile(bundlePath, 'utf8')).toBe(bundleBefore);
+    // Outside-the-skip-tree authored JS still got minified
+    // (shorter than the formatted original).
+    const authoredAfter = await fs.readFile(authoredJs, 'utf8');
+    expect(authoredAfter.length).toBeLessThan(authoredBefore.length);
+
+    await fs.rm(fixture, { recursive: true, force: true });
+  });
 });
 
 describe('deploy-s3 wiring', () => {

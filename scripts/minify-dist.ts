@@ -23,15 +23,27 @@
  *   - whole directories matched by `SKIP_DIRS` (`node_modules`, `.git`,
  *     `.vite`, `cia-data`, `coverage`, `test-results`) — none of these
  *     ship runtime-minifiable text;
- *   - whole subtrees matched by `SKIP_SUBPATHS` — currently the
- *     vendored Mermaid ESM bundle under `js/lib/mermaid/`. Mermaid
- *     ships pre-optimized chunks (`chunk-*.mjs` and the entry
- *     `mermaid.esm.min.mjs`); only the entry carries the `.min.`
- *     basename marker, so a path-based skip is required to also
- *     exclude the chunk graph. Re-running `coderaiser/minify` over
- *     those chunks risks corrupting `import.meta.url` semantics and
- *     the dynamic-import graph the Mermaid runtime depends on
- *     (regression observed after PR #2428).
+ *   - whole subtrees matched by `SKIP_SUBPATHS`:
+ *       • the vendored Mermaid ESM bundle under `js/lib/mermaid/`.
+ *         Mermaid ships pre-optimized chunks (`chunk-*.mjs` and the
+ *         entry `mermaid.esm.min.mjs`); only the entry carries the
+ *         `.min.` basename marker, so a path-based skip is required
+ *         to also exclude the chunk graph. Re-running
+ *         `coderaiser/minify` over those chunks risks corrupting
+ *         `import.meta.url` semantics and the dynamic-import graph
+ *         the Mermaid runtime depends on (regression observed after
+ *         PR #2428).
+ *       • every Vite/esbuild-bundled JS chunk under `assets/js/`.
+ *         These are already esbuild-minified at build time
+ *         (`vite.config.js → build.minify: 'esbuild'`), so re-running
+ *         `coderaiser/minify` yields zero compression while actively
+ *         CORRUPTING valid JS: `@putout/minify` strips outer parens
+ *         around a comma-expression initializer in a `var` declarator
+ *         (`var n=A, r=(B, this.method())` → `var n=A, r=B, this.method()`),
+ *         which is no longer a valid var declaration. That regression
+ *         broke `assets/js/papa-*.js` (PapaParse `Streamer.parseChunk`)
+ *         and via the import chain ALL 9 CIA dashboards on every one
+ *         of the 14 language hub pages.
  *   - any file whose extension is not in the target set (`.html`,
  *     `.css`, `.js`, `.mjs`) — so JSON, CSV, images, fonts, source
  *     maps and the like are simply never collected by `collect()`;
@@ -84,9 +96,29 @@ const SKIP_DIRS = new Set([
  *     `.min.` basename marker, so the per-file `.min.` skip alone
  *     leaves them in scope.  Re-running `coderaiser/minify` over
  *     those chunks risks corrupting the dynamic-import graph.
+ *   - `assets/js` — Vite/esbuild-bundled application chunks
+ *     (`assets/js/*.js`).  These are ALREADY esbuild-minified at
+ *     build time (vite.config.js sets `build.minify: 'esbuild'`),
+ *     so re-running `coderaiser/minify` (which uses
+ *     `@putout/minify` under the hood) yields zero compression
+ *     while actively CORRUPTING valid JS.  Specifically,
+ *     `@putout/minify` strips the outer parentheses from a
+ *     comma-expression initializer in a `var` declarator, so
+ *     valid `var n=A, r=(B, C);` becomes invalid
+ *     `var n=A, r=B, C;` — when `C` is a method call
+ *     (`this._handle.parse(...)`), the browser refuses to parse
+ *     the module with `SyntaxError: Unexpected token 'this'`.
+ *     That bug broke every CIA dashboard chunk that imports
+ *     `assets/js/papa-*.js` (PapaParse — the failing fragment is
+ *     in `Streamer.parseChunk`).  Skipping the whole subtree is
+ *     the only safe option: every file under `assets/js/` is a
+ *     Vite-bundled output (esbuild minified, source-mapped,
+ *     content-hashed), and no other tool ever needs to read or
+ *     mutate those bytes after Vite has emitted them.
  */
 const SKIP_SUBPATHS = new Set([
   'js/lib/mermaid',
+  'assets/js',
 ]);
 
 /**
