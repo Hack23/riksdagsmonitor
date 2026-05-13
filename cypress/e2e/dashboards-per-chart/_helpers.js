@@ -233,6 +233,10 @@ export function runDashboardSuite(cfg) {
       cy.visitDashboard(cfg.path, cfg.containerId);
     });
 
+    afterEach(() => {
+      cy.assertNoConsoleErrors();
+    });
+
     it('serves the page with HTTP 200 and a hashed entry script', () => {
       cy.request(cfg.path).then((res) => {
         expect(res.status, `GET ${cfg.path}`).to.equal(200);

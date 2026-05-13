@@ -102,7 +102,11 @@ describe('All Dashboards - Comprehensive Coverage', () => {
       beforeEach(() => {
         // Use real CIA CSV sample data from the repository to ensure correct schemas per dashboard
         // cy.stubCIAData(); // Disabled: causes dashboards to render empty/fallback states
-        cy.visit(`/dashboards/${dashboard.slug}.html`);
+        cy.visitDashboard(`/dashboards/${dashboard.slug}.html`, dashboard.id);
+      });
+
+      afterEach(() => {
+        cy.assertNoConsoleErrors();
       });
       
       it('should exist and be visible', () => {
@@ -114,9 +118,8 @@ describe('All Dashboards - Comprehensive Coverage', () => {
       });
       
       it('should not have error messages', () => {
-        // Some dashboards may surface recoverable, chart-level warnings during async data loading.
-        // Validate dashboard container remains visible and usable.
         cy.get(`#${dashboard.id}`).should('be.visible');
+        cy.assertNoConsoleErrors();
       });
       
       it('should have data attribution', () => {

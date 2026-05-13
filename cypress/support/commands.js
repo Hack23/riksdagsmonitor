@@ -207,10 +207,45 @@ Cypress.Commands.add('waitForGlobals', (opts = {}) => {
  * @param {string} containerId dashboard root container to scroll into view
  */
 Cypress.Commands.add('visitDashboard', (path, containerId) => {
-  cy.visit(path);
+  cy.visit(path, {
+    onBeforeLoad(win) {
+      const consoleErrors = [];
+      const originalError = win.console.error.bind(win.console);
+      win.__rdmConsoleErrors = consoleErrors;
+      cy.stub(win.console, 'error')
+        .callsFake((...args) => {
+          consoleErrors.push(args);
+          originalError(...args);
+        })
+        .as('consoleError');
+    },
+  });
   if (containerId) {
     cy.get(`#${containerId}`, { timeout: 15000 }).should('exist').scrollIntoView();
   }
+});
+
+function formatConsoleArg(arg) {
+  if (arg instanceof Error) {
+    return `${arg.name}: ${arg.message}`;
+  }
+  if (typeof arg === 'string') {
+    return arg;
+  }
+  try {
+    return JSON.stringify(arg);
+  } catch {
+    return String(arg);
+  }
+}
+
+Cypress.Commands.add('assertNoConsoleErrors', () => {
+  cy.window().then((win) => {
+    const messages = (win.__rdmConsoleErrors || []).map((args) =>
+      args.map(formatConsoleArg).join(' '),
+    );
+    expect(messages, 'dashboard console.error messages').to.deep.equal([]);
+  });
 });
 
 /**

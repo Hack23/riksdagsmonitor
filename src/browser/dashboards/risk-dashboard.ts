@@ -162,9 +162,9 @@ function getRiskColor(score: number): string {
 }
 
 function parseCSV(text: string): CSVRow[] {
-  const Papa = (globalThis as { Papa?: { parse: (text: string, config: { header: boolean; skipEmptyLines: boolean }) => { data: CSVRow[] } } }).Papa;
-  if (Papa) {
-    const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
+  const papaParser = (globalThis as { Papa?: { parse: (text: string, config: { header: boolean; skipEmptyLines: boolean }) => { data: CSVRow[] } } }).Papa;
+  if (papaParser) {
+    const parsed = papaParser.parse(text, { header: true, skipEmptyLines: true });
     return parsed.data;
   }
   const lines = text.trim().split('\n');
