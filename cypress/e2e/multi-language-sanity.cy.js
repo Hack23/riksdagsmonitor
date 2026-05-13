@@ -295,7 +295,7 @@ describe('Multi-Language Sanity Tests', () => {
 
       testLanguages.forEach((langCode) => {
         cy.visit('/');
-        cy.get(`nav.rm-lang-bar a[href="index_${langCode}.html"]`).then(($links) => {
+        cy.get(`nav.rm-lang-bar a[href*="index_${langCode}.html"]`).then(($links) => {
           const $visible = $links.filter(':visible');
           expect($visible, `visible language bar link for ${langCode}`).to.have.length.greaterThan(0);
           cy.wrap($visible.first()).click();
