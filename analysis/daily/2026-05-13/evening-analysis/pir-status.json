@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-05-13",
+  "subfolder": "evening-analysis",
+  "cycle": "evening-analysis",
+  "generated": "2026-05-13T19:00:00Z",
+  "pirs": [
+    {
+      "id": "PIR-EA-001",
+      "title": "Coalition Vote on Migration Package (Props 262-265)",
+      "status": "active",
+      "priority": "critical",
+      "dok_ids": ["HD024152","HD024155","HD024158","HD024161","HD024164","HD024168","HD024169","HD024172","HD024173","HD024175","HD024182","HD024183"],
+      "assessment": "Government coalition (M+SD+KD+L=176) expected to pass all 4 propositions; L defection on prop.265 is key risk (P=18%)",
+      "next_update": "2026-06-10",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "PIR-EA-002",
+      "title": "ECHR Compatibility of Prop. 265 Detention Provisions",
+      "status": "active",
+      "priority": "high",
+      "dok_ids": ["HD024172","HD024182"],
+      "assessment": "ECHR Art.5 scrutiny required; Lagrådet opinion expected 2026-05-28; ECHR challenge likely within 2 years",
+      "next_update": "2026-05-28",
+      "confidence": "MEDIUM-HIGH"
+    },
+    {
+      "id": "PIR-EA-003",
+      "title": "L Party Electoral Threshold (4%)",
+      "status": "watch",
+      "priority": "high",
+      "dok_ids": [],
+      "assessment": "L at 4.2% in April 2026 Novus polling; threshold risk is real; L defection on migration package would reduce threshold probability",
+      "next_update": "2026-06-01",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "PIR-EA-004",
+      "title": "S Migration Platform Differentiation Before Election",
+      "status": "watch",
+      "priority": "medium",
+      "dok_ids": ["HD024152","HD024155"],
+      "assessment": "S filed 5 counter-motions but lacks coherent alternative platform; S congress June 2026 is resolution opportunity",
+      "next_update": "2026-06-30",
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "PIR-2026-PROP-001",
+      "title": "Coalition stability on security detention (expanded to cover props 262-265)",
+      "status": "active",
+      "priority": "critical",
+      "dok_ids": ["HD03267","HD024172","HD024182"],
+      "assessment": "EXPANDED from propositions PIR: now covers full detention legislative cluster; L position on prop.265 is the unified watch signal",
+      "next_update": "2026-06-10",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "PIR-2026-PROP-002",
+      "title": "ECHR challenge probability (expanded to cover props 263-265)",
+      "status": "watch",
+      "priority": "high",
+      "dok_ids": ["HD03267","HD024169","HD024172","HD024182"],
+      "assessment": "EXPANDED: ECHR challenge likely for detention provisions across the migration package cluster",
+      "next_update": "2027-01-01",
+      "confidence": "MEDIUM-HIGH"
+    },
+    {
+      "id": "PIR-2026-PROP-003",
+      "title": "State e-ID implementation timeline",
+      "status": "watch",
+      "priority": "medium",
+      "dok_ids": ["HD03250"],
+      "assessment": "Stable; HD01KU35 digital meetings framework reinforces digital identity infrastructure needs",
+      "next_update": "2026-11-13",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "PIR-2026-PROP-004",
+      "title": "IMY/GDPR scrutiny of Skatteverket expanded powers",
+      "status": "watch",
+      "priority": "medium",
+      "dok_ids": ["HD03261"],
+      "assessment": "Stable; no new developments today",
+      "next_update": "2026-11-13",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "open_count": 8,
+  "critical_count": 2,
+  "high_count": 3,
+  "medium_count": 3,
+  "carry_forward": true,
+  "prior_pirs": ["PIR-2026-PROP-001","PIR-2026-PROP-002","PIR-2026-PROP-003","PIR-2026-PROP-004"]
+}
