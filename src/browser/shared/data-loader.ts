@@ -186,18 +186,39 @@ export function parseCSV(text: string): CSVRow[] {
   if (PapaGlobal?.parse) {
     return PapaGlobal.parse(text, { header: true, skipEmptyLines: true }).data;
   }
+  return parseCSVFallback(text);
+}
 
-  const lines = text.trim().split('\n');
+/**
+ * Manual CSV parser used when Papa Parse is not available on globalThis.
+ * Kept as a separate function so the dependency between `lines` and
+ * `headers` (the latter reads `lines[0]`) cannot be reordered by an
+ * over-eager minifier — a real-world Rolldown variant has been observed
+ * hoisting `headers` above `lines` and producing a runtime
+ * "Cannot access 'lines' before initialization" TDZ.
+ */
+function parseCSVFallback(text: string): CSVRow[] {
+  const trimmed = text.trim();
+  if (!trimmed) return [];
+  const lines = trimmed.split('\n');
   if (lines.length < 2) return [];
-  const headers = lines[0]!.split(',').map((h) => h.trim().replace(/^"|"$/g, ''));
-  return lines.slice(1).filter((l) => l.trim()).map((line) => {
-    const values = line.split(',').map((v) => v.trim().replace(/^"|"$/g, ''));
+  const headerLine = lines[0] ?? '';
+  const headers = headerLine
+    .split(',')
+    .map((h) => h.trim().replace(/^"|"$/g, ''));
+  const rows: CSVRow[] = [];
+  for (let i = 1; i < lines.length; i++) {
+    const raw = lines[i];
+    if (!raw || !raw.trim()) continue;
+    const values = raw.split(',').map((v) => v.trim().replace(/^"|"$/g, ''));
     const row: CSVRow = {};
-    headers.forEach((header, i) => {
-      row[header] = values[i] ?? '';
-    });
-    return row;
-  });
+    for (let j = 0; j < headers.length; j++) {
+      const key = headers[j] ?? '';
+      row[key] = values[j] ?? '';
+    }
+    rows.push(row);
+  }
+  return rows;
 }
 
 /**
