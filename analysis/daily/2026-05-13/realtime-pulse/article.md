@@ -6,7 +6,7 @@ date: 2026-05-13
 subfolder: realtime-pulse
 slug: 2026-05-13-realtime-pulse
 source_folder: analysis/daily/2026-05-13/realtime-pulse
-generated_at: 2026-05-13T20:54:38.445Z
+generated_at: 2026-05-13T21:42:58.322Z
 language: en
 layout: article
 ---
