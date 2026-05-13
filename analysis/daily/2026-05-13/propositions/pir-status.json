@@ -1,0 +1,53 @@
+{
+  "date": "2026-05-13",
+  "subfolder": "propositions",
+  "generated": "2026-05-13T07:30:00Z",
+  "pirs": [
+    {
+      "id": "PIR-2026-PROP-001",
+      "title": "Coalition stability on security detention law (HD03267)",
+      "status": "active",
+      "priority": "critical",
+      "dok_ids": ["HD03267"],
+      "assessment": "Government expected to pass HD03267 unchanged; L defection risk < 5%",
+      "next_update": "2026-08-13",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "PIR-2026-PROP-002",
+      "title": "ECHR challenge probability for HD03267 detention provisions",
+      "status": "watch",
+      "priority": "high",
+      "dok_ids": ["HD03267"],
+      "assessment": "ECHR challenge likely within 2 years of March 2027 entry into force",
+      "next_update": "2027-03-01",
+      "confidence": "MEDIUM-HIGH"
+    },
+    {
+      "id": "PIR-2026-PROP-003",
+      "title": "State e-ID (HD03250) implementation timeline and BankID response",
+      "status": "watch",
+      "priority": "medium",
+      "dok_ids": ["HD03250"],
+      "assessment": "Legal framework to pass; operational implementation 2027-2029",
+      "next_update": "2026-11-13",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "PIR-2026-PROP-004",
+      "title": "IMY/GDPR scrutiny of HD03261 Skatteverket expanded powers",
+      "status": "watch",
+      "priority": "medium",
+      "dok_ids": ["HD03261"],
+      "assessment": "Low risk of regulatory blockage; IMY scrutiny expected post-passage",
+      "next_update": "2026-11-13",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "open_count": 4,
+  "critical_count": 1,
+  "high_count": 1,
+  "medium_count": 2,
+  "carry_forward": false,
+  "prior_pirs": []
+}
