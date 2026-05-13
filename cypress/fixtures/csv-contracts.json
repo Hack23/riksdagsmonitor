@@ -1,0 +1,463 @@
+{
+  "generatedAt": "2026-05-13T17:35:42.208Z",
+  "contracts": [
+    {
+      "dashboard": "parties",
+      "path": "/cia-data/party/distribution_party_performance.csv",
+      "requiredColumns": [
+        "party",
+        "party_name",
+        "active_members",
+        "inactive_members",
+        "documents_last_year",
+        "motions_last_year",
+        "propositions_last_year",
+        "docs_per_member",
+        "performance_level"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "parties",
+      "path": "/cia-data/party/distribution_party_effectiveness_trends.csv",
+      "requiredColumns": [
+        "party",
+        "year",
+        "quarter",
+        "documents_produced",
+        "motions_count",
+        "active_members",
+        "avg_win_rate",
+        "effectiveness_assessment"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "parties",
+      "path": "/cia-data/party/distribution_party_momentum.csv",
+      "requiredColumns": [
+        "party",
+        "year",
+        "quarter",
+        "period",
+        "participation_rate",
+        "momentum",
+        "trend_direction",
+        "stability_classification"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "parties",
+      "path": "/cia-data/party/distribution_coalition_alignment.csv",
+      "requiredColumns": [
+        "party1",
+        "party2",
+        "shared_votes",
+        "aligned_votes",
+        "opposed_votes",
+        "alignment_rate",
+        "coalition_likelihood",
+        "bloc_relationship"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "parties",
+      "path": "/cia-data/party/distribution_annual_party_members.csv",
+      "requiredColumns": [
+        "year",
+        "party",
+        "active_members"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "coalitions",
+      "path": "/cia-data/parties/distribution_behavioral_patterns_by_party.csv",
+      "requiredColumns": [
+        "party",
+        "behavioral_assessment",
+        "politician_count",
+        "avg_absence_rate"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "coalitions",
+      "path": "/cia-data/parties/distribution_decision_patterns_by_party.csv",
+      "requiredColumns": [
+        "party",
+        "committee",
+        "decision_year",
+        "decision_count",
+        "total_decisions",
+        "avg_approval_rate"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "coalitions",
+      "path": "/cia-data/anomaly/distribution_anomaly_by_party.csv",
+      "requiredColumns": [
+        "party",
+        "anomaly_classification",
+        "politician_count",
+        "avg_rebellions"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "committees",
+      "path": "/cia-data/distribution_committee_productivity_matrix.csv",
+      "requiredColumns": [
+        "committee_code",
+        "committee_name",
+        "year",
+        "quarter",
+        "total_documents",
+        "active_members",
+        "productivity_level",
+        "productivity_assessment"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "committees",
+      "path": "/cia-data/distribution_annual_committee_documents.csv",
+      "requiredColumns": [
+        "year",
+        "committee",
+        "doc_count"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "election-cycle",
+      "path": "/cia-data/election-cycle/view_election_cycle_comparative_analysis_sample.csv",
+      "requiredColumns": [
+        "year",
+        "is_election_year",
+        "total_ballots",
+        "attendance_rate",
+        "avg_yes_rate",
+        "documents_produced",
+        "motions_filed",
+        "proposals_filed",
+        "nearest_election_year",
+        "years_from_election",
+        "election_proximity"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "election-cycle",
+      "path": "/cia-data/election-cycle/view_election_cycle_decision_intelligence_sample.csv",
+      "requiredColumns": [
+        "election_cycle_id",
+        "cycle_year",
+        "calendar_year",
+        "semester",
+        "party",
+        "total_proposals",
+        "approved_proposals",
+        "rejected_proposals",
+        "avg_approval_rate",
+        "decision_effectiveness",
+        "temporal_approval_rate",
+        "ntile_effectiveness",
+        "decision_trend",
+        "legislative_momentum"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "election-cycle",
+      "path": "/cia-data/election-cycle/view_election_cycle_predictive_intelligence_sample.csv",
+      "requiredColumns": [
+        "election_cycle_id",
+        "cycle_year",
+        "calendar_year",
+        "semester",
+        "risk_forecast_category",
+        "politicians_at_risk",
+        "avg_risk_score_change",
+        "ministries_at_risk",
+        "forecast_confidence",
+        "predictive_alert_level"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "election-cycle",
+      "path": "/cia-data/election-cycle/view_election_cycle_temporal_trends_sample.csv",
+      "requiredColumns": [
+        "election_cycle_id",
+        "cycle_year",
+        "calendar_year",
+        "semester",
+        "is_pre_election_semester",
+        "avg_attendance_rate",
+        "total_ballots",
+        "avg_approval_rate",
+        "attendance_trend",
+        "overall_performance_score"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "seasonal-patterns",
+      "path": "/cia-data/seasonal/view_riksdagen_seasonal_activity_patterns_sample.csv",
+      "requiredColumns": [
+        "year",
+        "quarter",
+        "is_election_year",
+        "election_cycle",
+        "total_ballots",
+        "active_politicians",
+        "attendance_rate",
+        "documents_produced",
+        "ballot_z_score",
+        "doc_z_score",
+        "attendance_z_score",
+        "base_activity_classification",
+        "qoq_ballot_change_pct",
+        "seasonal_pattern_classification"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "pre-election",
+      "path": "/cia-data/pre-election/view_riksdagen_pre_election_quarterly_activity_sample.csv",
+      "requiredColumns": [
+        "year",
+        "is_election_year",
+        "total_ballots",
+        "avg_attendance_rate",
+        "avg_win_rate",
+        "avg_rebel_rate",
+        "total_documents",
+        "total_proposals",
+        "total_motions",
+        "total_new_assignments",
+        "avg_party_win_rate",
+        "avg_party_absence_rate",
+        "party_documents_total",
+        "baseline_ballots",
+        "baseline_documents",
+        "baseline_assignments",
+        "ballot_deviation_from_baseline",
+        "document_deviation_from_baseline",
+        "assignment_deviation_from_baseline",
+        "ballot_percent_change_from_baseline",
+        "document_percent_change_from_baseline",
+        "ballot_z_score",
+        "document_z_score",
+        "q4_activity_classification",
+        "yoy_ballot_change_pct"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "pre-election",
+      "path": "/cia-data/pre-election/view_riksdagen_q4_election_year_comparison_sample.csv",
+      "requiredColumns": [
+        "year",
+        "is_election_year",
+        "total_ballots",
+        "attendance_rate",
+        "documents_produced",
+        "ballot_deviation_from_baseline",
+        "doc_deviation_from_baseline",
+        "attendance_deviation_from_baseline",
+        "ballot_percent_change",
+        "doc_percent_change",
+        "q4_pattern",
+        "activity_classification"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "anomaly-detection",
+      "path": "/cia-data/seasonal/view_riksdagen_seasonal_anomaly_detection_sample.csv",
+      "requiredColumns": [
+        "year",
+        "quarter",
+        "is_election_year",
+        "total_ballots",
+        "active_politicians",
+        "attendance_rate",
+        "documents_produced",
+        "ballot_z_score",
+        "doc_z_score",
+        "attendance_z_score",
+        "activity_classification",
+        "anomaly_type",
+        "anomaly_direction",
+        "max_z_score",
+        "anomaly_severity"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "ministers",
+      "path": "/cia-data/ministry/distribution_ministry_productivity_matrix.csv",
+      "requiredColumns": [
+        "ministry_name",
+        "year",
+        "documents_produced",
+        "propositions",
+        "government_bills",
+        "unique_contributors",
+        "performance_assessment"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "ministers",
+      "path": "/cia-data/ministry/distribution_ministry_risk_levels.csv",
+      "requiredColumns": [
+        "risk_level",
+        "period_count",
+        "percentage",
+        "avg_documents"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "ministers",
+      "path": "/cia-data/ministry/distribution_ministry_decision_impact.csv",
+      "requiredColumns": [
+        "ministry_code",
+        "committee",
+        "decision_type",
+        "total_proposals",
+        "approved_proposals",
+        "rejected_proposals",
+        "approval_rate"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "ministers",
+      "path": "/cia-data/ministry/distribution_ministry_effectiveness.csv",
+      "requiredColumns": [
+        "ministry_name",
+        "year",
+        "quarter",
+        "documents_produced",
+        "government_bills",
+        "active_members",
+        "effectiveness_assessment"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "ministers",
+      "path": "/cia-data/ministry/distribution_ministry_risk_quarterly.csv",
+      "requiredColumns": [
+        "year",
+        "quarter",
+        "risk_level",
+        "ministry_count",
+        "avg_documents"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "ministers",
+      "path": "/cia-data/politician/view_riksdagen_politician_influence_metrics_sample.csv",
+      "requiredColumns": [
+        "person_id",
+        "first_name",
+        "last_name",
+        "party",
+        "network_connections",
+        "network_median",
+        "influence_classification",
+        "broker_classification",
+        "influence_assessment"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "ministers",
+      "path": "/cia-data/ministry/view_ministry_productivity_matrix_sample.csv",
+      "requiredColumns": [
+        "org_code",
+        "name",
+        "year",
+        "documents_produced",
+        "propositions",
+        "government_bills",
+        "unique_contributors",
+        "avg_documents",
+        "productivity_quartile",
+        "performance_assessment"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "ministers",
+      "path": "/cia-data/ministry/view_ministry_risk_evolution_sample.csv",
+      "requiredColumns": [
+        "org_code",
+        "name",
+        "assessment_period",
+        "year",
+        "quarter",
+        "documents_produced",
+        "legislative_count",
+        "active_members",
+        "document_trend",
+        "risk_level",
+        "risk_assessment"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "risk",
+      "path": "/cia-data/politician/view_politician_risk_summary_sample.csv",
+      "requiredColumns": [
+        "person_id",
+        "first_name",
+        "last_name",
+        "party",
+        "status",
+        "total_violations",
+        "risk_score",
+        "risk_level",
+        "risk_assessment"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "cia-hub",
+      "path": "/cia-data/election/election_forecast.csv",
+      "requiredColumns": [
+        "id",
+        "name",
+        "currentSeats",
+        "predictedSeats",
+        "change",
+        "voteShare",
+        "confidenceMin",
+        "confidenceMax"
+      ],
+      "minRows": 1
+    },
+    {
+      "dashboard": "cia-hub",
+      "path": "/cia-data/election/coalition_scenarios.csv",
+      "requiredColumns": [
+        "name",
+        "probability",
+        "composition",
+        "totalSeats",
+        "majority",
+        "riskLevel"
+      ],
+      "minRows": 1
+    }
+  ]
+}

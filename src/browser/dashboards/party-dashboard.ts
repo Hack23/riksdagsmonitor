@@ -955,13 +955,10 @@ export function alignmentRateToPercent(rate: number): number {
  */
 function createCoalitionNetwork(data: CSVRow[]): void {
   // The party dashboard HTML uses `id="coalitionAlignmentChart"` for
-  // this region; the legacy `partyCoalitionAlignment` id is kept as a
-  // fallback so older shells continue to work. Without this lookup
-  // both ids the coalition card stays empty in production (the "no
-  // data visible" regression reported for /dashboards/parties.html).
-  const container =
-    document.getElementById('coalitionAlignmentChart') ??
-    document.getElementById('partyCoalitionAlignment');
+  // this region. There is no fallback for any legacy id — adding
+  // one masks shell/code drift. If the HTML id changes, update
+  // dashboards/parties.html and this lookup in the same commit.
+  const container = document.getElementById('coalitionAlignmentChart');
   if (!container) return;
 
   const t = getTranslations();
