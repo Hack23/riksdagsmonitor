@@ -114,7 +114,7 @@ function footer(prefix: string, family: PageFamily, current: Language): string {
   <div class="footer-content">
     <div class="footer-section">
       <a href="${prefix}${indexFile}" aria-label="Riksdagsmonitor ${t.home}">
-        <img src="${prefix}images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="footer-logo" width="80" height="80" loading="lazy">
+        <img src="${prefix}images/riksdagsmonitor-logo.webp" srcset="${prefix}images/riksdagsmonitor-logo-96w.webp 96w, ${prefix}images/riksdagsmonitor-logo-180w.webp 180w" sizes="80px" alt="Riksdagsmonitor" class="footer-logo" width="80" height="80" loading="lazy">
       </a>
       <h3><span aria-hidden="true">📖</span> ${cs.legacyAboutHeading}</h3>
       <p>${cs.legacyAboutBody}</p>
@@ -399,7 +399,7 @@ function legacyNewsHeader(lang: Language): string {
   return `<header class="site-header" role="banner">
 <nav class="article-top-nav" aria-label="${cs.mainNav}">
 <a href="../index${suffix}.html" class="nav-home" aria-label="Riksdagsmonitor ${t.home}">
-  <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+  <img src="../images/riksdagsmonitor-logo.webp" srcset="../images/riksdagsmonitor-logo-48w.webp 48w, ../images/riksdagsmonitor-logo-96w.webp 96w" sizes="48px" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
   <span>Riksdagsmonitor</span>
 </a>
 <span class="nav-separator">|</span>

@@ -18,6 +18,34 @@ import { chromeStrings } from '../chrome-i18n.js';
 import type { BreadcrumbItem, ChromeOptions } from './types.js';
 import { depth, fallbackAlternateHref } from './helpers.js';
 
+const RESPONSIVE_BANNER_WIDTHS = [480, 768, 1024, 1536] as const;
+const RESPONSIVE_LOGO_WIDTHS = [48, 96, 180] as const;
+
+function imageVariantPath(prefix: string, imagePath: string, width: number, format: 'avif' | 'webp'): string {
+  return `${prefix}${imagePath.replace(/\.webp$/u, `-${width}w.${format}`)}`;
+}
+
+function responsiveSrcset(prefix: string, imagePath: string, widths: readonly number[], format: 'avif' | 'webp'): string {
+  return widths.map((width) => `${imageVariantPath(prefix, imagePath, width, format)} ${width}w`).join(', ');
+}
+
+function renderResponsiveLogo(prefix: string): string {
+  const logoPath = 'images/riksdagsmonitor-logo.webp';
+  return `<img class="rm-logo-img" data-rm-logo-img="true" src="${prefix}${logoPath}" srcset="${responsiveSrcset(prefix, logoPath, RESPONSIVE_LOGO_WIDTHS, 'webp')}" sizes="48px" alt="" width="48" height="48" loading="eager" decoding="async">`;
+}
+
+function renderHeroBanner(prefix: string, imagePath: string): string {
+  if (!/^images\/riksdagsmonitor(?:news)?-banner\.webp$/u.test(imagePath)) {
+    return `<img src="${prefix}${imagePath}" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" decoding="async">`;
+  }
+
+  return `<picture class="hero-banner-picture">
+        <source type="image/avif" srcset="${responsiveSrcset(prefix, imagePath, RESPONSIVE_BANNER_WIDTHS, 'avif')}" sizes="100vw">
+        <source type="image/webp" srcset="${responsiveSrcset(prefix, imagePath, RESPONSIVE_BANNER_WIDTHS, 'webp')}" sizes="100vw">
+        <img src="${prefix}${imagePath}" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" decoding="async" fetchpriority="high">
+      </picture>`;
+}
+
 /**
  * Build the complete `<body>…<header>…</header>` + hero + language-bar
  * + breadcrumb + `<main>` opening tag.
@@ -47,6 +75,7 @@ export function buildHeaderHtml(opts: ChromeOptions): string {
     .join('\n');
 
   const tagline = cs.headerTagline;
+  const heroBannerImage = opts.heroBannerImage ?? 'images/riksdagsmonitor-banner.webp';
 
   const breadcrumbItems: readonly BreadcrumbItem[] = opts.breadcrumb ?? [
     { label: t.home, href: `${prefix}${indexFile}` },
@@ -80,7 +109,7 @@ export function buildHeaderHtml(opts: ChromeOptions): string {
     <header class="rm-site-header" role="banner">
       <div class="rm-site-header-inner">
         <a class="rm-logo" href="${prefix}${indexFile}" aria-label="Riksdagsmonitor ${escapeHtml(t.home)}">
-          <img class="rm-logo-img" data-rm-logo-img="true" src="${prefix}images/riksdagsmonitor-logo.webp" alt="" width="48" height="48" loading="eager" decoding="async">
+          ${renderResponsiveLogo(prefix)}
           <span class="rm-logo-glyph" aria-hidden="true">🇸🇪</span>
           <span class="rm-logo-text">
             <span class="rm-logo-brand">Riksdagsmonitor</span>
@@ -149,7 +178,7 @@ ${breadcrumbLis}
       </div>
     </header>${(opts.heroBanner ?? true) ? `
     <div class="hero-banner" aria-hidden="true">
-      <img src="${prefix}${opts.heroBannerImage ?? 'images/riksdagsmonitor-banner.webp'}" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" decoding="async">
+      ${renderHeroBanner(prefix, heroBannerImage)}
     </div>` : ''}${(opts.languageBar ?? true) ? `
     <nav class="language-switcher rm-lang-bar" role="navigation" aria-label="${escapeHtml(cs.thisPageInOtherLanguages)}">
 ${horizontalLangBar}

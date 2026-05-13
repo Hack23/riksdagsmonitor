@@ -55,6 +55,7 @@ fix_type 'image/jpeg'    'public, max-age=31536000, immutable' --include '*.jpg'
 fix_type 'image/gif'     'public, max-age=31536000, immutable' --include '*.gif'
 fix_type 'image/svg+xml' 'public, max-age=31536000, immutable' --include '*.svg'
 fix_type 'image/webp'    'public, max-age=31536000, immutable' --include '*.webp'
+fix_type 'image/avif'    'public, max-age=31536000, immutable' --include '*.avif'
 fix_type 'image/x-icon'  'public, max-age=31536000, immutable' --include '*.ico'
 
 # ── Fonts ──
