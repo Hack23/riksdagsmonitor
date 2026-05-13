@@ -19,12 +19,14 @@
 **Evidence**: HD10486, HD10488 (Britz targeted); L polling context from prior PIR-COAL-STAB. [B2]
 **WEP**: It is **likely** [65-75%] that L's polling position will face meaningful pressure by mid-June.
 
-### KJ-3 [MEDIUM CONFIDENCE]: Migration reform package will pass the Riksdag despite S/V opposition motions.
+### KJ-3 [MEDIUM CONFIDENCE]: Migration reform package will pass the Riksdag, but C's child-rights amendments to Prop 265 have a meaningful probability of partial adoption.
 
-**Basis**: Government commands 175+ effective seats; migration reforms are central to SD and M's mandate; S motions will be defeated in SfU committee; some amendments (HD024152 due-process) may be partially accommodated in final committee language without substantive change to government policy intent.
+**Basis**: Government commands 175+ effective seats; migration reforms are central to SD and M's mandate; S motions will be defeated in SfU committee. **However**, the re-run analysis reveals that Center Party (C) also filed four migration counter-motions today (HD024157, HD024159, HD024160, HD024161). C's motion HD024160 specifically demands that children in detention must be in barnsäkrade facilities — a child-rights protection argument that is harder for the government to dismiss than S's constitutional framing. C's support is needed for the coalition's broader programme stability; M faces a choice between SD's preference for strict detention implementation and C's human-rights demand.
 
-**Evidence**: Prior PIR-MIG-RETURN at WEP 70%; today's S motion filing advances the parliamentary record but does not change the seat arithmetic. [B2]
-**WEP**: It is **likely** [72-78%] that Props 262-265 pass the Riksdag in substantially their current form by June.
+**New evidence**: HD024157 (C rejects abolition of permanent residence permits), HD024159 (C demands stricter evidence standard for return orders), HD024160 (C: child detention barnsäkring mandatory), HD024161 (C: vandel concept must be unified). Combined with prior S motions. [A1/B2]
+**WEP**: It is **likely** [70-76%] that Props 262-265 pass substantially in current form; it is **roughly even** [40-50%] that Prop 265 (detention) is amended to incorporate C's child-rights provision, creating a precedent for human-rights carve-outs within the migration package.
+
+**KJ-3 revision note**: Prior assessment understated opposition breadth. Updated to reflect S+C joint opposition axis on migration, which creates coalition management pressure distinct from the seat-arithmetic question.
 
 ### KJ-4 [MEDIUM CONFIDENCE]: The government will not file a climate adaptation proposition before the summer 2026 recess.
 

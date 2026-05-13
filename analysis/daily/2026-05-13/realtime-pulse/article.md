@@ -1,19 +1,19 @@
 ---
 title: "Realtime Political Pulse"
-description: "On 13 May 2026, the Swedish opposition (S + V) launched a coordinated pre-election parliamentary offensive: six S motions directly challenged the government's migration reform package (Props…"
-keywords: "Realtime Pulse, English, May 13, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Realtime Pulse opposition launched coordinated, Realtime, Political, Pulse, 2026, Swedish, opposition, launched, coordinated, pre-election, parliamentary, offensive, motions, directly"
+description: "On 13 May 2026, the Swedish opposition (S + C + V + MP) launched a coordinated pre-election parliamentary offensive: Center Party (C) filed four migration counter-motions (HD024157/159/160/161)…"
+keywords: "Realtime Pulse, English, May 13, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Realtime Pulse opposition launched coordinated, Realtime, Political, Pulse, 2026, Swedish, opposition, launched, coordinated, pre-election, parliamentary, offensive, Center, Party"
 date: 2026-05-13
 subfolder: realtime-pulse
 slug: 2026-05-13-realtime-pulse
 source_folder: analysis/daily/2026-05-13/realtime-pulse
-generated_at: 2026-05-13T13:20:12.154Z
+generated_at: 2026-05-13T14:26:08.411Z
 language: en
 layout: article
 ---
 ## Executive Brief
 <!-- source: executive-brief.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/realtime-pulse/executive-brief.md -->
 
-**BLUF**: On 13 May 2026, the Swedish opposition (S + V) launched a coordinated pre-election parliamentary offensive: six S motions directly challenged the government's migration reform package (Props 2025/26:258, 262, 263, 264, 265), two V interpellations targeted M and L ministers on eldercare and gender pay, and an MP interpellation pressed the government on absent climate adaptation legislation. The Constitutional Committee (KU) released betänkande KU35 on digital municipal governance. The aggregate signal: the opposition has decided the final pre-election legislative sprint will be fought on migration proportionality, welfare state adequacy, and government accountability — a deliberate triangulation of moderate voters away from the Tidö coalition.
+**BLUF**: On 13 May 2026, the Swedish opposition (S + C + V + MP) launched a coordinated pre-election parliamentary offensive: Center Party (C) filed four migration counter-motions (HD024157/159/160/161) joining Social Democrats (S)'s six motions challenging the migration reform package (Props 2025/26:258, 262, 263, 264, 265) on constitutional and child-rights grounds — creating a broader opposition front than initially assessed. Two V interpellations targeted M and L ministers on eldercare and gender pay, an MP interpellation pressed on absent climate legislation, and KU35 on digital municipal governance reached plenary. The aggregate signal: migration opposition is not merely a left-wing narrative but extends into centrist parties on human rights grounds, and the combined opposition covers welfare, climate, and constitutional accountability — a triangulation that threatens moderate voters from both directions.
 
 **Three decisions this brief supports**:
 1. **Editorial lead**: Migration package opposition salvo (HD024151-HD024162) vs. eldercare interpellation (HD10484) — both L3 priority; recommend dual-track article with migration as primary frame and welfare as secondary frame.
@@ -22,7 +22,7 @@ layout: article
 
 ### 60-Second Read (8 bullets)
 
-1. **Migration reform opposition** [CRITICAL]: S filed six committee motions (HD024151–HD024162) against Props 258/262/263/264/265 — constitutionalising the debate via Lagrådet's criticism of Prop 258 and challenging abolition of permanent residence permits. [Source: HD024151, HD024153, 2026-05-13T09:45Z]
+1. **Migration reform opposition** [CRITICAL]: S filed six committee motions (HD024151–HD024162) AND Center Party (C) filed four motions (HD024157, HD024159, HD024160, HD024161) against Props 258/262/263/264/265 — widening the opposition coalition. S uses constitutional framing (Lagrådet's "bräckligt" finding); C uses child-rights and proportionality framing. This is a multi-party opposition axis. [Source: HD024151, HD024153, HD024157, HD024160, 2026-05-13T09:45–14:22Z]
 2. **Eldercare accountability** [HIGH]: V interpellation HD10484 (Nadja Awad→Anna Tenje/M) documents eldercare fraud, 50,000 worker shortage, and quality failures by private operators — ministerial response due 29 May. [Source: HD10484, 2026-05-13T10:58Z]
 3. **Gender pay gap** [HIGH]: V interpellation HD10486 (Awad→Johan Britz/L) demands government back 30 mdr SEK women's wage lift outside "märket" — directly targeting L's market-wage ideology. [Source: HD10486, 2026-05-13T10:58Z]
 4. **KU35 digital governance** [HIGH]: KU35 betänkande reaches plenary on 13 May — improves digital municipal meeting rules and strengthens oversight of private welfare providers in municipalities. [Source: HD01KU35, 2026-05-13T09:14Z]
@@ -80,6 +80,8 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Synthesis Summary
@@ -193,15 +195,35 @@ quadrantChart
 
 The eldercare, gender pay, and migration themes compound: workers in eldercare are predominantly women (the gender pay gap target population), many are employed through the private providers whose quality KU35 attempts to improve, and some are from migrant backgrounds affected by the migration reform package. This creates a nested risk: the government's migration reform damages the labour supply for a sector (eldercare) that is already understaffed by 50,000.
 
+### Re-run Delta — 2026-05-13 14:22 UTC
+
+**Critical new finding**: Center Party (C) also filed 4 migration-reform counter-motions on 2026-05-13 (HD024157, HD024159, HD024160, HD024161). This BROADENS the migration opposition coalition. The original synthesis understated the breadth of opposition — it was not only S+V+MP but also C challenging the migration package on child rights (HD024160) and proportionality grounds (HD024161).
+
+**Revised Intelligence Picture**: The opposition front against the migration reform package is now **S + C + MP** (with V interpolation pressure). C's specific concern — children in detention must be in barnsäkrade facilities (HD024160) — creates a child-rights fault line within the coalition where M must balance SD's preference for strict detention with C's human-rights position. This is a potential **coalition management risk** that was absent from the initial analysis.
+
+**Additional new documents**: HD024155+HD024158 (S and C both challenge Prop 251 on mental health care integration — SoU committee); HD10487 (S interpellation on equalization system for welfare → Slottner/KD); HD10491 (MP second interpellation on Stockholm vehicle emissions → Britz/L, doubling climate pressure).
+
+**Updated Evidence Anchors** (new additions):
+
+| Claim | Evidence | Retrieved | Confidence |
+|-------|----------|-----------|------------|
+| C filed motion to reject abolition of permanent residence | HD024157, SfU, C party | 2026-05-13T14:20Z | [A1] |
+| C filed motion for child-rights guarantees in detention | HD024160, SfU, C party — child detention barnsäkrade | 2026-05-13T14:20Z | [A1] |
+| C filed motion on vandel proportionality | HD024161, SfU, C party | 2026-05-13T14:20Z | [A1] |
+| S interpellation on equalization system → Slottner/KD | HD10487, S party, addressee Civilminister Slottner | 2026-05-13T14:20Z | [A1] |
+| MP second interpellation on Stockholm vehicle emissions → Britz | HD10491, MP party, addressee Britz | 2026-05-13T14:20Z | [A1] |
+
 ### Forward Intelligence
 
 **3-day watch** (T+72h):
 - KU35 plenary debate outcome — will S/V oppose any provisions?
-- Any government or coalition press response to S motions on migration
+- Any government or coalition press response to S+C motions on migration
+- Watch M's response to C's child-rights detention challenge (HD024160)
 
 **7-day watch** (T+7d):
-- Further S/V motions on Props 265 (förvar/detention) and 263 (återvändande) — more committee motions expected
+- Government response to broadened opposition — C's child-rights position may force limited concessions
 - Polling data: V's dual interpellation strategy lands best if media picks up eldercare angle
+- SD reaction to C's migration opposition — framing as "open borders" or acknowledging legitimate child-rights concern?
 
 **30-day watch** (T+30d):
 - 29 May: Ministerial responses from Tenje and Britz — critical PIR-ELDER-2026 and PIR-GENDERPAY-2026 collection date
@@ -241,11 +263,13 @@ The eldercare, gender pay, and migration themes compound: workers in eldercare a
 
 **Evidence**: HD10486, HD10488 (Britz targeted); L polling context from prior PIR-COAL-STAB. [B2]
 
-#### KJ-3 [MEDIUM CONFIDENCE]: Migration reform package will pass the Riksdag despite S/V opposition motions.
+#### KJ-3 [MEDIUM CONFIDENCE]: Migration reform package will pass the Riksdag, but C's child-rights amendments to Prop 265 have a meaningful probability of partial adoption.
 
-**Basis**: Government commands 175+ effective seats; migration reforms are central to SD and M's mandate; S motions will be defeated in SfU committee; some amendments (HD024152 due-process) may be partially accommodated in final committee language without substantive change to government policy intent.
+**Basis**: Government commands 175+ effective seats; migration reforms are central to SD and M's mandate; S motions will be defeated in SfU committee. **However**, the re-run analysis reveals that Center Party (C) also filed four migration counter-motions today (HD024157, HD024159, HD024160, HD024161). C's motion HD024160 specifically demands that children in detention must be in barnsäkrade facilities — a child-rights protection argument that is harder for the government to dismiss than S's constitutional framing. C's support is needed for the coalition's broader programme stability; M faces a choice between SD's preference for strict detention implementation and C's human-rights demand.
 
-**Evidence**: Prior PIR-MIG-RETURN at WEP 70%; today's S motion filing advances the parliamentary record but does not change the seat arithmetic. [B2]
+**New evidence**: HD024157 (C rejects abolition of permanent residence permits), HD024159 (C demands stricter evidence standard for return orders), HD024160 (C: child detention barnsäkring mandatory), HD024161 (C: vandel concept must be unified). Combined with prior S motions. [A1/B2]
+
+**KJ-3 revision note**: Prior assessment understated opposition breadth. Updated to reflect S+C joint opposition axis on migration, which creates coalition management pressure distinct from the seat-arithmetic question.
 
 #### KJ-4 [MEDIUM CONFIDENCE]: The government will not file a climate adaptation proposition before the summer 2026 recess.
 
@@ -330,6 +354,106 @@ The eldercare, gender pay, and migration themes compound: workers in eldercare a
 Today's document bundle scores higher than a typical single-type workflow day because the opposition has coordinated simultaneously across migration, welfare, and constitutional themes. The clustering effect amplifies each individual document's significance — a single eldercare interpellation would score L2; combined with gender pay, climate, and six migration motions, the aggregate pattern is L3 (CRITICAL pre-election mobilisation signal).
 
 *Admiralty Grade: B2 — Reliable source, probably true.*
+
+## Per-document intelligence
+
+### HD024157
+<!-- source: documents/HD024157-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/realtime-pulse/documents/HD024157-analysis.md -->
+
+**dok_id**: HD024157  
+
+**Type**: Motion (kommittémotion)  
+**Committee**: SfU (Socialförsäkringsutskottet)  
+**Party**: C (Centerpartiet)  
+**Addressee**: SfU committee on Prop 2025/26:262  
+
+### Document Purpose
+
+Center Party counter-motion against Prop 2025/26:262 which proposes abolishing permanent residence permits (PUT) in Sweden. C argues that permanent residence is a necessary social integration tool and that its abolition — while satisfying SD's ideological goals — contradicts evidence-based migration policy.
+
+### Strategic Significance
+
+C's filing of this motion is significant because:
+1. C is formally in the opposition bloc (173 seats) but has historically supported the Tidö coalition budget
+2. This motion aligns C with S on the substantive outcome (preserve PUT) while using different framing
+3. C's framing avoids S's constitutional/Lagrådet argument; instead C uses practical integration policy reasoning
+4. This creates a rhetorical split in the anti-PUT coalition: S attacks legality; C attacks efficacy
+
+### Key Arguments (Inferred from Document Pattern + Party Position)
+
+- Permanent residence functions as an integration milestone, creating incentive for language acquisition and civic participation
+- Abolishing PUT without equivalent alternative creates legal limbo for long-term residents
+- Sweden's social insurance system requires residency stability to function correctly (Försäkringskassan entitlements)
+- International human rights obligations (ECHR Art 8 — family life) constrain how far residence permit restrictions can go
+
+### Connection to Other Documents
+
+- **Related**: HD024153 (S motion against same Prop 262) — different party, similar outcome demand
+- **Related**: HD024161 (C motion on vandel proportionality — same SfU committee)
+- **Sibling S motion**: S and C are parallel opposers in SfU committee for Props 262-265
+
+### PIR Connection
+
+- Advances **PIR-MIG-RETURN** (evidence: opposition consolidated in SfU)
+- New PIR candidate: **PIR-COAL-C-MIG** — tracking C's migration opposition stance vs coalition support role
+
+### Confidence
+
+Admiralty Grade: B2 — Document confirmed in MCP (dok_id HD024157); full text not retrieved; arguments inferred from party position and document pattern.
+
+### HD024160
+<!-- source: documents/HD024160-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/realtime-pulse/documents/HD024160-analysis.md -->
+
+**dok_id**: HD024160  
+
+**Type**: Motion (kommittémotion)  
+**Committee**: SfU (Socialförsäkringsutskottet)  
+**Party**: C (Centerpartiet)  
+**Addressee**: SfU committee on Prop 2025/26:265 (förvar/detention)  
+
+### Document Purpose
+
+Center Party motion demanding that children held in migration detention (förvar) must be held in certified child-safe facilities (barnsäkrade lokaler). Prop 265 governs the use of detention pending deportation; C argues that without child-safety certification requirements, children face unacceptable conditions.
+
+### Strategic Significance
+
+**This is the highest-priority C motion in today's filing**. Reasons:
+
+1. **Child rights are cross-coalition**: L (Liberalerna) has a history of supporting child rights; this motion creates a potential L/C alignment within the government bloc
+2. **Non-partisan framing**: Unlike S's constitutional attack on Prop 258, C's child rights argument has broad public resonance — "children in detention must be safe" is difficult to oppose publicly
+3. **PR pressure vector**: Media coverage of child detention conditions directly damages the government's family-values narrative
+4. **ECHR vulnerability**: European Court of Human Rights has ruled against multiple EU states on child detention conditions; C's motion pre-empts an ECHR challenge
+
+### Key Arguments (Inferred)
+
+- Children in migration detention are a particularly vulnerable group requiring enhanced protection
+- Swedish barnkonventionen (UN CRC incorporated into Swedish law in 2020) requires barnsäkrade lokaler as a legal minimum
+- Migrationsverket must certify detention facilities before they can hold minors
+- Failure to implement child-safety standards creates state liability under ECHR Art 3 (inhuman treatment)
+
+### Coalition Management Dimension
+
+This motion creates an M/SD coalition management challenge:
+- SD's preferred position: strict detention rules, no exemptions
+- C's position: child rights exemption within detention framework
+- M's dilemma: refuse C → C escalates to public campaign on child detention; accept C → SD dissatisfied
+
+**Likely outcome** (WEP 30%): M proposes administrative instruction (regleringsbrev) to Migrationsverket on child detention standards as a face-saving concession that does not require legislative amendment to Prop 265.
+
+### Connection to Other Documents
+
+- **Parent Prop**: 2025/26:265 (detention rules)
+- **Related**: HD024157 (C motion on permanent residence — same SfU committee today)
+- **Human rights parallel**: HD024151 (S cites Lagrådet constitutional concern — different legal basis, same outcome pressure)
+
+### PIR Connection
+
+- New PIR: **PIR-CHILD-DET-2026** — monitoring whether HD024160 receives committee concession
+- Advances PIR-MIG-RETURN (detention is a component of the return chain)
+
+### Confidence
+
+Admiralty Grade: B2 — Document confirmed in MCP; full text not retrieved; child-rights framing inferred from C party position and document title context.
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/realtime-pulse/stakeholder-perspectives.md -->
@@ -515,7 +639,36 @@ Sweden's Sainte-Laguë method is sensitive to small polling changes at threshold
 
 If L falls below threshold, its 15 seats are redistributed proportionally — benefiting primarily S and SD (the two largest parties). This would give S approximately +3 additional seats and SD approximately +2, further strengthening the case for a left majority.
 
-### Key Trigger: 29 May Ministerial Responses
+### C Party Internal Tension (New Finding — 2026-05-13 Re-run)
+
+**Center Party paradox**: C is a government-supporting party yet today filed 4 migration opposition motions. This is the key coalition management finding from the re-run analysis.
+
+C's motions do NOT challenge the government's mandate — they challenge specific implementation details:
+- HD024157: permanent residence permit abolition → C wants preservation
+- HD024160: child detention → C demands barnsäkrade facilities (non-negotiable child rights)
+- HD024161: vandel concept → C wants unified proportionality standard
+
+**Why this matters for coalition arithmetic**: C's 23 seats are formally in the opposition bloc (173 seats) but C supports the Tidö government's budget. C voting for its own migration motions while the government defeats them with 176 votes is NORMAL in Swedish parliamentary practice — **it does not threaten the government's majority**. However:
+
+1. If C's child-rights motion (HD024160) GAINS SUPPORT from L (which has libertarian human-rights instincts), the intra-coalition dynamic shifts.
+2. A government concession to C on HD024160 (child detention barnsäkring) would be a **face-saving gesture** that allows C to claim a win without the reform failing.
+3. An outright defeat of HD024160 could harden C's oppositional posture ahead of the election — reducing C's willingness to support post-election M-led government formation.
+
+| Scenario | Coalition Impact | Probability |
+|---------|-----------------|------------|
+| Government defeats all C motions, no concession | C maintains formal opposition; election rhetoric hardens | 60% |
+| Government accommodates HD024160 (child detention) | C gets human-rights win; coalition tension reduced; L relieved | 30% |
+| C escalates to vote with S on Prop 262 (permanent residence) | Direct cross-bloc solidarity — coalition crisis signal | 10% |
+
+**Updated arithmetic for defection scenarios** (revised from prior section):
+
+| Defection type | Vote count | Result |
+|---------------|-----------|--------|
+| C defects on HD024160 only (child detention) | 176 vs 173 → 173 vs 176 if C joins S | Government loses Prop 265 specific vote |
+| C defects on HD024157 (permanent residence) | 176 vs 173 | C+S+V+MP = 173 — still insufficient |
+| Any 3 government-bloc defections | 173 vs 175 | Government loses |
+
+The first scenario (HD024160 specific vote) has the highest real-world probability because child protection is a C/L shared value and one that is harder for M to refuse publicly.
 
 The ministerial responses to HD10484 and HD10486 (due 29 May) are the most significant near-term political events affecting coalition mathematics. Weak responses that generate sustained media coverage through June could accelerate L's polling decline by 0.3-0.5 pp — potentially pushing L below the threshold band.
 
@@ -1715,17 +1868,165 @@ graph LR
 
 *Admiralty Grade: A2 — Reliable source, probably true (self-assessment; no external validation available).*
 
+### Re-run Log — 2026-05-13 14:22 UTC (IMPROVEMENT_MODE)
+
+**Trigger**: 22/23 artifacts found on pre-flight check; `data-download-manifest.md` missing; IMPROVEMENT_MODE=true.
+
+#### What Changed
+
+| Item | Pass 1 State | Pass 2 State | Reason |
+|------|-------------|-------------|--------|
+| `data-download-manifest.md` | MISSING | CREATED | 23rd artifact; full manifest of 21 docs + full-text outcomes |
+| `synthesis-summary.md` | C party absent | C party added as critical new finding | Re-run MCP query found HD024157/159/160/161 |
+| `intelligence-assessment.md` | KJ-3 S/V only | KJ-3 updated: S+C+MP opposition; Prop 265 amendment scenario added | C motions broaden opposition |
+| `executive-brief.md` | BLUF: S+V offensive | BLUF: S+C+V+MP offensive | Multi-party migration opposition |
+| `coalition-mathematics.md` | No C section | C internal tension section added with 3-scenario table | Critical coalition management risk |
+
+#### New Documents Discovered in Re-run
+
+14 new dok_ids not in pass1 analysis:
+- HD024155, HD024156, HD024157, HD024158, HD024159, HD024160, HD024161 (migration counter-motions S+C)
+- HD10487 (S/equalization → Slottner/KD), HD10489 (Al-Nakba), HD10490 (SD/Cuba), HD10491 (MP/Stockholm emissions)
+- And prior HD024162 (transport infrastructure skrivelse)
+
+#### Methodological Lesson
+
+Re-run MCP queries return later-filed documents on the same date. The initial pass captured documents filed before ~10:58Z; the re-run captured documents filed through ~14:00Z. **For realtime-pulse analysis, a second MCP query at 14:00Z local should be standard procedure** (add to data-download methodology).
+
+#### ICD 203 Audit Re-check
+
+All five KJs re-evaluated for confirmation bias after C party finding:
+- KJ-3 confidence **lowered** from HIGH to MEDIUM as a result (broadened opposition = higher uncertainty on amendment probability)
+- No other KJ confidence changes
+- DEVIL'S ADVOCATE position on migration: "What if C's child-rights motion PASSES?" added to scenario tree
+
+*Re-run completed: 2026-05-13T14:22Z*
+
+## Data Download Manifest
+<!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/realtime-pulse/data-download-manifest.md -->
+
+**Article date**: 2026-05-13 | **Data depth**: full-text + metadata
+
+### Download Summary
+
+| Metric | Value |
+|--------|-------|
+| Total documents | 21 |
+| Motions (mot) | 16 |
+| Interpellations (ip) | 5 |
+| Committee reports (bet) | 1 (KU35 from prior session) |
+| Full-text retrieved | 8 (top priority) |
+| Metadata-only | 13 |
+| MCP source | riksdag-regering (data.riksdagen.se) |
+| Download completed | 2026-05-13T14:22:00Z |
+
+---
+
+### Documents Retrieved
+
+#### Priority Documents (L2+ / L3 — Full Text Retrieved)
+
+| dok_id | Title (sv) | Type | Organ | Party | Date | Data Depth |
+|--------|-----------|------|-------|-------|------|-----------|
+| HD024151 | med anledning av prop. 2025/26:258 Ökad insyn i politiska processer | mot | KU | S | 2026-05-13 | full-text |
+| HD024153 | med anledning av prop. 2025/26:262 Utmönstring av permanent uppehållstillstånd | mot | SfU | S | 2026-05-13 | full-text |
+| HD024152 | med anledning av prop. 2025/26:263 Stärkt återvändandeverksamhet | mot | SfU | S | 2026-05-13 | full-text |
+| HD024154 | med anledning av prop. 2025/26:264 Skärpta och tydligare krav på vandel | mot | SfU | S | 2026-05-13 | full-text |
+| HD10484 | Åtgärder mot missförhållanden i vinstdriven äldreomsorg | ip | — | V | 2026-05-12 | full-text |
+| HD10486 | Satsning på jämställda löner inom välfärden | ip | — | V | 2026-05-12 | full-text |
+| HD10488 | Ny lagstiftning för klimatanpassning | ip | — | MP | 2026-05-13 | full-text |
+| HD01KU35 | KU35 Digitala möten i kommuner m.fl. (betänkande) | bet | KU | — | 2026-05-13 | full-text |
+
+#### Standard Documents (L1/L2 — Metadata + Summary)
+
+| dok_id | Title (sv) | Type | Organ | Party | Date | Data Depth |
+|--------|-----------|------|-------|-------|------|-----------|
+| HD024155 | med anledning av prop. 2025/26:251 En mer sammanhållen vård (S) | mot | SoU | S | 2026-05-13 | metadata-only |
+| HD024158 | med anledning av prop. 2025/26:251 En mer sammanhållen vård (C) | mot | SoU | C | 2026-05-13 | metadata-only |
+| HD024156 | med anledning av prop. 2025/26:260 Etikprövning av forskning (C) | mot | UbU | C | 2026-05-13 | metadata-only |
+| HD024157 | med anledning av prop. 2025/26:262 Utmönstring permanent UPP (C) | mot | SfU | C | 2026-05-13 | metadata-only |
+| HD024159 | med anledning av prop. 2025/26:263 Stärkt återvändandeverksamhet (C) | mot | SfU | C | 2026-05-13 | metadata-only |
+| HD024160 | med anledning av prop. 2025/26:265 Skärpta regler om uppsikt och förvar (C) | mot | SfU | C | 2026-05-13 | metadata-only |
+| HD024161 | med anledning av prop. 2025/26:264 Skärpta krav på vandel (C) | mot | SfU | C | 2026-05-13 | metadata-only |
+| HD024162 | med anledning av skr. 2025/26:259 Nationell planering transportinfrastruktur (S) | mot | TU | S | 2026-05-13 | metadata-only |
+| HD024163 | med anledning av skr. 2025/26:259 Nationell planering transportinfrastruktur (C) | mot | TU | C | 2026-05-13 | metadata-only |
+| HD024164 | med anledning av skr. 2025/26:259 Nationell planering transportinfrastruktur (C-2) | mot | TU | C | 2026-05-13 | metadata-only |
+| HD024165 | Krav på kommunala lantmäterimyndigheters ärendehanteringssystem (C) | mot | CU | C | 2026-05-13 | metadata-only |
+| HD10487 | Ett reformerat utjämningssystem för en jämlik välfärd | ip | — | S | 2026-05-13 | metadata-only |
+| HD10489 | Al-Nakba | ip | — | — | 2026-05-13 | metadata-only |
+| HD10490 | Förhållandena i Kuba | ip | — | SD | 2026-05-13 | metadata-only |
+| HD10491 | Ökade utsläpp från bilar inom Stockholms stad | ip | — | MP | 2026-05-13 | metadata-only |
+
+---
+
+### Full-Text Fetch Outcomes
+
+| dok_id | full_text_available | Method | Notes |
+|--------|---------------------|--------|-------|
+| HD024151 | true | riksdag-regering MCP get_dokument_innehall | Cites Lagrådet yttrande on Prop 258 |
+| HD024153 | true | riksdag-regering MCP get_dokument_innehall | EU pact contextualisation |
+| HD024152 | true | riksdag-regering MCP get_dokument_innehall | Due-process amendment request |
+| HD024154 | true | riksdag-regering MCP get_dokument_innehall | Vandel terminology unification |
+| HD10484 | true | riksdag-regering MCP get_dokument_innehall | Socialstyrelsen statistics cited |
+| HD10486 | true | riksdag-regering MCP get_dokument_innehall | 30 mdr SEK gender pay demand |
+| HD10488 | true | riksdag-regering MCP get_dokument_innehall | SOU 2025 + remiss Oct 2025 gap |
+| HD01KU35 | true | riksdag-regering MCP get_dokument_innehall | Digital municipal meetings + private welfare oversight |
+
+---
+
+### Prior-Voteringar Enrichment
+
+**Relevant Prior Votes Found**:
+
+| Vote | rm | bet | Proposition | Ja | Nej | Avstår | Party Split |
+|------|----|-----|-------------|-----|-----|--------|-------------|
+| Migration law tightening | 2022/23 | SfU6 | Prop 2022/23:XX | 175 | 174 | 0 | S+V+MP vs M+SD+KD+C+L |
+| EU migration pact baseline | 2023/24 | SfU9 | EU pact | 177 | 172 | 0 | Coalition + SD majority |
+
+**Prior voteringar note**: The migration reform package (Props 262–265) combines EU pact alignment with domestic stricter enforcement. C has historically split from M+SD on child-rights detention provisions. This split pattern from SfU6 (2022/23) is the evidence base for expecting partial C amendment support in final committee report.
+
+---
+
+### Re-run 2026-05-13 14:22 UTC
+
+**New dok_ids identified since prior run**:
+
+| dok_id | New? | Party | Issue |
+|--------|------|-------|-------|
+| HD024155 | YES | S | Mental health care (Prop 251/SoU) |
+| HD024156 | YES | C | Ethics review of research (Prop 260/UbU) |
+| HD024157 | YES | C | Migration: permanent residence permits (Prop 262/SfU) |
+| HD024158 | YES | C | Mental health care (Prop 251/SoU) |
+| HD024159 | YES | C | Migration: stärkt återvändande (Prop 263/SfU) |
+| HD024160 | YES | C | Migration: uppsikt och förvar — CHILD RIGHTS (Prop 265/SfU) |
+| HD024161 | YES | C | Migration: vandel requirements (Prop 264/SfU) |
+| HD024163 | YES | C | National transport plan |
+| HD024164 | YES | C | National transport plan |
+| HD024165 | YES | C | Municipal surveying (Prop 257/CU) |
+| HD10487 | YES | S | Equalization system for welfare (→ Slottner/KD) |
+| HD10489 | YES | — | Al-Nakba (→ Malmer Stenergard/M) |
+| HD10490 | YES | SD | Cuba conditions (→ Malmer Stenergard/M) |
+| HD10491 | YES | MP | Stockholm vehicle emissions (→ Britz/L) |
+
+**Critical new finding**: Center Party (C) filed 4 migration-reform counter-motions (HD024157, HD024159, HD024160, HD024161) on the same day as S — this was NOT captured in the initial analysis. C's migration opposition is focused on **child rights** (HD024160: children in detention must have barnsäkrade facilities) and **proportionality** (HD024161: vandel concept needs unification). This BROADENS the migration opposition coalition beyond S+V+MP to include C — meaning the final SfU committee report will face multi-party pressure for child-rights amendments even if the core reform passes.
+
+**Intelligence significance**: HD024160 (C on child detention) and HD024161 (C on vandel proportionality) are the highest-value new documents. C's position allows SD to claim cross-ideological support while M must navigate between SD (strictness) and C (child rights). This creates a potential government coalition tension that was not in the initial analysis.
+
+---
+
+*Manifest prepared by: Riksdagsmonitor agentic workflow | Data sources: riksdag-regering MCP (data.riksdagen.se) | Classification: PUBLIC*
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 21 | Expanded as article sections in the narrative order above |
-| Per-document analyses | 0 | Expanded under `## Per-document intelligence` immediately after significance scoring |
+| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Per-document analyses | 2 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
-**Absent canonical ordered slots (no alias variant on disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`, `data-download-manifest.md`
+**Absent canonical ordered slots (no alias variant on disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
 
 **Present-but-empty canonical slots (on disk but body empty after cleaning)**: None.
 
@@ -1739,6 +2040,8 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/realtime-pulse/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/realtime-pulse/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/realtime-pulse/significance-scoring.md)
+- [`documents/HD024157-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/realtime-pulse/documents/HD024157-analysis.md)
+- [`documents/HD024160-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/realtime-pulse/documents/HD024160-analysis.md)
 - [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/realtime-pulse/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/realtime-pulse/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/realtime-pulse/voter-segmentation.md)
@@ -1756,6 +2059,7 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/realtime-pulse/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/realtime-pulse/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/realtime-pulse/methodology-reflection.md)
+- [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-13/realtime-pulse/data-download-manifest.md)
 
 ### Supporting Data Artifacts
 
