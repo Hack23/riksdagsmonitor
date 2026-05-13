@@ -12,17 +12,19 @@
  */
 
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { initLazyDashboards, CHART_SKELETON_CLASS } from '../src/browser/lazy-loader.js';
+import { initLazyDashboards, CHART_SKELETON_CLASS, DEFAULT_ROOT_MARGIN, DEFAULT_THRESHOLD, parseRootMarginPx } from '../src/browser/lazy-loader.js';
 
 // ─── IntersectionObserver mock ────────────────────────────────────────────────
 
 /** Capture observe/unobserve calls so we can fire entries manually */
 let observerCallback = null;
+let observerOptions = null;
 const observedElements = new Set();
 
 class MockIntersectionObserver {
-  constructor(callback, _options) {
+  constructor(callback, options) {
     observerCallback = callback;
+    observerOptions = options;
   }
   observe(el) {
     observedElements.add(el);
@@ -377,5 +379,81 @@ describe('initLazyDashboards', () => {
 describe('CHART_SKELETON_CLASS', () => {
   it('is "chart-skeleton"', () => {
     expect(CHART_SKELETON_CLASS).toBe('chart-skeleton');
+  });
+});
+
+// ─── Regression contract: rootMargin must be generous enough that the
+//   single below-fold dashboard on /dashboards/<name>.html pages always
+//   intersects without user scroll. 200 px (the previous default) left
+//   dedicated dashboard pages with empty charts in live production —
+//   the dashboard container sits ~1 000–1 500 px below a 720 px viewport
+//   beneath hero + navigation, so the observer never fired.
+// ──────────────────────────────────────────────────────────────────────
+
+describe('DEFAULT_ROOT_MARGIN regression contract', () => {
+  let originalIntersectionObserver;
+
+  beforeEach(() => {
+    observerCallback = null;
+    observerOptions = null;
+    observedElements.clear();
+    originalIntersectionObserver = globalThis.IntersectionObserver;
+    globalThis.IntersectionObserver = MockIntersectionObserver;
+  });
+
+  afterEach(() => {
+    globalThis.IntersectionObserver = originalIntersectionObserver;
+    document.body.innerHTML = '';
+  });
+
+  it('exports DEFAULT_ROOT_MARGIN = "2000px"', () => {
+    expect(DEFAULT_ROOT_MARGIN).toBe('2000px');
+  });
+
+  it('exports DEFAULT_THRESHOLD = 0.01', () => {
+    expect(DEFAULT_THRESHOLD).toBe(0.01);
+  });
+
+  it('passes DEFAULT_ROOT_MARGIN + DEFAULT_THRESHOLD to the IntersectionObserver by default', () => {
+    const el = document.createElement('div');
+    el.id = 'rootmargin-default';
+    document.body.appendChild(el);
+
+    initLazyDashboards([{ containerId: 'rootmargin-default', loader: () => Promise.resolve() }]);
+
+    expect(observerOptions).not.toBeNull();
+    expect(observerOptions.rootMargin).toBe(DEFAULT_ROOT_MARGIN);
+    expect(observerOptions.threshold).toBe(DEFAULT_THRESHOLD);
+  });
+});
+
+describe('parseRootMarginPx', () => {
+  it('parses single px value', () => {
+    expect(parseRootMarginPx('2000px')).toBe(2000);
+  });
+
+  it('parses first component of multi-side margin', () => {
+    expect(parseRootMarginPx('100px 50px 25px 10px')).toBe(100);
+  });
+
+  it('handles negative values', () => {
+    expect(parseRootMarginPx('-50px')).toBe(-50);
+  });
+
+  it('returns 0 for percentage values (cannot resolve without root)', () => {
+    expect(parseRootMarginPx('10%')).toBe(0);
+  });
+
+  it('returns 0 for undefined', () => {
+    expect(parseRootMarginPx(undefined)).toBe(0);
+  });
+
+  it('returns 0 for empty string', () => {
+    expect(parseRootMarginPx('')).toBe(0);
+  });
+
+  it('returns 0 for malformed input', () => {
+    expect(parseRootMarginPx('garbage')).toBe(0);
+    expect(parseRootMarginPx('200')).toBe(0);
   });
 });
