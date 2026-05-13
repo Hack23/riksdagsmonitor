@@ -140,7 +140,7 @@
 <header role="banner">
   <nav role="navigation" aria-label="Navigation principale">
     <a href="../index_fr.html" aria-label="Riksdagsmonitor Home">
-      <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
+      <img src="../images/riksdagsmonitor-logo.webp" srcset="../images/riksdagsmonitor-logo-48w.webp 48w, ../images/riksdagsmonitor-logo-96w.webp 96w, ../images/riksdagsmonitor-logo-180w.webp 180w" sizes="48px" alt="Riksdagsmonitor" class="site-logo" width="48" height="48" loading="eager">
     </a>
     <ul class="nav-links">
       <li><a href="../index_fr.html">Accueil</a></li>
@@ -190,7 +190,11 @@
 <article id="main-content" class="news-article article-type-motions">
   <header class="article-header">
     <div class="hero-banner">
-      <img src="../images/riksdagsmonitornews-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" aria-hidden="true">
+      <picture class="hero-banner-picture">
+        <source type="image/avif" srcset="../images/riksdagsmonitornews-banner-480w.avif 480w, ../images/riksdagsmonitornews-banner-768w.avif 768w, ../images/riksdagsmonitornews-banner-1024w.avif 1024w, ../images/riksdagsmonitornews-banner-1536w.avif 1536w" sizes="100vw">
+        <source type="image/webp" srcset="../images/riksdagsmonitornews-banner-480w.webp 480w, ../images/riksdagsmonitornews-banner-768w.webp 768w, ../images/riksdagsmonitornews-banner-1024w.webp 1024w, ../images/riksdagsmonitornews-banner-1536w.webp 1536w" sizes="100vw">
+        <img src="../images/riksdagsmonitornews-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" decoding="async" fetchpriority="high">
+      </picture>
     </div>
     <div class="hero-header-text">
       <h1>Motions d'opposition: Lignes de bataille cette semaine</h1>
@@ -369,7 +373,7 @@
   <div class="footer-content">
     <div class="footer-section">
       <a href="../index_fr.html" aria-label="Riksdagsmonitor Accueil">
-        <img src="../images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="footer-logo" width="80" height="80" loading="lazy">
+        <img src="../images/riksdagsmonitor-logo.webp" srcset="../images/riksdagsmonitor-logo-96w.webp 96w, ../images/riksdagsmonitor-logo-180w.webp 180w" sizes="80px" alt="Riksdagsmonitor" class="footer-logo" width="80" height="80" loading="lazy">
       </a>
       <h3><span aria-hidden="true">📖</span> À propos de Riksdagsmonitor</h3>
       <p>Plateforme de renseignement en direct pour surveiller le Parlement suédois grâce aux capacités OSINT du CIA. Améliorations continues — merci de signaler tout problème sur GitHub.</p>
