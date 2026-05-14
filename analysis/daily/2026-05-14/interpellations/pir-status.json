@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "cycle": "interpellations",
+  "date": "2026-05-14",
+  "generated_at": "2026-05-14T00:00:00Z",
+  "pirs": [
+    {
+      "id": "PIR-001",
+      "priority": "CRITICAL",
+      "question": "What specific language does Minister Dousa use in answering HD10492? Does the answer commit to barnkonsekvensanalys?",
+      "status": "ACTIVE",
+      "collection_method": "Monitor riksdagen.se for HD10492 answer publication",
+      "expected_by": "2026-05-29",
+      "dok_id": "HD10492",
+      "trigger_conditions": [
+        "Answer published on riksdagen.se",
+        "CRC/barnkonsekvensanalys language present or absent"
+      ],
+      "scenario_linkage": "Determines Scenario A (25%), B (55%), or C (20%)"
+    },
+    {
+      "id": "PIR-002",
+      "priority": "HIGH",
+      "question": "Does V file a formal motion on barnkonsekvensanalys in autumn riksmöte 2026/27? Does S co-sign?",
+      "status": "MONITORING",
+      "collection_method": "Monitor riksdag document system September-November 2026",
+      "expected_by": "2026-10-31",
+      "dok_id": null,
+      "trigger_conditions": [
+        "V motion filed",
+        "S co-signature",
+        "Committee referral"
+      ],
+      "scenario_linkage": "Electoral escalation path; probability 40% [B3]"
+    },
+    {
+      "id": "PIR-003",
+      "priority": "MEDIUM",
+      "question": "What public response does Rädda Barnen issue following the HD10492 debate and Dousa answer?",
+      "status": "MONITORING",
+      "collection_method": "raddabarnen.se/press; Twitter/X @RaddaBarnen",
+      "expected_by": "2026-06-05",
+      "dok_id": null,
+      "trigger_conditions": [
+        "Rädda Barnen press release citing Dousa answer",
+        "Joint civil society statement"
+      ],
+      "scenario_linkage": "Amplification pathway; probability 35%"
+    },
+    {
+      "id": "PIR-004",
+      "priority": "MEDIUM",
+      "question": "Does coordinated civil society campaign on barnbistånd launch before 2026 election?",
+      "status": "MONITORING",
+      "collection_method": "Act Sweden, Church of Sweden, PMU, UNICEF Sverige communications",
+      "expected_by": "2026-08-31",
+      "dok_id": null,
+      "trigger_conditions": [
+        "Joint statement from 3+ organisations",
+        "Hashtag campaign launch",
+        "Parliamentary petition"
+      ],
+      "scenario_linkage": "Voter Segment A/E mobilisation"
+    },
+    {
+      "id": "PIR-005",
+      "priority": "LOW",
+      "question": "Is an OECD-DAC peer review of Sweden announced for 2026?",
+      "status": "MONITORING",
+      "collection_method": "oecd.org/dac/peer-reviews; Sida press releases",
+      "expected_by": "2026-12-31",
+      "dok_id": null,
+      "trigger_conditions": [
+        "DAC peer review announcement",
+        "Review team composition announced"
+      ],
+      "scenario_linkage": "International pressure dimension"
+    }
+  ],
+  "key_judgement": {
+    "text": "It is likely (65%) that Minister Dousa will respond to HD10492 with symbolic efficiency reframe rather than substantive commitment to barnkonsekvensanalys, preserving V's opportunity to use documented position as 2026 election accountability tool.",
+    "confidence": "MEDIUM-HIGH",
+    "horizon": "T+30d",
+    "wep": "likely"
+  }
+}
