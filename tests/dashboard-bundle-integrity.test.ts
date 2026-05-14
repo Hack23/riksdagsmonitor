@@ -41,6 +41,15 @@ const DASHBOARD_SLUGS = [
   'election-cycle',
 ];
 
+
+const MAIN_BUNDLE_SCRIPT_RE =
+  /<script\b(?=[^>]*\btype=(?:"module"|module))(?=[^>]*\bsrc=(?:"\/assets\/js\/main-[A-Za-z0-9_-]+\.js"|\/assets\/js\/main-[A-Za-z0-9_-]+\.js))[^>]*>/;
+
+const CIA_ENTRY_SCRIPT_RE =
+  /<script\b(?=[^>]*\bsrc=(?:"[^"]*\/assets\/js\/cia-entry-[A-Za-z0-9_-]+\.js"|[^\s>]*\/assets\/js\/cia-entry-[A-Za-z0-9_-]+\.js))[^>]*>/;
+
+const DASHBOARD_STYLESHEET_RE = /\bhref=(?:"\.\.\/assets\/styles\.css"|\.\.\/assets\/styles\.css)(?:\s|>)/;
+
 const hasDist = existsSync(DIST);
 
 describe.skipIf(!hasDist)('Dashboard bundle integrity (post-build)', () => {
@@ -65,10 +74,10 @@ describe.skipIf(!hasDist)('Dashboard bundle integrity (post-build)', () => {
         if (!existsSync(filepath)) return; // skip if file missing (caught above)
         const html = readFileSync(filepath, 'utf8');
 
-        // Must have hashed bundle
-        expect(html).toMatch(
-          /<script\b[^>]*type="module"[^>]*src="\/assets\/js\/main-[A-Za-z0-9_-]+\.js"/,
-        );
+        // Must have hashed bundle. Accept both raw Vite output
+        // (`type="module" src="/assets/js/main-*.js"`) and deploy-minified
+        // HTML (`type=module crossorigin src=/assets/js/main-*.js`).
+        expect(html).toMatch(MAIN_BUNDLE_SCRIPT_RE);
 
         // Must NOT have dev-only path
         expect(html).not.toContain('/src/browser/main.ts');
@@ -85,7 +94,9 @@ describe.skipIf(!hasDist)('Dashboard bundle integrity (post-build)', () => {
         // via `../assets/styles.css`.  No content hash is present in
         // the filename — that is intentional (see vite.config.js
         // header for the cached-HTML invalidation rationale).
-        expect(html).toContain('href="../assets/styles.css"');
+        // Accept both raw Vite output and deploy-minified HTML where
+        // coderaiser/minify removes quotes from simple attributes.
+        expect(html).toMatch(DASHBOARD_STYLESHEET_RE);
 
         // Belt-and-braces: must NOT regress to the dev-only relative
         // path or to the legacy hashed-bundle filename.
@@ -127,7 +138,7 @@ describe.skipIf(!hasDist)('Dashboard bundle integrity (post-build)', () => {
     it('dashboard/index.html exists and ships a hashed cia-entry bundle', () => {
       if (!existsSync(DIST_CIA_HUB)) return;
       const html = readFileSync(DIST_CIA_HUB, 'utf8');
-      expect(html).toMatch(/<script\b[^>]*src="[^"]*\/assets\/js\/cia-entry-[A-Za-z0-9_-]+\.js"/);
+      expect(html).toMatch(CIA_ENTRY_SCRIPT_RE);
     });
 
     it('cia-entry-*.js statically bundles Chart.js (registerables + auto)', () => {
