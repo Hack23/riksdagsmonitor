@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "cycle": "evening-analysis",
+  "subfolder": "evening-analysis",
+  "date": "2026-05-14",
+  "generated_at": "2026-05-14T19:15:00Z",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "title": "Dousa response to HD10492 — barnkonsekvensanalys for ODA restructuring",
+      "status": "OPEN",
+      "priority": "P1",
+      "deadline": "2026-05-29",
+      "source_cycle": "interpellations",
+      "carry_forward": true,
+      "collection_action": "Monitor riksdagen.se/sv/webb-tv for interpellation debate 2026-05-29"
+    },
+    {
+      "id": "PIR-2",
+      "title": "SfU committee scheduling for migration props 262-265",
+      "status": "OPEN",
+      "priority": "P2",
+      "deadline": "2026-06-14",
+      "source_cycle": "motions",
+      "carry_forward": true,
+      "collection_action": "Monitor riksdagen.se/sv/riksdagen/utskotten-och-eu-namnden/socialforsakringsutskottet/"
+    },
+    {
+      "id": "PIR-3",
+      "title": "Government position on child detention (C motion on prop 265)",
+      "status": "OPEN",
+      "priority": "P2",
+      "deadline": "2026-06-14",
+      "source_cycle": "motions",
+      "carry_forward": true,
+      "collection_action": "Monitor government press releases and SfU committee proceedings"
+    },
+    {
+      "id": "PIR-4",
+      "title": "Lagrådet yttrande on HD03267 security deportation",
+      "status": "OPEN",
+      "priority": "P1",
+      "deadline": "2026-06-04",
+      "source_cycle": "propositions",
+      "carry_forward": true,
+      "collection_action": "Monitor lagrådet.se for new yttranden"
+    },
+    {
+      "id": "PIR-5",
+      "title": "KU34 second passage coalition formation post-election",
+      "status": "OPEN",
+      "priority": "P3",
+      "deadline": "2026-10-01",
+      "source_cycle": "committeeReports",
+      "carry_forward": true,
+      "collection_action": "Post-election analysis cycle — monitor election result and formation talks"
+    },
+    {
+      "id": "PIR-6",
+      "title": "DAC peer review preliminary findings on Sweden ODA",
+      "status": "OPEN",
+      "priority": "P2",
+      "deadline": "2026-07-14",
+      "source_cycle": "evening-analysis",
+      "carry_forward": false,
+      "collection_action": "Monitor oecd.org/dac/peer-reviews/"
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "open": 6,
+    "closed": 0,
+    "p1": 2,
+    "p2": 3,
+    "p3": 1
+  }
+}
