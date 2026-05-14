@@ -6,7 +6,7 @@ date: 2026-05-14
 subfolder: election-cycle/next
 slug: 2026-05-14-election-cycle/next
 source_folder: analysis/daily/2026-05-14/election-cycle/next
-generated_at: 2026-05-14T10:00:06.781Z
+generated_at: 2026-05-14T14:35:09.004Z
 language: en
 layout: article
 ---
@@ -95,10 +95,7 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Analysis Index](#rm-analysis-index) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 📝 | [Mcp Reliability Audit](#rm-mcp-reliability-audit) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Reference Analysis Quality](#rm-reference-analysis-quality) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 📝 | [Workflow Audit](#rm-workflow-audit) | supporting analytical lens with primary-source evidence and audit-traceable citations |
-| 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Synthesis Summary
@@ -256,71 +253,6 @@ Per `intelligence-analysis-techniques` significance methodology. Scale 1–10.
 ### Scoring Methodology
 
 DIW = base impact × time-discounted weight × confidence factor. Confidence factor ranges 0.6 (low-confidence forecast) to 1.0 (calendar event).
-
-## Per-document intelligence
-
-### HD03250
-<!-- source: documents/HD03250-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/next/documents/HD03250-analysis.md -->
-
-### Document profile
-
-- **dok_id**: HD03250
-- **Type**: Cross-bloc enacted (Tidö but supported across spectrum)
-- **Status as of 2026-05-13**: Enacted [A1]
-- **Significance**: 9.5 / 10 (high cross-bloc durability)
-
-### Next-cycle trajectory
-
-| Coalition branch | Likely action | WEP | Horizon |
-|------------------|---------------|-----|---------|
-| A1 / A2 / B / C all branches | Retained, no review | almost certain (90–99%) | [horizon:election+180d] |
-
-### PIR linkage
-
-- PIR-9: durability tracked (low alert).
-
-### Cross-reference
-
-- See `../coalition-mathematics.md` cross-bloc retention class.
-
-### HD03267
-<!-- source: documents/HD03267-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/next/documents/HD03267-analysis.md -->
-
-### Document profile
-
-- **dok_id**: HD03267
-- **Type**: Government proposition (Tidö-era enacted)
-- **Status as of 2026-05-13**: Enacted [A1]
-- **Significance**: 10 / 10 (Tidö continuity backbone)
-
-### Next-cycle trajectory
-
-| Coalition branch | Likely action | WEP | Horizon |
-|------------------|---------------|-----|---------|
-| A1 Tidö-continuity | Retained, marginal tightening | almost certain (90–99%) | [horizon:election] |
-| A2 SD-incorporated | Retained, expansion via new amendments | very likely (75–90%) | [horizon:election] |
-| B Hung parliament | Retained pending negotiation | likely (60–75%) | [horizon:election] |
-| C Red-Green-C | Retained with amendments (party C requires moderation) | likely (60–75%) | [horizon:election+90d] |
-
-### PIR linkage
-
-- PIR-9: EU-derived statute durability — partial overlap (HD03267 is domestic).
-- PIR-11: not directly linked.
-
-### Wildcard sensitivity
-
-- W2 fiscal shock: low (≤ 10%) effect on enforcement scope.
-- W4 L below 4%: medium (10–30%) effect via altered coalition arithmetic in A1.
-
-### Cross-reference
-
-- See `../coalition-mathematics.md` for branch-mapping.
-- See `../scenario-analysis.md` leaves §A1/§A2/§B/§C.
-- See `../wildcards-blackswans.md` for W2/W4 details.
-
-### ICD 203 sourcing
-
-[A1] Enacted statute; [B2] Tidö-era ministerial signalling; [C2] coalition-branch forecast.
 
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/next/stakeholder-perspectives.md -->
@@ -1307,6 +1239,15 @@ Re-running this analysis with updated polling vintage will shift leaf probabilit
 - **Pass 2 (re-read + improved)**: tightened probability bands per ICD-203 grading, added cross-references between leaves and wildcards (W4 conditioning A2), expanded comparative parallels (DE 2017, NL 2021, BE 2010, SE 2018, FI 2023), enriched historical parallels with cross-cycle lessons, calibrated forward indicators to 15 dated events.
 - **Improvement-mode**: confidence bands re-anchored to Tetlock-style frequency-grade; estimative language standardised.
 
+### Re-run log
+
+- **Re-run**: 2026-05-14T10:00:16Z · workflow=News: Election Cycle · run_id=25853704629 · attempt=1
+  - anchor: next
+  - new dok_ids: none (improvement-mode bootstrap from 2026-05-13 baseline)
+  - artifacts extended: synthesis-summary, executive-brief, article.md re-aggregated for 2026-05-14 horizon (T+1y=2027-05, T+5y=2031-05)
+  - flags closed: 0
+  - vintage refresh: IMF WEO Apr-2026 still current (no new vintage available)
+
 ## Data Download Manifest
 <!-- source: data-download-manifest.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/next/data-download-manifest.md -->
 
@@ -1370,29 +1311,6 @@ This forecast operates on the corpus produced by the parent news-election-cycle 
 - [`workflow-audit.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/next/workflow-audit.md)
 - [`documents/`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/next/documents/) — per dok_id analyses (Family E)
 
-## Mcp Reliability Audit
-<!-- source: mcp-reliability-audit.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/next/mcp-reliability-audit.md -->
-
-### MCP Servers Available
-
-- **riksdag-regering** (HTTP @ riksdag-regering-ai.onrender.com/mcp)
-- **scb** (containerised pxweb-mcp)
-- **world-bank** (containerised worldbank-mcp)
-
-### Data Sources Used
-
-This forecast operates against a corpus already downloaded for `../current/` synthesis. No additional MCP-server data fetched for this incremental forward-cycle build. Existing corpus is sufficient for forecast construction (forecast is based on coalition arithmetic + historical patterns + wildcards, not new dok_ids).
-
-### IMF Integration
-
-IMF anchoring via WEO Apr-2026 baseline [horizon:cycle]; no new SDMX queries required for forecast construction. Existing corpus provides macro context.
-
-### Reliability Notes
-
-- No MCP timeouts or errors during forecast generation (no live MCP calls in this build).
-- Data freshness: existing 2026-05-13 corpus.
-- Provenance: `economicProvenance` blocks emitted where IMF anchoring used.
-
 ## Reference Analysis Quality
 <!-- source: reference-analysis-quality.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/next/reference-analysis-quality.md -->
 
@@ -1430,37 +1348,14 @@ IMF anchoring via WEO Apr-2026 baseline [horizon:cycle]; no new SDMX queries req
 - W1–W5 are external dependencies; tail-risk uncertainty inherent.
 - Coalition-formation length forecast is precedent-driven, not statute-driven.
 
-## Workflow Audit
-<!-- source: workflow-audit.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/next/workflow-audit.md -->
-
-### Run Metadata
-
-- **Workflow**: news-election-cycle.lock.yml
-- **Event**: workflow_dispatch
-- **Article date**: 2026-05-13
-- **Cycle anchor**: both (default) — current existed pre-run; next built first-generation
-- **Analysis depth**: comprehensive
-- **Agent budget**: 60-min job, target PR by minute 45
-
-### Execution Mode
-
-- **current/**: Improvement-mode (synthesis-summary.md pre-existed; light improvements via re-aggregate)
-- **next/**: First-generation (24+ artifacts built from coalition arithmetic + 12-leaf scenario tree + horizon-band trajectory)
-
-### Artifacts Produced
-
-- **next/**: 24+ analysis artifacts (Families A/B/C/D + 24th cycle-trajectory.md + per-dok_id where relevant)
-- **PIR-status.json**: PIR-8 newly armed; PIR-9, PIR-10, PIR-11 added.
-- **Cross-reference map**: bidirectional with current/.
-
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 31 | Expanded as article sections in the narrative order above |
-| Per-document analyses | 2 | Expanded under `## Per-document intelligence` immediately after significance scoring |
+| Ordered/root markdown sections | 29 | Expanded as article sections in the narrative order above |
+| Per-document analyses | 0 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
 **Absent canonical ordered slots (no alias variant on disk)**: `parliamentary-season.md`, `horizon-pir-rollforward.md`
@@ -1477,8 +1372,6 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/next/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/next/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/next/significance-scoring.md)
-- [`documents/HD03250-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/next/documents/HD03250-analysis.md)
-- [`documents/HD03267-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/next/documents/HD03267-analysis.md)
 - [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/next/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/next/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/next/voter-segmentation.md)
@@ -1503,9 +1396,7 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/next/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/next/data-download-manifest.md)
 - [`analysis-index.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/next/analysis-index.md)
-- [`mcp-reliability-audit.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/next/mcp-reliability-audit.md)
 - [`reference-analysis-quality.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/next/reference-analysis-quality.md)
-- [`workflow-audit.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/next/workflow-audit.md)
 
 ### Supporting Data Artifacts
 
