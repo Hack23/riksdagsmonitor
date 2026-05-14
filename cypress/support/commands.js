@@ -331,9 +331,10 @@ Cypress.Commands.add('expectThemeToggleWorks', () => {
   // `/js/theme-toggle.js` is injected with `defer`, so it runs after
   // DOMContentLoaded. The handler sets `aria-pressed` on the button
   // during init; use that as the readiness signal.
-  cy.get('#theme-toggle', { timeout: 15000 })
-    .should('have.attr', 'aria-pressed')
-    .and('match', /^(true|false)$/);
+  cy.get('#theme-toggle', { timeout: 15000 }).should(($button) => {
+    const pressed = $button.attr('aria-pressed');
+    expect(pressed, 'theme-toggle aria-pressed').to.match(/^(true|false)$/);
+  });
 
   // Capture initial theme (the anti-flash snippet always sets one).
   cy.document().then((doc) => {

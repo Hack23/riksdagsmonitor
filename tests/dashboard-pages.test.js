@@ -186,15 +186,18 @@ describe('Specialised dashboard pages — structural contract', () => {
       // dark-mode switching silently failed.
       it('ships /js/theme-toggle.js + /js/back-to-top.js + /js/lib/mermaid-init.mjs bootstrap', () => {
         html ||= readPage(filename);
-        expect(html, `${filename} missing /js/theme-toggle.js bootstrap`).toContain("/js/theme-toggle.js");
-        expect(html, `${filename} missing /js/back-to-top.js bootstrap`).toContain("/js/back-to-top.js");
-        expect(html, `${filename} missing /js/lib/mermaid-init.mjs bootstrap`).toContain("/js/lib/mermaid-init.mjs");
+        expect(html, `${filename} missing /js/theme-toggle.js bootstrap`).toContain('/js/theme-toggle.js');
+        expect(html, `${filename} missing /js/back-to-top.js bootstrap`).toContain('/js/back-to-top.js');
+        expect(html, `${filename} missing /js/lib/mermaid-init.mjs bootstrap`).toContain('/js/lib/mermaid-init.mjs');
         // The bootstrap must be the documented imperative-inject IIFE
         // (so Vite's HTML transformer does not try to bundle the
         // referenced modules). Anchor on the IIFE entry-point and the
         // three inject() calls in that order.
         expect(html, `${filename} bootstrap is missing the inject() IIFE wrapper`).toMatch(
           /function inject\(src,\s*isModule\)/,
+        );
+        expect(html, `${filename} bootstrap inject() calls missing/reordered`).toMatch(
+          /inject\((["'])\/js\/lib\/mermaid-init\.mjs\1,\s*true\);\s*inject\((["'])\/js\/back-to-top\.js\2,\s*true\);\s*inject\((["'])\/js\/theme-toggle\.js\3,\s*false\);/s,
         );
       });
     });
