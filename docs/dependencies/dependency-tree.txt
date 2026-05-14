@@ -1,4 +1,4 @@
-riksdagsmonitor@0.9.15 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@0.9.16 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.3.0 deduped
 ├─┬ @types/d3@7.4.3
@@ -329,7 +329,7 @@ riksdagsmonitor@0.9.15 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └── throttleit@1.0.1
 │ ├─┬ supports-color@8.1.1
 │ │ └── has-flag@4.0.0
-│ ├── systeminformation@5.31.1
+│ ├── systeminformation@5.31.6
 │ ├── tmp@0.2.5
 │ ├── tree-kill@1.2.2
 │ ├── tslib@1.14.1
@@ -686,7 +686,7 @@ riksdagsmonitor@0.9.15 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │   └── points-on-curve@0.2.0 deduped
 │ ├── stylis@4.4.0
 │ ├── ts-dedent@2.2.0
-│ └── uuid@11.1.0
+│ └── uuid@14.0.0
 ├─┬ minify@15.3.1
 │ ├── @putout/minify@6.0.7
 │ ├─┬ @swc/core@1.15.33
@@ -1147,7 +1147,7 @@ riksdagsmonitor@0.9.15 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-libvips-linux-s390x@1.2.4
 │ ├── @img/sharp-libvips-linux-x64@1.2.4
 │ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-libvips-linuxmusl-arm64@1.2.4
-│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-libvips-linuxmusl-x64@1.2.4
+│ ├── @img/sharp-libvips-linuxmusl-x64@1.2.4
 │ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-linux-arm@0.34.5
 │ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-linux-arm64@0.34.5
 │ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-linux-ppc64@0.34.5
@@ -1156,7 +1156,8 @@ riksdagsmonitor@0.9.15 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├─┬ @img/sharp-linux-x64@0.34.5
 │ │ └── @img/sharp-libvips-linux-x64@1.2.4 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-linuxmusl-arm64@0.34.5
-│ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-linuxmusl-x64@0.34.5
+│ ├─┬ @img/sharp-linuxmusl-x64@0.34.5
+│ │ └── @img/sharp-libvips-linuxmusl-x64@1.2.4 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-wasm32@0.34.5
 │ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-win32-arm64@0.34.5
 │ ├── UNMET OPTIONAL DEPENDENCY @img/sharp-win32-ia32@0.34.5

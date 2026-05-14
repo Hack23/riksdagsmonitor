@@ -1,5 +1,5 @@
 {
-  "version": "0.9.15",
+  "version": "0.9.16",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -1687,8 +1687,8 @@
           }
         },
         "systeminformation": {
-          "version": "5.31.1",
-          "resolved": "https://registry.npmjs.org/systeminformation/-/systeminformation-5.31.1.tgz",
+          "version": "5.31.6",
+          "resolved": "https://registry.npmjs.org/systeminformation/-/systeminformation-5.31.6.tgz",
           "overridden": false
         },
         "tmp": {
@@ -3334,8 +3334,8 @@
           "overridden": false
         },
         "uuid": {
-          "version": "11.1.0",
-          "resolved": "https://registry.npmjs.org/uuid/-/uuid-11.1.0.tgz",
+          "version": "14.0.0",
+          "resolved": "https://registry.npmjs.org/uuid/-/uuid-14.0.0.tgz",
           "overridden": false
         }
       }
@@ -5118,7 +5118,11 @@
           "overridden": false
         },
         "@img/sharp-libvips-linuxmusl-arm64": {},
-        "@img/sharp-libvips-linuxmusl-x64": {},
+        "@img/sharp-libvips-linuxmusl-x64": {
+          "version": "1.2.4",
+          "resolved": "https://registry.npmjs.org/@img/sharp-libvips-linuxmusl-x64/-/sharp-libvips-linuxmusl-x64-1.2.4.tgz",
+          "overridden": false
+        },
         "@img/sharp-linux-arm": {},
         "@img/sharp-linux-arm64": {},
         "@img/sharp-linux-ppc64": {},
@@ -5135,7 +5139,16 @@
           }
         },
         "@img/sharp-linuxmusl-arm64": {},
-        "@img/sharp-linuxmusl-x64": {},
+        "@img/sharp-linuxmusl-x64": {
+          "version": "0.34.5",
+          "resolved": "https://registry.npmjs.org/@img/sharp-linuxmusl-x64/-/sharp-linuxmusl-x64-0.34.5.tgz",
+          "overridden": false,
+          "dependencies": {
+            "@img/sharp-libvips-linuxmusl-x64": {
+              "version": "1.2.4"
+            }
+          }
+        },
         "@img/sharp-wasm32": {},
         "@img/sharp-win32-arm64": {},
         "@img/sharp-win32-ia32": {},
