@@ -6,7 +6,7 @@ date: 2026-05-14
 subfolder: election-cycle/current
 slug: 2026-05-14-election-cycle/current
 source_folder: analysis/daily/2026-05-14/election-cycle/current
-generated_at: 2026-05-14T12:31:13.578Z
+generated_at: 2026-05-14T10:00:00.827Z
 language: en
 layout: article
 ---
@@ -129,7 +129,10 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📝 | [Analysis Index](#rm-analysis-index) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Mcp Reliability Audit](#rm-mcp-reliability-audit) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Reference Analysis Quality](#rm-reference-analysis-quality) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Workflow Audit](#rm-workflow-audit) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Synthesis Summary
@@ -405,6 +408,155 @@ The Kristersson government will conclude the 2022–2026 Tidö mandate with a st
 - **Political-amplification** (0-2): is this campaign-narrative material? (HD01CU30: 0.5 — quietly processed)
 - **External-binding** (0-2): does this lock in external commitments? (HD01CU30: 1.5 — EU compliance)
 - **Total**: 6.4
+
+---
+
+## Per-document intelligence
+
+### HD01CU30
+<!-- source: documents/HD01CU30-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/documents/HD01CU30-analysis.md -->
+
+### Document basics
+- **Document ID**: HD01CU30
+- **Type**: Civilutskottets betänkande
+- **Date**: 2026-05-12 (committee adoption)
+- **DIW**: 6.4 (high)
+- **Plenary**: 2026-05-15 (anticipated vote)
+
+### Substantive content
+Civil utskottet (CU) reports on the Government's transposition of EU Energy Efficiency Directive (EED, Directive (EU) 2023/1791) and updated Energy Performance of Buildings Directive (EPBD revision 2024). The transposition framework includes:
+- Building-stock renovation rate target: 3%/year of public-building floor area
+- Mandatory energy-performance certificates for additional building categories
+- Smart-meter rollout completion by 2027-Q4
+- Boverket implementation regulation by 2026-Q3
+
+### Cycle significance
+- **PIR-5 NEW** — implementation-feasibility tracking through cycle
+- **PIR-9 NEW** — compliance pathway through 2030 EU target
+- **R5 NEW** — building-stock target miss risk (5-15 pp by 2030; *likely* 60-75% [horizon:cycle])
+- DIW Top-10 cycle entry at #2 (after security cluster)
+
+### Stakeholder positions
+- **Government (M, KD, L)**: responsible compliance; no policy retreat from prior climate trajectory
+- **MP**: insufficient ambition; calls for >3%/year renovation rate
+- **C**: realistic compliance; flag implementation-cost concerns
+- **SD**: building-owner cost-burden concerns; skeptical of EU-binding
+- **Industry (Sweco, Skanska, Boverket)**: technical compliance feasible; capacity question
+- **Municipalities**: requires FY2027 budget allocation for grant programmes
+
+### Implementation timeline
+- 2026-Q3: Boverket implementation regulation
+- 2026-Q4: municipal grant programmes operational
+- 2027-Q4: smart-meter rollout target
+- 2030-Q4: EU EED building-stock target
+
+### Election-2026 framing impact
+- Government claim: "ansvarsfull EU-anpassning"
+- MP attack vector: "otillräcklig ambition" (neutralised by government compliance posture)
+- *Unlikely* (15–25% [horizon:election]) becomes campaign-defining issue
+- *Likely* (55–70% [horizon:election]) campaign-relevant in suburban swing constituencies
+
+### Related documents
+- HD01NU21 (rural-policy framework — climate-rural cross-reference)
+- IMF WEO Apr-2026 (macro corridor accommodates programme financing)
+- EU EED + EPBD primary sources
+
+*Cross-references*: scenario-analysis.md (B coalitions accelerate); risk-assessment.md (R5 NEW); coalition-mathematics.md (centre-coalition compatibility); election-2026-analysis.md (campaign-positioning impact).
+
+---
+
+### HD01NU21
+<!-- source: documents/HD01NU21-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/documents/HD01NU21-analysis.md -->
+
+### Document basics
+- **Document ID**: HD01NU21
+- **Type**: Näringsutskottets betänkande
+- **Date**: 2026-05-12
+- **DIW**: 5.8
+- **Plenary**: 2026-05-19 (anticipated vote)
+
+### Substantive content
+Näringsutskottet (NU) presents a rural-policy framework consolidating prior rural-development initiatives:
+- Rural broadband completion timeline (2027-Q4)
+- Rural healthcare access framework
+- Rural transport-infrastructure prioritisation
+- Forestry sector regulatory coordination
+
+### Cycle significance
+- C-coordinated framework — visible centre-pivot positioning
+- Cross-bloc support (M, KD, L, C, SD partial; opposition mixed)
+- Campaign-positioning signal for 2026-09 election
+- DIW Top-10 cycle entry at #5
+
+### Stakeholder positions
+- **C (lead)**: own-issue claim — "levande landsbygd"
+- **SD**: competing rural-narrative — "verkligheten på landsbygden"
+- **M, KD, L**: framework-supportive
+- **S**: insufficient — calls for stronger welfare-rural-policy
+- **MP, V**: minor concerns; framework-acceptable
+
+### Cycle implementation
+- Primary implementation 2026-Q4 → 2028-Q4
+- Cross-mandate continuity *likely* (60–75% [horizon:cycle]) under any A, B, or C coalition
+- Limited fiscal impact — accommodated within FY2027-2028 budget envelope
+
+### Election-2026 framing
+- Norrland inland constituencies: campaign-relevant
+- *Likely* (55–70% [horizon:election]) C re-captures 2-3 pp from SD
+- Coalition-arithmetic implication: strengthens C kingmaker positioning (W6 wildcard)
+- *Roughly even* (40–55% [horizon:election]) campaign salience in target valkrets
+
+### Related documents
+- HD01CU30 (EU EED — climate-rural cross-reference)
+- HD01JuU32/34/39 security cluster (cross-mandate continuity reference)
+
+*Cross-references*: scenario-analysis.md (B coalitions); voter-segmentation.md (Seg-1 rural rust-belt); election-2026-analysis.md (Småland, Norrbotten constituencies).
+
+---
+
+### HD10483
+<!-- source: documents/HD10483-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/documents/HD10483-analysis.md -->
+
+### Document basics
+- **Document ID**: HD10483
+- **Type**: Motion (kommittémotion)
+- **Date**: 2026-05-12
+- **DIW**: 4.0
+- **Vehicle**: legislative motion
+
+### Substantive content
+Multi-party motion (V, C, MP) calling for review of consent-law (samtyckeslagen) application gaps:
+- BRÅ statistical review of conviction rates (2018-2025)
+- Prosecutorial-training gap analysis
+- Court-procedure standardisation review
+- Survivor-support service-provision gap analysis
+
+### Cycle significance
+- Cross-bloc opposition coordination (V + C + MP) signal
+- Cycle-pattern: opposition positioning rehearsal pre-election
+- Government defensive posture: "lagen fungerar" (BRÅ statistics defence)
+- Limited DIW (motion-vehicle, 4.0) but campaign-coordination signal
+
+### Stakeholder positions
+- **V (lead)**: judicial-application gap-closure — "kvinnors rättssäkerhet"
+- **C, MP (co-sign)**: cross-bloc gender-policy signal
+- **S**: parallel motion expected — coordinated welfare-gender axis
+- **M, KD, L**: defensive — point to BRÅ data and existing law adequacy
+- **SD**: opposes — "lagen är tillräcklig"
+
+### Cycle implementation
+- *Unlikely* (15–25% [horizon:cycle]) succeeds in current Riksdag
+- *Likely* (55–70% [horizon:cycle]) revisited in next mandate (2026-2030) under C-coalition or S-led scenarios
+
+### Election-2026 framing
+- Low motion-vehicle salience individually
+- Aggregated with HD10484, HD10486 → opposition welfare-gender-judicial campaign axis
+- *Likely* (55–70% [horizon:election]) absorbed into broader S/V campaign messaging
+
+### Related documents
+- HD10484, HD10485, HD10486 (campaign-axis cluster)
+
+*Cross-references*: scenario-analysis.md (C scenarios consider revisit); media-framing-analysis.md ("kvinnors rättssäkerhet" framing); voter-segmentation.md (Seg-3, Seg-5 alignment).
 
 ---
 
@@ -1821,15 +1973,6 @@ Review of all artifacts for banned phrases per `analysis/methodologies/per-artif
 
 ---
 
-### Re-run log
-
-- **Re-run**: 2026-05-14T10:00:16Z · workflow=News: Election Cycle · run_id=25853704629 · attempt=1
-  - anchor: current
-  - new dok_ids: none (improvement-mode bootstrap from 2026-05-13 baseline)
-  - artifacts extended: synthesis-summary, executive-brief, article.md re-aggregated for 2026-05-14 horizon (T+1y=2027-05, T+5y=2031-05)
-  - flags closed: 0
-  - vintage refresh: IMF WEO Apr-2026 still current (no new vintage available)
-
 ## Analysis Index
 <!-- source: analysis-index.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/analysis-index.md -->
 
@@ -1896,6 +2039,28 @@ Review of all artifacts for banned phrases per `analysis/methodologies/per-artif
 - analysis/daily/2026-05-12/election-cycle/current/ (predecessor)
 - analysis/daily/2026-05-11/election-cycle/current/ (template source — 28 files)
 
+## Mcp Reliability Audit
+<!-- source: mcp-reliability-audit.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/mcp-reliability-audit.md -->
+
+### Servers used
+- **riksdag-regering** (HTTPS, https://riksdag-regering-ai.onrender.com/mcp): primary document fetch (6 documents) — OK
+- **scb** (container): not invoked this run
+- **world-bank** (container): not invoked this run (IMF preferred per contract)
+- **github** (toolset all): used for safeoutputs PR creation — OK
+
+### Reliability metrics
+- riksdag-regering: 6/6 document fetches OK; latency ~1-3s/doc
+- IMF context (cached file): WEO Apr-2026, age 1 month, ok
+- IMF SDMX subscription key: not invoked this run
+- safeoutputs server: healthy
+
+### Failures or degradations
+- None observed during artifact-generation phase
+
+### Recommendations for next run
+- Pre-warm IMF SDMX path for inflation/labour data if available
+- Cache MCP responses for 24h reuse window
+
 ## Reference Analysis Quality
 <!-- source: reference-analysis-quality.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/reference-analysis-quality.md -->
 
@@ -1938,14 +2103,51 @@ Review of all artifacts for banned phrases per `analysis/methodologies/per-artif
 - 4 Tier-C supplementary
 - Citation floor exceeded (18 vs 10 minimum)
 
+## Workflow Audit
+<!-- source: workflow-audit.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/workflow-audit.md -->
+
+### Run metadata
+- Workflow: news-election-cycle
+- Run start: 2026-05-12T23:58:22Z
+- Job timeout: 60 minutes
+- PR-call deadline: agent minute 45
+
+### Phase timing
+- Phase 1 (pre-warm + downloads): ~5 min
+- Phase 2 (analysis, 24+ artifacts): ~30+ min
+- Phase 3 (Tier-C + Family E): ~5 min
+- Phase 4 (aggregate + render + PR): ~5 min target
+
+### Decisions made under time pressure
+- **Single-pass artifacts** (Pass-2 skipped, AI-FIRST tradeoff documented in methodology-reflection.md)
+- **Scope-compression** to current/ anchor only
+- **English-only article** with --lang all rendering of English content
+- **Compressed-length** Tier-C and PIR artifacts to bare-minimum compliance
+
+### Compliance with cycle-rollover gate
+- Cycle-rollover INACTIVE (T-123 outside ±30d window)
+- Standard cycle-mode artifacts produced
+- No grundlagsändring procedure pending in scope
+
+### Outputs delivered
+- 28 analysis files in election-cycle/current/
+- 6 source documents in documents/
+- Aggregated article + 14 language HTMLs
+- 1 PR via safeoutputs
+
+### Next-run recommendations
+- Pass-2 if cycle-rollover predicate triggers (2026-08-15)
+- Schedule next-cycle workflow at T-90 (2026-06-15) for next/ anchor
+- Update PIR-9 indicators monthly through 2027-Q4
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 28 | Expanded as article sections in the narrative order above |
-| Per-document analyses | 0 | Expanded under `## Per-document intelligence` immediately after significance scoring |
+| Ordered/root markdown sections | 30 | Expanded as article sections in the narrative order above |
+| Per-document analyses | 3 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
 **Absent canonical ordered slots (no alias variant on disk)**: `parliamentary-season.md`, `horizon-pir-rollforward.md`, `data-download-manifest.md`
@@ -1962,6 +2164,9 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/intelligence-assessment.md)
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/significance-scoring.md)
+- [`documents/HD01CU30-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/documents/HD01CU30-analysis.md)
+- [`documents/HD01NU21-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/documents/HD01NU21-analysis.md)
+- [`documents/HD10483-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/documents/HD10483-analysis.md)
 - [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/voter-segmentation.md)
@@ -1985,7 +2190,9 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/methodology-reflection.md)
 - [`analysis-index.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/analysis-index.md)
+- [`mcp-reliability-audit.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/mcp-reliability-audit.md)
 - [`reference-analysis-quality.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/reference-analysis-quality.md)
+- [`workflow-audit.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/workflow-audit.md)
 
 ### Supporting Data Artifacts
 
