@@ -27,6 +27,8 @@ This is the **only** gate separating analysis from article generation. If it fai
    - `comparative-international.md` declares a comparator set or **≥ 2 comparator rows** (structural check, see Tier-C gate).
    - `devils-advocate.md` declares **≥ 3 competing hypotheses** (headers matching `Hypothesis`/`H1`/`H2`/`H3` count ≥ 3, ACH-style).
    - `methodology-reflection.md` is non-empty and contains an **ICD 203 audit** marker or ≥ 3 named methodology improvements.
+   - `methodology-reflection.md` must declare `Pass-2 status: executed in full` and must not claim `not executed in full` / `skipped` / `deferred`.
+   - When `IMPROVEMENT_MODE=true`, `methodology-reflection.md` must include `## Re-run log` with the canonical fields: `run_id`, `attempt`, `new dok_ids`, `artifacts extended`, `flags closed`, `vintage refresh`.
 8. **Family D structure checks**:
    - `forward-indicators.md` declares **≥ 10 dated indicators** (bullet or table rows matching a date pattern across the four horizon sections).
    - `coalition-mathematics.md` contains a seat-count table (≥ 1 table row with `Ja`/`Nej`/`Avstår` or a party-to-seats mapping).
@@ -214,6 +216,28 @@ fi
 if [ -s "$ANALYSIS_DIR/methodology-reflection.md" ]; then
   grep -qE 'ICD[[:space:]]+203|Methodology[[:space:]]+Improvements|Improvement[[:space:]]+1|#{2,4}[[:space:]]+.*Improvements' "$ANALYSIS_DIR/methodology-reflection.md" \
     || { echo "❌ methodology-reflection.md: missing ICD 203 audit or named Methodology Improvements section"; FAIL=1; }
+  grep -qE 'Pass-2[[:space:]]+status:[[:space:]]*executed[[:space:]]+in[[:space:]]+full' "$ANALYSIS_DIR/methodology-reflection.md" \
+    || { echo "❌ methodology-reflection.md: missing canonical 'Pass-2 status: executed in full' declaration"; FAIL=1; }
+  if grep -qiE 'Pass-2[[:space:]]+status:[[:space:]]*(not[[:space:]]+executed|skipped|deferred|partial)' "$ANALYSIS_DIR/methodology-reflection.md"; then
+    echo "❌ methodology-reflection.md: Pass-2 cannot be marked not executed/skipped/deferred/partial"
+    FAIL=1
+  fi
+  if [ "${IMPROVEMENT_MODE:-false}" = "true" ]; then
+    grep -qE '^##[[:space:]]+Re-run[[:space:]]+log' "$ANALYSIS_DIR/methodology-reflection.md" \
+      || { echo "❌ methodology-reflection.md: improvement-mode requires '## Re-run log'"; FAIL=1; }
+    grep -qE 'run_id[=:][[:space:]]*'"${GITHUB_RUN_ID:-}" "$ANALYSIS_DIR/methodology-reflection.md" \
+      || { echo "❌ methodology-reflection.md: improvement-mode requires current run_id in Re-run log"; FAIL=1; }
+    grep -qE 'attempt[=:][[:space:]]*'"${GITHUB_RUN_ATTEMPT:-}" "$ANALYSIS_DIR/methodology-reflection.md" \
+      || { echo "❌ methodology-reflection.md: improvement-mode requires current attempt in Re-run log"; FAIL=1; }
+    grep -qE 'new[[:space:]]+dok_ids[[:space:]]*:' "$ANALYSIS_DIR/methodology-reflection.md" \
+      || { echo "❌ methodology-reflection.md: Re-run log missing 'new dok_ids' field"; FAIL=1; }
+    grep -qE 'artifacts[[:space:]]+extended[[:space:]]*:' "$ANALYSIS_DIR/methodology-reflection.md" \
+      || { echo "❌ methodology-reflection.md: Re-run log missing 'artifacts extended' field"; FAIL=1; }
+    grep -qE 'flags[[:space:]]+closed[[:space:]]*:' "$ANALYSIS_DIR/methodology-reflection.md" \
+      || { echo "❌ methodology-reflection.md: Re-run log missing 'flags closed' field"; FAIL=1; }
+    grep -qE 'vintage[[:space:]]+refresh[[:space:]]*:' "$ANALYSIS_DIR/methodology-reflection.md" \
+      || { echo "❌ methodology-reflection.md: Re-run log missing 'vintage refresh' field"; FAIL=1; }
+  fi
 fi
 if [ -s "$ANALYSIS_DIR/comparative-international.md" ]; then
   awk '

@@ -117,8 +117,19 @@ Produced in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`. The output set is **stab
 3. **Pass 1 — Create** all 23 always-on artifacts + every per-document file. Minimum 20 minutes of real work. *(Improvement-mode replaces this with step 3′ above.)*
 4. **Snapshot Pass-1** — copy every Pass-1 file into `$ANALYSIS_DIR/pass1/` before starting Pass 2: `mkdir -p "$ANALYSIS_DIR/pass1" && cp "$ANALYSIS_DIR"/*.md "$ANALYSIS_DIR/pass1/"`. The `pass1/` directory is the fallback evidence the gate uses when mtime windows are too tight. Do **not** stage `pass1/` in the PR (see `07-commit-and-pr.md`). *(Improvement-mode: take this snapshot **before** making any write/extend changes from step 3′ — until this snapshot exists, treat step 3′ as read/download/planning only and apply extensions only after step 4. Do not assume `pass1/` or its `.md` files are already present from the prior run; the broadened router (`03-data-download.md §Pre-flight`) may enter improvement-mode from a minimal carry-forward such as only `synthesis-summary.md`. The `mkdir -p` keeps the command valid in both cases. The snapshot overwrites any earlier baseline; the gate only needs the most recent pre-improvement copy for Pass-2 delta checks.)*
 5. **Pass 2 — Improve**: read every Pass-1 file back in full and strengthen evidence, diagrams, cross-references, stakeholder coverage, uncertainty disclosure, Admiralty annotations, WEP language, PIR/EEI tags. Minimum 10 minutes.
+6. **Pass-2 declaration (mandatory, fail-loud contract)** — append/update `methodology-reflection.md` with a single canonical status line before running the gate: `Pass-2 status: executed in full`. If Pass 2 cannot be completed in full by the minute-42 PR window, do **not** proceed as a normal success path; treat it as an explicit gate failure and document the failure in the same file (no silent "not executed in full" acceptance).
 
 Pass 2 is mandatory. Completing earlier is a quality failure. `methodology-reflection.md` is the self-audit of Pass 2 — skipping it breaks the self-correction loop.
+
+### Family parallelisation guidance (within dependency limits)
+
+To reduce budget exhaustion, parallelise independent work where possible:
+
+- Batch-read templates/methodologies in parallel tool calls before writing.
+- In Pass 1, draft Families **A/B/C/D** as independent workstreams after `data-download-manifest.md` is stable.
+- In Pass 2, run parallel read-back/improvement sweeps by family, then do one final coherence sweep (`synthesis-summary.md` + `cross-reference-map.md` + `methodology-reflection.md`).
+
+Never parallelise steps with direct dependencies (`pass1/` snapshot → Pass 2 writes → gate).
 
 ## Depth calibration
 

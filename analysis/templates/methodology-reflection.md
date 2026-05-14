@@ -86,6 +86,7 @@ ANTI-TEMPLATE — DO NOT:
 | **Generated** | `YYYY-MM-DD HH:MM UTC` |
 | **Workflow** | `e.g., news-morning-propositions` |
 | **Run duration** | `minutes` |
+| **Pass-2 status** | `executed in full` *(required literal for gate compliance)* |
 | **Files produced** | `N` |
 | **Exemplar status** | `Yes / No — and why` |
 
@@ -145,6 +146,18 @@ flowchart LR
 | `synthesis-summary.md` | "The government tabled several propositions today." | "Finance Minister **Elisabeth Svantesson (M)** tabled the 2026 Spring Bill (HD03100) alongside an extra amendment budget (HD0399) and three fiscal support measures." | 🟢 Named actor + dok_ids added |
 | `swot-analysis.md` — Opportunities Q1 | "Potential for cross-party support." | "Cross-party support from SD on sentencing (HD01JuU15) extends to fuel-tax package (HD03236)." | 🟢 Specific cross-reference added |
 | `executive-brief.md` — BLUF | "Coalition shows discipline." | "Coalition unanimous on FiU48 (confidence 🟩 HIGH; L reservation noted separately)." | 🟢 Confidence qualifier added |
+
+---
+
+## 🔁 Re-run log (improvement-mode only)
+
+> Use this exact schema on every improvement re-run. Keep the heading stable (`## Re-run log`) so the gate can validate contract compliance across all 14 news workflows.
+
+- **Re-run**: `YYYY-MM-DD HH:MM UTC` · workflow=`$GITHUB_WORKFLOW` · run_id=`$GITHUB_RUN_ID` · attempt=`$GITHUB_RUN_ATTEMPT`
+  - new dok_ids: `<count or "none">`
+  - artifacts extended: `<comma-separated list or "none — content stable">`
+  - flags closed: `<count>`
+  - vintage refresh: `<"yes" or "no, IMF WEO Apr-2026 still current">`
 
 ---
 
