@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0",
+  "subfolder": "realtime-pulse",
+  "analysis_date": "2026-05-14",
+  "generated_at": "2026-05-14T11:30:00Z",
+  "article_type": "realtime-pulse",
+  "workflow": "news-realtime-monitor",
+  "cycle": "realtime-pulse",
+  "pirs": [
+    {
+      "id": "PIR-RT-01",
+      "title": "Lagrådet yttrande on HD03267 ECHR compatibility",
+      "status": "OPEN",
+      "priority": "CRITICAL",
+      "origin_cycle": "propositions-2026-05-07",
+      "carry_forward_from": "analysis/daily/2026-05-07/propositions/intelligence-assessment.md",
+      "expected_answer_date": "2026-06-10",
+      "collection_method": "riksdag-regering MCP + Lagrådet.se monitoring",
+      "answer": null,
+      "forward_indicator": "FI-01"
+    },
+    {
+      "id": "PIR-RT-02",
+      "title": "Will government accept C's HD024160 child detention concession?",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "origin_cycle": "motions-2026-05-14",
+      "carry_forward_from": "analysis/daily/2026-05-14/motions/intelligence-assessment.md",
+      "expected_answer_date": "2026-06-15",
+      "collection_method": "SfU betänkande; government statement",
+      "answer": null,
+      "forward_indicator": "FI-04"
+    },
+    {
+      "id": "PIR-RT-03",
+      "title": "Minister Dousa HD10492 answer — barnkonsekvensanalys committed?",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "origin_cycle": "interpellations-2026-05-14",
+      "carry_forward_from": "analysis/daily/2026-05-14/interpellations/intelligence-assessment.md",
+      "expected_answer_date": "2026-05-29",
+      "collection_method": "riksdagen.se interpellation response monitoring",
+      "answer": null,
+      "forward_indicator": "FI-03"
+    },
+    {
+      "id": "PIR-RT-04",
+      "title": "KU34 second passage — will all three amendments be adopted by new Riksdag?",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "origin_cycle": "committeeReports-2026-05-14",
+      "carry_forward_from": "analysis/daily/2026-05-14/committeeReports/intelligence-assessment.md",
+      "expected_answer_date": "2026-11-30",
+      "collection_method": "Election result + post-election Riksdag vote",
+      "answer": null,
+      "forward_indicator": "FI-15"
+    },
+    {
+      "id": "PIR-RT-05",
+      "title": "SfU committee scheduling for props 262–265",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "origin_cycle": "motions-2026-05-14",
+      "carry_forward_from": "analysis/daily/2026-05-14/motions/intelligence-assessment.md",
+      "expected_answer_date": "2026-05-20",
+      "collection_method": "Riksdag calendar; riksdag-regering MCP",
+      "answer": null,
+      "forward_indicator": "FI-02"
+    }
+  ],
+  "metadata": {
+    "total_pirs": 5,
+    "open_pirs": 5,
+    "answered_pirs": 0,
+    "partially_answered_pirs": 0,
+    "critical_pirs": 1,
+    "high_pirs": 3,
+    "medium_pirs": 1
+  }
+}
