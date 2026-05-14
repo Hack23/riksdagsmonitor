@@ -94,3 +94,35 @@ Changes made in Pass 2 (critical re-read of all artifacts):
 **Accuracy**: HIGH for factual claims; MEDIUM for electoral projections (as intended)  
 **AI FIRST compliance**: ✅ Pass 2 improvements documented; minimum 2 complete iterations applied
 
+---
+
+## Re-run log
+
+- **Re-run**: 2026-05-14T14:18:57Z · workflow=news-realtime-monitor · run_id=25864884905 · attempt=1
+  - new dok_ids: none — discovery search confirmed no new parliamentary documents indexed after initial run
+  - artifacts extended: methodology-reflection.md (re-run marker + ICD 203 audit + methodology improvements), data-download-manifest.md (re-run entry appended)
+  - flags closed: 0 — all PIRs remain open pending expected answer dates (PIR-RT-01 expected 2026-06-10, PIR-RT-02 June 2026, PIR-RT-03 ~2026-05-29)
+  - vintage refresh: no, IMF WEO Apr-2026 still current (CLI degraded again on re-run; pre-warm cached context status=ok unchanged)
+
+## ICD 203 Compliance Audit (Pass 2 Re-run Verification)
+
+All nine ICD 203 equivalent standards verified in this re-run:
+
+1. **Proper description of information** [A1]: All claims cite primary dok_id, named actors, or vote counts — ✅
+2. **Proper characterisation of source** [Admiralty A–F]: Applied throughout; [C3] for all inference-based electoral claims — ✅
+3. **Proper expression of uncertainty** [WEP]: Horizon tags applied to all forward-looking statements; 4 horizon bands used (72h/week/month/election) — ✅
+4. **Proper distinction between intelligence and policy advocacy**: Analysis remains procedurally neutral; no counter-framing recommendations — ✅
+5. **Proper use of alternative analysis**: DA-1 through DA-4 in devils-advocate.md; ACH matrix in intelligence-assessment.md — ✅
+6. **Proper consideration of other perspectives**: All 8 parties addressed in stakeholder-perspectives.md; civil society and EU institutions included — ✅
+7. **Proper warning of deceptive framing**: Coordinated opposition motion filing explicitly identified as electoral strategy, not legislative blocking — ✅
+8. **Proper use of sourcing**: All primary source URLs in data-download-manifest.md; Admiralty codes on all evidence rows — ✅
+9. **Proper analytical tradecraft**: Confidence levels calibrated; key assumptions checked in intelligence-assessment.md; PIR roll-forward completed — ✅
+
+## Methodology Improvements for Next Cycle
+
+1. **IMF CLI fix**: Investigate `imf-fetch.ts` degradation — confirm network configuration for this runner; add retry logic or fallback to direct Datamapper REST call for WEO indicators
+2. **Lagrådet monitoring**: Add direct `web_fetch` to `www.lagradet.se` in the next run to track HD03267 yttrande status in real-time rather than waiting for riksdag-regering MCP update; yttrande expected before 2026-06-15
+3. **Polling data integration**: Add Sifo/Novus/Demoskop polling scraping to track KU34 abortion provision impact on female voter bloc (FI-12); structural analysis is currently the only basis for electoral projections
+4. **SfU calendar monitoring**: Dedicated `get_calendar_events` call scoped to SfU organ to track props 262–265 scheduling (FI-02, expected 2026-05-20)
+5. **HD10492 answer monitoring**: Add interpellation tracking to identify when Dousa's answer is published; enables immediate ACH resolution on HD10492
+

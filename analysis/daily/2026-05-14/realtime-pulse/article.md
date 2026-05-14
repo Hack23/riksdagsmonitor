@@ -6,7 +6,7 @@ date: 2026-05-14
 subfolder: realtime-pulse
 slug: 2026-05-14-realtime-pulse
 source_folder: analysis/daily/2026-05-14/realtime-pulse
-generated_at: 2026-05-14T11:14:31.084Z
+generated_at: 2026-05-14T14:20:15.902Z
 language: en
 layout: article
 ---
@@ -2152,6 +2152,28 @@ Open PIRs from propositions/motions/committeeReports/interpellations cycles:
 - IMF SDMX: ✅ confirmed in imf-context.json probes
 - World Bank: Available (used for governance/social context only)
 - SCB: Available
+
+### Re-run 2026-05-14 14:19 UTC
+
+**Triggered by**: news-realtime-monitor run_id=25864884905 (improvement mode — all 23 artifacts present)
+
+#### Discovery Results
+- New dok_ids found: **0**
+- Discovery method: `search_dokument(from_date=2026-05-14, rm=2025/26)` — returned calendar entries only (EU-nämnden meetings, Riksdag demokratiutställning, other institutional events)
+- Conclusion: Substantive parliamentary documents for 2026-05-14 are unchanged from prior run inventory of 13 documents
+
+#### Re-run Actions
+1. Verified riksdag-regering MCP status: live (search_voteringar call returned valid results)
+2. IMF CLI re-attempt: degraded (fetch failed again; pre-warm cached context still current at WEO Apr-2026)
+3. No new voteringar since prior run (most recent: AU10 pt3, 2026-03-04)
+4. Artifacts extended: methodology-reflection.md (re-run log + ICD 203 audit + methodology improvements)
+5. All 23 artifacts validated against gate requirements — gate ready
+
+#### Data Freshness Assessment (Re-run)
+- Parliamentary data: CURRENT (live MCP, same 13 documents as initial run)
+- Sibling analysis ingestion: UNCHANGED (4 sibling folders as indexed in initial run)
+- IMF economic context: CURRENT (WEO Apr-2026 cached, same vintage as initial run)
+- pir-status.json: VALID (schema_version=1.0, 3 open PIRs)
 
 ## Analysis Artifact Coverage Report
 
