@@ -242,14 +242,20 @@ export function runDashboardSuite(cfg) {
         expect(res.status, `GET ${cfg.path}`).to.equal(200);
         expect(res.headers['content-type']).to.match(/text\/html/);
         if (cfg.isHub) {
-          // CIA hub: cia-entry-*.js
+          // CIA hub: cia-entry-*.js. Accept both pre-minify quoted
+          // attributes and deploy-minified unquoted attributes.
           expect(res.body, 'cia-entry bundle reference').to.match(
-            /<script\b[^>]*src="[^"]*\/assets\/js\/cia-entry-[A-Za-z0-9_-]+\.js"/,
+            /<script\b[^>]*\bsrc=(?:"[^"]*\/assets\/js\/cia-entry-[A-Za-z0-9_-]+\.js"|[^\s>]*\/assets\/js\/cia-entry-[A-Za-z0-9_-]+\.js)/,
           );
         } else {
-          // /dashboards/*.html: hashed main-*.js bundle
+          // /dashboards/*.html: hashed main-*.js bundle. The deploy
+          // minifier rewrites `<script type="module" crossorigin=""
+          // src="/assets/js/main-*.js">` into `<script type=module
+          // crossorigin src=/assets/js/main-*.js>`, so the assertion must
+          // validate the semantic contract instead of relying on quoted
+          // attributes from raw Vite output.
           expect(res.body, 'main-*.js bundle reference').to.match(
-            /<script\b[^>]*type="module"[^>]*src="\/assets\/js\/main-[A-Za-z0-9_-]+\.js"/,
+            /<script\b(?=[^>]*\btype=(?:"module"|module))(?=[^>]*\bsrc=(?:"\/assets\/js\/main-[A-Za-z0-9_-]+\.js"|\/assets\/js\/main-[A-Za-z0-9_-]+\.js))[^>]*>/,
           );
           expect(res.body, 'no dev-only /src/browser/main.ts path').not.to.include(
             '/src/browser/main.ts',
