@@ -6,7 +6,7 @@ date: 2026-05-04
 subfolder: propositions
 slug: 2026-05-04-propositions
 source_folder: analysis/daily/2026-05-04/propositions
-generated_at: 2026-05-13T22:57:09.780Z
+generated_at: 2026-05-14T08:27:42.170Z
 language: en
 layout: article
 ---

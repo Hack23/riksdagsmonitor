@@ -1,12 +1,12 @@
 ---
-title: "Sweden Advances Historic Constitutional Reforms: Abortion Right, Citizenship Revocation, and Gang Restrictions in Fundamental Law"
+title: "Sweden's Constitutional Affairs Committee (KU) has advanced two"
 description: "Sweden's Constitutional Affairs Committee (KU) has advanced two landmark reports. The dominant event is adoption of KU34 — a package of constitutional amendments (vilande) that must survive September…"
 keywords: "CommitteeReports, English, May 14, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Constitutional Affairs Committee advanced, Sweden, Constitutional, Affairs, Committee, advanced, landmark, reports, dominant, event, adoption, KU34, package, amendments"
 date: 2026-05-14
 subfolder: committeeReports
 slug: 2026-05-14-committeeReports
 source_folder: analysis/daily/2026-05-14/committeeReports
-generated_at: 2026-05-14T05:13:47.753Z
+generated_at: 2026-05-14T08:27:42.661Z
 language: en
 layout: article
 ---
@@ -1893,7 +1893,7 @@ This generated report reconciles the analysis folder with the article projection
 |---|---:|---|
 | Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 3 | Expanded under `## Per-document intelligence` immediately after significance scoring |
-| Supporting data artifacts | 2 | Linked in Article Sources, not expanded inline |
+| Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
 **Absent canonical ordered slots (no alias variant on disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
 
@@ -1936,4 +1936,3 @@ Each section above projects one analysis artifact. The full audited markdown is 
 These machine-readable artifacts are linked for auditability and are not expanded inline, preserving the reader-facing narrative order:
 
 - [`pir-status.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/pir-status.json)
-- [`documents/hd01ku35.json`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/documents/hd01ku35.json)
