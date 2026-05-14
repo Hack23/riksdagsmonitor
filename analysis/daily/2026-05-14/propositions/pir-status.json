@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-05-14",
+  "subfolder": "propositions",
+  "cycle": "propositions",
+  "generated_at": "2026-05-14T00:00:00Z",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "title": "Lagrådet yttrande on HD03267",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "collection_method": "riksdag-regering MCP + web monitoring",
+      "deadline": "2026-06-15",
+      "last_checked": "2026-05-14",
+      "note": "Yttrande not yet public as of analysis date"
+    },
+    {
+      "id": "PIR-2",
+      "title": "S party committee position on HD03267",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "collection_method": "riksdag-regering MCP (voteringar)",
+      "deadline": "2026-06-10",
+      "last_checked": "2026-05-14",
+      "note": "JuU committee process not yet initiated"
+    },
+    {
+      "id": "PIR-3",
+      "title": "IMY preliminary position on HD03261",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "collection_method": "Web monitoring",
+      "deadline": "2026-06-10",
+      "last_checked": "2026-05-14",
+      "note": "IMY has not issued preliminary view"
+    },
+    {
+      "id": "PIR-4",
+      "title": "HD03250 budget allocation published",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "collection_method": "riksdag-regering MCP (propositioner)",
+      "deadline": "2026-06-30",
+      "last_checked": "2026-05-14",
+      "note": "Full cost analysis not yet published"
+    },
+    {
+      "id": "PIR-5",
+      "title": "ECtHR interim measure application post-enactment",
+      "status": "WATCHING",
+      "priority": "HIGH",
+      "collection_method": "ECtHR HUDOC API",
+      "deadline": "2026-12-31",
+      "last_checked": "2026-05-14",
+      "note": "Pre-emptive watch; HD03267 not yet enacted"
+    },
+    {
+      "id": "PIR-6",
+      "title": "Riksdag committee hearing dates for all three propositions",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "collection_method": "riksdag-regering MCP (calendar)",
+      "deadline": "2026-05-20",
+      "last_checked": "2026-05-14",
+      "note": "Committee schedule not yet published"
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "open": 5,
+    "watching": 1,
+    "closed": 0,
+    "critical": 2
+  }
+}
