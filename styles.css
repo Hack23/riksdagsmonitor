@@ -16961,7 +16961,7 @@ html[data-theme="light"] .dashboard-related {
   margin-inline-start: auto; /* push to the right edge of the flex row */
 }
 
-:where(#theme-toggle.theme-toggle-btn, .rm-theme-toggle):hover {
+  :where(#theme-toggle.theme-toggle-btn, .rm-theme-toggle):hover {
   background: color-mix(in srgb, var(--primary-cyan, #00d9ff) 22%, transparent);
 }
 
