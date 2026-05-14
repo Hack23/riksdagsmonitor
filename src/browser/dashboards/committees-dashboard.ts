@@ -30,7 +30,7 @@ import type { ChartConstructor } from '../shared/global-libs.js';
 
 const d3 = (globalThis as unknown as { d3: typeof import('d3') }).d3;
 const Chart = (globalThis as unknown as { Chart: ChartConstructor }).Chart;
-const Papa = (globalThis as unknown as { Papa: { parse(input: string, config?: Record<string, unknown>): { data: CSVRow[]; errors: unknown[] } } }).Papa;
+const papaParser = (globalThis as unknown as { Papa: { parse(input: string, config?: Record<string, unknown>): { data: CSVRow[]; errors: unknown[] } } }).Papa;
 
 /* ------------------------------------------------------------------ */
 /*  Interfaces                                                        */
@@ -195,11 +195,11 @@ class DataManager {
 
         const csvText = await response.text();
 
-        if (typeof Papa === 'undefined') {
+        if (typeof papaParser === 'undefined') {
           throw new Error('Papa Parse library not loaded');
         }
 
-        const parsed = Papa.parse(csvText, {
+        const parsed = papaParser.parse(csvText, {
           header: true,
           dynamicTyping: true,
           skipEmptyLines: true,
@@ -1044,7 +1044,7 @@ async function initializeDashboard(): Promise<void> {
   try {
     if (typeof d3 === 'undefined') throw new Error('D3.js not loaded. Please include D3.js library.');
     if (typeof Chart === 'undefined') throw new Error('Chart.js not loaded. Please include Chart.js library.');
-    if (typeof Papa === 'undefined') throw new Error('Papa Parse not loaded. Please include Papa Parse library.');
+    if (typeof papaParser === 'undefined') throw new Error('Papa Parse not loaded. Please include Papa Parse library.');
 
     showLoadingIndicator();
 

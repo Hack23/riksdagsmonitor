@@ -207,10 +207,103 @@ Cypress.Commands.add('waitForGlobals', (opts = {}) => {
  * @param {string} containerId dashboard root container to scroll into view
  */
 Cypress.Commands.add('visitDashboard', (path, containerId) => {
-  cy.visit(path);
+  cy.visit(path, {
+    onBeforeLoad(win) {
+      let pendingRequests = 0;
+      const markRequestStart = () => {
+        pendingRequests += 1;
+      };
+      const markRequestEnd = () => {
+        pendingRequests = Math.max(0, pendingRequests - 1);
+        win.__rdmLastNetworkActivityAt = Date.now();
+      };
+
+      win.__rdmLastNetworkActivityAt = Date.now();
+      Object.defineProperty(win, '__rdmPendingRequests', {
+        configurable: true,
+        get() {
+          return pendingRequests;
+        },
+      });
+
+      if (typeof win.fetch === 'function') {
+        const originalFetch = win.fetch.bind(win);
+        win.fetch = (...args) => {
+          markRequestStart();
+          return originalFetch(...args).finally(markRequestEnd);
+        };
+      }
+
+      const xhrProto = win.XMLHttpRequest && win.XMLHttpRequest.prototype;
+      if (xhrProto && typeof xhrProto.send === 'function') {
+        const originalSend = xhrProto.send;
+        xhrProto.send = function (...args) {
+          markRequestStart();
+          let settled = false;
+          const settle = () => {
+            if (settled) {
+              return;
+            }
+            settled = true;
+            markRequestEnd();
+          };
+          this.addEventListener('loadend', settle);
+          this.addEventListener('error', settle);
+          this.addEventListener('abort', settle);
+          this.addEventListener('timeout', settle);
+          return originalSend.apply(this, args);
+        };
+      }
+
+      const consoleErrors = [];
+      const originalError = win.console.error.bind(win.console);
+      win.__rdmConsoleErrors = consoleErrors;
+      cy.stub(win.console, 'error')
+        .callsFake((...args) => {
+          consoleErrors.push(args);
+          originalError(...args);
+        })
+        .as('consoleError');
+    },
+  });
   if (containerId) {
     cy.get(`#${containerId}`, { timeout: 15000 }).should('exist').scrollIntoView();
   }
+});
+
+function formatDashboardConsoleErrorArgument(arg) {
+  if (
+    arg &&
+    typeof arg === 'object' &&
+    typeof arg.name === 'string' &&
+    typeof arg.message === 'string'
+  ) {
+    return `${arg.name}: ${arg.message}`;
+  }
+  if (typeof arg === 'string') {
+    return arg;
+  }
+  try {
+    return JSON.stringify(arg);
+  } catch {
+    return String(arg);
+  }
+}
+
+Cypress.Commands.add('assertNoConsoleErrors', () => {
+  cy.window({ timeout: 15000 }).should((win) => {
+    const pendingRequests = Number(win.__rdmPendingRequests || 0);
+    const lastActivity = Number(win.__rdmLastNetworkActivityAt || Date.now());
+    const idleForMs = Date.now() - lastActivity;
+    expect(pendingRequests, 'dashboard pending network requests').to.equal(0);
+    expect(idleForMs, 'dashboard network idle for >=300ms').to.be.gte(300);
+  });
+  cy.window().then((win) => {
+    const messages = (win.__rdmConsoleErrors || []).map((args) =>
+      args.map(formatDashboardConsoleErrorArgument).join(' '),
+    );
+    expect(messages, 'dashboard console.error messages').to.deep.equal([]);
+  });
 });
 
 /**

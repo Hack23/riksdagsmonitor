@@ -102,21 +102,21 @@ describe('All Dashboards - Comprehensive Coverage', () => {
       beforeEach(() => {
         // Use real CIA CSV sample data from the repository to ensure correct schemas per dashboard
         // cy.stubCIAData(); // Disabled: causes dashboards to render empty/fallback states
-        cy.visit(`/dashboards/${dashboard.slug}.html`);
+        // dashboard.id is the page's root dashboard container; scrolling it into view triggers
+        // the IntersectionObserver lazy loader before assertions inspect charts and console output.
+        cy.visitDashboard(`/dashboards/${dashboard.slug}.html`, dashboard.id);
+      });
+
+      afterEach(() => {
+        cy.assertNoConsoleErrors();
       });
       
-      it('should exist and be visible', () => {
+      it('should mount the dashboard container and remain visible', () => {
         cy.get(`#${dashboard.id}`).should('exist').should('be.visible');
       });
       
       it('should have dashboard heading', () => {
         cy.get(`#${dashboard.id} h2, #${dashboard.id} h3`).first().should('be.visible');
-      });
-      
-      it('should not have error messages', () => {
-        // Some dashboards may surface recoverable, chart-level warnings during async data loading.
-        // Validate dashboard container remains visible and usable.
-        cy.get(`#${dashboard.id}`).should('be.visible');
       });
       
       it('should have data attribution', () => {
