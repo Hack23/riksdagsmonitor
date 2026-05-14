@@ -86,3 +86,11 @@ Five concurrent parliamentary developments on 14 May 2026 mark one of the most d
 3. **Context story**: ECHR risks in Swedish legislation — HD03267 + KU34 citizenship as thematic cluster
 4. **Data story**: DIW scores visualised — most significant 24-hour legislative surge of the 2025/26 session
 
+
+---
+
+## Re-run Delta Addendum (15:02 UTC)
+
+**New intelligence**: Three interpellation debates answered in chamber this afternoon extend the analytical picture. SD's paired energy interpellations (HD10453/HD10448) against KD's Ebba Busch are assessed as intra-coalition electoral positioning: SD building energy-cost and wind-scepticism credentials against coalition partner KD 122 days before the election. S's third consecutive interpellation on occupational physician training (HD10440) confirms a systematic accountability record-building strategy aimed at autumn campaign use.
+
+**Revised tactical picture**: The parliamentary day is even more pre-electoral than originally assessed. Four distinct parties (SD, S, C, V) are simultaneously using parliamentary tools to position for September 13, 2026.

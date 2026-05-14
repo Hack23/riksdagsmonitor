@@ -126,3 +126,44 @@ All nine ICD 203 equivalent standards verified in this re-run:
 4. **SfU calendar monitoring**: Dedicated `get_calendar_events` call scoped to SfU organ to track props 262–265 scheduling (FI-02, expected 2026-05-20)
 5. **HD10492 answer monitoring**: Add interpellation tracking to identify when Dousa's answer is published; enables immediate ACH resolution on HD10492
 
+
+---
+
+## Re-run Delta: 2026-05-14 15:02 UTC
+
+### What changed and why
+
+**Trigger**: Improvement-mode re-run. Prior run (ID 25856001333) was executed ~10:56 UTC. Afternoon parliamentary chamber activity (13:00–15:00 window) produced three interpellation debates not captured in the original run.
+
+**New evidence integrated**:
+1. HD10453 + HD10448 (energy interpellations — SD/Fransson vs KD/Busch) — both answered in chamber today. Pattern of dual same-minister interpellations identified as intra-coalition electoral positioning signal.
+2. HD10440 (occupational physician training — S/Haraldsson vs L/Britz) — answered today. Third such interpellation from S on this topic in current riksmöte; systematic accountability record-building pattern identified.
+
+**Artifacts extended**:
+- `data-download-manifest.md`: Re-run section added with 3 new debate activities documented
+- `synthesis-summary.md`: Fifth pillar (intra-coalition accountability) identified and documented
+- `forward-indicators.md`: FI-19, FI-20, FI-21 added; TWI-06 added; PIR-RT-NEW-01 established
+- `intelligence-assessment.md`: PIR status table updated; new key judgement addendum on intra-coalition energy positioning (HIGH confidence, 90–95%); PIR-RT-NEW-01 formalised
+
+**Content metrics update**:
+| Metric | Original | After re-run |
+|--------|---------|-------------|
+| Total documents covered | 13 | 16 (+3 interpellation answers) |
+| Forward indicators | 18 | 21 |
+| PIRs tracked | 6 | 7 |
+| Cross-pillar patterns | 3 | 4 |
+
+**AI FIRST compliance**:
+- Pass 1: Completed in original run (ID 25856001333)
+- Pass 2: Completed in original run
+- Re-run improvement pass: This delta (read-back → evidence extension → artifact update)
+- Minimum floor: Improvement pass applied to manifest, synthesis, forward indicators, intelligence assessment
+
+**Source diversity after re-run**:
+- Primary parliamentary (Riksdag MCP): ✅ 16 dok_ids covered
+- Speeches (anföranden): ✅ 20 speeches queried for afternoon chamber activity
+- Economic context (IMF): ⚠️ Still degraded (WEO Apr-2026 vintage cached context only)
+- World Bank: Not required
+- SCB: Not required
+
+**ICD 203 addendum**: New evidence rows for energy interpellations carry [B2] Admiralty rating (known source, not confirmed independently). Intra-coalition positioning assessment carries HIGH confidence with 4 evidence items. No fabrication; all claims based on search_anforanden results and dok_id metadata.

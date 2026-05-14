@@ -1,5 +1,5 @@
 {
-  "version": "0.9.16",
+  "version": "0.9.17",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -5313,51 +5313,14 @@
       }
     },
     "tsx": {
-      "version": "4.21.0",
-      "resolved": "https://registry.npmjs.org/tsx/-/tsx-4.21.0.tgz",
+      "version": "4.22.0",
+      "resolved": "https://registry.npmjs.org/tsx/-/tsx-4.22.0.tgz",
       "overridden": false,
       "dependencies": {
         "esbuild": {
-          "version": "0.27.3",
-          "resolved": "https://registry.npmjs.org/esbuild/-/esbuild-0.27.3.tgz",
-          "overridden": false,
-          "dependencies": {
-            "@esbuild/aix-ppc64": {},
-            "@esbuild/android-arm": {},
-            "@esbuild/android-arm64": {},
-            "@esbuild/android-x64": {},
-            "@esbuild/darwin-arm64": {},
-            "@esbuild/darwin-x64": {},
-            "@esbuild/freebsd-arm64": {},
-            "@esbuild/freebsd-x64": {},
-            "@esbuild/linux-arm": {},
-            "@esbuild/linux-arm64": {},
-            "@esbuild/linux-ia32": {},
-            "@esbuild/linux-loong64": {},
-            "@esbuild/linux-mips64el": {},
-            "@esbuild/linux-ppc64": {},
-            "@esbuild/linux-riscv64": {},
-            "@esbuild/linux-s390x": {},
-            "@esbuild/linux-x64": {
-              "version": "0.27.3",
-              "resolved": "https://registry.npmjs.org/@esbuild/linux-x64/-/linux-x64-0.27.3.tgz",
-              "overridden": false
-            },
-            "@esbuild/netbsd-arm64": {},
-            "@esbuild/netbsd-x64": {},
-            "@esbuild/openbsd-arm64": {},
-            "@esbuild/openbsd-x64": {},
-            "@esbuild/openharmony-arm64": {},
-            "@esbuild/sunos-x64": {},
-            "@esbuild/win32-arm64": {},
-            "@esbuild/win32-ia32": {},
-            "@esbuild/win32-x64": {}
-          }
+          "version": "0.28.0"
         },
-        "fsevents": {},
-        "get-tsconfig": {
-          "version": "4.14.0"
-        }
+        "fsevents": {}
       }
     },
     "typedoc-plugin-mdn-links": {
@@ -5809,8 +5772,8 @@
       }
     },
     "vite": {
-      "version": "8.0.12",
-      "resolved": "https://registry.npmjs.org/vite/-/vite-8.0.12.tgz",
+      "version": "8.0.13",
+      "resolved": "https://registry.npmjs.org/vite/-/vite-8.0.13.tgz",
       "overridden": false,
       "dependencies": {
         "@types/node": {
@@ -5818,7 +5781,7 @@
         },
         "@vitejs/devtools": {},
         "esbuild": {
-          "version": "0.27.3"
+          "version": "0.28.0"
         },
         "fsevents": {},
         "jiti": {
@@ -5835,14 +5798,12 @@
           "version": "8.5.14"
         },
         "rolldown": {
-          "version": "1.0.0",
-          "resolved": "https://registry.npmjs.org/rolldown/-/rolldown-1.0.0.tgz",
+          "version": "1.0.1",
+          "resolved": "https://registry.npmjs.org/rolldown/-/rolldown-1.0.1.tgz",
           "overridden": false,
           "dependencies": {
             "@oxc-project/types": {
-              "version": "0.129.0",
-              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.129.0.tgz",
-              "overridden": false
+              "version": "0.130.0"
             },
             "@rolldown/binding-android-arm64": {},
             "@rolldown/binding-darwin-arm64": {},
@@ -5854,13 +5815,13 @@
             "@rolldown/binding-linux-ppc64-gnu": {},
             "@rolldown/binding-linux-s390x-gnu": {},
             "@rolldown/binding-linux-x64-gnu": {
-              "version": "1.0.0",
-              "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-x64-gnu/-/binding-linux-x64-gnu-1.0.0.tgz",
+              "version": "1.0.1",
+              "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-x64-gnu/-/binding-linux-x64-gnu-1.0.1.tgz",
               "overridden": false
             },
             "@rolldown/binding-linux-x64-musl": {
-              "version": "1.0.0",
-              "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-x64-musl/-/binding-linux-x64-musl-1.0.0.tgz",
+              "version": "1.0.1",
+              "resolved": "https://registry.npmjs.org/@rolldown/binding-linux-x64-musl/-/binding-linux-x64-musl-1.0.1.tgz",
               "overridden": false
             },
             "@rolldown/binding-openharmony-arm64": {},
@@ -5868,8 +5829,8 @@
             "@rolldown/binding-win32-arm64-msvc": {},
             "@rolldown/binding-win32-x64-msvc": {},
             "@rolldown/pluginutils": {
-              "version": "1.0.0",
-              "resolved": "https://registry.npmjs.org/@rolldown/pluginutils/-/pluginutils-1.0.0.tgz",
+              "version": "1.0.1",
+              "resolved": "https://registry.npmjs.org/@rolldown/pluginutils/-/pluginutils-1.0.1.tgz",
               "overridden": false
             }
           }
@@ -5885,7 +5846,7 @@
           "version": "0.2.16"
         },
         "tsx": {
-          "version": "4.21.0"
+          "version": "4.22.0"
         },
         "yaml": {
           "version": "2.9.0"
@@ -5968,7 +5929,7 @@
             },
             "msw": {},
             "vite": {
-              "version": "8.0.12"
+              "version": "8.0.13"
             }
           }
         },
@@ -6080,7 +6041,7 @@
           "version": "3.1.0"
         },
         "vite": {
-          "version": "8.0.12"
+          "version": "8.0.13"
         },
         "why-is-node-running": {
           "version": "2.3.0",

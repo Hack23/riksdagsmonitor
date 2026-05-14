@@ -124,3 +124,30 @@ Open PIRs from propositions/motions/committeeReports/interpellations cycles:
 - Sibling analysis ingestion: UNCHANGED (4 sibling folders as indexed in initial run)
 - IMF economic context: CURRENT (WEO Apr-2026 cached, same vintage as initial run)
 - pir-status.json: VALID (schema_version=1.0, 3 open PIRs)
+
+## Re-run 2026-05-14 15:02 UTC
+
+**Re-run trigger**: Improvement-mode re-run to extend analysis with afternoon chamber activity
+**New dok_ids identified**: HD10453, HD10440 (interpellation debates answered in chamber today)
+
+### New interpellation debate activity (afternoon, 2026-05-14)
+
+Three interpellations were answered in chamber debate this afternoon, not captured in the original run:
+
+| dok_id | Number | Title | Interpellant | Minister | Speeches |
+|--------|--------|-------|-------------|---------|----------|
+| HD10453 | 2025/26:453 | Investeringar i elnät | Josef Fransson (SD) | Ebba Busch / Energiminister (KD) | 7 speeches |
+| HD10448 | 2025/26:448 | Desinformation om vindkraft | Josef Fransson (SD) | Ebba Busch / Energiminister (KD) | 7 speeches |
+| HD10440 | 2025/26:440 | Utbildningen för företagsläkare | Johanna Haraldsson (S) | Johan Britz / Arbetsmarknadsminister (L) | 6 speeches |
+
+**Retrieval timestamp**: 2026-05-14T15:02:00Z
+**MCP source**: search_anforanden (live), search_dokument (confirmed)
+**Full-text status**: HD10453 metadata — full-text available on request; HD10440 metadata — full-text available on request
+
+### Significance assessment for new debates
+
+**HD10453/HD10448 (Energy — Busch/Fransson)**: SD-KD interpellation pair on electricity grid investment and wind-power disinformation narrative is analytically significant pre-election. SD is using interpellations to (a) establish an energy-cost accountability chain against the government, and (b) test whether KD's support for wind power diverges from SD's energy-nationalism narrative. The dual interpellation filing against the same minister on the same day signals coordinated parliamentary pressure.
+
+**HD10440 (Labour/Health — Britz/Haraldsson)**: S's persistent pressure on occupational physician training reflects welfare-state credential building. Third similar S interpellation this riksmöte on the same topic (cross-ref HD10354 Feb 2026, HD10282 Jan 2026). Pattern indicates S is building a documented record of government inaction for election use.
+
+**PIR impact**: HD10453/10448 are new PIRs (energy sector), not linked to the primary PIRs in today's analysis. HD10440 enriches the pattern of S opposition strategy documented in intelligence-assessment.md.

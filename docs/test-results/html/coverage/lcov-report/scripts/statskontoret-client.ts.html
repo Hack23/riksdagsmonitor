@@ -1878,7 +1878,7 @@ export class StatskontoretClient {
     const resolved = resolveStatskontoretUrl(url, this.baseURL);
     assertStatskontoretFetchTarget(resolved, this.baseURL);
     const controller = new AbortController();
-    const timeoutId = <span class="fstat-no" title="function not covered" >setTimeout(() =&gt; <span class="cstat-no" title="statement not covered" >c</span>ontroller.abort(),</span> this.timeout);
+    const timeoutId = <span class="fstat-no" title="function not covered" >setTimeout(() =&gt; <span class="cstat-no" title="statement not covered" >c</span>ontroller.abort(), t</span>his.timeout);
     let response: Response;
     try {
       response = await this.fetchFn(resolved, {
@@ -1915,7 +1915,7 @@ export function extractStatskontoretDownloadLinks(
   const links: StatskontoretDownloadLink[] = [];
   const pageUpdatedAt = extractPageLastModified(html);
   for (const match of html.matchAll(HREF_RE)) {
-    const href = decodeHtml(match[1] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'').</span>trim();
+    const href = decodeHtml(match[1] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'')</span>.trim();
     const text = normalizeWhitespace(decodeHtml((match[2] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'').r</span>eplace(TAG_RE, ' ')));
     <span class="missing-if-branch" title="if path not taken" >I</span>if (!href) <span class="cstat-no" title="statement not covered" >continue;</span>
     const resourceType = classifyStatskontoretResource(href, text);
@@ -1931,12 +1931,12 @@ export function extractStatskontoretDownloadLinks(
       url,
       text,
       resourceType,
-      ...(parsed.searchParams.get('documentType') ? { documentType: parsed.searchParams.get('documentType') ?? <span class="branch-1 cbranch-no" title="branch not covered" >undefined } </span>: {}),
-      ...(parsed.searchParams.get('fileType') ? { fileType: parsed.searchParams.get('fileType') ?? <span class="branch-1 cbranch-no" title="branch not covered" >undefined } </span>: {}),
-      ...(parsed.searchParams.get('fileName') ? { fileName: parsed.searchParams.get('fileName') ?? <span class="branch-1 cbranch-no" title="branch not covered" >undefined } </span>: {}),
+      ...(parsed.searchParams.get('documentType') ? { documentType: parsed.searchParams.get('documentType') ?? <span class="branch-1 cbranch-no" title="branch not covered" >undefined }</span> : {}),
+      ...(parsed.searchParams.get('fileType') ? { fileType: parsed.searchParams.get('fileType') ?? <span class="branch-1 cbranch-no" title="branch not covered" >undefined }</span> : {}),
+      ...(parsed.searchParams.get('fileName') ? { fileName: parsed.searchParams.get('fileName') ?? <span class="branch-1 cbranch-no" title="branch not covered" >undefined }</span> : {}),
       ...(year !== undefined ? { year } : {}),
       ...(month !== undefined ? { month } : {}),
-      ...(parsed.searchParams.get('status') ? { status: parsed.searchParams.get('status') ?? <span class="branch-1 cbranch-no" title="branch not covered" >undefined } </span>: {}),
+      ...(parsed.searchParams.get('status') ? { status: parsed.searchParams.get('status') ?? <span class="branch-1 cbranch-no" title="branch not covered" >undefined }</span> : {}),
       ...(pageUpdatedAt ? { updatedAt: pageUpdatedAt } : {}),
     });
   }
@@ -1957,7 +1957,7 @@ export async function parseStatskontoretXlsx(input: ArrayBuffer | Uint8Array): P
   for (const sheet of parseWorkbookSheets(workbookXml)) {
     const target = rels.get(sheet.relationshipId);
     <span class="missing-if-branch" title="if path not taken" >I</span>if (!target) <span class="cstat-no" title="statement not covered" >continue;</span>
-    const sheetPath = target.startsWith('/') ? <span class="branch-0 cbranch-no" title="branch not covered" >target.slice(1) </span>: `xl/${target}`;
+    const sheetPath = target.startsWith('/') ? <span class="branch-0 cbranch-no" title="branch not covered" >target.slice(1) : `</span>xl/${target}`;
     const sheetXml = await readZipText(zip, sheetPath.replace(/\/\.\//g, '/'));
     sheets.push({ name: sheet.name, rows: parseWorksheetRows(sheetXml, sharedStrings) });
   }
@@ -2001,9 +2001,9 @@ export function aggregateHeadcountByDepartment(
   const aggregate = new Map&lt;string, { headcount: number; authorities: Set&lt;string&gt; }&gt;();
   for (const record of records) {
     const lookup = buildRecordLookup(record);
-    const year = parseStatskontoretOptionalInt(findField(lookup, ['år', 'ar', 'year']) ?? <span class="branch-1 cbranch-no" title="branch not covered" >'') </span>?? <span class="branch-1 cbranch-no" title="branch not covered" >fallbackYear;</span>
+    const year = parseStatskontoretOptionalInt(findField(lookup, ['år', 'ar', 'year']) ?? <span class="branch-1 cbranch-no" title="branch not covered" >'')</span> ?? <span class="branch-1 cbranch-no" title="branch not covered" >fallbackYear;</span>
     const department = findField(lookup, ['departement', 'departementstillhörighet', 'departementstillhorighet'])?.trim();
-    const headcountValue = parseStatskontoretSwedishNumber(findField(lookup, ['årsarbetskrafter', 'arsarbetskrafter', 'åa', 'aa']) ?? <span class="branch-1 cbranch-no" title="branch not covered" >'');</span>
+    const headcountValue = parseStatskontoretSwedishNumber(findField(lookup, ['årsarbetskrafter', 'arsarbetskrafter', 'åa', 'aa']) ?? <span class="branch-1 cbranch-no" title="branch not covered" >'')</span>;
     <span class="missing-if-branch" title="if path not taken" >I</span>if (!year || !department || headcountValue === undefined) <span class="cstat-no" title="statement not covered" >continue;</span>
     const authority = findField(lookup, ['myndighet', 'myndighetsnamn', 'namn'])?.trim() ?? <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
     const key = `${year}::${department}`;
@@ -2080,7 +2080,7 @@ export function parseBudgetRows(
       'utfall', 'outturn', 'utfallmsek', 'utfallbelopp',
       'inkomstutfall', 'utgiftsutfall', 'belopp',
     ]);
-    const outturn = parseStatskontoretSwedishNumber(outturnRaw ?? <span class="branch-1 cbranch-no" title="branch not covered" >'');</span>
+    const outturn = parseStatskontoretSwedishNumber(outturnRaw ?? <span class="branch-1 cbranch-no" title="branch not covered" >'')</span>;
     if (outturn === undefined) continue;
 &nbsp;
     const budgetRaw = findField(lookup, [
@@ -2100,8 +2100,8 @@ export function parseBudgetRows(
       ...(code ? { code } : {}),
       outturn: roundOneDecimal(outturn),
       ...(budget !== undefined ? { budget: roundOneDecimal(budget) } : {}),
-      ...(agency ? { agency } : <span class="branch-1 cbranch-no" title="branch not covered" >{})</span>,
-      ...(status ? <span class="branch-0 cbranch-no" title="branch not covered" >{ status } </span>: {}),
+      ...(agency ? { agency } : <span class="branch-1 cbranch-no" title="branch not covered" >{}),</span>
+      ...(status ? <span class="branch-0 cbranch-no" title="branch not covered" >{ status } : {</span>}),
     });
   }
   return rows;
@@ -2198,7 +2198,7 @@ export function summarizeBudgetOutturn(
 function inferDocTypeFromSheetName(name: string): string | undefined {
   const n = name.toLowerCase();
   if (n.includes('inkomst')) return 'Inkomst';
-  <span class="missing-if-branch" title="else path not taken" >E</span>if (n.includes('utgift') || <span class="branch-1 cbranch-no" title="branch not covered" >n.includes('anslag'))</span> return 'Utgift';
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (n.includes('utgift') || <span class="branch-1 cbranch-no" title="branch not covered" >n.includes('anslag')) r</span>eturn 'Utgift';
 <span class="cstat-no" title="statement not covered" >  return undefined;</span>
 }
 &nbsp;
@@ -2206,7 +2206,7 @@ function parseWorkbookSheets(xml: string): Array&lt;{ name: string; relationship
   const sheets: Array&lt;{ name: string; relationshipId: string }&gt; = [];
   const sheetRe = /&lt;sheet\b([^&gt;]*)\/&gt;/gi;
   for (const match of xml.matchAll(sheetRe)) {
-    const attrs = parseXmlAttributes(match[1] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'');</span>
+    const attrs = parseXmlAttributes(match[1] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'')</span>;
     const name = attrs.get('name');
     const relationshipId = attrs.get('r:id') ?? <span class="branch-1 cbranch-no" title="branch not covered" >attrs.get('id');</span>
     <span class="missing-if-branch" title="else path not taken" >E</span>if (name &amp;&amp; relationshipId) sheets.push({ name: decodeXml(name), relationshipId });
@@ -2218,7 +2218,7 @@ function parseWorkbookRelationships(xml: string): Map&lt;string, string&gt; {
   const rels = new Map&lt;string, string&gt;();
   const relRe = /&lt;Relationship\b([^&gt;]*)\/&gt;/gi;
   for (const match of xml.matchAll(relRe)) {
-    const attrs = parseXmlAttributes(match[1] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'');</span>
+    const attrs = parseXmlAttributes(match[1] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'')</span>;
     const id = attrs.get('Id');
     const target = attrs.get('Target');
     <span class="missing-if-branch" title="else path not taken" >E</span>if (id &amp;&amp; target) rels.set(id, target);
@@ -2231,7 +2231,7 @@ function parseSharedStrings(xml: string): string[] {
   const strings: string[] = [];
   const siRe = /&lt;si\b[^&gt;]*&gt;([\s\S]*?)&lt;\/si&gt;/gi;
   for (const match of xml.matchAll(siRe)) {
-    strings.push(extractTextNodes(match[1] ?? <span class="branch-1 cbranch-no" title="branch not covered" >''))</span>;
+    strings.push(extractTextNodes(match[1] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'')</span>);
   }
   return strings;
 }
@@ -2243,7 +2243,7 @@ function parseWorksheetRows(xml: string, sharedStrings: readonly string[]): stri
     const row: string[] = [];
     const cellRe = /&lt;c\b([^&gt;]*)&gt;([\s\S]*?)&lt;\/c&gt;/gi;
     for (const cellMatch of (rowMatch[1] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'').m</span>atchAll(cellRe)) {
-      const attrs = parseXmlAttributes(cellMatch[1] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'');</span>
+      const attrs = parseXmlAttributes(cellMatch[1] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'')</span>;
       const ref = attrs.get('r') ?? <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
       const cellIndex = cellRefToColumnIndex(ref) ?? <span class="branch-1 cbranch-no" title="branch not covered" >row.length;</span>
       row[cellIndex] = parseCellValue(cellMatch[2] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'', a</span>ttrs.get('t'), sharedStrings);
@@ -2281,7 +2281,7 @@ function findLikelyHeaderRow(rows: readonly (readonly string[])[]): number {
     ].filter(Boolean).length;
     <span class="missing-if-branch" title="else path not taken" >E</span>if (budgetScore &gt;= 2) return i;
   }
-<span class="cstat-no" title="statement not covered" >  return rows.<span class="fstat-no" title="function not covered" >findIndex((r</span>ow) =&gt; <span class="cstat-no" title="statement not covered" >row.<span class="fstat-no" title="function not covered" >filter((c</span>ell) =&gt; <span class="cstat-no" title="statement not covered" >cell.trim())</span>.length &gt;= 2);</span></span>
+<span class="cstat-no" title="statement not covered" >  return rows.<span class="fstat-no" title="function not covered" >findIndex((r</span>ow) =&gt; <span class="cstat-no" title="statement not covered" >row.<span class="fstat-no" title="function not covered" >filter((c</span>ell) =&gt; <span class="cstat-no" title="statement not covered" >cell.trim())</span>.length &gt;= 2)</span>;</span>
 }
 &nbsp;
 function buildRecordLookup(record: Record&lt;string, string&gt;): Map&lt;string, string&gt; {
@@ -2324,7 +2324,7 @@ export function classifyStatskontoretResource(href: string, text: string): Stats
   if (haystack.includes('filetype=excel') || /\.xlsx(?:$|[?#])/i.test(href) || /\bexcel\b/i.test(text)) return 'excel';
   if (haystack.includes('filetype=zip') &amp;&amp; /\bcsv\b/i.test(text)) return 'csv-zip';
   <span class="missing-if-branch" title="if path not taken" >I</span>if (/\.zip(?:$|[?#])/i.test(href)) return /\bcsv\b/i.test(text) ? 'csv-zip' : 'zip';
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (/\b(csv|zip)\b/i.test(text) &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >href.includes('GetFile'))</span> <span class="cstat-no" title="statement not covered" >return 'csv-zip';</span>
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (/\b(csv|zip)\b/i.test(text) &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >href.includes('GetFile')) <span class="cstat-no" title="statement not covered" >r</span>eturn 'csv-zip';</span>
   if (/\.(docx|pdf)(?:$|[?#])/i.test(href)) return 'document';
   <span class="missing-if-branch" title="if path not taken" >I</span>if (FILE_EXTENSION_RE.test(href) || href.includes('GetFile')) <span class="cstat-no" title="statement not covered" >return 'unknown';</span>
   return 'unknown';
@@ -2405,21 +2405,21 @@ function parseXmlAttributes(input: string): Map&lt;string, string&gt; {
   const attrs = new Map&lt;string, string&gt;();
   const attrRe = /([\w:-]+)=["']([^"']*)["']/g;
   for (const match of input.matchAll(attrRe)) {
-    attrs.set(match[1], decodeXml(match[2] ?? <span class="branch-1 cbranch-no" title="branch not covered" >''))</span>;
+    attrs.set(match[1], decodeXml(match[2] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'')</span>);
   }
   return attrs;
 }
 &nbsp;
 function firstXmlTagValue(xml: string, tag: string): string | undefined {
   const match = new RegExp(`&lt;${tag}[^&gt;]*&gt;([\\s\\S]*?)&lt;\\/${tag}&gt;`, 'i').exec(xml);
-  return match ? decodeXml(match[1] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'') </span>: <span class="branch-1 cbranch-no" title="branch not covered" >undefined;</span>
+  return match ? decodeXml(match[1] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'')</span> : <span class="branch-1 cbranch-no" title="branch not covered" >undefined;</span>
 }
 &nbsp;
 function extractTextNodes(xml: string): string {
   const parts: string[] = [];
   const textRe = /&lt;t\b[^&gt;]*&gt;([\s\S]*?)&lt;\/t&gt;/gi;
   for (const match of xml.matchAll(textRe)) {
-    parts.push(decodeXml(match[1] ?? <span class="branch-1 cbranch-no" title="branch not covered" >''))</span>;
+    parts.push(decodeXml(match[1] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'')</span>);
   }
   return parts.join('');
 }
@@ -2432,7 +2432,7 @@ async function readZipText(zip: JSZip, path: string): Promise&lt;string&gt; {
 &nbsp;
 function extractPageLastModified(html: string): string | undefined {
   const match = /&lt;meta\s+name=["']last-modified["']\s+content=["']([^"']+)["']/i.exec(html);
-  return match ? decodeHtml(match[1] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'') </span>: undefined;
+  return match ? decodeHtml(match[1] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'')</span> : undefined;
 }
 &nbsp;
 function decodeHtml(value: string): string {
@@ -2449,7 +2449,7 @@ function decodeXml(value: string): string {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-14T08:37:04.298Z
+                at 2026-05-14T14:44:52.344Z
             </div>
         <script src="../prettify.js"></script>
         <script>
