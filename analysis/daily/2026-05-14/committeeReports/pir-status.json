@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "cycle": "2025/26",
+  "date": "2026-05-14",
+  "subfolder": "committeeReports",
+  "pirs": [
+    {
+      "id": "PIR-KU-2026-01",
+      "question": "Will the second passage of KU34 constitutional amendments succeed in the new riksdag after September 2026 election?",
+      "status": "OPEN",
+      "created": "2026-05-14",
+      "priority": "HIGH",
+      "probability": "90-95%",
+      "linked_artifacts": ["intelligence-assessment.md", "election-2026-analysis.md", "coalition-mathematics.md"],
+      "next_review": "2026-09-14",
+      "forward_indicators": ["FI-01", "FI-02", "FI-04", "FI-05", "FI-07"],
+      "tripwires": ["TWI-01", "TWI-04"]
+    },
+    {
+      "id": "PIR-KU-2026-02",
+      "question": "Will ECHR challenge be filed against KU34 citizenship revocation or association restriction provisions within 18 months of entry into force?",
+      "status": "OPEN",
+      "created": "2026-05-14",
+      "priority": "MEDIUM",
+      "probability": "65-75%",
+      "linked_artifacts": ["intelligence-assessment.md", "threat-analysis.md", "comparative-international.md"],
+      "next_review": "2027-06-14",
+      "forward_indicators": ["FI-08", "FI-09", "FI-11"],
+      "tripwires": ["TWI-02"]
+    },
+    {
+      "id": "PIR-KU-2026-03",
+      "question": "Will KU35 municipal digital meeting rules be fully implemented by 1 July 2026 deadline across all 290 municipalities?",
+      "status": "OPEN",
+      "created": "2026-05-14",
+      "priority": "MEDIUM",
+      "probability": "60-70% (partial compliance expected)",
+      "linked_artifacts": ["implementation-feasibility.md", "risk-assessment.md"],
+      "next_review": "2026-07-15",
+      "forward_indicators": ["FI-03", "FI-10"],
+      "tripwires": ["TWI-03"]
+    }
+  ]
+}
