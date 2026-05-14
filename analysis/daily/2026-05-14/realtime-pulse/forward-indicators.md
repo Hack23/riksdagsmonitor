@@ -68,3 +68,21 @@
 | PIR-RT-04 (KU34 second passage) | FI-05, FI-06, FI-12, FI-15, FI-16 | HIGH |
 | PIR-RT-05 (SfU scheduling) | FI-02 | MEDIUM |
 
+
+---
+
+## Re-run Delta: New Forward Indicators from Afternoon Debates (2026-05-14)
+
+| # | Indicator | Source | Expected date | Current status |
+|---|-----------|--------|--------------|----------------|
+| FI-19 | Busch/SD energy reconciliation signal — does KD publicly endorse or dispute SD's wind-disinformation framing? | Party communications; energy debate transcripts | June–July 2026 | ⚪ NEW — PENDING |
+| FI-20 | Government response to compound S pressure on occupational physician training (HD10440 answer content quality) | riksdagen.se interpellation response transcript | 2026-05-14 (answer given today) | 🟡 PARTIAL — Answer given; content not yet assessed |
+| FI-21 | SD election manifesto energy plank — net-zero commitment vs cost-control framing | SD election programme | July–August 2026 | ⚪ PENDING |
+
+### Tripwire update
+
+| Tripwire | Condition | Status |
+|----------|-----------|--------|
+| TWI-06 | KD/SD public energy policy split exceeds interpellation level (coalition crisis signal) | ⚪ NOT TRIGGERED — interpellation-level normal |
+
+**PIR-RT-NEW-01**: Does SD's dual energy interpellation campaign against KD represent a coalition stress signal that could affect September 13 coalition formation calculus? Collection: energy debate transcripts; SD post-debate communications; polling shift among SD voters on energy policy. Expected resolution: July–August 2026.

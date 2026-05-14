@@ -139,3 +139,29 @@ All claims in this synthesis are rated using Admiralty Source Evaluation:
 - **[C3]**: Possibly Reliable, Possibly True — inference-based; appropriate caveats applied
 
 The three highest-DIW documents (HD024153, HD024160, HD03267) all have [A1] factual basis with [B2] interpretation ratings. Electoral projections are all [C3] by design.
+
+---
+
+## Re-run Delta: Afternoon Chamber Debates (2026-05-14 15:02 UTC)
+
+Three interpellations were answered in chamber debate this afternoon, extending the analytical picture:
+
+### New intelligence: Energy accountability pressure
+
+**HD10453 (Investeringar i elnät)** and **HD10448 (Desinformation om vindkraft)** — SD's Josef Fransson directed both interpellations to Energy Minister Ebba Busch (KD) in the same afternoon session. The dual filing on a single minister is analytically significant:
+
+- **Coalition stress signal**: SD and KD are coalition partners, but SD uses interpellations to publicly pressure KD on energy policy. The "vindkraft disinformation" interpellation is particularly notable — SD is effectively accusing the government (or media ecosystem) of spreading disinformation that favours wind power, signalling SD's continued resistance to the wind expansion agenda that KD and the broader business community support.
+- **Election positioning**: SD is building a parliamentary record showing it challenges energy cost inflation and wind power expansion — differentiating from KD within the coalition. This is a pattern of intra-coalition electoral positioning that will intensify from now until September 13.
+
+### New intelligence: Labour/health welfare accountability
+
+**HD10440 (Utbildningen för företagsläkare)** — Johanna Haraldsson (S) vs Labour Minister Johan Britz (L). This is the third S interpellation on the same occupational physician training issue in 2025/26 riksmöte (see also HD10354 Feb 2026, HD10282 Jan 2026). The pattern is a deliberate S strategy:
+- Build a documented record of repeated government failure to address a specific healthcare-adjacent labour market gap
+- Use the accumulated record (3 interpellations, 3 answers) as campaign material: "We asked three times; the government still has no answer"
+- The topic connects S's welfare state credentials to occupational health — a theme that resonates with S's traditional labour-movement base
+
+### Cross-Pillar Update
+
+**Pattern 4 (new)**: Coalition fracture under pressure — the SD/KD energy pressure pattern (HD10453/48) reveals that the Högerblock coalition is not monolithic on energy policy. SD's interpellations are both accountability tools and public differentiation from coalition partners. This provides opposition parties with ammunition to exploit intra-coalition tensions in the final electoral campaign.
+
+**Revised analytical confidence**: The four-pillar structure (Constitutional/Migration/Security-Digital/Foreign Policy) remains valid. The afternoon debates add a fifth implicit dimension: **Intra-coalition accountability**, where coalition partners use parliamentary tools against each other's portfolios for electoral differentiation. This is consistent with the 122-day countdown to September 13, 2026.

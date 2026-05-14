@@ -107,3 +107,14 @@ This produces four scenarios:
 | Major terrorist attack in Sweden (Säpo relevance spike) | Not assessable | HIGH — activates HD03267 politically |
 | S wins majority alone (polling surge) | <5% | Changes coalition mathematics entirely |
 
+
+---
+
+## Re-run Delta: Scenario probability updates (15:02 UTC)
+
+**New evidence impact**: The afternoon energy interpellations (HD10453/HD10448) do not materially change electoral outcome scenario probabilities but add a new intra-coalition dynamics dimension to Scenario B (Coalition continuity) and Scenario C (Coalition crisis):
+
+- **Scenario B (Högerblock continuity)**: SD/KD tension on energy is assessed as intra-electoral positioning noise, not coalition-threatening. Probability unchanged at 35–40%. The scenario requires KD and SD to resolve energy policy differences post-election — the interpellation record now provides concrete evidence of the disagreement scope.
+- **Scenario C (Coalition crisis)**: The probability (10–15%) includes an energy policy split as one possible trigger. HD10453/HD10448 debate pattern is consistent with gradual escalation; single session does not trigger scenario C. Monitor for escalation above interpellation level.
+
+No scenario probability revisions required at this time.
