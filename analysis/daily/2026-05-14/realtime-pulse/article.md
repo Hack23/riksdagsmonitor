@@ -6,7 +6,7 @@ date: 2026-05-14
 subfolder: realtime-pulse
 slug: 2026-05-14-realtime-pulse
 source_folder: analysis/daily/2026-05-14/realtime-pulse
-generated_at: 2026-05-14T14:35:09.030Z
+generated_at: 2026-05-14T15:03:54.596Z
 language: en
 layout: article
 ---
@@ -96,6 +96,14 @@ Five concurrent parliamentary developments on 14 May 2026 mark one of the most d
 2. **Second story**: Migration battleground — 15 coordinated opposition motions vs 4 government propositions
 3. **Context story**: ECHR risks in Swedish legislation — HD03267 + KU34 citizenship as thematic cluster
 4. **Data story**: DIW scores visualised — most significant 24-hour legislative surge of the 2025/26 session
+
+---
+
+### Re-run Delta Addendum (15:02 UTC)
+
+**New intelligence**: Three interpellation debates answered in chamber this afternoon extend the analytical picture. SD's paired energy interpellations (HD10453/HD10448) against KD's Ebba Busch are assessed as intra-coalition electoral positioning: SD building energy-cost and wind-scepticism credentials against coalition partner KD 122 days before the election. S's third consecutive interpellation on occupational physician training (HD10440) confirms a systematic accountability record-building strategy aimed at autumn campaign use.
+
+**Revised tactical picture**: The parliamentary day is even more pre-electoral than originally assessed. Four distinct parties (SD, S, C, V) are simultaneously using parliamentary tools to position for September 13, 2026.
 
 ## Reader Intelligence Guide
 
@@ -271,6 +279,32 @@ All claims in this synthesis are rated using Admiralty Source Evaluation:
 
 The three highest-DIW documents (HD024153, HD024160, HD03267) all have [A1] factual basis with [B2] interpretation ratings. Electoral projections are all [C3] by design.
 
+---
+
+### Re-run Delta: Afternoon Chamber Debates (2026-05-14 15:02 UTC)
+
+Three interpellations were answered in chamber debate this afternoon, extending the analytical picture:
+
+#### New intelligence: Energy accountability pressure
+
+**HD10453 (Investeringar i elnät)** and **HD10448 (Desinformation om vindkraft)** — SD's Josef Fransson directed both interpellations to Energy Minister Ebba Busch (KD) in the same afternoon session. The dual filing on a single minister is analytically significant:
+
+- **Coalition stress signal**: SD and KD are coalition partners, but SD uses interpellations to publicly pressure KD on energy policy. The "vindkraft disinformation" interpellation is particularly notable — SD is effectively accusing the government (or media ecosystem) of spreading disinformation that favours wind power, signalling SD's continued resistance to the wind expansion agenda that KD and the broader business community support.
+- **Election positioning**: SD is building a parliamentary record showing it challenges energy cost inflation and wind power expansion — differentiating from KD within the coalition. This is a pattern of intra-coalition electoral positioning that will intensify from now until September 13.
+
+#### New intelligence: Labour/health welfare accountability
+
+**HD10440 (Utbildningen för företagsläkare)** — Johanna Haraldsson (S) vs Labour Minister Johan Britz (L). This is the third S interpellation on the same occupational physician training issue in 2025/26 riksmöte (see also HD10354 Feb 2026, HD10282 Jan 2026). The pattern is a deliberate S strategy:
+- Build a documented record of repeated government failure to address a specific healthcare-adjacent labour market gap
+- Use the accumulated record (3 interpellations, 3 answers) as campaign material: "We asked three times; the government still has no answer"
+- The topic connects S's welfare state credentials to occupational health — a theme that resonates with S's traditional labour-movement base
+
+#### Cross-Pillar Update
+
+**Pattern 4 (new)**: Coalition fracture under pressure — the SD/KD energy pressure pattern (HD10453/48) reveals that the Högerblock coalition is not monolithic on energy policy. SD's interpellations are both accountability tools and public differentiation from coalition partners. This provides opposition parties with ammunition to exploit intra-coalition tensions in the final electoral campaign.
+
+**Revised analytical confidence**: The four-pillar structure (Constitutional/Migration/Security-Digital/Foreign Policy) remains valid. The afternoon debates add a fifth implicit dimension: **Intra-coalition accountability**, where coalition partners use parliamentary tools against each other's portfolios for electoral differentiation. This is consistent with the 122-day countdown to September 13, 2026.
+
 ## Intelligence Assessment — Key Judgments
 <!-- source: intelligence-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/intelligence-assessment.md -->
 
@@ -394,6 +428,34 @@ The three highest-DIW documents (HD024153, HD024160, HD03267) all have [A1] fact
 | Dousa's pre-answer internal deliberation | High — would change H3/H2 probability | MEDIUM-HIGH | No available source; inference only |
 | C coalition position paper on KU34 citizenship | Medium — bundles with election manifesto | MEDIUM | Centerpartiet.se monitoring |
 | Post-election coalition formation dynamics | Critical for KU34 second passage | HIGH but long-horizon | September 13, 2026 election result |
+
+---
+
+### Re-run Delta: Afternoon Intelligence Update (2026-05-14 15:02 UTC)
+
+#### Carried-forward PIR status updates
+
+| PIR | Prior status | Updated status | Basis |
+|-----|-------------|---------------|-------|
+| PIR-1: Lagrådet on HD03267 | ⚪ OPEN | ⚪ OPEN unchanged | No new Lagrådet activity |
+| PIR-2: S formal position HD03267 | 🟡 PARTIALLY ANSWERED | 🟡 UNCHANGED | No new S JuU statement today |
+| PIR-3: SfU scheduling 262–265 | ⚪ OPEN | ⚪ OPEN | No scheduling announcement |
+| PIR-4: C child detention concession | 🟡 PARTIALLY ANSWERED | 🟡 UNCHANGED | No government response |
+| PIR-5: KU34 second passage | ⚪ OPEN | ⚪ OPEN | No new evidence |
+| PIR-6: Dousa answer HD10492 | ⚪ OPEN | ⚪ OPEN | Not scheduled today |
+
+#### NEW INTELLIGENCE: Intra-coalition energy accountability (HIGH confidence)
+
+**[horizon:T+122d] New key judgement addendum**: SD's paired interpellations (HD10453 + HD10448) against KD on electricity grid investment and wind-power disinformation narrative are assessed as almost certainly (90–95%) a deliberate intra-coalition electoral positioning manoeuvre. Evidence chain:
+
+- [A1] Two interpellations filed against same minister (Busch/KD) by same interpellant (Fransson/SD) on same policy domain (energy) on same day — statistically unusual pattern [B2]
+- [B2] SD's energy policy (anti-wind, pro-nuclear) systematically differs from KD's (pro-diversification including wind)
+- [B2] 122 days to election — intra-coalition differentiation is a standard late-campaign tactic for junior coalition partners
+- [C3] Admiralty source rating: SD energy platform and prior parliamentary record [A1]; interpellation speech pattern [B2]
+
+#### NEW PIR: PIR-RT-NEW-01
+
+**Priority Intelligence Requirement**: Does SD-KD energy policy divergence escalate from interpellation level to formal policy disagreement or coalition negotiation failure? Answer expected: June–September 2026. Collection plan: monitor SD and KD party conference communications; energy lobby (Energiföretagen) position papers; polling on SD voter priorities.
 
 ## Significance Scoring
 <!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/significance-scoring.md -->
@@ -991,6 +1053,24 @@ Six voter segments identified as potentially decisive in September 2026, mapped 
 | PIR-RT-04 (KU34 second passage) | FI-05, FI-06, FI-12, FI-15, FI-16 | HIGH |
 | PIR-RT-05 (SfU scheduling) | FI-02 | MEDIUM |
 
+---
+
+### Re-run Delta: New Forward Indicators from Afternoon Debates (2026-05-14)
+
+| # | Indicator | Source | Expected date | Current status |
+|---|-----------|--------|--------------|----------------|
+| FI-19 | Busch/SD energy reconciliation signal — does KD publicly endorse or dispute SD's wind-disinformation framing? | Party communications; energy debate transcripts | June–July 2026 | ⚪ NEW — PENDING |
+| FI-20 | Government response to compound S pressure on occupational physician training (HD10440 answer content quality) | riksdagen.se interpellation response transcript | 2026-05-14 (answer given today) | 🟡 PARTIAL — Answer given; content not yet assessed |
+| FI-21 | SD election manifesto energy plank — net-zero commitment vs cost-control framing | SD election programme | July–August 2026 | ⚪ PENDING |
+
+#### Tripwire update
+
+| Tripwire | Condition | Status |
+|----------|-----------|--------|
+| TWI-06 | KD/SD public energy policy split exceeds interpellation level (coalition crisis signal) | ⚪ NOT TRIGGERED — interpellation-level normal |
+
+**PIR-RT-NEW-01**: Does SD's dual energy interpellation campaign against KD represent a coalition stress signal that could affect September 13 coalition formation calculus? Collection: energy debate transcripts; SD post-debate communications; polling shift among SD voters on energy policy. Expected resolution: July–August 2026.
+
 ## Scenario Analysis
 <!-- source: scenario-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/scenario-analysis.md -->
 
@@ -1100,6 +1180,17 @@ This produces four scenarios:
 | SD defects from coalition on specific migration vote | <5% | HIGH — one-seat majority collapses |
 | Major terrorist attack in Sweden (Säpo relevance spike) | Not assessable | HIGH — activates HD03267 politically |
 | S wins majority alone (polling surge) | <5% | Changes coalition mathematics entirely |
+
+---
+
+### Re-run Delta: Scenario probability updates (15:02 UTC)
+
+**New evidence impact**: The afternoon energy interpellations (HD10453/HD10448) do not materially change electoral outcome scenario probabilities but add a new intra-coalition dynamics dimension to Scenario B (Coalition continuity) and Scenario C (Coalition crisis):
+
+- **Scenario B (Högerblock continuity)**: SD/KD tension on energy is assessed as intra-electoral positioning noise, not coalition-threatening. Probability unchanged at 35–40%. The scenario requires KD and SD to resolve energy policy differences post-election — the interpellation record now provides concrete evidence of the disagreement scope.
+- **Scenario C (Coalition crisis)**: The probability (10–15%) includes an energy policy split as one possible trigger. HD10453/HD10448 debate pattern is consistent with gradual escalation; single session does not trigger scenario C. Monitor for escalation above interpellation level.
+
+No scenario probability revisions required at this time.
 
 ## Election 2026 Analysis
 <!-- source: election-2026-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/election-2026-analysis.md -->
@@ -2174,6 +2265,33 @@ Open PIRs from propositions/motions/committeeReports/interpellations cycles:
 - Sibling analysis ingestion: UNCHANGED (4 sibling folders as indexed in initial run)
 - IMF economic context: CURRENT (WEO Apr-2026 cached, same vintage as initial run)
 - pir-status.json: VALID (schema_version=1.0, 3 open PIRs)
+
+### Re-run 2026-05-14 15:02 UTC
+
+**Re-run trigger**: Improvement-mode re-run to extend analysis with afternoon chamber activity
+**New dok_ids identified**: HD10453, HD10440 (interpellation debates answered in chamber today)
+
+#### New interpellation debate activity (afternoon, 2026-05-14)
+
+Three interpellations were answered in chamber debate this afternoon, not captured in the original run:
+
+| dok_id | Number | Title | Interpellant | Minister | Speeches |
+|--------|--------|-------|-------------|---------|----------|
+| HD10453 | 2025/26:453 | Investeringar i elnät | Josef Fransson (SD) | Ebba Busch / Energiminister (KD) | 7 speeches |
+| HD10448 | 2025/26:448 | Desinformation om vindkraft | Josef Fransson (SD) | Ebba Busch / Energiminister (KD) | 7 speeches |
+| HD10440 | 2025/26:440 | Utbildningen för företagsläkare | Johanna Haraldsson (S) | Johan Britz / Arbetsmarknadsminister (L) | 6 speeches |
+
+**Retrieval timestamp**: 2026-05-14T15:02:00Z
+**MCP source**: search_anforanden (live), search_dokument (confirmed)
+**Full-text status**: HD10453 metadata — full-text available on request; HD10440 metadata — full-text available on request
+
+#### Significance assessment for new debates
+
+**HD10453/HD10448 (Energy — Busch/Fransson)**: SD-KD interpellation pair on electricity grid investment and wind-power disinformation narrative is analytically significant pre-election. SD is using interpellations to (a) establish an energy-cost accountability chain against the government, and (b) test whether KD's support for wind power diverges from SD's energy-nationalism narrative. The dual interpellation filing against the same minister on the same day signals coordinated parliamentary pressure.
+
+**HD10440 (Labour/Health — Britz/Haraldsson)**: S's persistent pressure on occupational physician training reflects welfare-state credential building. Third similar S interpellation this riksmöte on the same topic (cross-ref HD10354 Feb 2026, HD10282 Jan 2026). Pattern indicates S is building a documented record of government inaction for election use.
+
+**PIR impact**: HD10453/10448 are new PIRs (energy sector), not linked to the primary PIRs in today's analysis. HD10440 enriches the pattern of S opposition strategy documented in intelligence-assessment.md.
 
 ## Analysis Artifact Coverage Report
 

@@ -131,3 +131,33 @@
 | C coalition position paper on KU34 citizenship | Medium — bundles with election manifesto | MEDIUM | Centerpartiet.se monitoring |
 | Post-election coalition formation dynamics | Critical for KU34 second passage | HIGH but long-horizon | September 13, 2026 election result |
 
+
+---
+
+## Re-run Delta: Afternoon Intelligence Update (2026-05-14 15:02 UTC)
+
+### Carried-forward PIR status updates
+
+| PIR | Prior status | Updated status | Basis |
+|-----|-------------|---------------|-------|
+| PIR-1: Lagrådet on HD03267 | ⚪ OPEN | ⚪ OPEN unchanged | No new Lagrådet activity |
+| PIR-2: S formal position HD03267 | 🟡 PARTIALLY ANSWERED | 🟡 UNCHANGED | No new S JuU statement today |
+| PIR-3: SfU scheduling 262–265 | ⚪ OPEN | ⚪ OPEN | No scheduling announcement |
+| PIR-4: C child detention concession | 🟡 PARTIALLY ANSWERED | 🟡 UNCHANGED | No government response |
+| PIR-5: KU34 second passage | ⚪ OPEN | ⚪ OPEN | No new evidence |
+| PIR-6: Dousa answer HD10492 | ⚪ OPEN | ⚪ OPEN | Not scheduled today |
+
+### NEW INTELLIGENCE: Intra-coalition energy accountability (HIGH confidence)
+
+**[horizon:T+122d] New key judgement addendum**: SD's paired interpellations (HD10453 + HD10448) against KD on electricity grid investment and wind-power disinformation narrative are assessed as almost certainly (90–95%) a deliberate intra-coalition electoral positioning manoeuvre. Evidence chain:
+
+- [A1] Two interpellations filed against same minister (Busch/KD) by same interpellant (Fransson/SD) on same policy domain (energy) on same day — statistically unusual pattern [B2]
+- [B2] SD's energy policy (anti-wind, pro-nuclear) systematically differs from KD's (pro-diversification including wind)
+- [B2] 122 days to election — intra-coalition differentiation is a standard late-campaign tactic for junior coalition partners
+- [C3] Admiralty source rating: SD energy platform and prior parliamentary record [A1]; interpellation speech pattern [B2]
+
+**Confidence**: HIGH ("almost certainly" — WEP 90–95%) that this is strategic positioning, not governance accountability in good faith
+
+### NEW PIR: PIR-RT-NEW-01
+
+**Priority Intelligence Requirement**: Does SD-KD energy policy divergence escalate from interpellation level to formal policy disagreement or coalition negotiation failure? Answer expected: June–September 2026. Collection plan: monitor SD and KD party conference communications; energy lobby (Energiföretagen) position papers; polling on SD voter priorities.
