@@ -1,0 +1,114 @@
+{
+  "pir_cycle": "year-ahead",
+  "article_date": "2026-05-14",
+  "generated_at": "2026-05-14T13:00:00Z",
+  "workflow": "news-year-ahead",
+  "election_anchor": "2026-09-13",
+  "days_to_election": 122,
+  "election_proximity_multiplier": 1.5,
+  "inherited_from": "analysis/daily/2026-05-11/year-ahead/pir-status.json",
+  "pirs": [
+    {
+      "id": "PIR-YA-2026-001",
+      "question": "Will the Tidö coalition retain a working majority after the September 13, 2026 election?",
+      "status": "OPEN",
+      "horizon_band": "T+125",
+      "created": "2026-05-07",
+      "expected_close": "2026-09-13",
+      "probability_yes": 0.45,
+      "probability_no": 0.55,
+      "notes": "Pass-2 recalibration upward (was 0.32) reflecting steady April polling for SD/M and Tidö cohesion through KU34/263/264. L threshold (currently 4.1±0.7) remains the dominant pivot.",
+      "carry_forward": true,
+      "scenario_link": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "id": "PIR-YA-2026-002",
+      "question": "Will KU34 §1 (abortion as fundamental right) pass second-vote in the new Riksdag?",
+      "status": "OPEN",
+      "horizon_band": "T+365",
+      "created": "2026-05-11",
+      "expected_close": "2027-05-15",
+      "probability_yes": 0.92,
+      "probability_no": 0.08,
+      "notes": "Cross-bloc consensus expected; even S+MP+C cooperation scenario preserves §1.",
+      "carry_forward": true,
+      "scenario_link": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "id": "PIR-YA-2026-003",
+      "question": "Will KU34 §2/§3 (association/citizenship limits) pass second-vote in the new Riksdag?",
+      "status": "OPEN",
+      "horizon_band": "T+365",
+      "created": "2026-05-11",
+      "expected_close": "2027-09-01",
+      "probability_yes": 0.65,
+      "probability_no": 0.35,
+      "notes": "Conditional on coalition: 0.85 if Tidö renews; 0.50 if S+MP+C cooperation. Lagrådet criticism (HD024149/HD024150) increases political cost.",
+      "carry_forward": true,
+      "scenario_link": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "id": "PIR-YA-2026-004",
+      "question": "Will prop. 263 (återvändande) and prop. 264 (vandel) be enacted with current text or substantively amended?",
+      "status": "OPEN",
+      "horizon_band": "T+30 to T+90",
+      "created": "2026-05-11",
+      "expected_close": "2026-08-15",
+      "probability_full_text": 0.62,
+      "probability_amendments": 0.3,
+      "probability_blocked": 0.08,
+      "notes": "V motions HD024149/HD024150 cite Lagrådet's exceptional criticism. Tidö majority arithmetic likely sufficient for adoption; ECtHR challenge probability 0.55 over 2 years.",
+      "carry_forward": true,
+      "scenario_link": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "id": "PIR-YA-2026-005",
+      "question": "Will Sweden meet NATO 2.5% defence spending by 2027 (Hague Summit commitment)?",
+      "status": "OPEN",
+      "horizon_band": "T+365",
+      "created": "2026-05-07",
+      "expected_close": "2027-12-31",
+      "probability_yes": 0.78,
+      "probability_no": 0.22,
+      "notes": "Cross-bloc consensus; Försvarsmaktens utvärderingsrapport (2026-11-01) is key indicator. NATO Hague Summit (2026-06-30) provides confirmation milestone.",
+      "carry_forward": true,
+      "scenario_link": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "id": "PIR-YA-2026-006",
+      "question": "Will L (Liberalerna) cross the 4% threshold in the September 13, 2026 election?",
+      "status": "OPEN",
+      "horizon_band": "T+125",
+      "created": "2026-05-11",
+      "expected_close": "2026-09-13",
+      "probability_yes": 0.55,
+      "probability_no": 0.45,
+      "notes": "Critical pivot variable. If L fails: Tidö loses 14 seats, S+V+MP+C becomes structural majority (188 seats). High variance in seat allocation simulation (90% CI: 0-18).",
+      "carry_forward": true,
+      "scenario_link": [
+        "A",
+        "B"
+      ]
+    }
+  ]
+}
