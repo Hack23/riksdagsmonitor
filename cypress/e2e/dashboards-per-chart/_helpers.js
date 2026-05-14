@@ -262,6 +262,17 @@ export function runDashboardSuite(cfg) {
       cy.waitForGlobals({ d3: (cfg.d3Containers || []).length > 0 });
     });
 
+    // Regression guard for the missing theme-toggle/back-to-top/mermaid
+    // bootstrap on /dashboards/*.html pages: the toggle button was in
+    // the markup but `/js/theme-toggle.js` was never injected, so
+    // clicking did nothing. Skip for the CIA hub at /dashboard/index.html
+    // which already loads the bootstrap directly via `index.html`.
+    if (!cfg.isHub) {
+      it('dark/light theme toggle flips data-theme on <html>', () => {
+        cy.expectThemeToggleWorks();
+      });
+    }
+
     if (cfg.statCards && cfg.statCards.length > 0) {
       describe('Stat cards', () => {
         cfg.statCards.forEach((stat) => {

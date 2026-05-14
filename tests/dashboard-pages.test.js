@@ -176,6 +176,27 @@ describe('Specialised dashboard pages — structural contract', () => {
         // Regression guard for build-dashboard-pages.py first_h2_text/_html_safe bug
         expect(html, `double-escape detected in ${filename}`).not.toMatch(/&amp;(amp|lt|gt|quot|apos|#\d+);/);
       });
+
+      // Regression guard: every dashboard page MUST carry the
+      // theme-toggle + back-to-top + mermaid bootstrap inject block
+      // that index.html ships. The toggle button is in the header on
+      // every page, but without /js/theme-toggle.js the click handler
+      // is never attached and dark/light mode switching is dead.
+      // Previously these pages only had the main entry script, so
+      // dark-mode switching silently failed.
+      it('ships /js/theme-toggle.js + /js/back-to-top.js + /js/lib/mermaid-init.mjs bootstrap', () => {
+        html ||= readPage(filename);
+        expect(html, `${filename} missing /js/theme-toggle.js bootstrap`).toContain("/js/theme-toggle.js");
+        expect(html, `${filename} missing /js/back-to-top.js bootstrap`).toContain("/js/back-to-top.js");
+        expect(html, `${filename} missing /js/lib/mermaid-init.mjs bootstrap`).toContain("/js/lib/mermaid-init.mjs");
+        // The bootstrap must be the documented imperative-inject IIFE
+        // (so Vite's HTML transformer does not try to bundle the
+        // referenced modules). Anchor on the IIFE entry-point and the
+        // three inject() calls in that order.
+        expect(html, `${filename} bootstrap is missing the inject() IIFE wrapper`).toMatch(
+          /function inject\(src,\s*isModule\)/,
+        );
+      });
     });
   });
 });

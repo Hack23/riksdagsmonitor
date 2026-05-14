@@ -336,8 +336,23 @@ BREADCRUMB_RE = re.compile(
 FOOTER_RE = re.compile(r'<footer[^>]*>.*?</footer>', re.DOTALL)
 SKIP_LINK_RE = re.compile(r'<a href="#main-content" class="skip-to-content">.*?</a>')
 BACK_TO_TOP_RE = re.compile(r'<button id="back-to-top".*?</button>', re.DOTALL)
+# Capture EVERYTHING from the "Main application entry point" comment up to
+# (but not including) the closing `</body>` tag. This must include both:
+#
+#   1. The `<script type="module" src="/src/browser/main.ts">` entry tag, and
+#   2. The follow-up `<script>(function(){ inject(...) })()</script>` bootstrap
+#      that imperatively loads `/js/lib/mermaid-init.mjs`, `/js/back-to-top.js`
+#      and `/js/theme-toggle.js` (Vite must NOT bundle these, which is why
+#      they're injected at runtime rather than referenced as `<script src=…>`).
+#
+# A previous regex (`(<!-- Main application entry point -->.*?</script>\s*)+`)
+# matched only the first `<script>` block, so the 9 × 14 = 126 generated
+# dashboard HTML pages never shipped the bootstrap — the theme-toggle button
+# rendered but had no click handler, and back-to-top was inert. Now the regex
+# captures all sibling `<script>` blocks (and any comments between them) by
+# anchoring on the closing `</body>` boundary instead of counting them.
 TAIL_SCRIPTS_RE = re.compile(
-    r'(<!-- Main application entry point -->.*?</script>\s*)+', re.DOTALL,
+    r'<!-- Main application entry point -->.*?(?=\s*</body>)', re.DOTALL,
 )
 
 

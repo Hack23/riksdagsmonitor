@@ -307,6 +307,58 @@ Cypress.Commands.add('assertNoConsoleErrors', () => {
 });
 
 /**
+ * Assert the page's `#theme-toggle` button is wired up by
+ * `/js/theme-toggle.js` and successfully flips
+ * `document.documentElement[data-theme]` between `dark` and `light`.
+ *
+ * Regression guard for the dashboard-build-script bug where
+ * `dashboards/*.html` shipped without the trailing `<script>(function(){
+ * inject('/js/theme-toggle.js', false); ... })()</script>` bootstrap, so
+ * the toggle button rendered but had no click handler and dark/light
+ * mode switching was silently broken on all 9 × 14 = 126 dashboard
+ * pages.
+ *
+ * Call after the page has finished loading (the bootstrap injects
+ * theme-toggle.js with `defer`, so we wait for the button to expose
+ * its `aria-pressed` state — set inside the IIFE's `applyTheme()` —
+ * before clicking).
+ */
+Cypress.Commands.add('expectThemeToggleWorks', () => {
+  // The button must exist regardless of bootstrap presence — it is in
+  // the static header markup.
+  cy.get('#theme-toggle', { timeout: 15000 }).should('exist');
+
+  // `/js/theme-toggle.js` is injected with `defer`, so it runs after
+  // DOMContentLoaded. The handler sets `aria-pressed` on the button
+  // during init; use that as the readiness signal.
+  cy.get('#theme-toggle', { timeout: 15000 })
+    .should('have.attr', 'aria-pressed')
+    .and('match', /^(true|false)$/);
+
+  // Capture initial theme (the anti-flash snippet always sets one).
+  cy.document().then((doc) => {
+    const initial = doc.documentElement.getAttribute('data-theme');
+    expect(initial, 'initial data-theme').to.be.oneOf(['dark', 'light']);
+    const expected = initial === 'dark' ? 'light' : 'dark';
+
+    cy.get('#theme-toggle').click();
+    cy.document()
+      .its('documentElement')
+      .should(($el) => {
+        expect($el.getAttribute('data-theme'), `after first click → ${expected}`).to.equal(expected);
+      });
+
+    // Toggle back to verify symmetry (click handler is idempotent).
+    cy.get('#theme-toggle').click();
+    cy.document()
+      .its('documentElement')
+      .should(($el) => {
+        expect($el.getAttribute('data-theme'), `after second click → ${initial}`).to.equal(initial);
+      });
+  });
+});
+
+/**
  * Assert no severity-`error` console messages were emitted while
  * loading a dashboard. Pair with `cy.visit(...,{onBeforeLoad})` to
  * stub `console.error` if you need to enforce zero-error budgets.
