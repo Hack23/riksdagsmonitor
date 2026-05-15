@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "cycle": "2026-riksdag",
+  "date": "2026-05-15",
+  "subfolder": "propositions",
+  "generated_at": "2026-05-15T12:00:00Z",
+  "pirs": [
+    {
+      "id": "PIR-1",
+      "question": "Vilket parti (L, C) riskerar att bryta med koalitionen på HD03267?",
+      "status": "open",
+      "priority": "high",
+      "due_date": "2026-06-30",
+      "answer": null,
+      "indicators": ["L-partiledningens offentliga uttalanden", "Koalitionssamtalsstatus"]
+    },
+    {
+      "id": "PIR-2",
+      "question": "Lagrådets yttranden om HD03262 och HD03267 — kritikgrad?",
+      "status": "open",
+      "priority": "high",
+      "due_date": "2026-06-20",
+      "answer": null,
+      "indicators": ["Lagrådets publicering", "Proportionalitetsbedömning"]
+    },
+    {
+      "id": "PIR-3",
+      "question": "EU-kommissionens bedömning av HD03262 paktkonformitet?",
+      "status": "open",
+      "priority": "medium",
+      "due_date": "2026-09-30",
+      "answer": null,
+      "indicators": ["Kommissionens brev till Sverige", "Paktimplementeringsrapport"]
+    },
+    {
+      "id": "PIR-4",
+      "question": "DIGG:s tekniska plan för e-legitimation — är den realistisk?",
+      "status": "open",
+      "priority": "medium",
+      "due_date": "2026-09-01",
+      "answer": null,
+      "indicators": ["DIGG upphandlingsstatus", "Statskontorets granskning"]
+    },
+    {
+      "id": "PIR-5",
+      "question": "Migrationsverkets implementeringsplanstatus för PUT-konvertering?",
+      "status": "open",
+      "priority": "high",
+      "due_date": "2026-08-01",
+      "answer": null,
+      "indicators": ["Migrationsverkets remissvar", "Kapacitetsutredning"]
+    }
+  ]
+}
