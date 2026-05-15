@@ -29,20 +29,12 @@ import {
   buildMcpProvenance,
   inferDocumentCoverageState,
 } from '../mcp-client/coverage.js';
+import { FULL_TEXT_MIN_LENGTH } from './full-text-threshold.js';
+export { FULL_TEXT_MIN_LENGTH } from './full-text-threshold.js';
 
 // ---------------------------------------------------------------------------
 // Constants
 // ---------------------------------------------------------------------------
-
-/**
- * Strict lower bound for `fullText`/`fullContent` fields to be classified as
- * meaningful full-text content (not empty/placeholder). Content must be
- * longer than `FULL_TEXT_MIN_LENGTH` characters (`> 100`), so exactly 100
- * characters does not qualify. Used in data-downloader enrichment and
- * referenced by quality gate checks (Checks 9/10 in
- * SHARED_PROMPT_PATTERNS.md) which use the same `> 100` threshold via jq.
- */
-export const FULL_TEXT_MIN_LENGTH = 100;
 
 // ---------------------------------------------------------------------------
 // Types
@@ -126,6 +118,13 @@ function normalise(raw: unknown[]): RawDocument[] {
   return (raw as RawDocument[]).filter(Boolean);
 }
 
+/**
+ * Add MCP coverage-state and provenance metadata to each fetched document list.
+ *
+ * The wrapper stamps every document with `mcpCoverageState`/`mcpProvenance`
+ * so the manifest and downstream analysis can distinguish full-text, metadata,
+ * and empty-search conditions without reparsing the original MCP payload.
+ */
 function annotateDocumentsWithCoverage(
   docs: RawDocument[],
   tool: string,

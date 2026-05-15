@@ -12,18 +12,18 @@ import {
   loadMcpRetryQueue,
 } from '../scripts/parliamentary-data/mcp-retry-queue.js';
 
-let tmpDir: string | null = null;
+let testQueueDir: string | null = null;
 
 afterEach(() => {
-  if (tmpDir) {
-    fs.rmSync(tmpDir, { recursive: true, force: true });
-    tmpDir = null;
+  if (testQueueDir) {
+    fs.rmSync(testQueueDir, { recursive: true, force: true });
+    testQueueDir = null;
   }
 });
 
 function queuePath(): string {
-  tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'mcp-retry-queue-'));
-  return path.join(tmpDir, 'mcp-retry-queue.json');
+  testQueueDir = fs.mkdtempSync(path.join(os.tmpdir(), 'mcp-retry-queue-'));
+  return path.join(testQueueDir, 'mcp-retry-queue.json');
 }
 
 describe('mcp retry queue', () => {

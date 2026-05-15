@@ -47,10 +47,10 @@ export interface MCPRetryDrainResult {
   diagnostics: MCPToolInvocationDiagnostic[];
 }
 
-function emptyQueue(nowIso = new Date(0).toISOString()): MCPRetryQueueFile {
+function emptyQueue(initialTimestamp = new Date(0).toISOString()): MCPRetryQueueFile {
   return {
     schema: MCP_RETRY_QUEUE_SCHEMA,
-    updatedAt: nowIso,
+    updatedAt: initialTimestamp,
     entries: [],
   };
 }

@@ -342,6 +342,12 @@ function serializeDataManifest(
 
 export { serializeDataManifest };
 
+/**
+ * Resolve a stable document identifier from the fields used across MCP payloads.
+ *
+ * Falls back through `dok_id`, `dokument_id`, and `dokumentnamn`, then returns
+ * the supplied fallback when none of those identifiers are available.
+ */
 function extractDokId(doc: RawDocument, fallback: string): string {
   return (
     doc.dok_id
@@ -351,6 +357,12 @@ function extractDokId(doc: RawDocument, fallback: string): string {
   );
 }
 
+/**
+ * Build the per-document coverage summary table rendered into the manifest.
+ *
+ * This joins each downloaded document with any explicit full-text fetch outcome
+ * and falls back to inferred MCP coverage metadata when no top-N outcome exists.
+ */
 function buildDocumentCoverageSummary(
   docs: RawDocument[],
   fullTextOutcomes: FullTextFetchOutcome[] | undefined,

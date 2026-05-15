@@ -210,6 +210,11 @@ const DEFAULT_MCP_AUTH_TOKEN: string = getDefaultAuthToken();
 
 let jsonRpcId = 1;
 
+/**
+ * Compute the immediately preceding riksmöte label from `YYYY/YY` input.
+ *
+ * Returns `null` when the input is not a valid riksmöte token.
+ */
 function previousRiksmote(rm: string): string | null {
   const match = /^(\d{4})\/(\d{2})$/.exec(rm.trim());
   if (!match) return null;

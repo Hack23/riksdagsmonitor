@@ -5,8 +5,7 @@
 
 import { isPersonProfileText } from '../data-transformers/helpers.js';
 import type { MCPCoverageState, MCPProvenance, MCPStructuredSignal } from '../types/mcp.js';
-
-const SUBSTANTIVE_TEXT_MIN_LENGTH = 100;
+import { FULL_TEXT_MIN_LENGTH as SUBSTANTIVE_TEXT_MIN_LENGTH } from '../parliamentary-data/full-text-threshold.js';
 
 function asCleanString(value: unknown): string {
   if (typeof value !== 'string') return '';
