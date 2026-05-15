@@ -158,6 +158,7 @@ Sweden, 2023, WDI via world-bank MCP. Admiralty: B2.
 
 ## 6. Changelog
 
+- **v1.3 (2026-05-15)** — Added v1.3 changelog entry; date updated to 2026-05-15.
 - **v1.2 (2026-04-28)** — Document scoped to non-economic indicators (governance, environment, social, defence historicals, demographics, health, education, innovation, infrastructure, inequality, gender, energy, agriculture, crime). Economic context routes through [`imf-indicator-mapping.md`](imf-indicator-mapping.md).
 - **v1.1 (2026-04-24)** — Scope tightened: full IMF integration across methodologies/templates/prompts.
 - **v1.0 (2026-04-23)** — Initial Riksdagsmonitor mapping; adapted from EU Parliament Monitor `worldbank-indicator-mapping.md` Wave-2 scope.
@@ -244,7 +245,7 @@ get-health-data(countryCode="SWE", indicator="HEALTH_EXPENDITURE", years=10)
 ## 9. Cross-Reference Matrix
 
 | Riksdagsmonitor template | Relevant WB domain | Key codes | Also cite |
-|--------------------------|-------------------|-----------|-----------|
+|--------------------------|-------------------|-----------|----------|
 | `pestle-analysis.md §Social` | Social / demographics | `SP.POP.TOTL`, `SP.DYN.LE00.IN` | SCB `BE0101` (Sweden primary) |
 | `pestle-analysis.md §Environmental` | Environmental | `EN.ATM.CO2E.PC`, `EG.FEC.RNEW.ZS` | NVV, Energimyndigheten (Sweden primary) |
 | `pestle-analysis.md §Political` | Governance | `CC.EST`, `VA.EST`, `PV.EST` | Statskontoret, JO, KU betänkande |
