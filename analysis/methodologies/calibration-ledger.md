@@ -21,7 +21,7 @@
 
 **📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-05-14 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-14
-**🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+**🏢 Owner:** Hack23 AB (Org.nr 559534-7807) | **🏷️ Classification:** Public
 
 > **Purpose:** This ledger records every probabilistic forecast emitted by Riksdagsmonitor analytic workflows and tracks its eventual outcome. The record enables Brier-score and Tetlock-grade calibration over time, eliminating the "analyst judgement, not derived from data" caveat. Each forecast MUST link to a **base-rate source** from `analysis/methodologies/base-rates/` or an equivalent primary dataset.
 

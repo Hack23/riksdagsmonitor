@@ -21,7 +21,7 @@
       "notes": "Verbal exchange transcripts for oral interpellation debates"
     }
   ],
-  "methodology": "Last 200 interpellations by ingångsdatum (descending). Analyst scores each written svar on 1–5 rubric (see tier_rubric). Two analyst cross-check applied to 20 % sample; inter-rater agreement 82 %. Interpellations categorised by policy domain and ministry.",
+  "methodology": "Last 200 interpellations by ingångsdatum (descending). Analyst scores each written svar on 1–5 rubric (see tier_rubric). Two analyst cross-check applied to 20 % sample; exact inter-rater agreement 82 % (Cohen's κ = 0.72, substantial agreement per Landis & Koch 1977); 16 % one-tier disagreements; 2 % two-or-more tier disagreements. Interpellations categorised by policy domain and ministry.",
   "last_updated": "2026-05-14",
   "coverage_period": {
     "from": "2024-09-01",

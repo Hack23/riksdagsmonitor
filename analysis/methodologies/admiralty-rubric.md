@@ -21,7 +21,7 @@
 
 **📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-05-14 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-08-14
-**🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+**🏢 Owner:** Hack23 AB (Org.nr 559534-7807) | **🏷️ Classification:** Public
 
 > **Purpose:** Provide a worked-example sheet so that two independent Riksdagsmonitor analysts reach the same Admiralty grade ≥ 80 % of the time. Eliminates the B-vs-C and 2-vs-3 subjectivity noted in the 2026-05-14 methodology-reflection cohort. Cite this rubric whenever applying Admiralty grades in any analysis artifact. Wire: `05-analysis-gate.md` Check 7 for methodology-reflection ICD 203 audit.
 >

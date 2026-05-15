@@ -236,34 +236,23 @@ fi
 # paragraph contains a base-rate citation (base-rates/ file name or a calibration-ledger reference).
 UNCAL_PHRASE_RE='analyst judgement, not derived|analyst judgment, not derived|not based on polling data|not derived from quantitative model|analyst judgement, not'
 BASE_RATE_CITE_RE='base-rates/|calibration-ledger|base_rate_source|base-rate source'
+UNCAL_TMP="/tmp/gate-uncal-fail-$$"
+: > "$UNCAL_TMP"
 if grep -rqiE "$UNCAL_PHRASE_RE" "$ANALYSIS_DIR" 2>/dev/null; then
-  # For each matching file, check that the paragraph also contains a base-rate citation.
-  UNCAL_FAIL=0
   grep -rilE "$UNCAL_PHRASE_RE" "$ANALYSIS_DIR" 2>/dev/null | while IFS= read -r mfile; do
-    # Extract matching line numbers and check surrounding context for base-rate cite
     grep -inE "$UNCAL_PHRASE_RE" "$mfile" | while IFS=: read -r linenum linetext; do
-      # Get ±5 lines of context; check if any line contains a base-rate citation
       ctx_start=$((linenum - 5)); [ "$ctx_start" -lt 1 ] && ctx_start=1
       ctx_end=$((linenum + 5))
       ctx=$(sed -n "${ctx_start},${ctx_end}p" "$mfile")
       if ! echo "$ctx" | grep -qiE "$BASE_RATE_CITE_RE"; then
+        echo "UNCAL" >> "$UNCAL_TMP"
         echo "❌ uncalibrated-probability phrase without base-rate citation in $mfile:$linenum — '$linetext' — add a base-rate source from analysis/methodologies/base-rates/ (see calibration-ledger.md)"
-        UNCAL_FAIL=1
       fi
     done
   done
-  # Propagate failure — subshell can't set outer FAIL directly; re-check
-  grep -rilE "$UNCAL_PHRASE_RE" "$ANALYSIS_DIR" 2>/dev/null | while IFS= read -r mfile; do
-    grep -inE "$UNCAL_PHRASE_RE" "$mfile" | while IFS=: read -r linenum linetext; do
-      ctx_start=$((linenum - 5)); [ "$ctx_start" -lt 1 ] && ctx_start=1
-      ctx_end=$((linenum + 5))
-      ctx=$(sed -n "${ctx_start},${ctx_end}p" "$mfile")
-      if ! echo "$ctx" | grep -qiE "$BASE_RATE_CITE_RE"; then
-        exit 1
-      fi
-    done || exit 1
-  done || FAIL=1
 fi
+[ -s "$UNCAL_TMP" ] && FAIL=1
+rm -f "$UNCAL_TMP"
 if [ -s "$ANALYSIS_DIR/methodology-reflection.md" ]; then
   grep -qE 'ICD[[:space:]]+203|Methodology[[:space:]]+Improvements|Improvement[[:space:]]+1|#{2,4}[[:space:]]+.*Improvements' "$ANALYSIS_DIR/methodology-reflection.md" \
     || { echo "❌ methodology-reflection.md: missing ICD 203 audit or named Methodology Improvements section"; FAIL=1; }
