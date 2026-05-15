@@ -255,8 +255,25 @@ export async function fetchPollingContext(config: PollingFetchConfig = {}): Prom
             notes: `HTTP ${response.status} ${response.statusText}`,
           };
         }
-        let wave = extractPollingWaveFromHtml(provider.provider, provider.url, html, fetchedAt);
-        if (wave.status === 'unavailable') {
+        // For known archive/category roots, prefer discovering and fetching a
+        // concrete polling-wave article before attempting extraction from the
+        // archive listing itself (which may contain mixed/stale percentages).
+        let extractionUrl = provider.url;
+        let extractionHtml = html;
+        let attemptedFollowUp = false;
+        if (isArchiveRootUrl(provider.url)) {
+          const preferredFollowUpUrl = findFollowUpPollingUrl(provider.url, html);
+          if (preferredFollowUpUrl) {
+            attemptedFollowUp = true;
+            const { response: followUpResponse, text: followUpHtml } = await fetchWithTimeout(fetchFn, preferredFollowUpUrl, POLLING_REQUEST_TIMEOUT_MS);
+            if (followUpResponse.ok) {
+              extractionUrl = preferredFollowUpUrl;
+              extractionHtml = followUpHtml;
+            }
+          }
+        }
+        let wave = extractPollingWaveFromHtml(provider.provider, extractionUrl, extractionHtml, fetchedAt);
+        if (wave.status === 'unavailable' && !attemptedFollowUp) {
           const followUpUrl = findFollowUpPollingUrl(provider.url, html);
           if (followUpUrl) {
             const { response: followUpResponse, text: followUpHtml } = await fetchWithTimeout(fetchFn, followUpUrl, POLLING_REQUEST_TIMEOUT_MS);

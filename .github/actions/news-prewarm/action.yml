@@ -266,9 +266,12 @@ runs:
       run: |
         echo ""
         echo "🗳️ Polling context pre-flight — $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
-        if timeout 60 npx tsx scripts/polling-fetch.ts --output data/polling-context.json >/dev/null 2>/tmp/polling-context.err; then
-          PROVIDERS=$(node -e "try{const j=require('./data/polling-context.json');process.stdout.write(String(j.providers?.length ?? 0));}catch{process.stdout.write('0');}")
-          AVAILABLE=$(node -e "try{const j=require('./data/polling-context.json');process.stdout.write(String(j.aggregate?.availableProviders ?? 0));}catch{process.stdout.write('0');}")
+        RUNTIME_DIR="data/runtime"
+        POLLING_OUTPUT="${RUNTIME_DIR}/polling-context.json"
+        mkdir -p "${RUNTIME_DIR}"
+        if timeout 60 npx tsx scripts/polling-fetch.ts --output "${POLLING_OUTPUT}" >/dev/null 2>/tmp/polling-context.err; then
+          PROVIDERS=$(node -e "try{const j=require('./${POLLING_OUTPUT}');process.stdout.write(String(j.providers?.length ?? 0));}catch{process.stdout.write('0');}")
+          AVAILABLE=$(node -e "try{const j=require('./${POLLING_OUTPUT}');process.stdout.write(String(j.aggregate?.availableProviders ?? 0));}catch{process.stdout.write('0');}")
           if [ "${AVAILABLE:-0}" -gt 0 ]; then
             echo "  ✅ polling context updated (${PROVIDERS} provider entries, ${AVAILABLE} available)"
           else
@@ -287,15 +290,18 @@ runs:
       run: |
         echo ""
         echo "📅 Calendar forward indicators — $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+        RUNTIME_DIR="data/runtime"
+        CALENDAR_OUTPUT="${RUNTIME_DIR}/calendar-status.json"
+        mkdir -p "${RUNTIME_DIR}"
         FROM=$(date -u '+%Y-%m-%d')
         TO=$(date -u -d "$FROM +${CALENDAR_LOOKAHEAD_DAYS} days" '+%Y-%m-%d')
-        CMD=(npx tsx scripts/calendar-fetch.ts --from "$FROM" --to "$TO" --output data/calendar-status.json)
+        CMD=(npx tsx scripts/calendar-fetch.ts --from "$FROM" --to "$TO" --output "${CALENDAR_OUTPUT}")
         if [ -n "${CALENDAR_ORG}" ]; then
           CMD+=(--org "${CALENDAR_ORG}")
         fi
-        if timeout 60 "${CMD[@]}" >/tmp/calendar-status.json 2>/tmp/calendar-status.err; then
-          STATUS=$(grep -o '"status": "[^"]*"' data/calendar-status.json | head -1 | cut -d'"' -f4)
-          COUNT=$(grep -o '"eventCount": [0-9]*' data/calendar-status.json | head -1 | awk '{print $2}')
+        if timeout 90 "${CMD[@]}" >/tmp/calendar-status.json 2>/tmp/calendar-status.err; then
+          STATUS=$(grep -o '"status": "[^"]*"' "${CALENDAR_OUTPUT}" | head -1 | cut -d'"' -f4)
+          COUNT=$(grep -o '"eventCount": [0-9]*' "${CALENDAR_OUTPUT}" | head -1 | awk '{print $2}')
           if [ "${STATUS}" = "ok" ]; then
             echo "  ✅ calendar status updated for org=${CALENDAR_ORG:-<unscoped>} (events=${COUNT:-0})"
           else
@@ -306,20 +312,65 @@ runs:
           cat /tmp/calendar-status.err 2>/dev/null || true
         fi
 
-    - name: Lagrådet yttrande status
+    - name: Derive optional PIR watch inputs
       shell: bash
       env:
-        LAGRADET_REFERENCE: ${{ inputs.lagradet-reference }}
+        LAGRADET_REFERENCE_INPUT: ${{ inputs.lagradet-reference }}
+        RSS_WATCH_DOK_IDS_INPUT: ${{ inputs.rss-watch-dok-ids }}
+      run: |
+        LAGRADET_REFERENCE_EFFECTIVE="${LAGRADET_REFERENCE_INPUT}"
+        RSS_WATCH_DOK_IDS_EFFECTIVE="${RSS_WATCH_DOK_IDS_INPUT}"
+        LATEST_PIR_STATUS="$(ls -1 analysis/daily/*/*/pir-status.json 2>/dev/null | sort | tail -n 1 || true)"
+
+        if [ -n "${LATEST_PIR_STATUS}" ]; then
+          if [ -z "${LAGRADET_REFERENCE_EFFECTIVE}" ]; then
+            LAGRADET_REFERENCE_EFFECTIVE="$(node -e "const fs=require('fs');const t=fs.readFileSync(process.argv[1],'utf8');const m=t.match(/\\b20\\d{2}\\/\\d{2}:\\d+\\b/);process.stdout.write(m?m[0]:'');" "${LATEST_PIR_STATUS}")"
+          fi
+          if [ -z "${RSS_WATCH_DOK_IDS_EFFECTIVE}" ]; then
+            RSS_WATCH_DOK_IDS_EFFECTIVE="$(node -e "const fs=require('fs');const t=fs.readFileSync(process.argv[1],'utf8').toUpperCase();const m=t.match(/\\b[A-Z]{1,4}\\d{2,}[A-Z]{1,4}\\d+\\b/g)||[];const ids=[...new Set(m)].slice(0,25);process.stdout.write(ids.join(','));" "${LATEST_PIR_STATUS}")"
+          fi
+        fi
+
+        {
+          echo "LAGRADET_REFERENCE_EFFECTIVE=${LAGRADET_REFERENCE_EFFECTIVE}"
+          echo "RSS_WATCH_DOK_IDS_EFFECTIVE=${RSS_WATCH_DOK_IDS_EFFECTIVE}"
+        } >> "$GITHUB_ENV"
+
+        if [ -n "${LAGRADET_REFERENCE_EFFECTIVE}" ]; then
+          if [ -n "${LAGRADET_REFERENCE_INPUT}" ]; then
+            echo "  ℹ️ Lagrådet reference source: input (${LAGRADET_REFERENCE_EFFECTIVE})"
+          else
+            echo "  ℹ️ Lagrådet reference source: derived from ${LATEST_PIR_STATUS} (${LAGRADET_REFERENCE_EFFECTIVE})"
+          fi
+        else
+          echo "  ℹ️ Lagrådet reference source: none (input empty, no derivable reference)"
+        fi
+        if [ -n "${RSS_WATCH_DOK_IDS_EFFECTIVE}" ]; then
+          COUNT=$(node -e "const s=process.argv[1]||'';process.stdout.write(String(s? s.split(',').filter(Boolean).length : 0));" "${RSS_WATCH_DOK_IDS_EFFECTIVE}")
+          if [ -n "${RSS_WATCH_DOK_IDS_INPUT}" ]; then
+            echo "  ℹ️ RSS dok_id watchlist source: input (${COUNT} tracked id(s))"
+          else
+            echo "  ℹ️ RSS dok_id watchlist source: derived from ${LATEST_PIR_STATUS} (${COUNT} tracked id(s))"
+          fi
+        else
+          echo "  ℹ️ RSS dok_id watchlist source: none (input empty, no derivable dok_ids)"
+        fi
+
+    - name: Lagrådet yttrande status
+      shell: bash
       run: |
         echo ""
         echo "⚖️ Lagrådet status pre-flight — $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
-        if [ -n "${LAGRADET_REFERENCE}" ]; then
-          timeout 60 npx tsx scripts/lagradet-fetch.ts --reference "${LAGRADET_REFERENCE}" --output data/lagradet-status.json >/tmp/lagradet-status.json 2>/tmp/lagradet-status.err || true
+        RUNTIME_DIR="data/runtime"
+        LAGRADET_OUTPUT="${RUNTIME_DIR}/lagradet-status.json"
+        mkdir -p "${RUNTIME_DIR}"
+        if [ -n "${LAGRADET_REFERENCE_EFFECTIVE}" ]; then
+          timeout 60 npx tsx scripts/lagradet-fetch.ts --reference "${LAGRADET_REFERENCE_EFFECTIVE}" --output "${LAGRADET_OUTPUT}" >/tmp/lagradet-status.json 2>/tmp/lagradet-status.err || true
         else
-          timeout 60 npx tsx scripts/lagradet-fetch.ts --output data/lagradet-status.json >/tmp/lagradet-status.json 2>/tmp/lagradet-status.err || true
+          timeout 60 npx tsx scripts/lagradet-fetch.ts --output "${LAGRADET_OUTPUT}" >/tmp/lagradet-status.json 2>/tmp/lagradet-status.err || true
         fi
-        if [ -f data/lagradet-status.json ]; then
-          STATUS=$(grep -o '"status": "[^"]*"' data/lagradet-status.json | head -1 | cut -d'"' -f4)
+        if [ -f "${LAGRADET_OUTPUT}" ]; then
+          STATUS=$(grep -o '"status": "[^"]*"' "${LAGRADET_OUTPUT}" | head -1 | cut -d'"' -f4)
           case "${STATUS}" in
             found|not_found|not_configured)
               echo "  ✅ lagrådet status artifact written (status=${STATUS})"
@@ -339,22 +390,24 @@ runs:
     - name: RSS watch pre-flight
       shell: bash
       env:
-        RSS_WATCH_DOK_IDS: ${{ inputs.rss-watch-dok-ids }}
         RSS_FEED_URL: ${{ inputs.rss-feed-url }}
       run: |
         echo ""
         echo "📡 RSS watch pre-flight — $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
-        CMD=(npx tsx scripts/rss-watch.ts --output data/rss-watch.json)
+        RUNTIME_DIR="data/runtime"
+        RSS_OUTPUT="${RUNTIME_DIR}/rss-watch.json"
+        mkdir -p "${RUNTIME_DIR}"
+        CMD=(npx tsx scripts/rss-watch.ts --output "${RSS_OUTPUT}")
         if [ -n "${RSS_FEED_URL}" ]; then
           CMD+=(--feed-url "${RSS_FEED_URL}")
         fi
-        if [ -n "${RSS_WATCH_DOK_IDS}" ]; then
-          CMD+=(--dok-ids "${RSS_WATCH_DOK_IDS}")
+        if [ -n "${RSS_WATCH_DOK_IDS_EFFECTIVE}" ]; then
+          CMD+=(--dok-ids "${RSS_WATCH_DOK_IDS_EFFECTIVE}")
         fi
         timeout 60 "${CMD[@]}" >/tmp/rss-watch.json 2>/tmp/rss-watch.err || true
-        if [ -f data/rss-watch.json ]; then
-          STATUS=$(grep -o '"status": "[^"]*"' data/rss-watch.json | head -1 | cut -d'"' -f4)
-          SIGNALS=$(grep -o '"signalCount": [0-9]*' data/rss-watch.json | head -1 | awk '{print $2}')
+        if [ -f "${RSS_OUTPUT}" ]; then
+          STATUS=$(grep -o '"status": "[^"]*"' "${RSS_OUTPUT}" | head -1 | cut -d'"' -f4)
+          SIGNALS=$(grep -o '"signalCount": [0-9]*' "${RSS_OUTPUT}" | head -1 | awk '{print $2}')
           if [ "${STATUS}" = "ok" ]; then
             echo "  ✅ rss watch artifact written (signals=${SIGNALS:-0})"
           else

@@ -66,6 +66,7 @@ scripts/__pycache__/
 # news-* workflow by scripts/check-imf-connectivity.ts; transient).
 /data/imf-context.json
 /data/imf-unavailable.flag
+/data/runtime/
 /rss.xml
 /sitemap*
 dashboard-initial.png

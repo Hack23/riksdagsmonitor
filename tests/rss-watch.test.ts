@@ -33,4 +33,18 @@ describe('rss-watch', () => {
     expect(result.signalCount).toBe(1);
     expect(result.notes).toContain('signals[]');
   });
+
+  it('does not match dok_id prefixes against longer dok_ids', () => {
+    const xml = `
+      <rss><channel>
+        <item>
+          <title>Betänkande H901SfU10</title>
+          <link>https://data.riksdagen.se/dokument/H901SfU10</link>
+          <guid>guid-10</guid>
+        </item>
+      </channel></rss>`;
+    const items = parseRssItems(xml);
+    const signals = buildRssSignals(items, ['H901SfU1']);
+    expect(signals).toHaveLength(0);
+  });
 });

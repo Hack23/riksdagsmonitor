@@ -18,4 +18,19 @@ describe('news-prewarm composite action data-context wiring', () => {
     expect(content).toMatch(/^\s{2}lagradet-reference:/m);
     expect(content).toMatch(/^\s{2}rss-watch-dok-ids:/m);
   });
+
+  it('writes transient pre-warm context artifacts under ignored data/runtime', () => {
+    expect(content).toContain('RUNTIME_DIR="data/runtime"');
+    expect(content).toContain('polling-context.json');
+    expect(content).toContain('calendar-status.json');
+    expect(content).toContain('lagradet-status.json');
+    expect(content).toContain('rss-watch.json');
+  });
+
+  it('derives optional Lagrådet and RSS watch inputs from latest PIR context when inputs are empty', () => {
+    expect(content).toContain('Derive optional PIR watch inputs');
+    expect(content).toContain('analysis/daily/*/*/pir-status.json');
+    expect(content).toContain('LAGRADET_REFERENCE_EFFECTIVE');
+    expect(content).toContain('RSS_WATCH_DOK_IDS_EFFECTIVE');
+  });
 });

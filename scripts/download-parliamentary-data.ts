@@ -268,6 +268,7 @@ function serializeDataManifest(
   dateFilteredTotal: number,
   dataFreshness: string | null,
   fullTextOutcomes?: FullTextFetchOutcome[],
+  fullTextMode: 'top-n' | 'all' = 'top-n',
 ): string {
   const totalDocs = Object.values(docCounts).reduce((a, b) => a + b, 0);
   const lines: string[] = [
@@ -311,7 +312,8 @@ function serializeDataManifest(
       lines.push(`| ${o.dokId} | ${available} | ${chars} | ${notes} |`);
     }
     const successCount = fullTextOutcomes.filter(o => o.success).length;
-    lines.push('', `**Full-text retrieved**: ${successCount}/${fullTextOutcomes.length} top documents`);
+    const coverageLabel = fullTextMode === 'all' ? 'selected documents' : 'top documents';
+    lines.push('', `**Full-text retrieved**: ${successCount}/${fullTextOutcomes.length} ${coverageLabel}`);
   }
 
   return lines.join('\n');
@@ -584,7 +586,7 @@ async function runPreArticleAnalysis(opts: {
 
   const manifestContent = serializeDataManifest(
     date, generatedAt, manifest.dataSources, manifest.docCounts,
-    allDocs.length, dataFreshness, fullTextOutcomes,
+    allDocs.length, dataFreshness, fullTextOutcomes, fullTextForAll ? 'all' : 'top-n',
   );
   const manifestPath = path.join(outputDir, 'data-download-manifest.md');
   fs.writeFileSync(manifestPath, manifestContent, 'utf8');

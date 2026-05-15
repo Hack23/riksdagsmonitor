@@ -21,4 +21,15 @@ describe('lagradet-fetch', () => {
     expect(status.status).toBe('not_configured');
     expect(status.matches).toEqual([]);
   });
+
+  it('does not match adjacent longer reference numbers', () => {
+    const html = `
+      <html><body>
+        <a href="/yttranden/prop-2025-26-420">Yttrande över prop. 2025/26:420</a>
+        <a href="/yttranden/prop-2025-26-421">Yttrande över prop. 2025/26:421</a>
+      </body></html>`;
+
+    const matches = extractLagradetMatches(html, '2025/26:42', 'https://www.lagradet.se');
+    expect(matches).toHaveLength(0);
+  });
 });

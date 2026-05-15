@@ -114,6 +114,9 @@ export async function fetchCalendarStatus(
       const raw = await mcp.fetchCalendarEvents(from, to, org, akt);
       const { normalizeMcpCalendarEvent } = await import('./fetch-calendar.js');
       const events = raw.map((event) => normalizeMcpCalendarEvent(event));
+      const scoped = (org || akt)
+        ? events.filter((event) => matchesScope(event, org, akt))
+        : events;
       return {
         schemaVersion: '1.0',
         fetchedAt,
@@ -121,10 +124,10 @@ export async function fetchCalendarStatus(
         to,
         org,
         akt,
-        eventCount: events.length,
+        eventCount: scoped.length,
         status: 'ok',
         path: 'mcp-primary',
-        events,
+        events: scoped,
       };
     }
     const customFetcher = client as CalendarResilientFetcher;

@@ -62,4 +62,36 @@ describe('polling-fetch', () => {
     expect(fixture._fixture).toBe('unavailable');
     expect(typeof fixture._note).toBe('string');
   });
+
+  it('prefers discovered follow-up article before extracting from archive roots', async () => {
+    const archiveUrl = 'https://example.test/valjarbarometer-arkiv/';
+    const articleUrl = 'https://example.test/valjarbarometer-2026-05/';
+    const archiveHtml = `
+      <html><body>
+        <a href="${articleUrl}">Valjarbarometer maj 2026</a>
+        <p>S 11.0% M 11.0% SD 11.0% V 11.0%</p>
+      </body></html>`;
+    const articleHtml = '<html><body><p>S 31.5% M 19.2% SD 20.4% V 8.4%</p></body></html>';
+    const fetchFn = (async (input: RequestInfo | URL) => {
+      const url = String(input);
+      if (url === archiveUrl) {
+        return new Response(archiveHtml, { status: 200 });
+      }
+      if (url === articleUrl) {
+        return new Response(articleHtml, { status: 200 });
+      }
+      return new Response('', { status: 404, statusText: 'Not Found' });
+    }) as typeof fetch;
+
+    const context = await fetchPollingContext({
+      providers: [{ provider: 'novus', url: archiveUrl }],
+      fetchFn,
+      now: () => '2026-05-15T00:00:00Z',
+    });
+
+    expect(context.providers).toHaveLength(1);
+    expect(context.providers[0]?.status).toBe('ok');
+    expect(context.providers[0]?.sourceUrl).toBe(articleUrl);
+    expect(context.providers[0]?.parties.S).toBe(31.5);
+  });
 });

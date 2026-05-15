@@ -129,8 +129,8 @@ export async function watchRssFeed(
     const xml = await response.text();
     // Defence-in-depth: a 2xx response that returns an HTML error page or a
     // schema-changed payload would otherwise be silently treated as a healthy
-    // feed with zero items. Require the body to look like RSS/Atom XML
-    // (<rss>, <feed>, or <channel> root element).
+    // feed with zero items. Require the body to look like RSS XML
+    // (<rss> or <channel> root element).
     if (!RSS_ROOT_RE.test(xml)) {
       return {
         schemaVersion: '1.0',
