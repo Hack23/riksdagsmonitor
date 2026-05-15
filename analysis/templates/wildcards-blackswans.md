@@ -83,9 +83,9 @@ ANTI-TEMPLATE — DO NOT:
   • Skip the Pass-2 read-back (Check 6 verifies mtime ≥ birth + 180 s OR a differing pass1/ snapshot).
 -->
 
-## 📅 Wildcard register (≥ 8; cite evidence for each)
+## 📅 Wildcard register (≥ 15; cite evidence for each)
 
-> **Instructions** — For each row: describe the event precisely (not vague); assign WEP from the calibration anchor; name ≥ 1 trigger indicator that could be monitored in advance; estimate lead time (days between trigger signal and impact onset); identify impact vectors using domain codes (C = Coalition, F = Fiscal, S = Security, SC = Social contract, I = Institutional, E = Electoral); note counter-measures already in place.
+> **Instructions** — For each row: describe the event precisely (not vague); assign WEP from the calibration anchor; **anchor each WEP to a base-rate source from `analysis/methodologies/base-rates/` or cite the historical analogue that sets the prior** (eliminates "analyst judgement, not derived from data"); name ≥ 1 trigger indicator that could be monitored in advance; estimate lead time (days between trigger signal and impact onset); identify impact vectors using domain codes (C = Coalition, F = Fiscal, S = Security, SC = Social contract, I = Institutional, E = Electoral); note counter-measures already in place. **Minimum 15 wildcard entries required; fewer than 15 entries is a template-gate failure.**
 
 | ID | Event | Domain | Prior WEP | Trigger indicator | Monitoring source | Lead time | Impact vector(s) | Counter-measures in place | Admiralty |
 |----|-------|--------|-----------|-------------------|-------------------|-----------|------------------|---------------------------|-----------|
@@ -264,7 +264,7 @@ flowchart LR
 
 ---
 
-**Template version:** v2.0 · **Last updated:** 2026-04-25
+**Template version:** v2.1 · **Last updated:** 2026-05-14 · **Change:** ≥ 15 wildcard entries now required (was ≥ 8); WEP base-rate anchoring mandatory; gate Check 7c enforces the minimum.
 
 ---
 

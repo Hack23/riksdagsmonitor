@@ -64,6 +64,12 @@ export async function searchDocuments(
   return getDefaultClient().searchDocuments(...args);
 }
 
+export async function searchDocumentsWithDiagnostics(
+  ...args: Parameters<MCPClient['searchDocumentsWithDiagnostics']>
+): ReturnType<MCPClient['searchDocumentsWithDiagnostics']> {
+  return getDefaultClient().searchDocumentsWithDiagnostics(...args);
+}
+
 export async function searchSpeeches(
   ...args: Parameters<MCPClient['searchSpeeches']>
 ): ReturnType<MCPClient['searchSpeeches']> {
@@ -82,6 +88,12 @@ export async function fetchVotingRecords(
   return getDefaultClient().fetchVotingRecords(...args);
 }
 
+export async function fetchVotingRecordsWithDiagnostics(
+  ...args: Parameters<MCPClient['fetchVotingRecordsWithDiagnostics']>
+): ReturnType<MCPClient['fetchVotingRecordsWithDiagnostics']> {
+  return getDefaultClient().fetchVotingRecordsWithDiagnostics(...args);
+}
+
 export async function fetchVotingGroup(
   ...args: Parameters<MCPClient['fetchVotingGroup']>
 ): ReturnType<MCPClient['fetchVotingGroup']> {
@@ -98,6 +110,12 @@ export async function fetchDocumentDetails(
   ...args: Parameters<MCPClient['fetchDocumentDetails']>
 ): ReturnType<MCPClient['fetchDocumentDetails']> {
   return getDefaultClient().fetchDocumentDetails(...args);
+}
+
+export async function fetchDocumentDetailsWithCoverage(
+  ...args: Parameters<MCPClient['fetchDocumentDetailsWithCoverage']>
+): ReturnType<MCPClient['fetchDocumentDetailsWithCoverage']> {
+  return getDefaultClient().fetchDocumentDetailsWithCoverage(...args);
 }
 
 export async function enrichDocumentsWithContent(
