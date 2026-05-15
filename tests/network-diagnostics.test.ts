@@ -17,7 +17,7 @@
  * - Pre-flight step is clearly named to avoid false confidence
  * - In-prompt gateway diagnostics exist (run AFTER gateway is up)
  * - Both direct and gateway routing are tested in the agent prompt
- * - Network allowed domains are consistent across all 12 workflows
+ * - Network allowed domains are consistent across all 14 workflows
  * - MCP health gate (get_sync_status + safeoutputs___noop) present
  * - Safe-output allowed-domains cover required external services
  *
@@ -59,19 +59,22 @@ const NEWS_PREWARM_USES_REF = './.github/actions/news-prewarm';
 // Constants
 // ---------------------------------------------------------------------------
 
-/** All 12 news workflow .md files */
+/** All 14 news workflow .md files */
 const ALL_NEWS_WORKFLOWS: readonly string[] = [
   'news-committee-reports.md',
+  'news-election-cycle.md',
   'news-evening-analysis.md',
   'news-interpellations.md',
   'news-month-ahead.md',
   'news-monthly-review.md',
   'news-motions.md',
   'news-propositions.md',
+  'news-quarter-ahead.md',
   'news-realtime-monitor.md',
   'news-translate.md',
   'news-week-ahead.md',
   'news-weekly-review.md',
+  'news-year-ahead.md',
 ];
 
 /** Core MCP and data service domains that must be in every workflow */
@@ -226,7 +229,7 @@ describe('Network Diagnostics Configuration', () => {
       }
     });
 
-    it('all 11 news workflows should exist', () => {
+    it('all 14 news workflows should exist', () => {
       ALL_NEWS_WORKFLOWS.forEach(workflow => {
         const filepath = path.join(WORKFLOWS_DIR, workflow);
         expect(fs.existsSync(filepath), `Missing workflow: ${workflow}`).toBe(true);

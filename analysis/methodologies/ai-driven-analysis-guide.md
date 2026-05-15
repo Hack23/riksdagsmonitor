@@ -150,9 +150,9 @@ npx tsx scripts/download-parliamentary-data.ts \
   --auto-full-text-top-n 2
 ```
 
-**`--auto-full-text-top-n 2`** (recommended for L2/L3 runs): after the bulk download, the script calls `get_dokument_innehall` with `include_full_text=true` for the top-2 documents (by order in the downloaded batch) and persists the retrieved content to `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/full-text/{dok_id}.md`. Accept the extra 30–60 s as a documented quality investment. The manifest's `## Full-Text Fetch Outcomes` table records `full_text_available` per `dok_id`; the analysis gate (check 10) enforces that ≥ 2 succeed or a `<!-- full-text-fallback: <reason> -->` annotation is present.
+**`--auto-full-text-top-n 2`** (recommended for L2/L3 runs): after the bulk download, the script calls `get_dokument_innehall` with `include_full_text=true` for the top-2 documents (by order in the downloaded batch) and persists the retrieved content to `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/full-text/{dok_id}.md`. Accept the extra 30–60 s as a documented quality investment. The manifest's `## Full-Text Fetch Outcomes` table records `coverage_state`, `full_text_available`, and `retrieval` per `dok_id`; the analysis gate (check 10) enforces that ≥ 2 succeed or a `<!-- full-text-fallback: <reason> -->` annotation is present.
 
-**Write `data-download-manifest.md`** using the [manifest template](../templates/data-download-manifest.md). It records what arrived, from which MCP tools, with what data-depth distribution (FULL-TEXT / SUMMARY / METADATA-ONLY) and — when `--auto-full-text-top-n` is used — the `## Full-Text Fetch Outcomes` table.
+**Write `data-download-manifest.md`** using the [manifest template](../templates/data-download-manifest.md). It records what arrived, from which MCP tools, with what data-depth distribution (FULL-TEXT / SUMMARY / METADATA-ONLY) and — when `--auto-full-text-top-n` is used — the `## Full-Text Fetch Outcomes` table. The manifest must also surface `MCPCoverageState` (`full_text`, `metadata_only`, `not_indexed`, `search_empty`, `fetch_error`), row-level `mcpProvenance`, query/result-count diagnostics for every MCP call, and the deferred queue summary for same-day filings / voteringar lag.
 
 After `download-parliamentary-data.ts` completes for `committeeReports`, also run the voting-records script to capture party-level vote counts and defector detection for each betänkande:
 
@@ -267,7 +267,7 @@ Plus **two structural files** produced every run:
 
 | # | File | Template | Purpose |
 |:-:|------|----------|---------|
-| 10 | `data-download-manifest.md` | [`data-download-manifest.md`](../templates/data-download-manifest.md) | What was downloaded, from where, with data-depth counts |
+| 10 | `data-download-manifest.md` | [`data-download-manifest.md`](../templates/data-download-manifest.md) | What was downloaded, from where, with data-depth counts, coverage-state rows, and deferred-retry provenance |
 | 11 | `cross-reference-map.md` | [`cross-reference-map.md`](../templates/cross-reference-map.md) | Policy clusters, legislative chains, coordinated-activity patterns — every Mermaid edge labelled with one of the 7 atomic edge types per [`structural-metadata-methodology.md` §"Relationship taxonomy"](structural-metadata-methodology.md#relationship-taxonomy-canonical--7-edge-types--use-these-names-exactly) |
 
 ---
