@@ -823,7 +823,7 @@ export async function fetchFullTextForTopN(
       const coverageState = inferDocumentCoverageState(
         { ...docRecord, ...(details ?? {}) },
         {
-          requestedDate: typeof docRecord['datum'] === 'string' ? docRecord['datum'] as string : null,
+          requestedDate: typeof docRecord['datum'] === 'string' ? docRecord['datum'] : null,
           fullTextRequested: true,
         },
       );

@@ -209,6 +209,13 @@ function getDefaultAuthToken(): string {
 const DEFAULT_MCP_AUTH_TOKEN: string = getDefaultAuthToken();
 
 let jsonRpcId = 1;
+const NOT_INDEXED_ERROR_PATTERNS = [
+  'not found',
+  '404',
+  'not indexed',
+  'no document',
+  'ingen',
+] as const;
 
 /**
  * Compute the immediately preceding riksmöte label from `YYYY/YY` input.
@@ -758,12 +765,7 @@ export class MCPClient {
     } catch (error) {
       const err = error as Error;
       const msg = (err.message ?? '').toLowerCase();
-      const notIndexedLike =
-        msg.includes('not found') ||
-        msg.includes('404') ||
-        msg.includes('not indexed') ||
-        msg.includes('no document') ||
-        msg.includes('ingen');
+      const notIndexedLike = NOT_INDEXED_ERROR_PATTERNS.some(pattern => msg.includes(pattern));
       if (!notIndexedLike) throw error;
 
       const coverageState = 'not_indexed';

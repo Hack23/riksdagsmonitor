@@ -725,6 +725,7 @@ async function runPreArticleAnalysis(opts: {
   const updatedQueue = queueEntries.length > 0
     ? enqueueRetryEntries(queueEntries, DEFAULT_MCP_RETRY_QUEUE_PATH)
     : null;
+  const queueRetainedTotal = updatedQueue?.entries.length ?? retryDrain.queue.entries.length;
 
   const documentCoverage = buildDocumentCoverageSummary(allDocs, fullTextOutcomes);
   const manifestContent = serializeDataManifest(
@@ -734,7 +735,7 @@ async function runPreArticleAnalysis(opts: {
     {
       processed: retryDrain.processed,
       resolved: retryDrain.resolved,
-      retained: retryDrain.retained + ((updatedQueue?.entries.length ?? retryDrain.queue.entries.length) - retryDrain.queue.entries.length),
+      retained: queueRetainedTotal,
       expired: retryDrain.expired,
       enqueued: queueEntries.length,
     },

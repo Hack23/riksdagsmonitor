@@ -216,8 +216,20 @@ export async function drainMcpRetryQueue(
       continue;
     }
 
+    const votingParams = entry.params;
+    if (typeof votingParams !== 'object' || votingParams === null) {
+      remaining.push({
+        ...entry,
+        attemptCount: entry.attemptCount + 1,
+        reason: 'retry queue entry has invalid voting params payload',
+        lastAttemptAt,
+      });
+      retained++;
+      continue;
+    }
+
     const votingResult = await client.fetchVotingRecordsWithDiagnostics(
-      entry.params as FetchVotingFilters,
+      votingParams as FetchVotingFilters,
     );
 
     diagnostics.push({
