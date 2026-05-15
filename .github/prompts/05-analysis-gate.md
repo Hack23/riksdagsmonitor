@@ -26,7 +26,7 @@ This is the **only** gate separating analysis from article generation. If it fai
    - `scenario-analysis.md` declares **≥ 3 distinct scenarios** (headers matching `Scenario` count ≥ 3).
    - `comparative-international.md` declares a comparator set or **≥ 2 comparator rows** (structural check, see Tier-C gate).
    - `devils-advocate.md` declares **≥ 3 competing hypotheses** (headers matching `Hypothesis`/`H1`/`H2`/`H3` count ≥ 3, ACH-style).
-   - `methodology-reflection.md` is non-empty and contains an **ICD 203 audit** marker or ≥ 3 named methodology improvements.
+   - `methodology-reflection.md` is non-empty and contains all 9 required sections: ICD 203 audit grid; Devil's-Advocate KJ-coverage matrix; confidence distribution with posterior column; Lagrådet/Statskontoret/SKR tracking; sibling-folder ingestion record; unified re-run log schema; banned-phrase audit grid; Pass 1→Pass 2 delta table; improvement opportunities linked to PIR roll-forward.
 8. **Family D structure checks**:
    - `forward-indicators.md` declares **≥ 10 dated indicators** (bullet or table rows matching a date pattern across the four horizon sections).
    - `coalition-mathematics.md` contains a seat-count table (≥ 1 table row with `Ja`/`Nej`/`Avstår` or a party-to-seats mapping).
@@ -212,8 +212,30 @@ if [ -s "$ANALYSIS_DIR/devils-advocate.md" ]; then
   [ "${HY:-0}" -ge 3 ] || { echo "❌ devils-advocate.md: fewer than 3 competing hypotheses (found ${HY:-0})"; FAIL=1; }
 fi
 if [ -s "$ANALYSIS_DIR/methodology-reflection.md" ]; then
-  grep -qE 'ICD[[:space:]]+203|Methodology[[:space:]]+Improvements|Improvement[[:space:]]+1|#{2,4}[[:space:]]+.*Improvements' "$ANALYSIS_DIR/methodology-reflection.md" \
-    || { echo "❌ methodology-reflection.md: missing ICD 203 audit or named Methodology Improvements section"; FAIL=1; }
+  REF="$ANALYSIS_DIR/methodology-reflection.md"
+  grep -qiE 'ICD[[:space:]]+203' "$REF" || { echo "❌ methodology-reflection.md: missing ICD 203 audit checklist"; FAIL=1; }
+  grep -qiE "Devil'?s[-[:space:]]Advocate.*(KJ|Key[[:space:]]+Judgment).*Coverage" "$REF" \
+    || { echo "❌ methodology-reflection.md: missing Devil's-Advocate KJ-coverage matrix"; FAIL=1; }
+  grep -qiE 'Confidence[[:space:]]+Distribution' "$REF" || { echo "❌ methodology-reflection.md: missing confidence distribution section"; FAIL=1; }
+  grep -qiE 'Posterior' "$REF" || { echo "❌ methodology-reflection.md: missing Posterior column/marker"; FAIL=1; }
+  grep -qiE 'Lagrådet' "$REF" || { echo "❌ methodology-reflection.md: missing Lagrådet tracking marker"; FAIL=1; }
+  grep -qiE 'Statskontoret' "$REF" || { echo "❌ methodology-reflection.md: missing Statskontoret tracking marker"; FAIL=1; }
+  grep -qiE 'SKR|Sveriges[[:space:]]+Kommuner' "$REF" || { echo "❌ methodology-reflection.md: missing SKR tracking marker"; FAIL=1; }
+  grep -qiE 'Sibling[-[:space:]]?Folder[[:space:]]+Ingestion' "$REF" \
+    || { echo "❌ methodology-reflection.md: missing sibling-folder ingestion record"; FAIL=1; }
+  grep -qiE 'Re[-[:space:]]?run[[:space:]]+Log' "$REF" || { echo "❌ methodology-reflection.md: missing re-run log section"; FAIL=1; }
+  grep -qiE 'run_id' "$REF" || { echo "❌ methodology-reflection.md: re-run log missing run_id column"; FAIL=1; }
+  grep -qiE 'attempt' "$REF" || { echo "❌ methodology-reflection.md: re-run log missing attempt column"; FAIL=1; }
+  grep -qiE 'new[[:space:]_]+dok_ids' "$REF" || { echo "❌ methodology-reflection.md: re-run log missing new dok_ids column"; FAIL=1; }
+  grep -qiE 'artifacts[[:space:]_]+extended' "$REF" || { echo "❌ methodology-reflection.md: re-run log missing artifacts extended column"; FAIL=1; }
+  grep -qiE 'flags[[:space:]_]+closed' "$REF" || { echo "❌ methodology-reflection.md: re-run log missing flags closed column"; FAIL=1; }
+  grep -qiE 'vintage[[:space:]_]+refresh' "$REF" || { echo "❌ methodology-reflection.md: re-run log missing vintage refresh column"; FAIL=1; }
+  grep -qiE 'Banned[-[:space:]]?Phrase[[:space:]]+Audit' "$REF" \
+    || { echo "❌ methodology-reflection.md: missing banned-phrase audit grid"; FAIL=1; }
+  grep -qiE 'Pass[[:space:]]*1.*Pass[[:space:]]*2.*Delta' "$REF" \
+    || { echo "❌ methodology-reflection.md: missing Pass 1→Pass 2 delta table"; FAIL=1; }
+  grep -qiE 'Improvement[[:space:]]+Opportunities.*PIR[[:space:]]+Roll[-[:space:]]?Forward' "$REF" \
+    || { echo "❌ methodology-reflection.md: missing improvement opportunities to PIR roll-forward section"; FAIL=1; }
 fi
 if [ -s "$ANALYSIS_DIR/comparative-international.md" ]; then
   awk '

@@ -91,6 +91,20 @@ ANTI-TEMPLATE — DO NOT:
 
 ---
 
+## 🎯 Key Judgment Coverage Matrix (Required)
+
+> **[REQUIRED]** Before writing hypotheses, list **every** KJ from `intelligence-assessment.md` and map it to at least one challenge row. Gate expectation: **100% KJ coverage**.
+
+| KJ ID | KJ summary | Challenged by hypothesis ID(s) | Challenge present? |
+|------|------------|---------------------------------|:------------------:|
+| KJ-1 | `[REQUIRED: summary from intelligence-assessment.md]` | `H1 / H2 / H3` | ✅ / ❌ |
+| KJ-2 | `[REQUIRED]` | `H#` | ✅ / ❌ |
+| KJ-3 | `[REQUIRED]` | `H#` | ✅ / ❌ |
+| ... | ... | ... | ... |
+| **Coverage** | — | — | **_N_ / _N_ (must be 100%)** |
+
+---
+
 ## 🧪 Analysis of Competing Hypotheses (ACH)
 
 List each hypothesis, then score each piece of evidence as **C** (consistent), **I** (inconsistent), or **N** (neutral). The hypothesis with the **fewest inconsistencies** survives.
@@ -235,4 +249,3 @@ graph LR
 - [ ] **Cross-references resolve** — every `[link](file.md)` in this artifact points to a file that exists in the run folder (`analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`) or to a methodology / template under `analysis/`.
 - [ ] **Mermaid renders** — every fenced ` ```mermaid ` block parses (no missing class definitions, no orphan nodes, no >40-node graphs that overflow viewport on mobile).
 - [ ] **Line-floor check** — artifact length ≥ the per-artifact floor in [`reference-quality-thresholds.json`](../methodologies/reference-quality-thresholds.json); shorter artifacts trigger Pass-2 rewrite, never a `[truncated]` note.
-

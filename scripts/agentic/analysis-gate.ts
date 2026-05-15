@@ -775,7 +775,7 @@ async function checkDevilsAdvocate(analysisDir: string): Promise<GateCheckResult
 }
 
 /**
- * Check methodology-reflection.md for ICD 203 audit or named improvements.
+ * Check methodology-reflection.md for required section contract.
  */
 async function checkMethodologyReflection(
   analysisDir: string,
@@ -785,24 +785,71 @@ async function checkMethodologyReflection(
   if (!existsSync(filePath)) return results;
 
   const content = await readFile(filePath, 'utf-8');
-  const hasIcd203 =
-    /ICD\s+203/i.test(content) ||
-    /Methodology\s+Improvements/i.test(content) ||
-    /Improvement\s+1/i.test(content) ||
-    /^#{2,4}\s+.*Improvements/m.test(content);
+  const lower = content.toLowerCase();
+  const hasReRunSection = /Re[-\s]?run\s+Log/i.test(content);
+  const hasReRunColumns = hasReRunSection &&
+    /run_id/i.test(content) &&
+    /attempt/i.test(content) &&
+    /new[\s_]+dok_ids/i.test(content) &&
+    /artifacts[\s_]+extended/i.test(content) &&
+    /flags[\s_]+closed/i.test(content) &&
+    /vintage[\s_]+refresh/i.test(content);
+  const requiredSectionChecks: Array<{ label: string; present: boolean }> = [
+    { label: 'ICD 203 audit checklist', present: /ICD\s+203/i.test(content) },
+    {
+      label: "Devil's-Advocate KJ coverage matrix",
+      present: /Devil'?s[-\s]Advocate.*(KJ|Key\s+Judgment).*Coverage/i.test(content),
+    },
+    {
+      label: 'Confidence distribution with posterior',
+      present: /Confidence\s+Distribution/i.test(content) && /Posterior/i.test(content),
+    },
+    {
+      label: 'Lagrådet / Statskontoret / SKR tracking',
+      present: lower.includes('lagrådet') &&
+        lower.includes('statskontoret') &&
+        (lower.includes('skr') || lower.includes('sveriges kommuner')),
+    },
+    {
+      label: 'Sibling-folder ingestion record',
+      present: /Sibling[-\s]?Folder\s+Ingestion/i.test(content),
+    },
+    {
+      label: 'Re-run log unified schema',
+      present: hasReRunColumns,
+    },
+    {
+      label: 'Banned-phrase audit grid',
+      present: /Banned[-\s]?Phrase\s+Audit/i.test(content),
+    },
+    {
+      label: 'Pass 1 to Pass 2 delta table',
+      present: lower.includes('pass 1') && lower.includes('pass 2') && lower.includes('delta'),
+    },
+    {
+      label: 'Improvement opportunities linked to PIR roll-forward',
+      present: lower.includes('improvement opportunities') &&
+        lower.includes('pir') &&
+        lower.includes('roll-forward'),
+    },
+  ];
 
-  if (!hasIcd203) {
+  const missingSections = requiredSectionChecks
+    .filter(({ present }) => !present)
+    .map(({ label }) => label);
+
+  if (missingSections.length > 0) {
     results.push({
       checkId: 'family-c-structure',
       passed: false,
-      message: 'methodology-reflection.md: missing ICD 203 audit or Methodology Improvements',
+      message: `methodology-reflection.md: missing required section(s): ${missingSections.join(', ')}`,
       artifact: 'methodology-reflection.md',
     });
   } else {
     results.push({
       checkId: 'family-c-structure',
       passed: true,
-      message: 'methodology-reflection.md: ICD 203 / improvements present',
+      message: 'methodology-reflection.md: all required sections present',
       artifact: 'methodology-reflection.md',
     });
   }

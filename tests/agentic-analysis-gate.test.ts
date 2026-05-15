@@ -62,6 +62,34 @@ import {
 // ---------------------------------------------------------------------------
 
 let testDir: string;
+const REQUIRED_REFLECTION_SECTIONS = `
+## ICD 203 Analytic Tradecraft Compliance Audit
+
+## Devil's-Advocate Key Judgment Coverage Matrix
+
+## Confidence Distribution by Key Judgment (Posterior Required)
+| KJ | Prior | Posterior |
+|----|-------|-----------|
+| KJ-1 | HIGH | MEDIUM |
+
+## Lagrådet / Statskontoret / SKR Tracking
+
+## Sibling-Folder Ingestion Record (Tier-C)
+
+## Re-run Log (Unified Schema)
+| run_id | attempt | new dok_ids | artifacts extended | flags closed | vintage refresh |
+|--------|---------|-------------|--------------------|--------------|-----------------|
+| 1 | 1 | none | methodology-reflection.md | 0 | no |
+
+## Banned-Phrase Audit (Zero-Count Grid)
+
+## Pass 1 → Pass 2 Delta Table
+| Pass 1 | Pass 2 | Delta |
+|--------|--------|-------|
+| A | B | +1 |
+
+## Improvement Opportunities → PIR Roll-Forward
+`;
 
 function createTestDir(): string {
   const dir = join(tmpdir(), `agentic-gate-test-${Date.now()}-${Math.random().toString(36).slice(2)}`);
@@ -112,7 +140,7 @@ function createMinimalValidAnalysis(dir: string): void {
     } else if (artifact.filename === 'devils-advocate.md') {
       content = '# Devil\'s Advocate\n\n## Hypothesis 1: Government succeeds\n\n## Hypothesis 2: Opposition blocks\n\n## Hypothesis 3: Coalition fractures\n\n';
     } else if (artifact.filename === 'methodology-reflection.md') {
-      content = '# Methodology Reflection\n\n## ICD 203 Audit\n\nMethodology Improvements applied.\n\n## Improvement 1\n\n';
+      content = `# Methodology Reflection\n\n${REQUIRED_REFLECTION_SECTIONS}`;
     } else if (artifact.filename === 'comparative-international.md') {
       content = '# Comparative International\n\n**Comparator set**: Denmark, Norway, Finland\n\n| Country | Policy |\n|---------|--------|\n| Denmark | A |\n| Norway | B |\n';
     } else if (artifact.filename === 'forward-indicators.md') {
@@ -697,20 +725,21 @@ describe('checkFamilyCStructure', () => {
   });
 
   describe('methodology-reflection.md', () => {
-    it('passes with ICD 203 reference', async () => {
+    it('passes when all nine required methodology-reflection sections are present', async () => {
       writeArtifact(testDir, 'methodology-reflection.md',
-        '## ICD 203 Audit\n\nCompliance verified.\n');
+        REQUIRED_REFLECTION_SECTIONS);
       const results = await checkFamilyCStructure(testDir);
       const failures = results.filter((r) => !r.passed && r.artifact === 'methodology-reflection.md');
       expect(failures).toHaveLength(0);
     });
 
-    it('passes with Methodology Improvements', async () => {
+    it('fails when required sections are missing', async () => {
       writeArtifact(testDir, 'methodology-reflection.md',
-        '## Methodology Improvements\n\nImprovement 1: Better sourcing.\n');
+        '## ICD 203 Analytic Tradecraft Compliance Audit\n\n## Banned-Phrase Audit (Zero-Count Grid)\n');
       const results = await checkFamilyCStructure(testDir);
       const failures = results.filter((r) => !r.passed && r.artifact === 'methodology-reflection.md');
-      expect(failures).toHaveLength(0);
+      expect(failures.length).toBeGreaterThan(0);
+      expect(failures[0]?.message).toContain('missing required section(s)');
     });
   });
 
