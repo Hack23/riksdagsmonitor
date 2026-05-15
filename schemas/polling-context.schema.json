@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://riksdagsmonitor.com/schemas/polling-context.schema.json",
+  "title": "Polling Context",
+  "type": "object",
+  "required": ["schemaVersion", "cacheVersion", "generatedAt", "providers", "aggregate"],
+  "properties": {
+    "schemaVersion": { "const": "1.0" },
+    "cacheVersion": { "const": 1 },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "_fixture": {
+      "description": "Optional marker identifying this artifact as a placeholder fixture committed to the repo. When present and equal to 'unavailable', consumers MUST treat the file as ABSENT (no polling context) and not as a real polling wave.",
+      "enum": ["unavailable"]
+    },
+    "_note": {
+      "description": "Free-form note explaining the fixture marker. Only present alongside _fixture.",
+      "type": "string"
+    },
+    "providers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["provider", "sourceUrl", "fetchedAt", "status", "parties"],
+        "properties": {
+          "provider": { "enum": ["sifo", "novus", "demoskop"] },
+          "sourceUrl": { "type": "string", "format": "uri" },
+          "fetchedAt": { "type": "string", "format": "date-time" },
+          "status": { "enum": ["ok", "unavailable"] },
+          "title": { "type": "string" },
+          "publishedAt": { "type": "string" },
+          "fieldworkMonth": { "type": "string" },
+          "sampleSize": { "type": "integer", "minimum": 0 },
+          "notes": { "type": "string" },
+          "parties": {
+            "type": "object",
+            "propertyNames": { "enum": ["S", "M", "SD", "V", "MP", "C", "L", "KD"] },
+            "additionalProperties": { "type": "number" }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "aggregate": {
+      "type": "object",
+      "required": ["availableProviders", "parties"],
+      "properties": {
+        "availableProviders": { "type": "integer", "minimum": 0 },
+        "parties": {
+          "type": "object",
+          "propertyNames": { "enum": ["S", "M", "SD", "V", "MP", "C", "L", "KD"] },
+          "additionalProperties": {
+            "type": "object",
+            "required": ["mean", "samples"],
+            "properties": {
+              "mean": { "type": "number" },
+              "samples": { "type": "integer", "minimum": 1 }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

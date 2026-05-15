@@ -87,6 +87,17 @@ export interface DownloadResult {
 export const MAX_ENRICHMENT_PER_TYPE = 5;
 
 /**
+ * Minimum full-text follow-up count enforced for long-horizon batches
+ * (e.g. year-ahead / cycle-style runs with `--limit >= 30`).
+ *
+ * Kept separate from `MAX_ENRICHMENT_PER_TYPE` so the per-type default for
+ * normal `downloadAllDocuments()` callers stays at the historic value of 5,
+ * while `resolveAutoFullTextTopN(...)` can raise the floor only when the
+ * long-horizon resolver explicitly asks for it.
+ */
+export const LONG_HORIZON_FULL_TEXT_FLOOR = 10;
+
+/**
  * Outcome record for a single document in a top-N full-text fetch.
  * Used in the data-download-manifest and as the return value of
  * `fetchFullTextForTopN`.
