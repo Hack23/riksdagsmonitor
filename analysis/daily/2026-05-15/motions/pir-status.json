@@ -1,0 +1,47 @@
+{
+  "generated": "2026-05-15T08:00:00Z",
+  "analysis_date": "2026-05-15",
+  "subfolder": "motions",
+  "pirs": [
+    {
+      "id": "PIR-MIGRATION-2026-01",
+      "title": "Monitoring Tidö migration reform legislative trajectory",
+      "status": "ACTIVE",
+      "priority": "HIGH",
+      "last_update": "2026-05-15",
+      "current_intelligence": "13/20 motions oppose props 262-265. Government majority of 176-173 holds but C/L ECHR conditions create vulnerability on prop 265.",
+      "next_collection": "2026-05-22",
+      "indicators": ["FI-01", "FI-02", "FI-08"]
+    },
+    {
+      "id": "PIR-ELECTION-2026-03",
+      "title": "Pre-election opposition strategy intelligence",
+      "status": "ACTIVE",
+      "priority": "HIGH",
+      "last_update": "2026-05-15",
+      "current_intelligence": "S strategy: rights-respecting restrictionist framing. C: ECHR compliance red line. V/MP: full rejection. Migration = #1 election issue.",
+      "next_collection": "2026-06-01",
+      "indicators": ["FI-09", "FI-10", "FI-11"]
+    },
+    {
+      "id": "PIR-DEFENCE-2026-01",
+      "title": "Parliamentary oversight of NATO integration",
+      "status": "ACTIVE",
+      "priority": "MEDIUM",
+      "last_update": "2026-05-15",
+      "current_intelligence": "HD024176 (MP) seeks enhanced Riksdag oversight of military cooperation agreements. FöU committee trajectory unknown.",
+      "next_collection": "2026-06-15",
+      "indicators": ["FI-01"]
+    },
+    {
+      "id": "PIR-COALITION-2026-02",
+      "title": "Tidö coalition stability monitoring",
+      "status": "ACTIVE",
+      "priority": "HIGH",
+      "last_update": "2026-05-15",
+      "current_intelligence": "C has two full-rejection motions (HD024157, 160) — signals genuine red lines, not pro-forma. L position not yet stated. Government majority at risk if both C and L defect on props 262/265.",
+      "next_collection": "2026-05-22",
+      "indicators": ["FI-03", "FI-06", "FI-12"]
+    }
+  ]
+}
