@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "article_date": "2026-05-15",
+  "subfolder": "week-ahead",
+  "generated_at": "2026-05-15T00:00:00Z",
+  "pirs": [
+    {
+      "id": "PIR-WA-01",
+      "question": "Will the government conduct an impact assessment before the election?",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "relevance": "An announced impact assessment would be a Scenario 2 signal; its absence confirms the accountability gap (KJ-1)",
+      "collection_approach": "Monitor UD press releases between 2026-05-15 and 2026-05-29; observe debate record 2026-05-18",
+      "roll_forward_date": "2026-06-01",
+      "trigger": "Response text by 2026-05-29",
+      "linked_kj": "KJ-1",
+      "linked_scenarios": ["S2"]
+    },
+    {
+      "id": "PIR-WA-02",
+      "question": "Will the parliamentary debate on 2026-05-18 generate major media coverage?",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "relevance": "Media coverage converts parliamentary accountability record into electoral salience",
+      "collection_approach": "Monitor SVT, Aftonbladet, DN coverage; measure reference count to HD10492/HD10493 post-debate",
+      "roll_forward_date": "2026-05-22",
+      "trigger": "1 week post-debate assessment",
+      "linked_kj": "KJ-3",
+      "linked_scenarios": ["S3"]
+    }
+  ],
+  "documents": ["HD10492", "HD10493"]
+}
