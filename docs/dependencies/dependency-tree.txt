@@ -1,6 +1,6 @@
-riksdagsmonitor@0.9.17 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@0.9.18 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @eslint/js@10.0.1
-│ └── eslint@10.3.0 deduped
+│ └── eslint@10.4.0 deduped
 ├─┬ @types/d3@7.4.3
 │ ├── @types/d3-array@3.2.2
 │ ├─┬ @types/d3-axis@3.0.6
@@ -47,10 +47,10 @@ riksdagsmonitor@0.9.17 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │   └── @types/d3-selection@3.0.11 deduped
 ├─┬ @types/hast@3.0.4
 │ └── @types/unist@3.0.3
-├─┬ @types/node@25.7.0
-│ └── undici-types@7.21.0
+├─┬ @types/node@25.8.0
+│ └── undici-types@7.24.6
 ├─┬ @types/papaparse@5.5.2
-│ └── @types/node@25.7.0 deduped
+│ └── @types/node@25.8.0 deduped
 ├─┬ @vitest/coverage-v8@4.1.6
 │ ├── @bcoe/v8-coverage@1.0.2
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser@4.1.6
@@ -262,7 +262,7 @@ riksdagsmonitor@0.9.17 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └── pify@2.3.0
 │ ├─┬ extract-zip@2.0.1
 │ │ ├─┬ @types/yauzl@2.10.3
-│ │ │ └── @types/node@25.7.0 deduped
+│ │ │ └── @types/node@25.8.0 deduped
 │ │ ├── debug@4.4.3 deduped
 │ │ ├── get-stream@5.2.0 deduped
 │ │ └── yauzl@2.10.0 deduped
@@ -412,16 +412,16 @@ riksdagsmonitor@0.9.17 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │   ├── d3-interpolate@3.0.1 deduped
 │   ├── d3-selection@3.0.0 deduped
 │   └── d3-transition@3.0.1 deduped
-├─┬ eslint@10.3.0
+├─┬ eslint@10.4.0
 │ ├─┬ @eslint-community/eslint-utils@4.9.1
 │ │ ├── eslint-visitor-keys@3.4.3
-│ │ └── eslint@10.3.0 deduped
+│ │ └── eslint@10.4.0 deduped
 │ ├── @eslint-community/regexpp@4.12.2
 │ ├─┬ @eslint/config-array@0.23.5
 │ │ ├── @eslint/object-schema@3.0.5
 │ │ ├── debug@4.4.3 deduped
 │ │ └── minimatch@10.2.4 deduped
-│ ├─┬ @eslint/config-helpers@0.5.5
+│ ├─┬ @eslint/config-helpers@0.6.0
 │ │ └── @eslint/core@1.2.1 deduped
 │ ├─┬ @eslint/core@1.2.1
 │ │ └── @types/json-schema@7.0.15 deduped
@@ -511,10 +511,10 @@ riksdagsmonitor@0.9.17 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └── kind-of@6.0.3 deduped
 │ └── strip-bom-string@1.0.0
 ├─┬ happy-dom@20.9.0
-│ ├── @types/node@25.7.0 deduped
+│ ├── @types/node@25.8.0 deduped
 │ ├── @types/whatwg-mimetype@3.0.2
 │ ├─┬ @types/ws@8.18.1
-│ │ └── @types/node@25.7.0 deduped
+│ │ └── @types/node@25.8.0 deduped
 │ ├── entities@7.0.1
 │ ├── whatwg-mimetype@3.0.0
 │ └─┬ ws@8.19.0
@@ -570,7 +570,7 @@ riksdagsmonitor@0.9.17 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ │ └── safe-buffer@5.1.2
 │ │ └── util-deprecate@1.0.2
 │ └── setimmediate@1.0.5
-├─┬ knip@6.13.1
+├─┬ knip@6.14.0
 │ ├─┬ fdir@6.5.0
 │ │ └── picomatch@4.0.4 deduped
 │ ├─┬ formatly@0.3.0
@@ -1241,14 +1241,14 @@ riksdagsmonitor@0.9.17 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ │ ├── @typescript-eslint/typescript-estree@8.59.3 deduped
 │ │ │ ├── @typescript-eslint/utils@8.59.3 deduped
 │ │ │ ├── debug@4.4.3 deduped
-│ │ │ ├── eslint@10.3.0 deduped
+│ │ │ ├── eslint@10.4.0 deduped
 │ │ │ ├── ts-api-utils@2.5.0 deduped
 │ │ │ └── typescript@6.0.3 deduped
 │ │ ├── @typescript-eslint/utils@8.59.3 deduped
 │ │ ├─┬ @typescript-eslint/visitor-keys@8.59.3
 │ │ │ ├── @typescript-eslint/types@8.59.3 deduped
 │ │ │ └── eslint-visitor-keys@5.0.1 deduped
-│ │ ├── eslint@10.3.0 deduped
+│ │ ├── eslint@10.4.0 deduped
 │ │ ├── ignore@7.0.5
 │ │ ├── natural-compare@1.4.0 deduped
 │ │ ├─┬ ts-api-utils@2.5.0
@@ -1260,7 +1260,7 @@ riksdagsmonitor@0.9.17 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ ├── @typescript-eslint/typescript-estree@8.59.3 deduped
 │ │ ├── @typescript-eslint/visitor-keys@8.59.3 deduped
 │ │ ├── debug@4.4.3 deduped
-│ │ ├── eslint@10.3.0 deduped
+│ │ ├── eslint@10.4.0 deduped
 │ │ └── typescript@6.0.3 deduped
 │ ├─┬ @typescript-eslint/typescript-estree@8.59.3
 │ │ ├─┬ @typescript-eslint/project-service@8.59.3
@@ -1283,9 +1283,9 @@ riksdagsmonitor@0.9.17 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ ├── @typescript-eslint/scope-manager@8.59.3 deduped
 │ │ ├── @typescript-eslint/types@8.59.3 deduped
 │ │ ├── @typescript-eslint/typescript-estree@8.59.3 deduped
-│ │ ├── eslint@10.3.0 deduped
+│ │ ├── eslint@10.4.0 deduped
 │ │ └── typescript@6.0.3 deduped
-│ ├── eslint@10.3.0 deduped
+│ ├── eslint@10.4.0 deduped
 │ └── typescript@6.0.3 deduped
 ├── typescript@6.0.3
 ├─┬ unified@11.0.5
@@ -1305,7 +1305,7 @@ riksdagsmonitor@0.9.17 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │   ├── @types/unist@3.0.3 deduped
 │   └── unist-util-is@6.0.1 deduped
 ├─┬ vite@8.0.13
-│ ├── @types/node@25.7.0 deduped
+│ ├── @types/node@25.8.0 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY @vitejs/devtools@^0.1.18
 │ ├── esbuild@0.28.0 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY fsevents@~2.3.3
@@ -1343,7 +1343,7 @@ riksdagsmonitor@0.9.17 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ vitest@4.1.6
 │ ├── UNMET OPTIONAL DEPENDENCY @edge-runtime/vm@*
 │ ├── UNMET OPTIONAL DEPENDENCY @opentelemetry/api@^1.9.0
-│ ├── @types/node@25.7.0 deduped
+│ ├── @types/node@25.8.0 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-playwright@4.1.6
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-preview@4.1.6
 │ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-webdriverio@4.1.6
