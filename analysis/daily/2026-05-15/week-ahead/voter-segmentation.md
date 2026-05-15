@@ -1,87 +1,66 @@
-# Voter Segmentation Analysis — Week of 19–23 May 2026
+---
+title: "Voter Segmentation — Aid Policy, Week 21"
+date: "2026-05-15"
+article_type: "week-ahead"
+subfolder: "week-ahead"
+language: "en"
+---
 
-**Analysis date**: 2026-05-15
-**Classification**: 🟢 PUBLIC
-**Horizon tags**: [horizon:month] [horizon:election]
+# Voter Segmentation — Week 21, 2026
 
-## Voter Segments and Issue Alignment
+## Segment Definitions
 
-This week's legislative agenda differentially affects distinct voter segments within the Swedish electorate.
+### Segment 1: Committed Solidarity Left (V+MP core)
 
-### Segment 1: SD Core Voters (approx. 18–20% electorate)
+**Size**: ~8–11% of electorate  
+**Values**: Global justice, children's rights, climate solidarity, anti-imperialism  
+**Response to HD10492+HD10493**: HIGH activation. The specific framing of "barnens bästa" + "konsekvenser för barn" directly maps to this segment's core moral vocabulary. Minister Dousa's admission of no impact assessment is a confirmation of their worldview (government doesn't care about children abroad).  
+**Electoral action**: Increased turnout and party loyalty; V + MP platform mobilisation.
 
-**Profile**: Working class, outside major cities, middle-aged, high concern about crime and immigration, sceptical of EU, national-cultural identity primary
+### Segment 2: Social Democratic Solidarity (S core)
 
-**This week's resonance**: 
-- HD03262 (no PUT): HIGH positive resonance — "finally, a consequence for immigration"
-- HD03265 (detention): HIGH positive resonance — "strong action on failed returns"
-- KU34 Track A (abortion): LOW concern — SD has taken ambiguous position on abortion
-- Bistånd cuts: MEDIUM positive — "put Sweden's money into Sweden"
+**Size**: ~25–30% of electorate  
+**Values**: Universal welfare state model + international extension; solidarity at home AND abroad  
+**Response to HD10492+HD10493**: MODERATE activation. S voters are more likely to weight domestic issues (healthcare, schools, housing) above international aid. But they have a latent sensitivity to "Sweden's role in the world" framing.  
+**Electoral action**: Strengthens S's existing differentiation from the Tidö coalition; unlikely to shift vote share significantly but reinforces party identity.
 
-**Electoral action**: Highly likely to reward SD with loyalty vote; some persuadable toward M if SD weakens
+### Segment 3: Humanitarian Liberal Soft Voters (L+C soft)
 
-### Segment 2: M Core + Centre-Right Moderates (approx. 12–16% electorate)
+**Size**: ~4–6% of electorate  
+**Values**: Liberal internationalism, development, civil society, trade openness  
+**Response to HD10492+HD10493**: POTENTIAL cross-pressure. L voters with aid-policy sensitivity may experience dissonance: L is in the Tidö coalition that has cut aid. C is outside but has not made aid a central campaign issue.  
+**Electoral action**: Small potential for V→ or MP→ attraction for the most aid-sensitive L/C soft voters. More likely: internal campaign pressure on L and C to clarify aid positions.
 
-**Profile**: Middle-upper income, higher education, urban/suburban, pro-business, value rule of law and EU membership, moderate on social issues
+### Segment 4: Nationalist Fiscal Populist (SD core)
 
-**This week's resonance**:
-- Migration laws: MIXED — moderate M voters accept some reform but are uncomfortable with ECHR tensions
-- KU34 Track A (abortion): HIGH positive — M presents as centrist, values-based
-- HD03250 (e-legitimation): POSITIVE — digital modernisation narrative
-- Bistånd cuts: MILD negative for globally oriented M voters
+**Size**: ~18–22% of electorate  
+**Values**: National-first spending; skepticism of foreign aid and multilateral institutions  
+**Response to HD10492+HD10493**: NEGATIVE activation (the debate reinforces their existing preference). "Good — why should Swedish taxpayers fund foreign governments?"  
+**Electoral action**: Rallies SD base; reinforces coalition coherence. Possible SD public statements amplifying the "Sweden first" message.
 
-**Electoral risk**: This segment is the swing demographic. If EU/ECHR legal risk materialises or coalition friction becomes visible, these voters may abstain or drift to L/C.
+### Segment 5: Pragmatic Center-Right (M+KD core, excluding SD)
 
-### Segment 3: Social Democratic Core + Union Voters (approx. 25–28% electorate)
+**Size**: ~20–24% of electorate  
+**Values**: Fiscal responsibility, efficient governance, competence over idealism  
+**Response to HD10492+HD10493**: MUTED. These voters are most responsive to the government's "efficiency reform" framing. They are NOT primarily driven by global solidarity; the absence of an impact assessment is a governance concern but not a core values violation.  
+**Electoral action**: Minimal shift. Government messaging on "quality over quantity" sufficient for retention.
 
-**Profile**: LO-affiliated, public sector, metropolitan and industrial city, concerned about welfare state, healthcare, education, immigration ambivalent
+## Composite Verdict
 
-**This week's resonance**:
-- Migration laws: MIXED — S base includes both pro-restriction (rural) and humanitarian (urban) factions
-- KU34 Track A: POSITIVE — S supports constitutional abortion protection
-- Bistånd: POSITIVE concern — many S core voters have international solidarity orientation
+| Segment | Share of electorate | Aid debate salience | Directional effect |
+|---------|-------------------|---------------------|-------------------|
+| Committed Solidarity Left | ~10% | HIGH | V+MP (mobilisation) |
+| Social Democratic Solidarity | ~27% | MODERATE | S (reinforcement) |
+| Humanitarian Liberal Soft | ~5% | MODERATE | Potential V/MP conversion |
+| Nationalist Fiscal Populist | ~20% | HIGH (inverse) | SD (base solidification) |
+| Pragmatic Center-Right | ~22% | LOW | M retention |
+| Other | ~16% | LOW | Not significantly moved |
 
-**Electoral action**: S counter-motions this week are designed to activate the humanitarian/solidarity fraction of S base while not losing the rural pragmatic fraction.
+**Key finding**: The voter segmentation confirms the election-2026-analysis.md finding that this issue is primarily a LEFT-BLOC MOBILISATION tool, not a cross-bloc conversion tool. Its most significant electoral effect is on V and MP base activation. The MP threshold-risk dimension (voter segment 1+2 overlap with MP mobilisation) is the single highest-stakes electoral dimension.
 
-### Segment 4: Left and Green Voters (V+MP, approx. 8–10% combined)
+## Evidence Anchors
 
-**Profile**: Urban, educated, environmentally concerned, pro-immigration, feminist, anti-Tidö
-
-**This week's resonance**:
-- All migration laws: VERY HIGH NEGATIVE — V and MP's core identity opposes these
-- Bistånd interpellations: V's HD10492/10493 directly mobilise this segment
-- KU34 Track A (abortion): POSITIVE
-- KU34 Track B (association freedom): NEGATIVE — civil society concern
-
-**Electoral action**: High mobilisation energy; risk is staying above 4% threshold (both V and MP under pressure).
-
-### Segment 5: Liberal/Centrist Voters (L+C, approx. 10–14%)
-
-**Profile**: Urban liberal, educated, pro-EU, pro-immigration, business-oriented or rural, pragmatic
-
-**This week's resonance**:
-- Migration laws: UNCOMFORTABLE — L and C voters have more liberal immigration instincts; ECHR concerns resonate
-- KU34 Track A: POSITIVE
-- KU34 Track B: NEGATIVE-MODERATE — rule-of-law concern
-- ODA cuts: MILD NEGATIVE for globally oriented segment
-
-**Electoral action**: This is the decisive swing segment. L and C need to show they moderated the worst excesses (e.g., HD03265 amendment). [horizon:election] *roughly even* whether this segment stays with current alignment or drifts.
-
-## Issue-Voter Matrix
-
-| Issue | SD | M | L/C | S | V/MP |
-|-------|----|----|-----|---|------|
-| Migration restriction | +++ | + | - | +/- | --- |
-| ECHR/rule of law | 0 | - | -- | - | --- |
-| Abortion protection | 0 | ++ | ++ | ++ | ++ |
-| Bistånd cuts | + | 0 | - | - | --- |
-| Climate action | -- | - | + | + | +++ |
-| Rural policy | + | + | ++ | + | 0 |
-| Digital/security | + | ++ | + | + | - |
-| Economic stability | + | ++ | ++ | + | 0 |
-
-*+++ = strong positive resonance; + = mild positive; 0 = neutral; - = mild negative; --- = strong negative*
-
-## Implications for Campaign Communications
-
-The Tidö coalition is using this week to deliver SD's mandate and M's "reform delivery" narrative simultaneously. The challenge is that the same laws that satisfy SD core voters create discomfort for L+C moderate voters. This tension is structural to the Tidö coalition and will dominate election-year communications strategy [horizon:election].
+| Claim | Evidence | Retrieved |
+|-------|----------|-----------|
+| Humanitarian framing "barnens bästa" | HD10492 — "barnets bästa" invoked throughout | 2026-05-15 |
+| SD coalition support documented | HD10492: "med stöd av Sverigedemokraterna" | 2026-05-15 |

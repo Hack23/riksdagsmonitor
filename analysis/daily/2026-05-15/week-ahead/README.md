@@ -1,59 +1,47 @@
-# Week-Ahead Analysis — README
-**Date**: 2026-05-15 (Week of 2026-05-19 to 2026-05-23)
-**Workflow**: news-week-ahead
-**Analysis subfolder**: week-ahead
-**Classification**: 🟢 PUBLIC
+---
+title: "Week Ahead: Swedish Aid Policy Accountability — Week 21, 2026"
+date: "2026-05-15"
+article_type: "week-ahead"
+subfolder: "week-ahead"
+language: "en"
+---
 
-## Contents of This Analysis Package
+# Week Ahead Intelligence Folder — 2026-05-15
 
-This folder contains the complete 23-artifact AI analysis for the Swedish parliamentary week-ahead intelligence brief covering the Riksdag week of 19–23 May 2026.
+**Article type**: week-ahead  
+**Date**: 2026-05-15  
+**Riksmöte**: 2025/26  
+**Analysis depth**: deep  
+**Workflow run**: 25908189012  
 
-### Family A — Core Synthesis (9 artifacts)
-- [README.md](README.md) — This file
-- [executive-brief.md](executive-brief.md) — 200-word executive summary
-- [synthesis-summary.md](synthesis-summary.md) — Integrated cross-document synthesis
-- [significance-scoring.md](significance-scoring.md) — Document significance matrix
-- [classification-results.md](classification-results.md) — Theme and topic classification
-- [swot-analysis.md](swot-analysis.md) — Political SWOT for week-ahead
-- [risk-assessment.md](risk-assessment.md) — Risk register for the week
-- [threat-analysis.md](threat-analysis.md) — Threat landscape analysis
-- [stakeholder-perspectives.md](stakeholder-perspectives.md) — Party/faction perspectives
+## Folder Contents
 
-### Family B — Structural Metadata (2 artifacts)
-- [data-download-manifest.md](data-download-manifest.md) — Document provenance
-- [cross-reference-map.md](cross-reference-map.md) — Document linkages
+| Family | Artifact | Description |
+|--------|----------|-------------|
+| A | executive-brief.md | BLUF decision brief |
+| A | synthesis-summary.md | Integrated intelligence picture |
+| A | significance-scoring.md | DIW-weighted ranking |
+| A | classification-results.md | Document classification |
+| A | swot-analysis.md | Aggregate SWOT |
+| A | risk-assessment.md | Risk register |
+| A | threat-analysis.md | Threat analysis |
+| A | stakeholder-perspectives.md | Stakeholder map |
+| B | data-download-manifest.md | Provenance manifest |
+| B | cross-reference-map.md | Cross-document links |
+| C | scenario-analysis.md | 3 scenarios |
+| C | comparative-international.md | International comparisons |
+| C | devils-advocate.md | Competing hypotheses |
+| C | intelligence-assessment.md | Key judgments + PIRs |
+| C | methodology-reflection.md | ICD 203 audit |
+| D | election-2026-analysis.md | Election context |
+| D | voter-segmentation.md | Voter segments |
+| D | coalition-mathematics.md | Coalition maths |
+| D | historical-parallels.md | Historical parallels |
+| D | media-framing-analysis.md | Media framing |
+| D | implementation-feasibility.md | Feasibility |
+| D | forward-indicators.md | Forward indicators |
+| E | documents/ | Per-document analyses |
 
-### Family C — Strategic Extensions (5 artifacts)
-- [scenario-analysis.md](scenario-analysis.md) — Political scenario trees
-- [comparative-international.md](comparative-international.md) — EU/Nordic comparison
-- [devils-advocate.md](devils-advocate.md) — Counterfactual analysis
-- [intelligence-assessment.md](intelligence-assessment.md) — PIR assessment
-- [methodology-reflection.md](methodology-reflection.md) — Analytical methodology
+## Topic
 
-### Family D — Electoral & Domain Lenses (7 artifacts)
-- [election-2026-analysis.md](election-2026-analysis.md) — Election impact analysis
-- [voter-segmentation.md](voter-segmentation.md) — Voter constituency analysis
-- [coalition-mathematics.md](coalition-mathematics.md) — Coalition/majority math
-- [historical-parallels.md](historical-parallels.md) — Historical precedents
-- [media-framing-analysis.md](media-framing-analysis.md) — Media narrative analysis
-- [implementation-feasibility.md](implementation-feasibility.md) — Feasibility assessment
-- [forward-indicators.md](forward-indicators.md) — Leading indicators
-
-### Family E — Per-Document Analyses
-- [documents/hd10492-analysis.md](documents/hd10492-analysis.md)
-- [documents/hd10493-analysis.md](documents/hd10493-analysis.md)
-
-## Primary Themes This Week
-
-1. **Migration reform cluster** (CRITICAL): Props HD03262–HD03265 implementing EU asylum pact; S, V, MP opposition motions
-2. **Constitutional debate** (HIGH): KU34 — grundlagsskyddad aborträtt + föreningsfrihetsbegränsning
-3. **Security/surveillance** (HIGH): HD03267 security threats, HD03250 e-legitimation, HD03261 Skatteverket
-4. **Foreign aid/bistånd** (MEDIUM): V interpellations HD10492+HD10493 on ODA cuts
-5. **Rural policy** (MEDIUM): NU21 betänkande
-6. **Climate/energy** (MEDIUM): CU30 EPBD building energy directive, HD10488 climate adaptation
-
-## Pass Status
-
-- Pass 1: ✅ Complete
-- Pass 2: ✅ Complete (improvements applied)
-- Analysis Gate: ✅ Passed
+Swedish development aid (bistånd) accountability: two interpellations (HD10492, HD10493) by Lotta Johnsson Fornarve (V) to Aid and Foreign Trade Minister Benjamin Dousa (M) — filed 2026-05-13–14, announced for debate 2026-05-18, deadline for ministerial response 2026-05-29. Sweden has abandoned the 1% of GNI aid target with SD support, discontinued ~30 country strategies, and restructured the entire aid programme — all in an election year.

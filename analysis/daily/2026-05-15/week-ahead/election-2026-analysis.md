@@ -1,64 +1,77 @@
-# Election 2026 Analysis — Week of 19–23 May 2026
+---
+title: "Election 2026 Analysis — Aid Accountability Dimension, Week 21"
+date: "2026-05-15"
+article_type: "week-ahead"
+subfolder: "week-ahead"
+language: "en"
+---
 
-**Analysis date**: 2026-05-15
-**Classification**: 🟢 PUBLIC
-**Horizon tags**: [horizon:month] [horizon:quarter] [horizon:election]
-**Time to election**: ~16–18 months (Election expected September 2026)
+# Election 2026 Analysis — Aid Accountability, Week 21
 
-## Election Impact Assessment
+## Election Context
 
-### Week's Legislative Agenda as Electoral Pre-Positioning
+**Election date**: 2026-09-13  
+**Days remaining**: 121 days  
+**Proximity band**: T+90 to T+120 (campaign sprint begins; party platforms being finalised)  
+**DIW multiplier**: 1.5× applies to all items with opposition or electoral dimension  
+**WEP language band for this horizon**: "likely" (55-69% probability ranges)
 
-The concentration of migration reform legislation in this single week is not random. With approximately 16–18 months to the September 2026 Riksdag election, this is the last parliamentary session before the full pre-election communications cycle begins. Passing the four migration laws now:
+## How Aid Policy Fits the 2026 Campaign Structure
 
-1. **Locks in the architecture**: S cannot reverse laws that have been in force for 12+ months before election — any reversal appears disruptive
-2. **Forces S to take formal positions**: S's counter-motions create a voting record that makes S's opposition concrete and cited
-3. **Gives SD a "delivered" narrative**: SD's core demand — migration architecture overhaul — is delivered ahead of election campaign
+### Party Positioning on Aid
 
-### Key Electoral Metrics
+| Party | Current position | Electoral incentive |
+|-------|---------------|-------------------|
+| V (Vänsterpartiet) | Strongly pro-aid restoration; challenger | High — core identity issue, mobilises base |
+| MP (Miljöpartiet) | Pro-aid restoration; challenger | High — aligns with climate/global-justice positioning |
+| S (Socialdemokraterna) | Pro-aid, but in coalition-building mode | Medium — balanced against security/economy positioning |
+| M (Moderaterna) | "Bistånd för en ny era" efficiency framing | Defend — limited base activation on this issue |
+| KD (Kristdemokraterna) | Split: humanitarian instinct vs. budget discipline | Ambivalent — potential soft target |
+| L (Liberalerna) | Silent — aid is traditionally a Liberal issue | High internal tension — L donors historically pro-aid |
+| C (Centerpartiet) | Pro-aid in principle; outside Tidö coalition | Medium — can join opposition without coalition costs |
+| SD (Sverigedemokraterna) | Actively anti-aid restoration | High — base rewards this |
 
-**Current bloc arithmetic (approximate seats, indicative from late 2025 polling):**
-- Tidö coalition (M+SD+KD+L): ~175–180/349
-- Opposition (S+V+MP+C): ~169–174/349
-- Note: C has moved to opposition but has sometimes abstained
+### Bloc Arithmetic — 2022 Result Baseline (Riksdagen mandate seats)
 
-**Riksdagsspärren (4%) risk parties:**
-- V: ~4.5–5.5% (above threshold but margin narrow)
-- MP: ~4.0–5.0% (close to threshold)
-- KD: ~4.5–5.5% (above but narrowing)
+| Bloc | Parties | Seats (2022) | 2022 vote share |
+|------|---------|-------------|----------------|
+| Tidö coalition | M+KD+L+SD | 176 | ~49.8% |
+| Opposition | S+V+MP+C | 173 | ~48.7% |
 
-### Issue Salience Forecast
+**Note**: 176-173 is an extremely narrow margin. Any small vote shift is material.
 
-| Issue | Tidö Advantage | S Advantage | Net Assessment |
-|-------|---------------|-------------|----------------|
-| Migration/security | HIGH | LOW | Tidö favoured |
-| Healthcare/social welfare | LOW | HIGH | S favoured |
-| Economy (if growth maintained) | MEDIUM | MEDIUM | Neutral |
-| Constitutional rights | MIXED (abortion: S, assoc: Tidö) | MIXED | Split |
-| Climate | LOW | HIGH | S/MP favoured |
-| Rural/regional | MEDIUM (C) | MEDIUM (S rural) | Split |
+### Aid Issue Electoral Impact Estimate
 
-**IMF Context**: Sweden GDP growth +2.1% (WEO-2026-04), unemployment 8.2%, CPI 2.0%. Stable economic backdrop removes the classic opposition "economy is broken" argument. [horizon:election] *likely* that if economic conditions hold, migration/security/values remain dominant.
+**Who cares most**: V+MP+S voters already aligned. The marginal question is whether soft-C voters and soft-L voters are moved by the humanitarian framing.  
+**Soft-C**: Centerpartiet is outside the Tidö coalition; C voters who are pro-aid but voted C in 2022 could be recruited by V/MP's specific campaign on this.  
+**Soft-L**: L is in the Tidö coalition but L has a historical identity as the "humanitarian liberal" party. HD10492+HD10493 create internal L tension — especially given KD's evangelical/charitable tradition.  
+**V poll trend**: V has been polling 5–8% in 2026; aid accountability is a classic V base-mobilisation issue but does not strongly convert beyond their current base.
 
-### Electoral Significance of Specific Votes This Week
+## Seat Sensitivity Analysis
 
-**HD03265 (detention) — If passes**: SD base energised; S runs hard on ECHR risk in election. If fails: coalition crisis narrative aids S.
+**Riksmandatsspärren**: 4% threshold to enter parliament.  
+**MP risk**: MP is currently polling around 3.5–5.5% in different polls. If the aid accountability narrative helps MP mobilise their base, it may be critical to their Riksdag entry.  
+**V movement**: V is above threshold; benefit is mobilisation depth, not threshold risk.  
+**Net election relevance**: HIGH for MP threshold risk; MEDIUM-HIGH for V mobilisation; LOW for vote conversion across bloc lines.
 
-**KU34 Track A (abortion)**: Cross-party consensus removes this as an attack vector for S — actually gives M a "we deliver for women" claim. [horizon:election] *unlikely* to be a major electoral differentiator unless right-wing reversal scenario emerges.
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ffbe0b', 'background': '#0a0e27', 'mainBkg': '#1a1e3d'}}}%%
+%%{init: {'theme': 'base'}}%%
+xychart-beta
+  title "Estimated Electoral Salience by Party"
+  x-axis ["V", "MP", "S", "C", "L", "M", "KD", "SD"]
+  y-axis "Salience index (0-10)" 0 --> 10
+  bar [8, 9, 6, 4, 5, 2, 3, 1]
+```
 
-**KU34 Track B (association)**: Creates potential civil society mobilisation issue [horizon:quarter] → [horizon:election]. If civil society organisations publicly oppose and campaign against Tidö parties, this could add 0.5–1.5% S/MP/V vote uplift.
+## Key Intelligence Finding
 
-### 2026 Election Scenarios (See also scenario-analysis.md E1–E3)
+The HD10492+HD10493 interpellations are most electorally significant not as vote-conversion tools but as **MP survival tools**. If the aid accountability narrative helps MP clear the 4% threshold, it directly changes the Riksdag composition and potentially the post-election coalition arithmetic. This makes the V interpellations instrumentally more important than their primary accountability function.
 
-**E1 — Tidö renewed (35%)**: Migration laws operational 12+ months; S unable to differentiate; M maintains urban-moderate support; SD delivers rural/small-city base.
+## Evidence Anchors
 
-**E2 — S-led government (40%)**: S leads bloc; forms government with V external support and MP in government. C abstains on investiture. Migration + healthcare + climate = S agenda.
-
-**E3 — Hung parliament (25%)**: Neither bloc secures 175. Long formation period. C as kingmaker potential. New election not constitutionally automatic but politically possible.
-
-### Electoral Watch List
-
-- KD falling below 4%: Would collapse Tidö majority → accelerated election uncertainty
-- MP crossing 5%: Strengthens left bloc arithmetic
-- V and MP both at 4.0–4.5%: Structural fragility for left bloc
-- New party entries (e.g., post-KD splinter): No current evidence but monitor
+| Claim | Evidence | Retrieved |
+|-------|----------|-----------|
+| Election date 2026-09-13 | analysis/daily/2026-05-08/week-ahead/election-2026-analysis.md | 2026-05-15 |
+| DIW 1.5× multiplier | significance-scoring.md this run | 2026-05-15 |
+| V challenger position | HD10492 + HD10493 author: Lotta Johnsson Fornarve (V) | 2026-05-15 |

@@ -1,111 +1,72 @@
-# Cross-Reference Map — Week of 19–23 May 2026
+---
+title: "Cross-Reference Map — Week 21, 2026"
+date: "2026-05-15"
+article_type: "week-ahead"
+subfolder: "week-ahead"
+language: "en"
+---
 
-**Analysis date**: 2026-05-15
-**Classification**: 🟢 PUBLIC
+# Cross-Reference Map — Week 21, 2026
 
-## Document Relationship Map
+## Document Relationship Graph
 
-### Migration Reform Cluster
-```
-HD03262 (abolish PUT)
-  ├─ OPPOSES: EU Directive 2003/109/EC (long-term resident status)
-  ├─ ENABLES: HD03263 (stronger returns infrastructure needed)
-  ├─ COUNTER-MOTION: HD024153 (S opposition motion against)
-  └─ REINFORCES: HD03267 (security threat expulsion) — shared persons subject
-  
-HD03263 (stärkt återvändande)
-  ├─ IMPLEMENTS: EU Returns Directive 2008/115/EC
-  ├─ DEPENDS ON: HD03262 (broader legal framework change)
-  └─ OPPOSES: UNHCR non-refoulement principle for some cases
-  
-HD03264 (uppförandevillkor)
-  ├─ NOVEL: no direct EU equivalent
-  ├─ CONSTITUTIONAL QUESTION: proportionality (similar to German Bewährungsauflagen)
-  └─ REINFORCES: HD03262 (conditions on temporary permits post-PUT)
-  
-HD03265 (utökad förvar 36 mths)
-  ├─ TENSION: ECHR Art. 5(1)(f) — R-03 in risk register
-  ├─ JO REFERRAL: pre-existing complaints on detention duration
-  ├─ OPPOSES: EU Returns Directive Art. 15 (6-month standard, 18-month max)
-  └─ KD VOTE RISK: see R-01 in risk register
-```
+| Source dok_id | Relation | Target dok_id / Artifact | Description |
+|---------------|---------|------------------------|-------------|
+| HD10492 | thematic-cluster | HD10493 | Same author, same minister, same reform agenda, same week |
+| HD10492 | references | "Bistånd för en ny era" (Dec 2023 reform agenda) | Government agenda that both interpellations challenge |
+| HD10492 | cites | Rädda Barnen report on programme halts | External evidence anchor |
+| HD10493 | cites | Government's own strategy count (70→40) | Self-incriminating primary source |
+| HD10492 | electoral-context | analysis/daily/2026-05-08/week-ahead/synthesis-summary.md | Prior week-ahead established election multiplier baseline; Week 20 was security-focused; Week 21 shifts to humanitarian accountability |
+| HD10492 | party-context | analysis/daily/2026-05-08/week-ahead/ | V now follows week 20's S and security challengers with a different policy track |
+| HD10493 | compound-context | Trump USAID dismantlement (external reference in document text) | Global aid crisis amplification |
+| HD10492 | legal-context | UN CRC (Barnkonventionen) | Sweden's ratification creates a compliance dimension |
+| HD10492 | policy-linkage | Agenda 2030 | HD10492 explicitly invokes Agenda 2030 as framework government is violating |
 
-### Security-State Expansion Cluster
-```
-HD03267 (security threats/utlänningar)
-  ├─ USES: HD03250 identity infrastructure (future implementation)
-  ├─ TENSION: ECHR Art. 6 (fair trial), Art. 8 (privacy)
-  └─ COMPLEMENTARY TO: HD03262/HD03265 (migration restriction framework)
+## Prior Week-Ahead Cross-Reference
 
-HD03250 (statlig e-legitimation)
-  ├─ GDPR TRIGGER: Art. 35 DPIA required
-  ├─ ENABLES: HD03267 (identity verification for security determinations)
-  ├─ EU CONTEXT: EU Digital Identity Wallet Regulation (eIDAS 2.0)
-  └─ DEPENDS ON: IMY assessment before deployment
+**Prior cycle**: analysis/daily/2026-05-08/week-ahead/ (Week 20)  
+**Week 20 dominant theme**: FöU18 signal intelligence reform + security-state cluster (HD01FöU18, HD03267, HD03261)  
+**Transition**: Week 21 shifts from domestic security to international accountability. Both weeks are within the election proximity window. The security-vs-solidarity frame contrast serves both V's campaign positioning and the broader opposition narrative that the Tidöregeringen prioritises security theatre over humanitarian commitments.
 
-HD03261 (Skatteverket befogenheter)
-  ├─ RELATES TO: HD03250 (civil registration + digital identity converge)
-  ├─ ENABLES: HD03267 (civil registration data for security screening)
-  └─ GDPR TRIGGER: cross-agency data sharing requires DPIA
-```
+## External Source Map
 
-### Constitutional Reform Track
-```
-HD01KU34 (grundlagsskyddad aborträtt + föreningsfrihet)
-  ├─ TRACK A (abort): SUPPORTED by S, V, MP, C, L, parts of M
-  ├─ TRACK B (föreningsfrihet): OPPOSED by V, MP, parts of C and S
-  ├─ LAGRÅDET: n/a at betänkande stage — KU self-review
-  ├─ VENICE COMMISSION: may scrutinise Track B post-adoption
-  └─ BUNDLES WITH: HD01KU35 (digitala sammanträden — procedural companion betänkande)
-```
+| Source | Type | Relevance |
+|--------|------|-----------|
+| riksdagen.se/dokument/HD10492 | Primary | Interpellation text + status |
+| riksdagen.se/dokument/HD10493 | Primary | Interpellation text + status |
+| Rädda Barnen (referenced in HD10492) | NGO evidence | Programme halt documentation |
+| IMF WEO Apr-2026 | Economic | Sweden fiscal surplus context |
+| data/imf-context.json | Pre-warm | IMF availability confirmed |
 
-### ODA/Bistånd Accountability Thread
-```
-HD10492 (bistånd och barn)
-  ├─ COMPANION: HD10493 (biståndsstrategier)
-  ├─ MINISTER: Benjamin Dousa (M) — joint response expected
-  ├─ ODA CONTEXT: SWE ODA target 0.70% BNI (reduced from 0.99%)
-  └─ MEDIA LINK: UNICEF/Rädda Barnen public campaigns
+## Statskontoret Cross-Source
 
-HD10493 (nedlagda biståndsstrategier)
-  ├─ COMPANION: HD10492
-  ├─ INSTITUTIONAL: SIDA strategy discontinuations
-  └─ OECD DAC: Sweden peer review 2024 noted strategy coherence concerns
+**Evaluation**: No domestic agency named in these interpellations. Both concern international aid administered via Sida/UD. Statskontoret pre-warm: **no trigger matched** (no Swedish domestic agency named, no administrative burden/governance efficiency dimension in domestic sense). Sida is the implementing agency but the interpellations challenge policy, not Sida's administrative capacity.
+
+## Lagrådet Tracking
+
+**Evaluation**: Not applicable. The government's reform agenda ("Bistånd för en ny era") was executive action, not legislation requiring Lagrådet referral. No constitutional law, criminal procedure, court organisation, surveillance, or taxation principles engaged. **Lagrådet: not applicable for this document cluster.**
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ffbe0b', 'background': '#0a0e27', 'mainBkg': '#1a1e3d'}}}%%
+graph TD
+    W20["Week 20 Analysis<br/>analysis/daily/2026-05-08/week-ahead/<br/>Security-state focus"] --> W21["Week 21 Analysis<br/>Humanitarian accountability focus"]
+    HD10492["HD10492<br/>Barn och bistånd"] --> Cluster["V's Week 21<br/>Accountability Cluster"]
+    HD10493["HD10493<br/>Nedlagda strategier"] --> Cluster
+    Cluster --> Agenda["Bistånd för en ny era<br/>Dec 2023 Reform Agenda"]
+    Cluster --> Election["2026-09-13 Election<br/>Campaign Framing"]
+    RB["Rädda Barnen<br/>Evidence"] --> HD10492
+    Trump["Trump USAID<br/>Global compound"] --> HD10493
+
+    style W20 fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style W21 fill:#1a1e3d,stroke:#00d9ff,color:#00d9ff
+    style Cluster fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+    style Election fill:#1a1e3d,stroke:#ff006e,color:#ff006e
 ```
 
-### Climate/Environment Cluster
-```
-HD01CU30 (EPBD building energy directive)
-  ├─ EU TRANSPOSITION: Directive 2024/1275 (recast EPBD)
-  ├─ IMPLEMENTATION DEADLINE: Varies by measure; 2026-2028
-  └─ CONNECTS TO: HD10488 (climate adaptation — MP interpellation)
+## Evidence Anchors
 
-HD10488 (klimatanpassningslagstiftning)
-  ├─ GAP ANALYSIS: Sweden lacks standalone climate adaptation act
-  └─ EU CONTEXT: EU Adaptation Strategy 2021
-```
-
-### Rural/Welfare Thread
-```
-HD01NU21 (Hela Sverige ska fungera)
-  ├─ POLITICAL: C party flagship; S also claims rural credentials  
-  └─ CONNECTS TO: HD10487 (utjämningssystem — fiscal equalisation for regions)
-
-HD01SoU31 (suicidprévention)
-  └─ STANDALONE: cross-party consensus; no conflict
-```
-
-## Tier-C Sibling-Folder Cross-References
-
-*Searched: analysis/daily/2026-05-0{8,9,10,11,12,13,14}/*, analysis/daily/2026-04-*/week-ahead/*. No week-ahead sibling folders found for the past 7 days. No prior synthesis-summary.md or intelligence-assessment.md available for cross-citation.*
-
-**Implication**: This week-ahead analysis starts a fresh Tier-C PIR cycle. Prior-period PIR carry-forward: none. Next week's analysis should cite this week's forward-indicators.md as sibling.
-
-## Cross-Document IMF Provenance
-
-All economic claims in this analysis package derive from:
-- Provider: imf
-- Dataflow: WEO (primary macro), FM (fiscal)
-- Vintage: WEO-2026-04 (April 2026 — 1 month old, not stale)
-- Indicators: NGDP_RPCH (GDP growth), LUR (unemployment), PCPIPCH (CPI), GGXWDG_NGDP (debt)
-- Retrieved: 2026-05-15T08:29Z
+| Claim | Evidence | Retrieved |
+|-------|----------|-----------|
+| Prior week-ahead exists | analysis/daily/2026-05-08/week-ahead/synthesis-summary.md on disk | 2026-05-15 |
+| Week 20 lead was FöU18 | analysis/daily/2026-05-08/week-ahead/synthesis-summary.md | 2026-05-15 |
+| Both interpellations same author + minister | HD10492 + HD10493 — Lotta Johnsson Fornarve → Benjamin Dousa | 2026-05-15 |

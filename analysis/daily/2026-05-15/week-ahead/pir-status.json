@@ -1,92 +1,33 @@
 {
-  "cycle": "2026-05-15-week-ahead",
-  "pir_version": "1.0",
-  "generated_at": "2026-05-15T08:55:00Z",
+  "schema_version": "1.0",
   "article_date": "2026-05-15",
   "subfolder": "week-ahead",
-  "workflow": "news-week-ahead",
-  "status": "FRESH_START",
-  "prior_cycle": null,
-  "prior_cycle_date": null,
+  "generated_at": "2026-05-15T00:00:00Z",
   "pirs": [
     {
-      "id": "PIR-01",
-      "topic": "Migration reform passage and EU legal durability",
-      "question": "Will all four Tidö migration proposals (HD03262–HD03265) pass, and what is the EU/ECHR legal durability of the resulting framework?",
-      "status": "ACTIVE",
-      "horizon_primary": "week",
-      "horizon_secondary": ["month", "quarter", "year"],
-      "wep": {
-        "week": "likely (60-65%)",
-        "month": "probable EU scrutiny begins",
-        "quarter": "roughly even Commission action"
-      },
-      "collection_indicators": ["KD vote HD03265", "EU Commission statement", "Lagrådet observations", "ECtHR applications post-enactment"],
-      "roll_forward": true,
-      "roll_forward_due": "2026-05-22"
+      "id": "PIR-WA-01",
+      "question": "Will the government conduct an impact assessment before the election?",
+      "status": "OPEN",
+      "priority": "HIGH",
+      "relevance": "An announced impact assessment would be a Scenario 2 signal; its absence confirms the accountability gap (KJ-1)",
+      "collection_approach": "Monitor UD press releases between 2026-05-15 and 2026-05-29; observe debate record 2026-05-18",
+      "roll_forward_date": "2026-06-01",
+      "trigger": "Response text by 2026-05-29",
+      "linked_kj": "KJ-1",
+      "linked_scenarios": ["S2"]
     },
     {
-      "id": "PIR-02",
-      "topic": "Coalition cohesion under rights/ECHR pressures",
-      "question": "Are KD and L showing structural defection risk from Tidö coalition on rights issues?",
-      "status": "ACTIVE",
-      "horizon_primary": "month",
-      "horizon_secondary": ["election"],
-      "wep": {
-        "month": "likely some verbal distancing",
-        "election": "unlikely formal coalition breakdown"
-      },
-      "collection_indicators": ["KD press statements", "L reservationer filed", "Internal party voting dissent counts"],
-      "roll_forward": true,
-      "roll_forward_due": "2026-05-22"
-    },
-    {
-      "id": "PIR-03",
-      "topic": "S electoral mobilisation effectiveness",
-      "question": "Are S counter-motions and migration opposition translating into measurable polling gains?",
-      "status": "ACTIVE",
-      "horizon_primary": "quarter",
-      "horizon_secondary": ["election"],
-      "wep": {
-        "quarter": "probable S polling improves",
-        "election": "roughly even election victory"
-      },
-      "collection_indicators": ["Demoskop/IPSOS/Novus polls post-May", "S membership data", "Media coverage volume"],
-      "roll_forward": true,
-      "roll_forward_due": "2026-06-01"
-    },
-    {
-      "id": "PIR-04",
-      "topic": "ODA/bistånd institutional impact",
-      "question": "Will bistånd cuts and strategy discontinuations produce measurable institutional damage to SIDA and development programme outcomes?",
-      "status": "ACTIVE",
-      "horizon_primary": "year",
-      "horizon_secondary": [],
-      "wep": {
-        "year": "probable some SIDA capacity loss documented"
-      },
-      "collection_indicators": ["SIDA annual report 2026", "Riksrevisionen audit mandate", "EBA evaluation programme"],
-      "roll_forward": true,
-      "roll_forward_due": "2026-12-01"
-    },
-    {
-      "id": "PIR-05",
-      "topic": "Digital infrastructure GDPR integrity",
-      "question": "Does HD03250 (e-legitimation) comply with GDPR and EU eIDAS 2.0, and will IMY require remediation?",
-      "status": "ACTIVE",
-      "horizon_primary": "year",
-      "horizon_secondary": [],
-      "wep": {
-        "year": "likely IMY reviews and finds partial compliance"
-      },
-      "collection_indicators": ["IMY formal review timeline", "EU Commission eIDAS compliance review", "Data protection audit"],
-      "roll_forward": true,
-      "roll_forward_due": "2026-09-01"
+      "id": "PIR-WA-02",
+      "question": "Will the parliamentary debate on 2026-05-18 generate major media coverage?",
+      "status": "OPEN",
+      "priority": "MEDIUM",
+      "relevance": "Media coverage converts parliamentary accountability record into electoral salience",
+      "collection_approach": "Monitor SVT, Aftonbladet, DN coverage; measure reference count to HD10492/HD10493 post-debate",
+      "roll_forward_date": "2026-05-22",
+      "trigger": "1 week post-debate assessment",
+      "linked_kj": "KJ-3",
+      "linked_scenarios": ["S3"]
     }
   ],
-  "analysis_gate_passed": true,
-  "artifacts_complete": 23,
-  "per_document_analyses": ["hd10492", "hd10493"],
-  "next_review": "2026-05-22",
-  "notes": "Fresh PIR cycle — no prior week-ahead sibling analysis found for 2026-05-08 to 2026-05-14 window."
+  "documents": ["HD10492", "HD10493"]
 }

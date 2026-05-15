@@ -1,73 +1,63 @@
-# Implementation Feasibility Analysis — Week of 19–23 May 2026
+---
+title: "Implementation Feasibility — Aid Policy Reversal, Week 21"
+date: "2026-05-15"
+article_type: "week-ahead"
+subfolder: "week-ahead"
+language: "en"
+---
 
-**Analysis date**: 2026-05-15
-**Classification**: 🟢 PUBLIC
-**Horizon tags**: [horizon:month] [horizon:year]
+# Implementation Feasibility — Week 21, 2026
 
-## Agency Implementation Assessment
+## Feasibility Question
 
-### HD03262 — Abolition of Permanent Residence Permits
-**Implementing agencies**: Migrationsverket (primary), Swedish Migration Court system
-**Statskontoret relevance**: StvK 2025:4 and StvK 2024:18 assessed Migrationsverket capacity — found operational strain from high case volume
-**Feasibility concerns**:
-- IT systems require significant reconfiguration to process long-term temporary permit renewals instead of PUT conversions
-- Staff retraining needed for new decision logic
-- Expected implementation timeline: 12–18 months post-royal assent
-- Risk: Backlog creation during transition; appeals increase
-**Assessment**: Technically feasible but requires major operational investment. Migrationsverket has been capacity-constrained. [horizon:year] *likely* that implementation delays occur.
+**Question**: Can the opposition's implicit demand (restore aid to 1.0% GNI, restore 70+ strategies, re-enter exited countries) be implemented before the election if political will changed?
 
-### HD03265 — 36-Month Administrative Detention
-**Implementing agencies**: Migrationsverket, Kriminalvården (detention facilities), polisen
-**Capacity concern**: Swedish administrative detention facilities are already at or near capacity. 36-month detention triples the average occupancy duration per case.
-**Infrastructure requirement**: Additional detention capacity required. No evidence new facilities have been announced.
-**Legal operations**: Courts (migrationsdomstolar) will see increased caseload from detention reviews
-**IMY/rights oversight**: JO will require enhanced monitoring protocols
-**Assessment**: HIGHLY PROBLEMATIC from implementation perspective. Existing infrastructure cannot absorb this without new investment. [horizon:year] *probable* that de facto detention periods remain shorter due to capacity constraints.
+## Statskontoret Evaluation
 
-### HD03250 — State E-Legitimation
-**Implementing agencies**: Bolagsverket or Digg (likely primary), Skatteverket, all government agencies
-**EU compliance**: Must align with eIDAS 2.0 by regulatory deadline
-**GDPR**: Formal DPIA required before deployment; IMY review
-**Implementation timeline**: Government projects 24–36 months to operational deployment
-**Cross-agency coordination**: Complex (all government services need to accept new identity standard)
-**Assessment**: Technically feasible with adequate funding. Standard government IT project risk profile (cost overrun likely). Not high controversy from implementation perspective.
+**Trigger assessment**: NOT TRIGGERED.  
+**Rationale**: The interpellations concern Swedish bilateral development aid administered via Sida and UD. No domestic Swedish administrative agency is named in a capacity/oversight/efficiency role. The administrative reform dimension (Statskontoret's focus area) is absent — these are strategic policy choices, not administrative efficiency questions.  
+**Statskontoret pre-warm result**: No match found in available Statskontoret pre-warm data for aid policy reform.
 
-### HD03261 — Skatteverket Expanded Folkbokföring Powers
-**Implementing agency**: Skatteverket (primary)
-**Statskontoret**: No specific StvK report on this; Skatteverket has strong implementation capacity (rated among Sweden's highest-performing government agencies)
-**GDPR**: Cross-agency data sharing requires DPIA and processing agreement updates
-**Assessment**: Skatteverket has demonstrated capacity for complex mandate expansions. [horizon:month] *likely* implementation proceeds smoothly if GDPR compliance managed.
+## Sida Administrative Capacity
 
-### HD03267 — Security Threats (Utlänningar)
-**Implementing agencies**: Säpo (primary assessments), Migrationsverket (decisions), polisen (enforcement)
-**Legal operations**: Reduced judicial oversight means fewer court reviews — reduces implementation burden
-**Assessment**: Feasibility is HIGH from implementation perspective. Simpler process = faster execution. Human rights risk is the concern, not operational capacity.
+**Current Sida capacity**: Sida has been implementing the reform agenda — exiting bilateral programmes, closing local offices, completing ongoing projects. Re-entry to exited countries would require:  
+1. Budget reallocation (requires Finance Ministry approval + budget amendment)  
+2. New strategy development (6–12 months typical Sida process)  
+3. Re-engagement with partner governments (diplomatic groundwork)  
+4. Recruitment of country team staff (if local offices were closed)  
+5. New programme design and procurement
 
-### KU34 — Constitutional Reform
-**Implementation**: Automatic upon formal inscription in Regeringsformen (constitution); no agency implementation required
-**Timeline**: Constitutional change effective on promulgation
+**Pre-election timeline**: With 121 days to election, a full re-entry to even one exited country is administratively infeasible. The political will would need to be in place by ~2026-06-01 to have any visible programme commitments before the election.
 
-### Bistånd Cuts (underlying to HD10492/HD10493)
-**Implementing agency**: SIDA (Styrelsen för internationellt utvecklingssamarbete)
-**Statskontoret**: SADEV/EBA evaluations have noted SIDA organisational capacity concerns
-**Implementation challenge**: Rapid strategy discontinuations without transition planning creates:
-- Staff redundancy risk (SIDA employees specialised in discontinued programmes)
-- Partner organisation instability (NGO and government partners abroad)
-- Contractual exposure (multi-year programme commitments)
-**Assessment**: Implementation of cuts is feasible but disruptive. Institutional memory loss is a non-reversible cost. [horizon:year] *probable* SIDA will request Riksrevisionen review.
+## Budget Feasibility
 
-## Aggregate Implementation Feasibility Summary
+**Required additional appropriation**: Estimated 2–4B SEK per year to restore to 1.0% GNI.  
+**Budget amendment mechanism**: Requires extraordinary budgetary proposition to parliament. Not possible before the election without extraordinary circumstances.  
+**Spring budget (vårbudget)**: The 2026 vårbudget was already presented; no amendment to aid appropriations expected.  
+**Conclusion**: Budget restoration is not feasible before the election regardless of political will.
 
-| Proposal | Feasibility | Key Constraint | Timeline |
-|---------|-------------|---------------|---------|
-| HD03262 | MEDIUM | Migrationsverket IT/capacity | 12–18 months |
-| HD03265 | LOW-MEDIUM | Detention facility capacity | 24–36 months if fully implemented |
-| HD03250 | MEDIUM-HIGH | GDPR/eIDAS compliance | 24–36 months |
-| HD03261 | HIGH | DPIA processing | 6–12 months |
-| HD03267 | HIGH | None significant | 3–6 months |
-| KU34 | N/A | Constitutional process | Immediate on promulgation |
-| Bistånd cuts | MEDIUM | SIDA capacity/contracts | Already in process |
+## Partial Measures Feasibility
 
-## Statskontoret Monitoring Recommendation
+The government could, without budget amendment, take the following partial steps before the election:
 
-Based on Tidö government legislative volume this week, a Statskontoret "implementation follow-up" review in Q4 2026 would be appropriate for at least HD03262 and HD03265. StvK has precedent for post-legislative implementation assessment. Opposition parties (S, V) should consider requesting Riksrevisionen review of migration reform implementation within 18 months.
+| Measure | Feasibility | Timeframe | Political cost |
+|---------|------------|-----------|--------------|
+| Announce intent to return to 1.0% in 2027 | High | Immediate | Medium (signals election pressure) |
+| Announce impact assessment process | High | Immediate | Low |
+| Delay/suspend further strategy reductions | High | Immediate | Low to medium |
+| Restore one specific programme (e.g., Rädda Barnen) | Medium | 1–3 months | High (admits prior harm) |
+| Re-enter one exited country at symbolic level | Low | 6+ months | Very high |
+
+## Assessment
+
+**Feasibility verdict**: Full reversal is infeasible before the election. The accountability frame set by V is deliberately designed for this window — it creates an accountability record that cannot be fully corrected before 2026-09-13.  
+**Partial measures**: The government could announce a review or halt further cuts, which would reduce the attack surface without requiring budget amendment.  
+**Opposition's strategic logic**: V filed HD10492+HD10493 knowing full reversal is impossible. The goal is to lock in the accountability record, not to legislate.
+
+## Evidence Anchors
+
+| Claim | Evidence | Retrieved |
+|-------|----------|-----------|
+| Statskontoret: not triggered | Pre-warm check: no domestic agency match | 2026-05-15 |
+| Countries exited | HD10492: Liberia, Mozambique, Tanzania, Zimbabwe, Bolivia | 2026-05-15 |
+| No impact assessment | HD10493 | 2026-05-15 |

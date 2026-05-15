@@ -1,63 +1,72 @@
-# Classification Results — Week of 19–23 May 2026
+---
+title: "Classification Results — Week 21, 2026"
+date: "2026-05-15"
+article_type: "week-ahead"
+subfolder: "week-ahead"
+language: "en"
+---
 
-**Analysis date**: 2026-05-15
-**Classification**: 🟢 PUBLIC
+# Classification Results — Week 21, 2026
 
-## Document Classification
+## Document Classification Table
 
-### Policy Domain Classification
+| dok_id | Type | Subtype | Party | Committee | Policy Domain | Priority | Tier |
+|--------|------|---------|-------|-----------|--------------|---------|------|
+| HD10492 | ip (interpellation) | Interpellationsdebatt | V | UU (Utrikesutskottet) | Development Aid / Children's Rights | P0 | L1 |
+| HD10493 | ip (interpellation) | Interpellationsdebatt | V | UU (Utrikesutskottet) | Development Aid / Strategy | P0 | L1 |
 
-| dok_id | Primary Domain | Secondary Domains | EU/International |
-|--------|---------------|-------------------|-----------------|
-| HD03262 | Immigration/Asylum | Rule of Law | EU Asylum Pact, UNHCR |
-| HD03263 | Immigration/Asylum | Human Rights | EU Returns Directive |
-| HD03264 | Immigration/Asylum | Rule of Law | — |
-| HD03265 | Immigration/Asylum | Human Rights, ECHR | ECHR Art. 5 |
-| HD01KU34 | Constitutional Law | Reproductive Rights, Civil Liberties | EU Charter of Fundamental Rights |
-| HD03267 | Security | Immigration, Rule of Law | ECHR Art. 6, 8 |
-| HD03250 | Digital Infrastructure | Privacy/GDPR | EU Digital Identity Framework |
-| HD03261 | Public Administration | Surveillance, Data Protection | GDPR Art. 35 |
-| HD10492 | Foreign Policy/ODA | Human Rights | UN SDG, OECD DAC |
-| HD10493 | Foreign Policy/ODA | Institutional Governance | OECD DAC |
-| HD01NU21 | Regional/Rural Policy | Economic Development | EU Cohesion Funds |
-| HD01CU30 | Energy/Climate | Buildings, EU Transposition | EPBD Directive 2024/1275 |
-| HD01SoU31 | Social Policy | Mental Health | WHO |
-| HD01KU35 | Public Administration | Digital Democracy | — |
-| HD10488 | Climate Adaptation | Environment | EU Climate Adaptation Framework |
-| HD10491 | Transport | Urban Environment | — |
-| HD10489 | Foreign Policy | Human Rights | UN, ICC |
-| HD10490 | Foreign Policy | Human Rights | EU, UN |
-| HD10487 | Fiscal Policy | Regional Welfare | — |
+## Classification Notes
 
-### Political Valence Classification
+**HD10492**: Classified P0/L1 — highest priority. Children's rights + development aid accountability in election year. GDPR Art. 9 not triggered (policy debate, no personal data on vulnerable individuals beyond aggregate statistics). Offentlighetsprincipen applies: all parliamentary documents are public.
 
-| dok_id | Government Position | Opposition Position | Contested? |
-|--------|---------------------|---------------------|------------|
-| HD03262 | PRO (Tidö majority) | CON (S, V, MP, parts of C) | ✅ YES |
-| HD03265 | PRO (Tidö + KD?) | CON (S, V, MP, C, L) | ✅ YES — KD unclear |
-| HD01KU34 Track A (abortion) | PRO (majority) | PRO (near-unanimous) | ❌ NO |
-| HD01KU34 Track B (association) | PRO (M, SD, KD) | CON (V, MP, C, parts of S) | ✅ YES |
-| HD03267 | PRO (majority) | CON (V, MP, C) | ✅ YES |
-| HD03250 | PRO (majority) | Cautious (privacy concerns) | ⚠️ PARTIAL |
-| HD10492/HD10493 | DEF (Dousa) | ATT (V, S, MP) | ✅ YES |
-| HD01NU21 | PRO (majority) | PRO (S claims credit) | ❌ NO — procedurally agreed |
-| HD01SoU31 | PRO | PRO | ❌ NO |
+**HD10493**: Classified P0/L1 — highest priority. Governance accountability in contested policy domain. The explicit claim of absence of impact assessment is a political-process integrity issue.
 
-### Rights/ECHR Implications
+## Political Classification
 
-| dok_id | ECHR Article | Assessment |
-|--------|-------------|------------|
-| HD03265 | Art. 5 (liberty) | HIGH TENSION — 36-month administrative detention |
-| HD03267 | Art. 6, 8 | MEDIUM TENSION — reduced judicial review, surveillance |
-| HD01KU34 Track B | Art. 11 (association) | MEDIUM TENSION — constitutional restriction of association freedom |
-| HD03250 | Art. 8 (privacy) | MEDIUM TENSION — state digital identity centralisation |
-| HD03261 | Art. 8 | LOW-MEDIUM — administrative data sharing |
+| Dimension | HD10492 | HD10493 |
+|-----------|---------|---------|
+| Left-Right axis | Left opposition (V) vs. Centre-right government (M) | Left opposition (V) vs. Centre-right government (M) |
+| Constructive/Blocking | Accountability challenge | Accountability challenge |
+| Electoral salience | Very High (election 121 days) | Very High (election 121 days) |
+| Government vulnerability | High — admitted no impact assessment | High — admitted no impact assessment |
+| Coalition alignment | Tidö (M+KD+L+SD) unified on cuts | Tidö (M+KD+L+SD) unified on cuts |
 
-### Urgency/Timeline Classification
+## Policy Domain Mapping
 
-| Category | Documents |
-|----------|-----------|
-| **Floor vote this week (high confidence)** | HD03262, HD03263, HD03264, HD03265, HD01KU34 |
-| **Committee vote this week** | HD01NU21, HD01CU30, HD01SoU31 |
-| **Interpellation response this week** | HD10492, HD10493, HD10488 |
-| **Second reading/further process** | HD03267, HD03250, HD03261 |
+- **Primary domain**: International development / biståndsbidraget
+- **Secondary domains**: Children's rights (barnrätt), Gender equality (jämställdhet), Human security (human security in conflict zones), Agenda 2030, Foreign policy accountability
+- **Electoral framing**: "Values vs. cuts" — opposition narrative targeting Tidöregeringen's alignment between stated values and actual policy
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27', 'mainBkg': '#1a1e3d'}}}%%
+mindmap
+  root((Week 21 Aid Policy))
+    HD10492
+      Children's rights
+      5M deaths/yr under-5
+      500M in conflict zones
+      Rädda Barnen evidence
+      V → M Minister
+    HD10493
+      Discontinued strategies
+      Liberia Mozambique Tanzania Zimbabwe Bolivia
+      No impact assessment
+      No gender analysis
+      No security analysis
+      V → M Minister
+    Cross-cutting
+      Bistånd för en ny era
+      1% GNI abandoned
+      SD coalition dependency
+      Election 2026-09-13
+```
+
+## Evidence Anchors
+
+| Claim | Evidence | Retrieved |
+|-------|----------|-----------|
+| HD10492 type: ip | dok_id HD10492, typ: ip | 2026-05-15 |
+| HD10493 type: ip | dok_id HD10493, typ: ip | 2026-05-15 |
+| Both addressed to Minister Dousa (M) | HD10492 + HD10493 full text header | 2026-05-15 |
+| Party V confirmed | HD10492 parti: V; HD10493 parti: V | 2026-05-15 |
+| Committee UU (Utrikesutskottet) | ip type → UU routing, riksdagen.se | 2026-05-15 |

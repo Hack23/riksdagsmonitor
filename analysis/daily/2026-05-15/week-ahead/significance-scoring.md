@@ -1,50 +1,63 @@
-# Significance Scoring — Week of 19–23 May 2026
+---
+title: "Significance Scoring — Week 21, 2026"
+date: "2026-05-15"
+article_type: "week-ahead"
+subfolder: "week-ahead"
+language: "en"
+---
 
-**Analysis date**: 2026-05-15
-**Classification**: 🟢 PUBLIC
+# Significance Scoring — Week 21, 2026
 
-## Scoring Matrix (0–10)
+## Methodology
 
-| dok_id | Title (abbreviated) | Type | Sig. Score | Criteria | Week-ahead relevance |
-|--------|---------------------|------|------------|----------|----------------------|
-| HD03262 | Utmönstring av PUT | prop | **9/10** | Structural change to asylum law; EU directive tension; S counter-motion; floor vote expected | ✅ HIGH |
-| HD03263 | Stärkt återvändande | prop | **8/10** | Deportation enforcement; human rights implications; coalition majority | ✅ HIGH |
-| HD03264 | Uppförandevillkor | prop | **7/10** | Novel legal instrument; legal challenge risk | ✅ HIGH |
-| HD03265 | Utökad förvar | prop | **9/10** | ECHR Art. 5 tension; 36-month detention; KD internal tension; JO referrals | ✅ CRITICAL |
-| HD01KU34 | Grundlagsskyddad aborträtt + föreningsfrihet | bet | **9/10** | Constitutional change; dual-track; broad coalition; rare grundlagsändring | ✅ CRITICAL |
-| HD03267 | Säkerhetshot/utlänningar | prop | **8/10** | Security law; ECHR Art. 6/8 tension; expanded expulsion grounds | ✅ HIGH |
-| HD03250 | Statlig e-legitimation | prop | **7/10** | Digital infrastructure; GDPR implications; state-capacity | ✅ MEDIUM-HIGH |
-| HD03261 | Skatteverket befogenheter | prop | **6/10** | Administrative surveillance; folkbokföring data | ✅ MEDIUM |
-| HD10492 | Bistånd och barn | interp | **5/10** | Opposition accountability; ODA debate; media hook | ✅ MEDIUM |
-| HD10493 | Biståndsstrategier | interp | **5/10** | Institutional continuity; SIDA accountability | ✅ MEDIUM |
-| HD01NU21 | Hela Sverige ska fungera | bet | **6/10** | Rural-urban divide; C party signalling; S counter-claim | ✅ MEDIUM |
-| HD01CU30 | EPBD building energy | bet | **5/10** | EU transposition; building stock investment implications | ✅ LOW-MEDIUM |
-| HD01SoU31 | Nationell suicidpreventionsfunktion | bet | **5/10** | Uncontroversial; mental health consensus | 🔵 LOW |
-| HD01KU35 | Digitala kommunala sammanträden | bet | **4/10** | Procedural; narrow interest | 🔵 LOW |
-| HD10488 | Klimatanpassningslagstiftning | interp | **5/10** | EU gap; MP accountability; climate policy | ✅ MEDIUM |
-| HD10491 | Bilutsläpp Stockholm | interp | **4/10** | Local/regional; traffic policy | 🔵 LOW |
-| HD10489 | Al-Nakba | interp | **4/10** | Foreign policy; sensitive; symbolic | 🔵 LOW |
-| HD10490 | Kuba | interp | **4/10** | Human rights; foreign policy | 🔵 LOW |
-| HD10487 | Utjämningssystem välfärd | interp | **5/10** | Fiscal equalisation; regional fairness | 🔵 LOW-MEDIUM |
+DIW = (Detectability × Impact × Willingness) / 10. Election proximity multiplier 1.5× applied: next election ≤ 6 months (2026-09-13). Formula: adjusted = DIW × 1.5 when item is opposition-filed in contested policy area.
 
-## Aggregate Significance by Cluster
+## Ranked Significance Table
 
-| Cluster | Combined Score | Assessment |
-|---------|---------------|------------|
-| Migration reform (HD03262–HD03265) | 33/40 | **CRITICAL — headline story** |
-| Constitutional (KU34) | 9/10 | **CRITICAL — structural change** |
-| Security/surveillance (HD03267+HD03250+HD03261) | 21/30 | **HIGH** |
-| Bistånd/ODA (HD10492+HD10493) | 10/20 | **MEDIUM** |
-| Rural/welfare (NU21+SoU31) | 11/20 | **MEDIUM** |
-| Climate (CU30+HD10488) | 10/20 | **MEDIUM** |
+| Rank | dok_id | Title | D | I | W | DIW | ×Elec | Adjusted | Tier | Confidence |
+|------|--------|-------|---|---|---|-----|-------|---------|------|-----------|
+| 1 | HD10492 | Barn och biståndsminskningar | 3 | 5.0 | 4.2 | 6.3 | 1.5 | **9.5** | L1 | HIGH [B2] |
+| 2 | HD10493 | Nedlagda biståndsstrategier | 3 | 4.8 | 4.2 | 6.0 | 1.5 | **9.0** | L1 | HIGH [B2] |
 
-## Justification for Top Scores
+**Note**: DIW = (D × I × W) / 10. Scale 0–10. L1 = Priority Intelligence; L2 = Operational; L3 = Background.
 
-### HD01KU34 — 9/10
-Grundlagsändringar require 2/3 majority in two consecutive riksmöten (or simple majority + election intervening). KU34 is the second-riksmöte vote for at least the association freedom restriction. Constitutional permanence = high significance. Abortion constitutional protection would be first in Nordic context.
+## HD10492 Scoring Rationale
 
-### HD03265 — 9/10
-Administrative detention of up to 36 months exceeds EU Returns Directive recommendations. JO (Riksdagens ombudsman) has flagged similar proposals. ECHR Art. 5(1)(f) permits detention pending deportation but not indefinitely — 36 months stretches this. KD's discomfort = real floor-vote risk.
+- **Detectability (3/5)**: Parliamentary interpellation — public, indexed on riksdagen.se, chamber debate announced. Not yet in major press.
+- **Impact (5/5)**: Children's rights + humanitarian crisis + election-year accountability. Global reverb (Trump USAID parallel). Challenges government's stated values alignment with Agenda 2030.
+- **Willingness (4.2/5)**: V has consistent positioning on aid; minister Dousa has limited room to defend without acknowledging the absence of impact assessments. Coalition depends on SD backing which limits moderation signals.
+- **Election multiplier**: 1.5× — opposition motion in contested policy area, ≤ 6 months to election.
+- **Adjusted DIW = 6.3 × 1.5 = 9.5** [B2]
 
-### HD03262 — 9/10
-Abolishing permanent residence permits represents the most fundamental structural change to Swedish immigration architecture in decades. EU long-term resident directive creates legal tension. Appeals to UNHCR likely. S opposition formally articulated. Electoral dimension: differentiates S from Tidö government ahead of 2026 election.
+## HD10493 Scoring Rationale
+
+- **Detectability (3/5)**: Same parliamentary channel as HD10492. Filed 2 days earlier (2026-05-12).
+- **Impact (4.8/5)**: Governance accountability dimension — no impact/gender/security analysis of discontinued strategies. Security-policy sub-track (future strategic interests) adds additional weight.
+- **Willingness (4.2/5)**: Same as HD10492 — coordinated V strategy, minister exposed.
+- **Adjusted DIW = 6.0 × 1.5 = 9.0** [B2]
+
+## Aggregate Week 21 Assessment
+
+**Dominant theme**: Swedish development aid accountability in an election year. Both documents score >9.0 adjusted. Combined with the compound global context (US USAID dismantlement, EU aid pressure), this cluster carries **aggregate significance 9.3** for the week of 2026-05-18.
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'background': '#0a0e27', 'mainBkg': '#1a1e3d'}}}%%
+xychart-beta
+    title "Week 21 DIW Significance (adjusted)"
+    x-axis ["HD10492 Barn/bistånd", "HD10493 Strategier"]
+    y-axis "Adjusted DIW" 0 --> 10
+    bar [9.5, 9.0]
+```
+
+## Election Proximity Note
+
+Election proximity multiplier (1.5×) is active from 2026-03-13 through 2026-09-13. All opposition motions and interpellations in contested policy areas receive the multiplier. Both HD10492 and HD10493 qualify as contested (development aid / foreign policy accountability).
+
+## Evidence Anchors
+
+| Claim | Evidence | Retrieved |
+|-------|----------|-----------|
+| D=3 for interpellations (parliamentary public channel) | HD10492 + HD10493 both indexed riksdagen.se | 2026-05-15 |
+| I=5 (children's rights dimension) | HD10492: references 5 million children under 5 die annually, 500M in conflict zones | 2026-05-15 |
+| W=4.2 (minister's admitted absence of assessment) | HD10493: "Mig veterligen har regeringen inte ens gjort någon analys" | 2026-05-15 |
+| Election 2026-09-13 = 121 days from 2026-05-15 | Calendar calculation | 2026-05-15 |

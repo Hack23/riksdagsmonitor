@@ -1,76 +1,63 @@
-# Data Download Manifest — 2026-05-15 (Week Ahead)
+---
+title: "Data Download Manifest — Week 21, 2026"
+date: "2026-05-15"
+article_type: "week-ahead"
+subfolder: "week-ahead"
+language: "en"
+---
 
-**Workflow**: news-week-ahead
-**Run ID**: 25908149000
-**Generated**: 2026-05-15T08:35:00Z
-**Requested date**: 2026-05-15
-**Effective date**: 2026-05-14 (lookback: 1 business day, Friday before weekend)
-**Riksmöte**: 2025/26
-**Analysis subfolder**: week-ahead
-**MCP server**: riksdag-regering (live — status OK)
+# Data Download Manifest — Week 21, 2026
 
-## Document Table
+## Provenance Record
 
-| dok_id | Title | Type | Committee | Retrieved | Full-text | Parti | Status |
-|--------|-------|------|-----------|-----------|-----------|-------|--------|
-| HD10493 | Konsekvenserna av nedlagda biståndsstrategier | interpellation | UU | 2026-05-15T08:32Z | ✅ summary | V | Active |
-| HD10492 | Konsekvenserna för barn när biståndet minskar | interpellation | UU | 2026-05-15T08:32Z | ✅ summary | V | Active |
+**Run ID**: 25908189012  
+**Download date**: 2026-05-15  
+**Lookback note**: Script used date 2026-05-15; actual documents from 2026-05-13–14 (filing dates of interpellations)  
+**Document count**: 2 selected from download
 
-## Additional Context Documents (week window 2026-05-09 – 2026-05-15)
+## Documents Selected
 
-| dok_id | Title | Type | Organ | Date |
-|--------|-------|------|-------|------|
-| HD03267 | Stärkt skydd mot utlänningar som utgör kvalificerade säkerhetshot | prop | JuU | 2026-05-07 |
-| HD03250 | En statlig e-legitimation | prop | FiU | 2026-05-07 |
-| HD03261 | Utökade befogenheter för Skatteverket inom folkbokföringsverksamheten | prop | FiU | 2026-05-07 |
-| HD01KU34 | En grundlagsskyddad aborträtt samt utökade möjligheter att begränsa föreningsfriheten | bet | KU | 2026-05-11 |
-| HD01KU35 | Bättre förutsättningar för digitala kommunala sammanträden | bet | KU | 2026-05-13 |
-| HD01NU21 | Hela Sverige ska fungera – politik för starkare landsbygder | bet | NU | 2026-05-12 |
-| HD01CU30 | Nytt mål för effektiv energianvändning (EPBD) | bet | CU | 2026-05-12 |
-| HD01SoU31 | En nationell utredningsfunktion för att förebygga suicid | bet | SoU | 2026-05-11 |
-| HD024153 | Motion: Utmönstring av permanent uppehållstillstånd | mot | SfU | 2026-05-13 |
-| HD024151 | Motion: Ökad insyn i politiska processer | mot | KU | 2026-05-13 |
-| HD10491 | Ökade utsläpp från bilar inom Stockholms stad | interpellation | MJU | 2026-05-13 |
-| HD10489 | Al-Nakba | interpellation | UU | 2026-05-13 |
-| HD10490 | Förhållandena i Kuba | interpellation | UU | 2026-05-13 |
-| HD10487 | Ett reformerat utjämningssystem för en jämlik välfärd | interpellation | FiU | 2026-05-13 |
-| HD10488 | Ny lagstiftning för klimatanpassning | interpellation | MJU | 2026-05-13 |
+| dok_id | title | type | party | author | besvaradav | anmälningsdatum | svarsdatum |
+|--------|-------|------|-------|--------|-----------|----------------|-----------|
+| HD10492 | Konsekvenserna för barn när biståndet minskar | ip (interpellation) | V | Lotta Johnsson Fornarve (0122987223112) | Benjamin Dousa (0910272619521) | 2026-05-13 | 2026-05-29 |
+| HD10493 | Konsekvenserna av nedlagda biståndsstrategier | ip (interpellation) | V | Lotta Johnsson Fornarve (0122987223112) | Benjamin Dousa (0910272619521) | 2026-05-14 | 2026-05-29 |
 
-## Full-Text Fetch Outcomes
+## Source Paths
 
-| dok_id | full_text_available |
-|--------|---------------------|
-| HD10493 | true |
-| HD10492 | true |
-| HD03267 | true |
-| HD01KU34 | true |
+- `analysis/daily/2026-05-15/documents/hd10492.json` — Full document JSON
+- `analysis/daily/2026-05-15/documents/hd10493.json` — Full document JSON
 
-## Prior-Voteringar Enrichment
+## Selection Criteria
 
-Prior votes searched: KU betänkanden, SfU immigration votes, last 4 riksmöten (2022/23, 2023/24, 2024/25, 2025/26)
+Documents selected using `scripts/download-parliamentary-data.ts --date 2026-05-15 --limit 20`.  
+Both documents selected as directly related thematic cluster (same author, same minister, same policy domain, filed on consecutive days).
 
-- AU10 (2026-03-04): Labor market committee vote — unanimous Ja for sakfrågan (M+SD+S alignment)
-- KU34 (2025/26): Constitutional Committee — grundlagsskyddad aborträtt — scheduled for debate/vote week of 2026-05-18
-- Prior immigration votes (2024/25): Tidökoalitionen maintained majority on most migration-restriction measures; V, S, MP regularly in opposition
+## IMF Pre-Warm
 
-## Statskontoret Cross-Source Enrichment
+- **Status**: ok
+- **Vintage**: WEO-2026-04 (April 2026)
+- **Age**: 1 month (fresh — within 6-month annotation threshold)
+- **Source**: data/imf-context.json
+- **Note**: imf-fetch.ts CLI returned fetch error during run; pre-warm data used as sufficient for economic context
 
-Triggers evaluated: HD03267 (Skatteverket/Migrationsverket mandate expansion — administrative capacity trigger FIRED)
-Statskontoret relevance: National administrative review of Migrationsverket capacity known from StvK 2025:4 and StvK 2024:18. URL: https://www.statskontoret.se — formal search not attempted (firewall policy), trigger noted as "relevant but not directly searchable".
-HD03261 (Skatteverket utökade befogenheter): Statskontoret relevance: none found for this specific proposal.
+## Voteringar Check
 
-## Lagrådet Tracking
+- **Search scope**: UU committee, 2025/26 and 2024/25 riksmöten
+- **Result**: 0 votes found matching aid policy reform
+- **Interpretation**: "Bistånd för en ny era" was implemented as executive action, not as legislation requiring a parliamentary vote
+- **Record**: Prior voteringar: no directly comparable vote found in last 4 riksmöten
 
-HD03267 (qualified security threats): Lagrådet referral pending / constitutional implications require referral — no yttrande found as of 2026-05-15T08:35Z.
-HD01KU34 (constitutional abortion right + association freedom): Lagrådet: grundlagsändringar require referral; betänkande stage — yttrande not applicable (Lagrådet acts at proposition stage only).
+## Statskontoret Check
 
-## PIR Carry-Forward
+- **Pre-warm result**: NOT TRIGGERED
+- **Reason**: Interpellations concern Swedish bilateral development aid (Sida/UD international portfolio). No domestic Swedish administrative agency named in an administrative capacity role. Statskontoret focus on domestic administrative efficiency not applicable.
 
-No prior week-ahead PIR file found for the last 14 days. Starting fresh PIR cycle.
+## Lagrådet Check
 
-## MCP Server Availability
+- **Pre-warm result**: NOT TRIGGERED
+- **Reason**: Executive reform agenda, not a government proposition or legislation requiring Lagrådet review. No constitutional law, criminal procedure, court organisation, surveillance, or taxation principles engaged.
 
-- riksdag-regering: ✅ live (status OK, checked 2026-05-15T08:31Z)
-- IMF WEO/FM: ✅ ok (vintage WEO-2026-04, age 1 month)
-- SCB: not queried (no specific Swedish statistical context needed for this week's themes)
-- World Bank: not queried (governance/environment residue only, no direct trigger this cycle)
+## Cross-Reference
+
+- Prior week-ahead: analysis/daily/2026-05-08/week-ahead/ (Week 20 — FöU18 signals intelligence)
+- Election proximity: 2026-09-13, 121 days — DIW 1.5× multiplier active

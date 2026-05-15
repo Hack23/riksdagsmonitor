@@ -1,65 +1,87 @@
-# Methodology Reflection — Week of 19–23 May 2026
+---
+title: "Methodology Reflection — Week 21 Analysis"
+date: "2026-05-15"
+article_type: "week-ahead"
+subfolder: "week-ahead"
+language: "en"
+---
 
-**Analysis date**: 2026-05-15
-**Classification**: 🟢 PUBLIC
+# Methodology Reflection — Week 21, 2026
 
-## Analytical Approach
+## ICD 203 Compliance Audit
 
-### Data Sources Used
-- **Riksdag MCP (riksdag-regering)**: Primary source for document retrieval, interpellations, propositions, betänkanden, motions, voteringar. Status: LIVE at time of analysis.
-- **IMF WEO-2026-04**: Economic context (GDP growth, unemployment, CPI, debt). Vintage: April 2026, 1 month old, not stale.
-- **MCP full-text**: HD03267, HD01KU34, HD10492, HD10493 full texts retrieved.
-- **No SCB data queried**: No Swedish-specific statistical context required for this primarily legislative week.
-- **No World Bank data queried**: No governance/environment residue triggers this cycle.
+### Confidence Language Calibration
 
-### Structured Analytic Techniques Applied
-- **Significance scoring**: Explicit 0–10 matrix across all documents (significance-scoring.md)
-- **ACH-lite (Analysis of Competing Hypotheses)**: Scenario analysis with explicit probability assignments (scenario-analysis.md)
-- **SWOT**: Standard political SWOT framework applied to coalition government position (swot-analysis.md)
-- **Devil's Advocate**: Four distinct counterfactuals challenging dominant narrative (devils-advocate.md)
-- **Red Team**: Implicitly applied in devils-advocate and threat-analysis
-- **STRIDE-adapted threat categorisation**: Applied to political/institutional threats (threat-analysis.md)
+All key judgments in `intelligence-assessment.md` use ICD 203-compliant confidence language:
+- HIGH (>70%): Used for KJ-1 (accountability gap irreversibility) — supported by minister's own admissions
+- MODERATE-HIGH (65%): Used for KJ-2 (debate as campaign event) — coalition arithmetic well-established
+- MODERATE (55%): Used for KJ-3 (issue persistence) — uncertain on voter conversion dimension
 
-### WEP Language Calibration
-WEP probability terms used with horizon tags as required by prompt contract:
-- [horizon:week]: *likely* = 60–70%, *probable* = 55–70%
-- [horizon:month]: *probable* = 55–65%
-- [horizon:quarter]: *roughly even* = 45–55%
-- [horizon:election]: *likely* = 60%+
+**ICD 203 check**: PASS — no single confidence rating used for all judgments; uncertainty propagated appropriately.
 
-### Tier-C Week-Ahead Multiplier Applied
-This analysis applies the 1.2× depth multiplier for Tier-C week-ahead workflows:
-- All scenario branches include month/quarter/election horizon extensions
-- PIR register started fresh (no sibling prior week-ahead found)
-- Cross-reference map explicitly documents sibling folder search result (none found)
-- Forward-indicators cover 5 horizon bands (as required)
+### Source Diversity
 
-## Limitations and Caveats
+- **Primary**: HD10492 + HD10493 (government record, [A1]) ✅
+- **NGO**: Rädda Barnen (cited in primary, [B2]) ✅
+- **Economic**: IMF WEO pre-warm (data/imf-context.json, [A2]) ✅
+- **Cross-reference**: analysis/daily/2026-05-08/week-ahead/ ✅
+- **Historical**: Domestic research (1991–1994, 2009–2010 parallels) ✅
 
-### L1 — No Actual Vote Counts Available
-The analysis predicts legislative outcomes based on seat counts and coalition dynamics. Actual vote totals are not yet available (vote has not occurred). Predictions may be wrong if coalition dynamics change between 15 and 23 May.
+**Source gap**: No Sida internal monitoring data accessed. No government budget execution data verified independently.
 
-### L2 — Full Text Not Retrieved for All Documents
-HD03262, HD03263, HD03264, HD03265 full texts were not individually retrieved (volume constraint; summaries used). This may affect precision of legal analysis. The legal risk assessment (ECHR, EU) is based on document titles, summaries, and established context — not line-by-line textual analysis.
+### Alternative Hypothesis Testing
 
-### L3 — No Polling Data as of Analysis Date
-No fresh polling (Demoskop, Novus, IPSOS) available from the week of 2026-05-15. Electoral scenario probabilities are based on structural analysis and historical patterns rather than current polling.
+`devils-advocate.md` tests three alternative hypotheses:
+1. Reform defensible on efficiency grounds → PARTIALLY valid, undermined by government's own admissions
+2. V's framing is electorally motivated → TRUE, but substance is real
+3. Global compound is overstated → Mathematically correct but misses normative leadership role
 
-### L4 — Tier-C Cross-References: No Prior Sibling Data
-The cross-reference map and intelligence-assessment PIR cycle are fresh starts because no prior week-ahead analysis was found. This reduces the depth of longitudinal trend analysis that Tier-C workflows ideally provide.
+**ACH check**: Competing hypotheses tested; dominant framing not rubber-stamped. PASS.
 
-### L5 — IMF Vintage
-Economic context is from WEO April 2026 (1 month old). Any Swedish-specific developments since April (e.g., Riksbank rate changes, new SCB employment data) may not be fully reflected.
+## Pass 2 Self-Assessment Checklist
 
-## Quality Assurance
+| Artifact | Pass 1 quality | Pass 2 improvements needed |
+|----------|--------------|--------------------------|
+| executive-brief.md | Strong BLUF | Add HC10493 specific evidence ref |
+| synthesis-summary.md | Comprehensive | Sharpen DIW justification narrative |
+| significance-scoring.md | DIW well-calculated | Add per-criterion evidence cites |
+| classification-results.md | Full classification | Add mindmap depth |
+| swot-analysis.md | Full SWOT | Cross-ref coalition-mathematics.md |
+| risk-assessment.md | 6 risks | Add Scenario 3 escalation path |
+| threat-analysis.md | STRIDE complete | Add procedural-legitimacy threat depth |
+| stakeholder-perspectives.md | Good coverage | Add KD internal tension |
+| cross-reference-map.md | Comprehensive | Add Statskontoret cross-source clarity |
+| scenario-analysis.md | 4 scenarios | Add wildcard detail |
+| comparative-international.md | 3 comparators | Add NL detail |
+| devils-advocate.md | 3 hypotheses | Add quantitative challenge to H3 |
+| intelligence-assessment.md | 3 KJs + 2 PIRs | Add dissent on KJ-3 |
+| election-2026-analysis.md | MP threshold key finding | Add soft-C detail |
+| voter-segmentation.md | 5 segments | Add KD segment detail |
+| coalition-mathematics.md | Full table | Verify C position |
+| historical-parallels.md | 3 parallels | Add 2009 detail |
+| media-framing-analysis.md | 4 frames | Add SEO keyword depth |
+| implementation-feasibility.md | Statskontoret: N/A | Add partial measures detail |
+| forward-indicators.md | 13 indicators | Verify PIR dates |
+| methodology-reflection.md | (this file) | Ensure ICD 203 pass |
 
-- **Pass 1 → Pass 2 iteration**: ✅ Both passes completed; significant depth added in pass 2 especially on legal analysis (EU directive tensions), scenario tree (election scenarios E1/E2/E3), and devil's advocate counterfactuals
-- **WEP terms verified**: All probability claims include [horizon:...] tags
-- **IMF provenance block**: Present in executive-brief.md and cross-reference-map.md
-- **PIR status JSON**: Created in intelligence-assessment.md
-- **Family A (9)**: Complete
-- **Family B (2)**: Complete
-- **Family C (5)**: Complete
-- **Family D (7)**: Complete
-- **Family E (2 docs)**: Complete
-- **Total artifacts**: 23 + 2 per-document = 25 files created
+## Data Quality Assessment
+
+| Source | Quality | Gap | Mitigation |
+|--------|---------|-----|-----------|
+| HD10492+HD10493 | HIGH | Limited to text of interpellations | Sufficient for accountability analysis |
+| Prior UU voteringar | NONE found | No vote record available | Documented as "no prior vote" |
+| IMF economic data | HIGH | IMF fetch CLI returned error | Pre-warm data (data/imf-context.json) sufficient |
+| Rädda Barnen data | MEDIUM | Only cited, not directly accessed | Primary source cites are sufficient |
+
+## Analytical Confidence Aggregate
+
+**Overall analytical confidence**: MODERATE-HIGH  
+**Basis**: Strong primary source base (minister's own words); well-established coalition arithmetic; clear historical precedents. Uncertainty concentrated in voter conversion estimates and media coverage prediction.
+
+## Evidence Anchors
+
+| Claim | Evidence | Retrieved |
+|-------|----------|-----------|
+| ICD 203 calibration | intelligence-assessment.md KJ-1 [HIGH 75%] | 2026-05-15 |
+| ACH hypotheses tested | devils-advocate.md H1-H3 | 2026-05-15 |
+| Source diversity | All 5 source categories represented | 2026-05-15 |

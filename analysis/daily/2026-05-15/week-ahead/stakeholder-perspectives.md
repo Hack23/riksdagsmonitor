@@ -1,66 +1,70 @@
-# Stakeholder Perspectives — Week of 19–23 May 2026
+---
+title: "Stakeholder Perspectives — Swedish Aid Policy, Week 21"
+date: "2026-05-15"
+article_type: "week-ahead"
+subfolder: "week-ahead"
+language: "en"
+---
 
-**Analysis date**: 2026-05-15
-**Classification**: 🟢 PUBLIC
+# Stakeholder Perspectives — Week 21, 2026
 
-## Swedish Parliamentary Parties
+## Stakeholder Map
 
-### Moderaterna (M) — Government Leader
-**Position**: Advancing migration reform, security legislation, and constitutional abortion protection as triple mandate fulfilment. Benjamin Dousa defending bistånd cuts as budget prioritisation. M frames association freedom restriction as targeted at organised crime, not civil society.
-**Key week**: Defence of HD03265 (detention) and HD03262 (no PUT) as centrepieces. Abortion constitutional protection (KU34 Track A) as "values balance" message.
-**Tension**: Some M liberals uncomfortable with the security-state expansion; urban M voters poll more liberal on asylum than SD base.
+| Stakeholder | Position | Interests | Capacity | Alliance | Confidence |
+|-------------|---------|----------|---------|---------|-----------|
+| Lotta Johnsson Fornarve (V, 0122987223112) | Challenger | V's global-solidarity brand; election campaign positioning | High — VP interpellation expertise, dedicated | V, MP, S solidarity | [A1] |
+| Minister Benjamin Dousa (M, 0910272619521) | Defender | Protect reform agenda; minimise accountability damage | High — ministerial authority | M, KD, L + SD | [A1] |
+| Sverigedemokraterna (SD) | Passive coalition support | Aid cuts align with SD nationalist-first electorate | High — kingmaker in Tidö coalition | Tidö coalition | [B2] |
+| Rädda Barnen | Evidence provider | Child welfare; advocacy for aid restoration | High — credible NGO with documented evidence | V, MP, S, international | [B1] |
+| UNICEF Sweden | Evidence provider | Children's rights; global programme continuity | High — UN agency status | International | [B2] |
+| Sida | Implementing agency | Operational continuity; efficiency mandate | Medium — constrained by political direction | Government | [B2] |
+| Swedish electorate (V/MP/S base) | Observer | Social solidarity values; campaign responsiveness | High — election 121 days | V, MP, S | [B2] |
+| EU partners | Observer/critic | EU development aid coherence; global reputation | Medium — no binding mandate on Sweden | EU institutions | [C3] |
+| Liberia, Mozambique, Tanzania, Zimbabwe, Bolivia governments | Affected party | Bilateral aid continuity; development programme funding | Low on Swedish parliamentary process | — | [B2] |
 
-### Sverigedemokraterna (SD) — Coalition Partner
-**Position**: Fully supportive of all four migration laws; pushing for maximum scope on HD03265. Would prefer permanent PUT abolition apply retroactively (constitutionally impossible — noted as SD pressure point for post-passage implementation).
-**Key week**: HD03262 and HD03265 are SD's primary legislative priorities. Expect maximum rhetorical pressure on KD to maintain full support.
-**Tension**: SD has less interest in HD01KU34 (abortion constitutionalisation) — silent compliance expected.
+## Detailed Stakeholder Analysis
 
-### Kristdemokraterna (KD) — Coalition Partner
-**Position**: Supportive of migration restrictions in principle; specifically cautious on 36-month detention (HD03265) due to human dignity doctrine in Christian democracy tradition.
-**Key week**: **The swing vote to watch**. KD expected to negotiate minor amendment to HD03265 or accept with reservation. KD fully supportive of KU34 Track A (abortion as family values protection); mixed on Track B.
-**Tension**: KD internal human rights caucus vs. SD alliance obligations.
+### Lotta Johnsson Fornarve (V)
 
-### Liberalerna (L) — Coalition Supporter
-**Position**: Most uncomfortable Tidö party on rights implications. L has historically championed asylum seekers' rights, LGBTQ+ rights, and digital privacy. HD03265 and KU34 Track B create genuine L tension.
-**Key week**: L likely to seek amendments or reservations (reservationer) rather than opposing. L also supportive of KU34 Track A (abortion rights = liberal value).
-**Tension**: L risks being overshadowed in coalition; its rights-protection brand is eroding.
+Experienced V parliamentarian (intressent_id: 0122987223112). Has pursued a consistent international solidarity line throughout the Tidö government period. The double-interpellation strategy on 2026-05-13–14 is calibrated: two documents allows V to pursue both the humanitarian frame (HD10492) and the governance/accountability frame (HD10493) simultaneously, creating a compound narrative that is harder to rebut on both tracks at once. Likely coordinates with party's election campaign team.
 
-### Socialdemokraterna (S) — Opposition Leader
-**Position**: Systematic counter-motions against all four migration laws as organised electoral strategy. Sharp criticism of HD03265 as human rights violation. Critical of bistånd cuts. Supportive of KU34 Track A; opposed or cautious on Track B.
-**Key week**: Building the "human migration policy" electoral platform. S wants sharp plenary confrontations on HD03262/HD03265.
-**Tension**: S's own 2015 migration restrictions create credibility gap; party navigating complex legacy.
+### Minister Benjamin Dousa (M)
 
-### Vänsterpartiet (V) — Opposition
-**Position**: Strongest opposition voice on migration restrictions, bistånd cuts, and security-state expansion. HD10492+HD10493 interpellations are V's primary tools this week.
-**Key week**: Interpellation debates on bistånd. V wants maximum media coverage of ODA consequences.
-**Tension**: V polling below riksdagsspärren risk (requires ≥4% in polls for representation); this week's high-profile opposition may be partly electoral positioning.
+Aid and Foreign Trade Minister (intressent_id: 0910272619521). Young minister who was appointed when Sweden's trade + aid portfolios were merged — a structural signal of the government's trade-efficiency framing. The interpellations' Q-format exposes him directly: three questions each, requiring specific yes/no answers on impact assessments. His response by 2026-05-29 will define his accountability record entering the election campaign. The absence of impact assessment is documented; the only question is how he frames the defence.
 
-### Miljöpartiet (MP) — Opposition
-**Position**: Critical of migration restrictions, bistånd cuts. HD10488 climate adaptation interpellation is MP's signature contribution this week.
-**Key week**: Climate debate alongside migration opposition. MP framing this as "government failing both human rights and climate."
-**Tension**: MP oscillating around riksdagsspärren threshold; needs visible differentiation.
+### Sverigedemokraterna
 
-### Centerpartiet (C) — Opposition
-**Position**: Split. C supported some Tidö-adjacent migration positions; now in formal opposition. Cautiousabout KU34 Track B (association freedom). Supportive of NU21 rural betänkande (C's core constituency).
-**Key week**: NU21 is C's opportunity. On migration, C likely to abstain or vote conditionally rather than oppose all measures outright.
-**Tension**: C navigating between governing coalition former ally role and current opposition identity.
+Silent beneficiary of V's challenge. SD's electorate rewards the party for resisting "globalist aid spending"; the interpellation debate reinforces V's positioning as pro-solidarity, strengthening SD's brand differentiation. SD has no incentive to moderate the cuts.
 
-## Non-Parliamentary Stakeholders
+### Civil Society (Rädda Barnen, UNICEF)
 
-### UNHCR / EU Commission
-Watching HD03262 (PUT abolition) and HD03265 (detention) closely. Commission may signal pre-infringement contact.
+Active evidence producers. Rädda Barnen's report, already referenced in HD10492, is the strongest available primary evidence for the accountability claim. If UNICEF or Sida's own monitoring data surfaces before the election, the evidentiary chain becomes overwhelming.
 
-### SIDA (Swedish International Development Cooperation Agency)
-Directly impacted by bistånd cuts. SIDA leadership expected to submit formal remiss input if interpellation leads to government inquiry.
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#0a0e27', 'primaryTextColor': '#00d9ff', 'lineColor': '#ffbe0b', 'background': '#0a0e27', 'mainBkg': '#1a1e3d'}}}%%
+graph LR
+    V["V — Lotta Johnsson Fornarve<br/>Challenger"] --> IP["HD10492 + HD10493<br/>Interpellation Debates"]
+    IP --> M["M — Minister Dousa<br/>Must respond by 2026-05-29"]
+    RB["Rädda Barnen<br/>Evidence"] --> IP
+    M --> SD["SD — Silent support<br/>for cuts"]
+    M --> ELEC["2026-09-13<br/>Election"]
+    IP --> ELEC
 
-### JO (Riksdagens ombudsman)
-Active monitoring of HD03265 drafting. JO formal complaint filed by civil society groups.
+    style V fill:#1a1e3d,stroke:#ff006e,color:#00d9ff
+    style M fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style RB fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style ELEC fill:#1a1e3d,stroke:#ff006e,color:#ff006e
+```
 
-### Integritetsskyddsmyndigheten (IMY)
-Monitoring HD03250 (e-legitimation) and HD03261 (Skatteverket) for GDPR compliance. Formal review triggered upon royal assent.
+## Evidence Anchors
 
-### Swedish civil society / NGO sector
-Mobilised on KU34 Track B (association freedom) and migration laws. Amnesty Sverige, Civil Rights Defenders, and others expected to publish public positions this week.
+| Claim | Evidence | Retrieved |
+|-------|----------|-----------|
+| Johnsson Fornarve intressent_id | HD10492 + HD10493, undertecknare field: 0122987223112 | 2026-05-15 |
+| Dousa intressent_id | HD10492 + HD10493, besvaradav field: 0910272619521 | 2026-05-15 |
+| SD coalition support | HD10492: "med stöd av Sverigedemokraterna" | 2026-05-15 |
+| Rädda Barnen evidence | HD10492: "Rädda Barnen har rapporterat om hur livsviktiga program har stoppats" | 2026-05-15 |
 
-### IMF / OECD
-No direct intervention this week; economic fundamentals (WEO-2026-04: SWE growth +2.1%) not constraining government's legislative priorities.
+## KD Internal Tension (Pass 2 Addition)
+
+Kristdemokraterna (19 seats) has a structural tension on aid policy. KD's base includes significant evangelical/Christian humanitarian networks that traditionally support international aid as an expression of Christian charity and global responsibility. The "Bistånd för en ny era" reform may create quiet internal discomfort within KD, particularly among MPs with faith-based development organisation ties. This does not threaten coalition stability (KD will not defect), but it provides a potential soft opening for V/MP framing that explicitly invokes barnrättsperspektivet and Agenda 2030.
