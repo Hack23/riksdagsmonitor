@@ -103,6 +103,18 @@ ANTI-TEMPLATE — DO NOT:
 
 ---
 
+## 📈 Confidence Distribution by Key Judgment
+
+> **[REQUIRED]** Include explicit posterior confidence per KJ after Pass 2 / re-run evidence updates.
+
+| Key Judgment | Prior confidence (Pass 1) | Evidence update | Posterior confidence (required) | Change rationale |
+|--------------|---------------------------|-----------------|----------------------------------|------------------|
+| KJ-1 | `HIGH` | `[REQUIRED]` | `HIGH / MEDIUM / LOW` | `[REQUIRED]` |
+| KJ-2 | `MEDIUM` | `[REQUIRED]` | `HIGH / MEDIUM / LOW` | `[REQUIRED]` |
+| KJ-3 | `LOW` | `[REQUIRED]` | `HIGH / MEDIUM / LOW` | `[REQUIRED]` |
+
+---
+
 ## 🎯 BLUF
 
 > **[2–3 sentences.** Lead with the pattern and its political implication. Name the principal actor. Cite the strongest single piece of evidence with confidence label.**]**

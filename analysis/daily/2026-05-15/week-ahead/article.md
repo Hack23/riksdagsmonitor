@@ -1,12 +1,12 @@
 ---
-title: "Week Ahead: Swedish Aid Accountability Under Fire"
-description: "Sweden's Tidö government faces two interpellation debates (2026-05-18) on aid cuts — HD10492 (consequences for children) and HD10493 (discontinued country strategies). Minister Dousa admitted no impact assessments were conducted. Election in 121 days."
+title: "Week Ahead: Aid Accountability,"
+description: "Sweden's Tidö government faces two scheduled interpellation debates (2026-05-18) on its dismantling of the aid architecture — HD10492 (consequences for children) and HD10493 (consequences of…"
 keywords: "Week Ahead, English, May 15, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Week Ahead Accountability Sweden Tidö, Week, Ahead, Accountability, Sweden, Tidö, government, faces, scheduled, interpellation, debates, dismantling, architecture, HD10492"
 date: 2026-05-15
 subfolder: week-ahead
 slug: 2026-05-15-week-ahead
 source_folder: analysis/daily/2026-05-15/week-ahead
-generated_at: 2026-05-15T09:22:38.767Z
+generated_at: 2026-05-15T12:58:38.552Z
 language: en
 layout: article
 ---
@@ -463,6 +463,113 @@ The interpellation poses specific questions to the minister:
 | No gender analysis | Document explicitly notes absence of gender analysis | 2026-05-15 |
 | No security assessment | Document explicitly notes absence of security assessment | 2026-05-15 |
 
+### hd10492
+<!-- source: documents/hd10492-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/week-ahead/documents/hd10492-analysis.md -->
+
+# Konsekvenserna för barn när biståndet minskar
+
+**dok_id**: HD10492
+**typ**: interpellation
+**datum**: 2026-05-14
+**interpellant**: Lotta Johnsson Fornarve (V)
+**minister**: Benjamin Dousa (M) — Minister för internationellt utvecklingssamarbete och utrikeshandel
+**organ**: Utrikesutskottet (UU)
+**status**: Active / awaiting response
+
+### Summary
+
+Vänsterpartiet's Lotta Johnsson Fornarve interpellerar biståndsminister Benjamin Dousa om konsekvenserna av Tidöregeringens kraftiga nedskärningar i det svenska biståndet för barn i låg- och medelinkomstländer. Sverige har historiskt varit en av världens främsta givare räknat som BNP-andel (1% av BNI). Regeringen Kristersson/Ulf Kristersson har sänkt biståndsbudgeten markant sedan 2022, med mål att nå 0,7% av BNI — en sänkning som SIDA och biståndsorganisationer bedömt som avsevärda nedskärningar i konkreta program.
+
+Frågeställningen berör specifikt konsekvenser för barn: barnhälsa, utbildning, skydd mot exploatering och klimatanpassningsarbete för de fattigaste. UNICEF, Rädda Barnen och likartade organisationer har varnat för att barnrättsperspektivet i det svenska biståndet försvagas.
+
+### Key Claims
+
+1. Svensk bistånd utgör en livlina för miljoner barn
+2. Nedskärningar drabbar de mest utsatta barnpopulationerna oproportionerligt
+3. Regeringen har minskat barnfokuserade biståndsstrategier
+4. Konsekvenserna är underdokumenterade av regeringen
+
+### Political Significance
+
+**Score**: 5/10 (interpellations are rhetorical instruments; this one has media resonance given ODA debate)
+**Cross-partisan resonance**: S and MP have also criticized ODA cuts; creates week-ahead parliamentary floor debate opportunity
+**Riksdag week-ahead relevance**: Oral response from minister likely scheduled this week → news hook
+
+### Document Metadata
+
+```json
+{
+  "dok_id": "HD10492",
+  "intressent_id": "not-retrieved",
+  "interpellant": "Lotta Johnsson Fornarve",
+  "parti": "V",
+  "minister_title": "biståndsminister",
+  "status": "active",
+  "week_ahead_relevance": true,
+  "debate_expected": true
+}
+```
+
+### hd10493
+<!-- source: documents/hd10493-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/week-ahead/documents/hd10493-analysis.md -->
+
+# Konsekvenserna av nedlagda biståndsstrategier
+
+**dok_id**: HD10493
+**typ**: interpellation
+**datum**: 2026-05-14
+**interpellant**: Lotta Johnsson Fornarve (V)
+**minister**: Benjamin Dousa (M) — Minister för internationellt utvecklingssamarbete och utrikeshandel
+**organ**: Utrikesutskottet (UU)
+**status**: Active / awaiting response
+
+### Summary
+
+Companion interpellation to HD10492. Lotta Johnsson Fornarve (V) focuses specifically on the practical consequences of the Swedish government's decision to discontinue and dismantle multiple bilateral and thematic development aid strategies (biståndsstrategier). Sweden historically maintained approximately 60+ country/regional/thematic strategies managed by SIDA. Under the Tidö government, a significant number of these were terminated as part of the broader ODA budget reductions.
+
+The interpellation asks Minister Dousa to account for:
+1. How many strategies have been terminated or suspended
+2. What assessment was done of their development impact before closure
+3. What safeguards were applied to protect ongoing multi-year programs and beneficiary communities
+4. Whether SIDA has been consulted adequately
+
+### Key Claims
+
+1. Swedish bilateral aid strategies are being dismantled without adequate impact analysis
+2. The government bypassed SIDA's professional input when canceling strategies
+3. Long-term development programs were cut mid-stream, destabilizing partner organizations
+4. The government has not published any formal konsekvensanalys for discontinued strategies
+
+### Relationship to HD10492
+
+Both interpellations address Swedish ODA cuts but from complementary angles:
+- HD10492 = impact on child populations (beneficiary-side)  
+- HD10493 = impact of structural/institutional strategy discontinuation (systemic/process side)
+
+Together they form a two-pronged parliamentary accountability inquiry into Dousa/biståndsministern.
+
+### Political Significance
+
+**Score**: 5/10
+**Week-ahead hook**: Joint oral debate with HD10492 likely in same plenary session
+**Opposition resonance**: S, MP, C have all criticized strategy discontinuation; KD holds nuanced position
+
+### Document Metadata
+
+```json
+{
+  "dok_id": "HD10493",
+  "intressent_id": "not-retrieved",
+  "interpellant": "Lotta Johnsson Fornarve",
+  "parti": "V",
+  "minister_title": "biståndsminister",
+  "status": "active",
+  "week_ahead_relevance": true,
+  "debate_expected": true,
+  "sibling_interpellation": "HD10492"
+}
+```
+
 ## Stakeholder Perspectives
 <!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/week-ahead/stakeholder-perspectives.md -->
 
@@ -559,7 +666,7 @@ Kristdemokraterna (19 seats) has a structural tension on aid policy. KD's base i
 | Opposition motion to restore 1.0% GNI + return to 70 strategies | S(107)+V(24)+MP(18)+C(24) = 173 | M(68)+KD(19)+L(16)+SD(73) = 176 | 0 | FAILS — 173 vs 176 |
 | Partial motion: mandate impact assessment | S(107)+V(24)+MP(18)+C(24) = 173 | M(68)+KD(19)+L(16)+SD(73) = 176 | 0 | FAILS — 173 vs 176 |
 
-**Note**: C's position — Centerpartiet voted against the Tidö coalition in forming it but has not consistently voted with the opposition on every issue. However, on aid policy, C has historically aligned with opposition parties given their traditionally internationalist stance.
+**Note**: C's position — Centerpartiet voted against the Tidö coalition in forming it but has not consistently voted with the opposition on every issue. However, on aid policy, C is expected to support the opposition given their traditionally internationalist stance.
 
 ### Why No V Motion?
 
@@ -889,7 +996,7 @@ The HD10492+HD10493 interpellations are most electorally significant not as vote
 
 #### R4 — Emergency Review Announcement (MEDIUM, T+14d)
 
-**Description**: Government may attempt to defuse accountability pressure by announcing a review before 2026-05-29. Risk to opposition: dilutes the narrative. Risk to government: raises expectations that the review signals policy reversal, which SD's ideological position renders arithmetically impossible.
+**Description**: Government may attempt to defuse accountability pressure by announcing a review before 2026-05-29. Risk to opposition: dilutes the narrative. Risk to government: raises expectations that the review will lead to policy reversal, which is constrained by SD's ideological position.
 
 ### Institutional Risk
 
@@ -1584,7 +1691,7 @@ This generated report reconciles the analysis folder with the article projection
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
 | Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
-| Per-document analyses | 2 | Expanded under `## Per-document intelligence` immediately after significance scoring |
+| Per-document analyses | 4 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
 **Absent canonical ordered slots (no alias variant on disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `quantitative-swot.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `pestle-analysis.md`, `horizon-pir-rollforward.md`
@@ -1603,6 +1710,8 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/week-ahead/significance-scoring.md)
 - [`documents/HD10492-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/week-ahead/documents/HD10492-analysis.md)
 - [`documents/HD10493-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/week-ahead/documents/HD10493-analysis.md)
+- [`documents/hd10492-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/week-ahead/documents/hd10492-analysis.md)
+- [`documents/hd10493-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/week-ahead/documents/hd10493-analysis.md)
 - [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/week-ahead/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/week-ahead/coalition-mathematics.md)
 - [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/week-ahead/voter-segmentation.md)

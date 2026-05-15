@@ -91,6 +91,120 @@ ANTI-TEMPLATE — DO NOT:
 
 ---
 
+## ✅ Required Section Contract (Gate-Enforced)
+
+> **[REQUIRED]** `methodology-reflection.md` is invalid unless all sections below are present (as `##` headings) and completed. The canonical heading text is given here; the template renders each heading with a leading emoji (e.g. `## 📋 ICD 203 …`) and the gate accepts an optional leading emoji on each heading. The **section name** must match exactly.
+>
+> 1. `## 📋 ICD 203 Analytic Tradecraft Compliance Audit`
+> 2. `## 🎯 Devil's-Advocate Key Judgment Coverage Matrix`
+> 3. `## 📈 Confidence Distribution by Key Judgment (Posterior Required)`
+> 4. `## ⚖️ Lagrådet / Statskontoret / SKR Tracking`
+> 5. `## 🔗 Sibling-Folder Ingestion Record (Tier-C)`
+> 6. `## 🔁 Re-run Log (Unified Schema)`
+> 7. `## 🚫 Banned-Phrase Audit (Zero-Count Grid)`
+> 8. `## 🔄 Pass 1 → Pass 2 Delta Table`
+> 9. `## 🧭 Improvement Opportunities → PIR Roll-Forward`
+>
+> Beyond presence, the gate also enforces:
+> - **Devil's-Advocate KJ Coverage Matrix**: no `❌` rows remain and no `OPEN` statuses remain for KJ rows (coverage must be 100%).
+> - **Confidence Distribution**: every KJ row has a filled Posterior value (no `[REQUIRED]` placeholder, no empty cell).
+> - **Re-run Log**: the unified column schema (`run_id | attempt | new dok_ids | artifacts extended | flags closed | vintage refresh`) is present as a markdown table header.
+
+---
+
+## 🎯 Devil's-Advocate Key Judgment Coverage Matrix
+
+> **[REQUIRED]** Every KJ in `intelligence-assessment.md` must be challenged at least once in `devils-advocate.md`. Coverage must be **100%** before gate pass.
+
+| KJ ID | KJ summary | Challenged in devils-advocate.md? | Counter-evidence row ID | Status |
+|-------|------------|:---------------------------------:|--------------------------|:------:|
+| KJ-1 | `[REQUIRED: judgement summary]` | ✅ / ❌ | `DA-##` | OPEN / CLOSED |
+| KJ-2 | `[REQUIRED: judgement summary]` | ✅ / ❌ | `DA-##` | OPEN / CLOSED |
+| KJ-3 | `[REQUIRED: judgement summary]` | ✅ / ❌ | `DA-##` | OPEN / CLOSED |
+| ... | ... | ... | ... | ... |
+| **Coverage** | — | **_N_ / _N_ KJs** | — | **Must be 100%** |
+
+---
+
+## 📈 Confidence Distribution by Key Judgment (Posterior Required)
+
+> **[REQUIRED]** Explicit posterior confidence per KJ. Missing posterior values are gate failures.
+
+| KJ ID | Prior (Pass 1) | Evidence update in Pass 2 / Re-run | Posterior (required) | Change rationale |
+|------|----------------:|--------------------------------------|----------------------:|------------------|
+| KJ-1 | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
+| KJ-2 | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
+| KJ-3 | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
+
+---
+
+## ⚖️ Lagrådet / Statskontoret / SKR Tracking
+
+> **[REQUIRED]** Track external implementation/legal-review signals. Use [`lagradet-tracking.md`](lagradet-tracking.md) as the canonical field fragment — the `Impact note` column below mirrors the fragment's required `impact_note` field.
+
+| Track | Applicability | Status | Latest evidence (URL + date) | Next check | Impact note |
+|-------|:-------------:|--------|-------------------------------|------------|-------------|
+| Lagrådet yttrande | Y/N | `not applicable / referral pending / yttrande published` | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
+| Statskontoret implementation signal | Y/N | `found / none found / not triggered` | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
+| SKR operational impact signal | Y/N | `found / none found / not triggered` | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
+
+---
+
+## 🔗 Sibling-Folder Ingestion Record (Tier-C)
+
+> **[REQUIRED for Tier-C; REQUIRED to mark N/A for non-Tier-C]**
+
+| Sibling folder | Artifact cited | Why ingested | Impact on current KJ / scenario | Citation |
+|----------------|----------------|--------------|-----------------------------------|----------|
+| `[REQUIRED or N/A]` | `[REQUIRED or N/A]` | `[REQUIRED or N/A]` | `[REQUIRED or N/A]` | `[REQUIRED or N/A]` |
+
+---
+
+## 🔁 Re-run Log (Unified Schema)
+
+> **[REQUIRED]** Use this exact schema for every same-day improvement re-run.
+
+| run_id | attempt | new dok_ids | artifacts extended | flags closed | vintage refresh |
+|--------|--------:|-------------|--------------------|--------------|-----------------|
+| `[REQUIRED]` | `[REQUIRED]` | `[comma-separated or none]` | `[comma-separated list]` | `[count + ids]` | `[IMF/SCB/other + result]` |
+
+---
+
+## 🚫 Banned-Phrase Audit (Zero-Count Grid)
+
+> **[REQUIRED]** All banned phrases must be zero in final analysis + article.
+
+| Phrase | Count | Location | Status |
+|--------|------:|----------|:------:|
+| intelligence theatre | `0` | `—` | ✅ |
+| sources say | `0` | `—` | ✅ |
+| reportedly | `0` | `—` | ✅ |
+| it is widely believed | `0` | `—` | ✅ |
+| experts agree | `0` | `—` | ✅ |
+| AI_MUST_REPLACE | `0` | `—` | ✅ |
+
+---
+
+## 🔄 Pass 1 → Pass 2 Delta Table
+
+> **[REQUIRED]** Show measurable change; narrative-only statements are insufficient.
+
+| Artifact | Pass 1 baseline | Pass 2 (or re-run) state | Delta | Why it changed |
+|----------|------------------|--------------------------|-------|----------------|
+| `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
+
+---
+
+## 🧭 Improvement Opportunities → PIR Roll-Forward
+
+> **[REQUIRED]** Convert every unresolved methodology gap into a tracked PIR action.
+
+| Improvement opportunity | Severity | Linked PIR (`pir-status.json`) | Owner | Due date | Roll-forward status |
+|-------------------------|:--------:|--------------------------------|-------|----------|---------------------|
+| `[REQUIRED]` | HIGH/MED/LOW | `PIR-...` | `[REQUIRED]` | `YYYY-MM-DD` | OPEN / ANSWERED / DEFERRED |
+
+---
+
 ## 🧭 7-Step Protocol Compliance
 
 > ⚠️ **Illustrative example below — replace every status marker, count, and note with run-specific findings before publishing.** The completion marks, file counts, and missed-file names shown here are drawn from a worked example and must not be shipped as pre-audited results.

@@ -62,6 +62,42 @@ import {
 // ---------------------------------------------------------------------------
 
 let testDir: string;
+const REQUIRED_REFLECTION_SECTIONS = `
+## ICD 203 Analytic Tradecraft Compliance Audit
+
+## Devil's-Advocate Key Judgment Coverage Matrix
+
+| KJ ID | KJ summary | Challenged | DA row | Status |
+|-------|------------|:----------:|--------|:------:|
+| KJ-1 | A | ✅ | DA-01 | CLOSED |
+| KJ-2 | B | ✅ | DA-02 | CLOSED |
+| KJ-3 | C | ✅ | DA-03 | CLOSED |
+
+## Confidence Distribution by Key Judgment (Posterior Required)
+| KJ | Prior | Evidence | Posterior | Rationale |
+|----|-------|----------|-----------|-----------|
+| KJ-1 | HIGH | new data | MEDIUM | downgrade |
+| KJ-2 | MEDIUM | confirmation | HIGH | upgrade |
+| KJ-3 | LOW | unchanged | LOW | stable |
+
+## Lagrådet / Statskontoret / SKR Tracking
+
+## Sibling-Folder Ingestion Record (Tier-C)
+
+## Re-run Log (Unified Schema)
+| run_id | attempt | new dok_ids | artifacts extended | flags closed | vintage refresh |
+|--------|---------|-------------|--------------------|--------------|-----------------|
+| 1 | 1 | none | methodology-reflection.md | 0 | no |
+
+## Banned-Phrase Audit (Zero-Count Grid)
+
+## Pass 1 → Pass 2 Delta Table
+| Pass 1 | Pass 2 | Delta |
+|--------|--------|-------|
+| A | B | +1 |
+
+## Improvement Opportunities → PIR Roll-Forward
+`;
 
 function createTestDir(): string {
   const dir = join(tmpdir(), `agentic-gate-test-${Date.now()}-${Math.random().toString(36).slice(2)}`);
@@ -110,9 +146,24 @@ function createMinimalValidAnalysis(dir: string): void {
     } else if (artifact.filename === 'scenario-analysis.md') {
       content = '# Scenario Analysis\n\n## Scenario 1: Status Quo\n\n## Scenario 2: Reform\n\n## Scenario 3: Crisis\n\n';
     } else if (artifact.filename === 'devils-advocate.md') {
-      content = '# Devil\'s Advocate\n\n## Hypothesis 1: Government succeeds\n\n## Hypothesis 2: Opposition blocks\n\n## Hypothesis 3: Coalition fractures\n\n';
+      content = `# Devil's Advocate
+
+## Hypothesis 1: Government succeeds
+
+## Hypothesis 2: Opposition blocks
+
+## Hypothesis 3: Coalition fractures
+
+## Key Judgment Coverage Matrix (Required)
+
+| KJ ID | KJ summary | Hypothesis | Challenged |
+|-------|------------|------------|:----------:|
+| KJ-1 | Fiscal | H1 | ✅ |
+| KJ-2 | Coalition | H2 | ✅ |
+| KJ-3 | Reform | H3 | ✅ |
+`;
     } else if (artifact.filename === 'methodology-reflection.md') {
-      content = '# Methodology Reflection\n\n## ICD 203 Audit\n\nMethodology Improvements applied.\n\n## Improvement 1\n\n';
+      content = `# Methodology Reflection\n\n${REQUIRED_REFLECTION_SECTIONS}`;
     } else if (artifact.filename === 'comparative-international.md') {
       content = '# Comparative International\n\n**Comparator set**: Denmark, Norway, Finland\n\n| Country | Policy |\n|---------|--------|\n| Denmark | A |\n| Norway | B |\n';
     } else if (artifact.filename === 'forward-indicators.md') {
@@ -687,30 +738,152 @@ describe('checkFamilyCStructure', () => {
   });
 
   describe('devils-advocate.md', () => {
-    it('passes with 3+ hypotheses', async () => {
+    const HYPOTHESES_WITH_MATRIX = (rows: string) => `
+## Hypothesis 1: A
+
+## Hypothesis 2: B
+
+## Hypothesis 3: C
+
+## Key Judgment Coverage Matrix (Required)
+
+| KJ ID | KJ summary | Hypothesis | Challenged |
+|-------|------------|------------|:----------:|
+${rows}
+`;
+
+    it('passes with 3+ hypotheses and 100% KJ coverage matrix', async () => {
       writeArtifact(testDir, 'devils-advocate.md',
-        '## Hypothesis 1: A\n\n## Hypothesis 2: B\n\n## Hypothesis 3: C\n');
+        HYPOTHESES_WITH_MATRIX('| KJ-1 | A | H1 | ✅ |\n| KJ-2 | B | H2 | ✅ |\n| KJ-3 | C | H3 | ✅ |'));
       const results = await checkFamilyCStructure(testDir);
       const failures = results.filter((r) => !r.passed && r.artifact === 'devils-advocate.md');
       expect(failures).toHaveLength(0);
     });
+
+    it('fails when KJ Coverage Matrix heading is missing', async () => {
+      writeArtifact(testDir, 'devils-advocate.md',
+        '## Hypothesis 1: A\n\n## Hypothesis 2: B\n\n## Hypothesis 3: C\n');
+      const results = await checkFamilyCStructure(testDir);
+      const failures = results.filter((r) => !r.passed && r.artifact === 'devils-advocate.md');
+      expect(failures.length).toBeGreaterThan(0);
+      expect(failures.some((f) => /Key Judgment Coverage Matrix/.test(f.message ?? ''))).toBe(true);
+    });
+
+    it('fails when any KJ coverage row contains ❌', async () => {
+      writeArtifact(testDir, 'devils-advocate.md',
+        HYPOTHESES_WITH_MATRIX('| KJ-1 | A | H1 | ✅ |\n| KJ-2 | B | — | ❌ |\n| KJ-3 | C | H3 | ✅ |'));
+      const results = await checkFamilyCStructure(testDir);
+      const failures = results.filter((r) => !r.passed && r.artifact === 'devils-advocate.md');
+      expect(failures.length).toBeGreaterThan(0);
+      expect(failures.some((f) => /coverage must be 100%/.test(f.message ?? ''))).toBe(true);
+    });
   });
 
   describe('methodology-reflection.md', () => {
-    it('passes with ICD 203 reference', async () => {
+    it('passes when all nine required methodology-reflection sections are present', async () => {
       writeArtifact(testDir, 'methodology-reflection.md',
-        '## ICD 203 Audit\n\nCompliance verified.\n');
+        REQUIRED_REFLECTION_SECTIONS);
       const results = await checkFamilyCStructure(testDir);
       const failures = results.filter((r) => !r.passed && r.artifact === 'methodology-reflection.md');
       expect(failures).toHaveLength(0);
     });
 
-    it('passes with Methodology Improvements', async () => {
-      writeArtifact(testDir, 'methodology-reflection.md',
-        '## Methodology Improvements\n\nImprovement 1: Better sourcing.\n');
+    it('accepts ## headings with leading emoji', async () => {
+      // Mirrors the actual template, which renders each required heading with
+      // a leading emoji (e.g. `## 📋 ICD 203 …`).
+      const withEmoji = REQUIRED_REFLECTION_SECTIONS
+        .replace('## ICD 203', '## 📋 ICD 203')
+        .replace("## Devil's-Advocate", "## 🎯 Devil's-Advocate")
+        .replace('## Confidence Distribution', '## 📈 Confidence Distribution')
+        .replace('## Lagrådet', '## ⚖️ Lagrådet')
+        .replace('## Sibling-Folder', '## 🔗 Sibling-Folder')
+        .replace('## Re-run Log', '## 🔁 Re-run Log')
+        .replace('## Banned-Phrase', '## 🚫 Banned-Phrase')
+        .replace('## Pass 1', '## 🔄 Pass 1')
+        .replace('## Improvement Opportunities', '## 🧭 Improvement Opportunities');
+      writeArtifact(testDir, 'methodology-reflection.md', withEmoji);
       const results = await checkFamilyCStructure(testDir);
       const failures = results.filter((r) => !r.passed && r.artifact === 'methodology-reflection.md');
       expect(failures).toHaveLength(0);
+    });
+
+    it('fails when required sections are missing', async () => {
+      writeArtifact(testDir, 'methodology-reflection.md',
+        '## ICD 203 Analytic Tradecraft Compliance Audit\n\n## Banned-Phrase Audit (Zero-Count Grid)\n');
+      const results = await checkFamilyCStructure(testDir);
+      const failures = results.filter((r) => !r.passed && r.artifact === 'methodology-reflection.md');
+      expect(failures.length).toBeGreaterThan(0);
+      expect(failures[0]?.message).toContain('missing required section(s)');
+    });
+
+    it('fails when phrases are present only in body text but not as ## headings', async () => {
+      // All nine section names appear, but as paragraph text rather than
+      // `##` headings — the loose phrase-anywhere check would pass; the
+      // heading-anchored check must fail.
+      const phraseOnly = `# Methodology Reflection
+
+Paragraph mentioning ICD 203 Analytic Tradecraft Compliance Audit and Devil's-Advocate Key Judgment Coverage Matrix and Confidence Distribution by Key Judgment (Posterior Required) and Lagrådet / Statskontoret / SKR Tracking and Sibling-Folder Ingestion Record (Tier-C) and Re-run Log (Unified Schema) and Banned-Phrase Audit (Zero-Count Grid) and Pass 1 Pass 2 Delta Table and Improvement Opportunities PIR Roll-Forward.
+
+| run_id | attempt | new dok_ids | artifacts extended | flags closed | vintage refresh |
+|--------|---------|-------------|--------------------|--------------|-----------------|
+| 1 | 1 | none | x | 0 | no |
+`;
+      writeArtifact(testDir, 'methodology-reflection.md', phraseOnly);
+      const results = await checkFamilyCStructure(testDir);
+      const failures = results.filter((r) => !r.passed && r.artifact === 'methodology-reflection.md');
+      expect(failures.length).toBeGreaterThan(0);
+    });
+
+    it('fails when KJ Coverage Matrix has ❌ rows', async () => {
+      const broken = REQUIRED_REFLECTION_SECTIONS.replace(
+        '| KJ-2 | B | ✅ | DA-02 | CLOSED |',
+        '| KJ-2 | B | ❌ | DA-02 | OPEN |',
+      );
+      writeArtifact(testDir, 'methodology-reflection.md', broken);
+      const results = await checkFamilyCStructure(testDir);
+      const failures = results.filter((r) => !r.passed && r.artifact === 'methodology-reflection.md');
+      expect(failures.length).toBeGreaterThan(0);
+      expect(failures.some((f) => /100% coverage|no ❌ \/ OPEN/.test(f.message ?? ''))).toBe(true);
+    });
+
+    it('fails when a Confidence Distribution KJ row has empty Posterior', async () => {
+      const broken = REQUIRED_REFLECTION_SECTIONS.replace(
+        '| KJ-1 | HIGH | new data | MEDIUM | downgrade |',
+        '| KJ-1 | HIGH | new data |  | downgrade |',
+      );
+      writeArtifact(testDir, 'methodology-reflection.md', broken);
+      const results = await checkFamilyCStructure(testDir);
+      const failures = results.filter((r) => !r.passed && r.artifact === 'methodology-reflection.md');
+      expect(failures.length).toBeGreaterThan(0);
+      expect(failures.some((f) => /filled Posterior per KJ row/.test(f.message ?? ''))).toBe(true);
+    });
+
+    it('fails when Posterior cell is a `[REQUIRED]` placeholder', async () => {
+      const broken = REQUIRED_REFLECTION_SECTIONS.replace(
+        '| KJ-2 | MEDIUM | confirmation | HIGH | upgrade |',
+        '| KJ-2 | MEDIUM | confirmation | [REQUIRED] | upgrade |',
+      );
+      writeArtifact(testDir, 'methodology-reflection.md', broken);
+      const results = await checkFamilyCStructure(testDir);
+      const failures = results.filter((r) => !r.passed && r.artifact === 'methodology-reflection.md');
+      expect(failures.length).toBeGreaterThan(0);
+      expect(failures.some((f) => /filled Posterior per KJ row/.test(f.message ?? ''))).toBe(true);
+    });
+
+    it('fails when Re-run Log section is present but column header row is outside the section', async () => {
+      // Move the schema header into a different section — the unified schema
+      // check should fail because the table header is not under Re-run Log.
+      const broken = REQUIRED_REFLECTION_SECTIONS
+        .replace(
+          '## Re-run Log (Unified Schema)\n| run_id | attempt | new dok_ids | artifacts extended | flags closed | vintage refresh |\n|--------|---------|-------------|--------------------|--------------|-----------------|\n| 1 | 1 | none | methodology-reflection.md | 0 | no |\n',
+          '## Re-run Log (Unified Schema)\n\n_no table here_\n',
+        )
+        + '\n## Bogus\n| run_id | attempt | new dok_ids | artifacts extended | flags closed | vintage refresh |\n|---|---|---|---|---|---|\n| 1 | 1 | none | x | 0 | no |\n';
+      writeArtifact(testDir, 'methodology-reflection.md', broken);
+      const results = await checkFamilyCStructure(testDir);
+      const failures = results.filter((r) => !r.passed && r.artifact === 'methodology-reflection.md');
+      expect(failures.length).toBeGreaterThan(0);
+      expect(failures.some((f) => /Re-run log unified schema/.test(f.message ?? ''))).toBe(true);
     });
   });
 

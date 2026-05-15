@@ -6,7 +6,7 @@ date: 2026-05-15
 subfolder: motions
 slug: 2026-05-15-motions
 source_folder: analysis/daily/2026-05-15/motions
-generated_at: 2026-05-15T08:03:38.777Z
+generated_at: 2026-05-15T12:58:38.533Z
 language: en
 layout: article
 ---
