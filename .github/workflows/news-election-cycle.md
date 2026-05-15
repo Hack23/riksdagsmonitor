@@ -280,7 +280,7 @@ steps:
       imf-sdmx-subscription-key: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY }}
 engine:
   id: copilot
-  model: claude-opus-4.7
+  model: claude-sonnet-4.6
 ---
 
 # 🗳️ Election Cycle
@@ -345,7 +345,7 @@ This workflow runs at the **upper limit** of the 60-minute job envelope. Initial
 | 41–42 | Render (`scripts/render-articles.ts --lang all` → all 14 HTML per anchor) |
 | 42–43 | Stage + commit + ONE `safeoutputs___create_pull_request` — **HARD DEADLINE agent minute 45** |
 
-> 🟡 **Scope-compression rule**: depth multiplier 2.5× is aspirational — under the 60-min envelope, prefer reducing per-document Family-E coverage (drop dok_ids ranked < 6 in significance-scoring) rather than skipping any of the 24 artifacts. The 24-artifact contract is hard.
+> 🟡 **Scope-compression rule**: depth multiplier 2.5× is aspirational — under the 60-min envelope, prefer reducing per-document Family-E coverage (drop dok_ids ranked < 6 in significance-scoring) rather than skipping any of the 24 artifacts. The 24-artifact contract is hard. When `cycle_anchor=both`, anchor coverage is also hard unless `ext/cycle-rollover.md` declares a formal rollover-window exception; time budget is never a valid reason to silently skip `next/`.
 
 ## Inputs
 

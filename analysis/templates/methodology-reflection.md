@@ -89,6 +89,8 @@ ANTI-TEMPLATE — DO NOT:
 | **Files produced** | `N` |
 | **Exemplar status** | `Yes / No — and why` |
 
+> **Pass-2 status: executed in full** *(required literal — `05-analysis-gate.md` greps for this exact phrase, with the colon, outside the table cell.)*
+
 ---
 
 ## ✅ Required Section Contract (Gate-Enforced)
@@ -259,6 +261,18 @@ flowchart LR
 | `synthesis-summary.md` | "The government tabled several propositions today." | "Finance Minister **Elisabeth Svantesson (M)** tabled the 2026 Spring Bill (HD03100) alongside an extra amendment budget (HD0399) and three fiscal support measures." | 🟢 Named actor + dok_ids added |
 | `swot-analysis.md` — Opportunities Q1 | "Potential for cross-party support." | "Cross-party support from SD on sentencing (HD01JuU15) extends to fuel-tax package (HD03236)." | 🟢 Specific cross-reference added |
 | `executive-brief.md` — BLUF | "Coalition shows discipline." | "Coalition unanimous on FiU48 (confidence 🟩 HIGH; L reservation noted separately)." | 🟢 Confidence qualifier added |
+
+---
+
+## Re-run log
+
+<!-- improvement-mode only. Heading MUST stay `## Re-run log` (no emoji, no parenthetical) so the gate regex `^## Re-run log` matches across all 14 news workflows. Values are NOT wrapped in backticks — the gate greps for the literal expanded `run_id=<digits>` / `attempt=<digits>` of the current run. -->
+
+- **Re-run**: YYYY-MM-DD HH:MM UTC · workflow=$GITHUB_WORKFLOW · run_id=$GITHUB_RUN_ID · attempt=$GITHUB_RUN_ATTEMPT
+  - new dok_ids: <count or "none">
+  - artifacts extended: <comma-separated list or "none — content stable">
+  - flags closed: <count>
+  - vintage refresh: <"yes" or "no, IMF WEO Apr-2026 still current">
 
 ---
 

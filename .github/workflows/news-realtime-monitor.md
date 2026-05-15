@@ -17,8 +17,9 @@ on:
     # Run twice during Swedish parliamentary working hours (CET/CEST)
     # 10:00 UTC (11:00 CET) - Mid-morning check
     - cron: '0 10 * * 1-5'
-    # 14:00 UTC (15:00 CET) - Afternoon check
-    - cron: '0 14 * * 1-5'
+    # 15:30 UTC (16:30 CET / 17:30 CEST) - Afternoon chamber catch-up window
+    # Captures same-day interpellation answers that often land 13:00-15:00 UTC.
+    - cron: '30 15 * * 1-5'
     # Weekend: single midday check for government press releases, crisis, urgent documents
     - cron: '0 12 * * 0,6'
   workflow_dispatch:

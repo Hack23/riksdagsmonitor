@@ -24,6 +24,15 @@ When active, the rollover module hooks into the analysis pipeline at three point
 2. **Post-Pass-2** (`04-analysis-pipeline.md`) — apply the rename + carry-forward procedure §3.
 3. **Pre-aggregate** (`06-article-generation.md`) — emit a `cycle-rollover-report.md` summarising the conversion.
 
+### Anchor-coverage hard rule
+
+When `cycle_anchor=both`, both `election-cycle/current/` and `election-cycle/next/` are expected outputs. Skipping an anchor because of runtime pressure is not allowed. If an anchor is intentionally skipped, `methodology-reflection.md` must include an **Anchor coverage decision** entry citing a formal reason:
+
+- `cycle-rollover-window-inactive` (predicate outside ±30-day window and operator explicitly selected a single anchor), or
+- `cycle-rollover-window-transition` (T+31 → T+45 freeze semantics from §2 table).
+
+`time-budget`, `timeout`, or equivalent wording is never a valid anchor-skip reason.
+
 ---
 
 ## 2 — Cycle-anchor flip rule
