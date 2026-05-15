@@ -771,12 +771,100 @@ async function checkDevilsAdvocate(analysisDir: string): Promise<GateCheckResult
     });
   }
 
+  // KJ Coverage Matrix enforcement — the template documents this as a
+  // required gate; verify the matching ## heading and that every KJ row is
+  // covered (no ❌ markers on KJ rows).
+  const kjMatrixHeadingPresent = hasHeading(
+    content,
+    /Key\s+Judgment\s+Coverage\s+Matrix/i,
+  );
+  if (!kjMatrixHeadingPresent) {
+    results.push({
+      checkId: 'family-c-structure',
+      passed: false,
+      message: "devils-advocate.md: missing '## Key Judgment Coverage Matrix' section",
+      artifact: 'devils-advocate.md',
+    });
+  } else {
+    const matrixSection = extractSection(
+      content,
+      /Key\s+Judgment\s+Coverage\s+Matrix/i,
+    );
+    const kjRows = matrixSection
+      .split('\n')
+      .filter((line) => /^\|\s*KJ[-\s]?\d/i.test(line.trim()));
+    const uncoveredRow = kjRows.find((row) => /❌/.test(row));
+    if (kjRows.length === 0) {
+      results.push({
+        checkId: 'family-c-structure',
+        passed: false,
+        message: 'devils-advocate.md: KJ Coverage Matrix has no KJ rows (expected ≥1 row mapping each intelligence-assessment KJ to a hypothesis)',
+        artifact: 'devils-advocate.md',
+      });
+    } else if (uncoveredRow) {
+      results.push({
+        checkId: 'family-c-structure',
+        passed: false,
+        message: 'devils-advocate.md: KJ Coverage Matrix has ❌ row(s); coverage must be 100%',
+        artifact: 'devils-advocate.md',
+      });
+    } else {
+      results.push({
+        checkId: 'family-c-structure',
+        passed: true,
+        message: `devils-advocate.md: KJ Coverage Matrix has ${kjRows.length} covered KJ row(s)`,
+        artifact: 'devils-advocate.md',
+      });
+    }
+  }
+
   return results;
 }
 
 /**
  * Check methodology-reflection.md for required section contract.
  */
+/**
+ * Test whether a markdown document contains an H2-H4 heading whose visible
+ * text (after stripping a single optional leading emoji + whitespace) matches
+ * the given pattern. Anchoring to a real heading prevents the loose
+ * "anywhere in the file" matches that earlier versions of this gate allowed.
+ */
+function hasHeading(content: string, pattern: RegExp): boolean {
+  for (const rawLine of content.split('\n')) {
+    const headingMatch = rawLine.match(/^#{2,4}\s+(.*?)\s*#*\s*$/);
+    if (!headingMatch) continue;
+    // Strip a single leading emoji (any non-ASCII glyph or symbol) plus optional whitespace.
+    const text = headingMatch[1]!.replace(/^[^\p{L}\p{N}]+\s*/u, '').trim();
+    if (pattern.test(text)) return true;
+  }
+  return false;
+}
+
+/**
+ * Return the body of the section starting at the heading that matches
+ * `headingPattern`, up to (but not including) the next H2 heading. Returns an
+ * empty string when the section is not present.
+ */
+function extractSection(content: string, headingPattern: RegExp): string {
+  const lines = content.split('\n');
+  let inSection = false;
+  const collected: string[] = [];
+  for (const line of lines) {
+    const headingMatch = line.match(/^##\s+(.*?)\s*#*\s*$/);
+    if (headingMatch) {
+      const text = headingMatch[1]!.replace(/^[^\p{L}\p{N}]+\s*/u, '').trim();
+      if (inSection) break;
+      if (headingPattern.test(text)) {
+        inSection = true;
+        continue;
+      }
+    }
+    if (inSection) collected.push(line);
+  }
+  return collected.join('\n');
+}
+
 async function checkMethodologyReflection(
   analysisDir: string,
 ): Promise<GateCheckResult[]> {
@@ -785,52 +873,139 @@ async function checkMethodologyReflection(
   if (!existsSync(filePath)) return results;
 
   const content = await readFile(filePath, 'utf-8');
-  const lower = content.toLowerCase();
-  const hasReRunSection = /Re[-\s]?run\s+Log/i.test(content);
-  const hasReRunColumns = hasReRunSection &&
-    /run_id/i.test(content) &&
-    /attempt/i.test(content) &&
-    /new[\s_]+dok_ids/i.test(content) &&
-    /artifacts[\s_]+extended/i.test(content) &&
-    /flags[\s_]+closed/i.test(content) &&
-    /vintage[\s_]+refresh/i.test(content);
+
+  const kjCoverageSection = extractSection(
+    content,
+    /Devil'?s[-\s]Advocate\s+Key\s+Judgment\s+Coverage\s+Matrix/i,
+  );
+  const confidenceSection = extractSection(
+    content,
+    /Confidence\s+Distribution\s+by\s+Key\s+Judgment/i,
+  );
+  const reRunSection = extractSection(content, /Re[-\s]?run\s+Log/i);
+
+  // Re-run log unified column schema — must appear as a table header row
+  // inside the Re-run Log section, not just anywhere in the file.
+  const reRunColumnHeaderPresent = reRunSection.split('\n').some((line) => {
+    if (!line.trim().startsWith('|')) return false;
+    const lower = line.toLowerCase();
+    return (
+      lower.includes('run_id') &&
+      lower.includes('attempt') &&
+      /new[\s_]+dok_ids/.test(lower) &&
+      /artifacts[\s_]+extended/.test(lower) &&
+      /flags[\s_]+closed/.test(lower) &&
+      /vintage[\s_]+refresh/.test(lower)
+    );
+  });
+
+  // KJ-coverage content quality — every KJ row must be ✅ and CLOSED; ❌ or
+  // OPEN markers on KJ rows indicate the 100% coverage target was not met.
+  const kjCoverageRows = kjCoverageSection
+    .split('\n')
+    .filter((line) => /^\|\s*KJ[-\s]?\d/i.test(line.trim()));
+  const kjCoverageHasUncovered = kjCoverageRows.some((row) => /❌/.test(row));
+  const kjCoverageHasOpenStatus = kjCoverageRows.some((row) =>
+    /\bOPEN\b/i.test(row),
+  );
+  const kjCoverageRowsPresent = kjCoverageRows.length > 0;
+
+  // Posterior content quality — every KJ row must have a filled Posterior
+  // value (no `[REQUIRED]` placeholder, no empty cell). Locate the Posterior
+  // column from the table header within the Confidence Distribution section.
+  const confidenceLines = confidenceSection.split('\n');
+  const headerLineIndex = confidenceLines.findIndex(
+    (line) => line.trim().startsWith('|') && /posterior/i.test(line),
+  );
+  let posteriorColumnIndex = -1;
+  if (headerLineIndex >= 0) {
+    const cells = confidenceLines[headerLineIndex]!
+      .split('|')
+      .slice(1, -1)
+      .map((cell) => cell.trim().toLowerCase());
+    posteriorColumnIndex = cells.findIndex((cell) =>
+      cell.includes('posterior'),
+    );
+  }
+  const confidenceKjRows = confidenceLines.filter((line) =>
+    /^\|\s*KJ[-\s]?\d/i.test(line.trim()),
+  );
+  let confidencePosteriorFilledForAllKjs = confidenceKjRows.length > 0;
+  if (posteriorColumnIndex < 0) {
+    confidencePosteriorFilledForAllKjs = false;
+  } else {
+    for (const row of confidenceKjRows) {
+      const cells = row.split('|').slice(1, -1).map((c) => c.trim());
+      const cell = cells[posteriorColumnIndex] ?? '';
+      const stripped = cell.replace(/`/g, '').trim();
+      if (
+        stripped === '' ||
+        /^\[\s*REQUIRED\s*\]?$/i.test(stripped) ||
+        /^-+$/.test(stripped)
+      ) {
+        confidencePosteriorFilledForAllKjs = false;
+        break;
+      }
+    }
+  }
+
   const requiredSectionChecks: Array<{ label: string; present: boolean }> = [
-    { label: 'ICD 203 audit checklist', present: /ICD\s+203/i.test(content) },
     {
-      label: "Devil's-Advocate KJ coverage matrix",
-      present: /Devil'?s[-\s]Advocate.*(KJ|Key\s+Judgment).*Coverage/i.test(content),
+      label: 'ICD 203 audit checklist (## heading)',
+      present: hasHeading(content, /ICD\s+203/i),
     },
     {
-      label: 'Confidence distribution with posterior',
-      present: /Confidence\s+Distribution/i.test(content) && /Posterior/i.test(content),
+      label: "Devil's-Advocate KJ coverage matrix (## heading)",
+      present: hasHeading(
+        content,
+        /Devil'?s[-\s]Advocate\s+Key\s+Judgment\s+Coverage\s+Matrix/i,
+      ),
     },
     {
-      label: 'Lagrådet / Statskontoret / SKR tracking',
-      present: lower.includes('lagrådet') &&
-        lower.includes('statskontoret') &&
-        (lower.includes('skr') || lower.includes('sveriges kommuner')),
+      label: "Devil's-Advocate KJ coverage matrix: 100% coverage (no ❌ / OPEN rows)",
+      present:
+        kjCoverageRowsPresent &&
+        !kjCoverageHasUncovered &&
+        !kjCoverageHasOpenStatus,
     },
     {
-      label: 'Sibling-folder ingestion record',
-      present: /Sibling[-\s]?Folder\s+Ingestion/i.test(content),
+      label: 'Confidence distribution (## heading)',
+      present: hasHeading(content, /Confidence\s+Distribution\s+by\s+Key\s+Judgment/i),
     },
     {
-      label: 'Re-run log unified schema',
-      present: hasReRunColumns,
+      label: 'Confidence distribution: filled Posterior per KJ row',
+      present: confidencePosteriorFilledForAllKjs,
     },
     {
-      label: 'Banned-phrase audit grid',
-      present: /Banned[-\s]?Phrase\s+Audit/i.test(content),
+      label: 'Lagrådet / Statskontoret / SKR tracking (## heading)',
+      present: hasHeading(content, /Lagrådet.*Statskontoret.*SKR/i),
     },
     {
-      label: 'Pass 1 to Pass 2 delta table',
-      present: lower.includes('pass 1') && lower.includes('pass 2') && lower.includes('delta'),
+      label: 'Sibling-folder ingestion record (## heading)',
+      present: hasHeading(content, /Sibling[-\s]?Folder\s+Ingestion/i),
     },
     {
-      label: 'Improvement opportunities linked to PIR roll-forward',
-      present: lower.includes('improvement opportunities') &&
-        lower.includes('pir') &&
-        lower.includes('roll-forward'),
+      label: 'Re-run log (## heading)',
+      present: hasHeading(content, /Re[-\s]?run\s+Log/i),
+    },
+    {
+      label: 'Re-run log unified schema (header row inside Re-run Log section)',
+      present: reRunColumnHeaderPresent,
+    },
+    {
+      label: 'Banned-phrase audit grid (## heading)',
+      present: hasHeading(content, /Banned[-\s]?Phrase\s+Audit/i),
+    },
+    {
+      label: 'Pass 1 → Pass 2 delta table (## heading)',
+      present: hasHeading(content, /Pass\s*1.*Pass\s*2.*Delta/i),
+    },
+    {
+      label: 'Improvement opportunities → PIR roll-forward (## heading)',
+      present: hasHeading(
+        content,
+        /Improvement\s+Opportunities.*PIR\s+Roll[-\s]?Forward/i,
+      ),
     },
   ];
 

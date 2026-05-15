@@ -93,17 +93,22 @@ ANTI-TEMPLATE — DO NOT:
 
 ## ✅ Required Section Contract (Gate-Enforced)
 
-> **[REQUIRED]** `methodology-reflection.md` is invalid unless all sections below are present and completed:
+> **[REQUIRED]** `methodology-reflection.md` is invalid unless all sections below are present (as `##` headings) and completed. The canonical heading text is given here; the template renders each heading with a leading emoji (e.g. `## 📋 ICD 203 …`) and the gate accepts an optional leading emoji on each heading. The **section name** must match exactly.
 >
-> 1. `## ICD 203 Analytic Tradecraft Compliance Audit`
-> 2. `## Devil's-Advocate Key Judgment Coverage Matrix`
-> 3. `## Confidence Distribution by Key Judgment (Posterior Required)`
-> 4. `## Lagrådet / Statskontoret / SKR Tracking`
-> 5. `## Sibling-Folder Ingestion Record (Tier-C)`
-> 6. `## Re-run Log (Unified Schema)`
-> 7. `## Banned-Phrase Audit (Zero-Count Grid)`
-> 8. `## Pass 1 → Pass 2 Delta Table`
-> 9. `## Improvement Opportunities → PIR Roll-Forward`
+> 1. `## 📋 ICD 203 Analytic Tradecraft Compliance Audit`
+> 2. `## 🎯 Devil's-Advocate Key Judgment Coverage Matrix`
+> 3. `## 📈 Confidence Distribution by Key Judgment (Posterior Required)`
+> 4. `## ⚖️ Lagrådet / Statskontoret / SKR Tracking`
+> 5. `## 🔗 Sibling-Folder Ingestion Record (Tier-C)`
+> 6. `## 🔁 Re-run Log (Unified Schema)`
+> 7. `## 🚫 Banned-Phrase Audit (Zero-Count Grid)`
+> 8. `## 🔄 Pass 1 → Pass 2 Delta Table`
+> 9. `## 🧭 Improvement Opportunities → PIR Roll-Forward`
+>
+> Beyond presence, the gate also enforces:
+> - **Devil's-Advocate KJ Coverage Matrix**: no `❌` rows remain and no `OPEN` statuses remain for KJ rows (coverage must be 100%).
+> - **Confidence Distribution**: every KJ row has a filled Posterior value (no `[REQUIRED]` placeholder, no empty cell).
+> - **Re-run Log**: the unified column schema (`run_id | attempt | new dok_ids | artifacts extended | flags closed | vintage refresh`) is present as a markdown table header.
 
 ---
 
@@ -135,13 +140,13 @@ ANTI-TEMPLATE — DO NOT:
 
 ## ⚖️ Lagrådet / Statskontoret / SKR Tracking
 
-> **[REQUIRED]** Track external implementation/legal-review signals. Use [`lagradet-tracking.md`](lagradet-tracking.md) as the canonical field fragment.
+> **[REQUIRED]** Track external implementation/legal-review signals. Use [`lagradet-tracking.md`](lagradet-tracking.md) as the canonical field fragment — the `Impact note` column below mirrors the fragment's required `impact_note` field.
 
-| Track | Applicability | Status | Latest evidence (URL + date) | Next check |
-|-------|:-------------:|--------|-------------------------------|------------|
-| Lagrådet yttrande | Y/N | `not applicable / referral pending / yttrande published` | `[REQUIRED]` | `[REQUIRED]` |
-| Statskontoret implementation signal | Y/N | `found / none found / not triggered` | `[REQUIRED]` | `[REQUIRED]` |
-| SKR operational impact signal | Y/N | `found / none found / not triggered` | `[REQUIRED]` | `[REQUIRED]` |
+| Track | Applicability | Status | Latest evidence (URL + date) | Next check | Impact note |
+|-------|:-------------:|--------|-------------------------------|------------|-------------|
+| Lagrådet yttrande | Y/N | `not applicable / referral pending / yttrande published` | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
+| Statskontoret implementation signal | Y/N | `found / none found / not triggered` | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
+| SKR operational impact signal | Y/N | `found / none found / not triggered` | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
 
 ---
 

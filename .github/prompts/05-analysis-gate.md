@@ -25,8 +25,8 @@ This is the **only** gate separating analysis from article generation. If it fai
    - `intelligence-assessment.md` declares **≥ 3 Key Judgments** (enforced structurally by `Key Judgment` / `KJ-*` header count ≥ 3) each carrying at least one confidence label (`VERY HIGH`, `HIGH`, `MEDIUM`, `LOW`, `VERY LOW`) — the confidence-label presence is audited by the implementation's `grep -cE '(VERY HIGH|HIGH|MEDIUM|LOW|VERY LOW)'` check on the same file — and the file references at least one PIR.
    - `scenario-analysis.md` declares **≥ 3 distinct scenarios** (headers matching `Scenario` count ≥ 3).
    - `comparative-international.md` declares a comparator set or **≥ 2 comparator rows** (structural check, see Tier-C gate).
-   - `devils-advocate.md` declares **≥ 3 competing hypotheses** (headers matching `Hypothesis`/`H1`/`H2`/`H3` count ≥ 3, ACH-style).
-   - `methodology-reflection.md` is non-empty and contains all 9 required sections: ICD 203 audit grid; Devil's-Advocate KJ-coverage matrix; confidence distribution with posterior column; Lagrådet/Statskontoret/SKR tracking; sibling-folder ingestion record; unified re-run log schema; banned-phrase audit grid; Pass 1→Pass 2 delta table; improvement opportunities linked to PIR roll-forward.
+   - `devils-advocate.md` declares **≥ 3 competing hypotheses** (headers matching `Hypothesis`/`H1`/`H2`/`H3` count ≥ 3, ACH-style) **and** contains a `## Key Judgment Coverage Matrix` section with **100% KJ coverage** — every `| KJ-N |` row must avoid the `❌` marker.
+   - `methodology-reflection.md` is non-empty and contains all 9 required sections as **`##` headings** (a leading emoji on the heading is permitted): `## ICD 203 …` audit grid; `## Devil's-Advocate Key Judgment Coverage Matrix`; `## Confidence Distribution by Key Judgment …`; `## Lagrådet / Statskontoret / SKR Tracking`; `## Sibling-Folder Ingestion Record …`; `## Re-run Log …`; `## Banned-Phrase Audit …`; `## Pass 1 → Pass 2 Delta Table`; `## Improvement Opportunities → PIR Roll-Forward`. Beyond presence, the gate also validates: (a) the Devil's-Advocate KJ-Coverage Matrix has **no `❌` rows and no `OPEN` statuses on KJ rows** (100% coverage), (b) every KJ row in the Confidence Distribution table has a **filled Posterior cell** (no `[REQUIRED]` placeholder, no empty cell), and (c) the Re-run Log section contains a markdown table header row with the unified schema columns (`run_id | attempt | new dok_ids | artifacts extended | flags closed | vintage refresh`).
 8. **Family D structure checks**:
    - `forward-indicators.md` declares **≥ 10 dated indicators** (bullet or table rows matching a date pattern across the four horizon sections).
    - `coalition-mathematics.md` contains a seat-count table (≥ 1 table row with `Ja`/`Nej`/`Avstår` or a party-to-seats mapping).
@@ -210,32 +210,105 @@ fi
 if [ -s "$ANALYSIS_DIR/devils-advocate.md" ]; then
   HY=$(grep -cE '^#{2,4}[[:space:]]*(Hypothesis|H[0-9]+[[:space:]]*[:.—-])' "$ANALYSIS_DIR/devils-advocate.md" || true)
   [ "${HY:-0}" -ge 3 ] || { echo "❌ devils-advocate.md: fewer than 3 competing hypotheses (found ${HY:-0})"; FAIL=1; }
+  # KJ Coverage Matrix — ## heading + 100% coverage (no ❌ rows on KJ lines)
+  grep -qE '^##[[:space:]].*Key[[:space:]]+Judgment[[:space:]]+Coverage[[:space:]]+Matrix' "$ANALYSIS_DIR/devils-advocate.md" \
+    || { echo "❌ devils-advocate.md: missing '## Key Judgment Coverage Matrix' section"; FAIL=1; }
+  if awk '
+      /^##[[:space:]]+.*Key[[:space:]]+Judgment[[:space:]]+Coverage[[:space:]]+Matrix/ { inSec=1; next }
+      inSec && /^##[[:space:]]/ { inSec=0 }
+      inSec && /^\|[[:space:]]*KJ[-[:space:]]?[0-9]/ && /❌/ { bad=1 }
+      END { exit !bad }
+    ' "$ANALYSIS_DIR/devils-advocate.md"; then
+    echo "❌ devils-advocate.md: KJ Coverage Matrix has ❌ row(s); coverage must be 100%"; FAIL=1
+  fi
 fi
 if [ -s "$ANALYSIS_DIR/methodology-reflection.md" ]; then
   REF="$ANALYSIS_DIR/methodology-reflection.md"
-  grep -qiE 'ICD[[:space:]]+203' "$REF" || { echo "❌ methodology-reflection.md: missing ICD 203 audit checklist"; FAIL=1; }
-  grep -qiE "Devil'?s[-[:space:]]Advocate.*(KJ|Key[[:space:]]+Judgment).*Coverage" "$REF" \
-    || { echo "❌ methodology-reflection.md: missing Devil's-Advocate KJ-coverage matrix"; FAIL=1; }
-  grep -qiE 'Confidence[[:space:]]+Distribution' "$REF" || { echo "❌ methodology-reflection.md: missing confidence distribution section"; FAIL=1; }
-  grep -qiE 'Posterior' "$REF" || { echo "❌ methodology-reflection.md: missing Posterior column/marker"; FAIL=1; }
-  grep -qiE 'Lagrådet' "$REF" || { echo "❌ methodology-reflection.md: missing Lagrådet tracking marker"; FAIL=1; }
-  grep -qiE 'Statskontoret' "$REF" || { echo "❌ methodology-reflection.md: missing Statskontoret tracking marker"; FAIL=1; }
-  grep -qiE 'SKR|Sveriges[[:space:]]+Kommuner' "$REF" || { echo "❌ methodology-reflection.md: missing SKR tracking marker"; FAIL=1; }
-  grep -qiE 'Sibling[-[:space:]]?Folder[[:space:]]+Ingestion' "$REF" \
-    || { echo "❌ methodology-reflection.md: missing sibling-folder ingestion record"; FAIL=1; }
-  grep -qiE 'Re[-[:space:]]?run[[:space:]]+Log' "$REF" || { echo "❌ methodology-reflection.md: missing re-run log section"; FAIL=1; }
-  grep -qiE 'run_id' "$REF" || { echo "❌ methodology-reflection.md: re-run log missing run_id column"; FAIL=1; }
-  grep -qiE 'attempt' "$REF" || { echo "❌ methodology-reflection.md: re-run log missing attempt column"; FAIL=1; }
-  grep -qiE 'new[[:space:]_]+dok_ids' "$REF" || { echo "❌ methodology-reflection.md: re-run log missing new dok_ids column"; FAIL=1; }
-  grep -qiE 'artifacts[[:space:]_]+extended' "$REF" || { echo "❌ methodology-reflection.md: re-run log missing artifacts extended column"; FAIL=1; }
-  grep -qiE 'flags[[:space:]_]+closed' "$REF" || { echo "❌ methodology-reflection.md: re-run log missing flags closed column"; FAIL=1; }
-  grep -qiE 'vintage[[:space:]_]+refresh' "$REF" || { echo "❌ methodology-reflection.md: re-run log missing vintage refresh column"; FAIL=1; }
-  grep -qiE 'Banned[-[:space:]]?Phrase[[:space:]]+Audit' "$REF" \
-    || { echo "❌ methodology-reflection.md: missing banned-phrase audit grid"; FAIL=1; }
-  grep -qiE 'Pass[[:space:]]*1.*Pass[[:space:]]*2.*Delta' "$REF" \
-    || { echo "❌ methodology-reflection.md: missing Pass 1→Pass 2 delta table"; FAIL=1; }
-  grep -qiE 'Improvement[[:space:]]+Opportunities.*PIR[[:space:]]+Roll[-[:space:]]?Forward' "$REF" \
-    || { echo "❌ methodology-reflection.md: missing improvement opportunities to PIR roll-forward section"; FAIL=1; }
+  # Required ## section headings (leading emoji on the heading is tolerated).
+  grep -qE '^##[[:space:]].*ICD[[:space:]]+203' "$REF" || { echo "❌ methodology-reflection.md: missing '## ICD 203 …' heading"; FAIL=1; }
+  grep -qE "^##[[:space:]].*Devil'?s[-[:space:]]Advocate[[:space:]]+Key[[:space:]]+Judgment[[:space:]]+Coverage[[:space:]]+Matrix" "$REF" \
+    || { echo "❌ methodology-reflection.md: missing '## Devil's-Advocate Key Judgment Coverage Matrix' heading"; FAIL=1; }
+  grep -qE '^##[[:space:]].*Confidence[[:space:]]+Distribution[[:space:]]+by[[:space:]]+Key[[:space:]]+Judgment' "$REF" \
+    || { echo "❌ methodology-reflection.md: missing '## Confidence Distribution by Key Judgment' heading"; FAIL=1; }
+  grep -qE '^##[[:space:]].*Lagrådet.*Statskontoret.*SKR' "$REF" \
+    || { echo "❌ methodology-reflection.md: missing '## Lagrådet / Statskontoret / SKR Tracking' heading"; FAIL=1; }
+  grep -qE '^##[[:space:]].*Sibling[-[:space:]]?Folder[[:space:]]+Ingestion' "$REF" \
+    || { echo "❌ methodology-reflection.md: missing '## Sibling-Folder Ingestion Record' heading"; FAIL=1; }
+  grep -qE '^##[[:space:]].*Re[-[:space:]]?run[[:space:]]+Log' "$REF" \
+    || { echo "❌ methodology-reflection.md: missing '## Re-run Log' heading"; FAIL=1; }
+  grep -qE '^##[[:space:]].*Banned[-[:space:]]?Phrase[[:space:]]+Audit' "$REF" \
+    || { echo "❌ methodology-reflection.md: missing '## Banned-Phrase Audit' heading"; FAIL=1; }
+  grep -qE '^##[[:space:]].*Pass[[:space:]]*1.*Pass[[:space:]]*2.*Delta' "$REF" \
+    || { echo "❌ methodology-reflection.md: missing '## Pass 1 → Pass 2 Delta Table' heading"; FAIL=1; }
+  grep -qE '^##[[:space:]].*Improvement[[:space:]]+Opportunities.*PIR[[:space:]]+Roll[-[:space:]]?Forward' "$REF" \
+    || { echo "❌ methodology-reflection.md: missing '## Improvement Opportunities → PIR Roll-Forward' heading"; FAIL=1; }
+
+  # KJ coverage matrix — 100% coverage in methodology-reflection: no ❌ rows and no OPEN status on KJ rows.
+  if awk '
+      /^##[[:space:]]+.*Devil.?s[-[:space:]]Advocate[[:space:]]+Key[[:space:]]+Judgment[[:space:]]+Coverage[[:space:]]+Matrix/ { inSec=1; next }
+      inSec && /^##[[:space:]]/ { inSec=0 }
+      inSec && /^\|[[:space:]]*KJ[-[:space:]]?[0-9]/ {
+        if (/❌/ || /\bOPEN\b/) bad=1
+      }
+      END { exit !bad }
+    ' "$REF"; then
+    echo "❌ methodology-reflection.md: KJ Coverage Matrix has ❌ or OPEN row(s); coverage must be 100%"; FAIL=1
+  fi
+
+  # Posterior column — every KJ row in the Confidence Distribution table must have a filled Posterior cell.
+  awk '
+    BEGIN { inSec=0; headerSeen=0; postIdx=-1; bad=0; rows=0 }
+    /^##[[:space:]]+.*Confidence[[:space:]]+Distribution[[:space:]]+by[[:space:]]+Key[[:space:]]+Judgment/ { inSec=1; next }
+    inSec && /^##[[:space:]]/ { inSec=0 }
+    inSec && /^\|/ {
+      n = split($0, cells, "|")
+      if (!headerSeen) {
+        for (i = 2; i < n; i++) {
+          c = cells[i]; gsub(/^[[:space:]]+|[[:space:]]+$/, "", c)
+          lc = tolower(c)
+          if (index(lc, "posterior") > 0) { postIdx = i; headerSeen = 1; break }
+        }
+        next
+      }
+      # Skip alignment separator rows like |---|---|---|
+      if ($0 ~ /^\|[[:space:]:\-|]+\|[[:space:]]*$/) next
+      first = cells[2]; gsub(/^[[:space:]]+|[[:space:]]+$/, "", first)
+      if (first !~ /^KJ[-[:space:]]?[0-9]/) next
+      rows++
+      val = (postIdx > 0 && postIdx < n) ? cells[postIdx] : ""
+      gsub(/`/, "", val); gsub(/^[[:space:]]+|[[:space:]]+$/, "", val)
+      if (val == "" || tolower(val) ~ /^\[required\]?$/ || val ~ /^-+$/) bad = 1
+    }
+    END {
+      if (!headerSeen) exit 2
+      if (rows == 0) exit 3
+      exit bad
+    }
+  ' "$REF"
+  POST_RC=$?
+  if [ "$POST_RC" -eq 1 ]; then
+    echo "❌ methodology-reflection.md: Confidence Distribution has empty / placeholder Posterior cell(s) on KJ row(s)"; FAIL=1
+  elif [ "$POST_RC" -eq 2 ]; then
+    echo "❌ methodology-reflection.md: Confidence Distribution table missing Posterior column header"; FAIL=1
+  elif [ "$POST_RC" -eq 3 ]; then
+    echo "❌ methodology-reflection.md: Confidence Distribution has no KJ rows"; FAIL=1
+  fi
+
+  # Re-run log unified schema — table header row must appear inside the Re-run Log section.
+  if ! awk '
+      /^##[[:space:]]+.*Re[-[:space:]]?run[[:space:]]+Log/ { inSec=1; next }
+      inSec && /^##[[:space:]]/ { inSec=0 }
+      inSec && /^\|/ {
+        lc=tolower($0)
+        if (index(lc,"run_id")>0 && index(lc,"attempt")>0 && lc ~ /new[[:space:]_]+dok_ids/ \
+            && lc ~ /artifacts[[:space:]_]+extended/ && lc ~ /flags[[:space:]_]+closed/ \
+            && lc ~ /vintage[[:space:]_]+refresh/) { found=1 }
+      }
+      END { exit !found }
+    ' "$REF"; then
+    echo "❌ methodology-reflection.md: Re-run Log section missing unified schema header (run_id | attempt | new dok_ids | artifacts extended | flags closed | vintage refresh)"
+    FAIL=1
+  fi
 fi
 if [ -s "$ANALYSIS_DIR/comparative-international.md" ]; then
   awk '
