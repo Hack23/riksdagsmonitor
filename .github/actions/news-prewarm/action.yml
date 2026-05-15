@@ -43,9 +43,13 @@ inputs:
     required: false
     default: ''
   calendar-org:
-    description: 'Optional calendar org/committee code for forward-indicator status output (default: SfU).'
+    description: |
+      Optional calendar org/committee code (e.g. SfU, FiU, KU) for forward-indicator
+      status output. When empty (default) the calendar pre-flight is unscoped so
+      week/month/year-ahead workflows pick up forward indicators across all organs.
+      Per-topic workflows should pass their own org code via `with:`.
     required: false
-    default: 'SfU'
+    default: ''
   calendar-lookahead-days:
     description: 'Number of days ahead to include in calendar-status.json.'
     required: false
@@ -56,6 +60,14 @@ inputs:
     default: ''
   rss-watch-dok-ids:
     description: 'Optional comma-separated dok_ids to match in the Riksdagen RSS watcher.'
+    required: false
+    default: ''
+  rss-feed-url:
+    description: |
+      Optional Riksdagen RSS feed URL for the pre-warm watcher. When empty
+      (default) the unscoped document feed is used so PIR matching works for
+      any document type. Workflows that only care about a specific doktyp can
+      override (e.g. `?doktyp=bet` for committee reports).
     required: false
     default: ''
 runs:
@@ -256,7 +268,12 @@ runs:
         echo "🗳️ Polling context pre-flight — $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
         if timeout 60 npx tsx scripts/polling-fetch.ts --output data/polling-context.json >/dev/null 2>/tmp/polling-context.err; then
           PROVIDERS=$(grep -c '"provider"' data/polling-context.json 2>/dev/null || echo 0)
-          echo "  ✅ polling context updated (${PROVIDERS} provider entries)"
+          AVAILABLE=$(node -e "try{const j=require('./data/polling-context.json');process.stdout.write(String(j.aggregate?.availableProviders ?? 0));}catch{process.stdout.write('0');}")
+          if [ "${AVAILABLE:-0}" -gt 0 ]; then
+            echo "  ✅ polling context updated (${PROVIDERS} provider entries, ${AVAILABLE} available)"
+          else
+            echo "  ⚠️ polling context written but availableProviders=0 — all upstream providers degraded; downstream analysis should treat polling context as ABSENT"
+          fi
         else
           echo "  ⚠️ polling context fetch failed — continuing without blocking workflow"
           cat /tmp/polling-context.err 2>/dev/null || true
@@ -272,9 +289,18 @@ runs:
         echo "📅 Calendar forward indicators — $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
         FROM=$(date -u '+%Y-%m-%d')
         TO=$(date -u -d "$FROM +${CALENDAR_LOOKAHEAD_DAYS} days" '+%Y-%m-%d')
-        if timeout 60 npx tsx scripts/calendar-fetch.ts --from "$FROM" --to "$TO" --org "$CALENDAR_ORG" --output data/calendar-status.json >/tmp/calendar-status.json 2>/tmp/calendar-status.err; then
+        CMD=(npx tsx scripts/calendar-fetch.ts --from "$FROM" --to "$TO" --output data/calendar-status.json)
+        if [ -n "${CALENDAR_ORG}" ]; then
+          CMD+=(--org "${CALENDAR_ORG}")
+        fi
+        if timeout 60 "${CMD[@]}" >/tmp/calendar-status.json 2>/tmp/calendar-status.err; then
+          STATUS=$(grep -o '"status": "[^"]*"' data/calendar-status.json | head -1 | cut -d'"' -f4)
           COUNT=$(grep -o '"eventCount": [0-9]*' data/calendar-status.json | head -1 | awk '{print $2}')
-          echo "  ✅ calendar status updated for org=${CALENDAR_ORG} (events=${COUNT:-0})"
+          if [ "${STATUS}" = "ok" ]; then
+            echo "  ✅ calendar status updated for org=${CALENDAR_ORG:-<unscoped>} (events=${COUNT:-0})"
+          else
+            echo "  ⚠️ calendar status artifact reports status=${STATUS:-unknown} — MCP/web fallback chain exhausted"
+          fi
         else
           echo "  ⚠️ calendar status fetch failed — continuing without blocking workflow"
           cat /tmp/calendar-status.err 2>/dev/null || true
@@ -294,7 +320,17 @@ runs:
         fi
         if [ -f data/lagradet-status.json ]; then
           STATUS=$(grep -o '"status": "[^"]*"' data/lagradet-status.json | head -1 | cut -d'"' -f4)
-          echo "  ✅ lagrådet status artifact written (status=${STATUS:-unknown})"
+          case "${STATUS}" in
+            found|not_found|not_configured)
+              echo "  ✅ lagrådet status artifact written (status=${STATUS})"
+              ;;
+            error)
+              echo "  ⚠️ lagrådet status artifact reports status=error — upstream lookup failed"
+              ;;
+            *)
+              echo "  ⚠️ lagrådet status artifact written but status field missing or unexpected (${STATUS:-unknown})"
+              ;;
+          esac
         else
           echo "  ⚠️ lagrådet status fetch failed — continuing without blocking workflow"
           cat /tmp/lagradet-status.err 2>/dev/null || true
@@ -304,17 +340,26 @@ runs:
       shell: bash
       env:
         RSS_WATCH_DOK_IDS: ${{ inputs.rss-watch-dok-ids }}
+        RSS_FEED_URL: ${{ inputs.rss-feed-url }}
       run: |
         echo ""
         echo "📡 RSS watch pre-flight — $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
-        if [ -n "${RSS_WATCH_DOK_IDS}" ]; then
-          timeout 60 npx tsx scripts/rss-watch.ts --dok-ids "${RSS_WATCH_DOK_IDS}" --output data/rss-watch.json >/tmp/rss-watch.json 2>/tmp/rss-watch.err || true
-        else
-          timeout 60 npx tsx scripts/rss-watch.ts --output data/rss-watch.json >/tmp/rss-watch.json 2>/tmp/rss-watch.err || true
+        CMD=(npx tsx scripts/rss-watch.ts --output data/rss-watch.json)
+        if [ -n "${RSS_FEED_URL}" ]; then
+          CMD+=(--feed-url "${RSS_FEED_URL}")
         fi
+        if [ -n "${RSS_WATCH_DOK_IDS}" ]; then
+          CMD+=(--dok-ids "${RSS_WATCH_DOK_IDS}")
+        fi
+        timeout 60 "${CMD[@]}" >/tmp/rss-watch.json 2>/tmp/rss-watch.err || true
         if [ -f data/rss-watch.json ]; then
+          STATUS=$(grep -o '"status": "[^"]*"' data/rss-watch.json | head -1 | cut -d'"' -f4)
           SIGNALS=$(grep -o '"signalCount": [0-9]*' data/rss-watch.json | head -1 | awk '{print $2}')
-          echo "  ✅ rss watch artifact written (signals=${SIGNALS:-0})"
+          if [ "${STATUS}" = "ok" ]; then
+            echo "  ✅ rss watch artifact written (signals=${SIGNALS:-0})"
+          else
+            echo "  ⚠️ rss watch artifact reports status=${STATUS:-unknown} — feed unreachable or returned non-RSS body"
+          fi
         else
           echo "  ⚠️ rss watch failed — continuing without blocking workflow"
           cat /tmp/rss-watch.err 2>/dev/null || true

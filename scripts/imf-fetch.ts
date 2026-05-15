@@ -38,6 +38,7 @@ import { fileURLToPath } from 'node:url';
 import {
   ImfClient,
   type ImfDataPoint,
+  type DatamapperEnvelope,
   IMF_WEO_INDICATORS,
   IMF_FM_INDICATORS,
   IMF_WEO_DATAMAPPER_AVAILABLE,
@@ -223,7 +224,7 @@ async function fetchWeoViaDirectDatamapper(
     if (!response.ok) {
       throw new Error(`Direct IMF Datamapper fallback failed: ${response.status} ${response.statusText}`);
     }
-    const raw = await response.json();
+    const raw = (await response.json()) as DatamapperEnvelope;
     return parseDatamapperValues(raw, indicator, code, client.weoVintage).slice(0, years);
   } finally {
     clearTimeout(timeoutId);
@@ -236,6 +237,12 @@ function maybePersistWeoPayload(
   booleans: ReadonlySet<string>,
 ): void {
   if (!booleans.has('persist')) {
+    return;
+  }
+  // Never rewrite cached IMF artifacts when the payload was itself recovered
+  // from cache fallback — that would overwrite the original `fetchedAt` and
+  // defeat the >6-month vintage discipline check.
+  if (payload['transport'] === 'cache') {
     return;
   }
   const dataPoints = Array.isArray(payload['dataPoints']) ? payload['dataPoints'] as ImfDataPoint[] : [];

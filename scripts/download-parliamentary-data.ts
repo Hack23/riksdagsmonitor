@@ -37,7 +37,7 @@ import {
   subtractBusinessDays,
   MAX_LOOKBACK_BUSINESS_DAYS,
   fetchFullTextForTopN,
-  MAX_ENRICHMENT_PER_TYPE,
+  LONG_HORIZON_FULL_TEXT_FLOOR,
 } from './parliamentary-data/data-downloader.js';
 import type { DocumentTypeKey, FullTextFetchOutcome } from './parliamentary-data/data-downloader.js';
 
@@ -171,7 +171,7 @@ export function parseArgs(argv: string[]): {
  * 1. `--full-text-for-all` always wins and fetches the entire selected batch.
  * 2. `--auto-full-text-top-n 0` explicitly disables the follow-up fetch.
  * 3. Long-horizon batches (`--limit >= 30`) enforce a minimum floor of
- *    `MAX_ENRICHMENT_PER_TYPE` so year-ahead style runs cannot silently stay
+ *    `LONG_HORIZON_FULL_TEXT_FLOOR` so year-ahead style runs cannot silently stay
  *    at the old top-5 behaviour.
  * 4. Shorter-horizon runs preserve the caller-supplied top-N or `null`.
  */
@@ -189,10 +189,10 @@ export function resolveAutoFullTextTopN(
   }
   const longHorizonFloorApplies = limit >= 30;
   if (autoFullTextTopN === null) {
-    return longHorizonFloorApplies ? MAX_ENRICHMENT_PER_TYPE : null;
+    return longHorizonFloorApplies ? LONG_HORIZON_FULL_TEXT_FLOOR : null;
   }
   if (longHorizonFloorApplies && autoFullTextTopN > 0) {
-    return Math.max(autoFullTextTopN, MAX_ENRICHMENT_PER_TYPE);
+    return Math.max(autoFullTextTopN, LONG_HORIZON_FULL_TEXT_FLOOR);
   }
   return autoFullTextTopN;
 }
@@ -435,6 +435,7 @@ async function runPreArticleAnalysis(opts: {
   docType: DocumentTypeKey | null;
   documentIds: string[];
   autoFullTextTopN: number | null;
+  fullTextForAll: boolean;
 }): Promise<void> {
   const { date, limit, aggregate, weekLabel, rm, docType, documentIds, autoFullTextTopN, fullTextForAll } = opts;
 
@@ -620,7 +621,11 @@ async function runPreArticleAnalysis(opts: {
   if (effectiveAutoFullTextTopN !== null && effectiveAutoFullTextTopN > 0) {
     const successCount = fullTextOutcomes?.filter(o => o.success).length ?? 0;
     const attempted = fullTextOutcomes?.length ?? 0;
-    console.log(`   📄 Full text: ${successCount}/${attempted} top-${effectiveAutoFullTextTopN} documents (see full-text/ sub-folder)`);
+    if (fullTextForAll) {
+      console.log(`   📄 Full text: ${successCount}/${attempted} document(s) (full batch coverage; see full-text/ sub-folder)`);
+    } else {
+      console.log(`   📄 Full text: ${successCount}/${attempted} top-${effectiveAutoFullTextTopN} documents from flattened batch (see full-text/ sub-folder)`);
+    }
   }
   if (docType) {
     console.log(`   📋 Scoped to: ${docType}`);
@@ -631,9 +636,14 @@ async function runPreArticleAnalysis(opts: {
   console.log('      - analysis/templates/ (per-file analysis templates)');
   console.log('      - npx tsx scripts/catalog-downloaded-data.ts --pending-only');
   if (effectiveAutoFullTextTopN !== null && effectiveAutoFullTextTopN > 0) {
-    console.log(`      ℹ️  Significance-scoring note: top-${effectiveAutoFullTextTopN} documents per type have full text`);
-    console.log('         available (contentFetched=true) — AI significance-scoring step');
-    console.log('         should prioritise those documents for deeper analysis.');
+    if (fullTextForAll) {
+      console.log(`      ℹ️  Significance-scoring note: all ${effectiveAutoFullTextTopN} selected documents`);
+      console.log('         (across types) have full text available (contentFetched=true).');
+    } else {
+      console.log(`      ℹ️  Significance-scoring note: top-${effectiveAutoFullTextTopN} documents from the`);
+      console.log('         flattened batch have full text available (contentFetched=true) — AI');
+      console.log('         significance-scoring step should prioritise those documents for deeper analysis.');
+    }
   }
 }
 

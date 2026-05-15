@@ -35,11 +35,32 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, '..');
 export const DEFAULT_LAGRADET_OUTPUT = path.join(REPO_ROOT, 'data', 'lagradet-status.json');
 const DEFAULT_LAGRADET_BASE_URL = 'https://www.lagradet.se';
+export const LAGRADET_REQUEST_TIMEOUT_MS = 15_000;
 const LINK_RE = /<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
 const TAG_RE = /<[^>]+>/g;
 
 function stripHtml(html: string): string {
   return decodeHtmlEntities(html).replace(TAG_RE, ' ').replace(/\s+/g, ' ').trim();
+}
+
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/**
+ * Match a Lagrådet yttrande reference (e.g. `2025/26:42`) against haystack text
+ * using a non-alphanumeric boundary on both sides. Prevents `2025/26:42` from
+ * matching `2025/26:420` or `2025/26:421`.
+ */
+function referenceMatches(haystack: string, reference: string): boolean {
+  // Lower-case both, and require either start-of-string or a non-alphanumeric
+  // character on each side of the reference. `reference` can contain `/` and
+  // `:` which are not word characters in JS regex, so use an explicit
+  // character class instead of `\b`.
+  const escaped = escapeRegExp(reference.toLowerCase());
+  const boundary = '(?:^|[^a-z0-9])';
+  const trailing = '(?:$|[^a-z0-9])';
+  return new RegExp(`${boundary}${escaped}${trailing}`).test(haystack);
 }
 
 export function extractLagradetMatches(html: string, reference: string, baseUrl = DEFAULT_LAGRADET_BASE_URL): LagradetMatch[] {
@@ -50,7 +71,7 @@ export function extractLagradetMatches(html: string, reference: string, baseUrl 
     const label = stripHtml(match[2] ?? '');
     if (!href || !label) continue;
     const haystack = `${href} ${label}`.toLowerCase();
-    if (!haystack.includes(needle)) continue;
+    if (!referenceMatches(haystack, needle)) continue;
     matches.push({
       title: label,
       url: new URL(href, baseUrl).toString(),
@@ -92,8 +113,11 @@ export async function fetchLagradetStatus(reference: string | null, config: Lagr
   }
 
   const fetchFn = config.fetchFn ?? globalThis.fetch;
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), LAGRADET_REQUEST_TIMEOUT_MS);
   try {
     const response = await fetchFn(searchedUrl, {
+      signal: controller.signal,
       headers: {
         Accept: 'text/html,application/xhtml+xml',
         'User-Agent': 'Mozilla/5.0 (compatible; Riksdagsmonitor lagradet-fetch)',
@@ -131,6 +155,8 @@ export async function fetchLagradetStatus(reference: string | null, config: Lagr
       matches: [],
       notes: error instanceof Error ? error.message : String(error),
     };
+  } finally {
+    clearTimeout(timer);
   }
 }
 

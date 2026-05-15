@@ -37,8 +37,13 @@ export interface RssWatchResult {
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, '..');
 export const DEFAULT_RSS_OUTPUT = path.join(REPO_ROOT, 'data', 'rss-watch.json');
-export const DEFAULT_RSS_FEED_URL = 'https://data.riksdagen.se/rss/dokumentlista/?doktyp=bet';
+// Default to the unscoped Riksdagen RSS feed so RSS PIR matching works for any
+// document type (propositions, motions, questions, interpellations, betänkanden).
+// Callers can scope to a specific doktyp via `--feed-url` or `--doktyp`.
+export const DEFAULT_RSS_FEED_URL = 'https://data.riksdagen.se/rss/dokumentlista/';
+export const RSS_REQUEST_TIMEOUT_MS = 15_000;
 const ITEM_RE = /<item>([\s\S]*?)<\/item>/gi;
+const RSS_ROOT_RE = /<(rss|feed|channel)[\s>]/i;
 
 function decodeXml(value: string | undefined): string {
   return decodeHtmlEntities((value ?? '').trim());
@@ -68,12 +73,22 @@ export function parseRssItems(xml: string): RssItem[] {
   return items;
 }
 
+function dokIdMatchesHaystack(haystack: string, dokId: string): boolean {
+  // Require a non-alphanumeric boundary on both sides of the dok_id so the
+  // tracked id `H901SFU1` does not falsely match an RSS item that references
+  // `H901SFU10` (i.e. a longer dok_id with the tracked id as a prefix).
+  const escaped = dokId.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return new RegExp(`(?:^|[^A-Z0-9])${escaped}(?:$|[^A-Z0-9])`).test(haystack);
+}
+
 export function buildRssSignals(items: readonly RssItem[], trackedDokIds: readonly string[]): RssSignal[] {
-  const normalizedIds = trackedDokIds.map((value) => value.toUpperCase()).filter(Boolean);
+  const normalizedIds = trackedDokIds
+    .map((value) => value.toUpperCase().trim())
+    .filter(Boolean);
   if (normalizedIds.length === 0) return [];
   return items.flatMap((item) => {
     const haystack = `${item.title} ${item.link} ${item.guid} ${item.description ?? ''}`.toUpperCase();
-    const matchedDokIds = normalizedIds.filter((dokId) => haystack.includes(dokId));
+    const matchedDokIds = normalizedIds.filter((dokId) => dokIdMatchesHaystack(haystack, dokId));
     if (matchedDokIds.length === 0) return [];
     return [{ ...item, matchedDokIds }];
   });
@@ -85,8 +100,11 @@ export async function watchRssFeed(
   fetchFn: typeof fetch = globalThis.fetch,
 ): Promise<RssWatchResult> {
   const fetchedAt = new Date().toISOString();
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), RSS_REQUEST_TIMEOUT_MS);
   try {
     const response = await fetchFn(feedUrl, {
+      signal: controller.signal,
       headers: {
         Accept: 'application/rss+xml, application/xml, text/xml;q=0.9, */*;q=0.8',
         'User-Agent': 'Mozilla/5.0 (compatible; Riksdagsmonitor rss-watch)',
@@ -106,6 +124,23 @@ export async function watchRssFeed(
       };
     }
     const xml = await response.text();
+    // Defence-in-depth: a 2xx response that returns an HTML error page or a
+    // schema-changed payload would otherwise be silently treated as a healthy
+    // feed with zero items. Require the body to look like RSS/Atom XML
+    // (<rss>, <feed>, or <channel> root element).
+    if (!RSS_ROOT_RE.test(xml)) {
+      return {
+        schemaVersion: '1.0',
+        fetchedAt,
+        feedUrl,
+        trackedDokIds,
+        itemCount: 0,
+        signalCount: 0,
+        status: 'error',
+        signals: [],
+        notes: 'Response body does not look like RSS/Atom XML (no <rss>, <feed>, or <channel> root element)',
+      };
+    }
     const items = parseRssItems(xml);
     const signals = buildRssSignals(items, trackedDokIds);
     return {
@@ -131,6 +166,8 @@ export async function watchRssFeed(
       signals: [],
       notes: error instanceof Error ? error.message : String(error),
     };
+  } finally {
+    clearTimeout(timer);
   }
 }
 

@@ -2,13 +2,20 @@
 /**
  * @module scripts/calendar-fetch
  * @description Emits a compact calendar-status JSON for forward indicators.
+ *
+ * Routes through `fetchCalendarWithFallback()` from `./fetch-calendar.js` so a
+ * transient MCP outage transparently falls back to the public
+ * `riksdagen.se/sv/kalendarium/` scrape. When `org` (or `akt`) is supplied we
+ * filter the resulting events to that scope so the downstream artifact still
+ * matches the caller's intent.
  */
 
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { normalizeMcpCalendarEvent } from './fetch-calendar.js';
+import type { CalendarEvent } from './fetch-calendar.js';
+import { fetchCalendarWithFallback } from './fetch-calendar.js';
 import { MCPClient } from './mcp-client/client.js';
 
 export interface CalendarStatus {
@@ -20,7 +27,8 @@ export interface CalendarStatus {
   readonly akt: string | null;
   readonly eventCount: number;
   readonly status: 'ok' | 'error';
-  readonly events: readonly ReturnType<typeof normalizeMcpCalendarEvent>[];
+  readonly path: 'mcp-primary' | 'web-fallback' | 'none';
+  readonly events: readonly CalendarEvent[];
   readonly notes?: string;
 }
 
@@ -28,17 +36,100 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, '..');
 export const DEFAULT_CALENDAR_STATUS_OUTPUT = path.join(REPO_ROOT, 'data', 'calendar-status.json');
 
+type CalendarResilientFetcher = (
+  from: string,
+  to: string,
+) => Promise<{ events: readonly CalendarEvent[]; path: 'mcp-primary' | 'web-fallback' | 'none'; primaryError?: string; fallbackError?: string }>;
+
+const defaultResilientFetcher: CalendarResilientFetcher = async (from, to) => {
+  const result = await fetchCalendarWithFallback(from, to);
+  const ret: { events: readonly CalendarEvent[]; path: 'mcp-primary' | 'web-fallback' | 'none'; primaryError?: string; fallbackError?: string } = {
+    events: result.events,
+    path: result.manifest.path,
+  };
+  if (result.manifest.primaryError !== undefined) {
+    ret.primaryError = result.manifest.primaryError;
+  }
+  if (result.manifest.fallbackError !== undefined) {
+    ret.fallbackError = result.manifest.fallbackError;
+  }
+  return ret;
+};
+
+function matchesScope(event: CalendarEvent, org: string | null, akt: string | null): boolean {
+  if (org && event.org && event.org.toLowerCase() !== org.toLowerCase()) {
+    return false;
+  }
+  if (akt && event.akt && event.akt.toLowerCase() !== akt.toLowerCase()) {
+    return false;
+  }
+  return true;
+}
+
 export async function fetchCalendarStatus(
   from: string,
   to: string,
   org: string | null = null,
   akt: string | null = null,
-  client: Pick<MCPClient, 'fetchCalendarEvents'> = new MCPClient(),
+  // Back-compat: tests pass a stub MCP client. When provided we route through it
+  // directly so tests can simulate MCP failure paths deterministically.
+  client?: Pick<MCPClient, 'fetchCalendarEvents'> | CalendarResilientFetcher,
 ): Promise<CalendarStatus> {
   const fetchedAt = new Date().toISOString();
   try {
-    const raw = await client.fetchCalendarEvents(from, to, org, akt);
-    const events = raw.map((event) => normalizeMcpCalendarEvent(event));
+    // Resilient default: use the MCP→web fallback chain so a transient MCP
+    // outage does not block the artifact.
+    if (!client) {
+      const result = await defaultResilientFetcher(from, to);
+      const scoped = (org || akt)
+        ? result.events.filter((event) => matchesScope(event, org, akt))
+        : result.events;
+      const okPath = result.path !== 'none';
+      const baseStatus: CalendarStatus = {
+        schemaVersion: '1.0',
+        fetchedAt,
+        from,
+        to,
+        org,
+        akt,
+        eventCount: scoped.length,
+        status: okPath ? 'ok' : 'error',
+        path: result.path,
+        events: scoped,
+        ...(result.primaryError || result.fallbackError
+          ? { notes: [
+              result.primaryError ? `primary: ${result.primaryError}` : '',
+              result.fallbackError ? `fallback: ${result.fallbackError}` : '',
+            ].filter(Boolean).join(' | ') }
+          : {}),
+      };
+      return baseStatus;
+    }
+    // Legacy path: caller injected an MCP-style client. Keep the original
+    // behaviour so the test surface remains stable.
+    if (typeof (client as { fetchCalendarEvents?: unknown }).fetchCalendarEvents === 'function') {
+      const mcp = client as Pick<MCPClient, 'fetchCalendarEvents'>;
+      const raw = await mcp.fetchCalendarEvents(from, to, org, akt);
+      const { normalizeMcpCalendarEvent } = await import('./fetch-calendar.js');
+      const events = raw.map((event) => normalizeMcpCalendarEvent(event));
+      return {
+        schemaVersion: '1.0',
+        fetchedAt,
+        from,
+        to,
+        org,
+        akt,
+        eventCount: events.length,
+        status: 'ok',
+        path: 'mcp-primary',
+        events,
+      };
+    }
+    const customFetcher = client as CalendarResilientFetcher;
+    const result = await customFetcher(from, to);
+    const scoped = (org || akt)
+      ? result.events.filter((event) => matchesScope(event, org, akt))
+      : result.events;
     return {
       schemaVersion: '1.0',
       fetchedAt,
@@ -46,9 +137,10 @@ export async function fetchCalendarStatus(
       to,
       org,
       akt,
-      eventCount: events.length,
-      status: 'ok',
-      events,
+      eventCount: scoped.length,
+      status: result.path !== 'none' ? 'ok' : 'error',
+      path: result.path,
+      events: scoped,
     };
   } catch (error) {
     return {
@@ -60,6 +152,7 @@ export async function fetchCalendarStatus(
       akt,
       eventCount: 0,
       status: 'error',
+      path: 'none',
       events: [],
       notes: error instanceof Error ? error.message : String(error),
     };

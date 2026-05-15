@@ -63,10 +63,21 @@ export interface PollingFetchConfig {
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, '..');
 export const DEFAULT_POLLING_OUTPUT = path.join(REPO_ROOT, 'data', 'polling-context.json');
+// Per-provider request timeout (ms). Each provider fails independently so a
+// single hung page cannot stall the whole script under the 60 s action-level
+// `timeout` and prevent the degraded `data/polling-context.json` artifact from
+// being written.
+export const POLLING_REQUEST_TIMEOUT_MS = 15_000;
 export const DEFAULT_POLLING_PROVIDERS: readonly PollingProviderDefinition[] = Object.freeze([
   { provider: 'sifo', url: 'https://www.veriangroup.com/sv/expertis/politik-och-opinion/valjarbarometer' },
   { provider: 'novus', url: 'https://novus.se/valjarbarometer-arkiv/kategori/valjarbarometern/' },
-  { provider: 'demoskop', url: 'https://demoskop.se/v%C3%A4ljarbarometern/' },
+  // NOTE: Demoskop's public landing URL changed; the bare path
+  // `/v%C3%A4ljarbarometern/` returns 404. We start from the Demoskop home
+  // page so the follow-up-link heuristic in `findFollowUpPollingUrl` can
+  // discover the latest wave article rather than 404-ing immediately. This is
+  // best-effort — when discovery fails the entry is marked
+  // `status: "unavailable"` with a clear note.
+  { provider: 'demoskop', url: 'https://demoskop.se/' },
 ]);
 
 const CANONICAL_RE = /<link\b[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["'][^>]*>/i;
@@ -98,11 +109,18 @@ function extractNumericPartyShare(text: string, partyCode: PartyCode): number | 
   return undefined;
 }
 
+function isArchiveRootUrl(url: string): boolean {
+  // Treat /arkiv/ (archive) listing pages and category roots as "canonical archive
+  // roots" we should NOT prefer over a specific polling article. Examples:
+  //   https://novus.se/valjarbarometer-arkiv/
+  //   https://example.test/category/valjarbarometer/
+  return /\/(arkiv|category|kategori|tag)(\/|$)/i.test(new URL(url).pathname);
+}
+
 function findFollowUpPollingUrl(sourceUrl: string, html: string): string | null {
-  const canonical = CANONICAL_RE.exec(html)?.[1];
-  if (canonical && canonical !== sourceUrl) {
-    return canonical;
-  }
+  // First, walk anchor tags and prefer concrete article links that match the
+  // polling-wave pattern. We only fall back to <link rel="canonical"> when no
+  // article link is found, because canonical often points at an archive root.
   for (const match of html.matchAll(HREF_RE)) {
     const href = match[1];
     const label = stripHtml(match[2] ?? '');
@@ -110,9 +128,13 @@ function findFollowUpPollingUrl(sourceUrl: string, html: string): string | null 
     const haystack = `${href} ${label}`.toLowerCase();
     if (!/valjarbarometer|väljarbarometer/.test(haystack)) continue;
     const resolved = new URL(href, sourceUrl).toString();
-    if (resolved !== sourceUrl) {
-      return resolved;
-    }
+    if (resolved === sourceUrl) continue;
+    if (isArchiveRootUrl(resolved)) continue;
+    return resolved;
+  }
+  const canonical = CANONICAL_RE.exec(html)?.[1];
+  if (canonical && canonical !== sourceUrl) {
+    return canonical;
   }
   return null;
 }
@@ -189,6 +211,26 @@ export function buildPollingAggregate(waves: readonly PollingWave[]): PollingCon
   };
 }
 
+async function fetchWithTimeout(
+  fetchFn: typeof fetch,
+  url: string,
+  timeoutMs: number,
+): Promise<Response> {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetchFn(url, {
+      signal: controller.signal,
+      headers: {
+        Accept: 'text/html,application/xhtml+xml',
+        'User-Agent': 'Mozilla/5.0 (compatible; Riksdagsmonitor polling-fetch)',
+      },
+    });
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 export async function fetchPollingContext(config: PollingFetchConfig = {}): Promise<PollingContext> {
   const providers = config.providers ?? DEFAULT_POLLING_PROVIDERS;
   const fetchFn = config.fetchFn ?? globalThis.fetch;
@@ -197,12 +239,7 @@ export async function fetchPollingContext(config: PollingFetchConfig = {}): Prom
   const waves = await Promise.all(
     providers.map(async (provider): Promise<PollingWave> => {
       try {
-        const response = await fetchFn(provider.url, {
-          headers: {
-            Accept: 'text/html,application/xhtml+xml',
-            'User-Agent': 'Mozilla/5.0 (compatible; Riksdagsmonitor polling-fetch)',
-          },
-        });
+        const response = await fetchWithTimeout(fetchFn, provider.url, POLLING_REQUEST_TIMEOUT_MS);
         if (!response.ok) {
           return {
             provider: provider.provider,
@@ -218,12 +255,7 @@ export async function fetchPollingContext(config: PollingFetchConfig = {}): Prom
         if (wave.status === 'unavailable') {
           const followUpUrl = findFollowUpPollingUrl(provider.url, html);
           if (followUpUrl) {
-            const followUpResponse = await fetchFn(followUpUrl, {
-              headers: {
-                Accept: 'text/html,application/xhtml+xml',
-                'User-Agent': 'Mozilla/5.0 (compatible; Riksdagsmonitor polling-fetch)',
-              },
-            });
+            const followUpResponse = await fetchWithTimeout(fetchFn, followUpUrl, POLLING_REQUEST_TIMEOUT_MS);
             if (followUpResponse.ok) {
               wave = extractPollingWaveFromHtml(provider.provider, followUpUrl, await followUpResponse.text(), fetchedAt);
             }
