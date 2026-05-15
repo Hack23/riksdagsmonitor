@@ -83,6 +83,11 @@ export interface DownloadResult {
   manifest: DownloadManifest;
 }
 
+interface FetchTaskResult {
+  items: RawDocument[];
+  diagnostic: MCPToolInvocationDiagnostic;
+}
+
 /** Maximum number of documents to enrich with full-text content per type. */
 export const MAX_ENRICHMENT_PER_TYPE = 5;
 
@@ -265,12 +270,18 @@ export async function downloadAllDocuments(
     interpellations: [],
   };
 
-  const fetchTasks = [
+  const fetchTasks: Array<{
+    name: FetchTaskName;
+    source: string;
+    query: () => Record<string, unknown>;
+    fetch: () => Promise<FetchTaskResult>;
+    assign: (raw: RawDocument[]) => void;
+  }> = [
     {
       name: 'fetchPropositions',
       source: 'get_propositioner',
       query: () => ({ limit, rm }),
-      fetch: async () => {
+      fetch: async (): Promise<FetchTaskResult> => {
         const raw = await client.fetchPropositions(limit, rm);
         const query = { limit, ...(rm ? { rm } : {}) };
         const items = annotateDocumentsWithCoverage(
@@ -304,7 +315,7 @@ export async function downloadAllDocuments(
       name: 'fetchMotions',
       source: 'get_motioner',
       query: () => ({ limit, rm }),
-      fetch: async () => {
+      fetch: async (): Promise<FetchTaskResult> => {
         const raw = await client.fetchMotions(limit, rm);
         const query = { limit, ...(rm ? { rm } : {}) };
         const items = annotateDocumentsWithCoverage(
@@ -338,7 +349,7 @@ export async function downloadAllDocuments(
       name: 'fetchCommitteeReports',
       source: 'get_betankanden',
       query: () => ({ limit, rm }),
-      fetch: async () => {
+      fetch: async (): Promise<FetchTaskResult> => {
         const raw = await client.fetchCommitteeReports(limit, rm);
         const query = { limit, ...(rm ? { rm } : {}) };
         const items = annotateDocumentsWithCoverage(
@@ -372,7 +383,7 @@ export async function downloadAllDocuments(
       name: 'fetchVotingRecords',
       source: 'search_voteringar',
       query: () => ({ limit, rm }),
-      fetch: async () => {
+      fetch: async (): Promise<FetchTaskResult> => {
         const result = await client.fetchVotingRecordsWithDiagnostics({ limit, rm });
         return {
           items: normalise(result.items),
@@ -392,7 +403,7 @@ export async function downloadAllDocuments(
       name: 'searchSpeeches',
       source: 'search_anforanden',
       query: () => ({ limit, rm }),
-      fetch: async () => {
+      fetch: async (): Promise<FetchTaskResult> => {
         const query = { limit, ...(rm ? { rm } : {}) };
         const raw = await client.searchSpeeches(query);
         const items = annotateDocumentsWithCoverage(
@@ -426,7 +437,7 @@ export async function downloadAllDocuments(
       name: 'fetchWrittenQuestions',
       source: 'get_fragor',
       query: () => ({ limit, rm }),
-      fetch: async () => {
+      fetch: async (): Promise<FetchTaskResult> => {
         const query = { limit, ...(rm ? { rm } : {}) };
         const raw = await client.fetchWrittenQuestions(query);
         const items = annotateDocumentsWithCoverage(
@@ -460,7 +471,7 @@ export async function downloadAllDocuments(
       name: 'fetchInterpellations',
       source: 'get_interpellationer',
       query: () => ({ limit, rm }),
-      fetch: async () => {
+      fetch: async (): Promise<FetchTaskResult> => {
         const query = { limit, ...(rm ? { rm } : {}) };
         const raw = await client.fetchInterpellations(query);
         const items = annotateDocumentsWithCoverage(

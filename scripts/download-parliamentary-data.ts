@@ -349,10 +349,13 @@ export { serializeDataManifest };
  * the supplied fallback when none of those identifiers are available.
  */
 function extractDokId(doc: RawDocument, fallback: string): string {
+  const asNonEmptyString = (value: unknown): string => typeof value === 'string' && value.trim().length > 0
+    ? value.trim()
+    : '';
   return (
-    doc.dok_id
-    || (doc as Record<string, unknown>)['dokument_id'] as string
-    || (doc as Record<string, unknown>)['dokumentnamn'] as string
+    asNonEmptyString(doc.dok_id)
+    || asNonEmptyString((doc as Record<string, unknown>)['dokument_id'])
+    || asNonEmptyString((doc as Record<string, unknown>)['dokumentnamn'])
     || fallback
   );
 }
