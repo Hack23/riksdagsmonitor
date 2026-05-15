@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.4-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--05--15-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.3 | **📅 Last Updated:** 2026-04-25 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 1.4 | **📅 Last Updated:** 2026-05-15 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-21
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -84,7 +84,7 @@
 ## 🔄 Tradecraft Anchors
 
 | Element | Value | Reference |
-|---------|-------|-----------|
+|---------|-------|----------|
 | **F3EAD Stage** | **FIND → FIX** | This methodology covers collection and document-identity establishment |
 | **PIRs Served** | All PIRs — manifest establishes the evidence foundation for every PIR | See [`political-style-guide.md` §PIR/EEI Catalog](political-style-guide.md#-priority-intelligence-requirements-pir--essential-elements-of-information-eei) |
 | **Admiralty Floor** | Data sources recorded with Admiralty code per Collection Management Matrix | See [`political-style-guide.md` §Collection Management Matrix](political-style-guide.md#%EF%B8%8F-collection-management-matrix) |
@@ -114,7 +114,7 @@ flowchart LR
     R[riksdag-regering MCP]:::src
     G[regeringen.se]:::src
     S[SCB PxWeb]:::src
-    W[IMF<br/>WEO+FM+IFS+BOP+GFS_COFOG+DOTS+PCPS+MFS_IR+ER<br/>🏛️ primary economic source]:::src
+    W[IMF<br/>WEO+FM+IFS+BOP+GFS_COFOG+DOTS+PCPS+MFS_IR+ER<br/>🏦 primary economic source]:::src
     WB[World Bank<br/>WGI / environment / social residue<br/>⚠️ non-economic only]:::src
     ST[Statskontoret<br/>agency-capacity reports]:::src
 
@@ -334,7 +334,7 @@ flowchart TD
 ## 🔗 Template bindings
 
 | Template | Methodology section |
-|----------|--------------------|
+|----------|--------------------||
 | `analysis/templates/data-download-manifest.md` | Part 1 above |
 | `analysis/templates/cross-reference-map.md` | Part 2 above |
 
@@ -360,6 +360,13 @@ flowchart TD
 | NIST CSF PR.DS-6 | Integrity verification via SHA / URL for every record |
 | CIS 3.1 + 8.1 | Data inventory + audit log management |
 | GDPR Art. 5(1)(a)(c)(f) | Lawfulness + data minimisation + integrity documented per source |
+
+---
+
+## 📜 Changelog
+
+- **v1.4 (2026-05-15)** — Aligned version badge with header text (both now 1.4); bumped date to 2026-05-15.
+- **v1.3 (2026-04-25)** — All 7 atomic edge types enumerated with detection rules; edge-type → cluster-type crosswalk added binding `cross-reference-map.md` Mermaid edge labels to cluster taxonomy.
 
 ---
 
