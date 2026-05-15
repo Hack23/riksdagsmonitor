@@ -182,6 +182,11 @@ describe('parseArgs --auto-full-text-top-n', () => {
     expect(args.date).toBe('2026-04-27');
     expect(args.autoFullTextTopN).toBe(2);
   });
+
+  it('parses --full-text-for-all as an explicit override', () => {
+    const args = parseArgs([...BASE_ARGV, '--full-text-for-all']);
+    expect(args.fullTextForAll).toBe(true);
+  });
 });
 
 // ---------------------------------------------------------------------------
