@@ -1,6 +1,6 @@
 ---
-title: "Week Ahead: Aid Accountability,"
-description: "Sweden's Tidö government faces two scheduled interpellation debates (2026-05-18) on its dismantling of the aid architecture — HD10492 (consequences for children) and HD10493 (consequences of…"
+title: "Week Ahead: Swedish Aid Accountability Under Fire"
+description: "Sweden's Tidö government faces two interpellation debates (2026-05-18) on aid cuts — HD10492 (consequences for children) and HD10493 (discontinued country strategies). Minister Dousa admitted no impact assessments were conducted. Election in 121 days."
 keywords: "Week Ahead, English, May 15, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Week Ahead Accountability Sweden Tidö, Week, Ahead, Accountability, Sweden, Tidö, government, faces, scheduled, interpellation, debates, dismantling, architecture, HD10492"
 date: 2026-05-15
 subfolder: week-ahead
@@ -559,7 +559,7 @@ Kristdemokraterna (19 seats) has a structural tension on aid policy. KD's base i
 | Opposition motion to restore 1.0% GNI + return to 70 strategies | S(107)+V(24)+MP(18)+C(24) = 173 | M(68)+KD(19)+L(16)+SD(73) = 176 | 0 | FAILS — 173 vs 176 |
 | Partial motion: mandate impact assessment | S(107)+V(24)+MP(18)+C(24) = 173 | M(68)+KD(19)+L(16)+SD(73) = 176 | 0 | FAILS — 173 vs 176 |
 
-**Note**: C's position — Centerpartiet voted against the Tidö coalition in forming it but has not consistently voted with the opposition on every issue. However, on aid policy, C is expected to support the opposition given their traditionally internationalist stance.
+**Note**: C's position — Centerpartiet voted against the Tidö coalition in forming it but has not consistently voted with the opposition on every issue. However, on aid policy, C has historically aligned with opposition parties given their traditionally internationalist stance.
 
 ### Why No V Motion?
 
