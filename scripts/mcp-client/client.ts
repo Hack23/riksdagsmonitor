@@ -208,13 +208,41 @@ function getDefaultAuthToken(): string {
 const DEFAULT_MCP_AUTH_TOKEN: string = getDefaultAuthToken();
 
 let jsonRpcId = 1;
+/**
+ * Phrases that indicate a document-level indexing gap rather than a
+ * transport/operational MCP failure.
+ *
+ * Bare `404` and bare `not found` are intentionally excluded because they
+ * also appear in transport-level errors such as `MCP server error: 404 Not
+ * Found` from a wrong endpoint or unavailable route. Treating those as
+ * `not_indexed` would mask MCP configuration/server outages as document
+ * indexing lag. Use {@link classifyDocumentErrorAsNotIndexed} which combines
+ * this list with a transport-error sentinel and a dok_id-aware fallback.
+ */
 const NOT_INDEXED_ERROR_PATTERNS = [
-  'not found',
-  '404',
   'not indexed',
   'no document',
-  'ingen',
+  'document not found',
+  'dok_id not found',
 ] as const;
+
+/**
+ * Transport / operational error signatures. When present, the failure must be
+ * surfaced as `fetch_error`, never collapsed into `not_indexed`.
+ */
+const TRANSPORT_ERROR_RE = /(mcp server error|transport error|server error|endpoint|econnrefused|etimedout|fetch failed|network|gateway|\b50[023]\b)/i;
+
+function classifyDocumentErrorAsNotIndexed(message: string, dokId?: string): boolean {
+  if (!message) return false;
+  if (TRANSPORT_ERROR_RE.test(message)) return false;
+  const lower = message.toLowerCase();
+  if (NOT_INDEXED_ERROR_PATTERNS.some((p) => lower.includes(p))) return true;
+  // Document-level "not found" responses from upstream MCP tools typically
+  // echo the dok_id. Transport-level failures never do — so requiring the
+  // dok_id to appear in the message disambiguates the two cases.
+  if (dokId && lower.includes(dokId.toLowerCase()) && lower.includes('not found')) return true;
+  return false;
+}
 
 /**
  * Compute the immediately preceding riksmöte label from `YYYY/YY` input.
@@ -763,8 +791,7 @@ export class MCPClient {
       };
     } catch (error) {
       const err = error as Error;
-      const msg = (err.message ?? '').toLowerCase();
-      const notIndexedLike = NOT_INDEXED_ERROR_PATTERNS.some(pattern => msg.includes(pattern));
+      const notIndexedLike = classifyDocumentErrorAsNotIndexed(err.message ?? '', dok_id);
       if (!notIndexedLike) throw error;
 
       const coverageState = 'not_indexed';

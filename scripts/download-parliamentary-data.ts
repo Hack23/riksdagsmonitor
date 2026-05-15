@@ -16,6 +16,8 @@
  *   npx tsx scripts/download-parliamentary-data.ts [--date YYYY-MM-DD] [--limit N]
  *   npx tsx scripts/download-parliamentary-data.ts --aggregate weekly [--date YYYY-WNN]
  *   npx tsx scripts/download-parliamentary-data.ts --auto-full-text-top-n 2
+ *   npx tsx scripts/download-parliamentary-data.ts --limit 30 --auto-full-text-top-n 5
+ *   npx tsx scripts/download-parliamentary-data.ts --full-text-for-all
  *
  * @see analysis/methodologies/ai-driven-analysis-guide.md
  * @author Hack23 AB
@@ -39,6 +41,7 @@ import {
   subtractBusinessDays,
   MAX_LOOKBACK_BUSINESS_DAYS,
   fetchFullTextForTopN,
+  LONG_HORIZON_FULL_TEXT_FLOOR,
 } from './parliamentary-data/data-downloader.js';
 import type { DocumentTypeKey, FullTextFetchOutcome } from './parliamentary-data/data-downloader.js';
 
@@ -79,6 +82,7 @@ export function parseArgs(argv: string[]): {
   docType: DocumentTypeKey | null;
   documentIds: string[];
   autoFullTextTopN: number | null;
+  fullTextForAll: boolean;
 } {
   const args = argv.slice(2);
   const get = (flag: string): string | null => {
@@ -169,7 +173,42 @@ export function parseArgs(argv: string[]): {
     autoFullTextTopN = parsed;
   }
 
-  return { date: isoDate, aggregate, limit, weekLabel, rm, docType, documentIds, autoFullTextTopN };
+  const fullTextForAll = args.includes('--full-text-for-all');
+
+  return { date: isoDate, aggregate, limit, weekLabel, rm, docType, documentIds, autoFullTextTopN, fullTextForAll };
+}
+
+/**
+ * Resolve the effective full-text follow-up target for the current run.
+ *
+ * Resolution order:
+ * 1. `--full-text-for-all` always wins and fetches the entire selected batch.
+ * 2. `--auto-full-text-top-n 0` explicitly disables the follow-up fetch.
+ * 3. Long-horizon batches (`--limit >= 30`) enforce a minimum floor of
+ *    `LONG_HORIZON_FULL_TEXT_FLOOR` so year-ahead style runs cannot silently stay
+ *    at the old top-5 behaviour.
+ * 4. Shorter-horizon runs preserve the caller-supplied top-N or `null`.
+ */
+export function resolveAutoFullTextTopN(
+  limit: number,
+  autoFullTextTopN: number | null,
+  fullTextForAll: boolean,
+  docCount = 0,
+): number | null {
+  if (fullTextForAll) {
+    return Math.max(0, docCount);
+  }
+  if (autoFullTextTopN === 0) {
+    return 0;
+  }
+  const longHorizonFloorApplies = limit >= 30;
+  if (autoFullTextTopN === null) {
+    return longHorizonFloorApplies ? LONG_HORIZON_FULL_TEXT_FLOOR : null;
+  }
+  if (longHorizonFloorApplies && autoFullTextTopN > 0) {
+    return Math.max(autoFullTextTopN, LONG_HORIZON_FULL_TEXT_FLOOR);
+  }
+  return autoFullTextTopN;
 }
 
 function isoWeekNumber(date: Date): number {
@@ -231,6 +270,26 @@ function ensureDir(dir: string): void {
   fs.mkdirSync(dir, { recursive: true });
 }
 
+/**
+ * Escape a value for use inside a single GitHub-flavoured Markdown table cell.
+ *
+ * MCP error/notes text and serialised queries can include `|`, raw newlines,
+ * and backticks — all of which corrupt the table layout and make the
+ * diagnostics unparseable for downstream gates. We collapse whitespace and
+ * escape pipes so each diagnostic row remains a single, parseable row.
+ */
+function escapeMarkdownCell(value: unknown): string {
+  if (value === null || value === undefined) return '';
+  const str = typeof value === 'string' ? value : String(value);
+  return str
+    .replace(/\r\n?/g, ' ')
+    .replace(/\n/g, ' ')
+    .replace(/\t/g, ' ')
+    .replace(/\|/g, '\\|')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
 // ---------------------------------------------------------------------------
 // Data manifest serialization (factual download summary — NOT analysis)
 // ---------------------------------------------------------------------------
@@ -259,6 +318,7 @@ function serializeDataManifest(
     enqueued: number;
   },
   fullTextOutcomes?: FullTextFetchOutcome[],
+  fullTextMode: 'top-n' | 'all' = 'top-n',
 ): string {
   const totalDocs = Object.values(docCounts).reduce((a, b) => a + b, 0);
   const lines: string[] = [
@@ -299,8 +359,9 @@ function serializeDataManifest(
       const notes = diag.signal?.code
         ? `${diag.signal.code}: ${diag.signal.message}`
         : (diag.notes ?? '');
+      const queryCell = '`' + escapeMarkdownCell(JSON.stringify(diag.query)) + '`';
       lines.push(
-        `| ${diag.tool} | \`${JSON.stringify(diag.query)}\` | ${diag.resultCount} | ${diag.coverageState} | ${notes} |`,
+        `| ${escapeMarkdownCell(diag.tool)} | ${queryCell} | ${diag.resultCount} | ${escapeMarkdownCell(diag.coverageState)} | ${escapeMarkdownCell(notes)} |`,
       );
     }
   }
@@ -311,7 +372,7 @@ function serializeDataManifest(
     lines.push('|--------|----------------|-----------|------|-------------:|-------|');
     for (const row of documentCoverage) {
       lines.push(
-        `| ${row.dokId} | ${row.coverageState} | ${row.retrieval} | ${row.tool} | ${row.resultCount} | ${row.notes} |`,
+        `| ${escapeMarkdownCell(row.dokId)} | ${escapeMarkdownCell(row.coverageState)} | ${escapeMarkdownCell(row.retrieval)} | ${escapeMarkdownCell(row.tool)} | ${row.resultCount} | ${escapeMarkdownCell(row.notes)} |`,
       );
     }
   }
@@ -324,10 +385,11 @@ function serializeDataManifest(
       const available = o.success ? 'true' : 'false';
       const chars = o.chars > 0 ? String(o.chars) : '0';
       const notes = o.reason ?? (o.filePath ? `persisted: ${o.filePath}` : '');
-      lines.push(`| ${o.dokId} | ${o.coverageState} | ${available} | ${chars} | ${o.provenance.retrieval} | ${notes} |`);
+      lines.push(`| ${escapeMarkdownCell(o.dokId)} | ${escapeMarkdownCell(o.coverageState)} | ${available} | ${chars} | ${escapeMarkdownCell(o.provenance.retrieval)} | ${escapeMarkdownCell(notes)} |`);
     }
     const successCount = fullTextOutcomes.filter(o => o.success).length;
-    lines.push('', `**Full-text retrieved**: ${successCount}/${fullTextOutcomes.length} top documents`);
+    const coverageLabel = fullTextMode === 'all' ? 'selected documents' : 'top documents';
+    lines.push('', `**Full-text retrieved**: ${successCount}/${fullTextOutcomes.length} ${coverageLabel}`);
   }
 
   lines.push('', '## Deferred Retrieval Queue', '');
@@ -369,6 +431,7 @@ function extractDokId(doc: RawDocument, fallback: string): string {
 function buildDocumentCoverageSummary(
   docs: RawDocument[],
   fullTextOutcomes: FullTextFetchOutcome[] | undefined,
+  analysisRunDate?: string,
 ): Array<{
   dokId: string;
   coverageState: MCPCoverageState;
@@ -378,7 +441,10 @@ function buildDocumentCoverageSummary(
   notes: string;
 }> {
   const outcomeMap = new Map(fullTextOutcomes?.map(outcome => [outcome.dokId, outcome]) ?? []);
-  const runDate = new Date().toISOString().slice(0, 10);
+  // The analysis-run date should drive same-day inference, not the host
+  // machine's wall clock. Fall back to today only when the caller did not
+  // supply one (e.g. test helpers).
+  const runDate = analysisRunDate ?? new Date().toISOString().slice(0, 10);
   return docs.map((doc, index) => {
     const dokId = extractDokId(doc, `unknown-doc-${index + 1}`);
     const outcome = outcomeMap.get(dokId);
@@ -530,8 +596,9 @@ async function runPreArticleAnalysis(opts: {
   docType: DocumentTypeKey | null;
   documentIds: string[];
   autoFullTextTopN: number | null;
+  fullTextForAll: boolean;
 }): Promise<void> {
-  const { date, limit, aggregate, weekLabel, rm, docType, documentIds, autoFullTextTopN } = opts;
+  const { date, limit, aggregate, weekLabel, rm, docType, documentIds, autoFullTextTopN, fullTextForAll } = opts;
 
   if (aggregate && weekLabel) {
     console.log(`\n📅 Running weekly data summary for: ${weekLabel}`);
@@ -563,13 +630,20 @@ async function runPreArticleAnalysis(opts: {
   });
   const resolvedRm = rm ?? riksMoteFromDate(date);
 
-  const downloadOpts: { limit: number; rm: string; docTypes?: DocumentTypeKey[]; enrichLimit?: number } = { limit, rm: resolvedRm };
+  const downloadOpts: { limit: number; rm: string; docTypes?: DocumentTypeKey[]; enrichLimit?: number; analysisRunDate?: string } = { limit, rm: resolvedRm, analysisRunDate: date };
   if (docType) {
     downloadOpts.docTypes = [docType];
   }
-  if (autoFullTextTopN !== null) {
-    downloadOpts.enrichLimit = autoFullTextTopN;
-    console.log(`   📝 Full-text enrichment: top ${autoFullTextTopN} documents per type (--auto-full-text-top-n=${autoFullTextTopN})`);
+  const prefetchEnrichLimit = resolveAutoFullTextTopN(limit, autoFullTextTopN, false);
+  if (prefetchEnrichLimit !== null) {
+    downloadOpts.enrichLimit = prefetchEnrichLimit;
+    if (autoFullTextTopN !== null && prefetchEnrichLimit !== autoFullTextTopN) {
+      console.log(`   📝 Full-text enrichment floor raised to ${prefetchEnrichLimit} for long-horizon batch (requested ${autoFullTextTopN})`);
+    } else if (autoFullTextTopN === null && prefetchEnrichLimit > 0) {
+      console.log(`   📝 Full-text enrichment defaulted to top ${prefetchEnrichLimit} documents per type for long-horizon batch`);
+    } else {
+      console.log(`   📝 Full-text enrichment: top ${prefetchEnrichLimit} documents per type (--auto-full-text-top-n=${prefetchEnrichLimit})`);
+    }
   }
 
   const { data, manifest } = await downloadAllDocuments(client, downloadOpts);
@@ -635,6 +709,19 @@ async function runPreArticleAnalysis(opts: {
     }
   }
 
+  if (Object.keys(retryDrain.resolvedVoteringar).length > 0) {
+    let mergedVoteCount = 0;
+    for (const [queryKey, items] of Object.entries(retryDrain.resolvedVoteringar)) {
+      if (!Array.isArray(items) || items.length === 0) continue;
+      data.votes.push(...(items as RawDocument[]));
+      mergedVoteCount += items.length;
+      console.log(`   🗳️  Recovered ${items.length} voteringar from deferred queue (${queryKey})`);
+    }
+    if (mergedVoteCount > 0) {
+      console.log(`   🔁 Deferred queue restored ${mergedVoteCount} voteringar row(s) — appended to current-run output`);
+    }
+  }
+
   if (Object.keys(retryDrain.resolvedDocuments).length > 0) {
     const resolvedIds = new Set(Object.keys(retryDrain.resolvedDocuments));
     const mergedIds = new Set<string>();
@@ -686,10 +773,19 @@ async function runPreArticleAnalysis(opts: {
       reason: diag.signal?.message,
       requestedAt: new Date().toISOString(),
     }));
-  if (autoFullTextTopN !== null && autoFullTextTopN > 0 && allDocs.length > 0) {
-    console.log(`\n📄 Step 2b: Auto-fetching full text for top-${autoFullTextTopN} documents (--auto-full-text-top-n=${autoFullTextTopN})...`);
+  const effectiveAutoFullTextTopN = resolveAutoFullTextTopN(limit, autoFullTextTopN, fullTextForAll, allDocs.length);
+  if (effectiveAutoFullTextTopN !== null && effectiveAutoFullTextTopN > 0 && allDocs.length > 0) {
+    if (fullTextForAll) {
+      console.log(`\n📄 Step 2b: Auto-fetching full text for ALL ${effectiveAutoFullTextTopN} selected documents (--full-text-for-all)...`);
+    } else if (autoFullTextTopN !== null && effectiveAutoFullTextTopN !== autoFullTextTopN) {
+      console.log(`\n📄 Step 2b: Auto-fetching full text for top-${effectiveAutoFullTextTopN} documents (long-horizon floor raised from ${autoFullTextTopN})...`);
+    } else if (autoFullTextTopN === null) {
+      console.log(`\n📄 Step 2b: Auto-fetching full text for top-${effectiveAutoFullTextTopN} documents (long-horizon default)...`);
+    } else {
+      console.log(`\n📄 Step 2b: Auto-fetching full text for top-${effectiveAutoFullTextTopN} documents (--auto-full-text-top-n=${effectiveAutoFullTextTopN})...`);
+    }
     console.log('   ⏱️  This may take 30–60 s — documented quality investment for deep-analysis tiers.');
-    fullTextOutcomes = await fetchFullTextForTopN(client, allDocs, autoFullTextTopN, outputDir);
+    fullTextOutcomes = await fetchFullTextForTopN(client, allDocs, effectiveAutoFullTextTopN, outputDir, { runDate: date });
     const successCount = fullTextOutcomes.filter(o => o.success).length;
     console.log(`   ✅ Full text retrieved for ${successCount}/${fullTextOutcomes.length} document(s)`);
     for (const o of fullTextOutcomes) {
@@ -704,8 +800,11 @@ async function runPreArticleAnalysis(opts: {
   for (const doc of allDocs) {
     const record = doc as Record<string, unknown>;
     if (!record['mcpCoverageState']) {
+      // Use the pipeline's analysis date (today's run, normalized via `date`)
+      // as the `requestedDate`. Using `doc.datum` here would incorrectly
+      // classify any dated metadata-only document as a same-day filing.
       const coverageState = inferDocumentCoverageState(record, {
-        requestedDate: typeof doc.datum === 'string' ? doc.datum : null,
+        requestedDate: date,
         fullTextRequested: Boolean(doc.contentFetched),
       });
       record['mcpCoverageState'] = coverageState;
@@ -739,12 +838,47 @@ async function runPreArticleAnalysis(opts: {
     }
   }
 
+  // Fallback retry-queue enrolment for the default (non-top-N) flow:
+  // `downloadAllDocuments()` already attempts limited full-text enrichment
+  // (`MAX_ENRICHMENT_PER_TYPE`) and can set `mcpCoverageState: 'not_indexed'`,
+  // but those documents are not represented in `fullTextOutcomes`. Without
+  // this loop, same-day not-yet-indexed documents are silently dropped from
+  // the deferred retry queue instead of being scheduled for a later run.
+  const alreadyQueuedDocIds = new Set(
+    queueEntries
+      .filter(e => e.resourceType === 'document_fulltext')
+      .map(e => e.resourceId),
+  );
+  for (const doc of allDocs) {
+    const record = doc as Record<string, unknown>;
+    const coverageState = record['mcpCoverageState'] as MCPCoverageState | undefined;
+    if (coverageState !== 'not_indexed') continue;
+    if (typeof doc.datum !== 'string' || doc.datum.slice(0, 10) !== date) continue;
+    const dokId = extractDokId(doc, '');
+    if (!dokId || alreadyQueuedDocIds.has(dokId)) continue;
+    const provenanceReason = record['mcpProvenance']
+      && typeof (record['mcpProvenance'] as Record<string, unknown>)['signals'] === 'object'
+      ? undefined
+      : `Same-day enrichment returned ${coverageState} for ${dokId}`;
+    queueEntries.push(createRetryQueueEntry({
+      resourceType: 'document_fulltext',
+      resourceId: dokId,
+      tool: 'get_dokument_innehall',
+      coverageState,
+      docType,
+      params: { requestedDate: doc.datum.slice(0, 10), include_full_text: true },
+      reason: provenanceReason,
+      requestedAt: new Date().toISOString(),
+    }));
+    alreadyQueuedDocIds.add(dokId);
+  }
+
   const updatedQueue = queueEntries.length > 0
     ? enqueueRetryEntries(queueEntries, DEFAULT_MCP_RETRY_QUEUE_PATH)
     : null;
   const queueRetainedTotal = updatedQueue?.entries.length ?? retryDrain.queue.entries.length;
 
-  const documentCoverage = buildDocumentCoverageSummary(allDocs, fullTextOutcomes);
+  const documentCoverage = buildDocumentCoverageSummary(allDocs, fullTextOutcomes, date);
   const manifestContent = serializeDataManifest(
     date, generatedAt, manifest.dataSources, manifest.docCounts,
     allDocs.length, dataFreshness, [...manifest.toolDiagnostics, ...retryDrain.diagnostics],
@@ -757,6 +891,7 @@ async function runPreArticleAnalysis(opts: {
       enqueued: queueEntries.length,
     },
     fullTextOutcomes,
+    fullTextForAll ? 'all' : 'top-n',
   );
   const manifestPath = path.join(outputDir, 'data-download-manifest.md');
   fs.writeFileSync(manifestPath, manifestContent, 'utf8');
@@ -790,10 +925,14 @@ async function runPreArticleAnalysis(opts: {
   console.log(`\n✅ Data download complete! Results in: ${path.relative(REPO_ROOT, outputDir)}/`);
   console.log(`   📄 ${totalFiles} total files written (1 manifest + ${storedCount} documents)`);
   console.log(`   📊 ${allDocs.length} documents available for AI analysis`);
-  if (autoFullTextTopN !== null && autoFullTextTopN > 0) {
+  if (effectiveAutoFullTextTopN !== null && effectiveAutoFullTextTopN > 0) {
     const successCount = fullTextOutcomes?.filter(o => o.success).length ?? 0;
     const attempted = fullTextOutcomes?.length ?? 0;
-    console.log(`   📄 Full text: ${successCount}/${attempted} top-${autoFullTextTopN} documents (see full-text/ sub-folder)`);
+    if (fullTextForAll) {
+      console.log(`   📄 Full text: ${successCount}/${attempted} document(s) (full batch coverage; see full-text/ sub-folder)`);
+    } else {
+      console.log(`   📄 Full text: ${successCount}/${attempted} top-${effectiveAutoFullTextTopN} documents from flattened batch (see full-text/ sub-folder)`);
+    }
   }
   if (docType) {
     console.log(`   📋 Scoped to: ${docType}`);
@@ -803,10 +942,15 @@ async function runPreArticleAnalysis(opts: {
   console.log('      - analysis/methodologies/ai-driven-analysis-guide.md');
   console.log('      - analysis/templates/ (per-file analysis templates)');
   console.log('      - npx tsx scripts/catalog-downloaded-data.ts --pending-only');
-  if (autoFullTextTopN !== null && autoFullTextTopN > 0) {
-    console.log(`      ℹ️  Significance-scoring note: top-${autoFullTextTopN} documents per type have full text`);
-    console.log('         available (contentFetched=true) — AI significance-scoring step');
-    console.log('         should prioritise those documents for deeper analysis.');
+  if (effectiveAutoFullTextTopN !== null && effectiveAutoFullTextTopN > 0) {
+    if (fullTextForAll) {
+      console.log(`      ℹ️  Significance-scoring note: all ${effectiveAutoFullTextTopN} selected documents`);
+      console.log('         (across types) had full text fetched to sidecar files.');
+    } else {
+      console.log(`      ℹ️  Significance-scoring note: top-${effectiveAutoFullTextTopN} documents from the`);
+      console.log('         flattened batch had full text fetched to sidecar files — AI');
+      console.log('         significance-scoring step should prioritise those documents for deeper analysis.');
+    }
   }
 }
 

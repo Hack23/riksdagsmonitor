@@ -245,6 +245,47 @@ describe('data-persistence', () => {
       const result = persistDownloadedData(emptyDownloadedData(), '2025/26', undefined, tmpDir);
       expect(result.dataRoot).toBe(tmpDir);
     });
+
+    it('strips in-memory MCP coverage metadata so data files remain byte-identical', () => {
+      // The pipeline decorates RawDocument records with mcpCoverageState /
+      // mcpProvenance / mcpSignals in memory. These must NEVER reach the
+      // raw data file — provenance belongs in the sidecar .meta.json and
+      // the manifest, not in the persisted JSON. Otherwise parallel
+      // workflows produce divergent JSON for the same source document.
+      const doc = makeRawDoc({
+        dok_id: 'STRIP-TEST',
+        // The in-memory provenance fields (cast to RawDocument so the test
+        // can simulate what the in-memory pipeline does to the record).
+        ...({
+          mcpCoverageState: 'metadata_only',
+          mcpProvenance: {
+            provider: 'riksdag-regering',
+            endpoint: 'https://example.invalid/mcp',
+            tool: 'get_dokument',
+            query: { dok_id: 'STRIP-TEST' },
+            resultCount: 1,
+            coverageState: 'metadata_only',
+            retrieval: 'live',
+            retrievedAt: '2026-05-15T12:00:00.000Z',
+          },
+          mcpSignals: [],
+        } as Record<string, unknown>),
+      });
+      const data: DownloadedData = {
+        ...emptyDownloadedData(),
+        propositions: [doc],
+      };
+      persistDownloadedData(data, '2025/26', undefined, tmpDir);
+
+      const persisted = JSON.parse(fs.readFileSync(
+        path.join(tmpDir, 'documents', 'propositions', 'strip-test.json'), 'utf8',
+      ));
+      expect(persisted).not.toHaveProperty('mcpCoverageState');
+      expect(persisted).not.toHaveProperty('mcpProvenance');
+      expect(persisted).not.toHaveProperty('mcpSignals');
+      // The source dok_id and other genuine fields must still be present.
+      expect(persisted.dok_id).toBe('STRIP-TEST');
+    });
   });
 
   // ── persistEvents ────────────────────────────────────────────────────────

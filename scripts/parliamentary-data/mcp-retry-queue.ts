@@ -44,6 +44,13 @@ export interface MCPRetryDrainResult {
   retained: number;
   expired: number;
   resolvedDocuments: Record<string, Record<string, unknown>>;
+  /**
+   * Voting rows recovered from previously-deferred voteringar searches,
+   * keyed by the queue entry's `resourceId` (the exact query payload).
+   * Surfaced so callers can re-inject the rows into the run output even if
+   * the original query is no longer selected by the current date/filter.
+   */
+  resolvedVoteringar: Record<string, unknown[]>;
   diagnostics: MCPToolInvocationDiagnostic[];
 }
 
@@ -156,7 +163,9 @@ export async function drainMcpRetryQueue(
   const queue = loadMcpRetryQueue(queuePath);
   const remaining: MCPRetryQueueEntry[] = [];
   const resolvedDocuments: Record<string, Record<string, unknown>> = {};
+  const resolvedVoteringar: Record<string, unknown[]> = {};
   const diagnostics: MCPToolInvocationDiagnostic[] = [];
+  const originalEntryCount = queue.entries.length;
 
   let processed = 0;
   let resolved = 0;
@@ -215,14 +224,37 @@ export async function drainMcpRetryQueue(
         });
         retained++;
       } catch (drainErr) {
+        const errMessage = drainErr instanceof Error ? drainErr.message : String(drainErr);
         console.warn(
           `[mcp-retry-queue] Document retry failed for ${entry.resourceId}:`,
-          drainErr instanceof Error ? drainErr.message : String(drainErr),
+          errMessage,
         );
+        // Emit a `fetch_error` diagnostic so the manifest's
+        // `## MCP Query Diagnostics` section exposes the exact failed
+        // retry — without this the failure disappears into the aggregate
+        // retained counter.
+        diagnostics.push({
+          tool: entry.tool,
+          query: { ...entry.params, dok_id: entry.resourceId, include_full_text: true },
+          resultCount: 0,
+          coverageState: 'fetch_error',
+          provenance: {
+            provider: 'riksdag-regering',
+            endpoint: client.baseURL,
+            tool: entry.tool,
+            query: { ...entry.params, dok_id: entry.resourceId, include_full_text: true },
+            resultCount: 0,
+            coverageState: 'fetch_error',
+            retrieval: 'retry_queue',
+            retrievedAt: now.toISOString(),
+          },
+          notes: `Retry failed: ${errMessage}`,
+        });
         remaining.push({
           ...entry,
           attemptCount: entry.attemptCount + 1,
-          reason: `Retry failed: ${drainErr instanceof Error ? drainErr.message : String(drainErr)}`,
+          coverageState: 'fetch_error',
+          reason: `Retry failed: ${errMessage}`,
           lastAttemptAt,
         });
         retained++;
@@ -259,6 +291,12 @@ export async function drainMcpRetryQueue(
 
       if (votingResult.resultCount > 0) {
         resolved++;
+        // Persist the recovered items so the caller can re-inject them into
+        // the run output even if the original query is no longer part of
+        // the current download selection.
+        if (Array.isArray(votingResult.items)) {
+          resolvedVoteringar[entry.resourceId] = votingResult.items as unknown[];
+        }
         continue;
       }
 
@@ -271,14 +309,36 @@ export async function drainMcpRetryQueue(
       });
       retained++;
     } catch (drainErr) {
+      const errMessage = drainErr instanceof Error ? drainErr.message : String(drainErr);
       console.warn(
         `[mcp-retry-queue] Voting retry failed for ${entry.resourceId}:`,
-        drainErr instanceof Error ? drainErr.message : String(drainErr),
+        errMessage,
       );
+      // Surface the failed voteringar retry as a `fetch_error` diagnostic so
+      // the manifest preserves the exact query/error rather than silently
+      // incrementing the retained counter.
+      diagnostics.push({
+        tool: entry.tool,
+        query: { ...(entry.params as Record<string, unknown>) },
+        resultCount: 0,
+        coverageState: 'fetch_error',
+        provenance: {
+          provider: 'riksdag-regering',
+          endpoint: client.baseURL,
+          tool: entry.tool,
+          query: { ...(entry.params as Record<string, unknown>) },
+          resultCount: 0,
+          coverageState: 'fetch_error',
+          retrieval: 'retry_queue',
+          retrievedAt: now.toISOString(),
+        },
+        notes: `Retry failed: ${errMessage}`,
+      });
       remaining.push({
         ...entry,
         attemptCount: entry.attemptCount + 1,
-        reason: `Retry failed: ${drainErr instanceof Error ? drainErr.message : String(drainErr)}`,
+        coverageState: 'fetch_error',
+        reason: `Retry failed: ${errMessage}`,
         lastAttemptAt,
       });
       retained++;
@@ -290,7 +350,15 @@ export async function drainMcpRetryQueue(
     updatedAt: now.toISOString(),
     entries: remaining,
   };
-  saveMcpRetryQueue(updatedQueue, queuePath);
+
+  // Avoid touching the queue file when the queue was already empty AND we
+  // had nothing to process. Without this guard, every news workflow would
+  // dirty `data/mcp-retry-queue.json` with a fresh `updatedAt` even when no
+  // retry work occurred, producing noisy PR diffs and merge conflicts.
+  const hadWork = originalEntryCount > 0 || processed > 0 || expired > 0 || remaining.length > 0;
+  if (hadWork) {
+    saveMcpRetryQueue(updatedQueue, queuePath);
+  }
 
   return {
     queue: updatedQueue,
@@ -299,6 +367,7 @@ export async function drainMcpRetryQueue(
     retained,
     expired,
     resolvedDocuments,
+    resolvedVoteringar,
     diagnostics,
   };
 }

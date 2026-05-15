@@ -92,6 +92,17 @@ interface FetchTaskResult {
 export const MAX_ENRICHMENT_PER_TYPE = 5;
 
 /**
+ * Minimum full-text follow-up count enforced for long-horizon batches
+ * (e.g. year-ahead / cycle-style runs with `--limit >= 30`).
+ *
+ * Kept separate from `MAX_ENRICHMENT_PER_TYPE` so the per-type default for
+ * normal `downloadAllDocuments()` callers stays at the historic value of 5,
+ * while `resolveAutoFullTextTopN(...)` can raise the floor only when the
+ * long-horizon resolver explicitly asks for it.
+ */
+export const LONG_HORIZON_FULL_TEXT_FLOOR = 10;
+
+/**
  * Outcome record for a single document in a top-N full-text fetch.
  * Used in the data-download-manifest and as the return value of
  * `fetchFullTextForTopN`.
@@ -150,6 +161,33 @@ function annotateDocumentsWithCoverage(
     Object.assign(record, attachCoverageMetadata(record, provenance));
     return doc;
   });
+}
+
+/**
+ * Decide whether an upstream error message indicates a document-level
+ * indexing gap (`not_indexed`) versus an operational failure (`fetch_error`).
+ *
+ * Bare `404` and bare `not found` are intentionally NOT treated as indexing
+ * lag because they also occur for transport-level failures (e.g.
+ * `MCP server error: 404 Not Found` from a wrong endpoint or unavailable
+ * route). We require either an explicit indexing phrase, an explicit
+ * document-not-found phrase, or that the error message mentions the
+ * dok_id (which only happens in document-level errors from the upstream
+ * MCP tool, never in transport-level outages).
+ */
+export function isDocumentNotIndexedError(message: string, dokId?: string): boolean {
+  const text = message ?? '';
+  if (!text) return false;
+  const transportLike = /(mcp server error|transport error|server error|endpoint|econnrefused|etimedout|fetch failed|network|gateway|\b50[023]\b)/i.test(text);
+  if (transportLike) return false;
+  const lower = text.toLowerCase();
+  if (lower.includes('not indexed')) return true;
+  if (lower.includes('no document')) return true;
+  if (/document\s+not\s+found/.test(lower)) return true;
+  if (/dok[_\s]?id\s+not\s+found/.test(lower)) return true;
+  // "not found" only counts when paired with the specific dok_id we asked for
+  if (dokId && lower.includes(dokId.toLowerCase()) && lower.includes('not found')) return true;
+  return false;
 }
 
 /**
@@ -251,12 +289,18 @@ function currentRm(): string {
  */
 export async function downloadAllDocuments(
   client: MCPClient,
-  options: { limit?: number; rm?: string; docTypes?: DocumentTypeKey[]; enrichLimit?: number } = {},
+  options: { limit?: number; rm?: string; docTypes?: DocumentTypeKey[]; enrichLimit?: number; analysisRunDate?: string } = {},
 ): Promise<DownloadResult> {
   const start = Date.now();
   const limit = options.limit ?? 20;
   const rm = options.rm ?? currentRm();
   const docTypes = options.docTypes ?? null;
+  // Same-day inference must be tied to the analysis run date, not the host
+  // wall clock — otherwise backfill/historical reruns misclassify coverage.
+  const analysisRunDate = typeof options.analysisRunDate === 'string'
+    && /^\d{4}-\d{2}-\d{2}$/.test(options.analysisRunDate)
+    ? options.analysisRunDate
+    : new Date().toISOString().slice(0, 10);
 
   const dataSources: string[] = [];
   const toolDiagnostics: MCPToolInvocationDiagnostic[] = [];
@@ -625,11 +669,10 @@ export async function downloadAllDocuments(
               docRecord['notis'] = detailsNotis;
             }
             docRecord['contentFetched'] = true;
-            const runDate = new Date().toISOString().slice(0, 10);
             const coverageState = inferDocumentCoverageState(
               { ...docRecord, ...details },
               {
-                requestedDate: runDate,
+                requestedDate: analysisRunDate,
                 fullTextRequested: true,
               },
             );
@@ -768,8 +811,16 @@ export async function fetchFullTextForTopN(
   docs: RawDocument[],
   topN: number,
   outputDir: string,
+  options: { runDate?: string } = {},
 ): Promise<FullTextFetchOutcome[]> {
   if (topN <= 0 || docs.length === 0) return [];
+
+  // Coverage inference must be tied to the analysis run date (the date the
+  // pipeline is producing analysis for), not the host machine's wall clock.
+  // This keeps backfill / historical reruns from misclassifying coverage.
+  const runDate = typeof options.runDate === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(options.runDate)
+    ? options.runDate
+    : new Date().toISOString().slice(0, 10);
 
   const fullTextDir = path.join(outputDir, 'full-text');
   fs.mkdirSync(fullTextDir, { recursive: true });
@@ -819,7 +870,6 @@ export async function fetchFullTextForTopN(
       const docRecord = doc as Record<string, unknown>;
       let details: Record<string, unknown> | null = null;
       let content = selectContent(docRecord);
-      const runDate = new Date().toISOString().slice(0, 10);
 
       if (content.length <= FULL_TEXT_MIN_LENGTH) {
         const detailsWithCoverage = await client.fetchDocumentDetailsWithCoverage(
@@ -893,11 +943,7 @@ export async function fetchFullTextForTopN(
       }
     } catch (err) {
       const errMsg = err instanceof Error ? err.message : String(err);
-      const msgLower = errMsg.toLowerCase();
-      // Distinguish true indexing-gap errors from transient/operational failures
-      const isNotIndexed = ['not found', '404', 'not indexed', 'no document', 'ingen'].some(
-        (p) => msgLower.includes(p),
-      );
+      const isNotIndexed = isDocumentNotIndexedError(errMsg, dokId);
       const state = isNotIndexed ? 'not_indexed' : 'fetch_error' as const;
       const provenance = buildMcpProvenance({
         endpoint: client.baseURL,

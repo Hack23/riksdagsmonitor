@@ -150,9 +150,45 @@ export function resolveDocId(doc: RawDocument, index: number): string {
 }
 
 /**
+ * Fields that the in-memory pipeline annotates onto documents for the
+ * manifest/coverage layer but that must NOT be written into raw
+ * `analysis/data/` files. Persisting these breaks byte-identical output
+ * across parallel workflows (every run has a fresh `retrievedAt`).
+ */
+const STRIPPED_METADATA_FIELDS = new Set<string>([
+  'mcpCoverageState',
+  'mcpProvenance',
+  'mcpSignals',
+]);
+
+/**
+ * Return a shallow clone of `doc` with in-memory MCP coverage metadata removed.
+ *
+ * Coverage state and provenance live in the manifest and sidecar `.meta.json`,
+ * not in the raw persisted document, so this guarantees the data files remain
+ * byte-identical regardless of how the in-memory record was decorated upstream.
+ */
+function stripInMemoryCoverageMetadata(doc: RawDocument): RawDocument {
+  const record = doc as Record<string, unknown>;
+  let cloned: Record<string, unknown> | null = null;
+  for (const field of STRIPPED_METADATA_FIELDS) {
+    if (field in record) {
+      if (!cloned) cloned = { ...record };
+      delete cloned[field];
+    }
+  }
+  return (cloned ?? record) as RawDocument;
+}
+
+/**
  * Write raw data to disk as pretty-printed JSON (NO metadata injection).
  * Metadata is written to a separate sidecar file to prevent merge conflicts
  * when parallel workflows persist the same document.
+ *
+ * In-memory MCP coverage annotations (`mcpCoverageState`, `mcpProvenance`,
+ * `mcpSignals`) are stripped from the persisted JSON so byte-identical output
+ * is preserved across parallel workflows; provenance is carried in the
+ * sidecar `.meta.json` and the downstream manifest instead.
  */
 function writeDocumentAndMeta(
   dir: string,
@@ -161,9 +197,10 @@ function writeDocumentAndMeta(
   metadata: PersistenceMetadata,
 ): void {
   ensureDir(dir);
+  const persistable = stripInMemoryCoverageMetadata(doc);
   fs.writeFileSync(
     path.join(dir, baseFilename),
-    JSON.stringify(doc, null, 2),
+    JSON.stringify(persistable, null, 2),
     'utf8',
   );
   const metaFilename = baseFilename.replace(/\.json$/, '.meta.json');

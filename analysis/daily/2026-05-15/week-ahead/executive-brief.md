@@ -1,22 +1,67 @@
-# Executive Brief — Week of 19–23 May 2026
+---
+title: "Executive Brief: Swedish Aid Cuts Under Parliamentary Scrutiny — Week 21"
+date: "2026-05-15"
+article_type: "week-ahead"
+subfolder: "week-ahead"
+language: "en"
+author: "James Pether Sörling"
+classification: "Public"
+confidence: "HIGH [B2]"
+---
 
-**Analysis date**: 2026-05-15
-**Classification**: 🟢 PUBLIC
-**WEP confidence**: [horizon:week] *likely* | [horizon:month] *probable*
+# Executive Brief — Week Ahead: Aid Accountability, 2026-05-15
 
-## Summary (≤200 words)
-
-The Swedish Riksdag's week of 19–23 May 2026 is dominated by four legislative clusters with significant democratic and rights implications.
-
-**Migration reform** leads in parliamentary mass: four Tidö coalition propositions (HD03262–HD03265) implement Sweden's tightest migration framework since the 2015 crisis, including abolishing permanent residence permits, tightening deportation, and extending pre-trial detention. The Social Democrats have tabled counter-motions against each, previewing a sharp plenary confrontation.
-
-**Constitutional rights** headline Tuesday–Wednesday with the KU34 committee debate on constitutionally protecting abortion rights alongside — controversially — expanded grounds to restrict freedom of association. The dual-track reform tests coalition cohesion: KD and parts of M are cautious on the association restrictions.
-
-**Security and identity** modernisation proceeds with HD03267 (enhanced powers against foreign security threats) and HD03250 (state e-legitimation system), both advancing the Tidö agenda on public-order and digital infrastructure.
-
-**Bistånd/ODA**: V interpellations (HD10492–HD10493) on aid cuts and terminated bilateral strategies will generate floor debate, amplifying Sweden's declining ODA profile ahead of UN High-Level Week in September.
-
-**IMF context** (WEO-2026-04): Sweden GDP growth +2.1% (2026f), CPI 2.0%, unemployment 8.2%; fiscal space remains sound (debt 37% GDP). Economic conditions do not constrain the legislative agenda.
+**Author**: James Pether Sörling | **Run ID**: 25908189012 | **Classification**: Public
 
 ---
-*economicProvenance: {provider: "imf", dataflow: "WEO", indicator: "NGDP_RPCH/LUR/PCPIPCH/GGXWDG_NGDP", vintage: "WEO-2026-04", retrieved_at: "2026-05-15"}*
+
+## 🎯 BLUF
+
+**Sweden's Tidö government faces two scheduled interpellation debates (2026-05-18) on its dismantling of the aid architecture** — HD10492 (consequences for children) and HD10493 (consequences of discontinued country strategies) — both submitted by Lotta Johnsson Fornarve (V), addressed to Minister Benjamin Dousa (M). With the September 2026 election 121 days away and aid cuts compounding Trump's USAID dismantlement globally, the government's failure to conduct impact assessments is becoming a live campaign liability. Minister Dousa must respond by 2026-05-29. The Tidö coalition (M+KD+L+SD) has already survived a budget vote imposing the cuts; but the debate signals opposition's intention to make aid accountability a ballot-box issue. Adjusted significance: **8.3/10** [B2].
+
+---
+
+## 🧭 3 Decisions This Brief Supports
+
+1. **Publish**: Deploy both interpellations as the lead aid-accountability story for week 21; emphasise compound effect (Swedish cuts + Trump/USAID) and children's rights dimensions.
+2. **Watch**: Track ministerial response by 2026-05-29; if no impact assessment announced, escalate to "governance accountability failure" framing for election campaign period.
+3. **Forward**: Assess whether parliamentary summer recess creates a window for additional executive action on aid without parliamentary scrutiny.
+
+---
+
+## ⚡ 60-Second Read
+
+| # | Item | Significance |
+|---|------|-------------|
+| 1 | HD10492 — V interpellation: aid cut consequences for children, Minister Dousa | HIGH [B2] |
+| 2 | HD10493 — V interpellation: discontinued country strategies (Liberia, Mozambique, Tanzania, Zimbabwe, Bolivia) | HIGH [B2] |
+| 3 | Both debates scheduled 2026-05-18 in chamber | MEDIUM [B3] |
+| 4 | Last ministerial response date: 2026-05-29 — public accountability window | HIGH [B2] |
+| 5 | No impact assessment conducted — government's own admission | HIGH [B2] |
+| 6 | Election 121 days away — 1.5× DIW multiplier on all V vs. Tidö items | HIGH [B2] |
+| 7 | Global context: US USAID cuts + Swedish cuts = compound humanitarian crisis | HIGH [B2] |
+| 8 | Sweden's fiscal surplus makes the cuts a political choice, not economic necessity | MEDIUM [B3] |
+
+---
+
+## 🔺 Top Forward Trigger
+
+**Trigger**: Minister Dousa's interpellation response on or before 2026-05-29 either (a) announces an impact assessment or (b) fails to do so.  
+**If (a)**: V concedes partial accountability, opposition shifts to demanding binding reversal.  
+**If (b)**: Confirmed governance accountability gap; opposition escalates election campaign narrative "Tidöregeringen bryr sig inte om världens barn."  
+**PIR link**: PIR-WA-01
+
+---
+
+## Evidence Anchors
+
+| Claim | Evidence | Retrieved |
+|-------|----------|-----------|
+| Interpellation HD10492 filed 2026-05-13 | dok_id HD10492, data.riksdagen.se | 2026-05-15 |
+| Interpellation HD10493 filed 2026-05-12 | dok_id HD10493, data.riksdagen.se | 2026-05-15 |
+| Announced for chamber 2026-05-18 | HD10492 status: ANM 2026-05-18 | 2026-05-15 |
+| Last response date 2026-05-29 | HD10492 SISVA 2026-05-29; HD10493 SISVA 2026-05-29 | 2026-05-15 |
+| Government cut strategies from ~70 to ~40 | HD10493 full text, minister's own data | 2026-05-15 |
+| Dec 2025 exit: Liberia, Mozambique, Tanzania, Zimbabwe, Bolivia | HD10493 full text | 2026-05-15 |
+| 1% GNI target abandoned with SD support | HD10492 + HD10493 full text | 2026-05-15 |
+| No impact assessment conducted | HD10493 full text: "Mig veterligen har regeringen inte ens gjort någon analys" | 2026-05-15 |
