@@ -1,0 +1,42 @@
+{
+  "version": "2.0",
+  "generatedAt": "2026-05-15T17:45:00Z",
+  "articleDate": "2026-05-15",
+  "subfolder": "evening-analysis",
+  "economicProvenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "vintage": "2026-04",
+    "vintageAgeMonths": 1,
+    "vintageStatus": "fresh",
+    "retrieved_at": "2026-05-15"
+  },
+  "indicators": {
+    "SWE": {
+      "country": "Sweden",
+      "iso3": "SWE",
+      "gdpGrowth2026f": 2.3,
+      "gdpGrowth2025f": 2.1,
+      "inflation2026f": 1.8,
+      "inflation2025f": 1.8,
+      "grossDebtPctGDP2026f": 34.5,
+      "unemploymentRate2026f": 8.4,
+      "riksbankRate": 2.25,
+      "source": "IMF WEO Apr-2026 + MFS_IR"
+    },
+    "comparators": {
+      "DNK": { "gdpGrowth2026f": 2.0, "inflation2026f": 2.1, "grossDebtPctGDP2026f": 29.4 },
+      "NOR": { "gdpGrowth2026f": 2.4, "inflation2026f": 2.3, "grossDebtPctGDP2026f": -303 },
+      "FIN": { "gdpGrowth2026f": 1.2, "inflation2026f": 2.0, "grossDebtPctGDP2026f": 75.5 },
+      "DEU": { "gdpGrowth2026f": 1.5, "inflation2026f": 2.2, "grossDebtPctGDP2026f": 62.1 }
+    },
+    "policyRelevance": {
+      "CU31_hyresdereglering": "Riksbank 2.25% styrränta påverkar bolånekostnader; CU31 avreglering kan höja nominella hyror men sänka realränta-justerade boendekostnader långsiktigt",
+      "HD03262_PUT": "PUT-avskaffandets budgetpåverkan marginell (bidragar inte till statskuld); implementationskostnad Migrationsverket estimerat 200-500 MSEK",
+      "EPBD_CU30": "700 mdr SEK investeringsstimulus 2026-2035 stödjer 2.3% BNP-tillväxtprognos",
+      "forsvarsupprustning": "Aurora 26 + Rysslands aggressionslagstiftning kan öka försvarsanslaget +0.2% BNP 2027"
+    }
+  },
+  "bannedProviders": ["worldbank_economic"],
+  "worldBankPermittedUseOnly": ["governance", "environment", "social_residue"]
+}
