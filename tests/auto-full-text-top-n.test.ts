@@ -17,10 +17,11 @@ import * as fs from 'node:fs';
 import * as os from 'node:os';
 import * as path from 'node:path';
 
-import { parseArgs, resolveAutoFullTextTopN } from '../scripts/download-parliamentary-data.js';
+import { parseArgs, resolveAutoFullTextTopN, serializeDataManifest } from '../scripts/download-parliamentary-data.js';
 import {
   fetchFullTextForTopN,
   FULL_TEXT_MIN_LENGTH,
+  isDocumentNotIndexedError,
 } from '../scripts/parliamentary-data/data-downloader.js';
 import type { RawDocument } from '../scripts/data-transformers/types.js';
 import type { MCPClient } from '../scripts/mcp-client/client.js';
@@ -43,7 +44,11 @@ function makeDoc(overrides: Record<string, unknown> = {}): RawDocument {
 function createMockClient(
   fetchDetailsImpl?: (dokId: string, includeFullText: boolean) => Promise<Record<string, unknown>>,
 ): MCPClient {
+  const fetchDocumentDetails = fetchDetailsImpl
+    ? vi.fn().mockImplementation(fetchDetailsImpl)
+    : vi.fn().mockResolvedValue({});
   return {
+    baseURL: 'https://riksdag-regering-ai.onrender.com/mcp',
     fetchPropositions: vi.fn().mockResolvedValue([]),
     fetchMotions: vi.fn().mockResolvedValue([]),
     fetchCommitteeReports: vi.fn().mockResolvedValue([]),
@@ -51,9 +56,26 @@ function createMockClient(
     searchSpeeches: vi.fn().mockResolvedValue([]),
     fetchWrittenQuestions: vi.fn().mockResolvedValue([]),
     fetchInterpellations: vi.fn().mockResolvedValue([]),
-    fetchDocumentDetails: fetchDetailsImpl
-      ? vi.fn().mockImplementation(fetchDetailsImpl)
-      : vi.fn().mockResolvedValue({}),
+    fetchDocumentDetails,
+    fetchDocumentDetailsWithCoverage: vi.fn().mockImplementation(async (dokId: string, includeFullText: boolean) => {
+      const document = await fetchDocumentDetails(dokId, includeFullText);
+      return {
+        document,
+        query: { dok_id: dokId, include_full_text: includeFullText },
+        resultCount: Object.keys(document).length > 0 ? 1 : 0,
+        coverageState: 'metadata_only',
+        provenance: {
+          provider: 'riksdag-regering',
+          endpoint: 'https://riksdag-regering-ai.onrender.com/mcp',
+          tool: 'get_dokument_innehall',
+          query: { dok_id: dokId, include_full_text: includeFullText },
+          resultCount: Object.keys(document).length > 0 ? 1 : 0,
+          coverageState: 'metadata_only',
+          retrieval: 'live',
+          retrievedAt: '2026-05-15T00:00:00.000Z',
+        },
+      };
+    }),
   } as unknown as MCPClient;
 }
 
@@ -444,5 +466,147 @@ describe('manifest full-text outcomes integration contract', () => {
     const successCount = outcomes.filter(o => o.success).length;
     // Gate can check: successCount >= 2 OR fallback annotation present
     expect(successCount).toBe(2);
+  });
+
+  it('serializes coverage-state and deferred queue sections in the manifest', () => {
+    const manifest = serializeDataManifest(
+      '2026-05-15',
+      '2026-05-15 00:00 UTC',
+      ['get_interpellationer'],
+      { interpellations: 2 },
+      2,
+      null,
+      [
+        {
+          tool: 'search_dokument',
+          query: { titel: 'Statskontoret' },
+          resultCount: 0,
+          coverageState: 'search_empty',
+          provenance: {
+            provider: 'riksdag-regering',
+            endpoint: 'https://riksdag-regering-ai.onrender.com/mcp',
+            tool: 'search_dokument',
+            query: { titel: 'Statskontoret' },
+            resultCount: 0,
+            coverageState: 'search_empty',
+            retrieval: 'live',
+            retrievedAt: '2026-05-15T00:00:00.000Z',
+          },
+          notes: '0 rows returned',
+        },
+      ],
+      [
+        {
+          dokId: 'HD10492',
+          coverageState: 'not_indexed',
+          retrieval: 'live',
+          tool: 'get_dokument_innehall',
+          resultCount: 1,
+          notes: 'same-day filing',
+        },
+      ],
+      { processed: 1, resolved: 0, retained: 1, expired: 0, enqueued: 1 },
+      [
+        {
+          dokId: 'HD10492',
+          success: false,
+          chars: 0,
+          reason: 'same-day filing',
+          coverageState: 'not_indexed',
+          provenance: {
+            provider: 'riksdag-regering',
+            endpoint: 'https://riksdag-regering-ai.onrender.com/mcp',
+            tool: 'get_dokument_innehall',
+            query: { dok_id: 'HD10492', include_full_text: true },
+            resultCount: 1,
+            coverageState: 'not_indexed',
+            retrieval: 'live',
+            retrievedAt: '2026-05-15T00:00:00.000Z',
+          },
+        },
+      ],
+    );
+
+    expect(manifest).toContain('## MCP Query Diagnostics');
+    expect(manifest).toContain('## MCP Coverage State');
+    expect(manifest).toContain('## Deferred Retrieval Queue');
+    expect(manifest).toContain('HD10492');
+    expect(manifest).toContain('not_indexed');
+  });
+
+  it('escapes pipes and collapses newlines in diagnostic manifest cells', () => {
+    // MCP error / notes text routinely contains the `|` character (used in
+    // serialised queries) and multi-line stack traces. Both would corrupt
+    // the markdown table layout and make the diagnostics unparseable for
+    // downstream gates. The serializer must escape them.
+    const manifest = serializeDataManifest(
+      '2026-05-15',
+      '2026-05-15 00:00 UTC',
+      ['search_dokument'],
+      { motions: 0 },
+      0,
+      null,
+      [
+        {
+          tool: 'search_dokument',
+          query: { titel: 'A | B\nC' },
+          resultCount: 0,
+          coverageState: 'fetch_error',
+          provenance: {
+            provider: 'riksdag-regering',
+            endpoint: 'https://riksdag-regering-ai.onrender.com/mcp',
+            tool: 'search_dokument',
+            query: { titel: 'A | B\nC' },
+            resultCount: 0,
+            coverageState: 'fetch_error',
+            retrieval: 'live',
+            retrievedAt: '2026-05-15T00:00:00.000Z',
+          },
+          notes: 'MCP server error: 503 Service Unavailable\n  at fetch (line 1)\n  at next (line 2)',
+        },
+      ],
+      [],
+      { processed: 0, resolved: 0, retained: 0, expired: 0, enqueued: 0 },
+    );
+
+    // The diagnostic row must remain a single line within the table — no
+    // raw newline characters that would break the markdown table layout.
+    const diagRow = manifest.split('\n').find(line => line.includes('search_dokument') && line.includes('fetch_error'));
+    expect(diagRow).toBeDefined();
+    // Pipes inside the query/notes payload must be escaped so they do not
+    // start a new table column.
+    expect(diagRow).toMatch(/\\\|/);
+    // Multi-line stack-trace text must be collapsed onto a single row
+    // (no orphan `at fetch (line ...)` text spilling onto subsequent lines).
+    const linesAfterDiag = manifest.split(diagRow!)[1]?.split('\n').slice(0, 3) ?? [];
+    expect(linesAfterDiag.join('\n')).not.toMatch(/at fetch \(line 2\)/);
+    // The collapsed payload must still contain the trace fragments on the
+    // same single row.
+    expect(diagRow).toContain('at fetch (line 1)');
+    expect(diagRow).toContain('at next (line 2)');
+  });
+});
+
+describe('isDocumentNotIndexedError (transport vs document-level disambiguation)', () => {
+  it('treats explicit indexing phrases as not_indexed', () => {
+    expect(isDocumentNotIndexedError('document HD10492 not found', 'HD10492')).toBe(true);
+    expect(isDocumentNotIndexedError('Document not indexed yet', 'HD10492')).toBe(true);
+    expect(isDocumentNotIndexedError('no document for HD10492', 'HD10492')).toBe(true);
+  });
+
+  it('treats transport-level failures as fetch_error, NOT not_indexed', () => {
+    expect(isDocumentNotIndexedError('MCP server error: 404 Not Found', 'HD10492')).toBe(false);
+    expect(isDocumentNotIndexedError('Transport error: ECONNREFUSED', 'HD10492')).toBe(false);
+    expect(isDocumentNotIndexedError('fetch failed: 502 Bad Gateway', 'HD10492')).toBe(false);
+    expect(isDocumentNotIndexedError('Network timeout while calling endpoint', 'HD10492')).toBe(false);
+    expect(isDocumentNotIndexedError('Server error: 503 Service Unavailable', 'HD10492')).toBe(false);
+  });
+
+  it('only treats bare "not found" as not_indexed when paired with the dok_id', () => {
+    // Generic "not found" without the dok_id is ambiguous between transport
+    // and document-level — must NOT collapse into not_indexed.
+    expect(isDocumentNotIndexedError('not found', 'HD10492')).toBe(false);
+    // The same message that echoes the dok_id is document-level.
+    expect(isDocumentNotIndexedError('hd10492 not found', 'HD10492')).toBe(true);
   });
 });

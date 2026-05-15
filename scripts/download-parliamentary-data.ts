@@ -30,6 +30,10 @@ import { fileURLToPath } from 'node:url';
 
 import { MCPClient } from './mcp-client/client.js';
 import type { RawDocument } from './data-transformers/types.js';
+import type {
+  MCPCoverageState,
+  MCPToolInvocationDiagnostic,
+} from './types/mcp.js';
 
 import {
   downloadAllDocuments,
@@ -42,6 +46,16 @@ import {
 import type { DocumentTypeKey, FullTextFetchOutcome } from './parliamentary-data/data-downloader.js';
 
 import { persistDownloadedData, sanitizeDokId } from './parliamentary-data/data-persistence.js';
+import {
+  createRetryQueueEntry,
+  DEFAULT_MCP_RETRY_QUEUE_PATH,
+  drainMcpRetryQueue,
+  enqueueRetryEntries,
+} from './parliamentary-data/mcp-retry-queue.js';
+import {
+  buildMcpProvenance,
+  inferDocumentCoverageState,
+} from './mcp-client/coverage.js';
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -256,6 +270,26 @@ function ensureDir(dir: string): void {
   fs.mkdirSync(dir, { recursive: true });
 }
 
+/**
+ * Escape a value for use inside a single GitHub-flavoured Markdown table cell.
+ *
+ * MCP error/notes text and serialised queries can include `|`, raw newlines,
+ * and backticks — all of which corrupt the table layout and make the
+ * diagnostics unparseable for downstream gates. We collapse whitespace and
+ * escape pipes so each diagnostic row remains a single, parseable row.
+ */
+function escapeMarkdownCell(value: unknown): string {
+  if (value === null || value === undefined) return '';
+  const str = typeof value === 'string' ? value : String(value);
+  return str
+    .replace(/\r\n?/g, ' ')
+    .replace(/\n/g, ' ')
+    .replace(/\t/g, ' ')
+    .replace(/\|/g, '\\|')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
 // ---------------------------------------------------------------------------
 // Data manifest serialization (factual download summary — NOT analysis)
 // ---------------------------------------------------------------------------
@@ -267,6 +301,22 @@ function serializeDataManifest(
   docCounts: Record<string, number>,
   dateFilteredTotal: number,
   dataFreshness: string | null,
+  toolDiagnostics: MCPToolInvocationDiagnostic[],
+  documentCoverage: Array<{
+    dokId: string;
+    coverageState: MCPCoverageState;
+    retrieval: string;
+    tool: string;
+    resultCount: number;
+    notes: string;
+  }>,
+  retryQueueSummary: {
+    processed: number;
+    resolved: number;
+    retained: number;
+    expired: number;
+    enqueued: number;
+  },
   fullTextOutcomes?: FullTextFetchOutcome[],
   fullTextMode: 'top-n' | 'all' = 'top-n',
 ): string {
@@ -301,22 +351,131 @@ function serializeDataManifest(
     lines.push(`Data sourced from ${dataFreshness} via lookback fallback — check freshness indicators.`);
   }
 
+  if (toolDiagnostics.length > 0) {
+    lines.push('', '## MCP Query Diagnostics', '');
+    lines.push('| tool | query | result_count | coverage_state | notes |');
+    lines.push('|------|-------|-------------:|----------------|-------|');
+    for (const diag of toolDiagnostics) {
+      const notes = diag.signal?.code
+        ? `${diag.signal.code}: ${diag.signal.message}`
+        : (diag.notes ?? '');
+      const queryCell = '`' + escapeMarkdownCell(JSON.stringify(diag.query)) + '`';
+      lines.push(
+        `| ${escapeMarkdownCell(diag.tool)} | ${queryCell} | ${diag.resultCount} | ${escapeMarkdownCell(diag.coverageState)} | ${escapeMarkdownCell(notes)} |`,
+      );
+    }
+  }
+
+  if (documentCoverage.length > 0) {
+    lines.push('', '## MCP Coverage State', '');
+    lines.push('| dok_id | coverage_state | retrieval | tool | result_count | notes |');
+    lines.push('|--------|----------------|-----------|------|-------------:|-------|');
+    for (const row of documentCoverage) {
+      lines.push(
+        `| ${escapeMarkdownCell(row.dokId)} | ${escapeMarkdownCell(row.coverageState)} | ${escapeMarkdownCell(row.retrieval)} | ${escapeMarkdownCell(row.tool)} | ${row.resultCount} | ${escapeMarkdownCell(row.notes)} |`,
+      );
+    }
+  }
+
   if (fullTextOutcomes && fullTextOutcomes.length > 0) {
     lines.push('', '## Full-Text Fetch Outcomes', '');
-    lines.push('| dok_id | full_text_available | chars | notes |');
-    lines.push('|--------|--------------------:|------:|-------|');
+    lines.push('| dok_id | coverage_state | full_text_available | chars | retrieval | notes |');
+    lines.push('|--------|----------------|--------------------:|------:|-----------|-------|');
     for (const o of fullTextOutcomes) {
       const available = o.success ? 'true' : 'false';
       const chars = o.chars > 0 ? String(o.chars) : '0';
       const notes = o.reason ?? (o.filePath ? `persisted: ${o.filePath}` : '');
-      lines.push(`| ${o.dokId} | ${available} | ${chars} | ${notes} |`);
+      lines.push(`| ${escapeMarkdownCell(o.dokId)} | ${escapeMarkdownCell(o.coverageState)} | ${available} | ${chars} | ${escapeMarkdownCell(o.provenance.retrieval)} | ${escapeMarkdownCell(notes)} |`);
     }
     const successCount = fullTextOutcomes.filter(o => o.success).length;
     const coverageLabel = fullTextMode === 'all' ? 'selected documents' : 'top documents';
     lines.push('', `**Full-text retrieved**: ${successCount}/${fullTextOutcomes.length} ${coverageLabel}`);
   }
 
+  lines.push('', '## Deferred Retrieval Queue', '');
+  lines.push('| processed | resolved | retained | expired | enqueued |');
+  lines.push('|----------:|---------:|---------:|--------:|---------:|');
+  lines.push(
+    `| ${retryQueueSummary.processed} | ${retryQueueSummary.resolved} | ${retryQueueSummary.retained} | ${retryQueueSummary.expired} | ${retryQueueSummary.enqueued} |`,
+  );
+
   return lines.join('\n');
+}
+
+export { serializeDataManifest };
+
+/**
+ * Resolve a stable document identifier from the fields used across MCP payloads.
+ *
+ * Falls back through `dok_id`, `dokument_id`, and `dokumentnamn`, then returns
+ * the supplied fallback when none of those identifiers are available.
+ */
+function extractDokId(doc: RawDocument, fallback: string): string {
+  const asNonEmptyString = (value: unknown): string => typeof value === 'string' && value.trim().length > 0
+    ? value.trim()
+    : '';
+  return (
+    asNonEmptyString(doc.dok_id)
+    || asNonEmptyString((doc as Record<string, unknown>)['dokument_id'])
+    || asNonEmptyString((doc as Record<string, unknown>)['dokumentnamn'])
+    || fallback
+  );
+}
+
+/**
+ * Build the per-document coverage summary table rendered into the manifest.
+ *
+ * This joins each downloaded document with any explicit full-text fetch outcome
+ * and falls back to inferred MCP coverage metadata when no top-N outcome exists.
+ */
+function buildDocumentCoverageSummary(
+  docs: RawDocument[],
+  fullTextOutcomes: FullTextFetchOutcome[] | undefined,
+  analysisRunDate?: string,
+): Array<{
+  dokId: string;
+  coverageState: MCPCoverageState;
+  retrieval: string;
+  tool: string;
+  resultCount: number;
+  notes: string;
+}> {
+  const outcomeMap = new Map(fullTextOutcomes?.map(outcome => [outcome.dokId, outcome]) ?? []);
+  // The analysis-run date should drive same-day inference, not the host
+  // machine's wall clock. Fall back to today only when the caller did not
+  // supply one (e.g. test helpers).
+  const runDate = analysisRunDate ?? new Date().toISOString().slice(0, 10);
+  return docs.map((doc, index) => {
+    const dokId = extractDokId(doc, `unknown-doc-${index + 1}`);
+    const outcome = outcomeMap.get(dokId);
+    // Prefer outcome provenance (from fetchFullTextForTopN) over document-level provenance
+    const provenance = outcome?.provenance ?? doc.mcpProvenance ?? buildMcpProvenance({
+      endpoint: 'unknown',
+      tool: 'unknown',
+      query: { dok_id: dokId },
+      resultCount: 0,
+      coverageState: inferDocumentCoverageState(
+        doc as Record<string, unknown>,
+        {
+          requestedDate: runDate,
+          fullTextRequested: Boolean(doc.contentFetched),
+        },
+      ),
+    });
+    const notes = outcome?.reason
+      ?? outcome?.filePath
+      ?? (doc.contentFetched
+        ? (typeof doc.summary === 'string' && doc.summary.trim().length > 0 ? 'summary present' : 'metadata-only payload')
+        : 'list payload only; get_dokument_innehall not attempted in this run');
+    return {
+      dokId,
+      coverageState: outcome?.coverageState ?? provenance.coverageState,
+      retrieval: provenance.retrieval,
+      tool: provenance.tool,
+      resultCount: provenance.resultCount,
+      notes,
+    };
+  });
 }
 
 // ---------------------------------------------------------------------------
@@ -464,9 +623,14 @@ async function runPreArticleAnalysis(opts: {
     console.log(`   📋 Scoped to document type: ${docType}`);
   }
   const client = new MCPClient();
+  const retryDrain = await drainMcpRetryQueue(client, {
+    docType,
+    queuePath: DEFAULT_MCP_RETRY_QUEUE_PATH,
+    maxEntries: 25,
+  });
   const resolvedRm = rm ?? riksMoteFromDate(date);
 
-  const downloadOpts: { limit: number; rm: string; docTypes?: DocumentTypeKey[]; enrichLimit?: number } = { limit, rm: resolvedRm };
+  const downloadOpts: { limit: number; rm: string; docTypes?: DocumentTypeKey[]; enrichLimit?: number; analysisRunDate?: string } = { limit, rm: resolvedRm, analysisRunDate: date };
   if (docType) {
     downloadOpts.docTypes = [docType];
   }
@@ -527,9 +691,11 @@ async function runPreArticleAnalysis(opts: {
       console.log(`   🔍 Fetching ${missingIds.length} targeted document(s) by ID: ${missingIds.join(', ')}`);
       for (const dokId of missingIds) {
         try {
-          const result = await client.fetchDocumentDetails(dokId, false);
-          if (result && typeof result === 'object') {
-            const doc = result as unknown as RawDocument;
+          const result = await client.fetchDocumentDetailsWithCoverage(dokId, false, {
+            requestedDate: date,
+          });
+          if (result.document && typeof result.document === 'object') {
+            const doc = result.document as unknown as RawDocument;
             if (!doc.dok_id) {
               (doc as Record<string, unknown>).dok_id = dokId;
             }
@@ -541,6 +707,41 @@ async function runPreArticleAnalysis(opts: {
         }
       }
     }
+  }
+
+  if (Object.keys(retryDrain.resolvedVoteringar).length > 0) {
+    let mergedVoteCount = 0;
+    for (const [queryKey, items] of Object.entries(retryDrain.resolvedVoteringar)) {
+      if (!Array.isArray(items) || items.length === 0) continue;
+      data.votes.push(...(items as RawDocument[]));
+      mergedVoteCount += items.length;
+      console.log(`   🗳️  Recovered ${items.length} voteringar from deferred queue (${queryKey})`);
+    }
+    if (mergedVoteCount > 0) {
+      console.log(`   🔁 Deferred queue restored ${mergedVoteCount} voteringar row(s) — appended to current-run output`);
+    }
+  }
+
+  if (Object.keys(retryDrain.resolvedDocuments).length > 0) {
+    const resolvedIds = new Set(Object.keys(retryDrain.resolvedDocuments));
+    const mergedIds = new Set<string>();
+    for (const doc of allDocs) {
+      const dokId = extractDokId(doc, '');
+      if (!dokId || !resolvedIds.has(dokId)) continue;
+      Object.assign(doc, retryDrain.resolvedDocuments[dokId]);
+      mergedIds.add(dokId);
+    }
+    // Append resolved documents that aren't already in allDocs (e.g. from a prior
+    // run's queue where the document is no longer selected by current date filters)
+    for (const dokId of resolvedIds) {
+      if (mergedIds.has(dokId)) continue;
+      const resolvedDoc = retryDrain.resolvedDocuments[dokId] as RawDocument;
+      if (resolvedDoc) {
+        allDocs.push(resolvedDoc);
+        mergedIds.add(dokId);
+      }
+    }
+    console.log(`   🔁 Deferred queue restored full text for ${mergedIds.size} document(s)`);
   }
 
   const excludedDocsCount = Math.max(0, flattenedDocs.length - allDocs.length);
@@ -560,6 +761,18 @@ async function runPreArticleAnalysis(opts: {
   console.log(`   🗄️  Persisted data for ${persistResult.written} documents to ${path.relative(REPO_ROOT, persistResult.dataRoot)}/ (${persistResult.skipped} skipped)`);
 
   let fullTextOutcomes: FullTextFetchOutcome[] | undefined;
+  const queueEntries = manifest.toolDiagnostics
+    .filter(diag => diag.signal?.code === 'MCP_INDEXING_LAG')
+    .map(diag => createRetryQueueEntry({
+      resourceType: 'voteringar_search',
+      resourceId: `search_voteringar:${JSON.stringify(diag.query)}`,
+      tool: diag.tool,
+      coverageState: diag.coverageState,
+      docType,
+      params: diag.query,
+      reason: diag.signal?.message,
+      requestedAt: new Date().toISOString(),
+    }));
   const effectiveAutoFullTextTopN = resolveAutoFullTextTopN(limit, autoFullTextTopN, fullTextForAll, allDocs.length);
   if (effectiveAutoFullTextTopN !== null && effectiveAutoFullTextTopN > 0 && allDocs.length > 0) {
     if (fullTextForAll) {
@@ -572,7 +785,7 @@ async function runPreArticleAnalysis(opts: {
       console.log(`\n📄 Step 2b: Auto-fetching full text for top-${effectiveAutoFullTextTopN} documents (--auto-full-text-top-n=${effectiveAutoFullTextTopN})...`);
     }
     console.log('   ⏱️  This may take 30–60 s — documented quality investment for deep-analysis tiers.');
-    fullTextOutcomes = await fetchFullTextForTopN(client, allDocs, effectiveAutoFullTextTopN, outputDir);
+    fullTextOutcomes = await fetchFullTextForTopN(client, allDocs, effectiveAutoFullTextTopN, outputDir, { runDate: date });
     const successCount = fullTextOutcomes.filter(o => o.success).length;
     console.log(`   ✅ Full text retrieved for ${successCount}/${fullTextOutcomes.length} document(s)`);
     for (const o of fullTextOutcomes) {
@@ -584,9 +797,101 @@ async function runPreArticleAnalysis(opts: {
     }
   }
 
+  for (const doc of allDocs) {
+    const record = doc as Record<string, unknown>;
+    if (!record['mcpCoverageState']) {
+      // Use the pipeline's analysis date (today's run, normalized via `date`)
+      // as the `requestedDate`. Using `doc.datum` here would incorrectly
+      // classify any dated metadata-only document as a same-day filing.
+      const coverageState = inferDocumentCoverageState(record, {
+        requestedDate: date,
+        fullTextRequested: Boolean(doc.contentFetched),
+      });
+      record['mcpCoverageState'] = coverageState;
+      record['mcpProvenance'] = buildMcpProvenance({
+        endpoint: client.baseURL,
+        tool: 'download-parliamentary-data',
+        query: { dok_id: extractDokId(doc, '') },
+        resultCount: 1,
+        coverageState,
+      });
+    }
+  }
+
+  if (fullTextOutcomes) {
+    const docMap = new Map(allDocs.map(doc => [extractDokId(doc, ''), doc]));
+    for (const outcome of fullTextOutcomes) {
+      const doc = docMap.get(outcome.dokId);
+      if (!doc) continue;
+      if (outcome.coverageState !== 'full_text' && typeof doc.datum === 'string' && doc.datum.slice(0, 10) === date) {
+        queueEntries.push(createRetryQueueEntry({
+          resourceType: 'document_fulltext',
+          resourceId: outcome.dokId,
+          tool: 'get_dokument_innehall',
+          coverageState: outcome.coverageState,
+          docType,
+          params: { requestedDate: doc.datum.slice(0, 10), include_full_text: true },
+          reason: outcome.reason,
+          requestedAt: new Date().toISOString(),
+        }));
+      }
+    }
+  }
+
+  // Fallback retry-queue enrolment for the default (non-top-N) flow:
+  // `downloadAllDocuments()` already attempts limited full-text enrichment
+  // (`MAX_ENRICHMENT_PER_TYPE`) and can set `mcpCoverageState: 'not_indexed'`,
+  // but those documents are not represented in `fullTextOutcomes`. Without
+  // this loop, same-day not-yet-indexed documents are silently dropped from
+  // the deferred retry queue instead of being scheduled for a later run.
+  const alreadyQueuedDocIds = new Set(
+    queueEntries
+      .filter(e => e.resourceType === 'document_fulltext')
+      .map(e => e.resourceId),
+  );
+  for (const doc of allDocs) {
+    const record = doc as Record<string, unknown>;
+    const coverageState = record['mcpCoverageState'] as MCPCoverageState | undefined;
+    if (coverageState !== 'not_indexed') continue;
+    if (typeof doc.datum !== 'string' || doc.datum.slice(0, 10) !== date) continue;
+    const dokId = extractDokId(doc, '');
+    if (!dokId || alreadyQueuedDocIds.has(dokId)) continue;
+    const provenanceReason = record['mcpProvenance']
+      && typeof (record['mcpProvenance'] as Record<string, unknown>)['signals'] === 'object'
+      ? undefined
+      : `Same-day enrichment returned ${coverageState} for ${dokId}`;
+    queueEntries.push(createRetryQueueEntry({
+      resourceType: 'document_fulltext',
+      resourceId: dokId,
+      tool: 'get_dokument_innehall',
+      coverageState,
+      docType,
+      params: { requestedDate: doc.datum.slice(0, 10), include_full_text: true },
+      reason: provenanceReason,
+      requestedAt: new Date().toISOString(),
+    }));
+    alreadyQueuedDocIds.add(dokId);
+  }
+
+  const updatedQueue = queueEntries.length > 0
+    ? enqueueRetryEntries(queueEntries, DEFAULT_MCP_RETRY_QUEUE_PATH)
+    : null;
+  const queueRetainedTotal = updatedQueue?.entries.length ?? retryDrain.queue.entries.length;
+
+  const documentCoverage = buildDocumentCoverageSummary(allDocs, fullTextOutcomes, date);
   const manifestContent = serializeDataManifest(
     date, generatedAt, manifest.dataSources, manifest.docCounts,
-    allDocs.length, dataFreshness, fullTextOutcomes, fullTextForAll ? 'all' : 'top-n',
+    allDocs.length, dataFreshness, [...manifest.toolDiagnostics, ...retryDrain.diagnostics],
+    documentCoverage,
+    {
+      processed: retryDrain.processed,
+      resolved: retryDrain.resolved,
+      retained: queueRetainedTotal,
+      expired: retryDrain.expired,
+      enqueued: queueEntries.length,
+    },
+    fullTextOutcomes,
+    fullTextForAll ? 'all' : 'top-n',
   );
   const manifestPath = path.join(outputDir, 'data-download-manifest.md');
   fs.writeFileSync(manifestPath, manifestContent, 'utf8');

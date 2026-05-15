@@ -8,6 +8,8 @@
  * @license Apache-2.0
  */
 
+import type { MCPCoverageState, MCPProvenance, MCPStructuredSignal } from '../types/mcp.js';
+
 /** Raw calendar event from MCP server */
 export interface RawCalendarEvent {
   datum?: string;
@@ -60,6 +62,12 @@ export interface RawDocument {
   fullContent?: string;
   /** Whether this document was enriched with full content */
   contentFetched?: boolean;
+  /** Machine-readable MCP coverage state for this document */
+  mcpCoverageState?: MCPCoverageState;
+  /** Provenance block for MCP-derived document content */
+  mcpProvenance?: MCPProvenance;
+  /** Structured MCP wrapper signals affecting this document */
+  mcpSignals?: MCPStructuredSignal[];
   /** Related speeches mentioning this document */
   speeches?: Array<{ talare?: string; parti?: string; text?: string; anforande_nummer?: string }>;
 }
