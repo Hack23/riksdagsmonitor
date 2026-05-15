@@ -30,6 +30,7 @@ export const MCP_COVERAGE_STATES = [
   'metadata_only',
   'not_indexed',
   'search_empty',
+  'fetch_error',
 ] as const;
 
 /** Coverage state values used in manifests, JSON artefacts, and retry queues. */

@@ -181,38 +181,52 @@ export async function drainMcpRetryQueue(
     const lastAttemptAt = now.toISOString();
 
     if (entry.resourceType === 'document_fulltext') {
-      const result = await client.fetchDocumentDetailsWithCoverage(
-        entry.resourceId,
-        true,
-        {
-          requestedDate: (entry.params['requestedDate'] as string | undefined) ?? null,
-          retrieval: 'retry_queue',
-        },
-      );
+      try {
+        const result = await client.fetchDocumentDetailsWithCoverage(
+          entry.resourceId,
+          true,
+          {
+            requestedDate: (entry.params['requestedDate'] as string | undefined) ?? null,
+            retrieval: 'retry_queue',
+          },
+        );
 
-      diagnostics.push({
-        tool: entry.tool,
-        query: { ...entry.params, dok_id: entry.resourceId, include_full_text: true },
-        resultCount: result.resultCount,
-        coverageState: result.coverageState,
-        provenance: result.provenance,
-        notes: entry.reason,
-      });
+        diagnostics.push({
+          tool: entry.tool,
+          query: { ...entry.params, dok_id: entry.resourceId, include_full_text: true },
+          resultCount: result.resultCount,
+          coverageState: result.coverageState,
+          provenance: result.provenance,
+          notes: entry.reason,
+        });
 
-      if (result.coverageState === 'full_text') {
-        resolved++;
-        resolvedDocuments[entry.resourceId] = result.document;
-        continue;
+        if (result.coverageState === 'full_text') {
+          resolved++;
+          resolvedDocuments[entry.resourceId] = result.document;
+          continue;
+        }
+
+        remaining.push({
+          ...entry,
+          attemptCount: entry.attemptCount + 1,
+          coverageState: result.coverageState,
+          reason: entry.reason ?? `Deferred ${entry.tool} retry still ${result.coverageState}`,
+          lastAttemptAt,
+        });
+        retained++;
+      } catch (drainErr) {
+        console.warn(
+          `[mcp-retry-queue] Document retry failed for ${entry.resourceId}:`,
+          drainErr instanceof Error ? drainErr.message : String(drainErr),
+        );
+        remaining.push({
+          ...entry,
+          attemptCount: entry.attemptCount + 1,
+          reason: `Retry failed: ${drainErr instanceof Error ? drainErr.message : String(drainErr)}`,
+          lastAttemptAt,
+        });
+        retained++;
       }
-
-      remaining.push({
-        ...entry,
-        attemptCount: entry.attemptCount + 1,
-        coverageState: result.coverageState,
-        reason: entry.reason ?? `Deferred ${entry.tool} retry still ${result.coverageState}`,
-        lastAttemptAt,
-      });
-      retained++;
       continue;
     }
 
@@ -228,33 +242,47 @@ export async function drainMcpRetryQueue(
       continue;
     }
 
-    const votingResult = await client.fetchVotingRecordsWithDiagnostics(
-      votingParams as FetchVotingFilters,
-    );
+    try {
+      const votingResult = await client.fetchVotingRecordsWithDiagnostics(
+        votingParams as FetchVotingFilters,
+      );
 
-    diagnostics.push({
-      tool: entry.tool,
-      query: { ...(entry.params as Record<string, unknown>) },
-      resultCount: votingResult.resultCount,
-      coverageState: votingResult.coverageState,
-      provenance: votingResult.provenance,
-      notes: entry.reason,
-      ...(votingResult.signal ? { signal: votingResult.signal } : {}),
-    });
+      diagnostics.push({
+        tool: entry.tool,
+        query: { ...(entry.params as Record<string, unknown>) },
+        resultCount: votingResult.resultCount,
+        coverageState: votingResult.coverageState,
+        provenance: votingResult.provenance,
+        notes: entry.reason,
+        ...(votingResult.signal ? { signal: votingResult.signal } : {}),
+      });
 
-    if (votingResult.resultCount > 0) {
-      resolved++;
-      continue;
+      if (votingResult.resultCount > 0) {
+        resolved++;
+        continue;
+      }
+
+      remaining.push({
+        ...entry,
+        attemptCount: entry.attemptCount + 1,
+        coverageState: votingResult.coverageState,
+        reason: votingResult.signal?.message ?? entry.reason,
+        lastAttemptAt,
+      });
+      retained++;
+    } catch (drainErr) {
+      console.warn(
+        `[mcp-retry-queue] Voting retry failed for ${entry.resourceId}:`,
+        drainErr instanceof Error ? drainErr.message : String(drainErr),
+      );
+      remaining.push({
+        ...entry,
+        attemptCount: entry.attemptCount + 1,
+        reason: `Retry failed: ${drainErr instanceof Error ? drainErr.message : String(drainErr)}`,
+        lastAttemptAt,
+      });
+      retained++;
     }
-
-    remaining.push({
-      ...entry,
-      attemptCount: entry.attemptCount + 1,
-      coverageState: votingResult.coverageState,
-      reason: votingResult.signal?.message ?? entry.reason,
-      lastAttemptAt,
-    });
-    retained++;
   }
 
   const updatedQueue: MCPRetryQueueFile = {

@@ -538,13 +538,13 @@ export async function downloadAllDocuments(
         tool: task.source,
         query,
         resultCount: 0,
-        coverageState: 'search_empty',
+        coverageState: 'fetch_error',
         provenance: buildMcpProvenance({
           endpoint: client.baseURL,
           tool: task.source,
           query,
           resultCount: 0,
-          coverageState: 'search_empty',
+          coverageState: 'fetch_error',
         }),
         notes: result.reason instanceof Error ? result.reason.message : String(result.reason),
       });
@@ -625,10 +625,11 @@ export async function downloadAllDocuments(
               docRecord['notis'] = detailsNotis;
             }
             docRecord['contentFetched'] = true;
+            const runDate = new Date().toISOString().slice(0, 10);
             const coverageState = inferDocumentCoverageState(
               { ...docRecord, ...details },
               {
-                requestedDate: typeof docRecord['datum'] === 'string' ? docRecord['datum'] as string : null,
+                requestedDate: runDate,
                 fullTextRequested: true,
               },
             );
@@ -818,13 +819,14 @@ export async function fetchFullTextForTopN(
       const docRecord = doc as Record<string, unknown>;
       let details: Record<string, unknown> | null = null;
       let content = selectContent(docRecord);
+      const runDate = new Date().toISOString().slice(0, 10);
 
       if (content.length <= FULL_TEXT_MIN_LENGTH) {
         const detailsWithCoverage = await client.fetchDocumentDetailsWithCoverage(
           dokId,
           true,
           {
-            requestedDate: typeof docRecord['datum'] === 'string' ? docRecord['datum'] as string : null,
+            requestedDate: runDate,
           },
         );
         details = detailsWithCoverage.document;
@@ -834,7 +836,7 @@ export async function fetchFullTextForTopN(
       const coverageState = inferDocumentCoverageState(
         { ...docRecord, ...(details ?? {}) },
         {
-          requestedDate: typeof docRecord['datum'] === 'string' ? docRecord['datum'] : null,
+          requestedDate: runDate,
           fullTextRequested: true,
         },
       );
@@ -890,19 +892,26 @@ export async function fetchFullTextForTopN(
         };
       }
     } catch (err) {
+      const errMsg = err instanceof Error ? err.message : String(err);
+      const msgLower = errMsg.toLowerCase();
+      // Distinguish true indexing-gap errors from transient/operational failures
+      const isNotIndexed = ['not found', '404', 'not indexed', 'no document', 'ingen'].some(
+        (p) => msgLower.includes(p),
+      );
+      const state = isNotIndexed ? 'not_indexed' : 'fetch_error' as const;
       const provenance = buildMcpProvenance({
         endpoint: client.baseURL,
         tool: 'get_dokument_innehall',
         query: { dok_id: dokId, include_full_text: true },
         resultCount: 0,
-        coverageState: 'not_indexed',
+        coverageState: state,
       });
       outcome = {
         dokId,
         success: false,
         chars: 0,
-        reason: `fetchDocumentDetails failed: ${err instanceof Error ? err.message : String(err)}`,
-        coverageState: 'not_indexed',
+        reason: `fetchDocumentDetails failed: ${errMsg}`,
+        coverageState: state,
         provenance,
       };
     }

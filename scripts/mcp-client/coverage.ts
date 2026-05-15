@@ -42,6 +42,12 @@ export function hasSubstantiveFullText(record: Record<string, unknown>): boolean
 
 /**
  * Infer the machine-readable MCP coverage state for a document payload.
+ *
+ * The `requestedDate` should be the current analysis/run date (i.e. "today"),
+ * NOT the document's own publication date. Only when the document was published
+ * on the same day as the analysis run and still lacks full text do we infer
+ * `not_indexed` (indexing lag). For older documents without full text, the
+ * correct state is `metadata_only`.
  */
 export function inferDocumentCoverageState(
   record: Record<string, unknown>,
@@ -51,7 +57,15 @@ export function inferDocumentCoverageState(
 
   const requestedDate = options.requestedDate?.slice(0, 10) ?? null;
   const documentDate = extractDocumentDate(record);
-  const sameDay = Boolean(requestedDate && documentDate && requestedDate === documentDate);
+
+  // Only infer `not_indexed` when:
+  // 1. Full text was requested
+  // 2. We have BOTH a run date and a document date
+  // 3. The document was published on the SAME day as the analysis run
+  // This means the document is brand new and likely not yet indexed.
+  const sameDay = Boolean(
+    requestedDate && documentDate && requestedDate === documentDate,
+  );
 
   if (options.fullTextRequested && sameDay) {
     return 'not_indexed';

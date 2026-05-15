@@ -232,6 +232,7 @@ Every requested `dok_id` must carry a machine-readable `MCPCoverageState` row an
 | `metadata_only` | metadata/summary returned but no substantive body text | cap confidence and disclose the gap |
 | `not_indexed` | same-day filing or lookup attempted before full text was indexed | add to deferred retry queue for up to 7 days |
 | `search_empty` | search/list wrapper returned zero rows for the query | log the exact query + result count; never paraphrase as “none found” without diagnostics |
+| `fetch_error` | MCP tool call failed due to transient/operational error (network, timeout, 5xx) | retain in retry queue; do not conflate with true absence or indexing lag |
 
 The manifest must therefore include:
 

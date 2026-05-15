@@ -30,7 +30,6 @@ import { annotateDocumentTypes } from './document-types.js';
 import {
   attachCoverageMetadata,
   buildMcpProvenance,
-  extractDocumentDate,
   inferDocumentCoverageState,
 } from './coverage.js';
 
@@ -743,7 +742,7 @@ export class MCPClient {
     try {
       const response = await this.fetchDocumentDetails(dok_id, include_full_text);
       const coverageState = inferDocumentCoverageState(response, {
-        requestedDate: options.requestedDate ?? extractDocumentDate(response),
+        requestedDate: options.requestedDate ?? null,
         fullTextRequested: include_full_text,
       });
       const resultCount = Object.keys(response).length > 0 ? 1 : 0;

@@ -378,9 +378,12 @@ function buildDocumentCoverageSummary(
   notes: string;
 }> {
   const outcomeMap = new Map(fullTextOutcomes?.map(outcome => [outcome.dokId, outcome]) ?? []);
+  const runDate = new Date().toISOString().slice(0, 10);
   return docs.map((doc, index) => {
     const dokId = extractDokId(doc, `unknown-doc-${index + 1}`);
-    const provenance = doc.mcpProvenance ?? buildMcpProvenance({
+    const outcome = outcomeMap.get(dokId);
+    // Prefer outcome provenance (from fetchFullTextForTopN) over document-level provenance
+    const provenance = outcome?.provenance ?? doc.mcpProvenance ?? buildMcpProvenance({
       endpoint: 'unknown',
       tool: 'unknown',
       query: { dok_id: dokId },
@@ -388,12 +391,11 @@ function buildDocumentCoverageSummary(
       coverageState: inferDocumentCoverageState(
         doc as Record<string, unknown>,
         {
-          requestedDate: typeof doc.datum === 'string' ? doc.datum : null,
+          requestedDate: runDate,
           fullTextRequested: Boolean(doc.contentFetched),
         },
       ),
     });
-    const outcome = outcomeMap.get(dokId);
     const notes = outcome?.reason
       ?? outcome?.filePath
       ?? (doc.contentFetched
@@ -401,7 +403,7 @@ function buildDocumentCoverageSummary(
         : 'list payload only; get_dokument_innehall not attempted in this run');
     return {
       dokId,
-      coverageState: provenance.coverageState,
+      coverageState: outcome?.coverageState ?? provenance.coverageState,
       retrieval: provenance.retrieval,
       tool: provenance.tool,
       resultCount: provenance.resultCount,
@@ -635,12 +637,24 @@ async function runPreArticleAnalysis(opts: {
 
   if (Object.keys(retryDrain.resolvedDocuments).length > 0) {
     const resolvedIds = new Set(Object.keys(retryDrain.resolvedDocuments));
+    const mergedIds = new Set<string>();
     for (const doc of allDocs) {
       const dokId = extractDokId(doc, '');
       if (!dokId || !resolvedIds.has(dokId)) continue;
       Object.assign(doc, retryDrain.resolvedDocuments[dokId]);
+      mergedIds.add(dokId);
     }
-    console.log(`   🔁 Deferred queue restored full text for ${resolvedIds.size} document(s)`);
+    // Append resolved documents that aren't already in allDocs (e.g. from a prior
+    // run's queue where the document is no longer selected by current date filters)
+    for (const dokId of resolvedIds) {
+      if (mergedIds.has(dokId)) continue;
+      const resolvedDoc = retryDrain.resolvedDocuments[dokId] as RawDocument;
+      if (resolvedDoc) {
+        allDocs.push(resolvedDoc);
+        mergedIds.add(dokId);
+      }
+    }
+    console.log(`   🔁 Deferred queue restored full text for ${mergedIds.size} document(s)`);
   }
 
   const excludedDocsCount = Math.max(0, flattenedDocs.length - allDocs.length);
