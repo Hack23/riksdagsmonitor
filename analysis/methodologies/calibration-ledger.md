@@ -89,7 +89,7 @@ Every ledger entry follows the schema below. All fields are mandatory unless mar
 | **wep_pct_lo** | 55 |
 | **wep_pct_hi** | 80 |
 | **point_estimate_pct** | 68 |
-| **base_rate_source** | `base-rates/coalition-formation-outcomes.json` → `sweden_budget_pass_first_vote_rate` |
+| **base_rate_source** | `base-rates/coalition-formation-outcomes.json` → `sweden_budget_pass_first_vote_rate_pct` |
 | **base_rate_prior_pct** | 72 |
 | **admiralty_source** | B |
 | **admiralty_info** | 2 |
@@ -114,8 +114,8 @@ Every ledger entry follows the schema below. All fields are mandatory unless mar
 | **wep_pct_lo** | 80 |
 | **wep_pct_hi** | 95 |
 | **point_estimate_pct** | 87 |
-| **base_rate_source** | `base-rates/coalition-formation-outcomes.json` → `nordic_coalition_quarterly_survival_rate` |
-| **base_rate_prior_pct** | 84 |
+| **base_rate_source** | `base-rates/coalition-formation-outcomes.json` → `nordic_coalition_quarterly_survival_rate_pct` |
+| **base_rate_prior_pct** | 89 |
 | **admiralty_source** | A |
 | **admiralty_info** | 1 |
 | **resolution_date** | 2025-10-31 |

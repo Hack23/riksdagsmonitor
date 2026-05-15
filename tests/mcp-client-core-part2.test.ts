@@ -186,6 +186,20 @@ describe('MCPClient Part 2', () => {
       expect(docs).toHaveLength(1);
       expect((docs[0] as Record<string, unknown>)['dok_id']).toBe('A');
     });
+
+    it('should expose query diagnostics for empty search results', async () => {
+      global.fetch = vi.fn(() => Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({ jsonrpc: '2.0', id: 1, result: { dokument: [] } })
+      })) as unknown as typeof global.fetch;
+
+      const result = await client.searchDocumentsWithDiagnostics({ titel: 'Statskontoret', doktyp: 'prop' });
+      expect(result.resultCount).toBe(0);
+      expect(result.coverageState).toBe('search_empty');
+      expect(result.query).toEqual({ titel: 'Statskontoret', doktyp: 'prop' });
+      expect(result.provenance.tool).toBe('search_dokument');
+      expect(result.provenance.resultCount).toBe(0);
+    });
   });
 
   describe('normalizeDocumentType', () => {
@@ -338,6 +352,47 @@ describe('MCPClient Part 2', () => {
 
       const votes = await client.fetchVotingRecords({ rm: '2025/26' });
       expect(votes).toEqual([]);
+    });
+
+    it('should emit MCP_INDEXING_LAG when current riksmöte is empty but previous has rows', async () => {
+      const currentEmpty = { jsonrpc: '2.0', id: 1, result: { votes: [] } };
+      const previousHasRows = { jsonrpc: '2.0', id: 2, result: { votes: [{ bet: '2024/25:UbU1' }] } };
+      global.fetch = vi.fn()
+        .mockResolvedValueOnce({
+          ok: true,
+          json: () => Promise.resolve(currentEmpty),
+        } as Response)
+        .mockResolvedValueOnce({
+          ok: true,
+          json: () => Promise.resolve(previousHasRows),
+        } as Response) as unknown as typeof global.fetch;
+
+      const result = await client.fetchVotingRecordsWithDiagnostics({ rm: '2025/26', limit: 10 });
+      expect(result.resultCount).toBe(0);
+      expect(result.coverageState).toBe('search_empty');
+      expect(result.signal?.code).toBe('MCP_INDEXING_LAG');
+      expect(result.signal?.comparisonRm).toBe('2024/25');
+      expect(result.provenance.signals?.[0]?.code).toBe('MCP_INDEXING_LAG');
+    });
+  });
+
+  describe('fetchDocumentDetailsWithCoverage', () => {
+    it('classifies same-day empty content as not_indexed', async () => {
+      global.fetch = vi.fn(() => Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({
+          jsonrpc: '2.0',
+          id: 1,
+          result: { dok_id: 'HD10492', datum: '2026-05-15', summary: 'Kort metadata' },
+        }),
+      })) as unknown as typeof global.fetch;
+
+      const result = await client.fetchDocumentDetailsWithCoverage('HD10492', true, {
+        requestedDate: '2026-05-15',
+      });
+      expect(result.coverageState).toBe('not_indexed');
+      expect((result.document as Record<string, unknown>)['mcpCoverageState']).toBe('not_indexed');
+      expect(result.provenance.coverageState).toBe('not_indexed');
     });
   });
 

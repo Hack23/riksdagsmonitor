@@ -91,24 +91,29 @@ ANTI-TEMPLATE — DO NOT:
 
 ---
 
-## 🧪 Analysis of Competing Hypotheses (ACH) — 100 % Key Judgment Coverage Required
+## 🎯 Key Judgment Coverage Matrix (Required)
 
-> **Mandatory requirement (ICD 203 §4; gate Check 7):** ACH MUST challenge **every** Key Judgment (KJ) declared in the sibling `intelligence-assessment.md`. Count the KJs in that file and verify one ACH row or hypothesis cluster maps to each KJ. Partial ACH coverage is a gate failure. Document the mapping in the §KJ–ACH coverage map below.
+> **[REQUIRED]** Before writing hypotheses, list **every** KJ from `intelligence-assessment.md` and map it to at least one challenge row. Gate expectation: **100% KJ coverage** — every row must end with ✅ (no ❌). See [`analysis/methodologies/admiralty-rubric.md`](../methodologies/admiralty-rubric.md).
 
-### KJ–ACH coverage map (fill before ACH table)
+| KJ ID | KJ summary | Challenged by hypothesis ID(s) | Challenge present? |
+|------|------------|---------------------------------|:------------------:|
+| KJ-1 | `[REQUIRED: summary from intelligence-assessment.md]` | `H1 / H2 / H3` | ✅ / ❌ |
+| KJ-2 | `[REQUIRED]` | `H#` | ✅ / ❌ |
+| KJ-3 | `[REQUIRED]` | `H#` | ✅ / ❌ |
+| ... | ... | ... | ... |
+| **Coverage** | — | — | **_N_ / _N_ (must be 100%)** |
 
-| KJ ID | KJ claim (abbreviated) | ACH hypothesis challenging it | Coverage status |
-|-------|------------------------|-------------------------------|----------------|
-| KJ-1 | [paste KJ-1 summary from intelligence-assessment.md] | H1 (main hypothesis), H2 (alternative) | ✅ covered |
-| KJ-2 | [paste KJ-2 summary] | H2 (main hypothesis), H3 (alternative) | ✅ covered |
-| KJ-3 | [paste KJ-3 summary] | H4 (alternative) | ✅ covered |
-| _(add one row per KJ; gate will count rows and compare to KJ count in intelligence-assessment.md)_ | | | |
+> **Gate enforcement (Check 7b):** the analysis gate extracts the unique set of `KJ-N` IDs from `intelligence-assessment.md` and verifies each appears on a non-`❌` row inside this `## Key Judgment Coverage Matrix` section. Missing KJs or any `❌` row blocks the commit.
 
-> **If any KJ has no matching ACH row → add ACH hypothesis(es) before committing. Gate Check 7 enforces KJ coverage = 100 %.**
+---
+
+## 🧪 Analysis of Competing Hypotheses (ACH)
+
+> **Mandatory requirement (ICD 203 §4; gate Check 7b):** ACH MUST challenge **every** Key Judgment (KJ) declared in the sibling `intelligence-assessment.md`. Coverage is documented above in the `## 🎯 Key Judgment Coverage Matrix` section — gate enforcement reads that section and verifies each KJ from `intelligence-assessment.md` has a non-`❌` row there.
 
 ### ACH matrix
 
-List each hypothesis, then score each piece of evidence as **C** (consistent), **I** (inconsistent), or **N** (neutral). The hypothesis with the **fewest inconsistencies** survives. Each hypothesis MUST correspond to a KJ challenge (see KJ–ACH map above). **WEP probability and base-rate prior MUST be stated for each hypothesis; citing only "analyst judgement" without a base-rate source is a banned pattern** (flagged by banned-phrase scanner; see `analysis/methodologies/base-rates/` for calibration datasets).
+List each hypothesis, then score each piece of evidence as **C** (consistent), **I** (inconsistent), or **N** (neutral). The hypothesis with the **fewest inconsistencies** survives. Each hypothesis MUST correspond to a KJ challenge (see Coverage Matrix above). **WEP probability and base-rate prior MUST be stated for each hypothesis; citing only "analyst judgement" without a base-rate source is a banned pattern** (flagged by banned-phrase scanner; see `analysis/methodologies/base-rates/` for calibration datasets).
 
 ```mermaid
 graph LR
@@ -250,4 +255,3 @@ graph LR
 - [ ] **Cross-references resolve** — every `[link](file.md)` in this artifact points to a file that exists in the run folder (`analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`) or to a methodology / template under `analysis/`.
 - [ ] **Mermaid renders** — every fenced ` ```mermaid ` block parses (no missing class definitions, no orphan nodes, no >40-node graphs that overflow viewport on mobile).
 - [ ] **Line-floor check** — artifact length ≥ the per-artifact floor in [`reference-quality-thresholds.json`](../methodologies/reference-quality-thresholds.json); shorter artifacts trigger Pass-2 rewrite, never a `[truncated]` note.
-

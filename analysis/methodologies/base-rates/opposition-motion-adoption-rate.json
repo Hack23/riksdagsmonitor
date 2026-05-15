@@ -1,5 +1,4 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "schema_version": "1.0",
   "dataset_id": "opposition-motion-adoption-rate",
   "title": "Opposition Motion Adoption Rate — Riksdag Committee Level 2010–2025",
@@ -35,7 +34,7 @@
     "overall_adoption_rate_pct": 7,
     "overall_adoption_rate_note": "All opposition motions adopted in any form (full, partial, or chamber override), across all committees and all riksmöten 2010–2025",
     "cross_bloc_amendment_survival_rate_pct": 8,
-    "cross_bloc_amendment_survival_rate_note": "Motions receiving cross-bloc amendment treatment (incorporated into government bill after negotiation); subset of overall adoption",
+    "cross_bloc_amendment_survival_rate_note": "Parallel-track measure (NOT a strict subset of overall_adoption_rate_pct): proportion of motion-policy-content that survives into the final adopted government bill via cross-bloc amendment, even when the original motion was formally rejected (avstyrkt). Overlaps partially with overall_adoption_rate_pct but counts content survival rather than motion-level adoption, hence the value (8%) can legitimately exceed overall_adoption_rate_pct (7%). Methodological note: N=14,700 motions; cross-bloc-amendment content tracked separately via committee betänkande-text diff vs. original proposition.",
     "government_bill_rate_per_riksmote": 58,
     "government_bill_rate_per_riksmote_note": "Proportion of government bills (propositioner) tabled per riksmöte that are registered in the first 6 months (Sep–Feb); used as proxy for government legislative productivity prior",
     "fiu_committee_adoption_rate_pct": 4,

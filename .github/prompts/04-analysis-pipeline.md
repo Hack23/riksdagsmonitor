@@ -77,7 +77,7 @@ Produced in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`. The output set is **stab
 | 13 | `comparative-international.md` | [`comparative-international.md`](../../analysis/templates/comparative-international.md) | ≥ 2 comparator jurisdictions (Nordic + EU minimum) with Outside-In analysis |
 | 14 | `devils-advocate.md` | [`devils-advocate.md`](../../analysis/templates/devils-advocate.md) | ≥ 3 competing hypotheses via ACH matrix, Red-Team challenge, rejected alternatives logged |
 | 15 | `intelligence-assessment.md` | [`intelligence-assessment.md`](../../analysis/templates/intelligence-assessment.md) | 3–7 Key Judgments with confidence labels, PIRs for next cycle, Key Assumptions Check |
-| 16 ⭐ | `methodology-reflection.md` | [`methodology-reflection.md`](../../analysis/templates/methodology-reflection.md) | **VITAL run-audit gate.** Evidence sufficiency, confidence distribution, source diversity, party-neutrality arithmetic, **ICD 203 compliance audit**, ≥ 3 concrete methodology improvements for next cycle |
+| 16 ⭐ | `methodology-reflection.md` | [`methodology-reflection.md`](../../analysis/templates/methodology-reflection.md) | **VITAL run-audit gate.** Must include all 9 required sections: ICD 203 full audit grid; Devil's-Advocate KJ-coverage matrix (100%); confidence distribution with explicit posterior per KJ; Lagrådet/Statskontoret/SKR tracking; sibling-folder ingestion record; unified re-run log schema (`run_id`,`attempt`,`new dok_ids`,`artifacts extended`,`flags closed`,`vintage refresh`); banned-phrase zero-count grid; Pass 1→Pass 2 delta table; improvement opportunities linked to PIR roll-forward |
 
 ### Family D — Electoral & Domain Lenses (7 files)
 

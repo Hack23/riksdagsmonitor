@@ -1,5 +1,4 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "schema_version": "1.0",
   "dataset_id": "coalition-formation-outcomes",
   "title": "Coalition-Formation Outcomes — Nordic + DACH 2010–2024",
@@ -38,11 +37,11 @@
     "to": "2024-12-31"
   },
   "aggregate_rates": {
-    "nordic_coalition_quarterly_survival_rate": 89,
+    "nordic_coalition_quarterly_survival_rate_pct": 89,
     "nordic_coalition_quarterly_survival_rate_note": "Proportion of Nordic governments surviving any given quarter (quarterly granularity, N=320 quarters across 4 Nordic countries 2010–2024)",
     "nordic_incumbent_retention_rate_pct": 41,
     "nordic_incumbent_retention_rate_note": "Proportion of Nordic elections where the incumbent government coalition is returned to power (N=18 Nordic elections 2010–2024)",
-    "sweden_budget_pass_first_vote_rate": 72,
+    "sweden_budget_pass_first_vote_rate_pct": 72,
     "sweden_budget_pass_first_vote_rate_note": "Proportion of Swedish budgetramverk first-chamber votes passing without minority amendment (N=14 votes 2010–2024)",
     "sweden_left_bloc_minority_formation_rate_pct": 25,
     "sweden_left_bloc_minority_formation_rate_note": "S-led bloc minority government formations out of all post-2010 Swedish government formations (N=5 formations)",

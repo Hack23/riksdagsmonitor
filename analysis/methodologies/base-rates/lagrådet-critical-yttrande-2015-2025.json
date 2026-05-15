@@ -1,5 +1,4 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "schema_version": "1.0",
   "dataset_id": "lagrådet-critical-yttrande-2015-2025",
   "title": "Lagrådet Critical Yttrande Frequency 2015–2025",

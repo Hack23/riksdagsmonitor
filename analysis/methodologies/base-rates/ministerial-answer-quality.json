@@ -1,5 +1,4 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "schema_version": "1.0",
   "dataset_id": "ministerial-answer-quality",
   "title": "Ministerial Answer Quality — Last 200 Interpellations (2024–2026)",
@@ -60,14 +59,14 @@
     "tier1_2_deflection_rate_pct": 46,
     "tier1_deflection_only_rate_pct": 18,
     "tier2_partial_rate_pct": 28,
-    "tier3_substantive_no_commit_rate_pct": 32,
+    "tier3_substantive_no_commit_rate_pct": 43,
     "tier3_plus_rate_pct": 54,
     "tier4_plus_rate_pct": 11,
     "tier5_full_accountability_rate_pct": 3,
     "concrete_timeline_commitment_rate_pct": 22,
     "scheduled_debate_completion_rate_pct": 96,
     "high_salience_electoral_translation_rate_pct": 61,
-    "aggregate_notes": "tier1_2 + tier3 + tier4_plus = 100 %. High-salience electoral translation = proportion of interpellations rated tier 3+ AND on a domain polling in top-3 voter concerns (SVT/Demoskop) that translated to measurable polling shift within 60 days."
+    "aggregate_notes": "Mutually-exclusive partition: tier1_2_deflection_rate_pct (46) + tier3_substantive_no_commit_rate_pct (43) + tier4_plus_rate_pct (11) = 100%. Derived (non-exclusive) views: tier1_deflection_only_rate_pct (18) + tier2_partial_rate_pct (28) = tier1_2 (46); tier3_plus_rate_pct (54) = tier3_substantive_no_commit_rate_pct (43) + tier4_plus_rate_pct (11); tier5_full_accountability_rate_pct (3) is a subset of tier4_plus_rate_pct (11). High-salience electoral translation = proportion of interpellations rated tier 3+ AND on a domain polling in top-3 voter concerns (SVT/Demoskop) that translated to measurable polling shift within 60 days."
   },
   "domain_breakdown": [
     {

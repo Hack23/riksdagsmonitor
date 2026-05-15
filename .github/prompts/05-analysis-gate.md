@@ -25,10 +25,10 @@ This is the **only** gate separating analysis from article generation. If it fai
    - `intelligence-assessment.md` declares **≥ 3 Key Judgments** (enforced structurally by `Key Judgment` / `KJ-*` header count ≥ 3) each carrying at least one confidence label (`VERY HIGH`, `HIGH`, `MEDIUM`, `LOW`, `VERY LOW`) — the confidence-label presence is audited by the implementation's `grep -cE '(VERY HIGH|HIGH|MEDIUM|LOW|VERY LOW)'` check on the same file — and the file references at least one PIR.
    - `scenario-analysis.md` declares **≥ 3 distinct scenarios** (headers matching `Scenario` count ≥ 3).
    - `comparative-international.md` declares a comparator set or **≥ 2 comparator rows** (structural check, see Tier-C gate).
-   - `devils-advocate.md` declares **≥ 3 competing hypotheses** (headers matching `Hypothesis`/`H1`/`H2`/`H3` count ≥ 3, ACH-style) **AND** the ACH KJ-coverage map in `devils-advocate.md` references every KJ declared in `intelligence-assessment.md` (ACH coverage = 100 %; enforced by counting `KJ-N` occurrences in both files). See [`analysis/methodologies/admiralty-rubric.md`](../../analysis/methodologies/admiralty-rubric.md).
+   - `devils-advocate.md` declares **≥ 3 competing hypotheses** (headers matching `Hypothesis`/`H1`/`H2`/`H3` count ≥ 3, ACH-style) **AND** contains a `## Key Judgment Coverage Matrix` section that maps **every** KJ declared in `intelligence-assessment.md` to at least one ACH hypothesis with **100% KJ coverage** — every `| KJ-N |` row in that matrix must avoid the `❌` marker. Coverage is enforced by extracting the **unique set** of `KJ-N` identifiers in `intelligence-assessment.md` (deduplicated) and verifying each appears at least once on a non-`❌` row inside the matrix. See [`analysis/methodologies/admiralty-rubric.md`](../../analysis/methodologies/admiralty-rubric.md).
    - `wildcards-blackswans.md` — when present — declares **≥ 15 wildcard candidates** (table rows matching `| W[N]`); fewer than 15 entries is a gate failure per [`analysis/templates/wildcards-blackswans.md`](../../analysis/templates/wildcards-blackswans.md) v2.1.
-   - `methodology-reflection.md` is non-empty and contains an **ICD 203 audit** marker or ≥ 3 named methodology improvements.
-   - **(New — Check 7d) Banned uncalibrated-probability phrases** — no artifact in `$ANALYSIS_DIR` may contain "analyst judgement, not derived from data" or related variants (see [`political-style-guide.json §uncalibrated-probability`](../../analysis/methodologies/political-style-guide.json)) **unless** the same paragraph (±5 lines) contains a citation to `analysis/methodologies/base-rates/` or `calibration-ledger`. Violations are reported with file + line.
+   - `methodology-reflection.md` is non-empty and contains all 9 required sections as **`##` headings** (a leading emoji on the heading is permitted): `## ICD 203 …` audit grid; `## Devil's-Advocate Key Judgment Coverage Matrix`; `## Confidence Distribution by Key Judgment …`; `## Lagrådet / Statskontoret / SKR Tracking`; `## Sibling-Folder Ingestion Record …`; `## Re-run Log …`; `## Banned-Phrase Audit …`; `## Pass 1 → Pass 2 Delta Table`; `## Improvement Opportunities → PIR Roll-Forward`. Beyond presence, the gate also validates: (a) the Devil's-Advocate KJ-Coverage Matrix has **no `❌` rows and no `OPEN` statuses on KJ rows** (100% coverage), (b) every KJ row in the Confidence Distribution table has a **filled Posterior cell** (no `[REQUIRED]` placeholder, no empty cell), and (c) the Re-run Log section contains a markdown table header row with the unified schema columns (`run_id | attempt | new dok_ids | artifacts extended | flags closed | vintage refresh`).
+   - **(Check 7d) Banned uncalibrated-probability phrases** — no artifact in `$ANALYSIS_DIR` may contain any of the phrases listed under `political-style-guide.json §uncalibrated-probability` (loaded from the JSON itself so the gate and the style guide cannot drift) **unless** the same paragraph (±5 lines) contains a citation to `analysis/methodologies/base-rates/` or `calibration-ledger`. Violations are reported with file + line.
 8. **Family D structure checks**:
    - `forward-indicators.md` declares **≥ 10 dated indicators** (bullet or table rows matching a date pattern across the four horizon sections).
    - `coalition-mathematics.md` contains a seat-count table (≥ 1 table row with `Ja`/`Nej`/`Avstår` or a party-to-seats mapping).
@@ -212,17 +212,37 @@ fi
 if [ -s "$ANALYSIS_DIR/devils-advocate.md" ]; then
   HY=$(grep -cE '^#{2,4}[[:space:]]*(Hypothesis|H[0-9]+[[:space:]]*[:.—-])' "$ANALYSIS_DIR/devils-advocate.md" || true)
   [ "${HY:-0}" -ge 3 ] || { echo "❌ devils-advocate.md: fewer than 3 competing hypotheses (found ${HY:-0})"; FAIL=1; }
-  # ACH = 100 % KJ coverage: count KJs in intelligence-assessment.md and verify
-  # that devils-advocate.md contains a KJ–ACH coverage map with at least that many rows.
-  # Proxy: count "KJ-" occurrences in intelligence-assessment.md and compare to
-  # the number of coverage-map rows in devils-advocate.md (rows matching "KJ-[0-9]+").
+  # ACH KJ Coverage Matrix — devils-advocate.md must contain a `## Key Judgment Coverage Matrix`
+  # section AND every unique KJ-N declared in intelligence-assessment.md must appear at least once
+  # on a non-`❌` row inside that matrix. We extract unique KJ IDs (not raw line counts) to avoid
+  # both false-fails (TOC/prose mentions inflating count) and false-passes (a single KJ repeated).
+  grep -qE '^##[[:space:]].*Key[[:space:]]+Judgment[[:space:]]+Coverage[[:space:]]+Matrix' "$ANALYSIS_DIR/devils-advocate.md" \
+    || { echo "❌ devils-advocate.md: missing '## Key Judgment Coverage Matrix' section"; FAIL=1; }
+  if awk '
+      /^##[[:space:]]+.*Key[[:space:]]+Judgment[[:space:]]+Coverage[[:space:]]+Matrix/ { inSec=1; next }
+      inSec && /^##[[:space:]]/ { inSec=0 }
+      inSec && /^\|[[:space:]]*KJ[-[:space:]]?[0-9]/ && /❌/ { bad=1 }
+      END { exit !bad }
+    ' "$ANALYSIS_DIR/devils-advocate.md"; then
+    echo "❌ devils-advocate.md: KJ Coverage Matrix has ❌ row(s); coverage must be 100%"; FAIL=1
+  fi
+  # Unique-set comparison: every KJ-N (deduplicated) in intelligence-assessment.md must appear
+  # at least once on a non-`❌` row inside the devils-advocate.md `## Key Judgment Coverage Matrix`.
   if [ -s "$ANALYSIS_DIR/intelligence-assessment.md" ]; then
-    KJ_COUNT=$(grep -cE 'KJ-?[0-9]+' "$ANALYSIS_DIR/intelligence-assessment.md" || true)
-    # Each KJ should appear at least once in devils-advocate.md (via the KJ–ACH map)
-    DA_KJ_COVER=$(grep -cE 'KJ-?[0-9]+' "$ANALYSIS_DIR/devils-advocate.md" || true)
-    # Allow DA_KJ_COVER >= KJ_COUNT (KJs may appear multiple times in DA)
-    [ "${DA_KJ_COVER:-0}" -ge "${KJ_COUNT:-0}" ] \
-      || { echo "❌ devils-advocate.md: ACH KJ-coverage gap — intelligence-assessment.md references ${KJ_COUNT:-0} KJ(s) but devils-advocate.md references only ${DA_KJ_COVER:-0}. Every KJ must be challenged in devils-advocate.md (see analysis/methodologies/admiralty-rubric.md)."; FAIL=1; }
+    KJ_IDS=$(grep -oE 'KJ-?[0-9]+' "$ANALYSIS_DIR/intelligence-assessment.md" \
+      | sed -E 's/KJ-?([0-9]+)/KJ-\1/' | sort -u)
+    DA_COVERED=$(awk '
+        /^##[[:space:]]+.*Key[[:space:]]+Judgment[[:space:]]+Coverage[[:space:]]+Matrix/ { inSec=1; next }
+        inSec && /^##[[:space:]]/ { inSec=0 }
+        inSec && /^\|[[:space:]]*KJ[-[:space:]]?[0-9]/ && !/❌/ { print }
+      ' "$ANALYSIS_DIR/devils-advocate.md" \
+      | grep -oE 'KJ-?[0-9]+' | sed -E 's/KJ-?([0-9]+)/KJ-\1/' | sort -u)
+    for kj in $KJ_IDS; do
+      if ! echo "$DA_COVERED" | grep -qx "$kj"; then
+        echo "❌ devils-advocate.md: ACH KJ-coverage gap — $kj is declared in intelligence-assessment.md but has no covered (non-❌) row in the Key Judgment Coverage Matrix (see analysis/methodologies/admiralty-rubric.md)."
+        FAIL=1
+      fi
+    done
   fi
 fi
 # Check 7c — wildcards-blackswans.md: ≥ 15 wildcard entries required
@@ -232,13 +252,32 @@ if [ -s "$ANALYSIS_DIR/wildcards-blackswans.md" ]; then
     || { echo "❌ wildcards-blackswans.md: fewer than 15 wildcard entries (found ${WC:-0}); minimum is 15 per analysis/templates/wildcards-blackswans.md v2.1"; FAIL=1; }
 fi
 # Check 7d — banned-phrase scan for uncalibrated-probability phrases in analysis artifacts.
-# "analyst judgement, not derived from data" and similar phrases are banned unless the same
-# paragraph contains a base-rate citation (base-rates/ file name or a calibration-ledger reference).
-UNCAL_PHRASE_RE='analyst judgement, not derived|analyst judgment, not derived|not based on polling data|not derived from quantitative model|analyst judgement, not'
+# Phrases are loaded directly from analysis/methodologies/political-style-guide.json
+# §uncalibrated-probability so the gate and the style guide cannot drift. Each phrase is banned
+# unless the same paragraph (±5 lines) contains a base-rate citation (base-rates/ filename or
+# a calibration-ledger reference).
+STYLE_GUIDE_JSON="$(cd "$(dirname "$0")" 2>/dev/null && pwd || pwd)/analysis/methodologies/political-style-guide.json"
+[ -s "$STYLE_GUIDE_JSON" ] || STYLE_GUIDE_JSON="analysis/methodologies/political-style-guide.json"
+if [ -s "$STYLE_GUIDE_JSON" ] && command -v jq >/dev/null 2>&1; then
+  UNCAL_PHRASES=$(jq -r '.categories["uncalibrated-probability"][]' "$STYLE_GUIDE_JSON" 2>/dev/null || true)
+else
+  # Fallback if jq is unavailable: hardcoded list mirroring §uncalibrated-probability (v1.1).
+  UNCAL_PHRASES=$(printf '%s\n' \
+    'analyst judgement, not derived from data' \
+    'analyst judgment, not derived from data' \
+    'analyst judgement without base-rate' \
+    'analyst judgment without base-rate' \
+    'not based on polling data' \
+    'not derived from quantitative model')
+fi
+# Build a POSIX-ERE alternation, escaping regex metacharacters in each phrase.
+UNCAL_PHRASE_RE=$(printf '%s\n' "$UNCAL_PHRASES" \
+  | sed -E 's/[][\\.^$*+?(){}|/]/\\&/g' \
+  | paste -sd '|' -)
 BASE_RATE_CITE_RE='base-rates/|calibration-ledger|base_rate_source|base-rate source'
 UNCAL_TMP="/tmp/gate-uncal-fail-$$"
 : > "$UNCAL_TMP"
-if grep -rqiE "$UNCAL_PHRASE_RE" "$ANALYSIS_DIR" 2>/dev/null; then
+if [ -n "$UNCAL_PHRASE_RE" ] && grep -rqiE "$UNCAL_PHRASE_RE" "$ANALYSIS_DIR" 2>/dev/null; then
   grep -rilE "$UNCAL_PHRASE_RE" "$ANALYSIS_DIR" 2>/dev/null | while IFS= read -r mfile; do
     grep -inE "$UNCAL_PHRASE_RE" "$mfile" | while IFS=: read -r linenum linetext; do
       ctx_start=$((linenum - 5)); [ "$ctx_start" -lt 1 ] && ctx_start=1
@@ -254,8 +293,92 @@ fi
 [ -s "$UNCAL_TMP" ] && FAIL=1
 rm -f "$UNCAL_TMP"
 if [ -s "$ANALYSIS_DIR/methodology-reflection.md" ]; then
-  grep -qE 'ICD[[:space:]]+203|Methodology[[:space:]]+Improvements|Improvement[[:space:]]+1|#{2,4}[[:space:]]+.*Improvements' "$ANALYSIS_DIR/methodology-reflection.md" \
-    || { echo "❌ methodology-reflection.md: missing ICD 203 audit or named Methodology Improvements section"; FAIL=1; }
+  REF="$ANALYSIS_DIR/methodology-reflection.md"
+  # Required ## section headings (leading emoji on the heading is tolerated).
+  grep -qE '^##[[:space:]].*ICD[[:space:]]+203' "$REF" || { echo "❌ methodology-reflection.md: missing '## ICD 203 …' heading"; FAIL=1; }
+  grep -qE "^##[[:space:]].*Devil'?s[-[:space:]]Advocate[[:space:]]+Key[[:space:]]+Judgment[[:space:]]+Coverage[[:space:]]+Matrix" "$REF" \
+    || { echo "❌ methodology-reflection.md: missing '## Devil's-Advocate Key Judgment Coverage Matrix' heading"; FAIL=1; }
+  grep -qE '^##[[:space:]].*Confidence[[:space:]]+Distribution[[:space:]]+by[[:space:]]+Key[[:space:]]+Judgment' "$REF" \
+    || { echo "❌ methodology-reflection.md: missing '## Confidence Distribution by Key Judgment' heading"; FAIL=1; }
+  grep -qE '^##[[:space:]].*Lagrådet.*Statskontoret.*SKR' "$REF" \
+    || { echo "❌ methodology-reflection.md: missing '## Lagrådet / Statskontoret / SKR Tracking' heading"; FAIL=1; }
+  grep -qE '^##[[:space:]].*Sibling[-[:space:]]?Folder[[:space:]]+Ingestion' "$REF" \
+    || { echo "❌ methodology-reflection.md: missing '## Sibling-Folder Ingestion Record' heading"; FAIL=1; }
+  grep -qE '^##[[:space:]].*Re[-[:space:]]?run[[:space:]]+Log' "$REF" \
+    || { echo "❌ methodology-reflection.md: missing '## Re-run Log' heading"; FAIL=1; }
+  grep -qE '^##[[:space:]].*Banned[-[:space:]]?Phrase[[:space:]]+Audit' "$REF" \
+    || { echo "❌ methodology-reflection.md: missing '## Banned-Phrase Audit' heading"; FAIL=1; }
+  grep -qE '^##[[:space:]].*Pass[[:space:]]*1.*Pass[[:space:]]*2.*Delta' "$REF" \
+    || { echo "❌ methodology-reflection.md: missing '## Pass 1 → Pass 2 Delta Table' heading"; FAIL=1; }
+  grep -qE '^##[[:space:]].*Improvement[[:space:]]+Opportunities.*PIR[[:space:]]+Roll[-[:space:]]?Forward' "$REF" \
+    || { echo "❌ methodology-reflection.md: missing '## Improvement Opportunities → PIR Roll-Forward' heading"; FAIL=1; }
+
+  # KJ coverage matrix — 100% coverage in methodology-reflection: no ❌ rows and no OPEN status on KJ rows.
+  if awk '
+      /^##[[:space:]]+.*Devil.?s[-[:space:]]Advocate[[:space:]]+Key[[:space:]]+Judgment[[:space:]]+Coverage[[:space:]]+Matrix/ { inSec=1; next }
+      inSec && /^##[[:space:]]/ { inSec=0 }
+      inSec && /^\|[[:space:]]*KJ[-[:space:]]?[0-9]/ {
+        if (/❌/ || /\bOPEN\b/) bad=1
+      }
+      END { exit !bad }
+    ' "$REF"; then
+    echo "❌ methodology-reflection.md: KJ Coverage Matrix has ❌ or OPEN row(s); coverage must be 100%"; FAIL=1
+  fi
+
+  # Posterior column — every KJ row in the Confidence Distribution table must have a filled Posterior cell.
+  awk '
+    BEGIN { inSec=0; headerSeen=0; postIdx=-1; bad=0; rows=0 }
+    /^##[[:space:]]+.*Confidence[[:space:]]+Distribution[[:space:]]+by[[:space:]]+Key[[:space:]]+Judgment/ { inSec=1; next }
+    inSec && /^##[[:space:]]/ { inSec=0 }
+    inSec && /^\|/ {
+      n = split($0, cells, "|")
+      if (!headerSeen) {
+        for (i = 2; i < n; i++) {
+          c = cells[i]; gsub(/^[[:space:]]+|[[:space:]]+$/, "", c)
+          lc = tolower(c)
+          if (index(lc, "posterior") > 0) { postIdx = i; headerSeen = 1; break }
+        }
+        next
+      }
+      # Skip alignment separator rows like |---|---|---|
+      if ($0 ~ /^\|[[:space:]:\-|]+\|[[:space:]]*$/) next
+      first = cells[2]; gsub(/^[[:space:]]+|[[:space:]]+$/, "", first)
+      if (first !~ /^KJ[-[:space:]]?[0-9]/) next
+      rows++
+      val = (postIdx > 0 && postIdx < n) ? cells[postIdx] : ""
+      gsub(/`/, "", val); gsub(/^[[:space:]]+|[[:space:]]+$/, "", val)
+      if (val == "" || tolower(val) ~ /^\[required\]?$/ || val ~ /^-+$/) bad = 1
+    }
+    END {
+      if (!headerSeen) exit 2
+      if (rows == 0) exit 3
+      exit bad
+    }
+  ' "$REF"
+  POST_RC=$?
+  if [ "$POST_RC" -eq 1 ]; then
+    echo "❌ methodology-reflection.md: Confidence Distribution has empty / placeholder Posterior cell(s) on KJ row(s)"; FAIL=1
+  elif [ "$POST_RC" -eq 2 ]; then
+    echo "❌ methodology-reflection.md: Confidence Distribution table missing Posterior column header"; FAIL=1
+  elif [ "$POST_RC" -eq 3 ]; then
+    echo "❌ methodology-reflection.md: Confidence Distribution has no KJ rows"; FAIL=1
+  fi
+
+  # Re-run log unified schema — table header row must appear inside the Re-run Log section.
+  if ! awk '
+      /^##[[:space:]]+.*Re[-[:space:]]?run[[:space:]]+Log/ { inSec=1; next }
+      inSec && /^##[[:space:]]/ { inSec=0 }
+      inSec && /^\|/ {
+        lc=tolower($0)
+        if (index(lc,"run_id")>0 && index(lc,"attempt")>0 && lc ~ /new[[:space:]_]+dok_ids/ \
+            && lc ~ /artifacts[[:space:]_]+extended/ && lc ~ /flags[[:space:]_]+closed/ \
+            && lc ~ /vintage[[:space:]_]+refresh/) { found=1 }
+      }
+      END { exit !found }
+    ' "$REF"; then
+    echo "❌ methodology-reflection.md: Re-run Log section missing unified schema header (run_id | attempt | new dok_ids | artifacts extended | flags closed | vintage refresh)"
+    FAIL=1
+  fi
 fi
 if [ -s "$ANALYSIS_DIR/comparative-international.md" ]; then
   awk '

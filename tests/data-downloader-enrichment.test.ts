@@ -43,6 +43,7 @@ function createMockClient(
   docs: RawDocument[] = [makeRawDoc()],
 ) {
   return {
+    baseURL: 'https://riksdag-regering-ai.onrender.com/mcp',
     fetchPropositions: vi.fn().mockResolvedValue(docs),
     fetchMotions: vi.fn().mockResolvedValue([]),
     fetchCommitteeReports: vi.fn().mockResolvedValue([]),
