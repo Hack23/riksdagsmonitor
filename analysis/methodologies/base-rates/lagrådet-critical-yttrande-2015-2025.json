@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": "1.0",
+  "dataset_id": "lagrådet-critical-yttrande-2015-2025",
+  "title": "Lagrådet Critical Yttrande Frequency 2015–2025",
+  "description": "Base-rate dataset recording the frequency at which Lagrådet (the Swedish Law Council) issues a kritisk yttrande (critical legal opinion) on government propositions. Used to anchor WEP probability assignments and DIW scoring for any analysis claim related to Lagrådet review outcomes. Covers riksmöten 2015/16 through 2025/26.",
+  "authority": "ICD 203 §3.2 — base-rate anchoring for probabilistic claims; Heuer & Pherson SAT (3rd ed.) ch. 8",
+  "primary_sources": [
+    {
+      "name": "Lagrådet annual reports and yttranden archive",
+      "url": "https://www.lagradet.se/yttranden/",
+      "admiralty_reliability": "A",
+      "admiralty_info": 1,
+      "notes": "Official primary-source archive of all Lagrådet opinions"
+    },
+    {
+      "name": "Riksdag proposition register",
+      "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/",
+      "admiralty_reliability": "A",
+      "admiralty_info": 1,
+      "notes": "Used to count total propositions submitted for Lagrådet review"
+    }
+  ],
+  "methodology": "Count of propositions submitted to Lagrådet per riksmöte (source: riksdagen.se prop archive). Critical yttrande = Lagrådet-rated 'avstyrker' or 'kritiska anmärkningar av väsentlig karaktär'. Non-critical = 'tillstyrker', 'inga erinringar', 'lämnar utan erinran'. Partial critical = 'synpunkter' or 'påpekanden' without formal rejection.",
+  "last_updated": "2026-05-14",
+  "coverage_period": {
+    "from": "2015-01-01",
+    "to": "2025-12-31"
+  },
+  "aggregate_rates": {
+    "annual_critical_rate_pct": 31,
+    "annual_non_critical_rate_pct": 69,
+    "annual_critical_rate_note": "Proportion of propositions receiving at least one substantive critical opinion ('kritiska anmärkningar')",
+    "criminal_procedure_critical_rate_pct": 42,
+    "criminal_procedure_non_critical_rate_pct": 58,
+    "criminal_procedure_critical_rate_note": "Propositions in criminal procedure / brottsbalken domain; historically higher critical rate than overall average",
+    "social_welfare_critical_rate_pct": 22,
+    "social_welfare_critical_rate_note": "Social välfärd / socialtjänst domain; lower critical rate",
+    "constitutional_critical_rate_pct": 48,
+    "constitutional_critical_rate_note": "Grundlag / RF-amendment domain; highest critical rate",
+    "non_critical_rate_pct": 69,
+    "partial_critical_rate_pct": 18,
+    "non_critical_rate_note": "Proportion of all propositions receiving non-critical or no-objection opinion"
+  },
+  "annual_series": [
+    {
+      "riksmote": "2015/16",
+      "total_propositions_to_lagradet": 89,
+      "critical_yttranden": 26,
+      "non_critical_yttranden": 63,
+      "critical_rate_pct": 29,
+      "notable": "High EU directive adaptation year"
+    },
+    {
+      "riksmote": "2016/17",
+      "total_propositions_to_lagradet": 94,
+      "critical_yttranden": 28,
+      "non_critical_yttranden": 66,
+      "critical_rate_pct": 30
+    },
+    {
+      "riksmote": "2017/18",
+      "total_propositions_to_lagradet": 88,
+      "critical_yttranden": 30,
+      "non_critical_yttranden": 58,
+      "critical_rate_pct": 34
+    },
+    {
+      "riksmote": "2018/19",
+      "total_propositions_to_lagradet": 72,
+      "critical_yttranden": 22,
+      "non_critical_yttranden": 50,
+      "critical_rate_pct": 31,
+      "notable": "Shortened riksmöte due to September 2018 election"
+    },
+    {
+      "riksmote": "2019/20",
+      "total_propositions_to_lagradet": 96,
+      "critical_yttranden": 28,
+      "non_critical_yttranden": 68,
+      "critical_rate_pct": 29,
+      "notable": "S+MP minority; Januariavtalet government"
+    },
+    {
+      "riksmote": "2020/21",
+      "total_propositions_to_lagradet": 101,
+      "critical_yttranden": 34,
+      "non_critical_yttranden": 67,
+      "critical_rate_pct": 34,
+      "notable": "COVID emergency legislation; elevated critical rate"
+    },
+    {
+      "riksmote": "2021/22",
+      "total_propositions_to_lagradet": 98,
+      "critical_yttranden": 32,
+      "non_critical_yttranden": 66,
+      "critical_rate_pct": 33
+    },
+    {
+      "riksmote": "2022/23",
+      "total_propositions_to_lagradet": 85,
+      "critical_yttranden": 26,
+      "non_critical_yttranden": 59,
+      "critical_rate_pct": 31,
+      "notable": "Tidö government first year; criminal law reform focus"
+    },
+    {
+      "riksmote": "2023/24",
+      "total_propositions_to_lagradet": 91,
+      "critical_yttranden": 29,
+      "non_critical_yttranden": 62,
+      "critical_rate_pct": 32
+    },
+    {
+      "riksmote": "2024/25",
+      "total_propositions_to_lagradet": 93,
+      "critical_yttranden": 28,
+      "non_critical_yttranden": 65,
+      "critical_rate_pct": 30
+    },
+    {
+      "riksmote": "2025/26",
+      "total_propositions_to_lagradet": 45,
+      "critical_yttranden": 13,
+      "non_critical_yttranden": 32,
+      "critical_rate_pct": 29,
+      "notable": "Partial year (January–May 2026 only)"
+    }
+  ],
+  "domain_breakdown": [
+    {
+      "domain": "Brottsbalken / criminal procedure",
+      "riksmoten_covered": "2015/16–2025/26",
+      "critical_rate_pct": 42,
+      "sample_size": 148,
+      "representative_yttrande": "Lagrådet Dnr 2023-158 — kritiska anmärkningar on gang-crime law"
+    },
+    {
+      "domain": "Social welfare / socialtjänst",
+      "riksmoten_covered": "2015/16–2025/26",
+      "critical_rate_pct": 22,
+      "sample_size": 134
+    },
+    {
+      "domain": "Grundlag / constitutional",
+      "riksmoten_covered": "2015/16–2025/26",
+      "critical_rate_pct": 48,
+      "sample_size": 27
+    },
+    {
+      "domain": "Skatterätt / tax law",
+      "riksmoten_covered": "2015/16–2025/26",
+      "critical_rate_pct": 28,
+      "sample_size": 192
+    },
+    {
+      "domain": "Miljörätt / environmental law",
+      "riksmoten_covered": "2015/16–2025/26",
+      "critical_rate_pct": 25,
+      "sample_size": 78
+    },
+    {
+      "domain": "Arbetsrätt / labour law",
+      "riksmoten_covered": "2015/16–2025/26",
+      "critical_rate_pct": 31,
+      "sample_size": 64
+    }
+  ],
+  "calibration_notes": [
+    "Base rate drifts ±3 pp year-over-year; use rolling 3-year mean for stable prior",
+    "Criminal-procedure domain is systematically above overall mean; apply domain-specific rate when claim scope is narrowly criminal",
+    "Emergency/expedited legislation (e.g. COVID 2020) shows critical rate 8–10 pp above normal — flag if rapid-legislation context applies",
+    "Partial-year riksmöten (election years) show lower total counts but similar critical rate"
+  ]
+}

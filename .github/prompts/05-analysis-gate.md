@@ -25,8 +25,10 @@ This is the **only** gate separating analysis from article generation. If it fai
    - `intelligence-assessment.md` declares **≥ 3 Key Judgments** (enforced structurally by `Key Judgment` / `KJ-*` header count ≥ 3) each carrying at least one confidence label (`VERY HIGH`, `HIGH`, `MEDIUM`, `LOW`, `VERY LOW`) — the confidence-label presence is audited by the implementation's `grep -cE '(VERY HIGH|HIGH|MEDIUM|LOW|VERY LOW)'` check on the same file — and the file references at least one PIR.
    - `scenario-analysis.md` declares **≥ 3 distinct scenarios** (headers matching `Scenario` count ≥ 3).
    - `comparative-international.md` declares a comparator set or **≥ 2 comparator rows** (structural check, see Tier-C gate).
-   - `devils-advocate.md` declares **≥ 3 competing hypotheses** (headers matching `Hypothesis`/`H1`/`H2`/`H3` count ≥ 3, ACH-style).
+   - `devils-advocate.md` declares **≥ 3 competing hypotheses** (headers matching `Hypothesis`/`H1`/`H2`/`H3` count ≥ 3, ACH-style) **AND** the ACH KJ-coverage map in `devils-advocate.md` references every KJ declared in `intelligence-assessment.md` (ACH coverage = 100 %; enforced by counting `KJ-N` occurrences in both files). See [`analysis/methodologies/admiralty-rubric.md`](../../analysis/methodologies/admiralty-rubric.md).
+   - `wildcards-blackswans.md` — when present — declares **≥ 15 wildcard candidates** (table rows matching `| W[N]`); fewer than 15 entries is a gate failure per [`analysis/templates/wildcards-blackswans.md`](../../analysis/templates/wildcards-blackswans.md) v2.1.
    - `methodology-reflection.md` is non-empty and contains an **ICD 203 audit** marker or ≥ 3 named methodology improvements.
+   - **(New — Check 7d) Banned uncalibrated-probability phrases** — no artifact in `$ANALYSIS_DIR` may contain "analyst judgement, not derived from data" or related variants (see [`political-style-guide.json §uncalibrated-probability`](../../analysis/methodologies/political-style-guide.json)) **unless** the same paragraph (±5 lines) contains a citation to `analysis/methodologies/base-rates/` or `calibration-ledger`. Violations are reported with file + line.
 8. **Family D structure checks**:
    - `forward-indicators.md` declares **≥ 10 dated indicators** (bullet or table rows matching a date pattern across the four horizon sections).
    - `coalition-mathematics.md` contains a seat-count table (≥ 1 table row with `Ja`/`Nej`/`Avstår` or a party-to-seats mapping).
@@ -210,6 +212,57 @@ fi
 if [ -s "$ANALYSIS_DIR/devils-advocate.md" ]; then
   HY=$(grep -cE '^#{2,4}[[:space:]]*(Hypothesis|H[0-9]+[[:space:]]*[:.—-])' "$ANALYSIS_DIR/devils-advocate.md" || true)
   [ "${HY:-0}" -ge 3 ] || { echo "❌ devils-advocate.md: fewer than 3 competing hypotheses (found ${HY:-0})"; FAIL=1; }
+  # ACH = 100 % KJ coverage: count KJs in intelligence-assessment.md and verify
+  # that devils-advocate.md contains a KJ–ACH coverage map with at least that many rows.
+  # Proxy: count "KJ-" occurrences in intelligence-assessment.md and compare to
+  # the number of coverage-map rows in devils-advocate.md (rows matching "KJ-[0-9]+").
+  if [ -s "$ANALYSIS_DIR/intelligence-assessment.md" ]; then
+    KJ_COUNT=$(grep -cE 'KJ-?[0-9]+' "$ANALYSIS_DIR/intelligence-assessment.md" || true)
+    # Each KJ should appear at least once in devils-advocate.md (via the KJ–ACH map)
+    DA_KJ_COVER=$(grep -cE 'KJ-?[0-9]+' "$ANALYSIS_DIR/devils-advocate.md" || true)
+    # Allow DA_KJ_COVER >= KJ_COUNT (KJs may appear multiple times in DA)
+    [ "${DA_KJ_COVER:-0}" -ge "${KJ_COUNT:-0}" ] \
+      || { echo "❌ devils-advocate.md: ACH KJ-coverage gap — intelligence-assessment.md references ${KJ_COUNT:-0} KJ(s) but devils-advocate.md references only ${DA_KJ_COVER:-0}. Every KJ must be challenged in devils-advocate.md (see analysis/methodologies/admiralty-rubric.md)."; FAIL=1; }
+  fi
+fi
+# Check 7c — wildcards-blackswans.md: ≥ 15 wildcard entries required
+if [ -s "$ANALYSIS_DIR/wildcards-blackswans.md" ]; then
+  WC=$(grep -cE '^\|[[:space:]]*W[0-9]+' "$ANALYSIS_DIR/wildcards-blackswans.md" || true)
+  [ "${WC:-0}" -ge 15 ] \
+    || { echo "❌ wildcards-blackswans.md: fewer than 15 wildcard entries (found ${WC:-0}); minimum is 15 per analysis/templates/wildcards-blackswans.md v2.1"; FAIL=1; }
+fi
+# Check 7d — banned-phrase scan for uncalibrated-probability phrases in analysis artifacts.
+# "analyst judgement, not derived from data" and similar phrases are banned unless the same
+# paragraph contains a base-rate citation (base-rates/ file name or a calibration-ledger reference).
+UNCAL_PHRASE_RE='analyst judgement, not derived|analyst judgment, not derived|not based on polling data|not derived from quantitative model|analyst judgement, not'
+BASE_RATE_CITE_RE='base-rates/|calibration-ledger|base_rate_source|base-rate source'
+if grep -rqiE "$UNCAL_PHRASE_RE" "$ANALYSIS_DIR" 2>/dev/null; then
+  # For each matching file, check that the paragraph also contains a base-rate citation.
+  UNCAL_FAIL=0
+  grep -rilE "$UNCAL_PHRASE_RE" "$ANALYSIS_DIR" 2>/dev/null | while IFS= read -r mfile; do
+    # Extract matching line numbers and check surrounding context for base-rate cite
+    grep -inE "$UNCAL_PHRASE_RE" "$mfile" | while IFS=: read -r linenum linetext; do
+      # Get ±5 lines of context; check if any line contains a base-rate citation
+      ctx_start=$((linenum - 5)); [ "$ctx_start" -lt 1 ] && ctx_start=1
+      ctx_end=$((linenum + 5))
+      ctx=$(sed -n "${ctx_start},${ctx_end}p" "$mfile")
+      if ! echo "$ctx" | grep -qiE "$BASE_RATE_CITE_RE"; then
+        echo "❌ uncalibrated-probability phrase without base-rate citation in $mfile:$linenum — '$linetext' — add a base-rate source from analysis/methodologies/base-rates/ (see calibration-ledger.md)"
+        UNCAL_FAIL=1
+      fi
+    done
+  done
+  # Propagate failure — subshell can't set outer FAIL directly; re-check
+  grep -rilE "$UNCAL_PHRASE_RE" "$ANALYSIS_DIR" 2>/dev/null | while IFS= read -r mfile; do
+    grep -inE "$UNCAL_PHRASE_RE" "$mfile" | while IFS=: read -r linenum linetext; do
+      ctx_start=$((linenum - 5)); [ "$ctx_start" -lt 1 ] && ctx_start=1
+      ctx_end=$((linenum + 5))
+      ctx=$(sed -n "${ctx_start},${ctx_end}p" "$mfile")
+      if ! echo "$ctx" | grep -qiE "$BASE_RATE_CITE_RE"; then
+        exit 1
+      fi
+    done || exit 1
+  done || FAIL=1
 fi
 if [ -s "$ANALYSIS_DIR/methodology-reflection.md" ]; then
   grep -qE 'ICD[[:space:]]+203|Methodology[[:space:]]+Improvements|Improvement[[:space:]]+1|#{2,4}[[:space:]]+.*Improvements' "$ANALYSIS_DIR/methodology-reflection.md" \

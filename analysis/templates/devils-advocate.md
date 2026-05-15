@@ -91,9 +91,24 @@ ANTI-TEMPLATE — DO NOT:
 
 ---
 
-## 🧪 Analysis of Competing Hypotheses (ACH)
+## 🧪 Analysis of Competing Hypotheses (ACH) — 100 % Key Judgment Coverage Required
 
-List each hypothesis, then score each piece of evidence as **C** (consistent), **I** (inconsistent), or **N** (neutral). The hypothesis with the **fewest inconsistencies** survives.
+> **Mandatory requirement (ICD 203 §4; gate Check 7):** ACH MUST challenge **every** Key Judgment (KJ) declared in the sibling `intelligence-assessment.md`. Count the KJs in that file and verify one ACH row or hypothesis cluster maps to each KJ. Partial ACH coverage is a gate failure. Document the mapping in the §KJ–ACH coverage map below.
+
+### KJ–ACH coverage map (fill before ACH table)
+
+| KJ ID | KJ claim (abbreviated) | ACH hypothesis challenging it | Coverage status |
+|-------|------------------------|-------------------------------|----------------|
+| KJ-1 | [paste KJ-1 summary from intelligence-assessment.md] | H1 (main hypothesis), H2 (alternative) | ✅ covered |
+| KJ-2 | [paste KJ-2 summary] | H2 (main hypothesis), H3 (alternative) | ✅ covered |
+| KJ-3 | [paste KJ-3 summary] | H4 (alternative) | ✅ covered |
+| _(add one row per KJ; gate will count rows and compare to KJ count in intelligence-assessment.md)_ | | | |
+
+> **If any KJ has no matching ACH row → add ACH hypothesis(es) before committing. Gate Check 7 enforces KJ coverage = 100 %.**
+
+### ACH matrix
+
+List each hypothesis, then score each piece of evidence as **C** (consistent), **I** (inconsistent), or **N** (neutral). The hypothesis with the **fewest inconsistencies** survives. Each hypothesis MUST correspond to a KJ challenge (see KJ–ACH map above). **WEP probability and base-rate prior MUST be stated for each hypothesis; citing only "analyst judgement" without a base-rate source is a banned pattern** (flagged by banned-phrase scanner; see `analysis/methodologies/base-rates/` for calibration datasets).
 
 ```mermaid
 graph LR

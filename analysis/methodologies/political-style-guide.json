@@ -1,9 +1,17 @@
 {
-  "version": "1.0",
-  "effectiveDate": "2026-05-03",
+  "version": "1.1",
+  "effectiveDate": "2026-05-14",
   "description": "Machine-readable banned-phrase list extracted from political-style-guide.md §Machine-readable banned-phrase list. Canonical source — consumers MUST use this JSON file for automated enforcement. The markdown remains the human-readable reference.",
   "matchMode": "literal-substring-case-insensitive",
   "categories": {
+    "uncalibrated-probability": [
+      "analyst judgement, not derived from data",
+      "analyst judgment, not derived from data",
+      "analyst judgement without base-rate",
+      "not based on polling data",
+      "analyst judgement, not",
+      "not derived from quantitative model"
+    ],
     "lede-scene-setter": [
       "In a significant development",
       "Recent activity in the Riksdag suggests",
@@ -78,6 +86,12 @@
     ]
   },
   "allPhrases": [
+    "analyst judgement, not derived from data",
+    "analyst judgment, not derived from data",
+    "analyst judgement without base-rate",
+    "not based on polling data",
+    "analyst judgement, not",
+    "not derived from quantitative model",
     "In a significant development",
     "Recent activity in the Riksdag suggests",
     "Several stakeholders have raised concerns",
