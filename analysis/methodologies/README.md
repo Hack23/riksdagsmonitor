@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-4.4-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-4.7-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--05--15-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 4.5 | **📅 Last Updated:** 2026-04-25 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 4.7 | **📅 Last Updated:** 2026-05-15 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-25  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -114,6 +114,8 @@
 ## 🤖 How agentic workflows consume these methodologies
 
 The 11 agentic news workflows in `.github/workflows/news-*.md` are the **primary consumer** of these methodologies. The authoritative workflow contract lives in [`.github/prompts/`](../../.github/prompts/) — see [`.github/prompts/README.md`](../../.github/prompts/README.md) for the full module catalogue.
+
+> **🚦 New in v4.7 (2026-05-15)** — Read [`ai-driven-analysis-guide.md` §Common Failure Modes](ai-driven-analysis-guide.md#-common-failure-modes-read-before-pass-1) **before Pass 1**. The 10 failure modes listed there are the patterns that most frequently break [`05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md). Knowing them up front saves a Pass-2 rework.
 
 | Methodology | Read in Pass 1 (mandatory) | Read in Pass 2 (improvement) | Enforced by |
 |-------------|---------------------------|------------------------------|-------------|
