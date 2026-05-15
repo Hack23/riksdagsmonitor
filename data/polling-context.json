@@ -1,31 +1,33 @@
 {
   "schemaVersion": "1.0",
   "cacheVersion": 1,
-  "generatedAt": "2026-05-15T00:18:27.671Z",
+  "generatedAt": "2026-05-15T00:23:03.740Z",
   "providers": [
     {
       "provider": "sifo",
-      "sourceUrl": "https://www.tv4.se/tag/valjarbarometern",
-      "fetchedAt": "2026-05-15T00:18:27.671Z",
+      "sourceUrl": "https://www.veriangroup.com/sv/news-and-insights/valjarbarometer-maj-2026",
+      "fetchedAt": "2026-05-15T00:23:03.740Z",
       "status": "unavailable",
+      "title": "Väljarbarometer maj 2026",
+      "publishedAt": "2026-05-14",
+      "fieldworkMonth": "2026-05",
       "parties": {},
-      "notes": "HTTP 404 "
+      "notes": "Could not extract enough party shares from sifo source page"
     },
     {
       "provider": "novus",
-      "sourceUrl": "https://novus.se/valjarbarometern/",
-      "fetchedAt": "2026-05-15T00:18:27.671Z",
+      "sourceUrl": "https://novus.se/valjarbarometer-arkiv/",
+      "fetchedAt": "2026-05-15T00:23:03.740Z",
       "status": "unavailable",
-      "title": "SD tappar för andra månaden i rad - Novus - Kunskap och undersökningar",
-      "publishedAt": "2026-04-22",
-      "fieldworkMonth": "2026-04",
+      "title": "Väljarbarometer arkiv - Novus - Kunskap och undersökningar",
+      "fieldworkMonth": "2022-03",
       "parties": {},
       "notes": "Could not extract enough party shares from novus source page"
     },
     {
       "provider": "demoskop",
-      "sourceUrl": "https://demoskop.se/category/valjarbarometer/",
-      "fetchedAt": "2026-05-15T00:18:27.671Z",
+      "sourceUrl": "https://demoskop.se/v%C3%A4ljarbarometern/",
+      "fetchedAt": "2026-05-15T00:23:03.740Z",
       "status": "unavailable",
       "parties": {},
       "notes": "HTTP 404 "

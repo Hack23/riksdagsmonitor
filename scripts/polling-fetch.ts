@@ -64,11 +64,13 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, '..');
 export const DEFAULT_POLLING_OUTPUT = path.join(REPO_ROOT, 'data', 'polling-context.json');
 export const DEFAULT_POLLING_PROVIDERS: readonly PollingProviderDefinition[] = Object.freeze([
-  { provider: 'sifo', url: 'https://www.tv4.se/tag/valjarbarometern' },
-  { provider: 'novus', url: 'https://novus.se/valjarbarometern/' },
-  { provider: 'demoskop', url: 'https://demoskop.se/category/valjarbarometer/' },
+  { provider: 'sifo', url: 'https://www.veriangroup.com/sv/expertis/politik-och-opinion/valjarbarometer' },
+  { provider: 'novus', url: 'https://novus.se/valjarbarometer-arkiv/kategori/valjarbarometern/' },
+  { provider: 'demoskop', url: 'https://demoskop.se/v%C3%A4ljarbarometern/' },
 ]);
 
+const CANONICAL_RE = /<link\b[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["'][^>]*>/i;
+const HREF_RE = /<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
 const TITLE_RE = /<title[^>]*>([\s\S]*?)<\/title>/i;
 const TAG_RE = /<[^>]+>/g;
 const WHITESPACE_RE = /\s+/g;
@@ -94,6 +96,25 @@ function extractNumericPartyShare(text: string, partyCode: PartyCode): number | 
     }
   }
   return undefined;
+}
+
+function findFollowUpPollingUrl(sourceUrl: string, html: string): string | null {
+  const canonical = CANONICAL_RE.exec(html)?.[1];
+  if (canonical && canonical !== sourceUrl) {
+    return canonical;
+  }
+  for (const match of html.matchAll(HREF_RE)) {
+    const href = match[1];
+    const label = stripHtml(match[2] ?? '');
+    if (!href) continue;
+    const haystack = `${href} ${label}`.toLowerCase();
+    if (!/valjarbarometer|väljarbarometer/.test(haystack)) continue;
+    const resolved = new URL(href, sourceUrl).toString();
+    if (resolved !== sourceUrl) {
+      return resolved;
+    }
+  }
+  return null;
 }
 
 export function extractPollingWaveFromHtml(
@@ -191,7 +212,22 @@ export async function fetchPollingContext(config: PollingFetchConfig = {}): Prom
           };
         }
         const html = await response.text();
-        return extractPollingWaveFromHtml(provider.provider, provider.url, html, fetchedAt);
+        let wave = extractPollingWaveFromHtml(provider.provider, provider.url, html, fetchedAt);
+        if (wave.status === 'unavailable') {
+          const followUpUrl = findFollowUpPollingUrl(provider.url, html);
+          if (followUpUrl) {
+            const followUpResponse = await fetchFn(followUpUrl, {
+              headers: {
+                Accept: 'text/html,application/xhtml+xml',
+                'User-Agent': 'Mozilla/5.0 (compatible; Riksdagsmonitor polling-fetch)',
+              },
+            });
+            if (followUpResponse.ok) {
+              wave = extractPollingWaveFromHtml(provider.provider, followUpUrl, await followUpResponse.text(), fetchedAt);
+            }
+          }
+        }
+        return wave;
       } catch (error) {
         return {
           provider: provider.provider,
