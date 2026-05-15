@@ -65,7 +65,7 @@
 
 ### 🟢 Exemplar (good — pattern-match this)
 
-> _(scenario row)_ "⁠**Scenario B — Tidö coalition holds (likely, ~70 %)**: M+KD+L+SD pass H902FiU1 budget; precedent: 2024 budget vote (cf. H801FiU1, 175–174). Wildcard: SD walkout if migration deal slips (~10 %). Sources: `dok_id` H902FiU1, statskontoret.se freshness 2026-04-22."
+> _(scenario row)_ "**Scenario B — Tidö coalition holds (likely, ~70 %)**: M+KD+L+SD pass H902FiU1 budget; precedent: 2024 budget vote (cf. H801FiU1, 175–174). Wildcard: SD walkout if migration deal slips (~10 %). Sources: `dok_id` H902FiU1, statskontoret.se freshness 2026-04-22."
 
 ### 🔴 Anti-exemplar (failure mode — never ship this)
 
@@ -114,7 +114,7 @@ Family C files are **always produced on every workflow run**. They are not trigg
 > 🧭 **Family C is exactly 5 files — not 6.** `executive-brief.md` is **Family A** (synthesis layer), not Family C. If a downstream document or README enumerates 6 Family C files including `executive-brief.md`, that document is stale — the canonical inventory is [`artifact-catalog.md` §"Family C — Strategic Extensions (5 artifacts)"](artifact-catalog.md#-family-c--strategic-extensions-5-artifacts--f3ead-analyze-continued). `methodology-reflection.md` belongs to Family C even though its production order (Step 5, after the other four) and its self-audit role make it feel meta — the gate at [`05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md) check 7 enforces this exact 5-file structure.
 
 | File | Behaviour on a light news day | Behaviour on a P0-dense day |
-|------|-------------------------------|-----------------------------||
+|------|-------------------------------|------------------------------|
 | `scenario-analysis.md` | Three scenarios converge on a narrow-band consensus; file documents why branching is low | Three divergent scenarios with probability-weighted indicators |
 | `comparative-international.md` | Compares baseline Swedish position to ≥5 Nordic + EU peers | Peer-country reform response with deep causal analysis |
 | `devils-advocate.md` | ACH on the day's #1 ranked document with ≥3 competing hypotheses | Full ACH on every P0 + red-team hypothesis + Bayesian base-rate check |
@@ -454,7 +454,7 @@ Probabilities sum to 100 % at every level (base set; per-scenario branch set). S
 `devils-advocate.md` MUST contain explicit `**Counterfactual N — <name>**` paragraphs at the minima below. Each counterfactual references at least one **scenario ID** from the sibling `scenario-analysis.md` (e.g. `S2-Coalition-Collapse`) and is anchored on a primary-source `dok_id` or URL. Gate **LH-3** in `05-analysis-gate.md` enforces the paragraph-count floor via grep.
 
 | Article type | Minimum counterfactual paragraphs |
-|--------------|------------------------------------||
+|--------------|-------------------------------------|
 | `week-ahead` / `month-ahead` | 1 |
 | `quarter-ahead` | 2 |
 | `year-ahead` | **≥ 2 mandatory** |
@@ -530,7 +530,7 @@ flowchart TD
 ## 🔗 Template bindings
 
 | Template | Methodology section |
-|----------|--------------------||
+|----------|---------------------|
 | `analysis/templates/scenario-analysis.md` | Part 1 above |
 | `analysis/templates/comparative-international.md` | Part 2 above |
 | `analysis/templates/devils-advocate.md` | Part 3 above |

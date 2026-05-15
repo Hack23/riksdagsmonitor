@@ -384,7 +384,7 @@ flowchart TD
 ## 🔗 Template bindings
 
 | Template | Methodology section |
-|----------|--------------------||
+|----------|---------------------|
 | `analysis/templates/per-file-political-intelligence.md` | Parts 1 & 2 above |
 
 ---

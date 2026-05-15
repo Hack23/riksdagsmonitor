@@ -170,10 +170,10 @@ Democratic-Impact Weight (DIW) is scored 0.0 – 10.0 along six dimensions, each
 
 | Dimension | Weight | Example high-score indicator |
 |-----------|:------:|-------------------------------|
-| 🏦 Institutional reach | 1.0 | Constitutional change, election-law amendment, agency mandate |
+| 🏛️ Institutional reach | 1.0 | Constitutional change, election-law amendment, agency mandate |
 | ⚖️ Rights & freedoms impact | 1.0 | GDPR article 9 data, speech, assembly, due process |
 | 💰 Fiscal magnitude | 1.0 | ≥1% of statsbudget or ≥50 000 direct beneficiaries |
-| 🗽️ Electoral salience | 1.0 | Pre-election window + top-10 voter-priority issue |
+| 🗳️ Electoral salience | 1.0 | Pre-election window + top-10 voter-priority issue |
 | 🔀 Coalition pressure | 1.0 | Forces deviation from Tidöavtalet or opposition red line |
 | 📡 Media resonance | 1.0 | Coordinated opposition response or government flagship announcement |
 
@@ -493,7 +493,7 @@ flowchart TD
 ## 🔗 Template bindings
 
 | Template | Methodology section |
-|----------|--------------------||
+|----------|---------------------|
 | `analysis/templates/significance-scoring.md` | Part 1 above |
 | `analysis/templates/synthesis-summary.md` | Part 2 above |
 | `analysis/templates/stakeholder-impact.md` | Part 4 above (also covers `stakeholder-perspectives.md`) |

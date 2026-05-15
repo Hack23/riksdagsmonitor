@@ -115,7 +115,7 @@
 
 The 11 agentic news workflows in `.github/workflows/news-*.md` are the **primary consumer** of these methodologies. The authoritative workflow contract lives in [`.github/prompts/`](../../.github/prompts/) — see [`.github/prompts/README.md`](../../.github/prompts/README.md) for the full module catalogue.
 
-> **🚦 New in v4.7 (2026-05-15)** — Read [`ai-driven-analysis-guide.md` §Common Failure Modes](ai-driven-analysis-guide.md#-common-failure-modes-read-before-pass-1) **before Pass 1**. The 10 failure modes listed there are the patterns that most frequently break [`05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md). Knowing them up front saves a Pass-2 rework.
+> **🚦 New in v4.7 (2026-05-15)** — Read [`ai-driven-analysis-guide.md` §Common Failure Modes](ai-driven-analysis-guide.md#-common-failure-modes-read-before-pass-1) **before Pass 1**. The 10 failure modes listed there are the patterns that most frequently cause quality failures (9 of 10 break [`05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md)). Knowing them up front saves a Pass-2 rework.
 
 | Methodology | Read in Pass 1 (mandatory) | Read in Pass 2 (improvement) | Enforced by |
 |-------------|---------------------------|------------------------------|-------------|

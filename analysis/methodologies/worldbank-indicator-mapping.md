@@ -158,7 +158,7 @@ Sweden, 2023, WDI via world-bank MCP. Admiralty: B2.
 
 ## 6. Changelog
 
-- **v1.3 (2026-05-15)** — Added v1.3 changelog entry; date updated to 2026-05-15.
+- **v1.3 (2026-05-15)** — Added changelog entry for consistency with companion methodology files.
 - **v1.2 (2026-04-28)** — Document scoped to non-economic indicators (governance, environment, social, defence historicals, demographics, health, education, innovation, infrastructure, inequality, gender, energy, agriculture, crime). Economic context routes through [`imf-indicator-mapping.md`](imf-indicator-mapping.md).
 - **v1.1 (2026-04-24)** — Scope tightened: full IMF integration across methodologies/templates/prompts.
 - **v1.0 (2026-04-23)** — Initial Riksdagsmonitor mapping; adapted from EU Parliament Monitor `worldbank-indicator-mapping.md` Wave-2 scope.

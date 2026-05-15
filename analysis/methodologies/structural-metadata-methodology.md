@@ -334,7 +334,7 @@ flowchart TD
 ## 🔗 Template bindings
 
 | Template | Methodology section |
-|----------|--------------------||
+|----------|---------------------|
 | `analysis/templates/data-download-manifest.md` | Part 1 above |
 | `analysis/templates/cross-reference-map.md` | Part 2 above |
 
