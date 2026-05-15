@@ -2,7 +2,7 @@
 
 > **Authoritative methodology** — canonical reference mapping Riksdagsmonitor news workflow article types to the most-relevant IMF indicators sourced from **WEO**, **Fiscal Monitor**, **IFS**, **BOP**, **GFS_COFOG**, **MFS_IR**, **DOTS**, **PCPS**, and **ER** via the local TypeScript IMF client at `scripts/imf-fetch.ts` (Datamapper JSON base URL `https://www.imf.org/external/datamapper/api/v1`, SDMX 3.0 base URL `https://api.imf.org/external/sdmx/3.0`).
 >
-> **Effective**: 2026-04-25 · **Version**: 2.1 · **Contract**: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../.github/aw/ECONOMIC_DATA_CONTRACT.md) v3.0+
+> **Effective**: 2026-05-15 · **Version**: 2.2 · **Contract**: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../.github/aw/ECONOMIC_DATA_CONTRACT.md) v3.0+
 
 ---
 
@@ -153,7 +153,7 @@ See [`analysis/imf/data-dictionary.md`](../imf/data-dictionary.md) for the full 
 ## 4 · Article type → indicator matrix
 
 | Article type | Required IMF | Optional overlay | WB role |
-|--------------|--------------|------------------|---------|
+|--------------|--------------|------------------|--------|
 | `propositions` (budget / finance) | `WEO:NGDP_RPCH`, `WEO:PCPIPCH`, `WEO:GGXWDG_NGDP`, `WEO:GGXCNL_NGDP` | `FM:GGXONLB_NGDP`, `IFS:PCPI_IX`, `ER:ENDE_XDC_EUR_RATE` | WGI if governance angle, WB sectorals for implementation |
 | `propositions` (tax / SkU) | `WEO:GGR_NGDP`, `FM:GGXONLB_NGDP`, `FM:GGSB_NPGDP` | `WEO:GGXWDG_NGDP` | — |
 | `propositions` (trade / NU / UU) | `WEO:BCA_NGDPD`, `WEO:TX_RPCH`, `DOTS:TXG_FOB_USD` | `PCPS:POILAPSP` | — |
@@ -296,5 +296,6 @@ The evidence-host regex in [`.github/prompts/05-analysis-gate.md`](../../.github
 
 ## 11 · Changelog
 
+- **v2.2 (2026-05-15)** — Version alignment pass: date updated to 2026-05-15; changelog entry added.
 - **v2.0 (2026-04-24)** — Full rewrite. IMF set as the source for every economic claim across all domains. Added complete dataflow catalogue (9 dataflows), deep committee matrix (including KrU/TU/CU/JuU), vintage-discipline canon, enforcement & anti-patterns. Cross-references every companion doc in `analysis/imf/`.
 - **v1.0 (2026-04-23)** — Initial Wave-2 IMF↔WB split; adapted from EU Parliament Monitor.

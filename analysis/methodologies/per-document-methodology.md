@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.4-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--05--15-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.3 | **📅 Last Updated:** 2026-04-25 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 1.4 | **📅 Last Updated:** 2026-05-15 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-21
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -85,7 +85,7 @@
 ## 🔄 Tradecraft Anchors
 
 | Element | Value | Reference |
-|---------|-------|-----------|
+|---------|-------|----------|
 | **F3EAD Stage** | **FINISH** | Per-document analysis completes document-identity establishment and extracts initial intelligence value |
 | **PIRs Served** | Per-document: tag each analysis with the PIR it informs (e.g., FöU document → PIR-4; FiU → PIR-5; KU → PIR-7) | See [`political-style-guide.md` §PIR/EEI Catalog](political-style-guide.md#-priority-intelligence-requirements-pir--essential-elements-of-information-eei) |
 | **Admiralty Floor** | Document itself is **[A1]**; interpretive claims require ≥[B2] corroboration | See [`political-style-guide.md` §Admiralty Code](political-style-guide.md#-admiralty-source-reliability-code-nato-stanag-2022) |
@@ -384,7 +384,7 @@ flowchart TD
 ## 🔗 Template bindings
 
 | Template | Methodology section |
-|----------|--------------------|
+|----------|--------------------||
 | `analysis/templates/per-file-political-intelligence.md` | Parts 1 & 2 above |
 
 ---
@@ -409,6 +409,13 @@ flowchart TD
 | NIST CSF PR.IP-9 (Response/recovery plans) | Cross-refs support impact/dependency mapping |
 | CIS 3.2 (Inventory of data) | Each Family E file = one inventory record |
 | GDPR Art. 5(1)(a)(b)(c) | Purpose limitation, data minimisation, accuracy enforced at per-doc level |
+
+---
+
+## 📜 Changelog
+
+- **v1.4 (2026-05-15)** — Aligned version badge with header text (both now 1.4); bumped date to 2026-05-15.
+- **v1.3 (2026-04-25)** — Extended doctype taxonomy with 5 variants (`motion-package`, `fpm`, `utskottsbetänkande-variants`, `KU-anmälan`, `EU-nämnd`) + binding doctype-detection algorithm.
 
 ---
 
