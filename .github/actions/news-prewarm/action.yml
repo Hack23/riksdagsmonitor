@@ -254,7 +254,7 @@ runs:
       run: |
         echo ""
         echo "🗳️ Polling context pre-flight — $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
-        if timeout 60 npx tsx scripts/polling-fetch.ts --output data/polling-context.json >/tmp/polling-context.json 2>/tmp/polling-context.err; then
+        if timeout 60 npx tsx scripts/polling-fetch.ts --output data/polling-context.json >/dev/null 2>/tmp/polling-context.err; then
           PROVIDERS=$(grep -c '"provider"' data/polling-context.json 2>/dev/null || echo 0)
           echo "  ✅ polling context updated (${PROVIDERS} provider entries)"
         else

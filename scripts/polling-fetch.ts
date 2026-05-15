@@ -123,12 +123,14 @@ export function extractPollingWaveFromHtml(
   html: string,
   fetchedAt: string,
 ): PollingWave {
-  const title = TITLE_RE.exec(html)?.[1] ? stripHtml(TITLE_RE.exec(html)![1]!) : undefined;
+  const titleMatch = TITLE_RE.exec(html);
+  const title = titleMatch?.[1] ? stripHtml(titleMatch[1]) : undefined;
   const text = stripHtml(html);
   const publishedAt = DATE_RE.exec(text)?.[1];
   const monthMatch = MONTH_RE.exec(text);
   const fieldworkMonth = monthMatch ? `${monthMatch[1]}-${monthMatch[2]}` : publishedAt?.slice(0, 7);
-  const sampleSize = SAMPLE_SIZE_RE.exec(text)?.[1] ? Number.parseInt(SAMPLE_SIZE_RE.exec(text)![1]!, 10) : undefined;
+  const sampleSizeMatch = SAMPLE_SIZE_RE.exec(text);
+  const sampleSize = sampleSizeMatch?.[1] ? Number.parseInt(sampleSizeMatch[1], 10) : undefined;
 
   const parties: Partial<Record<PartyCode, number>> = {};
   for (const partyCode of PARTY_CODES) {

@@ -164,6 +164,17 @@ export function parseArgs(argv: string[]): {
   return { date: isoDate, aggregate, limit, weekLabel, rm, docType, documentIds, autoFullTextTopN, fullTextForAll };
 }
 
+/**
+ * Resolve the effective full-text follow-up target for the current run.
+ *
+ * Resolution order:
+ * 1. `--full-text-for-all` always wins and fetches the entire selected batch.
+ * 2. `--auto-full-text-top-n 0` explicitly disables the follow-up fetch.
+ * 3. Long-horizon batches (`--limit >= 30`) enforce a minimum floor of
+ *    `MAX_ENRICHMENT_PER_TYPE` so year-ahead style runs cannot silently stay
+ *    at the old top-5 behaviour.
+ * 4. Shorter-horizon runs preserve the caller-supplied top-N or `null`.
+ */
 export function resolveAutoFullTextTopN(
   limit: number,
   autoFullTextTopN: number | null,
