@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "generated": "2026-05-15",
+  "workflow": "news-interpellations",
+  "article_date": "2026-05-15",
+  "subfolder": "interpellations",
+  "pirs": [
+    {
+      "id": "PIR1",
+      "requirement": "Har Dousa presenterat konsekvensanalys för barn?",
+      "status": "OPEN",
+      "trigger": "Kammardebatt 2026-05-29",
+      "priority": "CRITICAL",
+      "owner": "Fornarve/V",
+      "last_updated": "2026-05-15"
+    },
+    {
+      "id": "PIR2",
+      "requirement": "Hur stor är ODA-nivån 2026 i procent av BNI?",
+      "status": "OPEN",
+      "trigger": "SCB/OECD rapport Q2 2026",
+      "priority": "HIGH",
+      "owner": "Media/DAC",
+      "last_updated": "2026-05-15"
+    },
+    {
+      "id": "PIR3",
+      "requirement": "Har stoppade strategier ersatts av alternativa givare?",
+      "status": "OPEN",
+      "trigger": "Rapport från mottagarländer",
+      "priority": "MEDIUM",
+      "owner": "OECD/NGO",
+      "last_updated": "2026-05-15"
+    },
+    {
+      "id": "PIR4",
+      "requirement": "Blivit bistånd en partiprioritet i S-valprogram 2026?",
+      "status": "OPEN",
+      "trigger": "S-kongress 2026",
+      "priority": "MEDIUM",
+      "owner": "S/Media",
+      "last_updated": "2026-05-15"
+    },
+    {
+      "id": "PIR5",
+      "requirement": "Eskalerar debatten till KU-granskning?",
+      "status": "OPEN",
+      "trigger": "V/S KU-anmälan",
+      "priority": "MEDIUM",
+      "owner": "KU",
+      "last_updated": "2026-05-15"
+    }
+  ],
+  "intelligence_gaps": [
+    {
+      "id": "GAP1",
+      "description": "Dousas beslutsunderlag för biståndsminskningarna (sekretessbelagda)",
+      "significance": "HIGH",
+      "fill_method": "FOI-begäran eller kammardebatt svar"
+    },
+    {
+      "id": "GAP2",
+      "description": "Faktisk ODA-nivå 2025 (prel. SCB-data)",
+      "significance": "MEDIUM",
+      "fill_method": "SCB BNI-rapport"
+    },
+    {
+      "id": "GAP3",
+      "description": "Antal direkt påverkade mottagare av stoppade program",
+      "significance": "MEDIUM",
+      "fill_method": "Sida årsredovisning 2025"
+    }
+  ]
+}
