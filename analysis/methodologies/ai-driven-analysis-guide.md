@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-6.8-0A66C2?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--05--01-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-6.9-0A66C2?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--05--15-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 6.8 | **📅 Last Updated:** 2026-05-01 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 6.9 | **📅 Last Updated:** 2026-05-15 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-21
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -98,7 +98,7 @@ flowchart LR
     S1["1️⃣ Prepare<br/>Read methodologies<br/>+ templates"] --> S2["2️⃣ Download<br/>MCP data into<br/>workflow folder"]
     S2 --> S3["3️⃣ Per-File Analysis<br/>One .md per document<br/>(Tier L1–L3)"]
     S3 --> S4["4️⃣ Core Synthesis<br/>Family A files<br/>(9 outputs)"]
-    S4 --> S5["5️⃣ Extensions<br/>Family C & D<br/>if warranted"]
+    S4 --> S5["5️⃣ Extensions<br/>Family C & D<br/>(all 12 always)"]
     S5 --> S6["6️⃣ Quality Gate<br/>Self-audit against<br/>rubric ≥ 7.0/10"]
     S6 --> S7["7️⃣ Pass-2 Rewrite<br/>Read own output,<br/>deepen every section"]
 
@@ -112,6 +112,25 @@ flowchart LR
 ```
 
 Every step is mandatory. Steps 3–7 run inside a single workflow folder at `analysis/daily/YYYY-MM-DD/{scope}/` (or `analysis/daily/YYYY-MM-DD/realtime-HHMM/` for realtime runs).
+
+---
+
+## 🚨 Common Failure Modes (read before Pass 1)
+
+These are the patterns that most frequently fail [`05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md). Avoid each one explicitly:
+
+| # | Failure mode | Symptom | Fix |
+|---|--------------|---------|-----|
+| 1 | **Conditional Family C/D output** | Workflow ships only some of the 12 Family C+D files because "the day was quiet" | All 12 always ship. Depth adapts via DIW tier; structure does not. |
+| 2 | **Missing evidence anchors** | Claims like "the opposition pushed back" without `dok_id`, vote count, named MP, or primary-source URL | Every analytical claim cites at least one anchor. Generic prose is rejected by the gate. |
+| 3 | **Banned phrases** | "could potentially", "may eventually", "experts say" | Replace with WEP language + named source. See [`political-style-guide.md` §banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list). |
+| 4 | **WEP-language overshoot** | `[horizon:year]` claim tagged "very likely" without ≥ 3 cycle-aged sources | Cap at "roughly even" for `year`/`cycle` unless source diversity rule is satisfied. |
+| 5 | **Pass-2 skipped** | Single-pass output: shallow, generic, no read-back log | Pass-2 status MUST appear in `methodology-reflection.md` with `executed in full`. |
+| 6 | **Provider violation** | Macro/fiscal/monetary/external/trade/commodity/FX claim citing World Bank | Use IMF (see [`imf-indicator-mapping.md`](imf-indicator-mapping.md)). World Bank is reserved for governance, environment, social/education residue, defence historicals, crime. |
+| 7 | **Missing voting-record evidence** | `coalition-mathematics.md` cites a betänkande without a vote table or one of the three annotation comments | Run `fetch-voting-records` and paste table, or insert `<!-- vote-not-found / vote-fetch-error / vote-pending -->`. |
+| 8 | **Stale full-text fallback** | < 2 documents succeed in `--auto-full-text-top-n` and no `<!-- full-text-fallback: <reason> -->` annotation appears | Either fetch 2 successfully or annotate. Gate Check 10 enforces this. |
+| 9 | **Unfilled 14-language SEO seeds** | Step 2B row left blank for one or more languages | Mark `[machine-assisted — verify]` if no human-quality localization, never leave blank. |
+| 10 | **Per-doctype default** | Generic `mot` template applied to a `fpm` shadow-budget or `KU-anmälan` | Run doctype-variant detector first; pick the right variant template. |
 
 ---
 
@@ -845,8 +864,9 @@ npx tsx scripts/roll-forward-pirs.ts \
 
 **Document Control**
 - **Path:** `/analysis/methodologies/ai-driven-analysis-guide.md`
-- **Version:** 6.8 — Long-horizon forecasting playbook + multi-cycle election lens
-- **Key changes in v6.8:** Step 5 extended with §Long-horizon forecasting playbook (horizon stratification, scenario-tree depth, PESTLE threshold, PIR roll-forward, cross-horizon citation rule), §Multi-cycle election lens (four anchors, ± 30-day rollover window, cycle-rollover cross-link), and §Horizon helper API (`scripts/horizon-context.ts` exports); replaced static "Election 2026" framing with parameterised cycle model driven by `analysis/article-types.json`; all cross-links reference existing bounded-context modules without duplication.
+- **Version:** 6.9 — Tightened header, Step-5 Mermaid label aligned to "(all 12 always)", Common Failure Modes callout added
+- **Key changes in v6.9:** Step 5 Mermaid label corrected from "if warranted" to "(all 12 always)" to match the v6.2 every-run-every-file contract; header version + effective date bumped to 2026-05-15; Common Failure Modes block added (see below). Companion fix in `analytical-supplementary-methodology.md` — "Family-S supplementary (S1–S7)" → "(AS-1..AS-4)" — corrects a stale step reference.
+- **Key changes in v6.8:** Long-horizon forecasting playbook + multi-cycle election lens (horizon stratification, scenario-tree depth, PESTLE threshold, PIR roll-forward, cross-horizon citation rule), §Multi-cycle election lens (four anchors, ± 30-day rollover window, cycle-rollover cross-link), and §Horizon helper API (`scripts/horizon-context.ts` exports); replaced static "Election 2026" framing with parameterised cycle model driven by `analysis/article-types.json`; all cross-links reference existing bounded-context modules without duplication.
 - **Key changes in v6.7:** Added mandatory `pir-status.json` sidecar write step to Pass-2 checklist (Step 7); added PIR status sidecar reference section under Related Documents; added roll-forward usage example (`scripts/roll-forward-pirs.ts`) and schema reference (`schemas/pir-status.schema.json`).
 - **Key changes in v6.6:** Step 3 now points at the v1.3 doctype-variant detector (5 extended types: motion-package, fpm, utskottsbetänkande-variants, KU-anmälan, EU-nämnd) and adds Narrative subsection requirement for ≥ L2 per-file artifacts; Step 4 cross-reference-map row links to the 7 atomic edge types in `structural-metadata-methodology.md` v1.3; Step 7 Pass-2 rewrite checklist adds two binding items — Pass-2 Self-Audit Checklist (10 items) and Narrative 6-axis rubric (18/30 floor); DIW section adds worked-example callout to `synthesis-methodology.md` v1.3 (line-by-line scoring + winner/loser rubric) and Sainte-Laguë walkthrough in `electoral-domain-methodology.md` v1.3; Quality Gate Checklist gains rows 11–12.
 - **Key changes in v6.5:** source diversity rule integration (political-style-guide.md v3.1)
