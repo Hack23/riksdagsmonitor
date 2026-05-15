@@ -82,8 +82,8 @@ Run once at workflow start, then proceed — do not loop forever.
 
 Every news workflow declares a **single** `curl`-based pre-warm step with ≤ 6 retries, ≤ 20 s apart. With `curl --max-time 30`, the worst-case runtime can exceed 4 minutes, so this is a best-effort pre-warm rather than a hard ≤ 2 minute guarantee. If a strict 2 minute cap is required, the workflow's `curl` timeout and/or retry policy must be reduced accordingly. No background pingers.
 
-## MCP gateway session timeout (`engine.mcp.session-timeout`) — **DO NOT SET**
+## MCP gateway session timeout (`engine.mcp.session-timeout`) — **DO NOT SET** without re-testing on v0.3.9
 
-> 🚫 **Removed from every workflow.** MCP Gateway v0.3.1 (`ghcr.io/github/gh-aw-mcpg:v0.3.1`) rejects the gh-aw v0.71.3 compiled `sessionTimeout` field as `additionalProperties 'sessionTimeout' not allowed` ([gh-aw #29353](https://github.com/github/gh-aw/issues/29353)). The field is therefore **removed from all 14 `news-*.md` workflows** until a compatible MCP Gateway version ships.
+> 🚫 **Currently removed from every workflow.** MCP Gateway v0.3.1 (`ghcr.io/github/gh-aw-mcpg:v0.3.1`) rejected the gh-aw v0.71.3 compiled `sessionTimeout` field as `additionalProperties 'sessionTimeout' not allowed` ([gh-aw #29353](https://github.com/github/gh-aw/issues/29353)). The gh-aw v0.74.3 lock files now ship MCP Gateway **v0.3.9** — the field's acceptance has not yet been re-validated on this repo. **Do not re-add `engine.mcp.session-timeout` without first running one news workflow end-to-end against v0.3.9 to confirm the gateway accepts it.**
 
-The `sandbox.mcp.keepalive-interval` setting has also been **removed** — the MCP gateway default keepalive is now sufficient for the 60-min job window. The PR deadline is governed by Timer A (job `timeout-minutes: 60`, measured from job start) and Timer B (Copilot API session ~60 min). Call the PR safe-output by agent minute 42.
+The `sandbox.mcp.keepalive-interval` setting also remains **removed** — the MCP gateway default keepalive (now on v0.3.9) is sufficient for the 60-min job window. The PR deadline is governed by Timer A (job `timeout-minutes: 60`, measured from job start) and Timer B (Copilot API session ~60 min). Call the PR safe-output by agent minute 42.

@@ -112,7 +112,7 @@ Map every security-relevant control to **ISO 27001:2022 Annex A**, **NIST CSF 2.
 
 ## 🤖 GitHub Agentic Workflows
 
-This repo uses [GitHub Agentic Workflows](https://github.github.com/gh-aw/) (gh-aw **v0.71.3**, pinned via `github/gh-aw-actions/setup@v0.71.3`) for AI-powered news generation. 14 agentic workflows in `.github/workflows/` produce daily political intelligence articles with five-layer security:
+This repo uses [GitHub Agentic Workflows](https://github.github.com/gh-aw/) (gh-aw **v0.74.3**, pinned via `github/gh-aw-actions/setup@v0.74.3`; MCP Gateway image `ghcr.io/github/gh-aw-mcpg:v0.3.9`) for AI-powered news generation. 14 agentic workflows in `.github/workflows/` produce daily political intelligence articles with five-layer security:
 
 1. **Read-only tokens** — Agent gets only read permissions
 2. **Zero secrets in agent** — Write tokens isolated in separate jobs
@@ -127,7 +127,7 @@ The full workflow contract is split into bounded-context prompt modules under [`
 - **Analysis product** (the "deep political analysis" that must precede every article): authored per [`analysis/methodologies/ai-driven-analysis-guide.md`](../analysis/methodologies/ai-driven-analysis-guide.md) using the templates in [`analysis/templates/`](../analysis/templates/).
 - **Hard rule**: every news workflow MUST produce all **23 always-on artifacts** (Family A Core Synthesis 9 + Family B Structural Metadata 2 + Family C Strategic Extensions 5 + Family D Electoral & Domain Lenses 7) plus Family E per-document `documents/{dok_id}-analysis.md`, in `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`, before any article sentence is written. Tier-C aggregation workflows produce the **same 23 artifacts** with period-scope multipliers and cross-type sibling-folder citations — no extra files (see [`ext/tier-c-aggregation.md`](prompts/ext/tier-c-aggregation.md)). [`.github/prompts/05-analysis-gate.md`](prompts/05-analysis-gate.md) is the single blocking gate; see [`.github/prompts/04-analysis-pipeline.md`](prompts/04-analysis-pipeline.md) for the full artifact catalogue.
 - **AI-FIRST**: minimum 2 complete iterations (Pass 1 creates, Pass 2 reads back and improves) — see §"5. 🔴 AI FIRST Quality Principle" above.
-- **Upstream gh-aw documentation**: [abridged (llms-small.txt)](https://github.github.com/gh-aw/llms-small.txt) · [complete (llms-full.txt)](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog series](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt) · [source repo](https://github.com/github/gh-aw) · [v0.71.3 release notes](https://github.com/github/gh-aw/releases/tag/v0.71.3) · [GitHub CLI manual](https://cli.github.com/manual/).
+- **Upstream gh-aw documentation**: [abridged (llms-small.txt)](https://github.github.com/gh-aw/llms-small.txt) · [complete (llms-full.txt)](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog series](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt) · [source repo](https://github.com/github/gh-aw) · [v0.74.3 release notes](https://github.com/github/gh-aw/releases/tag/v0.74.3) · [GitHub CLI manual](https://cli.github.com/manual/).
 
 ### Agentic Workflow Schedule
 - **Morning**: Propositions, committee reports, motions, interpellations
@@ -149,8 +149,8 @@ All agentic workflows declare a Sonnet-class model:
 ```yaml
 engine:
   id: copilot
-  model: claude-sonnet-4.6        # Faster than opus 4.7 — replaced in the v0.71.3 refactor for throughput within the 60-min budget
-  # Note: engine.mcp.session-timeout was removed — MCP Gateway v0.3.1 rejects it as an unsupported additional property
+  model: claude-sonnet-4.6        # Faster than opus 4.7 — adopted in the v0.71.3 refactor for throughput within the 60-min budget; carried forward to v0.74.3
+  # Note: engine.mcp.session-timeout was removed in the v0.71.3 era due to MCP Gateway v0.3.1 rejecting it; the v0.74.3 lock files now run MCP Gateway v0.3.9 — re-test before re-enabling.
 ```
 
 ### Tool Configuration (All Workflows)

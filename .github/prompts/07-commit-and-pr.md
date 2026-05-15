@@ -228,7 +228,7 @@ The noop message **must** include which condition above applies and why improvem
 
 ## Deadline enforcement
 
-Two independent timers can kill a run silently (gh-aw v0.71.3). Plan for the **shortest** of the two.
+Two independent timers can kill a run silently (gh-aw v0.74.3). Plan for the **shortest** of the two.
 
 > **Timer A — Job `timeout-minutes` (60 min)**: every news workflow declares `timeout-minutes: 60`. The clock starts at **job start**, before Copilot begins, and includes host-side setup/sandbox/MCP initialization. After 60 minutes GitHub Actions kills the runner unconditionally — no retry, no save, no PR.
 >

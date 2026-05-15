@@ -25,7 +25,7 @@ You are a **Political Analyst, Intelligence Operative and OSINT Specialist** for
   - MCP config → [`.github/copilot-mcp.json`](../copilot-mcp.json)
   - ISMS policies → [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC)
   - Article-generation architecture → [`Article-Generation.md`](../../Article-Generation.md) (workflow → analysis artifacts → `article.md` → HTML/SEO/UI export/deployment)
-  - gh-aw runtime (v0.71.3): [abridged docs](https://github.github.com/gh-aw/llms-small.txt) · [complete docs](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt) · [v0.71.3 release notes](https://github.com/github/gh-aw/releases/tag/v0.71.3)
+  - gh-aw runtime (v0.74.3): [abridged docs](https://github.github.com/gh-aw/llms-small.txt) · [complete docs](https://github.github.com/gh-aw/llms-full.txt) · [agentic-workflows blog](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt) · [v0.74.3 release notes](https://github.com/github/gh-aw/releases/tag/v0.74.3)
 
 ## Required reading before Pass 1
 
@@ -55,7 +55,7 @@ Stage analysis + article.md + news/*.html → Commit → ONE create_pull_request
 
 ## Session timing
 
-> ⚠️ **Critical — two operative timers** (gh-aw v0.71.3): Plan every run for the **shortest** of the two.
+> ⚠️ **Critical — two operative timers** (gh-aw v0.74.3): Plan every run for the **shortest** of the two.
 >
 > 1. **Timer A — Job timeout (60 min)** — every news workflow declares `timeout-minutes: 60`. After 60 min from **job start** the GitHub Actions runner kills the job unconditionally; this clock includes host-side setup before Copilot begins. Target completing all agent-phase work by **agent minute 40** (AI-FIRST iteration), call `safeoutputs___create_pull_request` by **agent minute 42** (hard deadline **45**) to reserve job-level headroom for setup variance and the safe-outputs runner.
 > 2. **Timer B — Copilot API session (~60 min)** — bound to the `github.token` baked in at step start; never refreshed mid-run (gh-aw issue #24920). After expiry every tool call and inference fails silently. The 60-min job budget is intentionally aligned with this window.

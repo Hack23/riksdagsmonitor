@@ -13,7 +13,7 @@ This directory holds the **bounded-context prompt modules** imported by every ne
 
 This directory is the **single source of truth** for how GitHub Agentic Workflows (gh-aw) produce news articles in this repo. Agents, skills, and copilot instructions MUST link back here rather than restate the rules.
 
-- **gh-aw runtime**: `github/gh-aw-actions/setup@v0.71.3` (SHA-pinned in every `news-*.lock.yml`; `setup-cli` variant used only by `agentics-maintenance.yml`).
+- **gh-aw runtime**: `github/gh-aw-actions/setup@v0.74.3` (SHA-pinned in every `news-*.lock.yml`; MCP Gateway image `ghcr.io/github/gh-aw-mcpg:v0.3.9`; `setup-cli` variant used only by `agentics-maintenance.yml`).
 - **Upstream documentation** — link-out only, never copy content:
   - Abridged: <https://github.github.com/gh-aw/llms-small.txt>
   - Complete: <https://github.github.com/gh-aw/llms-full.txt>

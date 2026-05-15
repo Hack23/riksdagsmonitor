@@ -104,13 +104,13 @@ Each agentic workflow is a **pair**: an authored `.md` source + a compiled `.loc
 
 ### Common tool surface (every `news-*.md`)
 
-Every news workflow declares the **same** tool & runtime surface for parity, resilience, and full gh-aw v0.71.3 capability coverage:
+Every news workflow declares the **same** tool & runtime surface for parity, resilience, and full gh-aw v0.74.3 capability coverage:
 
 | Field | Value | Purpose |
 |-------|-------|---------|
 | `runtimes.node.version` | `"26"` | Pinned Node 26 for IMF CLI + render scripts |
-| `engine.id` / `engine.model` | `copilot` / `claude-sonnet-4.6` | Faster Sonnet model (replaced `claude-opus-4.7` in the v0.71.3 refactor for throughput within the 60-min budget) |
-| `engine.mcp.session-timeout` | ~~`1h`~~ **removed** | This field was added in gh-aw v0.71.3 but is rejected by MCP Gateway v0.3.1 (`additionalProperties 'sessionTimeout' not allowed`). Removed from all workflows until a compatible MCP Gateway version ships. |
+| `engine.id` / `engine.model` | `copilot` / `claude-sonnet-4.6` | Faster Sonnet model (adopted in the v0.71.3 refactor for throughput within the 60-min budget; carried forward to v0.74.3 — GPT-5.4 / GPT-5.4-mini eligibility now resolved upstream per v0.74.3 release notes #31695 + #32197 but not yet A/B-tested on this repo) |
+| `engine.mcp.session-timeout` | ~~`1h`~~ **removed** | Was added in gh-aw v0.71.3 and rejected by MCP Gateway v0.3.1. v0.74.3 lock files now ship MCP Gateway v0.3.9; re-acceptance has not yet been validated on this repo, so the field stays removed until verified. |
 | `tools.github.toolsets` | `[all]` | Full GitHub MCP surface (issues, PRs, repos, code-search, actions, releases, discussions, …); see [`github-tools.md`](https://github.com/github/gh-aw/blob/main/docs/src/content/docs/reference/github-tools.md) |
 | `tools.bash` / `tools.edit` / `tools.web-fetch` / `tools.agentic-workflows` | enabled | Full local tool surface; `web-fetch` reaches non-MCP public sources (`statskontoret.se`, `riksdagsmonitor.com`) through the AWF firewall |
 | `tools.cache-memory` | keyed by `news-${workflow}-${article_date}`; best-effort cache persistence aligned with a 14-day recovery window | **Resilience knob** — analysis artifacts persisted at `/tmp/gh-aw/cache-memory/`; may be restored on the next run if the previous PR failed and the cache entry is still available (see [`07-commit-and-pr.md` §Cache-memory recovery](../prompts/07-commit-and-pr.md)) |
@@ -121,6 +121,29 @@ Every news workflow declares the **same** tool & runtime surface for parity, res
 | `safe-outputs.create-pull-request.if-no-changes` | `warn` | Empty patches emit a warning instead of failing the run (e.g. duplicate-date dispatches) |
 | `network.allowed` | `node`, `github`, `defaults` + explicit Docker Hub hosts (`docker.io`, `registry-1.docker.io`, `auth.docker.io`, `production.cloudflare.docker.com`) + IMF/SCB/Riksdag/Statskontoret/site domains | Ecosystem identifiers preferred per upstream `network.md`. The broad `containers` ecosystem (which would also permit `ghcr.io`, `quay.io`, `gcr.io`, `mcr.microsoft.com`, `pkgs.k8s.io`, …) is **deliberately omitted** to keep least-privilege egress; only the minimal Docker Hub hosts actually required to resolve `node:26-alpine` for the SCB and World Bank MCP servers are enumerated. Any future switch to `ghcr.io`, `quay.io`, or other registries must add the specific hosts and be reviewed against the egress allowlist policy before merge. |
 | `permissions` | `contents: read`, `issues: read`, `pull-requests: read`, `actions: read`, `discussions: read`, `security-events: read` | Least-privilege agent token; write capabilities live exclusively in the safe-outputs runner job |
+
+### v0.74.3 capabilities — adoption status
+
+Tracking grid for the features called out in the [gh-aw v0.74.3 release notes](https://github.com/github/gh-aw/releases/tag/v0.74.3). All 14 `news-*.lock.yml` files compile against v0.74.3 today; the rows below classify each new capability as **adopted**, **planned** (follow-up PR), or **non-applicable**.
+
+| v0.74.3 feature | Status | Notes |
+|-----------------|--------|-------|
+| Glob patterns in `add-labels` safe outputs (#32022) | Planned | Replace hard-coded `labels: [agentic-news, analysis-data]` with `agentic-*` glob to allow agent-driven self-labelling of `agentic-tier-c`, `agentic-long-horizon`, `agentic-election-cycle`. |
+| Issue Fields in safe outputs (#30846) | Planned | Move severity / horizon-band / election-cycle metadata off labels into issue fields on uptime-monitor and PIR roll-forward issues. |
+| Stable `slash_command` / `label_command` triggers (#32348) | Planned | Add `/regen-news <date> <type>` and `regen-news` label triggers to `news-propositions` / `news-motions` / `news-committee-reports` / `news-interpellations`. |
+| `aw-compat` codemods (#32341): run-expression hoisting, engine pinning, toolset-permission synthesis | Planned | One-pass `gh aw fix --write` across all 14 news workflows. |
+| Warn-mode threat guardrails for safe outputs (#32399) | Planned | Tighten `safe-outputs.threat-detection.continue-on-error: true` → warn-mode with structured warning ingested into `analysis-quality.md`. |
+| Agent compatibility matrix and validation (#32396) | Planned | Declare `agent-compatibility:` matrix: `claude-sonnet-4.6` accepted; `gpt-5.4`, `gpt-5.4-mini` opt-in after A/B test. |
+| Enhanced OTel spans + Grafana MCP shared component (#32425, #32340) | Planned | Add Grafana MCP to `news-evening-analysis` + `news-realtime-monitor`; pipe agent-phase timings and gate-pass/fail counts. |
+| `excessivefuncparams` linter (#32402) | Planned | Run against `scripts/imf-fetch.ts`, `scripts/aggregate-analysis.ts`, `scripts/render-articles.ts`; refactor opportunity, non-blocking. |
+| `experiments.*` valid in runtime-import expressions (#32375) | Planned | Expose `experiments.tier_c_compression`, `experiments.lh_pestle_blocking`, `experiments.cycle_rollover_window`. |
+| MCP Gateway upgrade to `ghcr.io/github/gh-aw-mcpg:v0.3.9` | Adopted | Now present in every `news-*.lock.yml` manifest. Field-level effects (e.g. `engine.mcp.session-timeout` re-acceptance) still pending re-validation. |
+| GPT-5.4 / GPT-5.4-mini fixes (#31695, #32197) | Available | Models now compatible; not yet A/B-tested against `claude-sonnet-4.6` on this repo. |
+| `gh aw compile --staged` (v0.74.2) | Planned | Adopt in `compile-agentic-workflows.yml` for PR previews of the compiled `.lock.yml`. |
+| REST API for agent session task creation (v0.74.2) | Adopted | Default in compiled `.lock.yml` files. |
+| Higher default `max-runs` (100 → 500, v0.74.2) | Adopted | Inherited from compiler defaults; no explicit cap needed for current scheduling fan-out. |
+
+Tracker: [`Article-Generation.md`](../../Article-Generation.md) §"Modularization roadmap" carries the per-feature follow-up PR titles.
 
 ## 🛠️ Automation & Tooling (4)
 
