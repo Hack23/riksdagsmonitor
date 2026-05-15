@@ -110,11 +110,12 @@ function extractNumericPartyShare(text: string, partyCode: PartyCode): number | 
 }
 
 function isArchiveRootUrl(url: string): boolean {
-  // Treat /arkiv/ (archive) listing pages and category roots as "canonical archive
+  // Treat archive listing pages and category roots as "canonical archive
   // roots" we should NOT prefer over a specific polling article. Examples:
   //   https://novus.se/valjarbarometer-arkiv/
   //   https://example.test/category/valjarbarometer/
-  return /\/(arkiv|category|kategori|tag)(\/|$)/i.test(new URL(url).pathname);
+  //   https://example.test/arkiv/polls/
+  return /[-/](arkiv|category|kategori|tag)(\/|$)/i.test(new URL(url).pathname);
 }
 
 function findFollowUpPollingUrl(sourceUrl: string, html: string): string | null {
@@ -215,17 +216,21 @@ async function fetchWithTimeout(
   fetchFn: typeof fetch,
   url: string,
   timeoutMs: number,
-): Promise<Response> {
+): Promise<{ response: Response; text: string }> {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {
-    return await fetchFn(url, {
+    const response = await fetchFn(url, {
       signal: controller.signal,
       headers: {
         Accept: 'text/html,application/xhtml+xml',
         'User-Agent': 'Mozilla/5.0 (compatible; Riksdagsmonitor polling-fetch)',
       },
     });
+    // Keep the abort active through body consumption so a stalled body read
+    // also gets terminated within the timeout budget.
+    const text = await response.text();
+    return { response, text };
   } finally {
     clearTimeout(timer);
   }
@@ -239,7 +244,7 @@ export async function fetchPollingContext(config: PollingFetchConfig = {}): Prom
   const waves = await Promise.all(
     providers.map(async (provider): Promise<PollingWave> => {
       try {
-        const response = await fetchWithTimeout(fetchFn, provider.url, POLLING_REQUEST_TIMEOUT_MS);
+        const { response, text: html } = await fetchWithTimeout(fetchFn, provider.url, POLLING_REQUEST_TIMEOUT_MS);
         if (!response.ok) {
           return {
             provider: provider.provider,
@@ -250,14 +255,13 @@ export async function fetchPollingContext(config: PollingFetchConfig = {}): Prom
             notes: `HTTP ${response.status} ${response.statusText}`,
           };
         }
-        const html = await response.text();
         let wave = extractPollingWaveFromHtml(provider.provider, provider.url, html, fetchedAt);
         if (wave.status === 'unavailable') {
           const followUpUrl = findFollowUpPollingUrl(provider.url, html);
           if (followUpUrl) {
-            const followUpResponse = await fetchWithTimeout(fetchFn, followUpUrl, POLLING_REQUEST_TIMEOUT_MS);
+            const { response: followUpResponse, text: followUpHtml } = await fetchWithTimeout(fetchFn, followUpUrl, POLLING_REQUEST_TIMEOUT_MS);
             if (followUpResponse.ok) {
-              wave = extractPollingWaveFromHtml(provider.provider, followUpUrl, await followUpResponse.text(), fetchedAt);
+              wave = extractPollingWaveFromHtml(provider.provider, followUpUrl, followUpHtml, fetchedAt);
             }
           }
         }

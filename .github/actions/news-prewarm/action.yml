@@ -267,7 +267,7 @@ runs:
         echo ""
         echo "🗳️ Polling context pre-flight — $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
         if timeout 60 npx tsx scripts/polling-fetch.ts --output data/polling-context.json >/dev/null 2>/tmp/polling-context.err; then
-          PROVIDERS=$(grep -c '"provider"' data/polling-context.json 2>/dev/null || echo 0)
+          PROVIDERS=$(node -e "try{const j=require('./data/polling-context.json');process.stdout.write(String(j.providers?.length ?? 0));}catch{process.stdout.write('0');}")
           AVAILABLE=$(node -e "try{const j=require('./data/polling-context.json');process.stdout.write(String(j.aggregate?.availableProviders ?? 0));}catch{process.stdout.write('0');}")
           if [ "${AVAILABLE:-0}" -gt 0 ]; then
             echo "  ✅ polling context updated (${PROVIDERS} provider entries, ${AVAILABLE} available)"

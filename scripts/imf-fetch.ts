@@ -56,6 +56,9 @@ import { persistIMFData, sanitizeDokId } from './parliamentary-data/data-persist
 // ---------------------------------------------------------------------------
 
 const DATA_ROOT = resolve(process.cwd(), 'analysis', 'data');
+// The outer retry loop is the single retry authority for WEO fetches.
+// The default client is constructed with maxRetries=0 to avoid nesting
+// two retry layers (which would consume up to 9 requests per invocation).
 const WEO_FETCH_MAX_ATTEMPTS = 3;
 const EMPTY_DATAMAPPER_SERIES_CODE = 'datamapper-empty-series';
 
@@ -257,7 +260,7 @@ export async function fetchWeoPayload(
   options: FetchWeoPayloadOptions,
   deps: FetchWeoPayloadDeps = {},
 ): Promise<Record<string, unknown>> {
-  const client = deps.client ?? new ImfClient();
+  const client = deps.client ?? new ImfClient({ maxRetries: 0 });
   const fetchFn = deps.fetchFn ?? globalThis.fetch;
   const sleepFn = deps.sleepFn ?? sleep;
   const logger = deps.logger ?? defaultCliLogger;

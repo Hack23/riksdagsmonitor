@@ -50,4 +50,16 @@ describe('polling-fetch', () => {
     expect(validate(persisted), JSON.stringify(validate.errors)).toBe(true);
     fs.rmSync(tmpDir, { recursive: true, force: true });
   });
+
+  it('validates the committed _fixture placeholder against the schema', () => {
+    const fixture = JSON.parse(
+      fs.readFileSync(path.join(process.cwd(), 'data', 'polling-context.json'), 'utf8'),
+    );
+    const ajv = new Ajv2020({ allErrors: true });
+    addFormats(ajv);
+    const validate = ajv.compile(schema);
+    expect(validate(fixture), JSON.stringify(validate.errors)).toBe(true);
+    expect(fixture._fixture).toBe('unavailable');
+    expect(typeof fixture._note).toBe('string');
+  });
 });

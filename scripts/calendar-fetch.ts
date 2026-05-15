@@ -57,11 +57,13 @@ const defaultResilientFetcher: CalendarResilientFetcher = async (from, to) => {
 };
 
 function matchesScope(event: CalendarEvent, org: string | null, akt: string | null): boolean {
-  if (org && event.org && event.org.toLowerCase() !== org.toLowerCase()) {
-    return false;
+  // When a scope is requested, treat events with an empty/missing field as
+  // non-matches — otherwise unclassified events leak into a scoped artifact.
+  if (org) {
+    if (!event.org || event.org.toLowerCase() !== org.toLowerCase()) return false;
   }
-  if (akt && event.akt && event.akt.toLowerCase() !== akt.toLowerCase()) {
-    return false;
+  if (akt) {
+    if (!event.akt || event.akt.toLowerCase() !== akt.toLowerCase()) return false;
   }
   return true;
 }

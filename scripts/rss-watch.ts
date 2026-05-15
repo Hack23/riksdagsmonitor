@@ -39,11 +39,14 @@ const REPO_ROOT = path.resolve(__dirname, '..');
 export const DEFAULT_RSS_OUTPUT = path.join(REPO_ROOT, 'data', 'rss-watch.json');
 // Default to the unscoped Riksdagen RSS feed so RSS PIR matching works for any
 // document type (propositions, motions, questions, interpellations, betänkanden).
-// Callers can scope to a specific doktyp via `--feed-url` or `--doktyp`.
+// Callers can scope to a specific doktyp via `--feed-url`.
 export const DEFAULT_RSS_FEED_URL = 'https://data.riksdagen.se/rss/dokumentlista/';
 export const RSS_REQUEST_TIMEOUT_MS = 15_000;
 const ITEM_RE = /<item>([\s\S]*?)<\/item>/gi;
-const RSS_ROOT_RE = /<(rss|feed|channel)[\s>]/i;
+// Only accept RSS root elements (<rss> or <channel>) because parseRssItems()
+// only extracts <item> elements. An Atom <feed> would pass validation but yield
+// zero parsed entries, silently dropping signals.
+const RSS_ROOT_RE = /<(rss|channel)[\s>]/i;
 
 function decodeXml(value: string | undefined): string {
   return decodeHtmlEntities((value ?? '').trim());
@@ -138,7 +141,7 @@ export async function watchRssFeed(
         signalCount: 0,
         status: 'error',
         signals: [],
-        notes: 'Response body does not look like RSS/Atom XML (no <rss>, <feed>, or <channel> root element)',
+        notes: 'Response body does not look like RSS XML (no <rss> or <channel> root element)',
       };
     }
     const items = parseRssItems(xml);

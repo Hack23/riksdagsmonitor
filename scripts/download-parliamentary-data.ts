@@ -638,10 +638,10 @@ async function runPreArticleAnalysis(opts: {
   if (effectiveAutoFullTextTopN !== null && effectiveAutoFullTextTopN > 0) {
     if (fullTextForAll) {
       console.log(`      ℹ️  Significance-scoring note: all ${effectiveAutoFullTextTopN} selected documents`);
-      console.log('         (across types) have full text available (contentFetched=true).');
+      console.log('         (across types) had full text fetched to sidecar files.');
     } else {
       console.log(`      ℹ️  Significance-scoring note: top-${effectiveAutoFullTextTopN} documents from the`);
-      console.log('         flattened batch have full text available (contentFetched=true) — AI');
+      console.log('         flattened batch had full text fetched to sidecar files — AI');
       console.log('         significance-scoring step should prioritise those documents for deeper analysis.');
     }
   }
