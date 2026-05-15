@@ -17,7 +17,7 @@ import * as fs from 'node:fs';
 import * as os from 'node:os';
 import * as path from 'node:path';
 
-import { parseArgs } from '../scripts/download-parliamentary-data.js';
+import { parseArgs, resolveAutoFullTextTopN } from '../scripts/download-parliamentary-data.js';
 import {
   fetchFullTextForTopN,
   FULL_TEXT_MIN_LENGTH,
@@ -120,6 +120,21 @@ describe('parseArgs --auto-full-text-top-n', () => {
     expect(result.date).toBe('2026-04-26');
     expect(result.limit).toBe(10);
     expect(result.autoFullTextTopN).toBe(2);
+  });
+
+  it('parses --full-text-for-all as a boolean flag', () => {
+    const result = parseArgs(['node', 'script.ts', '--full-text-for-all']);
+    expect(result.fullTextForAll).toBe(true);
+  });
+});
+
+describe('resolveAutoFullTextTopN', () => {
+  it('raises long-horizon top-N requests to the floor of 10', () => {
+    expect(resolveAutoFullTextTopN(30, 5, false)).toBe(10);
+  });
+
+  it('uses all selected documents when --full-text-for-all is enabled', () => {
+    expect(resolveAutoFullTextTopN(30, 5, true, 15)).toBe(15);
   });
 });
 

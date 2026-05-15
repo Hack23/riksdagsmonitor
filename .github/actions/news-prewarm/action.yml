@@ -42,6 +42,22 @@ inputs:
       `sdmx-subscription-key-not-configured`.
     required: false
     default: ''
+  calendar-org:
+    description: 'Optional calendar org/committee code for forward-indicator status output (default: SfU).'
+    required: false
+    default: 'SfU'
+  calendar-lookahead-days:
+    description: 'Number of days ahead to include in calendar-status.json.'
+    required: false
+    default: '30'
+  lagradet-reference:
+    description: 'Optional proposition or motion reference for Lagrådet yttrande lookup.'
+    required: false
+    default: ''
+  rss-watch-dok-ids:
+    description: 'Optional comma-separated dok_ids to match in the Riksdagen RSS watcher.'
+    required: false
+    default: ''
 runs:
   using: 'composite'
   steps:
@@ -135,6 +151,7 @@ runs:
           "https://api.scb.se/OV0104/v2beta" \
           "https://api.worldbank.org/v2/country/SE?format=json" \
           "https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH/SWE" \
+          "https://www.lagradet.se/" \
           "https://data.riksdagen.se/dokumentlista/?sok=test&doktyp=bet&utformat=json&a=1" \
         ; do
           HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "$url" 2>/dev/null || echo "000")
@@ -231,3 +248,74 @@ runs:
         EOF
         fi
         echo "═══════════════════════════════════════════"
+
+    - name: Polling context pre-flight
+      shell: bash
+      run: |
+        echo ""
+        echo "🗳️ Polling context pre-flight — $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+        if timeout 60 npx tsx scripts/polling-fetch.ts --output data/polling-context.json >/tmp/polling-context.json 2>/tmp/polling-context.err; then
+          PROVIDERS=$(grep -c '"provider"' data/polling-context.json 2>/dev/null || echo 0)
+          echo "  ✅ polling context updated (${PROVIDERS} provider entries)"
+        else
+          echo "  ⚠️ polling context fetch failed — continuing without blocking workflow"
+          cat /tmp/polling-context.err 2>/dev/null || true
+        fi
+
+    - name: Calendar forward-indicator status
+      shell: bash
+      env:
+        CALENDAR_ORG: ${{ inputs.calendar-org }}
+        CALENDAR_LOOKAHEAD_DAYS: ${{ inputs.calendar-lookahead-days }}
+      run: |
+        echo ""
+        echo "📅 Calendar forward indicators — $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+        FROM=$(date -u '+%Y-%m-%d')
+        TO=$(date -u -d "$FROM +${CALENDAR_LOOKAHEAD_DAYS} days" '+%Y-%m-%d')
+        if timeout 60 npx tsx scripts/calendar-fetch.ts --from "$FROM" --to "$TO" --org "$CALENDAR_ORG" --output data/calendar-status.json >/tmp/calendar-status.json 2>/tmp/calendar-status.err; then
+          COUNT=$(grep -o '"eventCount": [0-9]*' data/calendar-status.json | head -1 | awk '{print $2}')
+          echo "  ✅ calendar status updated for org=${CALENDAR_ORG} (events=${COUNT:-0})"
+        else
+          echo "  ⚠️ calendar status fetch failed — continuing without blocking workflow"
+          cat /tmp/calendar-status.err 2>/dev/null || true
+        fi
+
+    - name: Lagrådet yttrande status
+      shell: bash
+      env:
+        LAGRADET_REFERENCE: ${{ inputs.lagradet-reference }}
+      run: |
+        echo ""
+        echo "⚖️ Lagrådet status pre-flight — $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+        if [ -n "${LAGRADET_REFERENCE}" ]; then
+          timeout 60 npx tsx scripts/lagradet-fetch.ts --reference "${LAGRADET_REFERENCE}" --output data/lagradet-status.json >/tmp/lagradet-status.json 2>/tmp/lagradet-status.err || true
+        else
+          timeout 60 npx tsx scripts/lagradet-fetch.ts --output data/lagradet-status.json >/tmp/lagradet-status.json 2>/tmp/lagradet-status.err || true
+        fi
+        if [ -f data/lagradet-status.json ]; then
+          STATUS=$(grep -o '"status": "[^"]*"' data/lagradet-status.json | head -1 | cut -d'"' -f4)
+          echo "  ✅ lagrådet status artifact written (status=${STATUS:-unknown})"
+        else
+          echo "  ⚠️ lagrådet status fetch failed — continuing without blocking workflow"
+          cat /tmp/lagradet-status.err 2>/dev/null || true
+        fi
+
+    - name: RSS watch pre-flight
+      shell: bash
+      env:
+        RSS_WATCH_DOK_IDS: ${{ inputs.rss-watch-dok-ids }}
+      run: |
+        echo ""
+        echo "📡 RSS watch pre-flight — $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+        if [ -n "${RSS_WATCH_DOK_IDS}" ]; then
+          timeout 60 npx tsx scripts/rss-watch.ts --dok-ids "${RSS_WATCH_DOK_IDS}" --output data/rss-watch.json >/tmp/rss-watch.json 2>/tmp/rss-watch.err || true
+        else
+          timeout 60 npx tsx scripts/rss-watch.ts --output data/rss-watch.json >/tmp/rss-watch.json 2>/tmp/rss-watch.err || true
+        fi
+        if [ -f data/rss-watch.json ]; then
+          SIGNALS=$(grep -o '"signalCount": [0-9]*' data/rss-watch.json | head -1 | awk '{print $2}')
+          echo "  ✅ rss watch artifact written (signals=${SIGNALS:-0})"
+        else
+          echo "  ⚠️ rss watch failed — continuing without blocking workflow"
+          cat /tmp/rss-watch.err 2>/dev/null || true
+        fi

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0",
+  "cacheVersion": 1,
+  "generatedAt": "2026-05-15T00:18:27.671Z",
+  "providers": [
+    {
+      "provider": "sifo",
+      "sourceUrl": "https://www.tv4.se/tag/valjarbarometern",
+      "fetchedAt": "2026-05-15T00:18:27.671Z",
+      "status": "unavailable",
+      "parties": {},
+      "notes": "HTTP 404 "
+    },
+    {
+      "provider": "novus",
+      "sourceUrl": "https://novus.se/valjarbarometern/",
+      "fetchedAt": "2026-05-15T00:18:27.671Z",
+      "status": "unavailable",
+      "title": "SD tappar för andra månaden i rad - Novus - Kunskap och undersökningar",
+      "publishedAt": "2026-04-22",
+      "fieldworkMonth": "2026-04",
+      "parties": {},
+      "notes": "Could not extract enough party shares from novus source page"
+    },
+    {
+      "provider": "demoskop",
+      "sourceUrl": "https://demoskop.se/category/valjarbarometer/",
+      "fetchedAt": "2026-05-15T00:18:27.671Z",
+      "status": "unavailable",
+      "parties": {},
+      "notes": "HTTP 404 "
+    }
+  ],
+  "aggregate": {
+    "availableProviders": 0,
+    "parties": {}
+  }
+}

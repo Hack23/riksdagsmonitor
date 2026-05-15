@@ -84,7 +84,7 @@ export interface DownloadResult {
 }
 
 /** Maximum number of documents to enrich with full-text content per type. */
-export const MAX_ENRICHMENT_PER_TYPE = 5;
+export const MAX_ENRICHMENT_PER_TYPE = 10;
 
 /**
  * Outcome record for a single document in a top-N full-text fetch.

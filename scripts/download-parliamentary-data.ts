@@ -16,6 +16,8 @@
  *   npx tsx scripts/download-parliamentary-data.ts [--date YYYY-MM-DD] [--limit N]
  *   npx tsx scripts/download-parliamentary-data.ts --aggregate weekly [--date YYYY-WNN]
  *   npx tsx scripts/download-parliamentary-data.ts --auto-full-text-top-n 2
+ *   npx tsx scripts/download-parliamentary-data.ts --limit 30 --auto-full-text-top-n 5
+ *   npx tsx scripts/download-parliamentary-data.ts --full-text-for-all
  *
  * @see analysis/methodologies/ai-driven-analysis-guide.md
  * @author Hack23 AB
@@ -35,6 +37,7 @@ import {
   subtractBusinessDays,
   MAX_LOOKBACK_BUSINESS_DAYS,
   fetchFullTextForTopN,
+  MAX_ENRICHMENT_PER_TYPE,
 } from './parliamentary-data/data-downloader.js';
 import type { DocumentTypeKey, FullTextFetchOutcome } from './parliamentary-data/data-downloader.js';
 
@@ -65,6 +68,7 @@ export function parseArgs(argv: string[]): {
   docType: DocumentTypeKey | null;
   documentIds: string[];
   autoFullTextTopN: number | null;
+  fullTextForAll: boolean;
 } {
   const args = argv.slice(2);
   const get = (flag: string): string | null => {
@@ -155,7 +159,31 @@ export function parseArgs(argv: string[]): {
     autoFullTextTopN = parsed;
   }
 
-  return { date: isoDate, aggregate, limit, weekLabel, rm, docType, documentIds, autoFullTextTopN };
+  const fullTextForAll = args.includes('--full-text-for-all');
+
+  return { date: isoDate, aggregate, limit, weekLabel, rm, docType, documentIds, autoFullTextTopN, fullTextForAll };
+}
+
+export function resolveAutoFullTextTopN(
+  limit: number,
+  autoFullTextTopN: number | null,
+  fullTextForAll: boolean,
+  docCount = 0,
+): number | null {
+  if (fullTextForAll) {
+    return Math.max(0, docCount);
+  }
+  if (autoFullTextTopN === 0) {
+    return 0;
+  }
+  const longHorizonFloorApplies = limit >= 30;
+  if (autoFullTextTopN === null) {
+    return longHorizonFloorApplies ? MAX_ENRICHMENT_PER_TYPE : null;
+  }
+  if (longHorizonFloorApplies && autoFullTextTopN > 0) {
+    return Math.max(autoFullTextTopN, MAX_ENRICHMENT_PER_TYPE);
+  }
+  return autoFullTextTopN;
 }
 
 function isoWeekNumber(date: Date): number {
@@ -397,7 +425,7 @@ async function runPreArticleAnalysis(opts: {
   documentIds: string[];
   autoFullTextTopN: number | null;
 }): Promise<void> {
-  const { date, limit, aggregate, weekLabel, rm, docType, documentIds, autoFullTextTopN } = opts;
+  const { date, limit, aggregate, weekLabel, rm, docType, documentIds, autoFullTextTopN, fullTextForAll } = opts;
 
   if (aggregate && weekLabel) {
     console.log(`\n📅 Running weekly data summary for: ${weekLabel}`);
@@ -428,9 +456,16 @@ async function runPreArticleAnalysis(opts: {
   if (docType) {
     downloadOpts.docTypes = [docType];
   }
-  if (autoFullTextTopN !== null) {
-    downloadOpts.enrichLimit = autoFullTextTopN;
-    console.log(`   📝 Full-text enrichment: top ${autoFullTextTopN} documents per type (--auto-full-text-top-n=${autoFullTextTopN})`);
+  const prefetchEnrichLimit = resolveAutoFullTextTopN(limit, autoFullTextTopN, false);
+  if (prefetchEnrichLimit !== null) {
+    downloadOpts.enrichLimit = prefetchEnrichLimit;
+    if (autoFullTextTopN !== null && prefetchEnrichLimit !== autoFullTextTopN) {
+      console.log(`   📝 Full-text enrichment floor raised to ${prefetchEnrichLimit} for long-horizon batch (requested ${autoFullTextTopN})`);
+    } else if (autoFullTextTopN === null && prefetchEnrichLimit > 0) {
+      console.log(`   📝 Full-text enrichment defaulted to top ${prefetchEnrichLimit} documents per type for long-horizon batch`);
+    } else {
+      console.log(`   📝 Full-text enrichment: top ${prefetchEnrichLimit} documents per type (--auto-full-text-top-n=${prefetchEnrichLimit})`);
+    }
   }
 
   const { data, manifest } = await downloadAllDocuments(client, downloadOpts);
@@ -511,10 +546,19 @@ async function runPreArticleAnalysis(opts: {
   console.log(`   🗄️  Persisted data for ${persistResult.written} documents to ${path.relative(REPO_ROOT, persistResult.dataRoot)}/ (${persistResult.skipped} skipped)`);
 
   let fullTextOutcomes: FullTextFetchOutcome[] | undefined;
-  if (autoFullTextTopN !== null && autoFullTextTopN > 0 && allDocs.length > 0) {
-    console.log(`\n📄 Step 2b: Auto-fetching full text for top-${autoFullTextTopN} documents (--auto-full-text-top-n=${autoFullTextTopN})...`);
+  const effectiveAutoFullTextTopN = resolveAutoFullTextTopN(limit, autoFullTextTopN, fullTextForAll, allDocs.length);
+  if (effectiveAutoFullTextTopN !== null && effectiveAutoFullTextTopN > 0 && allDocs.length > 0) {
+    if (fullTextForAll) {
+      console.log(`\n📄 Step 2b: Auto-fetching full text for ALL ${effectiveAutoFullTextTopN} selected documents (--full-text-for-all)...`);
+    } else if (autoFullTextTopN !== null && effectiveAutoFullTextTopN !== autoFullTextTopN) {
+      console.log(`\n📄 Step 2b: Auto-fetching full text for top-${effectiveAutoFullTextTopN} documents (long-horizon floor raised from ${autoFullTextTopN})...`);
+    } else if (autoFullTextTopN === null) {
+      console.log(`\n📄 Step 2b: Auto-fetching full text for top-${effectiveAutoFullTextTopN} documents (long-horizon default)...`);
+    } else {
+      console.log(`\n📄 Step 2b: Auto-fetching full text for top-${effectiveAutoFullTextTopN} documents (--auto-full-text-top-n=${effectiveAutoFullTextTopN})...`);
+    }
     console.log('   ⏱️  This may take 30–60 s — documented quality investment for deep-analysis tiers.');
-    fullTextOutcomes = await fetchFullTextForTopN(client, allDocs, autoFullTextTopN, outputDir);
+    fullTextOutcomes = await fetchFullTextForTopN(client, allDocs, effectiveAutoFullTextTopN, outputDir);
     const successCount = fullTextOutcomes.filter(o => o.success).length;
     console.log(`   ✅ Full text retrieved for ${successCount}/${fullTextOutcomes.length} document(s)`);
     for (const o of fullTextOutcomes) {
@@ -562,10 +606,10 @@ async function runPreArticleAnalysis(opts: {
   console.log(`\n✅ Data download complete! Results in: ${path.relative(REPO_ROOT, outputDir)}/`);
   console.log(`   📄 ${totalFiles} total files written (1 manifest + ${storedCount} documents)`);
   console.log(`   📊 ${allDocs.length} documents available for AI analysis`);
-  if (autoFullTextTopN !== null && autoFullTextTopN > 0) {
+  if (effectiveAutoFullTextTopN !== null && effectiveAutoFullTextTopN > 0) {
     const successCount = fullTextOutcomes?.filter(o => o.success).length ?? 0;
     const attempted = fullTextOutcomes?.length ?? 0;
-    console.log(`   📄 Full text: ${successCount}/${attempted} top-${autoFullTextTopN} documents (see full-text/ sub-folder)`);
+    console.log(`   📄 Full text: ${successCount}/${attempted} top-${effectiveAutoFullTextTopN} documents (see full-text/ sub-folder)`);
   }
   if (docType) {
     console.log(`   📋 Scoped to: ${docType}`);
@@ -575,8 +619,8 @@ async function runPreArticleAnalysis(opts: {
   console.log('      - analysis/methodologies/ai-driven-analysis-guide.md');
   console.log('      - analysis/templates/ (per-file analysis templates)');
   console.log('      - npx tsx scripts/catalog-downloaded-data.ts --pending-only');
-  if (autoFullTextTopN !== null && autoFullTextTopN > 0) {
-    console.log(`      ℹ️  Significance-scoring note: top-${autoFullTextTopN} documents per type have full text`);
+  if (effectiveAutoFullTextTopN !== null && effectiveAutoFullTextTopN > 0) {
+    console.log(`      ℹ️  Significance-scoring note: top-${effectiveAutoFullTextTopN} documents per type have full text`);
     console.log('         available (contentFetched=true) — AI significance-scoring step');
     console.log('         should prioritise those documents for deeper analysis.');
   }

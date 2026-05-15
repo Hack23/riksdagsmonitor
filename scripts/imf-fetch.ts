@@ -33,16 +33,21 @@
 
 import { existsSync, readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 import {
   ImfClient,
+  type ImfDataPoint,
   IMF_WEO_INDICATORS,
   IMF_FM_INDICATORS,
   IMF_WEO_DATAMAPPER_AVAILABLE,
   IMF_WEO_SDMX_ONLY,
   ImfWeoSdmxOnlyError,
+  calculateRetryDelay,
+  parseDatamapperValues,
   weoSdmxPath,
 } from './imf-client.js';
+import { toDatamapperCode } from './imf-codes.js';
 import { persistIMFData, sanitizeDokId } from './parliamentary-data/data-persistence.js';
 
 // ---------------------------------------------------------------------------
@@ -50,6 +55,8 @@ import { persistIMFData, sanitizeDokId } from './parliamentary-data/data-persist
 // ---------------------------------------------------------------------------
 
 const DATA_ROOT = resolve(process.cwd(), 'analysis', 'data');
+const WEO_FETCH_MAX_ATTEMPTS = 3;
+const EMPTY_DATAMAPPER_SERIES_CODE = 'datamapper-empty-series';
 
 /**
  * Attempt to load previously-persisted IMF data for a given indicator/country.
@@ -100,7 +107,308 @@ function buildFallbackPayload(
     _vintageAnnotation: stale
       ? `>6 month vintage (cached ${cachedAt}); live fetch failed`
       : `cached ${cachedAt}; live fetch failed`,
+    transport: 'cache',
   };
+}
+
+type ImfCliLogLevel = 'info' | 'warn' | 'error';
+type ImfCliFailureClassification = 'transient' | 'permanent';
+
+export interface ImfCliLogEvent {
+  readonly timestamp: string;
+  readonly level: ImfCliLogLevel;
+  readonly command: 'weo';
+  readonly event: string;
+  readonly country: string;
+  readonly indicator: string;
+  readonly message: string;
+  readonly attempt?: number;
+  readonly maxAttempts?: number;
+  readonly transport?: 'datamapper' | 'sdmx' | 'direct-datamapper' | 'cache';
+  readonly classification?: ImfCliFailureClassification;
+}
+
+interface WeoCommandClient {
+  readonly datamapperBaseURL: string;
+  readonly userAgent: string;
+  readonly timeout: number;
+  readonly weoVintage: string;
+  readonly sdmxSubscriptionKey?: string;
+  getWeoIndicator(country: string, indicator: string, years: number): Promise<ImfDataPoint[]>;
+  sdmxFetch(pathWithQuery: string): Promise<unknown>;
+}
+
+interface FetchWeoPayloadOptions {
+  readonly country: string;
+  readonly indicator: string;
+  readonly years: number;
+}
+
+interface FetchWeoPayloadDeps {
+  readonly client?: WeoCommandClient;
+  readonly fetchFn?: typeof fetch;
+  readonly sleepFn?: (ms: number) => Promise<void>;
+  readonly logger?: (event: ImfCliLogEvent) => void;
+}
+
+function defaultCliLogger(event: ImfCliLogEvent): void {
+  process.stderr.write(`${JSON.stringify(event)}\n`);
+}
+
+function createCliLogEvent(
+  options: FetchWeoPayloadOptions,
+  level: ImfCliLogLevel,
+  event: string,
+  message: string,
+  extra: Partial<Omit<ImfCliLogEvent, 'timestamp' | 'level' | 'command' | 'event' | 'message' | 'country' | 'indicator'>> = {},
+): ImfCliLogEvent {
+  return {
+    timestamp: new Date().toISOString(),
+    level,
+    command: 'weo',
+    event,
+    country: options.country,
+    indicator: options.indicator,
+    message,
+    ...extra,
+  };
+}
+
+export function classifyImfFetchError(err: unknown): ImfCliFailureClassification {
+  if (err instanceof ImfWeoSdmxOnlyError) return 'permanent';
+  if (err instanceof Error && 'code' in err && (err as { code?: unknown }).code === EMPTY_DATAMAPPER_SERIES_CODE) {
+    return 'transient';
+  }
+  if (err instanceof Error && 'retryable' in err && typeof (err as { retryable?: unknown }).retryable === 'boolean') {
+    return (err as { retryable: boolean }).retryable ? 'transient' : 'permanent';
+  }
+  if (err instanceof Error && 'name' in err && err.name === 'AbortError') {
+    return 'transient';
+  }
+  if (err instanceof Error && 'status' in err && typeof (err as { status?: unknown }).status === 'number') {
+    const status = (err as { status: number }).status;
+    return status === 429 || status >= 500 ? 'transient' : 'permanent';
+  }
+  const message = err instanceof Error ? err.message : String(err);
+  if (
+    /timeout|timed out|fetch failed|failed to fetch|network|ecconn|eai_again|empty series/i.test(message)
+  ) {
+    return 'transient';
+  }
+  return 'permanent';
+}
+
+async function sleep(ms: number): Promise<void> {
+  await new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function fetchWeoViaDirectDatamapper(
+  client: WeoCommandClient,
+  country: string,
+  indicator: string,
+  years: number,
+  fetchFn: typeof fetch = globalThis.fetch,
+): Promise<ImfDataPoint[]> {
+  const code = toDatamapperCode(country);
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), client.timeout);
+  try {
+    const response = await fetchFn(`${client.datamapperBaseURL}/${encodeURIComponent(indicator)}/${encodeURIComponent(code)}`, {
+      signal: controller.signal,
+      headers: {
+        Accept: 'application/json',
+        'User-Agent': client.userAgent,
+      },
+    });
+    if (!response.ok) {
+      throw new Error(`Direct IMF Datamapper fallback failed: ${response.status} ${response.statusText}`);
+    }
+    const raw = await response.json();
+    return parseDatamapperValues(raw, indicator, code, client.weoVintage).slice(0, years);
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}
+
+function maybePersistWeoPayload(
+  payload: Record<string, unknown>,
+  flags: ReadonlyMap<string, string>,
+  booleans: ReadonlySet<string>,
+): void {
+  if (!booleans.has('persist')) {
+    return;
+  }
+  const dataPoints = Array.isArray(payload['dataPoints']) ? payload['dataPoints'] as ImfDataPoint[] : [];
+  const vintage = dataPoints.find((p) => p.projectionVintage)?.projectionVintage;
+  persistIMFData(String(payload['indicator']), String(payload['country']), payload, {
+    database: flags.get('database') ?? 'WEO',
+    ...(vintage ? { projectionVintage: vintage } : {}),
+  });
+}
+
+export async function fetchWeoPayload(
+  options: FetchWeoPayloadOptions,
+  deps: FetchWeoPayloadDeps = {},
+): Promise<Record<string, unknown>> {
+  const client = deps.client ?? new ImfClient();
+  const fetchFn = deps.fetchFn ?? globalThis.fetch;
+  const sleepFn = deps.sleepFn ?? sleep;
+  const logger = deps.logger ?? defaultCliLogger;
+  const { country, indicator, years } = options;
+  let lastError: unknown;
+
+  for (let attempt = 1; attempt <= WEO_FETCH_MAX_ATTEMPTS; attempt++) {
+    logger(
+      createCliLogEvent(
+        options,
+        'info',
+        'weo-fetch-attempt',
+        `Fetching IMF WEO indicator via Datamapper (attempt ${attempt}/${WEO_FETCH_MAX_ATTEMPTS})`,
+        { attempt, maxAttempts: WEO_FETCH_MAX_ATTEMPTS, transport: 'datamapper' },
+      ),
+    );
+    try {
+      const series = await client.getWeoIndicator(country, indicator, years);
+      if (IMF_WEO_DATAMAPPER_AVAILABLE.has(indicator) && series.length === 0) {
+        const emptyError = new Error(
+          `IMF Datamapper returned an empty series for Datamapper-available WEO indicator '${indicator}' (${country})`,
+        ) as Error & { code?: string };
+        emptyError.code = EMPTY_DATAMAPPER_SERIES_CODE;
+        throw emptyError;
+      }
+      logger(
+        createCliLogEvent(
+          options,
+          'info',
+          'weo-fetch-succeeded',
+          `Fetched ${series.length} IMF data points via Datamapper`,
+          { attempt, maxAttempts: WEO_FETCH_MAX_ATTEMPTS, transport: 'datamapper' },
+        ),
+      );
+      return { indicator, country, years, transport: 'datamapper', dataPoints: series };
+    } catch (err: unknown) {
+      if (err instanceof ImfWeoSdmxOnlyError && client.sdmxSubscriptionKey) {
+        logger(
+          createCliLogEvent(
+            options,
+            'info',
+            'weo-routed-to-sdmx',
+            `Routing '${indicator}' via SDMX (${err.sdmxPath})`,
+            { attempt, maxAttempts: WEO_FETCH_MAX_ATTEMPTS, transport: 'sdmx' },
+          ),
+        );
+        const raw = await client.sdmxFetch(err.sdmxPath);
+        return {
+          indicator,
+          country,
+          years,
+          transport: 'sdmx',
+          sdmxPath: err.sdmxPath,
+          sdmxResponse: raw,
+        };
+      }
+
+      const classification = classifyImfFetchError(err);
+      lastError = err;
+      logger(
+        createCliLogEvent(
+          options,
+          classification === 'transient' ? 'warn' : 'error',
+          'weo-fetch-failed',
+          err instanceof Error ? err.message : String(err),
+          {
+            attempt,
+            maxAttempts: WEO_FETCH_MAX_ATTEMPTS,
+            transport: 'datamapper',
+            classification,
+          },
+        ),
+      );
+
+      if (classification === 'transient' && attempt < WEO_FETCH_MAX_ATTEMPTS) {
+        const delay = calculateRetryDelay(attempt - 1);
+        logger(
+          createCliLogEvent(
+            options,
+            'info',
+            'weo-fetch-retrying',
+            `Retrying after ${delay} ms backoff`,
+            {
+              attempt,
+              maxAttempts: WEO_FETCH_MAX_ATTEMPTS,
+              transport: 'datamapper',
+              classification,
+            },
+          ),
+        );
+        await sleepFn(delay);
+        continue;
+      }
+
+      break;
+    }
+  }
+
+  if (IMF_WEO_DATAMAPPER_AVAILABLE.has(indicator)) {
+    try {
+      logger(
+        createCliLogEvent(
+          options,
+          'warn',
+          'direct-datamapper-fallback',
+          'Retry budget exhausted — attempting direct Datamapper REST fallback',
+          { transport: 'direct-datamapper', classification: 'transient' },
+        ),
+      );
+      const series = await fetchWeoViaDirectDatamapper(client, country, indicator, years, fetchFn);
+      if (series.length > 0) {
+        logger(
+          createCliLogEvent(
+            options,
+            'warn',
+            'direct-datamapper-fallback-succeeded',
+            `Recovered ${series.length} IMF data points via direct Datamapper REST fallback`,
+            { transport: 'direct-datamapper' },
+          ),
+        );
+        return { indicator, country, years, transport: 'direct-datamapper', dataPoints: series };
+      }
+      throw new Error(
+        `Direct IMF Datamapper fallback also returned an empty series for '${indicator}' (${country})`,
+      );
+    } catch (directErr: unknown) {
+      lastError = directErr;
+      logger(
+        createCliLogEvent(
+          options,
+          'warn',
+          'direct-datamapper-fallback-failed',
+          directErr instanceof Error ? directErr.message : String(directErr),
+          {
+            transport: 'direct-datamapper',
+            classification: classifyImfFetchError(directErr),
+          },
+        ),
+      );
+    }
+  }
+
+  const cached = loadCachedIMFData(indicator, country);
+  if (cached) {
+    const stale = isCacheStale(cached.meta.fetchedAt);
+    logger(
+      createCliLogEvent(
+        options,
+        'warn',
+        'weo-cache-fallback',
+        `Live fetch failed; falling back to cached IMF data from ${cached.meta.fetchedAt}${stale ? ' (stale >6 months)' : ''}`,
+        { transport: 'cache', classification: 'transient' },
+      ),
+    );
+    return buildFallbackPayload(cached.data, lastError, cached.meta.fetchedAt, stale);
+  }
+
+  throw lastError ?? new Error(`IMF WEO fetch failed for ${indicator}/${country}`);
 }
 
 // ---------------------------------------------------------------------------
@@ -189,50 +497,9 @@ async function runWeo(flags: ReadonlyMap<string, string>, booleans: ReadonlySet<
     process.exit(2);
   }
 
-  const client = new ImfClient();
-  try {
-    const series = await client.getWeoIndicator(country, indicator, years);
-    const payload = { indicator, country, years, dataPoints: series };
-    process.stdout.write(`${JSON.stringify(payload, null, 2)}\n`);
-
-    if (booleans.has('persist')) {
-      const vintage = series.find((p) => p.projectionVintage)?.projectionVintage;
-      persistIMFData(indicator, country, payload, {
-        database: flags.get('database') ?? 'WEO',
-        ...(vintage ? { projectionVintage: vintage } : {}),
-      });
-    }
-  } catch (err: unknown) {
-    if (err instanceof ImfWeoSdmxOnlyError && client.sdmxSubscriptionKey) {
-      const path = err.sdmxPath;
-      process.stderr.write(`imf-fetch: routing '${indicator}' via SDMX (${path})\n`);
-      const raw = await client.sdmxFetch(path);
-      const payload = {
-        indicator,
-        country,
-        years,
-        transport: 'sdmx',
-        sdmxPath: path,
-        sdmxResponse: raw,
-      };
-      process.stdout.write(`${JSON.stringify(payload, null, 2)}\n`);
-      if (booleans.has('persist')) {
-        persistIMFData(indicator, country, payload, {
-          database: flags.get('database') ?? 'WEO',
-        });
-      }
-      return;
-    }
-    const cached = loadCachedIMFData(indicator, country);
-    if (cached) {
-      const stale = isCacheStale(cached.meta.fetchedAt);
-      const fallbackPayload = buildFallbackPayload(cached.data, err, cached.meta.fetchedAt, stale);
-      process.stderr.write(`imf-fetch: live fetch failed, using cached data from ${cached.meta.fetchedAt}${stale ? ' (STALE >6mo)' : ''}\n`);
-      process.stdout.write(`${JSON.stringify(fallbackPayload, null, 2)}\n`);
-    } else {
-      throw err;
-    }
-  }
+  const payload = await fetchWeoPayload({ country, indicator, years });
+  process.stdout.write(`${JSON.stringify(payload, null, 2)}\n`);
+  maybePersistWeoPayload(payload, flags, booleans);
 }
 
 async function runCompare(flags: ReadonlyMap<string, string>, booleans: ReadonlySet<string>): Promise<void> {
@@ -381,8 +648,10 @@ async function main(): Promise<void> {
   }
 }
 
-main().catch((err: unknown) => {
-  const msg = err instanceof Error ? err.message : String(err);
-  process.stderr.write(`imf-fetch: ${msg}\n`);
-  process.exit(1);
-});
+if (resolve(fileURLToPath(import.meta.url)) === resolve(process.argv[1] ?? '')) {
+  main().catch((err: unknown) => {
+    const msg = err instanceof Error ? err.message : String(err);
+    process.stderr.write(`imf-fetch: ${msg}\n`);
+    process.exit(1);
+  });
+}
