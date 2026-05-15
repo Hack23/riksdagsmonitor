@@ -93,7 +93,7 @@ ANTI-TEMPLATE — DO NOT:
 
 ## 🎯 Key Judgment Coverage Matrix (Required)
 
-> **[REQUIRED]** Before writing hypotheses, list **every** KJ from `intelligence-assessment.md` and map it to at least one challenge row. Gate expectation: **100% KJ coverage**.
+> **[REQUIRED]** Before writing hypotheses, list **every** KJ from `intelligence-assessment.md` and map it to at least one challenge row. Gate expectation: **100% KJ coverage** — every row must end with ✅ (no ❌). See [`analysis/methodologies/admiralty-rubric.md`](../methodologies/admiralty-rubric.md).
 
 | KJ ID | KJ summary | Challenged by hypothesis ID(s) | Challenge present? |
 |------|------------|---------------------------------|:------------------:|
@@ -103,11 +103,17 @@ ANTI-TEMPLATE — DO NOT:
 | ... | ... | ... | ... |
 | **Coverage** | — | — | **_N_ / _N_ (must be 100%)** |
 
+> **Gate enforcement (Check 7b):** the analysis gate extracts the unique set of `KJ-N` IDs from `intelligence-assessment.md` and verifies each appears on a non-`❌` row inside this `## Key Judgment Coverage Matrix` section. Missing KJs or any `❌` row blocks the commit.
+
 ---
 
 ## 🧪 Analysis of Competing Hypotheses (ACH)
 
-List each hypothesis, then score each piece of evidence as **C** (consistent), **I** (inconsistent), or **N** (neutral). The hypothesis with the **fewest inconsistencies** survives.
+> **Mandatory requirement (ICD 203 §4; gate Check 7b):** ACH MUST challenge **every** Key Judgment (KJ) declared in the sibling `intelligence-assessment.md`. Coverage is documented above in the `## 🎯 Key Judgment Coverage Matrix` section — gate enforcement reads that section and verifies each KJ from `intelligence-assessment.md` has a non-`❌` row there.
+
+### ACH matrix
+
+List each hypothesis, then score each piece of evidence as **C** (consistent), **I** (inconsistent), or **N** (neutral). The hypothesis with the **fewest inconsistencies** survives. Each hypothesis MUST correspond to a KJ challenge (see Coverage Matrix above). **WEP probability and base-rate prior MUST be stated for each hypothesis; citing only "analyst judgement" without a base-rate source is a banned pattern** (flagged by banned-phrase scanner; see `analysis/methodologies/base-rates/` for calibration datasets).
 
 ```mermaid
 graph LR

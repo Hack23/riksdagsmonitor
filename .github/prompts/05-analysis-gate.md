@@ -25,8 +25,10 @@ This is the **only** gate separating analysis from article generation. If it fai
    - `intelligence-assessment.md` declares **≥ 3 Key Judgments** (enforced structurally by `Key Judgment` / `KJ-*` header count ≥ 3) each carrying at least one confidence label (`VERY HIGH`, `HIGH`, `MEDIUM`, `LOW`, `VERY LOW`) — the confidence-label presence is audited by the implementation's `grep -cE '(VERY HIGH|HIGH|MEDIUM|LOW|VERY LOW)'` check on the same file — and the file references at least one PIR.
    - `scenario-analysis.md` declares **≥ 3 distinct scenarios** (headers matching `Scenario` count ≥ 3).
    - `comparative-international.md` declares a comparator set or **≥ 2 comparator rows** (structural check, see Tier-C gate).
-   - `devils-advocate.md` declares **≥ 3 competing hypotheses** (headers matching `Hypothesis`/`H1`/`H2`/`H3` count ≥ 3, ACH-style) **and** contains a `## Key Judgment Coverage Matrix` section with **100% KJ coverage** — every `| KJ-N |` row must avoid the `❌` marker.
+   - `devils-advocate.md` declares **≥ 3 competing hypotheses** (headers matching `Hypothesis`/`H1`/`H2`/`H3` count ≥ 3, ACH-style) **AND** contains a `## Key Judgment Coverage Matrix` section that maps **every** KJ declared in `intelligence-assessment.md` to at least one ACH hypothesis with **100% KJ coverage** — every `| KJ-N |` row in that matrix must avoid the `❌` marker. Coverage is enforced by extracting the **unique set** of `KJ-N` identifiers in `intelligence-assessment.md` (deduplicated) and verifying each appears at least once on a non-`❌` row inside the matrix. See [`analysis/methodologies/admiralty-rubric.md`](../../analysis/methodologies/admiralty-rubric.md).
+   - `wildcards-blackswans.md` — when present — declares **≥ 15 wildcard candidates** (table rows matching `| W[N]`); fewer than 15 entries is a gate failure per [`analysis/templates/wildcards-blackswans.md`](../../analysis/templates/wildcards-blackswans.md) v2.1.
    - `methodology-reflection.md` is non-empty and contains all 9 required sections as **`##` headings** (a leading emoji on the heading is permitted): `## ICD 203 …` audit grid; `## Devil's-Advocate Key Judgment Coverage Matrix`; `## Confidence Distribution by Key Judgment …`; `## Lagrådet / Statskontoret / SKR Tracking`; `## Sibling-Folder Ingestion Record …`; `## Re-run Log …`; `## Banned-Phrase Audit …`; `## Pass 1 → Pass 2 Delta Table`; `## Improvement Opportunities → PIR Roll-Forward`. Beyond presence, the gate also validates: (a) the Devil's-Advocate KJ-Coverage Matrix has **no `❌` rows and no `OPEN` statuses on KJ rows** (100% coverage), (b) every KJ row in the Confidence Distribution table has a **filled Posterior cell** (no `[REQUIRED]` placeholder, no empty cell), and (c) the Re-run Log section contains a markdown table header row with the unified schema columns (`run_id | attempt | new dok_ids | artifacts extended | flags closed | vintage refresh`).
+   - **(Check 7d) Banned uncalibrated-probability phrases** — no artifact in `$ANALYSIS_DIR` may contain any of the phrases listed under `political-style-guide.json §uncalibrated-probability` (loaded from the JSON itself so the gate and the style guide cannot drift) **unless** the same paragraph (±5 lines) contains a citation to `analysis/methodologies/base-rates/` or `calibration-ledger`. Violations are reported with file + line.
 8. **Family D structure checks**:
    - `forward-indicators.md` declares **≥ 10 dated indicators** (bullet or table rows matching a date pattern across the four horizon sections).
    - `coalition-mathematics.md` contains a seat-count table (≥ 1 table row with `Ja`/`Nej`/`Avstår` or a party-to-seats mapping).
@@ -210,7 +212,10 @@ fi
 if [ -s "$ANALYSIS_DIR/devils-advocate.md" ]; then
   HY=$(grep -cE '^#{2,4}[[:space:]]*(Hypothesis|H[0-9]+[[:space:]]*[:.—-])' "$ANALYSIS_DIR/devils-advocate.md" || true)
   [ "${HY:-0}" -ge 3 ] || { echo "❌ devils-advocate.md: fewer than 3 competing hypotheses (found ${HY:-0})"; FAIL=1; }
-  # KJ Coverage Matrix — ## heading + 100% coverage (no ❌ rows on KJ lines)
+  # ACH KJ Coverage Matrix — devils-advocate.md must contain a `## Key Judgment Coverage Matrix`
+  # section AND every unique KJ-N declared in intelligence-assessment.md must appear at least once
+  # on a non-`❌` row inside that matrix. We extract unique KJ IDs (not raw line counts) to avoid
+  # both false-fails (TOC/prose mentions inflating count) and false-passes (a single KJ repeated).
   grep -qE '^##[[:space:]].*Key[[:space:]]+Judgment[[:space:]]+Coverage[[:space:]]+Matrix' "$ANALYSIS_DIR/devils-advocate.md" \
     || { echo "❌ devils-advocate.md: missing '## Key Judgment Coverage Matrix' section"; FAIL=1; }
   if awk '
@@ -221,7 +226,72 @@ if [ -s "$ANALYSIS_DIR/devils-advocate.md" ]; then
     ' "$ANALYSIS_DIR/devils-advocate.md"; then
     echo "❌ devils-advocate.md: KJ Coverage Matrix has ❌ row(s); coverage must be 100%"; FAIL=1
   fi
+  # Unique-set comparison: every KJ-N (deduplicated) in intelligence-assessment.md must appear
+  # at least once on a non-`❌` row inside the devils-advocate.md `## Key Judgment Coverage Matrix`.
+  if [ -s "$ANALYSIS_DIR/intelligence-assessment.md" ]; then
+    KJ_IDS=$(grep -oE 'KJ-?[0-9]+' "$ANALYSIS_DIR/intelligence-assessment.md" \
+      | sed -E 's/KJ-?([0-9]+)/KJ-\1/' | sort -u)
+    DA_COVERED=$(awk '
+        /^##[[:space:]]+.*Key[[:space:]]+Judgment[[:space:]]+Coverage[[:space:]]+Matrix/ { inSec=1; next }
+        inSec && /^##[[:space:]]/ { inSec=0 }
+        inSec && /^\|[[:space:]]*KJ[-[:space:]]?[0-9]/ && !/❌/ { print }
+      ' "$ANALYSIS_DIR/devils-advocate.md" \
+      | grep -oE 'KJ-?[0-9]+' | sed -E 's/KJ-?([0-9]+)/KJ-\1/' | sort -u)
+    for kj in $KJ_IDS; do
+      if ! echo "$DA_COVERED" | grep -qx "$kj"; then
+        echo "❌ devils-advocate.md: ACH KJ-coverage gap — $kj is declared in intelligence-assessment.md but has no covered (non-❌) row in the Key Judgment Coverage Matrix (see analysis/methodologies/admiralty-rubric.md)."
+        FAIL=1
+      fi
+    done
+  fi
 fi
+# Check 7c — wildcards-blackswans.md: ≥ 15 wildcard entries required
+if [ -s "$ANALYSIS_DIR/wildcards-blackswans.md" ]; then
+  WC=$(grep -cE '^\|[[:space:]]*W[0-9]+' "$ANALYSIS_DIR/wildcards-blackswans.md" || true)
+  [ "${WC:-0}" -ge 15 ] \
+    || { echo "❌ wildcards-blackswans.md: fewer than 15 wildcard entries (found ${WC:-0}); minimum is 15 per analysis/templates/wildcards-blackswans.md v2.1"; FAIL=1; }
+fi
+# Check 7d — banned-phrase scan for uncalibrated-probability phrases in analysis artifacts.
+# Phrases are loaded directly from analysis/methodologies/political-style-guide.json
+# §uncalibrated-probability so the gate and the style guide cannot drift. Each phrase is banned
+# unless the same paragraph (±5 lines) contains a base-rate citation (base-rates/ filename or
+# a calibration-ledger reference).
+STYLE_GUIDE_JSON="$(cd "$(dirname "$0")" 2>/dev/null && pwd || pwd)/analysis/methodologies/political-style-guide.json"
+[ -s "$STYLE_GUIDE_JSON" ] || STYLE_GUIDE_JSON="analysis/methodologies/political-style-guide.json"
+if [ -s "$STYLE_GUIDE_JSON" ] && command -v jq >/dev/null 2>&1; then
+  UNCAL_PHRASES=$(jq -r '.categories["uncalibrated-probability"][]' "$STYLE_GUIDE_JSON" 2>/dev/null || true)
+else
+  # Fallback if jq is unavailable: hardcoded list mirroring §uncalibrated-probability (v1.1).
+  UNCAL_PHRASES=$(printf '%s\n' \
+    'analyst judgement, not derived from data' \
+    'analyst judgment, not derived from data' \
+    'analyst judgement without base-rate' \
+    'analyst judgment without base-rate' \
+    'not based on polling data' \
+    'not derived from quantitative model')
+fi
+# Build a POSIX-ERE alternation, escaping regex metacharacters in each phrase.
+UNCAL_PHRASE_RE=$(printf '%s\n' "$UNCAL_PHRASES" \
+  | sed -E 's/[][\\.^$*+?(){}|/]/\\&/g' \
+  | paste -sd '|' -)
+BASE_RATE_CITE_RE='base-rates/|calibration-ledger|base_rate_source|base-rate source'
+UNCAL_TMP="/tmp/gate-uncal-fail-$$"
+: > "$UNCAL_TMP"
+if [ -n "$UNCAL_PHRASE_RE" ] && grep -rqiE "$UNCAL_PHRASE_RE" "$ANALYSIS_DIR" 2>/dev/null; then
+  grep -rilE "$UNCAL_PHRASE_RE" "$ANALYSIS_DIR" 2>/dev/null | while IFS= read -r mfile; do
+    grep -inE "$UNCAL_PHRASE_RE" "$mfile" | while IFS=: read -r linenum linetext; do
+      ctx_start=$((linenum - 5)); [ "$ctx_start" -lt 1 ] && ctx_start=1
+      ctx_end=$((linenum + 5))
+      ctx=$(sed -n "${ctx_start},${ctx_end}p" "$mfile")
+      if ! echo "$ctx" | grep -qiE "$BASE_RATE_CITE_RE"; then
+        echo "UNCAL" >> "$UNCAL_TMP"
+        echo "❌ uncalibrated-probability phrase without base-rate citation in $mfile:$linenum — '$linetext' — add a base-rate source from analysis/methodologies/base-rates/ (see calibration-ledger.md)"
+      fi
+    done
+  done
+fi
+[ -s "$UNCAL_TMP" ] && FAIL=1
+rm -f "$UNCAL_TMP"
 if [ -s "$ANALYSIS_DIR/methodology-reflection.md" ]; then
   REF="$ANALYSIS_DIR/methodology-reflection.md"
   # Required ## section headings (leading emoji on the heading is tolerated).
