@@ -23,6 +23,12 @@ import path from 'node:path';
 import type { RawDocument } from '../data-transformers/types.js';
 import { isPersonProfileText } from '../data-transformers/helpers.js';
 import type { MCPClient } from '../mcp-client/client.js';
+import type { MCPToolInvocationDiagnostic } from '../types/mcp.js';
+import {
+  attachCoverageMetadata,
+  buildMcpProvenance,
+  inferDocumentCoverageState,
+} from '../mcp-client/coverage.js';
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -76,6 +82,8 @@ export interface DownloadManifest {
   docCounts: Record<string, number>;
   /** Total download duration in milliseconds */
   durationMs: number;
+  /** Row-per-call MCP diagnostics for manifest rendering */
+  toolDiagnostics: MCPToolInvocationDiagnostic[];
 }
 
 export interface DownloadResult {
@@ -102,6 +110,12 @@ export interface FullTextFetchOutcome {
   filePath?: string;
   /** Human-readable reason when success is false */
   reason?: string;
+  /** Machine-readable coverage state after the fetch attempt */
+  coverageState: import('../types/mcp.js').MCPCoverageState;
+  /** Provenance block mirroring economicProvenance */
+  provenance: import('../types/mcp.js').MCPProvenance;
+  /** True when the attempt originated from the deferred retry queue */
+  deferred?: boolean;
 }
 
 // ---------------------------------------------------------------------------
@@ -110,6 +124,28 @@ export interface FullTextFetchOutcome {
 
 function normalise(raw: unknown[]): RawDocument[] {
   return (raw as RawDocument[]).filter(Boolean);
+}
+
+function annotateDocumentsWithCoverage(
+  docs: RawDocument[],
+  tool: string,
+  query: Record<string, unknown>,
+  endpoint: string,
+): RawDocument[] {
+  const resultCount = docs.length;
+  return docs.map((doc) => {
+    const record = doc as Record<string, unknown>;
+    const coverageState = inferDocumentCoverageState(record);
+    const provenance = buildMcpProvenance({
+      endpoint,
+      tool,
+      query,
+      resultCount,
+      coverageState,
+    });
+    Object.assign(record, attachCoverageMetadata(record, provenance));
+    return doc;
+  });
 }
 
 /**
@@ -219,6 +255,7 @@ export async function downloadAllDocuments(
   const docTypes = options.docTypes ?? null;
 
   const dataSources: string[] = [];
+  const toolDiagnostics: MCPToolInvocationDiagnostic[] = [];
   const data: DownloadedData = {
     propositions: [],
     motions: [],
@@ -233,43 +270,225 @@ export async function downloadAllDocuments(
     {
       name: 'fetchPropositions',
       source: 'get_propositioner',
-      fetch: () => client.fetchPropositions(limit, rm),
+      query: () => ({ limit, rm }),
+      fetch: async () => {
+        const raw = await client.fetchPropositions(limit, rm);
+        const query = { limit, ...(rm ? { rm } : {}) };
+        const items = annotateDocumentsWithCoverage(
+          normalise(raw),
+          'get_propositioner',
+          query,
+          client.baseURL,
+        );
+        const resultCount = items.length;
+        const coverageState = resultCount === 0 ? 'search_empty' : 'metadata_only';
+        return {
+          items,
+          diagnostic: {
+            tool: 'get_propositioner',
+            query,
+            resultCount,
+            coverageState,
+            provenance: buildMcpProvenance({
+              endpoint: client.baseURL,
+              tool: 'get_propositioner',
+              query,
+              resultCount,
+              coverageState,
+            }),
+          } satisfies MCPToolInvocationDiagnostic,
+        };
+      },
       assign: (raw: RawDocument[]) => { data.propositions = raw; },
     },
     {
       name: 'fetchMotions',
       source: 'get_motioner',
-      fetch: () => client.fetchMotions(limit, rm),
+      query: () => ({ limit, rm }),
+      fetch: async () => {
+        const raw = await client.fetchMotions(limit, rm);
+        const query = { limit, ...(rm ? { rm } : {}) };
+        const items = annotateDocumentsWithCoverage(
+          normalise(raw),
+          'get_motioner',
+          query,
+          client.baseURL,
+        );
+        const resultCount = items.length;
+        const coverageState = resultCount === 0 ? 'search_empty' : 'metadata_only';
+        return {
+          items,
+          diagnostic: {
+            tool: 'get_motioner',
+            query,
+            resultCount,
+            coverageState,
+            provenance: buildMcpProvenance({
+              endpoint: client.baseURL,
+              tool: 'get_motioner',
+              query,
+              resultCount,
+              coverageState,
+            }),
+          } satisfies MCPToolInvocationDiagnostic,
+        };
+      },
       assign: (raw: RawDocument[]) => { data.motions = raw; },
     },
     {
       name: 'fetchCommitteeReports',
       source: 'get_betankanden',
-      fetch: () => client.fetchCommitteeReports(limit, rm),
+      query: () => ({ limit, rm }),
+      fetch: async () => {
+        const raw = await client.fetchCommitteeReports(limit, rm);
+        const query = { limit, ...(rm ? { rm } : {}) };
+        const items = annotateDocumentsWithCoverage(
+          normalise(raw),
+          'get_betankanden',
+          query,
+          client.baseURL,
+        );
+        const resultCount = items.length;
+        const coverageState = resultCount === 0 ? 'search_empty' : 'metadata_only';
+        return {
+          items,
+          diagnostic: {
+            tool: 'get_betankanden',
+            query,
+            resultCount,
+            coverageState,
+            provenance: buildMcpProvenance({
+              endpoint: client.baseURL,
+              tool: 'get_betankanden',
+              query,
+              resultCount,
+              coverageState,
+            }),
+          } satisfies MCPToolInvocationDiagnostic,
+        };
+      },
       assign: (raw: RawDocument[]) => { data.committeeReports = raw; },
     },
     {
       name: 'fetchVotingRecords',
       source: 'search_voteringar',
-      fetch: () => client.fetchVotingRecords({ limit, rm }),
+      query: () => ({ limit, rm }),
+      fetch: async () => {
+        const result = await client.fetchVotingRecordsWithDiagnostics({ limit, rm });
+        return {
+          items: normalise(result.items),
+          diagnostic: {
+            tool: 'search_voteringar',
+            query: result.query,
+            resultCount: result.resultCount,
+            coverageState: result.coverageState,
+            provenance: result.provenance,
+            ...(result.signal ? { signal: result.signal, notes: result.signal.message } : {}),
+          } satisfies MCPToolInvocationDiagnostic,
+        };
+      },
       assign: (raw: RawDocument[]) => { data.votes = raw; },
     },
     {
       name: 'searchSpeeches',
       source: 'search_anforanden',
-      fetch: () => client.searchSpeeches({ limit, rm }),
+      query: () => ({ limit, rm }),
+      fetch: async () => {
+        const query = { limit, ...(rm ? { rm } : {}) };
+        const raw = await client.searchSpeeches(query);
+        const items = annotateDocumentsWithCoverage(
+          normalise(raw),
+          'search_anforanden',
+          query,
+          client.baseURL,
+        );
+        const resultCount = items.length;
+        const coverageState = resultCount === 0 ? 'search_empty' : 'metadata_only';
+        return {
+          items,
+          diagnostic: {
+            tool: 'search_anforanden',
+            query,
+            resultCount,
+            coverageState,
+            provenance: buildMcpProvenance({
+              endpoint: client.baseURL,
+              tool: 'search_anforanden',
+              query,
+              resultCount,
+              coverageState,
+            }),
+          } satisfies MCPToolInvocationDiagnostic,
+        };
+      },
       assign: (raw: RawDocument[]) => { data.speeches = raw; },
     },
     {
       name: 'fetchWrittenQuestions',
       source: 'get_fragor',
-      fetch: () => client.fetchWrittenQuestions({ limit, rm }),
+      query: () => ({ limit, rm }),
+      fetch: async () => {
+        const query = { limit, ...(rm ? { rm } : {}) };
+        const raw = await client.fetchWrittenQuestions(query);
+        const items = annotateDocumentsWithCoverage(
+          normalise(raw),
+          'get_fragor',
+          query,
+          client.baseURL,
+        );
+        const resultCount = items.length;
+        const coverageState = resultCount === 0 ? 'search_empty' : 'metadata_only';
+        return {
+          items,
+          diagnostic: {
+            tool: 'get_fragor',
+            query,
+            resultCount,
+            coverageState,
+            provenance: buildMcpProvenance({
+              endpoint: client.baseURL,
+              tool: 'get_fragor',
+              query,
+              resultCount,
+              coverageState,
+            }),
+          } satisfies MCPToolInvocationDiagnostic,
+        };
+      },
       assign: (raw: RawDocument[]) => { data.questions = raw; },
     },
     {
       name: 'fetchInterpellations',
       source: 'get_interpellationer',
-      fetch: () => client.fetchInterpellations({ limit, rm }),
+      query: () => ({ limit, rm }),
+      fetch: async () => {
+        const query = { limit, ...(rm ? { rm } : {}) };
+        const raw = await client.fetchInterpellations(query);
+        const items = annotateDocumentsWithCoverage(
+          normalise(raw),
+          'get_interpellationer',
+          query,
+          client.baseURL,
+        );
+        const resultCount = items.length;
+        const coverageState = resultCount === 0 ? 'search_empty' : 'metadata_only';
+        return {
+          items,
+          diagnostic: {
+            tool: 'get_interpellationer',
+            query,
+            resultCount,
+            coverageState,
+            provenance: buildMcpProvenance({
+              endpoint: client.baseURL,
+              tool: 'get_interpellationer',
+              query,
+              resultCount,
+              coverageState,
+            }),
+          } satisfies MCPToolInvocationDiagnostic,
+        };
+      },
       assign: (raw: RawDocument[]) => { data.interpellations = raw; },
     },
   ] as const;
@@ -290,8 +509,9 @@ export async function downloadAllDocuments(
 
     if (result.status === 'fulfilled') {
       try {
-        task.assign(normalise(result.value as unknown[]));
+        task.assign(result.value.items);
         dataSources.push(task.source);
+        toolDiagnostics.push(result.value.diagnostic);
       } catch (err) {
         console.warn(
           `[pre-analysis] ${task.name} post-processing failed:`,
@@ -303,6 +523,21 @@ export async function downloadAllDocuments(
         `[pre-analysis] ${task.name} failed:`,
         result.reason instanceof Error ? result.reason.message : String(result.reason),
       );
+      const query = task.query();
+      toolDiagnostics.push({
+        tool: task.source,
+        query,
+        resultCount: 0,
+        coverageState: 'search_empty',
+        provenance: buildMcpProvenance({
+          endpoint: client.baseURL,
+          tool: task.source,
+          query,
+          resultCount: 0,
+          coverageState: 'search_empty',
+        }),
+        notes: result.reason instanceof Error ? result.reason.message : String(result.reason),
+      });
     }
   });
 
@@ -380,6 +615,21 @@ export async function downloadAllDocuments(
               docRecord['notis'] = detailsNotis;
             }
             docRecord['contentFetched'] = true;
+            const coverageState = inferDocumentCoverageState(
+              { ...docRecord, ...details },
+              {
+                requestedDate: typeof docRecord['datum'] === 'string' ? docRecord['datum'] as string : null,
+                fullTextRequested: true,
+              },
+            );
+            docRecord['mcpCoverageState'] = coverageState;
+            docRecord['mcpProvenance'] = buildMcpProvenance({
+              endpoint: client.baseURL,
+              tool: 'get_dokument_innehall',
+              query: { dok_id: dokId, include_full_text: true },
+              resultCount: 1,
+              coverageState,
+            });
             return { fullText: verifiedFullText, fullContent: verifiedFullContent };
           }),
         );
@@ -428,6 +678,7 @@ export async function downloadAllDocuments(
       dataSources,
       docCounts,
       durationMs: Date.now() - start,
+      toolDiagnostics,
     },
   };
 }
@@ -559,9 +810,31 @@ export async function fetchFullTextForTopN(
       let content = selectContent(docRecord);
 
       if (content.length <= FULL_TEXT_MIN_LENGTH) {
-        details = (await client.fetchDocumentDetails(dokId, true)) as Record<string, unknown>;
+        const detailsWithCoverage = await client.fetchDocumentDetailsWithCoverage(
+          dokId,
+          true,
+          {
+            requestedDate: typeof docRecord['datum'] === 'string' ? docRecord['datum'] as string : null,
+          },
+        );
+        details = detailsWithCoverage.document;
         content = selectContent(details);
       }
+
+      const coverageState = inferDocumentCoverageState(
+        { ...docRecord, ...(details ?? {}) },
+        {
+          requestedDate: typeof docRecord['datum'] === 'string' ? docRecord['datum'] as string : null,
+          fullTextRequested: true,
+        },
+      );
+      const provenance = buildMcpProvenance({
+        endpoint: client.baseURL,
+        tool: 'get_dokument_innehall',
+        query: { dok_id: dokId, include_full_text: true },
+        resultCount: details ? 1 : 0,
+        coverageState,
+      });
 
       if (content.length > FULL_TEXT_MIN_LENGTH) {
         const filenameSafeDokId = dokId.replace(/[^A-Za-z0-9_-]/g, '_');
@@ -581,26 +854,46 @@ export async function fetchFullTextForTopN(
         ];
         const header = headerLines.join('\n');
         fs.writeFileSync(filePath, header + content, 'utf8');
+        docRecord['contentFetched'] = true;
+        docRecord['fullContent'] = content;
+        docRecord['mcpCoverageState'] = 'full_text';
+        docRecord['mcpProvenance'] = { ...provenance, coverageState: 'full_text', resultCount: 1 };
         outcome = {
           dokId,
           success: true,
           chars: content.length,
           filePath: path.relative(outputDir, filePath).split(path.sep).join('/'),
+          coverageState: 'full_text',
+          provenance: { ...provenance, coverageState: 'full_text', resultCount: 1 },
         };
       } else {
+        docRecord['contentFetched'] = true;
+        docRecord['mcpCoverageState'] = coverageState;
+        docRecord['mcpProvenance'] = provenance;
         outcome = {
           dokId,
           success: false,
           chars: 0,
           reason: `content below FULL_TEXT_MIN_LENGTH (${FULL_TEXT_MIN_LENGTH}) — metadata-only`,
+          coverageState,
+          provenance,
         };
       }
     } catch (err) {
+      const provenance = buildMcpProvenance({
+        endpoint: client.baseURL,
+        tool: 'get_dokument_innehall',
+        query: { dok_id: dokId, include_full_text: true },
+        resultCount: 0,
+        coverageState: 'not_indexed',
+      });
       outcome = {
         dokId,
         success: false,
         chars: 0,
         reason: `fetchDocumentDetails failed: ${err instanceof Error ? err.message : String(err)}`,
+        coverageState: 'not_indexed',
+        provenance,
       };
     }
     outcomes.push(outcome);

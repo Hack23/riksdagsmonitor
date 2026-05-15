@@ -24,6 +24,73 @@ export interface MCPStats {
   successRate: string;
 }
 
+/** Machine-readable coverage state for MCP-derived records and queries. */
+export const MCP_COVERAGE_STATES = [
+  'full_text',
+  'metadata_only',
+  'not_indexed',
+  'search_empty',
+] as const;
+
+/** Coverage state values used in manifests, JSON artefacts, and retry queues. */
+export type MCPCoverageState = typeof MCP_COVERAGE_STATES[number];
+
+/** Structured signal emitted by the MCP wrapper for observable coverage gaps. */
+export interface MCPStructuredSignal {
+  code: 'MCP_INDEXING_LAG';
+  severity: 'info' | 'warning' | 'error';
+  message: string;
+  tool: string;
+  query: Record<string, unknown>;
+  observedResultCount: number;
+  comparisonRm?: string;
+  comparisonResultCount?: number;
+  action: 'retry_queue' | 'rest_fallback' | 'none';
+}
+
+/** Provenance block for MCP-derived claims, mirroring `economicProvenance`. */
+export interface MCPProvenance {
+  provider: 'riksdag-regering';
+  endpoint: string;
+  tool: string;
+  query: Record<string, unknown>;
+  resultCount: number;
+  coverageState: MCPCoverageState;
+  retrieval: 'live' | 'retry_queue' | 'cache';
+  retrievedAt: string;
+  signals?: MCPStructuredSignal[];
+}
+
+/** Structured response for MCP search/list wrapper methods. */
+export interface MCPSearchResult<T = Record<string, unknown>> {
+  items: T[];
+  query: Record<string, unknown>;
+  resultCount: number;
+  coverageState: MCPCoverageState;
+  provenance: MCPProvenance;
+  signal?: MCPStructuredSignal;
+}
+
+/** Structured response for per-document MCP wrapper methods. */
+export interface MCPDocumentResult<T = Record<string, unknown>> {
+  document: T;
+  query: Record<string, unknown>;
+  resultCount: number;
+  coverageState: MCPCoverageState;
+  provenance: MCPProvenance;
+}
+
+/** Row-level diagnostics recorded in `data-download-manifest.md`. */
+export interface MCPToolInvocationDiagnostic {
+  tool: string;
+  query: Record<string, unknown>;
+  resultCount: number;
+  coverageState: MCPCoverageState;
+  provenance: MCPProvenance;
+  notes?: string;
+  signal?: MCPStructuredSignal;
+}
+
 // ---------------------------------------------------------------------------
 // JSON-RPC 2.0 protocol
 // ---------------------------------------------------------------------------

@@ -18,6 +18,7 @@ import * as os from 'node:os';
 import * as path from 'node:path';
 
 import { parseArgs } from '../scripts/download-parliamentary-data.js';
+import { serializeDataManifest } from '../scripts/download-parliamentary-data.js';
 import {
   fetchFullTextForTopN,
   FULL_TEXT_MIN_LENGTH,
@@ -43,7 +44,11 @@ function makeDoc(overrides: Record<string, unknown> = {}): RawDocument {
 function createMockClient(
   fetchDetailsImpl?: (dokId: string, includeFullText: boolean) => Promise<Record<string, unknown>>,
 ): MCPClient {
+  const fetchDocumentDetails = fetchDetailsImpl
+    ? vi.fn().mockImplementation(fetchDetailsImpl)
+    : vi.fn().mockResolvedValue({});
   return {
+    baseURL: 'https://riksdag-regering-ai.onrender.com/mcp',
     fetchPropositions: vi.fn().mockResolvedValue([]),
     fetchMotions: vi.fn().mockResolvedValue([]),
     fetchCommitteeReports: vi.fn().mockResolvedValue([]),
@@ -51,9 +56,26 @@ function createMockClient(
     searchSpeeches: vi.fn().mockResolvedValue([]),
     fetchWrittenQuestions: vi.fn().mockResolvedValue([]),
     fetchInterpellations: vi.fn().mockResolvedValue([]),
-    fetchDocumentDetails: fetchDetailsImpl
-      ? vi.fn().mockImplementation(fetchDetailsImpl)
-      : vi.fn().mockResolvedValue({}),
+    fetchDocumentDetails,
+    fetchDocumentDetailsWithCoverage: vi.fn().mockImplementation(async (dokId: string, includeFullText: boolean) => {
+      const document = await fetchDocumentDetails(dokId, includeFullText);
+      return {
+        document,
+        query: { dok_id: dokId, include_full_text: includeFullText },
+        resultCount: Object.keys(document).length > 0 ? 1 : 0,
+        coverageState: 'metadata_only',
+        provenance: {
+          provider: 'riksdag-regering',
+          endpoint: 'https://riksdag-regering-ai.onrender.com/mcp',
+          tool: 'get_dokument_innehall',
+          query: { dok_id: dokId, include_full_text: includeFullText },
+          resultCount: Object.keys(document).length > 0 ? 1 : 0,
+          coverageState: 'metadata_only',
+          retrieval: 'live',
+          retrievedAt: '2026-05-15T00:00:00.000Z',
+        },
+      };
+    }),
   } as unknown as MCPClient;
 }
 
@@ -429,5 +451,71 @@ describe('manifest full-text outcomes integration contract', () => {
     const successCount = outcomes.filter(o => o.success).length;
     // Gate can check: successCount >= 2 OR fallback annotation present
     expect(successCount).toBe(2);
+  });
+
+  it('serializes coverage-state and deferred queue sections in the manifest', () => {
+    const manifest = serializeDataManifest(
+      '2026-05-15',
+      '2026-05-15 00:00 UTC',
+      ['get_interpellationer'],
+      { interpellations: 2 },
+      2,
+      null,
+      [
+        {
+          tool: 'search_dokument',
+          query: { titel: 'Statskontoret' },
+          resultCount: 0,
+          coverageState: 'search_empty',
+          provenance: {
+            provider: 'riksdag-regering',
+            endpoint: 'https://riksdag-regering-ai.onrender.com/mcp',
+            tool: 'search_dokument',
+            query: { titel: 'Statskontoret' },
+            resultCount: 0,
+            coverageState: 'search_empty',
+            retrieval: 'live',
+            retrievedAt: '2026-05-15T00:00:00.000Z',
+          },
+          notes: '0 rows returned',
+        },
+      ],
+      [
+        {
+          dokId: 'HD10492',
+          coverageState: 'not_indexed',
+          retrieval: 'live',
+          tool: 'get_dokument_innehall',
+          resultCount: 1,
+          notes: 'same-day filing',
+        },
+      ],
+      { processed: 1, resolved: 0, retained: 1, expired: 0, enqueued: 1 },
+      [
+        {
+          dokId: 'HD10492',
+          success: false,
+          chars: 0,
+          reason: 'same-day filing',
+          coverageState: 'not_indexed',
+          provenance: {
+            provider: 'riksdag-regering',
+            endpoint: 'https://riksdag-regering-ai.onrender.com/mcp',
+            tool: 'get_dokument_innehall',
+            query: { dok_id: 'HD10492', include_full_text: true },
+            resultCount: 1,
+            coverageState: 'not_indexed',
+            retrieval: 'live',
+            retrievedAt: '2026-05-15T00:00:00.000Z',
+          },
+        },
+      ],
+    );
+
+    expect(manifest).toContain('## MCP Query Diagnostics');
+    expect(manifest).toContain('## MCP Coverage State');
+    expect(manifest).toContain('## Deferred Retrieval Queue');
+    expect(manifest).toContain('HD10492');
+    expect(manifest).toContain('not_indexed');
   });
 });

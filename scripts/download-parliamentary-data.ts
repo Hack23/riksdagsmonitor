@@ -28,6 +28,10 @@ import { fileURLToPath } from 'node:url';
 
 import { MCPClient } from './mcp-client/client.js';
 import type { RawDocument } from './data-transformers/types.js';
+import type {
+  MCPCoverageState,
+  MCPToolInvocationDiagnostic,
+} from './types/mcp.js';
 
 import {
   downloadAllDocuments,
@@ -39,6 +43,16 @@ import {
 import type { DocumentTypeKey, FullTextFetchOutcome } from './parliamentary-data/data-downloader.js';
 
 import { persistDownloadedData, sanitizeDokId } from './parliamentary-data/data-persistence.js';
+import {
+  createRetryQueueEntry,
+  DEFAULT_MCP_RETRY_QUEUE_PATH,
+  drainMcpRetryQueue,
+  enqueueRetryEntries,
+} from './parliamentary-data/mcp-retry-queue.js';
+import {
+  buildMcpProvenance,
+  inferDocumentCoverageState,
+} from './mcp-client/coverage.js';
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -228,6 +242,22 @@ function serializeDataManifest(
   docCounts: Record<string, number>,
   dateFilteredTotal: number,
   dataFreshness: string | null,
+  toolDiagnostics: MCPToolInvocationDiagnostic[],
+  documentCoverage: Array<{
+    dokId: string;
+    coverageState: MCPCoverageState;
+    retrieval: string;
+    tool: string;
+    resultCount: number;
+    notes: string;
+  }>,
+  retryQueueSummary: {
+    processed: number;
+    resolved: number;
+    retained: number;
+    expired: number;
+    enqueued: number;
+  },
   fullTextOutcomes?: FullTextFetchOutcome[],
 ): string {
   const totalDocs = Object.values(docCounts).reduce((a, b) => a + b, 0);
@@ -261,21 +291,108 @@ function serializeDataManifest(
     lines.push(`Data sourced from ${dataFreshness} via lookback fallback — check freshness indicators.`);
   }
 
+  if (toolDiagnostics.length > 0) {
+    lines.push('', '## MCP Query Diagnostics', '');
+    lines.push('| tool | query | result_count | coverage_state | notes |');
+    lines.push('|------|-------|-------------:|----------------|-------|');
+    for (const diag of toolDiagnostics) {
+      const notes = diag.signal?.code
+        ? `${diag.signal.code}: ${diag.signal.message}`
+        : (diag.notes ?? '');
+      lines.push(
+        `| ${diag.tool} | \`${JSON.stringify(diag.query)}\` | ${diag.resultCount} | ${diag.coverageState} | ${notes} |`,
+      );
+    }
+  }
+
+  if (documentCoverage.length > 0) {
+    lines.push('', '## MCP Coverage State', '');
+    lines.push('| dok_id | coverage_state | retrieval | tool | result_count | notes |');
+    lines.push('|--------|----------------|-----------|------|-------------:|-------|');
+    for (const row of documentCoverage) {
+      lines.push(
+        `| ${row.dokId} | ${row.coverageState} | ${row.retrieval} | ${row.tool} | ${row.resultCount} | ${row.notes} |`,
+      );
+    }
+  }
+
   if (fullTextOutcomes && fullTextOutcomes.length > 0) {
     lines.push('', '## Full-Text Fetch Outcomes', '');
-    lines.push('| dok_id | full_text_available | chars | notes |');
-    lines.push('|--------|--------------------:|------:|-------|');
+    lines.push('| dok_id | coverage_state | full_text_available | chars | retrieval | notes |');
+    lines.push('|--------|----------------|--------------------:|------:|-----------|-------|');
     for (const o of fullTextOutcomes) {
       const available = o.success ? 'true' : 'false';
       const chars = o.chars > 0 ? String(o.chars) : '0';
       const notes = o.reason ?? (o.filePath ? `persisted: ${o.filePath}` : '');
-      lines.push(`| ${o.dokId} | ${available} | ${chars} | ${notes} |`);
+      lines.push(`| ${o.dokId} | ${o.coverageState} | ${available} | ${chars} | ${o.provenance.retrieval} | ${notes} |`);
     }
     const successCount = fullTextOutcomes.filter(o => o.success).length;
     lines.push('', `**Full-text retrieved**: ${successCount}/${fullTextOutcomes.length} top documents`);
   }
 
+  lines.push('', '## Deferred Retrieval Queue', '');
+  lines.push('| processed | resolved | retained | expired | enqueued |');
+  lines.push('|----------:|---------:|---------:|--------:|---------:|');
+  lines.push(
+    `| ${retryQueueSummary.processed} | ${retryQueueSummary.resolved} | ${retryQueueSummary.retained} | ${retryQueueSummary.expired} | ${retryQueueSummary.enqueued} |`,
+  );
+
   return lines.join('\n');
+}
+
+export { serializeDataManifest };
+
+function extractDokId(doc: RawDocument, fallback: string): string {
+  return (
+    doc.dok_id
+    || (doc as Record<string, unknown>)['dokument_id'] as string
+    || (doc as Record<string, unknown>)['dokumentnamn'] as string
+    || fallback
+  );
+}
+
+function buildDocumentCoverageSummary(
+  docs: RawDocument[],
+  fullTextOutcomes: FullTextFetchOutcome[] | undefined,
+): Array<{
+  dokId: string;
+  coverageState: MCPCoverageState;
+  retrieval: string;
+  tool: string;
+  resultCount: number;
+  notes: string;
+}> {
+  const outcomeMap = new Map(fullTextOutcomes?.map(outcome => [outcome.dokId, outcome]) ?? []);
+  return docs.map((doc, index) => {
+    const dokId = extractDokId(doc, `unknown-doc-${index + 1}`);
+    const provenance = doc.mcpProvenance ?? buildMcpProvenance({
+      endpoint: 'unknown',
+      tool: 'unknown',
+      query: { dok_id: dokId },
+      resultCount: 0,
+      coverageState: inferDocumentCoverageState(
+        doc as Record<string, unknown>,
+        {
+          requestedDate: typeof doc.datum === 'string' ? doc.datum : null,
+          fullTextRequested: Boolean(doc.contentFetched),
+        },
+      ),
+    });
+    const outcome = outcomeMap.get(dokId);
+    const notes = outcome?.reason
+      ?? outcome?.filePath
+      ?? (doc.contentFetched
+        ? (typeof doc.summary === 'string' && doc.summary.trim().length > 0 ? 'summary present' : 'metadata-only payload')
+        : 'list payload only; get_dokument_innehall not attempted in this run');
+    return {
+      dokId,
+      coverageState: provenance.coverageState,
+      retrieval: provenance.retrieval,
+      tool: provenance.tool,
+      resultCount: provenance.resultCount,
+      notes,
+    };
+  });
 }
 
 // ---------------------------------------------------------------------------
@@ -422,6 +539,11 @@ async function runPreArticleAnalysis(opts: {
     console.log(`   📋 Scoped to document type: ${docType}`);
   }
   const client = new MCPClient();
+  const retryDrain = await drainMcpRetryQueue(client, {
+    docType,
+    queuePath: DEFAULT_MCP_RETRY_QUEUE_PATH,
+    maxEntries: 25,
+  });
   const resolvedRm = rm ?? riksMoteFromDate(date);
 
   const downloadOpts: { limit: number; rm: string; docTypes?: DocumentTypeKey[]; enrichLimit?: number } = { limit, rm: resolvedRm };
@@ -478,9 +600,11 @@ async function runPreArticleAnalysis(opts: {
       console.log(`   🔍 Fetching ${missingIds.length} targeted document(s) by ID: ${missingIds.join(', ')}`);
       for (const dokId of missingIds) {
         try {
-          const result = await client.fetchDocumentDetails(dokId, false);
-          if (result && typeof result === 'object') {
-            const doc = result as unknown as RawDocument;
+          const result = await client.fetchDocumentDetailsWithCoverage(dokId, false, {
+            requestedDate: date,
+          });
+          if (result.document && typeof result.document === 'object') {
+            const doc = result.document as unknown as RawDocument;
             if (!doc.dok_id) {
               (doc as Record<string, unknown>).dok_id = dokId;
             }
@@ -492,6 +616,16 @@ async function runPreArticleAnalysis(opts: {
         }
       }
     }
+  }
+
+  if (Object.keys(retryDrain.resolvedDocuments).length > 0) {
+    const resolvedIds = new Set(Object.keys(retryDrain.resolvedDocuments));
+    for (const doc of allDocs) {
+      const dokId = extractDokId(doc, '');
+      if (!dokId || !resolvedIds.has(dokId)) continue;
+      Object.assign(doc, retryDrain.resolvedDocuments[dokId]);
+    }
+    console.log(`   🔁 Deferred queue restored full text for ${resolvedIds.size} document(s)`);
   }
 
   const excludedDocsCount = Math.max(0, flattenedDocs.length - allDocs.length);
@@ -511,6 +645,18 @@ async function runPreArticleAnalysis(opts: {
   console.log(`   🗄️  Persisted data for ${persistResult.written} documents to ${path.relative(REPO_ROOT, persistResult.dataRoot)}/ (${persistResult.skipped} skipped)`);
 
   let fullTextOutcomes: FullTextFetchOutcome[] | undefined;
+  const queueEntries = manifest.toolDiagnostics
+    .filter(diag => diag.signal?.code === 'MCP_INDEXING_LAG')
+    .map(diag => createRetryQueueEntry({
+      resourceType: 'voteringar_search',
+      resourceId: `search_voteringar:${JSON.stringify(diag.query)}`,
+      tool: diag.tool,
+      coverageState: diag.coverageState,
+      docType,
+      params: diag.query,
+      reason: diag.signal?.message,
+      requestedAt: new Date().toISOString(),
+    }));
   if (autoFullTextTopN !== null && autoFullTextTopN > 0 && allDocs.length > 0) {
     console.log(`\n📄 Step 2b: Auto-fetching full text for top-${autoFullTextTopN} documents (--auto-full-text-top-n=${autoFullTextTopN})...`);
     console.log('   ⏱️  This may take 30–60 s — documented quality investment for deep-analysis tiers.');
@@ -526,9 +672,61 @@ async function runPreArticleAnalysis(opts: {
     }
   }
 
+  for (const doc of allDocs) {
+    const record = doc as Record<string, unknown>;
+    if (!record['mcpCoverageState']) {
+      const coverageState = inferDocumentCoverageState(record, {
+        requestedDate: typeof doc.datum === 'string' ? doc.datum : null,
+        fullTextRequested: Boolean(doc.contentFetched),
+      });
+      record['mcpCoverageState'] = coverageState;
+      record['mcpProvenance'] = buildMcpProvenance({
+        endpoint: client.baseURL,
+        tool: 'download-parliamentary-data',
+        query: { dok_id: extractDokId(doc, '') },
+        resultCount: 1,
+        coverageState,
+      });
+    }
+  }
+
+  if (fullTextOutcomes) {
+    const docMap = new Map(allDocs.map(doc => [extractDokId(doc, ''), doc]));
+    for (const outcome of fullTextOutcomes) {
+      const doc = docMap.get(outcome.dokId);
+      if (!doc) continue;
+      if (outcome.coverageState !== 'full_text' && typeof doc.datum === 'string' && doc.datum.slice(0, 10) === date) {
+        queueEntries.push(createRetryQueueEntry({
+          resourceType: 'document_fulltext',
+          resourceId: outcome.dokId,
+          tool: 'get_dokument_innehall',
+          coverageState: outcome.coverageState,
+          docType,
+          params: { requestedDate: doc.datum.slice(0, 10), include_full_text: true },
+          reason: outcome.reason,
+          requestedAt: new Date().toISOString(),
+        }));
+      }
+    }
+  }
+
+  const updatedQueue = queueEntries.length > 0
+    ? enqueueRetryEntries(queueEntries, DEFAULT_MCP_RETRY_QUEUE_PATH)
+    : null;
+
+  const documentCoverage = buildDocumentCoverageSummary(allDocs, fullTextOutcomes);
   const manifestContent = serializeDataManifest(
     date, generatedAt, manifest.dataSources, manifest.docCounts,
-    allDocs.length, dataFreshness, fullTextOutcomes,
+    allDocs.length, dataFreshness, [...manifest.toolDiagnostics, ...retryDrain.diagnostics],
+    documentCoverage,
+    {
+      processed: retryDrain.processed,
+      resolved: retryDrain.resolved,
+      retained: retryDrain.retained + ((updatedQueue?.entries.length ?? retryDrain.queue.entries.length) - retryDrain.queue.entries.length),
+      expired: retryDrain.expired,
+      enqueued: queueEntries.length,
+    },
+    fullTextOutcomes,
   );
   const manifestPath = path.join(outputDir, 'data-download-manifest.md');
   fs.writeFileSync(manifestPath, manifestContent, 'utf8');

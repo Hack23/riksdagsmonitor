@@ -10,6 +10,10 @@
 import fs from 'fs';
 import type {
   MCPClientConfig,
+  MCPDocumentResult,
+  MCPProvenance,
+  MCPSearchResult,
+  MCPStructuredSignal,
   MCPStats,
   JsonRpcRequest,
   JsonRpcResponse,
@@ -23,6 +27,12 @@ import type {
 } from '../types/mcp.js';
 import { performPost } from './transport.js';
 import { annotateDocumentTypes } from './document-types.js';
+import {
+  attachCoverageMetadata,
+  buildMcpProvenance,
+  extractDocumentDate,
+  inferDocumentCoverageState,
+} from './coverage.js';
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -199,6 +209,15 @@ function getDefaultAuthToken(): string {
 const DEFAULT_MCP_AUTH_TOKEN: string = getDefaultAuthToken();
 
 let jsonRpcId = 1;
+
+function previousRiksmote(rm: string): string | null {
+  const match = /^(\d{4})\/(\d{2})$/.exec(rm.trim());
+  if (!match) return null;
+  const startYear = Number.parseInt(match[1], 10) - 1;
+  const endYear = Number.parseInt(match[1], 10);
+  if (!Number.isFinite(startYear) || !Number.isFinite(endYear)) return null;
+  return `${startYear}/${String(endYear).slice(-2)}`;
+}
 
 // ---------------------------------------------------------------------------
 // MCPClient class
@@ -553,12 +572,42 @@ export class MCPClient {
   }
 
   async searchDocuments(searchParams: SearchDocumentsParams): Promise<unknown[]> {
+    return (await this.searchDocumentsWithDiagnostics(searchParams)).items;
+  }
+
+  async searchDocumentsWithDiagnostics(
+    searchParams: SearchDocumentsParams,
+  ): Promise<MCPSearchResult<Record<string, unknown>>> {
     const response = await this.request(
       'search_dokument',
       searchParams as unknown as Record<string, unknown>,
     );
     const raw = (response['dokument'] ?? response['documents'] ?? []) as unknown[];
-    return raw.map(d => annotateDocumentTypes(d as Record<string, unknown>));
+    const resultCount = raw.length;
+    const coverageState = resultCount === 0 ? 'search_empty' : 'metadata_only';
+    const provenance = buildMcpProvenance({
+      endpoint: this.baseURL,
+      tool: 'search_dokument',
+      query: searchParams as Record<string, unknown>,
+      resultCount,
+      coverageState,
+    });
+    const items = raw.map((d) => {
+      const annotated = annotateDocumentTypes(d as Record<string, unknown>);
+      const docCoverage = inferDocumentCoverageState(annotated);
+      const docProvenance = {
+        ...provenance,
+        coverageState: docCoverage,
+      } as MCPProvenance;
+      return attachCoverageMetadata(annotated, docProvenance);
+    });
+    return {
+      items,
+      query: { ...(searchParams as Record<string, unknown>) },
+      resultCount,
+      coverageState,
+      provenance,
+    };
   }
 
   async searchSpeeches(searchParams: SearchSpeechesParams): Promise<unknown[]> {
@@ -578,11 +627,69 @@ export class MCPClient {
   }
 
   async fetchVotingRecords(filters: FetchVotingFilters): Promise<unknown[]> {
+    return (await this.fetchVotingRecordsWithDiagnostics(filters)).items;
+  }
+
+  async fetchVotingRecordsWithDiagnostics(
+    filters: FetchVotingFilters,
+  ): Promise<MCPSearchResult<Record<string, unknown>> & { signal?: MCPStructuredSignal }> {
     const response = await this.request(
       'search_voteringar',
       filters as unknown as Record<string, unknown>,
     );
-    return (response['votes'] ?? []) as unknown[];
+    const items = ((response['votes'] ?? response['voteringar'] ?? []) as Record<string, unknown>[])
+      .map((vote) => ({ ...vote }));
+    const resultCount = items.length;
+    let signal: MCPStructuredSignal | undefined;
+
+    if (resultCount === 0 && typeof filters.rm === 'string') {
+      const comparisonRm = previousRiksmote(filters.rm);
+      if (comparisonRm) {
+        try {
+          const comparisonResponse = await this.request(
+            'search_voteringar',
+            { ...(filters as Record<string, unknown>), rm: comparisonRm },
+          );
+          const comparisonCount = (
+            (comparisonResponse['votes'] ?? comparisonResponse['voteringar'] ?? []) as unknown[]
+          ).length;
+          if (comparisonCount > 0) {
+            signal = {
+              code: 'MCP_INDEXING_LAG',
+              severity: 'warning',
+              message: `search_voteringar returned 0 rows for ${filters.rm} while ${comparisonRm} still returns ${comparisonCount}; this may indicate indexing lag or pending vote availability, so queue an exact-query retry for the next run.`,
+              tool: 'search_voteringar',
+              query: { ...(filters as Record<string, unknown>) },
+              observedResultCount: resultCount,
+              comparisonRm,
+              comparisonResultCount: comparisonCount,
+              action: 'retry_queue',
+            };
+          }
+        } catch {
+          // Best-effort comparison only; the primary zero-result response still stands.
+        }
+      }
+    }
+
+    const coverageState = resultCount === 0 ? 'search_empty' : 'metadata_only';
+    const provenance = buildMcpProvenance({
+      endpoint: this.baseURL,
+      tool: 'search_voteringar',
+      query: filters as Record<string, unknown>,
+      resultCount,
+      coverageState,
+      signals: signal ? [signal] : undefined,
+    });
+
+    return {
+      items: items.map(vote => attachCoverageMetadata(vote, provenance)),
+      query: { ...(filters as Record<string, unknown>) },
+      resultCount,
+      coverageState,
+      provenance,
+      ...(signal ? { signal } : {}),
+    };
   }
 
   async fetchVotingGroup(params: FetchVotingGroupFilters = {}): Promise<unknown[]> {
@@ -610,6 +717,70 @@ export class MCPClient {
       include_full_text,
     });
     return response;
+  }
+
+  async fetchDocumentDetailsWithCoverage(
+    dok_id: string,
+    include_full_text = true,
+    options: {
+      requestedDate?: string | null;
+      retrieval?: 'live' | 'retry_queue' | 'cache';
+    } = {},
+  ): Promise<MCPDocumentResult<Record<string, unknown>>> {
+    const query = { dok_id, include_full_text };
+    try {
+      const response = await this.fetchDocumentDetails(dok_id, include_full_text);
+      const coverageState = inferDocumentCoverageState(response, {
+        requestedDate: options.requestedDate ?? extractDocumentDate(response),
+        fullTextRequested: include_full_text,
+      });
+      const resultCount = Object.keys(response).length > 0 ? 1 : 0;
+      const provenance = buildMcpProvenance({
+        endpoint: this.baseURL,
+        tool: 'get_dokument_innehall',
+        query,
+        resultCount,
+        coverageState,
+        retrieval: options.retrieval ?? 'live',
+      });
+      return {
+        document: attachCoverageMetadata({ ...response, dok_id }, provenance),
+        query,
+        resultCount,
+        coverageState,
+        provenance,
+      };
+    } catch (error) {
+      const err = error as Error;
+      const msg = (err.message ?? '').toLowerCase();
+      const notIndexedLike =
+        msg.includes('not found') ||
+        msg.includes('404') ||
+        msg.includes('not indexed') ||
+        msg.includes('no document') ||
+        msg.includes('ingen');
+      if (!notIndexedLike) throw error;
+
+      const coverageState = 'not_indexed';
+      const provenance = buildMcpProvenance({
+        endpoint: this.baseURL,
+        tool: 'get_dokument_innehall',
+        query,
+        resultCount: 0,
+        coverageState,
+        retrieval: options.retrieval ?? 'live',
+      });
+      return {
+        document: attachCoverageMetadata(
+          { dok_id, contentFetchError: err.message },
+          provenance,
+        ),
+        query,
+        resultCount: 0,
+        coverageState,
+        provenance,
+      };
+    }
   }
 
   async enrichDocumentsWithContent(

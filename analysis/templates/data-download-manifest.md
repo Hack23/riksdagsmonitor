@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-0A66C2?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.3-0A66C2?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.2 | **📅 Last Updated:** 2026-04-25 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 1.3 | **📅 Last Updated:** 2026-05-15 (UTC)
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template instructions:** Produce this file at the start of every workflow run (Step 2 of the [AI-Driven Analysis Guide](../methodologies/ai-driven-analysis-guide.md)). It is the factual record of what arrived and the ceiling on confidence for the whole run. Save as `analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/data-download-manifest.md`.
@@ -222,6 +222,25 @@ analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/
 
 ---
 
+## 🧾 MCP Coverage-State Contract
+
+Every requested `dok_id` must carry a machine-readable `MCPCoverageState` row and a matching `mcpProvenance` block in the persisted JSON artefact. Use these exact states:
+
+| State | Meaning | Typical action |
+|-------|---------|----------------|
+| `full_text` | substantive `fullText` / `fullContent` / `text` retrieved | analysis can cite full text directly |
+| `metadata_only` | metadata/summary returned but no substantive body text | cap confidence and disclose the gap |
+| `not_indexed` | same-day filing or lookup attempted before full text was indexed | add to deferred retry queue for up to 7 days |
+| `search_empty` | search/list wrapper returned zero rows for the query | log the exact query + result count; never paraphrase as “none found” without diagnostics |
+
+The manifest must therefore include:
+
+- `## MCP Query Diagnostics` — one row per wrapper call with tool, query, result count, and any `MCP_INDEXING_LAG` signal.
+- `## MCP Coverage State` — one row per requested `dok_id`.
+- `## Deferred Retrieval Queue` — processed / resolved / retained / expired / enqueued counts for the file-backed queue.
+
+---
+
 **Document Control**
 - **Template path:** `/analysis/templates/data-download-manifest.md`
 - **Referenced by:** [ai-driven-analysis-guide.md § Step 2](../methodologies/ai-driven-analysis-guide.md#step-2--download-mcp-data)
@@ -244,4 +263,3 @@ analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/
 - [ ] **Cross-references resolve** — every `[link](file.md)` in this artifact points to a file that exists in the run folder (`analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`) or to a methodology / template under `analysis/`.
 - [ ] **Mermaid renders** — every fenced ` ```mermaid ` block parses (no missing class definitions, no orphan nodes, no >40-node graphs that overflow viewport on mobile).
 - [ ] **Line-floor check** — artifact length ≥ the per-artifact floor in [`reference-quality-thresholds.json`](../methodologies/reference-quality-thresholds.json); shorter artifacts trigger Pass-2 rewrite, never a `[truncated]` note.
-
