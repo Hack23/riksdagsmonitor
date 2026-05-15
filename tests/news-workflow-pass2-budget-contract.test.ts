@@ -36,9 +36,15 @@ describe('agentic news workflow pass-2 and budget contracts', () => {
 
   it('methodology-reflection template exposes canonical Pass-2 and Re-run log slots', () => {
     const template = read('analysis/templates/methodology-reflection.md');
-    expect(template).toContain('| **Pass-2 status** | `executed in full`');
-    expect(template).toContain('## 🔁 Re-run log (improvement-mode only)');
-    expect(template).toContain('run_id=`$GITHUB_RUN_ID`');
-    expect(template).toContain('attempt=`$GITHUB_RUN_ATTEMPT`');
+    // Canonical literals enforced by .github/prompts/05-analysis-gate.md:
+    //   - `Pass-2 status: executed in full` (with colon, NOT a table cell)
+    //   - heading `^## Re-run log` (no emoji, no parenthetical)
+    //   - `run_id=<digits>` / `attempt=<digits>` WITHOUT backticks
+    expect(template).toContain('Pass-2 status: executed in full');
+    expect(template).toMatch(/^## Re-run log\s*$/m);
+    expect(template).toContain('run_id=$GITHUB_RUN_ID');
+    expect(template).toContain('attempt=$GITHUB_RUN_ATTEMPT');
+    expect(template).not.toContain('run_id=`$GITHUB_RUN_ID`');
+    expect(template).not.toContain('## 🔁 Re-run log');
   });
 });

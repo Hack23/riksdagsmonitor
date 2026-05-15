@@ -86,9 +86,10 @@ ANTI-TEMPLATE — DO NOT:
 | **Generated** | `YYYY-MM-DD HH:MM UTC` |
 | **Workflow** | `e.g., news-morning-propositions` |
 | **Run duration** | `minutes` |
-| **Pass-2 status** | `executed in full` *(required literal for gate compliance)* |
 | **Files produced** | `N` |
 | **Exemplar status** | `Yes / No — and why` |
+
+> **Pass-2 status: executed in full** *(required literal — `05-analysis-gate.md` greps for this exact phrase, with the colon, outside the table cell.)*
 
 ---
 
@@ -149,15 +150,15 @@ flowchart LR
 
 ---
 
-## 🔁 Re-run log (improvement-mode only)
+## Re-run log
 
-> Use this exact schema on every improvement re-run. Keep the heading stable (`## Re-run log`) so the gate can validate contract compliance across all 14 news workflows.
+<!-- improvement-mode only. Heading MUST stay `## Re-run log` (no emoji, no parenthetical) so the gate regex `^## Re-run log` matches across all 14 news workflows. Values are NOT wrapped in backticks — the gate greps for the literal expanded `run_id=<digits>` / `attempt=<digits>` of the current run. -->
 
-- **Re-run**: `YYYY-MM-DD HH:MM UTC` · workflow=`$GITHUB_WORKFLOW` · run_id=`$GITHUB_RUN_ID` · attempt=`$GITHUB_RUN_ATTEMPT`
-  - new dok_ids: `<count or "none">`
-  - artifacts extended: `<comma-separated list or "none — content stable">`
-  - flags closed: `<count>`
-  - vintage refresh: `<"yes" or "no, IMF WEO Apr-2026 still current">`
+- **Re-run**: YYYY-MM-DD HH:MM UTC · workflow=$GITHUB_WORKFLOW · run_id=$GITHUB_RUN_ID · attempt=$GITHUB_RUN_ATTEMPT
+  - new dok_ids: <count or "none">
+  - artifacts extended: <comma-separated list or "none — content stable">
+  - flags closed: <count>
+  - vintage refresh: <"yes" or "no, IMF WEO Apr-2026 still current">
 
 ---
 

@@ -6,41 +6,22 @@ This is the **only** gate separating analysis from article generation. If it fai
 
 - `$ANALYSIS_DIR = analysis/daily/$ARTICLE_DATE/$SUBFOLDER`
 - 23 required artifacts (Families A + B + C + D from `04-analysis-pipeline.md`) + per-document Family E.
-- Authoritative reference — [`analysis/methodologies/artifact-catalog.md`](../../analysis/methodologies/artifact-catalog.md) (single source of truth for every artifact), [`analysis/methodologies/per-artifact-methodologies.md`](../../analysis/methodologies/per-artifact-methodologies.md) (per-artifact Inputs / Analytic-moves / Evidence-rules / Anti-patterns), [`analysis/methodologies/reference-quality-thresholds.json`](../../analysis/methodologies/reference-quality-thresholds.json) (per-article-type line floors + tradecraft signals).
+- Authoritative references: [`artifact-catalog.md`](../../analysis/methodologies/artifact-catalog.md) (source of truth), [`per-artifact-methodologies.md`](../../analysis/methodologies/per-artifact-methodologies.md) (Inputs / Analytic moves / Evidence rules / Anti-patterns), [`reference-quality-thresholds.json`](../../analysis/methodologies/reference-quality-thresholds.json) (line floors + tradecraft signals).
 
 ## Checks (all must pass)
 
-1. **Artifact existence** — every file in Families A, B, C, D is present and non-empty:
-   - **Family A (9)** — `README.md`, `executive-brief.md`, `synthesis-summary.md`, `significance-scoring.md`, `classification-results.md`, `swot-analysis.md`, `risk-assessment.md`, `threat-analysis.md`, `stakeholder-perspectives.md`.
-   - **Family B (2)** — `data-download-manifest.md`, `cross-reference-map.md`.
-   - **Family C (5)** — `scenario-analysis.md`, `comparative-international.md`, `devils-advocate.md`, `intelligence-assessment.md`, `methodology-reflection.md` ⭐.
-   - **Family D (7)** — `election-2026-analysis.md`, `voter-segmentation.md`, `coalition-mathematics.md`, `historical-parallels.md`, `media-framing-analysis.md`, `implementation-feasibility.md`, `forward-indicators.md`.
+1. **Artifact existence** — every Family A (9), B (2), C (5), D (7) artifact is present and non-empty. Catalogue: [`analysis/methodologies/artifact-catalog.md`](../../analysis/methodologies/artifact-catalog.md).
 2. **Per-document coverage (Family E)** — `$ANALYSIS_DIR/documents/` contains one `.md` per `dok_id` listed in `data-download-manifest.md` (metadata-only documents are tagged, not skipped).
 3. **No stubs** — zero occurrences of `AI_MUST_REPLACE`, `[REQUIRED]`, `TODO:`, or `Lorem ipsum` across all artifacts.
-4. **Evidence citations** — `swot-analysis.md` and `significance-scoring.md` contain at least one piece of primary-source evidence per quadrant / ranked item. Accepted evidence patterns: a `dok_id` (e.g. `H901FiU1`, `HD01CU27`) **or** a primary-source URL host (`riksdagen.se`, `regeringen.se`, `scb.se`, `statskontoret.se`, `worldbank.org`, `api.imf.org`, `data.imf.org`, `www.imf.org`). Enforced against SWOT `### Strengths/Weaknesses/Opportunities/Threats` sections (bullets + table rows) and significance-scoring bullets **plus** ranking table rows and Mermaid node labels.
-5. **Mermaid diagrams** — every Family A and Family D synthesis file contains ≥ 1 Mermaid diagram with colour-coded `style` directives (or `themeVariables` / `%%{init …}` block).
-6. **Pass-2 done** — agent has read back each enforced Pass-2 artifact after creation and committed improvements: all Family A, B, C, and D artifacts except `data-download-manifest.md`. (Enforced by file mtime diff: final file mtime > creation time + 3 min, OR two git-history snapshots on disk.)
-7. **Family C structure checks** (extension-quality gate):
-   - `executive-brief.md` contains a `## 🎯 BLUF` section **and** a `## 🧭 3 Decisions` (or `Decisions This Brief Supports`) section.
-   - `intelligence-assessment.md` declares **≥ 3 Key Judgments** (enforced structurally by `Key Judgment` / `KJ-*` header count ≥ 3) each carrying at least one confidence label (`VERY HIGH`, `HIGH`, `MEDIUM`, `LOW`, `VERY LOW`) — the confidence-label presence is audited by the implementation's `grep -cE '(VERY HIGH|HIGH|MEDIUM|LOW|VERY LOW)'` check on the same file — and the file references at least one PIR.
-   - `scenario-analysis.md` declares **≥ 3 distinct scenarios** (headers matching `Scenario` count ≥ 3).
-   - `comparative-international.md` declares a comparator set or **≥ 2 comparator rows** (structural check, see Tier-C gate).
-   - `devils-advocate.md` declares **≥ 3 competing hypotheses** (headers matching `Hypothesis`/`H1`/`H2`/`H3` count ≥ 3, ACH-style).
-   - `methodology-reflection.md` is non-empty and contains an **ICD 203 audit** marker or ≥ 3 named methodology improvements.
-   - `methodology-reflection.md` must declare `Pass-2 status: executed in full` and must not claim `not executed in full` / `skipped` / `deferred`.
-   - When `IMPROVEMENT_MODE=true`, `methodology-reflection.md` must include `## Re-run log` with the canonical fields: `run_id`, `attempt`, `new dok_ids`, `artifacts extended`, `flags closed`, `vintage refresh`.
-8. **Family D structure checks**:
-   - `forward-indicators.md` declares **≥ 10 dated indicators** (bullet or table rows matching a date pattern across the four horizon sections).
-   - `coalition-mathematics.md` contains a seat-count table (≥ 1 table row with `Ja`/`Nej`/`Avstår` or a party-to-seats mapping).
-   - `implementation-feasibility.md` — when it names a recognised agency (Kriminalvården, Polismyndigheten, Försäkringskassan, Skatteverket, Migrationsverket, Arbetsförmedlingen, Socialstyrelsen, Transportstyrelsen, Trafikverket, Naturvårdsverket, Energimyndigheten) — contains a `statskontoret.se` URL citation **or** the literal phrase `none found` in the `Statskontoret relevance` row.
-9. **PIR status sidecar** — `pir-status.json` is present and valid so open PIRs can roll forward to the next cycle.
-10. **Top-2 full-text availability** — when `data-download-manifest.md` contains a `## Full-Text Fetch Outcomes` table (written by `download-parliamentary-data.ts --auto-full-text-top-n`), at least 2 top documents must have `full_text_available=true`. Add `<!-- full-text-fallback: <reason> -->` to the manifest to bypass (e.g. when full text is genuinely unavailable from the MCP server or the flag was not used).
-11. **Supplementary artifacts** — see §Supplementary checks below (blocking for aggregation/Tier-C/multi-run).
-12. **Editorial QA gate** — after aggregation produces `article.md`, run `npx tsx scripts/validate-article.ts $ANALYSIS_DIR/article.md` which enforces:
-    - **Banned-phrase scan** (code: `banned-phrase-detected`) — no literal substring from `political-style-guide.json` may survive in the article.
-    - **Citation density** (code: `low-citation-density`) — evidence anchors per ~200 words maximum (per-article-type thresholds in `reference-quality-thresholds.json` → `aiFirst.citationDensity.perArticle`).
-    - **economicProvenance vintage** (code: `stale-economic-provenance`) — `retrieved_at` dates must be within 6 months or wrapped in `<!-- stale-vintage: reason -->` annotation.
-    - See `validate-article.ts` checks 7–9 for full implementation.
+4. **Evidence citations** — `swot-analysis.md` and `significance-scoring.md` carry primary-source evidence per quadrant / ranked item. Accepted: a `dok_id` (e.g. `H901FiU1`) **or** a primary-source URL host (`riksdagen.se`, `regeringen.se`, `scb.se`, `statskontoret.se`, `worldbank.org`, `api.imf.org`, `data.imf.org`, `www.imf.org`). Enforced on SWOT `### Strengths/Weaknesses/Opportunities/Threats` bullets+rows and significance-scoring bullets, ranking-table rows, and Mermaid node labels.
+5. **Mermaid diagrams** — every Family A and Family D synthesis file contains ≥ 1 Mermaid block with colour-coded `style` directives (or `themeVariables` / `%%{init …}`).
+6. **Pass-2 done** — every enforced Pass-2 artifact (all Family A/B/C/D except `data-download-manifest.md`) shows mtime > birth + 3 min, OR has a differing `pass1/` snapshot on disk.
+7. **Family C structure** — `executive-brief.md` has `## BLUF` + `## Decisions`; `intelligence-assessment.md` declares ≥ 3 Key Judgments with ≥ 3 confidence labels (`VERY HIGH`/`HIGH`/`MEDIUM`/`LOW`/`VERY LOW`) and ≥ 1 PIR reference; `scenario-analysis.md` ≥ 3 scenarios; `comparative-international.md` comparator set or ≥ 2 comparator rows; `devils-advocate.md` ≥ 3 ACH hypotheses; `methodology-reflection.md` non-empty + ICD 203 audit or ≥ 3 named improvements + literal `Pass-2 status: executed in full` (never `skipped` / `deferred` / `partial`). When `IMPROVEMENT_MODE=true`, the file MUST include `## Re-run log` with canonical fields `run_id`, `attempt`, `new dok_ids`, `artifacts extended`, `flags closed`, `vintage refresh`.
+8. **Family D structure** — `forward-indicators.md` ≥ 10 dated indicators; `coalition-mathematics.md` has a seat-count / vote-breakdown table; `implementation-feasibility.md` carries a `statskontoret.se` URL or `none found` in the `Statskontoret relevance` row whenever it names a recognised agency (Kriminalvården, Polismyndigheten, Försäkringskassan, Skatteverket, Migrationsverket, Arbetsförmedlingen, Socialstyrelsen, Transportstyrelsen, Trafikverket, Naturvårdsverket, Energimyndigheten).
+9. **PIR status sidecar** — `pir-status.json` is present and valid per [`schemas/pir-status.schema.json`](../../schemas/pir-status.schema.json) v1.0 so open PIRs can roll forward.
+10. **Top-2 full-text availability** — when `data-download-manifest.md` contains a `## Full-Text Fetch Outcomes` table, ≥ 2 top documents must have `full_text_available=true`. Add `<!-- full-text-fallback: <reason> -->` to bypass.
+11. **Supplementary artifacts** — see §Supplementary checks (blocking for aggregation/Tier-C/multi-run).
+12. **Editorial QA gate** — after aggregation, run `npx tsx scripts/validate-article.ts $ANALYSIS_DIR/article.md` (enforces banned-phrase scan, citation density per `reference-quality-thresholds.json → aiFirst.citationDensity.perArticle`, and `economicProvenance` ≤ 6-month vintage unless wrapped in `<!-- stale-vintage: reason -->`). See `validate-article.ts` checks 7–9.
 
 ## Implementation
 
@@ -56,9 +37,8 @@ DOK_RE='[Hh][A-Za-z0-9]{3,}[0-9]+'
 EVIDENCE_RE='[Hh][A-Za-z0-9]{3,}[0-9]+|riksdagen\.se|regeringen\.se|scb\.se|statskontoret\.se|worldbank\.org|api\.imf\.org|data\.imf\.org|www\.imf\.org'
 FAIL=0
 
-# Materialise required-file lists via /tmp lists so we never build an inline
-# bash array — the AWF sandbox rejects `REQ=(...); "${REQ[@]}"` (see
-# 01-bash-and-shell-safety.md §Banned expansion patterns).
+# Materialise required-file lists via /tmp lists (the AWF sandbox forbids
+# inline bash arrays — see 01-bash-and-shell-safety.md §Banned expansion patterns).
 GATE_REQ_LIST="/tmp/gate-req-$$"; GATE_PASS2_LIST="/tmp/gate-pass2-$$"
 GATE_SYNTH_LIST="/tmp/gate-synth-$$"; GATE_DOK_LIST="/tmp/gate-doks-$$"
 trap 'rm -f "$GATE_REQ_LIST" "$GATE_PASS2_LIST" "$GATE_SYNTH_LIST" "$GATE_DOK_LIST"' EXIT
@@ -79,8 +59,7 @@ write_list "$GATE_SYNTH_LIST" \
   election-2026-analysis.md voter-segmentation.md coalition-mathematics.md historical-parallels.md \
   media-framing-analysis.md implementation-feasibility.md forward-indicators.md
 
-# data-download-manifest.md is produced by module 03 and may legitimately be
-# unchanged at Pass 2 — exclude it from the Pass-2 evidence check.
+# data-download-manifest.md may legitimately be unchanged at Pass 2 — excluded.
 write_list "$GATE_PASS2_LIST" \
   synthesis-summary.md swot-analysis.md risk-assessment.md threat-analysis.md stakeholder-perspectives.md \
   significance-scoring.md classification-results.md cross-reference-map.md executive-brief.md README.md \
@@ -94,10 +73,9 @@ while IFS= read -r f; do
   [ -s "$ANALYSIS_DIR/$f" ] || { echo "❌ missing/empty: $f"; FAIL=1; }
 done < "$GATE_REQ_LIST"
 
-# Check 2 — per-document coverage against manifest
+# Check 2 — per-document coverage against manifest (avoid process substitution
+# per 01-bash-and-shell-safety.md §Shell hygiene).
 if [ -s "$ANALYSIS_DIR/data-download-manifest.md" ]; then
-  # Avoid `mapfile -t … < <(…)` — process substitution is best-avoided
-  # under the AWF sandbox (01-bash-and-shell-safety.md §Shell hygiene).
   grep -oE "$DOK_RE" "$ANALYSIS_DIR/data-download-manifest.md" | sort -u > "$GATE_DOK_LIST"
   DOK_COUNT=$(wc -l < "$GATE_DOK_LIST" | tr -d ' ')
   [ "${DOK_COUNT:-0}" -gt 0 ] || { echo "❌ manifest has no dok_id entries"; FAIL=1; }
@@ -214,29 +192,25 @@ if [ -s "$ANALYSIS_DIR/devils-advocate.md" ]; then
   [ "${HY:-0}" -ge 3 ] || { echo "❌ devils-advocate.md: fewer than 3 competing hypotheses (found ${HY:-0})"; FAIL=1; }
 fi
 if [ -s "$ANALYSIS_DIR/methodology-reflection.md" ]; then
-  grep -qE 'ICD[[:space:]]+203|Methodology[[:space:]]+Improvements|Improvement[[:space:]]+1|#{2,4}[[:space:]]+.*Improvements' "$ANALYSIS_DIR/methodology-reflection.md" \
+  MR="$ANALYSIS_DIR/methodology-reflection.md"
+  grep -qE 'ICD[[:space:]]+203|Methodology[[:space:]]+Improvements|Improvement[[:space:]]+1|#{2,4}[[:space:]]+.*Improvements' "$MR" \
     || { echo "❌ methodology-reflection.md: missing ICD 203 audit or named Methodology Improvements section"; FAIL=1; }
-  grep -qE 'Pass-2[[:space:]]+status:[[:space:]]*executed[[:space:]]+in[[:space:]]+full' "$ANALYSIS_DIR/methodology-reflection.md" \
+  grep -qE 'Pass-2[[:space:]]+status:[[:space:]]*executed[[:space:]]+in[[:space:]]+full' "$MR" \
     || { echo "❌ methodology-reflection.md: missing canonical 'Pass-2 status: executed in full' declaration"; FAIL=1; }
-  if grep -qiE 'Pass-2[[:space:]]+status:[[:space:]]*(not[[:space:]]+executed|skipped|deferred|partial)' "$ANALYSIS_DIR/methodology-reflection.md"; then
-    echo "❌ methodology-reflection.md: Pass-2 cannot be marked not executed/skipped/deferred/partial"
-    FAIL=1
+  if grep -qiE 'Pass-2[[:space:]]+status:[[:space:]]*(not[[:space:]]+executed|skipped|deferred|partial)' "$MR"; then
+    echo "❌ methodology-reflection.md: Pass-2 cannot be marked not executed/skipped/deferred/partial"; FAIL=1
   fi
   if [ "${IMPROVEMENT_MODE:-false}" = "true" ]; then
-    grep -qE '^##[[:space:]]+Re-run[[:space:]]+log' "$ANALYSIS_DIR/methodology-reflection.md" \
+    grep -qE '^##[[:space:]]+Re-run[[:space:]]+log' "$MR" \
       || { echo "❌ methodology-reflection.md: improvement-mode requires '## Re-run log'"; FAIL=1; }
-    grep -qE 'run_id[=:][[:space:]]*'"${GITHUB_RUN_ID:-}" "$ANALYSIS_DIR/methodology-reflection.md" \
+    grep -qE 'run_id[=:][[:space:]]*'"${GITHUB_RUN_ID:-}" "$MR" \
       || { echo "❌ methodology-reflection.md: improvement-mode requires current run_id in Re-run log"; FAIL=1; }
-    grep -qE 'attempt[=:][[:space:]]*'"${GITHUB_RUN_ATTEMPT:-}" "$ANALYSIS_DIR/methodology-reflection.md" \
+    grep -qE 'attempt[=:][[:space:]]*'"${GITHUB_RUN_ATTEMPT:-}" "$MR" \
       || { echo "❌ methodology-reflection.md: improvement-mode requires current attempt in Re-run log"; FAIL=1; }
-    grep -qE 'new[[:space:]]+dok_ids[[:space:]]*:' "$ANALYSIS_DIR/methodology-reflection.md" \
-      || { echo "❌ methodology-reflection.md: Re-run log missing 'new dok_ids' field"; FAIL=1; }
-    grep -qE 'artifacts[[:space:]]+extended[[:space:]]*:' "$ANALYSIS_DIR/methodology-reflection.md" \
-      || { echo "❌ methodology-reflection.md: Re-run log missing 'artifacts extended' field"; FAIL=1; }
-    grep -qE 'flags[[:space:]]+closed[[:space:]]*:' "$ANALYSIS_DIR/methodology-reflection.md" \
-      || { echo "❌ methodology-reflection.md: Re-run log missing 'flags closed' field"; FAIL=1; }
-    grep -qE 'vintage[[:space:]]+refresh[[:space:]]*:' "$ANALYSIS_DIR/methodology-reflection.md" \
-      || { echo "❌ methodology-reflection.md: Re-run log missing 'vintage refresh' field"; FAIL=1; }
+    for field in 'new[[:space:]]+dok_ids' 'artifacts[[:space:]]+extended' 'flags[[:space:]]+closed' 'vintage[[:space:]]+refresh'; do
+      grep -qE "${field}[[:space:]]*:" "$MR" \
+        || { echo "❌ methodology-reflection.md: Re-run log missing field matching '${field}'"; FAIL=1; }
+    done
   fi
 fi
 if [ -s "$ANALYSIS_DIR/comparative-international.md" ]; then
@@ -265,10 +239,9 @@ if [ -s "$ANALYSIS_DIR/coalition-mathematics.md" ]; then
     || { echo "❌ coalition-mathematics.md: missing seat-count / vote-breakdown table"; FAIL=1; }
 fi
 
-# Check 9b — Statskontoret evidence in implementation-feasibility.md
-# When implementation-feasibility.md names a recognised agency, the file MUST
-# populate the `| **Statskontoret relevance** | ... |` row with either a
-# statskontoret.se URL or the literal `none found` when no relevant coverage exists.
+# Check 9b — Statskontoret evidence in implementation-feasibility.md.
+# When the file names a recognised agency it MUST carry a statskontoret.se URL
+# or the literal `none found` in the `| **Statskontoret relevance** | ... |` row.
 AGENCY_RE='Kriminalvård(en)?|Polismyndigheten|Försäkringskassan|Skatteverket|Migrationsverket|Arbetsförmedlingen|Socialstyrelsen|Transportstyrelsen|Trafikverket|Naturvårdsverket|Energimyndigheten'
 STATSKONTORET_RELEVANCE_RE='^\|[[:space:]]*\*\*Statskontoret relevance\*\*[[:space:]]*\|[[:space:]]*([^|]*statskontoret\.se[^|]*|[^|]*none found[^|]*)\|'
 if [ -s "$ANALYSIS_DIR/implementation-feasibility.md" ]; then
@@ -278,104 +251,67 @@ if [ -s "$ANALYSIS_DIR/implementation-feasibility.md" ]; then
   fi
 fi
 
-# Check 9 — PIR status sidecar (`pir-status.json`)
-# A valid pir-status.json must be present after every analysis run so that
-# open PIRs can be automatically rolled forward to the next cycle.
-# Schema: schemas/pir-status.schema.json (v1.0)
-# Roll-forward script: scripts/roll-forward-pirs.ts
+# Check 9 — PIR status sidecar. Schema: schemas/pir-status.schema.json v1.0. Roll-forward: scripts/roll-forward-pirs.ts
 PIR_FILE="$ANALYSIS_DIR/pir-status.json"
 if [ ! -s "$PIR_FILE" ]; then
   echo "❌ pir-status.json missing or empty in $ANALYSIS_DIR — create it per schemas/pir-status.schema.json"
   FAIL=1
 else
-  # Structural check: required top-level fields
-  for PIR_FIELD in schema_version cycle date subfolder pirs generated_at; do
-    python3 -c "
-import json, sys
-try:
-    d = json.load(open('$PIR_FILE'))
-    sys.exit(0 if '$PIR_FIELD' in d else 1)
-except Exception:
-    sys.exit(1)
-" 2>/dev/null || { echo "❌ pir-status.json: missing required field '$PIR_FIELD'"; FAIL=1; }
-  done
-  # schema_version must be '1.0'
-  python3 -c "
-import json, sys
-try:
-    d = json.load(open('$PIR_FILE'))
-    sys.exit(0 if d.get('schema_version') == '1.0' else 1)
-except Exception:
-    sys.exit(1)
-" 2>/dev/null || { echo "❌ pir-status.json: schema_version must be '1.0'"; FAIL=1; }
-  # pirs must be an array
-  python3 -c "
-import json, sys
-try:
-    d = json.load(open('$PIR_FILE'))
-    sys.exit(0 if isinstance(d.get('pirs'), list) else 1)
-except Exception:
-    sys.exit(1)
-" 2>/dev/null || { echo "❌ pir-status.json: 'pirs' field must be a JSON array"; FAIL=1; }
-  # each PIR (any status) must have valid pir_id, statement, status, confidence;
-  # answered PIRs must carry answer_summary; non-answered PIRs must not.
-  python3 -c "
+  python3 - "$PIR_FILE" << 'PYEOF' || FAIL=1
 import json, sys, re
+bad = 0
 try:
-    d = json.load(open('$PIR_FILE'))
-    PIR_ID_RE = re.compile(r'^PIR-[A-Za-z0-9]+(-[A-Za-z0-9]+)*$')
-    VALID_STATUS = {'open','answered','superseded','deferred','cancelled'}
-    VALID_CONF = {'VERY HIGH','HIGH','MEDIUM','LOW','VERY LOW'}
-    bad = 0
-    # Cross-field invariant: subfolder must equal cycle (not enforceable in pure JSON Schema).
-    if d.get('subfolder') != d.get('cycle'):
-        print(f'❌ pir-status.json: subfolder={d.get(\"subfolder\")!r} must equal cycle={d.get(\"cycle\")!r}'); bad = 1
-    for p in d.get('pirs', []):
-        pid = p.get('pir_id')
-        if not isinstance(pid, str) or not PIR_ID_RE.match(pid):
-            print(f'❌ pir-status.json: invalid pir_id format: {pid!r}'); bad = 1
-        for f in ('statement', 'status', 'confidence'):
-            if not p.get(f):
-                print(f'❌ pir-status.json pir={pid!r}: missing required field \"{f}\"'); bad = 1
-        if p.get('status') not in VALID_STATUS:
-            print(f'❌ pir-status.json pir={pid!r}: invalid status {p.get(\"status\")!r}'); bad = 1
-        if p.get('confidence') not in VALID_CONF:
-            print(f'❌ pir-status.json pir={pid!r}: invalid confidence {p.get(\"confidence\")!r}'); bad = 1
-        # Conditional: answer_summary required iff status == 'answered'.
-        if p.get('status') == 'answered' and not p.get('answer_summary'):
-            print(f'❌ pir-status.json pir={pid!r}: status=answered requires non-empty answer_summary'); bad = 1
-        if p.get('status') != 'answered' and 'answer_summary' in p:
-            print(f'❌ pir-status.json pir={pid!r}: status={p.get(\"status\")!r} must not carry answer_summary'); bad = 1
-    sys.exit(bad)
+    d = json.load(open(sys.argv[1]))
 except Exception as e:
     print(f'❌ pir-status.json: parse error: {e}'); sys.exit(1)
-" 2>&1 || FAIL=1
+for f in ('schema_version', 'cycle', 'date', 'subfolder', 'pirs', 'generated_at'):
+    if f not in d:
+        print(f"❌ pir-status.json: missing required field '{f}'"); bad = 1
+if d.get('schema_version') != '1.0':
+    print("❌ pir-status.json: schema_version must be '1.0'"); bad = 1
+if not isinstance(d.get('pirs'), list):
+    print("❌ pir-status.json: 'pirs' must be a JSON array"); bad = 1
+if d.get('subfolder') != d.get('cycle'):  # cross-field invariant
+    print(f"❌ pir-status.json: subfolder={d.get('subfolder')!r} must equal cycle={d.get('cycle')!r}"); bad = 1
+PIR_ID_RE = re.compile(r'^PIR-[A-Za-z0-9]+(-[A-Za-z0-9]+)*$')
+VALID_STATUS = {'open','answered','superseded','deferred','cancelled'}
+VALID_CONF = {'VERY HIGH','HIGH','MEDIUM','LOW','VERY LOW'}
+for p in (d.get('pirs') or []):
+    pid = p.get('pir_id')
+    if not isinstance(pid, str) or not PIR_ID_RE.match(pid):
+        print(f'❌ pir-status.json: invalid pir_id format: {pid!r}'); bad = 1
+    for f in ('statement', 'status', 'confidence'):
+        if not p.get(f):
+            print(f'❌ pir-status.json pir={pid!r}: missing required field "{f}"'); bad = 1
+    if p.get('status') not in VALID_STATUS:
+        print(f'❌ pir-status.json pir={pid!r}: invalid status {p.get("status")!r}'); bad = 1
+    if p.get('confidence') not in VALID_CONF:
+        print(f'❌ pir-status.json pir={pid!r}: invalid confidence {p.get("confidence")!r}'); bad = 1
+    # answer_summary required iff status == 'answered'.
+    if p.get('status') == 'answered' and not p.get('answer_summary'):
+        print(f'❌ pir-status.json pir={pid!r}: status=answered requires non-empty answer_summary'); bad = 1
+    if p.get('status') != 'answered' and 'answer_summary' in p:
+        print(f'❌ pir-status.json pir={pid!r}: status={p.get("status")!r} must not carry answer_summary'); bad = 1
+sys.exit(bad)
+PYEOF
 fi
 
-# Check 10 — top-2 full-text availability (auto-full-text-top-n gate)
-# When the manifest contains a "Full-Text Fetch Outcomes" table (written by
-# download-parliamentary-data.ts --auto-full-text-top-n), verify that at least
-# 2 top documents have full_text_available=true. A fallback annotation
-# <!-- full-text-fallback: <reason> --> anywhere in the manifest bypasses
-# this check so that runs without the flag, or runs where full text is
-# genuinely unavailable from the MCP server, are not blocked.
-if [ -s "$ANALYSIS_DIR/data-download-manifest.md" ]; then
-  if grep -q "## Full-Text Fetch Outcomes" "$ANALYSIS_DIR/data-download-manifest.md"; then
-    if grep -q "full-text-fallback:" "$ANALYSIS_DIR/data-download-manifest.md"; then
-      : # Fallback annotation present — bypass check
-    else
-      FT_SUCCESS=$(grep -cE '^\|[[:space:]]*[A-Za-z0-9_-]+[[:space:]]*\|[[:space:]]*true' \
-        "$ANALYSIS_DIR/data-download-manifest.md" || true)
-      [ "${FT_SUCCESS:-0}" -ge 2 ] \
-        || { echo "❌ data-download-manifest.md: Full-Text Fetch Outcomes table present but fewer than 2 top documents have full_text_available=true (found ${FT_SUCCESS:-0}). Add <!-- full-text-fallback: <reason> --> to the manifest to bypass."; FAIL=1; }
-    fi
-  fi
+# Check 10 — top-2 full-text availability. When the manifest contains a
+# "Full-Text Fetch Outcomes" table (from --auto-full-text-top-n), ≥ 2 top
+# documents must have full_text_available=true. A `full-text-fallback:` annotation
+# bypasses the check.
+MANIFEST="$ANALYSIS_DIR/data-download-manifest.md"
+if [ -s "$MANIFEST" ] && grep -q "## Full-Text Fetch Outcomes" "$MANIFEST" \
+   && ! grep -q "full-text-fallback:" "$MANIFEST"; then
+  FT_SUCCESS=$(grep -cE '^\|[[:space:]]*[A-Za-z0-9_-]+[[:space:]]*\|[[:space:]]*true' "$MANIFEST" || true)
+  [ "${FT_SUCCESS:-0}" -ge 2 ] \
+    || { echo "❌ data-download-manifest.md: Full-Text Fetch Outcomes table present but fewer than 2 top documents have full_text_available=true (found ${FT_SUCCESS:-0}). Add <!-- full-text-fallback: <reason> --> to bypass."; FAIL=1; }
 fi
 
 [ "$FAIL" -eq 0 ] || exit 1
 ```
 
-Exit code 0 = pass, non-zero = fail with per-check report. Precondition for check 6: agent MUST save Pass-1 drafts to `$ANALYSIS_DIR/pass1/` before running Pass-2 improvements so the `cmp` fallback can fire when the same-session mtime window is too tight. If a future run needs reuse, factor the block into `scripts/validate-analysis-gate.ts` and update this module.
+Exit code 0 = pass, non-zero = fail with per-check report. Precondition for check 6: agent MUST save Pass-1 drafts to `$ANALYSIS_DIR/pass1/` so the `cmp` fallback fires when the same-session mtime window is too tight.
 
 ## Outcome
 
@@ -385,43 +321,38 @@ Exit code 0 = pass, non-zero = fail with per-check report. Precondition for chec
 
 ## Re-run / deduplication note
 
-Same-day re-runs are **improvement runs**, not skip runs, when `03-data-download.md §Pre-flight` detects a reusable on-disk analysis baseline (all 23 required artifacts present, **or** at least `synthesis-summary.md` on disk) and sets `IMPROVEMENT_MODE=true`. Existing rendered HTML under `news/` can be a sign that a same-day article was already produced, but HTML presence alone does **not** establish improvement mode — the router keys off analysis baselines, not HTML. On improvement runs, the analysis pipeline runs in extend-and-improve mode (`04-analysis-pipeline.md §Execution order`), the gate runs normally against the improved artifacts, and the aggregator + per-language translator + renderer (`06-article-generation.md`) **always** regenerate `article.md`, `article.<lang>.md` × 13 and `news/$ARTICLE_DATE-$SUBFOLDER-{en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html` (all 14 languages) so the published articles reflect the improved analysis. PR labels remain governed by `07-commit-and-pr.md`. There is still exactly one PR call. **Never** call `safeoutputs___noop` because today's HTML "already exists" — if pre-flight selected improvement mode, existing HTML is a reason to regenerate updated output, not to exit early.
+Same-day re-runs are **improvement runs** (not skip runs) when `03-data-download.md §Pre-flight` detects a reusable baseline (all 23 artifacts present **or** at least `synthesis-summary.md` on disk) and sets `IMPROVEMENT_MODE=true`. Existing rendered HTML under `news/` does **not** establish improvement mode — the router keys off analysis baselines, not HTML. On improvement runs, the pipeline runs in extend-and-improve mode (`04-analysis-pipeline.md §Execution order`), the gate runs normally, and `06-article-generation.md` **always** regenerates `article.md` + `article.<lang>.md` × 13 + `news/$ARTICLE_DATE-$SUBFOLDER-{en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html`. There is still exactly one PR call. **Never** call `safeoutputs___noop` because today's HTML "already exists" — existing HTML is a reason to regenerate, not to exit early.
 
 ## Supplementary checks
 
-Non-blocking for `standard` / `deep` runs; **blocking for `comprehensive` / Tier-C aggregation runs**. These checks consume the 7 operational supplementary artifacts defined in [`analysis/templates/README.md §Operational Supplementary`](../../analysis/templates/README.md) and catalogued in [`analysis/methodologies/artifact-catalog.md §Operational Supplementary`](../../analysis/methodologies/artifact-catalog.md#-operational-supplementary-artifacts-7).
+Non-blocking for `standard` / `deep` runs; **blocking for `comprehensive` / Tier-C aggregation runs**. Source: [`analysis/templates/README.md §Operational Supplementary`](../../analysis/templates/README.md), [`analysis/methodologies/artifact-catalog.md §Operational Supplementary`](../../analysis/methodologies/artifact-catalog.md#-operational-supplementary-artifacts-7).
 
-| S# | File | Blocking when | Methodology §link |
-|:--:|------|---------------|-------------------|
-| S1 | `analysis-index.md` | `comprehensive` | [`per-artifact-methodologies.md#analysis-index`](../../analysis/methodologies/per-artifact-methodologies.md#analysis-index) |
-| S2 | `reference-analysis-quality.md` | `comprehensive` | [`per-artifact-methodologies.md#reference-analysis-quality`](../../analysis/methodologies/per-artifact-methodologies.md#reference-analysis-quality) |
-| S3 | `mcp-reliability-audit.md` | `comprehensive`, or any run with ≥ 1 MCP endpoint failure | [`per-artifact-methodologies.md#mcp-reliability-audit`](../../analysis/methodologies/per-artifact-methodologies.md#mcp-reliability-audit) |
-| S4 | `workflow-audit.md` | `comprehensive` | [`per-artifact-methodologies.md#workflow-audit`](../../analysis/methodologies/per-artifact-methodologies.md#workflow-audit) |
-| S5 | `cross-run-diff.md` | any article type with ≥ 2 production runs | [`per-artifact-methodologies.md#cross-run-diff`](../../analysis/methodologies/per-artifact-methodologies.md#cross-run-diff) |
-| S6 | `cross-session-intelligence.md` | `weekly-review`, `monthly-review` (the aggregation article types the probe detects) | [`per-artifact-methodologies.md#cross-session-intelligence`](../../analysis/methodologies/per-artifact-methodologies.md#cross-session-intelligence) |
-| S7 | `session-baseline.md` | `weekly-review`, `monthly-review` (the aggregation article types the probe detects) | [`per-artifact-methodologies.md#session-baseline`](../../analysis/methodologies/per-artifact-methodologies.md#session-baseline) |
+| S# | File | Blocking when |
+|:--:|------|---------------|
+| S1 | `analysis-index.md` | `comprehensive` |
+| S2 | `reference-analysis-quality.md` | `comprehensive` |
+| S3 | `mcp-reliability-audit.md` | `comprehensive`, or any run with ≥ 1 MCP endpoint failure |
+| S4 | `workflow-audit.md` | `comprehensive` |
+| S5 | `cross-run-diff.md` | any article type with ≥ 2 production runs |
+| S6 | `cross-session-intelligence.md` | `weekly-review`, `monthly-review` |
+| S7 | `session-baseline.md` | `weekly-review`, `monthly-review` |
 
-Inline bash probe — append to the main block after `FAIL=0` bookkeeping completes. Supplementary artifacts have **three independent blocking triggers**, not a single tier-only rule: **aggregation article types** (`weekly-review`, `monthly-review`) require the aggregation artifacts; any run whose **tier** is `comprehensive` (the Tier-C run mode) requires the Tier-C supplementary set; and `cross-run-diff.md` is blocking whenever the workflow has **≥ 2 production runs** of the same article type, including `standard` and `deep` runs. `ARTICLE_TYPE` encodes the workflow family; `ANALYSIS_TIER` (when set) encodes the depth tier (`standard` | `deep` | `comprehensive`); `ANALYSIS_RUN_COUNT` (when set) is the numeric count of runs for the same article-generation cycle (if unset or non-numeric, treated as `1`).
+Methodology §links: [`per-artifact-methodologies.md`](../../analysis/methodologies/per-artifact-methodologies.md) (anchors: `#analysis-index`, `#reference-analysis-quality`, `#mcp-reliability-audit`, `#workflow-audit`, `#cross-run-diff`, `#cross-session-intelligence`, `#session-baseline`).
+
+Inline bash probe — append after `FAIL=0` bookkeeping. Three independent blocking triggers: **aggregation article types** (`weekly-review`/`monthly-review`) require aggregation artifacts; **`comprehensive` tier** requires the Tier-C supplementary set; **`cross-run-diff.md`** is blocking whenever `ANALYSIS_RUN_COUNT ≥ 2` (any tier). `ARTICLE_TYPE` encodes the workflow family; `ANALYSIS_TIER` encodes the depth tier (`standard` | `deep` | `comprehensive`); `ANALYSIS_RUN_COUNT` is the numeric count of runs for the same cycle (unset/non-numeric → `1`).
 
 ```bash
-# Check 11 — supplementary artifacts (blocking for aggregation types, any Tier-C run, and S5 when run-count >= 2)
-IS_AGGREGATION=0
-IS_TIER_C=0
-IS_MULTI_RUN=0
-RUN_COUNT=1
+# Check 11 — supplementary artifacts (blocking for aggregation types, Tier-C, and S5 when run-count >= 2)
+IS_AGGREGATION=0; IS_TIER_C=0; IS_MULTI_RUN=0; RUN_COUNT=1
 [[ "${ARTICLE_TYPE:-}" =~ ^(weekly-review|monthly-review)$ ]] && IS_AGGREGATION=1
 [[ "${ANALYSIS_TIER:-standard}" == "comprehensive" ]] && IS_TIER_C=1
 [[ "${ANALYSIS_RUN_COUNT:-}" =~ ^[0-9]+$ ]] && RUN_COUNT="${ANALYSIS_RUN_COUNT}"
 (( RUN_COUNT >= 2 )) && IS_MULTI_RUN=1
 if (( IS_AGGREGATION == 1 || IS_TIER_C == 1 || IS_MULTI_RUN == 1 )); then
-  # Avoid building a bash array (`SUPP+=(...)`); materialise the filenames
-  # via printf into a temp file and loop over that — see
-  # 01-bash-and-shell-safety.md §Banned expansion patterns.
-  SUPP_LIST="/tmp/gate-supp-$$"
-  : > "$SUPP_LIST"
-  if (( IS_AGGREGATION == 1 || IS_TIER_C == 1 )); then
+  # No inline bash arrays — see 01-bash-and-shell-safety.md §Banned expansion patterns.
+  SUPP_LIST="/tmp/gate-supp-$$"; : > "$SUPP_LIST"
+  (( IS_AGGREGATION == 1 || IS_TIER_C == 1 )) && \
     printf '%s\n' analysis-index.md reference-analysis-quality.md mcp-reliability-audit.md workflow-audit.md >> "$SUPP_LIST"
-  fi
   (( IS_AGGREGATION == 1 )) && printf '%s\n' cross-session-intelligence.md session-baseline.md >> "$SUPP_LIST"
   (( IS_MULTI_RUN == 1 )) && printf '%s\n' cross-run-diff.md >> "$SUPP_LIST"
   while IFS= read -r f; do
@@ -432,26 +363,22 @@ if (( IS_AGGREGATION == 1 || IS_TIER_C == 1 || IS_MULTI_RUN == 1 )); then
 fi
 ```
 
-Depth floors for S1–S7 are configured under `thresholds.breaking.*` / per-type sections in [`reference-quality-thresholds.json`](../../analysis/methodologies/reference-quality-thresholds.json); when a floor is absent the `defaults.supplementaryFloor` (120 lines) applies.
+Depth floors for S1–S7 live under `thresholds.breaking.*` in [`reference-quality-thresholds.json`](../../analysis/methodologies/reference-quality-thresholds.json) (default `defaults.supplementaryFloor` = 120 lines).
 
-**Pass-2 quality audit — recommendation, not enforced in the bash probe** — the bash check above does **not** parse `reference-analysis-quality.md §5`. When the artifact is produced, agents SHOULD re-read its `§5 Overall Benchmark Judgement` total and trigger another Pass-2 iteration if the score is below **7.0/10** before invoking this gate. This is a non-enforced self-discipline rule (no blocking logic); an enforced numeric-floor check would require adding a YAML/JSON score block to the template and a dedicated parser, which is deferred to a follow-up change.
+**Pass-2 quality audit — recommendation, not enforced** — the bash probe does **not** parse `reference-analysis-quality.md §5`. When the artifact exists, agents SHOULD re-read its `§5 Overall Benchmark Judgement` total and trigger another Pass-2 iteration if the score is below **7.0/10** before invoking this gate.
 
 ---
 
-## Long-horizon additive gate (`news-quarter-ahead`, `news-year-ahead`, `news-election-cycle`, also recommended for `news-week-ahead` + `news-month-ahead`)
+## Long-horizon additive gate
 
-When `ext/long-horizon-forecasting.md` is imported, run this **additive** check block **after** the Tier-C additive block. All checks are non-blocking when the workflow is week/month-ahead (warnings only); blocking for quarter/year/cycle.
+Applies to `news-quarter-ahead`, `news-year-ahead`, `news-election-cycle` (blocking) and `news-week-ahead`, `news-month-ahead` (warnings only). Runs as an **additive** block **after** the Tier-C additive block whenever `ext/long-horizon-forecasting.md` is imported.
 
 ```bash
 set -Eeuo pipefail
-ANALYSIS_DIR="${ANALYSIS_DIR:-}"
-ARTICLE_TYPE="${ARTICLE_TYPE:-}"  # one of: week-ahead, month-ahead, quarter-ahead, year-ahead, election-cycle
+ANALYSIS_DIR="${ANALYSIS_DIR:-}"; ARTICLE_TYPE="${ARTICLE_TYPE:-}"  # type: week-ahead|month-ahead|quarter-ahead|year-ahead|election-cycle
 [ -n "$ANALYSIS_DIR" ] || { echo "❌ ANALYSIS_DIR is not set"; exit 1; }
 [ -n "$ARTICLE_TYPE" ] || { echo "ℹ️ ARTICLE_TYPE not set; long-horizon gate skipped"; exit 0; }
-case "$ARTICLE_TYPE" in
-  quarter-ahead|year-ahead|election-cycle) BLOCKING=1 ;;
-  *) BLOCKING=0 ;;
-esac
+case "$ARTICLE_TYPE" in quarter-ahead|year-ahead|election-cycle) BLOCKING=1 ;; *) BLOCKING=0 ;; esac
 FAIL=0
 
 # LH-1 — every WEP term in long-horizon Family-C/D artifacts carries [horizon:<band>] tag
@@ -490,50 +417,32 @@ if [ "$MIN_COUNTER" -gt 0 ] && [ -s "$ANALYSIS_DIR/devils-advocate.md" ]; then
 fi
 
 # LH-4 — PESTLE blocking for year-ahead and election-cycle
-case "$ARTICLE_TYPE" in
-  year-ahead|election-cycle)
-    [ -s "$ANALYSIS_DIR/pestle-analysis.md" ] \
-      || { echo "❌ long-horizon: pestle-analysis.md is BLOCKING for $ARTICLE_TYPE"; FAIL=1; }
-    ;;
+case "$ARTICLE_TYPE" in year-ahead|election-cycle)
+  [ -s "$ANALYSIS_DIR/pestle-analysis.md" ] \
+    || { echo "❌ long-horizon: pestle-analysis.md is BLOCKING for $ARTICLE_TYPE"; FAIL=1; } ;;
 esac
 
-# LH-5 — election-cycle 24th artifact (cycle-trajectory.md)
+# LH-5 — election-cycle blocking extras (24th+ artifacts)
 if [ "$ARTICLE_TYPE" = "election-cycle" ]; then
-  [ -s "$ANALYSIS_DIR/cycle-trajectory.md" ] \
-    || { echo "❌ long-horizon: cycle-trajectory.md (24th artifact) is BLOCKING for election-cycle"; FAIL=1; }
-  [ -s "$ANALYSIS_DIR/wildcards-blackswans.md" ] \
-    || { echo "❌ long-horizon: wildcards-blackswans.md is BLOCKING for election-cycle"; FAIL=1; }
-  [ -s "$ANALYSIS_DIR/quantitative-swot.md" ] \
-    || { echo "❌ long-horizon: quantitative-swot.md is BLOCKING for election-cycle"; FAIL=1; }
-  [ -s "$ANALYSIS_DIR/political-stride-assessment.md" ] \
-    || { echo "❌ long-horizon: political-stride-assessment.md is BLOCKING for election-cycle"; FAIL=1; }
+  for ec_file in cycle-trajectory.md wildcards-blackswans.md quantitative-swot.md political-stride-assessment.md; do
+    [ -s "$ANALYSIS_DIR/$ec_file" ] \
+      || { echo "❌ long-horizon: $ec_file is BLOCKING for election-cycle"; FAIL=1; }
+  done
 fi
 
 # LH-6 — cross-horizon citation in cross-reference-map.md
 if [ -s "$ANALYSIS_DIR/cross-reference-map.md" ]; then
+  CRM="$ANALYSIS_DIR/cross-reference-map.md"
+  check_lh6() { grep -qE "analysis/daily/[0-9-]+/$1/" "$CRM" || { echo "❌ long-horizon: $ARTICLE_TYPE must cite at least one $1 predecessor"; FAIL=1; }; }
   case "$ARTICLE_TYPE" in
-    quarter-ahead)
-      grep -qE 'analysis/daily/[0-9-]+/week-ahead/' "$ANALYSIS_DIR/cross-reference-map.md" \
-        || { echo "❌ long-horizon: quarter-ahead must cite at least one week-ahead predecessor"; FAIL=1; }
-      grep -qE 'analysis/daily/[0-9-]+/month-ahead/' "$ANALYSIS_DIR/cross-reference-map.md" \
-        || { echo "❌ long-horizon: quarter-ahead must cite at least one month-ahead predecessor"; FAIL=1; }
-      ;;
-    year-ahead)
-      grep -qE 'analysis/daily/[0-9-]+/quarter-ahead/' "$ANALYSIS_DIR/cross-reference-map.md" \
-        || { echo "❌ long-horizon: year-ahead must cite at least one quarter-ahead predecessor"; FAIL=1; }
-      ;;
-    election-cycle)
-      grep -qE 'analysis/daily/[0-9-]+/year-ahead/' "$ANALYSIS_DIR/cross-reference-map.md" \
-        || { echo "❌ long-horizon: election-cycle must cite at least one year-ahead predecessor"; FAIL=1; }
-      ;;
+    quarter-ahead) check_lh6 week-ahead; check_lh6 month-ahead ;;
+    year-ahead)    check_lh6 quarter-ahead ;;
+    election-cycle) check_lh6 year-ahead ;;
   esac
 fi
 
-if [ "$BLOCKING" = "1" ] && [ "$FAIL" = "1" ]; then
-  echo "❌ long-horizon gate FAILED for $ARTICLE_TYPE"
-  exit 1
-elif [ "$FAIL" = "1" ]; then
-  echo "⚠️ long-horizon gate produced warnings for $ARTICLE_TYPE (non-blocking at this article type)"
+if [ "$BLOCKING" = "1" ] && [ "$FAIL" = "1" ]; then echo "❌ long-horizon gate FAILED for $ARTICLE_TYPE"; exit 1
+elif [ "$FAIL" = "1" ]; then echo "⚠️ long-horizon gate produced warnings for $ARTICLE_TYPE (non-blocking)"
 fi
 echo "✅ long-horizon gate complete for $ARTICLE_TYPE"
 ```
