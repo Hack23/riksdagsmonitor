@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-05-15",
+  "subfolder": "committeeReports",
+  "cycle": "committeeReports",
+  "generated_at": "2026-05-15T10:00:00Z",
+  "pirs": [
+    {
+      "id": "PIR-Constitutional-KU34",
+      "title": "Will HD01KU34 achieve 2/3 supermajority in both required riksmöten?",
+      "status": "OPEN",
+      "horizon": "week",
+      "priority": "P0",
+      "eeis": [
+        "SD parliamentary group formal position on KU34 combined package",
+        "Lagrådet yttrande date and content",
+        "C-party final position on association-freedom clause"
+      ],
+      "last_updated": "2026-05-15"
+    },
+    {
+      "id": "PIR-Housing-CU31",
+      "title": "What is the timeline and scope of HD01CU31 rental market implementation?",
+      "status": "OPEN",
+      "horizon": "month",
+      "priority": "P1",
+      "eeis": [
+        "Plenary vote date",
+        "Government implementation decree",
+        "Hyresgästföreningen legal challenge filing"
+      ],
+      "last_updated": "2026-05-15"
+    },
+    {
+      "id": "PIR-Security-State",
+      "title": "To what extent will association-freedom and citizenship-revocation clauses in KU34 be used after enactment?",
+      "status": "OPEN",
+      "horizon": "year",
+      "priority": "P1",
+      "eeis": [
+        "Lagrådet recommendations",
+        "SÄPO statements on operational need",
+        "Civil society legal challenges"
+      ],
+      "last_updated": "2026-05-15"
+    },
+    {
+      "id": "PIR-Economic-Implementation",
+      "title": "Can Sweden's municipalities fund EPBD and rural service guarantees given current fiscal constraints?",
+      "status": "OPEN",
+      "horizon": "year",
+      "priority": "P2",
+      "eeis": [
+        "Kommuninvest borrowing data Q3 2026",
+        "SKR position on CU30 and NU21 funding",
+        "IMF fiscal balance update post-Q2 2026"
+      ],
+      "last_updated": "2026-05-15"
+    }
+  ]
+}
