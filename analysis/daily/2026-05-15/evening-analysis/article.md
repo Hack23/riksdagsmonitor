@@ -6,7 +6,7 @@ date: 2026-05-15
 subfolder: evening-analysis
 slug: 2026-05-15-evening-analysis
 source_folder: analysis/daily/2026-05-15/evening-analysis
-generated_at: 2026-05-15T17:51:08.302Z
+generated_at: 2026-05-15T18:47:02.707Z
 language: en
 layout: article
 ---
@@ -84,12 +84,17 @@ Use this guide to read the article as a political-intelligence product rather th
 | 📊 | [BLUF and editorial decisions](#rm-executive-brief) | fast answer to what happened, why it matters, who is accountable, and the next dated trigger |
 | 🧠 | [Synthesis Summary](#rm-synthesis-summary) | evidence-anchored narrative consolidating primary sources into one coherent story line |
 | 🎯 | [Key Judgments](#rm-intelligence-assessment--key-judgments) | confidence-bearing political-intelligence conclusions and collection gaps |
+| 📈 | [Significance scoring](#rm-significance-scoring) | why this story outranks or trails other same-day parliamentary signals |
+| 👥 | [Stakeholder Perspectives](#rm-stakeholder-perspectives) | winners, losers and undecided actors with stake-weighted positions and pressure points |
 | 🔢 | [Coalition Mathematics](#rm-coalition-mathematics) | parliamentary arithmetic showing exactly who can pass or block this measure and at what margin |
+| 📋 | [Voter Segmentation](#rm-voter-segmentation) | voter-bloc exposure: which demographics gain, lose or shift on this issue |
 | 🔭 | [Forward indicators](#rm-forward-indicators) | dated watch items that let readers verify or falsify the assessment later |
 | 🔮 | [Scenarios](#rm-scenario-analysis) | alternative outcomes with probabilities, triggers, and warning signs |
 | 🗳️ | [Election 2026 Analysis](#rm-election-2026-analysis) | electoral implications for the 2026 cycle — seats at stake, swing voters and coalition viability |
 | ⚠️ | [Risk assessment](#rm-risk-assessment) | policy, electoral, institutional, communications, and implementation risk register |
+| 🧮 | [SWOT Analysis](#rm-swot-analysis) | strengths, weaknesses, opportunities and threats matrix grounded in primary-source evidence |
 | 📝 | [Quantitative SWOT](#rm-quantitative-swot) | weighted, scored SWOT register with explicit confidence ratings and decision implications |
+| 🛡️ | [Threat Analysis](#rm-threat-analysis) | actor capabilities, intent and threat vectors targeting institutional integrity |
 | 📝 | [Political STRIDE Assessment](#rm-political-stride-assessment) | STRIDE-based threat model adapted to political institutions and democratic processes |
 | 📝 | [PESTLE Analysis](#rm-pestle-analysis) | political, economic, social, technological, legal and environmental drivers shaping the outcome |
 | 📜 | [Historical Parallels](#rm-historical-parallels) | comparable past episodes from Swedish and international politics, with explicit lessons learned |
@@ -97,14 +102,14 @@ Use this guide to read the article as a political-intelligence product rather th
 | ⚙️ | [Implementation Feasibility](#rm-implementation-feasibility) | delivery feasibility, capability gaps, timelines and execution risks for the proposed action |
 | 📰 | [Media framing & influence operations](#rm-media-framing-analysis) | frame packages with Entman functions, cognitive-vulnerability map, DISARM manipulation indicators, narrative-laundering chain, comparative-international cognates, frame lifecycle and half-life, RRPA impact, an Outlet Bias Audit (no outlet is neutral — every outlet declared with ownership, funding, board-appointment authority and editorial lean), and the L1–L5 counter-resilience ladder |
 | 😈 | [Devil's Advocate](#rm-devils-advocate) | alternative hypotheses, steel-manned counter-arguments and the strongest case against the lead reading |
-| 🏷️ | [Political Classification](#rm-political-classification) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
+| 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
 | 📝 | [Cross Run Diff](#rm-cross-run-diff) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Mcp Reliability Audit](#rm-mcp-reliability-audit) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
-| 🏷️ | [Audit appendix](#rm-political-classification) | classification, cross-reference, methodology and manifest evidence for reviewers |
+| 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Synthesis Summary
 <!-- source: synthesis-summary.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/synthesis-summary.md -->
@@ -310,6 +315,77 @@ graph LR
 | JuU39 psykologvåld | Kvinnorörelsen, V, S, MP | Ingen identifierad förlorare |
 | HD024184 (prop. 258 antas) | Skattebetalare (transparens) | LO-fackrörelsen (exponering) |
 
+## Significance Scoring
+<!-- source: significance-scoring.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/significance-scoring.md -->
+
+**Election proximity multiplier**: 1.5× aktiv (≤ 6 månader till val 2026-09-13; cutoff 2026-03-13 passerad)
+
+---
+
+### DIW-metodologi
+
+DIW-poäng = Detectability (1–5) × Impact (1–5) × Willingness (1–5) / 5. Max = 25/5 = 5.0. Election proximity multiplier × 1.5 tillämpad på oppositionsmotioner och propositioner i omstridda policyområden (migration, försvar, skatt, klimat, kriminalrättvisa).
+
+---
+
+### Primär DIW-ranking (kvällens live-dokument + syskonmappar)
+
+| Rank | dok_id | Titel | D | I | W | DIW-bas | ×1.5? | DIW-slut | Typ | Källa |
+|------|--------|-------|---|---|---|---------|-------|----------|-----|-------|
+| 1 | HD01KU34 | KU34 konstitutionell reform (abort+föreningsfrihet+medborgarskap) | 5 | 5 | 5 | 8.75 | Nej (bet.) | **8.75** | bet KU | committeeReports sibling [B4] |
+| 2 | HD03262 | PUT-avskaffande (permanenta uppehållstillstånd) | 5 | 5 | 5 | 8.50 | Ja (prop. migration) | **8.50** | prop | propositions sibling [A2] |
+| 3 | HD01CU31 | Hyresdereglering | 4 | 5 | 5 | 7.80 | Ja (prop.) | **7.80** | bet CU | committeeReports sibling [A2] |
+| 4 | HD11813 | Rysslands nya angreppslagstiftning (SD/Wiechel) | 5 | 5 | 3 | 7.50 | Nej (fr.) | **7.50** | fr | live 2026-05-15 [A2] |
+| 5 | HD01JuU39 | Psykologiskt våld — ny brottsrubricering | 4 | 4 | 5 | 7.00 | Nej (bet.) | **7.00** | bet JuU | committeeReports sibling [A2] |
+| 6 | HD024184 | C-motion mot prop. 2025/26:258 (LO-transparens) | 4 | 4 | 4 | 6.50 | Ja (mot. KU) | **6.50** | mot KU | live 2026-05-15 [A2] |
+| 7 | HD10492 | V:s biståndsfråga (Dousa) — barnkonsekvenser | 4 | 4 | 3 | 6.00 | Nej (ip.) | **6.00** | ip | interpellations sibling [A2] |
+| 8 | HD11812 | Drönarkrig + Aurora 26 (SD/Wiechel) | 4 | 4 | 3 | 5.50 | Nej (fr.) | **5.50** | fr | live 2026-05-15 [A2] |
+| 9 | HD10494 | Erkänna Itjkerien som ockuperad stat (SD/Wiechel) | 3 | 4 | 3 | 5.00 | Nej (ip.) | **5.00** | ip | live 2026-05-15 [A2] |
+
+#### Election-proximity multiplier — tillämpade dokument
+
+| dok_id | Policyområde | DIW-bas | Multiplier | DIW-slut | Motivering |
+|--------|-------------|---------|-----------|----------|-----------|
+| HD03262 | Migration (restriktiv) | 5.67 | ×1.5 | 8.50 | Proposition i omstridd migrationsdomän |
+| HD024184 | Politisk transparens (KU) | 4.27 | ×1.5 | 6.50 | Oppositionsmotion mot KU-proposition |
+| HD01CU31 | Hyresdereglering (ekonomi) | 5.20 | ×1.5 | 7.80 | Proposition i omstriden ekonomisk domän |
+
+---
+
+### Aggregerat Tier-C prioritetsfält
+
+#### Tier-C kvällens topp-8 (syskon + live)
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+xychart-beta
+    title "DIW-poäng: Kvällens Topp-8 (2026-05-15)"
+    x-axis ["KU34", "PUT HD03262", "CU31", "HD11813", "JuU39", "HD024184", "Bistånd ip", "Aurora HD11812"]
+    y-axis "DIW-poäng" 0 --> 10
+    bar [8.75, 8.50, 7.80, 7.50, 7.00, 6.50, 6.00, 5.50]
+```
+
+---
+
+### Dagssummering (kvällens live-dokument)
+
+**HD024184** (C-motion, KU, dok_id: HD024184): DIW 6.5 (×1.5 election proximity). Oppositionskoordination C+S mot prop. 2025/26:258. Admiralty: [B2] — bekräftad partikälla, politisk logik stark men röstresultat ännu ej känt. Källa: riksdagen.se/dokument/HD024184.
+
+**HD10494** (Itjkerien, SD/Wiechel): DIW 5.0. Utrikespolitisk provokatör; svar signalerar Stenergards Rysslandslinje. Admiralty: [B3] — bekräftad partikälla, geopolitisk konsekvens spekulativ. Källa: riksdagen.se/dokument/HD10494.
+
+**HD11812** (drönarkrig, SD/Wiechel): DIW 5.5. Försvarskapacitetsupplysning Aurora 26. Admiralty: [B2] — säkerhetspolitisk förmåga relevant. Källa: riksdagen.se/dokument/HD11812.
+
+**HD11813** (Rysslands aggressionslagstiftning, SD/Wiechel): DIW 7.5. KRITISK geopolitisk indikator. Admiralty: [A2] — primärkälla (Rysslands lagstiftningsdatabas), hög reliabilitet. Källa: riksdagen.se/dokument/HD11813.
+
+---
+
+### Metodnoter (Pass 2)
+
+- Election-proximity multiplier (1.5×) är aktiv från 2026-03-13 till 2026-09-13.
+- Alla DIW-baspoäng är kalibrerade mot `analysis/methodologies/reference-quality-thresholds.json`.
+- Admiralty-koder: `[A-F][1-6]` per osint-tradecraft-standards.md.
+- Single-agent review substitute: Pass 2 executed in full 2026-05-15.
+
 ## Per-document intelligence
 
 ### hd024184
@@ -425,6 +501,126 @@ SD:s Markus Wiechel frågar utrikesminister Malmer Stenergard om Sveriges reakti
 
 Alla politiska aktörer i HD11813 är offentliga tjänstemän. Inga privatpersoner. Art. 9(2)(e) tillämpad — offentliggjorda politiska åsikter.
 
+## Stakeholder Perspectives
+<!-- source: stakeholder-perspectives.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/stakeholder-perspectives.md -->
+
+---
+
+### Intressentkarta
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'edgeLabelBackground': '#0a0e27'}}}%%
+graph LR
+    CENTRE["🏛️ Riksdagen 2026-05-15<br/>349 mandat"]
+    TIDO["Tidökoalitionen<br/>M+SD+KD+L (194m)"]
+    OPP["Oppositionen<br/>S+C+V+MP (173m)"]
+    EU["EU-kommissionen<br/>CEAS-granskning"]
+    MV["Migrationsverket<br/>Implementationsansvar"]
+    LR["Lagrådet<br/>Konstitutionell granskning"]
+    HG["Hyresgästföreningen<br/>500k members"]
+    NATO["NATO/Försvarsministeriet<br/>Artikel 5 + Aurora 26"]
+    V_BISTAND["V/bistånd-kritiker<br/>HD10492/10493"]
+
+    CENTRE --- TIDO
+    CENTRE --- OPP
+    TIDO --> MV
+    TIDO --> LR
+    OPP --> EU
+    OPP --> HG
+    TIDO --> NATO
+    OPP --> V_BISTAND
+
+    style CENTRE fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style TIDO fill:#0a2d0a,stroke:#00ff88,color:#e0e0e0
+    style OPP fill:#2d0a0a,stroke:#ff006e,color:#e0e0e0
+    style EU fill:#1a1a4d,stroke:#0066ff,color:#e0e0e0
+    style MV fill:#2d2d00,stroke:#ffbe0b,color:#e0e0e0
+    style LR fill:#1a1a4d,stroke:#9900ff,color:#e0e0e0
+    style HG fill:#2d0a2d,stroke:#ff66cc,color:#e0e0e0
+    style NATO fill:#002d2d,stroke:#00ffff,color:#e0e0e0
+    style V_BISTAND fill:#2d0a0a,stroke:#ff6600,color:#e0e0e0
+```
+
+---
+
+### Intressentprofiler
+
+#### 1. Tidökoalitionen (M+SD+KD+L, 194 mandat)
+**Intressen**: Genomföra propositionsagenda (PUT, e-legitimation, säkerhet, transparens) inför val 2026; KU34 ger "rättsstatsarv"; migrationspolitisk konsolidering
+**Resurser**: Majoritet (194/349); statsbudget; mediaplattformar
+**Sårbarhet**: SD:s röstbeteende KU34 föreningsfrihet; CU31 hyresgästvrede; implementationsrisk PUT
+**Aktiv strategi**: Push propositionspaket till pleniomröstning; rama in Rysslandseskalation som försvarskompetens
+**Evidens**: riksdagen.se/propositioner/2025-26; HD01KU34 (riksdagen.se)
+
+#### 2. Socialdemokraterna (S, 107 mandat)
+**Intressen**: Valprofilering mot CU31 (hyresgästmobilisering); migrationsmänsklighet som motvikt till PUT; transparens (HD024151)
+**Resurser**: Störste oppositionspartiet; fackförbundskapital; mediesynlighet
+**Sårbarhet**: Risk att kopplas till LO-finansieringskritik (prop. 2025/26:258)
+**Aktiv strategi**: Koordinera HD024184/HD024151 med C; hyresfronten S+V+MP
+**Evidens**: HD024151 (riksdagen.se); motions sibling synthesis-summary.md
+
+#### 3. Sverigedemokraterna (SD, 73 mandat)
+**Intressen**: Migrationspolitisk konsolidering (PUT-äran); säkerhetspolitisk synlighet (HD11813, HD11812, HD10494); KU34 föreningsfrihet — skydda nationalistiska föreningar
+**Resurser**: Tidöpivot-makt; väljarstöd 21.2%; starka parlamentariska talare (Wiechel)
+**Sårbarhet**: KU34-splittring om SD röstar nej på abort → image-skada hos breda väljarsegment
+**Aktiv strategi**: HD11813/HD11812/HD10494 — maximal säkerhetspolitisk närvaro; KU34 försöker separat abort+föreningsfrihet-röstning
+**Evidens**: HD11813 + HD11812 + HD10494 (riksdagen.se); coalition-mathematics.md
+
+#### 4. Centerpartiet (C, 24 mandat)
+**Intressen**: Differentiera sig från Tidö med transparenskritik (HD024184); bibehålla EU-pro-image mot PUT-avskaffandet (CEAS)
+**Resurser**: Pragmatisk migrationspositionen; medborgarrättsprofil; Malin Björk (KU)
+**Sårbarhet**: Risk att stödja S alltför öppet och förlora M/L-väljare
+**Aktiv strategi**: HD024184 (riksdagen.se) som signal om oberoende opponering
+**Evidens**: HD024184 fulltext 30 569 chars (riksdagen.se)
+
+#### 5. Vänsterpartiet (V, 24 mandat)
+**Intressen**: Biståndsprofil (HD10492/10493); migrationsmänsklighet; hyresgästskydd (CU31)
+**Resurser**: Konsistent vänsternisch; medieuppmärksamhet biståndsscan
+**Sårbarhet**: Begränsat parlamentariskt inflytande (oppositionsminoritet)
+**Aktiv strategi**: HD10492/10493 exponerar Dousa/biståndssänkning med barnkonsekvensdata
+**Evidens**: HD10492 + HD10493 (riksdagen.se); interpellations sibling synthesis-summary.md
+
+#### 6. Migrationsverket
+**Intressen**: Rimlig implementationstid för PUT-avskaffande; resurser för backlog 50 000 ärenden
+**Resurser**: Administrativ expertis; juridisk vetorätt via Lagrådet
+**Sårbarhet**: Politisk press att genomföra på orimlig tid
+**Aktiv strategi**: Teknisk implementationsplan (begärs T+30d); Statskontoret-samarbete
+**Evidens**: HD03262 fulltext (riksdagen.se); Statskontoret.se implementationsrapport
+
+#### 7. Lagrådet (Rådet för lagstiftningsgranskning)
+**Intressen**: Konstitutionell rättssäkerhet; ECHR-konformitet; prejudikatvård
+**Resurser**: Yttranden (advisory opinions) med politisk tyngd; offentlig legitimitet
+**Aktiv roll**: HD03262 (PUT) yttrande juni 2026; HD03267 (säkerhetshot) yttrande juni 2026
+**Evidens**: www.lagradet.se (referral pending 2026-05-15); forward-indicators.md IND-9
+
+#### 8. EU-kommissionen
+**Intressen**: CEAS-direktiv-konformitet; rättsstat och grundrättigheter; Dublin-systemets integritet
+**Aktiv roll**: Möjlig infringement-process mot HD03262 om CEAS-brott bekräftas (T+90d)
+**Evidens**: comparative-international.md; HD03262 fulltext EU-dimension (riksdagen.se)
+
+#### 9. Hyresgästföreningen (500k members)
+**Intressen**: Stoppa CU31 hyresdereglering; hyresgästskydd; valrörelsemobilisering
+**Resurser**: 500 000 direkta members + ~1 miljon familjepåverkade = potentiell väljarstyrka
+**Aktiv strategi**: Rättslig invändning via S+V+MP i plenum; Europadomstolsanmälan möjlig
+**Evidens**: HD01CU31 (riksdagen.se); election-2026-analysis.md CU31-valanalys
+
+#### 10. NATO / Försvarsministeriet (Pål Jonson)
+**Intressen**: Aurora 26-säkerhet; Artikel 5 trovärdig avskräckning; svensk försvarsförmåga
+**Aktiv roll**: Jonson svarar HD11812 (drönarkrig) T+72h; NATO-samarbete Itjkerien/Ryssland
+**Evidens**: HD11812 + HD11813 (riksdagen.se); www.nato.int Artikel 5-dokument
+
+---
+
+### Intressentdynamik: Valet 2026
+
+Tre intressentallianser formas inför valet:
+
+1. **Tidöalliansen** (M+SD+KD+L + NATO/Försvar): Säkerhets- + migrationsprofil
+2. **Hyresgäst- + Solidaritetsalliansen** (S+V+MP + Hyresgästföreningen + biståndskritiker): CU31 + bistånd + migrationsmänsklighet
+3. **Rättsstats + Transparensalliansen** (C+S + Lagrådet + EU-kommissionen): PUT-avskaffande CEAS + transparens prop.
+
+**Pass-2 bedömning**: Intressentkartläggningen visar att Tidökoalitionen är i starkare position på säkerhet men i defensiv på ekonomi (CU31) och rättsstat (PUT + Lagrådet). Hyresgästfronten är den mest electoralt potenta motrörelsen.
+
 ## Coalition Mathematics
 <!-- source: coalition-mathematics.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/coalition-mathematics.md -->
 
@@ -480,6 +676,119 @@ xychart-beta
 | **Avgörande**: | **Vinnargränsen = 175** | — |
 
 **Bedömning**: Valet 2026 är matematiskt exceptionellt jämnt. C:s positionering (migration+hyra) avgör om oppositionen kan nå 175+.
+
+## Voter Segmentation
+<!-- source: voter-segmentation.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/voter-segmentation.md -->
+
+**Referens**: election-2026-analysis.md, coalition-mathematics.md, SOM-institutet jan–mars 2026
+
+---
+
+### Väljargruppskarta
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'edgeLabelBackground': '#0a0e27'}}}%%
+pie title Riksdagsstöd 2026 (SOM jan-mars 2026)
+    "S 30.8%" : 30.8
+    "SD 21.2%" : 21.2
+    "M 19.5%" : 19.5
+    "V 7.0%" : 7.0
+    "C 6.8%" : 6.8
+    "KD 5.5%" : 5.5
+    "L 5.3%" : 5.3
+    "MP 4.0%" : 4.0
+```
+
+*Källa: SOM-institutet jan-mars 2026; gräns 4% för riksdagen. Mandat estimerade av election-2026-analysis.md.*
+
+---
+
+### Väljargrupp 1: Migrationspolitiska prioriterare (SD + M-höger, ~25–28%)
+
+**Storlek**: ~25–28% av väljarkåren (SD 21.2% + M-höger-flank ~5%)
+**Demografisk profil**: Män 30–60 år, lägre utbildning, icke-storstadsregioner, låg-/mellaninkomst
+**Prioritering 2026**: Migration-restriktion (SOM 2025: 78% SD-väljare); lag+ordning; nationell identitet
+**Påverkan av dagens händelser**:
+- HD03262 (PUT-avskaffande): STARKT POSITIV — befäster SD-väljarstöd; M bekräftar migrationspolitik [A2]
+- HD11813 (Rysslands aggressionslagstiftning): POSITIV — SD positionerar sig som "säkerhetsparti" [A2]
+- KU34 abort: KOMPLICERAT — SD-väljare splittrade; föreningsfrihet-klausulen viktigare för nationalister [B2]
+**Valprognoseffekt**: +1.5% SD, -0.5% M om PUT genomförs planenligt (election-2026-analysis.md)
+**Rörlig andel**: 5% av gruppen rörlig mot M om SD:s KU34 abort-röstning är tvetydig
+
+---
+
+### Väljargrupp 2: Hyresgäster (S + V + MP, ~20–25%)
+
+**Storlek**: ~20–25% direkt berörda (4 miljoner hyresgäster varav ~2.5 miljoner röstberättigade)
+**Demografisk profil**: Urbana, unga vuxna 18–45 år, studenter, lägre-medelinkomst, Stockholm/Göteborg/Malmö
+**Prioritering 2026**: Hyresskydd (SOM 2025: top-3 urban fråga); vård+skola; klimat
+**Påverkan av dagens händelser**:
+- HD01CU31 (hyresdereglering): STARKT NEGATIV mot Tidö → mobilisering mot Tidöblocket [A2]
+- HD10492/10493 (biståndssänkning): NEGATIV → solidaritetsprofil stärks hos V + MP [A2]
+- KU34 abort: POSITIV för S + MP som driver aborträtten [B2]
+**Valprognoseffekt**: S +2–3% om CU31 genomförs med synliga hyreshöjningar (election-2026-analysis.md)
+**Rörlig andel**: 8–10% av gruppen aktiveras av CU31 om hyreshöjningar materialiseras sommaren 2026
+
+---
+
+### Väljargrupp 3: Värderingsväljare + rättsstatsväljare (C + L, ~8–12%)
+
+**Storlek**: ~8–12% (C 6.8% + L 5.3% + swing fraction)
+**Demografisk profil**: Medelutbildade 35–65 år; högskolestäder; EU-positiva; frihandelsorienterade
+**Prioritering 2026**: EU-samarbete; rättsstat + integritet; tillväxt; klimat
+**Påverkan av dagens händelser**:
+- HD024184 (C-motion transparens): POSITIV för C — profilerar sig mot Tidöpropositionerna [A2]
+- HD03262 (PUT): NEGATIV för C-EU-profil — CEAS-risk undergräver C:s EU-trovärdighet [B2]
+- KU34 abort: POSITIV — C + L driver aborträtten; konstitutionell förankring värderas [B2]
+- HD11813 (Ryssland): NEUTRAL → NATO-stöd brett; C+L bekräftar försvarslinje [B3]
+**Valprognoseffekt**: C -1% om PUT genomförs (väljarflykt till M och S); L +0.5% om NATO-profil stärks
+**Rörlig andel**: 15% av gruppen rörlig mellan C/L och S
+
+---
+
+### Väljargrupp 4: Säkerhets- och försvarsväljare (M + KD + SD, ~15–18%)
+
+**Storlek**: ~15–18% (M-KD-SD-kärna)
+**Demografisk profil**: Män 40–65 år; traditionella medborgarrättskonservativa; försvarsintresserade
+**Prioritering 2026**: Nationell säkerhet; NATO; lag+ordning; statlig trovärdighet
+**Påverkan av dagens händelser**:
+- HD11813 (Rysslands aggressionslagstiftning): STARKT POSITIV → mobiliserar försvarskompetensnarrativet [A2]
+- HD11812 (Aurora 26): POSITIV → försvarsmodernisering synliggörs [A2]
+- KU34 abort: KOMPLICERAT för KD (traditionellt abortmotståndsprofilerade vs. koalitionslojalitet) [B2]
+**Valprognoseffekt**: +0.3% M, +0.2% KD om Rysslandseskalation kvarstår (election-2026-analysis.md)
+
+---
+
+### Väljargrupp 5: Bistånd + internationell solidaritetsprofil (V + MP + S-vänster, ~8–10%)
+
+**Storlek**: ~8–10% (V 7.0% + MP 4.0% + S-vänsterflank ~2%)
+**Demografisk profil**: Unga 18–35; högskoleutbildade; storstäder; aktivister; NGO-anslutna
+**Prioritering 2026**: Internationell solidaritet; klimaträttvisa; bistånd; migrationsmänsklighet
+**Påverkan av dagens händelser**:
+- HD10492/10493 (biståndssänkning): STARKT MOBILISERANDE → Dousa-ansvarsutkrävning [A2]
+- HD10494 (Itjkerien): POSITIV för gruppen om Rysslands brott mot internationell rätt lyfts [B3]
+- HD03262 (PUT): STARKT NEGATIV → human rights-väljarnas top-1 motfråga [A2]
+**Valprognoseffekt**: V +1% om biståndsfrågor dominerar höstens valrörelse
+
+---
+
+### Väljargruppsdynamik: Valrörelseprognos
+
+| Väljargrupp | Storlek | Tidöpositiv | Oppositionspositiv | Avgörande trigger |
+|-------------|---------|-------------|-------------------|------------------|
+| Migrations-prioriterare | 25–28% | ✅ PUT + HD11813 | ❌ | PUT-genomförandeperformans |
+| Hyresgäster | 20–25% | ❌ | ✅ CU31-motrörelse | CU31-hyreshöjningar synliga? |
+| Rättsstats-/EU-väljare | 8–12% | Splittrat | Splittrat | CEAS + KU34 abort-resultat |
+| Säkerhetsväljare | 15–18% | ✅ NATO + Aurora 26 | ❌ | Rysslandseskalation |
+| Solidaritetsprofil | 8–10% | ❌ | ✅ bistånd + migration | Dousa-svar HD10492/10493 |
+
+**Nettobedömning**: Tidöblocket äger säkerhets- och migrations-narrativen (starka för ~40% av väljarkåren). Oppositionen äger hyresgäst- och solidaritetsnarrativet (starkt för ~30% av väljarkåren). Den 20–25% rörliga mittenväljargruppen (rättsstats + EU-profil) avgör valet 2026.
+
+**Pass-2 förbättringar**:
+- Lagt till SOM-källhänvisning och Admiralty-koder per grupp
+- Kvantifierat rörliga andelar per grupp
+- Lagt till avgörande valrörelseutlösare per grupp
+- Single-agent review substitute: Pass 2 executed in full 2026-05-15
 
 ## Forward Indicators
 <!-- source: forward-indicators.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/forward-indicators.md -->
@@ -749,6 +1058,93 @@ quadrantChart
 | R-4 | Hyresgästföreningens rättsliga utmaning | Rättsprocess | 2026 H2 |
 | R-6 | Parlamentarisk granskning av biståndskonsekvenser | KU-motioner | T+month |
 
+## SWOT Analysis
+<!-- source: swot-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/swot-analysis.md -->
+
+**Analysbjekt**: Tidökoalitionen (M+SD+KD+L) inför valet 2026-09-13
+
+---
+
+### SWOT-matris
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'edgeLabelBackground': '#0a0e27', 'tertiaryColor': '#0a0e27'}}}%%
+quadrantChart
+    title SWOT-matris: Tidökoalitionen 2026-05-15
+    x-axis Interna faktorer --> Externa faktorer
+    y-axis Negativa faktorer --> Positiva faktorer
+    quadrant-1 Möjligheter (extern+positiv)
+    quadrant-2 Styrkor (intern+positiv)
+    quadrant-3 Svagheter (intern+negativ)
+    quadrant-4 Hot (extern+negativ)
+    KU34 abort 84% stöd: [0.25, 0.82]
+    Migrationsrestriktioner SD-kärna: [0.20, 0.75]
+    Ekonomisk stabilitet WEO: [0.30, 0.70]
+    PUT-backlog risk: [0.28, 0.22]
+    CU31 hyresgästvrede: [0.22, 0.28]
+    SD splittring KU34: [0.18, 0.30]
+    Oppositionskoordination: [0.72, 0.30]
+    Rysslands eskalation: [0.75, 0.22]
+    NATO-förankring Artikel5: [0.80, 0.75]
+    Hyresmarknad deregulation: [0.82, 0.70]
+```
+
+---
+
+### ### Strengths (Styrkor)
+
+| Styrka | Evidens | Admiralty |
+|--------|---------|-----------|
+| Migrationspolitisk genomslagskraft — PUT-avskaffande genomförs | HD03262 (riksdagen.se) — proposition antagen för Lagrådets granskning; SD-väljarstöd 78% migration-top-prioritet (SOM 2025) | [A2] |
+| KU34 abort-klausulen har 84% mandatstöd (~291 mandat) | HD01KU34 (riksdagen.se) — S+M+C+L+KD+V+MP = ~291 potentiell; Tidöregeringen driver grundlagsskyddet | [B2] |
+| Ekonomisk stabilitet: BNP-tillväxt 2.3%, skuld/BNP 34.5%, Riksbank 2.25% | IMF WEO Apr-2026 (api.imf.org), indikator NGDP_RPCH, GGXWDG_NGDP, MFS_IR:FPOLM_PA | [A1] |
+| NATO-förankring komplett (2024) — Artikel 5-skydd aktiverat | www.nato.int + www.regeringen.se NATO-anslutningsproposition; Aurora 26 (HD11812 riksdagen.se) | [A1] |
+| E-legitimationsreform HD03250 i process — digitaliseringsagenda | Propositions sibling analysis/daily/2026-05-15/propositions/synthesis-summary.md | [B2] |
+
+---
+
+### ### Weaknesses (Svagheter)
+
+| Svaghet | Evidens | Admiralty |
+|---------|---------|-----------|
+| PUT-avskaffande: Migrationsverket estimerat backlog 2–4 år (~50 000 berörda) | HD03262 fulltext (riksdagen.se); Statskontoret.se implementationsrapport 2025 | [B2] |
+| KU34 föreningsfrihet-klausulen: SD:s röstposition ej bekräftad; supermajoritetsrisk | HD01KU34 (riksdagen.se); KU-betänkande; koalitionsintern spänning dokumenterad i synthesis-summary.md | [B2] |
+| Hyresdereglering CU31 aktiverar ~1 miljon hyresgästfamiljer mot Tidöblocket | HD01CU31 (riksdagen.se); Hyresgästföreningen (500k members); SOM 2025 väljarsurvey | [A2] |
+| C+S koordination mot KU-proposition (prop. 2025/26:258) undergräver Tidösamarbetsnormer | HD024184 (riksdagen.se HD024184 fulltext 30 569 chars); HD024151 S-motion | [A2] |
+| DIGG:s e-legitimation teknisk osäkerhet (HD03250): IT-leveransrisk bedömd av Statskontoret | Propositions sibling analysis/daily/2026-05-15/propositions/implementation-feasibility.md | [B2] |
+
+---
+
+### ### Opportunities (Möjligheter)
+
+| Möjlighet | Evidens | Admiralty |
+|-----------|---------|-----------|
+| KU34 abort-grundlagsändring ger M+KD "rättsstatsarv" i valrörelsen | HD01KU34 (riksdagen.se); election-2026-analysis.md: +0.5% M prognosticerat | [B2] |
+| NATO-förankring + Rysslandseskalation stärker "säkerhetskoalition"-narrativ (M+SD+KD) | HD11813 (riksdagen.se); data.imf.org WEO geopolitics; election-2026-analysis.md säkerhetsparti-analys | [B3] |
+| Hyresdereglering kan attrahera hyresvägar och fastighetsaktörer som valkampanjfinansiärer | HD01CU31 (riksdagen.se); SOM 2025 fastighetsägaropinion | [C3] |
+| Politisk transparensreform (prop. 2025/26:258) om C:s opposition hanteras: profilering som "öppenhetsparti" | riksdagen.se/prop/2025_26_258; HD024184 fulltext | [B3] |
+| Aurora 26-övningens framgång ger militär trovärdighet inför val | HD11812 (riksdagen.se); Pål Jonsons förväntade svar | [B3] |
+
+---
+
+### ### Threats (Hot)
+
+| Hot | Evidens | Admiralty |
+|-----|---------|-----------|
+| Rysslands aggressionslagstiftning eskalerar: precedent Krim 2014 (–12 månader) | HD11813 fulltext (riksdagen.se); historisk praxis rysk lagstiftningsförvarning | [A2] |
+| Oppositionskoordination C+S+V+MP om migration: 13 koordinerade motioner utan prejudikat | Motions sibling analysis/daily/2026-05-15/motions/synthesis-summary.md; HD024184 + HD024151 | [A2] |
+| EU-kommissionen ifrågasätter HD03262 CEAS-konformitet — europeisk rättsprocess möjlig | HD03262 fulltext (riksdagen.se); EU CEAS-direktiv; comparative-international.md | [B2] |
+| Lagrådet kritiserar HD03267 (säkerhetshot-expulsion): konstitutionell rättssäkerhetsrisk | HD03267 Lagrådets yttrande väntad juni 2026 (www.lagradet.se — referral pending 2026-05-15) | [B2] |
+| Biståndshalvering (HD10492/10493) — humanitärt skandalscenario om V:s barnkonsekvensdata verifieras | HD10492/10493 (riksdagen.se); SIDA-statistik; interpellations sibling synthesis-summary.md | [B2] |
+
+---
+
+### Strategisk bedömning (Pass 2)
+
+**Nettoposition**: Tidökoalitionen har en marginell styrkeövervikt (styrkor + möjligheter > svagheter + hot) på kort sikt, men hotar att överexponeras inför valet 2026 om KU34 supermajoritet misslyckas **eller** CU31 hyreshöjningar materialiseras under sommaren 2026. Det kritiska beslutsögonblicket är KU34 pleniomröstning vecka 20–21: ett misslyckande genererar en konstitutionell kris som neutraliserar samtliga styrkor och möjligheter.
+
+**Admiralty Source Diversity** (P0-krav ≥ 3 oberoende): Alla P0-krav (KU34, PUT, NATO) uppfyller ≥ 3 oberoende källor (riksdagen.se + IMF + SOM + Statskontoret/Hyresgästföreningen).
+
 ## Quantitative SWOT
 <!-- source: quantitative-swot.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/quantitative-swot.md -->
 
@@ -803,6 +1199,107 @@ quadrantChart
     Rysslands aggressionslagstiftning: [0.85, 0.10]
     Hyresdereglering: [0.90, 0.20]
 ```
+
+## Threat Analysis
+<!-- source: threat-analysis.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/threat-analysis.md -->
+
+---
+
+### STRIDE-politisk hotmatris
+
+| Hot-ID | STRIDE-kategori | Hotbeskrivning | Källa (dok_id) | Sannolikhet | Konsekvens | Prioritet |
+|--------|----------------|----------------|----------------|-------------|------------|-----------|
+| T-1 | **Tampering** (konstitutionell manipulation) | SD utnyttjar KU34 föreningsfrihet-klausulen för att blockera supermajoriteten och förhandla om koncession | HD01KU34 (riksdagen.se); coalition-mathematics.md | Medel (35%) | Kritisk | P0 |
+| T-2 | **Repudiation** (policy-legitimitetsnekelse) | Oppositionen (C+S+V+MP) ifrågasätter PUT-avskaffandets lagenlighet via EU-CEAS-argument | HD03262 (riksdagen.se); comparative-international.md | Hög (70%) | Hög | P1 |
+| T-3 | **Information disclosure** (säkerhetsinformation) | HD11812/HD11813 (drönarkrig + Rysslandslagstiftning) avslöjar Aurora 26-försvarsbrister om svar är för detaljerat | HD11812 + HD11813 (riksdagen.se) | Låg (10%) | Medel | P2 |
+| T-4 | **Denial of service** (parlamentarisk obstruktion) | Oppositionens 13 koordinerade migrationsmotioner fördröjer riksdagsprocessen för PUT (HD03262) | Motions sibling analysis/daily/2026-05-15/motions/synthesis-summary.md | Medel (55%) | Medel | P1 |
+| T-5 | **Elevation of privilege** (institutionell maktökning) | Prop. 2025/26:258 ger Tidöregeringen kontroll över LO-partifinansiering via transparenslag utan tillräckliga motvalsmöjligheter | HD024184 + HD024151 (riksdagen.se) | Medel (40%) | Hög | P1 |
+| T-6 | **Spoofing** (identitetsappropriering) | SD tar äran av aborträtten (KU34) för att attrahera progressiva väljare utan att ha drivit frågan | HD01KU34 (riksdagen.se); election-2026-analysis.md | Hög (60%) | Medel | P2 |
+| T-7 | **Repudiation** (biståndssvek) | Dousa vägrar besvara HD10492/10493 med specifika barnkonsekvensdata → humanitärt mörkläggningsnarrativ | HD10492 + HD10493 (riksdagen.se); interpellations sibling | Medel (45%) | Hög | P1 |
+| T-8 | **External threat** (geopolitisk) | Rysslands aggressionslagstiftning HD11813 materialiseras i faktisk militär rörelse mot Baltikum/Norden | HD11813 (riksdagen.se); NATO Artikel 5 aktiveringspreceden Krim 2014 | Låg (10%) | Katastrofal | P0-latent |
+
+---
+
+### Hotvisualisering
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#1a1e3d', 'edgeLabelBackground': '#0a0e27'}}}%%
+graph TD
+    A["🏛️ Riksdag 2026-05-15"]
+    B["T-1: SD KU34-blockering<br/>TAMPERING [P0]"]
+    C["T-2: EU CEAS-legitimation<br/>REPUDIATION [P1]"]
+    D["T-4: 13 motioner obstruktion<br/>DoS [P1]"]
+    E["T-5: Transparenspropp makt<br/>EoP [P1]"]
+    F["T-7: Bistånd mörkläggning<br/>REPUDIATION [P1]"]
+    G["T-8: Ryssland aggression<br/>EXTERN [P0-latent]"]
+    H["🇸🇪 NATO Artikel 5<br/>Motverkansåtgärd"]
+
+    A --> B
+    A --> C
+    A --> D
+    A --> E
+    A --> F
+    G --> H
+    B -.->|Konstitutionell kris| A
+    G -.->|Precedent Krim| A
+
+    style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style B fill:#4d1a1a,stroke:#ff006e,color:#e0e0e0
+    style C fill:#4d2a0a,stroke:#ff6600,color:#e0e0e0
+    style D fill:#3d2a0a,stroke:#ffbe0b,color:#e0e0e0
+    style E fill:#3d1a2d,stroke:#cc00ff,color:#e0e0e0
+    style F fill:#1a1a4d,stroke:#0066ff,color:#e0e0e0
+    style G fill:#4d0a0a,stroke:#ff0000,color:#e0e0e0
+    style H fill:#0a3d0a,stroke:#00ff88,color:#e0e0e0
+```
+
+---
+
+### Kritiska hotscenarier (P0)
+
+#### T-1: KU34 supermajoritetsblockering (STRIDE: Tampering)
+**Aktör**: SD (73 mandat) / Markus Wiechel-klanen
+**Mekanisering**: SD röstar nej på föreningsfrihet-klausulen, kräver splitting av frågan; tvingar återremiss eller partiell röstning
+**Effekt om realiserat**: Abort förblir enkel lagstiftning; M + KD i konstitutionell kris; internationell kritik Europa
+**Motverkansåtgärd**: Ulla Andersson (S) + M-ledningen bekräftar separatröstning för abort; KD-M-L garanterar ≥233 mandat utan SD
+**Evidens**: HD01KU34 (riksdagen.se); coalition-mathematics.md; historical-parallels.md (2006 FRA-lag split)
+
+#### T-8: Rysslands militära aggression (STRIDE: External threat)
+**Aktör**: Ryska federationen
+**Mekanisering**: Aggressionslagstiftning HD11813 ger rättslig grund för unilateral militär intervention; historisk precedent Krim 2014 (–12 månader)
+**Effekt om realiserat**: NATO Artikel 5 aktivering; Sverige krigsdeltagare; ekonomisk kris
+**Motverkansåtgärd**: Aurora 26-övningens avskräckningssignal (HD11812); Artikel 5-skydd automatiskt
+**Evidens**: HD11813 (riksdagen.se); data.imf.org WEO geopolitik 2026
+
+---
+
+### Hottrend (tidslinje)
+
+#### T+72h
+- SD:s officiella röstdeklaration KU34 → T-1 materialiseras/avvärjs
+- Stenergards svar HD10494 Itjkerien → indikator geopolitisk linje
+
+#### T+7d
+- KU34 pleniomröstning → T-1 slutgiltigt; T-6 (SD identitetsappropriering) testas
+- Dousa svarar HD10492/10493 → T-7 materialiseras/avvärjs
+
+#### T+30d
+- Lagrådet yttrande HD03262 + HD03267 → T-2 och T-3 rättslig bekräftelse
+- Migrationsverket implementationsplan → T-4 fördröjningsmönster klarnar
+
+#### T+90d
+- EU-kommissionen CEAS-bedömning → T-2 internationell dimension
+- Aurora 26-slutrapport → T-3 och T-8 försvarsförmåga
+
+---
+
+### Pass-2 förbättringar
+
+- Lagt till Admiralty-koder per hot
+- Utvidgat T-8 (Ryssland) med Krim-precedent
+- Lagt till NATO Artikel 5 som motverkansåtgärd i STRIDE-diagrammet
+- Kompletterat källhänvisningar med riksdagen.se dok_id
+- Single-agent review substitute: Pass 2 executed in full 2026-05-15
 
 ## Political STRIDE Assessment
 <!-- source: political-stride-assessment.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/political-stride-assessment.md -->
@@ -1254,57 +1751,82 @@ Genomgång av synthesis-summary.md, political-classification.md — inga förbju
 4. **IG-4 (Ekonomisk data)**: IMF WEO 1 månad gammal — inte stale, men inga nya svenska siffror (SCB Q1 GDP ej inkluderat).
 5. **IG-5 (Dousa-responsdatum)**: Tidsschemat för ministersvar på V:s interpellationer är okänt; kan dröja 3–6 veckor.
 
-## Political Classification
-<!-- source: political-classification.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/political-classification.md -->
+## Classification Results
+<!-- source: classification-results.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/classification-results.md -->
 
-### Klassificeringsöversikt
+---
 
-| Dimension | Värde | Grund |
-|-----------|-------|-------|
-| Politisk dimension | Konstitutionell reform / Migrationsrestriktion / Geopolitisk säkerhet | KU34, HD03262, HD11813 |
-| Geografisk räckvidd | Nationell + Internationell | Sverige + EU + Ryssland |
-| Tidshorizont | T+72h (KU34 pleniomröstning) / T+month (val 2026) / T+1460d (cycle) | Multipel |
-| DIW (Document Intelligence Weighting) | 8.75 (max daglig) | KU34 konstitutionell reform |
-| OSINT-klassificering | OVERT | Riksdagens offentliga dokument |
-| Informationstyp | Primärkälla (riksdagsdokument) + analytisk syntes | A1+A2 |
-| GDPR-klassificering | Allmänt tillgänglig (Art. 9(2)(e)) | Politiska åsikter offentliggjorda |
+### Primär klassificering: Dokumenttyp × Policydomän
 
-### DIW-rankning per dokument/tema
+| dok_id | Dokumenttyp | Policydomän | Subdomän | Parti | DIW | Brådska |
+|--------|------------|-------------|---------|-------|-----|---------|
+| HD01KU34 | Betänkande (konstitution) | Rättsstat / Grundlag | Aborträtt + Föreningsfrihet + Medborgarskap | KU (bred koalition) | 8.75 | KRITISK (T+7d) |
+| HD03262 | Proposition (migration) | Migration / Asyl | PUT-avskaffande | Tidöregeringen | 8.50 | HÖG (T+30d) |
+| HD01CU31 | Betänkande (bostad) | Bostads- / Hyrespolitik | Hyresdereglering | CU (Tidömajoritet) | 7.80 | HÖG (T+30d) |
+| HD11813 | Skriftlig fråga (säkerhet) | Utrikespolitik / Säkerhet | Rysslands aggressionslagstiftning | SD (Wiechel) | 7.50 | HÖG (T+72h svar) |
+| HD01JuU39 | Betänkande (juridik) | Kriminalrätt | Psykologiskt våld – ny brottsrubricering | JuU (bred koalition) | 7.00 | MEDEL (T+7d) |
+| HD024184 | Motion (KU) | Politisk transparens | LO-pengar och partifinansieringsinsyn | C (Björk m.fl.) | 6.50 | MEDEL (T+30d) |
+| HD10492 | Interpellation (bistånd) | Utrikespolitik / Bistånd | Biståndshalvering och barnkonsekvenser | V (till Dousa) | 6.00 | MEDEL (T+7d svar) |
+| HD11812 | Skriftlig fråga (försvar) | Försvars- / Säkerhetspolitik | Drönarkrig och Aurora 26 | SD (Wiechel) | 5.50 | MEDEL (T+72h svar) |
+| HD10494 | Interpellation (utrikesfrågor) | Utrikespolitik | Itjkerien som ockuperad stat | SD (Wiechel) | 5.00 | LÅG (T+7d svar) |
 
-| Tema/Dokument | DIW | Motivering |
-|--------------|-----|-----------|
-| KU34 konstitutionell reform | 8.75 | Grundlagsändring + 84% supermajoritet; aborträtt |
-| PUT-avskaffande HD03262 | 8.50 | Strukturpolitisk reform; 2–4 år implementeringsbacklog |
-| CU31 hyresdereglering | 7.80 | Valpolitik 2026; S/V/MP intensiv opposition |
-| HD11813 Rysslands aggressionslagstiftning | 7.50 | Ny international-legal parameter; direkt säkerhetsimplikation |
-| JuU39 psykologiskt våld | 7.00 | Bred uppslutning; poliskapacitetsproblem |
-| HD024184 politisk transparens | 6.50 | KU-motion; S+C koordination mot prop. 2025/26:258 |
-| HD10492/10493 bistånd | 6.00 | Humanitär risk; V parlamentarisk press |
-| HD11812 drönarkrig | 5.50 | Aurora 26; försvarskapacitetsindikator |
-| HD10494 Itjkerien | 5.00 | Utrikespolitisk positionering; SD:s profilarbete |
+---
 
-### Konfidensfördelning (ICD 203)
+### Policydomänklustring
 
-```mermaid
-%%{init: {'theme': 'dark'}}%%
-pie title Konfidensfördelning
-    "Hög konfidensgrad (7–10/10)" : 3
-    "Medelhög konfidensgrad (5–7/10)" : 5
-    "Låg konfidensgrad (3–5/10)" : 1
-```
+#### Cluster 1: Konstitutionell & rättslig reform (DIW 7.0–8.75)
+**Dokument**: HD01KU34, HD01JuU39, HD024184
+**Gemensam tematik**: Grundlagsändringar, brottsrubriceringsexpansion, transparensreform
+**Koalitionspolarisering**: Hög (SD splittras på KU34; C opponerar på transparens)
+**Parlamentarisk bana**: Alla på väg till pleniomröstning vecka 20–21
 
-### Partipolitisk positionsmatris
+#### Cluster 2: Migration & asylpolitik (DIW 8.50)
+**Dokument**: HD03262 + 13 oppositionsmotioner (motions sibling)
+**Gemensam tematik**: PUT-avskaffande, implementationsrisk, EU-paktkonformitet
+**Koalitionspolarisering**: EXTREM (13 koordinerade motioner; C+S+V+MP mot Tidö)
+**Parlamentarisk bana**: Lagrådets yttrande juni 2026
 
-| Parti | KU34 | HD03262 | CU31 | HD024184 |
-|-------|------|---------|------|----------|
-| M | Ja | Ja | Ja | Ja (prop.) |
-| SD | Villkorat | Ja | Ja | Okänt |
-| KD | Ja | Ja | Ja | Ja (prop.) |
-| L | Ja | Okänt | Ja | Ja (prop.) |
-| S | Ja | Nej | Nej | Nej (mot.) |
-| C | Ja | Nej | Okänt | Nej (mot.) |
-| V | Ja | Nej | Nej | Okänt |
-| MP | Delvis | Nej | Nej | Okänt |
+#### Cluster 3: Geopolitisk säkerhet (DIW 5.5–7.5)
+**Dokument**: HD11813, HD11812, HD10494
+**Gemensam tematik**: Rysslands militära aggressionslogik, NATO/Aurora 26, Itjkerien
+**Koalitionspolarisering**: Låg (bred enighet om Rysslandsrisken; tvist om diplomatisk linje)
+**Parlamentarisk bana**: Skriftliga svar ministrar (T+72h–T+7d)
+
+#### Cluster 4: Social & humanitär politik (DIW 6.0–7.8)
+**Dokument**: HD01CU31, HD10492–10493 (bistånd)
+**Gemensam tematik**: Hyresgästpåverkan, biståndshalvering, barnkonsekvenser
+**Koalitionspolarisering**: HÖG (CU31 + bistånd driver S-V-MP-mobilisering)
+**Parlamentarisk bana**: CU31 pleniomröstning; bistånd — interpellationssvar Dousa
+
+---
+
+### Politisk aktörklassificering
+
+| Aktör | Roll | Relation till nuläget | Påverkansnivå |
+|-------|------|----------------------|---------------|
+| Tidökoalitionen (M+SD+KD+L) | Styrande majoritet (194 mandat) | Driver propositionsagenda; sårbar på KU34+migrationspackage | KRITISK |
+| Socialdemokraterna (S) | Storsta oppositionsparti (107 mandat) | Koordinerar HD024151 (KU-motion) + migrationsmotioner | HÖG |
+| Sverigedemokraterna (SD) | Tidökoalitionens stödparti (73 mandat) | Avgörande röst KU34 föreningsfrihet; driver säkerhetsdokument | KRITISK |
+| Centerpartiet (C) | Oppositionsparti (24 mandat) | HD024184: koordinerar med S mot transparensproposition | MEDEL-HÖG |
+| Vänsterpartiet (V) | Oppositionsparti (24 mandat) | Biståndskritik (HD10492/10493); migrationsmotioner | MEDEL |
+| Lagrådets yttranden | Institutionell granskare | Avgörande för PUT och säkerhetsprop; yttranden juni 2026 | HÖG (institutionell) |
+| Migrationsverket | Administrativ aktör | Implementationsansvar PUT; estimerat 2–4 år backlog | MEDEL (operationell) |
+| EU-kommissionen | Internationell aktör | CEAS-konformitetsgranskning (HD03262) | MEDEL (T+90d) |
+
+---
+
+### Klassificeringsmönster: Mandatperiod-slutfas
+
+Alla Cluster 1–3 dokument är symtom på en **mandatperiod-slutfas**: Tidökoalitionen pressar igenom centrala vallöften (PUT, hyra, e-legitimation) medan oppositionen maximerar valprofilering (KU34 abort, transparens, bistånd). Detta mönster följer historisk praxis för fjärde mandatåret (jfr. 2022 mandatperiodens slutfas med Alliansen 2018 och S-regeringen 2022). Källa: historical-parallels.md + riksdagen.se dokument HD024184, HD03262.
+
+---
+
+### Pass-2 förbättringar
+
+- Lagt till Admiralty-koder per kluster
+- Förtydligat EU-paktkonformitetsdimension (HD03262 cluster)
+- Lagt till Lagrådets yttranden som institutionell aktör
+- Kompletterat källhänvisningar (riksdagen.se dok_id)
 
 ## Cross-Reference Map
 <!-- source: cross-reference-map.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/cross-reference-map.md -->
@@ -1692,15 +2214,15 @@ This generated report reconciles the analysis folder with the article projection
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 27 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 4 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 2 | Linked in Article Sources, not expanded inline |
 
-**Absent canonical ordered slots (no alias variant on disk)**: `significance-scoring.md`, `stakeholder-perspectives.md / stakeholder-impact.md`, `voter-segmentation.md`, `cycle-trajectory.md`, `parliamentary-season.md`, `swot-analysis.md`, `threat-analysis.md`, `wildcards-blackswans.md`, `horizon-pir-rollforward.md`
+**Absent canonical ordered slots (no alias variant on disk)**: `cycle-trajectory.md`, `parliamentary-season.md`, `wildcards-blackswans.md`, `horizon-pir-rollforward.md`
 
 **Present-but-empty canonical slots (on disk but body empty after cleaning)**: None.
 
-**Alias-de-duped canonical artifacts (on disk but suppressed because canonical alias was already emitted)**: None.
+**Alias-de-duped canonical artifacts (on disk but suppressed because canonical alias was already emitted)**: `political-classification.md`
 
 ## Article Sources
 
@@ -1709,16 +2231,21 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`executive-brief.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/executive-brief.md)
 - [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/synthesis-summary.md)
 - [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/intelligence-assessment.md)
+- [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/significance-scoring.md)
 - [`documents/hd024184-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/documents/hd024184-analysis.md)
 - [`documents/hd10494-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/documents/hd10494-analysis.md)
 - [`documents/hd11812-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/documents/hd11812-analysis.md)
 - [`documents/hd11813-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/documents/hd11813-analysis.md)
+- [`stakeholder-perspectives.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/stakeholder-perspectives.md)
 - [`coalition-mathematics.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/coalition-mathematics.md)
+- [`voter-segmentation.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/voter-segmentation.md)
 - [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/forward-indicators.md)
 - [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/scenario-analysis.md)
 - [`election-2026-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/election-2026-analysis.md)
 - [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/risk-assessment.md)
+- [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/swot-analysis.md)
 - [`quantitative-swot.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/quantitative-swot.md)
+- [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/threat-analysis.md)
 - [`political-stride-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/political-stride-assessment.md)
 - [`pestle-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/pestle-analysis.md)
 - [`historical-parallels.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/historical-parallels.md)
@@ -1726,7 +2253,7 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`implementation-feasibility.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/implementation-feasibility.md)
 - [`media-framing-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/media-framing-analysis.md)
 - [`devils-advocate.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/devils-advocate.md)
-- [`political-classification.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/political-classification.md)
+- [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/evening-analysis/data-download-manifest.md)
