@@ -1,0 +1,30 @@
+{
+  "schema_version": "2.0",
+  "generated": "2026-05-15",
+  "degradation_note": "IMF imf-fetch.ts compare and weo commands returned null/empty during this run. WEO-2026-04 vintage used via imf-context.json only. Economic claims minimized and scoped to Swedish economic baseline.",
+  "economic_context": {
+    "country": "SWE",
+    "year": 2026,
+    "gdp_growth_projection": 1.8,
+    "gdp_growth_unit": "percent",
+    "source": "WEO-2026-04",
+    "note": "Projection from IMF World Economic Outlook April 2026"
+  },
+  "oda_context": {
+    "sweden_oda_target_pct_gni": 1.0,
+    "sweden_oda_estimated_2025_pct_gni": "0.8-0.9",
+    "sweden_oda_trend": "declining",
+    "oecd_dac_standard_pct_gni": 0.7,
+    "note": "ODA estimate based on budget documents; official SCB figure pending"
+  },
+  "economic_provenance": {
+    "provider": "imf",
+    "dataflow": "WEO",
+    "indicator": "NGDP_RPCH",
+    "vintage": "WEO-2026-04",
+    "retrieved_at": "2026-05-15",
+    "status": "degraded",
+    "fallback": "imf-context.json status:ok, WEO-2026-04"
+  },
+  "world_bank_note": "No World Bank data used in this analysis. Economic context from IMF only per ECONOMIC_DATA_CONTRACT v3.1."
+}
