@@ -28,12 +28,13 @@ This guide provides comprehensive translation standards and terminology for the 
 
 ### 📰 News articles are translated out-of-band
 
-News articles are **not** localised by the workflow that generates them. The per-type news workflows (`news-propositions`, `news-motions`, `news-committee-reports`, `news-interpellations`, `news-evening-analysis`, `news-realtime-monitor`, `news-week-ahead`, `news-month-ahead`, `news-weekly-review`, `news-monthly-review`) each run the two-step **aggregate-then-render** pipeline ([`scripts/aggregate-analysis.ts`](scripts/aggregate-analysis.ts) → `analysis/daily/$DATE/$SUB/article.md` → [`scripts/render-articles.ts`](scripts/render-articles.ts) + [`scripts/render-lib/`](scripts/render-lib/)) to emit exactly two rendered files per article:
+News articles are **not** localised by the workflow that generates them. The per-type news workflows (`news-propositions`, `news-motions`, `news-committee-reports`, `news-interpellations`, `news-evening-analysis`, `news-realtime-monitor`, `news-week-ahead`, `news-month-ahead`, `news-weekly-review`, `news-monthly-review`) each run the two-step **aggregate-then-render** pipeline ([`scripts/aggregate-analysis.ts`](scripts/aggregate-analysis.ts) → `analysis/daily/$DATE/$SUB/article.md` → [`scripts/render-articles.ts`](scripts/render-articles.ts) + [`scripts/render-lib/`](scripts/render-lib/)) to emit rendered HTML files for **all 14 languages** per article:
 
 - `news/$DATE-$SUB-en.html` (English master)
-- `news/$DATE-$SUB-sv.html` (Swedish master)
+- `news/$DATE-$SUB-sv.html` (Swedish)
+- `news/$DATE-$SUB-da.html`, `news/$DATE-$SUB-no.html`, …, `news/$DATE-$SUB-zh.html` (remaining 12 languages)
 
-For HTML article variants, the remaining 12 language renderings (`da`, `no`, `fi`, `de`, `fr`, `es`, `nl`, `ar`, `he`, `ja`, `ko`, `zh`) are emitted inline by the per-type workflows themselves via the per-language `article.<lang>.md` step inside `06-article-generation.md`. The standalone [`news-translate`](.github/workflows/news-translate.md) workflow no longer owns HTML translation; its current mission is **executive-brief Markdown translation** — see §"Executive Brief Markdown Translations" below.
+All 14 language renderings are produced by the per-type workflows themselves via the per-language `article.<lang>.md` step inside `06-article-generation.md`. The standalone [`news-translate`](.github/workflows/news-translate.md) workflow **does not touch** `news/*.html` at all; its sole mission is **executive-brief Markdown translation** — see §"Executive Brief Markdown Translations" below.
 
 In parallel with the rendered HTML, each per-type workflow also writes a Markdown **executive brief** (the 60-second BLUF artifact, ≈ 400–600 words) at `analysis/daily/$DATE/$SUB/executive-brief.md` (English only). Localised siblings `executive-brief_<lang>.md` for all 13 non-English target languages are produced **exclusively** by [`news-translate`](.github/workflows/news-translate.md), which runs three times daily (09:00 / 14:00 / 19:00 UTC) and:
 
@@ -184,7 +185,7 @@ The translation workflow picks up at most `max_briefs` (default `3`, range `1–
 - [ ] Filename matches `analysis/daily/$DATE/$SUB/executive-brief_<lang>.md`.
 - [ ] Heading, fence, table, and Mermaid counts match the source exactly.
 - [ ] Every `dok_id`, intressent ID, vote ID, and external URL from the source appears in the translation.
-- [ ] No verbatim English BLUF / "Decisions" / "Confidence" labels remain in non-English files (validator scans a banned-phrase list).
+- [ ] No verbatim English BLUF / section labels ("Executive Brief", "BLUF", "Decisions", "Confidence", "Key Takeaways", "What Happened", "What It Means") remain in non-English files (validator scans a banned-phrase list).
 - [ ] `ar` / `he` files start with `<!-- dir: rtl -->`.
 - [ ] File ends with `<!-- source-sha: <40-hex> -->` matching the source's `git log -1 --format=%H`.
 - [ ] `scripts/validate-executive-brief-translations.ts` exits 0 for this file.

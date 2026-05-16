@@ -41,7 +41,7 @@
  * @license Apache-2.0
  */
 
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -64,6 +64,11 @@ const BANNED_ENGLISH_PHRASES: ReadonlyArray<string> = [
   'Top Forward Trigger',
   '60-Second Read',
   'Decision-Grade',
+  'Decisions',
+  'Confidence',
+  'Key Takeaways',
+  'What Happened',
+  'What It Means',
 ];
 
 /** Banned-phrase scan exemptions (phrases that are technical / canonical). */
@@ -122,9 +127,16 @@ export interface ValidationSummary {
 
 /** Strip fenced code blocks and HTML comments so other regexes don't false-match inside them. */
 function stripFencesAndComments(md: string): string {
-  return md
-    .replace(/```[\s\S]*?```/g, '')
-    .replace(/<!--[\s\S]*?-->/g, '');
+  // Loop until stable to handle any nested/escaped occurrences.
+  let result = md;
+  let prev: string;
+  do {
+    prev = result;
+    result = result
+      .replace(/```[\s\S]*?```/g, '')
+      .replace(/<!--[\s\S]*?-->/g, '');
+  } while (result !== prev);
+  return result;
 }
 
 /** Count `#`-style headings in markdown (any depth). Ignores headings inside fenced blocks. */
@@ -277,28 +289,38 @@ export function validateTranslationContent(opts: ValidateTranslationOptions): Ch
       : `source=${srcMermaid} translation=${tgtMermaid}`,
   });
 
-  // 5. dok_id preservation (source ⊆ translation)
+  // 5. dok_id preservation (set equality — no missing, no extras)
   const srcDokIds = extractDokIds(sourceContent);
   const tgtDokIds = extractDokIds(translationContent);
   const missingDokIds = [...srcDokIds].filter((id) => !tgtDokIds.has(id));
+  const extraDokIds = [...tgtDokIds].filter((id) => !srcDokIds.has(id));
+  const dokIdPassed = missingDokIds.length === 0 && extraDokIds.length === 0;
   checks.push({
     check: 'dok-id-preservation',
-    passed: missingDokIds.length === 0,
-    detail: missingDokIds.length === 0
+    passed: dokIdPassed,
+    detail: dokIdPassed
       ? `${srcDokIds.size} preserved`
-      : `missing: ${missingDokIds.join(', ')}`,
+      : [
+          missingDokIds.length > 0 ? `missing: ${missingDokIds.join(', ')}` : '',
+          extraDokIds.length > 0 ? `extra: ${extraDokIds.join(', ')}` : '',
+        ].filter(Boolean).join('; '),
   });
 
-  // 6. URL preservation (source ⊆ translation)
+  // 6. URL preservation (set equality — no missing, no extras)
   const srcUrls = extractUrls(sourceContent);
   const tgtUrls = extractUrls(translationContent);
   const missingUrls = [...srcUrls].filter((u) => !tgtUrls.has(u));
+  const extraUrls = [...tgtUrls].filter((u) => !srcUrls.has(u));
+  const urlPassed = missingUrls.length === 0 && extraUrls.length === 0;
   checks.push({
     check: 'url-preservation',
-    passed: missingUrls.length === 0,
-    detail: missingUrls.length === 0
+    passed: urlPassed,
+    detail: urlPassed
       ? `${srcUrls.size} preserved`
-      : `missing ${missingUrls.length} of ${srcUrls.size}`,
+      : [
+          missingUrls.length > 0 ? `missing ${missingUrls.length} of ${srcUrls.size}` : '',
+          extraUrls.length > 0 ? `extra ${extraUrls.length} URLs injected` : '',
+        ].filter(Boolean).join('; '),
   });
 
   // 7. RTL marker (ar / he only)
@@ -386,9 +408,10 @@ export function findExecutiveBriefSources(rootDir: string): string[] {
 }
 
 /** Resolve the git commit SHA that last touched a path. Returns null on failure. */
-export function gitLogShaForPath(path: string): string | null {
+export function gitLogShaForPath(filePath: string): string | null {
   try {
-    const out = execSync(`git log -1 --format=%H -- ${JSON.stringify(path)}`, {
+    // Use execFileSync to avoid shell interpretation of the path argument.
+    const out = execFileSync('git', ['log', '-1', '--format=%H', '--', filePath], {
       encoding: 'utf-8',
     }).trim();
     return /^[0-9a-f]{40}$/i.test(out) ? out : null;

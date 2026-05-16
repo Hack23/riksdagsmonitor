@@ -63,11 +63,12 @@ describe('isFileOwnedByCategory — executive-brief markdown', () => {
   });
 
   it('still enforces the existing news/*.html ownership rules', () => {
-    // Content workflow may write EN/SV HTML; translation workflow may not.
+    // Per-type content workflows own ALL news/*.html (all 14 languages).
+    // Translation workflow does NOT own any news/*.html.
     expect(isFileOwnedByCategory('news/2026-05-15-x-en.html', 'content')).toBe(true);
     expect(isFileOwnedByCategory('news/2026-05-15-x-en.html', 'translation')).toBe(false);
-    expect(isFileOwnedByCategory('news/2026-05-15-x-de.html', 'translation')).toBe(true);
-    expect(isFileOwnedByCategory('news/2026-05-15-x-de.html', 'content')).toBe(false);
+    expect(isFileOwnedByCategory('news/2026-05-15-x-de.html', 'content')).toBe(true);
+    expect(isFileOwnedByCategory('news/2026-05-15-x-de.html', 'translation')).toBe(false);
   });
 });
 
@@ -137,16 +138,18 @@ describe('detectCategoryFromFiles', () => {
     ).toBe('translation');
   });
 
-  it('returns "translation" when any non-EN/SV news/*.html is present', async () => {
+  it('returns "content" when any news/*.html is present (all langs are content-owned)', async () => {
     const { detectCategoryFromFiles } = await import('../scripts/validate-file-ownership.js');
-    expect(detectCategoryFromFiles(['news/2026-05-15-propositions-de.html'])).toBe('translation');
-    expect(detectCategoryFromFiles(['news/2026-05-15-motions-zh.html'])).toBe('translation');
+    expect(detectCategoryFromFiles(['news/2026-05-15-propositions-de.html'])).toBe('content');
+    expect(detectCategoryFromFiles(['news/2026-05-15-motions-zh.html'])).toBe('content');
   });
 
-  it('returns "content" when only EN/SV news/*.html and/or executive-brief.md are present', async () => {
+  it('returns "content" when only news/*.html and/or executive-brief.md are present', async () => {
     const { detectCategoryFromFiles } = await import('../scripts/validate-file-ownership.js');
     expect(detectCategoryFromFiles(['news/2026-05-15-propositions-en.html'])).toBe('content');
     expect(detectCategoryFromFiles(['news/2026-05-15-propositions-sv.html'])).toBe('content');
+    // Non-EN/SV HTML is also content-owned now
+    expect(detectCategoryFromFiles(['news/2026-05-15-propositions-de.html', 'news/2026-05-15-motions-ar.html'])).toBe('content');
     expect(
       detectCategoryFromFiles([
         'analysis/daily/2026-05-15/propositions/executive-brief.md',

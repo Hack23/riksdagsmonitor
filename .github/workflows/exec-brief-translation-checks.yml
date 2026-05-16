@@ -21,7 +21,6 @@ on:
     paths:
       - 'analysis/daily/**/executive-brief.md'
       - 'analysis/daily/**/executive-brief_*.md'
-      - 'news/*.html'
       - 'scripts/validate-executive-brief-translations.ts'
       - 'scripts/validate-file-ownership.ts'
       - 'TRANSLATION_GUIDE.md'

@@ -3,11 +3,11 @@
  *
  * Enforces a strict file-ownership contract between content and translation workflows:
  * - Content workflows (news-committee-reports, news-propositions, etc.) own
- *   EN/SV `news/*.html` files **and** the English-master executive brief
+ *   ALL `news/*.html` files (all 14 languages) **and** the English-master executive brief
  *   `analysis/daily/$DATE/$SUB/executive-brief.md`.
- * - Translation workflow (news-translate) owns the 13 non-English `news/*.html`
- *   files **and** all `analysis/daily/$DATE/$SUB/executive-brief_<lang>.md`
- *   files (for the 13 non-English target languages).
+ * - Translation workflow (news-translate) owns all
+ *   `analysis/daily/$DATE/$SUB/executive-brief_<lang>.md` files (for the 13
+ *   non-English target languages). It does NOT own any `news/*.html` files.
  *
  * This prevents merge conflicts when concurrent workflows touch the same date's
  * article files or executive briefs.
@@ -21,13 +21,18 @@ import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-/** Languages owned by content generation workflows */
-export const CONTENT_LANGS = ['en', 'sv'] as const;
-
-/** Languages owned by the translation workflow */
-export const TRANSLATION_LANGS = [
-  'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh',
+/** All languages — content workflows own ALL news/*.html files (all 14 languages). */
+export const CONTENT_LANGS = [
+  'en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh',
 ] as const;
+
+/**
+ * Legacy: languages whose news/*.html files were previously owned by the
+ * translation workflow. Now empty — news-translate no longer touches HTML.
+ * Kept for backwards-compatibility of the export; the ownership check below
+ * uses the updated logic.
+ */
+export const TRANSLATION_LANGS = [] as const;
 
 /**
  * Languages whose `executive-brief_<lang>.md` files are owned by the
@@ -123,15 +128,9 @@ export function isFileOwnedByCategory(
     return true;
   }
 
-  const lang = extractLangFromPath(filepath);
-  if (!lang) {
-    return true;
-  }
-
-  const isContentLang = (CONTENT_LANGS as readonly string[]).includes(lang);
-  const isTranslationLang = (TRANSLATION_LANGS as readonly string[]).includes(lang);
-
-  return category === 'content' ? isContentLang : isTranslationLang;
+  // Per-type content workflows own ALL news/*.html files (all 14 languages).
+  // The news-translate workflow does NOT write any news/*.html files.
+  return category === 'content';
 }
 
 /**
@@ -218,15 +217,13 @@ export function validateFileList(
  * Auto-detect the workflow category from a list of changed file paths.
  *
  * Detection rules:
- *   - If any file is an `executive-brief_<lang>.md` translation, OR
- *     any `news/*.html` for a non-English/non-Swedish language → `translation`.
- *   - Otherwise → `content` (English/Swedish HTML + English executive-brief source).
+ *   - If any file is an `executive-brief_<lang>.md` translation → `translation`.
+ *   - If any file is on the ownership surface (news/*.html or English
+ *     executive-brief.md) but not a translation → `content`.
+ *   - Otherwise → `null` (no ownership-surface files; caller treats as no-op pass).
  *
- * Files outside the ownership surface (\`news/*.html\` and
- * \`analysis/daily/(any)/executive-brief(_lang).md\`) are ignored for detection.
- *
- * Returns `null` if no ownership-surface files are present (caller should treat
- * the check as a no-op pass).
+ * Note: `news/*.html` changes NEVER imply "translation" because per-type
+ * content workflows own all 14 HTML language variants.
  *
  * @param files - Array of repo-relative file paths to inspect
  * @returns The inferred workflow category, or `null` if no surface files
@@ -242,11 +239,8 @@ export function detectCategoryFromFiles(
       continue;
     }
     if (f.startsWith('news/') && f.endsWith('.html')) {
+      // All news/*.html is owned by content workflows — never implies translation.
       sawSurfaceFile = true;
-      const lang = extractLangFromPath(f);
-      if (lang && (TRANSLATION_LANGS as readonly string[]).includes(lang)) {
-        return 'translation';
-      }
     }
   }
   return sawSurfaceFile ? 'content' : null;
