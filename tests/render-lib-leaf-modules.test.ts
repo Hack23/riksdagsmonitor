@@ -706,15 +706,50 @@ describe('aggregator/seo/title — title cleanup & BLUF synthesis', () => {
     expect(out).toMatch(/bill$/);
   });
 
-  it('titleFromBluf strips a leading Swedish "Den <day> <månad> <year>" date prefix', () => {
-    // Live 2026-05-16 realtime-pulse regression: BLUF was Swedish
-    // prose `Den 13 maj 2026 antog Rysslands statsduma …` and the
-    // English card shipped the truncated Swedish fragment.
+  it('titleFromBluf KEEPS a leading Swedish date prefix when stripping would leave a V2 verb-leading fragment', () => {
+    // Swedish V2 word order: "Den 13 maj 2026 antog riksdagen …" →
+    // stripping the date prefix leaves "antog riksdagen …" which is
+    // verb-leading (lost grammatical subject due to V2 inversion).
+    // The guard detects "antog" in VERB_LEADING_TOKENS and keeps the
+    // date prefix — same logic as the English "marks …" case.
     const bluf =
       'Den 13 maj 2026 antog Rysslands statsduma en lag som institutionaliserar makten.';
     const out = titleFromBluf(bluf, 70);
+    // Date prefix is kept — verb-leading guard fires.
+    expect(out!.startsWith('Den')).toBe(true);
+    expect(out).not.toMatch(/^antog\s/i);
+  });
+
+  it('titleFromBluf strips a leading Swedish date prefix when result is NOT verb-leading', () => {
+    // When the stripped result starts with a noun phrase (not a verb),
+    // the date IS removed as intended. Here "Den 7 maj 2026, riksdagen…"
+    // has subject-first order after the comma — no V2 inversion — so
+    // stripping leaves "riksdagen…" (noun-leading).
+    const bluf =
+      'Den 7 maj 2026, riksdagen röstade nej till förslaget om skattelättnader.';
+    const out = titleFromBluf(bluf, 70);
     expect(out).not.toMatch(/^Den\s+\d/);
     expect(out).not.toMatch(/\bmaj\s+2026\b/);
+  });
+
+  it('titleFromBluf KEEPS a leading German date prefix when stripping would leave a V2 verb-leading fragment', () => {
+    // German V2: "Am 13. Mai 2026 beschloss der Bundestag …" →
+    // stripping "Am 13. Mai 2026 " leaves "beschloss der Bundestag …"
+    // which starts with German past-tense verb (V2 inversion).
+    const bluf =
+      'Am 13. Mai 2026 beschloss der Bundestag ein neues Gesetz zur Verteidigungspolitik.';
+    const out = titleFromBluf(bluf, 70);
+    expect(out!.startsWith('Am')).toBe(true);
+    expect(out).not.toMatch(/^beschloss\s/i);
+  });
+
+  it('titleFromBluf strips a leading German date prefix when result is NOT verb-leading', () => {
+    // A noun-leading result after date strip → date is removed.
+    const bluf =
+      'Am 7. Mai 2026 ist der neue Haushaltsentwurf in Kraft getreten.';
+    const out = titleFromBluf(bluf, 70);
+    expect(out).not.toMatch(/^Am\s+\d/);
+    expect(out).not.toMatch(/\bMai\s+2026\b/);
   });
 });
 

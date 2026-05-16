@@ -170,17 +170,24 @@ export const BLUF_DATE_PREFIX_PATTERNS: readonly RegExp[] = [
  * than ship a subjectless verb. Better SEO-incorrect than grammatically
  * broken.
  *
+ * Covers English, Swedish, and German — mirroring the multilingual scope
+ * of {@link BLUF_DATE_PREFIX_PATTERNS}. Swedish and German use V2
+ * (verb-second) word order after fronted time adverbials, so stripping
+ * `Den 13 maj 2026` or `Am 13. Mai 2026` leaves the verb before the
+ * subject (e.g. `antog riksdagen …`, `beschloss der Bundestag …`).
+ *
  * Curation criteria (intentionally a high-precision subset, not
  * comprehensive coverage):
  * - Common 3rd-person-singular verbs in political/legislative BLUF
- *   leads: `marks`, `shows`, `submitted`, `tabled`, …
+ *   leads: `marks`, `shows`, `submitted`, `tabled`, `antog`, …
  * - Modal/auxiliary verbs that always need a subject: `will`, `would`,
- *   `must`, `should`, …
+ *   `must`, `should`, `ska`, `wird`, …
  * Not included: rare or domain-narrow verbs (false-positive risk).
  * Add new entries when an audit shows a real BLUF starting with the
  * verb after date-prefix strip; do not pre-emptively expand.
  */
 const VERB_LEADING_TOKENS = new Set([
+  // ── English ─────────────────────────────────────────────────────────
   // Present tense (3rd person singular) — the most common in BLUF leads
   'marks', 'shows', 'reveals', 'signals', 'indicates', 'suggests',
   'faces', 'sees', 'brings', 'drives', 'highlights', 'represents',
@@ -191,10 +198,61 @@ const VERB_LEADING_TOKENS = new Set([
   'announced', 'unveiled', 'reported', 'agreed', 'failed', 'collapsed',
   // Future / modal
   'will', 'would', 'could', 'may', 'might', 'should', 'must',
+
+  // ── Swedish (V2 — date-adverbial fronting inverts subject/verb) ──────
+  // Past tense forms common in political/legislative BLUF
+  'antog',          // adopted  (riksdagen antog / statsduman antog)
+  'beslutade',      // decided
+  'röstade',        // voted
+  'godkände',       // approved
+  'avslog',         // rejected
+  'föreslog',       // proposed
+  'presenterade',   // presented
+  'tillkännagav',   // announced
+  'fastställde',    // established / set
+  'inledde',        // initiated
+  'avslutade',      // concluded
+  'avvisade',       // dismissed
+  'bekräftade',     // confirmed
+  'behandlade',     // processed
+  'debatterade',    // debated
+  'lade',           // submitted (lade fram)
+  'passerade',      // passed
+  // Swedish modal / future forms
+  'ska',            // shall / will
+  'vill',           // wants
+  'måste',          // must
+  'bör',            // should
+
+  // ── German (V2 — fronted adverbials invert subject/verb) ─────────────
+  // Past-tense (Präteritum) forms common in political/legislative BLUF
+  'beschloss',      // decided / resolved
+  'verabschiedete', // passed / enacted
+  'stimmte',        // voted
+  'lehnte',         // rejected
+  'kündigte',       // announced
+  'präsentierte',   // presented
+  'veröffentlichte',// published
+  'einigte',        // agreed
+  'wählte',         // elected / chose
+  'berief',         // convened
+  'scheiterte',     // failed
+  'bestätigte',     // confirmed
+  'erklärte',       // declared / explained
+  'stellte',        // presented (stellte vor)
+  'trat',           // entered (trat in Kraft = came into force)
+  'nahm',           // took (nahm an = adopted)
+  // German modal / auxiliary forms
+  'wird',           // will
+  'soll',           // should / shall
+  'muss',           // must
+  'kann',           // can
 ]);
 
 function startsWithVerb(text: string): boolean {
-  const m = text.match(/^([A-Za-z]+)/);
+  // Use \p{L} (Unicode letter) so Swedish ä/å/ö and German ä/ö/ü are
+  // captured correctly (e.g. `röstade`, `godkände`, `veröffentlichte`).
+  const m = text.match(/^(\p{L}+)/u);
   if (!m) return false;
   return VERB_LEADING_TOKENS.has(m[1]!.toLowerCase());
 }
