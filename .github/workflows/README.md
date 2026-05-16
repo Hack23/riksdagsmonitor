@@ -88,7 +88,7 @@ Each agentic workflow is a **pair**: an authored `.md` source + a compiled `.loc
 
 | # | Source (`.md`) | Lock (`.lock.yml`) | Schedule | Purpose |
 |---|----------------|---------------------|----------|---------|
-| 14 | [`news-translate.md`](news-translate.md) | [`news-translate.lock.yml`](news-translate.lock.yml) | Mon–Fri 11:00 + 17:00 UTC, weekends 14:00 | Translate EN/SV articles into the remaining 12 languages |
+| 14 | [`news-translate.md`](news-translate.md) | [`news-translate.lock.yml`](news-translate.lock.yml) | Daily 09:00 + 14:00 + 19:00 UTC | Translate `analysis/daily/**/executive-brief.md` into `executive-brief_<lang>.md` for the 13 non-English target languages (default batch: 3 sources × 13 languages = 39 files/run) |
 
 **Every news workflow imports the bounded-context prompt modules in this exact order** (full contract in [`.github/prompts/README.md`](../prompts/README.md)):
 
@@ -169,7 +169,7 @@ flowchart LR
     C1[Every 15 min → uptime-monitor]
     C2[Nightly 03:30 UTC → update-cia-csv-data]
     C3[Mon-Fri 04:00-18:00 → news-* article + analysis]
-    C4[Weekends 12:00 + 14:00 → realtime + translate]
+    C4[Daily 09 + 14 + 19 UTC → news-translate (exec-brief markdown)]
     C5[Fri 07:00 → news-week-ahead]
     C6[Sat 09:00 → news-weekly-review]
     C7[28th 10:00 → news-monthly-review]

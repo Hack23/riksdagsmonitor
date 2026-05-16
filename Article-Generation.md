@@ -131,7 +131,7 @@ flowchart TB
     F -- fail --> E
     F -- pass --> G["📝 aggregate-analysis.ts<br/>analysis folder → article.md"]
     G --> H["🌐 render-articles.ts<br/>article.md → news/*-{14 languages}.html"]
-    H --> I["🌍 news-translate.md (catch-up only)<br/>refines/upgrades English-fallback files"]
+    H --> I["🌍 news-translate.md (separate track)<br/>translates executive-brief.md → executive-brief_&lt;lang&gt;.md"]
     H --> J["📦 Vite build<br/>prebuild aggregates/renders/indexes/rss/sitemap"]
     I --> J
     J --> K["🚀 deploy-s3.yml<br/>S3 upload + CloudFront invalidation"]
@@ -733,7 +733,7 @@ news/2026-04-24-interpellations-ko.html
 news/2026-04-24-interpellations-zh.html
 ```
 
-When the agent could not produce `article.<lang>.md` for a given language under the time budget, the renderer transparently falls back to the English source — the file is still emitted so the language switcher and hreflang surface remain consistent. The `news-translate` workflow upgrades any English-fallback files to real translations on the next scheduled run.
+When the agent could not produce `article.<lang>.md` for a given language under the time budget, the renderer transparently falls back to the English source — the file is still emitted so the language switcher and hreflang surface remain consistent. The `news-translate` workflow does **not** repair `article.<lang>.md`; its mission is the executive-brief markdown pipeline (`executive-brief.md` → `executive-brief_<lang>.md` × 13 languages). If `article.<lang>.md` is missing, the next scheduled per-type run regenerates the article (including translations) from fresh analysis.
 
 #### Localized + English merge (avoids truncated non-EN HTML)
 

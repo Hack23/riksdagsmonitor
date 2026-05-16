@@ -2,10 +2,15 @@
  * File Ownership Validator for News Workflow Conflict Prevention
  *
  * Enforces a strict file-ownership contract between content and translation workflows:
- * - Content workflows (news-committee-reports, news-propositions, etc.) own EN/SV files
- * - Translation workflow (news-translate) owns all other language files (DA/NO/FI/DE/FR/ES/NL/AR/HE/JA/KO/ZH)
+ * - Content workflows (news-committee-reports, news-propositions, etc.) own
+ *   EN/SV `news/*.html` files **and** the English-master executive brief
+ *   `analysis/daily/$DATE/$SUB/executive-brief.md`.
+ * - Translation workflow (news-translate) owns the 13 non-English `news/*.html`
+ *   files **and** all `analysis/daily/$DATE/$SUB/executive-brief_<lang>.md`
+ *   files (for the 13 non-English target languages).
  *
- * This prevents merge conflicts when concurrent workflows touch the same date's article files.
+ * This prevents merge conflicts when concurrent workflows touch the same date's
+ * article files or executive briefs.
  *
  * @author Hack23 AB
  * @license Apache-2.0
@@ -23,6 +28,20 @@ export const TRANSLATION_LANGS = [
   'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh',
 ] as const;
 
+/**
+ * Languages whose `executive-brief_<lang>.md` files are owned by the
+ * `news-translate` workflow. Includes Swedish — the brief markdown pipeline
+ * uses a different ownership split than the HTML article pipeline:
+ *   - `executive-brief.md`                = English source, owned by per-type content workflows.
+ *   - `executive-brief_<lang>.md` (× 13)  = all non-English targets, owned by news-translate.
+ *
+ * See TRANSLATION_GUIDE.md §"Executive Brief Markdown Translations" for the
+ * authoritative content contract.
+ */
+export const EXEC_BRIEF_TRANSLATION_LANGS = [
+  'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh',
+] as const;
+
 /** Workflow category for file ownership validation */
 export type WorkflowCategory = 'content' | 'translation';
 
@@ -37,15 +56,44 @@ export interface ValidationResult {
 }
 
 /**
- * Extract the language code from a news article filename.
- * Expected pattern: `news/YYYY-MM-DD-slug-{lang}.html`
+ * Extract the language code from a news article filename or executive-brief
+ * Markdown filename.
+ *
+ * Recognised patterns:
+ *   - `news/YYYY-MM-DD-slug-<lang>.html`               (HTML article)
+ *   - `analysis/daily/.../executive-brief_<lang>.md`   (Markdown translation)
+ *
+ * Returns `null` for the canonical English source `executive-brief.md` (no
+ * suffix) — callers must handle that file via path-based ownership rules.
  *
  * @param filepath - The file path to extract the language from
  * @returns The two-letter language code, or null if no match
  */
 export function extractLangFromPath(filepath: string): string | null {
+  // executive-brief_<lang>.md
+  const briefMatch = filepath.match(/\/executive-brief_([a-z]{2})\.md$/);
+  if (briefMatch) return briefMatch[1] ?? null;
+
+  // news/...-<lang>.html
   const match = filepath.match(/-([a-z]{2})\.html$/);
   return match?.[1] ?? null;
+}
+
+/**
+ * Returns `true` if the file path is the English-master executive brief
+ * (no language suffix), which is owned by per-type content workflows.
+ */
+function isEnglishExecutiveBriefSource(filepath: string): boolean {
+  return /\/analysis\/daily\/.+\/executive-brief\.md$/.test('/' + filepath)
+    && !/\/executive-brief_[a-z]{2}\.md$/.test('/' + filepath);
+}
+
+/**
+ * Returns `true` if the file path is a translated executive brief
+ * (`executive-brief_<lang>.md`), which is owned by the news-translate workflow.
+ */
+function isExecutiveBriefTranslation(filepath: string): boolean {
+  return /\/analysis\/daily\/.+\/executive-brief_[a-z]{2}\.md$/.test('/' + filepath);
 }
 
 /**
@@ -59,6 +107,17 @@ export function isFileOwnedByCategory(
   filepath: string,
   category: WorkflowCategory,
 ): boolean {
+  // Executive-brief Markdown ownership: English source vs translation siblings.
+  if (isEnglishExecutiveBriefSource(filepath)) {
+    return category === 'content';
+  }
+  if (isExecutiveBriefTranslation(filepath)) {
+    const lang = extractLangFromPath(filepath);
+    if (!lang) return true;
+    const isTranslationLang = (EXEC_BRIEF_TRANSLATION_LANGS as readonly string[]).includes(lang);
+    return category === 'translation' && isTranslationLang;
+  }
+
   if (!filepath.startsWith('news/') || !filepath.endsWith('.html')) {
     return true;
   }
@@ -134,18 +193,23 @@ export function validateFileList(
   files: string[],
   category: WorkflowCategory,
 ): ValidationResult {
-  const newsHtmlFiles = files.filter(
-    (f) => f.startsWith('news/') && f.endsWith('.html'),
-  );
+  const ownedFiles = files.filter((f) => {
+    // News HTML articles
+    if (f.startsWith('news/') && f.endsWith('.html')) return true;
+    // Executive-brief markdown (English source + translations)
+    if (/\/executive-brief(?:_[a-z]{2})?\.md$/.test('/' + f)
+      && f.startsWith('analysis/daily/')) return true;
+    return false;
+  });
 
-  const violations = newsHtmlFiles.filter(
+  const violations = ownedFiles.filter(
     (f) => !isFileOwnedByCategory(f, category),
   );
 
   return {
     passed: violations.length === 0,
     violations,
-    checkedCount: newsHtmlFiles.length,
+    checkedCount: ownedFiles.length,
   };
 }
 
