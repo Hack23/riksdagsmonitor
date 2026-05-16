@@ -122,7 +122,7 @@ function createMinimalValidAnalysis(dir: string): void {
 
     // Add specific content for structural checks
     if (artifact.filename === 'executive-brief.md') {
-      content = '# Executive Brief\n\n## 🎯 BLUF\n\nBrief summary.\n\n## 🧭 3 Decisions This Brief Supports\n\n1. Decision A\n\n```mermaid\ngraph TD\n  A --> B\n  style A fill:#f00\n```\n';
+      content = '# Riksdag approves SEK 12 bn fuel-tax cut ahead of September election\n\n## 🎯 BLUF\n\nBrief summary.\n\n## 🧭 3 Decisions This Brief Supports\n\n1. Decision A\n\n```mermaid\ngraph TD\n  A --> B\n  style A fill:#f00\n```\n';
     } else if (artifact.filename === 'swot-analysis.md') {
       // Check 4: SWOT sections with evidence citations (dok_id per bullet)
       content = '# SWOT Analysis\n\n'
@@ -684,9 +684,9 @@ describe('checkFamilyCStructure', () => {
   });
 
   describe('executive-brief.md', () => {
-    it('passes with BLUF and Decisions sections', async () => {
+    it('passes with publishable H1, BLUF and Decisions sections', async () => {
       writeArtifact(testDir, 'executive-brief.md',
-        '## 🎯 BLUF\n\nSummary.\n\n## 🧭 Decisions This Brief Supports\n\n1. A\n');
+        '# Riksdag narrowly approves FiU48 fuel-tax cut\n\n## 🎯 BLUF\n\nSummary.\n\n## 🧭 Decisions This Brief Supports\n\n1. A\n');
       const results = await checkFamilyCStructure(testDir);
       const failures = results.filter((r) => !r.passed && r.artifact === 'executive-brief.md');
       expect(failures).toHaveLength(0);
@@ -694,10 +694,48 @@ describe('checkFamilyCStructure', () => {
 
     it('fails when BLUF missing', async () => {
       writeArtifact(testDir, 'executive-brief.md',
-        '## Introduction\n\n## Decisions This Brief Supports\n\n1. A\n');
+        '# Riksdag approves FiU48\n\n## Introduction\n\n## Decisions This Brief Supports\n\n1. A\n');
       const results = await checkFamilyCStructure(testDir);
       const failures = results.filter((r) => !r.passed && r.artifact === 'executive-brief.md');
       expect(failures.length).toBeGreaterThan(0);
+    });
+
+    it("fails when H1 still contains the 'REPLACE THIS H1' template placeholder", async () => {
+      writeArtifact(testDir, 'executive-brief.md',
+        '# 📰 Executive Brief Template — REPLACE THIS H1 WITH A PUBLISHABLE STORY-ORIENTED TITLE\n\n## 🎯 BLUF\n\nSummary.\n\n## 🧭 Decisions\n\n1. A\n');
+      const results = await checkFamilyCStructure(testDir);
+      const failures = results.filter(
+        (r) => !r.passed && r.artifact === 'executive-brief.md' && /REPLACE THIS H1/i.test(r.message ?? ''),
+      );
+      expect(failures.length).toBeGreaterThan(0);
+    });
+
+    it("fails when H1 is bare-boilerplate '# Executive Brief'", async () => {
+      writeArtifact(testDir, 'executive-brief.md',
+        '# Executive Brief\n\n## 🎯 BLUF\n\nSummary.\n\n## 🧭 Decisions\n\n1. A\n');
+      const results = await checkFamilyCStructure(testDir);
+      const failures = results.filter(
+        (r) => !r.passed && r.artifact === 'executive-brief.md' && /bare boilerplate/i.test(r.message ?? ''),
+      );
+      expect(failures.length).toBeGreaterThan(0);
+    });
+
+    it("fails when H1 contains the banned phrase 'AI-generated political intelligence'", async () => {
+      writeArtifact(testDir, 'executive-brief.md',
+        '# AI-generated political intelligence: daily Riksdag brief\n\n## 🎯 BLUF\n\nSummary.\n\n## 🧭 Decisions\n\n1. A\n');
+      const results = await checkFamilyCStructure(testDir);
+      const failures = results.filter(
+        (r) => !r.passed && r.artifact === 'executive-brief.md' && /AI-generated political intelligence/i.test(r.message ?? ''),
+      );
+      expect(failures.length).toBeGreaterThan(0);
+    });
+
+    it('tolerates a leading emoji in an otherwise publishable H1', async () => {
+      writeArtifact(testDir, 'executive-brief.md',
+        '# 📰 Riksdag approves FiU48 narrowly — opposition splits on amendment 3\n\n## 🎯 BLUF\n\nSummary.\n\n## 🧭 Decisions\n\n1. A\n');
+      const results = await checkFamilyCStructure(testDir);
+      const failures = results.filter((r) => !r.passed && r.artifact === 'executive-brief.md');
+      expect(failures).toHaveLength(0);
     });
   });
 

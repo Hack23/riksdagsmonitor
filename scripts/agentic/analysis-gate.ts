@@ -610,7 +610,19 @@ export async function checkFamilyCStructure(
 }
 
 /**
- * Check executive-brief.md for BLUF and Decisions sections.
+ * Check executive-brief.md for BLUF, Decisions sections and H1 quality.
+ *
+ * H1 quality matters because the executive-brief H1 is the SEO `<title>`,
+ * `og:title`, JSON-LD `headline` and sitemap-card heading across all 14
+ * language variants of the published article. Shipping the literal
+ * template placeholder (`# 📰 Executive Brief Template — REPLACE THIS
+ * H1 …`) or the bare-boilerplate `# Executive Brief` heading produces a
+ * weak fallback title via `titleFromBluf()` and destroys SERP value.
+ *
+ * Source of truth for the rule:
+ *   - `analysis/methodologies/per-artifact-methodologies.md#executive-brief`
+ *   - `.github/prompts/seo-metadata-contract.md` §2 + §6
+ *   - `analysis/templates/executive-brief.md` (Pass-2 self-audit "H1 is publishable")
  */
 async function checkExecutiveBrief(analysisDir: string): Promise<GateCheckResult[]> {
   const results: GateCheckResult[] = [];
@@ -639,11 +651,64 @@ async function checkExecutiveBrief(analysisDir: string): Promise<GateCheckResult
     });
   }
 
-  if (hasBluf && hasDecisions) {
+  // H1 quality check — block the template-placeholder and boilerplate-only
+  // headings that would ship as the SERP <title>.
+  const h1Match = content.match(/^#\s+(.+?)\s*$/m);
+  if (h1Match) {
+    const h1 = h1Match[1]
+      // Strip <p align="center"> / <h1 align="center"> wrappers (the
+      // template uses <h1 align="center">…</h1>; we extract the inner
+      // text in the fallback regex below). Markdown H1 is the primary
+      // path so this branch is mostly defensive.
+      .replace(/<[^>]+>/g, '')
+      .trim();
+    const h1Lower = h1.toLowerCase();
+    // Patterns that indicate the editor did not replace the template H1.
+    const placeholderPatterns: ReadonlyArray<{ pattern: RegExp; label: string }> = [
+      { pattern: /replace\s*this\s*h1/i, label: "literal 'REPLACE THIS H1' placeholder" },
+      { pattern: /executive\s+brief\s+template/i, label: "'Executive Brief Template' template heading" },
+      { pattern: /ai[_\s-]*must[_\s-]*replace/i, label: "'AI_MUST_REPLACE' stub marker" },
+      { pattern: /ai-generated\s+political\s+intelligence/i, label: "banned phrase 'AI-generated political intelligence'" },
+    ];
+    for (const { pattern, label } of placeholderPatterns) {
+      if (pattern.test(h1)) {
+        results.push({
+          checkId: 'family-c-structure',
+          passed: false,
+          message: `executive-brief.md: H1 still contains ${label} — replace with a story-oriented publishable title (see methodology #executive-brief)`,
+          artifact: 'executive-brief.md',
+        });
+      }
+    }
+    // Bare-boilerplate H1: just "Executive Brief" (optionally with
+    // emoji / leading icon). `cleanArticleTitle()` strips the
+    // `Executive Brief — ` prefix and trailing date; if the H1 is
+    // literally just `Executive Brief`, nothing remains and the
+    // renderer falls back to `titleFromBluf()`.
+    const h1Plain = h1Lower
+      .replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}\s—–-]+/u, '')
+      .replace(/[\s—–-]+$/u, '')
+      .trim();
+    if (h1Plain === 'executive brief' || h1Plain === '') {
+      results.push({
+        checkId: 'family-c-structure',
+        passed: false,
+        message:
+          "executive-brief.md: H1 is bare boilerplate ('Executive Brief') — write a publishable story-oriented title (55–70 chars EN, actor + active verb + instrument or number)",
+        artifact: 'executive-brief.md',
+      });
+    }
+  }
+
+  if (
+    hasBluf &&
+    hasDecisions &&
+    results.filter((r) => !r.passed && r.artifact === 'executive-brief.md').length === 0
+  ) {
     results.push({
       checkId: 'family-c-structure',
       passed: true,
-      message: 'executive-brief.md: BLUF and Decisions present',
+      message: 'executive-brief.md: BLUF, Decisions present; H1 is publishable',
       artifact: 'executive-brief.md',
     });
   }
