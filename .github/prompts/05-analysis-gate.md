@@ -340,6 +340,16 @@ if [ -s "$MANIFEST" ] && grep -q "## Full-Text Fetch Outcomes" "$MANIFEST" \
     || { echo "❌ data-download-manifest.md: Full-Text Fetch Outcomes table present but fewer than 2 top documents have full_text_available=true (found ${FT_SUCCESS:-0}). Add <!-- full-text-fallback: <reason> --> to bypass."; FAIL=1; }
 fi
 
+# Check 12 — Analysis language (English-only)
+# Block when any analysis artifact (excluding executive-brief_<lang>.md translation siblings) 
+# exceeds the Swedish-density threshold. The script exits 0 on pass and exits 1 with a 
+# per-file violation list on fail.
+if command -v npx >/dev/null 2>&1; then
+  npx tsx scripts/check-analysis-language.ts "$ANALYSIS_DIR" || FAIL=1
+else
+  echo "⚠️  Check 12 (analysis language): npx not found — skipping (non-blocking)"
+fi
+
 [ "$FAIL" -eq 0 ] || exit 1
 ```
 

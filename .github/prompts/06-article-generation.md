@@ -61,29 +61,11 @@ Any heading like `## Pass 2 …` / `### Pass 2 refinements` / `## 🔁 Pass 2 ad
 
 If a required artifact is missing the aggregator aborts with a non-zero exit code — return to `04-analysis-pipeline.md` and produce the missing file; do **not** hand-edit `article.md`.
 
-### Step 2 — Translate `article.md` to every non-English language
+### Step 2 — (No-op) Per-language Markdown translation is no longer performed
 
-Before rendering, the agent **SHOULD** produce a per-language Markdown sibling for every supported non-English language. The translation surface is the same canonical `article.md`; the renderer picks up `article.<lang>.md` automatically when it exists, and falls back to the English source otherwise — so any missing sibling temporarily degrades that language's HTML to English content under a non-English `<html lang>`. This fallback is acceptable as a **temporary** state within a single run's time budget. The `news-translate` workflow does **not** repair `article.<lang>.md` — its mission is the executive-brief markdown pipeline (`executive-brief.md` → `executive-brief_<lang>.md`). If `article.<lang>.md` is missing, the next scheduled per-type run regenerates the whole article (including translations) from fresh analysis.
+Per-type workflows do **not** produce `article.<lang>.md` for any non-English language. The agent stops after writing the canonical English `article.md` from Step 1. Non-English HTML pages are produced by `scripts/render-articles.ts` via the localized executive-brief cascade — the renderer composes the English `article.md` body with `executive-brief_<lang>.md` (when present) into a single Markdown document and emits chrome-wrapped HTML in the target language. See `scripts/render-lib/article-merge.ts` (`mergeLocalizedWithEnglish`) for the merge contract.
 
-Target languages (13 — every supported language except `en`):
-
-```text
-sv  da  no  fi  de  fr  es  nl  ar  he  ja  ko  zh
-```
-
-For each target language the agent produces:
-
-`analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.<lang>.md`
-
-Translation contract:
-
-- Translate the body prose, headings and table cells.
-- **Preserve verbatim**: YAML front-matter values that are identifiers (`subfolder`, `slug`, `source_folder`, `dok_id` references, file paths, GitHub URLs), Mermaid code fences, JSON code blocks, numeric values, and Schema.org / dataflow / dataset identifiers. Update `language:` in the front-matter to the target language code.
-- Keep Swedish political terminology in Swedish where it is the proper noun (party names, committee names, document type acronyms, Riksdagsmonitor brand).
-- For Arabic (`ar`) and Hebrew (`he`) the chrome handles `dir="rtl"` automatically — do not add inline direction overrides.
-- Keep IMF / SCB / WB / Statskontoret citation blocks intact, including `economicProvenance` JSON.
-
-If the time budget is exhausted before every language is translated, ship whatever has been produced — temporary English fallback for missing languages is acceptable. The next scheduled per-type run regenerates the article (including translations) from fresh analysis; the `news-translate` workflow is **not** responsible for `article.<lang>.md` repair (its mission is `executive-brief_<lang>.md`). **Never commit a half-translated file** — either the language is fully translated or the renderer falls back to the English source for that slot. **Never stage `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/executive-brief_<lang>.md` from a per-type workflow** — those files are exclusively owned by `news-translate`.
+Any historical `article.<lang>.md` left in the repo is treated as forbidden artifacts by `scripts/validate-file-ownership.ts` (category-independent reject) — per-type workflows must never recreate them.
 
 ### Step 3 — Render
 
