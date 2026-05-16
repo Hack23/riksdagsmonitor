@@ -347,6 +347,58 @@ describe('mergeLocalizedWithEnglish', () => {
     expect(data.title).toBe('Regierungspropositionspakete');
     expect(data.description).toBe('DIW Gesamt: 10,0/10');
   });
+
+  // --- No localized article, only localized executive-brief ----------------
+  // Covers the wire-up bug fixed in `scripts/render-articles.ts`: when a
+  // date ships `executive-brief_<lang>.md` for all 14 languages but no
+  // `article.<lang>.md` agent-translation, the renderer must still consume
+  // the localized brief to localize `<title>` / `<meta description>`. The
+  // merger receives `localizedMarkdown: ''` and the full localized brief.
+  it('overlays brief title/description on the English body when the localized article is missing', () => {
+    const briefDe = [
+      '# Tidö-Regierung legt drei Vorlagen vor — Umverteilung von 12,4 Mrd Kronen',
+      '',
+      '## 🎯 BLUF',
+      '',
+      'Am 7. Mai 2026 legte die Tidö-Regierung drei Vorlagen vor, die zusammen 12,4 Milliarden Kronen zwischen Forstwirtschaft und Verteidigung umverteilen.',
+    ].join('\n');
+    const out = mergeLocalizedWithEnglish({
+      englishMarkdown,
+      localizedMarkdown: '',
+      lang: 'de',
+      localizedBriefMarkdown: briefDe,
+      subfolder: 'propositions',
+    });
+    const { data, content } = matter(out);
+    expect(data.title).toContain('Tidö-Regierung');
+    expect(data.title).toContain('12,4 Mrd');
+    expect(data.description).toContain('12,4 Milliarden');
+    expect(data.language).toBe('de');
+    // The English body is preserved verbatim (no merge boundary because
+    // there is no localized body to prepend).
+    expect(content).toContain('On 7 May 2026 the Tidö government submitted three propositions.');
+    expect(content).toContain('Coalition Mathematics');
+    expect(content).not.toContain('Detailed analysis (in English)');
+  });
+
+  it('falls back to the English brief title/description when both localized inputs are missing', () => {
+    const out = mergeLocalizedWithEnglish({
+      englishMarkdown,
+      localizedMarkdown: '',
+      lang: 'de',
+      // localizedBriefMarkdown intentionally omitted.
+      subfolder: 'propositions',
+    });
+    const { data, content } = matter(out);
+    // English title/description survive because the localized brief is
+    // missing and there is no localized article front-matter to consult.
+    expect(data.title).toBe('Government propositions');
+    expect(data.description).toBe('Three interlocking propositions');
+    // …but `language` is forced to the target so `<html lang>` and
+    // JSON-LD `inLanguage` match the rendered HTML.
+    expect(data.language).toBe('de');
+    expect(content).toContain('On 7 May 2026 the Tidö government submitted three propositions.');
+  });
 });
 
 describe('buildEnglishCoverageBoundary', () => {
