@@ -206,8 +206,10 @@ if [ -s "$ANALYSIS_DIR/executive-brief.md" ]; then
       FAIL=1
     fi
     # Date-in-H1 guard (seo-metadata-contract.md §2.1) — title must not
-    # contain a literal publication date. Catches ISO YYYY-MM-DD and
-    # English + Swedish long-form months.
+    # contain a literal publication date. Catches ISO YYYY-MM-DD,
+    # English day-first ("15 May 2026") + US-order ("May 15, 2026") +
+    # Swedish long-form months. Mirrors scripts/agentic/analysis-gate.ts
+    # checkExecutiveBrief — keep regex parity TS ↔ bash.
     EB_H1_TEXT="$(printf '%s' "$EB_H1" \
       | sed -E 's/^#[[:space:]]+//' \
       | sed -E 's/<[^>]+>//g')"
@@ -216,6 +218,9 @@ if [ -s "$ANALYSIS_DIR/executive-brief.md" ]; then
       FAIL=1
     elif printf '%s' "$EB_H1_LOWER" | grep -qE '[0-9]{1,2}[[:space:]]+(january|february|march|april|may|june|july|august|september|october|november|december)[[:space:]]+[0-9]{4}'; then
       echo "❌ executive-brief.md: H1 contains a literal English long-form date — dates belong in article:published_time, not the SERP <title>"
+      FAIL=1
+    elif printf '%s' "$EB_H1_LOWER" | grep -qE '(january|february|march|april|may|june|july|august|september|october|november|december)[[:space:]]+[0-9]{1,2}(,[[:space:]]*[0-9]{4})?'; then
+      echo "❌ executive-brief.md: H1 contains a literal English long-form date (US order: 'May 15, 2026') — dates belong in article:published_time, not the SERP <title>"
       FAIL=1
     elif printf '%s' "$EB_H1_LOWER" | grep -qE '[0-9]{1,2}[[:space:]]+(januari|februari|mars|april|maj|juni|juli|augusti|september|oktober|november|december)[[:space:]]+[0-9]{4}'; then
       echo "❌ executive-brief.md: H1 contains a literal Swedish long-form date — dates belong in article:published_time, not the SERP <title>"

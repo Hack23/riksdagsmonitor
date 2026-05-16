@@ -292,21 +292,26 @@ export function titleFromBluf(bluf: string | null, maxLen: number = 70): string 
   const sliced = firstSentence.slice(0, maxLen);
   const lastSpace = sliced.lastIndexOf(' ');
   let cut = (lastSpace > 30 ? sliced.slice(0, lastSpace) : sliced).trim();
-  // Dangling-tail guard — if the cut ends on a ≤ 3-char word (`Tidö`,
-  // `two`, `the`, `on`, …) it reads as a truncated fragment. Step back
+  // Dangling-tail guard — if the cut ends on a ≤ 3-char word (`two`,
+  // `the`, `on`, `of`, …) it reads as a truncated fragment. Step back
   // to the previous word boundary so the title ends on a substantive
-  // word. Live cases: `… converging on the Tidö` (weekly-review),
-  // `… has advanced two` (committeeReports), `… of` (interpellations).
-  // Word lengths ≤ 3 are the empirical cutoff: 4-char words like
-  // `bill`, `cuts`, `vote` are substantive enough to end a title.
+  // word. Live cases: `… has advanced two` (committeeReports),
+  // `… of` (interpellations), `… on the` (weekly-review).
+  // Word lengths ≤ 3 are the empirical cutoff: 4+-char words like
+  // `bill`, `cuts`, `vote`, `Tidö` are substantive enough to end a
+  // title. Numeric tails (e.g. `12`, `7`) are also substantive even
+  // when ≤ 3 chars, so they short-circuit the step-back loop.
   let safetyCounter = 0;
   while (safetyCounter < 5) {
     const tail = cut.match(/(\S+)$/);
     if (!tail) break;
     const tailWord = tail[1]!;
-    // Allow short tails only when followed by punctuation (e.g. `EU.`
-    // is already trimmed off above, but defensive). Also allow tails
-    // containing digits (numbers like `12` or `7` are substantive).
+    // Length test uses the raw tail word — leading/trailing
+    // sentence-end punctuation (`. ! ? …`) was already stripped from
+    // `firstSentence` upstream, and `cut.trim()` removes leading
+    // space, so `tailWord` is the bare word. Tails containing digits
+    // (numbers like `12` or `7`) are substantive and allowed even at
+    // ≤ 3 chars.
     if (tailWord.length > 3 || /\d/.test(tailWord)) break;
     // Step back to the previous word boundary.
     const previousSpace = cut.lastIndexOf(' ');
