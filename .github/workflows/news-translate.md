@@ -1,6 +1,6 @@
 ---
 name: "News: Translate Executive Briefs"
-description: Translates `analysis/daily/**/executive-brief.md` (English source produced by per-type news workflows) into the 13 non-English target languages as sibling `executive-brief_<lang>.md` files. Runs three times daily and picks up at most `max_briefs` (default 3) untranslated or drifted sources per run. See `TRANSLATION_GUIDE.md §Executive Brief Markdown Translations` for the authoritative content contract.
+description: Translates `analysis/daily/**/executive-brief.md` (English source produced by per-type news workflows) into the 13 non-English target languages as sibling `executive-brief_<lang>.md` files. Runs three times daily and picks up at most `max_briefs` (default 3) sources per run, **greenfield-first** — sources with one or more missing target files always win batch slots over drift-only sources. See `TRANSLATION_GUIDE.md §Executive Brief Markdown Translations` for the authoritative content contract.
 strict: false
 imports:
   - ../prompts/00-base-contract.md
@@ -336,41 +336,91 @@ steps:
         exit 0
       fi
 
-      # For each source, decide whether any requested language is missing or drifted.
-      WORK=()
+      # For each source, classify it as MISSING (≥1 requested language file absent
+      # or empty) or DRIFT (every requested language file present but ≥1 has a
+      # stale `<!-- source-sha: ... -->` trailer relative to the current source
+      # commit SHA). When `force_retranslate=true`, every source with at least
+      # one existing target file is reclassified as DRIFT (forces a re-pass);
+      # sources missing any target stay in MISSING.
+      #
+      # Selection policy (greenfield-first):
+      #   1. Fill `MAX_BRIEFS` batch slots with MISSING sources, oldest date first
+      #      (159-source backlog is drained before any drift-fix work).
+      #   2. Only if MISSING is empty after the scan, fill remaining slots with
+      #      DRIFT sources, oldest date first.
+      # This guarantees runs never "redo already-translated briefs" while the
+      # untranslated backlog still has work — see PR description for context.
+      MISSING=()
+      DRIFT=()
       IFS=',' read -ra LANG_LIST <<< "$LANGS"
       while IFS= read -r SRC; do
         [ -n "$SRC" ] || continue
         DIR=$(dirname "$SRC")
         SRC_SHA=$(git log -1 --format=%H -- "$SRC" 2>/dev/null || echo "")
-        NEEDS=0
+        HAS_MISSING=0
+        HAS_DRIFT=0
         for L in "${LANG_LIST[@]}"; do
           TGT="$DIR/executive-brief_${L}.md"
-          if [ ! -s "$TGT" ]; then NEEDS=1; break; fi
-          if [ "${FORCE_RETRANSLATE:-false}" = "true" ]; then NEEDS=1; break; fi
+          if [ ! -s "$TGT" ]; then
+            HAS_MISSING=1
+            continue
+          fi
           if [ -n "$SRC_SHA" ] && ! grep -q "<!-- source-sha: $SRC_SHA -->" "$TGT" 2>/dev/null; then
-            NEEDS=1
-            break
+            HAS_DRIFT=1
           fi
         done
-        if [ "$NEEDS" -eq 1 ]; then
-          WORK+=("$SRC")
+        if [ "$HAS_MISSING" -eq 1 ]; then
+          MISSING+=("$SRC")
+        elif [ "${FORCE_RETRANSLATE:-false}" = "true" ] || [ "$HAS_DRIFT" -eq 1 ]; then
+          DRIFT+=("$SRC")
         fi
-        if [ "${#WORK[@]}" -ge "$MAX_BRIEFS" ]; then break; fi
       done <<< "$CANDIDATES"
+
+      MISSING_COUNT="${#MISSING[@]}"
+      DRIFT_COUNT="${#DRIFT[@]}"
+      echo "Backlog classification: MISSING=$MISSING_COUNT  DRIFT=$DRIFT_COUNT"
+
+      # Fill batch: MISSING first (greenfield), DRIFT only if capacity remains.
+      WORK=()
+      for SRC in "${MISSING[@]}"; do
+        WORK+=("$SRC")
+        if [ "${#WORK[@]}" -ge "$MAX_BRIEFS" ]; then break; fi
+      done
+      if [ "${#WORK[@]}" -lt "$MAX_BRIEFS" ]; then
+        for SRC in "${DRIFT[@]}"; do
+          WORK+=("$SRC")
+          if [ "${#WORK[@]}" -ge "$MAX_BRIEFS" ]; then break; fi
+        done
+      fi
 
       if [ "${#WORK[@]}" -eq 0 ]; then
         echo "TRANSLATION_WORKLIST=" >> "$GITHUB_OUTPUT"
+        echo "MISSING_COUNT=$MISSING_COUNT" >> "$GITHUB_OUTPUT"
+        echo "DRIFT_COUNT=$DRIFT_COUNT" >> "$GITHUB_OUTPUT"
         echo "All discovered sources are up to date for the requested languages."
         exit 0
       fi
+
+      # Categorise the chosen batch for the log line: how many slots were filled
+      # with greenfield (MISSING) vs drift-fix (DRIFT) work.
+      WORK_MISSING=0
+      WORK_DRIFT=0
+      for SRC in "${WORK[@]}"; do
+        for M in "${MISSING[@]:-}"; do
+          if [ "$M" = "$SRC" ]; then WORK_MISSING=$((WORK_MISSING+1)); continue 2; fi
+        done
+        WORK_DRIFT=$((WORK_DRIFT+1))
+      done
 
       printf '%s\n' "${WORK[@]}" > /tmp/exec-brief-worklist.txt
       WORKLIST_JOINED=$(printf '%s\n' "${WORK[@]}" | paste -sd ',' -)
       echo "TRANSLATION_WORKLIST=$WORKLIST_JOINED" >> "$GITHUB_OUTPUT"
       echo "TRANSLATION_LANGS=$LANGS" >> "$GITHUB_OUTPUT"
       echo "MAX_BRIEFS=$MAX_BRIEFS" >> "$GITHUB_OUTPUT"
-      echo "✅ Selected ${#WORK[@]} source brief(s) for translation into [$LANGS]:"
+      echo "MISSING_COUNT=$MISSING_COUNT" >> "$GITHUB_OUTPUT"
+      echo "DRIFT_COUNT=$DRIFT_COUNT" >> "$GITHUB_OUTPUT"
+      echo "✅ Selected ${#WORK[@]} source brief(s) for translation into [$LANGS]"
+      echo "   (greenfield=$WORK_MISSING / drift-fix=$WORK_DRIFT;  total backlog: MISSING=$MISSING_COUNT DRIFT=$DRIFT_COUNT)"
       printf '   %s\n' "${WORK[@]}"
 
 engine:
@@ -386,7 +436,7 @@ This workflow is the **sole writer** of `analysis/daily/$DATE/$SUB/executive-bri
 
 ## Pipeline
 
-1. The `Build executive-brief translation work list` pre-flight step has already populated `steps.worklist.outputs.TRANSLATION_WORKLIST` (comma-separated repo-relative paths), `TRANSLATION_LANGS` (comma-separated language codes), and `MAX_BRIEFS` (1–7). If `TRANSLATION_WORKLIST` is empty, nothing is pending — proceed to improvement-mode (re-validate every existing translation against the current `<!-- source-sha: ... -->` trailer and fix any drift the validator flags). If still nothing changes after improvement-mode, follow `07-commit-and-pr.md §No-op policy`.
+1. The `Build executive-brief translation work list` pre-flight step has already populated `steps.worklist.outputs.TRANSLATION_WORKLIST` (comma-separated repo-relative paths), `TRANSLATION_LANGS` (comma-separated language codes), `MAX_BRIEFS` (1–7), and the audit counters `MISSING_COUNT` / `DRIFT_COUNT`. The selector is **greenfield-first**: sources with one or more missing target files (`MISSING`) always win the `max_briefs` batch slots over sources that only need drift-fixes (`DRIFT`); `DRIFT` is only consulted when `MISSING` is empty. If `TRANSLATION_WORKLIST` is empty (so `MISSING_COUNT=0` **and** `DRIFT_COUNT=0`), nothing is pending — proceed to improvement-mode (re-validate every existing translation against the current `<!-- source-sha: ... -->` trailer and fix any drift the validator flags). If still nothing changes after improvement-mode, follow `07-commit-and-pr.md §No-op policy`.
 2. For each source path in `TRANSLATION_WORKLIST`:
    1. **Pass 1 — translate**: Read the source `executive-brief.md` in full. For every language in `TRANSLATION_LANGS`, produce `analysis/daily/$DATE/$SUB/executive-brief_<lang>.md` following the TRANSLATION_GUIDE rules. Preserve every verbatim block (YAML, HTML comments except `source-sha`, `dok_id` codes, Mermaid DSL bodies, code fences, URLs, file paths, evidence-anchor canonical column values). Translate every always-translate block (prose, headings, list items, table cell text, image alt-text, BLUF, decisions, link text).
    2. **Pass 2 — read-back & refine**: Read every translation back in full. Verify structural parity (heading / fence / table / Mermaid counts match source ±0). Verify dok_id and URL set equality. Verify no banned English phrases remain in non-English files (`Executive Brief`, `Decisions`, `Confidence`, `BLUF`, …). Tighten tone register for the target language using the per-language guidance in TRANSLATION_GUIDE. For `ar` and `he`, ensure the file starts with `<!-- dir: rtl -->`.
@@ -414,7 +464,7 @@ This workflow is the **sole writer** of `analysis/daily/$DATE/$SUB/executive-bri
 | Default `max_briefs` | 3 sources | fits 35-min translation window + 5-min validation + 5-min commit/PR |
 | Per-run file output | 3 × 13 = **39 files** | well under safe-outputs `max-patch-files: 100` |
 | Daily throughput (3 runs) | up to 9 sources / **117 files** | matches steady-state production by per-type workflows |
-| Current backlog drain (169 sources) | ~19 days at default settings | linear |
+| Current backlog drain (≥159 untranslated sources) | ~18 days at default settings, greenfield-first | linear |
 
 If a run is behind schedule at agent minute 30 with translations still pending, the agent MUST trim `max_briefs` downward (drop the last selected source) rather than skip Pass 2 — quality over completeness. A partial PR is always better than missing Timer A (job `timeout-minutes: 60`).
 
@@ -425,6 +475,7 @@ If a run is behind schedule at agent minute 30 with translations still pending, 
 - **Validate every translation** with `scripts/validate-executive-brief-translations.ts` before commit. Re-translate (do not commit) any file that fails.
 - Keep the PR under the safe-outputs 100-file cap. The default `max_briefs=3` × 13 languages = 39 files leaves ample headroom; the hard cap `max_briefs=7` × 13 = 91 stays under 100.
 - **Per-language idempotency, not workflow-level no-op**:
+  - The pre-flight selector is **greenfield-first**: it classifies every candidate source as `MISSING` (≥1 requested language file absent or empty) or `DRIFT` (every requested language file present but ≥1 has a stale `<!-- source-sha: -->` trailer), then fills the `max_briefs` batch slots with `MISSING` sources oldest-first and only falls back to `DRIFT` once `MISSING` is empty. Drift-fix work **never** displaces an untranslated brief while the backlog still has missing files.
   - A target language is skipped *for that language only* when **all three** hold:
     1. `executive-brief_<lang>.md` exists and is non-empty,
     2. its `<!-- source-sha: <sha> -->` trailer matches the current `git log -1 --format=%H -- executive-brief.md`, **and**
