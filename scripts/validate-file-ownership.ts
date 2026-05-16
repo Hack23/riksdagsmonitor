@@ -103,6 +103,17 @@ function isExecutiveBriefTranslation(filepath: string): boolean {
 }
 
 /**
+ * Returns `true` if the file path is a localized article Markdown file
+ * (`article.<lang>.md`), which is now FORBIDDEN for all workflow categories.
+ * 
+ * Per-type workflows must NOT write article.<lang>.md. Non-English HTML pages
+ * are rendered via the localized executive-brief cascade (mergeLocalizedWithEnglish).
+ */
+function isLocalizedArticleMd(filepath: string): boolean {
+  return /\/analysis\/daily\/.+\/article\.[a-z]{2}\.md$/.test('/' + filepath);
+}
+
+/**
  * Check whether a file belongs to the given workflow category.
  *
  * @param filepath - The file path to check
@@ -113,6 +124,13 @@ export function isFileOwnedByCategory(
   filepath: string,
   category: WorkflowCategory,
 ): boolean {
+  // article.<lang>.md is now forbidden for ALL workflow categories.
+  // Per-type workflows must NOT write these files. The renderer uses
+  // the localized executive-brief cascade instead (mergeLocalizedWithEnglish).
+  if (isLocalizedArticleMd(filepath)) {
+    return false;
+  }
+
   // Executive-brief Markdown ownership: English source vs translation siblings.
   if (isEnglishExecutiveBriefSource(filepath)) {
     return category === 'content';
@@ -199,6 +217,8 @@ export function validateFileList(
     // Executive-brief markdown (English source + translations)
     if (/\/executive-brief(?:_[a-z]{2})?\.md$/.test('/' + f)
       && f.startsWith('analysis/daily/')) return true;
+    // article.<lang>.md is now forbidden (category-independent violation)
+    if (isLocalizedArticleMd(f)) return true;
     return false;
   });
 
