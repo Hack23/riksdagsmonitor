@@ -1,12 +1,12 @@
 ---
-title: "Riksdagsmonitor Realtime Pulse — 15 maj 2026: Försvarsförmåga och biståndsskuld"
-description: "Sveriges politiska landskap den 15 maj 2026 definieras av tre parallella stressorer: SD pressar Försvarsminister Jonson om drönardoktrin efter Aurora 26 (HD11812, [A2]); V eskalerar granskning av…"
-keywords: "Realtime Pulse, English, May 15, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Realtime Pulse Försvarsförmåga biståndsskuld Sveriges, Realtime, Pulse, 2026, Försvarsförmåga, biståndsskuld, Sveriges, politiska, landskap, definieras, parallella, stressorer, pressar, Försvarsminister"
+title: "Riksdagsmonitor Realtime Pulse — 15 May 2026: Defence Capability and the Aid Debt"
+description: "Sweden's political landscape on 15 May 2026 is defined by three parallel stressors: SD presses Defence Minister Pål Jonson on drone doctrine after the Aurora 26 exercise (HD11812, [A2]); the Left…"
+keywords: "Realtime Pulse, English, May 15, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Realtime Pulse Defence Capability Debt, Realtime, Pulse, 2026, Defence, Capability, Debt, Sweden, political, landscape, defined, three, parallel, stressors"
 date: 2026-05-15
 subfolder: realtime-pulse
 slug: 2026-05-15-realtime-pulse
 source_folder: analysis/daily/2026-05-15/realtime-pulse
-generated_at: 2026-05-15T14:35:09.835Z
+generated_at: 2026-05-16T12:56:28.960Z
 language: en
 layout: article
 ---
@@ -17,37 +17,37 @@ layout: article
 
 ### 🎯 BLUF
 
-Sveriges politiska landskap den 15 maj 2026 definieras av tre parallella stressorer: SD pressar Försvarsminister Jonson om drönardoktrin efter Aurora 26 (HD11812, [A2]); V eskalerar granskning av Tidöregeringens biståndsnedskärningar med fokus på barnkonsekvenser och nedlagda strategier (HD10492 [A2], HD10493 [A2]); och dagens sibling-analyser (se propositioner, betänkanden, motioner) bekräftar att riksmötet 2025/26 präglas av den djupaste migrationspolitiska omvälvningen på ett decennium, en konstitutionell rebalans kring aborträtt och säkerhetsstaten, samt den starkaste koordinerade oppositionsoffensiven sedan 2022. Sammantaget signalerar 15 maj ett riksmöte i slutspurt med hög lagstiftningsvolym, skärpt parlamentarisk granskning och accelererande valpositionering inför september 2026.
+Sweden's political landscape on 15 May 2026 is defined by three parallel stressors: SD presses Defence Minister Pål Jonson on drone doctrine after the Aurora 26 exercise (HD11812, [A2]); the Left Party (V) escalates scrutiny of the Tidö government's aid cuts, focusing on consequences for children and discontinued country strategies (HD10492 [A2], HD10493 [A2]); and today's sibling analyses (see propositions, committee reports, motions) confirm that the 2025/26 riksmöte (parliamentary session) is marked by the deepest migration-policy overhaul in a decade, a constitutional rebalancing around abortion rights and the security state, and the strongest coordinated opposition offensive since 2022. Taken together, 15 May signals a parliamentary session in its closing sprint, with high legislative volume, sharpened scrutiny, and accelerating election positioning ahead of September 2026.
 
 ### 🧭 3 Decisions This Brief Supports
 
-1. **Redaktionell prioritering**: Biståndsdebatten (HD10492/HD10493) är riksdagsmonitorns ledstory idag — internationell räckvidd, CRC-rättslig dimension, och USAID-kollapsen som global bakgrund skapar maximal läsarrelevans.  
-2. **Säkerhetspolitisk vakthållning**: Drönarkrigsfrågan (HD11812) är ett tidigt signal-dok om UAV-doktrin och Aurora 26-lärdomar — bevaka Pål Jonsons svar för eventuell strategiimplikation.  
-3. **Migrationspolitisk kalibrering**: Dagens fem propositioner + 20 oppositionsmotioner + KU34 konstitutionell betänkande signalerar att plenumdebatterna vecka 21 (22 maj) kan avgöra röstningsutfall med EU-juridisk dimension (PUT, förvar, EPBD).
+1. **Editorial prioritisation**: The aid debate (HD10492 / HD10493) is Riksdagsmonitor's lead story today — international reach, a CRC legal dimension, and the global USAID collapse as backdrop maximise reader relevance.  
+2. **Security-policy watch**: The drone-warfare question (HD11812) is an early signal document on UAV doctrine and Aurora 26 lessons-learned — monitor Pål Jonson's response for potential strategy implications.  
+3. **Migration-policy calibration**: Today's five bills + 20 opposition motions + the KU34 constitutional committee report signal that plenary debates in week 21 (22 May) may decide voting outcomes with an EU-legal dimension (PUT abolition, detention, EPBD).
 
 ### ⚡ 60-Second Read
 
-- **HD11812** [B2]: SD:s Markus Wiechel frågar försvarsminister Pål Jonson (M) om drönarkrig — Aurora 26-övningen (18 000 deltagare, april–maj 2026, Gotland-fokus) har synliggjort UAV-taktiska gaps; frågan skapar trycket för en offentlig doktrinposition [horizon:72h].
-- **HD10492** [A2]: V:s Lotta Johnsson Fornarve kräver att Benjamin Dousa (M) redogör för barnkonsekvenser av biståndsnedskärningarna — Rädda Barnens rapportering om stoppade undernäringsprogram ger evidensbasen; CRC Art. 6/26/28 åberopad [horizon:week].
-- **HD10493** [A2]: Samma interpellant frågar om nedlagda biståndsstrategier — 14 av 37 strategier avvecklade, enprocentsmålet övergett, genusneutraliseringen av agendan sedan dec 2023 dokumenterad; Dousa under dubbeltryck [horizon:week].
-- **Propositionspaket** [A2]: Fem propositioner inklusive HD03262 (utmönstring PUT) — lagstiftningspaket i slutfas; oppositionsmotionerna (20 st) bekräftar bred parlamentarisk kritik (S+C+V+MP) [horizon:week].
-- **KU34** [A2]: Konstitutionell dubbelandring — aborträtt + föreningsfrihet + medborgarskapsregulering — 2/3 majoritet krävs, höst 2026; politisk spjälkning prövas [horizon:month].
-- **Ekonomisk kontext**: Sverige BNP-tillväxt 2,3% (WEO Apr-2026); bistånd 0,7% → 0,36% av BNP (2026 prognos) — sämsta biståndsnivån sedan 1970-talet; IMF-vintage (Apr-2026, NGDP_RPCH) [B1].
-- **Valbarometer**: Aurora 26 + UA-krigslärdomar tyder på att SD konsoliderar väljarprofil kring "stark försvarspolitik" med 72h-frågesnart; biståndsfrågan stärker V:s progressiva profil inför val 2026 [horizon:week].
-- **Forward trigger**: Pål Jonsons svar på HD11812 och Benjamin Dousas svar på HD10492/HD10493 avgör om frågor eskalerar till interpellationsdebatter vecka 21 — bägge ministrars positioner är PIR-öppna [horizon:72h].
+- **HD11812** [B2]: SD's Markus Wiechel asks Defence Minister Pål Jonson (M) about drone warfare — the Aurora 26 exercise (18,000 participants, April–May 2026, Gotland focus) has exposed UAV tactical gaps; the question creates pressure for a public doctrinal position [horizon:72h].
+- **HD10492** [A2]: V's Lotta Johnsson Fornarve demands that Benjamin Dousa (M) account for the consequences for children of the aid cuts — Save the Children's reporting on halted malnutrition programmes provides the evidence base; CRC Articles 6/26/28 invoked [horizon:week].
+- **HD10493** [A2]: The same interpellant asks about discontinued aid strategies — 14 of 37 strategies dismantled, the 1%-of-GNI target abandoned, the de-gendering of the agenda since December 2023 documented; Dousa is under double pressure [horizon:week].
+- **Bill package** [A2]: Five bills including HD03262 (PUT abolition) — legislative package in the final phase; opposition motions (20 in total) confirm broad parliamentary criticism (S + C + V + MP) [horizon:week].
+- **KU34** [A2]: Constitutional double amendment — abortion rights + freedom of association + citizenship regulation — 2/3 supermajority required, autumn 2026; political polarisation will be tested [horizon:month].
+- **Economic context**: Sweden GDP growth 2.3% (WEO Apr-2026); aid 0.7% → 0.36% of GDP (2026 projection) — the lowest aid level since the 1970s; IMF vintage (Apr-2026, NGDP_RPCH) [B1].
+- **Electoral barometer**: Aurora 26 + Ukraine-war lessons suggest SD is consolidating a voter profile around "strong defence policy" with 72-hour question urgency; the aid issue strengthens V's progressive profile ahead of the 2026 general election [horizon:week].
+- **Forward trigger**: Pål Jonson's reply to HD11812 and Benjamin Dousa's replies to HD10492 / HD10493 determine whether the questions escalate into interpellation debates in week 21 — both ministers' positions are PIR-open [horizon:72h].
 
 ### 🔭 Top Forward Trigger
 
-**PIR-1 (72h)**: Benjamin Dousas skriftliga svar på HD10492 och HD10493 — kommer Dousa erkänna frånvaron av konsekvensanalyser, eller hänvisa till den "nya biståndsagendan" som motivering? Svar förväntas vecka 20–21 (18–22 maj). Negativ respons → interpellationsdebatt → riksdagsomröstning om kritik mot minister möjlig.
+**PIR-1 (72h)**: Benjamin Dousa's written replies to HD10492 and HD10493 — will Dousa acknowledge the absence of impact assessments, or refer to the "new aid agenda" as justification? Replies expected in weeks 20–21 (18–22 May). A negative response → interpellation debate → a riksdag vote of criticism against the minister becomes possible.
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
 graph LR
-    A[HD11812 Drönarkrig<br/>SD→M Jonson] -->|72h trigger| B[Doktrinposition<br/>UAV-strategi]
-    C[HD10492 Barn+bistånd<br/>V→M Dousa] -->|72h trigger| D[Konsekvensanalys?<br/>CRC-ansvar]
-    E[HD10493 Strategier<br/>V→M Dousa] -->|72h trigger| D
-    F[Propositionspaket<br/>HD03262 PUT m.fl.] -->|week trigger| G[Plenumdebatt<br/>22 maj 2026]
-    H[KU34 Konstitution<br/>abort+säkerhet] -->|month trigger| I[Höst 2026<br/>2/3 omröstning]
+    A[HD11812 Drone warfare<br/>SD→M Jonson] -->|72h trigger| B[Doctrinal position<br/>UAV strategy]
+    C[HD10492 Children+aid<br/>V→M Dousa] -->|72h trigger| D[Impact assessment?<br/>CRC accountability]
+    E[HD10493 Strategies<br/>V→M Dousa] -->|72h trigger| D
+    F[Bill package<br/>HD03262 PUT etc.] -->|week trigger| G[Plenary debate<br/>22 May 2026]
+    H[KU34 Constitution<br/>abortion+security] -->|month trigger| I[Autumn 2026<br/>2/3 vote]
     style A fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
     style C fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
     style E fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
@@ -89,6 +89,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1619,13 +1632,757 @@ Note: CLI `imf-fetch.ts weo` returned fetch-failed at runtime (likely rate-limit
 Fallback: WEO Apr-2026 vintage used. Sweden NGDP_RPCH (GDP growth): ~2.3% (2026 WEO projection). GGXWDG_NGDP (gross debt/GDP): ~33% (2026). PCPIPCH (inflation): ~2.0%.  
 Statskontoret relevance: no direct agency referenced in today's documents; bistånd administered by Sida (not in Statskontoret standard coverage list).
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_ar.md -->
+
+‏# رصد البرلمان السويدي — النبض الفوري 15 مايو 2026: القدرة الدفاعية وديون المساعدات الإنمائية
+
+**المؤلف**: جيمس بيتر سورلينغ  
+**التاريخ**: 2026-05-15  
+**التصنيف**: 🟢 عام  
+**مستوى الثقة**: عالٍ [B2]  
+**الأفق الزمني**: [horizon:72h] [horizon:week]
+
+---
+
+### 🎯 الملخص التنفيذي
+
+يتسم المشهد السياسي السويدي في 15 مايو 2026 بثلاثة ضغوط متوازية: يضغط حزب SD على وزير الدفاع بول يونسون بشأن عقيدة حرب الطائرات بدون طيار عقب مناورة أورورا 26 (HD11812، [A2])؛ يكثّف حزب اليسار (V) تدقيقه في تخفيضات المساعدات الإنسانية لحكومة تيدو مع التركيز على تداعيات هذه التخفيضات على الأطفال والاستراتيجيات القُطرية المُلغاة (HD10492 [A2]، HD10493 [A2])؛ وتؤكد تحليلات اليوم الموازية أن دورة البرلمان 2025/26 تشهد أعمق إصلاح لسياسة الهجرة منذ عقد. مجتمعةً، تشير 15 مايو إلى برلمان في مرحلة الاستعداد النهائية مع حجم تشريعي مرتفع وتسارع في تحديد المواقف الانتخابية قبل سبتمبر 2026.
+
+### 🧭 3 قرارات يدعمها هذا التقرير
+
+1. **الأولوية التحريرية**: نقاش المساعدات (HD10492 / HD10493) هو القصة الرئيسية لمرصد الريكسداغ اليوم.  
+2. **مراقبة السياسة الأمنية**: سؤال الطائرات بدون طيار (HD11812) وثيقة إشارة مبكرة حول عقيدة UAV.  
+3. **معايرة سياسة الهجرة**: خمسة قوانين + 20 اقتراحاً معارضاً + KU34 تُنذر بمناقشات جلسة عامة مهمة في الأسبوع 21.
+
+### ⚡ قراءة في 60 ثانية
+
+- **HD11812** [B2]: يسأل ماركوس ويكيل (SD) وزير الدفاع بول يونسون (M) عن حرب الطائرات بدون طيار — كشفت مناورة أورورا 26 (18,000 مشارك، أبريل–مايو 2026، التركيز على جزيرة غوتلاند) ثغرات تكتيكية في UAV [horizon:72h].
+- **HD10492** [A2]: تطالب لوتا يونسون فورنارفيه (V) بنيامين دوزا (M) بتقديم حساب عن تداعيات تخفيضات المساعدات على الأطفال — المادتان 6/26/28 من اتفاقية حقوق الطفل مُحتجّ بهما [horizon:week].
+- **HD10493** [A2]: يسأل نفس المستجوب عن الاستراتيجيات الإنمائية المُوقفة — تفكيك 14 من أصل 37 استراتيجية، التخلي عن هدف 1% من الدخل القومي الإجمالي [horizon:week].
+- **الحزمة التشريعية** [A2]: خمسة مشاريع قوانين بما فيها HD03262 — انتقاد برلماني واسع (S + C + V + MP) [horizon:week].
+- **KU34** [A2]: تعديل دستوري مزدوج — حقوق الإجهاض + حرية تكوين الجمعيات — يتطلب أغلبية ثلثي الأصوات، خريف 2026 [horizon:month].
+- **السياق الاقتصادي**: نمو الناتج المحلي الإجمالي السويدي 2.3% (توقعات صندوق النقد الدولي أبريل 2026)؛ المساعدات من 0.7% → 0.36% من الناتج المحلي الإجمالي (توقع 2026) [B1].
+- **البارومتر الانتخابي**: تشير دروس أورورا 26 وحرب أوكرانيا إلى أن SD يُوحّد ملفه الانتخابي حول "سياسة دفاعية قوية" [horizon:week].
+- **المحفز الاستشرافي**: ردود يونسون على HD11812 وردود دوزا على HD10492/10493 ستحدد التصعيد المحتمل في الأسبوع 21 [horizon:72h].
+
+### 🔭 المحفز الاستشرافي الرئيسي
+
+**PIR-1 (72h)**: الردود الخطية لبنيامين دوزا على HD10492 وHD10493 — هل سيعترف بغياب تقييمات الأثر؟ الردود متوقعة في الأسبوعين 20–21 (18–22 مايو).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    A[HD11812 حرب الطائرات<br/>SD→M Jonson] -->|72h trigger| B[الموقف العقائدي<br/>استراتيجية UAV]
+    C[HD10492 الأطفال+المساعدات<br/>V→M Dousa] -->|72h trigger| D[تقييم الأثر؟<br/>مساءلة حقوق الطفل]
+    E[HD10493 الاستراتيجيات<br/>V→M Dousa] -->|72h trigger| D
+    F[الحزمة التشريعية<br/>HD03262 PUT إلخ] -->|week trigger| G[نقاش عام<br/>22 مايو 2026]
+    H[KU34 الدستور<br/>الإجهاض+الأمن] -->|month trigger| I[خريف 2026<br/>تصويت 2/3]
+    style A fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style F fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style H fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style B fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style G fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style I fill:#0a0e27,stroke:#ff006e,color:#ff006e
+```
+
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-05-15  
+**Klassifikation**: 🟢 OFFENTLIG  
+**Konfidensgrad**: HØJ [B2]  
+**Horisont**: [horizon:72h] [horizon:week]
+
+---
+
+### 🎯 BLUF
+
+Danmarks politiske landskab den 15. maj 2026 — Sveriges politiske landskab den 15. maj 2026 er præget af tre parallelle stressorer: SD presser forsvarsminister Pål Jonson om dronekrigsførselsdoktrin efter Aurora 26-øvelsen (HD11812, [A2]); Venstrefløjspartiet (V) intensiverer sin undersøgelse af Tidö-regeringens bistandsnedsæringer, med fokus på konsekvenser for børn og afviklede landestrategier (HD10492 [A2], HD10493 [A2]); og dagens søsteranalyser bekræfter, at riksmødet 2025/26 er præget af den dybeste migrationspolitiske omstøbning i et årti. Samlet set signalerer 15. maj en riksdag i sin afsluttende sprint med høj lovgivningsmæssig volumen og accelererende valgpositionering frem mod september 2026.
+
+### 🧭 3 beslutninger dette underlag understøtter
+
+1. **Redaktionel prioritering**: Bistandsdebatten (HD10492 / HD10493) er Riksdagsmonitors tophistorie i dag — international rækkevidde, en børneretlig dimension og det globale USAID-sammenbrud som baggrund.  
+2. **Sikkerhedspolitisk overvågning**: Dronespørgsmålet (HD11812) er et tidligt signaldokument om UAV-doktrin og Aurora 26 lærdomme — overvåg Pål Jonsons svar.  
+3. **Migrationspolitisk kalibrering**: Dagens fem lovforslag + 20 oppositionsmotioner + KU34 signalerer, at plenardebaterne i uge 21 (22. maj) kan afgøre afstemningsresultater med en EU-retlig dimension.
+
+### ⚡ 60-sekunders læsning
+
+- **HD11812** [B2]: SD's Markus Wiechel spørger forsvarsminister Pål Jonson (M) om dronekrigsførelse — Aurora 26-øvelsen (18.000 deltagere, april–maj 2026, Gotland-fokus) har afdækket UAV-taktiske huller [horizon:72h].
+- **HD10492** [A2]: V's Lotta Johnsson Fornarve kræver, at Benjamin Dousa (M) redegør for konsekvenserne for børn af bistandsnedsæringerne — Bjærg Barnens rapportering om stoppede underernæringsprogrammer; CRC artiklerne 6/26/28 påberåbes [horizon:week].
+- **HD10493** [A2]: Samme interpellant spørger om afviklede bistandsstrategier — 14 af 37 strategier nedmonteret, 1%-af-BNI-målet opgivet [horizon:week].
+- **Lovpakke** [A2]: Fem lovforslag inkl. HD03262 (PUT-afskaffelse) — bred parlamentarisk kritik (S + C + V + MP) [horizon:week].
+- **KU34** [A2]: Konstitutionel dobbeltændring — aborttrettigheder + foreningsfrihed — 2/3 supermajoritet krævet, efterår 2026 [horizon:month].
+- **Økonomisk kontekst**: Sveriges BNP-vækst 2,3% (WEO apr-2026); bistand 0,7% → 0,36% af BNP (2026-prognose) — laveste bistands­andel siden 1970'erne [B1].
+- **Valgbarometer**: Aurora 26 + Ukraine-krigens lærdomme tyder på, at SD konsoliderer et vælgerprofil om "stærk forsvarspolitik" [horizon:week].
+- **Fremadrettet trigger**: Pål Jonsons svar på HD11812 og Benjamin Dousas svar på HD10492/10493 afgør, om spørgsmålene eskalerer til interpellationsdebatter i uge 21 [horizon:72h].
+
+### 🔭 Vigtigste fremadrettede trigger
+
+**PIR-1 (72h)**: Benjamin Dousas skriftlige svar på HD10492 og HD10493 — vil Dousa anerkende fraværet af konsekvensanalyser? Svar forventet i ugerne 20–21 (18.–22. maj).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    A[HD11812 Dronekrigsførelse<br/>SD→M Jonson] -->|72h trigger| B[Doktrinær position<br/>UAV-strategi]
+    C[HD10492 Børn+bistand<br/>V→M Dousa] -->|72h trigger| D[Konsekvensanalyse?<br/>Børnerets­redegørelse]
+    E[HD10493 Strategier<br/>V→M Dousa] -->|72h trigger| D
+    F[Lovpakke<br/>HD03262 PUT m.fl.] -->|uge-trigger| G[Plenardebat<br/>22. maj 2026]
+    H[KU34 Forfatning<br/>abort+sikkerhed] -->|måneds-trigger| I[Efterår 2026<br/>2/3-afstemning]
+    style A fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style F fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style H fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style B fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style G fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style I fill:#0a0e27,stroke:#ff006e,color:#ff006e
+```
+
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling  
+**Datum**: 2026-05-15  
+**Klassifizierung**: 🟢 ÖFFENTLICH  
+**Vertraulichkeitsgrad**: HOCH [B2]  
+**Horizont**: [horizon:72h] [horizon:week]
+
+---
+
+### 🎯 BLUF
+
+Die politische Lage Schwedens am 15. Mai 2026 wird durch drei parallele Stressoren bestimmt: SD setzt Verteidigungsminister Pål Jonson unter Druck bezüglich der Drohnenkriegsführungsdoktrin nach der Aurora-26-Übung (HD11812, [A2]); die Linkspartei (V) verschärft ihre Prüfung der Entwicklungshilfekürzungen der Tidö-Regierung mit Fokus auf Folgen für Kinder und abgewickelte Länderstrategien (HD10492 [A2], HD10493 [A2]); und die heutigen Schwesteranalysen bestätigen, dass die Riksdag-Session 2025/26 die tiefgreifendste Migrationspolitikreform seit einem Jahrzehnt erlebt. Insgesamt signalisiert der 15. Mai einen Reichstag in der Schlussphase mit hohem Gesetzgebungsvolumen und sich beschleunigender Wahlpositionierung vor September 2026.
+
+### 🧭 3 Entscheidungen, die dieser Bericht unterstützt
+
+1. **Redaktionelle Priorisierung**: Die Entwicklungshilfedebatte (HD10492 / HD10493) ist die Hauptgeschichte von Riksdagsmonitor heute.  
+2. **Sicherheitspolitische Beobachtung**: Die Drohnenfrage (HD11812) ist ein frühes Signaldokument über UAV-Doktrin und Aurora-26-Lehren.  
+3. **Migrationspolitische Kalibrierung**: Fünf Gesetze + 20 Oppositionsanträge + KU34 signalisieren wichtige Plenardebatten in Woche 21.
+
+### ⚡ 60-Sekunden-Lektüre
+
+- **HD11812** [B2]: SDs Markus Wiechel fragt Verteidigungsminister Pål Jonson (M) zur Drohnenkriegsführung — die Aurora-26-Übung (18.000 Teilnehmer, April–Mai 2026, Gotland-Fokus) hat UAV-taktische Lücken aufgedeckt [horizon:72h].
+- **HD10492** [A2]: Vs Lotta Johnsson Fornarve fordert Benjamin Dousa (M) auf, die Folgen der Entwicklungshilfekürzungen für Kinder zu erläutern — CRC-Artikel 6/26/28 werden angeführt [horizon:week].
+- **HD10493** [A2]: Dieselbe Interpellantin fragt nach abgewickelten Hilfsstrategien — 14 von 37 Strategien abgebaut, das 1%-des-BNE-Ziel aufgegeben [horizon:week].
+- **Gesetzespaket** [A2]: Fünf Gesetze einschl. HD03262 (PUT-Abschaffung) — breite parlamentarische Kritik (S + C + V + MP) [horizon:week].
+- **KU34** [A2]: Doppelte Verfassungsänderung — Abtreibungsrechte + Vereinigungsfreiheit — 2/3-Supermehrheit erforderlich, Herbst 2026 [horizon:month].
+- **Wirtschaftlicher Kontext**: Schweden BIP-Wachstum 2,3% (WEO Apr-2026); Entwicklungshilfe 0,7% → 0,36% des BIP (2026-Prognose) [B1].
+- **Wahlbarometer**: Aurora 26 + Ukraine-Lehren deuten darauf hin, dass SD ein Wählerprofil rund um "starke Verteidigungspolitik" konsolidiert [horizon:week].
+- **Vorwärtsauslöser**: Pål Jonsons Antwort auf HD11812 und Benjamin Dousas Antworten auf HD10492/10493 entscheiden über eine mögliche Eskalation in Woche 21 [horizon:72h].
+
+### 🔭 Wichtigster Vorwärtsauslöser
+
+**PIR-1 (72h)**: Benjamin Dousas schriftliche Antworten auf HD10492 und HD10493 — wird Dousa das Fehlen von Folgenabschätzungen eingestehen? Antworten werden in den Wochen 20–21 (18.–22. Mai) erwartet.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    A[HD11812 Drohnenkriegsführung<br/>SD→M Jonson] -->|72h Auslöser| B[Doktrinäre Position<br/>UAV-Strategie]
+    C[HD10492 Kinder+Hilfe<br/>V→M Dousa] -->|72h Auslöser| D[Folgenabschätzung?<br/>Kinderrechts-Rechenschaft]
+    E[HD10493 Strategien<br/>V→M Dousa] -->|72h Auslöser| D
+    F[Gesetzespaket<br/>HD03262 PUT usw.] -->|Wochen-Auslöser| G[Plenardebatte<br/>22. Mai 2026]
+    H[KU34 Verfassung<br/>Abtreibung+Sicherheit] -->|Monats-Auslöser| I[Herbst 2026<br/>2/3-Abstimmung]
+    style A fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style F fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style H fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style B fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style G fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style I fill:#0a0e27,stroke:#ff006e,color:#ff006e
+```
+
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling  
+**Fecha**: 2026-05-15  
+**Clasificación**: 🟢 PÚBLICO  
+**Nivel de confianza**: ALTO [B2]  
+**Horizonte**: [horizon:72h] [horizon:week]
+
+---
+
+### 🎯 BLUF
+
+El panorama político sueco del 15 de mayo de 2026 está definido por tres factores de estrés paralelos: SD presiona al ministro de Defensa Pål Jonson sobre la doctrina de guerra con drones tras el ejercicio Aurora 26 (HD11812, [A2]); el Partido de Izquierda (V) intensifica el escrutinio de los recortes de ayuda de la coalición Tidö, centrado en las consecuencias para los niños y las estrategias-país abandonadas (HD10492 [A2], HD10493 [A2]); y los análisis hermanos de hoy confirman que la sesión del Riksdag 2025/26 está marcada por la reforma migratoria más profunda en una década. En conjunto, el 15 de mayo señala un Riksdag en su sprint final con alto volumen legislativo y acelerado posicionamiento electoral antes de septiembre de 2026.
+
+### 🧭 3 decisiones que apoya este informe
+
+1. **Priorización editorial**: El debate sobre la ayuda (HD10492 / HD10493) es la noticia principal de Riksdagsmonitor hoy.  
+2. **Vigilancia de política de seguridad**: La pregunta sobre drones (HD11812) es un documento de señal temprana sobre doctrina UAV.  
+3. **Calibración de política migratoria**: Cinco proyectos de ley + 20 mociones + KU34 anuncian debates plenarios importantes en la semana 21.
+
+### ⚡ Lectura en 60 segundos
+
+- **HD11812** [B2]: Markus Wiechel (SD) pregunta al ministro de Defensa Pål Jonson (M) sobre guerra con drones — el ejercicio Aurora 26 (18.000 participantes, abril–mayo 2026, enfoque Gotland) reveló lagunas tácticas UAV [horizon:72h].
+- **HD10492** [A2]: Lotta Johnsson Fornarve (V) exige que Benjamin Dousa (M) rinda cuentas de las consecuencias de los recortes de ayuda para los niños — artículos 6/26/28 de la CDN invocados [horizon:week].
+- **HD10493** [A2]: La misma interpelante pregunta sobre estrategias de ayuda abandonadas — 14 de 37 estrategias desmanteladas, objetivo del 1 % de RNB abandonado [horizon:week].
+- **Paquete legislativo** [A2]: Cinco proyectos incluyendo HD03262 (abolición del PUT) — amplia crítica parlamentaria (S + C + V + MP) [horizon:week].
+- **KU34** [A2]: Doble enmienda constitucional — derechos reproductivos + libertad de asociación — supermayoría de 2/3 requerida, otoño 2026 [horizon:month].
+- **Contexto económico**: Crecimiento del PIB sueco 2,3% (WEO abr-2026); ayuda 0,7% → 0,36% del PIB (previsión 2026) [B1].
+- **Barómetro electoral**: Aurora 26 + lecciones de la guerra en Ucrania indican que SD consolida un perfil electoral en torno a una "política de defensa fuerte" [horizon:week].
+- **Detonante prospectivo**: Las respuestas de Pål Jonson a HD11812 y de Benjamin Dousa a HD10492/10493 determinarán una posible escalada en la semana 21 [horizon:72h].
+
+### 🔭 Principal detonante prospectivo
+
+**PIR-1 (72h)**: Las respuestas escritas de Benjamin Dousa a HD10492 y HD10493 — ¿reconocerá la ausencia de evaluaciones de impacto? Respuestas esperadas en las semanas 20–21 (18–22 de mayo).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    A[HD11812 Guerra con drones<br/>SD→M Jonson] -->|detonante 72h| B[Posición doctrinal<br/>estrategia UAV]
+    C[HD10492 Niños+ayuda<br/>V→M Dousa] -->|detonante 72h| D[¿Evaluación de impacto?<br/>rendición de cuentas CDN]
+    E[HD10493 Estrategias<br/>V→M Dousa] -->|detonante 72h| D
+    F[Paquete legislativo<br/>HD03262 PUT etc.] -->|detonante semanal| G[Debate plenario<br/>22 mayo 2026]
+    H[KU34 Constitución<br/>aborto+seguridad] -->|detonante mensual| I[Otoño 2026<br/>voto 2/3]
+    style A fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style F fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style H fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style B fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style G fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style I fill:#0a0e27,stroke:#ff006e,color:#ff006e
+```
+
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling  
+**Päivämäärä**: 2026-05-15  
+**Luokittelu**: 🟢 JULKINEN  
+**Luotettavuus**: KORKEA [B2]  
+**Horisontti**: [horizon:72h] [horizon:week]
+
+---
+
+### 🎯 BLUF
+
+Ruotsin poliittinen tilanne 15. toukokuuta 2026 on kolmen yhtäaikaisen paineen alainen: SD painostaa puolustusministeri Pål Jonsonia droonisotataktiikasta Aurora 26 -harjoituksen jälkeen (HD11812, [A2]); Vasemmistopuolue (V) tiivistää Tidö-hallituksen kehitysapuleikkauksien tarkastelua keskittyen lapsiuhrien ja lakkautettujen maastrategioiden seurauksiin (HD10492 [A2], HD10493 [A2]); ja tämän päivän sisaranalyysit vahvistavat, että riksmötet 2025/26 on leimattu vuosikymmenen syvimmällä maahanmuuttopolitiikan uudistuksella. Yhdessä 15. toukokuuta merkitsee riksdagin kiireistä loppusuoraa kohti syyskuun 2026 vaaleja.
+
+### 🧭 3 päätöstä, joita tämä tiivistelmä tukee
+
+1. **Toimituksellinen priorisointi**: Kehitysapudebatti (HD10492 / HD10493) on Riksdagsmonitorin päätarina tänään.  
+2. **Turvallisuuspolitiikan seuranta**: Droonisodan kysymys (HD11812) on varhainen signaalidokumentti Aurora 26 -opeista.  
+3. **Maahanmuuttopolitiikan kalibrointi**: Viisi lakiesitystä + 20 oppositioaloitetta + KU34 viittaavat suuriin täysistuntodebatteihin viikolla 21.
+
+### ⚡ 60 sekunnin lukeminen
+
+- **HD11812** [B2]: SD:n Markus Wiechel kysyy puolustusministeri Pål Jonsonilta (M) droonisotataktiikasta — Aurora 26 -harjoitus (18 000 osallistujaa, huhti–toukokuu 2026, Gotlannin fokus) paljasti UAV-taktisia aukkoja [horizon:72h].
+- **HD10492** [A2]: V:n Lotta Johnsson Fornarve vaatii Benjamin Dousaa (M) selvittämään kehitysapuleikkausten seuraukset lapsille — Pelastakaa Lapset -järjestön raportti aliravitsemusohjelmien keskeyttämisestä; CRC artiklat 6/26/28 vedottu [horizon:week].
+- **HD10493** [A2]: Sama interpellantti kysyy lakkautetuista kehitysapustrategioista — 14/37 strategiaa purettu, 1 %:n BKT-tavoite hylätty [horizon:week].
+- **Lakipaketti** [A2]: Viisi lakiesitystä ml. HD03262 (PUT-poisto) — laaja parlamentaarinen kritiikki (S + C + V + MP) [horizon:week].
+- **KU34** [A2]: Perustuslaillinen kaksoistarkistus — aborttioikeudet + yhdistymisvapaus — 2/3 supermajoriteetti vaaditaan, syksy 2026 [horizon:month].
+- **Taloudellinen konteksti**: Ruotsin BKT-kasvu 2,3 % (WEO huhti-2026); kehitysapu 0,7 % → 0,36 % BKT:stä (2026-ennuste) — alin kehitysapuosuus sitten 1970-luvun [B1].
+- **Vaalimittari**: Aurora 26 + Ukrainan sodan opit viittaavat SD:n konsolidoivan äänestysprofiilin "vahvan puolustuspolitiikan" ympärille [horizon:week].
+- **Eteenpäin suuntautuva laukaisin**: Pål Jonssonin vastaus HD11812:een ja Benjamin Dousan vastaukset HD10492/10493:een ratkaisevat, eskaloituvatko kysymykset interpellaatiodebateiksi viikolla 21 [horizon:72h].
+
+### 🔭 Tärkein eteenpäin suuntautuva laukaisin
+
+**PIR-1 (72h)**: Benjamin Dousan kirjalliset vastaukset HD10492:een ja HD10493:een — myöntääkö Dousa vaikutusarviointien puuttumisen? Vastaukset odotetaan viikoilla 20–21 (18.–22. toukokuuta).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    A[HD11812 Droonikäyttö<br/>SD→M Jonson] -->|72h laukaisin| B[Doktriininen asema<br/>UAV-strategia]
+    C[HD10492 Lapset+kehitysapu<br/>V→M Dousa] -->|72h laukaisin| D[Vaikutusarviointi?<br/>Lapsenoikeusraportti]
+    E[HD10493 Strategiat<br/>V→M Dousa] -->|72h laukaisin| D
+    F[Lakipaketti<br/>HD03262 PUT jne.] -->|viikko-laukaisin| G[Täysistuntodebatti<br/>22.5.2026]
+    H[KU34 Perustuslaki<br/>abortti+turvallisuus] -->|kuukausi-laukaisin| I[Syksy 2026<br/>2/3-äänestys]
+    style A fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style F fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style H fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style B fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style G fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style I fill:#0a0e27,stroke:#ff006e,color:#ff006e
+```
+
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling  
+
+**Niveau de confiance** : ÉLEVÉ [B2]  
+**Horizon** : [horizon:72h] [horizon:week]
+
+---
+
+### 🎯 BLUF
+
+Le paysage politique suédois du 15 mai 2026 est marqué par trois facteurs de stress parallèles : SD presse le ministre de la Défense Pål Jonson sur la doctrine de guerre par drones après l'exercice Aurora 26 (HD11812, [A2]) ; le Parti de gauche (V) intensifie son examen des réductions d'aide de la coalition Tidö, en se concentrant sur les conséquences pour les enfants et les stratégies-pays abandonnées (HD10492 [A2], HD10493 [A2]) ; et les analyses sœurs de la journée confirment que la session du Riksdag 2025/26 est marquée par la réforme migratoire la plus profonde en une décennie. Ensemble, le 15 mai signale un Riksdag en fin de session avec un volume législatif élevé et un positionnement électoral accéléré avant septembre 2026.
+
+### 🧭 3 décisions que ce rapport soutient
+
+1. **Priorisation éditoriale** : Le débat sur l'aide (HD10492 / HD10493) est la principale histoire de Riksdagsmonitor aujourd'hui.  
+2. **Veille sécuritaire** : La question des drones (HD11812) est un document signal précoce sur la doctrine UAV.  
+3. **Calibration de la politique migratoire** : Cinq projets de loi + 20 motions + KU34 signalent d'importants débats en séance plénière à la semaine 21.
+
+### ⚡ Lecture en 60 secondes
+
+- **HD11812** [B2] : Markus Wiechel (SD) interroge le ministre de la Défense Pål Jonson (M) sur la guerre par drones — l'exercice Aurora 26 (18 000 participants, avril–mai 2026, focus Gotland) a révélé des lacunes UAV [horizon:72h].
+- **HD10492** [A2] : Lotta Johnsson Fornarve (V) demande à Benjamin Dousa (M) de rendre compte des conséquences des coupes dans l'aide pour les enfants — articles 6/26/28 de la CDE invoqués [horizon:week].
+- **HD10493** [A2] : La même interpellante interroge sur les stratégies d'aide abandonnées — 14 des 37 stratégies démantelées, l'objectif de 1 % du RNB abandonné [horizon:week].
+- **Paquet législatif** [A2] : Cinq projets de loi dont HD03262 (suppression du PUT) — large critique parlementaire (S + C + V + MP) [horizon:week].
+- **KU34** [A2] : Double amendement constitutionnel — droits à l'avortement + liberté d'association — super-majorité des 2/3 requise, automne 2026 [horizon:month].
+- **Contexte économique** : Croissance du PIB suédois 2,3 % (WEO avr-2026) ; aide 0,7 % → 0,36 % du PIB (prévision 2026) — niveau le plus bas depuis les années 1970 [B1].
+- **Baromètre électoral** : Aurora 26 + enseignements de la guerre en Ukraine indiquent que SD consolide un profil électoral autour de la "politique de défense forte" [horizon:week].
+- **Déclencheur prospectif** : Les réponses de Pål Jonson à HD11812 et de Benjamin Dousa à HD10492/10493 détermineront une éventuelle escalade en semaine 21 [horizon:72h].
+
+### 🔭 Principal déclencheur prospectif
+
+**PIR-1 (72h)** : Les réponses écrites de Benjamin Dousa à HD10492 et HD10493 — reconnaîtra-t-il l'absence d'évaluations d'impact ? Réponses attendues semaines 20–21 (18–22 mai).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    A[HD11812 Guerre par drones<br/>SD→M Jonson] -->|déclencheur 72h| B[Position doctrinale<br/>stratégie UAV]
+    C[HD10492 Enfants+aide<br/>V→M Dousa] -->|déclencheur 72h| D[Évaluation d'impact ?<br/>responsabilité CDE]
+    E[HD10493 Stratégies<br/>V→M Dousa] -->|déclencheur 72h| D
+    F[Paquet législatif<br/>HD03262 PUT etc.] -->|déclencheur hebdomadaire| G[Débat en plénière<br/>22 mai 2026]
+    H[KU34 Constitution<br/>avortement+sécurité] -->|déclencheur mensuel| I[Automne 2026<br/>vote 2/3]
+    style A fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style F fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style H fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style B fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style G fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style I fill:#0a0e27,stroke:#ff006e,color:#ff006e
+```
+
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_he.md -->
+
+‏# ריקסדאגסמוניטור — פולס בזמן אמת 15 במאי 2026: יכולת הגנה וחוב הסיוע
+
+**מחבר**: James Pether Sörling  
+**תאריך**: 2026-05-15  
+**סיווג**: 🟢 ציבורי  
+**רמת אמינות**: גבוהה [B2]  
+**אופק**: [horizon:72h] [horizon:week]
+
+---
+
+### 🎯 BLUF
+
+הנוף הפוליטי של שבדיה ב-15 במאי 2026 מאופיין בשלושה לחצים מקבילים: SD לוחץ על שר הביטחון פול יונסון בנוגע לדוקטרינת מלחמת רחפנים לאחר תרגיל אורורה 26 (HD11812, [A2]); מפלגת השמאל (V) מגברת את בחינת קיצוצי הסיוע של קואליציית טידו תוך התמקדות בהשלכות על ילדים ואסטרטגיות מדינה שבוטלו (HD10492 [A2], HD10493 [A2]); וניתוחי היום האחיים מאשרים כי מושב הריקסדאג 2025/26 מסומן ברפורמה המעמיקה ביותר במדיניות ההגירה מאז עשור. ביחד, ה-15 במאי מסמן פרלמנט בספרינט הסיום שלו עם נפח חקיקתי גבוה ומיצוב בחירות מואץ לקראת ספטמבר 2026.
+
+### 🧭 3 החלטות שדו"ח זה תומך בהן
+
+1. **עדיפות עריכה**: ויכוח הסיוע (HD10492 / HD10493) הוא הסיפור הראשי של ריקסדאגסמוניטור היום.  
+2. **מעקב ביטחוני**: שאלת הרחפנים (HD11812) היא מסמך אות מוקדם בנושא דוקטרינת UAV.  
+3. **כיול מדיניות הגירה**: חמישה הצעות חוק + 20 הצעות אופוזיציה + KU34 מסמנים דיונים מליאה חשובים בשבוע 21.
+
+### ⚡ קריאה ב-60 שניות
+
+- **HD11812** [B2]: מרקוס ויקיל (SD) שואל את שר הביטחון פול יונסון (M) על מלחמת רחפנים — תרגיל אורורה 26 (18,000 משתתפים, אפריל–מאי 2026, מיקוד על גוטלנד) חשף פערים טקטיים ב-UAV [horizon:72h].
+- **HD10492** [A2]: לוטה יונסון פורנרוה (V) דורשת מבנימין דוסה (M) להסביר את השלכות קיצוצי הסיוע על ילדים — סעיפים 6/26/28 של אמנת זכויות הילד הופעלו [horizon:week].
+- **HD10493** [A2]: אותה חברת כנסת שואלת על אסטרטגיות סיוע שבוטלו — 14 מתוך 37 אסטרטגיות פורקו, יעד 1% מה-GNI ננטש [horizon:week].
+- **חבילת חקיקה** [A2]: חמש הצעות חוק כולל HD03262 — ביקורת פרלמנטרית רחבה (S + C + V + MP) [horizon:week].
+- **KU34** [A2]: תיקון חוקתי כפול — זכויות הפלה + חופש ההתאגדות — נדרשת רוב של 2/3, סתיו 2026 [horizon:month].
+- **הקשר כלכלי**: צמיחת התמ"ג של שבדיה 2.3% (WEO אפריל 2026); סיוע 0.7% → 0.36% מהתמ"ג (תחזית 2026) [B1].
+- **ברומטר בחירות**: תרגיל אורורה 26 ולקחי מלחמת אוקראינה מצביעים על כך שSD מגבש פרופיל בוחרים סביב "מדיניות ביטחון חזקה" [horizon:week].
+- **טריגר קדימה**: תשובות יונסון ל-HD11812 ותשובות דוסה ל-HD10492/10493 יקבעו אם השאלות מסלימות בשבוע 21 [horizon:72h].
+
+### 🔭 הטריגר הקדימה החשוב ביותר
+
+**PIR-1 (72h)**: התשובות הכתובות של בנימין דוסה ל-HD10492 ו-HD10493 — האם דוסה יכיר בהיעדר הערכות השפעה? תשובות צפויות בשבועות 20–21 (18–22 במאי).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    A[HD11812 מלחמת רחפנים<br/>SD→M Jonson] -->|72h trigger| B[עמדה דוקטרינרית<br/>אסטרטגיית UAV]
+    C[HD10492 ילדים+סיוע<br/>V→M Dousa] -->|72h trigger| D[הערכת השפעה?<br/>אחריות לזכויות ילד]
+    E[HD10493 אסטרטגיות<br/>V→M Dousa] -->|72h trigger| D
+    F[חבילת חקיקה<br/>HD03262 PUT וכו'] -->|week trigger| G[דיון מליאה<br/>22 מאי 2026]
+    H[KU34 חוקה<br/>הפלה+ביטחון] -->|month trigger| I[סתיו 2026<br/>הצבעה 2/3]
+    style A fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style F fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style H fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style B fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style G fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style I fill:#0a0e27,stroke:#ff006e,color:#ff006e
+```
+
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling  
+**日付**: 2026-05-15  
+**分類**: 🟢 公開  
+**信頼度**: 高 [B2]  
+**ホライゾン**: [horizon:72h] [horizon:week]
+
+---
+
+### 🎯 BLUF
+
+2026年5月15日のスウェーデン政治情勢は、3つの並行する圧力によって特徴付けられる。民主党（SD）はアウロラ26演習後にドローン戦争ドクトリンについて国防大臣パール・ヨンソンを追及（HD11812、[A2]）；左翼党（V）は子供への影響と廃止された国別戦略に焦点を当て、ティード連立政権の援助削減への精査を強化（HD10492 [A2]、HD10493 [A2]）；そして本日の姉妹分析は2025/26年度の国会会期が10年で最も深い移民政策改革を含むことを確認する。総合して、5月15日は高い立法量と2026年9月選挙に向けた加速する選挙ポジショニングを伴う国会の終盤スプリントを示す。
+
+### 🧭 このブリーフが支える3つの意思決定
+
+1. **編集上の優先事項**: 援助討論（HD10492 / HD10493）が本日のリクスダーグモニターの主要ニュース。  
+2. **安全保障政策の監視**: ドローン質問（HD11812）はUAVドクトリンとアウロラ26の教訓に関する早期シグナル文書。  
+3. **移民政策の較正**: 5つの法案 + 20の反対動議 + KU34は第21週に重要な本会議討論を示す。
+
+### ⚡ 60秒で読む
+
+- **HD11812** [B2]: SDのマルクス・ヴィーケルが国防大臣パール・ヨンソン（M）にドローン戦争について質問 — アウロラ26演習（1万8千人参加、2026年4〜5月、ゴットランド重点）でUAV戦術的ギャップが露呈 [horizon:72h]。
+- **HD10492** [A2]: VのロッタJヨンソン・フォルナルヴェがベンヤミン・ドゥサ（M）に援助削減の子供への影響説明を要求 — 子どもの権利条約第6/26/28条を援用 [horizon:week]。
+- **HD10493** [A2]: 同じ質問者が廃止された援助戦略について質問 — 37戦略中14廃止、GNI1%目標放棄 [horizon:week]。
+- **法案パッケージ** [A2]: HD03262を含む5法案 — 幅広い議会批判（S + C + V + MP） [horizon:week]。
+- **KU34** [A2]: 二重憲法改正 — 中絶権利 + 結社の自由 — 2/3超多数決必要、2026年秋 [horizon:month]。
+- **経済文脈**: スウェーデンGDP成長2.3%（WEO 2026年4月）；援助0.7%→0.36%（2026年予測）— 1970年代以来最低水準 [B1]。
+- **選挙バロメーター**: アウロラ26とウクライナ戦争の教訓は、SDが「強力な防衛政策」を中心に有権者プロフィールを固めていることを示す [horizon:week]。
+- **フォワードトリガー**: ヨンソンのHD11812への回答とドゥサのHD10492/10493への回答が第21週のエスカレーションを決定 [horizon:72h]。
+
+### 🔭 最重要フォワードトリガー
+
+**PIR-1 (72h)**: ベンヤミン・ドゥサのHD10492とHD10493への書面回答 — 影響評価の欠如を認めるか？回答は第20〜21週（5月18〜22日）に予定。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    A[HD11812 ドローン戦争<br/>SD→M Jonson] -->|72hトリガー| B[ドクトリン的立場<br/>UAV戦略]
+    C[HD10492 子供+援助<br/>V→M Dousa] -->|72hトリガー| D[影響評価?<br/>子どもの権利説明責任]
+    E[HD10493 戦略<br/>V→M Dousa] -->|72hトリガー| D
+    F[法案パッケージ<br/>HD03262 PUTなど] -->|週次トリガー| G[本会議討論<br/>2026年5月22日]
+    H[KU34 憲法<br/>中絶+安全保障] -->|月次トリガー| I[2026年秋<br/>2/3投票]
+    style A fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style F fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style H fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style B fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style G fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style I fill:#0a0e27,stroke:#ff006e,color:#ff006e
+```
+
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling  
+**날짜**: 2026-05-15  
+**분류**: 🟢 공개  
+**신뢰도**: 높음 [B2]  
+**시계**: [horizon:72h] [horizon:week]
+
+---
+
+### 🎯 BLUF
+
+2026년 5월 15일 스웨덴 정치 상황은 세 가지 병렬적 압박으로 특징지어진다: SD는 오로라 26 훈련 이후 드론 전쟁 교리에 관해 국방장관 파울 욘슨을 압박(HD11812, [A2]); 좌파당(V)은 아이들에 대한 영향과 폐지된 국가 전략에 초점을 맞추어 티도 연립의 원조 삭감에 대한 조사를 강화(HD10492 [A2], HD10493 [A2]); 오늘의 자매 분석들은 2025/26년도 국회 회기가 10년 만에 가장 깊은 이민 정책 개혁을 담고 있음을 확인한다. 종합하면, 5월 15일은 높은 입법 볼륨과 2026년 9월 선거를 앞둔 가속화된 선거 포지셔닝으로 마무리 스프린트에 있는 국회를 나타낸다.
+
+### 🧭 이 브리핑이 지원하는 3가지 결정
+
+1. **편집 우선순위**: 원조 토론(HD10492 / HD10493)이 오늘 릭스다그모니터의 주요 뉴스.  
+2. **안보 정책 모니터링**: 드론 질문(HD11812)은 UAV 교리와 오로라 26 교훈에 관한 초기 신호 문서.  
+3. **이민 정책 보정**: 다섯 가지 법안 + 20개 반대 동의 + KU34는 21주에 EU 법적 차원의 중요한 본회의 토론을 예고.
+
+### ⚡ 60초 독서
+
+- **HD11812** [B2]: SD의 마르쿠스 비켈이 국방장관 파울 욘슨(M)에게 드론 전쟁에 대해 질문 — 오로라 26 훈련(18,000명 참가, 2026년 4~5월, 고틀란드 집중)에서 UAV 전술적 격차 노출 [horizon:72h].
+- **HD10492** [A2]: V의 로타 욘슨 포르나르베가 벤야민 도우사(M)에게 원조 삭감이 아동에게 미치는 영향 설명 요구 — 아동권리협약 제6/26/28조 원용 [horizon:week].
+- **HD10493** [A2]: 동일한 질문자가 폐지된 원조 전략에 대해 질문 — 37개 중 14개 전략 해체, GNI 1% 목표 포기 [horizon:week].
+- **법안 패키지** [A2]: HD03262를 포함한 5개 법안 — 광범위한 의회 비판(S + C + V + MP) [horizon:week].
+- **KU34** [A2]: 이중 헌법 개정 — 낙태권 + 결사의 자유 — 2/3 초다수결 필요, 2026년 가을 [horizon:month].
+- **경제적 맥락**: 스웨덴 GDP 성장 2.3%(WEO 2026년 4월); 원조 0.7% → 0.36%(2026년 예측) — 1970년대 이후 최저 수준 [B1].
+- **선거 바로미터**: 오로라 26과 우크라이나 전쟁 교훈은 SD가 "강력한 국방 정책"을 중심으로 유권자 프로필을 강화하고 있음을 시사 [horizon:week].
+- **포워드 트리거**: 욘슨의 HD11812 답변과 도우사의 HD10492/10493 답변이 21주 확대 여부 결정 [horizon:72h].
+
+### 🔭 가장 중요한 포워드 트리거
+
+**PIR-1 (72h)**: 벤야민 도우사의 HD10492와 HD10493에 대한 서면 답변 — 영향 평가 부재를 인정할 것인가? 답변은 20~21주(5월 18~22일)에 예상.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    A[HD11812 드론전쟁<br/>SD→M Jonson] -->|72h 트리거| B[교리적 입장<br/>UAV 전략]
+    C[HD10492 아동+원조<br/>V→M Dousa] -->|72h 트리거| D[영향평가?<br/>아동권리 책임]
+    E[HD10493 전략<br/>V→M Dousa] -->|72h 트리거| D
+    F[법안 패키지<br/>HD03262 PUT 등] -->|주간 트리거| G[본회의 토론<br/>2026년 5월 22일]
+    H[KU34 헌법<br/>낙태+안보] -->|월간 트리거| I[2026년 가을<br/>2/3 투표]
+    style A fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style F fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style H fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style B fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style G fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style I fill:#0a0e27,stroke:#ff006e,color:#ff006e
+```
+
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling  
+**Datum**: 2026-05-15  
+**Classificatie**: 🟢 OPENBAAR  
+**Betrouwbaarheid**: HOOG [B2]  
+**Horizon**: [horizon:72h] [horizon:week]
+
+---
+
+### 🎯 BLUF
+
+Het Zweedse politieke landschap op 15 mei 2026 wordt bepaald door drie parallelle stressfactoren: SD zet minister van Defensie Pål Jonson onder druk over de drone-oorlogdoctrine na de Aurora 26-oefening (HD11812, [A2]); de Linkse Partij (V) intensiveert haar onderzoek naar de bezuinigingen op ontwikkelingshulp van de Tidö-coalitie, gericht op gevolgen voor kinderen en stopgezette landstrategieën (HD10492 [A2], HD10493 [A2]); en de zusteranalyses van vandaag bevestigen dat de rijksdag-sessie 2025/26 de diepste migratiepolitieke hervorming in een decennium omvat. Samen signaleert 15 mei een Riksdag in de eindspurt met hoog wetgevend volume en versnellende verkiezingspositionering voor september 2026.
+
+### 🧭 3 beslissingen die dit rapport ondersteunt
+
+1. **Redactionele prioritering**: Het hulpdebat (HD10492 / HD10493) is het hoofdverhaal van Riksdagsmonitor vandaag.  
+2. **Veiligheidspolitieke bewaking**: De drone-vraag (HD11812) is een vroeg signaaaldocument over UAV-doctrine.  
+3. **Migratiebeleidskalibratie**: Vijf wetsvoorstellen + 20 opposiemoties + KU34 signaleren belangrijke plenaire debatten in week 21.
+
+### ⚡ 60-seconden lezing
+
+- **HD11812** [B2]: Markus Wiechel (SD) vraagt minister van Defensie Pål Jonson (M) over drone-oorlogvoering — de Aurora 26-oefening (18.000 deelnemers, april–mei 2026, Gotland-focus) heeft UAV-tactische hiaten blootgelegd [horizon:72h].
+- **HD10492** [A2]: Lotta Johnsson Fornarve (V) eist dat Benjamin Dousa (M) verantwoording aflegt over de gevolgen van hulpbezuinigingen voor kinderen — CRC-artikelen 6/26/28 ingeroepen [horizon:week].
+- **HD10493** [A2]: Dezelfde interpellant vraagt over stopgezette hulpstrategieën — 14 van 37 strategieën afgebouwd, het 1%-van-BNI-doel opgegeven [horizon:week].
+- **Wetspakket** [A2]: Vijf wetsvoorstellen incl. HD03262 (afschaffing PUT) — brede parlementaire kritiek (S + C + V + MP) [horizon:week].
+- **KU34** [A2]: Dubbele grondwetswijziging — abortusrechten + verenigingsvrijheid — 2/3 supermeerderheid vereist, najaar 2026 [horizon:month].
+- **Economische context**: Zweedse bbp-groei 2,3% (WEO apr-2026); hulp 0,7% → 0,36% van het bbp (2026-prognose) [B1].
+- **Electorale barometer**: Aurora 26 + Oekraïne-lessen duiden erop dat SD een kiezersprofiel consolideert rond "sterke defensiepolitiek" [horizon:week].
+- **Voorwaartse trigger**: Pål Jonsons antwoord op HD11812 en Benjamin Dousas antwoorden op HD10492/10493 bepalen of de vragen escaleren in week 21 [horizon:72h].
+
+### 🔭 Belangrijkste voorwaartse trigger
+
+**PIR-1 (72h)**: De schriftelijke antwoorden van Benjamin Dousa op HD10492 en HD10493 — erkent Dousa het ontbreken van impactbeoordelingen? Antwoorden worden verwacht in weken 20–21 (18–22 mei).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    A[HD11812 Drone-oorlogvoering<br/>SD→M Jonson] -->|72h trigger| B[Doctrinaire positie<br/>UAV-strategie]
+    C[HD10492 Kinderen+hulp<br/>V→M Dousa] -->|72h trigger| D[Impactbeoordeling?<br/>CRC-verantwoording]
+    E[HD10493 Strategieën<br/>V→M Dousa] -->|72h trigger| D
+    F[Wetspakket<br/>HD03262 PUT enz.] -->|week-trigger| G[Plenair debat<br/>22 mei 2026]
+    H[KU34 Grondwet<br/>abortus+veiligheid] -->|maand-trigger| I[Najaar 2026<br/>2/3-stemming]
+    style A fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style F fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style H fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style B fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style G fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style I fill:#0a0e27,stroke:#ff006e,color:#ff006e
+```
+
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-05-15  
+**Klassifisering**: 🟢 OFFENTLIG  
+**Konfidensnivå**: HØY [B2]  
+**Horisont**: [horizon:72h] [horizon:week]
+
+---
+
+### 🎯 BLUF
+
+Sveriges politiske landskap 15. mai 2026 preges av tre parallelle stressorer: SD presser forsvarsminister Pål Jonson om dronedoktrin etter Aurora 26-øvelsen (HD11812, [A2]); Vänsterpartiet (V) intensiverer sin gransking av Tidö-regjeringens bistandskutt, med fokus på konsekvenser for barn og avviklede landestrategier (HD10492 [A2], HD10493 [A2]); og dagens søsteranalyser bekrefter at riksmøtet 2025/26 bærer preg av den dypeste migrasjonspolitiske omformingen på et tiår. Samlet sett signalerer 15. mai en riksdag i sin avsluttende sprint med høyt lovgivningsvolum og akselererende valgposisjonering frem mot september 2026.
+
+### 🧭 3 beslutninger dette underlaget støtter
+
+1. **Redaksjonell prioritering**: Bistantsdebatten (HD10492 / HD10493) er Riksdagsmonitors topphistorie i dag — internasjonal rekkevidde, en barnerettslig dimensjon og det globale USAID-sammenbruddet som bakteppe.  
+2. **Sikkerhetspolitisk overvåking**: Dronespørsmålet (HD11812) er et tidlig signaldokument om UAV-doktrin og Aurora 26-lærdom — overvåk Pål Jonsons svar.  
+3. **Migrasjonspolitisk kalibrering**: Dagens fem lovforslag + 20 opposisjonsmotioner + KU34 signalerer at plenardebatten i uke 21 (22. mai) kan avgjøre avstemningsutfall med en EU-rettslig dimensjon.
+
+### ⚡ 60-sekunders lesning
+
+- **HD11812** [B2]: SDs Markus Wiechel spør forsvarsminister Pål Jonson (M) om dronekrigsføring — Aurora 26-øvelsen (18 000 deltakere, april–mai 2026, Gotland-fokus) har avdekket UAV-taktiske hull [horizon:72h].
+- **HD10492** [A2]: Vs Lotta Johnsson Fornarve krever at Benjamin Dousa (M) redegjør for konsekvensene for barn av bistandskuttene — Redd Barnas rapportering om stoppede underernæringsprogrammer; CRC artiklene 6/26/28 påberopes [horizon:week].
+- **HD10493** [A2]: Samme interpellant spør om avviklede bistandsstrategier — 14 av 37 strategier nedmontert, 1%-av-BNI-målet forlatt [horizon:week].
+- **Lovpakke** [A2]: Fem lovforslag inkl. HD03262 (PUT-avvikling) — bred parlamentarisk kritikk (S + C + V + MP) [horizon:week].
+- **KU34** [A2]: Konstitusjonell dobbeltendring — abortrettigheter + foreningsfrihet — 2/3 supermajoritet kreves, høst 2026 [horizon:month].
+- **Økonomisk kontekst**: Sveriges BNP-vekst 2,3% (WEO apr-2026); bistand 0,7% → 0,36% av BNP (2026-prognose) — laveste bistandsandel siden 1970-tallet [B1].
+- **Valgbarometer**: Aurora 26 + Ukraina-krigens lærdom tyder på at SD konsoliderer en velgerprofil rundt "sterk forsvarspolitikk" [horizon:week].
+- **Fremoverutløser**: Pål Jonsons svar på HD11812 og Benjamin Dousas svar på HD10492/10493 bestemmer om spørsmålene eskalerer til interpellasjonsdebatter i uke 21 [horizon:72h].
+
+### 🔭 Viktigste fremoverutløser
+
+**PIR-1 (72h)**: Benjamin Dousas skriftlige svar på HD10492 og HD10493 — vil Dousa erkjenne fraværet av konsekvensanalyser? Svar forventet i ukene 20–21 (18.–22. mai).
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    A[HD11812 Dronekrigsføring<br/>SD→M Jonson] -->|72h trigger| B[Doktrinær posisjon<br/>UAV-strategi]
+    C[HD10492 Barn+bistand<br/>V→M Dousa] -->|72h trigger| D[Konsekvensanalyse?<br/>Barnerettsredegjørelse]
+    E[HD10493 Strategier<br/>V→M Dousa] -->|72h trigger| D
+    F[Lovpakke<br/>HD03262 PUT m.fl.] -->|uke-trigger| G[Plenardebatt<br/>22. mai 2026]
+    H[KU34 Konstitusjon<br/>abort+sikkerhet] -->|måneds-trigger| I[Høst 2026<br/>2/3-avstemning]
+    style A fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style F fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style H fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style B fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style G fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style I fill:#0a0e27,stroke:#ff006e,color:#ff006e
+```
+
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling  
+**Datum**: 2026-05-15  
+**Klassificering**: 🟢 OFFENTLIG  
+**Konfidensgrad**: HÖG [B2]  
+**Horisont**: [horizon:72h] [horizon:week]
+
+---
+
+### 🎯 BLUF
+
+Sveriges politiska landskap den 15 maj 2026 präglas av tre parallella stressorer: SD pressar försvarsminister Pål Jonson om drönarläran efter Aurora 26-övningen (HD11812, [A2]); Vänsterpartiet (V) trappas upp sin granskning av Tidöregeringens biståndsminskningar, med fokus på konsekvenserna för barn och avvecklade landsstrategier (HD10492 [A2], HD10493 [A2]); och dagens systeranalyser (se propositioner, utskottsbetänkanden, motioner) bekräftar att riksmötet 2025/26 präglas av det djupaste migrationspolitiska omstöpet på ett decennium, en konstitutionell ombalansering kring aborträtten och säkerhetsstaten, och den starkaste samordnade oppositionsoffensiven sedan 2022. Sammantaget signalerar 15 maj en riksdag i sin avslutande sprint, med hög lagstiftningsvolym, skärpt granskning och accelererande valpositionering inför september 2026.
+
+### 🧭 3 beslut detta underlag stöder
+
+1. **Redaktionell prioritering**: Bistånddebatten (HD10492 / HD10493) är Riksdagsmonitors lednyhet i dag — internationell räckvidd, en barnrättslig dimension och det globala USAID-sammanbrottet som bakgrund maximerar läsarrelevansen.  
+2. **Säkerhetspolitisk bevakning**: Drönarfrågan (HD11812) är ett tidigt signaldokument om UAV-doktrin och Aurora 26 lärdomarna — bevaka Pål Jonsons svar för potentiella strategikonsekvenser.  
+3. **Migrationspolitisk kalibrering**: Dagens fem propositioner + 20 oppositionsmotioner + KU34:s konstitutionsutskottsrapport signalerar att plenardebaterna i vecka 21 (22 maj) kan avgöra omröstningsutfall med en EU-rättslig dimension (PUT-avskaffande, förvar, EPBD).
+
+### ⚡ 60-sekundersläsning
+
+- **HD11812** [B2]: SD:s Markus Wiechel frågar försvarsminister Pål Jonson (M) om drönarkrigsföring — Aurora 26-övningen (18 000 deltagare, april–maj 2026, Gotlandsfokus) har blottat UAV-taktiska luckor; frågan skapar tryck för en offentlig doktrinell ståndpunkt [horizon:72h].
+- **HD10492** [A2]: V:s Lotta Johnsson Fornarve kräver att Benjamin Dousa (M) redovisar konsekvenserna för barn av biståndsminskningarna — Rädda Barnens rapportering om stoppade undernäringsprogram utgör underlag; CRC artiklarna 6/26/28 åberopas [horizon:week].
+- **HD10493** [A2]: Samma interpellant frågar om avvecklade biståndsstrategier — 14 av 37 strategier nedmonterade, 1%-av-BNI-målet övergett, avköningsfieringen av agendan sedan december 2023 dokumenterad; Dousa är under dubbelt tryck [horizon:week].
+- **Propositionspaket** [A2]: Fem propositioner inklusive HD03262 (PUT-avskaffande) — lagstiftningspaketet i slutfasen; oppositionsmotioner (20 totalt) bekräftar bred parlamentarisk kritik (S + C + V + MP) [horizon:week].
+- **KU34** [A2]: Konstitutionell dubbeländring — aborträtten + föreningsfriheten + medborgarskapsreglering — 2/3 supermajoritet krävs, höst 2026; politisk polarisering kommer prövas [horizon:month].
+- **Ekonomisk kontext**: Sveriges BNP-tillväxt 2,3% (WEO apr-2026); bistånd 0,7% → 0,36% av BNP (2026-prognos) — den lägsta biståndsandelen sedan 1970-talet; IMF-vintagen (apr-2026, NGDP_RPCH) [B1].
+- **Valbarometer**: Aurora 26 + Ukraina-krigets lärdomar tyder på att SD konsoliderar ett väljarerbjudande kring "stark försvarspolitik" med 72-timmarsfrågors brådskande karaktär; biståndsfrågan stärker V:s progressiva profil inför riksdagsvalet 2026 [horizon:week].
+- **Framåtutlösare**: Pål Jonsons svar på HD11812 och Benjamin Dousas svar på HD10492 / HD10493 avgör om frågorna eskalerar till interpellationsdebatter i vecka 21 — båda ministrars ståndpunkter är PIR-öppna [horizon:72h].
+
+### 🔭 Viktigaste framåtutlösare
+
+**PIR-1 (72h)**: Benjamin Dousas skriftliga svar på HD10492 och HD10493 — kommer Dousa erkänna avsaknaden av konsekvensanalyser, eller hänvisa till den "nya biståndsagendan" som motivering? Svar förväntas i veckorna 20–21 (18–22 maj). Negativt svar → interpellationsdebatt → riksdagens möjlighet att rikta allvarlig kritik mot ministern ökar.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    A[HD11812 Drönarkrigsföring<br/>SD→M Jonson] -->|72h-utlösare| B[Doktrinell ståndpunkt<br/>UAV-strategi]
+    C[HD10492 Barn+bistånd<br/>V→M Dousa] -->|72h-utlösare| D[Konsekvensanalys?<br/>Barnrättsredovisning]
+    E[HD10493 Strategier<br/>V→M Dousa] -->|72h-utlösare| D
+    F[Propositionspaket<br/>HD03262 PUT m.fl.] -->|vecko-utlösare| G[Plenardebatt<br/>22 maj 2026]
+    H[KU34 Konstitution<br/>abort+säkerhet] -->|månads-utlösare| I[Höst 2026<br/>2/3-omröstning]
+    style A fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style F fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style H fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style B fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style G fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style I fill:#0a0e27,stroke:#ff006e,color:#ff006e
+```
+
+---
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling  
+**日期**：2026-05-15  
+**分类**：🟢 公开  
+**可信度**：高 [B2]  
+**时间维度**：[horizon:72h] [horizon:week]
+
+---
+
+### 🎯 摘要
+
+2026年5月15日瑞典政治格局由三个并行压力因素决定：民主党（SD）在奥罗拉26演习后就无人机战争教义向国防部长帕尔·扬松施压（HD11812，[A2]）；左翼党（V）加强对蒂多联合政府援助削减的审查，聚焦对儿童的影响及被废止的国别战略（HD10492 [A2]、HD10493 [A2]）；今日姊妹分析证实2025/26年度国会期间包含十年来最深刻的移民政策改革。综合来看，5月15日标志着立法量高涨、选举定位加速的议会终局冲刺。
+
+### 🧭 本简报支持的3项决策
+
+1. **编辑优先级**：援助辩论（HD10492/HD10493）是瑞典议会监测今日头条。  
+2. **安全政策监测**：无人机问题（HD11812）是UAV教义与奥罗拉26教训的早期信号文件。  
+3. **移民政策校准**：五项法案+20项反对动议+KU34预示第21周重要全体辩论。
+
+### ⚡ 60秒速读
+
+- **HD11812** [B2]：SD的马库斯·维克尔就无人机战争向国防部长帕尔·扬松（M）提问——奥罗拉26演习（18,000名参与者，2026年4—5月，哥特兰重点）暴露UAV战术缺口 [horizon:72h]。
+- **HD10492** [A2]：V的洛塔·约翰森·福纳尔维要求本亚明·杜萨（M）解释援助削减对儿童的影响——引用《儿童权利公约》第6/26/28条 [horizon:week]。
+- **HD10493** [A2]：同一质询人询问被废止的援助战略——37项中14项被拆除，GNI1%目标被放弃 [horizon:week]。
+- **法案包** [A2]：五项法案含HD03262——广泛议会批评（S+C+V+MP） [horizon:week]。
+- **KU34** [A2]：双重宪法修正——堕胎权+结社自由——需2/3超多数，2026年秋 [horizon:month]。
+- **经济背景**：瑞典GDP增长2.3%（WEO 2026年4月）；援助从0.7%→0.36%（2026年预测）——1970年代以来最低 [B1]。
+- **选举晴雨表**：奥罗拉26和乌克兰战争教训表明SD正围绕"强力国防政策"巩固选民形象 [horizon:week]。
+- **前向触发**：扬松对HD11812的回复和杜萨对HD10492/10493的回复将决定第21周是否升级 [horizon:72h]。
+
+### 🔭 最重要的前向触发
+
+**PIR-1 (72h)**：本亚明·杜萨对HD10492和HD10493的书面回复——是否承认缺乏影响评估？回复预计在第20—21周（5月18—22日）。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "background": "#0a0e27", "mainBkg": "#1a1e3d", "nodeBorder": "#00d9ff"}}}%%
+graph LR
+    A[HD11812 无人机战争<br/>SD→M Jonson] -->|72h触发| B[教义立场<br/>UAV战略]
+    C[HD10492 儿童+援助<br/>V→M Dousa] -->|72h触发| D[影响评估?<br/>儿童权利问责]
+    E[HD10493 战略<br/>V→M Dousa] -->|72h触发| D
+    F[法案包<br/>HD03262 PUT等] -->|周触发| G[全体辩论<br/>2026年5月22日]
+    H[KU34 宪法<br/>堕胎+安全] -->|月触发| I[2026年秋<br/>2/3投票]
+    style A fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
+    style C fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style E fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style F fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style H fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style B fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b
+    style D fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style G fill:#0a0e27,stroke:#ff006e,color:#ff006e
+    style I fill:#0a0e27,stroke:#ff006e,color:#ff006e
+```
+
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 3 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -1664,3 +2421,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/realtime-pulse/executive-brief_zh.md)
