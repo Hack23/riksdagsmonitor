@@ -1,42 +1,42 @@
-# Tiedusteluyhteenveto — Reaaliaikainen pulssi 2026-05-16
+# Tiivistelmä — Reaaliaikapulssi 2026-05-16
 
 <!-- analysis-type: executive-brief -->
 <!-- article-date: 2026-05-16 -->
 <!-- subfolder: realtime-pulse -->
 <!-- pass: 2 (final) -->
 
-**Luokitus**: PUBLIC | **Admiralty**: B2 | **Päivämäärä**: 2026-05-16
+**Luokittelu**: JULKINEN | **Admiralty**: B2 | **Päivämäärä**: 2026-05-16
 
 ---
 
-## Kolmen lauseen johdanto
+## Kolmen Lauseen Johdanto
 
-Venäjän valtionduuma hyväksyi 13. toukokuuta 2026 lain, joka institutionalisoi Putinin valtuudet lähettää venäläisiä asevoimia ulkomaille suojellakseen venäläisiä kansalaisia kansainvälisiltä tuomioistuimilta — suora haaste ICC-järjestelmälle ja Itämeren varjolaivaston valvontaan osallistuville valtioille kuten Ruotsille. SD:n Markus Wiechel painostaa Ruotsin hallitusta kolmella samanaikaisella parlamentaarisella välineellä (interpellaatio + 2 kirjallista kysymystä), kun taas Aurora 26 -harjoitus paljasti, että Ruotsin joukoilta puuttuu drone-sodankäyntikyky. Keskustapuolue rikkoo Tidö-koalition kanssa KU-valiokunnassa prop. 258:n ammattiliittoliittoa koskevasta osasta, ja saa tukea Lagrådetin poikkeuksellisen kriittisestä lausunnosta.
-
----
-
-## Prioriteettitiedustelukatsaus
-
-**P1 — Venäjän eksterritoriaaliset voimalait (KRIITTINEN)**  
-Valtionduuman laki 13. toukokuuta 2026 luo oikeudellisen tekosyyn Venäjän sotilaallisille toimille ICC:n täytäntöönpanoon tai varjolaivaston valvontaan osallistuvia valtioita vastaan. Ruotsi on kaksinkertaisesti altistunut: Itämeren operaatioiden kautta ja Rooman peruskirjan velvoitteittensa kautta. Ministeri Stenergadin vastaus (eräpäivä 27. toukokuuta) on ennen vaaleja tärkein ulkopoliittinen lausunto.
-
-**P2 — Aurora 26 drone-aukko (KORKEA)**  
-Ukrainalaiset droneoperaattorit ylikuormittivat ruotsalaisia joukkoja harjoituksen aikana. Ruotsilla ei ole offensiivista UAV-doktriinia eikä vastadronekykyä laajassa mittakaavassa. Ministeri Jonssonin vastaus (eräpäivä 27. toukokuuta) kertoo, aikooko Ruotsi sulkea tämän aukon ennen vaaleja vai siirtää sen seuraavalle parlamentille.
-
-**P3 — Ichkerian tunnustamispaine (KOHTALAINEN)**  
-SD:n interpellaatio Tšetšenian tasavallan Ichkerian tunnustamisesta kytkee tunnustamiskysymyksen suoraan Venäjän eksterritoriaaliseen lakiin. Ruotsin tunnustamistodennäköisyys: ~5 %. Interpellaatio kuitenkin pakottaa hallituksen muotoilemaan Venäjä-politiikkansa julkisesti.
-
-**P4 — Prop 258 läpinäkyvyyspaketin hajoaminen (KOHTALAINEN-MATALA)**  
-Keskustapuolue rikkoo hallituskoalition kanssa KU-valiokunnassa Prop 258:n ammattiliittojen poliittisia menoja koskevassa osiossa. Lagrådet kutsui oikeudellista perustaa "hauraaksi" (lausunto 24. maaliskuuta 2026). Todennäköinen tulos: hallitusenemmistö ohittaa Keskustapuolueen vastalauseen. Vaalimerkki: Keskustapuolue puolustaa yhdistymisvapautta SD:n LO-läpinäkyvyysagendaa vastaan.
+Venäjän valtionduuma hyväksyi 13. toukokuuta 2026 lain, joka institutionalisoi Putinin valtuudet asettaa venäläisiä asevoimia ulkomaille "suojelemaan" venäläisiä kansalaisia kansainvälisiltä tuomioistuimilta — suora haaste ICC-järjestelmälle ja Itämeren varjolaivaston valvontaan osallistuville valtioille kuten Ruotsille. SD:n Markus Wiechel painostaa Ruotsin hallitusta kolmen samanaikaisen parlamentaarisen välineen kautta (kysymykset + 2 kirjallista kysymystä), kun Aurora 26 -harjoitus paljasti, että Ruotsin asevoimilta puuttuu drone-sotakyky. Centerpartiet katkaisee yhteistyönsä Tidö-koalition kanssa KU-valiokunnassa ammattiliiton osalta prop. 258:ssa, tuettuna poikkeuksellisen kriittisellä Lagrådetin lausunnolla.
 
 ---
 
-## Keskeiset arvioinnit (Kierros 2)
+## Prioriteetti-tiedusteluyhteenveto
 
-1. **[HIGH]** Venäjän eksterritoriaaliset voimalait (13. toukokuuta 2026) ovat merkittävin venäläinen lainsäädännöllinen eskalaatio vuoden 2022 invaasion jälkeen.
-2. **[HIGH]** Ruotsin Aurora 26 drone-aukko suljetaan nopean hankinnan ja Ukraina-yhteistyön yhdistelmällä 12–18 kuukauden kuluessa.
-3. **[MODERATE]** Venäjän laki ei johda suoraan sotilaalliseen välikohtaukseen Ruotsia vastaan ennen syyskuun 2026 vaaleja — pelote pysyy ehyenä.
-4. **[HIGH]** Prop 258:n ammattiliittoliittoa koskeva osa hyväksytään KU-valiokunnassa Tidö-enemmistöllä Keskustapuolueen vastalauseesta huolimatta.
-5. **[LOW]** Ruotsi ei tunnusta Tšetšenian tasavaltaa Ichkeriaa tässä riksmötessä.
+**P1 — Venäjän ekstraterritoriaalinen voimankäyttölaki (KRIITTINEN)**  
+Valtionduuman 13. toukokuuta 2026 laki luo oikeudellisen tekosyyn Venäjän sotilaalliselle toiminnalle valtioita vastaan, jotka osallistuvat ICC:n täytäntöönpanoon tai varjolaivastontorjuntaan. Ruotsi on kaksinkertaisesti alttiina: Itämeren operaatioiden ja Rooman perussäännön velvoitteiden kautta. Ministeri Stenergårdin vastaus (eräpäivä 27. toukokuuta) on tärkein ulkopoliittinen lausunto ennen vaalijaksoa.
 
-<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+**P2 — Aurora 26 Drone-aukko (KORKEA)**  
+Ukrainalaiset drone-operaattorit ylikuormittivat Ruotsin joukot harjoituksessa. Ruotsilta puuttuu sekä offensiivinen UAV-doktriini että vastadronekapasiteetti laajamittaisesti. Ministeri Jonsonin vastaus (eräpäivä 27. toukokuuta) osoittaa, sulkeeko Ruotsi tämän aukon ennen vaaleja vai siirtääkö sen seuraavaan parlamenttiin.
+
+**P3 — Icherien tunnustamispaine (KESKITASO)**  
+SD:n interpellaatio Tšetšenian tasavallan Icherien tunnustamisesta yhdistää tunnustamiskysymyksen suoraan Venäjän ekstraterritoriaaliseen lakiin. Ruotsin tunnustamistodennäköisyys: ~5 %. Interpellaatio pakottaa kuitenkin hallituksen artikuloimaan Venäjä-politiikkansa virallisesti.
+
+**P4 — Prop 258 Avoimuuspaketti Jako (KESKITASO-MATALA)**  
+Centerpartiet katkaisee yhteistyön hallituskoalition kanssa KU-valiokunnassa prop. 258:n ammattiliiton poliittinen menoavoimuus -osiosta. Lagrådet kutsui oikeudellista perustaa "hauraaksi" (lausunto 24. maaliskuuta 2026). Todennäköinen tulos: hallitusenemmistö ohittaa Centerpartietin vastalauseen. Vaalikuva: Centerpartiet puolustaa yhdistymisvapauksia SD:n LO-avoimuusagendaa vastaan.
+
+---
+
+## Keskeisarviot (Kierros 2)
+
+1. **[KORKEA]** Venäjän ekstraterritoriaalinen voimankäyttölaki (13. toukokuuta 2026) on merkittävin venäläinen lainsäädäntöeskaatio vuoden 2022 hyökkäyksen jälkeen.
+2. **[KORKEA]** Ruotsin Aurora 26 drone-aukko suljetaan nopean hankinnan ja ukrainalaisen yhteistyön yhdistelmällä 12–18 kuukauden kuluessa.
+3. **[KOHTALAINEN]** Venäjän laki ei käynnistä suoraa sotilaallista tapahtumaa Ruotsia vastaan ennen syyskuun 2026 vaaleja — pelote pysyy ehjänä.
+4. **[KORKEA]** Prop. 258:n ammattiliittoosio läpäisee KU-valiokunnan Tidö-enemmistöllä huolimatta Centerpartietin vastalauseesta.
+5. **[MATALA]** Ruotsi ei tunnusta Tšetšenian tasavaltaa Icherieniä tässä riksmötessä.
+
+<!-- source-sha: 6c2ffdb9c101c4f58734641eaa3d607bfe935938 -->

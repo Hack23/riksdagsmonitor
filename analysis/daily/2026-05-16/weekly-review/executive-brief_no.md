@@ -6,61 +6,56 @@ classification: "PUBLIC"
 confidence: "HIGH [B2]"
 ---
 
-# Eksekutivt Sammendrag — Ukentlig Gjennomgang 2026-05-16
+# Kortanalyse — Ukentlig Gjennomgang 2026-05-16
 
-**For**: Politiske analytikere, journalister, demokratiske ansvarsobservatører  
+**Til**: Politiske analytikere / Analysten / Analystes  
 **Periode**: Uke 20, 2026-05-09–16  
-**Valnedtelling**: ~120 dager til 2026-09-13  
-**Klassifisering**: PUBLIC | **Admiralty**: B2 | **DIW ledende**: 8,75
+**Valgopptelling**: ~120 dager til 2026-09-13  
+**Klassifisering**: OFFENTLIG | **Admiralty**: B2 | **DIW**: 8,75
 
 ---
 
-## ⚡ Toppetterretning
+## ⚡ Toppinformasjon
 
-**Tre samtidige presjonspunkter konvergerer mot Tidö-koalisjonen i den siste parlamentariske sprinten før sommerferien.** Uken den 2026-05-16 avsluttes med konstitusjonell reform i sin siste fase, Russlands militære holdning som når sin mest aggressive kodifiserte form siden 2022, og opposisjonens ansvars­kampanjer som oppnår maksimal valforsterkning.
-
----
-
-## 🎯 Prioriterte etterretningsvurderinger
-
-### PIR-1: Konstitusjonell reform — Åpenhetslovgivning (HD024184)
-**Status**: AKTIV — Centerpartiet utfordrer prop. 2025/26:258  
-**Vurdering**: C-motionen HD024184 ("med anledning av prop. 2025/26:258") signaliserer at den tverrblokkede parlamentariske støtten regjeringen trenger for åpenhetslovgivningen *ikke* er sikret. C's kjerneinnvending — at forslaget tjener til å legitimere ikke-offentliggjort fagforenings-til-parti-finansiering mens det bare gir kosmetisk åpenhet — retter seg mot regjeringens påstand om at lovgivningen fremmer demokratiske normer. Med KU-komiteens behandling forventet før sommerferien skaper motionen en synlig ansvarsgaffel: vedta loven uten meningsfull opposisjonsstøtte, eller forsinke og risikere narrativet om at åpenhetsreformen var performativ.
-
-**DIW (justert)**: 8,2 (×1,5 valmultiplikator anvendt)
-
-### PIR-2: Russisk Eskalering — HD11813 + HD10494
-**Status**: ESKALERT (utløser: russisk statsdumaets stemme 2026-05-13)  
-**Vurdering**: Russlands nye lov (vedtatt 2026-05-13) utvider eksplisitt den juridiske myndigheten til å bruke militærmakt mot nabostater. SD's skriftlige spørsmål HD11813 til utenriksminister Malmer Stenergard (innlevert 2026-05-15, innen 48 timer etter Duma-avstemningen) gjenspeiler det raskeste svenske parlamentariske svaret på en russisk juridisk eskalering som er registrert. Kombinert med Tsjetsjenia-interpellasjonen (HD10494) utgjør Wiechels klynge et sammenhengende press for å tvinge regjeringen til å formulere Sveriges NATO-era responsedoktrin.
-
-**DIW (justert)**: 7,8 (×1,5 valmultiplikator anvendt)
-
-### PIR-3: Forsvarsevne — Aurora 26-øvelse (HD11812)
-**Status**: AKTIV — dronekrigsdoktrin under parlamentarisk granskning  
-**Vurdering**: Aurora 26-øvelsen (april–mai 2026) avdekket hull mellom konvensjonell militærdoktrin og fremvoksende dronekrigvirkeligheter. HD11812 spør forsvarsminister Pål Jonson direkte om Sveriges kapasitet til dronebaserte operasjoner. Spørsmålet ankommer mens Riksdag debatterer forsvarsbudsjetøkningen mot 2,5 % av BNP. Enhver regjeringens anerkjennelse av dronekapasitetsmangler vil bli forsterket i valgdekning.
-
-**DIW (justert)**: 7,1 (×1,5 valmultiplikator anvendt)
+Tre samtidige presseopplag konvergerer mot Tidö-koalisjonen i den endelige parlamentariske sprinten før sommerferien. Uken den 16. mai 2026 avsluttes med konstitusjonell reform i dens endelige fase, Russlands militære holdning i sin mest aggressivt kodifiserte form siden 2022, og opposisjonens ansvarskampanjer i maksimal valgforsterkning.
 
 ---
 
-## 📊 Ukentlig Mønstervurdering
+## 🎯 Prioriterte Etterretningsvurderinger
 
-Uken viser **konsentrasjon av sikkerhets-/demokratitemaer** konsistente med pre-valg parlamentariske strategier:
-- Opposisjonspartier (C, SD) bruker motioner, interpellasjoner og skriftlige spørsmål for å tvinge frem ministerielle forpliktelser før valget
-- Tidö-koalisjonen er simultant eksponert på demokratisk åpenhet (HD024184), russisk avskrekking (HD11813) og forsvarsevne (HD11812)
-- Tverrsøsken: V's bistandsinterpellasjoner (HD10492/10493 fra 2026-05-15) legger til en tredje ansvarsvektor (humanitær styring)
+### PIR-1: Konstitusjonell reform — Transparenslovgivning (HD024184)
+**Status**: Konstitusjonell reform — Transparenslovgivning  
+**Vurdering**: C-motionen HD024184 signalerer at den tverrparlamentariske støtten regjeringen trenger til transparenslovgivningen ikke er sikret. C's kjerneinnsigelse angriper regjeringens påstand om at lovgivningen fremmer demokratiske normer. Med KU-komiteens beredning forventet før sommerferien, skaper motionen en synlig ansvars-gaffel.
 
-**Konklusjon**: Uke 20 etablerer tre omtvistede politikkområder — åpenhetslovgivning, Russland/forsvar og bistandsstyring — som vil definere kampanjebudskap i de siste 4 månedene før valget.
+**DIW**: 8,2
+
+### PIR-2: Russisk Eskalasjon — HD11813 + HD10494
+**Status**: ESKALIERT / ESCALATED 2026-05-13  
+**Vurdering**: Russlands nye lov (vedtatt 2026-05-13) utvider eksplisitt den juridiske myndigheten til å bruke militær makt mot naboland. SD's skriftlige spørsmål HD11813 (sendt 2026-05-15, innen 48 timer etter duma-avstemningen) er den raskeste svenske parlamentariske responsen på en russisk lovgivningseskalasjon noensinne.
+
+**DIW**: 7,8
+
+### PIR-3: Forsvarskapasitet — Aurora 26 (HD11812)
+**Status**: AKTIV / ACTIVE  
+**Vurdering**: Aurora 26-øvelsen (april–mai 2026) avslørte kløfter mellom konvensjonell militærdoktrine og fremvoksende dronekrigsvirkelighetner. HD11812 spør forsvarsminister Pål Jonson direkte om Sveriges kapasitet for droneoperasjoner.
+
+**DIW**: 7,1
+
+---
+
+## 📊 Ukentlig mønstervurdering
+
+Uke 20 etablerer tre omstridte politikkområder — transparenslovgivning, Russland/forsvar og bistandsstyring — som vil definere kampanjebudskapet i de siste fire månedene før valget.
 
 ---
 
 ## 🔴 Handlingsflagg
 
-| Flagg | Vurdering | Tillid |
-|-------|-----------|--------|
-| Russisk aggressivitetslov vedtatt 2026-05-13 | Direkte sikkerhetseskalering som påvirker Sverige som NATO-medlem | HIGH [B1] |
-| KU34 plenumsstemme nær forestående (uke 21) | Konstitusjonell reform med abortrettigheter + foreningsfrihet på spill | HIGH [B2] |
-| C kontra Govt om prop. 2025/26:258 | Risiko for at åpenhetsloven mislykkes eller vedtas uten tverrblokkert mandat | MEDIUM [B2] |
-| Dronekrigsdoktringap | Valgeksponering for regjeringen på forsvarsmodernisering | MEDIUM [B2] |
+| Flagg | Vurdering | Tillit |
+|------|-----------|--------|
+| Russian aggression law 2026-05-13 | Direkte sikkerhetseskalering som påvirker Sverige som NATO-medlem | HØY [B1] |
+| KU34 plenary vote (week 21) | Konstitusjonell reform med abortrett + foreningsfrihet på spill | HØY [B2] |
+| C vs. Govt prop. 2025/26:258 | Risiko for at transparensloven feiler uten tverrparlamentarisk mandat | MIDDELS [B2] |
+| Drone warfare doctrine gap | Valgssårbarhet for regjeringen om forsvarsmodernisering | MIDDELS [B2] |
 
-<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+<!-- source-sha: 6c2ffdb9c101c4f58734641eaa3d607bfe935938 -->

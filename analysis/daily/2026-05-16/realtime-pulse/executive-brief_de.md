@@ -1,42 +1,42 @@
-# Nachrichtendienstliche Kurzübersicht — Echtzeitpuls 2026-05-16
+# Kurzanalyse — Echtzeit-Pulse 2026-05-16
 
 <!-- analysis-type: executive-brief -->
 <!-- article-date: 2026-05-16 -->
 <!-- subfolder: realtime-pulse -->
 <!-- pass: 2 (final) -->
 
-**Klassifizierung**: PUBLIC | **Admiralty**: B2 | **Datum**: 2026-05-16
+**Klassifizierung**: ÖFFENTLICH | **Admiralty**: B2 | **Datum**: 2026-05-16
 
 ---
 
-## Drei-Satz-Einleitung
+## Drei-Satz-Lede
 
-Am 13. Mai 2026 verabschiedete die russische Staatsduma ein Gesetz, das Putins Befugnis institutionalisiert, russische Streitkräfte im Ausland einzusetzen, um russische Staatsbürger vor internationalen Gerichten zu „schützen" — eine direkte Herausforderung an das ICC-System und an Staaten wie Schweden, die an der Überwachung der baltischen Schattenflotte beteiligt sind. SDs Markus Wiechel setzt die schwedische Regierung unter Druck durch drei gleichzeitige parlamentarische Instrumente (Interpellation + 2 schriftliche Anfragen), während die Aurora-26-Übung aufgedeckt hat, dass schwedischen Streitkräften Drohnenkriegsführungskapazitäten fehlen. Die Zentrumspartei bricht mit der Tidö-Koalition im KU-Ausschuss über den Gewerkschaftsanteil von Prop. 258, unterstützt durch eine ungewöhnlich kritische Stellungnahme des Lagrådet.
-
----
-
-## Prioritäre nachrichtendienstliche Übersicht
-
-**P1 — Russlands extraterritorialrechtliches Streitkräftegesetz (KRITISCH)**  
-Das Staatsdumagesetz vom 13. Mai 2026 schafft einen rechtlichen Vorwand für russische Militäraktionen gegen Staaten, die an der ICC-Durchsetzung oder der Schattenflottenüberwachung beteiligt sind. Schweden ist doppelt exponiert: über Ostseeoperationen und seine Verpflichtungen aus dem Römischen Statut. Die Antwort von Minister Stenergard (fällig am 27. Mai) ist die folgenreichste außenpolitische Aussage der Vorwahlperiode.
-
-**P2 — Aurora 26 Drohnen-Lücke (HOCH)**  
-Ukrainische Drohnenoperateure haben schwedische Streitkräfte während der Übung überfordert. Schweden fehlt sowohl eine offensive UAV-Doktrin als auch Abwehrmöglichkeiten gegen Drohnen in großem Maßstab. Die Antwort von Minister Jonson (fällig am 27. Mai) wird signalisieren, ob Schweden diese Lücke vor den Wahlen schließen oder auf das nächste Parlament verschieben wird.
-
-**P3 — Druck zur Anerkennung Icheriens (MITTEL)**  
-SDs Interpellation zur Anerkennung der Tschetschenischen Republik Ischkeria verknüpft die Anerkennungsfrage direkt mit dem russischen Extraterritorialgesetz. Schwedens Wahrscheinlichkeit einer Anerkennung: ~5 %. Die Interpellation zwingt die Regierung jedoch, ihre Russlandpolitik öffentlich zu formulieren.
-
-**P4 — Aufspaltung des Transparenzpakets Prop 258 (MITTEL-NIEDRIG)**  
-Die Zentrumspartei bricht mit der Regierungskoalition im KU-Ausschuss über die Gewerkschafts-Ausgaben-Transparenz in Prop 258. Der Lagrådet bezeichnete die Rechtsgrundlage als „fragil" (Stellungnahme vom 24. März 2026). Wahrscheinliches Ergebnis: Die Regierungsmehrheit überstimmt den Einwand der Zentrumspartei. Wahlsignal: C verteidigt die Vereinigungsfreiheit gegen SDs LO-Transparenzagenda.
+Am 13. Mai 2026 verabschiedete Russlands Staatsduma ein Gesetz, das Putins Befugnis institutionalisiert, russische Streitkräfte im Ausland einzusetzen, um russische Bürger vor internationalen Gerichten zu „schützen" — eine direkte Herausforderung des ICC-Systems und Staaten wie Schweden, die an der Überwachung der Ostsee-Schattenflotte teilnehmen. SD's Markus Wiechel setzt die schwedische Regierung mit drei gleichzeitigen parlamentarischen Instrumenten unter Druck (Interpellation + 2 Schriftliche Anfragen), während die Aurora-26-Übung aufgedeckt hat, dass schwedischen Streitkräften die Drohnenkriegskapazität fehlt. Die Centerpartiet bricht in der KU-Ausschuss mit der Tidö-Koalition beim Gewerkschaftsabschnitt des Prop. 258 — gestützt auf eine ungewöhnlich kritische Lagrådet-Stellungnahme.
 
 ---
 
-## Haupteinschätzungen (Durchgang 2)
+## Prioritäre Geheimdienstzusammenfassung
 
-1. **[HIGH]** Russlands extraterritorialrechtliches Streitkräftegesetz (13. Mai 2026) ist die bedeutendste russische Gesetzgebungseskalation seit der Invasion 2022.
-2. **[HIGH]** Schwedens Aurora-26-Drohnenlücke wird durch eine Kombination aus schneller Beschaffung und Ukraine-Zusammenarbeit innerhalb von 12–18 Monaten geschlossen.
-3. **[MODERATE]** Russlands Gesetz wird vor den Wahlen im September 2026 keinen direkten militärischen Zwischenfall gegen Schweden auslösen — die Abschreckung bleibt intakt.
-4. **[HIGH]** Der Gewerkschaftsanteil von Prop 258 wird den KU-Ausschuss mit Tidö-Mehrheit gegen den Einwand der Zentrumspartei passieren.
-5. **[LOW]** Schweden wird die Tschetschenische Republik Ischkeria in dieser Riksmöte nicht anerkennen.
+**P1 — Russlands extraterritoriales Streitkräftegesetz (KRITISCH)**  
+Das Staatsdumagesetz vom 13. Mai 2026 schafft einen rechtlichen Vorwand für russisches Militärvorgehen gegen Staaten, die an der ICC-Vollstreckung oder der Schattenflottensperrung beteiligt sind. Schweden ist doppelt exponiert: über Ostseeoperationen und seine Verpflichtungen aus dem Römischen Statut. Die Antwort von Ministerin Stenergard (fällig 27. Mai) ist die folgenreichste außenpolitische Erklärung der Vorwahlperiode.
 
-<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+**P2 — Aurora 26 Drohnenlücke (HOCH)**  
+Ukrainische Drohnenoperatoren haben schwedische Streitkräfte während der Übung überwältigt. Schweden fehlt sowohl eine offensive UAV-Doktrin als auch Gegendrohnenkapazität in ausreichendem Maßstab. Minister Jonsons Antwort (fällig 27. Mai) signalisiert, ob Schweden diese Lücke vor der Wahl schließen oder auf das nächste Parlament verschieben wird.
+
+**P3 — Ichejerija Anerkennungsdruck (MITTEL)**  
+Die Interpellation der SD zur Anerkennung der Tschetschenischen Republik Ichkeria verknüpft die Anerkennungsfrage direkt mit dem russischen extraterritorialen Gesetz. Wahrscheinlichkeit einer schwedischen Anerkennung: ~5 %. Die Interpellation zwingt die Regierung jedoch, ihre Russland-Politik offiziell zu artikulieren.
+
+**P4 — Prop. 258 Transparenzpaket Spaltung (MITTEL-NIEDRIG)**  
+Die Centerpartiet bricht im KU-Ausschuss mit der Regierungskoalition beim Abschnitt über die politischen Ausgaben der Gewerkschaften in Prop. 258. Lagrådet nannte die Rechtsgrundlage „brüchig" (Stellungnahme 24. März 2026). Wahrscheinliches Ergebnis: Regierungsmehrheit überstimmt Einwand der Centerpartiet. Wahlsignal: Centerpartiet verteidigt Vereinigungsfreiheit gegen die LO-Transparenzagenda der SD.
+
+---
+
+## Haupteinschätzungen (Runde 2)
+
+1. **[HOCH]** Russlands extraterritoriales Streitkräftegesetz (13. Mai 2026) ist die bedeutendste russische Gesetzgebungseskalation seit der Invasion 2022.
+2. **[HOCH]** Schwedens Aurora-26-Drohnenlücke wird durch eine Kombination aus schneller Beschaffung und ukrainischer Zusammenarbeit innerhalb von 12–18 Monaten geschlossen.
+3. **[MODERAT]** Russlands Gesetz wird keine direkten militärischen Zwischenfälle gegen Schweden vor der Wahl im September 2026 auslösen — die Abschreckung bleibt intakt.
+4. **[HOCH]** Der Gewerkschaftsabschnitt von Prop. 258 wird den KU-Ausschuss mit Tidö-Mehrheit trotz des Einwands der Centerpartiet passieren.
+5. **[NIEDRIG]** Schweden wird die Tschetschenische Republik Ichkeria in diesem Riksmöte nicht anerkennen.
+
+<!-- source-sha: 6c2ffdb9c101c4f58734641eaa3d607bfe935938 -->
