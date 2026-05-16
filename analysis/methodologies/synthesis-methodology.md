@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--25-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.4-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--05--15-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.3 | **📅 Last Updated:** 2026-04-25 (UTC)
+**📋 Document Owner:** CEO | **📄 Version:** 1.4 | **📅 Last Updated:** 2026-05-15 (UTC)
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-21
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -84,7 +84,7 @@
 ## 🔄 Tradecraft Anchors
 
 | Element | Value | Reference |
-|---------|-------|-----------|
+|---------|-------|----------|
 | **F3EAD Stage** | **ANALYZE → DISSEMINATE** | This methodology covers the synthesis and dissemination phases of the intelligence cycle |
 | **PIRs Served** | PIR-1 (Coalition Stability), PIR-5 (Fiscal Trajectory), PIR-7 (Democratic Norms) — all PIRs inform synthesis | See [`political-style-guide.md` §PIR/EEI Catalog](political-style-guide.md#-priority-intelligence-requirements-pir--essential-elements-of-information-eei) |
 | **Admiralty Floor** | Evidence must reach **[B2]** or higher for inclusion in executive brief | See [`political-style-guide.md` §Admiralty Code](political-style-guide.md#-admiralty-source-reliability-code-nato-stanag-2022) |
@@ -137,7 +137,7 @@ flowchart LR
 All outputs in this family inherit the platform-wide rules:
 
 | Rule | Applied To |
-|------|-----------|
+|------|----------|
 | Every claim cites a `dok_id`, named actor with party, vote count, `rm` session, or primary-source URL | All five outputs |
 | 5-level confidence scale — 🟦 VERY HIGH / 🟩 HIGH / 🟧 MEDIUM / 🟥 LOW / ⬛ VERY LOW | Required per scored row |
 | Color-coded Mermaid using the canonical palette from the AI-Driven Analysis Guide | ≥1 per output |
@@ -493,7 +493,7 @@ flowchart TD
 ## 🔗 Template bindings
 
 | Template | Methodology section |
-|----------|--------------------|
+|----------|---------------------|
 | `analysis/templates/significance-scoring.md` | Part 1 above |
 | `analysis/templates/synthesis-summary.md` | Part 2 above |
 | `analysis/templates/stakeholder-impact.md` | Part 4 above (also covers `stakeholder-perspectives.md`) |
@@ -519,6 +519,13 @@ flowchart TD
 | NIST CSF ID.RA-4 | Significance scoring = continuous risk assessment of institutional activities |
 | NIST CSF DE.AE-3 | Cross-party alignment Mermaid supports anomaly detection |
 | CIS 3.1 Data management process | Provenance enforced via Family B manifest linkage |
+
+---
+
+## 📜 Changelog
+
+- **v1.4 (2026-05-15)** — Aligned version badge with header text (both now 1.4); bumped date to 2026-05-15.
+- **v1.3 (2026-04-25)** — Line-by-line DIW worked example (wealth-tax proposition scored across all 6 dimensions) and winner/loser quantification rubric (5-column format + diffuse-impact escape hatch).
 
 ---
 

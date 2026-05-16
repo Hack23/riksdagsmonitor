@@ -2,7 +2,7 @@
 
 > **Authoritative methodology** — canonical reference mapping Riksdagsmonitor news workflow article types to the most-relevant IMF indicators sourced from **WEO**, **Fiscal Monitor**, **IFS**, **BOP**, **GFS_COFOG**, **MFS_IR**, **DOTS**, **PCPS**, and **ER** via the local TypeScript IMF client at `scripts/imf-fetch.ts` (Datamapper JSON base URL `https://www.imf.org/external/datamapper/api/v1`, SDMX 3.0 base URL `https://api.imf.org/external/sdmx/3.0`).
 >
-> **Effective**: 2026-04-25 · **Version**: 2.1 · **Contract**: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../.github/aw/ECONOMIC_DATA_CONTRACT.md) v3.0+
+> **Effective**: 2026-05-15 · **Version**: 2.2 · **Contract**: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../../.github/aw/ECONOMIC_DATA_CONTRACT.md) v3.0+
 
 ---
 
@@ -102,10 +102,10 @@ The following rule is non-negotiable — every economic claim routes through IMF
 | Policy rate (Riksbank) | `MFS_IR:FPOLM_PA` | Riksbank press releases | — |
 | Exchange rate | `ER:ENDA_XDC_USD_RATE`, `ER:ENDE_XDC_EUR_RATE` | Riksbank | — |
 | Commodity prices (oil, all-commodities) | `PCPS:POILAPSP`, `PCPS:PALLFNF` | — | — |
-| COFOG defence spending (function 02) | `GFS_COFOG:G02` | WB `MS.MIL.XPND.GD.ZS` | — |
-| COFOG health spending (function 07) | `GFS_COFOG:G07` | WB `SH.XPD.CHEX.GD.ZS` | — |
-| COFOG education spending (function 09) | `GFS_COFOG:G09` | WB `SE.XPD.TOTL.GD.ZS` | — |
-| COFOG social protection (function 10) | `GFS_COFOG:G10` | — | — |
+| COFOG defence spending (function 02) | `GFS_COFOG:GF02_T` | WB `MS.MIL.XPND.GD.ZS` | — |
+| COFOG health spending (function 07) | `GFS_COFOG:GF07_T` | WB `SH.XPD.CHEX.GD.ZS` | — |
+| COFOG education spending (function 09) | `GFS_COFOG:GF09_T` | WB `SE.XPD.TOTL.GD.ZS` | — |
+| COFOG social protection (function 10) | `GFS_COFOG:GF10_T` | — | — |
 | Population (projection) | `WEO:LP` [proj] | SCB | `WB:SP.POP.TOTL` |
 | Governance (rule of law, control of corruption, voice & accountability) | **WB WGI** `source=75` | — | IMF has no equivalent |
 | Environment (CO₂, renewables, forest) | **WB** `EN.*`, `EG.*`, `AG.LND.FRST.ZS` | — | IMF has no equivalent |
@@ -153,7 +153,7 @@ See [`analysis/imf/data-dictionary.md`](../imf/data-dictionary.md) for the full 
 ## 4 · Article type → indicator matrix
 
 | Article type | Required IMF | Optional overlay | WB role |
-|--------------|--------------|------------------|---------|
+|--------------|--------------|------------------|--------|
 | `propositions` (budget / finance) | `WEO:NGDP_RPCH`, `WEO:PCPIPCH`, `WEO:GGXWDG_NGDP`, `WEO:GGXCNL_NGDP` | `FM:GGXONLB_NGDP`, `IFS:PCPI_IX`, `ER:ENDE_XDC_EUR_RATE` | WGI if governance angle, WB sectorals for implementation |
 | `propositions` (tax / SkU) | `WEO:GGR_NGDP`, `FM:GGXONLB_NGDP`, `FM:GGSB_NPGDP` | `WEO:GGXWDG_NGDP` | — |
 | `propositions` (trade / NU / UU) | `WEO:BCA_NGDPD`, `WEO:TX_RPCH`, `DOTS:TXG_FOB_USD` | `PCPS:POILAPSP` | — |
@@ -162,11 +162,11 @@ See [`analysis/imf/data-dictionary.md`](../imf/data-dictionary.md) for the full 
 | `committee-reports` (NU) | `WEO:BCA_NGDPD`, `WEO:TX_RPCH` | `DOTS` bilateral | — |
 | `committee-reports` (SkU) | `WEO:GGR_NGDP`, `FM:GGXONLB_NGDP` | — | — |
 | `committee-reports` (AU) | `WEO:LUR`, `WEO:LE` | SCB AKU | — |
-| `committee-reports` (SoU) | `GFS_COFOG:G07`, `WEO:LP` | — | `SH.XPD.CHEX.GD.ZS`, `SH.MED.PHYS.ZS` |
-| `committee-reports` (SfU) | `GFS_COFOG:G10`, `WEO:LP`, `WEO:LUR` | — | — |
-| `committee-reports` (FöU) | `GFS_COFOG:G02` | — | `MS.MIL.XPND.GD.ZS` (historical) |
+| `committee-reports` (SoU) | `GFS_COFOG:GF07_T`, `WEO:LP` | — | `SH.XPD.CHEX.GD.ZS`, `SH.MED.PHYS.ZS` |
+| `committee-reports` (SfU) | `GFS_COFOG:GF10_T`, `WEO:LP`, `WEO:LUR` | — | — |
+| `committee-reports` (FöU) | `GFS_COFOG:GF02_T` | — | `MS.MIL.XPND.GD.ZS` (historical) |
 | `committee-reports` (MJU) | `PCPS:POILAPSP` (if energy) | — | `EN.ATM.CO2E.PC`, `EG.FEC.RNEW.ZS`, `AG.LND.FRST.ZS` **primary** |
-| `committee-reports` (UbU) | `GFS_COFOG:G09` | — | `SE.XPD.TOTL.GD.ZS`, `SE.PRM.ENRR` |
+| `committee-reports` (UbU) | `GFS_COFOG:GF09_T` | — | `SE.XPD.TOTL.GD.ZS`, `SE.PRM.ENRR` |
 | `committee-reports` (KU) | — | — | **WB WGI primary** (`source=75`) |
 | `interpellations` (macro) | `WEO:PCPIPCH`, `WEO:LUR` | `IFS:PCPI_IX`, `MFS_IR:FPOLM_PA` | — |
 | `evening-analysis` | WEO delta since previous publication | `MFS_IR:FPOLM_PA`, `ER:*` if rate-decision day | — |
@@ -296,5 +296,6 @@ The evidence-host regex in [`.github/prompts/05-analysis-gate.md`](../../.github
 
 ## 11 · Changelog
 
+- **v2.2 (2026-05-15)** — Version alignment pass: date updated to 2026-05-15; changelog entry added.
 - **v2.0 (2026-04-24)** — Full rewrite. IMF set as the source for every economic claim across all domains. Added complete dataflow catalogue (9 dataflows), deep committee matrix (including KrU/TU/CU/JuU), vintage-discipline canon, enforcement & anti-patterns. Cross-references every companion doc in `analysis/imf/`.
 - **v1.0 (2026-04-23)** — Initial Wave-2 IMF↔WB split; adapted from EU Parliament Monitor.

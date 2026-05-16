@@ -23,7 +23,7 @@
 | **Purpose** | Family-S supplementary methodologies — PESTLE, political-STRIDE, wildcards/black-swans, quantitative SWOT — produced for long-horizon (`year` / `cycle`) and high-impact runs. |
 | **Inputs** | Family A synthesis; Family C strategic extensions; long-horizon scenario sets |
 | **Outputs** | `pestle-analysis.md`, `political-stride-assessment.md`, `wildcards-blackswans.md`, `quantitative-swot.md` |
-| **Owning artifact(s)** | Family-S supplementary (S1–S7) |
+| **Owning artifact(s)** | Family-S supplementary (AS1..AS4) |
 | **Owning gate check** | Check 11 (supplementary) — non-blocking for short horizons; blocking for `year`/`cycle` per `reference-quality-thresholds.json#analyticalSupplementary` |
 | **Citation density target** | Per-dimension table: ≥ 1 evidence anchor per row (PESTLE 4 dimensions, STRIDE 6 categories, wildcards ≥ 8 entries, qSWOT ≥ 3 per quadrant) |
 | **Banned phrases** | Enforced via [`political-style-guide.md` §Machine-readable banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list) |
