@@ -61,6 +61,17 @@ Any heading like `## Pass 2 …` / `### Pass 2 refinements` / `## 🔁 Pass 2 ad
 
 If a required artifact is missing the aggregator aborts with a non-zero exit code — return to `04-analysis-pipeline.md` and produce the missing file; do **not** hand-edit `article.md`.
 
+#### Step 1b — Editorial QA re-check (post-aggregation)
+
+The inline analysis gate (`05-analysis-gate.md` Check 12) runs **before** aggregation, so the editorial validator is informational on the first pass. Immediately after `aggregate-analysis.ts` writes `article.md`, re-invoke the article validator to make the editorial checks (banned phrases, citation density per `reference-quality-thresholds.json → aiFirst.citationDensity.perArticle`, `economicProvenance` ≤ 6-month vintage) blocking before staging:
+
+```bash
+npx tsx scripts/validate-article.ts \
+  "analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.md"
+```
+
+Non-zero exit ⇒ fix the offending claims in the upstream analysis artifacts (never hand-edit `article.md`), re-run `aggregate-analysis.ts`, and re-validate.
+
 ### Step 2 — (No-op) Per-language Markdown translation is no longer performed
 
 Per-type workflows do **not** produce `article.<lang>.md` for any non-English language. The agent stops after writing the canonical English `article.md` from Step 1. Non-English HTML pages are produced by `scripts/render-articles.ts` via the localized executive-brief cascade — the renderer composes the English `article.md` body with `executive-brief_<lang>.md` (when present) into a single Markdown document and emits chrome-wrapped HTML in the target language. See `scripts/render-lib/article-merge.ts` (`mergeLocalizedWithEnglish`) for the merge contract.

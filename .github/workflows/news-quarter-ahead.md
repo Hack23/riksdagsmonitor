@@ -309,10 +309,10 @@ The dedicated `news-translate` workflow runs on a separate track and translates 
 | 0–3 | MCP pre-warm + pre-flight | 02 / 03 |
 | 3–7 | Download data + catalogue + IMF pinned vintage | 03 |
 | 7–25 | Analysis Pass 1 (all 23 artifacts at 1.7× depth, scenario tree depth 4, ≥ 12 forward indicators) | 04 + ext/long-horizon-forecasting |
-| 25–34 | Analysis Pass 2 (read-back + improvements; ≥ 2 counterfactuals) | 04 |
-| 34–36 | Analysis Gate (checks 1–11 + Tier-C additive + long-horizon checks) | 05 |
-| 36–38 | Aggregate (`article.md`) | 06 |
-| 40–42 | Render (`scripts/render-articles.ts --lang all` → all 14 HTML) | 06 |
+| 25–36 | Analysis Pass 2 (read-back + improvements; ≥ 2 counterfactuals; **extended slot reclaims the time freed by removing per-language Markdown translation** — see `TRANSLATION_GUIDE.md §News articles are translated out-of-band`) | 04 |
+| 36–37 | Analysis Gate (checks 1–11 + Tier-C additive + long-horizon checks) | 05 |
+| 37–39 | Aggregate (`article.md`) + post-aggregate `validate-article.ts` (Check 12) | 06 |
+| 39–42 | Render (`scripts/render-articles.ts --lang all` → all 14 HTML) | 06 |
 | 42–43 | Stage + commit + ONE `safeoutputs___create_pull_request` — **HARD DEADLINE agent minute 45** | 07 |
 
 Use the setup-aware agent budget for AI-FIRST iteration; trim scope before quality and open the PR by agent minute 42 (hard 45). Never open a second PR within a run.

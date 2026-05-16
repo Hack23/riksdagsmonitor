@@ -298,9 +298,9 @@ Generates deep political intelligence analysis **and** renders the HTML article 
 | 0–3 | MCP pre-warm + pre-flight check | 02 / 03 |
 | 3–6 | Download data + catalogue | 03 |
 | 6–18 | Analysis Pass 1 (methodology read + per-doc analyses + **all 23 artifacts**: Family A 9 + B 2 + C 5 + D 7) | 04 |
-| 18–28 | Analysis Pass 2 (read-back + improvements on all 22 text files) | 04 |
-| 28–30 | Analysis Gate (checks 1–8) | 05 |
-| 30–32 | `scripts/aggregate-analysis.ts` → `article.md` | 06 |
+| 18–36 | Analysis Pass 2 (read-back + improvements on all 22 text files; **extended slot reclaims the 8 min freed by removing per-language Markdown translation** — see `TRANSLATION_GUIDE.md §News articles are translated out-of-band`) | 04 |
+| 36–38 | Analysis Gate (checks 1–11 + post-aggregate Check 12 below) | 05 |
+| 38–40 | `scripts/aggregate-analysis.ts` → `article.md`, then `scripts/validate-article.ts` (post-aggregate Check 12: banned phrases, citation density, `economicProvenance` ≤ 6 mo) | 06 |
 | 40–42 | `scripts/render-articles.ts --lang all` → **all 14** HTML files | 06 |
 | 42–43 | Stage analysis + `article.md` + `news/*.html`, commit, **ONE** `safeoutputs___create_pull_request` — **HARD DEADLINE agent minute 45** | 07 |
 

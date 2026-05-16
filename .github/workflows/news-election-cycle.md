@@ -338,10 +338,10 @@ This workflow runs at the **upper limit** of the 60-minute job envelope. Initial
 | 0–3 | MCP pre-warm + IMF multi-vintage pin |
 | 3–7 | Download data (Riksdag full-mandate corpus, SCB multi-year, IMF Nordic compare + multi-vintage) |
 | 7–29 | Analysis Pass 1 (24 artifacts at 2.5× depth, 12-leaf scenario tree, full mandate scorecard or coalition forecast) |
-| 29–37 | Analysis Pass 2 (read-back; counterfactuals × 3; horizon-band stratification across all five bands) |
-| 37–39 | Analysis Gate (long-horizon checks + 24th-artifact check + cycle-rollover check if within ± 30 days) |
-| 39–40 | Aggregate (per-anchor `article.md`) |
-| 41–42 | Render (`scripts/render-articles.ts --lang all` → all 14 HTML per anchor) |
+| 29–38 | Analysis Pass 2 (read-back; counterfactuals × 3; horizon-band stratification across all five bands; **extended Pass-2 slot reclaims the time freed by removing per-language Markdown translation** — see `TRANSLATION_GUIDE.md §News articles are translated out-of-band`) |
+| 38–39 | Analysis Gate (long-horizon checks + 24th-artifact check + cycle-rollover check if within ± 30 days) |
+| 39–40 | Aggregate (per-anchor `article.md`) + post-aggregate `validate-article.ts` (Check 12) |
+| 40–42 | Render (`scripts/render-articles.ts --lang all` → all 14 HTML per anchor) |
 | 42–43 | Stage + commit + ONE `safeoutputs___create_pull_request` — **HARD DEADLINE agent minute 45** |
 
 > 🟡 **Scope-compression rule**: depth multiplier 2.5× is aspirational — under the 60-min envelope, prefer reducing per-document Family-E coverage (drop dok_ids ranked < 6 in significance-scoring) rather than skipping any of the 24 artifacts. The 24-artifact contract is hard. When `cycle_anchor=both`, anchor coverage is also hard unless `ext/cycle-rollover.md` declares a formal rollover-window exception; time budget is never a valid reason to silently skip `next/`.

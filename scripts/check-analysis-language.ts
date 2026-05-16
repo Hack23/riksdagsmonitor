@@ -40,8 +40,18 @@ const SWEDISH_DENSITY_THRESHOLD = 0.05;
 const MIN_SWEDISH_MARKERS = 5;
 
 /**
- * Strip YAML frontmatter, code fences, and inline code from Markdown content.
- * Returns the raw prose body for language detection.
+ * Strip YAML frontmatter, code fences, inline code, and allowed-Swedish
+ * quoted/source-material sections from Markdown content. Returns the raw
+ * analytical prose body for language detection.
+ *
+ * The prompt contract (see `.github/prompts/04-analysis-pipeline.md` and
+ * `analysis/methodologies/per-artifact-methodologies.md`) explicitly permits
+ * Swedish text in two narrow contexts:
+ *   1. Markdown blockquotes (`>`) — attributed source quotations.
+ *   2. Lines beginning with `Source title:` / `Källa:` — verbatim source titles.
+ * These ranges are stripped before density measurement so that a long Swedish
+ * source quote cannot fail the gate even when the analytical prose around it
+ * is fully English.
  */
 export function stripMarkdownCodeAndFrontmatter(content: string): string {
   let body = content;
@@ -57,7 +67,19 @@ export function stripMarkdownCodeAndFrontmatter(content: string): string {
   
   // Remove inline code (`...`)
   body = body.replace(/`[^`]+`/g, '');
-  
+
+  // Remove Markdown blockquote lines (attributed source quotations may legitimately
+  // remain in Swedish per the prompt contract).
+  body = body.replace(/^[ \t]*>[^\n]*$/gm, '');
+
+  // Remove verbatim-source-title lines (e.g. `Source title: Proposition om …`,
+  // `Källa: Riksdagens protokoll …`). Match the label at the start of a line
+  // (after optional list markers / bold wrappers) and drop the rest of the line.
+  body = body.replace(
+    /^[ \t]*(?:[-*+][ \t]+)?\**(?:Source title|Källa|Källtitel|Title|Original title)\**[ \t]*:[^\n]*$/gim,
+    ''
+  );
+
   return body;
 }
 
@@ -95,6 +117,8 @@ export function calculateSwedishDensity(filepath: string): {
  * - executive-brief_<lang>.md (translation outputs)
  * - article.<lang>.md (forbidden — caught by validate-file-ownership)
  * - pass1/ subdirectories (Pass-1 snapshots)
+ * - full-text/ subdirectories (raw downloaded Swedish source material — not
+ *   generated analysis; failing it on Swedish density would be incorrect)
  * - data-download-manifest.md (exempt — heavy Swedish source titles)
  * - README.md (per-folder index, not aggregated into article.md)
  */
@@ -108,8 +132,8 @@ export function findAnalysisMarkdownFiles(dir: string): string[] {
       const fullPath = join(currentDir, entry.name);
       
       if (entry.isDirectory()) {
-        // Skip pass1/ subdirectories
-        if (entry.name === 'pass1') continue;
+        // Skip pass1/ snapshots and full-text/ raw source material.
+        if (entry.name === 'pass1' || entry.name === 'full-text') continue;
         walk(fullPath);
       } else if (entry.isFile() && entry.name.endsWith('.md')) {
         // Skip executive-brief_<lang>.md (translation outputs)
