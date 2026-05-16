@@ -73,10 +73,11 @@ export function stripMarkdownCodeAndFrontmatter(content: string): string {
   body = body.replace(/^[ \t]*>[^\n]*$/gm, '');
 
   // Remove verbatim-source-title lines (e.g. `Source title: Proposition om …`,
-  // `Källa: Riksdagens protokoll …`). Match the label at the start of a line
-  // (after optional list markers / bold wrappers) and drop the rest of the line.
+  // `Källa: Riksdagens protokoll …`, `Original title: …`). Match the explicit
+  // source-attribution labels only — a bare `Title:` label is **not** exempted
+  // (otherwise Swedish prose on a `Title:` line would silently pass the gate).
   body = body.replace(
-    /^[ \t]*(?:[-*+][ \t]+)?\**(?:Source title|Källa|Källtitel|Title|Original title)\**[ \t]*:[^\n]*$/gim,
+    /^[ \t]*(?:[-*+][ \t]+)?\**(?:Source title|Källa|Källtitel|Original title)\**[ \t]*:[^\n]*$/gim,
     ''
   );
 

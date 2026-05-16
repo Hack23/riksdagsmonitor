@@ -382,7 +382,7 @@ Same-day re-runs are **improvement runs** (not skip runs) when `03-data-download
 
 ### Check 12 ordering note
 
-Check 12 (`scripts/validate-article.ts`) is the **editorial QA gate** and runs on the aggregated `article.md`. The blocking branch in §Implementation only fires when `article.md` is already on disk; the inline gate runs before aggregation, so on a first pass the article validator is **informational** (the gate logs `ℹ️ Check 12 (editorial QA): … skipped (run after aggregator)`). Workflows MUST re-invoke the gate (or call `npx tsx scripts/validate-article.ts $ANALYSIS_DIR/article.md` directly) **after** `scripts/aggregate-analysis.ts` writes `article.md` so the editorial checks (banned phrases, citation density, `economicProvenance` vintage) become blocking before staging. See `06-article-generation.md §Step 2` for the post-aggregation invocation pattern.
+Check 12 (`scripts/validate-article.ts`) is the **editorial QA gate** and runs on the aggregated `article.md`. The blocking branch in §Implementation only fires when `article.md` is already on disk; the inline gate runs before aggregation, so on a first pass the article validator is **informational** (the gate logs `ℹ️ Check 12 (editorial QA): … skipped (run after aggregator)`). Workflows MUST re-invoke the gate (or call `npx tsx scripts/validate-article.ts $ANALYSIS_DIR/article.md` directly) **after** `scripts/aggregate-analysis.ts` writes `article.md` so the editorial checks (banned phrases, citation density, `economicProvenance` vintage) become blocking before staging. See `06-article-generation.md §Step 1b — Editorial QA re-check (post-aggregation)` for the post-aggregation invocation pattern.
 
 ## Supplementary checks
 

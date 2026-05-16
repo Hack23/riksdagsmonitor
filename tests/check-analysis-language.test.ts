@@ -314,5 +314,24 @@ Enligt propositionen skall nya regler införas som påverkar samtliga.
       const violations = validateAnalysisLanguage(tmpDir);
       expect(violations).toHaveLength(0);
     });
+
+    it('does NOT exempt bare `Title:` lines (only explicit source-attribution labels are exempted)', () => {
+      // A bare `Title:` label must not be allowed to hide Swedish analytical
+      // prose. Only `Source title`, `Källa`, `Källtitel`, `Original title`
+      // are exempted; `Title` alone is too generic.
+      const swedishOnTitleLines = [
+        '# Analysis',
+        '',
+        '- Title: Riksdagen är Sveriges parlament och beslutande församling enligt grundlagen',
+        '- Title: Regeringen föreslår att införa nya regler enligt denna proposition från utskottet',
+        '- Title: Utskottet måste därför behandla ärendet vidare och fatta beslut i kammaren',
+        '- Title: Detta kommer att påverka samtliga kommuner och därmed invånarna i landet',
+        '- Title: Propositionen innehåller flera viktiga ändringar som påverkar både stat och kommun',
+      ].join('\n');
+      writeFileSync(join(tmpDir, 'synthesis-summary.md'), swedishOnTitleLines);
+
+      const violations = validateAnalysisLanguage(tmpDir);
+      expect(violations.length).toBeGreaterThan(0);
+    });
   });
 });
