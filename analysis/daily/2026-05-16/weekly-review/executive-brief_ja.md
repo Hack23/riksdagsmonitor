@@ -63,4 +63,4 @@ confidence: "HIGH [B2]"
 | CがGovt対prop. 2025/26:258 | 透明性法が失敗するか超党派委任なしに可決されるリスク | MEDIUM [B2] |
 | ドローン戦争ドクトリンのギャップ | 防衛近代化における政府の選挙的脆弱性 | MEDIUM [B2] |
 
-<!-- source-sha: 84c1a88a2df18e97bdef9c56e53f2408ac799ff4 -->
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->

@@ -63,4 +63,4 @@ Die Woche zeigt **Konzentration von Sicherheits-/Demokratiethemen** konsistent m
 | C gegen Govt zu prop. 2025/26:258 | Risiko, dass das Transparenzgesetz scheitert oder ohne parteiübergreifendes Mandat angenommen wird | MEDIUM [B2] |
 | Drohnenkriegsdoktrinlücke | Wahlexponierung der Regierung bei der Verteidigungsmodernisierung | MEDIUM [B2] |
 
-<!-- source-sha: 84c1a88a2df18e97bdef9c56e53f2408ac799ff4 -->
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->

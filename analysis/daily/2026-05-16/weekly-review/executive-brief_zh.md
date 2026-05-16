@@ -63,4 +63,4 @@ confidence: "HIGH [B2]"
 | C对Govt关于prop. 2025/26:258 | 透明度法失败或在缺乏跨党派授权下通过的风险 | MEDIUM [B2] |
 | 无人机战争理论差距 | 政府在国防现代化方面的选举脆弱性 | MEDIUM [B2] |
 
-<!-- source-sha: 84c1a88a2df18e97bdef9c56e53f2408ac799ff4 -->
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->

@@ -63,4 +63,4 @@ Ugen udviser **koncentration af sikkerheds-/demokratitemaer** konsistente med pr
 | C kontra Govt om prop. 2025/26:258 | Risiko for at gennemsigtighedsloven mislykkes eller vedtages uden tværblokket mandat | MEDIUM [B2] |
 | Dronekrigsførelses­doktringab | Valgeksponering for regeringen om forsvarsmodernisering | MEDIUM [B2] |
 
-<!-- source-sha: 84c1a88a2df18e97bdef9c56e53f2408ac799ff4 -->
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->

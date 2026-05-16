@@ -63,4 +63,4 @@ De week vertoont **concentratie van veiligheids-/democratiethema's** consistent 
 | C versus Govt over prop. 2025/26:258 | Risico dat transparantiewet mislukt of zonder partijoverstijgend mandaat wordt aangenomen | MEDIUM [B2] |
 | Hiaat in droneoorlogsdoctrine | Verkiezingskwetsbaarheid van regering op defensiemodernisering | MEDIUM [B2] |
 
-<!-- source-sha: 84c1a88a2df18e97bdef9c56e53f2408ac799ff4 -->
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
