@@ -48,7 +48,7 @@ confidence: "HIGH [B2]"
 
 **Trigger**: Minister Dousa's interpellation response on or before 2026-05-29 either (a) announces an impact assessment or (b) fails to do so.  
 **If (a)**: V concedes partial accountability, opposition shifts to demanding binding reversal.  
-**If (b)**: Confirmed governance accountability gap; opposition escalates election campaign narrative "Tidöregeringen bryr sig inte om världens barn."  
+**If (b)**: Confirmed governance accountability gap; opposition escalates election campaign narrative "The Tidö government does not care about the world's children" (Sw. *"Tidöregeringen bryr sig inte om världens barn"*).  
 **PIR link**: PIR-WA-01
 
 ---
@@ -64,4 +64,15 @@ confidence: "HIGH [B2]"
 | Government cut strategies from ~70 to ~40 | HD10493 full text, minister's own data | 2026-05-15 |
 | Dec 2025 exit: Liberia, Mozambique, Tanzania, Zimbabwe, Bolivia | HD10493 full text | 2026-05-15 |
 | 1% GNI target abandoned with SD support | HD10492 + HD10493 full text | 2026-05-15 |
-| No impact assessment conducted | HD10493 full text: "Mig veterligen har regeringen inte ens gjort någon analys" | 2026-05-15 |
+| No impact assessment conducted | HD10493 full text: "As far as I am aware, the government has not even carried out an analysis" (Sw. *"Mig veterligen har regeringen inte ens gjort någon analys"*) | 2026-05-15 |
+
+---
+
+## ✅ Retrofit Note (2026-05-16)
+
+**Original authoring**: 2026-05-15 under executive-brief template v < 4.4.
+**Retrofit scope** (applied 2026-05-16): Two Swedish-language source quotations rendered in English with the original retained in italics for audit traceability. No edits to evidence, dok_ids, or analytical conclusions.
+
+**Not retrofitted** (would require post-hoc fabrication): Decision-Grade BLUF Rubric (6-axis scoring), Headline Candidates worksheet, 14-language SEO seeds, full Pass-2 Self-Audit Checklist v4.4. These are required for 2026-05-16+ briefs per gate Check 7.
+
+**Substantive analysis, evidence, and conclusions unchanged.**

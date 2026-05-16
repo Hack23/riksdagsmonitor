@@ -16,7 +16,7 @@ This is the **only** gate separating analysis from article generation. If it fai
 4. **Evidence citations** — `swot-analysis.md` and `significance-scoring.md` carry primary-source evidence per quadrant / ranked item. Accepted: a `dok_id` (e.g. `H901FiU1`) **or** a primary-source URL host (`riksdagen.se`, `regeringen.se`, `scb.se`, `statskontoret.se`, `worldbank.org`, `api.imf.org`, `data.imf.org`, `www.imf.org`). Enforced on SWOT `### Strengths/Weaknesses/Opportunities/Threats` bullets+rows and significance-scoring bullets, ranking-table rows, and Mermaid node labels.
 5. **Mermaid diagrams** — every Family A and Family D synthesis file contains ≥ 1 Mermaid block with colour-coded `style` directives (or `themeVariables` / `%%{init …}`).
 6. **Pass-2 done** — every enforced Pass-2 artifact (all Family A/B/C/D except `data-download-manifest.md`) shows mtime > birth + 3 min, OR has a differing `pass1/` snapshot on disk.
-7. **Family C structure** — `executive-brief.md` has `## BLUF` + `## Decisions`; `intelligence-assessment.md` declares ≥ 3 Key Judgments with ≥ 3 confidence labels (`VERY HIGH`/`HIGH`/`MEDIUM`/`LOW`/`VERY LOW`) and ≥ 1 PIR reference; `scenario-analysis.md` ≥ 3 scenarios; `comparative-international.md` comparator set or ≥ 2 comparator rows; `devils-advocate.md` ≥ 3 ACH hypotheses; `methodology-reflection.md` non-empty + ICD 203 audit or ≥ 3 named improvements + literal `Pass-2 status: executed in full` (never `skipped` / `deferred` / `partial`). When `IMPROVEMENT_MODE=true`, the file MUST include `## Re-run log` with canonical fields `run_id`, `attempt`, `new dok_ids`, `artifacts extended`, `flags closed`, `vintage refresh`.
+7. **Family C structure** — `executive-brief.md` has `## BLUF` + `## Decisions` **and** a publishable story-oriented H1 (blocks `REPLACE THIS H1`, `Executive Brief Template`, `AI_MUST_REPLACE`, `AI-generated political intelligence`, and bare-boilerplate `# Executive Brief`); the H1 ships as the SERP `<title>`/`og:title`/JSON-LD `headline`/sitemap card across all 14 languages — see [`analysis/methodologies/per-artifact-methodologies.md#executive-brief`](../../analysis/methodologies/per-artifact-methodologies.md#executive-brief) and [`.github/prompts/seo-metadata-contract.md`](./seo-metadata-contract.md). `intelligence-assessment.md` declares ≥ 3 Key Judgments with ≥ 3 confidence labels (`VERY HIGH`/`HIGH`/`MEDIUM`/`LOW`/`VERY LOW`) and ≥ 1 PIR reference; `scenario-analysis.md` ≥ 3 scenarios; `comparative-international.md` comparator set or ≥ 2 comparator rows; `devils-advocate.md` ≥ 3 ACH hypotheses; `methodology-reflection.md` non-empty + ICD 203 audit or ≥ 3 named improvements + literal `Pass-2 status: executed in full` (never `skipped` / `deferred` / `partial`). When `IMPROVEMENT_MODE=true`, the file MUST include `## Re-run log` with canonical fields `run_id`, `attempt`, `new dok_ids`, `artifacts extended`, `flags closed`, `vintage refresh`.
 8. **Family D structure** — `forward-indicators.md` ≥ 10 dated indicators; `coalition-mathematics.md` has a seat-count / vote-breakdown table; `implementation-feasibility.md` carries a `statskontoret.se` URL or `none found` in the `Statskontoret relevance` row whenever it names a recognised agency (Kriminalvården, Polismyndigheten, Försäkringskassan, Skatteverket, Migrationsverket, Arbetsförmedlingen, Socialstyrelsen, Transportstyrelsen, Trafikverket, Naturvårdsverket, Energimyndigheten).
 9. **PIR status sidecar** — `pir-status.json` is present and valid per [`schemas/pir-status.schema.json`](../../schemas/pir-status.schema.json) v1.0 so open PIRs can roll forward.
 10. **Top-2 full-text availability** — when `data-download-manifest.md` contains a `## Full-Text Fetch Outcomes` table, ≥ 2 top documents must have `full_text_available=true`. Add `<!-- full-text-fallback: <reason> -->` to bypass.
@@ -174,6 +174,38 @@ if [ -s "$ANALYSIS_DIR/executive-brief.md" ]; then
     || { echo "❌ executive-brief.md: missing '## BLUF' section"; FAIL=1; }
   grep -qE '^##[[:space:]].*(Decision|Decisions[[:space:]]+This[[:space:]]+Brief)' "$ANALYSIS_DIR/executive-brief.md" \
     || { echo "❌ executive-brief.md: missing 'Decisions' section"; FAIL=1; }
+  # H1 quality scan — the executive-brief H1 ships as <title> / og:title /
+  # JSON-LD headline / sitemap card across all 14 languages. Block the
+  # template placeholder and boilerplate-only headings. Prefer Markdown H1,
+  # then fall back to the template's centered HTML <h1> form.
+  EB_H1="$(grep -m1 -E '^#[[:space:]]+' "$ANALYSIS_DIR/executive-brief.md" || true)"
+  if [ -z "$EB_H1" ]; then
+    EB_H1="$(grep -m1 -oE '<h1[^>]*>[^<]+</h1>' "$ANALYSIS_DIR/executive-brief.md" || true)"
+  fi
+  if [ -n "$EB_H1" ]; then
+    EB_H1_LOWER="$(printf '%s' "$EB_H1" | tr '[:upper:]' '[:lower:]')"
+    case "$EB_H1_LOWER" in
+      *replace\ this\ h1*|*replace*this*h1*)
+        echo "❌ executive-brief.md: H1 still contains 'REPLACE THIS H1' placeholder — write a story-oriented publishable title (see methodology #executive-brief)"; FAIL=1 ;;
+      *executive\ brief\ template*)
+        echo "❌ executive-brief.md: H1 still says 'Executive Brief Template' — replace with a publishable title"; FAIL=1 ;;
+      *ai_must_replace*|*ai-must-replace*)
+        echo "❌ executive-brief.md: H1 contains AI_MUST_REPLACE stub marker"; FAIL=1 ;;
+      *ai-generated\ political\ intelligence*)
+        echo "❌ executive-brief.md: H1 contains banned phrase 'AI-generated political intelligence'"; FAIL=1 ;;
+    esac
+    # Strip leading H1 marker + emoji/whitespace + trailing dashes to detect
+    # the bare-boilerplate `# Executive Brief` case.
+    EB_H1_PLAIN="$(printf '%s' "$EB_H1_LOWER" \
+      | sed -E 's/^#[[:space:]]+//' \
+      | sed -E 's/<[^>]+>//g' \
+      | sed -E 's/^[^[:alnum:]]+//' \
+      | sed -E 's/[[:space:]—–-]+$//')"
+    if [ "$EB_H1_PLAIN" = "executive brief" ] || [ -z "$EB_H1_PLAIN" ]; then
+      echo "❌ executive-brief.md: H1 is bare boilerplate ('Executive Brief') — write a publishable story-oriented title (actor + active verb + instrument or number)"
+      FAIL=1
+    fi
+  fi
 fi
 if [ -s "$ANALYSIS_DIR/intelligence-assessment.md" ]; then
   KJ=$(grep -cE '(Key[[:space:]]+Judgment|KJ-?[0-9]+)' "$ANALYSIS_DIR/intelligence-assessment.md" || true)
