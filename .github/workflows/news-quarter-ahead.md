@@ -1,6 +1,6 @@
 ---
 name: "News: Quarter Ahead"
-description: Generates quarter-ahead strategic outlook articles and renders HTML in all 14 supported languages in a single agentic run (EN + SV + 12 translated). Long-horizon-forecast workflow with 90-day window — covers next-quarter parliamentary calendar, committee schedules, government propositions tabling deadlines, Riksbank rate decisions, and SCB quarterly NA release. Tier-C aggregation × 1.7 depth multiplier. Runs 1st and 15th of each month.
+description: Generates quarter-ahead strategic outlook articles and renders HTML in all 14 supported languages in a single agentic run via executive-brief cascade. Long-horizon-forecast workflow with 90-day window — covers next-quarter parliamentary calendar, committee schedules, government propositions tabling deadlines, Riksbank rate decisions, and SCB quarterly NA release. Tier-C aggregation × 1.7 depth multiplier. Runs 1st and 15th of each month.
 strict: false
 imports:
   - ../prompts/00-base-contract.md
@@ -280,7 +280,7 @@ engine:
 
 Generates deep political intelligence analysis **and** renders the HTML article in **all 14 supported languages** for forward-looking quarterly political intelligence (Tier-C aggregation × 1.7 depth multiplier — see `ext/tier-c-aggregation.md` and `ext/long-horizon-forecasting.md`) in one single agentic run. The 90-day window covers the next-quarter parliamentary calendar (committee schedules, chamber votes, government propositions tabling deadlines, Lagrådet referrals, Riksbank rate decisions, SCB quarterly NA release).
 
-The agent translates `article.md` into `article.<lang>.md` for every non-English language before invoking the renderer with `--lang all`. The dedicated `news-translate` workflow runs on a separate track and translates `executive-brief.md` markdown into 13 language siblings (`executive-brief_<lang>.md`) — it does **not** back-fill `article.<lang>.md`.
+The dedicated `news-translate` workflow runs on a separate track and translates `executive-brief.md` markdown into 13 language siblings (`executive-brief_<lang>.md`) 
 
 ## What this workflow does
 
@@ -289,7 +289,7 @@ The agent translates `article.md` into `article.<lang>.md` for every non-English
 - **Aggregated markdown**: `analysis/daily/$ARTICLE_DATE/quarter-ahead/article.md`
 - **Rendered HTML**: `news/$ARTICLE_DATE-quarter-ahead-{en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html` — **always all 14 languages**
 - **Horizon**: 90 days; lookback 90 days (sibling per-type folders + most-recent week-ahead + month-ahead).
-- **Single-run model**: download → analysis Pass 1 + 2 → gate → aggregate → translate → render (14 languages) → ONE PR.
+- **Single-run model**: download → analysis Pass 1 + 2 → gate → aggregate → render (14 languages) → ONE PR.
 
 ## Long-horizon mandate (from `ext/long-horizon-forecasting.md`)
 
@@ -309,11 +309,10 @@ The agent translates `article.md` into `article.<lang>.md` for every non-English
 | 0–3 | MCP pre-warm + pre-flight | 02 / 03 |
 | 3–7 | Download data + catalogue + IMF pinned vintage | 03 |
 | 7–25 | Analysis Pass 1 (all 23 artifacts at 1.7× depth, scenario tree depth 4, ≥ 12 forward indicators) | 04 + ext/long-horizon-forecasting |
-| 25–34 | Analysis Pass 2 (read-back + improvements; ≥ 2 counterfactuals) | 04 |
-| 34–36 | Analysis Gate (checks 1–11 + Tier-C additive + long-horizon checks) | 05 |
-| 36–38 | Aggregate (`article.md`) | 06 |
-| 38–40 | Translate `article.md` → `article.<lang>.md` × 13 (sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh) | 06 |
-| 40–42 | Render (`scripts/render-articles.ts --lang all` → all 14 HTML) | 06 |
+| 25–36 | Analysis Pass 2 (read-back + improvements; ≥ 2 counterfactuals; **extended slot reclaims the time freed by removing per-language Markdown translation** — see `TRANSLATION_GUIDE.md §News articles are translated out-of-band`) | 04 |
+| 36–37 | Analysis Gate (checks 1–11 + Tier-C additive + long-horizon checks) | 05 |
+| 37–39 | Aggregate (`article.md`) + post-aggregate `validate-article.ts` (Check 12) | 06 |
+| 39–42 | Render (`scripts/render-articles.ts --lang all` → all 14 HTML) | 06 |
 | 42–43 | Stage + commit + ONE `safeoutputs___create_pull_request` — **HARD DEADLINE agent minute 45** | 07 |
 
 Use the setup-aware agent budget for AI-FIRST iteration; trim scope before quality and open the PR by agent minute 42 (hard 45). Never open a second PR within a run.
