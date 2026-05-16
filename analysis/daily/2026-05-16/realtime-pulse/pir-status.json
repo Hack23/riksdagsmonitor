@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0",
+  "cycle": "realtime-pulse",
+  "article_date": "2026-05-16",
+  "generated_at": "2026-05-16T00:00:00Z",
+  "pirs": [
+    {
+      "pir_id": "PIR-CONST-ABORT",
+      "statement": "Will the new riksdag elected September 2026 pass the KU34 constitutional amendments (abortion right, citizenship revocation, freedom of association) in a second passage vote?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "wep": 0.87,
+      "wep_label": "highly likely",
+      "horizon": "T+1460d",
+      "notes": "KU34 first passage recommended May 2026. Second passage requires new riksdag (post-election). C's HD024184 föreningsfrihet position tangentially relevant to the freedom-of-association amendment.",
+      "last_updated": "2026-05-16"
+    },
+    {
+      "pir_id": "PIR-CLIM-2026",
+      "statement": "Will the Tidö government submit a climate proposition before the summer recess 2026?",
+      "status": "open",
+      "confidence": "LOW",
+      "wep": 0.12,
+      "wep_label": "unlikely",
+      "horizon": "T+30d",
+      "notes": "No climate documents today. Carry forward.",
+      "last_updated": "2026-05-16"
+    },
+    {
+      "pir_id": "PIR-MIG-RETURN",
+      "statement": "Will Props 262-265 migration reform package pass riksdagen before summer recess 2026?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "wep": 0.72,
+      "wep_label": "likely",
+      "horizon": "T+60d",
+      "notes": "PIR-RT-05 (SfU scheduling due 20 May) is the near-term tripwire.",
+      "last_updated": "2026-05-16"
+    },
+    {
+      "pir_id": "PIR-COAL-STAB",
+      "statement": "Will the Tidöavtalet coalition (M+KD+L with SD support) remain stable through the September 2026 election?",
+      "status": "open",
+      "confidence": "HIGH",
+      "wep": 0.80,
+      "wep_label": "likely",
+      "horizon": "T+119d",
+      "notes": "C's defection on prop 258 (HD024184) is a minor crack. Core coalition intact.",
+      "last_updated": "2026-05-16"
+    },
+    {
+      "pir_id": "PIR-ELDER-2026",
+      "statement": "Will riksdagen adopt new eldercare accountability legislation before September 2026?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "wep": 0.65,
+      "wep_label": "roughly even",
+      "horizon": "T+90d",
+      "notes": "No eldercare documents today. Carry forward.",
+      "last_updated": "2026-05-16"
+    },
+    {
+      "pir_id": "PIR-GENDERPAY-2026",
+      "statement": "Will Sweden implement the EU Pay Transparency Directive (2023/970) transposition legislation before September 2026?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "wep": 0.65,
+      "wep_label": "roughly even",
+      "horizon": "T+90d",
+      "notes": "No gender pay documents today. Carry forward.",
+      "last_updated": "2026-05-16"
+    },
+    {
+      "pir_id": "PIR-RT-01",
+      "statement": "Will Lagrådet issue a critical opinion on HD03267 (Stärkt skydd mot utlänningar) creating ECHR compliance risk?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "wep": null,
+      "wep_label": null,
+      "horizon": "T+30d",
+      "notes": "Lagrådet yttrande expected June 2026. Today's cycle notes C cited Lagrådet on prop 258 — institutional precedent established.",
+      "last_updated": "2026-05-16"
+    },
+    {
+      "pir_id": "PIR-RT-02",
+      "statement": "Will the government accept C's HD024160 child detention concession (Props 265)?",
+      "status": "open",
+      "confidence": "HIGH",
+      "wep": null,
+      "wep_label": null,
+      "horizon": "T+30d",
+      "notes": "C's pattern (HD024160 + HD024184) shows consistent principled opposition within coalition framework. Government position on child detention still TBD.",
+      "last_updated": "2026-05-16"
+    },
+    {
+      "pir_id": "PIR-RT-03",
+      "statement": "Will Minister Dousa's response to HD10492 (barnkonsekvensanalys) confirm absence of child rights analysis for aid cuts?",
+      "status": "open",
+      "confidence": "HIGH",
+      "wep": null,
+      "wep_label": null,
+      "horizon": "T+14d",
+      "notes": "Due 29 May. High confidence that analysis will be absent or inadequate based on prior V interpellation documentation.",
+      "last_updated": "2026-05-16"
+    },
+    {
+      "pir_id": "PIR-RT-04",
+      "statement": "Will the new riksdag elected September 2026 pass KU34 constitutional amendments in second passage?",
+      "status": "open",
+      "confidence": "HIGH",
+      "wep": 0.87,
+      "wep_label": "highly likely",
+      "horizon": "T+1460d",
+      "notes": "Near-duplicate of PIR-CONST-ABORT with focus on KU34 second passage specifically. Maintained for tracking.",
+      "last_updated": "2026-05-16"
+    },
+    {
+      "pir_id": "PIR-RT-05",
+      "statement": "Will SfU committee schedule Props 262-265 debate by 20 May 2026?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "wep": null,
+      "wep_label": null,
+      "horizon": "T+5d",
+      "notes": "Due date 2026-05-20. Next cycle will either close or escalate.",
+      "last_updated": "2026-05-16"
+    },
+    {
+      "pir_id": "PIR-RUSSIA-EXTLAW-2026",
+      "statement": "What specific action will the Swedish government take in response to Russia's 13 May 2026 extraterritorial force law?",
+      "status": "open",
+      "confidence": "HIGH",
+      "wep": null,
+      "wep_label": null,
+      "horizon": "T+14d",
+      "notes": "NEW PIR added 2026-05-16. Stenergard response due 27 May (HD11813) and 29 May (HD10494). Tripwires: diplomatic protest, EU/NATO coordination, specific Sweden action.",
+      "last_updated": "2026-05-16"
+    },
+    {
+      "pir_id": "PIR-RT-06",
+      "statement": "Will Minister Jonson's response to HD11812 (Aurora 26 drone warfare) contain specific procurement commitments?",
+      "status": "open",
+      "confidence": "MEDIUM",
+      "wep": 0.45,
+      "wep_label": "roughly even",
+      "horizon": "T+14d",
+      "notes": "NEW PIR added 2026-05-16. Due 27 May. Tripwire: FPV procurement language vs. 'review' language.",
+      "last_updated": "2026-05-16"
+    }
+  ]
+}
