@@ -6,61 +6,56 @@ classification: "PUBLIC"
 confidence: "HIGH [B2]"
 ---
 
-# Toimeenpaneva Tiivistelmä — Viikkoarvio 2026-05-16
+# Tiivistelmä — Viikottainen Katsaus 2026-05-16
 
-**Kohde**: Poliittiset analyytikot, toimittajat, demokratian vastuutarkkailijat  
+**Vastaanottaja**: Politiske analytikere / Analysten / Analystes  
 **Jakso**: Viikko 20, 2026-05-09–16  
-**Vaalilaskuri**: ~120 päivää 2026-09-13:een  
-**Luokittelu**: PUBLIC | **Admiralty**: B2 | **DIW johtava**: 8,75
+**Vaalilaskuri**: ~120 päivää 13.9.2026:een  
+**Luokittelu**: JULKINEN | **Admiralty**: B2 | **DIW**: 8,75
 
 ---
 
-## ⚡ Tärkeimmät tiedustelutiedot
+## ⚡ Huippotason tiedustelu
 
-**Kolme samanaikaista painopistettä kohtaavat Tidö-koalition viimeisessä parlamentaarisessa spurttissa ennen kesälomaa.** Viikko 2026-05-16 päättyy perustuslakiuudistuksen viimeisessä vaiheessa, Venäjän sotilaallisen aseman saavuttaessa aggressiivisimman koodatun muotonsa vuoden 2022 jälkeen, ja opposition vastuukampanjoiden saavuttaessa maksimaalisen valivahvistuksen.
+Kolme samanaikaista painopistettä supistuvat Tidö-koalitioon parlamentin viimeisessä spurttissa ennen kesätaukoa. Viikko 16.5.2026 päättyy perustuslakiuudistuksen viimeisessä vaiheessa, Venäjän sotilaallisen asennon ollessa aggressiivisimmillaan vuoden 2022 jälkeen ja opposition vastuukampanjoiden maksimaalisen vaalitehon tasolla.
 
 ---
 
-## 🎯 Prioriteetin tiedustelutiedot
+## 🎯 Ensisijaiset tiedusteluvat
 
 ### PIR-1: Perustuslakiuudistus — Avoimuuslainsäädäntö (HD024184)
-**Tila**: AKTIIVINEN — Centerpartiet haastaa prop. 2025/26:258  
-**Arvio**: C:n kirjelmä HD024184 ("med anledning av prop. 2025/26:258") osoittaa, että hallituksen tarvitsema laajapohjainen parlamentaarinen tuki avoimuuslainsäädäntöön *ei ole* varmistettu. C:n perusvastaväite — että ehdotus palvelee julkistamattoman ammattiyhdistys-puoluejärjestön rahoituksen legitimoimista samalla kun se tarjoaa vain kosmeettisen läpinäkyvyyden — kohdistuu hallituksen väitteeseen, että lainsäädäntö edistää demokraattisia normeja. KU-valiokunnan käsittelyn ollessa odotettavissa ennen kesälomaa kirjelmä luo näkyvän vastuuvaihtoehtokehdon: hyväksy laki ilman merkittävää oppositiotukea, tai viivästytä ja riskeeraa narratiivi, että avoimuusuudistus oli esittävää.
+**Tila**: Perustuslakiuudistus — Avoimuuslainsäädäntö  
+**Arviointi**: C-moottori HD024184 osoittaa, että ristiparlamentaarinen tuki, jota hallitus tarvitsee avoimuuslainsäädäntöön, ei ole varmistettu. C:n ydinsyy kyseenalaistaa hallituksen väitteen, että lainsäädäntö edistää demokraattisia normeja.
 
-**DIW (oikaistu)**: 8,2 (×1,5 vaalikerroin sovellettu)
+**DIW**: 8,2
 
-### PIR-2: Venäläinen Eskalaatio — HD11813 + HD10494
-**Tila**: ESKALOITU (laukaisija: Venäjän valtionduuman äänestys 2026-05-13)  
-**Arvio**: Venäjän uusi laki (hyväksytty 2026-05-13) laajentaa nimenomaisesti sotilaallisen voiman käytön laillista valtuutusta naapurivaltioita vastaan. SD:n kirjallinen kysymys HD11813 ulkoministeri Malmer Stenergardille (toimitettu 2026-05-15, 48 tunnin kuluessa Duuman äänestyksestä) heijastaa nopeinta ruotsalaista parlamentaarista vastausta venäläiseen oikeudelliseen eskalaatioon koskaan kirjatuista. Yhdistettynä Tšetšenia-interpellaatioon (HD10494) Wiechelin ryhmä muodostaa johdonmukaisen paineen pakottaa hallitus muotoilemaan Ruotsin NATO-aikakauden vastedoktriinin.
+### PIR-2: Venäjän eskalaatio — HD11813 + HD10494
+**Tila**: ESKALIERT / ESCALATED 2026-05-13  
+**Arviointi**: Venäjän uusi laki (hyväksytty 2026-05-13) laajentaa nimenomaisesti oikeudellista valtuutusta käyttää sotilasvoimaa naapurimaita vastaan. SD:n kirjallinen kysymys HD11813 (jätetty 2026-05-15, 48 tunnin sisällä dumaäänestyksen jälkeen) on nopein koskaan rekisteröity ruotsalainen parlamentaarinen vastaus Venäjän lainsäädäntöeskaatioihin.
 
-**DIW (oikaistu)**: 7,8 (×1,5 vaalikerroin sovellettu)
+**DIW**: 7,8
 
-### PIR-3: Puolustuskyky — Aurora 26 -harjoitus (HD11812)
-**Tila**: AKTIIVINEN — drone-sotadoktriini parlamentaarisen tarkastelun alla  
-**Arvio**: Aurora 26 -harjoitus (huhtikuu–toukokuu 2026) paljasti aukkoja perinteisen sotilasopinoppimisen ja kehittyvien drone-sota­todellisuuksien välillä. HD11812 kysyy puolustusministeri Pål Jonsonia suoraan Ruotsin kapasiteetista drone-pohjaisiin operaatioihin. Kysymys saapuu, kun riksdag debatoi puolustusbudjetin korotusta kohti 2,5 % BKT:stä. Kaikki hallituksen myöntämiset drone-kapasiteettipuutteista vahvistuvat vaaliuutisoinnissa.
+### PIR-3: Puolustuskapasiteetti — Aurora 26 (HD11812)
+**Tila**: AKTIV / ACTIVE  
+**Arviointi**: Aurora 26 -harjoitus (huhtikuu–toukokuu 2026) paljasti kuiluja perinteisen sotadoktriinin ja kehittyvien drone-sotarealiteettien välillä. HD11812 kysyy puolustusministeri Pål Jonssonilta suoraan Ruotsin kapasiteetista drone-operaatioihin.
 
-**DIW (oikaistu)**: 7,1 (×1,5 vaalikerroin sovellettu)
-
----
-
-## 📊 Viikollinen Kuvioarvio
-
-Viikko osoittaa **turvallisuus-/demokratiateemojen konsentraatiota** yhdenmukaisia vaaleja edeltävien parlamentaaristen strategioiden kanssa:
-- Oppositiopuolueet (C, SD) käyttävät kirjelmiä, interpellaatioita ja kirjallisia kysymyksiä pakottaakseen ministeriaalisia sitoumuksia ennen vaaleja
-- Tidö-koalitio kohtaa samanaikaista altistumista demokraattiselle läpinäkyvyydelle (HD024184), venäläiselle pelottelulle (HD11813) ja puolustuskyvylle (HD11812)
-- Ristiinvaikuttavat: V:n apuinterpellaatiot (HD10492/10493 2026-05-15:stä) lisäävät kolmannen vastuuvektorin (humanitaarinen hallinto)
-
-**Yhteenveto**: Viikko 20 vakiinnuttaa kolme kiistanalaista politiikka-aluetta — avoimuuslainsäädäntö, Venäjä/puolustus ja apuhallinto — jotka tulevat määrittelemään kampanjaviestit viimeisinä 4 kuukautena ennen vaaleja.
+**DIW**: 7,1
 
 ---
 
-## 🔴 Toimintolipput
+## 📊 Viikottainen kaavioarviointi
 
-| Lippu | Arvio | Luottamus |
-|-------|-------|-----------|
-| Venäläinen aggressiolaki hyväksytty 2026-05-13 | Suora turvallisuuseskalaatio vaikuttaen Ruotsiin NATO-jäsenenä | HIGH [B1] |
-| KU34 täysistuntoäänestys lähiaikoina (viikko 21) | Perustuslakiuudistus, jossa aborttioikeudet + yhdistyksen vapaus vaakalaudalla | HIGH [B2] |
-| C vastaan Govt prop. 2025/26:258:sta | Riski avoimuuslain epäonnistumisesta tai hyväksymisestä ilman laajapohjaista mandaattia | MEDIUM [B2] |
-| Drone-sotadoktriiniaukko | Vaalihaavoittuvuus hallitukselle puolustuksen uudenaikaistamisessa | MEDIUM [B2] |
+Viikko 20 vahvistaa kolme kiistanalaista politiikka-aluetta — avoimuuslainsäädäntö, Venäjä/puolustus ja kehitysapuhallinto — jotka tulevat määrittelemään kampanjaviestintää viimeisten neljän kuukauden aikana ennen vaaleja.
 
-<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+---
+
+## 🔴 Toimintaliput
+
+| Lippu | Arviointi | Luottamus |
+|------|-----------|--------|
+| Russian aggression law 2026-05-13 | Suoraa turvallisuuseskalaatiota, joka vaikuttaa Ruotsiin NATO-jäsenenä | KORKEA [B1] |
+| KU34 plenary vote (week 21) | Perustuslakiuudistus aborttioikeus + yhdistymisvapaus vaakalaudalla | KORKEA [B2] |
+| C vs. Govt prop. 2025/26:258 | Riski siitä, että avoimuuslaki epäonnistuu ilman ristiparlamentaarista mandaattia | KESKITASO [B2] |
+| Drone warfare doctrine gap | Vaalihaavoittuvuus hallitukselle puolustuksen modernisoimisessa | KESKITASO [B2] |
+
+<!-- source-sha: 6c2ffdb9c101c4f58734641eaa3d607bfe935938 -->

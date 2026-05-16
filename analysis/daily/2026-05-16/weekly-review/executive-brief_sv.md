@@ -6,18 +6,18 @@ classification: "PUBLIC"
 confidence: "HIGH [B2]"
 ---
 
-# Exekutiv sammanfattning — Veckogranskning 2026-05-16
+# Kortanalys — Veckoöversikt 2026-05-16
 
-**För**: Politiska analytiker, journalister, demokratiska granskare  
+**Till**: Politiska analytiker, journalister, observatörer av demokratisk ansvarsskyldighet  
 **Period**: Vecka 20, 2026-05-09–16  
-**Valner­räkning**: ~120 dagar till 2026-09-13  
-**Klassificering**: PUBLIC | **Admiralty**: B2 | **DIW ledande**: 8,75
+**Valgenomräkning**: ~120 dagar till 2026-09-13  
+**Klassificering**: OFFENTLIG | **Admiralty**: B2 | **DIW-ledning**: 8,75
 
 ---
 
-## ⚡ Toppintelligens
+## ⚡ Topprads underrättelse
 
-**Tre simultana tryckpunkter konvergerar mot Tidökoalitionen i den sista parlamentariska sprinten inför sommaruppehållet.** Veckan den 2026-05-16 avslutas med konstitutionell reform i sin slutfas, Rysslands militära hållning som når sin mest aggressiva kodifierade form sedan 2022, och oppositionens ansvarskampanjer som når maximal valförstärkning.
+**Tre simultana trycksituationer konvergerar mot Tidökoalitionen i den sista parlamentariska sprinten inför sommaruppehållet.** Veckan den 16 maj 2026 avslutas med konstitutionell reform i slutfasen, Rysslands militära hållning i sin mest aggressivt kodifierade form sedan 2022, och oppositionens ansvarskampanjer i maximal valförstärkning.
 
 ---
 
@@ -25,42 +25,42 @@ confidence: "HIGH [B2]"
 
 ### PIR-1: Konstitutionell reform — Transparenslagstiftning (HD024184)
 **Status**: AKTIV — Centerpartiet utmanar prop. 2025/26:258  
-**Bedömning**: C:s motion HD024184 ("med anledning av prop. 2025/26:258") signalerar att det tvärblocktarliga parlamentariska stöd regeringen behöver för transparenslagstiftningen *inte* är säkrat. C:s kärnorientinvändning — att förslaget syftar till att legitimera ej redovisad fackförenings-till-parti-finansiering medan det bara ger kosmetisk insyn — riktar in sig på regeringens påstående att lagstiftningen stärker demokratiska normer. Med KU:s utskottsbetänkande förväntat innan sommaruppehållet skapar motionen en synlig ansvarsgaffel: anta lagen utan meningsfullt oppositionsstöd, eller fördröja och riskera narrativet att transparensreformen var performativ.
+**Bedömning**: C-motionen HD024184 ("med anledning av prop. 2025/26:258") signalerar att det tvärs-parlamentariska stöd som regeringen behöver för transparenslagstiftningen *inte* är säkrat. C:s kärnmotivation — att förslaget syftar till att legitimera ej redovisad facklig-till-parti-finansiering, snarare än verklig transparens — angriper regeringens anspråk på att lagstiftningen stärker demokratiska normer. Med KU-utskottets beredning väntad före sommaruppehållet skapar motionen en synlig ansvarsgaffel: anta lagstiftningen utan meningsfullt oppositionsstöd, eller fördröja och riskera narrativet att transparensreformen var av skenutvärde.
 
 **DIW (justerat)**: 8,2 (×1,5 valmultiplikator tillämpad)
 
-### PIR-2: Rysk eskalering — HD11813 + HD10494
-**Status**: ESKALERAD (utlösare: ryska statsdumans röst 2026-05-13)  
-**Bedömning**: Rysslands nya lag (antagen 2026-05-13) utökar uttryckligen den rättsliga befogenheten att använda militärt våld mot grannstater. SD:s skriftliga fråga HD11813 till utrikesminister Malmer Stenergard (inlämnad 2026-05-15, inom 48 timmar efter Duma-omröstningen) återspeglar det snabbaste svenska parlamentariska svaret på en rysk juridisk eskalering på rekordtid. Kombinerat med Tjetjenien-interpellationen (HD10494) utgör Wiechels kluster ett sammanhängande tryck för att tvinga regeringen att formulera Sveriges NATO-era responsedoktrin.
+### PIR-2: Rysk eskalation — HD11813 + HD10494
+**Status**: ESKALERAD (utlösare: rysk statsduma-omröstning 2026-05-13)  
+**Bedömning**: Rysslands nya lag (antagen 2026-05-13) utvidgar explicit den juridiska befogenheten att använda militär styrka mot grannstater. SD:s skriftliga fråga HD11813 till utrikesminister Malmer Stenergard (inlämnad 2026-05-15, inom 48 timmar efter statsdumaomröstningen) är det snabbaste svenska parlamentariska svaret på en rysk lagstiftningseskalation som registrerats. Kombinerat med Tjetjenieninterpellationen (HD10494) utgör Wiechels kluster ett sammanhängande tryck för att tvinga regeringen att formulera Sveriges NATO-era svarsodoktrin.
 
 **DIW (justerat)**: 7,8 (×1,5 valmultiplikator tillämpad)
 
 ### PIR-3: Försvarsförmåga — Aurora 26-övning (HD11812)
-**Status**: AKTIV — drönarkrigsdoktrin under parlamentarisk granskning  
-**Bedömning**: Aurora 26-övningen (april–maj 2026) blottade gap mellan konventionell militärdoktrin och framväxande drönarkrigverkligheter. HD11812 frågar försvarsminister Pål Jonson direkt om Sveriges kapacitet för drönardrivna operationer. Frågan ankommer när riksdagen debatterar försvarsbudsgetökningen mot 2,5 % av BNP. Varje erkännande från regeringen om drönarbehovsbrister kommer att förstärkas i valbevakning.
+**Status**: AKTIV — drönardoktrin under parlamentarisk granskning  
+**Bedömning**: Aurora 26-övningen (april–maj 2026) blottlade klyftor mellan konventionell militärdoktrin och framväxande drönarkrigverkligheter. HD11812 frågar försvarsminister Pål Jonson direkt om Sveriges kapacitet för drönarsoperationer. Frågan anländer när riksdagen debatterar försvarsbudgethöjningen mot 2,5 procent av BNP. Varje regeringserkännande av drönarsförmågebrister kommer att förstärkas i valbevakningen.
 
 **DIW (justerat)**: 7,1 (×1,5 valmultiplikator tillämpad)
 
 ---
 
-## 📊 Veckovismönsterbedömning
+## 📊 Veckans mönsterbedömning
 
-Veckan uppvisar **koncentration av säkerhets-/demokratiteman** som är konsekventa med förvälstrategier:
-- Oppositionspartier (C, SD) använder motioner, interpellationer och skriftliga frågor för att tvinga fram ministeråtaganden innan valet
-- Tidökoalitionen möter simultan exponering på demokratisk insyn (HD024184), ryskt avskräckande (HD11813) och försvarsförmåga (HD11812)
-- Tvärsyskon: V:s biståndsinterpellationer (HD10492/10493 från 2026-05-15) lägger till en tredje ansvarsgaffel (humanitär styrning)
+Veckan uppvisar **koncentration av säkerhets- och demokratiteman** i linje med förvalsstrategier:
+- Oppositionspartier (C, SD) använder motioner, interpellationer och skriftliga frågor för att tvinga ministerutfästelser inför valet
+- Tidökoalitionen möter simultant exponering om demokratisk transparens (HD024184), ryskt avskräckande (HD11813) och försvarskapacitet (HD11812)
+- Tvärsifflande: V:s biståndsinterpellationer (HD10492/10493 från 2026-05-15) lägger till en tredje ansvarsskyldighetsvektor (humanitärt styre)
 
-**Slutsats**: Vecka 20 etablerar tre omtvistade politikområden — transparenslagstiftning, Ryssland/försvar och bistårdssstyring — som kommer att definiera kampanjmeddelanden under de sista 4 månaderna före valet.
+**Slutsats**: Vecka 20 etablerar tre omstridda politikområden — transparenslagstiftning, Ryssland/försvar och biståndsstyrning — som kommer att definiera kampanjbudskap under de sista 4 månaderna inför valet.
 
 ---
 
-## 🔴 Åtgärdsflaggor
+## 🔴 Aktionsflaggor
 
-| Flagga | Bedömning | Tillförlitlighet |
-|--------|-----------|-----------------|
-| Rysk aggressivitetslag antagen 2026-05-13 | Direkt säkerhetseskalering som påverkar Sverige som NATO-medlem | HIGH [B1] |
-| KU34 plenariomröstning nära förestående (vecka 21) | Konstitutionell reform med aborträtt + föreningsfrihet på spel | HIGH [B2] |
-| C kontra Govt om prop. 2025/26:258 | Risk att transparenslagen misslyckas eller antas utan tvärblocktarligt mandat | MEDIUM [B2] |
-| Drönarkrigsdoktrinsgap | Valexponering för regeringen på försvarsmodernisering | MEDIUM [B2] |
+| Flagga | Bedömning | Säkerhet |
+|--------|-----------|---------|
+| Rysk aggressivitetslag antagen 2026-05-13 | Direkt säkerhetseskalering som påverkar Sverige som NATO-medlem | HÖG [B1] |
+| KU34 plenariomröstning förestående (vecka 21) | Konstitutionell reform med aborträtt + föreningsfrihet på spel | HÖG [B2] |
+| C mot regeringen om prop. 2025/26:258 | Risk att transparenslagen misslyckas eller passerar utan tvärs-parlamentariskt mandat | MEDEL [B2] |
+| Drönarsättningsdoktrin-gap | Valets sårbarhet för regeringen om försvarsmodernisering | MEDEL [B2] |
 
-<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+<!-- source-sha: 6c2ffdb9c101c4f58734641eaa3d607bfe935938 -->

@@ -1,5 +1,5 @@
 ---
-title: "Note de Synthèse: Les Coupes suédoises dans l'Aide Internationale sous Examen Parlementaire — Semaine 21"
+title: "Executive Brief: Swedish Aid Cuts Under Parliamentary Scrutiny — Week 21"
 date: "2026-05-15"
 article_type: "week-ahead"
 subfolder: "week-ahead"
@@ -9,61 +9,49 @@ classification: "Public"
 confidence: "HIGH [B2]"
 ---
 
-# Note de Synthèse pour Décideurs — Semaine à Venir: Responsabilité en matière d'Aide, 2026-05-15
+# Note de synthèse — Semaine à venir : Responsabilité de l'aide, 2026-05-15
 
-**Auteur**: James Pether Sörling | **ID de run**: 25908189012 | **Classification**: Public
+**Author**: James Pether Sörling | **Run ID**: 25908189012 | **Classification**: Public
 
 ---
 
 ## 🎯 BLUF
 
-**Le gouvernement Tidö de la Suède fait face à deux débats d'interpellation programmés (2026-05-18) sur son démantèlement de l'architecture de l'aide** — HD10492 (conséquences pour les enfants) et HD10493 (conséquences des stratégies-pays abandonnées) — tous deux soumis par Lotta Johnsson Fornarve (V), adressés au ministre Benjamin Dousa (M). Avec l'élection de septembre 2026 dans 121 jours et les coupes dans l'aide aggravant le démantèlement mondial de l'USAID par Trump, l'absence d'évaluation d'impact de la part du gouvernement devient un passif électoral actif. Le ministre Dousa doit répondre d'ici le 2026-05-29. La coalition Tidö (M+KD+L+SD) a déjà survécu à un vote budgétaire imposant les coupes; mais le débat signale l'intention de l'opposition de faire de la responsabilité en matière d'aide une question électorale. Signification ajustée: **8,3/10** [B2].
+Le gouvernement suédois Tidö fait face à deux débats d'interpellation programmés (2026-05-18) sur le démantèlement de l'architecture de l'aide — HD10492 (conséquences pour les enfants) et HD10493 (conséquences des stratégies pays abandonnées) — tous deux déposés par Lotta Johnsson Fornarve (V), adressés au ministre Benjamin Dousa (M). À 121 jours des élections de septembre 2026, l'absence d'évaluation d'impact devient une vulnérabilité électorale active. Le ministre Dousa doit répondre avant le 2026-05-29. Importance ajustée : **8,3/10** [B2].
 
 ---
 
-## 🧭 3 Décisions que cette Note soutient
+## 🧭 3 décisions que cette note soutient
 
-1. **Publier**: Utiliser les deux interpellations comme l'histoire principale de responsabilité en matière d'aide pour la semaine 21; mettre en évidence l'effet combiné (coupes suédoises + Trump/USAID) et les dimensions des droits de l'enfant.
-2. **Surveiller**: Suivre la réponse ministérielle d'ici le 2026-05-29; si aucune évaluation d'impact n'est annoncée, escalader vers le cadrage "échec de la responsabilité de gouvernance" pour la période de campagne électorale.
-3. **En avant**: Évaluer si la pause estivale parlementaire crée une fenêtre pour des actions exécutives supplémentaires sur l'aide sans contrôle parlementaire.
-
----
-
-## ⚡ Lecture en 60 Secondes
-
-| # | Point | Signification |
-|---|-------|--------------|
-| 1 | HD10492 — V interpellation: conséquences des coupes dans l'aide pour les enfants, ministre Dousa | HIGH [B2] |
-| 2 | HD10493 — V interpellation: stratégies-pays abandonnées (Liberia, Mozambique, Tanzanie, Zimbabwe, Bolivie) | HIGH [B2] |
-| 3 | Les deux débats prévus le 2026-05-18 en séance plénière | MEDIUM [B3] |
-| 4 | Dernière date de réponse ministérielle: 2026-05-29 — fenêtre publique de responsabilité | HIGH [B2] |
-| 5 | Aucune évaluation d'impact réalisée — propre aveu du gouvernement | HIGH [B2] |
-| 6 | Élection dans 121 jours — multiplicateur DIW 1,5× sur tous les points V contre Tidö | HIGH [B2] |
-| 7 | Contexte mondial: coupes US USAID + coupes suédoises = crise humanitaire combinée | HIGH [B2] |
-| 8 | L'excédent financier de la Suède fait des coupes un choix politique, pas une nécessité économique | MEDIUM [B3] |
+1. **Publier** : Utiliser les deux interpellations comme article principal sur la responsabilité de l'aide pour la semaine 21.
+2. **Surveiller** : Suivre la réponse ministérielle avant le 2026-05-29 ; escalader vers le cadre « défaillance de gouvernance » si aucune évaluation n'est annoncée.
+3. **Transmettre** : Évaluer si la pause estivale parlementaire crée une fenêtre d'action executive sans contrôle.
 
 ---
 
-## 🔺 Principal Déclencheur Prospectif
+## ⚡ Lecture 60 secondes
 
-**Déclencheur**: La réponse d'interpellation du ministre Dousa au plus tard le 2026-05-29 soit (a) annonce une évaluation d'impact ou (b) ne le fait pas.  
-**Si (a)**: V concède une responsabilité partielle, l'opposition se tourne vers une demande de renversement contraignant.  
-**Si (b)**: Lacune confirmée dans la responsabilité de gouvernance; l'opposition fait monter le narratif de campagne électorale "Le gouvernement Tidö ne se soucie pas des enfants du monde."  
-**Lien PIR**: PIR-WA-01
+| # | Item | Significance |
+|---|------|-------------|
+| 1 | HD10492 — Interpellation V : conséquences des réductions d'aide pour les enfants, ministre Dousa | HIGH [B2] |
+| 2 | HD10493 — Interpellation V : stratégies pays abandonnées (Libéria, Mozambique, Tanzanie, Zimbabwe, Bolivie) | HIGH [B2] |
+| 3 | Deux débats prévus le 2026-05-18 en séance plénière | HIGH [B2] |
+| 4 | Date limite de réponse ministérielle : 2026-05-29 | HIGH [B2] |
+| 5 | Aucune évaluation d'impact réalisée — aveu du gouvernement lui-même | HIGH [B2] |
+| 6 | Élections dans 121 jours — multiplicateur DIW ×1,5 | HIGH [B2] |
+| 7 | Contexte mondial : réductions USAID américaines + réductions suédoises = crise humanitaire composée | HIGH [B2] |
+| 8 | L'excédent fiscal suédois fait de ces réductions un choix politique, non une nécessité économique | HIGH [B2] |
 
 ---
 
-## Ancres de Preuves
+## 🔺 Déclencheur principal
 
-| Affirmation | Preuve | Récupéré |
-|-------------|--------|----------|
-| Interpellation HD10492 soumise 2026-05-13 | dok_id HD10492, data.riksdagen.se | 2026-05-15 |
-| Interpellation HD10493 soumise 2026-05-12 | dok_id HD10493, data.riksdagen.se | 2026-05-15 |
-| Annoncé pour la séance plénière 2026-05-18 | Statut HD10492: ANM 2026-05-18 | 2026-05-15 |
-| Dernière date de réponse 2026-05-29 | HD10492 SISVA 2026-05-29; HD10493 SISVA 2026-05-29 | 2026-05-15 |
-| Gouvernement a réduit les stratégies de ~70 à ~40 | Texte intégral HD10493, propres données du ministre | 2026-05-15 |
-| Déc 2025 exit: Liberia, Mozambique, Tanzanie, Zimbabwe, Bolivie | Texte intégral HD10493 | 2026-05-15 |
-| Objectif de 1% du RNB abandonné avec le soutien SD | Texte intégral HD10492 + HD10493 | 2026-05-15 |
-| Aucune évaluation d'impact réalisée | Texte intégral HD10493: "Mig veterligen har regeringen inte ens gjort någon analys" | 2026-05-15 |
+**Déclencheur** : La réponse du ministre Dousa avant le 2026-05-29 annonce soit (a) une évaluation d'impact, soit (b) ne le fait pas.
+**Si (a)** : V concède la responsabilité partielle.
+**Si (b)** : Défaillance de gouvernance confirmée ; l'opposition escalade *« Tidöregeringen bryr sig inte om världens barn »*.
 
-<!-- source-sha: 84c1a88a2df18e97bdef9c56e53f2408ac799ff4 -->
+---
+
+La semaine 21 établit la responsabilité de l'aide comme thème central de campagne à 121 jours des élections.
+
+<!-- source-sha: 6c2ffdb9c101c4f58734641eaa3d607bfe935938 -->

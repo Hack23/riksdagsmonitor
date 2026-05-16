@@ -6,51 +6,51 @@ classification: "PUBLIC"
 confidence: "HIGH [B2]"
 ---
 
-# Eksekutiv Sammenfatning — Ugentlig Gennemgang 2026-05-16
+# Kortanalyse — Ugentlig Gennemgang 2026-05-16
 
-**Til**: Politiske analytikere, journalister, demokratiske ansvarsobservatører  
+**Til**: Politiske analytikere, journalister, observatører af demokratisk ansvarlighed  
 **Periode**: Uge 20, 2026-05-09–16  
-**Valnedtælling**: ~120 dage til 2026-09-13  
-**Klassificering**: PUBLIC | **Admiralty**: B2 | **DIW ledende**: 8,75
+**Valgnedtælling**: ~120 dage til 2026-09-13  
+**Klassifikation**: OFFENTLIG | **Admiralty**: B2 | **DIW-ledning**: 8,75
 
 ---
 
-## ⚡ Topintelligens
+## ⚡ Topniveauefterforskning
 
-**Tre samtidige pres­sionspunkter konvergerer mod Tidø-koalitionen i den endelige parlamentariske sprint inden sommerferien.** Ugen den 2026-05-16 afsluttes med forfatningsreform i sin endelige fase, Ruslands militære holdning, der når sin mest aggressive kodificerede form siden 2022, og oppositionens ansvars­kampagner, der når maksimal valgforstærkning.
+**Tre samtidige pressepunkter konvergerer mod Tidö-koalitionen i den endelige parlamentariske sprint inden sommerferien.** Ugen den 16. maj 2026 afsluttes med forfatningsreform i dens endelige fase, Ruslands militære holdning i sin mest aggressivt kodificerede form siden 2022, og oppositionens ansvarsfulde kampagner i maksimal valgamplificering.
 
 ---
 
-## 🎯 Prioriterede efterretningsvurderinger
+## 🎯 Prioriterede Efterretningsvurderinger
 
-### PIR-1: Forfatningsreform — Gennemsigtighedslovgivning (HD024184)
+### PIR-1: Forfatningsreform — Transparenslovgivning (HD024184)
 **Status**: AKTIV — Centerpartiet udfordrer prop. 2025/26:258  
-**Vurdering**: C-motionen HD024184 ("med anledning av prop. 2025/26:258") signalerer, at den tværbloksige parlamentariske støtte, som regeringen har brug for til gennemsigtighedslovgivningen, *ikke* er sikret. C's kerneindvending — at forslaget tjener til at legitimere ikke-oplyst fagforenings-til-parti-finansiering, mens det kun giver kosmetisk gennemsigtighed — retter sig mod regeringens påstand om, at lovgivningen fremmer demokratiske normer. Med KU's udvalgsbehandling forventet inden sommerferien skaber motionen en synlig ansvarsforgrening: vedtag loven uden meningsfuld oppositionsstøtte, eller forsink og risiker narrativet om, at gennemsigtighedsreformen var performativ.
+**Vurdering**: C-motionen HD024184 ("med anledning af prop. 2025/26:258") signalerer, at den tværparlamentariske støtte, regeringen behøver til transparenslovgivningen, *ikke* er sikret. C's kerneindvending — at forslaget tjener til at legitimere ikke-oplyst fagforenings-til-parti-finansiering, mens det kun giver kosmetisk gennemsigtighed — angriber regeringens påstand om, at lovgivningen fremmer demokratiske normer. Med KU-udvalgets beslutning forventet inden sommerferien, skaber motionen en synlig ansvarligheds-gaffel: vedtag lovgivningen uden meningsfuld oppositionsstøtte, eller forsink og risiker narrativet om, at transparensreformen var performativ.
 
-**DIW (justeret)**: 8,2 (×1,5 valmultiplikator anvendt)
+**DIW (justeret)**: 8,2 (×1,5 valg-multiplikator anvendt)
 
-### PIR-2: Russisk Eskalering — HD11813 + HD10494
-**Status**: ESKALERET (udløser: russisk statsdumaets afstemning 2026-05-13)  
-**Vurdering**: Ruslands nye lov (vedtaget 2026-05-13) udvider udtrykkeligt den juridiske myndighed til at anvende militærmagt mod nabolande. SD's skriftlige spørgsmål HD11813 til udenrigsminister Malmer Stenergard (indgivet 2026-05-15, inden for 48 timer efter Duma-afstemningen) afspejler det hurtigste svenske parlamentariske svar på en russisk juridisk eskalering på rekordtid. Kombineret med Tjetjenien-interpellationen (HD10494) udgør Wiechels klynge et sammenhængende tryk for at tvinge regeringen til at formulere Sveriges NATO-eras responsdoktrin.
+### PIR-2: Russisk Eskalation — HD11813 + HD10494
+**Status**: ESKALERET (trigger: russisk statsduma-afstemning 2026-05-13)  
+**Vurdering**: Ruslands nye lov (vedtaget 2026-05-13) udvider eksplicit den juridiske myndighed til at bruge militær magt mod nabolande. SD's skriftlige spørgsmål HD11813 til udenrigsminister Malmer Stenergard (indsendt 2026-05-15, inden for 48 timer efter duma-afstemningen) afspejler det hurtigste svenske parlamentariske svar på en russisk lovgivningseskalation nogensinde. Kombineret med Tjetjenien-interpellationen (HD10494) udgør Wiechels klynge et sammenhængende pres for at tvinge regeringen til at formulere Sveriges NATO-ære svarsrespons.
 
-**DIW (justeret)**: 7,8 (×1,5 valmultiplikator anvendt)
+**DIW (justeret)**: 7,8 (×1,5 valg-multiplikator anvendt)
 
-### PIR-3: Forsvarskapabilitet — Aurora 26 Øvelse (HD11812)
-**Status**: AKTIV — dronekrigsførelesdoktrin under parlamentarisk kontrol  
-**Vurdering**: Aurora 26-øvelsen (april–maj 2026) afslørede huller mellem konventionel militærdoktrin og fremvoksende dronekrigsvirkeligheder. HD11812 spørger forsvarsminister Pål Jonson direkte om Sveriges kapacitet til dronebaserede operationer. Spørgsmålet ankommer, mens Riksdag debatterer forsvarsbudgetforøgelsen mod 2,5 % af BNP. Enhver statslig anerkendelse af mangler i dronekapacitet vil blive forstærket i valgdækning.
+### PIR-3: Forsvarskapacitet — Aurora 26-øvelse (HD11812)
+**Status**: AKTIV — dronekrigs-doktrin under parlamentarisk granskning  
+**Vurdering**: Aurora 26-øvelsen (april–maj 2026) blotlagde kløfter mellem konventionel militærdoktrin og fremvoksende dronekrigsrealiteter. HD11812 spørger forsvarsminister Pål Jonson direkte om Sveriges kapacitet til drone-operationer. Spørgsmålet ankommer mens Riksdag debatterer forsvarsbudgetforøgelsen mod 2,5 % af BNP. Enhver regeringserkendelse af drone-kapacitetsgab vil blive forstærket i valgdækningen.
 
-**DIW (justeret)**: 7,1 (×1,5 valmultiplikator anvendt)
+**DIW (justeret)**: 7,1 (×1,5 valg-multiplikator anvendt)
 
 ---
 
 ## 📊 Ugentlig Mønstervurdering
 
-Ugen udviser **koncentration af sikkerheds-/demokratitemaer** konsistente med præ-valg parlamentariske strategier:
-- Oppositionspartier (C, SD) bruger motioner, interpellationer og skriftlige spørgsmål til at tvinge ministerielle tilsagn inden valget
-- Tidø-koalitionen er simultant udsat på demokratisk gennemsigtighed (HD024184), russisk afskrækkelse (HD11813) og forsvarskapabilitet (HD11812)
-- Tværsøskende: V's bistandsinterpellationer (HD10492/10493 fra 2026-05-15) tilføjer en tredje ansvarsvektor (humanitær styring)
+Ugen udviser **koncentration af sikkerheds- og demokratitemaer** i overensstemmelse med præ-valg parlamentariske strategier:
+- Oppositionspartier (C, SD) bruger motioner, interpellationer og skriftlige spørgsmål til at presse ministerielle forpligtelser ind inden valget
+- Tidö-koalitionen møder simultan eksponering på demokratisk transparens (HD024184), russisk afskrækkelse (HD11813) og forsvarskapacitet (HD11812)
+- Krydssøjle: V's bistandsinterpellationer (HD10492/10493 fra 2026-05-15) tilføjer en tredje ansvarligheds-vektor (humanitær styring)
 
-**Konklusion**: Uge 20 etablerer tre omstridte politikområder — gennemsigtighedslovgivning, Rusland/forsvar og bistandsstyring — som vil definere kampagnebudskaber i de sidste 4 måneder inden valget.
+**Konklusion**: Uge 20 etablerer tre omstridte politikområder — transparenslovgivning, Rusland/forsvar og bistandsstyring — der vil definere kampagnebeskeder i de sidste 4 måneder inden valget.
 
 ---
 
@@ -58,9 +58,9 @@ Ugen udviser **koncentration af sikkerheds-/demokratitemaer** konsistente med pr
 
 | Flag | Vurdering | Tillid |
 |------|-----------|--------|
-| Russisk aggressivitetslov vedtaget 2026-05-13 | Direkt sikkerhedseskalering der påvirker Sverige som NATO-medlem | HIGH [B1] |
-| KU34 plenumsstemme nær forestående (uge 21) | Forfatningsreform med abortsrettigheder + foreningsfrihed på spil | HIGH [B2] |
-| C kontra Govt om prop. 2025/26:258 | Risiko for at gennemsigtighedsloven mislykkes eller vedtages uden tværblokket mandat | MEDIUM [B2] |
-| Dronekrigsførelses­doktringab | Valgeksponering for regeringen om forsvarsmodernisering | MEDIUM [B2] |
+| Russisk aggressionlov vedtaget 2026-05-13 | Direkte sikkerhedseskalation der påvirker Sverige som NATO-medlem | HØJ [B1] |
+| KU34 plenariasafstemning forestående (uge 21) | Forfatningsreform med abortsret + foreningsfrihed på spil | HØJ [B2] |
+| C mod regeringen om prop. 2025/26:258 | Risiko for at transparensloven fejler eller vedtages uden tværparlamentarisk mandat | MEDIUM [B2] |
+| Dronekrigs-doktrins-gab | Valg-sårbarhed for regeringen om forsvarsmodernisering | MEDIUM [B2] |
 
-<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+<!-- source-sha: 6c2ffdb9c101c4f58734641eaa3d607bfe935938 -->
