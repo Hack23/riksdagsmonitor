@@ -747,6 +747,101 @@ describe('checkFamilyCStructure', () => {
       const failures = results.filter((r) => !r.passed && r.artifact === 'executive-brief.md');
       expect(failures).toHaveLength(0);
     });
+
+    // ------------------------------------------------------------------
+    // 2026-05-16 hardening (Phase 1 of the PR #2527 follow-up): close
+    // gate holes that allowed BLUF-leak titles to ship across all 14
+    // languages. Each new case maps to a live regression observed on
+    // https://riksdagsmonitor.com/news/index.html for May 2026 cards.
+    // ------------------------------------------------------------------
+
+    it('fails when the brief has no H1 at all (renderer would fall back to BLUF first sentence)', async () => {
+      // Reproduces 2026-05-16 weekly-review live regression where the
+      // brief started with YAML front-matter only and the card title
+      // shipped as "Three simultaneous pressure points are converging
+      // on the Tidö" — a truncated BLUF fragment.
+      writeArtifact(testDir, 'executive-brief.md',
+        '## 🎯 BLUF\n\nThree simultaneous pressure points are converging.\n\n## 🧭 Decisions\n\n1. A\n');
+      const results = await checkFamilyCStructure(testDir);
+      const failures = results.filter(
+        (r) => !r.passed && r.artifact === 'executive-brief.md' && /no '# H1' heading/i.test(r.message ?? ''),
+      );
+      expect(failures.length).toBeGreaterThan(0);
+    });
+
+    it("fails when H1 collapses to nothing via cleanArticleTitle (subfolder-label boilerplate)", async () => {
+      // `# Executive Brief — Realtime Pulse 2026-05-16` is what the
+      // generator workflows write by default. After cleanArticleTitle
+      // strips `Executive Brief — ` and the trailing date, only
+      // `Realtime Pulse` remains — which equals the prettified
+      // subfolder label and is collapsed to null. The renderer then
+      // falls back to BLUF. Reject at the gate.
+      const subfolderDir = join(tmpdir(), `agentic-gate-test-realtime-pulse-${Date.now()}-${Math.random().toString(36).slice(2)}`);
+      mkdirSync(subfolderDir, { recursive: true });
+      try {
+        writeArtifact(subfolderDir, 'executive-brief.md',
+          '# Executive Brief — Realtime Pulse 2026-05-16\n\n## 🎯 BLUF\n\nSwedish parliamentary activity.\n\n## 🧭 Decisions\n\n1. A\n');
+        const results = await checkFamilyCStructure(subfolderDir);
+        const failures = results.filter(
+          (r) => !r.passed && r.artifact === 'executive-brief.md',
+        );
+        expect(failures.length).toBeGreaterThan(0);
+      } finally {
+        rmSync(subfolderDir, { recursive: true, force: true });
+      }
+    });
+
+    it('fails when H1 contains a literal ISO date (YYYY-MM-DD)', async () => {
+      writeArtifact(testDir, 'executive-brief.md',
+        '# Sweden Evening Analysis 2026-05-11: Constitutional Moment Continues\n\n## 🎯 BLUF\n\nSummary.\n\n## 🧭 Decisions\n\n1. A\n');
+      const results = await checkFamilyCStructure(testDir);
+      const failures = results.filter(
+        (r) => !r.passed && r.artifact === 'executive-brief.md' && /literal.*date/i.test(r.message ?? ''),
+      );
+      expect(failures.length).toBeGreaterThan(0);
+    });
+
+    it('fails when H1 contains an English long-form date', async () => {
+      writeArtifact(testDir, 'executive-brief.md',
+        '# Riksdagsmonitor Realtime Pulse — 15 May 2026: Defence and Aid Tensions Converge\n\n## 🎯 BLUF\n\nSummary.\n\n## 🧭 Decisions\n\n1. A\n');
+      const results = await checkFamilyCStructure(testDir);
+      const failures = results.filter(
+        (r) => !r.passed && r.artifact === 'executive-brief.md' && /literal.*date/i.test(r.message ?? ''),
+      );
+      expect(failures.length).toBeGreaterThan(0);
+    });
+
+    it('fails when H1 contains a Swedish long-form date', async () => {
+      // Live 2026-05-12 regression: `# Riksdagen Realtime Pulse 12 maj 2026`
+      writeArtifact(testDir, 'executive-brief.md',
+        '# Riksdagen Realtime Pulse 12 maj 2026: Försvarsdebatt och migrationspaket\n\n## 🎯 BLUF\n\nSummary.\n\n## 🧭 Decisions\n\n1. A\n');
+      const results = await checkFamilyCStructure(testDir);
+      const failures = results.filter(
+        (r) => !r.passed && r.artifact === 'executive-brief.md' && /literal.*date/i.test(r.message ?? ''),
+      );
+      expect(failures.length).toBeGreaterThan(0);
+    });
+
+    it('fails when H1 ends with a trailing comma', async () => {
+      // Live regression: `# Sweden Evening Analysis,`
+      writeArtifact(testDir, 'executive-brief.md',
+        '# Sweden Evening Analysis, Constitutional Moment Builds Toward Election Sprint,\n\n## 🎯 BLUF\n\nSummary.\n\n## 🧭 Decisions\n\n1. A\n');
+      const results = await checkFamilyCStructure(testDir);
+      const failures = results.filter(
+        (r) => !r.passed && r.artifact === 'executive-brief.md' && /dangling punctuation/i.test(r.message ?? ''),
+      );
+      expect(failures.length).toBeGreaterThan(0);
+    });
+
+    it('fails when H1 ends with a coordinating connector', async () => {
+      writeArtifact(testDir, 'executive-brief.md',
+        '# Riksdag Approves FiU48 Fuel-Tax Cut Despite Opposition From\n\n## 🎯 BLUF\n\nSummary.\n\n## 🧭 Decisions\n\n1. A\n');
+      const results = await checkFamilyCStructure(testDir);
+      const failures = results.filter(
+        (r) => !r.passed && r.artifact === 'executive-brief.md' && /coordinating connector/i.test(r.message ?? ''),
+      );
+      expect(failures.length).toBeGreaterThan(0);
+    });
   });
 
   describe('intelligence-assessment.md', () => {

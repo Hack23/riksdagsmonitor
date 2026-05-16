@@ -205,6 +205,41 @@ if [ -s "$ANALYSIS_DIR/executive-brief.md" ]; then
       echo "❌ executive-brief.md: H1 is bare boilerplate ('Executive Brief') — write a publishable story-oriented title (actor + active verb + instrument or number)"
       FAIL=1
     fi
+    # Date-in-H1 guard (seo-metadata-contract.md §2.1) — title must not
+    # contain a literal publication date. Catches ISO YYYY-MM-DD and
+    # English + Swedish long-form months.
+    EB_H1_TEXT="$(printf '%s' "$EB_H1" \
+      | sed -E 's/^#[[:space:]]+//' \
+      | sed -E 's/<[^>]+>//g')"
+    if printf '%s' "$EB_H1_TEXT" | grep -qE '[0-9]{4}[-/][0-9]{1,2}[-/][0-9]{1,2}'; then
+      echo "❌ executive-brief.md: H1 contains a literal ISO date (YYYY-MM-DD) — dates belong in article:published_time, not the SERP <title>"
+      FAIL=1
+    elif printf '%s' "$EB_H1_LOWER" | grep -qE '[0-9]{1,2}[[:space:]]+(january|february|march|april|may|june|july|august|september|october|november|december)[[:space:]]+[0-9]{4}'; then
+      echo "❌ executive-brief.md: H1 contains a literal English long-form date — dates belong in article:published_time, not the SERP <title>"
+      FAIL=1
+    elif printf '%s' "$EB_H1_LOWER" | grep -qE '[0-9]{1,2}[[:space:]]+(januari|februari|mars|april|maj|juni|juli|augusti|september|oktober|november|december)[[:space:]]+[0-9]{4}'; then
+      echo "❌ executive-brief.md: H1 contains a literal Swedish long-form date — dates belong in article:published_time, not the SERP <title>"
+      FAIL=1
+    fi
+    # Trailing-punctuation / dangling-connector guard — H1 must be a
+    # complete grammatical phrase. Catches `Sweden Evening Analysis,`,
+    # `Week Ahead: Aid Accountability,`, `… opposition for`, etc.
+    EB_H1_TRIM="$(printf '%s' "$EB_H1_TEXT" | sed -E 's/[[:space:]]+$//')"
+    case "$EB_H1_TRIM" in
+      *,|*\;|*:|*—|*–|*-)
+        echo "❌ executive-brief.md: H1 ends with dangling punctuation (',' / ';' / ':' / '—' / '–' / '-') — complete the headline or remove the trailing marker"
+        FAIL=1 ;;
+    esac
+    EB_H1_TRIM_LOWER="$(printf '%s' "$EB_H1_TRIM" | tr '[:upper:]' '[:lower:]')"
+    if printf '%s' "$EB_H1_TRIM_LOWER" | grep -qE '[[:space:]](and|or|but|with|as|for|to|in|of|on|at|by|the|a|an|from|that)$'; then
+      echo "❌ executive-brief.md: H1 ends with a coordinating connector or article ('and', 'or', 'with', 'the', …) — complete the headline"
+      FAIL=1
+    fi
+  else
+    # No H1 at all — the renderer has nothing to seed the SERP <title>
+    # from and will silently fall back to a BLUF-sentence fragment.
+    echo "❌ executive-brief.md: no '# H1' heading found — the H1 is the SERP <title> source across all 14 languages; add a publishable story-oriented title"
+    FAIL=1
   fi
 fi
 if [ -s "$ANALYSIS_DIR/intelligence-assessment.md" ]; then

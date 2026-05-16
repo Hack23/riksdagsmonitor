@@ -648,6 +648,74 @@ describe('aggregator/seo/title — title cleanup & BLUF synthesis', () => {
     expect(titleFromBluf('• Sweden joins NATO summit talks.', 70))
       .toBe('Sweden joins NATO summit talks');
   });
+
+  // ────────────────────────────────────────────────────────────────────
+  // 2026-05-16 hardening (Phase 3 of the PR #2527 follow-up):
+  // - Trailing-comma strip in cleanArticleTitle (Class C cosmetic damage).
+  // - Tail-too-short truncation guard in titleFromBluf (`… on the Tidö`).
+  // - Swedish "Den <day> <månad> <year>" date-prefix strip (multi-lingual).
+  // ────────────────────────────────────────────────────────────────────
+
+  it('cleanArticleTitle strips a bare trailing comma (live: `Sweden Evening Analysis,`)', () => {
+    expect(
+      cleanArticleTitle('Sweden Evening Analysis, Constitutional Moment Builds,'),
+    ).toBe('Sweden Evening Analysis, Constitutional Moment Builds');
+    expect(
+      cleanArticleTitle('Riksdag Approves FiU48 Fuel-Tax Cut Ahead of Election,'),
+    ).toBe('Riksdag Approves FiU48 Fuel-Tax Cut Ahead of Election');
+  });
+
+  it('cleanArticleTitle strips a bare trailing semicolon or colon', () => {
+    expect(
+      cleanArticleTitle('Opposition Unites Against Migration Restriction Package;'),
+    ).toBe('Opposition Unites Against Migration Restriction Package');
+    expect(
+      cleanArticleTitle('Riksdag Constitutional Reform Advances Toward Vote:'),
+    ).toBe('Riksdag Constitutional Reform Advances Toward Vote');
+  });
+
+  it("titleFromBluf does not truncate to end on a ≤ 3-char tail word (live: `… on the Tidö`)", () => {
+    // Reproduces 2026-05-16 weekly-review live regression where the
+    // card title was "Three simultaneous pressure points are converging
+    // on the Tidö" — `Tidö` is a 4-char word but the previous tail
+    // `… on the` would have been ≤ 3 chars. Verify both that we don't
+    // end on `the`/`on`/`to` (which we would have done before the
+    // guard) and that 4-char words are preserved as substantive endings.
+    const bluf =
+      'Three simultaneous pressure points are converging on the Tidö coalition government this week.';
+    const out = titleFromBluf(bluf, 70);
+    expect(out).not.toMatch(/\b(?:the|on|to|of|in|at|by|as|a|an)$/i);
+  });
+
+  it('titleFromBluf does not truncate to end on `two`, `has` or other ≤ 3-char filler', () => {
+    // Live: `Sweden's Constitutional Affairs Committee (KU) has advanced two`
+    const bluf =
+      "Sweden's Constitutional Affairs Committee (KU) has advanced two interlocked constitutional amendments requiring a supermajority.";
+    const out = titleFromBluf(bluf, 70);
+    expect(out).not.toMatch(/\b(?:two|has|had|its|the|and|or)$/i);
+    expect(out!.length).toBeGreaterThan(10);
+  });
+
+  it('titleFromBluf preserves 4+ char tail words like `bill`, `cuts`, `vote`', () => {
+    // Bluf longer than 70 chars to trigger the cut path; `bill` should
+    // be the substantive 4-char tail word that survives the step-back
+    // guard.
+    const bluf =
+      'Opposition motions challenge the new forestry reform bill in committee.';
+    const out = titleFromBluf(bluf, 70);
+    expect(out).toMatch(/bill$/);
+  });
+
+  it('titleFromBluf strips a leading Swedish "Den <day> <månad> <year>" date prefix', () => {
+    // Live 2026-05-16 realtime-pulse regression: BLUF was Swedish
+    // prose `Den 13 maj 2026 antog Rysslands statsduma …` and the
+    // English card shipped the truncated Swedish fragment.
+    const bluf =
+      'Den 13 maj 2026 antog Rysslands statsduma en lag som institutionaliserar makten.';
+    const out = titleFromBluf(bluf, 70);
+    expect(out).not.toMatch(/^Den\s+\d/);
+    expect(out).not.toMatch(/\bmaj\s+2026\b/);
+  });
 });
 
 describe('aggregator/frontmatter — YAML escape + assembly', () => {

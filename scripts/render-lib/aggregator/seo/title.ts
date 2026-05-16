@@ -71,6 +71,12 @@ export function cleanArticleTitle(raw: string | null, subfolder?: string): strin
   t = t.replace(/\s*[—–\-:]?\s*\d{4}[-/]\d{2}[-/]\d{2}(?:\s+\d{1,2}[:\-.]\d{2}(?:\s*UTC)?)?\s*$/i, '');
   t = t.replace(/\s*\d{4}[-/]\d{2}[-/]\d{2}(?:\s+\d{1,2}[:\-.]\d{2}(?:\s*UTC)?)?\s*/g, ' ');
   t = t.replace(/[\s,;:]*(?:to|till|bis|à|a|إلى|から|til|–|—|-|:)\s*$/iu, '').trim();
+  // Strip a bare trailing comma / semicolon / colon left after editor
+  // truncation (live cases: `Sweden Evening Analysis,`, `Week Ahead: Aid
+  // Accountability,`, `Swedish Parliamentary Pulse,`). The connector
+  // strip above only fires when a recognised word follows, so this is
+  // the catch-all for dangling punctuation alone.
+  t = t.replace(/[,;:]+\s*$/u, '').trim();
   t = t.replace(/\s+/g, ' ').trim();
   if (t.length < 20) return null;
 
@@ -144,6 +150,15 @@ export const BLUF_DATE_PREFIX_PATTERNS: readonly RegExp[] = [
   /^\d{1,2}\s+[A-Z][a-z]+\s+\d{4}\s*[,—–-]?\s+/,
   // ISO date prefix "2026-05-08, " or "2026-05-08 — "
   /^\d{4}-\d{2}-\d{2}\s*[,—–-]?\s+/,
+  // Swedish "Den <day> <månad> <year>" (e.g. `Den 13 maj 2026 antog …`).
+  // Swedish month names: januari, februari, mars, april, maj, juni,
+  // juli, augusti, september, oktober, november, december.
+  /^Den\s+\d{1,2}\s+(?:januari|februari|mars|april|maj|juni|juli|augusti|september|oktober|november|december)\s+\d{4}\s*[,—–-]?\s+/i,
+  // German "Am <day>. <Monat> <year>" — January…December plus
+  // Mai/Mär/Juni/Juli for native forms.
+  /^Am\s+\d{1,2}\.?\s+(?:Januar|Februar|März|Marz|April|Mai|Juni|Juli|August|September|Oktober|November|Dezember)\s+\d{4}\s*[,—–-]?\s+/i,
+  // French "Le <day> <mois> <year>" (e.g. `Le 13 mai 2026, …`).
+  /^Le\s+\d{1,2}\s+(?:janvier|février|fevrier|mars|avril|mai|juin|juillet|août|aout|septembre|octobre|novembre|décembre|decembre)\s+\d{4}\s*[,—–-]?\s+/i,
 ];
 
 /**
@@ -276,7 +291,29 @@ export function titleFromBluf(bluf: string | null, maxLen: number = 70): string 
   }
   const sliced = firstSentence.slice(0, maxLen);
   const lastSpace = sliced.lastIndexOf(' ');
-  const cut = (lastSpace > 30 ? sliced.slice(0, lastSpace) : sliced).trim();
+  let cut = (lastSpace > 30 ? sliced.slice(0, lastSpace) : sliced).trim();
+  // Dangling-tail guard — if the cut ends on a ≤ 3-char word (`Tidö`,
+  // `two`, `the`, `on`, …) it reads as a truncated fragment. Step back
+  // to the previous word boundary so the title ends on a substantive
+  // word. Live cases: `… converging on the Tidö` (weekly-review),
+  // `… has advanced two` (committeeReports), `… of` (interpellations).
+  // Word lengths ≤ 3 are the empirical cutoff: 4-char words like
+  // `bill`, `cuts`, `vote` are substantive enough to end a title.
+  let safetyCounter = 0;
+  while (safetyCounter < 5) {
+    const tail = cut.match(/(\S+)$/);
+    if (!tail) break;
+    const tailWord = tail[1]!;
+    // Allow short tails only when followed by punctuation (e.g. `EU.`
+    // is already trimmed off above, but defensive). Also allow tails
+    // containing digits (numbers like `12` or `7` are substantive).
+    if (tailWord.length > 3 || /\d/.test(tailWord)) break;
+    // Step back to the previous word boundary.
+    const previousSpace = cut.lastIndexOf(' ');
+    if (previousSpace < 30) break;
+    cut = cut.slice(0, previousSpace).trim();
+    safetyCounter += 1;
+  }
   const cleaned = trimTrailingConnectors(cut);
   return cleaned || null;
 }
