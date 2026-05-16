@@ -17,6 +17,7 @@
  */
 
 import { execSync } from 'node:child_process';
+import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -213,28 +214,132 @@ export function validateFileList(
   };
 }
 
+/**
+ * Auto-detect the workflow category from a list of changed file paths.
+ *
+ * Detection rules:
+ *   - If any file is an `executive-brief_<lang>.md` translation, OR
+ *     any `news/*.html` for a non-English/non-Swedish language → `translation`.
+ *   - Otherwise → `content` (English/Swedish HTML + English executive-brief source).
+ *
+ * Files outside the ownership surface (\`news/*.html\` and
+ * \`analysis/daily/(any)/executive-brief(_lang).md\`) are ignored for detection.
+ *
+ * Returns `null` if no ownership-surface files are present (caller should treat
+ * the check as a no-op pass).
+ *
+ * @param files - Array of repo-relative file paths to inspect
+ * @returns The inferred workflow category, or `null` if no surface files
+ */
+export function detectCategoryFromFiles(
+  files: readonly string[],
+): WorkflowCategory | null {
+  let sawSurfaceFile = false;
+  for (const f of files) {
+    if (isExecutiveBriefTranslation(f)) return 'translation';
+    if (isEnglishExecutiveBriefSource(f)) {
+      sawSurfaceFile = true;
+      continue;
+    }
+    if (f.startsWith('news/') && f.endsWith('.html')) {
+      sawSurfaceFile = true;
+      const lang = extractLangFromPath(f);
+      if (lang && (TRANSLATION_LANGS as readonly string[]).includes(lang)) {
+        return 'translation';
+      }
+    }
+  }
+  return sawSurfaceFile ? 'content' : null;
+}
+
 /* istanbul ignore next -- CLI entry point */
 if (resolve(fileURLToPath(import.meta.url)) === resolve(process.argv[1] ?? '')) {
-  const category = process.argv[2] as WorkflowCategory | undefined;
+  const args = process.argv.slice(2);
 
-  if (!category || !['content', 'translation'].includes(category)) {
+  // Parse flags: --files <comma-list>, --files-from <path|->, --category <c|t>, plain positional category.
+  let filesArg: string | undefined;
+  let filesFromArg: string | undefined;
+  let categoryArg: WorkflowCategory | undefined;
+  for (let i = 0; i < args.length; i++) {
+    const a = args[i];
+    if (a === '--files' && args[i + 1]) {
+      filesArg = args[++i];
+    } else if (a === '--files-from' && args[i + 1]) {
+      filesFromArg = args[++i];
+    } else if (a === '--category' && args[i + 1]) {
+      categoryArg = args[++i] as WorkflowCategory;
+    } else if (a === 'content' || a === 'translation') {
+      categoryArg = a;
+    } else if (a === '--help' || a === '-h') {
+      console.log(
+        'Usage:\n' +
+        '  validate-file-ownership.ts <content|translation>          # validate git working tree\n' +
+        '  validate-file-ownership.ts --files <a.md,b.md> [--category <c|t>]\n' +
+        '  validate-file-ownership.ts --files-from <path|-> [--category <c|t>]\n' +
+        '\nIf --category is omitted with --files / --files-from, it is auto-detected:\n' +
+        '  any executive-brief_<lang>.md OR non-EN/SV news/*.html  -> translation\n' +
+        '  otherwise                                                -> content',
+      );
+      process.exit(0);
+    }
+  }
+
+  // External file-list mode (PR-check workflow uses this).
+  if (filesArg !== undefined || filesFromArg !== undefined) {
+    let fileList: string[];
+    if (filesArg !== undefined) {
+      fileList = filesArg.split(',').map((s) => s.trim()).filter(Boolean);
+    } else {
+      // filesFromArg is guaranteed defined here.
+      const src = filesFromArg as string;
+      const raw = src === '-'
+        ? readFileSync(0, 'utf-8')
+        : readFileSync(src, 'utf-8');
+      fileList = raw.split(/\r?\n/).map((s) => s.trim()).filter(Boolean);
+    }
+
+    const detected = categoryArg ?? detectCategoryFromFiles(fileList);
+    if (!detected) {
+      console.log(
+        `✅ File ownership validation skipped (0 ownership-surface files in input of ${fileList.length})`,
+      );
+      process.exit(0);
+    }
+
+    const result = validateFileList(fileList, detected);
+    if (result.passed) {
+      console.log(
+        `✅ File ownership validation passed (${result.checkedCount} ownership-surface file(s) checked for '${detected}' category)`,
+      );
+      process.exit(0);
+    }
+    console.error(
+      `❌ File ownership violation! The following files do not belong to the '${detected}' workflow category:`,
+    );
+    for (const v of result.violations) console.error(`   - ${v}`);
+    process.exit(1);
+  }
+
+  // Legacy git-working-tree mode (unchanged behaviour).
+  if (!categoryArg || !['content', 'translation'].includes(categoryArg)) {
     console.error(
       'Usage: npx tsx scripts/validate-file-ownership.ts <content|translation>\n' +
-      '  Validates staged, unstaged, and untracked changes against the file-ownership contract.',
+      '  Validates staged, unstaged, and untracked changes against the file-ownership contract.\n' +
+      '  Run with --help for additional --files / --files-from options.',
     );
     process.exit(2);
   }
 
-  const result = validatePendingFileOwnership(category);
+  const result = validatePendingFileOwnership(categoryArg);
 
   if (result.passed) {
     console.log(
-      `✅ File ownership validation passed (${result.checkedCount} news files checked for '${category}' category)`,
+      `✅ File ownership validation passed (${result.checkedCount} news files checked for '${categoryArg}' category)`,
     );
     process.exit(0);
   } else {
     console.error(
-      `❌ File ownership violation! The following files do not belong to the '${category}' workflow category:`,
+      `❌ File ownership violation! The following files do not belong to the '${categoryArg}' workflow category:`,
     );
     for (const v of result.violations) {
       console.error(`   - ${v}`);

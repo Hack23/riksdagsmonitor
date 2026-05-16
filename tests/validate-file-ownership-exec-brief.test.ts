@@ -114,3 +114,56 @@ describe('validateFileList — mixed news + executive-brief batches', () => {
     expect(result.checkedCount).toBe(0);
   });
 });
+
+describe('detectCategoryFromFiles', () => {
+  it('returns null when no ownership-surface files are present', async () => {
+    const { detectCategoryFromFiles } = await import('../scripts/validate-file-ownership.js');
+    expect(detectCategoryFromFiles(['README.md', 'docs/notes.md', 'src/foo.ts'])).toBeNull();
+    expect(detectCategoryFromFiles([])).toBeNull();
+  });
+
+  it('returns "translation" when any executive-brief_<lang>.md is present', async () => {
+    const { detectCategoryFromFiles } = await import('../scripts/validate-file-ownership.js');
+    expect(
+      detectCategoryFromFiles([
+        'analysis/daily/2026-05-15/propositions/executive-brief_sv.md',
+      ]),
+    ).toBe('translation');
+    expect(
+      detectCategoryFromFiles([
+        'README.md',
+        'analysis/daily/2026-05-15/motions/executive-brief_ar.md',
+      ]),
+    ).toBe('translation');
+  });
+
+  it('returns "translation" when any non-EN/SV news/*.html is present', async () => {
+    const { detectCategoryFromFiles } = await import('../scripts/validate-file-ownership.js');
+    expect(detectCategoryFromFiles(['news/2026-05-15-propositions-de.html'])).toBe('translation');
+    expect(detectCategoryFromFiles(['news/2026-05-15-motions-zh.html'])).toBe('translation');
+  });
+
+  it('returns "content" when only EN/SV news/*.html and/or executive-brief.md are present', async () => {
+    const { detectCategoryFromFiles } = await import('../scripts/validate-file-ownership.js');
+    expect(detectCategoryFromFiles(['news/2026-05-15-propositions-en.html'])).toBe('content');
+    expect(detectCategoryFromFiles(['news/2026-05-15-propositions-sv.html'])).toBe('content');
+    expect(
+      detectCategoryFromFiles([
+        'analysis/daily/2026-05-15/propositions/executive-brief.md',
+      ]),
+    ).toBe('content');
+  });
+
+  it('prefers "translation" when content and translation surfaces both appear', async () => {
+    // Mixed PRs are themselves ownership violations; the function still has a
+    // deterministic answer so that the validator can flag them as translation
+    // category (which then surfaces the content file as the violation).
+    const { detectCategoryFromFiles } = await import('../scripts/validate-file-ownership.js');
+    expect(
+      detectCategoryFromFiles([
+        'news/2026-05-15-propositions-en.html',
+        'analysis/daily/2026-05-15/propositions/executive-brief_sv.md',
+      ]),
+    ).toBe('translation');
+  });
+});
