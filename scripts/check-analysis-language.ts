@@ -1,17 +1,17 @@
 /**
  * Analysis Language Checker — English-only enforcement for analysis artifacts
  *
+ * Enforces English-only prose in all analysis artifacts under analysis/daily by scanning
+ * for Swedish function words and political-vocabulary tokens. Exempts translation outputs
+ * (executive-brief_<lang>.md), Pass-1 snapshots, and data-download-manifest.md.
+ *
  * @module scripts/check-analysis-language
- * @description Enforces English-only prose in all analysis artifacts under analysis/daily/**/
- *              by scanning for Swedish function words and political-vocabulary tokens.
- *              Exempts translation outputs (executive-brief_<lang>.md), Pass-1 snapshots,
- *              and data-download-manifest.md (heavy Swedish source titles).
  * @author Hack23 AB
  * @license Apache-2.0
  */
 
 import { readdirSync, readFileSync, statSync } from 'node:fs';
-import { join, relative, sep } from 'node:path';
+import { join, relative } from 'node:path';
 
 /**
  * Swedish-marker tokens — unambiguous Swedish function words and political vocabulary
