@@ -258,6 +258,12 @@ export function detectCategoryFromFiles(
       sawSurfaceFile = true;
       continue;
     }
+    // article.<lang>.md is a category-independent violation — treat it as a
+    // surface file so the validator can reject it instead of silently skipping.
+    if (isLocalizedArticleMd(f)) {
+      sawSurfaceFile = true;
+      continue;
+    }
     if (f.startsWith('news/') && f.endsWith('.html')) {
       // All news/*.html is owned by content workflows — never implies translation.
       sawSurfaceFile = true;

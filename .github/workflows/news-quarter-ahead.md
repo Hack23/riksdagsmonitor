@@ -289,7 +289,7 @@ The dedicated `news-translate` workflow runs on a separate track and translates 
 - **Aggregated markdown**: `analysis/daily/$ARTICLE_DATE/quarter-ahead/article.md`
 - **Rendered HTML**: `news/$ARTICLE_DATE-quarter-ahead-{en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html` — **always all 14 languages**
 - **Horizon**: 90 days; lookback 90 days (sibling per-type folders + most-recent week-ahead + month-ahead).
-- **Single-run model**: download → analysis Pass 1 + 2 → gate → aggregate → translate → render (14 languages) → ONE PR.
+- **Single-run model**: download → analysis Pass 1 + 2 → gate → aggregate → render (14 languages) → ONE PR.
 
 ## Long-horizon mandate (from `ext/long-horizon-forecasting.md`)
 
@@ -312,7 +312,6 @@ The dedicated `news-translate` workflow runs on a separate track and translates 
 | 25–34 | Analysis Pass 2 (read-back + improvements; ≥ 2 counterfactuals) | 04 |
 | 34–36 | Analysis Gate (checks 1–11 + Tier-C additive + long-horizon checks) | 05 |
 | 36–38 | Aggregate (`article.md`) | 06 |
-| 38–40 | Translate `article.md` → `article.<lang>.md` × 13 (sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh) | 06 |
 | 40–42 | Render (`scripts/render-articles.ts --lang all` → all 14 HTML) | 06 |
 | 42–43 | Stage + commit + ONE `safeoutputs___create_pull_request` — **HARD DEADLINE agent minute 45** | 07 |
 

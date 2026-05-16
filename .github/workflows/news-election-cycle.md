@@ -287,7 +287,7 @@ engine:
 
 Generates the **deepest** Riksdagsmonitor intelligence product — a full 4-year-mandate political assessment covering the **current** Tidö cycle (2022-09-11 → 2026-09-13) and/or the **next** cycle (2026-09-13 → 2030-09-08). Tier-C aggregation × **2.5 depth multiplier**.
 
-The agent translates `article.md` (per anchor) into `article.<lang>.md` for every non-English language before invoking the renderer with `--lang all`. The dedicated `news-translate` workflow runs on a separate track and translates `executive-brief.md` markdown into 13 language siblings (`executive-brief_<lang>.md`) 
+Non-English HTML pages are produced via the **localized executive-brief cascade** — the renderer composes the English `article.md` body with `executive-brief_<lang>.md` (when present) into each target language. The dedicated `news-translate` workflow runs on a separate track and translates `executive-brief.md` markdown into 13 language siblings (`executive-brief_<lang>.md`). Per-type workflows do **not** write `article.<lang>.md`.
 
 ## What this workflow does
 
@@ -296,7 +296,7 @@ The agent translates `article.md` (per anchor) into `article.<lang>.md` for ever
 - **Aggregated markdown**: one per anchor (`article.md` lives in each sub-subfolder).
 - **Rendered HTML**: `news/$ARTICLE_DATE-election-cycle-{current,next}-{en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html` — **always all 14 languages**.
 - **Horizon**: 1 460 days (4 years); lookback 365 days.
-- **Single-run model**: same as week/month/quarter/year-ahead; one PR with all rendered HTML for both anchors when `cycle_anchor=both`. Each anchor's `article.md` is translated into all 13 non-English languages before the final `render-articles.ts --lang all` pass.
+- **Single-run model**: same as week/month/quarter/year-ahead; one PR with all rendered HTML for both anchors when `cycle_anchor=both`. The renderer uses the localized executive-brief cascade (`mergeLocalizedWithEnglish`) to produce non-English HTML.
 
 ### Cycle anchor semantics
 
@@ -341,7 +341,6 @@ This workflow runs at the **upper limit** of the 60-minute job envelope. Initial
 | 29–37 | Analysis Pass 2 (read-back; counterfactuals × 3; horizon-band stratification across all five bands) |
 | 37–39 | Analysis Gate (long-horizon checks + 24th-artifact check + cycle-rollover check if within ± 30 days) |
 | 39–40 | Aggregate (per-anchor `article.md`) |
-| 40–41 | Translate `article.md` → `article.<lang>.md` × 13 (per anchor) |
 | 41–42 | Render (`scripts/render-articles.ts --lang all` → all 14 HTML per anchor) |
 | 42–43 | Stage + commit + ONE `safeoutputs___create_pull_request` — **HARD DEADLINE agent minute 45** |
 

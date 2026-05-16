@@ -170,6 +170,15 @@ describe('detectCategoryFromFiles', () => {
       ]),
     ).toBe('translation');
   });
+
+  it('returns "content" when only article.<lang>.md is present (forbidden but detected)', async () => {
+    const { detectCategoryFromFiles } = await import('../scripts/validate-file-ownership.js');
+    expect(
+      detectCategoryFromFiles([
+        'analysis/daily/2026-05-15/propositions/article.sv.md',
+      ]),
+    ).toBe('content');
+  });
 });
 
 describe('parseWorkflowCategoryArg', () => {

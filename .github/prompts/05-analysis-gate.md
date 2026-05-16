@@ -22,10 +22,11 @@ This is the **only** gate separating analysis from article generation. If it fai
 10. **Top-2 full-text availability** — when `data-download-manifest.md` contains a `## Full-Text Fetch Outcomes` table, ≥ 2 top documents must have `full_text_available=true`. Add `<!-- full-text-fallback: <reason> -->` to bypass.
 11. **Supplementary artifacts** — see §Supplementary checks (blocking for aggregation/Tier-C/multi-run).
 12. **Editorial QA gate** — after aggregation, run `npx tsx scripts/validate-article.ts $ANALYSIS_DIR/article.md` (enforces banned-phrase scan, citation density per `reference-quality-thresholds.json → aiFirst.citationDensity.perArticle`, and `economicProvenance` ≤ 6-month vintage unless wrapped in `<!-- stale-vintage: reason -->`). See `validate-article.ts` checks 7–9.
+13. **Analysis language** — all analysis artifacts (excluding `executive-brief_<lang>.md`) must be authored in English. Run `npx tsx scripts/check-analysis-language.ts $ANALYSIS_DIR`; fails when Swedish-marker density > 5 % AND ≥ 5 markers.
 
 ## Implementation
 
-No dedicated validator script exists yet — implement the checks as an inline bash gate. Full implementation (covers checks 1–11, plus conditional check 9b where applicable):
+No dedicated validator script exists yet — implement the checks as an inline bash gate. Full implementation (covers checks 1–13, plus conditional check 9b where applicable):
 
 ```bash
 set -Eeuo pipefail
@@ -340,14 +341,14 @@ if [ -s "$MANIFEST" ] && grep -q "## Full-Text Fetch Outcomes" "$MANIFEST" \
     || { echo "❌ data-download-manifest.md: Full-Text Fetch Outcomes table present but fewer than 2 top documents have full_text_available=true (found ${FT_SUCCESS:-0}). Add <!-- full-text-fallback: <reason> --> to bypass."; FAIL=1; }
 fi
 
-# Check 12 — Analysis language (English-only)
+# Check 13 — Analysis language (English-only)
 # Block when any analysis artifact (excluding executive-brief_<lang>.md translation siblings) 
 # exceeds the Swedish-density threshold. The script exits 0 on pass and exits 1 with a 
 # per-file violation list on fail.
 if command -v npx >/dev/null 2>&1; then
   npx tsx scripts/check-analysis-language.ts "$ANALYSIS_DIR" || FAIL=1
 else
-  echo "⚠️  Check 12 (analysis language): npx not found — skipping (non-blocking)"
+  echo "⚠️  Check 13 (analysis language): npx not found — skipping (non-blocking)"
 fi
 
 [ "$FAIL" -eq 0 ] || exit 1

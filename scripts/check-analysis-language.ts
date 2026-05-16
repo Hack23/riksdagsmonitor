@@ -18,17 +18,19 @@ import { join, relative } from 'node:path';
  * that essentially never appear in English prose. Used for density-based language detection.
  */
 const SWEDISH_MARKERS = new Set([
-  // Function words (unambiguous Swedish)
-  'och', 'att', 'för', 'men', 'inte', 'är', 'som', 'den', 'det',
+  // Function words (unambiguous Swedish — never valid English)
+  'och', 'att', 'för', 'inte', 'är', 'den', 'det',
   'har', 'hade', 'kommer', 'skall', 'måste', 'enligt', 'samt',
   'därför', 'därmed', 'genom', 'vidare', 'följande', 'sina',
   'sitt', 'vilket', 'vilken', 'något', 'några', 'denna', 'dessa',
   'varje', 'övriga', 'övrig', 'tillika', 'därutöver', 'härmed', 'härav',
   
-  // Swedish political vocabulary (proper nouns handled separately)
-  'riksdagen', 'regeringen', 'propositionen', 'utskottet',
+  // Swedish political vocabulary (common-noun forms only; proper nouns like
+  // Riksdagen / Regeringen are explicitly allowed verbatim in English prose,
+  // so they must NOT appear here to avoid false positives)
+  'propositionen', 'utskottet',
   'föreslår', 'föreslagit', 'införande', 'införa', 'införs', 'införts',
-  'säkerhetshot', 'utvisning', 'utvisa', 'beslut', 'beslutet',
+  'säkerhetshot', 'utvisning', 'utvisa', 'beslutet',
 ]);
 
 /** Minimum threshold for Swedish density (5%) */
@@ -147,8 +149,8 @@ export function validateAnalysisLanguage(analysisDir: string): LanguageViolation
   for (const filepath of files) {
     const { totalWords, swedishMarkerCount, density } = calculateSwedishDensity(filepath);
     
-    // Violation: density > threshold AND absolute count > minimum
-    if (density > SWEDISH_DENSITY_THRESHOLD && swedishMarkerCount > MIN_SWEDISH_MARKERS) {
+    // Violation: density > threshold AND absolute count >= minimum
+    if (density > SWEDISH_DENSITY_THRESHOLD && swedishMarkerCount >= MIN_SWEDISH_MARKERS) {
       violations.push({
         filepath,
         relpath: relative(process.cwd(), filepath),

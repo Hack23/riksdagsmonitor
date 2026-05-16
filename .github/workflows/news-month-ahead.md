@@ -304,11 +304,10 @@ Generates deep political intelligence analysis **and** renders the HTML article 
 | 18–28 | Analysis Pass 2 (read-back + improvements on all 22 text files) | 04 |
 | 28–30 | Analysis Gate (checks 1–8) | 05 |
 | 30–32 | `scripts/aggregate-analysis.ts` → `article.md` | 06 |
-| 32–40 | Translate `article.md` → `article.<lang>.md` for all 13 non-English languages (sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh) | 06 |
 | 40–42 | `scripts/render-articles.ts --lang all` → **all 14** HTML files | 06 |
-| 42–43 | Stage analysis + `article*.md` + `news/*.html`, commit, **ONE** `safeoutputs___create_pull_request` — **HARD DEADLINE agent minute 45** | 07 |
+| 42–43 | Stage analysis + `article.md` + `news/*.html`, commit, **ONE** `safeoutputs___create_pull_request` — **HARD DEADLINE agent minute 45** | 07 |
 
-Use the full budget for AI-FIRST iteration; do **not** finish early with shallow output (see `.github/copilot-instructions.md §AI FIRST Quality Principle`). Never open a second PR within a run — there is no second PR. **If you reach agent minute 42 without staging, stop all remaining work, run the aggregator + translator + renderer on whatever artifacts exist, commit, and call `safeoutputs___create_pull_request` immediately** — a partial-but-delivered PR is infinitely better than losing the run to Timer A. Translation under-coverage is acceptable as a partial state: non-English HTML is rendered via the localized executive-brief cascade, and the renderer composes English article.md body with executive-brief_<lang>.md overlay.
+Use the full budget for AI-FIRST iteration; do **not** finish early with shallow output (see `.github/copilot-instructions.md §AI FIRST Quality Principle`). Never open a second PR within a run — there is no second PR. **If you reach agent minute 42 without staging, stop all remaining work, run the aggregator + renderer on whatever artifacts exist, commit, and call `safeoutputs___create_pull_request` immediately** — a partial-but-delivered PR is infinitely better than losing the run to Timer A. Translation under-coverage is acceptable as a partial state: non-English HTML is rendered via the localized executive-brief cascade, and the renderer composes English article.md body with executive-brief_<lang>.md overlay.
 
 ## Inputs
 

@@ -36,7 +36,7 @@ News articles are **not** localised by the workflow that generates them. The per
 
 **All 14 language renderings are produced by the per-type workflows themselves** via the **localized executive-brief cascade** inside the renderer. Per-type workflows write **only** the canonical English `article.md` (aggregated from all 23 analysis artifacts). The renderer then composes the English `article.md` body with `executive-brief_<lang>.md` (when present) via the cascade chain in `scripts/render-lib/article-merge.ts` (`mergeLocalizedWithEnglish`) + `scripts/render-lib/aggregator/seo/localized-brief.ts` to produce each non-English HTML file. The English body remains in English prose — **only the executive-brief hero section + SEO metadata is localized**.
 
-**Per-type workflows do NOT write `article.<lang>.md`** — these files are now **forbidden** by `scripts/validate-file-ownership.ts` (category-independent reject). Historical `article.<lang>.md` files left in the repo from old runs are treated as violations.
+**Per-type workflows do NOT write `article.<lang>.md`** — these files are now **forbidden** by `scripts/validate-file-ownership.ts` (category-independent reject). Historical `article.<lang>.md` files left in the repo from old runs will be flagged as violations if they appear in a future validation input (e.g. a PR touching that folder).
 
 The standalone [`news-translate`](.github/workflows/news-translate.md) workflow **does not touch** `news/*.html` at all; its sole mission is **executive-brief Markdown translation** — see §"Executive Brief Markdown Translations" below.
 
