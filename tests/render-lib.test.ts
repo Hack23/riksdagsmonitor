@@ -599,7 +599,7 @@ describe('render-lib — aggregateAnalysis (integration)', () => {
 // ---------------------------------------------------------------------------
 
 describe('render-lib — article SEO metadata', () => {
-  it('adds language, article type and story-topic context without date-stuffing titles', () => {
+  it('uses the brief H1 as the SERP title and the BLUF as the description without boilerplate', () => {
     const base = {
       title: 'Security, identity and state control: three propositions',
       description: 'Three government propositions expand identity controls, population-register oversight and detention powers for security threats.',
@@ -612,17 +612,34 @@ describe('render-lib — article SEO metadata', () => {
     const de = buildArticleSeoMetadata({
       ...base,
       lang: 'de',
+      title: 'Sicherheit, Identität und staatliche Kontrolle: drei Vorlagen',
+      description: 'Drei Regierungsvorlagen erweitern Identitätskontrollen, Aufsicht des Melderegisters und Haftbefugnisse bei Sicherheitsbedrohungen.',
       articleTypeLabel: 'Regierungsvorlagen',
       canonicalPath: 'news/2026-05-11-propositions-de.html',
     });
+    // Titles ARE the brief H1 — no `| Lang Article-Type: topic — date update`
+    // boilerplate. They are distinct across languages because the cascade
+    // already localized the H1 itself.
+    expect(en.title).toContain('Security, identity and state control');
+    expect(de.title).toContain('Sicherheit, Identität und staatliche Kontrolle');
+    expect(en.title).not.toMatch(/\| .*Propositions:/);
+    expect(de.title).not.toMatch(/\| .*Regierungsvorlagen:/);
+    expect(en.title).not.toContain('update');
+    expect(de.title).not.toContain('update');
+    expect(de.title).not.toContain('Deutsch');
+    // Descriptions ARE the brief BLUF — no `Coverage: X on Y; <lang>
+    // edition update for <date> with Riksdag/OSINT provenance.` suffix.
+    expect(en.description).toBe(base.description);
+    expect(de.description).not.toContain('deutsche Ausgabe');
+    expect(de.description).not.toContain('Berichterstattung');
+    expect(de.description).not.toContain('Riksdag/OSINT provenance');
     expect(en.description).not.toBe(de.description);
-    expect(en.description.length).toBeGreaterThanOrEqual(145);
     expect(en.description.length).toBeLessThanOrEqual(200);
+    expect(de.description.length).toBeLessThanOrEqual(200);
+    // Title budget — SERP-friendly, no date-stuffing.
+    expect(en.title.length).toBeLessThanOrEqual(70);
     expect(en.title).not.toContain('2026-05-11');
-    expect(en.title).toContain('May');
-    expect(de.description).toContain('deutsche Ausgabe');
-    expect(de.title).toContain('Deutsch');
-    expect(de.title).toContain('Security identity state');
+    // Keywords still pull article-type label + native language name.
     expect(de.keywords).toContain('Regierungsvorlagen');
     expect(de.keywords).toContain('German');
   });
@@ -1335,7 +1352,7 @@ describe('render-lib — renderArticleHtml (end-to-end)', () => {
     expect(html).toContain('data-article-type="propositions"');
     expect(html).toContain('<p class="rm-article-eyebrow"><span class="rm-icon" aria-hidden="true">🔍</span> Propositions</p>');
     expect(html).toContain('<h1>Propositions 2099-01-01</h1>');
-    expect(html).toContain('<p class="rm-article-dek">Real BLUF for propositions. Coverage: Propositions on');
+    expect(html).toContain('<p class="rm-article-dek">Real BLUF for propositions.</p>');
     expect(html).toContain('<meta name="keywords" content="Propositions');
     expect(html).toContain('Traceable artifacts');
     expect(html).toContain('class="rm-article-sources"');
