@@ -88,8 +88,10 @@ export function calculateSwedishDensity(filepath: string): {
 /**
  * Recursively find all .md files in a directory, excluding:
  * - executive-brief_<lang>.md (translation outputs)
+ * - article.<lang>.md (forbidden — caught by validate-file-ownership)
  * - pass1/ subdirectories (Pass-1 snapshots)
  * - data-download-manifest.md (exempt — heavy Swedish source titles)
+ * - README.md (per-folder index, not aggregated into article.md)
  */
 export function findAnalysisMarkdownFiles(dir: string): string[] {
   const files: string[] = [];
@@ -107,10 +109,16 @@ export function findAnalysisMarkdownFiles(dir: string): string[] {
       } else if (entry.isFile() && entry.name.endsWith('.md')) {
         // Skip executive-brief_<lang>.md (translation outputs)
         if (/^executive-brief_[a-z]{2}\.md$/.test(entry.name)) continue;
-        
-        // Skip data-download-manifest.md (exempt)
+
+        // Skip article.<lang>.md (now forbidden — caught by ownership validator)
+        if (/^article\.[a-z]{2}\.md$/.test(entry.name)) continue;
+
+        // Skip data-download-manifest.md (exempt — heavy Swedish source titles)
         if (entry.name === 'data-download-manifest.md') continue;
-        
+
+        // Skip per-folder README.md (index file, not aggregated into article.md)
+        if (entry.name === 'README.md') continue;
+
         files.push(fullPath);
       }
     }
