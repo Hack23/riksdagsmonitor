@@ -73,6 +73,13 @@ Do not add per-phase checkpoint PRs or repo-memory push steps.
 
 ## Language & formatting
 
+### Output language — English only
+
+- **All analysis artifacts under `analysis/daily/**/` MUST be authored in English prose**, including all 23 always-on artifacts (Family A/B/C/D), `documents/{dok_id}-analysis.md` (Family E) and any supplementary `*.md` file the aggregator concatenates into `article.md`.
+- Swedish-source quotes, document titles, party/agency names and other proper nouns are preserved verbatim with attribution (`Riksdagen`, `Regeringen`, `Skatteverket`, party acronyms, `dok_id` URLs, etc.). Native UTF-8 (`ö ä å`) is required for those tokens.
+- The **only translated artifacts** are `analysis/daily/$DATE/$SUB/executive-brief_<lang>.md` for the 13 non-English target languages. They are produced exclusively by the dedicated `news-translate` workflow and consumed at render-time via the localized-brief cascade in `scripts/render-lib/article-merge.ts` (`mergeLocalizedWithEnglish`) + `scripts/render-lib/aggregator/seo/localized-brief.ts`. Per-type workflows MUST NOT write `executive-brief_<lang>.md` and MUST NOT write `article.<lang>.md` (the latter is now forbidden — see below).
+- Non-English HTML pages (`news/$DATE-$SUB-<lang>.html`) are rendered by composing the English `article.md` body with the localized executive-brief overlay; no per-language article-body translation is performed any more.
+
 - Native UTF-8 throughout (`ö`, `ä`, `å`). Never use HTML entities.
 - Author byline: `James Pether Sörling`.
 - Mermaid diagrams in analysis `.md` files must include colour-coded `style` directives.

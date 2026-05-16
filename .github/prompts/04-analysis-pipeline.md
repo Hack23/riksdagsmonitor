@@ -2,6 +2,10 @@
 
 Analysis is the **primary product**. Articles are derived from analysis. Never write an article before analysis is complete.
 
+## Output language
+
+Every artifact you produce in this module is authored in **English prose**. Swedish proper nouns, source titles, party/agency names and direct quotes from `Riksdagen`/`Regeringen` documents are preserved verbatim with attribution — but headings, body paragraphs, table cells, bullet text, Mermaid node labels and analytical commentary are written in English. There is no per-language analysis. The single localized output channel is `executive-brief_<lang>.md`, produced by the separate `news-translate` workflow and consumed at render-time by the existing localized-brief cascade — see `00-base-contract.md §Output language — English only`.
+
 Authoritative methodology & templates:
 
 - **Read-me-first** → [`analysis/methodologies/artifact-catalog.md`](../../analysis/methodologies/artifact-catalog.md) (single source of truth for every artifact — family, template, depth floor, Mermaid type, MCP data source, gate check) and [`analysis/methodologies/per-artifact-methodologies.md`](../../analysis/methodologies/per-artifact-methodologies.md) (Inputs / Analytic-moves / Evidence-rules / Anti-patterns per artifact). Open these before any framework-specific methodology.

@@ -22,10 +22,11 @@ This is the **only** gate separating analysis from article generation. If it fai
 10. **Top-2 full-text availability** — when `data-download-manifest.md` contains a `## Full-Text Fetch Outcomes` table, ≥ 2 top documents must have `full_text_available=true`. Add `<!-- full-text-fallback: <reason> -->` to bypass.
 11. **Supplementary artifacts** — see §Supplementary checks (blocking for aggregation/Tier-C/multi-run).
 12. **Editorial QA gate** — after aggregation, run `npx tsx scripts/validate-article.ts $ANALYSIS_DIR/article.md` (enforces banned-phrase scan, citation density per `reference-quality-thresholds.json → aiFirst.citationDensity.perArticle`, and `economicProvenance` ≤ 6-month vintage unless wrapped in `<!-- stale-vintage: reason -->`). See `validate-article.ts` checks 7–9.
+13. **Analysis language** — all analysis artifacts (excluding `executive-brief_<lang>.md`) must be authored in English. Run `npx tsx scripts/check-analysis-language.ts $ANALYSIS_DIR`; fails when Swedish-marker density > 5 % AND ≥ 5 markers.
 
 ## Implementation
 
-No dedicated validator script exists yet — implement the checks as an inline bash gate. Full implementation (covers checks 1–11, plus conditional check 9b where applicable):
+No dedicated validator script exists yet — implement the checks as an inline bash gate. Full implementation (covers checks 1–13, plus conditional check 9b where applicable). Check 12 invokes `scripts/validate-article.ts` when `article.md` is already present (after aggregation); Check 13 invokes `scripts/check-analysis-language.ts`:
 
 ```bash
 set -Eeuo pipefail
@@ -340,6 +341,30 @@ if [ -s "$MANIFEST" ] && grep -q "## Full-Text Fetch Outcomes" "$MANIFEST" \
     || { echo "❌ data-download-manifest.md: Full-Text Fetch Outcomes table present but fewer than 2 top documents have full_text_available=true (found ${FT_SUCCESS:-0}). Add <!-- full-text-fallback: <reason> --> to bypass."; FAIL=1; }
 fi
 
+# Check 12 — Editorial QA gate (validate-article.ts: banned phrases, citation density, vintage discipline).
+# Runs against the aggregated article.md when present; if the aggregator hasn't run yet the
+# article gate is informational (logged), because the editorial validator's domain is post-aggregation.
+ART_MD_GATE="$ANALYSIS_DIR/article.md"
+if [ -s "$ART_MD_GATE" ]; then
+  if command -v npx >/dev/null 2>&1; then
+    npx tsx scripts/validate-article.ts "$ART_MD_GATE" || FAIL=1
+  else
+    echo "⚠️  Check 12 (editorial QA): npx not found — skipping (non-blocking)"
+  fi
+else
+  echo "ℹ️  Check 12 (editorial QA): $ART_MD_GATE not yet produced — skipped (run after aggregator)"
+fi
+
+# Check 13 — Analysis language (English-only)
+# Block when any analysis artifact (excluding executive-brief_<lang>.md translation siblings) 
+# exceeds the Swedish-density threshold. The script exits 0 on pass and exits 1 with a 
+# per-file violation list on fail.
+if command -v npx >/dev/null 2>&1; then
+  npx tsx scripts/check-analysis-language.ts "$ANALYSIS_DIR" || FAIL=1
+else
+  echo "⚠️  Check 13 (analysis language): npx not found — skipping (non-blocking)"
+fi
+
 [ "$FAIL" -eq 0 ] || exit 1
 ```
 
@@ -353,7 +378,11 @@ Exit code 0 = pass, non-zero = fail with per-check report. Precondition for chec
 
 ## Re-run / deduplication note
 
-Same-day re-runs are **improvement runs** (not skip runs) when `03-data-download.md §Pre-flight` detects a reusable baseline (all 23 artifacts present **or** at least `synthesis-summary.md` on disk) and sets `IMPROVEMENT_MODE=true`. Existing rendered HTML under `news/` does **not** establish improvement mode — the router keys off analysis baselines, not HTML. On improvement runs, the pipeline runs in extend-and-improve mode (`04-analysis-pipeline.md §Execution order`), the gate runs normally, and `06-article-generation.md` **always** regenerates `article.md` + `article.<lang>.md` × 13 + `news/$ARTICLE_DATE-$SUBFOLDER-{en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html`. There is still exactly one PR call. **Never** call `safeoutputs___noop` because today's HTML "already exists" — existing HTML is a reason to regenerate, not to exit early.
+Same-day re-runs are **improvement runs** (not skip runs) when `03-data-download.md §Pre-flight` detects a reusable baseline (all 23 artifacts present **or** at least `synthesis-summary.md` on disk) and sets `IMPROVEMENT_MODE=true`. Existing rendered HTML under `news/` does **not** establish improvement mode — the router keys off analysis baselines, not HTML. On improvement runs, the pipeline runs in extend-and-improve mode (`04-analysis-pipeline.md §Execution order`), the gate runs normally, and `06-article-generation.md` **always** regenerates `article.md` + `news/$ARTICLE_DATE-$SUBFOLDER-{en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html` (all 14 languages via the localized executive-brief cascade — see `TRANSLATION_GUIDE.md §News articles are translated out-of-band`). **Per-language Markdown `article.<lang>.md` files MUST NOT be produced** on improvement runs — they are rejected by `scripts/validate-file-ownership.ts` (forbidden artefact, see `06-article-generation.md §Step 2`). There is still exactly one PR call. **Never** call `safeoutputs___noop` because today's HTML "already exists" — existing HTML is a reason to regenerate, not to exit early.
+
+### Check 12 ordering note
+
+Check 12 (`scripts/validate-article.ts`) is the **editorial QA gate** and runs on the aggregated `article.md`. The blocking branch in §Implementation only fires when `article.md` is already on disk; the inline gate runs before aggregation, so on a first pass the article validator is **informational** (the gate logs `ℹ️ Check 12 (editorial QA): … skipped (run after aggregator)`). Workflows MUST re-invoke the gate (or call `npx tsx scripts/validate-article.ts $ANALYSIS_DIR/article.md` directly) **after** `scripts/aggregate-analysis.ts` writes `article.md` so the editorial checks (banned phrases, citation density, `economicProvenance` vintage) become blocking before staging. See `06-article-generation.md §Step 1b — Editorial QA re-check (post-aggregation)` for the post-aggregation invocation pattern.
 
 ## Supplementary checks
 

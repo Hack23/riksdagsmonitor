@@ -1,6 +1,6 @@
 ---
 name: "News: Election Cycle"
-description: Generates election-cycle deep intelligence articles and renders HTML in all 14 supported languages in a single agentic run (EN + SV + 12 translated). The longest forward-look horizon — covers the full 4-year mandate (current Tidö 2022-09-11 → 2026-09-13 and next 2026-09-13 → 2030-09-08). Tier-C aggregation × 2.5 depth multiplier. Mandates wildcards-blackswans + quantitative-swot + political-stride-assessment + cycle-trajectory (24th artifact) blocking. Initially workflow_dispatch only until runtime is measured over 4-6 manual runs; cron `0 9 13 3,9 *` is declared but commented out below.
+description: Generates election-cycle deep intelligence articles and renders HTML in all 14 supported languages in a single agentic run via executive-brief cascade. The longest forward-look horizon — covers the full 4-year mandate (current Tidö 2022-09-11 → 2026-09-13 and next 2026-09-13 → 2030-09-08). Tier-C aggregation × 2.5 depth multiplier. Mandates wildcards-blackswans + quantitative-swot + political-stride-assessment + cycle-trajectory (24th artifact) blocking. Initially workflow_dispatch only until runtime is measured over 4-6 manual runs; cron `0 9 13 3,9 *` is declared but commented out below.
 strict: false
 imports:
   - ../prompts/00-base-contract.md
@@ -287,7 +287,7 @@ engine:
 
 Generates the **deepest** Riksdagsmonitor intelligence product — a full 4-year-mandate political assessment covering the **current** Tidö cycle (2022-09-11 → 2026-09-13) and/or the **next** cycle (2026-09-13 → 2030-09-08). Tier-C aggregation × **2.5 depth multiplier**.
 
-The agent translates `article.md` (per anchor) into `article.<lang>.md` for every non-English language before invoking the renderer with `--lang all`. The dedicated `news-translate` workflow runs on a separate track and translates `executive-brief.md` markdown into 13 language siblings (`executive-brief_<lang>.md`) — it does **not** back-fill `article.<lang>.md`.
+Non-English HTML pages are produced via the **localized executive-brief cascade** — the renderer composes the English `article.md` body with `executive-brief_<lang>.md` (when present) into each target language. The dedicated `news-translate` workflow runs on a separate track and translates `executive-brief.md` markdown into 13 language siblings (`executive-brief_<lang>.md`). Per-type workflows do **not** write `article.<lang>.md`.
 
 ## What this workflow does
 
@@ -296,7 +296,7 @@ The agent translates `article.md` (per anchor) into `article.<lang>.md` for ever
 - **Aggregated markdown**: one per anchor (`article.md` lives in each sub-subfolder).
 - **Rendered HTML**: `news/$ARTICLE_DATE-election-cycle-{current,next}-{en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html` — **always all 14 languages**.
 - **Horizon**: 1 460 days (4 years); lookback 365 days.
-- **Single-run model**: same as week/month/quarter/year-ahead; one PR with all rendered HTML for both anchors when `cycle_anchor=both`. Each anchor's `article.md` is translated into all 13 non-English languages before the final `render-articles.ts --lang all` pass.
+- **Single-run model**: same as week/month/quarter/year-ahead; one PR with all rendered HTML for both anchors when `cycle_anchor=both`. The renderer uses the localized executive-brief cascade (`mergeLocalizedWithEnglish`) to produce non-English HTML.
 
 ### Cycle anchor semantics
 
@@ -338,11 +338,10 @@ This workflow runs at the **upper limit** of the 60-minute job envelope. Initial
 | 0–3 | MCP pre-warm + IMF multi-vintage pin |
 | 3–7 | Download data (Riksdag full-mandate corpus, SCB multi-year, IMF Nordic compare + multi-vintage) |
 | 7–29 | Analysis Pass 1 (24 artifacts at 2.5× depth, 12-leaf scenario tree, full mandate scorecard or coalition forecast) |
-| 29–37 | Analysis Pass 2 (read-back; counterfactuals × 3; horizon-band stratification across all five bands) |
-| 37–39 | Analysis Gate (long-horizon checks + 24th-artifact check + cycle-rollover check if within ± 30 days) |
-| 39–40 | Aggregate (per-anchor `article.md`) |
-| 40–41 | Translate `article.md` → `article.<lang>.md` × 13 (per anchor) |
-| 41–42 | Render (`scripts/render-articles.ts --lang all` → all 14 HTML per anchor) |
+| 29–38 | Analysis Pass 2 (read-back; counterfactuals × 3; horizon-band stratification across all five bands; **extended Pass-2 slot reclaims the time freed by removing per-language Markdown translation** — see `TRANSLATION_GUIDE.md §News articles are translated out-of-band`) |
+| 38–39 | Analysis Gate (long-horizon checks + 24th-artifact check + cycle-rollover check if within ± 30 days) |
+| 39–40 | Aggregate (per-anchor `article.md`) + post-aggregate `validate-article.ts` (Check 12) |
+| 40–42 | Render (`scripts/render-articles.ts --lang all` → all 14 HTML per anchor) |
 | 42–43 | Stage + commit + ONE `safeoutputs___create_pull_request` — **HARD DEADLINE agent minute 45** |
 
 > 🟡 **Scope-compression rule**: depth multiplier 2.5× is aspirational — under the 60-min envelope, prefer reducing per-document Family-E coverage (drop dok_ids ranked < 6 in significance-scoring) rather than skipping any of the 24 artifacts. The 24-artifact contract is hard. When `cycle_anchor=both`, anchor coverage is also hard unless `ext/cycle-rollover.md` declares a formal rollover-window exception; time budget is never a valid reason to silently skip `next/`.

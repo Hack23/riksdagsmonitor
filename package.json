@@ -71,6 +71,7 @@
     "sync-schemas": "npx tsx scripts/sync-cia-schemas.ts",
     "validate-data": "npx tsx scripts/validate-against-cia-schemas.ts",
     "check-updates": "npx tsx scripts/check-cia-schema-updates.ts",
+    "check:analysis-language": "tsx scripts/check-analysis-language.ts",
     "generate-types": "npx tsx scripts/generate-types-from-cia-schemas.ts",
     "validate-translations": "npx tsx scripts/validate-translations.ts",
     "validate-news": "node scripts/validate-news-translations.ts",

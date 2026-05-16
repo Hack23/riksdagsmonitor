@@ -19,13 +19,12 @@ Every run performs analysis **and** article generation end-to-end and produces *
 | Analysis summaries | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/*.md` |
 | Visualisation data | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/*.json` |
 | Aggregated article markdown | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.md` |
-| Per-language article markdown (13 non-English) | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.<lang>.md` for `sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh` |
 | Rendered articles (all 14 languages) | `news/$ARTICLE_DATE-$SUBFOLDER-{en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html` |
 
 PR title: `📰 ${Article Type} — $ARTICLE_DATE`.
 PR labels: `agentic-news` + article-type label.
 
-The dedicated **`news-translate`** workflow has been re-scoped to a markdown-translation mission: each of three daily runs picks up untranslated `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/executive-brief.md` files and produces `executive-brief_<lang>.md` siblings for the 13 non-English target languages. It does **not** touch `news/*.html`. Per-type workflows continue to produce **all 14 language HTML files** themselves in the same agentic run via the per-language Markdown translation step in `06-article-generation.md`.
+The dedicated **`news-translate`** workflow has been re-scoped to a markdown-translation mission: each of three daily runs picks up untranslated `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/executive-brief.md` files and produces `executive-brief_<lang>.md` siblings for the 13 non-English target languages. It does **not** touch `news/*.html`. Per-type workflows produce **all 14 language HTML files** themselves in the same agentic run via the localized executive-brief cascade (see `06-article-generation.md`). Per-type workflows do **not** write `article.<lang>.md` — those files are forbidden by `scripts/validate-file-ownership.ts`.
 
 > **Hard rule for per-type workflows:** never stage `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/executive-brief_<lang>.md`. Those files are exclusively owned by the `news-translate` workflow. The file-ownership validator (`scripts/validate-file-ownership.ts`) rejects `content`-category commits that touch any `executive-brief_<lang>.md` path.
 
@@ -38,7 +37,6 @@ The dedicated **`news-translate`** workflow has been re-scoped to a markdown-tra
    | Analysis summaries | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/*.md` |
    | Visualisation data | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/*.json` |
    | Aggregated article markdown | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.md` |
-   | Per-language article markdown (13 non-English) | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.<lang>.md` |
    | Rendered articles (all 14 languages) | `news/$ARTICLE_DATE-$SUBFOLDER-{en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html` |
    | News-translate executive-brief translations (only when run by `news-translate.md`) | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/executive-brief_<lang>.md` |
 
