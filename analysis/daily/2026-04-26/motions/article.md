@@ -1,12 +1,12 @@
 ---
-title: "Opposition Parliamentary Activity,"
+title: "Opposition Parliamentary Activity"
 description: "Swedish opposition MPs are targeting three distinct government accountability gaps: dangerous workplaces receiving wage subsidies for disabled workers, incarcerated children lacking educational legal…"
 keywords: "Motions, English, April 26, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Opposition Parliamentary Activity targeting three, Opposition, Parliamentary, Activity, Swedish, targeting, three, distinct, government, accountability, gaps, dangerous, workplaces, receiving"
 date: 2026-04-26
 subfolder: motions
 slug: 2026-04-26-motions
 source_folder: analysis/daily/2026-04-26/motions
-generated_at: 2026-05-16T13:28:17.528Z
+generated_at: 2026-05-16T20:24:25.672Z
 language: en
 layout: article
 ---

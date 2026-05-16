@@ -1,12 +1,12 @@
 ---
-title: "Sweden's Constitutional Affairs Committee (KU) has advanced two"
+title: "Sweden's Constitutional Affairs Committee (KU) has advanced"
 description: "Sweden's Constitutional Affairs Committee (KU) has advanced two landmark reports. The dominant event is adoption of KU34 — a package of constitutional amendments (vilande) that must survive September…"
 keywords: "CommitteeReports, English, May 14, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Constitutional Affairs Committee advanced, Sweden, Constitutional, Affairs, Committee, advanced, landmark, reports, dominant, event, adoption, KU34, package, amendments"
 date: 2026-05-14
 subfolder: committeeReports
 slug: 2026-05-14-committeeReports
 source_folder: analysis/daily/2026-05-14/committeeReports
-generated_at: 2026-05-16T13:28:18.444Z
+generated_at: 2026-05-16T20:24:26.565Z
 language: en
 layout: article
 ---
@@ -80,6 +80,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1885,13 +1898,654 @@ Standing PIRs opened for this cycle:
 - PIR-KU-2026-01: Will KD34 constitutional amendments (abortion, citizenship, association freedom) survive the 2026 election and receive required second passage?
 - PIR-KU-2026-02: How will municipal implementation of digital meeting rules (KU35) affect democratic participation in remote regions?
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# تقرير النشاط — تقارير اللجان 2026-05-14
+
+**التصنيف**: عام  
+**التاريخ**: 2026-05-14  
+**المؤلف**: خط تحليل Riksdagsmonitor  
+**تقييم الأميرالية**: A2 (وثائق المصادر الأولية)
+
+### الخلاصة (الاستنتاج في المقدمة)
+
+تقدمت لجنة الشؤون الدستورية السويدية (KU) بتقريرين بارزين. الحدث المهيمن هو اعتماد **KU34** — حزمة تعديلات دستورية (vilande) يجب أن تنجو من انتخابات سبتمبر 2026 وتصويت ثانٍ في الريكسداغ لتصبح قانوناً. الحدث الثانوي هو الاعتماد بالإجماع لـ**KU35** الذي يحدّث المشاركة الرقمية في الحوكمة البلدية، نافذاً اعتباراً من 1 يوليو 2026. مجتمعَين، يمثلان أهم لحظة دستورية في السويد منذ عقد.
+
+### القرارات الرئيسية
+
+| القرار | dok_id | الحالة | تاريخ النفاذ |
+|--------|--------|--------|--------------|
+| الحق الدستوري في الإجهاض (RF) | HD01KU34 | Vilande — ينتظر الانتخابات + الموافقة الثانية | 1 يناير 2027 |
+| إلغاء الجنسية من حاملي الجنسية المزدوجة | HD01KU34 | Vilande | 1 يناير 2027 |
+| تقييد حرية تكوين الجمعيات للعصابات الإجرامية | HD01KU34 | Vilande | 1 يناير 2027 |
+| قواعد الاجتماعات البلدية الرقمية | HD01KU35 | معتمد | 1 يوليو 2026 |
+| الإشراف على المقاولين الخاصين + التقارير السنوية | HD01KU35 | معتمد | 1 يوليو 2026 |
+| قانون أوسمة الريكسداغ الجديد | HD01KU43 | معتمد | TBD |
+
+### تدفق القرارات
+
+```mermaid
+graph TD
+    A[KU34 Vilande adoption\n2026-05-11] --> B{Sept 13 2026\nElection}
+    B -->|New Riksdag adopts| C[Constitutional\namendments enacted\n1 Jan 2027]
+    B -->|New Riksdag rejects| D[Constitutional\namendments fail]
+    E[KU35 Adopted\n2026-05-13] --> F[Municipalities update\narbetsordningar]
+    F --> G[Digital meeting rules\neffective 1 Jul 2026]
+```
+
+### الأهمية الاستراتيجية الاستخباراتية
+
+- **KU34 DIW 7,0 (L3)**: أول تكريس دستوري لحق الإجهاض في التاريخ السويدي. يستعيد إلغاء الجنسية أداةً أُزيلت بإصلاح دستوري عام 2001. تقييد الانتساب للعصابات يسد فجوة تتيح التجريم الكامل لعضوية العصابات.
+- **KU35 DIW 5,0 (L2)**: يؤثر في 290 بلدية و21 منطقة. تحديث المشاركة الرقمية + سلسلة الإشراف على عقود الرعاية الاجتماعية؛ مستوى خلافي منخفض لكن مخاطر تنفيذ عالية.
+- **الاعتماد على الانتخابات**: انتخابات سبتمبر 2026 ليست مجرد حدث سياسي — بل هي شرط دستوري مسبق. تكوين الريكسداغ الجديد يحدد ما إذا كان القانون الأساسي السويدي سيتغير.
+
+### المؤشرات ذات الحساسية الزمنية
+
+1. **يونيو 2026**: تنشر أحزاب المعارضة (S, V, C, MP) برامج انتخابية تتضمن مواقفها من التمرير الثاني لـ KU34
+2. **13 سبتمبر 2026**: الانتخابات — حاسمة للمستقبل الدستوري
+3. **أكتوبر–نوفمبر 2026**: تكوين الريكسداغ الجديد؛ جدولة التصويت على التمرير الثاني لـ KU34
+4. **1 يوليو 2026**: قواعد الحوكمة البلدية لـ KU35 تدخل حيز التنفيذ
+
+<!-- source-sha: 8763c85e325be570e196122722c24336774b5787 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/executive-brief_da.md -->
+
+**Klassificering**: OFFENTLIG  
+**Dato**: 2026-05-14  
+**Forfatter**: Riksdagsmonitor Analyseflow  
+**Admiralitetsvurdering**: A2 (primærkilder)
+
+### BLUF (Bundlinje Øverst)
+
+Sveriges Grundlovsudvalg (KU) har fremmet to banebrydende betænkninger. Den dominerende begivenhed er vedtagelsen af **KU34** — en pakke med grundlovsændringer (vilande) der skal overleve valget i september 2026 og en anden riksdagsafstemning for at blive lov. Den sekundære begivenhed er den enstemmige vedtagelse af **KU35**, der moderniserer digital deltagelse i kommunal forvaltning, ikrafttrædelse 1. juli 2026. Tilsammen repræsenterer disse Sveriges mest betydningsfulde grundlovsøjeblik i et årti.
+
+### Vigtige beslutninger
+
+| Beslutning | dok_id | Status | Ikrafttrædelsesdato |
+|------------|--------|--------|---------------------|
+| Grundlovsfæstet ret til abort (RF) | HD01KU34 | Vilande — afventer valg + anden behandling | 1. jan 2027 |
+| Tilbagekaldelse af statsborgerskab for dobbeltstatsborger | HD01KU34 | Vilande | 1. jan 2027 |
+| Begrænsning af foreningsfrihed for kriminelle bander | HD01KU34 | Vilande | 1. jan 2027 |
+| Digitale kommunale møde-regler | HD01KU35 | Vedtaget | 1. jul 2026 |
+| Tilsyn med private leverandører + årsrapportering | HD01KU35 | Vedtaget | 1. jul 2026 |
+| Ny Riksdagen-medaljelov | HD01KU43 | Vedtaget | TBD |
+
+### Beslutningsflow
+
+```mermaid
+graph TD
+    A[KU34 Vilande adoption\n2026-05-11] --> B{Sept 13 2026\nElection}
+    B -->|New Riksdag adopts| C[Constitutional\namendments enacted\n1 Jan 2027]
+    B -->|New Riksdag rejects| D[Constitutional\namendments fail]
+    E[KU35 Adopted\n2026-05-13] --> F[Municipalities update\narbetsordningar]
+    F --> G[Digital meeting rules\neffective 1 Jul 2026]
+```
+
+### Efterretningsstrategisk betydning
+
+- **KU34 DIW 7,0 (L3)**: Første grundlovsfæstelse af abortretten i svensk historie. Tilbagekaldelse af statsborgerskab genindføres som et redskab fjernet ved grundlovsreformen i 2001. Bandeassoceringsbegrænsning udfylder et hul, der muliggør fuld kriminalisering af bandemedlemskab.
+- **KU35 DIW 5,0 (L2)**: Berører 290 kommuner og 21 regioner. Modernisering af digital deltagelse + tilsynskæde for velfærdskontrakter; lav kontroversiel niveau men høj implementeringsrisiko.
+- **Valgafhængighed**: Valget i september 2026 er ikke blot en politisk begivenhed — det er en grundlovsforudsætning. Den nye riksdags sammensætning afgør, om Sveriges grundlov ændres.
+
+### Tidsfølsomme indikatorer
+
+1. **Juni 2026**: Oppositionspartier (S, V, C, MP) offentliggør valgprogrammer med holdninger til KU34's anden behandling
+2. **13. september 2026**: Valget — afgørende for grundlovsens fremtid
+3. **Oktober–november 2026**: Ny riksdag konstitueres; afstemning om KU34's anden behandling planlægges
+4. **1. juli 2026**: KU35's kommunale styringsregler træder i kraft
+
+<!-- source-sha: 8763c85e325be570e196122722c24336774b5787 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/executive-brief_de.md -->
+
+**Klassifizierung**: ÖFFENTLICH  
+**Datum**: 2026-05-14  
+**Autor**: Riksdagsmonitor Analysepipeline  
+**Admiralitätsbewertung**: A2 (Primärquelldokumente)
+
+### BLUF (Fazit vorab)
+
+Der schwedische Verfassungsausschuss (KU) hat zwei wegweisende Berichte vorangebracht. Das dominierende Ereignis ist die Annahme von **KU34** — ein Paket verfassungsrechtlicher Änderungen (vilande), das die Wahlen im September 2026 und eine zweite Riksdag-Abstimmung überstehen muss, um Gesetz zu werden. Das sekundäre Ereignis ist die einstimmige Verabschiedung von **KU35**, das die digitale Teilhabe in der kommunalen Verwaltung modernisiert, in Kraft ab 1. Juli 2026. Zusammen stellen diese Schwedensignifikantesten verfassungsrechtlichen Moment seit einem Jahrzehnt dar.
+
+### Wichtige Entscheidungen
+
+| Entscheidung | dok_id | Status | Datum des Inkrafttretens |
+|--------------|--------|--------|--------------------------|
+| Verfassungsrechtliches Recht auf Abtreibung (RF) | HD01KU34 | Vilande — wartet auf Wahlen + zweite Lesung | 1. Jan 2027 |
+| Widerruf der Staatsangehörigkeit bei Doppelstaatsbürgern | HD01KU34 | Vilande | 1. Jan 2027 |
+| Einschränkung der Vereinigungsfreiheit für kriminelle Banden | HD01KU34 | Vilande | 1. Jan 2027 |
+| Digitale kommunale Versammlungsregeln | HD01KU35 | Verabschiedet | 1. Jul 2026 |
+| Aufsicht über private Auftragnehmer + Jahresberichterstattung | HD01KU35 | Verabschiedet | 1. Jul 2026 |
+| Neues Riksdagen-Medaillengesetz | HD01KU43 | Verabschiedet | TBD |
+
+### Entscheidungsfluss
+
+```mermaid
+graph TD
+    A[KU34 Vilande adoption\n2026-05-11] --> B{Sept 13 2026\nElection}
+    B -->|New Riksdag adopts| C[Constitutional\namendments enacted\n1 Jan 2027]
+    B -->|New Riksdag rejects| D[Constitutional\namendments fail]
+    E[KU35 Adopted\n2026-05-13] --> F[Municipalities update\narbetsordningar]
+    F --> G[Digital meeting rules\neffective 1 Jul 2026]
+```
+
+### Nachrichtendienstliche Bedeutung
+
+- **KU34 DIW 7,0 (L3)**: Erste verfassungsrechtliche Verankerung des Abtreibungsrechts in der schwedischen Geschichte. Der Staatsangehörigkeitswiderruf stellt ein durch die Verfassungsreform 2001 abgeschafftes Instrument wieder her. Die Gangassozierungsbeschränkung schließt eine Lücke, die die vollständige Kriminalisierung der Bandenmitgliedschaft ermöglicht.
+- **KU35 DIW 5,0 (L2)**: Betrifft 290 Kommunen und 21 Regionen. Modernisierung der digitalen Teilhabe + Überwachungskette für Wohlfahrtsverträge; geringes Kontroversitätsniveau, aber hohes Implementierungsrisiko.
+- **Wahlabhängigkeit**: Die Wahlen im September 2026 sind nicht nur ein politisches Ereignis — sie sind eine verfassungsrechtliche Voraussetzung. Die Zusammensetzung des neuen Riksdags entscheidet, ob Schwedens Grundgesetz sich ändert.
+
+### Zeitkritische Indikatoren
+
+1. **Juni 2026**: Oppositionsparteien (S, V, C, MP) veröffentlichen Wahlprogramme mit Positionen zur zweiten Lesung von KU34
+2. **13. September 2026**: Wahl — entscheidend für die verfassungsrechtliche Zukunft
+3. **Oktober–November 2026**: Neuer Riksdag konstituiert sich; Abstimmung über zweite Lesung von KU34 geplant
+4. **1. Juli 2026**: KU35-Kommunalverwaltungsregeln treten in Kraft
+
+<!-- source-sha: 8763c85e325be570e196122722c24336774b5787 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/executive-brief_es.md -->
+
+**Clasificación**: PÚBLICO  
+**Fecha**: 2026-05-14  
+**Autor**: Pipeline de Análisis Riksdagsmonitor  
+**Calificación Almirantazgo**: A2 (documentos fuente primarios)
+
+### BLUF (Conclusión al Frente)
+
+El Comité de Asuntos Constitucionales sueco (KU) ha avanzado dos informes históricos. El evento dominante es la adopción de **KU34** — un paquete de enmiendas constitucionales (vilande) que debe superar las elecciones de septiembre de 2026 y una segunda votación del Riksdag para convertirse en ley. El evento secundario es la adopción unánime de **KU35** que moderniza la participación digital en la gobernanza municipal, en vigor el 1 de julio de 2026. Juntos representan el momento constitucional más significativo de Suecia en una década.
+
+### Decisiones Clave
+
+| Decisión | dok_id | Estado | Fecha de entrada en vigor |
+|----------|--------|--------|---------------------------|
+| Derecho constitucional al aborto (RF) | HD01KU34 | Vilande — espera elecciones + segunda aprobación | 1 ene 2027 |
+| Revocación de ciudadanía para ciudadanos dobles | HD01KU34 | Vilande | 1 ene 2027 |
+| Limitación de la libertad de asociación para bandas criminales | HD01KU34 | Vilande | 1 ene 2027 |
+| Normas de reunión municipal digital | HD01KU35 | Adoptado | 1 jul 2026 |
+| Supervisión de contratistas privados + informe anual | HD01KU35 | Adoptado | 1 jul 2026 |
+| Nueva ley de medallas del Riksdagen | HD01KU43 | Adoptado | TBD |
+
+### Flujo de Decisiones
+
+```mermaid
+graph TD
+    A[KU34 Vilande adoption\n2026-05-11] --> B{Sept 13 2026\nElection}
+    B -->|New Riksdag adopts| C[Constitutional\namendments enacted\n1 Jan 2027]
+    B -->|New Riksdag rejects| D[Constitutional\namendments fail]
+    E[KU35 Adopted\n2026-05-13] --> F[Municipalities update\narbetsordningar]
+    F --> G[Digital meeting rules\neffective 1 Jul 2026]
+```
+
+### Significación Estratégica de Inteligencia
+
+- **KU34 DIW 7,0 (L3)**: Primera consagración constitucional del derecho al aborto en la historia sueca. La revocación de ciudadanía restaura una herramienta suprimida por la reforma constitucional de 2001. La restricción de asociación de bandas llena un vacío que permite la criminalización total de la membresía en bandas.
+- **KU35 DIW 5,0 (L2)**: Afecta a 290 municipios y 21 regiones. Modernización de la participación digital + cadena de supervisión de contratos de bienestar; bajo nivel de controversia pero alto riesgo de implementación.
+- **Dependencia electoral**: Las elecciones de septiembre de 2026 no son solo un evento político — son un requisito constitucional previo. La composición del nuevo Riksdag determina si cambia la ley fundamental de Suecia.
+
+### Indicadores Sensibles al Tiempo
+
+1. **Junio 2026**: Partidos de oposición (S, V, C, MP) publican programas electorales con posiciones sobre la segunda aprobación de KU34
+2. **13 de septiembre de 2026**: Elección — decisiva para el futuro constitucional
+3. **Octubre–noviembre 2026**: Nuevo Riksdag constituido; votación sobre segunda aprobación de KU34 programada
+4. **1 de julio de 2026**: Normas de gobernanza municipal de KU35 entran en vigor
+
+<!-- source-sha: 8763c85e325be570e196122722c24336774b5787 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/executive-brief_fi.md -->
+
+**Luokittelu**: JULKINEN  
+**Päivämäärä**: 2026-05-14  
+**Tekijä**: Riksdagsmonitor Analyysiputki  
+**Admiraliteettiarvo**: A2 (primäärilähteet)
+
+### BLUF (Yhteenveto Ensin)
+
+Ruotsin perustuslakivaliokunta (KU) on edistänyt kahta merkittävää mietintöä. Hallitseva tapahtuma on **KU34**:n hyväksyminen — paketti perustuslaillisia muutoksia (vilande), joiden on selvitettävä syyskuun 2026 vaaleista ja toisesta valtiopäivääänestyksestä tullakseen laiksi. Toissijainen tapahtuma on **KU35**:n yksimielinen hyväksyminen, joka modernisoi digitaalista osallistumista kunnallisessa hallinnossa, voimaan 1. heinäkuuta 2026. Yhdessä nämä edustavat Ruotsin merkittävintä perustuslaillista hetkeä vuosikymmeniä.
+
+### Tärkeimmät päätökset
+
+| Päätös | dok_id | Tila | Voimaantulopäivä |
+|--------|--------|------|------------------|
+| Perustuslaillinen oikeus aborttiin (RF) | HD01KU34 | Vilande — odottaa vaaleja + toista käsittelyä | 1.1.2027 |
+| Kansalaisuuden peruuttaminen kaksoiskansalaisilta | HD01KU34 | Vilande | 1.1.2027 |
+| Yhdistymisvapauden rajoittaminen rikollisille jengille | HD01KU34 | Vilande | 1.1.2027 |
+| Digitaaliset kunnalliset kokousmääräykset | HD01KU35 | Hyväksytty | 1.7.2026 |
+| Yksityisten urakoitsijoiden valvonta + vuosiraportointi | HD01KU35 | Hyväksytty | 1.7.2026 |
+| Uusi valtiopäivien mitalilaki | HD01KU43 | Hyväksytty | TBD |
+
+### Päätösvirta
+
+```mermaid
+graph TD
+    A[KU34 Vilande adoption\n2026-05-11] --> B{Sept 13 2026\nElection}
+    B -->|New Riksdag adopts| C[Constitutional\namendments enacted\n1 Jan 2027]
+    B -->|New Riksdag rejects| D[Constitutional\namendments fail]
+    E[KU35 Adopted\n2026-05-13] --> F[Municipalities update\narbetsordningar]
+    F --> G[Digital meeting rules\neffective 1 Jul 2026]
+```
+
+### Tiedustelustrateginen merkitys
+
+- **KU34 DIW 7,0 (L3)**: Ensimmäinen abortioikeuden perustuslaillinen kirjaaminen Ruotsin historiassa. Kansalaisuuden peruuttaminen palauttaa 2001 vuoden perustuslakiuudistuksessa poistetun välineen. Jengiassosiaatiorajoitus täyttää aukon, joka mahdollistaa jengienjäsenyyden täydellisen kriminalisoinnin.
+- **KU35 DIW 5,0 (L2)**: Koskee 290 kuntaa ja 21 aluetta. Digitaalisen osallistumisen modernisointi + hyvinvointisopimusten valvontaketju; matala kiistanalainen taso mutta korkea toteutusriski.
+- **Vaali riippuvuus**: Syyskuun 2026 vaalit eivät ole vain poliittinen tapahtuma — ne ovat perustuslaillinen edellytys. Uuden valtiopäivien kokoonpano ratkaisee muuttuuko Ruotsin perustuslaki.
+
+### Aikaherkät indikaattorit
+
+1. **Kesäkuu 2026**: Oppositiopuolueet (S, V, C, MP) julkaisevat vaaliohjelmat KU34:n toista käsittelyä koskevilla kannoilla
+2. **13. syyskuuta 2026**: Vaalit — ratkaisevat perustuslain tulevaisuuden kannalta
+3. **Lokakuu–marraskuu 2026**: Uusi valtiopäivät muodostetaan; KU34:n toinen käsittely äänestetään
+4. **1. heinäkuuta 2026**: KU35:n kunnallisen hallinnon säännöt astuvat voimaan
+
+<!-- source-sha: 8763c85e325be570e196122722c24336774b5787 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/executive-brief_fr.md -->
+
+**Auteur**: Pipeline d'Analyse Riksdagsmonitor  
+**Évaluation Amirauté**: A2 (documents sources primaires)
+
+### BLUF (Conclusion en Tête)
+
+La Commission des affaires constitutionnelles suédoise (KU) a fait avancer deux rapports historiques. L'événement dominant est l'adoption de **KU34** — un paquet d'amendements constitutionnels (vilande) qui doit survivre aux élections de septembre 2026 et à un second vote du Riksdag pour devenir loi. L'événement secondaire est l'adoption unanime de **KU35** modernisant la participation numérique dans la gouvernance municipale, en vigueur le 1er juillet 2026. Ensemble, ils représentent le moment constitutionnel le plus significatif de la Suède depuis une décennie.
+
+### Décisions Clés
+
+| Décision | dok_id | Statut | Date d'entrée en vigueur |
+|----------|--------|--------|--------------------------|
+| Droit constitutionnel à l'avortement (RF) | HD01KU34 | Vilande — attend les élections + deuxième passage | 1er jan 2027 |
+| Révocation de la nationalité pour les doubles nationaux | HD01KU34 | Vilande | 1er jan 2027 |
+| Limitation de la liberté d'association pour les gangs criminels | HD01KU34 | Vilande | 1er jan 2027 |
+| Règles numériques de réunion municipale | HD01KU35 | Adopté | 1er jul 2026 |
+| Surveillance des contractants privés + rapport annuel | HD01KU35 | Adopté | 1er jul 2026 |
+| Nouvelle loi sur les médailles du Riksdagen | HD01KU43 | Adopté | TBD |
+
+### Flux de Décision
+
+```mermaid
+graph TD
+    A[KU34 Vilande adoption\n2026-05-11] --> B{Sept 13 2026\nElection}
+    B -->|New Riksdag adopts| C[Constitutional\namendments enacted\n1 Jan 2027]
+    B -->|New Riksdag rejects| D[Constitutional\namendments fail]
+    E[KU35 Adopted\n2026-05-13] --> F[Municipalities update\narbetsordningar]
+    F --> G[Digital meeting rules\neffective 1 Jul 2026]
+```
+
+### Signification Stratégique du Renseignement
+
+- **KU34 DIW 7,0 (L3)**: Première consécration constitutionnelle du droit à l'avortement dans l'histoire suédoise. La révocation de la nationalité rétablit un outil supprimé par la réforme constitutionnelle de 2001. La restriction d'association de gangs comble une lacune permettant la criminalisation complète de l'appartenance à un gang.
+- **KU35 DIW 5,0 (L2)**: Concerne 290 communes et 21 régions. Modernisation de la participation numérique + chaîne de supervision des contrats de protection sociale; faible niveau de controverse mais risque élevé d'implémentation.
+- **Dépendance électorale**: L'élection de septembre 2026 n'est pas seulement un événement politique — c'est une condition préalable constitutionnelle. La composition du nouveau Riksdag détermine si la loi fondamentale suédoise change.
+
+### Indicateurs Temporellement Sensibles
+
+1. **Juin 2026**: Les partis d'opposition (S, V, C, MP) publient des programmes électoraux avec des positions sur le second passage de KU34
+2. **13 septembre 2026**: Élection — décisive pour l'avenir constitutionnel
+3. **Octobre–novembre 2026**: Nouveau Riksdag constitué ; vote sur le second passage de KU34 programmé
+4. **1er juillet 2026**: Les règles de gouvernance municipale de KU35 entrent en vigueur
+
+<!-- source-sha: 8763c85e325be570e196122722c24336774b5787 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# דוח פעילות — דוחות ועדה 2026-05-14
+
+**סיווג**: ציבורי  
+**תאריך**: 2026-05-14  
+**מחבר**: צינור ניתוח Riksdagsmonitor  
+**דירוג אדמירלות**: A2 (מסמכי מקורות ראשוניים)
+
+### סיכום (מסקנה בראש)
+
+ועדת ענייני החוקה השוודית (KU) קידמה שני דוחות מהותיים. האירוע הדומיננטי הוא אימוץ **KU34** — חבילת תיקונים חוקתיים (vilande) שעליה לשרוד את הבחירות בספטמבר 2026 ואת ההצבעה השנייה בריקסדאג כדי להפוך לחוק. האירוע המשני הוא האימוץ הפה-אחד של **KU35** המחדש את ההשתתפות הדיגיטלית בממשל העירוני, בתוקף מה-1 ביולי 2026. יחד, הם מייצגים את הרגע החוקתי המשמעותי ביותר בשוודיה מאז עשור.
+
+### החלטות מרכזיות
+
+| החלטה | dok_id | מצב | תאריך כניסה לתוקף |
+|--------|--------|-----|-------------------|
+| זכות חוקתית להפלה (RF) | HD01KU34 | Vilande — ממתין לבחירות + מעבר שני | 1 ינואר 2027 |
+| ביטול אזרחות לבעלי אזרחות כפולה | HD01KU34 | Vilande | 1 ינואר 2027 |
+| הגבלת חופש ההתאגדות לכנופיות פשע | HD01KU34 | Vilande | 1 ינואר 2027 |
+| כללי ישיבות עירוניות דיגיטליות | HD01KU35 | אומץ | 1 יולי 2026 |
+| פיקוח על קבלני משנה פרטיים + דיווח שנתי | HD01KU35 | אומץ | 1 יולי 2026 |
+| חוק מדליות ריקסדאגן חדש | HD01KU43 | אומץ | TBD |
+
+### זרימת ההחלטות
+
+```mermaid
+graph TD
+    A[KU34 Vilande adoption\n2026-05-11] --> B{Sept 13 2026\nElection}
+    B -->|New Riksdag adopts| C[Constitutional\namendments enacted\n1 Jan 2027]
+    B -->|New Riksdag rejects| D[Constitutional\namendments fail]
+    E[KU35 Adopted\n2026-05-13] --> F[Municipalities update\narbetsordningar]
+    F --> G[Digital meeting rules\neffective 1 Jul 2026]
+```
+
+### חשיבות אסטרטגית של מודיעין
+
+- **KU34 DIW 7.0 (L3)**: עיגון חוקתי ראשון של זכות ההפלה בהיסטוריה השוודית. ביטול האזרחות משחזר כלי שהוסר ברפורמה החוקתית ב-2001. הגבלת שיוך לכנופיות ממלאת פרצה המאפשרת הפללה מלאה של חברות בכנופיות.
+- **KU35 DIW 5.0 (L2)**: משפיע על 290 עיריות ו-21 מחוזות. מודרניזציה של השתתפות דיגיטלית + שרשרת פיקוח על חוזי רווחה; רמת מחלוקת נמוכה אך סיכון גבוה ליישום.
+- **תלות בבחירות**: בחירות ספטמבר 2026 אינן רק אירוע פוליטי — הן תנאי מוקדם חוקתי. הרכב הריקסדאג החדש קובע אם חוק היסוד של שוודיה ישתנה.
+
+### מחוונים רגישים לזמן
+
+1. **יוני 2026**: מפלגות האופוזיציה (S, V, C, MP) מפרסמות מצעים בחירות עם עמדות לגבי המעבר השני של KU34
+2. **13 בספטמבר 2026**: הבחירות — מכריעות לעתיד החוקתי
+3. **אוקטובר–נובמבר 2026**: ריקסדאג חדש מתכונן; הצבעה על מעבר שני של KU34 מתוכננת
+4. **1 ביולי 2026**: כללי ממשל עירוני של KU35 נכנסים לתוקף
+
+<!-- source-sha: 8763c85e325be570e196122722c24336774b5787 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/executive-brief_ja.md -->
+
+**分類**: 公開  
+**日付**: 2026-05-14  
+**著者**: Riksdagsmonitor 分析パイプライン  
+**海軍評価**: A2 (一次資料文書)
+
+### 要旨
+
+スウェーデン憲法委員会（KU）は2つの画期的な報告書を前進させた。主要な出来事は**KU34**の採択——選挙前保留（vilande）の憲法改正パッケージで、2026年9月の選挙と第2次議会採決を経ないと法律にならない。副次的な出来事は**KU35**の全会一致採択で、地方自治体のデジタル参加を近代化し、2026年7月1日施行。合わせて、これらは10年来のスウェーデン最重要な憲法的瞬間を代表する。
+
+### 主要決定
+
+| 決定 | dok_id | 状況 | 施行日 |
+|------|--------|------|--------|
+| 中絶の憲法上の権利（RF） | HD01KU34 | Vilande — 選挙 + 第2次採決待ち | 2027年1月1日 |
+| 二重国籍者の市民権剥奪 | HD01KU34 | Vilande | 2027年1月1日 |
+| 犯罪組織の結社の自由制限 | HD01KU34 | Vilande | 2027年1月1日 |
+| デジタル市議会規則 | HD01KU35 | 採択 | 2026年7月1日 |
+| 民間委託業者監督 + 年次報告 | HD01KU35 | 採択 | 2026年7月1日 |
+| 新リクスダーゲン勲章法 | HD01KU43 | 採択 | TBD |
+
+### 決定フロー
+
+```mermaid
+graph TD
+    A[KU34 Vilande adoption\n2026-05-11] --> B{Sept 13 2026\nElection}
+    B -->|New Riksdag adopts| C[Constitutional\namendments enacted\n1 Jan 2027]
+    B -->|New Riksdag rejects| D[Constitutional\namendments fail]
+    E[KU35 Adopted\n2026-05-13] --> F[Municipalities update\narbetsordningar]
+    F --> G[Digital meeting rules\neffective 1 Jul 2026]
+```
+
+### 情報戦略的意義
+
+- **KU34 DIW 7.0 (L3)**: スウェーデン史上初の中絶権の憲法的保障。市民権剥奪は2001年憲法改正で廃止されたツールを復元。組織犯罪加入制限は組織完全犯罪化を可能にする空白を埋める。
+- **KU35 DIW 5.0 (L2)**: 290の地方自治体と21の地域に影響。デジタル参加の近代化 + 福祉契約の監督チェーン；低い論争レベルだが高い実施リスク。
+- **選挙依存性**: 2026年9月の選挙は単なる政治的イベントではなく——憲法上の前提条件。新議会の構成がスウェーデンの基本法が変わるかどうかを決定する。
+
+### 時間的に敏感な指標
+
+1. **2026年6月**: 野党（S、V、C、MP）がKU34第2次採決への立場を含む選挙公約を発表
+2. **2026年9月13日**: 選挙——憲法的未来を左右する
+3. **2026年10月〜11月**: 新議会が構成；KU34第2次採決投票が予定
+4. **2026年7月1日**: KU35の地方自治体ガバナンス規則施行
+
+<!-- source-sha: 8763c85e325be570e196122722c24336774b5787 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/executive-brief_ko.md -->
+
+**분류**: 공개  
+**날짜**: 2026-05-14  
+**저자**: Riksdagsmonitor 분석 파이프라인  
+**해군 평가**: A2 (1차 출처 문서)
+
+### 핵심 요약
+
+스웨덴 헌법위원회(KU)가 두 가지 획기적인 보고서를 추진했다. 주요 사건은 **KU34** 채택——법률로 되려면 2026년 9월 선거와 두 번째 의회 투표를 통과해야 하는 헌법 개정 패키지(vilande). 부수적 사건은 지방자치 디지털 참여를 현대화하는 **KU35**의 만장일치 채택으로, 2026년 7월 1일 시행. 합쳐서 이것들은 10년간 스웨덴의 가장 중요한 헌법적 순간을 대표한다.
+
+### 주요 결정
+
+| 결정 | dok_id | 현황 | 발효일 |
+|------|--------|------|--------|
+| 헌법적 낙태권(RF) | HD01KU34 | Vilande — 선거 + 두 번째 통과 대기 | 2027년 1월 1일 |
+| 이중국적자 시민권 박탈 | HD01KU34 | Vilande | 2027년 1월 1일 |
+| 범죄 조직에 대한 결사의 자유 제한 | HD01KU34 | Vilande | 2027년 1월 1일 |
+| 디지털 지방자치 회의 규칙 | HD01KU35 | 채택 | 2026년 7월 1일 |
+| 민간 계약업체 감독 + 연간 보고 | HD01KU35 | 채택 | 2026년 7월 1일 |
+| 새 리크스다겐 훈장법 | HD01KU43 | 채택 | TBD |
+
+### 결정 흐름
+
+```mermaid
+graph TD
+    A[KU34 Vilande adoption\n2026-05-11] --> B{Sept 13 2026\nElection}
+    B -->|New Riksdag adopts| C[Constitutional\namendments enacted\n1 Jan 2027]
+    B -->|New Riksdag rejects| D[Constitutional\namendments fail]
+    E[KU35 Adopted\n2026-05-13] --> F[Municipalities update\narbetsordningar]
+    F --> G[Digital meeting rules\neffective 1 Jul 2026]
+```
+
+### 정보 전략적 의의
+
+- **KU34 DIW 7.0 (L3)**: 스웨덴 역사상 최초의 헌법적 낙태권 명문화. 시민권 박탈은 2001년 헌법 개혁으로 폐지된 도구를 복원. 조직범죄 가입 제한은 조직 가입의 완전한 범죄화를 가능하게 하는 공백을 채움.
+- **KU35 DIW 5.0 (L2)**: 290개 지방자치단체와 21개 광역 영향. 디지털 참여 현대화 + 복지 계약 감독 체계; 낮은 논란 수준이나 높은 실행 위험.
+- **선거 의존성**: 2026년 9월 선거는 단순한 정치적 사건이 아니라——헌법적 전제 조건. 새 의회 구성이 스웨덴 기본법 변경 여부를 결정.
+
+### 시간 민감 지표
+
+1. **2026년 6월**: 야당(S, V, C, MP)이 KU34 두 번째 통과에 대한 입장이 담긴 선거 공약 발표
+2. **2026년 9월 13일**: 선거——헌법적 미래에 결정적
+3. **2026년 10월~11월**: 새 의회 구성; KU34 두 번째 통과 투표 예정
+4. **2026년 7월 1일**: KU35 지방자치 거버넌스 규칙 시행
+
+<!-- source-sha: 8763c85e325be570e196122722c24336774b5787 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/executive-brief_nl.md -->
+
+**Classificatie**: OPENBAAR  
+**Datum**: 2026-05-14  
+**Auteur**: Riksdagsmonitor Analysepipeline  
+**Admiraliteitsbeoordeling**: A2 (primaire brondocumenten)
+
+### BLUF (Conclusie Voorop)
+
+De Zweedse Commissie voor Constitutionele Zaken (KU) heeft twee baanbrekende rapporten voortgezet. De dominante gebeurtenis is de aanvaarding van **KU34** — een pakket grondwettelijke wijzigingen (vilande) dat de verkiezingen van september 2026 en een tweede Riksdag-stemming moet doorstaan om wet te worden. De secundaire gebeurtenis is de unaniem aanvaarding van **KU35** dat de digitale participatie in de gemeentelijke bestuur moderniseert, van kracht op 1 juli 2026. Samen vertegenwoordigen deze het meest significante grondwettelijke moment van Zweden in een decennium.
+
+### Belangrijke Beslissingen
+
+| Beslissing | dok_id | Status | Datum van inwerkingtreding |
+|------------|--------|--------|----------------------------|
+| Grondwettelijk recht op abortus (RF) | HD01KU34 | Vilande — wacht op verkiezingen + tweede lezing | 1 jan 2027 |
+| Intrekking van burgerschap voor dubbele nationaliteitshouders | HD01KU34 | Vilande | 1 jan 2027 |
+| Beperking van vrijheid van vereniging voor criminele bendes | HD01KU34 | Vilande | 1 jan 2027 |
+| Digitale gemeentelijke vergaderregels | HD01KU35 | Aanvaard | 1 jul 2026 |
+| Toezicht op private aannemers + jaarrapportage | HD01KU35 | Aanvaard | 1 jul 2026 |
+| Nieuwe Riksdagen-medaillenwet | HD01KU43 | Aanvaard | TBD |
+
+### Beslissingsflow
+
+```mermaid
+graph TD
+    A[KU34 Vilande adoption\n2026-05-11] --> B{Sept 13 2026\nElection}
+    B -->|New Riksdag adopts| C[Constitutional\namendments enacted\n1 Jan 2027]
+    B -->|New Riksdag rejects| D[Constitutional\namendments fail]
+    E[KU35 Adopted\n2026-05-13] --> F[Municipalities update\narbetsordningar]
+    F --> G[Digital meeting rules\neffective 1 Jul 2026]
+```
+
+### Strategische Inlichtingenbetekenis
+
+- **KU34 DIW 7,0 (L3)**: Eerste grondwettelijke verankering van het abortusrecht in de Zweedse geschiedenis. Intrekking van burgerschap herstelt een instrument dat door de grondwetshervorming van 2001 was afgeschaft. Bendeassociatiebeperking vult een leemte die volledige criminalisering van bendelidmaatschap mogelijk maakt.
+- **KU35 DIW 5,0 (L2)**: Betreft 290 gemeenten en 21 regio's. Modernisering van digitale participatie + toezichtketen voor welzijnscontracten; laag controversieniveau maar hoog implementatierisico.
+- **Verkiezingsafhankelijkheid**: De verkiezingen van september 2026 zijn niet alleen een politieke gebeurtenis — ze zijn een grondwettelijke voorwaarde. De samenstelling van de nieuwe Riksdag bepaalt of de Zweedse grondwet verandert.
+
+### Tijdgevoelige Indicatoren
+
+1. **Juni 2026**: Oppositiepartijen (S, V, C, MP) publiceren verkiezingsprogramma's met standpunten over de tweede lezing van KU34
+2. **13 september 2026**: Verkiezingen — beslissend voor de grondwettelijke toekomst
+3. **Oktober–november 2026**: Nieuwe Riksdag geconstitueerd; stemming over tweede lezing van KU34 gepland
+4. **1 juli 2026**: KU35-gemeentelijke bestuursregels treden in werking
+
+<!-- source-sha: 8763c85e325be570e196122722c24336774b5787 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/executive-brief_no.md -->
+
+**Klassifisering**: OFFENTLIG  
+**Dato**: 2026-05-14  
+**Forfatter**: Riksdagsmonitor Analyseflyt  
+**Admiralitetsvurdering**: A2 (primærkilder)
+
+### BLUF (Bunnlinje Øverst)
+
+Sveriges grunnlovsutvalg (KU) har fremmet to banebrytende betenkninger. Den dominerende hendelsen er vedtakelsen av **KU34** — en pakke med grunnlovsendringer (vilande) som må overleve valget i september 2026 og en andre riksdagsavstemning for å bli lov. Den sekundære hendelsen er den enstemmige vedtakelsen av **KU35** som moderniserer digital deltakelse i kommunal styring, ikrafttredelse 1. juli 2026. Til sammen representerer disse Sveriges mest betydningsfulle grunnlovsøyeblikk på et tiår.
+
+### Viktige beslutninger
+
+| Beslutning | dok_id | Status | Ikrafttredelsesdato |
+|------------|--------|--------|---------------------|
+| Grunnlovsfestet rett til abort (RF) | HD01KU34 | Vilande — avventer valg + andre behandling | 1. jan 2027 |
+| Tilbakekalling av statsborgerskap for dobbeltstatsborger | HD01KU34 | Vilande | 1. jan 2027 |
+| Begrensning av foreningsfrihet for kriminelle gjenger | HD01KU34 | Vilande | 1. jan 2027 |
+| Digitale kommunale møteregler | HD01KU35 | Vedtatt | 1. jul 2026 |
+| Tilsyn med private leverandører + årsrapportering | HD01KU35 | Vedtatt | 1. jul 2026 |
+| Ny riksdagsmedaljelov | HD01KU43 | Vedtatt | TBD |
+
+### Beslutningsflyt
+
+```mermaid
+graph TD
+    A[KU34 Vilande adoption\n2026-05-11] --> B{Sept 13 2026\nElection}
+    B -->|New Riksdag adopts| C[Constitutional\namendments enacted\n1 Jan 2027]
+    B -->|New Riksdag rejects| D[Constitutional\namendments fail]
+    E[KU35 Adopted\n2026-05-13] --> F[Municipalities update\narbetsordningar]
+    F --> G[Digital meeting rules\neffective 1 Jul 2026]
+```
+
+### Etterretningsstrategisk betydning
+
+- **KU34 DIW 7,0 (L3)**: Første grunnlovsfesting av abortretten i svensk historie. Tilbakekalling av statsborgerskap gjeninnfører et verktøy som ble fjernet ved grunnlovsreformen i 2001. Gjengassosiasjonsbegrensning fyller et hull som muliggjør full kriminalisering av gjengemedlemskap.
+- **KU35 DIW 5,0 (L2)**: Berører 290 kommuner og 21 regioner. Modernisering av digital deltakelse + tilsynskjede for velferdskontrakter; lav kontroversiell nivå men høy implementeringsrisiko.
+- **Valgavhengighet**: Valget i september 2026 er ikke bare en politisk begivenhet — det er en grunnlovsforutsetning. Den nye riksdagens sammensetning avgjør om Sveriges grunnlov endres.
+
+### Tidssensitive indikatorer
+
+1. **Juni 2026**: Opposisjonspartier (S, V, C, MP) publiserer valgprogrammer med standpunkter om KU34:s andre behandling
+2. **13. september 2026**: Valget — avgjørende for grunnlovens fremtid
+3. **Oktober–november 2026**: Ny riksdag konstitueres; avstemning om KU34:s andre behandling planlegges
+4. **1. juli 2026**: KU35:s kommunale styringsregler trer i kraft
+
+<!-- source-sha: 8763c85e325be570e196122722c24336774b5787 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/executive-brief_sv.md -->
+
+**Klassificering**: OFFENTLIG  
+**Datum**: 2026-05-14  
+**Författare**: Riksdagsmonitor Analysflöde  
+**Admiralitetsgrad**: A2 (primärkällsdokument)
+
+### BLUF (Slutsats i förväg)
+
+Sveriges konstitutionsutskott (KU) har avancerat med två banbrytande betänkanden. Den dominerande händelsen är antagandet av **KU34** — ett paket med konstitutionella ändringar (vilande) som måste överleva valet i september 2026 och en andra riksdagsomröstning för att bli lag. Den sekundära händelsen är det enhälliga antagandet av **KU35** som moderniserar digitalt deltagande i kommunal förvaltning, ikraft 1 juli 2026. Tillsammans utgör dessa Sveriges mest betydelsefulla konstitutionella ögonblick på ett decennium.
+
+### Viktiga beslut
+
+| Beslut | dok_id | Status | Ikraftträdandedatum |
+|--------|--------|--------|---------------------|
+| Konstitutionell rätt till abort (RF) | HD01KU34 | Vilande — inväntar val + andra behandling | 1 jan 2027 |
+| Medborgarskapsåterkallelse för dubbla medborgare | HD01KU34 | Vilande | 1 jan 2027 |
+| Begränsning av föreningsfrihet för kriminella gäng | HD01KU34 | Vilande | 1 jan 2027 |
+| Digitala kommunala mötesregler | HD01KU35 | Antaget | 1 jul 2026 |
+| Tillsyn av privata entreprenörer + årsrapportering | HD01KU35 | Antaget | 1 jul 2026 |
+| Ny medallagstiftning för riksdagen | HD01KU43 | Antaget | TBD |
+
+### Beslutsflöde
+
+```mermaid
+graph TD
+    A[KU34 Vilande adoption\n2026-05-11] --> B{Sept 13 2026\nElection}
+    B -->|New Riksdag adopts| C[Constitutional\namendments enacted\n1 Jan 2027]
+    B -->|New Riksdag rejects| D[Constitutional\namendments fail]
+    E[KU35 Adopted\n2026-05-13] --> F[Municipalities update\narbetsordningar]
+    F --> G[Digital meeting rules\neffective 1 Jul 2026]
+```
+
+### Underrättelsestrategisk betydelse
+
+- **KU34 DIW 7,0 (L3)**: Första konstitutionella inskrivningen av aborträtten i svensk historia. Medborgarskapsåterkallelse återinför ett verktyg som avlägsnades vid 2001 års grundlagsreform. Gangassociationsbegränsning fyller en lucka som möjliggör fullständig kriminalisering av gängmedlemskap.
+- **KU35 DIW 5,0 (L2)**: Berör 290 kommuner och 21 regioner. Modernisering av digitalt deltagande + tillsynskedja för välfärdsentreprenad; låg kontroversiell nivå men hög implementeringsrisk.
+- **Valberoende**: Valet i september 2026 är inte bara en politisk händelse — det är en konstitutionell förutsättning. Den nya riksdagens sammansättning avgör om Sveriges grundlag förändras.
+
+### Tidskänsliga indikatorer
+
+1. **Juni 2026**: Oppositionspartier (S, V, C, MP) publicerar valmanifest med ställningstaganden om KU34:s andra behandling
+2. **13 september 2026**: Valet — avgörande för konstitutionell framtid
+3. **Oktober–november 2026**: Ny riksdag konstitueras; omröstning om KU34:s andra behandling planeras
+4. **1 juli 2026**: KU35:s kommunala styrningsregler träder i kraft
+
+<!-- source-sha: 8763c85e325be570e196122722c24336774b5787 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/executive-brief_zh.md -->
+
+**分类**: 公开  
+**日期**: 2026-05-14  
+**作者**: Riksdagsmonitor 分析管道  
+**海军评级**: A2 (主要来源文件)
+
+### 核心摘要
+
+瑞典宪法事务委员会（KU）推进了两份具有里程碑意义的报告。主要事件是采纳**KU34**——一套宪法修正案（vilande），必须在2026年9月大选和议会第二次表决后才能成为法律。次要事件是**KU35**的全票通过，现代化了市政治理中的数字参与，自2026年7月1日生效。两者合计，代表着瑞典十年来最重要的宪法时刻。
+
+### 关键决定
+
+| 决定 | dok_id | 状态 | 生效日期 |
+|------|--------|------|----------|
+| 宪法性堕胎权（RF） | HD01KU34 | Vilande — 等待选举 + 第二次通过 | 2027年1月1日 |
+| 吊销双重国籍者公民身份 | HD01KU34 | Vilande | 2027年1月1日 |
+| 限制犯罪团伙的结社自由 | HD01KU34 | Vilande | 2027年1月1日 |
+| 数字市政会议规则 | HD01KU35 | 已采纳 | 2026年7月1日 |
+| 私人承包商监督 + 年度报告 | HD01KU35 | 已采纳 | 2026年7月1日 |
+| 新议会勋章法 | HD01KU43 | 已采纳 | TBD |
+
+### 决策流程
+
+```mermaid
+graph TD
+    A[KU34 Vilande adoption\n2026-05-11] --> B{Sept 13 2026\nElection}
+    B -->|New Riksdag adopts| C[Constitutional\namendments enacted\n1 Jan 2027]
+    B -->|New Riksdag rejects| D[Constitutional\namendments fail]
+    E[KU35 Adopted\n2026-05-13] --> F[Municipalities update\narbetsordningar]
+    F --> G[Digital meeting rules\neffective 1 Jul 2026]
+```
+
+### 情报战略意义
+
+- **KU34 DIW 7.0 (L3)**: 瑞典历史上首次宪法性确立堕胎权。撤销公民身份恢复了2001年宪法改革中废除的工具。帮派关联限制填补了允许全面将帮派成员身份入刑的空白。
+- **KU35 DIW 5.0 (L2)**: 影响290个市政府和21个地区。数字参与现代化 + 福利合同监督链；争议水平低但实施风险高。
+- **选举依赖性**: 2026年9月选举不仅是政治事件——它是宪法前提条件。新议会的组成决定了瑞典基本法是否改变。
+
+### 时效性指标
+
+1. **2026年6月**: 反对党（S、V、C、MP）发布选举宣言，表明对KU34第二次通过的立场
+2. **2026年9月13日**: 选举——宪法未来的决定性因素
+3. **2026年10月–11月**: 新议会组成；KU34第二次通过投票预定
+4. **2026年7月1日**: KU35市政治理规则生效
+
+<!-- source-sha: 8763c85e325be570e196122722c24336774b5787 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 3 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1930,6 +2584,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/committeeReports/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

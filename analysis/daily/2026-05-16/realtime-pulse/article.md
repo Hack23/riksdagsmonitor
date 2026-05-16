@@ -1,12 +1,12 @@
 ---
-title: "Den 13 maj 2026 antog Rysslands statsduma en lag som"
+title: "Den 13 maj 2026 antog Rysslands statsduma"
 description: "Den 13 maj 2026 antog Rysslands statsduma en lag som institutionaliserar Putins befogenhet att insätta ryska väpnade styrkor i utlandet för att \"skydda\" ryska medborgare från internationella…"
 keywords: "Realtime Pulse, English, May 16, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, antog Rysslands statsduma institutionaliserar Putins, 2026, antog, Rysslands, statsduma, institutionaliserar, Putins, befogenhet, insätta, ryska, väpnade, styrkor, utlandet, skydda"
 date: 2026-05-16
 subfolder: realtime-pulse
 slug: 2026-05-16-realtime-pulse
 source_folder: analysis/daily/2026-05-16/realtime-pulse
-generated_at: 2026-05-16T13:28:18.573Z
+generated_at: 2026-05-16T20:24:26.700Z
 language: en
 layout: article
 ---
@@ -77,6 +77,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🏷️ | [Classification Results](#rm-classification-results) | ISMS data classification: CIA-triad rating, RTO/RPO targets and handling instructions |
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2256,13 +2269,589 @@ The principal assessments hold, but with the caveat that the Russian law's immed
 - [x] Pass 1 snapshots to be copied to pass1/ after this reflection
 - [x] `Pass-2 status: executed in full` (canonical text)
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# الملخص التنفيذي — النبض الآني 2026-05-16
+
+<!-- analysis-type: executive-brief -->
+<!-- article-date: 2026-05-16 -->
+<!-- subfolder: realtime-pulse -->
+<!-- pass: 2 (final) -->
+
+**التصنيف**: PUBLIC | **Admiralty**: B2 | **التاريخ**: 2026-05-16
+
+---
+
+### مقدمة من ثلاث جمل
+
+في 13 مايو 2026، أقرّت الدوما الروسية قانوناً يُقنّن صلاحية بوتين لنشر القوات المسلحة الروسية في الخارج بهدف "حماية" المواطنين الروس من المحاكم الدولية — وهو تحدٍّ مباشر لنظام المحكمة الجنائية الدولية وللدول المشاركة في مراقبة الأسطول الوهمي في بحر البلطيق كالسويد. يضغط ماركوس ويشيل من SD على الحكومة السويدية عبر ثلاثة أدوات برلمانية متزامنة (استجواب + سؤالان مكتوبان)، فيما كشف مناورة Aurora 26 عن افتقار القوات السويدية لقدرات حرب الطائرات المسيّرة. يكسر حزب الوسط الائتلاف Tidö في لجنة KU حول قسم نقابات العمال في الاقتراح 258، مدعوماً برأي Lagrådet النقدي غير المعتاد.
+
+---
+
+### ملخص الاستخبارات ذات الأولوية
+
+**P1 — قانون القوات خارج الأراضي الروسية (حرج)**  
+يُنشئ قانون الدوما الصادر في 13 مايو 2026 ذريعةً قانونية للعمل العسكري الروسي ضد الدول المشاركة في تطبيق أحكام المحكمة الجنائية الدولية أو مراقبة الأسطول الوهمي. تتعرض السويد بشكل مزدوج: عبر عمليات بحر البلطيق والتزاماتها بموجب نظام روما الأساسي. يُعدّ رد الوزير Stenergard (موعده 27 مايو) أهم تصريح في السياسة الخارجية خلال مرحلة ما قبل الانتخابات.
+
+**P2 — فجوة طائرات مسيّرة في Aurora 26 (مرتفع)**  
+تغلّب مشغّلو الطائرات المسيّرة الأوكرانيون على القوات السويدية خلال المناورة. تفتقر السويد إلى مبدأ عقيدة UAV الهجومية وقدرات مكافحة الطائرات المسيّرة على نطاق واسع. سيُشير رد الوزير Jonson (موعده 27 مايو) إلى ما إذا كانت السويد ستسدّ هذه الفجوة قبل الانتخابات أم ستؤجل ذلك للبرلمان القادم.
+
+**P3 — الضغط للاعتراف بإيشكيريا (متوسط)**  
+يربط الاستجواب الصادر عن SD بشأن الاعتراف بجمهورية الشيشان إيشكيريا مسألةَ الاعتراف مباشرةً بالقانون الروسي خارج الأراضي. احتمالية الاعتراف السويدي: ~5٪. غير أن الاستجواب يُلزم الحكومة بصياغة سياستها تجاه روسيا على الملأ.
+
+**P4 — انقسام في حزمة الشفافية Prop 258 (متوسط-منخفض)**  
+يكسر حزب الوسط الائتلاف الحكومي في لجنة KU حول الإفصاح عن الإنفاق السياسي لنقابات العمال في الاقتراح 258. وصف Lagrådet الأساس القانوني بأنه "هش" (رأي صادر في 24 مارس 2026). النتيجة المتوقعة: تتجاوز الأغلبية الحكومية اعتراض حزب الوسط. إشارة انتخابية: يدافع حزب الوسط عن حرية تكوين الجمعيات في مواجهة أجندة شفافية LO التابعة لـSD.
+
+---
+
+### التقييمات الرئيسية (الجولة 2)
+
+1. **[HIGH]** يُعدّ قانون القوات الروسية خارج الأراضي (13 مايو 2026) أبرز تصعيد تشريعي روسي منذ الغزو عام 2022.
+2. **[HIGH]** ستُسدّ فجوة الطائرات المسيّرة في Aurora 26 من خلال الجمع بين الاقتناء السريع والتعاون مع أوكرانيا خلال 12 إلى 18 شهراً.
+3. **[MODERATE]** لن يُفضي القانون الروسي إلى حادثة عسكرية مباشرة ضد السويد قبل انتخابات سبتمبر 2026 — يبقى الردع سليماً.
+4. **[HIGH]** سيمرّ قسم النقابات في الاقتراح 258 في لجنة KU بأغلبية Tidö رغم اعتراض حزب الوسط.
+5. **[LOW]** لن تعترف السويد بجمهورية الشيشان إيشكيريا في دورة الريكسمِتة هذه.
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/executive-brief_da.md -->
+
+<!-- analysis-type: executive-brief -->
+<!-- article-date: 2026-05-16 -->
+<!-- subfolder: realtime-pulse -->
+<!-- pass: 2 (final) -->
+
+**Klassifikation**: PUBLIC | **Admiralty**: B2 | **Dato**: 2026-05-16
+
+---
+
+### Tre-sætnings lede
+
+Den 13. maj 2026 vedtog Ruslands statsduma en lov, der institutionaliserer Putins beføjelse til at indsætte russiske væbnede styrker i udlandet for at "beskytte" russiske statsborgere mod internationale domstole — en direkte udfordring mod ICC-systemet og mod stater som Sverige, der deltager i Østersøens skyggeflådeovervågning. SD's Markus Wiechel presser den svenske regering via tre samtidige parlamentariske instrumenter (interpellation + 2 skriftlige spørgsmål), mens Aurora 26-øvelsen har afsløret, at svenske styrker mangler dronekapacitet. Centerpartiet bryder med Tidö-koalitionen i KU-udvalget om fagforeningsdelen af prop. 258, støttet af en usædvanlig kritisk udtalelse fra Lagrådet.
+
+---
+
+### Prioriteret efterretningsoversigt
+
+**P1 — Ruslands ekstraterritorielle styrkelov (KRITISK)**  
+Statsdumaloven fra 13. maj 2026 skaber et juridisk påskud for russisk militær aktion mod stater, der deltager i ICC-håndhævelse eller skyggeflådeovervågning. Sverige er dobbelt eksponeret: via Østersø-operationer og sine forpligtelser i henhold til Romstatutten. Minister Stenergards svar (forfald 27. maj) er den mest afgørende udenrigspolitiske erklæring i perioden op til valget.
+
+**P2 — Aurora 26 dronegab (HØJ)**  
+Ukrainske droneoperatører overvældede svenske styrker under øvelsen. Sverige mangler både offensiv UAV-doktrin og moddronekapacitet i større målestok. Minister Jonsons svar (forfald 27. maj) vil signalere, om Sverige vil lukke dette gab inden valget eller udskyde det til næste parlament.
+
+**P3 — Pres for anerkendelse af Ichkeria (MIDDEL)**  
+SD's interpellation om anerkendelse af Den Tjetjenske Republik Ichkeria knytter anerkendelsessspørgsmålet direkte til den russiske ekstraterritorielle lov. Sveriges sandsynlighed for anerkendelse: ~5 %. Men interpellationen tvinger regeringen til at formulere sin Ruslandspolitik offentligt.
+
+**P4 — Prop 258 transparenspakkens opdeling (MIDDEL-LAV)**  
+Centerpartiet bryder med regeringskoalitionen i KU-udvalget om fagforeningernes politiske udgifter i Prop 258. Lagrådet kaldte det juridiske grundlag "skrøbeligt" (udtalelse 24. marts 2026). Sandsynligt udfald: regeringsflertallet tilsidesætter C's indvending. Valgssignal: C forsvarer foreningsfriheden mod SD's LO-transparensagenda.
+
+---
+
+### Nøglevurderinger (Gennemgang 2)
+
+1. **[HIGH]** Ruslands ekstraterritorielle styrkelov (13. maj 2026) er den mest betydningsfulde russiske lovgivningseskalering siden invasionen i 2022.
+2. **[HIGH]** Sveriges Aurora 26-dronegab vil blive lukket gennem en kombination af hurtig anskaffelse og Ukraine-samarbejde inden for 12–18 måneder.
+3. **[MODERATE]** Ruslands lov vil ikke udløse en direkte militær hændelse mod Sverige inden valget i september 2026 — afskrækkelse forbliver intakt.
+4. **[HIGH]** Prop 258's fagforeningsafsnit vil passere KU-udvalget med Tidö-flertal over C's indvending.
+5. **[LOW]** Sverige vil ikke anerkende Den Tjetjenske Republik Ichkeria i dette riksmøde.
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/executive-brief_de.md -->
+
+<!-- analysis-type: executive-brief -->
+<!-- article-date: 2026-05-16 -->
+<!-- subfolder: realtime-pulse -->
+<!-- pass: 2 (final) -->
+
+**Klassifizierung**: PUBLIC | **Admiralty**: B2 | **Datum**: 2026-05-16
+
+---
+
+### Drei-Satz-Einleitung
+
+Am 13. Mai 2026 verabschiedete die russische Staatsduma ein Gesetz, das Putins Befugnis institutionalisiert, russische Streitkräfte im Ausland einzusetzen, um russische Staatsbürger vor internationalen Gerichten zu „schützen" — eine direkte Herausforderung an das ICC-System und an Staaten wie Schweden, die an der Überwachung der baltischen Schattenflotte beteiligt sind. SDs Markus Wiechel setzt die schwedische Regierung unter Druck durch drei gleichzeitige parlamentarische Instrumente (Interpellation + 2 schriftliche Anfragen), während die Aurora-26-Übung aufgedeckt hat, dass schwedischen Streitkräften Drohnenkriegsführungskapazitäten fehlen. Die Zentrumspartei bricht mit der Tidö-Koalition im KU-Ausschuss über den Gewerkschaftsanteil von Prop. 258, unterstützt durch eine ungewöhnlich kritische Stellungnahme des Lagrådet.
+
+---
+
+### Prioritäre nachrichtendienstliche Übersicht
+
+**P1 — Russlands extraterritorialrechtliches Streitkräftegesetz (KRITISCH)**  
+Das Staatsdumagesetz vom 13. Mai 2026 schafft einen rechtlichen Vorwand für russische Militäraktionen gegen Staaten, die an der ICC-Durchsetzung oder der Schattenflottenüberwachung beteiligt sind. Schweden ist doppelt exponiert: über Ostseeoperationen und seine Verpflichtungen aus dem Römischen Statut. Die Antwort von Minister Stenergard (fällig am 27. Mai) ist die folgenreichste außenpolitische Aussage der Vorwahlperiode.
+
+**P2 — Aurora 26 Drohnen-Lücke (HOCH)**  
+Ukrainische Drohnenoperateure haben schwedische Streitkräfte während der Übung überfordert. Schweden fehlt sowohl eine offensive UAV-Doktrin als auch Abwehrmöglichkeiten gegen Drohnen in großem Maßstab. Die Antwort von Minister Jonson (fällig am 27. Mai) wird signalisieren, ob Schweden diese Lücke vor den Wahlen schließen oder auf das nächste Parlament verschieben wird.
+
+**P3 — Druck zur Anerkennung Icheriens (MITTEL)**  
+SDs Interpellation zur Anerkennung der Tschetschenischen Republik Ischkeria verknüpft die Anerkennungsfrage direkt mit dem russischen Extraterritorialgesetz. Schwedens Wahrscheinlichkeit einer Anerkennung: ~5 %. Die Interpellation zwingt die Regierung jedoch, ihre Russlandpolitik öffentlich zu formulieren.
+
+**P4 — Aufspaltung des Transparenzpakets Prop 258 (MITTEL-NIEDRIG)**  
+Die Zentrumspartei bricht mit der Regierungskoalition im KU-Ausschuss über die Gewerkschafts-Ausgaben-Transparenz in Prop 258. Der Lagrådet bezeichnete die Rechtsgrundlage als „fragil" (Stellungnahme vom 24. März 2026). Wahrscheinliches Ergebnis: Die Regierungsmehrheit überstimmt den Einwand der Zentrumspartei. Wahlsignal: C verteidigt die Vereinigungsfreiheit gegen SDs LO-Transparenzagenda.
+
+---
+
+### Haupteinschätzungen (Durchgang 2)
+
+1. **[HIGH]** Russlands extraterritorialrechtliches Streitkräftegesetz (13. Mai 2026) ist die bedeutendste russische Gesetzgebungseskalation seit der Invasion 2022.
+2. **[HIGH]** Schwedens Aurora-26-Drohnenlücke wird durch eine Kombination aus schneller Beschaffung und Ukraine-Zusammenarbeit innerhalb von 12–18 Monaten geschlossen.
+3. **[MODERATE]** Russlands Gesetz wird vor den Wahlen im September 2026 keinen direkten militärischen Zwischenfall gegen Schweden auslösen — die Abschreckung bleibt intakt.
+4. **[HIGH]** Der Gewerkschaftsanteil von Prop 258 wird den KU-Ausschuss mit Tidö-Mehrheit gegen den Einwand der Zentrumspartei passieren.
+5. **[LOW]** Schweden wird die Tschetschenische Republik Ischkeria in dieser Riksmöte nicht anerkennen.
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/executive-brief_es.md -->
+
+<!-- analysis-type: executive-brief -->
+<!-- article-date: 2026-05-16 -->
+<!-- subfolder: realtime-pulse -->
+<!-- pass: 2 (final) -->
+
+**Clasificación**: PUBLIC | **Admiralty**: B2 | **Fecha**: 2026-05-16
+
+---
+
+### Entradilla de tres frases
+
+El 13 de mayo de 2026, la Duma de Estado rusa aprobó una ley que institucionaliza la autoridad de Putin para desplegar fuerzas armadas rusas en el extranjero para «proteger» a los ciudadanos rusos de los tribunales internacionales — un desafío directo al sistema de la CPI y a los estados como Suecia que participan en la vigilancia de la flota fantasma en el Mar Báltico. Markus Wiechel (SD) presiona al gobierno sueco mediante tres instrumentos parlamentarios simultáneos (interpelación + 2 preguntas escritas), mientras que el ejercicio Aurora 26 ha revelado que las fuerzas suecas carecen de capacidades de guerra con drones. El Partido del Centro rompe con la coalición Tidö en el comité KU sobre la sección de sindicatos de la prop. 258, respaldado por un dictamen inusualmente crítico del Lagrådet.
+
+---
+
+### Resumen de inteligencia prioritaria
+
+**P1 — Ley rusa de fuerzas extraterritoriales (CRÍTICO)**  
+La ley de la Duma de Estado del 13 de mayo de 2026 crea un pretexto legal para acciones militares rusas contra estados que participan en la aplicación de la CPI o en la vigilancia de la flota fantasma. Suecia está doblemente expuesta: a través de las operaciones en el Mar Báltico y sus obligaciones bajo el Estatuto de Roma. La respuesta del ministro Stenergard (plazo el 27 de mayo) es la declaración de política exterior más determinante del período preelectoral.
+
+**P2 — Brecha de drones Aurora 26 (ALTO)**  
+Los operadores de drones ucranianos superaron a las fuerzas suecas durante el ejercicio. Suecia carece tanto de doctrina UAV ofensiva como de capacidades antidrones a gran escala. La respuesta del ministro Jonson (plazo el 27 de mayo) indicará si Suecia cerrará esta brecha antes de las elecciones o la aplazará hasta el próximo parlamento.
+
+**P3 — Presión por el reconocimiento de Ichkeria (MEDIO)**  
+La interpelación del SD sobre el reconocimiento de la República Chechena de Ichkeria vincula la cuestión del reconocimiento directamente con la ley extraterritorial rusa. Probabilidad de reconocimiento por parte de Suecia: ~5 %. Pero la interpelación obliga al gobierno a formular públicamente su política hacia Rusia.
+
+**P4 — División del paquete de transparencia Prop 258 (MEDIO-BAJO)**  
+El Partido del Centro rompe con la coalición de gobierno en el comité KU sobre la transparencia de los gastos políticos de los sindicatos en la Prop 258. El Lagrådet calificó la base legal de «frágil» (dictamen del 24 de marzo de 2026). Resultado probable: la mayoría gubernamental anula la objeción del Partido del Centro. Señal electoral: el Partido del Centro defiende la libertad de asociación frente a la agenda de transparencia LO del SD.
+
+---
+
+### Valoraciones clave (Pasada 2)
+
+1. **[HIGH]** La ley rusa de fuerzas extraterritoriales (13 de mayo de 2026) es la escalada legislativa rusa más significativa desde la invasión de 2022.
+2. **[HIGH]** La brecha de drones Aurora 26 de Suecia se cerrará mediante una combinación de adquisición rápida y cooperación con Ucrania en un plazo de 12 a 18 meses.
+3. **[MODERATE]** La ley rusa no provocará un incidente militar directo contra Suecia antes de las elecciones de septiembre de 2026 — la disuasión permanece intacta.
+4. **[HIGH]** La sección sindical de la Prop 258 superará el comité KU con mayoría Tidö frente a la objeción del Partido del Centro.
+5. **[LOW]** Suecia no reconocerá la República Chechena de Ichkeria durante este riksmöte.
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/executive-brief_fi.md -->
+
+<!-- analysis-type: executive-brief -->
+<!-- article-date: 2026-05-16 -->
+<!-- subfolder: realtime-pulse -->
+<!-- pass: 2 (final) -->
+
+**Luokitus**: PUBLIC | **Admiralty**: B2 | **Päivämäärä**: 2026-05-16
+
+---
+
+### Kolmen lauseen johdanto
+
+Venäjän valtionduuma hyväksyi 13. toukokuuta 2026 lain, joka institutionalisoi Putinin valtuudet lähettää venäläisiä asevoimia ulkomaille suojellakseen venäläisiä kansalaisia kansainvälisiltä tuomioistuimilta — suora haaste ICC-järjestelmälle ja Itämeren varjolaivaston valvontaan osallistuville valtioille kuten Ruotsille. SD:n Markus Wiechel painostaa Ruotsin hallitusta kolmella samanaikaisella parlamentaarisella välineellä (interpellaatio + 2 kirjallista kysymystä), kun taas Aurora 26 -harjoitus paljasti, että Ruotsin joukoilta puuttuu drone-sodankäyntikyky. Keskustapuolue rikkoo Tidö-koalition kanssa KU-valiokunnassa prop. 258:n ammattiliittoliittoa koskevasta osasta, ja saa tukea Lagrådetin poikkeuksellisen kriittisestä lausunnosta.
+
+---
+
+### Prioriteettitiedustelukatsaus
+
+**P1 — Venäjän eksterritoriaaliset voimalait (KRIITTINEN)**  
+Valtionduuman laki 13. toukokuuta 2026 luo oikeudellisen tekosyyn Venäjän sotilaallisille toimille ICC:n täytäntöönpanoon tai varjolaivaston valvontaan osallistuvia valtioita vastaan. Ruotsi on kaksinkertaisesti altistunut: Itämeren operaatioiden kautta ja Rooman peruskirjan velvoitteittensa kautta. Ministeri Stenergadin vastaus (eräpäivä 27. toukokuuta) on ennen vaaleja tärkein ulkopoliittinen lausunto.
+
+**P2 — Aurora 26 drone-aukko (KORKEA)**  
+Ukrainalaiset droneoperaattorit ylikuormittivat ruotsalaisia joukkoja harjoituksen aikana. Ruotsilla ei ole offensiivista UAV-doktriinia eikä vastadronekykyä laajassa mittakaavassa. Ministeri Jonssonin vastaus (eräpäivä 27. toukokuuta) kertoo, aikooko Ruotsi sulkea tämän aukon ennen vaaleja vai siirtää sen seuraavalle parlamentille.
+
+**P3 — Ichkerian tunnustamispaine (KOHTALAINEN)**  
+SD:n interpellaatio Tšetšenian tasavallan Ichkerian tunnustamisesta kytkee tunnustamiskysymyksen suoraan Venäjän eksterritoriaaliseen lakiin. Ruotsin tunnustamistodennäköisyys: ~5 %. Interpellaatio kuitenkin pakottaa hallituksen muotoilemaan Venäjä-politiikkansa julkisesti.
+
+**P4 — Prop 258 läpinäkyvyyspaketin hajoaminen (KOHTALAINEN-MATALA)**  
+Keskustapuolue rikkoo hallituskoalition kanssa KU-valiokunnassa Prop 258:n ammattiliittojen poliittisia menoja koskevassa osiossa. Lagrådet kutsui oikeudellista perustaa "hauraaksi" (lausunto 24. maaliskuuta 2026). Todennäköinen tulos: hallitusenemmistö ohittaa Keskustapuolueen vastalauseen. Vaalimerkki: Keskustapuolue puolustaa yhdistymisvapautta SD:n LO-läpinäkyvyysagendaa vastaan.
+
+---
+
+### Keskeiset arvioinnit (Kierros 2)
+
+1. **[HIGH]** Venäjän eksterritoriaaliset voimalait (13. toukokuuta 2026) ovat merkittävin venäläinen lainsäädännöllinen eskalaatio vuoden 2022 invaasion jälkeen.
+2. **[HIGH]** Ruotsin Aurora 26 drone-aukko suljetaan nopean hankinnan ja Ukraina-yhteistyön yhdistelmällä 12–18 kuukauden kuluessa.
+3. **[MODERATE]** Venäjän laki ei johda suoraan sotilaalliseen välikohtaukseen Ruotsia vastaan ennen syyskuun 2026 vaaleja — pelote pysyy ehyenä.
+4. **[HIGH]** Prop 258:n ammattiliittoliittoa koskeva osa hyväksytään KU-valiokunnassa Tidö-enemmistöllä Keskustapuolueen vastalauseesta huolimatta.
+5. **[LOW]** Ruotsi ei tunnusta Tšetšenian tasavaltaa Ichkeriaa tässä riksmötessä.
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/executive-brief_fr.md -->
+
+<!-- analysis-type: executive-brief -->
+<!-- article-date: 2026-05-16 -->
+<!-- subfolder: realtime-pulse -->
+<!-- pass: 2 (final) -->
+
+---
+
+### Introduction en trois phrases
+
+Le 13 mai 2026, la Douma d'État russe a adopté une loi institutionnalisant le pouvoir de Poutine de déployer des forces armées russes à l'étranger pour « protéger » les citoyens russes contre les tribunaux internationaux — un défi direct au système de la CPI et aux États comme la Suède qui participent à la surveillance de la flotte fantôme en mer Baltique. Markus Wiechel (SD) presse le gouvernement suédois via trois instruments parlementaires simultanés (interpellation + 2 questions écrites), tandis que l'exercice Aurora 26 a révélé que les forces suédoises manquent de capacités de guerre par drones. Le Parti du Centre rompt avec la coalition Tidö au sein de la commission KU sur la section relative aux syndicats de la prop. 258, soutenu par un avis inhabituellement critique du Lagrådet.
+
+---
+
+### Synthèse de renseignement prioritaire
+
+**P1 — Loi russe sur les forces extraterritoriales (CRITIQUE)**  
+La loi de la Douma d'État du 13 mai 2026 crée un prétexte juridique pour des actions militaires russes contre les États participant à l'application des décisions de la CPI ou à la surveillance de la flotte fantôme. La Suède est doublement exposée : via les opérations en mer Baltique et ses obligations au titre du Statut de Rome. La réponse du ministre Stenergard (attendue le 27 mai) est la déclaration de politique étrangère la plus déterminante de la période pré-électorale.
+
+**P2 — Lacune de drones Aurora 26 (ÉLEVÉ)**  
+Les opérateurs de drones ukrainiens ont submergé les forces suédoises lors de l'exercice. La Suède manque à la fois de doctrine UAV offensive et de capacités anti-drones à grande échelle. La réponse du ministre Jonson (attendue le 27 mai) indiquera si la Suède comblera cette lacune avant les élections ou la reportera au prochain parlement.
+
+**P3 — Pression pour la reconnaissance de l'Itchkérie (MOYEN)**  
+L'interpellation du SD sur la reconnaissance de la République tchétchène d'Itchkérie lie la question de la reconnaissance directement à la loi extraterritoriale russe. Probabilité de reconnaissance par la Suède : ~5 %. Mais l'interpellation contraint le gouvernement à formuler publiquement sa politique vis-à-vis de la Russie.
+
+**P4 — Division du paquet de transparence Prop 258 (MOYEN-BAS)**  
+Le Parti du Centre rompt avec la coalition gouvernementale au sein de la commission KU sur la transparence des dépenses politiques des syndicats dans la Prop 258. Le Lagrådet a qualifié la base juridique de « fragile » (avis du 24 mars 2026). Résultat probable : la majorité gouvernementale passe outre l'objection du Parti du Centre. Signal électoral : le Parti du Centre défend la liberté d'association contre l'agenda de transparence LO du SD.
+
+---
+
+### Évaluations clés (Passe 2)
+
+1. **[HIGH]** La loi russe sur les forces extraterritoriales (13 mai 2026) est l'escalade législative russe la plus significative depuis l'invasion de 2022.
+2. **[HIGH]** La lacune de drones Aurora 26 de la Suède sera comblée par une combinaison d'acquisitions rapides et de coopération avec l'Ukraine dans un délai de 12 à 18 mois.
+3. **[MODERATE]** La loi russe ne déclenchera pas d'incident militaire direct contre la Suède avant les élections de septembre 2026 — la dissuasion reste intacte.
+4. **[HIGH]** La section syndicale de la Prop 258 passera en commission KU avec la majorité Tidö malgré l'objection du Parti du Centre.
+5. **[LOW]** La Suède ne reconnaîtra pas la République tchétchène d'Itchkérie durant cette Riksmöte.
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# תקציר מנהלים — דופק בזמן אמת 2026-05-16
+
+<!-- analysis-type: executive-brief -->
+<!-- article-date: 2026-05-16 -->
+<!-- subfolder: realtime-pulse -->
+<!-- pass: 2 (final) -->
+
+**סיווג**: PUBLIC | **Admiralty**: B2 | **תאריך**: 2026-05-16
+
+---
+
+### הקדמה בשלוש משפטות
+
+ב-13 במאי 2026 אישרה הדומא הרוסית חוק המוסד את סמכות פוטין לפרוס כוחות מסולחים רוסיים בחו"ל כדי "להגן" על אזרחים רוסיים מפני בתי משפט בינלאומיים — אתגר ישיר למערכת ה-ICC ולמדינות כמו שוודיה המשתתפות בניטור הצי הצללים בים הבלטי. מרקוס וייכל (SD) לוחץ על הממשלה השוודית דרך שלושה כלים פרלמנטריים בו-זמנית (אינטרפלציה + 2 שאלות כתובות), בעוד תרגיל Aurora 26 חשף שלכוחות השוודיים חסרים יכולות לחימה בטחת כלי טיס בלתי מאויישים. מפלגת המרכז שוברת את ברית Tidö בוועדת KU על חלק ארגוני העובדים בהצעה 258, בגיבוי חוות דעת ביקורתית חריגה של הלגרוד.
+
+---
+
+### סיכום המודיעין בעדיפות
+
+**P1 — חוק הכוחות מחוץ לשטח רוסיה (קריטי)**  
+חוק הדומא מ-13 במאי 2026 יוצר עילה משפטית לפעולה צבאית רוסית נגד מדינות המשתתפות באכיפת ה-ICC או בניטור הצי הצללים. שוודיה חשופה בצורה כפולה: דרך מבצעי ים הבלטי וחובותיה לפי אמנת רומא. תגובת שר Stenergard (מועד 27 במאי) היא ההצהרה המדינית החשובה ביותר בתקופה שלפני הבחירות.
+
+**P2 — פער כלי הטיס הבלתי מאויישים ב-Aurora 26 (גבוה)**  
+מפעילי רחפנים אוקראינים גברו על הכוחות השוודיים במהלך התרגיל. לשוודיה חסרים הן עקרין UAV התקפי והן יכולות נגד-רחפן בהיקף. תגובת שר Jonson (מועד 27 במאי) תאותת האם שוודיה תסגור פער זה לפני הבחירות או תדחה אותו לפרלמנט הבא.
+
+**P3 — לחץ להכרה בצ'צ'ניה איצ'קריה (בינוני)**  
+האינטרפלציה של SD בדבר הכרה ברפובליקת צ'צ'ניה-איצ'קריה קושרת את שאלת ההכרה ישירות לחוק החוץ-טריטוריאלי הרוסי. הסתברות שוודיה להכרה: ~5%. אך האינטרפלציה מחייבת את הממשלה לנסח את מדיניות רוסיה שלה בפומבי.
+
+**P4 — פיצול חבילת השקיפות Prop 258 (בינוני-נמוך)**  
+מפלגת המרכז שוברת את קואליציית הממשלה בוועדת KU על שקיפות ההוצאות הפוליטיות של ארגוני העובדים בהצעה 258. הלגרוד כינה את הבסיס המשפטי "שביר" (חוות דעת מ-24 במרץ 2026). תוצאה צפויה: הרוב הממשלתי מתגבר על התנגדות מפלגת המרכז. אות בחירות: מפלגת המרכז מגינה על חופש ההתאגדות נגד סדר-יום שקיפות LO של SD.
+
+---
+
+### הערכות מפתח (מעבר 2)
+
+1. **[HIGH]** חוק הכוחות החוץ-טריטוריאלי הרוסי (13 במאי 2026) הוא ההסלמה החקיקתית הרוסית המשמעותית ביותר מאז הפלישה ב-2022.
+2. **[HIGH]** פער כלי הטיס הבלתי מאויישים ב-Aurora 26 של שוודיה ייסגר דרך שילוב של רכש מהיר ושיתוף פעולה עם אוקראינה בתוך 12–18 חודשים.
+3. **[MODERATE]** החוק הרוסי לא יגרום לאירוע צבאי ישיר נגד שוודיה לפני בחירות ספטמבר 2026 — הרתעה נשארת שלמה.
+4. **[HIGH]** חלק ארגוני העובדים בהצעה 258 יעבור בוועדת KU ברוב Tidö על פני התנגדות מפלגת המרכז.
+5. **[LOW]** שוודיה לא תכיר ברפובליקת צ'צ'ניה-איצ'קריה במהלך ריקסמטה זו.
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/executive-brief_ja.md -->
+
+<!-- analysis-type: executive-brief -->
+<!-- article-date: 2026-05-16 -->
+<!-- subfolder: realtime-pulse -->
+<!-- pass: 2 (final) -->
+
+**機密区分**: PUBLIC | **Admiralty**: B2 | **日付**: 2026-05-16
+
+---
+
+### 3文リード
+
+2026年5月13日、ロシア国家院（国家ドゥーマ）は、プーチン大統領がロシア市民を国際裁判所から「保護」するために海外にロシア軍を展開する権限を制度化する法律を可決した。これはICCシステムへの直接的な挑戦であり、バルト海での影の艦隊監視に参加しているスウェーデンなどの国々への挑戦でもある。SD（スウェーデン民主党）のマルクス・ヴィーヒェルは、3つの同時並行する議会手段（質問+2つの書面質問）を通じてスウェーデン政府に圧力をかけており、Aurora 26演習ではスウェーデン軍がドローン戦能力を欠いていることが明らかになった。中央党はKU委員会でプロポジション258の労働組合条項を巡りTidö連立を離脱し、ラグローデットの異例に批判的な意見書を受けて支持を得た。
+
+---
+
+### 優先情報要約
+
+**P1 — ロシアの域外軍事力法（緊急）**  
+2026年5月13日の国家ドゥーマ法は、ICC執行または影の艦隊監視に参加する国家に対するロシアの軍事行動の法的口実を生み出す。スウェーデンはバルト海作戦とロoma規程上の義務を通じて二重に露出している。ステーネルガード大臣の回答（期限5月27日）は、選挙前期間における最も重要な外交政策声明となる。
+
+**P2 — Aurora 26ドローンギャップ（高）**  
+ウクライナのドローン操縦者が演習中にスウェーデン軍を圧倒した。スウェーデンは攻撃的なUAVドクトリンと大規模な対ドローン能力の両方を欠いている。ヨンソン大臣の回答（期限5月27日）は、スウェーデンが選挙前にこのギャップを埋めるか、次の議会に先送りするかを示す。
+
+**P3 — イチケリア承認圧力（中）**  
+チェチェン共和国イチケリアの承認に関するSDの質問は、承認問題をロシアの域外法に直接結びつける。スウェーデンの承認確率：約5%。ただし、この質問により政府はロシア政策を公式に明確にすることを余儀なくされる。
+
+**P4 — プロポジション258透明性パッケージの分裂（中-低）**  
+中央党はKU委員会でプロポジション258の労働組合の政治支出開示条項を巡り政府連立を離脱した。ラグローデットは法的根拠を「脆弱」と呼んだ（2026年3月24日意見書）。予想結果：政府多数派が中央党の反対を無効にする。選挙シグナル：中央党がSDのLO透明性アジェンダに対して結社の自由を擁護。
+
+---
+
+### 主要判断（パス2）
+
+1. **[HIGH]** ロシアの域外軍事力法（2026年5月13日）は2022年の侵攻以来、最も重大なロシアの立法エスカレーションである。
+2. **[HIGH]** スウェーデンのAurora 26ドローンギャップは、12〜18ヶ月以内に迅速な調達とウクライナとの協力の組み合わせによって埋められるだろう。
+3. **[MODERATE]** ロシアの法律は2026年9月の選挙前にスウェーデンへの直接的な軍事事件を引き起こさない——抑止力は維持される。
+4. **[HIGH]** プロポジション258の労働組合条項は中央党の反対にもかかわらずTidö多数によってKU委員会を通過するだろう。
+5. **[LOW]** スウェーデンは今回のリクスメーテでチェチェン共和国イチケリアを承認しないだろう。
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/executive-brief_ko.md -->
+
+<!-- analysis-type: executive-brief -->
+<!-- article-date: 2026-05-16 -->
+<!-- subfolder: realtime-pulse -->
+<!-- pass: 2 (final) -->
+
+**분류**: PUBLIC | **Admiralty**: B2 | **날짜**: 2026-05-16
+
+---
+
+### 세 문장 요약
+
+2026년 5월 13일, 러시아 국가두마는 국제 법원으로부터 러시아 시민을 '보호'하기 위해 해외에 러시아 군대를 파견할 수 있는 푸틴의 권한을 제도화하는 법률을 통과시켰다. 이는 ICC 체제에 대한 직접적인 도전이자 발트해 그림자 함대 감시에 참여하는 스웨덴 같은 국가들에 대한 도전이다. SD의 마르쿠스 비에셀은 세 가지 동시 의회 수단(대정부 질문 + 2건의 서면 질문)을 통해 스웨덴 정부를 압박하고 있으며, 오로라 26 훈련에서 스웨덴 군이 드론 전쟁 능력이 부족하다는 사실이 드러났다. 중앙당은 Lagrådet의 이례적으로 비판적인 의견을 근거로 KU 위원회에서 제안 258의 노동조합 조항을 둘러싸고 티되 연립에서 이탈했다.
+
+---
+
+### 우선 정보 요약
+
+**P1 — 러시아의 역외 병력법 (위기)**  
+2026년 5월 13일 국가두마 법률은 ICC 집행이나 그림자 함대 감시에 참여하는 국가들에 대한 러시아 군사 행동의 법적 구실을 만든다. 스웨덴은 발트해 작전과 로마 규정 의무를 통해 이중으로 노출되어 있다. 스테네르가드 장관의 답변(5월 27일 마감)은 선거 전 기간 중 가장 중요한 외교 정책 성명이다.
+
+**P2 — 오로라 26 드론 격차 (높음)**  
+우크라이나 드론 조종사들이 훈련 중 스웨덴 군을 압도했다. 스웨덴은 공격적인 UAV 독트린과 대규모 대드론 능력 모두 부족하다. 욘손 장관의 답변(5월 27일 마감)은 스웨덴이 선거 전에 이 격차를 해소할지 아니면 다음 의회로 연기할지 신호를 보낼 것이다.
+
+**P3 — 이치케리아 승인 압박 (보통)**  
+이치케리아 체첸 공화국 승인에 관한 SD 질의는 승인 문제를 러시아 역외 법률과 직접 연결한다. 스웨덴의 승인 가능성: 약 5%. 그러나 이 질의는 정부가 러시아 정책을 공개적으로 명확히 하도록 강제한다.
+
+**P4 — 제안 258 투명성 패키지 분열 (보통-낮음)**  
+중앙당은 제안 258의 노동조합 정치 지출 공개 조항을 둘러싸고 KU 위원회에서 정부 연립에서 이탈했다. Lagrådet는 법적 근거를 '취약'하다고 불렀다(2026년 3월 24일 의견서). 예상 결과: 정부 다수가 중앙당의 반대를 무효화. 선거 신호: 중앙당이 SD의 LO 투명성 의제에 맞서 결사의 자유를 옹호.
+
+---
+
+### 주요 판단 (2차 검토)
+
+1. **[HIGH]** 러시아의 역외 병력법(2026년 5월 13일)은 2022년 침공 이후 가장 중요한 러시아 입법 에스컬레이션이다.
+2. **[HIGH]** 스웨덴의 오로라 26 드론 격차는 12~18개월 이내에 신속 조달과 우크라이나 협력의 조합으로 해소될 것이다.
+3. **[MODERATE]** 러시아 법률은 2026년 9월 선거 전에 스웨덴에 대한 직접적인 군사 사건을 유발하지 않을 것이다 — 억지력이 유지된다.
+4. **[HIGH]** 제안 258의 노동조합 조항은 중앙당의 반대에도 불구하고 티되 다수로 KU 위원회를 통과할 것이다.
+5. **[LOW]** 스웨덴은 이번 릭스메테에서 이치케리아 체첸 공화국을 승인하지 않을 것이다.
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/executive-brief_nl.md -->
+
+<!-- analysis-type: executive-brief -->
+<!-- article-date: 2026-05-16 -->
+<!-- subfolder: realtime-pulse -->
+<!-- pass: 2 (final) -->
+
+**Classificatie**: PUBLIC | **Admiralty**: B2 | **Datum**: 2026-05-16
+
+---
+
+### Drie-zins inleiding
+
+Op 13 mei 2026 heeft de Russische Staatsdoema een wet aangenomen die Poetins bevoegdheid institutionaliseert om Russische strijdkrachten in het buitenland in te zetten om Russische staatsburgers te "beschermen" tegen internationale rechtbanken — een directe uitdaging aan het ICC-systeem en aan staten zoals Zweden die deelnemen aan de bewaking van de schaduwvloot in de Oostzee. Markus Wiechel (SD) zet de Zweedse regering onder druk via drie gelijktijdige parlementaire instrumenten (interpellatie + 2 schriftelijke vragen), terwijl de Aurora 26-oefening heeft aangetoond dat de Zweedse strijdkrachten ontbreken aan droneoorlogsvoeringsvermogens. De Centrumpartij breekt met de Tidö-coalitie in de KU-commissie over het vakbondsdeel van prop. 258, gesteund door een ongebruikelijk kritisch advies van de Lagrådet.
+
+---
+
+### Prioritair inlichtingenoverzicht
+
+**P1 — Russische extraterritoriale strijdkrachtenwet (KRITIEK)**  
+De Staatsdoemawet van 13 mei 2026 schept een juridisch voorwendsel voor Russische militaire acties tegen staten die deelnemen aan ICC-handhaving of schaduwvlootbewaking. Zweden is dubbel blootgesteld: via Oostzee-operaties en zijn verplichtingen onder het Statuut van Rome. De reactie van minister Stenergard (uiterlijk 27 mei) is de meest bepalende buitenlandse-politieke verklaring van de pre-verkiezingsperiode.
+
+**P2 — Aurora 26 drone-lacune (HOOG)**  
+Oekraïense droneoperators hebben de Zweedse strijdkrachten tijdens de oefening overweldigd. Zweden mist zowel een offensieve UAV-doctrine als tegendroonemogelijkheden op grote schaal. De reactie van minister Jonson (uiterlijk 27 mei) zal aangeven of Zweden deze lacune vóór de verkiezingen zal dichten of dit naar het volgende parlement zal uitstellen.
+
+**P3 — Druk voor erkenning van Itsjkerië (GEMIDDELD)**  
+De SD-interpellatie over de erkenning van de Tsjetsjeense Republiek Itsjkerië koppelt de erkenningskwestie direct aan de Russische extraterritoriale wet. Waarschijnlijkheid van erkenning door Zweden: ~5 %. Maar de interpellatie dwingt de regering haar Rusland-beleid publiekelijk te formuleren.
+
+**P4 — Splitsing van het transparentiepakket Prop 258 (GEMIDDELD-LAAG)**  
+De Centrumpartij breekt met de regeringscoalitie in de KU-commissie over de transparantie van de politieke uitgaven van vakbonden in Prop 258. De Lagrådet noemde de juridische basis "kwetsbaar" (advies van 24 maart 2026). Waarschijnlijke uitkomst: de regeringsmeerderheid passeert het bezwaar van de Centrumpartij. Verkiezingssignaal: Centrumpartij verdedigt de vrijheid van vereniging tegen de LO-transparantieagenda van SD.
+
+---
+
+### Kernbeoordelingen (Doorgang 2)
+
+1. **[HIGH]** De Russische extraterritoriale strijdkrachtenwet (13 mei 2026) is de meest significante Russische wetgevingsescalatie sinds de invasie van 2022.
+2. **[HIGH]** De Aurora 26-drone-lacune van Zweden zal worden gedicht door een combinatie van snelle aanschaf en samenwerking met Oekraïne binnen 12–18 maanden.
+3. **[MODERATE]** De Russische wet zal vóór de verkiezingen van september 2026 geen direct militair incident tegen Zweden uitlokken — de afschrikking blijft intact.
+4. **[HIGH]** Het vakbondsdeel van Prop 258 zal de KU-commissie passeren met een Tidö-meerderheid ondanks het bezwaar van de Centrumpartij.
+5. **[LOW]** Zweden zal de Tsjetsjeense Republiek Itsjkerië tijdens deze riksmöte niet erkennen.
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/executive-brief_no.md -->
+
+<!-- analysis-type: executive-brief -->
+<!-- article-date: 2026-05-16 -->
+<!-- subfolder: realtime-pulse -->
+<!-- pass: 2 (final) -->
+
+**Klassifikasjon**: PUBLIC | **Admiralty**: B2 | **Dato**: 2026-05-16
+
+---
+
+### Tre-setnings lede
+
+Den 13. mai 2026 vedtok Russlands statsdumaen en lov som institusjonaliserer Putins myndighet til å deployere russiske væpnede styrker i utlandet for å «beskytte» russiske borgere mot internasjonale domstoler — en direkte utfordring mot ICC-systemet og mot stater som Sverige som deltar i Østersjøens skyggeflåteovervåking. SD's Markus Wiechel presser den svenske regjeringen via tre samtidige parlamentariske instrumenter (interpellasjon + 2 skriftlige spørsmål), mens Aurora 26-øvelsen har avdekket at svenske styrker mangler dronekrigskapasitet. Sentrumspartiet bryter med Tidö-koalisjonen i KU-utvalget om fagforeningsdelen av prop. 258, støttet av en uvanlig kritisk uttalelse fra Lagrådet.
+
+---
+
+### Prioritert etterretningsoversikt
+
+**P1 — Russlands ekstraterritorielle styrkelov (KRITISK)**  
+Statsdumaloven fra 13. mai 2026 skaper et juridisk påskudd for russisk militær aksjon mot stater som deltar i ICC-håndhevelse eller skyggeflåteovervåking. Sverige er dobbelt eksponert: via Østersjø-operasjoner og sine forpliktelser under Roma-vedtektene. Minister Stenergards svar (forfall 27. mai) er den mest avgjørende utenrikspolitiske uttalelsen i perioden før valget.
+
+**P2 — Aurora 26 dronegap (HØY)**  
+Ukrainske droneoperatører overvant svenske styrker under øvelsen. Sverige mangler både offensiv UAV-doktrin og motdronekapasitet i stor skala. Minister Jonsons svar (forfall 27. mai) vil signalisere om Sverige vil lukke dette gapet før valget eller utsette det til neste parlament.
+
+**P3 — Press for anerkjennelse av Ichkeria (MIDDELS)**  
+SD's interpellasjon om anerkjennelse av Den tsjetsjenske republikken Ichkeria kobler anerkjennelsesspørsmålet direkte til den russiske ekstraterritorielle loven. Sveriges sannsynlighet for anerkjennelse: ~5 %. Men interpellasjonen tvinger regjeringen til å formulere sin Russland-politikk offentlig.
+
+**P4 — Prop 258 transparenspakkens splittelse (MIDDELS-LAV)**  
+Sentrumspartiet bryter med regjeringskoalisjonen i KU-utvalget om fagforeningenes politiske utgifter i Prop 258. Lagrådet kalte det juridiske grunnlaget «skjørt» (uttalelse 24. mars 2026). Sannsynlig utfall: regjeringsflertallet overstyrer C's innvending. Valgssignal: C forsvarer foreningsfriheten mot SD's LO-transparensagenda.
+
+---
+
+### Nøkkelvurderinger (Gjennomgang 2)
+
+1. **[HIGH]** Russlands ekstraterritorielle styrkelov (13. mai 2026) er den mest betydningsfulle russiske lovgivningseskaleringen siden invasjonen i 2022.
+2. **[HIGH]** Sveriges Aurora 26-dronegap vil bli lukket gjennom en kombinasjon av rask anskaffelse og Ukraina-samarbeid innen 12–18 måneder.
+3. **[MODERATE]** Russlands lov vil ikke utløse en direkte militær hendelse mot Sverige før valget i september 2026 — avskrekkingen forblir intakt.
+4. **[HIGH]** Prop 258's fagforeningsavsnitt vil passere KU-utvalget med Tidö-flertall over C's innvending.
+5. **[LOW]** Sverige vil ikke anerkjenne Den tsjetsjenske republikken Ichkeria i dette riksmøtet.
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/executive-brief_sv.md -->
+
+<!-- analysis-type: executive-brief -->
+<!-- article-date: 2026-05-16 -->
+<!-- subfolder: realtime-pulse -->
+<!-- pass: 2 (final) -->
+
+**Klassificering**: PUBLIC | **Admiralty**: B2 | **Datum**: 2026-05-16
+
+---
+
+### Tre-menings ingress
+
+Den 13 maj 2026 antog Rysslands statsduma en lag som institutionaliserar Putins befogenhet att insätta ryska väpnade styrkor i utlandet för att "skydda" ryska medborgare från internationella domstolar — en direkt utmaning mot ICC-systemet och mot stater som Sverige som deltar i Östersjöns skuggflottaövervakning. SD:s Markus Wiechel pressar den svenska regeringen via tre simultana parlamentariska instrument (interpellation + 2 skriftliga frågor) medan Aurora 26-övningen avslöjat att svenska styrkor saknar drönarkrigförmåga. Centerpartiet bryter med Tidökoalitionen i KU-utskottet om trade union-delen av prop. 258, med stöd av ett ovanligt kritiskt Lagrådsyttrande.
+
+---
+
+### Prioriterad underrättelseöversikt
+
+**P1 — Rysslands extraterritoriella styrkelag (KRITISK)**  
+Statsdumalagen från 13 maj 2026 skapar en rättslig förevändning för rysk militär aktion mot stater som deltar i ICC-verkställighet eller skuggflottaövervakning. Sverige är dubbelt exponerat: via Östersjöoperationer och sina skyldigheter enligt Romstadgan. Minister Stenergards svar (förfaller 27 maj) är det mest avgörande utrikespolitiska uttalandet under förvalvalsperioden.
+
+**P2 — Aurora 26 drönarglapp (HÖG)**  
+Ukrainska drönarpilöter överväldigade svenska styrkor under övningen. Sverige saknar både offensiv UAV-doktrin och motdrönarbeförmåga i skala. Minister Jonsons svar (förfaller 27 maj) signalerar om Sverige kommer täppa till detta glapp före valet eller skjuta upp det till nästa riksdag.
+
+**P3 — Icheriatrycket om erkännande (MEDEL)**  
+SD:s interpellation om erkännandet av Tjetjeniens republik Ichkeria kopplar erkännandefrågan direkt till den ryska extraterritoriella lagen. Sveriges sannolikhet för erkännande: ~5 %. Men interpellationen tvingar regeringen att formulera sin Rysslandspolitik offentligt.
+
+**P4 — Prop 258 transparenspaketets splittring (MEDEL-LÅG)**  
+Centerpartiet bryter med regeringskoalitionen i KU-utskottet i transparenssektionen om fackföreningarnas politiska utgifter i Prop 258. Lagrådet kallade den rättsliga grunden "skör" (yttrande 24 mars 2026). Troligt utfall: regeringsmajoriteten åsidosätter C:s invändning. Valssignal: C försvarar föreningsfriheten mot SD:s LO-transparensagenda.
+
+---
+
+### Nyckelbedömningar (Pass 2)
+
+1. **[HIGH]** Rysslands extraterritoriella styrkelag (13 maj 2026) är den mest betydande ryska lagstiftningsupptrappningen sedan invasionen 2022.
+2. **[HIGH]** Sveriges Aurora 26-drönarglapp kommer att täppas till genom en kombination av snabb upphandling och Ukrainasamarbete inom 12–18 månader.
+3. **[MODERATE]** Rysslands lag kommer inte att utlösa en direkt militär incident mot Sverige före valet i september 2026 — avskräckningen förblir intakt.
+4. **[HIGH]** Prop 258:s fackföreningsdel kommer att passera KU-utskottet med Tidö-majoritet mot C:s invändning.
+5. **[LOW]** Sverige kommer inte att erkänna Tjetjeniens republik Ichkeria under detta riksmöte.
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/executive-brief_zh.md -->
+
+<!-- analysis-type: executive-brief -->
+<!-- article-date: 2026-05-16 -->
+<!-- subfolder: realtime-pulse -->
+<!-- pass: 2 (final) -->
+
+**密级**: PUBLIC | **Admiralty**: B2 | **日期**: 2026-05-16
+
+---
+
+### 三句导语
+
+2026年5月13日，俄罗斯国家杜马通过一项法律，将普京向海外派遣俄罗斯武装部队以"保护"俄罗斯公民免受国际法院追诉的权力制度化——这是对国际刑事法院体系的直接挑战，也是对参与波罗的海影子船队监控的瑞典等国家的挑战。瑞典民主党的马库斯·维赫尔通过三项同步议会手段（质询+2个书面问题）向瑞典政府施压，而极光26演习则揭示瑞典军队缺乏无人机作战能力。中央党在KU委员会中就第258号议案的工会部分与蒂德联盟决裂，获得立法委员会（Lagrådet）罕见批评性意见的支持。
+
+---
+
+### 优先情报摘要
+
+**P1 — 俄罗斯域外武力法（危急）**  
+2026年5月13日的国家杜马法律为俄罗斯对参与国际刑事法院执法或影子船队监控的国家采取军事行动提供了法律借口。瑞典双重暴露：通过波罗的海行动以及根据《罗马规约》承担的义务。斯滕纳德部长的答复（截止日期5月27日）是选举前最重要的外交政策声明。
+
+**P2 — 极光26无人机差距（高）**  
+乌克兰无人机操作员在演习中压制了瑞典军队。瑞典既缺乏进攻性无人机作战原则，也缺乏大规模反无人机能力。约森部长的答复（截止日期5月27日）将表明瑞典是否会在选举前弥补这一差距，或推迟到下一届议会。
+
+**P3 — 承认伊奇克里亚的压力（中等）**  
+瑞典民主党关于承认车臣共和国伊奇克里亚的质询将承认问题与俄罗斯域外法律直接挂钩。瑞典承认的概率：约5%。但这一质询迫使政府公开表明其俄罗斯政策立场。
+
+**P4 — 第258号议案透明度方案分裂（中等偏低）**  
+中央党在KU委员会就第258号议案中工会政治支出信息披露条款与政府联盟决裂。立法委员会（Lagrådet）将法律依据称为"脆弱"（2026年3月24日意见）。可能结果：政府多数派否决中央党的反对意见。选举信号：中央党在瑞典民主党的工会透明度议程上捍卫结社自由。
+
+---
+
+### 关键判断（第二轮）
+
+1. **[HIGH]** 俄罗斯域外武力法（2026年5月13日）是2022年入侵以来最重大的俄罗斯立法升级。
+2. **[HIGH]** 瑞典极光26无人机差距将在12至18个月内通过快速采购和与乌克兰合作的组合来弥补。
+3. **[MODERATE]** 俄罗斯法律不会在2026年9月选举前对瑞典造成直接军事事件——威慑保持完整。
+4. **[HIGH]** 第258号议案的工会条款将以蒂德多数票通过KU委员会，不顾中央党的反对。
+5. **[LOW]** 瑞典不会在本届里克斯默特期间承认车臣共和国伊奇克里亚。
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 21 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 34 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 4 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -2301,6 +2890,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`classification-results.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/classification-results.md)
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/methodology-reflection.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-16/realtime-pulse/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

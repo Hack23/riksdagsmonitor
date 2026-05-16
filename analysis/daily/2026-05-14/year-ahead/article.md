@@ -6,7 +6,7 @@ date: 2026-05-14
 subfolder: year-ahead
 slug: 2026-05-14-year-ahead
 source_folder: analysis/daily/2026-05-14/year-ahead
-generated_at: 2026-05-16T13:28:18.498Z
+generated_at: 2026-05-16T20:24:26.619Z
 language: en
 layout: article
 ---
@@ -106,6 +106,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Synthesis Summary
@@ -2008,13 +2021,565 @@ All 15 docs hash-pinned; full-text retrieval rate 5/15 (33%) — sufficient for 
 
 _Pass-2 critical re-read complete; deltas integrated above._
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# نظرة عامة على الريكسداغ — السويد أفق عام مقبل 2026-05-14 → 2026-05-14+365
+
+**المؤلف**: جيمس بيثر سورلينغ · **التصنيف**: 🟢 عام · **الثقة**: HIGH (نطاق WEP 4 / كنت ≈80%)
+
+> **الخلاصة**: يهيمن على الأفق السياسي السويدي البالغ 365 يوماً ثلاث ديناميكيات متشابكة: (i) **توطيد الحقوق الدستورية** الذي أطلقته حماية حق الإجهاض دستورياً في KU34 إلى جانب قيود على حرية تكوين الجمعيات والجنسية؛ (ii) **هيكل تطبيق سياسة الهجرة** الذي يُستكمل في SfU عبر اقتراح 2025/26:263 (återvändande) + 2025/26:264 (vandel)، واللذين تصدت لهما مقترحات Vänsterpartiet HD024149/HD024150 بأشد طعن قانوني موثق في الدورة؛ و(iii) **انتخابات 13 سبتمبر 2026** عند T+122 يوماً، إذ ستمتلك الائتلاف التالي (4 تشكيلات قابلة للحياة) ميزانية BP 26/27، وتطوير بطاقة الهوية الإلكترونية الحكومية، ومتانة الهيكل الأمني المُقرّ في JuU/SfU خلال ربيع 2026.
+
+### خمسة أحكام عند 365 يوماً
+
+1. **تغيير دستوري بمقاييس تاريخية** — يُقرّب KU34 (HD01KU34) حق الإجهاض من الحماية الدستورية *ويُوسّع في آنٍ واحد* صلاحيات الدولة لتقييد حرية تكوين الجمعيات (RF 2:24) والجنسية (RF 2:7) في مواجهة التهديدات الأمنية. الثقة: HIGH (WEP 4).
+2. **تطبيق قوانين الهجرة مستدام بعد الانتخابات** — توثّق مقترحات Vänsterpartiet عمق انتقادات Lagrådet، لكن غالبية Tidö + دعم SD + القبول الضمني لحزب S لعناصر التطبيق يعني أن حكومة ما بعد الانتخابات لن تتراجع عن قرارات الترحيل من نوع HD03267. الثقة: HIGH (WEP 4).
+3. **ميزانية 2026 ستكون أول اختبار ضغط للحكومة الجديدة** — يُقنّن BP 26/27 الإنفاق الدفاعي نحو هدف الناتو البالغ 2.5%. يتوقع صندوق النقد الدولي WEO أبريل-2026 نمو الناتج المحلي الإجمالي السويدي بنسبة 2.1% (2026) → 2.0% (2027). الثقة: MEDIUM-HIGH (WEP 3.5).
+4. **من المتوقع أن يستغرق تشكيل الائتلاف من 4 إلى 10 أسابيع** — توزيع الاحتمالات: M+KD+L+SD مستمر (45%)، S+MP+C (28%)، S أقلية (15%)، أخرى (12%). الثقة: MEDIUM (WEP 3).
+5. **مسار أسعار الفائدة في Riksbank هو أكبر مخاطرة خارجية** — يتوقع صندوق النقد الدولي WEO أبريل-2026 سعر الفائدة الرئيسي عند 2.50% بنهاية عام 2026. أي انحراف يتجاوز 50 نقطة أساس في أي اتجاه سيُضيّق هامش المالية العامة. الثقة: MEDIUM (WEP 3).
+
+### المؤشرات الاستباقية (12 علامة)
+
+| التاريخ | T+N | الحدث | نقطة المراقبة | الثقة |
+|---------|-----|-------|---------------|-------|
+| 2026-05-17 | T+72h | نافذة الرد تفتح لـHD11804/HD11807/HD11810 [الأفق:T+72h] | الإطار الوزاري لأمن المرأة + الأمن الغذائي | HIGH (WEP 4) |
+| 2026-05-22 | T+8d | إغلاق yttrande Lagrådet لـHD03267 [الأفق:T+7d] | تقييم الدفاعية القانونية لهيكل återvändande | HIGH (WEP 4) |
+| 2026-06-04 | T+21d | مجلس الاتحاد الأوروبي (بروكسل) [الأفق:T+30d] | موقف السويد قبيل الانتخابات: تمويل الدفاع، الهجرة | MEDIUM-HIGH (WEP 3.5) |
+| 2026-06-15 | T+32d | آخر أسبوع جلسة عامة في riksmötet 2025/26 [الأفق:T+30d] | التصويتات النهائية على HD01KU34، اقتراحات SfU 263/264 | HIGH (WEP 4) |
+| 2026-06-30 | T+47d | قمة الناتو (لاهاي) [الأفق:T+90d] | مسار دفاع السويد 2.5%، إسهامات الدولة المضيفة | MEDIUM-HIGH (WEP 3.5) |
+| 2026-07-15 | T+62d | Almedalsveckan تبدأ [الأفق:T+90d] | خطب زعماء الأحزاب تُشكّل روايات انتخابات 2026 | HIGH (WEP 4) |
+| 2026-08-15 | T+93d | آخر مسح AKU لـSCB قبيل الانتخابات [الأفق:T+90d] | مسار البطالة — ضعف Tidö الانتخابي | MEDIUM (WEP 3) |
+| 2026-09-13 | T+122d | **Riksdagsval 2026** [الأفق:T+90d] | رياضيات الائتلاف، عتبة L البالغة 4% | HIGH (WEP 4) |
+| 2026-09-21 | T+130d | عرض BP 26/27 [الأفق:T+30d بعد الانتخابات] | الإنفاق الدفاعي نحو 2.5%، الهوية الإلكترونية | MEDIUM-HIGH (WEP 3.5) |
+| 2026-11-15 | T+185d | تصويت البرلمان على BP 26/27 [الأفق:T+90d بعد الانتخابات] | أول عمل مالي كبير للحكومة الجديدة | MEDIUM (WEP 3) |
+| 2027-04-15 | T+336d | VP 27 (Vårpropositionen 2027) [الأفق:T+365d] | تحاذٍ مع صندوق النقد الدولي WEO أبريل-2027 | MEDIUM (WEP 3) |
+| 2027-05-14 | T+365d | **إغلاق الأفق** — صندوق النقد الدولي WEO أبريل-2027 متاح [الأفق:T+365d] | بيانات مقارنة نوردية محدّثة | MEDIUM (WEP 3) |
+
+---
+
+### إعادة معايرة المرور الثاني (2026-05-14T15:23:28Z)
+
+احتمال تعايش BLI ضُيِّق من 0.32→0.34 في أعقاب تشديد NTM بـ5 نقاط في Sundsvall؛ تعزيز حق الإجهاض KU34§1 رُفع من MEDIUM→HIGH بعد تعداد KU قبيل التصويت.
+
+_إعادة القراءة النقدية Pass-2 مكتملة؛ التعديلات مدمجة أعلاه._
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling · **Klassificering**: 🟢 Offentlig · **Tillid**: HIGH (WEP-bånd 4 / Kent ≈80%)
+
+> **Konklusion**: Sveriges 365-dages politiske horisont domineres af tre sammenvævede dynamikker: (i) den **konstitutionelle rettighedskonsolidering** udløst af KU34's grundlovsbeskyttede abortret kombineret med begrænsninger af foreningsfrihed og statsborgerskab; (ii) den **migrationsretlige håndhævelsesarkitektur** der færdiggøres i SfU via prop. 2025/26:263 (återvändande) + 2025/26:264 (vandel), mod hvilke Vänsterpartiets motioner HD024149/HD024150 har rettet den stærkeste Lagrådet-justerede juridiske udfordring i cyklussen; og (iii) **valget den 13. september 2026** ved T+122 dage, hvorefter den næste koalition (4 levedygtige konfigurationer) ejer BP 26/27-budgettet, statens e-legitimation og holdbarheden af den sikkerhedsarkitektur der blev vedtaget i JuU/SfU i foråret 2026.
+
+### Fem vurderinger ved 365 dage
+
+1. **Forfatningsmæssig ændring af historisk størrelsesorden** — KU34 (HD01KU34) bringer abortretten mod grundlovsbeskyttelse og *udvider samtidig* statens beføjelse til at begrænse foreningsfrihed (RF 2:24) og statsborgerskab (RF 2:7) ved sikkerhedstrusler. Tillid: HIGH (WEP 4).
+2. **Migrationshåndhævelse er holdbar over valget** — Vänsterpartiets motioner dokumenterer dybden af Lagrådets kritik, men Tidö-flertallet + SD's støtte + S's stiltiende accept af håndhævelseselementerne betyder at en post-valg regering ikke ville rulle HD03267-udvisninger tilbage. Tillid: HIGH (WEP 4).
+3. **Budget 2026 vil være den nye regerings første stresstest** — BP 26/27 kodificerer forsvarsudgifter mod NATOs 2,5%-mål. IMF WEO apr-2026 projicerer svensk BNP-vækst til 2,1% (2026) → 2,0% (2027). Tillid: MEDIUM-HIGH (WEP 3,5).
+4. **Koalitionsdannelse forventes at tage 4–10 uger** — Sandsynlighedsfordeling: M+KD+L+SD fortsat (45%), S+MP+C (28%), S minoritet (15%), andet (12%). Tillid: MEDIUM (WEP 3).
+5. **Riksbankens rentebane er den største eksogene risiko** — IMF WEO apr-2026 projicerer styringsrenten til 2,50% ved udgangen af 2026. Afvigelse > 50 bp i begge retninger ville komprimere det finanspolitiske råderum. Tillid: MEDIUM (WEP 3).
+
+### Fremadrettede indikatorer (12 markører)
+
+| Dato | T+N | Begivenhed | Overvågningspunkt | Tillid |
+|------|-----|------------|-------------------|--------|
+| 2026-05-17 | T+72h | Svarvindue åbnes for HD11804/HD11807/HD11810 [horisont:T+72h] | Ministeriel indramning af kvinders sikkerhed + fødevaresikkerhed | HIGH (WEP 4) |
+| 2026-05-22 | T+8d | Lagrådets yttrande for HD03267 lukkes [horisont:T+7d] | Juridisk forsvarlighedsvurdering af återvändande-arkitekturen | HIGH (WEP 4) |
+| 2026-06-04 | T+21d | EU-Rådet (Bruxelles) [horisont:T+30d] | Sveriges pre-valg-positionering: forsvarsfinansiering, migration | MEDIUM-HIGH (WEP 3,5) |
+| 2026-06-15 | T+32d | Sidste fuldmødeuge riksmötet 2025/26 [horisont:T+30d] | Slutafstemninger om HD01KU34, SfU-propositioner 263/264 | HIGH (WEP 4) |
+| 2026-06-30 | T+47d | NATO-topmøde (Haag) [horisont:T+90d] | Sveriges 2,5%-forsvarsbane, værtsnationsbidrag | MEDIUM-HIGH (WEP 3,5) |
+| 2026-07-15 | T+62d | Almedalsveckan begynder [horisont:T+90d] | Partiledertaler indramner 2026-valgnarrativet | HIGH (WEP 4) |
+| 2026-08-15 | T+93d | SCB's sidste AKU-måling inden valget [horisont:T+90d] | Arbejdsløshedsudvikling — Tidös valgkampssårbarhed | MEDIUM (WEP 3) |
+| 2026-09-13 | T+122d | **Riksdagsval 2026** [horisont:T+90d] | Koalitionsmatematik, L's 4%-spærre | HIGH (WEP 4) |
+| 2026-09-21 | T+130d | BP 26/27-præsentation [horisont:T+30d post-valg] | Forsvarsudgifter mod 2,5%, e-legitimation | MEDIUM-HIGH (WEP 3,5) |
+| 2026-11-15 | T+185d | BP 26/27-afstemning i kammeret [horisont:T+90d post-valg] | Første store finanspolitiske handling under ny regering | MEDIUM (WEP 3) |
+| 2027-04-15 | T+336d | VP 27 (Vårpropositionen 2027) [horisont:T+365d] | IMF WEO apr-2027-tilpasning | MEDIUM (WEP 3) |
+| 2027-05-14 | T+365d | **Horisontudfasning** — IMF WEO apr-2027 tilgængelig [horisont:T+365d] | Opdaterede nordiske sammenligningsdata | MEDIUM (WEP 3) |
+
+---
+
+### Pass-2-rekalibrering (2026-05-14T15:23:28Z)
+
+BLI-samlevningssandsynlighed justeret fra 0,32→0,34 efter NTM-stramning med 5 point i Sundsvall; KU34§1 abortretsbefæstelse opjusteret fra MEDIUM→HIGH efter KU's pre-afstemningsoptælling.
+
+_Pass-2 kritisk genlæsning afsluttet; delta integreret ovenfor._
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling · **Klassifizierung**: 🟢 Öffentlich · **Konfidenz**: HIGH (WEP-Band 4 / Kent ≈80%)
+
+> **Fazit**: Schwedens 365-Tage-Politikhorizont wird von drei verflochtenen Dynamiken dominiert: (i) die **verfassungsrechtliche Rechtekonsolidierung** ausgelöst durch KU34s grundgesetztlich geschütztes Abtreibungsrecht in Verbindung mit Einschränkungen der Vereinigungsfreiheit und Staatsbürgerschaft; (ii) die **migrationspolitische Vollzugsarchitektur**, die in SfU über Prop. 2025/26:263 (återvändande) + 2025/26:264 (vandel) finalisiert wird, gegen die Vänsterpartiet-Motionen HD024149/HD024150 die stärkste Lagrådet-orientierte juristische Herausforderung des Zyklus gerichtet haben; und (iii) die **Wahl am 13. September 2026** bei T+122 Tagen, nach der die nächste Koalition (4 lebensfähige Konfigurationen) den BP 26/27-Haushalt, das staatliche e-Legitimationsprojekt und die Dauerhaftigkeit der in JuU/SfU im Frühjahr 2026 verabschiedeten Sicherheitsarchitektur besitzt.
+
+### Fünf Einschätzungen bei 365 Tagen
+
+1. **Verfassungsänderung von historischem Ausmaß** — KU34 (HD01KU34) bringt das Abtreibungsrecht zum Verfassungsschutz und *erweitert gleichzeitig* staatliche Befugnisse zur Einschränkung der Vereinigungsfreiheit (RF 2:24) und Staatsbürgerschaft (RF 2:7) bei Sicherheitsbedrohungen. Konfidenz: HIGH (WEP 4).
+2. **Migrationsvollzug ist nach der Wahl stabil** — Vänsterpartiets Motionen dokumentieren die Tiefe der Lagrådet-Kritik, aber Tidö-Mehrheit + SD-Unterstützung + S's stillschweigende Akzeptanz der Vollzugselemente bedeutet, dass eine Nachwahlregierung HD03267-Abschiebungen nicht rückgängig machen würde. Konfidenz: HIGH (WEP 4).
+3. **Haushalt 2026 wird erster Stresstest der neuen Regierung** — BP 26/27 kodifiziert Verteidigungsausgaben Richtung NATO-2,5%-Ziel. IWF WEO Apr-2026 projiziert schwedisches BIP-Wachstum auf 2,1% (2026) → 2,0% (2027). Konfidenz: MEDIUM-HIGH (WEP 3,5).
+4. **Koalitionsbildung wird voraussichtlich 4–10 Wochen dauern** — Wahrscheinlichkeitsverteilung: M+KD+L+SD weiter (45%), S+MP+C (28%), S-Minderheit (15%), Sonstiges (12%). Konfidenz: MEDIUM (WEP 3).
+5. **Riksbank-Zinspfad ist das größte exogene Risiko** — IWF WEO Apr-2026 projiziert Leitzins auf 2,50% Ende 2026. Abweichung > 50 Bp in beide Richtungen würde fiskalischen Spielraum einengen. Konfidenz: MEDIUM (WEP 3).
+
+### Vorlaufindikatoren (12 Marker)
+
+| Datum | T+N | Ereignis | Beobachtungspunkt | Konfidenz |
+|-------|-----|----------|-------------------|-----------|
+| 2026-05-17 | T+72h | Antwortfenster öffnet für HD11804/HD11807/HD11810 [Horizont:T+72h] | Ministerielles Framing Frauensicherheit + Lebensmittelsicherheit | HIGH (WEP 4) |
+| 2026-05-22 | T+8d | Lagrådets yttrande für HD03267 schließt [Horizont:T+7d] | Juristische Verteidigungsfähigkeit der återvändande-Architektur | HIGH (WEP 4) |
+| 2026-06-04 | T+21d | EU-Rat (Brüssel) [Horizont:T+30d] | Schwedens Vor-Wahl-EU-Positionierung: Verteidigungsfinanzierung, Migration | MEDIUM-HIGH (WEP 3,5) |
+| 2026-06-15 | T+32d | Letzte Vollplenarwoche Riksmötet 2025/26 [Horizont:T+30d] | Endabstimmungen HD01KU34, SfU-Prop. 263/264 | HIGH (WEP 4) |
+| 2026-06-30 | T+47d | NATO-Gipfel (Den Haag) [Horizont:T+90d] | Schwedens 2,5%-Verteidigungsplan, Gastlandsbeiträge | MEDIUM-HIGH (WEP 3,5) |
+| 2026-07-15 | T+62d | Almedalsveckan beginnt [Horizont:T+90d] | Parteiführereden prägen 2026-Wahlnarrative | HIGH (WEP 4) |
+| 2026-08-15 | T+93d | SCB letztes AKU vor Wahl [Horizont:T+90d] | Arbeitslosenentwicklung — Tidös Wahlkampfvulnerabilität | MEDIUM (WEP 3) |
+| 2026-09-13 | T+122d | **Riksdagsval 2026** [Horizont:T+90d] | Koalitionsmathematik, L's 4%-Schwelle | HIGH (WEP 4) |
+| 2026-09-21 | T+130d | BP 26/27 Präsentation [Horizont:T+30d nach Wahl] | Verteidigungsausgaben Richtung 2,5%, e-Legitimation | MEDIUM-HIGH (WEP 3,5) |
+| 2026-11-15 | T+185d | BP 26/27 Kammerabstimmung [Horizont:T+90d nach Wahl] | Erste große finanzpolitische Handlung der neuen Regierung | MEDIUM (WEP 3) |
+| 2027-04-15 | T+336d | VP 27 (Vårpropositionen 2027) [Horizont:T+365d] | IWF WEO Apr-2027-Angleichung | MEDIUM (WEP 3) |
+| 2027-05-14 | T+365d | **Horizontabschluss** — IWF WEO Apr-2027 verfügbar [Horizont:T+365d] | Aktualisierte nordische Vergleichsdaten | MEDIUM (WEP 3) |
+
+---
+
+### Pass-2-Rekalibrierung (2026-05-14T15:23:28Z)
+
+BLI-Kohabitationswahrscheinlichkeit auf 0,32→0,34 gestrafft nach Sundsvall-NTM-5-Punkt-Straffung; KU34§1 Abtreibungsrechtsverankerung von MEDIUM→HIGH nach KU-Vorab-Zählung angehoben.
+
+_Pass-2 kritische Wiederlektüre abgeschlossen; Deltas oben integriert._
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling · **Clasificación**: 🟢 Público · **Confianza**: HIGH (banda WEP 4 / Kent ≈80%)
+
+> **Conclusión**: El horizonte político sueco de 365 días está dominado por tres dinámicas entrelazadas: (i) la **consolidación constitucional de derechos** desencadenada por el derecho al aborto constitucionalmente protegido de KU34 combinado con restricciones a la libertad de asociación y la ciudadanía; (ii) la **arquitectura de aplicación de la política migratoria** que se finaliza en SfU mediante prop. 2025/26:263 (återvändande) + 2025/26:264 (vandel), contra las cuales las mociones de Vänsterpartiet HD024149/HD024150 han planteado el desafío legal más sólido alineado con el Lagrådet del ciclo; y (iii) las **elecciones del 13 de septiembre de 2026** en T+122 días, tras las cuales la próxima coalición (4 configuraciones viables) poseerá el presupuesto BP 26/27, el despliegue del e-ID estatal y la durabilidad de la arquitectura de seguridad aprobada en JuU/SfU durante la primavera de 2026.
+
+### Cinco valoraciones a 365 días
+
+1. **Cambio constitucional de magnitud histórica** — KU34 (HD01KU34) lleva el derecho al aborto hacia la protección constitucional y *simultáneamente amplía* los poderes del Estado para limitar la libertad de asociación (RF 2:24) y la ciudadanía (RF 2:7) ante amenazas de seguridad. Confianza: HIGH (WEP 4).
+2. **La aplicación migratoria es sostenible después de las elecciones** — Las mociones de Vänsterpartiet documentan la profundidad de la crítica del Lagrådet, pero la mayoría Tidö + apoyo SD + aceptación tácita de S de los elementos de aplicación significa que un gobierno posvotación no revertirá las expulsiones tipo HD03267. Confianza: HIGH (WEP 4).
+3. **El presupuesto de 2026 será el primer test de estrés del nuevo gobierno** — BP 26/27 codifica el gasto en defensa hacia el objetivo del 2,5% de la OTAN. El FMI WEO abr-2026 proyecta el crecimiento del PIB sueco al 2,1% (2026) → 2,0% (2027). Confianza: MEDIUM-HIGH (WEP 3,5).
+4. **Se espera que la formación de la coalición tome 4-10 semanas** — Distribución de probabilidad: M+KD+L+SD continúa (45%), S+MP+C (28%), S minoría (15%), otro (12%). Confianza: MEDIUM (WEP 3).
+5. **La senda de tipos del Riksbank es el mayor riesgo exógeno** — El FMI WEO abr-2026 proyecta el tipo rector al 2,50% a finales de 2026. Una desviación > 50 pb en cualquier dirección comprimiría el margen fiscal. Confianza: MEDIUM (WEP 3).
+
+### Indicadores adelantados (12 marcadores)
+
+| Fecha | T+N | Evento | Punto de vigilancia | Confianza |
+|-------|-----|--------|---------------------|-----------|
+| 2026-05-17 | T+72h | Ventana de respuesta abre para HD11804/HD11807/HD11810 [horizonte:T+72h] | Marco ministerial seguridad de mujeres + seguridad alimentaria | HIGH (WEP 4) |
+| 2026-05-22 | T+8d | Yttrande Lagrådet para HD03267 cierra [horizonte:T+7d] | Evaluación defensibilidad jurídica arquitectura återvändande | HIGH (WEP 4) |
+| 2026-06-04 | T+21d | Consejo UE (Bruselas) [horizonte:T+30d] | Posicionamiento preelectoral sueco: financiación defensa, migración | MEDIUM-HIGH (WEP 3,5) |
+| 2026-06-15 | T+32d | Última semana plenaria Riksmötet 2025/26 [horizonte:T+30d] | Votaciones finales HD01KU34, proposiciones SfU 263/264 | HIGH (WEP 4) |
+| 2026-06-30 | T+47d | Cumbre OTAN (La Haya) [horizonte:T+90d] | Trayectoria defensa 2,5% de Suecia, contribuciones estado anfitrión | MEDIUM-HIGH (WEP 3,5) |
+| 2026-07-15 | T+62d | Almedalsveckan comienza [horizonte:T+90d] | Discursos líderes partidos moldean narrativas electorales 2026 | HIGH (WEP 4) |
+| 2026-08-15 | T+93d | Última medición AKU SCB antes elecciones [horizonte:T+90d] | Evolución desempleo — vulnerabilidad electoral Tidö | MEDIUM (WEP 3) |
+| 2026-09-13 | T+122d | **Riksdagsval 2026** [horizonte:T+90d] | Matemática de coalición, umbral 4% de L | HIGH (WEP 4) |
+| 2026-09-21 | T+130d | Presentación BP 26/27 [horizonte:T+30d post-elección] | Gasto defensa hacia 2,5%, e-ID | MEDIUM-HIGH (WEP 3,5) |
+| 2026-11-15 | T+185d | Votación cámara BP 26/27 [horizonte:T+90d post-elección] | Primer acto fiscal mayor del nuevo gobierno | MEDIUM (WEP 3) |
+| 2027-04-15 | T+336d | VP 27 (Vårpropositionen 2027) [horizonte:T+365d] | Alineación FMI WEO abr-2027 | MEDIUM (WEP 3) |
+| 2027-05-14 | T+365d | **Cierre horizonte** — FMI WEO abr-2027 disponible [horizonte:T+365d] | Datos comparativos nórdicos actualizados | MEDIUM (WEP 3) |
+
+---
+
+### Recalibración Pass-2 (2026-05-14T15:23:28Z)
+
+Probabilidad de cohabitación BLI ajustada de 0,32→0,34 tras ajuste NTM de 5 puntos en Sundsvall; anclaje derecho al aborto KU34§1 elevado de MEDIUM→HIGH tras recuento pre-votación del KU.
+
+_Relectura crítica Pass-2 completa; deltas integrados arriba._
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling · **Luokitus**: 🟢 Julkinen · **Luotettavuus**: HIGH (WEP-kaista 4 / Kent ≈80%)
+
+> **Yhteenveto**: Ruotsin 365 päivän poliittista horisonttia hallitsevat kolme toisiinsa kietoutunutta dynamiikkaa: (i) **perustuslaillinen oikeuksien vakiinnuttaminen**, jonka KU34:n perustuslain suojaama aborttioikeus on käynnistänyt yhdistettynä yhdistymisvapauden ja kansalaisuuden rajoituksiin; (ii) **maahanmuuttopolitiikan täytäntöönpanoarkkitehtuuri**, joka saatetaan päätökseen SfU:ssa ehdotusten 2025/26:263 (återvändande) + 2025/26:264 (vandel) kautta, joita vastaan Vänsterpartiets moiteet HD024149/HD024150 ovat esittäneet syklin vahvimman lainopillisen haasteen; sekä (iii) **13.9.2026 vaalit** T+122 päivässä, joiden jälkeen seuraava hallituskoalitio (4 elinkelpoisesta kokoonpanosta) omistaa BP 26/27 -budjetin, sähköisen henkilöllisyyden ja keväällä 2026 JuU/SfU:ssa hyväksytyn turvallisuusarkkitehtuurin kestävyyden.
+
+### Viisi arviota 365 päivässä
+
+1. **Perustuslaillinen muutos historiallisessa mittakaavassa** — KU34 (HD01KU34) vie aborttioikeuden kohti perustuslain suojaa ja *samalla laajentaa* valtion valtuuksia rajoittaa yhdistymisvapautta (RF 2:24) ja kansalaisuutta (RF 2:7) turvallisuusuhkien osalta. Luotettavuus: HIGH (WEP 4).
+2. **Maahanmuuton täytäntöönpano kestää vaalien yli** — Vänsterpartiets moiteet dokumentoivat Lagrådets kritiikin syvyyden, mutta Tidö-enemmistö + SD:n tuki + S:n hiljainen hyväksyntä täytäntöönpanoelementeille tarkoittaa, että vaalienjälkeinen hallitus ei peruisi HD03267-tyyppisiä karkotuksia. Luotettavuus: HIGH (WEP 4).
+3. **Vuoden 2026 budjetti on uuden hallituksen ensimmäinen stressitesti** — BP 26/27 kodifioi puolustusmenot kohti Naton 2,5 %:n tavoitetta. IMF WEO huht-2026 ennustaa Ruotsin BKT-kasvuksi 2,1 % (2026) → 2,0 % (2027). Luotettavuus: MEDIUM-HIGH (WEP 3,5).
+4. **Hallitusneuvottelujen odotetaan kestävän 4–10 viikkoa** — Todennäköisyysjakauma: M+KD+L+SD jatkuu (45 %), S+MP+C (28 %), S vähemmistö (15 %), muu (12 %). Luotettavuus: MEDIUM (WEP 3).
+5. **Riksbankin korkoura on suurin eksogeeninen riski** — IMF WEO huht-2026 ennustaa ohjauskorkoa 2,50 %:ksi vuoden 2026 lopussa. Yli 50 peruspisteen poikkeama kumpaan suuntaan tahansa supistaisi finanssipoliittista liikkumavaraa. Luotettavuus: MEDIUM (WEP 3).
+
+### Ennakoivat indikaattorit (12 merkkiä)
+
+| Päivämäärä | T+N | Tapahtuma | Seuranta | Luotettavuus |
+|------------|-----|-----------|----------|--------------|
+| 2026-05-17 | T+72h | HD11804/HD11807/HD11810 vastausikkuna avautuu [horisontti:T+72h] | Ministerien kehys naisten turvallisuudesta + elintarviketurvallisuudesta | HIGH (WEP 4) |
+| 2026-05-22 | T+8d | Lagrådets yttrande HD03267:lle sulkeutuu [horisontti:T+7d] | återvändande-arkkitehtuurin oikeudellinen puolustettavuus | HIGH (WEP 4) |
+| 2026-06-04 | T+21d | EU-neuvosto (Bryssel) [horisontti:T+30d] | Ruotsin vaalienedellinen EU-asemoituminen: puolustusrahoitus, muuttoliike | MEDIUM-HIGH (WEP 3,5) |
+| 2026-06-15 | T+32d | Riksmötet 2025/26 viimeinen täysistuntoviikko [horisontti:T+30d] | Loppuäänestykset HD01KU34:stä, SfU-ehdotukset 263/264 | HIGH (WEP 4) |
+| 2026-06-30 | T+47d | Naton huippukokous (Haag) [horisontti:T+90d] | Ruotsin 2,5 %:n puolustusura, isäntämaapanostukset | MEDIUM-HIGH (WEP 3,5) |
+| 2026-07-15 | T+62d | Almedalsveckan alkaa [horisontti:T+90d] | Puoluejohtajien puheet muotoilevat 2026 vaalinarratiivin | HIGH (WEP 4) |
+| 2026-08-15 | T+93d | SCB:n viimeinen AKU-mittaus ennen vaaleja [horisontti:T+90d] | Työttömyyskehitys — Tidön vaalihaavoittuvuus | MEDIUM (WEP 3) |
+| 2026-09-13 | T+122d | **Riksdagsval 2026** [horisontti:T+90d] | Koalitioaritmetiikka, L:n 4 %:n kynnys | HIGH (WEP 4) |
+| 2026-09-21 | T+130d | BP 26/27 -esitys [horisontti:T+30d vaalien jälkeen] | Puolustusmenot kohti 2,5 %, sähköinen henkilöllisyys | MEDIUM-HIGH (WEP 3,5) |
+| 2026-11-15 | T+185d | BP 26/27 -äänestys parlamentissa [horisontti:T+90d vaalien jälkeen] | Uuden hallituksen ensimmäinen iso finanssipoliittinen teko | MEDIUM (WEP 3) |
+| 2027-04-15 | T+336d | VP 27 (Vårpropositionen 2027) [horisontti:T+365d] | IMF WEO huht-2027 -sovitus | MEDIUM (WEP 3) |
+| 2027-05-14 | T+365d | **Horisontin sulkeutuminen** — IMF WEO huht-2027 saatavilla [horisontti:T+365d] | Päivitetyt pohjoismaiset vertailudatot | MEDIUM (WEP 3) |
+
+---
+
+### Pass-2-uudelleenkalibrointi (2026-05-14T15:23:28Z)
+
+BLI-yhteisasumistodennäköisyys tiukentui 0,32→0,34 Sundsvallin NTM-kiristyksen jälkeen; KU34§1 aborttioikeuden ankkurointi nousi MEDIUM→HIGH KU:n pre-äänestyspyynnin jälkeen.
+
+_Pass-2 kriittinen uudelleenluku valmis; deltat integroitu yllä._
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/executive-brief_fr.md -->
+
+**Auteur**: James Pether Sörling · **Classification**: 🟢 Public · **Confiance**: HIGH (bande WEP 4 / Kent ≈80%)
+
+> **Conclusion**: L'horizon politique suédois de 365 jours est dominé par trois dynamiques interconnectées: (i) la **consolidation constitutionnelle des droits** déclenchée par le droit à l'avortement protégé constitutionnellement de KU34 associé à des restrictions de la liberté d'association et de la citoyenneté; (ii) l'**architecture d'application de la politique migratoire** finalisée au SfU via prop. 2025/26:263 (återvändande) + 2025/26:264 (vandel), contre lesquelles les motions Vänsterpartiet HD024149/HD024150 ont posé le défi juridique le plus solide aligné sur le Lagrådet du cycle; et (iii) les **élections du 13 septembre 2026** à T+122 jours, après lesquelles la prochaine coalition (4 configurations viables) possédera le budget BP 26/27, le déploiement de l'e-identité nationale et la durabilité de l'architecture de sécurité adoptée au JuU/SfU au printemps 2026.
+
+### Cinq jugements à 365 jours
+
+1. **Changement constitutionnel d'ampleur historique** — KU34 (HD01KU34) achemine le droit à l'avortement vers la protection constitutionnelle et *étend simultanément* les pouvoirs de l'État à limiter la liberté d'association (RF 2:24) et la citoyenneté (RF 2:7) pour des menaces sécuritaires. Confiance: HIGH (WEP 4).
+2. **L'application de la politique migratoire est durable après les élections** — Les motions de Vänsterpartiet documentent la profondeur de la critique du Lagrådet, mais la majorité Tidö + soutien SD + acceptation tacite de S des éléments d'application signifient qu'un gouvernement post-électoral ne ferait pas marche arrière sur les expulsions HD03267. Confiance: HIGH (WEP 4).
+3. **Le budget 2026 sera le premier test de stress du nouveau gouvernement** — BP 26/27 codifie les dépenses de défense vers l'objectif NATO de 2,5%. Le FMI WEO avr-2026 projette la croissance du PIB suédois à 2,1% (2026) → 2,0% (2027). Confiance: MEDIUM-HIGH (WEP 3,5).
+4. **La formation de la coalition devrait prendre 4 à 10 semaines** — Distribution de probabilité: M+KD+L+SD continue (45%), S+MP+C (28%), S minorité (15%), autre (12%). Confiance: MEDIUM (WEP 3).
+5. **La trajectoire des taux de la Riksbank est le plus grand risque exogène** — Le FMI WEO avr-2026 projette le taux directeur à 2,50% fin 2026. Un écart > 50 pb dans l'une ou l'autre direction comprimerait la marge budgétaire. Confiance: MEDIUM (WEP 3).
+
+### Indicateurs avancés (12 marqueurs)
+
+| Date | T+N | Événement | Point de surveillance | Confiance |
+|------|-----|-----------|----------------------|-----------|
+| 2026-05-17 | T+72h | Fenêtre de réponse ouvre pour HD11804/HD11807/HD11810 [horizon:T+72h] | Cadrage ministériel sécurité des femmes + sécurité alimentaire | HIGH (WEP 4) |
+| 2026-05-22 | T+8d | Yttrande Lagrådet pour HD03267 ferme [horizon:T+7d] | Évaluation de défendabilité juridique de l'architecture återvändande | HIGH (WEP 4) |
+| 2026-06-04 | T+21d | Conseil UE (Bruxelles) [horizon:T+30d] | Positionnement pré-électoral suédois: financement défense, migration | MEDIUM-HIGH (WEP 3,5) |
+| 2026-06-15 | T+32d | Dernière semaine plénière Riksmötet 2025/26 [horizon:T+30d] | Votes finaux HD01KU34, propositions SfU 263/264 | HIGH (WEP 4) |
+| 2026-06-30 | T+47d | Sommet OTAN (La Haye) [horizon:T+90d] | Trajectoire défense 2,5% de la Suède, contributions d'État hôte | MEDIUM-HIGH (WEP 3,5) |
+| 2026-07-15 | T+62d | Almedalsveckan commence [horizon:T+90d] | Discours des chefs de parti façonnent les narratifs électoraux 2026 | HIGH (WEP 4) |
+| 2026-08-15 | T+93d | Dernière mesure AKU SCB avant élections [horizon:T+90d] | Évolution du chômage — vulnérabilité électorale Tidö | MEDIUM (WEP 3) |
+| 2026-09-13 | T+122d | **Riksdagsval 2026** [horizon:T+90d] | Mathématique de coalition, seuil 4% de L | HIGH (WEP 4) |
+| 2026-09-21 | T+130d | Présentation BP 26/27 [horizon:T+30d post-élection] | Dépenses défense vers 2,5%, e-identité | MEDIUM-HIGH (WEP 3,5) |
+| 2026-11-15 | T+185d | Vote chambre BP 26/27 [horizon:T+90d post-élection] | Premier acte budgétaire majeur du nouveau gouvernement | MEDIUM (WEP 3) |
+| 2027-04-15 | T+336d | VP 27 (Vårpropositionen 2027) [horizon:T+365d] | Alignement FMI WEO avr-2027 | MEDIUM (WEP 3) |
+| 2027-05-14 | T+365d | **Fermeture horizon** — FMI WEO avr-2027 disponible [horizon:T+365d] | Données comparatives nordiques mises à jour | MEDIUM (WEP 3) |
+
+---
+
+### Recalibration Pass-2 (2026-05-14T15:23:28Z)
+
+Probabilité de cohabitation BLI resserrée de 0,32→0,34 après resserrement NTM de 5 points à Sundsvall; ancrage droit à l'avortement KU34§1 relevé de MEDIUM→HIGH après décompte pré-vote du KU.
+
+_Relecture critique Pass-2 complète; deltas intégrés ci-dessus._
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# סקירת ריקסדאג — שוודיה תחזית שנתית 2026-05-14 → 2026-05-14+365
+
+**מחבר**: ג'יימס פת'ר סורלינג · **סיווג**: 🟢 ציבורי · **ביטחון**: HIGH (רצועת WEP 4 / קנט ≈80%)
+
+> **מסקנה**: האופק הפוליטי השבדי של 365 ימים נשלט על-ידי שלוש דינמיקות שזורות: (i) **גיבוש הזכויות החוקתי** שנגרם על-ידי זכות ההפלה המוגנת חוקתית של KU34 בשילוב עם הגבלות על חופש ההתאגדות והאזרחות; (ii) **ארכיטקטורת אכיפת מדיניות ההגירה** המסתיימת ב-SfU דרך הצעה 2025/26:263 (återvändande) + 2025/26:264 (vandel), שנגדה הציבו מוצעי Vänsterpartiet HD024149/HD024150 את האתגר המשפטי המוצלח ביותר המיושר עם Lagrådet במחזור; ו-(iii) **הבחירות ב-13 בספטמבר 2026** ב-T+122 ימים, לאחריהן תחזיק הקואליציה הבאה (4 תצורות ישימות) בתקציב BP 26/27, בפריסת תעודת הזהות הלאומית ובאיתנות ארכיטקטורת הביטחון שאושרה ב-JuU/SfU באביב 2026.
+
+### חמישה פסקי דין ב-365 ימים
+
+1. **שינוי חוקתי בהיקף היסטורי** — KU34 (HD01KU34) מקרב את זכות ההפלה להגנה חוקתית ו*מרחיב בו-זמנית* סמכויות המדינה להגביל חופש ההתאגדות (RF 2:24) ואזרחות (RF 2:7) מפני איומי ביטחון. ביטחון: HIGH (WEP 4).
+2. **אכיפת ההגירה עמידה לאחר הבחירות** — מוצעי Vänsterpartiet מתעדים את עומק ביקורת ה-Lagrådet, אך רוב Tidö + תמיכת SD + קבלה שקטה של S לאלמנטי האכיפה פירושם שממשלה לאחר-בחירות לא תבטל גירושים בסגנון HD03267. ביטחון: HIGH (WEP 4).
+3. **תקציב 2026 יהיה המבחן הראשון של הממשלה החדשה** — BP 26/27 מקדד הוצאות ביטחון לעבר יעד ה-2.5% של נאט"ו. קרן המטבע WEO אפריל-2026 צופה צמיחת תמ"ג שבדית של 2.1% (2026) → 2.0% (2027). ביטחון: MEDIUM-HIGH (WEP 3.5).
+4. **צפוי שהרכבת הקואליציה תארך 4–10 שבועות** — התפלגות הסתברות: M+KD+L+SD המשך (45%), S+MP+C (28%), מיעוט S (15%), אחר (12%). ביטחון: MEDIUM (WEP 3).
+5. **מסלול הריבית של Riksbank הוא הסיכון החיצוני הגדול ביותר** — קרן המטבע WEO אפריל-2026 צופה ריבית מדיניות של 2.50% בסוף 2026. סטייה > 50 נ"ב בכל כיוון תצמצם מרווח פיסקלי. ביטחון: MEDIUM (WEP 3).
+
+### מדדים מובילים (12 מסמנים)
+
+| תאריך | T+N | אירוע | נקודת תצפית | ביטחון |
+|-------|-----|-------|-------------|--------|
+| 2026-05-17 | T+72h | חלון תשובות נפתח עבור HD11804/HD11807/HD11810 [אופק:T+72h] | מסגור שרותי לביטחון נשים + ביטחון מזון | HIGH (WEP 4) |
+| 2026-05-22 | T+8d | yttrande Lagrådet עבור HD03267 נסגר [אופק:T+7d] | הערכת הגנה משפטית על ארכיטקטורת återvändande | HIGH (WEP 4) |
+| 2026-06-04 | T+21d | מועצת האיחוד האירופי (בריסל) [אופק:T+30d] | מיצוב שוודיה לפני בחירות: מימון ביטחון, הגירה | MEDIUM-HIGH (WEP 3.5) |
+| 2026-06-15 | T+32d | שבוע מליאה אחרון riksmötet 2025/26 [אופק:T+30d] | הצבעות סופיות HD01KU34, הצעות SfU 263/264 | HIGH (WEP 4) |
+| 2026-06-30 | T+47d | פסגת נאט"ו (האג) [אופק:T+90d] | מסלול הגנה 2.5% של שוודיה, תרומות מדינת אירוח | MEDIUM-HIGH (WEP 3.5) |
+| 2026-07-15 | T+62d | Almedalsveckan מתחיל [אופק:T+90d] | נאומי מנהיגי מפלגות מעצבים נרטיבי בחירות 2026 | HIGH (WEP 4) |
+| 2026-08-15 | T+93d | מדידת AKU אחרונה של SCB לפני בחירות [אופק:T+90d] | מגמת אבטלה — פגיעות בחירות Tidö | MEDIUM (WEP 3) |
+| 2026-09-13 | T+122d | **Riksdagsval 2026** [אופק:T+90d] | מתמטיקת קואליציה, סף 4% של L | HIGH (WEP 4) |
+| 2026-09-21 | T+130d | הצגת BP 26/27 [אופק:T+30d לאחר בחירות] | הוצאות ביטחון לעבר 2.5%, ת"ז אלקטרוני | MEDIUM-HIGH (WEP 3.5) |
+| 2026-11-15 | T+185d | הצבעת מליאה BP 26/27 [אופק:T+90d לאחר בחירות] | פעולה פיסקלית ראשונה של ממשלה חדשה | MEDIUM (WEP 3) |
+| 2027-04-15 | T+336d | VP 27 (Vårpropositionen 2027) [אופק:T+365d] | יישור עם קרן המטבע WEO אפריל-2027 | MEDIUM (WEP 3) |
+| 2027-05-14 | T+365d | **סגירת אופק** — קרן המטבע WEO אפריל-2027 זמין [אופק:T+365d] | נתוני השוואה נורדיים מעודכנים | MEDIUM (WEP 3) |
+
+---
+
+### כיוונון מחדש Pass-2 (2026-05-14T15:23:28Z)
+
+הסתברות קוהביטציה BLI הודקה מ-0.32→0.34 לאחר הידוק NTM של 5 נקודות בסונדסוואל; עיגון זכות הפלה KU34§1 הועלה מ-MEDIUM→HIGH לאחר ספירת קדם-הצבעה של KU.
+
+_קריאה ביקורתית חוזרת Pass-2 הושלמה; דלתות שולבו לעיל._
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/executive-brief_ja.md -->
+
+**著者**: ジェームズ・ペサー・ソーリング · **分類**: 🟢 公開 · **信頼度**: HIGH (WEPバンド4 / ケント≈80%)
+
+> **結論**: スウェーデンの365日政治的地平は三つの絡み合う動態に支配されている: (i) KU34の憲法上保護された中絶権が結社の自由および市民権の制限と組み合わさって引き起こした**憲法的権利の強化**; (ii) SfU において提案2025/26:263 (återvändande) + 2025/26:264 (vandel) により最終化される**移民政策執行アーキテクチャ**、これに対してVänsterpartietの議案HD024149/HD024150がサイクル中最強のLagrådet整合型法的異議を提起; そして(iii) T+122日後の**2026年9月13日選挙**で、次連立政権 (4つの実行可能な構成) がBP 26/27予算、国家e-ID展開、春2026年にJuU/SfUで可決された安全保障アーキテクチャの耐久性を掌握することになる。
+
+### 365日における5つの判断
+
+1. **歴史的規模の憲法的変更** — KU34 (HD01KU34) は中絶権を憲法保護に近づけながら*同時に*安全保障上の脅威に対する結社の自由 (RF 2:24) および市民権 (RF 2:7) の制限における国家権限を拡大する。信頼度: HIGH (WEP 4)。
+2. **移民政策執行は選挙後も持続する** — Vänsterpartietsの議案はLagrådets批判の深さを文書化しているが、Tidö多数派 + SD支持 + 執行要素へのSの黙示的受け入れは、選挙後政府がHD03267型退去命令を覆さないことを意味する。信頼度: HIGH (WEP 4)。
+3. **2026年予算が新政府の最初のストレステストとなる** — BP 26/27はNATO 2.5%目標に向けた防衛支出を成文化する。IMF WEO 2026年4月はスウェーデンGDP成長率を2.1% (2026) → 2.0% (2027) と予測。信頼度: MEDIUM-HIGH (WEP 3.5)。
+4. **連立形成には4〜10週間かかると予想される** — 確率分布: M+KD+L+SD継続 (45%)、S+MP+C (28%)、S少数 (15%)、その他 (12%)。信頼度: MEDIUM (WEP 3)。
+5. **Riksbankの金利経路が最大の外生リスク** — IMF WEO 2026年4月は2026年末の政策金利を2.50%と予測。どちらの方向への50bp超の乖離も財政余地を圧縮する。信頼度: MEDIUM (WEP 3)。
+
+### 先行指標 (12マーカー)
+
+| 日付 | T+N | 出来事 | 観察ポイント | 信頼度 |
+|------|-----|--------|------------|--------|
+| 2026-05-17 | T+72h | HD11804/HD11807/HD11810の回答期間開始 [地平:T+72h] | 女性安全+食料安全保障の閣議フレーミング | HIGH (WEP 4) |
+| 2026-05-22 | T+8d | HD03267のLagrådet yttrande期間終了 [地平:T+7d] | återvändande架構の法的防御可能性 | HIGH (WEP 4) |
+| 2026-06-04 | T+21d | EU理事会 (ブリュッセル) [地平:T+30d] | 選挙前スウェーデンのEUポジション: 防衛融資、移民 | MEDIUM-HIGH (WEP 3.5) |
+| 2026-06-15 | T+32d | Riksmötet 2025/26最終本会議週 [地平:T+30d] | HD01KU34最終採決、SfU提案263/264 | HIGH (WEP 4) |
+| 2026-06-30 | T+47d | NATO首脳会議 (ハーグ) [地平:T+90d] | スウェーデンの2.5%防衛軌道、ホスト国貢献 | MEDIUM-HIGH (WEP 3.5) |
+| 2026-07-15 | T+62d | Almedalsveckan開始 [地平:T+90d] | 党首演説が2026年選挙の物語を形成 | HIGH (WEP 4) |
+| 2026-08-15 | T+93d | 選挙前最後のSCB AKU調査 [地平:T+90d] | 失業率推移 — Tidöの選挙的脆弱性 | MEDIUM (WEP 3) |
+| 2026-09-13 | T+122d | **Riksdagsval 2026** [地平:T+90d] | 連立数学、Lの4%閾値 | HIGH (WEP 4) |
+| 2026-09-21 | T+130d | BP 26/27発表 [地平:T+30d選挙後] | NATO 2.5%防衛支出、e-ID展開 | MEDIUM-HIGH (WEP 3.5) |
+| 2026-11-15 | T+185d | 議会BP 26/27採決 [地平:T+90d選挙後] | 新政府の最初の大型財政行動 | MEDIUM (WEP 3) |
+| 2027-04-15 | T+336d | VP 27 (Vårpropositionen 2027) [地平:T+365d] | IMF WEO 2027年4月との整合 | MEDIUM (WEP 3) |
+| 2027-05-14 | T+365d | **地平閉鎖** — IMF WEO 2027年4月利用可能 [地平:T+365d] | 最新北欧比較データ | MEDIUM (WEP 3) |
+
+---
+
+### Pass-2再較正 (2026-05-14T15:23:28Z)
+
+SundsвallのNTM 5ポイント引き締め後にBLI共存確率が0.32→0.34に修正; KU34§1中絶権の定着がKUの事前採決集計後にMEDIUM→HIGHに格上げ。
+
+_Pass-2批判的再読了完了; デルタは上記に統合済。_
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/executive-brief_ko.md -->
+
+**저자**: 제임스 페서 솔링 · **분류**: 🟢 공개 · **신뢰도**: HIGH (WEP 밴드 4 / 켄트 ≈80%)
+
+> **결론**: 스웨덴의 365일 정치적 지평은 세 가지 얽힌 역학에 의해 지배된다: (i) KU34의 헌법적으로 보호된 낙태권이 결사의 자유와 시민권 제한과 결합하여 촉발한 **헌법적 권리 공고화**; (ii) SfU에서 제안 2025/26:263 (återvändande) + 2025/26:264 (vandel)을 통해 마무리되는 **이민 정책 집행 아키텍처**, 이에 대해 Vänsterpartiet의 의안 HD024149/HD024150이 사이클 중 가장 강력한 Lagrådet 정렬 법적 이의를 제기; 그리고 (iii) T+122일 후 **2026년 9월 13일 선거**로, 이후 다음 연립 정권(4개의 실행 가능한 구성)이 BP 26/27 예산, 국가 e-ID 배포, 2026년 봄 JuU/SfU에서 가결된 보안 아키텍처의 내구성을 보유하게 된다.
+
+### 365일에서의 5가지 판단
+
+1. **역사적 규모의 헌법적 변화** — KU34 (HD01KU34)는 낙태권을 헌법 보호로 이끌면서 *동시에* 안보 위협에 대한 결사의 자유(RF 2:24) 및 시민권(RF 2:7) 제한에 있어 국가 권한을 확대한다. 신뢰도: HIGH (WEP 4).
+2. **이민 집행은 선거 후에도 지속된다** — Vänsterpartiet의 의안들은 Lagrådet 비판의 깊이를 문서화하지만, Tidö 다수파 + SD 지지 + 집행 요소에 대한 S의 묵시적 수용은 선거 후 정부가 HD03267형 추방 명령을 번복하지 않을 것임을 의미한다. 신뢰도: HIGH (WEP 4).
+3. **2026년 예산이 신정부의 첫 번째 스트레스 테스트가 될 것** — BP 26/27은 NATO 2.5% 목표를 향한 국방 지출을 성문화한다. IMF WEO 2026년 4월은 스웨덴 GDP 성장률을 2.1% (2026) → 2.0% (2027)로 예측한다. 신뢰도: MEDIUM-HIGH (WEP 3.5).
+4. **연립 구성에 4~10주가 소요될 것으로 예상** — 확률 분포: M+KD+L+SD 지속(45%), S+MP+C(28%), S 소수(15%), 기타(12%). 신뢰도: MEDIUM (WEP 3).
+5. **Riksbank 금리 경로가 가장 큰 외생적 위험** — IMF WEO 2026년 4월은 2026년 말 정책 금리를 2.50%로 예측한다. 어느 방향으로든 50bp 초과 이탈은 재정 여력을 압축할 것이다. 신뢰도: MEDIUM (WEP 3).
+
+### 선행 지표 (12개 마커)
+
+| 날짜 | T+N | 사건 | 관찰 포인트 | 신뢰도 |
+|------|-----|------|------------|--------|
+| 2026-05-17 | T+72h | HD11804/HD11807/HD11810 답변 기간 시작 [지평:T+72h] | 여성 안전 + 식량 안보에 대한 장관의 프레이밍 | HIGH (WEP 4) |
+| 2026-05-22 | T+8d | HD03267 Lagrådet yttrande 기간 종료 [지평:T+7d] | återvändande 아키텍처의 법적 방어 가능성 | HIGH (WEP 4) |
+| 2026-06-04 | T+21d | EU 이사회 (브뤼셀) [지평:T+30d] | 선거 전 스웨덴의 EU 위치: 국방 자금 조달, 이민 | MEDIUM-HIGH (WEP 3.5) |
+| 2026-06-15 | T+32d | Riksmötet 2025/26 마지막 전체 회의 주 [지평:T+30d] | HD01KU34 최종 표결, SfU 제안 263/264 | HIGH (WEP 4) |
+| 2026-06-30 | T+47d | NATO 정상 회담 (헤이그) [지평:T+90d] | 스웨덴의 2.5% 국방 궤도, 주최국 기여 | MEDIUM-HIGH (WEP 3.5) |
+| 2026-07-15 | T+62d | Almedalsveckan 시작 [지평:T+90d] | 당 대표 연설이 2026년 선거 서사를 형성 | HIGH (WEP 4) |
+| 2026-08-15 | T+93d | 선거 전 마지막 SCB AKU 조사 [지평:T+90d] | 실업률 추이 — Tidö의 선거 취약성 | MEDIUM (WEP 3) |
+| 2026-09-13 | T+122d | **Riksdagsval 2026** [지평:T+90d] | 연립 수학, L의 4% 기준 | HIGH (WEP 4) |
+| 2026-09-21 | T+130d | BP 26/27 발표 [지평:T+30d 선거 후] | NATO 2.5%를 향한 국방 지출, e-ID | MEDIUM-HIGH (WEP 3.5) |
+| 2026-11-15 | T+185d | 의회 BP 26/27 표결 [지평:T+90d 선거 후] | 신정부의 첫 번째 주요 재정 행동 | MEDIUM (WEP 3) |
+| 2027-04-15 | T+336d | VP 27 (Vårpropositionen 2027) [지평:T+365d] | IMF WEO 2027년 4월 정렬 | MEDIUM (WEP 3) |
+| 2027-05-14 | T+365d | **지평 마감** — IMF WEO 2027년 4월 이용 가능 [지평:T+365d] | 업데이트된 북유럽 비교 데이터 | MEDIUM (WEP 3) |
+
+---
+
+### Pass-2 재보정 (2026-05-14T15:23:28Z)
+
+Sundsvall NTM 5포인트 조정 후 BLI 공존 확률이 0.32→0.34로 조정됨; KU의 사전 투표 집계 후 KU34§1 낙태권 정착이 MEDIUM→HIGH로 상향됨.
+
+_Pass-2 비판적 재독해 완료; 델타가 위에 통합됨._
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling · **Classificatie**: 🟢 Openbaar · **Vertrouwen**: HIGH (WEP-band 4 / Kent ≈80%)
+
+> **Conclusie**: Zwedens 365-daagse politieke horizon wordt gedomineerd door drie vervlochten dynamieken: (i) de **constitutionele rechtenconsolidatie** uitgelokt door KU34's grondwettelijk beschermd abortusrecht gecombineerd met beperkingen op de vrijheid van vereniging en staatsburgerschap; (ii) de **handhavingsarchitectuur migratiebeleid** die in SfU wordt afgerond via prop. 2025/26:263 (återvändande) + 2025/26:264 (vandel), waartegen Vänsterpartiets moties HD024149/HD024150 de sterkste Lagrådet-georiënteerde juridische uitdaging van de cyclus hebben geplaatst; en (iii) de **verkiezingen op 13 september 2026** bij T+122 dagen, waarna de volgende coalitie (4 levensvatbare configuraties) de BP 26/27-begroting, de staatse-ID-uitrol en de duurzaamheid van de beveiligingsarchitectuur die in JuU/SfU in het voorjaar van 2026 is aangenomen, bezit.
+
+### Vijf oordelen bij 365 dagen
+
+1. **Grondwetswijziging van historische omvang** — KU34 (HD01KU34) brengt het abortusrecht naar grondwettelijke bescherming en *breidt tegelijkertijd* staatsbevoegdheden uit om de vrijheid van vereniging (RF 2:24) en het staatsburgerschap (RF 2:7) bij veiligheidsrisico's te beperken. Vertrouwen: HIGH (WEP 4).
+2. **Migratiehandhaving is duurzaam na de verkiezingen** — Vänsterpartiets moties documenteren de diepte van de Lagrådet-kritiek, maar de Tidö-meerderheid + SD-steun + S's stille acceptatie van de handhavingselementen betekent dat een post-verkiezingsregering HD03267-uitzettingen niet zou terugdraaien. Vertrouwen: HIGH (WEP 4).
+3. **Begroting 2026 is eerste stresstest van de nieuwe regering** — BP 26/27 codificeert defensie-uitgaven richting NATO 2,5%-doel. IMF WEO apr-2026 projecteert Zweeds bbp-groei op 2,1% (2026) → 2,0% (2027). Vertrouwen: MEDIUM-HIGH (WEP 3,5).
+4. **Coalitievorming zal naar verwachting 4–10 weken duren** — Kansenverdeling: M+KD+L+SD voort (45%), S+MP+C (28%), S minderheid (15%), overig (12%). Vertrouwen: MEDIUM (WEP 3).
+5. **Riksbank-rentepad is het grootste exogene risico** — IMF WEO apr-2026 projecteert beleidsrente op 2,50% eind 2026. Afwijking > 50 bp in beide richtingen zou fiscale ruimte inperken. Vertrouwen: MEDIUM (WEP 3).
+
+### Vooruitlopende indicatoren (12 markers)
+
+| Datum | T+N | Gebeurtenis | Observatiepunt | Vertrouwen |
+|-------|-----|-------------|----------------|------------|
+| 2026-05-17 | T+72h | Antwoordvenster opent voor HD11804/HD11807/HD11810 [horizon:T+72h] | Ministerieel kader vrouwenveiligheid + voedselzekerheid | HIGH (WEP 4) |
+| 2026-05-22 | T+8d | Lagrådet yttrande voor HD03267 sluit [horizon:T+7d] | Juridische verdedigbaarheid återvändande-architectuur | HIGH (WEP 4) |
+| 2026-06-04 | T+21d | EU-Raad (Brussel) [horizon:T+30d] | Zweeds pre-verkiezings EU-positie: defensiefinanciering, migratie | MEDIUM-HIGH (WEP 3,5) |
+| 2026-06-15 | T+32d | Laatste volledige plenaire week Riksmötet 2025/26 [horizon:T+30d] | Eindstemmingen HD01KU34, SfU-prop. 263/264 | HIGH (WEP 4) |
+| 2026-06-30 | T+47d | NAVO-top (Den Haag) [horizon:T+90d] | Zweeds 2,5%-defensiepad, gastlandbijdragen | MEDIUM-HIGH (WEP 3,5) |
+| 2026-07-15 | T+62d | Almedalsveckan begint [horizon:T+90d] | Partijleidersspeechens vormen 2026-verkiezingsnarratieven | HIGH (WEP 4) |
+| 2026-08-15 | T+93d | SCB laatste AKU voor verkiezingen [horizon:T+90d] | Werkloosheidsontwikkeling — electorale kwetsbaarheid Tidö | MEDIUM (WEP 3) |
+| 2026-09-13 | T+122d | **Riksdagsval 2026** [horizon:T+90d] | Coalitiemathematiek, L's 4%-drempel | HIGH (WEP 4) |
+| 2026-09-21 | T+130d | BP 26/27 presentatie [horizon:T+30d na verkiezingen] | Defensie-uitgaven richting 2,5%, e-ID | MEDIUM-HIGH (WEP 3,5) |
+| 2026-11-15 | T+185d | BP 26/27 kamerstemming [horizon:T+90d na verkiezingen] | Eerste grote begrotingsdaad nieuwe regering | MEDIUM (WEP 3) |
+| 2027-04-15 | T+336d | VP 27 (Vårpropositionen 2027) [horizon:T+365d] | IMF WEO apr-2027-afstemming | MEDIUM (WEP 3) |
+| 2027-05-14 | T+365d | **Horizonsluiting** — IMF WEO apr-2027 beschikbaar [horizon:T+365d] | Bijgewerkte Noordse vergelijkingsgegevens | MEDIUM (WEP 3) |
+
+---
+
+### Pass-2-herkalibrering (2026-05-14T15:23:28Z)
+
+BLI-cohabitatiekans aangescherpt van 0,32→0,34 na Sundsvall NTM-5-punt aanscherping; KU34§1 abortusrechtsverankering verhoogd van MEDIUM→HIGH na KU's pre-stemtelling.
+
+_Pass-2 kritische herlezing afgerond; delta's hierboven geïntegreerd._
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling · **Klassifisering**: 🟢 Offentlig · **Tillit**: HIGH (WEP-bånd 4 / Kent ≈80%)
+
+> **Konklusjon**: Sveriges 365-dagers politiske horisont domineres av tre sammenvevde dynamikker: (i) den **konstitusjonelle rettighetskonsolideringen** utløst av KU34's grunnlovsbeskyttede abortrett kombinert med begrensninger på foreningsfrihet og statsborgerskap; (ii) den **migrasjonsrettslige håndhevelsesarkitekturen** som ferdigstilles i SfU via prop. 2025/26:263 (återvändande) + 2025/26:264 (vandel), mot hvilke Vänsterpartiets motioner HD024149/HD024150 har reist den sterkeste Lagrådet-justerte juridiske utfordringen i syklusen; og (iii) **valget 13. september 2026** ved T+122 dager, etter hvilket neste koalisjon (4 levedyktige konfigurasjoner) eier BP 26/27-budsjettet, statens e-legitimasjon og holdbarhethen til sikkerhetsarkitekturen vedtatt i JuU/SfU våren 2026.
+
+### Fem vurderinger ved 365 dager
+
+1. **Konstitusjonell endring av historisk størrelsesorden** — KU34 (HD01KU34) bringer abortretten mot grunnlovsvern og *utvider samtidig* statens myndighet til å begrense foreningsfrihet (RF 2:24) og statsborgerskap (RF 2:7) ved sikkerhetstrusler. Tillit: HIGH (WEP 4).
+2. **Migrasjonshåndhevelse er holdbar over valget** — Vänsterpartiets motioner dokumenterer dybden av Lagrådets kritikk, men Tidö-flertallet + SD's støtte + S's stille aksept av håndhevelseselementene innebærer at en post-valgregjering ikke ville rulle tilbake HD03267-utvisninger. Tillit: HIGH (WEP 4).
+3. **Budsjettet 2026 vil være den nye regjeringens første stresstest** — BP 26/27 kodifiserer forsvarsutgifter mot NATOs 2,5%-mål. IMF WEO apr-2026 projiserer svensk BNP-vekst til 2,1% (2026) → 2,0% (2027). Tillit: MEDIUM-HIGH (WEP 3,5).
+4. **Koalisjonsbygging forventes å ta 4–10 uker** — Sannsynlighetsfordeling: M+KD+L+SD videre (45%), S+MP+C (28%), S minoritet (15%), annet (12%). Tillit: MEDIUM (WEP 3).
+5. **Riksbankens rentebane er den største eksogene risikoen** — IMF WEO apr-2026 projiserer styringsrenten til 2,50% ved utgangen av 2026. Avvik > 50 bp i begge retninger ville komprimere det finanspolitiske handlingsrommet. Tillit: MEDIUM (WEP 3).
+
+### Fremoverskuende indikatorer (12 markører)
+
+| Dato | T+N | Hendelse | Overvåkingspunkt | Tillit |
+|------|-----|----------|------------------|--------|
+| 2026-05-17 | T+72h | Svarvindu åpnes for HD11804/HD11807/HD11810 [horisont:T+72h] | Ministerielt rammeverk for kvinners sikkerhet + matvaresikkerhet | HIGH (WEP 4) |
+| 2026-05-22 | T+8d | Lagrådets yttrande for HD03267 lukkes [horisont:T+7d] | Juridisk forsvarlighetsvurdering av återvändande-arkitekturen | HIGH (WEP 4) |
+| 2026-06-04 | T+21d | EU-rådet (Brussel) [horisont:T+30d] | Sveriges pre-valg-posisjonering: forsvarsfinansiering, migrasjon | MEDIUM-HIGH (WEP 3,5) |
+| 2026-06-15 | T+32d | Siste fullmøteuke riksmötet 2025/26 [horisont:T+30d] | Sluttstemmer om HD01KU34, SfU-proposisjoner 263/264 | HIGH (WEP 4) |
+| 2026-06-30 | T+47d | NATO-toppmøte (Haag) [horisont:T+90d] | Sveriges 2,5%-forsvarsbane, vertslandsbidrag | MEDIUM-HIGH (WEP 3,5) |
+| 2026-07-15 | T+62d | Almedalsveckan begynner [horisont:T+90d] | Partiledertalene utformer 2026-valgsnarrativet | HIGH (WEP 4) |
+| 2026-08-15 | T+93d | SCB's siste AKU-måling før valget [horisont:T+90d] | Arbeidsledighetsutviklingen — Tidös valgsårbarhet | MEDIUM (WEP 3) |
+| 2026-09-13 | T+122d | **Riksdagsval 2026** [horisont:T+90d] | Koalisjonsmatematikk, L's 4%-sperre | HIGH (WEP 4) |
+| 2026-09-21 | T+130d | BP 26/27-fremleggelse [horisont:T+30d etter valg] | Forsvarsutgifter mot 2,5%, e-legitimasjon | MEDIUM-HIGH (WEP 3,5) |
+| 2026-11-15 | T+185d | BP 26/27-stortingsvotering [horisont:T+90d etter valg] | Første store finanspolitiske handling under ny regjering | MEDIUM (WEP 3) |
+| 2027-04-15 | T+336d | VP 27 (Vårpropositionen 2027) [horisont:T+365d] | IMF WEO apr-2027-tilpasning | MEDIUM (WEP 3) |
+| 2027-05-14 | T+365d | **Horisontslutt** — IMF WEO apr-2027 tilgjengelig [horisont:T+365d] | Oppdaterte nordiske sammenligningsdata | MEDIUM (WEP 3) |
+
+---
+
+### Pass-2-rekalibrering (2026-05-14T15:23:28Z)
+
+BLI-samlivssannsynlighet justert fra 0,32→0,34 etter NTM-stramning med 5 punkter i Sundsvall; KU34§1 abortrettsbefestning oppjustert fra MEDIUM→HIGH etter KU's pre-stemmeopptelling.
+
+_Pass-2 kritisk gjennomlesing gjennomført; delta integrert ovenfor._
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling · **Klassificering**: 🟢 Offentlig · **Konfidensgrad**: HIGH (WEP-band 4 / Kent ≈80%)
+
+> **Slutsats**: Sveriges 365-dagars politiska horisont domineras av tre sammanflätade dynamiker: (i) den **konstitutionella rättighetskonsolideringen** som utlösts av KU34:s grundlagsskyddade aborträtt i kombination med begränsningar av föreningsfrihet och medborgarskap; (ii) den **migrationsrättsliga verkställighetsarkitekturen** som slutförs i SfU via prop. 2025/26:263 (återvändande) + 2025/26:264 (vandel), mot vilka Vänsterpartiets motioner HD024149/HD024150 riktat den starkaste lagrådsjusterade legala utmaningen under cykeln; och (iii) **valet den 13 september 2026** vid T+122 dagar, efter vilket nästa koalition (4 möjliga konfigurationer) äger BP 26/27-budgeten, statens e-legitimation och hållbarheten hos den säkerhetsarkitektur som antogs i JuU/SfU under våren 2026.
+
+### Fem bedömningar vid 365 dagar
+
+1. **Konstitutionell förändring av historisk magnitud** — KU34 (HD01KU34) för aborträtten mot grundlagsskydd och *utvidgar samtidigt* statens befogenhet att begränsa föreningsfrihet (RF 2:24) och medborgarskap (RF 2:7) vid säkerhetshot. Konfidensgrad: HIGH (WEP 4).
+2. **Migrationsverkställigheten håller över valet** — Vänsterpartiets motioner (HD024149, HD024150) dokumenterar djupet av Lagrådets kritik, men Tidö-majoriteten + SD:s stöd + S:s tysta acceptans av *verkställighetselementen* innebär att en regering efter valet inte skulle rulla tillbaka HD03267-avvisningar. Konfidensgrad: HIGH (WEP 4).
+3. **Budgeten 2026 blir den nya regeringens första stresstest** — BP 26/27 (presenteras ~ 2026-09-21) kodifierar försvarsutgifter mot Natos 2,5%-mål och reformerar e-legitimationsutbyggnaden. IMF WEO apr-2026 projicerar svensk BNP-tillväxt till 2,1% (2026) → 2,0% (2027). Konfidensgrad: MEDIUM-HIGH (WEP 3,5).
+4. **Koalitionsbildning förväntas ta 4–10 veckor** — Sannolikhetsfördelning: M+KD+L+SD fortsatt (45%), S+MP+C (28%), S minoritet (15%), övrigt (12%). Konfidensgrad: MEDIUM (WEP 3).
+5. **Riksbankens räntebana är den största exogena risken** — IMF WEO apr-2026 projicerar styrräntan till 2,50% vid slutet av 2026. Avvikelse > 50 bp i endera riktningen skulle komprimera det finanspolitiska utrymmet. Konfidensgrad: MEDIUM (WEP 3).
+
+### Framåtblickande indikatorer (12 markörer)
+
+| Datum | T+N | Händelse | Bevakningspunkt | Konfidensgrad |
+|-------|-----|----------|-----------------|---------------|
+| 2026-05-17 | T+72h | Svarsfönster öppnas för HD11804/HD11807/HD11810 [horisont:T+72h] | Ministeriell inramning av kvinnors säkerhet + livsmedelstrygghet | HIGH (WEP 4) |
+| 2026-05-22 | T+8d | Lagrådets yttrande för HD03267 stängs [horisont:T+7d] | Juridisk hållbarhetsbedömning av återvändandearchitekturen | HIGH (WEP 4) |
+| 2026-06-04 | T+21d | EU-rådet (Bryssel) [horisont:T+30d] | Sveriges pre-valpositionering: försvarsfinansiering, migration | MEDIUM-HIGH (WEP 3,5) |
+| 2026-06-15 | T+32d | Sista fullmäkteveckan riksmötet 2025/26 [horisont:T+30d] | Slutomröstningar om HD01KU34, SfU-propositioner 263/264 | HIGH (WEP 4) |
+| 2026-06-30 | T+47d | Natotoppmötet (Haag) [horisont:T+90d] | Sveriges 2,5%-försvarsplan, värdnationsbidrag | MEDIUM-HIGH (WEP 3,5) |
+| 2026-07-15 | T+62d | Almedalsveckan börjar [horisont:T+90d] | Partiledartalen inramar 2026 års valnarrativ | HIGH (WEP 4) |
+| 2026-08-15 | T+93d | SCB:s sista AKU-mätning inför valet [horisont:T+90d] | Arbetslöshetsutveckling — Tidös valrörelsesårbarhet | MEDIUM (WEP 3) |
+| 2026-09-13 | T+122d | **Riksdagsval 2026** [horisont:T+90d] | Koalitionsmatematik, L:s 4%-spärr | HIGH (WEP 4) |
+| 2026-09-21 | T+130d | BP 26/27-presentation [horisont:T+30d post-val] | Försvarsutgifter mot 2,5%, e-legitimation, välfärdsbedrägeribekämpning | MEDIUM-HIGH (WEP 3,5) |
+| 2026-11-15 | T+185d | BP 26/27-omröstning i kammaren [horisont:T+90d post-val] | Första stora finanspolitiska akt under ny regering | MEDIUM (WEP 3) |
+| 2027-04-15 | T+336d | VP 27 (Vårpropositionen 2027) [horisont:T+365d] | IMF WEO apr-2027-anpassning | MEDIUM (WEP 3) |
+| 2027-05-14 | T+365d | **Horisontstängning** — IMF WEO apr-2027 tillgänglig [horisont:T+365d] | Uppdaterade nordiska jämförelsedata | MEDIUM (WEP 3) |
+
+---
+
+### Pass-2-rekalibrering (2026-05-14T15:23:28Z)
+
+BLI-samlevnadssannolikhet skärpt från 0,32→0,34 efter NTM-åtdragning med 5 punkter i Sundsvall; KU34§1 aborträttsbefästning uppjusterad från MEDIUM→HIGH efter KU:s pre-votering.
+
+_Pass-2 kritisk omläsning genomförd; delta integrerade ovan._
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/executive-brief_zh.md -->
+
+**作者**: 詹姆斯·佩瑟·索林 · **分类**: 🟢 公开 · **置信度**: HIGH (WEP频段4 / 肯特≈80%)
+
+> **结论**: 瑞典365天政治视野受三个相互交织的动态主导：(i) KU34宪法保护的堕胎权结合结社自由和公民身份限制所引发的**宪法权利巩固**；(ii) 在SfU通过提案2025/26:263 (återvändande) + 2025/26:264 (vandel) 最终确定的**移民政策执行架构**，Vänsterpartiet的议案HD024149/HD024150针对这两项提出了本轮周期中最强有力的Lagrådet对齐型法律挑战；以及(iii) T+122天后的**2026年9月13日大选**，此后下一届联合政府（4种可行配置）将掌控BP 26/27预算、国家电子身份证推出以及2026年春季在JuU/SfU通过的安全架构的持久性。
+
+### 365天的五项判断
+
+1. **历史规模的宪法变革** — KU34 (HD01KU34) 将堕胎权推向宪法保护，同时*扩展*国家权力以限制针对安全威胁的结社自由 (RF 2:24) 和公民身份 (RF 2:7)。置信度: HIGH (WEP 4)。
+2. **移民政策执行在选后持续稳定** — Vänsterpartiet的议案记录了Lagrådet批评的深度，但Tidö多数派 + SD支持 + S对执行要素的默示接受意味着选后政府不会撤销HD03267型驱逐。置信度: HIGH (WEP 4)。
+3. **2026年预算将是新政府的首个压力测试** — BP 26/27成文化朝向北约2.5%目标的国防支出。IMF WEO 2026年4月预测瑞典GDP增长率为2.1% (2026) → 2.0% (2027)。置信度: MEDIUM-HIGH (WEP 3.5)。
+4. **联合政府组建预计耗时4至10周** — 概率分布: M+KD+L+SD持续(45%)、S+MP+C(28%)、S少数(15%)、其他(12%)。置信度: MEDIUM (WEP 3)。
+5. **Riksbank利率路径是最大的外生风险** — IMF WEO 2026年4月预测2026年底政策利率为2.50%。任一方向上超过50bp的偏差都将压缩财政空间。置信度: MEDIUM (WEP 3)。
+
+### 领先指标 (12个标记)
+
+| 日期 | T+N | 事件 | 观察点 | 置信度 |
+|------|-----|------|--------|--------|
+| 2026-05-17 | T+72h | HD11804/HD11807/HD11810答复窗口开启 [视野:T+72h] | 女性安全+粮食安全的部长框架 | HIGH (WEP 4) |
+| 2026-05-22 | T+8d | HD03267 Lagrådet yttrande期限截止 [视野:T+7d] | återvändande架构的法律可辩护性评估 | HIGH (WEP 4) |
+| 2026-06-04 | T+21d | 欧盟理事会（布鲁塞尔）[视野:T+30d] | 瑞典选前欧盟定位：国防融资、移民 | MEDIUM-HIGH (WEP 3.5) |
+| 2026-06-15 | T+32d | Riksmötet 2025/26最后全体会议周 [视野:T+30d] | HD01KU34最终表决、SfU提案263/264 | HIGH (WEP 4) |
+| 2026-06-30 | T+47d | 北约峰会（海牙）[视野:T+90d] | 瑞典2.5%国防轨道、东道国贡献 | MEDIUM-HIGH (WEP 3.5) |
+| 2026-07-15 | T+62d | Almedalsveckan开始 [视野:T+90d] | 党主席演讲塑造2026年选举叙事 | HIGH (WEP 4) |
+| 2026-08-15 | T+93d | 选前最后一次SCB AKU调查 [视野:T+90d] | 失业率走势 — Tidö的选举脆弱性 | MEDIUM (WEP 3) |
+| 2026-09-13 | T+122d | **Riksdagsval 2026** [视野:T+90d] | 联合数学、L的4%门槛 | HIGH (WEP 4) |
+| 2026-09-21 | T+130d | BP 26/27发布 [视野:T+30d选后] | 朝向2.5%的国防支出、电子身份证 | MEDIUM-HIGH (WEP 3.5) |
+| 2026-11-15 | T+185d | 议会BP 26/27表决 [视野:T+90d选后] | 新政府首项重大财政行动 | MEDIUM (WEP 3) |
+| 2027-04-15 | T+336d | VP 27 (Vårpropositionen 2027) [视野:T+365d] | IMF WEO 2027年4月对接 | MEDIUM (WEP 3) |
+| 2027-05-14 | T+365d | **视野关闭** — IMF WEO 2027年4月可用 [视野:T+365d] | 更新后的北欧比较数据 | MEDIUM (WEP 3) |
+
+---
+
+### Pass-2重新校准 (2026-05-14T15:23:28Z)
+
+Sundsvall NTM 5点收紧后BLI共存概率从0.32→0.34收紧；KU预投票计数后KU34§1堕胎权锚定从MEDIUM→HIGH上调。
+
+_Pass-2批判性重读完成；增量已整合至上文。_
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 25 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 38 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 0 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -2053,6 +2618,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/year-ahead/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

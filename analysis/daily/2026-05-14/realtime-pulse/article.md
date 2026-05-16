@@ -1,12 +1,12 @@
 ---
-title: "Swedish Parliamentary Pulse,"
+title: "Swedish Parliamentary Pulse"
 description: "Prepared for: Senior political analyst, editorial team"
 keywords: "Realtime Pulse, English, May 14, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Parliamentary Pulse Prepared Senior analyst, Swedish, Parliamentary, Pulse, Prepared, Senior, political, analyst, editorial, team"
 date: 2026-05-14
 subfolder: realtime-pulse
 slug: 2026-05-14-realtime-pulse
 source_folder: analysis/daily/2026-05-14/realtime-pulse
-generated_at: 2026-05-16T13:28:18.492Z
+generated_at: 2026-05-16T20:24:26.611Z
 language: en
 layout: article
 ---

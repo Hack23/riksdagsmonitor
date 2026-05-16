@@ -6,7 +6,7 @@ date: 2026-05-15
 subfolder: committeeReports
 slug: 2026-05-15-committeeReports
 source_folder: analysis/daily/2026-05-15/committeeReports
-generated_at: 2026-05-16T13:28:18.505Z
+generated_at: 2026-05-16T20:24:26.630Z
 language: en
 layout: article
 ---
@@ -97,6 +97,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1407,13 +1420,807 @@ Searched `search_voteringar` for KU, JuU committees across last 4 riksmöten (20
 | IMF WEO pre-warm | data/imf-context.json | 2026-05-15T04:58Z | ~527ms | A1 |
 | Prior voteringar | search_voteringar (4 rm) | 2026-05-15T05:02Z | ~300ms | A2 |
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# الريكسداغ يُكرّس الحماية الدستورية للإجهاض — ويوسّع أدوات دولة الأمن
+
+**المؤلف**: جيمس بيثر سورلينغ | **التاريخ**: 2026-05-15 | **التصنيف**: عام  
+**الثقة**: HIGH [B2] | **معرّف التشغيل**: news-committee-reports-2026-05-15
+
+### BLUF
+
+قدّمت لجنة الدستور السويدية (KU) تعديلَين دستوريَّين مترابطَين يستلزمان أغلبية ثلثين: أحدهما يُرسّخ حق الإجهاض في الفصل الثاني من قانون الحكم (RF)، مما يجعل الحقوق الإنجابية غير قابلة للعكس إلا بالعتبة المرتفعة ذاتها؛ والآخر يوسّع صلاحيات الدولة لتقييد حرية تكوين الجمعيات وسحب الجنسية من الأشخاص المرتبطين بالإرهاب والجريمة المنظمة. في الوقت ذاته، تدفع لجنة الشؤون المدنية (CU) نحو إلغاء تنظيمي مثير للجدل في سوق الإيجار (HD01CU31) من شأنه أن يعرّض 800,000 مستأجر خاضعاً لتنظيم الإيجار لأسعار السوق، فيما تُجرّم لجنة العدل (JuU) العنف النفسي (HD01JuU39). تُشير هذه الوقائع مجتمعةً إلى اندفاعة برلمانية نهاية الجلسة فاعلة، ذات تداعيات دستورية وسياسية اجتماعية تمتد إلى دورة انتخابات 2026.
+
+### القرارات التي تدعمها هذه الوثيقة
+
+1. **إطار انتخابات 2026**: يُعيد KU34 تشكيل سياسة الكتلة — تحظى حماية حق الإجهاض بدعم واسع من الأحزاب (S وM وC وL مؤيدون)، لكن بنود تقييد حرية تكوين الجمعيات وتوسيع سحب الجنسية تُحدث شرخاً داخل الكتل وفيما بينها.
+2. **رصد مخاطر المجتمع المدني والقانون**: يستدعي كلٌّ من CU31 (سوق الإيجار) وJuU39 (العنف النفسي) تحدياتٍ تنفيذية بالغة ومعارضات دستورية محتملة من مجلس التشريع (Lagrådet).
+3. **متابعة التوافق مع الاتحاد الأوروبي**: يقع CU30 (توجيه EPBD) وCU31 (سوق الإيجار) عند تقاطع الالتزامات التنظيمية الأوروبية والسياسة السكنية الوطنية السويدية — مع تأثيرات واضحة على ميزانيات البلديات.
+
+### قراءة 60 ثانية
+
+- 🔴 **KU34** (الدستور): حق الإجهاض محمي دستورياً؛ حرية تكوين الجمعيات مقيَّدة لمواجهة التهديدات الأمنية؛ توسيع سحب الجنسية. يستلزم تصويتاً بأغلبية الثلثين مرتين في riksmöten. المصدر: `HD01KU34`، KU، 2026-05-11. [A2][الأفق:أسبوع]
+- 🟠 **CU31** (الإسكان): إلغاء تنظيم سوق الإيجار يمرّ باللجنة. 800,000+ مستأجر خاضع لتنظيم الإيجار معرَّض لأسعار السوق. معارضة قوية من S وV وMP. المصدر: `HD01CU31`، CU، 2026-05-08. [A2][الأفق:شهر]
+- 🟠 **JuU39** (القانون الجنائي): جريمة جديدة من العنف النفسي — مستوحاة من الدول الإسكندنافية. أُقرّ في JuU بأغلبية متعددة الأحزاب. المصدر: `HD01JuU39`، JuU، 2026-05-07. [A2][الأفق:أسبوع]
+- 🟡 **NU21** (الريف): إطار شامل لسياسة الأرياف — تمويل النطاق العريض والبنية التحتية والخدمات المحلية في المناطق قليلة السكان. المصدر: `HD01NU21`، NU، 2026-05-12. [A2][الأفق:شهر]
+- 🟡 **CU30** (الطاقة): تنفيذ EPBD — تحديث معايير أداء الطاقة للمباني؛ تقدير نافذة استثمارية بـ700 مليار كرونة للقطاع التجديدي. المصدر: `HD01CU30`، CU، 2026-05-12. [A2][الأفق:سنة]
+
+### المؤشر المُقدِّم التالي
+
+**جولة التصويت الأولى لـHD01KU34** متوقعة في الأسبوع الاجتماعي العام للريكسداغ 2026-05-18–22. في حال الموافقة بأغلبية ثلثين، يدخل التعديل مسار riksmöte 2026/27 لجولة التصويت الثانية الإلزامية وفق RF 8:14. عدم بلوغ أغلبية الثلثين يُفضي إلى إجراء دستوري معلّق وإعادة تفاوض محتملة على بنود حرية تكوين الجمعيات.
+
+### تقييم الثقة
+
+| الادعاء | الثقة | أدميرالتي | الأساس |
+|---------|-------|-----------|--------|
+| KU34 مُقدَّم بتعديلَين دستوريَّين | VERY HIGH | A1 | بيتانكاندي رسمي لـKU، dok_id HD01KU34 |
+| CU31 يدفع نحو إلغاء تنظيم سوق الإيجار | HIGH | A2 | dok_id HD01CU31، بيتانكاندي CU |
+| JuU39 يُجرّم العنف النفسي | HIGH | A2 | dok_id HD01JuU39، بيتانكاندي JuU |
+| سياق اقتصادي IMF WEO أبريل 2026 | HIGH | A1 | data/imf-context.json، الحالة: ok |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+flowchart LR
+    KU34["🔴 KU34\nConstitution: Abortion+Security\nL3 · 2/3 supermajority"] --> VOTE["Riksdag plenary\n2026-05-18~22"]
+    CU31["🟠 CU31\nRental market\nL2+ · Passed committee"] --> VOTE
+    JuU39["🟠 JuU39\nPsychological violence\nL2+ · Passed JuU"] --> VOTE
+    VOTE --> E26["2026 Election\nframing impact"]
+    style KU34 fill:#ff006e,color:#fff
+    style CU31 fill:#ff8c00,color:#fff
+    style JuU39 fill:#ff8c00,color:#fff
+    style VOTE fill:#1a1e3d,stroke:#00d9ff
+    style E26 fill:#0a0e27,stroke:#ffbe0b
+```
+
+---
+
+### ✅ ملاحظة التحديث (2026-05-16)
+
+**الصياغة الأصلية**: 2026-05-15 وفق قالب executive-brief الإصدار < 4.4.  
+**التحليل الجوهري والأدلة والاستنتاجات دون تغيير.**
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling | **Dato**: 2026-05-15 | **Klassifikation**: PUBLIC  
+**Tillid**: HIGH [B2] | **Kørsel-ID**: news-committee-reports-2026-05-15
+
+### BLUF
+
+Sveriges Grundlovsudvalg (KU) har fremsat to sammenkoblede grundlovsændringer, der kræver 2/3 supermajoritet: én der forankrer retten til abort i RF 2. kap., hvilket gør reproduktive rettigheder formelt reversible kun med den samme forhøjede tærskel; og én der udvider statens magt til at begrænse foreningsfriheden og tilbagekalde statsborgerskab for terror- og organiseret-kriminalitetsrelaterede enkeltpersoner. Simultaneously fremfører Civiludvalget (CU) en kontroversiel husmarkedsderegulering (HD01CU31), der ville udsætte 800.000 huslejeregulerede lejere for markedspriser, og Retsudvalget (JuU) kriminaliserer psykisk vold (HD01JuU39). Tilsammen signalerer disse en aktiv parlamentarisk sessionsafslutningssprint med konstitutionelle og socialpolitiske konsekvenser, der strækker sig ind i 2026-valgcyklussen.
+
+### Beslutninger dette underlag understøtter
+
+1. **Valg 2026-indramning**: KU34 omformer blokpolitikken — abortretsbeskyttelsen har bred partistøtte (S, M, C, L støtter), men klausulerne om begrænset foreningsfrihed og udvidet tilbagekaldelse af statsborgerskab skaber en kile inden for og på tværs af blokkene.
+2. **Civilsamfund/juridisk risikoovervågning**: CU31 (husmarkedet) og JuU39 (psykisk vold) indebærer begge betydelige implementeringsudfordringer og potentielle Lagrådet-forfatningsindvendinger.
+3. **EU-tilpasningssporing**: CU30 (EPBD) og CU31 (husmarkedet) befinder sig i skæringspunktet mellem EU's reguleringsforpligtelser og dansk indenlandsk boligpolitik — med distinkte virkninger på kommunale budgetter.
+
+### 60-sekunders læsning
+
+- 🔴 **KU34** (Grundlov): Abortretten grundlovssikret; foreningsfriheden begrænset for sikkerhedstrusler; tilbagekaldelse af statsborgerskab udvidet. Kræver 2× supermajoritetsafstemning i to riksmøder. Kilde: `HD01KU34`, KU, 2026-05-11. [A2][horisont:uge]
+- 🟠 **CU31** (Bolig): Husmarkedsderegulering vedtages i udvalg. 800.000+ huslejeregulerede lejere risikerer markedslejer. Stærk modstand fra S, V, MP. Kilde: `HD01CU31`, CU, 2026-05-08. [A2][horisont:måned]
+- 🟠 **JuU39** (Strafferet): Ny strafbar handling psykisk vold — modelleret efter nordiske lande. Vedtaget i JuU med tværbloks flertal. Kilde: `HD01JuU39`, JuU, 2026-05-07. [A2][horisont:uge]
+- 🟡 **NU21** (Landdistrikter): Samlet landdistriktspolitisk ramme — finansiering til bredbånd, infrastruktur og lokal serviceadgang i tyndt befolkede områder. Kilde: `HD01NU21`, NU, 2026-05-12. [A2][horisont:måned]
+- 🟡 **CU30** (Energi): EPBD-implementering — bygningers energipræstationsstandarder opdateres; 700 mia. SEK investeringsvindue for renoveringssektoren estimeret. Kilde: `HD01CU30`, CU, 2026-05-12. [A2][horisont:år]
+
+### Næste fremadrettede indikator
+
+**HD01KU34 første afstemning** forventes i Riksdagens plenumuge 2026-05-18–22. Ved godkendelse med 2/3 supermajoritet indgår ændringsforslaget i 2026/27 riksmøde-pipeline til den obligatoriske anden runde-afstemning krævet af RF 8:14. Manglende supermajoritet udløser en hængt konstitutionel proces og potentiel genforhandling af foreningsfrihedsklausulerne.
+
+### Tillidsvurdering
+
+| Påstand | Tillid | Admiralty | Grundlag |
+|---------|--------|-----------|---------|
+| KU34 fremsat med to forfatningsændringer | VERY HIGH | A1 | Officielt KU-betænkning dok_id HD01KU34 |
+| CU31 fremmer husmarkedsderegulering | HIGH | A2 | dok_id HD01CU31, CU-betænkning |
+| JuU39 kriminaliserer psykisk vold | HIGH | A2 | dok_id HD01JuU39, JuU-betænkning |
+| IMF WEO Apr-2026 økonomisk kontekst | HIGH | A1 | data/imf-context.json, status: ok |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+flowchart LR
+    KU34["🔴 KU34\nConstitution: Abortion+Security\nL3 · 2/3 supermajority"] --> VOTE["Riksdag plenary\n2026-05-18~22"]
+    CU31["🟠 CU31\nRental market\nL2+ · Passed committee"] --> VOTE
+    JuU39["🟠 JuU39\nPsychological violence\nL2+ · Passed JuU"] --> VOTE
+    VOTE --> E26["2026 Election\nframing impact"]
+    style KU34 fill:#ff006e,color:#fff
+    style CU31 fill:#ff8c00,color:#fff
+    style JuU39 fill:#ff8c00,color:#fff
+    style VOTE fill:#1a1e3d,stroke:#00d9ff
+    style E26 fill:#0a0e27,stroke:#ffbe0b
+```
+
+---
+
+### ✅ Retrofit-note (2026-05-16)
+
+**Oprindelig udarbejdelse**: 2026-05-15 under executive-brief-skabelon v < 4.4.
+**Retrofit-omfang** (anvendt 2026-05-16): Dansksprogede H1 og Mermaid-etiketter oversat til engelsk (kanonisk sprogoverenstemmelse). Ingen ændringer af beviser, dok_ids eller analytiske konklusioner.
+
+**Ikke retrofitted**: Beslutningsklasse BLUF-rubrik, overskriftskandidater, 14-sprogs SEO-frø, fuld Pass-2 Selvrevisionsregneark v4.4.
+
+**Faktisk analyse, beviser og konklusioner uændrede.**
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling | **Datum**: 2026-05-15 | **Klassifizierung**: PUBLIC  
+**Konfidenz**: HIGH [B2] | **Lauf-ID**: news-committee-reports-2026-05-15
+
+### BLUF
+
+Schwedens Verfassungsausschuss (KU) hat zwei miteinander verbundene Verfassungsänderungen vorgelegt, die eine 2/3-Supermehrheit erfordern: eine, die das Abtreibungsrecht in RF Kap. 2 verankert und reproduktive Rechte formal nur mit derselben erhöhten Schwelle umkehrbar macht; und eine, die die staatliche Macht zur Einschränkung der Vereinigungsfreiheit und zum Entzug der Staatsbürgerschaft für terror- und organisierter Kriminalität verbundene Personen ausdehnt. Gleichzeitig treibt der Zivilausschuss (CU) eine umstrittene Mietmarktderegulierung (HD01CU31) voran, die 800.000 mietpreisgebundene Mieter Marktpreisen aussetzen würde, und der Justizausschuss (JuU) kriminalisiert psychische Gewalt (HD01JuU39). Zusammen signalisieren diese einen aktiven parlamentarischen Endspurt der Sitzungsperiode mit verfassungs- und sozialpolitischen Konsequenzen, die sich in den Wahlzyklus 2026 erstrecken.
+
+### Entscheidungen, die dieses Dokument unterstützt
+
+1. **Wahlkampf-Rahmung 2026**: KU34 gestaltet die Blockpolitik um — der Schutz des Abtreibungsrechts hat breite Parteiunterstützung (S, M, C, L befürworten), aber die Einschränkung der Vereinigungsfreiheit und die erweiterte Staatsbürgerschaftsentzugsklausel schaffen einen Keil innerhalb und zwischen den Blöcken.
+2. **Zivilgesellschaft/rechtliche Risikoüberwachung**: CU31 (Mietmarkt) und JuU39 (psychische Gewalt) beinhalten beide erhebliche Umsetzungsherausforderungen und potenzielle Lagrådet-Verfassungseinwände.
+3. **EU-Angleichungsverfolgung**: CU30 (EPBD) und CU31 (Mietmarkt) befinden sich an der Schnittstelle zwischen EU-Regulierungsverpflichtungen und schwedischer Inlandswohnungspolitik — mit deutlichen Auswirkungen auf kommunale Haushalte.
+
+### 60-Sekunden-Lektüre
+
+- 🔴 **KU34** (Verfassung): Abtreibungsrecht verfassungsrechtlich geschützt; Vereinigungsfreiheit für Sicherheitsbedrohungen eingeschränkt; Staatsbürgerschaftsentzug erweitert. Erfordert 2× Supermajoritätsabstimmung in zwei Riksmöten. Quelle: `HD01KU34`, KU, 2026-05-11. [A2][Horizont:Woche]
+- 🟠 **CU31** (Wohnen): Mietmarktderegulierung passiert Ausschuss. 800.000+ mietpreisgebundene Mieter sind Marktmieten ausgesetzt. Starker Widerstand von S, V, MP. Quelle: `HD01CU31`, CU, 2026-05-08. [A2][Horizont:Monat]
+- 🟠 **JuU39** (Strafrecht): Neuer Straftatbestand psychische Gewalt — nach nordischen Ländern modelliert. Mit blockübergreifender Mehrheit in JuU verabschiedet. Quelle: `HD01JuU39`, JuU, 2026-05-07. [A2][Horizont:Woche]
+- 🟡 **NU21** (Ländlich): Umfassendes ländliches Politikrahmenwerk — Finanzierung für Breitband, Infrastruktur und lokale Dienstleistungen in dünn besiedelten Gebieten. Quelle: `HD01NU21`, NU, 2026-05-12. [A2][Horizont:Monat]
+- 🟡 **CU30** (Energie): EPBD-Umsetzung — Energieeffizienzstandards für Gebäude aktualisiert; geschätztes Investitionsfenster von 700 Mrd. SEK für den Renovierungssektor. Quelle: `HD01CU30`, CU, 2026-05-12. [A2][Horizont:Jahr]
+
+### Nächster Vorwärtsindikator
+
+**HD01KU34 Erste-Runde-Abstimmung** wird in der Riksdag-Plenumwoche 2026-05-18–22 erwartet. Bei Genehmigung mit 2/3-Supermehrheit tritt der Änderungsantrag in die 2026/27-Riksmöte-Pipeline für die gemäß RF 8:14 erforderliche obligatorische Zweite-Runde-Abstimmung ein. Fehlen der Supermehrheit löst ein hängendes Verfassungsverfahren und potenzielle Neuverhandlung der Vereinigungsfreiheitsklauseln aus.
+
+### Konfidenzeinschätzung
+
+| Behauptung | Konfidenz | Admiralty | Grundlage |
+|------------|-----------|-----------|-----------|
+| KU34 mit zwei Verfassungsänderungen vorgelegt | VERY HIGH | A1 | Offizielles KU-Ausschussgutachten dok_id HD01KU34 |
+| CU31 treibt Mietmarktderegulierung voran | HIGH | A2 | dok_id HD01CU31, CU-Ausschussgutachten |
+| JuU39 kriminalisiert psychische Gewalt | HIGH | A2 | dok_id HD01JuU39, JuU-Ausschussgutachten |
+| IMF WEO Apr-2026 wirtschaftlicher Kontext | HIGH | A1 | data/imf-context.json, Status: ok |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+flowchart LR
+    KU34["🔴 KU34\nConstitution: Abortion+Security\nL3 · 2/3 supermajority"] --> VOTE["Riksdag plenary\n2026-05-18~22"]
+    CU31["🟠 CU31\nRental market\nL2+ · Passed committee"] --> VOTE
+    JuU39["🟠 JuU39\nPsychological violence\nL2+ · Passed JuU"] --> VOTE
+    VOTE --> E26["2026 Election\nframing impact"]
+    style KU34 fill:#ff006e,color:#fff
+    style CU31 fill:#ff8c00,color:#fff
+    style JuU39 fill:#ff8c00,color:#fff
+    style VOTE fill:#1a1e3d,stroke:#00d9ff
+    style E26 fill:#0a0e27,stroke:#ffbe0b
+```
+
+---
+
+### ✅ Retrofit-Hinweis (2026-05-16)
+
+**Ursprüngliche Erstellung**: 2026-05-15 unter executive-brief-Vorlage v < 4.4.
+**Inhaltliche Analyse, Nachweise und Schlussfolgerungen unverändert.**
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling | **Fecha**: 2026-05-15 | **Clasificación**: PUBLIC  
+**Confianza**: HIGH [B2] | **ID de ejecución**: news-committee-reports-2026-05-15
+
+### BLUF
+
+El Comité Constitucional sueco (KU) ha presentado dos enmiendas constitucionales interconectadas que requieren una supermayoría de 2/3: una que ancla el derecho al aborto en el RF cap. 2, haciendo los derechos reproductivos formalmente reversibles solo con el mismo umbral elevado; y otra que amplía el poder del Estado para restringir la libertad de asociación y revocar la ciudadanía para personas vinculadas al terrorismo y la delincuencia organizada. Simultáneamente, el Comité de Asuntos Civiles (CU) impulsa una desregulación controvertida del mercado de alquiler (HD01CU31) que expondría a 800 000 inquilinos con renta controlada a precios de mercado, y el Comité de Justicia (JuU) tipifica la violencia psicológica (HD01JuU39). En conjunto, señalan un activo sprint parlamentario de fin de sesión con consecuencias constitucionales y de política social que se extienden al ciclo electoral de 2026.
+
+### Decisiones que este documento apoya
+
+1. **Encuadre electoral 2026**: KU34 remodela la política de bloques — la protección del derecho al aborto tiene amplio apoyo de partidos (S, M, C, L favorables), pero las cláusulas de restricción de la libertad de asociación y ampliación de la revocación de ciudadanía crean una cuña dentro de los bloques y entre ellos.
+2. **Monitoreo de riesgos de la sociedad civil/jurídicos**: CU31 (mercado de alquiler) y JuU39 (violencia psicológica) implican ambos desafíos de implementación significativos y posibles objeciones constitucionales del Lagrådet.
+3. **Seguimiento de alineación UE**: CU30 (EPBD) y CU31 (mercado de alquiler) se encuentran en la intersección de las obligaciones regulatorias de la UE y la política de vivienda nacional sueca — con impactos distintos en los presupuestos municipales.
+
+### Lectura de 60 segundos
+
+- 🔴 **KU34** (Constitución): Derecho al aborto protegido constitucionalmente; libertad de asociación restringida para amenazas de seguridad; revocación de ciudadanía ampliada. Requiere 2× votación por supermayoría en dos riksmöten. Fuente: `HD01KU34`, KU, 2026-05-11. [A2][horizonte:semana]
+- 🟠 **CU31** (Vivienda): La desregulación del mercado de alquiler supera el comité. 800 000+ inquilinos con renta controlada se exponen a alquileres de mercado. Fuerte oposición de S, V, MP. Fuente: `HD01CU31`, CU, 2026-05-08. [A2][horizonte:mes]
+- 🟠 **JuU39** (Derecho penal): Nuevo delito de violencia psicológica — modelado en países nórdicos. Aprobado en JuU con mayoría multipartidista. Fuente: `HD01JuU39`, JuU, 2026-05-07. [A2][horizonte:semana]
+- 🟡 **NU21** (Rural): Marco integral de política rural — financiamiento para banda ancha, infraestructura y acceso a servicios locales en zonas poco pobladas. Fuente: `HD01NU21`, NU, 2026-05-12. [A2][horizonte:mes]
+- 🟡 **CU30** (Energía): Implementación EPBD — normas de eficiencia energética de edificios actualizadas; ventana de inversión de 700 Mrd SEK para el sector de renovación estimada. Fuente: `HD01CU30`, CU, 2026-05-12. [A2][horizonte:año]
+
+### Próximo indicador adelantado
+
+**Votación de primera ronda HD01KU34** esperada en la semana plenaria del Riksdag 2026-05-18–22. Si se aprueba con supermayoría de 2/3, la enmienda entra en la canalización del riksmöte 2026/27 para la votación obligatoria de segunda ronda requerida por RF 8:14. La falta de supermayoría desencadena un proceso constitucional pendiente y potencial renegociación de las cláusulas de libertad de asociación.
+
+### Evaluación de confianza
+
+| Afirmación | Confianza | Admiralty | Base |
+|------------|-----------|-----------|------|
+| KU34 presentado con dos cambios constitucionales | VERY HIGH | A1 | Betänkande oficial del KU dok_id HD01KU34 |
+| CU31 impulsa desregulación del mercado de alquiler | HIGH | A2 | dok_id HD01CU31, betänkande CU |
+| JuU39 tipifica la violencia psicológica | HIGH | A2 | dok_id HD01JuU39, betänkande JuU |
+| Contexto económico IMF WEO Abr-2026 | HIGH | A1 | data/imf-context.json, estado: ok |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+flowchart LR
+    KU34["🔴 KU34\nConstitution: Abortion+Security\nL3 · 2/3 supermajority"] --> VOTE["Riksdag plenary\n2026-05-18~22"]
+    CU31["🟠 CU31\nRental market\nL2+ · Passed committee"] --> VOTE
+    JuU39["🟠 JuU39\nPsychological violence\nL2+ · Passed JuU"] --> VOTE
+    VOTE --> E26["2026 Election\nframing impact"]
+    style KU34 fill:#ff006e,color:#fff
+    style CU31 fill:#ff8c00,color:#fff
+    style JuU39 fill:#ff8c00,color:#fff
+    style VOTE fill:#1a1e3d,stroke:#00d9ff
+    style E26 fill:#0a0e27,stroke:#ffbe0b
+```
+
+---
+
+### ✅ Nota de actualización (2026-05-16)
+
+**Redacción original**: 2026-05-15 bajo la plantilla executive-brief v < 4.4.
+**Análisis sustantivo, evidencia y conclusiones sin cambios.**
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling | **Päivämäärä**: 2026-05-15 | **Luokitus**: PUBLIC  
+**Luottamus**: HIGH [B2] | **Ajotunnus**: news-committee-reports-2026-05-15
+
+### BLUF
+
+Ruotsin perustuslakivaliokunta (KU) on tuonut esille kaksi toisiinsa kytkettyä perustuslain muutosta, jotka vaativat 2/3 yli enemmistön: yksi joka ankkuroi aborttioikeuden RF 2 luvussa, tehden lisääntymisõigudet muodollisesti kumottaviksi vain samalla korotetulla kynnyksellä; ja yksi joka laajentaa valtion valtaa rajoittaa yhdistymisvapautta ja peruuttaa kansalaisuus terrorismi- ja järjestäytyneen rikollisuuden sidonnaisille henkilöille. Samanaikaisesti siviilivaliokunna (CU) ajaa kiistanalaista vuokramarkkinoiden sääntelyn purkamista (HD01CU31), joka altistaisi 800 000 vuokrasäännöstelyyn kuuluvaa vuokralaista markkinahinnoille, ja oikeusvaliokunta (JuU) kriminalisoi psyykkisen väkivallan (HD01JuU39). Yhdessä nämä merkitsevät aktiivista parlamentaarista istuntokauden päätössprinttiä, jolla on perustuslaillisia ja sosiaalipolitiikan seurauksia ulottuen vuoden 2026 vaalijaksoon.
+
+### Päätökset joita tämä asiakirja tukee
+
+1. **Vuosi 2026 vaalien kehystäminen**: KU34 muovaa lohkopolitiikkaa — aborttioikeuden suoja saa laajan puoluekannatuksen (S, M, C, L tukevat), mutta yhdistymisvapauden rajoitukset ja laajennettu kansalaisuuden peruuttaminen luovat kiilan lohkojen sisällä ja välillä.
+2. **Kansalaisyhteiskunta/oikeudellinen riskiseuranta**: CU31 (vuokramarkkinat) ja JuU39 (psyykkinen väkivalta) sisältävät molemmat merkittäviä toteutushaasteita ja mahdollisia Lagrådetin perustuslaillisia vastalauseita.
+3. **EU-yhdenmukaistamisen seuranta**: CU30 (EPBD) ja CU31 (vuokramarkkinat) sijaitsevat EU:n sääntelyvelvoitteiden ja ruotsalaisen kotimaisen asuntopolitiikan leikkauspisteessä — selkein vaikutuksin kunnallisille budjeteille.
+
+### 60 sekunnin luenta
+
+- 🔴 **KU34** (Perustuslaki): Aborttioikeus perustuslaillisesti suojeltu; yhdistymisvapaus rajoitettu turvallisuusuhille; kansalaisuuden peruuttaminen laajennettu. Vaatii 2× yli enemmistön äänestyksen kahdessa riksmötessä. Lähde: `HD01KU34`, KU, 2026-05-11. [A2][horisontti:viikko]
+- 🟠 **CU31** (Asuminen): Vuokramarkkinoiden sääntelyn purkaminen etenee valiokunnassa. 800 000+ vuokrasäännöstelyyn kuuluvaa vuokralaista altistuu markkinahinnoille. Voimakas vastustus S, V, MP:ltä. Lähde: `HD01CU31`, CU, 2026-05-08. [A2][horisontti:kuukausi]
+- 🟠 **JuU39** (Rikosoikeus): Uusi rikos psyykkinen väkivalta — mallina pohjoismaiset maat. Hyväksytty JuU:ssa lohkojen välisellä enemmistöllä. Lähde: `HD01JuU39`, JuU, 2026-05-07. [A2][horisontti:viikko]
+- 🟡 **NU21** (Maaseutu): Kattava maaseutupolitiikan kehys — rahoitus laajakaistoille, infrastruktuurille ja paikallisille palveluille harvaanasutuilla alueilla. Lähde: `HD01NU21`, NU, 2026-05-12. [A2][horisontti:kuukausi]
+- 🟡 **CU30** (Energia): EPBD:n toimeenpano — rakennusten energiatehokkuusstandardit päivitetty; 700 mrd. SEK investointimahdollisuus saneeraussektorille arvioitu. Lähde: `HD01CU30`, CU, 2026-05-12. [A2][horisontti:vuosi]
+
+### Seuraava eteenpäin katsova indikaattori
+
+**HD01KU34 ensimmäinen äänestys** odotetaan Riksdagenin täysistuntoviikolla 2026-05-18–22. Jos hyväksytään 2/3 yli enemmistöllä, muutosehdotus siirtyy 2026/27 riksmöte-putkistoon RF 8:14 vaatimaa pakollista toista kierrosta varten. Yli enemmistön puuttuminen käynnistää riippuvan perustuslaillisen prosessin ja potentiaalisen uudelleenneuvottelun yhdistymisvapauden lausekkeista.
+
+### Luottamusarviointi
+
+| Väite | Luottamus | Admiralty | Perusta |
+|-------|-----------|-----------|---------|
+| KU34 esitetty kahdella perustuslain muutoksella | VERY HIGH | A1 | Virallinen KU-mietintö dok_id HD01KU34 |
+| CU31 ajaa vuokramarkkinoiden sääntelyn purkamista | HIGH | A2 | dok_id HD01CU31, CU-mietintö |
+| JuU39 kriminalisoi psyykkisen väkivallan | HIGH | A2 | dok_id HD01JuU39, JuU-mietintö |
+| IMF WEO Apr-2026 taloudellinen konteksti | HIGH | A1 | data/imf-context.json, tila: ok |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+flowchart LR
+    KU34["🔴 KU34\nConstitution: Abortion+Security\nL3 · 2/3 supermajority"] --> VOTE["Riksdag plenary\n2026-05-18~22"]
+    CU31["🟠 CU31\nRental market\nL2+ · Passed committee"] --> VOTE
+    JuU39["🟠 JuU39\nPsychological violence\nL2+ · Passed JuU"] --> VOTE
+    VOTE --> E26["2026 Election\nframing impact"]
+    style KU34 fill:#ff006e,color:#fff
+    style CU31 fill:#ff8c00,color:#fff
+    style JuU39 fill:#ff8c00,color:#fff
+    style VOTE fill:#1a1e3d,stroke:#00d9ff
+    style E26 fill:#0a0e27,stroke:#ffbe0b
+```
+
+---
+
+### ✅ Jälkikäteinen sovitus (2026-05-16)
+
+**Alkuperäinen laadinta**: 2026-05-15 executive-brief-mallipohjalla v < 4.4.
+**Sisällöllinen analyysi, todisteet ja johtopäätökset muuttumattomina.**
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_fr.md -->
+
+**Auteur**: James Pether Sörling | **Date**: 2026-05-15 | **Classification**: PUBLIC  
+**Confiance**: HIGH [B2] | **ID de run**: news-committee-reports-2026-05-15
+
+### BLUF
+
+La Commission constitutionnelle suédoise (KU) a déposé deux amendements constitutionnels interconnectés nécessitant une supermajorité des 2/3 : l'un ancrant le droit à l'avortement dans RF chap. 2, rendant les droits reproductifs formellement réversibles uniquement avec le même seuil élevé ; et l'autre élargissant le pouvoir de l'État de restreindre la liberté d'association et de révoquer la citoyenneté pour les personnes liées au terrorisme et à la criminalité organisée. Simultaneously, la Commission des affaires civiles (CU) fait avancer une déréglementation controversée du marché locatif (HD01CU31) qui exposerait 800 000 locataires protégés aux prix du marché, et la Commission de justice (JuU) criminalise la violence psychologique (HD01JuU39). Ensemble, ceux-ci signalent un sprint actif de fin de session parlementaire avec des conséquences constitutionnelles et politiques sociales s'étendant jusqu'au cycle électoral 2026.
+
+### Décisions que ce document soutient
+
+1. **Cadrage électoral 2026**: KU34 remodèle la politique des blocs — la protection du droit à l'avortement bénéficie d'un large soutien des partis (S, M, C, L favorables), mais les clauses de restriction de la liberté d'association et d'élargissement de la révocation de citoyenneté créent un clivage au sein des blocs et entre eux.
+2. **Surveillance des risques de la société civile/juridique**: CU31 (marché locatif) et JuU39 (violence psychologique) impliquent tous deux des défis de mise en œuvre significatifs et des objections constitutionnelles potentielles du Lagrådet.
+3. **Suivi de l'alignement UE**: CU30 (EPBD) et CU31 (marché locatif) se trouvent à l'intersection des obligations réglementaires de l'UE et de la politique du logement nationale suédoise — avec des impacts distincts sur les budgets municipaux.
+
+### Lecture en 60 secondes
+
+- 🔴 **KU34** (Constitution): Droit à l'avortement protégé constitutionnellement; liberté d'association restreinte pour les menaces sécuritaires; révocation de citoyenneté élargie. Nécessite 2× vote à la supermajorité dans deux riksmöten. Source: `HD01KU34`, KU, 2026-05-11. [A2][horizon:semaine]
+- 🟠 **CU31** (Logement): La déréglementation du marché locatif passe en commission. 800 000+ locataires protégés exposés aux loyers du marché. Forte opposition de S, V, MP. Source: `HD01CU31`, CU, 2026-05-08. [A2][horizon:mois]
+- 🟠 **JuU39** (Droit pénal): Nouvelle infraction pénale de violence psychologique — modélisée sur les pays nordiques. Adoptée en JuU avec une majorité multipartite. Source: `HD01JuU39`, JuU, 2026-05-07. [A2][horizon:semaine]
+- 🟡 **NU21** (Rural): Cadre politique rural complet — financement pour le haut débit, l'infrastructure et l'accès aux services locaux dans les zones peu peuplées. Source: `HD01NU21`, NU, 2026-05-12. [A2][horizon:mois]
+- 🟡 **CU30** (Énergie): Mise en œuvre EPBD — normes de performance énergétique des bâtiments mises à jour; fenêtre d'investissement de 700 Mrd SEK pour le secteur de la rénovation estimée. Source: `HD01CU30`, CU, 2026-05-12. [A2][horizon:an]
+
+### Prochain indicateur avancé
+
+**Vote de premier tour HD01KU34** attendu lors de la semaine plénière du Riksdag 2026-05-18–22. Si approuvé avec une supermajorité des 2/3, l'amendement entre dans le pipeline du riksmöte 2026/27 pour le vote obligatoire de deuxième tour requis par RF 8:14. L'absence de supermajorité déclenche un processus constitutionnel suspendu et une renégociation potentielle des clauses de liberté d'association.
+
+### Évaluation de confiance
+
+| Affirmation | Confiance | Admiralty | Base |
+|-------------|-----------|-----------|------|
+| KU34 déposé avec deux modifications constitutionnelles | VERY HIGH | A1 | Betänkande officiel du KU dok_id HD01KU34 |
+| CU31 fait avancer la déréglementation du marché locatif | HIGH | A2 | dok_id HD01CU31, betänkande CU |
+| JuU39 criminalise la violence psychologique | HIGH | A2 | dok_id HD01JuU39, betänkande JuU |
+| Contexte économique IMF WEO Avr-2026 | HIGH | A1 | data/imf-context.json, statut: ok |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+flowchart LR
+    KU34["🔴 KU34\nConstitution: Abortion+Security\nL3 · 2/3 supermajority"] --> VOTE["Riksdag plenary\n2026-05-18~22"]
+    CU31["🟠 CU31\nRental market\nL2+ · Passed committee"] --> VOTE
+    JuU39["🟠 JuU39\nPsychological violence\nL2+ · Passed JuU"] --> VOTE
+    VOTE --> E26["2026 Election\nframing impact"]
+    style KU34 fill:#ff006e,color:#fff
+    style CU31 fill:#ff8c00,color:#fff
+    style JuU39 fill:#ff8c00,color:#fff
+    style VOTE fill:#1a1e3d,stroke:#00d9ff
+    style E26 fill:#0a0e27,stroke:#ffbe0b
+```
+
+---
+
+### ✅ Note de retrofit (2026-05-16)
+
+**Rédaction originale**: 2026-05-15 sous le modèle executive-brief v < 4.4.
+**Analyse substantielle, preuves et conclusions inchangées.**
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# הריקסדאג מעגן הגנה חוקתית על הפלות — ומרחיב את ארסנל מדינת הביטחון
+
+**מחבר**: ג'יימס פת'ר סורלינג | **תאריך**: 2026-05-15 | **סיווג**: ציבורי  
+**ביטחון**: HIGH [B2] | **מזהה ריצה**: news-committee-reports-2026-05-15
+
+### BLUF
+
+ועדת החוקה השבדית (KU) הגישה שני תיקונים חוקתיים משולבים הדורשים רוב של שני שלישים: אחד המעגן את זכות ההפלה בפרק 2 של חוק הממשל (RF), מה שהופך את הזכויות הרבייתיות לברות היפוך פורמאלית רק עם אותה סף גבוה; ואחד המרחיב את כוח המדינה להגביל את חופש ההתאגדות ולשלול אזרחות מאנשים הקשורים לטרור ולפשע מאורגן. במקביל, ועדת ענייני האזרחות (CU) מקדמת ביטול רגולציה שנוי במחלוקת בשוק השכירות (HD01CU31) שיחשוף 800,000 שוכרים עם שכר דירה מבוקר למחירי שוק, וועדת המשפט (JuU) מפלילה אלימות פסיכולוגית (HD01JuU39). ביחד, הם מסמנים ספרינט פרלמנטרי פעיל לסיום הפגרה עם השלכות חוקתיות ומדיניות חברתית המתפרשות אל מחזור הבחירות של 2026.
+
+### החלטות שמסמך זה תומך בהן
+
+1. **מיסגור בחירות 2026**: KU34 מעצב מחדש את פוליטיקת הגוש — להגנה על זכות ההפלה יש תמיכה מפלגתית רחבה (S, M, C, L בעד), אך סעיפי הגבלת חופש ההתאגדות והרחבת שלילת האזרחות יוצרים טריז בתוך הגושים וביניהם.
+2. **ניטור סיכונים של חברה אזרחית/משפטית**: CU31 (שוק השכירות) ו-JuU39 (אלימות פסיכולוגית) כרוכים שניהם באתגרי יישום משמעותיים ובהתנגדויות חוקתיות אפשריות מהלגרוד (Lagrådet).
+3. **מעקב אחר יישור האיחוד האירופי**: CU30 (EPBD) ו-CU31 (שוק השכירות) נמצאים בצומת של התחייבויות רגולטוריות של האיחוד האירופי ומדיניות הדיור הלאומית השבדית — עם השפעות ברורות על תקציבי הרשויות המקומיות.
+
+### קריאה של 60 שניות
+
+- 🔴 **KU34** (חוקה): זכות ההפלה מוגנת חוקתית; חופש ההתאגדות מוגבל לאיומים ביטחוניים; שלילת אזרחות מורחבת. דורש הצבעת רוב שני שלישים פעמיים בשני riksmöten. מקור: `HD01KU34`‏, KU, 2026-05-11. [A2][אופק:שבוע]
+- 🟠 **CU31** (דיור): ביטול רגולציה בשוק השכירות עובר בוועדה. 800,000+ שוכרים עם שכר דירה מבוקר נחשפים למחירי שוק. התנגדות חזקה מ-S, V, MP. מקור: `HD01CU31`‏, CU, 2026-05-08. [A2][אופק:חודש]
+- 🟠 **JuU39** (משפט פלילי): עבירה חדשה של אלימות פסיכולוגית — מדוגמת על בסיס מדינות סקנדינביות. אושר ב-JuU ברוב רב-מפלגתי. מקור: `HD01JuU39`‏, JuU, 2026-05-07. [A2][אופק:שבוע]
+- 🟡 **NU21** (כפרי): מסגרת מדיניות כפרית מקיפה — מימון לפס רחב, תשתיות וגישה לשירותים מקומיים באזורים דלי אוכלוסין. מקור: `HD01NU21`‏, NU, 2026-05-12. [A2][אופק:חודש]
+- 🟡 **CU30** (אנרגיה): יישום EPBD — עדכון תקני ביצועי אנרגיה של מבנים; חלון השקעות של 700 מיליארד SEK לסקטור השיפוץ משוער. מקור: `HD01CU30`‏, CU, 2026-05-12. [A2][אופק:שנה]
+
+### מדד מוביל הבא
+
+**הצבעת סבב ראשון של HD01KU34** צפויה בשבוע המליאה של הריקסדאג 2026-05-18–22. אם תאושר ברוב שני שלישים, התיקון ייכנס לצינור riksmöte 2026/27 להצבעת סבב שני חובה הנדרשת על-פי RF 8:14. כישלון בהשגת רוב שני שלישים מפעיל הליך חוקתי תלוי ומשא ומתן מחודש אפשרי על סעיפי חופש ההתאגדות.
+
+### הערכת ביטחון
+
+| טענה | ביטחון | אדמירלטי | בסיס |
+|------|--------|-----------|------|
+| KU34 הוגש עם שני שינויים חוקתיים | VERY HIGH | A1 | בטנקאנדה רשמי של KU, dok_id HD01KU34 |
+| CU31 מקדם ביטול רגולציה בשוק השכירות | HIGH | A2 | dok_id HD01CU31, בטנקאנדה CU |
+| JuU39 מפלילה אלימות פסיכולוגית | HIGH | A2 | dok_id HD01JuU39, בטנקאנדה JuU |
+| הקשר כלכלי IMF WEO אפריל 2026 | HIGH | A1 | data/imf-context.json, סטטוס: ok |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+flowchart LR
+    KU34["🔴 KU34\nConstitution: Abortion+Security\nL3 · 2/3 supermajority"] --> VOTE["Riksdag plenary\n2026-05-18~22"]
+    CU31["🟠 CU31\nRental market\nL2+ · Passed committee"] --> VOTE
+    JuU39["🟠 JuU39\nPsychological violence\nL2+ · Passed JuU"] --> VOTE
+    VOTE --> E26["2026 Election\nframing impact"]
+    style KU34 fill:#ff006e,color:#fff
+    style CU31 fill:#ff8c00,color:#fff
+    style JuU39 fill:#ff8c00,color:#fff
+    style VOTE fill:#1a1e3d,stroke:#00d9ff
+    style E26 fill:#0a0e27,stroke:#ffbe0b
+```
+
+---
+
+### ✅ הערת עדכון (2026-05-16)
+
+**טיוטה מקורית**: 2026-05-15 תחת תבנית executive-brief v < 4.4.  
+**ניתוח מהותי, ראיות ומסקנות ללא שינוי.**
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_ja.md -->
+
+**著者**: ジェームズ・ペサー・ソーリング | **日付**: 2026-05-15 | **分類**: 公開  
+**信頼度**: HIGH [B2] | **実行ID**: news-committee-reports-2026-05-15
+
+### BLUF
+
+スウェーデン憲法委員会（KU）は、3分の2の超多数決を要する2つの相互に関連した憲法改正案を提出した。1つは中絶権を統治法（RF）第2章に明記し、生殖の権利を同じ高い閾値でのみ正式に覆せるものとするもの、もう1つはテロや組織犯罪に関与した者の結社の自由を制限し市民権を剥奪する国家権力を拡大するものである。同時に、市民問題委員会（CU）は論争的な賃貸市場規制緩和（HD01CU31）を推進しており、これにより家賃規制下の80万人以上の入居者が市場価格にさらされることになる。司法委員会（JuU）は心理的暴力を犯罪化する（HD01JuU39）。これらを合わせると、2026年選挙サイクルにまで及ぶ憲法的・社会政策的影響を持つ活発な議会セッション終盤の追い込みを示している。
+
+### この文書が支援する意思決定
+
+1. **2026年選挙フレーミング**: KU34はブロック政治を再編——中絶権保護は幅広い政党支持（S、M、C、Lが賛成）を持つが、結社の自由制限と市民権剥奪拡大条項はブロック内外に亀裂を生み出す。
+2. **市民社会・法的リスク監視**: CU31（賃貸市場）とJuU39（心理的暴力）は共に重大な実施上の課題と立法審議会（Lagrådet）からの潜在的な憲法上の異議を伴う。
+3. **EU整合追跡**: CU30（EPBD）とCU31（賃貸市場）はEUの規制義務とスウェーデン国内住宅政策の交差点に位置し、地方自治体予算への明確な影響がある。
+
+### 60秒の読み
+
+- 🔴 **KU34**（憲法）: 中絶権が憲法で保護、安全保障上の脅威に対し結社の自由を制限、市民権剥奪を拡大。2つのriksmötenにおける超多数決2回が必要。出典: `HD01KU34`、KU、2026-05-11。[A2][地平:週]
+- 🟠 **CU31**（住宅）: 賃貸市場規制緩和が委員会を通過。80万人以上の家賃規制入居者が市場価格にさらされる。S、V、MPからの強い反対。出典: `HD01CU31`、CU、2026-05-08。[A2][地平:月]
+- 🟠 **JuU39**（刑事法）: 心理的暴力の新犯罪——北欧諸国をモデルとする。JuUで多党派過半数により可決。出典: `HD01JuU39`、JuU、2026-05-07。[A2][地平:週]
+- 🟡 **NU21**（農村）: 包括的農村政策枠組み——過疎地域におけるブロードバンド、インフラ、地域サービスへのアクセスへの資金提供。出典: `HD01NU21`、NU、2026-05-12。[A2][地平:月]
+- 🟡 **CU30**（エネルギー）: EPBD実施——建築エネルギー性能基準を更新、改修部門向けの7,000億SEKの投資枠を推定。出典: `HD01CU30`、CU、2026-05-12。[A2][地平:年]
+
+### 次の先行指標
+
+**HD01KU34第1回投票**は議会本会議週2026-05-18〜22に予定。3分の2超多数決で可決された場合、改正案はRF 8:14が定める義務的な第2回投票のためのriksmöte 2026/27パイプラインに入る。超多数決未達は保留中の憲法プロセスと結社の自由条項の再交渉の可能性をもたらす。
+
+### 信頼度評価
+
+| 主張 | 信頼度 | アドミラルティ | 根拠 |
+|------|--------|---------------|------|
+| KU34が2つの憲法改正で提出 | VERY HIGH | A1 | KU公式ベタンカンデ、dok_id HD01KU34 |
+| CU31が賃貸市場規制緩和を推進 | HIGH | A2 | dok_id HD01CU31、CUベタンカンデ |
+| JuU39が心理的暴力を犯罪化 | HIGH | A2 | dok_id HD01JuU39、JuUベタンカンデ |
+| IMF WEO 2026年4月経済コンテキスト | HIGH | A1 | data/imf-context.json、状態: ok |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+flowchart LR
+    KU34["🔴 KU34\nConstitution: Abortion+Security\nL3 · 2/3 supermajority"] --> VOTE["Riksdag plenary\n2026-05-18~22"]
+    CU31["🟠 CU31\nRental market\nL2+ · Passed committee"] --> VOTE
+    JuU39["🟠 JuU39\nPsychological violence\nL2+ · Passed JuU"] --> VOTE
+    VOTE --> E26["2026 Election\nframing impact"]
+    style KU34 fill:#ff006e,color:#fff
+    style CU31 fill:#ff8c00,color:#fff
+    style JuU39 fill:#ff8c00,color:#fff
+    style VOTE fill:#1a1e3d,stroke:#00d9ff
+    style E26 fill:#0a0e27,stroke:#ffbe0b
+```
+
+---
+
+### ✅ 追記ノート（2026-05-16）
+
+**原稿作成**: 2026-05-15、executive-briefテンプレート v < 4.4の下。  
+**実質的な分析、証拠、結論に変更なし。**
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_ko.md -->
+
+**저자**: 제임스 페서 솔링 | **날짜**: 2026-05-15 | **분류**: 공개  
+**신뢰도**: HIGH [B2] | **실행 ID**: news-committee-reports-2026-05-15
+
+### BLUF
+
+스웨덴 헌법위원회(KU)는 3분의 2 초다수결이 필요한 두 개의 상호 연관된 헌법 개정안을 제출했다. 하나는 낙태권을 통치법(RF) 제2장에 명시하여 생식권을 동일한 높은 기준으로만 공식적으로 되돌릴 수 있도록 하는 것이고, 다른 하나는 테러 및 조직 범죄와 연루된 사람들의 결사의 자유를 제한하고 시민권을 박탈하는 국가 권한을 확대하는 것이다. 동시에 시민사무위원회(CU)는 임대료 규제 세입자 80만 명 이상을 시장 가격에 노출시킬 논란의 임대 시장 규제 완화(HD01CU31)를 추진하고 있으며, 법무위원회(JuU)는 심리적 폭력을 범죄화한다(HD01JuU39). 종합하면, 2026년 선거 주기까지 이어지는 헌법적·사회 정책적 결과를 가진 활발한 의회 회기 말 스프린트를 나타낸다.
+
+### 이 문서가 지원하는 결정
+
+1. **2026년 선거 프레이밍**: KU34는 블록 정치를 재편——낙태권 보호는 광범위한 정당 지지(S, M, C, L 찬성)를 받지만, 결사의 자유 제한 및 시민권 박탈 확대 조항은 블록 내외에 쐐기를 박는다.
+2. **시민사회·법적 위험 모니터링**: CU31(임대 시장)과 JuU39(심리적 폭력) 모두 상당한 실행 과제와 Lagrådet의 잠재적 헌법적 이의 제기를 수반한다.
+3. **EU 정합성 추적**: CU30(EPBD)과 CU31(임대 시장)은 EU 규제 의무와 스웨덴 국내 주택 정책의 교차점에 위치하며, 지방 자치 단체 예산에 명확한 영향을 미친다.
+
+### 60초 읽기
+
+- 🔴 **KU34**(헌법): 낙태권 헌법 보호, 안보 위협에 대한 결사의 자유 제한, 시민권 박탈 확대. 두 riksmöten에서 초다수결 2회 필요. 출처: `HD01KU34`, KU, 2026-05-11. [A2][지평:주]
+- 🟠 **CU31**(주택): 임대 시장 규제 완화 위원회 통과. 임대료 규제 세입자 80만 명 이상이 시장 가격에 노출. S, V, MP의 강한 반대. 출처: `HD01CU31`, CU, 2026-05-08. [A2][지평:월]
+- 🟠 **JuU39**(형법): 새로운 심리적 폭력 범죄——북유럽 국가를 모델로. JuU에서 다당파 과반수로 가결. 출처: `HD01JuU39`, JuU, 2026-05-07. [A2][지평:주]
+- 🟡 **NU21**(농촌): 포괄적 농촌 정책 프레임워크——과소 지역 광대역, 인프라 및 지역 서비스 접근을 위한 자금 조달. 출처: `HD01NU21`, NU, 2026-05-12. [A2][지평:월]
+- 🟡 **CU30**(에너지): EPBD 이행——건물 에너지 성능 기준 업데이트, 개조 부문에 7,000억 SEK 투자 창구 추정. 출처: `HD01CU30`, CU, 2026-05-12. [A2][지평:년]
+
+### 다음 선행 지표
+
+**HD01KU34 1차 투표**는 의회 본회의 주 2026-05-18~22에 예정. 3분의 2 초다수결로 가결되면 RF 8:14에 의거한 의무적인 2차 투표를 위해 riksmöte 2026/27 파이프라인에 진입한다. 초다수결 미달 시 보류 중인 헌법 절차와 결사의 자유 조항 재협상 가능성을 초래한다.
+
+### 신뢰도 평가
+
+| 주장 | 신뢰도 | 해군 | 근거 |
+|------|--------|------|------|
+| KU34 두 개의 헌법 개정으로 제출 | VERY HIGH | A1 | KU 공식 베탄칸데, dok_id HD01KU34 |
+| CU31 임대 시장 규제 완화 추진 | HIGH | A2 | dok_id HD01CU31, CU 베탄칸데 |
+| JuU39 심리적 폭력 범죄화 | HIGH | A2 | dok_id HD01JuU39, JuU 베탄칸데 |
+| IMF WEO 2026년 4월 경제 맥락 | HIGH | A1 | data/imf-context.json, 상태: ok |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+flowchart LR
+    KU34["🔴 KU34\nConstitution: Abortion+Security\nL3 · 2/3 supermajority"] --> VOTE["Riksdag plenary\n2026-05-18~22"]
+    CU31["🟠 CU31\nRental market\nL2+ · Passed committee"] --> VOTE
+    JuU39["🟠 JuU39\nPsychological violence\nL2+ · Passed JuU"] --> VOTE
+    VOTE --> E26["2026 Election\nframing impact"]
+    style KU34 fill:#ff006e,color:#fff
+    style CU31 fill:#ff8c00,color:#fff
+    style JuU39 fill:#ff8c00,color:#fff
+    style VOTE fill:#1a1e3d,stroke:#00d9ff
+    style E26 fill:#0a0e27,stroke:#ffbe0b
+```
+
+---
+
+### ✅ 개정 노트 (2026-05-16)
+
+**원본 작성**: 2026-05-15, executive-brief 템플릿 v < 4.4 기준.  
+**실질적 분석, 증거, 결론 변경 없음.**
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling | **Datum**: 2026-05-15 | **Classificatie**: PUBLIC  
+**Vertrouwen**: HIGH [B2] | **Run-ID**: news-committee-reports-2026-05-15
+
+### BLUF
+
+De Zweedse Grondwettelijke Commissie (KU) heeft twee onderling verbonden grondwetswijzigingen ingediend die een supermeerderheid van 2/3 vereisen: één die het abortusrecht verankert in RF hfst. 2, waardoor reproductieve rechten formeel alleen omkeerbaar zijn met dezelfde verhoogde drempel; en één die de staatsmacht uitbreidt om de vrijheid van vereniging te beperken en het staatsburgerschap in te trekken voor personen gelinkt aan terrorisme en georganiseerde misdaad. Tegelijkertijd drijft de Commissie Burgerlijke Zaken (CU) een controversiële deregulering van de huurmarkt (HD01CU31) die 800.000 huurgereguleerde huurders aan marktprijzen zou blootstellen, en de Commissie Justitie (JuU) criminaliseert psychisch geweld (HD01JuU39). Samen signaleren ze een actieve parlementaire eindsessiesprint met constitutionele en sociaalbeleidsgevolgen die zich uitstrekken tot de verkiezingscyclus van 2026.
+
+### Beslissingen die dit document ondersteunt
+
+1. **Verkiezingsframing 2026**: KU34 hervormt de blokkenpolitiek — de bescherming van het abortusrecht heeft brede partijsteun (S, M, C, L gunstig), maar de clausules van beperking van de vrijheid van vereniging en uitbreiding van intrekking van staatsburgerschap creëren een wig binnen en tussen de blokken.
+2. **Maatschappelijk middenveld/juridische risicomonitoring**: CU31 (huurmarkt) en JuU39 (psychisch geweld) brengen beide aanzienlijke uitdagingen bij de implementatie en potentiële constitutionele bezwaren van de Lagrådet met zich mee.
+3. **EU-afstemming volgen**: CU30 (EPBD) en CU31 (huurmarkt) bevinden zich op het snijvlak van EU-regelgevingsverplichtingen en Zweeds binnenlands woningbeleid — met duidelijke gevolgen voor gemeentelijke begrotingen.
+
+### 60-seconden lezing
+
+- 🔴 **KU34** (Grondwet): Abortusrecht grondwettelijk beschermd; vrijheid van vereniging beperkt voor veiligheidsrisico's; intrekking staatsburgerschap uitgebreid. Vereist 2× supermeerderheidstemming in twee riksmöten. Bron: `HD01KU34`, KU, 2026-05-11. [A2][horizon:week]
+- 🟠 **CU31** (Huisvesting): Deregulering huurmarkt passeert commissie. 800.000+ huurgereguleerde huurders blootgesteld aan marktprijzen. Sterk verzet van S, V, MP. Bron: `HD01CU31`, CU, 2026-05-08. [A2][horizon:maand]
+- 🟠 **JuU39** (Strafrecht): Nieuw strafbaar feit psychisch geweld — gemodelleerd naar Scandinavische landen. In JuU aangenomen met bloverstijgende meerderheid. Bron: `HD01JuU39`, JuU, 2026-05-07. [A2][horizon:week]
+- 🟡 **NU21** (Platteland): Uitgebreid plattelandsbeleidskader — financiering voor breedband, infrastructuur en toegang tot lokale diensten in dunbevolkte gebieden. Bron: `HD01NU21`, NU, 2026-05-12. [A2][horizon:maand]
+- 🟡 **CU30** (Energie): EPBD-implementatie — energieprestanormenen voor gebouwen bijgewerkt; investeringsvenster van 700 Mrd SEK voor de renovatiesector geschat. Bron: `HD01CU30`, CU, 2026-05-12. [A2][horizon:jaar]
+
+### Volgende vooruitblikkende indicator
+
+**HD01KU34 eerste ronde stemming** verwacht in de Riksdag-plenaire week 2026-05-18–22. Bij goedkeuring met 2/3-supermeerderheid treedt het wijzigingsvoorstel de 2026/27-riksmöte-pijplijn binnen voor de verplichte tweede ronde stemming vereist door RF 8:14. Het niet bereiken van de supermeerderheid leidt tot een opgeschort constitutioneel proces en potentiële heronderhandeling van de verenigingsvrijheidsclausules.
+
+### Vertrouwensanalyse
+
+| Bewering | Vertrouwen | Admiralty | Basis |
+|----------|------------|-----------|-------|
+| KU34 ingediend met twee constitutionele wijzigingen | VERY HIGH | A1 | Officieel KU-betänkande dok_id HD01KU34 |
+| CU31 drijft deregulering huurmarkt | HIGH | A2 | dok_id HD01CU31, CU-betänkande |
+| JuU39 criminaliseert psychisch geweld | HIGH | A2 | dok_id HD01JuU39, JuU-betänkande |
+| IMF WEO Apr-2026 economische context | HIGH | A1 | data/imf-context.json, status: ok |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+flowchart LR
+    KU34["🔴 KU34\nConstitution: Abortion+Security\nL3 · 2/3 supermajority"] --> VOTE["Riksdag plenary\n2026-05-18~22"]
+    CU31["🟠 CU31\nRental market\nL2+ · Passed committee"] --> VOTE
+    JuU39["🟠 JuU39\nPsychological violence\nL2+ · Passed JuU"] --> VOTE
+    VOTE --> E26["2026 Election\nframing impact"]
+    style KU34 fill:#ff006e,color:#fff
+    style CU31 fill:#ff8c00,color:#fff
+    style JuU39 fill:#ff8c00,color:#fff
+    style VOTE fill:#1a1e3d,stroke:#00d9ff
+    style E26 fill:#0a0e27,stroke:#ffbe0b
+```
+
+---
+
+### ✅ Retrofitnota (2026-05-16)
+
+**Originele opstelling**: 2026-05-15 onder executive-brief-sjabloon v < 4.4.
+**Inhoudelijke analyse, bewijs en conclusies ongewijzigd.**
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling | **Dato**: 2026-05-15 | **Klassifikasjon**: PUBLIC  
+**Tillit**: HIGH [B2] | **Kjøre-ID**: news-committee-reports-2026-05-15
+
+### BLUF
+
+Sveriges konstitusjonskomiteen (KU) har fremmet to sammenkoblede grunnlovsendringer som krever 2/3 supermajoritet: én som forankrer abortrettigheten i RF 2. kap., noe som gjør reproduktive rettigheter formelt reversible kun med den samme forhøyede terskelen; og én som utvider statens makt til å begrense foreningsfriheten og tilbakekalle statsborgerskap for terror- og organisert-kriminalitetsrelaterte enkeltpersoner. Simultaneously fremmer sivilkomiteen (CU) en kontroversiell husleiedereregulering (HD01CU31) som ville utsette 800 000 leieregulerte leietakere for markedspriser, og Justiskomiteen (JuU) kriminaliserer psykisk vold (HD01JuU39). Samlet signaliserer disse en aktiv parlamentarisk sesjonsslutt-sprint med konstitusjonelle og sosialpolitiske konsekvenser som strekker seg inn i 2026-valgssyklusen.
+
+### Beslutninger dette underlaget støtter
+
+1. **Valg 2026-innramming**: KU34 omformer blokkpolitikken — abortrettsbeskyttelsen har bred partistøtte (S, M, C, L støtter), men klausulene om begrenset foreningsfrihet og utvidet tilbakekalling av statsborgerskap skaper en kile innen og på tvers av blokkene.
+2. **Sivilsamfunn/juridisk risikoovervåkning**: CU31 (husleie) og JuU39 (psykisk vold) innebærer begge betydelige implementeringsutfordringer og potensielle Lagrådet-forfatningsinnsigelser.
+3. **EU-tilpasningssporing**: CU30 (EPBD) og CU31 (husleie) befinner seg i skjæringspunktet mellom EUs reguleringsforpliktelser og norsk innenlands boligpolitikk — med distinkte virkninger på kommunale budsjetter.
+
+### 60-sekunders lesning
+
+- 🔴 **KU34** (Grunnlov): Abortretten grunnlovsfestet; foreningsfriheten begrenset for sikkerhetstrusler; tilbakekalling av statsborgerskap utvidet. Krever 2× supermajoritetsavstemning i to riksmøter. Kilde: `HD01KU34`, KU, 2026-05-11. [A2][horisont:uke]
+- 🟠 **CU31** (Bolig): Husleiedereregulering vedtas i utvalg. 800 000+ leieregulerte leietakere risikerer markedsleier. Sterk motstand fra S, V, MP. Kilde: `HD01CU31`, CU, 2026-05-08. [A2][horisont:måned]
+- 🟠 **JuU39** (Strafferett): Ny straffbar handling psykisk vold — modellert etter nordiske land. Vedtatt i JuU med tverrblokkflertall. Kilde: `HD01JuU39`, JuU, 2026-05-07. [A2][horisont:uke]
+- 🟡 **NU21** (Distrikt): Samlet distriktspolitisk ramme — finansiering til bredbånd, infrastruktur og lokal tjenestetilgang i tynt befolkede områder. Kilde: `HD01NU21`, NU, 2026-05-12. [A2][horisont:måned]
+- 🟡 **CU30** (Energi): EPBD-implementering — bygningers energiprestasjonsstandarder oppdateres; 700 mrd. SEK investeringsvindu for renoveringssektoren estimert. Kilde: `HD01CU30`, CU, 2026-05-12. [A2][horisont:år]
+
+### Neste fremoverskuende indikator
+
+**HD01KU34 første avstemning** forventes i Riksdagens plenumuke 2026-05-18–22. Ved godkjenning med 2/3 supermajoritet inngår endringsforslaget i 2026/27 riksmøte-pipeline til den obligatoriske andregangsavstemning krevd av RF 8:14. Manglende supermajoritet utløser en hengt konstitusjonell prosess og potensiell reforhandling av foreningsfrihetklausulene.
+
+### Tillitvurdering
+
+| Påstand | Tillit | Admiralty | Grunnlag |
+|---------|--------|-----------|---------|
+| KU34 fremmet med to forfatningsendringer | VERY HIGH | A1 | Offisiell KU-innstilling dok_id HD01KU34 |
+| CU31 fremmer husleiedereregulering | HIGH | A2 | dok_id HD01CU31, CU-innstilling |
+| JuU39 kriminaliserer psykisk vold | HIGH | A2 | dok_id HD01JuU39, JuU-innstilling |
+| IMF WEO Apr-2026 økonomisk kontekst | HIGH | A1 | data/imf-context.json, status: ok |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+flowchart LR
+    KU34["🔴 KU34\nConstitution: Abortion+Security\nL3 · 2/3 supermajority"] --> VOTE["Riksdag plenary\n2026-05-18~22"]
+    CU31["🟠 CU31\nRental market\nL2+ · Passed committee"] --> VOTE
+    JuU39["🟠 JuU39\nPsychological violence\nL2+ · Passed JuU"] --> VOTE
+    VOTE --> E26["2026 Election\nframing impact"]
+    style KU34 fill:#ff006e,color:#fff
+    style CU31 fill:#ff8c00,color:#fff
+    style JuU39 fill:#ff8c00,color:#fff
+    style VOTE fill:#1a1e3d,stroke:#00d9ff
+    style E26 fill:#0a0e27,stroke:#ffbe0b
+```
+
+---
+
+### ✅ Retroaktiv tilpasning (2026-05-16)
+
+**Opprinnelig utarbeiding**: 2026-05-15 under executive-brief-mal v < 4.4.
+**Substantiell analyse, bevis og konklusjoner uendret.**
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling | **Datum**: 2026-05-15 | **Klassificering**: PUBLIC  
+**Konfidensgrad**: HIGH [B2] | **Kör-ID**: news-committee-reports-2026-05-15
+
+### BLUF
+
+Sveriges konstitutionsutskott (KU) har lagt fram två sammanlänkade grundlagsändringar som kräver 2/3 supermajoritet: en som grundlagsfäster abortrötten i RF 2 kap., vilket gör reproduktiva rättigheter formellt vändningsbara endast med samma höjda tröskel; och en som utvidgar statens makt att begränsa föreningsfriheten och återkalla medborgarskap för individer kopplade till terror och organiserad brottslighet. Samtidigt driver civilutskottet (CU) en kontroversiell hyresmarknadsavreglering (HD01CU31) som skulle utsätta 800 000 hyresskyddade hushåll för marknadspriser, och justitieutskottet (JuU) kriminaliserar psykiskt våld (HD01JuU39). Sammantaget signalerar dessa en aktiv parlamentarisk riksmötessprint vid riksmötets slut med konstitutionella och socialpolitiska konsekvenser som sträcker sig in i 2026 års valcykel.
+
+### Beslut detta underlag stödjer
+
+1. **Val 2026-inramning**: KU34 omformar blockkpolitiken — abortskyddet har brett stöd (S, M, C, L stödjer), men klausulerna om inskränkt föreningsfrihet och utvidgat medborgarskapsåterkallande skapar en kil inom och mellan blocken.
+2. **Civilsamhälle/rättslig riskbevakning**: CU31 (hyresmarknaden) och JuU39 (psykiskt våld) innebär båda betydande genomförandeutmaningar och potentiella konstitutionella invändningar från Lagrådet.
+3. **EU-anpassningsuppföljning**: CU30 (EPBD) och CU31 (hyresmarknaden) befinner sig i skärningspunkten mellan EU:s regleringsförpliktelser och svensk bostadspolitik — med tydliga effekter på kommunala budgetar.
+
+### 60-sekunders läsning
+
+- 🔴 **KU34** (Grundlag): Abortrötten grundlagsskyddas; föreningsfriheten inskränks för säkerhetshot; medborgarskapsåterkallande utvidgas. Kräver 2× supermajoritetsbeslut i två riksmöten. Källa: `HD01KU34`, KU, 2026-05-11. [A2][horisont:vecka]
+- 🟠 **CU31** (Bostad): Hyresmarknadsavregleringen passerar utskottet. 800 000+ hyresskyddade hushåll riskerar marknadshyror. Starkt motstånd från S, V, MP. Källa: `HD01CU31`, CU, 2026-05-08. [A2][horisont:månad]
+- 🟠 **JuU39** (Straffrätt): Nytt brott psykiskt våld — modellerat efter nordiska länder. Passerade JuU med ett brett flertal över blocken. Källa: `HD01JuU39`, JuU, 2026-05-07. [A2][horisont:vecka]
+- 🟡 **NU21** (Landsbygd): Sammanhållet landsbygdspolitiskt ramverk — finansiering för bredband, infrastruktur och lokal service i glesbygd. Källa: `HD01NU21`, NU, 2026-05-12. [A2][horisont:månad]
+- 🟡 **CU30** (Energi): EPBD-genomförande — byggnaders energiprestanda uppdateras; uppskattad investeringsram på 700 mdr SEK för renoveringssektorn. Källa: `HD01CU30`, CU, 2026-05-12. [A2][horisont:år]
+
+### Nästa framåtindikator
+
+**HD01KU34 första omröstningen** förväntas under riksdagens plenisvecka 2026-05-18–22. Vid godkännande med 2/3 supermajoritet går ändringsförslaget vidare till riksmötet 2026/27 för den obligatoriska andra omröstningen enligt RF 8:14. Misslyckande att nå supermajoritet utlöser ett hängande konstitutionellt förfarande och potentiell omförhandling av föreningsfrihetets klausuler.
+
+### Konfidensbedömning
+
+| Påstående | Konfidensgrad | Admiralty | Underlag |
+|-----------|---------------|-----------|---------|
+| KU34 lagt fram med två konstitutionella förändringar | VERY HIGH | A1 | Officiellt KU-betänkande dok_id HD01KU34 |
+| CU31 driver hyresmarknadsavreglering | HIGH | A2 | dok_id HD01CU31, CU-betänkande |
+| JuU39 kriminaliserar psykiskt våld | HIGH | A2 | dok_id HD01JuU39, JuU-betänkande |
+| IMF WEO Apr-2026 ekonomiskt sammanhang | HIGH | A1 | data/imf-context.json, status: ok |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+flowchart LR
+    KU34["🔴 KU34\nConstitution: Abortion+Security\nL3 · 2/3 supermajority"] --> VOTE["Riksdag plenary\n2026-05-18~22"]
+    CU31["🟠 CU31\nRental market\nL2+ · Passed committee"] --> VOTE
+    JuU39["🟠 JuU39\nPsychological violence\nL2+ · Passed JuU"] --> VOTE
+    VOTE --> E26["2026 Election\nframing impact"]
+    style KU34 fill:#ff006e,color:#fff
+    style CU31 fill:#ff8c00,color:#fff
+    style JuU39 fill:#ff8c00,color:#fff
+    style VOTE fill:#1a1e3d,stroke:#00d9ff
+    style E26 fill:#0a0e27,stroke:#ffbe0b
+```
+
+---
+
+### ✅ Retroaktiv anpassning (2026-05-16)
+
+**Ursprunglig granskning**: 2026-05-15 under executive-brief-mall v < 4.4.
+**Retroaktivt omfång** (tillämpat 2026-05-16): Svensk-språkig H1 och Mermaid-etiketter översatta till engelska (kanonisk språkefterlevnad enligt `05-analysis-gate.md` och `executive-brief.md` H1 SERP-kontrakt). Inga ändringar av bevis, dok-id:n eller analytiska slutsatser.
+
+**Inte retroaktivt anpassat** (skulle kräva efterhandsuppfinning): Beslutsklass BLUF-rubrik (6-axelsbedömning), Rubrikkandidater, 14-språkiga SEO-frön, fullständig Pass-2 Självgranskningsmall v4.4. Dessa krävs för underlag från 2026-05-16 och framåt enligt gate Kontroll 7.
+
+**Sakliga analyser, bevis och slutsatser oförändrade.**
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_zh.md -->
+
+**作者**: 詹姆斯·佩瑟·索林 | **日期**: 2026-05-15 | **分类**: 公开  
+**置信度**: HIGH [B2] | **运行ID**: news-committee-reports-2026-05-15
+
+### BLUF
+
+瑞典宪法委员会（KU）提交了两项相互关联的宪法修正案，均需三分之二绝对多数通过：一项将堕胎权写入《政府组织法》（RF）第2章，使生育权正式上只能以同样的高门槛逆转；另一项扩大国家权力，限制与恐怖主义和有组织犯罪相关人员的结社自由并剥夺其公民身份。与此同时，公民事务委员会（CU）推进有争议的租赁市场去监管化（HD01CU31），将使80万名受租金管制的租户面临市场价格，司法委员会（JuU）将心理暴力入罪（HD01JuU39）。综合来看，这标志着一场积极的议会会期末冲刺，其宪法和社会政策影响将延伸至2026年选举周期。
+
+### 本文件支持的决策
+
+1. **2026年选举框架**：KU34重塑集团政治——堕胎权保护获得广泛政党支持（S、M、C、L赞成），但结社自由限制和公民身份剥夺扩大条款在集团内外造成裂痕。
+2. **公民社会/法律风险监控**：CU31（租赁市场）和JuU39（心理暴力）均涉及重大实施挑战和Lagrådet可能提出的宪法异议。
+3. **欧盟协调跟踪**：CU30（EPBD）和CU31（租赁市场）处于欧盟监管义务与瑞典国内住房政策的交叉点，对市政预算产生明确影响。
+
+### 60秒速读
+
+- 🔴 **KU34**（宪法）：堕胎权受宪法保护；结社自由受限于安全威胁；公民身份剥夺范围扩大。需在两届riksmöten中各进行一次三分之二多数表决。来源：`HD01KU34`，KU，2026-05-11。[A2][视野:周]
+- 🟠 **CU31**（住房）：租赁市场去监管化通过委员会。80万名以上受租金管制租户面临市场价格。S、V、MP强烈反对。来源：`HD01CU31`，CU，2026-05-08。[A2][视野:月]
+- 🟠 **JuU39**（刑法）：新增心理暴力罪——以北欧国家为模板。在JuU以多党派多数通过。来源：`HD01JuU39`，JuU，2026-05-07。[A2][视野:周]
+- 🟡 **NU21**（农村）：综合农村政策框架——为人口稀少地区的宽带、基础设施和本地服务提供资金。来源：`HD01NU21`，NU，2026-05-12。[A2][视野:月]
+- 🟡 **CU30**（能源）：EPBD实施——建筑能效标准更新；预计改造部门投资窗口7000亿SEK。来源：`HD01CU30`，CU，2026-05-12。[A2][视野:年]
+
+### 下一个领先指标
+
+**HD01KU34第一轮投票**预计在议会全体会议周2026-05-18至22进行。如以三分之二多数通过，修正案将进入riksmöte 2026/27管道，进行RF 8:14所要求的强制性第二轮投票。未能达到超多数将触发待定的宪法程序，并有可能重新谈判结社自由条款。
+
+### 置信度评估
+
+| 主张 | 置信度 | 海军部 | 依据 |
+|------|--------|--------|------|
+| KU34以两项宪法改变提交 | VERY HIGH | A1 | KU官方贝坦康德，dok_id HD01KU34 |
+| CU31推进租赁市场去监管化 | HIGH | A2 | dok_id HD01CU31，CU贝坦康德 |
+| JuU39将心理暴力入罪 | HIGH | A2 | dok_id HD01JuU39，JuU贝坦康德 |
+| IMF WEO 2026年4月经济背景 | HIGH | A1 | data/imf-context.json，状态：ok |
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'background': '#0a0e27'}}}%%
+flowchart LR
+    KU34["🔴 KU34\nConstitution: Abortion+Security\nL3 · 2/3 supermajority"] --> VOTE["Riksdag plenary\n2026-05-18~22"]
+    CU31["🟠 CU31\nRental market\nL2+ · Passed committee"] --> VOTE
+    JuU39["🟠 JuU39\nPsychological violence\nL2+ · Passed JuU"] --> VOTE
+    VOTE --> E26["2026 Election\nframing impact"]
+    style KU34 fill:#ff006e,color:#fff
+    style CU31 fill:#ff8c00,color:#fff
+    style JuU39 fill:#ff8c00,color:#fff
+    style VOTE fill:#1a1e3d,stroke:#00d9ff
+    style E26 fill:#0a0e27,stroke:#ffbe0b
+```
+
+---
+
+### ✅ 更新说明（2026-05-16）
+
+**原始起草**：2026-05-15，基于executive-brief模板v < 4.4。  
+**实质分析、证据和结论无变化。**
+
+<!-- source-sha: 7be28fdb403d82b122314d8fdecbc5fc60b72ddf -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 2 | Linked in Article Sources, not expanded inline |
 
@@ -1454,6 +2261,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/committeeReports/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 
