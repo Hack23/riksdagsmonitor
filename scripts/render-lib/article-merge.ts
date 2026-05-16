@@ -21,6 +21,14 @@
  *     correctly localized. Front-matter fields the localized file omits
  *     fall back to the English values so canonical metadata
  *     (`date`, `subfolder`, `slug`, `source_folder`) stays stable.
+ *     When a localized `executive-brief_<lang>.md` markdown is passed in
+ *     (cascade chain step #2 per
+ *     `Article-Generation.md § "Per-language precedence chain"`), its
+ *     publishable H1 and BLUF override the localized article front-matter
+ *     `title:` / `description:`. Banned-phrase H1s and empty BLUFs are
+ *     rejected so the merger silently falls through to chain step #3
+ *     (localized article front-matter) rather than shipping a template
+ *     stub as the SERP `<title>`.
  *  2. **Starts the body with the localized executive summary** so the
  *     reader gets a first-page experience in their own language.
  *  3. **Appends the full English body** under a localized "Detailed
@@ -45,6 +53,7 @@ import matter from 'gray-matter';
 
 import type { Language } from '../types/language.js';
 import { LANGUAGE_META } from '../sitemap-html/index.js';
+import { extractLocalizedBriefSeo } from './aggregator/seo/localized-brief.js';
 
 export interface MergeLocalizedInput {
   /** Canonical English `article.md` contents (front-matter + body). */
@@ -53,6 +62,27 @@ export interface MergeLocalizedInput {
   readonly localizedMarkdown: string;
   /** Target language. Used to pick the localized fallback heading + note. */
   readonly lang: Language;
+  /**
+   * Optional localized executive-brief markdown contents
+   * (`analysis/daily/$DATE/$SUB/executive-brief_<lang>.md`). When provided
+   * AND the brief yields a publishable H1 / BLUF, those values override
+   * the corresponding fields in the localized article front-matter —
+   * this implements cascade chain step #2 documented in
+   * `Article-Generation.md § "Per-language precedence chain"`.
+   *
+   * Pass `undefined` / empty string when the file does not exist; the
+   * merger then falls through to chain step #3 (localized article
+   * front-matter) without code-path changes.
+   */
+  readonly localizedBriefMarkdown?: string | null;
+  /**
+   * The analysis subfolder slug (e.g. `propositions`). Forwarded to
+   * {@link extractLocalizedBriefSeo} so its boilerplate-equality check
+   * for the brief H1 matches the English-side rule. Optional — when
+   * absent (legacy callers), the brief title check skips the slug
+   * comparison.
+   */
+  readonly subfolder?: string;
 }
 
 /**
@@ -122,7 +152,7 @@ export function buildEnglishCoverageBoundary(lang: Language): string {
  *  - Forces `language: <lang>` so JSON-LD `inLanguage` and SEO match.
  */
 export function mergeLocalizedWithEnglish(input: MergeLocalizedInput): string {
-  const { englishMarkdown, localizedMarkdown, lang } = input;
+  const { englishMarkdown, localizedMarkdown, lang, localizedBriefMarkdown, subfolder } = input;
 
   if (lang === 'en') return englishMarkdown;
 
@@ -144,6 +174,20 @@ export function mergeLocalizedWithEnglish(input: MergeLocalizedInput): string {
       mergedData[key] = value;
     }
   }
+
+  // Cascade chain step #2 — localized executive-brief beats article.<lang>.md
+  // front-matter for title + description when the brief is publishable
+  // (non-banned, non-empty H1 / BLUF). Fields are resolved independently
+  // so a banned title with a clean BLUF still localizes the description.
+  if (localizedBriefMarkdown && localizedBriefMarkdown.trim().length > 0) {
+    const briefSeo = extractLocalizedBriefSeo({
+      briefMarkdown: localizedBriefMarkdown,
+      subfolder: subfolder ?? '',
+    });
+    if (briefSeo.title) mergedData.title = briefSeo.title;
+    if (briefSeo.description) mergedData.description = briefSeo.description;
+  }
+
   mergedData.language = lang;
 
   const englishBody = english.content.trimStart();

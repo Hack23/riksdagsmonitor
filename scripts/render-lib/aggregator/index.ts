@@ -90,7 +90,19 @@ export type {
   ReaderGuideEntryI18n,
 } from './reader-guide-i18n.js';
 
-// --- Pipeline interfaces & orchestrator (new bounded-context API) -----------
+// --- Localized executive-brief SEO -----------------------------------------
+// Cascade chain step #2 — derive localized `<title>` / `<meta description>`
+// from `executive-brief_<lang>.md` so the per-language SEO surfaces match
+// the localized brief tradecraft. Consumed by `article-merge.ts`.
+export {
+  extractLocalizedBriefSeo,
+  isBannedLocalizedBriefH1,
+  LOCALIZED_BRIEF_H1_BANNED_PATTERNS,
+} from './seo/localized-brief.js';
+export type {
+  LocalizedBriefSeoInput,
+  LocalizedBriefSeo,
+} from './seo/localized-brief.js';
 export { runArticlePipeline } from './pipeline.js';
 export type {
   PipelineResult,
