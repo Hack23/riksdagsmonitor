@@ -35,8 +35,8 @@
  */
 
 import { readFile, stat, readdir } from 'node:fs/promises';
-import { existsSync, statSync } from 'node:fs';
-import { join } from 'node:path';
+import { existsSync, statSync, readdirSync, readFileSync } from 'node:fs';
+import { join, dirname, basename } from 'node:path';
 
 import {
   type GateCheckResult,
@@ -832,6 +832,70 @@ async function checkExecutiveBrief(analysisDir: string): Promise<GateCheckResult
             "executive-brief.md: H1 ends with a coordinating connector or article ('and', 'or', 'with', 'the', …) — complete the headline",
           artifact: 'executive-brief.md',
         });
+      }
+    }
+  }
+
+  // Across-days uniqueness check — period-aggregation briefs ("Tidö
+  // Current Mandate", "Year-Ahead → +365", "Post-2026 Mandate
+  // Forecast") routinely ship the same H1 every run because the
+  // workflow scope ("the current mandate", "the next 365 days") barely
+  // changes day-to-day. The result is duplicate cards on the news
+  // index — bad UX and bad SEO. We compare the current brief's H1
+  // against H1s in the same subfolder for the previous 7 days; if
+  // byte-identical (after normalisation), flag it.
+  //
+  // Scoped narrowly: we only flag exact-normalised duplicates, so a
+  // story that genuinely continues from one day to the next is not
+  // penalised. The editor should reword the H1 to surface the
+  // day-specific angle (`… now hinges on FiU48 amendment 3`,
+  // `… committee splits 9-8 on Wednesday`, …).
+  if (h1) {
+    const dailyDir = dirname(analysisDir); // analysis/daily/<date>
+    const dailyRoot = dirname(dailyDir); // analysis/daily
+    const currentDate = basename(dailyDir);
+    if (/^\d{4}-\d{2}-\d{2}$/.test(currentDate) && existsSync(dailyRoot)) {
+      try {
+        const siblingDates = readdirSync(dailyRoot, { withFileTypes: true })
+          .filter((e) => e.isDirectory())
+          .map((e) => e.name)
+          .filter((n) => /^\d{4}-\d{2}-\d{2}$/.test(n) && n < currentDate)
+          .sort()
+          .slice(-7);
+        const normaliseH1 = (raw: string): string =>
+          raw
+            .toLowerCase()
+            .replace(/[\p{P}\p{S}\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu, ' ')
+            .replace(/\b\d{4}[-/]\d{1,2}[-/]\d{1,2}\b/g, '')
+            .replace(/\s+/g, ' ')
+            .trim();
+        const currentNorm = normaliseH1(h1);
+        if (currentNorm.length >= 10) {
+          for (const siblingDate of siblingDates) {
+            const siblingBrief = join(dailyRoot, siblingDate, subfolder, 'executive-brief.md');
+            if (!existsSync(siblingBrief)) continue;
+            let siblingH1: string | null = null;
+            try {
+              siblingH1 = extractExecutiveBriefH1(readFileSync(siblingBrief, 'utf-8'));
+            } catch {
+              continue;
+            }
+            if (!siblingH1) continue;
+            if (normaliseH1(siblingH1) === currentNorm) {
+              results.push({
+                checkId: 'family-c-structure',
+                passed: false,
+                message:
+                  `executive-brief.md: H1 is byte-identical to analysis/daily/${siblingDate}/${subfolder}/executive-brief.md — reword to surface the day-specific angle (period-aggregation briefs must not ship duplicate cards on the news index)`,
+                artifact: 'executive-brief.md',
+              });
+              break;
+            }
+          }
+        }
+      } catch {
+        // Reading sibling dirs is best-effort; never block the gate on
+        // an I/O hiccup in the sibling scan.
       }
     }
   }

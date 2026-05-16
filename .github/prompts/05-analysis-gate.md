@@ -235,6 +235,32 @@ if [ -s "$ANALYSIS_DIR/executive-brief.md" ]; then
       echo "❌ executive-brief.md: H1 ends with a coordinating connector or article ('and', 'or', 'with', 'the', …) — complete the headline"
       FAIL=1
     fi
+    # Across-days uniqueness check (Phase 2 — period-aggregation duplicate-card
+    # guard). The full normalised comparison lives in
+    # scripts/agentic/analysis-gate.ts checkExecutiveBrief; this bash
+    # check is a fast pre-flight that compares the raw H1 line against
+    # the prior 7 sibling daily folders for the same subfolder.
+    EB_DAILY_DIR="$(dirname "$ANALYSIS_DIR")"
+    EB_DAILY_ROOT="$(dirname "$EB_DAILY_DIR")"
+    EB_CURR_DATE="$(basename "$EB_DAILY_DIR")"
+    EB_SUBFOLDER="$(basename "$ANALYSIS_DIR")"
+    if printf '%s' "$EB_CURR_DATE" | grep -qE '^[0-9]{4}-[0-9]{2}-[0-9]{2}$' && [ -d "$EB_DAILY_ROOT" ]; then
+      EB_CURR_NORM="$(printf '%s' "$EB_H1_TRIM_LOWER" | sed -E 's/[0-9]{4}-[0-9]{2}-[0-9]{2}//g' | tr -s '[:space:][:punct:]' ' ' | sed -E 's/^[[:space:]]+|[[:space:]]+$//g')"
+      if [ "${#EB_CURR_NORM}" -ge 10 ]; then
+        for EB_SIBLING in $(ls -1 "$EB_DAILY_ROOT" 2>/dev/null | grep -E '^[0-9]{4}-[0-9]{2}-[0-9]{2}$' | awk -v c="$EB_CURR_DATE" '$0 < c' | sort | tail -7); do
+          EB_SIB_BRIEF="$EB_DAILY_ROOT/$EB_SIBLING/$EB_SUBFOLDER/executive-brief.md"
+          [ -s "$EB_SIB_BRIEF" ] || continue
+          EB_SIB_H1="$(grep -E '^#[[:space:]]+' "$EB_SIB_BRIEF" | head -n1 | sed -E 's/^#[[:space:]]+//' | sed -E 's/<[^>]+>//g')"
+          [ -n "$EB_SIB_H1" ] || continue
+          EB_SIB_NORM="$(printf '%s' "$EB_SIB_H1" | tr '[:upper:]' '[:lower:]' | sed -E 's/[0-9]{4}-[0-9]{2}-[0-9]{2}//g' | tr -s '[:space:][:punct:]' ' ' | sed -E 's/^[[:space:]]+|[[:space:]]+$//g')"
+          if [ "$EB_SIB_NORM" = "$EB_CURR_NORM" ]; then
+            echo "❌ executive-brief.md: H1 is byte-identical to analysis/daily/$EB_SIBLING/$EB_SUBFOLDER/executive-brief.md — reword to surface the day-specific angle (period-aggregation briefs must not ship duplicate cards on the news index)"
+            FAIL=1
+            break
+          fi
+        done
+      fi
+    fi
   else
     # No H1 at all — the renderer has nothing to seed the SERP <title>
     # from and will silently fall back to a BLUF-sentence fragment.

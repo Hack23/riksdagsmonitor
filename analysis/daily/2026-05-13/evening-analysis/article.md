@@ -1,12 +1,12 @@
 ---
-title: "Sweden Evening Analysis,"
+title: "Sweden Evening Analysis"
 description: "Sweden's ruling coalition today advanced the most comprehensive migration policy overhaul in a decade, filing four linked propositions (2025/26:262–265) that collectively abolish permanent residence…"
 keywords: "Evening Analysis, English, May 13, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Sweden Evening ruling coalition advanced, Sweden, Evening, Analysis, ruling, coalition, today, advanced, most, comprehensive, migration, policy, overhaul, decade"
 date: 2026-05-13
 subfolder: evening-analysis
 slug: 2026-05-13-evening-analysis
 source_folder: analysis/daily/2026-05-13/evening-analysis
-generated_at: 2026-05-16T13:28:18.403Z
+generated_at: 2026-05-16T15:53:00.852Z
 language: en
 layout: article
 ---
