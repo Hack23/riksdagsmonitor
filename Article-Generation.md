@@ -597,16 +597,42 @@ Each section above projects one analysis artifact. The full audited markdown is 
 
 This replaces the legacy per-section `_Source: file.md_` italics. Auditors get one canonical list; readers see clean prose; SEO crawlers see one trustworthy `<ul>` of primary-source links instead of 25+ duplicated italics.
 
-### Title and description extraction
+### Title and description extraction — the 14-language source-of-truth
 
-`article.md` metadata comes from `executive-brief.md`:
+> **Single source of truth for SEO surfaces.** Every published `news/$DATE-$SUB-$LANG.html` page derives its `<title>` and `<meta name="description">` — and the eight downstream SEO surfaces that mirror them (see §"SEO and provenance" below) — from **one place only: the executive brief**. There is no path by which an article ships a title or description that did not originate in `executive-brief.md` (English) or `executive-brief_<lang>.md` (one of the 13 non-English localized siblings). All other HTML content — dek, lede, provenance badges, in-body lede sentences — must likewise be highlights of the executive brief; the aggregator emits `executive-brief.md` as section #1 precisely so the brief's BLUF and Decisions ride at the top of `article.md` (and therefore the rendered HTML) verbatim.
+
+The improved executive-brief tradecraft that enforces this lives in:
+
+- [`analysis/methodologies/per-artifact-methodologies.md § executive-brief`](analysis/methodologies/per-artifact-methodologies.md#executive-brief) — the Decision-Grade BLUF rubric (6 axes), the Headline-Candidates worksheet, the 14-language seeds row contract, and the Pass-2 closure rule that produces the publishable H1 + BLUF the SEO pipeline consumes.
+- [`.github/prompts/seo-metadata-contract.md`](.github/prompts/seo-metadata-contract.md) — the per-language charset budgets (§4), the banned-phrase list (§2.2 / §3.1), and the generator-side enforcement table (§5).
+- [`.github/prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md) — the H1 gate that blocks bare-boilerplate (`# Executive Brief`), template placeholders (`REPLACE THIS H1`, `Executive Brief Template`, `AI_MUST_REPLACE`), and the banned filler phrase `AI-generated political intelligence` before any article generation can begin.
+
+#### Per-language precedence chain (English source + 13 localized siblings)
+
+For each of the 14 supported languages, the renderer resolves the `<title>` and `<meta description>` through the following ordered cascade — the first hit wins, and the next-fallback is documented so a temporarily missing translation still produces a valid (English-content under non-English `<html lang>`) page:
+
+| # | Language path | Source of `<title>` | Source of `<meta description>` |
+|:-:|---|---|---|
+| 1 | English (`en`) | First H1 in `analysis/daily/$DATE/$SUB/executive-brief.md`, cleaned by `cleanArticleTitle()` of boilerplate (`Executive Brief —`, trailing ` — YYYY-MM-DD`); fallback to a BLUF-synthesised title via `titleFromBluf()`; final fallback to `${prettifyFallbackTitle($SUBFOLDER)} — $DATE`. | First paragraph after `## BLUF` (case-insensitive, emoji-tolerant) via `readBlufParagraph()`; fallback to first prose paragraph via `readFirstParagraph()`; final fallback to a deterministic `Evidence-based political intelligence analysis for $SUBFOLDER on $DATE.` string. Sentence-aware truncation to 140–200 chars by `truncateToSentenceBoundary()`. |
+| 2 | Non-English, **fully localized** (`sv`, `da`, `no/nb`, `fi`, `de`, `fr`, `es`, `nl`, `ar`, `he`, `ja`, `ko`, `zh`) | First H1 of the localized executive-brief markdown `analysis/daily/$DATE/$SUB/executive-brief_<lang>.md` (produced by the `news-translate` workflow, 3 daily runs) — the localized H1 is the publishable per-language title that satisfies the per-language charset budget in `seo-metadata-contract.md` §4. | First paragraph after `## BLUF` in `executive-brief_<lang>.md`, sentence-truncated to the per-language description budget (Latin/Cyrillic 140–200 chars; Arabic / Hebrew 120–170 chars; CJK 70–120 visual-width chars). |
+| 3 | Non-English, **temporarily missing** localized brief | Fall back to the localized title written by the per-type agent into `article.<lang>.md` front-matter (`title:`/`description:`), which the per-type workflow translates inline at article-generation time. The `article-merge.ts` layer carries this over `LOCALIZED_FIRST_FRONT_MATTER_KEYS = { title, description, language }` so the page still ships with localized SEO metadata even when the executive-brief markdown translation has not yet caught up. | Same as title — sourced from `article.<lang>.md` front-matter `description:` via `article-merge.ts`. |
+| 4 | Non-English, **both missing** | Fall back to the English `executive-brief.md` content (canonical `article.md`); the page renders with English title / description under a non-English `<html lang>`. This is an explicitly **temporary** state — the next scheduled per-type run regenerates `article.<lang>.md`, and the next `news-translate` run produces `executive-brief_<lang>.md`. Hreflang and language switcher remain intact across all 14 languages regardless of which fallback layer is active. |
+
+Authoritative editorial rule: **localized title and description are highlights of the localized executive brief**. When the per-type agent translates `article.<lang>.md` front-matter (chain #3), it MUST pull the localized title and description from `executive-brief_<lang>.md` whenever that file already exists in the same analysis folder, and only translate the English BLUF inline as a fallback. This is enforced by `scripts/validate-executive-brief-translations.ts` for the brief itself and by the `seo-metadata-contract.md` test suite for the rendered HTML.
+
+#### `article.md` front-matter (canonical English source)
+
+`scripts/render-lib/aggregator/aggregate.ts` writes the front-matter that the renderer subsequently consumes:
 
 | Metadata field | Source logic |
 |---|---|
-| `title` | First H1 in `executive-brief.md`, cleaned of boilerplate/date; fallback to BLUF-derived title; fallback to `$SUBFOLDER — $DATE`. |
-| `description` | Prefer the first paragraph after a `BLUF` heading; fallback to first prose paragraph; sentence-aware truncation. |
+| `title` | First H1 in `executive-brief.md`, cleaned of boilerplate/date by `cleanArticleTitle()`; fallback to `titleFromBluf()`; final fallback to `$SUBFOLDER — $DATE`. |
+| `description` | First paragraph after a `BLUF` heading (`readBlufParagraph()`); fallback to first prose paragraph (`readFirstParagraph()`); sentence-aware truncation by `truncateToSentenceBoundary()`. |
+| `keywords` | `buildArticleKeywords()` — derived from the cleaned title + description + article-type label so all 14 language pages share the same keyword set. |
+| `language` | `en` for `article.md`; `<lang>` for `article.<lang>.md` siblings. |
 | `slug` | `$ARTICLE_DATE-$SUBFOLDER`. |
 | `source_folder` | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER`. |
+| `date`, `subfolder`, `layout`, `generated_at` | Set by the aggregator; treated as `ENGLISH_ONLY_FRONT_MATTER_KEYS` by `article-merge.ts` — never overridden by a localized sibling. |
 
 ### Example output: `2026-04-24/interpellations/article.md`
 
@@ -773,19 +799,31 @@ flowchart TB
 
 ### SEO and provenance
 
-The renderer embeds:
+The renderer embeds the following SEO surfaces, **all of which inherit from the two strings resolved in §"Title and description extraction" above** (`<title>` and `<meta description>`). Get those two right at the executive-brief layer and the eight downstream surfaces follow for free — there is no second translation hop, no separate Open Graph / Twitter / JSON-LD copy desk:
 
-| SEO/provenance element | Current implementation |
-|---|---|
-| `<title>` | Article title plus `— Riksdagsmonitor` unless already branded. |
-| Meta description | `article.md` front matter description. |
-| Canonical URL | `https://riksdagsmonitor.com/news/$DATE-$SUB-$LANG.html`. |
-| Hreflang | All 14 supported language alternates plus `x-default`. |
-| Open Graph | `og:type=article`, title, description, URL, locale, image and update timestamp. |
-| Twitter card | Summary large image metadata. |
-| JSON-LD | `NewsArticle` with `isBasedOn` listing every `.md` / `.json` source artifact. |
-| Article dek and provenance badges | Header-level summary and visible public-source / AI-FIRST / traceability badges. |
-| Source footer | Visible `Analysis sources` section linking source artifacts to GitHub, excluding generated `article.md`, translated `article.<lang>.md` and temporary `pass1/` snapshots. |
+| SEO/provenance element | Current implementation | Source field |
+|---|---|---|
+| `<title>` | Article title plus `— Riksdagsmonitor` unless already branded. | `article.md` / `article.<lang>.md` front-matter `title:` (resolved per the 4-step cascade above). |
+| `<meta name="description">` | One complete sentence, 140–200 chars (LTR) / 120–170 chars (RTL) / 70–120 visual-width chars (CJK). | `article.md` / `article.<lang>.md` front-matter `description:`. |
+| `<meta name="keywords">` | Title + description-derived keyword set, identical across all 14 language pages of the same article. | `article.md` front-matter `keywords:`. |
+| `<link rel="canonical">` | `https://riksdagsmonitor.com/news/$DATE-$SUB-$LANG.html`. | Computed from `slug:` + `language:`. |
+| `<link rel="alternate" hreflang="…">` | All 14 supported language alternates plus `x-default`. Norwegian uses BCP-47 `hreflang="nb"` while the file suffix remains legacy `no` for backwards-compatible URLs. The 14-alternate block is emitted even when some siblings are still in English-fallback mode, so search engines always see the full language matrix. | Same `slug:` for every language. |
+| `og:title` / `og:description` | Mirror `<title>` / `<meta description>`; chrome avoids the double-`— Riksdagsmonitor` brand suffix on `og:title`. | Same two front-matter fields. |
+| `twitter:title` / `twitter:description` | Mirror `<title>` / `<meta description>`. | Same two front-matter fields. |
+| JSON-LD `NewsArticle.headline` / `alternativeHeadline` / `description` | Mirror `<title>` (headline + alternativeHeadline) and `<meta description>`. | Same two front-matter fields. |
+| JSON-LD `NewsArticle.inLanguage` | Per-page language code (`en`, `sv`, `nb` for Norwegian, …). | `article.<lang>.md` front-matter `language:`. |
+| JSON-LD `NewsArticle.isBasedOn` | Lists every source `.md` / `.json` artifact under `analysis/daily/$DATE/$SUB/`, excluding generated `article.md`, translated `article.<lang>.md` and temporary `pass1/` snapshots. | Filesystem scan at render time. |
+| Open Graph extras | `og:type=article`, `og:url`, `og:locale`, `og:image`, `article:published_time`, `article:modified_time`. | Computed from front-matter. |
+| Twitter card extras | `twitter:card=summary_large_image`. | Static. |
+| Article dek and provenance badges | Header-level summary string under the H1, plus visible public-source / AI-FIRST / traceability badges. The dek is the same string as `<meta description>` so reader-facing copy never diverges from the SERP snippet. | Front-matter `description:`. |
+| Source footer | Visible `Analysis sources` section linking every source artifact to GitHub. | Filesystem scan. |
+| Sitemap and `news/index*.html` cards | Card title + card subtitle. | `parseArticleMetadata()` / `extractArticleMeta()` prefer `og:description` over `<meta description>` when the former is longer (sitemap-side enforcement of the 140–200 char floor). |
+
+#### Why the cascade matters in practice
+
+- **Quality at source.** The aggregator strips boilerplate prefixes (`Executive Brief — `, trailing ` — YYYY-MM-DD`) and admin bylines (`Brief ID:`, `Classification:`, `Prepared by:`, `Analyst:`, `60-second read:`, `Admiralty baseline:`, `Distribution:`, `Methodology:`) before the description ever lands in `<meta description>`. The cleanup is one-way: if the executive brief is high quality, the eight SEO surfaces are high quality; if the brief is weak, no downstream rewrite can rescue them — the only fix is to improve the brief, then re-aggregate. That is why the AI-FIRST two-pass rule (`00-base-contract.md` §5) is enforced at the analysis-gate layer, not at HTML emission time.
+- **Localization is markdown-first.** The localized `executive-brief_<lang>.md` produced by `news-translate` is the canonical localized SEO source. The per-type workflow's `article.<lang>.md` front-matter exists as a temporary bridge so a freshly-generated article in a previously-untranslated language still ships with localized SEO (chain #3 above), but the long-term editorial discipline is to source localized title + description from `executive-brief_<lang>.md`.
+- **Schema.org consistency.** Because `headline`, `alternativeHeadline`, `description`, `og:title`, `og:description`, `twitter:title`, `twitter:description` and the sitemap card all derive from the same two strings, there is no possible drift between SERP, Twitter card, OG share preview and on-site newsroom card. The single editorial decision — write a publishable H1 and BLUF in the executive brief — propagates eight times automatically.
 
 ---
 
@@ -1002,6 +1040,24 @@ The dedicated translation workflow is:
 - [`.github/workflows/news-translate.md`](.github/workflows/news-translate.md)
 
 It is now a **quality / catch-up workflow**, not the primary translation path. It re-validates upstream-produced translations, refines them where `scripts/validate-news-translations.ts` flags drift, refreshes stale `dateModified`, and back-fills any language that an upstream run could not finish under its 60-minute budget (in which case the renderer fell back to English content under a non-English `<html lang>`). It never generates original analysis.
+
+#### Localized executive-brief = localized SEO source of truth
+
+`news-translate` produces one canonical artifact for each of the 13 non-English target languages:
+
+```
+analysis/daily/$DATE/$SUB/executive-brief_<lang>.md
+```
+
+The H1 and BLUF of `executive-brief_<lang>.md` are the **canonical localized SEO source** for that language — they ride into `<title>`, `<meta description>` and the eight downstream SEO surfaces per the cascade in §"Title and description extraction → Per-language precedence chain". Editorial discipline for both `news-translate` and the per-type workflows:
+
+1. When a per-type workflow translates the English article into `article.<lang>.md`, it **MUST** pull the localized `title:` and `description:` front-matter values from `executive-brief_<lang>.md` whenever that file already exists in the same analysis folder. Translating the English BLUF inline is a fallback, only allowed when `executive-brief_<lang>.md` is not yet present.
+2. When `news-translate` itself runs (3 times daily at 09 / 14 / 19 UTC) it produces `executive-brief_<lang>.md` for every untranslated English brief — closing the gap that keeps a non-English article on chain-#3 (article-front-matter) instead of chain-#2 (localized brief) SEO sourcing.
+3. The localized brief stays **inside the analysis folder**, never under `news/`. Ownership is enforced by `scripts/validate-file-ownership.ts` — per-type workflows must not stage `executive-brief_<lang>.md`, and `news-translate` must not stage `news/*.html`.
+
+#### Why this matters editorially
+
+Every single visible string in a localized `news/$DATE-$SUB-<lang>.html` page — the SERP title, the snippet, the OG share card, the Twitter summary, the JSON-LD headline, the on-site card, the article H1, the dek and the in-body lede — is a highlight of the **same** executive brief artifact, in the same language. No second translation desk, no parallel copywriter, no AI rewrite at HTML emission time. This is what makes the 14-language SEO surface auditable: any anomaly traces back to exactly one Markdown file under `analysis/daily/`, owned by exactly one upstream workflow.
 
 ### Language UI
 
