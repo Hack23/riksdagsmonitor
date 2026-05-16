@@ -162,10 +162,25 @@ async function renderOne(
       mdForLang = markdown;
     } else {
       const localizedMarkdown = fs.readFileSync(langSpecific, 'utf8');
+      // Cascade chain step #2: feed the localized executive-brief markdown
+      // into the merger so a publishable H1 + BLUF in
+      // `executive-brief_<lang>.md` overrides the agent-authored
+      // `article.<lang>.md` front-matter `title:` / `description:`. See
+      // `Article-Generation.md § "Per-language precedence chain"` and
+      // `scripts/render-lib/aggregator/seo/localized-brief.ts`.
+      const briefLangPath = path.join(
+        path.dirname(rc.articleMdPath),
+        `executive-brief_${lang}.md`,
+      );
+      const localizedBriefMarkdown = fs.existsSync(briefLangPath)
+        ? fs.readFileSync(briefLangPath, 'utf8')
+        : undefined;
       mdForLang = mergeLocalizedWithEnglish({
         englishMarkdown: markdown,
         localizedMarkdown,
         lang,
+        localizedBriefMarkdown,
+        subfolder: rc.subfolder,
       });
     }
     const canonicalPath = canonicalPathFor(rc.date, rc.subfolder, lang, rc.date);

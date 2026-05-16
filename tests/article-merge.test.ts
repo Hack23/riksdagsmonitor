@@ -246,6 +246,107 @@ describe('mergeLocalizedWithEnglish', () => {
     expect(data.title).toBe('Government propositions');
     expect(data.description).toBe('Three interlocking propositions');
   });
+
+  // --- Cascade chain step #2 — localized executive-brief overrides --------
+  // `executive-brief_<lang>.md` is the canonical localized SEO source per
+  // `Article-Generation.md § "Per-language precedence chain"`. When the
+  // brief markdown is forwarded into the merger AND it yields a
+  // publishable H1 / BLUF, those fields override the per-type agent's
+  // `article.<lang>.md` front-matter. Banned-phrase H1s and missing
+  // BLUFs leave the article-front-matter values in place so the page
+  // still ships with the localized (chain step #3) title/description.
+
+  it('overrides localized FM title with the localized brief H1 when it is publishable', () => {
+    const briefDe = [
+      '# Tidö-Regierung legt drei Vorlagen vor — Umverteilung von 12,4 Mrd Kronen',
+      '',
+      '## 🎯 BLUF',
+      '',
+      'Am 7. Mai 2026 legte die Tidö-Regierung drei Vorlagen vor, die zusammen 12,4 Milliarden Kronen zwischen Forstwirtschaft und Verteidigung umverteilen.',
+    ].join('\n');
+    const out = mergeLocalizedWithEnglish({
+      englishMarkdown,
+      localizedMarkdown: germanMarkdown,
+      lang: 'de',
+      localizedBriefMarkdown: briefDe,
+      subfolder: 'propositions',
+    });
+    const { data } = matter(out);
+    expect(data.title).toContain('Tidö-Regierung');
+    expect(data.title).toContain('12,4 Mrd');
+    expect(data.description).toContain('Tidö-Regierung');
+    expect(data.description).toContain('12,4 Milliarden');
+    // Localized body content is untouched.
+    expect(out).toContain('Am 7. Mai 2026 legte die Tidö-Regierung drei Vorlagen vor.');
+  });
+
+  it('keeps the localized FM title when the brief H1 is banned (REPLACE THIS H1)', () => {
+    const placeholderBriefDe = [
+      '# 📰 Executive Brief Template — REPLACE THIS H1',
+      '',
+      '## BLUF',
+      '',
+      'Faktische BLUF mit Akteur und Verb über achtzig Zeichen für den Truncate-Filter.',
+    ].join('\n');
+    const out = mergeLocalizedWithEnglish({
+      englishMarkdown,
+      localizedMarkdown: germanMarkdown,
+      lang: 'de',
+      localizedBriefMarkdown: placeholderBriefDe,
+      subfolder: 'propositions',
+    });
+    const { data } = matter(out);
+    // Title falls through to article.<lang>.md front-matter (chain #3).
+    expect(data.title).toBe('Regierungspropositionspakete');
+    // Description still resolves from the brief BLUF (independent fields).
+    expect(data.description).toContain('Faktische BLUF');
+  });
+
+  it('keeps both localized FM fields when the brief is bare boilerplate with empty BLUF', () => {
+    const boilerplateBrief = [
+      '# 📰 Executive Brief',
+      '',
+      '## BLUF',
+      '',
+      // Empty BLUF body.
+    ].join('\n');
+    const out = mergeLocalizedWithEnglish({
+      englishMarkdown,
+      localizedMarkdown: germanMarkdown,
+      lang: 'de',
+      localizedBriefMarkdown: boilerplateBrief,
+      subfolder: 'propositions',
+    });
+    const { data } = matter(out);
+    expect(data.title).toBe('Regierungspropositionspakete');
+    expect(data.description).toBe('DIW Gesamt: 10,0/10');
+  });
+
+  it('falls through to localized FM when localizedBriefMarkdown is undefined', () => {
+    const out = mergeLocalizedWithEnglish({
+      englishMarkdown,
+      localizedMarkdown: germanMarkdown,
+      lang: 'de',
+      // localizedBriefMarkdown intentionally omitted.
+      subfolder: 'propositions',
+    });
+    const { data } = matter(out);
+    expect(data.title).toBe('Regierungspropositionspakete');
+    expect(data.description).toBe('DIW Gesamt: 10,0/10');
+  });
+
+  it('falls through to localized FM when localizedBriefMarkdown is empty', () => {
+    const out = mergeLocalizedWithEnglish({
+      englishMarkdown,
+      localizedMarkdown: germanMarkdown,
+      lang: 'de',
+      localizedBriefMarkdown: '',
+      subfolder: 'propositions',
+    });
+    const { data } = matter(out);
+    expect(data.title).toBe('Regierungspropositionspakete');
+    expect(data.description).toBe('DIW Gesamt: 10,0/10');
+  });
 });
 
 describe('buildEnglishCoverageBoundary', () => {

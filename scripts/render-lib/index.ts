@@ -119,6 +119,20 @@ export type { RenderArticleInput } from './article.js';
 export { mergeLocalizedWithEnglish, buildEnglishCoverageBoundary } from './article-merge.js';
 export type { MergeLocalizedInput } from './article-merge.js';
 
+// --- Localized executive-brief SEO -----------------------------------------
+// Cascade chain step #2 — derive localized `<title>` / `<meta description>`
+// from `executive-brief_<lang>.md` so the per-language SEO surfaces match
+// the localized brief tradecraft. Consumed by `article-merge.ts`.
+export {
+  extractLocalizedBriefSeo,
+  isBannedLocalizedBriefH1,
+  LOCALIZED_BRIEF_H1_BANNED_PATTERNS,
+} from './aggregator/seo/localized-brief.js';
+export type {
+  LocalizedBriefSeoInput,
+  LocalizedBriefSeo,
+} from './aggregator/seo/localized-brief.js';
+
 // Reusable per-article side-block renderers (reader navigation,
 // analysis-artifacts reference, methods reference). Extracted so that
 // every article-type renderer (current and future) can share the same
