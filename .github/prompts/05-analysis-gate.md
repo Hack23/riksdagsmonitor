@@ -206,6 +206,72 @@ if [ -s "$ANALYSIS_DIR/executive-brief.md" ]; then
       echo "❌ executive-brief.md: H1 is bare boilerplate ('Executive Brief') — write a publishable story-oriented title (actor + active verb + instrument or number)"
       FAIL=1
     fi
+    # Date-in-H1 guard (seo-metadata-contract.md §2.1) — title must not
+    # contain a literal publication date. Catches ISO YYYY-MM-DD,
+    # English day-first ("15 May 2026") + US-order ("May 15, 2026") +
+    # Swedish long-form months. Mirrors scripts/agentic/analysis-gate.ts
+    # checkExecutiveBrief — keep regex parity TS ↔ bash.
+    EB_H1_TEXT="$(printf '%s' "$EB_H1" \
+      | sed -E 's/^#[[:space:]]+//' \
+      | sed -E 's/<[^>]+>//g')"
+    if printf '%s' "$EB_H1_TEXT" | grep -qE '[0-9]{4}[-/][0-9]{1,2}[-/][0-9]{1,2}'; then
+      echo "❌ executive-brief.md: H1 contains a literal ISO date (YYYY-MM-DD) — dates belong in article:published_time, not the SERP <title>"
+      FAIL=1
+    elif printf '%s' "$EB_H1_LOWER" | grep -qE '[0-9]{1,2}[[:space:]]+(january|february|march|april|may|june|july|august|september|october|november|december)[[:space:]]+[0-9]{4}'; then
+      echo "❌ executive-brief.md: H1 contains a literal English long-form date — dates belong in article:published_time, not the SERP <title>"
+      FAIL=1
+    elif printf '%s' "$EB_H1_LOWER" | grep -qE '(january|february|march|april|may|june|july|august|september|october|november|december)[[:space:]]+[0-9]{1,2}(,[[:space:]]*[0-9]{4})?'; then
+      echo "❌ executive-brief.md: H1 contains a literal English long-form date (US order: 'May 15, 2026') — dates belong in article:published_time, not the SERP <title>"
+      FAIL=1
+    elif printf '%s' "$EB_H1_LOWER" | grep -qE '[0-9]{1,2}[[:space:]]+(januari|februari|mars|april|maj|juni|juli|augusti|september|oktober|november|december)[[:space:]]+[0-9]{4}'; then
+      echo "❌ executive-brief.md: H1 contains a literal Swedish long-form date — dates belong in article:published_time, not the SERP <title>"
+      FAIL=1
+    fi
+    # Trailing-punctuation / dangling-connector guard — H1 must be a
+    # complete grammatical phrase. Catches `Sweden Evening Analysis,`,
+    # `Week Ahead: Aid Accountability,`, `… opposition for`, etc.
+    EB_H1_TRIM="$(printf '%s' "$EB_H1_TEXT" | sed -E 's/[[:space:]]+$//')"
+    case "$EB_H1_TRIM" in
+      *,|*\;|*:|*—|*–|*-)
+        echo "❌ executive-brief.md: H1 ends with dangling punctuation (',' / ';' / ':' / '—' / '–' / '-') — complete the headline or remove the trailing marker"
+        FAIL=1 ;;
+    esac
+    EB_H1_TRIM_LOWER="$(printf '%s' "$EB_H1_TRIM" | tr '[:upper:]' '[:lower:]')"
+    if printf '%s' "$EB_H1_TRIM_LOWER" | grep -qE '[[:space:]](and|or|but|with|as|for|to|in|of|on|at|by|the|a|an|from|that)$'; then
+      echo "❌ executive-brief.md: H1 ends with a coordinating connector or article ('and', 'or', 'with', 'the', …) — complete the headline"
+      FAIL=1
+    fi
+    # Across-days uniqueness check (Phase 2 — period-aggregation duplicate-card
+    # guard). The full normalised comparison lives in
+    # scripts/agentic/analysis-gate.ts checkExecutiveBrief; this bash
+    # check is a fast pre-flight that compares the raw H1 line against
+    # the prior 7 sibling daily folders for the same subfolder.
+    EB_DAILY_DIR="$(dirname "$ANALYSIS_DIR")"
+    EB_DAILY_ROOT="$(dirname "$EB_DAILY_DIR")"
+    EB_CURR_DATE="$(basename "$EB_DAILY_DIR")"
+    EB_SUBFOLDER="$(basename "$ANALYSIS_DIR")"
+    if printf '%s' "$EB_CURR_DATE" | grep -qE '^[0-9]{4}-[0-9]{2}-[0-9]{2}$' && [ -d "$EB_DAILY_ROOT" ]; then
+      EB_CURR_NORM="$(printf '%s' "$EB_H1_TRIM_LOWER" | sed -E 's/[0-9]{4}-[0-9]{2}-[0-9]{2}//g' | tr -s '[:space:][:punct:]' ' ' | sed -E 's/^[[:space:]]+|[[:space:]]+$//g')"
+      if [ "${#EB_CURR_NORM}" -ge 10 ]; then
+        for EB_SIBLING in $(ls -1 "$EB_DAILY_ROOT" 2>/dev/null | grep -E '^[0-9]{4}-[0-9]{2}-[0-9]{2}$' | awk -v c="$EB_CURR_DATE" '$0 < c' | sort | tail -7); do
+          EB_SIB_BRIEF="$EB_DAILY_ROOT/$EB_SIBLING/$EB_SUBFOLDER/executive-brief.md"
+          [ -s "$EB_SIB_BRIEF" ] || continue
+          EB_SIB_H1="$(grep -E '^#[[:space:]]+' "$EB_SIB_BRIEF" | head -n1 | sed -E 's/^#[[:space:]]+//' | sed -E 's/<[^>]+>//g')"
+          [ -n "$EB_SIB_H1" ] || continue
+          EB_SIB_NORM="$(printf '%s' "$EB_SIB_H1" | tr '[:upper:]' '[:lower:]' | sed -E 's/[0-9]{4}-[0-9]{2}-[0-9]{2}//g' | tr -s '[:space:][:punct:]' ' ' | sed -E 's/^[[:space:]]+|[[:space:]]+$//g')"
+          if [ "$EB_SIB_NORM" = "$EB_CURR_NORM" ]; then
+            echo "❌ executive-brief.md: H1 is normalised-identical (case/punctuation/date stripped) to analysis/daily/$EB_SIBLING/$EB_SUBFOLDER/executive-brief.md — reword to surface the day-specific angle (period-aggregation briefs must not ship duplicate cards on the news index)"
+            FAIL=1
+            break
+          fi
+        done
+      fi
+    fi
+  else
+    # No H1 at all — the renderer has nothing to seed the SERP <title>
+    # from and will silently fall back to a BLUF-sentence fragment.
+    echo "❌ executive-brief.md: no '# H1' heading found — the H1 is the SERP <title> source across all 14 languages; add a publishable story-oriented title"
+    FAIL=1
   fi
 fi
 if [ -s "$ANALYSIS_DIR/intelligence-assessment.md" ]; then

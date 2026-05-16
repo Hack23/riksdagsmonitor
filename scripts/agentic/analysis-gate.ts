@@ -35,8 +35,8 @@
  */
 
 import { readFile, stat, readdir } from 'node:fs/promises';
-import { existsSync, statSync } from 'node:fs';
-import { join } from 'node:path';
+import { existsSync, statSync, readdirSync, readFileSync } from 'node:fs';
+import { join, dirname, basename } from 'node:path';
 
 import {
   type GateCheckResult,
@@ -49,6 +49,7 @@ import {
   EVIDENCE_PATTERN,
   RECOGNISED_AGENCIES,
 } from './artifact-inventory.js';
+import { cleanArticleTitle } from '../render-lib/aggregator/seo/title.js';
 
 // ---------------------------------------------------------------------------
 // Public API
@@ -684,8 +685,26 @@ async function checkExecutiveBrief(analysisDir: string): Promise<GateCheckResult
 
   // H1 quality check — block the template-placeholder and boilerplate-only
   // headings that would ship as the SERP <title>.
+  // Derive the subfolder slug (the directory name immediately inside
+  // analysis/daily/<date>/) so `cleanArticleTitle()` can apply the
+  // boilerplate-collapse guard with the same rule the renderer uses.
+  const analysisDirSegments = analysisDir.split(/[\\/]/).filter(Boolean);
+  const subfolder = analysisDirSegments[analysisDirSegments.length - 1] ?? '';
   const h1 = extractExecutiveBriefH1(content);
-  if (h1) {
+  if (!h1) {
+    // No Markdown H1 and no centered HTML <h1> in the brief — the
+    // renderer has nothing to seed the SERP <title> from and will fall
+    // back to the BLUF first sentence, which often ships as a truncated
+    // lead fragment (e.g. live 2026-05-16 weekly-review: "Three
+    // simultaneous pressure points are converging on the Tidö").
+    results.push({
+      checkId: 'family-c-structure',
+      passed: false,
+      message:
+        "executive-brief.md: no '# H1' heading found — the H1 is the SERP <title> source across all 14 languages; add a publishable story-oriented title",
+      artifact: 'executive-brief.md',
+    });
+  } else {
     const h1Lower = h1.toLowerCase();
     // Patterns that indicate the editor did not replace the template H1.
     const placeholderPatterns: ReadonlyArray<{ pattern: RegExp; label: string }> = [
@@ -721,6 +740,172 @@ async function checkExecutiveBrief(analysisDir: string): Promise<GateCheckResult
           "executive-brief.md: H1 is bare boilerplate ('Executive Brief') — write a publishable story-oriented title (55–70 chars EN, actor + active verb + instrument or number)",
         artifact: 'executive-brief.md',
       });
+    }
+
+    // Renderer-equivalence guard — if `cleanArticleTitle(h1, subfolder)`
+    // returns `null` (boilerplate-collapse, equals subfolder label, or
+    // < 20 chars after strip), the SERP <title> will fall back to a
+    // BLUF-sentence fragment. Reject at the gate so this can never ship.
+    // This is the single-source-of-truth check that shares the renderer
+    // rule via direct import — any change to `cleanArticleTitle` is
+    // automatically reflected here.
+    const cleaned = cleanArticleTitle(h1, subfolder);
+    if (cleaned === null) {
+      // Avoid duplicate failure when one of the more specific H1 guards
+      // above already fired (placeholder/boilerplate checks). Only suppress
+      // for H1-related failures — unrelated executive-brief failures (e.g.
+      // missing BLUF/Decisions) must not mask this collapse guard.
+      const alreadyFlagged = results.some(
+        (r) =>
+          !r.passed &&
+          r.artifact === 'executive-brief.md' &&
+          r.message.includes('H1'),
+      );
+      if (!alreadyFlagged) {
+        results.push({
+          checkId: 'family-c-structure',
+          passed: false,
+          message:
+            `executive-brief.md: H1 collapses to nothing after boilerplate strip — write a story-oriented headline (actor + active verb + instrument/number). The renderer's cleanArticleTitle(h1, '${subfolder}') returned null, so the SERP <title> would silently fall back to a BLUF-sentence fragment.`,
+          artifact: 'executive-brief.md',
+        });
+      }
+    } else {
+      // Date-in-title guard — per `seo-metadata-contract.md` §2.1 the
+      // title must never contain a literal publication date. We check
+      // the RAW h1 (not the post-cleanArticleTitle value) because
+      // cleanArticleTitle silently strips ISO dates anywhere in the
+      // title — we still want to alert the editor that the source
+      // brief has a date in the headline.
+      const datePatterns: ReadonlyArray<{ pattern: RegExp; label: string }> = [
+        { pattern: /\b\d{4}[-/]\d{1,2}[-/]\d{1,2}\b/, label: 'ISO date (YYYY-MM-DD)' },
+        {
+          pattern:
+            /\b\d{1,2}\s+(?:january|february|march|april|may|june|july|august|september|october|november|december)\s+\d{4}\b/i,
+          label: 'English long-form date',
+        },
+        {
+          pattern:
+            /\b(?:january|february|march|april|may|june|july|august|september|october|november|december)\s+\d{1,2}(?:,\s*\d{4})?\b/i,
+          label: 'English long-form date (US order)',
+        },
+        {
+          pattern:
+            /\b\d{1,2}\s+(?:januari|februari|mars|april|maj|juni|juli|augusti|september|oktober|november|december)\s+\d{4}\b/i,
+          label: 'Swedish long-form date',
+        },
+      ];
+      for (const { pattern, label } of datePatterns) {
+        if (pattern.test(h1)) {
+          results.push({
+            checkId: 'family-c-structure',
+            passed: false,
+            message: `executive-brief.md: H1 contains a literal date (${label}) — dates belong in 'article:published_time', not the SERP <title>`,
+            artifact: 'executive-brief.md',
+          });
+          break;
+        }
+      }
+
+      // Trailing-punctuation / dangling-connector guard — the H1 must
+      // be a complete grammatical phrase. Trailing `,`, `;`, `:`, em/en
+      // dash, or coordinating connector words signal a truncated draft
+      // (live cases: `Sweden Evening Analysis,`, `Week Ahead: Aid
+      // Accountability,`, `Swedish Parliamentary Pulse,`).
+      //
+      // We check the RAW h1 (not `cleaned`) because cleanArticleTitle
+      // strips a bare trailing comma — but we still want to alert the
+      // editor that the source brief is malformed.
+      const h1Trimmed = h1.trim();
+      if (/[,;:—–-]\s*$/u.test(h1Trimmed)) {
+        results.push({
+          checkId: 'family-c-structure',
+          passed: false,
+          message:
+            "executive-brief.md: H1 ends with dangling punctuation (',' / ';' / ':' / '—' / '–' / '-') — complete the headline or remove the trailing marker",
+          artifact: 'executive-brief.md',
+        });
+      } else if (
+        /\s+(?:and|or|but|with|as|for|to|in|of|on|at|by|the|a|an|from|that)$/i.test(
+          h1Trimmed,
+        )
+      ) {
+        results.push({
+          checkId: 'family-c-structure',
+          passed: false,
+          message:
+            "executive-brief.md: H1 ends with a coordinating connector or article ('and', 'or', 'with', 'the', …) — complete the headline",
+          artifact: 'executive-brief.md',
+        });
+      }
+    }
+  }
+
+  // Across-days uniqueness check — period-aggregation briefs ("Tidö
+  // Current Mandate", "Year-Ahead → +365", "Post-2026 Mandate
+  // Forecast") routinely ship the same H1 every run because the
+  // workflow scope ("the current mandate", "the next 365 days") barely
+  // changes day-to-day. The result is duplicate cards on the news
+  // index — bad UX and bad SEO. We compare the current brief's H1
+  // against H1s in the same subfolder for the previous 7 days; if
+  // normalised-identical (lowercased, ISO dates removed, punctuation /
+  // symbols / emoji collapsed to whitespace, whitespace collapsed),
+  // flag it.
+  //
+  // Scoped narrowly: we only flag exact normalised-identical
+  // duplicates, so a story that genuinely continues from one day to
+  // the next is not penalised. The editor should reword the H1 to
+  // surface the day-specific angle (`… now hinges on FiU48 amendment 3`,
+  // `… committee splits 9-8 on Wednesday`, …).
+  if (h1) {
+    const dailyDir = dirname(analysisDir); // analysis/daily/<date>
+    const dailyRoot = dirname(dailyDir); // analysis/daily
+    const currentDate = basename(dailyDir);
+    if (/^\d{4}-\d{2}-\d{2}$/.test(currentDate) && existsSync(dailyRoot)) {
+      try {
+        const siblingDates = readdirSync(dailyRoot, { withFileTypes: true })
+          .filter((e) => e.isDirectory())
+          .map((e) => e.name)
+          .filter((n) => /^\d{4}-\d{2}-\d{2}$/.test(n) && n < currentDate)
+          .sort()
+          .slice(-7);
+        const normaliseH1 = (raw: string): string =>
+          raw
+            .toLowerCase()
+            // Strip ISO dates BEFORE punctuation replacement (otherwise
+            // hyphens in YYYY-MM-DD become spaces and the date regex fails).
+            .replace(/\b\d{4}[-/]\d{1,2}[-/]\d{1,2}\b/g, '')
+            .replace(/[\p{P}\p{S}\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu, ' ')
+            .replace(/\s+/g, ' ')
+            .trim();
+        const currentNorm = normaliseH1(h1);
+        if (currentNorm.length >= 10) {
+          for (const siblingDate of siblingDates) {
+            const siblingBrief = join(dailyRoot, siblingDate, subfolder, 'executive-brief.md');
+            if (!existsSync(siblingBrief)) continue;
+            let siblingH1: string | null = null;
+            try {
+              siblingH1 = extractExecutiveBriefH1(readFileSync(siblingBrief, 'utf-8'));
+            } catch {
+              continue;
+            }
+            if (!siblingH1) continue;
+            if (normaliseH1(siblingH1) === currentNorm) {
+              results.push({
+                checkId: 'family-c-structure',
+                passed: false,
+                message:
+                  `executive-brief.md: H1 is normalised-identical (case/punctuation/date stripped) to analysis/daily/${siblingDate}/${subfolder}/executive-brief.md — reword to surface the day-specific angle (period-aggregation briefs must not ship duplicate cards on the news index)`,
+                artifact: 'executive-brief.md',
+              });
+              break;
+            }
+          }
+        }
+      } catch {
+        // Reading sibling dirs is best-effort; never block the gate on
+        // an I/O hiccup in the sibling scan.
+      }
     }
   }
 

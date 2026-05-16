@@ -46,13 +46,59 @@ function trimTrailingPunctuation(text: string): string {
   return text.replace(/[\s,;:—–-]+$/u, '').replace(/[.。؟?!…]+$/u, '').trim();
 }
 
+/**
+ * Trailing connector punctuation / words left behind when the
+ * word-boundary truncation in {@link truncateAtWord} cuts a long
+ * brief H1 at a coordinating connector.
+ *
+ * **Expanded superset** of the *trailing-connector* rule in
+ * `aggregator/seo/title.ts § TRAILING_CONNECTOR_RE`: the aggregator's
+ * trailing-connector list is English-only (it strips dangling EN
+ * conjunctions/prepositions after word-boundary truncation), but note
+ * that the aggregator's `BLUF_DATE_PREFIX_PATTERNS` already include
+ * multilingual prefixes (EN + SV + DE + FR) to handle BLUF date
+ * leaks. The renderer here must *also* strip Swedish / German /
+ * French trailing connectors because executive-brief H1s ship in
+ * all 14 languages. If you update either trailing-connector list,
+ * update both — keep this regex strictly a superset of the
+ * aggregator's EN-only connector list (drift in the EN subset would
+ * let dangling EN connectors leak through in the renderer).
+ *
+ * Applied here as well as in the aggregator because the renderer's
+ * `<title>` budget (70 chars) is tighter than the brief H1 and can
+ * truncate a perfectly clean H1 mid-connector.
+ *
+ * Live case: brief H1
+ *   "Riksdag Enshrines Constitutional Protection for Abortion — and
+ *    Expands the Security State's Toolkit" (99 chars)
+ * → without this strip the SERP `<title>` ships as
+ *   "Riksdag Enshrines Constitutional Protection for Abortion — and…"
+ *   which reads as a dangling connector to readers and search engines.
+ * With this strip the SERP `<title>` ships as
+ *   "Riksdag Enshrines Constitutional Protection for Abortion…"
+ *   which is clean prose.
+ */
+const TRAILING_CONNECTOR_RE =
+  /[\s,;:—–-]+(?:and|or|but|with|as|in|of|to|for|on|at|by|from|that|which|who|when|where|while|after|before|the|a|an|have|has|had|is|are|was|were|will|would|can|may|might|should|must|och|men|eller|med|som|av|till|för|på|i|att|der|die|das|und|oder|aber|mit|als|für|in|auf|et|ou|mais|avec|comme|de|à|pour|en|sur)$/iu;
+
+function trimTrailingConnectors(text: string): string {
+  let prev = text;
+  for (let i = 0; i < 5; i += 1) {
+    const next = prev.replace(TRAILING_CONNECTOR_RE, '').replace(/[\s,;:—–-]+$/u, '').trim();
+    if (next === prev) break;
+    prev = next;
+  }
+  return prev;
+}
+
 function truncateAtWord(text: string, maxLen: number): string {
   const clean = collapseWhitespace(text);
   if (clean.length <= maxLen) return clean;
   const sliced = clean.slice(0, maxLen);
   const lastSpace = sliced.lastIndexOf(' ');
   const cut = lastSpace > Math.floor(maxLen * 0.55) ? sliced.slice(0, lastSpace) : sliced;
-  return trimTrailingPunctuation(cut) + '…';
+  const stripped = trimTrailingConnectors(trimTrailingPunctuation(cut));
+  return stripped + '…';
 }
 
 function normaliseKeyword(raw: string): string {

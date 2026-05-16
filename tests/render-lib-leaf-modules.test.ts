@@ -648,6 +648,109 @@ describe('aggregator/seo/title — title cleanup & BLUF synthesis', () => {
     expect(titleFromBluf('• Sweden joins NATO summit talks.', 70))
       .toBe('Sweden joins NATO summit talks');
   });
+
+  // ────────────────────────────────────────────────────────────────────
+  // 2026-05-16 hardening (Phase 3 of the PR #2527 follow-up):
+  // - Trailing-comma strip in cleanArticleTitle (Class C cosmetic damage).
+  // - Tail-too-short truncation guard in titleFromBluf (`… on the Tidö`).
+  // - Swedish "Den <day> <månad> <year>" date-prefix strip (multi-lingual).
+  // ────────────────────────────────────────────────────────────────────
+
+  it('cleanArticleTitle strips a bare trailing comma (live: `Sweden Evening Analysis,`)', () => {
+    expect(
+      cleanArticleTitle('Sweden Evening Analysis, Constitutional Moment Builds,'),
+    ).toBe('Sweden Evening Analysis, Constitutional Moment Builds');
+    expect(
+      cleanArticleTitle('Riksdag Approves FiU48 Fuel-Tax Cut Ahead of Election,'),
+    ).toBe('Riksdag Approves FiU48 Fuel-Tax Cut Ahead of Election');
+  });
+
+  it('cleanArticleTitle strips a bare trailing semicolon or colon', () => {
+    expect(
+      cleanArticleTitle('Opposition Unites Against Migration Restriction Package;'),
+    ).toBe('Opposition Unites Against Migration Restriction Package');
+    expect(
+      cleanArticleTitle('Riksdag Constitutional Reform Advances Toward Vote:'),
+    ).toBe('Riksdag Constitutional Reform Advances Toward Vote');
+  });
+
+  it("titleFromBluf does not truncate to end on a ≤ 3-char tail word (live: `… on the Tidö`)", () => {
+    // Reproduces 2026-05-16 weekly-review live regression where the
+    // card title was "Three simultaneous pressure points are converging
+    // on the Tidö" — `Tidö` is a 4-char word but the previous tail
+    // `… on the` would have been ≤ 3 chars. Verify both that we don't
+    // end on `the`/`on`/`to` (which we would have done before the
+    // guard) and that 4-char words are preserved as substantive endings.
+    const bluf =
+      'Three simultaneous pressure points are converging on the Tidö coalition government this week.';
+    const out = titleFromBluf(bluf, 70);
+    expect(out).not.toMatch(/\b(?:the|on|to|of|in|at|by|as|a|an)$/i);
+  });
+
+  it('titleFromBluf does not truncate to end on `two`, `has` or other ≤ 3-char filler', () => {
+    // Live: `Sweden's Constitutional Affairs Committee (KU) has advanced two`
+    const bluf =
+      "Sweden's Constitutional Affairs Committee (KU) has advanced two interlocked constitutional amendments requiring a supermajority.";
+    const out = titleFromBluf(bluf, 70);
+    expect(out).not.toMatch(/\b(?:two|has|had|its|the|and|or)$/i);
+    expect(out!.length).toBeGreaterThan(10);
+  });
+
+  it('titleFromBluf preserves 4+ char tail words like `bill`, `cuts`, `vote`', () => {
+    // Bluf longer than 70 chars to trigger the cut path; `bill` should
+    // be the substantive 4-char tail word that survives the step-back
+    // guard.
+    const bluf =
+      'Opposition motions challenge the new forestry reform bill in committee.';
+    const out = titleFromBluf(bluf, 70);
+    expect(out).toMatch(/bill$/);
+  });
+
+  it('titleFromBluf KEEPS a leading Swedish date prefix when stripping would leave a V2 verb-leading fragment', () => {
+    // Swedish V2 word order: "Den 13 maj 2026 antog riksdagen …" →
+    // stripping the date prefix leaves "antog riksdagen …" which is
+    // verb-leading (lost grammatical subject due to V2 inversion).
+    // The guard detects "antog" in VERB_LEADING_TOKENS and keeps the
+    // date prefix — same logic as the English "marks …" case.
+    const bluf =
+      'Den 13 maj 2026 antog Rysslands statsduma en lag som institutionaliserar makten.';
+    const out = titleFromBluf(bluf, 70);
+    // Date prefix is kept — verb-leading guard fires.
+    expect(out!.startsWith('Den')).toBe(true);
+    expect(out).not.toMatch(/^antog\s/i);
+  });
+
+  it('titleFromBluf strips a leading Swedish date prefix when result is NOT verb-leading', () => {
+    // When the stripped result starts with a noun phrase (not a verb),
+    // the date IS removed as intended. Here "Den 7 maj 2026, riksdagen…"
+    // has subject-first order after the comma — no V2 inversion — so
+    // stripping leaves "riksdagen…" (noun-leading).
+    const bluf =
+      'Den 7 maj 2026, riksdagen röstade nej till förslaget om skattelättnader.';
+    const out = titleFromBluf(bluf, 70);
+    expect(out).not.toMatch(/^Den\s+\d/);
+    expect(out).not.toMatch(/\bmaj\s+2026\b/);
+  });
+
+  it('titleFromBluf KEEPS a leading German date prefix when stripping would leave a V2 verb-leading fragment', () => {
+    // German V2: "Am 13. Mai 2026 beschloss der Bundestag …" →
+    // stripping "Am 13. Mai 2026 " leaves "beschloss der Bundestag …"
+    // which starts with German past-tense verb (V2 inversion).
+    const bluf =
+      'Am 13. Mai 2026 beschloss der Bundestag ein neues Gesetz zur Verteidigungspolitik.';
+    const out = titleFromBluf(bluf, 70);
+    expect(out!.startsWith('Am')).toBe(true);
+    expect(out).not.toMatch(/^beschloss\s/i);
+  });
+
+  it('titleFromBluf strips a leading German date prefix when result is NOT verb-leading', () => {
+    // A noun-leading result after date strip → date is removed.
+    const bluf =
+      'Am 7. Mai 2026 ist der neue Haushaltsentwurf in Kraft getreten.';
+    const out = titleFromBluf(bluf, 70);
+    expect(out).not.toMatch(/^Am\s+\d/);
+    expect(out).not.toMatch(/\bMai\s+2026\b/);
+  });
 });
 
 describe('aggregator/frontmatter — YAML escape + assembly', () => {

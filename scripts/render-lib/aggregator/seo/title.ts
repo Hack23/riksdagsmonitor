@@ -71,6 +71,12 @@ export function cleanArticleTitle(raw: string | null, subfolder?: string): strin
   t = t.replace(/\s*[—–\-:]?\s*\d{4}[-/]\d{2}[-/]\d{2}(?:\s+\d{1,2}[:\-.]\d{2}(?:\s*UTC)?)?\s*$/i, '');
   t = t.replace(/\s*\d{4}[-/]\d{2}[-/]\d{2}(?:\s+\d{1,2}[:\-.]\d{2}(?:\s*UTC)?)?\s*/g, ' ');
   t = t.replace(/[\s,;:]*(?:to|till|bis|à|a|إلى|から|til|–|—|-|:)\s*$/iu, '').trim();
+  // Strip a bare trailing comma / semicolon / colon left after editor
+  // truncation (live cases: `Sweden Evening Analysis,`, `Week Ahead: Aid
+  // Accountability,`, `Swedish Parliamentary Pulse,`). The connector
+  // strip above only fires when a recognised word follows, so this is
+  // the catch-all for dangling punctuation alone.
+  t = t.replace(/[,;:]+\s*$/u, '').trim();
   t = t.replace(/\s+/g, ' ').trim();
   if (t.length < 20) return null;
 
@@ -122,9 +128,10 @@ export function cleanArticleTitle(raw: string | null, subfolder?: string): strin
  * remaining sentence starts with a lower-case word it is capitalised so
  * the SERP title reads as a clean sentence.
  *
- * The patterns are intentionally narrow: only well-formed English date
- * leads are stripped. Translated articles get their own per-language
- * dictionaries via the `news-translate` workflow.
+ * The patterns cover well-formed date leads in English, Swedish, German,
+ * and French — the four primary content languages. Translated articles in
+ * other languages get their own per-language dictionaries via the
+ * `news-translate` workflow.
  *
  * Exported only for testability.
  */
@@ -144,6 +151,15 @@ export const BLUF_DATE_PREFIX_PATTERNS: readonly RegExp[] = [
   /^\d{1,2}\s+[A-Z][a-z]+\s+\d{4}\s*[,—–-]?\s+/,
   // ISO date prefix "2026-05-08, " or "2026-05-08 — "
   /^\d{4}-\d{2}-\d{2}\s*[,—–-]?\s+/,
+  // Swedish "Den <day> <månad> <year>" (e.g. `Den 13 maj 2026 antog …`).
+  // Swedish month names: januari, februari, mars, april, maj, juni,
+  // juli, augusti, september, oktober, november, december.
+  /^Den\s+\d{1,2}\s+(?:januari|februari|mars|april|maj|juni|juli|augusti|september|oktober|november|december)\s+\d{4}\s*[,—–-]?\s+/i,
+  // German "Am <day>. <Monat> <year>" — January…December plus
+  // Mai/Mär/Juni/Juli for native forms.
+  /^Am\s+\d{1,2}\.?\s+(?:Januar|Februar|März|Marz|April|Mai|Juni|Juli|August|September|Oktober|November|Dezember)\s+\d{4}\s*[,—–-]?\s+/i,
+  // French "Le <day> <mois> <year>" (e.g. `Le 13 mai 2026, …`).
+  /^Le\s+\d{1,2}\s+(?:janvier|février|fevrier|mars|avril|mai|juin|juillet|août|aout|septembre|octobre|novembre|décembre|decembre)\s+\d{4}\s*[,—–-]?\s+/i,
 ];
 
 /**
@@ -154,17 +170,24 @@ export const BLUF_DATE_PREFIX_PATTERNS: readonly RegExp[] = [
  * than ship a subjectless verb. Better SEO-incorrect than grammatically
  * broken.
  *
+ * Covers English, Swedish, and German — mirroring the multilingual scope
+ * of {@link BLUF_DATE_PREFIX_PATTERNS}. Swedish and German use V2
+ * (verb-second) word order after fronted time adverbials, so stripping
+ * `Den 13 maj 2026` or `Am 13. Mai 2026` leaves the verb before the
+ * subject (e.g. `antog riksdagen …`, `beschloss der Bundestag …`).
+ *
  * Curation criteria (intentionally a high-precision subset, not
  * comprehensive coverage):
  * - Common 3rd-person-singular verbs in political/legislative BLUF
- *   leads: `marks`, `shows`, `submitted`, `tabled`, …
+ *   leads: `marks`, `shows`, `submitted`, `tabled`, `antog`, …
  * - Modal/auxiliary verbs that always need a subject: `will`, `would`,
- *   `must`, `should`, …
+ *   `must`, `should`, `ska`, `wird`, …
  * Not included: rare or domain-narrow verbs (false-positive risk).
  * Add new entries when an audit shows a real BLUF starting with the
  * verb after date-prefix strip; do not pre-emptively expand.
  */
 const VERB_LEADING_TOKENS = new Set([
+  // ── English ─────────────────────────────────────────────────────────
   // Present tense (3rd person singular) — the most common in BLUF leads
   'marks', 'shows', 'reveals', 'signals', 'indicates', 'suggests',
   'faces', 'sees', 'brings', 'drives', 'highlights', 'represents',
@@ -175,10 +198,61 @@ const VERB_LEADING_TOKENS = new Set([
   'announced', 'unveiled', 'reported', 'agreed', 'failed', 'collapsed',
   // Future / modal
   'will', 'would', 'could', 'may', 'might', 'should', 'must',
+
+  // ── Swedish (V2 — date-adverbial fronting inverts subject/verb) ──────
+  // Past tense forms common in political/legislative BLUF
+  'antog',          // adopted  (riksdagen antog / statsduman antog)
+  'beslutade',      // decided
+  'röstade',        // voted
+  'godkände',       // approved
+  'avslog',         // rejected
+  'föreslog',       // proposed
+  'presenterade',   // presented
+  'tillkännagav',   // announced
+  'fastställde',    // established / set
+  'inledde',        // initiated
+  'avslutade',      // concluded
+  'avvisade',       // dismissed
+  'bekräftade',     // confirmed
+  'behandlade',     // processed
+  'debatterade',    // debated
+  'lade',           // submitted (lade fram)
+  'passerade',      // passed
+  // Swedish modal / future forms
+  'ska',            // shall / will
+  'vill',           // wants
+  'måste',          // must
+  'bör',            // should
+
+  // ── German (V2 — fronted adverbials invert subject/verb) ─────────────
+  // Past-tense (Präteritum) forms common in political/legislative BLUF
+  'beschloss',      // decided / resolved
+  'verabschiedete', // passed / enacted
+  'stimmte',        // voted
+  'lehnte',         // rejected
+  'kündigte',       // announced
+  'präsentierte',   // presented
+  'veröffentlichte',// published
+  'einigte',        // agreed
+  'wählte',         // elected / chose
+  'berief',         // convened
+  'scheiterte',     // failed
+  'bestätigte',     // confirmed
+  'erklärte',       // declared / explained
+  'stellte',        // presented (stellte vor)
+  'trat',           // entered (trat in Kraft = came into force)
+  'nahm',           // took (nahm an = adopted)
+  // German modal / auxiliary forms
+  'wird',           // will
+  'soll',           // should / shall
+  'muss',           // must
+  'kann',           // can
 ]);
 
 function startsWithVerb(text: string): boolean {
-  const m = text.match(/^([A-Za-z]+)/);
+  // Use \p{L} (Unicode letter) so Swedish ä/å/ö and German ä/ö/ü are
+  // captured correctly (e.g. `röstade`, `godkände`, `veröffentlichte`).
+  const m = text.match(/^(\p{L}+)/u);
   if (!m) return false;
   return VERB_LEADING_TOKENS.has(m[1]!.toLowerCase());
 }
@@ -276,7 +350,34 @@ export function titleFromBluf(bluf: string | null, maxLen: number = 70): string 
   }
   const sliced = firstSentence.slice(0, maxLen);
   const lastSpace = sliced.lastIndexOf(' ');
-  const cut = (lastSpace > 30 ? sliced.slice(0, lastSpace) : sliced).trim();
+  let cut = (lastSpace > 30 ? sliced.slice(0, lastSpace) : sliced).trim();
+  // Dangling-tail guard — if the cut ends on a ≤ 3-char word (`two`,
+  // `the`, `on`, `of`, …) it reads as a truncated fragment. Step back
+  // to the previous word boundary so the title ends on a substantive
+  // word. Live cases: `… has advanced two` (committeeReports),
+  // `… of` (interpellations), `… on the` (weekly-review).
+  // Word lengths ≤ 3 are the empirical cutoff: 4+-char words like
+  // `bill`, `cuts`, `vote`, `Tidö` are substantive enough to end a
+  // title. Numeric tails (e.g. `12`, `7`) are also substantive even
+  // when ≤ 3 chars, so they short-circuit the step-back loop.
+  let safetyCounter = 0;
+  while (safetyCounter < 5) {
+    const tail = cut.match(/(\S+)$/);
+    if (!tail) break;
+    const tailWord = tail[1]!;
+    // Length test uses the raw tail word — leading/trailing
+    // sentence-end punctuation (`. ! ? …`) was already stripped from
+    // `firstSentence` upstream, and `cut.trim()` removes leading
+    // space, so `tailWord` is the bare word. Tails containing digits
+    // (numbers like `12` or `7`) are substantive and allowed even at
+    // ≤ 3 chars.
+    if (tailWord.length > 3 || /\d/.test(tailWord)) break;
+    // Step back to the previous word boundary.
+    const previousSpace = cut.lastIndexOf(' ');
+    if (previousSpace < 30) break;
+    cut = cut.slice(0, previousSpace).trim();
+    safetyCounter += 1;
+  }
   const cleaned = trimTrailingConnectors(cut);
   return cleaned || null;
 }
