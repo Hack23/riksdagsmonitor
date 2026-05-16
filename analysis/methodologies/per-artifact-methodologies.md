@@ -151,6 +151,55 @@ This file is referenced from [`ai-driven-analysis-guide.md §Per-artifact method
 
 ## Family A — Core Synthesis
 
+### executive-brief ⭐
+
+> **Why this artifact is special.** The executive brief is the **SEO + UI/UX root** of the published article. Its **H1** becomes `<title>`, `og:title`, `twitter:title`, JSON-LD `headline` and the human-readable sitemap card. Its **first BLUF paragraph** becomes `<meta name="description">`, `og:description`, `twitter:description`, JSON-LD `description` and the RSS lede. Weak brief = weak SERP, weak news value, weak intelligence product across 14 languages. Treat it as the decision-grade BLUF for editors and duty officers, not as an artifact summary. Authoritative SEO budgets and banned phrases live in [`.github/prompts/seo-metadata-contract.md`](../../.github/prompts/seo-metadata-contract.md) — this section is the analytic and editorial counterpart.
+
+**Inputs** — all Family A peers (`synthesis-summary`, `significance-scoring`, `classification-results`, `swot-analysis`, `risk-assessment`, `threat-analysis`, `stakeholder-perspectives`) + `cross-reference-map`; **top-3 composite items from `swot-analysis.md` and `significance-scoring.md` are the deterministic ranking source for §3 Decisions and the DIW table**; horizon band from [`scripts/horizon-context.ts`](../../scripts/horizon-context.ts); economic-provenance block from `economic-context.md` (IMF-first per [`ECONOMIC_DATA_CONTRACT.md`](../../.github/aw/ECONOMIC_DATA_CONTRACT.md) v3.1).
+
+**Analytic moves** — produced in this order:
+1. **Story-oriented H1** (publishable `<title>`, 55–70 chars EN, actor-first, active news verb, named instrument or number, **no literal `YYYY-MM-DD`**, no `Executive Brief — …` boilerplate, no trailing ` — Riksdagsmonitor`). Treat the H1 as the SERP title that ships unchanged; if it would read as boilerplate, rewrite until it survives the [`seo-metadata-contract.md`](../../.github/prompts/seo-metadata-contract.md) §2.2 banned-phrase scan.
+2. **Headline-candidates worksheet** (≥ 3 alternative H1s scored on actor / verb / instrument / number / consequence / SERP-pixel-width; pick best; record losers as evidence the rubric was applied).
+3. **BLUF paragraph** (ICD 203 §5 — customer-relevance + so-what): 140–200 chars EN (per-language budgets in [`seo-metadata-contract.md`](../../.github/prompts/seo-metadata-contract.md) §4), one complete sentence, lead with the #1 DIW-ranked finding, name the principal actor (party + role), state the concrete action, quantify impact, end with WEP-banded confidence label. Optional 1–3 supporting sentences after for the brief itself (the renderer truncates at sentence boundary for the `<meta description>`).
+4. **Decision-Grade BLUF Rubric** (6-axis self-score, all axes ≥ 3/5 to pass Pass-2): **Actor** (named person + party + role); **Verb** (active news verb from `seo-metadata-contract.md` §2.1); **Instrument** (`dok_id` / `bet` / `prop.` / vote ID); **Number** (SEK/€ amount, vote count, seats, percentage); **Consequence** (so-what — what changes for citizens / parties / coalition); **Confidence** (WEP + Admiralty + ODNI).
+5. **14-language SEO seeds** — one row per supported language with localised title angle (within per-language budget), description angle (within per-language budget), and 5–8 keyword seeds. **`nb` not `no`** (BCP-47); RTL flagged for `ar`/`he`. No two rows may be identical except for date/language label; CJK use glyph count not byte length.
+6. **Narrative handoff** (v3.2 — required) — 120–180-char lede paragraph, 300–500-word body, signposted 60–150-word counter-narrative naming one actor whose framing of the same numbers is different. Apply [`political-style-guide.md` §Narrative-Voice Standards](political-style-guide.md#-narrative-voice-standards-v32--new).
+7. **3 Decisions table** — exactly three rows (editorial / monitoring / forward-watch), every row has `Who Decides`, `Deadline`, and `Evidence` (`dok_id` / vote ID / sibling-artifact path). Decisions must be the top-3 composite items from `swot-analysis.md` + `significance-scoring.md` (Source Diversity Rule applies).
+8. **60-Second Read** — 6–8 bullets, each colour-coded; bullet 1 = top development = `dok_id`-anchored = aligns with H1 actor; bullet 5 = IMF-first macro / SCB Swedish ground truth / Statskontoret agency-capacity (or labelled `[diffuse — no quantitative anchor]`); bullet 7 = emerging threat from `political-threat-framework.md`; bullet 8 carry-forward only if relevant.
+9. **DIW-ranked top-documents table** — order MUST match `significance-scoring.md`; divergence forces Pass-2 reconciliation.
+10. **Risk & threat snapshot** — Mermaid block with cyberpunk `%%{init …}%%` prologue + ≥ 2 colour-coded `style` directives; companion table with `L × I` score + named trigger + Admiralty grade per row.
+11. **Top Forward Trigger** — single named event (date, type, outcome implication) — the duty monitor's watch item; secondary trigger acceptable but the brief picks **one** primary.
+12. **Pass-2 self-audit** — re-read end-to-end ≥ 180 s after Pass 1; tighten WEP language (no `may/might/could` hedges); verify named-actor discipline; verify counter-narrative; verify Election 2026 lens; verify SEO budgets; verify no admin-byline leak into the BLUF paragraph.
+
+**Evidence rules** —
+- Every analytical claim row uses the canonical evidence-anchor schema: `| claim | evidence (dok_id / vote / MP intressent_id / primary-source URL) | retrieved_at | confidence |`.
+- P0/P1 claims in the BLUF: ≥ 3 independent sources; single-source claims prohibited in the executive brief (Source Diversity Rule — `[SINGLE-SOURCE — corroboration pending]` label is the only escape hatch and bumps the Admiralty floor to **[A1]**).
+- Admiralty grades ≥ **[B2]** on every external source; on-record Riksdag/Regeringen open data → **[A1/A2]**.
+- WEP + ODNI confidence on every probabilistic judgement; bare adjectives (`significant`, `important`, `concerning`) without WEP banding fail Pass-2.
+- Top-3 composite items in §3 Decisions trace back to `swot-analysis.md` and `significance-scoring.md` row IDs (no novel ranking in the brief).
+- Economic provenance: every macro/fiscal/monetary/external/trade claim cites IMF first (`provider: imf`, dataflow, vintage, retrieved_at) per `ECONOMIC_DATA_CONTRACT.md` v3.1; WB economic codes are banned (use IMF); SCB is Swedish-specific ground truth.
+
+**SEO + UI/UX rules** —
+- H1: 55–70 chars EN; subset of: named actor, active verb, instrument, number, time-relative anchor. **Banned**: `Executive Brief — …`, `AI-generated political intelligence`, literal `YYYY-MM-DD`, `Brief ID:`, `Classification:`, `Prepared by:`, `Analyst:`, `60-second read:`, `Admiralty baseline:`, trailing ` — Riksdagsmonitor`.
+- BLUF first paragraph: 140–200 chars EN, one complete sentence, ends on `.`/`!`/`?`/`…`; never ends mid-word; no admin metadata tokens.
+- 14-language seeds row: never identical between rows except for date/language label; CJK budgets count glyphs (`zh` 30–45 title / 70–120 desc); RTL languages keep proper nouns in source script where conventional.
+- Mermaid blocks: cyberpunk theme prologue + ≥ 1 `style` or `classDef` directive (gate Check 5).
+- Length floor: per [`reference-quality-thresholds.json`](reference-quality-thresholds.json); shorter triggers Pass-2 rewrite, never a `[truncated]` note.
+
+**Anti-patterns** —
+- Leaving `# 📰 Executive Brief Template` (or any other template-boilerplate H1) — guarantees a weak SERP title (`cleanArticleTitle()` strips the prefix and `titleFromBluf()` synthesises a fallback, but the BLUF-synthesised title is shorter and weaker than a hand-crafted one).
+- Admin-byline block (`Brief ID: … | Classification: … | Prepared by: …`) placed **between** H1 and `## 🎯 BLUF` — `readBlufParagraph()` skips admin paragraphs but the editor should keep them under a separate heading anyway.
+- BLUF that hedges (`may`, `might`, `could`, `appears to`, `seems to`) — replace with WEP-banded verbs.
+- 60-Second Read bullets without `dok_id` / named MP / vote count / IMF dataflow — those bullets are SEO+UX dead weight.
+- Identical title and description across all 14 language rows (translation theatre — the `news-translate` audit will fail it).
+- Mermaid block without colour theming — Check 5 of [`05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md) blocks aggregation.
+- Mixing the **Top Forward Trigger** with vague "we will be watching" prose — the trigger must name a date, an event type, and the outcome that changes (e.g. raises a risk score, flips a coalition vote, breaks a coalition narrative).
+- "Intelligence theatre" — dramatic prose without quantitative anchor (banned phrase scan in `validate-article.ts`).
+
+**Pass-2 closure rule** — Pass-2 read-back must improve the BLUF (tighter actor / verb / instrument / number / consequence / confidence) **OR** the Decisions table (tighter deadline / evidence link) **OR** the Mermaid diagram (named risks not generic). Cosmetic edits alone fail the Pass-2 mtime ≥ birth + 180 s heuristic intent (even if the timestamp passes, `methodology-reflection.md` must record the substantive improvement).
+
+**Cross-references** — template: [`analysis/templates/executive-brief.md`](../templates/executive-brief.md); SEO budgets: [`.github/prompts/seo-metadata-contract.md`](../../.github/prompts/seo-metadata-contract.md); gate: [`.github/prompts/05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md) Check 1 + Check 7; aggregator: [`scripts/render-lib/aggregator/seo/title.ts`](../../scripts/render-lib/aggregator/seo/title.ts) + [`scripts/render-lib/aggregator/seo/description.ts`](../../scripts/render-lib/aggregator/seo/description.ts); validator: [`scripts/validate-article.ts`](../../scripts/validate-article.ts) Check 7 (BLUF prose 80–1200 chars, ≥ 1 evidence anchor in BLUF).
+
 ### synthesis-summary ⭐
 
 **Inputs** — all Family A peers (`significance-scoring`, `classification-results`, `swot`, `risk`, `threat`, `stakeholder-perspectives`) + `cross-reference-map`.  

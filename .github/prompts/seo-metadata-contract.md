@@ -182,14 +182,25 @@ banned-phrase list before committing.
 
 ## 6 · Editorial checklist (humans writing `executive-brief.md`)
 
+> **Authoritative tradecraft for the brief** lives in
+> [`analysis/methodologies/per-artifact-methodologies.md § executive-brief`](../../analysis/methodologies/per-artifact-methodologies.md#executive-brief).
+> Read it first — it owns the Decision-Grade BLUF rubric (6 axes:
+> actor / verb / instrument / number / consequence / confidence), the
+> Headline-Candidates worksheet, the 14-language seeds rules, and the
+> Pass-2 closure rule. This § is the SEO-specific summary; the
+> methodology is the source of truth.
+
 Before committing an `executive-brief.md` artifact:
 
 - [ ] The H1 (`# …`) is a publishable **story-oriented title** — not
-      `# Executive Brief — …`. If you leave the boilerplate H1 in,
-      `aggregator.ts` will strip the `Executive Brief — ` prefix and
-      trailing date but cannot invent a good replacement. A brief with
-      just `# Executive Brief — Propositions 2026-04-23` produces a weak
-      title. Always write an editorial H1.
+      `# 📰 Executive Brief Template` (the literal template placeholder)
+      and not `# Executive Brief — …`. If you leave the boilerplate H1
+      in, `aggregator.ts` will strip the `Executive Brief — ` prefix
+      and trailing date but cannot invent a good replacement. A brief
+      with just `# Executive Brief — Propositions 2026-04-23` produces
+      a weak title. Always write an editorial H1, and draft ≥ 3
+      headline candidates first (Headline-Candidates worksheet in the
+      template).
 - [ ] The first paragraph under `## 🎯 BLUF` is the article's lede,
       publishable as-is, 140-200 characters, ending on a full stop.
       `aggregator.ts` uses this verbatim as the description.
@@ -201,5 +212,19 @@ Before committing an `executive-brief.md` artifact:
       literal date (§2.3).
 - [ ] Description contains at least one concrete number / instrument /
       named actor (§3.1).
+- [ ] **Decision-Grade BLUF rubric scored ≥ 3/5 on all 6 axes** (actor,
+      verb, instrument, number, consequence, confidence). Any axis
+      below 3 forces a BLUF rewrite, not a rubric edit. See
+      [`per-artifact-methodologies.md § executive-brief`](../../analysis/methodologies/per-artifact-methodologies.md#executive-brief).
+- [ ] **Headline-Candidates worksheet completed** — ≥ 3 alternative H1s
+      drafted and scored; the winning candidate is the document H1.
+      The worksheet stays in the artifact as evidence the rubric was
+      applied.
+- [ ] **14-language seeds row uses BCP-47 `nb`** for Norwegian (file
+      suffix `no`, `hreflang="nb"`), not legacy `no`.
+- [ ] **No two language rows are identical** except for date/language
+      label. Identical rows trip the translation audit.
+- [ ] **Top Forward Trigger names date + event type + outcome
+      implication** — not vague "we will be watching" prose.
 
 <!-- End of contract -->

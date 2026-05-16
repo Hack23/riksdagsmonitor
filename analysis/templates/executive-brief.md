@@ -2,7 +2,21 @@
   <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
 </p>
 
-<h1 align="center">📰 Executive Brief Template</h1>
+<!--
+H1 INSTRUCTION (highest-impact line in the brief — SEO, news value, RSS, social cards).
+
+REPLACE the H1 immediately below with a publishable, story-oriented article title:
+  • 55–70 chars (EN) — per-language budgets in `.github/prompts/seo-metadata-contract.md` §4
+  • Actor-first (`Sweden`, `Riksdag`, coalition name, minister name, party code, instrument code)
+  • Active news verb (`approves`, `blocks`, `splits`, `escalates`, `unveils`, `rebukes`, `restores`, `cuts`, `freezes`, `postpones`, `probes`, `warns`, `overrides`, `refers`, `ratifies`)
+  • At least one of: named minister, party code, legislative instrument code, concrete number, time-relative anchor (no literal `YYYY-MM-DD`)
+  • Sentence case (not Title Case)
+  • Never `Executive Brief — …` · `AI-generated political intelligence` · trailing ` — Riksdagsmonitor`
+
+If you leave the boilerplate H1 below, `cleanArticleTitle()` will strip the `Executive Brief — ` prefix and trailing date, then fall back to `titleFromBluf()` — that fallback is always weaker than a hand-crafted H1.
+-->
+
+<h1 align="center">📰 Executive Brief Template — REPLACE THIS H1 WITH A PUBLISHABLE STORY-ORIENTED TITLE</h1>
 
 <p align="center">
   <strong>📊 Decision-Grade BLUF for Editors and Duty Officers</strong><br>
@@ -94,36 +108,70 @@ ANTI-TEMPLATE — DO NOT:
 
 ## 🎯 BLUF (Bottom Line Up Front)
 
-> **SEO + article handoff:** the first BLUF paragraph becomes the primary source for `<meta name="description">`. Write one complete 145–200 character sentence first, then add 1–3 supporting sentences if needed. The H1 must be a publishable 55–70 character title with an actor, active news verb, policy object, consequence, and no literal-date stuffing. Follow [`.github/prompts/seo-metadata-contract.md`](../../.github/prompts/seo-metadata-contract.md).
+> **⚠️ Editor instruction (highest impact on SEO, news value, and reader trust).**
+> 1. **REPLACE the H1 of this template** with a publishable, story-oriented article title BEFORE saving — the H1 IS the SERP `<title>`, `og:title`, JSON-LD `headline`, and sitemap card. A boilerplate H1 like `# 📰 Executive Brief Template` or `# Executive Brief — Propositions 2026-04-23` will trip `cleanArticleTitle()` (which strips the `Executive Brief — ` prefix and trailing date) and force a weaker fallback synthesised from the BLUF. Hand-crafted always beats fallback.
+> 2. **The first BLUF paragraph IS the `<meta name="description">`** verbatim (with markdown stripped). Write it as a publishable lede, not as an analyst summary. The renderer truncates at sentence boundary inside the 140–200 char window (per-language budgets in [`.github/prompts/seo-metadata-contract.md`](../../.github/prompts/seo-metadata-contract.md) §4).
+> 3. **No admin metadata** (`Brief ID:`, `Classification:`, `Prepared by:`, `Analyst:`, `60-second read:`, `Admiralty baseline:`, `Distribution:`, `Methodology:`) between the H1 and the BLUF heading — `readBlufParagraph()` skips admin paragraphs but a clean editor keeps the brief well-formed regardless.
 
-> **[2–4 sentences.** Lead with the #1 DIW-ranked finding. Name the principal human actor with party. State the concrete action taken or proposed. Quantify impact. End with confidence label.**]**
+### Decision-Grade BLUF Rubric (6-axis · all axes ≥ 3/5 to pass Pass-2)
+
+| Axis | Question | Minimum pass | Excellent |
+|------|----------|--------------|-----------|
+| **Actor** | Is the principal political actor named? | Party + role | Named person + party + role + intressent_id |
+| **Verb** | Is there an active news verb? | One verb from [`seo-metadata-contract.md` §2.1](../../.github/prompts/seo-metadata-contract.md) | Verb plus precise modifier (`narrowly approves`, `unilaterally blocks`) |
+| **Instrument** | Is a concrete legislative instrument cited? | `dok_id` / `bet` / `prop.` / vote ID | Instrument + chamber stage + commencement date |
+| **Number** | Is at least one concrete number present? | SEK/€ amount, vote count, seats, or % | Multiple numbers + comparison anchor (vs. prior year / vs. baseline) |
+| **Consequence** | Is the so-what spelled out? | Single-sentence consequence for citizens / parties / coalition | Quantified consequence + Election-2026 lens |
+| **Confidence** | Is the confidence labelled? | WEP band | WEP + Admiralty + ODNI + single-source flag if applicable |
+
+> **Pass-2 check:** score each axis honestly; any axis below 3/5 forces a rewrite of the BLUF sentence (not just the rubric). Record the score in [`methodology-reflection.md`](methodology-reflection.md) §"Pass-2 audit log".
+
+### BLUF paragraph (this is your meta description)
+
+> **[2–4 sentences.** Sentence 1 = the publishable lede: 140–200 chars EN, one complete sentence, ends on `.`/`!`/`?`/`…`, leads with the #1 DIW-ranked finding, names principal actor, states concrete action, quantifies impact, ends with confidence label. Sentences 2–4 = optional supporting detail; the renderer truncates at sentence boundary for the `<meta description>`.**]**
 
 Example: *Sweden's Riksdag Finance Committee approved FiU48 today, cutting fuel taxes SEK 0.50–0.80/litre and providing electricity/gas price support to ~3 M households. Paired with the new wind-power revenue-sharing law, the move anchors the government's cost-of-living + green narrative ahead of September 2026. [🟩 HIGH — source: `H901FiU48`, vote record 2026-04-21].*
 
 ---
 
+## 🪧 Headline Candidates (worksheet — choose the best as H1)
+
+> **Purpose:** the H1 is the single highest-impact line in the brief (SERP, sitemap, RSS, social cards). Always draft ≥ 3 alternatives and score them on the rubric below before locking the H1. Keep the worksheet in the artifact — it is evidence to the gate that the rubric was applied.
+
+| # | Headline candidate (55–70 chars EN) | Actor | Verb | Instrument | Number | Consequence | Score /30 |
+|:-:|-------------------------------------|:-----:|:----:|:----------:|:------:|:-----------:|:---------:|
+| A | `[REQUIRED — actor + active verb + instrument + number]` | /5 | /5 | /5 | /5 | /10 | /30 |
+| B | `[REQUIRED — alternative angle, same evidence]` | /5 | /5 | /5 | /5 | /10 | /30 |
+| C | `[REQUIRED — third angle]` | /5 | /5 | /5 | /5 | /10 | /30 |
+
+**Selected H1** (copy into the document H1 at the top of this file): `[REQUIRED]`
+
+> **Banned phrases (auto-fail):** `Executive Brief — …`, `AI-generated political intelligence`, any literal `YYYY-MM-DD` or `YYYY/MM/DD`, `Brief ID:`, `Classification:`, `Prepared by:`, `Analyst:`, `60-second read:`, `Admiralty baseline:`, trailing ` — Riksdagsmonitor`.
+
+---
+
 ## 🌐 14-Language SEO Metadata Seeds
 
-> **Purpose:** seed good titles, descriptions and keywords for every generated HTML language page. Do not leave this to a date suffix. Each row must express the same verified story in the target language with a contextual angle: actor, action, object, consequence and provenance.
+> **Purpose:** seed good titles, descriptions and keywords for every generated HTML language page. Do not leave this to a date suffix. Each row must express the same verified story in the target language with a contextual angle: actor, action, object, consequence and provenance. Per-language character budgets are in [`.github/prompts/seo-metadata-contract.md`](../../.github/prompts/seo-metadata-contract.md) §4 — CJK count glyphs not bytes; RTL languages (`ar`/`he`) keep proper nouns in source script where conventional.
 
-| lang | localized title angle (50–70 chars) | localized description angle (145–200 chars) | keyword seeds (5–8) |
-|------|-------------------------------------|---------------------------------------------|---------------------|
-| en | `[REQUIRED: actor + active verb + policy object + consequence]` | `[REQUIRED: SERP-ready summary with named actor/action, so-what, and source provenance]` | `[topic, actor, policy, Riksdag, OSINT]` |
-| sv | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
-| da | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
-| no | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
-| fi | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
-| de | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
-| fr | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
-| es | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
-| nl | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
-| ar | `[REQUIRED — RTL text]` | `[REQUIRED — RTL text]` | `[REQUIRED]` |
-| he | `[REQUIRED — RTL text]` | `[REQUIRED — RTL text]` | `[REQUIRED]` |
-| ja | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
-| ko | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
-| zh | `[REQUIRED]` | `[REQUIRED]` | `[REQUIRED]` |
+| lang | localized title angle (per-budget) | localized description angle (per-budget) | keyword seeds (5–8) |
+|------|------------------------------------|------------------------------------------|---------------------|
+| `en` | `[REQUIRED — 55–70 chars · actor + active verb + policy object + consequence]` | `[REQUIRED — 140–200 chars · SERP-ready summary with named actor/action, so-what, and source provenance]` | `[topic, actor, policy, Riksdag, OSINT]` |
+| `sv` | `[REQUIRED — 55–70 chars · use native instrument names "proposition", "utskott"]` | `[REQUIRED — 140–200 chars]` | `[REQUIRED]` |
+| `da` | `[REQUIRED — 55–70 chars · "Riksdagen" stays Swedish]` | `[REQUIRED — 140–200 chars]` | `[REQUIRED]` |
+| `nb` | `[REQUIRED — 55–70 chars · BCP-47 nb; file suffix `no`, hreflang `nb`]` | `[REQUIRED — 140–200 chars]` | `[REQUIRED]` |
+| `fi` | `[REQUIRED — 55–70 chars · tolerate +10 for agglutination]` | `[REQUIRED — 140–200 chars]` | `[REQUIRED]` |
+| `de` | `[REQUIRED — 55–70 chars · tolerate +10 for compounds]` | `[REQUIRED — 140–200 chars]` | `[REQUIRED]` |
+| `fr` | `[REQUIRED — 55–70 chars]` | `[REQUIRED — 140–200 chars]` | `[REQUIRED]` |
+| `es` | `[REQUIRED — 55–70 chars]` | `[REQUIRED — 140–200 chars]` | `[REQUIRED]` |
+| `nl` | `[REQUIRED — 55–70 chars]` | `[REQUIRED — 140–200 chars]` | `[REQUIRED]` |
+| `ar` | `[REQUIRED — 45–60 chars · RTL · Riksdagen → الريكسداغ]` | `[REQUIRED — 120–170 chars · RTL]` | `[REQUIRED]` |
+| `he` | `[REQUIRED — 45–60 chars · RTL · Riksdagen → ריקסדאג]` | `[REQUIRED — 120–170 chars · RTL]` | `[REQUIRED]` |
+| `ja` | `[REQUIRED — 30–45 glyphs]` | `[REQUIRED — 70–120 glyphs]` | `[REQUIRED]` |
+| `ko` | `[REQUIRED — 30–45 glyphs]` | `[REQUIRED — 70–120 glyphs]` | `[REQUIRED]` |
+| `zh` | `[REQUIRED — 30–45 glyphs · Simplified · Riksdag → 瑞典议会]` | `[REQUIRED — 70–120 glyphs]` | `[REQUIRED]` |
 
-> **Pass-2 check:** no two rows may be identical except for date or language label. If they are, rewrite the title/description around the concrete story topic and consequence.
+> **Pass-2 check:** no two rows may be identical except for date or language label. If they are, rewrite the title/description around the concrete story topic and consequence. Translation cribs: [`scripts/translation-dictionary-party-names.ts`](../../scripts/translation-dictionary-party-names.ts), [`scripts/translation-dictionary-committee-names.ts`](../../scripts/translation-dictionary-committee-names.ts), [`scripts/translation-dictionary-political-terms.ts`](../../scripts/translation-dictionary-political-terms.ts).
 
 ---
 
@@ -246,3 +294,10 @@ Example: *Chamber vote on FiU48 expected 2026-04-22 to 2026-04-24. A coalition-s
 - [ ] **Cross-references resolve** — every `[link](file.md)` in this artifact points to a file that exists in the run folder (`analysis/daily/$ARTICLE_DATE/$SUBFOLDER/`) or to a methodology / template under `analysis/`.
 - [ ] **Mermaid renders** — every fenced ` ```mermaid ` block parses (no missing class definitions, no orphan nodes, no >40-node graphs that overflow viewport on mobile).
 - [ ] **Line-floor check** — artifact length ≥ the per-artifact floor in [`reference-quality-thresholds.json`](../methodologies/reference-quality-thresholds.json); shorter artifacts trigger Pass-2 rewrite, never a `[truncated]` note.
+- [ ] **H1 is publishable** — the H1 has been replaced with a story-oriented title that satisfies [`seo-metadata-contract.md`](../../.github/prompts/seo-metadata-contract.md) §2 (55–70 chars EN, actor-first, active verb, named instrument or number, no literal date, no `Executive Brief — …`, no trailing ` — Riksdagsmonitor`). The boilerplate "REPLACE THIS H1" placeholder is gone.
+- [ ] **Decision-Grade BLUF rubric scored** — every axis (actor, verb, instrument, number, consequence, confidence) ≥ 3/5; the scores are recorded inline; any axis below 3/5 forced a BLUF rewrite (not just a rubric edit).
+- [ ] **Headline-candidates worksheet present** — ≥ 3 alternative H1s drafted and scored; the winning candidate is the document H1.
+- [ ] **BLUF paragraph SEO-fit** — first BLUF paragraph is one complete sentence, 140–200 chars EN (per-language budgets in [`seo-metadata-contract.md`](../../.github/prompts/seo-metadata-contract.md) §4), ends on `.`/`!`/`?`/`…`, never mid-word; no admin tokens (`Brief ID:`, `Classification:`, `Prepared by:`, `Analyst:`, `60-second read:`, `Admiralty baseline:`) leak into it.
+- [ ] **14-language SEO seeds row complete** — every language row is filled with a localised title + description + keyword seeds; no two rows identical except date/language label; CJK use glyphs (`zh` 30–45 / 70–120); RTL flagged for `ar`/`he`; BCP-47 `nb` row present (not legacy `no`).
+- [ ] **Top Forward Trigger names date + event type + outcome implication** — not vague "we will be watching" prose; the trigger names the specific watch item the duty monitor takes off the page.
+- [ ] **Banned-phrase scan clean** — no `Executive Brief — …`, `AI-generated political intelligence`, literal `YYYY-MM-DD` in H1; no `intelligence theatre`, `sources say`, `reportedly`, `it is widely believed`, `experts agree` anywhere in the brief.
