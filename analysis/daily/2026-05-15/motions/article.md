@@ -6,7 +6,7 @@ date: 2026-05-15
 subfolder: motions
 slug: 2026-05-15-motions
 source_folder: analysis/daily/2026-05-15/motions
-generated_at: 2026-05-15T14:35:09.823Z
+generated_at: 2026-05-16T12:56:28.940Z
 language: en
 layout: article
 ---
@@ -21,9 +21,9 @@ On 13 May 2026 — four months before Sweden's general election — all four opp
 
 1. **Editorial prioritisation**: Editors should lead with the migration package as the dominant story — 13 of 20 motions cluster there, with four parties, five propositions, and the 16-month election horizon creating exceptional significance (DIW avg 6.0×1.5 = 9.0).
 
-2. **Opposition coalition tracking**: The simultaneous filing by S, C, V, and MP creates a de facto four-party opposition majority (177 seats vs. governing coalition ~176) on migration; analysts should track whether this translates to actual votes on SfU betänkanden in autumn 2026.
+2. **Opposition coalition tracking**: The simultaneous filing by S, C, V, and MP creates a de facto four-party opposition majority (177 seats vs. governing coalition ~176) on migration; analysts should track whether this translates to actual votes on SfU committee reports (*betänkanden*) in autumn 2026.
 
-3. **Policy forecasting**: The migration package faces high legislative friction. Lagrådet review pending on prop. 262 and 265 (fundamental rights dimensions). Any adverse opinion would be a significant forward indicator for the election campaign.
+3. **Policy forecasting**: The migration package faces high legislative friction. Lagrådet (Council on Legislation) review pending on prop. 262 and 265 (fundamental-rights dimensions). Any adverse opinion would be a significant forward indicator for the election campaign.
 
 ### Key Findings
 
@@ -40,6 +40,17 @@ On 13 May 2026 — four months before Sweden's general election — all four opp
 The migration motions respond directly to four propositions forming Sweden's most restrictive migration reform since the 2015-2016 emergency measures. The joint rejection by S+C+V+MP creates a potential 177-seat majority against the package — numerically sufficient to block passage if maintained. However, the legislative calendar compresses the timeline: SfU betänkanden are expected for autumn 2026 votes, immediately before the election.
 
 **IMF context (WEO Apr-2026)**: Sweden's GDP growth trajectory (~1.5% in 2026) and unemployment (~8.5%) provide the macroeconomic backdrop against which both government (labour market framing) and opposition (social cohesion, human rights) frame migration policy.
+
+---
+
+### ✅ Retrofit Note (2026-05-16)
+
+**Original authoring**: 2026-05-15 under executive-brief template v < 4.4.
+**Retrofit scope** (applied 2026-05-16): Two Swedish technical terms glossed with English equivalents (*betänkanden* → committee reports; Lagrådet → Council on Legislation). No changes to evidence, dok_ids, or analytical conclusions.
+
+**Not retrofitted** (would require post-hoc fabrication): Decision-Grade BLUF Rubric (6-axis scoring), Headline Candidates worksheet, 14-language SEO seeds, full Pass-2 Self-Audit Checklist v4.4. These are required for 2026-05-16+ briefs per gate Check 7.
+
+**Substantive analysis, evidence, and conclusions unchanged.**
 
 ## Reader Intelligence Guide
 
@@ -69,6 +80,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1583,13 +1607,451 @@ This analysis was produced in a single session from raw MCP data and pre-warmed 
 All documents sourced from official riksdag-regering-mcp API.
 Data sourced from 2026-05-13 via lookback fallback — check freshness indicators.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_ar.md -->
+
+‏---
+artifact: executive-brief
+analysis_date: "2026-05-15"
+subfolder: "motions"
+
+---
+
+# المعارضة موحّدة ضد حزمة قيود الهجرة السويدية قبل الانتخابات
+
+**المؤلف**: جيمس بيتر سورلينغ | **التاريخ**: 2026-05-15 | **التصنيف**: عام | **مستوى الثقة**: عالٍ [B2]
+
+### 🎯 الملخص التنفيذي
+
+في 13 مايو 2026 — قبل أربعة أشهر من الانتخابات السويدية — قدّمت أحزاب المعارضة الأربعة في وقت واحد 13 اقتراحًا يرفض حزمة قوانين تقييد الهجرة المؤلفة من أربعة قوانين التي تقترحها تحالف تيدو، والتي ستلغي تصاريح الإقامة الدائمة، وتُشدّد إنفاذ الترحيل، وتُصعّب معايير الطرد بسبب "حسن السيرة"، وتوسّع صلاحيات الاحتجاز. تُشير الجبهة المعارضة الموحّدة (S, C, V, MP) إلى خطّ صدع سياسي جوهري سيُشكّل حملة الانتخابات 2026، مع السياسة الهجرة ساحةً مركزية.
+
+### 🧭 ثلاثة قرارات يدعمها هذا التقرير
+
+1. **الأولوية التحريرية**: ينبغي أن تتصدر حزمة الهجرة القصة الرئيسية — تتمحور 13 من أصل 20 اقتراحًا حولها، بمشاركة أربعة أحزاب وخمسة مقترحات.
+
+2. **رصد تحالف المعارضة**: الإيداع المتزامن من S وC وV وMP يخلق أغلبية فعلية من أربعة أحزاب (177 مقعدًا مقابل ~176 للائتلاف الحاكم) في مسألة الهجرة.
+
+3. **التوقع السياسي**: تواجه حزمة الهجرة احتكاكًا تشريعيًا شديدًا. يراجع مجلس التشريع (Lagrådet) المقترحَين 262 و265.
+
+### النتائج الرئيسية
+
+| # | النتيجة | الدليل | مستوى الثقة |
+|---|---------|--------|-------------|
+| 1 | كتلة معارضة عابرة للأحزاب ضد القوانين الهجرية الأربعة | HD024152-154, 159-161, 167-169, 173, 182 | عالٍ [B2] |
+| 2 | S يقدّم 6 اقتراحات — أعلى حجم لحزب | HD024151-155, 162 | عالٍ جدًا [A1] |
+| 3 | V يقدّم أكثر اقتراحات الهجرة (4) ضد توسيع الاحتجاز | HD024167-169, 182 | عالٍ جدًا [A1] |
+| 4 | قرب موعد الانتخابات (مايو 2026، 4 أشهر) | موعد الانتخابات 2026-09-13 | عالٍ [B2] |
+| 5 | ستة لجان تُشير إلى هجوم سياسي على مستوى الائتلاف | 20 اقتراح، 6 لجان | عالٍ [B2] |
+
+**سياق صندوق النقد الدولي (WEO أبريل 2026)**: نمو الناتج المحلي الإجمالي السويدي (~1.5% في 2026) والبطالة (~8.5%).
+
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling | **Dato**: 2026-05-15 | **Klassifikation**: OFFENTLIG | **Konfidensgrad**: HØJ [B2]
+
+### 🎯 BLUF
+
+Den 13. maj 2026 — fire måneder inden Sveriges valg — indgav alle fire oppositionspartier 13 samtidige motioner, der afviser Tidö-koalitionens fire-lovs migrationsstramningspakke, som ville afskaffe permanente opholdstilladelser, stramme hjemsendelsen, styrke deportationskriterierne og udvide frihedsberøvelsesmulighederne. Den samlede oppositionsfront (S, C, V, MP) signalerer en grundlæggende politisk skillelinje, der vil definere valgkampen 2026 med migrationspolitik som centralt kampagneemne.
+
+### 🧭 3 beslutninger dette underlag understøtter
+
+1. **Redaktionel prioritering**: Migrationspakket bør være den dominerende nyhed — 13 af 20 motioner omhandler det med fire partier, fem lovforslag og 16-måneder til valget.
+
+2. **Oppositionskoalitionssporing**: Den samtidige indgivelse fra S, C, V og MP skaber et de facto fireparti-flertal (177 mandater mod regeringskoalitionens ~176) i migrationsspørgsmål; analytikere bør følge, om dette konverteres til faktiske afstemninger.
+
+3. **Politisk prognose**: Migrationspakket møder stor lovgivningsmæssig modstand. Lagrådet (Lovråd) gennemgår prop. 262 og 265. Eventuel negativ udtalelse ville være en vigtig fremadrettet indikator.
+
+### Nøgleresultater
+
+| # | Resultat | Bevis | Konfidensgrad |
+|---|---------|-------|---------------|
+| 1 | Tværpolitisk oppositionsblok mod alle fire migrationsforslag | HD024152-154, 159-161, 167-169, 173, 182 (13 dok_ids) | HØJ [B2] |
+| 2 | S indgiver 6 motioner — størst volumen per parti | HD024151-155, 162 | MEGET HØJ [A1] |
+| 3 | V indgiver flest migrations-motioner (4) mod udvidet frihedsberøvelse | HD024167-169, 182 | MEGET HØJ [A1] |
+| 4 | Valgdatoens nærhed (maj 2026, 4 måneder til valget) mangedobler de politiske indsatser | Valgdato 2026-09-13 | HØJ [B2] |
+| 5 | Seks udvalgsbredde signalerer koalitionsdækkende politisk offensiv | 20 motioner, 6 udvalg | HØJ [B2] |
+
+### Politisk betydning
+
+Migrationsmotionerne svarer direkte på fire lovforslag, der udgør Sveriges mest restriktive migrationsreform siden 2015–2016. Den fælles afvisning fra S+C+V+MP skaber et potentielt 177-pladsflertal mod pakket.
+
+**IMF-kontekst (WEO apr-2026)**: Sveriges BNP-vækst (~1,5% i 2026) og arbejdsløshed (~8,5%) udgør den makroøkonomiske baggrund.
+
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling | **Datum**: 2026-05-15 | **Klassifizierung**: ÖFFENTLICH | **Vertraulichkeitsgrad**: HOCH [B2]
+
+### 🎯 BLUF
+
+Am 13. Mai 2026 — vier Monate vor der schwedischen Wahl — reichten alle vier Oppositionsparteien 13 gleichzeitige Anträge ein, die das Vier-Gesetze-Migrationsrestriktionspaket der Tidö-Koalition ablehnen, das unbefristete Aufenthaltsgenehmigungen abschaffen, die Rückführungsdurchsetzung verschärfen, die Ausweisungskriterien für "guten Leumund" stärken und die Abschiebehaftmöglichkeiten erweitern würde. Die gesamte Oppositionsfront (S, C, V, MP) signalisiert eine grundlegende politische Trennlinie, die den Wahlkampf 2026 prägen wird, mit der Migrationspolitik als zentralem Schlachtfeld.
+
+### 🧭 3 Entscheidungen, die dieser Bericht unterstützt
+
+1. **Redaktionelle Priorisierung**: Das Migrationspaket sollte als dominante Geschichte führen — 13 von 20 Anträgen konzentrieren sich darauf, mit vier Parteien und fünf Gesetzgebungsvorschlägen.
+
+2. **Verfolgung der Oppositionskoalition**: Die gleichzeitige Einreichung durch S, C, V und MP schafft eine de facto Vier-Parteien-Mehrheit (177 Sitze vs. Regierungskoalition ~176) bei der Migration.
+
+3. **Politikprognose**: Das Migrationspaket stößt auf hohen gesetzgeberischen Widerstand. Lagrådet (Gesetzgebungsrat) prüft Prop. 262 und 265.
+
+### Wichtigste Erkenntnisse
+
+| # | Erkenntnis | Beleg | Vertraulichkeitsgrad |
+|---|---------|-------|----------------------|
+| 1 | Parteiübergreifender Oppositionsblock gegen alle vier Migrationsgesetze | HD024152-154, 159-161, 167-169, 173, 182 | HOCH [B2] |
+| 2 | S reicht 6 Anträge ein — größtes Volumen pro Partei | HD024151-155, 162 | SEHR HOCH [A1] |
+| 3 | V reicht die meisten Migrationsanträge ein (4) gegen erweiterte Abschiebehaft | HD024167-169, 182 | SEHR HOCH [A1] |
+| 4 | Wahlnähe (Mai 2026, 4 Monate bis zur Wahl) | Wahltag 2026-09-13 | HOCH [B2] |
+| 5 | Sechs Ausschussbreite signalisiert koalitionsweite politische Offensive | 20 Anträge, 6 Ausschüsse | HOCH [B2] |
+
+**IMF-Kontext (WEO Apr-2026)**: Schwedens BIP-Wachstum (~1,5% im Jahr 2026) und Arbeitslosigkeit (~8,5%).
+
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling | **Fecha**: 2026-05-15 | **Clasificación**: PÚBLICO | **Nivel de confianza**: ALTO [B2]
+
+### 🎯 BLUF
+
+El 13 de mayo de 2026 — cuatro meses antes de las elecciones suecas — los cuatro partidos de oposición presentaron simultáneamente 13 mociones rechazando el paquete de cuatro leyes de restricciones migratorias de la coalición Tidö, que aboliría los permisos de residencia permanente, endurecería la ejecución de retornos, reforzaría los criterios de deportación por "buena conducta" y ampliaría las posibilidades de detención. El frente de oposición conjunto (S, C, V, MP) señala una línea de fractura política fundamental que definirá la campaña electoral de 2026, con la política migratoria como campo de batalla central.
+
+### 🧭 3 decisiones que apoya este informe
+
+1. **Priorización editorial**: El paquete migratorio debe liderar como historia dominante — 13 de 20 mociones se centran en él, con cuatro partidos y cinco proposiciones.
+
+2. **Seguimiento de la coalición opositora**: La presentación simultánea por S, C, V y MP crea una mayoría de facto de cuatro partidos (177 escaños vs. coalición gobernante ~176) en migración.
+
+3. **Pronóstico político**: El paquete migratorio enfrenta alta fricción legislativa. El Lagrådet (Consejo de Legislación) revisa los prop. 262 y 265.
+
+### Hallazgos clave
+
+| # | Hallazgo | Evidencia | Nivel de confianza |
+|---|---------|----------|-------------------|
+| 1 | Bloque opositor transpartidario contra las cuatro leyes migratorias | HD024152-154, 159-161, 167-169, 173, 182 | ALTO [B2] |
+| 2 | S presenta 6 mociones — mayor volumen por partido | HD024151-155, 162 | MUY ALTO [A1] |
+| 3 | V presenta más mociones migratorias (4) contra la expansión de la detención | HD024167-169, 182 | MUY ALTO [A1] |
+| 4 | Proximidad electoral (mayo 2026, 4 meses hasta las elecciones) | Fecha electoral 2026-09-13 | ALTO [B2] |
+| 5 | Seis comités señalan una ofensiva política a nivel de coalición | 20 mociones, 6 comités | ALTO [B2] |
+
+**Contexto FMI (WEO abr-2026)**: Crecimiento del PIB sueco (~1,5% en 2026) y desempleo (~8,5%).
+
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling | **Päivämäärä**: 2026-05-15 | **Luokittelu**: JULKINEN | **Luotettavuus**: KORKEA [B2]
+
+### 🎯 BLUF
+
+13. toukokuuta 2026 — neljä kuukautta ennen Ruotsin vaaleja — kaikki neljä oppositiopuoluetta jättivät 13 samanaikaista aloitetta, joissa hylätään Tidö-koalition neljän lain maahanmuuttorajoituspaketti, joka poistaisi pysyvät oleskeluluvat, tiukentaisi palauttamista, vahvistaisi karkottamisperusteita ja laajentaisi säilöönottomahdollisuuksia. Yhteinen oppositiorintama (S, C, V, MP) signaloi perustavaa poliittista jakolinjaa, joka tulee määrittämään vuoden 2026 vaalikampanjan, jossa maahanmuuttopolitiikka on keskeinen taistelukenttä.
+
+### 🧭 3 päätöstä, joita tämä tiivistelmä tukee
+
+1. **Toimituksellinen priorisointi**: Maahanmuuttopaketti on hallitseva uutinen — 13 kahdestakymmenestä aloitteesta liittyy siihen, neljä puoluetta ja viisi hallituksen esitystä.
+
+2. **Oppositiokoalition seuranta**: S:n, C:n, V:n ja MP:n samanaikainen jättäminen luo de facto neljän puolueen enemmistön (177 paikkaa vs. hallituskoalition ~176) maahanmuuttoasioissa.
+
+3. **Politiikkaennuste**: Maahanmuuttopaketti kohtaa korkeaa lainsäädäntökitkaa. Lagrådet (Lainneuvosto) tarkistaa esitykset 262 ja 265.
+
+### Keskeiset havainnot
+
+| # | Havainto | Todiste | Luotettavuus |
+|---|---------|---------|--------------|
+| 1 | Puolueiden rajat ylittävä oppositioblokki kaikkia neljää maahanmuuttolakia vastaan | HD024152-154, 159-161, 167-169, 173, 182 | KORKEA [B2] |
+| 2 | S jättää 6 aloitetta — suurin määrä puoluekohtaisesti | HD024151-155, 162 | ERITTÄIN KORKEA [A1] |
+| 3 | V jättää eniten maahanmuuttoaloitteita (4) säilöönoton laajentamista vastaan | HD024167-169, 182 | ERITTÄIN KORKEA [A1] |
+| 4 | Vaalien läheisyys (toukokuu 2026, 4 kuukautta vaaleihin) | Vaalipäivä 2026-09-13 | KORKEA [B2] |
+| 5 | Kuuden valiokunnan laajuus signaloi koalitiota kattavaa poliittista offensiivia | 20 aloitetta, 6 valiokuntaa | KORKEA [B2] |
+
+**IMF-konteksti (WEO huhti-2026)**: Ruotsin BKT-kasvu (~1,5% vuonna 2026) ja työttömyys (~8,5%).
+
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling | **Date** : 2026-05-15 | **Classification** : PUBLIC | **Niveau de confiance** : ÉLEVÉ [B2]
+
+### 🎯 BLUF
+
+Le 13 mai 2026 — quatre mois avant les élections suédoises — les quatre partis d'opposition ont déposé simultanément 13 motions rejetant le paquet de restrictions migratoires en quatre lois de la coalition Tidö, qui abolirait les permis de séjour permanents, renforcerait l'exécution des retours, durcirait les critères d'expulsion pour "bonne conduite" et élargirait les possibilités de rétention. Le front d'opposition commun (S, C, V, MP) signale une ligne de fracture politique fondamentale qui définira la campagne électorale 2026, avec la politique migratoire comme champ de bataille central.
+
+### 🧭 3 décisions que ce rapport soutient
+
+1. **Priorisation éditoriale** : Le paquet migratoire devrait mener comme histoire dominante — 13 des 20 motions s'y concentrent, avec quatre partis et cinq propositions.
+
+2. **Suivi de la coalition d'opposition** : Le dépôt simultané par S, C, V et MP crée une majorité de facto à quatre partis (177 sièges vs. coalition gouvernementale ~176) sur la migration.
+
+3. **Prévision politique** : Le paquet migratoire fait face à une forte friction législative. Le Lagrådet (Conseil de législation) examine les prop. 262 et 265.
+
+### Constatations clés
+
+| # | Constatation | Preuve | Niveau de confiance |
+|---|---------|-------|---------------------|
+| 1 | Bloc d'opposition transpartisan contre les quatre lois migratoires | HD024152-154, 159-161, 167-169, 173, 182 | ÉLEVÉ [B2] |
+| 2 | S dépose 6 motions — volume le plus élevé par parti | HD024151-155, 162 | TRÈS ÉLEVÉ [A1] |
+| 3 | V dépose le plus de motions migratoires (4) contre l'extension de la rétention | HD024167-169, 182 | TRÈS ÉLEVÉ [A1] |
+| 4 | Proximité des élections (mai 2026, 4 mois avant le vote) | Date d'élection 2026-09-13 | ÉLEVÉ [B2] |
+| 5 | Six commissions signalent une offensive politique à l'échelle de la coalition | 20 motions, 6 commissions | ÉLEVÉ [B2] |
+
+**Contexte FMI (WEO avr-2026)** : Croissance du PIB suédois (~1,5 % en 2026) et chômage (~8,5 %).
+
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_he.md -->
+
+‏---
+artifact: executive-brief
+analysis_date: "2026-05-15"
+subfolder: "motions"
+
+---
+
+# האופוזיציה מאוחדת נגד חבילת הגבלות ההגירה השוודית לקראת הבחירות
+
+**מחבר**: ג'יימס פת'ר סורלינג | **תאריך**: 2026-05-15 | **סיווג**: ציבורי | **רמת אמון**: גבוהה [B2]
+
+### 🎯 סיכום מנהלים
+
+ב-13 במאי 2026 — ארבעה חודשים לפני הבחירות בשוודיה — הגישו ארבעת מפלגות האופוזיציה בו-זמנית 13 הצעות הדוחות את חבילת ארבעת החוקים להגבלת ההגירה של קואליציית טידו, שתבטל היתרי שהייה קבועים, תחמיר את אכיפת הגירוש, תוסיף קשיים לקריטריוני הגירוש בגין "התנהגות טובה" ותרחיב את אפשרויות המעצר. החזית האופוזיציונית המשותפת (S, C, V, MP) מאותתת על קו שבר פוליטי יסודי שיגדיר את קמפיין הבחירות 2026, כשמדיניות ההגירה היא שדה הקרב המרכזי.
+
+### 🧭 שלוש החלטות שדוח זה תומך בהן
+
+1. **תעדוף עריכה**: חבילת ההגירה צריכה להוביל כסיפור הדומיננטי — 13 מתוך 20 הצעות מתמקדות בה, עם ארבע מפלגות וחמישה הצעות חוק.
+
+2. **מעקב אחר קואליציית אופוזיציה**: ההגשה הבו-זמנית של S, C, V ו-MP יוצרת רוב בפועל של ארבע מפלגות (177 מושבים לעומת ~176 של הקואליציה השלטת) בנושא ההגירה.
+
+3. **תחזית מדינית**: חבילת ההגירה עומדת בפני חיכוך חקיקתי גבוה. מועצת החקיקה (Lagrådet) בוחנת הצעות 262 ו-265.
+
+### ממצאים מרכזיים
+
+| # | ממצא | ראיה | רמת אמון |
+|---|------|------|----------|
+| 1 | בלוק אופוזיציה רב-מפלגתי נגד ארבעת חוקי ההגירה | HD024152-154, 159-161, 167-169, 173, 182 | גבוהה [B2] |
+| 2 | S מגיש 6 הצעות — הנפח הגבוה ביותר לפי מפלגה | HD024151-155, 162 | גבוהה מאוד [A1] |
+| 3 | V מגיש הכי הרבה הצעות הגירה (4) נגד הרחבת המעצר | HD024167-169, 182 | גבוהה מאוד [A1] |
+| 4 | קרבת הבחירות (מאי 2026, 4 חודשים עד הבחירות) | מועד הבחירות 2026-09-13 | גבוהה [B2] |
+| 5 | שש ועדות מאותתות על התקפה פוליטית ברמת הקואליציה | 20 הצעות, 6 ועדות | גבוהה [B2] |
+
+**הקשר קרן המטבע (WEO אפר-2026)**: צמיחת התמ"ג השוודי (~1.5% ב-2026) ואבטלה (~8.5%).
+
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_ja.md -->
+
+**著者**: ジェームス・ペテル・ソーリング | **日付**: 2026-05-15 | **分類**: 公開 | **信頼度**: 高 [B2]
+
+### 🎯 要約
+
+2026年5月13日—スウェーデン選挙4か月前—野党4党が一斉に、ティドー連立の4法案からなる移民制限パッケージを否決する13本の動議を提出した。同パッケージは永住許可証の廃止、強制送還執行の強化、「良好な行状」に基づく退去基準の厳格化、拘禁の拡充を含む。共同野党戦線（S、C、V、MP）は、移民政策を中心的争点として2026年選挙戦を定義する根本的な政治的断層線を示している。
+
+### 🧭 本報告が支援する3つの意思決定
+
+1. **編集上の優先順位付け**: 移民パッケージを主要ストーリーとして扱う — 20本の動議のうち13本が集中し、4党と5法案が関与している。
+
+2. **野党連合の追跡**: S、C、V、MPによる同時提出は、移民問題において事実上の4党過半数（177議席対与党連立の約176議席）を形成している。
+
+3. **政治予測**: 移民パッケージは高い立法摩擦に直面している。立法審議会（Lagrådet）が提案262および265を審査中。
+
+### 主要な発見事項
+
+| # | 発見事項 | 証拠 | 信頼度 |
+|---|---------|------|-------|
+| 1 | 4つの移民法に反対する超党派野党ブロック | HD024152-154, 159-161, 167-169, 173, 182 | 高 [B2] |
+| 2 | Sが6本の動議を提出 — 政党別で最多 | HD024151-155, 162 | 非常に高 [A1] |
+| 3 | Vが拘禁拡充に反対する移民動議を最多（4本）提出 | HD024167-169, 182 | 非常に高 [A1] |
+| 4 | 選挙の近さ（2026年5月、選挙まで4か月） | 選挙日 2026-09-13 | 高 [B2] |
+| 5 | 6委員会にまたがる動議は連立全体の政治攻勢を示す | 20本の動議、6委員会 | 高 [B2] |
+
+**IMF文脈（WEO 2026年4月）**: スウェーデンのGDP成長率（~2026年1.5%）と失業率（~8.5%）。
+
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_ko.md -->
+
+**저자**: 제임스 페터 소를링 | **날짜**: 2026-05-15 | **분류**: 공개 | **신뢰도**: 높음 [B2]
+
+### �� 요약
+
+2026년 5월 13일 — 스웨덴 선거 4개월 전 — 야당 4개 정당이 동시에 티도 연립의 이민 제한 4개 법안 패키지를 거부하는 13개의 발의안을 제출했다. 해당 패키지는 영주권을 폐지하고, 강제 출국 집행을 강화하며, '선행'에 따른 추방 기준을 높이고, 구금 가능성을 확대하는 내용을 담고 있다. 공동 야권 전선(S, C, V, MP)은 2026년 선거 운동을 규정할 근본적인 정치적 단층선을 시사하며, 이민 정책이 핵심 전장이 될 것임을 보여준다.
+
+### 🧭 이 보고서가 지원하는 3가지 의사결정
+
+1. **편집 우선순위**: 이민 패키지를 주요 이슈로 다뤄야 한다 — 20개 발의안 중 13개가 집중되며, 4개 정당과 5개 법안이 관련된다.
+
+2. **야권 연합 추적**: S, C, V, MP의 동시 제출은 이민 문제에서 사실상 4당 과반수(177석 대 여권 연립 약 176석)를 형성한다.
+
+3. **정치 예측**: 이민 패키지는 높은 입법 마찰에 직면해 있다. 입법 자문위원회(Lagrådet)가 발의안 262와 265를 검토 중이다.
+
+### 주요 발견 사항
+
+| # | 발견 사항 | 증거 | 신뢰도 |
+|---|---------|------|-------|
+| 1 | 4개 이민법에 반대하는 초당파 야권 블록 | HD024152-154, 159-161, 167-169, 173, 182 | 높음 [B2] |
+| 2 | S가 6개 발의안 제출 — 정당별 최다 | HD024151-155, 162 | 매우 높음 [A1] |
+| 3 | V가 구금 확대에 반대하는 이민 발의안 최다(4개) 제출 | HD024167-169, 182 | 매우 높음 [A1] |
+| 4 | 선거 근접성 (2026년 5월, 선거까지 4개월) | 선거일 2026-09-13 | 높음 [B2] |
+| 5 | 6개 위원회에 걸친 발의는 연립 전체의 정치적 공세를 시사 | 20개 발의안, 6개 위원회 | 높음 [B2] |
+
+**IMF 맥락 (WEO 2026년 4월)**: 스웨덴 GDP 성장률 (~2026년 1.5%)과 실업률 (~8.5%).
+
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling | **Datum**: 2026-05-15 | **Classificatie**: OPENBAAR | **Betrouwbaarheid**: HOOG [B2]
+
+### 🎯 BLUF
+
+Op 13 mei 2026 — vier maanden voor de Zweedse verkiezingen — dienden alle vier oppositiepartijen gelijktijdig 13 moties in die het vier-wetspakket voor migratiebeperking van de Tidö-coalitie afwijzen, dat permanente verblijfsvergunningen zou afschaffen, de terugkeerhandhaving zou aanscherpen, de uitzetcriteria voor "goed gedrag" zou versterken en de detentiemogelijkheden zou uitbreiden. Het gezamenlijke oppositiefront (S, C, V, MP) signaleert een fundamentele politieke breuklijn die de verkiezingscampagne 2026 zal definiëren, met migratiebeleid als centraal strijdtoneel.
+
+### 🧭 3 beslissingen die dit rapport ondersteunt
+
+1. **Redactionele prioritering**: Het migratiepakket moet als dominant verhaal leiden — 13 van 20 moties concentreren zich erop, met vier partijen en vijf wetsvoorstellen.
+
+2. **Volgen van oppositiecoalitie**: De gelijktijdige indiening door S, C, V en MP creëert een de facto vierparten-meerderheid (177 zetels vs. regeringscoalitie ~176) bij migratie.
+
+3. **Beleidsvoorspelling**: Het migratiepakket stuit op hoge wetgevende weerstand. De Lagrådet (Wetgevingsraad) toetst prop. 262 en 265.
+
+### Kernbevindingen
+
+| # | Bevinding | Bewijs | Betrouwbaarheid |
+|---|---------|-------|----------------|
+| 1 | Partijoverstijgend oppositieblok tegen alle vier migratiewetten | HD024152-154, 159-161, 167-169, 173, 182 | HOOG [B2] |
+| 2 | S dient 6 moties in — hoogste volume per partij | HD024151-155, 162 | ZEER HOOG [A1] |
+| 3 | V dient de meeste migratiemoties in (4) tegen uitbreiding van detentie | HD024167-169, 182 | ZEER HOOG [A1] |
+| 4 | Nabijheid van verkiezingen (mei 2026, 4 maanden tot verkiezingen) | Verkiezingsdatum 2026-09-13 | HOOG [B2] |
+| 5 | Zes commissiesbreedte signaleert coalitiebreed politiek offensief | 20 moties, 6 commissies | HOOG [B2] |
+
+**IMF-context (WEO apr-2026)**: Zweedse bbp-groei (~1,5% in 2026) en werkloosheid (~8,5%).
+
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling | **Dato**: 2026-05-15 | **Klassifisering**: OFFENTLIG | **Konfidensnivå**: HØY [B2]
+
+### 🎯 BLUF
+
+Den 13. mai 2026 — fire måneder før Sveriges riksdagsvalg — leverte alle fire opposisjonspartier 13 samtidige motioner som avviser Tidö-koalisjonens fire-lovs migrasjonsinnstrammingspakke, som ville avvikle permanente oppholdstillatelser, stramme inn tvangsretur, styrke deportasjonskriteriene og utvide interneringshjemlene. Den felles opposisjonsfronten (S, C, V, MP) signaliserer en grunnleggende politisk skillelinje som vil definere valgkampen 2026, med migrasjonspolitikk som sentralt kampanjefelt.
+
+### 🧭 3 beslutninger dette underlaget støtter
+
+1. **Redaksjonell prioritering**: Migrasjonspakken bør være den dominerende nyheten — 13 av 20 motioner omhandler dette med fire partier og fem proposisjoner.
+
+2. **Sporing av opposisjonskoalisjonen**: Den samtidige innleveringen fra S, C, V og MP skaper et de facto firepartiflertall (177 mandater mot regjeringskoalisjonens ~176) i migrasjonssakene.
+
+3. **Politisk prognose**: Migrasjonspakken møter høy lovgivningsmessig friksjon. Lagrådet (Lovrådet) gjennomgår prop. 262 og 265.
+
+### Nøkkelfunn
+
+| # | Funn | Bevis | Konfidensnivå |
+|---|---------|-------|---------------|
+| 1 | Tverrpolitisk opposisjonsblokk mot alle fire migrasjonsforslag | HD024152-154, 159-161, 167-169, 173, 182 | HØY [B2] |
+| 2 | S leverer 6 motioner — høyest volum per parti | HD024151-155, 162 | SVÆRT HØY [A1] |
+| 3 | V leverer flest migrasjons-motioner (4) mot utvidet internering | HD024167-169, 182 | SVÆRT HØY [A1] |
+| 4 | Valgdatoens nærhet (mai 2026, 4 måneder til valget) | Valgdato 2026-09-13 | HØY [B2] |
+| 5 | Seks utvalgsbredde signalerer koalisjonsdekkende politisk offensiv | 20 motioner, 6 utvalg | HØY [B2] |
+
+**IMF-kontekst (WEO apr-2026)**: BNP-vekst Sverige (~1,5% i 2026) og arbeidsledighet (~8,5%).
+
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling | **Datum**: 2026-05-15 | **Klassificering**: OFFENTLIG | **Konfidensgrad**: HÖG [B2]
+
+### 🎯 BLUF
+
+Den 13 maj 2026 — fyra månader före Sveriges riksdagsval — lämnade alla fyra oppositionspartier 13 simultana motioner som avvisar Tidökoalitionens fyra-lagspaketet för migrationsrestriktioner, vilket skulle avskaffa permanenta uppehållstillstånd, skärpa återvändandeverkställigheten, stärka deportationskriterierna för "gott vandel" och utvidga förvarsmöjligheterna. Den övergripande oppositionsfronten (S, C, V, MP) signalerar en grundläggande politisk skiljelinje som kommer att definiera valkampanjen 2026, med migrationspolitiken som centralt slagfält.
+
+### 🧭 3 beslut detta underlag stöder
+
+1. **Redaktionell prioritering**: Redaktörer bör leda med migrationspaketet som dominerande nyhet — 13 av 20 motioner handlar om detta, med fyra partier, fem propositioner och den 16-månaders valhorisont som skapar exceptionell betydelse (DIW genomsnitt 6,0×1,5 = 9,0).
+
+2. **Oppositionskoalitionsspårning**: Det simultana inlämnandet av S, C, V och MP skapar en de facto fyrapartimajoritet (177 mandat mot regeringskoalitionen ~176) på migration; analytiker bör följa om detta omvandlas till faktiska röster om SfU-utskottets betänkanden hösten 2026.
+
+3. **Policyprognos**: Migrationspaketet möter hög lagstiftningsfriktionen. Lagrådsgranskning pågår för prop. 262 och 265 (grundrättsliga dimensioner). Eventuellt negativt yttrande vore en betydande framåtindikator för valkampanjen.
+
+### Nyckelresultat
+
+| # | Resultat | Bevis | Konfidensgrad |
+|---|---------|-------|---------------|
+| 1 | Tvärpolitisk oppositionsblock mot alla fyra migrationslagar | HD024152-154, 159-161, 167-169, 173, 182 (13 dok_ids) | HÖG [B2] |
+| 2 | S lämnar 6 motioner — störst volym per parti | HD024151-155, 162 | MYCKET HÖG [A1] |
+| 3 | V lämnar flest migrationsrelaterade motioner (4) mot utvidgat förvar | HD024167-169, 182 | MYCKET HÖG [A1] |
+| 4 | Valens närhet (maj 2026, 4 månader till val) mångfaldigar politiska insatser | Valdatum 2026-09-13 | HÖG [B2] |
+| 5 | Tre utskottsspridning (SfU, SoU, TU, KU, FöU, UbU) signalerar koalitionsövergripande policyoffensiv | 20 motioner, 6 utskott | HÖG [B2] |
+
+### Politisk betydelse
+
+Migrationsmotionerna svarar direkt på fyra propositioner som utgör Sveriges mest restriktiva migrationsreform sedan 2015–2016 års nödåtgärder. Den gemensamma avvisningen av S+C+V+MP skapar en potentiell 177-sätesmajoritet mot paketet — numeriskt tillräckligt för att blockera passage om den bibehålls. Dock komprimerar lagstiftningskalendern tidsramen: SfU-betänkanden förväntas för höst 2026-omröstningar, omedelbart före valet.
+
+**IMF-kontext (WEO apr-2026)**: Sveriges BNP-tillväxtutsikter (~1,5% år 2026) och arbetslöshet (~8,5%) utgör den makroekonomiska bakgrunden mot vilken både regering (arbetsmarknadsframing) och opposition (social sammanhållning, mänskliga rättigheter) ramar in migrationspolitiken.
+
+---
+
+### ✅ Retropassanmärkning (2026-05-16)
+
+**Ursprunglig tillkomst**: 2026-05-15 under executive-brief-mall v < 4.4.
+**Retropassomfång** (tillämpat 2026-05-16): Två svenska tekniska termer förklarade med engelska motsvarigheter i källtexten (*betänkanden* → utskottsbetänkanden; Lagrådet → Lagrådet). Inga ändringar av bevis, dok_ids eller analytiska slutsatser.
+
+**Substantiell analys, bevis och slutsatser oförändrade.**
+
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_zh.md -->
+
+**作者**: 詹姆斯·佩特·索林 | **日期**: 2026-05-15 | **分类**: 公开 | **置信度**: 高 [B2]
+
+### 🎯 执行摘要
+
+2026年5月13日——距瑞典大选还有四个月——四个反对党同时提交了13项动议，拒绝提多联合政府的四项移民限制法案。该方案将废除永久居留许可，加强遣返执法，强化"良好行为"驱逐标准，并扩大拘留可能性。联合反对阵线（S、C、V、MP）标志着将界定2026年选举运动的根本性政治断层线，移民政策成为核心战场。
+
+### 🧭 本报告支持的三项决策
+
+1. **编辑优先级**: 移民法案应作为主要新闻——20项动议中有13项集中于此，涉及四个政党和五项提案。
+
+2. **追踪反对党联盟**: S、C、V和MP的同时提交在移民问题上形成了事实上的四党多数（177席对执政联盟约176席）。
+
+3. **政治预测**: 移民法案面临高立法摩擦。立法委员会（Lagrådet）正在审查第262和265号提案。
+
+### 主要发现
+
+| # | 发现 | 证据 | 置信度 |
+|---|---------|------|-------|
+| 1 | 跨党派反对党阵线反对四项移民法律 | HD024152-154, 159-161, 167-169, 173, 182 | 高 [B2] |
+| 2 | S提交6项动议——各党中数量最多 | HD024151-155, 162 | 非常高 [A1] |
+| 3 | V提交最多移民动议（4项）反对扩大拘留 | HD024167-169, 182 | 非常高 [A1] |
+| 4 | 选举临近（2026年5月，距选举4个月） | 选举日期 2026-09-13 | 高 [B2] |
+| 5 | 六个委员会表明联盟层面的政治攻势 | 20项动议，6个委员会 | 高 [B2] |
+
+**IMF背景 (WEO 2026年4月)**: 瑞典GDP增长率（~2026年1.5%）和失业率（~8.5%）。
+
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 20 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 21 | Linked in Article Sources, not expanded inline |
 
@@ -1645,6 +2107,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/motions/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 
