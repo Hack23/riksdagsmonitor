@@ -18,9 +18,9 @@ On 13 May 2026 — four months before Sweden's general election — all four opp
 
 1. **Editorial prioritisation**: Editors should lead with the migration package as the dominant story — 13 of 20 motions cluster there, with four parties, five propositions, and the 16-month election horizon creating exceptional significance (DIW avg 6.0×1.5 = 9.0).
 
-2. **Opposition coalition tracking**: The simultaneous filing by S, C, V, and MP creates a de facto four-party opposition majority (177 seats vs. governing coalition ~176) on migration; analysts should track whether this translates to actual votes on SfU betänkanden in autumn 2026.
+2. **Opposition coalition tracking**: The simultaneous filing by S, C, V, and MP creates a de facto four-party opposition majority (177 seats vs. governing coalition ~176) on migration; analysts should track whether this translates to actual votes on SfU committee reports (*betänkanden*) in autumn 2026.
 
-3. **Policy forecasting**: The migration package faces high legislative friction. Lagrådet review pending on prop. 262 and 265 (fundamental rights dimensions). Any adverse opinion would be a significant forward indicator for the election campaign.
+3. **Policy forecasting**: The migration package faces high legislative friction. Lagrådet (Council on Legislation) review pending on prop. 262 and 265 (fundamental-rights dimensions). Any adverse opinion would be a significant forward indicator for the election campaign.
 
 ## Key Findings
 
@@ -43,7 +43,7 @@ The migration motions respond directly to four propositions forming Sweden's mos
 ## ✅ Retrofit Note (2026-05-16)
 
 **Original authoring**: 2026-05-15 under executive-brief template v < 4.4.
-**Retrofit scope** (applied 2026-05-16): no edits to body content. Only this transparency note appended.
+**Retrofit scope** (applied 2026-05-16): Two Swedish technical terms glossed with English equivalents (*betänkanden* → committee reports; Lagrådet → Council on Legislation). No changes to evidence, dok_ids, or analytical conclusions.
 
 **Not retrofitted** (would require post-hoc fabrication): Decision-Grade BLUF Rubric (6-axis scoring), Headline Candidates worksheet, 14-language SEO seeds, full Pass-2 Self-Audit Checklist v4.4. These are required for 2026-05-16+ briefs per gate Check 7.
 
