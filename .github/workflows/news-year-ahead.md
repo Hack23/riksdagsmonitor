@@ -1,6 +1,6 @@
 ---
 name: "News: Year Ahead"
-description: Generates year-ahead annual political-economic outlook articles and renders HTML in all 14 supported languages in a single agentic run (EN + SV + 12 translated). Long-horizon-forecast workflow with 365-day window — anchored in IMF WEO Apr/Oct vintages, covers the Swedish budget rhythm (BP autumn + VP spring), Riksmöte calendar, EU presidency rotations, and full Nordic-peer comparison. Tier-C aggregation × 2.0 depth multiplier. PESTLE + wildcards-blackswans + quantitative-swot mandatory. Runs 5th of January and 5th of July to track WEO vintage rotation.
+description: Generates year-ahead annual political-economic outlook articles and renders HTML in all 14 supported languages in a single agentic run via executive-brief cascade. Long-horizon-forecast workflow with 365-day window — anchored in IMF WEO Apr/Oct vintages, covers the Swedish budget rhythm (BP autumn + VP spring), Riksmöte calendar, EU presidency rotations, and full Nordic-peer comparison. Tier-C aggregation × 2.0 depth multiplier. PESTLE + wildcards-blackswans + quantitative-swot mandatory. Runs 5th of January and 5th of July to track WEO vintage rotation.
 strict: false
 imports:
   - ../prompts/00-base-contract.md
@@ -280,7 +280,7 @@ engine:
 
 Generates the deepest scheduled forward-look at Swedish politics — a 365-day annual outlook anchored in the freshest IMF WEO vintage available at run time (April or October), tracking the Swedish budget rhythm (BP autumn + VP spring), the Riksmöte calendar, and EU presidency rotations affecting Swedish politics. Tier-C aggregation × **2.0 depth multiplier**.
 
-The agent translates `article.md` into `article.<lang>.md` for every non-English language before invoking the renderer with `--lang all`. The dedicated `news-translate` workflow runs on a separate track and translates `executive-brief.md` markdown into 13 language siblings (`executive-brief_<lang>.md`) — it does **not** back-fill `article.<lang>.md`.
+The dedicated `news-translate` workflow runs on a separate track and translates `executive-brief.md` markdown into 13 language siblings (`executive-brief_<lang>.md`) 
 
 ## What this workflow does
 
@@ -321,7 +321,7 @@ The agent translates `article.md` into `article.<lang>.md` for every non-English
 
 > 🟡 **Scope-compression rule**: if you reach agent minute 35 without Pass 2 complete, halt Pass 2 deepening and run the gate against whatever you have — `if-no-changes: warn` will not silently fail the run, but a missing PR will. Always trim depth before iterating.
 
-> ⚠️ **HARD FILE LIMIT (100 files)**: The safe-outputs handler hard-rejects PRs with > 100 files (E003). You **MUST** run the 100-file guard from `07-commit-and-pr.md` before calling `safeoutputs___create_pull_request`. Budget: 23 core artifacts + README (1) + article.md (1) + 13 article.<lang>.md + 14 HTML + pir-status.json (1) ≈ 53 files. **Never stage `documents/` or `pass1/` directories.** If staged count exceeds 90, unstage `documents/` then JSON files until under budget. This is non-negotiable — the previous run failed with 269 files.
+> ⚠️ **HARD FILE LIMIT (100 files)**: The safe-outputs handler hard-rejects PRs with > 100 files (E003). You **MUST** run the 100-file guard from `07-commit-and-pr.md` before calling `safeoutputs___create_pull_request`. Budget: 23 core artifacts + README (1) + article.md (1)  + 14 HTML + pir-status.json (1) ≈ 53 files. **Never stage `documents/` or `pass1/` directories.** If staged count exceeds 90, unstage `documents/` then JSON files until under budget. This is non-negotiable — the previous run failed with 269 files.
 
 ## Inputs
 

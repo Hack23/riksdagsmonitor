@@ -1,6 +1,6 @@
 ---
 name: "News: Election Cycle"
-description: Generates election-cycle deep intelligence articles and renders HTML in all 14 supported languages in a single agentic run (EN + SV + 12 translated). The longest forward-look horizon — covers the full 4-year mandate (current Tidö 2022-09-11 → 2026-09-13 and next 2026-09-13 → 2030-09-08). Tier-C aggregation × 2.5 depth multiplier. Mandates wildcards-blackswans + quantitative-swot + political-stride-assessment + cycle-trajectory (24th artifact) blocking. Initially workflow_dispatch only until runtime is measured over 4-6 manual runs; cron `0 9 13 3,9 *` is declared but commented out below.
+description: Generates election-cycle deep intelligence articles and renders HTML in all 14 supported languages in a single agentic run via executive-brief cascade. The longest forward-look horizon — covers the full 4-year mandate (current Tidö 2022-09-11 → 2026-09-13 and next 2026-09-13 → 2030-09-08). Tier-C aggregation × 2.5 depth multiplier. Mandates wildcards-blackswans + quantitative-swot + political-stride-assessment + cycle-trajectory (24th artifact) blocking. Initially workflow_dispatch only until runtime is measured over 4-6 manual runs; cron `0 9 13 3,9 *` is declared but commented out below.
 strict: false
 imports:
   - ../prompts/00-base-contract.md
@@ -287,7 +287,7 @@ engine:
 
 Generates the **deepest** Riksdagsmonitor intelligence product — a full 4-year-mandate political assessment covering the **current** Tidö cycle (2022-09-11 → 2026-09-13) and/or the **next** cycle (2026-09-13 → 2030-09-08). Tier-C aggregation × **2.5 depth multiplier**.
 
-The agent translates `article.md` (per anchor) into `article.<lang>.md` for every non-English language before invoking the renderer with `--lang all`. The dedicated `news-translate` workflow runs on a separate track and translates `executive-brief.md` markdown into 13 language siblings (`executive-brief_<lang>.md`) — it does **not** back-fill `article.<lang>.md`.
+The agent translates `article.md` (per anchor) into `article.<lang>.md` for every non-English language before invoking the renderer with `--lang all`. The dedicated `news-translate` workflow runs on a separate track and translates `executive-brief.md` markdown into 13 language siblings (`executive-brief_<lang>.md`) 
 
 ## What this workflow does
 

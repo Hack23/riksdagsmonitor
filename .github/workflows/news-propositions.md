@@ -1,6 +1,6 @@
 ---
 name: "News: Government Propositions"
-description: Generates government propositions analysis articles and renders HTML in all 14 supported languages in a single agentic run (EN + SV + 12 translated). Single article type per run; news-translate runs on a separate track to translate executive-brief.md into 13 languages.
+description: Generates government propositions analysis articles and renders HTML in all 14 supported languages in a single agentic run via executive-brief cascade. Single article type per run; news-translate runs on a separate track to translate executive-brief.md into 13 languages.
 strict: false
 imports:
   - ../prompts/00-base-contract.md
@@ -275,7 +275,7 @@ engine:
 
 # 📜 Government Propositions
 
-Generates deep political intelligence analysis **and** renders the HTML article in **all 14 supported languages** for Swedish government propositions in one single agentic run. The agent translates `article.md` into `article.<lang>.md` for every non-English language before invoking the renderer with `--lang all`. The dedicated `news-translate` workflow runs on a separate track and translates `executive-brief.md` markdown into 13 language siblings (`executive-brief_<lang>.md`) — it does **not** back-fill `article.<lang>.md`.
+Generates deep political intelligence analysis **and** renders the HTML article in **all 14 supported languages** for Swedish government propositions in one single agentic run. The dedicated `news-translate` workflow runs on a separate track and translates `executive-brief.md` markdown into 13 language siblings (`executive-brief_<lang>.md`) 
 
 ## What this workflow does
 
@@ -283,17 +283,17 @@ Generates deep political intelligence analysis **and** renders the HTML article 
 - **Analysis subfolder**: `analysis/daily/$ARTICLE_DATE/propositions/`
 - **Aggregated markdown**: `analysis/daily/$ARTICLE_DATE/propositions/article.md` (produced by `scripts/aggregate-analysis.ts`)
 - **Rendered HTML**: `news/$ARTICLE_DATE-propositions-{en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html` — **always all 14 languages** (produced by `scripts/render-articles.ts`)
-- **Single-run model**: one run does download → analysis Pass 1 + 2 → gate → aggregate → translate → render (14 languages) → ONE PR. There is no separate "article run" and no inter-workflow dispatch. The `news-translate` workflow runs on a separate track and handles only executive-brief markdown translations (`executive-brief_<lang>.md`); it does not back-fill `article.<lang>.md`.
+- **Single-run model**: one run does download → analysis Pass 1 + 2 → gate → aggregate → render (14 languages) → ONE PR. There is no separate "article run" and no inter-workflow dispatch. The `news-translate` workflow runs on a separate track and handles only executive-brief markdown translations (`executive-brief_<lang>.md`); it does not back-fill `article.<lang>.md`.
 
 ## Time budget
 
 > 🟡 **Plan to call `safeoutputs___create_pull_request` by agent minute 42 (hard deadline 45)** to reserve job-level headroom for setup variance and the safe-outputs runner. See `00-base-contract.md §Session timing` and `07-commit-and-pr.md §Deadline enforcement`.
 >
-> **AI-FIRST within the setup-aware 40-minute agent target**: Pass 2 is still mandatory. Target completing all agent-phase analysis/rendering work by agent minute 40 so the PR can be opened before the hard agent-minute-45 cutoff. Prefer **scope compression over iteration skipping** when needed — reduce the **download/manifest scope** (use `--limit 10` max for document-type workflows to stay well under the **100-file PR cap** given that 14 HTML + 13 article.<lang>.md now consume 27 file slots), but maintain **1:1 per-document coverage** for every `dok_id` that remains in the manifest (required by `05-analysis-gate.md` check 2) and always perform a full read-back-and-improve Pass 2 on whatever artifacts exist. For scheduled runs treat `analysis_depth` as `deep` (default); reserve `comprehensive` for manual `workflow_dispatch` backfills.
+> **AI-FIRST within the setup-aware 40-minute agent target**: Pass 2 is still mandatory. Target completing all agent-phase analysis/rendering work by agent minute 40 so the PR can be opened before the hard agent-minute-45 cutoff. Prefer **scope compression over iteration skipping** when needed — reduce the **download/manifest scope** (use `--limit 10` max for document-type workflows to stay well under the **100-file PR cap** given that 14 HTML  now consume 27 file slots), but maintain **1:1 per-document coverage** for every `dok_id` that remains in the manifest (required by `05-analysis-gate.md` check 2) and always perform a full read-back-and-improve Pass 2 on whatever artifacts exist. For scheduled runs treat `analysis_depth` as `deep` (default); reserve `comprehensive` for manual `workflow_dispatch` backfills.
 >
-> ⚠️ **HARD FILE LIMIT (100 files)**: The safe-outputs handler hard-rejects PRs with > 100 files (E003). You **MUST** run the 100-file guard from `07-commit-and-pr.md` before calling `safeoutputs___create_pull_request`. Budget: 23 core artifacts + README + article.md + 13 article.<lang>.md + ≤ 10 per-document analyses + 14 HTML + pir-status.json ≈ 63 files max. Never download more than 10 documents when all 14 languages are rendered. If staged count exceeds 90, unstage `documents/` then JSON files until under budget.
+> ⚠️ **HARD FILE LIMIT (100 files)**: The safe-outputs handler hard-rejects PRs with > 100 files (E003). You **MUST** run the 100-file guard from `07-commit-and-pr.md` before calling `safeoutputs___create_pull_request`. Budget: 23 core artifacts + README + article.md  + ≤ 10 per-document analyses + 14 HTML + pir-status.json ≈ 50 files max. Never download more than 10 documents when all 14 languages are rendered. If staged count exceeds 90, unstage `documents/` then JSON files until under budget.
 
-**Single run** (produces all 23 analysis artifacts + aggregated `article.md` + per-language `article.<lang>.md` × 13 + 14 HTML files, target ~42 agent minutes in a 60-min job):
+**Single run** (produces all 23 analysis artifacts + aggregated article.md + 14 HTML files, target ~42 agent minutes in a 60-min job):
 
 | Minutes | Phase | Module |
 |---------|-------|--------|
@@ -307,7 +307,7 @@ Generates deep political intelligence analysis **and** renders the HTML article 
 | 40–42 | `scripts/render-articles.ts --lang all` → **all 14** HTML files | 06 |
 | 42–43 | Stage analysis + `article*.md` + `news/*.html`, commit, **ONE** `safeoutputs___create_pull_request` — **HARD DEADLINE agent minute 45** | 07 |
 
-Use the full budget for AI-FIRST iteration; do **not** finish early with shallow output (see `.github/copilot-instructions.md §AI FIRST Quality Principle`). Never open a second PR within a run — there is no second PR. **If you reach agent minute 42 without staging, stop all remaining work, run the aggregator + translator + renderer on whatever artifacts exist, commit, and call `safeoutputs___create_pull_request` immediately** — a partial-but-delivered PR is infinitely better than losing the run to Timer A. Translation under-coverage is acceptable as a partial state: the renderer falls back to English for any missing `article.<lang>.md`, and the next scheduled per-type run regenerates the article (the `news-translate` workflow handles `executive-brief_<lang>.md` only, not `article.<lang>.md`).
+Use the full budget for AI-FIRST iteration; do **not** finish early with shallow output (see `.github/copilot-instructions.md §AI FIRST Quality Principle`). Never open a second PR within a run — there is no second PR. **If you reach agent minute 42 without staging, stop all remaining work, run the aggregator + translator + renderer on whatever artifacts exist, commit, and call `safeoutputs___create_pull_request` immediately** — a partial-but-delivered PR is infinitely better than losing the run to Timer A. Translation under-coverage is acceptable as a partial state: non-English HTML is rendered via the localized executive-brief cascade, and the renderer composes English article.md body with executive-brief_<lang>.md overlay.
 
 ## Inputs
 
