@@ -33,19 +33,23 @@ News articles are **not** localised by the workflow that generates them. The per
 - `news/$DATE-$SUB-en.html` (English master)
 - `news/$DATE-$SUB-sv.html` (Swedish master)
 
-The remaining 12 language variants (`da`, `nb`, `fi`, `de`, `fr`, `es`, `nl`, `ar`, `he`, `ja`, `ko`, `zh`) are produced **exclusively** by the standalone [`news-translate`](.github/workflows/news-translate.md) workflow, which:
+For HTML article variants, the remaining 12 language renderings (`da`, `no`, `fi`, `de`, `fr`, `es`, `nl`, `ar`, `he`, `ja`, `ko`, `zh`) are emitted inline by the per-type workflows themselves via the per-language `article.<lang>.md` step inside `06-article-generation.md`. The standalone [`news-translate`](.github/workflows/news-translate.md) workflow no longer owns HTML translation; its current mission is **executive-brief Markdown translation** — see §"Executive Brief Markdown Translations" below.
 
-1. Reads the rendered `*-en.html` and `*-sv.html` artifacts (never the markdown).
-2. Prompts an LLM with the terminology tables in this guide.
-3. Writes sibling `*-$LANG.html` files back into `news/`.
+In parallel with the rendered HTML, each per-type workflow also writes a Markdown **executive brief** (the 60-second BLUF artifact, ≈ 400–600 words) at `analysis/daily/$DATE/$SUB/executive-brief.md` (English only). Localised siblings `executive-brief_<lang>.md` for all 13 non-English target languages are produced **exclusively** by [`news-translate`](.github/workflows/news-translate.md), which runs three times daily (09:00 / 14:00 / 19:00 UTC) and:
 
-No other workflow — and no other contributor process — writes localised article HTML. This decoupling means:
+1. Scans `analysis/daily/**/executive-brief.md` for sources that are missing translations or whose `<!-- source-sha: ... -->` trailer no longer matches the current `git log -1 --format=%H` of the source.
+2. Picks up at most `max_briefs` source files per run (default 3, range 1–7), prioritising the oldest article date first.
+3. Translates each source into every requested target language using the terminology tables in this guide.
+4. Validates every translation with `scripts/validate-executive-brief-translations.ts` (structural parity, dok_id preservation, RTL markers, no English BLUF leakage, source-SHA trailer).
+5. Commits the batch and opens one PR per run.
 
-- Editorial changes to a news article ripple through all 14 languages in a single translation pass.
-- Terminology drift is detectable: a single `news-translate` regression only affects non-EN/SV languages.
+No other workflow — and no other contributor process — writes localised executive briefs or localised article HTML. This decoupling means:
+
+- Editorial changes to a source executive brief ripple through all 14 languages in the next `news-translate` run.
+- Terminology drift is detectable: a single `news-translate` regression only affects non-EN files.
 - The 14 top-level `index_*.html` pages and `political-intelligence_*.html` pages remain hand-translated (that workflow is not in scope here).
 
-When translating HTML that has already been rendered, **do not modify** `<pre class="mermaid">` blocks — the Mermaid diagram source is a syntactic DSL that must survive untouched. Translate the adjacent `<figcaption>` and `<details>` fallback blocks instead.
+When translating HTML that has already been rendered, **do not modify** `<pre class="mermaid">` blocks — the Mermaid diagram source is a syntactic DSL that must survive untouched. Translate the adjacent `<figcaption>` and `<details>` fallback blocks instead. The same rule applies to fenced ` ```mermaid ` blocks in executive-brief Markdown.
 
 ### Supported Languages (14)
 
@@ -65,6 +69,125 @@ When translating HTML that has already been rendered, **do not modify** `<pre cl
 | 🇯🇵 Japanese | ja | index_ja.html | LTR | ✅ Complete |
 | 🇰🇷 Korean | ko | index_ko.html | LTR | ✅ Complete |
 | 🇨🇳 Chinese | zh | index_zh.html | LTR | ✅ Complete |
+
+---
+
+## 📝 Executive Brief Markdown Translations
+
+> **Scope.** Authoritative rules for translating `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/executive-brief.md` (the 60-second BLUF artifact produced by every per-type news workflow) into the 13 non-English target languages. The `news-translate` workflow is the sole writer of these translations; no other workflow or contributor process may emit `executive-brief_<lang>.md`.
+
+### File naming contract
+
+| Role | Path | Owner | Language |
+|------|------|-------|----------|
+| Canonical source | `analysis/daily/$DATE/$SUB/executive-brief.md` | Per-type news workflow (`news-propositions`, `news-motions`, …) | English (`en`) — no suffix |
+| Translation sibling | `analysis/daily/$DATE/$SUB/executive-brief_sv.md` | `news-translate` | Swedish |
+| Translation sibling | `analysis/daily/$DATE/$SUB/executive-brief_<lang>.md` | `news-translate` | One per language in `{sv, da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh}` |
+
+**Together with the English source these 14 files cover the full 14-language set.** No `executive-brief_en.md` file is ever created — `executive-brief.md` IS the English version. This is the only deviation from the `index_<lang>.html` naming pattern in the rest of the platform.
+
+### Source-revision signal (drift detection)
+
+Every translation MUST end with a single-line HTML comment that records the source commit at translation time:
+
+```
+<!-- source-sha: <40-hex-sha> -->
+```
+
+The trailer is computed at translation time via `git log -1 --format=%H -- analysis/daily/$DATE/$SUB/executive-brief.md`. The `news-translate` workflow compares this trailer against the current source SHA on every run: matching ⇒ skip that language; mismatching ⇒ re-translate. Filesystem mtimes are **never** used as a freshness signal — `actions/checkout` resets them on every CI runner.
+
+### Verbatim preservation (NEVER translate, NEVER reword)
+
+| Block | Why |
+|-------|-----|
+| YAML / HTML front-matter blocks | Renderer reads them as structured data — translation breaks parsing. |
+| `dok_id` codes (e.g. `H901FiU1`, `HA02UU3`, `H8011AU10`) | Identifiers in the Riksdag API; translating breaks evidence links. |
+| MP `intressent_id` numeric codes | Stable Riksdag identifiers. |
+| Vote IDs and Schema.org JSON-LD `@id` URIs | Machine-readable references. |
+| Image / badge / icon URLs (`https://img.shields.io/...`, `https://hack23.com/icon-192.png`) | Asset references. |
+| Mermaid diagram **DSL bodies** (everything between ` ```mermaid ` and ` ``` `) | Domain-specific syntax — translation will break rendering. Including `%%{init: ...}%%` prologues and `style …` / `classDef …` directives. |
+| Code-fence content for any language (` ```ts `, ` ```bash `, ` ```json `, …) | Code is not prose. |
+| Inline `` `code` `` spans | Identifiers / commands. |
+| Markdown link targets (`](url)` and `[ref]: url`) | URLs only — link text IS translated. |
+| File paths (`analysis/daily/...`, `scripts/...`, `.github/workflows/...`) | Repository structure. |
+| Citation column values in evidence-anchor tables: `dok_id`, `retrieved_at` timestamps, `confidence` levels (`HIGH` / `MEDIUM` / `LOW`) | Tradecraft canonical labels — these stay English even in non-English files. |
+| Numeric values, percentages, dates in ISO 8601 (`2026-05-16`), commit SHAs | Data, not prose. |
+| HTML comments starting `<!-- source-sha:`, `<!-- TEMPLATE_CONTRACT_`, `<!-- dir: rtl -->` | Tooling markers. |
+
+### Always translate
+
+| Block | Notes |
+|-------|-------|
+| All running prose paragraphs | Editor-grade tone, see §"Tone register" below. |
+| Headings (`#`, `##`, `###`, …) | Including the BLUF heading and section headings. |
+| Markdown list items (bulleted and numbered) | The 8-bullet 60-second read MUST stay as 8 bullets. |
+| Table cell **text** (not codes, IDs, URLs, or canonical confidence labels) | Column headers ARE translated. |
+| Markdown link text (the `[text]` half) | Target URL stays. |
+| Image `alt` attributes | Accessibility-critical. |
+| Badge **label** segments where they encode text — e.g. `Owner-CEO` → translate "Owner" only if the badge URL is regenerated; otherwise leave the whole badge intact (cosmetic). | Default: leave badges intact. |
+| Mermaid **`figcaption` and `<details>` fallback prose** outside the fenced block | Translate; the DSL inside the fence stays English. |
+| `<!-- Template instructions -->` / `<!-- AI-FIRST -->` HTML comment prose **only if** the comment is content-bearing rather than a tooling marker. Default: keep tooling comments verbatim. |
+
+### Structural parity (validator-enforced)
+
+The validator (`scripts/validate-executive-brief-translations.ts`) requires translated files to match the source on:
+
+| Check | Tolerance |
+|-------|-----------|
+| Total heading count | exact (±0) |
+| Mermaid fence count | exact (±0) |
+| Code-fence count (all languages) | exact (±0) |
+| Table count and row counts | exact (±0) |
+| Evidence-anchor table column headers present in expected order | exact |
+| `dok_id` references preserved (set equality) | exact |
+| Image / external-URL set preserved | exact |
+| Top-level word count | source ±25 % (translations expand or contract by language; outside ±25 % flags drift) |
+| Trailing `<!-- source-sha: ... -->` marker present and well-formed | required |
+
+### Tone register per language
+
+The executive brief is **decision-grade BLUF for editors and duty officers** — confident, factual, no hedging beyond the explicit confidence labels. Apply the dictionary translations from §"Political & Parliamentary Terms", §"OSINT & Intelligence Terms", §"Swedish Parliamentary Document Types" and §"Riksdag Committee Abbreviations" verbatim. Where a Swedish parliamentary term has no single-word target-language equivalent, prefer the dictionary entry over a literal translation.
+
+| Language | Register | Notes |
+|----------|----------|-------|
+| `sv` | Editorial Swedish (Standard `Standardsvenska`) | Match Riksdag press-release voice. Always render party abbreviations in Swedish (S, M, SD, V, MP, C, L, KD). |
+| `da` | Editorial Danish (`Rigsmål`) | Translate Swedish-specific institutions; keep `Riksdagen` capitalised. |
+| `no` | Editorial `bokmål` | Use existing `no` code (legacy convention — see `scripts/validate-file-ownership.ts`). |
+| `fi` | Standard Finnish (`yleiskieli`) | Compound nouns favoured; Swedish loanwords for political institutions are acceptable when no Finnish equivalent exists. |
+| `de` | Editorial German (`Standarddeutsch`) | Use `der Riksdag`, not "schwedisches Parlament". |
+| `fr` | Editorial French (`français standard`) | "Le Riksdag" with definite article. |
+| `es` | Editorial Spanish (Castilian register) | "El Riksdag", masculine. |
+| `nl` | Editorial Dutch (`Standaardnederlands`) | "De Riksdag", common gender. |
+| `ar` | Modern Standard Arabic (MSA, `الفصحى`) | **RTL** — see §"RTL Languages". Numbers stay Western Arabic numerals to match the source. |
+| `he` | Modern Hebrew (`עברית תקנית`) | **RTL** — see §"RTL Languages". Use definite article `ה` consistently. |
+| `ja` | Editorial Japanese (常体 / です・ます choice: prefer `です・ます` for editor copy) | Foreign names in katakana on first use, then English in parentheses where helpful. |
+| `ko` | Editorial Korean (`표준어`, formal `합니다체`) | Hangul; transliterate Swedish names on first use. |
+| `zh` | Simplified Chinese (`简体中文`) | Mainland editorial register; foreign names in Chinese transliteration on first use. |
+
+### RTL-specific rules (Arabic & Hebrew)
+
+- Insert `<!-- dir: rtl -->` as the first non-frontmatter line of every `executive-brief_ar.md` and `executive-brief_he.md` so downstream renderers and aggregators can detect direction without parsing the language code.
+- Punctuation marks must use RTL Unicode forms where appropriate (`،` ARABIC COMMA U+060C, `؟` ARABIC QUESTION MARK U+061F, Hebrew `׃` SOF PASUQ U+05C3 sparingly).
+- Mermaid diagrams stay LTR — wrap the rendered figure in an `<div dir="ltr">` block in the surrounding HTML; the Markdown source itself does not need a wrapper.
+
+### Workflow integration
+
+| Workflow | Reads | Writes | Frequency |
+|----------|-------|--------|-----------|
+| Per-type news (`news-propositions`, `news-motions`, …) | — | `executive-brief.md` (EN) only | Per type, daily |
+| `news-translate` | `executive-brief.md` | `executive-brief_<lang>.md` for the 13 target languages | **3× daily** (09:00, 14:00, 19:00 UTC, 7 days/week) |
+
+The translation workflow picks up at most `max_briefs` (default `3`, range `1–7`) untranslated or drifted source files per run, translates them into every requested target language (default = all 13 non-EN languages), and validates each translation with `scripts/validate-executive-brief-translations.ts` before committing. See `.github/workflows/news-translate.md` for the operational contract and time budget.
+
+### Acceptance checklist (per translated file)
+
+- [ ] Filename matches `analysis/daily/$DATE/$SUB/executive-brief_<lang>.md`.
+- [ ] Heading, fence, table, and Mermaid counts match the source exactly.
+- [ ] Every `dok_id`, intressent ID, vote ID, and external URL from the source appears in the translation.
+- [ ] No verbatim English BLUF / "Decisions" / "Confidence" labels remain in non-English files (validator scans a banned-phrase list).
+- [ ] `ar` / `he` files start with `<!-- dir: rtl -->`.
+- [ ] File ends with `<!-- source-sha: <40-hex> -->` matching the source's `git log -1 --format=%H`.
+- [ ] `scripts/validate-executive-brief-translations.ts` exits 0 for this file.
 
 ---
 
