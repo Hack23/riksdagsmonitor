@@ -710,6 +710,16 @@ describe('checkFamilyCStructure', () => {
       expect(failures.length).toBeGreaterThan(0);
     });
 
+    it('fails when the template placeholder is left in an HTML H1', async () => {
+      writeArtifact(testDir, 'executive-brief.md',
+        '<h1 align="center">📰 Executive Brief Template — REPLACE THIS H1 WITH A PUBLISHABLE STORY-ORIENTED TITLE</h1>\n\n## 🎯 BLUF\n\nSummary.\n\n## 🧭 Decisions\n\n1. A\n');
+      const results = await checkFamilyCStructure(testDir);
+      const failures = results.filter(
+        (r) => !r.passed && r.artifact === 'executive-brief.md' && /REPLACE THIS H1/i.test(r.message ?? ''),
+      );
+      expect(failures.length).toBeGreaterThan(0);
+    });
+
     it("fails when H1 is bare-boilerplate '# Executive Brief'", async () => {
       writeArtifact(testDir, 'executive-brief.md',
         '# Executive Brief\n\n## 🎯 BLUF\n\nSummary.\n\n## 🧭 Decisions\n\n1. A\n');

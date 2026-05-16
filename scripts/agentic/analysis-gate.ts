@@ -609,6 +609,37 @@ export async function checkFamilyCStructure(
   return results;
 }
 
+function stripHeadingMarkup(value: string): string {
+  let text = '';
+  let insideTag = false;
+
+  for (const char of value) {
+    if (char === '<') {
+      insideTag = true;
+      continue;
+    }
+    if (insideTag) {
+      if (char === '>') {
+        insideTag = false;
+      }
+      continue;
+    }
+    text += char;
+  }
+
+  return text.replace(/&nbsp;|&#160;/gi, ' ').replace(/\s+/g, ' ').trim();
+}
+
+function extractExecutiveBriefH1(content: string): string | null {
+  const markdownH1 = content.match(/^#\s+(.+?)\s*$/m);
+  if (markdownH1) return stripHeadingMarkup(markdownH1[1]);
+
+  const htmlH1 = content.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i);
+  if (htmlH1) return stripHeadingMarkup(htmlH1[1]);
+
+  return null;
+}
+
 /**
  * Check executive-brief.md for BLUF, Decisions sections and H1 quality.
  *
@@ -653,15 +684,8 @@ async function checkExecutiveBrief(analysisDir: string): Promise<GateCheckResult
 
   // H1 quality check — block the template-placeholder and boilerplate-only
   // headings that would ship as the SERP <title>.
-  const h1Match = content.match(/^#\s+(.+?)\s*$/m);
-  if (h1Match) {
-    const h1 = h1Match[1]
-      // Strip <p align="center"> / <h1 align="center"> wrappers (the
-      // template uses <h1 align="center">…</h1>; we extract the inner
-      // text in the fallback regex below). Markdown H1 is the primary
-      // path so this branch is mostly defensive.
-      .replace(/<[^>]+>/g, '')
-      .trim();
+  const h1 = extractExecutiveBriefH1(content);
+  if (h1) {
     const h1Lower = h1.toLowerCase();
     // Patterns that indicate the editor did not replace the template H1.
     const placeholderPatterns: ReadonlyArray<{ pattern: RegExp; label: string }> = [

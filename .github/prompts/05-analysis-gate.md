@@ -176,8 +176,12 @@ if [ -s "$ANALYSIS_DIR/executive-brief.md" ]; then
     || { echo "❌ executive-brief.md: missing 'Decisions' section"; FAIL=1; }
   # H1 quality scan — the executive-brief H1 ships as <title> / og:title /
   # JSON-LD headline / sitemap card across all 14 languages. Block the
-  # template placeholder and boilerplate-only headings.
+  # template placeholder and boilerplate-only headings. Prefer Markdown H1,
+  # then fall back to the template's centered HTML <h1> form.
   EB_H1="$(grep -m1 -E '^#[[:space:]]+' "$ANALYSIS_DIR/executive-brief.md" || true)"
+  if [ -z "$EB_H1" ]; then
+    EB_H1="$(grep -m1 -oE '<h1[^>]*>[^<]+</h1>' "$ANALYSIS_DIR/executive-brief.md" || true)"
+  fi
   if [ -n "$EB_H1" ]; then
     EB_H1_LOWER="$(printf '%s' "$EB_H1" | tr '[:upper:]' '[:lower:]')"
     case "$EB_H1_LOWER" in
@@ -194,6 +198,7 @@ if [ -s "$ANALYSIS_DIR/executive-brief.md" ]; then
     # the bare-boilerplate `# Executive Brief` case.
     EB_H1_PLAIN="$(printf '%s' "$EB_H1_LOWER" \
       | sed -E 's/^#[[:space:]]+//' \
+      | sed -E 's/<[^>]+>//g' \
       | sed -E 's/^[^[:alnum:]]+//' \
       | sed -E 's/[[:space:]—–-]+$//')"
     if [ "$EB_H1_PLAIN" = "executive brief" ] || [ -z "$EB_H1_PLAIN" ]; then
