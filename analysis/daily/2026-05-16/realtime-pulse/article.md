@@ -1,12 +1,12 @@
 ---
-title: "Antog Rysslands statsduma en lag som institutionaliserar Putins"
+title: "Den 13 maj 2026 antog Rysslands statsduma en lag som"
 description: "Den 13 maj 2026 antog Rysslands statsduma en lag som institutionaliserar Putins befogenhet att insätta ryska väpnade styrkor i utlandet för att \"skydda\" ryska medborgare från internationella…"
-keywords: "Realtime Pulse, English, May 16, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Antog Rysslands statsduma institutionaliserar Putins, Antog, Rysslands, statsduma, institutionaliserar, Putins, 2026, befogenhet, insätta, ryska, väpnade, styrkor, utlandet, skydda"
+keywords: "Realtime Pulse, English, May 16, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, antog Rysslands statsduma institutionaliserar Putins, 2026, antog, Rysslands, statsduma, institutionaliserar, Putins, befogenhet, insätta, ryska, väpnade, styrkor, utlandet, skydda"
 date: 2026-05-16
 subfolder: realtime-pulse
 slug: 2026-05-16-realtime-pulse
 source_folder: analysis/daily/2026-05-16/realtime-pulse
-generated_at: 2026-05-16T15:53:01.095Z
+generated_at: 2026-05-16T13:28:18.573Z
 language: en
 layout: article
 ---

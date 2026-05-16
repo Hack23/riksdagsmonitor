@@ -1,12 +1,12 @@
 ---
-title: "Week Ahead: Aid Accountability"
+title: "Week Ahead: Aid Accountability,"
 description: "Sweden's Tidö government faces two scheduled interpellation debates (2026-05-18) on its dismantling of the aid architecture — HD10492 (consequences for children) and HD10493 (consequences of…"
 keywords: "Week Ahead, English, May 15, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Week Ahead Accountability Sweden Tidö, Week, Ahead, Accountability, Sweden, Tidö, government, faces, scheduled, interpellation, debates, dismantling, architecture, HD10492"
 date: 2026-05-15
 subfolder: week-ahead
 slug: 2026-05-15-week-ahead
 source_folder: analysis/daily/2026-05-15/week-ahead
-generated_at: 2026-05-16T15:53:01.084Z
+generated_at: 2026-05-16T13:28:18.564Z
 language: en
 layout: article
 ---

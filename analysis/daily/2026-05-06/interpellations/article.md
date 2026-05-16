@@ -1,12 +1,12 @@
 ---
-title: "Five interpellations filed 2026-05-06 reveal a Swedish opposition"
+title: "Five interpellations filed 2026-05-06 reveal a Swedish opposition (S"
 description: "Five interpellations filed 2026-05-06 reveal a Swedish opposition (S, independents) pressing the Tidö government on three policy fronts simultaneously: (1) a politically explosive international…"
 keywords: "Interpellations, English, May 6, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, Five interpellations filed reveal opposition, Five, filed, reveal, Swedish, opposition, independents, pressing, Tidö, government, three, policy, fronts, simultaneously"
 date: 2026-05-06
 subfolder: interpellations
 slug: 2026-05-06-interpellations
 source_folder: analysis/daily/2026-05-06/interpellations
-generated_at: 2026-05-16T15:53:00.351Z
+generated_at: 2026-05-16T13:28:18.018Z
 language: en
 layout: article
 ---
