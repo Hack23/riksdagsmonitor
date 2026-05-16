@@ -16,29 +16,8 @@
 import type { Language } from '../types/language.js';
 import { LANGUAGE_META } from '../sitemap-html/index.js';
 
-const DESCRIPTION_SOFT_MIN = 145;
 const DESCRIPTION_HARD_MAX = 200;
 const KEYWORD_MAX = 24;
-
-const CONTEXT_LABELS: Record<Language, {
-  readonly edition: string;
-  readonly coverage: string;
-}> = {
-  en: { edition: 'English edition', coverage: 'Coverage' },
-  sv: { edition: 'svensk version', coverage: 'Bevakning' },
-  da: { edition: 'dansk version', coverage: 'Dækning' },
-  no: { edition: 'norsk versjon', coverage: 'Dekning' },
-  fi: { edition: 'suomenkielinen versio', coverage: 'Kattaus' },
-  de: { edition: 'deutsche Ausgabe', coverage: 'Berichterstattung' },
-  fr: { edition: 'édition française', coverage: 'Couverture' },
-  es: { edition: 'edición en español', coverage: 'Cobertura' },
-  nl: { edition: 'Nederlandse editie', coverage: 'Dekking' },
-  ar: { edition: 'النسخة العربية', coverage: 'تغطية' },
-  he: { edition: 'מהדורה עברית', coverage: 'סיקור' },
-  ja: { edition: '日本語版', coverage: 'カバレッジ' },
-  ko: { edition: '한국어판', coverage: '보도' },
-  zh: { edition: '中文版', coverage: '报道' },
-};
 
 const CORE_KEYWORDS: readonly string[] = [
   'Riksdagsmonitor',
@@ -74,12 +53,6 @@ function truncateAtWord(text: string, maxLen: number): string {
   const lastSpace = sliced.lastIndexOf(' ');
   const cut = lastSpace > Math.floor(maxLen * 0.55) ? sliced.slice(0, lastSpace) : sliced;
   return trimTrailingPunctuation(cut) + '…';
-}
-
-function sentenceJoin(base: string, suffix: string): string {
-  const cleanBase = trimTrailingPunctuation(base);
-  if (!cleanBase) return suffix;
-  return `${cleanBase}. ${suffix}`;
 }
 
 function normaliseKeyword(raw: string): string {
@@ -158,52 +131,69 @@ export interface ArticleSeoMetadata {
 }
 
 /**
- * Build a unique, language-aware title for `<title>`, Open Graph and
- * Twitter Cards. The visible H1 can remain the editorial headline while
- * the SEO title carries the locale, article lens and extracted story topic
- * that disambiguate the 14 hreflang siblings in search-engine audits.
- * Publication context is rendered as natural language (`11 May 2026 update`)
- * rather than a raw ISO suffix, so it disambiguates daily editions without
- * becoming a substitute for meaningful headlines.
+ * Build the SERP `<title>`. The executive-brief H1 — which the cascade
+ * has already localized into 14 languages — IS the context. We do not
+ * append article-type / topic / "edition update" boilerplate, because:
+ *
+ *  - The brief H1 is already rich, story-specific, and unique per day
+ *    AND per article type AND per language (the cascade in
+ *    `article-merge.ts` and `aggregator/aggregate.ts` guarantees it).
+ *  - Boilerplate appendages caused near-identical SERP titles to repeat
+ *    across days ("Deutsch Regierungsvorlagen: …", "Français Projets
+ *    de loi: …") even when the underlying brief was completely
+ *    different — see `Article-Generation.md § "Per-language precedence
+ *    chain"`.
+ *
+ * The only suffix we keep is the site signature ` — Riksdagsmonitor`,
+ * and only when the brief H1 plus suffix fits within the 70-char
+ * SERP budget. When the H1 already mentions Riksdagsmonitor, we do
+ * not duplicate it.
  */
 export function buildSeoTitle(input: ArticleSeoMetadataInput): string {
-  const meta = LANGUAGE_META[input.lang];
-  const base = truncateAtWord(input.title, 82);
-  const topic = topicPhrase(input, 4);
-  const editionContext = `${formatPublicationContext(input.date, input.lang)} update`;
-  const marker = input.lang === 'en'
-    ? `${input.articleTypeLabel}: ${topic} — ${editionContext}`
-    : `${meta.nativeName} ${input.articleTypeLabel}: ${topic} — ${editionContext}`;
-  if (base.toLocaleLowerCase().includes(marker.toLocaleLowerCase())) return base;
-  const maxBase = Math.max(34, 96 - marker.length - 3);
-  return `${truncateAtWord(input.title, maxBase)} | ${marker}`;
+  const SERP_TITLE_BUDGET = 70;
+  const SITE_SUFFIX = ' — Riksdagsmonitor';
+  const base = collapseWhitespace(input.title);
+  if (base.length === 0) {
+    return `${input.articleTypeLabel} — Riksdagsmonitor`;
+  }
+  // If the brief H1 already advertises the platform, return it as-is.
+  if (/riksdagsmonitor/i.test(base)) {
+    return truncateAtWord(base, SERP_TITLE_BUDGET);
+  }
+  // Append the site signature only when it fits without truncating
+  // the brief H1 mid-word.
+  if (base.length + SITE_SUFFIX.length <= SERP_TITLE_BUDGET) {
+    return `${base}${SITE_SUFFIX}`;
+  }
+  // Otherwise the brief H1 is itself near the budget — keep it pristine
+  // (truncated to the SERP budget) so search engines never see
+  // duplicated boilerplate suffixes.
+  return truncateAtWord(base, SERP_TITLE_BUDGET);
 }
 
 /**
- * Build a 145–200 character description where practical. It preserves the
- * article-specific BLUF first, then appends article type, extracted story
- * topic and locale context so otherwise-identical translated pages no
- * longer share the same search snippet. Date context is phrased as a
- * publication update, not appended as a raw slug.
+ * Build the SERP `<meta name="description">`. The executive-brief BLUF
+ * IS the description — already localized, already story-specific,
+ * already in the 140-200 char SERP window for every language thanks to
+ * the cascade in `aggregator/seo/description.ts § truncateToSentenceBoundary`.
+ * We never append `Coverage: <Type> on <topic>; <lang> edition update
+ * for <date> with Riksdag/OSINT provenance.` boilerplate because:
+ *
+ *  - It duplicates words already in the BLUF.
+ *  - It collapses 14 hreflang siblings to near-identical snippets that
+ *    only vary by the `Coverage:` translation — defeating the point of
+ *    per-language BLUFs.
+ *  - Search engines silently truncate >200 chars, so the boilerplate
+ *    often replaced the actual analytical context with editorial
+ *    plumbing.
  */
 export function buildSeoDescription(input: ArticleSeoMetadataInput): string {
-  const labels = CONTEXT_LABELS[input.lang];
-  const topic = topicPhrase(input, 5);
-  const editionContext = formatPublicationContext(input.date, input.lang);
-  const suffix = `${labels.coverage}: ${input.articleTypeLabel} on ${topic}; ${labels.edition} update for ${editionContext} with Riksdag/OSINT provenance.`;
   const base = collapseWhitespace(input.description);
-  const maxBase = Math.max(70, DESCRIPTION_HARD_MAX - suffix.length - 1);
-  let description = sentenceJoin(truncateAtWord(base, maxBase), suffix);
-  if (description.length > DESCRIPTION_HARD_MAX) {
-    description = sentenceJoin(truncateAtWord(base, maxBase - 12), suffix);
+  if (base.length === 0) {
+    return `${input.articleTypeLabel} — ${formatPublicationContext(input.date, input.lang)}`;
   }
-  if (description.length < DESCRIPTION_SOFT_MIN) {
-    const extra = input.lang === 'en'
-      ? ' Includes traceable artifacts, methodology notes and official-source provenance.'
-      : ` ${LANGUAGE_META[input.lang].nativeName} metadata identifies the article language, source artifacts and parliamentary lens.`;
-    description = truncateAtWord(`${description} ${extra}`, DESCRIPTION_HARD_MAX);
-  }
-  return truncateAtWord(description, DESCRIPTION_HARD_MAX);
+  if (base.length <= DESCRIPTION_HARD_MAX) return base;
+  return truncateAtWord(base, DESCRIPTION_HARD_MAX);
 }
 
 /**

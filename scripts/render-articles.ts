@@ -157,17 +157,24 @@ async function renderOne(
       path.dirname(rc.articleMdPath),
       `article.${lang}.md`,
     );
+    // Cascade chain step #2: feed the localized executive-brief markdown
+    // into the merger so a publishable H1 + BLUF in
+    // `executive-brief_<lang>.md` overrides the canonical English title
+    // / description. See `Article-Generation.md § "Per-language
+    // precedence chain"` and `scripts/render-lib/aggregator/seo/localized-brief.ts`.
+    //
+    // The localized brief is consulted for every non-EN language —
+    // independently of whether `article.<lang>.md` exists — because the
+    // brief is the canonical localized SEO source. When neither the
+    // localized brief nor the localized article exists, the merger falls
+    // through to the English brief title/description (already baked into
+    // the English `article.md` front-matter by `aggregator/aggregate.ts`)
+    // and only forces `language: <lang>` so JSON-LD `inLanguage` and the
+    // `<html lang>` attribute match the rendered HTML.
     let mdForLang: string;
-    if (lang === 'en' || !fs.existsSync(langSpecific)) {
+    if (lang === 'en') {
       mdForLang = markdown;
     } else {
-      const localizedMarkdown = fs.readFileSync(langSpecific, 'utf8');
-      // Cascade chain step #2: feed the localized executive-brief markdown
-      // into the merger so a publishable H1 + BLUF in
-      // `executive-brief_<lang>.md` overrides the agent-authored
-      // `article.<lang>.md` front-matter `title:` / `description:`. See
-      // `Article-Generation.md § "Per-language precedence chain"` and
-      // `scripts/render-lib/aggregator/seo/localized-brief.ts`.
       const briefLangPath = path.join(
         path.dirname(rc.articleMdPath),
         `executive-brief_${lang}.md`,
@@ -175,6 +182,9 @@ async function renderOne(
       const localizedBriefMarkdown = fs.existsSync(briefLangPath)
         ? fs.readFileSync(briefLangPath, 'utf8')
         : undefined;
+      const localizedMarkdown = fs.existsSync(langSpecific)
+        ? fs.readFileSync(langSpecific, 'utf8')
+        : '';
       mdForLang = mergeLocalizedWithEnglish({
         englishMarkdown: markdown,
         localizedMarkdown,
