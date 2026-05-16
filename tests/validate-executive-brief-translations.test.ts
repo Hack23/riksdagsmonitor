@@ -115,6 +115,10 @@ describe('executive-brief structural counters', () => {
     expect(countCodeFences(SOURCE)).toBe(1);
   });
 
+  it('countCodeFences reports malformed unpaired fences', () => {
+    expect(Number.isNaN(countCodeFences(`${SOURCE}\n\`\`\`\n`))).toBe(true);
+  });
+
   it('countMermaidBlocks counts only ```mermaid blocks', () => {
     expect(countMermaidBlocks(SOURCE)).toBe(1);
   });
@@ -143,6 +147,15 @@ describe('executive-brief structural counters', () => {
       '1234567890abcdef1234567890abcdef12345678',
     );
     expect(extractSourceShaMarker(SOURCE)).toBeNull();
+  });
+
+  it('extractSourceShaMarker only accepts the marker as the trailing non-empty line', () => {
+    expect(extractSourceShaMarker(`${VALID_SV_TRANSLATION}\n\n`)).toBe(
+      '1234567890abcdef1234567890abcdef12345678',
+    );
+    expect(extractSourceShaMarker(
+      `${VALID_SV_TRANSLATION}\n## Extra translated content\n`,
+    )).toBeNull();
   });
 
   it('hasRtlMarker only matches when within the first 1KB', () => {
@@ -280,6 +293,17 @@ describe('validateTranslationContent end-to-end', () => {
       sourceSha,
     });
     expect(checks.find((c) => c.check === 'source-sha-marker')?.passed).toBe(false);
+  });
+
+  it('flags code-fence-count when the translation has an unpaired fence', () => {
+    const checks = validateTranslationContent({
+      sourceContent: SOURCE,
+      translationContent: `${VALID_SV_TRANSLATION}\n\`\`\`\n`,
+      translationPath: 'x_sv.md',
+      lang: 'sv',
+      sourceSha,
+    });
+    expect(checks.find((c) => c.check === 'code-fence-count')?.passed).toBe(false);
   });
 
   it('flags word-count-drift when the translation is more than 25% shorter', () => {

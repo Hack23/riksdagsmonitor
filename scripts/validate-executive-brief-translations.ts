@@ -19,8 +19,8 @@
  *   - markdown table count + total row count parity (±0),
  *   - fenced-code-block count parity (±0),
  *   - Mermaid fenced-block count parity (±0),
- *   - dok_id reference preservation (set equality, source ⊆ translation),
- *   - external URL preservation (set equality, source ⊆ translation),
+ *   - dok_id reference preservation (set equality: no missing and no extra),
+ *   - external URL preservation (set equality: no missing and no extra),
  *   - RTL marker present for `ar` / `he`,
  *   - trailing `<!-- source-sha: <40-hex> -->` marker present and well-formed,
  *   - no banned English BLUF phrases in non-English files,
@@ -148,9 +148,10 @@ export function countHeadings(md: string): number {
 
 /** Count fenced code blocks (any info string). */
 export function countCodeFences(md: string): number {
-  const matches = md.match(/^```/gm);
+  const matches = md.match(/^```/gm) ?? [];
+  if (matches.length % 2 !== 0) return Number.NaN;
   // Each fence is one of opening/closing; divide by 2.
-  return matches ? Math.floor(matches.length / 2) : 0;
+  return matches.length / 2;
 }
 
 /** Count Mermaid fenced code blocks specifically. */
@@ -193,7 +194,7 @@ export function countWords(md: string): number {
 
 /** Extract the trailing `<!-- source-sha: <40-hex> -->` marker, or null if missing/malformed. */
 export function extractSourceShaMarker(md: string): string | null {
-  const match = md.match(/<!--\s*source-sha:\s*([0-9a-f]{40})\s*-->/i);
+  const match = md.match(/(?:^|\n)\s*<!--\s*source-sha:\s*([0-9a-f]{40})\s*-->\s*$/i);
   return match?.[1] ?? null;
 }
 

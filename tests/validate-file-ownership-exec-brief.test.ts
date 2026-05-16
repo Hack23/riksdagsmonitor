@@ -3,6 +3,7 @@ import {
   EXEC_BRIEF_TRANSLATION_LANGS,
   extractLangFromPath,
   isFileOwnedByCategory,
+  parseWorkflowCategoryArg,
   validateFileList,
 } from '../scripts/validate-file-ownership.js';
 
@@ -168,5 +169,15 @@ describe('detectCategoryFromFiles', () => {
         'analysis/daily/2026-05-15/propositions/executive-brief_sv.md',
       ]),
     ).toBe('translation');
+  });
+});
+
+describe('parseWorkflowCategoryArg', () => {
+  it('accepts long-form and short CLI category aliases', () => {
+    expect(parseWorkflowCategoryArg('content')).toBe('content');
+    expect(parseWorkflowCategoryArg('c')).toBe('content');
+    expect(parseWorkflowCategoryArg('translation')).toBe('translation');
+    expect(parseWorkflowCategoryArg('t')).toBe('translation');
+    expect(parseWorkflowCategoryArg('invalid')).toBeUndefined();
   });
 });

@@ -246,6 +246,13 @@ export function detectCategoryFromFiles(
   return sawSurfaceFile ? 'content' : null;
 }
 
+/** Parse CLI category values, including short aliases advertised by --help. */
+export function parseWorkflowCategoryArg(value: string): WorkflowCategory | undefined {
+  if (value === 'content' || value === 'c') return 'content';
+  if (value === 'translation' || value === 't') return 'translation';
+  return undefined;
+}
+
 /* istanbul ignore next -- CLI entry point */
 if (resolve(fileURLToPath(import.meta.url)) === resolve(process.argv[1] ?? '')) {
   const args = process.argv.slice(2);
@@ -254,6 +261,7 @@ if (resolve(fileURLToPath(import.meta.url)) === resolve(process.argv[1] ?? '')) 
   let filesArg: string | undefined;
   let filesFromArg: string | undefined;
   let categoryArg: WorkflowCategory | undefined;
+  let invalidCategoryArg: string | undefined;
   for (let i = 0; i < args.length; i++) {
     const a = args[i];
     if (a === '--files' && args[i + 1]) {
@@ -261,21 +269,35 @@ if (resolve(fileURLToPath(import.meta.url)) === resolve(process.argv[1] ?? '')) 
     } else if (a === '--files-from' && args[i + 1]) {
       filesFromArg = args[++i];
     } else if (a === '--category' && args[i + 1]) {
-      categoryArg = args[++i] as WorkflowCategory;
-    } else if (a === 'content' || a === 'translation') {
-      categoryArg = a;
-    } else if (a === '--help' || a === '-h') {
-      console.log(
-        'Usage:\n' +
-        '  validate-file-ownership.ts <content|translation>          # validate git working tree\n' +
-        '  validate-file-ownership.ts --files <a.md,b.md> [--category <c|t>]\n' +
-        '  validate-file-ownership.ts --files-from <path|-> [--category <c|t>]\n' +
-        '\nIf --category is omitted with --files / --files-from, it is auto-detected:\n' +
-        '  any executive-brief_<lang>.md OR non-EN/SV news/*.html  -> translation\n' +
-        '  otherwise                                                -> content',
-      );
-      process.exit(0);
+      const value = args[++i];
+      const parsed = parseWorkflowCategoryArg(value);
+      if (parsed) {
+        categoryArg = parsed;
+      } else {
+        invalidCategoryArg = value;
+      }
+    } else {
+      const parsed = parseWorkflowCategoryArg(a);
+      if (parsed) {
+        categoryArg = parsed;
+      } else if (a === '--help' || a === '-h') {
+        console.log(
+          'Usage:\n' +
+          '  validate-file-ownership.ts <content|translation|c|t>          # validate git working tree\n' +
+          '  validate-file-ownership.ts --files <a.md,b.md> [--category <content|translation|c|t>]\n' +
+          '  validate-file-ownership.ts --files-from <path|-> [--category <content|translation|c|t>]\n' +
+          '\nIf --category is omitted with --files / --files-from, it is auto-detected:\n' +
+          '  any executive-brief_<lang>.md                 -> translation\n' +
+          '  news/*.html or English executive-brief.md     -> content',
+        );
+        process.exit(0);
+      }
     }
+  }
+
+  if (invalidCategoryArg) {
+    console.error(`Invalid category '${invalidCategoryArg}'. Use content|translation|c|t.`);
+    process.exit(2);
   }
 
   // External file-list mode (PR-check workflow uses this).

@@ -139,13 +139,13 @@ jobs:
             fi
             echo ""
             echo "── $src ──"
-            if ! npx tsx scripts/validate-executive-brief-translations.ts --source "$src" --soft; then
+            if ! npx tsx scripts/validate-executive-brief-translations.ts --source "$src"; then
               FAIL=1
             fi
           done
 
-          # `--soft` keeps the per-source command exit code green so we can
-          # collect every failure in one report. Convert to a hard failure now.
+          # Keep iterating across sources, then convert any per-source validation
+          # failure into one blocking merge-gate failure.
           if [ "$FAIL" -ne 0 ]; then
             echo ""
             echo "❌ One or more executive-brief sources have translation parity failures."
