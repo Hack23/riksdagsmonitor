@@ -102,10 +102,10 @@ The following rule is non-negotiable — every economic claim routes through IMF
 | Policy rate (Riksbank) | `MFS_IR:FPOLM_PA` | Riksbank press releases | — |
 | Exchange rate | `ER:ENDA_XDC_USD_RATE`, `ER:ENDE_XDC_EUR_RATE` | Riksbank | — |
 | Commodity prices (oil, all-commodities) | `PCPS:POILAPSP`, `PCPS:PALLFNF` | — | — |
-| COFOG defence spending (function 02) | `GFS_COFOG:G02` | WB `MS.MIL.XPND.GD.ZS` | — |
-| COFOG health spending (function 07) | `GFS_COFOG:G07` | WB `SH.XPD.CHEX.GD.ZS` | — |
-| COFOG education spending (function 09) | `GFS_COFOG:G09` | WB `SE.XPD.TOTL.GD.ZS` | — |
-| COFOG social protection (function 10) | `GFS_COFOG:G10` | — | — |
+| COFOG defence spending (function 02) | `GFS_COFOG:GF02_T` | WB `MS.MIL.XPND.GD.ZS` | — |
+| COFOG health spending (function 07) | `GFS_COFOG:GF07_T` | WB `SH.XPD.CHEX.GD.ZS` | — |
+| COFOG education spending (function 09) | `GFS_COFOG:GF09_T` | WB `SE.XPD.TOTL.GD.ZS` | — |
+| COFOG social protection (function 10) | `GFS_COFOG:GF10_T` | — | — |
 | Population (projection) | `WEO:LP` [proj] | SCB | `WB:SP.POP.TOTL` |
 | Governance (rule of law, control of corruption, voice & accountability) | **WB WGI** `source=75` | — | IMF has no equivalent |
 | Environment (CO₂, renewables, forest) | **WB** `EN.*`, `EG.*`, `AG.LND.FRST.ZS` | — | IMF has no equivalent |
@@ -162,11 +162,11 @@ See [`analysis/imf/data-dictionary.md`](../imf/data-dictionary.md) for the full 
 | `committee-reports` (NU) | `WEO:BCA_NGDPD`, `WEO:TX_RPCH` | `DOTS` bilateral | — |
 | `committee-reports` (SkU) | `WEO:GGR_NGDP`, `FM:GGXONLB_NGDP` | — | — |
 | `committee-reports` (AU) | `WEO:LUR`, `WEO:LE` | SCB AKU | — |
-| `committee-reports` (SoU) | `GFS_COFOG:G07`, `WEO:LP` | — | `SH.XPD.CHEX.GD.ZS`, `SH.MED.PHYS.ZS` |
-| `committee-reports` (SfU) | `GFS_COFOG:G10`, `WEO:LP`, `WEO:LUR` | — | — |
-| `committee-reports` (FöU) | `GFS_COFOG:G02` | — | `MS.MIL.XPND.GD.ZS` (historical) |
+| `committee-reports` (SoU) | `GFS_COFOG:GF07_T`, `WEO:LP` | — | `SH.XPD.CHEX.GD.ZS`, `SH.MED.PHYS.ZS` |
+| `committee-reports` (SfU) | `GFS_COFOG:GF10_T`, `WEO:LP`, `WEO:LUR` | — | — |
+| `committee-reports` (FöU) | `GFS_COFOG:GF02_T` | — | `MS.MIL.XPND.GD.ZS` (historical) |
 | `committee-reports` (MJU) | `PCPS:POILAPSP` (if energy) | — | `EN.ATM.CO2E.PC`, `EG.FEC.RNEW.ZS`, `AG.LND.FRST.ZS` **primary** |
-| `committee-reports` (UbU) | `GFS_COFOG:G09` | — | `SE.XPD.TOTL.GD.ZS`, `SE.PRM.ENRR` |
+| `committee-reports` (UbU) | `GFS_COFOG:GF09_T` | — | `SE.XPD.TOTL.GD.ZS`, `SE.PRM.ENRR` |
 | `committee-reports` (KU) | — | — | **WB WGI primary** (`source=75`) |
 | `interpellations` (macro) | `WEO:PCPIPCH`, `WEO:LUR` | `IFS:PCPI_IX`, `MFS_IR:FPOLM_PA` | — |
 | `evening-analysis` | WEO delta since previous publication | `MFS_IR:FPOLM_PA`, `ER:*` if rate-decision day | — |

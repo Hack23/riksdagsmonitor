@@ -117,20 +117,20 @@ Every step is mandatory. Steps 3–7 run inside a single workflow folder at `ana
 
 ## 🚨 Common Failure Modes (read before Pass 1)
 
-These are the patterns that most frequently cause quality failures. Items 1–8 and 10 break [`05-analysis-gate.md`](../../.github/prompts/05-analysis-gate.md); item 9 is enforced later in article generation/SEO validation. Avoid each one explicitly:
+These are the patterns that most frequently cause quality failures. Each is enforced at a different stage — the **Enforced by** column indicates where. Avoid each one explicitly:
 
-| # | Failure mode | Symptom | Fix |
-|---|--------------|---------|-----|
-| 1 | **Conditional Family C/D output** | Workflow ships only some of the 12 Family C+D files because "the day was quiet" | All 12 always ship. Depth adapts via DIW tier; structure does not. |
-| 2 | **Missing evidence anchors** | Claims like "the opposition pushed back" without `dok_id`, vote count, named MP, or primary-source URL | Every analytical claim cites at least one anchor. Generic prose is rejected by the gate. |
-| 3 | **Banned phrases** | "could potentially", "may eventually", "experts say" | Replace with WEP language + named source. See [`political-style-guide.md` §banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list). |
-| 4 | **WEP-language overshoot** | `[horizon:year]` claim tagged "very likely" without ≥ 3 cycle-aged sources | Cap at "likely" for `year`/`cycle` unless source diversity rule is satisfied (never above "likely" without three cycle-aged sources). |
-| 5 | **Pass-2 skipped** | Single-pass output: shallow, generic, no read-back log | Pass-2 status MUST appear in `methodology-reflection.md` with `executed in full`. |
-| 6 | **Provider violation** | Macro/fiscal/monetary/external/trade/commodity/FX claim citing World Bank | Use IMF (see [`imf-indicator-mapping.md`](imf-indicator-mapping.md)). World Bank is reserved for non-economic domains (e.g. governance, environment, social, health, demographics, education, agriculture, innovation, infrastructure, energy, defence historicals, crime). |
-| 7 | **Missing voting-record evidence** | `coalition-mathematics.md` cites a betänkande without a vote table or one of the three annotation comments | Run `fetch-voting-records` and paste table, or insert `<!-- vote-not-found / vote-fetch-error / vote-pending -->`. |
-| 8 | **Stale full-text fallback** | < 2 documents succeed in `--auto-full-text-top-n` and no `<!-- full-text-fallback: <reason> -->` annotation appears | Either fetch 2 successfully or annotate. Gate Check 10 enforces this. |
-| 9 | **Unfilled 14-language SEO seeds** | Step 2B row left blank for one or more languages | Mark `[machine-assisted — verify]` if no human-quality localization, never leave blank. |
-| 10 | **Per-doctype default** | Generic `mot` template applied to a `fpm` shadow-budget or `KU-anmälan` | Run doctype-variant detector first; pick the right variant template. |
+| # | Failure mode | Symptom | Fix | Enforced by |
+|---|--------------|---------|-----|-------------|
+| 1 | **Conditional Family C/D output** | Workflow ships only some of the 12 Family C+D files because "the day was quiet" | All 12 always ship. Depth adapts via DIW tier; structure does not. | `05-analysis-gate.md` Check 1 + 7 |
+| 2 | **Missing evidence anchors** | Claims like "the opposition pushed back" without `dok_id`, vote count, named MP, or primary-source URL | Every analytical claim cites at least one anchor. Generic prose is rejected by the gate. | `05-analysis-gate.md` Check 4 |
+| 3 | **Banned phrases** | "could potentially", "may eventually", "experts say" | Replace with WEP language + named source. See [`political-style-guide.md` §banned-phrase list](political-style-guide.md#machine-readable-banned-phrase-list). | Methodology validation (Pass-2 checklist) |
+| 4 | **WEP-language overshoot** | `[horizon:year]` claim tagged "very likely" without ≥ 3 cycle-aged sources | Cap at "likely" for `year`/`cycle` unless source diversity rule is satisfied (never above "likely" without three cycle-aged sources). | Methodology validation (Pass-2 checklist) |
+| 5 | **Pass-2 skipped** | Single-pass output: shallow, generic, no read-back log | Pass-2 status MUST appear in `methodology-reflection.md` with `executed in full`. | `05-analysis-gate.md` Check 6 |
+| 6 | **Provider violation** | Macro/fiscal/monetary/external/trade/commodity/FX claim citing World Bank | Use IMF (see [`imf-indicator-mapping.md`](imf-indicator-mapping.md)). World Bank is reserved for non-economic domains (e.g. governance, environment, social, health, demographics, education, agriculture, innovation, infrastructure, energy, defence historicals, crime). | Methodology validation (ECONOMIC_DATA_CONTRACT) |
+| 7 | **Missing voting-record evidence** | `coalition-mathematics.md` cites a betänkande without a seat/vote-breakdown table (regex: `Ja\|Nej\|Avstår\|Frånvarande\|Seats\|Mandat`) | Run `fetch-voting-records` and paste a table matching the gate regex. If data is genuinely unavailable, the file must still contain a table row with the matching pattern. | `05-analysis-gate.md` Check 8 |
+| 8 | **Stale full-text fallback** | < 2 documents succeed in `--auto-full-text-top-n` and no `<!-- full-text-fallback: <reason> -->` annotation appears | Either fetch 2 successfully or annotate. | `05-analysis-gate.md` Check 10 |
+| 9 | **Unfilled 14-language SEO seeds** | Step 2B row left blank for one or more languages | Mark `[machine-assisted — verify]` if no human-quality localization, never leave blank. | Article generation / SEO validation |
+| 10 | **Per-doctype default** | Generic `mot` template applied to a `fpm` shadow-budget or `KU-anmälan` | Run doctype-variant detector first; pick the right variant template. | Methodology validation (per-document checklist) |
 
 ---
 
@@ -865,7 +865,7 @@ npx tsx scripts/roll-forward-pirs.ts \
 **Document Control**
 - **Path:** `/analysis/methodologies/ai-driven-analysis-guide.md`
 - **Version:** 6.9 — Tightened header, Step-5 Mermaid label aligned to "(all 12 always)", Common Failure Modes callout added
-- **Key changes in v6.9:** Step 5 Mermaid label corrected from "if warranted" to "(all 12 always)" to match the v6.2 every-run-every-file contract; header version + effective date bumped to 2026-05-15; Common Failure Modes block added (see above). Companion fix in `analytical-supplementary-methodology.md` — "Family-S supplementary (S1–S7)" → "(AS-1..AS-4)" — corrects a stale step reference.
+- **Key changes in v6.9:** Step 5 Mermaid label corrected from "if warranted" to "(all 12 always)" to match the v6.2 every-run-every-file contract; header version + effective date bumped to 2026-05-15; Common Failure Modes block added (see above). Companion fix in `analytical-supplementary-methodology.md` — "Family-S supplementary (S1–S7)" → "(AS1..AS4)" — corrects a stale step reference.
 - **Key changes in v6.8:** Long-horizon forecasting playbook + multi-cycle election lens (horizon stratification, scenario-tree depth, PESTLE threshold, PIR roll-forward, cross-horizon citation rule), §Multi-cycle election lens (four anchors, ± 30-day rollover window, cycle-rollover cross-link), and §Horizon helper API (`scripts/horizon-context.ts` exports); replaced static "Election 2026" framing with parameterised cycle model driven by `analysis/article-types.json`; all cross-links reference existing bounded-context modules without duplication.
 - **Key changes in v6.7:** Added mandatory `pir-status.json` sidecar write step to Pass-2 checklist (Step 7); added PIR status sidecar reference section under Related Documents; added roll-forward usage example (`scripts/roll-forward-pirs.ts`) and schema reference (`schemas/pir-status.schema.json`).
 - **Key changes in v6.6:** Step 3 now points at the v1.3 doctype-variant detector (5 extended types: motion-package, fpm, utskottsbetänkande-variants, KU-anmälan, EU-nämnd) and adds Narrative subsection requirement for ≥ L2 per-file artifacts; Step 4 cross-reference-map row links to the 7 atomic edge types in `structural-metadata-methodology.md` v1.3; Step 7 Pass-2 rewrite checklist adds two binding items — Pass-2 Self-Audit Checklist (10 items) and Narrative 6-axis rubric (18/30 floor); DIW section adds worked-example callout to `synthesis-methodology.md` v1.3 (line-by-line scoring + winner/loser rubric) and Sainte-Laguë walkthrough in `electoral-domain-methodology.md` v1.3; Quality Gate Checklist gains rows 11–12.
