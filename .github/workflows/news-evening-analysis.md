@@ -1,6 +1,6 @@
 ---
 name: News Evening Analysis
-description: Generates comprehensive evening analysis articles and renders HTML in all 14 supported languages in a single agentic run (EN + SV + 12 translated) with Playwright validation. On Saturdays, produces a weekly wrap-up reviewing the full parliamentary week. news-translate only refines existing translations.
+description: Generates comprehensive evening analysis articles and renders HTML in all 14 supported languages in a single agentic run (EN + SV + 12 translated) with Playwright validation. On Saturdays, produces a weekly wrap-up reviewing the full parliamentary week. news-translate runs on a separate track to translate executive-brief.md into 13 languages.
 strict: false  # Allow custom network domain riksdag-regering-ai.onrender.com (trusted MCP server)
 imports:
   - ../prompts/00-base-contract.md
@@ -283,7 +283,7 @@ engine:
 
 # 🌆 Evening Analysis
 
-Generates deep political intelligence analysis **and** renders the HTML article in **all 14 supported languages** for evening political intelligence aggregation (Tier-C aggregation — reads sibling analyses across the reporting window and applies period multipliers from `ext/tier-c-aggregation.md`) in one single agentic run. The agent translates `article.md` into `article.<lang>.md` for every non-English language before invoking the renderer with `--lang all`. The dedicated `news-translate` workflow only refines / back-fills existing translations on follow-up runs.
+Generates deep political intelligence analysis **and** renders the HTML article in **all 14 supported languages** for evening political intelligence aggregation (Tier-C aggregation — reads sibling analyses across the reporting window and applies period multipliers from `ext/tier-c-aggregation.md`) in one single agentic run. The agent translates `article.md` into `article.<lang>.md` for every non-English language before invoking the renderer with `--lang all`. The dedicated `news-translate` workflow runs on a separate track and translates `executive-brief.md` markdown into 13 language siblings (`executive-brief_<lang>.md`) — it does **not** back-fill `article.<lang>.md`.
 
 ## What this workflow does
 
@@ -291,7 +291,7 @@ Generates deep political intelligence analysis **and** renders the HTML article 
 - **Analysis subfolder**: `analysis/daily/$ARTICLE_DATE/evening-analysis/`
 - **Aggregated markdown**: `analysis/daily/$ARTICLE_DATE/evening-analysis/article.md` (produced by `scripts/aggregate-analysis.ts`)
 - **Rendered HTML**: `news/$ARTICLE_DATE-evening-analysis-{en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html` — **always all 14 languages** (produced by `scripts/render-articles.ts`)
-- **Single-run model**: one run does download → analysis Pass 1 + 2 → gate → aggregate → translate → render (14 languages) → ONE PR. There is no separate "article run" and no inter-workflow dispatch. The `news-translate` workflow is a quality-improvement-only backstop.
+- **Single-run model**: one run does download → analysis Pass 1 + 2 → gate → aggregate → translate → render (14 languages) → ONE PR. There is no separate "article run" and no inter-workflow dispatch. The `news-translate` workflow runs on a separate track and handles only executive-brief markdown translations (`executive-brief_<lang>.md`); it does not back-fill `article.<lang>.md`.
 
 ## Time budget
 
@@ -313,7 +313,7 @@ Generates deep political intelligence analysis **and** renders the HTML article 
 | 40–42 | `scripts/render-articles.ts --lang all` → **all 14** HTML files | 06 |
 | 42–43 | Stage analysis + `article*.md` + `news/*.html`, commit, **ONE** `safeoutputs___create_pull_request` — **HARD DEADLINE agent minute 45** | 07 |
 
-Use the full budget for AI-FIRST iteration; do **not** finish early with shallow output (see `.github/copilot-instructions.md §AI FIRST Quality Principle`). Never open a second PR within a run — there is no second PR. **If you reach agent minute 42 without staging, stop all remaining work, run the aggregator + translator + renderer on whatever artifacts exist, commit, and call `safeoutputs___create_pull_request` immediately** — a partial-but-delivered PR is infinitely better than losing the run to Timer A. Translation under-coverage is acceptable as a partial state: the renderer falls back to English for any missing `article.<lang>.md`, and the `news-translate` workflow back-fills it on the next scheduled pass.
+Use the full budget for AI-FIRST iteration; do **not** finish early with shallow output (see `.github/copilot-instructions.md §AI FIRST Quality Principle`). Never open a second PR within a run — there is no second PR. **If you reach agent minute 42 without staging, stop all remaining work, run the aggregator + translator + renderer on whatever artifacts exist, commit, and call `safeoutputs___create_pull_request` immediately** — a partial-but-delivered PR is infinitely better than losing the run to Timer A. Translation under-coverage is acceptable as a partial state: the renderer falls back to English for any missing `article.<lang>.md`, and the next scheduled per-type run regenerates the article (the `news-translate` workflow handles `executive-brief_<lang>.md` only, not `article.<lang>.md`).
 
 ## Inputs
 

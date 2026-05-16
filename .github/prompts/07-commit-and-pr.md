@@ -25,7 +25,9 @@ Every run performs analysis **and** article generation end-to-end and produces *
 PR title: `📰 ${Article Type} — $ARTICLE_DATE`.
 PR labels: `agentic-news` + article-type label.
 
-The dedicated **`news-translate`** workflow is now a quality / catch-up workflow only — it re-validates translations produced upstream and back-fills any language a per-type run could not finish. Per-type workflows themselves now produce **all 14 language HTML files** in the same agentic run via the per-language Markdown translation step in `06-article-generation.md`.
+The dedicated **`news-translate`** workflow has been re-scoped to a markdown-translation mission: each of three daily runs picks up untranslated `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/executive-brief.md` files and produces `executive-brief_<lang>.md` siblings for the 13 non-English target languages. It does **not** touch `news/*.html`. Per-type workflows continue to produce **all 14 language HTML files** themselves in the same agentic run via the per-language Markdown translation step in `06-article-generation.md`.
+
+> **Hard rule for per-type workflows:** never stage `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/executive-brief_<lang>.md`. Those files are exclusively owned by the `news-translate` workflow. The file-ownership validator (`scripts/validate-file-ownership.ts`) rejects `content`-category commits that touch any `executive-brief_<lang>.md` path.
 
 ## Stage → commit → PR
 
@@ -38,7 +40,7 @@ The dedicated **`news-translate`** workflow is now a quality / catch-up workflow
    | Aggregated article markdown | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.md` |
    | Per-language article markdown (13 non-English) | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.<lang>.md` |
    | Rendered articles (all 14 languages) | `news/$ARTICLE_DATE-$SUBFOLDER-{en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html` |
-   | News-translate quality refinements (only when run by `news-translate.md`) | `news/$ARTICLE_DATE-$SUBFOLDER-<lang>.html` |
+   | News-translate executive-brief translations (only when run by `news-translate.md`) | `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/executive-brief_<lang>.md` |
 
    Never stage `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/documents/` wholesale — it often contains 100+ files. Stage only `documents/*.md` **if** your `documents/` stays under the safe-outputs 100-file cap; otherwise stage only summary files. Never stage `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/pass1/` — it is a local gate-evidence snapshot (see `04-analysis-pipeline.md`), not a deliverable.
 

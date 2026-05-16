@@ -280,7 +280,7 @@ engine:
 
 Generates deep political intelligence analysis **and** renders the HTML article in **all 14 supported languages** for forward-looking quarterly political intelligence (Tier-C aggregation × 1.7 depth multiplier — see `ext/tier-c-aggregation.md` and `ext/long-horizon-forecasting.md`) in one single agentic run. The 90-day window covers the next-quarter parliamentary calendar (committee schedules, chamber votes, government propositions tabling deadlines, Lagrådet referrals, Riksbank rate decisions, SCB quarterly NA release).
 
-The agent translates `article.md` into `article.<lang>.md` for every non-English language before invoking the renderer with `--lang all`. The dedicated `news-translate` workflow only refines / back-fills existing translations on follow-up runs.
+The agent translates `article.md` into `article.<lang>.md` for every non-English language before invoking the renderer with `--lang all`. The dedicated `news-translate` workflow runs on a separate track and translates `executive-brief.md` markdown into 13 language siblings (`executive-brief_<lang>.md`) — it does **not** back-fill `article.<lang>.md`.
 
 ## What this workflow does
 

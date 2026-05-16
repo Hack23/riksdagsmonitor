@@ -280,7 +280,7 @@ engine:
 
 Generates the deepest scheduled forward-look at Swedish politics — a 365-day annual outlook anchored in the freshest IMF WEO vintage available at run time (April or October), tracking the Swedish budget rhythm (BP autumn + VP spring), the Riksmöte calendar, and EU presidency rotations affecting Swedish politics. Tier-C aggregation × **2.0 depth multiplier**.
 
-The agent translates `article.md` into `article.<lang>.md` for every non-English language before invoking the renderer with `--lang all`. The dedicated `news-translate` workflow only refines / back-fills existing translations on follow-up runs.
+The agent translates `article.md` into `article.<lang>.md` for every non-English language before invoking the renderer with `--lang all`. The dedicated `news-translate` workflow runs on a separate track and translates `executive-brief.md` markdown into 13 language siblings (`executive-brief_<lang>.md`) — it does **not** back-fill `article.<lang>.md`.
 
 ## What this workflow does
 

@@ -89,7 +89,7 @@ flowchart LR
   style J fill:#1a1e3d,stroke:#ffbe0b,color:#e0e0e0
 ```
 
-Translations for the remaining twelve languages are produced independently by the `news-translate` workflow.
+Translations for the remaining twelve languages are produced inside the same per-type agentic run (see `06-article-generation.md` §"Step 2 — Translate `article.md`"). The dedicated `news-translate` workflow runs three times a day on a separate track and is responsible only for the executive-brief markdown pipeline — translating `analysis/daily/**/executive-brief.md` into `executive-brief_<lang>.md` for the 13 non-English target languages (see `.github/workflows/news-translate.md` and `TRANSLATION_GUIDE.md` §"Executive Brief Markdown Translations").
 
 ## Why multiple prompt imports (not a single Copilot Agent File)
 

@@ -1,6 +1,6 @@
 ---
-name: "News: Translate Articles"
-description: Quality-improvement / catch-up workflow for news article translations. Per-type news workflows now produce all 14 language HTML files in a single agentic run; this workflow only re-validates existing translations, refines them where the validator flags drift, refreshes stale `dateModified`, and back-fills any language that an upstream run could not finish.
+name: "News: Translate Executive Briefs"
+description: Translates `analysis/daily/**/executive-brief.md` (English source produced by per-type news workflows) into the 13 non-English target languages as sibling `executive-brief_<lang>.md` files. Runs three times daily and picks up at most `max_briefs` (default 3) untranslated or drifted sources per run. See `TRANSLATION_GUIDE.md §Executive Brief Markdown Translations` for the authoritative content contract.
 strict: false
 imports:
   - ../prompts/00-base-contract.md
@@ -9,29 +9,32 @@ imports:
   - ../prompts/07-commit-and-pr.md
 on:
   schedule:
-    # Run translation catch-up twice daily after main content workflows
-    - cron: "0 11 * * 1-5"
-    - cron: "0 17 * * 1-5"
-    # Weekend catch-up
-    - cron: "0 14 * * 0,6"
+    # Three runs every day (7 days/week): morning, midday, evening UTC.
+    - cron: "0 9 * * *"
+    - cron: "0 14 * * *"
+    - cron: "0 19 * * *"
   workflow_dispatch:
     inputs:
       article_date:
-        description: 'Article date (YYYY-MM-DD). Defaults to today.'
+        description: 'Restrict the scan to a single article date (YYYY-MM-DD). Leave empty to scan all dates.'
         required: false
-      article_type:
-        description: 'Article type to translate (propositions, motions, committee-reports, week-ahead, month-ahead, weekly-review, monthly-review, breaking, evening-analysis, deep-inspection, interpellations). Leave empty to scan for all untranslated articles.'
+      subfolder:
+        description: 'Restrict the scan to a single document type (propositions, motions, committee-reports, interpellations, evening-analysis, week-ahead, month-ahead, quarter-ahead, year-ahead, election-cycle, weekly-review, monthly-review, realtime-pulse, …). Leave empty to scan all.'
         required: false
       languages:
-        description: 'Target languages (da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh | nordic-extra | eu-extra | cjk | rtl | all-extra). Default: all-extra (all except en,sv)'
+        description: 'Target languages (comma list of `sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh` | `nordic-extra` | `eu-extra` | `cjk` | `rtl` | `all-extra`). Default: all-extra (all 13 non-English languages).'
         required: false
         default: all-extra
-      source_language:
-        description: 'Source language to translate from (default: en)'
+      max_briefs:
+        description: 'Maximum number of source executive-brief.md files to translate this run (range 1–7; default 3). Hard cap: 7 (keeps under safe-outputs 100-file ceiling with 13 languages = 91 files).'
         required: false
-        default: en
+        default: '3'
+      force_retranslate:
+        description: 'When true, ignore the `<!-- source-sha: ... -->` drift check and re-translate every matching source. Use sparingly — drains the safe-outputs file budget fast.'
+        required: false
+        default: 'false'
       analysis_depth:
-        description: 'Analysis depth to apply during translation quality validation (standard, deep, comprehensive). Mirrors the source article depth.'
+        description: 'Analysis depth label echoed into validator output for parity with content workflows (standard, deep, comprehensive). Does not change translation behaviour.'
         required: false
         default: standard
 
@@ -46,8 +49,8 @@ permissions:
 timeout-minutes: 60
 
 concurrency:
-  group: gh-aw-news-translate-${{ inputs.article_type || 'batch' }}-${{ inputs.article_date || 'today' }}
-  job-discriminator: ${{ inputs.article_type || 'batch' }}-${{ inputs.article_date || 'today' }}
+  group: gh-aw-news-translate-briefs-${{ inputs.article_date || 'batch' }}-${{ inputs.subfolder || 'all' }}
+  job-discriminator: ${{ inputs.article_date || 'batch' }}-${{ inputs.subfolder || 'all' }}
   cancel-in-progress: true
 
 features:
@@ -262,7 +265,7 @@ safe-outputs:
   max-patch-size: 10240
   max-patch-files: 100
   create-pull-request:
-    labels: [agentic-news, translation]
+    labels: [agentic-news, translation, executive-brief]
     draft: false
     expires: 14d
     max: 1
@@ -277,124 +280,156 @@ steps:
     uses: ./.github/actions/news-prewarm
     with:
       imf-sdmx-subscription-key: ${{ secrets.IMF_SDMX_SUBSCRIPTION_KEY }}
-  - name: Pre-flight content PR dependency check
-    env:
-      GH_TOKEN: ${{ github.token }}
-      GITHUB_TOKEN: ${{ github.token }}
-      ARTICLE_DATE_INPUT: ${{ github.event.inputs.article_date }}
-      GH_REPOSITORY: ${{ github.repository }}
-    run: |
-      ARTICLE_DATE="$ARTICLE_DATE_INPUT"
-      if [ -z "$ARTICLE_DATE" ]; then
-        ARTICLE_DATE=$(date -u '+%Y-%m-%d')
-      fi
-      CONTENT_BRANCH_PREFIX="news/content/$ARTICLE_DATE/"
-      GH_ERROR_LOG=$(mktemp)
-      JQ_ERROR_LOG=$(mktemp)
-      chmod 600 "$GH_ERROR_LOG" "$JQ_ERROR_LOG"
-      trap 'rm -f "$GH_ERROR_LOG" "$JQ_ERROR_LOG"' EXIT
-      OPEN_CONTENT_PRS=0
-
-      set +e
-      PR_LIST_JSON=$(gh pr list --repo "$GH_REPOSITORY" --base main --state open --limit 200 --json headRefName 2>"$GH_ERROR_LOG")
-      GH_EXIT_CODE=$?
-      set -e
-      if [ "$GH_EXIT_CODE" -ne 0 ] || [ -z "$PR_LIST_JSON" ]; then
-        echo "⚠ Unable to query open content PRs for $ARTICLE_DATE (gh exit code: $GH_EXIT_CODE)."
-        if [ -s "$GH_ERROR_LOG" ]; then
-          echo "gh error:"
-          sed 's/^/  /' "$GH_ERROR_LOG"
-        fi
-        echo "   Could not determine whether today's date has open content PRs — deferring today and looking for older articles to translate."
-        echo "TODAY_DEFERRED=true" >> "$GITHUB_ENV"
-        exit 0
-      fi
-
-      set +e
-      OPEN_CONTENT_PRS=$(printf '%s' "$PR_LIST_JSON" | jq -r --arg prefix "$CONTENT_BRANCH_PREFIX" '[.[] | select(.headRefName | startswith($prefix))] | length' 2>"$JQ_ERROR_LOG")
-      JQ_EXIT_CODE=$?
-      set -e
-      if [ "$JQ_EXIT_CODE" -ne 0 ] || ! [[ "$OPEN_CONTENT_PRS" =~ ^[0-9]+$ ]]; then
-        echo "⚠ Unable to parse content PR count for $ARTICLE_DATE (jq exit code: $JQ_EXIT_CODE)."
-        if [ -s "$JQ_ERROR_LOG" ]; then
-          echo "jq error:"
-          sed 's/^/  /' "$JQ_ERROR_LOG"
-        fi
-        OPEN_CONTENT_PRS=0
-        echo "   Parse error — agent will look for older articles to translate."
-        echo "TODAY_DEFERRED=true" >> "$GITHUB_ENV"
-        exit 0
-      fi
-
-      if [ "$OPEN_CONTENT_PRS" -gt 0 ]; then
-        echo "⏸ $OPEN_CONTENT_PRS content PRs still open for $ARTICLE_DATE — today deferred"
-        echo "   Agent will look for older articles needing translation."
-        echo "TODAY_DEFERRED=true" >> "$GITHUB_ENV"
-        exit 0
-      fi
-      echo "✅ No open content PRs for $ARTICLE_DATE — proceeding with translation"
-
-  - name: Pre-flight source article check
+  - name: Build executive-brief translation work list
+    id: worklist
     env:
       ARTICLE_DATE_INPUT: ${{ github.event.inputs.article_date }}
+      SUBFOLDER_INPUT: ${{ github.event.inputs.subfolder }}
+      LANGUAGES_INPUT: ${{ github.event.inputs.languages }}
+      MAX_BRIEFS_INPUT: ${{ github.event.inputs.max_briefs }}
+      FORCE_RETRANSLATE: ${{ github.event.inputs.force_retranslate }}
     run: |
-      ARTICLE_DATE="$ARTICLE_DATE_INPUT"
-      if [ -z "$ARTICLE_DATE" ]; then
-        ARTICLE_DATE=$(date -u '+%Y-%m-%d')
+      set -euo pipefail
+      # Resolve target languages.
+      LANGUAGES_RAW="${LANGUAGES_INPUT:-all-extra}"
+      case "$LANGUAGES_RAW" in
+        all-extra) LANGS="sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh" ;;
+        nordic-extra) LANGS="sv,da,no,fi" ;;
+        eu-extra) LANGS="de,fr,es,nl" ;;
+        cjk) LANGS="ja,ko,zh" ;;
+        rtl) LANGS="ar,he" ;;
+        *) LANGS="$LANGUAGES_RAW" ;;
+      esac
+      echo "Target languages: $LANGS"
+
+      # Resolve batch cap (1–7 hard range).
+      MAX_BRIEFS="${MAX_BRIEFS_INPUT:-3}"
+      if ! [[ "$MAX_BRIEFS" =~ ^[1-7]$ ]]; then
+        echo "::warning::max_briefs '$MAX_BRIEFS' out of range; clamping to 3"
+        MAX_BRIEFS=3
       fi
-      EN_SOURCE_COUNT=$(ls news/$ARTICLE_DATE-*-en.html 2>/dev/null | wc -l)
-      if [ "$EN_SOURCE_COUNT" -eq 0 ]; then
-        echo "⚠ No EN source articles found for $ARTICLE_DATE"
-        echo "   Agent will scan older dates for untranslated articles."
-        echo "TODAY_NO_SOURCES=true" >> "$GITHUB_ENV"
+      echo "Max source briefs this run: $MAX_BRIEFS"
+
+      # Discover candidate sources.
+      ROOT="analysis/daily"
+      if [ ! -d "$ROOT" ]; then
+        echo "TRANSLATION_WORKLIST=" >> "$GITHUB_OUTPUT"
+        echo "No $ROOT directory — nothing to translate."
         exit 0
       fi
-      echo "✅ Found $EN_SOURCE_COUNT EN source article(s) for $ARTICLE_DATE — proceeding with translation"
+
+      if [ -n "${ARTICLE_DATE_INPUT:-}" ] && [ -n "${SUBFOLDER_INPUT:-}" ]; then
+        SCAN_PATTERN="$ROOT/$ARTICLE_DATE_INPUT/$SUBFOLDER_INPUT"
+      elif [ -n "${ARTICLE_DATE_INPUT:-}" ]; then
+        SCAN_PATTERN="$ROOT/$ARTICLE_DATE_INPUT"
+      else
+        SCAN_PATTERN="$ROOT"
+      fi
+
+      # Build list of (date, source-path) tuples, oldest date first.
+      CANDIDATES=$(find "$SCAN_PATTERN" -type f -name 'executive-brief.md' 2>/dev/null \
+        | sort)
+
+      if [ -z "$CANDIDATES" ]; then
+        echo "TRANSLATION_WORKLIST=" >> "$GITHUB_OUTPUT"
+        echo "No executive-brief.md sources found under $SCAN_PATTERN."
+        exit 0
+      fi
+
+      # For each source, decide whether any requested language is missing or drifted.
+      WORK=()
+      IFS=',' read -ra LANG_LIST <<< "$LANGS"
+      while IFS= read -r SRC; do
+        [ -n "$SRC" ] || continue
+        DIR=$(dirname "$SRC")
+        SRC_SHA=$(git log -1 --format=%H -- "$SRC" 2>/dev/null || echo "")
+        NEEDS=0
+        for L in "${LANG_LIST[@]}"; do
+          TGT="$DIR/executive-brief_${L}.md"
+          if [ ! -s "$TGT" ]; then NEEDS=1; break; fi
+          if [ "${FORCE_RETRANSLATE:-false}" = "true" ]; then NEEDS=1; break; fi
+          if [ -n "$SRC_SHA" ] && ! grep -q "<!-- source-sha: $SRC_SHA -->" "$TGT" 2>/dev/null; then
+            NEEDS=1
+            break
+          fi
+        done
+        if [ "$NEEDS" -eq 1 ]; then
+          WORK+=("$SRC")
+        fi
+        if [ "${#WORK[@]}" -ge "$MAX_BRIEFS" ]; then break; fi
+      done <<< "$CANDIDATES"
+
+      if [ "${#WORK[@]}" -eq 0 ]; then
+        echo "TRANSLATION_WORKLIST=" >> "$GITHUB_OUTPUT"
+        echo "All discovered sources are up to date for the requested languages."
+        exit 0
+      fi
+
+      printf '%s\n' "${WORK[@]}" > /tmp/exec-brief-worklist.txt
+      WORKLIST_JOINED=$(printf '%s\n' "${WORK[@]}" | paste -sd ',' -)
+      echo "TRANSLATION_WORKLIST=$WORKLIST_JOINED" >> "$GITHUB_OUTPUT"
+      echo "TRANSLATION_LANGS=$LANGS" >> "$GITHUB_OUTPUT"
+      echo "MAX_BRIEFS=$MAX_BRIEFS" >> "$GITHUB_OUTPUT"
+      echo "✅ Selected ${#WORK[@]} source brief(s) for translation into [$LANGS]:"
+      printf '   %s\n' "${WORK[@]}"
 
 engine:
   id: copilot
   model: claude-sonnet-4.6
 ---
 
-# 🌐 News Translate (quality / catch-up only)
+# 🌐 News Translate — Executive Brief Markdown
 
-Quality-improvement and catch-up workflow. Per-type news workflows (`news-propositions`, `news-motions`, `news-committee-reports`, `news-interpellations`, `news-evening-analysis`, `news-realtime-monitor`, `news-week-ahead`, `news-month-ahead`, `news-monthly-review`, `news-weekly-review`, `news-quarter-ahead`, `news-year-ahead`, `news-election-cycle`) **already produce all 14 language HTML files** in a single agentic run via the per-language `article.<lang>.md` translation step inside `06-article-generation.md`. This workflow no longer owns the primary translation hand-off; it exists to:
+This workflow is the **sole writer** of `analysis/daily/$DATE/$SUB/executive-brief_<lang>.md` files. It translates the English-master executive brief (`executive-brief.md`, produced by the per-type news workflows) into 13 non-English sibling files — together with the English source these give "all 14 languages". It never generates original analysis and never modifies `executive-brief.md` itself.
 
-1. Re-validate every translation produced upstream against the English source (`scripts/validate-news-translations.ts`).
-2. Refine translations where the validator flags drift, missing Schema.org metadata, or SEO regressions.
-3. Refresh stale `dateModified` after content changes.
-4. Back-fill any language that an upstream run could not finish under its time budget — when this happens the renderer fell back to English content under a non-English `<html lang>`. This workflow **writes the missing `article.<lang>.md`** into `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/` and then re-renders the corresponding HTML via `scripts/render-articles.ts`, making the translation durable across future `prebuild` / `render-articles.ts` runs (which regenerate HTML from the Markdown sources).
-
-It never generates original analysis.
+> 🔗 **Authoritative content contract:** [`TRANSLATION_GUIDE.md §Executive Brief Markdown Translations`](../../TRANSLATION_GUIDE.md#-executive-brief-markdown-translations). Read this **in full** before producing any translation — it defines verbatim-preserve blocks, always-translate blocks, structural parity, tone register per language, RTL rules, and the validator acceptance checklist.
 
 ## Pipeline
 
-Translation is a pure-derivative workflow:
-
-1. Scan `news/` for articles in the source language (default `en`) that have either (a) a missing translation, or (b) a translation that fails `scripts/validate-news-translations.ts`.
-2. For each candidate, read the source HTML in full.
-3. Translate / refine into every requested target language, preserving Schema.org markup, `dok_id` references, Swedish political terminology, and RTL layout for `ar` / `he`.
-4. Stage, commit, and call `safeoutputs___create_pull_request` **exactly once** covering every translation produced.
+1. The `Build executive-brief translation work list` pre-flight step has already populated `steps.worklist.outputs.TRANSLATION_WORKLIST` (comma-separated repo-relative paths), `TRANSLATION_LANGS` (comma-separated language codes), and `MAX_BRIEFS` (1–7). If `TRANSLATION_WORKLIST` is empty, nothing is pending — proceed to improvement-mode (re-validate every existing translation against the current `<!-- source-sha: ... -->` trailer and fix any drift the validator flags). If still nothing changes after improvement-mode, follow `07-commit-and-pr.md §No-op policy`.
+2. For each source path in `TRANSLATION_WORKLIST`:
+   1. **Pass 1 — translate**: Read the source `executive-brief.md` in full. For every language in `TRANSLATION_LANGS`, produce `analysis/daily/$DATE/$SUB/executive-brief_<lang>.md` following the TRANSLATION_GUIDE rules. Preserve every verbatim block (YAML, HTML comments except `source-sha`, `dok_id` codes, Mermaid DSL bodies, code fences, URLs, file paths, evidence-anchor canonical column values). Translate every always-translate block (prose, headings, list items, table cell text, image alt-text, BLUF, decisions, link text).
+   2. **Pass 2 — read-back & refine**: Read every translation back in full. Verify structural parity (heading / fence / table / Mermaid counts match source ±0). Verify dok_id and URL set equality. Verify no banned English phrases remain in non-English files (`Executive Brief`, `Decisions`, `Confidence`, `BLUF`, …). Tighten tone register for the target language using the per-language guidance in TRANSLATION_GUIDE. For `ar` and `he`, ensure the file starts with `<!-- dir: rtl -->`.
+   3. **Append the source-revision marker**: compute `SRC_SHA=$(git log -1 --format=%H -- <source>)` in the runtime shell. Append `<!-- source-sha: $SRC_SHA -->` as the last non-empty line of every translation file. This is the drift signal future runs use to decide whether to retranslate.
+   4. **Validate**: run `npx tsx scripts/validate-executive-brief-translations.ts --source <source>` (when available) or fall back to the structural sanity checks listed in TRANSLATION_GUIDE §Acceptance checklist. Fix any failures by re-translating the offending language; do not commit a file that fails validation.
+3. Stage every newly written / refreshed `executive-brief_<lang>.md` file. **Do not** touch `executive-brief.md` itself, any HTML under `news/`, any file under `analysis/daily/*/article.md`, or any non-translation file.
+4. Call `safeoutputs___create_pull_request` **exactly once** covering the whole batch. The branch prefix `news/translate/briefs/` is enforced by the safe-outputs config (`07-commit-and-pr.md`).
 
 ## Inputs
 
-- `article_date` (optional, default = today)
-- `article_type` (optional — restrict to one type; omit to scan all)
-- `languages` (default `all-extra` = all 12 non-core languages)
-- `source_language` (default `en`)
-- `analysis_depth` (default `standard` — mirrors source article depth for validation thoroughness)
+- `article_date` — optional. Restrict scanning to a single date folder.
+- `subfolder` — optional. Restrict scanning to a single document type folder.
+- `languages` — default `all-extra` (= `sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh`). Aliases: `nordic-extra`, `eu-extra`, `cjk`, `rtl`, `all-extra`. Comma list also accepted.
+- `max_briefs` — default `3`, range `1–7`. Caps the number of **source** files processed in this run; total file output = `max_briefs × |languages|` (≤ 91 for the default 13-language target, safely under the 100-file safe-outputs cap).
+- `force_retranslate` — default `false`. When `true`, every requested language is rewritten even if the `<!-- source-sha: -->` marker matches.
+- `analysis_depth` — default `standard`. Echoed into the validator output for parity with content workflows; does not change translation behaviour.
+
+## Batch-size rationale
+
+| Quantity | Value | Source |
+|----------|-------|--------|
+| Average source size | ~650 words (range 232–2040) | `wc -w` over `analysis/daily/**/executive-brief.md` |
+| Per-language Pass 1 + Pass 2 wall time | ~60–90 s | Sonnet-class translation budget |
+| Per-source wall time (13 languages, sequential) | ~13–20 min | derived |
+| Default `max_briefs` | 3 sources | fits 35-min translation window + 5-min validation + 5-min commit/PR |
+| Per-run file output | 3 × 13 = **39 files** | well under safe-outputs `max-patch-files: 100` |
+| Daily throughput (3 runs) | up to 9 sources / **117 files** | matches steady-state production by per-type workflows |
+| Current backlog drain (169 sources) | ~19 days at default settings | linear |
+
+If a run is behind schedule at agent minute 30 with translations still pending, the agent MUST trim `max_briefs` downward (drop the last selected source) rather than skip Pass 2 — quality over completeness. A partial PR is always better than missing Timer A (job `timeout-minutes: 60`).
 
 ## Rules specific to this workflow
 
-- No original analysis. Never produce files under `analysis/daily/`.
-- Validate every translation against the source with `scripts/validate-news-translations.ts` before commit.
-- Keep the PR under the safe-outputs 100-file cap. If more translations are pending than fit in one PR, translate the highest-priority batch and leave the rest for the next scheduled run.
+- **Never** generate original analysis or write files outside `analysis/daily/**/executive-brief_<lang>.md`.
+- **Never** modify the English source `executive-brief.md` — it is owned by per-type news workflows.
+- **Validate every translation** with `scripts/validate-executive-brief-translations.ts` before commit. Re-translate (do not commit) any file that fails.
+- Keep the PR under the safe-outputs 100-file cap. The default `max_briefs=3` × 13 languages = 39 files leaves ample headroom; the hard cap `max_briefs=7` × 13 = 91 stays under 100.
 - **Per-language idempotency, not workflow-level no-op**:
-  - A target language is skipped *for that language only* when **all three** of the following hold:
-    1. its translation file already exists and is non-empty,
-    2. a **deterministic source-revision signal** shows the source has not changed since that translation was last produced (for example, the source file's latest git commit timestamp / commit SHA via `git log -1 --format=%ct -- <path>`, or a content hash / validator-produced source signature — **never** filesystem mtimes, which are unstable on CI runners after `actions/checkout`), and
-    3. `scripts/validate-news-translations.ts` passes for that language.
-  - When **all** target languages satisfy the three conditions above, the run does **not** exit. It enters **translation-improvement mode**: re-run the validator across every translation, use the same deterministic source-revision signal when deciding whether any language needs a refresh, fix any drift / regressions / SEO metadata gaps the validator flags, refresh stale `dateModified`, and commit the resulting changes.
+  - A target language is skipped *for that language only* when **all three** hold:
+    1. `executive-brief_<lang>.md` exists and is non-empty,
+    2. its `<!-- source-sha: <sha> -->` trailer matches the current `git log -1 --format=%H -- executive-brief.md`, **and**
+    3. `scripts/validate-executive-brief-translations.ts` passes for that language.
+  - When **all** requested languages for all candidate sources satisfy the three conditions, the run enters **translation-improvement mode**: re-run the validator across every translation, fix any drift / structural-parity regressions / RTL-marker omissions the validator flags, refresh `<!-- source-sha: -->` trailers if the source has been recommitted since, and commit the resulting changes. Append the improvement-mode rerun marker per `07-commit-and-pr.md §No-op policy`.
   - `safeoutputs___noop` is only allowed under the conditions in `07-commit-and-pr.md §No-op policy`. "All translations already exist and are valid" is **never** a noop trigger; it is an improvement trigger.
 
 ## Time budget
@@ -405,12 +440,12 @@ Translation is a pure-derivative workflow:
 
 | Minutes | Phase |
 |---------|-------|
-| 0–3 | MCP pre-warm + date resolution |
-| 3–6 | Scan untranslated articles; build prioritised work list, cap at safe-outputs 100-file budget |
-| 6–34 | Translate + validate in priority order (highest-value types first); trim batch size before quality |
-| 34–40 | Final validation with `scripts/validate-news-translations.ts`, stage scoped files, commit |
-| 40–42 | **One** `safeoutputs___create_pull_request` call — **HARD DEADLINE agent minute 45** |
+| 0–3 | MCP pre-warm; work-list resolved from `steps.worklist.outputs.TRANSLATION_WORKLIST` |
+| 3–5 | Read TRANSLATION_GUIDE §Executive Brief Markdown Translations + selected sources |
+| 5–32 | Pass 1 + Pass 2 translation × `max_briefs` sources × all requested languages |
+| 32–38 | Final validation with `scripts/validate-executive-brief-translations.ts`; append `<!-- source-sha: -->` trailers; stage scoped files |
+| 38–42 | **One** `safeoutputs___create_pull_request` call — **HARD DEADLINE agent minute 45** |
 
-If a batch cannot finish under this budget, commit the translations completed so far and call `safeoutputs___create_pull_request` with label `partial`; the next scheduled run picks up the remaining languages. A partial PR is always better than losing the whole batch to Timer A.
+If the batch cannot finish under this budget, commit the translations completed so far and call `safeoutputs___create_pull_request` with label `partial`; the next scheduled run picks up the remaining work. A partial PR is always better than losing the whole batch to Timer A.
 
 All non-workflow-specific rules are in the imported modules — do not restate them here.

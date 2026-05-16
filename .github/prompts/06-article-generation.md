@@ -63,7 +63,7 @@ If a required artifact is missing the aggregator aborts with a non-zero exit cod
 
 ### Step 2 — Translate `article.md` to every non-English language
 
-Before rendering, the agent **SHOULD** produce a per-language Markdown sibling for every supported non-English language. The translation surface is the same canonical `article.md`; the renderer picks up `article.<lang>.md` automatically when it exists, and falls back to the English source otherwise — so any missing sibling temporarily degrades that language's HTML to English content under a non-English `<html lang>`. This fallback is acceptable as a **temporary** state within a single run's time budget; the `news-translate` quality-improvement workflow will back-fill missing `article.<lang>.md` files (and re-render the corresponding HTML) on the next scheduled pass, making the fix durable across future rebuilds.
+Before rendering, the agent **SHOULD** produce a per-language Markdown sibling for every supported non-English language. The translation surface is the same canonical `article.md`; the renderer picks up `article.<lang>.md` automatically when it exists, and falls back to the English source otherwise — so any missing sibling temporarily degrades that language's HTML to English content under a non-English `<html lang>`. This fallback is acceptable as a **temporary** state within a single run's time budget. The `news-translate` workflow does **not** repair `article.<lang>.md` — its mission is the executive-brief markdown pipeline (`executive-brief.md` → `executive-brief_<lang>.md`). If `article.<lang>.md` is missing, the next scheduled per-type run regenerates the whole article (including translations) from fresh analysis.
 
 Target languages (13 — every supported language except `en`):
 
@@ -83,7 +83,7 @@ Translation contract:
 - For Arabic (`ar`) and Hebrew (`he`) the chrome handles `dir="rtl"` automatically — do not add inline direction overrides.
 - Keep IMF / SCB / WB / Statskontoret citation blocks intact, including `economicProvenance` JSON.
 
-If the time budget is exhausted before every language is translated, ship whatever has been produced — temporary English fallback for missing languages is acceptable. The `news-translate` quality-improvement workflow will back-fill missing `article.<lang>.md` files (and re-render the corresponding HTML) on the next scheduled run, ensuring durability across future `render-articles.ts` rebuilds. **Never commit a half-translated file** — either the language is fully translated or the renderer falls back to the English source for that slot.
+If the time budget is exhausted before every language is translated, ship whatever has been produced — temporary English fallback for missing languages is acceptable. The next scheduled per-type run regenerates the article (including translations) from fresh analysis; the `news-translate` workflow is **not** responsible for `article.<lang>.md` repair (its mission is `executive-brief_<lang>.md`). **Never commit a half-translated file** — either the language is fully translated or the renderer falls back to the English source for that slot. **Never stage `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/executive-brief_<lang>.md` from a per-type workflow** — those files are exclusively owned by `news-translate`.
 
 ### Step 3 — Render
 
@@ -103,7 +103,7 @@ What the renderer does:
 
    `news/$ARTICLE_DATE-$SUBFOLDER-$LANG.html`   (e.g. `news/2026-04-23-propositions-en.html` … `news/2026-04-23-propositions-zh.html`)
 
-Every per-type workflow renders the full 14-language set in the same agentic run. The dedicated `news-translate` workflow no longer owns the primary translation hand-off — it is now a quality / catch-up workflow that re-validates existing translations, refines them where the validator flags drift, and back-fills any language that an upstream run could not finish. See `.github/workflows/news-translate.md` for the improvement contract.
+Every per-type workflow renders the full 14-language set in the same agentic run. The dedicated `news-translate` workflow has been re-scoped: it now produces `executive-brief_<lang>.md` markdown translations of every `analysis/daily/**/executive-brief.md` for the 13 non-English target languages (3 runs/day, default batch 3 sources). It does **not** touch `news/*.html` and does **not** back-fill `article.<lang>.md`. See `.github/workflows/news-translate.md` for the executive-brief translation contract.
 
 ## What the AI does NOT do any more
 
@@ -160,7 +160,7 @@ Before staging, read the generated `article.md` once and verify it reads as a co
 
 ## Translations
 
-Every per-type workflow renders the full **14-language set** (English + Swedish + 12 additional languages) in the same agentic run. The `news-translate` workflow remains in the repository as a **quality-improvement / catch-up** workflow: it re-validates existing translations, refines them where the validator flags drift, and back-fills any language that an upstream run could not finish under its time budget. Per-type workflows never delegate the *primary* translation hand-off any more — the canonical 14-language render happens inside the per-type run itself.
+Every per-type workflow renders the full **14-language set** (English + Swedish + 12 additional languages) in the same agentic run. The `news-translate` workflow has been re-scoped to the **executive-brief markdown pipeline**: each of three daily runs (09 / 14 / 19 UTC) picks up untranslated `analysis/daily/**/executive-brief.md` files and produces `executive-brief_<lang>.md` siblings for the 13 non-English target languages. Per-type workflows never delegate the *primary* HTML translation hand-off — the canonical 14-language render happens inside the per-type run itself — and they must **never** write `executive-brief_<lang>.md` files (that ownership belongs exclusively to `news-translate`, and the file-ownership validator enforces it).
 
 ## Quality floor
 

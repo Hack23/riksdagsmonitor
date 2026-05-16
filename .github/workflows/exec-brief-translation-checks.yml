@@ -1,0 +1,166 @@
+name: Executive Brief Translation PR Checks
+
+# Defence-in-depth gate for the executive-brief translation pipeline.
+#
+# Runs structural-parity and file-ownership validation on every PR that
+# modifies the translation track. Catches:
+#   1. Translations whose heading / table / Mermaid / dok_id / URL counts
+#      drift from the English source (`validate-executive-brief-translations.ts`).
+#   2. Per-type content workflows accidentally staging `executive-brief_<lang>.md`
+#      siblings, or `news-translate` accidentally staging an English source
+#      (`validate-file-ownership.ts`).
+#
+# This is purely a merge gate. The agentic `news-translate.md` workflow
+# already runs both validators before opening its PR; this workflow makes
+# the same checks blocking for any PR — agentic or human — that touches
+# the same surfaces.
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'analysis/daily/**/executive-brief.md'
+      - 'analysis/daily/**/executive-brief_*.md'
+      - 'scripts/validate-executive-brief-translations.ts'
+      - 'scripts/validate-file-ownership.ts'
+      - 'TRANSLATION_GUIDE.md'
+      - '.github/workflows/exec-brief-translation-checks.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: exec-brief-translation-checks-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate executive-brief translation PR
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@ab7a9404c0f3da075243ca237b5fac12c98deaa5 # v2.19.3
+        with:
+          egress-policy: audit
+
+      - name: Checkout PR head (with base ref for diff)
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+          # Use PR head so git diff against the base branch sees the actual changes.
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: '26'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies (lockfile-only)
+        run: npm ci --no-audit --no-fund --prefer-offline
+
+      - name: Compute changed files vs PR base
+        id: diff
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          # On workflow_dispatch / push the base may be empty; fall back to merge-base with main.
+          if [ -z "${BASE_SHA:-}" ]; then
+            BASE_SHA=$(git merge-base HEAD origin/main 2>/dev/null || echo "")
+          fi
+          if [ -z "$BASE_SHA" ]; then
+            echo "⚠️  Could not resolve base SHA — falling back to last commit on HEAD."
+            git diff-tree --no-commit-id --name-only -r "${HEAD_SHA:-HEAD}" > /tmp/changed.txt || true
+          else
+            git diff --name-only "$BASE_SHA"..."${HEAD_SHA:-HEAD}" > /tmp/changed.txt
+          fi
+          echo "Changed files in this PR:"
+          if [ -s /tmp/changed.txt ]; then
+            sed 's/^/  /' /tmp/changed.txt
+          else
+            echo "  (none)"
+          fi
+          # Surface a subset filter for the per-source validator step.
+          grep -E '^analysis/daily/.+/executive-brief(_[a-z]{2})?\.md$' /tmp/changed.txt \
+            > /tmp/changed-briefs.txt || true
+          echo "Executive-brief markdown files in this PR:"
+          if [ -s /tmp/changed-briefs.txt ]; then
+            sed 's/^/  /' /tmp/changed-briefs.txt
+          else
+            echo "  (none)"
+          fi
+
+      - name: Validate file ownership (auto-detect category)
+        run: |
+          set -euo pipefail
+          if [ ! -s /tmp/changed.txt ]; then
+            echo "✅ No changed files — file-ownership check is a no-op."
+            exit 0
+          fi
+          npx tsx scripts/validate-file-ownership.ts --files-from /tmp/changed.txt
+
+      - name: Validate executive-brief structural parity (per changed English source)
+        run: |
+          set -euo pipefail
+          if [ ! -s /tmp/changed-briefs.txt ]; then
+            echo "✅ No executive-brief markdown files changed — parity check is a no-op."
+            exit 0
+          fi
+          # Resolve the set of English source files whose siblings need validating.
+          # Both `executive-brief.md` and `executive-brief_<lang>.md` map to the
+          # same English source via the parent directory.
+          declare -A SEEN
+          SOURCES=()
+          while IFS= read -r f; do
+            [ -n "$f" ] || continue
+            dir=$(dirname "$f")
+            src="$dir/executive-brief.md"
+            if [ -z "${SEEN[$src]+_}" ]; then
+              SEEN[$src]=1
+              SOURCES+=("$src")
+            fi
+          done < /tmp/changed-briefs.txt
+
+          echo "Validating ${#SOURCES[@]} English source(s):"
+          printf '  %s\n' "${SOURCES[@]}"
+
+          FAIL=0
+          for src in "${SOURCES[@]}"; do
+            if [ ! -f "$src" ]; then
+              echo "⚠️  Skipping $src — English source missing (likely a translation-only deletion)."
+              continue
+            fi
+            echo ""
+            echo "── $src ──"
+            if ! npx tsx scripts/validate-executive-brief-translations.ts --source "$src"; then
+              FAIL=1
+            fi
+          done
+
+          # Keep iterating across sources, then convert any per-source validation
+          # failure into one blocking merge-gate failure.
+          if [ "$FAIL" -ne 0 ]; then
+            echo ""
+            echo "❌ One or more executive-brief sources have translation parity failures."
+            echo "   See the per-source output above; fix by re-translating the failing language(s)"
+            echo "   or by updating the English source and refreshing the translations."
+            exit 1
+          fi
+          echo ""
+          echo "✅ All changed executive-brief sources pass structural parity validation."
+
+      - name: Summary
+        if: always()
+        run: |
+          changed=$(wc -l < /tmp/changed.txt 2>/dev/null || echo 0)
+          briefs=$(wc -l < /tmp/changed-briefs.txt 2>/dev/null || echo 0)
+          echo "📊 Executive Brief Translation PR Checks summary"
+          echo "  Total changed files in PR: $changed"
+          echo "  Executive-brief markdown files: $briefs"
