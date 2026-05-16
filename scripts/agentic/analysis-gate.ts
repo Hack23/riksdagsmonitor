@@ -812,7 +812,7 @@ async function checkExecutiveBrief(analysisDir: string): Promise<GateCheckResult
       // strips a bare trailing comma — but we still want to alert the
       // editor that the source brief is malformed.
       const h1Trimmed = h1.trim();
-      if (/[,;:—–\-]\s*$/u.test(h1Trimmed)) {
+      if (/[,;:—–-]\s*$/u.test(h1Trimmed)) {
         results.push({
           checkId: 'family-c-structure',
           passed: false,
@@ -843,12 +843,14 @@ async function checkExecutiveBrief(analysisDir: string): Promise<GateCheckResult
   // changes day-to-day. The result is duplicate cards on the news
   // index — bad UX and bad SEO. We compare the current brief's H1
   // against H1s in the same subfolder for the previous 7 days; if
-  // byte-identical (after normalisation), flag it.
+  // normalised-identical (lowercased, ISO dates removed, punctuation /
+  // symbols / emoji collapsed to whitespace, whitespace collapsed),
+  // flag it.
   //
-  // Scoped narrowly: we only flag exact-normalised duplicates, so a
-  // story that genuinely continues from one day to the next is not
-  // penalised. The editor should reword the H1 to surface the
-  // day-specific angle (`… now hinges on FiU48 amendment 3`,
+  // Scoped narrowly: we only flag exact normalised-identical
+  // duplicates, so a story that genuinely continues from one day to
+  // the next is not penalised. The editor should reword the H1 to
+  // surface the day-specific angle (`… now hinges on FiU48 amendment 3`,
   // `… committee splits 9-8 on Wednesday`, …).
   if (h1) {
     const dailyDir = dirname(analysisDir); // analysis/daily/<date>
@@ -886,7 +888,7 @@ async function checkExecutiveBrief(analysisDir: string): Promise<GateCheckResult
                 checkId: 'family-c-structure',
                 passed: false,
                 message:
-                  `executive-brief.md: H1 is byte-identical to analysis/daily/${siblingDate}/${subfolder}/executive-brief.md — reword to surface the day-specific angle (period-aggregation briefs must not ship duplicate cards on the news index)`,
+                  `executive-brief.md: H1 is normalised-identical (case/punctuation/date stripped) to analysis/daily/${siblingDate}/${subfolder}/executive-brief.md — reword to surface the day-specific angle (period-aggregation briefs must not ship duplicate cards on the news index)`,
                 artifact: 'executive-brief.md',
               });
               break;

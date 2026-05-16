@@ -254,7 +254,7 @@ if [ -s "$ANALYSIS_DIR/executive-brief.md" ]; then
           [ -n "$EB_SIB_H1" ] || continue
           EB_SIB_NORM="$(printf '%s' "$EB_SIB_H1" | tr '[:upper:]' '[:lower:]' | sed -E 's/[0-9]{4}-[0-9]{2}-[0-9]{2}//g' | tr -s '[:space:][:punct:]' ' ' | sed -E 's/^[[:space:]]+|[[:space:]]+$//g')"
           if [ "$EB_SIB_NORM" = "$EB_CURR_NORM" ]; then
-            echo "❌ executive-brief.md: H1 is byte-identical to analysis/daily/$EB_SIBLING/$EB_SUBFOLDER/executive-brief.md — reword to surface the day-specific angle (period-aggregation briefs must not ship duplicate cards on the news index)"
+            echo "❌ executive-brief.md: H1 is normalised-identical (case/punctuation/date stripped) to analysis/daily/$EB_SIBLING/$EB_SUBFOLDER/executive-brief.md — reword to surface the day-specific angle (period-aggregation briefs must not ship duplicate cards on the news index)"
             FAIL=1
             break
           fi

@@ -49,10 +49,22 @@ function trimTrailingPunctuation(text: string): string {
 /**
  * Trailing connector punctuation / words left behind when the
  * word-boundary truncation in {@link truncateAtWord} cuts a long
- * brief H1 at a coordinating connector. Mirror of the rule in
- * `aggregator/seo/title.ts § TRAILING_CONNECTOR_RE` — applied here too
- * because the renderer's `<title>` budget (70 chars) is tighter than
- * the brief H1 and can truncate a perfectly clean H1 mid-connector.
+ * brief H1 at a coordinating connector.
+ *
+ * **Expanded superset** of the rule in
+ * `aggregator/seo/title.ts § TRAILING_CONNECTOR_RE`: the aggregator
+ * helper is English-only (it operates on BLUF sentences that have
+ * already been normalised to English by the analysis pipeline),
+ * whereas the renderer here must also strip Swedish / German /
+ * French connectors because executive-brief H1s ship in all 14
+ * languages. If you update either list, update both — keep this
+ * regex strictly a superset of the aggregator one (drift in the
+ * EN-only subset would let dangling EN connectors leak through in
+ * the renderer).
+ *
+ * Applied here as well as in the aggregator because the renderer's
+ * `<title>` budget (70 chars) is tighter than the brief H1 and can
+ * truncate a perfectly clean H1 mid-connector.
  *
  * Live case: brief H1
  *   "Riksdag Enshrines Constitutional Protection for Abortion — and

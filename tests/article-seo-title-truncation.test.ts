@@ -52,16 +52,19 @@ describe('buildSeoTitle — trailing-connector regression', () => {
     expect(result).not.toMatch(/\band…$/);
   });
 
-  it('strips trailing connector before site suffix when H1 already fits', () => {
-    // Short H1 ending with a connector should never happen post Phase-1
-    // gate, but defensive: even if it does, the site suffix flow must
-    // not preserve the dangling connector.
+  it('preserves trailing connector when H1 + site suffix fits the budget (no truncation path)', () => {
+    // buildSeoTitle only runs truncateAtWord when "<title> — <suffix>"
+    // exceeds the 70-char SERP budget. With a short H1 + the
+    // " — Riksdagsmonitor" suffix the title stays well under 70 chars,
+    // so the connector-strip never runs and the dangling "and" is
+    // preserved verbatim. The real guard for this case is the Phase-1
+    // analysis-gate H1 dangling-connector check, not the renderer.
+    // This test documents that contract so a future refactor doesn't
+    // accidentally start truncating short titles.
     const shortH1 = 'Riksdag Approves FiU48 Fuel-Tax Cut and';
     const result = buildSeoTitle({ ...baseInput, title: shortH1 });
-    // Short H1 + suffix flow doesn't go through truncateAtWord, so the
-    // connector is preserved here — Phase-1 gate is the guard for this
-    // case. Document the contract by asserting the suffix appears.
     expect(result).toMatch(/Riksdagsmonitor$/);
+    expect(result).toMatch(/and — Riksdagsmonitor$/);
   });
 
   it('strips Swedish connector "och" when truncating a Swedish H1', () => {
@@ -78,12 +81,14 @@ describe('buildSeoTitle — trailing-connector regression', () => {
     expect(result).not.toMatch(/\bund…$/);
   });
 
-  it('keeps a complete H1 unchanged when it already fits the budget', () => {
+  it('truncates a medium-length H1 so the SERP title does not end on a connector', () => {
+    // 58-char H1 + " — Riksdagsmonitor" suffix (18 chars) = 76 chars,
+    // which exceeds the 70-char SERP budget. truncateAtWord runs and
+    // must land the cut on a substantive word — never on a coordinating
+    // connector like "and", "or", "with", "the", "a", "an".
     const h1 = 'Russia Legalises Aggression — Sweden Faces Three Deadlines';
     const result = buildSeoTitle({ ...baseInput, title: h1 });
-    // 58 chars + " — Riksdagsmonitor" (18) = 76 → does NOT fit, so
-    // truncateAtWord runs. But truncation should land cleanly, not on
-    // a connector.
     expect(result).not.toMatch(/\b(and|or|with|the|a|an)…$/i);
+    expect(result.length).toBeLessThanOrEqual(70);
   });
 });

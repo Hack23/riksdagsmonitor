@@ -843,7 +843,7 @@ describe('checkFamilyCStructure', () => {
       expect(failures.length).toBeGreaterThan(0);
     });
 
-    it('fails when H1 is byte-identical to a prior day brief in the same subfolder', async () => {
+    it('fails when H1 is normalised-identical to a prior day brief in the same subfolder', async () => {
       // Reproduces the Phase-2 regression: period-aggregation briefs
       // ("Tidö Current Mandate" × 2 days, "Sweden Year-Ahead → +365"
       // × 2 days) shipped duplicate cards on /news/index.html because
@@ -864,7 +864,7 @@ describe('checkFamilyCStructure', () => {
         writeArtifact(yesterday, 'executive-brief.md', h1Line + body);
         const results = await checkFamilyCStructure(today);
         const failures = results.filter(
-          (r) => !r.passed && r.artifact === 'executive-brief.md' && /byte-identical/i.test(r.message ?? ''),
+          (r) => !r.passed && r.artifact === 'executive-brief.md' && /normalised-identical/i.test(r.message ?? ''),
         );
         expect(failures.length).toBeGreaterThan(0);
         expect(failures[0]?.message).toMatch(/2026-05-15/);
@@ -890,7 +890,7 @@ describe('checkFamilyCStructure', () => {
           '# Opposition Mobilises Against Migration Restriction Package\n' + body);
         const results = await checkFamilyCStructure(today);
         const failures = results.filter(
-          (r) => !r.passed && r.artifact === 'executive-brief.md' && /byte-identical/i.test(r.message ?? ''),
+          (r) => !r.passed && r.artifact === 'executive-brief.md' && /normalised-identical/i.test(r.message ?? ''),
         );
         expect(failures).toHaveLength(0);
       } finally {
