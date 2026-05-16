@@ -783,7 +783,7 @@ describe('checkFamilyCStructure', () => {
           '# Executive Brief — Realtime Pulse 2026-05-16\n\n## 🎯 BLUF\n\nSwedish parliamentary activity.\n\n## 🧭 Decisions\n\n1. A\n');
         const results = await checkFamilyCStructure(subfolderDir);
         const failures = results.filter(
-          (r) => !r.passed && r.artifact === 'executive-brief.md',
+          (r) => !r.passed && r.artifact === 'executive-brief.md' && /collapses to nothing/i.test(r.message ?? ''),
         );
         expect(failures.length).toBeGreaterThan(0);
       } finally {

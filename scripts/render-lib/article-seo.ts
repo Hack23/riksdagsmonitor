@@ -51,16 +51,18 @@ function trimTrailingPunctuation(text: string): string {
  * word-boundary truncation in {@link truncateAtWord} cuts a long
  * brief H1 at a coordinating connector.
  *
- * **Expanded superset** of the rule in
- * `aggregator/seo/title.ts § TRAILING_CONNECTOR_RE`: the aggregator
- * helper is English-only (it operates on BLUF sentences that have
- * already been normalised to English by the analysis pipeline),
- * whereas the renderer here must also strip Swedish / German /
- * French connectors because executive-brief H1s ship in all 14
- * languages. If you update either list, update both — keep this
- * regex strictly a superset of the aggregator one (drift in the
- * EN-only subset would let dangling EN connectors leak through in
- * the renderer).
+ * **Expanded superset** of the *trailing-connector* rule in
+ * `aggregator/seo/title.ts § TRAILING_CONNECTOR_RE`: the aggregator's
+ * trailing-connector list is English-only (it strips dangling EN
+ * conjunctions/prepositions after word-boundary truncation), but note
+ * that the aggregator's `BLUF_DATE_PREFIX_PATTERNS` already include
+ * multilingual prefixes (EN + SV + DE + FR) to handle BLUF date
+ * leaks. The renderer here must *also* strip Swedish / German /
+ * French trailing connectors because executive-brief H1s ship in
+ * all 14 languages. If you update either trailing-connector list,
+ * update both — keep this regex strictly a superset of the
+ * aggregator's EN-only connector list (drift in the EN subset would
+ * let dangling EN connectors leak through in the renderer).
  *
  * Applied here as well as in the aggregator because the renderer's
  * `<title>` budget (70 chars) is tighter than the brief H1 and can
