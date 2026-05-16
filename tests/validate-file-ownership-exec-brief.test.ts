@@ -181,3 +181,39 @@ describe('parseWorkflowCategoryArg', () => {
     expect(parseWorkflowCategoryArg('invalid')).toBeUndefined();
   });
 });
+
+describe('forbidden article.<lang>.md files', () => {
+  it('rejects article.sv.md in content category', () => {
+    const files = ['analysis/daily/2026-05-15/propositions/article.sv.md'];
+    const result = validateFileList(files, 'content');
+    expect(result.passed).toBe(false);
+    expect(result.violations).toHaveLength(1);
+    expect(result.violations[0]).toBe('analysis/daily/2026-05-15/propositions/article.sv.md');
+  });
+
+  it('rejects article.sv.md in translation category', () => {
+    const files = ['analysis/daily/2026-05-15/propositions/article.sv.md'];
+    const result = validateFileList(files, 'translation');
+    expect(result.passed).toBe(false);
+    expect(result.violations).toHaveLength(1);
+    expect(result.violations[0]).toBe('analysis/daily/2026-05-15/propositions/article.sv.md');
+  });
+
+  it('allows article.md (English source)', () => {
+    const files = ['analysis/daily/2026-05-15/propositions/article.md'];
+    const result = validateFileList(files, 'content');
+    expect(result.passed).toBe(true);
+    expect(result.violations).toHaveLength(0);
+  });
+
+  it('rejects multiple localized article files', () => {
+    const files = [
+      'analysis/daily/2026-05-15/propositions/article.sv.md',
+      'analysis/daily/2026-05-15/propositions/article.da.md',
+      'analysis/daily/2026-05-15/propositions/article.no.md',
+    ];
+    const result = validateFileList(files, 'content');
+    expect(result.passed).toBe(false);
+    expect(result.violations).toHaveLength(3);
+  });
+});
