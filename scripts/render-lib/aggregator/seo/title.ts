@@ -128,9 +128,10 @@ export function cleanArticleTitle(raw: string | null, subfolder?: string): strin
  * remaining sentence starts with a lower-case word it is capitalised so
  * the SERP title reads as a clean sentence.
  *
- * The patterns are intentionally narrow: only well-formed English date
- * leads are stripped. Translated articles get their own per-language
- * dictionaries via the `news-translate` workflow.
+ * The patterns cover well-formed date leads in English, Swedish, German,
+ * and French — the four primary content languages. Translated articles in
+ * other languages get their own per-language dictionaries via the
+ * `news-translate` workflow.
  *
  * Exported only for testability.
  */

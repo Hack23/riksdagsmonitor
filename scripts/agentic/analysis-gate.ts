@@ -751,10 +751,15 @@ async function checkExecutiveBrief(analysisDir: string): Promise<GateCheckResult
     // automatically reflected here.
     const cleaned = cleanArticleTitle(h1, subfolder);
     if (cleaned === null) {
-      // Avoid duplicate failure when one of the more specific guards
-      // above already fired.
+      // Avoid duplicate failure when one of the more specific H1 guards
+      // above already fired (placeholder/boilerplate checks). Only suppress
+      // for H1-related failures — unrelated executive-brief failures (e.g.
+      // missing BLUF/Decisions) must not mask this collapse guard.
       const alreadyFlagged = results.some(
-        (r) => !r.passed && r.artifact === 'executive-brief.md',
+        (r) =>
+          !r.passed &&
+          r.artifact === 'executive-brief.md' &&
+          r.message.includes('H1'),
       );
       if (!alreadyFlagged) {
         results.push({
@@ -867,8 +872,10 @@ async function checkExecutiveBrief(analysisDir: string): Promise<GateCheckResult
         const normaliseH1 = (raw: string): string =>
           raw
             .toLowerCase()
-            .replace(/[\p{P}\p{S}\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu, ' ')
+            // Strip ISO dates BEFORE punctuation replacement (otherwise
+            // hyphens in YYYY-MM-DD become spaces and the date regex fails).
             .replace(/\b\d{4}[-/]\d{1,2}[-/]\d{1,2}\b/g, '')
+            .replace(/[\p{P}\p{S}\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu, ' ')
             .replace(/\s+/g, ' ')
             .trim();
         const currentNorm = normaliseH1(h1);
