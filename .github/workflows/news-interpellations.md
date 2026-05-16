@@ -282,7 +282,7 @@ Generates deep political intelligence analysis **and** renders the HTML article 
 - **Article type**: `interpellations`
 - **Analysis subfolder**: `analysis/daily/$ARTICLE_DATE/interpellations/`
 - **Aggregated markdown**: `analysis/daily/$ARTICLE_DATE/interpellations/article.md` (produced by `scripts/aggregate-analysis.ts`)
-- **Per-language Markdown**: `analysis/daily/$ARTICLE_DATE/interpellations/article.<lang>.md` for `sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh` (produced by the agent inside the same run)
+- **Per-language Markdown**: ❌ none. `article.<lang>.md` is a forbidden artefact (see `06-article-generation.md §Step 2`); non-English HTML is rendered via the localized executive-brief cascade in `mergeLocalizedWithEnglish`.
 - **Rendered HTML**: `news/$ARTICLE_DATE-interpellations-{en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html` — **always all 14** (produced by `scripts/render-articles.ts --lang all`)
 - **Single-run model**: one run does download → analysis Pass 1 + 2 → gate → aggregate → render (14 languages) → ONE PR. There is no separate "article run" and no inter-workflow dispatch. The `news-translate` workflow runs on a separate track and handles only executive-brief markdown translations (`executive-brief_<lang>.md`); it does not back-fill `article.<lang>.md`.
 

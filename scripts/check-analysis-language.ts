@@ -46,8 +46,11 @@ const MIN_SWEDISH_MARKERS = 5;
 export function stripMarkdownCodeAndFrontmatter(content: string): string {
   let body = content;
   
-  // Remove YAML frontmatter (---\n...\n---)
-  body = body.replace(/^---\n[\s\S]*?\n---\n/m, '');
+  // Remove YAML frontmatter (---\n...\n---) — anchor at start of file only.
+  // Do NOT use the `m` flag; otherwise `^---` would also match a thematic
+  // break later in the body and strip everything between two `---` rules,
+  // hiding Swedish prose from the language check.
+  body = body.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, '');
   
   // Remove code fences (```...```)
   body = body.replace(/```[\s\S]*?```/g, '');
@@ -181,17 +184,19 @@ export function formatViolationTable(violations: LanguageViolation[]): string {
 
 /**
  * CLI entry point: check analysis language for a given directory.
- * Usage: npx tsx scripts/check-analysis-language.ts <analysis-dir>
+ *
+ * Usage:
+ *   npx tsx scripts/check-analysis-language.ts [analysis-dir]
+ *   npm run check:analysis-language -- [analysis-dir]
+ *
+ * When `analysis-dir` is omitted the script defaults to scanning the entire
+ * `analysis/daily/` tree so callers (e.g. `npm run check:analysis-language`)
+ * can run a repo-wide audit without remembering CLI arguments. The analysis
+ * gate (`05-analysis-gate.md`) always passes the per-run `$ANALYSIS_DIR`.
  */
 export async function main() {
   const args = process.argv.slice(2);
-  
-  if (args.length === 0) {
-    console.error('Usage: npx tsx scripts/check-analysis-language.ts <analysis-dir>');
-    process.exit(1);
-  }
-  
-  const analysisDir = args[0]!;
+  const analysisDir = args[0] && args[0].trim().length > 0 ? args[0] : 'analysis/daily';
   
   // Check that the directory exists
   try {

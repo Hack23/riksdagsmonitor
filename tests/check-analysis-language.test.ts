@@ -41,6 +41,31 @@ describe('check-analysis-language', () => {
       expect(result).toContain('Text with');
       expect(result).toContain('here');
     });
+
+    it('does NOT strip body text between two `---` thematic breaks (regression: regex `/m` flag)', () => {
+      // Body containing two `---` rules. With a multiline regex `^---`
+      // would match the first thematic break and strip everything up to
+      // the second one — hiding any Swedish prose in between from the
+      // density check. The non-multiline anchor ensures only file-start
+      // frontmatter is stripped.
+      const input = [
+        '# Heading',
+        '',
+        'Section one English prose.',
+        '',
+        '---',
+        '',
+        'och att för inte är den det har hade kommer skall',
+        '',
+        '---',
+        '',
+        'Section two English prose.',
+      ].join('\n');
+      const result = stripMarkdownCodeAndFrontmatter(input);
+      expect(result).toContain('och att för');
+      expect(result).toContain('Section one');
+      expect(result).toContain('Section two');
+    });
   });
 
   describe('tokenizeWords', () => {

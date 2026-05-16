@@ -26,7 +26,7 @@ This is the **only** gate separating analysis from article generation. If it fai
 
 ## Implementation
 
-No dedicated validator script exists yet — implement the checks as an inline bash gate. Full implementation (covers checks 1–13, plus conditional check 9b where applicable):
+No dedicated validator script exists yet — implement the checks as an inline bash gate. Full implementation (covers checks 1–13, plus conditional check 9b where applicable). Check 12 invokes `scripts/validate-article.ts` when `article.md` is already present (after aggregation); Check 13 invokes `scripts/check-analysis-language.ts`:
 
 ```bash
 set -Eeuo pipefail
@@ -339,6 +339,20 @@ if [ -s "$MANIFEST" ] && grep -q "## Full-Text Fetch Outcomes" "$MANIFEST" \
   FT_SUCCESS=$(grep -cE '^\|[[:space:]]*[A-Za-z0-9_-]+[[:space:]]*\|[[:space:]]*true' "$MANIFEST" || true)
   [ "${FT_SUCCESS:-0}" -ge 2 ] \
     || { echo "❌ data-download-manifest.md: Full-Text Fetch Outcomes table present but fewer than 2 top documents have full_text_available=true (found ${FT_SUCCESS:-0}). Add <!-- full-text-fallback: <reason> --> to bypass."; FAIL=1; }
+fi
+
+# Check 12 — Editorial QA gate (validate-article.ts: banned phrases, citation density, vintage discipline).
+# Runs against the aggregated article.md when present; if the aggregator hasn't run yet the
+# article gate is informational (logged), because the editorial validator's domain is post-aggregation.
+ART_MD_GATE="$ANALYSIS_DIR/article.md"
+if [ -s "$ART_MD_GATE" ]; then
+  if command -v npx >/dev/null 2>&1; then
+    npx tsx scripts/validate-article.ts "$ART_MD_GATE" || FAIL=1
+  else
+    echo "⚠️  Check 12 (editorial QA): npx not found — skipping (non-blocking)"
+  fi
+else
+  echo "ℹ️  Check 12 (editorial QA): $ART_MD_GATE not yet produced — skipped (run after aggregator)"
 fi
 
 # Check 13 — Analysis language (English-only)

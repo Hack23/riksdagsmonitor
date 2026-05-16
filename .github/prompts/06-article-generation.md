@@ -65,6 +65,8 @@ If a required artifact is missing the aggregator aborts with a non-zero exit cod
 
 Per-type workflows do **not** produce `article.<lang>.md` for any non-English language. The agent stops after writing the canonical English `article.md` from Step 1. Non-English HTML pages are produced by `scripts/render-articles.ts` via the localized executive-brief cascade — the renderer composes the English `article.md` body with `executive-brief_<lang>.md` (when present) into a single Markdown document and emits chrome-wrapped HTML in the target language. See `scripts/render-lib/article-merge.ts` (`mergeLocalizedWithEnglish`) for the merge contract.
 
+> ⚠️ **Workflow ordering**: per-type workflows render HTML during the same run that produces the English `executive-brief.md`. The dedicated `news-translate` workflow runs on a separate schedule and back-fills `executive-brief_<lang>.md` *after the fact*. On the first HTML render the cascade therefore falls through to the English brief title/description for every non-EN language (`language: <lang>` is still forced so `<html lang>` / JSON-LD `inLanguage` are correct). The newly translated briefs only appear in the localized HTML on the **next** per-type re-render of the same subfolder (e.g. the next scheduled run, a `force_generation=true` re-run, or an explicit `npm run render-articles`). This is intentional — `news-translate` is **forbidden from touching `news/*.html`** (see `validate-file-ownership.ts`) to keep the file-ownership contract free of merge conflicts.
+
 Any historical `article.<lang>.md` left in the repo is treated as forbidden artifacts by `scripts/validate-file-ownership.ts` (category-independent reject) — per-type workflows must never recreate them.
 
 ### Step 3 — Render
@@ -78,7 +80,7 @@ npx tsx scripts/render-articles.ts \
 
 What the renderer does:
 
-1. Reads `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.md` and, for each requested language, prefers `article.<lang>.md` when it exists.
+1. Reads `analysis/daily/$ARTICLE_DATE/$SUBFOLDER/article.md`. For each non-English language it composes the English body with the localized executive brief (`executive-brief_<lang>.md`) via `mergeLocalizedWithEnglish` when present; historical `article.<lang>.md` files are intentionally **ignored** by the renderer (forbidden artefact — see `validate-file-ownership.ts`).
 2. Parses it through the `unified` → `remark-parse` → `remark-gfm` → `remark-rehype` → `rehype-raw` → `rehype-slug` → `rehype-autolink-headings` → `rehype-sanitize` → `rehype-stringify` pipeline. Mermaid ```` ```mermaid ```` fences are preserved as `<pre class="mermaid">` and upgraded to SVG client-side by `js/lib/mermaid-init.mjs`.
 3. Wraps the sanitised body in the shared site chrome (`scripts/render-lib/index.ts:buildChrome`): full `<head>` with hreflang × all 14 supported languages, Open Graph / Twitter / JSON-LD `NewsArticle` (with `isBasedOn` citing every source artifact), cyberpunk header with skip-link + language switcher, article dek + provenance badges, footer with "Analysis sources" block linking every source `.md` / `.json` artifact under the source folder back to GitHub. Generated `article.md`, translated `article.<lang>.md`, and `pass1/` snapshots are excluded from the public source list.
 4. Writes one HTML file per supported language — **always all 14**:

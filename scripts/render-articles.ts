@@ -18,10 +18,13 @@
  * Mermaid diagrams in the markdown survive as `<pre class="mermaid">`
  * blocks and are rendered on the client by `js/lib/mermaid-init.mjs`.
  *
- * Translation of the markdown body to the remaining 12 languages is the
- * responsibility of the dedicated `news-translate` agentic workflow —
- * this renderer only produces chrome-wrapped HTML from whatever
- * `article.md` / `article.<lang>.md` it finds on disk.
+ * Translation of the markdown body is the responsibility of the dedicated
+ * `news-translate` agentic workflow (it produces
+ * `executive-brief_<lang>.md`). This renderer composes the English
+ * `article.md` body with the localized brief via
+ * `mergeLocalizedWithEnglish` and emits chrome-wrapped HTML per language.
+ * Historical `article.<lang>.md` files are forbidden and intentionally
+ * ignored — see `scripts/validate-file-ownership.ts:isLocalizedArticleMd`.
  *
  * @author Hack23 AB (Infrastructure Team)
  * @license Apache-2.0
@@ -153,10 +156,6 @@ async function renderOne(
 
   let count = 0;
   for (const lang of langs) {
-    const langSpecific = path.join(
-      path.dirname(rc.articleMdPath),
-      `article.${lang}.md`,
-    );
     // Cascade chain step #2: feed the localized executive-brief markdown
     // into the merger so a publishable H1 + BLUF in
     // `executive-brief_<lang>.md` overrides the canonical English title
@@ -164,12 +163,16 @@ async function renderOne(
     // precedence chain"` and `scripts/render-lib/aggregator/seo/localized-brief.ts`.
     //
     // The localized brief is consulted for every non-EN language —
-    // independently of whether `article.<lang>.md` exists — because the
-    // brief is the canonical localized SEO source. When neither the
-    // localized brief nor the localized article exists, the merger falls
-    // through to the English brief title/description (already baked into
-    // the English `article.md` front-matter by `aggregator/aggregate.ts`)
-    // and only forces `language: <lang>` so JSON-LD `inLanguage` and the
+    // independently of whether a (now-forbidden) `article.<lang>.md`
+    // exists — because the brief is the canonical localized SEO source.
+    // Historical `article.<lang>.md` files in the repo are intentionally
+    // IGNORED (not read) so stale per-language translations cannot
+    // override the cascade; the file-ownership validator blocks any new
+    // ones (see `scripts/validate-file-ownership.ts:isLocalizedArticleMd`).
+    // When the localized brief is also absent the merger falls through to
+    // the English brief title/description (already baked into the English
+    // `article.md` front-matter by `aggregator/aggregate.ts`) and only
+    // forces `language: <lang>` so JSON-LD `inLanguage` and the
     // `<html lang>` attribute match the rendered HTML.
     let mdForLang: string;
     if (lang === 'en') {
@@ -182,12 +185,11 @@ async function renderOne(
       const localizedBriefMarkdown = fs.existsSync(briefLangPath)
         ? fs.readFileSync(briefLangPath, 'utf8')
         : undefined;
-      const localizedMarkdown = fs.existsSync(langSpecific)
-        ? fs.readFileSync(langSpecific, 'utf8')
-        : '';
+      // Intentionally pass '' — never read article.<lang>.md from disk
+      // (forbidden artifact; the cascade owns localized prose).
       mdForLang = mergeLocalizedWithEnglish({
         englishMarkdown: markdown,
-        localizedMarkdown,
+        localizedMarkdown: '',
         lang,
         localizedBriefMarkdown,
         subfolder: rc.subfolder,
