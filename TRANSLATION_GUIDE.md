@@ -34,7 +34,11 @@ News articles are **not** localised by the workflow that generates them. The per
 - `news/$DATE-$SUB-sv.html` (Swedish)
 - `news/$DATE-$SUB-da.html`, `news/$DATE-$SUB-no.html`, …, `news/$DATE-$SUB-zh.html` (remaining 12 languages)
 
-All 14 language renderings are produced by the per-type workflows themselves via the per-language `article.<lang>.md` step inside `06-article-generation.md`. The standalone [`news-translate`](.github/workflows/news-translate.md) workflow **does not touch** `news/*.html` at all; its sole mission is **executive-brief Markdown translation** — see §"Executive Brief Markdown Translations" below.
+**All 14 language renderings are produced by the per-type workflows themselves** via the **localized executive-brief cascade** inside the renderer. Per-type workflows write **only** the canonical English `article.md` (aggregated from all 23 analysis artifacts). The renderer then composes the English `article.md` body with `executive-brief_<lang>.md` (when present) via the cascade chain in `scripts/render-lib/article-merge.ts` (`mergeLocalizedWithEnglish`) + `scripts/render-lib/aggregator/seo/localized-brief.ts` to produce each non-English HTML file. The English body remains in English prose — **only the executive-brief hero section + SEO metadata is localized**.
+
+**Per-type workflows do NOT write `article.<lang>.md`** — these files are now **forbidden** by `scripts/validate-file-ownership.ts` (category-independent reject). Historical `article.<lang>.md` files left in the repo from old runs are treated as violations.
+
+The standalone [`news-translate`](.github/workflows/news-translate.md) workflow **does not touch** `news/*.html` at all; its sole mission is **executive-brief Markdown translation** — see §"Executive Brief Markdown Translations" below.
 
 In parallel with the rendered HTML, each per-type workflow also writes a Markdown **executive brief** (the 60-second BLUF artifact, ≈ 400–600 words) at `analysis/daily/$DATE/$SUB/executive-brief.md` (English only). Localised siblings `executive-brief_<lang>.md` for all 13 non-English target languages are produced **exclusively** by [`news-translate`](.github/workflows/news-translate.md), which runs three times daily (09:00 / 14:00 / 19:00 UTC) and:
 
