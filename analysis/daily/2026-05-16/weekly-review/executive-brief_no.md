@@ -63,4 +63,4 @@ Uken viser **konsentrasjon av sikkerhets-/demokratitemaer** konsistente med pre-
 | C kontra Govt om prop. 2025/26:258 | Risiko for at åpenhetsloven mislykkes eller vedtas uten tverrblokkert mandat | MEDIUM [B2] |
 | Dronekrigsdoktringap | Valgeksponering for regjeringen på forsvarsmodernisering | MEDIUM [B2] |
 
-<!-- source-sha: 84c1a88a2df18e97bdef9c56e53f2408ac799ff4 -->
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->

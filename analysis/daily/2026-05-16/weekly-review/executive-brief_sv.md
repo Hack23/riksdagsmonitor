@@ -63,4 +63,4 @@ Veckan uppvisar **koncentration av säkerhets-/demokratiteman** som är konsekve
 | C kontra Govt om prop. 2025/26:258 | Risk att transparenslagen misslyckas eller antas utan tvärblocktarligt mandat | MEDIUM [B2] |
 | Drönarkrigsdoktrinsgap | Valexponering för regeringen på försvarsmodernisering | MEDIUM [B2] |
 
-<!-- source-sha: 84c1a88a2df18e97bdef9c56e53f2408ac799ff4 -->
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->

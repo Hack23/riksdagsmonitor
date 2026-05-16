@@ -63,4 +63,4 @@ confidence: "HIGH [B2]"
 | C 대 Govt prop. 2025/26:258 관련 | 투명성 법이 실패하거나 범당파 위임 없이 통과될 위험 | MEDIUM [B2] |
 | 드론 전쟁 교리 격차 | 국방 현대화에 대한 정부의 선거 취약점 | MEDIUM [B2] |
 
-<!-- source-sha: 84c1a88a2df18e97bdef9c56e53f2408ac799ff4 -->
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->

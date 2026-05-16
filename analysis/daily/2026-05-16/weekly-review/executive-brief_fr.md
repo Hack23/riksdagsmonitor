@@ -63,4 +63,4 @@ La semaine présente une **concentration des thèmes sécurité/démocratie** co
 | C contre Govt sur la prop. 2025/26:258 | Risque que la loi sur la transparence échoue ou soit adoptée sans mandat transpartisan | MEDIUM [B2] |
 | Lacune dans la doctrine de guerre par drone | Vulnérabilité électorale du gouvernement sur la modernisation de la défense | MEDIUM [B2] |
 
-<!-- source-sha: 84c1a88a2df18e97bdef9c56e53f2408ac799ff4 -->
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->

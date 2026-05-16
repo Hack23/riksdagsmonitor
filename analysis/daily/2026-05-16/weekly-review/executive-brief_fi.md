@@ -63,4 +63,4 @@ Viikko osoittaa **turvallisuus-/demokratiateemojen konsentraatiota** yhdenmukais
 | C vastaan Govt prop. 2025/26:258:sta | Riski avoimuuslain epäonnistumisesta tai hyväksymisestä ilman laajapohjaista mandaattia | MEDIUM [B2] |
 | Drone-sotadoktriiniaukko | Vaalihaavoittuvuus hallitukselle puolustuksen uudenaikaistamisessa | MEDIUM [B2] |
 
-<!-- source-sha: 84c1a88a2df18e97bdef9c56e53f2408ac799ff4 -->
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->

@@ -63,4 +63,4 @@ La semana exhibe **concentración de temas de seguridad/democracia** consistente
 | C contra Govt sobre prop. 2025/26:258 | Riesgo de que la ley de transparencia fracase o sea aprobada sin mandato transversal | MEDIUM [B2] |
 | Brecha en la doctrina de guerra con drones | Vulnerabilidad electoral del gobierno en la modernización de la defensa | MEDIUM [B2] |
 
-<!-- source-sha: 84c1a88a2df18e97bdef9c56e53f2408ac799ff4 -->
+<!-- source-sha: 4dab56d2891eeda118e9fe89207421ca0f0be533 -->
