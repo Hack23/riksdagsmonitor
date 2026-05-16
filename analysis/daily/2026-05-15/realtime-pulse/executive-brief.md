@@ -66,3 +66,14 @@ Aurora 26 var den första NATO-integrerade storskaliga övningen sedan Sverige i
 
 **Ekonomisk kontext — IMF-precision**:
 WEO April 2026 (vintage, NGDP_RPCH SWE): Sverige BNP-tillväxt 2,3% 2026; ODA-andelen ~0,36% innebär att biståndsbudgeten på reala termer är ca 10 miljarder SEK under 2013 års nivå [B2]. IMF Fiscal Monitor (Apr-2026) visar Sverige nettoskuld vid 12% av BNP — kapacitet att återgå till 1%-målet existerar, men politisk vilja saknas.
+
+---
+
+## ✅ Retrofit Note (2026-05-16)
+
+**Original authoring**: 2026-05-15 under executive-brief template v < 4.4.
+**Retrofit scope** (applied 2026-05-16): no edits to body content. Only this transparency note appended.
+
+**Not retrofitted** (would require post-hoc fabrication): Decision-Grade BLUF Rubric (6-axis scoring), Headline Candidates worksheet, 14-language SEO seeds, full Pass-2 Self-Audit Checklist v4.4. These are required for 2026-05-16+ briefs per gate Check 7.
+
+**Substantive analysis, evidence, and conclusions unchanged.**

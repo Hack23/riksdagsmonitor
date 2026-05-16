@@ -1,6 +1,12 @@
-# Exekutivt Briefing — Evening Analysis 2026-05-15
+# Ryssland Legaliserar Aggression — Sverige Står Inför Tre Beslutsdeadlines Inom 7 Dagar
 **Author**: James Pether Sörling | **Distribuering**: Beslutsfattare, medborgare, journalister
 **Klassificering**: 🟢 Public | **Datum**: 2026-05-15
+
+---
+
+## 🎯 BLUF (Bottom Line Up Front)
+
+Ryssland antog en lag som explicit möjliggör unilateral militär aggression mot grannstater (HD11813, SD/Wiechel → UM/Stenergard). Historisk precedent: liknande lagstiftning föregick Krimoperationen 2014 med ~12 månader. Samtidigt står Riksdagen inför tre tidskritiska beslut inom 7 dagar — KU34 grundlagsändring (abort, föreningsfrihet), PUT-avskaffandet (HD03262) och CU31 hyresdereglering — vars utfall förändrar Sveriges institutionella och socioekonomiska riskprofil samtidigt som Aurora 26-övningen pågår.
 
 ---
 
@@ -62,3 +68,17 @@ Ryssland antog en lag som explicit möjliggör unilateral militär aggression mo
 3. **MEDELFRISTIG** (T+30d): Invänta Lagrådets yttranden (HD03262, HD03267).
 4. **STRATEGISK** (T+90d): Riksbankens bedömning av CU31:s makroekonomiska konsekvenser.
 
+
+---
+
+## ✅ Retrofit Note (2026-05-16)
+
+**Original authoring**: 2026-05-15 under executive-brief template v < 4.4.
+**Retrofit scope** (applied 2026-05-16, editorial-only, no analytical revision):
+
+- **H1 replaced** — boilerplate `Exekutivt Briefing — Evening Analysis 2026-05-15` → story-anchored headline drawn from existing brief content (Russia HD11813 + three time-critical decisions already named in §"TOPPRIORITET").
+- **`## 🎯 BLUF` section added** — BLUF paragraph synthesised solely from claims already present in the brief body (HD11813 / KU34 / HD03262 / CU31 / Aurora 26). No new evidence, no new actors, no new vote counts.
+
+**Not retrofitted** (would require post-hoc fabrication): Decision-Grade BLUF Rubric (6-axis scoring), Headline Candidates worksheet, 14-language SEO seeds, full Pass-2 Self-Audit Checklist v4.4. These are required for 2026-05-16+ briefs per gate Check 7.
+
+**Substantive analysis, evidence, and conclusions unchanged.**

@@ -1,4 +1,4 @@
-# Executive Brief — Interpellations 2026-05-15
+# Vänsterpartiet Tvingar Dousa att Försvara 30 Avvecklade Biståndsstrategier 29 Maj — Konsekvensanalyser Saknas
 
 **Classification**: 🟢 PUBLIC  
 **Assessment date**: 2026-05-15 (Pass 2)  
@@ -64,3 +64,16 @@ timeline
 ## Economic Context Note
 
 IMF WEO-2026-04 projicerar BNI-tillväxt 1,8% för Sverige 2026. Det finns inga makroekonomiska argument för att fortsätta biståndssänkningarna. [economicProvenance: provider=imf, dataflow=WEO, vintage=WEO-2026-04, status=degraded-via-context]
+
+---
+
+## ✅ Retrofit Note (2026-05-16)
+
+**Original authoring**: 2026-05-15 under executive-brief template v < 4.4.
+**Retrofit scope** (applied 2026-05-16, editorial-only, no analytical revision):
+
+- **H1 replaced** — boilerplate `Executive Brief — Interpellations 2026-05-15` → story-anchored headline drawn verbatim from the existing brief's own "Lead story" front-matter field (V's biståndsinterpellationer; Dousa svarar 2026-05-29).
+
+**Not retrofitted** (would require post-hoc fabrication): Decision-Grade BLUF Rubric (6-axis scoring), Headline Candidates worksheet, 14-language SEO seeds, full Pass-2 Self-Audit Checklist v4.4. These are required for 2026-05-16+ briefs per gate Check 7.
+
+**Substantive analysis, evidence, and conclusions unchanged.**

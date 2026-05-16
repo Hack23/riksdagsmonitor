@@ -55,3 +55,14 @@ mindmap
 ## Confidence Label
 
 **Overall assessment confidence**: HIGH [B2] — Admiralty Code B (reliable source: Riksdagens API officiella propositionsdata), credibility 2 (confirmed by official government channels). Economic context: IMF WEO Apr-2026 SWE vintage.
+
+---
+
+## ✅ Retrofit Note (2026-05-16)
+
+**Original authoring**: 2026-05-15 under executive-brief template v < 4.4.
+**Retrofit scope** (applied 2026-05-16): no edits to body content. Only this transparency note appended.
+
+**Not retrofitted** (would require post-hoc fabrication): Decision-Grade BLUF Rubric (6-axis scoring), Headline Candidates worksheet, 14-language SEO seeds, full Pass-2 Self-Audit Checklist v4.4. These are required for 2026-05-16+ briefs per gate Check 7.
+
+**Substantive analysis, evidence, and conclusions unchanged.**

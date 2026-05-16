@@ -65,3 +65,14 @@ confidence: "HIGH [B2]"
 | Dec 2025 exit: Liberia, Mozambique, Tanzania, Zimbabwe, Bolivia | HD10493 full text | 2026-05-15 |
 | 1% GNI target abandoned with SD support | HD10492 + HD10493 full text | 2026-05-15 |
 | No impact assessment conducted | HD10493 full text: "Mig veterligen har regeringen inte ens gjort någon analys" | 2026-05-15 |
+
+---
+
+## ✅ Retrofit Note (2026-05-16)
+
+**Original authoring**: 2026-05-15 under executive-brief template v < 4.4.
+**Retrofit scope** (applied 2026-05-16): no edits to body content. Only this transparency note appended.
+
+**Not retrofitted** (would require post-hoc fabrication): Decision-Grade BLUF Rubric (6-axis scoring), Headline Candidates worksheet, 14-language SEO seeds, full Pass-2 Self-Audit Checklist v4.4. These are required for 2026-05-16+ briefs per gate Check 7.
+
+**Substantive analysis, evidence, and conclusions unchanged.**
