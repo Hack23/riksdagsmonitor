@@ -6,7 +6,7 @@ date: 2026-04-20
 subfolder: interpellations
 slug: 2026-04-20-interpellations
 source_folder: analysis/daily/2026-04-20/interpellations
-generated_at: 2026-05-16T20:24:25.453Z
+generated_at: 2026-05-17T18:40:43.140Z
 language: en
 layout: article
 ---
@@ -100,6 +100,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2380,13 +2393,863 @@ The AI-FIRST principle mandates **minimum 2 complete iterations** with genuine c
 ### Calendar API Status
 Calendar API returned HTML instead of JSON (known Riksdagen API issue). ANM date for HD10437/HD10438 is 2026-04-21 (tomorrow).
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# ملخص تنفيذي لصانعي القرار — موجة الاستجوابات 2026-04-20
+
+**التصنيف**: عام · **تاريخ التحليل**: 2026-04-20 · **الأفق**: أسبوعان (29 أبريل – 5 مايو، نافذة الردود) · **مستوى الثقة**: مرتفع
+
+---
+
+### BLUF (الخلاصة أولاً)
+
+بين 7 و17 أبريل 2026، تلقّى البرلمان السويدي (Riksdag) نحو 15 استجواباً — يُحلَّل منها **10 في هذا التقرير** (`HD10429–HD10438`، بما فيها واحد مسحوب، HD10436). تمثّل هذه المجموعة من 10 وثائق أكبر ضغط مركّز على المساءلة في riksmöte 2025/26. الإشارة الحاسمة: **ستفشل السويد في نقل توجيه الاتحاد الأوروبي بشأن شفافية الأجور قبل الموعد النهائي في 7 يونيو 2026**، بعد أن سحبت الحكومة مقترحها التطبيقي. وهذا موثَّق في السجل الرسمي للبرلمان عبر الاستجواب 2025/26:437 (HD10437). يستغلّ الحزب الاشتراكي الديمقراطي (S) هذا الإخفاق عبر رواية انتخابية منسّقة لعام 2026، تشمل استجوابَين توأمَين في 17 أبريل ضد وزيرة المساواة نينا لارسون (L)، وخمسة استجوابات متراكمة ضد وزير البنية التحتية أندرياس كارلسون (KD)، ونائب مستقل (الحاج) يضغط على وزيرة الخارجية مالمر ستينرغارد (M) بنافذة رد مدتها 10 أيام. **استراتيجية ردّ الحكومة في نافذة 29 أبريل–5 مايو ستحدد ما إذا كانت هذه الموجة ستتحوّل إلى سرديّة انتخابية راسخة.**
+
+---
+
+### أبرز 5 نتائج استراتيجية
+
+1. 🔴 **إخفاق موثَّق في نقل التوجيه الأوروبي** (HD10437، تأثير 9.2/10). سحب السويد مقترحها الخاص يخلق **سجلاً واقعياً لا دحض له** ستستغله S لمدة 6+ أشهر قبل انتخابات 2026.
+2. 🔴 **نمط هجوم التقديم المزدوج المنسَّق** (HD10437 + HD10438، نفس اليوم، نفس النائب، نفس الوزيرة). كوريوغرافيا مساءلة انتخابية كلاسيكية. أول نمط من هذا القبيل في rm 2025/26.
+3. 🟠 **قنبلة موقوتة دبلوماسية** (HD10435، تأثير 9.0/10). استجواب الحاج ثلاثي المطالب حول اغتيال برنادوت عام 1948 يمتلك فتيلاً مدته 10 أيام (الموعد النهائي 30 أبريل)، وسيضطر مالمر ستينرغارد إلى اتخاذ موقف يُبعد إسرائيل أو يُخيّب التوقعات التقدمية/الشتاتية.
+4. 🟠 **تشبّع وزاري — كارلسون (KD)**. ستة استجوابات أو أكثر حول الإسكان والطيران والسكك الحديدية والطرق والبنية الدفاعية خلال 4 أسابيع. بيانات Länsstyrelsen الكمية (11,091 بداية في ستوكهولم = −900 سنوياً) تغذّي الرواية.
+5. 🟡 **إشارة سحب تكتيكي** (HD10436، صناعة الفضاء، S/Wiking). يُشير السحب الطوعي إلى تسوية غير رسمية بين الدولة والصناعة في السياسة الصناعية الاستراتيجية.
+
+---
+
+### لمحة المساءلة الوزارية
+
+| الوزير/ة | الحزب | استجوابات (نشطة) | أقرب موعد | المخاطر |
+|---------|-------|-----------------|-----------|---------|
+| Andreas Carlson | KD | 6+ | 29 أبريل (HD10434) | 🔴 حرج |
+| Nina Larsson | L | 2 (منسّقة) | 5 مايو | 🔴 مرتفع |
+| Maria Malmer Stenergard | M | 1+1 (HD10426+HD10435) | 30 أبريل (عاجل) | 🔴 مرتفع |
+| Elisabeth Svantesson | M | 1+1 (HD10433+HD10427) | 29 أبريل | 🟡 مرتفع |
+| Elisabet Lann | KD | 2 (HD10432+HD10415) | 5 مايو | 🟡 مرتفع |
+| Benjamin Dousa | M | 1 (HD10431) | 28 أبريل | 🟡 مرتفع |
+| Jakob Forssmed | KD | 1 (HD10430) | 21 أبريل | 🟢 معتدل |
+| Gunnar Strömmer | M | 1 (HD10429) | 21 أبريل | 🟢 معتدل |
+| Lotta Edholm | L | 0 (HD10436 مسحوب) | — | 🟢 منخفض |
+
+---
+
+### التداعيات الاستراتيجية (انتخابات 2026)
+
+- **لدى S عمود فقري للحملة**: فشل التوجيه الأوروبي + ملاجئ النساء + مفارقة الضريبة لدى المليارديرات + تراجع الإسكان + تشبع البنية التحتية. موضوعات تتعزز بعضها بعضاً.
+- **تصدّعات التحالف**: وزيرة L تفشل في المساواة (العلامة الجوهرية)، وزير KD الأكثر استهدافاً، SD تحت ضغط معاكس لغير المتوقع (HD10429 حرية التعبير)، C تتميّز في حقوق مجتمع LGBTQI+ (HD10431).
+- **الموعد النهائي 7 يونيو ساعة عدّ تنازلي**: تحصل S على عنوان إضافي كل أسبوع تفشل فيه لارسون في الإعلان عن تقدم.
+- **انكشاف دبلوماسي**: HD10435 (برنادوت) يفرض موقفاً من السياسة الخارجية تجاه إسرائيل.
+
+---
+
+### ما يجب رصده (14 يوماً القادمة)
+
+- 21 أبريل: ANM لـ HD10437 + HD10438 (معالجة في الغرفة)
+- 21 أبريل: نقاش في الغرفة حول HD10429 (حرية التعبير) و HD10430 (المساجد)
+- 28 أبريل: موعد الرد على HD10431 (حقوق LGBTQI+)
+- 29 أبريل: ردود على HD10433 (الضرائب) و HD10434 (الإسكان)
+- 30 أبريل: الرد على HD10435 (برنادوت) — **يوم إعلامي**
+- 5 مايو: ردود على HD10437 (التوجيه الأوروبي) و HD10438 (الملاجئ)
+
+---
+
+**مستوى ثقة التحليل**: مرتفع — مصادر أولية (نص كامل MCP لـ HD10437، HD10438، HD10435، HD10434، HD10433)
+**رقابة تحريرية بشرية**: مطلوبة قبل النشر
+**التحديث التالي**: 2026-04-29
+
+<!-- source-sha: 6ea99976805b59adead153c9317e2720190809de -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_da.md -->
+
+**Klassificering**: Offentlig · **Analysedato**: 2026-04-20 · **Horisont**: 2 uger (29. april – 5. maj svarvindue) · **Konfidens**: HØJ
+
+---
+
+### BLUF (Konklusionen først)
+
+Mellem den 7. og 17. april 2026 modtog den svenske Riksdag cirka 15 interpellationer — hvoraf **10 analyseres her** (`HD10429–HD10438`, inklusive ét tilbagetrukket, HD10436). Denne samling på 10 dokumenter repræsenterer den mest koncentrerede ansvarsoffensiv i riksmöte 2025/26. Det afgørende signal er, at **Sverige vil mislykkes med at gennemføre EU's løngennemsigtighedsdirektiv inden fristen den 7. juni 2026**, efter at regeringen trak sit eget implementeringsforslag tilbage. Socialdemokraterne (S) udnytter dette svigt via en koordineret fortælling frem mod valget 2026 med to tvillingeinterpellationer den 17. april mod ligestillingsminister Nina Larsson (L), fem akkumulerede interpellationer mod infrastrukturminister Andreas Carlson (KD) og et uafhængigt parlamentsmedlem (El-Haj), der presser udenrigsminister Malmer Stenergard (M) med en 10-dages svarfrist. **Regeringens svarstrategi i vinduet 29. april–5. maj vil afgøre, om denne bølge omsættes til en varig valgfortælling.**
+
+---
+
+### Top 5 strategiske fund
+
+1. 🔴 **Dokumenteret svigt med EU-direktivgennemførelse** (HD10437, sig 9,2/10). Sveriges eget tilbagetrækning af implementeringsforslaget skaber en **uimodsigelig faktuel rekord**, som S vil udnytte i 6+ måneder frem mod valget 2026.
+2. 🔴 **Koordineret dobbelt indgivelsesmønster** (HD10437 + HD10438, samme dag, samme MP, samme minister). Klassisk pre-valgskoreografi for ansvarlighed. Første sådant mønster i rm 2025/26.
+3. 🟠 **Diplomatisk ansvarligheds-tidsbombe** (HD10435, sig 9,0/10). El-Hajs tre-kravs-interpellation om 1948 Bernadotte-attentatet har en 10-dages lunte (frist 30. april) og vil tvinge en holdning fra Malmer Stenergard, der enten fremmedgør Israel eller skuffer progressive/diaspora-vælgere.
+4. 🟠 **Ministermætning — Carlson (KD)**. Seks-plus interpellationer om boliger, luftfart, jernbane, veje og forsvarsinfrastruktur over 4 uger. Kvantificerede Länsstyrelsendata (11.091 Stockholm-starter = −900 år/år) driver fortællingen.
+5. 🟡 **Taktisk tilbagetrækningssignal** (HD10436, rumindustri, S/Wiking). Frivillig tilbagetrækning antyder uformel statlig-industriel tilpasning på strategisk industripolitik.
+
+---
+
+### Ministeransvarsoversigt
+
+| Minister | Parti | Interpellationer (aktive) | Nærmeste frist | Risiko |
+|----------|-------|--------------------------|----------------|--------|
+| Andreas Carlson | KD | 6+ | 29. april (HD10434) | 🔴 KRITISK |
+| Nina Larsson | L | 2 (koordinerede) | 5. maj | 🔴 HØJ |
+| Maria Malmer Stenergard | M | 1+1 (HD10426+HD10435) | 30. april (PRESSERENDE) | 🔴 HØJ |
+| Elisabeth Svantesson | M | 1+1 (HD10433+HD10427) | 29. april | 🟡 FORHØJET |
+| Elisabet Lann | KD | 2 (HD10432+HD10415) | 5. maj | 🟡 FORHØJET |
+| Benjamin Dousa | M | 1 (HD10431) | 28. april | 🟡 FORHØJET |
+| Jakob Forssmed | KD | 1 (HD10430) | 21. april | 🟢 MODERAT |
+| Gunnar Strömmer | M | 1 (HD10429) | 21. april | 🟢 MODERAT |
+| Lotta Edholm | L | 0 (HD10436 tilbagetrukket) | — | 🟢 LAV |
+
+---
+
+### Strategiske implikationer (Valget 2026)
+
+- **S har en kampagnesøjle**: EU-direktivsvigt + kvindekrisecentre + milliardær-skateparadoks + boligfald + infrastrukturmætning. Gensidigt forstærkende temaer.
+- **Koalitionssvaghed synliggøres**: L-minister fejler på ligestilling (kernebrand), KD-minister mest udsat, SD under uventet pres (HD10429 ytringsfrihed), C differentierer sig på LGBTQI+-rettigheder (HD10431).
+- **EU-fristen den 7. juni er et nedtællingsuhr**: S får en ekstra overskrift hver uge, Larsson ikke melder fremskridt.
+- **Diplomatisk eksponering**: HD10435 (Bernadotte) tvinger en udenrigspolitisk holdning til Israel frem.
+
+---
+
+### Hvad der skal holdes øje med (Næste 14 dage)
+
+- 21. april: ANM af HD10437 + HD10438 (kammerbehandling)
+- 21. april: Kammerdebat om HD10429 (ytringsfrihed) og HD10430 (moskeer)
+- 28. april: Svarfrist HD10431 (LGBTQI+-rettigheder)
+- 29. april: Svar HD10433 (skat), HD10434 (boliger)
+- 30. april: Svar HD10435 (Bernadotte) — **MEDIEDAG**
+- 5. maj: Svar HD10437 (EU-direktiv), HD10438 (krisecentre)
+
+---
+
+**Analysekonfidensgrad**: HØJ — Primærkilder (MCP fulltekst HD10437, HD10438, HD10435, HD10434, HD10433)
+**Menneskelig redaktionel kontrol**: Påkrævet inden offentliggørelse
+**Næste opdatering**: 2026-04-29
+
+<!-- source-sha: 6ea99976805b59adead153c9317e2720190809de -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_de.md -->
+
+**Klassifizierung**: Öffentlich · **Analysedatum**: 2026-04-20 · **Horizont**: 2 Wochen (29. April – 5. Mai Antwortfenster) · **Konfidenz**: HOCH
+
+---
+
+### BLUF (Schlussfolgerung zuerst)
+
+Zwischen dem 7. und 17. April 2026 erhielt der schwedische Riksdag rund 15 Interpellationen — davon werden **10 hier analysiert** (`HD10429–HD10438`, einschließlich einer zurückgezogenen, HD10436). Dieses Set von 10 Dokumenten repräsentiert den größten konzentrierten Rechenschaftsdruck in riksmöte 2025/26. Das entscheidende Signal: **Schweden wird die EU-Lohntransparenzrichtlinie bis zur Frist am 7. Juni 2026 nicht umsetzen**, nachdem die Regierung ihren eigenen Umsetzungsvorschlag zurückgezogen hat. Dies ist im offiziellen Riksdag-Protokoll über Interpellation 2025/26:437 (HD10437) dokumentiert. Die Sozialdemokraten (S) nutzen dieses Versagen für eine koordinierte Vorwahlkampagne 2026 mit zwei Twin-Interpellationen am 17. April gegen Gleichstellungsministerin Nina Larsson (L), fünf kumulierten Interpellationen gegen Infrastrukturminister Andreas Carlson (KD) und einem unabhängigen Abgeordneten (El-Haj), der Außenministerin Malmer Stenergard (M) mit einem 10-Tage-Antwortfenster unter Druck setzt. **Die Antwortstrategie der Regierung im Fenster 29. April–5. Mai wird darüber entscheiden, ob diese Welle sich in eine dauerhafte Wahlkampferzählung verwandelt.**
+
+---
+
+### Top 5 strategische Erkenntnisse
+
+1. 🔴 **Dokumentiertes EU-Richtlinien-Umsetzungsversagen** (HD10437, Sig. 9,2/10). Schwedens eigene Rücknahme des Umsetzungsvorschlags schafft eine **unwiderlegbare faktische Dokumentation**, die S 6+ Monate vor der Wahl 2026 ausnutzen wird.
+2. 🔴 **Koordiniertes Doppeleinreichungsmuster** (HD10437 + HD10438, gleicher Tag, gleiche Abgeordnete, gleiche Ministerin). Klassische Vorwahl-Rechenschaftschoreografie. Erstes solches Muster in rm 2025/26.
+3. 🟠 **Diplomatische Rechenschaftszeitbombe** (HD10435, Sig. 9,0/10). El-Hajs Drei-Forderungs-Interpellation zum Bernadotte-Attentat 1948 hat eine 10-Tage-Zündschnur (Frist 30. April) und zwingt Malmer Stenergard zu einer Position, die entweder Israel verfehlend ist oder progressive/Diaspora-Wähler enttäuscht.
+4. 🟠 **Ministerübersättigung — Carlson (KD)**. Sechs-plus Interpellationen zu Wohnungsbau, Luftfahrt, Bahn, Straßen und Verteidigungsinfrastruktur über 4 Wochen. Quantifizierte Länsstyrelsendata (11.091 Stockholm-Neustarts = −900 im Jahresvergleich) befeuern die Erzählung.
+5. 🟡 **Taktisches Rückzugssignal** (HD10436, Raumfahrtindustrie, S/Wiking). Freiwilliger Rückzug deutet auf informelle staatlich-industrielle Übereinkunft in strategischer Industriepolitik hin.
+
+---
+
+### Ministerielle Rechenschaftsübersicht
+
+| Minister | Partei | Interpellationen (aktiv) | Nächste Frist | Risiko |
+|----------|--------|--------------------------|--------------|--------|
+| Andreas Carlson | KD | 6+ | 29. April (HD10434) | 🔴 KRITISCH |
+| Nina Larsson | L | 2 (koordiniert) | 5. Mai | 🔴 HOCH |
+| Maria Malmer Stenergard | M | 1+1 (HD10426+HD10435) | 30. April (DRINGEND) | 🔴 HOCH |
+| Elisabeth Svantesson | M | 1+1 (HD10433+HD10427) | 29. April | 🟡 ERHÖHT |
+| Elisabet Lann | KD | 2 (HD10432+HD10415) | 5. Mai | 🟡 ERHÖHT |
+| Benjamin Dousa | M | 1 (HD10431) | 28. April | 🟡 ERHÖHT |
+| Jakob Forssmed | KD | 1 (HD10430) | 21. April | 🟢 MODERAT |
+| Gunnar Strömmer | M | 1 (HD10429) | 21. April | 🟢 MODERAT |
+| Lotta Edholm | L | 0 (HD10436 zurückgezogen) | — | 🟢 NIEDRIG |
+
+---
+
+### Strategische Implikationen (Wahl 2026)
+
+- **S hat eine Kampagnenbasis**: EU-Richtlinienversagen + Frauenhäuser + Milliardärs-Steuerpardox + Wohnungsrückgang + Infrastrukturübersättigung. Sich gegenseitig verstärkende Themen.
+- **Koalitionsrisse sichtbar**: L-Ministerin versagt bei Gleichstellung (Kernmarkenwert), KD-Minister am stärksten angepeilt, SD unter unerwartetem Druck (HD10429 Meinungsfreiheit), C differenziert sich bei LGBTQI+-Rechten (HD10431).
+- **EU-Frist 7. Juni ist Countdown-Uhr**: S erhält jede Woche weitere Schlagzeilen, während Larsson keine Umsetzungsfortschritte meldet.
+- **Diplomatische Exposition**: HD10435 (Bernadotte) erzwingt außenpolitische Position zu Israel.
+
+---
+
+### Was zu beobachten ist (Nächste 14 Tage)
+
+- 21. April: ANM von HD10437 + HD10438 (Kammerfassung)
+- 21. April: Kammerdebatte zu HD10429 (Meinungsfreiheit) und HD10430 (Moscheen)
+- 28. April: Antwortfrist HD10431 (LGBTQI+-Rechte)
+- 29. April: Antworten HD10433 (Steuern), HD10434 (Wohnungsbau)
+- 30. April: Antwort HD10435 (Bernadotte) — **MEDIENTAG**
+- 5. Mai: Antworten HD10437 (EU-Richtlinie), HD10438 (Frauenhäuser)
+
+---
+
+**Analysekonfidenzniveau**: HOCH — Primärquellen (MCP Volltext HD10437, HD10438, HD10435, HD10434, HD10433)
+**Menschliche redaktionelle Aufsicht**: Vor Veröffentlichung erforderlich
+**Nächste Aktualisierung**: 2026-04-29
+
+<!-- source-sha: 6ea99976805b59adead153c9317e2720190809de -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_es.md -->
+
+**Clasificación**: Público · **Fecha de análisis**: 2026-04-20 · **Horizonte**: 2 semanas (29 de abril – 5 de mayo, ventana de respuesta) · **Confianza**: ALTA
+
+---
+
+### BLUF (Conclusión primero)
+
+Entre el 7 y el 17 de abril de 2026, el Riksdag sueco recibió aproximadamente 15 interpelaciones, de las cuales **10 son objeto de análisis** (`HD10429–HD10438`, incluyendo una retirada, HD10436). Este conjunto de 10 documentos representa la mayor presión coordinada de rendición de cuentas del riksmöte 2025/26. La señal decisiva es que **Suecia no logrará transponer la Directiva europea sobre transparencia salarial antes de la fecha límite del 7 de junio de 2026**, tras retirar el gobierno su propia propuesta de aplicación. Este hecho queda documentado en el registro oficial del Riksdag mediante la interpelación 2025/26:437 (HD10437). Los socialdemócratas (S) están convirtiendo este fracaso en un arma mediante una narrativa coordinada preelectoral 2026, con dos interpelaciones gemelas el 17 de abril contra la ministra de Igualdad Nina Larsson (L), cinco interpelaciones acumuladas contra el ministro de Infraestructuras Andreas Carlson (KD), y un diputado independiente (El-Haj) que presiona a la ministra de Asuntos Exteriores Malmer Stenergard (M) con una ventana de respuesta de 10 días. **La estrategia de respuesta del gobierno en la ventana del 29 de abril al 5 de mayo determinará si esta oleada se convierte en una narrativa electoral duradera.**
+
+---
+
+### Las 5 principales conclusiones estratégicas
+
+1. 🔴 **Fracaso documentado en la transposición de la directiva europea** (HD10437, sig. 9,2/10). La propia retirada sueca del proyecto de implementación crea un **expediente factual irrefutable** que S explotará 6+ meses antes de las elecciones 2026.
+2. 🔴 **Patrón coordinado de doble presentación** (HD10437 + HD10438, mismo día, mismo diputado, misma ministra). Coreografía clásica de rendición de cuentas preelectoral. Primer patrón de este tipo en rm 2025/26.
+3. 🟠 **Bomba de tiempo diplomática** (HD10435, sig. 9,0/10). La interpelación de tres exigencias de El-Haj sobre el asesinato de Bernadotte en 1948 tiene una mecha de 10 días (fecha límite 30 de abril) y obligará a Malmer Stenergard a adoptar una posición que o bien aliene a Israel o bien decepcione a votantes progresistas/diáspora.
+4. 🟠 **Saturación ministerial — Carlson (KD)**. Seis o más interpelaciones sobre vivienda, aviación, ferrocarril, carreteras e infraestructuras de defensa en 4 semanas. Datos cuantificados de Länsstyrelsen (11.091 inicios en Estocolmo = −900 interanual) alimentan la narrativa.
+5. 🟡 **Señal de retirada táctica** (HD10436, industria espacial, S/Wiking). La retirada voluntaria sugiere una acomodación informal Estado-industria en política industrial estratégica.
+
+---
+
+### Instantánea de responsabilidad ministerial
+
+| Ministro/a | Partido | Interpelaciones (activas) | Próxima fecha límite | Riesgo |
+|------------|---------|--------------------------|---------------------|--------|
+| Andreas Carlson | KD | 6+ | 29 de abril (HD10434) | 🔴 CRÍTICO |
+| Nina Larsson | L | 2 (coordinadas) | 5 de mayo | 🔴 ALTO |
+| Maria Malmer Stenergard | M | 1+1 (HD10426+HD10435) | 30 de abril (URGENTE) | 🔴 ALTO |
+| Elisabeth Svantesson | M | 1+1 (HD10433+HD10427) | 29 de abril | 🟡 ELEVADO |
+| Elisabet Lann | KD | 2 (HD10432+HD10415) | 5 de mayo | 🟡 ELEVADO |
+| Benjamin Dousa | M | 1 (HD10431) | 28 de abril | 🟡 ELEVADO |
+| Jakob Forssmed | KD | 1 (HD10430) | 21 de abril | 🟢 MODERADO |
+| Gunnar Strömmer | M | 1 (HD10429) | 21 de abril | 🟢 MODERADO |
+| Lotta Edholm | L | 0 (HD10436 retirada) | — | 🟢 BAJO |
+
+---
+
+### Implicaciones estratégicas (Elecciones 2026)
+
+- **S tiene un eje de campaña**: fracaso de la directiva europea + casas de acogida para mujeres + paradoja fiscal de multimillonarios + declive de la vivienda + saturación de infraestructuras. Temas que se refuerzan mutuamente.
+- **Fracturas en la coalición**: Ministra de L fracasa en igualdad (marca central), ministro de KD más atacado, SD bajo presión invertida inesperada (HD10429 libertad de expresión), C se diferencia en derechos LGBTQI+ (HD10431).
+- **La fecha límite del 7 de junio es un contador regresivo**: S obtiene un titular adicional cada semana que Larsson no anuncia avances.
+- **Exposición diplomática**: HD10435 (Bernadotte) obliga a una posición de política exterior sobre Israel.
+
+---
+
+### Qué vigilar (próximos 14 días)
+
+- 21 de abril: ANM de HD10437 + HD10438 (tratamiento en cámara)
+- 21 de abril: Debate en cámara sobre HD10429 (libertad de expresión) y HD10430 (mezquitas)
+- 28 de abril: Fecha límite de respuesta HD10431 (derechos LGBTQI+)
+- 29 de abril: Respuestas HD10433 (impuestos), HD10434 (vivienda)
+- 30 de abril: Respuesta HD10435 (Bernadotte) — **DÍA MEDIÁTICO**
+- 5 de mayo: Respuestas HD10437 (directiva europea), HD10438 (casas de acogida)
+
+---
+
+**Nivel de confianza analítica**: ALTA — Fuentes primarias (texto completo MCP de HD10437, HD10438, HD10435, HD10434, HD10433)
+**Supervisión editorial humana**: Requerida antes de publicación
+**Próxima actualización**: 2026-04-29
+
+<!-- source-sha: 6ea99976805b59adead153c9317e2720190809de -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_fi.md -->
+
+**Luokitus**: Julkinen · **Analyysipäivä**: 2026-04-20 · **Horisontti**: 2 viikkoa (29.4. – 5.5. vastausikkuna) · **Luottamustaso**: KORKEA
+
+---
+
+### BLUF (Johtopäätös ensin)
+
+Ruotsin riksdag sai 7.–17. huhtikuuta 2026 noin 15 välikysymystä — joista **10 analysoidaan tässä** (`HD10429–HD10438`, mukaan lukien yksi peruutettu, HD10436). Tämä 10 asiakirjan joukko edustaa riksmöte 2025/26:n tähänastista suurinta koordinoitua vastuullisuuspainetta. Ratkaiseva signaali on, että **Ruotsi epäonnistuu EU:n palkkojen läpinäkyvyydestä annetun direktiivin täytäntöönpanossa 7. kesäkuuta 2026 mennessä**, koska hallitus veti takaisin oman täytäntöönpanoehdotuksensa. Sosiaalidemokraatit (S) hyödyntävät tätä epäonnistumista koordinoidulla kertomuksella ennen vuoden 2026 vaaleja kahdella 17. huhtikuuta toimitetulla kaksoisvälikysymyksellä tasa-arvoministeri Nina Larssonille (L), viidellä kertyneellä välikysymyksellä infrastruktuuriministeri Andreas Carlsonille (KD) sekä riippumattomalla kansanedustajalla (El-Haj), joka painostaa ulkoministeri Malmer Stenergadia (M) 10 päivän vastausajalla. **Hallituksen vastausstrategia 29.4.–5.5. ikkunassa ratkaisee, muuttuuko tämä aalto pysyväksi vaalinarratiiviksi.**
+
+---
+
+### 5 tärkeintä strategista havaintoa
+
+1. 🔴 **Dokumentoitu EU-direktiivin täytäntöönpanon epäonnistuminen** (HD10437, sig 9,2/10). Ruotsin oman täytäntöönpanoehdotuksen peruuttaminen luo **kiistattoman tosiasiallisen kirjauksen**, jota S hyödyntää 6+ kuukautta ennen vaaleja.
+2. 🔴 **Koordinoitu kaksoisjättämisen hyökkäysmalli** (HD10437 + HD10438, sama päivä, sama kansanedustaja, sama ministeri). Tyypillinen ennakkovaalikoreografia. Ensimmäinen tällainen malli rm 2025/26:ssa.
+3. 🟠 **Diplomaattinen vastuullisuuden aikapommi** (HD10435, sig 9,0/10). El-Hajin kolme vaatimusta koskeva välikysymys vuoden 1948 Bernadotte-murhayrityksestä asettaa Malmer Stenergardille 10 päivän lukon (määräaika 30.4.), mikä pakottaa kantaan joka joko vieraannuttaa Israelin tai pettää progressiiviset/diasporaäänestäjät.
+4. 🟠 **Ministerikyllästyminen — Carlson (KD)**. Kuusi-plus välikysymystä asumisesta, ilmailusta, rautateistä, teistä ja puolustusinfrastruktuurista 4 viikon aikana. Kvantifioitu Länsstyrelsenin tieto (11 091 Tukholman aloitusta = −900 vuodessa) ruokkii kertomusta.
+5. 🟡 **Taktinen peruuttamissignaali** (HD10436, avaruusteollisuus, S/Wiking). Vapaaehtoinen peruuttaminen viittaa epäviralliseen valtion ja teollisuuden sovintoon strategisessa teollisuuspolitiikassa.
+
+---
+
+### Ministerien vastuullisuuskatsaus
+
+| Ministeri | Puolue | Välikysymykset (aktiiviset) | Lähin määräaika | Riski |
+|-----------|--------|-----------------------------|-----------------|-------|
+| Andreas Carlson | KD | 6+ | 29.4. (HD10434) | 🔴 KRIITTINEN |
+| Nina Larsson | L | 2 (koordinoidut) | 5.5. | 🔴 KORKEA |
+| Maria Malmer Stenergard | M | 1+1 (HD10426+HD10435) | 30.4. (KIIREELLINEN) | 🔴 KORKEA |
+| Elisabeth Svantesson | M | 1+1 (HD10433+HD10427) | 29.4. | 🟡 KOHONNUT |
+| Elisabet Lann | KD | 2 (HD10432+HD10415) | 5.5. | 🟡 KOHONNUT |
+| Benjamin Dousa | M | 1 (HD10431) | 28.4. | 🟡 KOHONNUT |
+| Jakob Forssmed | KD | 1 (HD10430) | 21.4. | 🟢 KOHTALAINEN |
+| Gunnar Strömmer | M | 1 (HD10429) | 21.4. | 🟢 KOHTALAINEN |
+| Lotta Edholm | L | 0 (HD10436 peruutettu) | — | 🟢 MATALA |
+
+---
+
+### Strategiset vaikutukset (Vaalit 2026)
+
+- **S:llä on kampanjaranka**: EU-direktiivin epäonnistuminen + naisten turvakoti + miljardinparatiisin vero + asuntotuotannon lasku + infrastruktuurikyllästyminen. Toisiaan vahvistavat teemat.
+- **Koalitiohaarat paljastuvat**: L-ministeri epäonnistuu tasa-arvossa (ydintunniste), KD-ministeri eniten kohteena, SD odottamattoman paineistuksen alla (HD10429 sananvapaus), C erottautuu LGBTQI+-oikeuksissa (HD10431).
+- **EU:n 7. kesäkuuta määräaika on laskuri**: S saa lisäotsikon joka viikko, kun Larsson ei ilmoita edistymisestä.
+- **Diplomatinen altistuminen**: HD10435 (Bernadotte) pakottaa ulkopoliittisen kannan Israeliin.
+
+---
+
+### Seurattavaa (Seuraavat 14 päivää)
+
+- 21.4.: ANM HD10437 + HD10438 (täysistuntokäsittely)
+- 21.4.: Täysistuntokeskustelu HD10429 (sananvapaus) ja HD10430 (moskeijat)
+- 28.4.: Vastausmääräaika HD10431 (LGBTQI+-oikeudet)
+- 29.4.: Vastaukset HD10433 (verot), HD10434 (asuminen)
+- 30.4.: Vastaus HD10435 (Bernadotte) — **MEDIAPÄIVÄ**
+- 5.5.: Vastaukset HD10437 (EU-direktiivi), HD10438 (turvakoteja)
+
+---
+
+**Analyysitasoluottamus**: KORKEA — Primärilähteet (MCP koko teksti HD10437, HD10438, HD10435, HD10434, HD10433)
+**Ihmistoimituksellinen valvonta**: Vaaditaan ennen julkaisemista
+**Seuraava päivitys**: 2026-04-29
+
+<!-- source-sha: 6ea99976805b59adead153c9317e2720190809de -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_fr.md -->
+
+---
+
+### BLUF (Conclusion d'abord)
+
+Entre le 7 et le 17 avril 2026, le Riksdag suédois a reçu environ 15 interpellations — dont **10 sont analysées ici** (`HD10429–HD10438`, y compris un retrait, HD10436). Cet ensemble de 10 documents représente la pression de responsabilité la plus concentrée sous riksmöte 2025/26. Le signal décisif est que **la Suède manquera à la transposition de la directive européenne sur la transparence des salaires avant l'échéance du 7 juin 2026**, après que le gouvernement a retiré son propre projet de mise en œuvre. Cela est documenté dans le procès-verbal officiel du Riksdag via l'interpellation 2025/26:437 (HD10437). Les sociaux-démocrates (S) instrumentalisent cet échec via un récit coordonné pré-élection 2026 avec deux interpellations jumelles le 17 avril contre la ministre de l'Égalité Nina Larsson (L), cinq interpellations cumulées contre le ministre des Infrastructures Andreas Carlson (KD), et un député indépendant (El-Haj) pressant la ministre des Affaires étrangères Malmer Stenergard (M) avec une fenêtre de réponse de 10 jours. **La stratégie de réponse du gouvernement dans la fenêtre du 29 avril–5 mai déterminera si cette vague se transforme en récit électoral durable.**
+
+---
+
+### Top 5 des constats stratégiques
+
+1. 🔴 **Échec documenté de transposition de directive européenne** (HD10437, sig. 9,2/10). Le retrait par la Suède de sa propre proposition crée un **dossier factuel irréfutable** que S exploitera 6+ mois avant l'élection 2026.
+2. 🔴 **Schéma d'attaque à double dépôt coordonné** (HD10437 + HD10438, même jour, même député, même ministère). Chorégraphie de responsabilisation pré-électorale classique. Premier tel schéma en rm 2025/26.
+3. 🟠 **Bombe à retardement diplomatique** (HD10435, sig. 9,0/10). L'interpellation à trois exigences d'El-Haj sur l'assassinat de Bernadotte en 1948 a un délai de 10 jours (échéance 30 avril) et forcera une position de Malmer Stenergard qui soit aliène Israël soit déçoit les électeurs progressistes/diaspora.
+4. 🟠 **Saturation ministérielle — Carlson (KD)**. Six-plus interpellations sur le logement, l'aviation, le ferroviaire, les routes et les infrastructures de défense sur 4 semaines. Les données quantifiées de Länsstyrelsen (11 091 mises en chantier à Stockholm = −900 a/a) alimentent le récit.
+5. 🟡 **Signal de retrait tactique** (HD10436, industrie spatiale, S/Wiking). Retrait volontaire laissant entrevoir une accommodation informelle État-industrie sur la politique industrielle stratégique.
+
+---
+
+### Tableau des responsabilités ministérielles
+
+| Ministre | Parti | Interpellations (actives) | Prochaine échéance | Risque |
+|----------|-------|--------------------------|-------------------|--------|
+| Andreas Carlson | KD | 6+ | 29 avril (HD10434) | 🔴 CRITIQUE |
+| Nina Larsson | L | 2 (coordonnées) | 5 mai | 🔴 ÉLEVÉ |
+| Maria Malmer Stenergard | M | 1+1 (HD10426+HD10435) | 30 avril (URGENT) | 🔴 ÉLEVÉ |
+| Elisabeth Svantesson | M | 1+1 (HD10433+HD10427) | 29 avril | 🟡 ÉLEVÉ |
+| Elisabet Lann | KD | 2 (HD10432+HD10415) | 5 mai | 🟡 ÉLEVÉ |
+| Benjamin Dousa | M | 1 (HD10431) | 28 avril | 🟡 ÉLEVÉ |
+| Jakob Forssmed | KD | 1 (HD10430) | 21 avril | 🟢 MODÉRÉ |
+| Gunnar Strömmer | M | 1 (HD10429) | 21 avril | 🟢 MODÉRÉ |
+| Lotta Edholm | L | 0 (HD10436 retiré) | — | 🟢 FAIBLE |
+
+---
+
+### Implications stratégiques (Élection 2026)
+
+- **S a une colonne vertébrale de campagne** : Échec de directive européenne + foyers pour femmes + paradoxe fiscal des milliardaires + déclin du logement + saturation des infrastructures. Thèmes mutuellement renforçants.
+- **Failles de la coalition** : Ministre L échoue sur l'égalité (marque centrale), ministre KD le plus ciblé, SD sous pression inattendue (HD10429 liberté d'expression), C se différencie sur les droits LGBTQI+ (HD10431).
+- **L'échéance du 7 juin est un compte à rebours** : S obtient des gros titres supplémentaires chaque semaine où Larsson ne signale pas d'avancée.
+- **Exposition diplomatique** : HD10435 (Bernadotte) force une prise de position politique étrangère sur Israël.
+
+---
+
+### À surveiller (14 prochains jours)
+
+- 21 avril : ANM de HD10437 + HD10438 (traitement en chambre)
+- 21 avril : Débat en chambre sur HD10429 (liberté d'expression) et HD10430 (mosquées)
+- 28 avril : Date limite de réponse HD10431 (droits LGBTQI+)
+- 29 avril : Réponses HD10433 (impôts), HD10434 (logement)
+- 30 avril : Réponse HD10435 (Bernadotte) — **JOUR MÉDIATIQUE**
+- 5 mai : Réponses HD10437 (directive UE), HD10438 (foyers)
+
+---
+
+**Niveau de confiance analytique** : ÉLEVÉ — Sources primaires (MCP texte intégral HD10437, HD10438, HD10435, HD10434, HD10433)
+**Supervision éditoriale humaine** : Requise avant publication
+**Prochaine mise à jour** : 2026-04-29
+
+<!-- source-sha: 6ea99976805b59adead153c9317e2720190809de -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# סיכום מקבלי החלטות — גל בין-ערעורים 2026-04-20
+
+**תאריך**: 2026-04-20 | **סיווג**: ציבורי | **הופק על-ידי**: news-interpellations
+
+---
+
+### BLUF (מסקנה תחילה)
+
+בין ה-7 ל-17 באפריל 2026 קיבל הריקסדאג השוודי כ-15 פניות בין-ערעוריות — מתוכן **10 מנותחות כאן** (`HD10429–HD10438`, כולל אחת שנמשכה, HD10436). מסמכים אלה מייצגים את המהלך המרוכז ביותר לאחריות שלטונית ב-riksmöte 2025/26. האות המכריע: **שוודיה לא תעמוד בדד לדד להעברת הנחיית האיחוד האירופי בדבר שקיפות שכר לפני המועד האחרון ב-7 ביוני 2026**, לאחר שהממשלה משכה את הצעת היישום שלה. עובדה זו מתועדת בפרוטוקול הרשמי של הריקסדאג דרך פנייה בין-ערעורית 2025/26:437 (HD10437). הסוציאל-דמוקרטים (S) ממנפים את הכישלון הזה דרך נרטיב מתואם לקראת בחירות 2026 עם שני פניות-תאומות ב-17 באפריל נגד שרת השוויון ניניה לרסון (L), חמש פניות מצטברות נגד שר התשתיות אנדרס קרלסון (KD), ומ"כ עצמאי (אל-חאג') שלוחץ על שרת החוץ מלמר-שטנרגארד (M) עם חלון תגובה של 10 ימים. **אסטרטגיית התגובה של הממשלה בחלון 29 באפריל–5 במאי תקבע האם גל זה יהפוך לנרטיב בחירות עמיד.**
+
+---
+
+### 5 ממצאים אסטרטגיים מובילים
+
+1. 🔴 **כישלון מתועד בהעברת הנחייה אירופאית** (HD10437, sig 9.2/10). משיכת שוודיה את הצעתה יוצרת **רשומה עובדתית בלתי ניתנת להפרכה** שבה S תנצל 6+ חודשים לפני בחירות 2026.
+2. 🔴 **דפוס התקפת הגשה כפולה מתואמת** (HD10437 + HD10438, אותו יום, אותו ח"כ, אותה שרה). כוריאוגרפיה קלאסית של אחריות לפני בחירות. הדפוס הראשון מסוג זה ב-rm 2025/26.
+3. 🟠 **פצצת זמן דיפלומטית** (HD10435, sig 9.0/10). הפנייה ה-שלוש-תנאים של אל-חאג' על רצח ברנדוט ב-1948 עם פתיל של 10 ימים (מועד אחרון 30 באפריל) תכריח מלמר-שטנרגארד לנקוט עמדה שתרחיק את ישראל או תאכזב בוחרים פרוגרסיביים/מהגרים.
+4. 🟠 **רוויית שרים — קרלסון (KD)**. שש פניות ויותר על דיור, תעופה, רכבות, כבישים ותשתיות ביטחוניות תוך 4 שבועות. נתוני Länsstyrelsen מכוּמתים (11,091 התחלות בסטוקהולם = −900 שנה/שנה) מזינים את הנרטיב.
+5. 🟡 **אות נסיגה טקטי** (HD10436, תעשיית חלל, S/Wiking). נסיגה מרצון מרמזת על הסדר בלתי-רשמי בין מדינה לתעשייה בנושא מדיניות תעשייה אסטרטגית.
+
+---
+
+### תמונת מצב אחריות שרים
+
+| שר/ה | מפלגה | פניות (פעילות) | מועד אחרון קרוב | סיכון |
+|------|-------|---------------|-----------------|-------|
+| Andreas Carlson | KD | 6+ | 29 באפריל (HD10434) | 🔴 קריטי |
+| Nina Larsson | L | 2 (מתואמות) | 5 במאי | 🔴 גבוה |
+| Maria Malmer Stenergard | M | 1+1 (HD10426+HD10435) | 30 באפריל (דחוף) | 🔴 גבוה |
+| Elisabeth Svantesson | M | 1+1 (HD10433+HD10427) | 29 באפריל | 🟡 מוגבה |
+| Elisabet Lann | KD | 2 (HD10432+HD10415) | 5 במאי | 🟡 מוגבה |
+| Benjamin Dousa | M | 1 (HD10431) | 28 באפריל | 🟡 מוגבה |
+| Jakob Forssmed | KD | 1 (HD10430) | 21 באפריל | 🟢 מתון |
+| Gunnar Strömmer | M | 1 (HD10429) | 21 באפריל | 🟢 מתון |
+| Lotta Edholm | L | 0 (HD10436 נמשכה) | — | 🟢 נמוך |
+
+---
+
+### השלכות אסטרטגיות (בחירות 2026)
+
+- **ל-S יש עמוד שדרה קמפיינאי**: כישלון הנחייה אירופאית + מקלטי נשים + פרדוקס מס מיליארדרים + ירידת דיור + רוויית תשתיות. נושאים המחזקים זה את זה.
+- **סדקי קואליציה**: שרת L כושלת בשוויון (מותג ליבה), שר KD המותקף ביותר, ש"ס תחת לחץ הפוך בלתי-צפוי (HD10429 חופש ביטוי), C מבדל עצמו בזכויות LGBTQI+ (HD10431).
+- **מועד אחרון 7 ביוני — שעון ספירה לאחור**: S מקבלת כותרות נוספות כל שבוע שלרסון אינה מודיעה על התקדמות.
+- **חשיפה דיפלומטית**: HD10435 (ברנדוט) מכריח עמדה במדיניות חוץ לגבי ישראל.
+
+---
+
+### נקודות מעקב (14 הימים הבאים)
+
+- 21 באפריל: ANM של HD10437 + HD10438 (דיון בכנסת)
+- 21 באפריל: ויכוח בכנסת על HD10429 (חופש ביטוי) ו-HD10430 (מסגדים)
+- 28 באפריל: מועד תגובה לHD10431 (זכויות LGBTQI+)
+- 29 באפריל: תגובות על HD10433 (מיסוי), HD10434 (דיור)
+- 30 באפריל: תגובה על HD10435 (ברנדוט) — **יום מדיה**
+- 5 במאי: תגובות על HD10437 (הנחייה האיחוד האירופי), HD10438 (מקלטים)
+
+---
+
+**אמינות ניתוח**: גבוהה — מקורות ראשיים (MCP טקסט מלא של HD10437, HD10438, HD10435, HD10434, HD10433)
+**פיקוח עריכה אנושי**: נדרש לפני פרסום
+**עדכון הבא**: 2026-04-29
+
+<!-- source-sha: 6ea99976805b59adead153c9317e2720190809de -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_ja.md -->
+
+**日付**: 2026-04-20 | **分類**: 公開 | **制作**: news-interpellations
+
+---
+
+### BLUF（結論から先に）
+
+2026年4月7日から17日にかけて、スウェーデン議会（Riksdag）は約15件の質問主意書を受理した。そのうち**10件がここで分析される**（`HD10429–HD10438`、取り下げられた1件HD10436を含む）。この10文書のセットはriksmöte 2025/26における最も集中した説明責任要求を代表する。決定的な信号：**スウェーデンは2026年6月7日の期限までにEU賃金透明性指令を国内法化できない見通し**だ。政府が自らの実施法案を撤回したためで、これはRiksdagの公式記録、質問主意書2025/26:437（HD10437）に記録されている。社会民主党（S）はこの失敗を2026年選挙前の協調的な説明責任キャンペーンで武器化している。4月17日にニーナ・ラーソン平等大臣（L）への二本同時質問主意書、アンドレアス・カールソン（KD）へ5件の累積、そして独立議員（エル＝ハジ）がマルメル・ステーナルガード外務大臣（M）を10日間の回答窓で圧迫している。**4月29日から5月5日の回答窓における政府の対応戦略が、この波が持続的な選挙ナラティブに転化するかどうかを決定する。**
+
+---
+
+### 戦略的主要発見 トップ5
+
+1. 🔴 **EU指令国内法化の失敗が文書化** (HD10437、影響度9.2/10)。スウェーデン自身の法案撤回は、Sが2026年選挙まで6ヶ月以上利用する**反論不可能な事実記録**を生み出す。
+2. 🔴 **協調ダブル提出攻撃パターン** (HD10437 + HD10438、同日・同議員・同大臣)。典型的な選挙前説明責任コレオグラフィー。rm 2025/26初のパターン。
+3. 🟠 **外交的説明責任の時限爆弾** (HD10435、影響度9.0/10)。エル＝ハジによる1948年ベルナドッテ暗殺に関する3要求質問主意書は10日のヒューズ（4月30日期限）を持ち、マルメル・ステーナルガードにイスラエルを遠ざけるか進歩的/ディアスポラ票を失望させる立場表明を迫る。
+4. 🟠 **大臣飽和状態 — カールソン（KD）**。4週間で住宅、航空、鉄道、道路、防衛インフラに関する6件以上の質問主意書。定量化されたLänsstyrelsenデータ（ストックホルム着工11,091件 = 前年比−900）がナラティブを支える。
+5. 🟡 **戦術的撤回シグナル** (HD10436、宇宙産業、S/Wiking)。自発的撤回は戦略的産業政策における国家と産業の非公式な協議合意を示唆する。
+
+---
+
+### 大臣責任スナップショット
+
+| 大臣 | 政党 | 質問主意書（活発） | 最近期限 | リスク |
+|------|------|-----------------|---------|--------|
+| Andreas Carlson | KD | 6+ | 4月29日 (HD10434) | 🔴 重大 |
+| Nina Larsson | L | 2（協調） | 5月5日 | 🔴 高 |
+| Maria Malmer Stenergard | M | 1+1 (HD10426+HD10435) | 4月30日（緊急） | 🔴 高 |
+| Elisabeth Svantesson | M | 1+1 (HD10433+HD10427) | 4月29日 | 🟡 注意 |
+| Elisabet Lann | KD | 2 (HD10432+HD10415) | 5月5日 | 🟡 注意 |
+| Benjamin Dousa | M | 1 (HD10431) | 4月28日 | 🟡 注意 |
+| Jakob Forssmed | KD | 1 (HD10430) | 4月21日 | 🟢 穏和 |
+| Gunnar Strömmer | M | 1 (HD10429) | 4月21日 | 🟢 穏和 |
+| Lotta Edholm | L | 0 (HD10436取り下げ) | — | 🟢 低 |
+
+---
+
+### 戦略的示唆（2026年選挙）
+
+- **S には選挙運動の軸がある**：EU指令失敗＋女性シェルター＋億万長者の税逆説＋住宅減少＋インフラ飽和。相互に強化するテーマ。
+- **連立の亀裂が露わ**：L大臣が平等で失敗（核心ブランド価値）、KD大臣が最も標的にされ、SDが予想外の圧力下（HD10429表現の自由）、CがLGBTQI+権利で差別化（HD10431）。
+- **6月7日のEU期限はカウントダウン**：ラーソンが進捗を発表しない毎週、Sに追加の見出しが生まれる。
+- **外交的露出**：HD10435（ベルナドッテ）がイスラエルに関する外交政策の立場を強制する。
+
+---
+
+### 注視事項（今後14日間）
+
+- 4月21日：HD10437 + HD10438のANM（本会議処理）
+- 4月21日：HD10429（表現の自由）とHD10430（モスク）の本会議討議
+- 4月28日：HD10431（LGBTQI+権利）の回答期限
+- 4月29日：HD10433（税）、HD10434（住宅）の回答
+- 4月30日：HD10435（ベルナドッテ）の回答 — **メディアデー**
+- 5月5日：HD10437（EU指令）、HD10438（シェルター）の回答
+
+---
+
+**分析信頼度**：高 — 一次資料（MCP全文 HD10437、HD10438、HD10435、HD10434、HD10433）
+**人間による編集監督**：公開前に必要
+**次回更新**：2026-04-29
+
+<!-- source-sha: 6ea99976805b59adead153c9317e2720190809de -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_ko.md -->
+
+**날짜**: 2026-04-20 | **분류**: 공개 | **제작**: news-interpellations
+
+---
+
+### BLUF（결론 먼저）
+
+2026년 4월 7일부터 17일 사이에 스웨덴 리크스다그(Riksdag)는 약 15건의 질의서(interpellationer)를 접수했으며, 그 중 **10건이 여기서 분석된다**(`HD10429–HD10438`, 1건 철회 포함 HD10436). 이 10개 문서 세트는 riksmöte 2025/26 회기 중 가장 집중적인 책임 추궁 시도를 대표한다. 핵심 신호: **스웨덴은 2026년 6월 7일 기한까지 EU 임금투명성 지침을 국내법화하는 데 실패할 것**이다. 이는 정부가 자체 이행 법안을 철회한 데 따른 것으로, 리크스다그 공식 기록에 질의서 2025/26:437(HD10437)로 문서화되어 있다. 사회민주당(S)은 이 실패를 2026년 선거 사전 협조 캠페인의 무기로 삼아, 4월 17일 평등장관 니나 라르손(L)에 대한 쌍둥이 질의서 2건, 인프라장관 안드레아스 카를손(KD)에 대한 누적 5건, 그리고 독립 의원(엘-하지)이 외교장관 말메르 스테네르가르드(M)에게 10일 내 답변을 요구하는 형태로 압박하고 있다. **4월 29일~5월 5일 답변 창구에서의 정부 대응 전략이 이 파동이 지속적인 선거 서사로 전환되는지 결정할 것이다.**
+
+---
+
+### 전략적 핵심 발견 상위 5위
+
+1. 🔴 **EU 지침 국내법화 실패 문서화** (HD10437, 영향도 9.2/10). 스웨덴 자체 법안 철회는 S가 2026년 선거 전 6개월 이상 활용할 **반박 불가능한 사실 기록**을 만든다.
+2. 🔴 **협조적 이중 제출 공격 패턴** (HD10437 + HD10438, 같은 날·같은 의원·같은 장관). 전형적인 선거 전 책임 추궁 코레오그래피. rm 2025/26 첫 번째 이러한 패턴.
+3. 🟠 **외교적 책임 시한폭탄** (HD10435, 영향도 9.0/10). 엘-하지의 1948년 베르나도테 암살에 관한 3가지 요구 질의서는 10일 뇌관(4월 30일 기한)을 가지며, 말메르 스테네르가르드가 이스라엘을 소외시키거나 진보/디아스포라 유권자를 실망시키는 입장을 취하도록 강제한다.
+4. 🟠 **장관 과포화 — 카를손(KD)**. 4주에 걸쳐 주택, 항공, 철도, 도로, 국방 인프라에 관한 6건 이상의 질의서. 정량화된 Länsstyrelsen 데이터(스톡홀름 착공 11,091건 = 전년 대비 −900건)가 서사를 뒷받침한다.
+5. 🟡 **전술적 철회 신호** (HD10436, 우주산업, S/Wiking). 자발적 철회는 전략적 산업정책에서 국가-산업 간 비공식 합의를 시사한다.
+
+---
+
+### 장관 책임 현황
+
+| 장관 | 정당 | 질의서(활성) | 가장 가까운 기한 | 위험 |
+|------|------|------------|----------------|------|
+| Andreas Carlson | KD | 6+ | 4월 29일 (HD10434) | 🔴 위급 |
+| Nina Larsson | L | 2 (협조) | 5월 5일 | 🔴 높음 |
+| Maria Malmer Stenergard | M | 1+1 (HD10426+HD10435) | 4월 30일 (긴급) | 🔴 높음 |
+| Elisabeth Svantesson | M | 1+1 (HD10433+HD10427) | 4월 29일 | 🟡 주의 |
+| Elisabet Lann | KD | 2 (HD10432+HD10415) | 5월 5일 | 🟡 주의 |
+| Benjamin Dousa | M | 1 (HD10431) | 4월 28일 | 🟡 주의 |
+| Jakob Forssmed | KD | 1 (HD10430) | 4월 21일 | 🟢 보통 |
+| Gunnar Strömmer | M | 1 (HD10429) | 4월 21일 | 🟢 보통 |
+| Lotta Edholm | L | 0 (HD10436 철회) | — | 🟢 낮음 |
+
+---
+
+### 전략적 함의 (2026년 선거)
+
+- **S는 선거 캠페인 기반을 갖추었다**: EU 지침 실패 + 여성 쉼터 + 억만장자 세금 역설 + 주택 감소 + 인프라 과포화. 상호 강화하는 주제들.
+- **연립 균열 가시화**: L 장관이 평등(핵심 브랜드 가치)에서 실패, KD 장관이 가장 많이 표적화, SD가 예상외 압박 하에(HD10429 표현의 자유), C가 LGBTQI+ 권리에서 차별화(HD10431).
+- **6월 7일 EU 기한은 카운트다운**: 라르손이 이행 진전을 발표하지 않는 매주 S에게 추가 헤드라인이 생긴다.
+- **외교적 노출**: HD10435(베르나도테)는 이스라엘에 대한 외교 정책 입장을 강제한다.
+
+---
+
+### 주시 사항 (향후 14일)
+
+- 4월 21일: HD10437 + HD10438의 ANM (본회의 처리)
+- 4월 21일: HD10429(표현의 자유)와 HD10430(모스크)에 관한 본회의 토론
+- 4월 28일: HD10431(LGBTQI+ 권리) 답변 기한
+- 4월 29일: HD10433(세금), HD10434(주택) 답변
+- 4월 30일: HD10435(베르나도테) 답변 — **미디어 데이**
+- 5월 5일: HD10437(EU 지침), HD10438(쉼터) 답변
+
+---
+
+**분석 신뢰도**: 높음 — 1차 자료 (MCP 전문 HD10437, HD10438, HD10435, HD10434, HD10433)
+**인간 편집 감독**: 게시 전 필요
+**다음 업데이트**: 2026-04-29
+
+<!-- source-sha: 6ea99976805b59adead153c9317e2720190809de -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_nl.md -->
+
+**Classificatie**: Openbaar · **Analysedatum**: 2026-04-20 · **Horizon**: 2 weken (29 april – 5 mei antwoordvenster) · **Vertrouwensniveau**: HOOG
+
+---
+
+### BLUF (Conclusie eerst)
+
+Tussen 7 en 17 april 2026 ontving de Zweedse Riksdag circa 15 interpellaties — waarvan **10 hier worden geanalyseerd** (`HD10429–HD10438`, inclusief één ingetrokken, HD10436). Dit pakket van 10 documenten vertegenwoordigt de grootste geconcentreerde verantwoordingsdruk van riksmöte 2025/26. Het beslissende signaal: **Zweden zal de EU-richtlijn loonsverhoudingstransparantie niet tijdig omzetten vóór de deadline van 7 juni 2026**, nadat de regering haar eigen implementatievoorstel heeft ingetrokken. Dit staat gedocumenteerd in de officiële Riksdag-notulen via interpellatie 2025/26:437 (HD10437). De sociaal-democraten (S) bewapenen dit falen via een gecoördineerd pre-verkiezingsverhaal met twee tweelinginterpellaties op 17 april tegen gelijkheidsminister Nina Larsson (L), vijf gecumuleerde interpellaties tegen infrastructuurminister Andreas Carlson (KD), en een onafhankelijk kamerlid (El-Haj) dat minister van Buitenlandse Zaken Malmer Stenergard (M) onder druk zet met een 10-daags antwoordvenster. **De antwoordstrategie van de regering in het venster van 29 april tot 5 mei bepaalt of deze stroom een duurzaam verkiezingsnarratief wordt.**
+
+---
+
+### Top 5 strategische bevindingen
+
+1. 🔴 **Gedocumenteerd falen bij EU-richtlijnomzetting** (HD10437, sig. 9,2/10). Zweden trekt zijn eigen implementatievoorstel in, wat een **onweerlegbaar feitelijk dossier** schept dat S 6+ maanden voor de verkiezingen 2026 zal uitbuiten.
+2. 🔴 **Gecoördineerd dubbelindiening-aanvalspatroon** (HD10437 + HD10438, zelfde dag, zelfde Kamerlid, zelfde minister). Klassieke pre-verkiezings-verantwoordingschoreografie. Eerste zo'n patroon in rm 2025/26.
+3. 🟠 **Diplomatieke tijdbom** (HD10435, sig. 9,0/10). El-Hajs drie-eisen-interpellatie over de Bernadotte-aanslag van 1948 heeft een 10-daagse lont (deadline 30 april) en dwingt Malmer Stenergard tot een standpunt dat ofwel Israël vervreemdt ofwel progressieve/diaspora-kiezers teleurstelt.
+4. 🟠 **Ministerverzadiging — Carlson (KD)**. Zes-plus interpellaties over wonen, luchtvaart, spoor, wegen en defensie-infrastructuur in 4 weken. Gekwantificeerde Länsstyrelsendata (11.091 Stockholmse startwoning = −900 j/j) voeden het verhaal.
+5. 🟡 **Tactisch terugtrekkingssignaal** (HD10436, ruimteindustrie, S/Wiking). Vrijwillige intrekking duidt op informele overheids-industrie-accommodatie over strategisch industriebeleid.
+
+---
+
+### Ministeriele verantwoordingsstatus
+
+| Minister | Partij | Interpellaties (actief) | Dichtstbijzijnde deadline | Risico |
+|----------|--------|------------------------|--------------------------|--------|
+| Andreas Carlson | KD | 6+ | 29 april (HD10434) | 🔴 KRITIEK |
+| Nina Larsson | L | 2 (gecoördineerd) | 5 mei | 🔴 HOOG |
+| Maria Malmer Stenergard | M | 1+1 (HD10426+HD10435) | 30 april (SPOEDEISEND) | 🔴 HOOG |
+| Elisabeth Svantesson | M | 1+1 (HD10433+HD10427) | 29 april | 🟡 VERHOOGD |
+| Elisabet Lann | KD | 2 (HD10432+HD10415) | 5 mei | 🟡 VERHOOGD |
+| Benjamin Dousa | M | 1 (HD10431) | 28 april | 🟡 VERHOOGD |
+| Jakob Forssmed | KD | 1 (HD10430) | 21 april | 🟢 MATIG |
+| Gunnar Strömmer | M | 1 (HD10429) | 21 april | 🟢 MATIG |
+| Lotta Edholm | L | 0 (HD10436 ingetrokken) | — | 🟢 LAAG |
+
+---
+
+### Strategische implicaties (Verkiezingen 2026)
+
+- **S heeft een campagneruggengraat**: EU-richtlijnfalen + vrouwenopvangcentra + miljardairs-belastingparadox + woningdaling + infrastructuurverzadiging. Wederzijds versterkende thema's.
+- **Coalitiebreuken zichtbaar**: L-minister faalt op gelijkheid (kernmerk), KD-minister meest aangevallen, SD onder onverwachte druk (HD10429 vrijheid van meningsuiting), C onderscheidt zich op LGBTQI+-rechten (HD10431).
+- **EU-deadline 7 juni is aftelling**: S krijgt extra krantenkoppen elke week dat Larsson geen voortgang meldt.
+- **Diplomatieke blootstelling**: HD10435 (Bernadotte) dwingt buitenlands-politiek standpunt over Israël.
+
+---
+
+### Wat te monitoren (Komende 14 dagen)
+
+- 21 april: ANM van HD10437 + HD10438 (kamerbehandeling)
+- 21 april: Kamerdebat over HD10429 (vrijheid van meningsuiting) en HD10430 (moskeeën)
+- 28 april: Antwoorddeadline HD10431 (LGBTQI+-rechten)
+- 29 april: Antwoorden HD10433 (belasting), HD10434 (wonen)
+- 30 april: Antwoord HD10435 (Bernadotte) — **MEDIADAG**
+- 5 mei: Antwoorden HD10437 (EU-richtlijn), HD10438 (opvangcentra)
+
+---
+
+**Analytisch vertrouwensniveau**: HOOG — Primaire bronnen (MCP volledige tekst HD10437, HD10438, HD10435, HD10434, HD10433)
+**Menselijke redactionele supervisie**: Vereist vóór publicatie
+**Volgende update**: 2026-04-29
+
+<!-- source-sha: 6ea99976805b59adead153c9317e2720190809de -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_no.md -->
+
+**Klassifisering**: Offentlig · **Analysedato**: 2026-04-20 · **Horisont**: 2 uker (29. april – 5. mai svarvinduer) · **Konfidens**: HØY
+
+---
+
+### BLUF (Konklusjonen først)
+
+Mellom 7. og 17. april 2026 mottok den svenske Riksdagen cirka 15 interpellasjoner — hvorav **10 analyseres her** (`HD10429–HD10438`, inkludert én trukket tilbake, HD10436). Denne samlingen på 10 dokumenter representerer den mest konsentrerte ansvarspresset under riksmøte 2025/26. Det avgjørende signalet er at **Sverige vil mislykkes med å gjennomføre EUs lønngjennomsiktighetsdirektiv innen fristen 7. juni 2026**, etter at regjeringen trakk tilbake sitt eget implementeringsforslag. Sosialdemokratene (S) utnytter dette sviktet via en koordinert fortelling frem mot valget 2026 med to tvillinginterpellasjoner 17. april mot likestillingsminister Nina Larsson (L), fem akkumulerte interpellasjoner mot infrastrukturminister Andreas Carlson (KD) og et uavhengig stortingsmedlem (El-Haj) som presser utenriksminister Malmer Stenergard (M) med en 10-dagers svarfrist. **Regjeringens svarstrategi i vinduet 29. april–5. mai vil avgjøre om denne bølgen konverterer til en varig valgfortelling.**
+
+---
+
+### Topp 5 strategiske funn
+
+1. 🔴 **Dokumentert svikt med EU-direktivgjennomføring** (HD10437, sig 9,2/10). Sveriges eget tilbakekall av implementeringsforslaget skaper en **uomtvistelig faktarekord** som S vil utnytte i 6+ måneder frem mot valget 2026.
+2. 🔴 **Koordinert dobbel innleveringsmønster** (HD10437 + HD10438, samme dag, samme representant, samme minister). Klassisk pre-valgskoreografi for ansvarlighet. Første slikt mønster i rm 2025/26.
+3. 🟠 **Diplomatisk ansvarlig tidsbombe** (HD10435, sig 9,0/10). El-Hajs tre-kravs-interpellasjon om 1948 Bernadotte-attentatet har en 10-dagers lunte (frist 30. april) og vil tvinge Malmer Stenergard til å innta en posisjon som enten fremmedgjør Israel eller skuffer progressive/diasporavelgere.
+4. 🟠 **Ministermetning — Carlson (KD)**. Seks-pluss interpellasjoner om boliger, luftfart, jernbane, veier og forsvarsinfrastruktur over 4 uker. Kvantifiserte Länsstyrelsendata (11 091 Stockholm-starter = −900 år/år) driver fortellingen.
+5. 🟡 **Taktisk tilbaketrekkingssignal** (HD10436, romindustri, S/Wiking). Frivillig tilbaketrekking antyder uformell statlig-industriell tilpasning på strategisk industripolitikk.
+
+---
+
+### Ministeransvarsscene
+
+| Minister | Parti | Interpellasjoner (aktive) | Nærmeste frist | Risiko |
+|----------|-------|--------------------------|----------------|--------|
+| Andreas Carlson | KD | 6+ | 29. april (HD10434) | 🔴 KRITISK |
+| Nina Larsson | L | 2 (koordinerte) | 5. mai | 🔴 HØY |
+| Maria Malmer Stenergard | M | 1+1 (HD10426+HD10435) | 30. april (HASTER) | 🔴 HØY |
+| Elisabeth Svantesson | M | 1+1 (HD10433+HD10427) | 29. april | 🟡 FORHØYET |
+| Elisabet Lann | KD | 2 (HD10432+HD10415) | 5. mai | 🟡 FORHØYET |
+| Benjamin Dousa | M | 1 (HD10431) | 28. april | 🟡 FORHØYET |
+| Jakob Forssmed | KD | 1 (HD10430) | 21. april | 🟢 MODERAT |
+| Gunnar Strömmer | M | 1 (HD10429) | 21. april | 🟢 MODERAT |
+| Lotta Edholm | L | 0 (HD10436 trukket tilbake) | — | 🟢 LAV |
+
+---
+
+### Strategiske implikasjoner (Valget 2026)
+
+- **S har en kampanjeryggmarg**: EU-direktivsvikt + krisesentre for kvinner + milliardær-skatteparadoks + boligfall + infrastrukturmetning. Gjensidig forsterkende temaer.
+- **Koalisjonssvakheter synliggjøres**: L-minister feiler på likestilling (kjernemerkevare), KD-minister mest utsatt, SD under uventet press (HD10429 ytringsfrihet), C differensierer seg på LHBTQI+-rettigheter (HD10431).
+- **EU-fristen 7. juni er en nedtellingsuret**: S får en ekstra overskrift hver uke Larsson ikke melder fremgang.
+- **Diplomatisk eksponering**: HD10435 (Bernadotte) tvinger frem en utenrikspolitisk posisjon om Israel.
+
+---
+
+### Hva å følge med på (Neste 14 dager)
+
+- 21. april: ANM av HD10437 + HD10438 (kammarbehandling)
+- 21. april: Kammerdebatt om HD10429 (ytringsfrihet) og HD10430 (moskeer)
+- 28. april: Svarfrist HD10431 (LHBTQI+-rettigheter)
+- 29. april: Svar HD10433 (skatt), HD10434 (boliger)
+- 30. april: Svar HD10435 (Bernadotte) — **MEDIEDAG**
+- 5. mai: Svar HD10437 (EU-direktiv), HD10438 (krisesentre)
+
+---
+
+**Analysekonfidensgrad**: HØY — Primærkilder (MCP fulltekst HD10437, HD10438, HD10435, HD10434, HD10433)
+**Menneskelig redaksjonell tilsyn**: Påkrevd før publisering
+**Neste oppdatering**: 2026-04-29
+
+<!-- source-sha: 6ea99976805b59adead153c9317e2720190809de -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_sv.md -->
+
+**Klassificering**: Offentlig · **Analysdatum**: 2026-04-20 · **Horisont**: 2 veckor (29 april – 5 maj svarsfönster) · **Konfidensgrad**: HÖG
+
+---
+
+### BLUF (Slutsatsen först)
+
+Mellan den 7 och 17 april 2026 inkom till Riksdagen cirka 15 interpellationer — varav **10 analyseras här** (`HD10429–HD10438`, inklusive ett återkallat, HD10436). Denna samling av 10 dokument representerar den mest koncentrerade ansvarsutövningspuchen under riksmöte 2025/26. Den avgörande signalen är att **Sverige kommer att misslyckas med att genomföra EU:s lönetransparensdirektiv innan deadline den 7 juni 2026**, efter att regeringen dragit tillbaka sin egen implementeringsproposition. Detta dokumenteras i det officiella riksdagsprotokollet via interpellation 2025/26:437 (HD10437). Socialdemokraterna (S) vapeniserar detta misslyckande via en koordinerad berättelse inför valet 2026 med två tvilling-interpellationer den 17 april mot jämställdhetsminister Nina Larsson (L), fem samlade interpellationer mot infrastrukturminister Andreas Carlson (KD) och en oberoende riksdagsledamot (El-Haj) som pressar utrikesminister Malmer Stenergard (M) med ett 10-dagarsfönster för svar. **Regeringens svarsstrategi i fönstret 29 april–5 maj avgör om denna våg omvandlas till ett varaktigt val-2026-narrativ.**
+
+---
+
+### Topp 5 strategiska fynd
+
+1. 🔴 **Dokumenterat EU-direktivgenomförandemisslyckande** (HD10437, sig 9,2/10). Sveriges eget tillbakadragande av implementeringspropositionen skapar ett **ovedersägligt faktaunderlag** som S kommer exploatera i 6+ månader inför valet 2026.
+2. 🔴 **Koordinerat dubbel-inlämningsangreppsmönster** (HD10437 + HD10438, samma dag, samma ledamot, samma minister). Klassisk ansvarskoreografi inför val. Första sådant mönster under rm 2025/26.
+3. 🟠 **Diplomatisk ansvarsbomb** (HD10435, sig 9,0/10). El-Hajs tre-kravs-interpellation om 1948 Bernadotte-attentatet har en 10-dagarssäkring (deadline 30 april) och tvingar Malmer Stenergard att inta en ståndpunkt som antingen alienerar Israel eller besviker progressiva/diasporaväljare.
+4. 🟠 **Ministermättnad — Carlson (KD)**. Sex-plus interpellationer om bostäder, luftfart, järnväg, vägar och försvarsinfrastruktur under 4 veckor. Kvantifierade Länsstyrelsendata (11 091 Stockholmsstarter = −900 år/år) driver berättelsen.
+5. 🟡 **Taktiskt återkallelsesignal** (HD10436, rymdnäring, S/Wiking). Frivilligt återkallande antyder informell statlig-industriell uppgörelse inom strategisk industripolitik.
+
+---
+
+### Ministeransvarstablå
+
+| Minister | Parti | Interpellationer (aktiva) | Närmaste deadline | Risk |
+|----------|-------|--------------------------|-------------------|------|
+| Andreas Carlson | KD | 6+ | 29 april (HD10434) | 🔴 KRITISK |
+| Nina Larsson | L | 2 (koordinerade) | 5 maj | 🔴 HÖG |
+| Maria Malmer Stenergard | M | 1+1 (HD10426+HD10435) | 30 april (BRÅDSKANDE) | 🔴 HÖG |
+| Elisabeth Svantesson | M | 1+1 (HD10433+HD10427) | 29 april | 🟡 FÖRHÖJD |
+| Elisabet Lann | KD | 2 (HD10432+HD10415) | 5 maj | 🟡 FÖRHÖJD |
+| Benjamin Dousa | M | 1 (HD10431) | 28 april | 🟡 FÖRHÖJD |
+| Jakob Forssmed | KD | 1 (HD10430) | 21 april | 🟢 MÅTTLIG |
+| Gunnar Strömmer | M | 1 (HD10429) | 21 april | 🟢 MÅTTLIG |
+| Lotta Edholm | L | 0 (HD10436 återkallad) | — | 🟢 LÅG |
+
+---
+
+### Strategiska implikationer (Val 2026)
+
+- **S har en kampanjryggrad**: EU-direktivmisslyckande + kvinnojourer + miljardärsskatteparadox + bostadsnedgång + infrastrukturmättnad. Ömsesidigt förstärkande teman med sammanhängande berättelsebåge.
+- **Koalitionssvagheter syns**: L-minister misslyckas med jämställdhet (kärnvarumärke), KD-minister mest utsatt, SD under oväntat tryck (HD10429 yttrandefrihet), C differentierar sig kring HBTQI+-rättigheter (HD10431).
+- **EU-deadline 7 juni är en nedräkningsklocka**: S får ytterligare rubriker varje vecka Larsson misslyckas att meddela framsteg.
+- **Diplomatisk exponering**: HD10435 (Bernadotte) tvingar fram en utrikespolitisk ståndpunkt om Israel som Malmer Stenergard hittills lyckats hålla allmän.
+
+---
+
+### Vad att bevaka (Nästa 14 dagar)
+
+- 21 april: ANM av HD10437 + HD10438 (kammarbehandling)
+- 21 april: Kammardebatten om HD10429 (yttrandefrihet) och HD10430 (moskéer)
+- 28 april: Svarsfrist HD10431 (HBTQI+-rättigheter)
+- 29 april: Svar HD10433 (skatt), HD10434 (bostäder)
+- 30 april: Svar HD10435 (Bernadotte) — **MEDIEDAG**
+- 5 maj: Svar HD10437 (EU-direktiv), HD10438 (jourer)
+- Veckovis: Svenska opinionsmätningar (Novus, Sifo, Demoskop)
+
+---
+
+**Analyskonfidens**: HÖG — Primärkällor (MCP fulltextsökning HD10437, HD10438, HD10435, HD10434, HD10433)
+**Mänsklig redaktionell tillsyn**: Krävs före publicering
+**Nästa uppdatering**: 2026-04-29
+
+<!-- source-sha: 6ea99976805b59adead153c9317e2720190809de -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_zh.md -->
+
+**日期**：2026-04-20 | **分类**：公开 | **制作**：news-interpellations
+
+---
+
+### BLUF（结论先行）
+
+2026年4月7日至17日间，瑞典里克斯达格共收到约15份质询书——其中**10份在此分析**（`HD10429–HD10438`，含一份已撤回的HD10436）。这10份文件代表了riksmöte 2025/26期间最集中的问责推进。决定性信号：**瑞典将无法在2026年6月7日截止日期前完成欧盟薪酬透明度指令的转化**，原因是政府撤回了其实施方案。这一事实记录于里克斯达格官方档案，见质询书2025/26:437（HD10437）。社会民主党（S）正通过协调一致的2026年大选前叙事将这一失败武器化，包括4月17日对平等事务大臣妮娜·拉松（L）提交的两份同日双联质询书、对基础设施大臣安德烈亚斯·卡尔松（KD）的5份累积质询，以及独立议员（埃尔-哈吉）以10天回应窗口向外交大臣马尔默·斯滕纳加德（M）施压。**政府在4月29日至5月5日窗口内的回应策略，将决定这次浪潮是否演变为一个持久的选举叙事。**
+
+---
+
+### 五项重要战略发现
+
+1. 🔴 **欧盟指令转化失败已被文件记录**（HD10437，影响力9.2/10）。瑞典自行撤回实施方案，制造出S将在2026年大选前6个多月持续利用的**无可辩驳的事实记录**。
+2. 🔴 **协调双联提交攻势模式**（HD10437 + HD10438，同日、同议员、同部长）。典型的选举前问责编排。rm 2025/26首见此模式。
+3. 🟠 **外交问责定时炸弹**（HD10435，影响力9.0/10）。埃尔-哈吉关于1948年贝尔纳多特遇刺的三项要求质询书设有10天引信（4月30日截止），将迫使马尔默·斯滕纳加德就以色列问题表态——若不疏远以色列即令进步派/移民社区选民失望。
+4. 🟠 **部长饱和—卡尔松（KD）**。4周内就住房、航空、铁路、公路和国防基础设施提交六份以上质询书。Länsstyrelsen的量化数据（斯德哥尔摩新开工11,091个 = 同比−900个）为这一叙事提供支撑。
+5. 🟡 **战术撤回信号**（HD10436，航天工业，S/Wiking）。主动撤回意味着政府与产业界在战略产业政策上达成了非正式妥协。
+
+---
+
+### 部长问责快照
+
+| 部长 | 政党 | 质询书（活跃） | 最近截止日 | 风险 |
+|------|------|------------|----------|------|
+| Andreas Carlson | KD | 6+ | 4月29日（HD10434） | 🔴 危急 |
+| Nina Larsson | L | 2（协调） | 5月5日 | 🔴 高 |
+| Maria Malmer Stenergard | M | 1+1（HD10426+HD10435） | 4月30日（紧急） | 🔴 高 |
+| Elisabeth Svantesson | M | 1+1（HD10433+HD10427） | 4月29日 | 🟡 较高 |
+| Elisabet Lann | KD | 2（HD10432+HD10415） | 5月5日 | 🟡 较高 |
+| Benjamin Dousa | M | 1（HD10431） | 4月28日 | 🟡 较高 |
+| Jakob Forssmed | KD | 1（HD10430） | 4月21日 | 🟢 中等 |
+| Gunnar Strömmer | M | 1（HD10429） | 4月21日 | 🟢 中等 |
+| Lotta Edholm | L | 0（HD10436已撤回） | — | 🟢 低 |
+
+---
+
+### 战略含义（2026年大选）
+
+- **S已有完整竞选骨架**：欧盟指令失败＋妇女庇护所＋亿万富翁税务悖论＋住房下滑＋基础设施饱和。这些主题相互强化。
+- **联合执政裂痕显现**：L部长在平等问题上失手（核心品牌价值），KD部长受攻击最多，SD意外承压（HD10429言论自由），C在LGBTQI+权利上走差异化路线（HD10431）。
+- **6月7日欧盟截止日如倒计时**：只要拉松不宣布转化进展，S每周都能获得额外的舆论弹药。
+- **外交层面敞口**：HD10435（贝尔纳多特）迫使马尔默·斯滕纳加德表态以色列问题。
+
+---
+
+### 需要关注的事项（未来14天）
+
+- 4月21日：HD10437 + HD10438的ANM（院会处理）
+- 4月21日：就HD10429（言论自由）和HD10430（清真寺）进行院会辩论
+- 4月28日：HD10431（LGBTQI+权利）答复截止
+- 4月29日：HD10433（税收）、HD10434（住房）答复
+- 4月30日：HD10435（贝尔纳多特）答复——**媒体日**
+- 5月5日：HD10437（欧盟指令）、HD10438（庇护所）答复
+
+---
+
+**分析可信度**：高——一手资料（MCP全文 HD10437、HD10438、HD10435、HD10434、HD10433）
+**人工编辑审核**：发布前必须完成
+**下次更新**：2026-04-29
+
+<!-- source-sha: 6ea99976805b59adead153c9317e2720190809de -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 14 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 27 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 10 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -2424,6 +3287,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/interpellations/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

@@ -6,7 +6,7 @@ date: 2026-05-14
 subfolder: interpellations
 slug: 2026-05-14-interpellations
 source_folder: analysis/daily/2026-05-14/interpellations
-generated_at: 2026-05-16T20:24:26.587Z
+generated_at: 2026-05-17T18:40:44.061Z
 language: en
 layout: article
 ---
@@ -88,6 +88,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1516,13 +1529,860 @@ Statskontoret pre-warm evaluation: **No trigger matched directly** — this inte
 - IMF WEO fetch attempted; degraded (imf-context.json status: ok, but weo CLI fetch failed) — using cached context for Swedish GDP/ODA indicators; see implementation-feasibility.md
 - All interpellations sourced from official riksdag-regering-mcp API [A1]
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/executive-brief_ar.md -->
+
+**المؤلف**: James Pether Sörling
+**التاريخ**: 2026-05-14
+**التصنيف**: عام — GDPR Art. 9(2)(e,g)
+**مستوى الثقة**: متوسط [B2]
+**رمز الأدميرالية**: B2
+
+---
+
+### الخلاصة التنفيذية (BLUF)
+
+قدّمت لوتا يونسون فورناره (V) الاستجواب رقم 2025/26:492 مطالبةً وزير التعاون الإنمائي والتجارة الخارجية بنيامين دوزا (M) بتقديم الحساب عن التداعيات الحقوقية لتخفيضات المساعدات السويدية الدرامية على الأطفال. بعد أن تخلّت Tidöregeringen عن هدف نسبة الواحد بالمئة في ديسمبر 2023 وسحبت الاستراتيجيات القُطرية، أفادت Rädda Barnen بأن برامج الأطفال المعانين من سوء التغذية الحاد والرعاية الصحية للأمهات في مخيمات اللاجئين وحملات التطعيم اضطُرّت للإغلاق. يطالب الاستجواب بإجراء تحليل رسمي للعواقب وبإطار معزز لحقوق الطفل في سياسة المساعدات السويدية — تحدٍّ مباشر لنموذج الحكومة "Bistånd för en ny era".
+
+### القرارات التي يدعمها هذا التحليل
+
+1. **تموضع المحفظة**: تراقب أحزاب المعارضة وفاعلو المجتمع المدني ما إذا كان الوزير دوزا سيلتزم بتحليل رسمي للعواقب (barnkonsekvensanalys) — يحدد الجواب الخيارات التشريعية والميزانياتية اللاحقة في الميزانية الربيعية 2026/27.
+2. **التأطير الإعلامي**: هل تستطيع الحكومة الدفاع بمصداقية عن إصلاحها للمساعدات استناداً إلى حقوق الطفل قبيل حملة انتخابات 2026.
+3. **التموضع الدولي**: سمعة السويد لدى OECD DAC وUNICEF وشركاء التنمية في الاتحاد الأوروبي مع تراجع المساعدة الإنمائية الرسمية السويدية دون معيار 0,7%.
+
+### نقاط استخباراتية في 60 ثانية
+
+- 📌 **HD10492** مقدَّم في 2026-05-13، منشور في 2026-05-14؛ نقاش مقرر في 2026-05-18؛ الموعد النهائي للرد 2026-05-29
+- 📌 **صاحبة الاستجواب**: لوتا يونسون فورناره (V) — عضو UU (لجنة الشؤون الخارجية)؛ مناضلة دؤوبة عن حقوق المساعدات
+- 📌 **الهدف**: الوزير بنيامين دوزا (M) — أصغر وزير في Tidöregeringen، المسؤول عن إعادة هيكلة "Bistånd för en ny era"
+- 📌 **الادعاء الجوهري**: أوقفت تخفيضات المساعدات السويدية مباشرةً برامج حيوية للأطفال المعانين من سوء التغذية وصحة الأمومة في المخيمات والتطعيمات وتعليم الفتيات (أدلة Rädda Barnen [B2])
+- 📌 **الحجم**: ~500 مليون طفل في مناطق النزاع عالمياً؛ ~5 ملايين وفاة تحت سن الخامسة سنوياً؛ 29,000 طفل مُهجَّر يومياً
+- 📌 **التغيير السياسي السويدي**: تخلّت Tidöregeringen (M+KD+L بدعم SD) عن enprocentsmålet في ديسمبر 2023 — تتراجع المساعدات من ~0.9% من الدخل القومي الإجمالي نحو ~0.7%
+- 📌 **ثلاثة أسئلة**: (1) هل أُجري تحليل للعواقب؟ (2) هل تضمّنت وثائق السياسة حقوق الطفل؟ (3) تعزيز حقوق الطفل في المساعدات الإنسانية (SE/EU/UN)؟
+- 📌 **لا نقاش بعد** — الاستجواب مقدَّم وغير مُجاب؛ القيمة الاستخباراتية في تتبع مسار رد الحكومة
+
+### أبرز محفّز مستقبلي
+
+**2026-05-29** — Sista svarsdatum (الموعد النهائي للإجابة). إن لم يلتزم الوزير دوزا بتحليل العواقب (barnkonsekvensanalys)، سيكثّف V وعلى الأرجح S/MP/C الضغط من خلال اقتراحات الميزانية في خريف 2026.
+
+### تقييم درجة الثقة الرئيسي
+
+**متوسط** [B2] — النص الكامل للاستجواب مستخرَج من المصدر الرسمي للريكسداغ؛ الادعاءات الواقعية بشأن إغلاق برامج المساعدات تستند إلى تقارير Rädda Barnen (مصدر ثانوي، منظمة غير حكومية موثوقة، قابلة للتحقق المستقل) لا إلى نشرة إحصائية حكومية.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#1a1e3d"}}}%%
+flowchart LR
+    A["🔴 HD10492 Filed\n2026-05-13"] --> B["📋 Anmäld\n2026-05-18"]
+    B --> C["⏱ Sista svarsdatum\n2026-05-29"]
+    C --> D{Minister Response}
+    D -->|Commits to analysis| E["🟢 V: Partial win\nPressure continues"]
+    D -->|Deflects| F["🔴 Opposition escalation\nBudget motions autumn 2026"]
+    style A fill:#ff006e,color:#fff
+    style B fill:#ffbe0b,color:#000
+    style C fill:#ffbe0b,color:#000
+    style D fill:#1a1e3d,color:#fff
+    style E fill:#0a4a3c,color:#fff
+    style F fill:#4a0a0a,color:#fff
+```
+
+### تعديلات ما بعد المرور الثاني
+
+**ملاحظة DIW [مُعترَض عليها]**: تحدي محامي الشيطان يحدد النطاق 6.5–7.2. يُحتفظ بالنقاط الأساسية عند 7.2 استناداً إلى الارتكاز القانوني لاتفاقية حقوق الطفل + توقيت عام الانتخابات + كثافة أدلة Rädda Barnen. انظر devils-advocate.md.
+
+**ملاحظة قرار إضافية**: ديناميكيات الائتلاف — قد يتعرض أعضاء L (Liberalerna) الداعمون تاريخياً لـ enprocentsmålet لضغط للتعليق. مراقبة المتحدثين باسم L بعد النقاش (2026-05-18) لرصد أي انحراف عن خط الائتلاف.
+
+**بيان WEP** [horizon:T+15d]: *من المرجّح (65%) أن يردّ دوزا بإعادة تأطير الكفاءة (السيناريو ب). من الممكن (25%) أن يُقدَّم التزام جزئي جوهري (السيناريو أ). من غير المرجّح (20%) أن يكون الرد إجرائياً بحتاً (السيناريو ج).* [WEP: "مرجّح/ممكن/غير مرجّح"]
+
+<!-- source-sha: 48729b47776eee9fd5a699b73571f4fb4db8f7a5 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling
+**Dato**: 2026-05-14
+**Klassificering**: OFFENTLIG — GDPR Art. 9(2)(e,g)
+**Konfidens**: MIDDEL [B2]
+**Admiralitetskode**: B2
+
+---
+
+### BLUF
+
+Lotta Johnsson Fornarve (V) har indgivet Interpellation 2025/26:492 med krav om, at bistands- og udenrigshandelsminister Benjamin Dousa (M) redegør for konsekvenserne for børns rettigheder af Sveriges dramatiske bistandsnedskæringer. Da Tidöregeringen i december 2023 opgav enprocentsmålet og trak landestrategier tilbage, rapporterer Rädda Barnen, at programmer for svært underernærede børn, mødresundhed i flygtningelejre og vaccinationskampagner er blevet tvunget til at lukke. Interpellationen kræver en formel konsekvensanalyse og en styrket ramme for børns rettigheder i svensk bistandspolitik — en direkte udfordring af regeringens paradigme "Bistånd för en ny era".
+
+### Beslutninger som dette notat understøtter
+
+1. **Porteføljepositionering**: Oppositionspartier og civilsamfundsaktører overvåger, om minister Dousa vil forpligte sig til en formel konsekvensanalyse (barnkonsekvensanalys) — svaret former efterfølgende lovgivnings- og budgetmuligheder i forårsbudgettet 2026/27.
+2. **Medieindramning**: Om regeringen troværdigt kan forsvare sin bistandsreform på grundlag af børnerettigheder op til valgkampen i 2026.
+3. **International positionering**: Sveriges omdømme hos OECD DAC, UNICEF og EU's udviklingspartnere, efterhånden som svensk ODA falder under DAC-referencemærket på 0,7 %.
+
+### 60-sekunders efterretningspunkter
+
+- 📌 **HD10492** indgivet 2026-05-13, offentliggjort 2026-05-14; debat planlagt 2026-05-18; frist for svar 2026-05-29
+- 📌 **Forfatter**: Lotta Johnsson Fornarve (V) — medlem af UU (udenrigsudvalget); konsekvent fortaler for bistandsrettigheder
+- 📌 **Mål**: Minister Benjamin Dousa (M) — yngste minister i Tidöregeringen, ansvarlig for omstrukturering af "Bistånd för en ny era"
+- 📌 **Kernepåstand**: Svenske bistandsnedskæringer har direkte standset vitale programmer for underernærede børn, mødresundhed i lejre, vaccinationer, pigers uddannelse (Rädda Barnen-dokumentation [B2])
+- 📌 **Skala**: ~500 millioner børn globalt i konfliktzoner; ~5 millioner dødsfald under 5 år/år; 29.000 børn fordrevet dagligt
+- 📌 **Svensk politisk ændring**: Tidöregeringen (M+KD+L med SD-støtte) opgav enprocentsmålet december 2023 — ODA falder fra ~0,9 % BNI mod ~0,7 % BNI
+- 📌 **Tre spørgsmål**: (1) Konsekvensanalyse gennemført? (2) Børnerettigheder i politikdokumenter? (3) Styrk børnerettigheder i humanitær bistand (SE/EU/FN)?
+- 📌 **Ingen debat endnu** — interpellationen indsendt, endnu ikke besvaret; efterretningsværdi i at følge regeringens svarretning
+
+### Vigtigste fremtidige udløser
+
+**2026-05-29** — Sista svarsdatum (endelig svarsfrist). Hvis minister Dousa ikke forpligter sig til en konsekvensanalyse (barnkonsekvensanalys), vil V og sandsynligvis S/MP/C intensivere presset gennem budgetforslag efteråret 2026.
+
+### Nøglekonfidenssvurdering
+
+**MIDDEL** [B2] — Fuld interpellationstekst hentet fra officiel Riksdag-kilde; faktuelle påstande om lukkede bistandsprogrammer er baseret på Rädda Barnens rapportering (sekundær kilde, troværdig NGO, uafhængigt verificerbar) snarere end statslig statistikudgivelse.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#1a1e3d"}}}%%
+flowchart LR
+    A["🔴 HD10492 Filed\n2026-05-13"] --> B["📋 Anmäld\n2026-05-18"]
+    B --> C["⏱ Sista svarsdatum\n2026-05-29"]
+    C --> D{Minister Response}
+    D -->|Commits to analysis| E["🟢 V: Partial win\nPressure continues"]
+    D -->|Deflects| F["🔴 Opposition escalation\nBudget motions autumn 2026"]
+    style A fill:#ff006e,color:#fff
+    style B fill:#ffbe0b,color:#000
+    style C fill:#ffbe0b,color:#000
+    style D fill:#1a1e3d,color:#fff
+    style E fill:#0a4a3c,color:#fff
+    style F fill:#4a0a0a,color:#fff
+```
+
+### Ændringer efter pas 2
+
+**DIW-notering [OMTVISTET]**: Djævelens advokat-udfordring identificerer interval 6,5–7,2. Primær score opretholdt ved 7,2 baseret på CRC-retslig forankring + valgårstiming + tæthed af Rädda Barnen-dokumentation. Se devils-advocate.md.
+
+**Yderligere beslutningsnotering**: Koalitionsdynamik — L (Liberalerna)-medlemmer historisk støttende af enprocentsmålet kan presses til at kommentere. Overvåg L-talspersoner efter debat (2026-05-18) for afvigelse fra koalitionslinjen.
+
+**WEP-erklæring** [horizon:T+15d]: *Det er sandsynligt (65 %), at Dousa svarer med effektivitetsomformulering (Scenarie B). Det er muligt (25 %), at et substantielt partielt tilsagn tilbydes (Scenarie A). Det er usandsynligt (20 %), at svaret er rent proceduremæssigt (Scenarie C).* [WEP: "sandsynligt/muligt/usandsynligt"]
+
+<!-- source-sha: 48729b47776eee9fd5a699b73571f4fb4db8f7a5 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling
+**Datum**: 2026-05-14
+**Klassifizierung**: ÖFFENTLICH — DSGVO Art. 9(2)(e,g)
+**Konfidenz**: MITTEL [B2]
+**Admiralitätscode**: B2
+
+---
+
+### BLUF
+
+Lotta Johnsson Fornarve (V) hat die Interpellation 2025/26:492 eingebracht und fordert Entwicklungshilfe- und Außenhandelsminister Benjamin Dousa (M) auf, über die kinderrechtlichen Konsequenzen der dramatischen schwedischen Entwicklungshilfekürzungen Rechenschaft abzulegen. Nachdem die Tidöregierung im Dezember 2023 das Ein-Prozent-Ziel aufgegeben und Länderstrategien zurückgezogen hat, berichtet Rädda Barnen, dass Programme für schwer unterernährte Kinder, Müttergesundheit in Flüchtlingslagern und Impfkampagnen zur Schließung gezwungen wurden. Die Interpellation fordert eine formelle Folgenabschätzung und einen gestärkten Kinderrechterahmen in der schwedischen Entwicklungshilfepolitik — eine direkte Herausforderung des Regierungsparadigmas "Bistånd för en ny era".
+
+### Von dieser Analyse unterstützte Entscheidungen
+
+1. **Portfoliopositionierung**: Oppositionsparteien und Zivilgesellschaftsakteure beobachten, ob Minister Dousa sich zu einer formellen Folgenabschätzung (barnkonsekvensanalys) bekennt — die Antwort bestimmt die nachfolgenden Gesetzgebungs- und Budgetoptionen im Frühjahrshaushalt 2026/27.
+2. **Medienrahmung**: Ob die Regierung ihre Entwicklungshilfereform auf Kinderrechtsgrundlage vor der Wahlkampagne 2026 glaubwürdig verteidigen kann.
+3. **Internationale Positionierung**: Schwedens Ruf bei OECD DAC, UNICEF und EU-Entwicklungspartnern, da die schwedische ODA unter die DAC-Benchmark von 0,7 % sinkt.
+
+### 60-Sekunden-Nachrichtenpunkte
+
+- 📌 **HD10492** eingereicht 2026-05-13, veröffentlicht 2026-05-14; Debatte geplant 2026-05-18; Antwortfrist 2026-05-29
+- 📌 **Autorin**: Lotta Johnsson Fornarve (V) — Mitglied des UU (Außenausschuss); konsequente Fürsprecherin für Entwicklungshilferechte
+- 📌 **Ziel**: Minister Benjamin Dousa (M) — jüngster Minister in der Tidöregierung, verantwortlich für die Umstrukturierung von "Bistånd för en ny era"
+- 📌 **Kernaussage**: Schwedische Entwicklungshilfekürzungen haben lebenswichtige Programme für unterernährte Kinder, Müttergesundheit in Lagern, Impfungen und Mädchenbildung direkt gestoppt (Rädda Barnen-Belege [B2])
+- 📌 **Größenordnung**: ~500 Millionen Kinder weltweit in Konfliktgebieten; ~5 Millionen Todesfälle unter 5 Jahren/Jahr; täglich 29.000 vertriebene Kinder
+- 📌 **Schwedischer Politikwechsel**: Tidöregierung (M+KD+L mit SD-Unterstützung) gab das Einprozentziel im Dezember 2023 auf — ODA fällt von ~0,9 % BNE in Richtung ~0,7 % BNE
+- 📌 **Drei Fragen**: (1) Folgenabschätzung durchgeführt? (2) Kinderrechte in Politikdokumenten? (3) Stärkung der Kinderrechte in humanitärer Hilfe (SE/EU/UN)?
+- 📌 **Noch keine Debatte** — Interpellation eingereicht, noch nicht beantwortet; Nachrichtenwert bei der Verfolgung der Regierungsantwortrichtung
+
+### Wichtigster zukünftiger Auslöser
+
+**2026-05-29** — Sista svarsdatum (endgültige Antwortfrist). Wenn Minister Dousa sich nicht zu einer Folgenabschätzung (barnkonsekvensanalys) bekennt, werden V und wahrscheinlich S/MP/C den Druck durch Budgetanträge im Herbst 2026 verstärken.
+
+### Wichtigste Konfidenzeinschätzung
+
+**MITTEL** [B2] — Vollständiger Interpellationstext aus offizieller Riksdag-Quelle abgerufen; Sachbehauptungen zu geschlossenen Entwicklungshilfeprogrammen beruhen auf Rädda Barnens Berichterstattung (Sekundärquelle, glaubwürdige NGO, unabhängig verifizierbar) statt auf einer staatlichen Statistikveröffentlichung.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#1a1e3d"}}}%%
+flowchart LR
+    A["🔴 HD10492 Filed\n2026-05-13"] --> B["📋 Anmäld\n2026-05-18"]
+    B --> C["⏱ Sista svarsdatum\n2026-05-29"]
+    C --> D{Minister Response}
+    D -->|Commits to analysis| E["🟢 V: Partial win\nPressure continues"]
+    D -->|Deflects| F["🔴 Opposition escalation\nBudget motions autumn 2026"]
+    style A fill:#ff006e,color:#fff
+    style B fill:#ffbe0b,color:#000
+    style C fill:#ffbe0b,color:#000
+    style D fill:#1a1e3d,color:#fff
+    style E fill:#0a4a3c,color:#fff
+    style F fill:#4a0a0a,color:#fff
+```
+
+### Änderungen nach Durchgang 2
+
+**DIW-Vermerk [UMSTRITTEN]**: Die Herausforderung des Advocatus Diaboli identifiziert den Bereich 6,5–7,2. Primäre Bewertung bei 7,2 beibehalten, basierend auf CRC-Rechtsverankerung + Wahljahreszeitung + Dichte der Rädda Barnen-Belege. Siehe devils-advocate.md.
+
+**Zusätzliche Entscheidungsnotiz**: Koalitionsdynamik — L (Liberalerna)-Mitglieder, die das Einprozentziel historisch unterstützt haben, könnten unter Druck geraten zu kommentieren. L-Sprecher nach der Debatte (2026-05-18) auf Abweichungen von der Koalitionslinie beobachten.
+
+**WEP-Erklärung** [horizon:T+15d]: *Es ist wahrscheinlich (65 %), dass Dousa mit einer Effizienz-Umrahmung antwortet (Szenario B). Es ist möglich (25 %), dass ein substanzielles Teilbekenntnis angeboten wird (Szenario A). Es ist unwahrscheinlich (20 %), dass die Antwort rein verfahrenstechnisch ist (Szenario C).* [WEP: "wahrscheinlich/möglich/unwahrscheinlich"]
+
+<!-- source-sha: 48729b47776eee9fd5a699b73571f4fb4db8f7a5 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling
+**Fecha**: 2026-05-14
+**Clasificación**: PÚBLICO — RGPD Art. 9(2)(e,g)
+**Confianza**: MEDIO [B2]
+**Código Almirantazgo**: B2
+
+---
+
+### BLUF
+
+Lotta Johnsson Fornarve (V) ha presentado la Interpelación 2025/26:492 exigiendo que el ministro de Cooperación al Desarrollo y Comercio Exterior Benjamin Dousa (M) rinda cuentas sobre las consecuencias para los derechos de la infancia de los drásticos recortes de la ayuda sueca. Tras que la Tidöregering abandonara el objetivo del uno por ciento en diciembre de 2023 y retirara las estrategias nacionales, Rädda Barnen informa que los programas para niños severamente desnutridos, la atención a la salud materna en campos de refugiados y las campañas de vacunación se han visto obligados a cerrar. La interpelación exige un análisis formal de consecuencias y un marco reforzado de derechos de la infancia en la política sueca de ayuda al desarrollo — un desafío directo al paradigma gubernamental "Bistånd för en ny era".
+
+### Decisiones que respalda este análisis
+
+1. **Posicionamiento de cartera**: Los partidos de la oposición y los actores de la sociedad civil vigilan si el ministro Dousa se comprometará a un análisis formal de consecuencias (barnkonsekvensanalys) — la respuesta determina las opciones legislativas y presupuestarias en el presupuesto de primavera 2026/27.
+2. **Enmarcado mediático**: Si el gobierno puede defender de forma creíble su reforma de la ayuda sobre bases de derechos de la infancia antes de la campaña electoral de 2026.
+3. **Posicionamiento internacional**: La reputación de Suecia ante la OCDE-DAC, UNICEF y los socios de desarrollo de la UE a medida que la AOD sueca cae por debajo del umbral del 0,7 % del DAC.
+
+### Puntos informativos en 60 segundos
+
+- 📌 **HD10492** presentada el 2026-05-13, publicada el 2026-05-14; debate previsto el 2026-05-18; plazo de respuesta 2026-05-29
+- 📌 **Autora**: Lotta Johnsson Fornarve (V) — miembro de la UU (comisión de asuntos exteriores); defensora constante de los derechos en la ayuda al desarrollo
+- 📌 **Objetivo**: Ministro Benjamin Dousa (M) — ministro más joven de la Tidöregering, responsable de la reestructuración de "Bistånd för en ny era"
+- 📌 **Alegación central**: Los recortes de ayuda suecos han detenido directamente los programas vitales para niños desnutridos, atención de maternidad en campos, vacunaciones y educación de niñas (documentación de Rädda Barnen [B2])
+- 📌 **Escala**: ~500 millones de niños en todo el mundo en zonas de conflicto; ~5 millones de muertes menores de 5 años/año; 29 000 niños desplazados diariamente
+- 📌 **Cambio político sueco**: Tidöregering (M+KD+L con apoyo de SD) abandonó el enprocentsmålet en diciembre de 2023 — la AOD pasa de ~0,9 % del RNB hacia ~0,7 % del RNB
+- 📌 **Tres preguntas**: (1) ¿Se realizó el análisis de consecuencias? (2) ¿Derechos de la infancia en documentos de política? (3) ¿Reforzar los derechos de la infancia en la ayuda humanitaria (SE/UE/ONU)?
+- 📌 **Sin debate aún** — interpelación enviada, aún sin respuesta; valor informativo en el seguimiento de la trayectoria de respuesta gubernamental
+
+### Principal desencadenante futuro
+
+**2026-05-29** — Sista svarsdatum (plazo final de respuesta). Si el ministro Dousa no se compromete a un análisis de consecuencias (barnkonsekvensanalys), V y probablemente S/MP/C intensificarán la presión mediante mociones presupuestarias en otoño de 2026.
+
+### Evaluación de confianza clave
+
+**MEDIO** [B2] — Texto completo de la interpelación recuperado de la fuente oficial del Riksdag; las afirmaciones sobre el cierre de programas de ayuda se basan en los informes de Rädda Barnen (fuente secundaria, ONG creíble, verificable de forma independiente) en lugar de en una publicación estadística gubernamental.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#1a1e3d"}}}%%
+flowchart LR
+    A["🔴 HD10492 Filed\n2026-05-13"] --> B["📋 Anmäld\n2026-05-18"]
+    B --> C["⏱ Sista svarsdatum\n2026-05-29"]
+    C --> D{Minister Response}
+    D -->|Commits to analysis| E["🟢 V: Partial win\nPressure continues"]
+    D -->|Deflects| F["🔴 Opposition escalation\nBudget motions autumn 2026"]
+    style A fill:#ff006e,color:#fff
+    style B fill:#ffbe0b,color:#000
+    style C fill:#ffbe0b,color:#000
+    style D fill:#1a1e3d,color:#fff
+    style E fill:#0a4a3c,color:#fff
+    style F fill:#4a0a0a,color:#fff
+```
+
+### Enmiendas tras la pasada 2
+
+**Nota DIW [CONTROVERTIDA]**: El desafío del abogado del diablo identifica el rango 6,5–7,2. Puntuación principal mantenida en 7,2 basándose en el ancla legal CRC + el momento del año electoral + la densidad de evidencias de Rädda Barnen. Ver devils-advocate.md.
+
+**Nota de decisión adicional**: Dinámica de coalición — los miembros de L (Liberalerna) que históricamente han apoyado el enprocentsmålet pueden verse presionados a comentar. Vigilar a los portavoces de L tras el debate (2026-05-18) para detectar divergencias de la línea de coalición.
+
+**Declaración WEP** [horizon:T+15d]: *Es probable (65 %) que Dousa responda con un reencuadre de eficiencia (Escenario B). Es posible (25 %) que se ofrezca un compromiso parcial sustantivo (Escenario A). Es poco probable (20 %) que la respuesta sea puramente procesal (Escenario C).* [WEP: "probable/posible/poco probable"]
+
+<!-- source-sha: 48729b47776eee9fd5a699b73571f4fb4db8f7a5 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling
+**Päivämäärä**: 2026-05-14
+**Luokitus**: JULKINEN — GDPR Art. 9(2)(e,g)
+**Luotettavuus**: KESKITASO [B2]
+**Amiraalikoodi**: B2
+
+---
+
+### BLUF
+
+Lotta Johnsson Fornarve (V) on jättänyt välikysymyksen 2025/26:492, jossa vaaditaan kehitysyhteistyö- ja ulkomaankauppaministeri Benjamin Dousaa (M) selvittämään Ruotsin dramaattisten kehitysapuleikkausten lapsen oikeuksiin kohdistuvat seuraukset. Kun Tidöregeringen hylkäsi enprocentsmålet joulukuussa 2023 ja peruutti maastrategiat, Rädda Barnen raportoi, että ohjelmat vakavasti aliravituille lapsille, äitiydenhoito pakolaisleireillä ja rokotuskampanjat on pakotettu sulkemaan. Välikysymys vaatii muodollista vaikutusten arviointia ja vahvistettua lapsen oikeuksien kehystä ruotsalaisessa kehitysyhteistyöpolitiikassa — suora haaste hallituksen paradigmalle "Bistånd för en ny era".
+
+### Päätökset, joita tämä selvitys tukee
+
+1. **Salkun asemointi**: Oppositiopuolueet ja kansalaisyhteiskunnan toimijat seuraavat, sitoutuuko ministeri Dousa muodolliseen vaikutusten arviointiin (barnkonsekvensanalys) — vastaus muokkaa tulevia lainsäädäntö- ja budjettivaihtoehtoja vuoden 2026/27 kevätbudjetissa.
+2. **Mediainkehystäminen**: Voiko hallitus uskottavasti puolustaa kehitysapuuudistustaan lapsen oikeuksien perusteella ennen vuoden 2026 vaalikampanjaa.
+3. **Kansainvälinen asemointi**: Ruotsin maine OECD DAC:ssa, UNICEFissa ja EU:n kehitysyhteistyökumppaneilla, kun ruotsalainen ODA laskee alle DAC:n 0,7 prosentin vertailuarvon.
+
+### 60 sekunnin tiedustelupisteet
+
+- 📌 **HD10492** jätetty 2026-05-13, julkaistu 2026-05-14; väittely suunniteltu 2026-05-18; vastauksen takaraja 2026-05-29
+- 📌 **Tekijä**: Lotta Johnsson Fornarve (V) — UU:n (ulkoasiainvaliokunnan) jäsen; johdonmukainen kehitysapuoikeuksien puolestapuhuja
+- 📌 **Kohde**: Ministeri Benjamin Dousa (M) — Tidöregeringenin nuorin ministeri, vastuussa "Bistånd för en ny era" -uudelleenjärjestelystä
+- 📌 **Ydinväite**: Ruotsin kehitysapuleikkaukset ovat suoraan pysäyttäneet aliravittujen lasten, pakolaisleireillä olevan äitiydenhoidon, rokotusten ja tyttöjen koulutuksen elintärkeät ohjelmat (Rädda Barnen -todisteet [B2])
+- 📌 **Laajuus**: ~500 miljoonaa lasta maailmanlaajuisesti konflikteissa; ~5 miljoonaa alle 5-vuotiaiden kuolemaa/vuosi; 29 000 lasta siirretty päivittäin
+- 📌 **Ruotsin politiikkamuutos**: Tidöregeringen (M+KD+L SD:n tuella) hylkäsi enprocentsmålet joulukuussa 2023 — ODA putoaa ~0,9 %:sta BNT:stä kohti ~0,7 %:a BNT:stä
+- 📌 **Kolme kysymystä**: (1) Onko vaikutusten arviointi tehty? (2) Lapsen oikeudet politiikka-asiakirjoissa? (3) Vahvista lapsen oikeuksia humanitaarisessa avussa (SE/EU/YK)?
+- 📌 **Ei väittelyä vielä** — välikysymys lähetetty, ei vielä vastattu; tiedusteluarvo hallituksen vastaustrajektorin seurannassa
+
+### Tärkein tuleva laukaisija
+
+**2026-05-29** — Sista svarsdatum (lopullinen vastaustakaraja). Jos ministeri Dousa ei sitoudu vaikutusten arviointiin (barnkonsekvensanalys), V ja todennäköisesti S/MP/C intensifioivat painetta budjettiesitysten kautta syksyllä 2026.
+
+### Keskeinen luotettavuusarvio
+
+**KESKITASO** [B2] — Täydellinen välikysymysteksti haettu Riksdagin virallisesta lähteestä; kehitysapuohjelmien sulkemisia koskevat tosiasiapäätelmät perustuvat Rädda Barnenin raportointiin (toissijainen lähde, uskottava kansalaisjärjestö, itsenäisesti varmistettavissa) eikä valtion tilastojulkaisuun.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#1a1e3d"}}}%%
+flowchart LR
+    A["🔴 HD10492 Filed\n2026-05-13"] --> B["📋 Anmäld\n2026-05-18"]
+    B --> C["⏱ Sista svarsdatum\n2026-05-29"]
+    C --> D{Minister Response}
+    D -->|Commits to analysis| E["🟢 V: Partial win\nPressure continues"]
+    D -->|Deflects| F["🔴 Opposition escalation\nBudget motions autumn 2026"]
+    style A fill:#ff006e,color:#fff
+    style B fill:#ffbe0b,color:#000
+    style C fill:#ffbe0b,color:#000
+    style D fill:#1a1e3d,color:#fff
+    style E fill:#0a4a3c,color:#fff
+    style F fill:#4a0a0a,color:#fff
+```
+
+### Muutokset kierroksen 2 jälkeen
+
+**DIW-merkintä [KIISTELTY]**: Paholaisen asianajajan haaste tunnistaa välille 6,5–7,2. Ensisijainen pistemäärä säilytetty 7,2:ssa perustuen CRC:n oikeudelliseen ankkuriin + vaalivuoden ajoitukseen + Rädda Barnenin todisteiden tiheyteen. Katso devils-advocate.md.
+
+**Lisäpäätöshuomio**: Koalitiodynamiikka — L:n (Liberalerna) jäsenet, jotka ovat historiallisesti tukeneet enprocentsmålet, saatetaan painostaa kommentoimaan. Seuraa L:n tiedottajia väittelyn jälkeen (2026-05-18) poikkeamien varalta koalitiolinjasta.
+
+**WEP-lausuma** [horizon:T+15d]: *On todennäköistä (65 %), että Dousa vastaa tehokkuuden uudelleenkehystämisellä (Skenaario B). On mahdollista (25 %), että tarjotaan merkittävä osittainen sitoumus (Skenaario A). On epätodennäköistä (20 %), että vastaus on puhtaasti menettelyllinen (Skenaario C).* [WEP: "todennäköistä/mahdollista/epätodennäköistä"]
+
+<!-- source-sha: 48729b47776eee9fd5a699b73571f4fb4db8f7a5 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/executive-brief_fr.md -->
+
+**Auteur**: James Pether Sörling
+
+**Confiance**: MOYEN [B2]
+**Code Amirauté**: B2
+
+---
+
+### BLUF
+
+Lotta Johnsson Fornarve (V) a déposé l'Interpellation 2025/26:492 exigeant que le ministre de la Coopération au développement et du Commerce extérieur Benjamin Dousa (M) rende compte des conséquences des coupes dramatiques de l'aide suédoise sur les droits de l'enfant. Après que la Tidöregering a abandonné l'objectif d'un pour cent en décembre 2023 et retiré les stratégies nationales, Rädda Barnen rapporte que des programmes pour les enfants sévèrement malnutris, les soins de santé maternelle dans les camps de réfugiés et les campagnes de vaccination ont été contraints de fermer. L'interpellation exige une analyse formelle des conséquences et un cadre renforcé pour les droits de l'enfant dans la politique suédoise d'aide au développement — un défi direct au paradigme gouvernemental "Bistånd för en ny era".
+
+### Décisions que cette analyse soutient
+
+1. **Positionnement de portefeuille**: Les partis d'opposition et les acteurs de la société civile surveillent si le ministre Dousa s'engagera dans une analyse formelle des conséquences (barnkonsekvensanalys) — la réponse façonnera les options législatives et budgétaires ultérieures dans le budget de printemps 2026/27.
+2. **Cadrage médiatique**: Si le gouvernement peut défendre de manière crédible sa réforme de l'aide sur des bases relatives aux droits de l'enfant avant la campagne électorale de 2026.
+3. **Positionnement international**: La réputation de la Suède auprès de l'OCDE-CAD, de l'UNICEF et des partenaires de développement de l'UE alors que l'APD suédoise tombe sous la référence de 0,7 % du CAD.
+
+### Points d'information en 60 secondes
+
+- 📌 **HD10492** déposé le 2026-05-13, publié le 2026-05-14; débat prévu le 2026-05-18; date limite de réponse 2026-05-29
+- 📌 **Auteure**: Lotta Johnsson Fornarve (V) — membre de l'UU (commission des affaires étrangères); défenseure constante des droits dans l'aide au développement
+- 📌 **Cible**: Ministre Benjamin Dousa (M) — plus jeune ministre de la Tidöregering, responsable de la restructuration de "Bistånd för en ny era"
+- 📌 **Allégation centrale**: Les coupes de l'aide suédoise ont directement mis fin à des programmes vitaux pour les enfants malnutris, les soins de maternité dans les camps, les vaccinations et l'éducation des filles (preuves de Rädda Barnen [B2])
+- 📌 **Échelle**: ~500 millions d'enfants dans le monde dans des zones de conflit; ~5 millions de décès d'enfants de moins de 5 ans/an; 29 000 enfants déplacés quotidiennement
+- 📌 **Changement de politique suédois**: Tidöregering (M+KD+L avec le soutien de SD) a abandonné l'enprocentsmålet en décembre 2023 — l'APD passe de ~0,9 % du RNB vers ~0,7 % du RNB
+- 📌 **Trois questions**: (1) Analyse des conséquences effectuée? (2) Droits de l'enfant dans les documents politiques? (3) Renforcer les droits de l'enfant dans l'aide humanitaire (SE/UE/ONU)?
+- 📌 **Pas encore de débat** — interpellation soumise, pas encore répondue; valeur de renseignement dans le suivi de la trajectoire de réponse gouvernementale
+
+### Principal déclencheur futur
+
+**2026-05-29** — Sista svarsdatum (date limite finale de réponse). Si le ministre Dousa ne s'engage pas dans une analyse des conséquences (barnkonsekvensanalys), V et probablement S/MP/C intensifieront la pression par des motions budgétaires à l'automne 2026.
+
+### Évaluation de confiance principale
+
+**MOYEN** [B2] — Texte complet de l'interpellation récupéré depuis la source officielle du Riksdag; les allégations factuelles sur les fermetures de programmes d'aide reposent sur les rapports de Rädda Barnen (source secondaire, ONG crédible, vérifiable indépendamment) plutôt que sur une publication statistique gouvernementale.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#1a1e3d"}}}%%
+flowchart LR
+    A["🔴 HD10492 Filed\n2026-05-13"] --> B["📋 Anmäld\n2026-05-18"]
+    B --> C["⏱ Sista svarsdatum\n2026-05-29"]
+    C --> D{Minister Response}
+    D -->|Commits to analysis| E["🟢 V: Partial win\nPressure continues"]
+    D -->|Deflects| F["🔴 Opposition escalation\nBudget motions autumn 2026"]
+    style A fill:#ff006e,color:#fff
+    style B fill:#ffbe0b,color:#000
+    style C fill:#ffbe0b,color:#000
+    style D fill:#1a1e3d,color:#fff
+    style E fill:#0a4a3c,color:#fff
+    style F fill:#4a0a0a,color:#fff
+```
+
+### Amendements après la passe 2
+
+**Note DIW [CONTESTÉE]**: Le défi de l'avocat du diable identifie la plage 6,5–7,2. Score primaire maintenu à 7,2 sur la base de l'ancrage juridique CRC + le timing de l'année électorale + la densité des preuves de Rädda Barnen. Voir devils-advocate.md.
+
+**Note de décision supplémentaire**: Dynamique de coalition — les membres du L (Liberalerna) historiquement favorables à l'enprocentsmålet peuvent être pressés de s'exprimer. Surveiller les porte-parole de L après le débat (2026-05-18) pour détecter des divergences par rapport à la ligne de coalition.
+
+**Déclaration WEP** [horizon:T+15d]: *Il est probable (65 %) que Dousa réponde avec un recadrage de l'efficacité (Scénario B). Il est possible (25 %) qu'un engagement partiel substantiel soit proposé (Scénario A). Il est peu probable (20 %) que la réponse soit purement procédurale (Scénario C).* [WEP: "probable/possible/peu probable"]
+
+<!-- source-sha: 48729b47776eee9fd5a699b73571f4fb4db8f7a5 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/executive-brief_he.md -->
+
+**מחבר**: James Pether Sörling
+**תאריך**: 2026-05-14
+**סיווג**: ציבורי — GDPR Art. 9(2)(e,g)
+**אמינות**: בינוני [B2]
+**קוד האדמירליות**: B2
+
+---
+
+### תמצית (BLUF)
+
+לוטה יונסון פורנארה (V) הגישה את שאילתה 2025/26:492 ודורשת מהשר לשיתוף פעולה לפיתוח ולסחר חוץ בנימין דואוסה (M) לתת דין וחשבון על ההשלכות לזכויות הילד של קיצוצי הסיוע הדרמטיים של שוודיה. לאחר שהTidöregeringen זנחה את יעד האחוז בדצמבר 2023 ומשכה את אסטרטגיות המדינה, Rädda Barnen מדווחת שתוכניות לילדים עם תת-תזונה חמורה, בריאות האם במחנות פליטים וקמפיינים לחיסון נאלצו לסגור. השאילתה דורשת ניתוח רשמי של השלכות ומסגרת מחוזקת לזכויות הילד במדיניות הסיוע השוודית — אתגר ישיר לפרדיגמת הממשלה "Bistånd för en ny era".
+
+### החלטות שניתוח זה תומך בהן
+
+1. **מיצוב תיק**: מפלגות האופוזיציה וגורמי החברה האזרחית עוקבים אחרי האם השר דואוסה יתחייב לניתוח רשמי של השלכות (barnkonsekvensanalys) — התשובה תעצב את האפשרויות החקיקתיות והתקציביות בתקציב האביב 2026/27.
+2. **מסגרת תקשורתית**: האם הממשלה יכולה להגן בצורה מהימנה על רפורמת הסיוע שלה על בסיס זכויות הילד לפני מסע הבחירות 2026.
+3. **מיצוב בינלאומי**: מוניטין שוודיה ב-OECD DAC, UNICEF ושותפי הפיתוח של האיחוד האירופי כאשר הסיוע הרשמי לפיתוח של שוודיה נופל מתחת לאמת המידה של 0.7% של DAC.
+
+### נקודות מודיעין בינלאומי ב-60 שניות
+
+- 📌 **HD10492** הוגש 2026-05-13, פורסם 2026-05-14; דיון מתוכנן 2026-05-18; מועד אחרון לתשובה 2026-05-29
+- 📌 **מגישת השאילתה**: לוטה יונסון פורנארה (V) — חברת UU (ועדת החוץ); סנגורית עקבית לזכויות בסיוע לפיתוח
+- 📌 **יעד**: השר בנימין דואוסה (M) — השר הצעיר ביותר בTidöregeringen, האחראי לארגון מחדש של "Bistånd för en ny era"
+- 📌 **טענה מרכזית**: קיצוצי הסיוע השוודים עצרו ישירות תוכניות חיוניות לילדים עם תת-תזונה, בריאות האם במחנות, חיסונים וחינוך בנות (ראיות Rädda Barnen [B2])
+- 📌 **היקף**: ~500 מיליון ילדים ברחבי העולם באזורי סכסוך; ~5 מיליון מקרי מוות של ילדים מתחת לגיל 5 בשנה; 29,000 ילדים מועקרים יומיות
+- 📌 **שינוי מדיניות שוודית**: Tidöregeringen (M+KD+L עם תמיכת SD) זנחה את enprocentsmålet בדצמבר 2023 — הסיוע יורד מ~0.9% תוצר לאומי גולמי לכיוון ~0.7% תוצר לאומי גולמי
+- 📌 **שלוש שאלות**: (1) האם בוצע ניתוח השלכות? (2) זכויות הילד במסמכי מדיניות? (3) חיזוק זכויות הילד בסיוע הומניטרי (SE/EU/UN)?
+- 📌 **עדיין אין דיון** — שאילתה הוגשה, טרם נענתה; ערך מודיעיני במעקב אחר מסלול תגובת הממשלה
+
+### המניע העתידי המרכזי
+
+**2026-05-29** — Sista svarsdatum (מועד אחרון סופי לתשובה). אם השר דואוסה לא יתחייב לניתוח השלכות (barnkonsekvensanalys), V ועשוי גם S/MP/C יגבירו את הלחץ דרך הצעות תקציב בסתיו 2026.
+
+### הערכת אמינות מרכזית
+
+**בינוני** [B2] — הטקסט המלא של השאילתה נשלף ממקור הריקסדאג הרשמי; טענות עובדתיות על סגירת תוכניות סיוע מבוססות על דיווחי Rädda Barnen (מקור משני, ארגון אמין, ניתן לאימות עצמאי) ולא על פרסום סטטיסטי ממשלתי.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#1a1e3d"}}}%%
+flowchart LR
+    A["🔴 HD10492 Filed\n2026-05-13"] --> B["📋 Anmäld\n2026-05-18"]
+    B --> C["⏱ Sista svarsdatum\n2026-05-29"]
+    C --> D{Minister Response}
+    D -->|Commits to analysis| E["🟢 V: Partial win\nPressure continues"]
+    D -->|Deflects| F["🔴 Opposition escalation\nBudget motions autumn 2026"]
+    style A fill:#ff006e,color:#fff
+    style B fill:#ffbe0b,color:#000
+    style C fill:#ffbe0b,color:#000
+    style D fill:#1a1e3d,color:#fff
+    style E fill:#0a4a3c,color:#fff
+    style F fill:#4a0a0a,color:#fff
+```
+
+### תיקונים לאחר מעבר 2
+
+**הערת DIW [שנוי במחלוקת]**: אתגר עורך הדין של השטן מזהה טווח 6.5–7.2. הניקוד הראשי נשמר על 7.2 על בסיס עוגן משפטי של CRC + תזמון שנת הבחירות + צפיפות ראיות Rädda Barnen. ראה devils-advocate.md.
+
+**הערת החלטה נוספת**: דינמיקות קואליציה — חברי L (Liberalerna) שתמכו היסטורית ב-enprocentsmålet עשויים להיות מלוחצים להגיב. לעקוב אחרי דוברי L לאחר הדיון (2026-05-18) לחפש סטיות מקו הקואליציה.
+
+**הצהרת WEP** [horizon:T+15d]: *סביר (65%) שדואוסה יענה עם ניסוח מחדש של יעילות (תרחיש B). אפשרי (25%) שיוצע מחויבות חלקית משמעותית (תרחיש A). לא סביר (20%) שהתשובה תהיה טהורה פרוצדורלית (תרחיש C).* [WEP: "סביר/אפשרי/לא סביר"]
+
+<!-- source-sha: 48729b47776eee9fd5a699b73571f4fb4db8f7a5 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling
+**日付**: 2026-05-14
+**分類**: 公開 — GDPR Art. 9(2)(e,g)
+**信頼レベル**: 中程度 [B2]
+**アドミラルティコード**: B2
+
+---
+
+### 要旨（BLUF）
+
+ロッタ・ヨンソン・フォルナルヴェ（V）は質問主意書2025/26:492を提出し、開発協力・外国貿易大臣ベンヤミン・ドウサ（M）に対して、スウェーデンの劇的な援助削減が子どもの権利に与える結果について説明を求めている。2023年12月にTidöregeringenが1パーセント目標を放棄し国別戦略を撤回した後、Rädda Barnenは重度栄養不良の子どもたちへのプログラム、難民キャンプでの母子保健、予防接種キャンペーンが閉鎖を余儀なくされたと報告している。この質問主意書は、スウェーデンの開発援助政策における正式な影響分析と強化された子どもの権利フレームワークを求めている――政府の「Bistånd för en ny era」パラダイムへの直接的な挑戦である。
+
+### この分析が支持する決定
+
+1. **ポートフォリオ上の位置づけ**: 野党および市民社会関係者は、ドウサ大臣が正式な影響分析（barnkonsekvensanalys）にコミットするかどうかを注視している――その答えが2026/27年春予算における後続の立法・予算選択肢を形成する。
+2. **メディアのフレーミング**: 2026年選挙キャンペーン前に、政府が子どもの権利の観点からその援助改革を信頼性をもって擁護できるかどうか。
+3. **国際的位置づけ**: スウェーデンのODAがDACの0.7%基準を下回るにつれ、OECD DAC、UNICEF、EU開発パートナーにおけるスウェーデンの評判。
+
+### 60秒の情報ポイント
+
+- 📌 **HD10492** 2026-05-13提出、2026-05-14公開；討論予定2026-05-18；回答期限2026-05-29
+- 📌 **提出者**: ロッタ・ヨンソン・フォルナルヴェ（V）――UU（外務委員会）委員；開発援助権利の一貫した支持者
+- 📌 **対象**: ベンヤミン・ドウサ大臣（M）――Tidöregeringen最年少大臣、「Bistånd för en ny era」再編の責任者
+- 📌 **中心的主張**: スウェーデンの援助削減により、栄養不良の子どもたち、キャンプでの母子保健、予防接種、女子教育への重要プログラムが直接停止された（Rädda Barnen証拠 [B2]）
+- 📌 **規模**: 世界規模で紛争地帯の子ども約5億人；5歳未満死亡者数年間約500万人；毎日2万9千人の子どもが避難
+- 📌 **スウェーデンの政策転換**: Tidöregeringen（M+KD+L、SD支持）は2023年12月にenprocentsmåletを放棄――ODAはGNI比約0.9%から約0.7%へ低下
+- 📌 **3つの質問**: (1) 影響分析は実施されたか？(2) 政策文書に子どもの権利は盛り込まれているか？(3) 人道支援における子どもの権利を強化せよ（SE/EU/UN）
+- 📌 **まだ討論なし** ―― 質問主意書提出済み、未回答；政府回答の軌道追跡における情報価値
+
+### 最も重要な将来の誘因
+
+**2026-05-29** ―― Sista svarsdatum（最終回答期限）。ドウサ大臣が影響分析（barnkonsekvensanalys）にコミットしなければ、Vおよびおそらくは S/MP/Cが2026年秋の予算動議を通じてプレッシャーを強める。
+
+### 主要信頼性評価
+
+**中程度** [B2] ―― 質問主意書の全文をリクスダーグ公式ソースから取得；援助プログラム閉鎖に関する事実上の主張はRädda Barnen報告（二次情報源、信頼性の高いNGO、独立的に検証可能）に依拠しており、政府統計出版物ではない。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#1a1e3d"}}}%%
+flowchart LR
+    A["🔴 HD10492 Filed\n2026-05-13"] --> B["📋 Anmäld\n2026-05-18"]
+    B --> C["⏱ Sista svarsdatum\n2026-05-29"]
+    C --> D{Minister Response}
+    D -->|Commits to analysis| E["🟢 V: Partial win\nPressure continues"]
+    D -->|Deflects| F["🔴 Opposition escalation\nBudget motions autumn 2026"]
+    style A fill:#ff006e,color:#fff
+    style B fill:#ffbe0b,color:#000
+    style C fill:#ffbe0b,color:#000
+    style D fill:#1a1e3d,color:#fff
+    style E fill:#0a4a3c,color:#fff
+    style F fill:#4a0a0a,color:#fff
+```
+
+### 第2パス後の修正
+
+**DIW注記 [論争あり]**: 悪魔の代弁者挑戦は6.5〜7.2の範囲を特定する。CRC法的根拠＋選挙年のタイミング＋Rädda Barnen証拠の密度に基づき、主要スコアは7.2に維持。devils-advocate.md参照。
+
+**追加決定注記**: 連立の動態――自由党（Liberalerna）のenprocentsmålet支持者が発言を求められる可能性がある。2026年5月18日の討論後にL代弁者が連立ラインから逸脱していないかを監視する。
+
+**WEP声明** [horizon:T+15d]: *ドウサが効率性の再フレーミングで回答するのは蓋然性が高い（65%、シナリオB）。実質的な部分的コミットメントが提示されるのは可能性がある（25%、シナリオA）。回答が純粋に手続的なものになるのは蓋然性が低い（20%、シナリオC）。* [WEP: "蓋然性が高い/可能性がある/蓋然性が低い"]
+
+<!-- source-sha: 48729b47776eee9fd5a699b73571f4fb4db8f7a5 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling
+**날짜**: 2026-05-14
+**분류**: 공개 — GDPR Art. 9(2)(e,g)
+**신뢰 수준**: 중간 [B2]
+**해군 코드**: B2
+
+---
+
+### 요약 (BLUF)
+
+로타 욘슨 포르나르베(V)는 질의서 2025/26:492를 제출하여 개발협력 및 대외무역부 장관 벤야민 도우사(M)에게 스웨덴의 극적인 원조 삭감이 아동 권리에 미치는 결과를 설명할 것을 요구했다. Tidöregeringen이 2023년 12월 1퍼센트 목표를 포기하고 국가별 전략을 철회한 후, Rädda Barnen은 심각한 영양실조 아동 프로그램, 난민 캠프의 모성 건강 서비스, 예방접종 캠페인이 강제로 폐쇄되었다고 보고했다. 이 질의서는 스웨덴 개발원조 정책에서 공식적인 결과 분석과 강화된 아동 권리 프레임워크를 요구한다 — 정부의 "Bistånd för en ny era" 패러다임에 대한 직접적인 도전이다.
+
+### 이 분석이 지지하는 결정
+
+1. **포트폴리오 포지셔닝**: 야당 정당과 시민사회 행위자들은 도우사 장관이 공식적인 결과 분석(barnkonsekvensanalys)에 약속할지 여부를 주시하고 있다 — 그 답이 2026/27 봄 예산에서 후속 입법 및 예산 옵션을 결정한다.
+2. **미디어 프레이밍**: 2026년 선거 캠페인 전에 정부가 아동 권리 근거로 원조 개혁을 신뢰성 있게 방어할 수 있는지.
+3. **국제적 포지셔닝**: 스웨덴 ODA가 DAC의 0.7% 기준 이하로 떨어지면서 OECD DAC, UNICEF, EU 개발 파트너에서의 스웨덴 평판.
+
+### 60초 정보 포인트
+
+- 📌 **HD10492** 2026-05-13 제출, 2026-05-14 공개; 토론 예정 2026-05-18; 응답 마감일 2026-05-29
+- 📌 **제출자**: 로타 욘슨 포르나르베(V) — UU(외무위원회) 위원; 개발원조 권리의 일관된 옹호자
+- 📌 **대상**: 벤야민 도우사 장관(M) — Tidöregeringen 최연소 장관, "Bistånd för en ny era" 구조조정 담당
+- 📌 **핵심 주장**: 스웨덴 원조 삭감으로 영양실조 아동, 캠프 모성 건강, 예방접종, 여아 교육을 위한 필수 프로그램이 직접 중단됨 (Rädda Barnen 증거 [B2])
+- 📌 **규모**: 전 세계 분쟁지역 아동 약 5억 명; 5세 미만 사망 연간 약 500만 건; 매일 29,000명의 아동 피난
+- 📌 **스웨덴 정책 변화**: Tidöregeringen(M+KD+L, SD 지지)은 2023년 12월 enprocentsmålet 폐기 — ODA가 GNI 대비 약 0.9%에서 약 0.7%로 하락
+- 📌 **세 가지 질문**: (1) 결과 분석 수행 여부? (2) 정책 문서에 아동 권리 포함 여부? (3) 인도적 원조에서 아동 권리 강화 (SE/EU/UN)?
+- 📌 **아직 토론 없음** — 질의서 제출됨, 아직 답변 없음; 정부 응답 궤도 추적에서의 정보 가치
+
+### 가장 중요한 향후 촉발 요인
+
+**2026-05-29** — Sista svarsdatum (최종 응답 마감일). 도우사 장관이 결과 분석(barnkonsekvensanalys)에 약속하지 않으면, V 및 아마도 S/MP/C가 2026년 가을 예산 동의를 통해 압박을 강화할 것이다.
+
+### 핵심 신뢰도 평가
+
+**중간** [B2] — 질의서 전문을 리크스다그 공식 출처에서 검색; 원조 프로그램 폐쇄에 관한 사실적 주장은 정부 통계 출판물이 아닌 Rädda Barnen 보고(이차 출처, 신뢰성 있는 NGO, 독립 검증 가능)에 의존.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#1a1e3d"}}}%%
+flowchart LR
+    A["🔴 HD10492 Filed\n2026-05-13"] --> B["📋 Anmäld\n2026-05-18"]
+    B --> C["⏱ Sista svarsdatum\n2026-05-29"]
+    C --> D{Minister Response}
+    D -->|Commits to analysis| E["🟢 V: Partial win\nPressure continues"]
+    D -->|Deflects| F["🔴 Opposition escalation\nBudget motions autumn 2026"]
+    style A fill:#ff006e,color:#fff
+    style B fill:#ffbe0b,color:#000
+    style C fill:#ffbe0b,color:#000
+    style D fill:#1a1e3d,color:#fff
+    style E fill:#0a4a3c,color:#fff
+    style F fill:#4a0a0a,color:#fff
+```
+
+### 2회차 수정 사항
+
+**DIW 주석 [논쟁 중]**: 악마의 변호인 도전이 6.5–7.2 범위를 식별. CRC 법적 앵커 + 선거 연도 타이밍 + Rädda Barnen 증거 밀도를 기반으로 주요 점수 7.2 유지. devils-advocate.md 참조.
+
+**추가 결정 주석**: 연립 역학 — 역사적으로 enprocentsmålet을 지지해온 L(Liberalerna) 의원들이 발언 압박을 받을 수 있음. 토론 후(2026-05-18) L 대변인이 연립 노선에서 이탈하는지 주시.
+
+**WEP 성명** [horizon:T+15d]: *도우사가 효율성 재프레이밍으로 답변할 가능성이 높다 (65%, 시나리오 B). 실질적인 부분적 약속이 제공될 가능성이 있다 (25%, 시나리오 A). 응답이 순전히 절차적일 가능성은 낮다 (20%, 시나리오 C).* [WEP: "가능성 높음/가능성 있음/가능성 낮음"]
+
+<!-- source-sha: 48729b47776eee9fd5a699b73571f4fb4db8f7a5 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling
+**Datum**: 2026-05-14
+**Classificatie**: OPENBAAR — AVG Art. 9(2)(e,g)
+**Betrouwbaarheid**: MIDDEL [B2]
+**Admiraliteitscode**: B2
+
+---
+
+### BLUF
+
+Lotta Johnsson Fornarve (V) heeft Interpellatie 2025/26:492 ingediend met de eis dat minister voor Ontwikkelingssamenwerking en Buitenlandse Handel Benjamin Dousa (M) verantwoording aflegt over de gevolgen van de dramatische Zweedse hulpbezuinigingen voor de rechten van het kind. Nadat de Tidöregering in december 2023 de eeprocentsdoelstelling heeft losgelaten en landenstrategieën heeft ingetrokken, rapporteert Rädda Barnen dat programma's voor ernstig ondervoede kinderen, moedergezondheid in vluchtelingenkampen en vaccinatiecampagnes gedwongen zijn te sluiten. De interpellatie eist een formele gevolgenanalyse en een versterkt kindrechtenkader in het Zweedse ontwikkelingshulpbeleid — een directe uitdaging aan het regeringsparadigma "Bistånd för en ny era".
+
+### Beslissingen die deze analyse ondersteunt
+
+1. **Portefeuillepositionering**: Oppositiepartijen en maatschappelijke actoren houden in de gaten of minister Dousa zich zal committeren aan een formele gevolgenanalyse (barnkonsekvensanalys) — het antwoord bepaalt de latere wetgevings- en budgetopties in de voorjaarsbegroting 2026/27.
+2. **Mediacadering**: Of de regering haar hulphervorming geloofwaardig kan verdedigen op basis van kinderrechten voor de verkiezingscampagne van 2026.
+3. **Internationale positionering**: De reputatie van Zweden bij OESO-DAC, UNICEF en EU-ontwikkelingspartners naarmate de Zweedse ODA onder de DAC-referentienorm van 0,7 % zakt.
+
+### Informatieve punten in 60 seconden
+
+- 📌 **HD10492** ingediend 2026-05-13, gepubliceerd 2026-05-14; debat gepland 2026-05-18; antwoorddeadline 2026-05-29
+- 📌 **Auteur**: Lotta Johnsson Fornarve (V) — lid van UU (commissie buitenlandse zaken); consequent pleitbezorger voor rechten in ontwikkelingshulp
+- 📌 **Doel**: Minister Benjamin Dousa (M) — jongste minister in de Tidöregering, verantwoordelijk voor de herstructurering van "Bistånd för en ny era"
+- 📌 **Kernbewering**: Zweedse hulpbezuinigingen hebben directe vitale programma's voor ondervoede kinderen, moederzorg in kampen, vaccinaties en meisjesonderwijs stopgezet (Rädda Barnen-bewijs [B2])
+- 📌 **Schaal**: ~500 miljoen kinderen wereldwijd in conflictgebieden; ~5 miljoen sterfgevallen onder 5 jaar/jaar; dagelijks 29.000 ontheemde kinderen
+- 📌 **Zweedse beleidsverandering**: Tidöregering (M+KD+L met SD-steun) verliet de eeprocentsdoelstelling in december 2023 — ODA daalt van ~0,9 % BNI richting ~0,7 % BNI
+- 📌 **Drie vragen**: (1) Gevolgenanalyse uitgevoerd? (2) Kinderrechten in beleidsdocumenten? (3) Kinderrechten versterken in humanitaire hulp (SE/EU/VN)?
+- 📌 **Nog geen debat** — interpellatie ingediend, nog niet beantwoord; inlichtingenwaarde bij het volgen van de regeringsantwoordrichting
+
+### Belangrijkste toekomstige trigger
+
+**2026-05-29** — Sista svarsdatum (definitieve antwoorddeadline). Als minister Dousa zich niet committeert aan een gevolgenanalyse (barnkonsekvensanalys), zullen V en waarschijnlijk S/MP/C de druk opvoeren via begrotingsmotiesin het najaar van 2026.
+
+### Belangrijkste betrouwbaarheidsbeoordeling
+
+**MIDDEL** [B2] — Volledige interpellatietekst opgehaald van officiële Riksdag-bron; feitelijke beweringen over gesloten hulpprogramma's zijn gebaseerd op de rapportage van Rädda Barnen (secundaire bron, geloofwaardige NGO, onafhankelijk verifieerbaar) in plaats van op een overheidsstatistiekpublicatie.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#1a1e3d"}}}%%
+flowchart LR
+    A["🔴 HD10492 Filed\n2026-05-13"] --> B["📋 Anmäld\n2026-05-18"]
+    B --> C["⏱ Sista svarsdatum\n2026-05-29"]
+    C --> D{Minister Response}
+    D -->|Commits to analysis| E["🟢 V: Partial win\nPressure continues"]
+    D -->|Deflects| F["🔴 Opposition escalation\nBudget motions autumn 2026"]
+    style A fill:#ff006e,color:#fff
+    style B fill:#ffbe0b,color:#000
+    style C fill:#ffbe0b,color:#000
+    style D fill:#1a1e3d,color:#fff
+    style E fill:#0a4a3c,color:#fff
+    style F fill:#4a0a0a,color:#fff
+```
+
+### Wijzigingen na ronde 2
+
+**DIW-opmerking [BETWIST]**: De Advocaat van de Duivel-uitdaging identificeert bereik 6,5–7,2. Primaire score gehandhaafd op 7,2 op basis van CRC-juridisch anker + verkiezingsjaarstiming + dichtheid van Rädda Barnen-bewijs. Zie devils-advocate.md.
+
+**Aanvullende beslissingsnotitie**: Coalitiedynamiek — L (Liberalerna)-leden die de eeprocentsdoelstelling historisch hebben gesteund, kunnen onder druk worden gezet om commentaar te geven. L-woordvoerders na het debat (2026-05-18) volgen op afwijkingen van de coalitielijn.
+
+**WEP-verklaring** [horizon:T+15d]: *Het is waarschijnlijk (65 %) dat Dousa antwoordt met een efficiëntieomkadering (Scenario B). Het is mogelijk (25 %) dat een substantieel gedeeltelijk commitment wordt aangeboden (Scenario A). Het is onwaarschijnlijk (20 %) dat het antwoord puur procedureel is (Scenario C).* [WEP: "waarschijnlijk/mogelijk/onwaarschijnlijk"]
+
+<!-- source-sha: 48729b47776eee9fd5a699b73571f4fb4db8f7a5 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling
+**Dato**: 2026-05-14
+**Klassifisering**: OFFENTLIG — GDPR Art. 9(2)(e,g)
+**Konfidens**: MIDDELS [B2]
+**Admiralitetskode**: B2
+
+---
+
+### BLUF
+
+Lotta Johnsson Fornarve (V) har levert inn Interpellasjon 2025/26:492 med krav om at bistands- og utenrikshandelsminister Benjamin Dousa (M) gjør rede for konsekvensene for barns rettigheter av Sveriges dramatiske bistandskutt. Da Tidöregeringen i desember 2023 forlot enprosentsm ̊alet og trakk tilbake landsstrategier, rapporterer Rädda Barnen at programmer for alvorlig underernærte barn, mødrehelse i flyktningleirer og vaksinasjonskampanjer er blitt tvunget til å stenge. Interpellasjonen krever en formell konsekvensanalyse og et styrket rammeverk for barns rettigheter i svensk bistandspolitikk — en direkte utfordring av regjeringens paradigme "Bistånd för en ny era".
+
+### Beslutninger dette notatet støtter
+
+1. **Porteføljeposisjonering**: Opposisjonspartier og sivilsamfunnsaktører overvåker om minister Dousa vil forplikte seg til en formell konsekvensanalyse (barnkonsekvensanalys) — svaret former etterfølgende lovgivnings- og budsjettmuligheter i vårbudsjettet 2026/27.
+2. **Medieinnramming**: Om regjeringen troverdig kan forsvare sin bistandsreform på barnrettighetsgrunnlag frem mot valgkampen 2026.
+3. **Internasjonal posisjonering**: Sveriges omdømme ved OECD DAC, UNICEF og EUs utviklingspartnere etter hvert som svensk ODA faller under DAC-referansemålet på 0,7 %.
+
+### 60-sekunders etterretningspunkter
+
+- 📌 **HD10492** levert 2026-05-13, publisert 2026-05-14; debatt planlagt 2026-05-18; svarfrist 2026-05-29
+- 📌 **Forfatter**: Lotta Johnsson Fornarve (V) — medlem av UU (utenrikskomiteen); konsekvent talsmann for bistandsrettigheter
+- 📌 **Mål**: Minister Benjamin Dousa (M) — yngste minister i Tidöregeringen, ansvarlig for omstrukturering av "Bistånd för en ny era"
+- 📌 **Kjernepåstand**: Svenske bistandskutt har direkte stoppet vitale programmer for underernærte barn, mødrehelse i leirer, vaksinasjoner, jenters utdanning (Rädda Barnen-dokumentasjon [B2])
+- 📌 **Omfang**: ~500 millioner barn globalt i konfliktsoner; ~5 millioner dødsfall under 5 år/år; 29 000 barn fordrevet daglig
+- 📌 **Svensk politisk endring**: Tidöregeringen (M+KD+L med SD-støtte) forlot enprocentsmålet desember 2023 — ODA faller fra ~0,9 % BNI mot ~0,7 % BNI
+- 📌 **Tre spørsmål**: (1) Konsekvensanalyse gjennomført? (2) Barnerettigheter i politikkdokumenter? (3) Styrk barnerettigheter i humanitær bistand (SE/EU/FN)?
+- 📌 **Ingen debatt ennå** — interpellasjonen sendt, ennå ikke besvart; etterretningsverdi i å følge regjeringens svarbane
+
+### Viktigste fremtidige utløser
+
+**2026-05-29** — Sista svarsdatum (endelig svarfrist). Dersom minister Dousa ikke forplikter seg til en konsekvensanalyse (barnkonsekvensanalys), vil V og trolig S/MP/C intensivere presset gjennom budsjettforslag høsten 2026.
+
+### Nøkkelkonfidensvurdering
+
+**MIDDELS** [B2] — Fullstendig interpellasjonstekst hentet fra offisiell Riksdag-kilde; faktapåstander om stengte bistandsprogrammer er basert på Rädda Barnens rapportering (sekundær kilde, troverdig NGO, uavhengig verifiserbar) snarere enn statlig statistikkpublikasjon.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#1a1e3d"}}}%%
+flowchart LR
+    A["🔴 HD10492 Filed\n2026-05-13"] --> B["📋 Anmäld\n2026-05-18"]
+    B --> C["⏱ Sista svarsdatum\n2026-05-29"]
+    C --> D{Minister Response}
+    D -->|Commits to analysis| E["🟢 V: Partial win\nPressure continues"]
+    D -->|Deflects| F["🔴 Opposition escalation\nBudget motions autumn 2026"]
+    style A fill:#ff006e,color:#fff
+    style B fill:#ffbe0b,color:#000
+    style C fill:#ffbe0b,color:#000
+    style D fill:#1a1e3d,color:#fff
+    style E fill:#0a4a3c,color:#fff
+    style F fill:#4a0a0a,color:#fff
+```
+
+### Endringer etter pasning 2
+
+**DIW-merknad [OMSTRIDT]**: Djevelens advokat-utfordring identifiserer intervall 6,5–7,2. Primær poengsum opprettholdt ved 7,2 basert på CRC-rettslig forankring + valgårstiming + Rädda Barnen-dokumentasjonstetthet. Se devils-advocate.md.
+
+**Tilleggsnotering for beslutning**: Koalisjonsdynamikk — L (Liberalerna)-medlemmer som historisk har støttet enprocentsmålet kan presses til å kommentere. Overvåk L-talspersoner etter debatt (2026-05-18) for avvik fra koalisjonslinjen.
+
+**WEP-erklæring** [horizon:T+15d]: *Det er sannsynlig (65 %) at Dousa svarer med effektivitetsomformulering (Scenario B). Det er mulig (25 %) at et substansielt delvis tilsagn tilbys (Scenario A). Det er usannsynlig (20 %) at svaret er rent prosedyremessig (Scenario C).* [WEP: "sannsynlig/mulig/usannsynlig"]
+
+<!-- source-sha: 48729b47776eee9fd5a699b73571f4fb4db8f7a5 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling
+**Datum**: 2026-05-14
+**Klassificering**: OFFENTLIG — GDPR Art. 9(2)(e,g)
+**Konfidens**: MEDEL [B2]
+**Admiralitetskod**: B2
+
+---
+
+### BLUF
+
+Lotta Johnsson Fornarve (V) har lämnat in Interpellation 2025/26:492 med krav på att bistånds- och utrikeshandelsminister Benjamin Dousa (M) redogör för barnrättskonsekvenserna av Sveriges dramatiska biståndsminskningar. Med Tidöregerings biståndspolitik som övergav enprocentsmålet i december 2023 och drog tillbaka landstrategier, rapporterar Rädda Barnen att program för svårt undernärda barn, mödravård i flyktingläger och vaccinationskampanjer har tvingats stänga. Interpellationen kräver en formell konsekvensanalys och ett stärkt barnrättsramverk i svensk biståndspolitik — en direkt utmaning mot regeringens paradigm "Bistånd för en ny era".
+
+### Beslut som detta underlag stöder
+
+1. **Portföljpositionering**: Oppositionspartier och civilsamhällsaktörer bevakar om minister Dousa kommer att åta sig en formell konsekvensanalys (barnkonsekvensanalys) — svaret formar efterföljande lagstiftnings- och budgetalternativ i vårbudgeten 2026/27.
+2. **Medieinramning**: Om regeringen trovärdigt kan försvara sin biståndsreform på barnrättsgrunder inför valrörelsen 2026.
+3. **Internationell positionering**: Sveriges rykte vid OECD DAC, UNICEF och EU:s utvecklingspartners när svensk ODA faller under DAC-riktmärket på 0,7 %.
+
+### 60-sekunders underrättelsepunkter
+
+- 📌 **HD10492** lämnad 2026-05-13, publicerad 2026-05-14; debatt planerad 2026-05-18; sista svarsdatum 2026-05-29
+- 📌 **Upphovsperson**: Lotta Johnsson Fornarve (V) — ledamot i UU (utrikesutskottet); konsekvent förespråkare för biståndsrättigheter
+- 📌 **Mål**: Minister Benjamin Dousa (M) — yngste ministern i Tidöregeringen, ansvarig för omstrukturering av "Bistånd för en ny era"
+- 📌 **Kärnpåstående**: Svenska biståndsminskningar har direkt stoppat vitala program för undernärda barn, mödravård i läger, vaccinationer, flickors utbildning (Rädda Barnen-bevis [B2])
+- 📌 **Skala**: ~500 miljoner barn globalt i konfliktzoner; ~5 miljoner döda under 5 år/år; 29 000 barn fördrivna dagligen
+- 📌 **Svensk politisk förändring**: Tidöregeringen (M+KD+L med SD-stöd) övergav enprocentsmålet december 2023 — ODA faller från ~0,9 % BNI mot ~0,7 % BNI
+- 📌 **Tre frågor**: (1) Konsekvensanalys genomförd? (2) Barnrätt i policydokument? (3) Stärk barnrätt i humanitärt bistånd (SE/EU/FN)?
+- 📌 **Ingen debatt ännu** — interpellationen skickad, inte ännu besvarad; underrättelsevärde i att följa regeringens svarsriktning
+
+### Viktigaste framtida utlösare
+
+**2026-05-29** — Sista svarsdatum. Om minister Dousa inte åtar sig en konsekvensanalys (barnkonsekvensanalys), kommer V och troligen S/MP/C att intensifiera trycket genom budgetmotioner hösten 2026.
+
+### Nyckelkonfidensbedömning
+
+**MEDEL** [B2] — Fullständig interpellationstext hämtad från officiell riksdagskälla; faktapåståenden om stängda biståndsprogram bygger på Rädda Barnens rapportering (sekundärkälla, trovärdig NGO, oberoende verifierbar) snarare än statlig statistikutgåva.
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#1a1e3d"}}}%%
+flowchart LR
+    A["🔴 HD10492 Filed\n2026-05-13"] --> B["📋 Anmäld\n2026-05-18"]
+    B --> C["⏱ Sista svarsdatum\n2026-05-29"]
+    C --> D{Minister Response}
+    D -->|Commits to analysis| E["🟢 V: Partial win\nPressure continues"]
+    D -->|Deflects| F["🔴 Opposition escalation\nBudget motions autumn 2026"]
+    style A fill:#ff006e,color:#fff
+    style B fill:#ffbe0b,color:#000
+    style C fill:#ffbe0b,color:#000
+    style D fill:#1a1e3d,color:#fff
+    style E fill:#0a4a3c,color:#fff
+    style F fill:#4a0a0a,color:#fff
+```
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/executive-brief_zh.md -->
+
+**作者**: James Pether Sörling
+**日期**: 2026-05-14
+**分类**: 公开 — GDPR Art. 9(2)(e,g)
+**置信度**: 中等 [B2]
+**海军准将代码**: B2
+
+---
+
+### 简报摘要（BLUF）
+
+洛塔·约翰逊·福尔纳维（V）提交了质询案2025/26:492，要求发展合作与对外贸易部长本雅明·杜萨（M）就瑞典大幅削减对外援助对儿童权利的影响作出说明。自2023年12月Tidöregeringen放弃"百分之一目标"并撤销国别战略后，Rädda Barnen报告称，针对严重营养不良儿童的项目、难民营中的妇幼保健以及疫苗接种运动被迫关闭。该质询案要求开展正式影响分析，并在瑞典发展援助政策中建立更完善的儿童权利框架——直接挑战政府的"Bistånd för en ny era"范式。
+
+### 本分析支持的决策
+
+1. **投资组合定位**：反对党和公民社会行为者密切关注杜萨部长是否会承诺进行正式影响分析（barnkonsekvensanalys）——答案将决定2026/27年春季预算中后续立法和预算方案的走向。
+2. **媒体框架**：政府能否在2026年竞选活动开始前从儿童权利的角度可信地为其援助改革进行辩护。
+3. **国际定位**：随着瑞典官方发展援助降至低于发展援助委员会0.7%基准，瑞典在经合组织发展援助委员会、联合国儿童基金会及欧盟发展伙伴中的声誉。
+
+### 60秒情报要点
+
+- 📌 **HD10492** 2026-05-13提交，2026-05-14公开；辩论定于2026-05-18；答复截止日期2026-05-29
+- 📌 **提交者**：洛塔·约翰逊·福尔纳维（V）——外事委员会（UU）成员；始终如一的发展援助权利倡导者
+- 📌 **目标**：本雅明·杜萨部长（M）——Tidöregeringen最年轻的部长，负责"Bistånd för en ny era"重组
+- 📌 **核心主张**：瑞典援助削减直接停止了为营养不良儿童提供的重要项目、难民营产妇护理、疫苗接种和女童教育（Rädda Barnen证据[B2]）
+- 📌 **规模**：全球冲突地区约5亿儿童；每年约500万5岁以下儿童死亡；每日29,000名儿童流离失所
+- 📌 **瑞典政策转变**：Tidöregeringen（M+KD+L获SD支持）于2023年12月放弃enprocentsmålet——官方发展援助从约占国民总收入0.9%降至约0.7%
+- 📌 **三个问题**：(1) 是否进行了影响分析？(2) 政策文件中是否包含儿童权利？(3) 在人道主义援助中加强儿童权利（SE/EU/UN）？
+- 📌 **尚无辩论**——质询案已提交，尚未得到答复；追踪政府答复走向具有情报价值
+
+### 最重要的未来触发因素
+
+**2026-05-29** — Sista svarsdatum（最终答复截止日期）。若杜萨部长不承诺进行影响分析（barnkonsekvensanalys），V以及可能的S/MP/C将在2026年秋季通过预算动议施加更大压力。
+
+### 关键置信度评估
+
+**中等** [B2] ——从里克斯达格官方来源获取完整质询文本；关于援助项目关闭的事实性主张依赖Rädda Barnen的报告（二手来源、可信NGO、可独立核实），而非政府统计出版物。
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "edgeLabelBackground": "#1a1e3d", "tertiaryColor": "#1a1e3d"}}}%%
+flowchart LR
+    A["🔴 HD10492 Filed\n2026-05-13"] --> B["📋 Anmäld\n2026-05-18"]
+    B --> C["⏱ Sista svarsdatum\n2026-05-29"]
+    C --> D{Minister Response}
+    D -->|Commits to analysis| E["🟢 V: Partial win\nPressure continues"]
+    D -->|Deflects| F["🔴 Opposition escalation\nBudget motions autumn 2026"]
+    style A fill:#ff006e,color:#fff
+    style B fill:#ffbe0b,color:#000
+    style C fill:#ffbe0b,color:#000
+    style D fill:#1a1e3d,color:#fff
+    style E fill:#0a4a3c,color:#fff
+    style F fill:#4a0a0a,color:#fff
+```
+
+### 第二轮修订
+
+**DIW注释[有争议]**：魔鬼代言人挑战识别出6.5–7.2的范围。根据CRC法律锚定+选举年时机+Rädda Barnen证据密度，主要分数维持在7.2。参见devils-advocate.md。
+
+**额外决策注释**：联盟动态——历史上支持enprocentsmålet的L（Liberalerna）成员可能被迫发表评论。辩论后（2026-05-18）关注L发言人是否偏离联盟路线。
+
+**WEP声明** [horizon:T+15d]：*杜萨以效率重构回应的可能性较高（65%，情景B）。提供实质性部分承诺的可能性存在（25%，情景A）。答复纯粹是程序性的可能性较低（20%，情景C）。* [WEP: "可能性较高/可能性存在/可能性较低"]
+
+<!-- source-sha: 48729b47776eee9fd5a699b73571f4fb4db8f7a5 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 1 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 2 | Linked in Article Sources, not expanded inline |
 
@@ -1559,6 +2419,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/interpellations/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

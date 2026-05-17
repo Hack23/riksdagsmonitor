@@ -6,7 +6,7 @@ date: 2026-05-14
 subfolder: motions
 slug: 2026-05-14-motions
 source_folder: analysis/daily/2026-05-14/motions
-generated_at: 2026-05-16T20:24:26.597Z
+generated_at: 2026-05-17T18:40:44.069Z
 language: en
 layout: article
 ---
@@ -86,6 +86,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1512,13 +1525,746 @@ None — all 15 downloaded documents are active.
 
 No prior PIR-status.json found in motions subfolder (first run). Initial PIRs established in `intelligence-assessment.md`.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# موجز استخباراتي — اقتراحات المعارضة: حزمة الهجرة السويدية تحت النار
+
+**المؤلف**: جيمس بيثر سورلينغ  
+**التاريخ**: 2026-05-14  
+**التصنيف**: عام  
+**درجة الثقة**: [B2] على الأرجح صحيح — كود الأميرالية  
+**عمق التحليل**: عميق
+
+---
+
+### الخلاصة التنفيذية
+
+استقبل الريكسداغ السويدي في 13 مايو 2026 مجموعة لافتة من 15 اقتراح معارضة، إذ تحدّت أحزاب S وC وV في آنٍ واحد حزمة من أربع مقترحات لتشديد سياسة الهجرة — المقترحات 262–265 في الدورة البرلمانية 2025/26. كشفت الاقتراحات عن كتلة برلمانية معارضة كبيرة في مواجهة مسار حكومة الهجرة، إذ تقبل S جزئياً أنشطة الإعادة لكنها ترفض رفضاً قاطعاً إلغاء تصاريح الإقامة الدائمة، وتطالب C بضمانات قائمة على الحقوق لا سيما للأطفال في مراكز الاحتجاز، وترفض V جميع المقترحات الأربعة كلياً. إلى جانب ثلاثة اقتراحات من S وC تطالب بتوجيه مناخي أقوى في الخطة الوطنية للبنية التحتية للنقل 2026–2037، يُمثّل 14 مايو 2026 يوماً من التدقيق التشريعي المكثّف في الهجرة وحقوق الطفل وسياسة النقل المناخية.
+
+### القرارات الرئيسية المدعومة
+
+1. **جدوى مقاومة المعارضة للهجرة**: إن حاولت الحكومة تمرير المقترحات 262–265 دون تعديلات المعارضة، يضمن تكتل S+C+V (نحو 150 مقعداً مجموع) تحدياً جوهرياً في اللجان، غير أن ائتلاف M+SD+KD يحتفظ بأغلبية عاملة للتمرير.
+2. **ضمانات الأطفال في مراكز الاحتجاز**: يُشكّل اقتراح C رقم HD024160 (barn i förvar) تحدياً بالغ الأهمية الدستورية وفق CRC المادة 37 وECHR المادة 5؛ وقد أشار Lagrådet بالفعل إلى مخاوف — قد يُفضي هذا الضغط التعديلي إلى تنازل في اللجنة.
+3. **البند المناخي في البنية التحتية للنقل**: يشير اقتراح S رقم HD024162 الداعي إلى تكيّف مناخي صريح في skr. 2025/26:259 (الخطة الوطنية للنقل 2026–2037) إلى أن المعارضة ستستخدم عملية ميزانية النقل لتعزيز السياسة المناخية بعد فقدانها المبادرة في المناقشات المالية.
+
+### نقاط استخباراتية في 60 ثانية
+
+- **تضامن الكتلة الهجرية**: قدّمت S وC وV اقتراحات منسّقة في نفس اليوم ضد جميع المقترحات الأربعة للهجرة — تنسيق ثلاثي نادر للمعارضة في الهجرة منذ 2021. من الناحية التحليلية، هذا "هجوم اقتراحات عنقودية" — مصمَّم لتحقيق تغطية إعلامية متزامنة قصوى.
+- **تصريح الإقامة الدائمة كنقطة احتكاك**: يطالب الاقتراح الرئيسي لـ S رقم HD024153 برفض تدريج إلغاء تصاريح الإقامة الدائمة بأكمله؛ يمس 80,000–100,000 حامل تصريح حالي؛ حجة الامتثال لميثاق AMR محل خلاف.
+- **البُعد الحقوقي للطفل**: اقتراح C رقم HD024160 (barn i förvar) + نقد Lagrådet الدستوري (CRC المادة 37 / ECHR المادة 5) يفتح نافذة تنازل حكومي. سابقة: إصلاح الخدمة الاجتماعية 2024 حيث قبلت الحكومة 2 من أصل 5 تعديلات مدعومة من Lagrådet.
+- **معارضة V الشاملة**: يرفض Vänsterpartiet جميع المقترحات الأربعة كلياً — بما في ذلك أنشطة الإعادة ومتطلبات السلوك. استراتيجية V انتخابية (توحيد الشريحة 4)، وليست حجب (لا تستطيع تحقيق أغلبية).
+- **حسابات التحالف**: تمتلك الحكومة 176 مقعداً (أغلبية مقعد واحد). S+C+V+MP = 173 — أقل من الأغلبية بمقعدين. الحكومة آمنة في التمرير لكن عُرضة لمقترحات تعديل محددة إن صوّت ضدها عضوان من الغالبية.
+- **البنية التحتية للنقل**: ثلاثة اقتراحات (S+C) تطالب بتوجيه مناخي أقوى في خطة النقل 2026–2037؛ تحديداً هدف خفض 30% من انبعاثات كربون النقل بحلول 2030 كمعيار لاختيار المشاريع.
+- **لجنة SfU ساحة معركة**: ستعالج SfU 10 اقتراحات مقابل 4 مقترحات؛ يُتوقع الإعلان عن جدول أعمال اللجنة قبل 2026-05-20 — إشارة المسار السريع ستدل على السيناريو 2 (تمرير كامل دون تعديل).
+
+### المحرك المستقبلي الرئيسي
+
+**في غضون 72 ساعة**: إعلان تخطيط لجنة SfU لجلسات الاستماع للمقترحات prop. 2025/26:262–265. إن أعلن رئيس اللجنة (SD/M) عن جدول مسار سريع، سيتصاعد ضغط المعارضة من S+C+V.
+
+```mermaid
+graph LR
+    style GovernmentPropositions fill:#ff006e,color:#fff
+    style SOpposition fill:#e8112d,color:#fff
+    style COpposition fill:#009933,color:#fff
+    style VOpposition fill:#DA291C,color:#fff
+    style SfUCommittee fill:#00d9ff,color:#000
+    style TUCommittee fill:#ffbe0b,color:#000
+
+    GovernmentPropositions["Govt Props 262–265\n(Migration Package)"] --> SfUCommittee
+    SOpposition["S Motions\nHD024153, HD024152"] --> SfUCommittee
+    COpposition["C Motions\nHD024157–161"] --> SfUCommittee
+    VOpposition["V Motions\nHD024167–169"] --> SfUCommittee
+    SfUCommittee["SfU Committee\nBattleground 2026"] --> Riksdag["Riksdag Vote\n~Jun 2026"]
+    TransportSkr["Skr 259\nTransport 2026-37"] --> TUCommittee
+    SMotionsTU["S+C Motions\nHD024162–164"] --> TUCommittee
+    TUCommittee["TU Committee"] --> Riksdag
+```
+
+<!-- source-sha: 13fb01dbf19848515cc9696908bf9f099436e97c -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-05-14  
+**Klassificering**: OFFENTLIG  
+**Konfidensgrad**: [B2] Sandsynligvis sandt — Admiralitetskoden  
+**Analysedybde**: Dyb
+
+---
+
+### BLUF
+
+Sveriges Riksdag modtog den 13. maj 2026 en bemærkelsesværdig klynge af 15 oppositionsmotioner, hvor S, C og V samtidigt udfordrede et fire propositioner stærkt migrationsstramningspakke — propositionerne 262–265 i riksmødet 2025/26. Motionerne afslører et betydeligt parlamentarisk oppositionsblok mod regeringens migrationspolitiske kurs, hvor S delvist accepterer tilbagevendelsesaktiviteter men fast afviser afskaffelsen af permanente opholdstilladelser, C kræver rettighedsbaserede beskyttelsesforanstaltninger særligt for børn i forvaring, og V modsætter sig alle fire propositioner i deres helhed. Kombineret med tre motioner fra S og C, der kræver stærkere klimatorientering i den nationale transportinfrastrukturplan 2026–2037, markerer den 14. maj 2026 en dag med koncentreret lovgivningsmæssig kontrol inden for migration, børns rettigheder og klima-transportpolitik.
+
+### Understøttede nøglebeslutninger
+
+1. **Levedygtighed af oppositionens migrationsmotstand**: Bør regeringen forsøge at vedtage propositionerne 262–265 uden oppositionsændringer, garanterer S+C+V-blokken (i alt ~150 mandater) substantiel udvalgsudfordring, men M+SD+KD-koalitionen bevarer et virkende flertal for passage.
+2. **Beskyttelsesforanstaltninger for børn i forvaring**: C's HD024160-motion (barn i förvar) rejser en konstitutionelt betydelig udfordring i henhold til CRC art. 37 og ECHR art. 5; Lagrådet har allerede markeret betænkeligheder — dette ændringstryk kan medføre en udvalgsindrømmelse.
+3. **Klimaklausul i transportinfrastruktur**: S's HD024162-motion, der kræver eksplicit klimatilpasning i skr. 2025/26:259 (national transportplan 2026–2037), signalerer, at oppositionen vil bruge transportbudgetprocessen til at fremme klimapolitik efter at have mistet initiativet i finansdebatterne.
+
+### 60-sekunders efterretningsbullets
+
+- **Migrationsblokundersoli daritet**: S, C og V indsendte koordinerede motioner samme dag mod alle fire migrationsproportioner — sjælden triparts-oppositionskoordination om migration siden 2021. Analytisk er dette et "motionsklusterangreb" — designet til maksimal simultan mediedækning.
+- **Permanent opholdstilladelse som stridspunkt**: S's flagskib HD024153 kræver afvisning af hele udfasningen af permanente opholdstilladelser; 80.000–100.000 eksisterende tilladelsesindehavere berørt; AMR-paktens overholdelsesargument bestridt.
+- **Børnerettighedsdimension**: C's HD024160 (barn i förvar) + Lagrådets konstitutionelle kritik (CRC art. 37 / ECHR art. 5) skaber et regeringsindrømmelsesrum. Præcedens: 2024-socialtjenestereformen, hvor regeringen accepterede 2 af 5 Lagrådet-støttede ændringer.
+- **V's totale modstand**: Vänsterpartiet afviser alle fire migrationsproportioner i deres helhed — inklusive tilbagevendelsesaktiviteter og vandelkrav. V's strategi er valgbetinget (segment 4-konsolidering), ikke blokeringsformål (kan ikke opnå flertal).
+- **Koalitionsmatematik**: Regeringen har 176 mandater (1 mandats flertal). S+C+V+MP = 173 — 2 kortere end flertal. Regeringen er sikker på passage, men sårbar over for specifikke ændringsforslag, hvis 2 regeringsbagbencher stemmer imod.
+- **Transportinfrastruktur**: Tre motioner (S+C) kræver stærkere klimatorientering i transportplanen 2026–2037; specifikt et 30 % reduktionsmål for transportkuldioxid inden 2030 i udvælgelseskriterier for projekter.
+- **SfU som slagmark**: SfU skal behandle 10 motioner mod 4 propositioner; meddelelse om udvalgets tidsplan forventes inden 2026-05-20 — et hurtigspor-signal vil indikere Scenario 2 (fuld vedtagelse uændret).
+
+### Ledende fremtidig udløser
+
+**Inden for 72 timer**: SfU's udvalgsplanlægningsmeddelelse for behandling af prop. 2025/26:262–265. Hvis udvalgsformanden (SD/M) annoncerer et hurtigspor, vil oppositionspresset fra S+C+V intensiveres.
+
+```mermaid
+graph LR
+    style GovernmentPropositions fill:#ff006e,color:#fff
+    style SOpposition fill:#e8112d,color:#fff
+    style COpposition fill:#009933,color:#fff
+    style VOpposition fill:#DA291C,color:#fff
+    style SfUCommittee fill:#00d9ff,color:#000
+    style TUCommittee fill:#ffbe0b,color:#000
+
+    GovernmentPropositions["Govt Props 262–265\n(Migration Package)"] --> SfUCommittee
+    SOpposition["S Motions\nHD024153, HD024152"] --> SfUCommittee
+    COpposition["C Motions\nHD024157–161"] --> SfUCommittee
+    VOpposition["V Motions\nHD024167–169"] --> SfUCommittee
+    SfUCommittee["SfU Committee\nBattleground 2026"] --> Riksdag["Riksdag Vote\n~Jun 2026"]
+    TransportSkr["Skr 259\nTransport 2026-37"] --> TUCommittee
+    SMotionsTU["S+C Motions\nHD024162–164"] --> TUCommittee
+    TUCommittee["TU Committee"] --> Riksdag
+```
+
+<!-- source-sha: 13fb01dbf19848515cc9696908bf9f099436e97c -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling  
+**Datum**: 2026-05-14  
+**Klassifizierung**: ÖFFENTLICH  
+**Konfidenzgrad**: [B2] Wahrscheinlich zutreffend — Admiralitätscode  
+**Analysetiefe**: Tief
+
+---
+
+### BLUF
+
+Schwedens Riksdag erhielt am 13. Mai 2026 ein bemerkenswertes Bündel von 15 Oppositionsmotionen, bei denen S, C und V gleichzeitig ein Vierpropositionenpaket zur Migrationsrestriktionierung herausforderten — Propositionen 262–265 des Riksmöte 2025/26. Die Motionen enthüllen einen bedeutenden parlamentarischen Oppositionsblock gegen den Migrationspolitikkurs der Regierung: S akzeptiert teilweise Rückkehraktivitäten, lehnt aber die Abschaffung dauerhafter Aufenthaltserlaubnisse entschieden ab, C fordert rechtsbasierte Schutzmaßnahmen insbesondere für Kinder in Haft, und V lehnt alle vier Propositionen vollständig ab. Kombiniert mit drei Motionen von S und C, die eine stärkere Klimaausrichtung im nationalen Transportinfrastrukturplan 2026–2037 fordern, markiert der 14. Mai 2026 einen Tag konzentrierter Gesetzgebungsprüfung in den Bereichen Migration, Kinderrechte und Klima-Verkehrspolitik.
+
+### Unterstützte Schlüsselentscheidungen
+
+1. **Tragfähigkeit des Oppositionswiderstands gegen Migration**: Sollte die Regierung versuchen, die Propositionen 262–265 ohne Oppositionsänderungen durchzusetzen, garantiert der S+C+V-Block (insgesamt ~150 Mandate) eine substanzielle Ausschussherausforderung, die M+SD+KD-Koalition behält jedoch eine arbeitsfähige Mehrheit für die Verabschiedung.
+2. **Schutzmaßnahmen für Kinder in Haft**: Die C-Motion HD024160 (barn i förvar) stellt eine verfassungsrechtlich bedeutsame Herausforderung nach CRC Art. 37 und ECHR Art. 5 dar; Lagrådet hat bereits Bedenken geäußert — dieser Änderungsdruck kann eine Ausschusskonzession herbeiführen.
+3. **Klimaklausel in der Transportinfrastruktur**: Die S-Motion HD024162, die eine explizite Klimaanpassung in skr. 2025/26:259 (nationaler Transportplan 2026–2037) fordert, signalisiert, dass die Opposition den Transportbudgetprozess nutzen wird, um Klimapolitik voranzutreiben, nachdem sie die Initiative in den Finanzdebatten verloren hat.
+
+### 60-Sekunden-Nachrichtenpunkte
+
+- **Migrationsblock-Solidarität**: S, C und V reichten am selben Tag koordinierte Motionen gegen alle vier Migrationspropositionen ein — seltene Dreierpartei-Oppositionskoordination bei Migration seit 2021. Analytisch ist dies ein "Motionsklusterangriff" — konzipiert für maximale simultane Medienberichterstattung.
+- **Dauerhafte Aufenthaltserlaubnis als Streitpunkt**: S's Flaggschiff HD024153 fordert die Ablehnung der gesamten Abschaffung dauerhafter Aufenthaltserlaubnisse; 80.000–100.000 bestehende Erlaubnisinhaber betroffen; AMR-Pakt-Konformitätsargument umstritten.
+- **Kinderrechtsdimension**: C's HD024160 (barn i förvar) + Lagrådets Verfassungskritik (CRC Art. 37 / ECHR Art. 5) schafft einen Regierungskonzessionsraum. Präzedenz: Sozialdienstreform 2024, bei der die Regierung 2 von 5 Lagrådet-unterstützten Änderungen akzeptierte.
+- **V's totaler Widerstand**: Vänsterpartiet lehnt alle vier Migrationspropositionen vollständig ab — einschließlich Rückkehraktivitäten und Verhaltensanforderungen. V's Strategie ist wahlbedingt (Segment-4-Konsolidierung), nicht blockierend (kann keine Mehrheit erzielen).
+- **Koalitionsarithmetik**: Die Regierung hat 176 Mandate (1 Mandat Mehrheit). S+C+V+MP = 173 — 2 unter Mehrheit. Die Regierung ist bei der Verabschiedung sicher, aber bei spezifischen Änderungsanträgen gefährdet, wenn 2 Regierungsabgeordnete dagegen stimmen.
+- **Transportinfrastruktur**: Drei Motionen (S+C) fordern eine stärkere Klimaausrichtung im Transportplan 2026–2037; insbesondere ein 30%-CO₂-Reduktionsziel im Transportbereich bis 2030 als Projektauswahlkriterium.
+- **SfU als Schlachtfeld**: SfU wird 10 Motionen gegen 4 Propositionen behandeln; Mitteilung zum Ausschusszeitplan wird bis 2026-05-20 erwartet — ein Schnellspursignal würde Szenario 2 (vollständige Verabschiedung unverändert) anzeigen.
+
+### Führender künftiger Auslöser
+
+**Innerhalb von 72 Stunden**: SfU's Ausschussplanungsmitteilung zur Behandlung von Prop. 2025/26:262–265. Wenn der Ausschussvorsitzende (SD/M) einen Schnellspurplan ankündigt, wird der Oppositionsdruck von S+C+V intensiviert.
+
+```mermaid
+graph LR
+    style GovernmentPropositions fill:#ff006e,color:#fff
+    style SOpposition fill:#e8112d,color:#fff
+    style COpposition fill:#009933,color:#fff
+    style VOpposition fill:#DA291C,color:#fff
+    style SfUCommittee fill:#00d9ff,color:#000
+    style TUCommittee fill:#ffbe0b,color:#000
+
+    GovernmentPropositions["Govt Props 262–265\n(Migration Package)"] --> SfUCommittee
+    SOpposition["S Motions\nHD024153, HD024152"] --> SfUCommittee
+    COpposition["C Motions\nHD024157–161"] --> SfUCommittee
+    VOpposition["V Motions\nHD024167–169"] --> SfUCommittee
+    SfUCommittee["SfU Committee\nBattleground 2026"] --> Riksdag["Riksdag Vote\n~Jun 2026"]
+    TransportSkr["Skr 259\nTransport 2026-37"] --> TUCommittee
+    SMotionsTU["S+C Motions\nHD024162–164"] --> TUCommittee
+    TUCommittee["TU Committee"] --> Riksdag
+```
+
+<!-- source-sha: 13fb01dbf19848515cc9696908bf9f099436e97c -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling  
+**Fecha**: 2026-05-14  
+**Clasificación**: PÚBLICO  
+**Nivel de confianza**: [B2] Probablemente cierto — Código de almirantazgo  
+**Profundidad de análisis**: Profunda
+
+---
+
+### BLUF
+
+El Riksdag sueco recibió el 13 de mayo de 2026 un notable conjunto de 15 mociones de oposición, donde S, C y V desafiaron simultáneamente un paquete de endurecimiento migratorio de cuatro proposiciones — proposiciones 262–265 del riksmöte 2025/26. Las mociones revelan un bloque parlamentario de oposición significativo frente al rumbo de la política migratoria del gobierno, donde S acepta parcialmente las actividades de retorno pero rechaza firmemente la abolición de los permisos de residencia permanente, C exige salvaguardas basadas en derechos especialmente para los niños en detención, y V se opone a las cuatro proposiciones en su totalidad. Junto con tres mociones de S y C que exigen una mayor orientación climática en el plan nacional de infraestructuras de transporte 2026–2037, el 14 de mayo de 2026 marca un día de escrutinio legislativo concentrado en migración, derechos del niño y política climática-transporte.
+
+### Decisiones Clave Apoyadas
+
+1. **Viabilidad de la resistencia migratoria de la oposición**: Si el gobierno intenta aprobar las proposiciones 262–265 sin enmiendas de la oposición, el bloque S+C+V (en total ~150 escaños) garantiza un desafío sustancial en comisión, aunque la coalición M+SD+KD mantiene una mayoría operativa para su aprobación.
+2. **Salvaguardas para niños en detención**: La moción C HD024160 (barn i förvar) plantea un desafío constitucionalmente significativo conforme a la CRC art. 37 y el CEDH art. 5; el Lagrådet ya ha señalado preocupaciones — esta presión de enmienda puede generar una concesión en comisión.
+3. **Cláusula climática en infraestructura de transporte**: La moción S HD024162 que exige adaptación climática explícita en skr. 2025/26:259 (plan nacional de transporte 2026–2037) señala que la oposición usará el proceso presupuestario de transporte para impulsar la política climática después de haber perdido la iniciativa en los debates fiscales.
+
+### Puntos de Inteligencia en 60 Segundos
+
+- **Solidaridad del bloque migratorio**: S, C y V presentaron mociones coordinadas el mismo día contra las cuatro proposiciones migratorias — rara coordinación de oposición tripartita en migración desde 2021. Analíticamente esto es un "ataque de grupo de mociones" — diseñado para máxima cobertura mediática simultánea.
+- **Permiso de residencia permanente como punto de fricción**: El buque insignia de S, HD024153, exige el rechazo completo de la supresión progresiva de los permisos de residencia permanente; 80.000–100.000 titulares de permisos existentes afectados; el argumento de cumplimiento del Pacto AMR está en disputa.
+- **Dimensión de derechos del niño**: La moción C HD024160 (barn i förvar) + la crítica constitucional del Lagrådet (CRC art. 37 / CEDH art. 5) crea un espacio de concesión gubernamental. Precedente: la reforma de servicios sociales de 2024 donde el gobierno aceptó 2 de 5 enmiendas respaldadas por el Lagrådet.
+- **Oposición total de V**: Vänsterpartiet rechaza las cuatro proposiciones migratorias en su totalidad — incluidas actividades de retorno y requisitos de conducta. La estrategia de V es electoral (consolidación del segmento 4), no de bloqueo (no puede lograr mayoría).
+- **Aritmética de la coalición**: El gobierno tiene 176 escaños (1 escaño de mayoría). S+C+V+MP = 173 — 2 por debajo de la mayoría. El gobierno tiene garantizada la aprobación, pero es vulnerable a propuestas de enmienda específicas si 2 parlamentarios del gobierno votan en contra.
+- **Infraestructura de transporte**: Tres mociones (S+C) exigen mayor orientación climática en el plan de transporte 2026–2037; concretamente un objetivo de reducción del 30 % del carbono del transporte para 2030 en los criterios de selección de proyectos.
+- **SfU como campo de batalla**: SfU procesará 10 mociones contra 4 proposiciones; se espera un anuncio del calendario de la comisión para antes del 2026-05-20 — una señal de vía rápida indicaría el Escenario 2 (aprobación completa sin cambios).
+
+### Principal Desencadenante Futuro
+
+**En 72 horas**: anuncio de programación de la comisión SfU para las audiencias de las prop. 2025/26:262–265. Si el presidente de la comisión (SD/M) anuncia un cronograma de vía rápida, la presión de la oposición de S+C+V se intensificará.
+
+```mermaid
+graph LR
+    style GovernmentPropositions fill:#ff006e,color:#fff
+    style SOpposition fill:#e8112d,color:#fff
+    style COpposition fill:#009933,color:#fff
+    style VOpposition fill:#DA291C,color:#fff
+    style SfUCommittee fill:#00d9ff,color:#000
+    style TUCommittee fill:#ffbe0b,color:#000
+
+    GovernmentPropositions["Govt Props 262–265\n(Migration Package)"] --> SfUCommittee
+    SOpposition["S Motions\nHD024153, HD024152"] --> SfUCommittee
+    COpposition["C Motions\nHD024157–161"] --> SfUCommittee
+    VOpposition["V Motions\nHD024167–169"] --> SfUCommittee
+    SfUCommittee["SfU Committee\nBattleground 2026"] --> Riksdag["Riksdag Vote\n~Jun 2026"]
+    TransportSkr["Skr 259\nTransport 2026-37"] --> TUCommittee
+    SMotionsTU["S+C Motions\nHD024162–164"] --> TUCommittee
+    TUCommittee["TU Committee"] --> Riksdag
+```
+
+<!-- source-sha: 13fb01dbf19848515cc9696908bf9f099436e97c -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling  
+**Päivämäärä**: 2026-05-14  
+**Luokittelu**: JULKINEN  
+**Luotettavuusaste**: [B2] Todennäköisesti totta — Admiraliteettikoodisto  
+**Analyysisyvyys**: Syvä
+
+---
+
+### BLUF
+
+Ruotsin riksdag vastaanotti 13. toukokuuta 2026 huomattavan kokoelman 15 oppositioaloitetta, joissa S, C ja V haastoivat samanaikaisesti neljän esityksen maahanmuuton tiukentamispaketin — esitykset 262–265 riksmötessä 2025/26. Aloitteet paljastavat merkittävän parlamentaarisen oppositioblokin hallituksen maahanmuuttopoliittista kurssia vastaan: S hyväksyy osittain paluutoiminnot, mutta torjuu jyrkästi pysyvien oleskelulupien poistamisen, C vaatii oikeusperustaisia suojatoimenpiteitä erityisesti säilöön otetuille lapsille, ja V vastustaa kaikkia neljää esitystä kokonaisuudessaan. Yhdistettynä kolmeen S:n ja C:n aloitteeseen, joissa vaaditaan vahvempaa ilmastoorientaatiota kansalliseen liikenneinfrastruktuurisuunnitelmaan 2026–2037, 14. toukokuuta 2026 merkitsee päivää, jona lainsäädäntövalvonta keskittyi muuttoliikkeeseen, lasten oikeuksiin ja ilmasto-liikennepolitiikkaan.
+
+### Tuetut avainpäätökset
+
+1. **Opposition maahanmuuttovastustuksen elinvoimaisuus**: Jos hallitus pyrkii hyväksyttämään esitykset 262–265 ilman oppositiomuutoksia, S+C+V-blokki (yhteensä ~150 mandaattia) takaa merkittävän valiokuntataistelun, mutta M+SD+KD-koalitiolla on toimiva enemmistö hyväksymiseen.
+2. **Säilöön otettujen lasten suojatoimenpiteet**: C:n HD024160-aloite (barn i förvar) esittää perustuslaillisesti merkittävän haasteen CRC art. 37:n ja ECHR art. 5:n nojalla; Lagrådet on jo ilmaissut huolensa — tämä muutospaine voi tuottaa valiokunnan myönnytyksen.
+3. **Liikenneinfrastruktuurin ilmastoehto**: S:n HD024162-aloite, joka vaatii nimenomaista ilmastosovittamista skr. 2025/26:259:ään (kansallinen liikennesuunnitelma 2026–2037), osoittaa, että oppositio käyttää liikennebudjettiprosessia ilmastopolitiikan edistämiseen menetettyään aloitteen finanssidebaateissa.
+
+### 60 sekunnin tiedusteluluodit
+
+- **Maahanmuuttoblokin solidaarisuus**: S, C ja V toimittivat koordinoituja aloitteita samana päivänä kaikkia neljää maahanmuuttoesitystä vastaan — harvinainen kolmen puolueen oppositiokoordinaatio maahanmuuttoasioissa vuodesta 2021. Analyyttisesti tämä on "aloiteryväshyökkäys" — suunniteltu maksimaalista samanaikaista mediapeitettä varten.
+- **Pysyvä oleskelulupa riitakysymyksenä**: S:n lippulaiva HD024153 vaatii koko pysyvien oleskelulupien asteittaisen poiston hylkäämistä; 80 000–100 000 nykyistä luvanhaltijaa on asianomaisia; AMR-sopimuksen noudattamisargumentti kiistetty.
+- **Lasten oikeuksien ulottuvuus**: C:n HD024160 (barn i förvar) + Lagrådets perustuslaillinen kritiikki (CRC art. 37 / ECHR art. 5) luo hallitukselle myönnytysmahdollisuuden. Ennakkotapaus: vuoden 2024 sosiaalitoimiuudistus, jossa hallitus hyväksyi 2/5 Lagrådets tukemasta muutoksesta.
+- **V:n täydellinen vastustus**: Vänsterpartiet hylkää kaikki neljä maahanmuuttoesitystä kokonaisuudessaan — mukaan lukien paluutoiminnot ja käytösvaatimukset. V:n strategia on vaalipainotteinen (segmentin 4 konsolidointi), ei estävä (ei voida saavuttaa enemmistöä).
+- **Koalitioaritmetiikka**: Hallituksella on 176 mandaattia (1 mandaatin enemmistö). S+C+V+MP = 173 — 2 lyhyemmälle enemmistöstä. Hallitus on varma hyväksymisestä, mutta haavoittuva tietyille muutosehdotuksille, jos 2 hallituksen takapenkkiläistä äänestää vastaan.
+- **Liikenneinfrastruktuuri**: Kolme aloitetta (S+C) vaatii vahvempaa ilmastoorientaatiota liikennesuunnitelmaan 2026–2037; erityisesti 30 %:n hiilidioksidivähennäystavoite liikenteestä vuoteen 2030 mennessä hankkeiden valintakriteereissä.
+- **SfU taistelutantereena**: SfU käsittelee 10 aloitetta 4 esitystä vastaan; valiokunnan aikatauluilmoituksen odotetaan tulevan viimeistään 2026-05-20 — pikakaistan signaali tarkoittaisi Skenaario 2 (täysi hyväksyminen muuttumattomana).
+
+### Johtava tuleva laukaisija
+
+**72 tunnin sisällä**: SfU:n valiokunnan aikatauluilmoitus prop. 2025/26:262–265 käsittelyä varten. Jos valiokunnan puheenjohtaja (SD/M) ilmoittaa pikakaistasta, S+C+V:n oppositiopaine kiihtyy.
+
+```mermaid
+graph LR
+    style GovernmentPropositions fill:#ff006e,color:#fff
+    style SOpposition fill:#e8112d,color:#fff
+    style COpposition fill:#009933,color:#fff
+    style VOpposition fill:#DA291C,color:#fff
+    style SfUCommittee fill:#00d9ff,color:#000
+    style TUCommittee fill:#ffbe0b,color:#000
+
+    GovernmentPropositions["Govt Props 262–265\n(Migration Package)"] --> SfUCommittee
+    SOpposition["S Motions\nHD024153, HD024152"] --> SfUCommittee
+    COpposition["C Motions\nHD024157–161"] --> SfUCommittee
+    VOpposition["V Motions\nHD024167–169"] --> SfUCommittee
+    SfUCommittee["SfU Committee\nBattleground 2026"] --> Riksdag["Riksdag Vote\n~Jun 2026"]
+    TransportSkr["Skr 259\nTransport 2026-37"] --> TUCommittee
+    SMotionsTU["S+C Motions\nHD024162–164"] --> TUCommittee
+    TUCommittee["TU Committee"] --> Riksdag
+```
+
+<!-- source-sha: 13fb01dbf19848515cc9696908bf9f099436e97c -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling  
+
+**Degré de confiance** : [B2] Probablement vrai — Code des amirautés  
+**Profondeur d'analyse** : Approfondie
+
+---
+
+### BLUF
+
+Le Riksdag suédois a reçu le 13 mai 2026 un ensemble remarquable de 15 motions d'opposition, où S, C et V ont simultanément défié un paquet de resserrement migratoire en quatre propositions — propositions 262–265 du riksmöte 2025/26. Les motions révèlent un bloc parlementaire d'opposition significatif face à l'orientation migratoire du gouvernement : S accepte partiellement les activités de retour mais rejette fermement la suppression des permis de séjour permanents, C exige des mesures de protection fondées sur les droits particulièrement pour les enfants en rétention, et V s'oppose à la totalité des quatre propositions. Associées à trois motions de S et C exigeant une orientation climatique renforcée dans le plan national d'infrastructure de transport 2026–2037, le 14 mai 2026 marque une journée de contrôle législatif concentré dans les domaines de la migration, des droits de l'enfant et de la politique climatique-transport.
+
+### Décisions clés soutenues
+
+1. **Viabilité de la résistance migratoire de l'opposition** : Si le gouvernement tente de faire adopter les propositions 262–265 sans amendements de l'opposition, le bloc S+C+V (environ 150 sièges au total) garantit un défi substantiel en commission, mais la coalition M+SD+KD conserve une majorité effective pour l'adoption.
+2. **Mesures de protection pour les enfants en rétention** : La motion C HD024160 (barn i förvar) soulève un défi constitutionnellement significatif en vertu de la CRC art. 37 et de la CEDH art. 5 ; le Lagrådet a déjà signalé des préoccupations — cette pression d'amendement peut engendrer une concession en commission.
+3. **Clause climatique dans l'infrastructure de transport** : La motion S HD024162 exigeant une adaptation climatique explicite dans la skr. 2025/26:259 (plan national de transport 2026–2037) indique que l'opposition utilisera le processus budgétaire des transports pour faire avancer la politique climatique après avoir perdu l'initiative dans les débats financiers.
+
+### Points de renseignement en 60 secondes
+
+- **Solidarité du bloc migratoire** : S, C et V ont déposé des motions coordonnées le même jour contre l'ensemble des quatre propositions migratoires — une coordination d'opposition tripartite rarement vue sur la migration depuis 2021. Analytiquement, c'est une « attaque groupée de motions » — conçue pour une couverture médiatique simultanée maximale.
+- **Permis de séjour permanent comme point de friction** : Le fleuron de S, HD024153, exige le rejet de l'ensemble de la suppression progressive des permis de séjour permanents ; 80 000 à 100 000 détenteurs de permis existants concernés ; l'argument de conformité au Pacte AMR est contesté.
+- **Dimension droits de l'enfant** : La motion C HD024160 (barn i förvar) + la critique constitutionnelle du Lagrådet (CRC art. 37 / CEDH art. 5) crée un espace de concession gouvernementale. Précédent : la réforme des services sociaux de 2024 où le gouvernement a accepté 2 des 5 amendements soutenus par le Lagrådet.
+- **Opposition totale de V** : Vänsterpartiet rejette l'ensemble des quatre propositions migratoires — y compris les activités de retour et les exigences de bonne conduite. La stratégie de V est électorale (consolidation du segment 4), non bloquante (ne peut pas obtenir la majorité).
+- **Arithmétique coalitionnelle** : Le gouvernement détient 176 sièges (1 siège de majorité). S+C+V+MP = 173 — 2 de moins que la majorité. Le gouvernement est sûr d'une adoption, mais vulnérable sur des propositions d'amendement spécifiques si 2 membres de la majorité votent contre.
+- **Infrastructure de transport** : Trois motions (S+C) exigent une orientation climatique plus forte dans le plan de transport 2026–2037 ; spécifiquement un objectif de réduction de 30 % des émissions de carbone du transport d'ici 2030 dans les critères de sélection des projets.
+- **SfU comme champ de bataille** : SfU traitera 10 motions contre 4 propositions ; une annonce du calendrier de commission est attendue avant le 2026-05-20 — un signal de procédure accélérée indiquerait le Scénario 2 (adoption complète sans modification).
+
+### Principal déclencheur à venir
+
+**Dans les 72 heures** : annonce du calendrier de la commission SfU pour les auditions des prop. 2025/26:262–265. Si le président de commission (SD/M) annonce une procédure accélérée, la pression de l'opposition de S+C+V s'intensifiera.
+
+```mermaid
+graph LR
+    style GovernmentPropositions fill:#ff006e,color:#fff
+    style SOpposition fill:#e8112d,color:#fff
+    style COpposition fill:#009933,color:#fff
+    style VOpposition fill:#DA291C,color:#fff
+    style SfUCommittee fill:#00d9ff,color:#000
+    style TUCommittee fill:#ffbe0b,color:#000
+
+    GovernmentPropositions["Govt Props 262–265\n(Migration Package)"] --> SfUCommittee
+    SOpposition["S Motions\nHD024153, HD024152"] --> SfUCommittee
+    COpposition["C Motions\nHD024157–161"] --> SfUCommittee
+    VOpposition["V Motions\nHD024167–169"] --> SfUCommittee
+    SfUCommittee["SfU Committee\nBattleground 2026"] --> Riksdag["Riksdag Vote\n~Jun 2026"]
+    TransportSkr["Skr 259\nTransport 2026-37"] --> TUCommittee
+    SMotionsTU["S+C Motions\nHD024162–164"] --> TUCommittee
+    TUCommittee["TU Committee"] --> Riksdag
+```
+
+<!-- source-sha: 13fb01dbf19848515cc9696908bf9f099436e97c -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# תדריך מודיעין — הצעות האופוזיציה: חבילת ההגירה של שוודיה תחת אש
+
+**מחבר**: ג'יימס פת'ר סורלינג  
+**תאריך**: 2026-05-14  
+**סיווג**: ציבורי  
+**רמת אמינות**: [B2] כנראה נכון — קוד האדמירליות  
+**עומק הניתוח**: עמוק
+
+---
+
+### תמצית ביצועית
+
+הריקסדאג השוודי קיבל ב-13 במאי 2026 אוסף יוצא דופן של 15 הצעות אופוזיציה, שבהן S, C ו-V ערערו בו-זמנית על חבילת החמרה בת ארבע הצעות חוק בנושא הגירה — הצעות 262–265 של ה-riksmöte 2025/26. ההצעות חושפות בלוק פרלמנטרי אופוזיציוני משמעותי נגד מדיניות ההגירה של הממשלה: S מקבלת חלקית את פעילויות השיבה אך דוחה נחרצות את ביטול היתרי השהייה הקבועים, C דורשת אמצעי הגנה מבוססי זכויות במיוחד לילדים בכליאה, ו-V מתנגדת לכל ארבע ההצעות בשלמותן. בשילוב עם שלוש הצעות של S ו-C הדורשות אוריינטציה אקלימית חזקה יותר בתוכנית התשתיות הלאומית לתחבורה 2026–2037, ה-14 במאי 2026 מסמן יום של ביקורת חקיקתית מרוכזת בתחומי ההגירה, זכויות הילד ומדיניות התחבורה-אקלים.
+
+### החלטות מפתח נתמכות
+
+1. **כדאיות ההתנגדות להגירה של האופוזיציה**: אם הממשלה תנסה לאשר את ההצעות 262–265 ללא תיקוני אופוזיציה, בלוק S+C+V (כ-150 מנדטים בסך הכל) מבטיח אתגר ועדה מהותי, אם כי לקואליציית M+SD+KD נותרת רוב עובד לאישור.
+2. **אמצעי הגנה לילדים בכליאה**: ההצעה C HD024160 (barn i förvar) מעלה אתגר משמעותי חוקתית לפי CRC סע' 37 ו-ECHR סע' 5; Lagrådet כבר סמן חששות — לחץ התיקון הזה עשוי לייצר ויתור בוועדה.
+3. **סעיף אקלים בתשתיות תחבורה**: ההצעה S HD024162 הדורשת הסתגלות אקלימית מפורשת ב-skr. 2025/26:259 (תוכנית התחבורה הלאומית 2026–2037) מסמנת שהאופוזיציה תשתמש בתהליך תקציב התחבורה לקידום מדיניות אקלים לאחר שאיבדה את היוזמה בוויכוחים הפיסקאליים.
+
+### נקודות מודיעין ב-60 שניות
+
+- **סולידריות בלוק ההגירה**: S, C ו-V הגישו הצעות מתואמות באותו יום נגד כל ארבע הצעות ההגירה — תיאום אופוזיציה שלישי נדיר בנושא הגירה מאז 2021. מבחינה אנליטית זהו "מתקפת אשכול הצעות" — מתוכנן לכיסוי תקשורתי מקסימאלי סימולטני.
+- **היתר שהייה קבוע כנקודת חיכוך**: ה-HD024153 הדגל של S דורש דחיית כל הביטול ההדרגתי של היתרי השהייה הקבועים; 80,000–100,000 מחזיקי היתרים קיימים מושפעים; טיעון ציות ל-AMR Pact שנוי במחלוקת.
+- **ממד זכויות הילד**: C HD024160 (barn i förvar) + הביקורת החוקתית של Lagrådet (CRC סע' 37 / ECHR סע' 5) יוצר מרחב ויתור ממשלתי. תקדים: רפורמת שירותי הרווחה 2024 שבה הממשלה קיבלה 2 מתוך 5 תיקונים נתמכי Lagrådet.
+- **ההתנגדות המוחלטת של V**: Vänsterpartiet דוחה את כל ארבע הצעות ההגירה בשלמותן — כולל פעילויות שיבה ודרישות התנהגות. האסטרטגיה של V היא בחירתית (איחוד פלח 4), לא חסימה (לא יכולה להשיג רוב).
+- **אריתמטיקת הקואליציה**: לממשלה יש 176 מנדטים (רוב של 1 מנדט). S+C+V+MP = 173 — 2 מתחת לרוב. הממשלה בטוחה באישור אך חשופה לתיקונים ספציפיים אם 2 חברי קואליציה מהשורה האחורית יצביעו נגד.
+- **תשתיות תחבורה**: שלוש הצעות (S+C) דורשות אוריינטציה אקלימית חזקה יותר בתוכנית התחבורה 2026–2037; ספציפית יעד הפחתה של 30% בפחמן מתחבורה עד 2030 בקריטריוני בחירת פרויקטים.
+- **SfU כשדה קרב**: SfU יעבד 10 הצעות נגד 4 הצעות חוק; הודעה על לוח הזמנים של הוועדה צפויה לפני 2026-05-20 — אות מסלול מהיר יצביע על תרחיש 2 (אישור מלא ללא שינוי).
+
+### הגורם המרכזי הצפוי
+
+**תוך 72 שעות**: הודעת תזמון ועדת SfU לדיונים על prop. 2025/26:262–265. אם יכריז יו"ר הוועדה (SD/M) על לוח זמנים מסלול מהיר, לחץ האופוזיציה של S+C+V יתחזק.
+
+```mermaid
+graph LR
+    style GovernmentPropositions fill:#ff006e,color:#fff
+    style SOpposition fill:#e8112d,color:#fff
+    style COpposition fill:#009933,color:#fff
+    style VOpposition fill:#DA291C,color:#fff
+    style SfUCommittee fill:#00d9ff,color:#000
+    style TUCommittee fill:#ffbe0b,color:#000
+
+    GovernmentPropositions["Govt Props 262–265\n(Migration Package)"] --> SfUCommittee
+    SOpposition["S Motions\nHD024153, HD024152"] --> SfUCommittee
+    COpposition["C Motions\nHD024157–161"] --> SfUCommittee
+    VOpposition["V Motions\nHD024167–169"] --> SfUCommittee
+    SfUCommittee["SfU Committee\nBattleground 2026"] --> Riksdag["Riksdag Vote\n~Jun 2026"]
+    TransportSkr["Skr 259\nTransport 2026-37"] --> TUCommittee
+    SMotionsTU["S+C Motions\nHD024162–164"] --> TUCommittee
+    TUCommittee["TU Committee"] --> Riksdag
+```
+
+<!-- source-sha: 13fb01dbf19848515cc9696908bf9f099436e97c -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/executive-brief_ja.md -->
+
+**著者**：ジェームズ・ペター・ソーリング  
+**日付**：2026-05-14  
+**分類**：公開  
+**信頼度**：[B2] おそらく真実 — 海軍省コード  
+**分析深度**：深度分析
+
+---
+
+### BLUF（要旨）
+
+スウェーデン・リクスダーグは2026年5月13日、15件の野党動議という注目すべき集まりを受理した。S、C、Vの三党が同時に4つの移民規制強化法案パッケージ（riksmöte 2025/26の法案262–265）に挑戦した。これらの動議は政府の移民政策方針に対する重大な議会野党ブロックを明らかにしている：Sは帰還活動を部分的に受け入れるが永住許可廃止を強く拒否、Cは特に収容中の子どもに対する権利ベースの保護措置を求め、Vは4法案すべてを全面的に拒否する。加えて、2026-2037年国家交通インフラ計画に強化された気候方針を求めるS・Cの3動議と合わせ、2026年5月14日は移民・子どもの権利・気候交通政策における集中的な立法審査の日となった。
+
+### 支援する主要な意思決定
+
+1. **野党の移民抵抗の実行可能性**: 政府が野党修正案なしで法案262–265の通過を試みた場合、S+C+Vブロック（合計約150議席）は実質的な委員会での挑戦を保証するが、M+SD+KD連立は可決に向けた実効多数を維持する。
+2. **収容中の子どもの保護措置**: C動議HD024160（barn i förvar）はCRC第37条とECHR第5条に基づく憲法上重大な課題を提起する；Lagrådもすでに懸念を示している — この修正圧力は委員会の譲歩をもたらしうる。
+3. **交通インフラの気候条項**: skr. 2025/26:259（国家交通計画2026-2037）への明示的な気候適合を求めるS動議HD024162は、財政論戦でのイニシアチブを失った後に野党が交通予算プロセスを気候政策推進に利用することを示している。
+
+### 60秒インテリジェンス要点
+
+- **移民ブロック連帯**: S、C、Vが4つの移民法案すべてに対して同日に協調動議を提出 — 2021年以来の移民に関する三党野党協調としては稀。分析的に、これは「動議クラスター攻撃」— 最大限の同時メディア報道を意図している。
+- **永住許可を巡る争点**: S旗艦のHD024153は永住許可の段階的廃止全体の拒否を求める；8〜10万人の既存許可保持者に影響；AMR協定遵守論争が続く。
+- **子どもの権利次元**: C HD024160（barn i förvar）+ Lagrådの憲法批判（CRC第37条 / ECHR第5条）が政府譲歩空間を生む。先例：2024年社会サービス改革でLagrådet支持の修正案5件中2件を政府が受諾。
+- **Vの全面反対**: Vänsterpartietは帰還活動と素行要件を含む4法案すべてを全面拒否。Vの戦略は選挙目的（セグメント4の結集）であり、阻止目的ではない（多数を達成不可）。
+- **連立数学**: 政府は176議席（過半数1議席）を持つ。S+C+V+MP = 173 — 多数まで2議席不足。政府は可決が確実だが、政府与党2名が反対投票した場合の特定修正案提案には脆弱。
+- **交通インフラ**: 3動議（S+C）が交通計画2026-2037の強化気候方針を求める；特に2030年までのプロジェクト選定基準として交通炭素30%削減目標。
+- **SfU委員会の戦場**: SfUは4法案に対する10動議を処理する；委員会スケジュール発表は2026-05-20までに予想 — ファストトラック信号はシナリオ2（修正なし全面可決）を示す。
+
+### 先頭を切る今後のトリガー
+
+**72時間以内**: prop. 2025/26:262–265の公聴会に向けたSfU委員会スケジュール発表。委員会議長（SD/M）がファストトラック日程を発表した場合、S+C+Vからの野党圧力が強まる。
+
+```mermaid
+graph LR
+    style GovernmentPropositions fill:#ff006e,color:#fff
+    style SOpposition fill:#e8112d,color:#fff
+    style COpposition fill:#009933,color:#fff
+    style VOpposition fill:#DA291C,color:#fff
+    style SfUCommittee fill:#00d9ff,color:#000
+    style TUCommittee fill:#ffbe0b,color:#000
+
+    GovernmentPropositions["Govt Props 262–265\n(Migration Package)"] --> SfUCommittee
+    SOpposition["S Motions\nHD024153, HD024152"] --> SfUCommittee
+    COpposition["C Motions\nHD024157–161"] --> SfUCommittee
+    VOpposition["V Motions\nHD024167–169"] --> SfUCommittee
+    SfUCommittee["SfU Committee\nBattleground 2026"] --> Riksdag["Riksdag Vote\n~Jun 2026"]
+    TransportSkr["Skr 259\nTransport 2026-37"] --> TUCommittee
+    SMotionsTU["S+C Motions\nHD024162–164"] --> TUCommittee
+    TUCommittee["TU Committee"] --> Riksdag
+```
+
+<!-- source-sha: 13fb01dbf19848515cc9696908bf9f099436e97c -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/executive-brief_ko.md -->
+
+**저자**: 제임스 페터 쇠를링  
+**날짜**: 2026-05-14  
+**분류**: 공개  
+**신뢰도**: [B2] 아마도 사실 — 해군성 코드  
+**분석 깊이**: 심층
+
+---
+
+### BLUF (핵심 요약)
+
+스웨덴 릭스다그는 2026년 5월 13일 15건의 야당 발의안이라는 주목할 만한 집합을 접수했다. S, C, V 세 당이 동시에 4개 이민 강화 법안 패키지를 — riksmöte 2025/26의 법안 262–265 — 도전했다. 이 발의안들은 정부의 이민 정책 노선에 대한 상당한 의회 야당 블록을 드러낸다: S는 귀환 활동을 부분적으로 수용하지만 영구 체류 허가 폐지는 단호히 거부하고, C는 특히 구금 아동에 대한 권리 기반 보호 조치를 요구하며, V는 4개 법안 모두를 전면 반대한다. 2026-2037년 국가 교통 인프라 계획에 강화된 기후 방향을 요구하는 S·C의 3건 발의안과 함께, 2026년 5월 14일은 이민, 아동 권리, 기후-교통 정책에서 집중적인 입법 심사의 날이 됐다.
+
+### 지원하는 핵심 결정
+
+1. **야당의 이민 저항 실현 가능성**: 정부가 야당 수정 없이 법안 262–265 통과를 시도할 경우, S+C+V 블록(총 ~150석)은 실질적인 위원회 도전을 보장하지만, M+SD+KD 연립은 가결을 위한 실효 다수를 유지한다.
+2. **구금 아동 보호 조치**: C 발의안 HD024160(barn i förvar)은 CRC 제37조와 ECHR 제5조에 따른 헌법적으로 중요한 도전을 제기한다; Lagrådet도 이미 우려를 표했다 — 이 수정 압박은 위원회 양보를 낳을 수 있다.
+3. **교통 인프라의 기후 조항**: skr. 2025/26:259(국가 교통 계획 2026-2037)에 명시적 기후 적응을 요구하는 S 발의안 HD024162는 야당이 재정 논쟁에서 주도권을 잃은 후 교통 예산 과정을 기후 정책 증진에 활용할 것임을 시사한다.
+
+### 60초 인텔리전스 요점
+
+- **이민 블록 연대**: S, C, V가 4개 이민 법안 모두에 대해 같은 날 협조 발의안 제출 — 2021년 이후 이민에서의 드문 삼당 야당 협조. 분석적으로 이는 "발의안 클러스터 공격" — 최대한의 동시 미디어 보도를 위해 설계됐다.
+- **영구 체류 허가 쟁점**: S의 기함 HD024153은 영구 체류 허가의 단계적 폐지 전체에 대한 거부를 요구한다; 기존 허가 보유자 8~10만 명 영향; AMR 협약 준수 논거 분쟁 중.
+- **아동 권리 차원**: C HD024160(barn i förvar) + Lagrådet의 헌법 비판(CRC 제37조 / ECHR 제5조)이 정부 양보 공간을 만든다. 선례: 2024년 사회서비스 개혁에서 Lagrådet 지지 수정안 5개 중 2개를 정부가 수용.
+- **V의 전면 반대**: Vänsterpartiet은 귀환 활동과 품행 요건을 포함한 4개 이민 법안 모두를 전면 거부. V의 전략은 선거 목적(세그먼트 4 결집)이며, 차단 목적이 아니다(다수 달성 불가).
+- **연립 산술**: 정부는 176석(과반 1석)을 보유. S+C+V+MP = 173 — 과반에 2석 부족. 정부는 가결이 확실하지만 연립 의원 2명이 반대 투표할 경우 특정 수정 제안에 취약.
+- **교통 인프라**: 3개 발의안(S+C)이 교통 계획 2026-2037에서 강화된 기후 방향을 요구한다; 구체적으로 프로젝트 선정 기준으로 2030년까지 교통 탄소 30% 감축 목표.
+- **SfU 위원회가 전쟁터**: SfU는 4개 법안에 대한 10개 발의안을 처리한다; 위원회 일정 발표는 2026-05-20 이전 예상 — 패스트트랙 신호는 시나리오 2(수정 없는 전면 가결)를 나타낸다.
+
+### 선도적인 미래 트리거
+
+**72시간 내**: prop. 2025/26:262–265 청문회에 대한 SfU 위원회 일정 발표. 위원회 의장(SD/M)이 패스트트랙 일정을 발표하면 S+C+V의 야당 압박이 강화된다.
+
+```mermaid
+graph LR
+    style GovernmentPropositions fill:#ff006e,color:#fff
+    style SOpposition fill:#e8112d,color:#fff
+    style COpposition fill:#009933,color:#fff
+    style VOpposition fill:#DA291C,color:#fff
+    style SfUCommittee fill:#00d9ff,color:#000
+    style TUCommittee fill:#ffbe0b,color:#000
+
+    GovernmentPropositions["Govt Props 262–265\n(Migration Package)"] --> SfUCommittee
+    SOpposition["S Motions\nHD024153, HD024152"] --> SfUCommittee
+    COpposition["C Motions\nHD024157–161"] --> SfUCommittee
+    VOpposition["V Motions\nHD024167–169"] --> SfUCommittee
+    SfUCommittee["SfU Committee\nBattleground 2026"] --> Riksdag["Riksdag Vote\n~Jun 2026"]
+    TransportSkr["Skr 259\nTransport 2026-37"] --> TUCommittee
+    SMotionsTU["S+C Motions\nHD024162–164"] --> TUCommittee
+    TUCommittee["TU Committee"] --> Riksdag
+```
+
+<!-- source-sha: 13fb01dbf19848515cc9696908bf9f099436e97c -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling  
+**Datum**: 2026-05-14  
+**Classificatie**: OPENBAAR  
+**Betrouwbaarheidsniveau**: [B2] Waarschijnlijk waar — Admiraliteitscode  
+**Analysediepte**: Diep
+
+---
+
+### BLUF
+
+Zwedens Riksdag ontving op 13 mei 2026 een opmerkelijk cluster van 15 oppositiemoties, waarbij S, C en V gelijktijdig een vierpropositionenpakket voor migratieaanscherping uitdaagden — proposities 262–265 van het riksmöte 2025/26. De moties onthullen een significant parlementair oppositieblok tegen de migratiepolitieke koers van de regering: S accepteert deels terugkeeractiviteiten maar verwerpt de afschaffing van permanente verblijfsvergunningen resoluut, C eist op rechten gebaseerde beschermingsmaatregelen met name voor kinderen in detentie, en V verzet zich volledig tegen alle vier proposities. Gecombineerd met drie moties van S en C die een sterkere klimaatoriëntatie eisen in het nationaal transportinfrastructuurplan 2026–2037, markeert 14 mei 2026 een dag van geconcentreerde wetgevende controle op het gebied van migratie, kinderrechten en klimaat-transportbeleid.
+
+### Ondersteunde Kernbeslissingen
+
+1. **Levensvatbaarheid van het migratieverzet van de oppositie**: Mocht de regering proberen de proposities 262–265 door te drukken zonder oppositieamendement, dan garandeert het S+C+V-blok (in totaal ~150 zetels) een substantiële commissiestrijd, hoewel de M+SD+KD-coalitie een werkbare meerderheid behoudt voor aanneming.
+2. **Beschermingsmaatregelen voor kinderen in detentie**: De C-motie HD024160 (barn i förvar) legt een constitutioneel significante uitdaging neer op grond van CRC art. 37 en EVRM art. 5; de Lagrådet heeft al bezorgdheden geuit — deze amendementsdruk kan een commissieconcessie opleveren.
+3. **Klimaatclausule in transportinfrastructuur**: De S-motie HD024162 die expliciete klimaataanpassing eist in skr. 2025/26:259 (nationaal transportplan 2026–2037) geeft aan dat de oppositie het transportbudgetproces zal gebruiken om klimaatbeleid te bevorderen nadat het initiatief in de financiële debatten verloren is gegaan.
+
+### 60-Seconden Inlichtingenpunten
+
+- **Migratiebloklsolidariteit**: S, C en V dienden op dezelfde dag gecoördineerde moties in tegen alle vier migratiepropositionen — zeldzame drieledige oppositiecoördinatie over migratie sinds 2021. Analytisch is dit een "motiesclusteraanval" — ontworpen voor maximale gelijktijdige mediaberichtgeving.
+- **Permanente verblijfsvergunning als breekpunt**: S's vlaggenschip HD024153 eist afwijzing van de volledige gefaseerde afschaffing van permanente verblijfsvergunningen; 80.000–100.000 huidige vergunninghouders betrokken; het AMR-pact nalevingsargument wordt betwist.
+- **Kinderrechtendimensie**: C's HD024160 (barn i förvar) + de constitutionele kritiek van de Lagrådet (CRC art. 37 / EVRM art. 5) creëert een regeringsconcessieruimte. Precedent: de sociaaldiensthervorming van 2024 waarbij de regering 2 van 5 Lagrådet-gesteunde amendementen accepteerde.
+- **V's totale verzet**: Vänsterpartiet verwerpt alle vier migratieproposities volledig — inclusief terugkeeractiviteiten en gedragseisen. V's strategie is electoraal (segment 4-consolidatie), niet blokkerend (kan geen meerderheid bereiken).
+- **Coalitie-rekenkunde**: De regering heeft 176 zetels (1 zetel meerderheid). S+C+V+MP = 173 — 2 onder meerderheid. De regering is zeker van aanneming, maar kwetsbaar voor specifieke amendementsvoorstellen als 2 regeringsleden tegenstemmen.
+- **Transportinfrastructuur**: Drie moties (S+C) eisen een sterkere klimaatoriëntatie in het transportplan 2026–2037; specifiek een 30% CO₂-reductiedoelstelling voor transport in 2030 als projectselectiecriterium.
+- **SfU als slagveld**: SfU verwerkt 10 moties tegen 4 proposities; aankondiging van de commissieplanning wordt vóór 2026-05-20 verwacht — een spoorsignaal zou Scenario 2 aangeven (volledige aanneming ongewijzigd).
+
+### Toonaangevende Toekomstige Trigger
+
+**Binnen 72 uur**: aankondiging van SfU's commissieplanning voor de behandeling van prop. 2025/26:262–265. Als de commissievoorzitter (SD/M) een spoedprocedure aankondigt, zal de oppositiedruk van S+C+V toenemen.
+
+```mermaid
+graph LR
+    style GovernmentPropositions fill:#ff006e,color:#fff
+    style SOpposition fill:#e8112d,color:#fff
+    style COpposition fill:#009933,color:#fff
+    style VOpposition fill:#DA291C,color:#fff
+    style SfUCommittee fill:#00d9ff,color:#000
+    style TUCommittee fill:#ffbe0b,color:#000
+
+    GovernmentPropositions["Govt Props 262–265\n(Migration Package)"] --> SfUCommittee
+    SOpposition["S Motions\nHD024153, HD024152"] --> SfUCommittee
+    COpposition["C Motions\nHD024157–161"] --> SfUCommittee
+    VOpposition["V Motions\nHD024167–169"] --> SfUCommittee
+    SfUCommittee["SfU Committee\nBattleground 2026"] --> Riksdag["Riksdag Vote\n~Jun 2026"]
+    TransportSkr["Skr 259\nTransport 2026-37"] --> TUCommittee
+    SMotionsTU["S+C Motions\nHD024162–164"] --> TUCommittee
+    TUCommittee["TU Committee"] --> Riksdag
+```
+
+<!-- source-sha: 13fb01dbf19848515cc9696908bf9f099436e97c -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-05-14  
+**Klassifisering**: OFFENTLIG  
+**Konfidensnivå**: [B2] Sannsynligvis sant — Admiralitetskoden  
+**Analysedybde**: Dyp
+
+---
+
+### BLUF
+
+Sveriges Riksdag mottok den 13. mai 2026 en bemerkelsesverdig samling av 15 opposisjonsforslag, der S, C og V samtidig utfordret en fire proposisjoners sterk innstrammingspakke for migrasjon — proposisjonene 262–265 i riksmøtet 2025/26. Forslagene avslører en betydelig parlamentarisk opposisjonsblokk mot regjeringens migrasjonspolitiske kurs, der S delvis godtar returaktiviteter men fast avviser avviklingen av permanente oppholdstillatelser, C krever rettighetsbaserte beskyttelsestiltak særlig for barn i forvaring, og V motsetter seg alle fire proposisjoner i sin helhet. Kombinert med tre forslag fra S og C som krever sterkere klimaorientering i den nasjonale transportinfrastrukturplanen 2026–2037, markerer 14. mai 2026 en dag med konsentrert lovgivningsmessig granskning innen migrasjon, barns rettigheter og klima-transportpolitikk.
+
+### Støttede nøkkelbeslutninger
+
+1. **Levedyktigheten av opposisjonens motstand mot migrasjon**: Dersom regjeringen forsøker å gjennomføre proposisjonene 262–265 uten opposisjonstillegg, garanterer S+C+V-blokken (totalt ~150 mandater) vesentlig utvalgsmotstand, men M+SD+KD-koalisjonen beholder et fungerende flertall for gjennomføring.
+2. **Beskyttelsestiltak for barn i forvaring**: C's HD024160-forslag (barn i förvar) reiser en konstitusjonelt viktig utfordring etter CRC art. 37 og ECHR art. 5; Lagrådet har allerede flagget bekymringer — dette endringspress kan medføre en utvalgsinnrømmelse.
+3. **Klimaklausul i transportinfrastruktur**: S's HD024162-forslag som krever eksplisitt klimatilpasning i skr. 2025/26:259 (nasjonal transportplan 2026–2037) signaliserer at opposisjonen vil bruke transportbudsjettsprosessen til å fremme klimapolitikk etter å ha mistet initiativet i finansdebattene.
+
+### 60-sekunders etterretningspunkter
+
+- **Migrasjonsblokk-solidaritet**: S, C og V leverte koordinerte forslag samme dag mot alle fire migrasjonssproposisjoner — sjelden trepartsopposisjonskoordinering om migrasjon siden 2021. Analytisk er dette et "forslagsklusterangrep" — designet for maksimal simultan mediedekning.
+- **Permanent oppholdstillatelse som stridstema**: S's flaggskip HD024153 krever avvisning av hele utfasingen av permanente oppholdstillatelser; 80.000–100.000 eksisterende tillatelsesinnehavere berørt; AMR-paktens overholdelsesargument bestrides.
+- **Barnerettighetsdimensjon**: C's HD024160 (barn i förvar) + Lagrådets konstitusjonelle kritikk (CRC art. 37 / ECHR art. 5) skaper et regjeringsinstrømmelsesrom. Presedens: 2024-sosialtjenestereformen der regjeringen aksepterte 2 av 5 Lagrådet-støttede endringer.
+- **V's totale motstand**: Vänsterpartiet avviser alle fire migrasjonssproposisjoner i sin helhet — inkludert returaktiviteter og vandelkrav. V's strategi er valgbetinget (segment 4-konsolidering), ikke blokkerende (kan ikke oppnå flertall).
+- **Koalisjonsmatematikk**: Regjeringen har 176 mandater (1 mandats flertall). S+C+V+MP = 173 — 2 kortere enn flertall. Regjeringen er sikker på gjennomføring, men sårbar for spesifikke endringsforslag hvis 2 regjeringsrepresentanter stemmer imot.
+- **Transportinfrastruktur**: Tre forslag (S+C) krever sterkere klimaorientering i transportplanen 2026–2037; spesifikt et 30% reduksjonsmål for transportkarbondioksid innen 2030 i utvelgelseskriterier for prosjekter.
+- **SfU som slagfelt**: SfU skal behandle 10 forslag mot 4 proposisjoner; kunngjøring om utvalgets tidsplan forventes innen 2026-05-20 — et hurtigsporsignal vil indikere Scenario 2 (fullstendig vedtak uendret).
+
+### Ledende fremtidig utløser
+
+**Innen 72 timer**: SfU's utvalgsplanleggingskunngjøring for behandling av prop. 2025/26:262–265. Hvis utvalgsformannen (SD/M) kunngjør et hurtigspor, vil opposisjonspresset fra S+C+V intensiveres.
+
+```mermaid
+graph LR
+    style GovernmentPropositions fill:#ff006e,color:#fff
+    style SOpposition fill:#e8112d,color:#fff
+    style COpposition fill:#009933,color:#fff
+    style VOpposition fill:#DA291C,color:#fff
+    style SfUCommittee fill:#00d9ff,color:#000
+    style TUCommittee fill:#ffbe0b,color:#000
+
+    GovernmentPropositions["Govt Props 262–265\n(Migration Package)"] --> SfUCommittee
+    SOpposition["S Motions\nHD024153, HD024152"] --> SfUCommittee
+    COpposition["C Motions\nHD024157–161"] --> SfUCommittee
+    VOpposition["V Motions\nHD024167–169"] --> SfUCommittee
+    SfUCommittee["SfU Committee\nBattleground 2026"] --> Riksdag["Riksdag Vote\n~Jun 2026"]
+    TransportSkr["Skr 259\nTransport 2026-37"] --> TUCommittee
+    SMotionsTU["S+C Motions\nHD024162–164"] --> TUCommittee
+    TUCommittee["TU Committee"] --> Riksdag
+```
+
+<!-- source-sha: 13fb01dbf19848515cc9696908bf9f099436e97c -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling  
+**Datum**: 2026-05-14  
+**Klassificering**: OFFENTLIG  
+**Konfidensgrad**: [B2] Troligen sant — Admiraltitetskoden  
+**Analysdjup**: Djupt
+
+---
+
+### BLUF
+
+Sveriges riksdag mottog den 13 maj 2026 ett historiskt kluster av 15 oppositionsmotioner, där S, C och V samtidigt utmanade ett fyra propositioner starkt migrationsåtstramningspaket — propositionerna 262–265 i riksmötet 2025/26. Motionerna avslöjar ett betydande parlamentariskt oppositionsblock mot regeringens migrationspolitiska kurs, där S delvis accepterar återvändandeverksamhet men bestämt avvisar avskaffandet av permanenta uppehållstillstånd, C kräver rättighetsbaserade skyddsåtgärder särskilt för barn i förvar, och V motsätter sig samtliga fyra propositioner i sin helhet. Kombinerat med tre motioner från S och C som kräver starkare klimatinriktning i den nationella transportinfrastrukturplanen 2026–2037 markerar den 14 maj 2026 en dag med koncentrerad lagstiftningsgranskning inom migration, barns rättigheter och klimat-transportpolitik.
+
+### Understödda nyckelBeslut
+
+1. **Viabilitet för oppositionens migrationsmotstånd**: Bör regeringen försöka driva igenom propositionerna 262–265 utan oppositionsändringar, garanterar S+C+V-blocket (totalt ~150 mandat) substantiell utskottsutmaning, men M+SD+KD-koalitionen bibehåller en fungerande majoritet för passage.
+2. **Skyddsåtgärder för barn i förvar**: C:s HD024160-motion (barn i förvar) väcker en konstitutionellt betydelsefull utmaning enligt CRC art. 37 och ECHR art. 5; Lagrådet har redan flaggat för betänkligheter — detta ändringstryck kan ge en utskottskoncession.
+3. **Klimatklausul i transportinfrastruktur**: S:s HD024162-motion som kräver explicit klimatanpassning i skr. 2025/26:259 (nationell transportplan 2026–2037) signalerar att oppositionen kommer att använda transportbudgetprocessen för att driva klimatpolitik efter att ha förlorat initiativet i finansdebatten.
+
+### 60-sekunders underrättelsekulor
+
+- **Migrationsblockssolidaritet**: S, C och V lämnade koordinerade motioner samma dag mot samtliga fyra migrationsspropositioner — sällsynt treparts-oppositionssamordning i migrationsfrågor sedan 2021. Analytiskt är detta en "motionsklusterattack" — utformad för maximal simultant mediegenomslag.
+- **Permanent uppehållstillstånd som stridsfråga**: S:s flaggskepp HD024153 kräver avslag på hela utfasningen av permanenta uppehållstillstånd; 80 000–100 000 befintliga tillståndsinnehavare berörda; AMR-paktens efterlevnadsargument omtvistas.
+- **Barnrättsdimension**: C:s HD024160 (barn i förvar) + Lagrådets konstitutionella kritik (CRC art. 37 / ECHR art. 5) skapar ett koncessionsutrymme för regeringen. Prejudikat: socialtjänstreformen 2024 där regeringen accepterade 2 av 5 Lagrådsstödda ändringar.
+- **V:s totala motstånd**: Vänsterpartiet avvisar samtliga fyra migrationsspropositioner i sin helhet — inklusive återvändandeverksamhet och vandelvkrav. V:s strategi är valbetonad (segment 4-konsolidering), inte blockerande (kan inte uppnå majoritet).
+- **Koalitionsmatematik**: Regeringen har 176 mandat (1 mandats majoritet). S+C+V+MP = 173 — 2 kortare om majoritet. Regeringen är säker på passage men sårbar för specifika ändringsförslag om 2 regeringsledamöter röstar emot.
+- **Transportinfrastruktur**: Tre motioner (S+C) kräver starkare klimatinriktning i transportplanen 2026–2037; specifikt ett 30 % minskningsmål för transportkoldioxid till 2030 i urvalskriterier för projekt.
+- **SfU som slagfält**: SfU ska behandla 10 motioner mot 4 propositioner; besked om utskottets tidtabell väntas senast 2026-05-20 — en signal om snabbspår indikerar Scenario 2 (oförändrat genomförande).
+
+### Ledande framtida utlösare
+
+**Inom 72 timmar**: SfU:s utskottsbeslut om tidtabell för behandling av prop. 2025/26:262–265. Om utskottsordföranden (SD/M) tillkännager ett snabbspår, kommer oppositionstrycket från S+C+V att intensifieras.
+
+```mermaid
+graph LR
+    style GovernmentPropositions fill:#ff006e,color:#fff
+    style SOpposition fill:#e8112d,color:#fff
+    style COpposition fill:#009933,color:#fff
+    style VOpposition fill:#DA291C,color:#fff
+    style SfUCommittee fill:#00d9ff,color:#000
+    style TUCommittee fill:#ffbe0b,color:#000
+
+    GovernmentPropositions["Govt Props 262–265\n(Migration Package)"] --> SfUCommittee
+    SOpposition["S Motions\nHD024153, HD024152"] --> SfUCommittee
+    COpposition["C Motions\nHD024157–161"] --> SfUCommittee
+    VOpposition["V Motions\nHD024167–169"] --> SfUCommittee
+    SfUCommittee["SfU Committee\nBattleground 2026"] --> Riksdag["Riksdag Vote\n~Jun 2026"]
+    TransportSkr["Skr 259\nTransport 2026-37"] --> TUCommittee
+    SMotionsTU["S+C Motions\nHD024162–164"] --> TUCommittee
+    TUCommittee["TU Committee"] --> Riksdag
+```
+
+<!-- source-sha: 13fb01dbf19848515cc9696908bf9f099436e97c -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/executive-brief_zh.md -->
+
+**作者**：詹姆斯·彼得·索林  
+**日期**：2026-05-14  
+**分类**：公开  
+**置信度**：[B2] 可能属实 — 海军准则  
+**分析深度**：深度分析
+
+---
+
+### 执行摘要
+
+2026年5月13日，瑞典里克斯达格收到了15份反对派动议的显著组合，S、C和V同时挑战了四项移民收紧提案——2025/26届里克斯会议提案262-265。这些动议揭示了对政府移民政策路线的重大议会反对集团：S部分接受遣返活动，但坚决拒绝废除永久居留许可；C要求基于权利的保障措施，尤其是针对被拘留儿童；V则整体反对四项提案。加上S和C提出的三项要求2026-2037年国家交通基础设施计划加强气候方向的动议，2026年5月14日标志着一个在移民、儿童权利和气候交通政策上集中立法审查的日子。
+
+### 支持的关键决策
+
+1. **反对派移民抵制的可行性**：若政府试图在没有反对派修正案的情况下通过提案262-265，S+C+V集团（共约150席）保证了委员会层面的实质性挑战，但M+SD+KD联合政府维持着通过的工作多数。
+2. **被拘留儿童的保护措施**：C的HD024160动议（barn i förvar）依据CRC第37条和ECHR第5条提出了具有重要宪法意义的挑战；Lagrådet已标注关切——这种修正压力可能产生委员会让步。
+3. **交通基础设施中的气候条款**：要求在skr. 2025/26:259（2026-2037年国家交通计划）中明确气候适应的S动议HD024162表明，反对派将在财政辩论中失去主动权后，利用交通预算进程推进气候政策。
+
+### 60秒情报要点
+
+- **移民集团团结**：S、C和V在同一天针对全部四项移民提案提交协调动议——自2021年以来在移民问题上罕见的三党反对派协调。从分析角度看，这是"动议集群攻击"——旨在实现最大程度的同步媒体报道。
+- **永久居留许可争议点**：S的旗舰动议HD024153要求拒绝整个永久居留许可的逐步废除；影响8万至10万现有许可持有人；AMR协议合规论据存争议。
+- **儿童权利维度**：C的HD024160（barn i förvar）+ Lagrådet的宪法批评（CRC第37条/ECHR第5条）为政府让步创造了空间。先例：2024年社会服务改革中，政府接受了Lagrådet支持的5项修正案中的2项。
+- **V的全面反对**：Vänsterpartiet整体拒绝四项移民提案——包括遣返活动和品行要求。V的策略是选举性的（巩固第4细分市场），而非阻碍性的（无法获得多数）。
+- **联合政府算术**：政府拥有176席（多数1席）。S+C+V+MP = 173——距多数差2席。政府确定能通过，但若2名政府议员倒戈，特定修正提案上将存在漏洞。
+- **交通基础设施**：三项动议（S+C）要求在2026-2037年交通计划中加强气候方向；具体是在项目选择标准中将2030年前交通碳排放减少30%作为指标。
+- **SfU委员会战场**：SfU将处理4项提案对应的10项动议；委员会日程公告预计在2026-05-20前发布——快速通道信号将意味着场景2（全面通过不作修改）。
+
+### 主要未来触发因素
+
+**72小时内**：SfU委员会公告prop. 2025/26:262-265听证日程。若委员会主席（SD/M）宣布快速通道日程，S+C+V的反对压力将加剧。
+
+```mermaid
+graph LR
+    style GovernmentPropositions fill:#ff006e,color:#fff
+    style SOpposition fill:#e8112d,color:#fff
+    style COpposition fill:#009933,color:#fff
+    style VOpposition fill:#DA291C,color:#fff
+    style SfUCommittee fill:#00d9ff,color:#000
+    style TUCommittee fill:#ffbe0b,color:#000
+
+    GovernmentPropositions["Govt Props 262–265\n(Migration Package)"] --> SfUCommittee
+    SOpposition["S Motions\nHD024153, HD024152"] --> SfUCommittee
+    COpposition["C Motions\nHD024157–161"] --> SfUCommittee
+    VOpposition["V Motions\nHD024167–169"] --> SfUCommittee
+    SfUCommittee["SfU Committee\nBattleground 2026"] --> Riksdag["Riksdag Vote\n~Jun 2026"]
+    TransportSkr["Skr 259\nTransport 2026-37"] --> TUCommittee
+    SMotionsTU["S+C Motions\nHD024162–164"] --> TUCommittee
+    TUCommittee["TU Committee"] --> Riksdag
+```
+
+<!-- source-sha: 13fb01dbf19848515cc9696908bf9f099436e97c -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -1559,3 +2305,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/motions/executive-brief_zh.md)

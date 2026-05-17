@@ -6,7 +6,7 @@ date: 2026-04-21
 subfolder: committeeReports
 slug: 2026-04-21-committeeReports
 source_folder: analysis/daily/2026-04-21/committeeReports
-generated_at: 2026-05-16T20:24:25.484Z
+generated_at: 2026-05-17T18:40:43.172Z
 language: en
 layout: article
 ---
@@ -157,6 +157,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Historical Baseline](#rm-historical-baseline) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
@@ -3415,6 +3428,753 @@ The motions cycle for the prior week (2026-04-14 → 04-17) produced 18 analysis
 
 All documents sourced from official riksdag-regering-mcp API.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief_ar.md -->
+
+<div dir="rtl">
+
+# 📋 موجز استخباراتي — تقارير اللجان (21 أبريل 2026)
+
+| الحقل | القيمة |
+|-------|--------|
+| **التاريخ** | 2026-04-21 |
+| **الجمهور** | رؤساء التحرير · المستشارون السياسيون · المنسقون البرلمانيون · مخططو الأخبار |
+| **وقت القراءة** | 3 دقائق |
+| **التصنيف** | عام |
+| **الموثوقية** | 🟩 مرتفع |
+
+---
+
+### 🧭 BLUF (الخلاصة أولاً)
+
+في 21 أبريل 2026، اعتمدت لجان البرلمان السويدي **حزمة من 14 تقريراً** تُجسّد **رهاناً انتخابياً ثلاثي الأعمدة**: الإعفاء الضريبي (FiU48، 4.1 مليار كرون سويدي من إعانات الوقود والطاقة)، ومصداقية التنفيذ (SfU22 تعليق الإبعاد)، والإرث الدستوري (KU32/KU33 تعديلات دستورية *vilande* تُلزم البرلمان القادم). **النتيجة الرئيسية**: هذه **المرة الأولى منذ اتفاقية ديسمبر 2014** التي تنسق فيها حكومة قائمة تدابير مالية وتنفيذية ودستورية في غضون أسبوع لجاني واحد. يحقق كل من FiU48 وSfU22 درجة **22/25** في مصفوفة الأهمية. `[مرتفع]`
+
+---
+
+### 🎯 ثلاثة أمور يجب معرفتها
+
+1. **FiU48 هو في آنٍ واحد إجراء إعفاء انتخابي وتصحيح للامتثال الأوروبي.** تخفيض ضريبة البنزين بـ82 أوره/لتر والديزل بـ319 كرون/م³ يضع السويد عند **الحد الأدنى المسموح به أوروبياً** (توجيه الضرائب على الطاقة 2003/96/EC). تنتهي التكلفة البالغة 4.1 مليار كرون في 30 سبتمبر 2026 — **14 يوماً بعد الانتخابات**.
+
+2. **الفخ الدستوري *vilande* هو إرث ملتزم به مسبقاً.** يتطلب KU32 وKU33 صياغة متطابقة للمرور عبر **البرلمان القادم**. لا تستطيع ائتلاف S+V+MP+C الجديد ببساطة التراجع عنهما — يجب عليه إما التأكيد أو التعديل بصياغة متطابقة على كلا الجانبين أو تركهما يسقطان وفق Regeringsformen 8:14.
+
+3. **SfU22 يُنشئ اختبار إجهاد لاتفاقية Tidöavtalet أمام المحكمة الأوروبية لحقوق الإنسان.** يحل التنفيذ المؤجل محل تصاريح الإقامة المؤقتة للأجانب الذين يواجهون عقبات التنفيذ — مما ينتج مجموعة **بلا وضع إقامة ولا يمكن إبعادها**، تخضع لقيود جغرافية وإلزامية التسجيل. من المتوقع أن تتقدم FARR بدعوى اختبار أمام Migrationsöverdomstolen في غضون 90 يوماً (P=0.80).
+
+---
+
+### 📊 أهم خمسة تقارير مرتبة حسب الأهمية
+
+| # | Dok_id | التقرير | الدرجة | اللجنة |
+|:-:|--------|---------|:------:|--------|
+| 🥇 1 | **HD01FiU48** | ميزانية تكميلية — وقود وطاقة | **22/25** | FiU |
+| 🥇 1 | **HD01SfU22** | إصلاح تعليق تنفيذ الإبعاد | **22/25** | SfU |
+| 🥈 3 | **HD01KU32** | تعديل دستوري للوصول (*vilande*) | **19/25** | KU |
+| 🥉 4 | **HD01KU33** | شفافية المصادرة الرقمية (*vilande*) | **17/25** | KU |
+| 🔶 4 | **HD01TU21** | الهوية الإلكترونية الحكومية | **17/25** | TU |
+
+---
+
+### 🎙️ أطر غرفة الأخبار الموصى بها (مستندة إلى أدلة)
+
+| الإطار | مدعوم بـ | الثقة |
+|-------|---------|:-----:|
+| "السويد تخفض ضريبة الوقود إلى الحد الأدنى الأوروبي — 14 يوماً قبل الانتخابات" | FiU48 + EU 2003/96/EC | 🟩 مرتفع |
+| "التعديلات الدستورية تُلزم البرلمان القادم مسبقاً" | KU32/KU33 + RF 8:14 | 🟩 مرتفع |
+
+---
+
+**التصنيف**: عام · **المراجعة التالية**: 2026-04-28
+
+</div>
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief_da.md -->
+
+| Felt | Værdi |
+|------|-------|
+| **Dato** | 2026-04-21 |
+| **Målgruppe** | Chefredaktører · politiske rådgivere · partimanagere · nyhedsplanlæggere |
+| **Læsetid** | 3 minutter |
+| **Klassificering** | Offentlig |
+| **Tillid** | 🟩 HØJ |
+
+---
+
+### 🧭 BLUF (Bundlinjen Først)
+
+Den 21. april 2026 vedtog Riksdagens udvalg en **14-rapportpakke**, der operationaliserer en **trepilarvalgsmodel**: skattelettelse (FiU48, 4,1 mia. SEK i brændstof- og energisubsidier), håndhævelsestroværdighed (SfU22 migrationsblokering) og konstitutionel arv (KU32/KU33 *vilande* grundlovsændringer, der binder næste Riksdag). **Hovedfundet**: dette er **første gang siden decemberöverenskommelsen 2014**, at en siddende regering har koordineret skattemæssige, håndhævelses- og forfatningsmæssige foranstaltninger inden for en enkelt udvalgsuges omfang. FiU48 og SfU22 scorer begge **22/25** i signifikansmatricen. `[HØJ]`
+
+---
+
+### 🎯 Tre Ting at Vide
+
+1. **FiU48 er både en valgrettede lempelse OG en EU-overholdelseskorrigering.** Reduktion af benzinafgiften med 82 øre/liter og diesel med 319 SEK/m³ placerer Sverige ved **EU's mindstesats** (energiafgiftsdirektiv 2003/96/EF). De 4,1 mia. SEK udløber 30. september 2026 — **14 dage efter valget**.
+
+2. **Den *vilande* forfatningsfælde er et forudindgået arvegods.** KU32 og KU33 kræver identisk ordlyd for at passere **næste Riksdag**. En ny S+V+MP+C-koalition kan ikke blot tilbagekalde dem — den skal enten bekræfte, ændre med identisk ordlyd eller lade dem bortfalde i henhold til Regeringsformen 8:14.
+
+3. **SfU22 skaber EMRK-stresstest af Tidöavtalet.** Opsat fuldbyrdelse erstatter midlertidige opholdstilladelser for udlændinge med håndhævelsesproblemer — en gruppe med **ingen opholdsstatus men kan ikke fjernes**, underlagt geografiske begrænsninger. FARR forventes at indgive en prøvesag ved Migrationsöverdomstolen inden for 90 dage (P=0,80).
+
+---
+
+### 📊 Top fem rapporter rangeret efter betydning
+
+| # | Dok_id | Rapport | Score | Udvalg |
+|:-:|--------|---------|:-----:|--------|
+| 🥇 1 | **HD01FiU48** | Ekstrabudget — brændstof & energi | **22/25** | FiU |
+| 🥇 1 | **HD01SfU22** | Migrationsblokering reform | **22/25** | SfU |
+| 🥈 3 | **HD01KU32** | Forfatningsændr. tilgængelighed (*vilande*) | **19/25** | KU |
+| 🥉 4 | **HD01KU33** | Digital beslaglæggelse transparens (*vilande*) | **17/25** | KU |
+| 🔶 4 | **HD01TU21** | Statslig e-legitimation | **17/25** | TU |
+
+---
+
+### 🎯 Scenariosandsynligheder
+
+| Scenarie | Sandsynlighed | Politisk resultat |
+|----------|:------------:|------------------|
+| 🟢 BASIS — Regeringen bevares, FiU48 solnedgang respekteres | **0,42** | Arvepakke holder |
+| 🔴 NED — S-ledet mindretal, FiU48 omvendt | **0,28** | Brændstofskat genoprettet Q1 2027 |
+| ⚡ JOKERKORT — Uafgjort valg | **0,10** | Alle forårsforanstaltninger genforhandles |
+| 🟣 HALE — Migrationsöverdomstolen underkender SfU22 | **0,08** | Krise reformulerer migrationsdebat |
+
+---
+
+### 🎙️ Anbefalede nyhedsrammer (verificerede)
+
+| Ramme | Støttet af | Tillid |
+|-------|-----------|:------:|
+| "Sverige sænker brændstofskat til EU-minimum — 14 dage før valget" | FiU48 + EU 2003/96/EF | 🟩 HØJ |
+| "Grundlovsændringer forudforpligter næste Riksdag" | KU32/KU33 + RF 8:14 | 🟩 HØJ |
+
+---
+
+**Klassificering**: Offentlig · **Næste gennemgang**: 2026-04-28
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief_de.md -->
+
+| Feld | Wert |
+|------|------|
+| **Datum** | 2026-04-21 |
+| **Zielgruppe** | Chefredakteure · politische Berater · Fraktionskoordinatoren · Nachrichtenplaner |
+| **Lesezeit** | 3 Minuten |
+| **Klassifizierung** | Öffentlich |
+| **Zuverlässigkeit** | 🟩 HOCH |
+
+---
+
+### 🧭 BLUF (Schlussfolgerung Zuerst)
+
+Am 21. April 2026 verabschiedeten die Ausschüsse des Riksdag ein **14-Berichte-Paket**, das eine **Drei-Säulen-Wahlstrategie** operationalisiert: Steuerentlastung (FiU48, 4,1 Mrd. SEK Kraftstoff- und Energiesubventionen), Durchsetzungsglaubwürdigkeit (SfU22 Migrationsaussetzung) und konstitutionelles Erbe (KU32/KU33 *vilande* Grundgesetzänderungen, die den nächsten Riksdag binden). **Hauptbefund**: Dies ist **das erste Mal seit der Dezembervereinbarung 2014**, dass eine amtierende Regierung steuerliche, vollstreckungsrechtliche und verfassungsmäßige Maßnahmen innerhalb einer einzigen Ausschusswoche koordiniert hat. FiU48 und SfU22 erzielen beide **22/25** in der Signifikanzmatrix. `[HOCH]`
+
+---
+
+### 🎯 Drei Dinge zu Wissen
+
+1. **FiU48 ist sowohl eine Wahlentlastungsmaßnahme ALS AUCH eine EU-Konformitätskorrektur.** Die Senkung der Benzinsteuer um 82 Öre/Liter und Diesel um 319 SEK/m³ bringt Schweden auf den **EU-Mindeststeuersatz** (Energiesteuerrichtlinie 2003/96/EG). Die Kosten von 4,1 Mrd. SEK laufen am 30. September 2026 aus — **14 Tage nach der Wahl**.
+
+2. **Die *vilande* Verfassungsfalle ist ein vorher festgelegtes Erbe.** KU32 und KU33 erfordern identische Formulierungen, um den **nächsten Riksdag** zu passieren. Eine neue S+V+MP+C-Koalition kann sie nicht einfach rückgängig machen — sie muss entweder bestätigen, mit identischer Formulierung ändern oder sie gemäß Regeringsformen 8:14 auslaufen lassen.
+
+3. **SfU22 schafft den EMRK-Stresstest des Tidöavtalet.** Aufgeschobene Vollstreckung ersetzt befristete Aufenthaltserlaubnisse für Ausländer mit Vollstreckungshindernissen — eine Gruppe mit **keinem Aufenthaltsstatus, aber nicht entfernbar**, unterworfen geografischen Beschränkungen. FARR wird voraussichtlich innerhalb von 90 Tagen einen Testfall beim Migrationsöverdomstolen einreichen (P=0,80).
+
+---
+
+### 📊 Top Fünf Berichte nach Bedeutung
+
+| # | Dok_id | Bericht | Punkte | Ausschuss |
+|:-:|--------|---------|:------:|-----------|
+| 🥇 1 | **HD01FiU48** | Ergänzungshaushalt — Kraftstoff & Energie | **22/25** | FiU |
+| 🥇 1 | **HD01SfU22** | Migrationsaussetzungsreform | **22/25** | SfU |
+| 🥈 3 | **HD01KU32** | Verfassungsänderung Barrierefreiheit (*vilande*) | **19/25** | KU |
+| 🥉 4 | **HD01KU33** | Digitale Beschlagnahme-Transparenz (*vilande*) | **17/25** | KU |
+| 🔶 4 | **HD01TU21** | Staatliche E-Identität | **17/25** | TU |
+
+---
+
+### 🎯 Szenariowahrscheinlichkeiten
+
+| Szenario | Wahrsch. | Politisches Ergebnis |
+|----------|:--------:|---------------------|
+| 🟢 BASIS — Regierung bleibt, FiU48-Ablauf respektiert | **0,42** | Erbepaket hält |
+| 🔴 BÄR — S-geführte Minderheit, FiU48 umgekehrt | **0,28** | Kraftstoffsteuer Q1 2027 wiederhergestellt |
+| ⚡ JOKER — Unklare Wahl | **0,10** | Alle Frühjahrsmaßnahmen neu verhandelt |
+| 🟣 SCHWANZ — Migrationsöverdomstolen kippt SfU22 | **0,08** | Krise rahmt Migrationsdebatte um |
+
+---
+
+### 🎙️ Empfohlene Medienrahmen (überprüft)
+
+| Rahmen | Gestützt durch | Vertrauen |
+|--------|---------------|:---------:|
+| "Schweden senkt Kraftstoffsteuer auf EU-Minimum — 14 Tage vor der Wahl" | FiU48 + EU 2003/96/EG | 🟩 HOCH |
+| "Grundgesetzänderungen verpflichten nächsten Riksdag im Voraus" | KU32/KU33 + RF 8:14 | 🟩 HOCH |
+
+---
+
+**Klassifizierung**: Öffentlich · **Nächste Überprüfung**: 2026-04-28
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief_es.md -->
+
+| Campo | Valor |
+|-------|-------|
+| **Fecha** | 2026-04-21 |
+| **Audiencia** | Directores de redacción · asesores políticos · coordinadores de partido · planificadores de noticias |
+| **Tiempo de lectura** | 3 minutos |
+| **Clasificación** | Público |
+| **Confiabilidad** | 🟩 ALTA |
+
+---
+
+### 🧭 BLUF (Conclusión Primero)
+
+El 21 de abril de 2026, las comisiones del Riksdag adoptaron un **paquete de 14 informes** que operacionaliza una **apuesta electoral de tres pilares**: alivio fiscal (FiU48, 4,1 mil millones SEK en subsidios de combustible y energía), credibilidad en la aplicación (SfU22 suspensión migratoria) y legado constitucional (KU32/KU33 enmiendas constitucionales *vilande* que vinculan al próximo Riksdag). **Hallazgo principal**: esto es **la primera vez desde el acuerdo de diciembre de 2014** que un gobierno en funciones ha coordinado medidas fiscales, de aplicación y constitucionales dentro de una sola semana de comité. FiU48 y SfU22 obtienen ambos **22/25** en la matriz de significancia. `[ALTA]`
+
+---
+
+### 🎯 Tres Cosas a Saber
+
+1. **FiU48 es simultáneamente una medida de alivio electoral Y una corrección de cumplimiento de la UE.** La reducción del impuesto a la gasolina en 82 öre/litro y el diésel en 319 SEK/m³ sitúa a Suecia en el **tipo mínimo permitido por la UE** (Directiva 2003/96/CE). El costo de 4,1 mil millones SEK vence el 30 de septiembre de 2026 — **14 días después de las elecciones**.
+
+2. **La trampa constitucional *vilande* es un legado pre-comprometido.** KU32 y KU33 requieren redacción idéntica para pasar el **próximo Riksdag**. Una nueva coalición S+V+MP+C no puede simplemente revertirlas — debe confirmar, enmendar con redacción idéntica en ambos lados, o dejarlas caducar bajo la Regeringsformen 8:14.
+
+3. **SfU22 crea la prueba de estrés del CEDH del Tidöavtalet.** La suspensión de la ejecución reemplaza los permisos de residencia temporales para extranjeros que enfrentan obstáculos de ejecución — un grupo con **ningún estatus de residencia pero que no puede ser expulsado**, sujeto a restricciones geográficas. Se espera que FARR presente un caso de prueba ante el Migrationsöverdomstolen dentro de los 90 días (P=0,80).
+
+---
+
+### 📊 Top Cinco Informes por Significancia
+
+| # | Dok_id | Informe | Puntuación | Comité |
+|:-:|--------|---------|:----------:|--------|
+| 🥇 1 | **HD01FiU48** | Presupuesto suplementario — combustible y energía | **22/25** | FiU |
+| 🥇 1 | **HD01SfU22** | Reforma de suspensión migratoria | **22/25** | SfU |
+| 🥈 3 | **HD01KU32** | Enmienda constitucional accesibilidad (*vilande*) | **19/25** | KU |
+| 🥉 4 | **HD01KU33** | Transparencia incautación digital (*vilande*) | **17/25** | KU |
+| 🔶 4 | **HD01TU21** | E-identidad estatal | **17/25** | TU |
+
+---
+
+### 🎙️ Marcos Recomendados para Redacciones
+
+| Marco | Respaldado por | Confianza |
+|-------|---------------|:---------:|
+| "Suecia recorta el impuesto al combustible al mínimo de la UE — 14 días antes de las elecciones" | FiU48 + EU 2003/96/CE | 🟩 ALTA |
+| "Enmiendas constitucionales pre-comprometen al próximo Riksdag" | KU32/KU33 + RF 8:14 | 🟩 ALTA |
+
+---
+
+**Clasificación**: Público · **Próxima revisión**: 2026-04-28
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief_fi.md -->
+
+| Kenttä | Arvo |
+|--------|------|
+| **Päivämäärä** | 2026-04-21 |
+| **Kohderyhmä** | Päätoimittajat · poliittiset neuvonantajat · puolueiden koordinaattorit · uutissuunnittelijat |
+| **Lukuaika** | 3 minuuttia |
+| **Luokitus** | Julkinen |
+| **Luotettavuus** | 🟩 KORKEA |
+
+---
+
+### 🧭 BLUF (Yhteenveto Ensin)
+
+21. huhtikuuta 2026 valtiopäivien valiokunnat hyväksyivät **14 raportin paketin**, joka toteuttaa **kolmipilarisen vaalivedon**: verohelpotus (FiU48, 4,1 mrd. SEK polttoaine- ja energiatuet), täytäntöönpanon uskottavuus (SfU22 maahanmuuton viivästäminen) ja perustuslaillinen perintö (KU32/KU33 *vilande* perustuslakimuutokset, jotka sitovat seuraavat valtiopäivät). **Pääjohtonpäätös**: tämä on **ensimmäinen kerta joulukuun 2014 sopimuksen jälkeen**, kun istuva hallitus on koordinoinut vero-, täytäntöönpano- ja perustuslailliset toimenpiteet yhden valiokunnan viikon sisällä. FiU48 ja SfU22 saavat molemmat **22/25** merkittävyysmatriisissa. `[KORKEA]`
+
+---
+
+### 🎯 Kolme Tärkeää Asiaa
+
+1. **FiU48 on sekä vaalihelpotus ETTÄ EU-vaatimusten korjaus.** Bensiiniveron alennus 82 öre/litra ja diesel 319 SEK/m³ asettaa Ruotsin **EU:n vähimmäistason** (energiaverodirektiivi 2003/96/EY). 4,1 mrd. SEK erääntyvät 30. syyskuuta 2026 — **14 päivää vaalien jälkeen**.
+
+2. **Perustuslaillinen ansa on etukäteen sitoutunut perintö.** KU32 ja KU33 vaativat identtistä sanamuotoa läpäistäkseen **seuraavat valtiopäivät**. Uusi S+V+MP+C-koalitio ei voi yksinkertaisesti peruuttaa niitä — sen on joko vahvistettava, muutettava identtisellä sanamuodolla tai annettava niiden raueta Hallitusmuodon 8:14 mukaan.
+
+3. **SfU22 luo EIT-stressitestin Tidöavtaletille.** Lykätty täytäntöönpano korvaa tilapäiset oleskeluluvat täytäntöönpanon esteiden edessä oleville ulkomaalaisille — ryhmä, jolla **ei ole oleskelustatusta mutta jota ei voida poistaa**, maantieteellisten rajoitusten alainen. FARR:n odotetaan nostavan koetapauksen Migrationsöverdomstolenissa 90 päivän kuluessa (P=0,80).
+
+---
+
+### 📊 Viisi tärkeintä raporttia
+
+| # | Dok_id | Raportti | Pisteet | Valiokunta |
+|:-:|--------|---------|:-------:|-----------|
+| 🥇 1 | **HD01FiU48** | Lisätalousarvio — polttoaine & energia | **22/25** | FiU |
+| 🥇 1 | **HD01SfU22** | Maahanmuuton viivästämisreformi | **22/25** | SfU |
+| 🥈 3 | **HD01KU32** | Perustuslaillinen esteettömyysmuutos (*vilande*) | **19/25** | KU |
+| 🥉 4 | **HD01KU33** | Digitaalinen takavarikointi-läpinäkyvyys (*vilande*) | **17/25** | KU |
+| 🔶 4 | **HD01TU21** | Valtion sähköinen henkilöllisyystodistus | **17/25** | TU |
+
+---
+
+### 🎙️ Suositellut uutisraamit
+
+| Raami | Tuettu | Luotettavuus |
+|-------|--------|:------------:|
+| "Ruotsi leikkaa polttoaineveroa EU:n minimiin — 14 päivää ennen vaaleja" | FiU48 + EU 2003/96/EY | 🟩 KORKEA |
+| "Perustuslakimuutokset sitovat seuraavat valtiopäivät etukäteen" | KU32/KU33 + RF 8:14 | 🟩 KORKEA |
+
+---
+
+**Luokitus**: Julkinen · **Seuraava arviointi**: 2026-04-28
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief_fr.md -->
+
+| Champ | Valeur |
+|-------|--------|
+| **Date** | 2026-04-21 |
+| **Audience** | Rédacteurs en chef · conseillers politiques · coordinateurs de parti · planificateurs de salle de rédaction |
+| **Temps de lecture** | 3 minutes |
+| **Classification** | Public |
+| **Fiabilité** | 🟩 ÉLEVÉE |
+
+---
+
+### 🧭 BLUF (Conclusion d'Abord)
+
+Le 21 avril 2026, les commissions du Riksdag ont adopté un **paquet de 14 rapports** qui opérationnalise un **pari électoral à trois piliers** : allègement fiscal (FiU48, 4,1 milliards SEK de subventions carburant et énergie), crédibilité en matière d'exécution (SfU22 suspension migratoire) et héritage constitutionnel (KU32/KU33, modifications constitutionnelles *vilande* liant le prochain Riksdag). **Constat principal** : c'est **la première fois depuis l'accord de décembre 2014** qu'un gouvernement en place a coordonné des mesures fiscales, d'exécution et constitutionnelles au cours d'une seule semaine de commission. FiU48 et SfU22 obtiennent tous deux **22/25** dans la matrice de signification. `[ÉLEVÉE]`
+
+---
+
+### 🎯 Trois Choses à Savoir
+
+1. **FiU48 est à la fois une mesure d'allègement électoral ET une correction de conformité UE.** La réduction de la taxe sur l'essence de 82 öre/litre et du diesel de 319 SEK/m³ place la Suède au **taux minimum autorisé par l'UE** (directive sur la taxation de l'énergie 2003/96/CE). Le coût de 4,1 milliards SEK expire le 30 septembre 2026 — **14 jours après l'élection**.
+
+2. **Le piège constitutionnel *vilande* est un héritage engagé d'avance.** KU32 et KU33 nécessitent un libellé identique pour passer devant le **prochain Riksdag**. Une nouvelle coalition S+V+MP+C ne peut pas simplement les annuler — elle doit soit confirmer, modifier avec un libellé identique des deux côtés, soit les laisser tomber sous la Regeringsformen 8:14.
+
+3. **SfU22 crée le test de résistance CEDH du Tidöavtalet.** La suspension d'exécution remplace les permis de séjour temporaires pour les étrangers faisant face à des obstacles à l'exécution — un groupe avec **aucun statut de résidence mais ne pouvant pas être expulsé**, soumis à des restrictions géographiques. FARR devrait déposer un dossier test devant le Migrationsöverdomstolen dans les 90 jours (P=0,80).
+
+---
+
+### 📊 Cinq Premiers Rapports par Importance
+
+| # | Dok_id | Rapport | Score | Commission |
+|:-:|--------|---------|:-----:|-----------|
+| 🥇 1 | **HD01FiU48** | Budget rectificatif — carburant & énergie | **22/25** | FiU |
+| 🥇 1 | **HD01SfU22** | Réforme de suspension migratoire | **22/25** | SfU |
+| 🥈 3 | **HD01KU32** | Amendement constitutionnel accessibilité (*vilande*) | **19/25** | KU |
+| 🥉 4 | **HD01KU33** | Transparence saisie numérique (*vilande*) | **17/25** | KU |
+| 🔶 4 | **HD01TU21** | E-identité d'État | **17/25** | TU |
+
+---
+
+### 🎙️ Cadres Recommandés pour les Salles de Rédaction
+
+| Cadre | Appuyé par | Confiance |
+|-------|-----------|:---------:|
+| "La Suède réduit la taxe carburant au minimum UE — 14 jours avant l'élection" | FiU48 + EU 2003/96/CE | 🟩 ÉLEVÉE |
+| "Des amendements constitutionnels pré-engagent le prochain Riksdag" | KU32/KU33 + RF 8:14 | 🟩 ÉLEVÉE |
+
+---
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief_he.md -->
+
+<div dir="rtl">
+
+# 📋 תקציר מודיעיני — דוחות ועדות (21 באפריל 2026)
+
+| שדה | ערך |
+|-----|-----|
+| **תאריך** | 2026-04-21 |
+| **קהל יעד** | עורכים ראשיים · יועצים פוליטיים · רכזי מפלגה · מתכנני ידיעות |
+| **זמן קריאה** | 3 דקות |
+| **סיווג** | ציבורי |
+| **אמינות** | 🟩 גבוה |
+
+---
+
+### 🧭 BLUF (העיקר תחילה)
+
+ב-21 באפריל 2026, אימצו ועדות הריקסדאג **חבילה של 14 דוחות** המממשת **הימור בחירות תלת-עמודי**: הקלה פיסקלית (FiU48, 4.1 מיליארד SEK בסובסידיות לדלק ולאנרגיה), אמינות אכיפה (SfU22 עיכוב הגירה) ומורשת חוקתית (KU32/KU33 תיקונים חוקתיים *vilande* המחייבים את הריקסדאג הבא). **ממצא מרכזי**: זו **הפעם הראשונה מאז הסכם דצמבר 2014** שממשלה מכהנת תיאמה צעדים פיסקליים, אכיפתיים וחוקתיים בתוך שבוע ועדה אחד. FiU48 ו-SfU22 מקבלים שניהם ציון **22/25** במטריצת המשמעות. `[גבוה]`
+
+---
+
+### 🎯 שלושה דברים לדעת
+
+1. **FiU48 הוא גם צעד הקלה בחירותי וגם תיקון ציות לאירופה.** הפחתת מס הבנזין ב-82 אוֹרֶה/ליטר ודיזל ב-319 SEK/מ³ מציבה את שוודיה ב**שיעור המינימלי המותר על ידי האיחוד האירופי** (הנחיית מיסוי האנרגיה 2003/96/EC). עלות 4.1 מיליארד SEK פגה ב-30 בספטמבר 2026 — **14 יום אחרי הבחירות**.
+
+2. **מלכודת החוקה *vilande* היא מורשת מחויבת מראש.** KU32 ו-KU33 דורשים ניסוח זהה כדי לעבור את **הריקסדאג הבא**. קואליציה חדשה S+V+MP+C לא יכולה פשוט לבטל אותם — עליה לאשר, לתקן בניסוח זהה משני הצדדים, או להניח להם לפוג לפי Regeringsformen 8:14.
+
+3. **SfU22 יוצר מבחן קיצון לאמנת ECHR של Tidöavtalet.** עיכוב ביצוע מחליף היתרי שהייה זמניים לזרים הניצבים בפני מכשולי אכיפה — מייצר קבוצה ב**ללא מעמד שהייה אך לא ניתנת לגירוש**, הכפופה להגבלות גיאוגרפיות ודיווח חובה. FARR צפויה להגיש תביעת מבחן ב-Migrationsöverdomstolen תוך 90 יום (P=0.80).
+
+---
+
+### 📊 חמשת הדוחות המובילים לפי חשיבות
+
+| # | Dok_id | דוח | ציון | ועדה |
+|:-:|--------|-----|:----:|------|
+| 🥇 1 | **HD01FiU48** | תקציב תוסף — דלק ואנרגיה | **22/25** | FiU |
+| �� 1 | **HD01SfU22** | רפורמת עיכוב הגירה | **22/25** | SfU |
+| 🥈 3 | **HD01KU32** | תיקון חוקתי נגישות (*vilande*) | **19/25** | KU |
+| 🥉 4 | **HD01KU33** | שקיפות תפיסה דיגיטלית (*vilande*) | **17/25** | KU |
+| 🔶 4 | **HD01TU21** | זהות אלקטרונית ממלכתית | **17/25** | TU |
+
+---
+
+### 🎙️ מסגרות חדר חדשות מומלצות
+
+| מסגרת | נתמך ע"י | אמון |
+|-------|---------|:----:|
+| "שוודיה מקצצת מס דלק למינימום האיחוד האירופי — 14 יום לפני הבחירות" | FiU48 + EU 2003/96/EC | 🟩 גבוה |
+| "תיקונים חוקתיים מחייבים מראש את הריקסדאג הבא" | KU32/KU33 + RF 8:14 | 🟩 גבוה |
+
+---
+
+**סיווג**: ציבורי · **סקירה הבאה**: 2026-04-28
+
+</div>
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief_ja.md -->
+
+| 項目 | 内容 |
+|------|------|
+| **日付** | 2026-04-21 |
+| **対象者** | 編集長・政治顧問・党コーディネーター・ニュース担当プランナー |
+| **読了時間** | 3分 |
+| **分類** | 公開 |
+| **信頼性** | 🟩 高 |
+
+---
+
+### 🧭 BLUF（結論から）
+
+2026年4月21日、リクスダーグの委員会は**14報告書パッケージ**を採択し、**三本柱の選挙戦略**を実行に移した：財政救済（FiU48、41億SEKの燃料・エネルギー補助金）、法執行の信頼性（SfU22移民執行延期）、憲法上の遺産（KU32/KU33 *vilande*憲法改正で次のリクスダーグを拘束）。**主要な発見**：これは**2014年の12月合意以来、初めて**現政権が一週間の委員会内で財政・法執行・憲法上の措置を調整した事例である。FiU48とSfU22はどちらも重要度マトリックスで**22/25**を獲得。`[高]`
+
+---
+
+### 🎯 知っておくべき3つのこと
+
+1. **FiU48は選挙向け救済措置であり、EU適合性修正でもある。**ガソリン税を1リットルあたり82öre、軽油を319 SEK/m³引き下げることで、スウェーデンは**EUが許可する最低税率**（エネルギー課税指令2003/96/EC）に達する。41億SEKのコストは補正予算として計上され、2026年9月30日に失効する——**選挙の14日後**。
+
+2. ***vilande*憲法の罠は事前約束された遺産である。**KU32とKU33は**次のリクスダーグ**を通過するのに同一の文言を必要とする。新しいS+V+MP+C連立は簡単に覆せない——確認するか、両側で同一の文言で修正するか、Regeringsformen 8:14に従って失効させるかのいずれかを選ばなければならない。
+
+3. **SfU22はTidöavtaletのECHRストレステストを作る。**執行延期は、執行障壁に直面する外国人への一時滞在許可に取って代わる——**居住ステータスはないが追放できない**グループを生み出し、地理的制限と義務的な報告に服する。FARRは2026年6月1日の施行後90日以内にMigrationsöverdomstolenに試験的訴訟を提起する見込み（P=0.80）。
+
+---
+
+### 📊 重要度順トップ5報告書
+
+| # | Dok_id | 報告書 | スコア | 委員会 |
+|:-:|--------|--------|:------:|--------|
+| 🥇 1 | **HD01FiU48** | 補正予算 — 燃料・エネルギー | **22/25** | FiU |
+| 🥇 1 | **HD01SfU22** | 移民執行延期改革 | **22/25** | SfU |
+| 🥈 3 | **HD01KU32** | 憲法改正アクセシビリティ (*vilande*) | **19/25** | KU |
+| 🥉 4 | **HD01KU33** | デジタル差押え透明性 (*vilande*) | **17/25** | KU |
+| 🔶 4 | **HD01TU21** | 国家電子ID | **17/25** | TU |
+
+---
+
+### 🎙️ 推奨されるニュースフレーム
+
+| フレーム | 根拠 | 信頼度 |
+|---------|------|:------:|
+| 「スウェーデン、燃料税をEU最低水準に引き下げ——選挙14日前」 | FiU48 + EU 2003/96/EC | 🟩 高 |
+| 「憲法改正が次のリクスダーグを事前拘束」 | KU32/KU33 + RF 8:14 | 🟩 高 |
+
+---
+
+**分類**：公開 · **次回レビュー**：2026-04-28
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief_ko.md -->
+
+| 항목 | 내용 |
+|------|------|
+| **날짜** | 2026-04-21 |
+| **대상** | 편집장 · 정치 고문 · 당 조율자 · 뉴스 기획자 |
+| **읽기 시간** | 3분 |
+| **분류** | 공개 |
+| **신뢰도** | 🟩 높음 |
+
+---
+
+### �� BLUF (결론 먼저)
+
+2026년 4월 21일, 리크스다겐 위원회들이 **14개 보고서 패키지**를 채택하여 **3기둥 선거 전략**을 실행했다: 재정 완화(FiU48, 41억 SEK 연료·에너지 보조금), 집행 신뢰성(SfU22 이민 집행 연기), 헌법적 유산(KU32/KU33 다음 리크스다겐을 구속하는 *vilande* 헌법 개정). **핵심 발견**: 이는 **2014년 12월 협약 이후 처음으로** 현 정부가 단일 위원회 주간 내에 재정·집행·헌법 조치를 조율한 사례이다. FiU48과 SfU22는 모두 중요도 매트릭스에서 **22/25**를 획득했다. `[높음]`
+
+---
+
+### 🎯 알아야 할 세 가지
+
+1. **FiU48은 선거용 완화 조치인 동시에 EU 준수 수정이다.** 휘발유세를 리터당 82 öre, 경유를 319 SEK/m³ 인하하면 스웨덴이 **EU 허용 최저 세율**(에너지세 지침 2003/96/EC)에 도달한다. 41억 SEK 비용은 보충 예산으로 흡수되며 2026년 9월 30일 만료된다——**선거 14일 후**.
+
+2. ***vilande* 헌법적 함정은 사전 약속된 유산이다.** KU32와 KU33은 **다음 리크스다겐**을 통과하려면 동일한 문구가 필요하다. 새로운 S+V+MP+C 연립은 간단히 되돌릴 수 없다——확인하거나, 양쪽에서 동일한 문구로 수정하거나, Regeringsformen 8:14에 따라 만료시켜야 한다.
+
+3. **SfU22는 Tidöavtalet의 ECHR 스트레스 테스트를 만든다.** 집행 연기는 집행 장벽에 직면한 외국인의 임시 거주 허가를 대체한다——**거주 지위는 없지만 추방될 수 없는** 집단을 만들어 지리적 제한과 의무 보고에 종속된다. FARR는 2026년 6월 1일 시행 후 90일 이내에 Migrationsöverdomstolen에 시험 사건을 제출할 것으로 예상된다(P=0.80).
+
+---
+
+### 📊 중요도별 상위 5개 보고서
+
+| # | Dok_id | 보고서 | 점수 | 위원회 |
+|:-:|--------|--------|:----:|--------|
+| 🥇 1 | **HD01FiU48** | 추가 예산 — 연료 & 에너지 | **22/25** | FiU |
+| 🥇 1 | **HD01SfU22** | 이민 집행 연기 개혁 | **22/25** | SfU |
+| 🥈 3 | **HD01KU32** | 헌법 접근성 수정 (*vilande*) | **19/25** | KU |
+| 🥉 4 | **HD01KU33** | 디지털 압수 투명성 (*vilande*) | **17/25** | KU |
+| 🔶 4 | **HD01TU21** | 국가 전자 ID | **17/25** | TU |
+
+---
+
+### 🎙️ 권장 뉴스룸 프레임
+
+| 프레임 | 근거 | 신뢰도 |
+|--------|------|:------:|
+| "스웨덴, 연료세를 EU 최저 수준으로 인하——선거 14일 전" | FiU48 + EU 2003/96/EC | 🟩 높음 |
+| "헌법 개정이 다음 리크스다겐을 사전 구속" | KU32/KU33 + RF 8:14 | 🟩 높음 |
+
+---
+
+**분류**: 공개 · **다음 검토**: 2026-04-28
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief_nl.md -->
+
+| Veld | Waarde |
+|------|--------|
+| **Datum** | 2026-04-21 |
+| **Doelgroep** | Hoofdredacteuren · politieke adviseurs · fractiecoördinatoren · nieuwsplanners |
+| **Leestijd** | 3 minuten |
+| **Classificatie** | Openbaar |
+| **Betrouwbaarheid** | 🟩 HOOG |
+
+---
+
+### 🧭 BLUF (Conclusie Eerst)
+
+Op 21 april 2026 namen de commissies van de Riksdag een **pakket van 14 rapporten** aan dat een **driepijlersstrategie** operationaliseert: belastingverlichting (FiU48, 4,1 mld. SEK brandstof- en energiesubsidies), handhavingsgeloofwaardigheid (SfU22 migratieschorsing) en constitutioneel erfgoed (KU32/KU33 *vilande* grondwetswijzigingen die de volgende Riksdag binden). **Hoofdbevinding**: dit is **de eerste keer sinds het decemberakkoord van 2014** dat een zittende regering fiscale, handhavings- en constitutionele maatregelen heeft gecoördineerd binnen één commissieweek. FiU48 en SfU22 scoren beide **22/25** in de significantiematrix. `[HOOG]`
+
+---
+
+### 🎯 Drie Dingen om te Weten
+
+1. **FiU48 is zowel een verkiezingsverlichting ALS een EU-nalevingscorrectie.** Verlaging van de benzineaccijns met 82 öre/liter en diesel met 319 SEK/m³ brengt Zweden op het **door de EU toegestane minimumtarief** (Energiebelastingrichtlijn 2003/96/EG). De kosten van 4,1 mld. SEK verlopen op 30 september 2026 — **14 dagen na de verkiezingen**.
+
+2. **De *vilande* constitutionele val is een vooraf aangegaan erfgoed.** KU32 en KU33 vereisen identieke bewoording om de **volgende Riksdag** te passeren. Een nieuwe S+V+MP+C-coalitie kan ze niet zomaar terugdraaien — ze moet bevestigen, met identieke bewoording aan beide kanten wijzigen, of ze laten vervallen onder Regeringsformen 8:14.
+
+3. **SfU22 creëert de EVRM-stresstest van het Tidöavtalet.** Uitgestelde tenuitvoerlegging vervangt tijdelijke verblijfsvergunningen voor vreemdelingen met handhavingsbelemmeringen — een groep met **geen verblijfsstatus maar niet verwijderbaar**, onderworpen aan geografische beperkingen. FARR zal naar verwachting binnen 90 dagen een testcase indienen bij het Migrationsöverdomstolen (P=0,80).
+
+---
+
+### 📊 Top Vijf Rapporten op Significantie
+
+| # | Dok_id | Rapport | Score | Commissie |
+|:-:|--------|---------|:-----:|-----------|
+| 🥇 1 | **HD01FiU48** | Aanvullende begroting — brandstof & energie | **22/25** | FiU |
+| 🥇 1 | **HD01SfU22** | Migratieschorsingshervorming | **22/25** | SfU |
+| 🥈 3 | **HD01KU32** | Constitutionele toegankelijkheidswijziging (*vilande*) | **19/25** | KU |
+| 🥉 4 | **HD01KU33** | Digitale inbeslagname-transparantie (*vilande*) | **17/25** | KU |
+| 🔶 4 | **HD01TU21** | Staatse e-identiteit | **17/25** | TU |
+
+---
+
+### 🎙️ Aanbevolen Mediaframes
+
+| Frame | Onderbouwd door | Vertrouwen |
+|-------|----------------|:---------:|
+| "Zweden verlaagt brandstofbelasting naar EU-minimum — 14 dagen voor verkiezingen" | FiU48 + EU 2003/96/EG | 🟩 HOOG |
+| "Grondwetswijzigingen verbinden de volgende Riksdag vooraf" | KU32/KU33 + RF 8:14 | 🟩 HOOG |
+
+---
+
+**Classificatie**: Openbaar · **Volgende beoordeling**: 2026-04-28
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief_no.md -->
+
+| Felt | Verdi |
+|------|-------|
+| **Dato** | 2026-04-21 |
+| **Målgruppe** | Sjefredaktører · politiske rådgivere · partipisker · nyhetsplanleggere |
+| **Lesetid** | 3 minutter |
+| **Klassifisering** | Offentlig |
+| **Tillit** | 🟩 HØY |
+
+---
+
+### 🧭 BLUF (Bunnlinjen Først)
+
+21. april 2026 vedtok Riksdagens komiteer en **14-rapportspakke** som operasjonaliserer en **trepilarvalgsbet**: skattelette (FiU48, 4,1 mrd. SEK i drivstoff- og energisubsidier), håndhevingsevne (SfU22 migrasjonsblokering) og konstitusjonelt arv (KU32/KU33 *vilande* grunnlovsendringer som binder neste Riksdag). **Hovedfunnet**: dette er **første gang siden decemberöverenskommelsen 2014** at en sittende regjering har koordinert skattemessige, håndhevelses- og forfatningsmessige tiltak innenfor én komitéuke. FiU48 og SfU22 scorer begge **22/25**. `[HØY]`
+
+---
+
+### 🎯 Tre Ting å Vite
+
+1. **FiU48 er både et valglette-tiltak OG en EU-etterlevelseskorreksjon.** Reduksjon i bensinskatt med 82 øre/liter og diesel med 319 SEK/m³ plasserer Sverige ved **EUs minimumsnivå** (energiskattedirektiv 2003/96/EF). 4,1 mrd. SEK utløper 30. september 2026 — **14 dager etter valget**.
+
+2. **Den *vilande* konstitusjonelle fellen er et forhåndsinngått arv.** KU32 og KU33 krever identisk ordlyd for å passere **neste Riksdag**. En ny S+V+MP+C-koalisjon kan ikke bare reversere dem — den må enten bekrefte, endre med identisk ordlyd, eller la dem falle under Regeringsformen 8:14.
+
+3. **SfU22 skaper EMD-stresstest av Tidöavtalet.** Oppholdt fullbyrdelse erstatter midlertidige oppholdstillatelser for utlendinger med håndhevelsesproblemer — en gruppe med **ingen oppholdsstatus men kan ikke fjernes**, underlagt geografiske begrensninger. FARR forventes å inngi en prøvesak ved Migrationsöverdomstolen innen 90 dager (P=0,80).
+
+---
+
+### 📊 Topp fem rapporter rangert etter signifikans
+
+| # | Dok_id | Rapport | Poeng | Komité |
+|:-:|--------|---------|:-----:|--------|
+| 🥇 1 | **HD01FiU48** | Ekstrabudsjettet — drivstoff & energi | **22/25** | FiU |
+| 🥇 1 | **HD01SfU22** | Migrasjonsblokkingsreform | **22/25** | SfU |
+| 🥈 3 | **HD01KU32** | Konstitusjonell tilgjengelighetsendring (*vilande*) | **19/25** | KU |
+| 🥉 4 | **HD01KU33** | Digital beslag-transparens (*vilande*) | **17/25** | KU |
+| 🔶 4 | **HD01TU21** | Statlig e-legitimasjon | **17/25** | TU |
+
+---
+
+### 🎙️ Anbefalte nyhetsrammer
+
+| Ramme | Støttet av | Tillit |
+|-------|-----------|:------:|
+| "Sverige kutter drivstoffskatt til EU-minimum — 14 dager før valget" | FiU48 + EU 2003/96/EF | 🟩 HØY |
+| "Grunnlovsendringer forhåndsforplikter neste Riksdag" | KU32/KU33 + RF 8:14 | 🟩 HØY |
+
+---
+
+**Klassifisering**: Offentlig · **Neste gjennomgang**: 2026-04-28
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief_sv.md -->
+
+| Fält | Värde |
+|------|-------|
+| **Datum** | 2026-04-21 |
+| **Målgrupp** | Chefredaktörer · politiska rådgivare · partipiskor · nyhetsplanerare · policyanalytiker |
+| **Lästid** | 3 minuter |
+| **Klassificering** | Offentlig |
+| **Tillförlitlighet** | 🟩 HÖG |
+
+---
+
+### 🧭 BLUF (Slutsatsen Först)
+
+Den 21 april 2026 antog riksdagens utskott ett **14-betänkandespaket** som operationaliserar ett **trepelarval**: skattelättnader (FiU48, 4,1 miljarder SEK i bränsle- och energisubventioner), verkställighetsstyrka (SfU22, migrationsuppskjutande) och konstitutionellt arv (KU32/KU33, *vilande* grundlagsändringar som binder nästa riksdag). **Huvudfyndet**: detta är **första gången sedan decemberöverenskommelsen 2014** som en sittande regering samordnat skattemässiga, verkställighetsrelaterade och konstitutionella åtgärder inför valet under en enda utskottsvecka. FiU48 och SfU22 uppnår båda **22/25** i signifikansmatrisen. `[HÖG]`
+
+---
+
+### 🎯 Tre Saker att Veta
+
+1. **FiU48 är både ett valinsriktat lättnadspaket OCH en EU-efterlevnadskorrigering.** Sänkning av bensinskatt med 82 öre/liter och diesel med 319 SEK/m³ placerar Sverige vid **EU:s lägsta tillåtna skattenivå** (energiskattedirektiv 2003/96/EC). Kostnaden om 4,1 miljarder SEK bokförs som tilläggsbudget och löper ut 30 september 2026 — **14 dagar efter valet**.
+
+2. **Den *vilande* konstitutionella fällan är ett på förhand inlåst arvegods.** KU32 (tillgänglighetsregler för tryckfrihetsskyddade medier) och KU33 (digitalt beslagsrestriktioner under Tryckfrihetsförordningen) kräver identisk lydelse för att godkännas av **nästa riksdag**. En ny S+V+MP+C-koalition kan inte enkelt backa dem — den måste antingen bekräfta, ändra med identisk lydelse i båda besluten, eller låta dem falla enligt Regeringsformen 8:14.
+
+3. **SfU22 skapar ECHR-stresstest av Tidöavtalet.** Uppskjuten verkställighet ersätter tillfälliga uppehållstillstånd för utlänningar som möter verkställighetshinder — vilket skapar en grupp med **ingen uppehållsstatus men som inte kan avvisas**, underkastad geografiska inskränkningar och obligatoriska avmälningar. FARR förväntas lämna in ett testfall vid Migrationsöverdomstolen inom 90 dagar från ikraftträdandet 1 juni 2026 (P=0,80).
+
+---
+
+### 📊 Topp fem betänkanden, rankade efter signifikans
+
+| # | Dok_id | Betänkande | Poäng | Utskott |
+|:-:|--------|-----------|:-----:|---------|
+| 🥇 1 | **HD01FiU48** | Extra ändringsbudget — bränsle & energi | **22/25** | FiU |
+| 🥇 1 | **HD01SfU22** | Migrationsuppskjutandereform | **22/25** | SfU |
+| 🥈 3 | **HD01KU32** | Konstitutionellt tillgänglighetsändring (*vilande*) | **19/25** | KU |
+| 🥉 4 | **HD01KU33** | Digitalt beslag-transparens (*vilande*) | **17/25** | KU |
+| 🔶 4 | **HD01TU21** | Statlig e-legitimation | **17/25** | TU |
+
+---
+
+### 🎯 Scenariosannolikheter
+
+| Scenario | Sannolikhet | Politiskt utfall |
+|----------|:-----------:|-----------------|
+| 🟢 BASFALL — Regeringen sitter kvar, FiU48-solnedgång respekteras, KU32/33 bekräftas | **0,42** | Arvepaket håller; minor ECHR-ändring av SfU22 |
+| 🔵 UPP — S-ledarbyte komprimerar opposition | **0,12** | FiU48 förlängt till årets slut |
+| 🔴 NED — S-ledd minoritet, FiU48 omvänd, KU32/33 delvis faller | **0,28** | SfU22 ECHR-ändrat; bränsleskatt återställd Q1 2027 |
+| ⚡ VILDKORT — Oklart val | **0,10** | Alla vårens åtgärder omförhandlas ändringsvis |
+| 🟣 SVANS — Migrationsöverdomstolen underkänner SfU22 före valet | **0,08** | Kris omramar migrationsdebatt |
+
+---
+
+### 🎙️ Rekommenderade nyhetsramar (faktaverifierade)
+
+| Ram | Stöd | Tillförlitlighet |
+|-----|------|:---------------:|
+| "Sverige sänker bränsleskatt till EU-minimum — 14 dagar före valet" | FiU48-lagtext + EU 2003/96/EC bilaga I | 🟩 HÖG |
+| "Grundlagsändringar förbinder nästa riksdag i förväg" | KU32/KU33 *vilande* + RF 8:14 | 🟩 HÖG |
+| "Första ECHR-stresstestet av Tidöavtalets flaggskepp" | [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/threat-analysis.md) §T1 | 🟩 HÖG |
+
+---
+
+**Klassificering**: Offentlig · **Nästa granskning**: 2026-04-28
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief_zh.md -->
+
+| 字段 | 值 |
+|------|-----|
+| **日期** | 2026-04-21 |
+| **受众** | 总编辑 · 政治顾问 · 党务协调员 · 新闻策划者 |
+| **阅读时间** | 3分钟 |
+| **分类** | 公开 |
+| **可靠性** | 🟩 高 |
+
+---
+
+### 🧭 BLUF（结论在前）
+
+2026年4月21日，瑞典议会各委员会通过了一个**14份报告的一揽子方案**，落实了一项**三支柱选举押注**：财政减免（FiU48，41亿瑞典克朗燃料和能源补贴）、执法可信度（SfU22移民执行暂停）和宪法遗产（KU32/KU33，约束下届议会的*vilande*宪法修正案）。**核心发现**：这是**自2014年12月协议以来**，执政政府首次在单一委员会周内协调财政、执法和宪法措施。FiU48和SfU22在重要性矩阵中均获得**22/25**的评分。`[高]`
+
+---
+
+### 🎯 三件需要了解的事
+
+1. **FiU48既是选举救济措施，也是欧盟合规修正。** 将汽油税降低82öre/升、柴油降低319 SEK/m³，使瑞典达到**欧盟允许的最低税率**（能源税指令2003/96/EC）。41亿瑞典克朗的成本作为补充预算吸收，2026年9月30日到期——**选举后14天**。
+
+2. ***vilande*宪法陷阱是预先承诺的遗产。** KU32和KU33需要相同措辞才能通过**下届议会**。新的S+V+MP+C联合政府无法简单地撤销它们——必须确认、以两侧相同措辞修改，或依据《政府组织法》8:14让其失效。
+
+3. **SfU22创造了Tidöavtalet的欧洲人权公约压力测试。** 执行暂停取代了面临执行障碍外国人的临时居留许可——产生了一批**没有居留身份但不能被驱逐**的群体，受地理限制和强制报到约束。FARR预计将在2026年6月1日实施后90天内向移民最高法院提起测试案件（P=0.80）。
+
+---
+
+### 📊 按重要性排列的前五份报告
+
+| # | Dok_id | 报告 | 评分 | 委员会 |
+|:-:|--------|------|:----:|--------|
+| 🥇 1 | **HD01FiU48** | 补充预算 — 燃料与能源 | **22/25** | FiU |
+| 🥇 1 | **HD01SfU22** | 移民执行暂停改革 | **22/25** | SfU |
+| 🥈 3 | **HD01KU32** | 宪法无障碍修正案 (*vilande*) | **19/25** | KU |
+| 🥉 4 | **HD01KU33** | 数字扣押透明度 (*vilande*) | **17/25** | KU |
+| 🔶 4 | **HD01TU21** | 国家电子身份证 | **17/25** | TU |
+
+---
+
+### 🎙️ 推荐新闻室框架
+
+| 框架 | 依据 | 可信度 |
+|------|------|:------:|
+| "瑞典将燃料税削减至欧盟最低水平——选举前14天" | FiU48 + EU 2003/96/EC | 🟩 高 |
+| "宪法修正案预先约束下届议会" | KU32/KU33 + RF 8:14 | 🟩 高 |
+
+---
+
+**分类**：公开 · **下次审查**：2026-04-28
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
 ## Historical Baseline
 <!-- source: historical-baseline.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/historical-baseline.md -->
 
@@ -3556,7 +4316,7 @@ This generated report reconciles the analysis folder with the article projection
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 16 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 29 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 13 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 3 | Linked in Article Sources, not expanded inline |
 
@@ -3598,6 +4358,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/executive-brief_zh.md)
 - [`historical-baseline.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/committeeReports/historical-baseline.md)
 
 ### Supporting Data Artifacts

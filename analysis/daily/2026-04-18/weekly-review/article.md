@@ -6,7 +6,7 @@ date: 2026-04-18
 subfolder: weekly-review
 slug: 2026-04-18-weekly-review
 source_folder: analysis/daily/2026-04-18/weekly-review
-generated_at: 2026-05-16T20:24:25.393Z
+generated_at: 2026-05-17T18:40:43.060Z
 language: en
 layout: article
 ---
@@ -155,6 +155,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Synthesis Summary
@@ -2738,13 +2751,1046 @@ These documents are referenced extensively in this analysis but live in upstream
 
 ---
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# 📋 إحاطة القرار — البرلمان السويدي الأسبوع 16، 2026
+
+<p align="center">
+  <em>إحاطة قرار من صفحة واحدة لمحرري الأخبار والمستشارين السياسيين وكبار المحللين</em>
+</p>
+
+| الحقل | القيمة |
+|-------|--------|
+| **معرف الإحاطة** | BRF-2026-W16 |
+| **التصنيف** | عام · وقت القراءة ≤ 4 دقائق |
+| **أفق القرار** | 24 ساعة · 30 يومًا · ما بعد انتخابات سبتمبر 2026 |
+| **المؤلف** | وكيل الصحفي الإخباري، المسؤولية التحريرية James Pether Sörling |
+| **المنهجية** | `ai-driven-analysis-guide.md` v5.1 القواعد 0–8 |
+
+---
+
+### 🧭 BLUF (الخلاصة أولاً)
+
+> **أجرى البرلمان السويدي (Riksdag) أكثر أسابيع التشريع حسمًا في الفصل الدراسي الربيعي 2025/26.** قدّم رئيس الوزراء Ulf Kristersson (حزب M) ثلاثية مالية ربيعية (مقترح الربيع `HD03100` + ميزانية التعديل الربيعية + ميزانية التعديل الإضافية `HD03236` — خفض ضريبة الوقود + تخفيف الكهرباء/الغاز) في سياق نمو الناتج المحلي الإجمالي بنسبة 0.82% عام 2024 وبطالة 8.7% عام 2025. **لجنة الدستور** أحرزت تقدمًا في **تعديلَيْن دستوريَّيْن** (`HD01KU32` إمكانية الوصول + `HD01KU33` الأدلة الرقمية في التفتيش المنزلي) — أول قيد جوهري على *Tryckfrihetsförordningen* (1766) منذ سنوات. قدّمت **وزيرة الخارجية Maria Malmer Stenergard (M)** وKristersson انضمام السويد إلى **المحكمة الخاصة لجريمة العدوان على أوكرانيا** (`HD03231`) و**لجنة التعويضات** (`HD03232`) — أول محكمة لجريمة العدوان منذ نورمبرغ. أكّدت الغرفة أغلبية الائتلاف العملية في **JuU15** (تشديد جرائم الشباب، **145–142**) — هامش ثلاثة أصوات. `[مرتفع جداً]`
+
+---
+
+### 🎯 ثلاثة قرارات تدعمها هذه الإحاطة
+
+| القرار | دليل المستند | نافذة الإجراء |
+|--------|-------------|:------------:|
+| **اختيار القصة الرئيسية** للأسبوع 16 | `significance-scoring.md` — الثلاثية المالية الربيعية موزونة **10.0** | فوري |
+| **موقف منظمات حرية الصحافة** | `risk-assessment.md` R2+R6 · `swot-analysis.md` S4 × T1 | قبل رأي Lagrådet (الربع الثاني 2026) |
+| **الموقف من روسيا + رصد تقاضي المحكمة الأوروبية لحقوق الإنسان** | `threat-analysis.md` T1+T3 · `risk-assessment.md` R1+R3 | مستمر |
+
+---
+
+### 📐 ما يحتاج القارئ معرفته في 60 ثانية
+
+1. **القصة الرئيسية هي الثلاثية المالية الربيعية** (HD03100+HD0399+HD03236). خفض ضريبة الوقود؛ تخفيف الكهرباء/الغاز. أكثر من 60 مليار كرونة سويدية تحفيز صافٍ. `[مرتفع جداً]`
+2. **قصة البنية التحتية الديمقراطية هي KU33** (HD01KU33). تحدّ من وضع "وثيقة عامة" للمواد الرقمية المضبوطة في عمليات التفتيش. `[مرتفع]`
+3. **JuU15 بنتيجة 145–142** — تصويت كتلوي خالص، هامش ثلاثة أصوات. SD يعمل صانع ملوك. `[مرتفع جداً]`
+4. **المحكمة الأوكرانية (HD03231) + لجنة التعويضات (HD03232)** — توافق متعدد الأحزاب. إطار نورمبرغ. `[مرتفع جداً]`
+5. **ثلاثية الهجرة** (SfU22+Prop 235+Prop 229) تواجه **مقترحات V+C+MP المنسّقة** كأساس للتقاضي في المحكمة الأوروبية لحقوق الإنسان. `[مرتفع]`
+6. **HD01UFöU3** = أول مخرج عملياتي لحلف الناتو: 1,200 جندي إلى فنلندا. `[مرتفع جداً]`
+
+---
+
+### 🎭 جهات فاعلة مُسمَّاة للمتابعة
+
+| الجهة | الدور | الأهمية |
+|-------|-------|---------|
+| **Ulf Kristersson** | رئيس الوزراء | المالك السياسي للثلاثية المالية |
+| **Elisabeth Svantesson** | وزيرة المالية | مهندسة مقترح الربيع |
+| **Maria Malmer Stenergard** | وزيرة الخارجية | مهندسة المحكمة |
+| **Pål Jonson** | وزير الدفاع | مالك قوة الناتو eFP |
+| **Magdalena Andersson** | زعيمة المعارضة | موقفها من KU33 حاسم |
+| **Jimmie Åkesson** | زعيم SD | رافعة 145–142 |
+| **Micael Bydén** | قائد القوات المسلحة (ÖB) | جاهزية مجموعة Bn الربع الثالث 2026 |
+| **Lagrådet** | هيئة المراجعة الدستورية | رأي KU33/KU32 معلّق |
+
+---
+
+### 🔮 الـ 30 يومًا القادمة — ما يجب مراقبته
+
+| التاريخ/النافذة | المحفّز | التأثير |
+|----------------|---------|--------|
+| **2026-04-22** | تصويت الغرفة على الميزانية التعديلية الإضافية | تأكيد تماسك الحزمة |
+| الربع الثاني 2026 | **رأي Lagrådet حول KU32/KU33** | تحديث بايزي |
+| مايو–يونيو | تصويت الغرفة على HD03231/HD03232 | انضمام المحكمة+التعويضات |
+| **2026-09-13** | انتخابات البرلمان | آفاق القراءة الثانية لـ KU33 |
+
+---
+
+**التصنيف**: عام · **المراجعة التالية**: 2026-04-25 · **المنهجية**: `analysis/methodologies/ai-driven-analysis-guide.md` v5.1
+<!-- source-sha: a7f00baff9cb6b920c7f514f09a7eee674faed30 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/executive-brief_da.md -->
+
+<p align="center">
+  <em>Enkeltsidet beslutsbriefing til nyhedsredaktører, politiske rådgivere og seniore analytikere</em>
+</p>
+
+| Felt | Værdi |
+|------|-------|
+| **BRIEF-ID** | BRF-2026-W16 |
+| **Klassificering** | Offentlig · Læsetid ≤ 4 minutter |
+| **Besluthorisont** | 24 timer · 30 dage · efter valget i september 2026 |
+| **Forfatter** | News Journalist-agent, redaktionelt ansvar James Pether Sörling |
+| **Metodik** | `ai-driven-analysis-guide.md` v5.1 regler 0–8 |
+
+---
+
+### 🧭 BLUF (Konklusionen Først)
+
+> **Sveriges Riksdag gennemførte den mest afgørende lovgivningsuge i forårsterminen 2025/26.** Statsminister Ulf Kristersson (M) fremlagde en forårs-fiskal trilogi (Vårproposition `HD03100` + Vårändringsbudget + Ekstra ændringsbudget `HD03236` — brændstofafgiftsnedsættelse + el/gas-lettelse) mod en baggrund af 0,82 % BNP-vækst i 2024 og 8,7 % arbejdsløshed i 2025. **Forfatningsudvalget** avancerede to **grundlovsændringer** (`HD01KU32` tilgængelighed + `HD01KU33` digitalt bevis ved husundersøgelse) — første substantielle begrænsning af *Tryckfrihetsförordningen* (1766) i årevis. **Udenrigsminister Maria Malmer Stenergard (M)** og Kristersson fremlagde Sveriges tilslutning til **Særdomstolen for aggressionsforbrydelsen mod Ukraine** (`HD03231`) og **Reparationskommissionen** (`HD03232`) — første aggressionsforbrydelsesdomstol siden Nürnberg. Kammeret bekræftede koalitionens arbejdsflertal på **JuU15** (ungdomskriminalitetsskærpning, **145–142**) — tre stemmer margin. `[MEGET HØJ]`
+
+---
+
+### 🎯 Tre beslutninger dette briefing understøtter
+
+| Beslutning | Evidenslocus | Handlingsvindue |
+|------------|-------------|:--------------:|
+| **Redaktionelt topstory-valg** for uge 16 | `significance-scoring.md` — Forårs-fiskal trilogi vægtet **10,0** | Umiddelbart |
+| **Pressefrihed-NGO position** | `risk-assessment.md` R2+R6 · `swot-analysis.md` S4 × T1 | Inden Lagrådets udtalelse (Q2 2026) |
+| **Ruslands-position + ECHR-retssagsovervågning** | `threat-analysis.md` T1+T3 · `risk-assessment.md` R1+R3 | Løbende |
+
+---
+
+### 📐 Hvad læseren skal vide på 60 sekunder
+
+1. **Tophistorien er forårs-fiskal trilogi** (HD03100+HD0399+HD03236). Brændstofafgiftsnedsættelse; el/gas-lettelse. SEK 60+ milliarder nettostimulus. `[MEGET HØJ]`
+2. **Den demokratiske infrastrukturhistorie er KU33** (HD01KU33). Begrænser "offentligt dokument"-status på digitalt materiale beslaglagt ved husundersøgelse. `[HØJ]`
+3. **JuU15 145–142** — ren blokkafstemning, tre stemmer margin. SD opererer som kongemager. `[MEGET HØJ]`
+4. **Ukrainatribunal (HD03231) + reparationskommission (HD03232)** — tværpartikonsensus. Nürnberg-framing. `[MEGET HØJ]`
+5. **Migrations-triple** (SfU22+Prop 235+Prop 229) mødes af **koordinerede V+C+MP-motioner** som ECHR-retssagsgrundlag. `[HØJ]`
+6. **HD01UFöU3** = første operationelle NATO-output: 1.200 tropper til Finland. `[MEGET HØJ]`
+7. **Kors-klynge-retorik**: Nürnberg-ansvarlighedsopkrævning udenlands (HD03231) mens TF begrænses hjemme (HD01KU33). `[HØJ]`
+
+---
+
+### 🎭 Navngivne aktører at følge
+
+| Aktør | Rolle | Relevans |
+|-------|-------|---------|
+| **Ulf Kristersson** | Statsminister | Politisk ejer af fiskal trilogi |
+| **Elisabeth Svantesson** | Finansminister | Forårspropositions-arkitekt |
+| **Maria Malmer Stenergard** | Udenrigsminister | Tribunalarkitekt |
+| **Pål Jonson** | Forsvarsminister | NATO eFP-ejer |
+| **Magdalena Andersson** | Oppositionsleder | Position på KU33 afgørende |
+| **Jimmie Åkesson** | SD-leder | 145–142 hævstang |
+| **Micael Bydén** | Militærchef (ÖB) | Bn-gruppe-beredskab Q3 2026 |
+| **Lagrådet** | Forfatningsrevieworgan | Ventende KU33/KU32-udtalelse |
+
+---
+
+### 🔮 Næste 30 dage — Hvad at overvåge
+
+| Dato/Vindue | Udløser | Indvirkning |
+|-------------|---------|------------|
+| **2026-04-22** | Kammerafstemning Ekstra ændringsbudget | Pakkekoherensbekræftelse |
+| Q2 2026 | **Lagrådets udtalelse KU32/KU33** | Bayesiansk opdatering |
+| Maj–Juni | Kammerafstemning HD03231/HD03232 | Tribunal+reparationstilslutning |
+| **2026-09-13** | Riksdagsvalg | KU33 andenläsningsudsigter |
+
+---
+
+### ⚠️ Toprisici
+
+| Rang | Risiko | Score |
+|:----:|--------|:-----:|
+| **1** | Russisk hybridkrigføring post-tribunal+NATO eFP | 18/25 |
+| 2 | KU33 snæver fortolkning | 12/25 |
+| 3 | Migrations-ECHR-underkendelse | 12/25 |
+
+---
+
+### ⚠️ Analytikertillid
+
+| Dimension | Tillid |
+|-----------|:------:|
+| Tophistory-valg | 🟦 **MEGET HØJ** |
+| Krydsparti-projeksion | 🟦 **MEGET HØJ** |
+| Andenläsningsprojeksion (KU33) | 🟧 **MIDDEL** |
+
+---
+
+### 📎 Krydslinks
+
+[README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/README.md) · [Syntese](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/synthesis-summary.md) · [Signifikans](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/swot-analysis.md) · [Risiko](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/risk-assessment.md) · [Trusler](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/threat-analysis.md) · [Interessenter](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/stakeholder-perspectives.md) · [Scenarier](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/scenario-analysis.md)
+
+---
+
+**Klassificering**: Offentlig · **Næste gennemgang**: 2026-04-25 · **Metodik**: `analysis/methodologies/ai-driven-analysis-guide.md` v5.1
+<!-- source-sha: a7f00baff9cb6b920c7f514f09a7eee674faed30 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/executive-brief_de.md -->
+
+<p align="center">
+  <em>Einseitiges Entscheidungsbriefing für Nachrichtenredakteure, politische Berater und leitende Analysten</em>
+</p>
+
+| Feld | Wert |
+|------|------|
+| **BRIEF-ID** | BRF-2026-W16 |
+| **Klassifizierung** | Öffentlich · Lesezeit ≤ 4 Minuten |
+| **Entscheidungshorizont** | 24 Stunden · 30 Tage · nach der Wahl im September 2026 |
+| **Autor** | News-Journalist-Agent, redaktionelle Verantwortung James Pether Sörling |
+| **Methodik** | `ai-driven-analysis-guide.md` v5.1 Regeln 0–8 |
+
+---
+
+### 🧭 BLUF (Fazit Zuerst)
+
+> **Der schwedische Reichstag absolvierte die folgenreichste Gesetzgebungswoche des Frühjahrssemesters 2025/26.** Ministerpräsident Ulf Kristersson (M) präsentierte eine fiskalpolitische Frühjahrs-Trilogie (Frühjahrspropositon `HD03100` + Frühjahrsänderungsbudget + Zusatzänderungsbudget `HD03236` — Kraftstoffsteuersenkung + Strom/Gas-Erleichterung) vor dem Hintergrund von 0,82 % BIP-Wachstum 2024 und 8,7 % Arbeitslosigkeit 2025. Der **Verfassungsausschuss** brachte zwei **Verfassungsänderungen** voran (`HD01KU32` Barrierefreiheit + `HD01KU33` digitaler Beweis bei Hausdurchsuchung) — erste wesentliche Einschränkung der *Tryckfrihetsförordningen* (1766) seit Jahren. **Außenministerin Maria Malmer Stenergard (M)** und Kristersson stellten Schwedens Beitritt zum **Sondertribunal für das Aggressionsverbrechen gegen die Ukraine** (`HD03231`) und der **Entschädigungskommission** (`HD03232`) vor — das erste Aggressionsverbrechen-Tribunal seit Nürnberg. Die Kammer bestätigte die Arbeitsmehrheit der Koalition bei **JuU15** (Jugendkriminalitätsverschärfung, **145–142**) — drei Stimmen Marge. `[SEHR HOCH]`
+
+---
+
+### 🎯 Drei Entscheidungen, die dieses Briefing unterstützt
+
+| Entscheidung | Evidenzhorizont | Handlungsfenster |
+|--------------|----------------|:---------------:|
+| **Redaktionelle Titelstory-Auswahl** für Woche 16 | `significance-scoring.md` — Frühjahrs-Trilogie gewichtet **10,0** | Sofort |
+| **Pressefreiheit-NGO-Position** | `risk-assessment.md` R2+R6 · `swot-analysis.md` S4 × T1 | Vor Lagråds Gutachten (Q2 2026) |
+| **Russland-Position + EGMR-Verfahrensüberwachung** | `threat-analysis.md` T1+T3 · `risk-assessment.md` R1+R3 | Laufend |
+
+---
+
+### 📐 Was der Leser in 60 Sekunden wissen muss
+
+1. **Hauptgeschichte ist die fiskalpolitische Frühjahrs-Trilogie** (HD03100+HD0399+HD03236). Kraftstoffsteuersenkung; Strom/Gas-Erleichterung. SEK 60+ Mrd. Nettostimulus. `[SEHR HOCH]`
+2. **Die demokratische Infrastrukturgeschichte ist KU33** (HD01KU33). Schränkt den "öffentliches Dokument"-Status von bei Hausdurchsuchungen beschlagnahmtem digitalem Material ein. `[HOCH]`
+3. **JuU15 145–142** — reine Blockabstimmung, drei Stimmen Marge. SD fungiert als Königsmacher. `[SEHR HOCH]`
+4. **Ukraine-Tribunal (HD03231) + Entschädigungskommission (HD03232)** — überparteilicher Konsens. Nürnberg-Framing. `[SEHR HOCH]`
+5. **Migrations-Trilogie** (SfU22+Prop 235+Prop 229) trifft auf **koordinierte V+C+MP-Anträge** als EGMR-Klagebasis. `[HOCH]`
+6. **HD01UFöU3** = erster operativer NATO-Output: 1.200 Soldaten nach Finnland. `[SEHR HOCH]`
+
+---
+
+### 🎭 Benannte Akteure zu verfolgen
+
+| Akteur | Rolle | Relevanz |
+|--------|-------|---------|
+| **Ulf Kristersson** | Ministerpräsident | Politischer Eigner der Fiskal-Trilogie |
+| **Elisabeth Svantesson** | Finanzministerin | Frühjahrspropositons-Architektin |
+| **Maria Malmer Stenergard** | Außenministerin | Tribunal-Architektin |
+| **Pål Jonson** | Verteidigungsminister | NATO eFP-Eigner |
+| **Magdalena Andersson** | Oppositionsführerin | KU33-Position entscheidend |
+| **Jimmie Åkesson** | SD-Parteichef | 145–142-Hebel |
+| **Micael Bydén** | Militärchef (ÖB) | Bn-Gruppen-Bereitschaft Q3 2026 |
+| **Lagrådet** | Verfassungsprüfungsorgan | Ausstehendes KU33/KU32-Gutachten |
+
+---
+
+### 🔮 Nächste 30 Tage — Was zu beobachten ist
+
+| Datum/Fenster | Auslöser | Auswirkung |
+|---------------|---------|-----------|
+| **2026-04-22** | Kammerabstimmung Zusatzänderungsbudget | Paketkoherenzbestätigung |
+| Q2 2026 | **Lagrådets Gutachten KU32/KU33** | Bayesianisches Update |
+| Mai–Juni | Kammerabstimmung HD03231/HD03232 | Tribunal+Entschädigungsbeitritt |
+| **2026-09-13** | Reichstagswahl | KU33 Zweitlesung-Aussichten |
+
+---
+
+**Klassifizierung**: Öffentlich · **Nächste Überprüfung**: 2026-04-25 · **Methodik**: `analysis/methodologies/ai-driven-analysis-guide.md` v5.1
+<!-- source-sha: a7f00baff9cb6b920c7f514f09a7eee674faed30 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/executive-brief_es.md -->
+
+<p align="center">
+  <em>Nota de decisión de una página para editores de noticias, asesores políticos y analistas sénior</em>
+</p>
+
+| Campo | Valor |
+|-------|-------|
+| **BRIEF-ID** | BRF-2026-W16 |
+| **Clasificación** | Público · Tiempo de lectura ≤ 4 minutos |
+| **Horizonte de decisión** | 24 horas · 30 días · después de las elecciones de septiembre de 2026 |
+| **Autor** | Agente periodista de noticias, responsabilidad editorial James Pether Sörling |
+| **Metodología** | `ai-driven-analysis-guide.md` v5.1 reglas 0–8 |
+
+---
+
+### 🧭 BLUF (Conclusión primero)
+
+> **El Riksdag sueco llevó a cabo la semana legislativa más decisiva del semestre de primavera 2025/26.** El Primer Ministro Ulf Kristersson (M) presentó una trilogía fiscal de primavera (Proposición de Primavera `HD03100` + Presupuesto Rectificativo de Primavera + Presupuesto Rectificativo Extra `HD03236` — reducción de impuesto sobre combustibles + alivio electricidad/gas) ante un crecimiento del PIB del 0,82 % en 2024 y un 8,7 % de desempleo en 2025. La **Comisión Constitucional** avanzó dos **reformas constitucionales** (`HD01KU32` accesibilidad + `HD01KU33` prueba digital en registro domiciliario) — primera restricción sustancial de la *Tryckfrihetsförordningen* (1766) en años. La **Ministra de Asuntos Exteriores Maria Malmer Stenergard (M)** y Kristersson presentaron la adhesión de Suecia al **Tribunal Especial para el Crimen de Agresión contra Ucrania** (`HD03231`) y a la **Comisión de Reparaciones** (`HD03232`) — el primer tribunal por crimen de agresión desde Núremberg. La cámara confirmó la mayoría de trabajo de la coalición en **JuU15** (endurecimiento de la delincuencia juvenil, **145–142**) — tres votos de margen. `[MUY ALTO]`
+
+---
+
+### 🎯 Tres decisiones que apoya esta nota
+
+| Decisión | Locus de evidencia | Ventana de acción |
+|----------|-------------------|:-----------------:|
+| **Elección de historia principal** para la semana 16 | `significance-scoring.md` — Trilogía fiscal primaveral ponderada **10,0** | Inmediato |
+| **Posición ONG libertad de prensa** | `risk-assessment.md` R2+R6 · `swot-analysis.md` S4 × T1 | Antes del dictamen del Lagrådet (Q2 2026) |
+| **Posición Rusia + supervisión litigio TEDH** | `threat-analysis.md` T1+T3 · `risk-assessment.md` R1+R3 | Continuo |
+
+---
+
+### 📐 Lo que el lector necesita saber en 60 segundos
+
+1. **La historia principal es la trilogía fiscal de primavera** (HD03100+HD0399+HD03236). Reducción del impuesto sobre combustibles; alivio electricidad/gas. SEK 60+ millardos de estímulo neto. `[MUY ALTO]`
+2. **La historia de infraestructura democrática es KU33** (HD01KU33). Limita el estatus de "documento público" del material digital incautado en registros domiciliarios. `[ALTO]`
+3. **JuU15 145–142** — votación de bloque puro, tres votos de margen. SD opera como hacedor de reyes. `[MUY ALTO]`
+4. **Tribunal Ucrania (HD03231) + comisión de reparaciones (HD03232)** — consenso multipartidista. Marco de Núremberg. `[MUY ALTO]`
+5. **Trilogía migratoria** (SfU22+Prop 235+Prop 229) enfrenta **mociones coordinadas V+C+MP** como base para el litigio en el TEDH. `[ALTO]`
+6. **HD01UFöU3** = primer resultado operativo OTAN: 1.200 soldados a Finlandia. `[MUY ALTO]`
+
+---
+
+### 🎭 Actores nombrados a seguir
+
+| Actor | Función | Relevancia |
+|-------|---------|-----------|
+| **Ulf Kristersson** | Primer Ministro | Propietario político de la trilogía fiscal |
+| **Elisabeth Svantesson** | Ministra de Finanzas | Arquitecta de la Proposición de Primavera |
+| **Maria Malmer Stenergard** | Ministra de Asuntos Exteriores | Arquitecta del tribunal |
+| **Pål Jonson** | Ministro de Defensa | Propietario del eFP de la OTAN |
+| **Magdalena Andersson** | Líder de la oposición | Posición en KU33 determinante |
+| **Jimmie Åkesson** | Líder del SD | Palanca 145–142 |
+| **Micael Bydén** | Jefe de las Fuerzas Armadas (ÖB) | Preparación del Grupo Batallón Q3 2026 |
+| **Lagrådet** | Órgano de revisión constitucional | Dictamen KU33/KU32 pendiente |
+
+---
+
+### 🔮 Próximos 30 días — Qué vigilar
+
+| Fecha/Ventana | Desencadenante | Impacto |
+|---------------|---------------|--------|
+| **2026-04-22** | Votación en cámara Presupuesto Extra | Confirmación de coherencia del paquete |
+| Q2 2026 | **Dictamen del Lagrådet KU32/KU33** | Actualización bayesiana |
+| Mayo–Junio | Votación en cámara HD03231/HD03232 | Adhesión tribunal+reparaciones |
+| **2026-09-13** | Elecciones parlamentarias | Perspectivas segunda lectura KU33 |
+
+---
+
+**Clasificación**: Público · **Próxima revisión**: 2026-04-25 · **Metodología**: `analysis/methodologies/ai-driven-analysis-guide.md` v5.1
+<!-- source-sha: a7f00baff9cb6b920c7f514f09a7eee674faed30 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/executive-brief_fi.md -->
+
+<p align="center">
+  <em>Yksisivuinen päätösbriefing uutistoimittajille, poliittisille neuvonantajille ja vanhemmille analyytikoille</em>
+</p>
+
+| Kenttä | Arvo |
+|--------|------|
+| **BRIEF-ID** | BRF-2026-W16 |
+| **Luokittelu** | Julkinen · Lukuaika ≤ 4 minuuttia |
+| **Päätöshorisontti** | 24 tuntia · 30 päivää · syyskuun 2026 vaalien jälkeen |
+| **Kirjoittaja** | News Journalist -agentti, toimituksellinen vastuu James Pether Sörling |
+| **Metodologia** | `ai-driven-analysis-guide.md` v5.1 säännöt 0–8 |
+
+---
+
+### 🧭 BLUF (Johtopäätös Ensin)
+
+> **Ruotsin riksdag piti kevätlukukauden 2025/26 merkittävimmän lainsäädäntöviikon.** Pääministeri Ulf Kristersson (M) esitti kevätfiskaalisen trilogian (Vårproposition `HD03100` + Vårändringsbudget + Lisätalousarvio `HD03236` — polttoaineveron alennus + sähkö/kaasuhelpotus) taustanaan 0,82 % BKT-kasvu 2024 ja 8,7 % työttömyys 2025. **Perustuslakivaliokunta** eteni kahden **perustuslakimuutoksen** kanssa (`HD01KU32` saavutettavuus + `HD01KU33` digitaalinen todiste kotietsinnässä) — ensimmäinen merkittävä *Tryckfrihetsförordningenin* (1766) rajoitus vuosiin. **Ulkoministeri Maria Malmer Stenergard (M)** ja Kristersson esittivät Ruotsin liittymisen **Ukrainan aggressiorikoksen erityistuomioistuimeen** (`HD03231`) ja **Korvauskomissioon** (`HD03232`) — ensimmäinen aggressiorikostuomioistuin sitten Nürnbergin. Täysistunto vahvisti koalition työskentelymäärän **JuU15**:ssä (nuorisorikollisuuden tiukentaminen, **145–142**) — kolmen äänen marginaali. `[ERITTÄIN KORKEA]`
+
+---
+
+### 🎯 Kolme päätöstä, joita tämä briefing tukee
+
+| Päätös | Todistepaikkaus | Toimintaikkunа |
+|--------|----------------|:-------------:|
+| **Toimituksellinen pääjutuvalinta** viikolle 16 | `significance-scoring.md` — Kevätfiskaalinen trilogia painotettu **10,0** | Välitön |
+| **Lehdistönvapaus-NGO-asema** | `risk-assessment.md` R2+R6 · `swot-analysis.md` S4 × T1 | Ennen Lagrådets lausuntoa (Q2 2026) |
+| **Venäjä-asema + EIT-oikeudenkäyntiseuranta** | `threat-analysis.md` T1+T3 · `risk-assessment.md` R1+R3 | Jatkuva |
+
+---
+
+### 📐 Mitä lukijan täytyy tietää 60 sekunnissa
+
+1. **Pääjuttu on kevätfiskaalinen trilogia** (HD03100+HD0399+HD03236). Polttoaineveron alennus; sähkö/kaasuhelpotus. SEK 60+ miljardia nettostimulaatio. `[ERITTÄIN KORKEA]`
+2. **Demokraattinen infrastruktuurijuttu on KU33** (HD01KU33). Rajoittaa digitaalisen materiaalin "julkisen asiakirjan" statusta kotietsinnässä. `[KORKEA]`
+3. **JuU15 145–142** — puhdas lohkoäänestys, kolmen äänen marginaali. SD toimii kuningantekijänä. `[ERITTÄIN KORKEA]`
+4. **Ukrainan tuomioistuin (HD03231) + korvauskomissio (HD03232)** — monipuolueinen konsensus. Nürnberg-kehystys. `[ERITTÄIN KORKEA]`
+5. **Maahanmuutto-trilogia** (SfU22+Prop 235+Prop 229) kohtaa **koordinoidut V+C+MP-aloitteet** EIT-oikeudenkäynnin perusteina. `[KORKEA]`
+6. **HD01UFöU3** = ensimmäinen operatiivinen NATO-tuotos: 1 200 sotilasta Suomeen. `[ERITTÄIN KORKEA]`
+
+---
+
+### 🎭 Nimetyt toimijat seurattavaksi
+
+| Toimija | Rooli | Relevanssi |
+|---------|-------|-----------|
+| **Ulf Kristersson** | Pääministeri | Fiskaalisen trilogian poliittinen omistaja |
+| **Elisabeth Svantesson** | Valtiovarainministeri | Kevätpropositioarkkitehti |
+| **Maria Malmer Stenergard** | Ulkoministeri | Tuomioistuinarkkitehti |
+| **Pål Jonson** | Puolustusministeri | NATO eFP-omistaja |
+| **Magdalena Andersson** | Oppositiojohtaja | KU33:n asema ratkaiseva |
+| **Jimmie Åkesson** | SD-johtaja | 145–142-vipu |
+| **Micael Bydén** | Puolustusvoimain komentaja | Bn-ryhmä-valmius Q3 2026 |
+| **Lagrådet** | Perustuslakielin | Odottava KU33/KU32-lausunto |
+
+---
+
+### 🔮 Seuraavat 30 päivää — Mitä seurata
+
+| Päivä/Ikkuna | Laukaisin | Vaikutus |
+|--------------|----------|---------|
+| **2026-04-22** | Täysistuntoäänestys Lisätalousarvio | Pakettikoherenssin vahvistus |
+| Q2 2026 | **Lagrådets lausunto KU32/KU33** | Bayesilainen päivitys |
+| Touko–Kesäkuu | Täysistuntoäänestys HD03231/HD03232 | Tuomioistuin+korvausliittyminen |
+| **2026-09-13** | Riksdagsvaali | KU33 toisen käsittelyn näkymät |
+
+---
+
+**Luokittelu**: Julkinen · **Seuraava arviointi**: 2026-04-25 · **Metodologia**: `analysis/methodologies/ai-driven-analysis-guide.md` v5.1
+<!-- source-sha: a7f00baff9cb6b920c7f514f09a7eee674faed30 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/executive-brief_fr.md -->
+
+<p align="center">
+  <em>Note d'information décisionnelle d'une page pour les rédacteurs, conseillers politiques et analystes seniors</em>
+</p>
+
+| Champ | Valeur |
+|-------|--------|
+| **BRIEF-ID** | BRF-2026-W16 |
+| **Classification** | Public · Temps de lecture ≤ 4 minutes |
+| **Horizon de décision** | 24 heures · 30 jours · après les élections de septembre 2026 |
+| **Auteur** | Agent journaliste d'actualités, responsabilité éditoriale James Pether Sörling |
+| **Méthodologie** | `ai-driven-analysis-guide.md` v5.1 règles 0–8 |
+
+---
+
+### 🧭 BLUF (Conclusion d'abord)
+
+> **Le Riksdag suédois a conduit la semaine législative la plus décisive du semestre de printemps 2025/26.** Le Premier ministre Ulf Kristersson (M) a présenté une trilogie fiscale de printemps (Proposition de printemps `HD03100` + Budget rectificatif de printemps + Budget rectificatif supplémentaire `HD03236` — baisse de la taxe sur les carburants + allègement électricité/gaz) dans un contexte de croissance du PIB de 0,82 % en 2024 et de chômage à 8,7 % en 2025. La **Commission constitutionnelle** a fait avancer deux **modifications constitutionnelles** (`HD01KU32` accessibilité + `HD01KU33` preuve numérique lors de perquisitions) — première restriction substantielle de la *Tryckfrihetsförordningen* (1766) depuis des années. La **Ministre des Affaires étrangères Maria Malmer Stenergard (M)** et Kristersson ont présenté l'adhésion de la Suède au **Tribunal spécial pour le crime d'agression contre l'Ukraine** (`HD03231`) et à la **Commission des réparations** (`HD03232`) — premier tribunal pour crime d'agression depuis Nuremberg. La chambre a confirmé la majorité de travail de la coalition sur **JuU15** (durcissement de la délinquance juvénile, **145–142**) — trois voix de marge. `[TRÈS ÉLEVÉ]`
+
+---
+
+### 🎯 Trois décisions que cette note soutient
+
+| Décision | Locus de l'évidence | Fenêtre d'action |
+|----------|---------------------|:---------------:|
+| **Choix de l'article principal** pour la semaine 16 | `significance-scoring.md` — Trilogie fiscale de printemps pondérée **10,0** | Immédiat |
+| **Position ONG liberté de la presse** | `risk-assessment.md` R2+R6 · `swot-analysis.md` S4 × T1 | Avant l'avis du Lagrådet (Q2 2026) |
+| **Position Russie + surveillance du contentieux CEDH** | `threat-analysis.md` T1+T3 · `risk-assessment.md` R1+R3 | Continu |
+
+---
+
+### 📐 Ce que le lecteur doit savoir en 60 secondes
+
+1. **L'histoire principale est la trilogie fiscale de printemps** (HD03100+HD0399+HD03236). Baisse de la taxe sur les carburants ; allègement électricité/gaz. SEK 60+ milliards de stimulus net. `[TRÈS ÉLEVÉ]`
+2. **L'histoire de l'infrastructure démocratique est KU33** (HD01KU33). Limite le statut "document public" du matériel numérique saisi lors de perquisitions. `[ÉLEVÉ]`
+3. **JuU15 145–142** — vote de bloc pur, trois voix de marge. SD opère comme faiseur de roi. `[TRÈS ÉLEVÉ]`
+4. **Tribunal Ukraine (HD03231) + commission des réparations (HD03232)** — consensus multi-partis. Cadrage Nuremberg. `[TRÈS ÉLEVÉ]`
+5. **Trilogie migratoire** (SfU22+Prop 235+Prop 229) confrontée aux **motions coordonnées V+C+MP** comme base de recours CEDH. `[ÉLEVÉ]`
+6. **HD01UFöU3** = premier résultat opérationnel de l'OTAN : 1 200 soldats en Finlande. `[TRÈS ÉLEVÉ]`
+
+---
+
+### 🎭 Acteurs nommés à surveiller
+
+| Acteur | Rôle | Pertinence |
+|--------|------|-----------|
+| **Ulf Kristersson** | Premier ministre | Propriétaire politique de la trilogie fiscale |
+| **Elisabeth Svantesson** | Ministre des Finances | Architecte de la Proposition de printemps |
+| **Maria Malmer Stenergard** | Ministre des Affaires étrangères | Architecte du tribunal |
+| **Pål Jonson** | Ministre de la Défense | Propriétaire de l'eFP OTAN |
+| **Magdalena Andersson** | Leader de l'opposition | Position sur KU33 déterminante |
+| **Jimmie Åkesson** | Chef du SD | Levier 145–142 |
+| **Micael Bydén** | Chef des forces armées (ÖB) | Préparation du groupement bataillon Q3 2026 |
+| **Lagrådet** | Organe de révision constitutionnelle | Avis KU33/KU32 en attente |
+
+---
+
+### 🔮 30 prochains jours — Ce qu'il faut surveiller
+
+| Date/Fenêtre | Déclencheur | Impact |
+|--------------|------------|-------|
+| **2026-04-22** | Vote en chambre Budget rectificatif supplémentaire | Confirmation de la cohérence du paquet |
+| Q2 2026 | **Avis du Lagrådet KU32/KU33** | Mise à jour bayésienne |
+| Mai–Juin | Vote en chambre HD03231/HD03232 | Adhésion tribunal+réparations |
+| **2026-09-13** | Élections législatives | Perspectives deuxième lecture KU33 |
+
+---
+
+<!-- source-sha: a7f00baff9cb6b920c7f514f09a7eee674faed30 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# 📋 תדריך החלטה — הפרלמנט השוודי שבוע 16, 2026
+
+<p align="center">
+  <em>תדריך החלטה חד-עמודי לעורכי חדשות, יועצים פוליטיים ואנליסטים בכירים</em>
+</p>
+
+| שדה | ערך |
+|-----|-----|
+| **מזהה תדריך** | BRF-2026-W16 |
+| **סיווג** | ציבורי · זמן קריאה ≤ 4 דקות |
+| **אופק החלטה** | 24 שעות · 30 ימים · לאחר הבחירות בספטמבר 2026 |
+| **מחבר** | סוכן עיתונאי חדשות, אחריות עריכה James Pether Sörling |
+| **מתודולוגיה** | `ai-driven-analysis-guide.md` v5.1 כללים 0–8 |
+
+---
+
+### 🧭 BLUF (המסקנה ראשונה)
+
+> **הפרלמנט השוודי (Riksdag) ביצע את שבוע החקיקה המכריע ביותר בסמסטר האביב 2025/26.** ראש הממשלה Ulf Kristersson (מפלגת M) הציג טרילוגיה פיסקלית אביבית (הצעת האביב `HD03100` + תיקון תקציב האביב + תיקון תקציב נוסף `HD03236` — הפחתת מס דלק + הקלה בחשמל/גז) על רקע צמיחת תוצר של 0.82% ב-2024 ואבטלה של 8.7% ב-2025. **ועדת החוקה** קדמה בשני **תיקונים חוקתיים** (`HD01KU32` נגישות + `HD01KU33` ראיות דיגיטליות בחיפוש) — הגבלה מהותית ראשונה על *Tryckfrihetsförordningen* (1766) מזה שנים. **שרת החוץ Maria Malmer Stenergard (M)** וKristersson הציגו את הצטרפות שוודיה ל**בית הדין המיוחד לפשע התוקפנות נגד אוקראינה** (`HD03231`) ול**ועדת הפיצויים** (`HD03232`) — בית הדין הראשון לפשע תוקפנות מאז נירנברג. הלשכה אישרה את הרוב הפעיל של הקואליציה ב**JuU15** (החמרה בפשיעת נוער, **145–142**) — שלושה קולות הפרש. `[גבוה מאד]`
+
+---
+
+### 🎯 שלושה החלטות שתדריך זה תומך בהן
+
+| החלטה | לוקוס ראיות | חלון פעולה |
+|-------|------------|:-----------:|
+| **בחירת כתבה ראשית** לשבוע 16 | `significance-scoring.md` — הטרילוגיה הפיסקלית האביבית משוקללת **10.0** | מיידי |
+| **עמדת ארגון חופש עיתונות** | `risk-assessment.md` R2+R6 · `swot-analysis.md` S4 × T1 | לפני חוות דעת Lagrådet (Q2 2026) |
+| **עמד רוסיה + מעקב הליכים בבית הדין האירופי** | `threat-analysis.md` T1+T3 · `risk-assessment.md` R1+R3 | מתמשך |
+
+---
+
+### 📐 מה הקורא צריך לדעת ב-60 שניות
+
+1. **הסיפור הראשי הוא הטרילוגיה הפיסקלית האביבית** (HD03100+HD0399+HD03236). הפחתת מס דלק; הקלה בחשמל/גז. מעל 60 מיליארד SEK גירוי נטו. `[גבוה מאד]`
+2. **סיפור תשתית הדמוקרטיה הוא KU33** (HD01KU33). מגביל מעמד "מסמך ציבורי" של חומר דיגיטלי שנתפס בחיפושים. `[גבוה]`
+3. **JuU15 בתוצאה 145–142** — הצבעת בלוק טהורה, שלושה קולות הפרש. SD פועל כעושה-מלכים. `[גבוה מאד]`
+4. **בית דין אוקראינה (HD03231) + ועדת פיצויים (HD03232)** — קונסנסוס רב-מפלגתי. מסגרת נירנברג. `[גבוה מאד]`
+5. **טרילוגיית הגירה** (SfU22+Prop 235+Prop 229) מתמודדת עם **הצעות מתואמות V+C+MP** כבסיס לתביעות בבית הדין האירופי. `[גבוה]`
+6. **HD01UFöU3** = פלט נאט"ו מבצעי ראשון: 1,200 חיילים לפינלנד. `[גבוה מאד]`
+
+---
+
+### 🎭 גורמים מוזכרים לעקוב אחריהם
+
+| גורם | תפקיד | רלוונטיות |
+|------|-------|-----------|
+| **Ulf Kristersson** | ראש ממשלה | הבעלים הפוליטי של הטרילוגיה הפיסקלית |
+| **Elisabeth Svantesson** | שרת אוצר | אדריכלית הצעת האביב |
+| **Maria Malmer Stenergard** | שרת חוץ | אדריכלית בית הדין |
+| **Pål Jonson** | שר ביטחון | בעלים של eFP נאט"ו |
+| **Magdalena Andersson** | מנהיגת אופוזיציה | עמדתה על KU33 מכרעת |
+| **Jimmie Åkesson** | מנהיג SD | מנוף 145–142 |
+| **Micael Bydén** | ראש צבא (ÖB) | מוכנות קבוצת Bn Q3 2026 |
+| **Lagrådet** | גוף ביקורת חוקתית | חוות דעת KU33/KU32 תלויה |
+
+---
+
+### 🔮 30 הימים הבאים — מה לעקוב אחריו
+
+| תאריך/חלון | מפעיל | השפעה |
+|------------|-------|------|
+| **2026-04-22** | הצבעת לשכה על תיקון תקציב נוסף | אישור קוהרנטיות החבילה |
+| Q2 2026 | **חוות דעת Lagrådet KU32/KU33** | עדכון בייסיאני |
+| מאי–יוני | הצבעת לשכה HD03231/HD03232 | הצטרפות לבית דין+פיצויים |
+| **2026-09-13** | בחירות לפרלמנט | סיכויי קריאה שנייה KU33 |
+
+---
+
+**סיווג**: ציבורי · **ביקורת הבאה**: 2026-04-25 · **מתודולוגיה**: `analysis/methodologies/ai-driven-analysis-guide.md` v5.1
+<!-- source-sha: a7f00baff9cb6b920c7f514f09a7eee674faed30 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/executive-brief_ja.md -->
+
+<p align="center">
+  <em>ニュース編集者、政治顧問、シニアアナリスト向けの一枚の意思決定ブリーフィング</em>
+</p>
+
+| フィールド | 値 |
+|-----------|---|
+| **ブリーフID** | BRF-2026-W16 |
+| **分類** | 公開 · 読了時間 ≤ 4分 |
+| **意思決定の視野** | 24時間 · 30日 · 2026年9月選挙後 |
+| **著者** | ニュースジャーナリストエージェント、編集責任 James Pether Sörling |
+| **手法** | `ai-driven-analysis-guide.md` v5.1 ルール0–8 |
+
+---
+
+### 🧭 BLUF（結論から）
+
+> **スウェーデン議会（Riksdag）は2025/26年春学期で最も重要な立法週間を実施した。** ウルフ・クリステルション首相（M）は春季財政三部作（春季提案`HD03100` + 春季補正予算 + 追加補正予算`HD03236`——燃料税減税 + 電気・ガス軽減）を、2024年のGDP成長率0.82%と2025年失業率8.7%という背景のもとで提示した。**憲法委員会**は二つの**憲法改正**（`HD01KU32` アクセシビリティ + `HD01KU33` 家宅捜索におけるデジタル証拠）を推進——*Tryckfrihetsförordningen*（1766年）に対する数年ぶりの実質的制約。**マリア・マルメル・ステネルガード外務大臣（M）**とクリステルションは、スウェーデンの**ウクライナへの侵略犯罪特別法廷**（`HD03231`）と**賠償委員会**（`HD03232`）への加入を提示——ニュルンベルク以来初の侵略犯罪法廷。議会は**JuU15**（青少年犯罪強化、**145–142**）での連立与党の作業多数決を確認——3票差。`[非常に高い]`
+
+---
+
+### 🎯 このブリーフィングが支援する3つの決定
+
+| 決定 | 証拠の所在 | 行動窓 |
+|-----|----------|:-----:|
+| 第16週の**編集部主要記事選択** | `significance-scoring.md` ——春季財政三部作の重み付け**10.0** | 即時 |
+| **報道の自由NGO立場** | `risk-assessment.md` R2+R6 · `swot-analysis.md` S4 × T1 | Lagrådの意見前（2026年Q2） |
+| **ロシアへの対応 + 欧州人権裁判所訴訟監視** | `threat-analysis.md` T1+T3 · `risk-assessment.md` R1+R3 | 継続的 |
+
+---
+
+### 📐 読者が60秒で知るべきこと
+
+1. **メインストーリーは春季財政三部作**（HD03100+HD0399+HD03236）。燃料税減税；電気・ガス軽減。600億クローナ以上の純刺激策。`[非常に高い]`
+2. **民主的インフラストーリーはKU33**（HD01KU33）。家宅捜索で押収されたデジタル資料の「公文書」ステータスを制限。`[高い]`
+3. **JuU15 145–142**——純ブロック投票、3票差。SDがキングメーカーとして機能。`[非常に高い]`
+4. **ウクライナ法廷（HD03231）+ 賠償委員会（HD03232）**——超党派合意。ニュルンベルク的フレーミング。`[非常に高い]`
+5. **移民三部作**（SfU22+Prop 235+Prop 229）は欧州人権裁判所訴訟の根拠として**V+C+MP調整動議**に直面。`[高い]`
+6. **HD01UFöU3** = 初のNATO運用成果：1,200名をフィンランドへ派遣。`[非常に高い]`
+
+---
+
+### 🎭 注目すべき名前の挙がった行為者
+
+| 行為者 | 役割 | 重要性 |
+|-------|-----|-------|
+| **Ulf Kristersson** | 首相 | 財政三部作の政治的所有者 |
+| **Elisabeth Svantesson** | 財務大臣 | 春季提案の設計者 |
+| **Maria Malmer Stenergard** | 外務大臣 | 法廷設計者 |
+| **Pål Jonson** | 国防大臣 | NATO eFP所有者 |
+| **Magdalena Andersson** | 野党党首 | KU33への立場が決定的 |
+| **Jimmie Åkesson** | SD党首 | 145–142のてこ |
+| **Micael Bydén** | 軍最高司令官（ÖB） | 大隊グループ即応態勢2026年Q3 |
+| **Lagrådet** | 憲法審査機関 | KU33/KU32意見待ち |
+
+---
+
+### 🔮 今後30日間——監視すべき事項
+
+| 日付/窓 | トリガー | 影響 |
+|--------|---------|-----|
+| **2026-04-22** | 追加補正予算の本会議採決 | パッケージ整合性確認 |
+| 2026年Q2 | **LagrådのKU32/KU33意見** | ベイズ更新 |
+| 5月–6月 | HD03231/HD03232の本会議採決 | 法廷・賠償加入 |
+| **2026-09-13** | 議会選挙 | KU33第2回読会の見通し |
+
+---
+
+**分類**: 公開 · **次回見直し**: 2026-04-25 · **手法**: `analysis/methodologies/ai-driven-analysis-guide.md` v5.1
+<!-- source-sha: a7f00baff9cb6b920c7f514f09a7eee674faed30 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/executive-brief_ko.md -->
+
+<p align="center">
+  <em>뉴스 편집자, 정치 고문, 수석 분석가를 위한 단일 페이지 의사결정 브리핑</em>
+</p>
+
+| 필드 | 값 |
+|-----|---|
+| **브리프 ID** | BRF-2026-W16 |
+| **분류** | 공개 · 독서 시간 ≤ 4분 |
+| **결정 지평선** | 24시간 · 30일 · 2026년 9월 선거 이후 |
+| **저자** | 뉴스 저널리스트 에이전트, 편집 책임 James Pether Sörling |
+| **방법론** | `ai-driven-analysis-guide.md` v5.1 규칙 0–8 |
+
+---
+
+### 🧭 BLUF (결론 먼저)
+
+> **스웨덴 의회(Riksdag)는 2025/26 봄 학기에서 가장 결정적인 입법 주간을 수행했다.** Ulf Kristersson 총리(M)는 2024년 GDP 성장률 0.82%와 2025년 실업률 8.7%라는 배경 하에 봄 재정 삼부작(봄 제안 `HD03100` + 봄 추경예산 + 추가 추경예산 `HD03236` — 연료세 인하 + 전기/가스 완화)을 제시했다. **헌법위원회**는 두 가지 **헌법 개정**(`HD01KU32` 접근성 + `HD01KU33` 압수 수색 시 디지털 증거)을 추진——수년 만에 *Tryckfrihetsförordningen*(1766)에 대한 첫 번째 실질적 제한. **마리아 말메르 스테네르가드 외무부 장관(M)**과 크리스테르손은 스웨덴의 **우크라이나 침략 범죄 특별 법원**(`HD03231`) 및 **배상 위원회**(`HD03232`) 가입을 제시——뉘른베르크 이후 첫 번째 침략 범죄 법원. 의회는 **JuU15**(청소년 범죄 강화, **145–142**)에서 연립 정부의 작업 다수결을 확인——3표 차이. `[매우 높음]`
+
+---
+
+### 🎯 이 브리핑이 지원하는 세 가지 결정
+
+| 결정 | 증거 위치 | 행동 기간 |
+|-----|----------|:--------:|
+| 16주차 **편집부 주요 기사 선택** | `significance-scoring.md` — 봄 재정 삼부작 가중치 **10.0** | 즉시 |
+| **언론 자유 NGO 입장** | `risk-assessment.md` R2+R6 · `swot-analysis.md` S4 × T1 | Lagrådet 의견 이전(2026년 Q2) |
+| **러시아 입장 + ECHR 소송 모니터링** | `threat-analysis.md` T1+T3 · `risk-assessment.md` R1+R3 | 지속적 |
+
+---
+
+### 📐 독자가 60초 안에 알아야 할 것
+
+1. **주요 기사는 봄 재정 삼부작**(HD03100+HD0399+HD03236). 연료세 인하; 전기/가스 완화. 순 자극 600억 SEK 이상. `[매우 높음]`
+2. **민주적 인프라 이야기는 KU33**(HD01KU33). 압수 수색에서 압수된 디지털 자료의 "공문서" 지위 제한. `[높음]`
+3. **JuU15 145–142** — 순수 블록 투표, 3표 차이. SD가 킹메이커 역할. `[매우 높음]`
+4. **우크라이나 법원(HD03231) + 배상 위원회(HD03232)** — 다당 합의. 뉘른베르크 프레이밍. `[매우 높음]`
+5. **이민 삼부작**(SfU22+Prop 235+Prop 229)은 ECHR 소송 근거로 **V+C+MP 조율 발의**에 직면. `[높음]`
+6. **HD01UFöU3** = 첫 나토 운용 성과: 1,200명 핀란드 파견. `[매우 높음]`
+
+---
+
+### 🎭 주목할 명명된 행위자
+
+| 행위자 | 역할 | 중요성 |
+|-------|-----|------|
+| **Ulf Kristersson** | 총리 | 재정 삼부작의 정치적 소유자 |
+| **Elisabeth Svantesson** | 재무부 장관 | 봄 제안 설계자 |
+| **Maria Malmer Stenergard** | 외무부 장관 | 법원 설계자 |
+| **Pål Jonson** | 국방부 장관 | NATO eFP 소유자 |
+| **Magdalena Andersson** | 야당 대표 | KU33에 대한 입장 결정적 |
+| **Jimmie Åkesson** | SD 대표 | 145–142 레버 |
+| **Micael Bydén** | 군 최고 사령관(ÖB) | 대대 그룹 준비태세 2026년 Q3 |
+| **Lagrådet** | 헌법 심사 기관 | KU33/KU32 의견 대기 중 |
+
+---
+
+### 🔮 향후 30일간 — 모니터링 사항
+
+| 날짜/기간 | 트리거 | 영향 |
+|----------|-------|-----|
+| **2026-04-22** | 추가 추경예산 본회의 투표 | 패키지 일관성 확인 |
+| 2026년 Q2 | **Lagrådet의 KU32/KU33 의견** | 베이즈 업데이트 |
+| 5월–6월 | HD03231/HD03232 본회의 투표 | 법원·배상 가입 |
+| **2026-09-13** | 의회 선거 | KU33 2독회 전망 |
+
+---
+
+**분류**: 공개 · **다음 검토**: 2026-04-25 · **방법론**: `analysis/methodologies/ai-driven-analysis-guide.md` v5.1
+<!-- source-sha: a7f00baff9cb6b920c7f514f09a7eee674faed30 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/executive-brief_nl.md -->
+
+<p align="center">
+  <em>Eenzijdige beslissingsbriefing voor nieuwsredacteuren, politieke adviseurs en senior analisten</em>
+</p>
+
+| Veld | Waarde |
+|------|--------|
+| **BRIEF-ID** | BRF-2026-W16 |
+| **Classificatie** | Openbaar · Leestijd ≤ 4 minuten |
+| **Beslissingshorizon** | 24 uur · 30 dagen · na de verkiezingen van september 2026 |
+| **Auteur** | Nieuws-journalist-agent, redactionele verantwoordelijkheid James Pether Sörling |
+| **Methodologie** | `ai-driven-analysis-guide.md` v5.1 regels 0–8 |
+
+---
+
+### 🧭 BLUF (Conclusie Eerst)
+
+> **Het Zweedse Riksdag voltooide de meest beslissende wetgevingsweek van het voorjaarssemester 2025/26.** Premier Ulf Kristersson (M) presenteerde een voorjaarsfiscale trilogie (Lenteproposities `HD03100` + Lentebegrotingswijziging + Extra Begrotingswijziging `HD03236` — brandstofbelastingverlaging + elektriciteits/gasverlaging) tegen een achtergrond van 0,82 % bbp-groei in 2024 en 8,7 % werkloosheid in 2025. De **Grondwetscommissie** zette twee **grondwetswijzigingen** door (`HD01KU32` toegankelijkheid + `HD01KU33` digitaal bewijs bij huiszoeking) — eerste substantiële beperking van de *Tryckfrihetsförordningen* (1766) in jaren. **Minister van Buitenlandse Zaken Maria Malmer Stenergard (M)** en Kristersson presenteerden Zweden toetreding tot het **Speciaal Tribunaal voor het Misdrijf Agressie tegen Oekraïne** (`HD03231`) en de **Reparatiecommissie** (`HD03232`) — eerste agressiemisdaadtribunaal sinds Neurenberg. De kamer bevestigde de werkmeerderheid van de coalitie bij **JuU15** (verscherping jeugdcriminaliteit, **145–142**) — drie stemmen marge. `[ZEER HOOG]`
+
+---
+
+### 🎯 Drie beslissingen die deze briefing ondersteunt
+
+| Beslissing | Bewijslocus | Activenster |
+|------------|------------|:-----------:|
+| **Redactionele hoofdverhaalkeuze** voor week 16 | `significance-scoring.md` — Voorjaarsfiscale trilogie gewogen **10,0** | Onmiddellijk |
+| **Persvrijheid-NGO-positie** | `risk-assessment.md` R2+R6 · `swot-analysis.md` S4 × T1 | Vóór Lagrådets advies (Q2 2026) |
+| **Rusland-positie + EHRM-procesbewaking** | `threat-analysis.md` T1+T3 · `risk-assessment.md` R1+R3 | Doorlopend |
+
+---
+
+### 📐 Wat de lezer in 60 seconden moet weten
+
+1. **Het hoofdverhaal is de voorjaarsfiscale trilogie** (HD03100+HD0399+HD03236). Brandstofbelastingverlaging; elektriciteits/gasverlaging. SEK 60+ miljard nettostimulus. `[ZEER HOOG]`
+2. **Het democratische infrastructuurverhaal is KU33** (HD01KU33). Beperkt de "openbaar document"-status van bij huiszoeking in beslag genomen digitaal materiaal. `[HOOG]`
+3. **JuU15 145–142** — pure blokafstemming, drie stemmen marge. SD opereert als koningsmaker. `[ZEER HOOG]`
+4. **Oekraïne-tribunaal (HD03231) + reparatiecommissie (HD03232)** — meerdere partijen consensus. Neurenberg-framing. `[ZEER HOOG]`
+5. **Migratie-trilogie** (SfU22+Prop 235+Prop 229) geconfronteerd met **gecoördineerde V+C+MP-moties** als EHRM-procesbasis. `[HOOG]`
+6. **HD01UFöU3** = eerste operationele NAVO-output: 1.200 soldaten naar Finland. `[ZEER HOOG]`
+
+---
+
+### 🎭 Genoemde actoren om te volgen
+
+| Acteur | Rol | Relevantie |
+|--------|-----|-----------|
+| **Ulf Kristersson** | Premier | Politieke eigenaar van de fiscale trilogie |
+| **Elisabeth Svantesson** | Minister van Financiën | Architect van de Lenteproposities |
+| **Maria Malmer Stenergard** | Minister van Buitenlandse Zaken | Tribunaalarchitect |
+| **Pål Jonson** | Minister van Defensie | NAVO eFP-eigenaar |
+| **Magdalena Andersson** | Oppositieleider | Positie KU33 beslissend |
+| **Jimmie Åkesson** | SD-leider | 145–142 hefboom |
+| **Micael Bydén** | Chef Defensie (ÖB) | Bn-groep gereedheid Q3 2026 |
+| **Lagrådet** | Grondwetsadviesorgaan | Uitstaand KU33/KU32 advies |
+
+---
+
+### 🔮 Volgende 30 dagen — Wat te volgen
+
+| Datum/Venster | Aanleiding | Impact |
+|---------------|-----------|-------|
+| **2026-04-22** | Kamerafstemming Extra Begrotingswijziging | Pakketcoherentiebevestiging |
+| Q2 2026 | **Lagrådets advies KU32/KU33** | Bayesiaanse update |
+| Mei–Juni | Kamerafstemming HD03231/HD03232 | Tribunaal+reparatietoetreding |
+| **2026-09-13** | Riksdagsverkiezingen | KU33 tweede lezing vooruitzichten |
+
+---
+
+**Classificatie**: Openbaar · **Volgende herziening**: 2026-04-25 · **Methodologie**: `analysis/methodologies/ai-driven-analysis-guide.md` v5.1
+<!-- source-sha: a7f00baff9cb6b920c7f514f09a7eee674faed30 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/executive-brief_no.md -->
+
+<p align="center">
+  <em>Enkeltsidig beslutsbriefing for nyhetsredaktører, politiske rådgivere og seniore analytikere</em>
+</p>
+
+| Felt | Verdi |
+|------|-------|
+| **BRIEF-ID** | BRF-2026-W16 |
+| **Klassifisering** | Offentlig · Lesetid ≤ 4 minutter |
+| **Beslutningshorisont** | 24 timer · 30 dager · etter valget i september 2026 |
+| **Forfatter** | News Journalist-agent, redaksjonelt ansvar James Pether Sörling |
+| **Metodikk** | `ai-driven-analysis-guide.md` v5.1 regler 0–8 |
+
+---
+
+### 🧭 BLUF (Konklusjonen Først)
+
+> **Sveriges Riksdag gjennomførte den mest avgjørende lovgivningsuken i vårterminens 2025/26.** Statsminister Ulf Kristersson (M) la frem en vårfiskal trilogi (Vårproposition `HD03100` + Vårändringsbudget + Ekstra endringsbudsjett `HD03236` — drivstoffavgiftslettelse + el/gass-lettelse) mot en bakgrunn av 0,82 % BNP-vekst i 2024 og 8,7 % arbeidsledighet i 2025. **Konstitusjonsutvalget** avanserte to **grunnlovsendringer** (`HD01KU32` tilgjengelighet + `HD01KU33` digitalt bevis ved husransakelse) — første vesentlige begrensning av *Tryckfrihetsförordningen* (1766) på år. **Utenriksminister Maria Malmer Stenergard (M)** og Kristersson la frem Sveriges tilslutning til **Spesialtribunalet for aggresjonsforbrytelsen mot Ukraina** (`HD03231`) og **Erstatningskommisjonen** (`HD03232`) — første aggresjonsforbrytelsesdomstol siden Nürnberg. Kammeret bekreftet koalisjonens arbeidsflertall på **JuU15** (ungdomskriminalitetsskjerpelse, **145–142**) — tre stemmer margin. `[SVÆRT HØY]`
+
+---
+
+### 🎯 Tre beslutninger dette briefingen støtter
+
+| Beslutning | Evidenslokus | Handlingsvindu |
+|------------|-------------|:--------------:|
+| **Redaksjonelt toppstory-valg** for uke 16 | `significance-scoring.md` — Vårfiskal trilogi vektet **10,0** | Umiddelbart |
+| **Pressefrihet-NGO-posisjon** | `risk-assessment.md` R2+R6 · `swot-analysis.md` S4 × T1 | Før Lagrådets uttalelse (Q2 2026) |
+| **Russland-posisjon + EMD-rettssaksovervåking** | `threat-analysis.md` T1+T3 · `risk-assessment.md` R1+R3 | Løpende |
+
+---
+
+### 📐 Hva leseren trenger å vite på 60 sekunder
+
+1. **Topphistorien er vårfiskal trilogi** (HD03100+HD0399+HD03236). Drivstoffavgiftslettelse; el/gass-lettelse. SEK 60+ milliarder nettostimulus. `[SVÆRT HØY]`
+2. **Den demokratiske infrastrukturhistorien er KU33** (HD01KU33). Begrenser "offentlig dokument"-status på digitalt materiale beslaglagt ved husransakelse. `[HØY]`
+3. **JuU15 145–142** — ren blokkavstemning, tre stemmer margin. SD opererer som kongemakere. `[SVÆRT HØY]`
+4. **Ukrainatribunal (HD03231) + erstatningskommisjon (HD03232)** — tverrpartikonsensus. Nürnberg-innramming. `[SVÆRT HØY]`
+5. **Migrasjons-triple** (SfU22+Prop 235+Prop 229) møtes av **koordinerte V+C+MP-motioner** som EMD-rettssaksgrunnlag. `[HØY]`
+6. **HD01UFöU3** = første operative NATO-output: 1 200 soldater til Finland. `[SVÆRT HØY]`
+7. **Kryss-klynge-retorikk**: Nürnberg-ansvarlighetsinnkreving i utlandet (HD03231) mens TF begrenses hjemme (HD01KU33). `[HØY]`
+
+---
+
+### 🎭 Navngitte aktører å følge
+
+| Aktør | Rolle | Relevans |
+|-------|-------|---------|
+| **Ulf Kristersson** | Statsminister | Politisk eier av fiskal trilogi |
+| **Elisabeth Svantesson** | Finansminister | Vårproposisjonens arkitekt |
+| **Maria Malmer Stenergard** | Utenriksminister | Tribunalarkitekt |
+| **Pål Jonson** | Forsvarsminister | NATO eFP-eier |
+| **Magdalena Andersson** | Opposisjonsleder | Posisjon på KU33 avgjørende |
+| **Jimmie Åkesson** | SD-leder | 145–142-løftestang |
+| **Micael Bydén** | Militærsjef (ÖB) | Bn-gruppeberedskap Q3 2026 |
+| **Lagrådet** | Konstitusjonelt gjennomgangsorgan | Ventende KU33/KU32-uttalelse |
+
+---
+
+### 🔮 Neste 30 dager — Hva å overvåke
+
+| Dato/Vindu | Utløser | Innvirkning |
+|------------|---------|------------|
+| **2026-04-22** | Kammeravstemning Ekstra endringsbudsjett | Pakkekoherensbekreftelse |
+| Q2 2026 | **Lagrådets uttalelse KU32/KU33** | Bayesiansk oppdatering |
+| Mai–Juni | Kammeravstemning HD03231/HD03232 | Tribunal+erstatningstilslutning |
+| **2026-09-13** | Riksdagsvalg | KU33 andrelesningsutsikter |
+
+---
+
+### ⚠️ Topprisici
+
+| Rang | Risiko | Score |
+|:----:|--------|:-----:|
+| **1** | Russisk hybridkrigføring post-tribunal+NATO eFP | 18/25 |
+| 2 | KU33 smal tolkning | 12/25 |
+| 3 | Migrasjons-EMD-underkjennelse | 12/25 |
+
+---
+
+**Klassifisering**: Offentlig · **Neste gjennomgang**: 2026-04-25 · **Metodikk**: `analysis/methodologies/ai-driven-analysis-guide.md` v5.1
+<!-- source-sha: a7f00baff9cb6b920c7f514f09a7eee674faed30 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/executive-brief_sv.md -->
+
+<p align="center">
+  <em>Enkelsidigt beslutsfattarbriefing för nyhetsredaktörer, politiska rådgivare och seniora analytiker</em>
+</p>
+
+| Fält | Värde |
+|------|-------|
+| **BRIEF-ID** | BRF-2026-W16 |
+| **Klassificering** | Offentlig · Lästid ≤ 4 minuter |
+| **Läs före** | All redaktionell, politisk eller investeringsbeslut baserat på vecka 16 (2026-04-11 → 2026-04-17) |
+| **Besluthorisont** | 24 timmar · 30 dagar · efter valet i september 2026 |
+| **Författare** | News Journalist agent, redaktionellt ansvar James Pether Sörling |
+| **Metodik** | `ai-driven-analysis-guide.md` v5.1 regler 0–8 |
+
+---
+
+### 🧭 BLUF (Slutsatsen Först)
+
+> **Sveriges riksdag genomförde den mest avgörande lagstiftningsveckan under vårterminens 2025/26.** Statsminister Ulf Kristersson (M) lade fram en vårfiskal trilogi (Vårproposition `HD03100` + Vårändringsbudget `HD0399` + Extra ändringsbudget `HD03236` — drivmedelsskattesänkning + el/gas-lättnad) mot en bakgrund av 0,82 % BNP-tillväxt 2024 (mot Danmarks 3,5 %, Norges 2,1 %; Världsbanken) och 8,7 % arbetslöshet 2025, den högsta sedan pandemin. **Konstitutionsutskottet** avancerade simultant två **grundlagsändringar** (`HD01KU32` tillgänglighet + `HD01KU33` digitalt bevis vid husrannsakan) — den första substantiella inskränkningen av *Tryckfrihetsförordningen* (1766) på år; eftersom grundlagsändring kräver två likalydande riksdagsbeslut som spänner över ett riksdagsval, **blir september 2026-kampanjen i praktiken en folkomröstning om pressfrihets-transparens**. **Utrikesminister Maria Malmer Stenergard (M)** och Kristersson lade fram Sveriges anslutning till den **Särskilda tribunalen för brottet aggression mot Ukraina** (`HD03231`) och den **Internationella kompensationskommissionen** (`HD03232`) — den första aggressionsbrottssdomstolen sedan Nürnberg, med Sverige som grundande medlem. Kammaren bekräftade Tidöavtalets arbetsmajoritet på **JuU15** (ungdomsbrott-skärpning, **145–142**) — ren blockomröstning, tre rösters marginal, vårterminens tunnaste funktionella majoritet. **HD01UFöU3** bemyndigade 1 200 svenska trupper till Finland under NATO eFP — det första stora operativa uttrycket för NATO-medlemskapet. `[MYCKET HÖG]`
+
+---
+
+### 🎯 Tre beslut som detta briefing stöder
+
+| Beslut | Evidenslokus | Åtgärdsfönster |
+|--------|-------------|:--------------:|
+| **Redaktionellt ledarval** för vecka 16 | [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/significance-scoring.md) — Vårfiskal trilogi vägd **10,0** ⇒ ledare; KU33 **9,80** ⇒ samprominens | Omedelbart |
+| **Pressfrihets-NGO + utrikespolitisk engagemangsposition** | [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/risk-assessment.md) R2+R6 · [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/swot-analysis.md) S4 × T1 | Före Lagrådets yttrande (Q2 2026) |
+| **Rysslandsposition + ECHR-rättegångsövervakning** | [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/threat-analysis.md) T1+T3 · [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/risk-assessment.md) R1+R3 | Kontinuerlig; förhöjd efter 2026-04-22 |
+
+---
+
+### 📐 Vad läsaren behöver veta på 60 sekunder
+
+1. **Ledarstoyn är vårfiskal trilogin** (HD03100+HD0399+HD03236). Drivmedelsskattesänkning; el/gas-lättnad; Vårproposition bekräftar försvarsanslag-glidväg. SEK 60 miljarder+ nettostimulans. `[MYCKET HÖG]`
+2. **Den demokratiska infrastrukturhistorien är KU33** (HD01KU33). Inskränker "allmän handling"-status på digitalt material beslagstaget vid husrannsakan. `[HÖG]`
+3. **JuU15 145–142** — ren blockomröstning, noll avhopp, tre rösters marginal. SD opererar som kingmaker. `[MYCKET HÖG]`
+4. **Ukrainatribunal (HD03231) + reparationskommission (HD03232)** — tvärpartikonsensus ≈ 349 ledamöter. Inga direkta svenska finansiella bördor. Nürnberg-inramning. `[MYCKET HÖG]`
+5. **Migration-trippel** (SfU22+Prop 235+Prop 229) möts av **samordnade V+C+MP-motioner** som ECHR-rättegångsunderlag. `[HÖG]`
+6. **HD01UFöU3** = första operativa NATO-output: 1 200 trupper till Finland. `[MYCKET HÖG]`
+7. **Kors-cluster-retorik**: regering förespråkar Nürnberg-ansvarsutkrävande utomlands (HD03231) medan TF inskränks hemma (HD01KU33). `[HÖG]`
+8. **Täckningskompletthetsregel uppfylld**: alla 14 dokument med vägd signifikans ≥ 7,0 har egna H3-avsnitt. `[HÖG]`
+
+---
+
+### 🎭 Namngivna aktörer att bevaka
+
+| Aktör | Roll | Varför de är viktiga nu |
+|-------|------|------------------------|
+| **Ulf Kristersson (M, statsminister)** | Regeringschef | Politisk ägare av fiskal trilogi + utrikespolitikpaket |
+| **Elisabeth Svantesson (M, finansminister)** | Vårpropositionarkitekt | Fiskal trovärdighetsväktare |
+| **Maria Malmer Stenergard (M, utrikesminister)** | Tribunalarkitekt | Nürnberg-inramningsupphovsman |
+| **Gunnar Strömmer (M, justitieminister)** | KU33+JuU15-ägare | Definierar "formellt tillförd bevisning" |
+| **Pål Jonson (M, försvarsminister)** | NATO eFP-ägare | Försvarsmaktens Bn-gruppdeployering Q3 2026 |
+| **Magdalena Andersson (S, partiledare)** | Oppositionsledare | Position på KU33 avgör andraläsningskoalitionen |
+| **Johan Pehrson (L, partiledare)** | Koalitionspartner | Känsligast för pressfrihets- och migrationsfriktion |
+| **Jimmie Åkesson (SD, partiledare)** | Parlamentarisk stödpartner | 145–142 hävstång |
+| **Nooshi Dadgostar (V, partiledare)** | V-ledare | Kampanjröst mot KU33+migrationspaket |
+| **Muharrem Demirok (C, partiledare)** | Mittenblocksgungning | Motionsarkitekt migration |
+| **Lagrådet** | Konstitutionell granskningsorgan | Väntande KU33/KU32-yttrande = viktigast kommande signal |
+| **Volodymyr Zelensky** | Ukrainas president | Haagkonventionen dec 2025 medundertecknare |
+| **Försvarsmakten ÖB Micael Bydén** | Operativ eFP-ägare | Bn-gruppberedskap Q3 2026 |
+
+---
+
+### 🔮 Nästa 30 dagar — Vad att bevaka
+
+| Datum/Fönster | Utlösare | Påverkan |
+|---------------|---------|---------|
+| **2026-04-22** | Kammarröstning Extra ändringsbudget (HD03236) | Bekräftar paketkoherens |
+| **2026-04-27** | KU årsgranskningshöringar öppnas | Politisk ansvarsutkrävande-trumma |
+| Q2 2026 | **Lagrådets yttrande KU32/KU33** | Bayesiansk uppdatering: strikt språk ⇒ R2 ↓4 |
+| Maj–Juni 2026 | **Kammarvote (vilande beslut) KU33/KU32** | Förstaläsningsbekräftelse |
+| Sent Maj/Juni | **Kammarvote HD03231/HD03232** | Tribunal+reparationsanslutning |
+| Q3 2026 | Försvarsmakten deploierar Bn-grupp till Finland | Första operativa NATO-milstolpe |
+| H2 2026 | **V+C+MP lämnar in ECHR-klagomål** | Migrationstrios hållbarhet |
+| **2026-09-13** | Riksdagsval | KU33 andraläsningsutsikter |
+
+---
+
+### ⚠️ Topprisker
+
+| Rang | Risk | Poäng | Status |
+|:----:|------|:-----:|:------:|
+| **1** | **Rysk hybridkrigföring** post-tribunal+NATO eFP | 18/25 | 🔴 |
+| 2 | **KU33 smal tolkning** | 12/25 | 🟠 |
+| 3 | **Migrations-ECHR-underkännande** | 12/25 | 🟠 |
+
+---
+
+### ⚠️ Analytikerförtroende
+
+| Dimension | Förtroende |
+|-----------|:----------:|
+| Ledarstoryval | 🟦 **MYCKET HÖG** |
+| Täckningstäckning | 🟦 **MYCKET HÖG** |
+| Tvärpartisk förstalesutsningsprojektionen | 🟦 **MYCKET HÖG** |
+| Andraläsningsprojektionen (KU33) | 🟧 **MEDEL** |
+| Rysk hybridrespons | 🟧 **MEDEL** |
+| ECHR-migrations-utslaget | 🟧 **MEDEL** |
+
+---
+
+### 📎 Korslänkar
+
+[README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/README.md) · [Syntes](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/synthesis-summary.md) · [Signifikans](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/significance-scoring.md) · [Klassificering](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/classification-results.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/swot-analysis.md) · [Risk](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/risk-assessment.md) · [Hot](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/threat-analysis.md) · [Intressenter](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/stakeholder-perspectives.md) · [Scenarier](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/scenario-analysis.md) · [Korsreferenser](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/cross-reference-map.md) · [Metod](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/methodology-reflection.md)
+
+---
+
+**Klassificering**: Offentlig · **Nästa granskning**: 2026-04-25 · **Metodik**: `analysis/methodologies/ai-driven-analysis-guide.md` v5.1
+<!-- source-sha: a7f00baff9cb6b920c7f514f09a7eee674faed30 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/executive-brief_zh.md -->
+
+<p align="center">
+  <em>面向新闻编辑、政治顾问和高级分析师的单页决策简报</em>
+</p>
+
+| 字段 | 值 |
+|-----|---|
+| **简报ID** | BRF-2026-W16 |
+| **分类** | 公开 · 阅读时间 ≤ 4分钟 |
+| **决策视野** | 24小时 · 30天 · 2026年9月选举后 |
+| **作者** | 新闻记者智能体，编辑责任人 James Pether Sörling |
+| **方法论** | `ai-driven-analysis-guide.md` v5.1 规则0–8 |
+
+---
+
+### 🧭 BLUF（结论优先）
+
+> **瑞典议会（Riksdag）完成了2025/26春季学期最具决定性意义的立法周。** 首相乌尔夫·克里斯特松（M）在2024年GDP增长0.82%和2025年失业率8.7%的背景下，提出了春季财政三部曲（春季提案`HD03100` + 春季补充预算 + 额外补充预算`HD03236`——燃油税减免 + 电力/燃气减负）。**宪法委员会**推进两项**宪法修正**（`HD01KU32`无障碍 + `HD01KU33`搜查中的数字证据）——数年来首次对*Tryckfrihetsförordningen*（1766年）的实质性限制。**外交部长玛丽亚·马尔默·斯泰内加德（M）**和克里斯特松提出瑞典加入**乌克兰侵略罪特别法庭**（`HD03231`）和**赔偿委员会**（`HD03232`）——纽伦堡以来首个侵略罪法庭。议会在**JuU15**（青少年犯罪强化，**145–142**）上确认了联合政府的工作多数——3票差距。`[极高]`
+
+---
+
+### 🎯 本简报支持的三项决策
+
+| 决策 | 证据来源 | 行动窗口 |
+|-----|---------|:-------:|
+| 第16周**编辑主要报道选择** | `significance-scoring.md` — 春季财政三部曲权重**10.0** | 立即 |
+| **新闻自由NGO立场** | `risk-assessment.md` R2+R6 · `swot-analysis.md` S4 × T1 | Lagrådet意见前（2026年Q2） |
+| **俄罗斯立场 + 欧洲人权法院诉讼监测** | `threat-analysis.md` T1+T3 · `risk-assessment.md` R1+R3 | 持续 |
+
+---
+
+### 📐 读者60秒内需了解的内容
+
+1. **主要报道是春季财政三部曲**（HD03100+HD0399+HD03236）。燃油税减免；电力/燃气减负。净刺激超过600亿瑞典克朗。`[极高]`
+2. **民主基础设施报道是KU33**（HD01KU33）。限制搜查中扣押的数字材料的"公共文件"地位。`[高]`
+3. **JuU15 145–142** — 纯块投票，3票差距。SD充当造王者。`[极高]`
+4. **乌克兰法庭（HD03231）+ 赔偿委员会（HD03232）** — 跨党派共识。纽伦堡框架。`[极高]`
+5. **移民三部曲**（SfU22+Prop 235+Prop 229）面临**V+C+MP协调动议**作为欧洲人权法院诉讼依据。`[高]`
+6. **HD01UFöU3** = 首个北约运作成果：1,200名士兵赴芬兰。`[极高]`
+
+---
+
+### 🎭 需关注的具名行为者
+
+| 行为者 | 角色 | 重要性 |
+|-------|-----|------|
+| **Ulf Kristersson** | 首相 | 财政三部曲政治责任人 |
+| **Elisabeth Svantesson** | 财政大臣 | 春季提案设计者 |
+| **Maria Malmer Stenergard** | 外交部长 | 法庭设计者 |
+| **Pål Jonson** | 国防大臣 | 北约eFP责任人 |
+| **Magdalena Andersson** | 反对党领袖 | 对KU33的立场至关重要 |
+| **Jimmie Åkesson** | SD党首 | 145–142杠杆 |
+| **Micael Bydén** | 武装部队总司令（ÖB） | 营级群战备状态2026年Q3 |
+| **Lagrådet** | 宪法审查机构 | KU33/KU32意见待定 |
+
+---
+
+### 🔮 未来30天——需监测事项
+
+| 日期/窗口 | 触发因素 | 影响 |
+|----------|---------|-----|
+| **2026-04-22** | 额外补充预算全体会议表决 | 一揽子计划连贯性确认 |
+| 2026年Q2 | **Lagrådet的KU32/KU33意见** | 贝叶斯更新 |
+| 5月–6月 | HD03231/HD03232全体会议表决 | 法庭+赔偿加入 |
+| **2026-09-13** | 议会选举 | KU33二读前景 |
+
+---
+
+**分类**：公开 · **下次审查**：2026-04-25 · **方法论**：`analysis/methodologies/ai-driven-analysis-guide.md` v5.1
+<!-- source-sha: a7f00baff9cb6b920c7f514f09a7eee674faed30 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 13 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 26 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 0 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 12 | Linked in Article Sources, not expanded inline |
 
@@ -2771,6 +3817,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

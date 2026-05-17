@@ -1,12 +1,12 @@
 ---
 title: "PIR-1: Will the government's April 20 \"gang crime eradication\""
 description: "PIR-1: Will the government's April 20 \"gang crime eradication\" promise survive political and empirical scrutiny ahead of the election? PIR-2: How will Sweden's declining ESA contribution profile…"
-keywords: "Interpellations, English, May 4, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, PIR-1 Will government April gang, PIR-1, Will, government, April, gang, crime, eradication, promise, survive, political, empirical, scrutiny, ahead"
+keywords: "Interpellations, English, May 4, 2026 update, Riksdagsmonitor, Swedish Parliament, Riksdag, political intelligence, OSINT, Swedish politics, democratic transparency, PIR-1 government April gang crime, PIR-1, Will, government, April, gang, crime, eradication, promise, survive, political, empirical, scrutiny, ahead"
 date: 2026-05-04
 subfolder: interpellations
 slug: 2026-05-04-interpellations
 source_folder: analysis/daily/2026-05-04/interpellations
-generated_at: 2026-05-16T20:24:26.037Z
+generated_at: 2026-05-17T18:40:43.623Z
 language: en
 layout: article
 ---

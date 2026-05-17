@@ -6,7 +6,7 @@ date: 2026-04-21
 subfolder: evening-analysis
 slug: 2026-04-21-evening-analysis
 source_folder: analysis/daily/2026-04-21/evening-analysis
-generated_at: 2026-05-16T20:24:25.489Z
+generated_at: 2026-05-17T18:40:43.180Z
 language: en
 layout: article
 ---
@@ -118,6 +118,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
 ## Synthesis Summary
@@ -1372,13 +1385,528 @@ World Bank data: GDP 0.82% (2024), Inflation 2.84% (2024), Unemployment 8.69% (2
 Calendar API: HTML response (fallback document search used)
 Data freshness: Live (synced 2026-04-21T18:20:23Z)
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief_ar.md -->
+
+<div dir="rtl">
+
+# موجز عملياتي — تحليل المساء 2026-04-21
+
+**الحزمة**: EVE-2026-04-21 | **التصنيف**: عام | **الموثوقية**: 🟩مرتفع
+
+---
+
+### BLUF (الخلاصة أولاً)
+
+دخل البرلمان السويدي أسبوعاً حاسماً قبل الانتخابات مع ثلاثة تطورات سياسية عالية المخاطر متزامنة. FiU48 — ميزانية تكميلية غير عادية بقيمة 4.1 مليار كرون سويدي تخفض ضرائب الوقود إلى الحد الأدنى القانوني الأوروبي وتوفر دعماً مباشراً لأسعار الطاقة — انتقل إلى التصويت في الجلسة العامة (المتوقع في 2026-04-22)، مقدماً تخفيفاً ملموساً للأسر لنحو 9 ملايين سويدي في وقت بلغ فيه نمو الناتج المحلي الإجمالي 0.82% فقط وارتفعت البطالة إلى 8.69%. أطلقت الحكومة أيضاً قانوناً جديداً يلزم مشغلي توربينات الرياح بمشاركة الإيرادات مع السكان المجاورين، وقُدِّمت ثلاث استجوابات ضد سفانتسون وبريتز وسترومر. لدى وزيرة المساواة نينا لارسون 47 يوماً لاستيعاب توجيه الشفافية في الأجور الأوروبي. **145 يوماً متبقية حتى انتخابات 13 سبتمبر 2026.**
+
+---
+
+### 3 قرارات يدعمها هذا الموجز
+
+1. **قرار تحريري**: نشر FiU48 كخبر رئيسي فوراً
+2. **قرار مراقبة**: تتبع التصويت على FiU48 وأي معارضة من حزب L كإشارة استقرار ائتلافي
+3. **قرار تحليلي**: تصنيف توجيه الأجور الأوروبي (الموعد النهائي 7 يونيو) كمخاطرة متصاعدة
+
+---
+
+### قراءة 60 ثانية
+
+- 🔴 **تخفيض ضريبة الوقود FiU48**: خفض بنزين 82 أوره/ل وديزل 319 كرون/م³؛ تصويت الجلسة وشيك
+- ⚡ **دعم أسعار الطاقة**: 4.1 مليار كرون لـ~3 ملايين أسرة
+- 🌬️ **طاقة الرياح**: قانون جديد يلزم مشغلي توربينات الرياح بدفع تعويضات للسكان المجاورين
+- 🏛️ **جلسات KU الدستورية**: سفانتسون + والستروم كلاهما تحت التدقيق الدستوري العام في يوم واحد
+- ⚔️ **الهجوم الاستجوابي للمعارضة**: 3 استجوابات ضد بريتز وسترومر وسفانتسون في يوم واحد
+- 🇪🇺 **توجيه الأجور الأوروبي**: نينا لارسون، 47 يوماً للتطبيق وإلا إجراءات مخالفة
+- 🚔 **فجوة الشرطة في ستوكهولم**: BRÅ يؤكد أن ستوكهولم المنطقة الوحيدة التي تنخفض فيها كثافة الشرطة
+- 🌍 **أسطول غزة**: بيجيتش (S) يسأل وزيرة الخارجية عن حماية المواطنين السويديين
+
+---
+
+**التصنيف**: عام · **المراجعة التالية**: 2026-04-22
+
+</div>
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief_da.md -->
+
+**Pakke**: EVE-2026-04-21 | **Klassificering**: OFFENTLIG | **Tillid**: 🟩HØJ
+
+---
+
+### BLUF (Bundlinjen Først)
+
+Den svenske Riksdag indledte en afgørende forvalgsugen med tre samtidige politiske udviklinger. FiU48 — et ekstraordinært tillægsbudget på 4,1 mia. SEK, der sænker brændstofafgifter til EU's juridiske minimum og giver direkte energiprisstøtte — gik til kammerafstemning (forventet 2026-04-22), leverende håndgribelig husholdningslettelse til ca. 9 millioner svenskere på et tidspunkt, hvor BNP-væksten er kun 0,82 % og arbejdsløsheden er steget til 8,69 %. Regeringen lancerede også en ny lov om vindmølleoperatørers indkomstdeling med naboer, og tre interpellationer mod Svantesson, Britz og Strömmer blev indgivet. Ligestillingsminister Nina Larsson har 47 dage til at gennemføre EU's løntransparensdirektiv. **145 dage tilbage til valget den 13. september 2026.**
+
+---
+
+### 3 Beslutninger Briefingen Støtter
+
+1. **Redaktionel beslutning**: Udgiv FiU48 som topnyhed straks på EN + DA
+2. **Overvågningsbeslutning**: Følg FiU48-kammerafstemning og eventuel L-dissens
+3. **Analysebeslutning**: Flag EU-løntransparensdirektiv som eskalerende risiko
+
+---
+
+### 60-Sekunders Læsning
+
+- 🔴 **FiU48**: Brændstofafgiftssænkning; kammerafstemning forestår
+- ⚡ **Energiprisstøtte**: 4,1 mia. SEK til ~3M husstande
+- 🌬️ **Vindkraft**: Ny lov om naboindkomstdeling
+- 🏛️ **KU-høringer**: Svantesson + Wallström begge under offentlig grundlovsgranskning
+- ⚔️ **Interpellationsoffensiv**: 3 nye mod Britz, Strömmer, Svantesson
+- 🇪🇺 **EU-løndirektiv**: Nina Larsson, 47 dage til implementering
+
+---
+
+**Klassificering**: Offentlig · **Næste gennemgang**: 2026-04-22
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief_de.md -->
+
+**Paket**: EVE-2026-04-21 | **Klassifizierung**: ÖFFENTLICH | **Zuverlässigkeit**: 🟩HOCH
+
+---
+
+### BLUF (Schlussfolgerung Zuerst)
+
+Schwedens Parlament trat in eine entscheidende Vorwahlwoche mit drei gleichzeitigen hochriskanten politischen Entwicklungen ein. FiU48 — ein außerordentlicher Ergänzungshaushalt von 4,1 Mrd. SEK, der Kraftstoffsteuern auf das EU-Rechtsminimum senkt und direkte Energiepreisunterstützung bietet — ging zur Kammervotum (erwartet 2026-04-22), und liefert spürbare Haushaltsentlastung für ca. 9 Millionen Schweden. Die Regierung lancierte auch ein neues Gesetz zur Einkommensteilung von Windkraftbetreibern mit Anwohnern, und drei Interpellationen gegen Svantesson, Britz und Strömmer wurden eingereicht. Gleichstellungsministerin Nina Larsson hat 47 Tage Zeit, die EU-Lohntransparenzrichtlinie umzusetzen. **145 Tage bis zur Wahl am 13. September 2026.**
+
+---
+
+### 3 Entscheidungen, die dieses Briefing Unterstützt
+
+1. **Redaktionelle Entscheidung**: FiU48 sofort als Hauptmeldung veröffentlichen
+2. **Überwachungsentscheidung**: FiU48-Abstimmung und mögliche L-Dissidenz verfolgen
+3. **Analyseentscheidung**: EU-Lohntransparenzrichtlinie als eskalierendes Risiko kennzeichnen
+
+---
+
+### 60-Sekunden-Lektüre
+
+- 🔴 **FiU48**: Kraftstoffsteuersenkung; Abstimmung steht bevor
+- ⚡ **Energiepreisunterstützung**: 4,1 Mrd. SEK für ~3M Haushalte
+- 🌬️ **Windkraft**: Neues Gesetz zur Nachbarschaftseinkommensteilung
+- 🏛️ **KU-Anhörungen**: Svantesson + Wallström beide unter öffentlicher Verfassungsüberprüfung
+- ⚔️ **Interpellationsoffensive**: 3 neue gegen Britz, Strömmer, Svantesson
+- 🇪🇺 **EU-Lohnrichtlinie**: Nina Larsson, 47 Tage bis zur Umsetzung
+
+---
+
+**Klassifizierung**: Öffentlich · **Nächste Überprüfung**: 2026-04-22
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief_es.md -->
+
+**Paquete**: EVE-2026-04-21 | **Clasificación**: PÚBLICO | **Confiabilidad**: 🟩ALTA
+
+---
+
+### BLUF (Conclusión Primero)
+
+El parlamento sueco entró en una semana preelectoral decisiva con tres desarrollos políticos de alto riesgo simultáneos. FiU48 — un presupuesto suplementario extraordinario de 4,1 mil millones SEK que reduce los impuestos al combustible al mínimo legal de la UE y ofrece apoyo directo a los precios de la energía — pasó a votación en cámara (prevista para 2026-04-22), entregando alivio tangible a los hogares para aproximadamente 9 millones de suecos. El gobierno también lanzó una nueva ley sobre reparto de ingresos de operadores de turbinas eólicas con residentes cercanos, y se presentaron tres interpelaciones contra Svantesson, Britz y Strömmer. La ministra de Igualdad Nina Larsson tiene 47 días para transponer la directiva europea sobre transparencia salarial. **Quedan 145 días para las elecciones del 13 de septiembre de 2026.**
+
+---
+
+### 3 Decisiones que Apoya este Briefing
+
+1. **Decisión editorial**: Publicar FiU48 como noticia principal inmediatamente
+2. **Decisión de seguimiento**: Monitorear votación FiU48 y posible disidencia del partido L
+3. **Decisión de análisis**: Señalar directiva salarial UE como riesgo en escalada
+
+---
+
+### Lectura de 60 Segundos
+
+- 🔴 **FiU48**: Reducción de impuesto al combustible; votación inminente
+- ⚡ **Apoyo precio energía**: 4,1 mrd. SEK para ~3M hogares
+- 🌬️ **Eólica**: Nueva ley de reparto de ingresos con vecinos
+- 🏛️ **Audiencias KU**: Svantesson + Wallström ambos bajo escrutinio constitucional público
+- ⚔️ **Ofensiva interpelaciones**: 3 nuevas contra Britz, Strömmer, Svantesson
+- 🇪🇺 **Directiva salarial UE**: Nina Larsson, 47 días para transposición
+
+---
+
+**Clasificación**: Público · **Próxima revisión**: 2026-04-22
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief_fi.md -->
+
+**Paketti**: EVE-2026-04-21 | **Luokitus**: JULKINEN | **Luotettavuus**: 🟩KORKEA
+
+---
+
+### BLUF (Yhteenveto Ensin)
+
+Ruotsin valtiopäivät aloittivat ratkaisevan vaaluviikon kolmella samanaikaisella korkean panoksen poliittisella kehityksellä. FiU48 — ylimääräinen 4,1 mrd. SEK lisätalousarvio, joka leikkaa polttoaineveroja EU:n juridiseen minimiin ja tarjoaa suoraa energiahintatukea — eteni täysistunnon äänestykseen (odotettu 2026-04-22), tarjoten konkreettista kotitaloushelpostusta noin 9 miljoonalle ruotsalaiselle. Hallitus käynnisti myös uuden lain tuulivoimaoperaattorien tulojen jakamisesta naapureille, ja kolme välikysymystä jätettiin Svantessonia, Britziä ja Strömmeriä vastaan. Tasa-arvoministeri Nina Larssonilla on 47 päivää aikaa toimeenpanna EU:n palkkatasa-arvodirektiivi. **145 päivää jäljellä vaaleihin 13. syyskuuta 2026.**
+
+---
+
+### 3 Päätöstä joita Briefing Tukee
+
+1. **Toimituksellinen päätös**: Julkaise FiU48 pääuutisena välittömästi
+2. **Seurantapäätös**: Seuraa FiU48-äänestystä ja mahdollista L-puolueen eriäviä mielipiteitä
+3. **Analyysipäätös**: Merkitse EU-palkkadirektiivi eskaloituvaksi riskiksi
+
+---
+
+### 60 Sekunnin Luku
+
+- 🔴 **FiU48**: Polttoaineveron leikkaus; äänestys edessä
+- ⚡ **Energiahiintatuki**: 4,1 mrd. SEK ~3M kotitaloudelle
+- 🌬️ **Tuulivoima**: Uusi laki naapurien tulojen jakamisesta
+- 🏛️ **KU-kuulemiset**: Svantesson + Wallström molemmat julkisessa perustuslakitutkinnassa
+- ⚔️ **Välikysymysoffensiivi**: 3 uutta Britziä, Strömmeriä, Svantessonia vastaan
+- 🇪🇺 **EU-palkkadirektiivi**: Nina Larsson, 47 päivää täytäntöönpanoon
+
+---
+
+**Luokitus**: Julkinen · **Seuraava arviointi**: 2026-04-22
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief_fr.md -->
+
+**Paquet** : EVE-2026-04-21 | **Classification** : PUBLIC | **Fiabilité** : 🟩ÉLEVÉE
+
+---
+
+### BLUF (Conclusion d'Abord)
+
+Le parlement suédois a entamé une semaine pré-électorale décisive avec trois développements politiques à enjeux élevés simultanés. FiU48 — un budget rectificatif extraordinaire de 4,1 milliards SEK réduisant les taxes carburant au minimum légal de l'UE et offrant un soutien direct aux prix de l'énergie — est passé au vote de la chambre (prévu le 2026-04-22), apportant un soulagement concret aux ménages pour environ 9 millions de Suédois. Le gouvernement a aussi lancé une nouvelle loi sur le partage des revenus des opérateurs d'éoliennes avec les riverains, et trois interpellations contre Svantesson, Britz et Strömmer ont été déposées. La ministre de l'Égalité Nina Larsson dispose de 47 jours pour transposer la directive européenne sur la transparence des salaires. **145 jours restent avant les élections du 13 septembre 2026.**
+
+---
+
+### 3 Décisions Soutenues par ce Briefing
+
+1. **Décision éditoriale** : Publier FiU48 comme article principal immédiatement
+2. **Décision de suivi** : Surveiller le vote FiU48 et toute dissidence du parti L
+3. **Décision d'analyse** : Signaler la directive salariale UE comme risque croissant
+
+---
+
+### Lecture de 60 Secondes
+
+- 🔴 **FiU48** : Réduction taxe carburant; vote imminent
+- ⚡ **Soutien prix énergie** : 4,1 mrd. SEK pour ~3M ménages
+- 🌬️ **Éolien** : Nouvelle loi sur le partage de revenus avec voisins
+- 🏛️ **Auditions KU** : Svantesson + Wallström, les deux sous examen public
+- ⚔️ **Offensive interpellations** : 3 nouvelles contre Britz, Strömmer, Svantesson
+- 🇪🇺 **Directive salariale UE** : Nina Larsson, 47 jours pour transposition
+
+---
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief_he.md -->
+
+<div dir="rtl">
+
+# תקציר מבצעי — ניתוח ערב 2026-04-21
+
+**חבילה**: EVE-2026-04-21 | **סיווג**: ציבורי | **אמינות**: 🟩גבוה
+
+---
+
+### BLUF (העיקר תחילה)
+
+הפרלמנט השוודי נכנס לשבוע מכריע לפני הבחירות עם שלושה התפתחויות פוליטיות בעלות סיכון גבוה בו-זמנית. FiU48 — תקציב משלים יוצא דופן של 4.1 מיליארד SEK המוריד מסי דלק למינימום החוקי של האיחוד האירופי ומספק תמיכה ישירה במחירי האנרגיה — עבר להצבעה בפלנום (צפוי 2026-04-22), ומספק הקלה ממשית לכ-9 מיליון שוודים בשעה שצמיחת התמ"ג עומדת על 0.82% בלבד והאבטלה עלתה ל-8.69%. הממשלה גם השיקה חוק חדש המחייב מפעילי טורבינות רוח לחלוק הכנסות עם תושבים סמוכים, ושלוש אינטרפלציות כנגד סוונטסון, בריץ ושטרומר הוגשו. לשרת השוויון נינה לארסון 47 יום ליישם את הנחיית שקיפות השכר האירופית. **145 ימים נותרו לבחירות ב-13 בספטמבר 2026.**
+
+---
+
+### 3 החלטות שתקציר זה תומך בהן
+
+1. **החלטה עיתונאית**: פרסם FiU48 כידיעה ראשית מיידית
+2. **החלטת ניטור**: עקוב אחר הצבעת FiU48 וכל התנגדות של מפלגת L
+3. **החלטת ניתוח**: סמן הנחיית השכר האירופית כסיכון מסלים
+
+---
+
+### קריאה של 60 שניות
+
+- 🔴 **הפחתת מס דלק FiU48**: בנזין 82 אורה/ליטר, דיזל 319 SEK/מ³; הצבעה קרובה
+- ⚡ **תמיכה במחירי אנרגיה**: 4.1 מיליארד SEK לכ-3 מיליון משקי בית
+- 🌬️ **שיתוף הכנסות רוח**: חוק חדש המחייב מפעילי טורבינות לשלם לתושבים סמוכים
+- 🏛️ **שימועי KU חוקתיים**: סוונטסון + ולסטרום שניהם בבדיקה ציבורית ביום אחד
+- ⚔️ **מתקפת אינטרפלציות**: 3 חדשות נגד בריץ, שטרומר, סוונטסון באותו יום
+- 🇪🇺 **הנחיית שכר אירופית**: נינה לארסון, 47 ימים ליישום אחרת הליכי הפרה
+- 🚔 **פער המשטרה בסטוקהולם**: BRÅ מאשר שסטוקהולם היא האזור היחיד שצפיפות השוטרים יורדת בו
+- 🌍 **שיירת עזה**: בז'יץ' (S) שואל את שרת החוץ על הגנת אזרחים שוודים
+
+---
+
+**סיווג**: ציבורי · **סקירה הבאה**: 2026-04-22
+
+</div>
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief_ja.md -->
+
+**パッケージ**: EVE-2026-04-21 | **分類**: 公開 | **信頼性**: 🟩高
+
+---
+
+### BLUF（結論から）
+
+スウェーデン議会は、三つの同時高リスク政策展開を伴う決定的な選挙前週に入った。FiU48 — 燃料税をEUの法的最低限に引き下げ直接エネルギー価格支援を提供する41億SEKの特別補正予算 — は本会議採決（2026-04-22予定）に進み、GDP成長率が僅か0.82%、失業率が8.69%に上昇した時期に約900万人のスウェーデン人に具体的な家計救済をもたらす。政府はまた風力タービン事業者が近隣住民と収益を共有することを義務付ける新法を発表し、スヴァンテッソン、ブリッツ、ストロメルに対する3つの質問主意書が提出された。平等相ニーナ・ラーションには欧州賃金透明性指令を転置するための47日間がある。**2026年9月13日選挙まで145日。**
+
+---
+
+### このブリーフィングが支持する3つの決定
+
+1. **編集上の決定**: FiU48をEN+JAで即座に主要ニュースとして公開
+2. **監視上の決定**: FiU48採決とL党の異論を連立安定信号として追跡
+3. **分析上の決定**: EU賃金指令（6月7日期限）を拡大するリスクとして注目
+
+---
+
+### 60秒読み（8箇条）
+
+- 🔴 **FiU48 燃料税削減**: ガソリン82öre/l・軽油319 SEK/m³削減；本会議採決迫る
+- ⚡ **エネルギー価格支援**: ~300万世帯向け41億SEK
+- 🌬️ **風力収益共有**: 風車事業者に近隣住民への支払いを義務付ける新法
+- 🏛️ **KU憲法審議**: スヴァンテッソン＋ワルストロームが同日公開審議
+- ⚔️ **野党質問攻勢**: ブリッツ・ストロメル・スヴァンテッソンへの質問3件を同日提出
+- 🇪🇺 **EU賃金指令**: ニーナ・ラーション、47日以内に転置なければ違反手続き
+- 🚔 **ストックホルム警察不足**: BRÅが唯一警察密度低下地域と確認
+- 🌍 **ガザ船団**: ベジッチ（S）が外相にスウェーデン市民保護を要求
+
+---
+
+**分類**: 公開 · **次回レビュー**: 2026-04-22
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief_ko.md -->
+
+**패키지**: EVE-2026-04-21 | **분류**: 공개 | **신뢰도**: 🟩높음
+
+---
+
+### BLUF (결론 먼저)
+
+스웨덴 의회는 세 가지 동시 고위험 정책 전개와 함께 결정적인 선거 전 주에 접어들었다. FiU48 — 연료세를 EU 법정 최저치로 낮추고 직접 에너지 가격 지원을 제공하는 41억 SEK 특별 보정예산 — 이 본회의 표결(2026-04-22 예정)로 진행되었으며, GDP 성장률이 0.82%에 불과하고 실업률이 8.69%로 상승한 시점에 약 900만 명의 스웨덴인에게 실질적인 가계 구제를 제공한다. 정부는 또한 풍력 터빈 운영자가 인근 주민과 수익을 공유하도록 요구하는 새 법안을 발표했으며, 스반테슨, 브리츠, 스트뢰메르에 대한 3건의 질문서가 제출되었다. 성평등 장관 니나 라르손은 EU 임금 투명성 지침을 이행하기 위한 47일을 가지고 있다. **2026년 9월 13일 선거까지 145일 남았다.**
+
+---
+
+### 이 브리핑이 지원하는 3가지 결정
+
+1. **편집 결정**: FiU48을 즉시 주요 뉴스로 발행
+2. **모니터링 결정**: FiU48 표결과 L당 이탈 가능성을 연립 안정 신호로 추적
+3. **분석 결정**: EU 임금 지침(6월 7일 기한)을 확대 위험으로 표시
+
+---
+
+### 60초 읽기
+
+- 🔴 **FiU48 연료세 삭감**: 휘발유 82öre/l·경유 319 SEK/m³; 본회의 표결 임박
+- ⚡ **에너지 가격 지원**: ~300만 가구에 41억 SEK
+- 🌬️ **풍력 수익 공유**: 풍력 사업자에게 인근 주민 지급 의무화 법안
+- 🏛️ **KU 헌법 청문회**: 스반테슨 + 왈스트룀 동일 날 공개 심문
+- ⚔️ **야당 질문 공세**: 브리츠·스트뢰메르·스반테슨에 3건 동일 날 제출
+- 🇪🇺 **EU 임금 지침**: 니나 라르손, 47일 내 이행 안 하면 위반 절차
+- 🚔 **스톡홀름 경찰 부족**: BRÅ가 유일하게 경찰 밀도 감소 지역으로 확인
+- 🌍 **가자 선단**: 베지치(S)가 외무장관에게 스웨덴 시민 보호 요구
+
+---
+
+**분류**: 공개 · **다음 검토**: 2026-04-22
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief_nl.md -->
+
+**Pakket**: EVE-2026-04-21 | **Classificatie**: OPENBAAR | **Betrouwbaarheid**: 🟩HOOG
+
+---
+
+### BLUF (Conclusie Eerst)
+
+Het Zweedse parlement begon aan een beslissende week voor de verkiezingen met drie gelijktijdige politieke ontwikkelingen met hoge inzet. FiU48 — een buitengewone aanvullende begroting van 4,1 mld. SEK die brandstofbelastingen verlaagt tot het EU-wettelijk minimum en directe energieprijssteun biedt — ging naar de kamerstemming (verwacht 2026-04-22). De regering lanceerde ook een nieuwe wet over inkomstendeling van windturbineoperatoren met naburige bewoners, en drie interpellaties werden ingediend tegen Svantesson, Britz en Strömmer. Minister voor Gelijke Kansen Nina Larsson heeft 47 dagen om de EU-loonvereistenrichtlijn te implementeren. **145 dagen resterend tot de verkiezingen op 13 september 2026.**
+
+---
+
+### 3 Beslissingen die dit Briefing Ondersteunt
+
+1. **Redactionele beslissing**: FiU48 onmiddellijk als hoofdnieuws publiceren
+2. **Monitoringbeslissing**: FiU48-stemming en mogelijke L-dissidentie volgen
+3. **Analysebeslissing**: EU-loonrichtlijn als escalerend risico markeren
+
+---
+
+### 60-Seconden Lezen
+
+- 🔴 **FiU48**: Brandstofbelastingverlaging; stemming op komst
+- ⚡ **Energieprijssteun**: 4,1 mld. SEK voor ~3M huishoudens
+- 🌬️ **Windenergie**: Nieuwe wet op inkomstendeling met buren
+- 🏛️ **KU-hoorzittingen**: Svantesson + Wallström beide onder publiek constitutioneel onderzoek
+- ⚔️ **Interpellatie-offensief**: 3 nieuwe tegen Britz, Strömmer, Svantesson
+- 🇪🇺 **EU-loonrichtlijn**: Nina Larsson, 47 dagen voor implementatie
+
+---
+
+**Classificatie**: Openbaar · **Volgende beoordeling**: 2026-04-22
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief_no.md -->
+
+**Pakke**: EVE-2026-04-21 | **Klassifisering**: OFFENTLIG | **Tillit**: 🟩HØY
+
+---
+
+### BLUF (Bunnlinjen Først)
+
+Det svenske Riksdag gikk inn i en avgjørende forvalgsuken med tre samtidige høyrisiko politiske utviklinger. FiU48 — et ekstraordinært tilleggsbudsjett på 4,1 mrd. SEK som kutter drivstoffavgifter til EUs juridiske minimum og gir direkte energiprisstøtte — gikk til kammeravsteming (forventet 2026-04-22), og leverer håndgripelig husholdningslettelse til ca. 9 millioner svensker. Regjeringen lanserte også en ny lov om vindkraftoperatørers inntektsdeling med naboer, og tre interpellasjoner mot Svantesson, Britz og Strömmer ble levert. Likestillingsminister Nina Larsson har 47 dager på seg til å implementere EUs lønnstransparensdirektiv. **145 dager igjen til valget 13. september 2026.**
+
+---
+
+### 3 Beslutninger Briefingen Støtter
+
+1. **Redaksjonell beslutning**: Publiser FiU48 som toppnyhet umiddelbart
+2. **Overvåkningsbeslutning**: Følg FiU48-kammeravsteming og eventuell L-dissens
+3. **Analysebeslutning**: Flagg EU-lønnstransparensdirektiv som eskalerende risiko
+
+---
+
+### 60-Sekunders Lesing
+
+- 🔴 **FiU48**: Drivstoffavgiftskutt; kammeravsteming forestår
+- ⚡ **Energiprisstøtte**: 4,1 mrd. SEK til ~3M husstander
+- 🌬️ **Vindkraft**: Ny lov om naboinnteктsdeling
+- 🏛️ **KU-høringer**: Svantesson + Wallström begge under offentlig grunnlovsgranskjing
+- ⚔️ **Interpellasjonsoffensiv**: 3 nye mot Britz, Strömmer, Svantesson
+- 🇪🇺 **EU-lønndirektiv**: Nina Larsson, 47 dager til implementering
+
+---
+
+**Klassifisering**: Offentlig · **Neste gjennomgang**: 2026-04-22
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief_sv.md -->
+
+**Paket**: EVE-2026-04-21 | **Klassificering**: OFFENTLIG | **Tillförlitlighet**: 🟩HÖG
+
+---
+
+### BLUF (Slutsatsen Först — ≤300 ord)
+
+Sveriges riksdag inledde en avgörande valvecka med tre samtidiga politiska händelser av stor vikt. Finansutskottets FiU48 — en extraordinär tilläggsbudget på 4,1 miljarder SEK som sänker bränsleskatter till EU:s juridiska minimum och ger direkt energipriskompensation — gick till kammarvotum (förväntat 2026-04-22), vilket ger konkreta hushållslättnader för ungefär 9 miljoner svenskar vid ett tillfälle då BNP-tillväxten är endast 0,82 procent och arbetslösheten har stigit till 8,69 procent. Samtidigt lanserade regeringen en ny lag som kräver att vindkraftsoperatörer delar inkomster med närboende — en åtgärd utformad för att omvandla lokalt motstånd (NIMBY) till stöd (YIMBY) för Sveriges expansion av förnybar energi. Dessa två åtgärder tillsammans definierar koalitionens valbudskap om "köpkraft och grön omställning".
+
+Det konstitutionella landskapet var lika aktivt: finansminister Elisabeth Svantesson (M) stod inför ett offentligt KU-utfrågning (G16) om finansstyrning, medan tidigare utrikesminister Margot Wallström (S) stod inför sin egen KU-utfrågning (G34) om tidigare regerings utrikespolitiska beslut. Oppositionens svar var en samordnad redovisningsoffensiv: tre nya interpellationer riktade mot Svantesson, Britz och Strömmer lämnades in samma dag och fogar sig till förra veckans 21-motionsblixt. EU:s klocka tickar också: jämställdhetsminister Nina Larsson har 47 dagar på sig att genomföra EU:s lönetransparensdirektiv, annars riskerar Sverige överträdelseförfarande. **145 dagar återstår till valet den 13 september 2026.**
+
+---
+
+### 3 Beslut som detta briefing stöder
+
+1. **Redaktionellt beslut**: Publicera FiU48 som huvudnyhet omedelbart på EN + SV — påverkar 9M medborgare direkt
+2. **Bevakningsbeslut**: Följ FiU48 kammarvotum (2026-04-22/23) och eventuell L-dissens som koalitionsstabilitetssignal
+3. **Analysbeslut**: Flagga EU-lönetransparensdirektiv (deadline 7 juni) som eskalerande risk som kräver dedikerad bevakning
+
+---
+
+### 60-sekunders läsning (8 punkter)
+
+- 🔴 **FiU48 bränsleskattesänkning**: Finansutskottet godkände extrabudget som minskar bensinskatt med 82 öre/l och diesel med 319 SEK/m³ t.o.m. september 2026; kammarvotum förestår
+- ⚡ **Energipriskompensation**: 4,1 mdr SEK totalt inklusive hushålls el- och gasprisstöd för ~3M hushåll med förhöjda energikostnader
+- 🌬️ **Vindkraft inkomstdelning**: Regeringen inför lag som kräver att vindkraftsoperatörer betalar till boende inom 9 turbinhöjders radie
+- 🏛️ **KU konstitutionella utfrågningar**: Finansminister Svantesson OCH tidigare utrikesminister Wallström båda under offentlig konstitutionell granskning samma dag
+- ⚔️ **Oppositionens interpellationspaket**: Haraldsson (S), Widding, Kallifatides (S) lämnade in mot Britz, Strömmer och Svantesson samma dag
+- 🇪🇺 **EU-lönetransparensdirektiv**: Nina Larsson (L) har 47 dagar på sig att genomföra EU:s direktiv annars riskerar Sverige formella EU-överträdelseförfaranden
+- 🚔 **Stockholms polislucka**: BRÅ bekräftar att Stockholm är enda svenska polisregion där polisdensiteten minskar
+- 🌍 **Gaza-flottilj**: Denis Begic (S) frågar utrikesminister Malmer Stenergard om skyddet av svenska medborgare i internationell Gaza-konvoj
+
+---
+
+### Namngivna aktörer
+
+| Aktör | Roll | Relevans idag |
+|-------|------|--------------|
+| **Elisabeth Svantesson (M)** | Finansminister | FiU48-arkitekt + KU G16-utfrågning |
+| **Johan Britz (L)** | Tf. klimat-/arbetsmarknadsminister | Vindkraftlag + HD10440 interpellation |
+| **Gunnar Strömmer (M)** | Justitieminister | HD10441 om rättssäkerhet |
+| **Nina Larsson (L)** | Jämställdhetsminister | EU-lönetransparensdirektiv 47-dagarsfrist |
+| **Maria Malmer Stenergard (M)** | Utrikesminister | HD11731 Gaza-flottiljen |
+| **Margot Wallström (S)** | Fd. utrikesminister | KU G34 konstitutionell utfrågning |
+
+---
+
+### Nästdagsbevakning (2026-04-22)
+
+| Bevakningspunkt | Vad man ska följa | Betydelse |
+|----------------|------------------|-----------|
+| FiU48 kammarvotum | Röstetal — L-partiets blocklydnad | Koalitionsstabilitetstest |
+| L-partiets kommunikation | Eventuella offentliga reservationer om bränsleskatt | Internspricksignal |
+| Interpellationssvar | Svar från Strömmer, Britz, Svantesson | Ministerkreditmetrik |
+
+---
+
+**Klassificering**: Offentlig · **Nästa granskning**: 2026-04-22
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief_zh.md -->
+
+**套餐**: EVE-2026-04-21 | **分类**: 公开 | **可靠性**: 🟩高
+
+---
+
+### BLUF（结论在前）
+
+瑞典议会进入了一个关键的选前周，伴随三项同时发生的高风险政策进展。FiU48 — 一项将燃料税降至欧盟法律最低水平并提供直接能源价格支持的41亿瑞典克朗特别补充预算 — 提交全会表决（预计2026-04-22），在GDP增长仅0.82%、失业率上升至8.69%之际为约900万瑞典人提供切实的家庭救济。政府还发布了要求风力涡轮机运营商与附近居民共享收益的新法律，并对斯万特森、布里茨和斯特罗默提出了三项质询。平等事务大臣尼娜·拉尔松有47天时间转置欧盟薪酬透明度指令。**距2026年9月13日选举还剩145天。**
+
+---
+
+### 本简报支持的3项决定
+
+1. **编辑决定**: 立即以FiU48为头条新闻发布
+2. **监测决定**: 追踪FiU48表决及L党可能的异议作为联合稳定信号
+3. **分析决定**: 将欧盟薪酬指令（6月7日截止）标记为升级风险
+
+---
+
+### 60秒阅读（8要点）
+
+- 🔴 **FiU48燃料税削减**: 汽油82öre/升，柴油319 SEK/m³；全会表决迫在眉睫
+- ⚡ **能源价格支持**: 约300万家庭获41亿SEK
+- 🌬️ **风能收益共享**: 新法律要求风力运营商向附近居民支付
+- 🏛️ **KU宪法听证**: 斯万特森+瓦尔斯特罗姆同日接受公开审查
+- ⚔️ **反对党质询攻势**: 同日对布里茨、斯特罗默、斯万特森提出3项质询
+- 🇪🇺 **欧盟薪酬指令**: 尼娜·拉尔松，47天内转置否则面临违规程序
+- 🚔 **斯德哥尔摩警察缺口**: BRÅ确认是唯一警察密度下降的警区
+- 🌍 **加沙船队**: 贝吉奇(S)向外交部长追问保护参与国际船队的瑞典公民
+
+---
+
+**分类**: 公开 · **下次审查**: 2026-04-22
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 13 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 26 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 0 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 9 | Linked in Article Sources, not expanded inline |
 
@@ -1405,6 +1933,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-21/evening-analysis/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

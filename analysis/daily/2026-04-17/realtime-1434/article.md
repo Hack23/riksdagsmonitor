@@ -6,7 +6,7 @@ date: 2026-04-17
 subfolder: realtime-1434
 slug: 2026-04-17-realtime-1434
 source_folder: analysis/daily/2026-04-17/realtime-1434
-generated_at: 2026-05-16T20:24:25.376Z
+generated_at: 2026-05-17T18:40:43.034Z
 language: en
 layout: article
 ---
@@ -120,6 +120,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -3522,13 +3535,1240 @@ Directory `README.md` provides quality tier, reading order by audience (executiv
 
 ---
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# 📋 موجز القرار — مراقب الوقت الفعلي 1434
+
+<p align="center">
+  <em>موجز صفحة واحدة لصانعي القرار: محررو الأخبار، والمستشارون السياسيون، وكبار المحللين</em>
+</p>
+
+| الحقل | القيمة |
+|-------|--------|
+| **BRIEF-ID** | BRF-2026-04-17-1434 |
+| **التصنيف** | عام · وقت القراءة ≤ 3 دقائق |
+| **اقرأ قبل** | أي قرار تحريري أو سياسي أو استثماري مبني على هذا التحليل |
+| **أفق القرار** | 24 ساعة / أسبوعان / ما بعد انتخابات 2026 |
+
+---
+
+### 🧭 BLUF (الخلاصة أولاً)
+
+**قدّمت اللجنة الدستورية السويدية تعديلَين دستوريَّين (HD01KU32 + HD01KU33) في 17 أبريل 2026 — وهما أول تضييق جوهري على *Tryckfrihetsförordningen* (1766) في مجال الأدلة الرقمية منذ سنوات. ونظراً لأن التعديل الدستوري يستلزم تصويتَين متطابقَين في Riksdag عبر دورة انتخابية، تغدو حملة سبتمبر 2026 استفتاءً فعلياً على شفافية حرية الصحافة.** وفي الإطار الزمني نفسه (24 ساعة)، قدّمت وزيرة الخارجية ماريا مالمر ستينرغارد ورئيس الوزراء أولف كريسترسون انضمام السويد إلى المحكمة الخاصة لجريمة العدوان ضد أوكرانيا (HD03231) والمفوضية الدولية للتعويض (HD03232) — أول محكمة لجريمة العدوان منذ نورمبرغ. ويكشف هذا التجمّع التشريعي عن اندفاعة تشريعية قبيل الانتخابات في مجالات البنية التحتية الديمقراطية، وريادة الأعمال المعيارية في السياسة الخارجية، ونزاهة سوق الإسكان، وإزالة القيود عن جودة الحياة. `[مرتفع]`
+
+---
+
+### 🎯 ثلاثة قرارات يدعمها هذا الموجز
+
+| القرار | الأساس الاستدلالي | نافذة الإجراء |
+|--------|-------------------|:------------:|
+| **اختيار العنوان التحريري** | [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) §قرار النشر | فوري |
+| **موقف منظمات حرية الصحافة** | [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) R2 · [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) S4 × T1 | قبل رأي Lagrådet (الربع الثاني 2026) |
+| **رصد التهديدات المتعلقة بالموقف الروسي** | [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) T6 · سلسلة الإزالة §3 | مستمر، مستوى مرتفع ما بعد التصويت |
+
+---
+
+### 📐 ما يحتاج القراء معرفته في 60 ثانية
+
+1. **القصة الرئيسية هي التعديل الدستوري KU33.** يُقيّد وضع "allmän handling" للمادة الرقمية المضبوطة في عمليات التفتيش المنزلي ما لم تكن *formellt tillförd bevisning*. النطاق التفسيري لهذه العبارة هو **محور الثقل الاستراتيجي**. `[مرتفع]`
+2. **المحكمة الأوكرانية ومفوضية التعويض بارزتان بالقدر ذاته.** قيمة إخبارية عالمية عالية؛ لا عبء مالي مباشر على السويد؛ شبه إجماع متعدد الأحزاب (≈ 349 عضواً). `[مرتفع]`
+3. **قاعدة القراءتين تجعل حملة 2026 اللحظة الحاسمة.** من المتوقع أن يصوّت V/MP "ضد" في القراءة الثانية؛ موقف قيادة S هو الإشارة المحوِّلة. `[مرتفع]`
+4. **المخاطر ذات الأولوية**: R1 الانتقام الروسي الهجين (16/25)؛ R2 التفسير الضيّق لـ KU33 (12/25)؛ R3 عدم تعاون الولايات المتحدة مع المحكمة (12/25)؛ R5 تسليح KU33 في الحملة الانتخابية (12/25). `[مرتفع]`
+5. **قاعدة التغطية الشاملة مُستوفاة.** جميع الوثائق الست ذات الأهمية الموزونة ≥ 5 مغطّاة في المقال المنشور. `[مرتفع]`
+
+---
+
+### 🎭 الفاعلون المسمَّون المستحقون للمتابعة
+
+| الفاعل | الدور | سبب الأهمية الآن |
+|--------|-------|-----------------|
+| **أولف كريسترسون (M، رئيس الوزراء)** | زعيم الحكومة، الموقِّع المشارك لأوكرانيا | المالك السياسي لحزمتَي الدستور والسياسة الخارجية |
+| **ماريا مالمر ستينرغارد (M، وزيرة الخارجية)** | مهندسة المحكمة | صاحبة أسلوب الصياغة النورمبرغية؛ رأس المال في ريادة المعايير |
+| **غونار ستروميير (M، وزير العدل)** | مدافع عن نزاهة التحقيق KU33 | يحدد تفسير "formellt tillförd bevisning" عملياً |
+| **ماغدالينا أندرسون (S، زعيمة الحزب)** | زعيمة المعارضة | موقفها من KU33 سيحدد الائتلاف في القراءة الثانية |
+| **يوهان بيرسون (L، زعيم الحزب)** | الهوية الليبرالية | شريك الائتلاف الأكثر حساسية تجاه حرية الصحافة |
+| **نوشي دادغوستار (V)** | زعيمة V | صوت الحملة ضد KU33 |
+| **دانيال هيلدن (MP، الناطق الرسمي)** | زعيم MP | مدافع عن الحماية الدستورية |
+| **Lagrådet** | المراجعة الدستورية | الرأي المعلّق هو الإشارة الأكثر أهمية القادمة |
+| **فولوديمير زيلينسكي** | رئيس أوكرانيا | الموقِّع المشارك على اتفاقية لاهاي ديسمبر 2025 |
+
+---
+
+### 🔮 الأربعة عشر يوماً القادمة — ما الذي يجب متابعته؟
+
+| التاريخ / النافذة | المُحفِّز | التأثير |
+|-------------------|----------|---------|
+| الربع الثاني 2026 | **رأي Lagrådet في KU33/KU32** | تحديث بايزي: لغة صارمة ⇒ R2 ↓ 4؛ صمت ⇒ R2 ↑ 4 |
+| مايو–يونيو 2026 | **التصويت الجلسوي (قرار مؤجَّل)** بشأن KU33/KU32 | تأكيد القراءة الأولى |
+| أواخر مايو / يونيو 2026 | **التصويت الجلسوي على HD03231 / HD03232** | الانضمام للمحكمة + التعويضات |
+| مستمر | **نشرات SÄPO للأمن الإلكتروني/الهجين** | مؤشرات قيادية لوضع الموقف الروسي |
+| النصف الثاني 2026 | **البيان المشترك لمنظمات حرية الصحافة (SJF, TU, Utgivarna)** | يُرسّخ سجل التفسير لـ "formellt tillförd bevisning" |
+| 13 سبتمبر 2026 | **الانتخابات البرلمانية السويدية** | تشكيل Riksdag الجديد ⇒ آفاق القراءة الثانية لـ KU33 |
+
+---
+
+### ⚠️ ثقة المحلل — تقييم ذاتي صريح
+
+| البُعد | الثقة | ملاحظات |
+|--------|:-----:|---------|
+| اختيار القصة الرئيسية (صحيح DIW) | **مرتفعة** | تم تطبيق منهجية DIW v1.0؛ تحليل الحساسية يؤكد المرتبة الأولى |
+| اكتمال التغطية | **مرتفعة** | جميع الوثائق الـ 6 ذات الوزن ≥ 5.0 مغطّاة |
+| توقعات التصويت متعدد الأحزاب (القراءة الأولى) | **مرتفعة** | أنماط راسخة؛ سجل اللجنة واضح |
+| توقعات التصويت متعدد الأحزاب (**القراءة الثانية**) | **متوسطة** | يعتمد على نتيجة انتخابات 2026 — غموض جوهري |
+| التنبؤ بتفسير "formellt tillförd bevisning" | **متوسطة** | هشاشة تفسيرية؛ ثلاثة مواقف محتملة موثّقة |
+| حجم الرد الروسي في الحرب الهجينة | **متوسطة** | النمط التاريخي يشير إلى ارتفاع، لكن التوقيت الدقيق غير مؤكد |
+| موقف الإدارة الأمريكية من المحكمة | **منخفضة** | تصريحات علنية غامضة؛ تحوّل محتمل |
+
+---
+
+### 📎 الروابط التقاطعية
+
+[README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/README.md) · [الاصطناع](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md) · [الأهمية](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) · [المخاطر](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) · [التهديدات](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) · [أصحاب المصلحة](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/stakeholder-perspectives.md) · [السيناريوهات](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md) · [المقارن](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/comparative-international.md) · [الروابط التقاطعية](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/cross-reference-map.md) · [التصنيف](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/classification-results.md) · [التأمل المنهجي](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/methodology-reflection.md)
+
+---
+
+**التصنيف**: عام · **المراجعة التالية**: 2026-04-24
+<!-- source-sha: a7f00baff9cb6b920c7f514f09a7eee674faed30 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief_da.md -->
+
+<p align="center">
+  <em>Ensidet beslutstagebriefing for nyhedsredaktører, politiske rådgivere og senioranalytikere</em>
+</p>
+
+| Felt | Værdi |
+|------|-------|
+| **BRIEF-ID** | BRF-2026-04-17-1434 |
+| **Klassificering** | Offentlig · Læsetid ≤ 3 minutter |
+| **Læs inden** | Enhver redaktionel, politisk eller investeringsbeslutning baseret på denne kørsel |
+| **Beslutsperspektiv** | 24 timer / 2 uger / efter valget 2026 |
+
+---
+
+### 🧭 BLUF (Bundlinjen op foran)
+
+**Sveriges Konstitutionsudvalg fremsatte to grundlovsændringer (HD01KU32 + HD01KU33) den 17. april 2026 — den første substantielle indsnævring af *Tryckfrihetsförordningen* (1766) inden for det digitale bevisdomæne i årevis. Da en grundlovsændring kræver to enslydende Riksdag-stemmer over et valg, bliver valgkampen i september 2026 en de facto-folkeafstemning om pressefrihedstransparens.** I det samme 24-timersvindue lagde udenrigsminister Maria Malmer Stenergard og statsminister Ulf Kristersson Sveriges tiltrædelse til Specialtribunalen for aggressionsforbrydelse mod Ukraine (HD03231) og den Internationale Kompensationskommission (HD03232) frem — den første aggressionsforbrydelsestribunal siden Nürnberg. Klyngen afslører en koordineret præ-valglovgivningssprint inden for demokratisk infrastruktur, udenrigspolitisk normentreprenørskab, boligmarkedsintegritet og livskvalitetsderegulering. `[HØJ]`
+
+---
+
+### 🎯 Tre beslutninger dette briefing understøtter
+
+| Beslutning | Bevisgrundlag | Tidsvindue |
+|------------|--------------|------------:|
+| **Redaktionel rubrikvalg** | [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) §Publiceringsbeslutning | Øjeblikkelig |
+| **NGO-engagementsposition for pressefrihed** | [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) R2 · [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) S4 × T1 | Inden Lagrådets yttrande (kv. 2 2026) |
+| **Trusselsovervågning for Rusland-position** | [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) T6 · Dødskæde §3 | Løbende, forhøjet niveau efter afstemning |
+
+---
+
+### 📐 Hvad læsere behøver at vide på 60 sekunder
+
+1. **Tophistorien er KU33-grundlovsændringen.** Indsnævrer "allmän handling"-status for digitalt materiale beslaglagt ved husrannsakan medmindre det er *formellt tillförd bevisning*. Det fortolkningsmæssige omfang af den frase er den **strategiske tyngdepunkt**. `[HØJ]`
+2. **Ukraine-tribunalen og kompensationskommissionen er ligeværdigt fremtrædende.** Globalt nyhedsværdi højt; ingen direkte svensk finansiel byrde; næsten universel tværpartipolitisk konsensus (≈ 349 parlamentsmedlemmer). `[HØJ]`
+3. **To-læsningsreglen gør valgkampen 2026 til det afgørende øjeblik.** V/MP forventes "Imod" ved anden læsning; S-ledelsens position er det afgørende signal. `[HØJ]`
+4. **Prioriterede risici**: R1 Russisk hybridgengældelse (16/25); R2 KU33 snæver tolkning (12/25); R3 USA ikke-samarbejde om tribunalen (12/25); R5 KU33 kampagnevåbengørelse (12/25). `[HØJ]`
+5. **Dækningskrav opfyldt.** Alle seks dokumenter med vægtet signifikans ≥ 5 er dækket i den offentliggjorte artikel. `[HØJ]`
+
+---
+
+### 🎭 Navngivne aktører at holde øje med
+
+| Aktør | Rolle | Hvorfor de betyder noget nu |
+|-------|-------|-----------------------------|
+| **Ulf Kristersson (M, statsminister)** | Regeringsleder, Ukraine-medunderskriver | Politisk ejer af både det konstitutionelle og udenrigspolitiske pakke |
+| **Maria Malmer Stenergard (M, udenrigsminister)** | Tribunalarkitekt | Forfatter til Nürnberg-framing; normentreprenørskabskapital |
+| **Gunnar Strömmer (M, justitsminister)** | KU33 efterforskningsintegritetsfortaler | Definerer tolkning af "formellt tillförd bevisning" i praksis |
+| **Magdalena Andersson (S, partileder)** | Oppositionsleder | Hendes position om KU33 afgør koalitionen ved anden læsning |
+| **Johan Pehrson (L, partileder)** | Liberal identitet | Koalitionspartner mest pressefriheds-sensitiv |
+| **Nooshi Dadgostar (V)** | V-leder | Kampagnestemme mod KU33 |
+| **Daniel Helldén (MP, partiets talsmand)** | MP-leder | Grundlovsbeskyttelsesfortaler |
+| **Lagrådet** | Konstitutionel gennemgang | Afventende yttrande er det enkelt vigtigste kommende signal |
+| **Volodymyr Zelensky** | Ukraines præsident | Haag-konventionen medunderskriver december 2025 |
+
+---
+
+### 🔮 De næste 14 dage — Hvad skal følges
+
+| Dato / Vindue | Udløser | Indvirkning |
+|---------------|---------|-------------|
+| Kv. 2 2026 | **Lagrådets yttrande om KU33/KU32** | Bayesiansk opdatering: streng sprog ⇒ R2 ↓ 4; stille ⇒ R2 ↑ 4 |
+| Maj–jun 2026 | **Kammervote (vilende beslutning)** om KU33/KU32 | Førstegangsbekræftelse |
+| Sen maj / jun 2026 | **Kammervote om HD03231 / HD03232** | Tribunal- + erstatningstilslutning |
+| Løbende | **SÄPO cyber/hybridbulletiner** | Rusland-positionens ledende indikatorer |
+| H2 2026 | **Pressefriheds-NGO fælles remissvar (SJF, TU, Utgivarna)** | Fastlægger fortolkningsrekord for "formellt tillförd bevisning" |
+| 13. sep 2026 | **Svensk parlamentsvalg** | Ny Riksdag-sammensætning ⇒ KU33 anden-læsningsudsigter |
+
+---
+
+### ⚠️ Analytikertillid — Ærlig selvvurdering
+
+| Dimension | Tillid | Bemærkninger |
+|-----------|:------:|-------------|
+| Tophistorievalg (DIW-korrekt) | **HØJ** | DIW v1.0-metodologi anvendt; følsomhedsanalyse bekræfter toprangering |
+| Dækningsfuldstændighed | **HØJ** | Alle 6 dokumenter med vægtet ≥ 5,0 dækket |
+| Tværpartipolitisk afstemningsprojektion (første læsning) | **HØJ** | Etablerede mønstre; udvalgsrekord klart |
+| Tværpartipolitisk afstemningsprojektion (**anden** læsning) | **MIDDEL** | Afhænger af valgresultatet 2026 — iboende usikkerhed |
+| Prognose for tolkning af "formellt tillförd bevisning" | **MIDDEL** | Tolkningsusikker; tre trolige positioner dokumenteret |
+| Russisk hybridkrigsgenkældelses omfang | **MIDDEL** | Historisk mønster tyder på stigning, men præcis timing er usikker |
+| USA-administrationens tribunalposition | **LAV** | Offentlige udtalelser tvetydige; holdningsskifte muligt |
+
+---
+
+### 📎 Krydshenviser
+
+[README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/README.md) · [Syntese](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md) · [Signifikans](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) · [Risiko](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) · [Trussel](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) · [Interessenter](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/stakeholder-perspectives.md) · [Scenarier](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md) · [Komparativ](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/comparative-international.md) · [Krydsreferencer](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/cross-reference-map.md) · [Klassificering](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/classification-results.md) · [Metoderefleksion](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/methodology-reflection.md)
+
+---
+
+**Klassificering**: Offentlig · **Næste gennemgang**: 2026-04-24
+<!-- source-sha: a7f00baff9cb6b920c7f514f09a7eee674faed30 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief_de.md -->
+
+<p align="center">
+  <em>Einseitiges Entscheidungsträger-Briefing für Nachrichtenredakteure, politische Berater und leitende Analysten</em>
+</p>
+
+| Feld | Wert |
+|------|------|
+| **BRIEF-ID** | BRF-2026-04-17-1434 |
+| **Klassifizierung** | Öffentlich · Lesezeit ≤ 3 Minuten |
+| **Vor dem Lesen** | Jede redaktionelle, politische oder Investitionsentscheidung auf Basis dieser Analyse |
+| **Entscheidungshorizont** | 24 Std. / 2 Wochen / nach der Wahl 2026 |
+
+---
+
+### 🧭 BLUF (Fazit zuerst)
+
+**Der schwedische Verfassungsausschuss brachte am 17. April 2026 zwei Verfassungsänderungsanträge vor (HD01KU32 + HD01KU33) — die erste substantielle Einschränkung der *Tryckfrihetsförordningen* (1766) im Bereich digitaler Beweise seit Jahren. Da eine Verfassungsänderung zwei identische Riksdag-Abstimmungen über eine Wahl hinaus erfordert, wird der Wahlkampf im September 2026 zu einem faktischen Referendum über Pressefreiheitstransparenz.** Im gleichen 24-Stunden-Fenster legten Außenministerin Maria Malmer Stenergard und Premierminister Ulf Kristersson Schwedens Beitritt zum Sondertribunal für das Verbrechen der Aggression gegen die Ukraine (HD03231) und zur Internationalen Entschädigungskommission (HD03232) vor — das erste Aggressionsverbrechen-Tribunal seit Nürnberg. Das Cluster offenbart einen koordinierten Vorwahl-Gesetzgebungssprint in den Bereichen demokratische Infrastruktur, außenpolitisches Normentrepreneurship, Wohnmarktintegrität und Lebensqualitätsderegulierung. `[HOCH]`
+
+---
+
+### 🎯 Drei Entscheidungen, die dieses Briefing unterstützt
+
+| Entscheidung | Beweisgrundlage | Zeitfenster |
+|--------------|-----------------|------------:|
+| **Redaktionelle Titelauswahl** | [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) §Veröffentlichungsentscheidung | Sofort |
+| **Engagement-Haltung der Pressefreiheits-NGOs** | [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) R2 · [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) S4 × T1 | Vor dem Lagrådet-Gutachten (Q2 2026) |
+| **Bedrohungsüberwachung der Russland-Position** | [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) T6 · Tötungskette §3 | Laufend, erhöhte Stufe nach Abstimmung |
+
+---
+
+### 📐 Was Leser in 60 Sekunden wissen müssen
+
+1. **Die Hauptstory ist die KU33-Verfassungsänderung.** Schränkt den Status "allmän handling" für digitales Material ein, das bei Hausdurchsuchungen beschlagnahmt wurde, es sei denn, es handelt sich um *formellt tillförd bevisning*. Der Interpretationsumfang dieser Phrase ist der **strategische Schwerpunkt**. `[HOCH]`
+2. **Das Ukraine-Tribunal und die Entschädigungskommission sind gleichwertig prominent.** Globaler Nachrichtenwert hoch; keine direkten schwedischen Fiskallasten; nahezu universeller parteiübergreifender Konsens (≈ 349 Abgeordnete). `[HOCH]`
+3. **Die Zwei-Lesungs-Regel macht den Wahlkampf 2026 zum entscheidenden Moment.** V/MP werden voraussichtlich in zweiter Lesung "Dagegen" stimmen; die Position der S-Führung ist das ausschlaggebende Signal. `[HOCH]`
+4. **Prioritätsrisiken**: R1 Russische Hybridvergeltung (16/25); R2 KU33 enge Interpretation (12/25); R3 Nicht-Kooperation der USA beim Tribunal (12/25); R5 KU33 Kampagnenwaffeneinsatz (12/25). `[HOCH]`
+5. **Abdeckungspflicht erfüllt.** Alle sechs Dokumente mit gewichteter Bedeutung ≥ 5 sind im veröffentlichten Artikel abgedeckt. `[HOCH]`
+
+---
+
+### 🎭 Benannte Akteure im Blick
+
+| Akteur | Rolle | Warum sie jetzt wichtig sind |
+|--------|-------|------------------------------|
+| **Ulf Kristersson (M, Premierminister)** | Regierungschef, Ukraine-Mitunterzeichner | Politischer Eigentümer beider verfassungsrechtlichen und außenpolitischen Pakete |
+| **Maria Malmer Stenergard (M, Außenministerin)** | Tribunalarchitektin | Verfasserin der Nürnberg-Rahmung; Normentrepreneurship-Kapital |
+| **Gunnar Strömmer (M, Justizminister)** | KU33 Ermittlungsintegrität-Verfechter | Definiert Interpretation von "formellt tillförd bevisning" in der Praxis |
+| **Magdalena Andersson (S, Parteivorsitzende)** | Oppositionsführerin | Ihre Haltung zu KU33 entscheidet die Koalition in der zweiten Lesung |
+| **Johan Pehrson (L, Parteivorsitzender)** | Liberale Identität | Koalitionspartner mit höchster Pressefreiheitssensibilität |
+| **Nooshi Dadgostar (V)** | V-Vorsitzende | Wahlkampfstimme gegen KU33 |
+| **Daniel Helldén (MP, Parteisprecher)** | MP-Vorsitzender | Verfechter des Grundgesetzschutzes |
+| **Lagrådet** | Verfassungsüberprüfung | Ausstehendes Gutachten ist das einzeln wichtigste kommende Signal |
+| **Volodymyr Zelensky** | Präsident der Ukraine | Mitunterzeichner des Haager Übereinkommens Dezember 2025 |
+
+---
+
+### 🔮 Die nächsten 14 Tage — Was zu beobachten ist
+
+| Datum / Fenster | Auslöser | Auswirkung |
+|-----------------|---------|-----------|
+| Q2 2026 | **Lagrådet-Gutachten zu KU33/KU32** | Bayesianische Aktualisierung: strenge Sprache ⇒ R2 ↓ 4; still ⇒ R2 ↑ 4 |
+| Mai–Jun 2026 | **Kammerabstimmung (aufgeschobener Beschluss)** zu KU33/KU32 | Erstlesung-Bestätigung |
+| Spät-Mai / Jun 2026 | **Kammerabstimmung zu HD03231 / HD03232** | Tribunal- + Entschädigungsbeitritt |
+| Laufend | **SÄPO Cyber-/Hybridbulletins** | Führende Indikatoren der Russland-Position |
+| H2 2026 | **Gemeinsame Stellungnahme der Pressefreiheits-NGOs (SJF, TU, Utgivarna)** | Legt Interpretationsrekord für "formellt tillförd bevisning" fest |
+| 13. Sep 2026 | **Schwedische Parlamentswahl** | Neue Riksdag-Zusammensetzung ⇒ KU33 Zweitlesung-Aussichten |
+
+---
+
+### ⚠️ Analysten-Vertrauen — Ehrliche Selbsteinschätzung
+
+| Dimension | Vertrauen | Anmerkungen |
+|-----------|:---------:|------------|
+| Leitstory-Auswahl (DIW-korrekt) | **HOCH** | DIW v1.0-Methodik angewendet; Sensitivitätsanalyse bestätigt Spitzenrang |
+| Abdeckungsvollständigkeit | **HOCH** | Alle 6 Dokumente mit gewichtetem ≥ 5,0 abgedeckt |
+| Parteiübergreifende Abstimmungsprojektion (erste Lesung) | **HOCH** | Etablierte Muster; Ausschussprotokoll klar |
+| Parteiübergreifende Abstimmungsprojektion (**zweite** Lesung) | **MITTEL** | Abhängig vom Wahlergebnis 2026 — inhärente Unsicherheit |
+| Prognose der Interpretation von "formellt tillförd bevisning" | **MITTEL** | Interpretatorisch fragil; drei plausible Haltungen dokumentiert |
+| Umfang der russischen Hybrider-Kriegs-Vergeltung | **MITTEL** | Historisches Muster deutet auf Steigerung hin, genaues Timing unsicher |
+| Tribunal-Position der US-Administration | **NIEDRIG** | Öffentliche Aussagen zweideutig; Positionswechsel möglich |
+
+---
+
+### 📎 Querverweise
+
+[README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/README.md) · [Synthese](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md) · [Bedeutung](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) · [Risiko](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) · [Bedrohung](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) · [Stakeholder](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/stakeholder-perspectives.md) · [Szenarien](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md) · [Komparativ](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/comparative-international.md) · [Querverweise](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/cross-reference-map.md) · [Klassifizierung](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/classification-results.md) · [Methodenreflexion](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/methodology-reflection.md)
+
+---
+
+**Klassifizierung**: Öffentlich · **Nächste Überprüfung**: 2026-04-24
+<!-- source-sha: a7f00baff9cb6b920c7f514f09a7eee674faed30 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief_es.md -->
+
+<p align="center">
+  <em>Informe de una página para responsables de decisiones: editores de noticias, asesores políticos y analistas senior</em>
+</p>
+
+| Campo | Valor |
+|-------|-------|
+| **BRIEF-ID** | BRF-2026-04-17-1434 |
+| **Clasificación** | Público · Tiempo de lectura ≤ 3 minutos |
+| **Leer antes de** | Cualquier decisión editorial, política o de inversión basada en este análisis |
+| **Horizonte de decisión** | 24 h / 2 semanas / postelecciones 2026 |
+
+---
+
+### 🧭 BLUF (Conclusión al Inicio)
+
+**El Comité Constitucional sueco avanzó dos enmiendas a la Constitución (HD01KU32 + HD01KU33) el 17 de abril de 2026 — el primer estrechamiento sustancial de la *Tryckfrihetsförordningen* (1766) en el ámbito de la evidencia digital en años. Dado que una enmienda constitucional requiere dos votos idénticos del Riksdag abarcando una elección general, la campaña electoral de septiembre de 2026 se convierte en un referéndum de facto sobre la transparencia de la libertad de prensa.** En el mismo período de 24 horas, la ministra de Asuntos Exteriores Maria Malmer Stenergard y el primer ministro Ulf Kristersson presentaron la adhesión de Suecia al Tribunal Especial para el Crimen de Agresión contra Ucrania (HD03231) y a la Comisión Internacional de Compensación (HD03232) — el primer tribunal por crimen de agresión desde Núremberg. El conjunto revela un sprint legislativo preelectoral coordinado en las áreas de infraestructura democrática, emprendimiento normativo en política exterior, integridad del mercado inmobiliario y desregulación de la calidad de vida. `[ALTO]`
+
+---
+
+### 🎯 Tres decisiones que este informe apoya
+
+| Decisión | Base de evidencia | Ventana de acción |
+|----------|-------------------|:-----------------:|
+| **Selección editorial de titular** | [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) §Decisión de publicación | Inmediato |
+| **Postura de compromiso de ONG de libertad de prensa** | [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) R2 · [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) S4 × T1 | Antes del dictamen del Lagrådet (T2 2026) |
+| **Monitoreo de amenazas de la posición rusa** | [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) T6 · Cadena de eliminación §3 | Continuo, nivel elevado tras votación |
+
+---
+
+### 📐 Lo que los lectores necesitan saber en 60 segundos
+
+1. **La principal historia es la enmienda constitucional KU33.** Restringe el estatus de "allmän handling" para material digital incautado en registros domiciliarios a menos que sea *formellt tillförd bevisning*. El alcance interpretativo de esa frase es el **centro de gravedad estratégico**. `[ALTO]`
+2. **El tribunal de Ucrania y la comisión de compensación son igualmente prominentes.** Valor noticioso global alto; sin carga fiscal directa para Suecia; consenso transpartidario casi universal (≈ 349 diputados). `[ALTO]`
+3. **La regla de doble lectura hace de la campaña de 2026 el momento decisivo.** Se espera que V/MP voten "En contra" en la segunda lectura; la posición de la dirección del S es la señal determinante. `[ALTO]`
+4. **Riesgos prioritarios**: R1 Represalia híbrida rusa (16/25); R2 Interpretación restrictiva de KU33 (12/25); R3 No cooperación de EE.UU. en el tribunal (12/25); R5 Weaponización de KU33 en campaña (12/25). `[ALTO]`
+5. **Regla de cobertura completa cumplida.** Los seis documentos con significación ponderada ≥ 5 están cubiertos en el artículo publicado. `[ALTO]`
+
+---
+
+### 🎭 Actores nombrados a seguir
+
+| Actor | Rol | Por qué importan ahora |
+|-------|-----|------------------------|
+| **Ulf Kristersson (M, primer ministro)** | Jefe de gobierno, co-firmante de Ucrania | Propietario político de los paquetes constitucional y de política exterior |
+| **Maria Malmer Stenergard (M, ministra de Asuntos Exteriores)** | Arquitecta del tribunal | Autora del encuadre de Núremberg; capital de emprendimiento normativo |
+| **Gunnar Strömmer (M, ministro de Justicia)** | Defensor de la integridad investigativa KU33 | Define la interpretación de "formellt tillförd bevisning" en la práctica |
+| **Magdalena Andersson (S, líder del partido)** | Líder de la oposición | Su posición sobre KU33 decidirá la coalición en segunda lectura |
+| **Johan Pehrson (L, líder del partido)** | Identidad liberal | Socio de coalición más sensible a la libertad de prensa |
+| **Nooshi Dadgostar (V)** | Líder de V | Voz de campaña contra KU33 |
+| **Daniel Helldén (MP, portavoz)** | Líder de MP | Defensor de la protección constitucional |
+| **Lagrådet** | Revisión constitucional | El dictamen pendiente es la señal individual más importante próxima |
+| **Volodymyr Zelensky** | Presidente de Ucrania | Co-firmante del Convenio de La Haya diciembre 2025 |
+
+---
+
+### 🔮 Próximos 14 días — Qué vigilar
+
+| Fecha / Ventana | Desencadenante | Impacto |
+|-----------------|----------------|---------|
+| T2 2026 | **Dictamen del Lagrådet sobre KU33/KU32** | Actualización bayesiana: lenguaje estricto ⇒ R2 ↓ 4; silencio ⇒ R2 ↑ 4 |
+| Mayo–Jun 2026 | **Votación en cámara (decisión diferida)** sobre KU33/KU32 | Confirmación en primera lectura |
+| Finales de mayo / Jun 2026 | **Votación en cámara sobre HD03231 / HD03232** | Adhesión tribunal + reparaciones |
+| Continuo | **Boletines cibernéticos/híbridos de la SÄPO** | Indicadores adelantados de la posición rusa |
+| S2 2026 | **Declaración conjunta de ONG de libertad de prensa (SJF, TU, Utgivarna)** | Establece el precedente interpretativo de "formellt tillförd bevisning" |
+| 13 Sep 2026 | **Elecciones generales suecas** | Nueva composición del Riksdag ⇒ perspectivas de segunda lectura de KU33 |
+
+---
+
+### ⚠️ Confianza del analista — Autoevaluación honesta
+
+| Dimensión | Confianza | Notas |
+|-----------|:---------:|-------|
+| Selección de historia principal (DIW-correcta) | **ALTA** | Metodología DIW v1.0 aplicada; análisis de sensibilidad confirma la clasificación superior |
+| Exhaustividad de la cobertura | **ALTA** | Los 6 documentos con ponderación ≥ 5,0 cubiertos |
+| Proyección de voto interpartidario (primera lectura) | **ALTA** | Patrones establecidos; registro del comité claro |
+| Proyección de voto interpartidario (**segunda** lectura) | **MEDIO** | Depende del resultado electoral de 2026 — incertidumbre inherente |
+| Predicción de la interpretación de "formellt tillförd bevisning" | **MEDIO** | Frágil interpretativamente; tres posturas plausibles documentadas |
+| Magnitud de la respuesta de guerra híbrida rusa | **MEDIO** | El patrón histórico sugiere aumento, pero el timing exacto es incierto |
+| Posición de la administración estadounidense sobre el tribunal | **BAJA** | Declaraciones públicas ambiguas; posible cambio de postura |
+
+---
+
+### 📎 Referencias cruzadas
+
+[README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/README.md) · [Síntesis](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md) · [Significación](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) · [Riesgo](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) · [Amenaza](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) · [Partes interesadas](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/stakeholder-perspectives.md) · [Escenarios](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md) · [Comparativo](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/comparative-international.md) · [Referencias cruzadas](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/cross-reference-map.md) · [Clasificación](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/classification-results.md) · [Reflexión metodológica](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/methodology-reflection.md)
+
+---
+
+**Clasificación**: Público · **Próxima revisión**: 2026-04-24
+<!-- source-sha: a7f00baff9cb6b920c7f514f09a7eee674faed30 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief_fi.md -->
+
+<p align="center">
+  <em>Yksisivuinen päätöksentekijätiedote uutistoimitusten päätoimittajille, poliittisille neuvonantajille ja vanhemmille analyytikoille</em>
+</p>
+
+| Kenttä | Arvo |
+|--------|------|
+| **BRIEF-ID** | BRF-2026-04-17-1434 |
+| **Luokittelu** | Julkinen · Lukuaika ≤ 3 minuuttia |
+| **Lue ennen** | Mitä tahansa tähän analyysiin perustuvaa toimituksellista, poliittista tai sijoituspäätöstä |
+| **Päätöshorisontti** | 24 h / 2 viikkoa / vuoden 2026 vaalit |
+
+---
+
+### 🧭 BLUF (Ydinviesti ensin)
+
+**Ruotsin perustuslakivaliokunta edisti kahta perustuslakimuutosta (HD01KU32 + HD01KU33) 17. huhtikuuta 2026 — ensimmäinen merkittävä *Tryckfrihetsförordningenin* (1766) kaventaminen digitaalisen todistusaineiston alueella vuosiin. Koska perustuslakimuutos vaatii kaksi samansisältöistä valtiopäiväpäätöstä vaalien yli, syyskuun 2026 vaalikampanjasta tulee tosiasiallinen kansanäänestys lehdistönvapausläpinäkyvyydestä.** Samassa 24 tunnin ikkunassa ulkoministeri Maria Malmer Stenergard ja pääministeri Ulf Kristersson esittivät Ruotsin liittymistä Ukrainaa vastaan tehtyjen aggressiorikosten erityistuomioistuimeen (HD03231) ja kansainväliseen korvauskomissioon (HD03232) — ensimmäinen aggressiorikostribunaali sitten Nürnbergin. Kokonaisuus paljastaa koordinoidun vaaleja edeltävän lainsäätämispyrähdyksen demokraattisen infrastruktuurin, ulkopoliittisen normiyrittäjyyden, asuntomarkkinoiden eheyden ja elämänlaadun sääntelyn purkamisen alueilla. `[KORKEA]`
+
+---
+
+### 🎯 Kolme päätöstä, joita tämä tiedote tukee
+
+| Päätös | Todistusperusta | Aikaikkuna |
+|--------|----------------|----------:|
+| **Toimituksellinen uutisvalinta** | [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) §Julkaisupäätös | Välitön |
+| **Lehdistönvapaus-NGO:n sitoutumisasema** | [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) R2 · [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) S4 × T1 | Ennen Lagrådets yttrande -lausuntoa (Q2 2026) |
+| **Venäjä-aseman uhkaseuranta** | [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) T6 · Tappoketju §3 | Jatkuva, korotettu taso äänestyksen jälkeen |
+
+---
+
+### 📐 Mitä lukijoiden täytyy tietää 60 sekunnissa
+
+1. **Tärkein asia on KU33-perustuslakimuutos.** Kaventaa "allmän handling" -statuksen kotietsinnässä takavarikoituun digitaaliseen materiaaliin, ellei se ole *formellt tillförd bevisning*. Tuon ilmaisun tulkintarajaus on **strateginen painopiste**. `[KORKEA]`
+2. **Ukraina-tuomioistuin ja korvauskomissio ovat yhtä merkittäviä.** Kansainvälinen uutisarvo korkea; ei suoria Ruotsin taloudellisia rasituksia; lähes yleinen puoluerajat ylittävä yksimielisyys (≈ 349 kansanedustajaa). `[KORKEA]`
+3. **Kaksinkertaisen käsittelyn sääntö tekee vuoden 2026 vaaleista ratkaisevan hetken.** V/MP:n odotetaan äänestävän "Vastaan" toisessa käsittelyssä; S:n johdon asema on ratkaiseva signaali. `[KORKEA]`
+4. **Prioriteettiriskit**: R1 Venäjän hybridikostoiskut (16/25); R2 KU33 suppea tulkinta (12/25); R3 USA:n yhteistyöhaluttomuus tribunaalin suhteen (12/25); R5 KU33 vaalikampanjaaseistaminen (12/25). `[KORKEA]`
+5. **Kattavuusvaatimus täytetty.** Kaikki kuusi asiakirjaa, joiden painotettu merkittävyys ≥ 5, on käsitelty julkaistussa artikkelissa. `[KORKEA]`
+
+---
+
+### 🎭 Nimetyt toimijat seurantalistan
+
+| Toimija | Rooli | Miksi merkittävä nyt |
+|---------|-------|---------------------|
+| **Ulf Kristersson (M, pääministeri)** | Hallituksen johtaja, Ukraina-kanssallekijoittaja | Poliittinen omistaja molemmille perustuslaillisille ja ulkopoliittisille paketeille |
+| **Maria Malmer Stenergard (M, ulkoministeri)** | Tuomioistuinarkkitehti | Nürnberg-kehystyksen tekijä; normatiivisen yrittäjyyden pääoma |
+| **Gunnar Strömmer (M, oikeusministeri)** | KU33 tutkinnan eheyden puolestapuhuja | Määrittelee "formellt tillförd bevisning" -tulkinnan käytännössä |
+| **Magdalena Andersson (S, puoluejohtaja)** | Oppositiojohtaja | Hänen kantansa KU33:een ratkaisee koalition toisessa käsittelyssä |
+| **Johan Pehrson (L, puoluejohtaja)** | Liberaali identiteetti | Koalitiopartnerista herkein lehdistönvapaudelle |
+| **Nooshi Dadgostar (V)** | V:n johtaja | Vaalikampanjan ääni KU33:a vastaan |
+| **Daniel Helldén (MP, puoluesihteeri)** | MP:n johtaja | Perustuslain suojan puolestapuhuja |
+| **Lagrådet** | Perustuslakiarvio | Odottava yttrande on yksittäisesti tärkein tuleva signaali |
+| **Volodymyr Zelensky** | Ukrainan presidentti | Haagin yleissopimuksen kanssallekijoittaja joulukuu 2025 |
+
+---
+
+### 🔮 Seuraavat 14 päivää — Mitä seurataan
+
+| Päivämäärä / Ikkuna | Laukaisin | Vaikutus |
+|---------------------|----------|---------|
+| Q2 2026 | **Lagrådets yttrande KU33/KU32:sta** | Bayesilainen päivitys: tiukka kieli ⇒ R2 ↓ 4; hiljainen ⇒ R2 ↑ 4 |
+| Touko–kesä 2026 | **Täysistuntoäänestys (lykätty päätös)** KU33/KU32:sta | Ensimmäisen käsittelyn vahvistus |
+| Myöhäinen touko / kesä 2026 | **Täysistuntoäänestys HD03231:stä / HD03232:sta** | Tuomioistuimen + korvausten liittyminen |
+| Jatkuva | **SÄPO:n kyber/hybridibulletinit** | Venäjä-aseman johtavat indikaattorit |
+| H2 2026 | **Lehdistönvapaus-NGO:n yhteinen lausuntopyyntö (SJF, TU, Utgivarna)** | Vahvistaa "formellt tillförd bevisning" -tulkintatulkinnan |
+| 13. syys 2026 | **Ruotsin eduskuntavaalit** | Uusi valtiopäivien kokoonpano ⇒ KU33 toisen käsittelyn näkymät |
+
+---
+
+### ⚠️ Analyytikon luottamus — Rehellinen itsearviointi
+
+| Ulottuvuus | Luottamus | Huomiot |
+|------------|:---------:|--------|
+| Pääuutisvalinta (DIW-oikea) | **KORKEA** | DIW v1.0 -metodologia sovellettu; herkkyysanalyysi vahvistaa kärkisijoituksen |
+| Kattavuuden täydellisyys | **KORKEA** | Kaikki 6 asiakirjaa, joiden painotettu ≥ 5,0, käsitelty |
+| Puoluerajat ylittävä äänestysprojektio (ensimmäinen käsittely) | **KORKEA** | Vakiintuneet mallit; valiokunnan ennätys selvä |
+| Puoluerajat ylittävä äänestysprojektio (**toinen** käsittely) | **KESKITASO** | Riippuu vuoden 2026 vaaleista — sisäinen epävarmuus |
+| "Formellt tillförd bevisning" -tulkinnan ennustaminen | **KESKITASO** | Tulkinnallisesti epävarma; kolme todennäköistä asemaa dokumentoitu |
+| Venäjän hybridisodankäyntivasteen suuruusluokka | **KESKITASO** | Historiallinen malli viittaa kasvuun, mutta tarkka ajoitus epävarma |
+| USA:n hallinnon tribunaaliasema | **MATALA** | Julkiset lausunnot epäselvät; muutos mahdollinen |
+
+---
+
+### 📎 Ristiviittaukset
+
+[README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/README.md) · [Synteesi](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md) · [Merkittävyys](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) · [Riski](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) · [Uhka](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) · [Sidosryhmät](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/stakeholder-perspectives.md) · [Skenaariot](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md) · [Vertaileva](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/comparative-international.md) · [Ristiviittaukset](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/cross-reference-map.md) · [Luokittelu](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/classification-results.md) · [Metodologiaheijastus](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/methodology-reflection.md)
+
+---
+
+**Luokittelu**: Julkinen · **Seuraava tarkistus**: 2026-04-24
+<!-- source-sha: a7f00baff9cb6b920c7f514f09a7eee674faed30 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief_fr.md -->
+
+<p align="center">
+  <em>Synthèse d'une page pour décideurs à l'intention des rédacteurs en chef, conseillers politiques et analystes seniors</em>
+</p>
+
+| Champ | Valeur |
+|-------|--------|
+| **BRIEF-ID** | BRF-2026-04-17-1434 |
+| **Classification** | Public · Temps de lecture ≤ 3 minutes |
+| **À lire avant** | Toute décision éditoriale, politique ou d'investissement fondée sur cette analyse |
+| **Horizon décisionnel** | 24 h / 2 semaines / après les élections de 2026 |
+
+---
+
+### 🧭 BLUF (Conclusion d'emblée)
+
+**Le Comité constitutionnel suédois a avancé deux propositions de modification constitutionnelle (HD01KU32 + HD01KU33) le 17 avril 2026 — le premier rétrécissement substantiel de la *Tryckfrihetsförordningen* (1766) dans le domaine des preuves numériques depuis des années. La modification constitutionnelle exigeant deux votes identiques du Riksdag au-delà d'une élection générale, la campagne électorale de septembre 2026 devient un référendum de facto sur la transparence de la liberté de la presse.** Dans la même fenêtre de 24 heures, la ministre des Affaires étrangères Maria Malmer Stenergard et le Premier ministre Ulf Kristersson ont déposé l'adhésion de la Suède au Tribunal spécial pour le crime d'agression contre l'Ukraine (HD03231) et à la Commission internationale d'indemnisation (HD03232) — le premier tribunal pour crime d'agression depuis Nuremberg. L'ensemble révèle un sprint législatif pré-électoral coordonné dans les domaines de l'infrastructure démocratique, de l'entrepreneuriat normatif en politique étrangère, de l'intégrité du marché immobilier et de la dérégulation de la qualité de vie. `[ÉLEVÉ]`
+
+---
+
+### 🎯 Trois décisions que cette synthèse soutient
+
+| Décision | Base probatoire | Fenêtre d'action |
+|----------|-----------------|:----------------:|
+| **Sélection éditoriale de manchette** | [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) §Décision de publication | Immédiat |
+| **Posture d'engagement des ONG de liberté de la presse** | [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) R2 · [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) S4 × T1 | Avant l'avis du Lagrådet (T2 2026) |
+| **Surveillance des menaces liées à la position vis-à-vis de la Russie** | [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) T6 · Chaîne de frappe §3 | En continu, niveau élevé après vote |
+
+---
+
+### 📐 Ce que les lecteurs doivent savoir en 60 secondes
+
+1. **La principale information est l'amendement constitutionnel KU33.** Restreint le statut de "allmän handling" pour le matériel numérique saisi lors de perquisitions à moins qu'il soit *formellt tillförd bevisning*. La portée interprétative de cette expression est le **centre de gravité stratégique**. `[ÉLEVÉ]`
+2. **Le tribunal ukrainien et la commission d'indemnisation sont également proéminents.** Valeur médiatique mondiale élevée ; aucune charge fiscale directe pour la Suède ; consensus presque universel entre partis (≈ 349 membres). `[ÉLEVÉ]`
+3. **La règle des deux lectures fait du Wahlkampf 2026 le moment décisif.** V/MP devrait voter "Contre" en deuxième lecture ; la position de la direction du S est le signal déterminant. `[ÉLEVÉ]`
+4. **Risques prioritaires** : R1 Représailles hybrides russes (16/25) ; R2 Interprétation restrictive de KU33 (12/25) ; R3 Non-coopération des États-Unis au tribunal (12/25) ; R5 Weaponisation de KU33 en campagne (12/25). `[ÉLEVÉ]`
+5. **Règle de couverture complète respectée.** Les six documents avec une pondération de signification ≥ 5 sont couverts dans l'article publié. `[ÉLEVÉ]`
+
+---
+
+### 🎭 Acteurs nommés à surveiller
+
+| Acteur | Rôle | Pourquoi ils sont importants maintenant |
+|--------|------|-----------------------------------------|
+| **Ulf Kristersson (M, Premier ministre)** | Chef du gouvernement, co-signataire Ukraine | Propriétaire politique des deux paquets constitutionnel et de politique étrangère |
+| **Maria Malmer Stenergard (M, ministre des Affaires étrangères)** | Architecte du tribunal | Auteure du cadrage nuremberg ; capital d'entrepreneuriat normatif |
+| **Gunnar Strömmer (M, ministre de la Justice)** | Défenseur de l'intégrité d'enquête KU33 | Définit l'interprétation de "formellt tillförd bevisning" en pratique |
+| **Magdalena Andersson (S, leader du parti)** | Chef de l'opposition | Sa position sur KU33 décidera de la coalition en deuxième lecture |
+| **Johan Pehrson (L, leader du parti)** | Identité libérale | Partenaire de coalition le plus sensible à la liberté de la presse |
+| **Nooshi Dadgostar (V)** | Leader du V | Voix de campagne contre KU33 |
+| **Daniel Helldén (MP, porte-parole)** | Leader du MP | Défenseur de la protection constitutionnelle |
+| **Lagrådet** | Révision constitutionnelle | Avis en attente est le signal unique le plus important à venir |
+| **Volodymyr Zelensky** | Président de l'Ukraine | Co-signataire de la Convention de La Haye décembre 2025 |
+
+---
+
+### 🔮 Les 14 prochains jours — Ce qu'il faut surveiller
+
+| Date / Fenêtre | Déclencheur | Impact |
+|----------------|------------|--------|
+| T2 2026 | **Avis du Lagrådet sur KU33/KU32** | Mise à jour bayésienne : langage strict ⇒ R2 ↓ 4 ; silence ⇒ R2 ↑ 4 |
+| Mai–Juin 2026 | **Vote en chambre (décision différée)** sur KU33/KU32 | Confirmation en première lecture |
+| Fin mai / Juin 2026 | **Vote en chambre sur HD03231 / HD03232** | Adhésion tribunal + réparations |
+| En continu | **Bulletins cyber/hybrides de la SÄPO** | Indicateurs avancés de la position vis-à-vis de la Russie |
+| S2 2026 | **Déclaration conjointe des ONG de liberté de la presse (SJF, TU, Utgivarna)** | Fixe le précédent d'interprétation de "formellt tillförd bevisning" |
+| 13 Sep 2026 | **Élections législatives suédoises** | Nouvelle composition du Riksdag ⇒ perspectives de deuxième lecture de KU33 |
+
+---
+
+### ⚠️ Fiabilité de l'analyste — Auto-évaluation honnête
+
+| Dimension | Confiance | Remarques |
+|-----------|:---------:|----------|
+| Sélection de la principale histoire (DIW-correcte) | **ÉLEVÉE** | Méthodologie DIW v1.0 appliquée ; analyse de sensibilité confirme le top-ranking |
+| Exhaustivité de la couverture | **ÉLEVÉE** | Les 6 documents avec pondération ≥ 5,0 couverts |
+| Projection de vote interpartis (première lecture) | **ÉLEVÉE** | Modèles établis ; enregistrement du comité clair |
+| Projection de vote interpartis (**deuxième** lecture) | **MOYEN** | Dépend du résultat des élections 2026 — incertitude inhérente |
+| Prédiction de l'interprétation de "formellt tillförd bevisning" | **MOYEN** | Fragile sur le plan interprétatif ; trois postures plausibles documentées |
+| Ampleur de la réponse russe en guerre hybride | **MOYEN** | Tendance historique suggère une hausse, mais le timing précis est incertain |
+| Position de l'administration américaine sur le tribunal | **FAIBLE** | Déclarations publiques ambiguës ; changement possible |
+
+---
+
+### 📎 Liens croisés
+
+[README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/README.md) · [Synthèse](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md) · [Significance](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) · [Risque](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) · [Menace](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) · [Parties prenantes](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/stakeholder-perspectives.md) · [Scénarios](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md) · [Comparatif](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/comparative-international.md) · [Références croisées](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/cross-reference-map.md) · [Classification](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/classification-results.md) · [Réflexion méthodologique](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/methodology-reflection.md)
+
+---
+
+<!-- source-sha: a7f00baff9cb6b920c7f514f09a7eee674faed30 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# 📋 תקציר החלטה — מוניטור בזמן אמת 1434
+
+<p align="center">
+  <em>תקציר עמוד אחד למקבלי החלטות: עורכי חדשות, יועצים פוליטיים ואנליסטים בכירים</em>
+</p>
+
+| שדה | ערך |
+|-----|-----|
+| **BRIEF-ID** | BRF-2026-04-17-1434 |
+| **סיווג** | ציבורי · זמן קריאה ≤ 3 דקות |
+| **לקרוא לפני** | כל החלטה עריכתית, פוליטית או השקעתית המבוססת על ניתוח זה |
+| **אופק החלטה** | 24 שעות / שבועיים / לאחר הבחירות 2026 |
+
+---
+
+### 🧭 BLUF (המסקנה קודם)
+
+**ועדת החוקה השוודית קידמה שני הצעות לתיקון חוקתי (HD01KU32 + HD01KU33) ב-17 באפריל 2026 — הצמצום המהותי הראשון של *Tryckfrihetsförordningen* (1766) בתחום הראיות הדיגיטליות מזה שנים. מאחר שתיקון חוקתי מחייב שני הצבעות זהות ב-Riksdag שחוצות בחירות כלליות, קמפיין הבחירות של ספטמבר 2026 הופך לאשור ממשי על שקיפות חופש העיתונות.** באותו חלון של 24 שעות, שרת החוץ מריה מלמר סטנרגורד וראש הממשלה אולף קריסטרסון הגישו את הצטרפות שוודיה לבית הדין המיוחד לעוון התוקפנות נגד אוקראינה (HD03231) ולוועדת הפיצויים הבין-לאומית (HD03232) — בית הדין הראשון לעוון תוקפנות מאז נירנברג. האשכול חושף ספרינט חקיקתי מתואם לפני הבחירות בתחומי תשתיות דמוקרטיות, יזמות נורמות במדיניות חוץ, יושרת שוק הדיור ורגולציה של איכות חיים. `[גבוה]`
+
+---
+
+### 🎯 שלושה החלטות שתקציר זה תומך בהן
+
+| החלטה | בסיס הראיות | חלון פעולה |
+|--------|-------------|:-----------:|
+| **בחירת כותרת עריכתית** | [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) §החלטת פרסום | מיידי |
+| **עמדת מעורבות ארגוני חופש העיתונות** | [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) R2 · [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) S4 × T1 | לפני חוות הדעת של Lagrådet (רבעון 2 2026) |
+| **מעקב איומי עמדת רוסיה** | [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) T6 · שרשרת ההתנקשות §3 | מתמשך, רמה מוגברת לאחר ההצבעה |
+
+---
+
+### 📐 מה שהקוראים צריכים לדעת ב-60 שניות
+
+1. **הסיפור המוביל הוא תיקון החוקה KU33.** מצמצם מעמד "allmän handling" לחומר דיגיטלי שנתפס בחיפוש אלא אם כן מדובר ב-*formellt tillförd bevisning*. הסקופ הפרשני של הביטוי הוא **מרכז הכובד האסטרטגי**. `[גבוה]`
+2. **בית הדין האוקראיני וועדת הפיצויים בולטים באותה מידה.** ערך חדשותי גלובלי גבוה; אין עול פיסקלי ישיר לשוודיה; קונסנזוס רוחבי כמעט אוניברסלי (≈ 349 חברי פרלמנט). `[גבוה]`
+3. **כלל שתי הקריאות הופך את קמפיין 2026 לרגע המכריע.** V/MP צפויים להצביע "נגד" בקריאה השנייה; עמדת הנהגת S היא האות המכריע. `[גבוה]`
+4. **סיכונים בעדיפות**: R1 תגמול הסייבר/היברידי הרוסי (16/25); R2 פרשנות מצמצמת של KU33 (12/25); R3 אי-שיתוף פעולה של ארה"ב עם בית הדין (12/25); R5 הנשקת KU33 בקמפיין (12/25). `[גבוה]`
+5. **כלל הסיקור המלא מולא.** כל ששת המסמכים עם משמעות משוקללת ≥ 5 מכוסים במאמר שפורסם. `[גבוה]`
+
+---
+
+### 🎭 שחקנים בשם למעקב
+
+| שחקן | תפקיד | מדוע חשובים עכשיו |
+|------|--------|-------------------|
+| **אולף קריסטרסון (M, ראש ממשלה)** | ראש הממשלה, שותף חתימה לאוקראינה | הבעלים הפוליטי של שתי החבילות הקונסטיטוציונית ומדיניות החוץ |
+| **מריה מלמר סטנרגורד (M, שרת חוץ)** | אדריכלת בית הדין | מחברת המסגרת הנירנברגית; הון ביזמות נורמות |
+| **גונר סטרוימר (M, שר משפטים)** | סנגור על שלמות חקירה KU33 | מגדיר פרשנות "formellt tillförd bevisning" בפועל |
+| **מגדלנה אנדרסון (S, מנהיגת מפלגה)** | מנהיגת האופוזיציה | עמדתה על KU33 תקבע את הקואליציה בקריאה השנייה |
+| **יוהן פרסון (L, מנהיג מפלגה)** | זהות ליברלית | שותף קואליציה הרגיש ביותר לחופש עיתונות |
+| **נושי דדגוסטר (V)** | מנהיגת V | קול קמפיין נגד KU33 |
+| **דניאל הלדן (MP, דובר)** | מנהיג MP | סנגור על הגנה חוקתית |
+| **Lagrådet** | סקירה חוקתית | חוות הדעת הממתינה היא האות הבודד החשוב ביותר שיגיע |
+| **וולודימיר זלנסקי** | נשיא אוקראינה | חתימה שותפה על אמנת האג דצמבר 2025 |
+
+---
+
+### 🔮 14 הימים הקרובים — מה לעקוב אחריו
+
+| תאריך / חלון | טריגר | השפעה |
+|--------------|-------|-------|
+| רבעון 2 2026 | **חוות דעת Lagrådet על KU33/KU32** | עדכון בייזיאני: שפה נוקשה ⇒ R2 ↓ 4; שתיקה ⇒ R2 ↑ 4 |
+| מאי–יוני 2026 | **הצבעה בפלנום (החלטה מושהית)** על KU33/KU32 | אישור קריאה ראשונה |
+| סוף מאי / יוני 2026 | **הצבעה בפלנום על HD03231 / HD03232** | הצטרפות בית הדין + פיצויים |
+| מתמשך | **עלוני סייבר/היברידי של SÄPO** | מדדים מובילים של עמדת רוסיה |
+| מחצית שנייה 2026 | **הצהרה משותפת של ארגוני חופש עיתונות (SJF, TU, Utgivarna)** | מגדירה רשומת פרשנות לـ "formellt tillförd bevisning" |
+| 13 ספטמבר 2026 | **בחירות כלליות שוודיות** | הרכב Riksdag חדש ⇒ סיכויי קריאה שנייה ל-KU33 |
+
+---
+
+### ⚠️ אמינות האנליסט — הערכה עצמית כנה
+
+| מימד | אמון | הערות |
+|------|:----:|-------|
+| בחירת הסיפור הראשי (נכון DIW) | **גבוה** | יושמה מתודולוגיית DIW v1.0; ניתוח רגישות מאשר דירוג עליון |
+| שלמות הסיקור | **גבוה** | כל 6 מסמכים עם משקל ≥ 5.0 מכוסים |
+| תחזית הצבעה בין-מפלגתית (קריאה ראשונה) | **גבוה** | דפוסים מבוססים; רשומת ועדה ברורה |
+| תחזית הצבעה בין-מפלגתית (**קריאה שנייה**) | **בינוני** | תלויה בתוצאות בחירות 2026 — אי-ודאות מהותית |
+| חיזוי פרשנות "formellt tillförd bevisning" | **בינוני** | שברירי פרשנית; שלוש עמדות אפשריות מתועדות |
+| היקף תגובת מלחמה היברידית רוסית | **בינוני** | דפוס היסטורי מצביע על עלייה, אך עיתוי מדויק אינו ודאי |
+| עמדת ממשל ארה"ב כלפי בית הדין | **נמוך** | הצהרות פומביות מעורפלות; שינוי עמדה אפשרי |
+
+---
+
+### 📎 קישורים צולבים
+
+[README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/README.md) · [סינתזה](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md) · [משמעות](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) · [סיכון](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) · [איום](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) · [בעלי עניין](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/stakeholder-perspectives.md) · [תרחישים](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md) · [השוואתי](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/comparative-international.md) · [קישורים צולבים](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/cross-reference-map.md) · [סיווג](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/classification-results.md) · [רפלקסיה מתודולוגית](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/methodology-reflection.md)
+
+---
+
+**סיווג**: ציבורי · **סקירה הבאה**: 2026-04-24
+<!-- source-sha: a7f00baff9cb6b920c7f514f09a7eee674faed30 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief_ja.md -->
+
+<p align="center">
+  <em>ニュース編集者・政策顧問・上級アナリスト向け、1ページ完結の意思決定者向けブリーフィング</em>
+</p>
+
+| 項目 | 値 |
+|------|----|
+| **BRIEF-ID** | BRF-2026-04-17-1434 |
+| **分類** | 公開 · 読了時間 ≤ 3分 |
+| **読了推奨** | 本分析に基づくいかなる編集・政策・投資判断の前に |
+| **意思決定の視野** | 24時間 / 2週間 / 2026年選挙後 |
+
+---
+
+### 🧭 BLUF（結論を最初に）
+
+**スウェーデン憲法委員会は2026年4月17日に二つの憲法改正案（HD01KU32・HD01KU33）を提出した。これはデジタル証拠領域における *Tryckfrihetsförordningen*（1766年）の初めての実質的な制限であり、憲法改正には総選挙をまたいだ二度の同一投票が必要なため、2026年9月の選挙キャンペーンは報道の自由の透明性に関する事実上の国民投票となる。** 同じ24時間の枠内で、マリア・マルメル・ステーナーガード外務大臣とウルフ・クリスタション首相は、スウェーデンのウクライナ侵略罪特別法廷（HD03231）および国際補償委員会（HD03232）への加盟を提案した。これはニュルンベルク以来初めての侵略罪法廷加盟である。この一連の動きは、民主的インフラ、外交政策における規範形成、住宅市場の健全性、および生活の質の規制緩和にわたる、調整された選挙前の立法スプリントを示している。`[高]`
+
+---
+
+### 🎯 このブリーフィングが支える三つの意思決定
+
+| 意思決定 | 証拠の根拠 | 行動の時間枠 |
+|----------|-----------|:----------:|
+| **編集上の見出し選択** | [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) §掲載判断 | 即時 |
+| **報道の自由NGOの関与姿勢** | [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) R2 · [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) S4 × T1 | Lagrådet意見書の前（2026年Q2） |
+| **ロシアのポジションに関する脅威監視** | [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) T6 · キルチェーン §3 | 継続的、投票後は強化レベル |
+
+---
+
+### 📐 60秒で知るべきこと
+
+1. **最重要ニュースはKU33憲法改正だ。** 捜索差押えで取得したデジタル資料について、*formellt tillförd bevisning* でない限り「allmän handling」の地位を制限する。その表現の解釈範囲が**戦略的重心**である。`[高]`
+2. **ウクライナ法廷と補償委員会は同等に重要だ。** グローバルなニュース価値は高く、スウェーデンへの直接財政負担はなく、ほぼ全会一致の超党派コンセンサス（≈349議員）が存在する。`[高]`
+3. **二読会制度が2026年選挙キャンペーンを決定的瞬間にする。** V/MPは第二読会で「反対」票を投じると予想される。S党指導部の立場がスイング・シグナルとなる。`[高]`
+4. **優先リスク**: R1 ロシアのハイブリッド報復（16/25）; R2 KU33の狭義解釈（12/25）; R3 法廷でのアメリカの非協力（12/25）; R5 KU33の選挙キャンペーン武器化（12/25）。`[高]`
+5. **報道完全性ルール充足。** 重み付け重要度≥5の全六文書が掲載記事で網羅されている。`[高]`
+
+---
+
+### 🎭 注目すべき関係者
+
+| 関係者 | 役割 | 今なぜ重要か |
+|--------|------|------------|
+| **ウルフ・クリスタション（M・首相）** | 政府首脳、ウクライナ共同署名者 | 憲法・外交政策パッケージ双方の政治的責任者 |
+| **マリア・マルメル・ステーナーガード（M・外務大臣）** | 法廷設計者 | ニュルンベルク・フレーミングの著者; 規範形成資本 |
+| **グンナル・ストロメール（M・法務大臣）** | KU33捜査完全性の擁護者 | "formellt tillförd bevisning"の実務解釈を定義 |
+| **マグダレーナ・アンデルション（S・党首）** | 野党党首 | KU33への立場が第二読会の連立を左右する |
+| **ヨハン・ペルソン（L・党首）** | 自由主義的アイデンティティ | 報道の自由に最も敏感な連立パートナー |
+| **ノーシ・ダドゴスタール（V）** | V党首 | KU33に対するキャンペーンの声 |
+| **ダニエル・ヘルデン（MP・スポークスパーソン）** | MP党首 | 憲法保護の擁護者 |
+| **Lagrådet** | 憲法審査機関 | 保留中の意見書は単体で最も重要な今後のシグナル |
+| **ヴォロディミル・ゼレンスキー** | ウクライナ大統領 | 2025年12月ハーグ条約共同署名者 |
+
+---
+
+### 🔮 今後14日間 — 注目事項
+
+| 日付 / 期間 | トリガー | 影響 |
+|------------|---------|------|
+| 2026年Q2 | **KU33/KU32に関するLagrådet意見書** | ベイズ更新：厳格な言語 ⇒ R2 ↓ 4；沈黙 ⇒ R2 ↑ 4 |
+| 2026年5月〜6月 | **KU33/KU32に関する本会議投票（保留決定）** | 第一読会確認 |
+| 2026年5月末〜6月 | **HD03231/HD03232に関する本会議投票** | 法廷・補償加盟 |
+| 継続的 | **SÄPOのサイバー/ハイブリッドbulletin** | ロシアポジションの先行指標 |
+| 2026年下半期 | **報道の自由NGO共同レミスバル（SJF、TU、Utgivarna）** | "formellt tillförd bevisning"の解釈記録を確定 |
+| 2026年9月13日 | **スウェーデン総選挙** | 新Riksdag構成 ⇒ KU33第二読会見通し |
+
+---
+
+### ⚠️ アナリストの確信度 — 率直な自己評価
+
+| 次元 | 確信度 | メモ |
+|------|:------:|------|
+| 主要ストーリー選択（DIW適切） | **高** | DIW v1.0手法適用；感度分析がトップランクを確認 |
+| 網羅性 | **高** | 重み付け≥5.0の全6文書を網羅 |
+| 超党派投票予測（第一読会） | **高** | 確立されたパターン；委員会記録明確 |
+| 超党派投票予測（**第二**読会） | **中** | 2026年選挙結果次第 — 固有の不確実性 |
+| "formellt tillförd bevisning"解釈の予測 | **中** | 解釈的に脆弱；三つの妥当な立場を文書化 |
+| ロシアのハイブリッド戦争報復の規模 | **中** | 歴史的パターンは上昇を示唆するが、正確なタイミングは不確実 |
+| 米国政権の法廷立場 | **低** | 公式発言は曖昧；立場変更の可能性あり |
+
+---
+
+### 📎 クロスリンク
+
+[README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/README.md) · [合成](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md) · [重要度](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) · [リスク](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) · [脅威](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) · [ステークホルダー](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/stakeholder-perspectives.md) · [シナリオ](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md) · [比較](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/comparative-international.md) · [クロスリファレンス](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/cross-reference-map.md) · [分類](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/classification-results.md) · [方法論リフレクション](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/methodology-reflection.md)
+
+---
+
+**分類**: 公開 · **次回レビュー**: 2026-04-24
+<!-- source-sha: a7f00baff9cb6b920c7f514f09a7eee674faed30 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief_ko.md -->
+
+<p align="center">
+  <em>뉴스 편집자, 정책 보좌관, 선임 분석가를 위한 1페이지 의사결정자 브리핑</em>
+</p>
+
+| 항목 | 값 |
+|------|----|
+| **BRIEF-ID** | BRF-2026-04-17-1434 |
+| **분류** | 공개 · 읽기 소요 시간 ≤ 3분 |
+| **필독 시점** | 본 분석에 기반한 편집·정책·투자 결정 이전 |
+| **의사결정 지평** | 24시간 / 2주 / 2026년 선거 이후 |
+
+---
+
+### 🧭 BLUF(결론 먼저)
+
+**스웨덴 헌법위원회는 2026년 4월 17일 두 건의 헌법 개정안(HD01KU32·HD01KU33)을 제출하였다. 이는 디지털 증거 영역에서 *Tryckfrihetsförordningen*(1766년)에 대한 최초의 실질적 제한이며, 헌법 개정에는 총선을 사이에 두고 동일한 내용을 두 번 의결해야 하므로, 2026년 9월 선거 캠페인은 언론 자유 투명성에 관한 사실상의 국민투표가 된다.** 같은 24시간 동안 마리아 말메르 스테나르가르드 외무장관과 울프 크리스테르손 총리는 우크라이나 침략죄 특별재판소(HD03231) 및 국제배상위원회(HD03232) 참여를 제안하였다. 이는 뉘른베르크 이후 최초의 침략죄 재판소 참여이다. 이 일련의 움직임은 민주적 인프라, 외교정책 규범 형성, 주택 시장 건전성, 생활 질 규제 완화에 걸친 조율된 선거 전 입법 스프린트를 나타낸다. `[높음]`
+
+---
+
+### 🎯 이 브리핑이 지원하는 세 가지 의사결정
+
+| 의사결정 | 증거 근거 | 행동 시간 프레임 |
+|----------|-----------|:----------:|
+| **편집 헤드라인 선택** | [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) §게재 판단 | 즉시 |
+| **언론자유 NGO 관여 포지션** | [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) R2 · [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) S4 × T1 | Lagrådet 의견서 이전(2026년 Q2) |
+| **러시아 포지션 위협 감시** | [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) T6 · 킬체인 §3 | 지속적, 투표 후 강화 수준 |
+
+---
+
+### 📐 60초 요약
+
+1. **핵심 스토리는 KU33 헌법 개정이다.** 수사 과정에서 취득한 디지털 자료가 *formellt tillförd bevisning*가 아닌 경우 「allmän handling」 지위를 제한한다. 그 표현의 해석 범위가 **전략적 핵심**이다. `[높음]`
+2. **우크라이나 재판소와 배상위원회는 동등하게 중요하다.** 글로벌 뉴스 가치가 높고, 스웨덴의 직접 재정 부담은 없으며, 거의 전원 일치의 초당파 합의(≈349명)가 존재한다. `[높음]`
+3. **2회 독회 제도가 2026년 선거 캠페인을 결정적 순간으로 만든다.** V/MP는 제2독회에서 「반대」 투표를 할 것으로 예상된다. S당 지도부의 입장이 스윙 시그널이 된다. `[높음]`
+4. **우선 리스크**: R1 러시아 하이브리드 보복(16/25); R2 KU33 협소 해석(12/25); R3 재판소에서의 미국 비협조(12/25); R5 KU33 선거 캠페인 무기화(12/25). `[높음]`
+5. **보도 완전성 규칙 충족.** 가중 중요도≥5인 모든 6개 문서가 게재 기사에서 다루어진다. `[높음]`
+
+---
+
+### 🎭 주목해야 할 이해관계자
+
+| 이해관계자 | 역할 | 지금 중요한 이유 |
+|------------|------|----------------|
+| **울프 크리스테르손(M·총리)** | 정부 수반, 우크라이나 공동 서명자 | 헌법·외교정책 패키지 모두의 정치적 책임자 |
+| **마리아 말메르 스테나르가르드(M·외무장관)** | 재판소 설계자 | 뉘른베르크 프레이밍의 저자; 규범 형성 자본 |
+| **군나르 스트뢰메르(M·법무장관)** | KU33 수사 무결성 옹호자 | "formellt tillförd bevisning"의 실무 해석 정의 |
+| **막달레나 안데르손(S·당수)** | 야당 대표 | KU33에 대한 입장이 제2독회 연립을 결정 |
+| **요한 페르손(L·당수)** | 자유주의적 정체성 | 언론 자유에 가장 민감한 연립 파트너 |
+| **누시 다드고스타르(V)** | V당 대표 | KU33에 대한 캠페인 목소리 |
+| **다니엘 헬덴(MP·대변인)** | MP 대표 | 헌법 보호 옹호자 |
+| **Lagrådet** | 헌법 심사 기관 | 보류 중인 의견서는 단독으로 가장 중요한 다음 신호 |
+| **볼로디미르 젤렌스키** | 우크라이나 대통령 | 2025년 12월 헤이그 조약 공동 서명자 |
+
+---
+
+### 🔮 향후 14일 — 주목 사항
+
+| 날짜/기간 | 트리거 | 영향 |
+|----------|--------|------|
+| 2026년 Q2 | **KU33/KU32에 대한 Lagrådet 의견서** | 베이즈 업데이트: 엄격한 언어 ⇒ R2 ↓4; 침묵 ⇒ R2 ↑4 |
+| 2026년 5~6월 | **KU33/KU32에 대한 본회의 투표(연기 결정)** | 제1독회 확인 |
+| 2026년 5~6월 말 | **HD03231/HD03232에 대한 본회의 투표** | 재판소·배상 참여 |
+| 지속적 | **SÄPO 사이버/하이브리드 bulletin** | 러시아 포지션 선행 지표 |
+| 2026년 하반기 | **언론자유 NGO 공동 레미스바르(SJF, TU, Utgivarna)** | "formellt tillförd bevisning"의 해석 기록 확정 |
+| 2026년 9월 13일 | **스웨덴 총선** | 새 Riksdag 구성 ⇒ KU33 제2독회 전망 |
+
+---
+
+### ⚠️ 분석가 신뢰도 — 솔직한 자기 평가
+
+| 차원 | 신뢰도 | 메모 |
+|------|:------:|------|
+| 주요 스토리 선택(DIW 적절) | **높음** | DIW v1.0 방법론 적용; 민감도 분석이 상위 순위 확인 |
+| 완전성 | **높음** | 가중치≥5.0인 모든 6개 문서 망라 |
+| 초당파 투표 예측(제1독회) | **높음** | 확립된 패턴; 위원회 기록 명확 |
+| 초당파 투표 예측(**제2**독회) | **중간** | 2026년 선거 결과 의존 — 고유한 불확실성 |
+| "formellt tillförd bevisning" 해석 예측 | **중간** | 해석적으로 취약; 세 가지 타당한 입장 문서화 |
+| 러시아 하이브리드 전쟁 보복 규모 | **중간** | 역사적 패턴은 상승을 시사하지만 정확한 타이밍은 불확실 |
+| 미국 정권의 재판소 입장 | **낮음** | 공식 발언 모호; 입장 변경 가능성 있음 |
+
+---
+
+### 📎 교차 링크
+
+[README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/README.md) · [종합](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md) · [중요도](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) · [리스크](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) · [위협](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) · [이해관계자](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/stakeholder-perspectives.md) · [시나리오](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md) · [비교](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/comparative-international.md) · [교차참조](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/cross-reference-map.md) · [분류](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/classification-results.md) · [방법론 성찰](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/methodology-reflection.md)
+
+---
+
+**분류**: 공개 · **다음 검토**: 2026-04-24
+<!-- source-sha: a7f00baff9cb6b920c7f514f09a7eee674faed30 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief_nl.md -->
+
+<p align="center">
+  <em>Eenzijdig beslissers-briefing voor nieuwsredacteuren, politieke adviseurs en senior analisten</em>
+</p>
+
+| Veld | Waarde |
+|------|--------|
+| **BRIEF-ID** | BRF-2026-04-17-1434 |
+| **Classificatie** | Openbaar · Leestijd ≤ 3 minuten |
+| **Lees voor** | Elke redactionele, politieke of investeringsbeslissing op basis van deze analyse |
+| **Beslishorizon** | 24 uur / 2 weken / na de verkiezingen van 2026 |
+
+---
+
+### 🧭 BLUF (Conclusie voorop)
+
+**De Zweedse Commissie voor Constitutionele Zaken heeft op 17 april 2026 twee grondwetswijzigingsvoorstellen ingediend (HD01KU32 + HD01KU33) — de eerste substantiële inperking van de *Tryckfrihetsförordningen* (1766) op het gebied van digitaal bewijs in jaren. Aangezien een grondwetswijziging twee identieke Riksdag-stemmen over een verkiezing heen vereist, wordt de verkiezingscampagne van september 2026 een de facto referendum over transparantie van persvrijheid.** In hetzelfde tijdvenster van 24 uur legden minister van Buitenlandse Zaken Maria Malmer Stenergard en premier Ulf Kristersson de toetreding van Zweden tot het Speciaal Tribunaal voor het misdrijf van agressie tegen Oekraïne (HD03231) en de Internationale Schadevergoedingscommissie (HD03232) voor — het eerste agressiemisdrijven-tribunaal sinds Neurenberg. Het cluster onthult een gecoördineerde pre-electorale wetgevingssprint op het gebied van democratische infrastructuur, buitenlandse beleidsnorm-ondernemerschap, integriteit van de woningmarkt en deregulering van kwaliteit van leven. `[HOOG]`
+
+---
+
+### 🎯 Drie beslissingen die deze briefing ondersteunt
+
+| Beslissing | Bewijsgrondslag | Tijdvenster |
+|------------|-----------------|------------:|
+| **Redactionele kopselectie** | [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) §Publicatiebeslissing | Onmiddellijk |
+| **Engagementspositie van persvrijheids-NGO's** | [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) R2 · [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) S4 × T1 | Vóór het Lagrådet-advies (Q2 2026) |
+| **Dreigingsmonitoring van de Rusland-positie** | [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) T6 · Doelketenanalyse §3 | Doorlopend, verhoogd niveau na stemming |
+
+---
+
+### 📐 Wat lezers in 60 seconden moeten weten
+
+1. **Het hoofdverhaal is de KU33-grondwetswijziging.** Beperkt de status "allmän handling" voor digitaal materiaal dat bij huiszoekingen in beslag is genomen, tenzij het *formellt tillförd bevisning* is. De interpretatieve reikwijdte van die uitdrukking is het **strategisch zwaartepunt**. `[HOOG]`
+2. **Het Oekraïne-tribunaal en de schadevergoedingscommissie zijn even prominent.** Wereldwijde nieuwswaarde hoog; geen directe Zweedse fiscale lasten; nagenoeg universele partijoverschrijdende consensus (≈ 349 leden). `[HOOG]`
+3. **De twee-lezingsregel maakt de campagne van 2026 het beslissende moment.** V/MP wordt verwacht "Tegen" te stemmen bij de tweede lezing; de positie van de S-leiding is het doorslaggevende signaal. `[HOOG]`
+4. **Prioritaire risico's**: R1 Russische hybride vergelding (16/25); R2 Enge interpretatie van KU33 (12/25); R3 Niet-samenwerking VS bij het tribunaal (12/25); R5 Bewapening van KU33 in de campagne (12/25). `[HOOG]`
+5. **Dekkingsregel nageleefd.** Alle zes documenten met gewogen significantie ≥ 5 zijn gedekt in het gepubliceerde artikel. `[HOOG]`
+
+---
+
+### 🎭 Genoemde actoren om in de gaten te houden
+
+| Acteur | Rol | Waarom ze nu belangrijk zijn |
+|--------|-----|------------------------------|
+| **Ulf Kristersson (M, premier)** | Regeringsleider, mede-ondertekenaar Oekraïne | Politieke eigenaar van beide constitutionele en buitenlandse beleidspakketten |
+| **Maria Malmer Stenergard (M, minister van Buitenlandse Zaken)** | Tribunaarchitect | Auteur van de Neurenbergkaders; normatief ondernemerschapskapitaal |
+| **Gunnar Strömmer (M, minister van Justitie)** | Voorvechter van onderzoeksintegriteit KU33 | Definieert interpretatie van "formellt tillförd bevisning" in de praktijk |
+| **Magdalena Andersson (S, partijleider)** | Oppositieleider | Haar positie over KU33 zal de coalitie in de tweede lezing bepalen |
+| **Johan Pehrson (L, partijleider)** | Liberale identiteit | Coalitiegenoot meest gevoelig voor persvrijheid |
+| **Nooshi Dadgostar (V)** | V-leider | Campagnestem tegen KU33 |
+| **Daniel Helldén (MP, woordvoerder)** | MP-leider | Voorvechter van grondwettelijke bescherming |
+| **Lagrådet** | Constitutionele toetsing | Uitstaand advies is het enkelvoudig belangrijkste komende signaal |
+| **Volodymyr Zelensky** | President van Oekraïne | Mede-ondertekenaar van het Haags Verdrag december 2025 |
+
+---
+
+### 🔮 De komende 14 dagen — Wat te volgen
+
+| Datum / Venster | Aanleiding | Impact |
+|-----------------|-----------|--------|
+| Q2 2026 | **Lagrådet-advies over KU33/KU32** | Bayesiaanse update: strenge taal ⇒ R2 ↓ 4; stil ⇒ R2 ↑ 4 |
+| Mei–Jun 2026 | **Kamerstemming (uitgesteld besluit)** over KU33/KU32 | Bevestiging eerste lezing |
+| Eind mei / Jun 2026 | **Kamerstemming over HD03231 / HD03232** | Toetreding tribunaal + herstelbetalingen |
+| Doorlopend | **SÄPO cyber/hybridbulletins** | Voorlopende indicatoren van de Rusland-positie |
+| H2 2026 | **Gezamenlijke reactie van persvrijheids-NGO's (SJF, TU, Utgivarna)** | Legt interpretatief precedent vast voor "formellt tillförd bevisning" |
+| 13 Sep 2026 | **Zweedse parlementsverkiezingen** | Nieuwe Riksdag-samenstelling ⇒ vooruitzichten tweede lezing KU33 |
+
+---
+
+### ⚠️ Betrouwbaarheid van de analist — Eerlijke zelfevaluatie
+
+| Dimensie | Betrouwbaarheid | Opmerkingen |
+|----------|:---------------:|------------|
+| Selectie hoofdverhaal (DIW-correct) | **HOOG** | DIW v1.0-methodologie toegepast; gevoeligheidsanalyse bevestigt toprangschikking |
+| Volledigheid dekking | **HOOG** | Alle 6 documenten met gewicht ≥ 5,0 gedekt |
+| Partijoverschrijdende stemprojectie (eerste lezing) | **HOOG** | Gevestigde patronen; commissierecord duidelijk |
+| Partijoverschrijdende stemprojectie (**tweede** lezing) | **GEMIDDELD** | Afhankelijk van verkiezingsuitslag 2026 — inherente onzekerheid |
+| Prognose van interpretatie van "formellt tillförd bevisning" | **GEMIDDELD** | Interpretatief fragiel; drie plausibele standpunten gedocumenteerd |
+| Omvang van Russische hybride-oorlog-vergelding | **GEMIDDELD** | Historisch patroon duidt op toename, maar exacte timing onzeker |
+| Positie van de Amerikaanse administratie over het tribunaal | **LAAG** | Publieke verklaringen dubbelzinnig; verandering van standpunt mogelijk |
+
+---
+
+### 📎 Kruisverwijzingen
+
+[README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/README.md) · [Synthese](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md) · [Significantie](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) · [Risico](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) · [Dreiging](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) · [Stakeholders](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/stakeholder-perspectives.md) · [Scenario's](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md) · [Vergelijkend](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/comparative-international.md) · [Kruisverwijzingen](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/cross-reference-map.md) · [Classificatie](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/classification-results.md) · [Methodologiereflectie](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/methodology-reflection.md)
+
+---
+
+**Classificatie**: Openbaar · **Volgende beoordeling**: 2026-04-24
+<!-- source-sha: a7f00baff9cb6b920c7f514f09a7eee674faed30 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief_no.md -->
+
+<p align="center">
+  <em>Ensidig beslutstakersammendrag for nyhetsredaktører, politiske rådgivere og senioranalytikere</em>
+</p>
+
+| Felt | Verdi |
+|------|-------|
+| **BRIEF-ID** | BRF-2026-04-17-1434 |
+| **Klassifisering** | Offentlig · Lesetid ≤ 3 minutter |
+| **Les før** | Enhver redaksjonell, politisk eller investeringsbeslutning basert på denne analysen |
+| **Beslutsperspektiv** | 24 timer / 2 uker / etter valget 2026 |
+
+---
+
+### 🧭 BLUF (Bunnlinjen først)
+
+**Sveriges Konstitutionskomité fremmet to grunnlovsendringer (HD01KU32 + HD01KU33) den 17. april 2026 — den første substansielle innsnevringen av *Tryckfrihetsförordningen* (1766) innenfor det digitale bevisdomenget på år. Siden en grunnlovsendring krever to likelydende Riksdag-stemmer over et stortingsvalg, blir valgkampen i september 2026 en de facto-folkeavstemning om pressefrihetsåpenhet.** I det samme 24-timersvinduet la utenriksminister Maria Malmer Stenergard og statsminister Ulf Kristersson frem Sveriges tilslutning til Spesialtribunalen for aggresjonsforbrytelse mot Ukraina (HD03231) og den Internasjonale Erstatningskommisjonen (HD03232) — den første aggresjonsforbrytelsestribunalen siden Nürnberg. Klyngen avslører en koordinert forhåndsvalg-lovgivningsspurt innen demokratisk infrastruktur, utenrikspolitisk normentreprenørskap, boligmarkedsintegritet og livskvalitetsderegulering. `[HØY]`
+
+---
+
+### 🎯 Tre beslutninger dette sammendraget støtter
+
+| Beslutning | Bevisgrunnlag | Tidsvindu |
+|------------|--------------|----------:|
+| **Redaksjonelt toppvalg** | [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) §Publiseringsbeslutning | Umiddelbart |
+| **Pressefrihets-NGO engasjementsposisjon** | [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) R2 · [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) S4 × T1 | Før Lagrådets yttrande (kv. 2 2026) |
+| **Russland-posisjonens trusselovervåking** | [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) T6 · Dødskjede §3 | Løpende, forhøyet nivå etter avstemning |
+
+---
+
+### 📐 Hva lesere trenger å vite på 60 sekunder
+
+1. **Topphistorien er KU33-grunnlovsendringen.** Innsnevrer "allmän handling"-status for digitalt materiale beslaglagt ved husrannsakan med mindre det er *formellt tillförd bevisning*. Det tolkningsrelaterte omfanget av den frasen er den **strategiske tyngdepunkten**. `[HØY]`
+2. **Ukraina-tribunalen og erstatningskommisjonen er likeverdig fremtredende.** Globalt nyhetsverdi høy; ingen direkte svensk finansiell byrde; nesten universell tverrpolitisk konsensus (≈ 349 parlamentsmedlemmer). `[HØY]`
+3. **To-lesningsregelen gjør valgkampen 2026 til det avgjørende øyeblikket.** V/MP forventes å stemme "Mot" ved andre lesning; S-ledelsens posisjon er det avgjørende signalet. `[HØY]`
+4. **Prioriterte risikoer**: R1 Russisk hybridgjengjeldelse (16/25); R2 KU33 snever tolkning (12/25); R3 USA ikke-samarbeid om tribunalen (12/25); R5 KU33 kampanjevåpengjepping (12/25). `[HØY]`
+5. **Dekningskravet oppfylt.** Alle seks dokumenter med vektet signifikans ≥ 5 er dekket i publisert artikkel. `[HØY]`
+
+---
+
+### 🎭 Navngitte aktører å følge
+
+| Aktør | Rolle | Hvorfor de betyr noe nå |
+|-------|-------|-----------------------|
+| **Ulf Kristersson (M, statsminister)** | Regjeringsleder, Ukraina-medunderskriver | Politisk eier av begge konstitusjonelle og utenrikspolitiske pakker |
+| **Maria Malmer Stenergard (M, utenriksminister)** | Tribunalarkitekt | Nürnberg-innrammingsforfatter; normentreprenørskapskapital |
+| **Gunnar Strömmer (M, justisminister)** | KU33 etterforskningsintegritetsforsvarer | Definerer tolkning av "formellt tillförd bevisning" i praksis |
+| **Magdalena Andersson (S, partileder)** | Opposisjonsleder | Hennes posisjon om KU33 bestemmer koalisjonen ved andre lesning |
+| **Johan Pehrson (L, partileder)** | Liberal identitet | Koalisjonspartner mest pressefrihets-sensitiv |
+| **Nooshi Dadgostar (V)** | V-leder | Kampanjestemme mot KU33 |
+| **Daniel Helldén (MP, talsperson)** | MP-leder | Grunnlovsbeskyttelsesforsvarer |
+| **Lagrådet** | Konstitusjonell gjennomgang | Ventende yttrande er det enkeltvis viktigste kommende signalet |
+| **Volodymyr Zelensky** | Ukrainas president | Haag-konvensjonen medunderskriver desember 2025 |
+
+---
+
+### 🔮 De neste 14 dagene — Hva skal følges
+
+| Dato / Vindu | Utløser | Innvirkning |
+|--------------|---------|------------|
+| Kv. 2 2026 | **Lagrådets yttrande om KU33/KU32** | Bayesiansk oppdatering: streng språk ⇒ R2 ↓ 4; stille ⇒ R2 ↑ 4 |
+| Mai–jun 2026 | **Kammeravstemning (hvilende vedtak)** om KU33/KU32 | Første lesnings bekreftelse |
+| Sen mai / jun 2026 | **Kammeravstemning om HD03231 / HD03232** | Tribunal- + erstatningstilslutning |
+| Løpende | **SÄPO cyber/hybridbulletiner** | Russland-posisjonens ledende indikatorer |
+| H2 2026 | **Pressefrihets-NGO felles remissvar (SJF, TU, Utgivarna)** | Fastslår tolkningsrekord for "formellt tillförd bevisning" |
+| 13. sep 2026 | **Svensk stortingsvalg** | Ny Riksdag-sammensetning ⇒ KU33 andrelesingsutsikter |
+
+---
+
+### ⚠️ Analytikertillit — Ærlig selvvurdering
+
+| Dimensjon | Tillit | Merknader |
+|-----------|:------:|----------|
+| Topphistorievalg (DIW-korrekt) | **HØY** | DIW v1.0-metodologi anvendt; sensitivitetsanalyse bekrefter topprangering |
+| Dekningsgrad | **HØY** | Alle 6 dokumenter med vektet ≥ 5,0 dekket |
+| Tverrpolitisk avstemningsprojektion (første lesning) | **HØY** | Etablerte mønstre; komitérekord klart |
+| Tverrpolitisk avstemningsprojektion (**andre** lesning) | **MIDDELS** | Avhenger av valgresultatet 2026 — iboende usikkerhet |
+| Prognose for tolkning av "formellt tillförd bevisning" | **MIDDELS** | Tolkningsusikker; tre sannsynlige posisjoner dokumentert |
+| Russisk hybridkrigsgjengjeldelses omfang | **MIDDELS** | Historisk mønster tyder på økning, men eksakt timing er usikker |
+| USA-administrasjonens tribunalposisjon | **LAV** | Offentlige uttalelser tvetydige; holdningsendring mulig |
+
+---
+
+### 📎 Krysskoblinger
+
+[README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/README.md) · [Syntese](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md) · [Signifikans](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) · [Risiko](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) · [Trussel](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) · [Interessenter](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/stakeholder-perspectives.md) · [Scenarier](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md) · [Komparativ](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/comparative-international.md) · [Krysskoblinger](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/cross-reference-map.md) · [Klassifisering](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/classification-results.md) · [Metoderefleksjon](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/methodology-reflection.md)
+
+---
+
+**Klassifisering**: Offentlig · **Neste gjennomgang**: 2026-04-24
+<!-- source-sha: a7f00baff9cb6b920c7f514f09a7eee674faed30 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief_sv.md -->
+
+<p align="center">
+  <em>Ensidig beslutsfattarsammanfattning för nyhetsredaktörer, politiska rådgivare och seniora analytiker</em>
+</p>
+
+| Fält | Värde |
+|------|-------|
+| **BRIEF-ID** | BRF-2026-04-17-1434 |
+| **Klassificering** | Offentlig · Lästid ≤ 3 minuter |
+| **Läs före** | Alla redaktionella, politiska eller investeringsbeslut baserade på detta underlag |
+| **Beslutsperspektiv** | 24 tim / 2 veckor / efter valet 2026 |
+
+---
+
+### 🧭 BLUF (Slutsats i korthet)
+
+**Sveriges Konstitutionsutskott avancerade två grundlagsändringar (HD01KU32 + HD01KU33) den 17 april 2026 — den första substantiella inskränkningen av *Tryckfrihetsförordningen* (1766) inom det digitala bevisdomänet på år. Eftersom en grundlagsändring kräver två likalydande riksdagsbeslut som spänner över ett riksdagsval, blir valrörelsen i september 2026 en de facto-folkomröstning om pressfrihetsinsyn.** Under samma 24-timmarsfönster lade utrikesminister Maria Malmer Stenergard och statsminister Ulf Kristersson fram Sveriges anslutning till Specialtribunalen för aggressionsbrott mot Ukraina (HD03231) och den Internationella ersättningskommissionen (HD03232) — den första tribunalen för aggressionsbrott sedan Nürnberg. Klustret avslöjar en samordnad förvalspolitisk lagstiftningssprint inom demokratisk infrastruktur, utrikespolitisk normgivning, bostadsmarknadsintegritet och livskvalitetsavreglering. `[HÖG]`
+
+---
+
+### 🎯 Tre beslut som detta underlag stödjer
+
+| Beslut | Bevisunderlag | Tidsfönster |
+|--------|--------------|------------:|
+| **Redaktionellt rubrikval** | [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) §Publiceringsbeslut | Omedelbart |
+| **Pressfrihets-NGO:s engagemangsposition** | [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) R2 · [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) S4 × T1 | Före Lagrådets yttrande (kv. 2 2026) |
+| **Rysslandspositionens hotövervakning** | [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) T6 · Dödkedje §3 | Löpande, förhöjd nivå efter omröstning |
+
+---
+
+### 📐 Vad läsare behöver veta på 60 sekunder
+
+1. **Det viktigaste är KU33-grundlagsändringen.** Inskränker statusen som "allmän handling" för digitalt material beslagtaget vid husrannsakan såvida det inte är *formellt tillförd bevisning*. Den tolkningsdimensionen av det uttrycket är den **strategiska tyngdpunkten**. `[HÖG]`
+2. **Ukrainatribunalen och ersättningskommissionen är likvärdigt framträdande.** Globalt nyhetsvärde högt; ingen direkt svensk fiskal börda; nästintill universell partiöverskridande konsensus (≈ 349 ledamöter). `[HÖG]`
+3. **Tvåläsningsprincipen gör valrörelsen 2026 till det avgörande ögonblicket.** V/MP förväntas rösta "Mot" vid andra läsningen; S-ledningens ställning är det avgörande signalen. `[HÖG]`
+4. **Prioriterade risker**: R1 Ryskt hybridangrepp (16/25); R2 KU33 trång tolkning (12/25); R3 USA icke-samverkan på tribunalen (12/25); R5 KU33 kampanjvapenbyte (12/25). `[HÖG]`
+5. **Täckningsgraden uppfylld.** Alla sex dokument med vägt signifikansvärde ≥ 5 täcks i publicerad artikel. `[HÖG]`
+
+---
+
+### 🎭 Namngivna aktörer att bevaka
+
+| Aktör | Roll | Varför de är viktiga nu |
+|-------|------|------------------------|
+| **Ulf Kristersson (M, statsminister)** | Regeringsledare, medundertecknare för Ukraina | Politisk ägare av både konstitutionellt och utrikespolitiskt paket |
+| **Maria Malmer Stenergard (M, utrikesminister)** | Tribunalarkitekt | Nürnbergformuleringens upphovsperson; normgivningskapital |
+| **Gunnar Strömmer (M, justitieminister)** | KU33 utredningsintegritetsförespråkare | Definierar tolkning av "formellt tillförd bevisning" i praktiken |
+| **Magdalena Andersson (S, partiledare)** | Oppositionsledare | Hennes position om KU33 avgör koalitionen vid andra läsningen |
+| **Johan Pehrson (L, partiledare)** | Liberal identitet | Koalitionspartner mest känslig för pressfrihet |
+| **Nooshi Dadgostar (V)** | V-ledare | Kampanjröst mot KU33 |
+| **Daniel Helldén (MP, språkrör)** | MP-ledare | Förespråkare för grundlagsskydd |
+| **Lagrådet** | Konstitutionell granskning | Väntande yttrande är det enskilt viktigaste kommande signalet |
+| **Volodymyr Zelensky** | Ukrainas president | Medundertecknare av Haagkonventionen december 2025 |
+
+---
+
+### 🔮 Nästa 14 dagar — Vad ska bevakas
+
+| Datum / Fönster | Utlösare | Påverkan |
+|-----------------|---------|---------|
+| Kv. 2 2026 | **Lagrådets yttrande om KU33/KU32** | Bayesiansk uppdatering: strikt språk ⇒ R2 ↓ 4; tyst ⇒ R2 ↑ 4 |
+| Maj–jun 2026 | **Kammarvote (vilande beslut)** om KU33/KU32 | Bekräftelse vid första läsningen |
+| Sen maj / jun 2026 | **Kammarvote om HD03231 / HD03232** | Tribunalanslutning + reparationer |
+| Löpande | **SÄPO:s cyber/hybridbulletiner** | Rysslandspositionens ledande indikatorer |
+| H2 2026 | **Pressfrihets-NGO:s gemensamma remissvar (SJF, TU, Utgivarna)** | Fastslår tolkningsrekord för "formellt tillförd bevisning" |
+| 13 sep 2026 | **Allmänna val** | Ny riksdagssammansättning ⇒ KU33:s andraläsningsutsikter |
+
+---
+
+### ⚠️ Analytikertillit — Ärlig självbedömning
+
+| Dimension | Tillförlitlighet | Anteckningar |
+|-----------|:----------------:|-------------|
+| Val av ledarstory (DIW-korrekt) | **HÖG** | DIW v1.0-metodik tillämpad; känslighetsanalys bekräftar toppranking |
+| Täckningsgrad | **HÖG** | Alla 6 dokument med vägt ≥ 5,0 täckta |
+| Partiöverskridande röstningsprojektion (första läsning) | **HÖG** | Etablerade mönster; utskottsrekord klart |
+| Partiöverskridande röstningsprojektion (**andra** läsning) | **MEDEL** | Beror på valresultatet 2026 — inneboende osäkerhet |
+| Prognos för tolkning av "formellt tillförd bevisning" | **MEDEL** | Tolkningsosäker; tre troliga positioner dokumenterade |
+| Magnitud på ryskt hybridkrigsvar | **MEDEL** | Historiskt mönster tyder på stegring, men exakt tidpunkt är osäker |
+| US-administrationens tribunalposition | **LÅG** | Offentliga uttalanden tvetydiga; positionsförändring möjlig |
+
+---
+
+### 📎 Korsreferenser
+
+[README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/README.md) · [Syntes](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md) · [Signifikans](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) · [Risk](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) · [Hot](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) · [Intressenter](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/stakeholder-perspectives.md) · [Scenarier](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md) · [Komparativ](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/comparative-international.md) · [Korsreferenser](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/cross-reference-map.md) · [Klassificering](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/classification-results.md) · [Metodreflexion](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/methodology-reflection.md)
+
+---
+
+**Klassificering**: Offentlig · **Nästa granskning**: 2026-04-24
+<!-- source-sha: a7f00baff9cb6b920c7f514f09a7eee674faed30 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief_zh.md -->
+
+<p align="center">
+  <em>面向新闻编辑、政策顾问及高级分析师的单页决策者简报</em>
+</p>
+
+| 项目 | 值 |
+|------|----|
+| **BRIEF-ID** | BRF-2026-04-17-1434 |
+| **分类** | 公开 · 阅读时间 ≤ 3分钟 |
+| **阅读时机** | 基于本分析做出任何编辑、政策或投资决策之前 |
+| **决策视野** | 24小时 / 2周 / 2026年选举后 |
+
+---
+
+### �� BLUF（先说结论）
+
+**瑞典宪法委员会于2026年4月17日提交了两项宪法修正案（HD01KU32·HD01KU33），这是数字证据领域对1766年《出版自由法》（*Tryckfrihetsförordningen*）首次实质性限制。由于宪法修正需在总选举前后以相同内容两次通过，2026年9月的选举竞选将实际上成为新闻自由透明度的全民公投。** 在同一24小时内，外交大臣玛利亚·马尔默·斯坦纳加德与总理乌尔夫·克里斯特松提议瑞典加入针对乌克兰侵略罪的特别法庭（HD03231）及国际赔偿委员会（HD03232）。这是自纽伦堡以来首次参与侵略罪法庭。这一系列举措标志着一次协调的选前立法冲刺，涵盖民主基础设施、外交政策规范塑造、住房市场健康及生活质量放松管制。`[高]`
+
+---
+
+### 🎯 本简报支持的三项决策
+
+| 决策 | 证据基础 | 行动时间窗 |
+|------|---------|:----------:|
+| **编辑标题选择** | [`significance-scoring.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) §发布判断 | 即时 |
+| **新闻自由NGO参与立场** | [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) R2 · [`swot-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) S4 × T1 | Lagrådet意见书发布前（2026年Q2） |
+| **俄罗斯立场威胁监测** | [`threat-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) T6 · 杀伤链§3 | 持续性，投票后升级 |
+
+---
+
+### 📐 60秒要点
+
+1. **头条是KU33宪法修正案。** 将侦查获取的数字材料在未经*formellt tillförd bevisning*（正式提交的证据）的情况下限制其「allmän handling」（公共文件）地位。该表述的解释范围是**战略重心**。`[高]`
+2. **乌克兰法庭与赔偿委员会同等重要。** 全球新闻价值高，瑞典无直接财政负担，约349名议员几乎全票跨党派共识。`[高]`
+3. **二读制度使2026年选举竞选成为决定性时刻。** V/MP预计在第二读时投"反对"票。S党领导层的立场是关键摇摆信号。`[高]`
+4. **优先风险**：R1 俄罗斯混合战报复（16/25）；R2 KU33窄义解释（12/25）；R3 法庭中美国不合作（12/25）；R5 KU33选举竞选武器化（12/25）。`[高]`
+5. **报道完整性规则满足。** 所有6份加权重要性≥5的文件均在刊载文章中涵盖。`[高]`
+
+---
+
+### 🎭 关键利益相关方
+
+| 利益相关方 | 角色 | 现在为何重要 |
+|-----------|------|------------|
+| **乌尔夫·克里斯特松（M·总理）** | 政府首脑，乌克兰联署者 | 宪法与外交政策两个议题包的政治责任人 |
+| **玛利亚·马尔默·斯坦纳加德（M·外长）** | 法庭设计者 | 纽伦堡框架的缔造者；规范塑造资本 |
+| **根纳尔·斯特罗默（M·司法部长）** | KU33侦查完整性倡导者 | 定义"formellt tillförd bevisning"的实践解释 |
+| **玛格达莱纳·安德松（S·党首）** | 反对党领袖 | 对KU33的立场决定第二读联合投票 |
+| **约翰·佩尔松（L·党首）** | 自由主义身份认同 | 对新闻自由最敏感的联合执政伙伴 |
+| **努西·达德戈斯塔尔（V）** | V党党首 | KU33的竞选声音 |
+| **丹尼尔·海尔登（MP·发言人）** | MP党首 | 宪法保护倡导者 |
+| **Lagrådet** | 宪法审查机构 | 待发意见书是独立最重要的下一信号 |
+| **弗拉基米尔·泽连斯基** | 乌克兰总统 | 2025年12月海牙条约联署者 |
+
+---
+
+### 🔮 未来14天 — 关注事项
+
+| 日期/期间 | 触发事件 | 影响 |
+|----------|---------|------|
+| 2026年Q2 | **Lagrådet关于KU33/KU32的意见书** | 贝叶斯更新：严格语言 ⇒ R2 ↓4；沉默 ⇒ R2 ↑4 |
+| 2026年5~6月 | **KU33/KU32本会议投票（推迟决定）** | 第一读确认 |
+| 2026年5~6月底 | **HD03231/HD03232本会议投票** | 法庭及赔偿委员会参与 |
+| 持续性 | **SÄPO网络/混合战bulletin** | 俄罗斯立场先行指标 |
+| 2026年下半年 | **新闻自由NGO联合意见书（SJF, TU, Utgivarna）** | 确立"formellt tillförd bevisning"解释记录 |
+| 2026年9月13日 | **瑞典大选** | 新Riksdag构成 ⇒ KU33第二读前景 |
+
+---
+
+### ⚠️ 分析师置信度 — 坦诚自我评估
+
+| 维度 | 置信度 | 备注 |
+|------|:------:|------|
+| 主要报道选择（DIW适当） | **高** | 应用DIW v1.0方法论；敏感性分析确认最高排名 |
+| 完整性 | **高** | 覆盖所有6份加权≥5.0的文件 |
+| 跨党派投票预测（第一读） | **高** | 既定模式；委员会记录清晰 |
+| 跨党派投票预测（**第二**读） | **中** | 取决于2026年选举结果——固有不确定性 |
+| "formellt tillförd bevisning"解释预测 | **中** | 解释上脆弱；记录三种合理立场 |
+| 俄罗斯混合战报复规模 | **中** | 历史模式提示上升但准确时机不确定 |
+| 美国政府的法庭立场 | **低** | 官方表态模糊；立场可能改变 |
+
+---
+
+### 📎 交叉链接
+
+[README](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/README.md) · [综合](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md) · [重要性](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/significance-scoring.md) · [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/swot-analysis.md) · [风险](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/risk-assessment.md) · [威胁](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/threat-analysis.md) · [利益相关方](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/stakeholder-perspectives.md) · [情景](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/scenario-analysis.md) · [比较](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/comparative-international.md) · [交叉参考](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/cross-reference-map.md) · [分类](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/classification-results.md) · [方法论反思](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/methodology-reflection.md)
+
+---
+
+**分类**：公开 · **下次审查**：2026-04-24
+<!-- source-sha: a7f00baff9cb6b920c7f514f09a7eee674faed30 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 13 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 26 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 4 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -3559,6 +4799,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-17/realtime-1434/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

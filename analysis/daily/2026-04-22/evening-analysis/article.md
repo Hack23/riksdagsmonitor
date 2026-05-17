@@ -6,7 +6,7 @@ date: 2026-04-22
 subfolder: evening-analysis
 slug: 2026-04-22-evening-analysis
 source_folder: analysis/daily/2026-04-22/evening-analysis
-generated_at: 2026-05-16T20:24:25.518Z
+generated_at: 2026-05-17T18:40:43.215Z
 language: en
 layout: article
 ---
@@ -101,6 +101,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2275,13 +2288,955 @@ This run used: Scenario Analysis, ACH, Red Team, Hypothesis Testing, SWOT, TOWS,
 - Cross-type synthesis integrates 56 distinct documents across 4 article types
 - Prior cycle PIRs read from analysis/daily/2026-04-21/evening-analysis/ for continuity
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# موجز تنفيذي — تحليل المساء 2026-04-22
+
+**معرّف الموجز**: EB-2026-04-22-EVE001
+**أعدّه**: James Pether Sörling
+**تاريخ الإعداد**: 2026-04-22 23:50 UTC
+**التصنيف**: عام — GDPR Art. 9(2)(e)
+**الموثوقية**: عالية [A1]
+**قراءة في 60 ثانية**: ✅
+
+---
+
+### 🎯 الخلاصة التنفيذية
+
+أقرّ البرلمان السويدي اليوم حزمة إغاثة طارئة في مجال الطاقة بقيمة 4.1 مليار كرونة (HD01FiU48) بأغلبية موسّعة غير اعتيادية من M+SD+S+KD — إذ تخلّت الاشتراكية الديمقراطية عن مقترح مضادها المتعلق بالمناخ لتفادي تحمّل المسؤولية عن ارتفاع تكاليف الوقود قبل أربعة أشهر من انتخابات سبتمبر 2026. وفي الوقت ذاته، تواجه وزيرة المالية إليزابيث سفانتسون (M) هجوماً مكثفاً من S يتمثل في خمس استجوابات للمساءلة، من بينها واحد (HD10442) يستشهد بحكم قضائي يُثبت أن تصريحاتها العلنية بشأن رعاية اضطرابات الأكل كانت مغلوطة من الناحية الواقعية. وتُمثّل مقترحات الربيع لعام 2026 (HD03100) الآن البيان المالي الرسمي لما قبل الانتخابات.
+
+---
+
+### 🧭 3 قرارات يدعمها هذا الموجز
+
+1. **قرار الإعلام/التحرير**: هل "تصويت S لصالح خفض ضريبة الوقود مع تقديم مقترح مضاد في آنٍ واحد" هو الرواية المحورية ليوم؟ → **نعم.** إن السلوك المزدوج المسار (التصويت بنعم على HD01FiU48 + المقترح المضاد HD024082) هو الاكتشاف الأكثر أهمية تحليلياً في هذا اليوم. وهو يكشف الحساب الانتخابي لدى S — إذ يطغى حساب تكاليف المعيشة قبيل الانتخابات على الاتساق المناخي. الموثوقية: عالية [A1].
+
+2. **قرار استراتيجية المعارضة**: هل ينبغي لـ S تصعيد مسار المساءلة ضد سفانتسون؟ → **على الأرجح نعم.** الأساس القضائي المُؤكَّد لـ HD10442 يجعله استجواباً عالي المخاطر وعالي العائد. دور لجنة المالية في كلٍّ من HD01FiU48 والمقترح الربيعي يعني أن سفانتسون تدافع في آنٍ واحد عن السياسة المالية وعن مصداقيتها الشخصية. الموثوقية: متوسطة [B2].
+
+3. **قرار مرونة الائتلاف**: هل تُشير الأغلبية الموسّعة لـ M+SD+S+KD على HD01FiU48 إلى توافق جديد عابر للكتل أم إلى مناورة انتخابية استثنائية؟ → **مناورة انتخابية استثنائية.** المقترحات المضادة من S (HD024082) وV (HD024092) وMP (HD024098) المقدَّمة في الأسبوع ذاته تُشير إلى انعدام أي إعادة تموضع هيكلي؛ إذ دعم S الحزمة المُقرَّة لأسباب بصرية انتخابية فحسب. الموثوقية: عالية [A1].
+
+---
+
+### ⚡ قراءة نقطية في 60 ثانية
+
+- **مُقرَّر اليوم**: HD01FiU48 — خفض ضريبة الوقود ودعم الطاقة بقيمة 4.1 مليار SEK، تمت التصويت في الساعة 16:29. صوّت M+SD+S+KD بنعم.
+- **تناقض استراتيجي**: S تصوّت بنعم على مشروع القانون المُقرَّر لكنها تقدّم مقترحاً مضاداً (HD024082) ضد السياسة ذاتها.
+- **مخاطر المساءلة**: قدّمت S خمسة استجوابات في 48 ساعة ضد سفانتسون (3) ووزراء آخرين.
+- **الإثبات القضائي**: HD10442 يستشهد بحكم قضائي فعلي يُقوّض التصريحات العلنية لسفانتسون بشأن الرعاية الصحية.
+- **الإطار الانتخابي**: يُمثّل HD03100 مقترحات الربيع 2026 الآن البيان المالي الرسمي لما قبل الانتخابات — كل كرونة ستكون مثار جدل.
+- **المسار الدستوري**: تعديلان على القانون الأساسي (HD01KU33 + HD01KU32) في القراءة الأولى في آنٍ واحد — كثافة تشريعية نادرة.
+- **الالتزام بأوكرانيا**: تنضم السويد إلى كلٍّ من لجنة التعويضات الأوكرانية (HD03232) ومحكمة العدوان (HD03231).
+- **الهوّة بين المناخ والمالية**: قدّمت MP+V+S مقترحات مضادة للمناخ موازية في الوقت الذي صوّتت فيه S لصالح تخفيف ضريبة الوقود.
+
+---
+
+### 🔮 أهم المحفّزات الاستشرافية
+
+**تابع**: مناقشة الريكسداغ حول HD10442 (Svantesson ätstörningsvård IP) — مجدوَلة بعد الخامس من مايو. إن عجزت سفانتسون عن التوفيق بين تصريحاتها العلنية السابقة وحكم المحكمة، فسيكون هذا أكبر لحظات المساءلة الوزارية في مرحلة ما قبل الانتخابات. احتمال الضرر السياسي الجسيم: **مرجّح** [B2] (65 %).
+
+**المحفّز الثانوي**: موقف S من مقترحات الربيع HD03100 في إجراءات لجنة FiU — وثيقتها المالية البديلة ستحدد النقاش الاقتصادي لعام الانتخابات.
+
+---
+
+### 📊 لوحة الموثوقية
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1B5E20', 'primaryTextColor': '#FFFFFF', 'background': '#0a0e27', 'nodeBorder': '#FFFFFF'}}}%%
+pie title توزيع الموثوقية حسب رمز الأميرالية
+    "A1 — مؤكّد/موثوق (60%)" : 60
+    "B2 — صحيح على الأرجح (25%)" : 25
+    "B3 — صحيح من المحتمل (10%)" : 10
+    "C4 — لا يمكن التحقق (5%)" : 5
+```
+
+**الحقائق الرئيسية المؤكَّدة (A1)**:
+- نتيجة تصويت HD01FiU48 على riksdagen.se في سجل التصويت CE14CCEF
+- جميع الاستجوابات الخمسة مقدَّمة ومتاحة للعموم (riksdagen.se)
+- HD03100 مقدَّم في 2026-04-13 Finansdepartementet
+- البنك الدولي الناتج المحلي الإجمالي للسويد 2024: 0.82 %; التضخم 2024: 2.84 %
+
+**مرجّح (B2)**:
+- استراتيجية S المزدوجة المسار بوصفها حسابات انتخابية (مستنتَج من الأفعال لا مُصرَّح به)
+- التعرّض البرلماني لسفانتسون الناجم عن الاستشهاد القضائي في HD10442
+
+<!-- source-sha: cb87af673fb4a43f297af6c833d737b3ef322067 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief_da.md -->
+
+**Resumé-ID**: EB-2026-04-22-EVE001
+**Udarbejdet af**: James Pether Sörling
+**Udarbejdet**: 2026-04-22 23:50 UTC
+**Klassifikation**: Offentlig — GDPR Art. 9(2)(e)
+**Troværdighed**: HØJ [A1]
+**60-sekunders læsning**: ✅
+
+---
+
+### 🎯 BLUF
+
+Det svenske parlament vedtog i dag en nødenergihjælpepakke på 4,1 milliarder SEK (HD01FiU48) med et anomalt M+SD+S+KD-superflertalt — socialdemokraterne opgav deres klimamodmotion for at undgå at blive bebrejdet for høje brændstofomkostninger fire måneder før valget i september 2026. Finansminister Elisabeth Svantesson (M) møder samtidig en koncentreret interpellationsansvarighedsoffensiv på fem fronter fra S, herunder én (HD10442), der citerer en domstolsafgørelse om, at hendes offentlige udtalelser om behandling af spiseforstyrrelser var faktuelt ukorrekte. Forårsproposition 2026 (HD03100) er nu det officielle forvalgsmæssige skattepolitiske manifest.
+
+---
+
+### 🧭 3 Beslutninger dette resumé understøtter
+
+1. **Medie/redaktionelt beslutning**: Er "S stemmer for brændstofskattenedsættelse, mens de indgiver modmotion" det ledende narrativ for dagen? → **Ja.** Den to-sporede adfærd (HD01FiU48 Ja-stemme + HD024082 modmotion) er dagens analytisk mest betydningsfulde fund. Det afslører S's valgberegning — forvalgsomkostningerne tilsidesætter klimakonsistens. Troværdighed: HØJ [A1].
+
+2. **Oppositionsstrategibeslutning**: Bør S eskalere ansvarighedssporet mod Svantesson? → **Sandsynligvis ja.** HD10442's domstolsbekræftede grundlag gør det til en høj-risiko/høj-belønning-interpellation. Finansudvalgets rolle i både HD01FiU48 og Forårspropositionen betyder, at Svantesson samtidig forsvarer finanspolitikken OG sin personlige troværdighed. Troværdighed: MEDIUM [B2].
+
+3. **Koalitionsresiliensbeslutet**: Signalerer M+SD+S+KD-superflertalget på HD01FiU48 en ny tværblokskonsensus eller et engangsvalgmanøvre? → **Engangsvalgmanøvre.** Modmotionerne fra S (HD024082), V (HD024092) og MP (HD024098) indgivet samme uge indikerer ingen strukturel omjustering; S støttede den vedtagne pakke af valmæssige optiske årsager. Troværdighed: HØJ [A1].
+
+---
+
+### ⚡ 60-sekunders punktlæsning
+
+- **VEDTAGET I DAG**: HD01FiU48 — 4,1 GSEK brændstofskattenedsættelse og energistøtte, stemt 16:29. M+SD+S+KD stemte Ja.
+- **STRATEGISK SELVMODSIGELSE**: S stemmer Ja på vedtaget lovforslag men indgiver modmotion (HD024082) mod samme politik.
+- **ANSVARIGHEDSRISIKO**: S indgav 5 interpellationer på 48 timer mod Svantesson (3) og andre ministre.
+- **DOMSTOLSBEKRÆFTELSE**: HD10442 citerer faktisk domstolsafgørelse, der underminerer Svantessons offentlige udtalelser om sundhedspleje.
+- **VALGRAMME**: HD03100 Forårspropositionen 2026 er nu det officielle forvalgsmæssige finanspolitiske manifest — hver SEK vil blive debatteret.
+- **KONSTITUTIONEL PIPELINE**: To grundlovsændringer (HD01KU33 + HD01KU32) i første læsning samtidigt — sjælden lovgivningsmæssig intensitet.
+- **UKRAINE-FORPLIGTELSE**: Sverige tilslutter sig både Ukrainakompensationskommissionen (HD03232) og aggresjonstribunalen (HD03231).
+- **KLIMA-FINANSKLØFT**: MP+V+S indgav parallelle klimamodmotioner, selv mens S stemte for brændstofskatterelief.
+
+---
+
+### 🔮 Vigtigste fremadrettede trigger
+
+**Hold øje med**: Rigsdagsdebat om HD10442 (Svantesson ätstörningsvård IP) — planlagt efter 5. maj. Hvis Svantesson ikke kan forene sine tidligere offentlige udtalelser med domstolsafgørelsen, bliver dette den største ministerielle ansvarighedsstund i forvalgperioden. Sandsynlighed for betydelig politisk skade: **Sandsynligt** [B2] (65%).
+
+**Sekundær trigger**: S's holdning til HD03100 forårspropositionen i FiU-udvalgets behandling — deres alternative finanspolitiske dokument vil definere valgårets økonomiudebat.
+
+---
+
+### 📊 Troværdigheds-dashboard
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1B5E20', 'primaryTextColor': '#FFFFFF', 'background': '#0a0e27', 'nodeBorder': '#FFFFFF'}}}%%
+pie title Troværdighedsfordeling pr. Admiralitetskode
+    "A1 — Bekræftet/Pålidelig (60%)" : 60
+    "B2 — Sandsynligvis sandt (25%)" : 25
+    "B3 — Muligvis sandt (10%)" : 10
+    "C4 — Kan ikke bedømmes (5%)" : 5
+```
+
+**Bekræftede nøglefakta (A1)**:
+- HD01FiU48-stemmeresultat på riksdagen.se stemmepost CE14CCEF
+- Alle 5 interpellationer indgivet og offentligt tilgængelige (riksdagen.se)
+- HD03100 indgivet 2026-04-13 Finansdepartementet
+- Verdensbanken Sverige BNP 2024: 0,82 %; Inflation 2024: 2,84 %
+
+**Sandsynligt (B2)**:
+- S's to-sporede strategi som valgberegning (udledt af handlinger, ikke erklæret)
+- Svantessons parlamentariske eksponering fra HD10442's domstolsreference
+
+<!-- source-sha: cb87af673fb4a43f297af6c833d737b3ef322067 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief_de.md -->
+
+**Briefing-ID**: EB-2026-04-22-EVE001
+**Erstellt von**: James Pether Sörling
+**Erstellt**: 2026-04-22 23:50 UTC
+**Klassifizierung**: Öffentlich — DSGVO Art. 9(2)(e)
+**Zuverlässigkeit**: HOCH [A1]
+**60-Sekunden-Lektüre**: ✅
+
+---
+
+### 🎯 BLUF
+
+Schwedens Reichstag verabschiedete heute ein Notfall-Energieentlastungspaket von 4,1 Milliarden SEK (HD01FiU48) mit einer anomalen M+SD+S+KD-Supermehrheit — die Sozialdemokraten gaben ihren Klima-Gegenantrag auf, um nicht für hohe Kraftstoffkosten vier Monate vor der Wahl im September 2026 verantwortlich gemacht zu werden. Finanzministerin Elisabeth Svantesson (M) sieht sich gleichzeitig einer konzentrierten fünffachen Interpellations-Rechenschaftsoffensive der S ausgesetzt, darunter eine (HD10442), die ein Gerichtsurteil zitiert, das ihre öffentlichen Aussagen zur Essstörungsversorgung als sachlich unrichtig bezeichnet. Die Frühjahrspropositionen 2026 (HD03100) ist nun das offizielle fiskalische Vorwahl-Manifest.
+
+---
+
+### 🧭 3 Entscheidungen, die dieses Briefing unterstützt
+
+1. **Medien/Redaktionelle Entscheidung**: Ist "S stimmt für Kraftstoffsteuersenkung, während sie einen Gegenantrag einreichen" das führende Narrativ des Tages? → **Ja.** Das Doppelspurverhalten (HD01FiU48 Ja-Stimme + HD024082 Gegenantrag) ist der analytisch bedeutsamste Fund des Tages. Es enthüllt S's Wahlkalkül — die Lebenshaltungskosten-Kalkulation vor der Wahl übertrumpft die Klimakonsistenz. Zuverlässigkeit: HOCH [A1].
+
+2. **Oppositionsstrategieentscheidung**: Sollte S den Rechenschaftspfad gegen Svantesson eskalieren? → **Wahrscheinlich ja.** Die gerichtlich bestätigte Grundlage von HD10442 macht sie zu einer Hochrisiko/Hochbelohnungs-Interpellation. Die Rolle des Finanzausschusses in sowohl HD01FiU48 als auch der Frühjahrspropositionen bedeutet, dass Svantesson gleichzeitig die Finanzpolitik UND ihre persönliche Glaubwürdigkeit verteidigt. Zuverlässigkeit: MITTEL [B2].
+
+3. **Koalitionsresilienzentscheidung**: Signalisiert die M+SD+S+KD-Supermehrheit bei HD01FiU48 einen neuen blockübergreifenden Konsens oder ein einmaliges Wahlmanöver? → **Einmaliges Wahlmanöver.** Die von S (HD024082), V (HD024092) und MP (HD024098) in derselben Woche eingereichten Gegenanträge deuten auf keine strukturelle Neuausrichtung hin; S unterstützte das verabschiedete Paket aus wahloptischen Gründen. Zuverlässigkeit: HOCH [A1].
+
+---
+
+### ⚡ 60-Sekunden-Aufzählung
+
+- **HEUTE VERABSCHIEDET**: HD01FiU48 — 4,1 Mrd. SEK Kraftstoffsteuersenkung und Energieunterstützung, abgestimmt 16:29. M+SD+S+KD stimmten Ja.
+- **STRATEGISCHER WIDERSPRUCH**: S stimmt Ja zum verabschiedeten Gesetz, reichte aber Gegenantrag (HD024082) gegen dieselbe Politik ein.
+- **RECHENSCHAFTSRISIKO**: S reichte in 48 Stunden 5 Interpellationen gegen Svantesson (3) und andere Minister ein.
+- **GERICHTLICHE BESTÄTIGUNG**: HD10442 zitiert tatsächliches Gerichtsurteil, das Svantessons öffentliche Aussagen zur Gesundheitsversorgung unterminiert.
+- **WAHLRAHMEN**: HD03100 Frühjahrsproposition 2026 ist nun das offizielle fiskalische Vorwahl-Manifest — jede SEK wird debattiert werden.
+- **VERFASSUNGSPIPELINE**: Zwei Grundgesetzänderungen (HD01KU33 + HD01KU32) in erster Lesung gleichzeitig — seltene gesetzgeberische Intensität.
+- **UKRAINE-VERPFLICHTUNG**: Schweden tritt sowohl der Ukraine-Entschädigungskommission (HD03232) als auch dem Aggressionstribunal (HD03231) bei.
+- **KLIMA-FINANZ-SPALTUNG**: MP+V+S reichten parallele Klima-Gegenanträge ein, während S für die Kraftstoffsteuerentlastung stimmte.
+
+---
+
+### 🔮 Wichtigster vorausschauender Auslöser
+
+**Beobachten**: Reichstagsdebatte zu HD10442 (Svantesson ätstörningsvård IP) — geplant nach dem 5. Mai. Wenn Svantesson ihre früheren öffentlichen Aussagen nicht mit dem Gerichtsurteil in Einklang bringen kann, wird dies der bedeutsamste ministerielle Rechenschaftsmoment der Vorwahlperiode. Wahrscheinlichkeit erheblicher politischer Schäden: **Wahrscheinlich** [B2] (65 %).
+
+**Sekundärer Auslöser**: S's Position zu HD03100 Frühjahrsproposition im FiU-Ausschussverfahren — ihr alternatives Haushaltsdokument wird die Wirtschaftsdebatte des Wahljahres definieren.
+
+---
+
+### 📊 Vertrauens-Dashboard
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1B5E20', 'primaryTextColor': '#FFFFFF', 'background': '#0a0e27', 'nodeBorder': '#FFFFFF'}}}%%
+pie title Zuverlässigkeitsverteilung nach Admiralitätscode
+    "A1 — Bestätigt/Zuverlässig (60%)" : 60
+    "B2 — Wahrscheinlich wahr (25%)" : 25
+    "B3 — Möglicherweise wahr (10%)" : 10
+    "C4 — Kann nicht beurteilt werden (5%)" : 5
+```
+
+**Bestätigte Schlüsselfakten (A1)**:
+- HD01FiU48-Abstimmungsergebnis bei riksdagen.se Abstimmungsdatensatz CE14CCEF
+- Alle 5 Interpellationen eingereicht und öffentlich zugänglich (riksdagen.se)
+- HD03100 eingereicht 2026-04-13 Finansdepartementet
+- Weltbank Schweden BIP 2024: 0,82 %; Inflation 2024: 2,84 %
+
+**Wahrscheinlich (B2)**:
+- S's Doppelspurstrategie als Wahlkalkül (aus Handlungen erschlossen, nicht erklärt)
+- Svantessons parlamentarische Exponierung durch HD10442's Gerichtsreferenz
+
+<!-- source-sha: cb87af673fb4a43f297af6c833d737b3ef322067 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief_es.md -->
+
+**ID de resumen**: EB-2026-04-22-EVE001
+**Preparado por**: James Pether Sörling
+**Preparado el**: 2026-04-22 23:50 UTC
+**Clasificación**: Público — RGPD Art. 9(2)(e)
+**Fiabilidad**: ALTA [A1]
+**Lectura de 60 segundos**: ✅
+
+---
+
+### 🎯 BLUF
+
+El parlamento de Suecia adoptó hoy un paquete de ayuda de emergencia de energía de 4,1 mil millones de SEK (HD01FiU48) con una anomalía de supermayoría M+SD+S+KD — los socialdemócratas abandonaron su contramoción climática para evitar ser culpados por los altos costos de combustible cuatro meses antes de las elecciones de septiembre de 2026. La ministra de Finanzas Elisabeth Svantesson (M) enfrenta simultáneamente una ofensiva concentrada de interpelaciones de rendición de cuentas de S, incluida una (HD10442) que cita una sentencia judicial que indica que sus declaraciones públicas sobre la atención de trastornos alimentarios eran factualmente incorrectas. La Proposición de Primavera 2026 (HD03100) es ahora el manifiesto fiscal oficial preelectoral.
+
+---
+
+### 🧭 3 Decisiones que apoya este briefing
+
+1. **Decisión mediática/editorial**: ¿Es "S vota por la reducción del impuesto al combustible mientras presenta una contramoción" el narrativo principal del día? → **Sí.** El comportamiento de doble vía (voto Sí en HD01FiU48 + contramoción HD024082) es el hallazgo analíticamente más significativo del día. Revela el cálculo electoral de S — el cálculo del costo de vida preelectoral desplaza la consistencia climática. Fiabilidad: ALTA [A1].
+
+2. **Decisión de estrategia de la oposición**: ¿Debería S escalar el camino de rendición de cuentas contra Svantesson? → **Probablemente sí.** La base judicialmente confirmada de HD10442 la convierte en una interpelación de alto riesgo/alta recompensa. El papel de la comisión de finanzas en tanto HD01FiU48 como la Proposición de Primavera significa que Svantesson está defendiendo simultáneamente la política fiscal Y su credibilidad personal. Fiabilidad: MEDIA [B2].
+
+3. **Decisión de resiliencia de la coalición**: ¿La supermayoría M+SD+S+KD en HD01FiU48 señala un nuevo consenso entre bloques o una maniobra electoral única? → **Maniobra electoral única.** Las contramociones de S (HD024082), V (HD024092) y MP (HD024098) presentadas la misma semana indican que no hay realineación estructural; S apoyó el paquete adoptado por razones de óptica electoral. Fiabilidad: ALTA [A1].
+
+---
+
+### ⚡ Lectura de 60 segundos
+
+- **ADOPTADO HOY**: HD01FiU48 — reducción del impuesto al combustible de 4,1 mil millones SEK y ayuda energética, votado 16:29. M+SD+S+KD votaron Sí.
+- **CONTRADICCIÓN ESTRATÉGICA**: S vota Sí al proyecto de ley adoptado pero presentó contramoción (HD024082) contra la misma política.
+- **RIESGO DE RENDICIÓN DE CUENTAS**: S presentó 5 interpelaciones en 48 horas contra Svantesson (3) y otros ministros.
+- **CONFIRMACIÓN JUDICIAL**: HD10442 cita una sentencia judicial real que socava las declaraciones públicas de Svantesson sobre la atención sanitaria.
+- **MARCO ELECTORAL**: HD03100 Proposición de Primavera 2026 es ahora el manifiesto fiscal oficial preelectoral — cada SEK será debatida.
+- **PIPELINE CONSTITUCIONAL**: Dos cambios constitucionales (HD01KU33 + HD01KU32) en primera lectura simultáneamente — intensidad legislativa poco común.
+- **COMPROMISO CON UCRANIA**: Suecia se une tanto a la comisión de compensación de Ucrania (HD03232) como al tribunal de agresión (HD03231).
+- **BRECHA CLIMA-FISCAL**: MP+V+S presentaron contramociones climáticas paralelas mientras S votaba por el alivio del impuesto al combustible.
+
+---
+
+### 🔮 Principal disparador prospectivo
+
+**Vigilar**: Debate del Riksdag sobre HD10442 (Svantesson ätstörningsvård IP) — programado después del 5 de mayo. Si Svantesson no puede reconciliar sus anteriores declaraciones públicas con la sentencia judicial, esto se convierte en el mayor momento de rendición de cuentas ministerial del período preelectoral. Probabilidad de daño político significativo: **Probable** [B2] (65 %).
+
+**Disparador secundario**: La posición de S sobre la Proposición de Primavera HD03100 en los procedimientos de la comisión FiU — su documento fiscal alternativo definirá el debate económico del año electoral.
+
+---
+
+### 📊 Panel de confianza
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1B5E20', 'primaryTextColor': '#FFFFFF', 'background': '#0a0e27', 'nodeBorder': '#FFFFFF'}}}%%
+pie title Distribución de confianza por código Almirantazgo
+    "A1 — Confirmado/Fiable (60%)" : 60
+    "B2 — Probablemente verdadero (25%)" : 25
+    "B3 — Posiblemente verdadero (10%)" : 10
+    "C4 — No puede ser juzgado (5%)" : 5
+```
+
+**Hechos clave confirmados (A1)**:
+- Resultado de votación HD01FiU48 en riksdagen.se registro de votación CE14CCEF
+- Las 5 interpelaciones presentadas y públicamente accesibles (riksdagen.se)
+- HD03100 presentada el 2026-04-13 Finansdepartementet
+- Banco Mundial PIB Suecia 2024: 0,82 %; Inflación 2024: 2,84 %
+
+**Probable (B2)**:
+- La estrategia de doble vía de S como cálculo electoral (inferida de acciones, no declarada)
+- La exposición parlamentaria de Svantesson derivada de la referencia judicial de HD10442
+
+<!-- source-sha: cb87af673fb4a43f297af6c833d737b3ef322067 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief_fi.md -->
+
+**Yhteenveto-tunnus**: EB-2026-04-22-EVE001
+**Laatinut**: James Pether Sörling
+**Laadittu**: 2026-04-22 23:50 UTC
+**Luokittelu**: Julkinen — GDPR Art. 9(2)(e)
+**Luotettavuus**: KORKEA [A1]
+**60 sekunnin lukeminen**: ✅
+
+---
+
+### 🎯 BLUF
+
+Ruotsin eduskunta hyväksyi tänään 4,1 miljardin kruunun hätäenergiatukipaketin (HD01FiU48) poikkeavalla M+SD+S+KD-supermajoriteetilla — sosiaalidemokraatit hylkäsivät ilmastovastamotionsa välttääkseen syyttelyt korkeista polttoainekustannuksista neljä kuukautta ennen syyskuun 2026 vaaleja. Valtiovarainministeri Elisabeth Svantesson (M) kohtaa samanaikaisesti S:n taholta tiiviin viisinkertaisen interpellaatiovastuuoffensiivin, joka sisältää yhden (HD10442), jossa viitataan tuomioistuinpäätökseen sen suhteen, että hänen julkilausumansa syömishäiriöhoidosta olivat tosiasiallisesti virheellisiä. Keväsbudjetti 2026 (HD03100) on nyt virallinen esivaalikausien talouspolitiikan manifesti.
+
+---
+
+### 🧭 3 Päätöstä, joita tämä yhteenveto tukee
+
+1. **Media/toimituksellinen päätös**: Onko "S äänestää polttoaineveroleikkauksen puolesta samalla kun jättää vastamotionin" päivän johtava kertomus? → **Kyllä.** Kaksoispolkukäyttäytyminen (HD01FiU48 Kyllä-ääni + HD024082 vastamotio) on päivän analyyttisesti merkittävin havainto. Se paljastaa S:n vaalistrategian — esivaalikautisten elinkustannuslaskelmat syrjäyttävät ilmastoyhtenäisyyden. Luotettavuus: KORKEA [A1].
+
+2. **Oppositiostrategiapäätös**: Pitäisikö S eskaleeraa Svantessonia vastaan suunnattua vastuullisuuspolkua? → **Todennäköisesti kyllä.** HD10442:n tuomioistuimen vahvistama perusta tekee siitä korkean riskin/korkean palkkion interpellaation. Valtiovarainvaliokunnan rooli sekä HD01FiU48:ssa että Keväsbudjetissa tarkoittaa, että Svantesson puolustaa samanaikaisesti talouspolitiikkaa JA henkilökohtaista uskottavuuttaan. Luotettavuus: MEDIUM [B2].
+
+3. **Koalition kestävyyspäätös**: Signaloiko M+SD+S+KD-supermajoriteetti HD01FiU48:ssa uutta blokkienvälinen konsensus vai kertavaaliveto? → **Kertavaaliveto.** S:n (HD024082), V:n (HD024092) ja MP:n (HD024098) samalla viikolla jättämät vastamotion osoittavat, ettei rakenteellista uudelleensuuntautumista ole tapahtunut; S tuki hyväksyttyä pakettia vaalioptiikan vuoksi. Luotettavuus: KORKEA [A1].
+
+---
+
+### ⚡ 60 sekunnin pisteluettelo
+
+- **TÄNÄÄN HYVÄKSYTTY**: HD01FiU48 — 4,1 miljardin kruunun polttoaineveroleikkaus ja energiatuki, äänestetty 16:29. M+SD+S+KD äänesti Kyllä.
+- **STRATEGINEN RISTIRIITA**: S äänestää Kyllä hyväksyttyä lakiehdotusta mutta jätti vastamotionin (HD024082) samaa politiikkaa vastaan.
+- **VASTUURISKI**: S jätti 5 interpellaatiota 48 tunnissa Svantessonia (3) ja muita ministereitä vastaan.
+- **TUOMIOISTUIMEN VAHVISTUS**: HD10442 viittaa todelliseen tuomioistuinpäätökseen, joka horjuttaa Svantessonin julkisia lausumia terveydenhuollosta.
+- **VAALIRUNKO**: HD03100 Keväsbudjetti 2026 on nyt virallinen esivaalikautinen talouspolitiikan manifesti — jokainen kruunu tulee väittelyn aiheeksi.
+- **PERUSTUSLAILLINEN PROSESSI**: Kaksi perustuslain muutosta (HD01KU33 + HD01KU32) ensimmäisessä käsittelyssä samanaikaisesti — harvinainen lainsäädännöllinen intensiteetti.
+- **UKRAINA-SITOUMUS**: Ruotsi liittyy sekä Ukrainan korvauskomissioon (HD03232) että aggressiotuomioistuimeen (HD03231).
+- **ILMASTO-TALOUSKUILU**: MP+V+S jättivät rinnakkaisia ilmastovastamotioneita samalla kun S äänesti polttoaineverotuken puolesta.
+
+---
+
+### 🔮 Tärkein eteenpäinkatsova laukaisin
+
+**Tarkkaile**: Riksdagin keskustelu HD10442:sta (Svantesson ätstörningsvård IP) — ajateltu toukokuun 5. päivän jälkeen. Jos Svantesson ei pysty sovittamaan aiempia julkisia lausumiaan tuomioistuinpäätöksen kanssa, tästä tulee esivaalikauden merkittävin ministerivastuun hetki. Merkittävän poliittisen vahingon todennäköisyys: **Todennäköinen** [B2] (65 %).
+
+**Toissijainen laukaisin**: S:n kanta HD03100 Keväsbudjetin FiU-valiokuntaprosessissa — heidän vaihtoehtoinen talouspolitiikan dokumenttinsa määrittää vaalikauden talouskeskustelun.
+
+---
+
+### 📊 Luotettavuus-kojelauta
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1B5E20', 'primaryTextColor': '#FFFFFF', 'background': '#0a0e27', 'nodeBorder': '#FFFFFF'}}}%%
+pie title Luotettavuusjakauma Amiraalikoodin mukaan
+    "A1 — Vahvistettu/Luotettava (60%)" : 60
+    "B2 — Todennäköisesti totta (25%)" : 25
+    "B3 — Mahdollisesti totta (10%)" : 10
+    "C4 — Ei voida arvioida (5%)" : 5
+```
+
+**Vahvistetut avaintiedot (A1)**:
+- HD01FiU48-äänestystulos riksdagen.se:n äänestysmerkinnässä CE14CCEF
+- Kaikki 5 interpellaatiota jätetty ja julkisesti saatavilla (riksdagen.se)
+- HD03100 jätetty 2026-04-13 Finansdepartementet
+- Maailmanpankin Ruotsin BKT 2024: 0,82 %; Inflaatio 2024: 2,84 %
+
+**Todennäköinen (B2)**:
+- S:n kaksoispolkustrategia vaalistrategiana (pääteltävissä toiminnoista, ei ilmoitettuna)
+- Svantessonin parlamentaarinen altistuminen HD10442:n tuomioistuinviittauksesta
+
+<!-- source-sha: cb87af673fb4a43f297af6c833d737b3ef322067 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief_fr.md -->
+
+**ID de briefing**: EB-2026-04-22-EVE001
+**Préparé par**: James Pether Sörling
+**Préparé le**: 2026-04-22 23:50 UTC
+
+**Fiabilité**: HAUTE [A1]
+**Lecture en 60 secondes**: ✅
+
+---
+
+### 🎯 BLUF
+
+Le parlement suédois a adopté aujourd'hui un plan d'urgence de soutien à l'énergie de 4,1 milliards SEK (HD01FiU48) avec une supermajorité anomale M+SD+S+KD — les sociaux-démocrates ont abandonné leur contre-motion climatique pour éviter d'être tenus responsables des coûts élevés des carburants quatre mois avant les élections de septembre 2026. La ministre des Finances Elisabeth Svantesson (M) fait simultanément face à une offensive d'interpellation concentrée à cinq volets de S, dont l'une (HD10442) cite une décision de justice selon laquelle ses déclarations publiques sur la prise en charge des troubles alimentaires étaient factuellement incorrectes. La Proposition de printemps 2026 (HD03100) est désormais le manifeste fiscal officiel de pré-élection.
+
+---
+
+### 🧭 3 Décisions soutenues par ce briefing
+
+1. **Décision médiatique/éditoriale**: Le "S vote pour une réduction de la taxe sur les carburants tout en déposant une contre-motion" est-il le narratif principal de la journée? → **Oui.** Le comportement à double voie (vote Oui sur HD01FiU48 + contre-motion HD024082) est la découverte analytiquement la plus significative de la journée. Il révèle le calcul électoral du S — les calculs du coût de la vie pré-électoral supplantent la cohérence climatique. Fiabilité: HAUTE [A1].
+
+2. **Décision stratégique de l'opposition**: S devrait-il escalader la piste de responsabilisation contre Svantesson? → **Probablement oui.** Le fondement judiciaire confirmé de HD10442 en fait une interpellation à haut risque/haute récompense. Le rôle de la commission des finances dans HD01FiU48 et la Proposition de printemps signifie que Svantesson défend simultanément la politique fiscale ET sa crédibilité personnelle. Fiabilité: MOYEN [B2].
+
+3. **Décision de résilience de coalition**: La supermajorité M+SD+S+KD sur HD01FiU48 signale-t-elle un nouveau consensus inter-bloc ou une manœuvre électorale ponctuelle? → **Manœuvre électorale ponctuelle.** Les contre-motions de S (HD024082), V (HD024092) et MP (HD024098) déposées la même semaine indiquent l'absence de réalignement structurel; S a soutenu le paquet adopté pour des raisons d'optique électorale. Fiabilité: HAUTE [A1].
+
+---
+
+### ⚡ Liste de 60 secondes
+
+- **ADOPTÉ AUJOURD'HUI**: HD01FiU48 — réduction de la taxe sur les carburants et aide à l'énergie de 4,1 milliards SEK, voté 16:29. M+SD+S+KD ont voté Oui.
+- **CONTRADICTION STRATÉGIQUE**: S vote Oui sur le projet de loi adopté mais a déposé une contre-motion (HD024082) contre la même politique.
+- **RISQUE DE RESPONSABILITÉ**: S a déposé 5 interpellations en 48 heures contre Svantesson (3) et d'autres ministres.
+- **CONFIRMATION JUDICIAIRE**: HD10442 cite une véritable décision de justice qui sape les déclarations publiques de Svantesson sur les soins de santé.
+- **CADRE ÉLECTORAL**: HD03100 Proposition de printemps 2026 est désormais le manifeste fiscal officiel de pré-élection — chaque SEK sera débattu.
+- **PIPELINE CONSTITUTIONNEL**: Deux changements constitutionnels (HD01KU33 + HD01KU32) en première lecture simultanément — intensité législative rare.
+- **ENGAGEMENT UKRAINE**: La Suède rejoint à la fois la commission d'indemnisation de l'Ukraine (HD03232) et le tribunal d'agression (HD03231).
+- **FOSSÉ CLIMAT-FISCAL**: MP+V+S ont déposé des contre-motions climatiques parallèles tandis que S votait pour l'allègement de la taxe sur les carburants.
+
+---
+
+### 🔮 Principal déclencheur prospectif
+
+**À surveiller**: Débat du Riksdag sur HD10442 (Svantesson ätstörningsvård IP) — prévu après le 5 mai. Si Svantesson ne peut pas concilier ses précédentes déclarations publiques avec la décision de justice, cela deviendra le moment de responsabilité ministérielle le plus important de la période pré-électorale. Probabilité de dommages politiques significatifs: **Probable** [B2] (65 %).
+
+**Déclencheur secondaire**: La position de S sur la Proposition de printemps HD03100 dans les procédures de la commission FiU — leur document fiscal alternatif définira le débat économique de l'année électorale.
+
+---
+
+### 📊 Tableau de bord de confiance
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1B5E20', 'primaryTextColor': '#FFFFFF', 'background': '#0a0e27', 'nodeBorder': '#FFFFFF'}}}%%
+pie title Distribution de confiance par code Amirauté
+    "A1 — Confirmé/Fiable (60%)" : 60
+    "B2 — Probablement vrai (25%)" : 25
+    "B3 — Peut-être vrai (10%)" : 10
+    "C4 — Ne peut pas être jugé (5%)" : 5
+```
+
+**Faits clés confirmés (A1)**:
+- Résultat du vote HD01FiU48 sur riksdagen.se enregistrement de vote CE14CCEF
+- Les 5 interpellations déposées et publiquement accessibles (riksdagen.se)
+- HD03100 soumis le 2026-04-13 Finansdepartementet
+- PIB Suède Banque mondiale 2024: 0,82 %; Inflation 2024: 2,84 %
+
+**Probable (B2)**:
+- La stratégie à double voie du S comme calcul électoral (déduite des actions, non déclarée)
+- L'exposition parlementaire de Svantesson issue de la référence judiciaire de HD10442
+
+<!-- source-sha: cb87af673fb4a43f297af6c833d737b3ef322067 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# תקציר מנהלים — ניתוח ערב 2026-04-22
+
+**מזהה תקציר**: EB-2026-04-22-EVE001
+**הוכן על ידי**: James Pether Sörling
+**הוכן ב**: 2026-04-22 23:50 UTC
+**סיווג**: ציבורי — GDPR Art. 9(2)(e)
+**אמינות**: גבוהה [A1]
+**קריאה של 60 שניות**: ✅
+
+---
+
+### 🎯 BLUF
+
+הפרלמנט השוודי אישר היום חבילת סיוע חירום לאנרגיה של 4.1 מיליארד כתר (HD01FiU48) עם סופרמג'וריטי חריג של M+SD+S+KD — הסוציאל-דמוקרטים זנחו את הצעת הנגד שלהם בתחום האקלים כדי להימנע מנשיאת האחריות לעלויות דלק גבוהות ארבעה חודשים לפני בחירות ספטמבר 2026. שרת האוצר אליזבת סוונסון (M) עומדת בו-זמנית בפני התקפת אחריות ממוקדת של חמש שאלות פרלמנטריות מצד S, כולל אחת (HD10442) המצטטת פסק דין שקבע שהצהרותיה הפומביות בנוגע לטיפול בהפרעות אכילה לא היו מדויקות מבחינה עובדתית. הצעת האביב 2026 (HD03100) היא כעת המניפסט הפיסקלי הרשמי לפני הבחירות.
+
+---
+
+### 🧭 3 החלטות שתקציר זה תומך בהן
+
+1. **החלטה תקשורתית/עריכתית**: האם "S מצביעה בעד הפחתת מס דלק תוך הגשת הצעת נגד" היא הנרטיב המוביל ליום? → **כן.** התנהגות הנתיב הכפול (הצבעת כן ב-HD01FiU48 + הצעת נגד HD024082) היא הממצא האנליטי המשמעותי ביותר של היום. היא חושפת את החישוב הבחירותי של S — חישובי יוקר המחיה לפני הבחירות גוברים על עקביות האקלים. אמינות: גבוהה [A1].
+
+2. **החלטה אסטרטגית של האופוזיציה**: האם על S לטפס על מסלול האחריות נגד סוונסון? → **כנראה כן.** הבסיס המאושש מבחינה משפטית של HD10442 הופך אותה לשאלה פרלמנטרית בסיכון גבוה/תגמול גבוה. תפקיד ועדת הכספים הן ב-HD01FiU48 והן בהצעת האביב משמעו שסוונסון מגנה בו-זמנית על מדיניות הפיסקלית ועל האמינות האישית שלה. אמינות: בינונית [B2].
+
+3. **החלטת עמידות הקואליציה**: האם הסופרמג'וריטי של M+SD+S+KD ב-HD01FiU48 מסמל קונצנזוס בין-גושי חדש או תמרון בחירותי חד-פעמי? → **תמרון בחירותי חד-פעמי.** הצעות הנגד מ-S (HD024082), V (HD024092) ו-MP (HD024098) שהוגשו באותו שבוע מציינות שאין יישור מחדש מבני; S תמכה בחבילה שאושרה מסיבות אופטיות בחירותיות בלבד. אמינות: גבוהה [A1].
+
+---
+
+### ⚡ קריאה נקודתית של 60 שניות
+
+- **אושר היום**: HD01FiU48 — הפחתת מס דלק של 4.1 מיליארד SEK ותמיכה באנרגיה, הוצבע 16:29. M+SD+S+KD הצביעו כן.
+- **סתירה אסטרטגית**: S מצביעה כן על החוק שאושר אך הגישה הצעת נגד (HD024082) נגד אותה מדיניות.
+- **סיכון אחריות**: S הגישה 5 שאלות פרלמנטריות ב-48 שעות נגד סוונסון (3) ושרים אחרים.
+- **אישור משפטי**: HD10442 מצטט פסק דין אמיתי המחליש את הצהרותיה הפומביות של סוונסון על שירותי בריאות.
+- **מסגרת בחירותית**: HD03100 הצעת האביב 2026 היא כעת המניפסט הפיסקלי הרשמי לפני הבחירות — כל כתר יידון.
+- **צינור חוקתי**: שני שינויי חוק יסוד (HD01KU33 + HD01KU32) בקריאה ראשונה בו-זמנית — עצימות חקיקתית נדירה.
+- **מחויבות אוקראינה**: שוודיה מצטרפת גם לוועדת הפיצויים האוקראינית (HD03232) וגם לבית הדין לתוקפנות (HD03231).
+- **פער אקלים-פיסקלי**: MP+V+S הגישו הצעות נגד מקבילות לאקלים גם כאשר S הצביעה לטובת הקלת מס הדלק.
+
+---
+
+### 🔮 הטריגר האסטרטגי המוביל
+
+**עקוב אחר**: דיון הריקסדאג על HD10442 (Svantesson ätstörningsvård IP) — מתוכנן לאחר ה-5 במאי. אם סוונסון לא תוכל לפייס את הצהרותיה הפומביות הקודמות עם פסק הדין, זה יהפוך לרגע האחריות המיניסטריאלית הגדול ביותר של תקופת הקדם-בחירות. הסתברות לנזק פוליטי משמעותי: **סביר** [B2] (65 %).
+
+**טריגר משני**: עמדת S על הצעת האביב HD03100 בהליכי ועדת FiU — מסמך הפיסקלי החלופי שלהם יגדיר את הדיון הכלכלי של שנת הבחירות.
+
+---
+
+### 📊 לוח מחוונים של אמון
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1B5E20', 'primaryTextColor': '#FFFFFF', 'background': '#0a0e27', 'nodeBorder': '#FFFFFF'}}}%%
+pie title התפלגות אמינות לפי קוד אדמירליות
+    "A1 — מאושר/אמין (60%)" : 60
+    "B2 — כנראה נכון (25%)" : 25
+    "B3 — אולי נכון (10%)" : 10
+    "C4 — לא ניתן לשיפוט (5%)" : 5
+```
+
+**עובדות מפתח מאושרות (A1)**:
+- תוצאת הצבעת HD01FiU48 ב-riksdagen.se ברשומת ההצבעה CE14CCEF
+- כל 5 השאלות הפרלמנטריות הוגשו ונגישות לציבור (riksdagen.se)
+- HD03100 הוגש ב-2026-04-13 Finansdepartementet
+- תוצר מקומי גולמי שוודיה לפי הבנק העולמי 2024: 0.82 %; אינפלציה 2024: 2.84 %
+
+**סביר (B2)**:
+- אסטרטגיית הנתיב הכפול של S כחישוב בחירותי (מסוקנת מפעולות, לא מוצהרת)
+- חשיפתה הפרלמנטרית של סוונסון מהפניה המשפטית של HD10442
+
+<!-- source-sha: cb87af673fb4a43f297af6c833d737b3ef322067 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief_ja.md -->
+
+**ブリーフID**: EB-2026-04-22-EVE001
+**作成者**: James Pether Sörling
+**作成日時**: 2026-04-22 23:50 UTC
+**分類**: 公開 — GDPR Art. 9(2)(e)
+**信頼性**: 高 [A1]
+**60秒読み**: ✅
+
+---
+
+### 🎯 BLUF（要旨）
+
+スウェーデン議会は本日、41億クローナの緊急エネルギー支援策（HD01FiU48）を、M+SD+S+KDという異例の超党派過半数で可決した。社会民主党（S）は気候対案を取り下げ、2026年9月選挙まで4ヶ月の時点で燃料費高騰の責任を負うことを回避した。同時に、財務大臣エリサベット・スヴァンテソン（M）は、Sからの5件の質問書による集中的な責任追及を受けており、そのうち1件（HD10442）では、摂食障害ケアに関する彼女の公式発言が事実として誤りであったと判示した裁判所判決が引用されている。2026年春の経済政策声明（HD03100）は現在、公式の選前財政マニフェストとなっている。
+
+---
+
+### 🧭 本ブリーフが支援する3つの意思決定
+
+1. **報道/編集上の判断**: 「SがFiU48に賛成票を投じつつ対案を提出している」は本日の中心的な報道軸か？ → **はい。** 二重経路的行動（HD01FiU48への賛成票 + 対案HD024082）は本日最も分析的に重要な発見です。これはSの選挙計算を露わにしています — 選前の生活費計算が気候上の一貫性に優先しています。信頼性: 高 [A1]。
+
+2. **野党戦略上の判断**: Sはスヴァンテソンへの責任追及路線をエスカレートすべきか？ → **おそらく可。** HD10442の裁判所判決に裏打ちされた根拠は、ハイリスク・ハイリターンな質問書にしています。スヴァンテソンはHD01FiU48と春の政策声明の両方で財政政策と個人的信頼性を同時に守らなければならない状況です。信頼性: 中 [B2]。
+
+3. **連立安定性の判断**: HD01FiU48におけるM+SD+S+KDの超党派過半数は新たなブロック横断的コンセンサスを示すか、それとも一時的な選挙戦術か？ → **一時的な選挙戦術。** 同週に提出されたS（HD024082）・V（HD024092）・MP（HD024098）各党の対案は、構造的な再配置がないことを示しています。Sは選挙的見映えの理由のみで可決された法案を支持したに過ぎません。信頼性: 高 [A1]。
+
+---
+
+### ⚡ 60秒箇条書き
+
+- **本日可決**: HD01FiU48 — 41億SEK燃料税引き下げ・エネルギー支援策、16:29採決。M+SD+S+KDが賛成票。
+- **戦略的矛盾**: Sは可決法案に賛成票を投じながら同一政策への対案（HD024082）を提出。
+- **責任リスク**: Sは48時間でスヴァンテソン（3件）および他大臣へ5件の質問書を提出。
+- **法的裏付け**: HD10442は医療サービスに関するスヴァンテソンの公式発言を否定する実際の裁判所判決を引用。
+- **選挙的文脈**: HD03100・2026年春の経済政策声明は今や公式の選前財政マニフェスト — 全クローナが論争対象に。
+- **憲法的工程**: 基本法改正2件（HD01KU33 + HD01KU32）が同時に第一読会 — 立法上の稀な高密度状態。
+- **ウクライナへのコミットメント**: スウェーデンがウクライナ補償委員会（HD03232）と侵略罪裁判所（HD03231）の双方に加盟。
+- **気候・財政間の乖離**: MP+V+Sが燃料税軽減への賛成票と並行して気候関連の対案を提出。
+
+---
+
+### 🔮 最重要先行指標
+
+**追跡対象**: HD10442（Svantesson ätstörningsvård IP）に関する議会討論 — 5月5日以降に予定。スヴァンテソンが裁判所判決との整合性を説明できなければ、選前最大の大臣責任の場面となる。重大な政治的ダメージの確率: **おそらく** [B2]（65%）。
+
+**二次指標**: FiU委員会手続きにおけるHD03100春の政策声明に対するSの立場 — 彼らの代替財政文書が選挙年の経済的議論を規定する。
+
+---
+
+### 📊 信頼性ダッシュボード
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1B5E20', 'primaryTextColor': '#FFFFFF', 'background': '#0a0e27', 'nodeBorder': '#FFFFFF'}}}%%
+pie title Confidence Distribution by Admiralty Code
+    "A1 — 確認済/信頼性高 (60%)" : 60
+    "B2 — おそらく真実 (25%)" : 25
+    "B3 — 可能性として真実 (10%)" : 10
+    "C4 — 判断不能 (5%)" : 5
+```
+
+**確認済の主要事実 (A1)**:
+- HD01FiU48採決結果 riksdagen.se 採決記録CE14CCEF
+- 5件の質問書すべて提出済・公開アクセス可（riksdagen.se）
+- HD03100は2026-04-13 Finansdepartementet提出
+- 世界銀行スウェーデンGDP 2024: 0.82%; インフレ2024: 2.84%
+
+**おそらく (B2)**:
+- Sの二重経路戦略を選挙計算として解釈（行動から推論・明示的発言なし）
+- HD10442の法的引用によるスヴァンテソンの議会的露出
+
+<!-- source-sha: cb87af673fb4a43f297af6c833d737b3ef322067 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief_ko.md -->
+
+**브리핑 ID**: EB-2026-04-22-EVE001
+**작성자**: James Pether Sörling
+**작성일**: 2026-04-22 23:50 UTC
+**분류**: 공개 — GDPR Art. 9(2)(e)
+**신뢰도**: 높음 [A1]
+**60초 읽기**: ✅
+
+---
+
+### 🎯 핵심 요약 (BLUF)
+
+스웨덴 의회는 오늘 M+SD+S+KD의 이례적인 초당적 과반수로 41억 크로나 규모의 긴급 에너지 지원 패키지(HD01FiU48)를 통과시켰다. 사민당(S)은 2026년 9월 선거를 4개월 앞두고 연료비 급등에 대한 책임을 피하기 위해 기후 관련 대안을 철회했다. 동시에 재무장관 엘리사벳 스반테손(M)은 S의 집중적인 책임 추궁을 받고 있으며, 그 중 한 건(HD10442)은 섭식장애 치료에 관한 그녀의 공개 발언이 사실과 다르다고 판결한 법원 판결을 인용하고 있다. 2026년 봄 경제정책 성명(HD03100)은 이제 공식적인 선거 전 재정 선언문이 되었다.
+
+---
+
+### 🧭 이 브리핑이 지원하는 3가지 의사결정
+
+1. **언론/편집 결정**: "S가 연료세 감면에 찬성하면서 대안을 제출했다"가 오늘의 핵심 보도 방향인가? → **예.** 이중 경로 행동(HD01FiU48 찬성표 + 대안 HD024082)은 오늘의 가장 중요한 분석적 발견입니다. 이는 S의 선거적 계산을 드러냅니다 — 선거 전 생계비 계산이 기후 일관성보다 우선합니다. 신뢰도: 높음 [A1].
+
+2. **야당 전략 결정**: S는 스반테손에 대한 책임 추궁 경로를 강화해야 하는가? → **아마 그렇다.** HD10442의 법원 판결로 뒷받침된 근거는 이를 고위험·고수익 질의로 만듭니다. 스반테손은 HD01FiU48과 봄 정책 성명 양쪽에서 재정 정책과 개인 신뢰도를 동시에 방어해야 합니다. 신뢰도: 중간 [B2].
+
+3. **연립 안정성 결정**: HD01FiU48에서의 M+SD+S+KD 초당적 과반수는 새로운 블록 횡단 합의를 나타내는가, 아니면 일회성 선거 전술인가? → **일회성 선거 전술.** 같은 주에 제출된 S(HD024082), V(HD024092), MP(HD024098)의 대안들은 구조적 재편성이 없음을 나타냅니다. S는 순전히 선거적 시각적 이유로 통과된 패키지를 지지했습니다. 신뢰도: 높음 [A1].
+
+---
+
+### ⚡ 60초 요점 정리
+
+- **오늘 통과**: HD01FiU48 — 41억 SEK 연료세 감면·에너지 지원, 16:29 표결. M+SD+S+KD 찬성.
+- **전략적 모순**: S는 통과된 법안에 찬성표를 던지면서 동일한 정책에 대한 대안(HD024082)을 제출.
+- **책임 위험**: S는 48시간 내에 스반테손(3건)과 다른 장관들에게 5건의 질의서 제출.
+- **법적 뒷받침**: HD10442는 스반테손의 의료 서비스 공개 발언을 부정하는 실제 법원 판결 인용.
+- **선거 맥락**: HD03100 2026년 봄 경제정책 성명은 이제 공식 선거 전 재정 선언문 — 모든 크로나가 논쟁 대상.
+- **헌법적 일정**: 기본법 개정 2건(HD01KU33 + HD01KU32)이 동시에 1독회 — 드문 입법 집중도.
+- **우크라이나 공약**: 스웨덴이 우크라이나 배상위원회(HD03232)와 침략죄 재판소(HD03231) 양측에 가입.
+- **기후·재정 간 격차**: MP+V+S가 연료세 완화에 찬성하면서 동시에 기후 관련 대안 제출.
+
+---
+
+### 🔮 핵심 선행 지표
+
+**추적 대상**: HD10442(Svantesson ätstörningsvård IP)에 관한 의회 토론 — 5월 5일 이후 예정. 스반테손이 법원 판결과의 일치를 설명하지 못하면, 이것이 선거 전 최대의 장관 책임 순간이 된다. 심각한 정치적 피해 가능성: **아마도** [B2] (65%).
+
+**보조 지표**: FiU 위원회 절차에서 HD03100 봄 정책 성명에 대한 S의 입장 — 그들의 대안적 재정 문서가 선거 해의 경제 논의를 규정할 것이다.
+
+---
+
+### 📊 신뢰도 대시보드
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1B5E20', 'primaryTextColor': '#FFFFFF', 'background': '#0a0e27', 'nodeBorder': '#FFFFFF'}}}%%
+pie title Confidence Distribution by Admiralty Code
+    "A1 — 확인됨/신뢰성 높음 (60%)" : 60
+    "B2 — 아마 사실 (25%)" : 25
+    "B3 — 가능성 있는 사실 (10%)" : 10
+    "C4 — 판단 불가 (5%)" : 5
+```
+
+**확인된 주요 사실 (A1)**:
+- HD01FiU48 표결 결과 riksdagen.se 표결 기록 CE14CCEF
+- 5건의 질의서 모두 제출 및 공개 접근 가능 (riksdagen.se)
+- HD03100은 2026-04-13 Finansdepartementet 제출
+- 세계은행 스웨덴 GDP 2024: 0.82%; 인플레이션 2024: 2.84%
+
+**아마도 (B2)**:
+- S의 이중 경로 전략을 선거적 계산으로 해석 (행동에서 추론, 명시적 발언 없음)
+- HD10442 법적 인용으로 인한 스반테손의 의회적 노출
+
+<!-- source-sha: cb87af673fb4a43f297af6c833d737b3ef322067 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief_nl.md -->
+
+**Briefing-ID**: EB-2026-04-22-EVE001
+**Opgesteld door**: James Pether Sörling
+**Opgesteld op**: 2026-04-22 23:50 UTC
+**Classificatie**: Openbaar — AVG Art. 9(2)(e)
+**Betrouwbaarheid**: HOOG [A1]
+**60 seconden lezen**: ✅
+
+---
+
+### 🎯 BLUF
+
+Het Zweedse parlement keurde vandaag een noodenergiepakket van 4,1 miljard SEK goed (HD01FiU48) met een anomale M+SD+S+KD-supermeerderheid — de sociaaldemocraten lieten hun klimaattegenvoorstel varen om te voorkomen dat ze de schuld krijgen van hoge brandstofkosten vier maanden voor de verkiezingen van september 2026. Minister van Financiën Elisabeth Svantesson (M) staat tegelijk voor een geconcentreerde vijfvoudige interpellatie-verantwoordingsoffensief van S, waaronder één (HD10442) die een rechterlijke uitspraak aanhaalt dat haar openbare verklaringen over de zorg voor eetstoornissen feitelijk onjuist waren. De Voorjaarspropositie 2026 (HD03100) is nu het officiële fiscale pre-verkiezingsmanifest.
+
+---
+
+### 🧭 3 Beslissingen die dit briefing ondersteunt
+
+1. **Media/redactionele beslissing**: Is "S stemt voor brandstofbelastingverlaging terwijl ze een tegenvoorstel indienen" het leidende narratief van de dag? → **Ja.** Het dubbele spoorgedrag (Ja-stem op HD01FiU48 + tegenvoorstel HD024082) is de analytisch meest significante bevinding van de dag. Het onthult de electorale berekening van S — de kosten van levensonderhoud-berekening voor de verkiezingen overstijgt de klimaatconsistentie. Betrouwbaarheid: HOOG [A1].
+
+2. **Opposiestrategie-beslissing**: Moet S het verantwoordingsspoor tegen Svantesson escaleren? → **Waarschijnlijk ja.** De rechterlijk bevestigde basis van HD10442 maakt het een interpellatie met hoog risico/hoge beloning. De rol van de financiële commissie in zowel HD01FiU48 als de Voorjaarspropositie betekent dat Svantesson tegelijk de begrotingspolitiek EN haar persoonlijke geloofwaardigheid verdedigt. Betrouwbaarheid: GEMIDDELD [B2].
+
+3. **Coalitieresilientiebeslissing**: Signaleert de M+SD+S+KD-supermeerderheid bij HD01FiU48 een nieuw blokoverkoepelend consensus of een eenmalig verkiezingsmanoeuvre? → **Eenmalig verkiezingsmanoeuvre.** De tegenvoorstellen van S (HD024082), V (HD024092) en MP (HD024098) ingediend in dezelfde week duiden op geen structurele heroriëntatie; S steunde het aangenomen pakket om electorale optische redenen. Betrouwbaarheid: HOOG [A1].
+
+---
+
+### ⚡ 60 seconden opsomming
+
+- **VANDAAG AANGENOMEN**: HD01FiU48 — 4,1 miljard SEK brandstofbelastingverlaging en energiesteun, gestemd 16:29. M+SD+S+KD stemden Ja.
+- **STRATEGISCHE TEGENSTRIJDIGHEID**: S stemt Ja op aangenomen wetsvoorstel maar diende tegenvoorstel in (HD024082) tegen dezelfde politiek.
+- **VERANTWOORDINGSRISICO**: S diende in 48 uur 5 interpellaties in tegen Svantesson (3) en andere ministers.
+- **RECHTERLIJKE BEVESTIGING**: HD10442 citeert een werkelijke rechterlijke uitspraak die Svantessons openbare verklaringen over gezondheidszorg ondermijnt.
+- **VERKIEZINGSKADER**: HD03100 Voorjaarspropositie 2026 is nu het officiële fiscale pre-verkiezingsmanifest — elke SEK zal worden gedebatteerd.
+- **CONSTITUTIONELE PIPELINE**: Twee grondwetswijzigingen (HD01KU33 + HD01KU32) in eerste lezing tegelijk — zeldzame wetgevingsintensiteit.
+- **OEKRAÏNE-VERBINTENIS**: Zweden sluit zich aan bij zowel de Oekraïne-vergoedingscommissie (HD03232) als het agressietribunaal (HD03231).
+- **KLIMAAT-FISCALE KLOOF**: MP+V+S dienden parallelle klimaattegenvoorsstellen in terwijl S stemde voor de brandstofbelastingverlichting.
+
+---
+
+### 🔮 Belangrijkste vooruitkijkende trigger
+
+**Let op**: Rijksdag-debat over HD10442 (Svantesson ätstörningsvård IP) — gepland na 5 mei. Als Svantesson haar eerdere openbare verklaringen niet kan verzoenen met de rechterlijke uitspraak, wordt dit het grootste ministeriële verantwoordingsmoment van de pre-verkiezingsperiode. Kans op significante politieke schade: **Waarschijnlijk** [B2] (65 %).
+
+**Secundaire trigger**: S's positie over HD03100 Voorjaarspropositie in de FiU-commissieprocedures — hun alternatieve begrotingsdocument zal het economische debat van het verkiezingsjaar bepalen.
+
+---
+
+### 📊 Vertrouwensdashboard
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1B5E20', 'primaryTextColor': '#FFFFFF', 'background': '#0a0e27', 'nodeBorder': '#FFFFFF'}}}%%
+pie title Betrouwbaarheidsverdeling per Admiraliteitscode
+    "A1 — Bevestigd/Betrouwbaar (60%)" : 60
+    "B2 — Waarschijnlijk waar (25%)" : 25
+    "B3 — Mogelijk waar (10%)" : 10
+    "C4 — Kan niet worden beoordeeld (5%)" : 5
+```
+
+**Bevestigde sleutelfeiten (A1)**:
+- HD01FiU48-stemresultaat op riksdagen.se stemregistratie CE14CCEF
+- Alle 5 interpellaties ingediend en publiek toegankelijk (riksdagen.se)
+- HD03100 ingediend op 2026-04-13 Finansdepartementet
+- Wereldbank Zweden BBP 2024: 0,82 %; Inflatie 2024: 2,84 %
+
+**Waarschijnlijk (B2)**:
+- S's dubbele spoorstrategie als electorale berekening (afgeleid uit acties, niet verklaard)
+- Svantessons parlementaire blootstelling door HD10442's rechterlijke referentie
+
+<!-- source-sha: cb87af673fb4a43f297af6c833d737b3ef322067 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief_no.md -->
+
+**Sammendrag-ID**: EB-2026-04-22-EVE001
+**Utarbeidet av**: James Pether Sörling
+**Utarbeidet**: 2026-04-22 23:50 UTC
+**Klassifisering**: Offentlig — GDPR Art. 9(2)(e)
+**Troverdighet**: HØY [A1]
+**60-sekunders lesing**: ✅
+
+---
+
+### 🎯 BLUF
+
+Sverigets storting vedtok i dag en nødenergistøttepakke på 4,1 milliarder SEK (HD01FiU48) med et anomalt M+SD+S+KD-superflertall — sosialdemokratene forlot sin klimamotmotmot for å unngå å bli beskyldt for høye drivstoffkostnader fire måneder før valget i september 2026. Finansminister Elisabeth Svantesson (M) møter samtidig en konsentrert femdobbelt interpellasjonsansvarighetsoffensiv fra S, inkludert én (HD10442) som siterer en domstolsavgjørelse om at hennes offentlige uttalelser om behandling av spiseforstyrrelse var faktisk ukorrekte. Vårproposisjon 2026 (HD03100) er nå det offisielle forvalgsbudsjettpolitiske manifestet.
+
+---
+
+### 🧭 3 Beslutninger dette sammendraget støtter
+
+1. **Medie/redaksjonell beslutning**: Er "S stemmer for drivstoffskattekutt mens de leverer motmotmot" det ledende narrativet for dagen? → **Ja.** Den tosporede atferden (HD01FiU48 Ja-stemme + HD024082 motmotmot) er dagens analytisk mest betydningsfulle funn. Det avslører S's valgkalkyle — forvalgskostnadene overstyrer klimakonsistens. Troverdighet: HØY [A1].
+
+2. **Opposisjonsstrategibeslutning**: Bør S eskalere ansvarlighetssporet mot Svantesson? → **Sannsynligvis ja.** HD10442's domstolsbekreftet grunnlag gjør det til en høy-risiko/høy-belønning-interpellasjon. Finanskomiteens rolle i både HD01FiU48 og Vårproposisjonen betyr at Svantesson samtidig forsvarer finanspolitikken OG sin personlige troverdighet. Troverdighet: MEDIUM [B2].
+
+3. **Koalisjonsresiliensbeslutet**: Signaliserer M+SD+S+KD-superflertalget på HD01FiU48 en ny tverrblokkskonsensus eller et engangsvalgmanøver? → **Engangsvalgmanøver.** Motmotionene fra S (HD024082), V (HD024092) og MP (HD024098) levert samme uke indikerer ingen strukturell omjustering; S støttet den vedtatte pakken av valgmessige optiske årsaker. Troverdighet: HØY [A1].
+
+---
+
+### ⚡ 60-sekunders punktlesing
+
+- **VEDTATT I DAG**: HD01FiU48 — 4,1 GSEK drivstoffskattekutt og energistøtte, stemt 16:29. M+SD+S+KD stemte Ja.
+- **STRATEGISK SELVMOTSIGELSE**: S stemmer Ja på vedtatt lovforslag men leverte motmotmot (HD024082) mot samme politikk.
+- **ANSVARIGHETSRISIKO**: S leverte 5 interpellasjoner på 48 timer mot Svantesson (3) og andre ministre.
+- **DOMSTOLSBEKREFTELSE**: HD10442 siterer faktisk domstolsavgjørelse som underminerer Svantessons offentlige uttalelser om helsevern.
+- **VALGRAMME**: HD03100 Vårproposisjon 2026 er nå det offisielle forvalgsmessige finanspolitiske manifest — hver SEK vil bli debattert.
+- **KONSTITUSJONELL PIPELINE**: To grunnlovsendringer (HD01KU33 + HD01KU32) i første lesning samtidig — sjelden lovgivningsintensitet.
+- **UKRAINA-FORPLIKTELSE**: Sverige slutter seg til både Ukraina-kompensasjonskommisjonen (HD03232) og aggresjonstribunalen (HD03231).
+- **KLIMA-FINANSKLØFT**: MP+V+S leverte parallelle klimamotmotioner selv da S stemte for drivstoffskattestøtte.
+
+---
+
+### 🔮 Viktigste fremadrettede trigger
+
+**Hold øye med**: Stortingsdebatt om HD10442 (Svantesson ätstörningsvård IP) — planlagt etter 5. mai. Hvis Svantesson ikke kan forene sine tidligere offentlige uttalelser med domstolsavgjørelsen, blir dette den største ministerielle ansvarighetsøyeblikket i forvalgsperioden. Sannsynlighet for betydelig politisk skade: **Sannsynlig** [B2] (65 %).
+
+**Sekundær trigger**: S's holdning til HD03100 Vårproposisjonen i FiU-komiteens behandling — deres alternative finanspolitiske dokument vil definere valgårets økonomiudebat.
+
+---
+
+### 📊 Troverdighets-dashboard
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1B5E20', 'primaryTextColor': '#FFFFFF', 'background': '#0a0e27', 'nodeBorder': '#FFFFFF'}}}%%
+pie title Troverdighetfordeling per Admiralitetskode
+    "A1 — Bekreftet/Pålitelig (60%)" : 60
+    "B2 — Sannsynligvis sant (25%)" : 25
+    "B3 — Muligens sant (10%)" : 10
+    "C4 — Kan ikke bedømmes (5%)" : 5
+```
+
+**Bekreftede nøkkelfakta (A1)**:
+- HD01FiU48-stemmeresultat på riksdagen.se stemmepost CE14CCEF
+- Alle 5 interpellasjoner levert og offentlig tilgjengelige (riksdagen.se)
+- HD03100 levert 2026-04-13 Finansdepartementet
+- Verdensbankens Sverige BNP 2024: 0,82 %; Inflasjon 2024: 2,84 %
+
+**Sannsynlig (B2)**:
+- S's tosporede strategi som valgkalkyle (utledet av handlinger, ikke erklært)
+- Svantessons parlamentariske eksponering fra HD10442's domstolsreferanse
+
+<!-- source-sha: cb87af673fb4a43f297af6c833d737b3ef322067 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief_sv.md -->
+
+**Resumé-ID**: EB-2026-04-22-EVE001
+**Framtagen av**: James Pether Sörling
+**Framtagen**: 2026-04-22 23:50 UTC
+**Klassificering**: Offentlig — GDPR Art. 9(2)(e)
+**Tillförlitlighet**: HÖG [A1]
+**60-sekunders läsning**: ✅
+
+---
+
+### 🎯 BLUF
+
+Sveriges parlament antog idag ett energipaket på 4,1 miljarder SEK för nödfallsenergi (HD01FiU48) med en anomal M+SD+S+KD-supermajoritet — socialdemokraterna övergav sin klimatmotmotion för att undvika att bli skuldbelagda för höga bränslekostnader fyra månader före valet i september 2026. Finansminister Elisabeth Svantesson (M) möter samtidigt en koncentrerad femfaldigt interpellationsansvarighetssofisensiv från S, däribland en (HD10442) som citerar en domstolsdom om att hennes offentliga uttalanden om ätstörningsvård var sakligt felaktiga. Vårpropositionen 2026 (HD03100) utgör valbordet för skattefrågor.
+
+---
+
+### 🧭 3 Beslut som detta resumé stöder
+
+1. **Medialt/redaktionellt beslut**: Är "S röstar för bränsleskattesänkning samtidigt som de lämnar in motmotion" det ledande narrativet för dagen? → **Ja.** Det dubbla beteendet (HD01FiU48 Ja-röst + HD024082 motmotion) är dagens analytiskt mest betydelsefulla fynd. Det avslöjar S:s valkalkylen — valårets kostnadskalkylen åsidosätter klimatkonsekvens. Tillförlitlighet: HÖG [A1].
+
+2. **Oppositionsstrategibeslut**: Bör S eskalera ansvarighetsspåret mot Svantesson? → **Sannolikt ja.** HD10442:s domstolsvindicerade underlag gör det till en hög-risk/hög-belöning-interpellation. Finansutskottets roll i både HD01FiU48 och Vårpropositionen innebär att Svantesson samtidigt försvarar finanspolitiken OCH sin personliga trovärdighet. Tillförlitlighet: MEDIUM [B2].
+
+3. **Koalitionsresiliensbeslutet**: Signalerar M+SD+S+KD-supermajoriteten på HD01FiU48 en ny tvärblockskonsensus eller ett engångsmässigt valmöte? → **Engångsmässigt valmöte.** Motmotionerna från S (HD024082), V (HD024092) och MP (HD024098) inlämnade samma vecka indikerar ingen strukturell omjustering; S stödde det antagna paketet av valmässiga optiska skäl. Tillförlitlighet: HÖG [A1].
+
+---
+
+### ⚡ 60-sekunders punktläsning
+
+- **ANTAGET IDAG**: HD01FiU48 — 4,1 GSEK bränsleskattesänkning och energistöd, röstat 16:29. M+SD+S+KD röstade Ja.
+- **STRATEGISK SJÄLVMOTSÄGELSE**: S röstar Ja på antaget lagförslag men lämnade in motmotion (HD024082) mot samma politik.
+- **ANSVARIGHETSRISK**: S lämnade in 5 interpellationer på 48 timmar mot Svantesson (3) och andra ministrar.
+- **DOMSTOLSVINDICERING**: HD10442 citerar faktisk domstolsdom som underminerar Svantessons offentliga uttalanden om hälsovård.
+- **VALRAM**: HD03100 Vårpropositionen 2026 är nu det officiella förvalsfinanspolitiska manifestet — varje SEK kommer att debatteras.
+- **KONSTITUTIONELL PIPELINE**: Två grundlagsändringar (HD01KU33 + HD01KU32) i första läsning samtidigt — sällsynt lagstiftningsintensitet.
+- **UKRAINAÅTAGANDE**: Sverige ansluter sig till både Ukrainaersättningskommissionen (HD03232) och aggressionstribunalen (HD03231).
+- **KLIMAT-FINANSKLYFTA**: MP+V+S lämnade in parallella klimatmotmotioner även när S röstade för bränsleskattestöd.
+
+---
+
+### 🔮 Viktigaste framåtblickande triggers
+
+**Bevaka**: Riksdagsdebatt om HD10442 (Svantesson ätstörningsvård IP) — planerad efter 5 maj. Om Svantesson inte kan förena sina tidigare offentliga uttalanden med domstolsavgörandet, blir detta valperiodens mest betydelsefulla ministeransvarighetsstund. Sannolikhet för väsentlig politisk skada: **Sannolikt** [B2] (65 %).
+
+**Sekundär trigger**: S:s ståndpunkt om HD03100 vårpropositionen i FiU-utskottets förfaranden — deras alternativa finanspolitiska dokument kommer att definiera valårets ekonomidebatt.
+
+---
+
+### 📊 Tilltros-dashboard
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1B5E20', 'primaryTextColor': '#FFFFFF', 'background': '#0a0e27', 'nodeBorder': '#FFFFFF'}}}%%
+pie title Fördelning av tillförlitlighet per Admiralitetskod
+    "A1 — Bekräftad/Pålitlig (60%)" : 60
+    "B2 — Sannolikt sant (25%)" : 25
+    "B3 — Möjligen sant (10%)" : 10
+    "C4 — Kan inte bedömas (5%)" : 5
+```
+
+**Bekräftade nyckelfakta (A1)**:
+- HD01FiU48-röstresultat på riksdagen.se röstpost CE14CCEF
+- Alla 5 interpellationer inlämnade och offentligt tillgängliga (riksdagen.se)
+- HD03100 inlämnad 2026-04-13 Finansdepartementet
+- Världsbankens BNP för Sverige 2024: 0,82 %; Inflation 2024: 2,84 %
+
+**Sannolikt (B2)**:
+- S:s dubbla strategi som valkalkyl (slutledas ur handlingar, ej uttalad)
+- Svantessons parlamentariska exponering från HD10442:s domstolsreferens
+
+<!-- source-sha: cb87af673fb4a43f297af6c833d737b3ef322067 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief_zh.md -->
+
+**简报ID**: EB-2026-04-22-EVE001
+**编制**: James Pether Sörling
+**编制日期**: 2026-04-22 23:50 UTC
+**分类**: 公开 — GDPR Art. 9(2)(e)
+**可靠性**: 高 [A1]
+**60秒阅读**: ✅
+
+---
+
+### 🎯 核心摘要（BLUF）
+
+瑞典议会今日以M+SD+S+KD罕见超级多数通过了410亿克朗紧急能源支持方案（HD01FiU48）。社会民主党（S）放弃了其气候替代方案，以避免在2026年9月大选前4个月承担燃料成本上涨的责任。与此同时，财政大臣伊丽莎白·斯万特松（M）正面临S发起的密集问责攻势——5份质询函中包括一份（HD10442）引用了法院判决，认定她关于饮食失调护理的公开声明在事实上有误。2026年春季经济政策声明（HD03100）现已成为正式的选前财政宣言。
+
+---
+
+### 🧭 本简报支持的3项决策
+
+1. **媒体/编辑决策**："S在支持燃料税减免的同时提交替代方案"是否为当日核心叙事？ → **是。** 双轨行为（HD01FiU48赞成票 + 替代方案HD024082）是当日最重要的分析发现。这揭示了S的选举计算——选前生活成本计算优先于气候一致性。可靠性：高 [A1]。
+
+2. **反对党战略决策**：S是否应升级对斯万特松的问责路线？ → **可能是。** HD10442经法院判决支撑的依据使其成为高风险高回报的质询函。斯万特松在HD01FiU48和春季政策声明两方面同时为财政政策和个人信誉进行辩护。可靠性：中 [B2]。
+
+3. **联合政府稳定性决策**：HD01FiU48上M+SD+S+KD的超级多数是否预示新的跨党派共识，还是一次性选举策略？ → **一次性选举策略。** 同周提交的S（HD024082）、V（HD024092）、MP（HD024098）各党替代方案表明不存在结构性重新定位；S支持该方案纯粹出于选举形象考虑。可靠性：高 [A1]。
+
+---
+
+### ⚡ 60秒要点
+
+- **今日通过**：HD01FiU48 — 410亿SEK燃料税减免·能源支持，16:29表决。M+SD+S+KD投赞成票。
+- **战略矛盾**：S对通过的法案投赞成票，同时提交针对同一政策的替代方案（HD024082）。
+- **问责风险**：S在48小时内对斯万特松（3份）及其他部长提交5份质询函。
+- **司法背书**：HD10442引用真实法院判决，否定斯万特松关于医疗服务的公开声明。
+- **选举语境**：HD03100 2026年春季经济政策声明现已成为正式选前财政宣言——每一分克朗都将受到争议。
+- **宪法日程**：两项基本法修正（HD01KU33 + HD01KU32）同时进行第一读会——罕见的立法密集。
+- **乌克兰承诺**：瑞典同时加入乌克兰赔偿委员会（HD03232）和侵略罪法庭（HD03231）。
+- **气候与财政的鸿沟**：MP+V+S在支持燃料税减免的同时提交平行气候替代方案。
+
+---
+
+### 🔮 核心前瞻触发指标
+
+**跟踪对象**：关于HD10442（Svantesson ätstörningsvård IP）的议会辩论——计划于5月5日后进行。若斯万特松无法调和其公开声明与法院判决，这将成为选前最重大的部长问责时刻。严重政治损害概率：**可能** [B2]（65%）。
+
+**次要触发指标**：S在FiU委员会程序中对HD03100春季政策声明的立场——其替代财政文件将界定选举年的经济讨论。
+
+---
+
+### 📊 可信度仪表板
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1B5E20', 'primaryTextColor': '#FFFFFF', 'background': '#0a0e27', 'nodeBorder': '#FFFFFF'}}}%%
+pie title Confidence Distribution by Admiralty Code
+    "A1 — 已确认/可信度高 (60%)" : 60
+    "B2 — 可能属实 (25%)" : 25
+    "B3 — 或许属实 (10%)" : 10
+    "C4 — 无法判断 (5%)" : 5
+```
+
+**已确认关键事实 (A1)**:
+- HD01FiU48表决结果 riksdagen.se 表决记录CE14CCEF
+- 全部5份质询函已提交并可公开查阅（riksdagen.se）
+- HD03100于2026-04-13由Finansdepartementet提交
+- 世界银行瑞典GDP 2024: 0.82%；通胀2024: 2.84%
+
+**可能 (B2)**:
+- 将S的双轨战略解读为选举计算（从行动推断，非明确表态）
+- HD10442法律引用对斯万特松议会曝光的影响
+
+<!-- source-sha: cb87af673fb4a43f297af6c833d737b3ef322067 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 22 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -2339,3 +3294,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/evening-analysis/executive-brief_zh.md)

@@ -6,7 +6,7 @@ date: 2026-04-20
 subfolder: motions
 slug: 2026-04-20-motions
 source_folder: analysis/daily/2026-04-20/motions
-generated_at: 2026-05-16T20:24:25.467Z
+generated_at: 2026-05-17T18:40:43.155Z
 language: en
 layout: article
 ---
@@ -134,6 +134,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Historical Baseline](#rm-historical-baseline) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
@@ -3583,6 +3596,1420 @@ Checked against ai-driven-analysis-guide v5.1 rules 1–10.
 #### Data
 - [x] `economic-data.json` — World Bank Sweden macroeconomic context
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief_ar.md -->
+
+<div dir="rtl">
+
+# 📋 موجز استخباراتي — اقتراحات المعارضة (14-17 أبريل 2026)
+
+| الحقل | القيمة |
+|-------|--------|
+| **التاريخ** | 2026-04-20 |
+| **الجمهور** | رؤساء التحرير · المستشارون السياسيون · المنسقون البرلمانيون · مخططو الأخبار |
+| **وقت القراءة** | 3 دقائق |
+| **التصنيف** | عام |
+
+---
+
+### 🧭 BLUF (الخلاصة أولاً)
+
+بين 2026-04-13 و2026-04-17، قدّمت الأحزاب المعارضة الكبرى الأربعة في السويد (S وV وMP وC) **21 اقتراحاً معارضاً منسقاً** ضد الحزمة التشريعية الربيعية للحكومة — وهو **أكثر هجوم معارض منسق برنامجياً في دورة البرلمان 2025/26**. **النتيجة الرئيسية** هي **تقارع نادر تاريخياً بين أربعة أحزاب حول اقتراح واحد** (prop. 2025/26:229, *قانون الاستقبال الجديد*) خلال 72 ساعة، حيث قدّم كل حزب إطاراً مميزاً لكنه متعزز بشكل متبادل. هذا يرسّخ **بنية الحملة الانتخابية ذات الركيزتين** (الهجرة الإنسانية + المصداقية المناخية) التي ستحملها المعارضة إلى انتخابات سبتمبر 2026. `[مرتفع]`
+
+---
+
+### 🎯 ثلاثة أمور يجب معرفتها
+
+1. **هذا بناء لسرد الحملة الانتخابية، ليس تدريباً لتشكيل ائتلاف.** يُعيّن تحليل ACH احتمال P=0.50 لفرضية سرد الحملة مقابل P=0.35 للتدريب الائتلافي. تُثبّت المعارضة نقاط رسائل مؤرخة قبل إجازة الصيف، وليس استعداداً للحكم.
+
+2. **S صامتة استراتيجياً بشأن الترحيل.** قدّمت S اقتراحات معارضة بشأن الاستقبال (HD024080) والإسكان (HD024079) وضريبة الوقود (HD024082) — لكن **لا شيء بشأن prop. 2025/26:235** (ترحيل أكثر صرامة). هذا تفضيل مكشوف: قدّرت S أن الترحيل مسألة خاسرة لحزب وسطي يساري. يُشتت هذا الصمت المعارضة في نقطة واحدة بالضبط ويغيّر حسابات الائتلاف ما بعد الانتخابات بشكل جوهري.
+
+3. **نمط "الرفض الشامل" لدى V هو أكبر نقطة ضعف فردية للمعارضة.** قدّمت V اقتراحات ذات بنية رفض بشأن الاستقبال (HD024076) والترحيل (HD024090) وصادرات الأسلحة (HD024091). يمكن لإعلانات هجوم SD استغلال هذا بوصفه "V تتخلى عن أوكرانيا + تدافع عن المجرمين" — بتكلفة 1-2 نقطة استطلاع إذا لم تقرن V كل رفض ببديل إيجابي ملموس.
+
+---
+
+### 📊 أربعة مجموعات، مرتبة حسب الأهمية الموزونة DIW
+
+| # | المجموعة | DIW | الأحزاب | الانتباه |
+|:-:|---------|:---:|---------|---------|
+| 🏛️ 1 | **قانون الاستقبال (4 أحزاب)** | **9.40** | S وV وMP وC | رأي Lagrådet الربع الثاني 2026؛ تعاطف الصفوف الخلفية في L مع تعديل C المرحلي |
+| 🥈 2 | **الترحيل (3 أحزاب)** | **8.80** | V وC وMP (ليس S) | اختبار التناسب القانوني لـC يتقارب مع التيار الأوروبي السائد — مسار تعديل SfU واقعي |
+| 🥉 3 | **ضريبة الوقود** | **8.20** | S وMP | Tankrabatt الألماني 2022 هو السابقة المباشرة الوحيدة — لم يُمدَّد. محفّز المساءلة §5 من قانون المناخ. |
+| 🔶 4 | **صادرات الأسلحة** | **7.50** | V وMP | التموضع ما بعد حلف الناتو؛ لغة مراجعة المستخدم النهائي لـMP تتوافق مع النرويج/هولندا/ألمانيا — سائد، ليس استثناءً |
+
+---
+
+### 🎯 احتمالات السيناريو (من [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/scenario-analysis.md))
+
+| السيناريو | الاحتمال | نتيجة المعارضة |
+|----------|:--------:|---------------|
+| 🟢 أساسي — احتفاظ الحكومة، اعتماد القوانين الأربعة | **0.45** | مواد حملة فحسب؛ لا انعكاس في الأفق الانتخابي |
+| 🔵 صاعد — أقلية بقيادة S، انعكاس جزئي لقانون الاستقبال | **0.22** | انتصار جزئي: انعكاس الاستقبال + ضريبة الوقود؛ احتفاظ بالترحيل |
+| 🔴 هابط (على الحكومة) — أغلبية S+V+MP+C، انعكاس كامل | **0.10** | انعكاس كامل الحزمة؛ اعتماد لغة HD024095 لـC قانونياً |
+| ⚡ خارج المعتاد — انتخابات غير حاسمة / انتخابات مبكرة | **0.05** | حزمة الاقتراحات تصبح عملة تفاوضية تعديلاً بتعديل |
+
+---
+
+### 🛡️ ثلاثة مخاطر تستوجب المراقبة الدقيقة
+
+| الخطر | لماذا يهم | إشارة التحديث |
+|-------|----------|--------------|
+| **R01** قفل الاستقطاب (L×I=25) | للحكومة حد أدنى 62% من دعم الناخبين في الهجرة؛ سرد المعارضة محدود دون ذلك الحد | استطلاع Novus الشهري لبروز قضية الهجرة |
+| **R08** سياق البطالة (L×I=16) | 8.69% بطالة 2025 يعزز التأطير المعادي للهجرة | مسح القوى العاملة الربع الأول 2026 (SCB، مايو 2026) |
+| **R07** C كحزب محوري (L×I=12) | تعديل التناسب HD024095 لـC قد يكسر جبهة الأحزاب الأربعة إذا جرى التفاوض | بيان علني لزعيم C حول موقف تعديل SfU |
+
+---
+
+### 📣 نافذة المراقبة لمدة 14 يوماً
+
+| التوقيت | الإشارة | ما يجب تحضيره |
+|---------|--------|--------------|
+| خلال 14 يوماً | اختيار مقرر SfU (prop. 2025/26:229) | إرشادات ترتيب تصويت التعديل |
+| خلال 14 يوماً | بيان علني لزعيم C حول HD024095 | تحديث درجة الخطر R07 |
+| خلال 21 يوماً | بيان نقابة النقل بشأن ضريبة الوقود | تحديث خطر R03 للناخبين الريفيين |
+| الربع الثاني 2026 | رأي Lagrådet بشأن 2025/26:229 + 2025/26:235 | تحديث درجة المجموعة الكاملة |
+| شهرياً | استطلاع Novus لبروز الهجرة | تحديث بايزي لسيناريوهات الأساسي/الصاعد/الهابط |
+
+---
+
+### 🎙️ أطر غرفة الأخبار الموصى بها (موثقة ومستندة إلى أدلة)
+
+| الإطار | مدعوم بـ | الثقة |
+|-------|---------|:-----:|
+| "أربعة أحزاب معارضة تقدم اقتراحات معارضة منسقة ضد حزمة الهجرة — نادر تاريخياً" | Dok_ids HD024076/80/87/89 في 72 ساعة | 🟩 مرتفع |
+| "موقف S المعادي للخصخصة في إسكان اللجوء يتوافق مع الممارسة الاسكندنافية — السويد هي الاستثناء" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §1 | 🟩 مرتفع |
+| "تعديل التناسب لـC يتقارب مع الممارسة القانونية الألمانية والهولندية والدنماركية والسويسرية" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §2 | 🟩 مرتفع |
+| "Tankrabatt الألماني 2022 — السابقة الوحيدة لخفض ضريبة الوقود السويدي — لم يُمدَّد" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §3 | 🟩 مرتفع |
+| "لغة مراجعة المستخدم النهائي لـMP لصادرات الأسلحة تطابق الممارسة النرويجية والهولندية والألمانية بعد 2021" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §4 | 🟩 مرتفع |
+
+---
+
+### ❌ أطر يجب تجنبها (ضعيفة واقعياً)
+
+- ❌ "المعارضة جاهزة للائتلاف في حكومة ما بعد 2026" — ACH P=0.35 فقط؛ نقد الفريق الأحمر ينطبق
+- ❌ "التنسيق الرباعي يعني أن أغلبية S+V+MP+C مرجحة بعد الانتخابات" — سيناريو BEAR P=0.10
+- ❌ "تعديل التناسب لـC هو حالة يسارية أو ليبرالية خارجة عن المألوف" — ممارسة قانونية أوروبية سائدة
+- ❌ "رفض صادرات الأسلحة لـV ضعيف دفاعياً" — خطر التوافق غير المقصود مع خط هجوم SD؛ يتطلب الاقتران مع تأكيد دعم أوكرانيا
+- ❌ "معارضة ضريبة الوقود معادية للطبقة العاملة" — HD024082 لـS هو اقتراح *إحالة بمقترح جديد*، وليس رفضاً لقضية تكلفة المعيشة
+
+---
+
+### 🔗 قراءة معمقة
+
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/synthesis-summary.md) — ACH الكاملة + الفريق الأحمر + التداخل عبر المجموعات
+- [`documents/reception-law-cluster-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/documents/reception-law-cluster-analysis.md) — تقسيم العمل بين الأحزاب الأربعة
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/scenario-analysis.md) — شجرة السيناريو البايزية
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) — 4 محاور سياسية، 8+ دول مقارنة لكل منها
+- [`README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/README.md) — فهرس ملفات الملف الكامل
+
+---
+
+**التصنيف**: عام · **المراجعة التالية**: 2026-04-27
+
+</div>
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief_da.md -->
+
+| Felt | Værdi |
+|------|-------|
+| **Dato** | 2026-04-20 |
+| **Målgruppe** | Chefredaktører · politiske rådgivere · partipisker · nyhedsplanlæggere |
+| **Læsetid** | 3 minutter |
+| **Klassifikation** | Offentlig |
+
+---
+
+### 🧭 BLUF (Bundlinje op foran)
+
+Mellem 2026-04-13 og 2026-04-17 indgav Sveriges fire store oppositionspartier (S, V, MP, C) **21 koordinerede modmotioner** mod regeringens forårslovpakke — den **mest programmatisk koordinerede oppositionsoffensiv i 2025/26-riksmødet**. **Hovedfundet** er en historisk sjælden **firepartikonvergens om en enkelt proposition** (prop. 2025/26:229, *Ny modtagelseslov*) inden for 72 timer, hvor hvert parti indgav en distinkt men gensidigt forstærkende ramme. Dette etablerer den **topsøjle-kampagnarkitektur** (humanitær indvandring + klimatroværdighed), som oppositionen vil bære ind i valget i september 2026. `[HØJ]`
+
+---
+
+### 🎯 Tre ting at vide
+
+1. **Dette er kampagnenarrativer, ikke koalitionsøvelse.** ACH-analyse tildeler P=0,50 til kampagnenarrative-hypotesen mod P=0,35 til koalitionsøvelse. Oppositionen fastlåser tidsstemplede budskabspunkter inden sommerferien og forbereder sig ikke på at regere.
+
+2. **S er strategisk tavs om deportation.** S indgav modmotioner om modtagelse (HD024080), boliger (HD024079) og brændstofafgift (HD024082) — men **intet om prop. 2025/26:235** (strengere deportation). Dette er afsløret præference: S har vurderet, at deportation er et taberspørgsmål for et centervenstre parti. Tavsheden fragmenterer oppositionen præcis ét sted og ændrer væsentligt koalitionsberegningerne efter valget.
+
+3. **V's "universelle afvisnings"-mønster er oppositionens enkelt største sårbarhed.** V indgav afvisningsstrukturerede motioner om modtagelse (HD024076), deportation (HD024090) og våbeneksport (HD024091). SDs angrebsannoncer kan udnytte dette som "V opgiver Ukraine + forsvarer kriminelle" — en pris på 1–2 opinionsprocent, hvis V ikke parrer hver afvisning med et konkret positivt alternativ.
+
+---
+
+### 📊 Fire klynger, rangeret efter DIW-vægtet signifikans
+
+| # | Klynge | DIW | Partier | Hold øje med |
+|:-:|--------|:---:|---------|--------------|
+| 🏛️ 1 | **Modtagelseslov (4-parti)** | **9,40** | S, V, MP, C | Lagrådets yttrande kv. 2 2026; L-baggrundens sympati for C's trinvise ændringsforslag |
+| 🥈 2 | **Deportation (3-parti)** | **8,80** | V, C, MP (ikke S) | C's lovbestemte proportionalitetstest konvergerer med europæisk mainstream — realistisk SfU-ændringssti |
+| 🥉 3 | **Brændstofafgift** | **8,20** | S, MP | Kun Tysklands Tankrabatt 2022 er direkte præcedens — forlængedes ikke. Klimatlagens §5 ansvarsudløser. |
+| 🔶 4 | **Våbeneksport** | **7,50** | V, MP | Post-NATO-positionering; MP's slutbrugerkontrolsprog stemmer overens med Norge/Holland/Tyskland — mainstream, ikke outlier |
+
+---
+
+### 🎯 Scenariosandsynligheder (fra [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/scenario-analysis.md))
+
+| Scenarie | Sandsynlighed | Oppositionsresultat |
+|----------|:-------------:|---------------------|
+| 🟢 BASIS — Regering bevaret, alle 4 propositioner vedtaget | **0,45** | Kun kampagnemateriale; ingen tilbagerulning inden for valhorisonten |
+| 🔵 BULL — S-ledet mindretal, delvis tilbagerulning af modtagelseslov | **0,22** | Delvis sejr: modtagelse + brændstofafgift rullet tilbage; deportation bevaret |
+| 🔴 BEAR (for regering) — S+V+MP+C-flertal, fuld tilbagerulning | **0,10** | Fuldt pakke rullet tilbage; C's HD024095-sprog vedtaget lovmæssigt |
+| ⚡ WILDCARD — Uafklaret valg / ekstravalg | **0,05** | Motionspakke bliver forhandlingsvaluta ændring for ændring |
+
+---
+
+### 🛡️ Tre risici at overvåge nøje
+
+| Risiko | Hvorfor det betyder noget | Opdateringssignal |
+|--------|---------------------------|-------------------|
+| **R01** Polariseringslåsning (L×I=25) | Regeringen har 62% vælgerstøttegulv på indvandring; oppositionens narrativ begrænset under dette gulv | Novus månedlig migrationsrelevansafstemning |
+| **R08** Arbejdsløshedskontekst (L×I=16) | 8,69% arbejdsløshed 2025 forstærker anti-indvandringsinramning | Arbejdskraftundersøgelse kv. 1 2026 (SCB, maj 2026) |
+| **R07** C som pivotparti (L×I=12) | C's HD024095-proportionalitetsændring kunne bryde 4-partifronten, hvis den forhandles | C-lederens offentlige udtalelse om SfU-ændringsposition |
+
+---
+
+### 📣 14-dages overvågningsvindue
+
+| Tidspunkt | Signal | Hvad man skal forberede |
+|-----------|--------|------------------------|
+| Inden 14 dage | SfU-ordførervalg (prop. 2025/26:229) | Vejledning til ændringsafstemningsrækkefølge |
+| Inden 14 dage | C-lederens offentlige udtalelse om HD024095 | Opdateret risikoscore R07 |
+| Inden 21 dage | Transportfagforeningens udtalelse om brændstofafgift | Opdatering af landdistrikter-vælgerrisikoR03 |
+| Kv. 2 2026 | Lagrådets yttrande om 2025/26:229 + 2025/26:235 | Fuld klyngescore-opdatering |
+| Månedligt | Novus-migrationsrelevansafstemning | Bayesiansk scenarieopdatering BASIS/BULL/BEAR |
+
+---
+
+### 🎙️ Anbefalede nyhedsrumsindramninger (Verificerede evidensbaserede)
+
+| Indramning | Understøttet af | Tillid |
+|------------|-----------------|:------:|
+| "Fire oppositionspartier indgiver koordinerede modmotioner mod immigrationspakken — historisk sjælden" | Dok_ids HD024076/80/87/89 inden for 72 t | 🟩 HØJ |
+| "S's anti-privatiseringsstandpunkt om asylbolig stemmer overens med nordisk praksis — Sverige er undtagelsen" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §1 | 🟩 HØJ |
+| "C's proportionalitetsændring konvergerer med tysk, hollandsk, dansk og schweizisk lovbestemt praksis" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §2 | 🟩 HØJ |
+| "Tysklands Tankrabatt 2022 — det eneste præcedens for Sveriges brændstofskattenedsættelse — forlængedes ikke" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §3 | 🟩 HØJ |
+| "MP's slutbrugerkontrolsprog til våbeneksport matcher norsk, hollandsk og post-2021 tysk praksis" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §4 | 🟩 HØJ |
+
+---
+
+### ❌ Indramninger at undgå (faktuelt svage)
+
+- ❌ "Oppositionen er koalitionsklar til post-2026-regering" — ACH P=0,35 kun; Red-Team-kritik gælder
+- ❌ "Firepartikoordinering betyder, at S+V+MP+C-flertal er sandsynligt efter valget" — BEAR-scenariet P=0,10
+- ❌ "C's proportionalitetsændring er venstre- eller liberalt udskud" — europæisk mainstream lovbestemt praksis
+- ❌ "V's våbeneksportafvisning er forsvarssvag" — risiko for utilsigtet SD-angrebsalignment; kræver parring med Ukrainebekræftelse
+- ❌ "Modstand mod brændstofafgift er anti-arbejderklasse" — S's HD024082 er en *tilbagesendt-med-ny-forslag*-motion, ikke afvisning af leveomkostningsspørgsmålet
+
+---
+
+### 🔗 Yderligere læsning
+
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/synthesis-summary.md) — Fuld ACH + Red-Team + krydsklyngeinterferens
+- [`documents/reception-law-cluster-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/documents/reception-law-cluster-analysis.md) — 4-partiets arbejdsdeling
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/scenario-analysis.md) — Bayesiansk scenarietræ
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) — 4 politikakser, 8+ sammenligningsjurisdiktioner hver
+- [`README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/README.md) — Fuld dossierfilindeks
+
+---
+
+**Klassifikation**: Offentlig · **Næste gennemgang**: 2026-04-27
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief_de.md -->
+
+| Feld | Wert |
+|------|------|
+| **Datum** | 2026-04-20 |
+| **Zielgruppe** | Chefredakteure · politische Berater · Fraktionsgeschäftsführer · Nachrichtenplaner |
+| **Lesezeit** | 3 Minuten |
+| **Einstufung** | Öffentlich |
+
+---
+
+### 🧭 BLUF (Kernaussage vorab)
+
+Zwischen dem 2026-04-13 und 2026-04-17 haben Schwedens vier große Oppositionsparteien (S, V, MP, C) **21 koordinierte Gegenmotionen** gegen das Frühjahrsgesetzgebungspaket der Regierung eingereicht — die **programmatisch koordinierteste Oppositionsoffensive der Parlamentssitzung 2025/26**. Der **Hauptbefund** ist eine historisch seltene **Vier-Parteien-Konvergenz zu einem einzigen Antrag** (Prop. 2025/26:229, *Neues Aufnahmegesetz*) innerhalb von 72 Stunden, wobei jede Partei einen eigenständigen, aber sich gegenseitig verstärkenden Rahmen einbrachte. Dies begründet die **Zwei-Säulen-Kampagnenarchitektur** (humanitäre Einwanderung + klimatische Glaubwürdigkeit), die die Opposition in die Parlamentswahl im September 2026 trägt. `[HOCH]`
+
+---
+
+### 🎯 Drei wichtige Erkenntnisse
+
+1. **Dies ist Kampagnennarrativ-Konstruktion, keine Koalitionsübung.** Die ACH-Analyse weist P=0,50 der Kampagnennarrativ-Hypothese und P=0,35 der Koalitionsübung zu. Die Opposition verankert zeitgestempelte Botschaftspunkte vor der Sommerpause und bereitet sich nicht auf das Regieren vor.
+
+2. **S schweigt strategisch zu Abschiebungen.** S reichte Gegenmotionen zu Aufnahme (HD024080), Wohnraum (HD024079) und Kraftstoffsteuer (HD024082) ein — aber **nichts zu Prop. 2025/26:235** (strengere Abschiebung). Dies ist eine offengelegte Präferenz: S hat einkalkuliert, dass Abschiebung für eine Mitte-Links-Partei ein verlierendes Thema ist. Das Schweigen fragmentiert die Opposition an genau einer Stelle und verändert die Koalitionskalkulation nach der Wahl wesentlich.
+
+3. **V's Muster des "universellen Ablehnens" ist die einzige größte Schwachstelle der Opposition.** V reichte ablehnungsstrukturierte Motionen zu Aufnahme (HD024076), Abschiebung (HD024090) und Waffenexport (HD024091) ein. SD-Wahlwerbung kann dies als "V gibt die Ukraine auf + verteidigt Kriminelle" ausnutzen — ein Verlust von 1–2 Umfragepunkten, wenn V jede Ablehnung nicht mit einer konkreten positiven Alternative verbindet.
+
+---
+
+### 📊 Vier Cluster, nach DIW-gewichteter Bedeutung gereiht
+
+| # | Cluster | DIW | Parteien | Beobachten |
+|:-:|---------|:---:|---------|------------|
+| 🏛️ 1 | **Aufnahmegesetz (4-Parteien)** | **9,40** | S, V, MP, C | Lagrådets yttrande Q2 2026; L-Hinterbank-Sympathie für C's stufenweisen Änderungsantrag |
+| 🥈 2 | **Abschiebung (3-Parteien)** | **8,80** | V, C, MP (nicht S) | C's gesetzlicher Verhältnismäßigkeitstest konvergiert mit europäischem Mainstream — realistischer SfU-Änderungsweg |
+| 🥉 3 | **Kraftstoffsteuer** | **8,20** | S, MP | Nur Deutschlands Tankrabatt 2022 ist direkter Präzedenzfall — nicht verlängert. Klimaschutzgesetz §5-Rechenschaftspflicht-Auslöser. |
+| 🔶 4 | **Waffenexport** | **7,50** | V, MP | Post-NATO-Positionierung; MP's Endnutzer-Kontrollsprache stimmt mit Norwegen/Niederlanden/Deutschland überein — Mainstream, kein Ausreißer |
+
+---
+
+### 🎯 Szenario-Wahrscheinlichkeiten (aus [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/scenario-analysis.md))
+
+| Szenario | Wahrscheinlichkeit | Oppositionsergebnis |
+|----------|:-----------------:|---------------------|
+| 🟢 BASIS — Regierung bestätigt, alle 4 Gesetze verabschiedet | **0,45** | Nur Wahlkampfmaterial; keine Umkehr im Wahlhorizont |
+| 🔵 BULL — S-geführte Minderheit, teilweise Umkehr des Aufnahmegesetzes | **0,22** | Teilsieg: Aufnahme + Kraftstoffsteuer umgekehrt; Abschiebung beibehalten |
+| 🔴 BEAR (für Regierung) — S+V+MP+C-Mehrheit, vollständige Umkehr | **0,10** | Vollständiges Paket umgekehrt; C's HD024095-Sprache gesetzlich verankert |
+| ⚡ WILDCARD — Unklare Wahl / Neuwahl | **0,05** | Motionspaket wird Änderung für Änderung zur Verhandlungswährung |
+
+---
+
+### 🛡️ Drei Risiken, die genau zu beobachten sind
+
+| Risiko | Warum es wichtig ist | Aktualisierungssignal |
+|--------|---------------------|----------------------|
+| **R01** Polarisierungsblockade (L×I=25) | Regierung hat 62% Wählerstimmen-Bodensatz bei Einwanderung; Oppositionsnarrativ auf diesen Bodensatz begrenzt | Novus monatliche Migrations-Salienz-Umfrage |
+| **R08** Arbeitslosigkeitskontext (L×I=16) | 8,69% Arbeitslosigkeit 2025 verstärkt Anti-Einwanderungs-Framing | Arbeitskräfteerhebung Q1 2026 (SCB, Mai 2026) |
+| **R07** C als Schwenk-Partei (L×I=12) | C's HD024095-Verhältnismäßigkeitsänderung könnte 4-Parteien-Front brechen, wenn verhandelt | Öffentliche Aussage des C-Vorsitzenden zur SfU-Änderungsposition |
+
+---
+
+### 📣 14-Tage-Beobachtungsfenster
+
+| Zeitpunkt | Signal | Was vorzubereiten ist |
+|-----------|--------|----------------------|
+| Innerhalb von 14 Tagen | SfU-Berichterstatter-Wahl (Prop. 2025/26:229) | Leitfaden zur Änderungsabstimmungsreihenfolge |
+| Innerhalb von 14 Tagen | Öffentliche Aussage des C-Vorsitzenden zu HD024095 | Aktualisierte Risikobewertung R07 |
+| Innerhalb von 21 Tagen | Aussage der Transportgewerkschaft zur Kraftstoffsteuer | Aktualisierung ländlicher Wähler Risiko R03 |
+| Q2 2026 | Lagrådets yttrande zu 2025/26:229 + 2025/26:235 | Vollständige Cluster-Bewertungsaktualisierung |
+| Monatlich | Novus Migrations-Salienz-Umfrage | Bayesianische BASIS/BULL/BEAR-Szenario-Aktualisierung |
+
+---
+
+### 🎙️ Empfohlene Redaktions-Framings (Verifiziert evidenzbasiert)
+
+| Framing | Gestützt auf | Konfidenz |
+|---------|--------------|:---------:|
+| "Vier Oppositionsparteien reichen koordinierte Gegenmotionen gegen Einwanderungspaket ein — historisch selten" | Dok_ids HD024076/80/87/89 innerhalb von 72 Std. | 🟩 HOCH |
+| "S's Anti-Privatisierungshaltung bei Asylwohnraum entspricht nordischer Praxis — Schweden ist der Ausreißer" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §1 | 🟩 HOCH |
+| "C's Verhältnismäßigkeitsänderung konvergiert mit deutsch, niederländisch, dänisch und schweizerisch gesetzlicher Praxis" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §2 | 🟩 HOCH |
+| "Deutschlands Tankrabatt 2022 — der einzige Präzedenzfall für Schwedens Kraftstoffsteuersenkung — wurde nicht verlängert" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §3 | 🟩 HOCH |
+| "MP's Endnutzer-Kontrollsprache für Waffenexport entspricht norwegischer, niederländischer und post-2021 deutscher Praxis" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §4 | 🟩 HOCH |
+
+---
+
+### ❌ Framings zu vermeiden (faktisch schwach)
+
+- ❌ "Die Opposition ist koalitionsbereit für eine Post-2026-Regierung" — ACH P=0,35 nur; Red-Team-Kritik gilt
+- ❌ "Vier-Parteien-Koordination bedeutet, dass S+V+MP+C-Mehrheit nach der Wahl wahrscheinlich ist" — BEAR-Szenario P=0,10
+- ❌ "C's Verhältnismäßigkeitsänderung ist ein linkes oder liberales Ausreißer" — europäische Mainstream-Gesetzgebungspraxis
+- ❌ "V's Waffenexport-Ablehnung ist verteidigungsschwach" — Risiko unbeabsichtigter SD-Angriffs-Ausrichtung; erfordert Kopplung mit Ukraine-Bekenntnis
+- ❌ "Widerstand gegen Kraftstoffsteuer ist antiarbeiterschichtlich" — S's HD024082 ist eine *Zurückverweisungs*-Motion, keine Ablehnung der Lebenshaltungskostenfrage
+
+---
+
+### 🔗 Weiterführende Lektüre
+
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/synthesis-summary.md) — Vollständige ACH + Red-Team + Cluster-übergreifende Interferenz
+- [`documents/reception-law-cluster-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/documents/reception-law-cluster-analysis.md) — Arbeitsteilung der 4 Parteien
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/scenario-analysis.md) — Bayesianischer Szenariobaum
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) — 4 Politikachsen, je 8+ Vergleichsjurisdiktionen
+- [`README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/README.md) — Vollständiger Dossier-Dateiindex
+
+---
+
+**Einstufung**: Öffentlich · **Nächste Überprüfung**: 2026-04-27
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief_es.md -->
+
+| Campo | Valor |
+|-------|-------|
+| **Fecha** | 2026-04-20 |
+| **Audiencia** | Jefes de redacción · asesores políticos · portavoces parlamentarios · planificadores de noticias |
+| **Tiempo de lectura** | 3 minutos |
+| **Clasificación** | Público |
+
+---
+
+### 🧭 BLUF (Conclusión al frente)
+
+Entre el 2026-04-13 y el 2026-04-17, los cuatro grandes partidos de la oposición sueca (S, V, MP, C) presentaron **21 contra-mociones coordinadas** contra el paquete legislativo de primavera del gobierno — la **ofensiva opositora más programáticamente coordinada de la sesión parlamentaria 2025/26**. El **hallazgo principal** es una **convergencia de cuatro partidos en una única proposición** históricamente rara (prop. 2025/26:229, *Nueva Ley de Acogida*) en 72 horas, con cada partido presentando un marco distinto pero mutuamente reforzado. Esto establece la **arquitectura de campaña de dos pilares** (inmigración humanitaria + credibilidad climática) que la oposición llevará a las elecciones de septiembre de 2026. `[ALTO]`
+
+---
+
+### 🎯 Tres cosas que hay que saber
+
+1. **Esto es construcción de narrativa de campaña, no ensayo de coalición.** El análisis ACH asigna P=0,50 a la hipótesis de narrativa de campaña frente a P=0,35 para el ensayo de coalición. La oposición está fijando puntos de mensaje con marca de tiempo antes del receso de verano, no preparándose para gobernar.
+
+2. **S guarda silencio estratégico sobre las deportaciones.** S presentó contra-mociones sobre acogida (HD024080), vivienda (HD024079) e impuesto sobre los combustibles (HD024082) — pero **nada sobre la prop. 2025/26:235** (deportaciones más estrictas). Esta es una preferencia revelada: S ha calculado que las deportaciones son un tema perdedor para un partido de centroizquierda. El silencio fragmenta la oposición exactamente en un punto y cambia materialmente el cálculo de coalición postelectoral.
+
+3. **El patrón de "rechazo universal" de V es la mayor vulnerabilidad aislada de la oposición.** V presentó mociones de estructura de rechazo sobre acogida (HD024076), deportaciones (HD024090) y exportaciones de armas (HD024091). Los anuncios de ataque del SD pueden aprovechar esto como "V abandona a Ucrania + defiende a criminales" — un coste de 1–2 puntos en las encuestas si V no acompaña cada rechazo con una alternativa positiva concreta.
+
+---
+
+### 📊 Cuatro clústeres, clasificados por importancia ponderada DIW
+
+| # | Clúster | DIW | Partidos | Vigilar |
+|:-:|---------|:---:|---------|---------|
+| 🏛️ 1 | **Ley de acogida (4 partidos)** | **9,40** | S, V, MP, C | Dictamen del Lagrådet Q2 2026; simpatía de los diputados del L hacia la enmienda escalonada de C |
+| 🥈 2 | **Deportaciones (3 partidos)** | **8,80** | V, C, MP (no S) | La prueba de proporcionalidad legal de C converge con el corriente europeo — ruta de enmienda SfU realista |
+| 🥉 3 | **Impuesto sobre los combustibles** | **8,20** | S, MP | Solo el Tankrabatt alemán de 2022 es el precedente directo — no se extendió. Activador de responsabilidad §5 de la Ley Climática. |
+| 🔶 4 | **Exportaciones de armas** | **7,50** | V, MP | Posicionamiento post-OTAN; el lenguaje de revisión de usuarios finales de MP se alinea con Noruega/Países Bajos/Alemania — corriente, no atípico |
+
+---
+
+### 🎯 Probabilidades de escenario (de [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/scenario-analysis.md))
+
+| Escenario | Probabilidad | Resultado para la oposición |
+|-----------|:-----------:|------------------------------|
+| 🟢 BASE — Gobierno retenido, las 4 proposiciones promulgadas | **0,45** | Solo material de campaña; sin reversión en el horizonte electoral |
+| 🔵 BULL — Minoría liderada por S, reversión parcial de la ley de acogida | **0,22** | Victoria parcial: acogida + impuesto combustible revertidos; deportaciones mantenidas |
+| 🔴 BEAR (para el gobierno) — Mayoría S+V+MP+C, reversión total | **0,10** | Paquete completo revertido; lenguaje HD024095 de C adoptado legalmente |
+| ⚡ WILDCARD — Elección no concluyente / nueva elección | **0,05** | El paquete de mociones se convierte en moneda de negociación enmienda por enmienda |
+
+---
+
+### 🛡️ Tres riesgos a vigilar de cerca
+
+| Riesgo | Por qué importa | Señal de actualización |
+|--------|----------------|------------------------|
+| **R01** Bloqueo de polarización (L×I=25) | El gobierno tiene un suelo del 62% de apoyo electoral en inmigración; narrativa de la oposición limitada por debajo de ese umbral | Encuesta mensual Novus sobre saliencia migratoria |
+| **R08** Contexto de desempleo (L×I=16) | El 8,69% de desempleo en 2025 amplifica el encuadre antiinmigración | Encuesta de fuerza laboral Q1 2026 (SCB, mayo 2026) |
+| **R07** C como partido pivote (L×I=12) | La enmienda de proporcionalidad HD024095 de C podría romper el frente de 4 partidos si se negocia | Declaración pública del líder de C sobre la posición de enmienda SfU |
+
+---
+
+### 📣 Ventana de seguimiento de 14 días
+
+| Momento | Señal | Qué preparar |
+|---------|-------|-------------|
+| En 14 días | Selección del ponente SfU (prop. 2025/26:229) | Orientación sobre el orden de votación de enmiendas |
+| En 14 días | Declaración pública del líder de C sobre HD024095 | Puntuación de riesgo R07 actualizada |
+| En 21 días | Declaración del sindicato de transportes sobre el impuesto al combustible | Actualización del riesgo R03 para votantes rurales |
+| Q2 2026 | Dictamen del Lagrådet sobre 2025/26:229 + 2025/26:235 | Actualización completa de puntuación de clúster |
+| Mensual | Encuesta Novus de saliencia migratoria | Actualización bayesiana de escenarios BASE/BULL/BEAR |
+
+---
+
+### 🎙️ Encuadres recomendados para redacciones (Verificados y basados en evidencia)
+
+| Encuadre | Respaldado por | Confianza |
+|----------|---------------|:---------:|
+| "Cuatro partidos de la oposición presentan contra-mociones coordinadas contra el paquete de inmigración — históricamente raro" | Dok_ids HD024076/80/87/89 en 72 h | 🟩 ALTO |
+| "La postura anti-privatización de S sobre la vivienda de asilo se alinea con la práctica nórdica — Suecia es la excepción" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §1 | 🟩 ALTO |
+| "La enmienda de proporcionalidad de C converge con la práctica legal alemana, neerlandesa, danesa y suiza" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §2 | 🟩 ALTO |
+| "El Tankrabatt alemán de 2022 — el único precedente para la reducción del impuesto al combustible en Suecia — no se extendió" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §3 | 🟩 ALTO |
+| "El lenguaje de revisión de usuarios finales de MP para exportaciones de armas coincide con la práctica noruega, neerlandesa y alemana post-2021" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §4 | 🟩 ALTO |
+
+---
+
+### ❌ Encuadres que deben evitarse (factualmente débiles)
+
+- ❌ "La oposición está lista para una coalición post-2026" — ACH P=0,35 solo; la crítica del Red-Team aplica
+- ❌ "La coordinación de cuatro partidos significa que una mayoría S+V+MP+C es probable después de la elección" — escenario BEAR P=0,10
+- ❌ "La enmienda de proporcionalidad de C es un caso atípico de izquierda o liberal" — práctica legal corriente europea
+- ❌ "El rechazo de exportaciones de armas de V es débil en defensa" — riesgo de alineamiento involuntario con ataques del SD; requiere acompañamiento con afirmación sobre Ucrania
+- ❌ "La oposición al impuesto sobre los combustibles es antiobrera" — la HD024082 de S es una moción de *devolución con nueva propuesta*, no un rechazo de la cuestión del coste de vida
+
+---
+
+### 🔗 Lectura adicional
+
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/synthesis-summary.md) — ACH completo + Red-Team + interferencia entre clústeres
+- [`documents/reception-law-cluster-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/documents/reception-law-cluster-analysis.md) — División del trabajo entre los 4 partidos
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/scenario-analysis.md) — Árbol de escenarios bayesiano
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) — 4 ejes de política, 8+ jurisdicciones comparadas cada uno
+- [`README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/README.md) — Índice completo del dossier
+
+---
+
+**Clasificación**: Público · **Próxima revisión**: 2026-04-27
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief_fi.md -->
+
+| Kenttä | Arvo |
+|--------|------|
+| **Päivämäärä** | 2026-04-20 |
+| **Kohderyhmä** | Päätoimittajat · poliittiset neuvonantajat · puoluetoimistot · uutissuunnittelijat |
+| **Lukuaika** | 3 minuuttia |
+| **Luokitus** | Julkinen |
+
+---
+
+### 🧭 BLUF (Ydinviesti ensin)
+
+2026-04-13–2026-04-17 välisenä aikana Ruotsin neljä suurta oppositiopuoluetta (S, V, MP, C) jättivät **21 koordinoitua vastamoottoria** hallituksen kevätlainsäädäntöpakettia vastaan — **ohjelmallisesti koordinoiduin oppositiohyökkäys 2025/26-valtiopäivällä**. **Päälöydös** on historiallisen harvinainen **neljän puolueen yhtymäkohta yhdessä esityksessä** (prop. 2025/26:229, *Uusi vastaanottolaki*) 72 tunnin kuluessa, joissa kukin puolue esitti erillisen mutta toisiaan vahvistavan kehyksen. Tämä luo **kaksipilarimaisen kampanja-arkkitehtuurin** (humanitaarinen maahanmuutto + ilmastouskottavuus), jonka oppositio vie syyskuun 2026 vaaleihin. `[KORKEA]`
+
+---
+
+### 🎯 Kolme asiaa tiedoksi
+
+1. **Tämä on kampanjanarratiivin rakentamista, ei koalitioharjoittelua.** ACH-analyysi antaa P=0,50 kampanjanarratiiville ja P=0,35 koalitioharjoittelulle. Oppositio lukitsee ajoitettuja viestejä ennen kesätaukoa eikä valmistaudu hallitsemaan.
+
+2. **S on strategisesti hiljaa karkotuksesta.** S jätti vastamoottoreita vastaanotosta (HD024080), asumisesta (HD024079) ja polttoaineverosta (HD024082) — mutta **ei mitään prop. 2025/26:235:stä** (tiukempi karkotus). Tämä on paljastunut mieltymys: S on arvioinut, että karkotus on häviävä asia keskustavasemmistopuolueelle. Hiljaisuus hajottaa opposition täsmälleen yhdessä kohdassa ja muuttaa merkittävästi vaalinjälkeisiä koalitioslaskelmia.
+
+3. **V:n "universaalin hylkäämisen" kuvio on opposition suurin yksittäinen haavoittuvuus.** V jätti hylkäysrakenteisia moottoreita vastaanotosta (HD024076), karkotuksesta (HD024090) ja aseviennistä (HD024091). SD:n hyökkäysmainokset voivat käyttää tätä hyväkseen "V hylkää Ukrainan + puolustaa rikollisia" — 1–2 prosenttiyksikön hinta, jos V ei yhdistä jokaista hylkäystä konkreettiseen positiiviseen vaihtoehtoon.
+
+---
+
+### 📊 Neljä klusteria, järjestetty DIW-painotetun merkittävyyden mukaan
+
+| # | Klusteri | DIW | Puolueet | Seuraa |
+|:-:|----------|:---:|---------|--------|
+| 🏛️ 1 | **Vastaanottolaki (4-puolue)** | **9,40** | S, V, MP, C | Lagrådets yttrande Q2 2026; L-takapenkkien sympatie C:n vaiheistettuun muutosehdotukseen |
+| 🥈 2 | **Karkotus (3-puolue)** | **8,80** | V, C, MP (ei S) | C:n lakisääteinen suhteellisuustesti lähestyy eurooppalaista valtavirtaa — realistinen SfU-muutospolku |
+| 🥉 3 | **Polttoainevero** | **8,20** | S, MP | Vain Saksan Tankrabatt 2022 on suora ennakkotapaus — ei jatkettu. Ilmastolain §5 vastuulaukaisu. |
+| 🔶 4 | **Aseviennin** | **7,50** | V, MP | Post-NATO-sijoittuminen; MP:n loppukäyttäjätarkistuslausumat vastaavat Norjaa/Alankomaita/Saksaa — valtavirta, ei poikkeava |
+
+---
+
+### 🎯 Skenaarioden todennäköisyydet ([`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/scenario-analysis.md)-tiedostosta)
+
+| Skenaario | Todennäköisyys | Oppositiotulos |
+|-----------|:--------------:|----------------|
+| 🟢 PERUS — Hallitus säilyy, kaikki 4 esitystä hyväksytty | **0,45** | Pelkkää kampanjamateriaalia; ei peruutusta vaalinäkymien puitteissa |
+| 🔵 BULL — S-johtoinen vähemmistö, vastaanottolain osittainen peruutus | **0,22** | Osittainen voitto: vastaanotto + polttoainevero peruutettu; karkotus säilyy |
+| 🔴 BEAR (hallitukselle) — S+V+MP+C-enemmistö, täysi peruutus | **0,10** | Koko paketti peruutettu; C:n HD024095-lausumat lakiin |
+| ⚡ WILDCARD — Epäselvä vaalit / uudet vaalit | **0,05** | Moottoripaketti tulee muutos kerrallaan neuvotteluvaluutaksi |
+
+---
+
+### 🛡️ Kolme riskiä tarkkailla läheltä
+
+| Riski | Miksi sillä on merkitystä | Päivityssignaali |
+|-------|---------------------------|-----------------|
+| **R01** Polarisoitumislukko (L×I=25) | Hallituksella on 62% äänestäjätuki-lattia maahanmuutossa; opposition narratiivi rajoitettu sen alapuolelle | Novus kuukausittainen muuttoliikkeensaliensimittaus |
+| **R08** Työttömyyskonteksti (L×I=16) | 8,69% työttömyys 2025 vahvistaa maahanmuuttovastaista kehystystä | Työvoimatutkimus Q1 2026 (SCB, toukokuu 2026) |
+| **R07** C pivot-puolueena (L×I=12) | C:n HD024095-suhteellisuusmuutos voisi murtaa 4-puolueen rintaman jos neuvotellaan | C:n johtajan julkinen lausunto SfU-muutospositiosta |
+
+---
+
+### 📣 14 päivän seurantaikkuna
+
+| Ajankohta | Signaali | Mitä valmistella |
+|-----------|----------|-----------------|
+| 14 päivän kuluessa | SfU-esittelijän valinta (prop. 2025/26:229) | Muutosäänestyksen järjestyksen ohjeistus |
+| 14 päivän kuluessa | C:n johtajan julkinen lausunto HD024095:stä | Päivitetty R07-riskipisteys |
+| 21 päivän kuluessa | Kuljetusalan järjestön lausunto polttoaineverosta | Maaseutualueiden äänestäjäriski R03:n päivitys |
+| Q2 2026 | Lagrådets yttrande 2025/26:229 + 2025/26:235 | Täysi klusteripisteytyspäivitys |
+| Kuukausittain | Novus-maahanmuuttosaliensimittaus | Bayesilainen PERUS/BULL/BEAR-skenaarioiden päivitys |
+
+---
+
+### 🎙️ Suositellut uutishuonekehykset (Varmennetut evidenssiperusteiset)
+
+| Kehys | Tuettu | Luottamus |
+|-------|--------|:---------:|
+| "Neljä oppositiopuoluetta jättää koordinoidut vastamoottorit maahanmuuttopakettia vastaan — historiallisen harvinainen" | Dok_ids HD024076/80/87/89 72 t:n sisällä | 🟩 KORKEA |
+| "S:n yksityistämisvastainen kanta turvapaikka-asumisessa vastaa pohjoismaista käytäntöä — Ruotsi on poikkeus" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §1 | 🟩 KORKEA |
+| "C:n suhteellisuusmuutos lähestyy Saksan, Alankomaiden, Tanskan ja Sveitsin lakisääteistä käytäntöä" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §2 | 🟩 KORKEA |
+| "Saksan Tankrabatt 2022 — ainoa ennakkotapaus Ruotsin polttoaineveroleikkaukselle — ei jatkettu" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §3 | 🟩 KORKEA |
+| "MP:n aseviennin loppukäyttäjätarkistuslausumat vastaavat norjalaista, hollantilaista ja post-2021 saksalaista käytäntöä" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §4 | 🟩 KORKEA |
+
+---
+
+### ❌ Kehyksiä vältettäväksi (tosiasiaperustaltaan heikot)
+
+- ❌ "Oppositio on koalitiovalmis post-2026-hallitukseen" — ACH P=0,35 ainoastaan; Red-Team-kritiikki pätee
+- ❌ "Neljän puolueen koordinaatio tarkoittaa, että S+V+MP+C-enemmistö on todennäköinen vaalien jälkeen" — BEAR-skenaario P=0,10
+- ❌ "C:n suhteellisuusmuutos on vasemmisto- tai liberaalipoikkeama" — eurooppalainen valtavirtalakisääteinen käytäntö
+- ❌ "V:n asevientihylkäys on puolustusheikko" — riski tahattomaan SD-hyökkäysalignointiin; vaatii parin Ukraina-vahvistuksen kanssa
+- ❌ "Polttoaineviron vastustus on luokkavihamielistä" — S:n HD024082 on *palautetaan uudella ehdotuksella* -moottori, ei hintakriisin hylkääminen
+
+---
+
+### 🔗 Lisälukemista
+
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/synthesis-summary.md) — Täysi ACH + Red-Team + ristiklusteri-interferenssi
+- [`documents/reception-law-cluster-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/documents/reception-law-cluster-analysis.md) — 4-puolueen työnjako
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/scenario-analysis.md) — Bayesilainen skenaariiopuu
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) — 4 politiikka-akselia, 8+ vertailujurisdiktiota kukin
+- [`README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/README.md) — Täydellinen dossierihakemisto
+
+---
+
+**Luokitus**: Julkinen · **Seuraava tarkistus**: 2026-04-27
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief_fr.md -->
+
+| Champ | Valeur |
+|-------|--------|
+| **Date** | 2026-04-20 |
+| **Public** | Rédacteurs en chef · conseillers politiques · whips parlementaires · planificateurs de rédaction |
+| **Temps de lecture** | 3 minutes |
+| **Classification** | Public |
+
+---
+
+### 🧭 BLUF (Conclusion en tête)
+
+Entre le 2026-04-13 et le 2026-04-17, les quatre grands partis d'opposition suédois (S, V, MP, C) ont déposé **21 contre-motions coordonnées** contre le paquet législatif de printemps du gouvernement — **l'offensive d'opposition la plus programmatiquement coordonnée de la session parlementaire 2025/26**. La **constatation principale** est une **convergence rare de quatre partis sur une seule proposition** (prop. 2025/26:229, *Nouvelle loi sur l'accueil*) en 72 heures, chaque parti ayant déposé un cadre distinct mais mutuellement renforcé. Ceci établit l'**architecture de campagne à deux piliers** (immigration humanitaire + crédibilité climatique) que l'opposition portera aux élections de septembre 2026. `[ÉLEVÉ]`
+
+---
+
+### 🎯 Trois points essentiels
+
+1. **Il s'agit de construction de narratif de campagne, pas de répétition de coalition.** L'analyse ACH attribue P=0,50 à l'hypothèse du narratif de campagne contre P=0,35 pour la répétition de coalition. L'opposition verrouille des points de message horodatés avant la pause estivale, sans se préparer à gouverner.
+
+2. **S est stratégiquement silencieuse sur les expulsions.** S a déposé des contre-motions sur l'accueil (HD024080), le logement (HD024079) et la taxe sur les carburants (HD024082) — mais **rien sur la prop. 2025/26:235** (expulsions plus strictes). Il s'agit d'une préférence révélée : S a calculé que les expulsions sont un sujet perdant pour un parti de centre-gauche. Ce silence fragmente l'opposition en exactement un point et modifie substantiellement le calcul des coalitions post-électorales.
+
+3. **Le schéma de « rejet universel » de V est la plus grande vulnérabilité isolée de l'opposition.** V a déposé des motions à structure de rejet sur l'accueil (HD024076), les expulsions (HD024090) et les exportations d'armement (HD024091). Les publicités d'attaque du SD peuvent l'exploiter comme « V abandonne l'Ukraine + défend les criminels » — un coût de 1 à 2 points de sondage si V ne couple pas chaque rejet avec une alternative positive concrète.
+
+---
+
+### 📊 Quatre clusters, classés par signification pondérée DIW
+
+| # | Cluster | DIW | Partis | À surveiller |
+|:-:|---------|:---:|--------|--------------|
+| 🏛️ 1 | **Loi sur l'accueil (4 partis)** | **9,40** | S, V, MP, C | Avis du Lagrådet Q2 2026 ; sympathie des rangs L pour l'amendement progressif de C |
+| 🥈 2 | **Expulsions (3 partis)** | **8,80** | V, C, MP (pas S) | Test de proportionnalité légal de C converge avec le courant européen — voie d'amendement réaliste SfU |
+| 🥉 3 | **Taxe sur les carburants** | **8,20** | S, MP | Seul le Tankrabatt allemand de 2022 est le précédent direct — non prolongé. Déclencheur de responsabilité §5 de la loi climatique. |
+| 🔶 4 | **Exportations d'armement** | **7,50** | V, MP | Positionnement post-OTAN ; le langage de contrôle des utilisateurs finaux de MP correspond à la Norvège/Pays-Bas/Allemagne — courant, pas atypique |
+
+---
+
+### 🎯 Probabilités des scénarios (tirées de [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/scenario-analysis.md))
+
+| Scénario | Probabilité | Résultat pour l'opposition |
+|----------|:-----------:|---------------------------|
+| 🟢 BASE — Gouvernement maintenu, les 4 propositions adoptées | **0,45** | Matériel de campagne uniquement ; pas de retournement dans l'horizon électoral |
+| 🔵 BULL — Minorité menée par S, renversement partiel de la loi d'accueil | **0,22** | Victoire partielle : accueil + taxe carburant renversés ; expulsions maintenues |
+| 🔴 BEAR (pour le gouvernement) — Majorité S+V+MP+C, renversement total | **0,10** | Paquet intégral renversé ; langage HD024095 de C adopté légalement |
+| ⚡ WILDCARD — Élection non concluante / nouvelles élections | **0,05** | Le paquet de motions devient monnaie d'échange amendement par amendement |
+
+---
+
+### 🛡️ Trois risques à surveiller attentivement
+
+| Risque | Pourquoi c'est important | Signal de mise à jour |
+|--------|--------------------------|-----------------------|
+| **R01** Verrouillage de polarisation (L×I=25) | Le gouvernement a un plancher de 62% de soutien des électeurs sur l'immigration ; narratif de l'opposition plafonné sous ce seuil | Sondage mensuel Novus sur la saillance migratoire |
+| **R08** Contexte de chômage (L×I=16) | Chômage de 8,69% en 2025 amplifie le cadrage anti-immigration | Enquête sur la main-d'œuvre T1 2026 (SCB, mai 2026) |
+| **R07** C comme parti pivot (L×I=12) | L'amendement de proportionnalité HD024095 de C pourrait briser le front à 4 partis s'il est négocié | Déclaration publique du chef de C sur la position d'amendement SfU |
+
+---
+
+### 📣 Fenêtre de surveillance de 14 jours
+
+| Moment | Signal | Ce qu'il faut préparer |
+|--------|--------|------------------------|
+| Dans 14 jours | Sélection du rapporteur SfU (prop. 2025/26:229) | Guide d'ordre des votes d'amendement |
+| Dans 14 jours | Déclaration publique du chef de C sur HD024095 | Score de risque R07 mis à jour |
+| Dans 21 jours | Déclaration du syndicat des transports sur la taxe carburant | Mise à jour du risque R03 pour les électeurs ruraux |
+| T2 2026 | Avis du Lagrådet sur 2025/26:229 + 2025/26:235 | Mise à jour complète des scores de cluster |
+| Mensuel | Sondage Novus sur la saillance migratoire | Mise à jour bayésienne des scénarios BASE/BULL/BEAR |
+
+---
+
+### 🎙️ Cadrages recommandés pour les rédactions (Vérifiés, fondés sur des preuves)
+
+| Cadrage | Appuyé par | Confiance |
+|---------|-----------|:---------:|
+| « Quatre partis d'opposition déposent des contre-motions coordonnées contre le paquet d'immigration — historiquement rare » | Dok_ids HD024076/80/87/89 dans les 72 h | 🟩 ÉLEVÉ |
+| « La position anti-privatisation de S sur le logement demandeurs d'asile correspond à la pratique nordique — la Suède est l'exception » | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §1 | 🟩 ÉLEVÉ |
+| « L'amendement de proportionnalité de C converge avec la pratique légale allemande, néerlandaise, danoise et suisse » | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §2 | 🟩 ÉLEVÉ |
+| « Le Tankrabatt allemand de 2022 — seul précédent pour la réduction de taxe carburant suédoise — n'a pas été prolongé » | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §3 | 🟩 ÉLEVÉ |
+| « Le langage de contrôle des utilisateurs finaux de MP pour les exportations d'armement correspond à la pratique norvégienne, néerlandaise et post-2021 allemande » | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §4 | 🟩 ÉLEVÉ |
+
+---
+
+### ❌ Cadrages à éviter (factuellement faibles)
+
+- ❌ « L'opposition est prête pour une coalition post-2026 » — ACH P=0,35 seulement ; critique du Red-Team s'applique
+- ❌ « La coordination à quatre partis signifie qu'une majorité S+V+MP+C est probable après l'élection » — scénario BEAR P=0,10
+- ❌ « L'amendement de proportionnalité de C est une exception de gauche ou libérale » — pratique légale courante européenne
+- ❌ « Le rejet de l'exportation d'armement de V est défensivement faible » — risque d'alignement involontaire avec les attaques du SD ; nécessite un couplage avec une affirmation sur l'Ukraine
+- ❌ « L'opposition à la taxe carburant est anti-classes populaires » — la HD024082 de S est une motion de *renvoi avec nouvelle proposition*, pas un rejet de la question du coût de la vie
+
+---
+
+### 🔗 Lecture approfondie
+
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/synthesis-summary.md) — ACH complète + Red-Team + interférence inter-clusters
+- [`documents/reception-law-cluster-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/documents/reception-law-cluster-analysis.md) — Division du travail des 4 partis
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/scenario-analysis.md) — Arbre de scénarios bayésien
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) — 4 axes politiques, 8+ juridictions comparées chacun
+- [`README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/README.md) — Index complet des fichiers du dossier
+
+---
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief_he.md -->
+
+<div dir="rtl">
+
+# 📋 תקציר מודיעיני — הצעות האופוזיציה (14–17 באפריל 2026)
+
+| שדה | ערך |
+|-----|-----|
+| **תאריך** | 2026-04-20 |
+| **קהל יעד** | עורכים ראשיים · יועצים פוליטיים · רכזי פרלמנט · מתכנני ידיעות |
+| **זמן קריאה** | 3 דקות |
+| **סיווג** | ציבורי |
+
+---
+
+### 🧭 BLUF (העיקר תחילה)
+
+בין 2026-04-13 ל-2026-04-17, הגישו ארבעת מפלגות האופוזיציה הגדולות בשוודיה (S ,V ,MP ו-C) **21 הצעות-נגד מתואמות** כנגד חבילת החקיקה האביבית של הממשלה — **מתקפת האופוזיציה התכנותית המתואמת ביותר בכנסת 2025/26**. **הממצא המרכזי**: **התכנסות נדירה היסטורית של ארבע מפלגות על הצעה אחת** (prop. 2025/26:229, *חוק קבלה חדש*) בתוך 72 שעות, כשכל מפלגה מציגה מסגרת מובחנת אך המחזקת הדדית. זה מעגן **מבנה קמפיין בשני עמודים** (קבלה אנושית + אמינות אקלים) אשר האופוזיציה תישא לבחירות ספטמבר 2026. `[גבוה]`
+
+---
+
+### 🎯 שלושה דברים שחייבים לדעת
+
+1. **זו בניית נרטיב קמפיין, לא חזרה לגיבוש קואליציה.** ניתוח ACH מקצה P=0.50 להיפותזת נרטיב הקמפיין לעומת P=0.35 לחזרה קואליציונית. האופוזיציה מייסדת נקודות מסר עם חותמת תאריך לפני חופשת הקיץ, לא מתכוננת לשלוט.
+
+2. **S שותקת אסטרטגית בנושא גירושים.** S הגישה הצעות-נגד בנושא קבלה (HD024080), דיור (HD024079) ומס דלק (HD024082) — אך **לא על prop. 2025/26:235** (גירוש מחמיר). זו העדפה גלויה: S העריכה שגירוש הוא ישראש הפסד למפלגת מרכז-שמאל. השתיקה הזו מחלקת את האופוזיציה בנקודה אחת בדיוק ומשנה מהותית את חשבונות הקואליציה שאחרי הבחירות.
+
+3. **דפוס ה"דחייה הכוללת" של V הוא נקודת התורפה הגדולה ביותר של האופוזיציה.** V הגישה הצעות עם מבנה דחייה בנושא קבלה (HD024076), גירוש (HD024090) ויצוא נשק (HD024091). פרסומי תקיפה של SD יכולים לנצל זאת כ"V מוותרת על אוקראינה + מגנה על פושעים" — בעלות של 1–2 נקודות סקר אם V לא תצמיד כל דחייה לחלופה חיובית קונקרטית.
+
+---
+
+### 📊 ארבע אשכולות, מדורגות לפי משקל DIW
+
+| # | אשכול | DIW | מפלגות | תשומת לב |
+|:-:|-------|:---:|--------|----------|
+| 🏛️ 1 | **חוק הקבלה (4 מפלגות)** | **9.40** | S ,V ,MP ,C | חוות דעת Lagrådet 2Q-2026; אהדת חברי L לתיקון השלבי של C |
+| 🥈 2 | **גירוש (3 מפלגות)** | **8.80** | V ,C ,MP (לא S) | מבחן המידתיות של C מתכנס עם הזרם האירופי המרכזי — מסלול תיקון SfU ריאלי |
+| 🥉 3 | **מס דלק** | **8.20** | S ,MP | Tankrabatt הגרמני 2022 הוא התקדים הישיר היחיד — לא הוארך. ממריץ אחריות §5 לחוק האקלים. |
+| 🔶 4 | **יצוא נשק** | **7.50** | V ,MP | מיצוב לאחר נאט"ו; שפת בדיקת משתמש קצה של MP מתואמת עם נורווגיה/הולנד/גרמניה — מרכזי, לא חריג |
+
+---
+
+### 🎯 הסתברויות תרחישים (מתוך [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/scenario-analysis.md))
+
+| תרחיש | הסתברות | תוצאה לאופוזיציה |
+|--------|:--------:|-----------------|
+| 🟢 בסיסי — ממשלה נשארת, ארבעת החוקים מאומצים | **0.45** | חומר קמפיין בלבד; אין היפוך באופק הבחירות |
+| 🔵 עולה — מיעוט בהובלת S, היפוך חלקי של חוק הקבלה | **0.22** | ניצחון חלקי: קבלה + דלק הופכים; גירוש נשמר |
+| 🔴 יורד (לממשלה) — רוב S+V+MP+C, היפוך מלא | **0.10** | היפוך חבילה שלמה; אימוץ שפת HD024095 של C חוקית |
+| ⚡ מחוץ לצפוי — קול לא מכריע / בחירות מוקדמות | **0.05** | חבילת הצעות הופכת למטבע משא ומתן תיקון אחר תיקון |
+
+---
+
+### 🛡️ שלושה סיכונים הדורשים מעקב צמוד
+
+| סיכון | מדוע חשוב | אות לעדכון |
+|-------|----------|-----------|
+| **R01** נעילת קיטוב (L×I=25) | לממשלה מינימום 62% תמיכה בקרב בוחרים בהגירה; נרטיב האופוזיציה מוגבל מתחת לסף זה | סקר נובוס חודשי לבולטות נושא ההגירה |
+| **R08** הקשר אבטלה (L×I=16) | אבטלה 8.69% ב-2025 מחזקת מסגרות אנטי-הגירה | סקר כוח עבודה Q1 2026 (SCB, מאי 2026) |
+| **R07** C כמפלגה ציר (L×I=12) | תיקון המידתיות HD024095 של C עשוי לשבור את חזית ארבע המפלגות אם יתנהל משא ומתן | הצהרה פומבית של מנהיג C על עמדת תיקון SfU |
+
+---
+
+### 📣 חלון מעקב של 14 יום
+
+| תזמון | אות | מה להכין |
+|-------|-----|---------|
+| תוך 14 יום | בחירת כונן SfU (prop. 2025/26:229) | הנחיות סדר הצבעה על תיקונים |
+| תוך 14 יום | הצהרה פומבית של מנהיג C על HD024095 | עדכון ציון סיכון R07 |
+| תוך 21 יום | הצהרת איגוד תחבורה בנושא מס דלק | עדכון סיכון R03 לבוחרים כפריים |
+| Q2 2026 | חוות דעת Lagrådet על 2025/26:229 + 2025/26:235 | עדכון ציון אשכול מלא |
+| חודשי | סקר נובוס לבולטות הגירה | עדכון בייסיאני לתרחישי בסיסי/עולה/יורד |
+
+---
+
+### 🎙️ מסגרות חדר חדשות מומלצות (מתועדות ומבוססות ראיות)
+
+| מסגרת | נתמך ע"י | אמון |
+|-------|---------|:----:|
+| "ארבע מפלגות אופוזיציה מגישות הצעות-נגד מתואמות נגד חבילת ההגירה — נדיר היסטורית" | Dok_ids HD024076/80/87/89 בתוך 72 שעות | 🟩 גבוה |
+| "עמדת S נגד הפרטה בדיור מקלטים עולה בקנה אחד עם הנוהג הסקנדינבי — שוודיה היא החריג" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §1 | 🟩 גבוה |
+| "תיקון המידתיות של C מתכנס עם הנוהג המשפטי הגרמני, ההולנדי, הדני והשוויצרי" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §2 | 🟩 גבוה |
+| "Tankrabatt הגרמני 2022 — התקדים היחיד להפחתת מס דלק שוודי — לא הוארך" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §3 | 🟩 גבוה |
+| "שפת בדיקת משתמש קצה של MP ליצוא נשק תואמת הנוהג הנורווגי, ההולנדי והגרמני לאחר 2021" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §4 | 🟩 גבוה |
+
+---
+
+### ❌ מסגרות שיש להימנע מהן (חלשות עובדתית)
+
+- ❌ "האופוזיציה מוכנה לקואליציה בממשלה לאחר 2026" — ACH P=0.35 בלבד; ביקורת צוות אדום חלה
+- ❌ "תיאום ארבע-כיווני פירושו שרוב S+V+MP+C סביר לאחר הבחירות" — תרחיש BEAR P=0.10
+- ❌ "תיקון המידתיות של C הוא עמדה שמאלנית או ליברלית חריגה" — נוהג משפטי אירופי מרכזי
+- ❌ "דחיית יצוא הנשק של V חלשה מבחינת ביטחון" — סיכון היישור הבלתי מכוון עם קו תקיפת SD; מחייב צימוד עם אישור תמיכה באוקראינה
+- ❌ "התנגדות למס דלק היא אנטי-מעמד עובדים" — HD024082 של S הוא הצעת *הפניה עם הצעה חדשה*, לא דחייה של נושא עלות מחיה
+
+---
+
+### 🔗 קריאה מעמיקה
+
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/synthesis-summary.md) — ACH מלא + צוות אדום + חפיפה בין אשכולות
+- [`documents/reception-law-cluster-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/documents/reception-law-cluster-analysis.md) — חלוקת עבודה בין ארבע המפלגות
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/scenario-analysis.md) — עץ תרחישים בייסיאני
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) — 4 צירי מדיניות, 8+ מדינות השוואה כל אחד
+- [`README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/README.md) — אינדקס קבצי תיק שלם
+
+---
+
+**סיווג**: ציבורי · **סקירה הבאה**: 2026-04-27
+
+</div>
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief_ja.md -->
+
+| 項目 | 内容 |
+|------|------|
+| **日付** | 2026-04-20 |
+| **対象読者** | 編集長 · 政治顧問 · 院内幹事 · ニュース担当者 |
+| **読了時間** | 3分 |
+| **分類** | 公開 |
+
+---
+
+### 🧭 BLUF（結論を先に）
+
+2026年4月13日から17日の間に、スウェーデンの4大野党（S, V, MP, C）は政府の春期立法パッケージに対して**21件の協調的な対抗動議**を提出した。これは**2025/26年会期で最も組織的に調整された野党攻勢**であった。**主要な発見**は、72時間以内に1つの法案（prop. 2025/26:229、*新受入法*）に対する**4党の歴史的に稀な収斂**が生じたことであり、各党が異なるが相互強化的な枠組みを提出した。これにより、野党が2026年9月選挙に持ち込む**二本柱のキャンペーン構造**（人道的移民 + 気候信頼性）が確立された。`[高]`
+
+---
+
+### 🎯 知っておくべき3つのこと
+
+1. **これは連立政権の予行演習ではなく、キャンペーン・ナラティブの構築である。** ACH分析はキャンペーン・ナラティブ仮説にP=0.50、連立政権予行演習にP=0.35を割り当てている。野党は夏季休会前に時刻印付きのメッセージ・ポイントを固めており、執権準備はしていない。
+
+2. **Sは国外追放問題について戦略的に沈黙している。** Sは受入（HD024080）、住宅（HD024079）、燃料税（HD024082）については対抗動議を提出したが、prop. 2025/26:235（より厳しい国外追放）については**何も提出しなかった**。これは顕示された選好であり、Sは国外追放が中道左翼政党にとって不利な問題と判断した。この沈黙は野党を正確に1か所で分断し、選挙後の連立計算を大きく変える。
+
+3. **Vの「普遍的拒否」パターンは野党の最大の単独脆弱性である。** Vは受入（HD024076）、国外追放（HD024090）、武器輸出（HD024091）について拒否構造の動議を提出した。SDの攻撃広告はこれを「Vはウクライナを見捨て、犯罪者を守る」として利用できる。Vが各拒否を具体的な代替案と組み合わせなければ、支持率1〜2ポイントの損失につながる。
+
+---
+
+### 📊 4つのクラスター（DIW加重重要度順）
+
+| # | クラスター | DIW | 政党 | 注目点 |
+|:-:|----------|:---:|-----|--------|
+| 🏛️ 1 | **受入法（4党）** | **9.40** | S, V, MP, C | Lagrådet yttrande Q2 2026; Lのバックベンチ議員がCの段階的修正案に同調 |
+| 🥈 2 | **国外追放（3党）** | **8.80** | V, C, MP（Sを除く） | Cの法的比例性テストが欧州主流に収斂 — 現実的なSfU修正ルート |
+| 🥉 3 | **燃料税** | **8.20** | S, MP | ドイツの2022年Tankrabattのみが直接の先例 — 延長されず。気候法§5責任トリガー。 |
+| 🔶 4 | **武器輸出** | **7.50** | V, MP | NATO加盟後の位置づけ; MPの最終利用者審査の文言はノルウェー/オランダ/ドイツと一致 — 主流、外れ値ではない |
+
+---
+
+### 🎯 シナリオ確率（[`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/scenario-analysis.md)より）
+
+| シナリオ | 確率 | 野党の結果 |
+|--------|:----:|-----------|
+| 🟢 基本 — 政権維持、4法案すべて成立 | **0.45** | キャンペーン素材のみ; 選挙の地平内での逆転なし |
+| 🔵 強気 — S主導の少数政権、受入法の部分的逆転 | **0.22** | 部分的勝利: 受入+燃料税逆転; 国外追放は維持 |
+| 🔴 弱気（政権にとって） — S+V+MP+C多数、全面逆転 | **0.10** | 全パッケージ逆転; CのHD024095文言が法制化 |
+| ⚡ ワイルドカード — 決着のつかない選挙/特別選挙 | **0.05** | 動議パッケージが修正ごとの交渉通貨になる |
+
+---
+
+### 🛡️ 注意深く監視すべき3つのリスク
+
+| リスク | 重要な理由 | 更新シグナル |
+|--------|-----------|------------|
+| **R01** 分極化の固定化（L×I=25） | 政権は移民問題で62%の有権者支持の下限を持つ; 野党のナラティブはその下限より上には届かない | Novus月次移民顕著性世論調査 |
+| **R08** 失業率の文脈（L×I=16） | 2025年の8.69%失業率が反移民的枠組みを強化 | 労働力調査Q1 2026（SCB、2026年5月） |
+| **R07** Cが枢軸政党（L×I=12） | CのHD024095比例性修正が交渉されれば4党連合を分断しうる | C党首のSfU修正姿勢に関する公式声明 |
+
+---
+
+### 📣 14日間の監視ウィンドウ
+
+| タイミング | シグナル | 準備すること |
+|-----------|---------|------------|
+| 14日以内 | SfU報告者選出（prop. 2025/26:229） | 修正案投票順序のガイダンス |
+| 14日以内 | C党首のHD024095に関する公式声明 | R07リスクスコアの更新 |
+| 21日以内 | 交通組合の燃料税に関する声明 | 農村有権者リスクR03の更新 |
+| Q2 2026 | Lagrådet yttrande 2025/26:229 + 2025/26:235 | 全クラスタースコア更新 |
+| 月次 | Novus移民顕著性世論調査 | 基本/強気/弱気シナリオのベイズ的更新 |
+
+---
+
+### 🎙️ 推奨ニュースルーム・フレーミング（検証済み証拠に基づく）
+
+| フレーミング | 裏付け | 確信度 |
+|------------|--------|:------:|
+| 「4野党が移民パッケージに対する協調的対抗動議を提出 — 歴史的に稀」 | Dok_ids HD024076/80/87/89（72時間以内） | 🟩 高 |
+| 「Sの亡命者住宅の反民営化立場は北欧の慣行と一致 — スウェーデンが例外」 | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §1 | 🟩 高 |
+| 「Cの比例性修正はドイツ、オランダ、デンマーク、スイスの法的慣行に収斂」 | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §2 | 🟩 高 |
+| 「ドイツの2022年Tankrabatt — スウェーデンの燃料税減税唯一の先例 — 延長されず」 | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §3 | 🟩 高 |
+| 「MPの武器輸出最終利用者審査文言はノルウェー、オランダ、2021年以降のドイツの慣行と一致」 | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §4 | 🟩 高 |
+
+---
+
+### ❌ 避けるべきフレーミング（事実的に弱い）
+
+- ❌ 「野党は2026年後の連立政権に準備ができている」 — ACH P=0.35のみ; レッド・チーム批評が適用される
+- ❌ 「4党調整はS+V+MP+C多数が選挙後に見込まれることを意味する」 — BEARシナリオP=0.10
+- ❌ 「Cの比例性修正は左派またはリベラルな外れ値」 — 欧州主流の法的慣行
+- ❌ 「Vの武器輸出拒否は防衛的に弱い」 — 意図せずSDの攻撃ラインに沿うリスク; ウクライナ支持の確言と組み合わせることが必要
+- ❌ 「燃料税への反対は反労働者階級的」 — SのHD024082は*新提案付き差し戻し*動議であり、生活費問題の拒絶ではない
+
+---
+
+### 🔗 詳細資料
+
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/synthesis-summary.md) — 完全なACH + レッドチーム + クロスクラスター干渉
+- [`documents/reception-law-cluster-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/documents/reception-law-cluster-analysis.md) — 4党の分業
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/scenario-analysis.md) — ベイズ的シナリオツリー
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) — 4つの政策軸、各8以上の比較法域
+- [`README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/README.md) — 完全なドシエファイルインデックス
+
+---
+
+**分類**: 公開 · **次回レビュー**: 2026-04-27
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief_ko.md -->
+
+| 항목 | 내용 |
+|------|------|
+| **날짜** | 2026-04-20 |
+| **대상** | 편집장 · 정치 고문 · 원내 총무 · 뉴스 기획자 |
+| **읽기 시간** | 3분 |
+| **분류** | 공개 |
+
+---
+
+### 🧭 BLUF (결론 먼저)
+
+2026년 4월 13일부터 17일 사이 스웨덴의 4대 야당(S, V, MP, C)은 정부의 봄 입법 패키지에 대해 **21개의 조율된 반대 발의안**을 제출했다. 이는 **2025/26 의회 회기 중 가장 조직적으로 조율된 야당 공세**였다. **핵심 발견**은 72시간 내에 단일 법안(prop. 2025/26:229, *새 수용법*)에 대한 역사적으로 드문 **4당 수렴**이 발생했다는 것이며, 각 당이 독자적이지만 상호 강화적인 틀을 제출했다. 이로써 야당이 2026년 9월 선거에 가져갈 **두 기둥 캠페인 구조**(인도주의적 이민 + 기후 신뢰성)가 확립되었다. `[높음]`
+
+---
+
+### 🎯 알아야 할 3가지
+
+1. **이것은 연정 예행연습이 아닌 캠페인 내러티브 구축이다.** ACH 분석은 캠페인 내러티브 가설에 P=0.50, 연정 예행연습에 P=0.35를 부여한다. 야당은 집권 준비가 아니라 여름 휴회 전 타임스탬프가 찍힌 메시지 포인트를 고정시키고 있다.
+
+2. **S는 강제퇴거 문제에 대해 전략적으로 침묵하고 있다.** S는 수용(HD024080), 주택(HD024079), 연료세(HD024082)에 대해서는 반대 발의안을 제출했지만, prop. 2025/26:235(더 엄격한 강제퇴거)에 대해서는 **아무것도 제출하지 않았다**. 이는 드러난 선호로, S가 강제퇴거가 중도좌파 정당에 지는 이슈라고 판단했음을 보여준다. 이 침묵은 야당을 정확히 한 곳에서 분열시키고 선거 후 연정 계산을 크게 바꾼다.
+
+3. **V의 "보편적 거부" 패턴이 야당의 가장 큰 단독 취약점이다.** V는 수용(HD024076), 강제퇴거(HD024090), 무기 수출(HD024091)에 대해 거부 구조의 발의안을 제출했다. SD의 공격 광고는 이를 "V가 우크라이나를 포기하고 범죄자를 옹호한다"고 활용할 수 있으며, V가 각 거부를 구체적인 긍정적 대안과 결합하지 않으면 지지율 1~2%p 손실로 이어진다.
+
+---
+
+### 📊 4개 클러스터 (DIW 가중 중요도 순)
+
+| # | 클러스터 | DIW | 정당 | 주목 사항 |
+|:-:|---------|:---:|-----|----------|
+| 🏛️ 1 | **수용법 (4당)** | **9.40** | S, V, MP, C | Lagrådet yttrande Q2 2026; L 의원들의 C 단계적 수정안 지지 |
+| 🥈 2 | **강제퇴거 (3당)** | **8.80** | V, C, MP (S 제외) | C의 법적 비례성 테스트가 유럽 주류에 수렴 — 현실적인 SfU 수정안 경로 |
+| 🥉 3 | **연료세** | **8.20** | S, MP | 독일 2022년 Tankrabatt만이 직접 선례 — 연장되지 않음. 기후법 §5 책임 트리거. |
+| 🔶 4 | **무기 수출** | **7.50** | V, MP | NATO 가입 후 입장 정립; MP의 최종 사용자 검토 문구는 노르웨이/네덜란드/독일과 일치 — 주류, 이상치 아님 |
+
+---
+
+### 🎯 시나리오 확률 ([`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/scenario-analysis.md)에서)
+
+| 시나리오 | 확률 | 야당 결과 |
+|--------|:----:|---------|
+| 🟢 기본 — 정권 유지, 4개 법안 모두 통과 | **0.45** | 캠페인 자료만; 선거 지평 내 역전 없음 |
+| 🔵 강세 — S 주도 소수 정권, 수용법 부분 역전 | **0.22** | 부분 승리: 수용 + 연료세 역전; 강제퇴거 유지 |
+| 🔴 약세 (정권에 대해) — S+V+MP+C 다수, 전면 역전 | **0.10** | 전체 패키지 역전; C의 HD024095 문구 법제화 |
+| ⚡ 와일드카드 — 결론 없는 선거/보궐 선거 | **0.05** | 발의안 패키지가 수정안별 협상 통화로 |
+
+---
+
+### 🛡️ 면밀히 모니터링해야 할 3가지 리스크
+
+| 리스크 | 중요한 이유 | 업데이트 신호 |
+|--------|-----------|------------|
+| **R01** 양극화 고착 (L×I=25) | 정권은 이민 문제에서 62% 유권자 지지 하한선 보유; 야당 내러티브는 그 하한선 위로 올라가지 못함 | Novus 월간 이민 현저성 여론조사 |
+| **R08** 실업 맥락 (L×I=16) | 2025년 8.69% 실업률이 반이민 프레이밍 강화 | 노동력 조사 Q1 2026 (SCB, 2026년 5월) |
+| **R07** C 가 중추 정당 (L×I=12) | C의 HD024095 비례성 수정안이 협상될 경우 4당 연합 분열 가능 | C 당수의 SfU 수정안 입장에 관한 공식 성명 |
+
+---
+
+### 📣 14일 모니터링 창
+
+| 시기 | 신호 | 준비 사항 |
+|-----|------|---------|
+| 14일 이내 | SfU 보고자 선임 (prop. 2025/26:229) | 수정안 투표 순서 지침 |
+| 14일 이내 | C 당수의 HD024095에 관한 공식 성명 | R07 리스크 점수 업데이트 |
+| 21일 이내 | 운수 노동조합의 연료세 관련 성명 | 농촌 유권자 리스크 R03 업데이트 |
+| Q2 2026 | Lagrådet yttrande 2025/26:229 + 2025/26:235 | 전체 클러스터 점수 업데이트 |
+| 월간 | Novus 이민 현저성 여론조사 | 기본/강세/약세 시나리오 베이즈 업데이트 |
+
+---
+
+### 🎙️ 권장 뉴스룸 프레이밍 (검증된 증거 기반)
+
+| 프레이밍 | 근거 | 신뢰도 |
+|---------|-----|:------:|
+| "4개 야당이 이민 패키지에 조율된 반대 발의안 제출 — 역사적으로 드문 일" | Dok_ids HD024076/80/87/89 (72시간 내) | 🟩 높음 |
+| "S의 망명 주거 반민영화 입장은 북유럽 관행과 일치 — 스웨덴이 예외" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §1 | 🟩 높음 |
+| "C의 비례성 수정안은 독일, 네덜란드, 덴마크, 스위스의 법적 관행에 수렴" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §2 | 🟩 높음 |
+| "독일 2022년 Tankrabatt — 스웨덴 연료세 감면의 유일한 선례 — 연장되지 않음" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §3 | 🟩 높음 |
+| "MP의 무기 수출 최종 사용자 검토 문구는 노르웨이, 네덜란드, 2021년 이후 독일 관행과 일치" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §4 | 🟩 높음 |
+
+---
+
+### ❌ 피해야 할 프레이밍 (사실적으로 취약)
+
+- ❌ "야당은 2026년 이후 연정을 위한 준비가 되어 있다" — ACH P=0.35만; 레드팀 비평이 적용됨
+- ❌ "4당 조율은 선거 후 S+V+MP+C 다수가 가능함을 의미한다" — BEAR 시나리오 P=0.10
+- ❌ "C의 비례성 수정안은 좌파 또는 자유주의적 이탈" — 유럽 주류 법적 관행
+- ❌ "V의 무기 수출 거부가 방어적으로 취약하다" — 의도치 않게 SD 공격 라인에 부합할 위험; 우크라이나 지지 확언과 결합 필요
+- ❌ "연료세 반대는 반노동자 계급적" — S의 HD024082는 *새로운 제안으로 반환* 발의안이며, 생활비 문제를 거부하는 것이 아님
+
+---
+
+### 🔗 심화 읽기
+
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/synthesis-summary.md) — 전체 ACH + 레드팀 + 클러스터 간 간섭
+- [`documents/reception-law-cluster-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/documents/reception-law-cluster-analysis.md) — 4당 분업
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/scenario-analysis.md) — 베이즈적 시나리오 트리
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) — 4개 정책 축, 각 8개 이상 비교 법역
+- [`README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/README.md) — 전체 도시에 파일 인덱스
+
+---
+
+**분류**: 공개 · **다음 검토**: 2026-04-27
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief_nl.md -->
+
+| Veld | Waarde |
+|------|--------|
+| **Datum** | 2026-04-20 |
+| **Doelgroep** | Hoofdredacteuren · politieke adviseurs · fractievoorzitters · nieuwsplanners |
+| **Leestijd** | 3 minuten |
+| **Classificatie** | Openbaar |
+
+---
+
+### 🧭 BLUF (Kernpunt voorop)
+
+Tussen 2026-04-13 en 2026-04-17 dienden de vier grote Zweedse oppositiepartijen (S, V, MP, C) **21 gecoördineerde tegenmotions** in tegen het voorjaarswetgevingspakket van de regering — de **meest programmatisch gecoördineerde oppositieoffensief van de zitting 2025/26**. De **kernbevinding** is een historisch zeldzame **convergentie van vier partijen op één voorstel** (prop. 2025/26:229, *Nieuwe Opvangwet*) binnen 72 uur, waarbij elke partij een uniek maar wederzijds versterkend kader indiende. Dit vestigt de **tweepilaars-campagnearchitectuur** (humanitaire immigratie + klimaatgeloofwaardigheid) die de oppositie meeneemt naar de verkiezingen van september 2026. `[HOOG]`
+
+---
+
+### 🎯 Drie dingen om te weten
+
+1. **Dit is campagnenarratiefopbouw, geen coalitierepetitie.** ACH-analyse kent P=0,50 toe aan de campagnenarratiefhypothese versus P=0,35 voor coalitierepetitie. De oppositie vergrendelt tijdgestempelde boodschapspunten vóór het zomerreces en bereidt zich niet voor op regeren.
+
+2. **S is strategisch stil over deportaties.** S diende tegenmotions in over opvang (HD024080), huisvesting (HD024079) en brandstofbelasting (HD024082) — maar **niets over prop. 2025/26:235** (strengere deportaties). Dit is een onthulde voorkeur: S heeft berekend dat deportaties een verliezend onderwerp zijn voor een centrumlinks partij. Het stilzwijgen fragmenteert de oppositie op precies één punt en verandert de coalitieberekening na de verkiezingen wezenlijk.
+
+3. **Het "universeel afwijzings"-patroon van V is de grootste afzonderlijke kwetsbaarheid van de oppositie.** V diende afwijzingsgestructureerde motions in over opvang (HD024076), deportaties (HD024090) en wapenexporten (HD024091). SD-aanvalsadvertenties kunnen dit uitbuiten als "V geeft Oekraïne op + verdedigt criminelen" — een prijs van 1–2 peilingspunten als V elke afwijzing niet koppelt aan een concreet positief alternatief.
+
+---
+
+### 📊 Vier clusters, gerangschikt naar DIW-gewogen significantie
+
+| # | Cluster | DIW | Partijen | Let op |
+|:-:|---------|:---:|---------|--------|
+| 🏛️ 1 | **Opvangwet (4-partijen)** | **9,40** | S, V, MP, C | Lagrådet-advies Q2 2026; sympathie L-backbench voor gefaseerd amendement van C |
+| 🥈 2 | **Deportaties (3-partijen)** | **8,80** | V, C, MP (niet S) | Wettelijke proportionaliteitstest van C convergeert met Europese mainstream — realistische SfU-amendementroute |
+| 🥉 3 | **Brandstofbelasting** | **8,20** | S, MP | Alleen Duitslands Tankrabatt 2022 is het directe precedent — niet verlengd. Klimaatwet §5-aansprakelijkheidstrigger. |
+| 🔶 4 | **Wapenexporten** | **7,50** | V, MP | Post-NAVO-positionering; eindgebruikerscontrole-taal van MP sluit aan bij Noorwegen/Nederland/Duitsland — mainstream, geen uitschieters |
+
+---
+
+### 🎯 Scenariokansen (uit [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/scenario-analysis.md))
+
+| Scenario | Kans | Oppositieresultaat |
+|----------|:----:|--------------------|
+| 🟢 BASIS — Regering behouden, alle 4 voorstellen aangenomen | **0,45** | Alleen campagnemateriaal; geen terugdraaing binnen de verkiezingshorizon |
+| 🔵 BULL — S-geleide minderheid, gedeeltelijke terugdraaing van de opvangwet | **0,22** | Gedeeltelijke overwinning: opvang + brandstofbelasting teruggedraaid; deportaties behouden |
+| 🔴 BEAR (voor de regering) — S+V+MP+C-meerderheid, volledige terugdraaing | **0,10** | Volledig pakket teruggedraaid; HD024095-taal van C wettelijk verankerd |
+| ⚡ WILDCARD — Onduidelijke uitslag / tussentijdse verkiezingen | **0,05** | Motiespakket wordt amendement voor amendement als onderhandelingsvaluta |
+
+---
+
+### 🛡️ Drie risico's om nauwlettend te volgen
+
+| Risico | Waarom het belangrijk is | Updatesignaal |
+|--------|--------------------------|--------------|
+| **R01** Polarisatievergrendeling (L×I=25) | Regering heeft 62% kiezerssteunbodem op immigratie; oppositienarratieven beperkt tot onder die bodem | Maandelijks Novus-salientiepeilingen over migratie |
+| **R08** Werkloosheidscontext (L×I=16) | 8,69% werkloosheid 2025 versterkt anti-immigratie-framing | Arbeidskrachtenonderzoek Q1 2026 (SCB, mei 2026) |
+| **R07** C als scharnierpunt (L×I=12) | Proportionaliteitsamendement HD024095 van C zou het 4-partijfront kunnen breken als onderhandeld | Openbare verklaring C-leider over SfU-amendementpositie |
+
+---
+
+### 📣 14-daags observatievenster
+
+| Timing | Signaal | Wat voor te bereiden |
+|--------|---------|---------------------|
+| Binnen 14 dagen | SfU-rapporteursselectie (prop. 2025/26:229) | Begeleiding volgorde amendementstemming |
+| Binnen 14 dagen | Openbare verklaring C-leider over HD024095 | Bijgewerkte risicoscore R07 |
+| Binnen 21 dagen | Verklaring transportvakbond over brandstofbelasting | Bijwerking risico R03 voor plattelandskiezers |
+| Q2 2026 | Lagrådet-advies over 2025/26:229 + 2025/26:235 | Volledige clusterscoreupdate |
+| Maandelijks | Novus immigratie-salientiepeilingen | Bayesiaanse update scenario's BASIS/BULL/BEAR |
+
+---
+
+### 🎙️ Aanbevolen frames voor nieuwsredacties (Geverifieerd en op bewijs gebaseerd)
+
+| Frame | Ondersteund door | Vertrouwen |
+|-------|-----------------|:----------:|
+| "Vier oppositiepartijen dienen gecoördineerde tegenmotions in tegen immigratiepakket — historisch zeldzaam" | Dok_ids HD024076/80/87/89 binnen 72 uur | 🟩 HOOG |
+| "Antiprivisatiestandpunt van S over asielopvang sluit aan bij Scandinavische praktijk — Zweden is de uitzondering" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §1 | 🟩 HOOG |
+| "Proportionaliteitsamendement van C convergeert met Duits, Nederlands, Deens en Zwitsers wettelijk gebruik" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §2 | 🟩 HOOG |
+| "Duitslands Tankrabatt 2022 — het enige precedent voor Zwedens brandstofbelastingverlaging — werd niet verlengd" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §3 | 🟩 HOOG |
+| "Eindgebruikerscontroletaal van MP voor wapenexporten komt overeen met Noorse, Nederlandse en post-2021 Duitse praktijk" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §4 | 🟩 HOOG |
+
+---
+
+### ❌ Frames om te vermijden (feitelijk zwak)
+
+- ❌ "De oppositie is coalitierijp voor een post-2026-regering" — ACH P=0,35 alleen; Red-Team-kritiek is van toepassing
+- ❌ "Vier-partijen-coördinatie betekent dat een S+V+MP+C-meerderheid waarschijnlijk is na de verkiezingen" — BEAR-scenario P=0,10
+- ❌ "Proportionaliteitsamendement van C is een links of liberaal uitschieters" — Europese mainstream wettelijke praktijk
+- ❌ "Wapenexportafwijzing van V is defensief zwak" — risico op onbedoelde SD-aanvalsalignment; vereist koppeling met Oekraïne-bevestiging
+- ❌ "Verzet tegen brandstofbelasting is antiarbeiders" — HD024082 van S is een *terugverwijzings*-motie, geen verwerping van de levensduurte-kwestie
+
+---
+
+### 🔗 Verdere lectuur
+
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/synthesis-summary.md) — Volledige ACH + Red-Team + clusteroverschrijdende interferentie
+- [`documents/reception-law-cluster-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/documents/reception-law-cluster-analysis.md) — Taakverdeling van de 4 partijen
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/scenario-analysis.md) — Bayesiaanse scenarioboom
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) — 4 beleidsassen, 8+ vergelijkingsjurisdicties elk
+- [`README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/README.md) — Volledig dossierbestandsindex
+
+---
+
+**Classificatie**: Openbaar · **Volgende beoordeling**: 2026-04-27
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief_no.md -->
+
+| Felt | Verdi |
+|------|-------|
+| **Dato** | 2026-04-20 |
+| **Målgruppe** | Sjefredaktører · politiske rådgivere · partipisker · nyhetsplanleggere |
+| **Lesetid** | 3 minutter |
+| **Klassifisering** | Offentlig |
+
+---
+
+### 🧭 BLUF (Bunnlinje foran)
+
+Mellom 2026-04-13 og 2026-04-17 leverte Sveriges fire store opposisjonspartier (S, V, MP, C) inn **21 koordinerte motmotioner** mot regjeringens vårlovpakke — den **mest programmatisk koordinerte opposisjonsoffensiven i 2025/26-riksmøtet**. **Hovedfunnet** er en historisk sjelden **firepartikonvergens om en enkelt proposisjon** (prop. 2025/26:229, *Ny mottakslov*) innen 72 timer, der hvert parti leverte en distinkt, men gjensidig forsterkende ramme. Dette etablerer den **topilars kampanjearkitektur** (humanitær innvandring + klimatroerdighet) som opposisjonen vil bære inn i valget i september 2026. `[HØY]`
+
+---
+
+### 🎯 Tre ting å vite
+
+1. **Dette er kampanjenarrativer, ikke koalisjonsøvelse.** ACH-analyse tildeler P=0,50 til kampanjenarrative-hypotesen mot P=0,35 til koalisjonsøvelse. Opposisjonen låser inn tidsstemplede budskabspunkter før sommerferien og forbereder seg ikke på å regjere.
+
+2. **S er strategisk taus om deportasjon.** S leverte motmotioner om mottak (HD024080), boliger (HD024079) og drivstoffavgift (HD024082) — men **ingenting om prop. 2025/26:235** (strengere deportasjon). Dette er avslørt preferanse: S har vurdert at deportasjon er et taperspørsmål for et sentervenstre-parti. Tausheten fragmenterer opposisjonen på nøyaktig ett sted og endrer vesentlig koalisjonsberegningene etter valget.
+
+3. **V's "universelle avvisnings"-mønster er opposisjonens aller største sårbarhet.** V leverte avvisningsstrukturerte motioner om mottak (HD024076), deportasjon (HD024090) og våpeneksport (HD024091). SDs angrepsannonser kan utnytte dette som "V gir opp Ukraina + forsvarer kriminelle" — en pris på 1–2 meningsmålingspoeng hvis V ikke parer hver avvisning med et konkret positivt alternativ.
+
+---
+
+### 📊 Fire klynger, rangert etter DIW-vektet signifikans
+
+| # | Klynge | DIW | Partier | Hold øye med |
+|:-:|--------|:---:|---------|--------------|
+| 🏛️ 1 | **Mottakslov (4-parti)** | **9,40** | S, V, MP, C | Lagrådets yttrande kv. 2 2026; L-bakbenkens sympati for C's trinnvise endringsforslag |
+| 🥈 2 | **Deportasjon (3-parti)** | **8,80** | V, C, MP (ikke S) | C's lovfestede proporsjonalitetstest konvergerer med europeisk mainstream — realistisk SfU-endringssti |
+| 🥉 3 | **Drivstoffavgift** | **8,20** | S, MP | Bare Tysklands Tankrabatt 2022 er direkte presedens — ble ikke forlenget. Klimatlovens §5 ansvarsutløser. |
+| 🔶 4 | **Våpeneksport** | **7,50** | V, MP | Post-NATO-posisjonering; MP's sluttbrukerkontrollspråk samsvarer med Norge/Nederland/Tyskland — mainstream, ikke outlier |
+
+---
+
+### 🎯 Scenariosannsynligheter (fra [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/scenario-analysis.md))
+
+| Scenario | Sannsynlighet | Opposisjonsresultat |
+|----------|:-------------:|---------------------|
+| 🟢 BASIS — Regjering beholdt, alle 4 proposisjoner vedtatt | **0,45** | Bare kampanjemateriale; ingen tilbakerulling innen valhorisonten |
+| 🔵 BULL — S-ledet mindretall, delvis tilbakerulling av mottakslov | **0,22** | Delvis seier: mottak + drivstoffavgift rullet tilbake; deportasjon beholdt |
+| 🔴 BEAR (for regjering) — S+V+MP+C-flertall, full tilbakerulling | **0,10** | Fullt pakke rullet tilbake; C's HD024095-språk vedtatt lovmessig |
+| ⚡ WILDCARD — Uavklart valg / ekstravalg | **0,05** | Mosjonspaket blir forhandlingsvaluta endring for endring |
+
+---
+
+### 🛡️ Tre risikoer å overvåke nøye
+
+| Risiko | Hvorfor det betyr noe | Oppdateringssignal |
+|--------|----------------------|-------------------|
+| **R01** Polariseringslåsing (L×I=25) | Regjeringen har 62% velgerstøttegolv på innvandring; opposisjonens narrativ begrenset under dette golvet | Novus månedlig migrasjonssaliensavstemning |
+| **R08** Arbeidsledighetskontekst (L×I=16) | 8,69% arbeidsledighet 2025 forsterker anti-innvandringsinramning | Arbeidskraftundersøkelse kv. 1 2026 (SCB, mai 2026) |
+| **R07** C som pivotparti (L×I=12) | C's HD024095-proporsjonalitetsendring kunne bryte 4-partifronten hvis den forhandles | C-lederens offentlige uttalelse om SfU-endringsposisjon |
+
+---
+
+### 📣 14-dagers overvåkingsvindu
+
+| Tidspunkt | Signal | Hva man skal forberede |
+|-----------|--------|------------------------|
+| Innen 14 dager | SfU-ordførervalg (prop. 2025/26:229) | Veiledning for endringsavstemningsrekkefølge |
+| Innen 14 dager | C-lederens offentlige uttalelse om HD024095 | Oppdatert risikoscore R07 |
+| Innen 21 dager | Transportfagforeningens uttalelse om drivstoffavgift | Oppdatering av landdistrikt-velgerrisikoR03 |
+| Kv. 2 2026 | Lagrådets yttrande om 2025/26:229 + 2025/26:235 | Full klyngescore-oppdatering |
+| Månedlig | Novus-migrasjonssaliensavstemning | Bayesiansk scenarieoppdatering BASIS/BULL/BEAR |
+
+---
+
+### 🎙️ Anbefalte nyhetsramsettinger (Verifiserte evidensbaserte)
+
+| Ramme | Understøttet av | Tillit |
+|-------|-----------------|:------:|
+| "Fire opposisjonspartier leverer koordinerte motmotioner mot immigrasjonspakken — historisk sjelden" | Dok_ids HD024076/80/87/89 innen 72 t | 🟩 HØY |
+| "S's anti-privatiseringsstandpunkt om asylbolig samsvarer med nordisk praksis — Sverige er unntaket" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §1 | 🟩 HØY |
+| "C's proporsjonalitetsendring konvergerer med tysk, nederlandsk, dansk og sveitsisk lovfestet praksis" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §2 | 🟩 HØY |
+| "Tysklands Tankrabatt 2022 — det eneste presedenset for Sveriges drivstoffskattekutt — ble ikke forlenget" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §3 | 🟩 HØY |
+| "MP's sluttbrukerkontrollspråk for våpeneksport matcher norsk, nederlandsk og post-2021 tysk praksis" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §4 | 🟩 HØY |
+
+---
+
+### ❌ Rammer å unngå (faktamessig svake)
+
+- ❌ "Opposisjonen er koalisjonsklar til post-2026-regjering" — ACH P=0,35 bare; Red-Team-kritikk gjelder
+- ❌ "Firepartikoordinering betyr at S+V+MP+C-flertall er sannsynlig etter valget" — BEAR-scenariet P=0,10
+- ❌ "C's proporsjonalitetsendring er venstre- eller liberalt utskudd" — europeisk mainstream lovfestet praksis
+- ❌ "V's våpeneksportavvisning er forsvarssvak" — risiko for utilsiktet SD-angrepsalignment; krever paring med Ukraina-bekreftelse
+- ❌ "Motstand mot drivstoffavgift er anti-arbeiderklasse" — S's HD024082 er en *tilbakesendt-med-nytt-forslag*-mosjon, ikke avvisning av levekostnadsspørsmålet
+
+---
+
+### 🔗 Videre lesning
+
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/synthesis-summary.md) — Full ACH + Red-Team + kryssklyngeinterferens
+- [`documents/reception-law-cluster-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/documents/reception-law-cluster-analysis.md) — 4-partiets arbeidsfordeling
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/scenario-analysis.md) — Bayesiansk scenarietre
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) — 4 politikkakser, 8+ sammenligningsjurisdiksjoner hver
+- [`README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/README.md) — Fullt dossierfilindeks
+
+---
+
+**Klassifisering**: Offentlig · **Neste gjennomgang**: 2026-04-27
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief_sv.md -->
+
+| Fält | Värde |
+|------|-------|
+| **Datum** | 2026-04-20 |
+| **Målgrupp** | Chefredaktörer · politiska rådgivare · partipiskor · nyhetsplanerare |
+| **Lästid** | 3 minuter |
+| **Klassificering** | Offentlig |
+
+---
+
+### 🧭 BLUF (Slutsats i förväg)
+
+Mellan 2026-04-13 och 2026-04-17 lämnade Sveriges fyra stora oppositionspartier (S, V, MP, C) in **21 samordnade motmotioner** mot regeringens vårlagstiftningspaket — den **mest programmatiskt samordnade oppositionsoffensiven under 2025/26 riksmötet**. **Huvudfyndet** är en historiskt sällsynt **fyrpartikonvergens kring en enda proposition** (prop. 2025/26:229, *Ny mottagningslag*) inom 72 timmar, där varje parti lämnade in en distinkt men ömsesidigt förstärkande ram. Detta etablerar den **tvåpelarens kampanjarkitektur** (humanitär invandring + klimatglaubwürdigkeit) som oppositionen kommer att bära in i septembervalet 2026. `[HÖG]`
+
+---
+
+### 🎯 Tre saker att känna till
+
+1. **Det här är kampanjnarrativkonstruktion, inte koalitionsrepetition.** ACH-analys tilldelar P=0,50 för kampanjnarrativhypotesen mot P=0,35 för koalitionsrepetition. Oppositionen låser fast tidsstämplade samtalspunkter före sommaruppehållet, inte förbereder sig för att regera.
+
+2. **S är strategiskt tyst om utvisning.** S lämnade in motmotioner om mottagning (HD024080), bostäder (HD024079) och drivmedelsskatt (HD024082) — men **inget om prop. 2025/26:235** (strängare utvisning). Detta är avslöjad preferens: S har bedömt att utvisning är en förlorande fråga för ett centervänstertparti. Tystnaden fragmenterar oppositionen på exakt ett ställe och förändrar väsentligt koalitionskalkylerna efter valet.
+
+3. **V:s "universella rejectionism"-mönster är oppositionens enskilt största sårbarhet.** V lämnade in avvisningsstrukturerade motioner om mottagning (HD024076), utvisning (HD024090) och vapenexport (HD024091). SD:s attackannonser kan utnyttja detta som "V överger Ukraina + försvarar brottslingar" — en kostnad på 1–2 opinionsprocent om V inte parar varje avvisning med ett konkret positivt alternativ.
+
+---
+
+### 📊 Fyra kluster, rankade efter DIW-viktat signifikansvärde
+
+| # | Kluster | DIW | Partier | Bevaka |
+|:-:|---------|:---:|---------|--------|
+| 🏛️ 1 | **Mottagningslag (4-parti)** | **9,40** | S, V, MP, C | Lagrådets yttrande kv. 2 2026; L-backbänkens sympati för C:s stegvisa ändringsförslag |
+| 🥈 2 | **Utvisning (3-parti)** | **8,80** | V, C, MP (inte S) | C:s lagstadgade proportionalitetstest konvergerar med europeisk mainstream — realistisk SfU-ändringsväg |
+| 🥉 3 | **Drivmedelsskatt** | **8,20** | S, MP | Bara Tysklands Tankrabatt 2022 är direkt prejudikat — förlängdes ej. Klimatlagen §5 ansvarstrigger. |
+| 🔶 4 | **Vapenexport** | **7,50** | V, MP | Post-NATO-positionering; MP:s slutanvändargranskningsspråk stämmer överens med Norge/Nederländerna/Tyskland — mainstream, inte outlier |
+
+---
+
+### 🎯 Scenarieprobabiliteter (från [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/scenario-analysis.md))
+
+| Scenario | Sannolikhet | Oppositionsutfall |
+|----------|:-----------:|--------------------|
+| 🟢 BAS — Regering behållen, alla 4 propositioner antagna | **0,45** | Enbart kampanjmaterial; ingen reversering inom valhorisonten |
+| 🔵 BULL — S-ledd minoritet, delvis reversering av mottagningslag | **0,22** | Partiell vinst: mottagning + drivmedelsskatt reverserade; utvisning behållen |
+| 🔴 BEAR (för regeringen) — S+V+MP+C-majoritet, fullständig reversering | **0,10** | Fullt paket reverserat; C:s HD024095-språk antaget i lag |
+| ⚡ WILDCARD — Ofullständigt val / extravalet | **0,05** | Motionspaket blir förhandlingsvaluta ändring för ändring |
+
+---
+
+### 🛡️ Tre risker att bevaka noggrant
+
+| Risk | Varför det spelar roll | Uppdateringssignal |
+|------|------------------------|-------------------|
+| **R01** Polariseringslåsning (L×I=25) | Regeringen har 62% väljarstödsgolv på invandring; oppositionens narrativ begränsat under det golvet | Novus månadsomröstning om migrationssaliens |
+| **R08** Arbetslöshetskontext (L×I=16) | 8,69% arbetslöshet 2025 förstärker anti-invandringsinramning | AKU kv. 1 2026 (SCB, maj 2026) |
+| **R07** C som pivotparti (L×I=12) | C:s HD024095-proportionalitetsändring kunde bryta 4-partifronten om det förhandlas | C:s ledare offentligt uttalande om SfU-ändringsposition |
+
+---
+
+### 📣 Bevakningsfönster 14 dagar
+
+| Tidpunkt | Signal | Vad att förbereda |
+|----------|--------|-------------------|
+| Inom 14 dagar | Val av SfU-föredragande (prop. 2025/26:229) | Vägledning för ändringsröstningsordning |
+| Inom 14 dagar | C-ledarens offentliga uttalande om HD024095 | Uppdaterad riskpoäng R07 |
+| Inom 21 dagar | Transportfackens uttalande om drivmedelsskatt | Uppdatering av landsbygdsväljares risk R03 |
+| Kv. 2 2026 | Lagrådets yttrande om 2025/26:229 + 2025/26:235 | Fullständig klusterpoänguppdatering |
+| Månadsvis | Novus-omröstning om migrationssaliens | Bayesiansk uppdatering av BAS/BULL/BEAR-scenarierna |
+
+---
+
+### 🎙️ Rekommenderade nyhetsrumsramar (Verifierade evidensbaserade)
+
+| Ram | Underlag | Konfidens |
+|-----|-----------|:---------:|
+| "Fyra oppositionspartier lämnar in samordnade motmotioner mot invandringspaketet — historiskt sällsynt" | Dok_ids HD024076/80/87/89 inom 72 h | 🟩 HÖG |
+| "S:s anti-privatiseringsståndpunkt om asylboende stämmer överens med nordisk praxis — Sverige är undantaget" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §1 | 🟩 HÖG |
+| "C:s proportionalitetsändring konvergerar med tysk, nederländsk, dansk och schweizisk lagstadgad praxis" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §2 | 🟩 HÖG |
+| "Tysklands Tankrabatt 2022 — det enda jämförbara prejudikatet för Sveriges drivmedelskattecut — förlängdes inte" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §3 | 🟩 HÖG |
+| "MP:s slutanvändargranskningsspråk för vapenexport matchar norsk, nederländsk och post-2021 tysk praxis" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §4 | 🟩 HÖG |
+
+---
+
+### ❌ Ramar att undvika (faktamässigt svaga)
+
+- ❌ "Oppositionen är koalitionsredo för post-2026-regering" — ACH P=0,35 enbart; Red-Team-kritik gäller
+- ❌ "Fyrpartisamordning innebär att S+V+MP+C-majoritet är trolig efter valet" — BEAR-scenariet P=0,10
+- ❌ "C:s proportionalitetsändring är vänster- eller liberalt utbrytare" — mainstream europeisk lagstadgad praxis
+- ❌ "V:s vapenexportavvisning är försvarssvag" — risk för oavsiktlig SD-attackanpassning; kräver parning med Ukrainabekräftelse
+- ❌ "Motstånd mot drivmedelsskatt är anti-arbetarklass" — S:s HD024082 är en *återremiss*-motion, inte ett avvisande av levnadskostnadsfrågan
+
+---
+
+### 🔗 Fördjupad läsning
+
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/synthesis-summary.md) — Fullständig ACH + Red-Team + korsklusterinterferens
+- [`documents/reception-law-cluster-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/documents/reception-law-cluster-analysis.md) — 4-partiets arbetsfördelning
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/scenario-analysis.md) — Bayesianskt scenarioträd
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) — 4 policyaxlar, 8+ jämförelsejurisdiktioner var
+- [`README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/README.md) — Fullständigt dossierfilindex
+
+---
+
+**Klassificering**: Offentlig · **Nästa granskning**: 2026-04-27
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief_zh.md -->
+
+| 字段 | 值 |
+|------|-----|
+| **日期** | 2026-04-20 |
+| **受众** | 总编辑 · 政治顾问 · 党鞭 · 新闻策划者 |
+| **阅读时间** | 3分钟 |
+| **分类** | 公开 |
+
+---
+
+### 🧭 BLUF（结论优先）
+
+2026年4月13日至17日期间，瑞典四大反对党（S、V、MP、C）对政府春季立法一揽子方案提交了**21项协调的反对动议**——这是**2025/26议会会期最具纲领协调性的反对党攻势**。**主要发现**是，72小时内对单一法案（prop. 2025/26:229，*新接收法*）出现了历史罕见的**四党汇聚**，每个政党提交了各具特色但相互强化的框架。这确立了反对党将带入2026年9月选举的**双支柱竞选架构**（人道主义移民 + 气候可信度）。`[高]`
+
+---
+
+### 🎯 三个要点
+
+1. **这是竞选叙事的构建，不是联合政府的预演。** ACH分析将竞选叙事假说的概率设为P=0.50，联合政府预演为P=0.35。反对党在夏季休会前锁定带时间戳的信息点，并非为执政做准备。
+
+2. **S在驱逐问题上战略性沉默。** S就接收（HD024080）、住房（HD024079）和燃料税（HD024082）提交了反对动议——但对prop. 2025/26:235（更严格的驱逐）**毫无行动**。这是显示性偏好：S认为驱逐对中左翼政党是输家议题。这种沉默使反对党恰好在一个地方产生裂缝，并实质性地改变了选后联合计算。
+
+3. **V的"普遍否决"模式是反对党单一最大的漏洞。** V就接收（HD024076）、驱逐（HD024090）和武器出口（HD024091）提交了拒绝结构的动议。SD的攻击广告可将此利用为"V放弃乌克兰+为罪犯辩护"——如果V不将每项拒绝与具体的积极替代方案配对，将损失1-2个民调百分点。
+
+---
+
+### 📊 四个议题群（按DIW加权重要性排列）
+
+| # | 议题群 | DIW | 政党 | 关注点 |
+|:-:|------|:---:|-----|-------|
+| 🏛️ 1 | **接收法（4党）** | **9.40** | S, V, MP, C | Lagrådet yttrande 2026年第二季度; L后排议员对C分阶段修正案的同情 |
+| 🥈 2 | **驱逐（3党）** | **8.80** | V, C, MP（非S） | C的法定比例性测试向欧洲主流靠拢——现实的SfU修正路径 |
+| 🥉 3 | **燃料税** | **8.20** | S, MP | 仅德国2022年Tankrabatt是直接先例——未延续。气候法§5问责触发器。 |
+| 🔶 4 | **武器出口** | **7.50** | V, MP | 北约加入后的定位; MP的最终用户审查条款与挪威/荷兰/德国一致——主流，非异类 |
+
+---
+
+### 🎯 情景概率（来自[`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/scenario-analysis.md)）
+
+| 情景 | 概率 | 反对党结果 |
+|-----|:----:|---------|
+| 🟢 基准——政府保留，4项法案全部通过 | **0.45** | 仅作为竞选材料；选举地平线内不会逆转 |
+| 🔵 看涨——S领导的少数政府，部分逆转接收法 | **0.22** | 部分胜利：接收+燃料税逆转；驱逐保留 |
+| 🔴 看跌（对政府）——S+V+MP+C多数，全面逆转 | **0.10** | 整个一揽子方案逆转；C的HD024095条款立法化 |
+| ⚡ 意外情况——选举无定论/临时选举 | **0.05** | 动议包成为逐项修正谈判筹码 |
+
+---
+
+### 🛡️ 需密切监测的三项风险
+
+| 风险 | 重要性 | 更新信号 |
+|-----|-------|---------|
+| **R01** 极化锁定（L×I=25） | 政府在移民问题上拥有62%选民支持底线；反对党叙事被限制在该底线以下 | Novus每月移民显著性民调 |
+| **R08** 失业背景（L×I=16） | 2025年8.69%的失业率放大了反移民框架 | 2026年第一季度劳动力调查（SCB，2026年5月） |
+| **R07** C作为关键党（L×I=12） | C的HD024095比例性修正如被谈判可能打破4党阵线 | C党领导人关于SfU修正立场的公开声明 |
+
+---
+
+### 📣 14天监测窗口
+
+| 时间 | 信号 | 准备内容 |
+|-----|------|---------|
+| 14天内 | SfU报告人遴选（prop. 2025/26:229） | 修正案投票顺序指南 |
+| 14天内 | C党领导人关于HD024095的公开声明 | R07风险评分更新 |
+| 21天内 | 运输工会关于燃料税的声明 | 农村选民风险R03更新 |
+| 2026年第二季度 | Lagrådet yttrande 2025/26:229 + 2025/26:235 | 完整议题群评分更新 |
+| 每月 | Novus移民显著性民调 | 基准/看涨/看跌情景贝叶斯更新 |
+
+---
+
+### 🎙️ 推荐新闻室框架（经核实、基于证据）
+
+| 框架 | 依据 | 可信度 |
+|-----|------|:------:|
+| "四个反对党对移民一揽子方案提交协调的反对动议——历史罕见" | Dok_ids HD024076/80/87/89（72小时内） | 🟩 高 |
+| "S关于庇护人员住房反私有化立场与北欧做法一致——瑞典是例外" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §1 | 🟩 高 |
+| "C的比例性修正向德国、荷兰、丹麦和瑞士的法律做法靠拢" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §2 | 🟩 高 |
+| "德国2022年Tankrabatt——瑞典燃料税削减的唯一先例——未被延续" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §3 | 🟩 高 |
+| "MP的武器出口最终用户审查条款与挪威、荷兰及2021年后的德国做法相符" | [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) §4 | 🟩 高 |
+
+---
+
+### ❌ 应避免的框架（事实薄弱）
+
+- ❌ "反对党已为2026年后的联合政府做好准备"——ACH P=0.35仅此；红队批评适用
+- ❌ "四党协调意味着选后S+V+MP+C多数可能性大"——BEAR情景P=0.10
+- ❌ "C的比例性修正是左翼或自由主义的异类"——欧洲主流法律实践
+- ❌ "V的武器出口拒绝在防务上软弱"——可能无意中符合SD攻击路线；需配合乌克兰支持声明
+- ❌ "反对燃料税是反工人阶级的"——S的HD024082是*附新提案返回*动议，而非否定生活成本问题
+
+---
+
+### 🔗 深度阅读
+
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/synthesis-summary.md) — 完整ACH + 红队 + 跨议题群干扰
+- [`documents/reception-law-cluster-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/documents/reception-law-cluster-analysis.md) — 4党分工
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/scenario-analysis.md) — 贝叶斯情景树
+- [`comparative-international.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/comparative-international.md) — 4个政策轴，每个8+比较法域
+- [`README.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/README.md) — 完整档案文件索引
+
+---
+
+**分类**：公开 · **下次审阅**：2026-04-27
+
+<!-- source-sha: 7e82e0dedfa7d841c5981d18495b9a0021f960c0 -->
+
 ## Historical Baseline
 <!-- source: historical-baseline.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/historical-baseline.md -->
 
@@ -3739,7 +5166,7 @@ This generated report reconciles the analysis folder with the article projection
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 15 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 28 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 4 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -3771,6 +5198,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/executive-brief_zh.md)
 - [`historical-baseline.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-20/motions/historical-baseline.md)
 
 ### Supporting Data Artifacts

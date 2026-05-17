@@ -6,7 +6,7 @@ date: 2026-05-14
 subfolder: realtime-pulse
 slug: 2026-05-14-realtime-pulse
 source_folder: analysis/daily/2026-05-14/realtime-pulse
-generated_at: 2026-05-16T20:24:26.611Z
+generated_at: 2026-05-17T18:40:44.087Z
 language: en
 layout: article
 ---
@@ -133,6 +133,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2293,13 +2306,1299 @@ Three interpellations were answered in chamber debate this afternoon, not captur
 
 **PIR impact**: HD10453/10448 are new PIRs (energy sector), not linked to the primary PIRs in today's analysis. HD10440 enriches the pattern of S opposition strategy documented in intelligence-assessment.md.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief_ar.md -->
+
+**التصنيف**: عام  
+**أُعِدَّ لـ**: كبير المحللين السياسيين، الفريق التحريري  
+**التاريخ**: 2026-05-14  
+**الصلاحية**: 72 ساعة (حتى 2026-05-17T00:00Z)  
+**مستوى الثقة**: مرتفع للأحداث الموثقة؛ متوسط للتوقعات الانتخابية
+
+---
+
+### تقرير الوضع
+
+خمسة تطورات برلمانية متزامنة في 14 مايو 2026 تُشكِّل واحداً من أكثر الأيام التشريعية كثافةً وأعمقها دلالةً في الدورة الانتخابية الراهنة. مع 122 يوماً المتبقية حتى الانتخابات العامة في 13 سبتمبر، يحمل كل تطور ثقلاً انتخابياً مضاعفاً.
+
+---
+
+### المعطى الحرج 1: لحظة دستورية
+
+**الحدث**: اعتماد KU34 كـ vilande من قبل الريكسداغ المنتهية ولايته، مما يُلزم البرلمان القادم بالتصويت على ثلاثة تعديلات دستورية:
+- ✅ تكريس حق الإجهاض في الفصل الثاني من الدستور (دعم شبه إجماعي)
+- ✅ سحب الجنسية من مزدوجي الجنسية المدانين بالإرهاب والخيانة (مثير للجدل، مخاطر تتعلق بالاتفاقية الأوروبية لحقوق الإنسان)
+- ✅ تقييد حرية التجمع المرتبط بالعصابات (جديد دستورياً، مخاطر تتعلق بالاتفاقية الأوروبية لحقوق الإنسان)
+
+**التقييم**: سيكون الريكسداغ القادم (المنعقد في أكتوبر 2026) ملزماً قانوناً بالتصويت على هذه التعديلات المعلقة. إن أيدتها أغلبية، تدخل حيز التنفيذ في 1 يناير 2027. وهذا أهم تطور دستوري منذ إصلاح القانون الأساسي عام 2010. كل السيناريوهات الانتخابية الواقعية تُفضي إلى برلمان يُرجَّح فيه الاعتماد (مرتفع، 85–90%).
+
+**التوصية**: ينبغي للتحرير أن يتعامل مع KU34 باعتباره التطور الأهم هذا الأسبوع. تمتلك مادة الإجهاض صدىً دولياً. مادة سحب الجنسية حساسة من منظور الاتفاقية الأوروبية لحقوق الإنسان وستستقطب ردود فعل من منظمات حقوق الإنسان.
+
+---
+
+### المعطى الحرج 2: معركة الهجرة
+
+**الحدث**: قدّمت S + C + V خمس عشرة اقتراحاً منسقاً في اليوم ذاته الذي طرحت فيه الحكومة اقتراحاتها الرئيسية بشأن الهجرة. الحجم والتنسيق غير معتادَين — إذ اعتادت الأحزاب تقديم الاقتراحات على مدار أيام عدة.
+
+**التقييم**: الأغلبية الحكومية M+SD+KD (176/349؛ أغلبية بفارق واحد) مستقرة في ملف الهجرة. لا تستطيع المعارضة تعطيل هذه الاقتراحات. غير أن:
+- اقتراح C بشأن احتجاز القاصرين (HD024160) لديه احتمال 40–55% للقبول الحكومي الجزئي استناداً إلى انتقاد لاغراده المتعلق باتفاقية حقوق الطفل
+- HD024153 لـ S (استعادة الإقامة الدائمة) يُمثِّل إعادة تموضع استراتيجية ستهاجمها الحكومة بوصفها متناقضة (قادت S تشديدات 2015/16)
+- التقديم المنسق يُشير إلى أن هذه الاقتراحات وثائق برنامج انتخابي لا أدوات تشريعية لتعطيل العمل
+
+**التوصية**: تأطيرها بوصفها "معركة الهجرة" — المعارضة تبني استراتيجية حملتها لعام 2026 في الزمن الفعلي.
+
+---
+
+### المعطى الحرج 3: توترات الترحيل الأمني
+
+**الحدث**: الاقتراح الحكومي HD03267 (ترحيل الأمن لمن يُشكّلون تهديداً إرهابياً) يدخل المسار البرلماني مع إحالة مفتوحة إلى لاغراده.
+
+**التقييم**: أعلى درجة DIW للوثيقة في هذه الدورة (7,5/10 × 1,5 = 11,25 فعلياً). مخاطر التوافق مع الاتفاقية الأوروبية لحقوق الإنسان حقيقية — غياب آلية المحامي الخاص نمطٌ موثق للهشاشة على مستوى الاتحاد الأوروبي. إن أصدر لاغراده رأياً نقدياً قبل 15 يونيو، واجهت الحكومة خياراً بين التعديل وضغط الجدول الزمني.
+
+**مخاطر تدابير المحكمة الأوروبية لحقوق الإنسان المؤقتة**: إن اعتُمِد وطُبِّق قبل انتخابات سبتمبر، فإن طلباً بارزاً وفق المادة 39 في أغسطس 2026 سيُوجد أزمة سمعة مباشرةً قبيل التصويت.
+
+---
+
+### المعطى الحرج 4: التوسع الرقمي للدولة
+
+**الحدث**: HD03250 (الهوية الإلكترونية الحكومية) و HD03261 (صلاحيات موسعة لسجل السكان في Skatteverket) يتقدمان في الريكسداغ.
+
+**التقييم**: HD03250 مُفترَض تقنياً بموجب لائحة eIDAS2 الأوروبية. الهوية الإلكترونية الحكومية تحلّ محل BankID بوصفها بنية تحتية للهوية المهيمنة. جدل سياسي منخفض لكن أهمية هيكلية مرتفعة — تحول طويل الأمد لسيادة الهوية الرقمية من الخاص إلى العام.
+
+---
+
+### المعطى الحرج 5: ثغرة المساءلة في المساعدة الرسمية للتنمية
+
+**الحدث**: لوتا يونسون فورناره (V) تتقدم بالاستجواب HD10492 لمساءلة الوزير دوزا عن أثر تخفيضات المساعدات على الأطفال (الامتثال لاتفاقية حقوق الطفل).
+
+**التقييم**: الحكومة ستتمسك على الأرجح بسردية الكفاءة دون الالتزام بتحليل عواقب الطفولة. ستنشر V عدم الإجابة أداةً للمساءلة الانتخابية. تُنشئ المادة 3 من اتفاقية حقوق الطفل مخاطر امتثال قانونية متواضعة لكنها حقيقية (متوسط، 30% من احتمال اهتمام لجنة مساعدة التنمية التابعة لمنظمة التعاون الاقتصادي والتنمية).
+
+---
+
+### جدول ملخص الاستخبارات
+
+| الحدث | DIW | الأثر الانتخابي | مخاطر الجدول الزمني |
+|---------|-----|-----------------|---------------|
+| KU34 vilande (دستوري) | 7,0 × 1,5 = 10,5 | مرتفع — الإجهاض/الجنسية قضايا هوية | التصويت الثاني أكتوبر 2026 |
+| HD024153 (اقتراح S للهجرة) | 8,7 × 1,5 = 13,1 | مرتفع جداً — الهجرة هي القضية المحورية | تصويت الاقتراحات يونيو 2026 |
+| HD03267 (ترحيل أمني) | 7,5 × 1,5 = 11,25 | مرتفع — لاغراده + نافذة الاتفاقية | لاغراده يونيو 2026 |
+| HD024160 (احتجاز الأطفال C) | 8,3 × 1,5 = 12,45 | متوسط-مرتفع — الحقوق مقابل الصرامة | تنازل اللجنة يونيو 2026 |
+| HD10492 (المساعدة/الأطفال) | 7,2 × 1,5 = 10,8 | متوسط — مواد انتخابية لـ V | رد دوزا 29 مايو 2026 |
+| HD03250 (هوية إلكترونية حكومية) | 6,5 × 1,5 = 9,75 | منخفض-متوسط — قصة حوكمة | امتثال الاتحاد الأوروبي 2027 |
+
+---
+
+### الأولويات التحريرية الموصى بها
+
+1. **القصة الرئيسية**: التعليق الدستوري — الإجهاض + الجنسية (ذو صدى دولي، تاريخي وطنياً)
+2. **القصة الثانية**: معركة الهجرة — 15 اقتراحاً معارضاً منسقاً مقابل 4 اقتراحات حكومية
+3. **قصة السياق**: مخاطر الاتفاقية الأوروبية في التشريعات السويدية — HD03267 + جنسية KU34 كعنقود موضوعي
+4. **قصة البيانات**: درجات DIW مُصوَّرة — أكثر فورة تشريعية أهمية في 24 ساعة في دورة 2025/26
+
+---
+
+### ملحق إعادة التشغيل (15:02 UTC)
+
+**معلومات جديدة**: ثلاثة نقاشات استجواب أُجيب عنها في الغرفة بعد الظهر توسّع الصورة التحليلية. تقييم استجوابات الطاقة المزدوجة لـ SD (HD10453/HD10448) ضد إيبا بوش (KD) على أنها تموضع انتخابي داخل الائتلاف: SD تبني مصداقية في تكاليف الطاقة وتشككها في طاقة الرياح في مواجهة شريك الائتلاف KD قبل 122 يوماً من الانتخابات. الاستجواب الثالث المتتالي لـ S حول تدريب الأطباء الاختصاصيين (HD10440) يؤكد استراتيجية منهجية لبناء سجل المساءلة تستهدف حملة الخريف الانتخابية.
+
+**الصورة التكتيكية المُنقَّحة**: اليوم البرلماني أكثر توجهاً نحو ما قبل الانتخابات مما قُدِّر أولاً. أربعة أحزاب متمايزة (SD وS وC وV) تستخدم في الوقت ذاته أدوات برلمانية لتموضعها تجاه 13 سبتمبر 2026.
+
+<!-- source-sha: 48729b47776eee9fd5a699b73571f4fb4db8f7a5 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief_da.md -->
+
+**Klassifikation**: OFFENTLIG  
+**Udarbejdet for**: Senior politisk analytiker, redaktionsteamet  
+**Dato**: 2026-05-14  
+**Gyldig**: 72 timer (til 2026-05-17T00:00Z)  
+**Konfidensniveau**: HØJ for dokumenterede begivenheder; MODERAT for valgprojektioner
+
+---
+
+### SITUATIONSRAPPORT
+
+Fem samtidige parlamentariske udviklinger den 14. maj 2026 markerer et af de tættest betydningsfulde enkelt-lovgivningsdøgn i den nuværende valgcyklus. Med 122 dage til parlamentsvalget den 13. september bærer hver udvikling forstærket valgmæssig konsekvens.
+
+---
+
+### KRITISK FUND 1: KONSTITUTIONELT ØJEBLIK
+
+**Begivenhed**: KU34 vedtaget vilande af den afgående riksdag, der forpligter det fremtidige parlament til at stemme om tre grundlovsændringer:
+- ✅ Abort-retten indskrevet i RF 2 kap. (enstemmig eller næsten enstemmig støtte)
+- ✅ Tilbagekaldelse af statsborgerskab for dobbeltborgere dømt for terrorisme og forræderi (omstridt, EMRK-risiko)
+- ✅ Banderelateret begrænsning af foreningsfrihed (forfatningsretlig nyskabelse, EMRK-risiko)
+
+**Vurdering**: Den næste riksdag (konstitueret oktober 2026) vil være retligt forpligtet til at stemme om disse vilande ændringer. Vedtager den dem med flertal, træder ændringerne i kraft fra 1. januar 2027. Dette er den mest betydningsfulde konstitutionelle udvikling siden 2010-grundlovsreformen. Alle realistiske valgscenarier producerer et parlament, hvor vedtagelse er sandsynlig (HØJ, 85–90 %).
+
+**Handling**: Redaktionen bør behandle KU34 som den mest betydningsfulde enkelt-begivenhed denne uge. Abort-bestemmelsen har international genklang. Statsborgerskabsbestemmelsen er EMRK-følsom og vil tiltrække NGO-reaktioner.
+
+---
+
+### KRITISK FUND 2: MIGRATIONS-KAMPLADS
+
+**Begivenhed**: S + C + V indgav 15 koordinerede motioner samme dag som vigtige regeringsmigrationsforslag. Skalaen og koordineringen er usædvanlig — partier indgiver typisk motioner over flere dage.
+
+**Vurdering**: Regeringens M+SD+KD-flertal (176/349; flertal på 1) er stabilt på migration. Oppositionen kan ikke blokere disse propositioner. Dog:
+- C's motion om varetægtsfængsling af børn (HD024160) har 40–55 % sandsynlighed for delvis regeringsacceptance baseret på Lagrådets CRC-kritik
+- S's HD024153 (genoprettelse af permanent opholdstilladelse) repræsenterer en strategisk ompositionering, som regeringen vil angribe som inkonsekvent (S ledede 2015/16-stramningen)
+- Koordineret indgivelse signalerer, at disse motioner er valgplatform-dokumenter, ikke lovgivende blokeringsinstrumenter
+
+**Handling**: Rammen som "migrations-kamplads" — oppositionen bygger sin 2026-valgkampagnes spillebog i realtid.
+
+---
+
+### KRITISK FUND 3: SIKKERHEDSDEPORTATION UNDER PRES
+
+**Begivenhed**: Regeringsproposition HD03267 (sikkerhedsdeportation af terrorismtrusler) træder ind i den parlamentariske proces med åben Lagrådet-høring.
+
+**Vurdering**: Højeste single-dokument DIW-score i denne cyklus (7,5/10 × 1,5 = 11,25 effektiv). EMRK-kompatibilitetsrisiko er reel — fraværet af en særlig advokat-mekanisme er et dokumenteret EU-sårbarhedsmønster. Hvis Lagrådet afgiver et kritisk yttrande inden 15. juni, står regeringen over for et valg mellem ændring og tidspres.
+
+**ECtHR-interimistisk risiko**: Vedtages og anvendes den inden september-valget, vil en profileret ECtHR-Regel-39-ansøgning i august 2026 skabe en omdømmekrise umiddelbart inden afstemningen.
+
+---
+
+### KRITISK FUND 4: DIGITAL STATSUDVIDGNING
+
+**Begivenhed**: HD03250 (statslig e-ID) og HD03261 (udvidet Skatteverket folkbokförings-myndighed) avancerer i Riksdagen.
+
+**Vurdering**: HD03250 er teknisk mandateret af EU's eIDAS2-forordning. Statslig e-ID erstatter BankID som den dominerende identitetsinfrastruktur. Lav politisk kontrovers, men HØJ strukturel betydning — langsigtet forskydning af digital identitetssuverænitet fra privat til offentlig.
+
+---
+
+### KRITISK FUND 5: BISTANDSANSVARS-GAP
+
+**Begivenhed**: V's Lotta Johnsson Fornarve indgiver interpellation HD10492 og udfordrer minister Dousa til at redegøre for bistandskuttenes konsekvenser for børn (CRC-overensstemmelse).
+
+**Vurdering**: Regeringen vil næsten sikkert fastholde effektivitetsnarrativet uden at forpligte sig til en barnkonsekvensanalys. V vil offentliggøre non-svaret som et valgansvarlighedsredskab. CRC art. 3-forpligtelsen skaber beskeden men reel juridisk compliance-risiko (MODERAT, 30 % OECD-DAC-opmærksomhedssandsynlighed).
+
+---
+
+### EFTERRETNINGSOVERSIGT
+
+| Begivenhed | DIW | Valgeffekt | Tidslinje-risiko |
+|---------|-----|-----------------|---------------|
+| KU34 vilande (konstitutionel) | 7,0 × 1,5 = 10,5 | HØJ — abort/statsborgerskab identitetsspørgsmål | Anden passage okt. 2026 |
+| HD024153 (S migrationsmotions) | 8,7 × 1,5 = 13,1 | MEGET HØJ — migration er valgkampens centrale spørgsmål | Props-afstemning juni 2026 |
+| HD03267 (sikkerhedsdeportation) | 7,5 × 1,5 = 11,25 | HØJ — Lagrådet+EMRK-vindue | Lagrådet juni 2026 |
+| HD024160 (C børnevaretægt) | 8,3 × 1,5 = 12,45 | MEDIUM-HØJ — rettigheder vs. hårdhed | Udvalgs-indrømmelse juni 2026 |
+| HD10492 (Bistand/børn) | 7,2 × 1,5 = 10,8 | MEDIUM — V valgmateriale | Dousas svar 29. maj 2026 |
+| HD03250 (statslig e-ID) | 6,5 × 1,5 = 9,75 | LAV-MEDIUM — forvaltnings-historie | EU-overensstemmelse 2027 |
+
+---
+
+### ANBEFALEDE REDAKTIONELLE PRIORITERINGER
+
+1. **Ledende nyhed**: Konstitutionel vilande — abort + statsborgerskab (internationalt resonant, nationalt historisk)
+2. **Anden nyhed**: Migrations-kamplads — 15 koordinerede oppositionsmotioner vs. 4 regeringsforslag
+3. **Kontekstnyheden**: EMRK-risici i svensk lovgivning — HD03267 + KU34-statsborgerskab som tematisk klynge
+4. **Datanyheden**: DIW-scores visualiseret — mest betydningsfuld 24-timers lovgivningssurge i 2025/26-sessionen
+
+---
+
+### Tillæg ved genkørsel (15:02 UTC)
+
+**Ny efterretning**: Tre interpellationsdebatter besvaret i kammaret den eftermiddag udvider det analytiske billede. SD's parrede energiinterpellationer (HD10453/HD10448) mod KD's Ebba Busch vurderes som intrakoalitionær valgpositionering: SD bygger energiomkostnings- og vindskepticisme-troværdighed over for koalitionspartneren KD 122 dage inden valget. S's tredje på stribe interpellation om specialistlæge-uddannelse (HD10440) bekræfter en systematisk ansvarsopbygningsstrategi rettet mod efterårets valgkampagne.
+
+**Revideret taktisk billede**: Parlamentsdagen er endnu mere forvalgspræget end oprindeligt vurderet. Fire adskilte partier (SD, S, C, V) bruger parlamentariske redskaber til positionering forud for 13. september 2026 samtidigt.
+
+<!-- source-sha: 48729b47776eee9fd5a699b73571f4fb4db8f7a5 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief_de.md -->
+
+**Klassifikation**: ÖFFENTLICH  
+**Erstellt für**: Leitender politischer Analyst, Redaktionsteam  
+**Datum**: 2026-05-14  
+**Gültig**: 72 Stunden (bis 2026-05-17T00:00Z)  
+**Konfidenzstufe**: HOCH für dokumentierte Ereignisse; MODERAT für Wahlprognosen
+
+---
+
+### LAGEBERICHT
+
+Fünf gleichzeitige parlamentarische Entwicklungen am 14. Mai 2026 markieren einen der dichtesten und bedeutsamsten Einzelgesetzgebungstage im laufenden Wahlzyklus. Mit 122 Tagen bis zur Parlamentswahl am 13. September trägt jede Entwicklung erhöhte Wahlrelevanz.
+
+---
+
+### KRITISCHER BEFUND 1: KONSTITUTIONELLER MOMENT
+
+**Ereignis**: KU34 wurde als vilande vom scheidenden Riksdag angenommen und verpflichtet das künftige Parlament zur Abstimmung über drei Verfassungsänderungen:
+- ✅ Recht auf Abtreibung in RF 2 Kap. verankert (einstimmige oder nahezu einstimmige Unterstützung)
+- ✅ Entzug der Staatsbürgerschaft für Doppelstaater, die wegen Terrorismus und Hochverrats verurteilt wurden (umstritten, EMRK-Risiko)
+- ✅ Bandenbedingte Einschränkung der Vereinigungsfreiheit (verfassungsrechtlich neuartig, EMRK-Risiko)
+
+**Bewertung**: Der nächste Riksdag (konstituiert Oktober 2026) ist rechtlich verpflichtet, über diese ruhenden Änderungen abzustimmen. Stimmt eine Mehrheit dafür, treten die Änderungen zum 1. Januar 2027 in Kraft. Dies ist die bedeutendste verfassungsrechtliche Entwicklung seit der Grundgesetzreform 2010. Alle realistischen Wahlszenarien ergeben ein Parlament, in dem eine Mehrheit wahrscheinlich ist (HOCH, 85–90 %).
+
+**Maßnahme**: Die Redaktion sollte KU34 als die bedeutendste Einzelentwicklung dieser Woche behandeln. Die Abtreibungsbestimmung hat internationale Resonanz. Die Staatsbürgerschaftsbestimmung ist EMRK-sensitiv und wird NGO-Reaktionen auslösen.
+
+---
+
+### KRITISCHER BEFUND 2: MIGRATIONSSCHLACHTFELD
+
+**Ereignis**: S + C + V reichten am selben Tag 15 koordinierte Anträge ein wie die wichtigsten Regierungsvorschläge zur Migration. Umfang und Koordination sind ungewöhnlich — Parteien reichen typischerweise Anträge über mehrere Tage ein.
+
+**Bewertung**: Die Regierungsmehrheit M+SD+KD (176/349; Mehrheit von 1) ist bei Migration stabil. Die Opposition kann diese Propositionen nicht blockieren. Jedoch:
+- C's Antrag zur Inhaftierung von Kindern (HD024160) hat 40–55 % Wahrscheinlichkeit einer teilweisen Regierungsannahme auf Basis der Lagrådet-CRC-Kritik
+- S's HD024153 (Wiederherstellung der dauerhaften Aufenthaltserlaubnis) repräsentiert eine strategische Neupositionierung, die die Regierung als inkonsequent angreift (S führte die Verschärfungen 2015/16)
+- Koordinierte Einreichung signalisiert, dass diese Anträge Wahlprogramm-Dokumente sind, keine gesetzgebenden Blockierungsinstrumente
+
+**Maßnahme**: Als „Migrationsschlachtfeld" rahmen — die Opposition baut ihr 2026-Wahlkampf-Spielbuch in Echtzeit.
+
+---
+
+### KRITISCHER BEFUND 3: SICHERHEITSABSCHIEBUNG UNTER DRUCK
+
+**Ereignis**: Regierungsproposition HD03267 (Sicherheitsabschiebung von Terrorismusgefährdern) tritt mit offener Lagrådet-Überweisung in das parlamentarische Verfahren.
+
+**Bewertung**: Höchste Einzeldokument-DIW-Punktzahl dieses Zyklus (7,5/10 × 1,5 = 11,25 effektiv). EMRK-Kompatibilitätsrisiko ist real — das Fehlen eines Sonderanwalt-Mechanismus ist ein dokumentiertes EU-Schwachstellenmuster. Gibt Lagrådet vor dem 15. Juni ein kritisches Gutachten ab, steht die Regierung vor der Wahl zwischen Änderung und Zeitdruck.
+
+**EGMR-Interimmaßnahmen-Risiko**: Wird es vor der Septemberwahl angenommen und angewendet, würde ein hochkarätiger EGMR-Regel-39-Antrag im August 2026 unmittelbar vor der Wahl eine Reputationskrise auslösen.
+
+---
+
+### KRITISCHER BEFUND 4: DIGITALE STAATSAUSDEHNUNG
+
+**Ereignis**: HD03250 (staatliche E-ID) und HD03261 (erweiterter Skatteverket-Melderegistrierungsbefugnis) schreiten im Riksdag voran.
+
+**Bewertung**: HD03250 ist technisch durch die EU-eIDAS2-Verordnung vorgeschrieben. Die staatliche E-ID ersetzt BankID als dominierende Identitätsinfrastruktur. Geringe politische Kontroverse, aber HOHE strukturelle Bedeutung — langfristige Verlagerung der digitalen Identitätssouveränität von privat zu öffentlich.
+
+---
+
+### KRITISCHER BEFUND 5: ENTWICKLUNGSHILFE-VERANTWORTUNGSLÜCKE
+
+**Ereignis**: V-Abgeordnete Lotta Johnsson Fornarve reicht Interpellation HD10492 ein und fordert Minister Dousa auf, die Auswirkungen der Hilfsmittelkürzungen auf Kinder zu erläutern (CRC-Einhaltung).
+
+**Bewertung**: Die Regierung wird fast sicher das Effizienznarrativ beibehalten, ohne sich zu einer Kinderwirkungsanalyse zu verpflichten. V wird die Nicht-Antwort als Wahlverantwortlichkeitswerkzeug veröffentlichen. Die CRC-Art.-3-Verpflichtung schafft ein bescheidenes, aber reelles Rechts-Compliance-Risiko (MODERAT, 30 % OECD-DAC-Aufmerksamkeitswahrscheinlichkeit).
+
+---
+
+### NACHRICHTENDIENSTLICHE ÜBERSICHTSTABELLE
+
+| Ereignis | DIW | Wahlwirkung | Zeitlinienrisiko |
+|---------|-----|-----------------|---------------|
+| KU34 ruhend (verfassungsmäßig) | 7,0 × 1,5 = 10,5 | HOCH — Abtreibung/Staatsbürgerschaft Identitätsfragen | Zweiter Durchgang Okt. 2026 |
+| HD024153 (S Migrationsantrag) | 8,7 × 1,5 = 13,1 | SEHR HOCH — Migration ist die Kernfrage des Wahlkampfs | Props-Abstimmung Juni 2026 |
+| HD03267 (Sicherheitsabschiebung) | 7,5 × 1,5 = 11,25 | HOCH — Lagrådet+EMRK-Fenster | Lagrådet Juni 2026 |
+| HD024160 (C Kinderhaft) | 8,3 × 1,5 = 12,45 | MITTEL-HOCH — Rechte vs. Härte | Ausschusskonzession Juni 2026 |
+| HD10492 (Entwicklungshilfe/Kinder) | 7,2 × 1,5 = 10,8 | MITTEL — V-Wahlmaterial | Dousas Antwort 29. Mai 2026 |
+| HD03250 (staatliche E-ID) | 6,5 × 1,5 = 9,75 | NIEDRIG-MITTEL — Governance-Geschichte | EU-Konformität 2027 |
+
+---
+
+### EMPFOHLENE REDAKTIONELLE PRIORITÄTEN
+
+1. **Hauptnachricht**: Verfassungsrechtliches Ruhendstellen — Abtreibung + Staatsbürgerschaft (international resonant, national historisch)
+2. **Zweite Nachricht**: Migrationsschlachtfeld — 15 koordinierte Oppositionsanträge vs. 4 Regierungsvorschläge
+3. **Kontextnachricht**: EMRK-Risiken in der schwedischen Gesetzgebung — HD03267 + KU34-Staatsbürgerschaft als thematisches Cluster
+4. **Datennachricht**: DIW-Punkte visualisiert — bedeutendster 24-Stunden-Gesetzgebungs-Surge der Sitzungsperiode 2025/26
+
+---
+
+### Ergänzungsmeldung beim Wiederholungslauf (15:02 UTC)
+
+**Neue Nachrichtenlage**: Drei am Nachmittag in der Kammer beantwortete Interpellationsdebatten erweitern das analytische Bild. SD's gepaarte Energieinterpellationen (HD10453/HD10448) gegen KD's Ebba Busch werden als innerkoalitionäre Wahlpositionierung bewertet: SD baut Energiekosten- und Windkraft-Skepsis-Glaubwürdigkeit gegenüber dem Koalitionspartner KD 122 Tage vor der Wahl auf. S's dritte aufeinanderfolgende Interpellation zur Facharztausbildung (HD10440) bestätigt eine systematische Verantwortlichkeitsdokumentationsstrategie, die auf den Herbst-Wahlkampf abzielt.
+
+**Überarbeitetes taktisches Bild**: Der Parlamentstag ist noch stärker vorwahlorientiert als ursprünglich bewertet. Vier verschiedene Parteien (SD, S, C, V) nutzen gleichzeitig parlamentarische Instrumente zur Positionierung vor dem 13. September 2026.
+
+<!-- source-sha: 48729b47776eee9fd5a699b73571f4fb4db8f7a5 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief_es.md -->
+
+**Clasificación**: PÚBLICO  
+**Elaborado para**: Analista político senior, equipo editorial  
+**Fecha**: 2026-05-14  
+**Válido**: 72 horas (hasta 2026-05-17T00:00Z)  
+**Nivel de confianza**: ALTO para eventos documentados; MODERADO para proyecciones electorales
+
+---
+
+### INFORME DE SITUACIÓN
+
+Cinco desarrollos parlamentarios simultáneos el 14 de mayo de 2026 marcan uno de los días legislativos más cargados de significado del ciclo electoral actual. Con 122 días para las elecciones generales del 13 de septiembre, cada desarrollo tiene una consecuencia electoral amplificada.
+
+---
+
+### HALLAZGO CRÍTICO 1: MOMENTO CONSTITUCIONAL
+
+**Evento**: KU34 adoptado vilande por el Riksdag saliente, comprometiendo al futuro parlamento a votar sobre tres enmiendas constitucionales:
+- ✅ Derecho al aborto consagrado en RF cap. 2 (apoyo unánime o casi unánime)
+- ✅ Revocación de la ciudadanía para dobles nacionales condenados por terrorismo y traición (controvertido, riesgo CEDH)
+- ✅ Restricción de la libertad de asociación relacionada con pandillas (novedad constitucional, riesgo CEDH)
+
+**Evaluación**: El próximo Riksdag (constituido en octubre de 2026) estará legalmente obligado a votar sobre estas enmiendas en espera. Si una mayoría vota sí, las enmiendas entran en vigor a partir del 1 de enero de 2027. Este es el desarrollo constitucional más significativo desde la reforma de la ley fundamental de 2010. Todos los escenarios electorales realistas producen un parlamento donde la aprobación es probable (ALTO, 85–90 %).
+
+**Acción**: La redacción debe tratar KU34 como el desarrollo más significativo de esta semana. La disposición sobre el aborto tiene resonancia internacional. La disposición sobre revocación de ciudadanía es sensible a la CEDH y atraerá respuestas de ONG.
+
+---
+
+### HALLAZGO CRÍTICO 2: CAMPO DE BATALLA MIGRATORIO
+
+**Evento**: S + C + V presentaron 15 mociones coordinadas el mismo día que las principales propuestas gubernamentales sobre migración. La escala y coordinación son inusuales — los partidos típicamente presentan mociones a lo largo de varios días.
+
+**Evaluación**: La mayoría M+SD+KD del gobierno (176/349; mayoría de 1) es estable en migración. La oposición no puede bloquear estas proposiciones. Sin embargo:
+- La moción de C sobre detención de menores (HD024160) tiene 40–55 % de probabilidad de aceptación parcial gubernamental basada en la crítica CRC del Lagrådet
+- HD024153 de S (restablecimiento del permiso de residencia permanente) representa un reposicionamiento estratégico que el gobierno atacará como inconsistente (S lideró el endurecimiento de 2015/16)
+- La presentación coordinada señala que estas mociones son documentos de plataforma electoral, no instrumentos legislativos de bloqueo
+
+**Acción**: Enmarcar como "campo de batalla migratorio" — la oposición está construyendo su libro de estrategia de campaña 2026 en tiempo real.
+
+---
+
+### HALLAZGO CRÍTICO 3: TENSIÓN EN DEPORTACIÓN POR SEGURIDAD
+
+**Evento**: La proposición gubernamental HD03267 (deportación por seguridad de individuos amenaza terrorista) entra en el proceso parlamentario con remisión abierta al Lagrådet.
+
+**Evaluación**: Puntuación DIW más alta por documento en este ciclo (7,5/10 × 1,5 = 11,25 efectivo). El riesgo de compatibilidad CEDH es real — la ausencia de un mecanismo de Abogado Especial es un patrón de vulnerabilidad UE documentado. Si Lagrådet emite un dictamen crítico antes del 15 de junio, el gobierno enfrenta la elección entre enmienda y presión de calendario.
+
+**Riesgo de medida provisional TEDH**: Si se aprueba y aplica antes de las elecciones de septiembre, una solicitud de Regla 39 TEDH de alto perfil en agosto de 2026 crearía una crisis de reputación inmediatamente antes de la votación.
+
+---
+
+### HALLAZGO CRÍTICO 4: EXPANSIÓN DIGITAL DEL ESTADO
+
+**Evento**: HD03250 (e-ID estatal) y HD03261 (autoridad ampliada de registro de población de Skatteverket) avanzan en el Riksdag.
+
+**Evaluación**: HD03250 está técnicamente mandatado por el Reglamento UE eIDAS2. El e-ID estatal reemplaza a BankID como infraestructura de identidad dominante. Baja controversia política pero ALTA importancia estructural — traslado a largo plazo de la soberanía de identidad digital de privado a público.
+
+---
+
+### HALLAZGO CRÍTICO 5: BRECHA DE RESPONSABILIDAD AOD
+
+**Evento**: Lotta Johnsson Fornarve (V) presenta la interpelación HD10492 desafiando al Ministro Dousa a rendir cuentas sobre el impacto de los recortes de ayuda en los niños (cumplimiento CRC).
+
+**Evaluación**: El gobierno casi con certeza mantendrá el narrativo de eficiencia sin comprometerse a un análisis de consecuencias para la infancia (barnkonsekvensanalys). V publicará la no-respuesta como herramienta de responsabilidad electoral. La obligación CRC art. 3 crea un riesgo legal de cumplimiento modesto pero real (MODERADO, 30 % de probabilidad de atención OCDE-CAD).
+
+---
+
+### TABLA DE SÍNTESIS DE INTELIGENCIA
+
+| Evento | DIW | Impacto electoral | Riesgo de calendario |
+|---------|-----|-----------------|---------------|
+| KU34 vilande (constitucional) | 7,0 × 1,5 = 10,5 | ALTO — aborto/ciudadanía cuestiones identitarias | Segundo paso oct. 2026 |
+| HD024153 (moción migración S) | 8,7 × 1,5 = 13,1 | MUY ALTO — migración es el tema central | Votación props junio 2026 |
+| HD03267 (deportación seguridad) | 7,5 × 1,5 = 11,25 | ALTO — Lagrådet+ventana CEDH | Lagrådet junio 2026 |
+| HD024160 (detención menores C) | 8,3 × 1,5 = 12,45 | MEDIO-ALTO — derechos vs. dureza | Concesión comité junio 2026 |
+| HD10492 (AOD/niños) | 7,2 × 1,5 = 10,8 | MEDIO — material electoral V | Respuesta Dousa 29 mayo 2026 |
+| HD03250 (e-ID estatal) | 6,5 × 1,5 = 9,75 | BAJO-MEDIO — historia de gobernanza | Conformidad UE 2027 |
+
+---
+
+### PRIORIDADES EDITORIALES RECOMENDADAS
+
+1. **Historia principal**: Vilande constitucional — aborto + ciudadanía (resonancia internacional, históricamente nacional)
+2. **Segunda historia**: Campo de batalla migratorio — 15 mociones coordinadas de la oposición vs. 4 propuestas del gobierno
+3. **Historia de contexto**: Riesgos CEDH en la legislación sueca — HD03267 + KU34 ciudadanía como clúster temático
+4. **Historia de datos**: Puntuaciones DIW visualizadas — surge legislativo de 24 horas más significativo de la sesión 2025/26
+
+---
+
+### Adenda de re-ejecución (15:02 UTC)
+
+**Nueva inteligencia**: Tres debates de interpelación respondidos en la cámara esta tarde amplían el cuadro analítico. Las interpelaciones energéticas emparejadas de SD (HD10453/HD10448) contra Ebba Busch (KD) se evalúan como un posicionamiento electoral intracoalición: SD construye credibilidad en costes energéticos y escepticismo eólico frente al socio de coalición KD a 122 días de las elecciones. La tercera interpelación consecutiva de S sobre formación de médicos especialistas (HD10440) confirma una estrategia sistemática de construcción de historial de responsabilidad orientada a la campaña de otoño.
+
+**Cuadro táctico revisado**: La jornada parlamentaria es aún más preelectoral de lo evaluado inicialmente. Cuatro partidos distintos (SD, S, C, V) están utilizando simultáneamente herramientas parlamentarias para posicionarse ante el 13 de septiembre de 2026.
+
+<!-- source-sha: 48729b47776eee9fd5a699b73571f4fb4db8f7a5 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief_fi.md -->
+
+**Luokittelu**: JULKINEN  
+**Laadittu**: Vanhemmalle poliittiselle analyytikolla, toimitustiimille  
+**Päivämäärä**: 2026-05-14  
+**Voimassa**: 72 tuntia (2026-05-17T00:00Z asti)  
+**Luotettavuusaste**: KORKEA dokumentoiduista tapahtumista; KOHTALAINEN vaaliarvioista
+
+---
+
+### TILANNERAPORTTI
+
+Viisi samanaikaista parlamentaarista kehityskulkua 14. toukokuuta 2026 merkitsevät yhtä tämän vaalikauden tiheimmin merkittävistä yksittäisistä lainsäädäntöpäivistä. Kun syyskuun 13. päivän parlamenttivaaleihin on 122 päivää, kullakin kehityskululla on vahvistettu vaalipoliittinen merkitys.
+
+---
+
+### KRIITTINEN HAVAINTO 1: PERUSTUSLAILLINEN HETKI
+
+**Tapahtuma**: KU34 hyväksyttiin lepäämään poistuvan riksdagenin toimesta sitoen tulevan parlamentin äänestämään kolmesta perustuslaillisesta muutoksesta:
+- ✅ Aborttioikeus kirjattu RF 2 luk:n (yksimielinen tai lähes yksimielinen tuki)
+- ✅ Kansalaisuuden peruuttaminen kaksoisstatus-kansalaisilta, jotka on tuomittu terrorismista ja maanpetoksesta (kiistanalainen, EIT-riski)
+- ✅ Jengirikoksiin liittyvä yhdistymisvapauden rajoitus (perustuslaillinen uutuus, EIT-riski)
+
+**Arvio**: Seuraava riksdagen (muodostettu lokakuussa 2026) on laillisesti velvollinen äänestämään näistä lepäävistä muutoksista. Jos se tekee niin ja enemmistö äänestää kyllä, muutokset tulevat voimaan 1. tammikuuta 2027. Tämä on merkittävin perustuslaillinen kehitys sitten vuoden 2010 perusoikeusuudistuksen. Kaikki realistiset vaaliskenaariot tuottavat parlamentin, jossa hyväksyminen on todennäköistä (KORKEA, 85–90 %).
+
+**Toimenpide**: Toimituksen tulisi pitää KU34:ää merkittävimpänä yksittäistapahtumana tällä viikolla. Aborttioikeussäännös on kansainvälisesti resonantti. Kansalaisuuden peruuttamissäännös on EIT-herkkä ja houkuttelee kansalaisjärjestöjen reaktioita.
+
+---
+
+### KRIITTINEN HAVAINTO 2: MAAHANMUUTON TAISTELUKENTTÄ
+
+**Tapahtuma**: S + C + V jättivät 15 koordinoitua motionia samana päivänä kuin tärkeimmät hallituksen maahanmuuttoehdotukset. Laajuus ja koordinointi on epätavallista — puolueet jättävät tyypillisesti motioita usean päivän aikana.
+
+**Arvio**: Hallituksen M+SD+KD-enemmistö (176/349; enemmistö 1:llä) on vakaa maahanmuutossa. Oppositio ei voi estää näitä propositioita. Kuitenkin:
+- C:n motion lasten säilöönpidosta (HD024160) on 40–55 % todennäköisyys osittaiselle hallituksen hyväksynnälle Lagrådetin CRC-kritiikin perusteella
+- S:n HD024153 (pysyvän oleskeluluvan palauttaminen) edustaa strategista uudelleenasemoitumista, jota hallitus hyökkää epäjohdonmukaiseksi (S johti 2015/16-tiukennusta)
+- Koordinoitu jättäminen viestii, että nämä motiot ovat vaaliohjelma-dokumentteja, eivät lainsäädännöllisiä estämisvälineitä
+
+**Toimenpide**: Muotoile "maahanmuuton taistelukentäksi" — oppositio rakentaa 2026-valikampanjansa pelikirjan reaaliajassa.
+
+---
+
+### KRIITTINEN HAVAINTO 3: TURVALLISUUSMAAHANKARKOTUS PAINEISSA
+
+**Tapahtuma**: Hallituksen propositsio HD03267 (turvallisuusmaahankarkotus terrorismiuhkista) siirtyy parlamentaariseen käsittelyyn avoimen Lagrådet-lausuntopyynnön kanssa.
+
+**Arvio**: Korkein yksittäisen asiakirjan DIW-pisteet tässä syklissä (7,5/10 × 1,5 = 11,25 tehollinen). EIT-yhteensopivuusriski on todellinen — erityisen asianajajan mekanismin puuttuminen on dokumentoitu EU:n haavoittuvuusmalli. Jos Lagrådet antaa kriittisen yttranden ennen 15. kesäkuuta, hallitus kohtaa valinnan muutoksen ja aikataulupaineen välillä.
+
+**EIT:n väliaikaistoimenpideriski**: Jos se hyväksytään ja otetaan käyttöön ennen syyskuun vaaleja, EIT:n Sääntö 39 -hakemus elokuussa 2026 luo mainekriisin välittömästi ennen äänestystä.
+
+---
+
+### KRIITTINEN HAVAINTO 4: DIGITAALINEN VALTION LAAJENTUMINEN
+
+**Tapahtuma**: HD03250 (valtion sähköinen henkilöllisyys) ja HD03261 (laajennettu Skatteverketin väestökirjanpitovaltuus) etenevät riksdagenissa.
+
+**Arvio**: HD03250 on teknisesti EU:n eIDAS2-asetuksen mukainen. Valtion sähköinen henkilöllisyys korvaa BankIDn hallitsevana henkilöllisyysinfrastruktuurina. Alhainen poliittinen kiistanalaisuus, mutta KORKEA rakenteellinen merkitys — digitaalisen identiteettisuvereniteetti siirtyy pitkällä aikavälillä yksityiseltä julkiselle.
+
+---
+
+### KRIITTINEN HAVAINTO 5: KEHITYSYHTEISTYÖN VASTUUVAJE
+
+**Tapahtuma**: V:n Lotta Johnsson Fornarve jättää interpellaation HD10492 ja haastaa ministeri Dousaa vastaamaan kehitysyhteistyömäärärahojen leikkausten vaikutuksista lapsiin (CRC-noudattaminen).
+
+**Arvio**: Hallitus ylläpitänee lähes varmasti tehokkuusnarratiivia sitoutumatta lapsi-vaikutustenarviointiin. V julkistaa ei-vastauksen vaalivastuullisuustyökaluna. CRC 3 artiklan velvoite luo vaatimattoman mutta todellisen juridisen noudattamisriskin (KOHTALAINEN, 30 % OECD-DAC-huomiotodennäköisyys).
+
+---
+
+### TIEDUSTELUTAULUKKO
+
+| Tapahtuma | DIW | Vaalipoliittinen vaikutus | Aikatauluriski |
+|---------|-----|-----------------|---------------|
+| KU34 lepäämässä (perustuslaillinen) | 7,0 × 1,5 = 10,5 | KORKEA — abortti/kansalaisuus identiteettikysymykset | Toinen äänestys lokakuu 2026 |
+| HD024153 (S maahanmuuttomotio) | 8,7 × 1,5 = 13,1 | ERITTÄIN KORKEA — maahanmuutto on vaalin keskeinen kysymys | Props-äänestys kesäkuu 2026 |
+| HD03267 (turvallisuusmaahankarkotus) | 7,5 × 1,5 = 11,25 | KORKEA — Lagrådet+EIT-ikkuna | Lagrådet kesäkuu 2026 |
+| HD024160 (C lapsen säilöönpito) | 8,3 × 1,5 = 12,45 | KESKI-KORKEA — oikeudet vs. kovuus | Valiokunnan myönnytys kesäkuu 2026 |
+| HD10492 (Kehitysyhteistyö/lapset) | 7,2 × 1,5 = 10,8 | KESKI — V vaalimateriaalit | Dousas vastaus 29. toukokuuta 2026 |
+| HD03250 (valtion sähköinen henkilöllisyys) | 6,5 × 1,5 = 9,75 | ALHAINEN-KESKI — hallintotarina | EU-noudattaminen 2027 |
+
+---
+
+### SUOSITELLUT TOIMITUKSELLISET PAINOPISTEET
+
+1. **Pääuutinen**: Perustuslaillinen lepääminen — abortti + kansalaisuus (kansainvälisesti resonantti, kansallisesti historiallinen)
+2. **Toinen uutinen**: Maahanmuuton taistelukenttä — 15 koordinoitua oppositiomotiota vs. 4 hallituksen propositiota
+3. **Kontekstijuttu**: EIT-riskit ruotsalaisessa lainsäädännössä — HD03267 + KU34-kansalaisuus temaattisena klusterina
+4. **Datajuttu**: DIW-pisteet visualisoitu — merkittävin 24 tunnin lainsäädäntösurge 2025/26-istunnolla
+
+---
+
+### Lisätiedote uudelleenajossa (15:02 UTC)
+
+**Uusi tiedustelutieto**: Kolme interpellaatiokeskustelua vastattiin kammarissa iltapäivällä, mikä laajentaa analyyttistä kuvaa. SD:n pariutetut energiainterpellaatiot (HD10453/HD10448) KD:n Ebba Buschia vastaan arvioidaan koalition sisäiseksi vaaliasemoinniksi: SD rakentaa energiakustannus- ja tuulivoimaskeptisismi-uskottavuutta koaliopartneri KD:tä vastaan 122 päivää ennen vaaleja. S:n kolmas peräkkäinen interpellaatio erikoislääkärikoulutuksesta (HD10440) vahvistaa systemaattisen vastuukirjaus-strategian, joka tähtää syksyn valikampanjaan.
+
+**Tarkistettu taktinen kuva**: Parlamenttipäivä on entistä enemmän esivaaliorientoitunut kuin alun perin arvioitiin. Neljä eri puoluetta (SD, S, C, V) käyttävät samanaikaisesti parlamentaarisia välineitä asemoidakseen 13. syyskuuta 2026 varten.
+
+<!-- source-sha: 48729b47776eee9fd5a699b73571f4fb4db8f7a5 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief_fr.md -->
+
+**Préparé pour** : Analyste politique senior, équipe éditoriale  
+
+**Valide** : 72 heures (jusqu'au 2026-05-17T00:00Z)  
+**Niveau de confiance** : ÉLEVÉ pour les événements documentés ; MODÉRÉ pour les projections électorales
+
+---
+
+### RAPPORT DE SITUATION
+
+Cinq développements parlementaires simultanés le 14 mai 2026 marquent l'une des journées législatives les plus denses et significatives du cycle électoral actuel. Avec 122 jours avant les élections générales du 13 septembre, chaque développement revêt une importance électorale amplifiée.
+
+---
+
+### CONSTAT CRITIQUE 1 : MOMENT CONSTITUTIONNEL
+
+**Événement** : KU34 adopté vilande par le Riksdag sortant, engageant le futur parlement à voter sur trois amendements constitutionnels :
+- ✅ Droit à l'avortement inscrit dans RF chap. 2 (soutien unanime ou quasi unanime)
+- ✅ Révocation de la nationalité pour les bi-nationaux condamnés pour terrorisme et trahison (contesté, risque CEDH)
+- ✅ Restriction de la liberté d'association liée aux gangs (nouveauté constitutionnelle, risque CEDH)
+
+**Évaluation** : Le prochain Riksdag (constitué en octobre 2026) sera légalement tenu de voter sur ces amendements en attente. Si une majorité vote pour, les amendements entrent en vigueur au 1er janvier 2027. Il s'agit du développement constitutionnel le plus significatif depuis la réforme de la loi fondamentale de 2010. Tous les scénarios électoraux réalistes produisent un parlement où l'adoption est probable (ÉLEVÉ, 85–90 %).
+
+**Action** : La rédaction doit traiter KU34 comme le développement le plus significatif de la semaine. La disposition sur l'avortement a une résonance internationale. La disposition sur la révocation de nationalité est sensible à la CEDH et susciterait des réactions des ONG.
+
+---
+
+### CONSTAT CRITIQUE 2 : CHAMP DE BATAILLE MIGRATOIRE
+
+**Événement** : S + C + V ont déposé 15 motions coordonnées le même jour que les principales propositions gouvernementales sur la migration. L'ampleur et la coordination sont inhabituelles — les partis déposent généralement des motions sur plusieurs jours.
+
+**Évaluation** : La majorité M+SD+KD du gouvernement (176/349 ; majorité d'1) est stable sur la migration. L'opposition ne peut pas bloquer ces propositions. Cependant :
+- La motion de C sur la détention des enfants (HD024160) a 40–55 % de probabilité d'acceptation partielle par le gouvernement sur la base de la critique CRC du Lagrådet
+- HD024153 de S (rétablissement du permis de séjour permanent) représente un repositionnement stratégique que le gouvernement attaquera comme incohérent (S a dirigé le durcissement 2015/16)
+- Le dépôt coordonné signale que ces motions sont des documents de plateforme électorale, pas des instruments de blocage législatif
+
+**Action** : Cadrer comme « champ de bataille migratoire » — l'opposition construit son livre de jeu de campagne 2026 en temps réel.
+
+---
+
+### CONSTAT CRITIQUE 3 : TENSION SUR L'EXPULSION POUR SÉCURITÉ
+
+**Événement** : La proposition gouvernementale HD03267 (expulsion pour sécurité des individus représentant une menace terroriste) entre dans le processus parlementaire avec une saisine ouverte du Lagrådet.
+
+**Évaluation** : Score DIW le plus élevé par document de ce cycle (7,5/10 × 1,5 = 11,25 effectif). Le risque de compatibilité CEDH est réel — l'absence d'un mécanisme d'Avocat spécial est un schéma de vulnérabilité UE documenté. Si le Lagrådet émet un avis critique avant le 15 juin, le gouvernement devra choisir entre amendement et pression calendaire.
+
+**Risque de mesure provisoire CrEDH** : Si adoptée et appliquée avant les élections de septembre, une demande médiatisée de mesure provisoire Article 39 CEDH en août 2026 créerait une crise de réputation immédiatement avant le vote.
+
+---
+
+### CONSTAT CRITIQUE 4 : EXPANSION NUMÉRIQUE DE L'ÉTAT
+
+**Événement** : HD03250 (e-ID d'État) et HD03261 (autorité folkbokföring élargie de Skatteverket) progressent au Riksdag.
+
+**Évaluation** : HD03250 est techniquement mandaté par le règlement UE eIDAS2. L'e-ID d'État remplace BankID comme infrastructure d'identité dominante. Faible controverse politique mais HAUTE importance structurelle — transfert à long terme de la souveraineté d'identité numérique du privé au public.
+
+---
+
+### CONSTAT CRITIQUE 5 : DÉFICIT DE RESPONSABILITÉ APD
+
+**Événement** : Lotta Johnsson Fornarve (V) dépose l'interpellation HD10492 demandant au ministre Dousa de rendre compte de l'impact des réductions d'aide sur les enfants (conformité CRC).
+
+**Évaluation** : Le gouvernement maintiendra presque certainement le récit d'efficacité sans s'engager dans une analyse d'impact sur les enfants (barnkonsekvensanalys). V publiera la non-réponse comme outil de responsabilité électorale. L'obligation CRC art. 3 crée un risque juridique de conformité modeste mais réel (MODÉRÉ, 30 % de probabilité d'attention OCDE-CAD).
+
+---
+
+### TABLEAU DE SYNTHÈSE DES RENSEIGNEMENTS
+
+| Événement | DIW | Impact électoral | Risque calendaire |
+|---------|-----|-----------------|---------------|
+| KU34 vilande (constitutionnel) | 7,0 × 1,5 = 10,5 | ÉLEVÉ — avortement/nationalité questions identitaires | Deuxième passage oct. 2026 |
+| HD024153 (motion migration S) | 8,7 × 1,5 = 13,1 | TRÈS ÉLEVÉ — migration est l'enjeu central du scrutin | Vote props juin 2026 |
+| HD03267 (expulsion sécurité) | 7,5 × 1,5 = 11,25 | ÉLEVÉ — Lagrådet+fenêtre CEDH | Lagrådet juin 2026 |
+| HD024160 (détention enfants C) | 8,3 × 1,5 = 12,45 | MOYEN-ÉLEVÉ — droits vs. fermeté | Concession comité juin 2026 |
+| HD10492 (APD/enfants) | 7,2 × 1,5 = 10,8 | MOYEN — matériel électoral V | Réponse Dousa 29 mai 2026 |
+| HD03250 (e-ID d'État) | 6,5 × 1,5 = 9,75 | BAS-MOYEN — histoire de gouvernance | Conformité UE 2027 |
+
+---
+
+### PRIORITÉS ÉDITORIALES RECOMMANDÉES
+
+1. **Sujet principal** : Vilande constitutionnel — avortement + nationalité (résonance internationale, histoire nationale)
+2. **Deuxième sujet** : Champ de bataille migratoire — 15 motions coordonnées de l'opposition vs. 4 propositions gouvernementales
+3. **Sujet de contexte** : Risques CEDH dans la législation suédoise — HD03267 + KU34 nationalité comme cluster thématique
+4. **Sujet de données** : Scores DIW visualisés — plus fort surge législatif 24h de la session 2025/26
+
+---
+
+### Addendum de ré-exécution (15:02 UTC)
+
+**Nouveau renseignement** : Trois débats d'interpellation répondus en séance l'après-midi élargissent le tableau analytique. Les interpellations énergétiques appariées de SD (HD10453/HD10448) contre Ebba Busch (KD) sont évaluées comme un positionnement électoral intra-coalition : SD construit sa crédibilité sur les coûts de l'énergie et le scepticisme éolien face à son partenaire de coalition KD à 122 jours des élections. La troisième interpellation consécutive de S sur la formation des médecins spécialistes (HD10440) confirme une stratégie systématique de constitution de dossier de responsabilité visant la campagne d'automne.
+
+**Tableau tactique révisé** : La journée parlementaire est encore plus pré-électorale qu'évalué initialement. Quatre partis distincts (SD, S, C, V) utilisent simultanément des outils parlementaires pour se positionner avant le 13 septembre 2026.
+
+<!-- source-sha: 48729b47776eee9fd5a699b73571f4fb4db8f7a5 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief_he.md -->
+
+**סיווג**: ציבורי  
+**הוכן עבור**: אנליסט פוליטי בכיר, צוות מערכת  
+**תאריך**: 2026-05-14  
+**תוקף**: 72 שעות (עד 2026-05-17T00:00Z)  
+**רמת ביטחון**: גבוה לאירועים מתועדים; בינוני לתחזיות בחירות
+
+---
+
+### דו"ח מצב
+
+חמישה התפתחויות פרלמנטריות בו-זמניות ב-14 במאי 2026 מסמנות אחד מימי החקיקה הצפופים והמשמעותיים ביותר של מחזור הבחירות הנוכחי. עם 122 ימים לבחירות הכלליות ב-13 בספטמבר, כל התפתחות נושאת משקל בחירותי מוגבר.
+
+---
+
+### ממצא קריטי 1: רגע חוקתי
+
+**אירוע**: KU34 אומץ כ-vilande על ידי הריקסדאג היוצא, ובכך מחייב את הפרלמנט העתידי להצביע על שלושה תיקוני חוקה:
+- ✅ זכות ההפלה מעוגנת בפרק 2 של RF (תמיכה פה אחד או כמעט פה אחד)
+- ✅ שלילת אזרחות מבעלי דו-אזרחות שהורשעו בטרור ובגידה (שנוי במחלוקת, סיכון ECHR)
+- ✅ הגבלת חופש ההתאגדות הקשורה לכנופיות (חדשנות חוקתית, סיכון ECHR)
+
+**הערכה**: הריקסדאג הבא (שיוקם באוקטובר 2026) יהיה מחויב חוקית להצביע על תיקונים תלויים אלה. אם רוב יצביע בעד, התיקונים ייכנסו לתוקף ב-1 בינואר 2027. זהו ההתפתחות החוקתית המשמעותית ביותר מאז רפורמת חוק היסוד של 2010. כל התרחישים הבחירותיים הריאליסטיים מייצרים פרלמנט שבו האישור סביר (גבוה, 85–90%).
+
+**פעולה**: המערכת צריכה לטפל ב-KU34 כהתפתחות הבודדת החשובה ביותר של השבוע. להוראת ההפלה יש הד בינלאומי. הוראת שלילת האזרחות רגישה מבחינת ECHR ותיצור תגובות ממשנ"גים.
+
+---
+
+### ממצא קריטי 2: שדה קרב ההגירה
+
+**אירוע**: S + C + V הגישו 15 הצעות מתואמות באותו יום שבו הוגשו ההצעות הממשלתיות העיקריות בנושא הגירה. ההיקף והתיאום אינם שגרתיים — מפלגות בדרך כלל מגישות הצעות לאורך מספר ימים.
+
+**הערכה**: הרוב הממשלתי M+SD+KD (176/349; רוב של 1) יציב בנושא הגירה. האופוזיציה אינה יכולה לחסום הצעות אלה. עם זאת:
+- להצעת C בנושא מעצר קטינים (HD024160) יש 40–55% סיכוי לקבלה ממשלתית חלקית על בסיס ביקורת Lagrådet-CRC
+- HD024153 של S (חידוש רישיון שהייה קבוע) מייצג מיצוב מחדש אסטרטגי שהממשלה תתקוף כלא עקבי (S הובילה את ההחמרה של 2015/16)
+- הגשה מתואמת מעידה שהצעות אלה הן מסמכי פלטפורמה בחירותית, לא כלים חקיקתיים חוסמים
+
+**פעולה**: לסגור כ"שדה קרב הגירה" — האופוזיציה בונה את אסטרטגיית הקמפיין שלה ל-2026 בזמן אמת.
+
+---
+
+### ממצא קריטי 3: מתח גירוש ביטחוני
+
+**אירוע**: הצעת הממשלה HD03267 (גירוש ביטחוני של אנשים המהווים איום טרור) נכנסת לתהליך הפרלמנטרי עם הפניה פתוחה ל-Lagrådet.
+
+**הערכה**: ציון DIW הגבוה ביותר למסמך בודד במחזור זה (7.5/10 × 1.5 = 11.25 אפקטיבי). סיכון תאימות ECHR אמיתי — היעדר מנגנון עורך דין מיוחד הוא דפוס פגיעות אירופאי מתועד. אם Lagrådet יוציא חוות דעת ביקורתית לפני 15 ביוני, הממשלה תעמוד בפני בחירה בין תיקון ולחץ לוח זמנים.
+
+**סיכון אמצעים זמניים של בית הדין האירופי לזכויות האדם**: אם יאושר ויוחל לפני בחירות ספטמבר, בקשת כלל 39 בפרופיל גבוה באוגוסט 2026 תיצור משבר מוניטין מיד לפני ההצבעה.
+
+---
+
+### ממצא קריטי 4: הרחבת מדינה דיגיטלית
+
+**אירוע**: HD03250 (מזהה אלקטרוני ממלכתי) ו-HD03261 (סמכות רישום אוכלוסין מורחבת של Skatteverket) מתקדמים בריקסדאג.
+
+**הערכה**: HD03250 מחויב טכנית על פי תקנת eIDAS2 של האיחוד האירופי. המזהה האלקטרוני הממלכתי מחליף את BankID כתשתית זהות שלטת. מחלוקת פוליטית נמוכה אך חשיבות מבנית גבוהה — שינוי ארוך טווח של ריבונות זהות דיגיטלית מפרטי לציבורי.
+
+---
+
+### ממצא קריטי 5: פער אחריות ODA
+
+**אירוע**: לוטה יונסון פורנארה (V) מגישה בקשת הסבר HD10492 ומאתגרת את שר Dousa לתת דין וחשבון על השפעת קיצוצי הסיוע על ילדים (עמידה ב-CRC).
+
+**הערכה**: הממשלה כמעט בוודאות תדבוק בנרטיב היעילות מבלי להתחייב לניתוח השלכות על ילדים. V תפרסם את אי-התשובה ככלי אחריות בחירותי. סעיף 3 CRC יוצר סיכון עמידה משפטי צנוע אך אמיתי (בינוני, 30% הסתברות לתשומת לב OECD-DAC).
+
+---
+
+### טבלת סיכום מודיעין
+
+| אירוע | DIW | השפעה בחירותית | סיכון לוח זמנים |
+|---------|-----|-----------------|---------------|
+| KU34 vilande (חוקתי) | 7.0 × 1.5 = 10.5 | גבוה — הפלה/אזרחות נושאי זהות | הצבעה שנייה אוקטובר 2026 |
+| HD024153 (הצעת S להגירה) | 8.7 × 1.5 = 13.1 | גבוה מאוד — הגירה היא הנושא המרכזי | הצבעת הצעות יוני 2026 |
+| HD03267 (גירוש ביטחוני) | 7.5 × 1.5 = 11.25 | גבוה — Lagrådet + חלון ECHR | Lagrådet יוני 2026 |
+| HD024160 (מעצר קטינים C) | 8.3 × 1.5 = 12.45 | בינוני-גבוה — זכויות מול קשיחות | ויתור ועדה יוני 2026 |
+| HD10492 (ODA/ילדים) | 7.2 × 1.5 = 10.8 | בינוני — חומר בחירותי של V | תגובת Dousa 29 מאי 2026 |
+| HD03250 (מזהה אלקטרוני ממלכתי) | 6.5 × 1.5 = 9.75 | נמוך-בינוני — סיפור ממשל | עמידה באיחוד האירופי 2027 |
+
+---
+
+### סדרי עדיפויות עריכתיים מומלצים
+
+1. **כתבה ראשית**: תלייה חוקתית — הפלה + אזרחות (הד בינלאומי, היסטורי לאומי)
+2. **כתבה שנייה**: שדה קרב הגירה — 15 הצעות אופוזיציה מתואמות מול 4 הצעות ממשלתיות
+3. **כתבת הקשר**: סיכוני ECHR בחקיקה שוודית — HD03267 + אזרחות KU34 כאשכול נושאי
+4. **כתבת נתונים**: ציוני DIW מוצגים ויזואלית — פרץ חקיקתי ב-24 שעות המשמעותי ביותר של מושב 2025/26
+
+---
+
+### תוספת הרצה מחדש (15:02 UTC)
+
+**מודיעין חדש**: שלושה דיוני בקשת הסבר שנענו בחדר אחר הצהריים מרחיבים את התמונה האנליטית. בקשות ההסבר הכפולות של SD בנושא אנרגיה (HD10453/HD10448) נגד אבה בוש (KD) מוערכות כמיצוב בחירותי בתוך-קואליציה: SD בונה אמינות בעלויות אנרגיה וספקנות לגבי אנרגיית רוח מול שותפת הקואליציה KD 122 ימים לפני הבחירות. בקשת ההסבר השלישית ברציפות של S בנושא הכשרת רופאים מומחים (HD10440) מאשרת אסטרטגיה שיטתית של בניית תיעוד אחריות המכוונת לקמפיין הסתיו הבחירותי.
+
+**תמונה טקטית מעודכנת**: יום הפרלמנט הוא טרום-בחירותי עוד יותר ממה שהוערך בתחילה. ארבע מפלגות נפרדות (SD, S, C, V) משתמשות בו-זמנית בכלים פרלמנטריים כדי למצב עצמן לקראת 13 בספטמבר 2026.
+
+<!-- source-sha: 48729b47776eee9fd5a699b73571f4fb4db8f7a5 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief_ja.md -->
+
+**分類**: 公開  
+**作成対象**: 上級政治アナリスト、編集チーム  
+**日付**: 2026年5月14日  
+**有効期間**: 72時間（2026-05-17T00:00Zまで）  
+**信頼レベル**: 文書化された事案に対しては高; 選挙予測については中程度
+
+---
+
+### 状況報告
+
+2026年5月14日に発生した五つの同時並行的な議会展開は、現在の選挙サイクルにおいて最も密度が高く意義深い立法日の一つを画するものである。9月13日の総選挙まで残り122日、各展開は増幅された選挙的重みを持つ。
+
+---
+
+### 重大知見 1: 憲法的瞬間
+
+**事象**: KU34が退任するリクスダーグによりvilande（保留）として可決され、将来の議会が三つの憲法改正について投票することが義務付けられた：
+- ✅ 基本法第2章への中絶権の明記（全会一致または事実上の全会一致の支持）
+- ✅ テロリズム・反逆罪で有罪判決を受けた二重国籍者の国籍剥奪（論争的、ECHR上のリスクあり）
+- ✅ ギャング関連の結社の自由の制限（憲法上の新機軸、ECHR上のリスクあり）
+
+**評価**: 次期リクスダーグ（2026年10月に構成）は、これらの保留改正について投票する法的義務を負う。過半数が賛成票を投じれば、改正は2027年1月1日から発効する。これは2010年の基本法改革以来最も重要な憲法的展開である。現実的な選挙シナリオはいずれも、可決が見込まれる議会をもたらす（高、85〜90%）。
+
+**対応**: 編集部はKU34を今週最も重要な単一展開として扱うべきである。中絶条項は国際的に反響を呼ぶ。国籍剥奪条項はECHR上の感度が高く、NGOの反応を招くだろう。
+
+---
+
+### 重大知見 2: 移民政策の戦場
+
+**事象**: S + C + Vが、主要政府移民提案と同日に15の調整済み動議を提出した。規模と調整は異例である——通常、政党は数日かけて動議を提出する。
+
+**評価**: 政府多数派M+SD+KD（176/349；差し引き1議席の多数）は移民政策について安定している。野党はこれらの提案を阻止できない。しかし：
+- QC未成年者拘禁動議（HD024160）はラーグラーデットのCRC批判を根拠とした政府による部分的受け入れの可能性が40〜55%ある
+- SのHD024153（永住許可の回復）はSが2015/16年の厳格化を主導したとして政府に一貫性欠如と攻撃される戦略的再位置づけを意味する
+- 調整提出はこれらの動議が、立法的阻止手段ではなく選挙プラットフォーム文書であることを示している
+
+**対応**: 「移民政策の戦場」として組み立てる——野党は2026年の選挙戦略をリアルタイムで構築している。
+
+---
+
+### 重大知見 3: 安全保障上の退去強制をめぐる緊張
+
+**事象**: 政府提案HD03267（テロ脅威人物の安全保障上の退去強制）が、ラーグラーデットへの付託を伴って議会プロセスに入る。
+
+**評価**: 今サイクルで文書別最高DIWスコア（7.5/10 × 1.5 = 11.25実効値）。ECHR適合リスクは現実的である——特別弁護士制度の欠如はEU各国に記録された脆弱パターンである。ラーグラーデットが6月15日以前に批判的意見を出せば、政府は改正と日程上の圧力の間の選択を迫られる。
+
+**ECHR保全措置リスク**: 9月選挙前に採択・適用された場合、2026年8月の注目度の高いECHR規則39申請は投票直前に評判上の危機をもたらすだろう。
+
+---
+
+### 重大知見 4: デジタル国家の拡張
+
+**事象**: HD03250（国家電子ID）とHD03261（スカッテヴェルケットの住民登録権限拡大）がリクスダーグで進展している。
+
+**評価**: HD03250はEU eIDAS2規則によって技術的に義務付けられている。国家電子IDはBankIDを主要なIDインフラとして置き換える。政治的論争は低いが構造的重要性は高い——デジタルID主権の民間から公的部門への長期的転換である。
+
+---
+
+### 重大知見 5: ODA説明責任のギャップ
+
+**事象**: ロッタ・ヨンソン・フォルナルヴェ（V）が質問主意書HD10492を提出し、ドウサ大臣に援助削減が子どもたちに与える影響（CRC遵守）について説明を求める。
+
+**評価**: 政府はほぼ確実に、「子ども影響分析（barnkonsekvensanalys）」への関与なしに効率性の物語を維持するだろう。Vは無回答を選挙上の説明責任ツールとして公表するだろう。CRC第3条の義務は控えめながら現実的な法的遵守リスクを生じさせる（中程度、OECD-DAC注目の確率30%）。
+
+---
+
+### 情報サマリーテーブル
+
+| 事象 | DIW | 選挙への影響 | タイムラインリスク |
+|---------|-----|-----------------|---------------|
+| KU34 vilande（憲法） | 7.0 × 1.5 = 10.5 | 高 — 中絶/国籍がアイデンティティ問題 | 2026年10月に第二次投票 |
+| HD024153（S移民動議） | 8.7 × 1.5 = 13.1 | 非常に高 — 移民が中心的選挙争点 | 提案投票2026年6月 |
+| HD03267（安全保障退去強制） | 7.5 × 1.5 = 11.25 | 高 — ラーグラーデット + ECHR窓 | ラーグラーデット2026年6月 |
+| HD024160（C未成年者拘禁） | 8.3 × 1.5 = 12.45 | 中〜高 — 権利対強硬姿勢 | 委員会譲歩2026年6月 |
+| HD10492（ODA/子ども） | 7.2 × 1.5 = 10.8 | 中 — Vの選挙素材 | ドウサ返答2026年5月29日 |
+| HD03250（国家電子ID） | 6.5 × 1.5 = 9.75 | 低〜中 — 統治のストーリー | EU遵守2027年 |
+
+---
+
+### 推奨編集優先事項
+
+1. **主要記事**: 憲法保留 — 中絶 + 国籍（国際的反響、国内的歴史的意義）
+2. **第二記事**: 移民の戦場 — 15の調整済み野党動議対4つの政府提案
+3. **背景記事**: スウェーデン立法におけるECHRリスク — HD03267 + KU34国籍をテーマ別クラスターとして
+4. **データ記事**: DIWスコアの視覚化 — 2025/26会期で最も重要な24時間立法ラッシュ
+
+---
+
+### 再実行補遺（15:02 UTC）
+
+**新情報**: 午後の本会議で答弁された三つの質問主意書討論が分析像を広げる。SD（HD10453/HD10448）によるエバ・ブッシュ（KD）への対になったエネルギー質問主意書は、連立内選挙上の位置取りと評価される：SDは選挙まで122日の時点で、連立パートナーKDに対してエネルギーコストと風力発電懐疑論で信頼性を構築している。SによるHD10440の連続する第三の専門医研修に関する質問主意書は、秋の選挙キャンペーンに向けた体系的な説明責任実績構築戦略を確認するものである。
+
+**修正された戦術的状況**: 議会の一日は当初評価よりもさらに選挙前志向である。四つの別々の政党（SD、S、C、V）が同時に議会ツールを使用し、2026年9月13日に向けて自らを位置づけている。
+
+<!-- source-sha: 48729b47776eee9fd5a699b73571f4fb4db8f7a5 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief_ko.md -->
+
+**분류**: 공개  
+**작성 대상**: 수석 정치 분석가, 편집팀  
+**날짜**: 2026년 5월 14일  
+**유효 기간**: 72시간 (2026-05-17T00:00Z까지)  
+**신뢰 수준**: 문서화된 사건에 대해 높음; 선거 전망에 대해 중간
+
+---
+
+### 상황 보고서
+
+2026년 5월 14일에 동시에 발생한 다섯 가지 의회 발전은 현 선거 주기에서 가장 밀도 높고 의미 있는 입법일 중 하나를 나타낸다. 9월 13일 총선까지 122일을 남긴 시점에서, 각 발전은 증폭된 선거적 비중을 지닌다.
+
+---
+
+### 핵심 발견 1: 헌법적 순간
+
+**사건**: KU34가 퇴임하는 릭스다그에 의해 vilande(보류)로 채택됨으로써, 미래 의회가 세 가지 헌법 개정안에 대해 표결을 진행해야 할 의무를 부과했다:
+- ✅ RF 제2장에 낙태권 명문화 (만장일치 또는 사실상 만장일치 지지)
+- ✅ 테러리즘 및 반역죄로 유죄 판결을 받은 이중 국적자의 국적 박탈 (논쟁적, ECHR 위험)
+- ✅ 갱단 관련 결사의 자유 제한 (헌법상 새로운 시도, ECHR 위험)
+
+**평가**: 차기 릭스다그(2026년 10월 구성)는 이 보류 개정안에 대해 표결할 법적 의무를 진다. 과반수가 찬성할 경우, 개정안은 2027년 1월 1일부터 발효된다. 이는 2010년 기본법 개혁 이후 가장 중요한 헌법적 발전이다. 모든 현실적인 선거 시나리오는 채택이 유력한 의회를 낳는다 (높음, 85~90%).
+
+**조치**: 편집부는 KU34를 이번 주 가장 중요한 단일 발전으로 다루어야 한다. 낙태 조항은 국제적 반향을 갖는다. 국적 박탈 조항은 ECHR에 민감하며 NGO 반응을 촉발할 것이다.
+
+---
+
+### 핵심 발견 2: 이민 정책 전쟁터
+
+**사건**: S + C + V가 주요 정부 이민 제안과 같은 날 15개의 조율된 동의를 제출했다. 규모와 조율은 이례적이다 — 정당들은 통상 며칠에 걸쳐 동의를 제출한다.
+
+**평가**: 정부 다수파 M+SD+KD (176/349; 1석 차이 과반수)는 이민 문제에서 안정적이다. 야당은 이 제안들을 저지할 수 없다. 그러나:
+- C의 미성년자 구금 동의(HD024160)는 라그라데트의 CRC 비판을 근거로 정부의 부분 수용 가능성이 40~55%이다
+- S의 HD024153(영주권 회복)은 S가 2015/16년 강경화를 주도했다는 점에서 정부가 모순적이라고 공격할 전략적 재포지셔닝을 의미한다
+- 조율된 제출은 이 동의들이 입법적 차단 도구가 아닌 선거 강령 문서임을 시사한다
+
+**조치**: "이민 전쟁터"로 프레이밍 — 야당은 실시간으로 2026년 캠페인 전략서를 작성하고 있다.
+
+---
+
+### 핵심 발견 3: 안보 추방을 둘러싼 긴장
+
+**사건**: 정부 제안 HD03267(테러 위협 인물의 안보 추방)이 라그라데트에 대한 공개 의뢰와 함께 의회 절차에 진입했다.
+
+**평가**: 이번 주기 단일 문서 최고 DIW 점수 (7.5/10 × 1.5 = 11.25 실효값). ECHR 적합성 위험은 실제적이다 — 특별변호인 메커니즘의 부재는 문서화된 EU 취약 패턴이다. 라그라데트가 6월 15일 이전에 비판적 의견을 내면, 정부는 수정과 일정 압박 사이에서 선택해야 한다.
+
+**ECHR 임시 조치 위험**: 9월 선거 전에 채택·적용될 경우, 2026년 8월에 고-프로필 ECHR 규칙 39 신청이 투표 직전에 평판 위기를 초래할 수 있다.
+
+---
+
+### 핵심 발견 4: 디지털 국가 확장
+
+**사건**: HD03250(국가 전자 ID)과 HD03261(스카테베르케트의 확대된 인구 등록 권한)이 릭스다그에서 진전되고 있다.
+
+**평가**: HD03250은 EU eIDAS2 규정에 의해 기술적으로 의무화되어 있다. 국가 전자 ID는 BankID를 지배적인 신원 인프라로 대체한다. 정치적 논란은 낮지만 구조적 중요성은 높다 — 디지털 신원 주권의 민간에서 공공으로의 장기적 전환이다.
+
+---
+
+### 핵심 발견 5: ODA 책임 공백
+
+**사건**: 로타 욘슨 포르나르베(V)가 도우사 장관에게 원조 삭감이 아동에 미치는 영향(CRC 준수)에 대해 책임을 촉구하는 질의서 HD10492를 제출했다.
+
+**평가**: 정부는 거의 확실히 아동 영향 분석(barnkonsekvensanalys)에 대한 약속 없이 효율성 내러티브를 유지할 것이다. V는 무응답을 선거적 책임 도구로 공개할 것이다. CRC 제3조 의무는 적지만 실제적인 법적 준수 위험을 생성한다 (중간, OECD-DAC 주목 확률 30%).
+
+---
+
+### 정보 요약 테이블
+
+| 사건 | DIW | 선거 영향 | 일정 위험 |
+|---------|-----|-----------------|---------------|
+| KU34 vilande (헌법) | 7.0 × 1.5 = 10.5 | 높음 — 낙태/국적이 정체성 이슈 | 2026년 10월 두 번째 투표 |
+| HD024153 (S 이민 동의) | 8.7 × 1.5 = 13.1 | 매우 높음 — 이민이 핵심 선거 쟁점 | 제안 투표 2026년 6월 |
+| HD03267 (안보 추방) | 7.5 × 1.5 = 11.25 | 높음 — 라그라데트 + ECHR 창 | 라그라데트 2026년 6월 |
+| HD024160 (C 미성년자 구금) | 8.3 × 1.5 = 12.45 | 중~높음 — 권리 대 강경 | 위원회 양보 2026년 6월 |
+| HD10492 (ODA/아동) | 7.2 × 1.5 = 10.8 | 중간 — V 선거 자료 | 도우사 응답 2026년 5월 29일 |
+| HD03250 (국가 전자 ID) | 6.5 × 1.5 = 9.75 | 낮음~중간 — 거버넌스 스토리 | EU 준수 2027년 |
+
+---
+
+### 권장 편집 우선순위
+
+1. **주요 기사**: 헌법 보류 — 낙태 + 국적 (국제적 반향, 국내 역사적 의미)
+2. **두 번째 기사**: 이민 전쟁터 — 15개 조율된 야당 동의 대 4개 정부 제안
+3. **배경 기사**: 스웨덴 입법의 ECHR 위험 — HD03267 + KU34 국적을 주제별 클러스터로
+4. **데이터 기사**: DIW 점수 시각화 — 2025/26 회기 최고 24시간 입법 급증
+
+---
+
+### 재실행 추가 사항 (15:02 UTC)
+
+**새로운 정보**: 오후 본회의에서 답변된 세 가지 질의 토론이 분석적 그림을 확장한다. SD의 에바 부쉬(KD)를 향한 짝을 이룬 에너지 질의(HD10453/HD10448)는 연립 내 선거 포지셔닝으로 평가된다: SD는 선거 122일 전에 연립 파트너 KD에 맞서 에너지 비용과 풍력 회의주의에서 신뢰성을 구축하고 있다. S의 전문의 교육에 관한 세 번째 연속 질의(HD10440)는 가을 선거 캠페인을 겨냥한 체계적인 책임 기록 구축 전략을 확인해준다.
+
+**수정된 전술적 그림**: 의회의 하루는 처음 평가보다 훨씬 더 선거 전 지향적이다. 네 개의 별개 정당(SD, S, C, V)이 2026년 9월 13일을 향해 동시에 의회 도구를 활용하여 자신들을 포지셔닝하고 있다.
+
+<!-- source-sha: 48729b47776eee9fd5a699b73571f4fb4db8f7a5 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief_nl.md -->
+
+**Classificatie**: OPENBAAR  
+**Opgesteld voor**: Senior politiek analist, redactieteam  
+**Datum**: 2026-05-14  
+**Geldig**: 72 uur (tot 2026-05-17T00:00Z)  
+**Betrouwbaarheidsniveau**: HOOG voor gedocumenteerde gebeurtenissen; MATIG voor electorale prognoses
+
+---
+
+### SITUATIERAPPORT
+
+Vijf gelijktijdige parlementaire ontwikkelingen op 14 mei 2026 markeren een van de dichtst bezette en meest betekenisvolle wetgevingsdagen van de huidige verkiezingscyclus. Met 122 dagen tot de parlementsverkiezingen van 13 september draagt elke ontwikkeling vergroot electoraal gewicht.
+
+---
+
+### KRITISCHE BEVINDING 1: CONSTITUTIONEEL MOMENT
+
+**Gebeurtenis**: KU34 aangenomen als vilande door het aftredende Riksdag, waarmee het toekomstige parlement wordt verplicht te stemmen over drie grondwetswijzigingen:
+- ✅ Recht op abortus verankerd in RF hfdst. 2 (unanieme of vrijwel unanieme steun)
+- ✅ Intrekking van staatsburgerschap voor dubbele nationaliteiten veroordeeld voor terrorisme en verraad (omstreden, EVRM-risico)
+- ✅ Bendegebonden beperking van de vrijheid van vereniging (constitutioneel nieuw, EVRM-risico)
+
+**Beoordeling**: Het volgende Riksdag (gevormd oktober 2026) zal wettelijk verplicht zijn te stemmen over deze slapende wijzigingen. Stemt een meerderheid voor, treden de wijzigingen in werking per 1 januari 2027. Dit is de meest significante constitutionele ontwikkeling sinds de grondslagenhervorming van 2010. Alle realistische verkiezingsscenario's produceren een parlement waar aanname waarschijnlijk is (HOOG, 85–90 %).
+
+**Actie**: De redactie moet KU34 behandelen als de belangrijkste enkele ontwikkeling van deze week. De abortusbepaing heeft internationale resonantie. De nationaliteitsintrekkingsbepaling is EVRM-gevoelig en zal NGO-reacties uitlokken.
+
+---
+
+### KRITISCHE BEVINDING 2: MIGRATIE-SLAGVELD
+
+**Gebeurtenis**: S + C + V dienden op dezelfde dag 15 gecoördineerde moties in als de belangrijkste immigratievoorstellen van de regering. Omvang en coördinatie zijn ongebruikelijk — partijen dienen moties doorgaans over meerdere dagen in.
+
+**Beoordeling**: De regeringsmeerderheid M+SD+KD (176/349; meerderheid van 1) is stabiel over migratie. De oppositie kan deze proposities niet blokkeren. Echter:
+- C's motie over kinderdetentie (HD024160) heeft 40–55 % kans op gedeeltelijke regeringsacceptance op basis van Lagrådet-CRC-kritiek
+- S's HD024153 (herstel van permanente verblijfsvergunning) vertegenwoordigt een strategische herpositionering die de regering zal aanvallen als inconsistent (S leidde de aanscherping van 2015/16)
+- Gecoördineerde indiening geeft aan dat deze moties verkiezingsplatformdocumenten zijn, geen wetgevende blokkeerinstrumenten
+
+**Actie**: Kadreren als "migratie-slagveld" — de oppositie bouwt haar 2026-campagnestrategie in real time op.
+
+---
+
+### KRITISCHE BEVINDING 3: VEILIGHEIDSDEPORTATIE ONDER DRUK
+
+**Gebeurtenis**: Regeringsproposie HD03267 (veiligheidsdeportatie van terrorismedreigers) treedt in de parlementaire procedure met een open Lagrådet-adviesaanvraag.
+
+**Beoordeling**: Hoogste enkel-document DIW-score van deze cyclus (7,5/10 × 1,5 = 11,25 effectief). EVRM-compatibiliteitsrisico is reëel — het ontbreken van een Speciale Advocaat-mechanisme is een gedocumenteerd EU-kwetsbaarheidspatroon. Geeft Lagrådet vóór 15 juni een kritisch advies, staat de regering voor een keuze tussen wijziging en tijdsdruk.
+
+**EHRM-interimmaatregelrisico**: Bij aanname en toepassing vóór de septemberverkiezingen zou een spraakmakend EHRM-Artikel-39-verzoek in augustus 2026 onmiddellijk vóór de stemming een reputatiecrisis veroorzaken.
+
+---
+
+### KRITISCHE BEVINDING 4: DIGITALE STAATSUITBREIDING
+
+**Gebeurtenis**: HD03250 (staats-e-ID) en HD03261 (uitgebreide Skatteverket-bevolkingsregistratieautoriteit) vorderen in het Riksdag.
+
+**Beoordeling**: HD03250 is technisch voorgeschreven door de EU-eIDAS2-verordening. Staats-e-ID vervangt BankID als dominante identiteitsinfrastructuur. Lage politieke controverse maar HOGE structurele betekenis — langetermijnverschuiving van digitale identiteitssouvereiniteit van privaat naar publiek.
+
+---
+
+### KRITISCHE BEVINDING 5: ODA-VERANTWOORDELIJKHEIDSKLOOF
+
+**Gebeurtenis**: Lotta Johnsson Fornarve (V) dient interpellatie HD10492 in en daagt Minister Dousa uit te verantwoorden voor de gevolgen van de hulpbezuinigingen voor kinderen (CRC-naleving).
+
+**Beoordeling**: De regering zal vrijwel zeker het efficiëntienarratief handhaven zonder zich te binden aan een kindgevolgenanalyse. V zal het niet-antwoord als electoraal verantwoordelijkheidsinstrument publiceren. De CRC art. 3-verplichting creëert een bescheiden maar reëel juridisch nalevingsrisico (MATIG, 30 % OESO-DAC-aandachtswaarschijnlijkheid).
+
+---
+
+### INLICHTINGENSAMENVATTINGSTABEL
+
+| Gebeurtenis | DIW | Electorale impact | Tijdlijnrisico |
+|---------|-----|-----------------|---------------|
+| KU34 vilande (constitutioneel) | 7,0 × 1,5 = 10,5 | HOOG — abortus/nationaliteit identiteitskwesties | Tweede stemming okt. 2026 |
+| HD024153 (S migratiemotie) | 8,7 × 1,5 = 13,1 | ZEER HOOG — migratie is het centrale verkiezingsthema | Props-stemming juni 2026 |
+| HD03267 (veiligheidsdeportatie) | 7,5 × 1,5 = 11,25 | HOOG — Lagrådet+EVRM-venster | Lagrådet juni 2026 |
+| HD024160 (C kinderdetentie) | 8,3 × 1,5 = 12,45 | MIDDEN-HOOG — rechten vs. hardheid | Commissieconsessie juni 2026 |
+| HD10492 (ODA/kinderen) | 7,2 × 1,5 = 10,8 | MIDDEN — V-verkiezingsmateriaal | Antwoord Dousa 29 mei 2026 |
+| HD03250 (staats-e-ID) | 6,5 × 1,5 = 9,75 | LAAG-MIDDEN — bestuursverhaal | EU-naleving 2027 |
+
+---
+
+### AANBEVOLEN REDACTIONELE PRIORITEITEN
+
+1. **Hoofdverhaal**: Constitutionele vilande — abortus + nationaliteit (internationaal resonant, nationaal historisch)
+2. **Tweede verhaal**: Migratie-slagveld — 15 gecoördineerde oppositiemoties vs. 4 regeringsvoorstellen
+3. **Contextverhaal**: EVRM-risico's in de Zweedse wetgeving — HD03267 + KU34-nationaliteit als thematisch cluster
+4. **Dataverhaal**: DIW-scores gevisualiseerd — meest significante 24-uurs wetgevingssurge van sessie 2025/26
+
+---
+
+### Aanvulling bij heruitvoering (15:02 UTC)
+
+**Nieuwe inlichting**: Drie 's middags in de kamer beantwoorde interpellatiedebattten verbreden het analytisch beeld. SD's gepaarde energie-interpellaties (HD10453/HD10448) tegen Ebba Busch (KD) worden beoordeeld als intracoalitionele verkiezingspositionering: SD bouwt geloofwaardigheid op energiekosten en windenergieskepticisme tegenover coalitiegenoot KD 122 dagen voor de verkiezingen. S's derde opeenvolgende interpellatie over specialistenopleiding (HD10440) bevestigt een systematische verantwoordelijkheidsrecordstrategie gericht op de herfst verkiezingscampagne.
+
+**Herzien tactisch beeld**: De parlementaire dag is nog meer voorverkiezing-georiënteerd dan oorspronkelijk beoordeeld. Vier afzonderlijke partijen (SD, S, C, V) gebruiken gelijktijdig parlementaire instrumenten om zich te positioneren voor 13 september 2026.
+
+<!-- source-sha: 48729b47776eee9fd5a699b73571f4fb4db8f7a5 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief_no.md -->
+
+**Klassifisering**: OFFENTLIG  
+**Utarbeidet for**: Senior politisk analytiker, redaksjonsteamet  
+**Dato**: 2026-05-14  
+**Gyldig**: 72 timer (til 2026-05-17T00:00Z)  
+**Konfidensnivå**: HØY for dokumenterte hendelser; MODERAT for valgprognoser
+
+---
+
+### SITUASJONSRAPPORT
+
+Fem samtidige parlamentariske utviklinger 14. mai 2026 markerer ett av de tetteste, mest betydningsfulle enkeltlovgivningsdøgn i inneværende valgperiode. Med 122 dager til stortingsvalget 13. september bærer hver utvikling forsterket valgmessig konsekvens.
+
+---
+
+### KRITISK FUNN 1: KONSTITUSJONELT ØYEBLIKK
+
+**Hendelse**: KU34 vedtatt hvilende av den avtroppende riksdagen, som forplikter fremtidig parlament til å stemme over tre grunnlovsendringer:
+- ✅ Abortretten innskrevet i RF 2 kap. (enstemmig eller nær enstemmig støtte)
+- ✅ Tilbakekall av statsborgerskap for dobbeltborgere dømt for terrorisme og landsforræderi (omstridt, EMK-risiko)
+- ✅ Gjengerelatert innskrenkning av foreningsfrihet (konstitusjonell nyskaping, EMK-risiko)
+
+**Vurdering**: Den neste riksdagen (konstituert oktober 2026) er rettslig forpliktet til å stemme over disse hvilende endringene. Vedtas de med flertall, trer endringene i kraft fra 1. januar 2027. Dette er den mest betydningsfulle konstitusjonelle hendelsen siden 2010-grunnlovsreformen. Alle realistiske valgscenarier gir et storting der vedtagelse er sannsynlig (HØY, 85–90 %).
+
+**Tiltak**: Redaksjonen bør behandle KU34 som den viktigste enkeltbegivenheten denne uken. Abortbestemmelsen har internasjonal gjenklang. Statsborgerskapsbestemmelsen er EMK-sensitiv og vil tiltrekke seg NGO-reaksjoner.
+
+---
+
+### KRITISK FUNN 2: INNVANDRINGSSLAGMARK
+
+**Hendelse**: S + C + V leverte inn 15 koordinerte motioner samme dag som viktige regjeringens innvandringsforslag. Omfanget og koordineringen er uvanlig — partiene leverer typisk inn motioner over flere dager.
+
+**Vurdering**: Regjeringens M+SD+KD-flertall (176/349; flertall på 1) er stabilt på innvandring. Opposisjonen kan ikke blokkere disse proposisjonene. Dog:
+- C's motion om frihetsberøvelse av barn (HD024160) har 40–55 % sannsynlighet for delvis regjeringsgodkjenning basert på Lagrådets CRC-kritikk
+- S's HD024153 (gjenoppretting av permanent oppholdstillatelse) representerer en strategisk omplassering som regjeringen vil angripe som inkonsekvent (S ledet 2015/16-innstrammingen)
+- Koordinert innlevering signaliserer at disse motionene er valgplatformdokumenter, ikke lovgivende blokkerende verktøy
+
+**Tiltak**: Ram inn som "innvandringsslagmark" — opposisjonen bygger sin 2026-valgkampanjes spillebok i sanntid.
+
+---
+
+### KRITISK FUNN 3: SIKKERHETSDEPORTASJON UNDER PRESS
+
+**Hendelse**: Regjeringens proposisjon HD03267 (sikkerhetsdeportasjon av terrorismetrusler) trer inn i den parlamentariske prosessen med åpen Lagrådet-høring.
+
+**Vurdering**: Høyeste enkeltdokument DIW-score i denne syklusen (7,5/10 × 1,5 = 11,25 effektiv). EMK-kompatibilitetsrisiko er reell — fraværet av en spesialforsvarsadvokat-mekanisme er et dokumentert EU-sårbarhetsmønster. Gir Lagrådet et kritisk yttrande før 15. juni, står regjeringen overfor et valg mellom endring og tidspress.
+
+**EMD interimistisk risiko**: Vedtas og anvendes den før septembervalget, vil en profilert EMD Regel 39-søknad i august 2026 skape en omdømmekrise umiddelbart før valgdagen.
+
+---
+
+### KRITISK FUNN 4: DIGITAL STATSUTVIDELSE
+
+**Hendelse**: HD03250 (statlig e-ID) og HD03261 (utvidet Skatteverket folkbokförings-myndighet) avanserer i Riksdagen.
+
+**Vurdering**: HD03250 er teknisk pålagt av EUs eIDAS2-forordning. Statlig e-ID erstatter BankID som dominerende identitetsinfrastruktur. Lav politisk kontrovers, men HØY strukturell betydning — langsiktig overgang av digital identitetssuverenittet fra privat til offentlig.
+
+---
+
+### KRITISK FUNN 5: BISTANDSANSVARSSVIKT
+
+**Hendelse**: V's Lotta Johnsson Fornarve leverer interpellasjon HD10492 og utfordrer minister Dousa til å redegjøre for konsekvensene av bistandskuttene for barn (CRC-overholdelse).
+
+**Vurdering**: Regjeringen vil nesten sikkert opprettholde effektivitetsnarrativet uten å forplikte seg til en barnkonsekvensanalys. V vil offentliggjøre ikke-svaret som et valgansvarlighetsvirkemiddel. CRC art. 3-forpliktelsen skaper beskjeden men reell juridisk etterlevelsesrisiko (MODERAT, 30 % OECD-DAC-oppmerksomhetssannsynlighet).
+
+---
+
+### ETTERRETNINGSOPPSUMMERINGSTABELL
+
+| Hendelse | DIW | Valgpåvirkning | Tidslinjerisiko |
+|---------|-----|-----------------|---------------|
+| KU34 hvilende (konstitusjonell) | 7,0 × 1,5 = 10,5 | HØY — abort/statsborgerskap identitetsspørsmål | Annen passasje okt. 2026 |
+| HD024153 (S innvandringsmotion) | 8,7 × 1,5 = 13,1 | SVÆRT HØY — innvandring er valgkampens sentrale tema | Props-avstemning juni 2026 |
+| HD03267 (sikkerhetsdeportasjon) | 7,5 × 1,5 = 11,25 | HØY — Lagrådet+EMK-vindu | Lagrådet juni 2026 |
+| HD024160 (C barnfrihetsberøvelse) | 8,3 × 1,5 = 12,45 | MEDIUM-HØY — rettigheter vs. hardhet | Utvalgs-innrømmelse juni 2026 |
+| HD10492 (Bistand/barn) | 7,2 × 1,5 = 10,8 | MEDIUM — V-valgmateriale | Dousas svar 29. mai 2026 |
+| HD03250 (statlig e-ID) | 6,5 × 1,5 = 9,75 | LAV-MEDIUM — styrings-historie | EU-samsvar 2027 |
+
+---
+
+### ANBEFALTE REDAKSJONELLE PRIORITERINGER
+
+1. **Ledende nyhet**: Konstitusjonell hvilende — abort + statsborgerskap (internasjonalt resonant, nasjonalt historisk)
+2. **Andre nyhet**: Innvandringsslagmark — 15 koordinerte opposisjonsmotioner mot 4 regjeringsfremlegg
+3. **Kontekstnyheten**: EMK-risikoer i svensk lovgivning — HD03267 + KU34-statsborgerskap som tematisk kluster
+4. **Datanyheten**: DIW-scorer visualisert — mest betydningsfulle 24-timers lovgivningssurge i 2025/26-sesjonen
+
+---
+
+### Tilleggsrapport ved gjenomkjøring (15:02 UTC)
+
+**Ny etterretning**: Tre interpellasjonsdebatter besvart i kammeret den ettermiddagen utvider det analytiske bildet. SD's parede energiinterpellasjoner (HD10453/HD10448) mot KD's Ebba Busch vurderes som intrakoalisjons-valgposisjonering: SD bygger energikostnad- og vindskeptisisme-troverdighet mot koalisjonspartneren KD 122 dager før valget. S's tredje på rad interpellasjon om spesialistlege-utdanning (HD10440) bekrefter en systematisk ansvarsoppbygging-strategi rettet mot høstens valgkampanje.
+
+**Revidert taktisk bilde**: Parlamentsdagen er enda mer forvalgsorientert enn opprinnelig vurdert. Fire distinkte partier (SD, S, C, V) bruker parlamentariske verktøy til posisjonering foran 13. september 2026 samtidig.
+
+<!-- source-sha: 48729b47776eee9fd5a699b73571f4fb4db8f7a5 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief_sv.md -->
+
+**Klassificering**: OFFENTLIG  
+**Framtagen för**: Senior politisk analytiker, redaktionsteamet  
+**Datum**: 2026-05-14  
+**Giltig**: 72 timmar (till 2026-05-17T00:00Z)  
+**Konfidensgrad**: HÖG för dokumenterade händelser; MÅTTLIG för valprognos
+
+---
+
+### LÄGESRAPPORT
+
+Fem parallella parlamentariska händelser den 14 maj 2026 markerar ett av de tätast betydelsefulla enskilda lagstiftningsdygnen i den nuvarande valcykeln. Med 122 dagar kvar till riksdagsvalet den 13 september bär varje händelse förstärkt valfärden.
+
+---
+
+### KRITISKT FYND 1: KONSTITUTIONELLT ÖGONBLICK
+
+**Händelse**: KU34 antogs vilande av den avgående riksdagen och förpliktar en framtida riksdag att rösta om tre grundlagsändringar:
+- ✅ Aborträtten inskriven i RF 2 kap. (enhälligt eller nästan enhälligt stöd)
+- ✅ Återkallelse av medborgarskap för dubbla medborgare dömda för terrorism och landsförräderi (omstridd, EKMR-risk)
+- ✅ Gängrelaterad inskränkning av föreningsfriheten (konstitutionellt nytt, EKMR-risk)
+
+**Bedömning**: Nästa riksdag (bildad oktober 2026) är rättsligt skyldig att rösta om dessa vilande ändringar. Om den gör det och en majoritet röstar ja, träder ändringarna i kraft från den 1 januari 2027. Detta är den mest betydelsefulla konstitutionella händelsen sedan 2010 års grundlagsreform. Alla realistiska valscenarier ger ett riksdag där passage är trolig (HÖG, 85–90 %).
+
+**Åtgärd**: Redaktionen bör behandla KU34 som den viktigaste enskilda händelsen denna vecka. Bestämmelsen om aborträtten är internationellt resonant. Bestämmelsen om återkallelse av medborgarskap är EKMR-känslig och kommer att dra till sig NGO-reaktioner.
+
+---
+
+### KRITISKT FYND 2: MIGRATIONS SLAGFÄLT
+
+**Händelse**: S + C + V lämnade in 15 samordnade motioner samma dag som viktiga regeringspropositioner om migration. Skalan och samordningen är ovanlig — partier lämnar vanligtvis in motioner under flera dagar.
+
+**Bedömning**: Regeringens majoritet M+SD+KD (176/349; majoritet med 1) är stabil i migrationsfrågorna. Oppositionen kan inte blockera dessa propositioner. Dock:
+- C:s motion om barn i förvar (HD024160) har 40–55 % sannolikhet för partiellt godkännande baserat på Lagrådets CRC-kritik
+- S:s HD024153 (återställande av permanent uppehållstillstånd) representerar en strategisk ompositionering som regeringen kommer att attackera som inkonsekvent (S ledde 2015/16 åtstramning)
+- Samordnad inlämning signalerar att dessa motioner är valplattformsdokument, inte lagstiftande blockeringsinstrument
+
+**Åtgärd**: Rama in som "migrationsslagfält" — oppositionen bygger sin valrörelsehandbok för 2026 i realtid.
+
+---
+
+### KRITISKT FYND 3: SÄKERHETSDEPORTATION UNDER PRESS
+
+**Händelse**: Regeringsproposition HD03267 (säkerhetsdeportation av terroristhot) träder in i det parlamentariska förfarandet med öppen Lagrådsremiss.
+
+**Bedömning**: Högsta DIW-poäng för enskilt dokument i denna cykel (7,5/10 × 1,5 = 11,25 effektiv). EKMR-kompatibilitetsrisk är reell — avsaknaden av ett mekanism för Särskild Förespråkare är ett dokumenterat EU-sårbarhetsmönster. Om Lagrådet avger ett kritiskt yttrande före den 15 juni ställs regeringen inför ett val mellan ändring och tidspress.
+
+**ECtHR interimistisk risk**: Om den antas och tillämpas före septembervalet kan en uppmärksammad ECtHR Regel 39-ansökan i augusti 2026 skapa en anseendekrisen direkt innan valet.
+
+---
+
+### KRITISKT FYND 4: DIGITAL STATSUTVIDGNING
+
+**Händelse**: HD03250 (statligt e-ID) och HD03261 (utökad Skatteverket folkbokföringsmyndighet) avancerar i riksdagen.
+
+**Bedömning**: HD03250 är tekniskt mandat av EU:s eIDAS2-förordning. Statligt e-ID ersätter BankID som den dominerande identitetsinfrastrukturen. Låg politisk kontrovers men HÖG strukturell betydelse — långsiktig övergång av digital identitetssuveränitet från privat till offentlig.
+
+---
+
+### KRITISKT FYND 5: BISTÅNDETS ANSVARSGAP
+
+**Händelse**: V:s riksdagsledamot Lotta Johnsson Fornarve lämnar in interpellation HD10492 om Minister Dousas ansvar för biståndsavskärningarnas konsekvenser för barn (CRC-efterlevnad).
+
+**Bedömning**: Regeringen kommer nästan säkert att upprätthålla effektivitetsnarrativet utan att binda sig till en barnkonsekvensanalys. V kommer att offentliggöra ickesvaret som ett valansvarighetsverktyg. CRC art. 3-skyldigheten skapar blygsam men reell juridisk efterlevnadsrisk (MÅTTLIG, 30 % OECD-DAC-uppmärksamhetssannolikhet).
+
+---
+
+### UNDERRÄTTELSESAMMANFATTNINGSTABELL
+
+| Händelse | DIW | Valinverkan | Tidslinjärisk |
+|---------|-----|-----------------|---------------|
+| KU34 vilande (konstitutionell) | 7,0 × 1,5 = 10,5 | HÖG — abort/medborgarskap identitetsfrågor | Andra passage okt 2026 |
+| HD024153 (S migrationsmotion) | 8,7 × 1,5 = 13,1 | MYCKET HÖG — migration är valets centrala fråga | Props omröstning juni 2026 |
+| HD03267 (säkerhetsdeportation) | 7,5 × 1,5 = 11,25 | HÖG — Lagrådet+EKMR-fönster | Lagrådet juni 2026 |
+| HD024160 (C barnförvar) | 8,3 × 1,5 = 12,45 | MEDEL-HÖG — rättigheter vs hårdhet | Utskottssätte juni 2026 |
+| HD10492 (Bistånd/barn) | 7,2 × 1,5 = 10,8 | MEDEL — V valmaterial | Dousas svar 29 maj 2026 |
+| HD03250 (statligt e-ID) | 6,5 × 1,5 = 9,75 | LÅG-MEDEL — styrningsstory | EU-efterlevnad 2027 |
+
+---
+
+### REKOMMENDERADE REDAKTIONELLA PRIORITERINGAR
+
+1. **Ledande nyhet**: Konstitutionell vilande — abort + medborgarskap (internationellt resonant, nationellt historisk)
+2. **Andra nyhet**: Migrationsslagfält — 15 samordnade oppositionsmotioner mot 4 regeringspropositioner
+3. **Kontextnyheten**: EKMR-risker i svensk lagstiftning — HD03267 + KU34-medborgarskap som tematiskt kluster
+4. **Datanyheten**: DIW-poäng visualiserade — mest signifikanta 24-timmarssurge under 2025/26-sessionen
+
+---
+
+### Tilläggsrapport vid återkörning (15:02 UTC)
+
+**Ny underrättelse**: Tre interpellationsdebatter besvarades i kammaren under eftermiddagen och vidgar den analytiska bilden. SD:s parade energiinterpellationer (HD10453/HD10448) mot KD:s Ebba Busch bedöms som intrakoalitionär valpositionering: SD bygger energikostnad- och vindskepticismkredibilitet gentemot koalitionspartnern KD 122 dagar före valet. S:s tredje i rad interpellation om specialistläkarutbildning (HD10440) bekräftar en systematisk ansvarsuppbyggnadsstrategi inriktad på höstens valrörelse.
+
+**Reviderad taktisk bild**: Riksdagsdagen är ännu mer förvals än ursprungligen bedömt. Fyra distinkta partier (SD, S, C, V) använder samtidigt parlamentariska verktyg för att positionera sig inför den 13 september 2026.
+
+<!-- source-sha: 48729b47776eee9fd5a699b73571f4fb4db8f7a5 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief_zh.md -->
+
+**分类**：公开  
+**为以下人员编制**：高级政治分析师、编辑团队  
+**日期**：2026-05-14  
+**有效期**：72小时（至 2026-05-17T00:00Z）  
+**置信度**：已记录事件为高；选举预测为中等
+
+---
+
+### 形势报告
+
+2026年5月14日出现的五项同步议会动态，标志着本届选举周期内最密集的单日立法事件之一。距离9月13日大选尚有122天，每项动态的政治分量随之放大。
+
+---
+
+### 重大发现1：宪法时刻
+
+**事件**：KU34 由即将卸任的里克斯达格以休眠形式通过，要求下届议会就三项宪法修正案进行表决：
+- ✅ 堕胎权载入 RF 第2章（一致或近乎一致）
+- ✅ 对因恐怖主义和叛国罪被定罪的双重国籍人员撤销国籍（存在争议，ECHR 风险）
+- ✅ 与黑帮相关的结社自由限制（宪法新领域，ECHR 风险）
+
+**评估**：下届里克斯达格（2026年10月组建）将在法律上有义务就这些休眠修正案进行表决。若多数票赞成，修正案将于2027年1月1日生效。这是2010年基本法改革以来最重要的宪法进展。所有现实的选举情景均会产生一个极有可能通过修正案的议会（高，85–90%）。
+
+**行动**：编辑部应将 KU34 视为本周最重要的单一进展。堕胎条款在国际上具有广泛影响。国籍撤销条款在 ECHR 方面较为敏感，将引发非政府组织的回应。
+
+---
+
+### 重大发现2：移民问题主战场
+
+**事件**：S + C + V 在政府提出主要移民提案的同一天提交了15项协调一致的动议。此举的规模与协调程度不同寻常——通常各党在数日内分批提交动议。
+
+**评估**：政府 M+SD+KD 多数席位（176/349；1席多数）在移民问题上保持稳定。反对派无法阻止这些提案。然而：
+- C 关于儿童拘留的动议（HD024160）有40–55%的概率因 Lagrådet 对 CRC 的批评而获政府部分采纳
+- S 的 HD024153（恢复永久居留权）代表一种战略重新定位，政府将以前后矛盾（S 主导了2015/16年的紧缩）为由发起攻势
+- 协调提交表明这些动议是竞选纲领文件，而非立法阻挠工具
+
+**行动**：将此框架为"移民主战场"——反对派正在实时构建其2026年竞选纲领。
+
+---
+
+### 重大发现3：安全驱逐紧张态势
+
+**事件**：政府提案 HD03267（针对恐怖威胁人员的安全驱逐）在 Lagrådet 审查开放的情况下进入议会程序。
+
+**评估**：本轮次单项 DIW 得分最高（7.5/10 × 1.5 = 11.25 有效值）。ECHR 兼容性风险确实存在——缺乏特别辩护人机制是欧盟内已记录的弱点模式。若 Lagrådet 在6月15日前发表批评性意见，政府将面临修正与进度压力之间的抉择。
+
+**欧洲人权法院临时措施风险**：若在九月大选前颁布并付诸实施，2026年8月一起引人注目的欧洲人权法院第39条申请将在投票前夕引发声誉危机。
+
+---
+
+### 重大发现4：数字国家扩张
+
+**事件**：HD03250（国家电子身份证）和 HD03261（扩展 Skatteverket 人口登记权限）在里克斯达格推进。
+
+**评估**：HD03250 在技术层面受 EU eIDAS2 法规约束。国家电子身份证将取代 BankID 成为主导性身份基础设施。政治争议度低，但结构性意义高——数字身份主权从私人向公共的长期转移。
+
+---
+
+### 重大发现5：官方发展援助问责缺口
+
+**事件**：V 议员 Lotta Johnsson Fornarve 对 Dousa 部长提出质询，要求其就援助削减对儿童的影响（CRC 合规性）作出说明。
+
+**评估**：政府几乎肯定会在不承诺进行儿童影响评估的情况下维持效率叙事。V 将公布这一无效回应作为选举问责工具。CRC 第3条义务产生了一定但真实的法律合规风险（中等，30%概率引发 OECD-DAC 同行评审关注）。
+
+---
+
+### 情报综合表
+
+| 事件 | DIW | 选举影响 | 时间风险 |
+|------|-----|---------|---------|
+| KU34 休眠（宪法） | 7.0 × 1.5 = 10.5 | 高 — 堕胎/国籍身份问题 | 2026年10月二读 |
+| HD024153（S 移民动议） | 8.7 × 1.5 = 13.1 | 非常高 — 移民是选举核心议题 | 提案表决2026年6月 |
+| HD03267（安全驱逐） | 7.5 × 1.5 = 11.25 | 高 — Lagrådet+ECHR 窗口 | Lagrådet 2026年6月 |
+| HD024160（C 儿童拘留） | 8.3 × 1.5 = 12.45 | 中高 — 权利与强硬之争 | 委员会让步2026年6月 |
+| HD10492（ODA/儿童） | 7.2 × 1.5 = 10.8 | 中等 — V 竞选材料 | Dousa 答复2026年5月29日 |
+| HD03250（国家电子身份证） | 6.5 × 1.5 = 9.75 | 低中 — 治理叙事 | EU 合规2027年 |
+
+---
+
+### 推荐编辑优先事项
+
+1. **头条报道**：宪法休眠——堕胎+国籍（国际共鸣，国内历史性意义）
+2. **第二报道**：移民主战场——15项协调反对派动议 vs 4项政府提案
+3. **背景报道**：瑞典立法的 ECHR 风险——HD03267 + KU34 国籍作为主题集群
+4. **数据报道**：DIW 分数可视化——2025/26 年度会期最重要的24小时立法爆发
+
+---
+
+### 重新运行的修订附录（15:02 UTC）
+
+**新情报**：今日下午在议会大厅答复的三场质询辩论扩展了分析图景。SD 针对 KD 的 Ebba Busch 的成对能源质询（HD10453/HD10448）被评估为联合政府内部的选举定位：SD 距大选122天正在构建其在能源成本和风能怀疑主义上的公信力，以对抗联合伙伴 KD。S 关于职业医师培训的连续第三次质询（HD10440）证实了一种系统性责任记录策略，该策略旨在秋季竞选使用。
+
+**修订战术图景**：议会当日比最初评估更具选前特征。四个不同政党（SD, S, C, V）正在同时利用议会工具，为2026年9月13日前的定位做准备。
+
+<!-- source-sha: 13fb01dbf19848515cc9696908bf9f099436e97c -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 3 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -2338,6 +3637,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/realtime-pulse/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

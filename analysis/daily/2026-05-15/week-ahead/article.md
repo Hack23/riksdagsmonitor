@@ -6,7 +6,7 @@ date: 2026-05-15
 subfolder: week-ahead
 slug: 2026-05-15-week-ahead
 source_folder: analysis/daily/2026-05-15/week-ahead
-generated_at: 2026-05-16T20:24:26.688Z
+generated_at: 2026-05-17T18:40:44.146Z
 language: en
 layout: article
 ---
@@ -1711,804 +1711,503 @@ Both documents selected as directly related thematic cluster (same author, same 
 ## Executive Brief Ar
 <!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/week-ahead/executive-brief_ar.md -->
 
-<!-- dir: rtl -->
----
-title: "ملخص تنفيذي: خفض المساعدات السويدية تحت المراجعة البرلمانية — الأسبوع 21"
+<div dir="rtl">
 
-subfolder: "week-ahead"
-language: "ar"
+**المؤلف**: James Pether Sörling | **التصنيف**: عام
 
 ---
 
-# ملخص تنفيذي — الأسبوع القادم: المساءلة في مجال المساعدات، 2026-05-15
+### 🎯 BLUF
 
-**المؤلف**: James Pether Sörling | **معرّف التشغيل**: 25908189012 | **التصنيف**: Public
-
----
-
-### 🎯 الملخص
-
-**تواجه حكومة تيدو السويدية مناقشتَي استجواب مقررتَين (2026-05-18) حول تفكيكها منظومة المساعدات الإنمائية** — HD10492 (التداعيات على الأطفال) وHD10493 (تداعيات استراتيجيات الانسحاب من دول بعينها) — كلتيهما قدّمتهما Lotta Johnsson Fornarve (V)، وموجَّهتان إلى الوزير Benjamin Dousa (M). مع اقتراب انتخابات سبتمبر 2026 بـ121 يوماً، وتضافر خفض المساعدات السويدية مع تفكيك ترامب لـUSAID على الصعيد العالمي، يتحول غياب تقييمات الأثر الحكومية إلى عبء انتخابي متصاعد. على الوزير Dousa الرد قبل 2026-05-29. نجت ائتلاف تيدو (M+KD+L+SD) من تصويت الميزانية الذي فرض تلك التخفيضات، غير أن هذه النقاشات تُنبئ بنية المعارضة لجعل المساءلة في مجال المساعدات ورقة انتخابية. الأهمية المُعدَّلة: **8.3/10** [B2].
+تواجه حكومة تيدو السويدية نقاشين مجدولين للاستجوابات (2026-05-18) حول تفكيك بنية المساعدات — HD10492 (العواقب على الأطفال) وHD10493 (عواقب استراتيجيات الدول المتوقفة) — كلاهما مقدم من لوتا يونسون فورنارفه (V)، موجهان إلى الوزير بنيامين دوسا (M). مع اقتراب الانتخابات في سبتمبر 2026 خلال 121 يومًا، يتحول إخفاق الحكومة في إجراء تقييمات الأثر إلى ثغرة انتخابية فعلية. يجب أن يرد الوزير دوسا بحلول 2026-05-29. الأهمية المعدلة: **8.3/10** [B2].
 
 ---
 
-### 🧭 3 قرارات يدعمها هذا الملخص
+### 🔺 أبرز المحفز الاستراتيجي
 
-1. **النشر**: استخدام الاستجوابين بوصفهما القصة المحورية للمساءلة في مجال المساعدات للأسبوع 21؛ مع إبراز الأثر المركّب (تخفيضات سويدية + ترامب/USAID) وأبعاد حقوق الطفل.
-2. **المراقبة**: تتبّع رد الوزير قبل 2026-05-29؛ وإذا لم يُعلَن عن تقييم للأثر، تصعيد الإطار إلى "فشل المساءلة الحوكمية" في مرحلة الحملة الانتخابية.
-3. **التطلع للأمام**: تقييم ما إذا كانت العطلة الصيفية البرلمانية تفتح نافذة لإجراءات تنفيذية إضافية بشأن المساعدات دون رقابة برلمانية.
-
----
-
-### ⚡ قراءة في 60 ثانية
-
-| # | النقطة | الأهمية |
-|---|--------|---------|
-| 1 | HD10492 — استجواب V: تداعيات تخفيضات المساعدات على الأطفال، الوزير Dousa | HIGH [B2] |
-| 2 | HD10493 — استجواب V: استراتيجيات الانسحاب (ليبيريا، موزمبيق، تنزانيا، زيمبابوي، بوليفيا) | HIGH [B2] |
-| 3 | كلا النقاشين مقرّر إجراؤهما في 2026-05-18 في الجلسة العامة | MEDIUM [B3] |
-| 4 | آخر موعد للرد الوزاري: 2026-05-29 — نافذة مساءلة عامة | HIGH [B2] |
-| 5 | لم تُجرَ أي تقييمات للأثر — اعتراف صريح من الحكومة | HIGH [B2] |
-| 6 | الانتخابات بعد 121 يوماً — مُضاعِف DIW 1.5× على جميع نقاط V ضد تيدو | HIGH [B2] |
-| 7 | السياق العالمي: تخفيضات USAID الأمريكية + تخفيضات سويدية = أزمة إنسانية مركّبة | HIGH [B2] |
-| 8 | الفائض المالي السويدي يجعل التخفيضات خياراً سياسياً، لا ضرورة اقتصادية | MEDIUM [B3] |
+**المحفز**: رد الوزير دوسا على الاستجواب بحلول 2026-05-29 إما (أ) يعلن عن تقييم أثر أو (ب) يفشل في ذلك.  
+**إذا (أ)**: تعترف V بالمساءلة الجزئية.  
+**إذا (ب)**: فجوة مساءلة الحوكمة مؤكدة؛ المعارضة تصعّد رواية الحملة *"Tidöregeringen bryr sig inte om världens barn"*.
 
 ---
 
-### 🔺 المحفّز الاستشرافي الرئيسي
+الأسبوع 21 يرسّخ مساءلة المساعدات كموضوع رئيسي للحملة الانتخابية على بُعد 121 يومًا من الانتخابات.
 
-**المحفّز**: رد الوزير Dousa على الاستجواب في أو قبل 2026-05-29 إما (أ) يُعلن عن تقييم للأثر أو (ب) لا يفعل ذلك.  
-**إذا (أ)**: تُقرّ V بمساءلة جزئية، وتتجه المعارضة نحو المطالبة بتراجع مُلزِم.  
-**إذا (ب)**: تأكيد فجوة المساءلة الحوكمية؛ تصعيد المعارضة لسردية الحملة الانتخابية "حكومة تيدو لا تكترث بأطفال العالم."  
-**رابط PIR**: PIR-WA-01
+</div>
 
----
-
-### مراسي الأدلة
-
-| الادّعاء | الدليل | تاريخ الاسترداد |
-|----------|--------|----------------|
-| تقديم الاستجواب HD10492 بتاريخ 2026-05-13 | dok_id HD10492، data.riksdagen.se | 2026-05-15 |
-| تقديم الاستجواب HD10493 بتاريخ 2026-05-12 | dok_id HD10493، data.riksdagen.se | 2026-05-15 |
-| الإعلان للجلسة العامة 2026-05-18 | حالة HD10492: ANM 2026-05-18 | 2026-05-15 |
-| آخر موعد للرد 2026-05-29 | HD10492 SISVA 2026-05-29؛ HD10493 SISVA 2026-05-29 | 2026-05-15 |
-| خفضت الحكومة الاستراتيجيات من ~70 إلى ~40 | النص الكامل لـHD10493، بيانات الوزير ذاتها | 2026-05-15 |
-| انسحاب ديسمبر 2025 من: ليبيريا، موزمبيق، تنزانيا، زيمبابوي، بوليفيا | النص الكامل لـHD10493 | 2026-05-15 |
-| التخلي عن هدف 1% من الدخل القومي الإجمالي بدعم SD | النص الكامل لـHD10492 + HD10493 | 2026-05-15 |
-| لم تُجرَ أي تقييمات للأثر | النص الكامل لـHD10493: "Mig veterligen har regeringen inte ens gjort någon analys" | 2026-05-15 |
-
-<!-- source-sha: 84c1a88a2df18e97bdef9c56e53f2408ac799ff4 -->
+<!-- source-sha: 6c2ffdb9c101c4f58734641eaa3d607bfe935938 -->
 
 ## Executive Brief Da
 <!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/week-ahead/executive-brief_da.md -->
 
-**Forfatter**: James Pether Sörling | **Kørselsnummer**: 25908189012 | **Klassificering**: Public
-
 ---
 
 ### 🎯 BLUF
 
-**Sveriges Tidø-regering står over for to planlagte interpellationsdebatter (2026-05-18) om sin nedmontering af bistandsarkitekturen** — HD10492 (konsekvenser for børn) og HD10493 (konsekvenser af afsluttede landestrategier) — begge indgivet af Lotta Johnsson Fornarve (V), rettet til minister Benjamin Dousa (M). Med valget i september 2026 om 121 dage og bistandsbesparelserne, der forværrer Trumps globale USAID-afvikling, er regeringens manglende konsekvensvurderinger ved at blive et aktivt valgansvar. Minister Dousa skal svare inden 2026-05-29. Tidø-koalitionen (M+KD+L+SD) har allerede overlevet en budgetafstemning, der pålagde nedskæringerne; men debatten signalerer oppositionens hensigt om at gøre bistandsansvarlighed til et valgspørgsmål. Justeret signifikans: **8,3/10** [B2].
+Sveriges Tidö-regering står over for to planlagte interpellationsdebatter (2026-05-18) om sin nedlæggelse af bistandsarkitekturen — HD10492 (konsekvenser for børn) og HD10493 (konsekvenser af ophørte landstrategier) — begge indgivet af Lotta Johnsson Fornarve (V), adresseret til minister Benjamin Dousa (M). Med valget i september 2026 om 121 dage er regeringens manglende konsekvensanalyse ved at blive en aktuel valgsårbarheds. Minister Dousa skal svare senest 2026-05-29. Justeret betydning: **8,3/10** [B2].
 
 ---
 
-### 🧭 3 Beslutninger dette PM understøtter
+### 🧭 3 beslutninger dette brev støtter
 
-1. **Publicer**: Brug begge interpellationer som den ledende bistandsansvarlighedshistorie for uge 21; fremhæv sammensat effekt (svenske nedskæringer + Trump/USAID) og børnerettigheds­dimensioner.
-2. **Overvåg**: Spor ministeriell respons inden 2026-05-29; hvis ingen konsekvensvurdering annonceres, eskalér til "styringsansvarlighedsfejl"-framing for valgperioden.
-3. **Fremad**: Vurdér om parlamentarisk sommerferie skaber et vindue for yderligere forvaltnings­tiltag vedrørende bistand uden parlamentarisk kontrol.
-
----
-
-### ⚡ 60-sekunder Læsning
-
-| # | Punkt | Signifikans |
-|---|-------|------------|
-| 1 | HD10492 — V interpellation: konsekvenser af bistands­nedskæringer for børn, minister Dousa | HIGH [B2] |
-| 2 | HD10493 — V interpellation: afsluttede landestrategier (Liberia, Mozambique, Tanzania, Zimbabwe, Bolivia) | HIGH [B2] |
-| 3 | Begge debatter planlagt 2026-05-18 i kammeret | MEDIUM [B3] |
-| 4 | Seneste ministeriellt svarsdato: 2026-05-29 — offentlig ansvarlig­heds­periode | HIGH [B2] |
-| 5 | Ingen konsekvensvurdering gennemført — regeringens eget indrømmelse | HIGH [B2] |
-| 6 | Valg om 121 dage — 1,5× DIW-multiplikator på alle V mod Tidø-poster | HIGH [B2] |
-| 7 | Globalt sammenhæng: USA USAID-nedskæringer + svenske nedskæringer = sammensat humanitær krise | HIGH [B2] |
-| 8 | Sveriges finansielle overskud gør nedskæringerne til et politisk valg, ikke økonomisk nødvendighed | MEDIUM [B3] |
+1. **Publicér**: Brug begge interpellationer som den ledende bistandsansvarshistorie for uge 21; understregning af sammensat effekt og børnerettighedsdimensioner.
+2. **Overvåg**: Følg ministersvaret senest 2026-05-29; eskalér til 'styringsansvarsbrist' hvis ingen konsekvensanalyse annonceres.
+3. **Videresend**: Vurder om parlamentarisk sommerpause skaber vindue for yderligere eksekutiv handling.
 
 ---
 
-### 🔺 Top Fremadrettet Udløser
+### ⚡ 60-sekunders læsning
 
-**Udløser**: Minister Dousas interpellationssvar på eller inden 2026-05-29 enten (a) annoncerer en konsekvensvurdering eller (b) undlader dette.  
-**Hvis (a)**: V erkender delvis ansvarlighed, opposition skifter til at kræve bindende tilbagerulning.  
-**Hvis (b)**: Bekræftet styringsansvarlighedsgab; opposition eskalerer valkampagne-narrativ "Tidø-regeringen bekymrer sig ikke om verdens børn."  
-**PIR-link**: PIR-WA-01
+| # | Item | Significance |
+|---|------|-------------|
+| 1 | HD10492 — V's interpellation: bistands­skæringernes konsekvenser for børn, minister Dousa | HIGH [B2] |
+| 2 | HD10493 — V's interpellation: ophørte landstrategier (Liberia, Mozambique, Tanzania, Zimbabwe, Bolivia) | HIGH [B2] |
+| 3 | Begge debatter planlagt 2026-05-18 i kammeret | HIGH [B2] |
+| 4 | Seneste ministersvarsdato: 2026-05-29 — offentligt ansvarsvindue | HIGH [B2] |
+| 5 | Ingen konsekvensanalyse gennemført — regeringens egen indrømmelse | HIGH [B2] |
+| 6 | Valg om 121 dage — 1,5× DIW-multiplikator på alle V mod Tidö-poster | HIGH [B2] |
+| 7 | Globalt kontekst: US USAID-nedskæringer + svenske nedskæringer = sammensat humanitær krise | HIGH [B2] |
+| 8 | Sveriges finansoverskud gør nedskæringerne til et politisk valg, ikke en økonomisk nødvendighed | HIGH [B2] |
 
 ---
 
-### Bevisankere
+### 🔺 Top fremadrettet trigger
 
-| Påstand | Bevis | Hentet |
-|---------|-------|--------|
-| Interpellation HD10492 indgivet 2026-05-13 | dok_id HD10492, data.riksdagen.se | 2026-05-15 |
-| Interpellation HD10493 indgivet 2026-05-12 | dok_id HD10493, data.riksdagen.se | 2026-05-15 |
-| Annonceret til kammeret 2026-05-18 | HD10492 status: ANM 2026-05-18 | 2026-05-15 |
-| Seneste svarsdato 2026-05-29 | HD10492 SISVA 2026-05-29; HD10493 SISVA 2026-05-29 | 2026-05-15 |
-| Regering reducerede strategier fra ~70 til ~40 | HD10493 fuldtekst, ministerens egne data | 2026-05-15 |
-| Dec 2025 exit: Liberia, Mozambique, Tanzania, Zimbabwe, Bolivia | HD10493 fuldtekst | 2026-05-15 |
-| 1% BNI-mål opgivet med SD-støtte | HD10492 + HD10493 fuldtekst | 2026-05-15 |
-| Ingen konsekvensvurdering gennemført | HD10493 fuldtekst: "Mig veterligen har regeringen inte ens gjort någon analys" | 2026-05-15 |
+**Trigger**: Minister Dousas svar senest 2026-05-29 enten (a) annoncerer en konsekvensanalyse eller (b) undlader dette.
+**Hvis (a)**: V indrømmer delvis ansvarlighed.
+**Hvis (b)**: Bekræftet styringsansvarsbrist; opposition eskalerer *"Tidöregeringen bryr sig inte om världens barn"*.
 
-<!-- source-sha: 84c1a88a2df18e97bdef9c56e53f2408ac799ff4 -->
+---
+
+Uge 21 etablerer bistandsansvarlighed som en central valgkampssag med 121 dage til valget.
+
+<!-- source-sha: 6c2ffdb9c101c4f58734641eaa3d607bfe935938 -->
 
 ## Executive Brief De
 <!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/week-ahead/executive-brief_de.md -->
 
-**Autor**: James Pether Sörling | **Run-ID**: 25908189012 | **Klassifizierung**: Public
-
 ---
 
 ### 🎯 BLUF
 
-**Schwedens Tidö-Regierung steht vor zwei geplanten Interpellationsdebatten (2026-05-18) über ihren Abbau der Entwicklungshilfearchitektur** — HD10492 (Folgen für Kinder) und HD10493 (Folgen eingestellter Länderstrategien) — beide eingereicht von Lotta Johnsson Fornarve (V), adressiert an Minister Benjamin Dousa (M). Mit der Wahl im September 2026 in 121 Tagen und den Hilfskürzungen, die Trumps globale USAID-Abwicklung verschlimmern, entwickelt sich die Unterlassung der Regierung, Folgenabschätzungen durchzuführen, zu einer aktiven Wahlhaftung. Minister Dousa muss bis 2026-05-29 antworten. Die Tidö-Koalition (M+KD+L+SD) hat bereits eine Haushaltsabstimmung überlebt, die die Kürzungen auferlegte; aber die Debatte signalisiert die Absicht der Opposition, Entwicklungshilfe-Rechenschaftspflicht zu einem Wahlthema zu machen. Bereinigte Bedeutung: **8,3/10** [B2].
+Schwedens Tidö-Regierung steht vor zwei geplanten Interpellationsdebatten (2026-05-18) über den Abbau der Entwicklungshilfearchitektur — HD10492 (Folgen für Kinder) und HD10493 (Folgen eingestellter Länderstrategien) — beide eingereicht von Lotta Johnsson Fornarve (V), gerichtet an Minister Benjamin Dousa (M). Mit der Wahl im September 2026 in 121 Tagen wird das Versäumnis der Regierung, Folgenabschätzungen durchzuführen, zu einer aktiven Wahlkampfbelastung. Minister Dousa muss bis 2026-05-29 antworten. Angepasste Bedeutung: **8,3/10** [B2].
 
 ---
 
-### 🧭 3 Entscheidungen, die diese Zusammenfassung unterstützt
+### 🧭 3 Entscheidungen, die dieser Brief unterstützt
 
-1. **Veröffentlichen**: Beide Interpellationen als führende Entwicklungshilfe-Rechenschaftspflicht-Geschichte für Woche 21 nutzen; zusammengesetzten Effekt (schwedische Kürzungen + Trump/USAID) und Kinderrechtsdimensionen betonen.
-2. **Beobachten**: Ministerielle Antwort bis 2026-05-29 verfolgen; wenn keine Folgenabschätzung angekündigt wird, auf "Governance-Rechenschaftspflicht-Versagen"-Framing für den Wahlkampfzeitraum eskalieren.
-3. **Vorausschau**: Beurteilen ob parlamentarische Sommerpause ein Fenster für zusätzliche Exekutivmaßnahmen zu Entwicklungshilfe ohne parlamentarische Kontrolle schafft.
+1. **Veröffentlichen**: Beide Interpellationen als führende Entwicklungshilfeverantwortungsgeschichte für Woche 21 einsetzen.
+2. **Beobachten**: Ministerantwort bis 2026-05-29 verfolgen; bei fehlender Folgenabschätzung zum 'Governance-Accountability-Versagen' eskalieren.
+3. **Weiterleiten**: Beurteilen, ob die parlamentarische Sommerpause ein Fenster für weitere Exekutivmaßnahmen schafft.
 
 ---
 
 ### ⚡ 60-Sekunden-Lektüre
 
-| # | Punkt | Bedeutung |
-|---|-------|-----------|
-| 1 | HD10492 — V Interpellation: Folgen der Hilfskürzungen für Kinder, Minister Dousa | HIGH [B2] |
-| 2 | HD10493 — V Interpellation: eingestellte Länderstrategien (Liberia, Mosambik, Tansania, Simbabwe, Bolivien) | HIGH [B2] |
-| 3 | Beide Debatten für 2026-05-18 im Plenarsaal geplant | MEDIUM [B3] |
-| 4 | Letztes ministerielles Antworttag: 2026-05-29 — öffentliches Rechenschaftsfenster | HIGH [B2] |
+| # | Item | Significance |
+|---|------|-------------|
+| 1 | HD10492 — V-Interpellation: Folgen der Entwicklungshilfekürungen für Kinder, Minister Dousa | HIGH [B2] |
+| 2 | HD10493 — V-Interpellation: eingestellte Länderstrategien (Liberia, Mosambik, Tansania, Simbabwe, Bolivien) | HIGH [B2] |
+| 3 | Beide Debatten geplant für 2026-05-18 im Plenum | HIGH [B2] |
+| 4 | Letztes Datum für Ministerantwort: 2026-05-29 | HIGH [B2] |
 | 5 | Keine Folgenabschätzung durchgeführt — eigenes Eingeständnis der Regierung | HIGH [B2] |
-| 6 | Wahl in 121 Tagen — 1,5× DIW-Multiplikator auf alle V gegen Tidö-Punkte | HIGH [B2] |
-| 7 | Globaler Kontext: USA USAID-Kürzungen + schwedische Kürzungen = zusammengesetzte humanitäre Krise | HIGH [B2] |
-| 8 | Schwedens Finanzüberschuss macht die Kürzungen zu einer politischen Wahl, nicht wirtschaftlicher Notwendigkeit | MEDIUM [B3] |
+| 6 | Wahl in 121 Tagen — 1,5× DIW-Multiplikator | HIGH [B2] |
+| 7 | Globaler Kontext: USA USAID-Kürzungen + schwedische Kürzungen = kombinierte humanitäre Krise | HIGH [B2] |
+| 8 | Schwedens Haushaltsüberschuss macht Kürzungen zu einer politischen Wahl, nicht zu einer wirtschaftlichen Notwendigkeit | HIGH [B2] |
 
 ---
 
-### 🔺 Wichtigster Vorwärts-Auslöser
+### 🔺 Wichtigster Vorwärtsauslöser
 
-**Auslöser**: Minister Dousas Interpellationsantwort am oder vor 2026-05-29 entweder (a) kündigt eine Folgenabschätzung an oder (b) unterlässt dies.  
-**Falls (a)**: V räumt teilweise Rechenschaftspflicht ein, Opposition wechselt zu Forderung nach verbindlicher Umkehr.  
-**Falls (b)**: Bestätigte Governance-Rechenschaftslücke; Opposition eskaliert Wahlkampf-Narrativ "Die Tidö-Regierung kümmert sich nicht um die Kinder der Welt."  
-**PIR-Link**: PIR-WA-01
+**Auslöser**: Minister Dousas Interpellationsantwort bis 2026-05-29 kündigt entweder (a) eine Folgenabschätzung an oder (b) unterlässt dies.
+**Falls (a)**: V räumt partielle Rechenschaftspflicht ein.
+**Falls (b)**: Bestätigtes Governance-Accountability-Versagen; Opposition eskaliert *"Tidöregeringen bryr sig inte om världens barn"*.
 
 ---
 
-### Beweisanker
+Woche 21 etabliert Entwicklungshilfeverantwortung als zentrales Wahlkampfthema mit 121 Tagen bis zur Wahl.
 
-| Aussage | Beleg | Abgerufen |
-|---------|-------|-----------|
-| Interpellation HD10492 eingereicht 2026-05-13 | dok_id HD10492, data.riksdagen.se | 2026-05-15 |
-| Interpellation HD10493 eingereicht 2026-05-12 | dok_id HD10493, data.riksdagen.se | 2026-05-15 |
-| Für Plenarsaal 2026-05-18 angekündigt | HD10492 Status: ANM 2026-05-18 | 2026-05-15 |
-| Letztes Antworttag 2026-05-29 | HD10492 SISVA 2026-05-29; HD10493 SISVA 2026-05-29 | 2026-05-15 |
-| Regierung reduzierte Strategien von ~70 auf ~40 | HD10493 Volltext, eigene Ministerdaten | 2026-05-15 |
-| Dez 2025 exit: Liberia, Mosambik, Tansania, Simbabwe, Bolivien | HD10493 Volltext | 2026-05-15 |
-| 1% BNE-Ziel mit SD-Unterstützung aufgegeben | HD10492 + HD10493 Volltext | 2026-05-15 |
-| Keine Folgenabschätzung durchgeführt | HD10493 Volltext: "Mig veterligen har regeringen inte ens gjort någon analys" | 2026-05-15 |
-
-<!-- source-sha: 84c1a88a2df18e97bdef9c56e53f2408ac799ff4 -->
+<!-- source-sha: 6c2ffdb9c101c4f58734641eaa3d607bfe935938 -->
 
 ## Executive Brief Es
 <!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/week-ahead/executive-brief_es.md -->
 
-**Autor**: James Pether Sörling | **ID de ejecución**: 25908189012 | **Clasificación**: Public
-
 ---
 
 ### 🎯 BLUF
 
-**El gobierno Tidö de Suecia enfrenta dos debates de interpelación programados (2026-05-18) sobre su desmantelamiento de la arquitectura de ayuda** — HD10492 (consecuencias para los niños) y HD10493 (consecuencias de las estrategias-país discontinuadas) — ambas presentadas por Lotta Johnsson Fornarve (V), dirigidas al ministro Benjamin Dousa (M). Con las elecciones de septiembre de 2026 a 121 días y los recortes de ayuda agravando el desmantelamiento global de USAID por Trump, la falta de evaluaciones de impacto del gobierno se está convirtiendo en una responsabilidad electoral activa. El ministro Dousa debe responder antes del 2026-05-29. La coalición Tidö (M+KD+L+SD) ya ha sobrevivido a una votación presupuestaria que impuso los recortes; pero el debate señala la intención de la oposición de hacer de la responsabilidad en la ayuda un tema electoral. Significado ajustado: **8,3/10** [B2].
+El gobierno sueco Tidö se enfrenta a dos debates de interpelación programados (2026-05-18) sobre el desmantelamiento de la arquitectura de ayuda — HD10492 (consecuencias para los niños) y HD10493 (consecuencias de las estrategias de país discontinuadas) — ambos presentados por Lotta Johnsson Fornarve (V), dirigidos al ministro Benjamin Dousa (M). Con las elecciones de septiembre de 2026 a 121 días, la falta de evaluaciones de impacto está convirtiéndose en una vulnerabilidad electoral activa. El ministro Dousa debe responder antes del 2026-05-29. Importancia ajustada: **8,3/10** [B2].
 
 ---
 
-### 🧭 3 Decisiones que este Resumen apoya
+### 🧭 3 decisiones que apoya este informe
 
-1. **Publicar**: Usar ambas interpelaciones como la historia principal de responsabilidad en la ayuda para la semana 21; enfatizar el efecto compuesto (recortes suecos + Trump/USAID) y las dimensiones de los derechos del niño.
-2. **Vigilar**: Hacer seguimiento de la respuesta ministerial antes del 2026-05-29; si no se anuncia ninguna evaluación de impacto, escalar al encuadre "fracaso de la responsabilidad de gobernanza" para el período de campaña electoral.
-3. **Perspectiva futura**: Evaluar si el receso parlamentario de verano crea una ventana para acciones ejecutivas adicionales sobre ayuda sin escrutinio parlamentario.
+1. **Publicar**: Usar ambas interpelaciones como la historia principal de rendición de cuentas de ayuda para la semana 21.
+2. **Vigilar**: Seguir la respuesta ministerial antes del 2026-05-29; escalar a 'fallo de responsabilidad de gobernanza' si no se anuncia evaluación de impacto.
+3. **Transmitir**: Evaluar si el receso parlamentario veraniego crea una ventana para acción ejecutiva adicional.
 
 ---
 
-### ⚡ Lectura de 60 Segundos
+### ⚡ Lectura de 60 segundos
 
-| # | Punto | Significado |
-|---|-------|-------------|
-| 1 | HD10492 — V interpelación: consecuencias de los recortes de ayuda para los niños, ministro Dousa | HIGH [B2] |
-| 2 | HD10493 — V interpelación: estrategias-país discontinuadas (Liberia, Mozambique, Tanzania, Zimbabwe, Bolivia) | HIGH [B2] |
-| 3 | Ambos debates programados el 2026-05-18 en el pleno | MEDIUM [B3] |
-| 4 | Última fecha de respuesta ministerial: 2026-05-29 — ventana pública de responsabilidad | HIGH [B2] |
-| 5 | No se realizó evaluación de impacto — admisión propia del gobierno | HIGH [B2] |
-| 6 | Elección en 121 días — multiplicador DIW 1,5× en todos los puntos V contra Tidö | HIGH [B2] |
+| # | Item | Significance |
+|---|------|-------------|
+| 1 | HD10492 — Interpelación V: consecuencias de los recortes de ayuda para los niños, ministro Dousa | HIGH [B2] |
+| 2 | HD10493 — Interpelación V: estrategias de país discontinuadas (Liberia, Mozambique, Tanzania, Zimbabwe, Bolivia) | HIGH [B2] |
+| 3 | Ambos debates programados el 2026-05-18 en cámara | HIGH [B2] |
+| 4 | Fecha límite de respuesta ministerial: 2026-05-29 | HIGH [B2] |
+| 5 | No se realizó evaluación de impacto — admisión del propio gobierno | HIGH [B2] |
+| 6 | Elecciones en 121 días — multiplicador DIW ×1,5 | HIGH [B2] |
 | 7 | Contexto global: recortes USAID de EE.UU. + recortes suecos = crisis humanitaria compuesta | HIGH [B2] |
-| 8 | El superávit financiero de Suecia hace que los recortes sean una elección política, no una necesidad económica | MEDIUM [B3] |
+| 8 | El superávit fiscal sueco hace los recortes una opción política, no una necesidad económica | HIGH [B2] |
 
 ---
 
-### 🔺 Principal Disparador Prospectivo
+### 🔺 Desencadenante principal
 
-**Disparador**: La respuesta de interpelación del ministro Dousa en o antes del 2026-05-29 ya sea (a) anuncia una evaluación de impacto o (b) no lo hace.  
-**Si (a)**: V concede responsabilidad parcial, la oposición pasa a exigir la reversión vinculante.  
-**Si (b)**: Brecha de responsabilidad de gobernanza confirmada; la oposición escala el narrativo de campaña electoral "El gobierno Tidö no se preocupa por los niños del mundo."  
-**Enlace PIR**: PIR-WA-01
+**Desencadenante**: La respuesta del ministro Dousa antes del 2026-05-29 bien (a) anuncia evaluación de impacto o (b) no lo hace.
+**Si (a)**: V concede responsabilidad parcial.
+**Si (b)**: Brecha de responsabilidad confirmada; oposición escala *«Tidöregeringen bryr sig inte om världens barn»*.
 
 ---
 
-### Anclajes de Evidencia
+La semana 21 establece la rendición de cuentas de la ayuda como tema central de campaña con 121 días para las elecciones.
 
-| Afirmación | Evidencia | Recuperado |
-|------------|-----------|------------|
-| Interpelación HD10492 presentada 2026-05-13 | dok_id HD10492, data.riksdagen.se | 2026-05-15 |
-| Interpelación HD10493 presentada 2026-05-12 | dok_id HD10493, data.riksdagen.se | 2026-05-15 |
-| Anunciado para el pleno 2026-05-18 | Estado HD10492: ANM 2026-05-18 | 2026-05-15 |
-| Última fecha de respuesta 2026-05-29 | HD10492 SISVA 2026-05-29; HD10493 SISVA 2026-05-29 | 2026-05-15 |
-| Gobierno redujo estrategias de ~70 a ~40 | Texto completo HD10493, datos propios del ministro | 2026-05-15 |
-| Dic 2025 exit: Liberia, Mozambique, Tanzania, Zimbabwe, Bolivia | Texto completo HD10493 | 2026-05-15 |
-| Objetivo del 1% del RNB abandonado con apoyo SD | Texto completo HD10492 + HD10493 | 2026-05-15 |
-| No se realizó evaluación de impacto | Texto completo HD10493: "Mig veterligen har regeringen inte ens gjort någon analys" | 2026-05-15 |
-
-<!-- source-sha: 84c1a88a2df18e97bdef9c56e53f2408ac799ff4 -->
+<!-- source-sha: 6c2ffdb9c101c4f58734641eaa3d607bfe935938 -->
 
 ## Executive Brief Fi
 <!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/week-ahead/executive-brief_fi.md -->
 
-**Tekijä**: James Pether Sörling | **Ajon tunnus**: 25908189012 | **Luokittelu**: Public
-
 ---
 
 ### 🎯 BLUF
 
-**Ruotsin Tidö-hallitus kohtaa kaksi aikataulutettua interpellaatiokeskustelua (2026-05-18) kehitysapuarkkitehtuurinsa purkamisesta** — HD10492 (seuraukset lapsille) ja HD10493 (lopetettujen maastrategioiden seuraukset) — molemmat Lotta Johnsson Fonarven (V) jättämiä, osoitettu ministerille Benjamin Dousa (M). Syyskuun 2026 vaalien ollessa 121 päivän päässä ja kehitysapuleikkausten pahentaessa Trumpin USAID-purkua globaalisti, hallituksen laiminlyönti vaikutustenarviointien tekemisessä on muuttumassa aktiiviseksi vaalivastuuksi. Ministeri Dousalla on vastatakseen viimeistään 2026-05-29. Tidö-koalitio (M+KD+L+SD) on jo selviytynyt budjettiäänestyksestä, joka asetti leikkaukset; mutta keskustelu viestii opposition aikomuksesta tehdä kehitysapuvastuusta äänestyskysymyksen. Oikaistu merkittävyys: **8,3/10** [B2].
+Ruotsin Tidö-hallitus kohtaa kaksi suunniteltua interpellaatiokeskustelua (2026-05-18) kehitysapuarkkitehtuurin purkamisesta — HD10492 (seuraukset lapsille) ja HD10493 (lakkautettujen maastrategioiden seuraukset) — molemmat Lotta Johnsson Fornarvelta (V), osoitettu ministeri Benjamin Dousalle (M). Vaalien ollessa 121 päivän päässä syyskuussa 2026, hallituksen vaikutusarviointien puute on muuttumassa aktiiviseksi vaalihaavoittuvuudeksi. Ministeri Dousa vastaa viimeistään 2026-05-29. Merkittävyys: **8,3/10** [B2].
 
 ---
 
-### 🧭 3 Päätöstä, joita tämä tiivistelmä tukee
+### 🧭 3 päätöstä, joita tämä tiedote tukee
 
-1. **Julkaise**: Käytä molempia interpellaatioita viikon 21 johtavana kehitysapuvastuuuutisena; korosta yhdistettyä vaikutusta (ruotsalaiset leikkaukset + Trump/USAID) ja lapsenoikeuksien dimensioita.
-2. **Seuraa**: Seuraa ministeriaalista vastausta 2026-05-29 mennessä; jos vaikutustenarviointi ei julkisteta, eskaloi "hallintovastuu-epäonnistuminen"-kehykseen vaaliajalle.
-3. **Eteenpäin**: Arvioi, luoko parlamentaarinen kesäloma mahdollisuuden hallituksen lisätoimille kehitysavun suhteen ilman parlamentaarista valvontaa.
+1. **Julkaise**: Käytä molempia interpellaatioita viikoittaisena 21 johtavana kehitysapuvastuuuutisena.
+2. **Seuraa**: Seuraa ministerin vastausta 29.5.2026 mennessä; eskaloidu 'hallinnon vastuuvajaus' -kehykseen jos vaikutusarviointia ei ilmoiteta.
+3. **Välitä eteenpäin**: Arvioi, luoko parlamentin kesäloma ikkunan lisätoimille ilman parlamentaarista valvontaa.
 
 ---
 
 ### ⚡ 60 sekunnin lukeminen
 
-| # | Kohta | Merkittävyys |
-|---|-------|-------------|
-| 1 | HD10492 — V interpellaatio: kehitysapuleikkausten seuraukset lapsille, ministeri Dousa | HIGH [B2] |
-| 2 | HD10493 — V interpellaatio: lopetetut maastrategiat (Liberia, Mosambik, Tansania, Zimbabwe, Bolivia) | HIGH [B2] |
-| 3 | Molemmat keskustelut aikataulutettu 2026-05-18 täysistuntoon | MEDIUM [B3] |
-| 4 | Ministeriaalisen vastauksen viimeinen päivä: 2026-05-29 — julkinen vastuu­ikkuna | HIGH [B2] |
-| 5 | Ei vaikutustenarviointi tehty — hallituksen oma myöntäminen | HIGH [B2] |
-| 6 | Vaali 121 päivän päässä — 1,5× DIW-kerroin kaikille V vs. Tidö-kohteille | HIGH [B2] |
+| # | Item | Significance |
+|---|------|-------------|
+| 1 | HD10492 — V:n interpellaatio: kehitysapuleikkausten vaikutukset lapsille, ministeri Dousa | HIGH [B2] |
+| 2 | HD10493 — V:n interpellaatio: lakkautetut maastrategiat (Liberia, Mosambik, Tansania, Zimbabwe, Bolivia) | HIGH [B2] |
+| 3 | Molemmat keskustelut suunniteltu 2026-05-18 saliin | HIGH [B2] |
+| 4 | Viimeinen ministerin vastauspäivä: 2026-05-29 — julkinen vastuuikkuna | HIGH [B2] |
+| 5 | Vaikutusarviointia ei tehty — hallituksen oma myönnytys | HIGH [B2] |
+| 6 | Vaalit 121 päivän päässä — 1,5× DIW-kerroin | HIGH [B2] |
 | 7 | Globaali konteksti: USA USAID-leikkaukset + ruotsalaiset leikkaukset = yhdistetty humanitaarinen kriisi | HIGH [B2] |
-| 8 | Ruotsin finanssiyli­jäämä tekee leikkauksista poliittisen valinnan, ei taloudellisen välttämättömyyden | MEDIUM [B3] |
+| 8 | Ruotsin ylijäämä tekee leikkauksista poliittisen valinnan, ei taloudellisen pakon | HIGH [B2] |
 
 ---
 
-### 🔺 Tärkein Ennakoiva Laukaisin
+### 🔺 Tärkein ennakoiva liipasin
 
-**Laukaisin**: Ministeri Dousain interpellaatiovastaus 2026-05-29 mennessä joko (a) ilmoittaa vaikutustenarvioinnista tai (b) laiminlyö sen.  
-**Jos (a)**: V myöntää osittaisen vastuun, oppositio siirtyy vaatimaan sitovaa peruutusta.  
-**Jos (b)**: Vahvistettu hallintovastuu-aukko; oppositio eskaloi vaali­kampanjanarrativin "Tidö-hallitus ei välitä maailman lapsista."  
-**PIR-linkki**: PIR-WA-01
+**Liipasin**: Ministeri Dousan interpellaatiovastaus viimeistään 2026-05-29 joko (a) ilmoittaa vaikutusarvioinnista tai (b) jättää ilmoittamatta.
+**Jos (a)**: V myöntää osittaisen vastuun.
+**Jos (b)**: Vahvistettu hallinnon vastuuvaje; oppositio eskaloi *"Tidöregeringen bryr sig inte om världens barn"*.
 
 ---
 
-### Todistusankkurit
+Viikko 21 vahvistaa kehitysapuvastuun keskeiseksi vaalikampanjan aiheeksi 121 päivää ennen vaaleja.
 
-| Väite | Todiste | Haettu |
-|-------|---------|--------|
-| Interpellaatio HD10492 jätetty 2026-05-13 | dok_id HD10492, data.riksdagen.se | 2026-05-15 |
-| Interpellaatio HD10493 jätetty 2026-05-12 | dok_id HD10493, data.riksdagen.se | 2026-05-15 |
-| Ilmoitettu täysistuntoon 2026-05-18 | HD10492 tila: ANM 2026-05-18 | 2026-05-15 |
-| Viimeinen vastaus­päivä 2026-05-29 | HD10492 SISVA 2026-05-29; HD10493 SISVA 2026-05-29 | 2026-05-15 |
-| Hallitus vähensi strategioita ~70:stä ~40:een | HD10493 täysteksti, ministerin omat tiedot | 2026-05-15 |
-| Joulu 2025 exit: Liberia, Mosambik, Tansania, Zimbabwe, Bolivia | HD10493 täysteksti | 2026-05-15 |
-| 1% BKTL-tavoite hylätty SD-tuella | HD10492 + HD10493 täysteksti | 2026-05-15 |
-| Ei vaikutustenarviointi tehty | HD10493 täysteksti: "Mig veterligen har regeringen inte ens gjort någon analys" | 2026-05-15 |
-
-<!-- source-sha: 84c1a88a2df18e97bdef9c56e53f2408ac799ff4 -->
+<!-- source-sha: 6c2ffdb9c101c4f58734641eaa3d607bfe935938 -->
 
 ## Executive Brief Fr
 <!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/week-ahead/executive-brief_fr.md -->
 
-**Auteur**: James Pether Sörling | **ID de run**: 25908189012 | **Classification**: Public
-
 ---
 
 ### 🎯 BLUF
 
-**Le gouvernement Tidö de la Suède fait face à deux débats d'interpellation programmés (2026-05-18) sur son démantèlement de l'architecture de l'aide** — HD10492 (conséquences pour les enfants) et HD10493 (conséquences des stratégies-pays abandonnées) — tous deux soumis par Lotta Johnsson Fornarve (V), adressés au ministre Benjamin Dousa (M). Avec l'élection de septembre 2026 dans 121 jours et les coupes dans l'aide aggravant le démantèlement mondial de l'USAID par Trump, l'absence d'évaluation d'impact de la part du gouvernement devient un passif électoral actif. Le ministre Dousa doit répondre d'ici le 2026-05-29. La coalition Tidö (M+KD+L+SD) a déjà survécu à un vote budgétaire imposant les coupes; mais le débat signale l'intention de l'opposition de faire de la responsabilité en matière d'aide une question électorale. Signification ajustée: **8,3/10** [B2].
+Le gouvernement suédois Tidö fait face à deux débats d'interpellation programmés (2026-05-18) sur le démantèlement de l'architecture de l'aide — HD10492 (conséquences pour les enfants) et HD10493 (conséquences des stratégies pays abandonnées) — tous deux déposés par Lotta Johnsson Fornarve (V), adressés au ministre Benjamin Dousa (M). À 121 jours des élections de septembre 2026, l'absence d'évaluation d'impact devient une vulnérabilité électorale active. Le ministre Dousa doit répondre avant le 2026-05-29. Importance ajustée : **8,3/10** [B2].
 
 ---
 
-### 🧭 3 Décisions que cette Note soutient
+### 🧭 3 décisions que cette note soutient
 
-1. **Publier**: Utiliser les deux interpellations comme l'histoire principale de responsabilité en matière d'aide pour la semaine 21; mettre en évidence l'effet combiné (coupes suédoises + Trump/USAID) et les dimensions des droits de l'enfant.
-2. **Surveiller**: Suivre la réponse ministérielle d'ici le 2026-05-29; si aucune évaluation d'impact n'est annoncée, escalader vers le cadrage "échec de la responsabilité de gouvernance" pour la période de campagne électorale.
-3. **En avant**: Évaluer si la pause estivale parlementaire crée une fenêtre pour des actions exécutives supplémentaires sur l'aide sans contrôle parlementaire.
-
----
-
-### ⚡ Lecture en 60 Secondes
-
-| # | Point | Signification |
-|---|-------|--------------|
-| 1 | HD10492 — V interpellation: conséquences des coupes dans l'aide pour les enfants, ministre Dousa | HIGH [B2] |
-| 2 | HD10493 — V interpellation: stratégies-pays abandonnées (Liberia, Mozambique, Tanzanie, Zimbabwe, Bolivie) | HIGH [B2] |
-| 3 | Les deux débats prévus le 2026-05-18 en séance plénière | MEDIUM [B3] |
-| 4 | Dernière date de réponse ministérielle: 2026-05-29 — fenêtre publique de responsabilité | HIGH [B2] |
-| 5 | Aucune évaluation d'impact réalisée — propre aveu du gouvernement | HIGH [B2] |
-| 6 | Élection dans 121 jours — multiplicateur DIW 1,5× sur tous les points V contre Tidö | HIGH [B2] |
-| 7 | Contexte mondial: coupes US USAID + coupes suédoises = crise humanitaire combinée | HIGH [B2] |
-| 8 | L'excédent financier de la Suède fait des coupes un choix politique, pas une nécessité économique | MEDIUM [B3] |
+1. **Publier** : Utiliser les deux interpellations comme article principal sur la responsabilité de l'aide pour la semaine 21.
+2. **Surveiller** : Suivre la réponse ministérielle avant le 2026-05-29 ; escalader vers le cadre « défaillance de gouvernance » si aucune évaluation n'est annoncée.
+3. **Transmettre** : Évaluer si la pause estivale parlementaire crée une fenêtre d'action executive sans contrôle.
 
 ---
 
-### 🔺 Principal Déclencheur Prospectif
+### ⚡ Lecture 60 secondes
 
-**Déclencheur**: La réponse d'interpellation du ministre Dousa au plus tard le 2026-05-29 soit (a) annonce une évaluation d'impact ou (b) ne le fait pas.  
-**Si (a)**: V concède une responsabilité partielle, l'opposition se tourne vers une demande de renversement contraignant.  
-**Si (b)**: Lacune confirmée dans la responsabilité de gouvernance; l'opposition fait monter le narratif de campagne électorale "Le gouvernement Tidö ne se soucie pas des enfants du monde."  
-**Lien PIR**: PIR-WA-01
+| # | Item | Significance |
+|---|------|-------------|
+| 1 | HD10492 — Interpellation V : conséquences des réductions d'aide pour les enfants, ministre Dousa | HIGH [B2] |
+| 2 | HD10493 — Interpellation V : stratégies pays abandonnées (Libéria, Mozambique, Tanzanie, Zimbabwe, Bolivie) | HIGH [B2] |
+| 3 | Deux débats prévus le 2026-05-18 en séance plénière | HIGH [B2] |
+| 4 | Date limite de réponse ministérielle : 2026-05-29 | HIGH [B2] |
+| 5 | Aucune évaluation d'impact réalisée — aveu du gouvernement lui-même | HIGH [B2] |
+| 6 | Élections dans 121 jours — multiplicateur DIW ×1,5 | HIGH [B2] |
+| 7 | Contexte mondial : réductions USAID américaines + réductions suédoises = crise humanitaire composée | HIGH [B2] |
+| 8 | L'excédent fiscal suédois fait de ces réductions un choix politique, non une nécessité économique | HIGH [B2] |
 
 ---
 
-### Ancres de Preuves
+### 🔺 Déclencheur principal
 
-| Affirmation | Preuve | Récupéré |
-|-------------|--------|----------|
-| Interpellation HD10492 soumise 2026-05-13 | dok_id HD10492, data.riksdagen.se | 2026-05-15 |
-| Interpellation HD10493 soumise 2026-05-12 | dok_id HD10493, data.riksdagen.se | 2026-05-15 |
-| Annoncé pour la séance plénière 2026-05-18 | Statut HD10492: ANM 2026-05-18 | 2026-05-15 |
-| Dernière date de réponse 2026-05-29 | HD10492 SISVA 2026-05-29; HD10493 SISVA 2026-05-29 | 2026-05-15 |
-| Gouvernement a réduit les stratégies de ~70 à ~40 | Texte intégral HD10493, propres données du ministre | 2026-05-15 |
-| Déc 2025 exit: Liberia, Mozambique, Tanzanie, Zimbabwe, Bolivie | Texte intégral HD10493 | 2026-05-15 |
-| Objectif de 1% du RNB abandonné avec le soutien SD | Texte intégral HD10492 + HD10493 | 2026-05-15 |
-| Aucune évaluation d'impact réalisée | Texte intégral HD10493: "Mig veterligen har regeringen inte ens gjort någon analys" | 2026-05-15 |
+**Déclencheur** : La réponse du ministre Dousa avant le 2026-05-29 annonce soit (a) une évaluation d'impact, soit (b) ne le fait pas.
+**Si (a)** : V concède la responsabilité partielle.
+**Si (b)** : Défaillance de gouvernance confirmée ; l'opposition escalade *« Tidöregeringen bryr sig inte om världens barn »*.
 
-<!-- source-sha: 84c1a88a2df18e97bdef9c56e53f2408ac799ff4 -->
+---
+
+La semaine 21 établit la responsabilité de l'aide comme thème central de campagne à 121 jours des élections.
+
+<!-- source-sha: 6c2ffdb9c101c4f58734641eaa3d607bfe935938 -->
 
 ## Executive Brief He
 <!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/week-ahead/executive-brief_he.md -->
 
-<!-- dir: rtl -->
----
-title: "תקציר מנהלים: קיצוצי הסיוע השוודי תחת בדיקה פרלמנטרית — שבוע 21"
+<div dir="rtl">
 
-subfolder: "week-ahead"
-language: "he"
+**מחבר**: James Pether Sörling | **סיווג**: ציבורי
 
 ---
 
-# תקציר מנהלים — השבוע הקרוב: אחריות בתחום הסיוע, 2026-05-15
+### 🎯 BLUF
 
-**מחבר**: James Pether Sörling | **מזהה ריצה**: 25908189012 | **סיווג**: Public
-
----
-
-### 🎯 סיכום
-
-**ממשלת טידו השוודית עומדת בפני שני דיוני שאילתות מתוכננים (2026-05-18) על פירוק ארכיטקטורת הסיוע שלה** — HD10492 (השלכות על ילדים) ו-HD10493 (השלכות אסטרטגיות המדינה שהופסקו) — שניהם הוגשו על ידי Lotta Johnsson Fornarve (V), מופנים לשר Benjamin Dousa (M). עם בחירות ספטמבר 2026 בעוד 121 יום, וקיצוצי הסיוע מחמירים את פירוק USAID הגלובלי של טראמפ, היעדר הערכות ההשפעה של הממשלה הופך לנטל בחירות פעיל. השר Dousa חייב להשיב עד 2026-05-29. קואליציית טידו (M+KD+L+SD) כבר שרדה הצבעת תקציב שהטילה את הקיצוצים; אולם הדיון מסמן את כוונת האופוזיציה להפוך את אחריות הסיוע לסוגיית בחירות. משמעות מתוקנת: **8.3/10** [B2].
+ממשלת טידו השוודית מתמודדת עם שני דיוני שאילתות מתוכננים (2026-05-18) בנוגע לפירוק מבנה הסיוע — HD10492 (השלכות על ילדים) ו-HD10493 (השלכות של אסטרטגיות מדינה שהופסקו) — שניהם הוגשו על ידי לוטה יונסון פורנרווה (V), מכוונים לשר בנייאמין דוסה (M). עם הבחירות בספטמבר 2026 בעוד 121 ימים, כשל הממשלה בביצוע הערכות השפעה הופך לפגיעות בחירותית פעילה. השר דוסה חייב להשיב עד 2026-05-29. חשיבות מותאמת: **8.3/10** [B2].
 
 ---
 
-### 🧭 3 החלטות שתקציר זה תומך בהן
+### 🔺 הגורם המוביל הקדוקדמי
 
-1. **לפרסם**: להשתמש בשתי השאילתות כסיפור האחריות בסיוע הראשי לשבוע 21; להדגיש את ההשפעה המצטברת (קיצוצים שוודיים + טראמפ/USAID) ואת ממדי זכויות הילד.
-2. **לנטר**: לעקוב אחר תגובת השר לפני 2026-05-29; אם לא תוכרז הערכת השפעה, להסלים לניסוח "כשל אחריות ממשל" לתקופת מסע הבחירות.
-3. **מבט קדימה**: להעריך האם פגרת הקיץ הפרלמנטרית יוצרת חלון לפעולות ביצועיות נוספות בנושא סיוע ללא פיקוח פרלמנטרי.
-
----
-
-### ⚡ קריאה של 60 שניות
-
-| # | נקודה | משמעות |
-|---|-------|--------|
-| 1 | HD10492 — שאילתת V: השלכות קיצוצי הסיוע על ילדים, שר Dousa | HIGH [B2] |
-| 2 | HD10493 — שאילתת V: אסטרטגיות מדינה שהופסקו (ליבריה, מוזמביק, טנזניה, זימבבואה, בוליביה) | HIGH [B2] |
-| 3 | שני הדיונים מתוכננים ל-2026-05-18 במליאה | MEDIUM [B3] |
-| 4 | תאריך תגובה אחרון: 2026-05-29 — חלון אחריות ציבורי | HIGH [B2] |
-| 5 | לא בוצעה הערכת השפעה — הודאה עצמית של הממשלה | HIGH [B2] |
-| 6 | בחירות בעוד 121 יום — מכפיל DIW 1.5× על כל נקודות V נגד טידו | HIGH [B2] |
-| 7 | הקשר גלובלי: קיצוצי USAID האמריקאיים + קיצוצים שוודיים = משבר הומניטרי מצטבר | HIGH [B2] |
-| 8 | העודף הפיננסי של שוודיה הופך הקיצוצים לבחירה פוליטית, לא לצורך כלכלי | MEDIUM [B3] |
+**גורם**: תשובת השר דוסה עד 2026-05-29 מכריזה על (א) הערכת השפעה או (ב) לא.  
+**אם (א)**: V מודה באחריות חלקית.  
+**אם (ב)**: פגם אחריות הממשל מאושר; האופוזיציה מסלימה *"Tidöregeringen bryr sig inte om världens barn"*.
 
 ---
 
-### 🔺 הטריגר העתידי המרכזי
+שבוע 21 מקבע את אחריות הסיוע כנושא מרכזי בקמפיין עם 121 ימים לבחירות.
 
-**טריגר**: תגובת השאילתה של השר Dousa עד 2026-05-29 או (א) מכריזה על הערכת השפעה או (ב) לא.  
-**אם (א)**: V מקבלת אחריות חלקית, האופוזיציה עוברת לדרוש היפוך מחייב.  
-**אם (ב)**: פער אחריות ממשל מאושר; האופוזיציה מסלימה נרטיב מסע הבחירות "ממשלת טידו לא אכפת לה מילדי העולם."  
-**קישור PIR**: PIR-WA-01
+</div>
 
----
-
-### עוגני ראיות
-
-| טענה | ראיה | אוחזר |
-|------|------|-------|
-| שאילתה HD10492 הוגשה 2026-05-13 | dok_id HD10492, data.riksdagen.se | 2026-05-15 |
-| שאילתה HD10493 הוגשה 2026-05-12 | dok_id HD10493, data.riksdagen.se | 2026-05-15 |
-| הוכרז למליאה 2026-05-18 | סטטוס HD10492: ANM 2026-05-18 | 2026-05-15 |
-| תאריך תגובה אחרון 2026-05-29 | HD10492 SISVA 2026-05-29; HD10493 SISVA 2026-05-29 | 2026-05-15 |
-| הממשלה הפחיתה אסטרטגיות מ-~70 ל-~40 | טקסט מלא HD10493, נתוני השר עצמו | 2026-05-15 |
-| יציאה דצמבר 2025: ליבריה, מוזמביק, טנזניה, זימבבואה, בוליביה | טקסט מלא HD10493 | 2026-05-15 |
-| יעד 1% מהכנסה לאומית נטוש עם תמיכת SD | טקסט מלא HD10492 + HD10493 | 2026-05-15 |
-| לא בוצעה הערכת השפעה | טקסט מלא HD10493: "Mig veterligen har regeringen inte ens gjort någon analys" | 2026-05-15 |
-
-<!-- source-sha: 84c1a88a2df18e97bdef9c56e53f2408ac799ff4 -->
+<!-- source-sha: 6c2ffdb9c101c4f58734641eaa3d607bfe935938 -->
 
 ## Executive Brief Ja
 <!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/week-ahead/executive-brief_ja.md -->
 
-**著者**: James Pether Sörling | **実行ID**: 25908189012 | **分類**: Public
+**著者**: James Pether Sörling | **分類**: 公開
 
 ---
 
-### 🎯 要約
+### 🎯 BLUF
 
-**スウェーデンのティドー政権は、開発援助体制の解体に関して2つの質問主意書討論（2026-05-18予定）に直面している** — HD10492（子供への影響）とHD10493（廃止された国別戦略の影響） — いずれもLotta Johnsson Fornarve（V）が提出し、Benjamin Dousa大臣（M）に宛てたもの。2026年9月選挙まで121日、スウェーデンの支援削減がトランプ政権によるUSAID世界規模解体を悪化させる中、政府の影響評価不在は現役の選挙負担となりつつある。Dousa大臣は2026-05-29までに回答しなければならない。ティドー連立（M+KD+L+SD）はすでに削減を強いた予算投票を乗り切ったが、この討論は野党が支援の説明責任を選挙争点にしようとする意図を示している。調整済み重要度：**8.3/10** [B2]。
-
----
-
-### 🧭 このブリーフが支援する3つの意思決定
-
-1. **公表する**：両質問主意書を第21週の支援説明責任に関する主要記事として活用。複合効果（スウェーデン削減＋トランプ/USAID）と子供の権利の観点を強調する。
-2. **監視する**：2026-05-29までの大臣回答を追跡。影響評価が発表されない場合、選挙運動期間に向けた「ガバナンス説明責任の失敗」フレーミングに格上げする。
-3. **将来予測**：議会の夏季休会が、議会監視なしに支援に関するさらなる行政措置を取る窓口を生み出すかどうか評価する。
+スウェーデンのティドー政府は、援助アーキテクチャの解体に関する2回の予定されたインタープレーション討論（2026-05-18）に直面している — HD10492（子供への影響）とHD10493（廃止された国別戦略の影響）— 共にLotta Johnsson Fornarve（V）が提出し、Benjamin Dousa（M）大臣に宛てたもの。2026年9月の選挙まで121日を残し、政府の影響評価を実施しないことが現実の選挙キャンペーン責任問題となっている。Dousa大臣は2026-05-29までに応答しなければならない。調整された重要度：**8.3/10** [B2]。
 
 ---
 
-### ⚡ 60秒読み
+### 🔺 主要予測トリガー
 
-| # | 要点 | 重要度 |
-|---|------|--------|
-| 1 | HD10492 — V質問主意書：支援削減の子供への影響、Dousa大臣 | HIGH [B2] |
-| 2 | HD10493 — V質問主意書：廃止国別戦略（リベリア、モザンビーク、タンザニア、ジンバブエ、ボリビア） | HIGH [B2] |
-| 3 | 両討論は2026-05-18本会議に予定 | MEDIUM [B3] |
-| 4 | 大臣回答最終期限：2026-05-29 — 公開説明責任の窓口 | HIGH [B2] |
-| 5 | 影響評価なし — 政府自身の認定 | HIGH [B2] |
-| 6 | 選挙まで121日 — VのティドーへのすべてのポイントにDIW 1.5×乗数 | HIGH [B2] |
-| 7 | グローバルコンテキスト：米国USAID削減＋スウェーデン削減＝複合人道危機 | HIGH [B2] |
-| 8 | スウェーデンの財政黒字は削減を経済的必要ではなく政治的選択にしている | MEDIUM [B3] |
+**トリガー**: Dousa大臣の2026-05-29までのインタープレーション回答が（a）影響評価を発表するか（b）しない。  
+**（a）の場合**: Vは部分的な説明責任を認める。  
+**（b）の場合**: ガバナンス責任ギャップ確認；野党は選挙キャンペーンナラティブ*「Tidöregeringen bryr sig inte om världens barn」*をエスカレーションする。
 
 ---
 
-### 🔺 主要な将来起動要因
+第21週は選挙まで121日を残し、援助責任をキャンペーン中心テーマとして確立する。
 
-**起動要因**：Dousa大臣による2026-05-29までの質問回答が（a）影響評価を発表するか（b）しないか。  
-**（a）の場合**：Vが部分的説明責任を認め、野党は拘束力ある撤回要求へシフト。  
-**（b）の場合**：ガバナンス説明責任の欠陥確認。野党は選挙キャンペーンの物語「ティドー政権は世界の子供たちに無関心」を激化させる。  
-**PIRリンク**：PIR-WA-01
-
----
-
-### 証拠アンカー
-
-| 主張 | 証拠 | 取得日 |
-|------|------|--------|
-| 質問主意書HD10492提出2026-05-13 | dok_id HD10492, data.riksdagen.se | 2026-05-15 |
-| 質問主意書HD10493提出2026-05-12 | dok_id HD10493, data.riksdagen.se | 2026-05-15 |
-| 本会議2026-05-18への告知 | HD10492状態：ANM 2026-05-18 | 2026-05-15 |
-| 回答最終期限2026-05-29 | HD10492 SISVA 2026-05-29；HD10493 SISVA 2026-05-29 | 2026-05-15 |
-| 政府が戦略を~70から~40に削減 | HD10493全文、大臣自身のデータ | 2026-05-15 |
-| 2025年12月終了：リベリア、モザンビーク、タンザニア、ジンバブエ、ボリビア | HD10493全文 | 2026-05-15 |
-| SDの支援でGNIの1%目標放棄 | HD10492＋HD10493全文 | 2026-05-15 |
-| 影響評価なし | HD10493全文："Mig veterligen har regeringen inte ens gjort någon analys" | 2026-05-15 |
-
-<!-- source-sha: 84c1a88a2df18e97bdef9c56e53f2408ac799ff4 -->
+<!-- source-sha: 6c2ffdb9c101c4f58734641eaa3d607bfe935938 -->
 
 ## Executive Brief Ko
 <!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/week-ahead/executive-brief_ko.md -->
 
-**저자**: James Pether Sörling | **실행 ID**: 25908189012 | **분류**: Public
+**저자**: James Pether Sörling | **분류**: 공개
 
 ---
 
-### 🎯 핵심 요약
+### 🎯 BLUF
 
-**스웨덴 티도 정부는 개발원조 체계 해체에 관한 두 건의 질의 토론(2026-05-18 예정)에 직면해 있습니다** — HD10492(아동에 대한 영향)와 HD10493(중단된 국가 전략의 영향) — 모두 Lotta Johnsson Fornarve(V)가 제출하고 Benjamin Dousa 장관(M)에게 제기한 것입니다. 2026년 9월 선거까지 121일 남은 상황에서 스웨덴의 원조 삭감이 트럼프의 USAID 세계적 해체를 악화시키면서, 정부의 영향 평가 부재는 현실적인 선거 부담이 되고 있습니다. Dousa 장관은 2026-05-29까지 응답해야 합니다. 티도 연립(M+KD+L+SD)은 삭감을 강제한 예산 투표를 이미 통과했지만, 이번 토론은 야당이 원조 책임을 선거 쟁점으로 삼으려는 의도를 보여줍니다. 조정된 중요도: **8.3/10** [B2].
-
----
-
-### 🧭 이 브리핑이 지원하는 3가지 의사결정
-
-1. **발행**: 두 질의를 21주차 원조 책임 주요 기사로 활용. 복합 영향(스웨덴 삭감 + 트럼프/USAID)과 아동권리 측면 강조.
-2. **모니터링**: 2026-05-29 이전 장관 응답 추적. 영향 평가가 발표되지 않으면 선거운동 기간에 "거버넌스 책임 실패" 프레이밍으로 격상.
-3. **미래 전망**: 의회 여름 휴회가 의회 감시 없이 원조 관련 추가 행정 조치를 위한 창구를 만드는지 평가.
+스웨덴 티도 정부는 원조 구조 해체에 관한 두 개의 예정된 질의 토론(2026-05-18)에 직면해 있다 — HD10492(아동에 대한 영향)와 HD10493(중단된 국가 전략의 영향) — 모두 Lotta Johnsson Fornarve(V)가 제출했으며 Benjamin Dousa(M) 장관에게 전달되었다. 2026년 9월 선거까지 121일이 남은 상황에서, 정부의 영향 평가 미실시가 현실적인 선거 취약성으로 부상하고 있다. Dousa 장관은 2026-05-29까지 답변해야 한다. 조정된 중요도: **8.3/10** [B2].
 
 ---
 
-### ⚡ 60초 읽기
+### 🔺 주요 전방 트리거
 
-| # | 요점 | 중요도 |
-|---|------|--------|
-| 1 | HD10492 — V 질의: 원조 삭감의 아동 영향, Dousa 장관 | HIGH [B2] |
-| 2 | HD10493 — V 질의: 중단된 국가 전략(라이베리아, 모잠비크, 탄자니아, 짐바브웨, 볼리비아) | HIGH [B2] |
-| 3 | 두 토론 모두 2026-05-18 본회의에 예정 | MEDIUM [B3] |
-| 4 | 장관 응답 최종 기한: 2026-05-29 — 공개 책임 창구 | HIGH [B2] |
-| 5 | 영향 평가 미실시 — 정부 자체 인정 | HIGH [B2] |
-| 6 | 선거까지 121일 — V의 티도 대상 모든 항목에 DIW 1.5× 배수 | HIGH [B2] |
-| 7 | 글로벌 맥락: 미국 USAID 삭감 + 스웨덴 삭감 = 복합 인도주의 위기 | HIGH [B2] |
-| 8 | 스웨덴의 재정 흑자는 삭감을 경제적 필요가 아닌 정치적 선택으로 만듦 | MEDIUM [B3] |
+**트리거**: Dousa 장관의 2026-05-29까지 질의 답변이 (a) 영향 평가를 발표하거나 (b) 그렇지 않다.  
+**만약 (a)**: V는 부분적 책임을 인정한다.  
+**만약 (b)**: 거버넌스 책임 격차 확인; 야당이 선거 캠페인 서사 *"Tidöregeringen bryr sig inte om världens barn"*을 고조시킨다.
 
 ---
 
-### 🔺 주요 미래 촉발 요인
+21주차는 선거 121일 전 원조 책임을 핵심 캠페인 이슈로 확립한다.
 
-**촉발 요인**: Dousa 장관의 2026-05-29 이전 질의 응답이 (a) 영향 평가를 발표하거나 (b) 그렇지 않거나.  
-**(a)인 경우**: V가 부분적 책임을 인정하고 야당은 구속력 있는 철회 요구로 전환.  
-**(b)인 경우**: 거버넌스 책임 공백 확인. 야당이 선거 캠페인 서사 "티도 정부는 세계 아동에 무관심" 격화.  
-**PIR 연결**: PIR-WA-01
-
----
-
-### 증거 앵커
-
-| 주장 | 증거 | 확인일 |
-|------|------|--------|
-| 질의 HD10492 2026-05-13 제출 | dok_id HD10492, data.riksdagen.se | 2026-05-15 |
-| 질의 HD10493 2026-05-12 제출 | dok_id HD10493, data.riksdagen.se | 2026-05-15 |
-| 본회의 2026-05-18 예정 발표 | HD10492 상태: ANM 2026-05-18 | 2026-05-15 |
-| 응답 최종 기한 2026-05-29 | HD10492 SISVA 2026-05-29; HD10493 SISVA 2026-05-29 | 2026-05-15 |
-| 정부가 전략을 ~70개에서 ~40개로 축소 | HD10493 전문, 장관 자체 데이터 | 2026-05-15 |
-| 2025년 12월 종료: 라이베리아, 모잠비크, 탄자니아, 짐바브웨, 볼리비아 | HD10493 전문 | 2026-05-15 |
-| SD 지지로 GNI 1% 목표 포기 | HD10492 + HD10493 전문 | 2026-05-15 |
-| 영향 평가 미실시 | HD10493 전문: "Mig veterligen har regeringen inte ens gjort någon analys" | 2026-05-15 |
-
-<!-- source-sha: 84c1a88a2df18e97bdef9c56e53f2408ac799ff4 -->
+<!-- source-sha: 6c2ffdb9c101c4f58734641eaa3d607bfe935938 -->
 
 ## Executive Brief Nl
 <!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/week-ahead/executive-brief_nl.md -->
 
-**Auteur**: James Pether Sörling | **Run-ID**: 25908189012 | **Classificatie**: Public
-
 ---
 
 ### 🎯 BLUF
 
-**Zwedens Tidö-regering staat voor twee geplande interpellatiedebatren (2026-05-18) over haar ontmanteling van de hulparchitectuur** — HD10492 (gevolgen voor kinderen) en HD10493 (gevolgen van beëindigde landenstrategieën) — beide ingediend door Lotta Johnsson Fornarve (V), gericht aan minister Benjamin Dousa (M). Met de verkiezingen van september 2026 over 121 dagen en de bezuinigingen op hulp die de mondiale ontmanteling van USAID door Trump verergeren, wordt het nalaten van de regering om impactbeoordelingen uit te voeren een actieve verkiezingsverplichting. Minister Dousa moet voor 2026-05-29 antwoorden. De Tidö-coalitie (M+KD+L+SD) heeft al een begrotingsstemming overleefd die de bezuinigingen oplegde; maar het debat signaleert de intentie van de oppositie om hulpverantwoording tot een verkiezingskwestie te maken. Gecorrigeerde betekenis: **8,3/10** [B2].
+De Zweedse Tidö-regering staat voor twee geplande interpellationdebatten (2026-05-18) over de ontmanteling van de hulparchitectuur — HD10492 (gevolgen voor kinderen) en HD10493 (gevolgen van beëindigde landstrategieën) — beide ingediend door Lotta Johnsson Fornarve (V), gericht aan minister Benjamin Dousa (M). Met de verkiezingen van september 2026 over 121 dagen wordt het ontbreken van impactbeoordelingen een actieve electorale kwetsbaarheid. Minister Dousa moet uiterlijk 2026-05-29 antwoorden. Aangepaste betekenis: **8,3/10** [B2].
 
 ---
 
-### 🧭 3 Beslissingen die deze Samenvatting ondersteunt
+### 🧭 3 beslissingen die dit overzicht ondersteunt
 
-1. **Publiceren**: Beide interpellaties gebruiken als het hoofdverhaal over hulpverantwoording voor week 21; het gecombineerde effect (Zweedse bezuinigingen + Trump/USAID) en kinderrechtendimensies benadrukken.
-2. **Bewaken**: Ministeriële reactie volgen voor 2026-05-29; als er geen impactbeoordeling wordt aangekondigd, escaleren naar "governance-verantwoording­sfalen"-framing voor de verkiezingscampagneperiode.
-3. **Vooruitkijken**: Beoordelen of het parlementaire zomerreces een venster creëert voor aanvullende uitvoeringsmaatregelen over hulp zonder parlementair toezicht.
-
----
-
-### ⚡ 60-seconden Lezen
-
-| # | Punt | Betekenis |
-|---|------|-----------|
-| 1 | HD10492 — V interpellatie: gevolgen van hulpbezuinigingen voor kinderen, minister Dousa | HIGH [B2] |
-| 2 | HD10493 — V interpellatie: beëindigde landenstrategieën (Liberia, Mozambique, Tanzania, Zimbabwe, Bolivia) | HIGH [B2] |
-| 3 | Beide debatten gepland op 2026-05-18 in de plenaire vergadering | MEDIUM [B3] |
-| 4 | Laatste datum ministerieel antwoord: 2026-05-29 — publiek verantwoordingsvenster | HIGH [B2] |
-| 5 | Geen impactbeoordeling uitgevoerd — eigen toegeving van de regering | HIGH [B2] |
-| 6 | Verkiezingen over 121 dagen — 1,5× DIW-multiplicator op alle V tegen Tidö-punten | HIGH [B2] |
-| 7 | Mondiale context: VS USAID-bezuinigingen + Zweedse bezuinigingen = gecombineerde humanitaire crisis | HIGH [B2] |
-| 8 | Zweedens financieel overschot maakt bezuinigingen tot een politieke keuze, geen economische noodzaak | MEDIUM [B3] |
+1. **Publiceren**: Beide interpellaties als hoofdverhaal over verantwoording inzake hulp voor week 21 gebruiken.
+2. **Bewaken**: Ministerreactie voor 2026-05-29 bijhouden; escaleren naar 'governance-verantwoordingsgebrek' als geen impactbeoordeling wordt aangekondigd.
+3. **Doorsturen**: Beoordelen of het parlementaire zomerreces een venster creëert voor verdere uitvoerende actie.
 
 ---
 
-### 🔺 Belangrijkste Vooruitkijkende Trigger
+### ⚡ 60-seconden lezing
 
-**Trigger**: Minister Dousas interpellatie-antwoord op of voor 2026-05-29 kondigt ofwel (a) een impactbeoordeling aan of (b) doet dat niet.  
-**Als (a)**: V erkent gedeeltelijke verantwoording, oppositie verschuift naar eis voor bindende omkering.  
-**Als (b)**: Bevestigd governance-verantwoordingsgat; oppositie escaleert verkiezingscampagne-narratief "De Tidö-regering bekommert zich niet om de kinderen van de wereld."  
-**PIR-link**: PIR-WA-01
+| # | Item | Significance |
+|---|------|-------------|
+| 1 | HD10492 — V-interpellatie: gevolgen van bezuinigingen op hulp voor kinderen, minister Dousa | HIGH [B2] |
+| 2 | HD10493 — V-interpellatie: beëindigde landstrategieën (Liberia, Mozambique, Tanzania, Zimbabwe, Bolivia) | HIGH [B2] |
+| 3 | Beide debatten gepland op 2026-05-18 in de plenaire vergadering | HIGH [B2] |
+| 4 | Uiterste datum voor ministerantwoord: 2026-05-29 | HIGH [B2] |
+| 5 | Geen impactbeoordeling uitgevoerd — eigen erkenning van de regering | HIGH [B2] |
+| 6 | Verkiezingen over 121 dagen — 1,5× DIW-multiplicator | HIGH [B2] |
+| 7 | Wereldwijde context: VS USAID-bezuinigingen + Zweedse bezuinigingen = samengestelde humanitaire crisis | HIGH [B2] |
+| 8 | Zweden's begrotingsoverschot maakt bezuinigingen een politieke keuze, geen economische noodzaak | HIGH [B2] |
 
 ---
 
-### Bewijs­ankers
+### 🔺 Belangrijkste vooruitziende trigger
 
-| Bewering | Bewijs | Opgehaald |
-|----------|--------|-----------|
-| Interpellatie HD10492 ingediend 2026-05-13 | dok_id HD10492, data.riksdagen.se | 2026-05-15 |
-| Interpellatie HD10493 ingediend 2026-05-12 | dok_id HD10493, data.riksdagen.se | 2026-05-15 |
-| Aangekondigd voor plenaire vergadering 2026-05-18 | HD10492 status: ANM 2026-05-18 | 2026-05-15 |
-| Laatste antwoorddatum 2026-05-29 | HD10492 SISVA 2026-05-29; HD10493 SISVA 2026-05-29 | 2026-05-15 |
-| Regering reduceerde strategieën van ~70 naar ~40 | HD10493 volledige tekst, eigen ministergegevens | 2026-05-15 |
-| Dec 2025 exit: Liberia, Mozambique, Tanzania, Zimbabwe, Bolivia | HD10493 volledige tekst | 2026-05-15 |
-| 1% BBN-doel opgegeven met SD-steun | HD10492 + HD10493 volledige tekst | 2026-05-15 |
-| Geen impactbeoordeling uitgevoerd | HD10493 volledige tekst: "Mig veterligen har regeringen inte ens gjort någon analys" | 2026-05-15 |
+**Trigger**: Minister Dousas antwoord vóór 2026-05-29 kondigt ofwel (a) een impactbeoordeling aan of (b) niet.
+**Als (a)**: V geeft gedeeltelijke verantwoording toe.
+**Als (b)**: Bevestigd governance-verantwoordingsgebrek; oppositie escaleert *«Tidöregeringen bryr sig inte om världens barn»*.
 
-<!-- source-sha: 84c1a88a2df18e97bdef9c56e53f2408ac799ff4 -->
+---
+
+Week 21 vestigt verantwoording over hulp als centraal campagnethema met 121 dagen tot de verkiezingen.
+
+<!-- source-sha: 6c2ffdb9c101c4f58734641eaa3d607bfe935938 -->
 
 ## Executive Brief No
 <!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/week-ahead/executive-brief_no.md -->
 
-**Forfatter**: James Pether Sörling | **Kjørenummer**: 25908189012 | **Klassifisering**: Public
-
 ---
 
 ### 🎯 BLUF
 
-**Sveriges Tidö-regjering møter to planlagte interpellasjonsdebatter (2026-05-18) om sin avmontering av bistandsarkitekturen** — HD10492 (konsekvenser for barn) og HD10493 (konsekvenser av avsluttede landsstrategier) — begge innlevert av Lotta Johnsson Fornarve (V), adressert til minister Benjamin Dousa (M). Med valget i september 2026 om 121 dager og bistandskuttene som forverrer Trumps globale USAID-avvikling, er regjeringens unnlatelse av å gjennomføre konsekvensanalyser i ferd med å bli et levende valgansvar. Minister Dousa må svare innen 2026-05-29. Tidö-koalisjonen (M+KD+L+SD) har allerede overlevd en budsjettavstemmning som påla kuttene; men debatten signaliserer opposisjonens intensjon om å gjøre bistandsansvar til et valgspørsmål. Justert signifikans: **8,3/10** [B2].
+Sveriges Tidö-regjering møter to planlagte interpellasjonsdebatter (2026-05-18) om sin nedbygging av bistandsarkitekturen — HD10492 (konsekvenser for barn) og HD10493 (konsekvenser av avsluttede landstrategier) — begge innlevert av Lotta Johnsson Fornarve (V), adressert til minister Benjamin Dousa (M). Med valget i september 2026 om 121 dager er regjeringens manglende konsekvensanalyse i ferd med å bli en aktiv valgkampssårbarhet. Minister Dousa må svare innen 2026-05-29. Justert betydning: **8,3/10** [B2].
 
 ---
 
-### 🧭 3 Beslutninger dette PM støtter
+### 🧭 3 beslutninger dette brevet støtter
 
-1. **Publiser**: Bruk begge interpellasjonene som den ledende bistandsansvarshistorien for uke 21; vektlegg sammensatt effekt (svenske kutt + Trump/USAID) og barnerettighets­dimensjoner.
-2. **Overvåk**: Følg ministeriell respons innen 2026-05-29; hvis ingen konsekvensanalyse annonseres, eskalér til "styringsansvarssvikt"-rammesetting for valgperioden.
-3. **Fremover**: Vurder om parlamentarisk sommerferie skaper et vindu for ytterligere forvaltnings­tiltak om bistand uten parlamentarisk granskning.
-
----
-
-### ⚡ 60-sekunders Lesning
-
-| # | Post | Signifikans |
-|---|------|------------|
-| 1 | HD10492 — V interpellasjon: konsekvenser av bistandskutt for barn, minister Dousa | HIGH [B2] |
-| 2 | HD10493 — V interpellasjon: avsluttede landsstrategier (Liberia, Mosambik, Tanzania, Zimbabwe, Bolivia) | HIGH [B2] |
-| 3 | Begge debatter planlagt 2026-05-18 i kammeret | MEDIUM [B3] |
-| 4 | Siste ministeriell svarsdato: 2026-05-29 — offentlig ansvars­periode | HIGH [B2] |
-| 5 | Ingen konsekvensanalyse gjennomført — regjeringens eget innrømmelse | HIGH [B2] |
-| 6 | Valg om 121 dager — 1,5× DIW-multiplikator på alle V mot Tidö-poster | HIGH [B2] |
-| 7 | Globalt sammenheng: USA USAID-kutt + svenske kutt = sammensatt humanitær krise | HIGH [B2] |
-| 8 | Sveriges finansielle overskudd gjør kuttene til et politisk valg, ikke økonomisk nødvendighet | MEDIUM [B3] |
+1. **Publiser**: Bruk begge interpellasjonene som den ledende bistandsansvarssaken for uke 21.
+2. **Overvåk**: Følg ministersvaret innen 2026-05-29; eskaler til 'styringsansvarsbrist' om ingen konsekvensanalyse annonseres.
+3. **Videresend**: Vurder om parlamentarisk sommerpause skaper et vindu for ytterligere eksekutiv handling uten parlamentarisk granskning.
 
 ---
 
-### 🔺 Topp Fremadrettet Utløser
+### ⚡ 60-sekunders lesning
 
-**Utløser**: Minister Dousas interpellasjons­svar på eller innen 2026-05-29 enten (a) annonserer en konsekvensanalyse eller (b) unnlater dette.  
-**Hvis (a)**: V erkjenner delvis ansvar, opposisjon skifter til å kreve bindende tilbakestilling.  
-**Hvis (b)**: Bekreftet styringsansvarsgap; opposisjon eskalerer valgkampansje-narrativ "Tidö-regjeringen bryr seg ikke om verdens barn."  
-**PIR-lenke**: PIR-WA-01
+| # | Item | Significance |
+|---|------|-------------|
+| 1 | HD10492 — V's interpellasjon: bistandskuttets konsekvenser for barn, minister Dousa | HIGH [B2] |
+| 2 | HD10493 — V's interpellasjon: avsluttede landstrategier (Liberia, Mosambik, Tanzania, Zimbabwe, Bolivia) | HIGH [B2] |
+| 3 | Begge debatter planlagt 2026-05-18 i kammeret | HIGH [B2] |
+| 4 | Siste dato for ministersvar: 2026-05-29 — offentlig ansvarsvindu | HIGH [B2] |
+| 5 | Ingen konsekvensanalyse gjennomført — regjeringens egne innrømmelse | HIGH [B2] |
+| 6 | Valg om 121 dager — 1,5× DIW-multiplikator | HIGH [B2] |
+| 7 | Globalt kontekst: US USAID-kutt + svenske kutt = sammensatt humanitær krise | HIGH [B2] |
+| 8 | Sveriges finansoverskudd gjør kuttene til et politisk valg, ikke en økonomisk nødvendighet | HIGH [B2] |
 
 ---
 
-### Bevisankere
+### 🔺 Topp fremdriftsutløser
 
-| Påstand | Bevis | Hentet |
-|---------|-------|--------|
-| Interpellasjon HD10492 innlevert 2026-05-13 | dok_id HD10492, data.riksdagen.se | 2026-05-15 |
-| Interpellasjon HD10493 innlevert 2026-05-12 | dok_id HD10493, data.riksdagen.se | 2026-05-15 |
-| Annonsert for kammeret 2026-05-18 | HD10492 status: ANM 2026-05-18 | 2026-05-15 |
-| Siste svarsdato 2026-05-29 | HD10492 SISVA 2026-05-29; HD10493 SISVA 2026-05-29 | 2026-05-15 |
-| Regjering reduserte strategier fra ~70 til ~40 | HD10493 fulltekst, ministerens egne data | 2026-05-15 |
-| Des 2025 exit: Liberia, Mosambik, Tanzania, Zimbabwe, Bolivia | HD10493 fulltekst | 2026-05-15 |
-| 1% BNI-mål oppgitt med SD-støtte | HD10492 + HD10493 fulltekst | 2026-05-15 |
-| Ingen konsekvensanalyse gjennomført | HD10493 fulltekst: "Mig veterligen har regeringen inte ens gjort någon analys" | 2026-05-15 |
+**Utløser**: Minister Dousas svar innen 2026-05-29 enten (a) annonserer en konsekvensanalyse eller (b) unnlater å gjøre det.
+**Hvis (a)**: V innrømmer delvis ansvarlighet.
+**Hvis (b)**: Bekreftet styringsansvarsbrist; opposisjonen eskalerer *"Tidöregeringen bryr sig inte om världens barn"*.
 
-<!-- source-sha: 84c1a88a2df18e97bdef9c56e53f2408ac799ff4 -->
+---
+
+Uke 21 etablerer bistandsansvarlighet som en sentral valgkampssak med 121 dager igjen til valget.
+
+<!-- source-sha: 6c2ffdb9c101c4f58734641eaa3d607bfe935938 -->
 
 ## Executive Brief Sv
 <!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/week-ahead/executive-brief_sv.md -->
 
-**Författare**: James Pether Sörling | **Körnings-ID**: 25908189012 | **Klassificering**: Public
-
 ---
 
 ### 🎯 BLUF
 
-**Sveriges Tidöregering möter två planerade interpellationsdebatter (2026-05-18) om sitt nedmonterande av biståndsarkitekturen** — HD10492 (konsekvenser för barn) och HD10493 (konsekvenser av avslutade landstrategier) — båda inlämnade av Lotta Johnsson Fornarve (V), adresserade till minister Benjamin Dousa (M). Med riksdagsvalet i september 2026 om 121 dagar och biståndsminskningarna som förvärrar Trumps USAID-avveckling globalt, håller regeringens underlåtenhet att genomföra konsekvensbedömningar på att bli ett levande kampanjansvar. Minister Dousa måste svara senast 2026-05-29. Tidökoalitionen (M+KD+L+SD) har redan överlevt en budgetomröstning som påtvingade nedskärningarna; men debatten signalerar oppositionens avsikt att göra biståndsansvar till en valfråga. Justifierad signifikans: **8,3/10** [B2].
+Sveriges Tidö-regering möter två planerade interpellationsdebatter (2026-05-18) om sin nedmontering av biståndsarkitekturen — HD10492 (konsekvenser för barn) och HD10493 (konsekvenser av avvecklade landstrategier) — båda inlämnade av Lotta Johnsson Fornarve (V), adresserade till minister Benjamin Dousa (M). Med valet i september 2026 om 121 dagar och biståndsnedskärningarna som förstärker Trumps USAID-avveckling globalt, håller regeringens misslyckande att genomföra konsekvensanalyser på att bli en aktiv valansvarsfråga. Minister Dousa måste svara senast 2026-05-29. Justerad signifikans: **8,3/10** [B2].
 
 ---
 
-### 🧭 3 Beslut detta PM stöder
+### 🧭 Tre beslut detta brev stöder
 
-1. **Publicera**: Använd båda interpellationerna som den ledande biståndsansvarshistorien för vecka 21; betona sammansatt effekt (svenska nedskärningar + Trump/USAID) och barnrättsdimensioner.
-2. **Bevaka**: Följ ministeriellt svar senast 2026-05-29; om ingen konsekvensbedömning annonseras, eskalera till "styrningsansvarsmisslyckande"-framing för valperioden.
-3. **Framåt**: Bedöm om parlamentarisk sommarsemester skapar ett fönster för ytterligare verkställighetsåtgärder om bistånd utan parlamentarisk granskning.
+1. **Publicera**: Sätt båda interpellationerna som ledande biståndsansvarsstoria för vecka 21; betona sammansatt effekt (svenska nedskärningar + Trump/USAID) och barnrättsdimensioner.
+2. **Bevaka**: Följ ministersvaret senast 2026-05-29; om ingen konsekvensanalys annonseras, eskalera till ramverket 'styrningsansvarsbrist' för valperioden.
+3. **Vidarebefordra**: Bedöm om parlamentets sommaruppehåll skapar ett fönster för ytterligare exekutiv handling om bistånd utan parlamentarisk granskning.
 
 ---
 
 ### ⚡ 60-sekunders läsning
 
-| # | Post | Signifikans |
-|---|------|------------|
-| 1 | HD10492 — V interpellation: konsekvenser av biståndsminskningar för barn, minister Dousa | HIGH [B2] |
-| 2 | HD10493 — V interpellation: avslutade landstrategier (Liberia, Moçambique, Tanzania, Zimbabwe, Bolivia) | HIGH [B2] |
-| 3 | Båda debatterna planerade 2026-05-18 i kammaren | MEDIUM [B3] |
-| 4 | Sista ministeriellt svarsdatum: 2026-05-29 — offentligt ansvarsperiod | HIGH [B2] |
-| 5 | Ingen konsekvensbedömning genomförd — regeringens egna medgivande | HIGH [B2] |
-| 6 | Val om 121 dagar — 1,5× DIW-multiplikator på alla V mot Tidö-poster | HIGH [B2] |
+| # | Item | Significance |
+|---|------|-------------|
+| 1 | HD10492 — V:s interpellation: konsekvenser för barn av biståndsskärningarna, minister Dousa | HIGH [B2] |
+| 2 | HD10493 — V:s interpellation: avvecklade landstrategier (Liberia, Moçambique, Tanzania, Zimbabwe, Bolivia) | HIGH [B2] |
+| 3 | Båda debatterna planerade 2026-05-18 i kammaren | HIGH [B2] |
+| 4 | Sista datum för ministersvar: 2026-05-29 — offentligt ansvarsfönster | HIGH [B2] |
+| 5 | Ingen konsekvensanalys genomförd — regeringens egna erkännande | HIGH [B2] |
+| 6 | Val om 121 dagar — 1,5× DIW-multiplikator på alla V kontra Tidö-poster | HIGH [B2] |
 | 7 | Globalt sammanhang: USA USAID-nedskärningar + svenska nedskärningar = sammansatt humanitär kris | HIGH [B2] |
-| 8 | Sveriges finansiella överskott gör nedskärningarna till ett politiskt val, inte ekonomisk nödvändighet | MEDIUM [B3] |
+| 8 | Sveriges finansöverskott gör nedskärningarna till ett politiskt val, inte en ekonomisk nödvändighet | HIGH [B2] |
 
 ---
 
-### 🔺 Topp framåtutlösare
+### 🔺 Topp framåtsignal
 
-**Utlösare**: Minister Dousas interpellationssvar den eller före 2026-05-29 antingen (a) tillkännager en konsekvensbedömning eller (b) misslyckas med det.  
-**Om (a)**: V medger delvis ansvarsskyldighet, opposition skiftar till att kräva bindande återvändande.  
-**Om (b)**: Bekräftat styrningsansvarsgap; opposition eskalerar valkampanjsnarrativ "Tidöregeringen bryr sig inte om världens barn."  
-**PIR-länk**: PIR-WA-01
+**Signal**: Minister Dousas interpellationssvar senast 2026-05-29 antingen (a) annonserar en konsekvensanalys eller (b) misslyckas med det.
+**Om (a)**: V medger delvis ansvarsskyldighet, oppositionen skiftar till att kräva bindande omvändning.
+**Om (b)**: Bekräftad styrningsansvarsbrist; oppositionen eskalerar valnarrativet *"Tidöregeringen bryr sig inte om världens barn"*.
 
 ---
 
-### Bevisankare
+Vecka 21 etablerar biståndsskyldighet som central valfråga med 121 dagar kvar till valet.
 
-| Påstående | Bevis | Hämtad |
-|-----------|-------|--------|
-| Interpellation HD10492 inlämnad 2026-05-13 | dok_id HD10492, data.riksdagen.se | 2026-05-15 |
-| Interpellation HD10493 inlämnad 2026-05-12 | dok_id HD10493, data.riksdagen.se | 2026-05-15 |
-| Annonserad för kammaren 2026-05-18 | HD10492 status: ANM 2026-05-18 | 2026-05-15 |
-| Sista svarsdatum 2026-05-29 | HD10492 SISVA 2026-05-29; HD10493 SISVA 2026-05-29 | 2026-05-15 |
-| Regering minskade strategier från ~70 till ~40 | HD10493 fulltext, ministerns egna data | 2026-05-15 |
-| Dec 2025 exit: Liberia, Moçambique, Tanzania, Zimbabwe, Bolivia | HD10493 fulltext | 2026-05-15 |
-| 1% BNI-mål övergiven med SD-stöd | HD10492 + HD10493 fulltext | 2026-05-15 |
-| Ingen konsekvensbedömning genomförd | HD10493 fulltext: "Mig veterligen har regeringen inte ens gjort någon analys" | 2026-05-15 |
-
-<!-- source-sha: 84c1a88a2df18e97bdef9c56e53f2408ac799ff4 -->
+<!-- source-sha: 6c2ffdb9c101c4f58734641eaa3d607bfe935938 -->
 
 ## Executive Brief Zh
 <!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-15/week-ahead/executive-brief_zh.md -->
 
-**作者**: James Pether Sörling | **运行ID**: 25908189012 | **分类**: Public
+**作者**: James Pether Sörling | **密级**: 公开
 
 ---
 
-### 🎯 核心摘要
+### 🎯 BLUF
 
-**瑞典蒂多政府面临两场计划中的质询辩论（2026-05-18），涉及其对援助体系的拆解** — HD10492（对儿童的影响）和HD10493（已终止国别战略的影响） — 均由Lotta Johnsson Fornarve（V）提交，针对Benjamin Dousa部长（M）。距2026年9月选举还有121天，瑞典削减援助与特朗普全球拆解USAID的行动相叠加，政府未开展影响评估正成为现实的选举负担。Dousa部长须于2026-05-29之前回应。蒂多联盟（M+KD+L+SD）已通过了强制削减的预算投票；但此次辩论表明反对党有意将援助问责作为选举议题。调整后重要性：**8.3/10** [B2]。
-
----
-
-### 🧭 本简报支持的3项决策
-
-1. **发布**：以两项质询作为第21周援助问责的主要报道；突出复合效应（瑞典削减+特朗普/USAID）和儿童权利维度。
-2. **监测**：追踪2026-05-29前的部长回应；若未宣布影响评估，将"治理问责失败"框架升级用于选举竞选期间。
-3. **前瞻**：评估议会夏休期是否为政府提供了在没有议会监督的情况下采取额外援助行动的窗口。
+瑞典蒂多政府面临两场预定的质询辩论（2026-05-18），内容涉及援助架构的拆解——HD10492（对儿童的影响）和HD10493（停止的国家战略的影响）——均由Lotta Johnsson Fornarve（V）提交，致Benjamin Dousa（M）部长。距2026年9月大选还有121天，政府未进行影响评估正成为现实的竞选包袱。Dousa部长必须在2026-05-29前答复。调整后的重要性：**8.3/10** [B2]。
 
 ---
 
-### ⚡ 60秒速读
+### 🔺 主要前瞻触发点
 
-| # | 要点 | 重要度 |
-|---|------|--------|
-| 1 | HD10492 — V质询：援助削减对儿童的影响，Dousa部长 | HIGH [B2] |
-| 2 | HD10493 — V质询：已终止的国别战略（利比里亚、莫桑比克、坦桑尼亚、津巴布韦、玻利维亚） | HIGH [B2] |
-| 3 | 两场辩论均定于2026-05-18全体会议 | MEDIUM [B3] |
-| 4 | 部长回应最后期限：2026-05-29 — 公开问责窗口 | HIGH [B2] |
-| 5 | 未开展影响评估 — 政府自认 | HIGH [B2] |
-| 6 | 距选举121天 — V对抗蒂多的所有要点均有DIW 1.5×乘数 | HIGH [B2] |
-| 7 | 全球背景：美国USAID削减+瑞典削减=复合人道主义危机 | HIGH [B2] |
-| 8 | 瑞典财政盈余使削减成为政治选择而非经济必要 | MEDIUM [B3] |
+**触发点**：Dousa部长在2026-05-29前的质询答复是否（a）宣布进行影响评估或（b）未能做到。  
+**如果(a)**：V承认部分问责。  
+**如果(b)**：确认治理问责空白；反对派升级竞选叙事*"Tidöregeringen bryr sig inte om världens barn"*。
 
 ---
 
-### 🔺 主要前瞻触发因素
+第21周在距选举121天时将援助问责确立为核心竞选议题。
 
-**触发因素**：Dousa部长2026-05-29前的质询回应是否（a）宣布影响评估或（b）不宣布。  
-**若（a）**：V承认部分问责，反对党转向要求具有约束力的撤回。  
-**若（b）**：治理问责缺口确认；反对党升级选举竞选叙事"蒂多政府不关心世界儿童"。  
-**PIR关联**：PIR-WA-01
-
----
-
-### 证据锚点
-
-| 主张 | 证据 | 获取时间 |
-|------|------|---------|
-| 质询HD10492于2026-05-13提交 | dok_id HD10492, data.riksdagen.se | 2026-05-15 |
-| 质询HD10493于2026-05-12提交 | dok_id HD10493, data.riksdagen.se | 2026-05-15 |
-| 宣布于2026-05-18全体会议 | HD10492状态：ANM 2026-05-18 | 2026-05-15 |
-| 回应最后期限2026-05-29 | HD10492 SISVA 2026-05-29；HD10493 SISVA 2026-05-29 | 2026-05-15 |
-| 政府将战略从约70项减至约40项 | HD10493全文，部长自有数据 | 2026-05-15 |
-| 2025年12月退出：利比里亚、莫桑比克、坦桑尼亚、津巴布韦、玻利维亚 | HD10493全文 | 2026-05-15 |
-| 在SD支持下放弃GNI 1%目标 | HD10492+HD10493全文 | 2026-05-15 |
-| 未开展影响评估 | HD10493全文："Mig veterligen har regeringen inte ens gjort någon analys" | 2026-05-15 |
-
-<!-- source-sha: 84c1a88a2df18e97bdef9c56e53f2408ac799ff4 -->
+<!-- source-sha: 6c2ffdb9c101c4f58734641eaa3d607bfe935938 -->
 
 ## Analysis Artifact Coverage Report
 
