@@ -7,6 +7,7 @@ import { LANGUAGE_META } from './sitemap-html/i18n.js';
 import { chromeStrings } from './render-lib/chrome-i18n.js';
 import { buildHeaderHtml } from './render-lib/chrome/header.js';
 import type { BreadcrumbItem } from './render-lib/chrome/types.js';
+import { enhanceStaticPageHead } from './static-pages-seo-head.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -308,19 +309,38 @@ for (const target of targets()) {
   if (!fs.existsSync(absolute)) continue;
   const prefix = pathPrefix(target.file);
   const before = fs.readFileSync(absolute, 'utf8');
+
+  // SEO `<head>` enhancement — runs FOR ALL static landing pages
+  // regardless of whether the legacy chrome guard below short-circuits.
+  // The previous EN-only `<meta name="keywords">` leak was identical on
+  // all 14 hreflang siblings; this pass localizes per language, adds
+  // og:locale matrix + Twitter Card + JSON-LD Speakable. Pure /
+  // idempotent so re-running is safe. See
+  // `scripts/static-pages-seo-head.ts` for the rationale and
+  // `tests/static-pages-seo.test.ts` for the regression matrix.
+  const seoEnhanced = enhanceStaticPageHead({
+    html: before,
+    lang: target.lang,
+    family: target.family,
+  });
+  if (seoEnhanced !== before) {
+    fs.writeFileSync(absolute, seoEnhanced, 'utf8');
+    changed++;
+  }
+
   // Skip the legacy chrome pass entirely for pages that have already been
   // migrated to the modern `rm-site-header` shape — otherwise the legacy
   // pass re-injects `site-header-nav` / `site-language-switcher` on every
   // re-run of the prebuild chain.
-  if (/class="rm-site-header"/.test(before)) continue;
-  let after = ensureStylesheet(before, prefix);
+  if (/class="rm-site-header"/.test(seoEnhanced)) continue;
+  let after = ensureStylesheet(seoEnhanced, prefix);
   after = normalizeApiLinks(after);
   after = replaceFooter(after, prefix, target.family, target.lang);
   after = ensureLanguageSwitcher(after, prefix, target.family, target.lang);
   if (target.family === 'home') {
     after = replaceHero(after, target.lang);
   }
-  if (after !== before) {
+  if (after !== seoEnhanced) {
     fs.writeFileSync(absolute, after, 'utf8');
     changed++;
   }
