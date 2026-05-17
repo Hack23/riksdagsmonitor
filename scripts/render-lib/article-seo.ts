@@ -19,23 +19,228 @@ import { LANGUAGE_META } from '../sitemap-html/index.js';
 const DESCRIPTION_HARD_MAX = 200;
 const KEYWORD_MAX = 24;
 
-const CORE_KEYWORDS: readonly string[] = [
-  'Riksdagsmonitor',
-  'Swedish Parliament',
-  'Riksdag',
-  'political intelligence',
-  'OSINT',
-  'Swedish politics',
-  'democratic transparency',
-];
+/**
+ * Per-language "core keyword" set — semantically identical to the English
+ * `CORE_KEYWORDS` list (`Riksdagsmonitor`, `Swedish Parliament`,
+ * `Riksdag`, `political intelligence`, `OSINT`, `Swedish politics`,
+ * `democratic transparency`) but translated into native terminology for
+ * each of the 14 supported languages. `Riksdagsmonitor` (the platform
+ * brand) and the acronym `OSINT` stay verbatim across languages — they
+ * are proper nouns / international acronyms and translating them would
+ * dilute brand SERP signal. Everything else is native.
+ *
+ * This replaces the previous single English `CORE_KEYWORDS` constant
+ * that leaked EN tokens (`Swedish Parliament`, `political intelligence`,
+ * `democratic transparency`) into the keyword string of every non-EN
+ * article page — diluting per-language SERP signal across all 13
+ * non-English locales. See `seo-metadata-contract.md` §4 (per-language
+ * charset budgets) for the editorial rule.
+ *
+ * Native-term sources (referenced in
+ * `scripts/translation-dictionary-*.ts`):
+ *  - Swedish: native Riksdag terminology
+ *  - German: `Schwedisches Parlament` / `Reichstag` (Riksdag) — the
+ *    German-language convention used by the Federal Foreign Office.
+ *  - Arabic / Hebrew: `الريكسداغ` / `ריקסדאג` — the Latin transliteration
+ *    that Riksdagen itself uses in its multilingual outreach.
+ *  - CJK: native equivalents that Google CJK indexers recognise as
+ *    political-intelligence terminology.
+ */
+const LANG_CORE_KEYWORDS: Readonly<Record<Language, readonly string[]>> = {
+  en: [
+    'Riksdagsmonitor',
+    'Swedish Parliament',
+    'Riksdag',
+    'political intelligence',
+    'OSINT',
+    'Swedish politics',
+    'democratic transparency',
+  ],
+  sv: [
+    'Riksdagsmonitor',
+    'Sveriges riksdag',
+    'Riksdagen',
+    'politisk underrättelse',
+    'OSINT',
+    'svensk politik',
+    'demokratisk transparens',
+  ],
+  da: [
+    'Riksdagsmonitor',
+    'Sveriges rigsdag',
+    'Riksdagen',
+    'politisk efterretning',
+    'OSINT',
+    'svensk politik',
+    'demokratisk gennemsigtighed',
+  ],
+  no: [
+    'Riksdagsmonitor',
+    'Sveriges riksdag',
+    'Riksdagen',
+    'politisk etterretning',
+    'OSINT',
+    'svensk politikk',
+    'demokratisk åpenhet',
+  ],
+  fi: [
+    'Riksdagsmonitor',
+    'Ruotsin valtiopäivät',
+    'Riksdag',
+    'poliittinen tiedustelu',
+    'OSINT',
+    'Ruotsin politiikka',
+    'demokraattinen läpinäkyvyys',
+  ],
+  de: [
+    'Riksdagsmonitor',
+    'Schwedisches Parlament',
+    'Reichstag',
+    'politische Aufklärung',
+    'OSINT',
+    'schwedische Politik',
+    'demokratische Transparenz',
+  ],
+  fr: [
+    'Riksdagsmonitor',
+    'Parlement suédois',
+    'Riksdag',
+    'renseignement politique',
+    'OSINT',
+    'politique suédoise',
+    'transparence démocratique',
+  ],
+  es: [
+    'Riksdagsmonitor',
+    'Parlamento sueco',
+    'Riksdag',
+    'inteligencia política',
+    'OSINT',
+    'política sueca',
+    'transparencia democrática',
+  ],
+  nl: [
+    'Riksdagsmonitor',
+    'Zweeds parlement',
+    'Riksdag',
+    'politieke inlichtingen',
+    'OSINT',
+    'Zweedse politiek',
+    'democratische transparantie',
+  ],
+  ar: [
+    'Riksdagsmonitor',
+    'البرلمان السويدي',
+    'الريكسداغ',
+    'استخبارات سياسية',
+    'OSINT',
+    'السياسة السويدية',
+    'الشفافية الديمقراطية',
+  ],
+  he: [
+    'Riksdagsmonitor',
+    'הפרלמנט השוודי',
+    'ריקסדאג',
+    'מודיעין פוליטי',
+    'OSINT',
+    'פוליטיקה שוודית',
+    'שקיפות דמוקרטית',
+  ],
+  ja: [
+    'Riksdagsmonitor',
+    'スウェーデン議会',
+    'リクスダーグ',
+    '政治インテリジェンス',
+    'OSINT',
+    'スウェーデン政治',
+    '民主的透明性',
+  ],
+  ko: [
+    'Riksdagsmonitor',
+    '스웨덴 의회',
+    '릭스다그',
+    '정치 정보',
+    'OSINT',
+    '스웨덴 정치',
+    '민주적 투명성',
+  ],
+  zh: [
+    'Riksdagsmonitor',
+    '瑞典议会',
+    '瑞典国会',
+    '政治情报',
+    'OSINT',
+    '瑞典政治',
+    '民主透明度',
+  ],
+};
 
+/**
+ * Per-language word for "update" appended after the publication-date
+ * keyword (e.g. `15 maj 2026 uppdatering`, `15. Mai 2026 Aktualisierung`,
+ * `2026年5月15日 更新`). Previously the English string `"update"` was
+ * hard-coded into every locale.
+ */
+const LANG_UPDATE_WORD: Readonly<Record<Language, string>> = {
+  en: 'update',
+  sv: 'uppdatering',
+  da: 'opdatering',
+  no: 'oppdatering',
+  fi: 'päivitys',
+  de: 'Aktualisierung',
+  fr: 'mise à jour',
+  es: 'actualización',
+  nl: 'update',
+  ar: 'تحديث',
+  he: 'עדכון',
+  ja: '更新',
+  ko: '업데이트',
+  zh: '更新',
+};
+
+/**
+ * Tokens to skip when mining keywords from the article title /
+ * description. Covers function words / pronouns / common verbs in every
+ * supported language plus the platform-name family — these are
+ * universally low-signal in keyword form. Keep additions broad: any
+ * token that appears in >50% of articles regardless of topic should go
+ * here.
+ */
 const TOPIC_STOPWORDS = new Set([
+  // ── EN
   'the', 'and', 'for', 'with', 'from', 'that', 'this', 'into', 'over', 'under',
   'today', 'coverage', 'edition', 'riksdagsmonitor', 'riksdag', 'riksdagen',
   'swedish', 'parliament', 'political', 'intelligence', 'analysis', 'osint',
+  'have', 'been', 'will', 'their', 'there', 'these', 'those', 'about',
+  'than', 'them', 'they', 'when', 'what', 'which', 'while', 'after',
+  // ── SV / DA / NO / FI
   'och', 'att', 'med', 'från', 'som', 'det', 'den', 'ett', 'över', 'under',
-  'eine', 'einer', 'und', 'der', 'die', 'das', 'mit', 'pour', 'avec', 'dans',
+  'aren', 'inte', 'eller', 'efter', 'sedan', 'eller', 'både', 'när',
+  'eller', 'samt', 'mellan', 'genom', 'utan', 'hade', 'kommer',
+  'oller', 'efter', 'siden',
+  // ── DE
+  'eine', 'einer', 'und', 'der', 'die', 'das', 'mit', 'auf', 'für',
+  'zwischen', 'durch', 'ohne', 'beim', 'nach', 'vor', 'wenn', 'aber',
+  'auch', 'noch', 'schon', 'sowohl', 'sowie',
+  // ── FR / ES / NL
+  'pour', 'avec', 'dans', 'sur', 'sans', 'mais', 'aussi', 'comme',
   'les', 'des', 'une', 'del', 'con', 'para', 'het', 'een', 'van', 'voor',
+  'sobre', 'entre', 'desde', 'hasta', 'cuando', 'donde', 'sino',
+  'door', 'tussen', 'zonder', 'omdat', 'wanneer', 'maar', 'ook',
+  // ── AR (definite article + common particles; CJK / RTL stopwords stay
+  // short because mining strategies in those scripts prefer character
+  // n-grams over whitespace tokens, but BLUF sentences in our corpus
+  // routinely use whitespace separation for political-actor names).
+  'في', 'من', 'إلى', 'على', 'عن', 'مع', 'هذا', 'هذه', 'التي', 'الذي',
+  'أن', 'إن', 'كما', 'لكن', 'كل', 'بعض',
+  // ── HE
+  'של', 'את', 'עם', 'על', 'אל', 'מן', 'אשר', 'אבל', 'גם', 'כאשר',
+  'בין', 'כמו', 'אך', 'כדי',
+  // ── JA / KO / ZH function words rarely appear as whitespace-separated
+  // tokens but we add the most common script-mixed leak cases.
+  'について', 'および', 'および',
+  '그리고', '또는', '하지만', '이것', '저것',
+  '以及', '或者', '但是', '这个', '那个',
 ]);
 
 function collapseWhitespace(text: string): string {
@@ -159,6 +364,15 @@ function formatPublicationContext(date: string, lang: Language): string {
   }
 }
 
+/**
+ * Build the localized `"<date> <update-word>"` keyword fragment used in
+ * the keyword string. Previously the English word `"update"` was
+ * hard-coded into every locale; now we honour {@link LANG_UPDATE_WORD}.
+ */
+function formatPublicationUpdateKeyword(date: string, lang: Language): string {
+  return `${formatPublicationContext(date, lang)} ${LANG_UPDATE_WORD[lang]}`;
+}
+
 export interface ArticleSeoMetadataInput {
   readonly title: string;
   readonly description: string;
@@ -244,25 +458,79 @@ export function buildSeoDescription(input: ArticleSeoMetadataInput): string {
 
 /**
  * Build article-specific keywords from front-matter, editorial headline,
- * BLUF description, article lens, extracted story topic and language. This replaces the
- * former global keyword fallback that made many article pages identical.
+ * BLUF description, article lens, extracted story topic and language.
+ * This replaces the former global keyword fallback that made many
+ * article pages identical.
+ *
+ * **Per-language localization rule (since 2026-05):**
+ *
+ *  - For `lang === 'en'` the function still seeds the keyword list from
+ *    `input.keywords` (the EN article-frontmatter `keywords:` line set
+ *    by the aggregator in `aggregator/aggregate.ts`).
+ *  - For every non-English language the EN-frontmatter seed is dropped
+ *    so the localized title + description + canonical-path slugs +
+ *    {@link LANG_CORE_KEYWORDS}`[lang]` drive the keyword string. Without
+ *    this guard the EN frontmatter (`Sweden, Committee, tabled,
+ *    interlocked, …`) leaked into every German / Arabic / Japanese
+ *    article and diluted multilingual SERP signal — a hard violation of
+ *    `seo-metadata-contract.md` §4 charset budgets.
+ *  - The localized H1 + BLUF have already been cascade-merged into
+ *    `input.title` + `input.description` by `article-merge.ts` (cascade
+ *    chain step #2), so mining those two fields IS mining the localized
+ *    executive brief.
+ *  - The article-type ID (`committee-reports`, `propositions`, …) is an
+ *    English hyphen-slug — we keep the *localized* `articleTypeLabel`
+ *    (translated upstream via `article-type-i18n.ts`) but skip the raw
+ *    English ID for non-EN languages.
+ *  - The canonical-path slug parts (`committeeReports`, `realtime`, …)
+ *    are skipped for non-EN languages for the same reason: they are
+ *    English subfolder names and would re-introduce the same leak we
+ *    just guarded against.
  */
 export function buildArticleKeywords(input: ArticleSeoMetadataInput): string {
   const out: string[] = [];
   const seen = new Set<string>();
-  for (const keyword of (input.keywords ?? '').split(',')) pushKeyword(out, seen, keyword);
+  const isEnglish = input.lang === 'en';
+
+  // English path keeps the original ordering for backward-compatibility
+  // with the existing keyword string (and the EN-only test snapshots).
+  if (isEnglish) {
+    for (const keyword of (input.keywords ?? '').split(',')) pushKeyword(out, seen, keyword);
+  }
+
   pushKeyword(out, seen, input.articleTypeLabel);
-  pushKeyword(out, seen, input.articleTypeId.replace(/-/g, ' '));
-  pushKeyword(out, seen, LANGUAGE_META[input.lang].name);
+  // The English hyphenated article-type ID is English regardless of
+  // `lang` — skip it for non-EN locales so we don't seed EN tokens
+  // (`committee reports`, `realtime pulse`) into a non-EN keyword
+  // string. The localized `articleTypeLabel` (pushed above) already
+  // covers the same semantic ground.
+  if (isEnglish) {
+    pushKeyword(out, seen, input.articleTypeId.replace(/-/g, ' '));
+  }
+  // For non-EN locales, surface only the native language name in the
+  // keyword string (the English Language-Meta `name`, e.g. `Swedish`,
+  // is a leak in `<meta keywords>` under `<html lang="sv">`). For EN
+  // we keep both `English` and `English` (a no-op duplicate that the
+  // `seen` set collapses).
+  if (isEnglish) {
+    pushKeyword(out, seen, LANGUAGE_META[input.lang].name);
+  }
   pushKeyword(out, seen, LANGUAGE_META[input.lang].nativeName);
-  pushKeyword(out, seen, `${formatPublicationContext(input.date, input.lang)} update`);
+  pushKeyword(out, seen, formatPublicationUpdateKeyword(input.date, input.lang));
+
   if (input.canonicalPath) {
     for (const part of input.canonicalPath.replace(/\.html$/i, '').split(/[/-]+/)) {
       if (/^\d{4}$|^\d{2}$|^[a-z]{2}$/i.test(part)) continue;
+      // Canonical path is `news/$DATE-$SUBFOLDER-$LANG.html` — the
+      // subfolder segments (`committeeReports`, `realtime`, …) are
+      // English slugs. Skip them for non-EN locales so they don't
+      // re-seed EN tokens.
+      if (!isEnglish) continue;
       pushKeyword(out, seen, part);
     }
   }
-  for (const keyword of CORE_KEYWORDS) pushKeyword(out, seen, keyword);
+
+  for (const keyword of LANG_CORE_KEYWORDS[input.lang]) pushKeyword(out, seen, keyword);
   pushKeyword(out, seen, topicPhrase(input, 5));
   for (const word of [...wordsFrom(input.title), ...wordsFrom(input.description)]) {
     if (out.length >= KEYWORD_MAX) break;
