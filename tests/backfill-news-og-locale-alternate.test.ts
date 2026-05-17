@@ -152,4 +152,48 @@ describe('backfill-news-og-locale-alternate.ts', () => {
       expect(OG_LOCALE.ar).toBe('ar_SA');
     });
   });
+
+  describe('non-canonical locale normalization', () => {
+    it('rewrites no_NO → nb_NO and injects 13 alternates', () => {
+      const html = buildFixture('no_NO', 'nb');
+      const result = backfillHtml(html);
+      expect(result.action).toBe('updated');
+      expect(result.lang).toBe('no');
+      expect(result.normalized).toBe(true);
+      // The canonical line must replace the non-canonical one.
+      expect(result.html).toContain('<meta property="og:locale" content="nb_NO">');
+      expect(result.html).not.toContain('<meta property="og:locale" content="no_NO">');
+      // Alternates must cover every other language.
+      const alternateCount = (result.html.match(/og:locale:alternate/g) || []).length;
+      expect(alternateCount).toBe(13);
+    });
+
+    it('rewrites en_GB → en_US and injects 13 alternates', () => {
+      const html = buildFixture('en_GB', 'en');
+      const result = backfillHtml(html);
+      expect(result.action).toBe('updated');
+      expect(result.lang).toBe('en');
+      expect(result.normalized).toBe(true);
+      expect(result.html).toContain('<meta property="og:locale" content="en_US">');
+      expect(result.html).not.toContain('<meta property="og:locale" content="en_GB">');
+      const alternateCount = (result.html.match(/og:locale:alternate/g) || []).length;
+      expect(alternateCount).toBe(13);
+    });
+
+    it('does not flag canonical locales as normalized', () => {
+      const html = buildFixture('en_US', 'en');
+      const result = backfillHtml(html);
+      expect(result.action).toBe('updated');
+      expect(result.normalized).toBe(false);
+    });
+
+    it('normalization is idempotent on second pass', () => {
+      const html = buildFixture('no_NO', 'nb');
+      const first = backfillHtml(html);
+      expect(first.normalized).toBe(true);
+      const second = backfillHtml(first.html);
+      expect(second.action).toBe('skipped-already-complete');
+      expect(second.html).toBe(first.html);
+    });
+  });
 });

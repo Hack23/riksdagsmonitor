@@ -77,6 +77,27 @@ const OG_LOCALE_TO_LANG: Readonly<Record<string, Language>> = (() => {
 })();
 
 /**
+ * Non-canonical → canonical `og:locale` alias table.
+ *
+ * Some older agentic news workflows emitted locale values that are valid
+ * Open Graph identifiers but differ from this project's canonical set:
+ *
+ * - `no_NO` → `nb_NO` — the platform follows BCP-47 (Norwegian Bokmål
+ *   uses `nb`, not `no`); see project memory + `seo-metadata-contract.md`.
+ * - `en_GB` → `en_US` — the project ships a single English variant; the
+ *   `en_US` form is the canonical OG locale across the rest of the
+ *   surface (renderer, static pages, dashboards, political-intelligence).
+ *
+ * Normalization happens *before* the alternate-injection guard, so files
+ * whose only deviation is a non-canonical primary locale get rewritten
+ * (the alternates set keys off the canonical value).
+ */
+const OG_LOCALE_ALIASES: Readonly<Record<string, string>> = {
+  no_NO: 'nb_NO',
+  en_GB: 'en_US',
+};
+
+/**
  * Match the *single-tag* `<meta property="og:locale" content="xx_YY">`
  * line. Capture group 1 = leading whitespace (preserved), group 2 = the
  * locale content (used to map back to the BCP-47 primary subtag).
@@ -97,6 +118,8 @@ export interface BackfillResult {
   readonly path: string;
   readonly action: 'updated' | 'skipped-already-complete' | 'skipped-no-og-locale' | 'skipped-unknown-locale';
   readonly lang?: Language;
+  /** True when a non-canonical `og:locale` value was normalized in place. */
+  readonly normalized?: boolean;
 }
 
 /**
@@ -107,11 +130,13 @@ export interface BackfillResult {
  * Contract:
  * - If the input already contains any `og:locale:alternate` tag → no-op.
  * - If no `og:locale` tag is present → no-op (we never invent one).
+ * - If the existing `og:locale` value is in `OG_LOCALE_ALIASES`, rewrite
+ *   it to the canonical form *before* inserting the alternates list.
  * - Otherwise we insert the 13 sibling alternate tags directly after the
  *   existing `og:locale`, using the same leading whitespace so the head
  *   block stays visually tidy.
  */
-export function backfillHtml(html: string): { html: string; action: BackfillResult['action']; lang?: Language } {
+export function backfillHtml(html: string): { html: string; action: BackfillResult['action']; lang?: Language; normalized?: boolean } {
   if (OG_LOCALE_ALTERNATE_ANY.test(html)) {
     return { html, action: 'skipped-already-complete' };
   }
@@ -119,17 +144,26 @@ export function backfillHtml(html: string): { html: string; action: BackfillResu
   if (!match) {
     return { html, action: 'skipped-no-og-locale' };
   }
-  const [fullLine, leadingWs, localeValue] = match;
-  const lang = OG_LOCALE_TO_LANG[localeValue];
+  const [fullLine, leadingWs, rawLocaleValue] = match;
+  // Normalize known non-canonical aliases (e.g. no_NO → nb_NO,
+  // en_GB → en_US) before resolving the BCP-47 primary subtag. The
+  // rewritten line replaces the original in the output so downstream
+  // tools (sitemap, validators) see a consistent locale set.
+  const canonicalLocale = OG_LOCALE_ALIASES[rawLocaleValue] ?? rawLocaleValue;
+  const lang = OG_LOCALE_TO_LANG[canonicalLocale];
   if (!lang) {
     return { html, action: 'skipped-unknown-locale' };
   }
+  const normalized = canonicalLocale !== rawLocaleValue;
+  const canonicalLine = normalized
+    ? fullLine.replace(rawLocaleValue, canonicalLocale)
+    : fullLine;
   const alternates = ALL_LANGS
     .filter((l) => l !== lang)
     .map((l) => `${leadingWs}<meta property="og:locale:alternate" content="${OG_LOCALE[l]}">`)
     .join('\n');
-  const next = html.replace(fullLine, `${fullLine}\n${alternates}`);
-  return { html: next, action: 'updated', lang };
+  const next = html.replace(fullLine, `${canonicalLine}\n${alternates}`);
+  return { html: next, action: 'updated', lang, normalized };
 }
 
 /**
@@ -168,6 +202,7 @@ export interface RunOptions {
 export interface RunSummary {
   readonly total: number;
   readonly updated: number;
+  readonly normalized: number;
   readonly skippedAlreadyComplete: number;
   readonly skippedNoOgLocale: number;
   readonly skippedUnknownLocale: number;
@@ -187,6 +222,7 @@ export interface RunSummary {
 export async function runBackfill(repoRoot: string, opts: RunOptions = {}): Promise<RunSummary> {
   const files = await listNewsFiles(repoRoot);
   let updated = 0;
+  let normalized = 0;
   let alreadyComplete = 0;
   let noOgLocale = 0;
   let unknownLocale = 0;
@@ -199,6 +235,7 @@ export async function runBackfill(repoRoot: string, opts: RunOptions = {}): Prom
           await fs.writeFile(file, result.html, 'utf8');
         }
         updated++;
+        if (result.normalized) normalized++;
         break;
       case 'skipped-already-complete':
         alreadyComplete++;
@@ -214,6 +251,7 @@ export async function runBackfill(repoRoot: string, opts: RunOptions = {}): Prom
   return {
     total: files.length,
     updated,
+    normalized,
     skippedAlreadyComplete: alreadyComplete,
     skippedNoOgLocale: noOgLocale,
     skippedUnknownLocale: unknownLocale,
@@ -233,6 +271,7 @@ async function main(): Promise<void> {
   console.log('=== news/*.html og:locale:alternate backfill ===');
   console.log(`  total files scanned:           ${summary.total}`);
   console.log(`  updated:                       ${summary.updated}${dryRun ? ' (dry-run — no write)' : ''}`);
+  console.log(`  └─ normalized non-canonical:   ${summary.normalized}`);
   console.log(`  skipped (already complete):    ${summary.skippedAlreadyComplete}`);
   console.log(`  skipped (no og:locale tag):    ${summary.skippedNoOgLocale}`);
   console.log(`  skipped (unknown locale):      ${summary.skippedUnknownLocale}`);
