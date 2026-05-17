@@ -37,9 +37,7 @@ ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/$SUBFOLDER"
 DOK_RE='[Hh][A-Za-z0-9]{3,}[0-9]+'
 EVIDENCE_RE='[Hh][A-Za-z0-9]{3,}[0-9]+|riksdagen\.se|regeringen\.se|scb\.se|statskontoret\.se|worldbank\.org|api\.imf\.org|data\.imf\.org|www\.imf\.org'
 FAIL=0
-
-# Materialise required-file lists via /tmp lists (the AWF sandbox forbids
-# inline bash arrays — see 01-bash-and-shell-safety.md §Banned expansion patterns).
+# Materialise required-file lists via /tmp (AWF sandbox forbids inline bash arrays; see 01-bash-and-shell-safety.md).
 GATE_REQ_LIST="/tmp/gate-req-$$"; GATE_PASS2_LIST="/tmp/gate-pass2-$$"
 GATE_SYNTH_LIST="/tmp/gate-synth-$$"; GATE_DOK_LIST="/tmp/gate-doks-$$"
 trap 'rm -f "$GATE_REQ_LIST" "$GATE_PASS2_LIST" "$GATE_SYNTH_LIST" "$GATE_DOK_LIST"' EXIT
@@ -74,8 +72,7 @@ while IFS= read -r f; do
   [ -s "$ANALYSIS_DIR/$f" ] || { echo "❌ missing/empty: $f"; FAIL=1; }
 done < "$GATE_REQ_LIST"
 
-# Check 2 — per-document coverage against manifest (avoid process substitution
-# per 01-bash-and-shell-safety.md §Shell hygiene).
+# Check 2 — per-document coverage against manifest (avoid process substitution per 01-bash-and-shell-safety.md).
 if [ -s "$ANALYSIS_DIR/data-download-manifest.md" ]; then
   grep -oE "$DOK_RE" "$ANALYSIS_DIR/data-download-manifest.md" | sort -u > "$GATE_DOK_LIST"
   DOK_COUNT=$(wc -l < "$GATE_DOK_LIST" | tr -d ' ')
@@ -175,10 +172,7 @@ if [ -s "$ANALYSIS_DIR/executive-brief.md" ]; then
     || { echo "❌ executive-brief.md: missing '## BLUF' section"; FAIL=1; }
   grep -qE '^##[[:space:]].*(Decision|Decisions[[:space:]]+This[[:space:]]+Brief)' "$ANALYSIS_DIR/executive-brief.md" \
     || { echo "❌ executive-brief.md: missing 'Decisions' section"; FAIL=1; }
-  # H1 quality scan — the executive-brief H1 ships as <title> / og:title /
-  # JSON-LD headline / sitemap card across all 14 languages. Block the
-  # template placeholder and boilerplate-only headings. Prefer Markdown H1,
-  # then fall back to the template's centered HTML <h1> form.
+  # H1 quality scan — ships as <title>/og:title/JSON-LD headline/sitemap card across 14 languages.
   EB_H1="$(grep -m1 -E '^#[[:space:]]+' "$ANALYSIS_DIR/executive-brief.md" || true)"
   if [ -z "$EB_H1" ]; then
     EB_H1="$(grep -m1 -oE '<h1[^>]*>[^<]+</h1>' "$ANALYSIS_DIR/executive-brief.md" || true)"
@@ -195,8 +189,7 @@ if [ -s "$ANALYSIS_DIR/executive-brief.md" ]; then
       *ai-generated\ political\ intelligence*)
         echo "❌ executive-brief.md: H1 contains banned phrase 'AI-generated political intelligence'"; FAIL=1 ;;
     esac
-    # Strip leading H1 marker + emoji/whitespace + trailing dashes to detect
-    # the bare-boilerplate `# Executive Brief` case.
+    # Strip leading H1 marker + emoji/whitespace + trailing dashes to detect bare-boilerplate `# Executive Brief`.
     EB_H1_PLAIN="$(printf '%s' "$EB_H1_LOWER" \
       | sed -E 's/^#[[:space:]]+//' \
       | sed -E 's/<[^>]+>//g' \
@@ -206,11 +199,7 @@ if [ -s "$ANALYSIS_DIR/executive-brief.md" ]; then
       echo "❌ executive-brief.md: H1 is bare boilerplate ('Executive Brief') — write a publishable story-oriented title (actor + active verb + instrument or number)"
       FAIL=1
     fi
-    # Date-in-H1 guard (seo-metadata-contract.md §2.1) — title must not
-    # contain a literal publication date. Catches ISO YYYY-MM-DD,
-    # English day-first ("15 May 2026") + US-order ("May 15, 2026") +
-    # Swedish long-form months. Mirrors scripts/agentic/analysis-gate.ts
-    # checkExecutiveBrief — keep regex parity TS ↔ bash.
+    # Date-in-H1 guard (seo-metadata-contract.md §2.1) — mirrors scripts/agentic/analysis-gate.ts checkExecutiveBrief.
     EB_H1_TEXT="$(printf '%s' "$EB_H1" \
       | sed -E 's/^#[[:space:]]+//' \
       | sed -E 's/<[^>]+>//g')"
@@ -227,9 +216,7 @@ if [ -s "$ANALYSIS_DIR/executive-brief.md" ]; then
       echo "❌ executive-brief.md: H1 contains a literal Swedish long-form date — dates belong in article:published_time, not the SERP <title>"
       FAIL=1
     fi
-    # Trailing-punctuation / dangling-connector guard — H1 must be a
-    # complete grammatical phrase. Catches `Sweden Evening Analysis,`,
-    # `Week Ahead: Aid Accountability,`, `… opposition for`, etc.
+    # Trailing-punctuation / dangling-connector guard — H1 must be a complete grammatical phrase.
     EB_H1_TRIM="$(printf '%s' "$EB_H1_TEXT" | sed -E 's/[[:space:]]+$//')"
     case "$EB_H1_TRIM" in
       *,|*\;|*:|*—|*–|*-)
@@ -241,11 +228,7 @@ if [ -s "$ANALYSIS_DIR/executive-brief.md" ]; then
       echo "❌ executive-brief.md: H1 ends with a coordinating connector or article ('and', 'or', 'with', 'the', …) — complete the headline"
       FAIL=1
     fi
-    # Across-days uniqueness check (Phase 2 — period-aggregation duplicate-card
-    # guard). The full normalised comparison lives in
-    # scripts/agentic/analysis-gate.ts checkExecutiveBrief; this bash
-    # check is a fast pre-flight that compares the raw H1 line against
-    # the prior 7 sibling daily folders for the same subfolder.
+    # Across-days uniqueness check (Phase 2 dup-card guard); full normalised comparison in analysis-gate.ts.
     EB_DAILY_DIR="$(dirname "$ANALYSIS_DIR")"
     EB_DAILY_ROOT="$(dirname "$EB_DAILY_DIR")"
     EB_CURR_DATE="$(basename "$EB_DAILY_DIR")"
@@ -268,8 +251,7 @@ if [ -s "$ANALYSIS_DIR/executive-brief.md" ]; then
       fi
     fi
   else
-    # No H1 at all — the renderer has nothing to seed the SERP <title>
-    # from and will silently fall back to a BLUF-sentence fragment.
+    # No H1 — renderer has nothing to seed SERP <title> and falls back to a BLUF-sentence fragment.
     echo "❌ executive-brief.md: no '# H1' heading found — the H1 is the SERP <title> source across all 14 languages; add a publishable story-oriented title"
     FAIL=1
   fi
@@ -338,9 +320,8 @@ if [ -s "$ANALYSIS_DIR/coalition-mathematics.md" ]; then
     || { echo "❌ coalition-mathematics.md: missing seat-count / vote-breakdown table"; FAIL=1; }
 fi
 
-# Check 9b — Statskontoret evidence in implementation-feasibility.md.
-# When the file names a recognised agency it MUST carry a statskontoret.se URL
-# or the literal `none found` in the `| **Statskontoret relevance** | ... |` row.
+# Check 9b — Statskontoret evidence in implementation-feasibility.md. When file names a recognised
+# agency it MUST carry a statskontoret.se URL or literal `none found` in `| **Statskontoret relevance** |` row.
 AGENCY_RE='Kriminalvård(en)?|Polismyndigheten|Försäkringskassan|Skatteverket|Migrationsverket|Arbetsförmedlingen|Socialstyrelsen|Transportstyrelsen|Trafikverket|Naturvårdsverket|Energimyndigheten'
 STATSKONTORET_RELEVANCE_RE='^\|[[:space:]]*\*\*Statskontoret relevance\*\*[[:space:]]*\|[[:space:]]*([^|]*statskontoret\.se[^|]*|[^|]*none found[^|]*)\|'
 if [ -s "$ANALYSIS_DIR/implementation-feasibility.md" ]; then
@@ -395,10 +376,8 @@ sys.exit(bad)
 PYEOF
 fi
 
-# Check 10 — top-2 full-text availability. When the manifest contains a
-# "Full-Text Fetch Outcomes" table (from --auto-full-text-top-n), ≥ 2 top
-# documents must have full_text_available=true. A `full-text-fallback:` annotation
-# bypasses the check.
+# Check 10 — top-2 full-text availability. When manifest has "Full-Text Fetch Outcomes" table (from
+# --auto-full-text-top-n), ≥ 2 top docs must have full_text_available=true. `full-text-fallback:` bypasses.
 MANIFEST="$ANALYSIS_DIR/data-download-manifest.md"
 if [ -s "$MANIFEST" ] && grep -q "## Full-Text Fetch Outcomes" "$MANIFEST" \
    && ! grep -q "full-text-fallback:" "$MANIFEST"; then
@@ -408,8 +387,7 @@ if [ -s "$MANIFEST" ] && grep -q "## Full-Text Fetch Outcomes" "$MANIFEST" \
 fi
 
 # Check 12 — Editorial QA gate (validate-article.ts: banned phrases, citation density, vintage discipline).
-# Runs against the aggregated article.md when present; if the aggregator hasn't run yet the
-# article gate is informational (logged), because the editorial validator's domain is post-aggregation.
+# Runs on aggregated article.md when present; informational when aggregator hasn't run yet.
 ART_MD_GATE="$ANALYSIS_DIR/article.md"
 if [ -s "$ART_MD_GATE" ]; then
   if command -v npx >/dev/null 2>&1; then
@@ -421,10 +399,8 @@ else
   echo "ℹ️  Check 12 (editorial QA): $ART_MD_GATE not yet produced — skipped (run after aggregator)"
 fi
 
-# Check 13 — Analysis language (English-only)
-# Block when any analysis artifact (excluding executive-brief_<lang>.md translation siblings) 
-# exceeds the Swedish-density threshold. The script exits 0 on pass and exits 1 with a 
-# per-file violation list on fail.
+# Check 13 — Analysis language (English-only). Blocks any analysis artifact (excluding
+# executive-brief_<lang>.md siblings) exceeding the Swedish-density threshold. Exits 0/1.
 if command -v npx >/dev/null 2>&1; then
   npx tsx scripts/check-analysis-language.ts "$ANALYSIS_DIR" || FAIL=1
 else
@@ -448,7 +424,7 @@ Same-day re-runs are **improvement runs** (not skip runs) when `03-data-download
 
 ### Check 12 ordering note
 
-Check 12 (`scripts/validate-article.ts`) is the **editorial QA gate** and runs on the aggregated `article.md`. The blocking branch in §Implementation only fires when `article.md` is already on disk; the inline gate runs before aggregation, so on a first pass the article validator is **informational** (the gate logs `ℹ️ Check 12 (editorial QA): … skipped (run after aggregator)`). Workflows MUST re-invoke the gate (or call `npx tsx scripts/validate-article.ts $ANALYSIS_DIR/article.md` directly) **after** `scripts/aggregate-analysis.ts` writes `article.md` so the editorial checks (banned phrases, citation density, `economicProvenance` vintage) become blocking before staging. See `06-article-generation.md §Step 1b — Editorial QA re-check (post-aggregation)` for the post-aggregation invocation pattern.
+Check 12 (`scripts/validate-article.ts`) is the **editorial QA gate** on aggregated `article.md`. The blocking branch in §Implementation only fires when `article.md` is on disk; the inline gate runs before aggregation, so on first pass the validator is **informational** (logs `ℹ️ Check 12 (editorial QA): … skipped (run after aggregator)`). Workflows MUST re-invoke the gate (or call `npx tsx scripts/validate-article.ts $ANALYSIS_DIR/article.md` directly) **after** `scripts/aggregate-analysis.ts` writes `article.md`. See `06-article-generation.md §Step 1b — Editorial QA re-check (post-aggregation)`.
 
 ## Supplementary checks
 
@@ -476,8 +452,7 @@ IS_AGGREGATION=0; IS_TIER_C=0; IS_MULTI_RUN=0; RUN_COUNT=1
 [[ "${ANALYSIS_RUN_COUNT:-}" =~ ^[0-9]+$ ]] && RUN_COUNT="${ANALYSIS_RUN_COUNT}"
 (( RUN_COUNT >= 2 )) && IS_MULTI_RUN=1
 if (( IS_AGGREGATION == 1 || IS_TIER_C == 1 || IS_MULTI_RUN == 1 )); then
-  # No inline bash arrays — see 01-bash-and-shell-safety.md §Banned expansion patterns.
-  SUPP_LIST="/tmp/gate-supp-$$"; : > "$SUPP_LIST"
+  SUPP_LIST="/tmp/gate-supp-$$"; : > "$SUPP_LIST"  # /tmp list (no inline bash arrays)
   (( IS_AGGREGATION == 1 || IS_TIER_C == 1 )) && \
     printf '%s\n' analysis-index.md reference-analysis-quality.md mcp-reliability-audit.md workflow-audit.md >> "$SUPP_LIST"
   (( IS_AGGREGATION == 1 )) && printf '%s\n' cross-session-intelligence.md session-baseline.md >> "$SUPP_LIST"
