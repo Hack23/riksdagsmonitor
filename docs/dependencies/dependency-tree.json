@@ -1,5 +1,5 @@
 {
-  "version": "0.9.20",
+  "version": "0.9.21",
   "name": "riksdagsmonitor",
   "dependencies": {
     "@eslint/js": {
@@ -5313,8 +5313,8 @@
       }
     },
     "tsx": {
-      "version": "4.22.0",
-      "resolved": "https://registry.npmjs.org/tsx/-/tsx-4.22.0.tgz",
+      "version": "4.22.1",
+      "resolved": "https://registry.npmjs.org/tsx/-/tsx-4.22.1.tgz",
       "overridden": false,
       "dependencies": {
         "esbuild": {
@@ -5846,7 +5846,7 @@
           "version": "0.2.16"
         },
         "tsx": {
-          "version": "4.22.0"
+          "version": "4.22.1"
         },
         "yaml": {
           "version": "2.9.0"

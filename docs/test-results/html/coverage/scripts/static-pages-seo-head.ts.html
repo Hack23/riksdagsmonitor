@@ -1,0 +1,1405 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for scripts/static-pages-seo-head.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">scripts</a> static-pages-seo-head.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">94.73% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>54/57</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">60.71% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>17/28</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>7/7</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">96.36% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>53/55</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a>
+<a name='L254'></a><a href='#L254'>254</a>
+<a name='L255'></a><a href='#L255'>255</a>
+<a name='L256'></a><a href='#L256'>256</a>
+<a name='L257'></a><a href='#L257'>257</a>
+<a name='L258'></a><a href='#L258'>258</a>
+<a name='L259'></a><a href='#L259'>259</a>
+<a name='L260'></a><a href='#L260'>260</a>
+<a name='L261'></a><a href='#L261'>261</a>
+<a name='L262'></a><a href='#L262'>262</a>
+<a name='L263'></a><a href='#L263'>263</a>
+<a name='L264'></a><a href='#L264'>264</a>
+<a name='L265'></a><a href='#L265'>265</a>
+<a name='L266'></a><a href='#L266'>266</a>
+<a name='L267'></a><a href='#L267'>267</a>
+<a name='L268'></a><a href='#L268'>268</a>
+<a name='L269'></a><a href='#L269'>269</a>
+<a name='L270'></a><a href='#L270'>270</a>
+<a name='L271'></a><a href='#L271'>271</a>
+<a name='L272'></a><a href='#L272'>272</a>
+<a name='L273'></a><a href='#L273'>273</a>
+<a name='L274'></a><a href='#L274'>274</a>
+<a name='L275'></a><a href='#L275'>275</a>
+<a name='L276'></a><a href='#L276'>276</a>
+<a name='L277'></a><a href='#L277'>277</a>
+<a name='L278'></a><a href='#L278'>278</a>
+<a name='L279'></a><a href='#L279'>279</a>
+<a name='L280'></a><a href='#L280'>280</a>
+<a name='L281'></a><a href='#L281'>281</a>
+<a name='L282'></a><a href='#L282'>282</a>
+<a name='L283'></a><a href='#L283'>283</a>
+<a name='L284'></a><a href='#L284'>284</a>
+<a name='L285'></a><a href='#L285'>285</a>
+<a name='L286'></a><a href='#L286'>286</a>
+<a name='L287'></a><a href='#L287'>287</a>
+<a name='L288'></a><a href='#L288'>288</a>
+<a name='L289'></a><a href='#L289'>289</a>
+<a name='L290'></a><a href='#L290'>290</a>
+<a name='L291'></a><a href='#L291'>291</a>
+<a name='L292'></a><a href='#L292'>292</a>
+<a name='L293'></a><a href='#L293'>293</a>
+<a name='L294'></a><a href='#L294'>294</a>
+<a name='L295'></a><a href='#L295'>295</a>
+<a name='L296'></a><a href='#L296'>296</a>
+<a name='L297'></a><a href='#L297'>297</a>
+<a name='L298'></a><a href='#L298'>298</a>
+<a name='L299'></a><a href='#L299'>299</a>
+<a name='L300'></a><a href='#L300'>300</a>
+<a name='L301'></a><a href='#L301'>301</a>
+<a name='L302'></a><a href='#L302'>302</a>
+<a name='L303'></a><a href='#L303'>303</a>
+<a name='L304'></a><a href='#L304'>304</a>
+<a name='L305'></a><a href='#L305'>305</a>
+<a name='L306'></a><a href='#L306'>306</a>
+<a name='L307'></a><a href='#L307'>307</a>
+<a name='L308'></a><a href='#L308'>308</a>
+<a name='L309'></a><a href='#L309'>309</a>
+<a name='L310'></a><a href='#L310'>310</a>
+<a name='L311'></a><a href='#L311'>311</a>
+<a name='L312'></a><a href='#L312'>312</a>
+<a name='L313'></a><a href='#L313'>313</a>
+<a name='L314'></a><a href='#L314'>314</a>
+<a name='L315'></a><a href='#L315'>315</a>
+<a name='L316'></a><a href='#L316'>316</a>
+<a name='L317'></a><a href='#L317'>317</a>
+<a name='L318'></a><a href='#L318'>318</a>
+<a name='L319'></a><a href='#L319'>319</a>
+<a name='L320'></a><a href='#L320'>320</a>
+<a name='L321'></a><a href='#L321'>321</a>
+<a name='L322'></a><a href='#L322'>322</a>
+<a name='L323'></a><a href='#L323'>323</a>
+<a name='L324'></a><a href='#L324'>324</a>
+<a name='L325'></a><a href='#L325'>325</a>
+<a name='L326'></a><a href='#L326'>326</a>
+<a name='L327'></a><a href='#L327'>327</a>
+<a name='L328'></a><a href='#L328'>328</a>
+<a name='L329'></a><a href='#L329'>329</a>
+<a name='L330'></a><a href='#L330'>330</a>
+<a name='L331'></a><a href='#L331'>331</a>
+<a name='L332'></a><a href='#L332'>332</a>
+<a name='L333'></a><a href='#L333'>333</a>
+<a name='L334'></a><a href='#L334'>334</a>
+<a name='L335'></a><a href='#L335'>335</a>
+<a name='L336'></a><a href='#L336'>336</a>
+<a name='L337'></a><a href='#L337'>337</a>
+<a name='L338'></a><a href='#L338'>338</a>
+<a name='L339'></a><a href='#L339'>339</a>
+<a name='L340'></a><a href='#L340'>340</a>
+<a name='L341'></a><a href='#L341'>341</a>
+<a name='L342'></a><a href='#L342'>342</a>
+<a name='L343'></a><a href='#L343'>343</a>
+<a name='L344'></a><a href='#L344'>344</a>
+<a name='L345'></a><a href='#L345'>345</a>
+<a name='L346'></a><a href='#L346'>346</a>
+<a name='L347'></a><a href='#L347'>347</a>
+<a name='L348'></a><a href='#L348'>348</a>
+<a name='L349'></a><a href='#L349'>349</a>
+<a name='L350'></a><a href='#L350'>350</a>
+<a name='L351'></a><a href='#L351'>351</a>
+<a name='L352'></a><a href='#L352'>352</a>
+<a name='L353'></a><a href='#L353'>353</a>
+<a name='L354'></a><a href='#L354'>354</a>
+<a name='L355'></a><a href='#L355'>355</a>
+<a name='L356'></a><a href='#L356'>356</a>
+<a name='L357'></a><a href='#L357'>357</a>
+<a name='L358'></a><a href='#L358'>358</a>
+<a name='L359'></a><a href='#L359'>359</a>
+<a name='L360'></a><a href='#L360'>360</a>
+<a name='L361'></a><a href='#L361'>361</a>
+<a name='L362'></a><a href='#L362'>362</a>
+<a name='L363'></a><a href='#L363'>363</a>
+<a name='L364'></a><a href='#L364'>364</a>
+<a name='L365'></a><a href='#L365'>365</a>
+<a name='L366'></a><a href='#L366'>366</a>
+<a name='L367'></a><a href='#L367'>367</a>
+<a name='L368'></a><a href='#L368'>368</a>
+<a name='L369'></a><a href='#L369'>369</a>
+<a name='L370'></a><a href='#L370'>370</a>
+<a name='L371'></a><a href='#L371'>371</a>
+<a name='L372'></a><a href='#L372'>372</a>
+<a name='L373'></a><a href='#L373'>373</a>
+<a name='L374'></a><a href='#L374'>374</a>
+<a name='L375'></a><a href='#L375'>375</a>
+<a name='L376'></a><a href='#L376'>376</a>
+<a name='L377'></a><a href='#L377'>377</a>
+<a name='L378'></a><a href='#L378'>378</a>
+<a name='L379'></a><a href='#L379'>379</a>
+<a name='L380'></a><a href='#L380'>380</a>
+<a name='L381'></a><a href='#L381'>381</a>
+<a name='L382'></a><a href='#L382'>382</a>
+<a name='L383'></a><a href='#L383'>383</a>
+<a name='L384'></a><a href='#L384'>384</a>
+<a name='L385'></a><a href='#L385'>385</a>
+<a name='L386'></a><a href='#L386'>386</a>
+<a name='L387'></a><a href='#L387'>387</a>
+<a name='L388'></a><a href='#L388'>388</a>
+<a name='L389'></a><a href='#L389'>389</a>
+<a name='L390'></a><a href='#L390'>390</a>
+<a name='L391'></a><a href='#L391'>391</a>
+<a name='L392'></a><a href='#L392'>392</a>
+<a name='L393'></a><a href='#L393'>393</a>
+<a name='L394'></a><a href='#L394'>394</a>
+<a name='L395'></a><a href='#L395'>395</a>
+<a name='L396'></a><a href='#L396'>396</a>
+<a name='L397'></a><a href='#L397'>397</a>
+<a name='L398'></a><a href='#L398'>398</a>
+<a name='L399'></a><a href='#L399'>399</a>
+<a name='L400'></a><a href='#L400'>400</a>
+<a name='L401'></a><a href='#L401'>401</a>
+<a name='L402'></a><a href='#L402'>402</a>
+<a name='L403'></a><a href='#L403'>403</a>
+<a name='L404'></a><a href='#L404'>404</a>
+<a name='L405'></a><a href='#L405'>405</a>
+<a name='L406'></a><a href='#L406'>406</a>
+<a name='L407'></a><a href='#L407'>407</a>
+<a name='L408'></a><a href='#L408'>408</a>
+<a name='L409'></a><a href='#L409'>409</a>
+<a name='L410'></a><a href='#L410'>410</a>
+<a name='L411'></a><a href='#L411'>411</a>
+<a name='L412'></a><a href='#L412'>412</a>
+<a name='L413'></a><a href='#L413'>413</a>
+<a name='L414'></a><a href='#L414'>414</a>
+<a name='L415'></a><a href='#L415'>415</a>
+<a name='L416'></a><a href='#L416'>416</a>
+<a name='L417'></a><a href='#L417'>417</a>
+<a name='L418'></a><a href='#L418'>418</a>
+<a name='L419'></a><a href='#L419'>419</a>
+<a name='L420'></a><a href='#L420'>420</a>
+<a name='L421'></a><a href='#L421'>421</a>
+<a name='L422'></a><a href='#L422'>422</a>
+<a name='L423'></a><a href='#L423'>423</a>
+<a name='L424'></a><a href='#L424'>424</a>
+<a name='L425'></a><a href='#L425'>425</a>
+<a name='L426'></a><a href='#L426'>426</a>
+<a name='L427'></a><a href='#L427'>427</a>
+<a name='L428'></a><a href='#L428'>428</a>
+<a name='L429'></a><a href='#L429'>429</a>
+<a name='L430'></a><a href='#L430'>430</a>
+<a name='L431'></a><a href='#L431'>431</a>
+<a name='L432'></a><a href='#L432'>432</a>
+<a name='L433'></a><a href='#L433'>433</a>
+<a name='L434'></a><a href='#L434'>434</a>
+<a name='L435'></a><a href='#L435'>435</a>
+<a name='L436'></a><a href='#L436'>436</a>
+<a name='L437'></a><a href='#L437'>437</a>
+<a name='L438'></a><a href='#L438'>438</a>
+<a name='L439'></a><a href='#L439'>439</a>
+<a name='L440'></a><a href='#L440'>440</a>
+<a name='L441'></a><a href='#L441'>441</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">203x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">53x</span>
+<span class="cline-any cline-yes">53x</span>
+<span class="cline-any cline-yes">53x</span>
+<span class="cline-any cline-yes">742x</span>
+<span class="cline-any cline-yes">689x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">53x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">46x</span>
+<span class="cline-any cline-yes">46x</span>
+<span class="cline-any cline-yes">46x</span>
+<span class="cline-any cline-yes">46x</span>
+<span class="cline-any cline-yes">46x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">46x</span>
+<span class="cline-any cline-yes">46x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">46x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">46x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">46x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">46x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">183x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * @module Infrastructure/Scripts/StaticPagesSeoHead
+ * @category Intelligence Operations / Supporting Infrastructure
+ * @name Static-page SEO `&lt;head&gt;` enhancer (politician-dashboard, dashboard, home)
+ *
+ * @description
+ * The static landing pages (`index{,_$LANG}.html`, `dashboard/index{,_$LANG}.html`,
+ * `politician-dashboard{,_$LANG}.html`) are authored by hand: their
+ * `&lt;title&gt;` and `&lt;meta name="description"&gt;` are already translated, but
+ * lower-signal SEO surface is identical across every language. Before
+ * this module landed:
+ *
+ *  - All 14 `politician-dashboard_&lt;lang&gt;.html` files shared one
+ *    English-only `&lt;meta name="keywords"&gt;` list (`politician analytics,
+ *    MP productivity, career trajectory, …`). That violates
+ *    `.github/prompts/seo-metadata-contract.md` §4 (per-language SERP
+ *    signal).
+ *  - `politician-dashboard*.html` had no Twitter Card meta and no
+ *    JSON-LD blob — search engines and Twitter cards saw only the
+ *    minimum Open Graph block, which collapses 14 hreflang siblings to
+ *    near-identical previews.
+ *  - Neither `dashboard/index*.html` nor `index*.html` declared
+ *    `og:locale:alternate[]` for cross-language Open Graph discovery.
+ *
+ * This module is the **pure** core that fixes those gaps. Wire-up is in
+ * `scripts/normalize-static-html-chrome.ts` (post-prebuild pass) — that
+ * keeps every regex transform and filesystem call in the script and
+ * leaves this module unit-testable without spinning up a temp tree.
+ *
+ * The module exports four building blocks (each pure, each testable):
+ *
+ *  - {@link buildStaticPageKeywords} — localized 7-token keyword string
+ *    per `family × lang` (42 native sets — 3 families × 14 languages).
+ *  - {@link buildStaticPageOgLocaleBlock} — `og:locale` +
+ *    `og:locale:alternate[]` for the other 13 siblings.
+ *  - {@link buildStaticPageTwitterCardBlock} — Twitter Card meta block
+ *    parametrised by the page's title / description.
+ *  - {@link buildStaticPageJsonLd} — `WebSite` + `WebPage` (with
+ *    Speakable for the `&lt;h1&gt;`) JSON-LD blob.
+ *
+ * The orchestrator {@link enhanceStaticPageHead} composes them and
+ * returns the rewritten HTML.
+ *
+ * @author Hack23 AB (Infrastructure Team)
+ * @license Apache-2.0
+ */
+&nbsp;
+import type { Language } from './types/language.js';
+&nbsp;
+/**
+ * Supported static-page families. The shape mirrors the `PageFamily`
+ * union in `normalize-static-html-chrome.ts` so the same value flows
+ * through both modules without a re-encoding step.
+ */
+export type StaticPageFamily = 'home' | 'dashboard' | 'politician';
+&nbsp;
+/**
+ * BCP-47 / hreflang codes per `Language`. Mirrors `LANGUAGE_META[lang].hreflang`
+ * from `sitemap-html/i18n.ts` (Norwegian uses `nb` per repo convention)
+ * but duplicated locally so this module stays I/O-free and importable
+ * from any test fixture.
+ */
+const HREFLANG: Readonly&lt;Record&lt;Language, string&gt;&gt; = {
+  en: 'en', sv: 'sv', da: 'da', no: 'nb', fi: 'fi', de: 'de',
+  fr: 'fr', es: 'es', nl: 'nl', ar: 'ar', he: 'he', ja: 'ja',
+  ko: 'ko', zh: 'zh',
+};
+&nbsp;
+/**
+ * OG-locale codes per `Language`. Open Graph requires the
+ * `language_TERRITORY` form (e.g. `en_US`, `sv_SE`) — we pick the
+ * canonical territory for each supported tongue. Re-uses the same table
+ * format `index.html` already ships.
+ */
+const OG_LOCALE: Readonly&lt;Record&lt;Language, string&gt;&gt; = {
+  en: 'en_US', sv: 'sv_SE', da: 'da_DK', no: 'nb_NO', fi: 'fi_FI',
+  de: 'de_DE', fr: 'fr_FR', es: 'es_ES', nl: 'nl_NL', ar: 'ar_SA',
+  he: 'he_IL', ja: 'ja_JP', ko: 'ko_KR', zh: 'zh_CN',
+};
+&nbsp;
+const ALL_LANGS: readonly Language[] = [
+  'en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl',
+  'ar', 'he', 'ja', 'ko', 'zh',
+];
+&nbsp;
+/**
+ * Native 7-token keyword strings per `family × language`.
+ *
+ * **Editorial rule** (per `seo-metadata-contract.md` §4): every entry is
+ * in the target language; the platform brand `Riksdagsmonitor` and the
+ * international acronym `OSINT` stay verbatim (they are proper nouns).
+ *
+ * **Format**: comma-separated string ready to drop into
+ * `&lt;meta name="keywords"&gt;`. Token count is held at 7 across all sets so
+ * SERP signal stays uniform.
+ */
+const KEYWORDS: Readonly&lt;Record&lt;StaticPageFamily, Readonly&lt;Record&lt;Language, string&gt;&gt;&gt;&gt; = {
+  home: {
+    en: 'Swedish parliament intelligence, Riksdagsmonitor, political transparency, parliamentary data, Sweden election 2026, OSINT politics, open democracy',
+    sv: 'svensk parlamentsunderrättelse, Riksdagsmonitor, politisk transparens, parlamentsdata, val 2026 Sverige, OSINT politik, öppen demokrati',
+    da: 'svensk parlamentsefterretning, Riksdagsmonitor, politisk gennemsigtighed, parlamentsdata, valg 2026 Sverige, OSINT politik, åben demokrati',
+    no: 'svensk parlamentsetterretning, Riksdagsmonitor, politisk åpenhet, parlamentsdata, valg 2026 Sverige, OSINT politikk, åpent demokrati',
+    fi: 'Ruotsin parlamenttitiedustelu, Riksdagsmonitor, poliittinen läpinäkyvyys, parlamenttidata, vaalit 2026 Ruotsi, OSINT-politiikka, avoin demokratia',
+    de: 'schwedische Parlamentsaufklärung, Riksdagsmonitor, politische Transparenz, Parlamentsdaten, Schweden-Wahl 2026, OSINT-Politik, offene Demokratie',
+    fr: 'renseignement parlementaire suédois, Riksdagsmonitor, transparence politique, données parlementaires, élections 2026 Suède, politique OSINT, démocratie ouverte',
+    es: 'inteligencia parlamentaria sueca, Riksdagsmonitor, transparencia política, datos parlamentarios, elecciones 2026 Suecia, política OSINT, democracia abierta',
+    nl: 'Zweedse parlementaire inlichtingen, Riksdagsmonitor, politieke transparantie, parlementaire data, verkiezingen 2026 Zweden, OSINT-politiek, open democratie',
+    ar: 'استخبارات برلمانية سويدية, Riksdagsmonitor, شفافية سياسية, بيانات برلمانية, انتخابات 2026 السويد, سياسة OSINT, ديمقراطية مفتوحة',
+    he: 'מודיעין פרלמנטרי שוודי, Riksdagsmonitor, שקיפות פוליטית, נתוני פרלמנט, בחירות 2026 שוודיה, פוליטיקת OSINT, דמוקרטיה פתוחה',
+    ja: 'スウェーデン議会インテリジェンス, Riksdagsmonitor, 政治的透明性, 議会データ, 2026年スウェーデン選挙, OSINT政治, 開かれた民主主義',
+    ko: '스웨덴 의회 정보, Riksdagsmonitor, 정치적 투명성, 의회 데이터, 2026 스웨덴 선거, OSINT 정치, 열린 민주주의',
+    zh: '瑞典议会情报, Riksdagsmonitor, 政治透明度, 议会数据, 2026年瑞典选举, OSINT政治, 开放民主',
+  },
+  dashboard: {
+    en: 'parliamentary dashboard, political analytics, voting patterns, party performance, MP rankings, election predictions, Swedish parliament',
+    sv: 'parlamentariskt instrumentpanel, politisk analys, röstningsmönster, partiprestation, riksdagsledamotsrankning, valprognoser, Sveriges riksdag',
+    da: 'parlamentarisk dashboard, politisk analyse, afstemningsmønstre, partiprestation, MP-rangering, valgforudsigelser, Sveriges rigsdag',
+    no: 'parlamentarisk dashbord, politisk analyse, stemmemønstre, partiprestasjon, MP-rangering, valgprognoser, Sveriges riksdag',
+    fi: 'parlamenttinen kojelauta, poliittinen analyysi, äänestyskuviot, puoluesuoritus, kansanedustajien sijoitukset, vaaliennusteet, Ruotsin valtiopäivät',
+    de: 'parlamentarisches Dashboard, politische Analyse, Abstimmungsmuster, Parteileistung, Abgeordnetenranking, Wahlprognosen, schwedisches Parlament',
+    fr: 'tableau de bord parlementaire, analyse politique, schémas de vote, performance des partis, classements des députés, prévisions électorales, parlement suédois',
+    es: 'tablero parlamentario, análisis político, patrones de voto, rendimiento de partidos, clasificaciones de diputados, predicciones electorales, parlamento sueco',
+    nl: 'parlementair dashboard, politieke analyse, stempatronen, partijprestaties, parlementsledenranglijst, verkiezingsvoorspellingen, Zweeds parlement',
+    ar: 'لوحة معلومات برلمانية, تحليل سياسي, أنماط التصويت, أداء الأحزاب, تصنيفات النواب, توقعات الانتخابات, البرلمان السويدي',
+    he: 'לוח מחוונים פרלמנטרי, ניתוח פוליטי, דפוסי הצבעה, ביצועי מפלגות, דירוגי חברי פרלמנט, תחזיות בחירות, פרלמנט שוודי',
+    ja: '議会ダッシュボード, 政治分析, 投票パターン, 政党パフォーマンス, 議員ランキング, 選挙予測, スウェーデン議会',
+    ko: '의회 대시보드, 정치 분석, 투표 패턴, 정당 성과, 의원 순위, 선거 예측, 스웨덴 의회',
+    zh: '议会仪表板, 政治分析, 投票模式, 政党表现, 议员排名, 选举预测, 瑞典议会',
+  },
+  politician: {
+    en: 'politician analytics, MP productivity, career trajectory, riksdag politicians, Swedish parliament, legislative output, committee activity',
+    sv: 'politikeranalys, riksdagsledamots produktivitet, karriärbana, riksdagspolitiker, Sveriges riksdag, lagstiftningsproduktion, utskottsaktivitet',
+    da: 'politikeranalyse, MP-produktivitet, karriereforløb, rigsdagspolitikere, Sveriges rigsdag, lovgivningsproduktion, udvalgsaktivitet',
+    no: 'politikeranalyse, stortingsrepresentanters produktivitet, karrierebane, riksdagspolitikere, Sveriges riksdag, lovgivningsproduksjon, komitéaktivitet',
+    fi: 'poliitikkoanalyysi, kansanedustajan tuottavuus, urapolku, valtiopäiväpoliitikot, Ruotsin valtiopäivät, lainsäädäntötuotos, valiokuntatoiminta',
+    de: 'Politikeranalyse, Abgeordnetenproduktivität, Karriereverlauf, Reichstagspolitiker, schwedisches Parlament, Gesetzgebungsleistung, Ausschussaktivität',
+    fr: 'analyse des politiciens, productivité des députés, trajectoire de carrière, politiciens du Riksdag, parlement suédois, production législative, activité des commissions',
+    es: 'analítica de políticos, productividad de diputados, trayectoria profesional, políticos del Riksdag, parlamento sueco, producción legislativa, actividad de comisiones',
+    nl: 'politicusanalyse, productiviteit van parlementsleden, carrièretraject, Riksdag-politici, Zweeds parlement, wetgevingsproductie, commissieactiviteit',
+    ar: 'تحليلات السياسيين, إنتاجية النواب, المسار المهني, سياسيو الريكسداغ, البرلمان السويدي, الإنتاج التشريعي, نشاط اللجان',
+    he: 'אנליטיקה של פוליטיקאים, פרודוקטיביות חברי פרלמנט, מסלול קריירה, פוליטיקאי ריקסדאג, פרלמנט שוודי, תפוקה חקיקתית, פעילות ועדות',
+    ja: '政治家分析, 議員の生産性, キャリア軌道, リクスダーグの政治家, スウェーデン議会, 立法生産, 委員会活動',
+    ko: '정치인 분석, 의원 생산성, 경력 궤적, 릭스다그 정치인, 스웨덴 의회, 입법 산출, 위원회 활동',
+    zh: '政治家分析, 议员生产力, 职业轨迹, 瑞典国会议员, 瑞典议会, 立法产出, 委员会活动',
+  },
+};
+&nbsp;
+/**
+ * Build the localized `&lt;meta name="keywords"&gt;` content for a static page.
+ * Pure — returns the comma-separated string, not the full `&lt;meta&gt;` tag,
+ * so callers can decide how to splice it into the existing `&lt;head&gt;`.
+ *
+ * **The string is always 7 tokens**; the brand `Riksdagsmonitor` and the
+ * acronym `OSINT` stay in Latin script across all 14 languages because
+ * they are proper nouns.
+ */
+export function buildStaticPageKeywords(family: StaticPageFamily, lang: Language): string {
+  return KEYWORDS[family][lang];
+}
+&nbsp;
+/**
+ * Build the `og:locale` + `og:locale:alternate[]` block (newline-joined
+ * `&lt;meta&gt;` tags). Open Graph requires the `og:locale` for the page
+ * itself and one `og:locale:alternate` for every other supported
+ * language — defining the alternates lets Facebook / LinkedIn pick the
+ * best-fit locale at preview time.
+ *
+ * Pure — no template literal interpolation beyond the static OG-locale
+ * map, so the output is deterministic across runs.
+ */
+export function buildStaticPageOgLocaleBlock(lang: Language): string {
+  const lines: string[] = [];
+  lines.push(`&lt;meta property="og:locale" content="${OG_LOCALE[lang]}"&gt;`);
+  for (const other of ALL_LANGS) {
+    if (other === lang) continue;
+    lines.push(`&lt;meta property="og:locale:alternate" content="${OG_LOCALE[other]}"&gt;`);
+  }
+  return lines.join('\n');
+}
+&nbsp;
+/**
+ * Build the Twitter Card meta block (parametrised by title / description /
+ * canonical URL). Returns a newline-joined string of `&lt;meta&gt;` tags.
+ *
+ * Twitter inherits the Open Graph `og:image` when no dedicated
+ * `twitter:image` is set, but we still emit the dedicated meta tags so
+ * the card preview is identical regardless of crawler.
+ */
+export function buildStaticPageTwitterCardBlock(input: {
+  readonly title: string;
+  readonly description: string;
+  readonly canonicalUrl: string;
+  readonly imageUrl: string;
+}): string {
+  const { title, description, imageUrl } = input;
+  const escapedTitle = escapeHtmlAttribute(title);
+  const escapedDescription = escapeHtmlAttribute(description);
+  const escapedImage = escapeHtmlAttribute(imageUrl);
+  return [
+    `&lt;meta name="twitter:card" content="summary_large_image"&gt;`,
+    `&lt;meta name="twitter:title" content="${escapedTitle}"&gt;`,
+    `&lt;meta name="twitter:description" content="${escapedDescription}"&gt;`,
+    `&lt;meta name="twitter:image" content="${escapedImage}"&gt;`,
+    `&lt;meta name="twitter:image:alt" content="${escapedTitle}"&gt;`,
+    `&lt;meta name="twitter:site" content="@riksdagsmonitor"&gt;`,
+    `&lt;meta name="twitter:creator" content="@jamessorling"&gt;`,
+    `&lt;meta name="twitter:domain" content="riksdagsmonitor.com"&gt;`,
+  ].join('\n');
+}
+&nbsp;
+/**
+ * Build the JSON-LD blob (`WebSite` + `WebPage` with Speakable) for a
+ * static page. The Speakable spec lets voice assistants read the page
+ * `&lt;h1&gt;` — important for political-intelligence pages where the
+ * headline carries the analytical lede.
+ *
+ * Pure — returns the `&lt;script type="application/ld+json"&gt;…&lt;/script&gt;`
+ * wrapper as a string so callers can splice it before `&lt;/head&gt;`.
+ */
+export function buildStaticPageJsonLd(input: {
+  readonly title: string;
+  readonly description: string;
+  readonly canonicalUrl: string;
+  readonly lang: Language;
+  readonly family: StaticPageFamily;
+}): string {
+  const { title, description, canonicalUrl, lang, family } = input;
+  const inLanguage = HREFLANG[lang];
+  // The `inLanguage` field carries the BCP-47 / hreflang code; the
+  // `Speakable` cssSelector points at the first `&lt;h1&gt;` on every static
+  // page (every family ships one).
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': 'https://riksdagsmonitor.com/#website',
+        'name': 'Riksdagsmonitor',
+        'url': 'https://riksdagsmonitor.com/',
+        'inLanguage': inLanguage,
+        'publisher': { '@id': 'https://riksdagsmonitor.com/#organization' },
+      },
+      {
+        '@type': 'Organization',
+        '@id': 'https://riksdagsmonitor.com/#organization',
+        'name': 'Hack23 AB',
+        'url': 'https://www.hack23.com',
+        'logo': 'https://riksdagsmonitor.com/icon-192.png',
+      },
+      {
+        '@type': 'WebPage',
+        '@id': `${canonicalUrl}#webpage`,
+        'url': canonicalUrl,
+        'name': title,
+        'description': description,
+        'inLanguage': inLanguage,
+        'isPartOf': { '@id': 'https://riksdagsmonitor.com/#website' },
+        'about': {
+          '@type': 'Thing',
+          'name': pageAbout(family, lang),
+        },
+        'speakable': {
+          '@type': 'SpeakableSpecification',
+          'cssSelector': ['h1'],
+        },
+      },
+    ],
+  };
+  return `&lt;script type="application/ld+json"&gt;\n${JSON.stringify(jsonLd, null, 2)}\n&lt;/script&gt;`;
+}
+&nbsp;
+/**
+ * Human-readable `about` label per `family × lang` for the WebPage
+ * JSON-LD node. Pre-localised so search engines surface the right
+ * topic in their Knowledge Graph snippet.
+ */
+function pageAbout(family: StaticPageFamily, lang: Language): string {
+  const PAGE_ABOUT: Readonly&lt;Record&lt;StaticPageFamily, Readonly&lt;Record&lt;Language, string&gt;&gt;&gt;&gt; = {
+    home: {
+      en: 'Swedish Parliament political intelligence',
+      sv: 'Politisk underrättelse om Sveriges riksdag',
+      da: 'Politisk efterretning om Sveriges rigsdag',
+      no: 'Politisk etterretning om Sveriges riksdag',
+      fi: 'Ruotsin valtiopäivien poliittinen tiedustelu',
+      de: 'Politische Aufklärung des schwedischen Parlaments',
+      fr: 'Renseignement politique du parlement suédois',
+      es: 'Inteligencia política del parlamento sueco',
+      nl: 'Politieke inlichtingen over het Zweedse parlement',
+      ar: 'استخبارات سياسية للبرلمان السويدي',
+      he: 'מודיעין פוליטי של הפרלמנט השוודי',
+      ja: 'スウェーデン議会の政治インテリジェンス',
+      ko: '스웨덴 의회 정치 정보',
+      zh: '瑞典议会政治情报',
+    },
+    dashboard: {
+      en: 'Parliamentary analytics dashboard',
+      sv: 'Parlamentariskt analyspanel',
+      da: 'Parlamentarisk analysepanel',
+      no: 'Parlamentarisk analysepanel',
+      fi: 'Parlamenttinen analytiikkapaneeli',
+      de: 'Parlamentarisches Analyse-Dashboard',
+      fr: 'Tableau de bord d’analyse parlementaire',
+      es: 'Tablero de análisis parlamentario',
+      nl: 'Parlementair analyse-dashboard',
+      ar: 'لوحة تحليلات برلمانية',
+      he: 'לוח אנליטיקה פרלמנטרי',
+      ja: '議会分析ダッシュボード',
+      ko: '의회 분석 대시보드',
+      zh: '议会分析仪表板',
+    },
+    politician: {
+      en: 'Politician career and productivity analytics',
+      sv: 'Politikers karriär- och produktivitetsanalys',
+      da: 'Politikers karriere- og produktivitetsanalyse',
+      no: 'Politikers karriere- og produktivitetsanalyse',
+      fi: 'Poliitikkojen ura- ja tuottavuusanalyysi',
+      de: 'Politiker­karriere- und Produktivitätsanalyse',
+      fr: 'Analyse de la carrière et de la productivité des politiciens',
+      es: 'Análisis de carrera y productividad de políticos',
+      nl: 'Carrière- en productiviteitsanalyse van politici',
+      ar: 'تحليل المسار المهني وإنتاجية السياسيين',
+      he: 'ניתוח קריירה ופרודוקטיביות של פוליטיקאים',
+      ja: '政治家のキャリアと生産性分析',
+      ko: '정치인 경력 및 생산성 분석',
+      zh: '政治家职业生涯与生产力分析',
+    },
+  };
+  return PAGE_ABOUT[family][lang];
+}
+&nbsp;
+/**
+ * HTML attribute escaper used inside the building blocks above. Mirrors
+ * the strictest subset used by `render-lib/chrome/head.ts` so the output
+ * passes HTMLHint without surprises (`&amp;`, `"`, `&lt;`, `&gt;`, `'`).
+ */
+function escapeHtmlAttribute(text: string): string {
+  return text
+    .replace(/&amp;/g, '&amp;amp;')
+    .replace(/"/g, '&amp;quot;')
+    .replace(/&lt;/g, '&amp;lt;')
+    .replace(/&gt;/g, '&amp;gt;')
+    .replace(/'/g, '&amp;#39;');
+}
+&nbsp;
+/**
+ * Orchestrator — rewrites the `&lt;head&gt;` of a static page so it ships:
+ *
+ *  1. A localized 7-token `&lt;meta name="keywords"&gt;` (replacing the EN
+ *     leak that was identical across all 14 hreflang siblings).
+ *  2. An `og:locale` + `og:locale:alternate[]` block (replacing any
+ *     single hard-coded `&lt;meta property="og:locale" content="en_US"&gt;`).
+ *  3. A Twitter Card block (added if missing — `politician-dashboard*.html`
+ *     had none before this module landed).
+ *  4. A JSON-LD `WebSite` + `WebPage` + Speakable blob (added if missing).
+ *
+ * The function is **idempotent** — running it twice yields the same
+ * output as running it once. This is required because
+ * `normalize-static-html-chrome.ts` runs in the prebuild pipeline and
+ * may execute multiple times during dev / CI re-renders.
+ *
+ * **Title and description are preserved verbatim** — they are
+ * hand-authored per language in the source HTML, and this module is
+ * deliberately non-destructive on those fields. The Twitter Card and
+ * JSON-LD merely *reference* them.
+ */
+export function enhanceStaticPageHead(input: {
+  readonly html: string;
+  readonly lang: Language;
+  readonly family: StaticPageFamily;
+}): string {
+  const { html, lang, family } = input;
+&nbsp;
+  // Skip rewrite for pages that do not have a parseable &lt;head&gt;.
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!/&lt;head\b[^&gt;]*&gt;[\s\S]*?&lt;\/head&gt;/i.test(html)) <span class="cstat-no" title="statement not covered" >return html;</span>
+&nbsp;
+  // Extract the page-level `&lt;title&gt;` and `&lt;meta name="description"&gt;` so
+  // the Twitter Card / JSON-LD references the already-translated values.
+  const titleMatch = html.match(/&lt;title&gt;([\s\S]*?)&lt;\/title&gt;/i);
+  const descriptionMatch = html.match(/&lt;meta\s+name=["']description["']\s+content=["']([^"']*)["']/i);
+  const canonicalMatch = html.match(/&lt;link\s+rel=["']canonical["']\s+href=["']([^"']*)["']/i);
+  const ogImageMatch = html.match(/&lt;meta\s+property=["']og:image["']\s+content=["']([^"']*)["']/i);
+&nbsp;
+  const title = (titleMatch?.[1] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'').t</span>rim();
+  const description = (descriptionMatch?.[1] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'').t</span>rim();
+  const canonicalUrl = (canonicalMatch?.[1] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'').t</span>rim();
+  const imageUrl = (ogImageMatch?.[1] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'https://riksdagsmonitor.com/images/og-image.webp').t</span>rim();
+&nbsp;
+  let next = html;
+&nbsp;
+  // ── (1) Replace `&lt;meta name="keywords"&gt;` ─────────────────────────────
+  const localizedKeywords = buildStaticPageKeywords(family, lang);
+  const keywordsTag = `&lt;meta name="keywords" content="${escapeHtmlAttribute(localizedKeywords)}"&gt;`;
+  if (/&lt;meta\s+name=["']keywords["'][^&gt;]*&gt;/i.test(next)) {
+    next = next.replace(/&lt;meta\s+name=["']keywords["'][^&gt;]*&gt;/i, keywordsTag);
+  } else <span class="cstat-no" title="statement not covered" ><span class="missing-if-branch" title="else path not taken" >E</span>if (/&lt;\/head&gt;/i.test(next)) {</span>
+<span class="cstat-no" title="statement not covered" >    next = next.replace(/&lt;\/head&gt;/i, `${keywordsTag}\n&lt;/head&gt;`);</span>
+  }
+&nbsp;
+  // ── (2) Replace `&lt;meta property="og:locale" ...&gt;` (single tag form) ─
+  // The hand-authored pages ship at most one `og:locale` meta tag. We
+  // remove every existing `og:locale` / `og:locale:alternate` tag and
+  // inject the freshly-built block in a deterministic location.
+  const ogLocaleBlock = buildStaticPageOgLocaleBlock(lang);
+  next = next.replace(/\s*&lt;meta\s+property=["']og:locale(?::alternate)?["'][^&gt;]*&gt;/gi, '');
+  // Insert after the first `og:url` tag if present, else before `&lt;/head&gt;`.
+  if (/&lt;meta\s+property=["']og:url["'][^&gt;]*&gt;/i.test(next)) {
+    next = next.replace(/(&lt;meta\s+property=["']og:url["'][^&gt;]*&gt;)/i, `$1\n${ogLocaleBlock}`);
+  } else <span class="missing-if-branch" title="else path not taken" >E</span>if (/&lt;\/head&gt;/i.test(next)) {
+    next = next.replace(/&lt;\/head&gt;/i, `${ogLocaleBlock}\n&lt;/head&gt;`);
+  }
+&nbsp;
+  // ── (3) Twitter Card — add if missing (idempotent) ──────────────────
+  if (!/&lt;meta\s+name=["']twitter:card["']/i.test(next)) {
+    const twitterBlock = buildStaticPageTwitterCardBlock({
+      title,
+      description,
+      canonicalUrl,
+      imageUrl,
+    });
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (/&lt;\/head&gt;/i.test(next)) {
+      next = next.replace(/&lt;\/head&gt;/i, `${twitterBlock}\n&lt;/head&gt;`);
+    }
+  }
+&nbsp;
+  // ── (4) JSON-LD WebSite + WebPage + Speakable — add if missing ──────
+  if (!/&lt;script\s+type=["']application\/ld\+json["']/i.test(next)) {
+    const jsonLdBlock = buildStaticPageJsonLd({
+      title,
+      description,
+      canonicalUrl,
+      lang,
+      family,
+    });
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (/&lt;\/head&gt;/i.test(next)) {
+      next = next.replace(/&lt;\/head&gt;/i, `${jsonLdBlock}\n&lt;/head&gt;`);
+    }
+  }
+&nbsp;
+  return next;
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-05-17T22:54:48.218Z
+            </div>
+        <script src="../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../sorter.js"></script>
+        <script src="../block-navigation.js"></script>
+    </body>
+</html>
+    
