@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-05-17",
+  "subfolder": "realtime-pulse",
+  "pirs": [
+    {
+      "id": "PIR-01",
+      "title": "Civil Defence Capability",
+      "status": "active",
+      "priority": "high",
+      "indicators_collected": ["HC03205", "HC03206", "HC01FiU33", "HC10752"],
+      "assessment": "MODERATE probability that additional municipal civil defence guidance issued by autumn 2025",
+      "confidence": "HIGH",
+      "next_check_date": "2026-05-24"
+    },
+    {
+      "id": "PIR-02",
+      "title": "Energy Security / Uranium Mining",
+      "status": "critical-watch",
+      "priority": "high",
+      "indicators_collected": ["HC03203"],
+      "assessment": "HIGH probability of passage given Tidö majority; first applications 12-18 months post-passage",
+      "confidence": "HIGH",
+      "next_check_date": "2026-06-01"
+    },
+    {
+      "id": "PIR-03",
+      "title": "Labour Market / Unemployment",
+      "status": "monitoring",
+      "priority": "high",
+      "indicators_collected": ["HC10746", "HC10744", "HC10745", "HC01FiU20"],
+      "assessment": "UNFAVOURABLE trajectory for government; Q2 2026 data pivotal",
+      "confidence": "MEDIUM-HIGH",
+      "next_check_date": "2026-06-01"
+    },
+    {
+      "id": "PIR-04",
+      "title": "Election Campaign Positioning",
+      "status": "early-framing",
+      "priority": "medium",
+      "indicators_collected": ["HC10746", "HC10744", "HC10752", "HC03205"],
+      "assessment": "Both security and welfare frames active simultaneously; outcome depends on Q2 2026 macro data",
+      "confidence": "MEDIUM",
+      "next_check_date": "2026-07-01"
+    }
+  ],
+  "intelligence_gaps": [
+    "IMF Sweden Article IV 2025 not retrieved",
+    "Municipal civil defence budget allocation 2025/26 not public",
+    "Individual party polling data not retrieved this cycle"
+  ],
+  "generated_at": "2026-05-17T07:30:00Z",
+  "workflow": "news-realtime-monitor",
+  "run_id": "25992275710"
+}
