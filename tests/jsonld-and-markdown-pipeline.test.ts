@@ -109,6 +109,53 @@ describe('jsonld.ts — buildNewsArticleLd', () => {
     const parsed = JSON.parse(json);
     expect(parsed['@type']).toBe('NewsArticle');
   });
+
+  // -------------------------------------------------------------------------
+  // W6 polish — keywords[] + articleSection on NewsArticle JSON-LD
+  // -------------------------------------------------------------------------
+
+  it('emits NewsArticle.keywords as a deduped array when keywords are supplied', () => {
+    const ld = buildNewsArticleLd({
+      ...input,
+      keywords: 'Riksdag, OSINT, riksdag, parliament, OSINT',
+    });
+    expect(Array.isArray(ld.keywords)).toBe(true);
+    // Case-insensitive dedupe — "Riksdag" / "riksdag" collapse to first wins;
+    // "OSINT" appears once. Final order preserves first-seen.
+    expect(ld.keywords).toEqual(['Riksdag', 'OSINT', 'parliament']);
+  });
+
+  it('drops NewsArticle.keywords entirely when only blanks are supplied', () => {
+    const ld = buildNewsArticleLd({ ...input, keywords: ' , , , ' });
+    expect(ld.keywords).toBeUndefined();
+  });
+
+  it('drops NewsArticle.keywords entirely when no keywords field is supplied', () => {
+    const ld = buildNewsArticleLd(input);
+    expect(ld.keywords).toBeUndefined();
+  });
+
+  it('emits NewsArticle.articleSection when a non-empty value is supplied', () => {
+    const ld = buildNewsArticleLd({ ...input, articleSection: 'Propositions' });
+    expect(ld.articleSection).toBe('Propositions');
+  });
+
+  it('trims NewsArticle.articleSection and drops it when only whitespace', () => {
+    const ld = buildNewsArticleLd({ ...input, articleSection: '   ' });
+    expect(ld.articleSection).toBeUndefined();
+  });
+
+  it('survives JSON.stringify with keywords + articleSection both set', () => {
+    const ld = buildNewsArticleLd({
+      ...input,
+      keywords: 'Riksdag, OSINT, parliament',
+      articleSection: 'Committee Reports',
+    });
+    const json = JSON.stringify(ld);
+    const parsed = JSON.parse(json);
+    expect(parsed.keywords).toEqual(['Riksdag', 'OSINT', 'parliament']);
+    expect(parsed.articleSection).toBe('Committee Reports');
+  });
 });
 
 // ---------------------------------------------------------------------------

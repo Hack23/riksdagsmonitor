@@ -181,11 +181,20 @@ export function generatePoliticalIntelligenceHtml(lang: Language): string {
   if (methodologiesItemList) jsonLd.push(methodologiesItemList);
   if (templatesItemList) jsonLd.push(templatesItemList);
 
+  // The `t.metaKeywords` seed is already localized per language. The
+  // methodology and template filenames are stored under their English
+  // slugs (e.g. `Admiralty Rubric`, `Calibration Ledger`) — appending
+  // them verbatim into a non-EN keyword string leaks English titles
+  // into the `<meta keywords>` and `news_keywords` of every localized
+  // PI page. Only the EN page should mix the catalog titles into its
+  // keyword string; other locales ship the localized seed alone.
   const keywordSet = new Set<string>(
     t.metaKeywords.split(',').map((s) => s.trim()).filter(Boolean),
   );
-  for (const m of methodologies) keywordSet.add(m.title);
-  for (const tpl of templates) keywordSet.add(tpl.title);
+  if (isEnglish) {
+    for (const m of methodologies) keywordSet.add(m.title);
+    for (const tpl of templates) keywordSet.add(tpl.title);
+  }
   const aggregatedKeywords = Array.from(keywordSet).slice(0, 30).join(', ');
 
   const faqItems = getFaqItems('politicalIntelligence', lang);

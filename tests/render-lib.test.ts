@@ -639,9 +639,22 @@ describe('render-lib — article SEO metadata', () => {
     // Title budget — SERP-friendly, no date-stuffing.
     expect(en.title.length).toBeLessThanOrEqual(70);
     expect(en.title).not.toContain('2026-05-11');
-    // Keywords still pull article-type label + native language name.
+    // Keywords pull article-type label + native language name.
+    // (Pre-2026-05 this asserted the EN `German` leak — the fix in
+    // article-seo.ts § buildArticleKeywords intentionally surfaces the
+    // native `Deutsch` instead and drops the EN Language-Meta `.name`
+    // for non-EN locales, per seo-metadata-contract.md §4. See
+    // tests/article-seo-localized-keywords.test.ts for the dedicated
+    // regression suite.)
     expect(de.keywords).toContain('Regierungsvorlagen');
-    expect(de.keywords).toContain('German');
+    expect(de.keywords).toContain('Deutsch');
+    expect(de.keywords).not.toContain('German');
+    // Native German core keywords must be present (the LANG_CORE_KEYWORDS
+    // entry replaced the English-only CORE_KEYWORDS constant).
+    expect(de.keywords).toContain('Schwedisches Parlament');
+    // English frontmatter seed must NOT leak into a DE page.
+    expect(de.keywords).not.toContain('Swedish Parliament');
+    expect(de.keywords).not.toContain('political intelligence');
   });
 });
 

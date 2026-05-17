@@ -183,6 +183,11 @@ export function mergeLocalizedWithEnglish(input: MergeLocalizedInput): string {
     const briefSeo = extractLocalizedBriefSeo({
       briefMarkdown: localizedBriefMarkdown,
       subfolder: subfolder ?? '',
+      // Forward the page language so the description gets truncated
+      // using the per-language SERP window (RTL 120-170, CJK 70-120,
+      // Latin LTR 140-200). See `seo-metadata-contract.md` §4 +
+      // `descriptionWindowForLanguage`.
+      lang,
     });
     if (briefSeo.title) mergedData.title = briefSeo.title;
     if (briefSeo.description) mergedData.description = briefSeo.description;

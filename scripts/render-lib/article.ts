@@ -268,6 +268,12 @@ export async function renderArticleHtml(input: RenderArticleInput): Promise<stri
         : a,
       name: a,
     })),
+    // Mirror the page's `<meta keywords>` into NewsArticle.keywords (an
+    // array per Schema.org), and surface the localized article-type label
+    // as `articleSection` (Propositions / Motions / Interpellations / …).
+    // Both fields are skipped when empty so the JSON-LD shape is stable.
+    keywords: seo.keywords,
+    articleSection: localizedArticleTypeLabel,
   });
 
   const breadcrumbName = title.length > BREADCRUMB_TITLE_MAX_LENGTH

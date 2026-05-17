@@ -50,6 +50,20 @@ export interface NewsArticleLdInput {
   readonly inLanguage: string;
   readonly url: string;
   readonly isBasedOn?: readonly { url: string; name: string }[];
+  /**
+   * Comma-separated keyword string (the same value emitted in the page's
+   * `<meta keywords>`). When supplied, the JSON-LD `keywords` array
+   * mirrors it — see Schema.org `NewsArticle.keywords` and Google's
+   * structured-data guidelines for news. Empty/whitespace strings are
+   * skipped so JSON-LD never ships `"keywords": []`.
+   */
+  readonly keywords?: string;
+  /**
+   * Topical section label (e.g. `Propositions`, `Committee Reports`).
+   * Maps to `NewsArticle.articleSection`. Empty/whitespace strings are
+   * skipped.
+   */
+  readonly articleSection?: string;
 }
 
 // ---------------------------------------------------------------------------
@@ -84,6 +98,10 @@ export interface NewsArticleLd {
   readonly isAccessibleForFree: true;
   readonly isPartOf: { readonly '@type': 'WebSite'; readonly '@id': string; readonly name: string; readonly url: string };
   readonly isBasedOn?: readonly { readonly '@type': 'CreativeWork'; readonly url: string; readonly name: string }[];
+  /** Optional keyword array, sourced from `<meta keywords>`. */
+  readonly keywords?: readonly string[];
+  /** Optional topical section (Google news guideline). */
+  readonly articleSection?: string;
 }
 
 export interface SpeakableWebPageLd {
@@ -150,6 +168,23 @@ export function buildBreadcrumbListLd(entries: readonly BreadcrumbEntry[]): Brea
  * `isBasedOn` (linking to the analysis artifacts that produced it).
  */
 export function buildNewsArticleLd(input: NewsArticleLdInput): NewsArticleLd {
+  // Split + dedupe the comma-separated keyword string into a Schema.org
+  // array. Empty / whitespace-only entries are dropped so JSON-LD never
+  // ships `"keywords": [""]` or `"keywords": []`.
+  const keywordList: string[] = [];
+  if (input.keywords && input.keywords.trim().length > 0) {
+    const seen = new Set<string>();
+    for (const raw of input.keywords.split(',')) {
+      const trimmed = raw.trim();
+      if (trimmed.length === 0) continue;
+      const key = trimmed.toLowerCase();
+      if (seen.has(key)) continue;
+      seen.add(key);
+      keywordList.push(trimmed);
+    }
+  }
+  const articleSection = input.articleSection?.trim();
+
   const ld: NewsArticleLd = {
     '@context': 'https://schema.org',
     '@type': 'NewsArticle',
@@ -182,6 +217,8 @@ export function buildNewsArticleLd(input: NewsArticleLdInput): NewsArticleLd {
           })),
         }
       : {}),
+    ...(keywordList.length > 0 ? { keywords: keywordList } : {}),
+    ...(articleSection && articleSection.length > 0 ? { articleSection } : {}),
   };
   return ld;
 }
