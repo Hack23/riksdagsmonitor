@@ -1,0 +1,88 @@
+name: Regenerate Articles
+
+# Manually regenerate every `article.md` (via aggregate-analysis) and every
+# `news/$DATE-$SUBFOLDER-$LANG.html` page (via render-articles, all 14 languages)
+# from the current analysis/daily/ tree, then commit all changed files
+# directly to `main`.
+#
+# Reference docs:
+#   - Article-Generation.md (full pipeline)
+#   - .github/workflows/compile-agentic-workflows.yml (commit-to-main pattern)
+#
+# This is the "deterministic rebuild" companion to the per-type news agentic
+# workflows: no AI is invoked, only the aggregation + chrome/SEO renderer.
+# Use it after changes to render-lib, aggregator, SEO contracts, chrome,
+# language alternates, or any analysis artifact that affects the rendered
+# article corpus.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    name: Regenerate article.md + news HTML (all langs)
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@ab7a9404c0f3da075243ca237b5fac12c98deaa5 # v2.19.3
+        with:
+          egress-policy: audit
+
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          # Full history so the final `git push` to main never hits a shallow
+          # prerequisite-commit failure (mirrors compile-agentic-workflows.yml).
+          fetch-depth: 0
+          token: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: '26'
+          cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            .github/workflows/regenerate-articles.yml
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Aggregate analysis → article.md (all subfolders)
+        run: npx tsx scripts/aggregate-analysis.ts --all
+
+      - name: Render articles → news/*.html (all subfolders, all 14 languages)
+        run: npx tsx scripts/render-articles.ts --all --lang all
+
+      - name: Commit regenerated articles to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Stage every generated/regenerated file across the analysis tree
+          # (article.md siblings) and the rendered HTML corpus.
+          git add analysis/ news/
+
+          if git diff --cached --quiet; then
+            echo "No regenerated files differ from the working tree — nothing to commit."
+            exit 0
+          fi
+
+          git diff --cached --stat
+
+          git commit -m "chore(articles): regenerate article.md and news HTML for all 14 languages
+
+          Ran:
+            - npx tsx scripts/aggregate-analysis.ts --all
+            - npx tsx scripts/render-articles.ts --all --lang all
+
+          Triggered manually via the Regenerate Articles workflow to refresh
+          the deterministic article corpus from the current analysis/daily/
+          tree and shared chrome/SEO pipeline."
+
+          git push origin HEAD:main
