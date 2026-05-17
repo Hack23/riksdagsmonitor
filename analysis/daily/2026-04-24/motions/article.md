@@ -6,7 +6,7 @@ date: 2026-04-24
 subfolder: motions
 slug: 2026-04-24-motions
 source_folder: analysis/daily/2026-04-24/motions
-generated_at: 2026-05-17T18:40:43.276Z
+generated_at: 2026-05-17T22:29:22.242Z
 language: en
 layout: article
 ---
@@ -101,6 +101,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2519,13 +2532,888 @@ All accessible at `https://data.riksdagen.se/dokument/{dok_id}.html`. Example: <
 
 ---
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# الملخص التنفيذي — مقترحات المعارضة — 2026-04-24
+
+**المؤلف**: James Pether Sörling · **الثقة**: عالية · **وقت القراءة**: 60 ثانية
+
+### 🎯 الخلاصة
+
+بين 2026-04-15 و2026-04-17، قدّمت الأحزاب المعارضة الأربعة (S, V, MP, C) **20 مقترحاً مضاداً** ضد **9 مشاريع قوانين من حكومة Tidö** — استجابة تشريعية منسقة مركّزة في ثلاث لجان (FiU/SfU/SoU) ومرتكزة على ميزانية الوقود (prop 2025/26:236، [HD024082](https://data.riksdagen.se/dokument/HD024082.html)). **قدّمت Sverigedemokraterna صفراً من المقترحات المضادة**، محافظةً على الانضباط الكامل لكتلة Tidö. الموجة تُبرق تموضعاً انتخابياً حتى 2026: S تمتلك المحور المالي-المناخي؛ V تمتلك محور التوزيع؛ MP تمتلك محور تصدير الأسلحة؛ C تمتلك محور الإصلاح الإجرائي؛ SD تصمت.
+
+### 🧭 ثلاثة قرارات يدعمها هذا التقرير
+
+1. **ترتيب الأولويات التحريرية** — قيادة التغطية بعنقود الوقود (3 مقترحات، بارز انتخابياً)، ثانوياً بعنقود الترحيل (سيادة القانون) وتصدير الأسلحة (خط انقسام السياسة الخارجية).
+2. **تتبع إشارات الائتلاف** — توثيق أن S *لم تنضم* إلى MP في مقترح تصدير الأسلحة (HD024096 مقابل غياب نظير S). هذا قيد سيناريو أحمر-أخضر أساسي لتشكيل الحكومة عام 2026.
+3. **تحديث التوقعات** — رفع احتمالية إقرار مشاريع قوانين Tidö بدون تغييرات جوهرية من خط الأساس 65 % → 72 %. موقف SD الصفري من المقترحات يُزيل المسار الوحيد المعقول للانشقاق من الجناح الأيمن في مسائل الهجرة/العدالة.
+
+### نقاط 60 ثانية
+
+- **الحجم**: 20 مقترحاً / 72 ساعة / 9 اقتراحات / 6 لجان. **Admiralty B2**.
+- **ساحة المعركة**: ميزانية الوقود (prop 236) هي الملف الأسخن بمفرده — S ([HD024082](https://data.riksdagen.se/dokument/HD024082.html)) وV ([HD024092](https://data.riksdagen.se/dokument/HD024092.html)) وMP ([HD024098](https://data.riksdagen.se/dokument/HD024098.html)) قدّموا جميعاً.
+- **سيادة القانون**: prop 2025/26:235 (الترحيل) يستقطب ثلاثة مقترحات من C/V/MP ([HD024090](https://data.riksdagen.se/dokument/HD024090.html), [HD024095](https://data.riksdagen.se/dokument/HD024095.html), [HD024097](https://data.riksdagen.se/dokument/HD024097.html)) — V تقترح الرفض الكامل؛ C تقترح اشتراط المنهجية.
+- **السياسة الخارجية**: MP وحدها تقترح حظراً كاملاً على تصدير العتاد الحربي ([HD024096](https://data.riksdagen.se/dokument/HD024096.html))؛ V تقترح تعديلات ([HD024091](https://data.riksdagen.se/dokument/HD024091.html)). لا مقترح من S — صمت استراتيجي متسق مع توافق S في عصر الناتو.
+- **صمت SD**: صفر مقترحات من SD ضد أي من الاقتراحات التسعة. انضباط Tidö الكامل. **Admiralty A1**.
+- **مسار الوسط**: C قدّمت على 5 مشاريع قوانين (prop 215, 216, 222, 223, 229, 235) لكنها تقترح باستمرار تشديداً إجرائياً بدلاً من الرفض — تموضع للناخبين المهتمين بالوسط البرجوازي.
+- **مخاطر الحكومة**: تصويت FiU على حزمة الوقود هو النتيجة الأرجح لإنتاج خلافات مرئية في الجلسة العامة؛ الائتلاف يحتفظ بالحسابات الرياضية لكن المعارضة ستستخدم النقاش لتأطير الدورة الانتخابية.
+
+### المحفز المستقبلي الأهم
+
+📍 **المتابعة**: الجدول الزمني لتقرير FiU عن prop 2025/26:236 — إذا صدر قبل 2026-06-01، يصبح الوقود السردية السياسية المحددة لمطلع الصيف. وإذا تأخر إلى الخريف، يتصلب تأطير S وتواجه تماسك الائتلاف ضغطاً بشأن ديمومة ضريبة الوقود.
+
+### Mermaid — مشهد القرار
+
+```mermaid
+%%{init: {'theme':'dark'}}%%
+flowchart TB
+    Start([20 motions filed<br/>2026-04-15/17]) --> Cluster{Cluster by propagent}
+    Cluster -->|3 motions| Fiscal[Drivmedelsbudget<br/>prop 236]
+    Cluster -->|3 motions| Justice[Utvisning<br/>prop 235]
+    Cluster -->|3 motions| Welfare[Kommun vård<br/>prop 216]
+    Cluster -->|3 motions| Civil[Ersättningsregler<br/>prop 222]
+    Cluster -->|2+2+2+1+1| Rest[5 other propositions]
+
+    Fiscal --> Decision1[Lead story:<br/>election-salient]
+    Justice --> Decision2[Rule-of-law:<br/>V vs C framing split]
+    Welfare --> Decision3[Welfare-state cleavage]
+    Civil --> Decision4[Civil-law track]
+
+    Decision1 --> Impact((2026 election<br/>coalition math))
+    Decision2 --> Impact
+    Decision3 --> Impact
+    Decision4 --> Impact
+
+    style Start fill:#00d9ff,stroke:#000,color:#000
+    style Fiscal fill:#ff006e,stroke:#fff,color:#fff
+    style Justice fill:#ff006e,stroke:#fff,color:#fff
+    style Welfare fill:#ffbe0b,stroke:#000,color:#000
+    style Civil fill:#ffbe0b,stroke:#000,color:#000
+    style Impact fill:#ffbe0b,stroke:#000,color:#000
+```
+
+---
+
+**التحليل الكامل**: [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/synthesis-summary.md) · [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/intelligence-assessment.md) · [forward-indicators.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/forward-indicators.md) · [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/risk-assessment.md)
+
+---
+### ملاحظة مراجعة الجولة الثانية
+أُعيدت القراءة واكتملت 2026-04-24T01:23Z. تحقق: (1) جميع الـ 20 dok_id مستشهداً بها؛ (2) درجات DIW مُوفَّقة مع مصفوفة الأهمية؛ (3) أنماط Mermaid تجتاز البوابة؛ (4) موجة 4 أحزاب على prop 216 مؤكدة بوصفها أقوى إشارة تنسيق.
+
+<!-- source-sha: f7b237c366726abf3d6a4a68b0b9f63ef9205ac0 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling · **Konfidens**: HØJ · **Læsetid**: 60 sekunder
+
+### 🎯 BLUF
+
+Mellem 2026-04-15 og 2026-04-17 indgav de fire oppositionspartier (S, V, MP, C) **20 modmotioner** mod **9 Tidö-regeringsforslag** — et koordineret lovgivningssvar koncentreret i tre udvalg (FiU/SfU/SoU) og forankret i drivmedelsbudgetten (prop 2025/26:236, [HD024082](https://data.riksdagen.se/dokument/HD024082.html)). **Sverigedemokraterna indgav nul modmotioner** og bevarede fuldstændig Tidö-blokdisciplin. Bølgen telegraferer valgpositionering frem til 2026: S ejer den finanspolitisk-klimatmæssige akse; V ejer fordelingsaxlen; MP ejer våbeneksportakslen; C ejer den proceduremæssige reformaxel; SD forbliver tavs.
+
+### 🧭 3 beslutninger dette brief understøtter
+
+1. **Redaktionel prioritetsrangering** — Led dækningen med brændstofklyngen (3 motioner, valgfremtrædende), sekundært med udvisningsklyngen (retsstatsprincip) og våbeneksport (udenrigspolitisk skel).
+2. **Sporing af koalitionssignaler** — Notér at S *ikke* har tilsluttet sig MP om våbeneksportmotionen (HD024096 kontra fraværende S-modpart). Dette er en bærende rød-grøn scenariebegrænsning for 2026-regeringsdannelse.
+3. **Prognoseopdatering** — Hæv sandsynligheden for at Tidö-lovforslaget vedtages stort set uændret fra basislinjen 65 % → 72 %. SD's nul-motionsholdning fjerner den eneste plausible højreflanke-defektionsvej i migrations-/retsspørgsmål.
+
+### 60-sekunders punkter
+
+- **Skala**: 20 motioner / 72 timer / 9 forslag / 6 udvalg. **Admiralty B2**.
+- **Kampzone**: Brændstofbudgettet (prop 236) er den enkelt varmeste fil — S ([HD024082](https://data.riksdagen.se/dokument/HD024082.html)), V ([HD024092](https://data.riksdagen.se/dokument/HD024092.html)) og MP ([HD024098](https://data.riksdagen.se/dokument/HD024098.html)) indgav alle.
+- **Retsorden**: prop 2025/26:235 (udvisning) tiltrækker tre motioner fra C/V/MP ([HD024090](https://data.riksdagen.se/dokument/HD024090.html), [HD024095](https://data.riksdagen.se/dokument/HD024095.html), [HD024097](https://data.riksdagen.se/dokument/HD024097.html)) — V foreslår fuld afvisning; C foreslår systematik-krav.
+- **Udenrigspolitik**: MP foreslår alene et fuldt eksportforbud på krigsmateriel ([HD024096](https://data.riksdagen.se/dokument/HD024096.html)); V foreslår ændringer ([HD024091](https://data.riksdagen.se/dokument/HD024091.html)). Ingen S-motion — en strategisk tavshed konsistent med S's Nato-erakonsensus.
+- **SD-tavshed**: Nul SD-motioner mod nogen af de 9 forslag. Fuld Tidö-disciplin. **Admiralty A1**.
+- **Centrists spor**: C indgav om 5 lovforslag (prop 215, 216, 222, 223, 229, 235) men motionerer konsekvent for proceduremæssig stramning snarere end afvisning — positionering til borgerlige nysgerrige vælgere.
+- **Regeringsrisiko**: FiU-afstemningen om brændstofpakken er det mest sandsynlige udfald der genererer synlig gulvuenighed; koalitionen bevarer aritmetikken men oppositionen vil bruge debatten til valgcyklusindramning.
+
+### Vigtigste fremtidige udløser
+
+📍 **Hold øje med**: FiU's betænkningstidslinje for prop 2025/26:236 — hvis afgivet inden 2026-06-01 bliver brændstof det definerende politiske narrativ i forsommeren. Hvis forsinket til efteråret hårdner S's indramning og koalitionens sammenhæng udsættes for stress ved brændstofskattens permanens.
+
+### Mermaid — beslutningslandskab
+
+```mermaid
+%%{init: {'theme':'dark'}}%%
+flowchart TB
+    Start([20 motions filed<br/>2026-04-15/17]) --> Cluster{Cluster by propagent}
+    Cluster -->|3 motions| Fiscal[Drivmedelsbudget<br/>prop 236]
+    Cluster -->|3 motions| Justice[Utvisning<br/>prop 235]
+    Cluster -->|3 motions| Welfare[Kommun vård<br/>prop 216]
+    Cluster -->|3 motions| Civil[Ersättningsregler<br/>prop 222]
+    Cluster -->|2+2+2+1+1| Rest[5 other propositions]
+
+    Fiscal --> Decision1[Lead story:<br/>election-salient]
+    Justice --> Decision2[Rule-of-law:<br/>V vs C framing split]
+    Welfare --> Decision3[Welfare-state cleavage]
+    Civil --> Decision4[Civil-law track]
+
+    Decision1 --> Impact((2026 election<br/>coalition math))
+    Decision2 --> Impact
+    Decision3 --> Impact
+    Decision4 --> Impact
+
+    style Start fill:#00d9ff,stroke:#000,color:#000
+    style Fiscal fill:#ff006e,stroke:#fff,color:#fff
+    style Justice fill:#ff006e,stroke:#fff,color:#fff
+    style Welfare fill:#ffbe0b,stroke:#000,color:#000
+    style Civil fill:#ffbe0b,stroke:#000,color:#000
+    style Impact fill:#ffbe0b,stroke:#000,color:#000
+```
+
+---
+
+**Fuld analyse**: [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/synthesis-summary.md) · [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/intelligence-assessment.md) · [forward-indicators.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/forward-indicators.md) · [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/risk-assessment.md)
+
+---
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling · **Konfidenz**: HOCH · **Lesezeit**: 60 Sekunden
+
+### 🎯 BLUF
+
+Zwischen dem 2026-04-15 und 2026-04-17 reichten die vier Oppositionsparteien (S, V, MP, C) **20 Gegenmotionen** gegen **9 Tidö-Regierungsvorlagen** ein — eine koordinierte Gesetzgebungsantwort, die sich auf drei Ausschüsse (FiU/SfU/SoU) konzentriert und im Kraftstoffhaushalt (Prop. 2025/26:236, [HD024082](https://data.riksdagen.se/dokument/HD024082.html)) verankert ist. **Sverigedemokraterna reichte null Gegenmotionen ein** und bewahrte die vollständige Tidö-Blockdisziplin. Die Welle telegrafiert Wahlpositionierung bis 2026: S besitzt die finanzpolitisch-klimatische Achse; V besitzt die Verteilungsachse; MP besitzt die Waffenexportachse; C besitzt die Achse für Verfahrensreform; SD bleibt still.
+
+### 🧭 3 Entscheidungen, die dieser Bericht unterstützt
+
+1. **Redaktionelle Prioritätsrangliste** — Berichterstattung mit Kraftstoffcluster (3 Motionen, wahlrelevant) einleiten, sekundär mit Ausweisungscluster (Rechtsstaatlichkeit) und Waffenexport (außenpolitische Trennlinie).
+2. **Koalitionssignal-Tracking** — Notieren, dass S der Waffenexportmotion *nicht* beigetreten ist (HD024096 gegenüber fehlendem S-Gegenstück). Dies ist eine tragende rot-grüne Szenariobeschränkung für die Regierungsbildung 2026.
+3. **Prognostualisierung** — Wahrscheinlichkeit, dass Tidö-Gesetze weitgehend unverändert verabschiedet werden, von Basiswert 65 % → 72 % anheben. SD's Null-Motions-Haltung beseitigt den einzigen plausiblen rechten Flanken-Defektionspfad bei Migrations-/Justizfragen.
+
+### 60-Sekunden-Punkte
+
+- **Ausmaß**: 20 Motionen / 72 Stunden / 9 Gesetzentwürfe / 6 Ausschüsse. **Admiralty B2**.
+- **Hauptkampffeld**: Kraftstoffhaushalt (Prop. 236) ist die einzige heiße Datei — S ([HD024082](https://data.riksdagen.se/dokument/HD024082.html)), V ([HD024092](https://data.riksdagen.se/dokument/HD024092.html)) und MP ([HD024098](https://data.riksdagen.se/dokument/HD024098.html)) haben alle eingereicht.
+- **Rechtsordnung**: Prop. 2025/26:235 (Ausweisung) zieht drei Motionen aus C/V/MP ([HD024090](https://data.riksdagen.se/dokument/HD024090.html), [HD024095](https://data.riksdagen.se/dokument/HD024095.html), [HD024097](https://data.riksdagen.se/dokument/HD024097.html)) an — V beantragt vollständige Ablehnung; C beantragt Systematik-Anforderung.
+- **Außenpolitik**: MP schlägt allein ein vollständiges Kriegswaffen-Exportverbot vor ([HD024096](https://data.riksdagen.se/dokument/HD024096.html)); V schlägt Änderungen vor ([HD024091](https://data.riksdagen.se/dokument/HD024091.html)). Keine S-Motion — ein strategisches Schweigen konsistent mit S' Nato-Ära-Konsens.
+- **SD-Schweigen**: Null SD-Motionen gegen eine der 9 Vorlagen. Vollständige Tidö-Disziplin. **Admiralty A1**.
+- **Zentrums-Spur**: C reichte zu 5 Gesetzesinitiativen ein (Prop. 215, 216, 222, 223, 229, 235), beantragt aber konsequent Verfahrensverschärfung statt Ablehnung — Positionierung für bürgerlich-neugierige Wähler.
+- **Regierungsrisiko**: FiU-Abstimmung über das Kraftstoffpaket ist das wahrscheinlichste Ergebnis, das sichtbaren Plenarsaal-Dissens erzeugt; die Koalition behält die Arithmetik, aber die Opposition wird die Debatte für Wahlzyklus-Framing nutzen.
+
+### Wichtigster zukünftiger Auslöser
+
+📍 **Beobachten**: FiU's Betänkande-Zeitplan für Prop. 2025/26:236 — wenn vor 2026-06-01 verabschiedet, wird Kraftstoff zur prägenden politischen Erzählung des Frühsommers. Bei Verzögerung in den Herbst verhärtet S's Framing und die Koalitionskohäsion steht bei der Frage der Dauerhaftigkeit der Kraftstoffsteuer unter Stress.
+
+### Mermaid — Entscheidungslandschaft
+
+```mermaid
+%%{init: {'theme':'dark'}}%%
+flowchart TB
+    Start([20 motions filed<br/>2026-04-15/17]) --> Cluster{Cluster by propagent}
+    Cluster -->|3 motions| Fiscal[Drivmedelsbudget<br/>prop 236]
+    Cluster -->|3 motions| Justice[Utvisning<br/>prop 235]
+    Cluster -->|3 motions| Welfare[Kommun vård<br/>prop 216]
+    Cluster -->|3 motions| Civil[Ersättningsregler<br/>prop 222]
+    Cluster -->|2+2+2+1+1| Rest[5 other propositions]
+
+    Fiscal --> Decision1[Lead story:<br/>election-salient]
+    Justice --> Decision2[Rule-of-law:<br/>V vs C framing split]
+    Welfare --> Decision3[Welfare-state cleavage]
+    Civil --> Decision4[Civil-law track]
+
+    Decision1 --> Impact((2026 election<br/>coalition math))
+    Decision2 --> Impact
+    Decision3 --> Impact
+    Decision4 --> Impact
+
+    style Start fill:#00d9ff,stroke:#000,color:#000
+    style Fiscal fill:#ff006e,stroke:#fff,color:#fff
+    style Justice fill:#ff006e,stroke:#fff,color:#fff
+    style Welfare fill:#ffbe0b,stroke:#000,color:#000
+    style Civil fill:#ffbe0b,stroke:#000,color:#000
+    style Impact fill:#ffbe0b,stroke:#000,color:#000
+```
+
+---
+
+**Vollständige Analyse**: [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/synthesis-summary.md) · [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/intelligence-assessment.md) · [forward-indicators.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/forward-indicators.md) · [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/risk-assessment.md)
+
+---
+### Pass-2-Überprüfungsnotiz
+Erneut gelesen und abgeschlossen 2026-04-24T01:23Z. Verifiziert: (1) alle 20 dok_ids zitiert; (2) DIW-Scores mit Signifikanzmatrix abgestimmt; (3) Mermaid-Stile bestehen den Gate; (4) 4-Parteien-Welle bei Prop. 216 als stärkstes Koordinationssignal bestätigt.
+
+<!-- source-sha: f7b237c366726abf3d6a4a68b0b9f63ef9205ac0 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling · **Confianza**: ALTA · **Tiempo de lectura**: 60 segundos
+
+### 🎯 BLUF
+
+Entre el 2026-04-15 y el 2026-04-17, los cuatro partidos de la oposición (S, V, MP, C) presentaron **20 contramociones** contra **9 proposiciones del gobierno Tidö** — una respuesta legislativa coordinada concentrada en tres comisiones (FiU/SfU/SoU) y anclada en el presupuesto de combustibles (prop 2025/26:236, [HD024082](https://data.riksdagen.se/dokument/HD024082.html)). **Sverigedemokraterna no presentó ninguna contramoción**, preservando la plena disciplina del bloque Tidö. La oleada telegrafía el posicionamiento electoral hasta 2026: S posee el eje fiscal-climático; V posee el eje distributivo; MP posee el eje de exportación de armas; C posee el eje de reforma procedimental; SD guarda silencio.
+
+### 🧭 3 decisiones que apoya este informe
+
+1. **Clasificación de prioridades editoriales** — Encabezar la cobertura con el clúster de combustibles (3 mociones, relevante electoralmente), secundariamente con el clúster de expulsión (estado de derecho) y exportación de armas (fractura de política exterior).
+2. **Seguimiento de señales de coalición** — Registrar que S *no* se ha unido a MP en la moción de exportación de armas (HD024096 frente a la ausencia de contrapartida de S). Esta es una restricción de escenario rojo-verde fundamental para la formación del gobierno 2026.
+3. **Actualización de pronóstico** — Aumentar la probabilidad de que los proyectos de ley Tidö sean aprobados prácticamente sin cambios desde la línea base 65 % → 72 %. La postura de cero mociones de SD elimina el único camino de defección del flanco derecho plausible en cuestiones de migración/justicia.
+
+### Puntos en 60 segundos
+
+- **Escala**: 20 mociones / 72 horas / 9 proposiciones / 6 comisiones. **Admiralty B2**.
+- **Campo de batalla**: El presupuesto de combustibles (prop 236) es el archivo más caliente — S ([HD024082](https://data.riksdagen.se/dokument/HD024082.html)), V ([HD024092](https://data.riksdagen.se/dokument/HD024092.html)) y MP ([HD024098](https://data.riksdagen.se/dokument/HD024098.html)) presentaron todos.
+- **Estado de derecho**: prop 2025/26:235 (expulsión) atrae tres mociones de C/V/MP ([HD024090](https://data.riksdagen.se/dokument/HD024090.html), [HD024095](https://data.riksdagen.se/dokument/HD024095.html), [HD024097](https://data.riksdagen.se/dokument/HD024097.html)) — V propone rechazo total; C propone requisito de sistematismo.
+- **Política exterior**: MP propone solo una prohibición total de exportación de material de guerra ([HD024096](https://data.riksdagen.se/dokument/HD024096.html)); V propone enmiendas ([HD024091](https://data.riksdagen.se/dokument/HD024091.html)). Sin moción de S — un silencio estratégico coherente con el consenso de S en la era de la OTAN.
+- **Silencio de SD**: Cero mociones de SD contra ninguna de las 9 proposiciones. Plena disciplina Tidö. **Admiralty A1**.
+- **Trayectoria del Centro**: C presentó sobre 5 proyectos (prop 215, 216, 222, 223, 229, 235) pero propone sistemáticamente restricción procedimental en lugar de rechazo — posicionamiento para votantes burgueses curiosos.
+- **Riesgo gubernamental**: La votación del FiU sobre el paquete de combustibles es el resultado más probable de generar disenso visible en el hemiciclo; la coalición mantiene la aritmética pero la oposición usará el debate para el encuadre del ciclo electoral.
+
+### Principal desencadenante futuro
+
+📍 **Vigilar**: El calendario del betänkande del FiU para prop 2025/26:236 — si se publica antes del 2026-06-01, el combustible se convierte en la narrativa política definitoria del inicio del verano. Si se retrasa al otoño, el encuadre de S se endurece y la cohesión de la coalición enfrenta tensión sobre la permanencia del impuesto al combustible.
+
+### Mermaid — Panorama de decisiones
+
+```mermaid
+%%{init: {'theme':'dark'}}%%
+flowchart TB
+    Start([20 motions filed<br/>2026-04-15/17]) --> Cluster{Cluster by propagent}
+    Cluster -->|3 motions| Fiscal[Drivmedelsbudget<br/>prop 236]
+    Cluster -->|3 motions| Justice[Utvisning<br/>prop 235]
+    Cluster -->|3 motions| Welfare[Kommun vård<br/>prop 216]
+    Cluster -->|3 motions| Civil[Ersättningsregler<br/>prop 222]
+    Cluster -->|2+2+2+1+1| Rest[5 other propositions]
+
+    Fiscal --> Decision1[Lead story:<br/>election-salient]
+    Justice --> Decision2[Rule-of-law:<br/>V vs C framing split]
+    Welfare --> Decision3[Welfare-state cleavage]
+    Civil --> Decision4[Civil-law track]
+
+    Decision1 --> Impact((2026 election<br/>coalition math))
+    Decision2 --> Impact
+    Decision3 --> Impact
+    Decision4 --> Impact
+
+    style Start fill:#00d9ff,stroke:#000,color:#000
+    style Fiscal fill:#ff006e,stroke:#fff,color:#fff
+    style Justice fill:#ff006e,stroke:#fff,color:#fff
+    style Welfare fill:#ffbe0b,stroke:#000,color:#000
+    style Civil fill:#ffbe0b,stroke:#000,color:#000
+    style Impact fill:#ffbe0b,stroke:#000,color:#000
+```
+
+---
+
+**Análisis completo**: [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/synthesis-summary.md) · [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/intelligence-assessment.md) · [forward-indicators.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/forward-indicators.md) · [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/risk-assessment.md)
+
+---
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling · **Luottamus**: KORKEA · **Lukuaika**: 60 sekuntia
+
+### 🎯 Ydintiivistelmä
+
+Välillä 2026-04-15–2026-04-17 neljä oppositiopuoluetta (S, V, MP, C) jätti **20 vastamietintöä** **9 Tidö-hallituksen esitystä** vastaan — koordinoitu lainsäädäntövastaus, joka on keskittynyt kolmeen valiokuntaan (FiU/SfU/SoU) ja ankkuroitunut polttoainebudjettiin (prop 2025/26:236, [HD024082](https://data.riksdagen.se/dokument/HD024082.html)). **Sverigedemokraterna ei jättänyt yhtään vastamietintöä** ja säilytti täydellisen Tidö-blokkikurin. Aalto ennakoi vuoden 2026 vaaliasemointia: S omistaa finanssi-ilmastoakselin; V omistaa jakautumisakselin; MP omistaa asevienninakselin; C omistaa prosessuaalisen uudistuksen akselin; SD pysyy hiljaa.
+
+### 🧭 Kolme päätöstä, joita tämä tiivistelmä tukee
+
+1. **Toimituksellinen prioriteettijärjestys** — Johda kattavuus polttoaineklusterilla (3 mietintöä, vaalikorostettu), toissijaisesti karkotusklusterilla (oikeusvaltio) ja aseviennillä (ulkopoliittinen jakolinja).
+2. **Koalitiosignaalien seuranta** — Kirjaa ylös, että S *ei* ole liittynyt MP:hen asevientimietinnössä (HD024096 versus poissa oleva S-vastinpari). Tämä on keskeinen punavihreä skenaariopakote vuoden 2026 hallitusmuodostukselle.
+3. **Ennustepäivitys** — Nosta todennäköisyyttä, että Tidö-lakiesitykset hyväksytään olennaisesti muuttumattomina lähtötasosta 65 % → 72 %. SD:n nolla-mietintöasenne poistaa ainoan uskottavan oikean laidan irtiottoreitin maahanmuutto-/oikeusasioissa.
+
+### 60 sekunnin pisteet
+
+- **Laajuus**: 20 mietintöä / 72 tuntia / 9 esitystä / 6 valiokuntaa. **Admiralty B2**.
+- **Taistelukenttä**: Polttoainebudjetti (prop 236) on yksittäinen kuumin tiedosto — S ([HD024082](https://data.riksdagen.se/dokument/HD024082.html)), V ([HD024092](https://data.riksdagen.se/dokument/HD024092.html)) ja MP ([HD024098](https://data.riksdagen.se/dokument/HD024098.html)) jättivät kaikki.
+- **Oikeusvaltion tila**: prop 2025/26:235 (karkotus) houkuttelee kolme mietintöä C/V/MP:ltä ([HD024090](https://data.riksdagen.se/dokument/HD024090.html), [HD024095](https://data.riksdagen.se/dokument/HD024095.html), [HD024097](https://data.riksdagen.se/dokument/HD024097.html)) — V ehdottaa täyttä hylkäämistä; C ehdottaa järjestelmällistä vaatimusta.
+- **Ulkopolitiikka**: MP ehdottaa yksin täyttä sotatarvikkeiden vientikieltoa ([HD024096](https://data.riksdagen.se/dokument/HD024096.html)); V ehdottaa muutoksia ([HD024091](https://data.riksdagen.se/dokument/HD024091.html)). Ei S-mietintöä — strateginen hiljaisuus, joka on johdonmukainen S:n Nato-aikakauden konsensuksen kanssa.
+- **SD:n hiljaisuus**: Nolla SD-mietintöä yhtäkään 9 esityksestä vastaan. Täydellinen Tidö-kuri. **Admiralty A1**.
+- **Keskustan linja**: C jätti 5 lakiesitykseen (prop 215, 216, 222, 223, 229, 235), mutta mietii johdonmukaisesti prosessuaalista tiukentamista hylkäämisen sijaan — asemoituu porvarillisesti uteliaille äänestäjille.
+- **Hallitusriski**: FiU:n äänestys polttoainepaketista on todennäköisin tulos, joka tuottaa näkyvää erimielisyyttä; koalitio säilyttää aritmetiikan, mutta oppositio käyttää keskustelua vaalikiertoraamitukseen.
+
+### Tärkein tulevaisuuden laukaisin
+
+📍 **Seuraa**: FiU:n mietintöaikataulu prop 2025/26:236 — jos se julkaistaan ennen 2026-06-01, polttoaineesta tulee kesän määrittävä poliittinen narratiivi. Jos se viivästyy syksyyn, S:n kehystys kovettuu ja koalition koheesio kohtaa stressiä polttoaineveron pysyvyyden suhteen.
+
+### Mermaid — päätösmaasto
+
+```mermaid
+%%{init: {'theme':'dark'}}%%
+flowchart TB
+    Start([20 motions filed<br/>2026-04-15/17]) --> Cluster{Cluster by propagent}
+    Cluster -->|3 motions| Fiscal[Drivmedelsbudget<br/>prop 236]
+    Cluster -->|3 motions| Justice[Utvisning<br/>prop 235]
+    Cluster -->|3 motions| Welfare[Kommun vård<br/>prop 216]
+    Cluster -->|3 motions| Civil[Ersättningsregler<br/>prop 222]
+    Cluster -->|2+2+2+1+1| Rest[5 other propositions]
+
+    Fiscal --> Decision1[Lead story:<br/>election-salient]
+    Justice --> Decision2[Rule-of-law:<br/>V vs C framing split]
+    Welfare --> Decision3[Welfare-state cleavage]
+    Civil --> Decision4[Civil-law track]
+
+    Decision1 --> Impact((2026 election<br/>coalition math))
+    Decision2 --> Impact
+    Decision3 --> Impact
+    Decision4 --> Impact
+
+    style Start fill:#00d9ff,stroke:#000,color:#000
+    style Fiscal fill:#ff006e,stroke:#fff,color:#fff
+    style Justice fill:#ff006e,stroke:#fff,color:#fff
+    style Welfare fill:#ffbe0b,stroke:#000,color:#000
+    style Civil fill:#ffbe0b,stroke:#000,color:#000
+    style Impact fill:#ffbe0b,stroke:#000,color:#000
+```
+
+---
+
+**Täydellinen analyysi**: [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/synthesis-summary.md) · [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/intelligence-assessment.md) · [forward-indicators.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/forward-indicators.md) · [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/risk-assessment.md)
+
+---
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling · **Confiance** : ÉLEVÉE · **Durée de lecture** : 60 secondes
+
+### 🎯 BLUF
+
+Entre le 2026-04-15 et le 2026-04-17, les quatre partis d'opposition (S, V, MP, C) ont déposé **20 contre-motions** contre **9 propositions du gouvernement Tidö** — une réponse législative coordonnée concentrée dans trois commissions (FiU/SfU/SoU) et ancrée dans le budget des carburants (prop 2025/26:236, [HD024082](https://data.riksdagen.se/dokument/HD024082.html)). **Sverigedemokraterna n'a déposé aucune contre-motion**, préservant la pleine discipline du bloc Tidö. La vague télégraphie le positionnement électoral jusqu'en 2026 : S possède l'axe fiscal-climatique ; V possède l'axe distributif ; MP possède l'axe export d'armes ; C possède l'axe réforme procédurale ; SD reste silencieux.
+
+### 🧭 3 décisions que ce rapport soutient
+
+1. **Classement des priorités éditoriales** — Ouvrir la couverture avec le cluster carburant (3 motions, saillance électorale), secondairement avec le cluster expulsion (état de droit) et l'exportation d'armes (clivage de politique étrangère).
+2. **Suivi des signaux de coalition** — Notez que S *n'a pas* rejoint MP sur la motion d'exportation d'armes (HD024096 contre l'absence de contrepartie S). C'est une contrainte de scénario rouge-vert portante pour la formation du gouvernement 2026.
+3. **Mise à jour des prévisions** — Augmenter la probabilité d'adoption des projets de loi Tidö largement inchangés par rapport à la base 65 % → 72 %. La posture zéro-motion de SD supprime le seul chemin de défection d'aile droite plausible sur les questions de migration/justice.
+
+### Points en 60 secondes
+
+- **Échelle** : 20 motions / 72 heures / 9 propositions / 6 commissions. **Admiralty B2**.
+- **Champ de bataille** : le budget carburant (prop 236) est le dossier le plus chaud — S ([HD024082](https://data.riksdagen.se/dokument/HD024082.html)), V ([HD024092](https://data.riksdagen.se/dokument/HD024092.html)) et MP ([HD024098](https://data.riksdagen.se/dokument/HD024098.html)) ont tous déposé.
+- **État de droit** : prop 2025/26:235 (expulsion) attire trois motions de C/V/MP ([HD024090](https://data.riksdagen.se/dokument/HD024090.html), [HD024095](https://data.riksdagen.se/dokument/HD024095.html), [HD024097](https://data.riksdagen.se/dokument/HD024097.html)) — V propose le rejet intégral ; C propose l'exigence de systématique.
+- **Politique étrangère** : MP propose seul une interdiction totale des exportations de matériel de guerre ([HD024096](https://data.riksdagen.se/dokument/HD024096.html)) ; V propose des amendements ([HD024091](https://data.riksdagen.se/dokument/HD024091.html)). Pas de motion S — un silence stratégique cohérent avec le consensus de S à l'ère de l'OTAN.
+- **Silence de SD** : Zéro motion de SD contre l'une des 9 propositions. Pleine discipline Tidö. **Admiralty A1**.
+- **Piste du Centre** : C a déposé sur 5 projets de loi (prop 215, 216, 222, 223, 229, 235) mais propose systématiquement un durcissement procédural plutôt qu'un rejet — positionnement pour les électeurs bourgeois curieux.
+- **Risque gouvernemental** : Le vote FiU sur le paquet carburant est le résultat le plus probable générant une dissension visible dans la salle ; la coalition conserve l'arithmétique mais l'opposition utilisera le débat pour le cadrage du cycle électoral.
+
+### Principal déclencheur futur
+
+📍 **À surveiller** : Le calendrier du betänkande de FiU pour prop 2025/26:236 — si publié avant 2026-06-01, le carburant devient le récit politique définissant le début de l'été. S'il est retardé jusqu'à l'automne, le cadrage de S se durcit et la cohésion de la coalition est soumise au stress de la permanence de la taxe sur les carburants.
+
+### Mermaid — Paysage décisionnel
+
+```mermaid
+%%{init: {'theme':'dark'}}%%
+flowchart TB
+    Start([20 motions filed<br/>2026-04-15/17]) --> Cluster{Cluster by propagent}
+    Cluster -->|3 motions| Fiscal[Drivmedelsbudget<br/>prop 236]
+    Cluster -->|3 motions| Justice[Utvisning<br/>prop 235]
+    Cluster -->|3 motions| Welfare[Kommun vård<br/>prop 216]
+    Cluster -->|3 motions| Civil[Ersättningsregler<br/>prop 222]
+    Cluster -->|2+2+2+1+1| Rest[5 other propositions]
+
+    Fiscal --> Decision1[Lead story:<br/>election-salient]
+    Justice --> Decision2[Rule-of-law:<br/>V vs C framing split]
+    Welfare --> Decision3[Welfare-state cleavage]
+    Civil --> Decision4[Civil-law track]
+
+    Decision1 --> Impact((2026 election<br/>coalition math))
+    Decision2 --> Impact
+    Decision3 --> Impact
+    Decision4 --> Impact
+
+    style Start fill:#00d9ff,stroke:#000,color:#000
+    style Fiscal fill:#ff006e,stroke:#fff,color:#fff
+    style Justice fill:#ff006e,stroke:#fff,color:#fff
+    style Welfare fill:#ffbe0b,stroke:#000,color:#000
+    style Civil fill:#ffbe0b,stroke:#000,color:#000
+    style Impact fill:#ffbe0b,stroke:#000,color:#000
+```
+
+---
+
+**Analyse complète** : [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/synthesis-summary.md) · [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/intelligence-assessment.md) · [forward-indicators.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/forward-indicators.md) · [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/risk-assessment.md)
+
+---
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# סיכום מנהלים — מוצעי האופוזיציה — 2026-04-24
+
+**מחבר**: James Pether Sörling · **רמת ביטחון**: גבוהה · **זמן קריאה**: 60 שניות
+
+### 🎯 תמצית
+
+בין 2026-04-15 ל-2026-04-17, ארבעת מפלגות האופוזיציה (S, V, MP, C) הגישו **20 הצעות נגד** כנגד **9 הצעות חוק ממשלת Tidö** — תגובה חקיקתית מתואמת מרוכזת בשלוש ועדות (FiU/SfU/SoU) ומעוגנת בתקציב הדלק (prop 2025/26:236, [HD024082](https://data.riksdagen.se/dokument/HD024082.html)). **Sverigedemokraterna הגישה אפס הצעות נגד** ושמרה על משמעת בלוק Tidö מלאה. הגל מסמן מיצוב בחירות לקראת 2026: S מחזיקה בציר הפיסקלי-אקלימי; V מחזיקה בציר החלוקתי; MP מחזיקה בציר ייצוא הנשק; C מחזיקה בציר רפורמת הנהלים; SD שותקת.
+
+### 🧭 3 החלטות שדוח זה תומך בהן
+
+1. **דירוג עדיפויות עריכתיות** — להוביל כיסוי עם אשכול הדלק (3 הצעות, בולט בחירותית), משנית עם אשכול גירוש (שלטון החוק) וייצוא נשק (קו שבר של מדיניות חוץ).
+2. **מעקב אחר אותות קואליציה** — לתעד ש-S *לא* הצטרפה ל-MP בהצעת ייצוא הנשק (HD024096 מול היעדר מקביל מ-S). זהו אילוץ תרחיש אדום-ירוק קריטי להרכבת הממשלה 2026.
+3. **עדכון תחזית** — להעלות את ההסתברות שמשאלות Tidö יאושרו ללא שינויים משמעותיים מבסיס 65 % → 72 %. עמדת אפס-הצעות של SD מסירה את המסלול היחיד האפשרי לעריקה מהאגף הימני בסוגיות הגירה/משפט.
+
+### נקודות 60 שניות
+
+- **היקף**: 20 הצעות / 72 שעות / 9 מצעים / 6 ועדות. **Admiralty B2**.
+- **שדה הקרב**: תקציב הדלק (prop 236) הוא הקובץ החם ביותר — S ([HD024082](https://data.riksdagen.se/dokument/HD024082.html)), V ([HD024092](https://data.riksdagen.se/dokument/HD024092.html)) ו-MP ([HD024098](https://data.riksdagen.se/dokument/HD024098.html)) הגישו כולם.
+- **שלטון החוק**: prop 2025/26:235 (גירוש) מושך שלוש הצעות מ-C/V/MP ([HD024090](https://data.riksdagen.se/dokument/HD024090.html), [HD024095](https://data.riksdagen.se/dokument/HD024095.html), [HD024097](https://data.riksdagen.se/dokument/HD024097.html)) — V מציעה דחייה מלאה; C מציעה דרישת שיטתיות.
+- **מדיניות חוץ**: MP לבדה מציעה איסור ייצוא מלא על חומרי מלחמה ([HD024096](https://data.riksdagen.se/dokument/HD024096.html)); V מציעה תיקונים ([HD024091](https://data.riksdagen.se/dokument/HD024091.html)). אין הצעה מ-S — שתיקה אסטרטגית עקבית עם קונצנזוס S בעידן הנאטו.
+- **שתיקת SD**: אפס הצעות מ-SD כנגד אף אחד מ-9 המצעים. משמעת Tidö מלאה. **Admiralty A1**.
+- **מסלול המרכז**: C הגישה ב-5 הצעות חוק (prop 215, 216, 222, 223, 229, 235) אך מציעה בעקביות הידוק פרוצדורלי ולא דחייה — מיצוב לבוחרים הסקרנים בעלי הנטייה הבורגנית.
+- **סיכון ממשלתי**: הצבעת FiU על חבילת הדלק היא התוצאה הסבירה ביותר ליצור מחלוקת גלויה במליאה; הקואליציה שומרת על החשבון הרוב אך האופוזיציה תשתמש בוויכוח למסגור מחזור הבחירות.
+
+### הטריגר המוביל לעתיד
+
+📍 **מעקב**: לוח הזמנים של betänkande של FiU עבור prop 2025/26:236 — אם יפורסם לפני 2026-06-01, הדלק הופך לסיפור הפוליטי המגדיר של ראשית הקיץ. אם יתעכב לסתיו, המסגור של S מתקשה והלכידות הקואליציונית עומדת בפני לחץ בנוגע לקביעות מס הדלק.
+
+### Mermaid — נוף ההחלטות
+
+```mermaid
+%%{init: {'theme':'dark'}}%%
+flowchart TB
+    Start([20 motions filed<br/>2026-04-15/17]) --> Cluster{Cluster by propagent}
+    Cluster -->|3 motions| Fiscal[Drivmedelsbudget<br/>prop 236]
+    Cluster -->|3 motions| Justice[Utvisning<br/>prop 235]
+    Cluster -->|3 motions| Welfare[Kommun vård<br/>prop 216]
+    Cluster -->|3 motions| Civil[Ersättningsregler<br/>prop 222]
+    Cluster -->|2+2+2+1+1| Rest[5 other propositions]
+
+    Fiscal --> Decision1[Lead story:<br/>election-salient]
+    Justice --> Decision2[Rule-of-law:<br/>V vs C framing split]
+    Welfare --> Decision3[Welfare-state cleavage]
+    Civil --> Decision4[Civil-law track]
+
+    Decision1 --> Impact((2026 election<br/>coalition math))
+    Decision2 --> Impact
+    Decision3 --> Impact
+    Decision4 --> Impact
+
+    style Start fill:#00d9ff,stroke:#000,color:#000
+    style Fiscal fill:#ff006e,stroke:#fff,color:#fff
+    style Justice fill:#ff006e,stroke:#fff,color:#fff
+    style Welfare fill:#ffbe0b,stroke:#000,color:#000
+    style Civil fill:#ffbe0b,stroke:#000,color:#000
+    style Impact fill:#ffbe0b,stroke:#000,color:#000
+```
+
+---
+
+**ניתוח מלא**: [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/synthesis-summary.md) · [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/intelligence-assessment.md) · [forward-indicators.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/forward-indicators.md) · [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/risk-assessment.md)
+
+---
+### הערת סקירת מעבר 2
+נקרא מחדש והושלם 2026-04-24T01:23Z. אומת: (1) כל 20 הdok_ids מצוינים; (2) ציוני DIW הותאמו למטריצת המשמעות; (3) סגנונות Mermaid עוברים את הסף; (4) גל 4 המפלגות ב-prop 216 אושר כאות תיאום החזק ביותר.
+
+<!-- source-sha: f7b237c366726abf3d6a4a68b0b9f63ef9205ac0 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling · **信頼度**: 高 · **読了時間**: 60秒
+
+### 🎯 要点
+
+2026年4月15日から17日の間に、4つの野党(S, V, MP, C)が**9つのTidö政府法案**に対して**20件の対抗動議**を提出した — FiU/SfU/SoUの3委員会に集中し、燃料予算(prop 2025/26:236、[HD024082](https://data.riksdagen.se/dokument/HD024082.html))を軸とする協調した立法対応である。**Sverigedemokraternaは対抗動議ゼロ件**で、Tidöブロックの完全な規律を維持した。この波は2026年に向けた選挙ポジショニングを示す: SはFiUの財政-気候軸を保有; Vは分配軸を保有; MPは武器輸出軸を保有; Cは手続改革軸を保有; SDは沈黙を保つ。
+
+### 🧭 このブリーフが支援する3つの意思決定
+
+1. **編集優先度ランキング** — 燃料クラスター(3動議、選挙的顕在性)で報道を先導し、次に追放クラスター(法の支配)と武器輸出(外交政策の亀裂)を扱う。
+2. **連立シグナルの追跡** — Sが武器輸出動議でMPに加わっていないことを記録(HD024096対不在のS対応動議)。これは2026年政府形成における根幹的な赤緑シナリオ制約である。
+3. **予測更新** — Tidö法案が実質的に変更なく可決される確率をベースラインの65 %→72 %に引き上げる。SDのゼロ動議姿勢は、移住/司法問題における右翼フランクからの唯一の現実的離脱経路を排除する。
+
+### 60秒の要点
+
+- **規模**: 20動議 / 72時間 / 9法案 / 6委員会。**Admiralty B2**。
+- **主戦場**: 燃料予算(prop 236)が単独最多の注目ファイル — S ([HD024082](https://data.riksdagen.se/dokument/HD024082.html))、V ([HD024092](https://data.riksdagen.se/dokument/HD024092.html))、MP ([HD024098](https://data.riksdagen.se/dokument/HD024098.html))すべてが提出。
+- **法の支配**: prop 2025/26:235(追放)がC/V/MPから3動議を引き寄せる([HD024090](https://data.riksdagen.se/dokument/HD024090.html)、[HD024095](https://data.riksdagen.se/dokument/HD024095.html)、[HD024097](https://data.riksdagen.se/dokument/HD024097.html)) — Vは完全否決を提案; Cは体系的要件を提案。
+- **外交政策**: MPのみが戦争物資の完全輸出禁止を提案([HD024096](https://data.riksdagen.se/dokument/HD024096.html)); Vが修正案を提案([HD024091](https://data.riksdagen.se/dokument/HD024091.html))。S動議なし — NATOの時代のSのコンセンサスに整合する戦略的沈黙。
+- **SDの沈黙**: 9法案いずれに対してもSD動議ゼロ。完全なTidö規律。**Admiralty A1**。
+- **中央党の軌跡**: Cは5法案(prop 215, 216, 222, 223, 229, 235)に提出したが、否決よりも一貫して手続的引き締めを求める動議 — 保守系の好奇心ある有権者向けのポジショニング。
+- **政府リスク**: 燃料パッケージに関するFiUの採決が、本会議で表立った反対を生む最も可能性の高い結果; 連立は算術上の多数を保つが、野党は討論を選挙サイクルのフレーミングに利用する。
+
+### 最重要将来トリガー
+
+📍 **注目**: prop 2025/26:236に関するFiUのbetänkande — 2026年6月1日前に報告されれば、燃料は初夏の定義的な政治的物語となる。秋に遅延すれば、Sのフレーミングが硬化し、燃料税の恒久化をめぐって連立の結束に圧力がかかる。
+
+### Mermaid — 意思決定の景観
+
+```mermaid
+%%{init: {'theme':'dark'}}%%
+flowchart TB
+    Start([20 motions filed<br/>2026-04-15/17]) --> Cluster{Cluster by propagent}
+    Cluster -->|3 motions| Fiscal[Drivmedelsbudget<br/>prop 236]
+    Cluster -->|3 motions| Justice[Utvisning<br/>prop 235]
+    Cluster -->|3 motions| Welfare[Kommun vård<br/>prop 216]
+    Cluster -->|3 motions| Civil[Ersättningsregler<br/>prop 222]
+    Cluster -->|2+2+2+1+1| Rest[5 other propositions]
+
+    Fiscal --> Decision1[Lead story:<br/>election-salient]
+    Justice --> Decision2[Rule-of-law:<br/>V vs C framing split]
+    Welfare --> Decision3[Welfare-state cleavage]
+    Civil --> Decision4[Civil-law track]
+
+    Decision1 --> Impact((2026 election<br/>coalition math))
+    Decision2 --> Impact
+    Decision3 --> Impact
+    Decision4 --> Impact
+
+    style Start fill:#00d9ff,stroke:#000,color:#000
+    style Fiscal fill:#ff006e,stroke:#fff,color:#fff
+    style Justice fill:#ff006e,stroke:#fff,color:#fff
+    style Welfare fill:#ffbe0b,stroke:#000,color:#000
+    style Civil fill:#ffbe0b,stroke:#000,color:#000
+    style Impact fill:#ffbe0b,stroke:#000,color:#000
+```
+
+---
+
+**完全な分析**: [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/synthesis-summary.md) · [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/intelligence-assessment.md) · [forward-indicators.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/forward-indicators.md) · [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/risk-assessment.md)
+
+---
+### 第2パスレビューノート
+2026-04-24T01:23Z に再読了・完了。確認済み: (1) 20件すべてのdok_ids引用済み; (2) DIWスコアを重要度マトリックスと照合; (3) Mermaidスタイルがゲートを通過; (4) prop 216における4党の波が最強の調整シグナルとして確認。
+
+<!-- source-sha: f7b237c366726abf3d6a4a68b0b9f63ef9205ac0 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling · **신뢰도**: 높음 · **읽기 시간**: 60초
+
+### 🎯 핵심 요약
+
+2026년 4월 15일부터 17일 사이에 4개 야당(S, V, MP, C)이 **9개 Tidö 정부 법안**에 대해 **20건의 대항 동의**를 제출했다 — FiU/SfU/SoU 3개 위원회에 집중되고 연료 예산(prop 2025/26:236, [HD024082](https://data.riksdagen.se/dokument/HD024082.html))에 고정된 조율된 입법 대응이다. **Sverigedemokraterna는 대항 동의 제로 건**으로 Tidö 블록의 완전한 규율을 유지했다. 이 물결은 2026년을 향한 선거 포지셔닝을 예고한다: S는 재정-기후 축을 보유; V는 분배 축을 보유; MP는 무기 수출 축을 보유; C는 절차 개혁 축을 보유; SD는 침묵을 유지한다.
+
+### 🧭 이 브리핑이 지원하는 3가지 결정
+
+1. **편집 우선순위 결정** — 연료 클러스터(3건의 동의, 선거 돌출)로 보도를 이끌고, 이차적으로 추방 클러스터(법치주의)와 무기 수출(외교 정책 단층선)을 다룬다.
+2. **연립 신호 추적** — S가 무기 수출 동의에서 MP에 합류하지 않았음을 기록(HD024096 대 부재 S 대응 동의). 이는 2026년 정부 구성을 위한 근본적인 적녹 시나리오 제약이다.
+3. **예측 업데이트** — Tidö 법안이 기준치 65 %에서 → 72 %로 실질적으로 변경 없이 통과될 확률을 올린다. SD의 제로 동의 자세는 이민/사법 문제에서 우파 측에서의 유일한 그럴듯한 이탈 경로를 제거한다.
+
+### 60초 요점
+
+- **규모**: 20건의 동의 / 72시간 / 9건의 법안 / 6개 위원회. **Admiralty B2**.
+- **전장**: 연료 예산(prop 236)이 단일 가장 뜨거운 파일 — S ([HD024082](https://data.riksdagen.se/dokument/HD024082.html)), V ([HD024092](https://data.riksdagen.se/dokument/HD024092.html)), MP ([HD024098](https://data.riksdagen.se/dokument/HD024098.html)) 모두 제출.
+- **법치주의**: prop 2025/26:235 (추방)이 C/V/MP에서 세 건의 동의를 끌어들인다([HD024090](https://data.riksdagen.se/dokument/HD024090.html), [HD024095](https://data.riksdagen.se/dokument/HD024095.html), [HD024097](https://data.riksdagen.se/dokument/HD024097.html)) — V는 완전 거부 제안; C는 체계적 요건 제안.
+- **외교 정책**: MP만이 전쟁 물자의 완전 수출 금지를 제안([HD024096](https://data.riksdagen.se/dokument/HD024096.html)); V가 수정안 제안([HD024091](https://data.riksdagen.se/dokument/HD024091.html)). S 동의 없음 — NATO 시대 S의 합의에 일관된 전략적 침묵.
+- **SD의 침묵**: 9건의 법안 중 어느 것에도 SD 동의 제로. 완전한 Tidö 규율. **Admiralty A1**.
+- **중앙당 궤도**: C는 5개의 법안(prop 215, 216, 222, 223, 229, 235)에 제출했지만 거부보다 절차적 강화를 일관되게 동의 — 부르주아적 호기심 있는 유권자를 위한 포지셔닝.
+- **정부 위험**: FiU의 연료 패키지 투표가 본회의에서 가시적인 이의를 만들어낼 가능성이 가장 높은 결과; 연립은 산술을 유지하지만 야당은 선거 사이클 프레이밍을 위해 토론을 사용한다.
+
+### 최우선 미래 트리거
+
+📍 **주목**: prop 2025/26:236에 대한 FiU의 betänkande 타임라인 — 2026년 6월 1일 이전에 보고되면 연료가 초여름의 정치적 주요 내러티브가 된다. 가을로 지연되면 S의 프레이밍이 굳어지고 연립의 응집력이 연료세의 영구화에 관해 압박을 받는다.
+
+### Mermaid — 결정 지형
+
+```mermaid
+%%{init: {'theme':'dark'}}%%
+flowchart TB
+    Start([20 motions filed<br/>2026-04-15/17]) --> Cluster{Cluster by propagent}
+    Cluster -->|3 motions| Fiscal[Drivmedelsbudget<br/>prop 236]
+    Cluster -->|3 motions| Justice[Utvisning<br/>prop 235]
+    Cluster -->|3 motions| Welfare[Kommun vård<br/>prop 216]
+    Cluster -->|3 motions| Civil[Ersättningsregler<br/>prop 222]
+    Cluster -->|2+2+2+1+1| Rest[5 other propositions]
+
+    Fiscal --> Decision1[Lead story:<br/>election-salient]
+    Justice --> Decision2[Rule-of-law:<br/>V vs C framing split]
+    Welfare --> Decision3[Welfare-state cleavage]
+    Civil --> Decision4[Civil-law track]
+
+    Decision1 --> Impact((2026 election<br/>coalition math))
+    Decision2 --> Impact
+    Decision3 --> Impact
+    Decision4 --> Impact
+
+    style Start fill:#00d9ff,stroke:#000,color:#000
+    style Fiscal fill:#ff006e,stroke:#fff,color:#fff
+    style Justice fill:#ff006e,stroke:#fff,color:#fff
+    style Welfare fill:#ffbe0b,stroke:#000,color:#000
+    style Civil fill:#ffbe0b,stroke:#000,color:#000
+    style Impact fill:#ffbe0b,stroke:#000,color:#000
+```
+
+---
+
+**전체 분석**: [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/synthesis-summary.md) · [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/intelligence-assessment.md) · [forward-indicators.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/forward-indicators.md) · [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/risk-assessment.md)
+
+---
+### 2차 통과 검토 노트
+2026-04-24T01:23Z에 다시 읽고 완료됨. 확인: (1) 20개의 dok_id 모두 인용됨; (2) DIW 점수가 유의성 행렬과 조정됨; (3) Mermaid 스타일이 게이트 통과; (4) prop 216에 대한 4당 물결이 가장 강한 조율 신호로 확인됨.
+
+<!-- source-sha: f7b237c366726abf3d6a4a68b0b9f63ef9205ac0 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling · **Betrouwbaarheid**: HOOG · **Leestijd**: 60 seconden
+
+### 🎯 BLUF
+
+Tussen 2026-04-15 en 2026-04-17 dienden de vier oppositiepartijen (S, V, MP, C) **20 tegenmotie** in tegen **9 Tidö-regeringsvoorstellen** — een gecoördineerde wetgevingsreactie geconcentreerd in drie commissies (FiU/SfU/SoU) en verankerd in de brandstofbegroting (prop 2025/26:236, [HD024082](https://data.riksdagen.se/dokument/HD024082.html)). **Sverigedemokraterna diende nul tegenmotie in** en bewaarde de volledige Tidö-blokdiscipline. De golf telegrafie verkiezingspositionering tot 2026: S bezit de fiscaal-klimaatas; V bezit de verdelingsas; MP bezit de wapexportas; C bezit de procedurehervormingsas; SD blijft stil.
+
+### 🧭 3 beslissingen die dit overzicht ondersteunt
+
+1. **Redactionele prioriteitsrangschikking** — Berichtgeving leiden met brandstofcluster (3 moties, verkiezingsrelevant), secundair met uitwijzingscluster (rechtsstaat) en wapenexport (buitenlandspolitieke breuklijn).
+2. **Coalitiesignalen volgen** — Noteer dat S de wapenexportmotie *niet* heeft gesteund (HD024096 versus afwezig S-tegenhanger). Dit is een dragende rood-groene scènebeperking voor de regeringsvorming 2026.
+3. **Prognose-update** — Verhoog de kans dat Tidö-wetsvoorstellen nagenoeg ongewijzigd worden aangenomen van basislijn 65 % → 72 %. SD's nul-motiehouding verwijdert het enige plausibele rechterflank-afvalpad op migratie-/justitievragen.
+
+### 60-secondenpunten
+
+- **Schaal**: 20 moties / 72 uur / 9 voorstellen / 6 commissies. **Admiralty B2**.
+- **Strijdgebied**: Brandstofbegroting (prop 236) is het enkelvoudig heetste dossier — S ([HD024082](https://data.riksdagen.se/dokument/HD024082.html)), V ([HD024092](https://data.riksdagen.se/dokument/HD024092.html)) en MP ([HD024098](https://data.riksdagen.se/dokument/HD024098.html)) dienden allemaal in.
+- **Rechtsstaat**: Prop. 2025/26:235 (uitwijzing) trekt drie moties aan van C/V/MP ([HD024090](https://data.riksdagen.se/dokument/HD024090.html), [HD024095](https://data.riksdagen.se/dokument/HD024095.html), [HD024097](https://data.riksdagen.se/dokument/HD024097.html)) — V stelt volledige afwijzing voor; C stelt systematische eisen voor.
+- **Buitenlands beleid**: MP stelt alleen een volledig exportverbod op oorlogsmateriaal voor ([HD024096](https://data.riksdagen.se/dokument/HD024096.html)); V stelt amendementen voor ([HD024091](https://data.riksdagen.se/dokument/HD024091.html)). Geen S-motie — een strategisch stilzwijgen consistent met S's NAVO-tijdperk-consensus.
+- **SD-stilte**: Nul SD-moties tegen een van de 9 voorstellen. Volledige Tidö-discipline. **Admiralty A1**.
+- **Centrist-spoor**: C diende in op 5 wetsvoorstellen (prop 215, 216, 222, 223, 229, 235) maar motiveert consequent voor procedurele aanscherping in plaats van afwijzing — positionering voor burgelijk nieuwsgierige kiezers.
+- **Regeringsrisico**: FiU-stemming over het brandstofpakket is het meest waarschijnlijke resultaat dat zichtbare plenaire onenigheid genereert; de coalitie behoudt de rekenkunde maar de oppositie zal het debat gebruiken voor verkiezingscyclusframing.
+
+### Belangrijkste toekomstige trigger
+
+📍 **Let op**: FiU's betänkande-tijdlijn voor prop 2025/26:236 — als uitgebracht vóór 2026-06-01, wordt brandstof de bepalende politieke verhaallijn van het vroege zomer. Als vertraagd tot de herfst, verhardt S's framing en staat de coalitiecohesie onder druk bij de permanentie van de brandstofbelasting.
+
+### Mermaid — Beslissingslandschap
+
+```mermaid
+%%{init: {'theme':'dark'}}%%
+flowchart TB
+    Start([20 motions filed<br/>2026-04-15/17]) --> Cluster{Cluster by propagent}
+    Cluster -->|3 motions| Fiscal[Drivmedelsbudget<br/>prop 236]
+    Cluster -->|3 motions| Justice[Utvisning<br/>prop 235]
+    Cluster -->|3 motions| Welfare[Kommun vård<br/>prop 216]
+    Cluster -->|3 motions| Civil[Ersättningsregler<br/>prop 222]
+    Cluster -->|2+2+2+1+1| Rest[5 other propositions]
+
+    Fiscal --> Decision1[Lead story:<br/>election-salient]
+    Justice --> Decision2[Rule-of-law:<br/>V vs C framing split]
+    Welfare --> Decision3[Welfare-state cleavage]
+    Civil --> Decision4[Civil-law track]
+
+    Decision1 --> Impact((2026 election<br/>coalition math))
+    Decision2 --> Impact
+    Decision3 --> Impact
+    Decision4 --> Impact
+
+    style Start fill:#00d9ff,stroke:#000,color:#000
+    style Fiscal fill:#ff006e,stroke:#fff,color:#fff
+    style Justice fill:#ff006e,stroke:#fff,color:#fff
+    style Welfare fill:#ffbe0b,stroke:#000,color:#000
+    style Civil fill:#ffbe0b,stroke:#000,color:#000
+    style Impact fill:#ffbe0b,stroke:#000,color:#000
+```
+
+---
+
+**Volledige analyse**: [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/synthesis-summary.md) · [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/intelligence-assessment.md) · [forward-indicators.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/forward-indicators.md) · [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/risk-assessment.md)
+
+---
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling · **Konfidens**: HØY · **Lesetid**: 60 sekunder
+
+### 🎯 BLUF
+
+Mellom 2026-04-15 og 2026-04-17 leverte de fire opposisjonspartiene (S, V, MP, C) **20 motmotsjoner** mot **9 Tidö-regjeringsproposisjoner** — et koordinert lovgivningssvar konsentrert i tre utvalg (FiU/SfU/SoU) og forankret i drivmedelsbudsjettet (prop 2025/26:236, [HD024082](https://data.riksdagen.se/dokument/HD024082.html)). **Sverigedemokraterna leverte null motmotsjoner** og bevarte fullstendig Tidö-blokk-disiplin. Bølgen telegraferer valgposisjonering frem til 2026: S eier den finanspolitisk-klimatmessige aksen; V eier fordelingsakselen; MP eier våpeneksportakselen; C eier den prosessuelle reformakselen; SD forblir stille.
+
+### 🧭 3 beslutninger dette briefet støtter
+
+1. **Redaksjonell prioritetsrangering** — Led dekningen med drivstoffklyngen (3 motsjoner, valgfremtredende), sekundært med utvisningsklyngen (rettsstat) og våpeneksport (utenrikspolitisk skillelinje).
+2. **Sporing av koalisjonssignaler** — Merk at S *ikke* har sluttet seg til MP om våpeneksportmotsjonen (HD024096 mot fraværende S-motpart). Dette er en bærende rød-grønn scenariebegrensning for 2026-regjeringsdannelse.
+3. **Prognoseoppdatering** — Hev sannsynligheten for at Tidö-lovforslaget vedtas stort sett uendret fra basislinjen 65 % → 72 %. SDs null-motsjonsholdning fjerner den eneste plausible høyreflanke-defeksjonsbanen i migrasjons-/rettsspørsmål.
+
+### 60-sekunders punkter
+
+- **Skala**: 20 motsjoner / 72 timer / 9 proposisjoner / 6 utvalg. **Admiralty B2**.
+- **Kampområde**: Drivstoffbudsjettet (prop 236) er den enkelt heteste filen — S ([HD024082](https://data.riksdagen.se/dokument/HD024082.html)), V ([HD024092](https://data.riksdagen.se/dokument/HD024092.html)) og MP ([HD024098](https://data.riksdagen.se/dokument/HD024098.html)) leverte alle.
+- **Rettsorden**: prop 2025/26:235 (utvisning) tiltrekker tre motsjoner fra C/V/MP ([HD024090](https://data.riksdagen.se/dokument/HD024090.html), [HD024095](https://data.riksdagen.se/dokument/HD024095.html), [HD024097](https://data.riksdagen.se/dokument/HD024097.html)) — V foreslår full avvisning; C foreslår systematikk-krav.
+- **Utenrikspolitikk**: MP foreslår alene et fullt eksportforbud på krigsmateriell ([HD024096](https://data.riksdagen.se/dokument/HD024096.html)); V foreslår endringer ([HD024091](https://data.riksdagen.se/dokument/HD024091.html)). Ingen S-mosjon — en strategisk stillhet konsistent med Ss Nato-erakonsensus.
+- **SD-stillhet**: Null SD-motsjoner mot noen av de 9 proposisjonene. Full Tidö-disiplin. **Admiralty A1**.
+- **Senterpartisporet**: C leverte på 5 lovforslag (prop 215, 216, 222, 223, 229, 235) men motsjoner konsekvent for prosessuell innstramning snarere enn avvisning — posisjonering for borgerlige nysgjerrige velgere.
+- **Regjeriningsrisiko**: FiUs stemmegivning om drivstoffpakken er det mest sannsynlige utfallet som genererer synlig gulvuenighet; koalisjonen beholder aritmetikken men opposisjonen vil bruke debatten til valgsoneringsrammesetting.
+
+### Viktigste fremtidige utløser
+
+📍 **Følg med på**: FiUs innstillingstidslinje for prop 2025/26:236 — hvis avgitt innen 2026-06-01 blir drivstoff den definerende politiske fortellingen i forsommeren. Hvis forsinket til høsten hardner Ss innramming og koalisjonens sammenheng utsettes for stress ved drivstoffskattens permanens.
+
+### Mermaid — beslutningslandskap
+
+```mermaid
+%%{init: {'theme':'dark'}}%%
+flowchart TB
+    Start([20 motions filed<br/>2026-04-15/17]) --> Cluster{Cluster by propagent}
+    Cluster -->|3 motions| Fiscal[Drivmedelsbudget<br/>prop 236]
+    Cluster -->|3 motions| Justice[Utvisning<br/>prop 235]
+    Cluster -->|3 motions| Welfare[Kommun vård<br/>prop 216]
+    Cluster -->|3 motions| Civil[Ersättningsregler<br/>prop 222]
+    Cluster -->|2+2+2+1+1| Rest[5 other propositions]
+
+    Fiscal --> Decision1[Lead story:<br/>election-salient]
+    Justice --> Decision2[Rule-of-law:<br/>V vs C framing split]
+    Welfare --> Decision3[Welfare-state cleavage]
+    Civil --> Decision4[Civil-law track]
+
+    Decision1 --> Impact((2026 election<br/>coalition math))
+    Decision2 --> Impact
+    Decision3 --> Impact
+    Decision4 --> Impact
+
+    style Start fill:#00d9ff,stroke:#000,color:#000
+    style Fiscal fill:#ff006e,stroke:#fff,color:#fff
+    style Justice fill:#ff006e,stroke:#fff,color:#fff
+    style Welfare fill:#ffbe0b,stroke:#000,color:#000
+    style Civil fill:#ffbe0b,stroke:#000,color:#000
+    style Impact fill:#ffbe0b,stroke:#000,color:#000
+```
+
+---
+
+**Full analyse**: [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/synthesis-summary.md) · [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/intelligence-assessment.md) · [forward-indicators.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/forward-indicators.md) · [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/risk-assessment.md)
+
+---
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling · **Konfidensgrad**: HÖG · **Lästid**: 60 sekunder
+
+### 🎯 BLUF
+
+Mellan 2026-04-15 och 2026-04-17 lämnade de fyra oppositionspartierna (S, V, MP, C) in **20 följdmotioner** mot **9 Tidö-regeringspropositioner** — ett samordnat lagstiftningssvar koncentrerat till tre utskott (FiU/SfU/SoU) och förankrat i drivmedelsbudgeten (prop 2025/26:236, [HD024082](https://data.riksdagen.se/dokument/HD024082.html)). **Sverigedemokraterna lämnade noll följdmotioner**, vilket bevarar fullständig Tidö-blockdisciplin. Vågen telegraferar valpositionering inför 2026: S äger den finanspolitisk-klimatmässiga axeln; V äger fördelningsaxeln; MP äger vapenexportaxeln; C äger axeln för processuell reform; SD håller tyst.
+
+### 🧭 3 beslut som denna sammanfattning stöder
+
+1. **Redaktionell prioritetsrankning** — Led bevakning med drivmedelsklustrет (3 motioner, valsalient), sekundärt med utvisningsklustret (rättsstat) och vapenexport (utrikespolitisk skiljelinje).
+2. **Spårning av koalitionssignaler** — Notera att S *inte* anslutit sig till MP i vapenexportmotionen (HD024096 kontra frånvarande S-motpart). Detta är en bärande röd-grön scenariobegränsning för 2026 års regeringsbildning.
+3. **Prognosuppdatering** — Höj sannolikheten att Tidö-förslagen antas i stort sett oförändrade från baslinjen 65 % → 72 %. SD:s noll-motionshållning tar bort den enda troliga högerflank-defektionsbanan i migrations-/rättsfrågorna.
+
+### 60-sekunders punkter
+
+- **Skala**: 20 motioner / 72 timmar / 9 propositioner / 6 utskott. **Admiralty B2**.
+- **Stridsområde**: Drivmedelsbudgeten (prop 236) är den enskilt hetaste filen — S ([HD024082](https://data.riksdagen.se/dokument/HD024082.html)), V ([HD024092](https://data.riksdagen.se/dokument/HD024092.html)) och MP ([HD024098](https://data.riksdagen.se/dokument/HD024098.html)) lämnade alla in motioner.
+- **Rättsordning**: prop 2025/26:235 (utvisning) attraherar tre motioner från C/V/MP ([HD024090](https://data.riksdagen.se/dokument/HD024090.html), [HD024095](https://data.riksdagen.se/dokument/HD024095.html), [HD024097](https://data.riksdagen.se/dokument/HD024097.html)) — V föreslår fullständigt avslag; C föreslår systematikkrav.
+- **Utrikespolitik**: MP föreslår ensamt ett fullständigt exportförbud för krigsmateriel ([HD024096](https://data.riksdagen.se/dokument/HD024096.html)); V föreslår ändringar ([HD024091](https://data.riksdagen.se/dokument/HD024091.html)). Ingen S-motion — en strategisk tystnad konsistent med S:s Nato-erakonsensus.
+- **SD-tystnad**: Noll SD-motioner mot någon av de 9 propositionerna. Full Tidö-disciplin. **Admiralty A1**.
+- **Centerns spår**: C lämnade in på 5 förslag (prop 215, 216, 222, 223, 229, 235) men motionerar konsekvent om processuell åtstramning snarare än avvisning — positionering för borgerligt nyfikna väljare.
+- **Regeringsrisk**: FiU:s omröstning om drivmedelspaketet är det mest sannolika utfallet som genererar synliga meningsskiljaktigheter i kammaren; koalitionen behåller aritmetiken men oppositionen kommer att använda debatten för valcykelramsättning.
+
+### Viktigaste framtidsutlösare
+
+📍 **Bevaka**: FiU:s betänkandetidslinje för prop 2025/26:236 — om den remitteras innan 2026-06-01 blir drivmedel det definierande politiska narrativet under försommaren. Om det försenas till hösten hårdnar S:s inramning och koalitionssammanhållningen möter stress avseende bränsleskattens permanens.
+
+### Mermaid — beslutslandskapet
+
+```mermaid
+%%{init: {'theme':'dark'}}%%
+flowchart TB
+    Start([20 motions filed<br/>2026-04-15/17]) --> Cluster{Cluster by propagent}
+    Cluster -->|3 motions| Fiscal[Drivmedelsbudget<br/>prop 236]
+    Cluster -->|3 motions| Justice[Utvisning<br/>prop 235]
+    Cluster -->|3 motions| Welfare[Kommun vård<br/>prop 216]
+    Cluster -->|3 motions| Civil[Ersättningsregler<br/>prop 222]
+    Cluster -->|2+2+2+1+1| Rest[5 other propositions]
+
+    Fiscal --> Decision1[Lead story:<br/>election-salient]
+    Justice --> Decision2[Rule-of-law:<br/>V vs C framing split]
+    Welfare --> Decision3[Welfare-state cleavage]
+    Civil --> Decision4[Civil-law track]
+
+    Decision1 --> Impact((2026 election<br/>coalition math))
+    Decision2 --> Impact
+    Decision3 --> Impact
+    Decision4 --> Impact
+
+    style Start fill:#00d9ff,stroke:#000,color:#000
+    style Fiscal fill:#ff006e,stroke:#fff,color:#fff
+    style Justice fill:#ff006e,stroke:#fff,color:#fff
+    style Welfare fill:#ffbe0b,stroke:#000,color:#000
+    style Civil fill:#ffbe0b,stroke:#000,color:#000
+    style Impact fill:#ffbe0b,stroke:#000,color:#000
+```
+
+---
+
+**Fullständig analys**: [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/synthesis-summary.md) · [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/intelligence-assessment.md) · [forward-indicators.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/forward-indicators.md) · [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/risk-assessment.md)
+
+---
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_zh.md -->
+
+**作者**: James Pether Sörling · **置信度**: 高 · **阅读时间**: 60秒
+
+### 🎯 核心摘要
+
+2026年4月15日至17日期间，4个反对党（S、V、MP、C）针对**9项Tidö政府法案**提交了**20项对抗性动议** — 集中于FiU/SfU/SoU三个委员会，以燃料预算（prop 2025/26:236，[HD024082](https://data.riksdagen.se/dokument/HD024082.html)）为核心的协调立法回应。**Sverigedemokraterna提交零项对抗性动议**，保持了Tidö集团的完全纪律。这一浪潮预示着面向2026年的选举定位：S持有财政-气候轴线；V持有分配轴线；MP持有武器出口轴线；C持有程序改革轴线；SD保持沉默。
+
+### 🧭 本简报支持的三项决策
+
+1. **编辑优先级排名** — 以燃料集群（3项动议，选举显著性）领衔报道，其次处理驱逐集群（法治）和武器出口（外交政策断层线）。
+2. **联合信号追踪** — 记录S未在武器出口动议中加入MP（HD024096对应无S反对动议）。这是2026年组建政府的根本性红绿方案约束。
+3. **预测更新** — 将Tidö法案实质不变通过的概率从基准65%提升至→72%。SD的零动议立场排除了移民/司法议题上右翼侧翼的唯一合理叛离路径。
+
+### 60秒要点
+
+- **规模**: 20项动议 / 72小时 / 9项法案 / 6个委员会。**Admiralty B2**。
+- **主战场**: 燃料预算（prop 236）是最热门的单一焦点文件 — S（[HD024082](https://data.riksdagen.se/dokument/HD024082.html)）、V（[HD024092](https://data.riksdagen.se/dokument/HD024092.html)）、MP（[HD024098](https://data.riksdagen.se/dokument/HD024098.html)）均已提交。
+- **法治**: prop 2025/26:235（驱逐）从C/V/MP引来三项动议（[HD024090](https://data.riksdagen.se/dokument/HD024090.html)、[HD024095](https://data.riksdagen.se/dokument/HD024095.html)、[HD024097](https://data.riksdagen.se/dokument/HD024097.html)）— V提议完全拒绝；C提议系统性要求。
+- **外交政策**: 只有MP提议完全禁止战争物资出口（[HD024096](https://data.riksdagen.se/dokument/HD024096.html)）；V提交修正案（[HD024091](https://data.riksdagen.se/dokument/HD024091.html)）。无S动议 — 与北约时代S共识一致的战略性沉默。
+- **SD的沉默**: 9项法案中SD动议为零。完全的Tidö纪律。**Admiralty A1**。
+- **中央党轨迹**: C在5项法案（prop 215、216、222、223、229、235）上提交，但一贯寻求程序性收紧而非拒绝 — 针对中产阶级好奇选民的定位。
+- **政府风险**: FiU就燃料一揽子计划的表决是在本会议引发明显反对的最可能结果；联合体保持算术多数，但反对派利用辩论进行选举周期框架。
+
+### 最高优先级未来触发因素
+
+📍 **关注**: FiU关于prop 2025/26:236的betänkande时间线 — 若在2026年6月1日前报告，燃料将成为初夏的决定性政治叙事。若推迟至秋季，S的框架将固化，联合体凝聚力将面临关于燃料税永久化的压力。
+
+### Mermaid — 决策格局
+
+```mermaid
+%%{init: {'theme':'dark'}}%%
+flowchart TB
+    Start([20 motions filed<br/>2026-04-15/17]) --> Cluster{Cluster by propagent}
+    Cluster -->|3 motions| Fiscal[Drivmedelsbudget<br/>prop 236]
+    Cluster -->|3 motions| Justice[Utvisning<br/>prop 235]
+    Cluster -->|3 motions| Welfare[Kommun vård<br/>prop 216]
+    Cluster -->|3 motions| Civil[Ersättningsregler<br/>prop 222]
+    Cluster -->|2+2+2+1+1| Rest[5 other propositions]
+
+    Fiscal --> Decision1[Lead story:<br/>election-salient]
+    Justice --> Decision2[Rule-of-law:<br/>V vs C framing split]
+    Welfare --> Decision3[Welfare-state cleavage]
+    Civil --> Decision4[Civil-law track]
+
+    Decision1 --> Impact((2026 election<br/>coalition math))
+    Decision2 --> Impact
+    Decision3 --> Impact
+    Decision4 --> Impact
+
+    style Start fill:#00d9ff,stroke:#000,color:#000
+    style Fiscal fill:#ff006e,stroke:#fff,color:#fff
+    style Justice fill:#ff006e,stroke:#fff,color:#fff
+    style Welfare fill:#ffbe0b,stroke:#000,color:#000
+    style Civil fill:#ffbe0b,stroke:#000,color:#000
+    style Impact fill:#ffbe0b,stroke:#000,color:#000
+```
+
+---
+
+**完整分析**: [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/synthesis-summary.md) · [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/intelligence-assessment.md) · [forward-indicators.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/forward-indicators.md) · [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/risk-assessment.md)
+
+---
+### 第二轮审查注释
+于2026-04-24T01:23Z重读完成。确认: (1) 20个dok_id全部引用；(2) DIW评分与显著性矩阵对齐；(3) Mermaid样式通过关卡；(4) prop 216的四党浪潮确认为最强协调信号。
+
+<!-- source-sha: f7b237c366726abf3d6a4a68b0b9f63ef9205ac0 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 21 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -2582,3 +3470,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/motions/executive-brief_zh.md)

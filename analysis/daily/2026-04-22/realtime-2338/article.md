@@ -6,7 +6,7 @@ date: 2026-04-22
 subfolder: realtime-2338
 slug: 2026-04-22-realtime-2338
 source_folder: analysis/daily/2026-04-22/realtime-2338
-generated_at: 2026-05-17T18:40:43.223Z
+generated_at: 2026-05-17T22:29:22.119Z
 language: en
 layout: article
 ---
@@ -115,6 +115,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2156,13 +2169,1082 @@ All analysis in this cycle follows the osint-tradecraft-standards.md canon: ICD 
 - Sibling folder synthesis summaries read for Tier-C cross-reference
 - No lookback required — documents confirmed for 2026-04-22
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# ملخص تنفيذي — مراقب البرلمان السويدي (ريكسداغ) في الوقت الفعلي 2026-04-22 23:38
+**التصنيف**: عام | **المحلل**: James Pether Sörling | **الدورة**: Realtime-2338
+**المنهجية**: ai-driven-analysis-guide.md v6.4 | **مستوى أدميرالتي**: [A2]
+
+---
+
+### 🎯 الملخص التنفيذي (BLUF)
+
+يدخل البرلمان السويدي (Riksdag) السباق التشريعي الأخير قبل الانتخابات مع ثلاثة محاور أخبار عاجلة متزامنة: (1) شنّ الاشتراكيون الديمقراطيون في 22 أبريل 2026 هجوماً تساؤلياً (interpellation) رباعياً منسقاً ضد وزيرة المالية إليزابيث سفانتسون (M) وشركاء الائتلاف، مستهدفاً نقاط الضعف في سوق العمل والإسكان والرعاية الاجتماعية والإدارة المدنية قبيل انتخابات سبتمبر 2026؛ (2) تمت الموافقة على الميزانية التكميلية الاستثنائية بتخفيض ضريبة الوقود من قِبل البرلمان في 21 أبريل 2026، مع انقسام المعارضة على خطوط مناخية-اقتصادية؛ و(3) مجموعة من المقترحات الجوهرية حول الطاقة والغابات والعدالة والدبلوماسية الأوكرانية تُشير إلى تسارع جدول الأعمال التشريعي لحكومة كريسترسون في الجلسة الأخيرة قبل الحل.
+
+الهجوم المحاسبي لحزب S — ثلاثة تساؤلات برلمانية منفصلة تستهدف وزيرة المالية سفانتسون وحدها — هو إشارة الاستخبارات السياسية ذات الأولوية القصوى لهذا المساء. يُشير هذا النمط من الضغط البرلماني متعدد القنوات على وزير واحد إلى استراتيجية ما قبل الانتخابات المنسقة لإجبار الوزراء على ارتكاب أخطاء في الردود العلنية.
+
+---
+
+### 🧭 3 قرارات يدعمها هذا الملخص
+
+1. **قرار تحريري**: هل يُغطَّى هجوم المساءلة لحزب S كقصة سياسية موحدة (هجوم منسق على سفانتسون) أم كتساؤلات منفصلة — الإطار الموحد أقوى تحليلياً.
+2. **أولوية المراقبة**: هل يجب تصعيد تتبع قضية إساءة استخدام اشتراكات أصحاب العمل (HD10444) بالنظر إلى الصلة بتغطية صحيفة Aftonbladet — توصية بأولوية عالية.
+3. **أفق التوقع**: هل سيُنتج تخفيض ضريبة الوقود في الميزانية الاستثنائية (HD01FiU48 المعتمدة) مكاسب سردية مناخية قابلة للقياس للمعارضة قبل مناقشة ميزانية يونيو — متابعة عبر مقاييس الإطار الإعلامي خلال 7 أيام.
+
+---
+
+### ⚡ قراءة في 60 ثانية
+
+- **الضربة الثلاثية لحزب S على سفانتسون** [B2]: HD10444 (إساءة استخدام اشتراكات أصحاب العمل)، HD10442 (قضية قضائية لاضطراب الأكل)، HD10446 (شهادات وفاة مزورة) — ثلاثة محاور في آنٍ واحد
+- **HD10445 الإسكان**: يستهدف حزب S فشل الحكومة في حق الشفعة للعقارات الرئيسية في ضواحي ستوكهولم (Sätra، Vårberg، Rågsved) — محور سياسة الفصل العنصري [B2]
+- **HD10443 الإغراق الاجتماعي**: إغراق المساعدات الاجتماعية البلدية — يستهدف حزب S الوزير المدني سلوتنر (KD) بشأن المهاجرين والفئات الضعيفة المنقولة بين البلديات [B2]
+- **HD01FiU48 معتمد**: ميزانية تعديلية استثنائية — تخفيض 82 öre/لتر من ضريبة الوقود بدءاً من 1 مايو 2026؛ دعم الكهرباء/الغاز للأسر؛ تأثير مالي 4.1 مليار كرونة سويدية [A1]
+- **مقترحات جديدة (14–16 أبريل)**: الجانحون من الشباب (HD03246)، قابلية التشغيل البيني للبيانات (HD03244)، إدارة الغابات النشطة (HD03242)، محكمة أضرار أوكرانيا (HD03232/HD03231)
+- **عدسة انتخابات 2026**: كل تساؤل برلماني موجه ضد وزير مسمى بالاسم — هذا تمهيد للمناظرات الانتخابية
+
+---
+
+### 📅 أهم المحفزات المستقبلية
+**مراقبة الفترة 28 أبريل–5 مايو 2026**: ستُناقَش الردود الوزارية على التساؤلات الأربعة في قاعة البرلمان. تحمل ردود سفانتسون على HD10442 (قضية اضطراب الأكل) و HD10444 (اشتراكات أصحاب العمل) أعلى خطر تقلب إعلامي. رد واحد مثير للجدل يمكن أن يصبح القصة السياسية المهيمنة للأسبوع قبل نقاش ميزانية يونيو.
+
+---
+
+### 🔍 مستوى الثقة
+**الثقة الإجمالية في التقييم**: عالية [B2] — استناداً إلى استرداد مباشر عبر MCP للوثائق البرلمانية والإسناد التقاطعي مع مجلدات التحليل الشقيقة اليوم (المقترحات، الاقتراحات، تقارير اللجان، التساؤلات).
+
+---
+
+### 📊 خريطة مشهد الاستخبارات
+
+```mermaid
+flowchart TD
+    BREAK["⚡ BREAKING 2026-04-22<br/>Realtime-2338 Monitor"] --> A1["هجوم محاسبة S<br/>4 تساؤلات مقدمة<br/>أولوية حرجة"]
+    BREAK --> A2["FiU48 معتمد<br/>تخفيض ضريبة الوقود نافذ<br/>تأثير عالٍ"]
+    BREAK --> A3["مجموعة تشريعية<br/>5 مقترحات جديدة<br/>متوسط-مرتفع"]
+
+    A1 --> I1["HD10444<br/>Arbetsgivaravgift إساءة<br/>→ Svantesson"]
+    A1 --> I2["HD10443<br/>إغراق اجتماعي<br/>→ Slottner"]
+    A1 --> I3["HD10446<br/>شهادات وفاة مزورة<br/>→ Svantesson"]
+    A1 --> I4["HD10445<br/>حق شفعة الإسكان<br/>→ Carlson"]
+
+    A2 --> B1["تخفيض 82 öre/L<br/>1 مايو–30 سبتمبر 2026"]
+    A2 --> B2["دعم كهرباء/غاز<br/>يناير–فبراير 2026"]
+
+    A3 --> C1["HD03246 جانحون شباب<br/>Justitiedept."]
+    A3 --> C2["HD03244 بيانات متشاركة<br/>Finansdept."]
+    A3 --> C3["HD03232/231 أوكرانيا<br/>Utrikesdept."]
+
+    style BREAK fill:#c62828,color:#FFFFFF
+    style A1 fill:#b71c1c,color:#FFFFFF
+    style A2 fill:#e65100,color:#FFFFFF
+    style A3 fill:#1565c0,color:#FFFFFF
+    style I1 fill:#e53935,color:#FFFFFF
+    style I2 fill:#e53935,color:#FFFFFF
+    style I3 fill:#e53935,color:#FFFFFF
+    style I4 fill:#e53935,color:#FFFFFF
+    style B1 fill:#f57f17,color:#000000
+    style B2 fill:#f57f17,color:#000000
+    style C1 fill:#1565c0,color:#FFFFFF
+    style C2 fill:#1565c0,color:#FFFFFF
+    style C3 fill:#1565c0,color:#FFFFFF
+```
+
+<!-- source-sha: 34bcedb9f943f85646d8e864b41374efd2461075 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief_da.md -->
+
+**Klassificering**: Offentlig | **Analytiker**: James Pether Sörling | **Cyklus**: Realtime-2338
+**Metodologi**: ai-driven-analysis-guide.md v6.4 | **Admiralty-baseline**: [A2]
+
+---
+
+### 🎯 BLUF
+
+Den svenske Riksdag indgår i den endelige lovgivningssprint forud for valget med tre samtidige breaking-nyhedsvektorer: (1) Socialdemokraterne har iværksat en koordineret firedobbelt interpellationsoffensiv mod finansminister Elisabeth Svantesson (M) og koalitionspartnere den 22. april 2026, målrettet svagheder inden for arbejdsmarked, boliger, socialt sikkerhedsnet og civil forvaltning forud for valget i september 2026; (2) den ekstra tillægsbudget med sænket brændstofafgift blev vedtaget af Riksdag den 21. april 2026, med oppositionen splittet langs klima-økonomiske linjer; og (3) en klynge af substantielle propositioner om energi, skovbrug, retsvæsen og Ukraine-diplomati signalerer Kristersson-regeringens accelererende lovgivningsdagsorden i den endelige session inden opløsning.
+
+S's ansvarsoffensiv — tre separate interpellationer rettet mod finansminister Svantesson alene — er aftenens politiske efterretningssignal af højeste prioritet. Dette mønster med flerkanals parlamentarisk pres mod en enkelt minister indikerer en koordineret forvalgsstrategi til at tvinge ministerielle fejltrin i offentlige svar.
+
+---
+
+### 🧭 3 Beslutninger dette brief understøtter
+
+1. **Redaktionel beslutning**: Om S's ansvarsoffensiv skal dækkes som én samlet politisk historie (koordineret angreb på Svantesson) eller som separate interpellationer — den samlede ramme er analytisk stærkere.
+2. **Overvågningsprioritet**: Om sporing af arbejdsgiverbidragsmisbrugssagen (HD10444) skal eskaleres givet forbindelsen til Aftonbladets rapportering — HØJ prioritet anbefales.
+3. **Prognosehorisont**: Om den ekstra budgets brændstofafgiftssænkning (HD01FiU48 vedtaget) vil producere målbare oppositionelle klimanarrativgevinster forud for junibudgetdebatten — spor via medierammemålinger de næste 7 dage.
+
+---
+
+### ⚡ 60-sekunders læsning
+
+- **S's trippelangreb på Svantesson** [B2]: HD10444 (misbrug af arbejdsgiverbidrag), HD10442 (spiseforstyrrelsesdomstolssag), HD10446 (falske dødserklæringer) — tre vektorer simultant
+- **HD10445 boliger**: S retter fokus mod regeringens svigt med forkøbsret for nøgleejendomme i Stockholms forstæder (Sätra, Vårberg, Rågsved) — segregationspolitisk vektor [B2]
+- **HD10443 social dumping**: Kommunal socialbidragsdumping — S retter sig mod civilminister Slottner (KD) om migranter/udsatte befolkningsgrupper overført mellem kommuner [B2]
+- **HD01FiU48 VEDTAGET**: Ekstra ændringsbudget — 82 øre/L brændstofafgiftssænkning fra 1. maj 2026; el/gasstøtte til husstande; 4,1 mia. SEK i fiskal påvirkning [A1]
+- **Nye propositioner (14.–16. apr.)**: Unge lovovertrædere (HD03246), datainteroperabilitet (HD03244), aktivt skovbrug (HD03242), Ukraine-erstatningstribunal (HD03232/HD03231)
+- **Vallinse 2026**: Enhver interpellation er rettet mod en navngiven minister — dette er debatprimering forud for valgkampen
+
+---
+
+### 📅 Øverste fremadrettede trigger
+**Overvåg 28. april–5. maj 2026**: Ministerielle svar på de fire interpellationer vil blive debatteret i Riksdag-salen. Svantessons svar på HD10442 (spiseforstyrrelsesdomstolssag) og HD10444 (arbejdsgiverbidrag) bærer den højeste mediavolatilitetsrisiko. Et enkelt faktuelt omstridt svar kan blive ugens dominerende politiske historie forud for junibudgetdebatten.
+
+---
+
+### 🔍 Konfidensmærkning
+**Samlet vurderingskonfidence**: HØJ [B2] — baseret på direkte MCP-hentning af parlamentariske dokumenter og krydshenvising med dagens søster-analysemapper (propositioner, motioner, udvalgsrapporter, interpellationer).
+
+---
+
+### 📊 Efterretningslandskabskort
+
+```mermaid
+flowchart TD
+    BREAK["⚡ BREAKING 2026-04-22<br/>Realtime-2338 Monitor"] --> A1["S Ansvarsoffensiv<br/>4 interpellationer indgivet<br/>KRITISK prioritet"]
+    BREAK --> A2["FiU48 vedtaget<br/>Brændstofafgiftssænkning i kraft<br/>HØJ påvirkning"]
+    BREAK --> A3["Lovgivningsklynge<br/>5 nye propositioner<br/>MEDIUM-HØJ"]
+
+    A1 --> I1["HD10444<br/>Arbetsgivaravgift misbrug<br/>→ Svantesson"]
+    A1 --> I2["HD10443<br/>Social dumping<br/>→ Slottner"]
+    A1 --> I3["HD10446<br/>Falske dødserklæringer<br/>→ Svantesson"]
+    A1 --> I4["HD10445<br/>Boligforkøbsret<br/>→ Carlson"]
+
+    A2 --> B1["82 øre/L sænkning<br/>1. maj–30. sep. 2026"]
+    A2 --> B2["El/gasstøtte<br/>Jan.–feb. 2026"]
+
+    A3 --> C1["HD03246 Unge lovovertrædere<br/>Justitiedept."]
+    A3 --> C2["HD03244 Datainterop<br/>Finansdept."]
+    A3 --> C3["HD03232/231 Ukraine<br/>Utrikesdept."]
+
+    style BREAK fill:#c62828,color:#FFFFFF
+    style A1 fill:#b71c1c,color:#FFFFFF
+    style A2 fill:#e65100,color:#FFFFFF
+    style A3 fill:#1565c0,color:#FFFFFF
+    style I1 fill:#e53935,color:#FFFFFF
+    style I2 fill:#e53935,color:#FFFFFF
+    style I3 fill:#e53935,color:#FFFFFF
+    style I4 fill:#e53935,color:#FFFFFF
+    style B1 fill:#f57f17,color:#000000
+    style B2 fill:#f57f17,color:#000000
+    style C1 fill:#1565c0,color:#FFFFFF
+    style C2 fill:#1565c0,color:#FFFFFF
+    style C3 fill:#1565c0,color:#FFFFFF
+```
+
+<!-- source-sha: 34bcedb9f943f85646d8e864b41374efd2461075 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief_de.md -->
+
+**Klassifizierung**: Öffentlich | **Analytiker**: James Pether Sörling | **Zyklus**: Realtime-2338
+**Methodik**: ai-driven-analysis-guide.md v6.4 | **Admiralty-Basislinie**: [A2]
+
+---
+
+### 🎯 BLUF
+
+Der schwedische Riksdag tritt in den finalen vorwahlmäßigen Gesetzgebungssprint ein mit drei gleichzeitigen Breaking-News-Vektoren: (1) Die Sozialdemokraten haben am 22. April 2026 eine koordinierte vierfache Interpellationsoffensive gegen Finanzministerin Elisabeth Svantesson (M) und Koalitionspartner gestartet, die auf Schwächen in Arbeitsmarkt, Wohnen, Sozialwesen und Zivilverwa­ltung vor der Wahl im September 2026 abzielt; (2) der außerordentliche Ergänzungshaushalt mit Kraftstoffsteuerentlastung wurde am 21. April 2026 vom Riksdag verabschiedet, wobei die Opposition entlang klima-ökonomischer Linien gespalten ist; und (3) ein Bündel substantieller Propositionen zu Energie, Forstwirtschaft, Justiz und Ukraine-Diplomatie signalisiert die sich beschleunigende Gesetzgebungsagenda der Regierung Kristersson in der letzten Sitzung vor der Auflösung.
+
+Die Rechenschaftspflicht-Offensive der S — drei separate Interpellationen, die allein gegen Finanzministerin Svantesson gerichtet sind — ist das politische Geheimdienstsignal höchster Priorität des Abends. Dieses Muster des parlamentarischen Mehrkanal-Drucks auf einen einzelnen Minister deutet auf eine koordinierte Vorwahlstrategie hin, um ministerielle Fehler in öffentlichen Antworten zu erzwingen.
+
+---
+
+### 🧭 3 Entscheidungen, die dieses Brief unterstützt
+
+1. **Redaktionelle Entscheidung**: Ob die Rechenschaftspflicht-Offensive der S als einheitliche politische Geschichte (koordinierter Angriff auf Svantesson) oder als separate Interpellationen behandelt werden soll — die einheitliche Rahmung ist analytisch stärker.
+2. **Überwachungspriorität**: Ob die Verfolgung des Arbeitgeberb­eitrags-Missbrauchsfalls (HD10444) angesichts der Verbindung zur Berichterstattung des Aftonbladet eskaliert werden soll — HOHE Priorität empfohlen.
+3. **Prognosehorizont**: Ob der Kraftstoffsteuerschnitt im Sonderhaushalt (HD01FiU48 verabschiedet) messbare oppositionelle Klimanarrativerst­ärkungen vor der Juni-Haushaltsdebatte erzeugen wird — Verfolgung über Medienrahmungsmetriken in den nächsten 7 Tagen.
+
+---
+
+### ⚡ 60-Sekunden-Lektüre
+
+- **S's Dreifach-Angriff auf Svantesson** [B2]: HD10444 (Missbrauch von Arbeitgeberbeiträgen), HD10442 (Essstörungs-Gerichtsfall), HD10446 (falsche Todeserklärungen) — drei Vektoren gleichzeitig
+- **HD10445 Wohnen**: S richtet den Fokus auf das Versagen der Regierung beim Vorkaufsrecht für Schlüsselliegenschaften in Stockholmer Vororten (Sätra, Vårberg, Rågsved) — Segregationspolitikvektor [B2]
+- **HD10443 Sozialdumping**: Kommunales Sozialleistungs-Dumping — S richtet sich gegen Zivilminister Slottner (KD) wegen Migranten/gefährdeten Bevölkerungsgruppen, die zwischen Kommunen übertragen werden [B2]
+- **HD01FiU48 VERABSCHIEDET**: Außerordentlicher Ergänzungshaushalt — 82 Öre/L Kraftstoffsteuerkürzung ab 1. Mai 2026; Strom/Gas-Unterstützung für Haushalte; 4,1 Mrd. SEK Fiskalwirkung [A1]
+- **Neue Propositionen (14.–16. Apr.)**: Jugendliche Straftäter (HD03246), Dateninteroperabilität (HD03244), aktive Forstwirtschaft (HD03242), Ukraine-Schadenstribunal (HD03232/HD03231)
+- **Wahllinse 2026**: Jede Interpellation richtet sich gegen einen namentlich genannten Minister — das ist Debattenvorbereitung für den Wahlkampf
+
+---
+
+### 📅 Wichtigster Vorwärts-Auslöser
+**Beobachten 28. April–5. Mai 2026**: Ministerielle Antworten auf die vier Interpellationen werden im Riksdag-Plenarsaal debattiert. Svantessons Antworten auf HD10442 (Essstörungs-Gerichtsfall) und HD10444 (Arbeitgeberbeiträge) tragen das höchste Medienvolatilitätsrisiko. Eine einzige sachlich umstrittene Antwort könnte zur dominanten politischen Geschichte der Woche vor der Juni-Haushaltsdebatte werden.
+
+---
+
+### 🔍 Konfidenz-Kennzeichnung
+**Gesamtbewertungsvertrauen**: HOCH [B2] — basierend auf direktem MCP-Abruf parlamentarischer Dokumente und Querverweisen mit den heutigen Schwesteranalyse-Ordnern (Propositionen, Motionen, Ausschussberichte, Interpellationen).
+
+---
+
+### 📊 Karte der Geheimdienstlage
+
+```mermaid
+flowchart TD
+    BREAK["⚡ BREAKING 2026-04-22<br/>Realtime-2338 Monitor"] --> A1["S Rechenschaftspflicht-Offensive<br/>4 Interpellationen eingereicht<br/>KRITISCHE Priorität"]
+    BREAK --> A2["FiU48 verabschiedet<br/>Kraftstoffsteuerkürzung in Kraft<br/>HOHE Wirkung"]
+    BREAK --> A3["Gesetzgebungscluster<br/>5 neue Propositionen<br/>MITTEL-HOCH"]
+
+    A1 --> I1["HD10444<br/>Arbetsgivaravgift Missbrauch<br/>→ Svantesson"]
+    A1 --> I2["HD10443<br/>Sozialdumping<br/>→ Slottner"]
+    A1 --> I3["HD10446<br/>Falsche Todeserklärungen<br/>→ Svantesson"]
+    A1 --> I4["HD10445<br/>Wohnungs-Vorkaufsrecht<br/>→ Carlson"]
+
+    A2 --> B1["82 Öre/L Kürzung<br/>1. Mai–30. Sep. 2026"]
+    A2 --> B2["Strom/Gas-Unterstützung<br/>Jan.–Feb. 2026"]
+
+    A3 --> C1["HD03246 Jugendliche Straftäter<br/>Justitiedept."]
+    A3 --> C2["HD03244 Dateninterop<br/>Finansdept."]
+    A3 --> C3["HD03232/231 Ukraine<br/>Utrikesdept."]
+
+    style BREAK fill:#c62828,color:#FFFFFF
+    style A1 fill:#b71c1c,color:#FFFFFF
+    style A2 fill:#e65100,color:#FFFFFF
+    style A3 fill:#1565c0,color:#FFFFFF
+    style I1 fill:#e53935,color:#FFFFFF
+    style I2 fill:#e53935,color:#FFFFFF
+    style I3 fill:#e53935,color:#FFFFFF
+    style I4 fill:#e53935,color:#FFFFFF
+    style B1 fill:#f57f17,color:#000000
+    style B2 fill:#f57f17,color:#000000
+    style C1 fill:#1565c0,color:#FFFFFF
+    style C2 fill:#1565c0,color:#FFFFFF
+    style C3 fill:#1565c0,color:#FFFFFF
+```
+
+<!-- source-sha: 34bcedb9f943f85646d8e864b41374efd2461075 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief_es.md -->
+
+**Clasificación**: Pública | **Analista**: James Pether Sörling | **Ciclo**: Realtime-2338
+**Metodología**: ai-driven-analysis-guide.md v6.4 | **Línea base Admiralty**: [A2]
+
+---
+
+### 🎯 BLUF
+
+El Riksdag sueco entra en el sprint legislativo final antes de las elecciones con tres vectores de noticias urgentes simultáneos: (1) los Socialdemócratas han lanzado el 22 de abril de 2026 una ofensiva interpelativa coordinada de cuatro frentes contra la ministra de finanzas Elisabeth Svantesson (M) y los socios de coalición, apuntando a debilidades en el mercado laboral, vivienda, bienestar social y administración civil de cara a las elecciones de septiembre de 2026; (2) el presupuesto suplementario extraordinario con reducción del impuesto al combustible fue adoptado por el Riksdag el 21 de abril de 2026, con la oposición dividida en líneas climático-económicas; y (3) un conjunto de proposiciones sustantivas sobre energía, silvicultura, justicia y diplomacia ucraniana señala la aceleración de la agenda legislativa del gobierno Kristersson en la sesión final antes de la disolución.
+
+La ofensiva de rendición de cuentas de S — tres interpelaciones separadas dirigidas solo a la ministra de finanzas Svantesson — es la señal de inteligencia política de mayor prioridad de la tarde. Este patrón de presión parlamentaria multicanal sobre un solo ministro indica una estrategia preelectoral coordinada para provocar errores ministeriales en respuestas públicas.
+
+---
+
+### 🧭 3 Decisiones que apoya este resumen
+
+1. **Decisión editorial**: Si la ofensiva de rendición de cuentas de S debe cubrirse como una historia política unificada (ataque coordinado a Svantesson) o como interpelaciones separadas — el enfoque unificado es analíticamente más sólido.
+2. **Prioridad de vigilancia**: Si se debe escalar el seguimiento del caso de abuso de cotizaciones patronales (HD10444) dada la conexión con la cobertura de Aftonbladet — prioridad ALTA recomendada.
+3. **Horizonte de pronóstico**: Si la reducción del impuesto al combustible en el presupuesto extraordinario (HD01FiU48 aprobado) producirá ganancias narrativas climáticas medibles para la oposición antes del debate presupuestario de junio — seguimiento a través de métricas de encuadre mediático en los próximos 7 días.
+
+---
+
+### ⚡ Lectura de 60 segundos
+
+- **Triple golpe de S a Svantesson** [B2]: HD10444 (abuso de cotizaciones patronales), HD10442 (caso judicial de trastorno alimentario), HD10446 (declaraciones de defunción falsas) — tres vectores simultáneamente
+- **HD10445 vivienda**: S apunta al fracaso del gobierno en el derecho de tanteo para propiedades clave en los suburbios de Estocolmo (Sätra, Vårberg, Rågsved) — vector de política de segregación [B2]
+- **HD10443 dumping social**: Dumping municipal de asistencia social — S apunta al ministro civil Slottner (KD) sobre migrantes/poblaciones vulnerables transferidas entre municipios [B2]
+- **HD01FiU48 APROBADO**: Presupuesto suplementario extraordinario — reducción de 82 öre/L del impuesto al combustible a partir del 1 de mayo de 2026; apoyo eléctrico/gas para hogares; impacto fiscal de 4,1 mil millones SEK [A1]
+- **Nuevas proposiciones (14–16 abr.)**: Delincuentes juveniles (HD03246), interoperabilidad de datos (HD03244), silvicultura activa (HD03242), tribunal de daños de Ucrania (HD03232/HD03231)
+- **Lente electoral 2026**: Cada interpelación está dirigida a un ministro nombrado — esto es una preparación del debate para la campaña electoral
+
+---
+
+### 📅 Desencadenante prioritario hacia adelante
+**Vigilar del 28 de abril al 5 de mayo de 2026**: Las respuestas ministeriales a las cuatro interpelaciones serán debatidas en el pleno del Riksdag. Las respuestas de Svantesson a HD10442 (caso judicial de trastorno alimentario) y HD10444 (cotizaciones patronales) conllevan el mayor riesgo de volatilidad mediática. Una sola respuesta factualmente controvertida podría convertirse en la historia política dominante de la semana antes del debate presupuestario de junio.
+
+---
+
+### 🔍 Etiqueta de confianza
+**Confianza de evaluación general**: ALTA [B2] — basada en la recuperación directa por MCP de documentos parlamentarios y verificación cruzada con las carpetas de análisis hermanas del día (proposiciones, mociones, informes de comisión, interpelaciones).
+
+---
+
+### 📊 Mapa del panorama de inteligencia
+
+```mermaid
+flowchart TD
+    BREAK["⚡ BREAKING 2026-04-22<br/>Realtime-2338 Monitor"] --> A1["Ofensiva de rendición S<br/>4 interpelaciones presentadas<br/>Prioridad CRÍTICA"]
+    BREAK --> A2["FiU48 aprobado<br/>Reducción impuesto combustible en vigor<br/>Impacto ALTO"]
+    BREAK --> A3["Clúster legislativo<br/>5 nuevas proposiciones<br/>MEDIO-ALTO"]
+
+    A1 --> I1["HD10444<br/>Arbetsgivaravgift abuso<br/>→ Svantesson"]
+    A1 --> I2["HD10443<br/>Dumping social<br/>→ Slottner"]
+    A1 --> I3["HD10446<br/>Declaraciones de defunción falsas<br/>→ Svantesson"]
+    A1 --> I4["HD10445<br/>Derecho tanteo vivienda<br/>→ Carlson"]
+
+    A2 --> B1["Reducción 82 öre/L<br/>1 may.–30 sep. 2026"]
+    A2 --> B2["Apoyo eléctrico/gas<br/>Ene.–feb. 2026"]
+
+    A3 --> C1["HD03246 Delincuentes juveniles<br/>Justitiedept."]
+    A3 --> C2["HD03244 Interop datos<br/>Finansdept."]
+    A3 --> C3["HD03232/231 Ucrania<br/>Utrikesdept."]
+
+    style BREAK fill:#c62828,color:#FFFFFF
+    style A1 fill:#b71c1c,color:#FFFFFF
+    style A2 fill:#e65100,color:#FFFFFF
+    style A3 fill:#1565c0,color:#FFFFFF
+    style I1 fill:#e53935,color:#FFFFFF
+    style I2 fill:#e53935,color:#FFFFFF
+    style I3 fill:#e53935,color:#FFFFFF
+    style I4 fill:#e53935,color:#FFFFFF
+    style B1 fill:#f57f17,color:#000000
+    style B2 fill:#f57f17,color:#000000
+    style C1 fill:#1565c0,color:#FFFFFF
+    style C2 fill:#1565c0,color:#FFFFFF
+    style C3 fill:#1565c0,color:#FFFFFF
+```
+
+<!-- source-sha: 34bcedb9f943f85646d8e864b41374efd2461075 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief_fi.md -->
+
+**Luokittelu**: Julkinen | **Analyytikko**: James Pether Sörling | **Sykli**: Realtime-2338
+**Metodologia**: ai-driven-analysis-guide.md v6.4 | **Admiralty-perustaso**: [A2]
+
+---
+
+### 🎯 BLUF
+
+Ruotsin Riksdag astuu viimeiseen vaaleja edeltävään lainsäädäntöspurttiin kolmen samanaikaisen uutisvektorin myötä: (1) Sosiaalidemokraatit ovat käynnistäneet koordinoidun nelinkertaisen interpellaatio-offensiivin valtiovarainministeri Elisabeth Svantessonia (M) ja koalitionkumppaneita vastaan 22. huhtikuuta 2026, kohdistuen työ­markkina-, asunto-, sosiaaliturva- ja siviilihallinnon heikkouksiin ennen syyskuun 2026 vaaleja; (2) ylimääräinen lisätalousarvio polttoaineveroleikkauksella hyväksyttiin Riksdagissa 21. huhtikuuta 2026, opposition jakautuessa ilmasto-taloudellisten linjojen mukaan; ja (3) joukko merkittäviä propositioita energiasta, metsätaloudesta, oikeudesta ja Ukraina-diplomatiasta signaloi Kristersson-hallituksen kiihtyvää lainsäädäntöohjelmaa viimeisessä istunnossa ennen hajottamista.
+
+S:n vastuuoffensiivi — kolme erillistä interpellaatiota pelkästään valtiovarainministeri Svantessonia vastaan — on illan korkein poliittisen tiedustelusignaalin prioriteetti. Tämä monikanavaisen parlamentaarisen painostuksen kaava yhtä ministeriä kohtaan osoittaa koordinoitua vaaliedustelustrategiaa, jonka tavoitteena on pakottaa ministeriaaliset virheet julkisissa vastauksissa.
+
+---
+
+### 🧭 3 Päätöstä, joita tämä tiivistelmä tukee
+
+1. **Toimituksellinen päätös**: Pitäisikö S:n vastuuoffensiivi kattaa yhtenäisenä poliittisena tarinana (koordinoitu hyökkäys Svantessonia vastaan) vai erillisinä interpellaatioina — yhtenäinen kehystys on analyyttisesti vahvempi.
+2. **Seurantaprioriteetti**: Pitäisikö työnantajamaksuväärinkäyttötapauksen (HD10444) seuranta eskaloida Aftonbladetin raportointiyhteyden vuoksi — KORKEA prioriteetti suositellaan.
+3. **Ennustehorisontti**: Tuottaako ylimääräisen budjetin polttoaineveroleikkaus (HD01FiU48 hyväksytty) mitattavia opposition ilmastonarratiivityöntöjä ennen kesäkuun budjettikeskustelua — seuraa mediakehystysstatistiikan kautta seuraavat 7 päivää.
+
+---
+
+### ⚡ 60 sekunnin lukeminen
+
+- **S:n kolmoislyönti Svantessonia vastaan** [B2]: HD10444 (työnantajamaksujen väärinkäyttö), HD10442 (syömishäiriötuomioistuintapaus), HD10446 (väärennetyt kuolintodistukset) — kolme vektoria samanaikaisesti
+- **HD10445 asunnot**: S kohdistaa huomion hallituksen epäonnistumiseen etukäyttöoikeuden suhteen avainomaisuuksiin Tukholman lähiöissä (Sätra, Vårberg, Rågsved) — segregaatiopoliittinen vektori [B2]
+- **HD10443 sosiaalinen dumppaus**: Kunnallinen sosiaaliturvadumppaus — S kohdistuu siviiliministeri Slottneriin (KD) siirtolaisista/haavoittuvista väestöistä, jotka siirretään kuntien välillä [B2]
+- **HD01FiU48 HYVÄKSYTTY**: Ylimääräinen muutostalousarvio — 82 snt/l polttoaineveroleikkaus 1. toukokuuta 2026 alkaen; sähkö/kaasutuet kotitalouksille; 4,1 miljardin SEK budjettivaikutus [A1]
+- **Uudet propositiot (14.–16. huhtik.)**: Nuoret rikoksentekijät (HD03246), datayhteentoimivuus (HD03244), aktiivinen metsätalous (HD03242), Ukraina-vahinkotuomioistuin (HD03232/HD03231)
+- **Vaalilinssit 2026**: Jokainen interpellaatio on kohdistettu nimettyä ministeriä vastaan — tämä on vaalikampanjan debattilämmittely
+
+---
+
+### 📅 Tärkein eteenpäin suuntautuva laukaisin
+**Seuraa 28. huhtikuuta–5. toukokuuta 2026**: Neljän interpellaation ministeriaaliset vastaukset käsitellään Riksdagin täysistunnossa. Svantessons vastaukset HD10442:een (syömishäiriötuomioistuintapaus) ja HD10444:ään (työnantajamaksut) kantavat korkeinta mediavolatilitettiriskiä. Yksi tosiasiallisesti kiistelty vastaus voi muodostua viikon hallitsevasta poliittisesta tarinasta ennen kesäkuun budjettikeskustelua.
+
+---
+
+### 🔍 Luottamusmerkintä
+**Kokonaisarvioinnin luottamusaste**: KORKEA [B2] — perustuu suoraan MCP-hakuun parlamentaarisista asiakirjoista ja ristiinviittauksiin päivän sisaranalyysikansioihin (propositiot, mootiot, valiokuntakertomukset, interpellaatiot).
+
+---
+
+### 📊 Tiedustelumaisemankartta
+
+```mermaid
+flowchart TD
+    BREAK["⚡ BREAKING 2026-04-22<br/>Realtime-2338 Monitor"] --> A1["S Vastuuoffensiivi<br/>4 interpellaatiota jätetty<br/>KRIITTINEN prioriteetti"]
+    BREAK --> A2["FiU48 hyväksytty<br/>Polttoaineveroleikkaus voimassa<br/>KORKEA vaikutus"]
+    BREAK --> A3["Lainsäädäntörypäs<br/>5 uutta propositiota<br/>KESKISUURI-KORKEA"]
+
+    A1 --> I1["HD10444<br/>Arbetsgivaravgift väärinkäyttö<br/>→ Svantesson"]
+    A1 --> I2["HD10443<br/>Sosiaalinen dumppaus<br/>→ Slottner"]
+    A1 --> I3["HD10446<br/>Väärennetyt kuolintodistukset<br/>→ Svantesson"]
+    A1 --> I4["HD10445<br/>Asunnon etukäyttöoikeus<br/>→ Carlson"]
+
+    A2 --> B1["82 snt/l leikkaus<br/>1. toukokuu–30. syyskuu 2026"]
+    A2 --> B2["Sähkö/kaasutuet<br/>Tammikuu–helmikuu 2026"]
+
+    A3 --> C1["HD03246 Nuoret rikoksentekijät<br/>Justitiedept."]
+    A3 --> C2["HD03244 Datayhteentoimivuus<br/>Finansdept."]
+    A3 --> C3["HD03232/231 Ukraina<br/>Utrikesdept."]
+
+    style BREAK fill:#c62828,color:#FFFFFF
+    style A1 fill:#b71c1c,color:#FFFFFF
+    style A2 fill:#e65100,color:#FFFFFF
+    style A3 fill:#1565c0,color:#FFFFFF
+    style I1 fill:#e53935,color:#FFFFFF
+    style I2 fill:#e53935,color:#FFFFFF
+    style I3 fill:#e53935,color:#FFFFFF
+    style I4 fill:#e53935,color:#FFFFFF
+    style B1 fill:#f57f17,color:#000000
+    style B2 fill:#f57f17,color:#000000
+    style C1 fill:#1565c0,color:#FFFFFF
+    style C2 fill:#1565c0,color:#FFFFFF
+    style C3 fill:#1565c0,color:#FFFFFF
+```
+
+<!-- source-sha: 34bcedb9f943f85646d8e864b41374efd2461075 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief_fr.md -->
+
+**Méthodologie** : ai-driven-analysis-guide.md v6.4 | **Référence Admiralty** : [A2]
+
+---
+
+### 🎯 BLUF
+
+Le Riksdag suédois entre dans le sprint législatif final avant les élections avec trois vecteurs d'actualité urgente simultanés : (1) les Sociaux-démocrates ont lancé le 22 avril 2026 une offensive interpellatoire coordonnée à quatre volets contre la ministre des finances Elisabeth Svantesson (M) et les partenaires de coalition, ciblant des faiblesses dans les domaines du travail, du logement, de la protection sociale et de l'administration civile à l'approche des élections de septembre 2026 ; (2) le budget supplémentaire exceptionnel réduisant la taxe sur les carburants a été adopté par le Riksdag le 21 avril 2026, l'opposition étant divisée selon des lignes climato-économiques ; et (3) un ensemble de propositions substantielles sur l'énergie, la sylviculture, la justice et la diplomatie ukrainienne signale l'accélération du programme législatif du gouvernement Kristersson lors de la dernière session avant dissolution.
+
+L'offensive de responsabilité de S — trois interpellations distinctes visant uniquement la ministre des finances Svantesson — est le signal de renseignement politique de plus haute priorité de la soirée. Ce schéma de pression parlementaire multicanal sur un seul ministre indique une stratégie préélectorale coordonnée visant à provoquer des erreurs ministérielles dans les réponses publiques.
+
+---
+
+### 🧭 3 Décisions que cette synthèse soutient
+
+1. **Décision rédactionnelle** : Faut-il couvrir l'offensive de responsabilité de S comme une histoire politique unifiée (attaque coordonnée sur Svantesson) ou comme des interpellations séparées — l'approche unifiée est analytiquement plus solide.
+2. **Priorité de surveillance** : Faut-il intensifier le suivi de l'affaire d'abus de cotisations patronales (HD10444) compte tenu du lien avec la couverture d'Aftonbladet — priorité HAUTE recommandée.
+3. **Horizon de prévision** : La réduction de la taxe carburant dans le budget exceptionnel (HD01FiU48 adopté) produira-t-elle des gains narratifs climatiques mesurables pour l'opposition avant le débat budgétaire de juin — suivi via les métriques de cadrage médiatique dans les 7 prochains jours.
+
+---
+
+### ⚡ Lecture en 60 secondes
+
+- **Triple frappe de S sur Svantesson** [B2] : HD10444 (abus de cotisations patronales), HD10442 (affaire judiciaire sur les troubles alimentaires), HD10446 (fausses déclarations de décès) — trois vecteurs simultanément
+- **HD10445 logement** : S cible l'échec du gouvernement sur le droit de préemption pour les propriétés clés dans les banlieues de Stockholm (Sätra, Vårberg, Rågsved) — vecteur de politique de ségrégation [B2]
+- **HD10443 dumping social** : Dumping communal des aides sociales — S cible le ministre civil Slottner (KD) sur les migrants/populations vulnérables transférés entre municipalités [B2]
+- **HD01FiU48 ADOPTÉ** : Budget rectificatif exceptionnel — réduction de 82 öre/L de la taxe carburant à partir du 1er mai 2026 ; aide électricité/gaz pour les ménages ; impact budgétaire de 4,1 milliards SEK [A1]
+- **Nouvelles propositions (14–16 avr.)** : Délinquants juvéniles (HD03246), interopérabilité des données (HD03244), sylviculture active (HD03242), tribunal des dommages ukrainiens (HD03232/HD03231)
+- **Prisme électoral 2026** : Chaque interpellation vise un ministre nommément désigné — c'est un amorçage du débat pour la campagne électorale
+
+---
+
+### 📅 Déclencheur prioritaire à venir
+**Surveiller du 28 avril au 5 mai 2026** : Les réponses ministérielles aux quatre interpellations seront débattues dans l'hémicycle du Riksdag. Les réponses de Svantesson à HD10442 (affaire judiciaire sur les troubles alimentaires) et HD10444 (cotisations patronales) comportent le risque de volatilité médiatique le plus élevé. Une seule réponse factuellement contestée pourrait devenir l'histoire politique dominante de la semaine avant le débat budgétaire de juin.
+
+---
+
+### 🔍 Étiquette de confiance
+**Confiance globale de l'évaluation** : HAUTE [B2] — basée sur la récupération directe par MCP de documents parlementaires et la vérification croisée avec les dossiers d'analyse connexes du jour (propositions, motions, rapports de commission, interpellations).
+
+---
+
+### 📊 Carte du paysage du renseignement
+
+```mermaid
+flowchart TD
+    BREAK["⚡ BREAKING 2026-04-22<br/>Realtime-2338 Monitor"] --> A1["Offensive de responsabilité S<br/>4 interpellations déposées<br/>Priorité CRITIQUE"]
+    BREAK --> A2["FiU48 adopté<br/>Réduction taxe carburant en vigueur<br/>Impact ÉLEVÉ"]
+    BREAK --> A3["Cluster législatif<br/>5 nouvelles propositions<br/>MOYEN-ÉLEVÉ"]
+
+    A1 --> I1["HD10444<br/>Arbetsgivaravgift abus<br/>→ Svantesson"]
+    A1 --> I2["HD10443<br/>Dumping social<br/>→ Slottner"]
+    A1 --> I3["HD10446<br/>Fausses déclarations de décès<br/>→ Svantesson"]
+    A1 --> I4["HD10445<br/>Droit de préemption logement<br/>→ Carlson"]
+
+    A2 --> B1["Réduction 82 öre/L<br/>1 mai–30 sep. 2026"]
+    A2 --> B2["Aide électricité/gaz<br/>Jan.–fév. 2026"]
+
+    A3 --> C1["HD03246 Délinquants juvéniles<br/>Justitiedept."]
+    A3 --> C2["HD03244 Interop données<br/>Finansdept."]
+    A3 --> C3["HD03232/231 Ukraine<br/>Utrikesdept."]
+
+    style BREAK fill:#c62828,color:#FFFFFF
+    style A1 fill:#b71c1c,color:#FFFFFF
+    style A2 fill:#e65100,color:#FFFFFF
+    style A3 fill:#1565c0,color:#FFFFFF
+    style I1 fill:#e53935,color:#FFFFFF
+    style I2 fill:#e53935,color:#FFFFFF
+    style I3 fill:#e53935,color:#FFFFFF
+    style I4 fill:#e53935,color:#FFFFFF
+    style B1 fill:#f57f17,color:#000000
+    style B2 fill:#f57f17,color:#000000
+    style C1 fill:#1565c0,color:#FFFFFF
+    style C2 fill:#1565c0,color:#FFFFFF
+    style C3 fill:#1565c0,color:#FFFFFF
+```
+
+<!-- source-sha: 34bcedb9f943f85646d8e864b41374efd2461075 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# תקציר מנהלים — מנטור הריקסדאג בזמן אמת 2026-04-22 23:38
+**סיווג**: ציבורי | **אנליסט**: James Pether Sörling | **מחזור**: Realtime-2338
+**מתודולוגיה**: ai-driven-analysis-guide.md v6.4 | **ציון Admiralty**: [A2]
+
+---
+
+### 🎯 BLUF
+
+הריקסדאג השוודי נכנס לספרינט החקיקה הסופי לפני הבחירות עם שלושה וקטורי חדשות דחופים בו-זמניים: (1) הסוציאל-דמוקרטים השיקו ב-22 באפריל 2026 מתקפת שאילתה (interpellation) מתואמת ורב-זרועית נגד שרת האוצר אליזבת סוונטסון (M) ושותפי הקואליציה, תוך מיקוד בחולשות בשוק העבודה, דיור, רווחה חברתית ומנהל אזרחי לפני בחירות ספטמבר 2026; (2) התקציב המשלים החריג עם הפחתת מס הדלק אושר על ידי הריקסדאג ב-21 באפריל 2026, עם מתנגדים מחולקים לאורך קווים אקלימיים-כלכליים; ו-(3) אשכול של הצעות מהותיות בנושאי אנרגיה, יערנות, משפט ודיפלומטיה אוקראינית מאותת על האצת סדר היום החקיקתי של ממשלת קריסטרסון בפגישה האחרונה לפני הפירוק.
+
+מתקפת האחריות של S — שלוש שאילתות נפרדות המכוונות לשרת האוצר סוונטסון בלבד — היא איתות מודיעין פוליטי בעדיפות גבוהה ביותר של הערב. דפוס זה של לחץ פרלמנטרי רב-ערוצי על שר אחד מצביע על אסטרטגיה מתואמת לפני הבחירות לאלץ שגיאות שרותיות בתשובות ציבוריות.
+
+---
+
+### 🧭 3 החלטות שתקציר זה תומך בהן
+
+1. **החלטה עריכתית**: האם לסקור את מתקפת האחריות של S כסיפור פוליטי מאוחד (התקפה מתואמת על סוונטסון) או כשאילתות נפרדות — המסגור המאוחד חזק יותר מבחינה אנליטית.
+2. **עדיפות ניטור**: האם יש להסלים את מעקב תיק ניצול דמי מעסיקים (HD10444) בהתחשב בקשר לדיווח של Aftonbladet — מומלצת עדיפות גבוהה.
+3. **אופק תחזית**: האם הפחתת מס הדלק בתקציב החריג (HD01FiU48 שאושר) תייצר רווחים נרטיביים אקלימיים מדידים למתנגדים לפני דיון תקציב יוני — מעקב דרך מדדי מסגור מדיה ב-7 ימים הבאים.
+
+---
+
+### ⚡ קריאה ב-60 שניות
+
+- **מכה משולשת של S על סוונטסון** [B2]: HD10444 (ניצול דמי מעסיקים), HD10442 (תיק בית משפט הפרעות אכילה), HD10446 (הצהרות מוות כוזבות) — שלושה וקטורים בו-זמנית
+- **HD10445 דיור**: S מכוונת לכישלון הממשלה בזכות קדימה לנכסים מרכזיים בפרברי שטוקהולם (Sätra, Vårberg, Rågsved) — וקטור מדיניות הפרדה [B2]
+- **HD10443 השלכה חברתית**: השלכת סיוע סוציאלי עירוני — S מכוונת לשר האזרחי סלוטנר (KD) על מהגרים/אוכלוסיות פגיעות שמועברות בין רשויות מקומיות [B2]
+- **HD01FiU48 אושר**: תקציב שינוי חריג — הפחתת 82 öre/ל' ממס דלק החל מ-1 במאי 2026; תמיכה חשמל/גז לבתי אב; השפעה פיסקלית של 4.1 מיליארד SEK [A1]
+- **הצעות חדשות (14–16 באפר')**: עבריינים צעירים (HD03246), יכולת פעולה הדדית של נתונים (HD03244), יערנות פעילה (HD03242), בית דין לנזקי אוקראינה (HD03232/HD03231)
+- **עדשת בחירות 2026**: כל שאילתה מכוונת נגד שר שמו נקוב — זו הכנת דיון לקראת קמפיין הבחירות
+
+---
+
+### 📅 הגורם המפעיל המוביל קדימה
+**לעקוב 28 באפריל–5 במאי 2026**: תשובות שרותיות לארבע השאילתות יידונו במליאת הריקסדאג. תשובות סוונטסון על HD10442 (תיק הפרעות אכילה) ו-HD10444 (דמי מעסיקים) נושאות את הסיכון הגבוה ביותר לתנודתיות תקשורתית. תשובה אחת שנויה במחלוקת יכולה להפוך לסיפור הפוליטי הדומיננטי של השבוע לפני דיון תקציב יוני.
+
+---
+
+### 🔍 תווית אמינות
+**אמינות הערכה כוללת**: גבוהה [B2] — מבוסס על אחזור ישיר דרך MCP של מסמכים פרלמנטריים והפניה צולבת עם תיקיות ניתוח אחיות של היום (הצעות, הצעות חבר, דוחות ועדה, שאילתות).
+
+---
+
+### 📊 מפת נוף המודיעין
+
+```mermaid
+flowchart TD
+    BREAK["⚡ BREAKING 2026-04-22<br/>Realtime-2338 Monitor"] --> A1["מתקפת אחריות S<br/>4 שאילתות הוגשו<br/>עדיפות קריטית"]
+    BREAK --> A2["FiU48 אושר<br/>הפחתת מס דלק בתוקף<br/>השפעה גבוהה"]
+    BREAK --> A3["אשכול חקיקתי<br/>5 הצעות חדשות<br/>בינוני-גבוה"]
+
+    A1 --> I1["HD10444<br/>Arbetsgivaravgift ניצול<br/>→ Svantesson"]
+    A1 --> I2["HD10443<br/>השלכה חברתית<br/>→ Slottner"]
+    A1 --> I3["HD10446<br/>הצהרות מוות כוזבות<br/>→ Svantesson"]
+    A1 --> I4["HD10445<br/>זכות קדימה דיור<br/>→ Carlson"]
+
+    A2 --> B1["הפחתת 82 öre/ל'\n1 מאי–30 ספטמבר 2026"]
+    A2 --> B2["תמיכת חשמל/גז\nינואר–פברואר 2026"]
+
+    A3 --> C1["HD03246 עבריינים צעירים\nJustitiedept."]
+    A3 --> C2["HD03244 יכולת פעולה הדדית\nFinansdept."]
+    A3 --> C3["HD03232/231 אוקראינה\nUtrikesdept."]
+
+    style BREAK fill:#c62828,color:#FFFFFF
+    style A1 fill:#b71c1c,color:#FFFFFF
+    style A2 fill:#e65100,color:#FFFFFF
+    style A3 fill:#1565c0,color:#FFFFFF
+    style I1 fill:#e53935,color:#FFFFFF
+    style I2 fill:#e53935,color:#FFFFFF
+    style I3 fill:#e53935,color:#FFFFFF
+    style I4 fill:#e53935,color:#FFFFFF
+    style B1 fill:#f57f17,color:#000000
+    style B2 fill:#f57f17,color:#000000
+    style C1 fill:#1565c0,color:#FFFFFF
+    style C2 fill:#1565c0,color:#FFFFFF
+    style C3 fill:#1565c0,color:#FFFFFF
+```
+
+<!-- source-sha: 34bcedb9f943f85646d8e864b41374efd2461075 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief_ja.md -->
+
+**分類**: 公開 | **アナリスト**: James Pether Sörling | **サイクル**: Realtime-2338
+**方法論**: ai-driven-analysis-guide.md v6.4 | **アドミラルティ基準**: [A2]
+
+---
+
+### 🎯 BLUF（要点）
+
+スウェーデン議会（Riksdag）は、3つの同時進行する緊急ニュース・ベクターとともに選挙前最後の立法スプリントに突入しています。(1) 社会民主党は2026年4月22日、財務大臣エリザベット・スバンテソン（M）および連立パートナーに対し、2026年9月選挙前の労働市場・住宅・社会福祉・民政行政の弱点を標的に、協調的な4本立ての質問（interpellation）攻勢を開始した。(2) 燃料税引き下げを含む臨時補正予算が2026年4月21日に議会で可決され、野党は気候・経済路線で分裂した。(3) エネルギー、林業、司法、ウクライナ外交に関する実質的な提案の集まりが、解散前最後の会期におけるクリステション政権の立法議題の加速を示している。
+
+S党の責任追及攻勢——財務大臣スバンテソン単独に向けられた3件の別々の質問——は、今夜最優先の政治情報シグナルです。単一大臣に対する多チャンネルの議会圧力というこのパターンは、公開答弁での大臣の失言を引き出すために設計された、協調された選挙前戦略を示しています。
+
+---
+
+### 🧭 このブリーフが支援する3つの意思決定
+
+1. **編集上の判断**: S党の責任追及攻勢を統一された政治ストーリー（スバンテソンへの協調攻撃）として報道するか、個別の質問として扱うか——統合的フレームの方が分析的に優れている。
+2. **監視優先度**: Aftonbladetの報道との関連を踏まえ、使用者負担金乱用事件（HD10444）の追跡をエスカレートすべきか——高優先度を推奨。
+3. **予測ホライゾン**: 臨時予算での燃料税引き下げ（HD01FiU48可決）が、6月予算議論前に野党の気候ナラティブ上の利益を測定可能な形でもたらすか——今後7日間のメディア・フレーミング指標で追跡。
+
+---
+
+### ⚡ 60秒読み
+
+- **S党のスバンテソンへの三重攻撃** [B2]: HD10444（使用者負担金の乱用）、HD10442（摂食障害訴訟事件）、HD10446（虚偽の死亡宣言）——3つのベクターが同時に
+- **HD10445 住宅**: S党がストックホルム郊外（Sätra、Vårberg、Rågsved）の主要物件の先買権をめぐる政府の失敗を標的に——分離政策ベクター [B2]
+- **HD10443 社会的ダンピング**: 自治体の社会扶助ダンピング——S党が自治体間を移送される移民・脆弱集団問題でスロットネル文民大臣（KD）を標的に [B2]
+- **HD01FiU48 可決**: 臨時修正予算——2026年5月1日から1リットルあたり82エレの燃料税引き下げ；家庭向け電気・ガス支援；財政影響41億SEK [A1]
+- **新提案（4月14〜16日）**: 少年犯罪者（HD03246）、データ相互運用性（HD03244）、積極的林業（HD03242）、ウクライナ損害賠償法廷（HD03232/HD03231）
+- **2026年選挙の視点**: 各質問は実名の大臣を標的にしており——これは選挙キャンペーンに向けた討論の準備です
+
+---
+
+### 📅 最優先の前方トリガー
+**2026年4月28日〜5月5日を注視**: 4件の質問への大臣回答が議会本会議で討論されます。スバンテソンのHD10442（摂食障害訴訟）とHD10444（使用者負担金）への回答が最も高いメディア・ボラティリティ・リスクを持ちます。事実上争われた単一の回答が、6月予算議論前の週の主要政治ストーリーになる可能性があります。
+
+---
+
+### 🔍 信頼度ラベル
+**総合評価信頼度**: 高 [B2]——議会文書のMCP直接取得と今日の姉妹分析フォルダー（提案、動議、委員会報告、質問）との相互参照に基づく。
+
+---
+
+### 📊 情報環境マップ
+
+```mermaid
+flowchart TD
+    BREAK["⚡ BREAKING 2026-04-22<br/>Realtime-2338 Monitor"] --> A1["S党責任追及攻勢<br/>4件の質問提出<br/>最重要優先度"]
+    BREAK --> A2["FiU48可決<br/>燃料税引き下げ発効<br/>高インパクト"]
+    BREAK --> A3["立法クラスター<br/>5件の新提案<br/>中〜高"]
+
+    A1 --> I1["HD10444<br/>Arbetsgivaravgift 乱用<br/>→ Svantesson"]
+    A1 --> I2["HD10443<br/>社会的ダンピング<br/>→ Slottner"]
+    A1 --> I3["HD10446<br/>虚偽死亡宣言<br/>→ Svantesson"]
+    A1 --> I4["HD10445<br/>住宅先買権<br/>→ Carlson"]
+
+    A2 --> B1["82エレ/L引き下げ<br/>2026年5月1日〜9月30日"]
+    A2 --> B2["電気・ガス支援<br/>2026年1〜2月"]
+
+    A3 --> C1["HD03246 少年犯罪者<br/>Justitiedept."]
+    A3 --> C2["HD03244 データ相互運用性<br/>Finansdept."]
+    A3 --> C3["HD03232/231 ウクライナ<br/>Utrikesdept."]
+
+    style BREAK fill:#c62828,color:#FFFFFF
+    style A1 fill:#b71c1c,color:#FFFFFF
+    style A2 fill:#e65100,color:#FFFFFF
+    style A3 fill:#1565c0,color:#FFFFFF
+    style I1 fill:#e53935,color:#FFFFFF
+    style I2 fill:#e53935,color:#FFFFFF
+    style I3 fill:#e53935,color:#FFFFFF
+    style I4 fill:#e53935,color:#FFFFFF
+    style B1 fill:#f57f17,color:#000000
+    style B2 fill:#f57f17,color:#000000
+    style C1 fill:#1565c0,color:#FFFFFF
+    style C2 fill:#1565c0,color:#FFFFFF
+    style C3 fill:#1565c0,color:#FFFFFF
+```
+
+<!-- source-sha: 34bcedb9f943f85646d8e864b41374efd2461075 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief_ko.md -->
+
+**분류**: 공개 | **분석가**: James Pether Sörling | **주기**: Realtime-2338
+**방법론**: ai-driven-analysis-guide.md v6.4 | **어드미럴티 기준선**: [A2]
+
+---
+
+### 🎯 핵심 요약 (BLUF)
+
+스웨덴 릭스다그(Riksdag)는 세 가지 동시 긴급 뉴스 벡터와 함께 선거 전 최후의 입법 스프린트에 돌입하고 있습니다. (1) 사회민주당은 2026년 4월 22일, 2026년 9월 선거를 앞두고 노동시장·주거·사회복지·민간행정의 약점을 겨냥해 재무장관 엘리자베트 스반테손(M) 및 연립 파트너에 대한 조율된 4건의 질문(interpellation) 공세를 시작했습니다. (2) 연료세 인하가 포함된 임시 추경예산이 2026년 4월 21일 의회에서 통과되었으며, 야당은 기후-경제 노선을 따라 분열되었습니다. (3) 에너지, 임업, 법무, 우크라이나 외교에 관한 실질적인 제안들의 집합이 해산 전 마지막 회기에서 크리스테르손 정부의 입법 의제 가속화를 시사합니다.
+
+S당의 책임 추궁 공세——재무장관 스반테손만을 대상으로 하는 3건의 별도 질문——은 오늘 밤 최우선 정치 정보 신호입니다. 단일 장관에 대한 다채널 의회 압박이라는 이 패턴은 공개 답변에서 장관의 실수를 유도하기 위한 조율된 선거 전 전략을 나타냅니다.
+
+---
+
+### 🧭 이 브리핑이 지원하는 3가지 결정
+
+1. **편집 결정**: S당의 책임 추궁 공세를 통합된 정치 이야기(스반테손에 대한 조율된 공격)로 다룰지, 별도의 질문들로 다룰지——통합 프레이밍이 분석적으로 더 강합니다.
+2. **모니터링 우선순위**: Aftonbladet 보도와의 연관성을 감안해 사용자 부담금 남용 사건(HD10444) 추적을 강화할 것인지——높은 우선순위 권장.
+3. **예측 지평선**: 임시 예산의 연료세 인하(HD01FiU48 통과)가 6월 예산 토론 전에 야당에 측정 가능한 기후 내러티브 이득을 가져올지——향후 7일간 미디어 프레이밍 지표를 통해 추적.
+
+---
+
+### ⚡ 60초 읽기
+
+- **S당의 스반테손에 대한 삼중 타격** [B2]: HD10444(사용자 부담금 남용), HD10442(섭식장애 법원 사건), HD10446(허위 사망 신고)——3개 벡터 동시에
+- **HD10445 주거**: S당이 스톡홀름 교외(Sätra, Vårberg, Rågsved)의 핵심 부동산에 대한 선매권 관련 정부 실패를 겨냥——분리 정책 벡터 [B2]
+- **HD10443 사회적 덤핑**: 지자체 사회 지원 덤핑——S당이 자치단체 간 이전되는 이주민/취약계층 문제로 슬로트네르 민간부장관(KD)을 겨냥 [B2]
+- **HD01FiU48 통과**: 임시 수정예산——2026년 5월 1일부터 리터당 82 에레 연료세 인하; 가정용 전기/가스 지원; 재정 영향 41억 SEK [A1]
+- **신규 제안(4월 14~16일)**: 청소년 범죄자(HD03246), 데이터 상호운용성(HD03244), 적극적 임업(HD03242), 우크라이나 손해배상 재판소(HD03232/HD03231)
+- **2026년 선거 렌즈**: 각 질문은 실명 장관을 겨냥——이는 선거 캠페인을 위한 토론 준비입니다
+
+---
+
+### 📅 최우선 전방 트리거
+**2026년 4월 28일~5월 5일 주시**: 4건의 질문에 대한 장관 답변이 릭스다그 본회의에서 토론됩니다. 스반테손의 HD10442(섭식장애 법원 사건)와 HD10444(사용자 부담금)에 대한 답변이 가장 높은 미디어 변동성 위험을 내포합니다. 단 하나의 사실 논쟁 답변이 6월 예산 토론 전 해당 주의 지배적인 정치 이야기가 될 수 있습니다.
+
+---
+
+### 🔍 신뢰도 레이블
+**전체 평가 신뢰도**: 높음 [B2]——의회 문서의 MCP 직접 검색과 오늘의 자매 분석 폴더(제안, 동의안, 위원회 보고서, 질문)와의 교차 검증을 기반으로 함.
+
+---
+
+### 📊 정보 환경 지도
+
+```mermaid
+flowchart TD
+    BREAK["⚡ BREAKING 2026-04-22<br/>Realtime-2338 Monitor"] --> A1["S당 책임 추궁 공세<br/>4건 질문 제출<br/>최우선 중요도"]
+    BREAK --> A2["FiU48 통과<br/>연료세 인하 발효<br/>높은 영향"]
+    BREAK --> A3["입법 클러스터<br/>5건 신규 제안<br/>중간-높음"]
+
+    A1 --> I1["HD10444<br/>Arbetsgivaravgift 남용<br/>→ Svantesson"]
+    A1 --> I2["HD10443<br/>사회적 덤핑<br/>→ Slottner"]
+    A1 --> I3["HD10446<br/>허위 사망 신고<br/>→ Svantesson"]
+    A1 --> I4["HD10445<br/>주거 선매권<br/>→ Carlson"]
+
+    A2 --> B1["82에레/L 인하<br/>2026년 5월 1일~9월 30일"]
+    A2 --> B2["전기/가스 지원<br/>2026년 1~2월"]
+
+    A3 --> C1["HD03246 청소년 범죄자<br/>Justitiedept."]
+    A3 --> C2["HD03244 데이터 상호운용성<br/>Finansdept."]
+    A3 --> C3["HD03232/231 우크라이나<br/>Utrikesdept."]
+
+    style BREAK fill:#c62828,color:#FFFFFF
+    style A1 fill:#b71c1c,color:#FFFFFF
+    style A2 fill:#e65100,color:#FFFFFF
+    style A3 fill:#1565c0,color:#FFFFFF
+    style I1 fill:#e53935,color:#FFFFFF
+    style I2 fill:#e53935,color:#FFFFFF
+    style I3 fill:#e53935,color:#FFFFFF
+    style I4 fill:#e53935,color:#FFFFFF
+    style B1 fill:#f57f17,color:#000000
+    style B2 fill:#f57f17,color:#000000
+    style C1 fill:#1565c0,color:#FFFFFF
+    style C2 fill:#1565c0,color:#FFFFFF
+    style C3 fill:#1565c0,color:#FFFFFF
+```
+
+<!-- source-sha: 34bcedb9f943f85646d8e864b41374efd2461075 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief_nl.md -->
+
+**Classificatie**: Openbaar | **Analist**: James Pether Sörling | **Cyclus**: Realtime-2338
+**Methodologie**: ai-driven-analysis-guide.md v6.4 | **Admiralty-basislijn**: [A2]
+
+---
+
+### 🎯 BLUF
+
+De Zweedse Riksdag gaat de laatste wetgevingssprint in voor de verkiezingen met drie gelijktijdige urgente nieuwsvectoren: (1) de Sociaaldemocraten hebben op 22 april 2026 een gecoördineerde viervoudige interpellatieoffensief gelanceerd tegen minister van Financiën Elisabeth Svantesson (M) en coalitiepartners, gericht op zwakheden in de arbeidsmarkt, huisvesting, sociale zekerheid en civiel bestuur voor de verkiezingen van september 2026; (2) het buitengewone aanvullende budget met brandstofbelastingverlaging werd op 21 april 2026 door de Riksdag aangenomen, waarbij de oppositie verdeeld is langs klimaat-economische lijnen; en (3) een cluster van substantiële proposities over energie, bosbouw, justitie en Oekraïne-diplomatie signaleert de versnellende wetgevingsagenda van de regering-Kristersson in de laatste zitting voor ontbinding.
+
+Het verantwoordelijkheidsoffensief van S — drie afzonderlijke interpellaties gericht uitsluitend op minister van Financiën Svantesson — is het politiek inlichtingensignaal van de hoogste prioriteit van de avond. Dit patroon van parlementaire meerkanaalsdruk op één minister duidt op een gecoördineerde pre-verkiezingsstrategie om ministeriële misstappen in openbare antwoorden te forceren.
+
+---
+
+### 🧭 3 Beslissingen die dit brief ondersteunt
+
+1. **Redactionele beslissing**: Of het verantwoordelijkheidsoffensief van S als één geïntegreerd politiek verhaal (gecoördineerde aanval op Svantesson) of als afzonderlijke interpellaties moet worden gedekt — de geïntegreerde framing is analytisch sterker.
+2. **Bewakingsprioriteit**: Of de tracking van de werkgeversbijdrage-misbruikszaak (HD10444) gezien de verbinding met de berichtgeving van Aftonbladet geëscaleerd moet worden — HOGE prioriteit aanbevolen.
+3. **Prognose-horizon**: Of de brandstofbelastingverlaging in het uitzonderlijke budget (HD01FiU48 aangenomen) meetbare klimaatnarratieve winsten voor de oppositie zal opleveren voor het junibudgetdebat — volgen via mediaframingstatistieken de komende 7 dagen.
+
+---
+
+### ⚡ 60-seconden lezing
+
+- **S's drievoudige aanval op Svantesson** [B2]: HD10444 (misbruik van werkgeversbijdragen), HD10442 (rechtszaak eetstoornissen), HD10446 (valse overlijdensverklaringen) — drie vectoren gelijktijdig
+- **HD10445 huisvesting**: S richt zich op het falen van de regering op het voorkeursrecht voor sleuteleigendommen in Stockholmse buitenwijken (Sätra, Vårberg, Rågsved) — segregatiebeleidsvector [B2]
+- **HD10443 sociale dumping**: Gemeentelijke uitkeringsdumping — S richt zich op Civielminister Slottner (KD) over migranten/kwetsbare bevolkingsgroepen die tussen gemeenten worden overgedragen [B2]
+- **HD01FiU48 AANGENOMEN**: Buitengewone wijzigingsbegroting — 82 öre/L brandstofbelastingverlaging per 1 mei 2026; elektriciteit/gassteun voor huishoudens; 4,1 miljard SEK fiscale impact [A1]
+- **Nieuwe proposities (14–16 apr.)**: Jonge delinquenten (HD03246), data-interoperabiliteit (HD03244), actief bosbeheer (HD03242), Oekraïne-schadentribunaal (HD03232/HD03231)
+- **Verkiezingslens 2026**: Elke interpellatie is gericht op een met naam genoemde minister — dit is debatvoorbereiding voor de verkiezingscampagne
+
+---
+
+### 📅 Prioritaire voorwaartse trigger
+**Volg 28 april–5 mei 2026**: Ministeriële antwoorden op de vier interpellaties worden gedebatteerd in de plenaire vergadering van de Riksdag. Svantessons antwoorden op HD10442 (rechtszaak eetstoornissen) en HD10444 (werkgeversbijdragen) dragen het hoogste mediavolatiliteitsrisico. Één enkel feitelijk betwist antwoord kan het dominante politieke verhaal van de week worden voor het junibudgetdebat.
+
+---
+
+### 🔍 Vertrouwenslabel
+**Algeheel beoordelingsvertrouwen**: HOOG [B2] — gebaseerd op directe MCP-ophaling van parlementaire documenten en kruisverwijzingen met de zusteranalysemappen van vandaag (proposities, moties, commissierapporten, interpellaties).
+
+---
+
+### 📊 Kaart van het inlichtingenlandschap
+
+```mermaid
+flowchart TD
+    BREAK["⚡ BREAKING 2026-04-22<br/>Realtime-2338 Monitor"] --> A1["S Verantwoordelijkheidsoffensief<br/>4 interpellaties ingediend<br/>KRITIEKE prioriteit"]
+    BREAK --> A2["FiU48 aangenomen<br/>Brandstofbelastingverlaging van kracht<br/>HOGE impact"]
+    BREAK --> A3["Wetgevingscluster<br/>5 nieuwe proposities<br/>MEDIUM-HOOG"]
+
+    A1 --> I1["HD10444<br/>Arbetsgivaravgift misbruik<br/>→ Svantesson"]
+    A1 --> I2["HD10443<br/>Sociale dumping<br/>→ Slottner"]
+    A1 --> I3["HD10446<br/>Valse overlijdensverklaringen<br/>→ Svantesson"]
+    A1 --> I4["HD10445<br/>Woningvoorkeursrecht<br/>→ Carlson"]
+
+    A2 --> B1["82 öre/L verlaging<br/>1 mei–30 sep. 2026"]
+    A2 --> B2["Elektriciteit/gassteun<br/>Jan.–feb. 2026"]
+
+    A3 --> C1["HD03246 Jonge delinquenten<br/>Justitiedept."]
+    A3 --> C2["HD03244 Data-interop<br/>Finansdept."]
+    A3 --> C3["HD03232/231 Oekraïne<br/>Utrikesdept."]
+
+    style BREAK fill:#c62828,color:#FFFFFF
+    style A1 fill:#b71c1c,color:#FFFFFF
+    style A2 fill:#e65100,color:#FFFFFF
+    style A3 fill:#1565c0,color:#FFFFFF
+    style I1 fill:#e53935,color:#FFFFFF
+    style I2 fill:#e53935,color:#FFFFFF
+    style I3 fill:#e53935,color:#FFFFFF
+    style I4 fill:#e53935,color:#FFFFFF
+    style B1 fill:#f57f17,color:#000000
+    style B2 fill:#f57f17,color:#000000
+    style C1 fill:#1565c0,color:#FFFFFF
+    style C2 fill:#1565c0,color:#FFFFFF
+    style C3 fill:#1565c0,color:#FFFFFF
+```
+
+<!-- source-sha: 34bcedb9f943f85646d8e864b41374efd2461075 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief_no.md -->
+
+**Klassifisering**: Offentlig | **Analytiker**: James Pether Sörling | **Syklus**: Realtime-2338
+**Metodologi**: ai-driven-analysis-guide.md v6.4 | **Admiralty-grunnlinje**: [A2]
+
+---
+
+### 🎯 BLUF
+
+Den svenske Riksdag går inn i den endelige lovgivningsspurten før valget med tre samtidige breaking-nyhetsvektorer: (1) Sosialdemokratene har lansert en koordinert firedobbel interpellasjonsoffensiv mot finansminister Elisabeth Svantesson (M) og koalisjonspartnere den 22. april 2026, rettet mot svakheter innen arbeidsliv, bolig, sosial velferd og sivil forvaltning foran valget i september 2026; (2) den ekstra tilleggsbudsjettet med redusert drivstoffavgift ble vedtatt av Riksdagen den 21. april 2026, med opposisjonen splittet langs klima-økonomiske linjer; og (3) en klynge av substantielle proposisjoner om energi, skogbruk, justis og Ukraina-diplomati signalerer Kristersson-regjeringens akselererende lovgivningsagenda i den siste sesjonen før oppløsning.
+
+S sin ansvarsoffensiv — tre separate interpellasjoner rettet mot finansminister Svantesson alene — er kveldets politiske etterretningssignal av høyeste prioritet. Dette mønsteret med flerkanals parlamentarisk press mot en enkelt minister indikerer en koordinert forvalsstrategi for å tvinge ministerielle feiltrinn i offentlige svar.
+
+---
+
+### 🧭 3 Beslutninger dette brifingen støtter
+
+1. **Redaksjonell beslutning**: Om S sin ansvarsoffensiv skal dekkes som én samlet politisk historie (koordinert angrep på Svantesson) eller som separate interpellasjoner — den samlede rammen er analytisk sterkere.
+2. **Overvåkingsprioritet**: Om sporing av arbeidsgiverbidrags-misbrukssaken (HD10444) bør eskaleres gitt koblingen til Aftonbladets rapportering — HØY prioritet anbefales.
+3. **Prognosehorisont**: Om den ekstra budsjettets drivstoffavgiftskutt (HD01FiU48 vedtatt) vil produsere målbare opposisjonelle klimanarrative gevinster foran junibudsjettdebatten — følg via medieinnrammingsstatistikk de neste 7 dager.
+
+---
+
+### ⚡ 60-sekunders lesning
+
+- **S sitt trippelstrike mot Svantesson** [B2]: HD10444 (misbruk av arbetsgivaravgift), HD10442 (spiseforstyrrelses-domstolssak), HD10446 (falske dødserklæringer) — tre vektorer simultant
+- **HD10445 boliger**: S retter fokus mot regjeringens svikt med forkjøpsrett for nøkkeleiendommer i Stockholms forsteder (Sätra, Vårberg, Rågsved) — segregasjonspolitisk vektor [B2]
+- **HD10443 sosial dumping**: Kommunal sosialhjelps-dumping — S retter seg mot sivilminister Slottner (KD) om migranter/sårbare befolkningsgrupper overført mellom kommuner [B2]
+- **HD01FiU48 VEDTATT**: Ekstra endringsbudsjett — 82 øre/L drivstoffavgiftskutt fra 1. mai 2026; el/gassstøtte for husholdninger; 4,1 mrd. SEK i fiskal påvirkning [A1]
+- **Nye proposisjoner (14.–16. apr.)**: Unge lovbrytere (HD03246), datainteroperabilitet (HD03244), aktivt skogbruk (HD03242), Ukraina-erstatningstribunal (HD03232/HD03231)
+- **Valglins 2026**: Enhver interpellasjon er rettet mot en navngitt minister — dette er debattpriming foran valgkampen
+
+---
+
+### 📅 Topp fremadrettet trigger
+**Følg 28. april–5. mai 2026**: Ministerielle svar på de fire interpellasjonene vil bli debattert i Riksdag-salen. Svantessons svar på HD10442 (spiseforstyrrelses-domstolssak) og HD10444 (arbeidsgiverbidrag) bærer den høyeste mediavola­tilitetsrisikoen. Et enkelt faktamessig omstridt svar kan bli ukens dominerende politiske historie foran junibudsjettdebatten.
+
+---
+
+### 🔍 Konfidensmerknad
+**Samlet vurderingskonfidensgrad**: HØY [B2] — basert på direkte MCP-henting av parlamentariske dokumenter og krysshenvisning med dagens søsteranalyse-mapper (proposisjoner, motsjoner, utvalgsrapporter, interpellasjoner).
+
+---
+
+### 📊 Etterretningslandskabskart
+
+```mermaid
+flowchart TD
+    BREAK["⚡ BREAKING 2026-04-22<br/>Realtime-2338 Monitor"] --> A1["S Ansvarsoffensiv<br/>4 interpellasjoner innlevert<br/>KRITISK prioritet"]
+    BREAK --> A2["FiU48 vedtatt<br/>Drivstoffavgiftskutt i kraft<br/>HØY påvirkning"]
+    BREAK --> A3["Lovgivningsklynge<br/>5 nye proposisjoner<br/>MEDIUM-HØY"]
+
+    A1 --> I1["HD10444<br/>Arbetsgivaravgift misbruk<br/>→ Svantesson"]
+    A1 --> I2["HD10443<br/>Sosial dumping<br/>→ Slottner"]
+    A1 --> I3["HD10446<br/>Falske dødserklæringer<br/>→ Svantesson"]
+    A1 --> I4["HD10445<br/>Boligforkjøpsrett<br/>→ Carlson"]
+
+    A2 --> B1["82 øre/L kutt<br/>1. mai–30. sep. 2026"]
+    A2 --> B2["El/gassstøtte<br/>Jan.–feb. 2026"]
+
+    A3 --> C1["HD03246 Unge lovbrytere<br/>Justitiedept."]
+    A3 --> C2["HD03244 Datainterop<br/>Finansdept."]
+    A3 --> C3["HD03232/231 Ukraina<br/>Utrikesdept."]
+
+    style BREAK fill:#c62828,color:#FFFFFF
+    style A1 fill:#b71c1c,color:#FFFFFF
+    style A2 fill:#e65100,color:#FFFFFF
+    style A3 fill:#1565c0,color:#FFFFFF
+    style I1 fill:#e53935,color:#FFFFFF
+    style I2 fill:#e53935,color:#FFFFFF
+    style I3 fill:#e53935,color:#FFFFFF
+    style I4 fill:#e53935,color:#FFFFFF
+    style B1 fill:#f57f17,color:#000000
+    style B2 fill:#f57f17,color:#000000
+    style C1 fill:#1565c0,color:#FFFFFF
+    style C2 fill:#1565c0,color:#FFFFFF
+    style C3 fill:#1565c0,color:#FFFFFF
+```
+
+<!-- source-sha: 34bcedb9f943f85646d8e864b41374efd2461075 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief_sv.md -->
+
+**Klassificering**: Offentlig | **Analytiker**: James Pether Sörling | **Cykel**: Realtime-2338
+**Metodik**: ai-driven-analysis-guide.md v6.4 | **Admiralty-baslinje**: [A2]
+
+---
+
+### 🎯 BLUF
+
+Riksdagen träder in i det sista lagstiftningsspurten inför valet med tre samtidiga breaking-nyhetsvektorer: (1) Socialdemokraterna har inlett ett koordinerat fyrfaldigt interpellationsoffensiv mot finansminister Elisabeth Svantesson (M) och koalitionspartners den 22 april 2026, med inriktning på svagheter inom arbetsmarknad, bostäder, socialt skydd och civil förvaltning inför valet i september 2026; (2) den extra tilläggsbudgeten med sänkt drivmedelsskatt antogs av Riksdagen den 21 april 2026, med oppositionen splittrad längs klimat-ekonomiska linjer; och (3) ett kluster av substantiella propositioner om energi, skogsbruk, rättsväsen och Ukraina-diplomati signalerar Kristersson-regeringens accelererande lagstiftningsagenda under den sista sessionen före upplösning.
+
+S:s ansvarsskyldighetsoffensiv — tre separata interpellationer riktade mot finansminister Svantesson ensam — är kvällens politiska underrättelse av högsta prioritet. Detta mönster av flerkanalspress mot en enskild minister indikerar en koordinerad förvalssstrategi för att tvinga ministern till felsteg i offentliga svar.
+
+---
+
+### 🧭 3 Beslut som detta underlag stödjer
+
+1. **Redaktionellt beslut**: Om S:s ansvarsskyldighetsoffensiv ska täckas som en enhetlig politisk berättelse (koordinerat angrepp på Svantesson) eller som separata interpellationer — den enhetliga inramningen är analytiskt starkare.
+2. **Bevakarprioritet**: Om spårningen av arbetsgivaravgiftsmissbruksfallet (HD10444) ska eskaleras givet kopplingen till Aftonbladets rapportering — HÖG prioritet rekommenderas.
+3. **Prognoshorisont**: Om den extra budgetens drivmedelsskattesänkning (HD01FiU48 antagen) kommer att generera mätbara oppositionella klimatnarrativvinster inför junibudgetdebatten — följ via medieramstningsstatistik de närmaste 7 dagarna.
+
+---
+
+### ⚡ 60-sekunders läsning
+
+- **S:s trippelstrike mot Svantesson** [B2]: HD10444 (missbruk av arbetsgivaravgifter), HD10442 (ätstörningsdomstolsfall), HD10446 (falska dödsförklaringar) — tre vektorer simultant
+- **HD10445 bostäder**: S riktar in sig på regeringens misslyckande med förköpsrätt för nyckelproperties i Stockholmsförorter (Sätra, Vårberg, Rågsved) — segregationspolitisk vektor [B2]
+- **HD10443 social dumpning**: Kommunal socialbidragsdumpning — S riktar sig mot civilminister Slottner (KD) om migranter/utsatta populationer som överförs mellan kommuner [B2]
+- **HD01FiU48 ANTAGEN**: Extra ändringsbudget — 82 öre/liter drivmedelsskattesänkning från 1 maj 2026; el/gasstöd för hushåll; 4,1 miljarder SEK i fiskal påverkan [A1]
+- **Nya propositioner (14–16 apr)**: Unga lagöverträdare (HD03246), datainteroperabilitet (HD03244), aktivt skogsbruk (HD03242), Ukraina-skadeståndstribunal (HD03232/HD03231)
+- **Vallinsen 2026**: Varje interpellation är riktad mot en namngiven minister — detta är debatspriming inför valrörelsen
+
+---
+
+### 📅 Topp framåtriktat trigger
+**Bevaka 28 april–5 maj 2026**: Ministersvaren på de fyra interpellationerna kommer att debatteras i riksdagskammaren. Svantessons svar på HD10442 (ätstörningsdomstolsfall) och HD10444 (arbetsgivaravgifter) bär den högsta risken för medialt genomslag. Ett enda faktamässigt ifrågasatt svar kan bli veckans dominerande politiska historia inför junibudgetdebatten.
+
+---
+
+### 🔍 Konfidensmärkning
+**Övergripande bedömningsförtroende**: HÖG [B2] — baserat på direkt MCP-hämtning av parlamentariska handlingar och korsreferens med dagens syskonanalysmappar (propositioner, motioner, utskottsbetänkanden, interpellationer).
+
+---
+
+### 📊 Karta över underrättelselandskapet
+
+```mermaid
+flowchart TD
+    BREAK["⚡ BREAKING 2026-04-22<br/>Realtime-2338 Monitor"] --> A1["S Ansvarsskyldighetsoffensiv<br/>4 interpellationer inlämnade<br/>KRITISK prioritet"]
+    BREAK --> A2["FiU48 antagen<br/>Drivmedelsskattesänkning i kraft<br/>HÖG påverkan"]
+    BREAK --> A3["Lagstiftningskluster<br/>5 nya propositioner<br/>MEDEL-HÖG"]
+
+    A1 --> I1["HD10444<br/>Arbetsgivaravgift missbruk<br/>→ Svantesson"]
+    A1 --> I2["HD10443<br/>Social dumpning<br/>→ Slottner"]
+    A1 --> I3["HD10446<br/>Falska dödsförklaringar<br/>→ Svantesson"]
+    A1 --> I4["HD10445<br/>Bostadsförköpsrätt<br/>→ Carlson"]
+
+    A2 --> B1["82 öre/L sänkning<br/>1 maj–30 sep 2026"]
+    A2 --> B2["El/gasstöd<br/>Jan–feb 2026"]
+
+    A3 --> C1["HD03246 Unga lagöverträdare<br/>Justitiedept."]
+    A3 --> C2["HD03244 Datainterop<br/>Finansdept."]
+    A3 --> C3["HD03232/231 Ukraina<br/>Utrikesdept."]
+
+    style BREAK fill:#c62828,color:#FFFFFF
+    style A1 fill:#b71c1c,color:#FFFFFF
+    style A2 fill:#e65100,color:#FFFFFF
+    style A3 fill:#1565c0,color:#FFFFFF
+    style I1 fill:#e53935,color:#FFFFFF
+    style I2 fill:#e53935,color:#FFFFFF
+    style I3 fill:#e53935,color:#FFFFFF
+    style I4 fill:#e53935,color:#FFFFFF
+    style B1 fill:#f57f17,color:#000000
+    style B2 fill:#f57f17,color:#000000
+    style C1 fill:#1565c0,color:#FFFFFF
+    style C2 fill:#1565c0,color:#FFFFFF
+    style C3 fill:#1565c0,color:#FFFFFF
+```
+
+<!-- source-sha: 34bcedb9f943f85646d8e864b41374efd2461075 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief_zh.md -->
+
+**分类**：公开 | **分析员**：James Pether Sörling | **周期**：Realtime-2338
+**方法论**：ai-driven-analysis-guide.md v6.4 | **海军部基准**：[A2]
+
+---
+
+### 🎯 要点摘要（BLUF）
+
+瑞典议会（Riksdag）以三个同步紧急新闻向量进入选举前的最后立法冲刺阶段：(1) 社会民主党于2026年4月22日发动了一场协调的四方面质询（interpellation）攻势，针对财政部长伊丽莎白·斯万特森（M）及联合执政伙伴，聚焦劳动力市场、住房、社会福利和民政管理方面的弱点，以备2026年9月选举；(2) 包含燃油税削减的特别补充预算于2026年4月21日获议会通过，反对党在气候-经济路线上存在分歧；以及(3) 一系列关于能源、林业、司法和乌克兰外交的实质性提案，标志着克里斯特松政府在解散前最后一次会议上立法议程的加速推进。
+
+S党的问责攻势——三项仅针对财政部长斯万特森的独立质询——是今晚最高优先级的政治情报信号。这种对单一部长的多渠道议会施压模式表明，这是一种协调的选前策略，旨在迫使部长在公开回答中出现失误。
+
+---
+
+### 🧭 本简报支持的3个决策
+
+1. **编辑决策**：S党的问责攻势是否应作为统一的政治故事（对斯万特森的协调攻击）还是单独的质询来报道——统一框架在分析上更为有力。
+2. **监控优先级**：鉴于与《晚邮报》（Aftonbladet）报道的关联，是否应升级对雇主缴费滥用案（HD10444）的追踪——建议高优先级。
+3. **预测视野**：特别预算中的燃油税削减（HD01FiU48已通过）是否会在六月预算辩论前为反对党带来可测量的气候叙事收益——通过未来7天的媒体框架指标进行追踪。
+
+---
+
+### ⚡ 60秒阅读
+
+- **S党对斯万特森的三重打击** [B2]：HD10444（雇主缴费滥用）、HD10442（进食障碍法院案件）、HD10446（虚假死亡申报）——三个向量同时发动
+- **HD10445 住房**：S党针对政府在斯德哥尔摩郊区（Sätra、Vårberg、Rågsved）关键房产优先购买权上的失败——种族隔离政策向量 [B2]
+- **HD10443 社会倾销**：市政社会援助倾销——S党针对文职部长斯洛特纳尔（KD）就市政间转移的移民/弱势群体问题 [B2]
+- **HD01FiU48 已通过**：特别修正预算——自2026年5月1日起每升削减82奥雷燃油税；家庭电/气补贴；财政影响41亿瑞典克朗 [A1]
+- **新提案（4月14–16日）**：青少年罪犯（HD03246）、数据互操作性（HD03244）、积极林业（HD03242）、乌克兰损害赔偿法庭（HD03232/HD03231）
+- **2026年选举视角**：每项质询均针对具名部长——这是选举活动的辩论预热
+
+---
+
+### 📅 最优先前向触发点
+**关注2026年4月28日至5月5日**：四项质询的部长回应将在议会全体会议上进行辩论。斯万特森对HD10442（进食障碍法院案件）和HD10444（雇主缴费）的回答具有最高的媒体波动风险。单一一个事实上有争议的回答可能成为六月预算辩论前该周的主导政治故事。
+
+---
+
+### 🔍 置信度标签
+**总体评估置信度**：高 [B2]——基于MCP直接检索议会文件，并与当天姊妹分析文件夹（提案、动议、委员会报告、质询）进行交叉核实。
+
+---
+
+### 📊 情报全景图
+
+```mermaid
+flowchart TD
+    BREAK["⚡ BREAKING 2026-04-22<br/>Realtime-2338 Monitor"] --> A1["S党问责攻势<br/>4项质询已提交<br/>最高优先级"]
+    BREAK --> A2["FiU48已通过<br/>燃油税削减生效<br/>高影响"]
+    BREAK --> A3["立法群组<br/>5项新提案<br/>中等偏高"]
+
+    A1 --> I1["HD10444<br/>Arbetsgivaravgift滥用<br/>→ Svantesson"]
+    A1 --> I2["HD10443<br/>社会倾销<br/>→ Slottner"]
+    A1 --> I3["HD10446<br/>虚假死亡申报<br/>→ Svantesson"]
+    A1 --> I4["HD10445<br/>住房优先购买权<br/>→ Carlson"]
+
+    A2 --> B1["削减82奥雷/升<br/>2026年5月1日–9月30日"]
+    A2 --> B2["电/气补贴<br/>2026年1–2月"]
+
+    A3 --> C1["HD03246 青少年罪犯<br/>Justitiedept."]
+    A3 --> C2["HD03244 数据互操作性<br/>Finansdept."]
+    A3 --> C3["HD03232/231 乌克兰<br/>Utrikesdept."]
+
+    style BREAK fill:#c62828,color:#FFFFFF
+    style A1 fill:#b71c1c,color:#FFFFFF
+    style A2 fill:#e65100,color:#FFFFFF
+    style A3 fill:#1565c0,color:#FFFFFF
+    style I1 fill:#e53935,color:#FFFFFF
+    style I2 fill:#e53935,color:#FFFFFF
+    style I3 fill:#e53935,color:#FFFFFF
+    style I4 fill:#e53935,color:#FFFFFF
+    style B1 fill:#f57f17,color:#000000
+    style B2 fill:#f57f17,color:#000000
+    style C1 fill:#1565c0,color:#FFFFFF
+    style C2 fill:#1565c0,color:#FFFFFF
+    style C3 fill:#1565c0,color:#FFFFFF
+```
+
+<!-- source-sha: 34bcedb9f943f85646d8e864b41374efd2461075 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -2203,3 +3285,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-22/realtime-2338/executive-brief_zh.md)

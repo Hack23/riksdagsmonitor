@@ -6,7 +6,7 @@ date: 2026-04-23
 subfolder: motions
 slug: 2026-04-23-motions
 source_folder: analysis/daily/2026-04-23/motions
-generated_at: 2026-05-17T18:40:43.249Z
+generated_at: 2026-05-17T22:29:22.162Z
 language: en
 layout: article
 ---
@@ -93,6 +93,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1822,13 +1835,882 @@ graph LR
 - Total motions in 2025/26 riksmöte: 4,098 (as of 2026-04-23)
 - Retrieval timestamp: 2026-04-23T07:18:00Z
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+<!-- lang: ar -->
+# ملخص تنفيذي — اقتراحات المعارضة 2026-04-23
+
+**التصنيف**: المجال العام — السجلات البرلمانية  
+**المؤلف**: James Pether Sörling  
+**التاريخ**: 2026-04-23  
+**الثقة**: عالية [B2]
+
+---
+
+### 🎯 الخلاصة التنفيذية
+
+قدّمت المعارضة البرلمانية السويدية 14 اقتراحاً في أسبوع 13–17 أبريل 2026 تطعن في الميزانية التكميلية الإضافية للحكومة (prop. 2025/26:236)، وإصلاح قانون الترحيل (prop. 2025/26:235)، والإطار الجديد لتصدير الأسلحة (prop. 2025/26:228)، وقانون استقبال طالبي اللجوء الجديد (prop. 2025/26:229). أعمق خلاف يتعلق بخفض الضريبة المؤقت على الوقود إلى الحدود الدنيا للاتحاد الأوروبي: S وV وMP جميعها معارضة لكن لأسباب متباينة، مما يشير إلى أن المعارضة الوسطى-اليسارية لا تستطيع الاتحاد خلف مقترح مضاد واحد قبل انتخابات خريف 2026.
+
+---
+
+### 🧭 القرارات التي تدعمها هذه الوثيقة
+
+1. **الإطار الإعلامي والتحريري**: تحديد ما إذا كان الجدل حول الطاقة/الميزانية ينبغي أن يُقدَّم كقضية "مصداقية مالية" أم "سياسة مناخية" — الأدلة أدناه تدعم كلا الإطارين في آنٍ واحد.
+2. **الاستخبارات الانتخابية**: تقييم ما إذا كانت تشرذم المعارضة حول القضايا المالية والهجرة يقلل من احتمالية تغيير حكومة وسطى-يسارية في خريف 2026.
+3. **متابعة السياسات**: تتبع أي لجنة (FiU للميزانية، SfU للهجرة) ستعالج الاقتراحات أولاً ومتى مقررة التصويتات.
+
+---
+
+### ⚡ قراءة 60 ثانية
+
+- **صراع الميزانية**: تريد S دعماً كهربائياً أكثر استهدافاً واستخداماً مرناً لعائدات ازدحام الشبكة (HD024082 بقلم Mikael Damberg). تطالب V برفض كامل لتخفيض ضريبة الوقود — تستشهد بتحليل RUT الذي يُظهر أن الإصلاحات الحكومية تفيد النصف الأعلى من توزيع الدخل بـ5 أضعاف مقارنةً بالنصف الأدنى (HD024092، Nooshi Dadgostar). تعارض MP أيضاً تخفيض الوقود؛ وتستشهد بـKonjunkturinstitutet وNaturvårdsverket و2030-sekretariatet وTrafikverket كمعارضين للاقتراح (HD024098، Janine Alm Ericson).
+- **قانون الترحيل (prop. 2025/26:235)**: تطالب V بالرفض الكامل لقواعد ترحيل أكثر صرامة (HD024090، Tony Haddou)؛ تقبل C بشروط تتطلب مخالفات متكررة منهجية (HD024095، Niels Paarup-Petersen)؛ MP رفض جزئي (HD024097، Annika Hirvonen).
+- **صادرات الأسلحة (prop. 2025/26:228)**: تطالب MP بحظر صادرات الأسلحة إلى الديكتاتوريات والدول المتحاربة، وتعارض أحكام السرية الجديدة (HD024096، Jacob Risberg). تعارض V الاقتراح بأكمله.
+- **استقبال طالبي اللجوء (prop. 2025/26:229)**: تقبل C الإطار العام لكنها تعارض قيود المناطق وتريد أن تحتفظ البلديات بصلاحيات المساعدة في حالات الطوارئ (HD024089)؛ تعارض S خصخصة مساكن اللجوء (HD024080)؛ ترفض MP بالكامل (HD024087).
+- **تشرذم المعارضة**: تعارض S وV وMP الميزانية التكميلية لكنها لا تستطيع الاتحاد خلف بديل مشترك. في موضوع الهجرة، الكتلة الوسطى-اليسارية أكثر تشرذماً، مع دعم C الجزئي للحكومة.
+
+---
+
+### 🔭 أهم محفز استشرافي
+
+**تصويت لجنة FiU على Extra ändringsbudget (prop. 2025/26:236)** — متوقع خلال 3–4 أسابيع. إذا صوّت SD مع الحكومة كما هو متوقع، سيمر خفض ضريبة الوقود. مراقبة أي مطالب تعديل من SD كمؤشر محوري على استقرار الائتلاف.
+
+---
+
+### 📊 تصنيف الأهمية (مرجّح بـDIW)
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Opposition Motion Significance vs Electoral Impact
+    x-axis Low Electoral Impact --> High Electoral Impact
+    y-axis Low Policy Significance --> High Policy Significance
+    quadrant-1 High Impact + High Significance
+    quadrant-2 Low Impact + High Significance
+    quadrant-3 Low Impact + Low Significance
+    quadrant-4 High Impact + Low Significance
+    HD024082 S-Budget: [0.85, 0.88]
+    HD024092 V-Budget: [0.65, 0.82]
+    HD024096 MP-Arms: [0.60, 0.75]
+    HD024090 V-Deport: [0.55, 0.80]
+    HD024089 C-Reception: [0.72, 0.70]
+    HD024098 MP-Budget: [0.70, 0.78]
+```
+
+*الثقة: عالية بشكل عام [B2]؛ درجات الوثيقة الفردية تعكس بيانات البيان + النص الكامل حيث متاح.*
+
+<!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief_da.md -->
+
+<!-- lang: da -->
+# Eksekutiv sammenfatning — Oppositionsforslag 2026-04-23
+
+**Klassifikation**: OFFENTLIGT DOMÆNE — Parlamentariske optegnelser  
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-04-23  
+**Tillid**: HØJ [B2]
+
+---
+
+### 🎯 BLUF
+
+Den svenske parlamentariske opposition indgav 14 forslag i ugen 13.–17. april 2026, der udfordrer regeringens ekstrasupplementærbudget (prop. 2025/26:236), reform af udvisningsloven (prop. 2025/26:235), den nye ramme for våbeneksport (prop. 2025/26:228) og den nye asylmodtagningslov (prop. 2025/26:229). Den skarpeste kløft drejer sig om regeringens midlertidige brændstofafgiftsnedsættelse til EU-minimumsniveauer: S, V og MP er alle imod, men af divergerende årsager, hvilket signalerer, at centrum-venstre-oppositionen ikke kan samle sig bag et fælles modforslag forud for efterårsvalget 2026.
+
+---
+
+### 🧭 Beslutninger dette notat understøtter
+
+1. **Medie- og redaktionel indramning**: Afgør, om energi-/budgetstriden skal lede som en "finansiel troværdighed"- eller "klimapolitik"-nyhed — evidensen nedenfor understøtter begge indramninger simultant.
+2. **Valgintelligens**: Vurder, om oppositionens fragmentering om finansielle og migrationsspørgsmål reducerer sandsynligheden for et centrum-venstreorienteret regeringsskifte i efteråret 2026.
+3. **Politikovervågning**: Spor hvilken komité (FiU for budget, SfU for migration) der behandler forslagene først, og hvornår afstemninger er planlagt.
+
+---
+
+### ⚡ 60-sekunders læsning
+
+- **Budgetkollision**: S ønsker bedre målrettet elstøtte og fleksibel brug af nettilstopningsindtægter (HD024082 af Mikael Damberg). V kræver, at hele brændstofafgiftsnedsættelsen forkastes — citerer RUT-analyse, der viser, at regeringens reformer gavner den øverste halvdel af indkomstfordelingen 5× mere end den nederste halvdel (HD024092, Nooshi Dadgostar). MP er ligeledes imod brændstofnedsættelsen; citerer Konjunkturinstitutet, Naturvårdsverket, 2030-sekretariatet og Trafikverket som modstandere af forslaget (HD024098, Janine Alm Ericson).
+- **Udvisningslov (prop. 2025/26:235)**: V kræver fuld afvisning af strengere udvisningsregler (HD024090, Tony Haddou); C accepterer med betingelser, der kræver systematiske gentagelsesovertredelser (HD024095, Niels Paarup-Petersen); MP delvis afvisning (HD024097, Annika Hirvonen).
+- **Våbeneksport (prop. 2025/26:228)**: MP kræver forbud mod våbeneksport til diktaturer og krigsførende nationer og modstår nye tavshedsbestemmelser (HD024096, Jacob Risberg). V modsætter sig hele propositionen.
+- **Asylmodtagning (prop. 2025/26:229)**: C accepterer den brede ramme, men modsætter sig områderestriktioner og ønsker, at kommunerne bevarer nødhjælpsbeføjelser (HD024089); S modstår privatisering af asylboliger (HD024080); MP afviser fuldstændigt (HD024087).
+- **Oppositionsfragmentering**: S, V og MP modsætter sig budgetsupplementet, men kan ikke forene sig om et fælles alternativ. Om migration er centrum-venstre-blokken endnu mere fragmenteret, idet C delvist støtter regeringen.
+
+---
+
+### 🔭 Top fremadrettet trigger
+
+**FiU-komitéafstemning om Extra ändringsbudget (prop. 2025/26:236)** — forventet inden for 3–4 uger. Hvis SD stemmer med regeringen som forventet, vil brændstofafgiftsnedsættelsen passere. Hold øje med eventuelle SD-ændringsforslag som en afgørende indikator for koalitionsstabilitet.
+
+---
+
+### 📊 Signifikansrangering (DIW-vægtet)
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Opposition Motion Significance vs Electoral Impact
+    x-axis Low Electoral Impact --> High Electoral Impact
+    y-axis Low Policy Significance --> High Policy Significance
+    quadrant-1 High Impact + High Significance
+    quadrant-2 Low Impact + High Significance
+    quadrant-3 Low Impact + Low Significance
+    quadrant-4 High Impact + Low Significance
+    HD024082 S-Budget: [0.85, 0.88]
+    HD024092 V-Budget: [0.65, 0.82]
+    HD024096 MP-Arms: [0.60, 0.75]
+    HD024090 V-Deport: [0.55, 0.80]
+    HD024089 C-Reception: [0.72, 0.70]
+    HD024098 MP-Budget: [0.70, 0.78]
+```
+
+*Tillid: HØJ overordnet [B2]; individuelle dokumentscorer afspejler manifestdata + fuld tekst, hvor tilgængelig.*
+
+<!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief_de.md -->
+
+<!-- lang: de -->
+# Exekutivbriefing — Oppositionsanträge 2026-04-23
+
+**Klassifizierung**: ÖFFENTLICHER BEREICH — Parlamentarische Aufzeichnungen  
+**Autor**: James Pether Sörling  
+**Datum**: 2026-04-23  
+**Konfidenz**: HOCH [B2]
+
+---
+
+### 🎯 BLUF
+
+Die schwedische parlamentarische Opposition reichte in der Woche vom 13.–17. April 2026 14 Anträge ein, die den zusätzlichen Ergänzungshaushalt der Regierung (prop. 2025/26:236), die Reform des Abschiebungsgesetzes (prop. 2025/26:235), den neuen Rüstungsexportrahmen (prop. 2025/26:228) und das neue Asylaufnahmegesetz (prop. 2025/26:229) anfechten. Die schärfste Kluft besteht bei der vorübergehenden Kraftstoffsteuersenkung auf EU-Mindestniveaus: S, V und MP sind alle dagegen, aber aus unterschiedlichen Gründen, was signalisiert, dass die Mitte-Links-Opposition sich nicht hinter einem gemeinsamen Gegenvorschlag vereinen kann, bevor die Herbstwahl 2026 stattfindet.
+
+---
+
+### 🧭 Entscheidungen, die dieses Briefing unterstützt
+
+1. **Medien- und redaktionelle Rahmung**: Entscheiden, ob der Energie-/Budgetstreit als eine „fiskalische Glaubwürdigkeit"- oder „Klimapolitik"-Geschichte im Vordergrund stehen soll — die nachfolgenden Beweise stützen beide Rahmungen gleichzeitig.
+2. **Wahlintelligenz**: Beurteilen, ob die Fragmentierung der Opposition bei fiskalischen und migrationspolitischen Fragen die Wahrscheinlichkeit eines linken Regierungswechsels im Herbst 2026 verringert.
+3. **Politikoverwachung**: Verfolgen, welches Ausschuss (FiU für Haushalt, SfU für Migration) die Anträge zuerst bearbeitet und wann Abstimmungen geplant sind.
+
+---
+
+### ⚡ 60-Sekunden-Lektüre
+
+- **Haushaltskonflikt**: S will besser zielgerichtete Stromunterstützung und flexible Nutzung von Netzengpasseinnahmen (HD024082 von Mikael Damberg). V fordert, den gesamten Kraftstoffsteuerabzug abzulehnen — zitiert RUT-Analyse, die zeigt, dass Regierungsreformen die obere Hälfte der Einkommensverteilung 5× mehr begünstigen als die untere Hälfte (HD024092, Nooshi Dadgostar). MP lehnt den Kraftstoffabzug ebenfalls ab; zitiert Konjunkturinstitutet, Naturvårdsverket, 2030-sekretariatet und Trafikverket als Gegner des Vorschlags (HD024098, Janine Alm Ericson).
+- **Abschiebungsgesetz (prop. 2025/26:235)**: V fordert vollständige Ablehnung strengerer Abschiebungsregeln (HD024090, Tony Haddou); C akzeptiert unter Bedingungen, die systematische Wiederholungsverstösse erfordern (HD024095, Niels Paarup-Petersen); MP teilweise Ablehnung (HD024097, Annika Hirvonen).
+- **Rüstungsexporte (prop. 2025/26:228)**: MP fordert ein Verbot von Rüstungsexporten in Diktaturen und kriegführende Nationen und lehnt neue Geheimhaltungsvorschriften ab (HD024096, Jacob Risberg). V widersetzt sich dem gesamten Vorschlag.
+- **Asylaufnahme (prop. 2025/26:229)**: C akzeptiert den breiten Rahmen, lehnt aber Gebietseinschränkungen ab und möchte, dass Kommunen Notfallhilfebefugnisse behalten (HD024089); S lehnt die Privatisierung von Asylunterkünften ab (HD024080); MP lehnt vollständig ab (HD024087).
+- **Oppositionsfragmentierung**: S, V und MP lehnen das Haushaltssupplement ab, können sich aber nicht auf eine gemeinsame Alternative einigen. In Migrationsfragen ist der Mitte-Links-Block noch fragmentierter, wobei C die Regierung teilweise unterstützt.
+
+---
+
+### 🔭 Wichtigster Vorwärts-Auslöser
+
+**FiU-Ausschussabstimmung über Extra ändringsbudget (prop. 2025/26:236)** — erwartet innerhalb von 3–4 Wochen. Wenn SD wie erwartet mit der Regierung stimmt, wird die Kraftstoffsteuersenkung beschlossen. Auf eventuelle SD-Änderungsanforderungen als entscheidenden Indikator für die Koalitionsstabilität achten.
+
+---
+
+### 📊 Signifikanzranking (DIW-gewichtet)
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Opposition Motion Significance vs Electoral Impact
+    x-axis Low Electoral Impact --> High Electoral Impact
+    y-axis Low Policy Significance --> High Policy Significance
+    quadrant-1 High Impact + High Significance
+    quadrant-2 Low Impact + High Significance
+    quadrant-3 Low Impact + Low Significance
+    quadrant-4 High Impact + Low Significance
+    HD024082 S-Budget: [0.85, 0.88]
+    HD024092 V-Budget: [0.65, 0.82]
+    HD024096 MP-Arms: [0.60, 0.75]
+    HD024090 V-Deport: [0.55, 0.80]
+    HD024089 C-Reception: [0.72, 0.70]
+    HD024098 MP-Budget: [0.70, 0.78]
+```
+
+*Konfidenz: HOCH gesamt [B2]; individuelle Dokumentpunktzahlen spiegeln Manifestdaten + Volltext wider, wo verfügbar.*
+
+<!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief_es.md -->
+
+<!-- lang: es -->
+# Resumen ejecutivo — Mociones de la oposición 2026-04-23
+
+**Clasificación**: DOMINIO PÚBLICO — Registros parlamentarios  
+**Autor**: James Pether Sörling  
+**Fecha**: 2026-04-23  
+**Confianza**: ALTA [B2]
+
+---
+
+### 🎯 BLUF
+
+La oposición parlamentaria sueca presentó 14 mociones en la semana del 13 al 17 de abril de 2026 impugnando el presupuesto suplementario extraordinario del gobierno (prop. 2025/26:236), la reforma de la ley de deportación (prop. 2025/26:235), el nuevo marco de exportación de armas (prop. 2025/26:228) y la nueva ley de acogida de solicitantes de asilo (prop. 2025/26:229). La división más acentuada se refiere a la reducción temporal del impuesto sobre el combustible a los niveles mínimos de la UE: S, V y MP la oponen todos pero por razones divergentes, lo que señala que la oposición centro-izquierda no puede coaligarse detrás de una sola contrapropuesta antes de las elecciones de otoño de 2026.
+
+---
+
+### 🧭 Decisiones que apoya esta nota
+
+1. **Encuadre mediático y editorial**: Determinar si la disputa energía/presupuesto debe liderar como una historia de «credibilidad fiscal» o de «política climática» — las evidencias a continuación apoyan ambos encuadres simultáneamente.
+2. **Inteligencia electoral**: Evaluar si la fragmentación de la oposición en cuestiones fiscales y de migración reduce la probabilidad de un cambio de gobierno de centro-izquierda en otoño de 2026.
+3. **Seguimiento de políticas**: Rastrear qué comisión (FiU para el presupuesto, SfU para la migración) procesará las mociones primero y cuándo están programadas las votaciones.
+
+---
+
+### ⚡ Lectura de 60 segundos
+
+- **Choque presupuestario**: S quiere apoyo eléctrico mejor focalizado y uso flexible de los ingresos por congestión de red (HD024082 de Mikael Damberg). V exige que todo el recorte del impuesto al combustible sea rechazado — cita el análisis RUT que muestra que las reformas del gobierno benefician a la mitad superior de la distribución de ingresos 5 veces más que a la mitad inferior (HD024092, Nooshi Dadgostar). MP también se opone al recorte del combustible; cita a Konjunkturinstitutet, Naturvårdsverket, 2030-sekretariatet y Trafikverket como opositores de la propuesta (HD024098, Janine Alm Ericson).
+- **Ley de deportación (prop. 2025/26:235)**: V exige el rechazo total de reglas de deportación más estrictas (HD024090, Tony Haddou); C acepta con condiciones que requieren infracciones repetidas sistemáticas (HD024095, Niels Paarup-Petersen); MP rechazo parcial (HD024097, Annika Hirvonen).
+- **Exportaciones de armas (prop. 2025/26:228)**: MP exige una prohibición de las exportaciones de armas a dictaduras y naciones en guerra, y se opone a nuevas disposiciones de secreto (HD024096, Jacob Risberg). V se opone a toda la proposición.
+- **Acogida de solicitantes de asilo (prop. 2025/26:229)**: C acepta el marco amplio pero se opone a las restricciones de zona y quiere que los municipios conserven los poderes de asistencia de emergencia (HD024089); S se opone a la privatización de la vivienda de asilo (HD024080); MP rechaza completamente (HD024087).
+- **Fragmentación de la oposición**: S, V y MP se oponen al suplemento presupuestario pero no pueden unirse en una alternativa común. En migración, el bloque de centro-izquierda está aún más fragmentado, con C apoyando parcialmente al gobierno.
+
+---
+
+### 🔭 Principal desencadenante prospectivo
+
+**Votación de la comisión FiU sobre Extra ändringsbudget (prop. 2025/26:236)** — esperada dentro de 3–4 semanas. Si SD vota con el gobierno como se espera, el recorte del impuesto al combustible pasará. Vigilar cualquier demanda de enmienda de SD como un indicador decisivo de estabilidad de la coalición.
+
+---
+
+### 📊 Clasificación de significancia (ponderada por DIW)
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Opposition Motion Significance vs Electoral Impact
+    x-axis Low Electoral Impact --> High Electoral Impact
+    y-axis Low Policy Significance --> High Policy Significance
+    quadrant-1 High Impact + High Significance
+    quadrant-2 Low Impact + High Significance
+    quadrant-3 Low Impact + Low Significance
+    quadrant-4 High Impact + Low Significance
+    HD024082 S-Budget: [0.85, 0.88]
+    HD024092 V-Budget: [0.65, 0.82]
+    HD024096 MP-Arms: [0.60, 0.75]
+    HD024090 V-Deport: [0.55, 0.80]
+    HD024089 C-Reception: [0.72, 0.70]
+    HD024098 MP-Budget: [0.70, 0.78]
+```
+
+*Confianza: ALTA general [B2]; las puntuaciones individuales de los documentos reflejan datos del manifiesto + texto completo donde esté disponible.*
+
+<!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief_fi.md -->
+
+<!-- lang: fi -->
+# Tiivistelmä — Oppositioaloitteet 2026-04-23
+
+**Luokitus**: JULKINEN ALUE — Parlamentaariset asiakirjat  
+**Tekijä**: James Pether Sörling  
+**Päivämäärä**: 2026-04-23  
+**Luottamus**: KORKEA [B2]
+
+---
+
+### 🎯 BLUF
+
+Ruotsin parlamentaarinen oppositio jätti 14 aloitetta viikolla 13.–17. huhtikuuta 2026 haastamaan hallituksen ylimääräisen lisätalousarvion (prop. 2025/26:236), karkotuslakirefrormin (prop. 2025/26:235), uuden asevientikehyksen (prop. 2025/26:228) ja uuden turvapaikanhakijoiden vastaanottolain (prop. 2025/26:229). Terävimmät erimielisyydet liittyvät hallituksen väliaikaiseen polttoaineveron leikkaukseen EU:n vähimmäistasolle: S, V ja MP vastustavat kaikki, mutta eri syistä, mikä viestii siitä, ettei vasemmiston ja keskustan oppositio pysty yhdistymään yhden vastaehdotuksen taakse ennen syksyn 2026 vaaleja.
+
+---
+
+### 🧭 Päätökset, joita tämä tilannekatsaus tukee
+
+1. **Media- ja toimituksellinen kehystys**: Määritä, pitäisikö energia-/budjettikiistan johtaa "finanssiuskottavuus"- vai "ilmastopolitiikka"-uutisena — alla olevat todisteet tukevat molempia kehystyksiä samanaikaisesti.
+2. **Vaalitiedustelu**: Arvioi, vähentääkö opposition hajanaisuus finanssi- ja maahanmuuttokysymyksissä vasemmisto-keskusta-hallituksenvaihdon todennäköisyyttä syksyllä 2026.
+3. **Politiikkaseuranta**: Seuraa, mikä valiokunta (FiU budjettiin, SfU maahanmuuttoon) käsittelee aloitteet ensin ja milloin äänestykset on suunniteltu.
+
+---
+
+### ⚡ 60 sekunnin lukeminen
+
+- **Budjettitörmäys**: S haluaa paremmin kohdennettua sähkötukea ja joustava käyttö verkon ruuhkautuloista (HD024082, Mikael Damberg). V vaatii koko polttoaineveroleikkauksen hylkäämistä — viittaa RUT-analyysiin, joka osoittaa hallituksen uudistusten hyödyttävän tulojakauman ylintä puoliskoa 5× enemmän kuin alinta (HD024092, Nooshi Dadgostar). MP vastustaa myös polttoaineleikkausta; viittaa Konjunkturinstitutet, Naturvårdsverket, 2030-sekretariatet ja Trafikverket vastustamaan ehdotusta (HD024098, Janine Alm Ericson).
+- **Karkotuslaki (prop. 2025/26:235)**: V vaatii tiukempien karkotussääntöjen täydellistä hylkäämistä (HD024090, Tony Haddou); C hyväksyy ehdoin, jotka edellyttävät systemaattisia toistuvia rikkomuksia (HD024095, Niels Paarup-Petersen); MP osittainen hylkääminen (HD024097, Annika Hirvonen).
+- **Asevienti (prop. 2025/26:228)**: MP vaatii aseviennin kieltämistä diktatuureihin ja sotaa käyviin kansoihin, ja vastustaa uusia salassapitosäännöksiä (HD024096, Jacob Risberg). V vastustaa koko esitystä.
+- **Turvapaikanhakijoiden vastaanotto (prop. 2025/26:229)**: C hyväksyy laajan kehyksen, mutta vastustaa aluerajoituksia ja haluaa kuntien säilyttävän hätäaputoimivaltuudet (HD024089); S vastustaa turvapaikkaasuntojen yksityistämistä (HD024080); MP hylkää kokonaan (HD024087).
+- **Opposition hajanaisuus**: S, V ja MP vastustavat talousarviolisäystä, mutta eivät voi yhdistyä yhteisen vaihtoehdon taakse. Maahanmuuton osalta vasemmiston ja keskustan ryhmittymä on vielä hajanaisempi, kun C osittain tukee hallitusta.
+
+---
+
+### 🔭 Tärkein eteenpäin katsova laukaisin
+
+**FiU-valiokunnan äänestys Extra ändringsbudget -esityksestä (prop. 2025/26:236)** — odotetaan 3–4 viikon sisällä. Jos SD äänestää hallituksen kanssa odotetusti, polttoaineveroleikkaus hyväksytään. Seuraa SD:n mahdollisia muutosehdotuksia koalition vakauden ratkaisevana indikaattorina.
+
+---
+
+### 📊 Merkittävyysluokitus (DIW-painotettu)
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Opposition Motion Significance vs Electoral Impact
+    x-axis Low Electoral Impact --> High Electoral Impact
+    y-axis Low Policy Significance --> High Policy Significance
+    quadrant-1 High Impact + High Significance
+    quadrant-2 Low Impact + High Significance
+    quadrant-3 Low Impact + Low Significance
+    quadrant-4 High Impact + Low Significance
+    HD024082 S-Budget: [0.85, 0.88]
+    HD024092 V-Budget: [0.65, 0.82]
+    HD024096 MP-Arms: [0.60, 0.75]
+    HD024090 V-Deport: [0.55, 0.80]
+    HD024089 C-Reception: [0.72, 0.70]
+    HD024098 MP-Budget: [0.70, 0.78]
+```
+
+*Luottamus: KORKEA kokonaisuutena [B2]; yksittäiset asiakirjapisteet heijastavat manifesti-dataa + koko tekstiä saatavilla ollessa.*
+
+<!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief_fr.md -->
+
+<!-- lang: fr -->
+# Note de synthèse — Motions de l'opposition 2026-04-23
+
+**Auteur** : James Pether Sörling  
+
+**Confiance** : ÉLEVÉE [B2]
+
+---
+
+### 🎯 BLUF
+
+L'opposition parlementaire suédoise a déposé 14 motions dans la semaine du 13 au 17 avril 2026 contestant le budget supplémentaire extraordinaire du gouvernement (prop. 2025/26:236), la réforme de la loi sur l'expulsion (prop. 2025/26:235), le nouveau cadre d'exportation d'armements (prop. 2025/26:228) et la nouvelle loi sur l'accueil des demandeurs d'asile (prop. 2025/26:229). Le clivage le plus vif porte sur la réduction temporaire de la taxe sur les carburants aux niveaux minimaux de l'UE : S, V et MP y sont tous opposés mais pour des raisons divergentes, signalant que l'opposition centre-gauche ne peut se coaliser derrière une contre-proposition unique avant les élections d'automne 2026.
+
+---
+
+### 🧭 Décisions soutenues par cette note
+
+1. **Cadrage médiatique et éditorial** : Déterminer si le conflit énergie/budget doit être présenté comme une histoire de « crédibilité fiscale » ou de « politique climatique » — les preuves ci-dessous soutiennent les deux cadrages simultanément.
+2. **Renseignement électoral** : Évaluer si la fragmentation de l'opposition sur les questions fiscales et migratoires réduit la probabilité d'un changement de gouvernement centre-gauche à l'automne 2026.
+3. **Suivi des politiques** : Suivre quelle commission (FiU pour le budget, SfU pour la migration) traitera les motions en premier et quand les votes sont prévus.
+
+---
+
+### ⚡ Lecture en 60 secondes
+
+- **Conflit budgétaire** : S veut un soutien à l'électricité mieux ciblé et une utilisation flexible des revenus de congestion du réseau (HD024082 de Mikael Damberg). V exige le rejet de l'intégralité de la réduction de la taxe sur les carburants — cite une analyse RUT montrant que les réformes gouvernementales profitent à la moitié supérieure de la distribution des revenus 5 fois plus qu'à la moitié inférieure (HD024092, Nooshi Dadgostar). MP s'oppose également à la réduction du carburant ; cite Konjunkturinstitutet, Naturvårdsverket, 2030-sekretariatet et Trafikverket comme opposants à la proposition (HD024098, Janine Alm Ericson).
+- **Loi sur l'expulsion (prop. 2025/26:235)** : V demande le rejet total de règles d'expulsion plus strictes (HD024090, Tony Haddou) ; C accepte sous conditions exigeant des infractions répétées systématiques (HD024095, Niels Paarup-Petersen) ; MP rejet partiel (HD024097, Annika Hirvonen).
+- **Exportations d'armements (prop. 2025/26:228)** : MP exige une interdiction des exportations d'armements vers des dictatures et des nations en guerre, et s'oppose aux nouvelles dispositions sur le secret (HD024096, Jacob Risberg). V s'oppose à l'ensemble de la proposition.
+- **Accueil des demandeurs d'asile (prop. 2025/26:229)** : C accepte le cadre général mais s'oppose aux restrictions de zone et souhaite que les municipalités conservent les pouvoirs d'aide d'urgence (HD024089) ; S s'oppose à la privatisation des logements d'asile (HD024080) ; MP rejette entièrement (HD024087).
+- **Fragmentation de l'opposition** : S, V et MP s'opposent au supplément budgétaire mais ne peuvent s'unir sur une alternative commune. Sur la migration, le bloc centre-gauche est encore plus fragmenté, C soutenant partiellement le gouvernement.
+
+---
+
+### 🔭 Principal déclencheur prospectif
+
+**Vote de la commission FiU sur Extra ändringsbudget (prop. 2025/26:236)** — attendu dans 3–4 semaines. Si SD vote avec le gouvernement comme prévu, la réduction de la taxe sur les carburants sera adoptée. Surveiller les éventuelles demandes d'amendement de SD comme indicateur décisif de la stabilité de la coalition.
+
+---
+
+### 📊 Classement par signification (pondération DIW)
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Opposition Motion Significance vs Electoral Impact
+    x-axis Low Electoral Impact --> High Electoral Impact
+    y-axis Low Policy Significance --> High Policy Significance
+    quadrant-1 High Impact + High Significance
+    quadrant-2 Low Impact + High Significance
+    quadrant-3 Low Impact + Low Significance
+    quadrant-4 High Impact + Low Significance
+    HD024082 S-Budget: [0.85, 0.88]
+    HD024092 V-Budget: [0.65, 0.82]
+    HD024096 MP-Arms: [0.60, 0.75]
+    HD024090 V-Deport: [0.55, 0.80]
+    HD024089 C-Reception: [0.72, 0.70]
+    HD024098 MP-Budget: [0.70, 0.78]
+```
+
+*Confiance : ÉLEVÉE globale [B2] ; les scores individuels des documents reflètent les données du manifeste + le texte complet lorsque disponible.*
+
+<!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+<!-- lang: he -->
+# סיכום מנהלים — הצעות האופוזיציה 2026-04-23
+
+**סיווג**: תחום ציבורי — רשומות פרלמנטריות  
+**מחבר**: James Pether Sörling  
+**תאריך**: 2026-04-23  
+**אמינות**: גבוהה [B2]
+
+---
+
+### 🎯 תקציר מנהלים
+
+האופוזיציה הפרלמנטרית השוודית הגישה 14 הצעות בשבוע 13–17 באפריל 2026 שמאתגרות את תקציב הנוסף המיוחד של הממשלה (prop. 2025/26:236), רפורמת חוק הגירוש (prop. 2025/26:235), המסגרת החדשה לייצוא נשק (prop. 2025/26:228) וחוק קליטת מבקשי מקלט החדש (prop. 2025/26:229). הפיצול החד ביותר נוגע לקיצוץ המס הזמני על דלק לרמות המינימום של האיחוד האירופי: S, V ו-MP כולן מתנגדות אך מסיבות שונות, מה שמעיד שהאופוזיציה המרכז-שמאל לא יכולה להתאחד מאחורי הצעת נגד יחידה לפני בחירות סתיו 2026.
+
+---
+
+### 🧭 החלטות שמסמך זה תומך בהן
+
+1. **מסגרת תקשורתית ועיתונאית**: קביעה האם המחלוקת על אנרגיה/תקציב צריכה להוביל כסיפור "אמינות פיסקלית" או "מדיניות אקלים" — הראיות להלן תומכות בשתי המסגרות בו-זמנית.
+2. **מודיעין בחירות**: הערכה האם פיצול האופוזיציה בנושאים פיסקליים ומיגרציה מפחית את הסבירות לשינוי ממשלת מרכז-שמאל בסתיו 2026.
+3. **מעקב מדיניות**: מעקב אחר איזו ועדה (FiU לתקציב, SfU להגירה) תעבד הצעות ראשונה ומתי מתוכננות הצבעות.
+
+---
+
+### ⚡ קריאה של 60 שניות
+
+- **עימות תקציבי**: S רוצה תמיכה חשמלית ממוקדת יותר ושימוש גמיש בהכנסות עומס רשת (HD024082 של Mikael Damberg). V דורשת דחיית כל קיצוץ מס הדלק — מצטטת ניתוח RUT המראה שרפורמות הממשלה מועילות למחצית העליונה של התפלגות ההכנסות פי 5 יותר מהמחצית התחתונה (HD024092, Nooshi Dadgostar). MP גם כן מתנגדת לקיצוץ הדלק; מצטטת את Konjunkturinstitutet, Naturvårdsverket, 2030-sekretariatet ו-Trafikverket כמתנגדים להצעה (HD024098, Janine Alm Ericson).
+- **חוק גירוש (prop. 2025/26:235)**: V דורשת דחייה מלאה של כללי גירוש מחמירים יותר (HD024090, Tony Haddou); C מקבלת בתנאים הדורשים עבירות חוזרות שיטתיות (HD024095, Niels Paarup-Petersen); MP דחייה חלקית (HD024097, Annika Hirvonen).
+- **ייצוא נשק (prop. 2025/26:228)**: MP דורשת איסור על ייצוא נשק לדיקטטורות ומדינות לוחמות, ומתנגדת להוראות סודיות חדשות (HD024096, Jacob Risberg). V מתנגדת להצעה כולה.
+- **קליטת מבקשי מקלט (prop. 2025/26:229)**: C מקבלת את המסגרת הרחבה אך מתנגדת להגבלות אזוריות ורוצה שעיריות תשמורנה על סמכויות סיוע חירום (HD024089); S מתנגדת לפרטיזציה של דיור מקלט (HD024080); MP דוחה לחלוטין (HD024087).
+- **פיצול האופוזיציה**: S, V ו-MP מתנגדות לתוספת התקציב אך לא יכולות להתאחד על חלופה משותפת. בנושא הגירה, הגוש מרכז-שמאל מפוצל עוד יותר, כאשר C תומכת בממשלה באופן חלקי.
+
+---
+
+### 🔭 הטריגר הפרוספקטיבי המרכזי
+
+**הצבעת ועדת FiU על Extra ändringsbudget (prop. 2025/26:236)** — צפויה תוך 3–4 שבועות. אם SD יצביע עם הממשלה כצפוי, קיצוץ מס הדלק יעבור. לצפות בכל דרישות תיקון של SD כאינדיקטור מרכזי לייצוב הקואליציה.
+
+---
+
+### 📊 דירוג משמעות (משוקלל DIW)
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Opposition Motion Significance vs Electoral Impact
+    x-axis Low Electoral Impact --> High Electoral Impact
+    y-axis Low Policy Significance --> High Policy Significance
+    quadrant-1 High Impact + High Significance
+    quadrant-2 Low Impact + High Significance
+    quadrant-3 Low Impact + Low Significance
+    quadrant-4 High Impact + Low Significance
+    HD024082 S-Budget: [0.85, 0.88]
+    HD024092 V-Budget: [0.65, 0.82]
+    HD024096 MP-Arms: [0.60, 0.75]
+    HD024090 V-Deport: [0.55, 0.80]
+    HD024089 C-Reception: [0.72, 0.70]
+    HD024098 MP-Budget: [0.70, 0.78]
+```
+
+*אמינות: גבוהה כוללת [B2]; ציוני מסמכים בודדים משקפים נתוני מניפסט + טקסט מלא כאשר זמין.*
+
+<!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief_ja.md -->
+
+<!-- lang: ja -->
+# エグゼクティブブリーフ — 野党動議 2026-04-23
+
+**分類**: 公開情報 — 議会記録  
+**著者**: James Pether Sörling  
+**日付**: 2026-04-23  
+**信頼度**: 高 [B2]
+
+---
+
+### 🎯 BLUF
+
+スウェーデン議会野党は2026年4月13〜17日の週に14件の動議を提出し、政府の追加補正予算（prop. 2025/26:236）、退去強制法改正（prop. 2025/26:235）、新たな武器輸出枠組み（prop. 2025/26:228）、新たな難民受け入れ法（prop. 2025/26:229）に異議を唱えた。最も鋭い対立は、燃料税をEU最低水準に引き下げる政府の一時的措置をめぐるものだ：S、V、MPはすべて反対しているが、理由が異なるため、中道左派野党が2026年秋の選挙を前に共通の対案でまとまれないことを示唆している。
+
+---
+
+### 🧭 このブリーフが支援する意思決定
+
+1. **メディア・編集の枠組み**: エネルギー/予算論争を「財政信頼性」か「気候政策」の物語として扱うべきかを決定する — 以下の証拠は両方の枠組みを同時に支持する。
+2. **選挙インテリジェンス**: 財政・移民問題における野党の分裂が、2026年秋の中道左派政権交代の確率を下げるかどうかを評価する。
+3. **政策モニタリング**: どの委員会（予算はFiU、移民はSfU）が動議を先に処理し、採決がいつ予定されているかを追跡する。
+
+---
+
+### ⚡ 60秒で読む
+
+- **予算対立**: Sはより的を絞った電力支援と系統混雑収入の柔軟な活用を求める（HD024082、Mikael Damberg）。VはRUT分析を引用しながら燃料税引き下げ全体の否決を要求する — 政府の改革が所得分布の上位半分に下位半分の5倍の恩恵をもたらすと示す（HD024092、Nooshi Dadgostar）。MPも燃料税引き下げに反対し、Konjunkturinstitutet、Naturvårdsverket、2030-sekretariatet、Trafikverketが反対していると引用する（HD024098、Janine Alm Ericson）。
+- **退去強制法（prop. 2025/26:235）**: Vはより厳しい退去強制規則の完全否決を要求（HD024090、Tony Haddou）；Cは系統的繰り返し違反を要件とする条件付きで受け入れ（HD024095、Niels Paarup-Petersen）；MP一部否決（HD024097、Annika Hirvonen）。
+- **武器輸出（prop. 2025/26:228）**: MPは独裁国家や交戦国への武器輸出禁止を要求し、新たな秘密保護条項にも反対（HD024096、Jacob Risberg）。Vは提案全体に反対。
+- **難民受け入れ（prop. 2025/26:229）**: Cは広い枠組みを受け入れるが地域制限に反対し、自治体が緊急援助権限を維持することを希望（HD024089）；Sは難民住宅の民営化に反対（HD024080）；MPは完全拒否（HD024087）。
+- **野党の分裂**: S、V、MPは予算補正に反対しているが、共通の代替案でまとまれない。移民問題では、中道左派ブロックはさらに分裂しており、Cが部分的に政府を支持している。
+
+---
+
+### 🔭 主要な先行指標
+
+**FiU委員会によるExtra ändringsbudget（prop. 2025/26:236）への採決** — 3〜4週間以内に予定。予想通りSDが政府と同様の投票をすれば、燃料税引き下げは可決される。SDの修正要求を連立安定の重要指標として注視すること。
+
+---
+
+### 📊 重要度ランキング（DIW加重）
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Opposition Motion Significance vs Electoral Impact
+    x-axis Low Electoral Impact --> High Electoral Impact
+    y-axis Low Policy Significance --> High Policy Significance
+    quadrant-1 High Impact + High Significance
+    quadrant-2 Low Impact + High Significance
+    quadrant-3 Low Impact + Low Significance
+    quadrant-4 High Impact + Low Significance
+    HD024082 S-Budget: [0.85, 0.88]
+    HD024092 V-Budget: [0.65, 0.82]
+    HD024096 MP-Arms: [0.60, 0.75]
+    HD024090 V-Deport: [0.55, 0.80]
+    HD024089 C-Reception: [0.72, 0.70]
+    HD024098 MP-Budget: [0.70, 0.78]
+```
+
+*信頼度：全体的に高 [B2]；個別の文書スコアは、入手可能な場合、マニフェストデータ＋全文を反映。*
+
+<!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief_ko.md -->
+
+<!-- lang: ko -->
+# 집행 브리핑 — 야당 동의안 2026-04-23
+
+**분류**: 공개 영역 — 의회 기록  
+**저자**: James Pether Sörling  
+**날짜**: 2026-04-23  
+**신뢰도**: 높음 [B2]
+
+---
+
+### 🎯 BLUF
+
+스웨덴 의회 야당은 2026년 4월 13~17일 주에 14건의 동의안을 제출하여 정부의 추가 보충 예산(prop. 2025/26:236), 추방법 개정(prop. 2025/26:235), 새로운 무기 수출 틀(prop. 2025/26:228), 새로운 망명 신청자 수용법(prop. 2025/26:229)에 이의를 제기했다. 가장 날카로운 균열은 연료세를 EU 최저 수준으로 일시 인하하는 정부 조치를 둘러싼 것이다: S, V, MP 모두 반대하지만 이유가 다르며, 이는 중도좌파 야당이 2026년 가을 선거를 앞두고 단일 반대안 뒤에 결집할 수 없음을 시사한다.
+
+---
+
+### 🧭 이 브리핑이 지원하는 결정
+
+1. **미디어 및 편집 프레이밍**: 에너지/예산 분쟁이 "재정 신뢰성"이나 "기후 정책" 이야기로 다루어져야 하는지 결정 — 아래 증거는 두 가지 프레임을 동시에 지지한다.
+2. **선거 정보**: 재정 및 이민 문제에서 야당의 분열이 2026년 가을 중도좌파 정권 교체 가능성을 낮추는지 평가한다.
+3. **정책 모니터링**: 어느 위원회(예산은 FiU, 이민은 SfU)가 동의안을 먼저 처리하고 투표가 언제 예정되어 있는지 추적한다.
+
+---
+
+### ⚡ 60초 읽기
+
+- **예산 충돌**: S는 더 잘 목표화된 전기 지원과 네트워크 혼잡 수익의 유연한 사용을 원한다(HD024082, Mikael Damberg). V는 연료세 인하 전체를 거부하도록 요구 — RUT 분석을 인용하여 정부 개혁이 소득 분포의 상위 절반에게 하위 절반보다 5배 더 혜택을 준다고 주장(HD024092, Nooshi Dadgostar). MP도 연료 인하에 반대하며; Konjunkturinstitutet, Naturvårdsverket, 2030-sekretariatet, Trafikverket을 제안 반대자로 인용(HD024098, Janine Alm Ericson).
+- **추방법(prop. 2025/26:235)**: V는 더 엄격한 추방 규정의 완전 거부를 요구(HD024090, Tony Haddou); C는 체계적 반복 위반을 요구하는 조건부로 수용(HD024095, Niels Paarup-Petersen); MP 부분 거부(HD024097, Annika Hirvonen).
+- **무기 수출(prop. 2025/26:228)**: MP는 독재 국가와 교전국에 대한 무기 수출 금지를 요구하고 새로운 기밀 조항에 반대(HD024096, Jacob Risberg). V는 제안 전체에 반대.
+- **망명 신청자 수용(prop. 2025/26:229)**: C는 광범위한 틀을 수용하지만 지역 제한에 반대하고 지자체가 긴급 복지 권한을 유지하기를 원한다(HD024089); S는 망명 주거의 민영화에 반대(HD024080); MP는 완전 거부(HD024087).
+- **야당 분열**: S, V, MP는 예산 보충에 반대하지만 공동 대안 뒤에 결집할 수 없다. 이민 문제에서 중도좌파 블록은 더욱 분열되어 있으며, C가 정부를 부분적으로 지지하고 있다.
+
+---
+
+### 🔭 주요 선행 트리거
+
+**FiU 위원회의 Extra ändringsbudget(prop. 2025/26:236) 투표** — 3~4주 이내에 예정. SD가 예상대로 정부와 함께 투표하면 연료세 인하가 통과된다. SD의 수정안 요구를 연립 안정성의 핵심 지표로 주시할 것.
+
+---
+
+### 📊 중요도 순위 (DIW 가중치)
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Opposition Motion Significance vs Electoral Impact
+    x-axis Low Electoral Impact --> High Electoral Impact
+    y-axis Low Policy Significance --> High Policy Significance
+    quadrant-1 High Impact + High Significance
+    quadrant-2 Low Impact + High Significance
+    quadrant-3 Low Impact + Low Significance
+    quadrant-4 High Impact + Low Significance
+    HD024082 S-Budget: [0.85, 0.88]
+    HD024092 V-Budget: [0.65, 0.82]
+    HD024096 MP-Arms: [0.60, 0.75]
+    HD024090 V-Deport: [0.55, 0.80]
+    HD024089 C-Reception: [0.72, 0.70]
+    HD024098 MP-Budget: [0.70, 0.78]
+```
+
+*신뢰도: 전반적으로 높음 [B2]; 개별 문서 점수는 매니페스트 데이터 + 전문(가능한 경우)을 반영.*
+
+<!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief_nl.md -->
+
+<!-- lang: nl -->
+# Uitvoerende briefing — Oppositiemoties 2026-04-23
+
+**Classificatie**: OPENBAAR DOMEIN — Parlementaire documenten  
+**Auteur**: James Pether Sörling  
+**Datum**: 2026-04-23  
+**Betrouwbaarheid**: HOOG [B2]
+
+---
+
+### 🎯 BLUF
+
+De Zweedse parlementaire oppositie diende in de week van 13–17 april 2026 14 moties in ter betwisting van de extra aanvullende begroting van de regering (prop. 2025/26:236), de hervorming van de deportatiewet (prop. 2025/26:235), het nieuwe raamwerk voor wapenexport (prop. 2025/26:228) en de nieuwe wet opvang asielzoekers (prop. 2025/26:229). De scherpste kloof betreft de tijdelijke brandstofbelastingverlaging naar EU-minimumniveaus: S, V en MP zijn er allemaal tegen maar om uiteenlopende redenen, wat aangeeft dat de centrum-links oppositie zich niet achter één tegenpropositie kan verenigen voor de herfstverkiezingen 2026.
+
+---
+
+### 🧭 Beslissingen die deze briefing ondersteunt
+
+1. **Media- en redactioneel kader**: Bepalen of de energie-/budgetdispute moet leiden als een verhaal over 'fiscale geloofwaardigheid' of 'klimaatbeleid' — de onderstaande bewijzen ondersteunen beide kaders tegelijk.
+2. **Verkiezingsinformatie**: Beoordelen of de fragmentatie van de oppositie over fiscale en migratieproblemen de kans op een centrum-links regeringswisseling in de herfst van 2026 verkleint.
+3. **Beleidsmonitoring**: Bijhouden welke commissie (FiU voor begroting, SfU voor migratie) de moties als eerste verwerkt en wanneer stemmingen zijn gepland.
+
+---
+
+### ⚡ 60-seconden lezing
+
+- **Begrotingsconflict**: S wil beter gerichte elektriciteitssteun en flexibel gebruik van netcongestieopbrengsten (HD024082 van Mikael Damberg). V eist dat de volledige brandstofbelastingverlaging wordt afgewezen — citeert RUT-analyse die aantoont dat regeringshervormingen de bovenste helft van de inkomensverdeling 5× meer bevoordelen dan de onderste helft (HD024092, Nooshi Dadgostar). MP is eveneens tegen de brandstofverlaging; citeert Konjunkturinstitutet, Naturvårdsverket, 2030-sekretariatet en Trafikverket als tegenstanders van het voorstel (HD024098, Janine Alm Ericson).
+- **Deportatiewet (prop. 2025/26:235)**: V eist volledige afwijzing van strengere deportatieregels (HD024090, Tony Haddou); C accepteert onder voorwaarden die systematische herhaalde overtredingen vereisen (HD024095, Niels Paarup-Petersen); MP gedeeltelijke afwijzing (HD024097, Annika Hirvonen).
+- **Wapenexport (prop. 2025/26:228)**: MP eist een verbod op wapenexport naar dictaturen en oorlogvoerende landen, en verzet zich tegen nieuwe geheimhoudingsbepalingen (HD024096, Jacob Risberg). V verzet zich tegen de volledige propositie.
+- **Asielopvang (prop. 2025/26:229)**: C accepteert het brede kader maar verzet zich tegen gebiedsbeperkingen en wil dat gemeenten noodhulpbevoegdheden behouden (HD024089); S verzet zich tegen privatisering van asielhuisvesting (HD024080); MP wijst volledig af (HD024087).
+- **Oppositiefragmentatie**: S, V en MP verzetten zich tegen het begrotingssupplement maar kunnen zich niet verenigen achter een gemeenschappelijk alternatief. Over migratie is het centrum-links blok nog verder gefragmenteerd, waarbij C de regering gedeeltelijk steunt.
+
+---
+
+### 🔭 Belangrijkste vooruitkijkende trigger
+
+**FiU-commissiestemming over Extra ändringsbudget (prop. 2025/26:236)** — verwacht binnen 3–4 weken. Als SD zoals verwacht met de regering stemt, zal de brandstofbelastingverlaging doorgaan. Let op eventuele SD-wijzigingseisen als cruciale indicator voor coalitiesstabiliteit.
+
+---
+
+### 📊 Significantierangschikking (DIW-gewogen)
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Opposition Motion Significance vs Electoral Impact
+    x-axis Low Electoral Impact --> High Electoral Impact
+    y-axis Low Policy Significance --> High Policy Significance
+    quadrant-1 High Impact + High Significance
+    quadrant-2 Low Impact + High Significance
+    quadrant-3 Low Impact + Low Significance
+    quadrant-4 High Impact + Low Significance
+    HD024082 S-Budget: [0.85, 0.88]
+    HD024092 V-Budget: [0.65, 0.82]
+    HD024096 MP-Arms: [0.60, 0.75]
+    HD024090 V-Deport: [0.55, 0.80]
+    HD024089 C-Reception: [0.72, 0.70]
+    HD024098 MP-Budget: [0.70, 0.78]
+```
+
+*Betrouwbaarheid: HOOG algemeen [B2]; individuele documentscores weerspiegelen manifestgegevens + volledige tekst waar beschikbaar.*
+
+<!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief_no.md -->
+
+<!-- lang: no -->
+# Beslutningsnotat — Opposisjonsforslag 2026-04-23
+
+**Klassifisering**: OFFENTLIG DOMENE — Parlamentariske optegnelser  
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-04-23  
+**Tillit**: HØY [B2]
+
+---
+
+### 🎯 BLUF
+
+Den svenske parlamentariske opposisjonen leverte inn 14 forslag i uken 13.–17. april 2026 som utfordrer regjeringens ekstra tilleggsbudsjett (prop. 2025/26:236), reform av deportasjonsloven (prop. 2025/26:235), det nye rammeverket for våpeneksport (prop. 2025/26:228) og den nye loven om asylmottak (prop. 2025/26:229). Den skarpeste kløften gjelder regjeringens midlertidige drivstoffavgiftsnedskjæring til EUs minimumsnivåer: S, V og MP er alle imot, men av divergerende årsaker, noe som signaliserer at sentrum-venstre-opposisjonen ikke kan samle seg bak et felles motforslag foran høstvalget 2026.
+
+---
+
+### 🧭 Beslutninger dette notatet støtter
+
+1. **Medie- og redaksjonell innramming**: Avgjør om energi-/budgetstriden bør lede som en «finansiell troverdighet»- eller «klimapolitikk»-nyhet — bevisene nedenfor støtter begge innramminger simultant.
+2. **Valgintelligens**: Vurder om opposisjonens fragmentering på finansielle og migrasjonsspørsmål reduserer sannsynligheten for et sentrum-venstrestyrt regjeringsskifte høsten 2026.
+3. **Politikkmonitorering**: Spor hvilken komité (FiU for budsjett, SfU for migrasjon) som behandler forslagene først og når avstemninger er planlagt.
+
+---
+
+### ⚡ 60-sekunders lesning
+
+- **Budsjettsammenstøt**: S ønsker bedre målrettet strømstøtte og fleksibel bruk av nettflaskehals-inntekter (HD024082 av Mikael Damberg). V krever at hele drivstoffavgiftskuttet avvises — siterer RUT-analyse som viser at regjeringens reformer gagner den øverste halvdelen av inntektsfordelingen 5× mer enn den nederste halvdelen (HD024092, Nooshi Dadgostar). MP er likeledes mot drivstoffkuttet; siterer Konjunkturinstitutet, Naturvårdsverket, 2030-sekretariatet og Trafikverket som motstandere av forslaget (HD024098, Janine Alm Ericson).
+- **Deportasjonslov (prop. 2025/26:235)**: V krever full avvisning av strengere deportasjonsregler (HD024090, Tony Haddou); C aksepterer med vilkår som krever systematiske gjentatte lovbrudd (HD024095, Niels Paarup-Petersen); MP delvis avvisning (HD024097, Annika Hirvonen).
+- **Våpeneksport (prop. 2025/26:228)**: MP krever forbud mot våpeneksport til diktaturer og krigførende nasjoner, og motsetter seg nye taushetsbestemmelser (HD024096, Jacob Risberg). V motsetter seg hele proposisjonen.
+- **Asylmottak (prop. 2025/26:229)**: C aksepterer det brede rammeverket, men motsetter seg områdebegrensninger og ønsker at kommunene beholder nødhjelpsmyndigheter (HD024089); S motsetter seg privatisering av asylboliger (HD024080); MP avviser fullstendig (HD024087).
+- **Opposisjonsfragmentering**: S, V og MP motsetter seg budsjett-supplementet, men kan ikke samle seg om et felles alternativ. Om migrasjon er sentrum-venstre-blokken enda mer fragmentert, med C som delvis støtter regjeringen.
+
+---
+
+### 🔭 Topp fremadskuende trigger
+
+**FiU-komitéavstemning om Extra ändringsbudget (prop. 2025/26:236)** — forventet innen 3–4 uker. Hvis SD stemmer med regjeringen som forventet, vil drivstoffavgiftskuttet passere. Se etter eventuelle SD-endringsforslag som en avgjørende indikator på koalisjonsstabilitet.
+
+---
+
+### 📊 Signifikansrangering (DIW-vektet)
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Opposition Motion Significance vs Electoral Impact
+    x-axis Low Electoral Impact --> High Electoral Impact
+    y-axis Low Policy Significance --> High Policy Significance
+    quadrant-1 High Impact + High Significance
+    quadrant-2 Low Impact + High Significance
+    quadrant-3 Low Impact + Low Significance
+    quadrant-4 High Impact + Low Significance
+    HD024082 S-Budget: [0.85, 0.88]
+    HD024092 V-Budget: [0.65, 0.82]
+    HD024096 MP-Arms: [0.60, 0.75]
+    HD024090 V-Deport: [0.55, 0.80]
+    HD024089 C-Reception: [0.72, 0.70]
+    HD024098 MP-Budget: [0.70, 0.78]
+```
+
+*Tillit: HØY overordnet [B2]; individuelle dokumentscorer gjenspeiler manifestdata + full tekst der tilgjengelig.*
+
+<!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief_sv.md -->
+
+**Klassificering**: OFFENTLIGT DOMÄN — Parlamentariska handlingar
+**Författare**: James Pether Sörling
+**Datum**: 2026-04-23
+**Förtroende**: HÖG [B2]
+
+---
+
+### 🎯 BLUF
+
+Sveriges parlamentariska opposition lämnade in 14 motioner veckan 13–17 april 2026 som utmanar regeringens extra tilläggsbudget (prop. 2025/26:236), deportationslagreformen (prop. 2025/26:235), det nya ramverket för vapenexport (prop. 2025/26:228) och den nya asylmottagningslagen (prop. 2025/26:229). Den skarpaste klyftan gäller regeringens tillfälliga bränsleskattsänkning till EU-miniminivåer: S, V och MP motsätter sig alla men av olika skäl, vilket signalerar att centrum-vänsteroppositionens inte kan enas bakom ett gemensamt motförslag inför höstvalet 2026.
+
+---
+
+### 🧭 Beslut som detta underlag stödjer
+
+1. **Medie- och redaktionell inramning**: Avgör om energi/budgetstriden bör leda som en berättelse om "finansiell trovärdighet" eller "klimatpolitik" — underlagen nedan stödjer båda inramningarna simultant.
+2. **Valunderrättelse**: Bedöm huruvida oppositionens fragmentering i fiskala och migrationsfrågor minskar sannolikheten för ett vänsterlutande regeringsskifte hösten 2026.
+3. **Policyövervakning**: Spåra vilket utskott (FiU för budget, SfU för migration) som kommer att behandla motionerna först och när omröstningar planeras.
+
+---
+
+### ⚡ 60-sekunders läsning
+
+- **Budgetkonflikt**: S vill ha bättre riktad elstöd och flexibel användning av nätbegränsningsintäkter (HD024082 av Mikael Damberg). V kräver att hela bränsleskattsänkningen avslås — citerar RUT-analys som visar att regeringens reformer gynnar den övre hälften av inkomstfördelningen 5× mer än den nedre (HD024092, Nooshi Dadgostar). MP motsätter sig likaledes bränslesnedkärftet; citerar Konjunkturinstitutet, Naturvårdsverket, 2030-sekretariatet och Trafikverket som oppositionella till förslaget (HD024098, Janine Alm Ericson).
+- **Deportationslagen (prop. 2025/26:235)**: V kräver fullständigt avslag av de striktare deportationsreglerna (HD024090, Tony Haddou); C accepterar med villkor som kräver systematiska upprepade brott (HD024095, Niels Paarup-Petersen); MP delvist avslag (HD024097, Annika Hirvonen).
+- **Vapenexport (prop. 2025/26:228)**: MP kräver förbud mot vapenexport till diktaturer och krigsförande nationer, och motsätter sig nya sekretessbestämmelser (HD024096, Jacob Risberg). V är emot hela propositionen.
+- **Asylmottagning (prop. 2025/26:229)**: C accepterar brett ramverk men motsätter sig områdesbegränsningar och vill att kommunerna behåller akuta socialbidragsbefogenheter (HD024089); S motsätter sig privatisering av asylboenden (HD024080); MP avslår helt (HD024087).
+- **Oppositionens fragmentering**: S, V och MP motsätter sig det extra ändringsbudgeten men kan inte enas om ett gemensamt alternativ. I migrationsfrågor är centrum-vänsterblocket ännu mer splittrat med C som delvis stödjer regeringen.
+
+---
+
+### 🔭 Bästa framåtsignalen
+
+**FiU-utskottets omröstning om extra ändringsbudget (prop. 2025/26:236)** — förväntas inom 3–4 veckor. Om SD röstar med regeringen som väntat kommer bränsleskattsänkningen att gå igenom. Bevaka eventuella SD-ändringsförslag som en vägledande indikator på koalitionsstabilitet.
+
+---
+
+### 📊 Signifikansrankning (DIW-viktad)
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Oppositionsmotionernas signifikans vs. valimpact
+    x-axis Låg valimpact --> Hög valimpact
+    y-axis Låg policysignifikans --> Hög policysignifikans
+    quadrant-1 Hög impact + Hög signifikans
+    quadrant-2 Låg impact + Hög signifikans
+    quadrant-3 Låg impact + Låg signifikans
+    quadrant-4 Hög impact + Låg signifikans
+    HD024082 S-Budget: [0.85, 0.88]
+    HD024092 V-Budget: [0.65, 0.82]
+    HD024096 MP-Vapen: [0.60, 0.75]
+    HD024090 V-Deport: [0.55, 0.80]
+    HD024089 C-Mottagning: [0.72, 0.70]
+    HD024098 MP-Budget: [0.70, 0.78]
+```
+
+*Förtroende: HÖG totalt [B2]; enskilda dokumentpoäng återspeglar manifestdata + fulltext där tillgängligt.*
+
+<!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief_zh.md -->
+
+<!-- lang: zh -->
+# 执行摘要 — 反对党议案 2026-04-23
+
+**分类**: 公开领域 — 议会记录  
+**作者**: James Pether Sörling  
+**日期**: 2026-04-23  
+**置信度**: 高 [B2]
+
+---
+
+### 🎯 摘要
+
+瑞典议会反对派于2026年4月13日至17日提交了14项议案，质疑政府的额外补充预算（prop. 2025/26:236）、驱逐出境法修订（prop. 2025/26:235）、新武器出口框架（prop. 2025/26:228）和新庇护申请人接待法（prop. 2025/26:229）。最尖锐的分歧在于政府将燃油税暂时降至欧盟最低水平的措施：S、V和MP均反对，但原因各异，表明中左翼反对派无法在2026年秋季大选前围绕单一反驳提案凝聚共识。
+
+---
+
+### 🧭 本文件支持的决策
+
+1. **媒体和编辑框架**：确定能源/预算争议应以"财政公信力"还是"气候政策"故事为主线——下文证据同时支持两种框架。
+2. **选举情报**：评估反对派在财政和移民问题上的分裂是否降低了2026年秋季中左翼政府更迭的概率。
+3. **政策监测**：追踪哪个委员会（预算为FiU，移民为SfU）将首先处理议案以及何时安排投票。
+
+---
+
+### ⚡ 60秒速读
+
+- **预算冲突**：S希望更精准的电力支持和灵活利用电网拥堵收益（HD024082，Mikael Damberg）。V要求完全否决燃油税削减——引用RUT分析显示政府改革使收入分布上半部分受益是下半部分的5倍（HD024092，Nooshi Dadgostar）。MP同样反对燃油税削减；引用Konjunkturinstitutet、Naturvårdsverket、2030-sekretariatet和Trafikverket作为该提案的反对者（HD024098，Janine Alm Ericson）。
+- **驱逐法（prop. 2025/26:235）**：V要求完全否决更严格的驱逐规则（HD024090，Tony Haddou）；C在要求系统性重复违规的条件下接受（HD024095，Niels Paarup-Petersen）；MP部分否决（HD024097，Annika Hirvonen）。
+- **武器出口（prop. 2025/26:228）**：MP要求禁止向独裁政权和交战国出口武器，并反对新的保密条款（HD024096，Jacob Risberg）。V反对整项提案。
+- **庇护申请人接待（prop. 2025/26:229）**：C接受广泛框架，但反对地区限制并希望市政当局保留紧急福利权力（HD024089）；S反对庇护住房私有化（HD024080）；MP完全拒绝（HD024087）。
+- **反对派分裂**：S、V和MP反对预算补充，但无法就共同替代方案达成一致。在移民问题上，中左翼阵营更加分裂，C部分支持政府。
+
+---
+
+### 🔭 主要前瞻性触发点
+
+**FiU委员会对Extra ändringsbudget（prop. 2025/26:236）的投票** — 预计在3至4周内进行。如果SD如预期那样与政府一起投票，燃油税削减将获通过。关注SD提出的任何修正案要求，作为衡量联盟稳定性的关键指标。
+
+---
+
+### 📊 重要性排名（DIW加权）
+
+```mermaid
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#0a0e27", "edgeLabelBackground": "#1a1e3d"}}}%%
+quadrantChart
+    title Opposition Motion Significance vs Electoral Impact
+    x-axis Low Electoral Impact --> High Electoral Impact
+    y-axis Low Policy Significance --> High Policy Significance
+    quadrant-1 High Impact + High Significance
+    quadrant-2 Low Impact + High Significance
+    quadrant-3 Low Impact + Low Significance
+    quadrant-4 High Impact + Low Significance
+    HD024082 S-Budget: [0.85, 0.88]
+    HD024092 V-Budget: [0.65, 0.82]
+    HD024096 MP-Arms: [0.60, 0.75]
+    HD024090 V-Deport: [0.55, 0.80]
+    HD024089 C-Reception: [0.72, 0.70]
+    HD024098 MP-Budget: [0.70, 0.78]
+```
+
+*置信度：总体高 [B2]；各文件分数反映清单数据 + 可用时的全文。*
+
+<!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 14 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -1878,3 +2760,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/motions/executive-brief_zh.md)

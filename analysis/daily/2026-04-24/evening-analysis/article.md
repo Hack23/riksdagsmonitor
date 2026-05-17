@@ -6,7 +6,7 @@ date: 2026-04-24
 subfolder: evening-analysis
 slug: 2026-04-24-evening-analysis
 source_folder: analysis/daily/2026-04-24/evening-analysis
-generated_at: 2026-05-17T18:40:43.262Z
+generated_at: 2026-05-17T22:29:22.194Z
 language: en
 layout: article
 ---
@@ -99,6 +99,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2113,13 +2126,864 @@ All sibling folders last written 2026-04-24 between 06:00Z (propositions) and 18
 
 — End of manifest —
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# تحليل المساء — الموجز التنفيذي 2026-04-24
+
+**المؤلف**: James Pether Sörling · **التصنيف**: بيانات OSINT العامة · **درجة الثقة**: عالية (B2) · **نمط التشغيل**: تجميع المستوى C
+
+### 🎯 BLUF
+
+في 24 أبريل 2026، قدّمت حكومة كريسترسون **حزمة أربعة مشاريع قوانين ما قبل الانتخابات** (حزمة البنوك الأوروبية HD03253، تقييد مزايا المحتجزين الاحتياطيين HD03252، تطبيق تسجيلات المسافة HD03256، مراجعة إدارة الديون HD03104)، في حين استلم Riksdagen **خمسة تقارير لجنة** (CU25 القدرة الاستيعابية للسجون، SfU23 تشعّب سياسة الهجرة، FiU23 مراجعة Riksbank، AU15 منظمة العمل الدولية، CU29 شحن السيارات الكهربائية) وعالج **16 استجواباً من المعارضة** (12 قدّمها حزب S). في الـ 72 ساعة السابقة، قدّمت المعارضة **20 مقترح مضاد** ضد 9 مشاريع قوانين، بينما قدّم حزب SD **صفراً**. الصورة الإجمالية هي ائتلاف ينفّذ **سباق إرث انتخابي منسّق بإحكام** مع احتفاظ SD بالانضباط الكامل لاتفاقية Tidö، بينما يركّز S هجماته على الأوتاد الاقتصادية (ميزانية الوقود، تعويضات تكاليف إجازة المرض للمشاريع الصغيرة والمتوسطة) ويحتفظ V/MP بجناح الحريات المدنية والسياسة الخارجية. Admiralty **A1** على هوية الوثائق والتقديمات؛ **B2** على التفسير الاستراتيجي. **متوافق مع ICD 203**.
+
+### 🧭 3 قرارات يدعمها هذا الملخص
+
+1. **الاختيار التحريري لقصة الصدارة** — يجب أن يستخدم العنوان الرئيسي لنشرة المساء إطار *سباق إرث ما قبل الانتخابات* (KJ-1)، لا dok_id واحداً، لأن النمط المتقاطع بين أنواع الوثائق هو الخبر الحقيقي.
+2. **تحديد أولويات مراقبة المستقبل** — تقويم FiU للـ HD03253/HD01FiU23 وتقويم JuU للـ HD03252 هما أبرز نقاط الضغط في الأيام الـ 14 المقبلة (IT-1…IT-3، انظر `forward-indicators.md`).
+3. **إشارة استقرار الائتلاف** — إشارات SD بصفر مقترحات مضادة على 9 مشاريع قوانين تؤكد أن كتلة Tidö سليمة هيكلياً حتى إجازة الصيف؛ غياب L من أدوار الوزارة الرئيسية مستمر (انظر `coalition-mathematics.md §Intra-coalition load`).
+
+### ⏱ القراءة في 60 ثانية
+
+- **الحجم**: 4 مشاريع قوانين + 5 تقارير لجنة + 20 مقترحاً + 16 استجواباً = **45 وثيقة نشطة في Riksdag** خلال نافذة دورة 24 أبريل.
+- **القصة الرئيسية**: سباق إرث ما قبل الانتخابات — حكومة كريسترسون تحوّل أجندة Tidö إلى تطبيق مرئي قبل سبتمبر 2026.
+- **أثقل البنود وزناً**: HD03252 (مزايا المحتجزين، DIW 3٫8، نقطة اشتعال الحريات المدنية)، HD03253 (بنوك الاتحاد الأوروبي، DIW 3٫8، مالي-منهجي)، HD01CU25 (قدرة السجون، DIW 85، مخاطر التسليم)، HD10447 (استجواب إجازة المرض لحزب S، DIW 3٫85، وتد اقتصادي).
+- **إشارة SD**: **صفر** مقترحات مضادة — انضباط Tidö الكامل؛ يستبعد معارضة الجناح الأيمن في الهجرة.
+- **إشارة S**: 12 من 16 استجواباً (75٪) — المعارضة تختبر مدى صمود السجل الاقتصادي للحكومة.
+- **إشارة V/MP**: أوتاد حقوق مدنية خاصة بها (HD024091، HD024096) وأوتاد سياسة خارجية (حظر تصدير أسلحة MP) — تخلق وتداً ضيّقاً لكنه دائم لكتلة اليسار.
+- **إشارة C**: مقترحات على 5 مشاريع قوانين بإطار *تشديد إجرائي* — تموضع للناخبين ذوي التوجهات البرجوازية.
+
+### 🔮 أبرز محفّز مستقبلي (72 ساعة)
+
+**FT-1 · 2026-04-27 (تقويم لجنة FiU)**: ستكشف أولى جلسات استماع FiU على حزمة البنوك الأوروبية HD03253 عن جدول اللجنة الزمني للاعتماد خلال إجازة الصيف. أي تأخير بعد مايو سيُشير إلى مخاطر انتهاك نقل تشريعات الاتحاد الأوروبي (← السيناريو S3 في `scenario-analysis.md`).
+
+### 📊 مصفوفة القرارات الرئيسية
+
+| القرار | المسؤول | المحفّز | الموعد النهائي | التأثير اللاحق |
+|--------|---------|---------|----------------|---------------|
+| إطار قصة الصدارة HD03253 | هيئة التحرير | نشر جلسة استماع FiU | 2026-04-27 | العنوان الرئيسي + مراقبة 72 ساعة |
+| إعداد زاوية الحريات المدنية HD03252 | هيئة التحرير | بحث السوابق القضائية ECHR | 2026-05-01 | قصة الوتد + سياق ECHR |
+| مراقبة دخول HD03252 حيز التنفيذ | هيئة التحرير | تصويت Riksdag ≥ 1 أغسطس 2026 | 2026-08-01 | متابعة قائمة على الحقائق |
+
+### ملخص المخاطر
+
+- **المستوى 1 (منهجي)**: تأخير نقل تشريعات HD03253 ← التعرض لانتهاكات الاتحاد الأوروبي؛ نقاش استقلالية HD01FiU23 لـ Riksbank.
+- **المستوى 2 (سياسي)**: تحدي حقوق ECHR/ECtHR لـ HD03252؛ إطار مناخ الوقود من S/V/MP.
+- **المستوى 3 (تشغيلي)**: قدرة تطبيق HD03256؛ انخفاض قدرة السجون HD01CU25 بنسبة ≥ 10٪ سيعكس خطاب الجريمة للائتلاف.
+
+**قاعدة الأدلة**: 19 وثيقة Riksdag من مصادر أولية + أنماط متقاطعة من 4 مجلدات شقيقة. الاعتماد على مصدر واحد يُخفَّف بالتحقق المتقاطع مع ملفات `sibling executive-brief.md` والتحقق من أدوار أصحاب المصلحة. انظر `methodology-reflection.md §ICD 203 compliance audit`.
+
+### 🧠 درجة الثقة والافتراضات
+
+- **عالية (A1)**: هوية الوثائق، التقديمات، نسب الحزب، توجيه اللجنة.
+- **متوسطة (B2)**: الإطار السردي لسباق ما قبل الانتخابات (التفسير الاستراتيجي).
+- **منخفضة (C3)**: أحجام تأثيرات RWA المحددة على Handelsbanken/SEB (لم يُنشر QIS بعد).
+
+**الافتراض الرئيسي (مُعلَّم للتحقق في الدورة القادمة وفقاً لـ `methodology-reflection.md`)**: أن الجدول الزمني لإجازة صيف ائتلاف Tidö يصمد — إذا نشأت أزمة ائتلافية (مثل L–KD حول تناسب HD03252)، ينهار السباق نحو الخريف ويُعيد تشكيل الإطار الانتخابي.
+
+### 🔗 الملفات المرافقة
+
+- [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/synthesis-summary.md) — الصورة المتكاملة
+- [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/intelligence-assessment.md) — التقييمات الرئيسية + PIRs (ICD-203)
+- [scenario-analysis.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/scenario-analysis.md) — 4 سيناريوهات مع الاحتمالات
+- [forward-indicators.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/forward-indicators.md) — أكثر من 10 محفزات مؤرّخة عبر 4 آفاق
+- [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/risk-assessment.md) — سجل الأبعاد الخمسة
+- [coalition-mathematics.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/coalition-mathematics.md) — عدد المقاعد + Sainte-Laguë
+- [methodology-reflection.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/methodology-reflection.md) — مراجعة التشغيل + الامتثال لـ ICD 203
+
+<!-- source-sha: f7b237c366726abf3d6a4a68b0b9f63ef9205ac0 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling · **Klassifikation**: Offentlig OSINT · **Tillid**: HØJ (B2) · **Kørselstype**: Niveau C-aggregering
+
+### 🎯 BLUF
+
+Den 24. april 2026 fremlagde Kristersson-regeringen en **firepakke med vallovgivning** (EU-bankpakken HD03253, restriktioner for varetægtsfængsledes ydelser HD03252, kontrolhåndhævelse af fartskrivere HD03256, gældsforvaltningsgennemgang HD03104), mens Riksdagen modtog **fem udvalgsrapporter** (CU25 fængselskapacitet, SfU23 migrationsbifurkation, FiU23 Riksbankgennemgang, AU15 ILO, CU29 EV-opladning) og behandlede **16 oppositionsinterpellationer** (12 indgivet af S). I de foregående 72 timer indgav oppositionen **20 modforslag** mod 9 propositioner, mens SD indgav **nul**. Det samlede billede er en koalition, der gennemfører en **tæt synkroniseret valgarvssprint** med SD, der opretholder fuld Tidö-disciplin, mens S koncentrerer angreb på økonomiske kiler (brændstofbudget, SME-sygelønsgodtgørelse) og V/MP holder borgerfrihedsflanken og udenrigspolitikflanken. Admiralty **A1** på dokumentidentitet og indgivelser; **B2** på strategisk fortolkning. **ICD 203-kompatibel**.
+
+### 🧭 3 beslutninger dette resumé understøtter
+
+1. **Redaktionel prioritering** — aftennyhedens primærhistorie bør bruge rammen *valgarvssprint* (KJ-1), ikke et enkelt dok_id, fordi mønsteret på tværs af dokumenttyper er historien.
+2. **Prioritering af fremtidsvagten** — FiU:s kalender for HD03253/HD01FiU23 og JuU:s kalender for HD03252 er de næste 14 dages vigtigste pres-tidspunkter (IT-1…IT-3, se `forward-indicators.md`).
+3. **Koalitionsstabilitetssignal** — SD:s nul modforslag mod 9 propositioner bekræfter, at Tidö-blokken er strukturelt intakt frem til sommerferien; L:s fravær fra ledende ministerposter fortsætter (se `coalition-mathematics.md §Intra-coalition load`).
+
+### ⏱ 60 sekunders læsning
+
+- **Omfang**: 4 propositioner + 5 betænkninger + 20 forslag + 16 interpellationer = **45 aktive Riksdag-dokumenter** i 24-april-cyklusvinduet.
+- **Primær nyhed**: Valgarvssprint — Kristersson-regeringen konverterer Tidö-dagsordenen til synlig håndhævelse frem mod september 2026.
+- **Tungeste poster**: HD03252 (varetægtsfængsledes ydelser, DIW 3,8, borgerfrihedsflashpoint), HD03253 (EU-bank, DIW 3,8, systemfiskal), HD01CU25 (fængselskapacitet, DIW 85, leveringsrisiko), HD10447 (S sygelønsinterpellation, DIW 3,85, økonomisk kile).
+- **SD-signal**: **nul** modforslag — fuld Tidö-disciplin; udelukker højreflankopposition om immigration.
+- **S-signal**: 12 af 16 interpellationer (75 %) — opposition stresser regeringens økonomiske track record.
+- **V/MP-signal**: Egne borgerfrihedskilr (HD024091, HD024096) og udenrigspolitiske kiler (MP krigsmateriel-forbud) — skaber smal men holdbar venstrebloks-kile.
+- **C-signal**: Forslag til 5 lovforslag med rammen *proceduremæssig stramning* — positionering mod borgerlig-nysgerrige vælgere.
+
+### 🔮 Toppen fremadrettet udløser (72 timer)
+
+**FT-1 · 2026-04-27 (FiU-udvalgskalender)**: Første FiU-høring om HD03253 EU-bankpakken vil afsløre udvalgets tidsplan for vedtagelse under sommerferien. En forsinkelse ud over maj vil signalere risiko for EU-transpositionsbrud (→ scenarie S3 i `scenario-analysis.md`).
+
+### 📊 Beslutningsmatrix
+
+| Beslutning | Ejer | Udløser | Deadline | Nedstrøms |
+|------------|------|---------|----------|-----------|
+| Indramning af HD03253-lederstory | Redaktion | FiU-høring offentliggjort | 2026-04-27 | Lede + 72 t fremtidsvagt |
+| Forbered HD03252 borgerfrihedsvinkel | Redaktion | ECHR-præcedensundersøgelse | 2026-05-01 | Kilhistorie + ECHR-kontekst |
+| Fremtidsvagt HD03252 ikrafttræden | Redaktion | Riksdag-afstemning ≥ 1. aug 2026 | 2026-08-01 | Faktuelt opfølgning |
+
+### Risikosammenfatning
+
+- **Niveau 1 (systemisk)**: HD03253 transpositionsforsinkelse → EU-overtrædelseseksponering; HD01FiU23 debat om Riksbankens uafhængighed.
+- **Niveau 2 (politisk)**: HD03252 ECHR/ECtHR-rettighedsudfordring; brændstofklimarammen fra S/V/MP.
+- **Niveau 3 (operationelt)**: HD03256 håndhævelseskapacitet; HD01CU25 fængselskapacitetsfald ≥ 10 % ville invertere koalitionens kriminalitetsfortælling.
+
+**Evidensgrundlag**: 19 primærkilds Riksdag-dokumenter + mønstre på tværs af dokumenttyper fra 4 søskende-mapper. Enkelt-kilde-afhængighed afbødes af krydstjek med `sibling executive-brief.md` og verificering af interessentrolleroller. Se `methodology-reflection.md §ICD 203 compliance audit`.
+
+### 🧠 Tillid og antagelser
+
+- **HØJ (A1)**: Dokumentidentitet, indgivelser, partiattribution, udvalgsroutering.
+- **MIDDEL (B2)**: Narrativ ramme for valgarvssprint (strategisk fortolkning).
+- **LAV (C3)**: Specifikke RWA-konsekvensers magnituder for Handelsbanken/SEB (QIS ikke offentliggjort endnu).
+
+**Nøgleantagelse (markeret til næste-cyklus kontrol per `methodology-reflection.md`)**: At Tidö-koalitionens sommerferie-tidsplan holder — hvis en koalitionskrise opstår (f.eks. L–KD om HD03252-proportionalitet), kollapser sprinten til efteråret og omformer valgindramningen.
+
+### 🔗 Relaterede filer
+
+- [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/synthesis-summary.md) — integreret billede
+- [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/intelligence-assessment.md) — vigtige vurderinger + PIR:er (ICD-203)
+- [scenario-analysis.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/scenario-analysis.md) — 4 scenarier med sandsynligheder
+- [forward-indicators.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/forward-indicators.md) — 10+ daterede udløsere over 4 horisonter
+- [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/risk-assessment.md) — 5-dimensionsregister
+- [coalition-mathematics.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/coalition-mathematics.md) — mandattal + Sainte-Laguë
+- [methodology-reflection.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/methodology-reflection.md) — kørselsrevision + ICD 203-overholdelse
+
+<!-- source-sha: f7b237c366726abf3d6a4a68b0b9f63ef9205ac0 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling · **Klassifizierung**: Öffentliche OSINT · **Konfidenz**: HOCH (B2) · **Ausführungsmodus**: Tier-C-Aggregierung
+
+### 🎯 BLUF
+
+Am 24. April 2026 legte die Regierung Kristersson ein **Viergesetze-Vorwahl-Vermächtnispaket** vor (EU-Bankenpaket HD03253, Einschränkung von Leistungen für Untersuchungsgefangene HD03252, Durchsetzung von Fahrtenschreibern HD03256, Schuldenmanagementprüfung HD03104), während der Riksdag **fünf Ausschussberichte** (CU25 Gefängniskapazität, SfU23 Migrationsbifurkation, FiU23 Riksbank-Überprüfung, AU15 ILO, CU29 EV-Laden) erhielt und **16 Oppositionsinterpellationen** (12 von S eingereicht) behandelte. In den vorangegangenen 72 Stunden reichte die Opposition **20 Gegenmotionen** zu 9 Propositionenein, während SD **null** einreichte. Das Gesamtbild zeigt eine Koalition, die einen **eng synchronisierten Vorwahl-Vermächtnissprint** durchführt, wobei SD die volle Tidö-Disziplin aufrechterha, während S Angriffe auf wirtschaftliche Keile konzentriert (Kraftstoffbudget, KMU-Krankengelderstattung) und V/MP die Bürgerrechts- und Außenpolitikflanke halten. Admiralty **A1** für Dokumentidentität und Einreichungen; **B2** für strategische Interpretation. **ICD 203-konform**.
+
+### 🧭 3 Entscheidungen, die dieser Bericht unterstützt
+
+1. **Redaktionelle Leitauswahl** — der Abendnachrichten-Aufmacher sollte den Rahmen *Vorwahl-Vermächtnissprint* (KJ-1) verwenden, nicht eine einzelne dok_id, da das bereichsübergreifende Muster die Nachricht ist.
+2. **Priorisierung des Vorausschau-Monitoring** — FiU-Kalender für HD03253/HD01FiU23 und JuU-Kalender für HD03252 sind die wichtigsten Druckpunkte in den nächsten 14 Tagen (IT-1…IT-3, siehe `forward-indicators.md`).
+3. **Koalitionsstabilitätssignal** — SDs null Gegenmotionen gegen 9 Propositionen bestätigt, dass der Tidö-Block bis zur Sommerpause strukturell intakt ist; Ls Abwesenheit aus führenden Ministerrollen besteht fort (siehe `coalition-mathematics.md §Intra-coalition load`).
+
+### ⏱ 60-Sekunden-Lektüre
+
+- **Volumen**: 4 Propositionen + 5 Ausschussberichte + 20 Motionen + 16 Interpellationen = **45 aktive Riksdag-Dokumente** im 24-April-Zyklusfenster.
+- **Leitgeschichte**: Vorwahl-Vermächtnissprint — Regierung Kristersson konvertiert die Tidö-Agenda vor September 2026 in sichtbare Durchsetzung.
+- **Höchstgewichtete Posten**: HD03252 (Leistungen Untersuchungsgefangener, DIW 3,8, Bürgerrechts-Flashpoint), HD03253 (EU-Bank, DIW 3,8, systemfiskalisch), HD01CU25 (Gefängniskapazität, DIW 85, Lieferrisiko), HD10447 (S-Krankengeldinterpellation, DIW 3,85, wirtschaftlicher Keil).
+- **SD-Signal**: **null** Gegenmotionen — volle Tidö-Disziplin; schließt Rechtsflügel-Opposition bei der Einwanderung aus.
+- **S-Signal**: 12 von 16 Interpellationen (75 %) — Opposition testet die Wirtschaftsbilanz der Regierung auf Belastbarkeit.
+- **V/MP-Signal**: Eigene Bürgerrechtskeile (HD024091, HD024096) und außenpolitische Keile (MP Rüstungsexportverbot) — schaffen schmalen, aber dauerhaften Linksblock-Keil.
+- **C-Signal**: Motionen zu 5 Gesetzentwürfen mit dem Rahmen *Verfahrensverschärfung* — Positionierung für bürgerlich-aufgeschlossene Wähler.
+
+### 🔮 Wichtigster Vorwärtsauslöser (72 Stunden)
+
+**FT-1 · 2026-04-27 (FiU-Ausschusskalender)**: Erste FiU-Anhörung zu HD03253 EU-Bankenpaket wird den Zeitplan des Ausschusses für die Verabschiedung in der Sommerpause offenbaren. Eine Verzögerung über Mai hinaus würde das EU-Transpositionsrisiko signalisieren (→ Szenario S3 in `scenario-analysis.md`).
+
+### 📊 Schlüsselentscheidungsmatrix
+
+| Entscheidung | Eigentümer | Auslöser | Frist | Nachgelagert |
+|-------------|------------|---------|-------|-------------|
+| Rahmung der HD03253-Leitgeschichte | Redaktion | FiU-Anhörung veröffentlicht | 2026-04-27 | Aufmacher + 72 h Vorausschau |
+| Vorbereitung HD03252 Bürgerrechtswinkel | Redaktion | ECHR-Präzedenzforschung | 2026-05-01 | Keilgeschichte + ECHR-Kontext |
+| Vorausschau HD03252 Inkrafttreten | Redaktion | Riksdag-Abstimmung ≥ 1. Aug. 2026 | 2026-08-01 | Faktenbasierte Nachverfolgung |
+
+### Risikozusammenfassung
+
+- **Stufe 1 (systemisch)**: HD03253 Transpositionsverzögerung → EU-Vertragsverletzungsexposition; HD01FiU23 Debatte über Riksbank-Unabhängigkeit.
+- **Stufe 2 (politisch)**: HD03252 ECHR/ECtHR-Rechtsmittelherausforderung; Kraftstoff-Klimarahmung durch S/V/MP.
+- **Stufe 3 (operativ)**: HD03256 Durchsetzungskapazität; HD01CU25 Gefängniskapazitätsrückgang ≥ 10 % würde die Kriminalitätserzählung der Koalition umkehren.
+
+**Evidenzbasis**: 19 Riksdag-Dokumente aus Primärquellen + bereichsübergreifende Muster aus 4 Schwesterordnern. Einzelquell-Abhängigkeit durch Kreuzvalidierung mit `sibling executive-brief.md` und Interessentenrollen-Verifikation gemindert. Siehe `methodology-reflection.md §ICD 203 compliance audit`.
+
+### 🧠 Konfidenz und Annahmen
+
+- **HOCH (A1)**: Dokumentidentität, Einreichungen, Parteiattribution, Ausschussweiterleitung.
+- **MITTEL (B2)**: Narrative Rahmung des Vorwahl-Sprints (strategische Interpretation).
+- **NIEDRIG (C3)**: Spezifische RWA-Auswirkungsgrößenordnungen für Handelsbanken/SEB (QIS noch nicht veröffentlicht).
+
+**Schlüsselannahme (für Nächstzyklus-Prüfung gemäß `methodology-reflection.md` markiert)**: Dass der Sommerferienplan der Tidö-Koalition hält — falls eine Koalitionskrise entsteht (z. B. L–KD bei HD03252-Verhältnismäßigkeit), bricht der Sprint in den Herbst ein und gestaltet den Wahlrahmen um.
+
+### 🔗 Begleitdateien
+
+- [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/synthesis-summary.md) — integriertes Bild
+- [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/intelligence-assessment.md) — Schlüsselbeurteilungen + PIRs (ICD-203)
+- [scenario-analysis.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/scenario-analysis.md) — 4 Szenarien mit Wahrscheinlichkeiten
+- [forward-indicators.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/forward-indicators.md) — 10+ datierte Auslöser über 4 Horizonte
+- [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/risk-assessment.md) — 5-Dimensionen-Register
+- [coalition-mathematics.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/coalition-mathematics.md) — Sitzzahl + Sainte-Laguë
+- [methodology-reflection.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/methodology-reflection.md) — Laufrevision + ICD 203-Konformität
+
+<!-- source-sha: f7b237c366726abf3d6a4a68b0b9f63ef9205ac0 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling · **Clasificación**: OSINT público · **Confianza**: ALTA (B2) · **Modo de ejecución**: Agregación de nivel C
+
+### 🎯 BLUF
+
+El 24 de abril de 2026, el gobierno Kristersson presentó un **paquete de cuatro proyectos de ley preelectorales** (paquete bancario europeo HD03253, restricción de beneficios para detenidos HD03252, aplicación del tacógrafo HD03256, revisión de gestión de deuda HD03104), mientras que el Riksdag recibió **cinco informes de comisión** (CU25 capacidad carcelaria, SfU23 bifurcación migratoria, FiU23 revisión del Riksbank, AU15 OIT, CU29 carga de vehículos eléctricos) y tramitó **16 interpelaciones de la oposición** (12 presentadas por S). En las 72 horas anteriores, la oposición presentó **20 contramociones** contra 9 proposiciones, mientras SD presentó **cero**. El cuadro integrado es el de una coalición que ejecuta un **sprint de legado preelectoral estrechamente sincronizado** con SD manteniendo plena disciplina Tidö, mientras S concentra sus ataques en cuñas económicas (combustible, reembolso de costes por enfermedad en PYME) y V/MP sostiene el flanco de las libertades civiles y la política exterior. Admiralty **A1** en identidad de documentos y presentaciones; **B2** en interpretación estratégica. **Conforme a ICD 203**.
+
+### 🧭 3 decisiones que este resumen apoya
+
+1. **Selección editorial del tema principal** — el encabezado del informativo nocturno debe usar el marco del *sprint de legado preelectoral* (KJ-1), no un dok_id individual, porque el patrón transversal es la noticia.
+2. **Priorización del monitoreo prospectivo** — el calendario de FiU para HD03253/HD01FiU23 y el calendario de JuU para HD03252 son los puntos de presión más importantes de los próximos 14 días (IT-1…IT-3, véase `forward-indicators.md`).
+3. **Señal de estabilidad de coalición** — las cero contramociones de SD contra 9 proposiciones confirma que el bloque Tidö es estructuralmente intacto hasta el receso de verano; la ausencia de L en roles ministeriales principales persiste (véase `coalition-mathematics.md §Intra-coalition load`).
+
+### ⏱ Lectura en 60 segundos
+
+- **Volumen**: 4 proposiciones + 5 informes de comisión + 20 mociones + 16 interpelaciones = **45 documentos activos del Riksdag** en la ventana del ciclo del 24 de abril.
+- **Historia principal**: Sprint de legado preelectoral — el gobierno Kristersson convierte la agenda Tidö en aplicación visible antes de septiembre de 2026.
+- **Elementos de mayor peso**: HD03252 (beneficios detenidos, DIW 3,8, punto crítico de libertades civiles), HD03253 (banca UE, DIW 3,8, sistémico-fiscal), HD01CU25 (capacidad carcelaria, DIW 85, riesgo de entrega), HD10447 (interpelación baja laboral S, DIW 3,85, cuña económica).
+- **Señal SD**: **cero** contramociones — plena disciplina Tidö; excluye oposición del flanco derecho en inmigración.
+- **Señal S**: 12 de 16 interpelaciones (75 %) — la oposición somete a prueba de estrés el historial económico del gobierno.
+- **Señal V/MP**: Cuñas propias de libertades civiles (HD024091, HD024096) y de política exterior (prohibición de exportación de armamento MP) — crea una cuña estrecha pero duradera del bloque de izquierda.
+- **Señal C**: Mociones sobre 5 proyectos de ley con el marco *endurecimiento procedimental* — posicionamiento para votantes de sensibilidades burguesas.
+
+### 🔮 Principal desencadenante prospectivo (72 horas)
+
+**FT-1 · 2026-04-27 (calendario de la comisión FiU)**: La primera audiencia de FiU sobre el paquete bancario europeo HD03253 revelará el calendario de la comisión para la aprobación durante el receso de verano. Un retraso más allá de mayo señalaría el riesgo de infracción de transposición de la UE (→ escenario S3 en `scenario-analysis.md`).
+
+### 📊 Matriz de decisiones clave
+
+| Decisión | Responsable | Desencadenante | Fecha límite | Efecto posterior |
+|----------|-------------|--------------|--------------|-----------------|
+| Encuadre del artículo principal HD03253 | Redacción | Audiencia FiU publicada | 2026-04-27 | Titular + vigilancia 72 h |
+| Preparar ángulo libertades civiles HD03252 | Redacción | Investigación precedentes CEDH | 2026-05-01 | Artículo cuña + contexto CEDH |
+| Vigilancia entrada en vigor HD03252 | Redacción | Votación Riksdag ≥ 1 ago. 2026 | 2026-08-01 | Seguimiento basado en hechos |
+
+### Resumen de riesgos
+
+- **Nivel 1 (sistémico)**: Retraso de transposición HD03253 → exposición a infracción de la UE; debate sobre independencia del Riksbank HD01FiU23.
+- **Nivel 2 (político)**: Desafío de derechos TEDH/CEDH HD03252; encuadre climático del combustible por S/V/MP.
+- **Nivel 3 (operativo)**: Capacidad de aplicación HD03256; caída de capacidad carcelaria HD01CU25 ≥ 10 % invertiría el relato criminal de la coalición.
+
+**Base de evidencia**: 19 documentos del Riksdag de fuentes primarias + patrones transversales de 4 carpetas hermanas. La dependencia de fuente única se mitiga mediante validación cruzada con los archivos `sibling executive-brief.md` y verificación de roles de partes interesadas. Véase `methodology-reflection.md §ICD 203 compliance audit`.
+
+### 🧠 Confianza y suposiciones
+
+- **ALTA (A1)**: Identidad de documentos, presentaciones, atribución de partido, derivación a comisión.
+- **MEDIA (B2)**: Encuadre narrativo del sprint preelectoral (interpretación estratégica).
+- **BAJA (C3)**: Magnitudes específicas del impacto RWA para Handelsbanken/SEB (QIS aún no publicado).
+
+**Supuesto clave (marcado para verificación en el próximo ciclo según `methodology-reflection.md`)**: Que el calendario de vacaciones de verano de la coalición Tidö se mantiene — si surge una crisis de coalición (p. ej. L–KD sobre proporcionalidad HD03252), el sprint se derrumba en otoño y remodela el encuadre electoral.
+
+### 🔗 Archivos relacionados
+
+- [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/synthesis-summary.md) — imagen integrada
+- [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/intelligence-assessment.md) — valoraciones clave + PIR (ICD-203)
+- [scenario-analysis.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/scenario-analysis.md) — 4 escenarios con probabilidades
+- [forward-indicators.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/forward-indicators.md) — más de 10 desencadenantes fechados en 4 horizontes
+- [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/risk-assessment.md) — registro de 5 dimensiones
+- [coalition-mathematics.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/coalition-mathematics.md) — recuento de escaños + Sainte-Laguë
+- [methodology-reflection.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/methodology-reflection.md) — auditoría de ejecución + conformidad ICD 203
+
+<!-- source-sha: f7b237c366726abf3d6a4a68b0b9f63ef9205ac0 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling · **Luokitus**: Julkinen OSINT · **Luotettavuus**: KORKEA (B2) · **Ajomuoto**: Taso C -koostaminen
+
+### 🎯 BLUF
+
+Kristersson-hallitus toi 24. huhtikuuta 2026 eduskunnan käsiteltäväksi **neliosaisen ennen vaaleja -perintöpaketin** (EU-pankkipaketti HD03253, tutkintavankiloiden etuuksien rajoitus HD03252, ajopiirturin täytäntöönpano HD03256, velkahallinnan tarkistus HD03104), kun taas riksdag vastaanotti **viisi valiokuntamietintöä** (CU25 vankilakapasiteetti, SfU23 maahanmuuttojakauma, FiU23 Riksbankin tarkistus, AU15 ILO, CU29 sähköauton lataus) ja käsitteli **16 oppositiointerpelaatiota** (12 S:n jättämää). Edeltävien 72 tunnin aikana oppositio jätti **20 vastaesitystä** 9 ehdotukseen, joista SD jätti **nolla**. Kokonaisuutena koalitio toteuttaa **tiiviisti synkronoitua vaaliperintösprinttiä** SD:n ylläpitäessä täyttä Tidö-kurinalaisuutta, S:n keskittäessä hyökkäykset taloudellisiin kiiloihin (polttoaine, PK-yrityksen sairauslomakustannusten korvaus) ja V/MP:n pitäessä kansalaisvapauksien ja ulkopolitiikan sivustan. Admiralty **A1** asiakirjaidentiteettiin ja jättämisiin; **B2** strategiseen tulkintaan. **ICD 203 -yhteensopiva**.
+
+### 🧭 3 päätöstä, joita tämä tiivistelmä tukee
+
+1. **Toimituksellinen kärkiartikkelivalinta** — iltauutisten kärkiartikkeli tulisi käyttää *vaaliperintösprint*-kehystä (KJ-1), ei yksittäistä dok_id-tunnistetta, koska poikkileikkaava malli on uutinen.
+2. **Eteenpäintähystyksen priorisointi** — FiU:n kalenteri HD03253/HD01FiU23:lle ja JuU:n kalenteri HD03252:lle ovat seuraavien 14 päivän tärkeimmät painopisteet (IT-1…IT-3, katso `forward-indicators.md`).
+3. **Koalitiostabiilin signaali** — SD:n nolla vastaesitystä 9 ehdotukseen vahvistaa, että Tidö-blokki on rakenteellisesti ehjä kesäloman ajan; L:n poissaolo johtavista ministeritehtävistä jatkuu (katso `coalition-mathematics.md §Intra-coalition load`).
+
+### ⏱ 60 sekunnin lukeminen
+
+- **Volyymi**: 4 ehdotusta + 5 mietintöä + 20 aloitetta + 16 interpolaatiota = **45 aktiivista riksdag-asiakirjaa** 24. huhtikuun syklilukuikkunassa.
+- **Kärkiuutinen**: Vaaliperintösprint — Kristersson-hallitus muuntaa Tidö-ohjelman näkyväksi täytäntöönpanoksi ennen syyskuuta 2026.
+- **Suurimman painon kohteet**: HD03252 (tutkintavankiloiden etuudet, DIW 3,8, kansalaisvapauksien kriittinen piste), HD03253 (EU-pankki, DIW 3,8, systeemifiskaalinen), HD01CU25 (vankilakapasiteetti, DIW 85, toimituriski), HD10447 (S:n sairauspäivärahainterpelaatio, DIW 3,85, taloudellinen kiila).
+- **SD-signaali**: **nolla** vastaesitystä — täysi Tidö-kurinalaisuus; sulkee pois oikean laidan opposition maahanmuuttoasioissa.
+- **S-signaali**: 12 / 16 interpolaatiota (75 %) — oppositio stressitestaa hallituksen taloustulosta.
+- **V/MP-signaali**: Omat kansalaisvapauskiilat (HD024091, HD024096) ja ulkopoliittiset kiilat (MP:n asevientikielto) — luo kapean mutta kestävän vasemmistoblokin kiilan.
+- **C-signaali**: Aloitteet 5 lakiehdotukseen *menettelytapojen tiukentaminen* -kehyksellä — asemoituminen porvarillisesti harkitseviin äänestäjiin.
+
+### 🔮 Tärkein eteenpäinlaukaisija (72 tuntia)
+
+**FT-1 · 2026-04-27 (FiU:n valiokuntakalenteri)**: Ensimmäinen FiU:n kuuleminen HD03253 EU-pankkipaketista paljastaa valiokunnan aikataulun kesäloman aikaiselle antamiselle. Toukokuun jälkeinen viivästyminen merkitsee EU-transponoinnin rikkomisriskiä (→ skenaario S3 tiedostossa `scenario-analysis.md`).
+
+### 📊 Keskeinen päätösmatriisi
+
+| Päätös | Omistaja | Laukaisija | Määräaika | Jatkovaikutus |
+|--------|----------|-----------|-----------|--------------|
+| HD03253-kärkiuutisen kehystys | Toimitus | FiU-kuuleminen julkaistu | 2026-04-27 | Kärkiartikkeli + 72 h eteenpäintähystys |
+| Valmistele HD03252 kansalaisvapausnäkökulma | Toimitus | ECHR-ennakkotapaustutkimus | 2026-05-01 | Kiilajuttu + ECHR-konteksti |
+| Eteenpäintähystys HD03252 voimaantulo | Toimitus | Riksdagin äänestys ≥ 1. elok. 2026 | 2026-08-01 | Faktapohjainen jatkoseuranta |
+
+### Riskiyhteenveto
+
+- **Taso 1 (systeeminen)**: HD03253 transponointiviivästys → EU-rikkomisaltistus; HD01FiU23 Riksbankin riippumattomuusdebatti.
+- **Taso 2 (poliittinen)**: HD03252 ECHR/ECtHR-oikeuksien haaste; polttoaineen ilmastohuomioiden kehystys S/V/MP:n toimesta.
+- **Taso 3 (operatiivinen)**: HD03256 täytäntöönpanokapasiteetti; HD01CU25 vankilakapasiteetin lasku ≥ 10 % kääntäisi koalition rikoskerronnan.
+
+**Todistepohja**: 19 primäärilähteen riksdag-asiakirjaa + poikkileikkausmalleja 4 rinnakkaiskansion kautta. Yksittäisen lähteen riippuvuus lieventyy ristiinvalidoinnilla `sibling executive-brief.md` -tiedostojen ja sidosryhmäroolien todentamisen kanssa. Katso `methodology-reflection.md §ICD 203 compliance audit`.
+
+### 🧠 Luotettavuus ja oletukset
+
+- **KORKEA (A1)**: Asiakirjaidentiteetti, jättämiset, puolueen attribuointi, valiokuntaan ohjaaminen.
+- **KOHTALAINEN (B2)**: Vaalikausi-sprintin narratiivinen kehys (strateginen tulkinta).
+- **MATALA (C3)**: Erityisten RWA-vaikutusten suuruudet Handelsbanken/SEB:lle (QIS ei vielä julkaistu).
+
+**Keskeinen oletus (flaggattu seuraavan syklin tarkistukseen per `methodology-reflection.md`)**: Että Tidö-koalition kesälomatavoitteiden aikataulu pitää — jos koalitiokriisi syntyy (esim. L–KD HD03252 suhteellisuudesta), sprint kaatuu syksyyn ja muodostaa vaalikoostamisen uudelleen.
+
+### 🔗 Oheistiedostot
+
+- [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/synthesis-summary.md) — integroitu kuva
+- [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/intelligence-assessment.md) — tärkeimmät arvioinnit + PIR:t (ICD-203)
+- [scenario-analysis.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/scenario-analysis.md) — 4 skenaariota todennäköisyyksineen
+- [forward-indicators.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/forward-indicators.md) — 10+ päivättyä laukaisijaa 4 horisontin yli
+- [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/risk-assessment.md) — 5-ulotteinen rekisteri
+- [coalition-mathematics.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/coalition-mathematics.md) — paikkamäärä + Sainte-Laguë
+- [methodology-reflection.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/methodology-reflection.md) — ajorevisointi + ICD 203 -vaatimustenmukaisuus
+
+<!-- source-sha: f7b237c366726abf3d6a4a68b0b9f63ef9205ac0 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling · **Classification** : OSINT public · **Confiance** : ÉLEVÉE (B2) · **Mode d'exécution** : Agrégation de niveau C
+
+### 🎯 BLUF
+
+Le 24 avril 2026, le gouvernement Kristersson a déposé un **paquet de quatre projets de loi pré-électoraux** (paquet bancaire européen HD03253, restriction des prestations pour détenus HD03252, contrôle du tachygraphe HD03256, révision de la gestion de la dette HD03104), tandis que le Riksdag recevait **cinq rapports de commission** (CU25 capacité carcérale, SfU23 bifurcation migratoire, FiU23 examen de la Riksbank, AU15 OIT, CU29 recharge VE) et traitait **16 interpellations de l'opposition** (12 déposées par S). Dans les 72 heures précédentes, l'opposition a déposé **20 contre-motions** contre 9 propositions, dont SD en a déposé **zéro**. L'image intégrée est celle d'une coalition qui mène un **sprint préélectoral d'héritage étroitement synchronisé**, SD maintenant une discipline Tidö complète, tandis que S concentre ses attaques sur les coins économiques (carburant, remboursement des coûts de congé maladie des PME) et V/MP tient le flanc des libertés civiques et de la politique étrangère. Admiralty **A1** sur l'identité des documents et les dépôts ; **B2** sur l'interprétation stratégique. **Conforme à l'ICD 203**.
+
+### 🧭 3 décisions que ce résumé soutient
+
+1. **Sélection éditoriale du sujet principal** — la manchette du soir devrait utiliser le cadre du *sprint d'héritage préélectoral* (KJ-1), pas un dok_id unique, car le schéma transversal est la véritable information.
+2. **Priorisation de la veille prospective** — le calendrier FiU pour HD03253/HD01FiU23 et le calendrier JuU pour HD03252 sont les points de pression les plus importants des 14 prochains jours (IT-1…IT-3, voir `forward-indicators.md`).
+3. **Signal de stabilité de la coalition** — les zéro contre-motions de SD contre 9 propositions confirment que le bloc Tidö est structurellement intact jusqu'aux vacances d'été ; l'absence de L dans les rôles ministériels principaux persiste (voir `coalition-mathematics.md §Intra-coalition load`).
+
+### ⏱ Lecture en 60 secondes
+
+- **Volume** : 4 propositions + 5 rapports de commission + 20 motions + 16 interpellations = **45 documents actifs du Riksdag** dans la fenêtre du cycle du 24 avril.
+- **Sujet principal** : Sprint d'héritage préélectoral — le gouvernement Kristersson convertit l'agenda Tidö en application visible avant septembre 2026.
+- **Éléments à plus forte pondération** : HD03252 (prestations détenus, DIW 3,8, point critique des libertés civiques), HD03253 (EU Banking, DIW 3,8, systémique-fiscal), HD01CU25 (capacité carcérale, DIW 85, risque de livraison), HD10447 (interpellation congé maladie S, DIW 3,85, coin économique).
+- **Signal SD** : **zéro** contre-motions — discipline Tidö complète ; exclut l'opposition d'aile droite sur l'immigration.
+- **Signal S** : 12 interpellations sur 16 (75 %) — l'opposition teste le bilan économique du gouvernement.
+- **Signal V/MP** : Propres coins libertés civiques (HD024091, HD024096) et politique étrangère (interdiction d'exportation d'armement MP) — crée un coin étroit mais durable du bloc de gauche.
+- **Signal C** : Motions sur 5 projets de loi avec le cadre *resserrement procédural* — positionnement pour les électeurs aux sensibilités bourgeoises.
+
+### 🔮 Principal déclencheur prospectif (72 heures)
+
+**FT-1 · 2026-04-27 (calendrier de la commission FiU)** : La première audition FiU sur le paquet bancaire européen HD03253 révélera le calendrier de la commission pour l'adoption pendant les vacances d'été. Un retard au-delà de mai signalerait le risque d'infraction à la transposition de l'UE (→ scénario S3 dans `scenario-analysis.md`).
+
+### 📊 Matrice de décisions clés
+
+| Décision | Responsable | Déclencheur | Délai | Conséquences |
+|----------|-------------|------------|-------|-------------|
+| Cadrage de l'article principal HD03253 | Rédaction | Audition FiU publiée | 2026-04-27 | Manchette + veille 72 h |
+| Préparer l'angle libertés civiques HD03252 | Rédaction | Recherche de précédents CEDH | 2026-05-01 | Article coin + contexte CEDH |
+| Veille HD03252 entrée en vigueur | Rédaction | Vote Riksdag ≥ 1 août 2026 | 2026-08-01 | Suivi factuel |
+
+### Résumé des risques
+
+- **Niveau 1 (systémique)** : Retard de transposition HD03253 → exposition aux infractions UE ; débat sur l'indépendance de la Riksbank HD01FiU23.
+- **Niveau 2 (politique)** : Défi des droits CEDH/CEuDH HD03252 ; cadrage climatique du carburant par S/V/MP.
+- **Niveau 3 (opérationnel)** : Capacité d'application HD03256 ; chute de la capacité carcérale HD01CU25 ≥ 10 % inverserait le récit criminel de la coalition.
+
+**Base de preuves** : 19 documents du Riksdag de sources primaires + schémas transversaux provenant de 4 dossiers voisins. La dépendance à une seule source est atténuée par la validation croisée avec les `sibling executive-brief.md` et la vérification des rôles des parties prenantes. Voir `methodology-reflection.md §ICD 203 compliance audit`.
+
+### 🧠 Confiance et hypothèses
+
+- **ÉLEVÉE (A1)** : Identité des documents, dépôts, attribution partisane, acheminement en commission.
+- **MOYENNE (B2)** : Cadrage narratif du sprint préélectoral (interprétation stratégique).
+- **FAIBLE (C3)** : Amplitudes spécifiques d'impact RWA pour Handelsbanken/SEB (QIS pas encore publié).
+
+**Hypothèse clé (signalée pour vérification au prochain cycle selon `methodology-reflection.md`)** : Que le calendrier de vacances d'été de la coalition Tidö tient — si une crise de coalition survient (p. ex. L–KD sur la proportionnalité HD03252), le sprint s'effondre en automne et remodèle le cadrage électoral.
+
+### 🔗 Fichiers connexes
+
+- [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/synthesis-summary.md) — image intégrée
+- [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/intelligence-assessment.md) — jugements clés + PIR (ICD-203)
+- [scenario-analysis.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/scenario-analysis.md) — 4 scénarios avec probabilités
+- [forward-indicators.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/forward-indicators.md) — 10+ déclencheurs datés sur 4 horizons
+- [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/risk-assessment.md) — registre à 5 dimensions
+- [coalition-mathematics.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/coalition-mathematics.md) — décompte des sièges + Sainte-Laguë
+- [methodology-reflection.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/methodology-reflection.md) — audit d'exécution + conformité ICD 203
+
+<!-- source-sha: f7b237c366726abf3d6a4a68b0b9f63ef9205ac0 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# ניתוח ערב — תקציר מנהלים 2026-04-24
+
+**מחבר**: James Pether Sörling · **סיווג**: OSINT ציבורי · **רמת ביטחון**: גבוהה (B2) · **מצב הרצה**: צבירת רמה C
+
+### 🎯 BLUF
+
+ב-24 באפריל 2026 הגישה ממשלת קריסטרסון **חבילת ארבעה הצעות חוק טרום-בחירות** (חבילת הבנקאות האירופאית HD03253, הגבלת קצבאות עצורים HD03252, אכיפת מכשיר מד-מרחק HD03256, סקירת ניהול החוב HD03104), בעוד Riksdagen קיבל **חמישה דוחות ועדה** (CU25 קיבולת בתי סוהר, SfU23 שינוי בסיס ההגירה, FiU23 סקירת Riksbank, AU15 ILO, CU29 טעינת רכבים חשמליים) וטיפל ב**16 שאילתות אופוזיציה** (12 הוגשו על ידי S). ב-72 השעות הקודמות, האופוזיציה הגישה **20 הצעות נגד** לגבי 9 הצעות חוק, בעוד SD הגיש **אפס**. התמונה הכוללת היא קואליציה המבצעת **ספרינט מורשת טרום-בחירות מסונכרן בהדוק** כאשר SD שומר על משמעת Tidö מלאה, בעוד S מרכז מתקפות על טריזים כלכליים (תקציב דלק, פיצויי עלויות מחלה לעסקים קטנים) ו-V/MP שומר על אגף הזכויות האזרחיות והמדיניות החוץ. Admiralty **A1** על זהות מסמכים והגשות; **B2** על פרשנות אסטרטגית. **תואם ל-ICD 203**.
+
+### 🧭 3 החלטות שתקציר זה תומך בהן
+
+1. **בחירת כותרת עיתורית** — כותרת חדשות הערב צריכה להשתמש במסגרת *ספרינט מורשת טרום-בחירות* (KJ-1), לא dok_id בודד, מאחר שהדפוס הרוחבי הוא החדשה.
+2. **תעדוף מעקב צופה פני עתיד** — לוח שנה FiU עבור HD03253/HD01FiU23 ולוח שנה JuU עבור HD03252 הם נקודות הלחץ החשובות ביותר ל-14 הימים הקרובים (IT-1…IT-3, ראה `forward-indicators.md`).
+3. **אות יציבות קואליציה** — אפס הצעות נגד של SD לגבי 9 הצעות חוק מאשר שגוש Tidö שלם מבחינה מבנית עד לחופשת הקיץ; היעדרות L מתפקידי שרים מובילים נמשכת (ראה `coalition-mathematics.md §Intra-coalition load`).
+
+### ⏱ קריאה של 60 שניות
+
+- **נפח**: 4 הצעות חוק + 5 דוחות ועדה + 20 הצעות + 16 שאילתות = **45 מסמכי Riksdag פעילים** בחלון מחזור ה-24 באפריל.
+- **סיפור מוביל**: ספרינט מורשת טרום-בחירות — ממשלת קריסטרסון ממירה את אג'נדת Tidö לאכיפה גלויה לפני ספטמבר 2026.
+- **פריטים בעלי משקל גבוה ביותר**: HD03252 (קצבאות עצורים, DIW 3.8, נקודת הצתה לזכויות אזרחיות), HD03253 (בנקאות אירופאית, DIW 3.8, פיסקלי-מערכתי), HD01CU25 (קיבולת בתי סוהר, DIW 85, סיכון אספקה), HD10447 (שאילתת חופשת מחלה של S, DIW 3.85, טריז כלכלי).
+- **אות SD**: **אפס** הצעות נגד — משמעת Tidö מלאה; מוציא מכלל שקול אופוזיציית אגף ימני בנושא הגירה.
+- **אות S**: 12 מתוך 16 שאילתות (75%) — האופוזיציה בודקת את הרשומה הכלכלית של הממשלה.
+- **אות V/MP**: טריזי זכויות אזרחיות משלהם (HD024091, HD024096) וטריזי מדיניות חוץ (איסור ייצוא נשק MP) — יוצרים טריז צר אך עמיד של הגוש השמאלי.
+- **אות C**: הצעות ל-5 מסמכי חוק במסגרת *הידוק נהלים* — מיצוב לקראת בוחרים בעלי תחושות בורגניות.
+
+### 🔮 הטריגר העתידי המוביל (72 שעות)
+
+**FT-1 · 2026-04-27 (לוח שנה ועדת FiU)**: שימוע FiU הראשון על חבילת הבנקאות האירופאית HD03253 יגלה את לוח הזמנים של הוועדה לאישור במהלך חופשת הקיץ. עיכוב מעבר למאי יאות לסיכון הפרת שינוי חקיקה אירופאית (→ תרחיש S3 ב-`scenario-analysis.md`).
+
+### 📊 מטריצת החלטות מרכזית
+
+| החלטה | בעלים | טריגר | מועד אחרון | השפעה במורד הזרם |
+|--------|--------|--------|------------|-----------------|
+| מסגרת סיפור הכותרת HD03253 | מערכת | שימוע FiU פורסם | 2026-04-27 | כותרת ראשית + מעקב 72 שעה |
+| הכנת זווית זכויות אזרחיות HD03252 | מערכת | מחקר תקדים ECHR | 2026-05-01 | סיפור טריז + הקשר ECHR |
+| מעקב כניסה לתוקף HD03252 | מערכת | הצבעה ב-Riksdag ≥ 1 באוג' 2026 | 2026-08-01 | מעקב מבוסס עובדות |
+
+### סיכום סיכונים
+
+- **רמה 1 (מערכתית)**: עיכוב שינוי חקיקה HD03253 → חשיפה להפרת הסכמי האיחוד האירופי; HD01FiU23 דיון על עצמאות Riksbank.
+- **רמה 2 (פוליטית)**: אתגר זכויות ECHR/ECtHR HD03252; מסגרת האקלים של הדלק מצד S/V/MP.
+- **רמה 3 (מבצעית)**: קיבולת אכיפה HD03256; ירידה בקיבולת בתי סוהר HD01CU25 ≥ 10% תהפוך את נרטיב הפשע של הקואליציה.
+
+**בסיס ראיות**: 19 מסמכי Riksdag ממקורות ראשוניים + דפוסים רוחביים מ-4 תיקיות שכנות. תלות במקור יחיד מוקטנת באמצעות אימות צולב עם קבצי `sibling executive-brief.md` ואימות תפקידי בעלי עניין. ראה `methodology-reflection.md §ICD 203 compliance audit`.
+
+### 🧠 רמת ביטחון והנחות
+
+- **גבוהה (A1)**: זהות מסמכים, הגשות, ייחוס מפלגתי, ניתוב לוועדה.
+- **בינונית (B2)**: מסגרת נרטיב ספרינט טרום-בחירות (פרשנות אסטרטגית).
+- **נמוכה (C3)**: גדלי השפעת RWA ספציפיים עבור Handelsbanken/SEB (QIS טרם פורסם).
+
+**הנחת מפתח (מסומנת לבדיקה במחזור הבא לפי `methodology-reflection.md`)**: שלוח הזמנים של חופשת הקיץ של קואליציית Tidö מחזיק — אם מתפתחת משבר קואליציה (למשל L–KD על מידתיות HD03252), הספרינט קורס לסתיו ומעצב מחדש את מסגרת הבחירות.
+
+### 🔗 קבצים נלווים
+
+- [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/synthesis-summary.md) — תמונה משולבת
+- [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/intelligence-assessment.md) — הערכות מרכזיות + PIRs (ICD-203)
+- [scenario-analysis.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/scenario-analysis.md) — 4 תרחישים עם הסתברויות
+- [forward-indicators.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/forward-indicators.md) — יותר מ-10 טריגרים ממוּארים על פני 4 אופקים
+- [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/risk-assessment.md) — רשום 5 ממדים
+- [coalition-mathematics.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/coalition-mathematics.md) — ספירת מנדטים + Sainte-Laguë
+- [methodology-reflection.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/methodology-reflection.md) — ביקורת הרצה + עמידה ב-ICD 203
+
+<!-- source-sha: f7b237c366726abf3d6a4a68b0b9f63ef9205ac0 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling · **分類**: 公開 OSINT · **信頼度**: 高 (B2) · **実行モード**: ティア C 集約
+
+### 🎯 BLUF
+
+2026年4月24日、クリステション政権は**4法案の選挙前遺産パッケージ**（EUバンキングパッケージ HD03253、勾留中者給付制限 HD03252、タコグラフ執行 HD03256、債務管理見直し HD03104）を提出し、一方でRiksdagenは**5つの委員会報告書**（CU25 刑務所収容能力、SfU23 移民分岐、FiU23 Riksbank審査、AU15 ILO、CU29 EV充電）を受理し、**野党からの16件の質問書**（12件はS党提出）を処理しました。過去72時間、野党は9つの議案に対して**20の対抗動議**を提出したのに対し、SDは**ゼロ**でした。統合的な像は、SDが完全なTidö規律を維持しながら**緊密に同期された選挙前遺産スプリント**を遂行する連立政権であり、Sが経済的くさびに攻撃を集中させ（燃料予算、中小企業の傷病手当費用補償）、V/MPが市民的自由と外交政策の側面を保持している姿です。Admiralty **A1** 文書の同一性と提出について；**B2** 戦略的解釈について。**ICD 203 準拠**。
+
+### 🧭 このブリーフが支援する3つの決定
+
+1. **編集上のリード選択** — 夜間ニュースのリードは、単一の dok_id ではなく*選挙前遺産スプリント*の枠組み（KJ-1）を使用すべきです。文書タイプを横断するパターンこそがニュースだからです。
+2. **将来監視の優先順位付け** — HD03253/HD01FiU23のFiUカレンダーと HD03252 の JuU カレンダーが今後14日間の最重要圧力点です（IT-1…IT-3、`forward-indicators.md` 参照）。
+3. **連立安定シグナル** — SDの9議案に対するゼロ対抗動議は、Tidöブロックが夏休み前まで構造的に健全であることを確認します；LがL主要大臣職から不在であることが続いています（`coalition-mathematics.md §Intra-coalition load` 参照）。
+
+### ⏱ 60秒読み
+
+- **量**: 4議案 + 5委員会報告書 + 20動議 + 16質問書 = **4月24日サイクルウィンドウ内の活動中の Riksdag 文書45件**。
+- **主要ニュース**: 選挙前遺産スプリント — クリステション政権がTidöアジェンダを2026年9月前の可視的な施行に変換。
+- **最重要事項**: HD03252（勾留中者給付、DIW 3.8、市民的自由の論点）、HD03253（EU銀行、DIW 3.8、財政システム的）、HD01CU25（刑務所収容能力、DIW 85、納品リスク）、HD10447（S傷病手当質問書、DIW 3.85、経済くさび）。
+- **SDシグナル**: **ゼロ**の対抗動議 — 完全なTidö規律；移民問題での右翼側面からの反対を排除。
+- **Sシグナル**: 16件中12件の質問書（75%）— 野党が政府の経済的実績にストレステスト。
+- **V/MPシグナル**: 独自の市民的自由くさび（HD024091、HD024096）と外交政策くさび（MP武器輸出禁止）— 左派ブロックの狭いが恒久的なくさびを形成。
+- **Cシグナル**: 5法案への*手続き強化*の枠組みによる動議 — ブルジョワ志向の有権者へのポジショニング。
+
+### 🔮 最重要将来トリガー（72時間）
+
+**FT-1 · 2026-04-27（FiU委員会カレンダー）**: HD03253 EUバンキングパッケージに関する最初のFiU公聴会により、夏休み中の採択に向けた委員会のタイムラインが明らかになります。5月を超えての遅延はEUの移植リスクを示します（→ `scenario-analysis.md` のシナリオ S3）。
+
+### 📊 主要意思決定マトリクス
+
+| 決定 | 担当 | トリガー | 期限 | 下流への影響 |
+|------|------|---------|------|------------|
+| HD03253 リード記事の枠組み | 編集部 | FiU公聴会公開 | 2026-04-27 | リード + 72時間将来監視 |
+| HD03252 市民的自由の角度を準備 | 編集部 | ECHR判例調査 | 2026-05-01 | くさび記事 + ECHRコンテキスト |
+| HD03252 施行の将来監視 | 編集部 | Riksdag 投票 ≥ 2026年8月1日 | 2026-08-01 | 事実に基づくフォローアップ |
+
+### リスク概要
+
+- **第1層（システム的）**: HD03253 移植遅延 → EU違反リスク；HD01FiU23 Riksbank 独立性議論。
+- **第2層（政治的）**: HD03252 ECHR/ECtHR 権利上訴；S/V/MPによる燃料の気候的枠組み。
+- **第3層（運用上）**: HD03256 執行能力；HD01CU25 刑務所収容能力低下 ≥ 10% は連立政権の犯罪ナラティブを逆転させる。
+
+**証拠基盤**: 19件の一次資料 Riksdag 文書 + 4つの姉妹フォルダからの文書タイプ横断パターン。単一ソース依存性は `sibling executive-brief.md` とのクロスバリデーションおよびステークホルダーロールの確認により軽減されています。`methodology-reflection.md §ICD 203 compliance audit` 参照。
+
+### 🧠 信頼度と仮定
+
+- **高 (A1)**: 文書の同一性、提出物、政党帰属、委員会への回付。
+- **中 (B2)**: 選挙前スプリントの物語的枠組み（戦略的解釈）。
+- **低 (C3)**: Handelsbanken/SEBへの特定のRWA影響の大きさ（QISはまだ未公開）。
+
+**主要仮定（`methodology-reflection.md` に従い次サイクルで確認にフラグ付け）**: Tidö連立政権の夏休みタイムラインが維持されること — 連立危機（例：HD03252の比例性についてのL–KD）が生じた場合、スプリントは秋に崩壊し、選挙の枠組みを再形成します。
+
+### 🔗 関連ファイル
+
+- [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/synthesis-summary.md) — 統合的な全体像
+- [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/intelligence-assessment.md) — 主要判断 + PIR（ICD-203）
+- [scenario-analysis.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/scenario-analysis.md) — 確率付き4シナリオ
+- [forward-indicators.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/forward-indicators.md) — 4つの時間軸にわたる10以上の日付付きトリガー
+- [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/risk-assessment.md) — 5次元登録
+- [coalition-mathematics.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/coalition-mathematics.md) — 議席数 + Sainte-Laguë
+- [methodology-reflection.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/methodology-reflection.md) — 実行監査 + ICD 203 準拠
+
+<!-- source-sha: f7b237c366726abf3d6a4a68b0b9f63ef9205ac0 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling · **분류**: 공개 OSINT · **신뢰도**: 높음 (B2) · **실행 모드**: 티어 C 집계
+
+### 🎯 BLUF
+
+2026년 4월 24일, 크리스터손 정부는 **선거 전 4개 법안 유산 패키지**（EU 은행 패키지 HD03253, 구속 피의자 급여 제한 HD03252, 운행기록장치 집행 HD03256, 채무 관리 검토 HD03104）를 제출했고, 한편 Riksdagen은 **5개 위원회 보고서**（CU25 교도소 수용 능력, SfU23 이민 분기, FiU23 Riksbank 검토, AU15 ILO, CU29 전기차 충전）를 접수하고 **야당의 16개 질문서**（12개는 S 제출）를 처리했습니다. 이전 72시간 동안, 야당은 9개 법안에 대해 **20개의 반대 동의**를 제출한 반면 SD는 **0개**를 제출했습니다. 통합된 그림은 SD가 완전한 Tidö 규율을 유지하면서 **긴밀하게 동기화된 선거 전 유산 스프린트**를 수행하는 연립정부이며, S는 경제적 쐐기（연료 예산, 중소기업 병가 비용 보상）에 공격을 집중하고 V/MP는 시민적 자유 및 외교 정책 측면을 유지하고 있습니다. Admiralty **A1** 문서 신원 및 제출에 대해; **B2** 전략적 해석에 대해. **ICD 203 준수**.
+
+### 🧭 이 브리핑이 지원하는 3가지 결정
+
+1. **편집 리드 선택** — 저녁 뉴스의 리드는 단일 dok_id가 아닌 *선거 전 유산 스프린트* 프레임（KJ-1）을 사용해야 합니다. 문서 유형 간 패턴이 뉴스이기 때문입니다.
+2. **미래 모니터링 우선순위 지정** — HD03253/HD01FiU23에 대한 FiU 캘린더와 HD03252에 대한 JuU 캘린더가 향후 14일의 가장 중요한 압박 지점입니다（IT-1…IT-3, `forward-indicators.md` 참조）.
+3. **연립 안정 신호** — SD의 9개 법안에 대한 0개 반대 동의는 Tidö 블록이 여름 휴회까지 구조적으로 건전함을 확인합니다; L이 주요 장관직에서 부재한 상태가 지속됩니다（`coalition-mathematics.md §Intra-coalition load` 참조）.
+
+### ⏱ 60초 읽기
+
+- **양**: 4개 법안 + 5개 위원회 보고서 + 20개 동의 + 16개 질문서 = **4월 24일 주기 창에서 45개의 활성 Riksdag 문서**.
+- **주요 뉴스**: 선거 전 유산 스프린트 — 크리스터손 정부가 Tidö 의제를 2026년 9월 이전에 가시적인 집행으로 전환.
+- **최고 가중치 항목**: HD03252（구속 피의자 급여, DIW 3.8, 시민적 자유 갈등 지점）, HD03253（EU 은행, DIW 3.8, 재정 시스템적）, HD01CU25（교도소 수용 능력, DIW 85, 납품 위험）, HD10447（S 병가 질문서, DIW 3.85, 경제적 쐐기）.
+- **SD 신호**: **0개** 반대 동의 — 완전한 Tidö 규율; 이민에 대한 우익 측면 반대 배제.
+- **S 신호**: 16개 중 12개 질문서（75%）— 야당이 정부 경제 실적에 스트레스 테스트.
+- **V/MP 신호**: 자체 시민적 자유 쐐기（HD024091, HD024096）와 외교 정책 쐐기（MP 무기 수출 금지）— 좌파 블록의 좁지만 지속적인 쐐기 형성.
+- **C 신호**: *절차 강화* 프레임으로 5개 법안에 대한 동의 — 시민 성향 유권자를 위한 포지셔닝.
+
+### 🔮 최우선 미래 트리거（72시간）
+
+**FT-1 · 2026-04-27（FiU 위원회 캘린더）**: HD03253 EU 은행 패키지에 관한 첫 번째 FiU 청문회는 여름 휴회 중 채택을 위한 위원회의 일정을 드러낼 것입니다. 5월 이후 지연은 EU 이행 위반 위험을 신호합니다（→ `scenario-analysis.md`의 시나리오 S3）.
+
+### 📊 핵심 의사결정 매트릭스
+
+| 결정 | 담당 | 트리거 | 기한 | 하류 영향 |
+|------|------|--------|------|---------|
+| HD03253 리드 기사 프레임 | 편집부 | FiU 청문회 공개 | 2026-04-27 | 리드 + 72시간 미래 감시 |
+| HD03252 시민적 자유 각도 준비 | 편집부 | ECHR 판례 연구 | 2026-05-01 | 쐐기 기사 + ECHR 맥락 |
+| HD03252 발효 미래 감시 | 편집부 | Riksdag 투표 ≥ 2026년 8월 1일 | 2026-08-01 | 사실 기반 후속 조치 |
+
+### 위험 요약
+
+- **1단계（시스템적）**: HD03253 이행 지연 → EU 위반 노출; HD01FiU23 Riksbank 독립성 논쟁.
+- **2단계（정치적）**: HD03252 ECHR/ECtHR 권리 과제; S/V/MP의 연료 기후 프레임.
+- **3단계（운영적）**: HD03256 집행 능력; HD01CU25 교도소 수용 능력 ≥ 10% 하락은 연립정부의 범죄 서사를 역전시킬 것.
+
+**증거 기반**: 19개의 1차 자료 Riksdag 문서 + 4개의 형제 폴더에서 온 문서 유형 간 패턴. 단일 소스 의존성은 `sibling executive-brief.md` 파일과 이해관계자 역할 확인을 통한 교차 검증으로 완화됩니다. `methodology-reflection.md §ICD 203 compliance audit` 참조.
+
+### 🧠 신뢰도 및 가정
+
+- **높음 (A1)**: 문서 신원, 제출, 정당 귀속, 위원회 회부.
+- **중간 (B2)**: 선거 전 스프린트 서사적 프레임（전략적 해석）.
+- **낮음 (C3)**: Handelsbanken/SEB에 대한 특정 RWA 영향 규모（QIS 미공개）.
+
+**핵심 가정（`methodology-reflection.md`에 따라 다음 주기 확인에 플래그 지정）**: Tidö 연립정부의 여름 휴회 일정이 유지된다는 것 — 연립 위기（예: HD03252 비례성에 관한 L–KD）가 발생할 경우, 스프린트는 가을로 붕괴되고 선거 프레임을 재형성합니다.
+
+### 🔗 관련 파일
+
+- [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/synthesis-summary.md) — 통합 그림
+- [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/intelligence-assessment.md) — 핵심 판단 + PIR（ICD-203）
+- [scenario-analysis.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/scenario-analysis.md) — 확률이 있는 4개 시나리오
+- [forward-indicators.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/forward-indicators.md) — 4개 지평에 걸친 10개 이상의 날짜 지정 트리거
+- [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/risk-assessment.md) — 5차원 등록
+- [coalition-mathematics.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/coalition-mathematics.md) — 의석 수 + Sainte-Laguë
+- [methodology-reflection.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/methodology-reflection.md) — 실행 감사 + ICD 203 준수
+
+<!-- source-sha: f7b237c366726abf3d6a4a68b0b9f63ef9205ac0 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling · **Classificatie**: Openbare OSINT · **Betrouwbaarheid**: HOOG (B2) · **Uitvoeringsmodus**: Tier C-aggregatie
+
+### 🎯 BLUF
+
+Op 24 april 2026 diende de regering-Kristersson een **vierwetwetsvoorstel-pre-verkiezingserfenispakket** in (EU-bankenpakket HD03253, beperking van uitkeringen voor voorlopig gehechten HD03252, handhaving van tachografen HD03256, herziening van schuldenbeheer HD03104), terwijl de Riksdag **vijf commissierapporten** ontving (CU25 gevangeniscapaciteit, SfU23 migratiesplitsing, FiU23 herziening van de Riksbank, AU15 ILO, CU29 EV-laden) en **16 interpellaties van de oppositie** behandelde (12 ingediend door S). In de voorafgaande 72 uur diende de oppositie **20 tegenmotieven** in tegen 9 proposities, terwijl SD er **nul** indiende. Het geïntegreerde beeld is dat van een coalitie die een **nauw gesynchroniseerde pre-verkiezingserfenissprint** uitvoert, waarbij SD volledige Tidö-discipline handhaaft, terwijl S aanvallen concentreert op economische wiggen (brandstofbudget, vergoeding ziektekosten MKB) en V/MP de flanken van burgerrechten en buitenlands beleid bezet houdt. Admiralty **A1** op documentidentiteit en ingediende stukken; **B2** op strategische interpretatie. **ICD 203-conform**.
+
+### 🧭 3 beslissingen die dit rapport ondersteunt
+
+1. **Redactionele keuze van hoofdartikel** — het avondnieuwshoofdstuk moet het kader van de *pre-verkiezingserfenissprint* (KJ-1) gebruiken, niet een individuele dok_id, omdat het transversale patroon het nieuwsitem is.
+2. **Prioritering van vooruitkijkende bewaking** — de FiU-kalender voor HD03253/HD01FiU23 en de JuU-kalender voor HD03252 zijn de belangrijkste drukpunten in de komende 14 dagen (IT-1…IT-3, zie `forward-indicators.md`).
+3. **Coalitie stabiliteitssignaal** — SDs nul tegenmotieven tegen 9 proposities bevestigt dat het Tidö-blok structureel intact is tot aan het zomerreces; Ls afwezigheid in hoofdministersrollen blijft voortduren (zie `coalition-mathematics.md §Intra-coalition load`).
+
+### ⏱ Lezen in 60 seconden
+
+- **Volume**: 4 proposities + 5 commissierapporten + 20 moties + 16 interpellaties = **45 actieve Riksdag-documenten** in het cyclusvenster van 24 april.
+- **Hoofdverhaal**: Pre-verkiezingserfenissprint — regering-Kristersson converteert de Tidö-agenda naar zichtbare handhaving vóór september 2026.
+- **Zwaarst wegende items**: HD03252 (uitkeringen voorlopig gehechten, DIW 3,8, breekpunt burgerrechten), HD03253 (EU-bank, DIW 3,8, systeemfiscaal), HD01CU25 (gevangeniscapaciteit, DIW 85, leveringsrisico), HD10447 (S-interpellatie ziekteverlof, DIW 3,85, economische wig).
+- **SD-signaal**: **nul** tegenmotieven — volledige Tidö-discipline; sluit rechtervleugel-oppositie over immigratie uit.
+- **S-signaal**: 12 van 16 interpellaties (75 %) — oppositie stresst de economische staat van dienst van de regering.
+- **V/MP-signaal**: Eigen burgerrechtsiggen (HD024091, HD024096) en buitenlandsbeleidswiggen (MP wapenexportverbod) — creëert smalle maar duurzame linkerblok-wig.
+- **C-signaal**: Moties over 5 wetsontwerpen met het kader *procedurele aanscherping* — positionering voor burgerschapsgezinde kiezers.
+
+### 🔮 Belangrijkste voorwaartse trigger (72 uur)
+
+**FT-1 · 2026-04-27 (FiU-commissiekalender)**: Eerste FiU-hoorzitting over HD03253 EU-bankenpakket zal het tijdschema van de commissie voor aanneming tijdens het zomerreces onthullen. Een vertraging voorbij mei signaleert het EU-transpositionsbrekingsrisico (→ scenario S3 in `scenario-analysis.md`).
+
+### 📊 Sleutelbeslissingsmatrix
+
+| Beslissing | Eigenaar | Trigger | Deadline | Stroomafwaarts |
+|-----------|---------|---------|----------|---------------|
+| Framing van HD03253 hoofdartikel | Redactie | FiU-hoorzitting gepubliceerd | 2026-04-27 | Hoofdartikel + 72 u vooruitkijken |
+| Voorbereiding HD03252 burgerrechtshoek | Redactie | EVRM-precedentonderzoek | 2026-05-01 | Wigverhaal + EVRM-context |
+| Vooruitkijkende bewaking HD03252 inwerkingtreding | Redactie | Riksdag-stemming ≥ 1 aug. 2026 | 2026-08-01 | Feitenbaseerde follow-up |
+
+### Risicosamenvatting
+
+- **Niveau 1 (systemisch)**: HD03253-transpositionvertraging → EU-inbreukblootstelling; HD01FiU23-debat over onafhankelijkheid Riksbank.
+- **Niveau 2 (politiek)**: HD03252 EVRM/EHRM-rechtenmiddeluitdaging; brandstofklimaatframing door S/V/MP.
+- **Niveau 3 (operationeel)**: HD03256-handhavingscapaciteit; HD01CU25-gevangeniscapaciteitsdaling ≥ 10 % zou het criminaliteitsverhaal van de coalitie omkeren.
+
+**Evidentiebasis**: 19 Riksdag-documenten uit primaire bronnen + transversale patronen uit 4 zusterordners. Enkele-bronafhankelijkheid wordt gemitigeerd door kruisvalidatie met `sibling executive-brief.md` en verificatie van stakeholder-rollen. Zie `methodology-reflection.md §ICD 203 compliance audit`.
+
+### 🧠 Betrouwbaarheid en aannames
+
+- **HOOG (A1)**: Documentidentiteit, indieningen, partijattributie, commissieroutering.
+- **MIDDEL (B2)**: Narratieve framing van de pre-verkiezingssprint (strategische interpretatie).
+- **LAAG (C3)**: Specifieke RWA-impactgrootten voor Handelsbanken/SEB (QIS nog niet gepubliceerd).
+
+**Kernassumptie (gemarkeerd voor verificatie in de volgende cyclus per `methodology-reflection.md`)**: Dat het zomerreces-tijdschema van de Tidö-coalitie standhoudt — als er een coalitiecrisis ontstaat (bijv. L–KD over HD03252-proportionaliteit), stortin de sprint in de herfst en wordt het verkiezingskader hervormd.
+
+### 🔗 Gerelateerde bestanden
+
+- [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/synthesis-summary.md) — geïntegreerd beeld
+- [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/intelligence-assessment.md) — sleutelevaluaties + PIR's (ICD-203)
+- [scenario-analysis.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/scenario-analysis.md) — 4 scenario's met kansen
+- [forward-indicators.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/forward-indicators.md) — 10+ gedateerde triggers over 4 horizonten
+- [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/risk-assessment.md) — 5-dimensieregister
+- [coalition-mathematics.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/coalition-mathematics.md) — zetelverdeling + Sainte-Laguë
+- [methodology-reflection.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/methodology-reflection.md) — uitvoeringsaudit + ICD 203-conformiteit
+
+<!-- source-sha: f7b237c366726abf3d6a4a68b0b9f63ef9205ac0 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling · **Klassifisering**: Offentlig OSINT · **Konfidensgrad**: HØY (B2) · **Kjøremodus**: Nivå C-aggregering
+
+### 🎯 BLUF
+
+Den 24. april 2026 la Kristersson-regjeringen frem en **firefattet forvalgspakke** (EU-bankpakken HD03253, restriksjon på varetektsfengslede ytelser HD03252, håndhevelse av fartsskriver HD03256, gjeldshåndteringsgjennomgang HD03104), mens Riksdagen mottok **fem komitérapporter** (CU25 fengselskapasitet, SfU23 migrasjonsgreining, FiU23 Riksbankgjennomgang, AU15 ILO, CU29 EV-lading) og behandlet **16 opposisjonsinterpellasjoner** (12 innlevert av S). I de foregående 72 timene leverte opposisjonen **20 motforslag** mot 9 proposisjoner, der SD leverte **null**. Det samlede bildet er en koalisjon som gjennomfører en **tett synkronisert forvalgssprint** med SD som opprettholder full Tidö-disiplin, mens S konsentrerer angrep på økonomiske kiler (drivstoffbudsjett, SME-sykepengegodtgjørelse) og V/MP holder borgerrettighets- og utenrikspolitikkflanken. Admiralty **A1** på dokumentidentitet og innleveringer; **B2** på strategisk tolkning. **ICD 203-kompatibel**.
+
+### 🧭 3 beslutninger dette sammendraget støtter
+
+1. **Redaksjonelt valg av lede** — kveldsnyhetens ledestory bør bruke rammen *forvalgssprint* (KJ-1), ikke en enkelt dok_id, fordi mønsteret på tvers av dokumenttyper er nyhetene.
+2. **Prioritering av fremovervakten** — FiU-kalenderen for HD03253/HD01FiU23 og JuU-kalenderen for HD03252 er de neste 14 dagenes viktigste pressbegreper (IT-1…IT-3, se `forward-indicators.md`).
+3. **Koalisjonsstabilitetssignal** — SD:s null motforslag mot 9 proposisjoner bekrefter at Tidö-blokken er strukturelt intakt gjennom sommerferien; L:s fravær fra ledende ministerstillinger vedvarer (se `coalition-mathematics.md §Intra-coalition load`).
+
+### ⏱ 60 sekunders lesning
+
+- **Volum**: 4 proposisjoner + 5 innstillinger + 20 forslag + 16 interpellasjoner = **45 aktive Riksdag-dokumenter** i 24-april-syklusvinduet.
+- **Ledende nyhet**: Forvalgssprint — Kristersson-regjeringen konverterer Tidö-dagsordenen til synlig håndhevelse frem mot september 2026.
+- **Tyngste poster**: HD03252 (varetektsfengslede ytelser, DIW 3,8, borgerrettighetsbrekkpunkt), HD03253 (EU-bank, DIW 3,8, systemfiskalt), HD01CU25 (fengselskapasitet, DIW 85, leveringsrisiko), HD10447 (S sykepenge-interpellasjon, DIW 3,85, økonomisk kile).
+- **SD-signal**: **null** motforslag — full Tidö-disiplin; utelukker høyreflankeopposisjon om innvandring.
+- **S-signal**: 12 av 16 interpellasjoner (75 %) — opposisjonen stresser regjeringens økonomiske resultater.
+- **V/MP-signal**: Egne borgerrettighetskilr (HD024091, HD024096) og utenrikspolitiske kiler (MP krigsmateriellforbud) — skaper smal men varig venstreblokk-kile.
+- **C-signal**: Forslag til 5 lovforslag med rammen *prosedyrestramning* — posisjonering mot borgerlig-nysgjerrige velgere.
+
+### 🔮 Viktigste fremtidsutløser (72 timer)
+
+**FT-1 · 2026-04-27 (FiU-komiténkalender)**: Første FiU-høring om HD03253 EU-bankpakken vil avsløre komitéens tidsplan for vedtakelse under sommerferien. En forsinkelse utover mai signalerer EU-transposisjonsrisikoeksponering (→ scenario S3 i `scenario-analysis.md`).
+
+### 📊 Nøkkelbeslutningsmatrise
+
+| Beslutning | Eier | Utløser | Frist | Nedstrøms |
+|------------|------|---------|-------|-----------|
+| Innramming av HD03253-lederstory | Redaksjon | FiU-høring publisert | 2026-04-27 | Lede + 72 t fremovervakt |
+| Forbered HD03252 borgerrettighetsvinkel | Redaksjon | ECHR-prejudikatforskning | 2026-05-01 | Kilhistorie + ECHR-kontekst |
+| Fremovervakt HD03252-ikrafttredelse | Redaksjon | Riksdagsvotering ≥ 1. aug 2026 | 2026-08-01 | Faktabasert oppfølging |
+
+### Risikosammendrag
+
+- **Nivå 1 (systemisk)**: HD03253 transposjonsforsinkelse → EU-bruddeksponering; HD01FiU23 debatt om Riksbankens uavhengighet.
+- **Nivå 2 (politisk)**: HD03252 ECHR/ECtHR-rettighetsutfordring; drivstoffklimarammen fra S/V/MP.
+- **Nivå 3 (operasjonelt)**: HD03256 håndhevelseskapasitet; HD01CU25 fengselskapasitetsfall ≥ 10 % ville invertere koalisjonens kriminalitetsfortelling.
+
+**Evidensgrunnlag**: 19 primærkilds Riksdag-dokumenter + mønstre på tvers av dokumenttyper fra 4 søskende-mapper. Enkeltkildebrytning avbøtes av kryssprosessvalidering med `sibling executive-brief.md` og rolleverifisering av interessenter. Se `methodology-reflection.md §ICD 203 compliance audit`.
+
+### 🧠 Konfidensgrad og forutsetninger
+
+- **HØY (A1)**: Dokumentidentitet, innleveringer, partiattribusjon, komitéruting.
+- **MIDDELS (B2)**: Narrativ ramme for forvalgssprint (strategisk tolkning).
+- **LAV (C3)**: Spesifikke RWA-konsekvensers magnituder for Handelsbanken/SEB (QIS ikke publisert ennå).
+
+**Nøkkelforutsetning (flagget for neste-syklus sjekk per `methodology-reflection.md`)**: At Tidö-koalisjonens sommerferie-tidsplan holder — hvis en koalisjonskrise oppstår (f.eks. L–KD om HD03252-proporsjonalitet), kollapser sprinten til høsten og omformer valgrammen.
+
+### 🔗 Relaterte filer
+
+- [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/synthesis-summary.md) — integrert bilde
+- [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/intelligence-assessment.md) — nøkkelvurderinger + PIR-er (ICD-203)
+- [scenario-analysis.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/scenario-analysis.md) — 4 scenarier med sannsynligheter
+- [forward-indicators.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/forward-indicators.md) — 10+ daterte utløsere over 4 horisonter
+- [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/risk-assessment.md) — 5-dimensjonsregister
+- [coalition-mathematics.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/coalition-mathematics.md) — mandattall + Sainte-Laguë
+- [methodology-reflection.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/methodology-reflection.md) — kjøringsrevisjon + ICD 203-overholdelse
+
+<!-- source-sha: f7b237c366726abf3d6a4a68b0b9f63ef9205ac0 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling · **Klassificering**: Offentlig OSINT · **Konfidensgrad**: HÖG (B2) · **Körläge**: Nivå C-aggregering
+
+### 🎯 BLUF
+
+Den 24 april 2026 lade Kristersson-regeringen fram ett **fyra-lagars förvalspaket** (EU-bankpaketet HD03253, restriktioner för häktades förmåner HD03252, kontroll av färdskrivare HD03256, skuldhanteringsöversyn HD03104), medan riksdagen tog emot **fem utskottsbetänkanden** (CU25 fängelsekapacitet, SfU23 migrationsbifurkation, FiU23 Riksbanksgranskning, AU15 ILO, CU29 EV-laddning) och behandlade **16 oppositionsinterpellationer** (12 inlämnade av S). Under de föregående 72 timmarna hade oppositionen lämnat in **20 motmotioner** mot 9 propositioner, varav SD lämnade in **noll**. Den samlade bilden är en koalition som genomför en **tätt synkroniserad förvalslegacysprint** med SD som upprätthåller full Tidö-disciplin, medan S koncentrerar attacker på ekonomiska kilar (drivmedel, sjuklönekostnadsersättning för SME) och V/MP håller flanken för medborgerliga fri- och rättigheter och utrikespolitik. Admiralty **A1** för dokumentidentitet och inlämningar; **B2** för strategisk tolkning. **ICD 203-kompatibel**.
+
+### 🧭 3 beslut som detta underlag stöder
+
+1. **Redaktionellt valande av ledare** — kvällsnyhetens ledare bör ha *förvalslegacysprinten* som ram (KJ-1), inte ett enskilt dok_id, eftersom mönstret över dokumenttyper är den egentliga nyheten.
+2. **Prioritering av framtidsbevakning** — FiU:s kalender för HD03253/HD01FiU23 och JuU:s kalender för HD03252 är de viktigaste trycktidpunkterna de kommande 14 dagarna (IT-1…IT-3, se `forward-indicators.md`).
+3. **Koalitionsstabilitetssignal** — SD:s noll motioner mot 9 propositioner bekräftar att Tidöblocket är strukturellt intakt inför sommaruppehållet; L:s frånvaro från ledande ministerposter kvarstår (se `coalition-mathematics.md §Intra-coalition load`).
+
+### ⏱ 60 sekunders läsning
+
+- **Volym**: 4 prop + 5 betänkanden + 20 motioner + 16 interpellationer = **45 aktiva riksdagsdokument** i 24-april-cykelfönstret.
+- **Ledande nyhet**: Förvalslegacysprint — Kristersson-regeringen omvandlar Tidöagendan till synlig verkställighet inför september 2026.
+- **Tyngst vägande objekt**: HD03252 (häktade förmåner, DIW 3,8, kränkningspunkt för medborgerliga fri- och rättigheter), HD03253 (EU-bank, DIW 3,8, systemfiskal), HD01CU25 (fängelsekapacitet, DIW 85, leveransrisk), HD10447 (S sjuklöna interpellation, DIW 3,85, ekonomisk kil).
+- **SD-signal**: **noll** motmotioner — full Tidö-disciplin; utesluter högerflankopposition i invandringsfrågor.
+- **S-signal**: 12 av 16 interpellationer (75 %) — oppositionen testar stresstoleransens gränser för regeringens ekonomiska resultat.
+- **V/MP-signal**: Egna kilar för medborgerliga fri- och rättigheter (HD024091, HD024096) och utrikespolitik (MP krigsmaterielförbud) — skapar smal men hållbar rödgrön kil.
+- **C-signal**: Motioner om 5 lagförslag med ramen *procedurskärpning* — positionering mot borgerliga väljare.
+
+### 🔮 Viktigaste framtidsutlösare (72 timmar)
+
+**FT-1 · 2026-04-27 (FiU:s utskottskalender)**: Första FiU-utfrågning om HD03253 EU-bankpaketet avslöjar utskottets tidtabell för antagande under sommaruppehållet. En fördröjning bortom maj signalerar risk för EU-transpositionsbrott (→ scenario S3 i `scenario-analysis.md`).
+
+### 📊 Nyckelbeslutsmatris
+
+| Beslut | Ägare | Utlösare | Deadline | Konsekvens |
+|--------|-------|---------|----------|-----------|
+| Inramning av ledande HD03253-nyhet | Redaktion | FiU-utfrågning publicerad | 2026-04-27 | Ledare + 72 h framtidsbevakning |
+| Förbered HD03252 medborgerlig frihetssidling | Redaktion | Forskning om ECHR-prejudikat | 2026-05-01 | Kilhistoria + ECHR-kontext |
+| Framtidsbevakning HD03252 ikraftträdande | Redaktion | Riksdagsomröstning ≥ 1 aug 2026 | 2026-08-01 | Faktabaserad uppföljning |
+
+### Risksammanfattning
+
+- **Nivå 1 (systemisk)**: HD03253 transpositionsfördröjning → EU:s överträdelse; HD01FiU23 debatt om Riksbankens oberoende.
+- **Nivå 2 (politisk)**: HD03252 ECHR/ECtHR-rättighetsöverklagande; drivmedelsramens klimatinramning av S/V/MP.
+- **Nivå 3 (operationell)**: HD03256 verkställighetskapacitet; HD01CU25 fängelsekapacitetsnedgång ≥ 10 % skulle invertera koalitionens brottsnarration.
+
+**Evidensunderlag**: 19 primärkällors riksdagsdokument + mönster över dokumenttyper från 4 syskonmappar. Enberoende av en enda källa mildras av korsvalidering med `sibling executive-brief.md` och rollverifiering av intressenter. Se `methodology-reflection.md §ICD 203 compliance audit`.
+
+### 🧠 Konfidensgrad och antaganden
+
+- **HÖG (A1)**: Dokumentidentitet, inlämningar, partiattribution, utskottsremittering.
+- **MEDIUM (B2)**: Narrativ ram för förvalssprints (strategisk tolkning).
+- **LÅG (C3)**: Specifika RWA-konsekvensers magnitud för Handelsbanken/SEB (QIS ej publicerad ännu).
+
+**Nyckelantagande (flaggat för nästa cykels kontroll per `methodology-reflection.md`)**: Att Tidökoalitionens tidtabell för sommaruppehållet håller — om en koalitionskris uppstår (t.ex. L–KD om HD03252-proportionalitet), kollapsar sprinten till hösten och omformar valramverket.
+
+### 🔗 Tillhörande filer
+
+- [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/synthesis-summary.md) — integrerad bild
+- [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/intelligence-assessment.md) — nyckelbedömningar + PIR:er (ICD-203)
+- [scenario-analysis.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/scenario-analysis.md) — 4 scenarier med sannolikheter
+- [forward-indicators.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/forward-indicators.md) — 10+ daterade utlösare över 4 horisonter
+- [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/risk-assessment.md) — 5-dimensioners register
+- [coalition-mathematics.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/coalition-mathematics.md) — mandatantal + Sainte-Laguë
+- [methodology-reflection.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/methodology-reflection.md) — körrevision + ICD 203-efterlevnad
+
+<!-- source-sha: f7b237c366726abf3d6a4a68b0b9f63ef9205ac0 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_zh.md -->
+
+**作者**：James Pether Sörling · **分类**：公开 OSINT · **置信度**：高 (B2) · **运行模式**：C 级聚合
+
+### 🎯 BLUF
+
+2026年4月24日，克里斯特松政府提交了**四项法案的选前遗产套餐**（EU银行套餐 HD03253、限制羁押者待遇 HD03252、行驶记录仪执法 HD03256、债务管理审查 HD03104），与此同时，Riksdagen 接收了**五份委员会报告**（CU25 监狱承载力、SfU23 移民分流、FiU23 Riksbank 审查、AU15 劳工组织、CU29 电动车充电），并处理了**16件反对党质询**（12件由 S 提交）。在此前72小时内，反对党针对9项议案提交了**20件对立动议**，而 SD 则提交了**零**件。综合来看，这是一个执行**紧密协调的选前遗产冲刺**的执政联盟，其中 SD 保持完全的 Tidö 纪律，而 S 将攻势集中于经济楔形议题（燃料预算、中小企业病假费用补偿），V/MP 则守住公民自由与外交政策侧翼。Admiralty **A1** 关于文件身份与提交；**B2** 关于战略解读。**符合 ICD 203**。
+
+### 🧭 本摘要支持的 3 项决策
+
+1. **编辑重点选择** — 晚间新闻的主打报道应采用*选前遗产冲刺*框架（KJ-1），而非单一 dok_id，因为跨文件类型的模式才是核心新闻。
+2. **前瞻监测优先级** — HD03253/HD01FiU23 的 FiU 日程和 HD03252 的 JuU 日程是未来14天最重要的压力节点（IT-1…IT-3，详见 `forward-indicators.md`）。
+3. **联盟稳定信号** — SD 对9项议案零对立动议，确认 Tidö 阵营在暑假前结构完整；L 在主要部长岗位上的缺席持续（详见 `coalition-mathematics.md §Intra-coalition load`）。
+
+### ⏱ 60秒速读
+
+- **体量**：4 项议案 + 5 份委员会报告 + 20 件动议 + 16 件质询 = **4月24日周期窗口内 45 份活跃的 Riksdag 文件**。
+- **主要新闻**：选前遗产冲刺 — 克里斯特松政府将 Tidö 议程转化为2026年9月前的可见执法行动。
+- **最高权重项目**：HD03252（羁押者待遇，DIW 3.8，公民自由引爆点）、HD03253（EU 银行，DIW 3.8，系统财政性）、HD01CU25（监狱承载力，DIW 85，交付风险）、HD10447（S 病假质询，DIW 3.85，经济楔形）。
+- **SD 信号**：**零**对立动议 — 完全的 Tidö 纪律；排除移民问题上的右翼侧翼反对。
+- **S 信号**：16件质询中的12件（75%）— 反对党对政府经济履历进行压力测试。
+- **V/MP 信号**：自身的公民自由楔形（HD024091、HD024096）和外交政策楔形（MP 武器出口禁令）— 形成左翼阵营狭窄但持久的楔形。
+- **C 信号**：以*程序收紧*框架对5项法案提出动议 — 面向具有资产阶级倾向选民的定位。
+
+### 🔮 首要前瞻触发因素（72小时）
+
+**FT-1 · 2026-04-27（FiU 委员会日程）**：首次 FiU 关于 HD03253 EU 银行套餐的听证将揭示委员会暑假期间通过的时间表。超过5月的延误将预示 EU 移植违规风险（→ `scenario-analysis.md` 中的情景 S3）。
+
+### 📊 关键决策矩阵
+
+| 决策 | 负责人 | 触发因素 | 截止日期 | 下游影响 |
+|------|--------|---------|---------|---------|
+| HD03253 主打报道框架 | 编辑部 | FiU 听证公布 | 2026-04-27 | 主打 + 72小时前瞻监测 |
+| 准备 HD03252 公民自由角度 | 编辑部 | ECHR 判例研究 | 2026-05-01 | 楔形报道 + ECHR 背景 |
+| 前瞻监测 HD03252 生效 | 编辑部 | Riksdag 表决 ≥ 2026年8月1日 | 2026-08-01 | 基于事实的后续跟踪 |
+
+### 风险摘要
+
+- **第1层（系统性）**：HD03253 移植延误 → EU 违规敞口；HD01FiU23 Riksbank 独立性争论。
+- **第2层（政治性）**：HD03252 ECHR/ECtHR 权利挑战；S/V/MP 的燃料气候框架。
+- **第3层（操作性）**：HD03256 执法能力；HD01CU25 监狱承载力下降 ≥ 10% 将逆转联盟的犯罪叙事。
+
+**证据基础**：19 份来自一手资料的 Riksdag 文件 + 4个姊妹文件夹的跨文件类型模式。通过与 `sibling executive-brief.md` 文件交叉验证及利益相关者角色核实，降低了单一来源依赖风险。详见 `methodology-reflection.md §ICD 203 compliance audit`。
+
+### 🧠 置信度与假设
+
+- **高 (A1)**：文件身份、提交、党派归属、委员会路由。
+- **中 (B2)**：选前冲刺叙事框架（战略解读）。
+- **低 (C3)**：Handelsbanken/SEB 特定 RWA 影响规模（QIS 尚未公布）。
+
+**关键假设（根据 `methodology-reflection.md` 标记在下一周期核查）**：Tidö 联盟暑假时间表维持不变 — 若出现联盟危机（例如 L–KD 就 HD03252 相称性问题），冲刺将崩溃至秋季并重塑选举框架。
+
+### 🔗 相关文件
+
+- [synthesis-summary.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/synthesis-summary.md) — 综合全貌
+- [intelligence-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/intelligence-assessment.md) — 关键判断 + PIR（ICD-203）
+- [scenario-analysis.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/scenario-analysis.md) — 含概率的4个情景
+- [forward-indicators.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/forward-indicators.md) — 跨4个时间层的10个以上日期触发因素
+- [risk-assessment.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/risk-assessment.md) — 五维度登记册
+- [coalition-mathematics.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/coalition-mathematics.md) — 席位统计 + Sainte-Laguë
+- [methodology-reflection.md](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/methodology-reflection.md) — 运行审计 + ICD 203 合规
+
+<!-- source-sha: f7b237c366726abf3d6a4a68b0b9f63ef9205ac0 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -2160,3 +3024,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/evening-analysis/executive-brief_zh.md)

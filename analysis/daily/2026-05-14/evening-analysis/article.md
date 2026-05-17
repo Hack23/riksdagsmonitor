@@ -6,7 +6,7 @@ date: 2026-05-14
 subfolder: evening-analysis
 slug: 2026-05-14-evening-analysis
 source_folder: analysis/daily/2026-05-14/evening-analysis
-generated_at: 2026-05-17T18:40:44.054Z
+generated_at: 2026-05-17T22:29:24.104Z
 language: en
 layout: article
 ---
@@ -101,6 +101,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1533,13 +1546,941 @@ For Tier-C synthesis, the following sibling analysis files were read in full:
 - analysis/daily/2026-05-14/interpellations/intelligence-assessment.md
 - analysis/daily/2026-05-14/interpellations/forward-indicators.md
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# اللحظة الدستورية السويدية وسباق ما قبل الانتخابات — استخبارات المساء، 14 مايو 2026
+
+**المؤلف**: James Pether Sörling  
+**التاريخ**: 2026-05-14  
+**التصنيف**: عام | **Admiralty**: B2 (موثوق؛ على الأرجح صحيح)  
+**مستوى الثقة**: عالٍ في التقارير الواقعية؛ متوسط في التوقعات الانتخابية  
+**القرب من الانتخابات**: ≤6 أشهر (سبتمبر 2026) — مضاعف DIW 1.5× نشط
+
+---
+
+### الملخص التنفيذي
+
+يتسم البروتوكول البرلماني السويدي ليوم 14 مايو 2026 بثلاث أزمات متشابكة ستحدد شكل انتخابات سبتمبر: حزمة تعديلات دستورية تاريخية (*vilande*) تحمي حقوق الإجهاض وتتيح إلغاء الجنسية (KU34)؛ ومواجهة في السياسة المتعلقة بالهجرة بين ائتلاف Tidö وكتلة المعارضة المنسقة S+C+V التي تطعن في أربعة مقترحات هجرة؛ وأزمة مساءلة وزارية حول تخفيضات المساعدات الإنمائية الضارة بالأطفال. وتشكّل هذه القضايا معاً ساحة المعركة السياسية لانتخابات 2026 — وستُختبر خيارات الحكومة اليوم في صناديق الاقتراع بعد 127 يوماً.
+
+---
+
+### القرارات التي تدعمها هذه الوثيقة
+
+1. **المتابعة الدستورية**: هل سيصمد قرار KU34 *vilande* أمام التغيير في التركيبة ما بعد الانتخابات؟ (65% السيناريو الأساسي: نعم، إذا نجا الائتلاف الحالي؛ 20% جزئي؛ 15% فشل)
+2. **المخاطر القانونية للهجرة**: هل ينبغي للفرق القانونية/الامتثال الاستعداد لطعن أمام المحكمة الأوروبية لحقوق الإنسان ضد HD03267 (الترحيل الأمني) ومراجعة Lagrådet للمقترح 265 (احتجاز الأطفال)؟
+3. **التعرض لمساءلة المساعدات الإنمائية الرسمية**: كيف سيؤثر رد الوزير Dousa على HD10492 (الموعد النهائي 2026-05-29) على مصداقية الحكومة في مجال حقوق الإنسان قبل الانتخابات؟
+
+---
+
+### نقاط الاستخبارات في 60 ثانية
+
+- 🏛️ **التعديل الدستوري** (KU34): اعتُمد *vilande* في 11 مايو 2026 — الدستور السويدي في طريقه الآن لحماية حقوق الإجهاض وإتاحة إلغاء الجنسية لأعضاء العصابات. القراءة الثانية مطلوبة بعد انتخابات سبتمبر 2026. تاريخي — أهم تعديل دستوري منذ 2010–2011.
+- 🛂 **معركة الهجرة**: 15 اقتراحاً معارضاً قُدِّم في 13 مايو 2026 من S و C و V يطعن في مقترحات الهجرة الحكومية 262–265. الحكومة تملك 176/349 مقعداً — التمرير محتمل، لكن المقترح 265 (احتجاز الأطفال) ينطوي على مخاطر CRC المادة 37 في Lagrådet وتنازل حكومي محتمل.
+- 🌍 **مساءلة المساعدات الإنمائية الرسمية**: مطالبات V الاستجوابية HD10492–10493 تطلب من Dousa توضيح لماذا لم تُجرَ *barnkonsekvensanalys* قبل أكبر إعادة هيكلة للمساعدات الإنمائية في تاريخ السويد، التي أغلقت برامج للأطفال سوء التغذية والصحة الأمومية في مناطق النزاع.
+- 💻 **سباق الحكومة**: ثلاثة مقترحات (HD03250 الهوية الرقمية، HD03261 Skatteverket، HD03267 الترحيل الأمني) تشكّل البيان الحوكمي النهائي لحكومة Tidö قبل الانتخابات. يُرجَّح اعتمادها جميعاً قبل سبتمبر.
+- 📊 **السياق الاقتصادي**: نمو الناتج المحلي الإجمالي السويدي +1.1% (2025)، +2.0% متوقع (2026) وفق IMF WEO أبريل-2026. الدين العام 35.9% من الناتج المحلي الإجمالي — قاعدة مالية محافظة ترسّخ سرديةالكفاءة الحكومية.
+
+---
+
+### أهم المحفزات المستقبلية
+
+**⚠️ مراقبة حرجة — 2026-05-29**: رد Dousa على HD10492 بشأن الأطفال والمساعدات الإنمائية. هذا الرد الوزاري المنفرد إما: (أ) سيخلق أزمة مساءلة كبرى قبيل الانتخابات إن كان دفاعياً، أو (ب) سيفكّك ضغط المنظمات غير الحكومية بولاية تقييم Sida موثوقة. الاحتمال الحالي لالتزام جوهري: **منخفض (20%)**.
+
+---
+
+### ملخص مستوى الثقة
+
+| المجال | الثقة | الأساس |
+|--------|-------|--------|
+| المآل الدستوري لـ KU34 | متوسط | متطلب القراءة المزدوجة؛ عدم اليقين ما بعد الانتخابات |
+| تمرير قرارات الهجرة | عالٍ | أغلبية حكومية مضمونة؛ SD مستقر |
+| الرد الوزاري على المساعدات الإنمائية | منخفض-متوسط | لا توجد التزامات سابقة من Dousa |
+| التأثير الانتخابي | متوسط | استطلاعات متسقة لكن 127 يوماً لا تزال متبقية |
+
+```mermaid
+graph LR
+    KU34["🏛️ KU34 تعديل دستوري<br>إجهاض + جنسية<br>vilande 2026-05-11"]
+    MIG["🛂 معركة الهجرة<br>15 اقتراح vs مقترحات 262-265<br>S+C+V vs Tidö"]
+    ODA["🌍 مساءلة المساعدات<br>HD10492+10493<br>أطفال + تخفيضات"]
+    ELEC["🗳️ سبتمبر 2026<br>انتخابات"]
+    GOV["حكومة Tidö<br>السباق الأخير"]
+    KU34 --> ELEC
+    MIG --> ELEC
+    ODA --> ELEC
+    GOV --> KU34
+    GOV --> MIG
+    style KU34 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style MIG fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style ODA fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style ELEC fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+    style GOV fill:#0a0e27,stroke:#ff006e,color:#ff006e
+```
+
+<!-- source-sha: da8028e83f1cd6c0437e57058cd843114b4719fa -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-05-14  
+**Klassificering**: OFFENTLIG | **Admiralty**: B2 (Pålidelig; sandsynligvis sand)  
+**Konfidensniveau**: HØJ for faktarapportering; MIDDEL for valgprognoser  
+**Valnærhed**: ≤6 måneder (september 2026) — 1,5× DIW-multiplikator aktiv
+
+---
+
+### Resumé
+
+Danmarks parlamentariske protokol for 14. maj 2026 er præget af tre sammenvævede kriser, der vil forme septembervalget: en historisk grundlovspakke (*vilande*) der beskytter abortrettigheder og muliggør fratagelse af statsborgerskab (KU34); en migrationspolitisk konfrontation mellem Tidö-koalitionen og et koordineret S+C+V-oppositionsblok der bestrider fire migrationspropositioner; samt en ministeriel ansvarskrise over bistandsnedskæringer, der skader børn. Tilsammen udgør disse spørgsmål valgkampens slagmark for 2026 — og regeringens valg i dag vil blive prøvet ved stemmeurnerne om 127 dage.
+
+---
+
+### Beslutninger dette notat understøtter
+
+1. **Forfatningsmæssig opfølgning**: Vil KU34 *vilande*-vedtagelsen overleve den postelektorale sammensætningsændring? (65 % grundscenario: ja, hvis den nuværende koalition overlever; 20 % delvis; 15 % fiasko)
+2. **Migrationsretslig risiko**: Bør juridiske/complianceteams forberede sig på ECHR-udfordring mod HD03267 (sikkerhedsudvisning) og Lagrådets granskning af prop 265 (børneforvaring)?
+3. **ODA-ansvarseksponering**: Hvordan vil minister Dousas svar på HD10492 (forfaldsdato 2026-05-29) påvirke regeringens troværdighed vedrørende menneskerettigheder inden valget?
+
+---
+
+### 60-sekunders efterretningspunkter
+
+- 🏛️ **Grundlovsændring** (KU34): *vilande* vedtaget 11. maj 2026 — den svenske grundlov er nu på vej til at beskytte abortrettigheder og muliggøre fratagelse af statsborgerskab for bandemedlemmer. Anden behandling kræves efter september 2026-valget. Historisk — den mest betydningsfulde grundlovsændring siden 2010–2011.
+- 🛂 **Migrationskamp**: 15 oppositionsmotioner indgivet 13. maj 2026 af S, C, V imod regeringens migrationspropositioner 262–265. Regeringen har 176/349 mandater — vedtagelse sandsynlig, men prop 265 (børneforvaring) bærer Lagrådets CRC art. 37-risiko og mulig regeringsindrømmelse.
+- 🌍 **ODA-ansvarighed**: V's interpellationer HD10492–10493 kræver, at Dousa forklarer, hvorfor ingen *barnkonsekvensanalys* blev foretaget inden Sveriges største bistandsomlægning nogensinde, som lukkede programmer for underernærede børn og mødresundhed i konfliktzoner.
+- 💻 **Regeringssprint**: Tre propositioner (HD03250 digital identitet, HD03261 Skatteverket, HD03267 sikkerhedsudvisning) udgør Tidö-regeringens endelige forvaltningspolitiske erklæring inden valget. Alle forventes vedtaget inden september.
+- 📊 **Økonomisk kontekst**: Sveriges BNP-vækst +1,1 % (2025), +2,0 % forventet (2026) ifølge IMF WEO apr-2026. Offentlig gæld 35,9 % af BNP — finanspolitisk konservativt udgangspunkt der forankrer regeringens kompetencefortælling.
+
+---
+
+### Vigtigste fremtidige udløser
+
+**⚠️ Kritisk observation — 2026-05-29**: Dousas svar på HD10492 om børn og bistand. Dette ene ministerielle svar vil enten: (a) skabe en stor prævalgsmæssig ansvarskrise hvis det er defensivt, eller (b) afvæbne NGO-pres med et troværdigt Sida-evalueringsmandat. Nuværende sandsynlighed for substantiel forpligtelse: **LAV (20 %)**.
+
+---
+
+### Konfidensoversigt
+
+| Domæne | Konfidens | Grundlag |
+|--------|-----------|---------|
+| KU34 forfatningsmæssigt udfald | MEDEL | To-behandlingskrav; postelektoral usikkerhed |
+| Migrationsvedtagelse | HØJ | Regeringsflertal sikkert; SD stabilt |
+| ODA ministerielt svar | LAV-MEDEL | Ingen tidligere forpligtelser fra Dousa |
+| Valgpåvirkning | MEDEL | Meningsmålinger konsistente men 127 dage tilbage |
+
+```mermaid
+graph LR
+    KU34["🏛️ KU34 Grundlovsændring<br>Abort + Statsborgerskab<br>vilande 2026-05-11"]
+    MIG["🛂 Migrationskamp<br>15 motioner vs Props 262-265<br>S+C+V vs Tidö"]
+    ODA["🌍 ODA-ansvarighed<br>HD10492+10493<br>Børn + bistandsnedskæringer"]
+    ELEC["🗳️ September 2026<br>Valg"]
+    GOV["Tidö-regeringen<br>Slutspurt"]
+    KU34 --> ELEC
+    MIG --> ELEC
+    ODA --> ELEC
+    GOV --> KU34
+    GOV --> MIG
+    style KU34 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style MIG fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style ODA fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style ELEC fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+    style GOV fill:#0a0e27,stroke:#ff006e,color:#ff006e
+```
+
+<!-- source-sha: da8028e83f1cd6c0437e57058cd843114b4719fa -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling  
+**Datum**: 2026-05-14  
+**Klassifizierung**: ÖFFENTLICH | **Admiralty**: B2 (Zuverlässig; wahrscheinlich wahr)  
+**Konfidenz**: HOCH bei Faktenberichterstattung; MITTEL bei Wahlprognosen  
+**Wahlnähe**: ≤6 Monate (September 2026) — 1,5× DIW-Multiplikator aktiv
+
+---
+
+### Zusammenfassung
+
+Das schwedische Parlamentsprotokoll vom 14. Mai 2026 ist von drei sich überschneidenden Krisen geprägt, die die Septemberwahl bestimmen werden: ein historisches Verfassungsänderungspaket (*vilande*), das Abtreibungsrechte schützt und die Aberkennung der Staatsangehörigkeit ermöglicht (KU34); eine migrationspolitische Konfrontation zwischen der Tidö-Koalition und einem koordinierten S+C+V-Oppositionsblock, der vier Migrationspropositionenbestreitet; und eine ministerielle Rechenschaftskrise über Entwicklungshilfekürzungen, die Kindern schaden. Zusammen bilden diese Themen das politische Schlachtfeld der Wahl 2026 — und die heutigen Entscheidungen der Regierung werden in 127 Tagen an der Wahlurne geprüft.
+
+---
+
+### Entscheidungen, die dieses Dokument unterstützt
+
+1. **Verfassungstracking**: Wird die KU34 *vilande*-Verabschiedung die postelektorale Zusammensetzungsänderung überstehen? (65 % Basisszenario: ja, wenn die aktuelle Koalition überlebt; 20 % teilweise; 15 % Scheitern)
+2. **Migrationsrechtliches Risiko**: Sollten Rechts-/Compliance-Teams sich auf eine ECHR-Herausforderung gegen HD03267 (Sicherheitsabschiebung) und die Lagrådet-Prüfung von Prop 265 (Kinderinternierung) vorbereiten?
+3. **ODA-Haftungsexposition**: Wie wird Minister Dousas Antwort auf HD10492 (fällig 2026-05-29) die Glaubwürdigkeit der Regierung in Menschenrechtsfragen vor der Wahl beeinflussen?
+
+---
+
+### 60-Sekunden-Nachrichtenpunkte
+
+- 🏛️ **Verfassungsänderung** (KU34): *vilande* am 11. Mai 2026 verabschiedet — das schwedische Grundgesetz ist nun auf dem Weg, Abtreibungsrechte zu schützen und die Aberkennung der Staatsangehörigkeit für Bandenmitglieder zu ermöglichen. Zweite Lesung nach der Wahl im September 2026 erforderlich. Historisch — die bedeutendste Verfassungsänderung seit 2010–2011.
+- 🛂 **Migrationsstreit**: 15 Oppositionsanträge am 13. Mai 2026 von S, C, V eingereicht, die die Migrationspropositionender Regierung 262–265 anfechten. Die Regierung hat 176/349 Sitze — Verabschiedung wahrscheinlich, aber Prop 265 (Kinderinternierung) trägt das Lagrådet-Risiko nach CRC Art. 37 und eine mögliche Regierungskonzession.
+- 🌍 **ODA-Rechenschaft**: V-Interpellationen HD10492–10493 fordern Dousa auf zu erklären, warum keine *barnkonsekvensanalys* vor Schwedens größter Umstrukturierung der Entwicklungshilfe aller Zeiten durchgeführt wurde, die Programme für mangelernährte Kinder und Müttergesundheit in Konfliktgebieten schloss.
+- 💻 **Regierungs-Sprint**: Drei Propositionen (HD03250 digitale Identität, HD03261 Skatteverket, HD03267 Sicherheitsabschiebung) bilden das abschließende Regierungspolitische Statement der Tidö-Regierung vor der Wahl. Alle werden wahrscheinlich vor September verabschiedet.
+- 📊 **Wirtschaftlicher Kontext**: Schweden BIP-Wachstum +1,1 % (2025), +2,0 % prognostiziert (2026) laut IMF WEO Apr-2026. Staatsschulden 35,9 % des BIP — fiskalisch konservative Ausgangslage, die das Kompetenznarrativ der Regierung verankert.
+
+---
+
+### Wichtigster Vorwärtsauslöser
+
+**⚠️ Kritische Beobachtung — 2026-05-29**: Dousas Antwort auf HD10492 zu Kindern und Entwicklungshilfe. Diese einzelne ministerielle Antwort wird entweder: (a) eine große Rechenschaftskrise vor der Wahl auslösen, wenn sie defensiv ist, oder (b) den NGO-Druck mit einem glaubwürdigen Sida-Evaluierungsmandat entschärfen. Aktuelle Wahrscheinlichkeit eines substanziellen Engagements: **NIEDRIG (20 %)**.
+
+---
+
+### Konfidenzzusammenfassung
+
+| Bereich | Konfidenz | Grundlage |
+|---------|-----------|-----------|
+| KU34 verfassungsrechtliches Ergebnis | MITTEL | Zweitepassageanforderung; postelektorale Unsicherheit |
+| Migrationsverabschiedung | HOCH | Regierungsmehrheit gesichert; SD stabil |
+| ODA-Ministerantwort | NIEDRIG-MITTEL | Keine früheren Verpflichtungen von Dousa |
+| Wahlauswirkung | MITTEL | Umfragen konsistent, aber 127 Tage verbleiben |
+
+```mermaid
+graph LR
+    KU34["🏛️ KU34 Verfassungsänderung<br>Abtreibung + Staatsangehörigkeit<br>vilande 2026-05-11"]
+    MIG["🛂 Migrationsstreit<br>15 Anträge vs Props 262-265<br>S+C+V vs Tidö"]
+    ODA["🌍 ODA-Rechenschaft<br>HD10492+10493<br>Kinder + Hilfsmittelkürzungen"]
+    ELEC["🗳️ September 2026<br>Wahl"]
+    GOV["Tidö-Regierung<br>Endspurt"]
+    KU34 --> ELEC
+    MIG --> ELEC
+    ODA --> ELEC
+    GOV --> KU34
+    GOV --> MIG
+    style KU34 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style MIG fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style ODA fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style ELEC fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+    style GOV fill:#0a0e27,stroke:#ff006e,color:#ff006e
+```
+
+<!-- source-sha: da8028e83f1cd6c0437e57058cd843114b4719fa -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling  
+**Fecha**: 2026-05-14  
+**Clasificación**: PÚBLICO | **Admiralty**: B2 (Fiable; probablemente cierto)  
+**Nivel de confianza**: ALTO en reportaje factual; MEDIO en proyecciones electorales  
+**Proximidad electoral**: ≤6 meses (septiembre 2026) — multiplicador DIW 1,5× activo
+
+---
+
+### Resumen
+
+El expediente parlamentario sueco del 14 de mayo de 2026 está definido por tres crisis que se entrecruzan y darán forma a las elecciones de septiembre: un histórico paquete de enmiendas constitucionales (*vilande*) que protege los derechos al aborto y permite la revocación de la ciudadanía (KU34); una confrontación de política migratoria entre la coalición Tidö y un bloque de oposición coordinado S+C+V que impugna cuatro proposiciones migratorias; y una crisis de responsabilidad ministerial por los recortes en ayuda al desarrollo que perjudican a la infancia. En conjunto, estos asuntos constituyen el campo de batalla político de las elecciones de 2026 — y las decisiones del gobierno de hoy serán juzgadas en las urnas dentro de 127 días.
+
+---
+
+### Decisiones que este documento apoya
+
+1. **Seguimiento constitucional**: ¿Sobrevivirá la adopción *vilande* de KU34 al cambio de composición poselectoral? (65 % escenario base: sí, si la coalición actual sobrevive; 20 % parcial; 15 % fracaso)
+2. **Riesgo jurídico migratorio**: ¿Deben los equipos jurídicos/de cumplimiento prepararse para un recurso ante el TEDH contra HD03267 (deportación por seguridad) y el escrutinio del Lagrådet sobre la prop 265 (internamiento de menores)?
+3. **Exposición a la responsabilidad AOD**: ¿Cómo afectará la respuesta del ministro Dousa a HD10492 (vencimiento 2026-05-29) a la credibilidad del gobierno en derechos humanos antes de las elecciones?
+
+---
+
+### Puntos de inteligencia de 60 segundos
+
+- 🏛️ **Enmienda constitucional** (KU34): *vilande* adoptado el 11 de mayo de 2026 — la constitución sueca está ahora en camino de proteger los derechos al aborto y permitir la revocación de la ciudadanía para miembros de bandas. Se requiere segunda lectura tras las elecciones de septiembre de 2026. Histórico — el cambio constitucional más significativo desde 2010–2011.
+- 🛂 **Batalla migratoria**: 15 mociones de oposición presentadas el 13 de mayo de 2026 por S, C, V impugnando las proposiciones migratorias del gobierno 262–265. El gobierno tiene 176/349 escaños — aprobación probable, pero la prop 265 (internamiento de menores) conlleva riesgo Lagrådet CRC Art. 37 y posible concesión gubernamental.
+- 🌍 **Responsabilidad AOD**: Las interpelaciones V HD10492–10493 exigen que Dousa explique por qué no se realizó ningún *barnkonsekvensanalys* antes de la mayor reestructuración de ayuda al desarrollo de Suecia de todos los tiempos, que cerró programas para niños desnutridos y salud materna en zonas de conflicto.
+- 💻 **Sprint gubernamental**: Tres proposiciones (HD03250 identidad digital, HD03261 Skatteverket, HD03267 deportación por seguridad) constituyen la declaración final de gobernanza preelectoral del gobierno Tidö. Todas probablemente aprobadas antes de septiembre.
+- 📊 **Contexto económico**: Crecimiento del PIB sueco +1,1 % (2025), +2,0 % proyectado (2026) según FMI PEM abr-2026. Deuda pública 35,9 % del PIB — base fiscalmente conservadora que ancla el relato de competencia del gobierno.
+
+---
+
+### Principal catalizador prospectivo
+
+**⚠️ Vigilancia crítica — 2026-05-29**: La respuesta de Dousa a HD10492 sobre niños y ayuda al desarrollo. Esta única respuesta ministerial o bien: (a) creará una gran crisis de responsabilidad preelectoral si es defensiva, o (b) desactivará la presión de las ONG con un mandato creíble de evaluación Sida. Probabilidad actual de compromiso sustancial: **BAJA (20 %)**.
+
+---
+
+### Resumen de confianza
+
+| Ámbito | Confianza | Base |
+|--------|-----------|------|
+| Resultado constitucional KU34 | MEDIO | Requisito de doble lectura; incertidumbre poselectoral |
+| Aprobación migratoria | ALTO | Mayoría gubernamental asegurada; SD estable |
+| Respuesta ministerial AOD | BAJO-MEDIO | Sin compromisos previos de Dousa |
+| Impacto electoral | MEDIO | Encuestas consistentes pero 127 días restantes |
+
+```mermaid
+graph LR
+    KU34["🏛️ KU34 Enmienda constitucional<br>Aborto + Ciudadanía<br>vilande 2026-05-11"]
+    MIG["🛂 Batalla migratoria<br>15 mociones vs Props 262-265<br>S+C+V vs Tidö"]
+    ODA["🌍 Responsabilidad AOD<br>HD10492+10493<br>Niños + recortes de ayuda"]
+    ELEC["🗳️ Septiembre 2026<br>Elección"]
+    GOV["Gobierno Tidö<br>Sprint final"]
+    KU34 --> ELEC
+    MIG --> ELEC
+    ODA --> ELEC
+    GOV --> KU34
+    GOV --> MIG
+    style KU34 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style MIG fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style ODA fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style ELEC fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+    style GOV fill:#0a0e27,stroke:#ff006e,color:#ff006e
+```
+
+<!-- source-sha: da8028e83f1cd6c0437e57058cd843114b4719fa -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling  
+**Päivämäärä**: 2026-05-14  
+**Luokitus**: JULKINEN | **Admiralty**: B2 (Luotettava; todennäköisesti totta)  
+**Luottamustaso**: KORKEA faktaraportoinnissa; KESKITASO vaaliennusteissa  
+**Vaalien läheisyys**: ≤6 kuukautta (syyskuu 2026) — 1,5× DIW-kerroin aktiivinen
+
+---
+
+### Yhteenveto
+
+Ruotsin parlamenttiprotokolla 14. toukokuuta 2026 on kolmen toisiinsa kietoutuneen kriisin leimaamaa, jotka muovaavat syyskuun vaaleja: historiallinen perustuslain muutospaketti (*vilande*) aborttioikeuksien suojaamiseksi ja kansalaisuuden peruuttamisen mahdollistamiseksi (KU34); maahanmuuttopolitiikan vastakkainasettelu Tidö-koalition ja koordinoidun S+C+V-oppositioblokin välillä neljästä maahanmuuttoesityksestä; sekä ministerinen vastuullisuuskriisi kehitysapuleikkauksista, jotka vahingoittavat lapsia. Nämä kysymykset muodostavat vuoden 2026 vaalitaistelun — ja hallituksen valinnat tänään koetaan vaaliuurnilla 127 päivän kuluttua.
+
+---
+
+### Päätökset, joita tämä katsaus tukee
+
+1. **Perustuslaillinen seuranta**: Selviääkö KU34 *vilande*-päätös vaalien jälkeisestä kokoonpanomuutoksesta? (65 % perusskenaario: kyllä, jos nykyinen koalitio selviää; 20 % osittain; 15 % epäonnistuminen)
+2. **Maahanmuutto-oikeudellinen riski**: Tulisiko lakitiimien valmistautua ECHR-haasteeseen HD03267:aa (turvallisuuspalautus) vastaan ja Lagrådets:n valvontaan ehdotuksesta 265 (lasten säilöönotto)?
+3. **ODA-vastuualtistus**: Kuinka ministeri Doussan vastaus HD10492:een (erääntyy 2026-05-29) vaikuttaa hallituksen ihmisoikeuksien uskottavuuteen ennen vaaleja?
+
+---
+
+### 60 sekunnin tietopisteet
+
+- 🏛️ **Perustuslain muutos** (KU34): *vilande* hyväksytty 11. toukokuuta 2026 — Ruotsin perustuslaki on nyt matkalla suojaamaan aborttioikeuksia ja mahdollistamaan kansalaisuuden peruuttaminen jengiläisiltä. Toinen käsittely vaaditaan syyskuun 2026 vaalien jälkeen. Historiallinen — merkittävin perustuslaillinen muutos vuodesta 2010–2011.
+- 🛂 **Maahanmuuttotaistelu**: 15 oppositioaloitetta jätetty 13. toukokuuta 2026 S:n, C:n, V:n toimesta hallituksen maahanmuuttoesityksiä 262–265 vastaan. Hallituksella 176/349 paikkaa — hyväksyminen todennäköistä, mutta esitys 265 (lasten säilöönotto) kantaa Lagrådets CRC art. 37 -riskin ja mahdollisen hallituksen myönnytyksen.
+- 🌍 **ODA-vastuullisuus**: V:n välikysymykset HD10492–10493 vaativat Doussaa selittämään, miksi *barnkonsekvensanalys*-arviointia ei tehty ennen Ruotsin kaikkien aikojen suurinta kehitysapurakenneuudistusta, joka sulki ohjelmat aliravituille lapsille ja äitiysterveydelle konfliktisonien alueilla.
+- 💻 **Hallituksen spurtti**: Kolme esitystä (HD03250 digitaalinen henkilöllisyys, HD03261 Skatteverket, HD03267 turvallisuuspalautus) muodostavat Tidö-hallituksen viimeisen vaalienohjauspoliittisen lausunnon. Kaikki todennäköisesti hyväksytty ennen syyskuuta.
+- 📊 **Taloudellinen konteksti**: Ruotsin BKT-kasvu +1,1 % (2025), +2,0 % ennustettu (2026) IMF WEO huhti-2026 mukaan. Julkinen velka 35,9 % BKT:stä — talouspoliittisesti konservatiivinen lähtötaso, joka tukee hallituksen osaamisnarratiivia.
+
+---
+
+### Tärkein eteenpäin katsova laukaisija
+
+**⚠️ Kriittinen seuranta — 2026-05-29**: Doussan vastaus HD10492:een lasten kehitysavusta. Tämä yksittäinen ministerillinen vastaus joko: (a) luo suuren vaaleja edeltävän vastuukriisin jos se on puolustautuva, tai (b) purkaa kansalaisjärjestöjen paineen uskottavalla Sida-arviointimandaatilla. Nykyinen todennäköisyys merkitykselliselle sitoutumiselle: **MATALA (20 %)**.
+
+---
+
+### Luottamusyhteenveto
+
+| Ala | Luottamustaso | Peruste |
+|-----|---------------|---------|
+| KU34 perustuslaillinen tulos | KESKI | Kaksi käsittelykierrosta; vaalien jälkeinen epävarmuus |
+| Maahanmuuton hyväksyminen | KORKEA | Hallituksen enemmistö turvattu; SD vakaa |
+| ODA-ministerinen vastaus | MATALA-KESKI | Ei aiempia sitoumuksia Doussalta |
+| Vaikutus vaalitulokseen | KESKI | Mielipidekyselyt johdonmukaisia mutta 127 päivää jäljellä |
+
+```mermaid
+graph LR
+    KU34["🏛️ KU34 Perustuslain muutos<br>Abortti + Kansalaisuus<br>vilande 2026-05-11"]
+    MIG["🛂 Maahanmuuttokiista<br>15 aloitetta vs Esit 262-265<br>S+C+V vs Tidö"]
+    ODA["🌍 ODA-vastuullisuus<br>HD10492+10493<br>Lapset + kehitysapuleikkaukset"]
+    ELEC["🗳️ Syyskuu 2026<br>Vaalit"]
+    GOV["Tidö-hallitus<br>Loppusuora"]
+    KU34 --> ELEC
+    MIG --> ELEC
+    ODA --> ELEC
+    GOV --> KU34
+    GOV --> MIG
+    style KU34 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style MIG fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style ODA fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style ELEC fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+    style GOV fill:#0a0e27,stroke:#ff006e,color:#ff006e
+```
+
+<!-- source-sha: da8028e83f1cd6c0437e57058cd843114b4719fa -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief_fr.md -->
+
+**Auteur**: James Pether Sörling  
+
+**Niveau de confiance**: ÉLEVÉ pour le reportage factuel ; MOYEN pour les projections électorales  
+**Proximité électorale**: ≤6 mois (septembre 2026) — multiplicateur DIW 1,5× actif
+
+---
+
+### Résumé
+
+Le protocole parlementaire suédois du 14 mai 2026 est marqué par trois crises qui se croisent et qui façonneront l'élection de septembre : un paquet historique d'amendements constitutionnels (*vilande*) protégeant les droits à l'avortement et permettant la révocation de la citoyenneté (KU34) ; une confrontation de politique migratoire entre la coalition Tidö et un bloc d'opposition coordonné S+C+V contestant quatre propositions migratoires ; et une crise de responsabilité ministérielle sur les coupes dans l'aide au développement nuisant aux enfants. Ensemble, ces enjeux constituent le champ de bataille politique de l'élection 2026 — et les choix du gouvernement aujourd'hui seront éprouvés aux urnes dans 127 jours.
+
+---
+
+### Décisions que ce document soutient
+
+1. **Suivi constitutionnel** : L'adoption *vilande* de KU34 survivra-t-elle au changement de composition post-électoral ? (65 % scénario de base : oui, si la coalition actuelle survit ; 20 % partiel ; 15 % échec)
+2. **Risque juridique migratoire** : Les équipes juridiques/conformité doivent-elles se préparer à un recours CEDH contre HD03267 (expulsion sécuritaire) et au contrôle du Lagrådet sur la prop 265 (détention des enfants) ?
+3. **Exposition à la responsabilité ODA** : Comment la réponse du ministre Dousa à HD10492 (échéance 2026-05-29) affectera-t-elle la crédibilité du gouvernement en matière de droits humains avant l'élection ?
+
+---
+
+### Points de renseignement en 60 secondes
+
+- 🏛️ **Amendement constitutionnel** (KU34) : *vilande* adopté le 11 mai 2026 — la constitution suédoise est désormais en voie de protéger les droits à l'avortement et de permettre la révocation de la citoyenneté pour les membres de gangs. Deuxième lecture requise après l'élection de septembre 2026. Historique — changement constitutionnel le plus significatif depuis 2010–2011.
+- 🛂 **Bataille migratoire** : 15 motions d'opposition déposées le 13 mai 2026 par S, C, V contestant les propositions migratoires du gouvernement 262–265. Le gouvernement dispose de 176/349 sièges — adoption probable, mais la prop 265 (détention d'enfants) comporte un risque Lagrådet CRC Art. 37 et une possible concession gouvernementale.
+- 🌍 **Responsabilité ODA** : Les interpellations V HD10492–10493 exigent que Dousa explique pourquoi aucune *barnkonsekvensanalys* n'a été réalisée avant la plus grande restructuration de l'aide au développement jamais menée par la Suède, qui a fermé des programmes pour enfants malnutris et la santé maternelle dans des zones de conflit.
+- 💻 **Sprint gouvernemental** : Trois propositions (HD03250 identité numérique, HD03261 Skatteverket, HD03267 expulsion sécuritaire) constituent la dernière déclaration de gouvernance préélectorale du gouvernement Tidö. Toutes devraient être adoptées avant septembre.
+- 📊 **Contexte économique** : Croissance du PIB suédois +1,1 % (2025), +2,0 % projeté (2026) selon le FMI Perspectives économiques mondiales avr-2026. Dette publique 35,9 % du PIB — base fiscalement conservatrice qui ancre le narratif de compétence du gouvernement.
+
+---
+
+### Principal déclencheur prospectif
+
+**⚠️ Surveillance critique — 2026-05-29** : La réponse de Dousa à HD10492 sur les enfants et l'aide au développement. Cette réponse ministérielle unique soit : (a) créera une grande crise de responsabilité préélectorale si elle est défensive, soit (b) désamorcera la pression des ONG avec un mandat crédible d'évaluation Sida. Probabilité actuelle d'engagement substantiel : **FAIBLE (20 %)**.
+
+---
+
+### Récapitulatif de confiance
+
+| Domaine | Confiance | Base |
+|---------|-----------|------|
+| Issue constitutionnelle KU34 | MOYEN | Exigence de double passage ; incertitude post-électorale |
+| Adoption migratoire | ÉLEVÉ | Majorité gouvernementale assurée ; SD stable |
+| Réponse ministérielle ODA | FAIBLE-MOYEN | Aucun engagement antérieur de Dousa |
+| Impact électoral | MOYEN | Sondages cohérents mais 127 jours restants |
+
+```mermaid
+graph LR
+    KU34["🏛️ KU34 Amendement constitutionnel<br>Avortement + Citoyenneté<br>vilande 2026-05-11"]
+    MIG["🛂 Bataille migratoire<br>15 motions vs Props 262-265<br>S+C+V vs Tidö"]
+    ODA["🌍 Responsabilité ODA<br>HD10492+10493<br>Enfants + coupes d'aide"]
+    ELEC["🗳️ Septembre 2026<br>Élection"]
+    GOV["Gouvernement Tidö<br>Sprint final"]
+    KU34 --> ELEC
+    MIG --> ELEC
+    ODA --> ELEC
+    GOV --> KU34
+    GOV --> MIG
+    style KU34 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style MIG fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style ODA fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style ELEC fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+    style GOV fill:#0a0e27,stroke:#ff006e,color:#ff006e
+```
+
+<!-- source-sha: da8028e83f1cd6c0437e57058cd843114b4719fa -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# הרגע החוקתי של שוודיה וספרינט המדיניות טרום-הבחירות — ניתוח ערב, 14 במאי 2026
+
+**מחבר**: James Pether Sörling  
+**תאריך**: 2026-05-14  
+**סיווג**: ציבורי | **Admiralty**: B2 (אמין׃ סביר שנכון)  
+**רמת ביטחון**: גבוהה בדיווח עובדתי׃ בינונית בתחזיות בחירות  
+**קרבה לבחירות**: ≤6 חודשים (ספטמבר 2026) — מכפיל DIW 1.5× פעיל
+
+---
+
+### תמצית
+
+הפרוטוקול הפרלמנטרי השוודי מה-14 במאי 2026 מוגדר על ידי שלוש משברים חוצי-גבולות שיעצבו את הבחירות בספטמבר: חבילה היסטורית של תיקוני חוקה (*vilande*) המגנה על זכויות הפלה ומאפשרת ביטול אזרחות (KU34)׃ עימות מדיניות הגירה בין קואליציית Tidö לבלוק אופוזיציה מתואם S+C+V המערער על ארבעה הצעות הגירה׃ ומשבר אחריות שרים על קיצוצים בסיוע לפיתוח הפוגעים בילדים. יחד, נושאים אלה מהווים את שדה הקרב הפוליטי של בחירות 2026 — ובחירות הממשלה היום תיבחנה בקלפי בעוד 127 יום.
+
+---
+
+### החלטות שמסמך זה תומך בהן
+
+1. **מעקב חוקתי**: האם אימוץ KU34 *vilande* יחיה את שינוי ההרכב שלאחר הבחירות? (65% תרחיש בסיס: כן, אם הקואליציה הנוכחית תשרוד׃ 20% חלקי׃ 15% כישלון)
+2. **סיכון משפטי להגירה**: האם על צוותי משפט/ציות להתכונן לאתגר ב-ECHR נגד HD03267 (גירוש ביטחוני) ולבחינת Lagrådet על הצעה 265 (מעצר ילדים)?
+3. **חשיפת אחריות סיוע לפיתוח**: כיצד תשפיע תשובת השר Dousa על HD10492 (מועד אחרון 2026-05-29) על אמינות הממשלה בזכויות אדם לפני הבחירות?
+
+---
+
+### נקודות מודיעין ב-60 שניות
+
+- 🏛️ **תיקון חוקתי** (KU34): *vilande* אומץ ב-11 במאי 2026 — החוקה השוודית בדרכה להגן על זכויות הפלה ולאפשר ביטול אזרחות לחברי כנופיות. קריאה שנייה נדרשת לאחר בחירות ספטמבר 2026. היסטורי — השינוי החוקתי המשמעותי ביותר מאז 2010–2011.
+- 🛂 **קרב ההגירה**: 15 הצעות אופוזיציה הוגשו ב-13 במאי 2026 על ידי S, C, V המערערות על הצעות ההגירה הממשלתיות 262–265. לממשלה 176/349 מושבים — אישור סביר, אך הצעה 265 (מעצר ילדים) נושאת סיכון Lagrådet CRC סעיף 37 ואפשרות לוויתור ממשלתי.
+- 🌍 **אחריות סיוע לפיתוח**: בקשות הבהרה V HD10492–10493 דורשות מ-Dousa להסביר מדוע לא נערכה *barnkonsekvensanalys* לפני ארגון-מחדש הגדול ביותר בהיסטוריה של הסיוע לפיתוח שוודי, שסגר תוכניות לילדים תת-תזונה ובריאות אמהות באזורי סכסוך.
+- 💻 **ספרינט הממשלה**: שלוש הצעות (HD03250 זהות דיגיטלית, HD03261 Skatteverket, HD03267 גירוש ביטחוני) מהוות את ההצהרה הממשלתית הסופית לפני הבחירות. כולן צפויות לאישור לפני ספטמבר.
+- 📊 **הקשר כלכלי**: צמיחת תמ"ג שוודיה +1.1% (2025), +2.0% צפוי (2026) לפי IMF WEO אפריל-2026. חוב ציבורי 35.9% מהתמ"ג — בסיס שמרני פיסקאלית המעגן את נרטיב הכשירות הממשלתי.
+
+---
+
+### הטריגר העתידי המרכזי
+
+**⚠️ מעקב קריטי — 2026-05-29**: תשובת Dousa על HD10492 בנושא ילדים וסיוע לפיתוח. תשובה שרית יחידה זו או: (א) תיצור משבר אחריות גדול לפני הבחירות אם תהיה הגנתית, או (ב) תנטרל לחץ ארגונים לא-ממשלתיים עם מנדט הערכת Sida אמין. הסתברות נוכחית להתחייבות מהותית: **נמוכה (20%)**.
+
+---
+
+### סיכום רמת הביטחון
+
+| תחום | ביטחון | בסיס |
+|------|--------|------|
+| תוצאה חוקתית KU34 | בינוני | דרישת קריאה כפולה׃ אי-ודאות שלאחר הבחירות |
+| אישור הגירה | גבוה | רוב ממשלתי מובטח׃ SD יציב |
+| תגובה שרית לסיוע לפיתוח | נמוך-בינוני | אין התחייבויות קודמות מ-Dousa |
+| השפעה בחירות | בינוני | סקרים עקביים אך 127 יום נותרו |
+
+```mermaid
+graph LR
+    KU34["🏛️ KU34 תיקון חוקתי<br>הפלה + אזרחות<br>vilande 2026-05-11"]
+    MIG["🛂 קרב הגירה<br>15 הצעות vs הצעות 262-265<br>S+C+V vs Tidö"]
+    ODA["🌍 אחריות סיוע<br>HD10492+10493<br>ילדים + קיצוצים"]
+    ELEC["🗳️ ספטמבר 2026<br>בחירות"]
+    GOV["ממשלת Tidö<br>ספרינט אחרון"]
+    KU34 --> ELEC
+    MIG --> ELEC
+    ODA --> ELEC
+    GOV --> KU34
+    GOV --> MIG
+    style KU34 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style MIG fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style ODA fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style ELEC fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+    style GOV fill:#0a0e27,stroke:#ff006e,color:#ff006e
+```
+
+<!-- source-sha: da8028e83f1cd6c0437e57058cd843114b4719fa -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling  
+**日付**: 2026-05-14  
+**分類**: 公開 | **Admiralty**: B2（信頼性高い；おそらく真実）  
+**信頼度**: 事実報道は高、選挙予測は中程度  
+**選挙近接度**: ≤6ヶ月（2026年9月）— DIW乗数1.5×有効
+
+---
+
+### 要約
+
+2026年5月14日のスウェーデン議会記録は、9月の選挙を形成する3つの交差する危機によって定義される：中絶権を保護し市民権剥奪を可能にする歴史的な憲法改正パッケージ（*vilande*、KU34）；Tidö連立とS+C+V協調野党ブロックの間の移民政策対立（4つの移民提案に異議）；そして子供たちに害を与える開発援助削減をめぐる閣僚責任危機。これらの問題が2026年選挙の政治的戦場を構成し、今日の政府の選択は127日後に投票箱で試される。
+
+---
+
+### この文書が支援する決定
+
+1. **憲法的追跡**: KU34の*vilande*採択は選挙後の構成変更を生き残るか？（65%基本シナリオ：現在の連立が存続すれば可能；20%部分的；15%失敗）
+2. **移民法的リスク**: 法務・コンプライアンスチームはHD03267（安全保障上の国外追放）に対するECHR訴訟とLagrådetによる提案265（児童拘留）の審査に備えるべきか？
+3. **ODA責任エクスポージャー**: Dousa大臣のHD10492（期限：2026-05-29）への回答は、選挙前の人権に関する政府の信頼性にどのような影響を与えるか？
+
+---
+
+### 60秒情報要点
+
+- 🏛️ **憲法改正**（KU34）：*vilande*が2026年5月11日に採択 — スウェーデン憲法は今や中絶権を保護し、ギャングメンバーの市民権剥奪を可能にする方向に進んでいる。2026年9月選挙後に第二読会が必要。歴史的 — 2010–2011年以来最も重要な憲法変更。
+- 🛂 **移民戦い**: 2026年5月13日にS、C、Vが政府の移民提案262–265に対して15の野党動議を提出。政府は176/349議席を保有 — 可決は見込まれるが、提案265（児童拘留）はLagrådet CRC第37条リスクと政府譲歩の可能性を伴う。
+- 🌍 **ODA説明責任**: V質問HD10492–10493は、栄養不足の子供たちや紛争地帯の母子保健プログラムを閉鎖したスウェーデン史上最大の開発援助再編前に*barnkonsekvensanalys*が実施されなかった理由をDousaに説明するよう要求。
+- 💻 **政府スプリント**: 3つの提案（HD03250デジタルID、HD03261 Skatteverket、HD03267安全保障上の国外追放）がTidö政府の選挙前最終ガバナンス声明を形成。すべて9月前に制定見込み。
+- 📊 **経済的背景**: スウェーデンGDP成長率+1.1%（2025年）、+2.0%見込み（2026年）IMF世界経済見通し2026年4月版。公的債務はGDPの35.9% — 政府の能力ナラティブを支える財政的に保守的なベースライン。
+
+---
+
+### 最重要の将来的トリガー
+
+**⚠️ 重要監視 — 2026-05-29**: 子供と開発援助に関するHD10492へのDousaの回答。この単独の閣僚回答は：（a）防衛的であれば大規模な選挙前責任危機を生む、または（b）信頼できるSida評価権限でNGOの圧力を解除する。実質的なコミットメントの現在の確率：**低（20%）**。
+
+---
+
+### 信頼度サマリー
+
+| 分野 | 信頼度 | 根拠 |
+|------|--------|------|
+| KU34憲法的結果 | 中 | 二読会要件；選挙後の不確実性 |
+| 移民可決 | 高 | 政府多数派確保；SD安定 |
+| ODA閣僚回答 | 低-中 | Dousaからの事前のコミットなし |
+| 選挙への影響 | 中 | 世論調査は一貫しているが127日残存 |
+
+```mermaid
+graph LR
+    KU34["🏛️ KU34 憲法改正<br>中絶+市民権<br>vilande 2026-05-11"]
+    MIG["🛂 移民戦い<br>15動議 vs 提案262-265<br>S+C+V vs Tidö"]
+    ODA["🌍 ODA説明責任<br>HD10492+10493<br>子供+援助削減"]
+    ELEC["🗳️ 2026年9月<br>選挙"]
+    GOV["Tidö政府<br>最終スプリント"]
+    KU34 --> ELEC
+    MIG --> ELEC
+    ODA --> ELEC
+    GOV --> KU34
+    GOV --> MIG
+    style KU34 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style MIG fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style ODA fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style ELEC fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+    style GOV fill:#0a0e27,stroke:#ff006e,color:#ff006e
+```
+
+<!-- source-sha: da8028e83f1cd6c0437e57058cd843114b4719fa -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling  
+**날짜**: 2026-05-14  
+**분류**: 공개 | **Admiralty**: B2 (신뢰할 수 있음; 아마도 사실)  
+**신뢰도**: 사실 보도에 대해 높음; 선거 전망에 대해 중간  
+**선거 근접성**: ≤6개월 (2026년 9월) — DIW 승수 1.5× 활성
+
+---
+
+### 요약
+
+2026년 5월 14일의 스웨덴 의회 기록은 9월 선거를 형성할 세 가지 교차하는 위기로 정의된다: 낙태 권리를 보호하고 시민권 박탈을 가능하게 하는 역사적인 헌법 개정 패키지(*vilande*, KU34); 네 개의 이민 제안에 이의를 제기하는 Tidö 연립과 조율된 S+C+V 야당 블록 사이의 이민 정책 대립; 그리고 어린이에게 해를 끼치는 개발 원조 삭감에 관한 장관 책임 위기. 이러한 문제들이 함께 2026년 선거의 정치적 전쟁터를 구성하며, 오늘 정부의 선택은 127일 후 투표함에서 시험받을 것이다.
+
+---
+
+### 이 문서가 지원하는 결정
+
+1. **헌법 추적**: KU34 *vilande* 채택이 선거 후 구성 변경을 견뎌낼 것인가? (65% 기본 시나리오: 현재 연립이 생존하면 예; 20% 부분적; 15% 실패)
+2. **이민 법적 위험**: 법무/준법 팀이 HD03267 (보안 추방)에 대한 ECHR 도전과 제안 265 (아동 구금)에 대한 Lagrådet 검토에 대비해야 하는가?
+3. **ODA 책임 노출**: Dousa 장관의 HD10492 (마감일 2026-05-29) 답변이 선거 전 인권에 대한 정부 신뢰성에 어떤 영향을 미칠 것인가?
+
+---
+
+### 60초 정보 요점
+
+- 🏛️ **헌법 개정** (KU34): *vilande*가 2026년 5월 11일 채택됨 — 스웨덴 헌법이 이제 낙태 권리를 보호하고 갱단원들의 시민권 박탈을 가능하게 하는 방향으로 나아가고 있다. 2026년 9월 선거 후 2차 독회가 필요. 역사적 — 2010–2011년 이후 가장 중요한 헌법 변경.
+- 🛂 **이민 전쟁**: 2026년 5월 13일 S, C, V가 정부의 이민 제안 262–265에 대한 15개 야당 동의를 제출. 정부는 176/349석 보유 — 통과 가능성 높으나 제안 265 (아동 구금)는 Lagrådet CRC 제37조 위험과 정부 양보 가능성 내포.
+- 🌍 **ODA 책임**: V 질의 HD10492–10493은 영양실조 어린이 및 분쟁 지역 모자보건 프로그램을 폐쇄한 스웨덴 역사상 최대 개발 원조 구조조정 전 *barnkonsekvensanalys*가 왜 실시되지 않았는지 Dousa에게 설명을 요구.
+- 💻 **정부 스프린트**: 세 가지 제안 (HD03250 디지털 신원, HD03261 Skatteverket, HD03267 보안 추방)이 선거 전 Tidö 정부의 마지막 거버넌스 성명을 구성. 모두 9월 전 제정될 것으로 예상.
+- 📊 **경제적 맥락**: 스웨덴 GDP 성장률 +1.1% (2025), +2.0% 전망 (2026) IMF 세계경제전망 2026년 4월판 기준. 공공 부채 GDP의 35.9% — 정부의 역량 서사를 고정하는 재정적으로 보수적인 기준.
+
+---
+
+### 주요 미래 트리거
+
+**⚠️ 중요 감시 — 2026-05-29**: 어린이와 개발 원조에 관한 HD10492에 대한 Dousa의 답변. 이 단일 장관 답변은 다음 중 하나가 될 것이다: (a) 방어적일 경우 선거 전 대규모 책임 위기를 초래하거나, (b) 신뢰할 수 있는 Sida 평가 권한으로 NGO 압력을 해소. 실질적인 약속의 현재 확률: **낮음 (20%)**.
+
+---
+
+### 신뢰도 요약
+
+| 분야 | 신뢰도 | 근거 |
+|------|--------|------|
+| KU34 헌법적 결과 | 중간 | 2차 독회 요건; 선거 후 불확실성 |
+| 이민 통과 | 높음 | 정부 다수결 확보; SD 안정 |
+| ODA 장관 답변 | 낮음-중간 | Dousa의 이전 약속 없음 |
+| 선거 영향 | 중간 | 여론조사 일관되나 127일 남음 |
+
+```mermaid
+graph LR
+    KU34["🏛️ KU34 헌법 개정<br>낙태+시민권<br>vilande 2026-05-11"]
+    MIG["🛂 이민 전쟁<br>15동의 vs 제안262-265<br>S+C+V vs Tidö"]
+    ODA["🌍 ODA 책임<br>HD10492+10493<br>어린이+원조삭감"]
+    ELEC["🗳️ 2026년 9월<br>선거"]
+    GOV["Tidö 정부<br>마지막 스프린트"]
+    KU34 --> ELEC
+    MIG --> ELEC
+    ODA --> ELEC
+    GOV --> KU34
+    GOV --> MIG
+    style KU34 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style MIG fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style ODA fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style ELEC fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+    style GOV fill:#0a0e27,stroke:#ff006e,color:#ff006e
+```
+
+<!-- source-sha: da8028e83f1cd6c0437e57058cd843114b4719fa -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling  
+**Datum**: 2026-05-14  
+**Classificatie**: OPENBAAR | **Admiralty**: B2 (Betrouwbaar; waarschijnlijk waar)  
+**Betrouwbaarheidsniveau**: HOOG voor feitelijke rapportage; GEMIDDELD voor electorale projecties  
+**Verkiezingsnabijheid**: ≤6 maanden (september 2026) — 1,5× DIW-vermenigvuldiger actief
+
+---
+
+### Samenvatting
+
+Het Zweedse parlementaire dossier van 14 mei 2026 wordt bepaald door drie samenhangende crises die de verkiezingen van september zullen vormgeven: een historisch grondwetswijzigingspakket (*vilande*) dat abortusrechten beschermt en het intrekken van staatsburgerschap mogelijk maakt (KU34); een migratiebeleidconfrontatie tussen de Tidö-coalitie en een gecoördineerd S+C+V-oppositieblok dat vier migratievoorstellen betwist; en een ministeriële verantwoordingscrisis over bezuinigingen op ontwikkelingshulp die kinderen schaden. Samen vormen deze kwesties het politieke strijdtoneel van de verkiezingen 2026 — en de keuzes van de regering vandaag worden over 127 dagen aan de stembus getoetst.
+
+---
+
+### Beslissingen die dit document ondersteunt
+
+1. **Grondwettelijke monitoring**: Zal de KU34 *vilande*-aanneming de post-electorale samenstellingswijziging overleven? (65 % basisscenario: ja, als de huidige coalitie overleeft; 20 % gedeeltelijk; 15 % mislukking)
+2. **Migratievermogensrisico**: Moeten juridische/compliance-teams zich voorbereiden op een EVRM-uitdaging tegen HD03267 (veiligheidsdeportatie) en de Lagrådet-controle van prop 265 (kinderdetentie)?
+3. **ODA-aansprakelijkheidsblootstelling**: Hoe zal minister Dousas reactie op HD10492 (vervaldatum 2026-05-29) de geloofwaardigheid van de regering op het gebied van mensenrechten vóór de verkiezingen beïnvloeden?
+
+---
+
+### 60-secondes inlichtingenpunten
+
+- 🏛️ **Grondwetswijziging** (KU34): *vilande* aangenomen op 11 mei 2026 — de Zweedse grondwet is nu op weg om abortusrechten te beschermen en het intrekken van staatsburgerschap voor bendeleden mogelijk te maken. Tweede lezing vereist na de verkiezingen van september 2026. Historisch — de meest significante grondwetswijziging sinds 2010–2011.
+- 🛂 **Migratiestrijd**: 15 oppositiemoties ingediend op 13 mei 2026 door S, C, V die de migratievoorstellen van de regering 262–265 betwisten. De regering heeft 176/349 zetels — aanneming waarschijnlijk, maar prop 265 (kinderdetentie) draagt Lagrådet CRC Art. 37-risico en mogelijke regeringsconcessie.
+- 🌍 **ODA-verantwoording**: V-interpellaties HD10492–10493 eisen dat Dousa uitlegt waarom geen *barnkonsekvensanalys* is uitgevoerd vóór Zweden's grootste ooit ontwikkelingshulpherstructurering, die programma's voor ondervoede kinderen en moedergezondheid in conflictzones sloot.
+- 💻 **Regeringssprint**: Drie voorstellen (HD03250 digitale identiteit, HD03261 Skatteverket, HD03267 veiligheidsdeportatie) vormen de laatste pre-electorale bestuursverklaring van de Tidö-regering. Alle waarschijnlijk aangenomen vóór september.
+- 📊 **Economische context**: Zweden BBP-groei +1,1 % (2025), +2,0 % geprojecteerd (2026) volgens IMF WEO apr-2026. Staatsschuld 35,9 % van BBP — fiscaal conservatieve basis die het competentieverhaal van de regering verankert.
+
+---
+
+### Belangrijkste vooruitziende trigger
+
+**⚠️ Kritische observatie — 2026-05-29**: Dousas reactie op HD10492 over kinderen en ontwikkelingshulp. Dit ene ministeriële antwoord zal ofwel: (a) een grote pre-electorale verantwoordingscrisis creëren als het defensief is, ofwel (b) de NGO-druk ontmantelen met een geloofwaardig Sida-evaluatiemandaat. Huidige kans op substantiële toezegging: **LAAG (20 %)**.
+
+---
+
+### Betrouwbaarheidssamenvatting
+
+| Domein | Betrouwbaarheid | Basis |
+|--------|-----------------|-------|
+| Grondwettelijk resultaat KU34 | GEMIDDELD | Tweede-lezingsvereiste; post-electorale onzekerheid |
+| Migratieaanneming | HOOG | Regeringsmeerderheid veiliggesteld; SD stabiel |
+| ODA-ministeriele reactie | LAAG-GEMIDDELD | Geen eerdere toezeggingen van Dousa |
+| Electorale impact | GEMIDDELD | Peilingen consistent maar 127 dagen resterend |
+
+```mermaid
+graph LR
+    KU34["🏛️ KU34 Grondwetswijziging<br>Abortus + Staatsburgerschap<br>vilande 2026-05-11"]
+    MIG["🛂 Migratiestrijd<br>15 moties vs Props 262-265<br>S+C+V vs Tidö"]
+    ODA["🌍 ODA-verantwoording<br>HD10492+10493<br>Kinderen + bezuinigingen"]
+    ELEC["🗳️ September 2026<br>Verkiezing"]
+    GOV["Tidö-Regering<br>Eindspurt"]
+    KU34 --> ELEC
+    MIG --> ELEC
+    ODA --> ELEC
+    GOV --> KU34
+    GOV --> MIG
+    style KU34 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style MIG fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style ODA fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style ELEC fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+    style GOV fill:#0a0e27,stroke:#ff006e,color:#ff006e
+```
+
+<!-- source-sha: da8028e83f1cd6c0437e57058cd843114b4719fa -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling  
+**Dato**: 2026-05-14  
+**Klassifisering**: OFFENTLIG | **Admiralty**: B2 (Pålitelig; trolig sant)  
+**Konfidensnivå**: HØY for faktarapportering; MIDDELS for valgprognoser  
+**Valnærhet**: ≤6 måneder (september 2026) — 1,5× DIW-multiplikator aktiv
+
+---
+
+### Sammendrag
+
+Sveriges parlamentariske protokoll for 14. mai 2026 er preget av tre sammenvevde kriser som vil forme septembervalget: en historisk grunnlovsendringspakke (*vilande*) som beskytter aborttrettigheter og muliggjør tilbakekallelse av statsborgerskap (KU34); en migrasjonspolitisk konfrontasjon mellom Tidö-koalisjonen og et koordinert S+C+V-opposisjonsblokk som bestrider fire migrasjonspropisisjoner; og en ministeransvarskrise om bistandskutt som skader barn. Til sammen utgjør disse spørsmålene slagmarken for 2026-valget — og regjeringens valg i dag vil bli prøvet ved valgurnene om 127 dager.
+
+---
+
+### Beslutninger dette notatet støtter
+
+1. **Konstitusjonell oppfølging**: Vil KU34 *vilande*-vedtaket overleve den postelektorale sammensetningsendringen? (65 % grunnscenario: ja, hvis nåværende koalisjon overlever; 20 % delvis; 15 % svikt)
+2. **Migrasjonsrettslig risiko**: Bør juridiske/compliance-team forberede seg på ECHR-utfordring mot HD03267 (sikkerhetsutvisning) og Lagrådets gransking av prop 265 (barnefengsling)?
+3. **ODA-ansvarseksponering**: Hvordan vil statsråd Dousas svar på HD10492 (forfaller 2026-05-29) påvirke regjeringens troverdighet på menneskerettigheter før valget?
+
+---
+
+### 60-sekunders etterretningspunkter
+
+- 🏛️ **Grunnlovsendring** (KU34): *vilande* vedtatt 11. mai 2026 — den svenske grunnloven er nå på vei til å beskytte aborttrettigheter og muliggjøre tilbakekallelse av statsborgerskap for gjengmedlemmer. Andre gangs behandling kreves etter september 2026-valget. Historisk — den mest betydningsfulle grunnlovsendringen siden 2010–2011.
+- 🛂 **Migrasjonskamp**: 15 opposisjonsforslag levert 13. mai 2026 av S, C, V mot regjeringens migrasjonsproposisjoner 262–265. Regjeringen har 176/349 mandater — vedtakelse trolig, men prop 265 (barnefengsling) bærer Lagrådets CRC art. 37-risiko og mulig regjeringsinnrømmelse.
+- 🌍 **ODA-ansvarighet**: V:s interpellasjoner HD10492–10493 krever at Dousa forklarer hvorfor ingen *barnkonsekvensanalys* ble gjennomført før Sveriges største bistandsomstrukturering noensinne, som stengte programmer for underernærte barn og mødrehelse i konfliktsoner.
+- 💻 **Regjeringssprint**: Tre proposisjoner (HD03250 digital identitet, HD03261 Skatteverket, HD03267 sikkerhetsutvisning) utgjør Tidö-regjeringens endelige forvaltningspolitiske erklæring før valget. Alle forventes vedtatt før september.
+- 📊 **Økonomisk kontekst**: Sveriges BNP-vekst +1,1 % (2025), +2,0 % anslått (2026) ifølge IMF WEO apr-2026. Offentlig gjeld 35,9 % av BNP — finanspolitisk konservativt utgangspunkt som forankrer regjeringens kompetansefortelling.
+
+---
+
+### Viktigste fremtidige utløser
+
+**⚠️ Kritisk observasjon — 2026-05-29**: Dousas svar på HD10492 om barn og bistand. Dette ene ministerielle svaret vil enten: (a) skape en stor forvalgsmessig ansvarskrise hvis det er defensivt, eller (b) avvæpne NGO-press med et troverdig Sida-evalueringsmandat. Nåværende sannsynlighet for substansielt engasjement: **LAV (20 %)**.
+
+---
+
+### Konfidensoversikt
+
+| Domene | Konfidens | Grunnlag |
+|--------|-----------|---------|
+| KU34 konstitusjonelt utfall | MIDDELS | To-behandlingskrav; postelektoral usikkerhet |
+| Migrasjonsvedtakelse | HØY | Regjeringsflertall sikret; SD stabilt |
+| ODA ministersvar | LAV-MIDDELS | Ingen tidligere forpliktelser fra Dousa |
+| Valgpåvirkning | MIDDELS | Meningsmålinger konsistente men 127 dager gjenstår |
+
+```mermaid
+graph LR
+    KU34["🏛️ KU34 Grunnlovsendring<br>Abort + Statsborgerskap<br>vilande 2026-05-11"]
+    MIG["🛂 Migrasjonskamp<br>15 motioner vs Props 262-265<br>S+C+V vs Tidö"]
+    ODA["🌍 ODA-ansvarighet<br>HD10492+10493<br>Barn + bistandskutt"]
+    ELEC["🗳️ September 2026<br>Valg"]
+    GOV["Tidö-regjeringen<br>Sluttspurt"]
+    KU34 --> ELEC
+    MIG --> ELEC
+    ODA --> ELEC
+    GOV --> KU34
+    GOV --> MIG
+    style KU34 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style MIG fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style ODA fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style ELEC fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+    style GOV fill:#0a0e27,stroke:#ff006e,color:#ff006e
+```
+
+<!-- source-sha: da8028e83f1cd6c0437e57058cd843114b4719fa -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling  
+**Datum**: 2026-05-14  
+**Klassificering**: OFFENTLIG | **Admiralty**: B2 (Tillförlitlig; troligen sant)  
+**Konfidensgrad**: HÖG för faktarapportering; MEDEL för valrörelseprognoser  
+**Valnärhet**: ≤6 månader (september 2026) — 1,5× DIW-multiplikator aktiv
+
+---
+
+### Sammanfattning
+
+Sveriges riksdagsprotokoll för 14 maj 2026 präglas av tre sammanvävda kriser som kommer att forma septembervalet: ett historiskt grundlagsändringspaket (*vilande*) som skyddar abortrechten och möjliggör medborgarskapsåterkallelse (KU34); en migrationspolitisk konfrontation mellan Tidökoalitionen och ett samordnat S+C+V-oppositionsblock som bestrider fyra migrationspropositoner; samt en ministeriell ansvarskris kring biståndsnedskärningar som skadar barn. Sammantaget utgör dessa frågor slagfältet för 2026 års val — och regeringens val idag prövas vid valurnan om 127 dagar.
+
+---
+
+### Beslut som detta underlag stöder
+
+1. **Konstitutionell uppföljning**: Kommer KU34 *vilande*-beslutet att överleva den postelektorala sammansättningsförändringen? (65 % grundscenario: ja, om nuvarande koalition överlever; 20 % delvis; 15 % misslyckande)
+2. **Migrationsrättslig risk**: Bör juridik-/complianceteam förbereda sig för ECHR-utmaningar mot HD03267 (säkerhetsavvisning) och Lagrådets granskning av prop 265 (barnförvar)?
+3. **ODA-ansvarsexponering**: Hur påverkar minister Dousas svar på HD10492 (förfaller 2026-05-29) regeringens trovärdighet i mänskliga rättighetsfrågor inför valet?
+
+---
+
+### 60-sekunders underrättelsepunkter
+
+- 🏛️ **Grundlagsändring** (KU34): *vilande* antaget 11 maj 2026 — den svenska grundlagen är nu på väg att skydda aborträtten och möjliggöra återkallelse av medborgarskap för gängmedlemmar. Andra behandling krävs efter september 2026 års val. Historisk — den mest betydelsefulla grundlagsändringen sedan 2010–2011.
+- 🛂 **Migrationsstrid**: 15 oppositionsmotioner inlämnade 13 maj 2026 av S, C, V mot regeringens migrationspropositoner 262–265. Regeringen har 176/349 mandat — passage trolig, men prop 265 (barnförvar) bär Lagrådets CRC art. 37-risk och möjlig regeringskoncession.
+- 🌍 **ODA-ansvarighet**: V:s interpellationer HD10492–10493 kräver att Dousa förklarar varför ingen *barnkonsekvensanalys* genomfördes inför Sveriges största biståndsomsrtukturering någonsin, som stängde program för undernärda barn och mödravård i konfliktzoner.
+- 💻 **Regeringssprint**: Tre propositioner (HD03250 digital identitet, HD03261 Skatteverket, HD03267 säkerhetsavvisning) utgör Tidöregeringens slutliga förvaltningspolitiska uttalande inför valet. Alla troligen antagna före september.
+- 📊 **Ekonomisk kontext**: Sverige BNP-tillväxt +1,1 % (2025), +2,0 % prognostiserat (2026) enl. IMF WEO apr-2026. Offentlig skuld 35,9 % av BNP — finanspolitiskt konservativ baslinje som förankrar regeringens kompetensnarrativ.
+
+---
+
+### Viktigaste framåtblickande utlösare
+
+**⚠️ Kritisk bevakning — 2026-05-29**: Dousas svar på HD10492 om barn och bistånd. Detta enskilda ministerielle svar kommer antingen: (a) skapa en stor förvalektoral ansvarskris om det är defensivt, eller (b) avdramatisera påtryckningen från enskilda organisationer med ett trovärdigt Sida-utvärderingsmandat. Nuvarande sannolikhet för substantiellt åtagande: **LÅG (20 %)**.
+
+---
+
+### Konfidenssammanfattning
+
+| Domän | Konfidensgrad | Underlag |
+|-------|---------------|---------|
+| KU34 konstitutionellt utfall | MEDEL | Tvåpassagekrav; postelektoral osäkerhet |
+| Migrationspassage | HÖG | Regeringsmajoritet säkrad; SD stabilt |
+| ODA-ministerielt svar | LÅG-MEDEL | Inga tidigare åtaganden från Dousa |
+| Valrörelsepåverkan | MEDEL | Opinionsmätningar konsekventa men 127 dagar kvarstår |
+
+```mermaid
+graph LR
+    KU34["🏛️ KU34 Grundlagsändring<br>Abort + Medborgarskap<br>vilande 2026-05-11"]
+    MIG["🛂 Migrationsstrid<br>15 motioner vs Props 262-265<br>S+C+V vs Tidö"]
+    ODA["🌍 ODA-ansvarighet<br>HD10492+10493<br>Barn + biståndsnedskärningar"]
+    ELEC["🗳️ September 2026<br>Val"]
+    GOV["Tidöregeringen<br>Slutspurt"]
+    KU34 --> ELEC
+    MIG --> ELEC
+    ODA --> ELEC
+    GOV --> KU34
+    GOV --> MIG
+    style KU34 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style MIG fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style ODA fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style ELEC fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+    style GOV fill:#0a0e27,stroke:#ff006e,color:#ff006e
+```
+
+<!-- source-sha: da8028e83f1cd6c0437e57058cd843114b4719fa -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief_zh.md -->
+
+**作者**: James Pether Sörling  
+**日期**: 2026-05-14  
+**分类**: 公开 | **Admiralty**: B2（可靠；可能属实）  
+**可信度**: 事实报道高；选举预测中等  
+**选举临近度**: ≤6个月（2026年9月）— DIW乘数1.5×已激活
+
+---
+
+### 摘要
+
+2026年5月14日的瑞典议会记录由三场交叉危机所定义，这些危机将塑造九月大选的格局：一项历史性的宪法修正案套件（*vilande*），保护堕胎权并允许撤销公民身份（KU34）；Tidö联合政府与协调一致的S+C+V反对党集团之间的移民政策对抗，争议四项移民提案；以及一场关于损害儿童的开发援助削减的部长问责危机。这些问题共同构成2026年选举的政治战场——政府今日的选择将在127天后的投票箱中接受检验。
+
+---
+
+### 本文支持的决策
+
+1. **宪法跟踪**：KU34的*vilande*通过能否在选后成分变化后存活？（65%基准情景：是，若当前联合政府存续；20%部分；15%失败）
+2. **移民法律风险**：法律/合规团队是否应为HD03267（安全驱逐出境）面临欧洲人权法院挑战以及Lagrådet对第265号提案（拘留儿童）的审查做好准备？
+3. **官方发展援助问责风险**：Dousa部长对HD10492（截止日期2026-05-29）的答复将如何影响政府在选前人权方面的公信力？
+
+---
+
+### 60秒情报要点
+
+- 🏛️ **宪法修正**（KU34）：*vilande*于2026年5月11日通过 — 瑞典宪法现正走向保护堕胎权并允许撤销帮派成员公民身份。2026年9月大选后需进行二读。历史性——自2010–2011年以来最重要的宪法变革。
+- 🛂 **移民之战**：2026年5月13日，S、C、V提交15项反对政府移民提案262–265的在野动议。政府拥有176/349席——通过可能，但第265号提案（拘留儿童）存在Lagrådet《儿童权利公约》第37条风险及政府可能作出让步。
+- 🌍 **官发援助问责**：V质询HD10492–10493要求Dousa解释，为何在瑞典有史以来规模最大的官方发展援助重组前未进行*barnkonsekvensanalys*，该重组关闭了冲突地区营养不良儿童和产妇医疗项目。
+- 💻 **政府冲刺**：三项提案（HD03250数字身份证、HD03261 Skatteverket、HD03267安全驱逐出境）构成Tidö政府选前最终治理声明。预计均在九月前颁布。
+- 📊 **经济背景**：瑞典GDP增长+1.1%（2025年），据国际货币基金组织2026年4月世界经济展望预测+2.0%（2026年）。公共债务占GDP的35.9% ——财政保守基准，支撑政府的能力叙事。
+
+---
+
+### 最重要的前瞻性触发因素
+
+**⚠️ 关键关注 — 2026-05-29**：Dousa对HD10492关于儿童和发展援助的答复。这一单一部长答复将或：（a）若采取防御姿态，引发选前重大问责危机，或（b）以可信的Sida评估授权化解非政府组织压力。当前实质性承诺的概率：**低（20%）**。
+
+---
+
+### 可信度摘要
+
+| 领域 | 可信度 | 依据 |
+|------|--------|------|
+| KU34宪法结果 | 中等 | 二读要求；选后不确定性 |
+| 移民通过 | 高 | 政府多数席位稳固；SD稳定 |
+| 官发援助部长答复 | 低-中 | Dousa此前无承诺 |
+| 选举影响 | 中等 | 民调一致但还有127天 |
+
+```mermaid
+graph LR
+    KU34["🏛️ KU34 宪法修正<br>堕胎+公民权<br>vilande 2026-05-11"]
+    MIG["🛂 移民之战<br>15项动议 vs 提案262-265<br>S+C+V vs Tidö"]
+    ODA["🌍 援助问责<br>HD10492+10493<br>儿童+援助削减"]
+    ELEC["🗳️ 2026年9月<br>选举"]
+    GOV["Tidö政府<br>最后冲刺"]
+    KU34 --> ELEC
+    MIG --> ELEC
+    ODA --> ELEC
+    GOV --> KU34
+    GOV --> MIG
+    style KU34 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
+    style MIG fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
+    style ODA fill:#1a1e3d,stroke:#ffbe0b,color:#ffbe0b
+    style ELEC fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+    style GOV fill:#0a0e27,stroke:#ff006e,color:#ff006e
+```
+
+<!-- source-sha: da8028e83f1cd6c0437e57058cd843114b4719fa -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 2 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1577,6 +2518,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/evening-analysis/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

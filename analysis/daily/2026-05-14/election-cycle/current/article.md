@@ -6,7 +6,7 @@ date: 2026-05-14
 subfolder: election-cycle/current
 slug: 2026-05-14-election-cycle/current
 source_folder: analysis/daily/2026-05-14/election-cycle/current
-generated_at: 2026-05-17T18:40:44.046Z
+generated_at: 2026-05-17T22:29:24.091Z
 language: en
 layout: article
 ---
@@ -129,6 +129,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📝 | [Analysis Index](#rm-analysis-index) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📝 | [Reference Analysis Quality](#rm-reference-analysis-quality) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1896,6 +1909,943 @@ Review of all artifacts for banned phrases per `analysis/methodologies/per-artif
 - analysis/daily/2026-05-12/election-cycle/current/ (predecessor)
 - analysis/daily/2026-05-11/election-cycle/current/ (template source — 28 files)
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+---
+title: "ولاية تيدو، T-123: امتثال الطاقة الأوروبي يُغلق بينما المحور الأمني يصمد"
+
+language: ar
+subfolder: election-cycle/current
+slug: election-cycle-current
+source_folder: analysis/daily/2026-05-13/election-cycle/current
+
+workflow: news-election-cycle
+horizon: cycle
+
+---
+
+# ولاية تيدو، T-123: امتثال الطاقة الأوروبي يُغلق بينما المحور الأمني يصمد
+
+**التصنيف**: PUBLIC | **سير العمل**: news-election-cycle | **الدورة**: 2022-09-11 → 2026-09-13 (T-123 حتى نهاية الولاية)
+**إصدار صندوق النقد الدولي**: آفاق الاقتصاد العالمي أبريل 2026 [أفق:دورة]
+
+---
+
+### التحديث اليومي 2026-05-13 — تحديث المرور الثاني
+
+**T-123 حتى الانتخابات (2026-09-13)** · محدَّث مقابل التحليلات الشقيقة 2026-05-13.
+
+- **نشر HD01CU30 ترحيل EU EED بتاريخ 2026-05-12**: توجيه أداء الطاقة للمباني المُعاد صياغته (EPBD) الآن في أيدي لجنة CU كمذكرة 2025/26:CU30. هذا **إغلاق الامتثال الأوروبي في نهاية الولاية** — مهم هيكليًا لكن *غير مرئي* سياسيًا في سردية الحملة. [A1]
+- **نشر HD01NU21 إطار السياسة الريفية بتاريخ 2026-05-12**: إطار ذو طابع معارض تعالجه لجنة الأعمال. [A1]
+- **لا مقترحات جديدة من Tidö من 2026-05-08 إلى 2026-05-13**: ذروة الدورة 2026-05-10 تبقى **قمة التشريع النهائية** للولاية. [A1]
+- **أربعة مقترحات خاصة** (HD10483–86): قانون الموافقة، رعاية المسنين، ضريبة الدعارة، المساواة في الأجور. *غير محتملة* (10–25%) للتحول إلى قانون.
+- **PIR النشطة**: PIR-1، PIR-3، PIR-5، PIR-7، **PIR-9 جديد** (هدف EU EED 2030).
+
+---
+
+### الملخص (الخلاصة أولاً)
+
+تنتهي ولاية تيدو 2022–2026 مع دولة سويدية متحولة هيكليًا — أُعيد بناء البنية الأمنية، وأُعيد تشغيل إطار الاستقرار المالي، وقُنِّن مكدس الهوية الرقمية، وتم تكييف تطبيق الهجرة مع الجيران الاسكندنافيين. اليوم، قبل **123 يومًا من انتخابات سبتمبر**، تُغلق حكومة كريسترسون بصمت **متأخراتها في الامتثال الأوروبي**. *محتمل جدًا* (80–90% [أفق:دورة]) أن الإصلاحات الأمنية الجوهرية ستنجو من انتخابات 2026. [A2]
+
+تُدعم ثلاثة قرارات: (1) **معاملة المحور الأمني 2022–2026 كتحول شبه دستوري**؛ (2) **تخطيط سيناريوهات ما بعد الانتخابات حول الاستمرارية المالية** — IMF WEO أبريل 2026 T+1 NGDP_RPCH 2.3%، GGXWDG_NGDP 32.6%؛ (3) **رصد الهوية الرقمية وإدارة الأزمات المالية وهدف EU EED 2030 في 2027–2028**. *تقريبًا متكافئ* (40–55%) أن الثلاثة تحقق مستهدفاتها.
+
+---
+
+### قراءة 60 ثانية
+
+- **بطاقة نتائج الولاية**: ~74% من التزامات اتفاقية تيدو أصبحت قانونًا (الأمن 90%، العدالة 89%، الهجرة 85%، الطاقة 75%، المناخ 65%، التعليم 60%، الرعاية الصحية 50%، العمل 50%).
+- **تأكيد ذروة الدورة**: 2026-05-10 أكبر يوم تشريعي في تاريخ الولاية.
+- **الدورة الاقتصادية**: NGDP_RPCH 2.4% (2022) → 0.1% (2023) → 1.2% (2024) → 1.8% (2025) → 2.1% (2026). الدين إلى الناتج المحلي ثابت عند 32–33%. [A1]
+- **استمرارية الائتلاف**: صمدت تيدو 4 سنوات رغم 11 ضغطًا في التصويت على الثقة. [B2]
+
+---
+
+### لافتة ثقة الولاية
+
+| الجانب | ثقة WEP | ملاحظة الأفق |
+|--------|---------|--------------|
+| قوانين الأمن تنجو من انتخابات 2026 | محتمل جدًا (80–90%) | [أفق:دورة] |
+| تيدو تفوز بإعادة انتخابها | تقريبًا متكافئ (40–55%) | [أفق:انتخابات] |
+| الرصيد المالي ≤ -1% حتى 2030 | محتمل (60–75%) | [أفق:دورة] |
+| النشر الكامل للهوية الرقمية قبل 2028 | غير محتمل (20–35%) | [أفق:دورة] |
+| تحقيق هدف EU EED 2030 للمباني | غير محتمل (25–40%) | [أفق:دورة] |
+| سعر Riksbank ≤ 2.0% نهاية 2026 | محتمل (55–70%) | [أفق:سنة] |
+| تشكيل الائتلاف < 60 يومًا بعد الانتخابات | محتمل (55–70%) | [أفق:انتخابات] |
+
+---
+
+### ثلاثة قرارات يدعمها هذا الموجز
+
+1. **المعاملة شبه الدستورية للمحور الأمني**: *محتمل جدًا* (80–90%) مستدام.
+2. **الاستمرارية المالية، لا الاضطراب**: *محتمل* (60–75%).
+3. **نقطة تحول تنفيذية 2027–2028**: *تقريبًا متكافئ* (40–55%) أن الثلاثة تحقق مستهدفاتها.
+
+---
+
+### الجديد منذ 2026-05-11
+
+- إضافة HD01CU30 كرتبة DIW 11.
+- تسجيل HD01NU21 كأداة تموضع السياسة الريفية.
+- فتح PIR-9 الجديد مقابل هدف HD01CU30 EU EED 2030.
+- تحديث معدل تقديم المقترحات اليومي من 0.4 إلى 0.3/يوم.
+
+---
+
+*المؤلف*: James Pether Sörling | *سير العمل*: news-election-cycle | *التشغيل*: 25769375837
+*المصادر*: [A1] صندوق النقد الدولي WEO أبريل 2026 + بيانات Riksdagen المفتوحة؛ [A2] مسح OECD السويد 2025؛ [B2] SOM-institutet, Novus.
+
+<!-- source-sha: da8028e83f1cd6c0437e57058cd843114b4719fa -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/executive-brief_da.md -->
+
+**Klassificering**: PUBLIC | **Arbejdsgang**: news-election-cycle | **Cyklus**: 2022-09-11 → 2026-09-13 (T-123 til mandatafslutning)
+**IMF-vintage**: WEO apr-2026 [horisont:cyklus] | **Riksmødedækning**: 2022/23, 2023/24, 2024/25, 2025/26
+
+---
+
+### Daglig opdatering 2026-05-13 — Pass-2-opdatering
+
+**T-123 til valget (2026-09-13)** · opdateret mod søsteranalyser 2026-05-13.
+
+- **EU EED-transponering offentliggjort 2026-05-12 (HD01CU30)**: den omarbejdede energiydelsesdirektiv for bygninger (EPBD) er nu i CU's hænder som betænkning 2025/26:CU30. Dette er **sen-mandatets EU-overholdelsesafslutning** — strukturelt vigtig men politisk *usynlig* i kampagnefortællingen. [A1, dok:HD01CU30]
+- **NU21 landdistriktspolitikramme (HD01NU21) offentliggjort 2026-05-12**: "Hela Sverige ska fungera" — oppositionsfærvet ramme behandlet af Erhvervsudvalget. [A1, dok:HD01NU21]
+- **Ingen nye Tidö-lovforslag indgivet 2026-05-08…13**: cykelhøjdepunktet 2026-05-10 forbliver mandatets **terminale lovgivningsspids**. [A1]
+- **Fire private motioner** (HD10483–86): samtykkelov, ældrepleje, prostitutionsbeskatning, ligeløn. *Usandsynligt* (10–25%) at konvertere til lov.
+- **Aktive PIR'er**: PIR-1, PIR-3, PIR-5, PIR-7, **PIR-9 NY** (EU EED 2030-mål).
+
+---
+
+### Sammendrag (Bottom Line Up Front)
+
+2022–2026 Tidö-mandatet slutter med en strukturelt forvandlet svensk stat — sikkerhedsarkitektur genopbygget, finansiel stabilitet genstartet, digital identitetsstak kodificeret og migrationsefterlevelse tilpasset nordiske naboer. I dag, **123 dage før septembervalget**, lukker Kristersson-regeringen sit **EU-overholdelsesefterslæb** stille. *Meget sandsynligt* (80–90% [horisont:cyklus]) at kernesikkerhedsreformerne overlever 2026. [A2]
+
+Tre beslutninger understøttes: (1) **Behandl 2022–2026 sikkerhedspivoten som et kvasi-konstitutionelt skift**; (2) **Planlæg post-valgscenarier om finansiel kontinuitet** — IMF WEO apr-2026 T+1 NGDP_RPCH 2,3%, GGXWDG_NGDP 32,6%; (3) **Overvåg e-ID, finansiel krisehåndtering og EU EED 2030-implementering 2027–2028**. *Nogenlunde lige* (40–55%) at alle tre rammer deres milepæle.
+
+---
+
+### 60-sekunders læsning
+
+- **Mandatscorecard**: ~74 % af Tidöaftalets forpligtelser nu i lov (sikkerhed 90%, retfærdighed 89%, migration 85%, energi 75%, klima 65%, uddannelse 60%, sundhed 50%, arbejde 50%).
+- **Cyklushøjdepunktet bekræftet**: 2026-05-10 største lovgivningsdag i mandatets levetid.
+- **Økonomisk cyklus**: NGDP_RPCH-bane 2,4% (2022) → 0,1% (2023) → 1,2% (2024) → 1,8% (2025) → 2,1% (2026). Gæld-til-BNP holdt på 32–33%. [A1]
+- **Koalitionsholdbarhed**: Tidö overlevede 4 år trods 11 tillidsafstemningspres. [B2]
+
+---
+
+### Mandat-tillid-banner
+
+| Aspekt | WEP-tillid | Horisontetiket |
+|--------|------------|----------------|
+| Sikkerhedslove overlever 2026-valget | meget sandsynligt (80–90%) | [horisont:cyklus] |
+| Tidö vinder genvalg | nogenlunde lige (40–55%) | [horisont:valg] |
+| Finansiel balance ≤ -1% til 2030 | sandsynligt (60–75%) | [horisont:cyklus] |
+| e-ID fuld udrulning inden 2028 | usandsynligt (20–35%) | [horisont:cyklus] |
+| EU EED 2030 bygningsbestandsmål nået | usandsynligt (25–40%) | [horisont:cyklus] |
+| Riksbank-renten ≤ 2,0% ultimo 2026 | sandsynligt (55–70%) | [horisont:år] |
+| Koalitionsdannelse < 60 dage efter valget | sandsynligt (55–70%) | [horisont:valg] |
+
+---
+
+### Tre beslutninger dette dokument understøtter
+
+1. **Kvasi-konstitutionel behandling af sikkerhedspivoten**: *Meget sandsynligt* (80–90%) holdbar.
+2. **Finansiel kontinuitet, ikke omvæltning**: *Sandsynligt* (60–75%).
+3. **2027–2028 implementeringsinfleksion**: *Nogenlunde lige* (40–55%) alle tre rammer milepæle.
+
+---
+
+### Nyt siden 2026-05-11
+
+- HD01CU30 tilføjet som DIW-rang 11.
+- HD01NU21 logget som landdistriktspolitik-positioneringskøretøj.
+- PIR-9 NY åbnet mod HD01CU30 EU 2030-mål.
+- Daglig forslagsindgivelsesrate opdateret 0,4 → 0,3/dag.
+
+---
+
+*Forfatter*: James Pether Sörling | *Arbejdsgang*: news-election-cycle | *Kørsel*: 25769375837
+*Kilder*: [A1] IMF WEO apr-2026 + Riksdagens åbne data; [A2] OECD Sweden Survey 2025; [B2] SOM-institutet, Novus.
+
+<!-- source-sha: da8028e83f1cd6c0437e57058cd843114b4719fa -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/executive-brief_de.md -->
+
+Klassifizierung: PUBLIC | Arbeitsablauf: news-election-cycle | Zyklus: 2022-09-11 → 2026-09-13 (T-123 bis Mandatsende)
+IMF-Vintage: WEO Apr-2026 [Horizont:Zyklus] | Riksmöte-Abdeckung: 2022/23, 2023/24, 2024/25, 2025/26
+
+---
+
+### Tägliche Aktualisierung 2026-05-13 — Pass-2-Aktualisierung
+
+T-123 bis zur Wahl (2026-09-13) · aktualisiert gegen Schwesteranalysen 2026-05-13.
+
+HD01CU30 EU EED-Transposition veröffentlicht 2026-05-12 — spätmandatliche EU-Compliance-Abschluss. HD01NU21 ländlicher Rahmen veröffentlicht. Keine neuen Tidö-Vorlagen 2026-05-08…13; 2026-05-10 bleibt die letzte Gesetzgebungsspitze. Vier Privatmotionen (HD10483–86). Aktive PIRs: PIR-1, PIR-3, PIR-5, PIR-7, PIR-9 NEU.
+
+---
+
+### Zusammenfassung (Bottom Line Up Front)
+
+Das 2022–2026 Tidö-Mandat endet mit einem strukturell transformierten schwedischen Staat. *Sehr wahrscheinlich* (80–90% [Horizont:Zyklus]) dass Kernsicherheitsreformen 2026 überleben. [A2] Drei Entscheidungen werden unterstützt: (1) **Sicherheitspivot als quasi-konstitutionellen Wandel behandeln**; (2) **Post-Wahlszenarien um fiskalische Kontinuität planen** — IWF WEO Apr-2026 T+1 NGDP_RPCH 2,3%, GGXWDG_NGDP 32,6%; (3) **e-ID, Finanzkrisenfunktion und EU EED 2030 2027–2028 beobachten**. *Nahezu gleich* (40–55%) alle drei treffen Meilensteine.
+
+---
+
+### 60-Sekunden-Lektüre
+
+Mandat-Scorecard: ~74% der Tidöabkommen-Verpflichtungen jetzt in Gesetz (Sicherheit 90%, Justiz 89%, Migration 85%, Energie 75%, Klima 65%, Bildung 60%, Gesundheit 50%, Arbeit 50%). Wirtschaftszyklus: NGDP_RPCH 2,4% (2022) → 0,1% (2023) → 1,2% (2024) → 1,8% (2025) → 2,1% (2026). Schulden-BIP bei 32–33% gehalten. [A1]
+
+---
+
+### Mandat-Vertrauensband
+
+| Aspekt | WEP-Vertrauen | Horizont-Label |
+|---------|----------|---------|
+| Sicherheitsgesetze überleben 2026-Wahl | sehr wahrscheinlich (80–90%) | [Horizont:Zyklus] |
+| Tidö gewinnt Wiederwahl | nahezu gleich (40–55%) | [Horizont:Wahl] |
+| Haushaltssaldo ≤ -1% bis 2030 | wahrscheinlich (60–75%) | [Horizont:Zyklus] |
+| e-ID Vollimplementierung bis 2028 | unwahrscheinlich (20–35%) | [Horizont:Zyklus] |
+| EU EED 2030 Gebäudebestand-Ziel erreicht | unwahrscheinlich (25–40%) | [Horizont:Zyklus] |
+| Riksbank-Leitzins ≤ 2,0% Ende 2026 | wahrscheinlich (55–70%) | [Horizont:Jahr] |
+| Koalitionsbildung < 60 Tage nach Wahl | wahrscheinlich (55–70%) | [Horizont:Wahl] |
+
+---
+
+### Drei Entscheidungen, die dieser Brief unterstützt
+
+(1) Quasi-konstitutionelle Behandlung des Sicherheitspivots: *Sehr wahrscheinlich* (80–90%) dauerhaft. (2) Fiskalische Kontinuität, kein Umsturz: *Wahrscheinlich* (60–75%). (3) 2027–2028 Implementierungs-Inflexion: *Nahezu gleich* (40–55%) alle drei treffen Meilensteine.
+
+---
+
+### Neues seit 2026-05-11
+
+HD01CU30 als DIW-Rang 11 hinzugefügt. HD01NU21 als Landpolitik-Positionierungsfahrzeug erfasst. PIR-9 NEU gegen HD01CU30 EU 2030-Ziel eröffnet. Tägliche Vorlagenrate auf 0,3/Tag aktualisiert.
+
+---
+
+*Autor*: James Pether Sörling | *Workflow*: news-election-cycle | *Lauf*: 25769375837
+*Quellen*: IWF WEO Apr-2026 + Riksdagen-Daten; OECD Sweden Survey 2025; SOM-institutet, Novus.
+
+<!-- source-sha: da8028e83f1cd6c0437e57058cd843114b4719fa -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/executive-brief_es.md -->
+
+Clasificación: PUBLIC | Flujo de trabajo: news-election-cycle | Ciclo: 2022-09-11 → 2026-09-13 (T-123 fin de mandato)
+Vintage FMI: PEM abr-2026 [horizonte:ciclo] | Cobertura riksmöte: 2022/23, 2023/24, 2024/25, 2025/26
+
+---
+
+### Actualización diaria 2026-05-13 — Actualización pasada-2
+
+T-123 antes de las elecciones (2026-09-13) · actualizado contra análisis hermanos del 2026-05-13.
+
+Transposición HD01CU30 EU EED publicada el 2026-05-12 — cierre de cumplimiento UE de fin de mandato. Marco rural HD01NU21 publicado. Sin nuevas proposiciones Tidö 2026-05-08…13; el 2026-05-10 sigue siendo el último pico legislativo. Cuatro mociones privadas (HD10483–86). PIR activos: PIR-1, PIR-3, PIR-5, PIR-7, PIR-9 NUEVO.
+
+---
+
+### Resumen (Bottom Line Up Front)
+
+El mandato Tidö 2022–2026 termina con un Estado sueco estructuralmente transformado. *Muy probable* (80–90% [horizonte:ciclo]) que las reformas de seguridad fundamentales sobrevivan a 2026. [A2] Se apoyan tres decisiones: (1) **Tratar el pivote de seguridad 2022–2026 como un cambio cuasi-constitucional**; (2) **Planificar escenarios post-electorales en torno a la continuidad fiscal** — FMI PEM abr-2026 T+1 NGDP_RPCH 2,3%, GGXWDG_NGDP 32,6%; (3) **Monitorear e-ID, gestión de crisis financiera y objetivo UE EED 2030 en 2027–2028**. *Prácticamente igual* (40–55%) que los tres alcancen sus hitos.
+
+---
+
+### Lectura de 60 segundos
+
+Marcador del mandato: ~74% de los compromisos del acuerdo Tidö ahora en ley (seguridad 90%, justicia 89%, migración 85%, energía 75%, clima 65%, educación 60%, salud 50%, trabajo 50%). Trayectoria NGDP_RPCH 2,4% (2022) → 0,1% (2023) → 1,2% (2024) → 1,8% (2025) → 2,1% (2026). Deuda-PIB mantenida al 32–33%. [A1]
+
+---
+
+### Panel de confianza del mandato
+
+| Aspecto | Confianza WEP | Etiqueta horizonte |
+|---------|----------|---------|
+| Leyes de seguridad sobreviven 2026 | muy probable (80–90%) | [horizonte:ciclo] |
+| Tidö gana reelección | prácticamente igual (40–55%) | [horizonte:elección] |
+| Saldo fiscal ≤ -1% hasta 2030 | probable (60–75%) | [horizonte:ciclo] |
+| Despliegue completo e-ID antes 2028 | improbable (20–35%) | [horizonte:ciclo] |
+| Objetivo UE EED 2030 alcanzado | improbable (25–40%) | [horizonte:ciclo] |
+| Tipo director Riksbank ≤ 2,0% fin 2026 | probable (55–70%) | [horizonte:año] |
+| Formación coalición < 60 días tras elección | probable (55–70%) | [horizonte:elección] |
+
+---
+
+### Tres decisiones que este documento apoya
+
+(1) Tratamiento cuasi-constitucional del pivote de seguridad: *Muy probable* (80–90%) duradero. (2) Continuidad fiscal, no convulsión: *Probable* (60–75%). (3) Inflexión de implementación 2027–2028: *Prácticamente igual* (40–55%) todos tres alcanzan hitos.
+
+---
+
+### Novedades desde 2026-05-11
+
+HD01CU30 añadido como rango DIW 11. HD01NU21 registrado como vehículo de posicionamiento rural. PIR-9 NUEVO abierto contra el objetivo UE EED 2030. Tasa de presentación diaria actualizada 0,4 → 0,3/día.
+
+---
+
+*Autor*: James Pether Sörling | *Workflow*: news-election-cycle | *Lauf*: 25769375837
+*Quellen*: FMI PEM abr-2026 + datos abiertos Riksdagen; OCDE Encuesta Suecia 2025; SOM-institutet, Novus.
+
+<!-- source-sha: da8028e83f1cd6c0437e57058cd843114b4719fa -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/executive-brief_fi.md -->
+
+**Luokittelu**: PUBLIC | **Työnkulku**: news-election-cycle | **Sykli**: 2022-09-11 → 2026-09-13 (T-123 toimikauden päättymiseen)
+**IMF-vuosikerta**: WEO huht-2026 [horisontti:sykli] | **Riksmötekattavuus**: 2022/23, 2023/24, 2024/25, 2025/26
+
+---
+
+### Päivittäinen päivitys 2026-05-13 — Pass-2-päivitys
+
+**T-123 vaaleihin (2026-09-13)** · päivitetty 2026-05-13 sisaranalyysejä vasten.
+
+- **EU EED -transponointi julkaistu 2026-05-12 (HD01CU30)**: uusittu rakennusten energiatehokkuusdirektiivi (EPBD) on nyt CU:n käsissä mietintönä 2025/26:CU30. Tämä on **myöhäisen toimikauden EU-vaatimustenmukaisuuden sulkeminen** — rakenteellisesti tärkeä mutta poliittisesti *näkymätön* kampanjanarratiiville. [A1, dok:HD01CU30]
+- **NU21 maaseutupolitiikkakehys (HD01NU21) julkaistu 2026-05-12**: "Hela Sverige ska fungera" — oppositioväritteinen kehys, jota Elinkeinovaliokunnan käsittelee. [A1, dok:HD01NU21]
+- **Ei uusia Tidö-esityksiä jätetty 2026-05-08…13**: syklihuippu 2026-05-10 pysyy toimikauden **terminaalisena lainsäädäntöpiikkinä**. [A1]
+- **Neljä yksityistä motioita** (HD10483–86): suostumuslaki, vanhuushoito, prostituutioverotus, tasapalkka. *Epätodennäköistä* (10–25%) muuttua laiksi.
+- **Aktiiviset PIR:t**: PIR-1, PIR-3, PIR-5, PIR-7, **PIR-9 UUSI** (EU EED 2030 -tavoite).
+
+---
+
+### Yhteenveto (Bottom Line Up Front)
+
+2022–2026 Tidö-toimikausi päättyy rakenteellisesti muuttuneeseen Ruotsiin — turvallisuusarkkitehtuuri uudelleenrakennettu, taloudellinen vakaus uudelleenkäynnistetty, digitaalinen henkilöllisyyspino koodattu ja maahanmuuton toimeenpano sovitettu pohjoismaisiin naapureihin. Tänään, **123 päivää ennen syyskuun vaaleja**, Kristerssonin hallitus sulkee **EU-vaatimusmukaisuusviiveensä** hiljaa. *Hyvin todennäköistä* (80–90% [horisontti:sykli]) että ydinturvallisuusuudistukset selviävät 2026 vaaleista. [A2]
+
+Kolme päätöstä tuetaan: (1) **Kohtele 2022–2026 turvallisuuspivottia kvasi-perustuslaillisena muutoksena**; (2) **Suunnittele vaalinjälkeiset skenaariot taloudellisen jatkuvuuden ympärille** — IMF WEO huht-2026 T+1 NGDP_RPCH 2,3%, GGXWDG_NGDP 32,6%; (3) **Seuraa sähköistä tunnistautumista, taloudellista kriisinhallintaa ja EU EED 2030 -toteutusta 2027–2028**. *Suunnilleen tasan* (40–55%) kaikki kolme saavuttavat virstanpylväät.
+
+---
+
+### 60 sekunnin lukeminen
+
+- **Toimikauden tuloskortti**: ~74 % Tidöavtalets sitoumuksista nyt laissa (turvallisuus 90%, oikeus 89%, maahanmuutto 85%, energia 75%, ilmasto 65%, koulutus 60%, terveys 50%, työ 50%).
+- **Syklihuippu vahvistettu**: 2026-05-10 suurin lainsäädäntöpäivä toimikauden aikana.
+- **Taloudellinen sykli**: NGDP_RPCH-rata 2,4% (2022) → 0,1% (2023) → 1,2% (2024) → 1,8% (2025) → 2,1% (2026). Velka-BKT:hen pidetty 32–33%:ssa. [A1]
+- **Koalition kestävyys**: Tidö selvisi 4 vuotta huolimatta 11 luottamusäänestyksestä. [B2]
+
+---
+
+### Toimikauden luottamusvyöhyke
+
+| Näkökohta | WEP-luottamus | Horisontimerkintä |
+|-----------|---------------|-------------------|
+| Turvallisuuslait selviävät 2026 vaaleista | hyvin todennäköistä (80–90%) | [horisontti:sykli] |
+| Tidö voittaa uudelleenvalinnan | suunnilleen tasan (40–55%) | [horisontti:vaalit] |
+| Taloudellinen tasapaino ≤ -1% vuoteen 2030 | todennäköistä (60–75%) | [horisontti:sykli] |
+| Sähköinen tunnistautuminen täysi käyttöönotto vuoteen 2028 | epätodennäköistä (20–35%) | [horisontti:sykli] |
+| EU EED 2030 rakennuskannan tavoite saavutettu | epätodennäköistä (25–40%) | [horisontti:sykli] |
+| Riksbankin ohjauskorko ≤ 2,0% vuoden 2026 lopussa | todennäköistä (55–70%) | [horisontti:vuosi] |
+| Koalition muodostaminen < 60 päivässä vaalien jälkeen | todennäköistä (55–70%) | [horisontti:vaalit] |
+
+---
+
+### Kolme päätöstä, joita tämä asiakirja tukee
+
+1. **Turvallisuuspivotin kvasi-perustuslaillinen kohtelu**: *Hyvin todennäköistä* (80–90%) kestävä.
+2. **Taloudellinen jatkuvuus, ei mullistus**: *Todennäköistä* (60–75%).
+3. **2027–2028 toteutusinflektio**: *Suunnilleen tasan* (40–55%) kaikki kolme saavuttavat virstanpylväät.
+
+---
+
+### Uutta 2026-05-11 jälkeen
+
+- HD01CU30 lisätty DIW-rankina 11.
+- HD01NU21 kirjattu maaseutupolitiikan asemointiajoneuvoksi.
+- PIR-9 UUSI avattu HD01CU30 EU 2030 -tavoitetta vastaan.
+- Päivittäinen esitysten jättämistahti päivitetty 0,4 → 0,3/päivä.
+
+---
+
+*Tekijä*: James Pether Sörling | *Työnkulku*: news-election-cycle | *Ajo*: 25769375837
+*Lähteet*: [A1] IMF WEO huht-2026 + Riksdagens avoimet tiedot; [A2] OECD Sweden Survey 2025; [B2] SOM-institutet, Novus.
+
+<!-- source-sha: da8028e83f1cd6c0437e57058cd843114b4719fa -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/executive-brief_fr.md -->
+
+Millésime FMI : PEM avr-2026 [horizon:cycle] | Couverture riksmöte : 2022/23, 2023/24, 2024/25, 2025/26
+
+---
+
+### Actualisation quotidienne 2026-05-13 — Mise à jour passe-2
+
+T-123 avant les élections (2026-09-13) · actualisé contre les analyses sœurs du 2026-05-13.
+
+Transposition HD01CU30 EU EED publiée le 2026-05-12 — clôture de conformité UE en fin de mandat. Cadre rural HD01NU21 publié. Aucune nouvelle proposition Tidö du 2026-05-08 au 2026-05-13 ; le 2026-05-10 reste le dernier pic législatif. Quatre motions privées (HD10483–86). PIR actifs : PIR-1, PIR-3, PIR-5, PIR-7, PIR-9 NOUVEAU.
+
+---
+
+### Résumé (Bottom Line Up Front)
+
+Le mandat Tidö 2022–2026 se termine avec un État suédois structurellement transformé. *Très probable* (80–90% [horizon:cycle]) que les réformes de sécurité fondamentales survivent à 2026. [A2] Trois décisions sont soutenues : (1) **Traiter le pivot sécuritaire 2022–2026 comme un changement quasi-constitutionnel** ; (2) **Planifier les scénarios post-électoraux autour de la continuité fiscale** — FMI PEM avr-2026 T+1 NGDP_RPCH 2,3%, GGXWDG_NGDP 32,6% ; (3) **Surveiller l'e-ID, la gestion de crise financière et l'objectif UE EED 2030 en 2027–2028**. *À peu près égal* (40–55%) que les trois atteignent leurs jalons.
+
+---
+
+### Lecture en 60 secondes
+
+Tableau de bord du mandat : ~74% des engagements de l'accord Tidö maintenant en loi (sécurité 90%, justice 89%, migration 85%, énergie 75%, climat 65%, éducation 60%, santé 50%, travail 50%). Trajectoire NGDP_RPCH 2,4% (2022) → 0,1% (2023) → 1,2% (2024) → 1,8% (2025) → 2,1% (2026). Dette-PIB maintenue à 32–33%. [A1]
+
+---
+
+### Tableau de confiance du mandat
+
+| Aspect | Confiance WEP | Étiquette horizon |
+|---------|----------|---------|
+| Lois sécuritaires survivent à 2026 | très probable (80–90%) | [horizon:cycle] |
+| Tidö remporte la réélection | à peu près égal (40–55%) | [horizon:élection] |
+| Solde budgétaire ≤ -1% jusqu'en 2030 | probable (60–75%) | [horizon:cycle] |
+| Déploiement complet e-ID avant 2028 | peu probable (20–35%) | [horizon:cycle] |
+| Objectif UE EED 2030 atteint | peu probable (25–40%) | [horizon:cycle] |
+| Taux directeur Riksbank ≤ 2,0% fin 2026 | probable (55–70%) | [horizon:année] |
+| Formation coalition < 60 jours après élection | probable (55–70%) | [horizon:élection] |
+
+---
+
+### Trois décisions que ce document appuie
+
+(1) Traitement quasi-constitutionnel du pivot sécuritaire : *Très probable* (80–90%) durable. (2) Continuité fiscale, pas de bouleversement : *Probable* (60–75%). (3) Inflexion d'implémentation 2027–2028 : *À peu près égal* (40–55%) que les trois atteignent leurs jalons.
+
+---
+
+### Nouveautés depuis 2026-05-11
+
+HD01CU30 ajouté en rang DIW 11. HD01NU21 enregistré comme outil de positionnement rural. PIR-9 NOUVEAU ouvert contre l'objectif EU EED 2030. Taux de dépôt quotidien mis à jour 0,4 → 0,3/jour.
+
+---
+
+*Autor*: James Pether Sörling | *Workflow*: news-election-cycle | *Lauf*: 25769375837
+*Quellen*: FMI PEM avr-2026 + données ouvertes Riksdagen ; OCDE Enquête Suède 2025 ; SOM-institutet, Novus.
+
+<!-- source-sha: da8028e83f1cd6c0437e57058cd843114b4719fa -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+---
+title: "מנדט טידה, T-123: עמידה באנרגית האיחוד האירופי נסגרת בעוד הציר הביטחוני מחזיק"
+
+language: he
+subfolder: election-cycle/current
+slug: election-cycle-current
+source_folder: analysis/daily/2026-05-13/election-cycle/current
+
+workflow: news-election-cycle
+horizon: cycle
+
+---
+
+# מנדט טידה, T-123: עמידה באנרגית האיחוד האירופי נסגרת בעוד הציר הביטחוני מחזיק
+
+**סיווג**: PUBLIC | **תהליך עבודה**: news-election-cycle | **מחזור**: 2022-09-11 → 2026-09-13 (T-123 לסיום המנדט)
+**בסיס נתוני קרן המטבע**: WEO אפריל 2026 [אופק:מחזור]
+
+---
+
+### עדכון יומי 2026-05-13 — עדכון מעבר שני
+
+**T-123 לבחירות (2026-09-13)** · עודכן מול ניתוחים אחים של 2026-05-13.
+
+- **HD01CU30 תחלוף EU EED פורסם 2026-05-12**: הנחיית ביצועי אנרגיה של בניינים המחודשת (EPBD) כעת בידי ועדת CU כדו"ח 2025/26:CU30. זהו **סגירת עמידה באיחוד האירופי בסוף המנדט** — חשוב מבנית אך *בלתי נראה* פוליטית. [A1]
+- **HD01NU21 מסגרת מדיניות כפרית פורסם 2026-05-12**: "Hela Sverige ska fungera" — מסגרת בגוון אופוזיציה. [A1]
+- **אין הצעות Tidö חדשות 2026-05-08…13**: שיא המחזור 2026-05-10 נותר **השיא החקיקתי הסופי** של המנדט. [A1]
+- **ארבעה הצעות פרטיות** (HD10483–86): חוק הסכמה, סיעוד קשישים, מיסוי זנות, שוויון שכר. *לא סביר* (10–25%) שיהפכו לחוק.
+- **PIR פעילים**: PIR-1, PIR-3, PIR-5, PIR-7, **PIR-9 חדש** (יעד EU EED 2030).
+
+---
+
+### סיכום (שורה תחתונה קודם)
+
+מנדט טידה 2022–2026 מסתיים עם מדינה שוודית שהשתנתה מבנית — ארכיטקטורת ביטחון נבנתה מחדש, מסגרת יציבות פיננסית הופעלה מחדש, מחסנית זהות דיגיטלית קודדה והאכיפה ההגירתית הותאמה לשכנים הנורדיים. היום, **123 ימים לפני בחירות ספטמבר**, ממשלת קריסטרסון סוגרת בשקט את **פיגור הציות לאיחוד האירופי** שלה. *סביר מאוד* (80–90% [אופק:מחזור]) שרפורמות הביטחון הליבה ישרדו את 2026. [A2]
+
+שלושה החלטות נתמכות: (1) **לטפל בציר הביטחוני 2022–2026 כשינוי מעין-חוקתי**; (2) **לתכנן תרחישים שלאחר הבחירות סביב רצף פיסקלי** — IMF WEO אפריל 2026 T+1 NGDP_RPCH 2.3%، GGXWDG_NGDP 32.6%؛ (3) **לנטר זהות דיגיטלית, ניהול משבר פיננסי ויעד EU EED 2030 בשנים 2027–2028**. *בערך שווה* (40–55%) שכל שלושתם ישיגו את יעדיהם.
+
+---
+
+### קריאה של 60 שניות
+
+- **כרטיס תוצאות המנדט**: ~74% מהתחייבויות הסכם טידה כעת בחוק (ביטחון 90%, צדק 89%, הגירה 85%, אנרגיה 75%, אקלים 65%, חינוך 60%, בריאות 50%, עבודה 50%).
+- **שיא המחזור אושר**: 2026-05-10 היום החקיקתי הגדול ביותר בתולדות המנדט.
+- **מחזור כלכלי**: NGDP_RPCH 2.4% (2022) → 0.1% (2023) → 1.2% (2024) → 1.8% (2025) → 2.1% (2026). חוב-לתמ"ג נשמר ב-32–33%. [A1]
+- **עמידות הקואליציה**: טידה שרדה 4 שנים למרות 11 לחצי הצבעת אי-אמון. [B2]
+
+---
+
+### לוח אמינות המנדט
+
+| היבט | אמינות WEP | תג אופק |
+|------|-----------|---------|
+| חוקי ביטחון שורדים בחירות 2026 | סביר מאוד (80–90%) | [אופק:מחזור] |
+| טידה זוכה בבחירות מחדש | בערך שווה (40–55%) | [אופק:בחירות] |
+| יתרת תקציב ≤ -1% עד 2030 | סביר (60–75%) | [אופק:מחזור] |
+| פריסה מלאה של זהות דיגיטלית לפני 2028 | לא סביר (20–35%) | [אופק:מחזור] |
+| יעד EU EED 2030 לרצף מבנים הושג | לא סביר (25–40%) | [אופק:מחזור] |
+| ריבית Riksbank ≤ 2.0% סוף 2026 | סביר (55–70%) | [אופק:שנה] |
+| גיבוש קואליציה < 60 ימים לאחר בחירות | סביר (55–70%) | [אופק:בחירות] |
+
+---
+
+### שלושה החלטות שמסמך זה תומך בהן
+
+1. **טיפול מעין-חוקתי בציר הביטחוני**: *סביר מאוד* (80–90%) עמיד.
+2. **רצף פיסקלי, לא הפיכה**: *סביר* (60–75%).
+3. **נקודת מפנה יישום 2027–2028**: *בערך שווה* (40–55%) שכל שלושתם ישיגו יעדים.
+
+---
+
+### חדש מאז 2026-05-11
+
+- HD01CU30 נוסף כדירוג DIW 11.
+- HD01NU21 נרשם ככלי מיצוב מדיניות כפרית.
+- PIR-9 חדש נפתח כנגד יעד HD01CU30 EU EED 2030.
+- קצב הגשות יומי עודכן 0.4 → 0.3 ליום.
+
+---
+
+*מחבר*: James Pether Sörling | *תהליך עבודה*: news-election-cycle | *הרצה*: 25769375837
+*מקורות*: [A1] IMF WEO אפריל 2026 + נתוני Riksdagen פתוחים; [A2] OECD סקר שוודיה 2025; [B2] SOM-institutet, Novus.
+
+<!-- source-sha: da8028e83f1cd6c0437e57058cd843114b4719fa -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/executive-brief_ja.md -->
+
+**分類**: PUBLIC | **ワークフロー**: news-election-cycle | **サイクル**: 2022-09-11 → 2026-09-13 (T-123 任期終了まで)
+**IMFヴィンテージ**: WEO 2026年4月 [地平線：サイクル]
+
+---
+
+### 2026-05-13 日次更新 — パス2更新
+
+**T-123（2026-09-13選挙まで）** · 2026-05-13の姉妹分析を参照して更新。
+
+- **HD01CU30 EU EED移行法、2026-05-12公開**：改訂建物エネルギー性能指令(EPBD)とエネルギー使用効率目標が委員会CUの審議（審議書2025/26:CU30）に付された。任期末の**EU規制遵守完了**として構造的に重要だが、選挙キャンペーンの文脈では政治的に*見えない*。[A1]
+- **HD01NU21 農村政策フレームワーク、2026-05-12公開**："Hela Sverige ska fungera" — 野党色の強い枠組み。[A1]
+- **2026-05-08～13 新たなティドー提案なし**：2026-05-10のサイクル最高点が引き続き**任期の立法活動最終ピーク**。[A1]
+- **民間議員動議4件**（HD10483–86）：同意法、高齢者介護、売春所得課税、同一賃金。法律化は*低確率*（10–25%）。
+- **有効PIR**：PIR-1、PIR-3、PIR-5、PIR-7、**PIR-9 新規**（EU EED 2030目標）。
+
+---
+
+### まとめ（結論を先に）
+
+2022–2026ティドー政権は構造的に変革されたスウェーデン国家で終幕する：安全保障アーキテクチャの再構築、金融安定フレームワークの再起動、デジタル身元証明スタックの法制化、移民執行の北欧基準への整合。本日、**9月選挙まで123日**、クリスターソン政権はEU規制遵守の遅延を静かに解消しつつある。中核的安全保障改革が2026年選挙を*ほぼ確実に*（80–90% [地平線：サイクル]）生き残るとみられる。[A2]
+
+3つの意思決定を支援：(1) **2022–2026安全保障軸を準憲法的変革として扱う**；(2) **選挙後シナリオは財政継続性を中心に計画**—IMF WEO 2026年4月 T+1 NGDP_RPCH 2.3%、GGXWDG_NGDP 32.6%；(3) **2027–2028の電子ID・金融危機機能・EU EED 2030目標を監視**。3つすべてが目標達成できる確率は*ほぼ互角*（40–55%）。
+
+---
+
+### 60秒リード
+
+- **政権スコアカード**：ティドー協定の約74%が法律化（安全保障90%、司法89%、移民85%、エネルギー75%、気候65%、教育60%、医療50%、労働50%）。
+- **サイクル最高点確認**：2026-05-10が政権最大の立法活動日。
+- **経済サイクル**：NGDP_RPCH 2.4%（2022）→0.1%（2023）→1.2%（2024）→1.8%（2025）→2.1%（2026）。債務GDP比32–33%維持。[A1]
+- **連立耐久性**：11回の信任投票圧力にもかかわらず4年間生き残った。[B2]
+
+---
+
+### 政権信頼度バナー
+
+| 側面 | WEP信頼度 | 地平線タグ |
+|------|----------|---------|
+| 安全保障法が2026年選挙を生き残る | ほぼ確実（80–90%） | [地平線：サイクル] |
+| ティドーが再選を果たす | ほぼ互角（40–55%） | [地平線：選挙] |
+| 財政バランスが2030まで≤-1%を維持 | おそらく（60–75%） | [地平線：サイクル] |
+| 電子IDが2028までに完全展開 | 低確率（20–35%） | [地平線：サイクル] |
+| EU EED 2030建物群目標達成 | 低確率（25–40%） | [地平線：サイクル] |
+| リクスバンク政策金利が2026年末≤2.0% | おそらく（55–70%） | [地平線：年] |
+| 選挙後60日以内に連立結成 | おそらく（55–70%） | [地平線：選挙] |
+
+---
+
+### このブリーフが支援する3つの決定
+
+1. **安全保障軸の準憲法的扱い**：*ほぼ確実に*（80–90%）持続可能。
+2. **財政継続性、政策大転換なし**：*おそらく*（60–75%）。
+3. **2027–2028実施変曲点**：*ほぼ互角*（40–55%）3つすべてが目標達成。
+
+---
+
+### 2026-05-11以降の変更点
+
+- HD01CU30をDIWランク11として追加。
+- HD01NU21を農村政策ポジショニング手段として記録。
+- PIR-9新規をHD01CU30 EU EED 2030目標に対して開設。
+- 日次提案提出率を0.4→0.3件/日に更新。
+
+---
+
+*著者*：James Pether Sörling | *ワークフロー*：news-election-cycle | *実行*：25769375837
+*出典*：[A1] IMF WEO 2026年4月 + Riksdagenオープンデータ；[A2] OECD スウェーデン調査 2025；[B2] SOM-institutet, Novus.
+
+<!-- source-sha: da8028e83f1cd6c0437e57058cd843114b4719fa -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/executive-brief_ko.md -->
+
+**분류**: PUBLIC | **워크플로**: news-election-cycle | **주기**: 2022-09-11 → 2026-09-13 (T-123 임기 종료)
+**IMF 빈티지**: WEO 2026년 4월 [지평:주기]
+
+---
+
+### 2026-05-13 일일 업데이트 — 2차 통과 업데이트
+
+**T-123 (2026-09-13 선거까지)** · 2026-05-13 자매 분석 대비 업데이트.
+
+- **HD01CU30 EU EED 이행법, 2026-05-12 발표**: 개정 건물 에너지 성능 지침(EPBD)과 에너지 효율 목표가 위원회 CU의 심의(심의서 2025/26:CU30)에 회부됨. 임기 말 **EU 규정 준수 완료**로서 구조적으로 중요하지만 선거 캠페인 맥락에서 정치적으로 *보이지 않음*. [A1]
+- **HD01NU21 농촌 정책 프레임워크, 2026-05-12 발표**: "Hela Sverige ska fungera" — 야당 색채의 프레임워크. [A1]
+- **2026-05-08~13 새로운 티도 법안 없음**: 2026-05-10 주기 정점이 계속 **임기의 최종 입법 활동 정점**으로 유지. [A1]
+- **사적 발의안 4건** (HD10483–86): 동의법, 노인 돌봄, 매춘 소득세, 동일 임금. 법제화는 *낮은 확률* (10–25%).
+- **활성 PIR**: PIR-1, PIR-3, PIR-5, PIR-7, **PIR-9 신규** (EU EED 2030 목표).
+
+---
+
+### 요약 (결론 먼저)
+
+2022–2026 티도 정권은 구조적으로 변혁된 스웨덴 국가와 함께 막을 내린다 — 안보 아키텍처 재구축, 금융 안정성 프레임워크 재가동, 디지털 신원 증명 스택 법제화, 이민 집행의 북유럽 기준 준수. 오늘, **9월 선거까지 123일**, 크리스터손 정권은 EU 규정 준수 지연을 조용히 해소하고 있다. 핵심 안보 개혁이 2026년 선거를 *거의 확실히* (80–90% [지평:주기]) 살아남을 것으로 예상된다. [A2]
+
+세 가지 결정이 지원됨: (1) **2022–2026 안보 축을 준헌법적 변화로 취급**; (2) **선거 후 시나리오를 재정적 연속성 중심으로 계획** — IMF WEO 2026년 4월 T+1 NGDP_RPCH 2.3%, GGXWDG_NGDP 32.6%; (3) **2027–2028 전자 ID, 금융 위기 관리, EU EED 2030 목표 모니터링**. 세 가지 모두 목표 달성 확률은 *대략 반반* (40–55%).
+
+---
+
+### 60초 요약
+
+- **정권 스코어카드**: 티도 협약의 ~74%가 법제화 (안보 90%, 사법 89%, 이민 85%, 에너지 75%, 기후 65%, 교육 60%, 의료 50%, 노동 50%).
+- **주기 정점 확인**: 2026-05-10이 정권 최대 입법 활동일.
+- **경제 주기**: NGDP_RPCH 2.4% (2022) → 0.1% (2023) → 1.2% (2024) → 1.8% (2025) → 2.1% (2026). 부채 GDP 비율 32–33% 유지. [A1]
+- **연립 내구성**: 11차례 신임 투표 압력에도 4년간 지속. [B2]
+
+---
+
+### 정권 신뢰도 배너
+
+| 측면 | WEP 신뢰도 | 지평 태그 |
+|------|----------|---------|
+| 안보법이 2026년 선거를 생존 | 거의 확실히 (80–90%) | [지평:주기] |
+| 티도가 재선에 성공 | 대략 반반 (40–55%) | [지평:선거] |
+| 재정 균형이 2030년까지 ≤-1% 유지 | 아마도 (60–75%) | [지평:주기] |
+| 전자 ID 2028년까지 완전 배포 | 낮은 확률 (20–35%) | [지평:주기] |
+| EU EED 2030 건물 재고 목표 달성 | 낮은 확률 (25–40%) | [지평:주기] |
+| 릭스방크 기준금리 2026년 말 ≤2.0% | 아마도 (55–70%) | [지평:연도] |
+| 선거 후 60일 내 연립 구성 | 아마도 (55–70%) | [지평:선거] |
+
+---
+
+### 이 브리핑이 지원하는 세 가지 결정
+
+1. **안보 축의 준헌법적 취급**: *거의 확실히* (80–90%) 지속 가능.
+2. **재정적 연속성, 급격한 정책 전환 없음**: *아마도* (60–75%).
+3. **2027–2028 이행 변곡점**: *대략 반반* (40–55%) 세 가지 모두 목표 달성.
+
+---
+
+### 2026-05-11 이후 변경 사항
+
+- HD01CU30 DIW 순위 11로 추가.
+- HD01NU21 농촌 정책 포지셔닝 수단으로 기록.
+- PIR-9 신규를 HD01CU30 EU EED 2030 목표에 대해 개설.
+- 일일 제안 제출 속도 0.4 → 0.3건/일로 업데이트.
+
+---
+
+*저자*: James Pether Sörling | *워크플로*: news-election-cycle | *실행*: 25769375837
+*출처*: [A1] IMF WEO 2026년 4월 + Riksdagen 공개 데이터; [A2] OECD 스웨덴 설문 2025; [B2] SOM-institutet, Novus.
+
+<!-- source-sha: da8028e83f1cd6c0437e57058cd843114b4719fa -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/executive-brief_nl.md -->
+
+Classificatie: PUBLIC | Werkstroom: news-election-cycle | Cyclus: 2022-09-11 → 2026-09-13 (T-123 mandaateinde)
+IMF-vintage: WEO apr-2026 [horizon:cyclus] | Riksmöte-dekking: 2022/23, 2023/24, 2024/25, 2025/26
+
+---
+
+### Dagelijkse update 2026-05-13 — Pass-2-update
+
+T-123 tot de verkiezingen (2026-09-13) · bijgewerkt op basis van zusteranalyses 2026-05-13.
+
+HD01CU30 EU EED-omzetting gepubliceerd op 2026-05-12 — EU-nalevingsafsluiting einde mandaat. HD01NU21 landelijk kader gepubliceerd. Geen nieuwe Tidö-voorstellen 2026-05-08…13; 2026-05-10 blijft de laatste wetgevingspiek. Vier privémotissen (HD10483–86). Actieve PIR's: PIR-1, PIR-3, PIR-5, PIR-7, PIR-9 NIEUW.
+
+---
+
+### Samenvatting (Bottom Line Up Front)
+
+Het 2022–2026 Tidö-mandaat eindigt met een structureel getransformeerde Zweedse staat. *Zeer waarschijnlijk* (80–90% [horizon:cyclus]) dat kernsecurityhervormingen 2026 overleven. [A2] Drie beslissingen worden ondersteund: (1) **Behandel de veiligheidspivot 2022–2026 als quasi-constitutionele verandering**; (2) **Plan post-verkiezingsscenario's rond fiscale continuïteit** — IMF WEO apr-2026 T+1 NGDP_RPCH 2,3%, GGXWDG_NGDP 32,6%; (3) **Monitor e-ID, financieel crisisbeheer en EU EED 2030-doel 2027–2028**. *Nagenoeg gelijk* (40–55%) alle drie halen mijlpalen.
+
+---
+
+### 60-seconden lezing
+
+Mandaat-scorebord: ~74% van de Tidöakkoordverplichtingen nu in wet (veiligheid 90%, justitie 89%, migratie 85%, energie 75%, klimaat 65%, onderwijs 60%, gezondheidszorg 50%, arbeid 50%). NGDP_RPCH-baan 2,4% (2022) → 0,1% (2023) → 1,2% (2024) → 1,8% (2025) → 2,1% (2026). Schuld-BBP op 32–33% gehouden. [A1]
+
+---
+
+### Mandaat-vertrouwensbanner
+
+| Aspect | WEP-vertrouwen | Horizonlabel |
+|---------|----------|---------|
+| Veiligheidswetten overleven 2026-verkiezing | zeer waarschijnlijk (80–90%) | [horizon:cyclus] |
+| Tidö wint herverkiezing | nagenoeg gelijk (40–55%) | [horizon:verkiezing] |
+| Begrotingssaldo ≤ -1% tot 2030 | waarschijnlijk (60–75%) | [horizon:cyclus] |
+| Volledige e-ID uitrol voor 2028 | onwaarschijnlijk (20–35%) | [horizon:cyclus] |
+| EU EED 2030 gebouwbestandsdoel gehaald | onwaarschijnlijk (25–40%) | [horizon:cyclus] |
+| Riksbank-rente ≤ 2,0% eind 2026 | waarschijnlijk (55–70%) | [horizon:jaar] |
+| Coalitievorming < 60 dagen na verkiezing | waarschijnlijk (55–70%) | [horizon:verkiezing] |
+
+---
+
+### Drie beslissingen die dit document ondersteunt
+
+(1) Quasi-constitutionele behandeling van veiligheidspivot: *Zeer waarschijnlijk* (80–90%) duurzaam. (2) Fiscale continuïteit, geen omwenteling: *Waarschijnlijk* (60–75%). (3) 2027–2028 implementatie-inflexie: *Nagenoeg gelijk* (40–55%) alle drie halen mijlpalen.
+
+---
+
+### Nieuw sinds 2026-05-11
+
+HD01CU30 toegevoegd als DIW-rang 11. HD01NU21 gelogd als landelijk positioneringsvoertuig. PIR-9 NIEUW geopend tegen HD01CU30 EU 2030-doel. Dagelijkse indieningssnelheid bijgewerkt 0,4 → 0,3/dag.
+
+---
+
+*Autor*: James Pether Sörling | *Workflow*: news-election-cycle | *Lauf*: 25769375837
+*Quellen*: IMF WEO apr-2026 + Riksdagen open data; OESO Zweden-enquête 2025; SOM-institutet, Novus.
+
+<!-- source-sha: da8028e83f1cd6c0437e57058cd843114b4719fa -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/executive-brief_no.md -->
+
+**Klassifisering**: PUBLIC | **Arbeidsflyt**: news-election-cycle | **Syklus**: 2022-09-11 → 2026-09-13 (T-123 til mandatslutt)
+**IMF-årsklasse**: WEO apr-2026 [horisont:syklus] | **Riksmøtedekning**: 2022/23, 2023/24, 2024/25, 2025/26
+
+---
+
+### Daglig oppdatering 2026-05-13 — Pass-2-oppdatering
+
+**T-123 til valget (2026-09-13)** · oppdatert mot søsteranalyser 2026-05-13.
+
+- **EU EED-transponering publisert 2026-05-12 (HD01CU30)**: det omarbeidede direktivet for bygningers energiytelse (EPBD) og det nye effektive-energibruksmålet er nå i CU:s hender som betenkningsdokument 2025/26:CU30. Dette er **sen-mandatets EU-overholdelsesavslutning** — strukturelt viktig men politisk *usynlig* i kampanjefortellingen. [A1, dok:HD01CU30]
+- **NU21 landdistriktspolitikkramme (HD01NU21) publisert 2026-05-12**: "Hela Sverige ska fungera" — opposisjonsfarget ramme behandlet av Næringsutvalget. [A1, dok:HD01NU21]
+- **Ingen nye Tidö-proposisjoner innlevert 2026-05-08…13**: syklusspissens 2026-05-10 forblir mandatets **terminale lovgivningsspiss**. [A1]
+- **Fire private motioner** (HD10483–86): samtykkeslov, eldrepasning, prostitusjonsbeskatning, likelønn. *Usannsynlig* (10–25%) å konvertere til lov.
+- **Aktive PIR-er**: PIR-1, PIR-3, PIR-5, PIR-7, **PIR-9 NY** (EU EED 2030-mål).
+
+---
+
+### Sammendrag (Bottom Line Up Front)
+
+2022–2026 Tidö-mandatet avsluttes med en strukturelt forvandlet svensk stat — sikkerhetsarkitektur gjenoppbygd, finansiell stabilitet restartet, digital identitetsstack kodifisert og migrasjonshåndhevelse tilpasset nordiske naboer. I dag, **123 dager før septembervalget**, lukker Kristersson-regjeringen sitt **EU-overholdelsesetterslep** stille. *Meget sannsynlig* (80–90% [horisont:syklus]) at kjernesikkerhetsreformene overlever 2026. [A2]
+
+Tre beslutninger støttes: (1) **Behandle 2022–2026 sikkerhetspivoten som et kvasi-konstitusjonelt skifte**; (2) **Planlegge post-valgscenarier rundt finansiell kontinuitet** — IMF WEO apr-2026 T+1 NGDP_RPCH 2,3%, GGXWDG_NGDP 32,6%; (3) **Overvåke e-ID, finansiell krisehåndtering og EU EED 2030-implementering 2027–2028**. *Omtrent jevnt* (40–55%) at alle tre treffer sine milepæler.
+
+---
+
+### 60-sekunders lesning
+
+- **Mandatscorecard**: ~74 % av Tidöavtalets forpliktelser nå i lov (sikkerhet 90%, rettferdighet 89%, migrasjon 85%, energi 75%, klima 65%, utdanning 60%, helse 50%, arbeid 50%).
+- **Syklusspissens bekreftet**: 2026-05-10 størst lovgivningsdag i mandatets levetid.
+- **Økonomisk syklus**: NGDP_RPCH-bane 2,4% (2022) → 0,1% (2023) → 1,2% (2024) → 1,8% (2025) → 2,1% (2026). Gjeld-til-BNP holdt på 32–33%. [A1]
+- **Koalisjonsholdelighet**: Tidö overlevde 4 år til tross for 11 tillitsavstemningspress. [B2]
+
+---
+
+### Mandat-tillitsbanner
+
+| Aspekt | WEP-tillit | Horisontmerke |
+|--------|------------|---------------|
+| Sikkerhetslover overlever 2026-valget | meget sannsynlig (80–90%) | [horisont:syklus] |
+| Tidö vinner gjenvalg | omtrent jevnt (40–55%) | [horisont:valg] |
+| Finansiell balanse ≤ -1% til 2030 | sannsynlig (60–75%) | [horisont:syklus] |
+| e-ID full utrulling innen 2028 | usannsynlig (20–35%) | [horisont:syklus] |
+| EU EED 2030 bygningsbestandsmål nådd | usannsynlig (25–40%) | [horisont:syklus] |
+| Riksbankens styringsrente ≤ 2,0% slutten av 2026 | sannsynlig (55–70%) | [horisont:år] |
+| Koalisjonsbygging < 60 dager etter valget | sannsynlig (55–70%) | [horisont:valg] |
+
+---
+
+### Tre beslutninger dette dokumentet støtter
+
+1. **Kvasi-konstitusjonell behandling av sikkerhetspivoten**: *Meget sannsynlig* (80–90%) holdbar.
+2. **Finansiell kontinuitet, ikke omveltning**: *Sannsynlig* (60–75%).
+3. **2027–2028 implementeringsinflektion**: *Omtrent jevnt* (40–55%) alle tre treffer milepæler.
+
+---
+
+### Nytt siden 2026-05-11
+
+- HD01CU30 lagt til som DIW-rang 11.
+- HD01NU21 logget som landdistriktspolitikk-posisjoneringskjøretøy.
+- PIR-9 NY åpnet mot HD01CU30 EU 2030-mål.
+- Daglig forslagsinnleveringsrate oppdatert 0,4 → 0,3/dag.
+
+---
+
+*Forfatter*: James Pether Sörling | *Arbeidsflyt*: news-election-cycle | *Kjøring*: 25769375837
+*Kilder*: [A1] IMF WEO apr-2026 + Riksdagens åpne data; [A2] OECD Sweden Survey 2025; [B2] SOM-institutet, Novus.
+
+<!-- source-sha: da8028e83f1cd6c0437e57058cd843114b4719fa -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/executive-brief_sv.md -->
+
+**Klassificering**: PUBLIC | **Arbetsflöde**: news-election-cycle | **Cykel**: 2022-09-11 → 2026-09-13 (T-123 till mandatslut)
+**IMF-årgång**: WEO apr-2026 [horisont:cykel] | **Riksmötestäckning**: 2022/23, 2023/24, 2024/25, 2025/26
+
+---
+
+### Daglig uppdatering 2026-05-13 — Pass-2-uppdatering
+
+**T-123 till valet (2026-09-13)** · uppdaterad mot syskonanalyser 2026-05-13.
+
+- **EU EED-transponering publicerad 2026-05-12 (HD01CU30)**: det omarbetade direktivet om energiprestanda för byggnader (EPBD) och det nya effektiva-energianvändningsmålet är nu i CU:s händer som betänkande 2025/26:CU30. Detta är **sen-mandatets EU-efterlevnadsavslutning** — strukturellt viktig men politiskt *osynlig* i kampanjnarrativet. [A1, dok:HD01CU30]
+- **NU21 landsbygdspolitikram (HD01NU21) publicerad 2026-05-12**: "Hela Sverige ska fungera" — oppositionsfärgad ram behandlad av Näringsutskottet. Signalerar **landsbygdsväljarpositioning** inför septembervalet. [A1, dok:HD01NU21]
+- **Inga nya Tidö-propositioner inlämnade 2026-05-08…13**: senaste fem (HD03267, HD03261, HD03250, HD03249, HD03248) alla stämplade 2026-05-06 / 2026-05-07. 2026-05-10-cykeltopppunkten förblir mandatets **terminala lagstiftningsspets**. [A1]
+- **Cykelmomentsövergång**: mellan idag och kammararecessen 2026-06-22, förvänta *utskottsbehandling och beslut* snarare än nya propositioner.
+- **Fyra privata motioner** (HD10483–86, alla 2026-05-12): samtyckslag, vinstdriven äldreomsorg, prostitutionsinkomstbeskattning, välfärdslikavärde. *Osannolikt* (10–25%) att konverteras till lag. Klassificeras som kampanjpositioneringsfordon.
+- **Aktiva PIR:ar**: PIR-1, PIR-3, PIR-5, PIR-7, **PIR-9 NY** (EU EED 2030-mål öppnat mot HD01CU30).
+
+---
+
+### Sammanfattning (Bottom Line Up Front)
+
+2022–2026 Tidö-mandatet avslutas med en strukturellt omvandlad svensk stat — säkerhetsarkitektur ombyggd, finansiell stabilitet ramverk omstartat, digital identitetsstack kodifierad och migrationsverkställighet anpassad till nordiska grannar. Idag, **123 dagar före septembervalet**, stänger Kristersson-regeringen sitt **EU-efterlevnadsgap** tyst genom utskottsbehandling. *Mycket sannolikt* (80–90% [horisont:cykel]) att kärnsäkerhetsreformerna överlever 2026 oavsett vilken koalition vinner — de har passerat *stiugmunsberoendets tröskel*. [A2]
+
+Tre beslut stöds: (1) **Behandla 2022–2026 säkerhetspivoten som ett quasi-konstitutionellt skifte**; (2) **Planera post-valscenarier kring finansiell kontinuitet, inte politisk omvälvning** — IMF WEO apr-2026 T+1 NGDP_RPCH 2,3%, GGXWDG_NGDP 32,6%; (3) **Bevaka e-legitimation, finansiell krishantering och EU EED 2030-implementering 2027–2028** som inflektionspunkter. *Ungefär lika* (40–55%) att alla tre träffar sina milstolpar.
+
+---
+
+### 60-sekunders läsning
+
+- **Mandatscorecard**: ~74 % av Tidöavtalets åtaganden nu i lag (säkerhet 90%, rättvisa 89%, migration 85%, energi 75%, klimat 65%, utbildning 60%, vård 50%, arbete 50%).
+- **Cykeltoppunkten bekräftad**: 2026-05-10 publicerade 5 betänkanden och 3 propositioner — mandatets största enskilda dag i lagstiftningsvolym.
+- **Ekonomisk cykel**: NGDP_RPCH-bana 2,4% (2022) → 0,1% (2023) → 1,2% (2024) → 1,8% (2025) → 2,1% (2026). Skuld-till-BNP hålls på 32–33%. [A1]
+- **Koalitionshållbarhet**: Tidö överlevde 4 år trots 11 förtroendevotestryck — placeras i **stabil minoritetsregerings**-kvadranten.
+
+---
+
+### Mandatförtroendeband
+
+| Aspekt | WEP-förtroende | Horisontetikett |
+|--------|----------------|-----------------|
+| Säkerhetslagar överlever 2026 valet | mycket sannolikt (80–90%) | [horisont:cykel] |
+| Tidö vinner omval | ungefär lika (40–55%) | [horisont:val] |
+| Finansiell balans ≤ -1% till 2030 | sannolikt (60–75%) | [horisont:cykel] |
+| e-legitimation full lansering till 2028 | osannolikt (20–35%) | [horisont:cykel] |
+| EU EED 2030 byggnadsbeståndsmål uppfyllt | osannolikt (25–40%) | [horisont:cykel] |
+| Riksbankens styrränta ≤ 2,0% vid utgången av 2026 | sannolikt (55–70%) | [horisont:år] |
+| Koalitionsbildning < 60 dagar efter valet | sannolikt (55–70%) | [horisont:val] |
+
+---
+
+### Tre beslut som detta dokument stöder
+
+1. **Quasi-konstitutionell behandling av säkerhetspivoten**: *Mycket sannolikt* (80–90%) hållbar.
+2. **Finansiell kontinuitet, inte omvälvning**: IMF T+1…T+5 är en plan 2% realtillväxt + 32% skuld-till-BNP-korridor. *Sannolikt* (60–75%).
+3. **2027–2028 implementeringsinflexion**: Tre operativa program (e-legitimation, finansiell krisfunktion, EU EED 2030-mål) toppar 2027–2028. *Ungefär lika* (40–55%).
+
+---
+
+### Nytt sedan 2026-05-11
+
+- HD01CU30 tillagd som DIW-rang 11; EU EED-berättelse nu namngiven i synthesis-summary.md.
+- HD01NU21 loggad som landsbygdspolitikpositioneringsfordon.
+- PIR-9 NY öppnad mot HD01CU30 EU 2030-mål.
+- Daglig propositionsfilingsrate uppdaterad 0,4 → 0,3/dag.
+- Cykelmomentrullöver bekräftat inaktivt (T-123).
+
+---
+
+### Korsreferenser
+
+- [`synthesis-summary.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/synthesis-summary.md) — full ledande berättelse och DIW Top-10
+- [`intelligence-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/intelligence-assessment.md) — ICD 203 BLUF + WEP per fynd
+- [`scenario-analysis.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/scenario-analysis.md) — 12-bladigt scenarioträd + 5 vildkort
+- [`cycle-trajectory.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/cycle-trajectory.md) — flerårstrender
+- [`risk-assessment.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/risk-assessment.md) — topprisker med begränsning
+- [`forward-indicators.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/forward-indicators.md) — ≥15 daterade indikatorer
+
+---
+
+*Författare*: James Pether Sörling | *Arbetsflöde*: news-election-cycle | *Körning*: 25769375837
+*Källor*: [A1] IMF WEO apr-2026 + Riksdagens öppna data data.riksdagen.se; [A2] OECD Sweden Survey 2025; [B2] SOM-institutet, Novus, Tidöavtalsmappning.
+
+<!-- source-sha: da8028e83f1cd6c0437e57058cd843114b4719fa -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/executive-brief_zh.md -->
+
+**分类**：PUBLIC | **工作流**：news-election-cycle | **周期**：2022-09-11 → 2026-09-13（T-123至任期结束）
+**IMF年份**：WEO 2026年4月 [视野：周期]
+
+---
+
+### 2026-05-13 日常更新 — 第二轮更新
+
+**T-123（至2026-09-13选举）** · 根据2026-05-13姊妹分析更新。
+
+- **HD01CU30 EU EED转置，2026-05-12发布**：修订后的建筑能源性能指令（EPBD）和新能源效率目标现已提交CU委员会审议（报告2025/26:CU30）。这是**任期末期的欧盟合规收尾** — 结构上重要，但在选举叙事中政治上*不可见*。[A1]
+- **HD01NU21农村政策框架，2026-05-12发布**："Hela Sverige ska fungera" — 带有反对党色彩的框架。[A1]
+- **2026-05-08至13无新蒂多提案**：2026-05-10的周期峰值依然是**任期的立法活动终极顶峰**。[A1]
+- **私人动议4项**（HD10483–86）：同意法、老年护理、卖淫所得税、同等薪酬。转化为法律的概率*低*（10–25%）。
+- **有效PIR**：PIR-1、PIR-3、PIR-5、PIR-7、**PIR-9 新增**（EU EED 2030目标）。
+
+---
+
+### 摘要（结论优先）
+
+2022–2026蒂多政府以结构性转型的瑞典国家落幕：安全架构重建、金融稳定框架重启、数字身份堆栈法制化、移民执法与北欧邻国对标。今天，**距9月选举还有123天**，克里斯特松政府正悄然填补欧盟合规积压。核心安全改革*很可能*（80–90% [视野：周期]）在2026年选举后继续存在。[A2]
+
+支持三个决策：(1) **将2022–2026安全轴心视为准宪法性转变**；(2) **围绕财政连续性规划选后情景** — IMF WEO 2026年4月 T+1 NGDP_RPCH 2.3%，GGXWDG_NGDP 32.6%；(3) **监测2027–2028年电子身份证、金融危机管理功能和EU EED 2030目标**。三者均实现目标的概率*大约各半*（40–55%）。
+
+---
+
+### 60秒速读
+
+- **政府成绩单**：蒂多协议约74%的承诺已入法（安全90%、司法89%、移民85%、能源75%、气候65%、教育60%、医疗50%、劳工50%）。
+- **周期顶峰确认**：2026-05-10为政府任期内最大单日立法量。
+- **经济周期**：NGDP_RPCH 2.4%（2022）→ 0.1%（2023）→ 1.2%（2024）→ 1.8%（2025）→ 2.1%（2026）。债务占GDP比率维持32–33%。[A1]
+- **联合政府耐久性**：蒂多在11次信任投票压力下坚持了4年。[B2]
+
+---
+
+### 政府信心横幅
+
+| 方面 | WEP信心 | 视野标记 |
+|------|--------|---------|
+| 安全法在2026年选举后存续 | 很可能（80–90%） | [视野：周期] |
+| 蒂多赢得连任 | 大约各半（40–55%） | [视野：选举] |
+| 财政余额至2030年保持≤-1% | 可能（60–75%） | [视野：周期] |
+| 电子身份证2028年前全面部署 | 不太可能（20–35%） | [视野：周期] |
+| EU EED 2030建筑存量目标实现 | 不太可能（25–40%） | [视野：周期] |
+| 瑞典央行政策利率2026年底≤2.0% | 可能（55–70%） | [视野：年度] |
+| 选举后60天内组建联合政府 | 可能（55–70%） | [视野：选举] |
+
+---
+
+### 此简报支持的三个决策
+
+1. **安全轴心的准宪法性处理**：*很可能*（80–90%）持久。
+2. **财政连续性，而非政策颠覆**：*可能*（60–75%）。
+3. **2027–2028实施拐点**：*大约各半*（40–55%）三者均实现里程碑。
+
+---
+
+### 自2026-05-11以来的新内容
+
+- HD01CU30添加为DIW排名11。
+- HD01NU21记录为农村政策定位工具。
+- PIR-9新增针对HD01CU30 EU EED 2030目标开立。
+- 每日提案提交率从0.4更新至0.3件/天。
+
+---
+
+*作者*：James Pether Sörling | *工作流*：news-election-cycle | *运行*：25769375837
+*来源*：[A1] IMF WEO 2026年4月 + Riksdagen开放数据；[A2] 经合组织瑞典调查2025；[B2] SOM-institutet, Novus.
+
+<!-- source-sha: da8028e83f1cd6c0437e57058cd843114b4719fa -->
+
 ## Reference Analysis Quality
 <!-- source: reference-analysis-quality.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/reference-analysis-quality.md -->
 
@@ -1944,7 +2894,7 @@ This generated report reconciles the analysis folder with the article projection
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 28 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 41 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 0 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 1 | Linked in Article Sources, not expanded inline |
 
@@ -1985,6 +2935,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/methodology-reflection.md)
 - [`analysis-index.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/analysis-index.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/executive-brief_zh.md)
 - [`reference-analysis-quality.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-05-14/election-cycle/current/reference-analysis-quality.md)
 
 ### Supporting Data Artifacts

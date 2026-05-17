@@ -6,7 +6,7 @@ date: 2026-04-25
 subfolder: month-ahead
 slug: 2026-04-25-month-ahead
 source_folder: analysis/daily/2026-04-25/month-ahead
-generated_at: 2026-05-17T18:40:43.290Z
+generated_at: 2026-05-17T22:29:22.273Z
 language: en
 layout: article
 ---
@@ -87,6 +87,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1723,13 +1736,708 @@ Total named SAT techniques: **13** (meets ≥10 requirement)
 - Total documents: 20 propositions/skrivelser
 - Full-text available but not fetched given time constraints; summary/snippet level sufficient
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# الشهر القادم — مايو 2026: السويد عند نقطة الانعطاف قبل الانتخابات
+
+**المؤلف**: James Pether Sörling | **التصنيف**: عام | **التاريخ**: 2026-04-25 | **مستوى الثقة**: HIGH
+
+### 🎯 الخلاصة
+
+تدخل السويد شهر مايو 2026 وحكومة تيدو تُطلق أكبر حزمة تشريعية لها قبل الانتخابات: ميزانية الربيع 2026 (HD03100) التي تتوقع تعافياً اقتصادياً مستمراً لكن بطيئاً، وحزمة طارئة لخفض تكاليف الوقود والطاقة (HD03236)، وسباق تشريعي يضم 19 مقترحاً في مجالات العدالة والطاقة والبيئة والسياسة الخارجية. مع بقاء خمسة أشهر بالضبط حتى الانتخابات (سبتمبر 2026)، تتمحور المخاطر السياسية بشكل حاسم حول المشاعر الاقتصادية — هل ستصل تخفيضات التكاليف للأسر في الوقت المناسب لتؤثر على تفضيلات الناخبين — وحول مصداقية الحكومة في إصلاحات سيادة القانون التي تشكل جوهر ولاية تحالف تيدو منذ عام 2022.
+
+### 🧭 3 قرارات يدعمها هذا الإحاطة
+
+1. **تقييم المخاطر الاقتصادية**: هل ينبغي للفاعلين تسعير مخاطر عدم الاستقرار السياسي المتصاعدة قبيل انتخابات سبتمبر 2026، في ضوء الركود الممتد وحزمة الدعم الطارئة؟
+2. **تتبع مسار التشريع**: أيٌّ من المقترحات التشريعية الـ19 الجارية تحمل أعلى مخاطر التأخير بسبب المعارضة أو الإعاقة في اللجنة قبل العطلة الصيفية (يونيو 2026)؟
+3. **استقرار الائتلاف**: هل تُشير تخفيضات الضريبة على الوقود (HD03236) إلى ضغط حزب SD على الحكومة، وكيف يُغيّر ذلك حسابات الائتلاف في الفترة الانتخابية؟
+
+### القراءة الاستخباراتية في 60 ثانية
+
+- 🔴 **ميزانية الربيع 2026 (HD03100)** — الإطار الربيعي للميزانية يتوقع تعافياً بطيئاً؛ الركود يستمر أطول من التوقعات السابقة. تستهدف الحكومة النمو والرفاه والأمن. مراجعة FiU في يونيو.
+- 🔴 **الإغاثة الطارئة للوقود والطاقة (HD03236)** — تخفيض ضريبة الوقود + دعم أسعار الكهرباء/الغاز؛ إشارة دورة انتخابية على صعيد الميزانية. تُقدَّر التكاليف بمليارات SEK.
+- 🟡 **سباق العدالة**: تدريب شرطي مدفوع الأجر (HD03237)، قواعد الشباب الأكثر صرامة (HD03246)، حظر التأمين الاجتماعي للمحتجزين (HD03252) — تسليمات التفويض الأساسي لـ M/SD.
+- 🟡 **التحول في الطاقة**: قانون النظام الكهربائي الجديد (HD03240)، عائدات طاقة الرياح للبلديات (HD03239)، سلطة تقييم البيئة الجديدة (HD03238).
+- 🟢 **المساءلة الأوكرانية**: تنضم السويد إلى محكمة العدوان (HD03231) ولجنة التعويضات (HD03232) — توافق خارج الأحزاب في السياسة الخارجية.
+- 🔵 **إلغاء تنظيم الغابات (HD03242)** — تصويت مثير للجدل بين التحالف والريف؛ معارضة MP/S/V.
+
+### أهم إشارة استشرافية لمايو
+
+> **المحفز**: تصويت لجنة المالية (FiU) على ميزانية الربيع 2026 (HD03100) والميزانية المعدّلة التكميلية (HD03236) — متوقع أواخر مايو / مطلع يونيو. سيكون تقرير لجنة سلبي أو حق نقض SD على السياسة الضريبية الحدث الأكثر أهمية سياسية قبل العطلة الصيفية.
+
+### بيان الثقة
+
+**HIGH** [B2] — مستند إلى 20 مقترحاً حكومياً ومراسلات موثقة من data.riksdagen.se، riksmöte 2025/26.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'tertiaryColor': '#1a1e3d', 'background': '#0a0e27', 'nodeBorder': '#00d9ff', 'clusterBkg': '#1a1e3d', 'titleColor': '#e0e0e0'}}}%%
+flowchart LR
+    A["🔴 Spring Budget\nHD03100"] --> B["FiU June vote"]
+    C["🔴 Emergency Relief\nHD03236"] --> B
+    D["🟡 Justice Sprint\nHD03237/246/252"] --> E["Parliamentary majority\ncheck"]
+    F["🟡 Energy Laws\nHD03240/239/238"] --> E
+    G["🟢 Ukraine Treaties\nHD03231/232"] --> H["Cross-party support"]
+    B --> I["Election signal\nSept 2026"]
+    E --> I
+    H --> I
+    style A fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#fff
+    style D fill:#ffbe0b,color:#000
+    style F fill:#ffbe0b,color:#000
+    style G fill:#00d9ff,color:#000
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 91eb3cb6cf35873538b354461078df4509cf0012 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/executive-brief_da.md -->
+
+**Forfatter**: James Pether Sörling | **Klassifikation**: PUBLIC | **Dato**: 2026-04-25 | **Konfidensniveau**: HIGH
+
+### 🎯 Konklusion
+
+Sverige træder ind i maj 2026 med Tidö-regeringen, der rullet det største præ-valgspakke ud: 2026-forårsprogrammet (HD03100), der forudsiger fortsat men langsom økonomisk genopretning, en akut pakke til reduktion af brændstof- og energiomkostninger (HD03236) og et lovgivningssprint bestående af 19 propositioner inden for retfærdighed, energi, miljø og udenrigspolitik. Med præcis fem måneder til valget (september 2026) er den politiske risiko bestemt centreret om det økonomiske sentiment — om husholdningers omkostningsreduktioner ankommer tidsnok til at påvirke vælgerpræferencer — og om regeringens troværdighed i retsstatsreformer, der har stået centralt for Tidö-koalitionens mandat siden 2022.
+
+### 🧭 3 beslutninger dette briefing understøtter
+
+1. **Vurdering af økonomisk risiko**: Bør aktørerne indprise øget politisk ustabilitetsrisiko op til september 2026-valget i lyset af den forlængede recession og den akutte støttepakke?
+2. **Sporing af lovgivningspipeline**: Hvilke af de 19 nuværende propositioner bærer den højeste risiko for oppositionsblokering eller udvalgsblokering inden sommerferien (juni 2026)?
+3. **Koalitionsstabilitet**: Signalerer brændstofafgiftssænkningerne (HD03236) SD's pres på regeringen, og hvordan ændrer det koalitionsmatematikken op til valgkampagnen?
+
+### 60-sekunders efterretningslæsning
+
+- 🔴 **Forårsproposition 2026 (HD03100)** — Forårsbudgetramme projicerer langsom genopretning; recessionen varer længere end den tidligere prognose. Regeringen sigter mod vækst, velfærd, sikkerhed. FiU-gennemgang i juni.
+- 🔴 **Akut brændstof- og energihjælp (HD03236)** — Reduceret brændstofafgift + el-/gasprisstøtte; valcyklussignal på budgetsiden. Omkostningerne anslås til adskillige milliarder SEK.
+- 🟡 **Retfærdighedssprint**: Betalt politiuddannelse (HD03237), strengere ungdomsregler (HD03246), forbud mod socialforsikring for indsatte (HD03252) — kerneleverancer fra M/SD's mandat.
+- 🟡 **Energiomstilling**: Ny lov om elsystemet (HD03240), vindkraftindtægter til kommuner (HD03239), ny miljøvurderingsmyndighed (HD03238).
+- 🟢 **Ukrainas ansvarlighed**: Sverige tilslutter sig aggressionstribunal (HD03231) og skadeserstatningskommission (HD03232) — tværpolitisk enighed om udenrigspolitikken.
+- 🔵 **Skovbrugsderegulering (HD03242)** — omstridt Alliance/landdistriktsafstemning; MP/S/V-modstand.
+
+### Vigtigste fremadrettede signal for maj
+
+> **Udløser**: Finansudvalgets (FiU) afstemning om Forårsproposition 2026 (HD03100) og tillægsændringsbudget (HD03236) — forventes sent i maj / tidlig juni. En negativ udvalgsudtalelse eller SD's nedlæggelse af veto mod skattepolitikken ville udgøre den mest politisk betydningsfulde enkeltbegivenhed inden sommerferien.
+
+### Konfidenserklæring
+
+**HIGH** [B2] — Baseret på 20 verificerede regeringspropositioner og skrivelser fra data.riksdagen.se, riksmöte 2025/26.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'tertiaryColor': '#1a1e3d', 'background': '#0a0e27', 'nodeBorder': '#00d9ff', 'clusterBkg': '#1a1e3d', 'titleColor': '#e0e0e0'}}}%%
+flowchart LR
+    A["🔴 Spring Budget\nHD03100"] --> B["FiU June vote"]
+    C["🔴 Emergency Relief\nHD03236"] --> B
+    D["🟡 Justice Sprint\nHD03237/246/252"] --> E["Parliamentary majority\ncheck"]
+    F["🟡 Energy Laws\nHD03240/239/238"] --> E
+    G["🟢 Ukraine Treaties\nHD03231/232"] --> H["Cross-party support"]
+    B --> I["Election signal\nSept 2026"]
+    E --> I
+    H --> I
+    style A fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#fff
+    style D fill:#ffbe0b,color:#000
+    style F fill:#ffbe0b,color:#000
+    style G fill:#00d9ff,color:#000
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 91eb3cb6cf35873538b354461078df4509cf0012 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/executive-brief_de.md -->
+
+**Autor**: James Pether Sörling | **Klassifikation**: PUBLIC | **Datum**: 2026-04-25 | **Konfidenzniveau**: HIGH
+
+### 🎯 Fazit
+
+Schweden tritt in den Mai 2026 ein, während die Tidö-Regierung ihr größtes Gesetzgebungspaket vor der Wahl einführt: das Frühjahrsbudget 2026 (HD03100), das eine anhaltende, aber langsame Wirtschaftserholung prognostiziert, ein Notfallpaket zur Senkung der Kraftstoff- und Energiekosten (HD03236) sowie einen Gesetzgebungs-Sprint mit 19 Vorlagen in den Bereichen Justiz, Energie, Umwelt und Außenpolitik. Mit genau fünf Monaten bis zur Wahl (September 2026) konzentriert sich das politische Risiko eindeutig auf die wirtschaftliche Stimmung — ob die Kostensenkungen für Haushalte rechtzeitig ankommen, um die Wählervorlieben zu beeinflussen — und auf die Glaubwürdigkeit der Regierung bei Rechtsstaatsreformen, die seit 2022 im Mittelpunkt des Mandats der Tidö-Koalition stehen.
+
+### 🧭 3 Entscheidungen, die dieser Bericht unterstützt
+
+1. **Bewertung des wirtschaftlichen Risikos**: Sollten Akteure erhöhtes politisches Instabilitätsrisiko vor der Wahl im September 2026 einpreisen, angesichts der verlängerten Rezession und des Notfallhilfspakets?
+2. **Verfolgung der Gesetzgebungs-Pipeline**: Welche der 19 aktuellen Gesetzesvorlagen tragen das größte Risiko einer Verzögerung durch die Opposition oder einer Blockade im Ausschuss vor der Sommerpause (Juni 2026)?
+3. **Koalitionsstabilität**: Signalisieren die Kraftstoffsteuersenkungen (HD03236) SD-Druck auf die Regierung, und wie verändert das die Koalitionsarithmetik im Vorfeld der Wahlkampagne?
+
+### 60-Sekunden-Nachrichtenüberblick
+
+- 🔴 **Frühjahrshaushalt 2026 (HD03100)** — Frühjahrsbudgetrahmen prognostiziert langsame Erholung; Rezession dauert länger als frühere Prognose. Regierung strebt Wachstum, Wohlfahrt, Sicherheit an. FiU-Prüfung im Juni.
+- 🔴 **Notfall-Kraftstoff- und Energiehilfe (HD03236)** — Gesenkte Kraftstoffsteuer + Strom-/Gaspreisunterstützung; Wahlzyklussignal auf der Budgetseite. Kosten werden auf mehrere Milliarden SEK geschätzt.
+- 🟡 **Justiz-Sprint**: Bezahlte Polizeiausbildung (HD03237), strengere Jugendregeln (HD03246), Verbot der Sozialversicherung für Inhaftierte (HD03252) — Kernmandatlieferungen von M/SD.
+- 🟡 **Energiewende**: Neues Stromgesetz (HD03240), Windkrafteinnahmen für Gemeinden (HD03239), neue Umweltprüfungsbehörde (HD03238).
+- 🟢 **Ukrainische Rechenschaftspflicht**: Schweden schließt sich Aggressionsgerichtshof (HD03231) und Schadenskommission (HD03232) an — überparteilicher außenpolitischer Konsens.
+- 🔵 **Forstwirtschafts-Deregulierung (HD03242)** — umstrittene Allianz-/Landstimme; MP/S/V-Widerstand.
+
+### Wichtigstes Vorwärtssignal für Mai
+
+> **Auslöser**: Abstimmung des Finanzausschusses (FiU) über Frühjahrshaushalt 2026 (HD03100) und ergänzenden Änderungshaushalt (HD03236) — erwartet Ende Mai / Anfang Juni. Eine negative Ausschussstellungnahme oder ein SD-Veto zur Steuerpolitik wäre das politisch bedeutsamste Einzelereignis vor der Sommerpause.
+
+### Konfidenzaussage
+
+**HIGH** [B2] — Basierend auf 20 verifizierten Regierungsvorlagen und Schreiben von data.riksdagen.se, riksmöte 2025/26.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'tertiaryColor': '#1a1e3d', 'background': '#0a0e27', 'nodeBorder': '#00d9ff', 'clusterBkg': '#1a1e3d', 'titleColor': '#e0e0e0'}}}%%
+flowchart LR
+    A["🔴 Spring Budget\nHD03100"] --> B["FiU June vote"]
+    C["🔴 Emergency Relief\nHD03236"] --> B
+    D["🟡 Justice Sprint\nHD03237/246/252"] --> E["Parliamentary majority\ncheck"]
+    F["🟡 Energy Laws\nHD03240/239/238"] --> E
+    G["🟢 Ukraine Treaties\nHD03231/232"] --> H["Cross-party support"]
+    B --> I["Election signal\nSept 2026"]
+    E --> I
+    H --> I
+    style A fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#fff
+    style D fill:#ffbe0b,color:#000
+    style F fill:#ffbe0b,color:#000
+    style G fill:#00d9ff,color:#000
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 91eb3cb6cf35873538b354461078df4509cf0012 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/executive-brief_es.md -->
+
+**Autor**: James Pether Sörling | **Clasificación**: PUBLIC | **Fecha**: 2026-04-25 | **Nivel de confianza**: HIGH
+
+### 🎯 Conclusión
+
+Suecia entra en mayo de 2026 con el gobierno Tidö que despliega su mayor paquete legislativo preelectoral: el presupuesto de primavera de 2026 (HD03100) que proyecta una recuperación económica continua pero lenta, un paquete de emergencia de reducción de costes de combustible y energía (HD03236) y un sprint legislativo de 19 proposiciones en los ámbitos de justicia, energía, medio ambiente y política exterior. Con exactamente cinco meses hasta las elecciones (septiembre de 2026), el riesgo político está definitivamente centrado en el sentimiento económico —si las reducciones de costes para los hogares llegan a tiempo para influir en las preferencias de los votantes— y en la credibilidad del gobierno en las reformas del Estado de Derecho que han estado en el centro del mandato de la coalición Tidö desde 2022.
+
+### 🧭 3 decisiones que apoya este informe
+
+1. **Evaluación del riesgo económico**: ¿Deberían los actores descontar un mayor riesgo de inestabilidad política de cara a las elecciones de septiembre de 2026, teniendo en cuenta la prolongada recesión y el paquete de ayuda de emergencia?
+2. **Seguimiento del pipeline legislativo**: ¿Cuáles de las 19 proposiciones en curso llevan el mayor riesgo de retraso por parte de la oposición o bloqueo en comisión antes de las vacaciones de verano (junio de 2026)?
+3. **Estabilidad de la coalición**: ¿Las rebajas del impuesto sobre los combustibles (HD03236) señalan presión del SD sobre el gobierno, y cómo cambia eso la aritmética de la coalición de cara a la campaña electoral?
+
+### Lectura de inteligencia en 60 segundos
+
+- 🔴 **Presupuesto de primavera 2026 (HD03100)** — El marco presupuestario de primavera proyecta una recuperación lenta; la recesión dura más que la previsión anterior. El gobierno apunta a crecimiento, bienestar, seguridad. Revisión FiU en junio.
+- 🔴 **Ayuda de emergencia combustible y energía (HD03236)** — Impuesto reducido sobre combustibles + apoyo al precio de electricidad/gas; señal de ciclo electoral en el lado presupuestario. El coste se estima en varios miles de millones de SEK.
+- 🟡 **Sprint justicia**: Formación policial remunerada (HD03237), reglas juveniles más estrictas (HD03246), prohibición del seguro social para reclusos (HD03252) — entregas del mandato central de M/SD.
+- 🟡 **Transición energética**: Nueva ley del sistema eléctrico (HD03240), ingresos de la energía eólica para municipios (HD03239), nueva autoridad de evaluación ambiental (HD03238).
+- 🟢 **Responsabilidad de Ucrania**: Suecia se une al tribunal de agresión (HD03231) y a la comisión de daños (HD03232) — consenso multipartidista en política exterior.
+- 🔵 **Desregulación forestal (HD03242)** — voto controvertido Alianza/rural; oposición de MP/S/V.
+
+### Principal señal prospectiva para mayo
+
+> **Detonante**: Votación de la comisión de finanzas (FiU) sobre el presupuesto de primavera de 2026 (HD03100) y el presupuesto rectificativo suplementario (HD03236) — se espera a finales de mayo / principios de junio. Un informe negativo de la comisión o un veto del SD sobre la política fiscal sería el evento políticamente más significativo antes de las vacaciones de verano.
+
+### Declaración de confianza
+
+**HIGH** [B2] — Basado en 20 proposiciones gubernamentales y comunicaciones verificadas de data.riksdagen.se, riksmöte 2025/26.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'tertiaryColor': '#1a1e3d', 'background': '#0a0e27', 'nodeBorder': '#00d9ff', 'clusterBkg': '#1a1e3d', 'titleColor': '#e0e0e0'}}}%%
+flowchart LR
+    A["🔴 Spring Budget\nHD03100"] --> B["FiU June vote"]
+    C["🔴 Emergency Relief\nHD03236"] --> B
+    D["🟡 Justice Sprint\nHD03237/246/252"] --> E["Parliamentary majority\ncheck"]
+    F["🟡 Energy Laws\nHD03240/239/238"] --> E
+    G["🟢 Ukraine Treaties\nHD03231/232"] --> H["Cross-party support"]
+    B --> I["Election signal\nSept 2026"]
+    E --> I
+    H --> I
+    style A fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#fff
+    style D fill:#ffbe0b,color:#000
+    style F fill:#ffbe0b,color:#000
+    style G fill:#00d9ff,color:#000
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 91eb3cb6cf35873538b354461078df4509cf0012 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/executive-brief_fi.md -->
+
+**Tekijä**: James Pether Sörling | **Luokittelu**: PUBLIC | **Päiväys**: 2026-04-25 | **Luottamustaso**: HIGH
+
+### 🎯 Johtopäätös
+
+Ruotsi astuu toukokuuhun 2026 Tidö-hallituksen rullatessa ulos suurimman esivaalilainsäädäntöpakettinsa: vuoden 2026 kevätbudjetti (HD03100), joka ennustaa jatkuvaa mutta hidasta talouden elpymistä, kiireellinen polttoaine- ja energiakustannusten vähentämispaketti (HD03236) sekä 19 esityksen lainsäädäntösprint oikeuden, energian, ympäristön ja ulkopolitiikan alalla. Vaaleihin on täsmälleen viisi kuukautta (syyskuu 2026), ja poliittinen riski on selkeästi keskittynyt taloudelliseen mielialaan — saapuvatko kotitalouksien kustannussäästöt ajoissa vaikuttaakseen äänestäjien preferensseihin — sekä hallituksen uskottavuuteen oikeusvaltiouudistuksissa, jotka ovat olleet Tidö-koalition mandaatin ytimessä vuodesta 2022.
+
+### 🧭 3 päätöstä, joita tämä tiedote tukee
+
+1. **Taloudellisen riskin arviointi**: Pitäisikö toimijoiden hinnoitella lisääntynyt poliittisen epävakauden riski syyskuun 2026 vaaleita ennakoivasti ottaen huomioon pitkittynyt taantuma ja kiireellinen tukipaketti?
+2. **Lainsäädäntöputken seuranta**: Mitkä 19 käynnissä olevasta esityksestä kantavat suurimman riskin opposition viivästyttämisestä tai valiokuntaestosta ennen kesälomaa (kesäkuu 2026)?
+3. **Koalition vakaus**: Merkitseekö polttoaineveroleikkaukset (HD03236) SD:n painostusta hallitukseen, ja miten se muuttaa koalitiolaskelmia vaaleissa?
+
+### 60 sekunnin tiedustelutiivistelmä
+
+- 🔴 **Kevätbudjetti 2026 (HD03100)** — Kevätbudsjetin kehys ennustaa hidasta elpymistä; taantuma kestää pidempään kuin aiempi ennuste. Hallitus tähtää kasvuun, hyvinvointiin, turvallisuuteen. FiU:n käsittely kesäkuussa.
+- 🔴 **Kiireellinen polttoaine- ja energiatuki (HD03236)** — Alennettu polttoaineverо + sähkö-/kaasuhintatuki; vaalikierrossignaali budjettipuolella. Kustannuksiksi arvioidaan useita miljardeja SEK.
+- 🟡 **Oikeussprint**: Palkattu poliisikoulutus (HD03237), tiukemmat nuorisosäännöt (HD03246), kielto sosiaaliturvan maksamisesta vangeille (HD03252) — M/SD:n ydinmandaattilunastukset.
+- 🟡 **Energiamurros**: Uusi sähköjärjestelmälaki (HD03240), tuulivoimatulot kunnille (HD03239), uusi ympäristöarviointiviranomainen (HD03238).
+- 🟢 **Ukrainan vastuuvelvollisuus**: Ruotsi liittyy aggressiotuomioistuimeen (HD03231) ja vahingonkorvauskomissioon (HD03232) — puolueiden välinen yhteisymmärrys ulkopolitiikassa.
+- 🔵 **Metsätalouden sääntelyn purku (HD03242)** — kiistanalainen Allianssi/maaseutuäänestys; MP/S/V-vastustus.
+
+### Tärkein eteenpäin suuntautuva signaali toukokuulle
+
+> **Laukaisin**: Valtiovarainvaliokunnan (FiU) äänestys kevätbudjetista 2026 (HD03100) ja lisämuutosbudjetista (HD03236) — odotetaan toukokuun lopussa / kesäkuun alussa. Kielteinen valiokuntamietintö tai SD:n veto veropolitiikassa olisi yksittäinen poliittisesti merkittävin tapahtuma ennen kesälomaa.
+
+### Luottamuslausunto
+
+**HIGH** [B2] — Perustuu 20 varmennettuun hallituksen esitykseen ja kirjelmään data.riksdagen.se:stä, riksmöte 2025/26.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'tertiaryColor': '#1a1e3d', 'background': '#0a0e27', 'nodeBorder': '#00d9ff', 'clusterBkg': '#1a1e3d', 'titleColor': '#e0e0e0'}}}%%
+flowchart LR
+    A["🔴 Spring Budget\nHD03100"] --> B["FiU June vote"]
+    C["🔴 Emergency Relief\nHD03236"] --> B
+    D["🟡 Justice Sprint\nHD03237/246/252"] --> E["Parliamentary majority\ncheck"]
+    F["🟡 Energy Laws\nHD03240/239/238"] --> E
+    G["🟢 Ukraine Treaties\nHD03231/232"] --> H["Cross-party support"]
+    B --> I["Election signal\nSept 2026"]
+    E --> I
+    H --> I
+    style A fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#fff
+    style D fill:#ffbe0b,color:#000
+    style F fill:#ffbe0b,color:#000
+    style G fill:#00d9ff,color:#000
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 91eb3cb6cf35873538b354461078df4509cf0012 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/executive-brief_fr.md -->
+
+**Auteur** : James Pether Sörling | **Classification** : PUBLIC | **Date** : 2026-04-25 | **Niveau de confiance** : HIGH
+
+### 🎯 Conclusion
+
+La Suède entre en mai 2026 avec le gouvernement Tidö qui déploie son plus grand paquet législatif pré-électoral : le budget de printemps 2026 (HD03100) projetant une reprise économique continue mais lente, un paquet d'urgence de réduction des coûts de carburant et d'énergie (HD03236) et un sprint législatif de 19 propositions dans les domaines de la justice, de l'énergie, de l'environnement et de la politique étrangère. Avec exactement cinq mois jusqu'aux élections (septembre 2026), le risque politique est résolument centré sur le sentiment économique — si les réductions de coûts pour les ménages arrivent à temps pour influencer les préférences des électeurs — et sur la crédibilité du gouvernement dans les réformes de l'État de droit qui sont au cœur du mandat de la coalition Tidö depuis 2022.
+
+### 🧭 3 décisions que ce briefing soutient
+
+1. **Évaluation du risque économique** : Les acteurs devraient-ils intégrer un risque accru d'instabilité politique avant les élections de septembre 2026, compte tenu de la récession prolongée et du paquet d'aide d'urgence ?
+2. **Suivi du pipeline législatif** : Lesquelles des 19 propositions actuelles portent le plus grand risque de délai dû à l'opposition ou de blocage en commission avant les vacances d'été (juin 2026) ?
+3. **Stabilité de la coalition** : Les baisses des taxes sur les carburants (HD03236) signalent-elles une pression du SD sur le gouvernement, et comment cela modifie-t-il l'arithmétique de la coalition en vue de la campagne électorale ?
+
+### Lecture du renseignement en 60 secondes
+
+- 🔴 **Budget de printemps 2026 (HD03100)** — Le cadre budgétaire de printemps projette une reprise lente ; la récession dure plus longtemps que la prévision précédente. Le gouvernement vise la croissance, le bien-être, la sécurité. Examen FiU en juin.
+- 🔴 **Aide d'urgence carburant et énergie (HD03236)** — Taxe sur les carburants réduite + soutien aux prix de l'électricité/gaz ; signal de cycle électoral côté budgétaire. Le coût est estimé à plusieurs milliards de SEK.
+- 🟡 **Sprint justice** : Formation policière rémunérée (HD03237), règles de jeunesse plus strictes (HD03246), interdiction de l'assurance sociale pour les détenus (HD03252) — livraisons du mandat central de M/SD.
+- 🟡 **Transition énergétique** : Nouvelle loi sur le système électrique (HD03240), revenus de l'énergie éolienne pour les communes (HD03239), nouvelle autorité d'évaluation environnementale (HD03238).
+- 🟢 **Responsabilisation de l'Ukraine** : La Suède rejoint le tribunal d'agression (HD03231) et la commission d'indemnisation (HD03232) — consensus inter-partis en politique étrangère.
+- 🔵 **Déréglementation forestière (HD03242)** — vote Alliance/rural controversé ; opposition MP/S/V.
+
+### Principal signal prospectif pour mai
+
+> **Déclencheur** : Vote de la commission des finances (FiU) sur le budget de printemps 2026 (HD03100) et le budget rectificatif supplémentaire (HD03236) — attendu fin mai / début juin. Un rapport de commission négatif ou un veto du SD sur la politique fiscale serait l'événement politiquement le plus significatif avant les vacances d'été.
+
+### Déclaration de confiance
+
+**HIGH** [B2] — Basé sur 20 propositions gouvernementales et communications vérifiées de data.riksdagen.se, riksmöte 2025/26.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'tertiaryColor': '#1a1e3d', 'background': '#0a0e27', 'nodeBorder': '#00d9ff', 'clusterBkg': '#1a1e3d', 'titleColor': '#e0e0e0'}}}%%
+flowchart LR
+    A["🔴 Spring Budget\nHD03100"] --> B["FiU June vote"]
+    C["🔴 Emergency Relief\nHD03236"] --> B
+    D["🟡 Justice Sprint\nHD03237/246/252"] --> E["Parliamentary majority\ncheck"]
+    F["🟡 Energy Laws\nHD03240/239/238"] --> E
+    G["🟢 Ukraine Treaties\nHD03231/232"] --> H["Cross-party support"]
+    B --> I["Election signal\nSept 2026"]
+    E --> I
+    H --> I
+    style A fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#fff
+    style D fill:#ffbe0b,color:#000
+    style F fill:#ffbe0b,color:#000
+    style G fill:#00d9ff,color:#000
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 91eb3cb6cf35873538b354461078df4509cf0012 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# החודש הקרוב — מאי 2026: שוודיה בנקודת מפנה טרום-בחירות
+
+**מחבר**: James Pether Sörling | **סיווג**: ציבורי | **תאריך**: 2026-04-25 | **רמת ביטחון**: HIGH
+
+### 🎯 מסקנה
+
+שוודיה נכנסת למאי 2026 כאשר ממשלת טידו מציגה את חבילת החקיקה הגדולה ביותר שלה לפני הבחירות: תקציב האביב 2026 (HD03100) המתחזה להתאוששות כלכלית מתמשכת אך איטית, חבילת חירום לצמצום עלויות הדלק והאנרגיה (HD03236) ומרוץ חקיקתי של 19 הצעות בתחומי המשפט, האנרגיה, הסביבה והמדיניות החוץ. עם בדיוק חמישה חודשים עד הבחירות (ספטמבר 2026), הסיכון הפוליטי ממוקד בבירור סביב הסנטימנט הכלכלי — האם הפחתות העלויות לבתי האב יגיעו בזמן להשפיע על העדפות הבוחרים — ועל אמינות הממשלה ברפורמות שלטון החוק שעמדו במרכז מנדט קואליציית טידו מאז 2022.
+
+### 🧭 3 החלטות שסיכום זה תומך בהן
+
+1. **הערכת סיכון כלכלי**: האם על הגורמים לתמחר סיכון מוגבר לאי-יציבות פוליטית לפני בחירות ספטמבר 2026, לאור המיתון המתמשך וחבילת הסיוע החירומית?
+2. **מעקב אחר צינור החקיקה**: אילו מבין 19 ההצעות הנוכחיות נושאות את הסיכון הגבוה ביותר לעיכוב על ידי האופוזיציה או חסימה בוועדה לפני חופשת הקיץ (יוני 2026)?
+3. **יציבות הקואליציה**: האם הפחתות מס הדלק (HD03236) מאותתות על לחץ SD על הממשלה, וכיצד זה משנה את אריתמטיקת הקואליציה לקראת הקמפיין הבחירותי?
+
+### קריאת מודיעין של 60 שניות
+
+- 🔴 **תקציב האביב 2026 (HD03100)** — מסגרת תקציב האביב מתחזה להתאוששות איטית; המיתון נמשך יותר מהתחזית הקודמת. הממשלה מכוונת לצמיחה, רווחה, ביטחון. סקירת FiU ביוני.
+- 🔴 **סיוע חירום לדלק ואנרגיה (HD03236)** — הפחתת מס דלק + תמיכה במחיר חשמל/גז; אות מחזור בחירות בצד התקציב. העלות מוערכת במיליארדים SEK.
+- 🟡 **מרוץ משפטי**: הכשרת משטרה בתשלום (HD03237), כללי נוער מחמירים יותר (HD03246), איסור ביטוח סוציאלי לכלואים (HD03252) — מסירות מנדט הליבה של M/SD.
+- 🟡 **מעבר אנרגטי**: חוק מערכת חשמל חדש (HD03240), הכנסות אנרגיית רוח לעיריות (HD03239), רשות הערכת סביבה חדשה (HD03238).
+- 🟢 **אחריות אוקראינה**: שוודיה מצטרפת לבית דין לתוקפנות (HD03231) ולוועדת פיצויים (HD03232) — קונצנזוס בין-מפלגתי בפוליטיקה חוץ.
+- 🔵 **ביטול רגולציה ביערות (HD03242)** — הצבעה שנויה במחלוקת של ברית/כפרית; התנגדות MP/S/V.
+
+### אות מרכזי מבט-קדימה למאי
+
+> **טריגר**: הצבעת ועדת האוצר (FiU) על תקציב האביב 2026 (HD03100) ותקציב תיקוני משלים (HD03236) — צפויה בסוף מאי / תחילת יוני. דו"ח ועדה שלילי או וטו SD על מדיניות המס יהיה האירוע הבעל משמעות פוליטית הגבוהה ביותר לפני חופשת הקיץ.
+
+### הצהרת ביטחון
+
+**HIGH** [B2] — מבוסס על 20 הצעות ממשלה ומסמכים מאומתים מ-data.riksdagen.se, riksmöte 2025/26.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'tertiaryColor': '#1a1e3d', 'background': '#0a0e27', 'nodeBorder': '#00d9ff', 'clusterBkg': '#1a1e3d', 'titleColor': '#e0e0e0'}}}%%
+flowchart LR
+    A["🔴 Spring Budget\nHD03100"] --> B["FiU June vote"]
+    C["🔴 Emergency Relief\nHD03236"] --> B
+    D["🟡 Justice Sprint\nHD03237/246/252"] --> E["Parliamentary majority\ncheck"]
+    F["🟡 Energy Laws\nHD03240/239/238"] --> E
+    G["🟢 Ukraine Treaties\nHD03231/232"] --> H["Cross-party support"]
+    B --> I["Election signal\nSept 2026"]
+    E --> I
+    H --> I
+    style A fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#fff
+    style D fill:#ffbe0b,color:#000
+    style F fill:#ffbe0b,color:#000
+    style G fill:#00d9ff,color:#000
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 91eb3cb6cf35873538b354461078df4509cf0012 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/executive-brief_ja.md -->
+
+**著者**: James Pether Sörling | **分類**: 公開 | **日付**: 2026-04-25 | **信頼レベル**: HIGH
+
+### 🎯 結論
+
+スウェーデンは2026年5月に突入する。Tidö政権が最大の選挙前立法パッケージを展開している：2026年春季予算（HD03100）は継続的だが緩慢な経済回復を予測し、燃料・エネルギーコスト削減緊急パッケージ（HD03236）と司法・エネルギー・環境・外交の分野における19提案の立法スプリントも実施中だ。選挙まで正確に5ヶ月（2026年9月）を残し、政治的リスクは経済センチメントに確実に集中している——家計のコスト削減が有権者の選好を変えるのに間に合うかどうか——そして、2022年以来Tidö連立政権の中核を担ってきた法の支配改革における政府の信頼性にも。
+
+### 🧭 このブリーフィングが支持する3つの判断
+
+1. **経済リスク評価**: 長引く景気後退と緊急支援パッケージを踏まえ、2026年9月選挙に向けて政治的不安定リスクの高まりをアクターは織り込むべきか？
+2. **立法パイプラインの追跡**: 現在の19の提案のうち、夏季休暇（2026年6月）前に野党による遅延や委員会封鎖のリスクが最も高いのはどれか？
+3. **連立の安定性**: 燃料税引き下げ（HD03236）はSD（スウェーデン民主党）の政府への圧力を示しているか？そしてそれは選挙キャンペーンに向けた連立の算術をどう変えるか？
+
+### 60秒インテリジェンス読解
+
+- 🔴 **2026年春季予算（HD03100）** — 春季予算枠組みは緩慢な回復を予測；景気後退は以前の予測より長引く。政府は成長・福祉・安全を目指す。6月にFiUが審査。
+- 🔴 **燃料・エネルギー緊急支援（HD03236）** — 燃料税引き下げ＋電力/ガス価格支援；予算サイドの選挙サイクルシグナル。費用は数十億SEK規模と推算。
+- 🟡 **司法スプリント**: 有給警察訓練（HD03237）、若者規則の厳格化（HD03246）、受刑者への社会保険禁止（HD03252）——M/SDのコアマンデート実施。
+- 🟡 **エネルギー転換**: 新電力システム法（HD03240）、自治体への風力発電収益（HD03239）、新環境評価機関（HD03238）。
+- 🟢 **ウクライナへの説明責任**: スウェーデンが侵略罪法廷（HD03231）と損害賠償委員会（HD03232）に参加——外交政策での超党派的支持。
+- 🔵 **林業規制緩和（HD03242）** ——アライアンス/農村票での論争；MP/S/Vの反対。
+
+### 5月の最重要前向きシグナル
+
+> **トリガー**: 財政委員会（FiU）による2026年春季予算（HD03100）と追加補正予算（HD03236）の採決——5月末〜6月初旬を予定。委員会の否定的報告またはSDによる税政策への拒否権は、夏季休暇前の最も重要な政治的単一事象となる。
+
+### 信頼性声明
+
+**HIGH** [B2] — data.riksdagen.seから20の検証済み政府提案と文書に基づく。riksmöte 2025/26。
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'tertiaryColor': '#1a1e3d', 'background': '#0a0e27', 'nodeBorder': '#00d9ff', 'clusterBkg': '#1a1e3d', 'titleColor': '#e0e0e0'}}}%%
+flowchart LR
+    A["🔴 Spring Budget\nHD03100"] --> B["FiU June vote"]
+    C["🔴 Emergency Relief\nHD03236"] --> B
+    D["🟡 Justice Sprint\nHD03237/246/252"] --> E["Parliamentary majority\ncheck"]
+    F["🟡 Energy Laws\nHD03240/239/238"] --> E
+    G["🟢 Ukraine Treaties\nHD03231/232"] --> H["Cross-party support"]
+    B --> I["Election signal\nSept 2026"]
+    E --> I
+    H --> I
+    style A fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#fff
+    style D fill:#ffbe0b,color:#000
+    style F fill:#ffbe0b,color:#000
+    style G fill:#00d9ff,color:#000
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 91eb3cb6cf35873538b354461078df4509cf0012 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/executive-brief_ko.md -->
+
+**저자**: James Pether Sörling | **분류**: 공개 | **날짜**: 2026-04-25 | **신뢰 수준**: HIGH
+
+### 🎯 결론
+
+스웨덴은 2026년 5월에 접어들며 티도 정부가 최대 규모의 선거 전 입법 패키지를 전개하고 있다: 지속적이지만 완만한 경제 회복을 전망하는 2026 봄 예산(HD03100), 연료 및 에너지 비용 절감 긴급 패키지(HD03236), 그리고 사법·에너지·환경·외교 분야의 19개 법안 입법 스프린트. 선거까지 정확히 5개월(2026년 9월)이 남은 시점에서 정치적 위험은 확실히 경제적 심리에 집중되어 있다——가계 비용 절감이 유권자 선호에 영향을 미칠 만큼 적시에 도착할 것인가——그리고 2022년 이후 티도 연립의 핵심 의제를 구성해온 법치 개혁에서 정부의 신뢰성에도 집중되어 있다.
+
+### 🧭 이 브리핑이 지원하는 3가지 결정
+
+1. **경제적 위험 평가**: 장기화된 침체와 긴급 지원 패키지를 감안할 때, 2026년 9월 선거를 앞두고 행위자들이 증가된 정치적 불안정 위험을 가격에 반영해야 하는가?
+2. **입법 파이프라인 추적**: 현재 19개 법안 중 여름 휴가(2026년 6월) 전에 야당의 지연이나 위원회 봉쇄 위험이 가장 높은 것은 무엇인가?
+3. **연립 안정성**: 연료세 삭감(HD03236)은 정부에 대한 SD의 압력을 나타내는가, 그리고 이것이 선거 캠페인을 향한 연립 산술을 어떻게 변화시키는가?
+
+### 60초 정보 브리핑
+
+- 🔴 **2026 봄 예산(HD03100)** — 봄 예산 프레임워크는 완만한 회복을 전망; 침체가 이전 예측보다 더 오래 지속. 정부는 성장·복지·안보를 지향. 6월에 FiU 검토.
+- 🔴 **연료 및 에너지 긴급 지원(HD03236)** — 연료세 인하 + 전기/가스 가격 지원; 예산 측면의 선거 주기 신호. 비용은 수십억 SEK로 추산.
+- 🟡 **사법 스프린트**: 유급 경찰 훈련(HD03237), 청소년 규정 강화(HD03246), 수감자 사회보험 금지(HD03252) — M/SD 핵심 공약 이행.
+- 🟡 **에너지 전환**: 새로운 전력 시스템법(HD03240), 지방자치단체 풍력 수익(HD03239), 새로운 환경 평가 기관(HD03238).
+- 🟢 **우크라이나 책임**: 스웨덴이 침략 재판소(HD03231) 및 손해배상위원회(HD03232)에 참여 — 외교 정책에 관한 초당적 합의.
+- 🔵 **삼림 규제 완화(HD03242)** — 연합/농촌 투표 논란; MP/S/V 반대.
+
+### 5월 주요 전망 신호
+
+> **트리거**: 재정위원회(FiU)의 2026 봄 예산(HD03100) 및 추가 수정 예산(HD03236) 투표 — 5월 말/6월 초 예정. 부정적인 위원회 보고서나 세금 정책에 대한 SD의 거부권은 여름 휴가 전 가장 정치적으로 중요한 단일 사건이 될 것이다.
+
+### 신뢰성 선언
+
+**HIGH** [B2] — data.riksdagen.se에서 20개의 검증된 정부 법안 및 서신 기반. riksmöte 2025/26.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'tertiaryColor': '#1a1e3d', 'background': '#0a0e27', 'nodeBorder': '#00d9ff', 'clusterBkg': '#1a1e3d', 'titleColor': '#e0e0e0'}}}%%
+flowchart LR
+    A["🔴 Spring Budget\nHD03100"] --> B["FiU June vote"]
+    C["🔴 Emergency Relief\nHD03236"] --> B
+    D["🟡 Justice Sprint\nHD03237/246/252"] --> E["Parliamentary majority\ncheck"]
+    F["🟡 Energy Laws\nHD03240/239/238"] --> E
+    G["🟢 Ukraine Treaties\nHD03231/232"] --> H["Cross-party support"]
+    B --> I["Election signal\nSept 2026"]
+    E --> I
+    H --> I
+    style A fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#fff
+    style D fill:#ffbe0b,color:#000
+    style F fill:#ffbe0b,color:#000
+    style G fill:#00d9ff,color:#000
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 91eb3cb6cf35873538b354461078df4509cf0012 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/executive-brief_nl.md -->
+
+**Auteur**: James Pether Sörling | **Classificatie**: PUBLIC | **Datum**: 2026-04-25 | **Betrouwbaarheidsniveau**: HIGH
+
+### 🎯 Conclusie
+
+Zweden treedt mei 2026 in terwijl de Tidö-regering haar grootste pre-verkiezingswetgevingspakket uitrolt: het voorjaarssbudget 2026 (HD03100) dat aanhoudend maar langzaam economisch herstel projecteert, een noodpakket voor brandstof- en energiekostenreductie (HD03236) en een wetgevingssprint van 19 proposities op het gebied van justitie, energie, milieu en buitenlands beleid. Met exact vijf maanden tot de verkiezingen (september 2026) is het politieke risico definitief gecentreerd op het economisch sentiment — of kostenverlagingen voor huishoudens op tijd aankomen om kiezersvoorkeuren te beïnvloeden — en op de geloofwaardigheid van de regering bij rechtsstaatvormingen die het kernmandaat van de Tidö-coalitie vormen sinds 2022.
+
+### 🧭 3 beslissingen die dit briefing ondersteunt
+
+1. **Beoordeling van economisch risico**: Moeten actoren verhoogd politiek instabiliteitsrisico inprijzen voor de verkiezingen van september 2026, gezien de verlengde recessie en het noodhulppakket?
+2. **Bijhouden van de wetgevingspijplijn**: Welke van de 19 lopende proposities dragen het grootste risico van oppositionele vertraging of commissieblokkering voor de zomervakantie (juni 2026)?
+3. **Coalitie-stabiliteit**: Signaleren de brandstofbelastingverlagingen (HD03236) SD-druk op de regering, en hoe verandert dat de coalitie-aritmetica richting de verkiezingscampagne?
+
+### 60-seconden inlichtingenoverzicht
+
+- 🔴 **Voorjaarsbudget 2026 (HD03100)** — Het voorjaarsbudgetkader projecteert langzaam herstel; recessie duurt langer dan eerdere prognose. Regering streeft naar groei, welzijn, veiligheid. FiU-evaluatie in juni.
+- 🔴 **Noodhulp brandstof en energie (HD03236)** — Verlaagde brandstofbelasting + ondersteuning elektriciteits-/gasprijzen; verkiezingscyclussignaal aan budgetzijde. Kosten geraamd op meerdere miljarden SEK.
+- 🟡 **Justitie-sprint**: Betaalde politieopleiding (HD03237), strengere jeugdregels (HD03246), verbod op sociale zekerheid voor gedetineerden (HD03252) — kernmandaatuitvoering van M/SD.
+- 🟡 **Energietransitie**: Nieuwe wet elektriciteitsysteem (HD03240), windenergie-inkomsten voor gemeenten (HD03239), nieuwe milieu-evaluatieautoriteit (HD03238).
+- 🟢 **Oekraïense aansprakelijkheid**: Zweden sluit zich aan bij aggressietribunaal (HD03231) en schadevergoedingscommissie (HD03232) — multipartij buitenlands beleid consensus.
+- 🔵 **Bosbouwderegulering (HD03242)** — omstreden Alliantie/landelijk stemming; MP/S/V-weerstand.
+
+### Belangrijkste vooruitzichtssignaal voor mei
+
+> **Trigger**: Stemming van de financiëncommissie (FiU) over het Voorjaarsbudget 2026 (HD03100) en aanvullend wijzigingsbudget (HD03236) — verwacht laat mei / vroeg juni. Een negatief commissierapport of een SD-veto over belastingbeleid zou de politiek meest significante gebeurtenis zijn voor de zomervakantie.
+
+### Betrouwbaarheidsverklaring
+
+**HIGH** [B2] — Gebaseerd op 20 geverifieerde regeringsproposities en communicaties van data.riksdagen.se, riksmöte 2025/26.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'tertiaryColor': '#1a1e3d', 'background': '#0a0e27', 'nodeBorder': '#00d9ff', 'clusterBkg': '#1a1e3d', 'titleColor': '#e0e0e0'}}}%%
+flowchart LR
+    A["🔴 Spring Budget\nHD03100"] --> B["FiU June vote"]
+    C["🔴 Emergency Relief\nHD03236"] --> B
+    D["🟡 Justice Sprint\nHD03237/246/252"] --> E["Parliamentary majority\ncheck"]
+    F["🟡 Energy Laws\nHD03240/239/238"] --> E
+    G["🟢 Ukraine Treaties\nHD03231/232"] --> H["Cross-party support"]
+    B --> I["Election signal\nSept 2026"]
+    E --> I
+    H --> I
+    style A fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#fff
+    style D fill:#ffbe0b,color:#000
+    style F fill:#ffbe0b,color:#000
+    style G fill:#00d9ff,color:#000
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 91eb3cb6cf35873538b354461078df4509cf0012 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/executive-brief_no.md -->
+
+**Forfatter**: James Pether Sörling | **Klassifisering**: PUBLIC | **Dato**: 2026-04-25 | **Konfidensnivå**: HIGH
+
+### 🎯 Konklusjon
+
+Sverige trer inn i mai 2026 med Tidö-regjeringen som ruller ut sin største pre-valspakke: 2026-vårbudsjettet (HD03100) som projiserer fortsatt men langsom økonomisk bedring, en akutt pakke for reduksjon av drivstoff- og energikostnader (HD03236) og et lovgivningssprint bestående av 19 proposisjoner innen justis, energi, miljø og utenrikspolitikk. Med nøyaktig fem måneder til valget (september 2026) er den politiske risikoen bestemt sentrert rundt det økonomiske sentimentet — om husholdningenes kostnadsreduksjoner ankommer i tide til å påvirke velgerpreferanser — og om regjeringens troverdighet i rettsstatsreformer som har stått sentralt for Tidö-koalisionens mandat siden 2022.
+
+### 🧭 3 beslutninger dette briefingen støtter
+
+1. **Vurdering av økonomisk risiko**: Bør aktørene prissette økt politisk ustabilitetsrisiko frem mot valget i september 2026 i lys av den forlengte resesjonen og den akutte støttepakken?
+2. **Sporing av lovgivningspipeline**: Hvilke av de 19 nåværende proposisjonene bærer høyest risiko for opposisjonsblokering eller utvalgsblokering før sommerferien (juni 2026)?
+3. **Koalisjonsstabilitet**: Signaliserer drivstoffavgiftskuttene (HD03236) SD-press på regjeringen, og hvordan endrer det koalisjonsmatematikken inn mot valgkampen?
+
+### 60-sekunders etterretningslesing
+
+- 🔴 **Vårproposisjon 2026 (HD03100)** — Vårbudsjettrammeverk projiserer langsom bedring; resesjonen varer lenger enn tidligere prognose. Regjeringen sikter mot vekst, velferd, sikkerhet. FiU-gjennomgang i juni.
+- 🔴 **Akutt drivstoff- og energihjelp (HD03236)** — Redusert drivstoffavgift + el-/gassprisstøtte; valgsyklusssignal på budsjettsiden. Kostnaden anslås til flere milliarder SEK.
+- 🟡 **Justissprint**: Betalt politiutdanning (HD03237), strengere ungdomsregler (HD03246), forbud mot trygd for innsatte (HD03252) — M/SD-kjernemandatleveranser.
+- 🟡 **Energiomstilling**: Ny lov om elsystemet (HD03240), vindkraftinntekter til kommuner (HD03239), ny miljøvurderingsmyndighet (HD03238).
+- 🟢 **Ukrainas ansvarliggjøring**: Sverige slutter seg til aggresjonstribunal (HD03231) og erstatningskommisjon (HD03232) — tverrpolitisk utenrikspolitisk samhold.
+- 🔵 **Skogbruksderegulering (HD03242)** — omstridt Allianse/distriktsstemming; MP/S/V-motstand.
+
+### Viktigste fremoverpekende signal for mai
+
+> **Utløser**: Finanskomiteens (FiU) avstemning om Vårproposisjon 2026 (HD03100) og tilleggsendret budsjett (HD03236) — forventes sent i mai / tidlig juni. En negativ komitéhenvisning eller SD-nedleggelse av veto mot skattepolitikken ville utgjøre den enkelthendelsen med størst politisk betydning før sommerferien.
+
+### Konfidenserklæring
+
+**HIGH** [B2] — Basert på 20 verifiserte regjeringsproposisjoner og skriv fra data.riksdagen.se, riksmöte 2025/26.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'tertiaryColor': '#1a1e3d', 'background': '#0a0e27', 'nodeBorder': '#00d9ff', 'clusterBkg': '#1a1e3d', 'titleColor': '#e0e0e0'}}}%%
+flowchart LR
+    A["🔴 Spring Budget\nHD03100"] --> B["FiU June vote"]
+    C["🔴 Emergency Relief\nHD03236"] --> B
+    D["🟡 Justice Sprint\nHD03237/246/252"] --> E["Parliamentary majority\ncheck"]
+    F["🟡 Energy Laws\nHD03240/239/238"] --> E
+    G["🟢 Ukraine Treaties\nHD03231/232"] --> H["Cross-party support"]
+    B --> I["Election signal\nSept 2026"]
+    E --> I
+    H --> I
+    style A fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#fff
+    style D fill:#ffbe0b,color:#000
+    style F fill:#ffbe0b,color:#000
+    style G fill:#00d9ff,color:#000
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 91eb3cb6cf35873538b354461078df4509cf0012 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/executive-brief_sv.md -->
+
+**Författare**: James Pether Sörling | **Klassificering**: PUBLIC | **Datum**: 2026-04-25 | **Konfidensgrad**: HIGH
+
+### 🎯 Slutsats
+
+Sverige träder in i maj 2026 med Tidö-regeringen som rullar ut sitt största pre-val lagstiftningspaket: 2026 års vårbudget (HD03100) som spår fortsatt men långsam ekonomisk återhämtning, ett akut kostnadsreduceringspaket för bränsle och energi (HD03236), samt ett lagstiftningssprint av 19 propositioner inom rättsväsende, energi, miljö och utrikespolitik. Med exakt fem månader kvar till valet (september 2026) är den politiska risken bestämt centrerad kring det ekonomiska sentimentet — huruvida hushållens kostnadsreduceringar anländer i tid att påverka väljarpreferenserna — och kring regeringens trovärdighet i rättsstatliga reformer som har stått i centrum för Tidö-koalitionens mandat sedan 2022.
+
+### 🧭 3 beslut som detta underlag stöder
+
+1. **Ekonomisk riskbedömning**: Bör aktörer prisa in ökad politisk instabilitetesrisk inför valet i september 2026 med hänsyn till den förlängda lågkonjunkturen och det akuta stödpaketet?
+2. **Spårning av lagstiftningspipelinen**: Vilka av de 19 nuvarande propositionerna löper högst risk för oppositionens fördröjning eller utskottsblockering före sommaruppehållet (juni 2026)?
+3. **Koalitionsstabilitet**: Signalerar skattesänkningarna på drivmedel (HD03236) SD:s tryck på regeringen, och hur förändrar det koalitionsmatten inför valrörelsen?
+
+### 60-sekunders underrättelseläsning
+
+- 🔴 **Vårproposition 2026 (HD03100)** — Vårbudgetramverk projicerar långsam återhämtning; lågkonjunkturen varar längre än tidigare prognos. Regeringen siktar på tillväxt, välfärd, säkerhet. FiU:s granskning i juni.
+- 🔴 **Akut bränsle- och energihjälp (HD03236)** — Sänkt skatt på drivmedel + el/gasprisstöd; valcykelsignal på budgetsidan. Kostnaden beräknas till flera miljarder SEK.
+- 🟡 **Rättvisesprint**: Betald polisutbildning (HD03237), hårdare ungdomsregler (HD03246), förbud mot social försäkring för fängslade (HD03252) — M/SD:s kärnmandatleverans.
+- 🟡 **Energiomställning**: Ny lag om elsystemet (HD03240), vindkraftintäkter till kommuner (HD03239), ny miljöprövningsmyndighet (HD03238).
+- 🟢 **Ukrainas ansvarsutkrävning**: Sverige ansluter sig till aggressionstribunal (HD03231) och skadesståndskommission (HD03232) — utrikespolitisk sammanhållning över partier.
+- 🔵 **Skogsbruksavreglering (HD03242)** — omstritt Alliansen/landsbygdsröstning; MP/S/V motståndare.
+
+### Topp framåtsignal för maj
+
+> **Utlösare**: Finansutskottets (FiU) omröstning om Vårproposition 2026 (HD03100) och tilläggsändringsbudget (HD03236) — förväntas i slutet av maj / tidig juni. En negativ utskottsremiss eller SD:s nedröstning i skattepolitiken skulle vara den enskilt mest betydelsefulla politiska händelsen inför sommaruppehållet.
+
+### Konfidensutlåtande
+
+**HIGH** [B2] — Baserat på 20 verifierade regeringspropositioner och skrivelser från data.riksdagen.se, riksmöte 2025/26.
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'tertiaryColor': '#1a1e3d', 'background': '#0a0e27', 'nodeBorder': '#00d9ff', 'clusterBkg': '#1a1e3d', 'titleColor': '#e0e0e0'}}}%%
+flowchart LR
+    A["�� Spring Budget\nHD03100"] --> B["FiU June vote"]
+    C["🔴 Emergency Relief\nHD03236"] --> B
+    D["🟡 Justice Sprint\nHD03237/246/252"] --> E["Parliamentary majority\ncheck"]
+    F["🟡 Energy Laws\nHD03240/239/238"] --> E
+    G["🟢 Ukraine Treaties\nHD03231/232"] --> H["Cross-party support"]
+    B --> I["Election signal\nSept 2026"]
+    E --> I
+    H --> I
+    style A fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#fff
+    style D fill:#ffbe0b,color:#000
+    style F fill:#ffbe0b,color:#000
+    style G fill:#00d9ff,color:#000
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 91eb3cb6cf35873538b354461078df4509cf0012 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/executive-brief_zh.md -->
+
+**作者**: James Pether Sörling | **分类**: 公开 | **日期**: 2026-04-25 | **置信水平**: HIGH
+
+### 🎯 结论
+
+瑞典进入2026年5月，Tidö政府正在推出其最大规模的选前立法套餐：2026年春季预算（HD03100）预测持续但缓慢的经济复苏，燃料和能源成本削减紧急套餐（HD03236），以及在司法、能源、环境和外交政策领域涵盖19项提案的立法冲刺。距离选举（2026年9月）还剩整整五个月，政治风险明确集中在经济情绪上——家庭成本削减能否及时到位以影响选民偏好——以及政府在法治改革中的公信力（这些改革自2022年以来一直是Tidö联合政府授权的核心）。
+
+### 🧭 本简报支持的3项决策
+
+1. **经济风险评估**：鉴于持续性衰退和紧急援助套餐，各方是否应在2026年9月大选前为增加的政治不稳定风险定价？
+2. **立法管道追踪**：当前19项提案中，哪些在夏季休会（2026年6月）前面临最高的反对党拖延或委员会阻挠风险？
+3. **联合政府稳定性**：燃料税削减（HD03236）是否表明SD对政府施压，这如何改变选举前的联合算术？
+
+### 60秒情报速读
+
+- 🔴 **2026年春季预算（HD03100）** — 春季预算框架预测缓慢复苏；衰退持续时间超过此前预期。政府以增长、福利、安全为目标。FiU将于6月审查。
+- 🔴 **燃料和能源紧急援助（HD03236）** — 降低燃料税 + 电价/气价补贴；预算侧选举周期信号。成本估计达数十亿SEK。
+- 🟡 **司法冲刺**：有薪警察培训（HD03237）、更严格的青少年规定（HD03246）、禁止向被关押者提供社会保险（HD03252）——M/SD核心授权交付。
+- 🟡 **能源转型**：新电力系统法（HD03240）、风能收益归市政府（HD03239）、新环境评估机构（HD03238）。
+- 🟢 **乌克兰问责**：瑞典加入侵略罪法庭（HD03231）和损害赔偿委员会（HD03232）——外交政策上的跨党派共识。
+- 🔵 **林业放松管制（HD03242）** ——联盟/农村票争议；MP/S/V反对。
+
+### 5月关键前瞻信号
+
+> **触发事件**：财政委员会（FiU）对2026年春季预算（HD03100）和追加修正预算（HD03236）进行投票——预计5月底/6月初。委员会的负面报告或SD对税收政策的否决将是夏季休会前政治意义最为重大的单一事件。
+
+### 置信度声明
+
+**HIGH** [B2] — 基于data.riksdagen.se的20份经核实的政府提案和书面文件。riksmöte 2025/26。
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'secondaryColor': '#ff006e', 'tertiaryColor': '#1a1e3d', 'background': '#0a0e27', 'nodeBorder': '#00d9ff', 'clusterBkg': '#1a1e3d', 'titleColor': '#e0e0e0'}}}%%
+flowchart LR
+    A["🔴 Spring Budget\nHD03100"] --> B["FiU June vote"]
+    C["🔴 Emergency Relief\nHD03236"] --> B
+    D["🟡 Justice Sprint\nHD03237/246/252"] --> E["Parliamentary majority\ncheck"]
+    F["🟡 Energy Laws\nHD03240/239/238"] --> E
+    G["🟢 Ukraine Treaties\nHD03231/232"] --> H["Cross-party support"]
+    B --> I["Election signal\nSept 2026"]
+    E --> I
+    H --> I
+    style A fill:#ff006e,color:#fff
+    style C fill:#ff006e,color:#fff
+    style D fill:#ffbe0b,color:#000
+    style F fill:#ffbe0b,color:#000
+    style G fill:#00d9ff,color:#000
+    style I fill:#1a1e3d,color:#e0e0e0
+```
+
+<!-- source-sha: 91eb3cb6cf35873538b354461078df4509cf0012 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 9 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -1774,3 +2482,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/month-ahead/executive-brief_zh.md)

@@ -6,7 +6,7 @@ date: 2026-04-23
 subfolder: month-ahead
 slug: 2026-04-23-month-ahead
 source_folder: analysis/daily/2026-04-23/month-ahead
-generated_at: 2026-05-17T18:40:43.236Z
+generated_at: 2026-05-17T22:29:22.139Z
 language: en
 layout: article
 ---
@@ -112,6 +112,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -2002,13 +2015,1097 @@ This analysis applies OSINT methodology per ICD 203, using:
 - **Full-text**: Available for all listed propositions via riksdagen.se
 - **Session context**: Riksmöte 2025/26 spring session ends June 2026; ~38 days of parliamentary activity covered
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# الموجز التنفيذي — نظرة شهرية 2026-04-23
+
+**التصنيف**: عام | **المؤلف**: James Pether Sörling | **تاريخ الإنشاء**: 2026-04-23
+**الفترة**: 2026-04-23 → 2026-05-31 | **الدورة**: الريكسمويتي 2025/26 (المرحلة النهائية للربيع)
+
+---
+
+### 🎯 الخلاصة
+
+تدخل السويد الأسابيع الخمسة الأخيرة من دورة البرلمان 2025/26 مع ثلاث حزم متشابكة تهيمن على الأجندة التشريعية: حزمة الميزانية الربيعية 2026 (HD03100 vårproposition + HD0399 ميزانية تكميلية)، وحزمة القانون والنظام التي تعزز أجندة العدالة الجنائية لـ Tidöavtalet، وحزمة انتقال الطاقة التي تُعيد هيكلة سوق الكهرباء. ستحظى الحزم الثلاث بتصويتات نهائية قبل العطلة الصيفية، إذ يُحدد الـ vårproposition المسار المالي للسويد خلال فترة ما قبل الانتخابات ذات التعافي الاقتصادي المعتدل وارتفاع الإنفاق الدفاعي.
+
+**الثقة**: عالية [B2 — وثائق حكومية رسمية، مصادر riksdagen.se]
+
+---
+
+### 🧭 ثلاثة قرارات يدعمها هذا الموجز
+
+1. **الأولويات التحريرية**: أي حزمة تشريعية تستحق أعمق تغطية خلال دورة أبريل–مايو 2026؟ (الإجابة: ميزانية الربيع — أوسع تأثير اجتماعي، تضع معاملات 2026–2027)
+2. **رصد المخاطر السياسية**: أين ستظهر أبرز توترات الائتلاف قبل انتخابات سبتمبر 2026؟
+3. **مؤشرات استشرافية**: ما المؤشرات التي تدل على أن الائتلاف الحاكم يكتسب أو يفقد زخمه قبيل حملة الخريف؟
+
+---
+
+### ⚡ قراءة 60 ثانية
+
+- **المالية**: يُسقط HD03100 Vårproposition تعافياً مستمراً (نمو الناتج المحلي الإجمالي من −0.20% عام 2023 إلى 0.82% عام 2024)؛ إنفاق دفاعي مرتفع؛ تخفيف تكاليف الطاقة عبر HD03236 (خفض ضريبة الوقود مايو–سبتمبر 2026، دعم أسعار الطاقة يناير–فبراير 2026 بأثر رجعي)؛ تكلفة مالية صافية ~4.1 مليار كرون سويدي. لجنة المالية (FiU) في الريكسداغ أقرّت بالفعل HD01FiU48 في 21 أبريل 2026.
+- **العدالة**: HD03218 (مضاعفة العقوبات على جرائم العصابات)، HD03246 (الجانحون من الأحداث)، HD03217 (مسؤولية الموظفين)، HD03235 (الترحيل) — جميعها مُقررة للتصويت في الربيع. قدّم V وC وMP موشنات معارضة للترحيل؛ يعارض V وMP تعديلات اللوائح على الأسلحة.
+- **الطاقة**: HD03240 (قوانين الكهرباء الجديدة)، HD03239 (توزيع عائدات طاقة الرياح)، HD03238 (سلطة تراخيص بيئية جديدة) — يُتوقع أن تهيمن الإصلاحات الهيكلية على جداول لجنتَي MJU وNU خلال مايو.
+- **الدفاع**: HD03220 (الوجود الأمامي لحلف الناتو في فنلندا) — يُتوقع دعم واسع عابر للأحزاب مع معارضة محدودة من V.
+- **الإسكان/المدن**: HD01CU28 (سجل وطني لتعاونيات الإسكان، سارٍ من 2027) وHD01CU27 (اشتراطات هوية العقار، سارٍ من 2026-07-01) كلاهما أُقرّ في 17 أبريل 2026.
+
+---
+
+### 🔑 أهم المحفزات الاستشرافية
+
+**للرصد**: تصويت الريكسداغ على HD0399 Vårändringsbudget (المتوقع أواخر مايو 2026) — إذا صوّت S وV وMP وC معاً ضد الميزانية، فهذا يُعلن عن أقصى درجات التوحد المعارض قبيل الانتخابات ويوفر رواية انتخابية تتواصل حتى الصيف.
+
+---
+
+### 📊 تصنيف DIW للأولويات
+
+```mermaid
+quadrantChart
+    title Document Significance — Month Ahead April-May 2026
+    x-axis Low Electoral Impact --> High Electoral Impact
+    y-axis Low Legislative Urgency --> High Legislative Urgency
+    quadrant-1 "Critical Watch"
+    quadrant-2 "High Priority"
+    quadrant-3 "Background"
+    quadrant-4 "Monitor"
+    HD03100 Vårproposition: [0.95, 0.98]
+    HD0399 Ändringsbudget: [0.90, 0.95]
+    HD03218 Dubbla straff: [0.80, 0.88]
+    HD03240 Elsystemet: [0.65, 0.82]
+    HD03235 Utvisning: [0.75, 0.78]
+    HD03220 NATO Finland: [0.55, 0.75]
+    HD03245 Våldsstrategi: [0.60, 0.65]
+    HD03242 Skogsbruk: [0.40, 0.55]
+
+    style HD03100 fill:#C62828,color:#FFFFFF
+    style HD0399 fill:#C62828,color:#FFFFFF
+    style HD03218 fill:#E65100,color:#FFFFFF
+    style HD03240 fill:#1565C0,color:#FFFFFF
+    style HD03235 fill:#E65100,color:#FFFFFF
+    style HD03220 fill:#1B5E20,color:#FFFFFF
+    style HD03245 fill:#4A148C,color:#FFFFFF
+    style HD03242 fill:#00695C,color:#FFFFFF
+```
+
+---
+
+### 🔒 ملف الثقة
+
+- **ثقة التقييم الشاملة**: عالية
+- **ثقة البيانات الاقتصادية**: متوسطة-عالية (بيانات البنك الدولي 2024، vårproposition لم يُحلَّل نصياً بالكامل بعد)
+- **ثقة النتائج التشريعية**: عالية (الحكومة تحتفظ بالأغلبية بدعم SD)
+- **ثقة التأثير الانتخابي**: متوسطة (5 أشهر حتى الانتخابات؛ استطلاعات الرأي قابلة للتغير)
+
+**رمز أدميرالتي**: [B2] — مصدر موثوق، مُؤكَّد بوثائق برلمانية مستقلة متعددة
+
+<!-- source-sha: 34bcedb9f943f85646d8e864b41374efd2461075 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_da.md -->
+
+**Klassificering**: Offentlig | **Forfatter**: James Pether Sörling | **Genereret**: 2026-04-23
+**Periode**: 2026-04-23 → 2026-05-31 | **Session**: Riksmøde 2025/26 (slutfase for forår)
+
+---
+
+### 🎯 Konklusion
+
+Sverige går ind i de sidste fem uger af parlamentssessionen 2025/26 med tre sammenhængende pakker, der dominerer den lovgivningsmæssige dagsorden: 2026 Forårets finansielle pakke (HD03100 vårproposition + HD0399 tillægsbudget), en lov-og-orden-pakke, der konsoliderer Tidöavtalets kriminalpolitiske dagsorden, og en energiomstillingspakke, der omstrukturerer elmarkedet. Alle tre pakker vil modtage endelige afstemninger inden sommerferien, idet vårproposition fastlægger Sveriges finanspolitiske kurs i en periode med moderat økonomisk genopretning og forhøjede forsvarsudgifter inden valget.
+
+**Sikkerhed**: HØJ [B2 — officielle regeringsdokumenter, riksdagen.se-kilder]
+
+---
+
+### 🧭 3 Beslutninger denne briefing understøtter
+
+1. **Redaktionel prioritering**: Hvilken lovgivningspakke fortjener den dybeste dækning i april–maj 2026? (Svar: Forårsfinansplanen — bredest samfundsmæssig indvirkning, fastlægger parametre for 2026–2027)
+2. **Politisk risikoovervågning**: Hvor er de mest betydningsfulde koalitionsspændinger sandsynlige inden valget i september 2026?
+3. **Fremadrettede indikatorer**: Hvilke indikatorer signalerer, at den siddende koalition vinder eller taber fremdrift inden efterårskampagnen?
+
+---
+
+### ⚡ 60-sekunders læsning
+
+- **Finanser**: Vårproposition HD03100 projicerer fortsat genopretning (BNP-vækst fra −0,20% i 2023 til 0,82% i 2024); forhøjede forsvarsudgifter; energiomkostningslettelse via HD03236 (brændstofafgiftsnedsættelse maj–september 2026, energiprisstøtte jan–feb 2026 med tilbagevirkende kraft); netto finansiel omkostning ~4,1 mia. SEK. Riksdagens finansudvalg (FiU) godkendte allerede HD01FiU48 den 21. april 2026.
+- **Retsvæsen**: HD03218 (dobbelt straf for bandekriminalitet), HD03246 (unge lovovertrædere), HD03217 (tjenestemænds ansvar), HD03235 (udvisning) — alle planlagt til forårsafstemninger. V, C og MP har indgivet modgående motioner om udvisning; V og MP modsætter sig ændringer i våbenlovgivningen.
+- **Energi**: HD03240 (nye ellove), HD03239 (vindkraftindtægtsdeling), HD03238 (ny miljøtilladelsesmyndighed) — strukturelle reformer forventes at dominere MJU- og NU-udvalgsplanerne i maj.
+- **Forsvar**: HD03220 (NATOs fremskudte tilstedeværelse i Finland) — bredt tværpolitisk støtte forventet, begrænset modstand fra V.
+- **Bolig/by**: HD01CU28 (nationalt andelsboligregister, gælder fra 2027) og HD01CU27 (krav til ejendomsidentitet, gælder fra 2026-07-01) begge vedtaget den 17. april 2026.
+
+---
+
+### 🔑 Vigtigste fremadrettede indikator
+
+**Hold øje med**: Riksdagens afstemning om HD0399 Vårändringsbudget (forventet i slutningen af maj 2026) — hvis S, V, MP og C stemmer samlet imod budgettet, signalerer dette maksimal oppositionsenhed inden valget og giver et valgfortælling ind i sommeren.
+
+---
+
+### 📊 DIW-prioriteringsrangering
+
+```mermaid
+quadrantChart
+    title Document Significance — Month Ahead April-May 2026
+    x-axis Low Electoral Impact --> High Electoral Impact
+    y-axis Low Legislative Urgency --> High Legislative Urgency
+    quadrant-1 "Critical Watch"
+    quadrant-2 "High Priority"
+    quadrant-3 "Background"
+    quadrant-4 "Monitor"
+    HD03100 Vårproposition: [0.95, 0.98]
+    HD0399 Ändringsbudget: [0.90, 0.95]
+    HD03218 Dubbla straff: [0.80, 0.88]
+    HD03240 Elsystemet: [0.65, 0.82]
+    HD03235 Utvisning: [0.75, 0.78]
+    HD03220 NATO Finland: [0.55, 0.75]
+    HD03245 Våldsstrategi: [0.60, 0.65]
+    HD03242 Skogsbruk: [0.40, 0.55]
+
+    style HD03100 fill:#C62828,color:#FFFFFF
+    style HD0399 fill:#C62828,color:#FFFFFF
+    style HD03218 fill:#E65100,color:#FFFFFF
+    style HD03240 fill:#1565C0,color:#FFFFFF
+    style HD03235 fill:#E65100,color:#FFFFFF
+    style HD03220 fill:#1B5E20,color:#FFFFFF
+    style HD03245 fill:#4A148C,color:#FFFFFF
+    style HD03242 fill:#00695C,color:#FFFFFF
+```
+
+---
+
+### 🔒 Sikkerhedsprofil
+
+- **Overordnet vurderingssikkerhed**: HØJ
+- **Sikkerhed for økonomiske data**: MIDDEL-HØJ (Verdensbanksdata 2024, vårproposition ikke endnu fuldt tekstparsed)
+- **Lovgivningsmæssige udfalds sikkerhed**: HØJ (regeringen holder flertal via SD-støtte)
+- **Valgpåvirkningssikkerhed**: MIDDEL (5 måneder til valget; meningsmålinger kan skifte)
+
+**Admiralty-kode**: [B2] — Pålidelig kilde, bekræftet af flere uafhængige parlamentariske dokumenter
+
+<!-- source-sha: 34bcedb9f943f85646d8e864b41374efd2461075 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_de.md -->
+
+**Klassifizierung**: Öffentlich | **Autor**: James Pether Sörling | **Erstellt**: 2026-04-23
+**Zeitraum**: 2026-04-23 → 2026-05-31 | **Sitzung**: Riksmöte 2025/26 (letzte Frühjahrsphase)
+
+---
+
+### 🎯 Fazit
+
+Schweden tritt in die letzten fünf Wochen der Parlamentssitzung 2025/26 ein, wobei drei miteinander verknüpfte Pakete die Gesetzgebungsagenda dominieren: das Frühjahrsfinanzpaket 2026 (HD03100 vårproposition + HD0399 Nachtragshaushalt), ein Recht-und-Ordnung-Paket zur Konsolidierung der kriminalpolitischen Agenda des Tidöavtalet und ein Energiewendepaket zur Neustrukturierung des Strommarkts. Alle drei Pakete erhalten vor der Sommerpause ihre abschließenden Abstimmungen, wobei die Vårproposition Schwedens finanzpolitischen Kurs in einer Vorwahlperiode mit moderater wirtschaftlicher Erholung und erhöhten Verteidigungsausgaben vorgibt.
+
+**Vertrauen**: HOCH [B2 — offizielle Regierungsdokumente, riksdagen.se-Quellen]
+
+---
+
+### 🧭 3 Entscheidungen, die dieser Bericht unterstützt
+
+1. **Redaktionelle Priorisierung**: Welches Gesetzgebungspaket verdient die tiefste Berichterstattung im April–Mai 2026? (Antwort: Frühjahrsfinanzplan — breiteste gesellschaftliche Wirkung, legt Parameter für 2026–2027 fest)
+2. **Politisches Risikomonitoring**: Wo entstehen die bedeutendsten Koalitionsspannungen vor der Wahl im September 2026?
+3. **Vorausschauende Indikatoren**: Welche Indikatoren signalisieren, dass die Regierungskoalition vor der Herbstkampagne an Dynamik gewinnt oder verliert?
+
+---
+
+### ⚡ 60-Sekunden-Lektüre
+
+- **Finanzen**: Vårproposition HD03100 projiziert anhaltende Erholung (BIP-Wachstum von −0,20% 2023 auf 0,82% 2024); erhöhte Verteidigungsausgaben; Energiekostenentlastung über HD03236 (Kraftstoffsteuersenkung Mai–September 2026, Energiepreisunterstützung Jan–Feb 2026 rückwirkend); Nettokosten ~4,1 Mrd. SEK. Der Finanzausschuss (FiU) des Riksdag verabschiedete HD01FiU48 bereits am 21. April 2026.
+- **Justiz**: HD03218 (doppelte Strafen für Bandenkriminalität), HD03246 (jugendliche Straftäter), HD03217 (Beamtenhaftung), HD03235 (Ausweisung) — alle für Frühjahrsabstimmungen geplant. V, C und MP haben Gegenmotionen zur Ausweisung eingereicht; V und MP lehnen Änderungen der Waffenregulierung ab.
+- **Energie**: HD03240 (neue Stromgesetze), HD03239 (Windkrafteinnahmenteilung), HD03238 (neue Umweltgenehmigungsbehörde) — strukturelle Reformen werden voraussichtlich bis Mai die MJU- und NU-Ausschussagenden dominieren.
+- **Verteidigung**: HD03220 (NATOs Vorpräsenz in Finnland) — breite parteiübergreifende Unterstützung erwartet, geringer Widerstand von V.
+- **Wohnen/Stadt**: HD01CU28 (nationales Wohnungsgenossenschaftsregister, ab 2027 gültig) und HD01CU27 (Anforderungen an die Grundstücksidentität, ab 2026-07-01 gültig) beide am 17. April 2026 verabschiedet.
+
+---
+
+### 🔑 Wichtigster Vorwärts-Auslöser
+
+**Beobachten**: Riksdagen-Abstimmung über HD0399 Vårändringsbudget (Ende Mai 2026 erwartet) — wenn S, V, MP und C gemeinsam gegen das Budget stimmen, signalisiert dies maximale Oppositionseinheit vor der Wahl und liefert eine Wahlerzählung in den Sommer.
+
+---
+
+### 📊 DIW-Prioritätsranking
+
+```mermaid
+quadrantChart
+    title Document Significance — Month Ahead April-May 2026
+    x-axis Low Electoral Impact --> High Electoral Impact
+    y-axis Low Legislative Urgency --> High Legislative Urgency
+    quadrant-1 "Critical Watch"
+    quadrant-2 "High Priority"
+    quadrant-3 "Background"
+    quadrant-4 "Monitor"
+    HD03100 Vårproposition: [0.95, 0.98]
+    HD0399 Ändringsbudget: [0.90, 0.95]
+    HD03218 Dubbla straff: [0.80, 0.88]
+    HD03240 Elsystemet: [0.65, 0.82]
+    HD03235 Utvisning: [0.75, 0.78]
+    HD03220 NATO Finland: [0.55, 0.75]
+    HD03245 Våldsstrategi: [0.60, 0.65]
+    HD03242 Skogsbruk: [0.40, 0.55]
+
+    style HD03100 fill:#C62828,color:#FFFFFF
+    style HD0399 fill:#C62828,color:#FFFFFF
+    style HD03218 fill:#E65100,color:#FFFFFF
+    style HD03240 fill:#1565C0,color:#FFFFFF
+    style HD03235 fill:#E65100,color:#FFFFFF
+    style HD03220 fill:#1B5E20,color:#FFFFFF
+    style HD03245 fill:#4A148C,color:#FFFFFF
+    style HD03242 fill:#00695C,color:#FFFFFF
+```
+
+---
+
+### 🔒 Vertrauensprofil
+
+- **Gesamtbewertungsvertrauen**: HOCH
+- **Vertrauen in Wirtschaftsdaten**: MITTEL-HOCH (Weltbankdaten 2024, Vårproposition noch nicht vollständig textverarbeitet)
+- **Vertrauen in Gesetzgebungsergebnisse**: HOCH (Regierung hält Mehrheit durch SD-Unterstützung)
+- **Vertrauen in Wahlwirkung**: MITTEL (5 Monate bis zur Wahl; Umfragen können sich ändern)
+
+**Admiralty-Code**: [B2] — Verlässliche Quelle, durch mehrere unabhängige parlamentarische Dokumente bestätigt
+
+<!-- source-sha: 34bcedb9f943f85646d8e864b41374efd2461075 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_es.md -->
+
+**Clasificación**: Pública | **Autor**: James Pether Sörling | **Generada**: 2026-04-23
+**Período**: 2026-04-23 → 2026-05-31 | **Sesión**: Riksmöte 2025/26 (fase final de primavera)
+
+---
+
+### 🎯 Conclusión
+
+Suecia entra en las últimas cinco semanas de la sesión parlamentaria 2025/26 con tres paquetes interconectados dominando la agenda legislativa: el Paquete Fiscal de Primavera 2026 (HD03100 vårproposition + HD0399 presupuesto suplementario), un Paquete de Ley y Orden que consolida la agenda de justicia penal del Tidöavtalet, y un Paquete de Transición Energética que reestructura el mercado eléctrico. Los tres paquetes recibirán sus votos finales antes del receso de verano, con la vårproposition estableciendo la trayectoria fiscal de Suecia a través de un período preelectoral de recuperación económica moderada y mayor gasto en defensa.
+
+**Confianza**: ALTA [B2 — documentos gubernamentales oficiales, fuentes riksdagen.se]
+
+---
+
+### 🧭 3 Decisiones que esta nota apoya
+
+1. **Priorización editorial**: ¿Qué paquete legislativo merece la cobertura más profunda durante la sesión de abril–mayo 2026? (Respuesta: Presupuesto de primavera — mayor impacto social, establece parámetros 2026–2027)
+2. **Monitoreo de riesgo político**: ¿Dónde son más probables las tensiones significativas de la coalición antes de las elecciones de septiembre de 2026?
+3. **Indicadores prospectivos**: ¿Qué indicadores señalan que la coalición gobernante está ganando o perdiendo impulso antes de la campaña de otoño?
+
+---
+
+### ⚡ Lectura de 60 segundos
+
+- **Fiscal**: La Vårproposition HD03100 proyecta recuperación continuada (crecimiento del PIB desde −0,20% en 2023 hasta 0,82% en 2024); gastos de defensa elevados; alivio del costo energético vía HD03236 (reducción del impuesto al combustible mayo–septiembre 2026, apoyo al precio de la energía ene.–feb. 2026 de forma retroactiva); costo fiscal neto ~4,1 mil mill. SEK. El Comité de Finanzas (FiU) del Riksdag ya aprobó HD01FiU48 el 21 de abril de 2026.
+- **Justicia**: HD03218 (penas dobles por crimen organizado), HD03246 (delincuentes juveniles), HD03217 (responsabilidad de funcionarios), HD03235 (deportación) — todos programados para votaciones de primavera. V, C y MP han presentado mociones opuestas sobre deportación; V y MP se oponen a cambios en la regulación de armas.
+- **Energía**: HD03240 (nuevas leyes eléctricas), HD03239 (reparto de ingresos de energía eólica), HD03238 (nueva autoridad de permisos ambientales) — las reformas estructurales se espera que dominen los calendarios de los comités MJU y NU hasta mayo.
+- **Defensa**: HD03220 (presencia avanzada de la OTAN en Finlandia) — apoyo bipartidista amplio esperado, oposición menor de V.
+- **Vivienda/Urbano**: HD01CU28 (registro nacional de cooperativas de vivienda, aplicable desde 2027) y HD01CU27 (requisitos de identidad de propiedad, aplicables desde 2026-07-01) ambos aprobados el 17 de abril de 2026.
+
+---
+
+### 🔑 Indicador prospectivo principal
+
+**Vigilar**: Votación del Riksdag sobre HD0399 Vårändringsbudget (esperada a finales de mayo de 2026) — si S, V, MP y C votan conjuntamente en contra del presupuesto, esto señala unidad máxima de la oposición antes de las elecciones y proporciona una narrativa electoral de cara al verano.
+
+---
+
+### 📊 Clasificación de prioridades DIW
+
+```mermaid
+quadrantChart
+    title Document Significance — Month Ahead April-May 2026
+    x-axis Low Electoral Impact --> High Electoral Impact
+    y-axis Low Legislative Urgency --> High Legislative Urgency
+    quadrant-1 "Critical Watch"
+    quadrant-2 "High Priority"
+    quadrant-3 "Background"
+    quadrant-4 "Monitor"
+    HD03100 Vårproposition: [0.95, 0.98]
+    HD0399 Ändringsbudget: [0.90, 0.95]
+    HD03218 Dubbla straff: [0.80, 0.88]
+    HD03240 Elsystemet: [0.65, 0.82]
+    HD03235 Utvisning: [0.75, 0.78]
+    HD03220 NATO Finland: [0.55, 0.75]
+    HD03245 Våldsstrategi: [0.60, 0.65]
+    HD03242 Skogsbruk: [0.40, 0.55]
+
+    style HD03100 fill:#C62828,color:#FFFFFF
+    style HD0399 fill:#C62828,color:#FFFFFF
+    style HD03218 fill:#E65100,color:#FFFFFF
+    style HD03240 fill:#1565C0,color:#FFFFFF
+    style HD03235 fill:#E65100,color:#FFFFFF
+    style HD03220 fill:#1B5E20,color:#FFFFFF
+    style HD03245 fill:#4A148C,color:#FFFFFF
+    style HD03242 fill:#00695C,color:#FFFFFF
+```
+
+---
+
+### 🔒 Perfil de confianza
+
+- **Confianza general de la evaluación**: ALTA
+- **Confianza en datos económicos**: MEDIA-ALTA (datos del Banco Mundial 2024, vårproposition aún no completamente analizada)
+- **Confianza en resultados legislativos**: ALTA (el gobierno mantiene mayoría con apoyo del SD)
+- **Confianza en impacto electoral**: MEDIA (5 meses para las elecciones; las encuestas pueden cambiar)
+
+**Código Admiralty**: [B2] — Fuente confiable, confirmada por múltiples documentos parlamentarios independientes
+
+<!-- source-sha: 34bcedb9f943f85646d8e864b41374efd2461075 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_fi.md -->
+
+**Luokitus**: Julkinen | **Tekijä**: James Pether Sörling | **Luotu**: 2026-04-23
+**Ajanjakso**: 2026-04-23 → 2026-05-31 | **Istunto**: Valtiopäivät 2025/26 (kevätkauden loppuvaihe)
+
+---
+
+### 🎯 Johtopäätös
+
+Ruotsi aloittaa valtiopäivien 2025/26 viimeiset viisi viikkoa kolmen toisiinsa kytkeytyvän paketin hallitessa lainsäädäntöagendaa: vuoden 2026 keväinen talouspaketti (HD03100 vårproposition + HD0399 lisätalousarvio), laki ja järjestys -paketti, joka vahvistaa Tidöavtaletin rikospoliittisen ohjelman, sekä energiasiirtymäpaketti, joka uudelleenjärjestelee sähkömarkkinat. Kaikki kolme pakettia saavat lopulliset äänestykset ennen kesätaukoa, ja vårproposition asettaa Ruotsin talouspolitiikan suunnan kohtuullisen taloudellisen elpymisen ja kohonneiden puolustusmenojen esivaalijaksolle.
+
+**Luotettavuus**: KORKEA [B2 — viralliset hallituksen asiakirjat, riksdagen.se-lähteet]
+
+---
+
+### 🧭 3 Päätöstä, joita tämä katsaus tukee
+
+1. **Toimituksellinen priorisointi**: Mikä lakipaketti ansaitsee syvimmän uutisoinnin huhti–toukokuussa 2026? (Vastaus: Vårproposition — laajin yhteiskunnallinen vaikutus, asettaa parametrit 2026–2027)
+2. **Poliittisen riskin seuranta**: Missä kohtaa koalitiolle todennäköisimmin syntyy merkittäviä jännitteitä ennen syyskuun 2026 vaaleja?
+3. **Eteenpäin katsovat indikaattorit**: Mitkä indikaattorit kertovat, että hallituskoalitio vahvistuu tai heikkenee syksyn kampanjaan mennessä?
+
+---
+
+### ⚡ 60 sekunnin lukeminen
+
+- **Talous**: Vårproposition HD03100 ennustaa jatkuvaa elpymistä (BKT-kasvu −0,20%:sta 2023 → 0,82%:iin 2024); kohonneet puolustusmenot; energiakustannushelpotus HD03236 kautta (polttoaineveroleikkaus touko–syyskuu 2026, energian hintatuki tammi–helmi 2026 takautuvasti); nettokustannus ~4,1 miljardia SEK. Valtiopäivien valtiovarainvaliokunta (FiU) hyväksyi jo HD01FiU48:n 21.4.2026.
+- **Oikeus**: HD03218 (kaksinkertaiset rangaistukset jengirikollisuudesta), HD03246 (nuoret rikoksentekijät), HD03217 (virkamiehen vastuu), HD03235 (karkottaminen) — kaikki suunniteltu kevään äänestyksiin. V, C ja MP ovat jättäneet vastakkaisia liikkeitä karkottamisesta; V ja MP vastustavat asesääntelymuutoksia.
+- **Energia**: HD03240 (uudet sähkölait), HD03239 (tuulivoiman tulonjako), HD03238 (uusi ympäristölupaviranomainen) — rakenteellisten uudistusten odotetaan hallitsevan MJU- ja NU-valiokuntien aikatauluja toukokuun läpi.
+- **Puolustus**: HD03220 (NATOn eteentyönnetty läsnäolo Suomessa) — laaja puolueiden välinen tuki odotettavissa, pieni vastustus V:ltä.
+- **Asuminen/kaupunki**: HD01CU28 (kansallinen asunto-osuuskunnan rekisteri, voimassa 2027) ja HD01CU27 (kiinteistöidentiteettivaatimukset, voimassa 2026-07-01) molemmat hyväksytty 17.4.2026.
+
+---
+
+### 🔑 Tärkein eteenpäin katsova indikaattori
+
+**Seuraa**: Valtiopäivien äänestys HD0399 Vårändringsbudgetista (odotettavissa toukokuun lopussa 2026) — jos S, V, MP ja C äänestävät yhdessä budjettia vastaan, se merkitsee maksimaalista oppositioyhtenäisyyttä ennen vaaleja ja tuottaa vaalinarratiivin kesäksi.
+
+---
+
+### 📊 DIW-prioriteettijärjestys
+
+```mermaid
+quadrantChart
+    title Document Significance — Month Ahead April-May 2026
+    x-axis Low Electoral Impact --> High Electoral Impact
+    y-axis Low Legislative Urgency --> High Legislative Urgency
+    quadrant-1 "Critical Watch"
+    quadrant-2 "High Priority"
+    quadrant-3 "Background"
+    quadrant-4 "Monitor"
+    HD03100 Vårproposition: [0.95, 0.98]
+    HD0399 Ändringsbudget: [0.90, 0.95]
+    HD03218 Dubbla straff: [0.80, 0.88]
+    HD03240 Elsystemet: [0.65, 0.82]
+    HD03235 Utvisning: [0.75, 0.78]
+    HD03220 NATO Finland: [0.55, 0.75]
+    HD03245 Våldsstrategi: [0.60, 0.65]
+    HD03242 Skogsbruk: [0.40, 0.55]
+
+    style HD03100 fill:#C62828,color:#FFFFFF
+    style HD0399 fill:#C62828,color:#FFFFFF
+    style HD03218 fill:#E65100,color:#FFFFFF
+    style HD03240 fill:#1565C0,color:#FFFFFF
+    style HD03235 fill:#E65100,color:#FFFFFF
+    style HD03220 fill:#1B5E20,color:#FFFFFF
+    style HD03245 fill:#4A148C,color:#FFFFFF
+    style HD03242 fill:#00695C,color:#FFFFFF
+```
+
+---
+
+### 🔒 Luotettavuusprofiili
+
+- **Kokonaisarvioinnin luotettavuus**: KORKEA
+- **Taloudellisten tietojen luotettavuus**: KOHTALAINEN-KORKEA (Maailmanpankin 2024 tiedot, vårpropositiota ei vielä täysin tekstijäsennetty)
+- **Lainsäädännöllisen tuloksen luotettavuus**: KORKEA (hallitus pitää enemmistön SD:n tuella)
+- **Vaikutuksen vaaleissa luotettavuus**: KOHTALAINEN (5 kuukautta vaaleihin; mielipidekyselyt voivat muuttua)
+
+**Admiralty-koodi**: [B2] — Luotettava lähde, vahvistettu useilla riippumattomilla parlamenttiasiakirjoilla
+
+<!-- source-sha: 34bcedb9f943f85646d8e864b41374efd2461075 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_fr.md -->
+
+**Période** : 2026-04-23 → 2026-05-31 | **Session** : Riksmöte 2025/26 (phase finale du printemps)
+
+---
+
+### 🎯 Conclusion
+
+La Suède entre dans les cinq dernières semaines de la session parlementaire 2025/26 avec trois ensembles interconnectés dominant l'agenda législatif : le Budget de printemps 2026 (HD03100 vårproposition + HD0399 budget supplémentaire), un ensemble Loi et Ordre consolidant l'agenda de justice pénale du Tidöavtalet, et un ensemble de Transition énergétique restructurant le marché de l'électricité. Les trois ensembles recevront leurs votes finaux avant la pause estivale, la vårproposition définissant la trajectoire budgétaire de la Suède pour une période pré-électorale de reprise économique modérée et de dépenses de défense accrues.
+
+**Confiance** : HAUTE [B2 — documents gouvernementaux officiels, sources riksdagen.se]
+
+---
+
+### 🧭 3 Décisions que cette note soutient
+
+1. **Priorisation éditoriale** : Quel ensemble législatif mérite la couverture la plus approfondie durant la session d'avril–mai 2026 ? (Réponse : Budget de printemps — impact sociétal le plus large, définit les paramètres 2026–2027)
+2. **Surveillance des risques politiques** : Où les tensions de coalition les plus significatives sont-elles susceptibles d'émerger avant les élections de septembre 2026 ?
+3. **Indicateurs prospectifs** : Quels indicateurs signalent que la coalition gouvernante gagne ou perd de l'élan avant la campagne d'automne ?
+
+---
+
+### ⚡ Lecture en 60 secondes
+
+- **Finances** : La Vårproposition HD03100 projette une reprise continue (croissance du PIB passant de −0,20 % en 2023 à 0,82 % en 2024) ; dépenses de défense élevées ; allègement des coûts énergétiques via HD03236 (réduction de la taxe sur les carburants mai–septembre 2026, soutien aux prix de l'énergie jan.–fév. 2026 rétroactivement) ; coût financier net ~4,1 mds SEK. Le comité des finances (FiU) du Riksdag a déjà adopté HD01FiU48 le 21 avril 2026.
+- **Justice** : HD03218 (doubles peines pour la criminalité des gangs), HD03246 (jeunes délinquants), HD03217 (responsabilité des fonctionnaires), HD03235 (expulsion) — tous prévus pour des votes au printemps. V, C et MP ont déposé des motions contraires sur l'expulsion ; V et MP s'opposent aux modifications de la réglementation sur les armes.
+- **Énergie** : HD03240 (nouvelles lois électriques), HD03239 (partage des revenus de l'éolien), HD03238 (nouvelle autorité d'autorisation environnementale) — des réformes structurelles devraient dominer les agendas des commissions MJU et NU jusqu'en mai.
+- **Défense** : HD03220 (présence avancée de l'OTAN en Finlande) — soutien bipartisan large attendu, opposition mineure de V.
+- **Logement/Urbain** : HD01CU28 (registre national des copropriétés, applicable à partir de 2027) et HD01CU27 (exigences d'identité foncière, applicables à partir du 01/07/2026) tous deux adoptés le 17 avril 2026.
+
+---
+
+### 🔑 Principal indicateur prospectif
+
+**Surveiller** : Le vote du Riksdag sur HD0399 Vårändringsbudget (attendu fin mai 2026) — si S, V, MP et C votent conjointement contre le budget, cela signale une unité maximale de l'opposition avant les élections et fournit un récit électoral pour l'été.
+
+---
+
+### 📊 Classement DIW des priorités
+
+```mermaid
+quadrantChart
+    title Document Significance — Month Ahead April-May 2026
+    x-axis Low Electoral Impact --> High Electoral Impact
+    y-axis Low Legislative Urgency --> High Legislative Urgency
+    quadrant-1 "Critical Watch"
+    quadrant-2 "High Priority"
+    quadrant-3 "Background"
+    quadrant-4 "Monitor"
+    HD03100 Vårproposition: [0.95, 0.98]
+    HD0399 Ändringsbudget: [0.90, 0.95]
+    HD03218 Dubbla straff: [0.80, 0.88]
+    HD03240 Elsystemet: [0.65, 0.82]
+    HD03235 Utvisning: [0.75, 0.78]
+    HD03220 NATO Finland: [0.55, 0.75]
+    HD03245 Våldsstrategi: [0.60, 0.65]
+    HD03242 Skogsbruk: [0.40, 0.55]
+
+    style HD03100 fill:#C62828,color:#FFFFFF
+    style HD0399 fill:#C62828,color:#FFFFFF
+    style HD03218 fill:#E65100,color:#FFFFFF
+    style HD03240 fill:#1565C0,color:#FFFFFF
+    style HD03235 fill:#E65100,color:#FFFFFF
+    style HD03220 fill:#1B5E20,color:#FFFFFF
+    style HD03245 fill:#4A148C,color:#FFFFFF
+    style HD03242 fill:#00695C,color:#FFFFFF
+```
+
+---
+
+### 🔒 Profil de confiance
+
+- **Confiance globale de l'évaluation** : HAUTE
+- **Confiance dans les données économiques** : MOYENNE-HAUTE (données Banque mondiale 2024, vårproposition pas encore entièrement analysée)
+- **Confiance dans les résultats législatifs** : HAUTE (le gouvernement maintient la majorité grâce au soutien du SD)
+- **Confiance dans l'impact électoral** : MOYENNE (5 mois avant les élections ; les sondages peuvent évoluer)
+
+**Code Admiralty** : [B2] — Source fiable, confirmée par plusieurs documents parlementaires indépendants
+
+<!-- source-sha: 34bcedb9f943f85646d8e864b41374efd2461075 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# תמצית מנהלים — תחזית חודשית 2026-04-23
+
+**סיווג**: ציבורי | **מחבר**: James Pether Sörling | **נוצר**: 2026-04-23
+**תקופה**: 2026-04-23 → 2026-05-31 | **מושב**: ריקסמויטי 2025/26 (השלב האחרון של האביב)
+
+---
+
+### 🎯 מסקנה עיקרית
+
+שוודיה נכנסת לחמשת השבועות האחרונים של מושב הפרלמנט 2025/26 עם שלושה חבילות קשורות זו בזו שקובעות את לוח הזמנים החקיקתי: חבילת התקציב האביבי 2026 (HD03100 vårproposition + HD0399 תקציב משלים), חבילת חוק וסדר המגבשת את אג'נדת הצדק הפלילי של Tidöavtalet, וחבילת מעבר האנרגיה שמשנה את מבנה שוק החשמל. שלושת החבילות יקבלו הצבעות סופיות לפני הפסקת הקיץ, כאשר הـ vårproposition קובעת את מסלול המדיניות הפיסקלית של שוודיה דרך תקופה לפני הבחירות של התאוששות כלכלית מתונה והוצאות ביטחוניות גבוהות.
+
+**אמינות**: גבוהה [B2 — מסמכים ממשלתיים רשמיים, מקורות riksdagen.se]
+
+---
+
+### 🧭 3 החלטות שמסמך זה תומך בהן
+
+1. **קביעת עדיפויות עריכתיות**: איזו חבילה חקיקתית ראויה לסיקור המעמיק ביותר בדורת אפריל–מאי 2026? (תשובה: תקציב האביב — השפעה חברתית הרחבה ביותר, קובעת פרמטרים ל-2026–2027)
+2. **ניטור סיכונים פוליטיים**: היכן עשויות לצוץ מתחים משמעותיים בקואליציה לפני בחירות ספטמבר 2026?
+3. **אינדיקטורים צופי פני עתיד**: אילו אינדיקטורים מסמנים שהקואליציה הממשלתית צוברת או מאבדת תנופה לפני מסע הבחירות?
+
+---
+
+### ⚡ קריאת 60 שניות
+
+- **כספים**: HD03100 Vårproposition מקרין התאוששות מתמשכת (צמיחת תוצר מ−0.20% ב-2023 ל-0.82% ב-2024); הוצאות ביטחוניות גבוהות; הקלה בעלויות אנרגיה דרך HD03236 (הפחתת מס דלק מאי–ספטמבר 2026, תמיכה במחיר האנרגיה ינואר–פברואר 2026 רטרואקטיבית); עלות פיסקלית נטו ~4.1 מיליארד כרונות שוודיות. ועדת האוצר (FiU) של הריקסדאג כבר אישרה את HD01FiU48 ב-21 באפריל 2026.
+- **צדק**: HD03218 (עונשים כפולים לפשיעת כנופיות), HD03246 (עבריינים צעירים), HD03217 (אחריות עובד ציבור), HD03235 (גירוש) — כולם מתוכננים להצבעות אביב. V, C ו-MP הגישו מוצעות נגדיות בנוגע לגירוש; V ו-MP מתנגדים לשינויים בתקנות הנשק.
+- **אנרגיה**: HD03240 (חוקי חשמל חדשים), HD03239 (חלוקת הכנסות ממאגרי רוח), HD03238 (רשות אישורים סביבתיים חדשה) — צפוי שהרפורמות המבניות ישלטו על לוח הזמנים של ועדות MJU ו-NU עד מאי.
+- **ביטחון**: HD03220 (נוכחות קדמית של נאט"ו בפינלנד) — תמיכה דו-מפלגתית רחבה צפויה, עם אופוזיציה קלה מ-V.
+- **דיור/עירוני**: HD01CU28 (מרשם לאומי לדירות שיתופיות, בתוקף מ-2027) ו-HD01CU27 (דרישות זהות נכס, בתוקף מ-2026-07-01) שניהם אושרו ב-17 באפריל 2026.
+
+---
+
+### 🔑 האינדיקטור הצופה פני עתיד החשוב ביותר
+
+**לעקוב**: הצבעת הריקסדאג על HD0399 Vårändringsbudget (צפויה בסוף מאי 2026) — אם S, V, MP ו-C מצביעים יחד נגד התקציב, זה מסמן אחדות אופוזיציה מרבית לפני הבחירות ומספק נרטיב בחירות לקראת הקיץ.
+
+---
+
+### 📊 דירוג עדיפויות DIW
+
+```mermaid
+quadrantChart
+    title Document Significance — Month Ahead April-May 2026
+    x-axis Low Electoral Impact --> High Electoral Impact
+    y-axis Low Legislative Urgency --> High Legislative Urgency
+    quadrant-1 "Critical Watch"
+    quadrant-2 "High Priority"
+    quadrant-3 "Background"
+    quadrant-4 "Monitor"
+    HD03100 Vårproposition: [0.95, 0.98]
+    HD0399 Ändringsbudget: [0.90, 0.95]
+    HD03218 Dubbla straff: [0.80, 0.88]
+    HD03240 Elsystemet: [0.65, 0.82]
+    HD03235 Utvisning: [0.75, 0.78]
+    HD03220 NATO Finland: [0.55, 0.75]
+    HD03245 Våldsstrategi: [0.60, 0.65]
+    HD03242 Skogsbruk: [0.40, 0.55]
+
+    style HD03100 fill:#C62828,color:#FFFFFF
+    style HD0399 fill:#C62828,color:#FFFFFF
+    style HD03218 fill:#E65100,color:#FFFFFF
+    style HD03240 fill:#1565C0,color:#FFFFFF
+    style HD03235 fill:#E65100,color:#FFFFFF
+    style HD03220 fill:#1B5E20,color:#FFFFFF
+    style HD03245 fill:#4A148C,color:#FFFFFF
+    style HD03242 fill:#00695C,color:#FFFFFF
+```
+
+---
+
+### 🔒 פרופיל האמינות
+
+- **אמינות הערכה כוללת**: גבוהה
+- **אמינות נתונים כלכליים**: בינונית-גבוהה (נתוני הבנק העולמי 2024, vårproposition טרם נותח במלואו)
+- **אמינות תוצאות חקיקתיות**: גבוהה (הממשלה שומרת על רוב בתמיכת SD)
+- **אמינות ההשפעה הבחירותית**: בינונית (5 חודשים עד הבחירות; סקרים יכולים להשתנות)
+
+**קוד אדמירלטי**: [B2] — מקור אמין, מאושר על ידי מסמכים פרלמנטריים עצמאיים מרובים
+
+<!-- source-sha: 34bcedb9f943f85646d8e864b41374efd2461075 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_ja.md -->
+
+**分類**: 公開 | **著者**: James Pether Sörling | **作成日**: 2026-04-23
+**期間**: 2026-04-23 → 2026-05-31 | **会期**: Riksmöte 2025/26（春季最終段階）
+
+---
+
+### 🎯 結論
+
+スウェーデンは議会会期 2025/26 の最後の5週間に入り、三つの相互に連携したパッケージが立法アジェンダを支配しています：2026年春季財政パッケージ（HD03100 vårproposition + HD0399 補正予算）、Tidöavtaletの刑事司法アジェンダを統合する法と秩序パッケージ、および電力市場を再構築するエネルギー転換パッケージ。三つのパッケージすべてが夏季休会前に最終採決を受け、vårpropositionが中程度の経済回復と高まった防衛支出という選挙前期間を通じてスウェーデンの財政軌道を設定します。
+
+**信頼度**: 高 [B2 — 公式政府文書、riksdagen.se情報源]
+
+---
+
+### 🧭 本ブリーフが支援する3つの意思決定
+
+1. **編集上の優先順位設定**: 2026年4月〜5月の会期中に最も深い報道を受けるべき立法パッケージはどれか？（回答：春季財政計画 — 最も広い社会的影響、2026〜2027年のパラメータを設定）
+2. **政治的リスク監視**: 2026年9月の選挙前にどこで最も重大な連立の緊張が生じる可能性があるか？
+3. **前向き指標**: 秋の選挙運動に向けて与党連立が勢いを得ているか失っているかを示す指標は何か？
+
+---
+
+### ⚡ 60秒読み
+
+- **財政**: Vårproposition HD03100は持続的な回復を予測（GDP成長率が2023年の−0.20%から2024年の0.82%へ）；防衛費高騰；HD03236による光熱費軽減（燃料税引き下げ2026年5月〜9月、エネルギー価格支援2026年1〜2月遡及的）；純財政コスト〜41億スウェーデンクローナ。リクスダーグの財政委員会（FiU）は既に2026年4月21日にHD01FiU48を採択。
+- **司法**: HD03218（暴力団犯罪への2倍の刑罰）、HD03246（少年犯罪者）、HD03217（公務員の責任）、HD03235（強制送還）— 全て春の採決予定。V、C、MPが強制送還に反対する動議を提出；V、MPは武器規制変更に反対。
+- **エネルギー**: HD03240（新電力法）、HD03239（風力発電収益分配）、HD03238（新環境許可機関）— 構造改革が5月を通じてMJU・NU委員会のスケジュールを支配する見通し。
+- **防衛**: HD03220（フィンランドにおけるNATO前方駐留）— 幅広い超党派支持が期待、Vからの小さな反対。
+- **住宅/都市**: HD01CU28（全国住宅組合登録、2027年から有効）とHD01CU27（不動産識別要件、2026-07-01から有効）両方とも2026年4月17日に採択。
+
+---
+
+### 🔑 最重要の前向き指標
+
+**監視**: リクスダーグのHD0399 Vårändringsbudgetへの採決（2026年5月末予定）— S、V、MP、Cが連携して予算に反対票を投じた場合、選挙前の最大野党一致を示し、夏に向けた選挙上の物語を提供します。
+
+---
+
+### 📊 DIW優先順位ランキング
+
+```mermaid
+quadrantChart
+    title Document Significance — Month Ahead April-May 2026
+    x-axis Low Electoral Impact --> High Electoral Impact
+    y-axis Low Legislative Urgency --> High Legislative Urgency
+    quadrant-1 "Critical Watch"
+    quadrant-2 "High Priority"
+    quadrant-3 "Background"
+    quadrant-4 "Monitor"
+    HD03100 Vårproposition: [0.95, 0.98]
+    HD0399 Ändringsbudget: [0.90, 0.95]
+    HD03218 Dubbla straff: [0.80, 0.88]
+    HD03240 Elsystemet: [0.65, 0.82]
+    HD03235 Utvisning: [0.75, 0.78]
+    HD03220 NATO Finland: [0.55, 0.75]
+    HD03245 Våldsstrategi: [0.60, 0.65]
+    HD03242 Skogsbruk: [0.40, 0.55]
+
+    style HD03100 fill:#C62828,color:#FFFFFF
+    style HD0399 fill:#C62828,color:#FFFFFF
+    style HD03218 fill:#E65100,color:#FFFFFF
+    style HD03240 fill:#1565C0,color:#FFFFFF
+    style HD03235 fill:#E65100,color:#FFFFFF
+    style HD03220 fill:#1B5E20,color:#FFFFFF
+    style HD03245 fill:#4A148C,color:#FFFFFF
+    style HD03242 fill:#00695C,color:#FFFFFF
+```
+
+---
+
+### 🔒 信頼度プロファイル
+
+- **全体評価の信頼度**: 高
+- **経済データの信頼度**: 中〜高（世界銀行2024年データ、vårpropositionは未だ全文解析されていない）
+- **立法結果の信頼度**: 高（政府はSDの支持により多数派を維持）
+- **選挙への影響の信頼度**: 中（選挙まで5ヶ月；世論調査は変動する可能性あり）
+
+**アドミラルティコード**: [B2] — 信頼できる情報源、複数の独立した議会文書によって確認済み
+
+<!-- source-sha: 34bcedb9f943f85646d8e864b41374efd2461075 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_ko.md -->
+
+**분류**: 공개 | **저자**: James Pether Sörling | **작성일**: 2026-04-23
+**기간**: 2026-04-23 → 2026-05-31 | **회기**: 릭스뫼테 2025/26 (봄철 최종 단계)
+
+---
+
+### 🎯 핵심 결론
+
+스웨덴은 의회 회기 2025/26의 마지막 5주에 접어들며 세 가지 상호 연결된 패키지가 입법 의제를 지배하고 있습니다: 2026년 봄 재정 패키지 (HD03100 vårproposition + HD0399 추경 예산), Tidöavtalet의 형사 사법 의제를 통합하는 법과 질서 패키지, 전력 시장을 재구축하는 에너지 전환 패키지. 세 패키지 모두 여름 휴회 전 최종 투표를 받게 되며, vårproposition이 완만한 경제 회복과 높아진 국방비 지출의 선거 전 기간을 통한 스웨덴의 재정 궤적을 설정합니다.
+
+**신뢰도**: 높음 [B2 — 공식 정부 문서, riksdagen.se 출처]
+
+---
+
+### 🧭 이 브리프가 지원하는 3가지 의사결정
+
+1. **편집 우선순위 설정**: 2026년 4월~5월 회기 동안 가장 심층적인 보도가 필요한 입법 패키지는? (답: 봄 재정 계획 — 가장 광범위한 사회적 영향, 2026~2027년 매개변수 설정)
+2. **정치적 위험 모니터링**: 2026년 9월 선거 전 연립에서 가장 중요한 긴장이 나타날 가능성이 높은 곳은?
+3. **전향적 지표**: 가을 선거 운동을 앞두고 집권 연립이 탄력을 얻거나 잃고 있음을 알리는 지표는?
+
+---
+
+### ⚡ 60초 읽기
+
+- **재정**: Vårproposition HD03100은 지속적인 회복을 예측 (GDP 성장률 2023년 −0.20%에서 2024년 0.82%로 회복); 국방비 증가; HD03236을 통한 에너지 비용 경감 (연료세 인하 2026년 5월~9월, 에너지 가격 지원 2026년 1~2월 소급 적용); 순 재정 비용 ~41억 SEK. 릭스다그 재정위원회 (FiU)는 이미 2026년 4월 21일 HD01FiU48 통과.
+- **사법**: HD03218 (갱단 범죄 이중 처벌), HD03246 (청소년 범죄자), HD03217 (공무원 책임), HD03235 (추방) — 모두 봄 투표 예정. V, C, MP는 추방에 반대하는 동의를 제출; V와 MP는 무기 규제 변경에 반대.
+- **에너지**: HD03240 (새로운 전력법), HD03239 (풍력 에너지 수익 공유), HD03238 (새로운 환경 허가 기관) — 구조적 개혁이 5월까지 MJU 및 NU 위원회 일정을 지배할 것으로 예상.
+- **국방**: HD03220 (핀란드에서의 NATO 전진 주둔) — 광범위한 초당파적 지지 예상, V의 소규모 반대.
+- **주택/도시**: HD01CU28 (전국 주택 협동조합 등록부, 2027년부터 유효)와 HD01CU27 (부동산 신원 요건, 2026-07-01부터 유효) 둘 다 2026년 4월 17일 채택.
+
+---
+
+### 🔑 가장 중요한 전향적 지표
+
+**주시**: 릭스다그의 HD0399 Vårändringsbudget 투표 (2026년 5월 말 예상) — S, V, MP, C가 공동으로 예산에 반대 투표하면 선거 전 최대 야당 통합을 신호하고 여름까지 선거 서사를 제공합니다.
+
+---
+
+### 📊 DIW 우선순위 순위
+
+```mermaid
+quadrantChart
+    title Document Significance — Month Ahead April-May 2026
+    x-axis Low Electoral Impact --> High Electoral Impact
+    y-axis Low Legislative Urgency --> High Legislative Urgency
+    quadrant-1 "Critical Watch"
+    quadrant-2 "High Priority"
+    quadrant-3 "Background"
+    quadrant-4 "Monitor"
+    HD03100 Vårproposition: [0.95, 0.98]
+    HD0399 Ändringsbudget: [0.90, 0.95]
+    HD03218 Dubbla straff: [0.80, 0.88]
+    HD03240 Elsystemet: [0.65, 0.82]
+    HD03235 Utvisning: [0.75, 0.78]
+    HD03220 NATO Finland: [0.55, 0.75]
+    HD03245 Våldsstrategi: [0.60, 0.65]
+    HD03242 Skogsbruk: [0.40, 0.55]
+
+    style HD03100 fill:#C62828,color:#FFFFFF
+    style HD0399 fill:#C62828,color:#FFFFFF
+    style HD03218 fill:#E65100,color:#FFFFFF
+    style HD03240 fill:#1565C0,color:#FFFFFF
+    style HD03235 fill:#E65100,color:#FFFFFF
+    style HD03220 fill:#1B5E20,color:#FFFFFF
+    style HD03245 fill:#4A148C,color:#FFFFFF
+    style HD03242 fill:#00695C,color:#FFFFFF
+```
+
+---
+
+### 🔒 신뢰도 프로파일
+
+- **전체 평가 신뢰도**: 높음
+- **경제 데이터 신뢰도**: 중~높음 (세계은행 2024년 데이터, vårproposition 아직 전체 텍스트 분석 전)
+- **입법 결과 신뢰도**: 높음 (정부는 SD 지원으로 다수 유지)
+- **선거 영향 신뢰도**: 중간 (선거까지 5개월; 여론조사는 변동 가능)
+
+**애드미럴티 코드**: [B2] — 신뢰할 수 있는 출처, 여러 독립적인 의회 문서에 의해 확인됨
+
+<!-- source-sha: 34bcedb9f943f85646d8e864b41374efd2461075 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_nl.md -->
+
+**Classificatie**: Openbaar | **Auteur**: James Pether Sörling | **Gegenereerd**: 2026-04-23
+**Periode**: 2026-04-23 → 2026-05-31 | **Sessie**: Riksmöte 2025/26 (eindfase lente)
+
+---
+
+### 🎯 Conclusie
+
+Zweden gaat de laatste vijf weken van de parlementaire sessie 2025/26 in met drie onderling verbonden pakketten die de wetgevingsagenda domineren: het Lente Fiscaal Pakket 2026 (HD03100 vårproposition + HD0399 aanvullend budget), een Wet en Orde Pakket dat de strafrechtelijke agenda van het Tidöavtalet consolideert, en een Energietransitiepakket dat de elektriciteitsmarkt herstructureert. Alle drie pakketten krijgen hun definitieve stemmen voor het zomerreces, waarbij de vårproposition Zweden's fiscale koers bepaalt door een pre-electorale periode van matige economische herstel en verhoogde defensie-uitgaven.
+
+**Betrouwbaarheid**: HOOG [B2 — officiële overheidsdocumenten, riksdagen.se-bronnen]
+
+---
+
+### 🧭 3 Beslissingen die deze nota ondersteunt
+
+1. **Redactionele prioritering**: Welk wetgevingspakket verdient de diepste dekking tijdens de sessie van april–mei 2026? (Antwoord: Lentebudget — breedste maatschappelijke impact, stelt parameters 2026–2027 in)
+2. **Politieke risicomonitoring**: Waar zijn de meest significante coalitie-spanningen te verwachten voor de verkiezingen van september 2026?
+3. **Vooruitblikkende indicatoren**: Welke indicatoren signaleren dat de regerende coalitie voor of achter raakt richting de herfstcampagne?
+
+---
+
+### ⚡ 60-seconden lezing
+
+- **Financiën**: Vårproposition HD03100 projecteert voortgezet herstel (bbp-groei van −0,20% in 2023 naar 0,82% in 2024); verhoogde defensie-uitgaven; verlaging energiekosten via HD03236 (brandstofbelastingkorting mei–september 2026, energieprijssteun jan.–feb. 2026 retroactief); netto fiscale kosten ~4,1 mrd. SEK. Het Financiëel Comité (FiU) van het Riksdag keurde HD01FiU48 al goed op 21 april 2026.
+- **Justitie**: HD03218 (dubbele straffen voor bendecrimi naliteit), HD03246 (jeugdige delinquenten), HD03217 (aansprakelijkheid ambtenaren), HD03235 (uitzetting) — allemaal gepland voor voorjaarsstemmen. V, C en MP hebben tegenmotions ingediend over uitzetting; V en MP zijn tegen wijzigingen in wapenregulering.
+- **Energie**: HD03240 (nieuwe elektriciteitswetten), HD03239 (windenergie-inkomstenverdeling), HD03238 (nieuwe milieu-vergunningsautoriteit) — structurele hervormingen worden verwacht de MJU- en NU-commissieagenda's tot mei te domineren.
+- **Defensie**: HD03220 (NAVO's vooruitgeschoven aanwezigheid in Finland) — breed partijoverschrijdend steun verwacht, kleine tegenstand van V.
+- **Woning/Stedelijk**: HD01CU28 (nationaal woningcoöperatieregister, van kracht per 2027) en HD01CU27 (vereisten vastgoedidentiteit, van kracht per 2026-07-01) beide aangenomen op 17 april 2026.
+
+---
+
+### 🔑 Belangrijkste vooruitblikkende indicator
+
+**Monitoren**: Riksdag-stemming over HD0399 Vårändringsbudget (verwacht eind mei 2026) — als S, V, MP en C gezamenlijk tegen het budget stemmen, signaleert dit maximale oppositionele eenheid voor de verkiezingen en biedt een electoraal narratief richting de zomer.
+
+---
+
+### 📊 DIW-prioriteitsrangschikking
+
+```mermaid
+quadrantChart
+    title Document Significance — Month Ahead April-May 2026
+    x-axis Low Electoral Impact --> High Electoral Impact
+    y-axis Low Legislative Urgency --> High Legislative Urgency
+    quadrant-1 "Critical Watch"
+    quadrant-2 "High Priority"
+    quadrant-3 "Background"
+    quadrant-4 "Monitor"
+    HD03100 Vårproposition: [0.95, 0.98]
+    HD0399 Ändringsbudget: [0.90, 0.95]
+    HD03218 Dubbla straff: [0.80, 0.88]
+    HD03240 Elsystemet: [0.65, 0.82]
+    HD03235 Utvisning: [0.75, 0.78]
+    HD03220 NATO Finland: [0.55, 0.75]
+    HD03245 Våldsstrategi: [0.60, 0.65]
+    HD03242 Skogsbruk: [0.40, 0.55]
+
+    style HD03100 fill:#C62828,color:#FFFFFF
+    style HD0399 fill:#C62828,color:#FFFFFF
+    style HD03218 fill:#E65100,color:#FFFFFF
+    style HD03240 fill:#1565C0,color:#FFFFFF
+    style HD03235 fill:#E65100,color:#FFFFFF
+    style HD03220 fill:#1B5E20,color:#FFFFFF
+    style HD03245 fill:#4A148C,color:#FFFFFF
+    style HD03242 fill:#00695C,color:#FFFFFF
+```
+
+---
+
+### 🔒 Betrouwbaarheidsprofiel
+
+- **Algehele beoordelingsbetrouwbaarheid**: HOOG
+- **Betrouwbaarheid economische gegevens**: GEMIDDELD-HOOG (Wereldbankdata 2024, vårproposition nog niet volledig tekstgeparsed)
+- **Betrouwbaarheid wetgevingsuitkomsten**: HOOG (regering houdt meerderheid via SD-steun)
+- **Betrouwbaarheid electorale impact**: GEMIDDELD (5 maanden tot verkiezingen; peilingen kunnen verschuiven)
+
+**Admiralty-code**: [B2] — Betrouwbare bron, bevestigd door meerdere onafhankelijke parlementaire documenten
+
+<!-- source-sha: 34bcedb9f943f85646d8e864b41374efd2461075 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_no.md -->
+
+**Klassifisering**: Offentlig | **Forfatter**: James Pether Sörling | **Generert**: 2026-04-23
+**Periode**: 2026-04-23 → 2026-05-31 | **Sesjon**: Riksmøtet 2025/26 (sluttfase for vår)
+
+---
+
+### 🎯 Konklusjon
+
+Sverige går inn i de siste fem ukene av parlamentssesjonen 2025/26 med tre sammenkoblede pakker som dominerer den lovgivende agendaen: 2026 Vårfinansielt pakke (HD03100 vårproposition + HD0399 tilleggsbudsjett), en lov-og-orden-pakke som konsoliderer Tidöavtalets kriminalpolitiske agenda, og en energiomstillingspakke som omstrukturerer elektrisitetsmarkedet. Alle tre pakker vil motta endelige avstemninger før sommerferien, der vårproposition setter Sveriges finanspolitiske kurs i en periode med moderat økonomisk gjeninnhenting og økte forsvarsutgifter.
+
+**Sikkerhet**: HØY [B2 — offisielle regjeringsdokumenter, riksdagen.se-kilder]
+
+---
+
+### 🧭 3 Beslutninger dette sammendraget støtter
+
+1. **Redaksjonell prioritering**: Hvilken lovgivningspakke fortjener den dypeste dekningen i april–mai 2026? (Svar: Vårfinansplanen — bredest samfunnsmessig innvirkning, setter parametere for 2026–2027)
+2. **Politisk risikoovervåking**: Hvor er de mest betydningsfulle koalisjonsspenningene sannsynlige før valget i september 2026?
+3. **Fremadrettede indikatorer**: Hvilke indikatorer signaliserer at den sittende koalisjonen vinner eller taper momentum mot høstkampanjen?
+
+---
+
+### ⚡ 60-sekunders lesning
+
+- **Økonomi**: Vårproposition HD03100 projiserer fortsatt gjeninnhenting (BNP-vekst fra −0,20% i 2023 til 0,82% i 2024); forhøyede forsvarsutgifter; energikostnadslettelse via HD03236 (drivstoffavgiftskutt mai–september 2026, energiprisstøtte jan–feb 2026 retroaktivt); netto finansiell kostnad ~4,1 mrd. SEK. Riksdagens finanskomité (FiU) godkjente allerede HD01FiU48 den 21. april 2026.
+- **Justis**: HD03218 (dobbel straff for gjengkriminalitet), HD03246 (unge lovbrytere), HD03217 (tjenestemenns ansvar), HD03235 (utvisning) — alle planlagt til vårens avstemninger. V, C og MP har innlevert motstridende motioner om utvisning; V og MP er imot endringer i våpenlovgivningen.
+- **Energi**: HD03240 (nye elektrisitetslover), HD03239 (vindkraftinntektsdeling), HD03238 (ny miljøtillatelsesmyndighet) — strukturelle reformer forventes å dominere MJU- og NU-komiteens planer gjennom mai.
+- **Forsvar**: HD03220 (NATOs fremskutte tilstedeværelse i Finland) — bred tverrpolitisk støtte forventet, begrenset motstand fra V.
+- **Bolig/by**: HD01CU28 (nasjonalt andelsboligregister, gjelder fra 2027) og HD01CU27 (krav til eiendomsidentitet, gjelder fra 2026-07-01) begge vedtatt 17. april 2026.
+
+---
+
+### 🔑 Viktigste fremadrettede indikator
+
+**Følg med**: Riksdagens avstemning om HD0399 Vårändringsbudget (forventet i slutten av mai 2026) — hvis S, V, MP og C stemmer samlet mot budsjettet, signaliserer dette maksimal opposisjonsenhet inn mot valget og gir en valgfortelling mot sommeren.
+
+---
+
+### 📊 DIW-prioriteringsrangering
+
+```mermaid
+quadrantChart
+    title Document Significance — Month Ahead April-May 2026
+    x-axis Low Electoral Impact --> High Electoral Impact
+    y-axis Low Legislative Urgency --> High Legislative Urgency
+    quadrant-1 "Critical Watch"
+    quadrant-2 "High Priority"
+    quadrant-3 "Background"
+    quadrant-4 "Monitor"
+    HD03100 Vårproposition: [0.95, 0.98]
+    HD0399 Ändringsbudget: [0.90, 0.95]
+    HD03218 Dubbla straff: [0.80, 0.88]
+    HD03240 Elsystemet: [0.65, 0.82]
+    HD03235 Utvisning: [0.75, 0.78]
+    HD03220 NATO Finland: [0.55, 0.75]
+    HD03245 Våldsstrategi: [0.60, 0.65]
+    HD03242 Skogsbruk: [0.40, 0.55]
+
+    style HD03100 fill:#C62828,color:#FFFFFF
+    style HD0399 fill:#C62828,color:#FFFFFF
+    style HD03218 fill:#E65100,color:#FFFFFF
+    style HD03240 fill:#1565C0,color:#FFFFFF
+    style HD03235 fill:#E65100,color:#FFFFFF
+    style HD03220 fill:#1B5E20,color:#FFFFFF
+    style HD03245 fill:#4A148C,color:#FFFFFF
+    style HD03242 fill:#00695C,color:#FFFFFF
+```
+
+---
+
+### 🔒 Sikkerhetsprofil
+
+- **Overordnet vurderingssikkerhet**: HØY
+- **Sikkerhet for økonomiske data**: MIDDELS-HØY (Verdensbanksdata 2024, vårproposition ikke ennå fullt tekstparsed)
+- **Lovgivningsmessig utfallssikkerhet**: HØY (regjeringen holder flertall via SD-støtte)
+- **Valgpåvirkningssikkerhet**: MIDDELS (5 måneder til valget; meningsmålinger kan skifte)
+
+**Admiralty-kode**: [B2] — Pålitelig kilde, bekreftet av flere uavhengige parlamentariske dokumenter
+
+<!-- source-sha: 34bcedb9f943f85646d8e864b41374efd2461075 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_sv.md -->
+
+**Klassificering**: Offentlig | **Författare**: James Pether Sörling | **Genererad**: 2026-04-23
+**Period**: 2026-04-23 → 2026-05-31 | **Session**: Riksmöte 2025/26 (slutet av vårfasen)
+
+---
+
+### 🎯 Slutsats
+
+Sverige inleder de sista fem veckorna av riksmötet 2025/26 med tre sammanlänkade paket som dominerar den lagstiftande agendan: 2026 års vårproposition (HD03100 vårproposition + HD0399 tilläggsbudget), ett lag-och-ordningspaket som konsoliderar Tidöavtalets kriminalpolitiska agenda, samt ett energiomställningspaket som omstrukturerar elmarknaden. Alla tre paketen ska få sina slutliga omröstningar före sommaruppehållet, med vårpropositionen som fastställer Sveriges finanspolitiska bana under en förvalperiod med måttlig ekonomisk återhämtning och förhöjda försvarsutgifter.
+
+**Konfidens**: HÖG [B2 — officiella regeringsdokument, riksdagen.se-källor]
+
+---
+
+### 🧭 3 Beslut som detta briefing stöder
+
+1. **Redaktionell prioritering**: Vilket lagstiftningspaket förtjänar den djupaste bevakningen under april–maj 2026? (Svar: Vårpropositionen — bredast samhällspåverkan, fastställer parametrar för 2026–2027)
+2. **Politisk riskbevakning**: Var uppstår de mest betydande koalitionspänningarna inför valet i september 2026?
+3. **Framåtblickande indikatorer**: Vilka indikatorer signalerar att regeringskoalitionen vinner eller förlorar momentum inför höstkampanjen?
+
+---
+
+### ⚡ 60-sekundersläsning
+
+- **Finans**: Vårproposition HD03100 projicerar fortsatt återhämtning (BNP-tillväxt från −0,20% 2023 till 0,82% 2024); förhöjda försvarsutgifter; energikostnadslindring via HD03236 (bränsleskattesänkning maj–september 2026, energiprisstöd jan–feb 2026 retroaktivt); nettokostnad ~4,1 miljarder SEK. Riksdagens finansutskott (FiU) passerade redan HD01FiU48 den 21 april 2026.
+- **Rättsväsende**: HD03218 (dubbla straff för gängbrottslighet), HD03246 (unga lagöverträdare), HD03217 (tjänstemäns ansvar), HD03235 (utvisning) — alla planerade för vårens omröstningar. V, C och MP har lämnat in motioner mot utvisning; V och MP motsätter sig ändringar i vapenregleringen.
+- **Energi**: HD03240 (nya ellagar), HD03239 (vindkraftens intäktsdelning), HD03238 (ny miljöprövningsmyndighet) — strukturella reformer förväntas dominera MJU- och NU-utskottens scheman under maj.
+- **Försvar**: HD03220 (NATOs framskjutna närvaro i Finland) — brett partiöverskridande stöd förväntas, visst motstånd från V.
+- **Bostad/stadsutveckling**: HD01CU28 (nationellt bostadsrättsregister, gäller från 2027) och HD01CU27 (krav på fastighetsidentitet, gäller från 2026-07-01) passerade båda den 17 april 2026.
+
+---
+
+### 🔑 Viktigaste framåtblickande indikator
+
+**Bevaka**: Riksdagens omröstning om HD0399 Vårändringsbudget (förväntad i slutet av maj 2026) — om S, V, MP och C gemensamt röstar mot budgeten signalerar detta maximal oppositionsenhet inför valet och ger en politisk berättelse inför sommaren.
+
+---
+
+### 📊 DIW-prioriteringsrankning
+
+```mermaid
+quadrantChart
+    title Document Significance — Month Ahead April-May 2026
+    x-axis Low Electoral Impact --> High Electoral Impact
+    y-axis Low Legislative Urgency --> High Legislative Urgency
+    quadrant-1 "Critical Watch"
+    quadrant-2 "High Priority"
+    quadrant-3 "Background"
+    quadrant-4 "Monitor"
+    HD03100 Vårproposition: [0.95, 0.98]
+    HD0399 Ändringsbudget: [0.90, 0.95]
+    HD03218 Dubbla straff: [0.80, 0.88]
+    HD03240 Elsystemet: [0.65, 0.82]
+    HD03235 Utvisning: [0.75, 0.78]
+    HD03220 NATO Finland: [0.55, 0.75]
+    HD03245 Våldsstrategi: [0.60, 0.65]
+    HD03242 Skogsbruk: [0.40, 0.55]
+
+    style HD03100 fill:#C62828,color:#FFFFFF
+    style HD0399 fill:#C62828,color:#FFFFFF
+    style HD03218 fill:#E65100,color:#FFFFFF
+    style HD03240 fill:#1565C0,color:#FFFFFF
+    style HD03235 fill:#E65100,color:#FFFFFF
+    style HD03220 fill:#1B5E20,color:#FFFFFF
+    style HD03245 fill:#4A148C,color:#FFFFFF
+    style HD03242 fill:#00695C,color:#FFFFFF
+```
+
+---
+
+### 🔒 Konfidensprofil
+
+- **Övergripande bedömningskonfidens**: HÖG
+- **Ekonomisk datakonfidens**: MEDEL-HÖG (Världsbankdata 2024, vårproposition ej ännu fulltextparsad)
+- **Konfidens för lagstiftningsutfall**: HÖG (regeringen har majoritet med SD-stöd)
+- **Konfidens för valeffekt**: MEDEL (5 månader till val; opinionen kan förändras)
+
+**Admiralty-kod**: [B2] — Tillförlitlig källa, bekräftad av flera oberoende parlamentariska dokument
+
+<!-- source-sha: 34bcedb9f943f85646d8e864b41374efd2461075 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_zh.md -->
+
+**分类**: 公开 | **作者**: James Pether Sörling | **生成日期**: 2026-04-23
+**时期**: 2026-04-23 → 2026-05-31 | **会期**: Riksmöte 2025/26（春季最终阶段）
+
+---
+
+### 🎯 核心结论
+
+瑞典进入2025/26议会会期的最后五周，三个相互交织的一揽子方案主导着立法议程：2026年春季财政一揽子计划（HD03100 vårproposition + HD0399补充预算）、整合Tidöavtalet刑事司法议程的法律与秩序一揽子计划，以及重组电力市场的能源转型一揽子计划。三个方案将在暑假休会前接受最终表决，vårproposition将在经济温和复苏、国防支出增加的选前时期确立瑞典的财政轨迹。
+
+**可信度**: 高 [B2 — 官方政府文件，riksdagen.se来源]
+
+---
+
+### 🧭 本摘要支持的3项决策
+
+1. **编辑优先级设定**: 2026年4–5月会期内哪个立法包最值得深度报道？（答案：春季财政计划——社会影响最广，设定2026–2027年参数）
+2. **政治风险监测**: 2026年9月大选前，联合政府最有可能在哪些领域出现重大分歧？
+3. **前瞻性指标**: 哪些指标表明执政联盟在秋季竞选前正获得或失去动力？
+
+---
+
+### ⚡ 60秒速读
+
+- **财政**: Vårproposition HD03100预测持续复苏（GDP增长率从2023年的−0.20%升至2024年的0.82%）；国防开支增加；通过HD03236降低能源成本（2026年5月至9月削减燃油税，2026年1–2月能源价格补贴追溯适用）；净财政成本约41亿克朗。议会财政委员会（FiU）已于2026年4月21日通过HD01FiU48。
+- **司法**: HD03218（团伙犯罪双倍刑罚）、HD03246（青少年犯罪者）、HD03217（公务员责任）、HD03235（驱逐出境）——均计划春季表决。V、C和MP就驱逐问题提交了反对动议；V和MP反对武器法规修改。
+- **能源**: HD03240（新电力法）、HD03239（风电收益分配）、HD03238（新环境许可机构）——结构性改革预计将主导MJU和NU委员会5月份的日程安排。
+- **防务**: HD03220（北约在芬兰的前进部署）——预计获得广泛的跨党派支持，V有轻微反对。
+- **住房/城市**: HD01CU28（全国共管公寓登记册，2027年起生效）和HD01CU27（房产身份要求，2026-07-01起生效）均于2026年4月17日通过。
+
+---
+
+### 🔑 最重要的前瞻性触发因素
+
+**关注**: 议会对HD0399 Vårändringsbudget的表决（预计2026年5月底）——若S、V、MP和C联合反对预算，意味着选前反对派团结达到顶峰，并为夏季提供选举叙事。
+
+---
+
+### 📊 DIW优先级排名
+
+```mermaid
+quadrantChart
+    title Document Significance — Month Ahead April-May 2026
+    x-axis Low Electoral Impact --> High Electoral Impact
+    y-axis Low Legislative Urgency --> High Legislative Urgency
+    quadrant-1 "Critical Watch"
+    quadrant-2 "High Priority"
+    quadrant-3 "Background"
+    quadrant-4 "Monitor"
+    HD03100 Vårproposition: [0.95, 0.98]
+    HD0399 Ändringsbudget: [0.90, 0.95]
+    HD03218 Dubbla straff: [0.80, 0.88]
+    HD03240 Elsystemet: [0.65, 0.82]
+    HD03235 Utvisning: [0.75, 0.78]
+    HD03220 NATO Finland: [0.55, 0.75]
+    HD03245 Våldsstrategi: [0.60, 0.65]
+    HD03242 Skogsbruk: [0.40, 0.55]
+
+    style HD03100 fill:#C62828,color:#FFFFFF
+    style HD0399 fill:#C62828,color:#FFFFFF
+    style HD03218 fill:#E65100,color:#FFFFFF
+    style HD03240 fill:#1565C0,color:#FFFFFF
+    style HD03235 fill:#E65100,color:#FFFFFF
+    style HD03220 fill:#1B5E20,color:#FFFFFF
+    style HD03245 fill:#4A148C,color:#FFFFFF
+    style HD03242 fill:#00695C,color:#FFFFFF
+```
+
+---
+
+### 🔒 可信度概况
+
+- **总体评估可信度**: 高
+- **经济数据可信度**: 中等偏高（世界银行2024年数据，vårproposition尚未完整解析）
+- **立法结果可信度**: 高（政府通过SD支持维持多数）
+- **选举影响可信度**: 中等（距选举还有5个月；民调可能变动）
+
+**海军部代码**: [B2] — 可靠来源，已由多个独立议会文件确认
+
+<!-- source-sha: 34bcedb9f943f85646d8e864b41374efd2461075 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 12 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 0 | Linked in Article Sources, not expanded inline |
 
@@ -2056,3 +3153,16 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-23/month-ahead/executive-brief_zh.md)

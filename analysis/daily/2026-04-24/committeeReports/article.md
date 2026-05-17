@@ -6,7 +6,7 @@ date: 2026-04-24
 subfolder: committeeReports
 slug: 2026-04-24-committeeReports
 source_folder: analysis/daily/2026-04-24/committeeReports
-generated_at: 2026-05-17T18:40:43.256Z
+generated_at: 2026-05-17T22:29:22.178Z
 language: en
 layout: article
 ---
@@ -100,6 +100,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1992,13 +2005,887 @@ This reflection cites: `analysis/methodologies/ai-driven-analysis-guide.md`, `os
 All documents sourced from official riksdag-regering-mcp API.
 Data sourced from 2026-04-23 via lookback fallback — check freshness indicators.
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+<!-- lang: ar -->
+# ملخص تنفيذي — تقارير اللجان 2026-04-24
+
+**المؤلف**: James Pether Sörling   **معرف الجلسة**: 24866836753   **التصنيف**: عام   **الثقة**: عالية (B2)
+
+### 🎯 الخلاصة
+
+خمسة تقارير للجان قُدِّمت في 2026-04-23 تتمحور حول الركائز الثلاث المميزة لحملة تحالف Tidö الانتخابية — **طاقة السجون** (`HD01CU25`)، **تطبيق قوانين الهجرة مع استثناء تنقل الباحثين** (`HD01SfU23`) و**الإدارة المؤسسية للسياسة النقدية** (`HD01FiU23`) — مكمَّلةً بملفَّين ذوي إجماع واسع حول **مصادقة منظمة العمل الدولية على حقوق العمال** (`HD01AU15`) و**شحن السيارات الكهربائية المنزلي** (`HD01CU29`). هذه المجموعة تشكيل إشاري متعمَّد قبل ~5 أشهر من انتخابات ريكسداغ في سبتمبر 2026. يتركز خطر التنفيذ الحقيقي في `HD01CU25` و`HD01SfU23`؛ وخطر السمعة في `HD01FiU23`.
+
+### 🧭 3 قرارات تدعمها هذه الوثيقة
+
+1. **التواصل الانتخابي** — ينبغي للمتواصلين الحكوميين تسلسل خطابات CU25 + SfU23 معاً في مايو 2026؛ وعلى المعارضة إعادة صياغة SfU23 حول استثناء الباحثين لتفريق M عن L.
+2. **الرقابة على التنفيذ** — ينبغي لـKU وRiksrevisionen الإشارة مسبقاً إلى CU25 وSfU23 لنطاق التدقيق 2026/27؛ FiU23 يؤكد مراجعة استقلالية Riksbank الجارية.
+3. **التموضع الدولي** — ينبغي ربط تصديق منظمة العمل الدولية C190 (AU15) بتطبيق توجيه العمل عبر المنصات الأوروبي والمصادقات السابقة للدول الاسكندنافية.
+
+### ⏱ قراءة 60 ثانية
+
+- **القصة الرئيسية**: `HD01CU25` — مشروع قانون توسيع طاقة السجون هو العنصر الأكثر وزناً (DIW 85).
+- **السطر الثاني**: `HD01SfU23` (DIW 80) يتفرع في السياسة الهجرية — تشديد تصاريح الدراسة مع فتح المجال للباحثين.
+- **النقدية المؤسسية**: `HD01FiU23` (DIW 78) — مراجعة Riksbank السنوية الجارية، بارزة بشكل غير معتاد في 2026.
+- **نقاط الإجماع**: `HD01AU15` (منظمة العمل الدولية، DIW 72) و`HD01CU29` (شحن سيارات كهربائية، DIW 58).
+- **المحفز الاستشرافي الرئيسي**: تقرير حالة طاقة Kriminalvården Q2 2026 (~2026-06-23). انحراف ≥ 10 % سيعكس رواية الحكومة حول الجريمة.
+
+### 🧠 الثقة والافتراضات
+
+**عالية** لتكوين المجموعة وتصنيف DIW. **متوسطة** لفجوات التنفيذ. **منخفضة** لتأثيرات التأطير على الناخبين.
+
+### 📊 مخطط التركيبة
+
+```mermaid
+flowchart LR
+    A[CU25 Prison capacity<br/>DIW 85] --> G[Tidö pre-election<br/>signature cluster]
+    B[SfU23 Migration/<br/>Researchers DIW 80] --> G
+    C[FiU23 Riksbank<br/>DIW 78] --> H[Institutional<br/>stewardship frame]
+    D[AU15 ILO<br/>DIW 72] --> I[EU-compatible<br/>consensus frame]
+    E[CU29 EV charging<br/>DIW 58] --> I
+    G --> J[Law-and-order + migration<br/>narrative lock-in]
+    H --> J
+    I --> K[Coalition breadth<br/>signalling]
+    J --> L[2026 election framing]
+    K --> L
+    style A fill:#c62828,stroke:#7f1010,color:#fff
+    style B fill:#c62828,stroke:#7f1010,color:#fff
+    style C fill:#ef6c00,stroke:#8c3a00,color:#fff
+    style D fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style E fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style G fill:#1565c0,stroke:#0b3a6b,color:#fff
+    style H fill:#6a1b9a,stroke:#35094f,color:#fff
+    style I fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style J fill:#212121,stroke:#000,color:#fff
+    style K fill:#212121,stroke:#000,color:#fff
+    style L fill:#ffbe0b,stroke:#b88500,color:#000
+```
+
+### المصادر
+
+- `get_dokument({dok_id: "HD01CU25"})` → https://data.riksdagen.se/dokument/HD01CU25 [A1]
+- `get_dokument({dok_id: "HD01SfU23"})` → https://data.riksdagen.se/dokument/HD01SfU23 [A1]
+- `get_dokument({dok_id: "HD01FiU23"})` → https://data.riksdagen.se/dokument/HD01FiU23 [A1]
+- `get_dokument({dok_id: "HD01AU15"})` → https://data.riksdagen.se/dokument/HD01AU15 [A1]
+- `get_dokument({dok_id: "HD01CU29"})` → https://data.riksdagen.se/dokument/HD01CU29 [A1]
+
+<!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief_da.md -->
+
+<!-- lang: da -->
+# Eksekutiv sammenfatning — Udvalgsrapporter 2026-04-24
+
+**Forfatter**: James Pether Sörling   **Kørsel-ID**: 24866836753   **Klassifikation**: OFFENTLIG   **Tillid**: HØJ (B2)
+
+### 🎯 Konklusion
+
+Fem udvalgsrapporter fremsat 2026-04-23 grupperer sig langs Tidö-koalitionens tre valgprofilepiller — **kapacitet i kriminalforsorgen** (`HD01CU25`), **migrationshåndhævelse med undtagelse for forskerbesøg** (`HD01SfU23`) og **institutionel pengeforvaltning** (`HD01FiU23`) — suppleret af to bred-konsensus-sager om **ILO-ratificering af arbejdsrettigheder** (`HD01AU15`) og **hjemmeopladestation til elbiler** (`HD01CU29`). Klyngen er en bevidst signalsammensætning ~5 måneder inden Riksdag-valget i september 2026: den lader M/KD/SD hævde levering på lov-og-orden og migration, mens L og centristiske aktører forankrer EU-kompatible arbejds- og klimasejre. Den reelle implementeringsrisiko koncentreres i `HD01CU25` og `HD01SfU23`; omdømmerisikoen i `HD01FiU23`.
+
+### 🧭 3 beslutninger som dette notat understøtter
+
+1. **Valkommunikation** — Regeringskommunikatører bør sekvensere CU25 + SfU23 kammertal samlet i maj 2026 for maksimal dækning inden sommerferien; oppositionen bør kontraindramme SfU23 om forskerundtagelsen for at splitte M fra L.
+2. **Implementeringsovervågning** — KU og Riksrevisionen bør forhåndsflagge CU25 og SfU23 til revisionsomfanget 2026/27; FiU23 bekræfter løbende Riksbank-uafhængighedsgranskning.
+3. **International positionering** — Ratificering af ILO C190 (AU15) bør parres med EU-platformsdirektivets gennemførelse og nordiske kollegers tidligere ratificeringer for at maksimere omdømmeudbyttet.
+
+### ⏱ 60-sekunders læsning
+
+- **Ledende nyhed**: `HD01CU25` — loven om fængselskapacitetsudvidelse er det tyngst vægede punkt (DIW 85) pga. stor finansiel eksponering, komprimerede tidslinjer og præ-valgssymbolik.
+- **Anden linje**: `HD01SfU23` (DIW 80) bifurkerer migrationspolitikken — stramning af studietilladelser men åbning for forskere — skaber koalitionsinternt SD–L-spænding og oppositionsmulighed.
+- **Monetær-institutionel**: `HD01FiU23` (DIW 78) — løbende Riksbank-granskning, men usædvanlig fremtrædende i 2026 pga. 2024–25 balancetab.
+- **Konsensuspunkter**: `HD01AU15` (ILO, DIW 72) og `HD01CU29` (elbilsopladning, DIW 58) er brede støttesager.
+- **Vigtigste fremadrettede trigger**: Kriminalvårdens kapacitetsstatusrapport Q2 2026 (forventet ~2026-06-23). En afvigelse ≥ 10 % ville vende regeringens kriminalitetsnarrativ.
+
+### 🧠 Tillid og antagelser
+
+Nøgledomme: **HØJ** tillid for klyngesammensætning og DIW-rangering. **MIDDEL** for implementeringsdeltas. **LAV** for vælgerramningseffekter.
+
+### 📊 Sammensætningsdiagram
+
+```mermaid
+flowchart LR
+    A[CU25 Prison capacity<br/>DIW 85] --> G[Tidö pre-election<br/>signature cluster]
+    B[SfU23 Migration/<br/>Researchers DIW 80] --> G
+    C[FiU23 Riksbank<br/>DIW 78] --> H[Institutional<br/>stewardship frame]
+    D[AU15 ILO<br/>DIW 72] --> I[EU-compatible<br/>consensus frame]
+    E[CU29 EV charging<br/>DIW 58] --> I
+    G --> J[Law-and-order + migration<br/>narrative lock-in]
+    H --> J
+    I --> K[Coalition breadth<br/>signalling]
+    J --> L[2026 election framing]
+    K --> L
+    style A fill:#c62828,stroke:#7f1010,color:#fff
+    style B fill:#c62828,stroke:#7f1010,color:#fff
+    style C fill:#ef6c00,stroke:#8c3a00,color:#fff
+    style D fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style E fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style G fill:#1565c0,stroke:#0b3a6b,color:#fff
+    style H fill:#6a1b9a,stroke:#35094f,color:#fff
+    style I fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style J fill:#212121,stroke:#000,color:#fff
+    style K fill:#212121,stroke:#000,color:#fff
+    style L fill:#ffbe0b,stroke:#b88500,color:#000
+```
+
+### Kilder
+
+- `get_dokument({dok_id: "HD01CU25"})` → https://data.riksdagen.se/dokument/HD01CU25 [A1]
+- `get_dokument({dok_id: "HD01SfU23"})` → https://data.riksdagen.se/dokument/HD01SfU23 [A1]
+- `get_dokument({dok_id: "HD01FiU23"})` → https://data.riksdagen.se/dokument/HD01FiU23 [A1]
+- `get_dokument({dok_id: "HD01AU15"})` → https://data.riksdagen.se/dokument/HD01AU15 [A1]
+- `get_dokument({dok_id: "HD01CU29"})` → https://data.riksdagen.se/dokument/HD01CU29 [A1]
+
+<!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief_de.md -->
+
+<!-- lang: de -->
+# Exekutivbriefing — Ausschussberichte 2026-04-24
+
+**Autor**: James Pether Sörling   **Lauf-ID**: 24866836753   **Klassifizierung**: ÖFFENTLICH   **Konfidenz**: HOCH (B2)
+
+### 🎯 Schlussfolgerung
+
+Fünf Ausschussberichte, die am 2026-04-23 vorgelegt wurden, gruppieren sich entlang der drei Wahlkampf-Signaturpfeiler der Tidö-Koalition — **Kapazität der Strafvollzugsbehörde** (`HD01CU25`), **Migrationsdurchsetzung mit Ausnahme für Forscher-Mobilität** (`HD01SfU23`) und **institutionelle Geldpolitik** (`HD01FiU23`) — ergänzt durch zwei Breitkonsens-Dossiers zu **ILO-Ratifizierung von Arbeitnehmerrechten** (`HD01AU15`) und **E-Auto-Heimladen** (`HD01CU29`). Das Cluster ist eine bewusste Signalzusammensetzung ~5 Monate vor der Riksdag-Wahl im September 2026. Das reale Implementierungsrisiko konzentriert sich auf `HD01CU25` und `HD01SfU23`; das Reputationsrisiko auf `HD01FiU23`.
+
+### 🧭 3 Entscheidungen, die dieses Briefing unterstützt
+
+1. **Wahlkampfkommunikation** — Regierungskommunikatoren sollten CU25 + SfU23 Kammerbeiträge im Mai 2026 gemeinsam sequenzieren; die Opposition sollte SfU23 beim Forscher-Ausnahme-Framing kontern, um M von L zu spalten.
+2. **Implementierungsaufsicht** — KU und Riksrevisionen sollten CU25 und SfU23 für den Prüfungsumfang 2026/27 vormerken; FiU23 bestätigt die fortlaufende Riksbank-Unabhängigkeitsprüfung.
+3. **Internationale Positionierung** — Die Ratifizierung von ILO C190 (AU15) sollte mit der Umsetzung der EU-Plattformarbeits-Richtlinie und früheren Ratifizierungen nordischer Kollegen verknüpft werden.
+
+### ⏱ 60-Sekunden-Lektüre
+
+- **Leitgeschichte**: `HD01CU25` — das Gefängniskapazitätserweiterungsgesetz ist das meistgewichtete Element (DIW 85).
+- **Zweite Zeile**: `HD01SfU23` (DIW 80) bifurkiert die Migrationspolitik — Verschärfung der Studienerlaubnisse, aber Öffnung für Forscher.
+- **Geldpolitisch-institutionell**: `HD01FiU23` (DIW 78) — laufende Riksbank-Prüfung, ungewöhnlich prominent im Jahr 2026.
+- **Konsensus-Punkte**: `HD01AU15` (ILO, DIW 72) und `HD01CU29` (E-Auto-Laden, DIW 58).
+- **Wichtigster Vorwärts-Auslöser**: Kriminalvårdens Kapazitätsstatusbericht Q2 2026 (~2026-06-23). Eine Abweichung ≥ 10 % würde das Kriminalitätsnarrativ der Regierung umkehren.
+
+### 🧠 Konfidenz und Annahmen
+
+**HOCH** für Clusterzusammensetzung und DIW-Ranking. **MITTEL** für Implementierungsdeltas. **NIEDRIG** für Wähler-Rahmungseffekte.
+
+### 📊 Zusammensetzungsdiagramm
+
+```mermaid
+flowchart LR
+    A[CU25 Prison capacity<br/>DIW 85] --> G[Tidö pre-election<br/>signature cluster]
+    B[SfU23 Migration/<br/>Researchers DIW 80] --> G
+    C[FiU23 Riksbank<br/>DIW 78] --> H[Institutional<br/>stewardship frame]
+    D[AU15 ILO<br/>DIW 72] --> I[EU-compatible<br/>consensus frame]
+    E[CU29 EV charging<br/>DIW 58] --> I
+    G --> J[Law-and-order + migration<br/>narrative lock-in]
+    H --> J
+    I --> K[Coalition breadth<br/>signalling]
+    J --> L[2026 election framing]
+    K --> L
+    style A fill:#c62828,stroke:#7f1010,color:#fff
+    style B fill:#c62828,stroke:#7f1010,color:#fff
+    style C fill:#ef6c00,stroke:#8c3a00,color:#fff
+    style D fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style E fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style G fill:#1565c0,stroke:#0b3a6b,color:#fff
+    style H fill:#6a1b9a,stroke:#35094f,color:#fff
+    style I fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style J fill:#212121,stroke:#000,color:#fff
+    style K fill:#212121,stroke:#000,color:#fff
+    style L fill:#ffbe0b,stroke:#b88500,color:#000
+```
+
+### Quellen
+
+- `get_dokument({dok_id: "HD01CU25"})` → https://data.riksdagen.se/dokument/HD01CU25 [A1]
+- `get_dokument({dok_id: "HD01SfU23"})` → https://data.riksdagen.se/dokument/HD01SfU23 [A1]
+- `get_dokument({dok_id: "HD01FiU23"})` → https://data.riksdagen.se/dokument/HD01FiU23 [A1]
+- `get_dokument({dok_id: "HD01AU15"})` → https://data.riksdagen.se/dokument/HD01AU15 [A1]
+- `get_dokument({dok_id: "HD01CU29"})` → https://data.riksdagen.se/dokument/HD01CU29 [A1]
+
+<!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief_es.md -->
+
+<!-- lang: es -->
+# Resumen ejecutivo — Informes de comisión 2026-04-24
+
+**Autor**: James Pether Sörling   **ID de ejecución**: 24866836753   **Clasificación**: PÚBLICO   **Confianza**: ALTA (B2)
+
+### 🎯 Conclusión
+
+Cinco informes de comisión presentados el 2026-04-23 se agrupan en torno a los tres pilares electorales distintivos de la coalición Tidö — **capacidad penitenciaria** (`HD01CU25`), **aplicación de la ley migratoria con excepción para la movilidad de investigadores** (`HD01SfU23`) y **administración institucional de la política monetaria** (`HD01FiU23`) — complementados por dos expedientes de amplio consenso sobre **ratificación de la OIT de derechos laborales** (`HD01AU15`) y **carga doméstica de vehículos eléctricos** (`HD01CU29`). Este grupo es una composición deliberada de señales ~5 meses antes de las elecciones del Riksdag en septiembre de 2026. El riesgo real de implementación se concentra en `HD01CU25` y `HD01SfU23`; el riesgo reputacional en `HD01FiU23`.
+
+### 🧭 3 decisiones que apoya esta nota
+
+1. **Comunicación electoral** — Los comunicadores gubernamentales deben secuenciar los discursos en cámara CU25 + SfU23 juntos en mayo de 2026; la oposición debe reconceptualizar SfU23 sobre la excepción de investigadores para dividir M de L.
+2. **Supervisión de implementación** — KU y Riksrevisionen deben marcar CU25 y SfU23 para el ámbito de auditoría 2026/27; FiU23 confirma la revisión continua de la independencia del Riksbank.
+3. **Posicionamiento internacional** — La ratificación de la OIT C190 (AU15) debe vincularse con la transposición de la Directiva UE sobre trabajo en plataformas y las ratificaciones anteriores de los países nórdicos.
+
+### ⏱ Lectura de 60 segundos
+
+- **Historia principal**: `HD01CU25` — la ley de ampliación de la capacidad carcelaria es el elemento más ponderado (DIW 85).
+- **Segunda línea**: `HD01SfU23` (DIW 80) bifurca la política migratoria — endurece los permisos de estudio pero abre para investigadores.
+- **Institucional monetario**: `HD01FiU23` (DIW 78) — revisión anual del Riksbank, inusualmente prominente en 2026.
+- **Puntos de consenso**: `HD01AU15` (OIT, DIW 72) y `HD01CU29` (carga VE, DIW 58).
+- **Principal desencadenante prospectivo**: informe de capacidad Q2 2026 de Kriminalvården (~2026-06-23). Una desviación ≥ 10 % invertiría la narrativa delictiva del gobierno.
+
+### 🧠 Confianza y supuestos
+
+**ALTA** para composición del grupo y clasificación DIW. **MEDIA** para deltas de implementación. **BAJA** para efectos de encuadre del votante.
+
+### 📊 Diagrama de composición
+
+```mermaid
+flowchart LR
+    A[CU25 Prison capacity<br/>DIW 85] --> G[Tidö pre-election<br/>signature cluster]
+    B[SfU23 Migration/<br/>Researchers DIW 80] --> G
+    C[FiU23 Riksbank<br/>DIW 78] --> H[Institutional<br/>stewardship frame]
+    D[AU15 ILO<br/>DIW 72] --> I[EU-compatible<br/>consensus frame]
+    E[CU29 EV charging<br/>DIW 58] --> I
+    G --> J[Law-and-order + migration<br/>narrative lock-in]
+    H --> J
+    I --> K[Coalition breadth<br/>signalling]
+    J --> L[2026 election framing]
+    K --> L
+    style A fill:#c62828,stroke:#7f1010,color:#fff
+    style B fill:#c62828,stroke:#7f1010,color:#fff
+    style C fill:#ef6c00,stroke:#8c3a00,color:#fff
+    style D fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style E fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style G fill:#1565c0,stroke:#0b3a6b,color:#fff
+    style H fill:#6a1b9a,stroke:#35094f,color:#fff
+    style I fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style J fill:#212121,stroke:#000,color:#fff
+    style K fill:#212121,stroke:#000,color:#fff
+    style L fill:#ffbe0b,stroke:#b88500,color:#000
+```
+
+### Fuentes
+
+- `get_dokument({dok_id: "HD01CU25"})` → https://data.riksdagen.se/dokument/HD01CU25 [A1]
+- `get_dokument({dok_id: "HD01SfU23"})` → https://data.riksdagen.se/dokument/HD01SfU23 [A1]
+- `get_dokument({dok_id: "HD01FiU23"})` → https://data.riksdagen.se/dokument/HD01FiU23 [A1]
+- `get_dokument({dok_id: "HD01AU15"})` → https://data.riksdagen.se/dokument/HD01AU15 [A1]
+- `get_dokument({dok_id: "HD01CU29"})` → https://data.riksdagen.se/dokument/HD01CU29 [A1]
+
+<!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief_fi.md -->
+
+<!-- lang: fi -->
+# Tiivistelmä — Valiokuntamietinnöt 2026-04-24
+
+**Tekijä**: James Pether Sörling   **Ajoidentifiointi**: 24866836753   **Luokitus**: JULKINEN   **Luottamus**: KORKEA (B2)
+
+### 🎯 Johtopäätös
+
+Viisi valiokuntamietintöä, jotka esiteltiin 2026-04-23, ryhmittyvät Tidö-koalition kolmen vaalikampanjakehyksen ympärille — **kriminaalihuollon kapasiteetti** (`HD01CU25`), **maahanmuuton toimeenpano tutkijaliikkuvuuden poikkeuksella** (`HD01SfU23`) ja **rahapolitiikan institutionaalinen hallinto** (`HD01FiU23`) — täydennettynä kahdella laajaa yhteisymmärrystä nauttivalla asialla: **ILO-ratifiointi työoikeuksista** (`HD01AU15`) ja **sähköautojen kotilatauksesta** (`HD01CU29`). Ryhmittymä on tarkoituksellinen signaalikokoonpano ~5 kuukautta ennen syyskuun 2026 vaaleja. Todellinen toteutusriski keskittyy `HD01CU25`- ja `HD01SfU23`-asioihin; maineisriski `HD01FiU23`-asiaan.
+
+### 🧭 3 päätöstä, joita tämä tiivistelmä tukee
+
+1. **Vaalikampanjaviestintä** — Hallituksen viestijöiden tulisi ajoittaa CU25 + SfU23 kammaripuheenvuorot toukokuulle 2026; opposition tulisi vastakehystää SfU23 tutkijapoikkeuksen kautta M:n ja L:n välisen hajaannuksen aikaansaamiseksi.
+2. **Toteutuksen valvonta** — KU:n ja Riksrevisionenin tulisi ennakkomerkitä CU25 ja SfU23 vuosien 2026/27 tarkastusaihioihin; FiU23 vahvistaa jatkuvan Riksbankin riippumattomuuskatsauksen.
+3. **Kansainvälinen asemoituminen** — ILO C190:n ratifiointi (AU15) tulee yhdistää EU:n alustatyödirektiivin täytäntöönpanoon ja pohjoismaisten kollegoiden aikaisempiin ratifiointeihin.
+
+### ⏱ 60 sekunnin lukeminen
+
+- **Päätarina**: `HD01CU25` — vankilakapasiteetin laajennuslaki on eniten painotettu asia (DIW 85).
+- **Toinen rivi**: `HD01SfU23` (DIW 80) bifurkoi maahanmuuttopolitiikan — kiristää opiskeluluvat mutta avaa tutkijoille.
+- **Rahapolitiikka-institutionaalinen**: `HD01FiU23` (DIW 78) — jatkuva Riksbank-katsaus, epätavallisen merkittävä 2026.
+- **Yhteisymmärryskohdat**: `HD01AU15` (ILO, DIW 72) ja `HD01CU29` (sähköauton lataus, DIW 58).
+- **Tärkein ennakoiva laukaisin**: Kriminaalihuollon kapasiteettistatusraportti Q2 2026 (~2026-06-23). ≥ 10 %:n poikkeama kääntäisi hallituksen rikosvastaus-narratiivin.
+
+### 🧠 Luottamus ja oletukset
+
+Keskeisten arvioiden **KORKEA** luottamus ryhmittymäkoostumukselle ja DIW-sijoitukselle. **KOHTUULLINEN** toteutusdeltoille. **MATALA** äänestäjäkehystysefekteille.
+
+### 📊 Kokoonpanokaavio
+
+```mermaid
+flowchart LR
+    A[CU25 Prison capacity<br/>DIW 85] --> G[Tidö pre-election<br/>signature cluster]
+    B[SfU23 Migration/<br/>Researchers DIW 80] --> G
+    C[FiU23 Riksbank<br/>DIW 78] --> H[Institutional<br/>stewardship frame]
+    D[AU15 ILO<br/>DIW 72] --> I[EU-compatible<br/>consensus frame]
+    E[CU29 EV charging<br/>DIW 58] --> I
+    G --> J[Law-and-order + migration<br/>narrative lock-in]
+    H --> J
+    I --> K[Coalition breadth<br/>signalling]
+    J --> L[2026 election framing]
+    K --> L
+    style A fill:#c62828,stroke:#7f1010,color:#fff
+    style B fill:#c62828,stroke:#7f1010,color:#fff
+    style C fill:#ef6c00,stroke:#8c3a00,color:#fff
+    style D fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style E fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style G fill:#1565c0,stroke:#0b3a6b,color:#fff
+    style H fill:#6a1b9a,stroke:#35094f,color:#fff
+    style I fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style J fill:#212121,stroke:#000,color:#fff
+    style K fill:#212121,stroke:#000,color:#fff
+    style L fill:#ffbe0b,stroke:#b88500,color:#000
+```
+
+### Lähteet
+
+- `get_dokument({dok_id: "HD01CU25"})` → https://data.riksdagen.se/dokument/HD01CU25 [A1]
+- `get_dokument({dok_id: "HD01SfU23"})` → https://data.riksdagen.se/dokument/HD01SfU23 [A1]
+- `get_dokument({dok_id: "HD01FiU23"})` → https://data.riksdagen.se/dokument/HD01FiU23 [A1]
+- `get_dokument({dok_id: "HD01AU15"})` → https://data.riksdagen.se/dokument/HD01AU15 [A1]
+- `get_dokument({dok_id: "HD01CU29"})` → https://data.riksdagen.se/dokument/HD01CU29 [A1]
+
+<!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief_fr.md -->
+
+<!-- lang: fr -->
+# Note de synthèse — Rapports de commission 2026-04-24
+
+**Auteur** : James Pether Sörling   **ID de session** : 24866836753   **Classification** : PUBLIC   **Confiance** : ÉLEVÉE (B2)
+
+### 🎯 Conclusion
+
+Cinq rapports de commission déposés le 2026-04-23 se regroupent autour des trois piliers électoraux caractéristiques de la coalition Tidö — **capacité pénitentiaire** (`HD01CU25`), **application des règles migratoires avec exemption pour la mobilité des chercheurs** (`HD01SfU23`) et **gestion institutionnelle de la politique monétaire** (`HD01FiU23`) — complétés par deux dossiers à large consensus sur la **ratification ILO des droits du travail** (`HD01AU15`) et la **recharge à domicile des véhicules électriques** (`HD01CU29`). Cette grappe est une composition délibérée de signaux ~5 mois avant les élections du Riksdag en septembre 2026. Le risque d'exécution réel se concentre sur `HD01CU25` et `HD01SfU23` ; le risque réputationnel sur `HD01FiU23`.
+
+### 🧭 3 décisions soutenues par cette note
+
+1. **Communication électorale** — Les communicants gouvernementaux devraient séquencer les discours en chambre CU25 + SfU23 ensemble en mai 2026 ; l'opposition devrait recadrer SfU23 sur l'exemption chercheurs pour diviser M de L.
+2. **Supervision de la mise en œuvre** — KU et Riksrevisionen devraient signaler CU25 et SfU23 pour l'audit 2026/27 ; FiU23 confirme la revue continue de l'indépendance de la Riksbank.
+3. **Positionnement international** — La ratification de l'ILO C190 (AU15) devrait être couplée à la transposition de la directive EU sur le travail de plateforme et aux ratifications antérieures des pays nordiques.
+
+### ⏱ Lecture en 60 secondes
+
+- **Fil directeur** : `HD01CU25` — le projet de loi sur l'extension de la capacité carcérale est l'élément le plus pondéré (DIW 85).
+- **Deuxième ligne** : `HD01SfU23` (DIW 80) bifurque la politique migratoire — durcissement des permis d'études mais ouverture pour les chercheurs.
+- **Institutionnel monétaire** : `HD01FiU23` (DIW 78) — revue annuelle courante de la Riksbank, inhabituellement saillante en 2026.
+- **Points de consensus** : `HD01AU15` (ILO, DIW 72) et `HD01CU29` (chargement VE, DIW 58).
+- **Principal déclencheur prospectif** : rapport de capacité Q2 2026 de Kriminalvården (~2026-06-23). Un écart ≥ 10 % inverserait le récit criminalité du gouvernement.
+
+### 🧠 Confiance et hypothèses
+
+**ÉLEVÉE** pour la composition de la grappe et le classement DIW. **MOYEN** pour les deltas de mise en œuvre. **FAIBLE** pour les effets d'encadrement sur les électeurs.
+
+### 📊 Diagramme de composition
+
+```mermaid
+flowchart LR
+    A[CU25 Prison capacity<br/>DIW 85] --> G[Tidö pre-election<br/>signature cluster]
+    B[SfU23 Migration/<br/>Researchers DIW 80] --> G
+    C[FiU23 Riksbank<br/>DIW 78] --> H[Institutional<br/>stewardship frame]
+    D[AU15 ILO<br/>DIW 72] --> I[EU-compatible<br/>consensus frame]
+    E[CU29 EV charging<br/>DIW 58] --> I
+    G --> J[Law-and-order + migration<br/>narrative lock-in]
+    H --> J
+    I --> K[Coalition breadth<br/>signalling]
+    J --> L[2026 election framing]
+    K --> L
+    style A fill:#c62828,stroke:#7f1010,color:#fff
+    style B fill:#c62828,stroke:#7f1010,color:#fff
+    style C fill:#ef6c00,stroke:#8c3a00,color:#fff
+    style D fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style E fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style G fill:#1565c0,stroke:#0b3a6b,color:#fff
+    style H fill:#6a1b9a,stroke:#35094f,color:#fff
+    style I fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style J fill:#212121,stroke:#000,color:#fff
+    style K fill:#212121,stroke:#000,color:#fff
+    style L fill:#ffbe0b,stroke:#b88500,color:#000
+```
+
+### Sources
+
+- `get_dokument({dok_id: "HD01CU25"})` → https://data.riksdagen.se/dokument/HD01CU25 [A1]
+- `get_dokument({dok_id: "HD01SfU23"})` → https://data.riksdagen.se/dokument/HD01SfU23 [A1]
+- `get_dokument({dok_id: "HD01FiU23"})` → https://data.riksdagen.se/dokument/HD01FiU23 [A1]
+- `get_dokument({dok_id: "HD01AU15"})` → https://data.riksdagen.se/dokument/HD01AU15 [A1]
+- `get_dokument({dok_id: "HD01CU29"})` → https://data.riksdagen.se/dokument/HD01CU29 [A1]
+
+<!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+<!-- lang: he -->
+# סיכום מנהלים — דוחות ועדות 2026-04-24
+
+**מחבר**: James Pether Sörling   **מזהה ריצה**: 24866836753   **סיווג**: ציבורי   **אמינות**: גבוהה (B2)
+
+### 🎯 תקציר מנהלים
+
+חמישה דוחות ועדה שהוגשו ב-2026-04-23 מתקבצים סביב שלושת עמודי התווך הייחודיים לקמפיין של קואליציית Tidö — **קיבולת בתי כלא** (`HD01CU25`), **אכיפת חוקי הגירה עם פטור לניידות חוקרים** (`HD01SfU23`) ו**ניהול מוסדי של מדיניות מוניטרית** (`HD01FiU23`) — בתוספת שני תיקי קונסנסוס רחב על **אשרור ILO של זכויות עובדים** (`HD01AU15`) ו**טעינה ביתית לרכבים חשמליים** (`HD01CU29`). האשכול הוא הרכב סיגנלים מכוון ~5 חודשים לפני בחירות הריקסדאג בספטמבר 2026. סיכון היישום האמיתי מתרכז ב-`HD01CU25` וב-`HD01SfU23`; סיכון המוניטין ב-`HD01FiU23`.
+
+### 🧭 3 החלטות שמסמך זה תומך בהן
+
+1. **תקשורת בחירות** — נציגי הממשלה צריכים לסדר את נאומי CU25 + SfU23 יחד במאי 2026; האופוזיציה צריכה לשנות את מסגרת SfU23 סביב פטור חוקרים לפיצול M מ-L.
+2. **פיקוח על יישום** — KU וRiksrevisionen צריכים לסמן מראש CU25 וSfU23 לתחום הביקורת 2026/27; FiU23 מאשר את סקירת עצמאות Riksbank השוטפת.
+3. **מיצוב בינלאומי** — אשרור ILO C190 (AU15) צריך להיות מוצמד לתרגום הנחיית עבודת הפלטפורמה האירופית ולאשרורים הקודמים של המדינות הנורדיות.
+
+### ⏱ קריאה של 60 שניות
+
+- **סיפור הראשי**: `HD01CU25` — חוק הרחבת קיבולת הכלא הוא הפריט הממושקל ביותר (DIW 85).
+- **שורה שנייה**: `HD01SfU23` (DIW 80) מפצל את מדיניות ההגירה — מחמיר אישורי לימוד אך פותח לחוקרים.
+- **מוניטרי-מוסדי**: `HD01FiU23` (DIW 78) — סקירת Riksbank שנתית שוטפת, בולטת במיוחד ב-2026.
+- **נקודות קונסנסוס**: `HD01AU15` (ILO, DIW 72) ו-`HD01CU29` (טעינת רכב חשמלי, DIW 58).
+- **הטריגר הפרוספקטיבי המרכזי**: דוח סטטוס קיבולת Kriminalvården Q2 2026 (~2026-06-23). סטייה ≥ 10 % תהפוך את נרטיב הפשיעה של הממשלה.
+
+### 🧠 אמינות והנחות
+
+**גבוהה** לתרכובת האשכול ולדירוג DIW. **בינונית** לפערי יישום. **נמוכה** לאפקטי הסגנון על הבוחרים.
+
+### 📊 תרשים הרכב
+
+```mermaid
+flowchart LR
+    A[CU25 Prison capacity<br/>DIW 85] --> G[Tidö pre-election<br/>signature cluster]
+    B[SfU23 Migration/<br/>Researchers DIW 80] --> G
+    C[FiU23 Riksbank<br/>DIW 78] --> H[Institutional<br/>stewardship frame]
+    D[AU15 ILO<br/>DIW 72] --> I[EU-compatible<br/>consensus frame]
+    E[CU29 EV charging<br/>DIW 58] --> I
+    G --> J[Law-and-order + migration<br/>narrative lock-in]
+    H --> J
+    I --> K[Coalition breadth<br/>signalling]
+    J --> L[2026 election framing]
+    K --> L
+    style A fill:#c62828,stroke:#7f1010,color:#fff
+    style B fill:#c62828,stroke:#7f1010,color:#fff
+    style C fill:#ef6c00,stroke:#8c3a00,color:#fff
+    style D fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style E fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style G fill:#1565c0,stroke:#0b3a6b,color:#fff
+    style H fill:#6a1b9a,stroke:#35094f,color:#fff
+    style I fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style J fill:#212121,stroke:#000,color:#fff
+    style K fill:#212121,stroke:#000,color:#fff
+    style L fill:#ffbe0b,stroke:#b88500,color:#000
+```
+
+### מקורות
+
+- `get_dokument({dok_id: "HD01CU25"})` → https://data.riksdagen.se/dokument/HD01CU25 [A1]
+- `get_dokument({dok_id: "HD01SfU23"})` → https://data.riksdagen.se/dokument/HD01SfU23 [A1]
+- `get_dokument({dok_id: "HD01FiU23"})` → https://data.riksdagen.se/dokument/HD01FiU23 [A1]
+- `get_dokument({dok_id: "HD01AU15"})` → https://data.riksdagen.se/dokument/HD01AU15 [A1]
+- `get_dokument({dok_id: "HD01CU29"})` → https://data.riksdagen.se/dokument/HD01CU29 [A1]
+
+<!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief_ja.md -->
+
+<!-- lang: ja -->
+# エグゼクティブブリーフ — 委員会報告書 2026-04-24
+
+**著者**: James Pether Sörling   **実行ID**: 24866836753   **分類**: 公開   **信頼度**: 高 (B2)
+
+### 🎯 結論
+
+2026-04-23に提出された5件の委員会報告書は、Tidö連立政権の3つの選挙看板政策を軸に集まっている — **刑務所収容能力** (`HD01CU25`)、**研究者移動の例外を設けた移民法執行** (`HD01SfU23`)、**金融機関の統治** (`HD01FiU23`) — さらに**ILO労働権批准** (`HD01AU15`) および**電気自動車の自宅充電** (`HD01CU29`) に関する2件の広範な合意案件が加わる。このクラスターは2026年9月のリクスダーグ選挙約5ヶ月前の意図的なシグナル構成である。実際の実施リスクは `HD01CU25` と `HD01SfU23` に集中し、評判リスクは `HD01FiU23` に集中している。
+
+### 🧭 このブリーフが支援する3つの意思決定
+
+1. **選挙キャンペーン戦略** — 政府の広報担当者は2026年5月にCU25 + SfU23の院内演説をまとめて行うべき；野党はSfU23の研究者例外を使ってMとLの分断を狙うべき。
+2. **実施監視** — KUとRiksrevisionenは2026/27年度監査対象としてCU25とSfU23を事前登録すべき；FiU23は継続中のリクスバンク独立性審査を確認する。
+3. **国際的なポジショニング** — ILO C190批准(AU15)はEUプラットフォーム労働指令の移行と北欧諸国の早期批准と関連付けるべき。
+
+### ⏱ 60秒で読む
+
+- **トップ記事**: `HD01CU25` — 刑務所収容能力拡大法案が最も重視されている(DIW 85)。
+- **2番目**: `HD01SfU23` (DIW 80) — 移民政策を二分する：学生ビザを厳格化しつつ研究者には開放する。
+- **金融機関**: `HD01FiU23` (DIW 78) — 継続中のリクスバンク年次審査、2026年は2024〜25年の貸借対照表損失により例外的に重要。
+- **合意案件**: `HD01AU15` (ILO, DIW 72) と `HD01CU29` (EV充電, DIW 58)。
+- **主要先行指標**: Kriminalvårdens 2026年Q2収容能力状況報告書(~2026-06-23)。計画病床数から10%以上の乖離があれば政府の犯罪対策ナラティブが逆転する。
+
+### 🧠 信頼度と前提条件
+
+クラスター構成とDIW順位付けに **高** 信頼度。実施デルタに **中** 信頼度。有権者フレーミング効果に **低** 信頼度。
+
+### 📊 構成図
+
+```mermaid
+flowchart LR
+    A[CU25 Prison capacity<br/>DIW 85] --> G[Tidö pre-election<br/>signature cluster]
+    B[SfU23 Migration/<br/>Researchers DIW 80] --> G
+    C[FiU23 Riksbank<br/>DIW 78] --> H[Institutional<br/>stewardship frame]
+    D[AU15 ILO<br/>DIW 72] --> I[EU-compatible<br/>consensus frame]
+    E[CU29 EV charging<br/>DIW 58] --> I
+    G --> J[Law-and-order + migration<br/>narrative lock-in]
+    H --> J
+    I --> K[Coalition breadth<br/>signalling]
+    J --> L[2026 election framing]
+    K --> L
+    style A fill:#c62828,stroke:#7f1010,color:#fff
+    style B fill:#c62828,stroke:#7f1010,color:#fff
+    style C fill:#ef6c00,stroke:#8c3a00,color:#fff
+    style D fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style E fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style G fill:#1565c0,stroke:#0b3a6b,color:#fff
+    style H fill:#6a1b9a,stroke:#35094f,color:#fff
+    style I fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style J fill:#212121,stroke:#000,color:#fff
+    style K fill:#212121,stroke:#000,color:#fff
+    style L fill:#ffbe0b,stroke:#b88500,color:#000
+```
+
+### 情報源
+
+- `get_dokument({dok_id: "HD01CU25"})` → https://data.riksdagen.se/dokument/HD01CU25 [A1]
+- `get_dokument({dok_id: "HD01SfU23"})` → https://data.riksdagen.se/dokument/HD01SfU23 [A1]
+- `get_dokument({dok_id: "HD01FiU23"})` → https://data.riksdagen.se/dokument/HD01FiU23 [A1]
+- `get_dokument({dok_id: "HD01AU15"})` → https://data.riksdagen.se/dokument/HD01AU15 [A1]
+- `get_dokument({dok_id: "HD01CU29"})` → https://data.riksdagen.se/dokument/HD01CU29 [A1]
+
+<!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief_ko.md -->
+
+<!-- lang: ko -->
+# 집행 브리핑 — 위원회 보고서 2026-04-24
+
+**저자**: James Pether Sörling   **실행 ID**: 24866836753   **분류**: 공개   **신뢰도**: 높음 (B2)
+
+### 🎯 결론
+
+2026-04-23에 제출된 5개의 위원회 보고서는 Tidö 연립정부의 3가지 선거 핵심 과제를 중심으로 모여 있다 — **교도소 수용 능력** (`HD01CU25`), **연구자 이동성 예외를 둔 이민법 집행** (`HD01SfU23`), **통화정책 기관 거버넌스** (`HD01FiU23`) — **ILO 노동권 비준** (`HD01AU15`) 및 **전기차 가정용 충전** (`HD01CU29`)에 관한 광범위한 합의 안건 2개가 추가된다. 이 클러스터는 2026년 9월 리크스다그 선거 약 5개월 전의 의도적인 신호 구성이다. 실제 이행 위험은 `HD01CU25`와 `HD01SfU23`에 집중되고; 평판 위험은 `HD01FiU23`에 집중된다.
+
+### 🧭 이 브리핑이 지원하는 3가지 결정
+
+1. **선거 커뮤니케이션** — 정부 대변인들은 CU25 + SfU23 본회의 연설을 2026년 5월에 함께 배치해야 한다; 야당은 SfU23을 연구자 예외를 중심으로 재구성하여 M과 L을 분열시켜야 한다.
+2. **이행 감독** — KU와 Riksrevisionen은 CU25와 SfU23을 2026/27 감사 범위로 사전 표시해야 한다; FiU23은 Riksbank 독립성 검토 지속을 확인한다.
+3. **국제 포지셔닝** — ILO C190 비준(AU15)은 EU 플랫폼 노동 지침 이행 및 북유럽 국가들의 이전 비준과 연계해야 한다.
+
+### ⏱ 60초 읽기
+
+- **주요 기사**: `HD01CU25` — 교도소 수용 능력 확장 법안이 가장 높은 가중치를 받음(DIW 85).
+- **두 번째**: `HD01SfU23` (DIW 80) — 이민 정책을 이분화: 학생 비자 강화하되 연구자에게는 개방.
+- **금융 기관**: `HD01FiU23` (DIW 78) — 연간 Riksbank 검토, 2024~25 대차대조표 손실로 2026년에 특히 부각.
+- **합의 항목**: `HD01AU15` (ILO, DIW 72) 및 `HD01CU29` (EV 충전, DIW 58).
+- **주요 선행 트리거**: Kriminalvårdens 2026년 Q2 수용 능력 상태 보고서(~2026-06-23). 계획 침상 수에서 ≥10% 편차 발생 시 정부의 범죄 대응 서사가 역전된다.
+
+### 🧠 신뢰도와 가정
+
+클러스터 구성 및 DIW 순위에 **높은** 신뢰도. 이행 델타에 **중간** 신뢰도. 유권자 프레이밍 효과에 **낮은** 신뢰도.
+
+### 📊 구성 다이어그램
+
+```mermaid
+flowchart LR
+    A[CU25 Prison capacity<br/>DIW 85] --> G[Tidö pre-election<br/>signature cluster]
+    B[SfU23 Migration/<br/>Researchers DIW 80] --> G
+    C[FiU23 Riksbank<br/>DIW 78] --> H[Institutional<br/>stewardship frame]
+    D[AU15 ILO<br/>DIW 72] --> I[EU-compatible<br/>consensus frame]
+    E[CU29 EV charging<br/>DIW 58] --> I
+    G --> J[Law-and-order + migration<br/>narrative lock-in]
+    H --> J
+    I --> K[Coalition breadth<br/>signalling]
+    J --> L[2026 election framing]
+    K --> L
+    style A fill:#c62828,stroke:#7f1010,color:#fff
+    style B fill:#c62828,stroke:#7f1010,color:#fff
+    style C fill:#ef6c00,stroke:#8c3a00,color:#fff
+    style D fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style E fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style G fill:#1565c0,stroke:#0b3a6b,color:#fff
+    style H fill:#6a1b9a,stroke:#35094f,color:#fff
+    style I fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style J fill:#212121,stroke:#000,color:#fff
+    style K fill:#212121,stroke:#000,color:#fff
+    style L fill:#ffbe0b,stroke:#b88500,color:#000
+```
+
+### 출처
+
+- `get_dokument({dok_id: "HD01CU25"})` → https://data.riksdagen.se/dokument/HD01CU25 [A1]
+- `get_dokument({dok_id: "HD01SfU23"})` → https://data.riksdagen.se/dokument/HD01SfU23 [A1]
+- `get_dokument({dok_id: "HD01FiU23"})` → https://data.riksdagen.se/dokument/HD01FiU23 [A1]
+- `get_dokument({dok_id: "HD01AU15"})` → https://data.riksdagen.se/dokument/HD01AU15 [A1]
+- `get_dokument({dok_id: "HD01CU29"})` → https://data.riksdagen.se/dokument/HD01CU29 [A1]
+
+<!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief_nl.md -->
+
+<!-- lang: nl -->
+# Uitvoerende briefing — Commissierapporten 2026-04-24
+
+**Auteur**: James Pether Sörling   **Uitvoerings-ID**: 24866836753   **Classificatie**: OPENBAAR   **Betrouwbaarheid**: HOOG (B2)
+
+### 🎯 Conclusie
+
+Vijf commissierapporten ingediend op 2026-04-23 groeperen zich rond de drie verkiezingskenmerkende pijlers van de Tidö-coalitie — **gevangeniscapaciteit** (`HD01CU25`), **migratiehandhaving met uitzondering voor onderzoekersmobiliteit** (`HD01SfU23`) en **institutioneel monetair beheer** (`HD01FiU23`) — aangevuld met twee breed-consensus-dossiers over **ILO-ratificatie van arbeidsrechten** (`HD01AU15`) en **thuisladen voor elektrische voertuigen** (`HD01CU29`). Het cluster is een bewuste signaalsamenstelling ~5 maanden voor de Riksdag-verkiezingen in september 2026. Het werkelijke implementatierisico concentreert zich op `HD01CU25` en `HD01SfU23`; het reputatierisico op `HD01FiU23`.
+
+### 🧭 3 beslissingen die deze briefing ondersteunt
+
+1. **Verkiezingscommunicatie** — Regeringscommunicatoren moeten CU25 + SfU23 kamerdebatten samen in mei 2026 plannen; de oppositie moet SfU23 herkaderen via de onderzoekersvrijstelling om M van L te splitsen.
+2. **Implementatietoezicht** — KU en Riksrevisionen moeten CU25 en SfU23 vooraf markeren voor het auditdomein 2026/27; FiU23 bevestigt de voortdurende Riksbank-onafhankelijkheidsreview.
+3. **Internationale positionering** — Ratificatie van ILO C190 (AU15) moet worden gekoppeld aan de omzetting van de EU-platformwerkrichtlijn en eerdere ratificaties van Noordse collega's.
+
+### ⏱ 60-seconden lezing
+
+- **Hoofdverhaal**: `HD01CU25` — de wet uitbreiding gevangeniscapaciteit is het zwaarst gewogen element (DIW 85).
+- **Tweede regel**: `HD01SfU23` (DIW 80) splitst migratiebeleid — aanscherping van studievergunningen maar opening voor onderzoekers.
+- **Monetair-institutioneel**: `HD01FiU23` (DIW 78) — voortdurende Riksbank-review, ongewoon prominent in 2026.
+- **Consensuspunten**: `HD01AU15` (ILO, DIW 72) en `HD01CU29` (EV-laden, DIW 58).
+- **Belangrijkste trigger**: Kriminalvårdens capaciteitsstatusrapport Q2 2026 (~2026-06-23). Een afwijking ≥ 10 % zou het criminaliteitsnarrief van de regering omkeren.
+
+### 🧠 Betrouwbaarheid en aannames
+
+**HOOG** voor clustersamenstelling en DIW-rangschikking. **MIDDEL** voor implementatiedeltas. **LAAG** voor kiezersframingeffecten.
+
+### 📊 Samenstellingsdiagram
+
+```mermaid
+flowchart LR
+    A[CU25 Prison capacity<br/>DIW 85] --> G[Tidö pre-election<br/>signature cluster]
+    B[SfU23 Migration/<br/>Researchers DIW 80] --> G
+    C[FiU23 Riksbank<br/>DIW 78] --> H[Institutional<br/>stewardship frame]
+    D[AU15 ILO<br/>DIW 72] --> I[EU-compatible<br/>consensus frame]
+    E[CU29 EV charging<br/>DIW 58] --> I
+    G --> J[Law-and-order + migration<br/>narrative lock-in]
+    H --> J
+    I --> K[Coalition breadth<br/>signalling]
+    J --> L[2026 election framing]
+    K --> L
+    style A fill:#c62828,stroke:#7f1010,color:#fff
+    style B fill:#c62828,stroke:#7f1010,color:#fff
+    style C fill:#ef6c00,stroke:#8c3a00,color:#fff
+    style D fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style E fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style G fill:#1565c0,stroke:#0b3a6b,color:#fff
+    style H fill:#6a1b9a,stroke:#35094f,color:#fff
+    style I fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style J fill:#212121,stroke:#000,color:#fff
+    style K fill:#212121,stroke:#000,color:#fff
+    style L fill:#ffbe0b,stroke:#b88500,color:#000
+```
+
+### Bronnen
+
+- `get_dokument({dok_id: "HD01CU25"})` → https://data.riksdagen.se/dokument/HD01CU25 [A1]
+- `get_dokument({dok_id: "HD01SfU23"})` → https://data.riksdagen.se/dokument/HD01SfU23 [A1]
+- `get_dokument({dok_id: "HD01FiU23"})` → https://data.riksdagen.se/dokument/HD01FiU23 [A1]
+- `get_dokument({dok_id: "HD01AU15"})` → https://data.riksdagen.se/dokument/HD01AU15 [A1]
+- `get_dokument({dok_id: "HD01CU29"})` → https://data.riksdagen.se/dokument/HD01CU29 [A1]
+
+<!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief_no.md -->
+
+<!-- lang: no -->
+# Beslutningsnotat — Komitérapporter 2026-04-24
+
+**Forfatter**: James Pether Sörling   **Kjøring-ID**: 24866836753   **Klassifisering**: OFFENTLIG   **Tillit**: HØY (B2)
+
+### 🎯 Konklusjon
+
+Fem komitérapporter fremlagt 2026-04-23 grupperer seg langs Tidö-koalisjonens tre valsignaturpilarer — **kapasitet i kriminalomsorgen** (`HD01CU25`), **migrasjonshåndhevelse med unntak for forskermobilitet** (`HD01SfU23`) og **institusjonelt forvaltarskap for pengepolitikken** (`HD01FiU23`) — supplert av to bred-konsensus-saker om **ILO-ratifisering av arbeidsrettigheter** (`HD01AU15`) og **hjemmelading for elbiler** (`HD01CU29`). Klyngen er en bevisst signalsammensetning ~5 måneder før Riksdag-valget i september 2026. Den reelle implementeringsrisikoen konsentreres i `HD01CU25` og `HD01SfU23`; omdømmerisikoen i `HD01FiU23`.
+
+### 🧭 3 beslutninger dette notatet støtter
+
+1. **Valkampanjekommunikasjon** — Regjeringskommunikatører bør sekvensere CU25 + SfU23 kammertaler samlet i mai 2026 for maksimal dekning før sommerferien; opposisjonen bør kontrarammesette SfU23 rundt forskerunntak for å splitte M fra L.
+2. **Implementeringsovervåking** — KU og Riksrevisionen bør forhåndsmarkere CU25 og SfU23 for revisjonsomfanget 2026/27; FiU23 bekrefter løpende Riksbank-uavhengighetsgransking.
+3. **Internasjonal posisjonering** — Ratifisering av ILO C190 (AU15) bør parres med EU-plattformsdirektivets gjennomføring og nordiske kollegers tidligere ratifiseringer.
+
+### ⏱ 60-sekunders lesning
+
+- **Ledende nyhet**: `HD01CU25` — fengselkapasitetsutvidelsesloven er det tyngst vektede punktet (DIW 85).
+- **Andre linje**: `HD01SfU23` (DIW 80) bifurkerer migrasjonspolitikken — strammer studietillatelser men åpner for forskere.
+- **Monetær-institusjonell**: `HD01FiU23` (DIW 78) — løpende Riksbank-gransking, usedvanlig fremtredende i 2026.
+- **Konsensuspunkter**: `HD01AU15` (ILO, DIW 72) og `HD01CU29` (elbilslading, DIW 58).
+- **Viktigste fremadskuende trigger**: Kriminalvårdens kapasitetsstatusrapport Q2 2026 (~2026-06-23). Avvik ≥ 10 % ville snu regjeringens kriminalitetsnarrativ.
+
+### 🧠 Tillit og antagelser
+
+Nøkkeldomslut: **HØY** tillit for klyngesammensetning og DIW-rangering. **MIDDELS** for implementeringsdeltas. **LAV** for velgerinnrammingseffekter.
+
+### 📊 Sammensetningsdiagram
+
+```mermaid
+flowchart LR
+    A[CU25 Prison capacity<br/>DIW 85] --> G[Tidö pre-election<br/>signature cluster]
+    B[SfU23 Migration/<br/>Researchers DIW 80] --> G
+    C[FiU23 Riksbank<br/>DIW 78] --> H[Institutional<br/>stewardship frame]
+    D[AU15 ILO<br/>DIW 72] --> I[EU-compatible<br/>consensus frame]
+    E[CU29 EV charging<br/>DIW 58] --> I
+    G --> J[Law-and-order + migration<br/>narrative lock-in]
+    H --> J
+    I --> K[Coalition breadth<br/>signalling]
+    J --> L[2026 election framing]
+    K --> L
+    style A fill:#c62828,stroke:#7f1010,color:#fff
+    style B fill:#c62828,stroke:#7f1010,color:#fff
+    style C fill:#ef6c00,stroke:#8c3a00,color:#fff
+    style D fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style E fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style G fill:#1565c0,stroke:#0b3a6b,color:#fff
+    style H fill:#6a1b9a,stroke:#35094f,color:#fff
+    style I fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style J fill:#212121,stroke:#000,color:#fff
+    style K fill:#212121,stroke:#000,color:#fff
+    style L fill:#ffbe0b,stroke:#b88500,color:#000
+```
+
+### Kilder
+
+- `get_dokument({dok_id: "HD01CU25"})` → https://data.riksdagen.se/dokument/HD01CU25 [A1]
+- `get_dokument({dok_id: "HD01SfU23"})` → https://data.riksdagen.se/dokument/HD01SfU23 [A1]
+- `get_dokument({dok_id: "HD01FiU23"})` → https://data.riksdagen.se/dokument/HD01FiU23 [A1]
+- `get_dokument({dok_id: "HD01AU15"})` → https://data.riksdagen.se/dokument/HD01AU15 [A1]
+- `get_dokument({dok_id: "HD01CU29"})` → https://data.riksdagen.se/dokument/HD01CU29 [A1]
+
+<!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief_sv.md -->
+
+<!-- lang: sv -->
+# Exekutiv sammanfattning — Utskottsbetänkanden 2026-04-24
+
+**Författare**: James Pether Sörling   **Körnings-ID**: 24866836753   **Klassificering**: OFFENTLIG   **Konfidensgrad**: HÖG (B2)
+
+### 🎯 Slutsats
+
+Fem utskottsbetänkanden som lades fram 2026-04-23 grupperas kring Tidö-koalitionens tre valsignaturpelare — **kapacitet inom kriminalvård** (`HD01CU25`), **migrationsverkställighet med ett undantag för forskarrörighet** (`HD01SfU23`) och **institutionellt förvaltarskap för penningpolitiken** (`HD01FiU23`) — kompletterat av två bredkonsensus-ärenden om **ILO-ratificering av arbetsrättigheter** (`HD01AU15`) och **hemmaladdning för elfordon** (`HD01CU29`). Klustret är en medveten signalsammansättning ~5 månader inför riksdagsvalet i september 2026: det låter M/KD/SD hävda leverans på lag-och-ordning och migration medan L och centristiska aktörer förankrar EU-kompatibla arbets- och klimatsegrar. Den verkliga implementeringsrisken koncentreras i `HD01CU25` (kapacitetsabsorption hos Kriminalvården) och `HD01SfU23` (bifurkation av ärendehantering hos Migrationsverket); rykterisken koncentreras i `HD01FiU23` (Riksbankens balansräkningsförluster och oberoende-narrativ).
+
+### 🧭 3 beslut som denna sammanfattning stödjer
+
+1. **Valkampanjskommunikation** — Regeringskommunikatörer bör sekvensera CU25 (lag-och-ordning) + SfU23 (migration) kammartal tillsammans under maj 2026 för att maximera bevakning före riksdagsuppehållet; oppositionen bör motramla SfU23 kring undantaget för forskarrörighet för att splittra M från L och undvika att S hamnar i forskarfientlig box.
+2. **Implementeringsövervakning** — KU och Riksrevisionen bör föranmäla CU25 (upphandlings-/miljögenvägsexponering) och SfU23 (Migrationsverkets dubbla IT- och personalspår) för revisionsomfånget 2026/27; FiU23 bekräftar löpande granskning av Riksbankens oberoende.
+3. **Internationell positionering** — Ratificering av ILO C190 (AU15) bör paras i regeringens kommunikation med EU:s plattformsarbetsdirektivs genomförande och nordiska kollegers tidigare ratificeringar (Danmark, Finland, Norge) för att maximera reputationsdividenden.
+
+### ⏱ 60-sekunders läsning
+
+- **Ledande nyhet**: `HD01CU25` — lagen om fängelsekapacitetsutbyggnad är det tyngst vägda ärendet (DIW 85) eftersom det kombinerar stor finansiell exponering (Kriminalvårdens utbyggnadsprogram), komprimerade tidlinjer och förvalsymbolik.
+- **Andra raden**: `HD01SfU23` (DIW 80) bifurkerar migrationspolitiken — skärpning av studietillstånd men öppning för forskare — vilket skapar koalitionsintern spänning (SD–L) och ett oppositionsutrymme för kompetitivitetsramande.
+- **Monetärt institutionellt**: `HD01FiU23` (DIW 78) — löpande årlig Riksbanksgranskning, men ovanligt framträdande 2026 med hänsyn till 2024–25 balansräkningsförluster och förnyad oberoendedebatt.
+- **Konsensusärenden**: `HD01AU15` (ILO, DIW 72) och `HD01CU29` (elbilsladdning, DIW 58) är breda stöddossier som ger tvåpartistäckning för regeringen att hävda leveransbredd.
+- **Viktigaste framåtblickande trigger**: bevaka **Kriminalvårdens kapacitetsstatusrapport Q2 2026** (förväntad +60 dagar, ~2026-06-23). En avvikelse ≥ 10 % från planerat bäddantal skulle falsifiera CU25-tidlinjen och invertera regeringens brottsbekämpnings-leverans-narrativ inför valet.
+
+### 🧠 Konfidens och antaganden
+
+Nyckeldomslut har **HÖG** konfidens för klustersammansättning och DIW-rangordning (baserat på primär `get_dokument`-metadata, konsistent med riksdagens utskottskalender). **MEDEL** konfidens för implementeringsdeltor (beroende av Q2-statusrapporter 2026 som ännu inte publicerats). **LÅG** konfidens för väljarramningseffekter i avvaktan på opinionsmätningsvågor Q3 2026.
+
+### 📊 Sammansättningsdiagram
+
+```mermaid
+flowchart LR
+    A[CU25 Prison capacity<br/>DIW 85] --> G[Tidö pre-election<br/>signature cluster]
+    B[SfU23 Migration/<br/>Researchers DIW 80] --> G
+    C[FiU23 Riksbank<br/>DIW 78] --> H[Institutional<br/>stewardship frame]
+    D[AU15 ILO<br/>DIW 72] --> I[EU-compatible<br/>consensus frame]
+    E[CU29 EV charging<br/>DIW 58] --> I
+    G --> J[Law-and-order + migration<br/>narrative lock-in]
+    H --> J
+    I --> K[Coalition breadth<br/>signalling]
+    J --> L[2026 election framing]
+    K --> L
+    style A fill:#c62828,stroke:#7f1010,color:#fff
+    style B fill:#c62828,stroke:#7f1010,color:#fff
+    style C fill:#ef6c00,stroke:#8c3a00,color:#fff
+    style D fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style E fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style G fill:#1565c0,stroke:#0b3a6b,color:#fff
+    style H fill:#6a1b9a,stroke:#35094f,color:#fff
+    style I fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style J fill:#212121,stroke:#000,color:#fff
+    style K fill:#212121,stroke:#000,color:#fff
+    style L fill:#ffbe0b,stroke:#b88500,color:#000
+```
+
+### Källor
+
+- `get_dokument({dok_id: "HD01CU25"})` → https://data.riksdagen.se/dokument/HD01CU25 [A1]
+- `get_dokument({dok_id: "HD01SfU23"})` → https://data.riksdagen.se/dokument/HD01SfU23 [A1]
+- `get_dokument({dok_id: "HD01FiU23"})` → https://data.riksdagen.se/dokument/HD01FiU23 [A1]
+- `get_dokument({dok_id: "HD01AU15"})` → https://data.riksdagen.se/dokument/HD01AU15 [A1]
+- `get_dokument({dok_id: "HD01CU29"})` → https://data.riksdagen.se/dokument/HD01CU29 [A1]
+- Riksdagens utskottskalender — riksdagen.se
+
+<!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief_zh.md -->
+
+<!-- lang: zh -->
+# 执行摘要 — 委员会报告 2026-04-24
+
+**作者**: James Pether Sörling   **运行ID**: 24866836753   **分类**: 公开   **置信度**: 高 (B2)
+
+### 🎯 结论
+
+2026-04-23提交的五份委员会报告围绕Tidö联合政府三大选举标志性支柱展开 — **监狱容量** (`HD01CU25`)、**移民执法（含研究人员流动例外）** (`HD01SfU23`) 和**货币政策机构管理** (`HD01FiU23`) — 并辅以两份获得广泛共识的文件：**国际劳工组织劳工权利批准** (`HD01AU15`) 和**电动汽车家用充电** (`HD01CU29`)。该集群是距2026年9月里克斯达格选举约5个月时的刻意信号组合。实际执行风险集中于 `HD01CU25` 和 `HD01SfU23`；声誉风险集中于 `HD01FiU23`。
+
+### 🧭 本文件支持的3个决策
+
+1. **选举沟通** — 政府传播人员应将CU25 + SfU23议会发言安排在2026年5月一同进行；反对派应以研究人员例外重构SfU23框架，以分裂M和L。
+2. **执行监督** — KU和Riksrevisionen应提前将CU25和SfU23纳入2026/27审计范围；FiU23确认里克斯班克独立性年度审查的持续进行。
+3. **国际定位** — ILO C190批准(AU15)应与欧盟平台工作指令转化和北欧同行早期批准相结合，以最大化声誉红利。
+
+### ⏱ 60秒速读
+
+- **主要故事**: `HD01CU25` — 监狱容量扩建法案权重最高(DIW 85)。
+- **第二条**: `HD01SfU23` (DIW 80) — 移民政策二元化：收紧学习许可但向研究人员开放。
+- **货币机构**: `HD01FiU23` (DIW 78) — 里克斯班克年度例行审查，2026年因2024~25资产负债损失而格外突出。
+- **共识事项**: `HD01AU15` (国际劳工组织, DIW 72) 和 `HD01CU29` (电动汽车充电, DIW 58)。
+- **主要前瞻触发点**: Kriminalvårdens 2026年Q2容量状态报告(~2026-06-23)。偏差≥10%将使政府的犯罪打击叙事逆转。
+
+### 🧠 置信度与假设
+
+集群组成和DIW排名**高**置信度。执行增量**中**置信度。选民框架效应**低**置信度。
+
+### 📊 构成图
+
+```mermaid
+flowchart LR
+    A[CU25 Prison capacity<br/>DIW 85] --> G[Tidö pre-election<br/>signature cluster]
+    B[SfU23 Migration/<br/>Researchers DIW 80] --> G
+    C[FiU23 Riksbank<br/>DIW 78] --> H[Institutional<br/>stewardship frame]
+    D[AU15 ILO<br/>DIW 72] --> I[EU-compatible<br/>consensus frame]
+    E[CU29 EV charging<br/>DIW 58] --> I
+    G --> J[Law-and-order + migration<br/>narrative lock-in]
+    H --> J
+    I --> K[Coalition breadth<br/>signalling]
+    J --> L[2026 election framing]
+    K --> L
+    style A fill:#c62828,stroke:#7f1010,color:#fff
+    style B fill:#c62828,stroke:#7f1010,color:#fff
+    style C fill:#ef6c00,stroke:#8c3a00,color:#fff
+    style D fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style E fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style G fill:#1565c0,stroke:#0b3a6b,color:#fff
+    style H fill:#6a1b9a,stroke:#35094f,color:#fff
+    style I fill:#2e7d32,stroke:#1b4d1f,color:#fff
+    style J fill:#212121,stroke:#000,color:#fff
+    style K fill:#212121,stroke:#000,color:#fff
+    style L fill:#ffbe0b,stroke:#b88500,color:#000
+```
+
+### 来源
+
+- `get_dokument({dok_id: "HD01CU25"})` → https://data.riksdagen.se/dokument/HD01CU25 [A1]
+- `get_dokument({dok_id: "HD01SfU23"})` → https://data.riksdagen.se/dokument/HD01SfU23 [A1]
+- `get_dokument({dok_id: "HD01FiU23"})` → https://data.riksdagen.se/dokument/HD01FiU23 [A1]
+- `get_dokument({dok_id: "HD01AU15"})` → https://data.riksdagen.se/dokument/HD01AU15 [A1]
+- `get_dokument({dok_id: "HD01CU29"})` → https://data.riksdagen.se/dokument/HD01CU29 [A1]
+
+<!-- source-sha: 1e83ac6587956e9b1ca9cfd53aac08783e617cbd -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 5 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 5 | Linked in Article Sources, not expanded inline |
 
@@ -2039,6 +2926,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-24/committeeReports/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 

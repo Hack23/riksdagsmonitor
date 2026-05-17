@@ -6,7 +6,7 @@ date: 2026-04-25
 subfolder: monthly-review
 slug: 2026-04-25-monthly-review
 source_folder: analysis/daily/2026-04-25/monthly-review
-generated_at: 2026-05-17T18:40:43.296Z
+generated_at: 2026-05-17T22:29:22.283Z
 language: en
 layout: article
 ---
@@ -108,6 +108,19 @@ Use this guide to read the article as a political-intelligence product rather th
 | 🔀 | [Cross-Reference Map](#rm-cross-reference-map) | links to related Riksdagsmonitor coverage, prior analyses and source documents that inform this story |
 | 🔬 | [Methodology Reflection & Limitations](#rm-methodology-reflection--limitations) | analytical assumptions, limitations, known biases and where the assessment could be wrong |
 | 📦 | [Data Download Manifest](#rm-data-download-manifest) | machine-readable manifest of every source dataset, retrieval timestamp and provenance hash |
+| 📝 | [Executive Brief Ar](#rm-executive-brief-ar) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Da](#rm-executive-brief-da) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief De](#rm-executive-brief-de) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Es](#rm-executive-brief-es) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fi](#rm-executive-brief-fi) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Fr](#rm-executive-brief-fr) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief He](#rm-executive-brief-he) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ja](#rm-executive-brief-ja) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Ko](#rm-executive-brief-ko) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Nl](#rm-executive-brief-nl) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief No](#rm-executive-brief-no) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Sv](#rm-executive-brief-sv) | supporting analytical lens with primary-source evidence and audit-traceable citations |
+| 📝 | [Executive Brief Zh](#rm-executive-brief-zh) | supporting analytical lens with primary-source evidence and audit-traceable citations |
 | 📑 | [Per-document intelligence](#rm-per-document-intelligence) | dok_id-level evidence, named actors, dates, and primary-source traceability |
 | 🏷️ | [Audit appendix](#rm-classification-results) | classification, cross-reference, methodology and manifest evidence for reviewers |
 
@@ -1583,13 +1596,993 @@ The `cross-reference-map.md` cites prior siblings: 2026-04-23 monthly-review, 20
 - Fetched: 2026-04-25 by `scripts/download-parliamentary-data.ts` with date=2026-04-24 lookback fallback
 - Manifest at `manifest.json`
 
+## Executive Brief Ar
+<!-- source: executive-brief_ar.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief_ar.md -->
+
+<!-- dir: rtl -->
+# المراجعة الشهرية — 2026-04-25
+
+**التصنيف**: عام | **المحلل**: James Pether Sörling | **التاريخ**: 2026-04-25
+**مستوى الثقة**: HIGH [A1] | **أيام حتى الانتخابات**: ~141 | **الفترة**: 2026-03-26 → 2026-04-25
+
+---
+
+### الملخص التنفيذي
+
+تنتهي نافذة تشريع الثلاثين يوماً في السويد مع إكمال حكومة كريسترسون (M–SD–KD–L) **محفظتها التنظيمية قبل الانتخابات**. دفعة لجنة 24 أبريل — **HD01JuU10 (قانون الأسلحة الجديد)، HD01JuU31 (متابعة إصلاح الشرطة)، HD01SoU25 (تعزيز رعاية المسنين)، HD01CU24 (كفاءة عمليات البناء)** — تغلق الإنهاء التنظيمي فوق الذروة المالية في 22 أبريل (HD01FiU48 تخفيض ضريبة الوقود، M+SD+S+KD أغلبية كبيرة) [riksdagen.se]. لا تزال الصحة والجريمة الأوتاداً الانتخابية السائدة؛ حركة استجواب المعارضة (HD10448 معلومات مضللة حول طاقة الرياح، HD11747 دعم العمل، HD11749 حقوق الأطفال المحتجزين، HD11748 الحماية القنصلية في بوروندي) تُظهر S/V/MP يديران **سرداً منضبطاً بثلاثة مسارات** في حين **قدّم SD صفر طلبات مضادة** ضد التقارير الأربعة للجنة في 24 أبريل — إشارة ثقة هيكلية استمرت الآن لـ18 يوم جلسة متتالياً.
+
+---
+
+### 3 قرارات يدعمها هذا التقرير
+
+#### القرار 1: تقييم الثقة في التسليم قبل الانتخابات
+
+وافقت تحالف Tidö الآن على **محفظتها التشريعية المُعلنة الكاملة لـ2025/26** في المجالات الأربعة الرئيسية — المالية (HD03100/HD0399)، والطاقة (HD03240/HD03238/HD03239)، والأمن/الدفاع (UFöU3/HD03214/HD03228)، والعدالة الجنائية/الرعاية الاجتماعية (HD01JuU10/HD01JuU31/HD01SoU25) — في غضون 141 يوماً من انتخابات سبتمبر 2026. التنفيذ، لا التشريع، هو الآن الخطر المُقيِّد. **التوصية**: تحويل المراقبة إلى *جدوى التنفيذ* (قدرة Polismyndigheten بعد RiR 2026:6، معدل أذونات Miljöprövningsmyndigheten، العبء الإداري لـFörsäkringskassan على رعاية المسنين).
+
+#### القرار 2: احتمالية وتد الصحة والجريمة
+
+لم تنجح المعارضة في *تشقيق* الائتلاف على أسطح هجومها الأساسية: 39 تحفظاً لـSfU18 لم تُقلب صوتاً واحداً؛ انقسام SD–KD في الرعاية الصحية على SoU17 R15 تم احتواؤه. يُقر كلٌّ من قانون الأسلحة HD01JuU10 وتدقيق إصلاح الشرطة HD01JuU31 بوحدة M+SD+KD+L. **التوصية**: ينبغي للمستثمرين وأصحاب المصلحة التعامل مع تشريعات الرعاية/الأمن باعتبارها *مستدامة حتى سبتمبر 2026*؛ خطاب الأوتاد المعارض يسود لكن احتمالية عكس التشريع منخفضة (≤ 25 %).
+
+#### القرار 3: بنية السرد المعارض قبل الحملة الانتخابية
+
+تبلورت ثلاثة أوتاد معارضة في أبريل: (أ) اقتصادية — الوقود/إجازة مرضية للمشاريع الصغيرة (S، HD024082، HD10447)؛ (ب) معلومات بيئية مضللة — HD10448؛ (ج) حقوق المحتجزين / قاصرون مهاجرون / حماية قنصلية (V/MP، HD11749، HD11748). **التوصية**: ينبغي للمتواصلين المستعدين للحملة في أواخر الصيف توقع توسيع إطار المعلومات المضللة (HD10448) ليصبح اختباراً للضغط على الائتلاف تحديداً بالنسبة لـSD؛ إطار المحتجزين (HD11749) هو ناقل الهجوم الأساسي لـV بعد توسيع السجون.
+
+---
+
+### القراءة في 60 ثانية
+
+- 🔴 **دفعة لجنة 24 أبريل تغلق المحفظة التنظيمية** — HD01JuU10 + HD01JuU31 + HD01SoU25 + HD01CU24 — تسليم ما قبل الانتخابات في الموعد المحدد
+- 🔴 **الأغلبية الكبيرة في 22 أبريل** (HD01FiU48، M+SD+S+KD): لم تستطع S معارضة تخفيض ضريبة الوقود بـ4.1 مليار SEK قبل 141 يوماً من الانتخابات
+- 🟠 **تدقيق إصلاح الشرطة 2015 (RiR 2026:6 → HD01JuU31)** — kvardröjande lednings- och utredningsproblem؛ قدرة التنفيذ هي الخطر الجديد المُقيِّد
+- 🟠 **استجواب معلومات طاقة الرياح المضللة (HD10448)** — أول ربط صريح بين سياسة الطاقة ونزاهة المعلومات في riksmötet
+- 🟢 **انضباط SD يصمد** — صفر طلبات ضد مقترحات الحكومة في أسبوع الإغلاق؛ حزب الثقة يحافظ على النزاهة الهيكلية
+- 🟡 **HD01SoU25 تعزيز رعاية المسنين** — استراتيجية مقدمي الرعاية ومتطلبات كفاءة الخدمات المنزلية تصبح اختبار تسليم أمام Försäkringskassan/البلديات
+- 🟡 **ذيل السياسة الخارجية** — HD11748 (قضية قنصلية بوروندي) يشير إلى تركيز V/MP على الحماية القنصلية كقضية انتخابية إنسانية
+- 🟢 **إنتاج الإسكان** — HD01CU24 يُقصّر أوقات المعالجة؛ التأثير على الإسكان المبدوء قابل للقياس في Q3 2026 (data.scb.se: BO0101)
+
+---
+
+### أهم إشارة استشرافية
+
+**مراقبة**: أول استطلاع رأي من معهد SOM أو Demoskop بعد 24 أبريل. إذا استعادت S > 28 % من الدعم الإجمالي رغم تصويت تخفيض ضريبة الوقود في 22 أبريل، فإن رسالة S "المعارضة الرمزية + الدعم العملي" صمدت تحت الضغط وتظل انتخابات سبتمبر تنافساً هيكلياً متكافئاً. إذا تأخرت S دون 26 %، فإن تموضع كتلة M+KD+L قبل الانتخابات قد أثبت التحول. **تاريخ المحفز**: 2026-05-08 ± 5 أيام (Demoskop الشهرية التالية).
+
+---
+
+### توزيع الثقة
+
+| مستوى الثقة | التقييمات الرئيسية | الأساس |
+|-------------|-------------------|--------|
+| مرتفع جداً | KJ-1 (اكتمال التسليم) | 8 dok_ids على القرص + 13 مرجع توليف شقيق |
+| مرتفع | KJ-2 (فاعلية الوتد منخفضة)، KJ-3 (محور التنفيذ) | متعدد المصادر (سجلات تصويت riksdagen.se، RiR 2026:6، استخبارات شقيقة) |
+| متوسط | ديناميكية الاستطلاعات المستقبلية | مصدر واحد (demoskop / تأخر SOM) |
+
+```mermaid
+flowchart TD
+  A[April 22 fiscal supermajoritet]:::a --> B[April 24 stängningsbatch]:::b
+  B --> C[Pre-election delivery confidence ▲]:::g
+  C --> D{Implementation pivot}:::d
+  D --> E[Polismyndigheten - RiR 2026:6]:::e
+  D --> F[Miljöprövningsmyndigheten - HD03238]:::e
+  D --> G[Försäkringskassan / hemtjänst - HD01SoU25]:::e
+  classDef a fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+  classDef b fill:#1a1e3d,stroke:#ff006e,color:#ffffff
+  classDef g fill:#1a1e3d,stroke:#ffbe0b,color:#ffffff
+  classDef d fill:#0a0e27,stroke:#ff006e,color:#ff006e
+  classDef e fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+  style A stroke-width:2px
+```
+
+<!-- source-sha: 91eb3cb6cf35873538b354461078df4509cf0012 -->
+
+## Executive Brief Da
+<!-- source: executive-brief_da.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief_da.md -->
+
+**Klassifikation**: PUBLIC | **Analytiker**: James Pether Sörling | **Dato**: 2026-04-25
+**Konfidensniveau**: HIGH [A1] | **Dage til valg**: ~141 | **Vindue**: 2026-03-26 → 2026-04-25
+
+---
+
+### Konklusion
+
+Sveriges 30-dages lovgivningsvindue lukker med Kristerssonregeringen (M–SD–KD–L) **der gennemfører sit pre-valgregulatoriske portfolio**. April 24-udvalgsgruppen — **HD01JuU10 (ny våbenlov), HD01JuU31 (opfølgning politireform), HD01SoU25 (styrket ældrepleje), HD01CU24 (effektivitet i byggeprocesser)** — lukker det regulatoriske afslutning oven på det finansielle klimaks den 22. april (HD01FiU48 brændstofafgiftsreduktion, M+SD+S+KD supermajoritet) [riksdagen.se]. Sundhed og kriminalitet er fortsat de dominerende *valgmæssige* kiler; oppositionens interpellationstrafik (HD10448 vindkraft-desinformation, HD11747 arbejdsmarkedsstøtte, HD11749 frihedsberøvede børns rettigheder, HD11748 konsulær beskyttelse i Burundi) viser S/V/MP køre et **disciplineret tre-spors narrativ** mens **SD har indsendt nul mod-motioner** mod de fire april 24-udvalgsrapporter — et strukturelt-tillidssignal der nu er vedvaret i 18 på hinanden følgende siddedage.
+
+---
+
+### 3 beslutninger dette briefing understøtter
+
+#### Beslutning 1: Pre-valgsleverings konfidensvurdering
+
+Tidö-koalitionen har nu vedtaget sin **komplette erklærede 2025/26 lovgivningsportefølje** inden for de fire kernedomæner — finanspolitisk (HD03100/HD0399), energi (HD03240/HD03238/HD03239), sikkerhed/forsvar (UFöU3/HD03214/HD03228) og strafferetlig retfærdighed/velfærd (HD01JuU10/HD01JuU31/HD01SoU25) — inden for 141 dage fra september 2026-valget. Implementering, ikke lovgivning, er nu den bindende risiko. **Anbefaling**: skift overvågning til *implementeringsfeasibilitet* (Polismyndighedens kapacitet efter RiR 2026:6, Miljöprövningsmyndighedens tilladelsesgennemstrømning, Försäkringskassans administrative belastning for ældrepleje).
+
+#### Beslutning 2: Sundhed-og-kriminalitets kilesandsynlighed
+
+Oppositionen har *ikke* lykkedes med at splitte koalitionen på sine primære angrebsflader: SfU18's 39 forbehold vendte ikke en eneste stemme; SD–KD sundhedssplit på SoU17 R15 blev begrænset. HD01JuU10 våbenlov og HD01JuU31 politireformsrevision vedtages begge med M+SD+KD+L-enighed. **Anbefaling**: investorer og interessenter bør behandle velfærds-/sikkerhedslovgivningen som *holdbar til september 2026*; oppositionens kilerhetorik dominerer men lovgivningsreverseringssandsynlighed er LAV (≤ 25 %).
+
+#### Beslutning 3: Pre-kampagne oppositionens narrativarkitektur
+
+Tre oppositionskiler krystalliserede i april: (a) økonomisk — brændstof/SME-sygeløn (S, HD024082, HD10447); (b) miljø-desinformation — HD10448; (c) frihedsberøvedes rettigheder / migrantmindreårige / konsulær beskyttelse (V/MP, HD11749, HD11748). **Anbefaling**: kommunikatører der forbereder sig til sensommerkampagnen bør forvente at desinformationsrammen (HD10448) udvider sig til en koalitionsstresstest specifikt for SD; rammen om frihedsberøvede (HD11749) er V's primære angrebsvektor efter fængselsudvidelsen.
+
+---
+
+### 60-sekunders læsning
+
+- 🔴 **April 24-udvalgsgruppen lukker regulatorisk portefølje** — HD01JuU10 + HD01JuU31 + HD01SoU25 + HD01CU24 — pre-valgslevering på skema
+- 🔴 **Supermajoritet 22. april** (HD01FiU48, M+SD+S+KD): S kunne ikke modsætte sig 4,1 mia. SEK brændstofafgiftsreduktion 141 dage før valget
+- 🟠 **Politireformen 2015-revision (RiR 2026:6 → HD01JuU31)** — kvardröjande lednings- og utredningsproblem; implementeringskapacitet er den nye bindende risiko
+- 🟠 **Vindkraft-desinformations-interpellation (HD10448)** — første eksplicitte kobling af energipolitik og informationsintegritet i riksmötet
+- 🟢 **SD-disciplin holder** — nul motioner mod regeringspropositioner i lukningsugen; tillidspartiet bevarer strukturel integritet
+- 🟡 **HD01SoU25 styrket ældrepleje** — anhørigstrategi og hjemmehjælpskompetenskrav bliver leveringstest mod Försäkringskassan/kommuner
+- 🟡 **Udenrigspolitisk hale** — HD11748 (Burundi-konsulær sag) signalerer V/MP-fokus på konsulær beskyttelse som humanitært valgspørgsmål
+- 🟢 **Boligproduktion** — HD01CU24 forkorter sagsbehandlingstider; effekt på påbegyndte boliger målbar Q3 2026 (data.scb.se: BO0101)
+
+---
+
+### Vigtigste fremadrettede signal
+
+**Overvåg**: Første post-24. april SOM-Institut eller Demoskop meningsmåling. Hvis S genvinder > 28 % i overskriftsstøtte på trods af 22. april brændstofafgiftsafstemningen, har S's "symbolsk opposition + praktisk støtte"-budskab holdt under pres, og september-valget forbliver et strukturelt toss-up. Hvis S halter under 26 %, har M+KD+L-blokens pre-valgspositionering demonstreret konvertering. **Udløserdato**: 2026-05-08 ± 5 dage (næste Demoskop månedlig).
+
+---
+
+### Konfidensfordeling
+
+| Konfidensniveau | Nøglevurderinger | Grundlag |
+|-----------------|------------------|----------|
+| MEGET HØJ | KJ-1 (leveringsgennemførelse) | 8 dok_id'er på disk + 13 søskendesyntesereferencer |
+| HØJ | KJ-2 (kileeffektivitet LAV), KJ-3 (implementeringsfokus) | Flerkildigt (riksdagen.se afstemningsprotokoller, RiR 2026:6, søskendeefterretning) |
+| MEDIUM | Fremadrettet meningsmålingsdynamik | Enkeltkildet (demoskop / SOM-forsinkelse) |
+
+```mermaid
+flowchart TD
+  A[April 22 fiscal supermajoritet]:::a --> B[April 24 stängningsbatch]:::b
+  B --> C[Pre-election delivery confidence ▲]:::g
+  C --> D{Implementation pivot}:::d
+  D --> E[Polismyndigheten - RiR 2026:6]:::e
+  D --> F[Miljöprövningsmyndigheten - HD03238]:::e
+  D --> G[Försäkringskassan / hemtjänst - HD01SoU25]:::e
+  classDef a fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+  classDef b fill:#1a1e3d,stroke:#ff006e,color:#ffffff
+  classDef g fill:#1a1e3d,stroke:#ffbe0b,color:#ffffff
+  classDef d fill:#0a0e27,stroke:#ff006e,color:#ff006e
+  classDef e fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+  style A stroke-width:2px
+```
+
+<!-- source-sha: 91eb3cb6cf35873538b354461078df4509cf0012 -->
+
+## Executive Brief De
+<!-- source: executive-brief_de.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief_de.md -->
+
+**Klassifikation**: PUBLIC | **Analyst**: James Pether Sörling | **Datum**: 2026-04-25
+**Konfidenzniveau**: HIGH [A1] | **Tage bis zur Wahl**: ~141 | **Zeitfenster**: 2026-03-26 → 2026-04-25
+
+---
+
+### Fazit
+
+Schwedens 30-tägiges Gesetzgebungsfenster schließt, da die Kristersson-Regierung (M–SD–KD–L) ihr **regulatorisches Pre-Wahl-Portfolio abschließt**. Die Ausschussgruppe vom 24. April — **HD01JuU10 (neues Waffengesetz), HD01JuU31 (Polizeireform-Nachverfolgung), HD01SoU25 (Stärkung der Altenpflege), HD01CU24 (Effizienz der Bauprozesse)** — schließt den regulatorischen Abschluss oberhalb des finanziellen Höhepunkts vom 22. April (HD01FiU48 Kraftstoffsteuerreduktion, M+SD+S+KD Supermehrheit) [riksdagen.se]. Gesundheitswesen und Kriminalität sind weiterhin die dominierenden *wahlpolitischen* Keile; der Interpellationsverkehr der Opposition (HD10448 Windkraft-Desinformation, HD11747 Arbeitseingliederungszuschüsse, HD11749 Rechte inhaftierter Kinder, HD11748 konsularischer Schutz in Burundi) zeigt S/V/MP mit einem **disziplinierten Drei-Spur-Narrativ**, während **SD null Gegenmotionen** gegen die vier Ausschussberichte vom 24. April eingereicht hat — ein strukturelles Vertrauenssignal, das nun seit 18 aufeinanderfolgenden Sitzungstagen anhält.
+
+---
+
+### 3 Entscheidungen, die dieser Bericht unterstützt
+
+#### Entscheidung 1: Vertrauensbewertung der Pre-Wahl-Lieferung
+
+Die Tidö-Koalition hat nun ihr **vollständiges deklariertes 2025/26 Gesetzgebungsportfolio** in den vier Kernbereichen verabschiedet — Finanzpolitik (HD03100/HD0399), Energie (HD03240/HD03238/HD03239), Sicherheit/Verteidigung (UFöU3/HD03214/HD03228) und Strafrecht/Wohlfahrt (HD01JuU10/HD01JuU31/HD01SoU25) — innerhalb von 141 Tagen bis zur Wahl im September 2026. Die Umsetzung, nicht die Gesetzgebung, ist nun das bindende Risiko. **Empfehlung**: Überwachung auf *Umsetzbarkeit* umschalten (Kapazität der Polismyndigheten nach RiR 2026:6, Genehmigungsdurchsatz der Miljöprövningsmyndigheten, administrative Belastung der Försäkringskassan für die Altenpflege).
+
+#### Entscheidung 2: Gesundheits-und-Kriminalitäts-Keil-Wahrscheinlichkeit
+
+Die Opposition hat es *nicht* geschafft, die Koalition auf ihren primären Angriffsflächen zu spalten: Die 39 Vorbehalte von SfU18 haben keine einzige Stimme umgekehrt; die SD–KD Gesundheits-Spaltung bei SoU17 R15 wurde eingedämmt. Das HD01JuU10 Waffengesetz und das HD01JuU31 Polizeireform-Audit werden beide mit M+SD+KD+L-Einigkeit verabschiedet. **Empfehlung**: Investoren und Stakeholder sollten die Wohlfahrts-/Sicherheitsgesetzgebung als *dauerhaft bis September 2026* behandeln; die Keil-Rhetorik der Opposition dominiert, aber die Wahrscheinlichkeit einer Gesetzgebungsumkehr ist NIEDRIG (≤ 25 %).
+
+#### Entscheidung 3: Narrativarchitektur der Opposition vor dem Wahlkampf
+
+Drei Oppositionskeile kristallisierten sich im April heraus: (a) wirtschaftlich — Kraftstoff/KMU-Krankengeld (S, HD024082, HD10447); (b) Umwelt-Desinformation — HD10448; (c) Rechte von Inhaftierten / Migrantenminderrährigen / konsularischer Schutz (V/MP, HD11749, HD11748). **Empfehlung**: Kommunikatoren, die sich auf den Spätsommer-Wahlkampf vorbereiten, sollten erwarten, dass der Desinformationsrahmen (HD10448) zu einem Koalitions-Stresstest speziell für SD eskaliert; der Rahmen der Inhaftierten (HD11749) ist Vs primärer Angriffsvektor nach der Gefängniserweiterung.
+
+---
+
+### 60-Sekunden-Nachrichtenüberblick
+
+- 🔴 **Ausschussgruppe vom 24. April schließt regulatorisches Portfolio** — HD01JuU10 + HD01JuU31 + HD01SoU25 + HD01CU24 — Pre-Wahl-Lieferung im Zeitplan
+- 🔴 **Supermehrheit am 22. April** (HD01FiU48, M+SD+S+KD): S konnte 4,1 Mrd. SEK Kraftstoffsteuerreduktion 141 Tage vor der Wahl nicht ablehnen
+- 🟠 **Polizeireform 2015-Audit (RiR 2026:6 → HD01JuU31)** — kvardröjande lednings- och utredningsproblem; Implementierungskapazität ist das neue bindende Risiko
+- 🟠 **Windkraft-Desinformations-Interpellation (HD10448)** — erste explizite Verknüpfung von Energiepolitik und Informationsintegrität im riksmötet
+- 🟢 **SD-Disziplin hält** — null Motionen gegen Regierungsvorlagen in der Schlusswoche; Vertrauenspartei behält strukturelle Integrität
+- 🟡 **HD01SoU25 gestärkte Altenpflege** — Angehörigenstrategie und Hauspflegekompetenzanforderungen werden zum Liefertest gegen Försäkringskassan/Kommunen
+- 🟡 **Außenpolitischer langer Schwanz** — HD11748 (Burundi-Konsulatfall) signalisiert V/MP-Fokus auf konsularischen Schutz als humanitäres Wahlthema
+- 🟢 **Wohnungsbau** — HD01CU24 kürzt Bearbeitungszeiten; Effekt auf begonnene Wohnungen messbar Q3 2026 (data.scb.se: BO0101)
+
+---
+
+### Wichtigstes vorwärtsgerichtetes Signal
+
+**Überwachen**: Erste Post-24.-April SOM-Institut oder Demoskop Meinungsumfrage. Falls S > 28 % in der Schlagzeilenunterstützung trotz der Kraftstoffsteuerabstimmung vom 22. April zurückgewinnt, hat S's "symbolische Opposition + praktische Unterstützung"-Botschaft unter Druck standgehalten und die Septemberwahl bleibt ein strukturelles Toss-up. Falls S unter 26 % liegt, hat die Pre-Wahl-Positionierung des M+KD+L-Blocks nachweislich konvertiert. **Auslöserdatum**: 2026-05-08 ± 5 Tage (nächste monatliche Demoskop).
+
+---
+
+### Konfidenzverteilung
+
+| Konfidenzniveau | Schlüsselbewertungen | Grundlage |
+|-----------------|----------------------|-----------|
+| SEHR HOCH | KJ-1 (Lieferungsabschluss) | 8 dok_ids auf Datenträger + 13 Geschwister-Synthese-Referenzen |
+| HOCH | KJ-2 (Keil-Wirksamkeit NIEDRIG), KJ-3 (Implementierungsfokus) | Mehrkällig (riksdagen.se Abstimmungsprotokolle, RiR 2026:6, Geschwister-Nachrichtendienst) |
+| MITTEL | Vorwärts gerichtete Umfragedynamik | Einzelquelle (demoskop / SOM-Verzögerung) |
+
+```mermaid
+flowchart TD
+  A[April 22 fiscal supermajoritet]:::a --> B[April 24 stängningsbatch]:::b
+  B --> C[Pre-election delivery confidence ▲]:::g
+  C --> D{Implementation pivot}:::d
+  D --> E[Polismyndigheten - RiR 2026:6]:::e
+  D --> F[Miljöprövningsmyndigheten - HD03238]:::e
+  D --> G[Försäkringskassan / hemtjänst - HD01SoU25]:::e
+  classDef a fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+  classDef b fill:#1a1e3d,stroke:#ff006e,color:#ffffff
+  classDef g fill:#1a1e3d,stroke:#ffbe0b,color:#ffffff
+  classDef d fill:#0a0e27,stroke:#ff006e,color:#ff006e
+  classDef e fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+  style A stroke-width:2px
+```
+
+<!-- source-sha: 91eb3cb6cf35873538b354461078df4509cf0012 -->
+
+## Executive Brief Es
+<!-- source: executive-brief_es.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief_es.md -->
+
+**Clasificación**: PUBLIC | **Analista**: James Pether Sörling | **Fecha**: 2026-04-25
+**Nivel de confianza**: HIGH [A1] | **Días hasta las elecciones**: ~141 | **Ventana**: 2026-03-26 → 2026-04-25
+
+---
+
+### BLUF
+
+La ventana legislativa de 30 días de Suecia se cierra con el gobierno Kristersson (M–SD–KD–L) **completando su cartera regulatoria preelectoral**. El lote de comité del 24 de abril — **HD01JuU10 (nueva ley de armas), HD01JuU31 (seguimiento de reforma policial), HD01SoU25 (refuerzo de atención a mayores), HD01CU24 (eficiencia en procesos de construcción)** — cierra el cierre regulatorio encima del clímax fiscal del 22 de abril (HD01FiU48 reducción de impuesto sobre combustibles, M+SD+S+KD supermayoría) [riksdagen.se]. La sanidad y la criminalidad siguen siendo las cuñas *electorales* dominantes; el tráfico de interpelaciones de la oposición (HD10448 desinformación sobre energía eólica, HD11747 subsidios al trabajo, HD11749 derechos de menores detenidos, HD11748 protección consular en Burundi) muestra a S/V/MP operando una **narrativa disciplinada de tres pistas** mientras **SD ha presentado cero contramociones** contra los cuatro informes de comité del 24 de abril — una señal de confianza estructural que ya persiste durante 18 días de sesión consecutivos.
+
+---
+
+### 3 decisiones que apoya este informe
+
+#### Decisión 1: Evaluación de la confianza en la entrega preelectoral
+
+La coalición Tidö ha aprobado ahora su **cartera legislativa declarada completa para 2025/26** en los cuatro dominios centrales — fiscal (HD03100/HD0399), energía (HD03240/HD03238/HD03239), seguridad/defensa (UFöU3/HD03214/HD03228) y justicia penal/bienestar (HD01JuU10/HD01JuU31/HD01SoU25) — dentro de 141 días antes de las elecciones de septiembre de 2026. La implementación, no la legislación, es ahora el riesgo vinculante. **Recomendación**: cambiar la monitorización hacia la *viabilidad de implementación* (capacidad de Polismyndigheten tras RiR 2026:6, rendimiento de permisos de Miljöprövningsmyndigheten, carga administrativa de Försäkringskassan para la atención a mayores).
+
+#### Decisión 2: Probabilidad de la cuña salud y criminalidad
+
+La oposición *no* ha logrado fracturar la coalición en sus superficies de ataque primarias: las 39 reservas de SfU18 no cambiaron ni un solo voto; la división SD–KD en sanidad en SoU17 R15 fue contenida. La ley de armas HD01JuU10 y la auditoría de la reforma policial HD01JuU31 se aprueban ambas con la unidad M+SD+KD+L. **Recomendación**: los inversores y partes interesadas deben tratar la legislación de bienestar/seguridad como *duradera hasta septiembre de 2026*; la retórica de cuñas de la oposición domina pero la probabilidad de reversión legislativa es BAJA (≤ 25 %).
+
+#### Decisión 3: Arquitectura narrativa de la oposición antes de la campaña
+
+Tres cuñas de la oposición se cristalizaron en abril: (a) económica — combustible/baja laboral de PYMES (S, HD024082, HD10447); (b) desinformación ambiental — HD10448; (c) derechos de detenidos / menores migrantes / protección consular (V/MP, HD11749, HD11748). **Recomendación**: los comunicadores que se preparan para la campaña de finales de verano deben esperar que el marco de desinformación (HD10448) se expanda en un test de estrés de la coalición específicamente para SD; el marco de los detenidos (HD11749) es el vector de ataque principal de V tras la expansión carcelaria.
+
+---
+
+### Lectura de 60 segundos
+
+- 🔴 **El lote de comité del 24 de abril cierra la cartera regulatoria** — HD01JuU10 + HD01JuU31 + HD01SoU25 + HD01CU24 — entrega preelectoral en calendario
+- 🔴 **Supermayoría del 22 de abril** (HD01FiU48, M+SD+S+KD): S no pudo oponerse a 4,1 mil millones SEK de reducción de impuesto sobre combustibles 141 días antes de las elecciones
+- 🟠 **Auditoría de la reforma policial 2015 (RiR 2026:6 → HD01JuU31)** — kvardröjande lednings- och utredningsproblem; la capacidad de implementación es el nuevo riesgo vinculante
+- 🟠 **Interpelación sobre desinformación eólica (HD10448)** — primera vinculación explícita de la política energética e integridad de la información en el riksmötet
+- 🟢 **La disciplina del SD se mantiene** — cero mociones contra proposiciones del gobierno en la semana de cierre; el partido de confianza mantiene integridad estructural
+- 🟡 **HD01SoU25 refuerzo de la atención a mayores** — la estrategia de cuidadores familiares y los requisitos de competencia en servicios domiciliarios se convierten en test de entrega frente a Försäkringskassan/municipios
+- 🟡 **Cola de política exterior** — HD11748 (caso consular de Burundi) señala el enfoque de V/MP en la protección consular como cuestión electoral humanitaria
+- 🟢 **Producción de viviendas** — HD01CU24 acorta los plazos de tramitación; efecto sobre viviendas iniciadas medible en Q3 2026 (data.scb.se: BO0101)
+
+---
+
+### Principal señal prospectiva
+
+**Monitorizar**: Primer sondeo de opinión del Instituto SOM o Demoskop posterior al 24 de abril. Si S recupera > 28 % de apoyo en titulares a pesar de la votación de la reducción del impuesto sobre combustibles del 22 de abril, el mensaje de S de "oposición simbólica + apoyo práctico" ha resistido bajo presión y las elecciones de septiembre siguen siendo un empate estructural. Si S queda por debajo del 26 %, el posicionamiento preelectoral del bloque M+KD+L ha demostrado conversión. **Fecha desencadenante**: 2026-05-08 ± 5 días (próxima Demoskop mensual).
+
+---
+
+### Distribución de la confianza
+
+| Nivel de confianza | Evaluaciones clave | Fundamento |
+|--------------------|--------------------|------------|
+| MUY ALTO | KJ-1 (finalización de entrega) | 8 dok_ids en disco + 13 referencias de síntesis hermana |
+| ALTO | KJ-2 (eficacia de cuña BAJA), KJ-3 (pivote de implementación) | Multi-fuente (registros de votación riksdagen.se, RiR 2026:6, inteligencia hermana) |
+| MEDIO | Dinámica de encuestas prospectivas | Fuente única (demoskop / retraso SOM) |
+
+```mermaid
+flowchart TD
+  A[April 22 fiscal supermajoritet]:::a --> B[April 24 stängningsbatch]:::b
+  B --> C[Pre-election delivery confidence ▲]:::g
+  C --> D{Implementation pivot}:::d
+  D --> E[Polismyndigheten - RiR 2026:6]:::e
+  D --> F[Miljöprövningsmyndigheten - HD03238]:::e
+  D --> G[Försäkringskassan / hemtjänst - HD01SoU25]:::e
+  classDef a fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+  classDef b fill:#1a1e3d,stroke:#ff006e,color:#ffffff
+  classDef g fill:#1a1e3d,stroke:#ffbe0b,color:#ffffff
+  classDef d fill:#0a0e27,stroke:#ff006e,color:#ff006e
+  classDef e fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+  style A stroke-width:2px
+```
+
+<!-- source-sha: 91eb3cb6cf35873538b354461078df4509cf0012 -->
+
+## Executive Brief Fi
+<!-- source: executive-brief_fi.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief_fi.md -->
+
+**Luokittelu**: PUBLIC | **Analyytikko**: James Pether Sörling | **Päiväys**: 2026-04-25
+**Luottamustaso**: HIGH [A1] | **Päiviä vaaleihin**: ~141 | **Aikaikkuna**: 2026-03-26 → 2026-04-25
+
+---
+
+### Johtopäätös
+
+Ruotsin 30 päivän lainsäädäntöikkuna sulkeutuu Kristerssonin hallituksen (M–SD–KD–L) **täyttäessä esivaalisääntelyportfolionsa**. 24. huhtikuuta valiokuntaerä — **HD01JuU10 (uusi asejaki), HD01JuU31 (poliisiuudistuksen jatkotoimet), HD01SoU25 (vanhustenhuollon vahvistaminen), HD01CU24 (rakentamisprosessien tehokkuus)** — lukitsee sääntelyyn liittyvän päätöksen 22. huhtikuuuta saavutetun finansiaalisen huipun päälle (HD01FiU48 polttoaineverovähennys, M+SD+S+KD supraenemmistö) [riksdagen.se]. Terveydenhuolto ja rikollisuus ovat edelleen hallitsevia *vaalikiiloja*; opposition interpellaatioliikenne (HD10448 tuulivoimadisinformaatio, HD11747 työvoimatukiohjelmat, HD11749 vapautensa menettäneiden lasten oikeudet, HD11748 konsulaarisuoja Burundissa) osoittaa S/V/MP:n ajavan **kurinalaistettu kolmiraiteinen narratiivi** samalla kun **SD ei ole jättänyt yhtään vastalausetta** neljää 24. huhtikuuuta laadittua valiokuntaraporttia vastaan — rakenteellinen luottamusmerkki, joka on nyt pysynyt voimassa 18 peräkkäisen istuntopäivän ajan.
+
+---
+
+### 3 päätöstä, joita tämä tiedote tukee
+
+#### Päätös 1: Esivaalitoimituksen luottamusarvio
+
+Tidö-koalitio on nyt hyväksynyt **täydellisen ilmoitetun 2025/26 lainsäädäntöportfolionsa** neljällä ydinosaamisen alalla — finanssipolitiikka (HD03100/HD0399), energia (HD03240/HD03238/HD03239), turvallisuus/puolustus (UFöU3/HD03214/HD03228) ja rikosoikeus/hyvinvointi (HD01JuU10/HD01JuU31/HD01SoU25) — 141 päivän sisällä syyskuun 2026 vaaleista. Toimeenpano, ei lainsäädäntö, on nyt sitova riski. **Suositus**: siirrä seuranta *toimeenpanon toteuttamiskelpoisuuteen* (Polismyndighetenin kapasiteetti RiR 2026:6 jälkeen, Miljöprövningsmyndighetenin lupajuoksu, Försäkringskassanin hallinnollinen kuormitus vanhustenhuollolle).
+
+#### Päätös 2: Terveydenhuollon ja rikollisuuden kiilan todennäköisyys
+
+Oppositio ei ole *onnistunut* repimään koalition pääsyä hyökkäyspinnallaan: SfU18:n 39 varausta eivät kääntäneet yhtäkään ääntä; SD–KD terveydenhuollon jako SoU17 R15:ssä rajoitettiin. HD01JuU10 asejaki ja HD01JuU31 poliisiuudistuksen tarkistus hyväksytään molemmat M+SD+KD+L-yhtenäisyydellä. **Suositus**: sijoittajien ja sidosryhmien tulisi kohdella hyvinvointi-/turvallisuuslainsäädäntöä *kestävänä syyskuuhun 2026 asti*; opposition kiilaretorikka dominoi, mutta lainsäädännön kumoamisen todennäköisyys on MATALA (≤ 25 %).
+
+#### Päätös 3: Esivaalijakson opposition narratiivirakenne
+
+Kolme opposition kiilaa kiteytyi huhtikuussa: (a) taloudellinen — polttoaine/PK-yritysten sairauspalkka (S, HD024082, HD10447); (b) ympäristödisinformaatio — HD10448; (c) vapautensa menettäneiden oikeudet / siirtolaisalaikäiset / konsulaarisuoja (V/MP, HD11749, HD11748). **Suositus**: myöhäiskesän kampanjaan valmistautuvien viestijöiden tulisi odottaa disinformaatiokehyksen (HD10448) laajentuvan koalition stressitestiksi erityisesti SD:lle; vapautensa menettäneiden kehys (HD11749) on V:n ensisijainen hyökkäysvektori vankilalaajennuksen jälkeen.
+
+---
+
+### 60 sekunnin tiedustelutiivistelmä
+
+- 🔴 **24. huhtikuussa valiokuntaerä sulkee sääntelyportfolion** — HD01JuU10 + HD01JuU31 + HD01SoU25 + HD01CU24 — esivaalitoimitukset aikataulussa
+- 🔴 **Supraenemmistö 22. huhtikuuta** (HD01FiU48, M+SD+S+KD): S ei voinut vastustaa 4,1 Mrd. SEK polttoainerovähennystä 141 päivää ennen vaaleja
+- 🟠 **Poliisiuudistus 2015 -tarkistus (RiR 2026:6 → HD01JuU31)** — kvardröjande lednings- och utredningsproblem; toimeenpanokapasiteetti on uusi sitova riski
+- 🟠 **Tuulivoimadisinformaation interpellaatio (HD10448)** — ensimmäinen nimenomainen energiapolitiikan ja tietointegriteetin yhdistäminen riksmötessä
+- 🟢 **SD-kuri pitää** — nolla motioita hallituksen esityksiä vastaan sulkemisviikolla; luottamuspuolue säilyttää rakenteellisen eheyden
+- 🟡 **HD01SoU25 vanhustenhuollon vahvistaminen** — omaisten hoitostrategia ja kotihoidon pätevyysvaatimukset ovat toimitustesti Försäkringskassania/kuntia vastaan
+- 🟡 **Ulkopolitiikan pitkä häntä** — HD11748 (Burundi konsulaarisuoja) signaloi V/MP-fokuksen konsulaarisuojaan humanitaarisena vaaliaiheena
+- 🟢 **Asuntotuotanto** — HD01CU24 lyhentää käsittelyaikoja; vaikutus aloitettuihin asuntoihin mitattavissa Q3 2026 (data.scb.se: BO0101)
+
+---
+
+### Tärkein eteenpäin suuntautuva signaali
+
+**Seuraa**: Ensimmäinen 24. huhtikuuta jälkeinen SOM-instituutti tai Demoskop mielipidetutkimus. Jos S saa takaisin > 28 % kannatuksen polttoainerovähennysäänestyksen 22. huhtikuuta jälkeen, S:n "symbolinen oppositio + käytännön tuki" -viesti on kestänyt paineessa ja syyskuun vaalit säilyvät rakenteellisesti tasaisena kamppailuna. Jos S jää alle 26 %, M+KD+L-blokin esivaaliasemointi on selkeästi muuntautunut. **Laukaisupäivämäärä**: 2026-05-08 ± 5 päivää (seuraava Demoskop kuukausittainen).
+
+---
+
+### Luottamusjakauma
+
+| Luottamustaso | Avainhavainnot | Perusta |
+|---------------|----------------|---------|
+| HYVIN KORKEA | KJ-1 (toimitusten toteutus) | 8 dok_id:tä levyllä + 13 sisarussynteesin viittausta |
+| KORKEA | KJ-2 (kiilatehokkuus MATALA), KJ-3 (toimeenpanofokus) | Monilähteinen (riksdagen.se äänestysprotokollat, RiR 2026:6, sisarusten tiedustelu) |
+| KOHTALAINEN | Eteenpäin katsova kyselydynamiikka | Yksillähteinen (demoskop / SOM-viive) |
+
+```mermaid
+flowchart TD
+  A[April 22 fiscal supermajoritet]:::a --> B[April 24 stängningsbatch]:::b
+  B --> C[Pre-election delivery confidence ▲]:::g
+  C --> D{Implementation pivot}:::d
+  D --> E[Polismyndigheten - RiR 2026:6]:::e
+  D --> F[Miljöprövningsmyndigheten - HD03238]:::e
+  D --> G[Försäkringskassan / hemtjänst - HD01SoU25]:::e
+  classDef a fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+  classDef b fill:#1a1e3d,stroke:#ff006e,color:#ffffff
+  classDef g fill:#1a1e3d,stroke:#ffbe0b,color:#ffffff
+  classDef d fill:#0a0e27,stroke:#ff006e,color:#ff006e
+  classDef e fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+  style A stroke-width:2px
+```
+
+<!-- source-sha: 91eb3cb6cf35873538b354461078df4509cf0012 -->
+
+## Executive Brief Fr
+<!-- source: executive-brief_fr.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief_fr.md -->
+
+**Niveau de confiance** : HIGH [A1] | **Jours avant l'élection** : ~141 | **Fenêtre** : 2026-03-26 → 2026-04-25
+
+---
+
+### BLUF
+
+La fenêtre législative de 30 jours de la Suède se ferme avec le gouvernement Kristersson (M–SD–KD–L) **complétant son portefeuille réglementaire pré-électoral**. Le lot de commission du 24 avril — **HD01JuU10 (nouvelle loi sur les armes), HD01JuU31 (suivi de la réforme policière), HD01SoU25 (renforcement des soins aux personnes âgées), HD01CU24 (efficacité des processus de construction)** — verrouille la clôture réglementaire au-dessus du climax financier du 22 avril (HD01FiU48 réduction de la taxe sur les carburants, M+SD+S+KD supermajorité) [riksdagen.se]. La santé et la criminalité restent les clivages *électoraux* dominants ; le trafic d'interpellations de l'opposition (HD10448 désinformation sur l'éolien, HD11747 subventions au travail, HD11749 droits des enfants détenus, HD11748 protection consulaire au Burundi) montre S/V/MP opérant un **narratif discipliné à trois pistes** tandis que **SD n'a déposé zéro contre-motion** contre les quatre rapports de commission du 24 avril — un signal de confiance structurelle qui persiste désormais depuis 18 jours de séance consécutifs.
+
+---
+
+### 3 décisions que ce briefing soutient
+
+#### Décision 1 : Évaluation de la confiance dans la livraison pré-électorale
+
+La coalition Tidö a maintenant adopté son **portfolio législatif déclaré complet pour 2025/26** dans les quatre domaines clés — fiscal (HD03100/HD0399), énergie (HD03240/HD03238/HD03239), sécurité/défense (UFöU3/HD03214/HD03228) et justice pénale/bien-être (HD01JuU10/HD01JuU31/HD01SoU25) — dans les 141 jours précédant l'élection de septembre 2026. La mise en œuvre, et non la législation, est maintenant le risque contraignant. **Recommandation** : faire pivoter la surveillance vers la *faisabilité de la mise en œuvre* (capacité de Polismyndigheten après RiR 2026:6, débit de permis de Miljöprövningsmyndigheten, charge administrative de Försäkringskassan pour les soins aux personnes âgées).
+
+#### Décision 2 : Probabilité de clivage santé et criminalité
+
+L'opposition n'a *pas* réussi à fracturer la coalition sur ses principales surfaces d'attaque : les 39 réserves de SfU18 n'ont pas retourné une seule voix ; la division SD–KD sur les soins de santé sur SoU17 R15 a été contenue. La loi sur les armes HD01JuU10 et l'audit de la réforme policière HD01JuU31 sont tous deux adoptés avec l'unité M+SD+KD+L. **Recommandation** : les investisseurs et les parties prenantes devraient traiter la législation sur la protection sociale/sécurité comme *durable jusqu'en septembre 2026* ; la rhétorique de clivage de l'opposition domine mais la probabilité d'inversion législative est FAIBLE (≤ 25 %).
+
+#### Décision 3 : Architecture narrative de l'opposition avant la campagne
+
+Trois clivages de l'opposition se sont cristallisés en avril : (a) économique — carburant/maladie-PME (S, HD024082, HD10447) ; (b) désinformation environnementale — HD10448 ; (c) droits des détenus / mineurs migrants / protection consulaire (V/MP, HD11749, HD11748). **Recommandation** : les communicants se préparant à la campagne de fin d'été devraient s'attendre à ce que le cadre de désinformation (HD10448) s'étende en un test de stress de la coalition spécifiquement pour le SD ; le cadre des détenus (HD11749) est le principal vecteur d'attaque de V après l'expansion carcérale.
+
+---
+
+### Lecture en 60 secondes
+
+- 🔴 **Le lot de commission du 24 avril ferme le portefeuille réglementaire** — HD01JuU10 + HD01JuU31 + HD01SoU25 + HD01CU24 — livraison pré-électorale dans les délais
+- 🔴 **Supermajorité du 22 avril** (HD01FiU48, M+SD+S+KD) : S ne pouvait pas s'opposer à 4,1 milliards SEK de réduction de taxe sur les carburants 141 jours avant l'élection
+- 🟠 **Audit de la réforme policière 2015 (RiR 2026:6 → HD01JuU31)** — kvardröjande lednings- och utredningsproblem ; la capacité de mise en œuvre est le nouveau risque contraignant
+- 🟠 **Interpellation sur la désinformation éolienne (HD10448)** — premier couplage explicite entre politique énergétique et intégrité de l'information au riksmötet
+- 🟢 **Discipline du SD tient** — zéro motion contre les propositions gouvernementales lors de la semaine de clôture ; le parti de confiance maintient l'intégrité structurelle
+- 🟡 **HD01SoU25 renforcement des soins aux personnes âgées** — stratégie de proche aidant et exigences de compétence des services à domicile deviennent un test de livraison contre Försäkringskassan/communes
+- 🟡 **Queue de politique étrangère** — HD11748 (affaire consulaire du Burundi) signale l'accent de V/MP sur la protection consulaire comme enjeu électoral humanitaire
+- 🟢 **Production de logements** — HD01CU24 raccourcit les délais de traitement ; effet sur les logements commencés mesurable au T3 2026 (data.scb.se : BO0101)
+
+---
+
+### Principal signal prospectif
+
+**Surveiller** : Premier sondage d'opinion de l'Institut SOM ou de Demoskop post-24 avril. Si S regagne > 28 % de soutien en titres malgré le vote de réduction de taxe sur les carburants du 22 avril, le message de S de « opposition symbolique + soutien pratique » a résisté sous pression et l'élection de septembre reste structurellement incertaine. Si S est en deçà de 26 %, le positionnement pré-électoral du bloc M+KD+L a démontrablement converti. **Date déclencheur** : 2026-05-08 ± 5 jours (prochaine Demoskop mensuelle).
+
+---
+
+### Distribution de la confiance
+
+| Niveau de confiance | Évaluations clés | Fondement |
+|---------------------|------------------|-----------|
+| TRÈS ÉLEVÉ | KJ-1 (achèvement de la livraison) | 8 dok_ids sur disque + 13 références de synthèse fraternelle |
+| ÉLEVÉ | KJ-2 (efficacité du clivage FAIBLE), KJ-3 (pivot d'implémentation) | Multi-source (registres de vote riksdagen.se, RiR 2026:6, renseignement fraternel) |
+| MOYEN | Dynamique des sondages prospectifs | Source unique (demoskop / délai SOM) |
+
+```mermaid
+flowchart TD
+  A[April 22 fiscal supermajoritet]:::a --> B[April 24 stängningsbatch]:::b
+  B --> C[Pre-election delivery confidence ▲]:::g
+  C --> D{Implementation pivot}:::d
+  D --> E[Polismyndigheten - RiR 2026:6]:::e
+  D --> F[Miljöprövningsmyndigheten - HD03238]:::e
+  D --> G[Försäkringskassan / hemtjänst - HD01SoU25]:::e
+  classDef a fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+  classDef b fill:#1a1e3d,stroke:#ff006e,color:#ffffff
+  classDef g fill:#1a1e3d,stroke:#ffbe0b,color:#ffffff
+  classDef d fill:#0a0e27,stroke:#ff006e,color:#ff006e
+  classDef e fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+  style A stroke-width:2px
+```
+
+<!-- source-sha: 91eb3cb6cf35873538b354461078df4509cf0012 -->
+
+## Executive Brief He
+<!-- source: executive-brief_he.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief_he.md -->
+
+<!-- dir: rtl -->
+# סקירה חודשית — 2026-04-25
+
+**סיווג**: ציבורי | **אנליסט**: James Pether Sörling | **תאריך**: 2026-04-25
+**רמת ביטחון**: HIGH [A1] | **ימים לבחירות**: ~141 | **חלון**: 2026-03-26 → 2026-04-25
+
+---
+
+### מסקנה מרכזית
+
+חלון החקיקה של 30 הימים של שוודיה נסגר כשממשלת קריסטרסון (M–SD–KD–L) **משלימה את תיק הרגולציה שלה לפני הבחירות**. אצוות הוועדה של 24 באפריל — **HD01JuU10 (חוק נשק חדש), HD01JuU31 (מעקב אחר רפורמת המשטרה), HD01SoU25 (חיזוק שירותי קשישים), HD01CU24 (יעילות תהליכי בנייה)** — נועלת את הסיום הרגולטורי מעל לשיא הפיסקלי של 22 באפריל (HD01FiU48 הפחתת מס דלק, M+SD+S+KD רוב גדול) [riksdagen.se]. בריאות ופשיעה נותרות הטריזים הבחירותיים *הדומיננטיים*; תנועת ביניים האופוזיציה (HD10448 דיסאינפורמציה על אנרגיית רוח, HD11747 סבסוד עבודה, HD11749 זכויות ילדים עצורים, HD11748 הגנה קונסולרית בבורונדי) מראה S/V/MP מפעילים **נרטיב מוסדר בשלושה מסלולים** בעוד **SD הגיש אפס נגד-הצעות** כנגד ארבעת דוחות הוועדה מ-24 באפריל — אות ביטחון מבני שנמשך כעת 18 ימי ישיבה רצופים.
+
+---
+
+### 3 החלטות שבריף זה תומך בהן
+
+#### החלטה 1: הערכת ביטחון מסירה לפני הבחירות
+
+קואליציית Tidö אישרה כעת את **תיק החקיקה המוצהר המלא שלה לשנים 2025/26** בארבעת התחומים המרכזיים — פיסקלי (HD03100/HD0399), אנרגיה (HD03240/HD03238/HD03239), ביטחון/הגנה (UFöU3/HD03214/HD03228) ומשפט פלילי/רווחה (HD01JuU10/HD01JuU31/HD01SoU25) — בתוך 141 ימים מבחירות ספטמבר 2026. יישום, לא חקיקה, הוא כעת הסיכון המחייב. **המלצה**: הסב ניטור ל*היתכנות יישום* (קיבולת Polismyndigheten לאחר RiR 2026:6, תפוקת רישיונות Miljöprövningsmyndigheten, עומס מנהלי Försäkringskassan לשירותי קשישים).
+
+#### החלטה 2: הסתברות טריז הבריאות והפשיעה
+
+האופוזיציה *לא* הצליחה לפוצץ את הקואליציה על פני ההתקפה העיקריים: 39 ההסתייגויות של SfU18 לא הפכו ולו קול אחד; פיצול SD–KD על בריאות ב-SoU17 R15 רוסן. חוק הנשק HD01JuU10 ותדיקת רפורמת המשטרה HD01JuU31 עוברים שניהם עם אחדות M+SD+KD+L. **המלצה**: משקיעים ובעלי עניין צריכים להתייחס לחקיקת הרווחה/ביטחון כ*בת-קיימא עד ספטמבר 2026*; רטוריקת הטריזים של האופוזיציה שולטת אך הסתברות היפוך חקיקתי היא נמוכה (≤ 25%).
+
+#### החלטה 3: ארכיטקטורת נרטיב האופוזיציה לפני הקמפיין
+
+שלושה טריזי אופוזיציה התגבשו באפריל: (א) כלכלי — דלק/דמי מחלה לעסקים קטנים (S, HD024082, HD10447); (ב) דיסאינפורמציה סביבתית — HD10448; (ג) זכויות עצורים / קטינים מהגרים / הגנה קונסולרית (V/MP, HD11749, HD11748). **המלצה**: מתקשרים המתכוננים לקמפיין סוף הקיץ צריכים לצפות שמסגרת הדיסאינפורמציה (HD10448) תתרחב לבחינת עמידות הקואליציה במיוחד לגבי SD; מסגרת העצורים (HD11749) היא וקטור ההתקפה העיקרי של V לאחר הרחבת בתי הסוהר.
+
+---
+
+### קריאת מודיעין של 60 שניות
+
+- 🔴 **אצוות ועדת 24 באפריל סוגרת תיק רגולטורי** — HD01JuU10 + HD01JuU31 + HD01SoU25 + HD01CU24 — מסירה לפני הבחירות בלוח הזמנים
+- 🔴 **רוב גדול ב-22 באפריל** (HD01FiU48, M+SD+S+KD): S לא יכלה להתנגד להפחתת מס דלק של 4.1 מיליארד SEK 141 ימים לפני הבחירות
+- 🟠 **ביקורת רפורמת המשטרה 2015 (RiR 2026:6 → HD01JuU31)** — kvardröjande lednings- och utredningsproblem; קיבולת יישום היא הסיכון המחייב החדש
+- 🟠 **ביניים דיסאינפורמציה אנרגיית רוח (HD10448)** — הצימוד הראשון המפורש של מדיניות אנרגיה ושלמות מידע ב-riksmötet
+- 🟢 **משמעת SD מחזיקה** — אפס הצעות כנגד הצעות הממשלה בשבוע הסגירה; מפלגת הביטחון שומרת על שלמות מבנית
+- 🟡 **HD01SoU25 חיזוק שירותי קשישים** — אסטרטגיית מטפלים משפחתיים ודרישות כשירות שירותי בית הופכים לבחינת מסירה מול Försäkringskassan/עיריות
+- 🟡 **זנב מדיניות חוץ** — HD11748 (מקרה קונסולרי בורונדי) מאותת על מיקוד V/MP בהגנה קונסולרית כנושא בחירות הומניטרי
+- 🟢 **ייצור דיור** — HD01CU24 מקצר זמני טיפול; השפעה על דיור שהחל ניתנת למדידה Q3 2026 (data.scb.se: BO0101)
+
+---
+
+### אות מרכזי מבט-קדימה
+
+**ניטור**: סקר דעת ראשון של מכון SOM או Demoskop לאחר 24 באפריל. אם S מחזירה > 28% תמיכה בכותרות למרות הצבעת הפחתת מס הדלק של 22 באפריל, הודעת S "אופוזיציה סמלית + תמיכה מעשית" עמדה תחת לחץ והבחירות בספטמבר נשארות תחרות מבנית שקולה. אם S מפגרת מתחת ל-26%, מיצוב M+KD+L לפני הבחירות הוכיח המרה. **תאריך טריגר**: 2026-05-08 ± 5 ימים (Demoskop חודשי הבא).
+
+---
+
+### התפלגות ביטחון
+
+| רמת ביטחון | הערכות מפתח | בסיס |
+|------------|-------------|------|
+| גבוה מאוד | KJ-1 (השלמת מסירה) | 8 dok_ids על הדיסק + 13 הפניות לסינתזה אחות |
+| גבוה | KJ-2 (אפקטיביות טריז נמוכה), KJ-3 (ציר יישום) | ריבוי מקורות (רשומות הצבעה riksdagen.se, RiR 2026:6, מודיעין אחות) |
+| בינוני | דינמיקת סקרים מבטאי-קדימה | מקור יחיד (demoskop / עיכוב SOM) |
+
+```mermaid
+flowchart TD
+  A[April 22 fiscal supermajoritet]:::a --> B[April 24 stängningsbatch]:::b
+  B --> C[Pre-election delivery confidence ▲]:::g
+  C --> D{Implementation pivot}:::d
+  D --> E[Polismyndigheten - RiR 2026:6]:::e
+  D --> F[Miljöprövningsmyndigheten - HD03238]:::e
+  D --> G[Försäkringskassan / hemtjänst - HD01SoU25]:::e
+  classDef a fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+  classDef b fill:#1a1e3d,stroke:#ff006e,color:#ffffff
+  classDef g fill:#1a1e3d,stroke:#ffbe0b,color:#ffffff
+  classDef d fill:#0a0e27,stroke:#ff006e,color:#ff006e
+  classDef e fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+  style A stroke-width:2px
+```
+
+<!-- source-sha: 91eb3cb6cf35873538b354461078df4509cf0012 -->
+
+## Executive Brief Ja
+<!-- source: executive-brief_ja.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief_ja.md -->
+
+**分類**: 公開 | **アナリスト**: James Pether Sörling | **日付**: 2026-04-25
+**信頼レベル**: HIGH [A1] | **選挙まで**: ~141日 | **期間**: 2026-03-26 → 2026-04-25
+
+---
+
+### 要旨
+
+スウェーデンの30日間の立法ウィンドウが閉じる。クリステルソン政権（M–SD–KD–L）は**選挙前の規制ポートフォリオを完成**させた。4月24日の委員会バッチ — **HD01JuU10（新銃器法）、HD01JuU31（警察改革フォローアップ）、HD01SoU25（高齢者ケア強化）、HD01CU24（建設プロセス効率化）** — は4月22日の財政的クライマックス（HD01FiU48燃料税減税、M+SD+S+KD超多数）の上に規制的終結を固めた [riksdagen.se]。医療と犯罪は引き続き支配的な*選挙上の*くさびであり、野党の質問活動（HD10448 風力デマ情報、HD11747 就労補助金、HD11749 拘禁児童の権利、HD11748 ブルンジでの領事保護）はS/V/MPが**規律ある三線ナラティブ**を展開していることを示す。一方**SDは4月24日の4つの委員会報告書に対して対抗動議を一件も提出せず** — 18連続議会日続いている構造的信頼シグナルだ。
+
+---
+
+### このブリーフィングが支持する3つの判断
+
+#### 判断1：選挙前納品信頼度評価
+
+Tidö連立は4つのコア領域 — 財政（HD03100/HD0399）、エネルギー（HD03240/HD03238/HD03239）、安全保障/防衛（UFöU3/HD03214/HD03228）、刑事司法/福祉（HD01JuU10/HD01JuU31/HD01SoU25）— において**完全な2025/26宣言立法ポートフォリオ**を2026年9月選挙の141日以内に可決した。立法ではなく実施が今や拘束リスクだ。**勧告**: 監視を*実施可能性*（RiR 2026:6後のPolismyndigheten能力、Miljöprövningsmyndighetenの許可スループット、Försäkringskassanの高齢者ケア行政負荷）に転換せよ。
+
+#### 判断2：医療・犯罪くさび確率
+
+野党は主要攻撃面で連立を*割ることに成功していない*：SfU18の39留保は一票も動かさなかった；SoU17 R15でのSD–KD医療分裂は封じ込められた。HD01JuU10銃器法とHD01JuU31警察改革監査はともにM+SD+KD+L一致で可決。**勧告**: 投資家や利害関係者は福祉/安全保障立法を*2026年9月まで継続*として扱うべきだ；野党のくさびレトリックは支配的だが立法反転確率は低い（≤ 25%）。
+
+#### 判断3：キャンペーン前の野党ナラティブ構造
+
+4月に3つの野党くさびが結晶化した：（a）経済 — 燃料/中小企業病欠賃金（S、HD024082、HD10447）；（b）環境デマ情報 — HD10448；（c）拘禁者の権利 / 移民未成年者 / 領事保護（V/MP、HD11749、HD11748）。**勧告**: 夏後半のキャンペーンに備えるコミュニケーターはデマ情報フレーム（HD10448）がSD特有の連立ストレステストに拡大することを期待すべきだ；拘禁者フレーム（HD11749）は刑務所拡大後のVの主要攻撃ベクターだ。
+
+---
+
+### 60秒インテリジェンス読解
+
+- 🔴 **4月24日委員会バッチが規制ポートフォリオを完結** — HD01JuU10 + HD01JuU31 + HD01SoU25 + HD01CU24 — 選挙前納品スケジュール通り
+- 🔴 **4月22日の超多数** (HD01FiU48, M+SD+S+KD): 選挙141日前にSは41億SEKの燃料税減税に反対できなかった
+- 🟠 **2015年警察改革監査 (RiR 2026:6 → HD01JuU31)** — kvardröjande lednings- och utredningsproblem；実施能力が新たな拘束リスク
+- 🟠 **風力デマ情報質問 (HD10448)** — riksmötetにおけるエネルギー政策と情報整合性の初の明示的連結
+- 🟢 **SDの規律が維持** — 閉会週に政府提案への動議ゼロ；信頼政党が構造的整合性を保持
+- 🟡 **HD01SoU25 高齢者ケア強化** — 家族介護者戦略と在宅サービス能力要件がFörsäkringskassan/自治体に対する納品テストとなる
+- 🟡 **外交政策の長い尾** — HD11748（ブルンジ領事事案）がV/MPの領事保護への焦点を人道的選挙争点としてシグナル
+- 🟢 **住宅生産** — HD01CU24が処理時間を短縮；着工住宅数への効果はQ3 2026に測定可能（data.scb.se: BO0101）
+
+---
+
+### 最重要前向きシグナル
+
+**監視**: 4月24日以降初のSOM研究所またはDemoskop世論調査。Sが4月22日の燃料税減税投票にもかかわらず見出し支持で28%超を回復すれば、Sの「象徴的反対 + 実践的支持」メッセージが圧力下で持ちこたえ、9月選挙は依然として構造的拮抗状態だ。Sが26%を下回れば、M+KD+Lブロックの選挙前ポジショニングが実証的に転換したことになる。**トリガー日**: 2026-05-08 ± 5日（次回Demoskop月次）。
+
+---
+
+### 信頼度分布
+
+| 信頼レベル | 主要評価 | 根拠 |
+|-----------|----------|------|
+| 非常に高い | KJ-1（納品完了） | 8 dok_idsオンディスク + 13兄弟合成参照 |
+| 高い | KJ-2（くさび有効性LOW）、KJ-3（実施ピボット） | 複数情報源（riksdagen.se投票記録、RiR 2026:6、兄弟インテリジェンス） |
+| 中程度 | 前向き世論調査ダイナミクス | 単一情報源（demoskop / SOMラグ） |
+
+```mermaid
+flowchart TD
+  A[April 22 fiscal supermajoritet]:::a --> B[April 24 stängningsbatch]:::b
+  B --> C[Pre-election delivery confidence ▲]:::g
+  C --> D{Implementation pivot}:::d
+  D --> E[Polismyndigheten - RiR 2026:6]:::e
+  D --> F[Miljöprövningsmyndigheten - HD03238]:::e
+  D --> G[Försäkringskassan / hemtjänst - HD01SoU25]:::e
+  classDef a fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+  classDef b fill:#1a1e3d,stroke:#ff006e,color:#ffffff
+  classDef g fill:#1a1e3d,stroke:#ffbe0b,color:#ffffff
+  classDef d fill:#0a0e27,stroke:#ff006e,color:#ff006e
+  classDef e fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+  style A stroke-width:2px
+```
+
+<!-- source-sha: 91eb3cb6cf35873538b354461078df4509cf0012 -->
+
+## Executive Brief Ko
+<!-- source: executive-brief_ko.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief_ko.md -->
+
+**분류**: 공개 | **분석가**: James Pether Sörling | **날짜**: 2026-04-25
+**신뢰 수준**: HIGH [A1] | **선거까지 일수**: ~141 | **기간**: 2026-03-26 → 2026-04-25
+
+---
+
+### 핵심 결론
+
+스웨덴의 30일 입법 창이 닫히는 가운데 크리스터손 정부(M–SD–KD–L)가 **선거 전 규제 포트폴리오를 완성**하고 있다. 4월 24일 위원회 배치 — **HD01JuU10 (새 총기법), HD01JuU31 (경찰 개혁 후속 조치), HD01SoU25 (노인 돌봄 강화), HD01CU24 (건설 프로세스 효율화)** — 가 4월 22일의 재정적 절정(HD01FiU48 연료세 감면, M+SD+S+KD 초다수) 위에 규제적 마무리를 고정시켰다 [riksdagen.se]. 의료와 범죄는 여전히 지배적인 *선거적* 쐐기이며; 야당의 보충질문 흐름 (HD10448 풍력 허위정보, HD11747 고용 보조금, HD11749 구금 아동의 권리, HD11748 부룬디 영사 보호)은 S/V/MP가 **규율 있는 3중 트랙 서사**를 운영하고 있음을 보여준다. 반면 **SD는 4월 24일 4개 위원회 보고서에 대해 반대 발의를 한 건도 제출하지 않았다** — 18회 연속 의회일 동안 지속된 구조적 신뢰 신호다.
+
+---
+
+### 이 브리핑이 지원하는 3가지 결정
+
+#### 결정 1: 선거 전 납품 신뢰도 평가
+
+Tidö 연립은 이제 4개 핵심 영역 — 재정(HD03100/HD0399), 에너지(HD03240/HD03238/HD03239), 안보/국방(UFöU3/HD03214/HD03228), 형사 사법/복지(HD01JuU10/HD01JuU31/HD01SoU25) — 에서 **완전한 2025/26 선언 입법 포트폴리오**를 2026년 9월 선거 141일 내에 통과시켰다. 입법이 아닌 이행이 이제 구속적 위험이다. **권고**: 모니터링을 *이행 실현 가능성* (RiR 2026:6 이후 Polismyndigheten 역량, Miljöprövningsmyndigheten 허가 처리량, Försäkringskassan의 노인 돌봄 행정 부하)으로 전환하라.
+
+#### 결정 2: 의료-범죄 쐐기 확률
+
+야당은 주요 공격 면에서 연립을 *분열시키는 데 성공하지 못했다*: SfU18의 39개 유보는 단 한 표도 뒤집지 못했다; SoU17 R15의 SD–KD 의료 분열은 봉쇄됐다. HD01JuU10 총기법과 HD01JuU31 경찰 개혁 감사는 모두 M+SD+KD+L 단일성으로 통과됐다. **권고**: 투자자와 이해관계자들은 복지/안보 입법을 *2026년 9월까지 지속적*으로 처리해야 한다; 야당의 쐐기 수사는 지배적이지만 입법 역전 확률은 낮다 (≤ 25%).
+
+#### 결정 3: 캠페인 전 야당 서사 구조
+
+4월에 세 가지 야당 쐐기가 결정화됐다: (a) 경제 — 연료/SME 병가급여 (S, HD024082, HD10447); (b) 환경 허위정보 — HD10448; (c) 구금자의 권리 / 이민 미성년자 / 영사 보호 (V/MP, HD11749, HD11748). **권고**: 늦여름 캠페인을 준비하는 커뮤니케이터들은 허위정보 프레임 (HD10448)이 특히 SD에 대한 연립 스트레스 테스트로 확대될 것을 예상해야 한다; 구금자 프레임 (HD11749)은 교도소 확장 이후 V의 주요 공격 벡터다.
+
+---
+
+### 60초 정보 브리핑
+
+- 🔴 **4월 24일 위원회 배치가 규제 포트폴리오를 완결** — HD01JuU10 + HD01JuU31 + HD01SoU25 + HD01CU24 — 선거 전 납품 일정대로
+- 🔴 **4월 22일 초다수** (HD01FiU48, M+SD+S+KD): S는 선거 141일 전에 41억 SEK 연료세 감면에 반대할 수 없었다
+- 🟠 **2015년 경찰 개혁 감사 (RiR 2026:6 → HD01JuU31)** — kvardröjande lednings- och utredningsproblem; 이행 역량이 새로운 구속 위험
+- 🟠 **풍력 허위정보 보충질문 (HD10448)** — riksmötet에서 에너지 정책과 정보 무결성의 첫 명시적 연결
+- 🟢 **SD 규율 유지** — 마감 주간 정부 제안에 대한 발의 제로; 신뢰 정당이 구조적 무결성 유지
+- 🟡 **HD01SoU25 노인 돌봄 강화** — 가족 돌봄 전략 및 가정 서비스 역량 요건이 Försäkringskassan/지자체 대상 납품 테스트가 됨
+- 🟡 **외교 정책 긴 꼬리** — HD11748 (부룬디 영사 사례)는 V/MP의 영사 보호에 대한 초점을 인도주의적 선거 이슈로 신호
+- 🟢 **주택 생산** — HD01CU24가 처리 시간 단축; 착공 주택에 대한 효과는 Q3 2026에 측정 가능 (data.scb.se: BO0101)
+
+---
+
+### 주요 전망 신호
+
+**모니터링**: 4월 24일 이후 첫 SOM 연구소 또는 Demoskop 여론 조사. S가 4월 22일 연료세 감면 투표에도 불구하고 헤드라인 지지에서 28% 이상을 회복하면, S의 "상징적 반대 + 실질적 지지" 메시지가 압박 아래 유지된 것이며 9월 선거는 여전히 구조적 박빙이다. S가 26%에 미치지 못하면 M+KD+L 블록의 선거 전 포지셔닝이 실증적으로 전환됐다. **트리거 날짜**: 2026-05-08 ± 5일 (다음 월간 Demoskop).
+
+---
+
+### 신뢰도 분포
+
+| 신뢰 수준 | 핵심 평가 | 근거 |
+|-----------|-----------|------|
+| 매우 높음 | KJ-1 (납품 완료) | 8 dok_ids 디스크 + 13 자매 합성 참조 |
+| 높음 | KJ-2 (쐐기 효과 낮음), KJ-3 (이행 피벗) | 다중 소스 (riksdagen.se 투표 기록, RiR 2026:6, 자매 정보) |
+| 중간 | 전향적 여론 조사 다이내믹스 | 단일 소스 (demoskop / SOM 지연) |
+
+```mermaid
+flowchart TD
+  A[April 22 fiscal supermajoritet]:::a --> B[April 24 stängningsbatch]:::b
+  B --> C[Pre-election delivery confidence ▲]:::g
+  C --> D{Implementation pivot}:::d
+  D --> E[Polismyndigheten - RiR 2026:6]:::e
+  D --> F[Miljöprövningsmyndigheten - HD03238]:::e
+  D --> G[Försäkringskassan / hemtjänst - HD01SoU25]:::e
+  classDef a fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+  classDef b fill:#1a1e3d,stroke:#ff006e,color:#ffffff
+  classDef g fill:#1a1e3d,stroke:#ffbe0b,color:#ffffff
+  classDef d fill:#0a0e27,stroke:#ff006e,color:#ff006e
+  classDef e fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+  style A stroke-width:2px
+```
+
+<!-- source-sha: 91eb3cb6cf35873538b354461078df4509cf0012 -->
+
+## Executive Brief Nl
+<!-- source: executive-brief_nl.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief_nl.md -->
+
+**Classificatie**: PUBLIC | **Analist**: James Pether Sörling | **Datum**: 2026-04-25
+**Betrouwbaarheidsniveau**: HIGH [A1] | **Dagen tot verkiezingen**: ~141 | **Venster**: 2026-03-26 → 2026-04-25
+
+---
+
+### BLUF
+
+Het 30-daagse wetgevingsvenster van Zweden sluit terwijl de regering-Kristersson (M–SD–KD–L) haar **pre-verkiezingsregulatorische portefeuille voltooit**. Het comitébatch van 24 april — **HD01JuU10 (nieuwe vuurwapenwet), HD01JuU31 (follow-up politiereform), HD01SoU25 (versterking ouderenzorg), HD01CU24 (efficiëntie bouwprocessen)** — sluit de regulatoire afsluiting bovenop het financiële hoogtepunt van 22 april (HD01FiU48 brandstofbelastingverlichting, M+SD+S+KD supermeerderheid) [riksdagen.se]. Gezondheidszorg en criminaliteit blijven de dominerende *electorale* wiggen; het interpellatie-verkeer van de oppositie (HD10448 windkracht-desinformatie, HD11747 arbeidsmarktsubsidies, HD11749 rechten van gedetineerde kinderen, HD11748 consulaire bescherming in Burundi) toont S/V/MP met een **gedisciplineerd drie-sporen narratief** terwijl **SD nul tegenmotions** heeft ingediend tegen de vier commissierapporten van 24 april — een structureel vertrouwenssignaal dat nu al 18 opeenvolgende vergaderdagen standhoudt.
+
+---
+
+### 3 beslissingen die dit briefing ondersteunt
+
+#### Beslissing 1: Beoordelingsvertrouwen pre-verkiezingsleveringen
+
+De Tidö-coalitie heeft nu haar **volledig verklaarde 2025/26 wetgevingsportefeuille** goedgekeurd in de vier kerndomeinen — fiscaal (HD03100/HD0399), energie (HD03240/HD03238/HD03239), veiligheid/defensie (UFöU3/HD03214/HD03228) en strafrecht/welzijn (HD01JuU10/HD01JuU31/HD01SoU25) — binnen 141 dagen vóór de verkiezingen van september 2026. Implementatie, niet wetgeving, is nu het bindende risico. **Aanbeveling**: verschuif monitoring naar *implementatie-haalbaarheid* (capaciteit Polismyndigheten na RiR 2026:6, vergunningsdoorvoer Miljöprövningsmyndigheten, administratieve belasting Försäkringskassan voor ouderenzorg).
+
+#### Beslissing 2: Gezondheidszorg-en-criminaliteit wigkansen
+
+De oppositie heeft er *niet* in geslaagd de coalitie te splijten op haar primaire aanvalsvlakken: de 39 voorbehouden van SfU18 keerden geen enkele stem om; de SD–KD gezondheidszorgsplitsing op SoU17 R15 werd ingedamd. De vuurwapenwet HD01JuU10 en de politiereformaudit HD01JuU31 worden beiden aangenomen met M+SD+KD+L-eenheid. **Aanbeveling**: investeerders en stakeholders moeten de welzijns-/veiligheidswetgeving behandelen als *duurzaam tot september 2026*; de wigretoriek van de oppositie domineert maar de kans op wetgevingsomkering is LAAG (≤ 25 %).
+
+#### Beslissing 3: Narratiefarchitectuur oppositie voor campagne
+
+Drie oppositiewiggen kristalliseerden in april: (a) economisch — brandstof/MKB-ziektegeld (S, HD024082, HD10447); (b) milieu-desinformatie — HD10448; (c) rechten van gedetineerden / migrantenminderjarigen / consulaire bescherming (V/MP, HD11749, HD11748). **Aanbeveling**: communicatoren die zich voorbereiden op de zomercampagne moeten verwachten dat het desinformatieskader (HD10448) uitbreidt tot een coalitie-stresstest specifiek voor SD; het kader van de gedetineerden (HD11749) is V's primaire aanvalsvector na de gevangenisuitbreiding.
+
+---
+
+### 60-seconden overzicht
+
+- 🔴 **Comitébatch van 24 april sluit regulatoire portefeuille** — HD01JuU10 + HD01JuU31 + HD01SoU25 + HD01CU24 — pre-verkiezingsleveringen op schema
+- 🔴 **Supermeerderheid van 22 april** (HD01FiU48, M+SD+S+KD): S kon 4,1 miljard SEK brandstofbelastingverlichting 141 dagen voor de verkiezingen niet afwijzen
+- 🟠 **Politiereform 2015-audit (RiR 2026:6 → HD01JuU31)** — kvardröjande lednings- och utredningsproblem; implementatiecapaciteit is het nieuwe bindende risico
+- 🟠 **Windkracht-desinformatie-interpellatie (HD10448)** — eerste expliciete koppeling van energiebeleid en informatie-integriteit in het riksmötet
+- 🟢 **SD-discipline houdt stand** — nul motions tegen regeringsproposities in de sluitingsweek; vertrouwenspartij behoudt structurele integriteit
+- 🟡 **HD01SoU25 versterking ouderenzorg** — mantelzorgstrategie en thuis zorg-competentievereisten worden leveringstest tegen Försäkringskassan/gemeenten
+- 🟡 **Buitenlands beleid lange staart** — HD11748 (Burundi consulaire zaak) signaleert V/MP-focus op consulaire bescherming als humanitaire verkiezingskwestie
+- 🟢 **Woningbouw** — HD01CU24 verkort behandelingstijden; effect op begonnen woningen meetbaar Q3 2026 (data.scb.se: BO0101)
+
+---
+
+### Belangrijkste vooruitzichtssignaal
+
+**Monitoren**: Eerste post-24 april SOM-Instituut of Demoskop opiniepeiling. Als S > 28 % van de steun in headlines terugwint ondanks de brandstofbelastingstemming van 22 april, heeft S's boodschap "symbolische oppositie + praktische steun" stand gehouden onder druk en blijven de septemberverkiezingen een structurele toss-up. Als S onder 26 % ligt, heeft de pre-verkiezingspositionering van het M+KD+L-blok aanwijsbaar geconverteerd. **Triggerdatum**: 2026-05-08 ± 5 dagen (volgende maandelijkse Demoskop).
+
+---
+
+### Betrouwbaarheidsverdeling
+
+| Betrouwbaarheidsniveau | Sleutelevaluaties | Grondslag |
+|------------------------|-------------------|-----------|
+| ZEER HOOG | KJ-1 (leveringsafronding) | 8 dok_ids op schijf + 13 zuster-synthese-referenties |
+| HOOG | KJ-2 (wigeffectiviteit LAAG), KJ-3 (implementatiepivot) | Multibron (riksdagen.se stemprotocollen, RiR 2026:6, zuster-inlichtingen) |
+| MEDIUM | Toekomstgerichte peilingsdynamiek | Enkelbron (demoskop / SOM-vertraging) |
+
+```mermaid
+flowchart TD
+  A[April 22 fiscal supermajoritet]:::a --> B[April 24 stängningsbatch]:::b
+  B --> C[Pre-election delivery confidence ▲]:::g
+  C --> D{Implementation pivot}:::d
+  D --> E[Polismyndigheten - RiR 2026:6]:::e
+  D --> F[Miljöprövningsmyndigheten - HD03238]:::e
+  D --> G[Försäkringskassan / hemtjänst - HD01SoU25]:::e
+  classDef a fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+  classDef b fill:#1a1e3d,stroke:#ff006e,color:#ffffff
+  classDef g fill:#1a1e3d,stroke:#ffbe0b,color:#ffffff
+  classDef d fill:#0a0e27,stroke:#ff006e,color:#ff006e
+  classDef e fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+  style A stroke-width:2px
+```
+
+<!-- source-sha: 91eb3cb6cf35873538b354461078df4509cf0012 -->
+
+## Executive Brief No
+<!-- source: executive-brief_no.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief_no.md -->
+
+**Klassifisering**: PUBLIC | **Analytiker**: James Pether Sörling | **Dato**: 2026-04-25
+**Konfidensnivå**: HIGH [A1] | **Dager til valg**: ~141 | **Vindu**: 2026-03-26 → 2026-04-25
+
+---
+
+### Konklusjon
+
+Sveriges 30-dagers lovgivningsvindu lukker med at Kristerssonregjeringen (M–SD–KD–L) **fullfører sitt pre-valgregulatoriske portefølje**. April 24-utvalgsbatchen — **HD01JuU10 (ny våpenlov), HD01JuU31 (politireformoppfølging), HD01SoU25 (styrket eldretjeneste), HD01CU24 (effektivitet i byggeprosesser)** — lukker det regulatoriske avslutningen oppå det finansielle klimakset 22. april (HD01FiU48 drivstoffavgiftsreduktion, M+SD+S+KD supermajoritet) [riksdagen.se]. Helse og kriminalitet er fortsatt de dominerende *valgmessige* kilene; opposisjonens interpellasjonstrafikk (HD10448 vindkraft-desinformasjon, HD11747 arbeidsmiljøstønad, HD11749 frihetsberøvede barns rettigheter, HD11748 konsulær beskyttelse i Burundi) viser S/V/MP kjøre et **disiplinert tre-spors narrativ** mens **SD har innlevert null mot-motioner** mot de fire april 24-utvalgsrapportene — et strukturelt tillitssignal som nå har vedvart i 18 påfølgende sitdager.
+
+---
+
+### 3 beslutninger dette briefingen støtter
+
+#### Beslutning 1: Pre-valgs leveringstillit vurdering
+
+Tidö-koalisjonen har nå vedtatt sin **fullstendige erklærte 2025/26 lovgivningsportefølje** innen de fire kjerneområdene — finanspolitisk (HD03100/HD0399), energi (HD03240/HD03238/HD03239), sikkerhet/forsvar (UFöU3/HD03214/HD03228) og strafferettslig rettferdighet/velferd (HD01JuU10/HD01JuU31/HD01SoU25) — innen 141 dager fra september 2026-valget. Implementering, ikke lovgivning, er nå den bindende risikoen. **Anbefaling**: flytt overvåkning til *implementeringsgjenomførbarhet* (Polismyndighetens kapasitet etter RiR 2026:6, Miljöprövningsmyndighetens tillatelsesgjennomstrøm, Försäkringskassans administrative belastning for eldretjeneste).
+
+#### Beslutning 2: Helse-og-kriminalitets kilesannsynlighet
+
+Opposisjonen har *ikke* lykkes med å splitte koalisjonen på sine primære angrepsflatene: SfU18s 39 reservasjoner snudde ikke en eneste stemme; SD–KD helsesplit på SoU17 R15 ble begrenset. HD01JuU10 våpenlov og HD01JuU31 politireformsrevisjonen vedtas begge med M+SD+KD+L-enighet. **Anbefaling**: investorer og interessenter bør behandle velferd/sikkerhetslovgivningen som *holdbar frem til september 2026*; opposisjonens kilerettorikk dominerer men lovgivningsreverseringssannsynlighet er LAV (≤ 25 %).
+
+#### Beslutning 3: Pre-kampanje opposisjonens narrativarkitektur
+
+Tre opposisjonskilene krystalliserte i april: (a) økonomisk — drivstoff/SME-sykepenger (S, HD024082, HD10447); (b) miljø-desinformasjon — HD10448; (c) frihetsberøvedes rettigheter / migrantmindreårige / konsulær beskyttelse (V/MP, HD11749, HD11748). **Anbefaling**: kommunikatører som forbereder seg til sensommerkampanjen bør forvente at desinformasjonsrammen (HD10448) utvides til en koalisjonstest spesifikt for SD; rammen om frihetsberøvede (HD11749) er Vs primære angrepsvektori etter fengselsutvidelsen.
+
+---
+
+### 60-sekunders lesing
+
+- 🔴 **April 24-utvalgsbatchen lukker regulatorisk portefølje** — HD01JuU10 + HD01JuU31 + HD01SoU25 + HD01CU24 — pre-valgslevering i rute
+- 🔴 **Supermajoritet 22. april** (HD01FiU48, M+SD+S+KD): S kunne ikke motsette seg 4,1 mrd. SEK drivstoffavgiftsreduktion 141 dager før valget
+- 🟠 **Politireformen 2015-revisjon (RiR 2026:6 → HD01JuU31)** — kvardröjande lednings- og utredningsproblem; implementeringskapasitet er den nye bindende risikoen
+- 🟠 **Vindkraft-desinformasjonsinterpellasjon (HD10448)** — første eksplisitte kobling av energipolitikk og informasjonsintegritet i riksmötet
+- 🟢 **SD-disiplin holder** — null motioner mot regjeringsproposisjoner i lukkeuken; tillitspartiet beholder strukturell integritet
+- 🟡 **HD01SoU25 styrket eldretjeneste** — anhørigstrategi og hjemmetjenestekompetansekrav blir leveringstest mot Försäkringskassan/kommuner
+- 🟡 **Utenrikspolitisk hale** — HD11748 (Burundi-konsulærsaken) signalerer V/MP-fokus på konsulær beskyttelse som humanitært valgtema
+- 🟢 **Boligproduksjon** — HD01CU24 forkorter saksbehandlingstider; effekt på påbegynte boliger målbar Q3 2026 (data.scb.se: BO0101)
+
+---
+
+### Viktigste fremoverpekende signal
+
+**Overvåk**: Første post-24. april SOM-institutet eller Demoskop meningsmåling. Hvis S gjenvinner > 28 % i overskriftsstøtte til tross for drivstoffavgiftsavstemningen 22. april, har S's "symbolsk opposisjon + praktisk støtte"-budskap holdt under press, og septembervalget forblir et strukturelt kastkast. Hvis S halter under 26 %, har M+KD+L-blokkens pre-valgsposisjonering demonstrert konvertering. **Utløserdato**: 2026-05-08 ± 5 dager (neste Demoskop månedlig).
+
+---
+
+### Konfidensdistribusjon
+
+| Konfidensnivå | Nøkkelvurderinger | Grunnlag |
+|---------------|-------------------|---------|
+| SVÆRT HØY | KJ-1 (leveringsfullføring) | 8 dok_id-er på disk + 13 søskensyntesereferanser |
+| HØY | KJ-2 (kileeffektivitet LAV), KJ-3 (implementeringsfokus) | Flerkildigt (riksdagen.se stemmeprotokoller, RiR 2026:6, søskenetterretning) |
+| MIDDELS | Fremoverblikkende meningsmålingsdynamikk | Enkeltkildet (demoskop / SOM-forsinkelse) |
+
+```mermaid
+flowchart TD
+  A[April 22 fiscal supermajoritet]:::a --> B[April 24 stängningsbatch]:::b
+  B --> C[Pre-election delivery confidence ▲]:::g
+  C --> D{Implementation pivot}:::d
+  D --> E[Polismyndigheten - RiR 2026:6]:::e
+  D --> F[Miljöprövningsmyndigheten - HD03238]:::e
+  D --> G[Försäkringskassan / hemtjänst - HD01SoU25]:::e
+  classDef a fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+  classDef b fill:#1a1e3d,stroke:#ff006e,color:#ffffff
+  classDef g fill:#1a1e3d,stroke:#ffbe0b,color:#ffffff
+  classDef d fill:#0a0e27,stroke:#ff006e,color:#ff006e
+  classDef e fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+  style A stroke-width:2px
+```
+
+<!-- source-sha: 91eb3cb6cf35873538b354461078df4509cf0012 -->
+
+## Executive Brief Sv
+<!-- source: executive-brief_sv.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief_sv.md -->
+
+**Klassificering**: PUBLIC | **Analytiker**: James Pether Sörling | **Datum**: 2026-04-25
+**Konfidensgrad**: HIGH [A1] | **Dagar till val**: ~141 | **Period**: 2026-03-26 → 2026-04-25
+
+---
+
+### Slutsats
+
+Sveriges 30-dagarsfönster för lagstiftning avslutas med att Kristerssonregeringen (M–SD–KD–L) **fullföljer sitt regulatoriska pre-valportfölio**. April 24-utskottsgruppen — **HD01JuU10 (ny vapenlags), HD01JuU31 (uppföljning polisreform), HD01SoU25 (stärkt äldreomsorg), HD01CU24 (effektivare byggprocesser)** — låser det regulatoriska avslutningen ovanpå det finansiella klimaxet 22 april (HD01FiU48 drivmedelsskattereduktion, M+SD+S+KD supermajoritet) [riksdagen.se]. Hälso- och sjukvård och brottslighet är fortfarande de dominerande *valrörelsefrågorna*; oppositionens interpellationstrafik (HD10448 vindkraftdesinformation, HD11747 arbetsmarknadsstöd, HD11749 frihetsberövade barns rättigheter, HD11748 konsulärt skydd i Burundi) visar att S/V/MP driver ett **disciplinerat tredubbelt narrativ** medan **SD inte har lämnat in noll motmotioner** mot de fyra utskottsrapporterna från 24 april — ett strukturellt förtroendesignal som nu har hållit i 18 på varandra följande sittningsdagar.
+
+---
+
+### 3 beslut som detta underlag stöder
+
+#### Beslut 1: Bedömning av pre-valsliveransen
+
+Tidökoalitionen har nu antagit sin **fullständiga deklarerade 2025/26 lagstiftningsportfölj** inom de fyra kärndimensionerna — finansiell (HD03100/HD0399), energi (HD03240/HD03238/HD03239), säkerhet/försvar (UFöU3/HD03214/HD03228) och brottslig rättvisa/välfärd (HD01JuU10/HD01JuU31/HD01SoU25) — inom 141 dagar från valet i september 2026. Implementering, inte lagstiftning, är nu den bindande risken. **Rekommendation**: flytta övervakning till *implementeringsgenomförbarhet* (Polismyndighetens kapacitet efter RiR 2026:6, Miljöprövningsmyndighetens tillståndsgenomflöde, Försäkringskassans administrativa belastning för äldreomsorg).
+
+#### Beslut 2: Sannolikhet för hälso- och brottspolitiska kilar
+
+Oppositionen har *inte* lyckats spräcka koalitionen på dess primära attackytor: SfU18:s 39 reservationer vände inte en enda röst; SD–KD hälso- och sjukvårdssplit på SoU17 R15 begränsades. HD01JuU10 vapenlags och HD01JuU31 polisreformsrevision godkänns båda med M+SD+KD+L-enighet. **Rekommendation**: investerare och intressenter bör behandla välfärds-/säkerhetslagstiftningen som *varaktig till september 2026*; oppositionens kilrhetorik dominerar men sannolikheten för lagstiftningsomvändning är LÅG (≤ 25 %).
+
+#### Beslut 3: Oppositionens narrativarkitektur inför valkampanjen
+
+Tre oppositionskilar kristalliserades i april: (a) ekonomisk — drivmedel/SME-sjuklön (S, HD024082, HD10447); (b) miljödesinformation — HD10448; (c) frihetsberövades rättigheter / migrantminderåriga / konsulärt skydd (V/MP, HD11749, HD11748). **Rekommendation**: kommunikatörer som förbereder sig för den sensommarliga kampanjen bör förvänta sig att desinformationsramverket (HD10448) expanderar till ett koalitionsstresstest specifikt för SD; frihetsberövaderamverket (HD11749) är V:s primära angreppsvektor efter fängelseutvidgningen.
+
+---
+
+### 60-sekunders läsning
+
+- 🔴 **April 24-utskottgruppen stänger regulatorisk portfölj** — HD01JuU10 + HD01JuU31 + HD01SoU25 + HD01CU24 — pre-valsleverans enligt schema
+- 🔴 **Supermajoritet 22 april** (HD01FiU48, M+SD+S+KD): S kunde inte motsätta sig 4,1 Mdr SEK drivmedelsskattereduktion 141 dagar före valet
+- 🟠 **Polisreformen 2015-revision (RiR 2026:6 → HD01JuU31)** — kvardröjande lednings- och utredningsproblem; implementeringskapacitet är den nya bindande risken
+- 🟠 **Vindkraftdesinformationsinterpellation (HD10448)** — första explicita kopplingen av energipolitik och informationsintegritet i riksmötet
+- 🟢 **SD-disciplin håller** — noll motioner mot regeringspropositioner under stängningsveckan; konfidenspartiet behåller strukturell integritet
+- 🟡 **HD01SoU25 stärkt äldreomsorg** — anhörigstrategi och hemtjänstkompetenskrav blir leveranstest mot Försäkringskassan/kommuner
+- 🟡 **Utrikespolitisk svans** — HD11748 (Burundikonsulärt fall) signalerar V/MP-fokus på konsulärt skydd som humanitär valfråga
+- 🟢 **Bostadsproduktion** — HD01CU24 kortar handläggningstider; effekt på påbörjade bostäder mätbar Q3 2026 (data.scb.se: BO0101)
+
+---
+
+### Viktigaste framåtsignal
+
+**Bevaka**: Första post-24 april SOM-institutet eller Demoskops opinionsundersökning. Om S återtar > 28 % i stödmätning trots omröstningen om drivmedelsskattereduktionen 22 april, har S:s "symbolisk opposition + praktisk support"-budskap hållit under stress och valet i september förblir ett strukturellt kasst-upp. Om S hamnar under 26 %, har M+KD+L-blockets pre-valpositionering demonstrerat konvertering. **Utlösardatum**: 2026-05-08 ± 5 dagar (nästa Demoskop månadsvis).
+
+---
+
+### Konfidensfördelning
+
+| Konfidensgrad | Nyckelbedömningar | Underlag |
+|---------------|-------------------|----------|
+| MYCKET HÖG | KJ-1 (leveransgenomförande) | 8 dok_id:n på disk + 13 syskonsyntesreferenser |
+| HÖG | KJ-2 (kileffektivitet LÅG), KJ-3 (implementeringsfokus) | Flerakälliga (riksdagen.se röstprotokoll, RiR 2026:6, syskonintelligens) |
+| MEDEL | Framåtblickande undersökningsdynamik | Enkälliga (demoskop / SOM-fördröjning) |
+
+```mermaid
+flowchart TD
+  A[April 22 fiscal supermajoritet]:::a --> B[April 24 stängningsbatch]:::b
+  B --> C[Pre-election delivery confidence ▲]:::g
+  C --> D{Implementation pivot}:::d
+  D --> E[Polismyndigheten - RiR 2026:6]:::e
+  D --> F[Miljöprövningsmyndigheten - HD03238]:::e
+  D --> G[Försäkringskassan / hemtjänst - HD01SoU25]:::e
+  classDef a fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+  classDef b fill:#1a1e3d,stroke:#ff006e,color:#ffffff
+  classDef g fill:#1a1e3d,stroke:#ffbe0b,color:#ffffff
+  classDef d fill:#0a0e27,stroke:#ff006e,color:#ff006e
+  classDef e fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+  style A stroke-width:2px
+```
+
+<!-- source-sha: 91eb3cb6cf35873538b354461078df4509cf0012 -->
+
+## Executive Brief Zh
+<!-- source: executive-brief_zh.md :: https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief_zh.md -->
+
+**分类**: 公开 | **分析师**: James Pether Sörling | **日期**: 2026-04-25
+**置信度**: HIGH [A1] | **距选举天数**: ~141 | **报告期**: 2026-03-26 → 2026-04-25
+
+---
+
+### 核心结论
+
+在瑞典30天立法窗口即将关闭之际，克里斯特松政府（M–SD–KD–L）正在完成**选前监管组合**的收尾工作。4月24日委员会批次——**HD01JuU10（新枪支法）、HD01JuU31（警察改革后续）、HD01SoU25（老年照护强化）、HD01CU24（建设流程简化）**——在4月22日财政高潮（HD01FiU48燃油税减免，M+SD+S+KD超级多数）之上叠加了监管性收官 [riksdagen.se]。医疗与犯罪仍是主要的*选举楔形议题*；反对党的跟进质询流（HD10448风电虚假信息、HD11747就业补贴、HD11749被拘留儿童权利、HD11748布隆迪领事保护）表明S/V/MP正在推进**有纪律的三轨叙事**。与此同时，**SD在4月24日四份委员会报告中零反对动议**——这一结构性信任信号已持续18个连续议会日。
+
+---
+
+### 本简报支持的三项决策
+
+#### 决策1：选前交付可信度评估
+
+蒂道联合政府现已在四个核心领域——财政（HD03100/HD0399）、能源（HD03240/HD03238/HD03239）、安全/国防（UFöU3/HD03214/HD03228）、刑事司法/福利（HD01JuU10/HD01JuU31/HD01SoU25）——在2026年9月选举前141天内通过了**完整的2025/26年宣言立法组合**。执行而非立法现在是约束性风险。**建议**：将监测重心转向*执行可行性*（RiR 2026:6后警察局能力、环境审查局许可处理量、Försäkringskassan的老年照护行政负荷）。
+
+#### 决策2：医疗-犯罪楔形概率
+
+反对党在核心攻击面上未能*分裂*联合政府：SfU18的39项保留意见未能翻转任何一票；SoU17 R15的SD–KD医疗分歧被封堵。HD01JuU10枪支法和HD01JuU31警察改革审计均以M+SD+KD+L一致性通过。**建议**：投资者和利益相关方应*持续*处理福利/安全立法至2026年9月；反对党楔形叙事占主导，但立法逆转概率较低（≤ 25%）。
+
+#### 决策3：竞选前反对党叙事结构
+
+四月间三个反对党楔形逐渐成形：(a)经济——燃油/中小企业病假补贴（S，HD024082，HD10447）；(b)环境虚假信息——HD10448；(c)被拘留者权利/移民未成年人/领事保护（V/MP，HD11749，HD11748）。**建议**：为晚夏竞选备战的传播者应预判虚假信息框架（HD10448）会被扩大为对SD的联合政府压力测试；被拘留者框架（HD11749）在监狱扩建后是V的主要攻击向量。
+
+---
+
+### 60秒情报简报
+
+- 🔴 **4月24日委员会批次完成监管组合** — HD01JuU10 + HD01JuU31 + HD01SoU25 + HD01CU24 — 按选前交付时间表执行
+- 🔴 **4月22日超级多数**（HD01FiU48，M+SD+S+KD）：S在距选举141天时无法反对410亿SEK燃油税减免
+- 🟠 **2015年警察改革审计（RiR 2026:6 → HD01JuU31）** — 残存的领导和调查问题；执行能力是新的约束性风险
+- 🟠 **风电虚假信息跟进质询（HD10448）** — riksmötet中能源政策与信息完整性的首次明确关联
+- 🟢 **SD纪律维持** — 截止周对政府提案零动议；信任政党保持结构性完整
+- 🟡 **HD01SoU25老年照护强化** — 家庭照护战略和家政服务能力要求成为Försäkringskassan/市政交付测试
+- 🟡 **外交政策长尾** — HD11748（布隆迪领事案）将V/MP对领事保护的关注定为人道主义选举议题
+- 🟢 **住房生产** — HD01CU24缩短处理时间；对新开工住房的效果可在Q3 2026测量（data.scb.se：BO0101）
+
+---
+
+### 主要前瞻信号
+
+**监测指标**：4月24日后首次SOM研究所或Demoskop民调。若S在4月22日燃油税减免投票后仍能在头条支持率中维持28%以上，则S的"象征性反对+实质支持"信息在压力下得以维持，9月选举仍是结构性胶着。若S跌至26%以下，则M+KD+L选举前定位发生了实证性转变。**触发日期**：2026-05-08 ± 5天（下一次月度Demoskop）。
+
+---
+
+### 置信度分布
+
+| 置信度 | 核心判断 | 依据 |
+|--------|----------|------|
+| 非常高 | KJ-1（交付完成） | 8个dok_id落盘 + 13个姊妹综合参考 |
+| 高 | KJ-2（楔形效果低）、KJ-3（执行转向） | 多源（riksdagen.se投票记录、RiR 2026:6、姊妹情报） |
+| 中 | 前瞻性民调动态 | 单一来源（Demoskop/SOM时滞） |
+
+```mermaid
+flowchart TD
+  A[April 22 fiscal supermajoritet]:::a --> B[April 24 stängningsbatch]:::b
+  B --> C[Pre-election delivery confidence ▲]:::g
+  C --> D{Implementation pivot}:::d
+  D --> E[Polismyndigheten - RiR 2026:6]:::e
+  D --> F[Miljöprövningsmyndigheten - HD03238]:::e
+  D --> G[Försäkringskassan / hemtjänst - HD01SoU25]:::e
+  classDef a fill:#0a0e27,stroke:#00d9ff,color:#e0e0e0
+  classDef b fill:#1a1e3d,stroke:#ff006e,color:#ffffff
+  classDef g fill:#1a1e3d,stroke:#ffbe0b,color:#ffffff
+  classDef d fill:#0a0e27,stroke:#ff006e,color:#ff006e
+  classDef e fill:#0a0e27,stroke:#00d9ff,color:#00d9ff
+  style A stroke-width:2px
+```
+
+<!-- source-sha: 91eb3cb6cf35873538b354461078df4509cf0012 -->
+
 ## Analysis Artifact Coverage Report
 
 This generated report reconciles the analysis folder with the article projection so reviewers can see what was included, what was linked as supporting data, and which canonical ordered artifacts are not visible in this run. Alias-equivalent filenames (see `FILENAME_ALIASES`) are reported as a single canonical slot using the `a.md / b.md` shorthand so a missing slot is not double-counted.
 
 | Coverage area | Count | Reader-facing treatment |
 |---|---:|---|
-| Ordered/root markdown sections | 22 | Expanded as article sections in the narrative order above |
+| Ordered/root markdown sections | 35 | Expanded as article sections in the narrative order above |
 | Per-document analyses | 8 | Expanded under `## Per-document intelligence` immediately after significance scoring |
 | Supporting data artifacts | 8 | Linked in Article Sources, not expanded inline |
 
@@ -1633,6 +2626,19 @@ Each section above projects one analysis artifact. The full audited markdown is 
 - [`cross-reference-map.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/cross-reference-map.md)
 - [`methodology-reflection.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/methodology-reflection.md)
 - [`data-download-manifest.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/data-download-manifest.md)
+- [`executive-brief_ar.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief_ar.md)
+- [`executive-brief_da.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief_da.md)
+- [`executive-brief_de.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief_de.md)
+- [`executive-brief_es.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief_es.md)
+- [`executive-brief_fi.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief_fi.md)
+- [`executive-brief_fr.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief_fr.md)
+- [`executive-brief_he.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief_he.md)
+- [`executive-brief_ja.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief_ja.md)
+- [`executive-brief_ko.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief_ko.md)
+- [`executive-brief_nl.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief_nl.md)
+- [`executive-brief_no.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief_no.md)
+- [`executive-brief_sv.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief_sv.md)
+- [`executive-brief_zh.md`](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-25/monthly-review/executive-brief_zh.md)
 
 ### Supporting Data Artifacts
 
