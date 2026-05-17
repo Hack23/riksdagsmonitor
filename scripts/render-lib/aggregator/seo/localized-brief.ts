@@ -60,6 +60,7 @@
  */
 
 import {
+  descriptionWindowForLanguage,
   readBlufParagraph,
   readFirstParagraph,
   truncateToSentenceBoundary,
@@ -94,6 +95,17 @@ export interface LocalizedBriefSeoInput {
    * labels).
    */
   readonly subfolder: string;
+
+  /**
+   * Optional BCP-47 / file-suffix language code (e.g. `de`, `ar`, `ja`).
+   * When supplied, the description is truncated using the per-language
+   * SERP window from {@link descriptionWindowForLanguage} —
+   * 140-200 for Latin LTR, 120-170 for RTL (ar/he), 70-120 for CJK
+   * (ja/ko/zh). When omitted, falls back to the canonical EN 140-200
+   * window (preserves pre-2026-05 behaviour for callers that have not
+   * yet been updated).
+   */
+  readonly lang?: string | null;
 }
 
 /**
@@ -177,7 +189,7 @@ export function isBannedLocalizedBriefH1(h1: string): boolean {
 export function extractLocalizedBriefSeo(
   input: LocalizedBriefSeoInput,
 ): LocalizedBriefSeo {
-  const { briefMarkdown, subfolder } = input;
+  const { briefMarkdown, subfolder, lang } = input;
   if (!briefMarkdown || briefMarkdown.trim().length === 0) {
     return { title: null, description: null };
   }
@@ -189,13 +201,17 @@ export function extractLocalizedBriefSeo(
     title = cleanArticleTitle(rawH1, subfolder);
   }
 
-  // Description — readBlufParagraph || readFirstParagraph, sentence-truncated.
+  // Description — readBlufParagraph || readFirstParagraph, sentence-truncated
+  // using the per-language SERP window (see `descriptionWindowForLanguage`
+  // and `seo-metadata-contract.md` §4). Callers that omit `lang` get the
+  // canonical EN 140-200 window (pre-2026-05 behaviour).
   let description: string | null = null;
   const blufParagraph = readBlufParagraph(briefMarkdown);
   const fallbackParagraph = blufParagraph ? null : readFirstParagraph(briefMarkdown);
   const rawDescription = blufParagraph ?? fallbackParagraph;
   if (rawDescription && rawDescription.trim().length > 0) {
-    const truncated = truncateToSentenceBoundary(rawDescription);
+    const { softMin, hardMax } = descriptionWindowForLanguage(lang);
+    const truncated = truncateToSentenceBoundary(rawDescription, softMin, hardMax);
     if (truncated.length > 0) description = truncated;
   }
 

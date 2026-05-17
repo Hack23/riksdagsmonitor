@@ -142,6 +142,63 @@ export function markdownInlineToText(markdown: string): string {
 }
 
 /**
+ * Per-language SERP `<meta description>` length windows, sourced from
+ * `.github/prompts/seo-metadata-contract.md` §4 ("Per-language charset
+ * budgets"). Character counts are *visual width in SERP* — not UTF-8
+ * bytes — because CJK glyphs render roughly twice the width of Latin
+ * letters and RTL glyphs render slightly narrower.
+ *
+ * - **Latin LTR** (`en sv da no fi de fr es nl`) → 140–200 chars
+ * - **RTL** (`ar he`) → 120–170 chars
+ * - **CJK** (`ja ko zh`) → 70–120 chars
+ *
+ * Pre-2026-05 every locale shared the hard-coded `140 / 200` window in
+ * {@link truncateToSentenceBoundary}, which forced Japanese / Korean /
+ * Chinese descriptions to overshoot their visual SERP budget (Google
+ * routinely truncated CJK descriptions mid-glyph) and let RTL
+ * descriptions ship 10–20 chars below their floor. This table is the
+ * single source of truth — any future contract change must update
+ * `seo-metadata-contract.md` §4 *and* this map (tests in
+ * `tests/seo-description-windows.test.ts` enforce parity).
+ */
+export const LANG_DESCRIPTION_WINDOWS: Readonly<
+  Record<string, { readonly softMin: number; readonly hardMax: number }>
+> = {
+  // Latin LTR — 9 languages, all 140-200
+  en: { softMin: 140, hardMax: 200 },
+  sv: { softMin: 140, hardMax: 200 },
+  da: { softMin: 140, hardMax: 200 },
+  no: { softMin: 140, hardMax: 200 },
+  fi: { softMin: 140, hardMax: 200 },
+  de: { softMin: 140, hardMax: 200 },
+  fr: { softMin: 140, hardMax: 200 },
+  es: { softMin: 140, hardMax: 200 },
+  nl: { softMin: 140, hardMax: 200 },
+  // RTL — 2 languages, 120-170
+  ar: { softMin: 120, hardMax: 170 },
+  he: { softMin: 120, hardMax: 170 },
+  // CJK — 3 languages, 70-120 (count CJK glyphs, not bytes)
+  ja: { softMin: 70, hardMax: 120 },
+  ko: { softMin: 70, hardMax: 120 },
+  zh: { softMin: 70, hardMax: 120 },
+};
+
+/**
+ * Resolve `{ softMin, hardMax }` for a given language code. Returns the
+ * canonical EN window `{ 140, 200 }` for unknown languages so callers
+ * default to the contract's widest window when handed an unexpected
+ * BCP-47 code — preserves the pre-2026-05 behaviour for non-supported
+ * languages.
+ */
+export function descriptionWindowForLanguage(lang: string | null | undefined): {
+  readonly softMin: number;
+  readonly hardMax: number;
+} {
+  if (!lang) return LANG_DESCRIPTION_WINDOWS.en!;
+  return LANG_DESCRIPTION_WINDOWS[lang] ?? LANG_DESCRIPTION_WINDOWS.en!;
+}
+
+/**
  * Truncate a string to the longest sentence-terminated prefix whose
  * length is ≤ `hardMax`, preferring a break ≥ `softMin`. Never cuts
  * mid-word. Used for `<meta description>` so Google never renders a
@@ -152,9 +209,8 @@ export function markdownInlineToText(markdown: string): string {
  * - CJK (Chinese/Japanese): `。`
  * - Devanagari (Hindi and related Indic scripts): `।`
  *
- * Implements `seo-metadata-contract.md` §3.1: EN target window
- * 140-200 chars; shorter languages use their own windows but go
- * through the same sentence-preserving logic.
+ * Implements `seo-metadata-contract.md` §3.1 + §4: every language ships
+ * within its own SERP-width window via {@link descriptionWindowForLanguage}.
  *
  * If the input contains no usable sentence boundary **and** no word
  * boundary within the window (e.g. a single run of non-space chars),
