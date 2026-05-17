@@ -224,7 +224,7 @@ describe('Political Intelligence HTML Generation', () => {
       // localized `<meta keywords>` — a clear English leak in
       // CJK / RTL / Latin-non-EN pages. After the fix the seed only
       // contains the localized terms from `PI_TRANSLATIONS[lang].metaKeywords`.
-      for (const lang of ['ja', 'ar', 'de', 'fr', 'zh', 'ko', 'he'] as const) {
+      for (const lang of ['sv', 'da', 'no', 'fi', 'nl', 'es', 'de', 'fr', 'ja', 'ar', 'zh', 'ko', 'he'] as const) {
         const localizedHtml = mod.generatePoliticalIntelligenceHtml(lang);
         const match = localizedHtml.match(/name="keywords" content="([^"]+)"/);
         expect(match, `missing keywords for ${lang}`).not.toBeNull();
@@ -243,6 +243,31 @@ describe('Political Intelligence HTML Generation', () => {
           ).not.toContain(enLeak);
         }
       }
+    });
+
+    it('keeps the EN methodology titles in the EN PI page (sanity check — no over-correction)', () => {
+      // Catch the inverse regression: the W3 fix must NOT also strip the
+      // English methodology titles from the English page itself. EN is
+      // the source-of-truth surface and benefits from the augmented
+      // keyword set for SEO.
+      const enHtml = mod.generatePoliticalIntelligenceHtml('en');
+      const match = enHtml.match(/name="keywords" content="([^"]+)"/);
+      expect(match, 'missing keywords for en').not.toBeNull();
+      const kw = match![1]!;
+      // At least ONE of the catalog English methodology titles must
+      // appear in the EN keyword set (the catalog can rename entries
+      // over time, so we accept any of the historically-stable ones).
+      const expectedEn = [
+        'Admiralty Rubric',
+        'Calibration Ledger',
+        'Reference Quality Thresholds',
+        'Worldbank Indicator Mapping',
+      ];
+      const matched = expectedEn.some((needle) => kw.includes(needle));
+      expect(
+        matched,
+        `EN PI keywords lost all English methodology titles (regression?): ${kw}`,
+      ).toBe(true);
     });
 
 

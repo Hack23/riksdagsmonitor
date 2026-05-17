@@ -61,6 +61,45 @@ describe('descriptionWindowForLanguage', () => {
     expect(descriptionWindowForLanguage(undefined)).toEqual({ softMin: 140, hardMax: 200 });
     expect(descriptionWindowForLanguage('')).toEqual({ softMin: 140, hardMax: 200 });
   });
+
+  it('is case-insensitive — upper / mixed-case BCP-47 codes resolve to the canonical window', () => {
+    // Browsers, RSS feeds and CMSes routinely emit `JA`, `ZH-CN`, `Ar`,
+    // etc. Verify the lookup is robust to common casing variants and to
+    // stray whitespace (the function trims/lowercases its input).
+    expect(descriptionWindowForLanguage('JA')).toEqual({ softMin: 70, hardMax: 120 });
+    expect(descriptionWindowForLanguage('Ar')).toEqual({ softMin: 120, hardMax: 170 });
+    expect(descriptionWindowForLanguage('  de  ')).toEqual({ softMin: 140, hardMax: 200 });
+    expect(descriptionWindowForLanguage('ZH')).toEqual({ softMin: 70, hardMax: 120 });
+  });
+
+  it('handles BCP-47 region subtags (zh-CN, zh-TW, nb-NO, …) by collapsing to the primary subtag', () => {
+    // Static-pages and PI hub may pass full BCP-47 locale strings; the
+    // description-window lookup should accept them by extracting the
+    // primary language subtag.
+    expect(descriptionWindowForLanguage('zh-CN')).toEqual({ softMin: 70, hardMax: 120 });
+    expect(descriptionWindowForLanguage('zh-TW')).toEqual({ softMin: 70, hardMax: 120 });
+    expect(descriptionWindowForLanguage('nb-NO')).toEqual({ softMin: 140, hardMax: 200 });
+    expect(descriptionWindowForLanguage('ar-SA')).toEqual({ softMin: 120, hardMax: 170 });
+  });
+});
+
+describe('Aggregator barrel — W2 description-window API is re-exported', () => {
+  it('exposes LANG_DESCRIPTION_WINDOWS and descriptionWindowForLanguage from the aggregator barrel', async () => {
+    // Architecture/bounded-context test: future consumers (static pages,
+    // PI hub, dashboards) MUST be able to reach the W2 description
+    // window helpers via the aggregator barrel without depending on the
+    // deep `seo/description.js` path. This guards against an
+    // accidental barrel deletion regressing the public API.
+    const barrel = await import('../scripts/render-lib/aggregator/index.js');
+    expect(typeof barrel.descriptionWindowForLanguage).toBe('function');
+    expect(barrel.LANG_DESCRIPTION_WINDOWS).toBeDefined();
+    expect(barrel.descriptionWindowForLanguage('ja')).toEqual({ softMin: 70, hardMax: 120 });
+    expect(barrel.descriptionWindowForLanguage('ar')).toEqual({ softMin: 120, hardMax: 170 });
+    expect(barrel.descriptionWindowForLanguage('en')).toEqual({ softMin: 140, hardMax: 200 });
+    // Reference equality: the barrel re-export shares the same object
+    // identity as the leaf module — no accidental copy-then-export.
+    expect(barrel.LANG_DESCRIPTION_WINDOWS).toBe(LANG_DESCRIPTION_WINDOWS);
+  });
 });
 
 describe('truncateToSentenceBoundary — per-language window propagation', () => {

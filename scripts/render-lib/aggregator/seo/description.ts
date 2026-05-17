@@ -195,7 +195,14 @@ export function descriptionWindowForLanguage(lang: string | null | undefined): {
   readonly hardMax: number;
 } {
   if (!lang) return LANG_DESCRIPTION_WINDOWS.en!;
-  return LANG_DESCRIPTION_WINDOWS[lang] ?? LANG_DESCRIPTION_WINDOWS.en!;
+  // Real-world callers pass BCP-47 strings from `<html lang>` attrs,
+  // RSS feeds and CMSes (`zh-CN`, `JA`, `Ar`, `  de  `, `nb-NO`, …).
+  // Normalise to the primary subtag (lower-case, stripped) before
+  // lookup so every variant resolves to the canonical window. Falls
+  // back to the EN window for unknown / malformed inputs.
+  const primary = lang.toString().trim().toLowerCase().split(/[-_]/)[0];
+  if (!primary) return LANG_DESCRIPTION_WINDOWS.en!;
+  return LANG_DESCRIPTION_WINDOWS[primary] ?? LANG_DESCRIPTION_WINDOWS.en!;
 }
 
 /**

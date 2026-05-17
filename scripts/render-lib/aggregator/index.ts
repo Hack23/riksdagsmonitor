@@ -103,6 +103,17 @@ export type {
   LocalizedBriefSeoInput,
   LocalizedBriefSeo,
 } from './seo/localized-brief.js';
+
+// --- Per-language SERP description windows ---------------------------------
+// W2 polish — the description module owns the per-language soft-min /
+// hard-max budget for `<meta description>` (Latin LTR 140–200 / RTL ar,he
+// 120–170 / CJK ja,ko,zh 70–120). Re-exported here so future consumers
+// outside `render-lib/` (static-pages, political-intelligence, dashboards)
+// can pick the right SERP window without reaching into the leaf module.
+export {
+  LANG_DESCRIPTION_WINDOWS,
+  descriptionWindowForLanguage,
+} from './seo/description.js';
 export { runArticlePipeline } from './pipeline.js';
 export type {
   PipelineResult,

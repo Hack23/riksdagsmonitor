@@ -204,6 +204,139 @@ describe('Specialised dashboard pages — structural contract', () => {
   });
 });
 
+// ---------------------------------------------------------------------------
+// W5 regression — non-EN dashboard hubs must not include the English topic
+// seed terms in <meta keywords> and JSON-LD Dataset.keywords.
+//
+// Pre-W5-fix, every dashboard's English `keywords_en` string (e.g.
+// "election cycle, Swedish elections, performance timeline, decision
+// effectiveness, risk forecasting" for the election-cycle dashboard) was
+// concatenated onto every non-EN page's keyword set. That polluted CJK /
+// RTL / Latin-non-EN dashboards with raw English seo terms.
+//
+// After the W5 fix the EN page keeps the topic seed (it is the
+// source-of-truth keyword surface) but the 13 non-EN pages must not
+// contain any of the EN topic seed terms. We pick the longest, most
+// distinctive English fragments from each dashboard so a false negative
+// is statistically impossible.
+// ---------------------------------------------------------------------------
+const W5_EN_TOPIC_LEAK_FRAGMENTS = [
+  // election-cycle
+  ['election-cycle', 'election cycle'],
+  ['election-cycle', 'Swedish elections'],
+  ['election-cycle', 'performance timeline'],
+  // parties
+  ['parties', 'party performance'],
+  ['parties', 'coalition alignment'],
+  ['parties', 'momentum indicators'],
+  // committees
+  ['committees', 'committee performance'],
+  ['committees', 'productivity heatmap'],
+  ['committees', 'decision effectiveness'],
+  // coalitions
+  ['coalitions', 'coalition analysis'],
+  ['coalitions', 'voting patterns'],
+  ['coalitions', 'Tidö agreement'],
+  // seasonal-patterns
+  ['seasonal-patterns', 'seasonal patterns'],
+  ['seasonal-patterns', 'quarterly activity'],
+  ['seasonal-patterns', 'parliamentary calendar'],
+  // pre-election
+  ['pre-election', 'pre-election monitoring'],
+  ['pre-election', 'early warning'],
+  ['pre-election', 'baseline deviation'],
+  // anomaly-detection
+  ['anomaly-detection', 'anomaly detection'],
+  ['anomaly-detection', 'severity heatmap'],
+  ['anomaly-detection', 'behavioral anomalies'],
+  // ministers
+  ['ministers', 'government ministers'],
+  ['ministers', 'minister risk'],
+  ['ministers', 'influence rankings'],
+  // risk
+  ['risk', '45 risk rules'],
+  ['risk', 'MP risk scoring'],
+  ['risk', 'parliamentary risk analytics'],
+];
+
+// Non-EN language suffixes only — EN keeps its topic seed intentionally.
+const NON_EN_LANGUAGES = LANGUAGES.filter((l) => l.suffix !== '');
+
+describe('W5 — dashboard hubs do not leak English topic keywords into non-EN pages', () => {
+  describe.each(DASHBOARDS)('$slug', ({ slug }) => {
+    describe.each(NON_EN_LANGUAGES)('$hreflang variant', ({ suffix }) => {
+      const filename = `dashboards/${slug}${suffix}.html`;
+      let html;
+
+      it('loads', () => {
+        html = readPage(filename);
+        expect(html.length).toBeGreaterThan(8 * 1024);
+      });
+
+      it('<meta name="keywords"> contains no English topic seed fragments for this dashboard', () => {
+        const match = html.match(/<meta\s+name="keywords"\s+content="([^"]+)"/i);
+        expect(match, `${filename} missing <meta keywords>`).not.toBeNull();
+        const kw = match[1];
+        const expectedLeaks = W5_EN_TOPIC_LEAK_FRAGMENTS
+          .filter(([dashSlug]) => dashSlug === slug)
+          .map(([, fragment]) => fragment);
+        for (const fragment of expectedLeaks) {
+          expect(
+            kw.toLowerCase(),
+            `${filename} <meta keywords> still contains English topic seed "${fragment}": ${kw}`,
+          ).not.toContain(fragment.toLowerCase());
+        }
+      });
+
+      it('JSON-LD Dataset.keywords contains no English topic seed fragments for this dashboard', () => {
+        // The dashboard JSON-LD graph embeds a Dataset node whose
+        // `keywords` string is built from the same source as the
+        // <meta keywords> tag; assert it is also free of the EN seed.
+        const datasetKwMatch = html.match(/"@type"\s*:\s*"Dataset"[\s\S]*?"keywords"\s*:\s*"([^"]+)"/);
+        // Some dashboards may not embed a Dataset node — skip gracefully
+        // (the structural test above already enforced the @graph contract).
+        if (!datasetKwMatch) return;
+        const datasetKw = datasetKwMatch[1].toLowerCase();
+        const expectedLeaks = W5_EN_TOPIC_LEAK_FRAGMENTS
+          .filter(([dashSlug]) => dashSlug === slug)
+          .map(([, fragment]) => fragment);
+        for (const fragment of expectedLeaks) {
+          expect(
+            datasetKw,
+            `${filename} Dataset.keywords still contains English topic seed "${fragment}": ${datasetKwMatch[1]}`,
+          ).not.toContain(fragment.toLowerCase());
+        }
+      });
+    });
+  });
+});
+
+// ---------------------------------------------------------------------------
+// W5 EN sanity guard — the English dashboard page MUST keep its topic
+// seed (the W5 fix is non-EN-only; over-correction would regress EN SEO).
+// ---------------------------------------------------------------------------
+describe('W5 — EN dashboard pages preserve their English topic seed (no over-correction)', () => {
+  describe.each(DASHBOARDS)('$slug', ({ slug }) => {
+    const filename = `dashboards/${slug}.html`;
+    let html;
+
+    it('<meta name="keywords"> still contains at least one English topic seed fragment', () => {
+      html = readPage(filename);
+      const match = html.match(/<meta\s+name="keywords"\s+content="([^"]+)"/i);
+      expect(match, `${filename} missing <meta keywords>`).not.toBeNull();
+      const kw = match[1].toLowerCase();
+      const expectedSeeds = W5_EN_TOPIC_LEAK_FRAGMENTS
+        .filter(([dashSlug]) => dashSlug === slug)
+        .map(([, fragment]) => fragment);
+      const matched = expectedSeeds.some((fragment) => kw.includes(fragment.toLowerCase()));
+      expect(
+        matched,
+        `${filename} EN page lost all topic seed fragments — keywords: ${match[1]}`,
+      ).toBe(true);
+    });
+  });
+});
+
 describe('index*.html hub — political-intelligence-dashboards section', () => {
   describe.each(LANGUAGES)('$hreflang variant', ({ suffix }) => {
     const filename = suffix === '' ? 'index.html' : `index${suffix}.html`;
