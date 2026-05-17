@@ -218,6 +218,34 @@ describe('Political Intelligence HTML Generation', () => {
       expect(unique.size).toBe(keywords.length);
     });
 
+    it('does NOT leak English methodology/template titles into non-EN keywords (W3 regression)', () => {
+      // Pre-W3-fix, non-EN PI pages mixed methodology filenames such as
+      // `Admiralty Rubric`, `Calibration Ledger`, `README` into the
+      // localized `<meta keywords>` — a clear English leak in
+      // CJK / RTL / Latin-non-EN pages. After the fix the seed only
+      // contains the localized terms from `PI_TRANSLATIONS[lang].metaKeywords`.
+      for (const lang of ['ja', 'ar', 'de', 'fr', 'zh', 'ko', 'he'] as const) {
+        const localizedHtml = mod.generatePoliticalIntelligenceHtml(lang);
+        const match = localizedHtml.match(/name="keywords" content="([^"]+)"/);
+        expect(match, `missing keywords for ${lang}`).not.toBeNull();
+        const kw = match![1]!;
+        // Sample of English-only methodology titles that used to leak.
+        for (const enLeak of [
+          'Admiralty Rubric',
+          'Calibration Ledger',
+          'Reference Quality Thresholds',
+          'Worldbank Indicator Mapping',
+          'README',
+        ]) {
+          expect(
+            kw,
+            `non-EN PI page ${lang} keywords still contain English methodology title "${enLeak}": ${kw}`,
+          ).not.toContain(enLeak);
+        }
+      }
+    });
+
+
     it('emits a FAQPage JSON-LD block', () => {
       expect(html).toContain('"@type":"FAQPage"');
     });

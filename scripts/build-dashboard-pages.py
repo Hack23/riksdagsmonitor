@@ -503,7 +503,7 @@ def build_dashboard_page(
       "publisher": {{ "@type": "Organization", "name": "Hack23 AB" }},
       "license": "https://www.apache.org/licenses/LICENSE-2.0",
       "isAccessibleForFree": true,
-      "keywords": "{_json_safe(dashboard.keywords_en + ', Swedish Riksdag, OSINT, parliament')}"
+      "keywords": "{_json_safe((dashboard.keywords_en if lang == 'en' else meta.keywords) + ', Swedish Riksdag, OSINT, parliament')}"
     }}
   ]
 }}
@@ -564,7 +564,7 @@ def build_dashboard_page(
 <link rel="canonical" href="{canonical_url}">
 <link rel="manifest" href="../site.webmanifest">
 <meta name="description" content="{_html_safe(page_description)}">
-<meta name="keywords" content="{_html_safe(dashboard.keywords_en + ', ' + meta.keywords)}">
+<meta name="keywords" content="{_html_safe((dashboard.keywords_en + ', ' + meta.keywords) if lang == 'en' else meta.keywords)}">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="James Pether Sörling, CISSP, CISM">
 <meta name="application-name" content="Riksdagsmonitor">
