@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "article_date": "2026-05-18",
+  "subfolder": "realtime-pulse",
+  "generated_at": "2026-05-18T11:05:00Z",
+  "pirs": [
+    {
+      "pir_id": "PIR-2026-01",
+      "title": "Tidö coalition energy coherence",
+      "description": "Will SD's persistent wind-power and energy-grid interpellations fracture coalition discipline with KD before the September 2026 election?",
+      "status": "active",
+      "priority": "medium",
+      "wep": "LIKELY managed; coalition holds",
+      "horizon": "month",
+      "evidence_docs": ["Interp:453", "Interp:448"],
+      "last_updated": "2026-05-18",
+      "carry_forward": true,
+      "carry_to": "weekly-review"
+    },
+    {
+      "pir_id": "PIR-2026-02",
+      "title": "Russian military threat posture",
+      "description": "How does Russia's Duma law on expanded military authority affect Sweden's threat environment and Nordic defence coordination?",
+      "status": "escalated",
+      "priority": "high",
+      "wep": "HIGHLY LIKELY Russian threat environment deteriorated; Swedish response expected within 30 days",
+      "horizon": "month",
+      "evidence_docs": ["HD11813", "HD11812"],
+      "last_updated": "2026-05-18",
+      "carry_forward": true,
+      "carry_to": "security-briefing"
+    },
+    {
+      "pir_id": "PIR-2026-03",
+      "title": "Northern Sweden industrial infrastructure corridor",
+      "description": "Will E4 Förbifart Skellefteå PPP financing proceed or delay, affecting the northern Sweden industrial/battery corridor electoral credibility?",
+      "status": "active",
+      "priority": "high",
+      "wep": "ROUGHLY EVEN on PPP success; LIKELY S will amplify as campaign theme",
+      "horizon": "week",
+      "evidence_docs": ["HD11814"],
+      "last_updated": "2026-05-18",
+      "carry_forward": true,
+      "carry_to": "weekly-review"
+    }
+  ]
+}
