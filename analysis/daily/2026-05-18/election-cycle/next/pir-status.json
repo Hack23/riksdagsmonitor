@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "horizon": "election",
+  "cycle": "election-cycle/next",
+  "subfolder": "election-cycle/next",
+  "as_of": "2026-05-18",
+  "anchor_event": "2026-09-13 Riksdagsval",
+  "t_minus_days": 118,
+  "pirs": [
+    {
+      "pir_id": "PIR-8",
+      "title": "Post-2026 coalition formation trajectory",
+      "horizon": "election",
+      "status": "open",
+      "indicators": [
+        "L 4% threshold survival",
+        "SD cabinet-entry signalling",
+        "C coalition-preference declaration",
+        "Talman procedure lead-time"
+      ],
+      "current_assessment": "even-money 45-55% hung-parliament outcome; formation > 30 days likely 55-70%",
+      "last_updated": "2026-05-18"
+    },
+    {
+      "pir_id": "PIR-9",
+      "title": "EU-derived statute durability under post-2026 government",
+      "horizon": "cycle",
+      "status": "open",
+      "indicators": [
+        "HD01CU30 transposition compliance",
+        "HD01FiU38 clearing-reg operational",
+        "EU EED 2030 follow-on legislation"
+      ],
+      "current_assessment": "durability very likely 75-90%; opposition motions likely 60-70% under C-scenarios",
+      "last_updated": "2026-05-18"
+    },
+    {
+      "pir_id": "PIR-10",
+      "title": "NATO 3% defence-floor pressure cycle",
+      "horizon": "cycle",
+      "status": "open",
+      "indicators": [
+        "NATO 2026/2027 ministerial signalling",
+        "FY2027 / FY2028 defence allocations",
+        "Cross-bloc consensus on 3% pathway"
+      ],
+      "current_assessment": "cross-bloc consensus roughly even 45-55%; floor maintained 90%+",
+      "last_updated": "2026-05-18"
+    },
+    {
+      "pir_id": "PIR-11",
+      "title": "Wildcard W1-W5 realisation tracking",
+      "horizon": "cycle",
+      "status": "active-monitoring",
+      "indicators": [
+        "W1 Russia escalation 8% 18mo",
+        "W2 fiscal shock 6% 12mo",
+        "W3 KU upheld 12% 6mo",
+        "W4 L below 4% 50-65% election",
+        "W5 SD succession 9% 18mo"
+      ],
+      "current_assessment": "tail-overlay aggregate 22-26% over 12mo",
+      "last_updated": "2026-05-18"
+    }
+  ],
+  "carry_forward_from": [
+    "../current/pir-status.json"
+  ],
+  "notes": "PIR-8 newly armed for next-cycle coalition formation. PIRs 1-7 (Tidö-mandate scorecard) tracked in current/pir-status.json."
+}
