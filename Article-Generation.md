@@ -420,20 +420,59 @@ The mapping below is exhaustive and ordered to match `scripts/render-lib/aggrega
 
 ## 🚦 Analysis Gate
 
-The single article-generation gate is [`.github/prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md). If the gate fails, the analysis must be fixed before aggregation.
+The single article-generation gate is [`.github/prompts/05-analysis-gate.md`](.github/prompts/05-analysis-gate.md). If the gate fails, the analysis must be fixed before aggregation. The TypeScript twin lives in [`scripts/agentic/analysis-gate.ts`](scripts/agentic/analysis-gate.ts), which is a thin orchestrator over the per-check modules in [`scripts/agentic/gate-checks/`](scripts/agentic/gate-checks/) — one rule per file, sharing helpers from [`scripts/agentic/gate-shared/`](scripts/agentic/gate-shared/).
+
+### Module map (TypeScript gate)
+
+```mermaid
+flowchart LR
+    O["scripts/agentic/analysis-gate.ts<br/>validateAnalysisGate()"] --> B["gate-checks/index.ts<br/>(barrel)"]
+    B --> C1["artifact-existence.ts<br/>Check 1"]
+    B --> C2["per-document-coverage.ts<br/>Check 2"]
+    B --> C3["no-stubs.ts<br/>Check 3"]
+    B --> C4["evidence-citations.ts<br/>Check 4"]
+    C4 --> C4a["swot-evidence.ts"]
+    C4 --> C4b["significance-scoring.ts"]
+    B --> C5["mermaid-diagrams.ts<br/>Check 5"]
+    B --> C6["pass2-evidence.ts<br/>Check 6"]
+    B --> C7["family-c-structure.ts<br/>Check 7"]
+    C7 --> C7a["executive-brief.ts<br/>+ executive-brief-h1.ts"]
+    C7 --> C7b["intelligence-assessment.ts"]
+    C7 --> C7c["scenario-analysis.ts"]
+    C7 --> C7d["devils-advocate.ts"]
+    C7 --> C7e["methodology-reflection.ts"]
+    C7 --> C7f["comparative-international.ts"]
+    B --> C8["family-d-structure.ts<br/>Check 8"]
+    C8 --> C8a["forward-indicators.ts"]
+    C8 --> C8b["coalition-mathematics.ts"]
+    B --> C9["pir-status.ts<br/>Check 9"]
+    B --> C9b["statskontoret-evidence.ts<br/>Check 9b"]
+    C1 -. shared .-> S["gate-shared/<br/>types · markdown-helpers · file-walkers"]
+    C2 -. shared .-> S
+    C3 -. shared .-> S
+    C4a -. shared .-> S
+    C4b -. shared .-> S
+    C7a -. shared .-> S
+    C7d -. shared .-> S
+    C7e -. shared .-> S
+```
 
 ### Gate checks
 
-| Check | What it protects |
-|---|---|
-| Artifact existence | Prevents partial articles from incomplete analysis folders. |
-| Per-document coverage | Ensures every `dok_id` in the manifest has a corresponding document analysis. |
-| No stubs | Blocks `AI_MUST_REPLACE`, `[REQUIRED]`, `TODO:` and placeholder text. |
-| Evidence citations | Blocks generic SWOT/ranking claims without `dok_id` or primary URL evidence. |
-| Mermaid diagrams | Requires color-coded diagrams in core synthesis and key lens files. |
-| Pass-2 evidence | Requires proof that the AI read and improved the first pass. |
-| Family C structure | Requires BLUF, decisions, Key Judgments, PIRs, scenarios, ACH hypotheses and ICD 203 audit. |
-| Family D structure | Requires dated forward indicators and coalition/seat-count material. |
+| Check | Module | What it protects |
+|---|---|---|
+| 1 — Artifact existence | [`artifact-existence.ts`](scripts/agentic/gate-checks/artifact-existence.ts) | Prevents partial articles from incomplete analysis folders. |
+| 2 — Per-document coverage | [`per-document-coverage.ts`](scripts/agentic/gate-checks/per-document-coverage.ts) | Ensures every `dok_id` in the manifest has a corresponding document analysis. |
+| 3 — No stubs | [`no-stubs.ts`](scripts/agentic/gate-checks/no-stubs.ts) | Blocks `AI_MUST_REPLACE`, `[REQUIRED]`, `TODO:` and placeholder text. |
+| 4 — Evidence citations | [`evidence-citations.ts`](scripts/agentic/gate-checks/evidence-citations.ts) | Blocks generic SWOT/ranking claims without `dok_id` or primary URL evidence. |
+| 5 — Mermaid diagrams | [`mermaid-diagrams.ts`](scripts/agentic/gate-checks/mermaid-diagrams.ts) | Requires color-coded diagrams in core synthesis and key lens files. |
+| 6 — Pass-2 evidence | [`pass2-evidence.ts`](scripts/agentic/gate-checks/pass2-evidence.ts) | Requires proof that the AI read and improved the first pass. |
+| 7 — Family C structure | [`family-c-structure.ts`](scripts/agentic/gate-checks/family-c-structure.ts) | Requires BLUF, decisions, Key Judgments, PIRs, scenarios, ACH hypotheses and ICD 203 audit. |
+| 8 — Family D structure | [`family-d-structure.ts`](scripts/agentic/gate-checks/family-d-structure.ts) | Requires dated forward indicators and coalition/seat-count material. |
+| 9 — PIR status | [`pir-status.ts`](scripts/agentic/gate-checks/pir-status.ts) | Validates the `pir-status.json` sidecar schema and per-entry rules. |
+| 9b — Statskontoret evidence | [`statskontoret-evidence.ts`](scripts/agentic/gate-checks/statskontoret-evidence.ts) | When recognised agencies are named, requires a Statskontoret URL or `none found`. |
+
+Each module owns exactly one gate rule with its own regex constants and helpers, mirroring the bash gate steps one-to-one. The orchestrator file stays at ~125 lines so reviewers can audit the aggregation logic without touching individual rules.
 
 ### Why the gate is before article generation
 
