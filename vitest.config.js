@@ -209,6 +209,13 @@ export default defineConfig({
         'scripts/translation-dictionary-committee-names.ts',
         'scripts/translation-dictionary-party-names.ts',
         'scripts/translation-dictionary-political-terms.ts',
+        // Political-terms split into alphabet-bucket files + barrel (data, not logic).
+        'scripts/translation-dictionary/index.ts',
+        'scripts/translation-dictionary/types.ts',
+        'scripts/translation-dictionary/political-terms-a-f.ts',
+        'scripts/translation-dictionary/political-terms-g-m.ts',
+        'scripts/translation-dictionary/political-terms-n-s.ts',
+        'scripts/translation-dictionary/political-terms-t-z.ts',
         // Translation dictionary index (re-export only; locale-map is a tiny
         // constant module without testable branching).
         'scripts/data-transformers/constants/locale-map.ts',

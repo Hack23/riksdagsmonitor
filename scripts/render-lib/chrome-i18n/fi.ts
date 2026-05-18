@@ -1,0 +1,113 @@
+/**
+ * @module Infrastructure/RenderLib/ChromeI18n/FI
+ * @category Intelligence Operations / Supporting Infrastructure
+ * @name CHROME_I18N_FI — Finnish chrome strings
+ *
+ * @description
+ * Finnish translations of the site header/footer chrome
+ * strings declared by {@link ./types.js#ChromeStrings}. Reviewed
+ * per-language so a copy-edit here does not conflict with edits to
+ * the other 13 languages.
+ *
+ * Translation guide: https://github.com/Hack23/homepage/blob/main/Finnish-Translation-Guide.md
+ *
+ * @author Hack23 AB (Infrastructure Team)
+ * @license Apache-2.0
+ */
+
+import type { ChromeStrings } from './types.js';
+
+export const CHROME_FI: ChromeStrings = {
+  transparencyLabel: 'Avoimuus &amp; Turvallisuus',
+  transparencyTitle: 'Hack23:n sitoutuminen avoimuuteen ja turvallisuuteen',
+  sponsorLabel: 'Tue Hack23:a',
+  sponsorTitle: 'Ryhdy Hack23:n tukijaksi GitHubissa',
+  politicalIntelligenceLabel: 'Poliittinen tiedustelu',
+  politicalIntelligenceTitle: 'Syvällinen poliittinen analyysi ja tiedusteluraportit',
+  themeLabel: 'Teema',
+  themeAria: 'Vaihda teema',
+  themeToLight: 'Vaihda vaaleaan teemaan',
+  themeToDark: 'Vaihda tummaan teemaan',
+  skipToMain: 'Siirry pääsisältöön',
+  headerTagline: 'Ruotsin parlamentaarinen tiedustelu · Avoin lähdekoodi · Apache-2.0',
+  heroSubtitle: 'Ruotsin vaalien 2026 tiedustelualusta',
+  heroTagline: 'Reaaliaikainen parlamenttiseuranta · Hallituskoalitioennusteet · 45 riskisääntöä · 50+ vuoden data',
+  electionCountdownLabel: 'Vaaleihin:',
+  electionDateLong: '13. syyskuuta 2026 (Syyskuun toinen sunnuntai)',
+  heroStatPoliticians: 'Poliitikkoja seurattu',
+  heroStatBallots: 'Valtiopäiväänestyksiä',
+  heroStatDocuments: 'Asiakirjoja käsitelty',
+  heroStatBills: 'Hallituksen esityksiä',
+  heroStatDecisions: 'Valiokuntapäätöksiä',
+  switchLanguage: 'Vaihda kieli',
+  thisPageInOtherLanguages: 'Tämä sivu muilla kielillä',
+  pageContext: 'Sivun konteksti',
+  breadcrumb: 'Murupolku',
+  mainNav: 'Pääalusta',
+  news: 'Uutiset',
+  dashboard: 'Kojelauta',
+  politicalIntelligence: 'Poliittinen tiedustelu',
+  politicians: 'Poliitikot',
+  footerAboutHeading: 'Riksdagsmonitor',
+  footerQuickLinksHeading: 'Pikalinkit',
+  footerBuiltByHeading: 'Rakentaja: Hack23 AB',
+  footerIsmsHeading: 'Hack23 ISMS',
+  footerComplianceHeading: 'Avoimuus &amp; vaatimustenmukaisuus',
+  footerCybersecurityTagline: 'Ruotsalainen kyberturvallisuuskonsulttiyritys, joka on erikoistunut poliittiseen avoimuuteen ja avoimen lähdekoodin tiedusteluun.',
+  footerPoweredBy: 'Voimanlähde',
+  footerBuiltBy: 'Rakentaja',
+  footerLastUpdated: 'Viimeksi päivitetty:',
+  footerIsmsTagline: 'Julkinen ISMS, joka on linjassa standardien ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1, EU CRA &amp; NIS2 kanssa.',
+  linkApiDocs: 'API-dokumentaatio (TypeDoc)',
+  linkCiaPlatform: 'CIA-alusta',
+  linkGithubRepo: 'GitHub-repositorio',
+  linkRiksdag: 'Ruotsin valtiopäivät',
+  linkRss: 'RSS-syöte',
+  linkHack23Home: 'Hack23.com',
+  linkHack23Riksdagsmonitor: 'Hack23 · Riksdagsmonitor',
+  linkHack23Features: 'Hack23 · Ominaisuudet',
+  linkSponsorHack23: 'Tue Hack23:a',
+  linkLinkedin: 'Yritys LinkedInissä',
+  linkHack23Org: 'Hack23 GitHub-organisaatio',
+  linkContactUs: 'Ota yhteyttä',
+  linkEuParliamentMonitor: 'EU-parlamentin seuranta',
+  linkHack23Blog: 'Hack23-blogi',
+  linkPublicIsmsRepo: 'Julkinen ISMS-repositorio',
+  linkInfoSecPolicy: 'Tietoturvapolitiikka',
+  linkPrivacyPolicy: 'Tietosuojakäytäntö',
+  linkSecureDevPolicy: 'Turvallisen kehityksen käytäntö',
+  linkAiPolicy: 'Tekoälykäytäntö',
+  linkThreatModeling: 'Uhkamallinnus',
+  linkVulnMgmt: 'Haavoittuvuuksien hallinta',
+  linkIncidentResponse: 'Häiriötilannesuunnitelma',
+  linkAccessControl: 'Pääsynvalvontakäytäntö',
+  linkCryptoPolicy: 'Salauskäytäntö',
+  linkOpenSourcePolicy: 'Avoimen lähdekoodin käytäntö',
+  linkChangeMgmt: 'Muutoshallinta',
+  linkClassification: 'Luokittelu',
+  linkSecurityMetrics: 'Turvallisuusmittarit',
+  linkSecurityPolicy: 'Turvallisuuskäytäntö',
+  linkCraAssessment: 'EU CRA -arviointi',
+  linkThreatModel: 'Uhkamalli',
+  linkTranslationGuide: 'Käännösopas',
+  linkContributing: 'Osallistuminen',
+  linkCodeOfConduct: 'Käytöstapaohje',
+  linkChangelog: 'Muutosloki',
+  linkLicense: 'Lisenssi (Apache-2.0)',
+  linkReportIssue: 'Ilmoita GitHub-ongelma',
+  trustBadgesAria: 'Avoimet luottamus-, laatu- ja turvallisuusmerkit',
+  footerLangsAria: 'Vaihda kieli',
+  footerLegal: 'Hack23 AB · Apache-2.0 · Vain julkiset poliittiset tiedot — GDPR art. 9(2)(e,g). Ei evästeitä, ei seurantaa, ei mainontaa.',
+  legacyAboutHeading: 'Tietoja Riksdagsmonitorista',
+  legacyAboutBody: 'Live-tiedustelualusta Ruotsin valtiopäivien seurantaan CIA OSINT-kykyjen avulla. Jatkuvaa kehitystä — ilmoitathan ongelmista GitHubissa.',
+  legacyQuickLinksHeading: 'Pikalinkit',
+  legacyLanguagesHeading: 'Kielet',
+  legacyStatTracked: 'seurattu',
+  legacyStatActive: 'aktiivista',
+  legacyStatSupported: 'tuettua',
+  legacyStatHistorical: 'historiallista dataa',
+  legacyStatMps: 'kansanedustajaa',
+  legacyStatRiskRules: 'riskisääntöä',
+  legacyStatLanguages: 'kieltä',
+  legacyStatYears: '50+ vuotta',
+};

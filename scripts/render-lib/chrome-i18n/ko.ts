@@ -1,0 +1,113 @@
+/**
+ * @module Infrastructure/RenderLib/ChromeI18n/KO
+ * @category Intelligence Operations / Supporting Infrastructure
+ * @name CHROME_I18N_KO — Korean chrome strings
+ *
+ * @description
+ * Korean translations of the site header/footer chrome
+ * strings declared by {@link ./types.js#ChromeStrings}. Reviewed
+ * per-language so a copy-edit here does not conflict with edits to
+ * the other 13 languages.
+ *
+ * Translation guide: https://github.com/Hack23/homepage/blob/main/Korean-Translation-Guide.md
+ *
+ * @author Hack23 AB (Infrastructure Team)
+ * @license Apache-2.0
+ */
+
+import type { ChromeStrings } from './types.js';
+
+export const CHROME_KO: ChromeStrings = {
+  transparencyLabel: '투명성 및 보안',
+  transparencyTitle: '투명성과 보안에 대한 Hack23의 약속',
+  sponsorLabel: 'Hack23 후원',
+  sponsorTitle: 'GitHub에서 Hack23 후원자가 되기',
+  politicalIntelligenceLabel: '정치 인텔리전스',
+  politicalIntelligenceTitle: '심층 정치 분석 및 인텔리전스 보고서',
+  themeLabel: '테마',
+  themeAria: '테마 전환',
+  themeToLight: '라이트 테마로 전환',
+  themeToDark: '다크 테마로 전환',
+  skipToMain: '본문으로 건너뛰기',
+  headerTagline: '스웨덴 의회 인텔리전스 · 오픈 소스 · Apache-2.0',
+  heroSubtitle: '스웨덴 선거 인텔리전스 플랫폼 2026',
+  heroTagline: '실시간 의회 모니터링 · 연정 예측 · 45개 위험 규칙 · 50년 이상의 데이터',
+  electionCountdownLabel: '선거까지:',
+  electionDateLong: '2026년 9월 13일 (9월 둘째 일요일)',
+  heroStatPoliticians: '모니터링 중인 정치인',
+  heroStatBallots: '릭스다그 투표',
+  heroStatDocuments: '처리된 문서',
+  heroStatBills: '정부 법안',
+  heroStatDecisions: '위원회 결정',
+  switchLanguage: '언어 변경',
+  thisPageInOtherLanguages: '이 페이지의 다른 언어 버전',
+  pageContext: '페이지 컨텍스트',
+  breadcrumb: '경로 탐색',
+  mainNav: '메인 플랫폼',
+  news: '뉴스',
+  dashboard: '대시보드',
+  politicalIntelligence: '정치 인텔리전스',
+  politicians: '정치인',
+  footerAboutHeading: 'Riksdagsmonitor',
+  footerQuickLinksHeading: '빠른 링크',
+  footerBuiltByHeading: 'Hack23 AB 제작',
+  footerIsmsHeading: 'Hack23 ISMS',
+  footerComplianceHeading: '투명성 및 규정 준수',
+  footerCybersecurityTagline: '정치적 투명성과 오픈 소스 인텔리전스를 전문으로 하는 스웨덴 사이버 보안 컨설팅 회사.',
+  footerPoweredBy: '제공:',
+  footerBuiltBy: '제작:',
+  footerLastUpdated: '마지막 업데이트:',
+  footerIsmsTagline: 'ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1, EU CRA, NIS2와 정렬된 공개 ISMS.',
+  linkApiDocs: 'API 문서 (TypeDoc)',
+  linkCiaPlatform: 'CIA 플랫폼',
+  linkGithubRepo: 'GitHub 저장소',
+  linkRiksdag: '스웨덴 의회',
+  linkRss: 'RSS 피드',
+  linkHack23Home: 'Hack23.com',
+  linkHack23Riksdagsmonitor: 'Hack23 · Riksdagsmonitor',
+  linkHack23Features: 'Hack23 · 기능',
+  linkSponsorHack23: 'Hack23 후원',
+  linkLinkedin: '회사 LinkedIn',
+  linkHack23Org: 'Hack23 GitHub 조직',
+  linkContactUs: '문의하기',
+  linkEuParliamentMonitor: 'EU 의회 모니터',
+  linkHack23Blog: 'Hack23 블로그',
+  linkPublicIsmsRepo: '공개 ISMS 저장소',
+  linkInfoSecPolicy: '정보 보안 정책',
+  linkPrivacyPolicy: '개인정보 처리방침',
+  linkSecureDevPolicy: '보안 개발 정책',
+  linkAiPolicy: 'AI 정책',
+  linkThreatModeling: '위협 모델링',
+  linkVulnMgmt: '취약점 관리',
+  linkIncidentResponse: '사고 대응 계획',
+  linkAccessControl: '접근 제어 정책',
+  linkCryptoPolicy: '암호화 정책',
+  linkOpenSourcePolicy: '오픈 소스 정책',
+  linkChangeMgmt: '변경 관리',
+  linkClassification: '분류',
+  linkSecurityMetrics: '보안 지표',
+  linkSecurityPolicy: '보안 정책',
+  linkCraAssessment: 'EU CRA 평가',
+  linkThreatModel: '위협 모델',
+  linkTranslationGuide: '번역 가이드',
+  linkContributing: '기여',
+  linkCodeOfConduct: '행동 강령',
+  linkChangelog: '변경 로그',
+  linkLicense: '라이선스 (Apache-2.0)',
+  linkReportIssue: 'GitHub 이슈 보고',
+  trustBadgesAria: '공개 신뢰, 품질 및 보안 배지',
+  footerLangsAria: '언어 변경',
+  footerLegal: 'Hack23 AB · Apache-2.0 · 공개 정치 데이터만 — GDPR 제9조(2)(e,g). 쿠키 없음, 추적 없음, 광고 없음.',
+  legacyAboutHeading: 'Riksdagsmonitor 정보',
+  legacyAboutBody: 'CIA OSINT 기능을 활용한 스웨덴 의회 모니터링 라이브 인텔리전스 플랫폼. 지속적인 개선 — 문제는 GitHub에 보고해 주세요.',
+  legacyQuickLinksHeading: '빠른 링크',
+  legacyLanguagesHeading: '언어',
+  legacyStatTracked: '추적됨',
+  legacyStatActive: '활성',
+  legacyStatSupported: '지원됨',
+  legacyStatHistorical: '과거 데이터',
+  legacyStatMps: '국회의원',
+  legacyStatRiskRules: '위험 규칙',
+  legacyStatLanguages: '언어',
+  legacyStatYears: '50년+',
+};
