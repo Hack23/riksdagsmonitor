@@ -1,0 +1,49 @@
+{
+  "date": "2026-05-18",
+  "subfolder": "interpellations",
+  "version": "2.0",
+  "pass": 2,
+  "pirs": [
+    {
+      "id": "PIR-RUSSIA-EXTRAT-MILITARY",
+      "title": "Russian extraterritorial military doctrine",
+      "status": "ACTIVE",
+      "activated": "2026-05-18",
+      "trigger": "HD10494 cites Russian State Duma law (April-May 2026) authorizing military operations abroad to protect Russian citizens",
+      "confidence": "HIGH [B1]",
+      "next_review": "2026-05-29",
+      "review_trigger": "Government response to HD10494 due"
+    },
+    {
+      "id": "PIR-SWEDEN-RECOG-OCCUPIED",
+      "title": "Sweden recognition of occupied territories",
+      "status": "ACTIVE",
+      "activated": "2026-05-18",
+      "trigger": "HD10494 directly asks FM whether Sweden will recognize Ichkeria",
+      "confidence": "MEDIUM [B2]",
+      "next_review": "2026-06-15",
+      "review_trigger": "Baltic coordination signal or EU FAC discussion"
+    },
+    {
+      "id": "PIR-ELECTION-FOREIGN-POLICY",
+      "title": "SD-M foreign policy coalition dynamics in election campaign",
+      "status": "ACTIVE",
+      "activated": "2026-05-18",
+      "trigger": "HD10494 filed 122 days before September 13, 2026 general election; clear electoral framing",
+      "confidence": "HIGH [B1]",
+      "next_review": "2026-08-01",
+      "review_trigger": "Election polling on security/Russia issue ownership"
+    }
+  ],
+  "imf_status": {
+    "runtime_fetch": "degraded-transient",
+    "cache_vintage": "WEO-2026-04",
+    "cache_age_days": 30,
+    "vintage_annotation": false,
+    "economic_relevance_to_article": "peripheral"
+  },
+  "document_count": 1,
+  "documents": ["HD10494"],
+  "diw_adjusted": 6.0,
+  "priority_tier": "L2-Strategic"
+}
