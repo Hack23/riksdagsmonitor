@@ -214,7 +214,8 @@ export default defineConfig({
         'scripts/translation-dictionary/types.ts',
         'scripts/translation-dictionary/political-terms-a-f.ts',
         'scripts/translation-dictionary/political-terms-g-m.ts',
-        'scripts/translation-dictionary/political-terms-n-s.ts',
+        'scripts/translation-dictionary/political-terms-n-r.ts',
+        'scripts/translation-dictionary/political-terms-s.ts',
         'scripts/translation-dictionary/political-terms-t-z.ts',
         // Translation dictionary index (re-export only; locale-map is a tiny
         // constant module without testable branching).
