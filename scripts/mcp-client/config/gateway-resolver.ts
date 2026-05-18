@@ -23,7 +23,14 @@ import { hasMcpGatewayApiKey } from './auth.js';
  */
 const DEFAULT_MCP_GATEWAY_PORT = 8080;
 const DEFAULT_MCP_GATEWAY_DOMAIN = 'host.docker.internal';
-const DIRECT_MCP_SERVER_URL = 'https://riksdag-regering-ai.onrender.com/mcp';
+/**
+ * Direct onrender HTTPS endpoint for the riksdag-regering MCP server.
+ *
+ * Exported so the `mcp-client` barrel (`scripts/mcp-client/index.ts`) can
+ * re-publish it as part of the public surface and the network-diagnostics
+ * test suite has a single source of truth to assert against.
+ */
+export const DIRECT_MCP_SERVER_URL = 'https://riksdag-regering-ai.onrender.com/mcp';
 
 /**
  * Resolve the MCP gateway port from (in order):

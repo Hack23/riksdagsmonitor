@@ -17,6 +17,10 @@
 
 export { MCPClient } from './client.js';
 export { normalizeDocumentType } from './document-types.js';
+export {
+  getDefaultMcpServerUrl,
+  DIRECT_MCP_SERVER_URL,
+} from './config/gateway-resolver.js';
 
 import { MCPClient } from './client.js';
 
