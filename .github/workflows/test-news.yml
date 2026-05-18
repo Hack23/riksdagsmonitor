@@ -31,7 +31,9 @@ jobs:
   build:
     name: Build for News Tests
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    # Bumped from 10 → 15 after a 10m cancellation on this PR
+    # (Test News build job in run #26052744369).
+    timeout-minutes: 15
     
     steps:
       - name: Harden Runner
@@ -52,7 +54,7 @@ jobs:
             .github/workflows/test-news.yml
       
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --prefer-offline --no-audit --no-fund
       
       - name: Build with Vite
         # The static-pages-emit plugin (scripts/vite-plugin-static-

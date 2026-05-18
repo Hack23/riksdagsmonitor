@@ -31,7 +31,9 @@ jobs:
   build:
     name: Build for Dashboard Tests
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    # Bumped from 10 → 15 after observing ~9m45s build times getting
+    # cancelled at the 10-min cap on busier runners (see run #26052744369).
+    timeout-minutes: 15
     
     steps:
       - name: Harden Runner
@@ -52,7 +54,7 @@ jobs:
             .github/workflows/test-dashboard.yml
       
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --prefer-offline --no-audit --no-fund
       
       - name: Build with Vite
         # The static-pages-emit plugin (scripts/vite-plugin-static-
