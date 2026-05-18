@@ -31,7 +31,9 @@ jobs:
   build:
     name: Build for Homepage Tests
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    # Bumped from 10 → 15 after observing ~9m45s build times getting
+    # cancelled at the 10-min cap on busier runners (see run #26052744369).
+    timeout-minutes: 15
     
     steps:
       - name: Harden Runner
@@ -52,7 +54,7 @@ jobs:
             .github/workflows/test-homepage.yml
       
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --prefer-offline --no-audit --no-fund
       
       - name: Build with Vite
         # The static-pages-emit plugin (scripts/vite-plugin-static-
@@ -83,13 +85,11 @@ jobs:
     container:
       image: cypress/browsers:latest
       options: --user root
-    strategy:
-      fail-fast: true # Stop immediately on failure
-      matrix:
-        spec:
-          - 'cypress/e2e/homepage.cy.js'
-          - 'cypress/e2e/accessibility.cy.js'
-    
+
+    # Both specs run in a single Cypress invocation (was a 2-way matrix).
+    # See test-dashboard.yml for rationale: per-spec matrix wasted 1-2 min
+    # of `npm ci` + preview start + cypress boot for ~30s of actual tests.
+
     steps:
       # NOTE: step-security/harden-runner is a host-level action and is
       # not compatible with container jobs, so this job runs WITHOUT
@@ -97,10 +97,10 @@ jobs:
       # version determinism. The harden-runner build job above still
       # gates the artifacts this job consumes, but does not enforce
       # outbound restrictions for this job at runtime.
-      
+
       - name: Checkout code
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
@@ -109,37 +109,38 @@ jobs:
           cache-dependency-path: |
             package-lock.json
             .github/workflows/test-homepage.yml
-      
+
       - name: Install dependencies
-        run: npm ci
-      
+        run: npm ci --prefer-offline --no-audit --no-fund
+
       - name: Download build artifacts
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           name: homepage-build
           path: dist/
-      
-      - name: Run Cypress tests
+
+      - name: Run Cypress tests (homepage + a11y)
         uses: cypress-io/github-action@dace029018fcdf86e0df89a31bc3cfa5b32570d8 # v7.3.0
         with:
           start: npm run preview
           wait-on: 'http://localhost:4173'
           wait-on-timeout: 30 # Reduced from 60 for speed
           browser: chrome
-          spec: ${{ matrix.spec }}
+          spec: 'cypress/e2e/homepage.cy.js,cypress/e2e/accessibility.cy.js'
           config: video=false
           quiet: true
           # Skip the action's bundled `npm install` — we already ran
           # `npm ci` above and the container ships browsers preinstalled.
           install: false # Faster output
-      
+
       - name: Archive screenshots
         if: failure()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: homepage-screenshots-${{ strategy.job-index }}
+          name: homepage-screenshots
           path: cypress/screenshots/
           retention-days: 7
+          if-no-files-found: ignore
   
   summary:
     name: Homepage Test Summary

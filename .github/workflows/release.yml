@@ -1,5 +1,30 @@
 name: Release with Attestations
 
+# ----------------------------------------------------------------------------
+# Architecture (PR: workflow performance overhaul — May 2026)
+# ----------------------------------------------------------------------------
+# Previous design ran a single monolithic "Prepare Release" job (~41 min) that
+# built the app, then ran unit tests, then E2E tests sequentially — followed
+# by a "Build Release Package" job that REBUILT the app from scratch (~10 min)
+# and a "Create Release and Deploy" job that built+tested ONCE MORE for npm
+# publish. Total wall-clock: ~68 min.
+#
+# This version splits the workflow into parallel jobs, each ≤ 10 min:
+#
+#   prepare                  → version + commit/tag (no build/test)
+#   ├── build                → npm run build (single source of truth for dist)
+#   ├── unit-tests           → vitest + coverage (parallel)
+#   └── typedoc              → API docs (parallel)
+#       ├── e2e (matrix)     → cypress shards (parallel; needs build)
+#       ├── package          → SBOM + attestations (needs build)
+#       │   ├── release      → GitHub Release (needs package, deploy-docs)
+#       │   └── deploy-s3    → AWS S3 + CloudFront (needs package)
+#       ├── deploy-docs      → docs/ → GitHub Pages (needs build, tests, typedoc)
+#       └── npm-publish      → build:lib + publish (needs unit-tests; no rebuild)
+#
+# Wall-clock target: ~25 min critical path; every individual job ≤ 10 min.
+# ----------------------------------------------------------------------------
+
 on:
   workflow_dispatch:
     inputs:
@@ -19,16 +44,22 @@ on:
 permissions: read-all
 
 jobs:
+  # --------------------------------------------------------------------------
+  # 1. prepare — version + commit/tag only (≤2 min)
+  # --------------------------------------------------------------------------
   prepare:
     name: Prepare Release
     runs-on: ubuntu-latest
-    # Only prepare job needs write permissions for commit and tagging
+    timeout-minutes: 5
     permissions:
       contents: write # Required for git auto-commit
     outputs:
       version: ${{ steps.get-version.outputs.version }}
       npm_version: ${{ steps.get-version.outputs.npm_version }}
       is_prerelease: ${{ github.event.inputs.prerelease || 'false' }}
+      # Commit SHA to check out in downstream jobs — picks up the version-bump
+      # commit when triggered via workflow_dispatch.
+      release_sha: ${{ steps.resolve-sha.outputs.sha }}
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@ab7a9404c0f3da075243ca237b5fac12c98deaa5 # v2.19.3
@@ -37,8 +68,7 @@ jobs:
 
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          fetch-depth: 0
+        # No fetch-depth: 0 needed for the version bump — saves ~2 min.
 
       - name: Get version
         id: get-version
@@ -49,73 +79,62 @@ jobs:
             VERSION=${{ github.event.inputs.version }}
           fi
           echo "version=${VERSION}" >> $GITHUB_OUTPUT
-          # npm version without 'v' prefix
           NPM_VERSION="${VERSION#v}"
           echo "npm_version=${NPM_VERSION}" >> $GITHUB_OUTPUT
           echo "Version: ${VERSION}"
           echo "npm version: ${NPM_VERSION}"
 
-      - name: Setup Web Test Environment (Chrome + Xvfb + Dependencies)
-        timeout-minutes: 15
+      - name: Setup Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: "26"
+          cache: "npm"
+          cache-dependency-path: |
+            package-lock.json
+            .github/workflows/release.yml
+
+      - name: Set Version for release
+        if: github.event_name == 'workflow_dispatch'
         run: |
-          echo "🔧 Setting up complete Web test environment..."
+          PLAIN_VERSION="${{ github.event.inputs.version }}"
+          PLAIN_VERSION="${PLAIN_VERSION#v}"
+          npm version $PLAIN_VERSION --no-git-tag-version
 
-          # Install system dependencies for Web rendering with retries to reduce
-          # the impact of transient apt mirror/network failures and hanging installs.
-          for attempt in 1 2 3; do
-            if sudo apt-get update -o Acquire::Retries=5 -o Acquire::http::Timeout=30; then
-              break
-            fi
-            echo "⚠️ apt-get update failed (attempt $attempt) — retrying in $((attempt * 10))s"
-            sleep $((attempt * 10))
-            if [ "$attempt" -eq 3 ]; then
-              echo "❌ apt-get update failed after 3 attempts"
-              exit 1
-            fi
-          done
+      - uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7.1.0
+        if: github.event_name == 'workflow_dispatch'
+        with:
+          commit_message: "chore(release): bump version to ${{ github.event.inputs.version }}"
+          tagging_message: "${{ github.event.inputs.version }}"
 
-          for attempt in 1 2 3; do
-            if sudo apt-get install -y --no-install-recommends \
-              xvfb dbus-x11 x11-utils \
-              libgtk2.0-0 libgtk-3-0 libgbm-dev libgbm1 \
-              libnotify-dev libnss3 libxss1 \
-              libxtst6 xauth \
-              graphviz ffmpeg \
-              fonts-noto fonts-noto-cjk fonts-noto-cjk-extra \
-              ca-certificates fonts-liberation \
-              libatk-bridge2.0-0 libatk1.0-0 libcups2 \
-              libdbus-1-3 libdrm2 libnspr4 \
-              libx11-xcb1 libxcomposite1 libxdamage1 \
-              libxfixes3 libxrandr2 libxrender1 \
-              libxshmfence1 xdg-utils wget libxkbcommon0 xkb-data; then
-              break
-            fi
-            echo "⚠️ apt-get install failed (attempt $attempt) — retrying in $((attempt * 10))s"
-            sleep $((attempt * 10))
-            if [ "$attempt" -eq 3 ]; then
-              echo "❌ apt-get install failed after 3 attempts"
-              exit 1
-            fi
-          done
-
-          # Setup D-Bus for Chrome
-          sudo mkdir -p /var/run/dbus
-          sudo dbus-daemon --system --fork || true
-          
-          echo "✅ Web test environment setup complete"
-        env:
-          DISPLAY: ":99"
-          XKB_DEFAULT_RULES: evdev
-          XKB_DEFAULT_MODEL: pc105
-          XKB_DEFAULT_LAYOUT: us
-
-      - name: Start Xvfb
+      - name: Resolve release SHA
+        id: resolve-sha
         run: |
-          echo "🖥️ Starting Xvfb virtual display..."
-          Xvfb :99 -screen 0 1920x1080x24 &
-          sleep 2
-          echo "DISPLAY=:99" >> $GITHUB_ENV
-          echo "✅ Xvfb started on display :99"
+          SHA=$(git rev-parse HEAD)
+          echo "sha=${SHA}" >> $GITHUB_OUTPUT
+          echo "Release SHA: ${SHA}"
+
+  # --------------------------------------------------------------------------
+  # 2. build — single canonical `npm run build` (≤12 min cap, target ≤10)
+  #    Uploads `dist/` + the release zip + checksum as artifacts. ALL
+  #    downstream jobs consume these instead of rebuilding.
+  # --------------------------------------------------------------------------
+  build:
+    name: Build Application
+    needs: [prepare]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@ab7a9404c0f3da075243ca237b5fac12c98deaa5 # v2.19.3
+        with:
+          egress-policy: audit
+
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: ${{ needs.prepare.outputs.release_sha }}
 
       - name: Setup Node.js
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
@@ -132,102 +151,377 @@ jobs:
       - name: Build application
         run: npm run build
 
-      - name: Set Version for release
-        if: github.event_name == 'workflow_dispatch'
+      - name: Create release artifacts
         run: |
-          PLAIN_VERSION="${{ github.event.inputs.version }}"
-          # Remove 'v' prefix if present
-          PLAIN_VERSION="${PLAIN_VERSION#v}"
-          npm version $PLAIN_VERSION --no-git-tag-version
+          echo "📦 Creating release zip + checksum from dist/..."
+          cd dist
+          zip -r ../riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip .
+          cd ..
+          sha256sum riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip \
+            > riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip.sha256
+          echo "✅ Release artifacts created"
 
-      - uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7.1.0
-        if: github.event_name == 'workflow_dispatch'
+      - name: Upload dist artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          commit_message: "chore(release): bump version to ${{ github.event.inputs.version }}"
-          tagging_message: "${{ github.event.inputs.version }}"
+          name: dist
+          path: dist/
+          retention-days: 1
+          if-no-files-found: error
 
-      - name: Generate API documentation
-        run: |
-          echo "📚 Generating TypeDoc API documentation..."
-          npm run typedoc
-          echo "✅ API documentation generated in api/"
+      - name: Upload release zip
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: release-zip
+          path: |
+            riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip
+            riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip.sha256
+          retention-days: 7
+          if-no-files-found: error
 
-      - name: Verify Cypress
-        run: npx cypress verify
+  # --------------------------------------------------------------------------
+  # 3. unit-tests — vitest + coverage (parallel with build, ≤8 min)
+  # --------------------------------------------------------------------------
+  unit-tests:
+    name: Unit Tests
+    needs: [prepare]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@ab7a9404c0f3da075243ca237b5fac12c98deaa5 # v2.19.3
+        with:
+          egress-policy: audit
+
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: ${{ needs.prepare.outputs.release_sha }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: "26"
+          cache: "npm"
+          cache-dependency-path: |
+            package-lock.json
+            .github/workflows/release.yml
+
+      - name: Install dependencies
+        run: npm ci
 
       - name: Run unit tests with coverage
         run: |
           mkdir -p builds/test-results builds/coverage
           npm run coverage
 
-      - name: Start app and run E2E tests
+      - name: Upload coverage + test reports
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        if: always()
+        with:
+          name: unit-test-reports
+          path: builds/
+          retention-days: 7
+          if-no-files-found: warn
+
+  # --------------------------------------------------------------------------
+  # 4. typedoc — API docs (parallel with build, ≤5 min)
+  # --------------------------------------------------------------------------
+  typedoc:
+    name: Generate TypeDoc
+    needs: [prepare]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@ab7a9404c0f3da075243ca237b5fac12c98deaa5 # v2.19.3
+        with:
+          egress-policy: audit
+
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: ${{ needs.prepare.outputs.release_sha }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: "26"
+          cache: "npm"
+          cache-dependency-path: |
+            package-lock.json
+            .github/workflows/release.yml
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate API documentation
+        run: npm run typedoc
+
+      - name: Upload typedoc artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: typedoc
+          path: api/
+          retention-days: 7
+          if-no-files-found: error
+
+  # --------------------------------------------------------------------------
+  # 5. e2e — Cypress, sharded across spec files (parallel; ≤10 min/shard)
+  #    Consumes the pre-built dist artifact, so there is no inner `npm run
+  #    build` (the previous `npm run e2e` script did one redundantly).
+  # --------------------------------------------------------------------------
+  e2e:
+    name: E2E (${{ matrix.shard.name }})
+    needs: [prepare, build]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false # All shards report, even if one fails
+      matrix:
+        shard:
+          - name: critical
+            specs: "cypress/e2e/homepage.cy.js,cypress/e2e/accessibility.cy.js,cypress/e2e/sitemap.cy.js"
+          - name: dashboards
+            specs: "cypress/e2e/dashboard-page.cy.js,cypress/e2e/dashboards.cy.js,cypress/e2e/dashboards-no-scroll.cy.js"
+          - name: dashboards-extra
+            specs: "cypress/e2e/all-dashboards.cy.js,cypress/e2e/politician-dashboard.cy.js"
+          - name: news
+            specs: "cypress/e2e/news-page.cy.js,cypress/e2e/news-articles.cy.js"
+          - name: i18n
+            specs: "cypress/e2e/multi-language-sanity.cy.js"
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@ab7a9404c0f3da075243ca237b5fac12c98deaa5 # v2.19.3
+        with:
+          egress-policy: audit
+
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: ${{ needs.prepare.outputs.release_sha }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: "26"
+          cache: "npm"
+          cache-dependency-path: |
+            package-lock.json
+            .github/workflows/release.yml
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download dist artifact
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: dist
+          path: dist/
+
+      - name: Run Cypress (${{ matrix.shard.name }} shard)
+        # Mirror the original `npm run e2e` semantics exactly:
+        #   start-server-and-test preview http://localhost:4173 cypress:run
+        # where cypress:run = `cypress run --config video=false` (default
+        # Electron browser). We capture stdout via `tee` so the existing
+        # `scripts/generate-e2e-results-html.cjs` can rebuild the
+        # docs/cypress/index.html report from the log.
         shell: bash
         env:
-          CYPRESS_VIDEO: false
           NODE_OPTIONS: "--max-old-space-size=8192"
-          XKB_DEFAULT_RULES: evdev
-          XKB_DEFAULT_MODEL: pc105
-          XKB_DEFAULT_LAYOUT: us
-          TERM: dumb
+          CYPRESS_VIDEO: "false"
         run: |
-          echo "🚀 Running E2E tests for release validation..."
           mkdir -p builds/cypress
           set -o pipefail
-          NODE_OPTIONS="--max-old-space-size=8192" \
-            xvfb-run --auto-servernum --server-args="-screen 0 1280x720x24 -ac +extension GLX +extension RANDR +render -nolisten tcp" \
-            npm run e2e 2>&1 | tee builds/cypress/e2e-output.log
-          TEST_EXIT_CODE=$?
-          # Copy Cypress screenshots if they exist
-          cp -r cypress/screenshots builds/cypress/ 2>/dev/null || true
+          npx start-server-and-test preview http://localhost:4173 \
+            "npx cypress run --config video=false --spec '${{ matrix.shard.specs }}'" \
+            2>&1 | tee "builds/cypress/e2e-output-${{ matrix.shard.name }}.log"
+          TEST_EXIT_CODE=${PIPESTATUS[0]}
+          # Per-shard screenshot snapshot (only present on failure)
+          if [ -d cypress/screenshots ]; then
+            mkdir -p "builds/cypress/screenshots"
+            cp -r cypress/screenshots/. "builds/cypress/screenshots/" || true
+          fi
           exit ${TEST_EXIT_CODE}
+
+      # Upload per-shard cypress artifacts (log + any screenshots). The
+      # deploy-docs job downloads ALL shards and merges them into a single
+      # builds/cypress/ so the existing report generator + screenshot
+      # gallery work identically to the pre-refactor pipeline.
+      - name: Upload cypress artifacts
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: cypress-artifacts-${{ matrix.shard.name }}
+          path: builds/cypress/
+          retention-days: 7
+          if-no-files-found: warn
+
+  # --------------------------------------------------------------------------
+  # 6. package — SBOM + SLSA attestations (≤5 min)
+  #    Consumes the release-zip artifact built by `build`, so no rebuild.
+  # --------------------------------------------------------------------------
+  package:
+    name: Build Release Package
+    needs: [prepare, build]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      id-token: write # Required for OIDC
+      attestations: write # Required for SBOM + build attestations
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@ab7a9404c0f3da075243ca237b5fac12c98deaa5 # v2.19.3
+        with:
+          egress-policy: audit
+
+      - name: Download release zip
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: release-zip
+          path: .
+
+      - name: Generate SBOM
+        uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610 # v0.24.0
+        id: sbom
+        with:
+          format: spdx-json
+          output-file: riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json
+          artifact-name: riksdagsmonitor-${{ needs.prepare.outputs.version }}
+
+      - name: Generate artifact attestation
+        uses: actions/attest-build-provenance@a2bbfa25375fe432b6a289bc6b6cd05ecd0c4c32 # v4.1.0
+        id: attest
+        with:
+          subject-path: riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip
+
+      - name: Copy artifact attestation for zip
+        run: cp ${{ steps.attest.outputs.bundle-path }} riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip.intoto.jsonl
+
+      - name: Generate SBOM attestation
+        id: attestsbom
+        uses: actions/attest@59d89421af93a897026c735860bf21b6eb4f7b26 # v4.1.0
+        with:
+          subject-path: riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip
+          sbom-path: riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json
+
+      - name: Copy SBOM attestation for zip
+        run: cp ${{ steps.attestsbom.outputs.bundle-path }} riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json.intoto.jsonl
+
+      - name: Upload security artifacts
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: security-artifacts
+          path: |
+            riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json
+            riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip.intoto.jsonl
+            riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json.intoto.jsonl
+          if-no-files-found: error
+
+  # --------------------------------------------------------------------------
+  # 7. deploy-docs — assemble docs/ and push to GitHub Pages (≤8 min)
+  #    Depends on all reports being ready (typedoc + tests + e2e).
+  # --------------------------------------------------------------------------
+  deploy-docs:
+    name: Deploy Documentation
+    needs: [prepare, build, unit-tests, typedoc, e2e]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write # Required for github-pages-deploy-action
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@ab7a9404c0f3da075243ca237b5fac12c98deaa5 # v2.19.3
+        with:
+          egress-policy: audit
+
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: ${{ needs.prepare.outputs.release_sha }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: "26"
+          cache: "npm"
+          cache-dependency-path: |
+            package-lock.json
+            .github/workflows/release.yml
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download unit-test reports
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: unit-test-reports
+          path: builds/
+
+      # Download EVERY e2e shard artifact and merge into builds/cypress/.
+      # `merge-multiple: true` flattens cypress-artifacts-critical/...,
+      # cypress-artifacts-news/... etc. into the same builds/cypress/
+      # tree, so per-shard logs + screenshots all land in one folder.
+      - name: Download e2e (cypress) artifacts
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          pattern: cypress-artifacts-*
+          path: builds/cypress/
+          merge-multiple: true
+
+      # The HTML generator (scripts/generate-e2e-results-html.cjs) reads a
+      # single `e2e-output.log`. Concatenate the per-shard logs in a
+      # deterministic order so the rendered report covers every shard.
+      - name: Aggregate cypress shard logs
+        shell: bash
+        run: |
+          mkdir -p builds/cypress
+          if compgen -G "builds/cypress/e2e-output-*.log" > /dev/null; then
+            for f in $(ls builds/cypress/e2e-output-*.log | sort); do
+              echo "===== $(basename "$f") ====="
+              cat "$f"
+              echo
+            done > builds/cypress/e2e-output.log
+            echo "✅ Aggregated $(ls builds/cypress/e2e-output-*.log | wc -l) shard log(s) → builds/cypress/e2e-output.log"
+          else
+            echo "⚠️ No shard logs found — index.html will be a placeholder."
+          fi
+
+      - name: Download TypeDoc
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: typedoc
+          path: api/
 
       - name: Clean old docs
         run: |
-          echo "🧹 Cleaning old documentation..."
-          rm -rf docs/api/* || true
-          rm -rf docs/cypress/* || true
-          rm -rf docs/test-results/* || true
-          rm -rf docs/coverage/* || true
-          rm -rf docs/dependencies/* || true
-          echo "✅ Old documentation cleaned"
+          rm -rf docs/api/* docs/cypress/* docs/test-results/* docs/coverage/* docs/dependencies/* || true
 
       - name: Copy API documentation to docs
         run: |
-          echo "📁 Syncing API documentation to docs/api/..."
           mkdir -p docs/api
           if [ -d "api" ]; then
             cp -r api/* docs/api/ || true
-            echo "✅ API documentation available in docs/api/"
-          else
-            echo "⚠️ TypeDoc output directory 'api' not found; skipping copy to docs/api/"
           fi
 
       - name: Generate dependencies documentation
-        run: |
-          echo "📦 Generating dependency tree documentation..."
-          npm run docs:dependencies
-          echo "✅ Dependency documentation generated in docs/dependencies/"
+        run: npm run docs:dependencies
 
       - name: Copy test reports to docs
         run: |
-          echo "📊 Copying test reports to docs/..."
           npm run build:test-reports
-          
-          # Vitest HTML reporter output (builds/test-results/html/) is copied
-          # automatically by build:test-reports to docs/test-results/html/
-          # Istanbul HTML coverage is copied to docs/coverage/ (includes index.html)
-          
-          # Generate E2E test results HTML index from log output
           node scripts/generate-e2e-results-html.cjs || echo "⚠️ Failed to generate E2E test results HTML"
-          
-          # Generate dependency report HTML from npm tree
           node scripts/generate-dependency-report-html.cjs || echo "⚠️ Failed to generate dependency report HTML"
-          
-          echo "✅ Test reports copied to docs/"
 
       - name: Create documentation index
         run: |
-          echo "📝 Creating documentation index..."
           cat > docs/index.html << 'DOCSEOF'
           <!DOCTYPE html>
           <html lang="en">
@@ -342,16 +636,10 @@ jobs:
           echo "✅ Documentation index created at docs/index.html"
 
       - name: Create .nojekyll file
-        run: |
-          echo "🔧 Creating .nojekyll file to bypass Jekyll processing..."
-          touch docs/.nojekyll
-          echo "✅ .nojekyll file created"
+        run: touch docs/.nojekyll
 
       - name: Update sitemap
-        run: |
-          echo "🗺️ Updating sitemap.xml..."
-          npm run docs:sitemap
-          echo "✅ Sitemap updated"
+        run: npm run docs:sitemap
 
       - name: Deploy Documentation to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@d92aa235d04922e8f08b40ce78cc5442fcfbfa2f # v4.8.0
@@ -360,130 +648,35 @@ jobs:
           target-folder: docs
           branch: main
           clean: false
-          commit-message: "docs: update documentation for ${{ steps.get-version.outputs.version || 'development' }}"
+          commit-message: "docs: update documentation for ${{ needs.prepare.outputs.version || 'development' }}"
 
-  build:
-    name: Build Release Package
-    needs: [prepare]
-    runs-on: ubuntu-latest
-    # Build job needs specific permissions for attestations
-    permissions:
-      contents: read
-      id-token: write # Required for OIDC
-      attestations: write # Required for SBOM and build attestations
-    steps:
-      - name: Harden Runner
-        uses: step-security/harden-runner@ab7a9404c0f3da075243ca237b5fac12c98deaa5 # v2.19.3
-        with:
-          egress-policy: audit
-
-      - name: Checkout repository
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          fetch-depth: 0
-          # Use GITHUB_REF directly for tag events
-          ref: ${{ github.event_name == 'push' && github.ref || github.event_name == 'workflow_dispatch' && github.event.inputs.version || '' }}
-
-      - name: Setup Node.js
-        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
-        with:
-          node-version: "26"
-          cache: "npm"
-          cache-dependency-path: |
-            package-lock.json
-            .github/workflows/release.yml
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build application
-        run: npm run build
-
-      - name: Create release artifacts
-        run: |
-          echo "📦 Creating release artifacts..."
-          # Create the zip file from the dist directory
-          cd dist
-          zip -r ../riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip .
-          cd ..
-          
-          # Create checksums
-          sha256sum riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip > riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip.sha256
-          
-          echo "✅ Release artifacts created"
-
-      - name: Upload build artifact
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
-        with:
-          name: build-artifacts
-          path: |
-            dist/
-            riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip
-            riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip.sha256
-          if-no-files-found: error
-
-      - name: Generate SBOM
-        uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610 # v0.24.0
-        id: sbom
-        with:
-          format: spdx-json
-          output-file: riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json
-          artifact-name: riksdagsmonitor-${{ needs.prepare.outputs.version }}
-
-      - name: Generate artifact attestation
-        uses: actions/attest-build-provenance@a2bbfa25375fe432b6a289bc6b6cd05ecd0c4c32 # v4.1.0
-        id: attest
-        with:
-          subject-path: riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip
-
-      - name: Copy artifact attestation for zip
-        run: cp ${{ steps.attest.outputs.bundle-path }} riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip.intoto.jsonl
-
-      - name: Generate SBOM attestation
-        id: attestsbom
-        uses: actions/attest@59d89421af93a897026c735860bf21b6eb4f7b26 # v4.1.0
-        with:
-          subject-path: riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip
-          sbom-path: riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json
-
-      - name: Copy SBOM attestation for zip
-        run: cp ${{ steps.attestsbom.outputs.bundle-path }} riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json.intoto.jsonl
-
-      - name: Upload security artifacts
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
-        with:
-          name: security-artifacts
-          path: |
-            riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json
-            riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip.intoto.jsonl
-            riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json.intoto.jsonl
-          if-no-files-found: error
-
+  # --------------------------------------------------------------------------
+  # 8. release — create GitHub Release with artifacts (≤3 min)
+  # --------------------------------------------------------------------------
   release:
-    name: Create Release and Deploy
-    needs: [prepare, build]
+    name: Create GitHub Release
+    needs: [prepare, build, package, unit-tests, e2e]
     runs-on: ubuntu-latest
-    # Release job needs specific permissions to create GitHub releases and deploy
+    timeout-minutes: 5
     permissions:
       contents: write # Required to create releases
-      id-token: write # Required for OIDC/AWS
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@ab7a9404c0f3da075243ca237b5fac12c98deaa5 # v2.19.3
         with:
           egress-policy: audit
 
-      # Checkout main branch to get latest documentation
+      # release-drafter reads .github/release-drafter.yml from the default
+      # branch (api driven), so a shallow checkout is sufficient here.
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
-          fetch-depth: 0
-          ref: main # Always use main branch for deployment
+          ref: ${{ needs.prepare.outputs.release_sha }}
 
-      - name: Download build artifacts
+      - name: Download release zip
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
-          name: build-artifacts
+          name: release-zip
           path: artifacts/build
 
       - name: Download security artifacts
@@ -492,10 +685,8 @@ jobs:
           name: security-artifacts
           path: artifacts/security
 
-      # NOTE: release-drafter emits benign warnings about "pull_request_target.*" not being
-      # known webhook names. This is a known upstream issue (release-drafter/release-drafter#1369)
-      # caused by Probot's GitHub Actions adapter not recognizing these event types.
-      # The warnings are harmless and do not affect functionality.
+      # NOTE: release-drafter emits benign warnings about "pull_request_target.*"
+      # not being known webhook names (release-drafter/release-drafter#1369).
       - name: Draft Release Notes
         id: release-drafter
         uses: release-drafter/release-drafter@c2e2804cc59f45f57076a99af580d0fedb697927 # v7.3.0
@@ -508,7 +699,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Create GitHub Release with all artifacts
       - name: Create GitHub Release
         uses: ncipollo/release-action@339a81892b84b4eeb0f6e744e4574d79d0d9b8dd # v1.21.0
         with:
@@ -516,34 +706,34 @@ jobs:
           name: Riksdagsmonitor ${{ needs.prepare.outputs.version }}
           body: |
             ${{ steps.release-drafter.outputs.body }}
-            
+
             ## 📦 Release Artifacts
-            
+
             - `riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip` - Production build
             - `riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip.sha256` - Checksum for verification
             - `riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json` - SBOM (Software Bill of Materials)
             - `*.intoto.jsonl` - SLSA Build Provenance Attestations
-            
+
             ## 📦 npm Package
-            
+
             Shared types, theme system, and utilities are available as an npm package:
-            
+
             ```bash
             npm install riksdagsmonitor
             ```
-            
+
             ## 📚 Documentation
-            
+
             - [API Documentation](https://riksdagsmonitor.com/docs/api/)
             - [Test Coverage Report](https://riksdagsmonitor.com/docs/coverage/)
             - [E2E Test Reports](https://riksdagsmonitor.com/docs/cypress/)
             - [Documentation Hub](https://riksdagsmonitor.com/docs/)
-            
+
             ## 🔐 Security
-            
+
             All artifacts include SLSA Build Provenance attestations and SBOM for supply chain security.
             Verify attestations using the GitHub CLI:
-            
+
             ```bash
             gh attestation verify riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip -R Hack23/riksdagsmonitor
             ```
@@ -559,10 +749,36 @@ jobs:
             artifacts/security/riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json.intoto.jsonl
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      # ── Deploy to S3/CloudFront (primary deployment) ──────────────────
-      # NOTE: S3 deployment uses the main branch checkout (already done above)
-      # and downloaded build artifacts. This runs BEFORE the npm publish
-      # checkout to ensure deployment isn't blocked by npm-related failures.
+  # --------------------------------------------------------------------------
+  # 9. deploy-s3 — AWS S3 + CloudFront invalidation (≤10 min)
+  # --------------------------------------------------------------------------
+  deploy-s3:
+    name: Deploy to S3 + CloudFront
+    needs: [prepare, build, package, unit-tests, e2e]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      id-token: write # Required for OIDC/AWS
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@ab7a9404c0f3da075243ca237b5fac12c98deaa5 # v2.19.3
+        with:
+          egress-policy: audit
+
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          # deploy-s3.sh lives in scripts/; pin to the release SHA so the
+          # deploy script matches the build.
+          ref: ${{ needs.prepare.outputs.release_sha }}
+
+      - name: Download release zip
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: release-zip
+          path: artifacts/build
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@d979d5b3a71173a29b74b5b88418bfda9437d885 # v6.1.1
         with:
@@ -573,16 +789,10 @@ jobs:
       - name: Extract build to repository root
         run: |
           echo "📦 Extracting release build to repository root..."
-          # Remove old build artifacts
           find . -maxdepth 1 -type f \( -name "*.html" -o -name "*.css" -o -name "*.js" -o -name "*.json" \) ! -name "package*.json" -delete
           rm -rf styles/ js/ dashboard/ api/ || true
-          
-          # Extract new build
           unzip -o artifacts/build/riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip -d .
-          
-          # Create version marker
           echo "Version ${{ needs.prepare.outputs.version }} deployed at $(date)" > version.txt
-          echo "✅ Build extracted and ready for deployment"
 
       - name: Deploy to S3 with cache headers
         run: bash scripts/deploy-s3.sh . "s3://riksdagsmonitor-frontend-us-east-1-172017021075"
@@ -594,35 +804,49 @@ jobs:
             --stack-name riksdagsmonitor-frontend \
             --query "Stacks[0].Outputs[?OutputKey=='CloudFrontDistributionId'].OutputValue" \
             --output text 2>/dev/null || echo "")
-          
+
           if [ -z "$CloudFrontDistId" ]; then
             echo "⚠️  Warning: CloudFront distribution ID not found in stack outputs"
-            echo "Attempting to find distribution by S3 origin domain..."
             CloudFrontDistId=$(aws cloudfront list-distributions \
               --output json 2>/dev/null | \
               jq -r ".DistributionList.Items[] | select(.Origins.Items[].DomainName | contains(\"riksdagsmonitor-frontend\")) | .Id" | \
               head -n 1 || echo "")
           fi
-          
+
           if [ -z "$CloudFrontDistId" ] || [ "$CloudFrontDistId" = "None" ]; then
             echo "❌ Error: Could not discover CloudFront distribution ID"
             exit 1
           fi
-          
+
           echo "✅ Found CloudFront distribution: $CloudFrontDistId"
-          echo "🔄 Creating cache invalidation..."
-          
           aws cloudfront create-invalidation \
             --distribution-id $CloudFrontDistId \
             --paths "/*"
-          
-          echo "✅ CloudFront cache invalidation completed"
 
-      # ── npm Package Publish ──────────────────────────────────────────────
-      - name: Checkout release tag for npm publish
+  # --------------------------------------------------------------------------
+  # 10. npm-publish — build:lib + publish (≤5 min)
+  #     Skips the heavy `npm run build` (that's only needed for the website,
+  #     not the library package) AND the duplicate `npm test` (already
+  #     passed in unit-tests).
+  # --------------------------------------------------------------------------
+  npm-publish:
+    name: Publish to npm
+    needs: [prepare, unit-tests]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      id-token: write # Required for npm provenance
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@ab7a9404c0f3da075243ca237b5fac12c98deaa5 # v2.19.3
+        with:
+          egress-policy: audit
+
+      - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
-          ref: ${{ needs.prepare.outputs.version }}
+          ref: ${{ needs.prepare.outputs.release_sha }}
 
       - name: Setup Node.js for npm publish
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
@@ -642,9 +866,6 @@ jobs:
 
       - name: Build library package
         run: npm run build:lib
-
-      - name: Run tests
-        run: npm test
 
       - name: Verify package contents
         run: |
@@ -666,28 +887,30 @@ jobs:
           echo "✅ Package published successfully!"
           echo "📦 Package: riksdagsmonitor@${{ needs.prepare.outputs.npm_version }}"
           echo "🔗 npm URL: https://www.npmjs.com/package/riksdagsmonitor"
-          echo ""
-          echo "To install:"
-          echo "  npm install riksdagsmonitor@${{ needs.prepare.outputs.npm_version }}"
-          echo ""
-          echo "To verify provenance:"
-          echo "  npm audit signatures"
 
-      - name: Deployment Summary
+  # --------------------------------------------------------------------------
+  # 11. summary — fan-in status job (≤1 min)
+  # --------------------------------------------------------------------------
+  summary:
+    name: Deployment Summary
+    needs: [prepare, release, deploy-s3, deploy-docs, npm-publish]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Print summary
         run: |
-          echo "🎉 Release ${{ needs.prepare.outputs.version }} deployment complete!"
+          echo "🎉 Release ${{ needs.prepare.outputs.version }} pipeline complete"
+          echo ""
+          echo "Job results:"
+          echo "  - release:       ${{ needs.release.result }}"
+          echo "  - deploy-s3:     ${{ needs.deploy-s3.result }}"
+          echo "  - deploy-docs:   ${{ needs.deploy-docs.result }}"
+          echo "  - npm-publish:   ${{ needs.npm-publish.result }}"
           echo ""
           echo "📍 Deployments:"
           echo "  - Primary: https://riksdagsmonitor.com (S3/CloudFront)"
-          echo "  - Backup: GitHub Pages (main branch)"
+          echo "  - Backup:  GitHub Pages (main branch)"
           echo ""
           echo "📚 Documentation:"
           echo "  - https://riksdagsmonitor.com/docs/"
-          echo "  - API: https://riksdagsmonitor.com/docs/api/"
-          echo "  - Coverage: https://riksdagsmonitor.com/docs/coverage/"
-          echo ""
-          echo "🔐 Security Artifacts:"
-          echo "  - SBOM: riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json"
-          echo "  - Attestations: *.intoto.jsonl files"
-          echo ""
-          echo "✅ All deployment steps completed successfully!"
