@@ -1,0 +1,113 @@
+/**
+ * @module Infrastructure/RenderLib/ChromeI18n/ES
+ * @category Intelligence Operations / Supporting Infrastructure
+ * @name CHROME_I18N_ES — Spanish chrome strings
+ *
+ * @description
+ * Spanish translations of the site header/footer chrome
+ * strings declared by {@link ./types.js#ChromeStrings}. Reviewed
+ * per-language so a copy-edit here does not conflict with edits to
+ * the other 13 languages.
+ *
+ * Translation guide: https://github.com/Hack23/homepage/blob/main/Spanish-Translation-Guide.md
+ *
+ * @author Hack23 AB (Infrastructure Team)
+ * @license Apache-2.0
+ */
+
+import type { ChromeStrings } from './types.js';
+
+export const CHROME_ES: ChromeStrings = {
+  transparencyLabel: 'Transparencia &amp; Seguridad',
+  transparencyTitle: 'Compromiso de Hack23 con la transparencia y la seguridad',
+  sponsorLabel: 'Patrocinar Hack23',
+  sponsorTitle: 'Conviértete en patrocinador de Hack23 en GitHub',
+  politicalIntelligenceLabel: 'Inteligencia política',
+  politicalIntelligenceTitle: 'Análisis político profundo e informes de inteligencia',
+  themeLabel: 'Tema',
+  themeAria: 'Cambiar tema',
+  themeToLight: 'Cambiar al tema claro',
+  themeToDark: 'Cambiar al tema oscuro',
+  skipToMain: 'Saltar al contenido principal',
+  headerTagline: 'Inteligencia parlamentaria sueca · Código abierto · Apache-2.0',
+  heroSubtitle: 'Plataforma de inteligencia de las elecciones suecas 2026',
+  heroTagline: 'Monitoreo parlamentario en tiempo real · Predicciones de coalición · 45 reglas de riesgo · 50+ años de datos',
+  electionCountdownLabel: 'Elecciones en:',
+  electionDateLong: '13 de septiembre de 2026 (Segundo domingo de septiembre)',
+  heroStatPoliticians: 'Políticos monitoreados',
+  heroStatBallots: 'Votaciones del Riksdag',
+  heroStatDocuments: 'Documentos procesados',
+  heroStatBills: 'Proyectos de ley del gobierno',
+  heroStatDecisions: 'Decisiones de comisión',
+  switchLanguage: 'Cambiar idioma',
+  thisPageInOtherLanguages: 'Esta página en otros idiomas',
+  pageContext: 'Contexto de la página',
+  breadcrumb: 'Migas de pan',
+  mainNav: 'Plataforma principal',
+  news: 'Noticias',
+  dashboard: 'Panel',
+  politicalIntelligence: 'Inteligencia política',
+  politicians: 'Políticos',
+  footerAboutHeading: 'Riksdagsmonitor',
+  footerQuickLinksHeading: 'Enlaces rápidos',
+  footerBuiltByHeading: 'Construido por Hack23 AB',
+  footerIsmsHeading: 'Hack23 ISMS',
+  footerComplianceHeading: 'Transparencia &amp; cumplimiento',
+  footerCybersecurityTagline: 'Consultora sueca de ciberseguridad especializada en transparencia política e inteligencia de código abierto.',
+  footerPoweredBy: 'Impulsado por',
+  footerBuiltBy: 'Construido por',
+  footerLastUpdated: 'Última actualización:',
+  footerIsmsTagline: 'ISMS público alineado con ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1, EU CRA &amp; NIS2.',
+  linkApiDocs: 'Documentación de API (TypeDoc)',
+  linkCiaPlatform: 'Plataforma CIA',
+  linkGithubRepo: 'Repositorio de GitHub',
+  linkRiksdag: 'Parlamento de Suecia',
+  linkRss: 'Canal RSS',
+  linkHack23Home: 'Hack23.com',
+  linkHack23Riksdagsmonitor: 'Hack23 · Riksdagsmonitor',
+  linkHack23Features: 'Hack23 · Funcionalidades',
+  linkSponsorHack23: 'Patrocinar Hack23',
+  linkLinkedin: 'Empresa en LinkedIn',
+  linkHack23Org: 'Organización de GitHub de Hack23',
+  linkContactUs: 'Contáctanos',
+  linkEuParliamentMonitor: 'Monitor del Parlamento Europeo',
+  linkHack23Blog: 'Blog de Hack23',
+  linkPublicIsmsRepo: 'Repositorio público ISMS',
+  linkInfoSecPolicy: 'Política de seguridad de la información',
+  linkPrivacyPolicy: 'Política de privacidad',
+  linkSecureDevPolicy: 'Política de desarrollo seguro',
+  linkAiPolicy: 'Política de IA',
+  linkThreatModeling: 'Modelado de amenazas',
+  linkVulnMgmt: 'Gestión de vulnerabilidades',
+  linkIncidentResponse: 'Plan de respuesta a incidentes',
+  linkAccessControl: 'Política de control de acceso',
+  linkCryptoPolicy: 'Política de criptografía',
+  linkOpenSourcePolicy: 'Política de código abierto',
+  linkChangeMgmt: 'Gestión de cambios',
+  linkClassification: 'Clasificación',
+  linkSecurityMetrics: 'Métricas de seguridad',
+  linkSecurityPolicy: 'Política de seguridad',
+  linkCraAssessment: 'Evaluación EU CRA',
+  linkThreatModel: 'Modelo de amenazas',
+  linkTranslationGuide: 'Guía de traducción',
+  linkContributing: 'Contribuir',
+  linkCodeOfConduct: 'Código de conducta',
+  linkChangelog: 'Registro de cambios',
+  linkLicense: 'Licencia (Apache-2.0)',
+  linkReportIssue: 'Reportar un issue de GitHub',
+  trustBadgesAria: 'Insignias abiertas de confianza, calidad y seguridad',
+  footerLangsAria: 'Cambiar idioma',
+  footerLegal: 'Hack23 AB · Apache-2.0 · Solo datos políticos públicos — RGPD art. 9(2)(e,g). Sin cookies, sin rastreo, sin publicidad.',
+  legacyAboutHeading: 'Acerca de Riksdagsmonitor',
+  legacyAboutBody: 'Plataforma de inteligencia en vivo para monitorizar el Parlamento sueco con capacidades OSINT del CIA. Mejoras continuas — informe de cualquier problema en GitHub.',
+  legacyQuickLinksHeading: 'Enlaces rápidos',
+  legacyLanguagesHeading: 'Idiomas',
+  legacyStatTracked: 'rastreados',
+  legacyStatActive: 'activas',
+  legacyStatSupported: 'admitidos',
+  legacyStatHistorical: 'datos históricos',
+  legacyStatMps: 'parlamentarios',
+  legacyStatRiskRules: 'reglas de riesgo',
+  legacyStatLanguages: 'idiomas',
+  legacyStatYears: '50+ años',
+};

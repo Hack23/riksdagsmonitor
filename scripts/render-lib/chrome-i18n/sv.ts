@@ -1,0 +1,113 @@
+/**
+ * @module Infrastructure/RenderLib/ChromeI18n/SV
+ * @category Intelligence Operations / Supporting Infrastructure
+ * @name CHROME_I18N_SV — Swedish chrome strings
+ *
+ * @description
+ * Swedish translations of the site header/footer chrome
+ * strings declared by {@link ./types.js#ChromeStrings}. Reviewed
+ * per-language so a copy-edit here does not conflict with edits to
+ * the other 13 languages.
+ *
+ * Translation guide: https://github.com/Hack23/homepage/blob/main/Swedish-Translation-Guide.md
+ *
+ * @author Hack23 AB (Infrastructure Team)
+ * @license Apache-2.0
+ */
+
+import type { ChromeStrings } from './types.js';
+
+export const CHROME_SV: ChromeStrings = {
+  transparencyLabel: 'Transparens &amp; Säkerhet',
+  transparencyTitle: 'Hack23:s åtagande för transparens och säkerhet',
+  sponsorLabel: 'Sponsra Hack23',
+  sponsorTitle: 'Bli sponsor för Hack23 på GitHub',
+  politicalIntelligenceLabel: 'Politisk underrättelse',
+  politicalIntelligenceTitle: 'Djupgående politisk analys och underrättelserapporter',
+  themeLabel: 'Tema',
+  themeAria: 'Byt tema',
+  themeToLight: 'Byt till ljust tema',
+  themeToDark: 'Byt till mörkt tema',
+  skipToMain: 'Hoppa till huvudinnehåll',
+  headerTagline: 'Svensk parlamentarisk underrättelse · Öppen källkod · Apache-2.0',
+  heroSubtitle: 'Svensk valunderrättelseplattform 2026',
+  heroTagline: 'Riksdagsövervakning i realtid · Koalitionsförutsägelser · 45 riskregler · 50+ års data',
+  electionCountdownLabel: 'Val om:',
+  electionDateLong: '13 september 2026 (Andra söndagen i september)',
+  heroStatPoliticians: 'Politiker övervakade',
+  heroStatBallots: 'Riksdagsomröstningar',
+  heroStatDocuments: 'Dokument behandlade',
+  heroStatBills: 'Regeringspropositioner',
+  heroStatDecisions: 'Utskottsbeslut',
+  switchLanguage: 'Byt språk',
+  thisPageInOtherLanguages: 'Denna sida på andra språk',
+  pageContext: 'Sidkontext',
+  breadcrumb: 'Brödsmulor',
+  mainNav: 'Huvudplattform',
+  news: 'Nyheter',
+  dashboard: 'Instrumentpanel',
+  politicalIntelligence: 'Politisk underrättelse',
+  politicians: 'Politiker',
+  footerAboutHeading: 'Riksdagsmonitor',
+  footerQuickLinksHeading: 'Snabblänkar',
+  footerBuiltByHeading: 'Byggd av Hack23 AB',
+  footerIsmsHeading: 'Hack23 ISMS',
+  footerComplianceHeading: 'Transparens &amp; efterlevnad',
+  footerCybersecurityTagline: 'Svenskt cybersäkerhetskonsultbolag specialiserat på politisk transparens och öppen källkod-underrättelse.',
+  footerPoweredBy: 'Drivs av',
+  footerBuiltBy: 'Byggd av',
+  footerLastUpdated: 'Senast uppdaterad:',
+  footerIsmsTagline: 'Publikt ISMS i linje med ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1, EU CRA &amp; NIS2.',
+  linkApiDocs: 'API-dokumentation (TypeDoc)',
+  linkCiaPlatform: 'CIA-plattformen',
+  linkGithubRepo: 'GitHub-repository',
+  linkRiksdag: 'Sveriges Riksdag',
+  linkRss: 'RSS-flöde',
+  linkHack23Home: 'Hack23.com',
+  linkHack23Riksdagsmonitor: 'Hack23 · Riksdagsmonitor',
+  linkHack23Features: 'Hack23 · Funktioner',
+  linkSponsorHack23: 'Sponsra Hack23',
+  linkLinkedin: 'Företaget på LinkedIn',
+  linkHack23Org: 'Hack23 GitHub-organisation',
+  linkContactUs: 'Kontakta oss',
+  linkEuParliamentMonitor: 'EU-parlamentsövervakaren',
+  linkHack23Blog: 'Hack23-bloggen',
+  linkPublicIsmsRepo: 'Publik ISMS-repository',
+  linkInfoSecPolicy: 'Informationssäkerhetspolicy',
+  linkPrivacyPolicy: 'Integritetspolicy',
+  linkSecureDevPolicy: 'Policy för säker utveckling',
+  linkAiPolicy: 'AI-policy',
+  linkThreatModeling: 'Hotmodellering',
+  linkVulnMgmt: 'Sårbarhetshantering',
+  linkIncidentResponse: 'Incidentresponsplan',
+  linkAccessControl: 'Åtkomstkontrollpolicy',
+  linkCryptoPolicy: 'Kryptografipolicy',
+  linkOpenSourcePolicy: 'Policy för öppen källkod',
+  linkChangeMgmt: 'Ändringshantering',
+  linkClassification: 'Klassificering',
+  linkSecurityMetrics: 'Säkerhetsmått',
+  linkSecurityPolicy: 'Säkerhetspolicy',
+  linkCraAssessment: 'EU CRA-bedömning',
+  linkThreatModel: 'Hotmodell',
+  linkTranslationGuide: 'Översättningsguide',
+  linkContributing: 'Bidra',
+  linkCodeOfConduct: 'Uppförandekod',
+  linkChangelog: 'Ändringslogg',
+  linkLicense: 'Licens (Apache-2.0)',
+  linkReportIssue: 'Rapportera ett GitHub-ärende',
+  trustBadgesAria: 'Öppna märken för förtroende, kvalitet och säkerhet',
+  footerLangsAria: 'Byt språk',
+  footerLegal: 'Hack23 AB · Apache-2.0 · Endast offentliga politiska data — GDPR art. 9(2)(e,g). Inga cookies, ingen spårning, ingen reklam.',
+  legacyAboutHeading: 'Om Riksdagsmonitor',
+  legacyAboutBody: 'Live underrättelseplattform för bevakning av Sveriges riksdag med CIA OSINT-kapacitet. Ständiga förbättringar — rapportera gärna problem på GitHub.',
+  legacyQuickLinksHeading: 'Snabblänkar',
+  legacyLanguagesHeading: 'Språk',
+  legacyStatTracked: 'spårade',
+  legacyStatActive: 'aktiva',
+  legacyStatSupported: 'stödda',
+  legacyStatHistorical: 'historisk data',
+  legacyStatMps: 'riksdagsledamöter',
+  legacyStatRiskRules: 'riskregler',
+  legacyStatLanguages: 'språk',
+  legacyStatYears: '50+ år',
+};
