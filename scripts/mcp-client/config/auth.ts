@@ -57,3 +57,17 @@ export function getDefaultAuthToken(): string {
  * `DEFAULT_MCP_AUTH_TOKEN` constant from the monolithic client.
  */
 export const DEFAULT_MCP_AUTH_TOKEN: string = getDefaultAuthToken();
+
+/**
+ * Non-secret presence check for the `MCP_GATEWAY_API_KEY` env var.
+ *
+ * Returns only a boolean — the token value never leaves this module. Routing
+ * logic in `config/gateway-resolver.ts` calls this helper instead of reading
+ * the env var directly so that every secret-bearing env access remains
+ * auditable in a single file (per the
+ * `Authentication-and-Credentials-for-Agentic-Workflows` skill).
+ */
+export function hasMcpGatewayApiKey(): boolean {
+  const value = process.env['MCP_GATEWAY_API_KEY'];
+  return typeof value === 'string' && value.length > 0;
+}

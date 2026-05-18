@@ -22,21 +22,24 @@ export async function fetchExternalUrlText(
   rawUrl: string,
   timeoutMs: number = EXTERNAL_URL_FETCH_TIMEOUT_MS,
 ): Promise<string | null> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
   try {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), timeoutMs);
     const response = await fetch(rawUrl, {
       signal: controller.signal,
       headers: { Accept: 'text/plain, text/markdown, text/html, */*' },
     });
-    clearTimeout(timeout);
     if (!response.ok) {
       console.warn(`⚠️ HTTP ${response.status} fetching external URL: ${rawUrl}`);
       return null;
     }
+    // Keep the AbortController active across body consumption so a slow
+    // or stalled response body cannot hang the news pipeline indefinitely.
     return await response.text();
   } catch (error: unknown) {
     console.warn(`⚠️ Could not fetch external URL ${rawUrl}: ${(error as Error).message}`);
     return null;
+  } finally {
+    clearTimeout(timeout);
   }
 }

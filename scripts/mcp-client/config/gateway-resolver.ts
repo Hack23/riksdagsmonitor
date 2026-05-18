@@ -13,6 +13,8 @@
 
 import fs from 'fs';
 
+import { hasMcpGatewayApiKey } from './auth.js';
+
 /**
  * Default MCP gateway port. The `ghcr.io/github/gh-aw-mcpg` container exports
  * `MCP_GATEWAY_PORT` in the compiled `news-*.lock.yml` workflows. Was `80`
@@ -87,7 +89,9 @@ export function buildAwfGatewayUrl(serverName: string): string {
 /**
  * Detect whether the current process runs inside the AWF sandbox with the
  * MCP gateway active. Heuristic matches `scripts/mcp-setup.sh`:
- *   - `MCP_GATEWAY_API_KEY` env var present, OR
+ *   - `MCP_GATEWAY_API_KEY` env var present (checked via `hasMcpGatewayApiKey`
+ *     in `config/auth.ts` — the single auditable sink for token-bearing env
+ *     reads), OR
  *   - `gateway.apiKey` present in `mcp-config.json`, OR
  *   - `mcpServers['riksdag-regering'].headers.Authorization` present in
  *     `mcp-config.json` (populated by the gateway bootstrap).
@@ -100,7 +104,7 @@ export function buildAwfGatewayUrl(serverName: string): string {
  * `scripts/mcp-setup.sh` was not sourced first.
  */
 export function isAwfGatewayActive(): boolean {
-  if (process.env['MCP_GATEWAY_API_KEY']) return true;
+  if (hasMcpGatewayApiKey()) return true;
   const configPath = process.env['GH_AW_MCP_CONFIG'] ?? '/home/runner/.copilot/mcp-config.json';
   try {
     if (!fs.existsSync(configPath)) return false;

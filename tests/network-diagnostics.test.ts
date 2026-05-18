@@ -303,8 +303,17 @@ describe('Network Diagnostics Configuration', () => {
     });
 
     it('MCP client default URL should match workflow configuration', () => {
-      const clientPath = path.join(SCRIPTS_DIR, 'mcp-client', 'client.ts');
-      const content = fs.readFileSync(clientPath, 'utf-8');
+      // The direct onrender HTTPS endpoint lives in the gateway-resolver
+      // module after the mcp-client refactor (PR #2588); it is re-exported
+      // via `scripts/mcp-client/index.ts` and remains the single source of
+      // truth consumed by `client.ts` through `getDefaultMcpServerUrl()`.
+      const resolverPath = path.join(
+        SCRIPTS_DIR,
+        'mcp-client',
+        'config',
+        'gateway-resolver.ts',
+      );
+      const content = fs.readFileSync(resolverPath, 'utf-8');
 
       expect(content).toContain(RIKSDAG_MCP_URL);
     });
